@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.BoundaryProductNormalization
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem isOpen_relative_model_image
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -36,8 +26,6 @@ theorem isOpen_relative_model_image
       exact ⟨x, hx, (hH x).symm⟩
   rw [heq]
   exact H.isOpenMap _ hS
-
-
 
 theorem exists_finite_model_boundary_product
     {X E F ι : Type*} [TopologicalSpace X]
@@ -101,8 +89,6 @@ theorem exists_finite_model_boundary_product
       exact ⟨c z, ⟨z, ⟨z.property.1, z.property.2, hz⟩, rfl⟩, (hCv z).symm⟩
     · rintro ⟨_, ⟨z, hz, rfl⟩, rfl⟩
       exact ⟨⟨z, ⟨hz.1, hz.2.1⟩⟩, hz.2.2, hCv _⟩
-
-
 
 theorem exists_finite_model_boundary_collar
     {X E F ι : Type*} [TopologicalSpace X]

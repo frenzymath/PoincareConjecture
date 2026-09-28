@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularDerivative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture
 
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem m64TriangularSource_scalar_comp_zero
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -41,8 +28,6 @@ theorem m64TriangularSource_scalar_comp_zero
       simp
   conv_lhs => rw [hcol, map_smul]
   rfl
-
-
 
 theorem m64TriangularSource_scalar_comp_one
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -61,9 +46,6 @@ theorem m64TriangularSource_scalar_comp_one
   conv_lhs => rw [hcol, map_add, map_smul]
   rfl
 
-
-
-
 theorem m64Source_first_coordinate_derivative
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T) (p v : LoopPlane) :
     fderiv ℝ (fun q => T q 0) p v = fderiv ℝ T p v 0 := by
@@ -71,19 +53,13 @@ theorem m64Source_first_coordinate_derivative
   have hd := (L.hasFDerivAt.comp p (hT p).hasFDerivAt).fderiv
   exact congrArg (fun A : LoopPlane →L[ℝ] ℝ => A v) hd
 
-
-
 def m64TriangularCofactorTest0 (T : LoopPlane ≃ₜ LoopPlane) (phi : LoopPlane → ℝ)
     (p : LoopPlane) : ℝ :=
   -(fderiv ℝ (fun q => T.symm q 0) p e1) * phi (T.symm p)
 
-
-
 def m64TriangularCofactorTest1 (T : LoopPlane ≃ₜ LoopPlane) (phi : LoopPlane → ℝ)
     (p : LoopPlane) : ℝ :=
   (fderiv ℝ (fun q => T.symm q 0) p e0) * phi (T.symm p)
-
-
 
 theorem m64TriangularCofactorTest_contDiff
     (T : LoopPlane ≃ₜ LoopPlane) (hi : ContDiff ℝ ∞ T.symm)
@@ -97,9 +73,6 @@ theorem m64TriangularCofactorTest_contDiff
   have hpsi : ContDiff ℝ q (phi ∘ T.symm) := hp.comp (hi.of_le hq)
   exact ⟨(((hdu.of_le hq).clm_apply contDiff_const).neg).mul hpsi,
     ((hdu.of_le hq).clm_apply contDiff_const).mul hpsi⟩
-
-
-
 
 theorem m64TriangularCofactor_divergence
     (T : LoopPlane ≃ₜ LoopPlane) (hi : ContDiff ℝ ∞ T.symm)

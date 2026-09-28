@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C1ChartPullback
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicConnection
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {m n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
   {h : RiemannianMetric m (EuclideanSpace ℝ (Fin m))}
-
-
-
-
 
 theorem m64_induced_curve_connection_decomposition
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -51,10 +42,6 @@ theorem m64_induced_curve_connection_decomposition
   rw [hw, hv]
   simp only [secondFundamentalForm, covariantHessianMap, map_add]
   abel
-
-
-
-
 
 theorem m64_induced_curve_connection_norm_le
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -91,10 +78,6 @@ theorem m64_induced_curve_connection_norm_le
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 theorem m64_pullback_chart_expression {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) {c : ℝ → M} {x : ℝ}
     (hc : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) c x)
@@ -125,10 +108,6 @@ theorem m64_pullback_chart_expression {g : RiemannianMetric n M}
     M63.pullback_chart_field_of_contDiff_one D p hc hsource hU hxU v (hvV.mono hUV),
     ← hconn]
   simp only [chartVectorField, VectorField.mpullback, map_add]
-
-
-
-
 
 theorem m64_model_pullback_expression
     (D : LeviCivitaData g) {c W : ℝ → EuclideanSpace ℝ (Fin n)} {x : ℝ}

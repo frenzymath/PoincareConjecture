@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.DerivedComplementLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -16,8 +7,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
 
 theorem closedFaceComplement_space_eq_unmarked_duals
     (L : SimplicialComplex ℝ E)
@@ -39,7 +28,6 @@ theorem closedFaceComplement_space_eq_unmarked_duals
     rw [K.barycentricDualBlock_singleton_eq_closedStar hv] at hs
     exact mem_space_iff.mpr ⟨s,
       K.unmarked_vertex_star_le_closedFaceComplement L hpure hv hvL hs, hxs⟩
-
 
 theorem vertex_dual_inter_closedFaceComplement
     (L : SimplicialComplex ℝ E)
@@ -65,7 +53,6 @@ theorem vertex_dual_inter_closedFaceComplement
 
 omit [DecidableEq E] in
 
-
 theorem derived_cut_boundary_space
     (L : SimplicialComplex ℝ E) :
     ((K.barycentricNeighborhood L) ⊓ K.barycentricSubdivision.closedFaceComplement
@@ -83,8 +70,6 @@ theorem derived_cut_boundary_space
       (K.barycentricNeighborhood_le L)
       (K.barycentricSubdivision.closedFaceComplement_le (K.barycentricNeighborhood L)) hx
     exact mem_space_iff.mpr ⟨s, ⟨hsN, hsC⟩, hxs⟩
-
-
 
 theorem derived_cut_boundary_eq_mixed_duals
     (L : SimplicialComplex ℝ E)
@@ -126,9 +111,6 @@ private theorem mem_triangle_dual_eq_centroid
     have htu' : t = u := Finset.eq_of_subset_of_card_le htu (by simpa [htc] using hdim u hu)
     exact huy.symm.trans (congrArg (fun s : Finset E ↦ s.centroid ℝ id) htu'.symm)
   simpa only [convexHull_singleton, mem_singleton_iff] using convexHull_mono hverts hxs
-
-
-
 
 theorem marked_edge_dual_inter_closedFaceComplement
     (L : SimplicialComplex ℝ E)

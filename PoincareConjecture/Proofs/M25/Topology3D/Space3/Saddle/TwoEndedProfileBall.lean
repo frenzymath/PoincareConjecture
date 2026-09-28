@@ -11,13 +11,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -26,9 +19,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 3000000 in
-
-
-
 
 theorem exists_two_ended_profile_ball
     (P : SurgeryCapProfile) (u : UnitTwoSphere)

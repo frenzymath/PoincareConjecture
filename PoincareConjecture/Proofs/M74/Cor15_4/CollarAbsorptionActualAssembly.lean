@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionRegionChart
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionActualCollar
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionRadial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -38,9 +29,6 @@ variable {A B C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C
   (hEB : ∀ (q : UnitTwoSphere) (s : ℝ) (hs : s ∈ Ioo 0 epsilonB),
     EB ⟨S.second_ball.map ((1 + s) • q.val), S.second_ball.radial_mem_complement q
       ⟨by linarith [hs.1], by linarith [hs.2]⟩⟩ = (1 / s) • q.val)
-
-
-
 
 noncomputable def canonicalEndChartData (q0 : UnitTwoSphere)
     (D : DiffSphereIsotopyData S.sphere_gluing.symm) : CollarEndChartData C := by
@@ -124,8 +112,6 @@ noncomputable def canonicalEndChartData (q0 : UnitTwoSphere)
       S.sphere_gluing.symm_apply_apply]
 
 include S EA epsilonA hApos hAlt hEA EB epsilonB hBpos hBlt hEB in
-
-
 
 theorem nonempty_sphereDiffeomorph_of_canonicalEnds (hD : DiffSphereIsotopyService) :
     Nonempty (Diffeomorph (𝓡 3) (𝓡 3) C.carrier ThreeSphere ∞) := by

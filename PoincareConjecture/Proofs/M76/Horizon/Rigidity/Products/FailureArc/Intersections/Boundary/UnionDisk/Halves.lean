@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskPartition
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDiskModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 
-
-
 set_option autoImplicit false
 open Set TriangleDiskModel
 

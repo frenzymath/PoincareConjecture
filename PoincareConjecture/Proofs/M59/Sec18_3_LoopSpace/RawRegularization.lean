@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RegularRepresentatives
 import PoincareConjecture.Proofs.M59.Mathlib.CubeSphereHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -22,8 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59_raw_regularization_of_pole_path (q : M59SphereQuotient) (x : M)
     (F : C(LoopTwoSphere, C1FreeLoopSpace (M := M)))

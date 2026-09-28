@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.Riemannian.PathELength
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem edist_add_escape_le_add_shortcut_of_path_crossing
     (g : RiemannianMetric n M)
@@ -62,10 +48,6 @@ theorem edist_add_escape_le_add_shortcut_of_path_crossing
         g.pathELength gamma 0 1 from Manifold.pathELength_add ht.1 ht.2]
     _ ≤ (g.edist b p + eta) + c := add_le_add hlength.le le_rfl
     _ = (g.edist b p + c) + eta := by ac_rfl
-
-
-
-
 
 theorem edist_add_le_of_path_crossing (g : RiemannianMetric n M)
     {b p x : M} {S : Set M} {c e delta : ℝ≥0∞} (hc : c ≠ ⊤)

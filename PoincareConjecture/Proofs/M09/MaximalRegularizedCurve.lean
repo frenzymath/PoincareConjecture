@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.RegularizedIntervalSolution
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

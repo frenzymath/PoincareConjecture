@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ParameterizedGaugeTube
 import PoincareConjecture.Proofs.M14.Mathlib.FamilyCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {P : Type v} [NormedAddCommGroup P] [NormedSpace ℝ P]
-
-
-
 
 structure GaugeEndpointFamily (f : ℝ × P → G.Point) (U : Set P) (T a b c : ℝ) (p₀ : P)
     (j : G.gaugeCover.index)
@@ -49,9 +37,6 @@ structure GaugeEndpointFamily (f : ℝ × P → G.Point) (U : Set P) (T a b c : 
   recovery : ∀ z ∈ parameters, ∀ s ∈ Icc a b,
     family (s, (z.1, (lift (f (c, z.1))).2.val)) = f (s, z.1)
   coordinate_smooth : ContDiffAt ℝ ∞ (fun r => (lift (f (c, r))).2.val) p₀
-
-
-
 
 theorem gaugeEndpointFamily_nonempty (f : ℝ × P → G.Point) {U : Set P}
     {T a b c : ℝ} {p₀ : P} (hU : IsOpen U) (hp : p₀ ∈ U) (hc : c ∈ Ioo a b)

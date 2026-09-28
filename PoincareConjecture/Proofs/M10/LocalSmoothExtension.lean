@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SupportedCalculus
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -17,7 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
 
 theorem exists_compact_contDiff_two_of_germ {f : E → ℝ} {x : E}
     (hf : ContDiffAt ℝ 2 f x) :

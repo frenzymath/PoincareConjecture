@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M08.ReferenceEnergy
 import PoincareConjecture.Proofs.M28.Generalized.BoxTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem RicciFlow.continuousOn_tangentNorm_curveVelocity
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -47,9 +33,6 @@ theorem RicciFlow.continuousOn_tangentNorm_curveVelocity
     hg.clm_bundle_apply₂ hv hv
   exact Real.continuous_sqrt.comp_continuousOn
     (((Bundle.Trivial.homeomorphProd M ℝ).continuous.comp_continuousOn heval).snd)
-
-
-
 
 theorem GeneralizedRicciFlowData.tangentNorm_box_curve
     (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)

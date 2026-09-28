@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_HorizontalHessianTrace
 import PoincareConjecture.Proofs.M09.RicciContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontalRicci_orthonormal_trace (hM04 : RicciFlowCurvatureTheory.{u})
     (q : G.Point) (b : Module.Basis (Fin n) ℝ (G.Horizontal q))

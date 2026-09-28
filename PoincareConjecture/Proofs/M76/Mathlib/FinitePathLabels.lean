@@ -1,15 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Subgraph
 import Mathlib.Combinatorics.SimpleGraph.Matching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*} [Finite V]
-
-
-
 
 theorem exists_longest_path_from (G : SimpleGraph V) (a : V) :
     ∃ (b : V) (p : G.Walk a b), p.IsPath ∧
@@ -35,9 +23,6 @@ theorem exists_longest_path_from (G : SimpleGraph V) (a : V) :
   intro c r hr
   have h := hmax (show r.length ∈ s from ⟨c, r, hr, rfl⟩)
   omega
-
-
-
 
 theorem exists_spanning_path_from_leaf (G : SimpleGraph V) (hconn : G.Connected)
     (hdegree : ∀ v, (G.neighborSet v).ncard ≤ 2) {a : V}
@@ -106,8 +91,6 @@ theorem exists_spanning_path_from_leaf (G : SimpleGraph V) (hconn : G.Connected)
 
 omit [Finite V] in
 
-
-
 theorem Walk.IsPath.ncard_neighbors_eq_one_iff_endpoints {G : SimpleGraph V} {a b : V}
     {p : G.Walk a b} (hp : p.IsPath) (hnil : ¬p.Nil)
     (hall : ∀ v, v ∈ p.support)
@@ -131,11 +114,6 @@ theorem Walk.IsPath.ncard_neighbors_eq_one_iff_endpoints {G : SimpleGraph V} {a 
   · rintro (rfl | rfl)
     · rw [hset, hp.neighborSet_toSubgraph_startpoint hnil, ncard_singleton]
     · rw [hset, hp.neighborSet_toSubgraph_endpoint hnil, ncard_singleton]
-
-
-
-
-
 
 theorem exists_linear_labels_from_leaf_with_endpoints
     (G : SimpleGraph V) (hconn : G.Connected)
@@ -175,10 +153,6 @@ theorem exists_linear_labels_from_leaf_with_endpoints
       v = p.getVert 0 ∨ v = p.getVert (n + 1)
     rw [hlength, Walk.getVert_zero, Walk.getVert_length]
     exact hp.ncard_neighbors_eq_one_iff_endpoints hnil hall hadj v
-
-
-
-
 
 theorem exists_linear_labels_from_leaf (G : SimpleGraph V) (hconn : G.Connected)
     (hdegree : ∀ v, (G.neighborSet v).ncard ≤ 2) {a : V}

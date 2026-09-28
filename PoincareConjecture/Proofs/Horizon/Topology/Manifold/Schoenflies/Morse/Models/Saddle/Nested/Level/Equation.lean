@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Level.Roots
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LowerCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,12 +10,9 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Nested
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def levelSet : Set E2 := {q | polynomial (3 / 10) (vector (q 0) (q 1) 1) = 1}
 
-
 def sourceHeight (q : E2) : Real := 1 - (q 0)^2 - (q 1)^2 - (3 / 10) * q 0
-
 
 def levelArc (σ z : Real) : E2 :=
   levelAbscissa z • EuclideanSpace.single 0 1 +
@@ -67,7 +62,6 @@ theorem levelArc_mem_levelSet {σ z : Real} (hσ : σ^2 = 1)
   rw [mem_levelSet_iff, levelArc_norm_sq hσ hz, sourceHeight_levelArc hσ hz]
   ring
 
-
 theorem levelSet_point_coordinates {q : E2} (hq : q ∈ levelSet) :
     q 0 = levelAbscissa (sourceHeight q) ∧
       (q 1)^2 = levelRadicand (sourceHeight q) := by
@@ -108,7 +102,6 @@ def outerOval : Set E2 :=
 
 def innerOval : Set E2 :=
   levelArc 1 '' Icc upperRoot 1 ∪ levelArc (-1) '' Icc upperRoot 1
-
 
 theorem levelSet_eq_outerOval_union_innerOval : levelSet = outerOval ∪ innerOval := by
   apply Subset.antisymm

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicConvexCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -48,9 +39,6 @@ private theorem plane_inclusion_projection {x : V3} (hx : x 0 = 0) :
     plane_inclusion (plane_projection x) = x := by
   ext i
   fin_cases i <;> simp [plane_projection, plane_inclusion, hx]
-
-
-
 
 theorem _root_.OpenPartialHomeomorph.intrinsicFrontier_iff_of_planar_halfplane
     (B : OpenPartialHomeomorph V3 V3)
@@ -188,8 +176,6 @@ theorem _root_.OpenPartialHomeomorph.intrinsicFrontier_iff_of_planar_halfplane
     exact ⟨hcoord.1, le_antisymm (le_of_not_gt (fun h => hf.2 (hbackward h))) hcoord.2⟩
   · intro hz
     exact ⟨hxS, fun hi => by simpa only [hz.2, lt_self_iff_false] using hforward hi⟩
-
-
 
 theorem _root_.OpenPartialHomeomorph.triangle_intrinsicFrontier_iff_of_halfplane
     (B : OpenPartialHomeomorph V3 V3)

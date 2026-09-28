@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeVectorGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +12,6 @@ namespace PoincareConjecture.M64BoundaryCone
 
 open M65Interior M65Boundary Proofs.M58
 
-
-
-
 theorem coneDiskCoordinates_mem {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
     {v : ℝ → C} {v0 : C} {r rho : ℝ} (hr : 0 < r)
     (h0 : v0 ∈ closedBall 0 rho)
@@ -38,9 +22,6 @@ theorem coneDiskCoordinates_mem {C : Type*} [NormedAddCommGroup C] [NormedSpace 
   rw [← polarCoordinates_preimage_halfRectangle] at hz
   exact coneCoordinates_mem_closedBall hr h0 (hvb hz.2) hz.1
 
-
-
-
 theorem coneDiskMap_observation {C M : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
     {P : C → M} {beta : C → ℝ} {obs : M → LoopPlane} {k : ℝ}
     {v : ℝ → C} {v0 : C} {r rho : ℝ} (hr : 0 < r)
@@ -50,10 +31,6 @@ theorem coneDiskMap_observation {C M : Type*} [NormedAddCommGroup C] [NormedSpac
     {x z : LoopPlane} (hz : z ∈ closedBall x r ∩ {z | x 1 ≤ z 1}) :
     obs (coneDiskMap P r v0 v x z) = angularPoint (k * coneDiskMap beta r v0 v x z) :=
   hobs _ (coneDiskCoordinates_mem hr h0 hvb hz)
-
-
-
-
 
 theorem coneDiskField_tangent {n m N : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

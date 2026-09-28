@@ -2,23 +2,12 @@ import Mathlib.Analysis.Calculus.IteratedDeriv.FaaDiBruno
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem HasDerivAt.piecewise_Iic {f g : ℝ → E} {c : ℝ} {v : E}
     (hf : HasDerivAt f v c) (hg : HasDerivAt g v c) (hfg : f c = g c) :
@@ -34,9 +23,6 @@ theorem HasDerivAt.piecewise_Iic {f g : ℝ → E} {c : ℝ} {v : E}
       simp [hfg]
     · simp [hle]
   simpa only [Iic_union_Ici, hasDerivWithinAt_univ] using hl.union hr
-
-
-
 
 theorem contDiffAt_piecewise_Iic_of_iteratedDeriv_eq
     {f g : ℝ → E} {c : ℝ} (k : ℕ)
@@ -92,8 +78,6 @@ theorem contDiffAt_piecewise_Iic_of_iteratedDeriv_eq
           fun _ hy => hy.hasFDerivAt⟩, ?_⟩
       exact (ContinuousLinearMap.toSpanSingletonLIE ℝ E).contDiff.contDiffAt.comp c hd
 
-
-
 theorem contDiffAt_infty_piecewise_Iic_of_iteratedDeriv_eq
     {f g : ℝ → E} {c : ℝ}
     (hf : ContDiffAt ℝ ∞ f c) (hg : ContDiffAt ℝ ∞ g c)
@@ -104,9 +88,6 @@ theorem contDiffAt_infty_piecewise_Iic_of_iteratedDeriv_eq
   exact contDiffAt_piecewise_Iic_of_iteratedDeriv_eq k
     (hf.of_le (by exact_mod_cast le_top (a := (k : ℕ∞))))
     (hg.of_le (by exact_mod_cast le_top (a := (k : ℕ∞)))) (fun i _ => hjet i)
-
-
-
 
 theorem iteratedDeriv_scomp_eq_zero_of_flat
     {G : ℝ → E} {phi : ℝ → ℝ} {c : ℝ}

@@ -1,17 +1,8 @@
 import Mathlib.Data.Set.Finite.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
-
-
 
 theorem finite_of_forall_finset_card_le {α : Type*} (s : Set α) (n : ℕ)
     (bound : ∀ A : Finset α, (↑A : Set α) ⊆ s → A.card ≤ n) :

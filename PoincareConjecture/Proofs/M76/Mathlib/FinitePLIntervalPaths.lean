@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteOrderedPartition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ open Set Geometry
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_interval_partition_four
     {f : ℝ → E} (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1)) :
@@ -71,10 +57,6 @@ theorem FinitePiecewiseAffineOn.exists_interval_partition_four
   have hleft' : i.val < j.val := hleft
   have hright' : j.val < i.val + 1 := hright
   omega
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_simplicial_interval_path
     {f : ℝ → E} (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1))
@@ -162,10 +144,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_simplicial_path_with_endpoints
     {s : Set E} {a b : E} (hs : IsFinitePLBallPair ℝ s {a, b}) (hab : a ≠ b) :

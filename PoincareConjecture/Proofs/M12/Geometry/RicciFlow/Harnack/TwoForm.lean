@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Harnack.TensorContractions
 
-
-
-
-
-
-
-
-
 open scoped BigOperators
 
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
-
 
 lemma skew_contraction_half_wedge (A : I → I → ℝ)
     (hA : ∀ i j, A i j = -A j i) (V W : I → ℝ) :
@@ -47,8 +38,6 @@ private lemma sum_four_swap_pairs (f : I → I → I → I → ℝ) :
   intro k _
   exact Finset.sum_comm_cycle
 
-
-
 lemma curvature_contraction_half_wedge (Rm : I → I → I → I → ℝ)
     (hfirst : ∀ i j k l, Rm i j k l = -Rm j i k l)
     (hlast : ∀ i j k l, Rm i j k l = -Rm i j l k) (V W : I → ℝ) :
@@ -78,8 +67,6 @@ lemma curvature_contraction_half_wedge (Rm : I → I → I → I → ℝ)
   exact (sum_four_swap_pairs _).symm
 
 variable [DecidableEq I]
-
-
 
 lemma curvature_contraction_half_wedge_trace (Rm : I → I → I → I → ℝ)
     (Ric : I → I → ℝ)
@@ -111,8 +98,6 @@ lemma curvature_contraction_half_wedge_trace (Rm : I → I → I → I → ℝ)
   intro k _
   rw [← Finset.sum_mul, ← Finset.sum_mul, hRic]
 
-
-
 lemma mixed_contraction_half_wedge_trace (P : I → I → I → ℝ)
     (hP : ∀ i j k, P i j k = -P j i k) (V : I → ℝ) :
     (∑ a, ∑ i, ∑ j, ∑ k,
@@ -132,8 +117,6 @@ lemma mixed_contraction_half_wedge_trace (P : I → I → I → ℝ)
   simp_rw [hcontract]
   rw [Finset.sum_comm]
   simp only [Finset.sum_mul]
-
-
 
 lemma matrix_quadratic_half_wedge_trace (S : I → I → ℝ)
     (P : I → I → I → ℝ) (Rm : I → I → I → I → ℝ) (Ric : I → I → ℝ)

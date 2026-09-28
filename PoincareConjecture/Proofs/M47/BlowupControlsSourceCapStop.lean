@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapIncluded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
 
 theorem source_search_cap_stop_persistence
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

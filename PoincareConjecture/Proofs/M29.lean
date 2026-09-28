@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M29GeneralizedDistance
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,15 +8,6 @@ open Filter
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
 
 theorem m29GeneralizedBoundedDistance
     (P : RepairedBoundedDistanceTheory.{u}) :

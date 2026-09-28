@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundCoefficientJets
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +26,6 @@ noncomputable local instance roundParameterBilinearGroup : NormedAddCommGroup Bi
 noncomputable local instance roundParameterBilinearSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 noncomputable def limitCanonicalRoundParameterField
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}
     {origin Q : ℝ} {I : Set ℝ} {W : Set L.sliceCarrier.carrier}
@@ -47,9 +35,6 @@ noncomputable def limitCanonicalRoundParameterField
   c • (M34.blowupCoordinateBilinear e q t ((extChartAt (𝓡 3) q) (phi x))).bilinearComp
     (fderiv ℝ ((extChartAt (𝓡 3) q) ∘ phi) x)
     (fderiv ℝ ((extChartAt (𝓡 3) q) ∘ phi) x)
-
-
-
 
 theorem limitCanonical_round_parameter_readout
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}
@@ -75,10 +60,6 @@ private local instance : ChartedSpace E3 G.limit.carrier.carrier := G.limit.carr
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 
 include P
-
-
-
-
 
 theorem limitCanonical_round_parameter_convergence
     (q : G.limit.sliceCarrier.carrier) (t c : ℝ) (ht : t ∈ J)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.Lipsch
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,30 +8,8 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem rawLocalSurgeryTopology : RawLocalSurgeryTopologyTheory.{u} :=
   ⟨M38.exists_raw_local_surgery_topology_data⟩
-
 
 theorem repairedLocalSurgeryTopology : RepairedLocalSurgeryTopologyTheory.{u} := by
   refine ⟨?_⟩

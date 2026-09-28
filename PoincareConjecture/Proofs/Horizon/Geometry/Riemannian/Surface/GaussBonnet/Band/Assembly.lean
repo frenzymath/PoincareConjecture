@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CoordinateFormula
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area.Triangulation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,7 +49,6 @@ noncomputable def alignedFrame (g : RiemannianMetric 2 S) (i : Bool) :
 
 omit [MeasurableSpace S] [BorelSpace S] [T3Space S] in
 
-
 noncomputable def outerCornerSum (g : RiemannianMetric 2 S) : ℝ :=
   let C := B.faceCoordinates hU hlo hhi
   g.cornerAngle (C !₂[a, 0])
@@ -78,9 +71,6 @@ theorem sum_face_angles_eq_outerCornerSum (hI : Icc a b ⊆ U) :
   dsimp only at h0 h2
   simp only [Fintype.sum_bool, Fin.sum_univ_three, outerCornerSum]
   linarith only [h0, h2]
-
-
-
 
 theorem gaussBonnet_band (hI : Icc a b ⊆ U) (D : LeviCivitaData g) :
     let C := B.faceCoordinates hU hlo hhi

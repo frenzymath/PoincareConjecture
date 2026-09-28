@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexSpherePolygonCut
 import PoincareConjecture.Proofs.M76.Mathlib.NestedPLBallRelativeInterior
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem interior_preimage_convex_sphere_disk (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)
@@ -39,10 +27,6 @@ theorem interior_preimage_convex_sphere_disk (K : SimplicialComplex ℝ E)
   have hint := hG.interior_preimage_subball hd hdG
   exact interior_preimage_val_of_open_neighborhood hGC (hdG.trans sdiff_subset)
     sdiff_subset hopen (sdiff_subset.trans hdG) sdiff_subset hint
-
-
-
-
 
 theorem isFinitePLBallPair_convex_sphere_disk_complement (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

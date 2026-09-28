@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

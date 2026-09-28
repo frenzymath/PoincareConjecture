@@ -2,20 +2,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.ContDiff.FTaylorSeries
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology Pointwise
 open Set
 
 namespace Poincare.Analysis
-
 
 theorem iteratedFDeriv_spatial_slice
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

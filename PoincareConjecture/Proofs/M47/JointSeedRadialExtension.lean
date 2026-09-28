@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_jointSeed_global_radial_extension
     {n : ℕ} {M : Type*} [TopologicalSpace M]

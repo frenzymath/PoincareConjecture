@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveAction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 noncomputable def backwardPathOfSquareCurveBetween
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {T a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
@@ -35,9 +25,6 @@ noncomputable def backwardPathOfSquareCurveBetween
     endpoint_time := hy ▸ (backwardPathOfSquareCurve hM12 ha hab α hα hclock).endpoint_time
     curve_start := hx
     curve_end := hy }
-
-
-
 
 theorem integral_squareCurveDensity_eq_action_between
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {T a b : ℝ} (ha : 0 ≤ a) (hab : a < b)

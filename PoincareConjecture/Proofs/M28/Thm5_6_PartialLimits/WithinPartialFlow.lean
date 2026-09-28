@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinSourceExhaustion
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SourceEmbeddings
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.ChosenChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem exists_partial_flow_limit_of_within_spacetime_bounds
     {n : ℕ} (U : ℕ → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))

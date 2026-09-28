@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M47CanonicalInduction
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem exists_component_regular_cylinder_ordinary
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

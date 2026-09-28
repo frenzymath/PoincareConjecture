@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,29 +15,19 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P slice metric T)
 
-
-
-
 def positiveNeckControl (i : Fin E.cap_count) (c : ℝ) :
     Set (slice E.tMinus).carrier :=
   E.limit_identify.inverse '' ((E.necks i).neck.coordinate_map ''
     (univ ×ˢ Icc 0 c))
 
-
-
 def regularControl (c : Fin E.cap_count → ℝ) :
     Set (slice E.tMinus).carrier :=
   E.retained_pre ∪ ⋃ i, positiveNeckControl E i (c i)
-
-
 
 theorem positiveNeckControl_subset_regular (i : Fin E.cap_count) (c : ℝ) :
     positiveNeckControl E i c ⊆ E.regular_limit := by
   rintro x ⟨y, _, rfl⟩
   exact E.limit_identify.inverse_image.subset ⟨y, mem_univ y, rfl⟩
-
-
-
 
 theorem positiveNeckControl_compact (i : Fin E.cap_count) {c : ℝ}
     (hc : c < (E.necks i).neck.epsilon⁻¹) :
@@ -64,9 +44,6 @@ theorem positiveNeckControl_compact (i : Fin E.cap_count) {c : ℝ}
     (isCompact_univ.prod isCompact_Icc).image_of_continuousOn
       ((E.necks i).neck.coordinate_map_smooth.continuousOn.mono hdom)
   exact hstrip.image (continuousOn_univ.mp E.limit_identify.inverse_smooth.continuousOn)
-
-
-
 
 theorem mem_positiveNeckControl_iff (i : Fin E.cap_count) {c : ℝ}
     (hc : c < (E.necks i).neck.epsilon⁻¹) {x : (slice E.tMinus).carrier} :
@@ -93,8 +70,6 @@ theorem mem_positiveNeckControl_iff (i : Fin E.cap_count) {c : ℝ}
     exact ⟨(E.necks i).neck.coordinate_inverse (E.limit_identify.map x),
       ⟨mem_univ _, hzero, hc⟩, M36.neck_coordinate_inverse _ hneck⟩
 
-
-
 theorem positiveNeckControl_contains_region (i : Fin E.cap_count) (c : ℝ) :
     E.limit_identify.inverse '' (E.necks i).neck.region 0 c ⊆
       positiveNeckControl E i c := by
@@ -102,8 +77,6 @@ theorem positiveNeckControl_contains_region (i : Fin E.cap_count) (c : ℝ) :
   refine ⟨y, ?_, rfl⟩
   exact ⟨(E.necks i).neck.coordinate_inverse y,
     ⟨mem_univ _, hy.2.1.le, hy.2.2.le⟩, M36.neck_coordinate_inverse _ hy.1⟩
-
-
 
 theorem positiveNeckControl_contains_central (i : Fin E.cap_count) {c : ℝ}
     (hc : 0 ≤ c) :
@@ -118,12 +91,8 @@ theorem positiveNeckControl_contains_central (i : Fin E.cap_count) {c : ℝ}
   rw [hz0]
   exact ⟨le_rfl, hc⟩
 
-
-
 theorem retained_pre_subset_regularControl (c : Fin E.cap_count → ℝ) :
     E.retained_pre ⊆ regularControl E c := subset_union_left
-
-
 
 theorem positiveNeckControl_subset_regularControl (c : Fin E.cap_count → ℝ)
     (i : Fin E.cap_count) :
@@ -131,22 +100,16 @@ theorem positiveNeckControl_subset_regularControl (c : Fin E.cap_count → ℝ)
   intro x hx
   exact Or.inr (mem_iUnion.mpr ⟨i, hx⟩)
 
-
-
 theorem regularControl_compact (c : Fin E.cap_count → ℝ)
     (hc : ∀ i, c i < (E.necks i).neck.epsilon⁻¹) :
     IsCompact (regularControl E c) :=
   E.retained_pre_compact.union
     (isCompact_iUnion fun i => positiveNeckControl_compact E i (hc i))
 
-
-
 theorem regularControl_subset_regular (c : Fin E.cap_count → ℝ) :
     regularControl E c ⊆ E.regular_limit :=
   union_subset E.retained_pre_subset
     (iUnion_subset fun i => positiveNeckControl_subset_regular E i (c i))
-
-
 
 theorem regularControl_contains_region (c : Fin E.cap_count → ℝ)
     (i : Fin E.cap_count) :
@@ -155,19 +118,12 @@ theorem regularControl_contains_region (c : Fin E.cap_count → ℝ)
   (positiveNeckControl_contains_region E i (c i)).trans
     (positiveNeckControl_subset_regularControl E c i)
 
-
-
-
 theorem regularControl_contains_central (c : Fin E.cap_count → ℝ)
     (i : Fin E.cap_count) (hc : 0 ≤ c i) :
     E.limit_identify.inverse '' (E.necks i).neck.central_sphere ⊆
       regularControl E c :=
   (positiveNeckControl_contains_central E i hc).trans
     (positiveNeckControl_subset_regularControl E c i)
-
-
-
-
 
 theorem regularControl_contains_neck_region (c : Fin E.cap_count → ℝ)
     (i : Fin E.cap_count) :
@@ -185,9 +141,6 @@ theorem regularControl_contains_neck_region (c : Fin E.cap_count → ℝ)
     exact ⟨(E.necks i).neck.coordinate_inverse y,
       ⟨mem_univ _, le_of_not_gt hneg, hy.2.2.le⟩,
       M36.neck_coordinate_inverse _ hy.1⟩
-
-
-
 
 theorem regularControl_contains_regular_neck_region (c : Fin E.cap_count → ℝ)
     (i : Fin E.cap_count) :

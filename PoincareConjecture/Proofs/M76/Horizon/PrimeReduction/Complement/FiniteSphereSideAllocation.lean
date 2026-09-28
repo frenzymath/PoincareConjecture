@@ -1,22 +1,10 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem IsPreconnected.subset_rim_complement_or_complement
     {s A r : Set X} (hs : IsPreconnected s) (hA : IsClosed A)
@@ -40,13 +28,9 @@ theorem IsPreconnected.subset_rim_complement_or_complement
 
 namespace Set
 
-
 theorem closure_subset_complement_of_open_disjoint
     {U O : Set X} (hO : IsOpen O) (hmiss : Disjoint O U) : closure U ⊆ Oᶜ :=
   closure_minimal (fun _ hx ho => disjoint_left.mp hmiss ho hx) hO.isClosed_compl
-
-
-
 
 theorem pairwise_disjoint_excluded_sides {ι : Type*}
     (A r : ι → Set X) {U : Set X}
@@ -70,9 +54,6 @@ theorem pairwise_disjoint_excluded_sides {ι : Type*}
   · obtain ⟨x,hxr⟩ := hrne i
     exact False.elim (hclosure j (hrattach i hxr) (hinside (hrA i hxr)))
   · exact disjoint_left.mpr fun x hx hj => houtside hx hj
-
-
-
 
 theorem exists_pairwise_disjoint_excluded_side_family {ι : Type*}
     (A : ι → Bool → Set X) (r : ι → Set X) {U : Set X}

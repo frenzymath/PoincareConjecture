@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddedCurvatureJetSpatial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem embeddedCurvature_second_spatial_derivative_bound
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

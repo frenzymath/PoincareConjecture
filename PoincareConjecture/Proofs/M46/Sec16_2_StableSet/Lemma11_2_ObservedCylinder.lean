@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CutoffFloor
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_ObservedWindow
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallRadiusAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 theorem LowScalarCylinderProducer.cutoff_mono {K : MetricSurgeryConstants}
     {p : SurgeryParameterPrefix K} {rNext cutoff smaller rho : ℝ}
     (produce : LowScalarCylinderProducer.{u} p rNext cutoff rho)
@@ -31,9 +20,6 @@ theorem LowScalarCylinderProducer.cutoff_mono {K : MetricSurgeryConstants}
     LowScalarCylinderProducer.{u} p rNext smaller rho := by
   intro F O inputs D hnew hlow
   exact produce F O (inputs.cutoff_mono hsmall) D hnew hlow
-
-
-
 
 theorem lowScalarCylinder_of_observed_birth_bounds
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})
@@ -70,8 +56,6 @@ theorem lowScalarCylinder_of_observed_birth_bounds
       exact (inputs.overlap t hw).trans hcutoff
     exact (cap_birth_floor_gt_four_inv_sq F hw.1.1 hc hr hdelta).trans_le
       (hbirth t hT hw.1 hw.2.1 i x hx)
-
-
 
 theorem lowScalarCylinderProducer_of_birth_bounds
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

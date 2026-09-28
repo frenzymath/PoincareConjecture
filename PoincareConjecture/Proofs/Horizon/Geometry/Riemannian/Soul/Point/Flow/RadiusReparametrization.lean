@@ -3,18 +3,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +13,6 @@ namespace Poincare.Topology
 variable {Theta A B : Type*} [TopologicalSpace Theta]
   [LinearOrder A] [TopologicalSpace A] [OrderTopology A]
   [LinearOrder B] [TopologicalSpace B] [OrderTopology B]
-
-
 
 theorem continuous_monotoneFamily_inverse (f : Theta × A → B)
     (hf : Continuous f)
@@ -58,8 +44,6 @@ theorem continuous_monotoneFamily_inverse (f : Theta × A → B)
     rw [heq]
     exact isOpen_lt continuous_snd hslice
 
-
-
 def monotoneFamilyHomeomorph (f : Theta × A → B) (hf : Continuous f)
     (hmono : ∀ theta, StrictMono (fun a => f (theta, a)))
     (hsurj : ∀ theta, Function.Surjective (fun a => f (theta, a))) :
@@ -86,8 +70,6 @@ def monotoneFamilyHomeomorph (f : Theta × A → B) (hf : Continuous f)
     (hmono : ∀ theta, StrictMono (fun a => f (theta, a)))
     (hsurj : ∀ theta, Function.Surjective (fun a => f (theta, a))) (z : Theta × B) :
     ((monotoneFamilyHomeomorph f hf hmono hsurj).symm z).1 = z.1 := rfl
-
-
 
 abbrev positiveRadiusReparametrization
     (f : Theta × Ioi (0 : ℝ) → Ioi (0 : ℝ)) (hf : Continuous f)

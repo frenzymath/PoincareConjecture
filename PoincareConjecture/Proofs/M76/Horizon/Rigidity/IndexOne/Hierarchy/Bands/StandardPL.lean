@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.S
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBandCarrier
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,7 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
-
 
 noncomputable def standardMeridianBandAffineLift (a b : ℝ) :
     (V2 × ℝ) →ᴬ[ℝ] ((Fin 1 ⊕ Fin 2) → ℝ) :=
@@ -45,8 +37,6 @@ theorem standardMeridianBandAffineLift_projection (a b : ℝ) (z : V2 × ℝ) :
     · simp [standardMeridianBandAffineLift]
     · simp [standardMeridianBandAffineLift]
       ring
-
-
 
 theorem polyhedralPL_standardMeridianBandParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}

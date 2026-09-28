@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.SourceDiskPhases
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.SourceFamilyInstallation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -27,9 +18,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
-
 
 structure HamiltonZeroTerminalThirdPhaseData {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
@@ -49,7 +37,6 @@ structure HamiltonZeroTerminalThirdPhaseData {ι : Type*}
           (∀ z : D, k z = (H z : X0)) ∧ k '' D = T i ∧
           ∀ z : D, k z ∈ frontier R ↔ (z : V2) ∈ Q
 
-
 def HamiltonZeroTerminalThirdHierarchy {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
     (phi : C(H0, H0)) (R : Set X0) : Prop :=
@@ -63,8 +50,6 @@ def HamiltonZeroTerminalThirdHierarchy {ι κ : Type*}
       Nonempty (phi.HomotopyRel psi B0) ∧ Nonempty ((ContinuousMap.id H0).HomotopyRel psi B0) ∧
       Nonempty ((hamiltonZeroAmbientMap phi).HomotopyRel (hamiltonZeroAmbientMap psi) (interior R)ᶜ) ∧
       HamiltonZeroTerminalThirdPhaseData e R psi a b
-
-
 
 def HamiltonZeroThirdComponentHierarchy {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)

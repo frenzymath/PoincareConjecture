@@ -4,16 +4,6 @@ import Mathlib.MeasureTheory.Constructions.HaarToSphere
 import Mathlib.MeasureTheory.Function.LpSpace.DomAct.Continuous
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitAlternativesTerminalCommon
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSlabs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitAlternatives_common_slab_of_cap_exclusion
     (S : RepairedControlledSchedulesData.{u})

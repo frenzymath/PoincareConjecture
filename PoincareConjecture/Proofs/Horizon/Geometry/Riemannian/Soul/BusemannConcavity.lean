@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_squared_distance_quadratic_concave
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -121,8 +109,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [MetricSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem concaveOn_busemann_of_nonnegativeSectional
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

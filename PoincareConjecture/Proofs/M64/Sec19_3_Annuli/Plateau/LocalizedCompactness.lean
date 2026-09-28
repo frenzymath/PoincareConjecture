@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakCompactness
 import PoincareConjecture.Proofs.M03.Existence.EuclideanRellichNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +11,6 @@ open scoped ContDiff Topology ENNReal
 namespace PoincareConjecture
 
 open EuclideanTranslationNative EuclideanMollificationNative EuclideanRellichNative
-
-
-
 
 theorem m64Annulus_localized_l2_isCompact
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ j, ContDiff ℝ 1 (f j))

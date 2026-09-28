@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ExactTwoArcCorner
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerAnnularSide
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,10 +10,6 @@ open scoped Topology ContDiff Manifold Bundle Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_annular_corner_chart
     {alpha beta : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha)

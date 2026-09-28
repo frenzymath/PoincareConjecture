@@ -15,7 +15,6 @@ local notation "P2" => (ℝ × ℝ)
 
 open Classical in
 
-
 theorem ComponentBranchModel.exists_local_sheet_interval
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -250,8 +249,6 @@ theorem ComponentBranchModel.exists_local_sheet_interval
     · simpa only [inter_comm] using hradii.2
 
 open Classical in
-
-
 
 theorem ComponentBranchModel.exists_raw_edge_joint_intervals
     {X ι : Type*} [TopologicalSpace X]

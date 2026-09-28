@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelThirdJets
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatUnweighted
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem heatDuhamel_iteratedFDeriv_gain (k : ℕ)
     {F : Type u} [NormedAddCommGroup F] [NormedSpace ℝ F]

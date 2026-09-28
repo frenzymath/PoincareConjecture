@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ private theorem annulusPoint_coordinates (p : LoopPlane) :
     annulusPoint (p 0) (p 1) = p := by
   ext i
   fin_cases i <;> rfl
-
-
-
 
 theorem m64_periodic_rectangle_lipschitz_translate
     {Y : Type*} [PseudoEMetricSpace Y] {f : LoopPlane → Y}
@@ -55,9 +42,6 @@ theorem m64_periodic_rectangle_lipschitz_translate
   intro p hp q hq
   have h := hLip (hmem hp) (hmem hq)
   simpa only [heq, edist_sub_right] using h
-
-
-
 
 theorem m64_periodic_rectangle_locally_lipschitz
     {Y : Type*} [PseudoEMetricSpace Y] {f : LoopPlane → Y}

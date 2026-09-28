@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_IndexAlgebra
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexJacobi
 import PoincareConjecture.Proofs.M14.Sec6_4_SecondVariation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -26,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem variation_index_density_affine
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -50,9 +37,6 @@ theorem variation_index_density_affine
   simp only [pullbackIndexPairDensity]
   rw [hfield s hs, hderiv]
   exact horizontalIndexPairDensity_quadratic R hM04 hM12 hs (M14VariationField V s) (Z s) _ _ c
-
-
-
 
 theorem variation_index_form_affine
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -97,9 +81,6 @@ theorem variation_index_form_affine
       rw [intervalIntegral.integral_add (hidx.add (hVZ.const_mul _)) (hZZ.const_mul _),
         intervalIntegral.integral_add hidx (hVZ.const_mul _),
         intervalIntegral.integral_const_mul, intervalIntegral.integral_const_mul]
-
-
-
 
 theorem index_pair_zero_of_affine_variations
     (hCoordinates : M12MetricPredecessors.{0} n)

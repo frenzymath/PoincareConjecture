@@ -2,14 +2,6 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Sheaves.EtaleSpace
 import Mathlib.Topology.Sheaves.LocalPredicate
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open CategoryTheory TopologicalSpace Opposite Filter
@@ -20,8 +12,6 @@ namespace Poincare.Topology
 universe u v
 
 variable {X : TopCat.{max u v}} {T : X → Type v} (P : TopCat.LocalPredicate T)
-
-
 
 theorem exists_globalSection_of_continuous_etaleSection
     (l : C(X, (TopCat.subsheafToTypes P).presheaf.EtaleSpace))
@@ -80,8 +70,6 @@ theorem exists_globalSection_of_continuous_etaleSection
   apply Subtype.ext
   funext y
   exact (ha y U y.property g (hg y y.property).symm).symm
-
-
 
 theorem exists_globalSection_of_locally_bijective_germ
     [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]

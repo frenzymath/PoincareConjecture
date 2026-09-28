@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M49.Lemma17_12_EventHistory
 import PoincareConjecture.Proofs.M49.Mathlib.ExponentialJumpBalance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ open scoped Topology ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M50
-
-
-
 
 theorem weighted_constant_losses_le_initial
     (F : SurgeryFlowData.{u}) (C : RepairedVolumeLossControls F)

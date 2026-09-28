@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorLocalLipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem m64_loopPlane_vertical_basis_zero (x : LoopPlane) :
     mfderiv (𝓡 2) 𝓘(ℝ, ℝ) (fun p : LoopPlane => p 0) x
       (EuclideanSpace.basisFun (Fin 2) ℝ 1) = 0 := by
@@ -35,9 +24,6 @@ theorem m64_loopPlane_vertical_basis_zero (x : LoopPlane) :
   rw [hderiv]
   change (EuclideanSpace.basisFun (Fin 2) ℝ 1) 0 = 0
   simp [EuclideanSpace.basisFun_apply]
-
-
-
 
 theorem m64_loopPlane_horizontal_basis_one (x : LoopPlane) :
     mfderiv (𝓡 2) 𝓘(ℝ, ℝ) (fun p : LoopPlane => p 1) x
@@ -51,8 +37,6 @@ theorem m64_loopPlane_horizontal_basis_one (x : LoopPlane) :
   simp [EuclideanSpace.basisFun_apply]
 
 omit [T2Space M] in
-
-
 
 theorem m64_interpolator_vertical_column_of_speed
     {g : RiemannianMetric 3 M} {D : LeviCivitaData g}

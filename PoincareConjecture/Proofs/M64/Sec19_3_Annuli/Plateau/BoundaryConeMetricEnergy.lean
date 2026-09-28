@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +8,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Observed_replacement_energy_le_norm {m : ℕ} {M : Type*} [TopologicalSpace M]
     (e : M → EuclideanSpace ℝ (Fin m)) (hei : IsEmbedding e)

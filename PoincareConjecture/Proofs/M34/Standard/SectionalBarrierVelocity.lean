@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.VariableSectionalDiffusion
 import PoincareConjecture.Proofs.M04.SectionalNullReaction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def sectionalRayleighVelocity (D : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) : ℝ :=
   (D.tensorLaplacian D.riemannEvaluation x ![u, v, u, v] +
@@ -34,8 +23,6 @@ noncomputable def sectionalRayleighVelocity (D : LeviCivitaData g) (x : M)
     D.curvatureTensor x u v u v *
       (-2 * D.ricci x u u * g.inner x v v - 2 * g.inner x u u * D.ricci x v v +
         4 * D.ricci x u v * g.inner x u v) / (metricGram g x u v) ^ 2
-
-
 
 theorem hasDerivWithinAt_sectionalRayleighVelocity {J : Set ℝ}
     (F : RicciFlow n M J) (t : ℝ) (ht : t ∈ J) (x : M)
@@ -50,9 +37,6 @@ end General
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem sectionalRayleighVelocity_ge_barrier
     (D : LeviCivitaData g) {h : M → ℝ} (hh : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ h)

@@ -1,19 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Gradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
-
-
 
 theorem PoincareConjecture.LeviCivitaData.rescaled_smooth_strainer_pair_bounds
     {n k : ℕ} {M : Type*} [TopologicalSpace M]

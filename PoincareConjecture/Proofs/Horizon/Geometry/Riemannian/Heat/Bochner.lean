@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ri
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -23,8 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_normSq_gradient_normSq_le (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) :
@@ -50,7 +40,6 @@ theorem gradient_normSq_gradient_normSq_le (D : LeviCivitaData g)
         (D.connection (D.gradient f) x (g.orthonormalBasis x i))
   nlinarith only [h]
 
-
 theorem heat_square_identity (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t : ℝ}
     (hF : ∀ x, ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x))
@@ -67,7 +56,6 @@ theorem heat_square_identity (D : LeviCivitaData g)
   simp only [Pi.pow_def] at hd
   rw [hd.deriv, D.laplacian_sq hs]
   norm_num
-
 
 theorem heat_bochner_identity (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t : ℝ}
@@ -88,7 +76,6 @@ theorem heat_bochner_identity (D : LeviCivitaData g)
   rw [(D.hasDerivAt_gradient_normSq_of_time_derivative (hF x) hheat).deriv,
     D.bochner_identity hs]
   ring
-
 
 theorem heat_gradient_normSq_subsolution (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t : ℝ} {k : ℝ}
@@ -111,9 +98,6 @@ theorem heat_gradient_normSq_subsolution (D : LeviCivitaData g)
       (g.orthonormalBasis x i) (g.orthonormalBasis x j)) ^ 2 :=
     Finset.sum_nonneg (fun i _ => Finset.sum_nonneg (fun j _ => sq_nonneg _))
   nlinarith
-
-
-
 
 theorem heat_regularized_gradient_norm_subsolution (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t k ε : ℝ} (hk : 0 ≤ k) (hε : 0 < ε)
@@ -194,8 +178,6 @@ theorem heat_regularized_gradient_norm_subsolution (D : LeviCivitaData g)
   nlinarith only [htime, hlap, hBochner, hgradle, hRic,
     congrArg (fun z => 2 * k * z) (hwsq t x), mul_nonneg hk hε.le]
 
-
-
 theorem heat_gradient_normSq_subsolution_of_abs_sectionalCurvature_le [T2Space M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ} {t K : ℝ}
     (hF : ∀ x, ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x))
@@ -214,7 +196,6 @@ theorem heat_gradient_normSq_subsolution_of_abs_sectionalCurvature_le [T2Space M
   simpa only [neg_mul] using
     D.ricci_quadratic_lower_bound_of_abs_sectionalCurvature_le x K hsec
       (D.gradient (fun y => F (t, y)) x)
-
 
 theorem weighted_heat_gradient_normSq_subsolution [T2Space M]
     (D : LeviCivitaData g) {F : ℝ × M → ℝ} {t K : ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.TensorLaplacianCommutator
 import PoincareConjecture.Proofs.M04.FlowRiemannRegularity
 import PoincareConjecture.Proofs.M04.RiemannEvolutionInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -179,6 +171,5 @@ theorem hasDerivAt_iteratedRiemann_evolution (F : RicciFlow n M J)
     simp only [tensorHeatCorrection, Fin.cons_zero, Fin.cons_succ]
     dsimp only [D, U, S, L] at hsub hspace ⊢
     linarith only [hsub, hspace]
-
 
 end PoincareConjecture.M04

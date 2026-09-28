@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusChartCollar
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.AnnulusJoin
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +9,6 @@ open Set
 open scoped Topology Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture.M64
-
-
 
 theorem exists_disjoint_chart_boundary_annulus
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.L
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SlabNormalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.GeometricParameters
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -132,7 +122,6 @@ theorem exists_eventually_annular_induction_geometry_at_small_radii
   change a ≤ F x ∧ F x ≤ b
   dsimp only [a, b, F]
   constructor <;> nlinarith only [hlo', hhi', happrox.1, happrox.2]
-
 
 theorem exists_eventually_annular_induction_geometry_of_sectional_pointed_limit
     {m : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

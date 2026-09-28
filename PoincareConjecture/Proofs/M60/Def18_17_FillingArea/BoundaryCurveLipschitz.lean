@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60Curve_edist_le_of_speed_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -54,8 +43,6 @@ theorem m60Curve_edist_le_of_speed_bound
     rw [heq, abs_sub_comm]
     exact hordered t s hts
 
-
-
 theorem m60_exists_periodicLoop_lipschitz_bound
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -72,8 +59,6 @@ theorem m60_exists_periodicLoop_lipschitz_bound
   intro t
   exact (hB (mem_range_self t)).trans (le_max_left _ _)
 
-
-
 theorem m60AngularPoint_lipschitz : LipschitzWith 1 Proofs.M58.angularPoint := by
   apply lipschitzWith_of_nnnorm_deriv_le
     (fun t => (Proofs.M58.hasDerivAt_angularPoint t).differentiableAt)
@@ -83,9 +68,6 @@ theorem m60AngularPoint_lipschitz : LipschitzWith 1 Proofs.M58.angularPoint := b
   change ‖Proofs.M58.angularVector t‖ ≤ 1
   simp [Proofs.M58.angularVector, EuclideanSpace.norm_eq, Fin.sum_univ_two,
     Real.sin_sq_add_cos_sq]
-
-
-
 
 theorem m60Disk_angular_trace_bound
     {M : Type u} [TopologicalSpace M]

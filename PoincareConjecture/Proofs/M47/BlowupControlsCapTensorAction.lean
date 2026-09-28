@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTensorNormAlgebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -27,8 +18,6 @@ theorem cap_array_vector_norm_sq (f : ι → E₃) :
   intro i _
   exact (cap_array_norm_sq (fun j => f i j)).symm
 
-
-
 theorem cap_array_operator_action_norm_le (L : E₃ →L[ℝ] E₃) (f : ι → E₃) :
     ‖(WithLp.toLp 2 (fun p : ι × Fin 3 => L (f p.1) p.2) :
       EuclideanSpace ℝ (ι × Fin 3))‖ ≤
@@ -43,7 +32,6 @@ theorem cap_array_operator_action_norm_le (L : E₃ →L[ℝ] E₃) (f : ι → 
     (mul_nonneg (norm_nonneg L) (norm_nonneg (f i)))).mpr (L.le_opNorm (f i))
   simpa only [mul_pow] using h
 
-
 theorem cap_array_pairing_abs_le (f g : ι → ℝ) :
     |∑ i, f i * g i| ≤
       ‖(WithLp.toLp 2 f : EuclideanSpace ℝ ι)‖ *
@@ -51,8 +39,6 @@ theorem cap_array_pairing_abs_le (f g : ι → ℝ) :
   simpa only [PiLp.inner_apply, Real.inner_apply] using
     abs_real_inner_le_norm (WithLp.toLp 2 f : EuclideanSpace ℝ ι)
       (WithLp.toLp 2 g : EuclideanSpace ℝ ι)
-
-
 
 theorem cap_array_trace_norm_le (T : ι → Fin 3 → Fin 3 → ℝ) :
     ‖(WithLp.toLp 2 (fun a => ∑ i, T a i i) : EuclideanSpace ℝ ι)‖ ≤

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MinimizerInjective
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set
 open scoped Topology ENNReal NNReal
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_subarc_replacement
     {X : Type*} [MetricSpace X] {K : Set X} {γ τ : ℝ → X} {L a b : ℝ}
@@ -83,10 +67,6 @@ theorem m64Intrinsic_subarc_replacement
     simp only [univ_inter, hva, eVariationOn.eq_of_eqOn hmiddle] at hfirst
     simpa only [univ_inter, ← hfirst, hvb] using hsecond.symm
 
-
-
-
-
 theorem m64Intrinsic_constrained_minimizer_subarc
     {X : Type*} [MetricSpace X] {K : Set X} {γ : ℝ → X} {L : ℝ}
     (hL : 0 ≤ L) (hc : ContinuousOn γ (Icc 0 L))
@@ -117,10 +97,6 @@ theorem m64Intrinsic_constrained_minimizer_subarc
   rw [hsplit, ENNReal.add_le_add_iff_right ENNReal.ofReal_ne_top,
     ENNReal.add_le_add_iff_left ENNReal.ofReal_ne_top] at hmin'
   exact hmin'
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_subarc_unitInterval
     {X : Type*} [MetricSpace X] {K : Set X} {γ : ℝ → X} {L : ℝ}

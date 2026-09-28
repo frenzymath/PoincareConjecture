@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveInteriorCut
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +9,6 @@ namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 def projectiveCollarReflection :
     Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞ where
   toEquiv := (Equiv.refl UnitTwoSphere).prodCongr (Equiv.neg ℝ)
@@ -25,7 +17,6 @@ def projectiveCollarReflection :
 
 variable {Q : Type*} [TopologicalSpace Q] [ChartedSpace StandardCapSpace Q]
   (C : SmoothProjectiveDoubleModel Q)
-
 
 noncomputable def reverseProjectiveDouble : SmoothProjectiveDoubleModel Q := by
   let r := projectiveCollarReflection
@@ -81,8 +72,6 @@ noncomputable def reverseProjectiveDouble : SmoothProjectiveDoubleModel Q := by
   · rintro _ ⟨⟨z, s⟩, ⟨_, hs⟩, rfl⟩
     exact C.collar_negative ⟨(z, -s),
       ⟨mem_univ _, by constructor <;> linarith [hs.1, hs.2]⟩, rfl⟩
-
-
 
 theorem exists_projectiveDouble_second_interior_cut [T2Space Q] {O : Set Q}
     (hO : IsOpen O) (hSO : C.sphere ⊆ O) :

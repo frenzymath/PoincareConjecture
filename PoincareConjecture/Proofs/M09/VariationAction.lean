@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothSquareAction
 import PoincareConjecture.Proofs.M09.ActionCongruence
 import PoincareConjecture.Proofs.M09.PathComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

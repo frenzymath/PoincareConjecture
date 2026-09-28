@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Nor
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -63,8 +52,6 @@ private theorem normalize_circle_in_plane {v : E3} (hv : ‖v‖ = 1)
     exact ⟨q, (J.symm_apply_apply _).symm⟩
   · rintro ⟨q, rfl⟩
     exact ⟨J (γ q), mem_range_self q, J.symm_apply_apply _⟩
-
-
 
 theorem exists_innermost_regular_level_disk_of_smooth
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -172,7 +159,6 @@ theorem exists_innermost_regular_level_disk_of_smooth
     change c • v + (A i x : E3) = f z
     rw [heq]
     exact hdecomp.symm
-
 
 theorem exists_innermost_regular_level_disk
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

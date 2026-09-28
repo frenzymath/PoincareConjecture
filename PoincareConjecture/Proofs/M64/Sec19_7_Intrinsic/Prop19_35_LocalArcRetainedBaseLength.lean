@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalArcLossBounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_local_retained_short_base_length_lower
     (N : IntrinsicAnnulus) {l u : ℝ} (hlu : l ≤ u) {alpha R : ℝ} {E : Set ℝ}

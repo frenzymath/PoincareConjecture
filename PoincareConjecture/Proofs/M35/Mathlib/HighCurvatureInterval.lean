@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M35.Mathlib.ReciprocalBlowup
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
-
-
 
 theorem exists_last_threshold_crossing
     {f : ℝ → ℝ} {a b H s : ℝ} (hcont : ContinuousOn f (Ico a b))
@@ -45,8 +35,6 @@ theorem exists_last_threshold_crossing
   · by_contra hfu
     exact (not_le_of_gt hu.1) (hlast ⟨⟨hc.1.1.trans hu.1.le, hur⟩, not_lt.mp hfu⟩)
   · exact htail ⟨hr₀r.trans (lt_of_not_ge hur), hu.2⟩
-
-
 
 theorem inv_mul_time_sub_le_of_eventual_quadratic_bound
     {f f' : ℝ → ℝ} {a b A H t : ℝ} (hA : 0 < A) (hH : 0 < H)

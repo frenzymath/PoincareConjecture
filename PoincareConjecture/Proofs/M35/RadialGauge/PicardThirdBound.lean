@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.PicardHessian
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessian
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelThirdJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -27,9 +19,6 @@ noncomputable local instance m35PicardThirdBoundLocal1 :
     NormedAddCommGroup D := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35PicardThirdBoundLocal2 :
     NormedSpace ℝ D := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem gaugePicard_weighted_third_derivative_bound
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B B1 B2 L1 M2 C2 H : ℝ}

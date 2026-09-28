@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedLinkSectionNonisolation
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedSectionNonisolation
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroChargeRegularPresentation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +12,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.mem_closure_zero_section_sdiff_of_both_signs
     {s : Set E} {D : Set F} {e : s ≃ₜ frontier D} (he : e.IsFinitePL)
@@ -49,11 +35,6 @@ theorem IsFinitePL.mem_closure_zero_section_sdiff_of_both_signs
   intro x hx
   have hxK : x ∈ K.space ∩ {y | A y = 0} := ⟨hKs.symm.subset hx.1, hx.2⟩
   simpa only [hKs] using halign.mem_closure_zero_section_sdiff_singleton hacc hxK
-
-
-
-
-
 
 theorem IsFinitePL.hasDisjointPolygonPresentation_of_zero_charge_signs
     {s : Set E} {D : Set F} {e : s ≃ₜ frontier D} (he : e.IsFinitePL)

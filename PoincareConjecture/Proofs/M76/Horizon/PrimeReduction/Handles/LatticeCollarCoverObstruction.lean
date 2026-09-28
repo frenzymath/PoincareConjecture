@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardSphereLift
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CoverSections
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

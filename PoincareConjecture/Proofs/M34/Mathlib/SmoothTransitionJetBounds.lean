@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace Real.smoothTransition
-
-
 
 theorem one_sub_eq (x : ℝ) :
     1 - smoothTransition x = smoothTransition (1 - x) := by
@@ -27,9 +16,6 @@ theorem one_sub_eq (x : ℝ) :
   rw [show 1 - (1 - x) = x by ring, add_comm (expNegInvGlue (1 - x)) (expNegInvGlue x)]
   field_simp
   ring
-
-
-
 
 theorem uniform_spatial_jet_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -76,9 +62,6 @@ theorem uniform_spatial_jet_bound
         rw [(heq.iteratedFDeriv (𝕜 := ℝ) (m + 1)).eq_of_nhds,
           iteratedFDeriv_const_of_ne (Nat.succ_ne_zero m), Pi.zero_apply, norm_zero]
         exact zero_le_one.trans (le_max_right _ _)
-
-
-
 
 theorem uniform_spatial_weight_jets
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

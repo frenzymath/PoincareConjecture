@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawTimePrincipal
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawPrincipalExtension
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalFormOperator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -54,8 +45,6 @@ theorem rawCutoffPrincipalCoefficient_difference_le (g h : RiemannianMetric n V)
     have heps : ‖(rawCoordinateGram g x)⁻¹ i j - (rawCoordinateGram h x)⁻¹ i j‖ ≤ ε :=
       he.trans (hdiff x hxs)
     exact (mul_le_mul (hη1 x) heps (norm_nonneg _) zero_le_one).trans_eq (one_mul _)
-
-
 
 theorem exists_raw_small_principal_form_perturbation {J : Set ℝ} (F : RicciFlow n V J)
     {a b : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J)

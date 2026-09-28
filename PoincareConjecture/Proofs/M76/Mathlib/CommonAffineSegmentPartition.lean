@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteOrderedPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_common_affine_segment_partition
     {f : E → F} {s : Set E} (hf : FinitePiecewiseAffineOn f s)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedPullbackTrace
 import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedHarnackIdentity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem adaptedPullbackIndex_harnack (hM04 : RicciFlowCurvatureTheory.{u})
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

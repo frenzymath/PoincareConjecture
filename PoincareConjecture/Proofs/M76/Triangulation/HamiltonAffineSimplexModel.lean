@@ -5,25 +5,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexRelativeInteriorCoordinates
 import Mathlib.LinearAlgebra.Projection
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_affine_simplex_cube_model
     (s : Finset (Fin 3 → ℝ)) (hs : s.Nonempty)

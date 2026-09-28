@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.OpenRecut
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.ModelTransport
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.AxialCompression
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem axialMap_eqOn_inner_recut (N : CapCertificate g) {β : ℝ → ℝ}
     (hfix : ∀ s, s ≤ 0 → β s = s) :
     EqOn (N.end_neck.axialMap β) id
@@ -41,8 +29,6 @@ theorem axialMap_eqOn_inner_recut (N : CapCertificate g) {β : ℝ → ℝ}
   · rw [N.end_neck.axialMap_of_mem β hxE.1, hfix _ hxE.2.2.le]
     exact N.end_neck.coordinate_map_coordinate_inverse hxE.1
 
-
-
 theorem contMDiffAt_axialMap_closed_core (N : CapCertificate g) {β : ℝ → ℝ}
     (hfix : ∀ s, s ≤ 0 → β s = s) {x : M} (hx : x ∈ N.closed_core) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (N.end_neck.axialMap β) x := by
@@ -51,9 +37,6 @@ theorem contMDiffAt_axialMap_closed_core (N : CapCertificate g) {β : ℝ → �
   apply contMDiffAt_id.congr_of_eventuallyEq
   filter_upwards [hW.mem_nhds (Or.inl hx)] with y hy
   exact N.axialMap_eqOn_inner_recut hfix hy
-
-
-
 
 noncomputable def recutDiffeomorph_m28 (N : CapCertificate g) {b : ℝ}
     (hb : 0 < b) (hbA : b < N.epsilon⁻¹) (e : ℝ ≃ₜ ℝ)
@@ -151,8 +134,6 @@ noncomputable def recutDiffeomorph_m28 (N : CapCertificate g) {b : ℝ}
     · exact N.contMDiffAt_axialMap_closed_core hfixinv
         (N.closed_core_eq_complement_end.symm ▸ And.intro (htargetV hx) hxE)
 
-
-
 noncomputable def recutModelEquivalence (N : CapCertificate g) {b : ℝ}
     (hb : 0 < b) (hbA : b < N.epsilon⁻¹) (e : ℝ ≃ₜ ℝ)
     (he : ContDiff ℝ ∞ e) (hei : ContDiff ℝ ∞ e.symm)
@@ -161,9 +142,6 @@ noncomputable def recutModelEquivalence (N : CapCertificate g) {b : ℝ}
     CapModelEquivalence N.model_kind N.puncture
       (N.closed_core ∪ N.end_neck.region (-N.epsilon⁻¹) b) :=
   N.model_equivalence.transport_m28 (N.recutDiffeomorph_m28 hb hbA e he hei himage hfix) rfl
-
-
-
 
 theorem eventually_exists_smooth_precompact_recut (N : CapCertificate g)
     {δ : ℕ → ℝ} (hδ : Tendsto δ atTop (𝓝 0)) (hδpos : ∀ᶠ k in atTop, 0 < δ k) :

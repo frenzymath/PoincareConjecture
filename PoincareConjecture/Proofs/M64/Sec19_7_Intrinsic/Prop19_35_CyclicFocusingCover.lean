@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_WeightedFocusingCover
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -98,10 +83,6 @@ private theorem exists_periodic_weighted_projection
       _ = ∫ x in B, f x := by
         rw [hshift]
         exact integral_inter_add_sdiff measurableSet_Icc hBi
-
-
-
-
 
 theorem m64Intrinsic_exists_cyclic_weighted_focusing_cover
     {f g : ℝ → ℝ} {P A τ : ℝ}

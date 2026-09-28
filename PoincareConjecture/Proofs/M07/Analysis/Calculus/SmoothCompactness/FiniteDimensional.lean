@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Diagonal
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.DomainChange
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis.Calculus
-
-
-
 
 theorem exists_common_smoothSubsequenceExtraction_finiteDimensional
     {E F : ℕ → Type*}

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.OrientedBicollar
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,30 +9,24 @@ namespace BrownSchoenflies
 
 variable {B X : Type*} [TopologicalSpace B] [TopologicalSpace X]
 
-
 noncomputable def closedBicollarCoordinates (z : B × Icc (-1 : ℝ) 1) : B × Ioo (-1 : ℝ) 1 :=
   (z.1, ⟨(z.2 : ℝ) / 2, by
     constructor <;> linarith [z.2.property.1, z.2.property.2]⟩)
 
-
 theorem continuous_closedBicollarCoordinates : Continuous (closedBicollarCoordinates (B := B)) := by
   unfold closedBicollarCoordinates
   fun_prop
-
 
 noncomputable def closedBicollarMap (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X)
     (hes : e.source = univ) : C(B × Icc (-1 : ℝ) 1, X) :=
   ⟨e ∘ closedBicollarCoordinates,
     (e.isOpenEmbedding hes).continuous.comp continuous_closedBicollarCoordinates⟩
 
-
 def bicollarBaseImage (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) : Set X :=
   range (fun b => e (BrownCollar.bicollarBase b))
 
-
 def middleBicollarBand (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) : Set X :=
   e '' {z | -(1 / 2 : ℝ) < (z.2 : ℝ) ∧ (z.2 : ℝ) < 1 / 2}
-
 
 theorem closedBicollarMap_injective (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X)
     (hes : e.source = univ) : Function.Injective (closedBicollarMap e hes) := by
@@ -54,7 +37,6 @@ theorem closedBicollarMap_injective (e : OpenPartialHomeomorph (B × Ioo (-1 : �
   change (z.2 : ℝ) / 2 = (w.2 : ℝ) / 2 at ht
   linarith
 
-
 theorem isOpen_middleBicollarBand (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X)
     (hes : e.source = univ) : IsOpen (middleBicollarBand e) := by
   apply (e.isOpenEmbedding hes).isOpenMap
@@ -62,12 +44,10 @@ theorem isOpen_middleBicollarBand (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ
     continuous_subtype_val.comp continuous_snd
   exact (isOpen_lt continuous_const ht).inter (isOpen_lt ht continuous_const)
 
-
 theorem bicollarBaseImage_subset_middle (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) :
     bicollarBaseImage e ⊆ middleBicollarBand e := by
   rintro x ⟨b, rfl⟩
   exact ⟨BrownCollar.bicollarBase b, by constructor <;> norm_num [BrownCollar.bicollarBase], rfl⟩
-
 
 theorem bicollar_apply_mem_baseImage_iff
     (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) (hes : e.source = univ)
@@ -78,7 +58,6 @@ theorem bicollar_apply_mem_baseImage_iff
     exact (congrArg (fun v : B × Ioo (-1 : ℝ) 1 => (v.2 : ℝ)) he).symm
   · intro hz
     exact ⟨z.1, congrArg e (Prod.ext rfl (Subtype.ext hz.symm))⟩
-
 
 theorem closedBicollarMap_mem_middle_iff
     (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) (hes : e.source = univ)
@@ -95,7 +74,6 @@ theorem closedBicollarMap_mem_middle_iff
     change -(1 / 2 : ℝ) < (z.2 : ℝ) / 2 ∧ (z.2 : ℝ) / 2 < 1 / 2
     constructor <;> linarith [hz.1, hz.2]
 
-
 theorem middleBicollarBand_subset_closed_range
     (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) (hes : e.source = univ) :
     middleBicollarBand e ⊆ range (closedBicollarMap e hes) := by
@@ -107,9 +85,6 @@ theorem middleBicollarBand_subset_closed_range
   ring
 
 variable [Nonempty B]
-
-
-
 
 theorem exists_closed_bicollar_ends
     (e : OpenPartialHomeomorph (B × Ioo (-1 : ℝ) 1) X) (hes : e.source = univ)

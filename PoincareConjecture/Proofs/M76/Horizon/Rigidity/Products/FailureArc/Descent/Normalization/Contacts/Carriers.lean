@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Intersections.Comparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

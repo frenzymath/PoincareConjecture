@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.AttainmentIdentities
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -25,31 +15,18 @@ variable {M : Type u} [TopologicalSpace M]
   (e : M → EuclideanSpace ℝ (Fin N)) (γ : C1FreeLoopSpace (M := M))
   (a b c : LoopCircle)
 
-
-
-
 def M65PlateauWeakMinimizerInput : Prop :=
   ∃ F : M65WeakDisk e (γ : LoopCircle → M),
     F.MinimizesNormalizedEnergy g a b c ∧ F.energy g ≤ fillingArea g γ
-
-
-
 
 def M65PlateauConformalityInput : Prop :=
   ∀ F : M65WeakDisk e (γ : LoopCircle → M),
     F.MinimizesNormalizedEnergy g a b c → F.Conformal g
 
-
-
-
 def M65PlateauInteriorRegularityInput : Prop :=
   ∀ F : M65WeakDisk e (γ : LoopCircle → M),
     F.MinimizesNormalizedEnergy g a b c →
       ∃ f : LoopPlane → M, M65InteriorDiskRepresentative connection F f
-
-
-
-
 
 def M65PlateauBoundaryRegularityInput : Prop :=
   ∀ F : M65WeakDisk e (γ : LoopCircle → M),
@@ -60,10 +37,6 @@ def M65PlateauBoundaryRegularityInput : Prop :=
           ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet ∧
           ∀ z : LoopCircle, f z = γ (F.parameter z)
 
-
-
-
-
 def M65PlateauStrictTraceInput : Prop :=
   ∀ F : M65WeakDisk e (γ : LoopCircle → M),
     F.MinimizesNormalizedEnergy g a b c → F.Conformal g →
@@ -73,10 +46,6 @@ def M65PlateauStrictTraceInput : Prop :=
             ∃ β : LoopCircle ≃ₜ LoopCircle, (∀ z, β z = F.parameter z) ∧
               {z : LoopPlane | z ∈ loopDiskSet ∧
                 mfderivWithin (𝓡 2) (𝓡 3) f loopDiskSet z = 0}.Finite
-
-
-
-
 
 theorem m65Plateau_attainment_of_five_inputs
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

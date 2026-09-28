@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialCovariance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
 
 def neckAxialSpaceMap (lambda c : ℝ) (z : RoundCylinderSpace) : RoundCylinderSpace :=
   (z.1, lambda * z.2 + c)
@@ -55,11 +46,9 @@ theorem neckAxialSpaceMap_mfderiv (lambda c : ℝ) (z : RoundCylinderSpace)
     hd, mfderiv_fst, mfderiv_snd]
   rfl
 
-
 noncomputable def neckAxialTensorPullback (lambda c : ℝ) (B : RoundCylinderTwoTensor) :
     RoundCylinderTwoTensor := fun z v w =>
   B (neckAxialSpaceMap lambda c z) (neckAxialLinearMap lambda v) (neckAxialLinearMap lambda w)
-
 
 theorem roundCylinderTensorCoefficient_neckAxialTensorPullback
     (lambda c : ℝ) (B : RoundCylinderSpace → V →L[ℝ] V →L[ℝ] ℝ)
@@ -89,7 +78,6 @@ theorem roundCylinderTensorCoefficient_neckAxialTensorPullback
       (L (roundCylinderCoordinateBasis b).1, (roundCylinderCoordinateBasis b).2)
   ring
 
-
 theorem roundCylinderGram_neckAxialWeight (lambda c u : ℝ) (q : UnitTwoSphere)
     (p : V) (a b : Fin 3) :
     neckAxialWeight lambda a * neckAxialWeight lambda b *
@@ -100,8 +88,6 @@ theorem roundCylinderGram_neckAxialWeight (lambda c u : ℝ) (q : UnitTwoSphere)
   fin_cases a <;> fin_cases b <;>
     simp [neckAxialWeight, neckAxialCoordinate, Matrix.diagonal]
   ring
-
-
 
 theorem roundCylinderIteratedDerivative_neckAxialTensorPullback_zero
     (lambda c u : ℝ) (B : RoundCylinderSpace → V →L[ℝ] V →L[ℝ] ℝ)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Buffered.Paths
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -148,7 +137,6 @@ theorem buffered_intrinsic_distance_to_center_lt
   · apply (hneck hx).trans_le
     apply ENNReal.ofReal_le_ofReal
     nlinarith [G.radius_scale_pos]
-
 
 theorem buffered_intrinsic_diameter_bound
     (heps : N.epsilon = epsilon) (hscale : N.scale = G.neck.terminal_neck.scale)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSectionalScaling
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsG4Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_source_sectional_of_first_failure
     (S : RepairedControlledSchedulesData.{u})
@@ -72,8 +61,6 @@ theorem terminalCurvature_source_sectional_of_first_failure
   exact terminalCurvature_sectional_lower_of_scaled_negative
     (F.connection s) (H.generalized.connection (base + s / Q)) e.scale_pos
     isOpen_univ hf.contMDiffOn hm (mem_univ x) hnegative v w
-
-
 
 theorem terminalCurvature_eventually_source_sectional
     {α : Type v} (l : Filter α)

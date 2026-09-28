@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M09.BilinearTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators RealInnerProductSpace

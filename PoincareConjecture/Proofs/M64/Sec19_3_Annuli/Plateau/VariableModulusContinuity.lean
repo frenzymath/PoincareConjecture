@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusMinim
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakRepresentative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyLocalRepresentative
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -33,9 +20,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
-
 theorem M64ObservedWeakAnnulus.weightedEnergy_eq_of_map_ae
     (A W : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (hmap : W.map =ᵐ[mu] A.map) (hcol : W.column = A.column)
@@ -48,9 +32,6 @@ theorem M64ObservedWeakAnnulus.weightedEnergy_eq_of_map_ae
   rw [hp]
 
 variable [IsManifold (𝓡 n) ∞ M] [CompactSpace M] [T2Space M]
-
-
-
 
 theorem M64ObservedWeakAnnulus.weighted_continuous_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -84,9 +65,6 @@ theorem M64ObservedWeakAnnulus.weighted_continuous_representative
   intro V
   rw [henergy]
   exact hmin V
-
-
-
 
 theorem m64ObservedWeakAnnulus_exists_continuous_modulus_minimizer
     (g : RiemannianMetric n M) (e : M → E)

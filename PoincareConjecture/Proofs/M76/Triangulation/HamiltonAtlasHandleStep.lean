@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSupportedHandle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem locallyPiecewiseAffineOn_incoming_handle_chart
     {X E ι : Type*} [TopologicalSpace X]
@@ -48,11 +36,6 @@ theorem locallyPiecewiseAffineOn_incoming_handle_chart
   change d ((c i).symm ((c i) (p y))) = d (p y)
   have hcy : p y ∈ (c i).source := hy.2.2
   rw [(c i).left_inv hcy]
-
-
-
-
-
 
 theorem exists_atlas_supported_handle_step
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

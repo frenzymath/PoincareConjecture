@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -25,8 +14,6 @@ open Poincare.Geometry.Riemannian.SpaceForm
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem roundCylinderMetric_scalar_one :
     let := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)
@@ -62,16 +49,12 @@ theorem roundCylinderMetric_scalar_one :
   exact (RiemannianMetric.scalarCurvature_eq_of_line_product g2
     roundCylinderMetric D2 D roundCylinderModelDiffeomorph hmetric z).trans h2
 
-
-
 noncomputable def m25_roundCylinderEuclideanParametrization (q : UnitTwoSphere)
     (x : EuclideanSpace ℝ (Fin 3)) : RoundCylinderSpace :=
   roundCylinderModelDiffeomorph
     ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm
       ((RiemannianMetric.lineModelEquiv 2).symm x).1,
       ((RiemannianMetric.lineModelEquiv 2).symm x).2)
-
-
 
 theorem roundCylinderEuclideanParametrization_contMDiff (q : UnitTwoSphere) :
     let := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)
@@ -80,8 +63,6 @@ theorem roundCylinderEuclideanParametrization_contMDiff (q : UnitTwoSphere) :
   exact roundCylinderModelDiffeomorph.contMDiff.comp
     ((cylinderChart_symm_smooth q).comp
       (RiemannianMetric.lineModelEquiv 2).symm.contDiff.contMDiff)
-
-
 
 theorem roundCylinderEuclideanModelMetric_pullback (q : UnitTwoSphere) :
     let := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)
@@ -113,8 +94,6 @@ theorem roundCylinderEuclideanModelMetric_pullback (q : UnitTwoSphere) :
   dsimp only at hx
   rw [hcoef] at hx
   exact hx.symm
-
-
 
 theorem roundCylinderEuclideanModelConnection_scalar_one
     (x : EuclideanSpace ℝ (Fin 3)) :

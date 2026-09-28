@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsExhaustionOperator
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_lifted_germs
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X]
@@ -86,8 +76,6 @@ theorem terminalSource_regular_lifted_germs
   intro x
   obtain ⟨i, hi, _, _⟩ := htr x x x
   exact ⟨i, hi⟩
-
-
 
 theorem terminalSource_regular_lifted_curvature
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X]

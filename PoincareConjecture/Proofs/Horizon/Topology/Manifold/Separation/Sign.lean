@@ -6,18 +6,9 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
 open Set Function Topology
 
 namespace Poincare.Topology
-
 
 noncomputable def collarClamp (r t : ℝ) : ℝ := max (-(1 / 2 : ℝ)) (min (1 / 2) (t / r))
 
@@ -60,8 +51,6 @@ private theorem negative_half_eq_half :
   have h := AddCircle.coe_add_period (1 : ℝ) (-(1 / 2 : ℝ))
   norm_num at h ⊢
   exact h.symm
-
-
 
 theorem exists_collarSign {Y X : Type*} [TopologicalSpace Y] [CompactSpace Y]
     [ConnectedSpace Y] [TopologicalSpace X] [T2Space X] [SimplyConnectedSpace X]

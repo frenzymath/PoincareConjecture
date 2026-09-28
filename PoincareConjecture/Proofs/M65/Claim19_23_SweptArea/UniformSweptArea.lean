@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.InteriorSweptArea
 import PoincareConjecture.Statements.M63RampEstimates
 import PoincareConjecture.Proofs.M62.Lemma0_4_RegularizationError
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -24,19 +16,13 @@ variable {M : Type u} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)} {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
 
-
-
 noncomputable def m65FamilyTotalCurvatureBound (C : M63FamilyConclusion G Gamma zeta) : ℝ :=
   2 * C.initial_bound * Real.exp (|m62C1 G.K0 G.K1 G.K2 + G.K2| * (b - a))
-
 
 theorem m65FamilyTotalCurvatureBound_pos (C : M63FamilyConclusion G Gamma zeta) :
     0 < m65FamilyTotalCurvatureBound C := by
   unfold m65FamilyTotalCurvatureBound
   exact mul_pos (mul_pos (by norm_num) C.initial_bound_positive) (Real.exp_pos _)
-
-
-
 
 theorem m65FamilyTotalCurvature_le (C : M63FamilyConclusion G Gamma zeta)
     {circumference : ℝ} (h : 0 < circumference) (hlt : circumference < 1)
@@ -64,9 +50,6 @@ theorem m65FamilyTotalCurvature_le (C : M63FamilyConclusion G Gamma zeta)
     _ ≤ m65FamilyTotalCurvatureBound C :=
       mul_le_mul_of_nonneg_left (Real.exp_le_exp.mpr hexp)
         (mul_nonneg (by norm_num) C.initial_bound_positive.le)
-
-
-
 
 theorem m65FamilyInteriorSweptAnnulus_area_le
     (C : M63FamilyConclusion G Gamma zeta)

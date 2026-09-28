@@ -1,18 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.RescaledApproximation
 import Mathlib.MeasureTheory.Function.LpSpace.DomAct.Continuous
 import Mathlib.MeasureTheory.Function.L2Space
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory ContinuousLinearMap
 open Poincare.Analysis.Convolution

@@ -2,24 +2,12 @@ import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.Analysis.Calculus.Deriv.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function MeasureTheory ContinuousLinearMap
 open scoped ContDiff Convolution
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_smooth_absolute_rounding {δ : ℝ} (hδ : 0 < δ) :
     ∃ ρ : ℝ → ℝ, ContDiff ℝ ∞ ρ ∧

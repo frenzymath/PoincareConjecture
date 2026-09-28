@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spec
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,7 +42,6 @@ private theorem boundedContinuous_eq_of_toLp_eq
     ((Filter.EventuallyEq.of_eq (congrArg (fun v : Lp ℝ 2
       (g.volumeMeasure.restrict Ω) => (v : M → ℝ)) h)).trans
       (BoundedContinuousFunction.coeFn_toLp 2 _ ℝ G))
-
 
 theorem exists_heatPower_continuousLinearMap (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (k : ℕ) (t : ℝ) (ht : 0 < t) :
@@ -126,7 +118,6 @@ theorem exists_heatPower_continuousLinearMap (D : LeviCivitaData g)
 
 variable (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
 
-
 def heatPowerContinuous (k : ℕ) (t : ℝ) (ht : 0 < t) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] (M →ᵇ ℝ) :=
   (exists_heatPower_continuousLinearMap D S k t ht).choose
@@ -190,7 +181,6 @@ theorem heatPowerContinuous_add_comp (k : ℕ) (s t : ℝ) (hs : 0 < s) (ht : 0 
         S.isOpen S.isCompact_closure ht]
     exact heatPowerContinuous_ae D S k s hs _
   · exact heatPowerContinuous_zero_outside D S k s hs _
-
 
 theorem isCompactOperator_heatPowerContinuous (k : ℕ) (t : ℝ) (ht : 0 < t) :
     IsCompactOperator (heatPowerContinuous D S k t ht) := by

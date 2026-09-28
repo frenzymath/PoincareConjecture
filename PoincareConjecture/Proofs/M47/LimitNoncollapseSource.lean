@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseClock
 import PoincareConjecture.Proofs.M47.LimitRP2Charts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C B : GeneralizedSliceCarrier.{u}}
   (e : GeneralizedFlowCylinder F C origin scale I U)
   (D : PartialDiffeomorph (𝓡 3) (𝓡 3) B.carrier C.carrier ∞)
   (V : Set B.carrier) (hV : V ⊆ D.source) (hmaps : MapsTo D V U)
-
-
 
 noncomputable def limitNoncollapseCylinderSource :
     GeneralizedFlowCylinder F B origin scale I V := by
@@ -65,14 +54,10 @@ noncomputable def limitNoncollapseCylinderSource :
     exact e.embedding.comp (Topology.IsEmbedding.id.prodMap
       (hd.codRestrict U (fun x => hmaps x.property)))
 
-
-
 theorem limitNoncollapseCylinderSource_pointMap (s : ℝ) (hs : s ∈ I)
     (x : B.carrier) :
     (limitNoncollapseCylinderSource e D V hV hmaps).pointMap s hs x =
       e.pointMap s hs (D x) := rfl
-
-
 
 theorem limitNoncollapseCylinderSource_pullbackInner (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ I) (x : B.carrier) (hx : x ∈ V)

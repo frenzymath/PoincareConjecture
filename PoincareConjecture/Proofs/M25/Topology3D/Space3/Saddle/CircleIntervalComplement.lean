@@ -7,21 +7,11 @@ import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Tauto
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_circle_interval_complement
     (f : unitInterval → Circle)

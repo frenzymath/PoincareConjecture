@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedCircleLifts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetTranslation
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,7 +15,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "R0" => latticeHandleDomain (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
-
 
 noncomputable def hamiltonZeroSecondCircleMap (phi : C(H0, H0)) : C(X0, C0) :=
   ⟨fun x => (hamiltonZeroHierarchyCoordinates (phi (hamiltonZeroAmbientEquiv x))).1.2,
@@ -50,8 +40,6 @@ theorem hamiltonZeroSecondCircleMap_domain (phi : C(H0, H0)) (x : R0) :
   change (hamiltonZeroHierarchyCoordinates (phi (q x))).1.2 =
     (hamiltonZeroHierarchyCoordinates (q (q.symm (phi (q x))))).1.2
   rw [q.apply_symm_apply]
-
-
 
 theorem exists_hamiltonZeroSecondCircleMap_lift {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)
@@ -112,8 +100,6 @@ theorem exists_hamiltonZeroSecondCircleMap_lift {ι κ : Type*}
     change hamiltonZeroSecondCircleMap phi (y : X0) = ((lam (F z) : ℝ) : C0)
     rw [hamiltonZeroSecondCircleMap_domain, hactual]
     rfl
-
-
 
 theorem exists_hamiltonZeroSecondCircleMap_lift_in_compatible_chart {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

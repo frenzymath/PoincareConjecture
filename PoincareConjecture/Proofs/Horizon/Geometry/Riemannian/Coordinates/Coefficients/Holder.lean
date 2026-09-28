@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Dual
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
-
 
 lemma norm_coefficients_sub_le_sqrt {R H : ℝ} (hH : 0 ≤ H)
     (hderiv : ∀ z ∈ Metric.ball 0 R, ‖fderiv ℝ g.euclideanCoefficients z‖ ≤ H)
@@ -45,8 +35,6 @@ lemma norm_coefficients_sub_le_sqrt {R H : ℝ} (hH : 0 ≤ H)
     _ ≤ H * (Real.sqrt (2 * R) * Real.sqrt ‖x - y‖) :=
       mul_le_mul_of_nonneg_left hdist hH
     _ = _ := by ring
-
-
 
 lemma abs_inverseCoefficients_sub_le_sqrt {a R H : ℝ} (ha : 0 < a) (hH : 0 ≤ H)
     (hell : ∀ z ∈ Metric.ball 0 R, ∀ v : EuclideanSpace ℝ (Fin n),

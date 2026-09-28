@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Nonflatness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_ancient_curvatureDerivativeNorm_bound_of_m23_predecessors
     (P : M23NormalizedKappaCompactnessPredecessors) (F : RicciFlow 3 M (Iic 0))
@@ -147,8 +133,6 @@ private theorem scalarCurvature_nonpos_of_bounded_compact_m23
   · intro x hx
     exact False.elim (hx (mem_univ x))
 
-
-
 theorem scalarCurvature_terminal_nonpos_of_bounded_ancient_slice_nonpos_of_m23_predecessors
     (P : M23NormalizedKappaCompactnessPredecessors) (F : RicciFlow 3 M (Iic 0))
     (hcomplete : ∀ t ≤ 0, MetricComplete (F.metric t))
@@ -248,8 +232,6 @@ theorem scalarCurvature_terminal_nonpos_of_bounded_ancient_slice_nonpos_of_m23_p
   have hx := hresult x (-a) ⟨by linarith, le_rfl⟩
   change (F.connection (-a + a)).scalarCurvature x ≤ 0 at hx
   exact (congrArg (fun t => (F.connection t).scalarCurvature x ≤ 0) (neg_add_cancel a)).mp hx
-
-
 
 theorem scalarCurvature_positive_somewhere_of_bounded_ancient_of_m23_predecessors
     (P : M23NormalizedKappaCompactnessPredecessors) (F : RicciFlow 3 M (Iic 0))

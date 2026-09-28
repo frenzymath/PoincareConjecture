@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneShellBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V2" => (ℝ × ℝ)
 local notation "W" => (ℝ × V2)
-
 
 def squareMiddleBlock : Set W := Icc (-1) 1 ×ˢ closedBall 0 (3 / 2)
 
@@ -85,10 +75,6 @@ private theorem attaching_frontier : squareAttachingDisks ⊆ frontier squareBlo
   rcases hs with hs | hs
   · exact (lt_irrefl (-1 : ℝ)) (hs ▸ hxi.1.1)
   · exact (lt_irrefl (1 : ℝ)) (hs ▸ hxi.1.2)
-
-
-
-
 
 theorem exists_marked_middle_ball {B T : Set W}
     (hB : IsFinitePLBallPair W B (T ∪ squareAttachingDisks))

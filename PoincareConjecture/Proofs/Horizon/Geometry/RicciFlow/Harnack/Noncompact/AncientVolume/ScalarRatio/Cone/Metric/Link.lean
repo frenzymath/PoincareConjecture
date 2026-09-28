@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RayDistance
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +9,6 @@ open scoped Topology NNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
 
 def AsymptoticLink (p : X) (hcomparison : RayComparison p) :=
   @SeparationQuotient (basedMinimizingRays p)
@@ -47,8 +36,6 @@ theorem surjective_asymptoticLinkProjection (hcomparison : RayComparison p) :
   exact @SeparationQuotient.surjective_mk (basedMinimizingRays p)
     (asymptoticRayPseudoMetric hcomparison).toUniformSpace.toTopologicalSpace
 
-
-
 theorem continuous_asymptoticLinkProjection (hcomparison : RayComparison p) :
     Continuous (asymptoticLinkProjection hcomparison) := by
   apply continuous_iff_continuousAt.mpr
@@ -65,8 +52,6 @@ instance asymptoticLink_compactSpace [ProperSpace X] (hcomparison : RayCompariso
     CompactSpace (AsymptoticLink p hcomparison) :=
   (surjective_asymptoticLinkProjection hcomparison).compactSpace
     (continuous_asymptoticLinkProjection hcomparison)
-
-
 
 theorem tendsto_dist_asymptoticLinkProjection (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) :

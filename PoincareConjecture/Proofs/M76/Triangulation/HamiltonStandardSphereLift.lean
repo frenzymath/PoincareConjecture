@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 import Mathlib.Topology.Covering.Quotient
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -42,8 +32,6 @@ variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   {S : Set (LatticeHandleAmbient ι κ L)}
 
 omit [Fintype ι] [Fintype κ] in
-
-
 
 theorem ChartwisePLSphere.exists_standard_lattice_lift
     (s : ChartwisePLSphere d S) :

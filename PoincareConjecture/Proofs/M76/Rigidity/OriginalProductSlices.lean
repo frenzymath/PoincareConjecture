@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProduct
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,10 +20,7 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 namespace OriginalDiskProduct
 
-
 def slice (P : OriginalDiskProduct e R j) (t : ℝ) : V2 → X := fun z => P.map (z, t)
-
-
 
 theorem polyhedral_slice (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I) :
     PolyhedralPLInCharts e (P.slice t) D := by
@@ -45,8 +34,6 @@ theorem polyhedral_slice (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I
     (fun z hz => show a z ∈ D ×ˢ I from ⟨hKD.subset hz, ht⟩)
   exact hKD ▸ h
 
-
-
 theorem embedding_slice (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I) :
     Topology.IsEmbedding (fun z : D => P.slice t z) := by
   have hinc : Topology.IsEmbedding (fun z : D => ((z : V2), t)) :=
@@ -54,15 +41,11 @@ theorem embedding_slice (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I)
   have hsource := hinc.codRestrict (D ×ˢ I) (fun z => ⟨z.property, ht⟩)
   exact P.embedding.isEmbedding.comp hsource
 
-
 theorem slice_inside (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I) :
     MapsTo (P.slice t) D R := fun _ hz => P.inside ⟨hz, ht⟩
 
-
 theorem slice_proper (P : OriginalDiskProduct e R j) {t : ℝ} (ht : t ∈ I) (z : D) :
     P.slice t z ∈ frontier R ↔ (z : V2) ∈ Q := P.proper _ ⟨z.property, ht⟩
-
-
 
 theorem slice_image (P : OriginalDiskProduct e R j) (t : ℝ) :
     P.slice t '' D = P.map '' (D ×ˢ ({t} : Set ℝ)) := by
@@ -74,7 +57,6 @@ theorem slice_image (P : OriginalDiskProduct e R j) (t : ℝ) :
     refine ⟨z.1, hz.1, ?_⟩
     change P.map (z.1, t) = P.map z
     rw [← ht]
-
 
 theorem disjoint_slice_images (P : OriginalDiskProduct e R j)
     {t u : ℝ} (ht : t ∈ I) (hu : u ∈ I) (htu : t ≠ u) :

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped ContDiff Manifold Topology
 open Bundle
 
@@ -28,15 +16,12 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H' : Type*} [TopologicalSpace H'] {J : ModelWithCorners ℝ E' H'}
   {N : Type*} [TopologicalSpace N] [ChartedSpace H' N] [IsManifold J ∞ N]
 
-
 def inducedForm (g : Bundle.ContMDiffRiemannianMetric J ∞ E' (TangentSpace J : N → Type _))
     (f : M → N) (x : M) :
     TangentSpace I x →L[ℝ] TangentSpace I x →L[ℝ] ℝ :=
   let A : E →L[ℝ] E' := mfderiv I J f x
   let B : E' →L[ℝ] E' →L[ℝ] ℝ := g.inner (f x)
   (B.bilinearComp A A : E →L[ℝ] E →L[ℝ] ℝ)
-
-
 
 theorem inducedForm_contMDiffAt (g : Bundle.ContMDiffRiemannianMetric J ∞ E' (TangentSpace J : N → Type _)) {f : M → N} {x₀ : M}
     (hf : ContMDiffAt I J ∞ f x₀) :
@@ -104,7 +89,6 @@ theorem inducedForm_contMDiffAt (g : Bundle.ContMDiffRiemannianMetric J ∞ E' (
   rfl
 
 omit [IsManifold I ∞ M] [IsManifold J ∞ N] in
-
 
 theorem mfderiv_localSection_rightInverse {q : M → N} {s : N → M} {y : N}
     (hs : MDifferentiableAt J I s y) (hq : MDifferentiableAt I J q (s y))

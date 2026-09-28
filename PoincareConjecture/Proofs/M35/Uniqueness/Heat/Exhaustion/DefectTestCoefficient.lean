@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.DefectCoordinates
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.CovariantTestSlab
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallReplacement
 import PoincareConjecture.Proofs.M76.Mathlib.PointedRimArcPartition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePLBallPair.pointed_arc_replacement
     {b : Set E} {r u : E → ℝ} {a c : ℝ}

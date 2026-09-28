@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveLift
 import PoincareConjecture.Proofs.M25.Mathlib.LocalDiffeomorphLift
 import Mathlib.Analysis.Convex.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +17,6 @@ variable {Q : Type u} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
   (C : PoincareConjecture.StandardPuncturedProjectiveCover Q p U)
-
-
-
 
 theorem exists_projective_collar_lift_of_slice
     (kappa : UnitTwoSphere × ℝ → Q) {a b t0 : ℝ}
@@ -113,9 +97,6 @@ theorem exists_projective_collar_lift_of_slice
     rw [hLval ⟨z, hz⟩]
     exact hsubcover ⟨z, hz⟩
 
-
-
-
 theorem projective_collar_lift_isLocalDiffeomorphOn
     {kappa : UnitTwoSphere × ℝ → Q} {L : UnitTwoSphere × ℝ → UnitThreeSphere}
     {a b : ℝ}
@@ -132,9 +113,6 @@ theorem projective_collar_lift_isLocalDiffeomorphOn
   have hcomp := (hloc z).congr_of_eventuallyEq (Filter.eventuallyEq_of_mem hnhds hcover)
   exact hcomp.of_comp_left (C.local_diffeomorph ⟨L z.1, hLD z.2⟩)
     ((hL z.1 z.2).continuousAt hnhds)
-
-
-
 
 theorem projective_collar_lift_antipodal_pair
     {kappa : UnitTwoSphere × ℝ → Q} {L : UnitTwoSphere × ℝ → UnitThreeSphere}
@@ -191,8 +169,6 @@ theorem projective_collar_lift_antipodal_pair
       · exact ⟨hLD hz, z, hz, (hcover hz).symm⟩
       · exact ⟨hminusD hz, z, hz, (hminuscover hz).symm⟩
 
-
-
 theorem exists_smooth_projective_collar_lift_of_slice
     (kappa : UnitTwoSphere × ℝ → Q) {a b t0 : ℝ}
     (ht0 : t0 ∈ Ioo a b)
@@ -222,8 +198,6 @@ theorem exists_smooth_projective_collar_lift_of_slice
       hU L0 hL0 hL0D hL0cover
   exact ⟨L, hslice, hLD, hcover,
     projective_collar_lift_antipodal_pair C hloc hinj hcont hLD hcover⟩
-
-
 
 theorem exists_based_projective_collar_lift
     (kappa : UnitTwoSphere × ℝ → Q) {a b t0 : ℝ}
@@ -265,9 +239,6 @@ theorem exists_based_projective_collar_lift
     C kappa ht0 hloc hinj hU L0 hL0smooth.continuous hL0D hL0cover
   exact ⟨L, (hslice q0).trans hL0base, hrest⟩
 
-
-
-
 theorem projective_collar_lift_eqOn_of_base
     {L L' : UnitTwoSphere × ℝ → UnitThreeSphere} {a b t0 : ℝ}
     (ht0 : t0 ∈ Ioo a b) (q0 : UnitTwoSphere)
@@ -296,9 +267,6 @@ theorem projective_collar_lift_eqOn_of_base
     (⟨(q0, t0), mem_univ q0, ht0⟩ : B) (Subtype.ext hb)
   intro z hz
   exact congrArg Subtype.val (congrFun heq ⟨z, hz⟩)
-
-
-
 
 theorem projective_collar_lift_closedEmbedding_on_Icc
     {L : UnitTwoSphere × ℝ → UnitThreeSphere} {a b r s : ℝ}

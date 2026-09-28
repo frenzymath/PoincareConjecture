@@ -6,18 +6,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem NeckOnlyCover.exists_local_restart_with_protected_negative_end :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]

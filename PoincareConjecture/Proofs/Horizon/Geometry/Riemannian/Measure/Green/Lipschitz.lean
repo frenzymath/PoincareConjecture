@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Lin
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Regularity.Lipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +17,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem integrable_integral_of_pullback_density
     (g : RiemannianMetric n M)
@@ -109,8 +100,6 @@ theorem integrable_integral_of_pullback_density
       simp only [ENNReal.toReal_ofReal (show 0 ≤ g.pullbackVolumeDensity e x from
         Real.sqrt_nonneg _), smul_eq_mul, mul_comm]
 
-
-
 theorem ae_restrict_of_ae_pullback
     (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -141,7 +130,6 @@ theorem ae_restrict_of_ae_pullback
   simp [F, hxt, hnot] at hx
 
 omit [T3Space M] [MeasurableSpace M] [BorelSpace M] in
-
 
 theorem exists_lipschitz_coordinate_nhds_of_distance_lipschitz
     (g : RiemannianMetric n M) {f : M → ℝ}
@@ -210,8 +198,6 @@ private theorem linearMap_eq_sum_coordinates
   simpa only [map_sum, map_smul, smul_eq_mul, OrthonormalBasis.coe_toBasis,
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
-
-
 
 theorem integral_mul_laplacian_of_lipschitzOn_chart
     (D : LeviCivitaData g)
@@ -344,8 +330,6 @@ private theorem laplacian_finset_sum (D : LeviCivitaData g) {ι : Type*}
       simp only [Finset.sum_insert hi]
       rw [D.laplacian_add hiφ (ContMDiff.sum hsφ), ih hsφ]
 
-
-
 theorem integral_mul_laplacian_of_locally_lipschitz [SigmaCompactSpace M]
     (D : LeviCivitaData g) {f φ : M → ℝ} (hf : Continuous f)
     (hlocal : ∀ a : M, ∃ U : Set (EuclideanSpace ℝ (Fin n)),
@@ -408,8 +392,6 @@ theorem integral_mul_laplacian_of_locally_lipschitz [SigmaCompactSpace M]
       integral_finsetSum s (fun i _ => (hgreen i).1), ← Finset.sum_neg_distrib]
     exact Finset.sum_congr rfl (fun i _ => (hgreen i).2)
 
-
-
 theorem integral_mul_laplacian_of_distance_lipschitz [PreconnectedSpace M]
     (D : LeviCivitaData g) {f φ : M → ℝ}
     (hLip : ∀ x y, |f x - f y| ≤ (g.edist x y).toReal)
@@ -439,8 +421,6 @@ theorem integral_mul_laplacian_of_distance_lipschitz [PreconnectedSpace M]
     SigmaCompactSpace_iff_exists_compact_covering.mpr ⟨K, K.isCompact, K.iUnion_eq⟩
   exact D.integral_mul_laplacian_of_locally_lipschitz hf hlocal hφ hc
 
-
-
 theorem integral_distance_mul_laplacian [PreconnectedSpace M]
     (D : LeviCivitaData g) (p : M) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ) (hc : HasCompactSupport φ) :
@@ -458,8 +438,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem ae_mDifferentiableAt_of_distance_lipschitz
     (g : RiemannianMetric n M) {f : M → ℝ}
@@ -514,8 +492,6 @@ theorem ae_mDifferentiableAt_of_distance_lipschitz
   filter_upwards [hall] with x hx
   obtain ⟨i, hi, hxi⟩ := mem_iUnion₂.mp (hsc (mem_univ x))
   exact hx ⟨i, hi⟩ hxi
-
-
 
 theorem ae_mDifferentiableAt_distance (g : RiemannianMetric n M) (p : M) :
     ∀ᵐ x ∂g.volumeMeasure,

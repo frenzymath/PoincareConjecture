@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ namespace PoincareConjecture
 
 namespace M51EventCopy
 
-
 def relabel {C : ℝ → Sort v} {s t : ℝ} (h : s = t) (x : C s) : C t := h ▸ x
 
 theorem relabel_heq {C : ℝ → Sort v} {s t : ℝ} (h : s = t) (x : C s) :
@@ -28,13 +18,11 @@ theorem relabel_heq {C : ℝ → Sort v} {s t : ℝ} (h : s = t) (x : C s) :
   subst t
   rfl
 
-
 noncomputable def timeEquivalence (slice : ℝ → GeneralizedSliceCarrier.{u})
     (s t : ℝ) (h : s = t) :
     Diffeomorph (𝓡 3) (𝓡 3) (slice s).carrier (slice t).carrier ∞ := by
   subst t
   exact Diffeomorph.refl (𝓡 3) (slice s).carrier ∞
-
 
 noncomputable def identify (slice : ℝ → GeneralizedSliceCarrier.{u})
     (tau : ℝ → ℝ) (t : ℝ) (h : tau t = t) :
@@ -55,7 +43,6 @@ theorem relabel_map_apply (slice : ℝ → GeneralizedSliceCarrier.{u})
       timeEquivalence slice s t h (f i x) := by
   subst t
   rfl
-
 
 def regionSource (slice : ℝ → GeneralizedSliceCarrier.{u})
     {s t : ℝ} (h : s = t) (B : GeneralizedSliceCarrier.{u})
@@ -82,7 +69,6 @@ theorem regionSource_inverse (slice : ℝ → GeneralizedSliceCarrier.{u})
       timeEquivalence slice s t h (e.inverse x) := by
   subst t
   rfl
-
 
 def region (slice : ℝ → GeneralizedSliceCarrier.{u})
     {s s' t t' : ℝ} (hs : s = s') (ht : t = t')
@@ -137,7 +123,6 @@ theorem identify_symm_apply_heq (slice : ℝ → GeneralizedSliceCarrier.{u})
     HEq ((identify slice tau t h).symm x) x :=
   timeEquivalence_symm_apply_heq slice t (tau t) h.symm x
 
-
 noncomputable def diffeomorph (slice : ℝ → GeneralizedSliceCarrier.{u})
     {s s' t t' : ℝ} (hs : s = s') (ht : t = t')
     (f : Diffeomorph (𝓡 3) (𝓡 3) (slice s).carrier (slice t).carrier ∞) :
@@ -155,7 +140,6 @@ theorem diffeomorph_apply (slice : ℝ → GeneralizedSliceCarrier.{u})
   subst s'
   subst t'
   rfl
-
 
 noncomputable def flow (slice : ℝ → GeneralizedSliceCarrier.{u})
     {s t : ℝ} (h : s = t) {J : Set ℝ}
@@ -180,7 +164,6 @@ theorem flow_metric_pullback (slice : ℝ → GeneralizedSliceCarrier.{u})
     (mfderiv (𝓡 3) (𝓡 3) id x w) = _
   rw [mfderiv_id]
   rfl
-
 
 theorem diffeomorph_flow_metric_pullback
     (slice : ℝ → GeneralizedSliceCarrier.{u})
@@ -231,8 +214,6 @@ namespace SurgeryEventData
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 noncomputable def reindexPast (E : SurgeryEventData g₀ K P slice metric T)
     (tau : ℝ → ℝ) (hTau : ∀ t ≤ T, tau t = t) :

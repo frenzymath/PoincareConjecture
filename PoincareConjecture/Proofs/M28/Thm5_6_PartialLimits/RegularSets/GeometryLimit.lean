@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Extraction
 import PoincareConjecture.Proofs.M04.TensorNorm
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open scoped Topology Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_regular_metric_limit_of_geometry
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

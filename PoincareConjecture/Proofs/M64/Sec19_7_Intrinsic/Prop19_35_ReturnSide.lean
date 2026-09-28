@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularLoop
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionConfinement
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,9 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_first_return_prefix_disjoint
     {gamma : ℝ → AnnulusCoordinates} {a s t : ℝ}
@@ -40,9 +24,6 @@ theorem m64Intrinsic_first_return_prefix_disjoint
   · have hxy := hinj hxI ⟨has.trans hy.1, hylt⟩ heq
     linarith [hx.2, hy.1]
 
-
-
-
 theorem m64Intrinsic_first_return_prefix_side
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {a s t : ℝ}
     (has : a ≤ s) (hst : s < t) (hend : gamma s = gamma t)
@@ -54,10 +35,6 @@ theorem m64Intrinsic_first_return_prefix_side
   rw [hcover]
   exact (m64Intrinsic_first_return_prefix_disjoint has hst hend hinj).subset_compl_right
 
-
-
-
-
 theorem m64Intrinsic_internal_return_trace
     {gamma : ℝ → AnnulusCoordinates} {s t height : ℝ}
     (hs : 0 < s) (hst : s < t) (hth : t ≤ height) (hend : gamma s = gamma t)
@@ -68,11 +45,6 @@ theorem m64Intrinsic_internal_return_trace
   · rw [heq, ← hend]
     exact hinside s ⟨hs, hst.trans_le hth⟩
   · exact hinside x ⟨hs.trans_le hx.1, hlt.trans_le hth⟩
-
-
-
-
-
 
 theorem m64Intrinsic_jordan_annulus_dichotomy
     {C U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)
@@ -94,11 +66,6 @@ theorem m64Intrinsic_jordan_annulus_dichotomy
     intro hzU
     obtain ⟨x, hxV, hxU⟩ := mem_closure_iff.mp hzU V hV hzV
     exact disjoint_left.mp hdisj hxU hxV
-
-
-
-
-
 
 theorem m64Intrinsic_return_region_annulus_dichotomy
     {C U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)

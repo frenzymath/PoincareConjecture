@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeData
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCapWholePathBarrier
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem SourceTubeData.carrier_subset_neckCarrierUnion
     {epsilon C A D₀ D : ℝ}
@@ -36,9 +24,6 @@ theorem SourceTubeData.carrier_subset_neckCarrierUnion
   obtain ⟨N, hN, hsame⟩ := T.chain.selected i.1 i.2
   rw [T.source_eq] at hN
   exact ⟨N, hN, hsame.2.2.2.1 ▸ hxi⟩
-
-
-
 
 theorem exists_source_cap_boundary_contact_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

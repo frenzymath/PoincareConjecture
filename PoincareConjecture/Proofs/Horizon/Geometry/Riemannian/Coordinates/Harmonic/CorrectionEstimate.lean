@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,7 +16,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 open LeviCivitaData.Dirichlet
 
 variable {n : ℕ}
-
 
 theorem integral_fderiv_apply_eq_zero
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
@@ -50,14 +39,11 @@ theorem integral_fderiv_apply_eq_zero
 
 variable {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 def euclideanDivergenceOperator (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   let B₀ : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ := innerSL ℝ
   g.pullbackVolumeDensity id x • (g.euclideanCoefficients x).inverse.comp B₀
-
-
 
 theorem integral_inner_gradient_linear_eq_residual (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
@@ -116,8 +102,6 @@ theorem integral_inner_gradient_linear_eq_residual (D : LeviCivitaData g)
     ← integral_sub hGi hdi]
   exact integral_congr_ae (Eventually.of_forall hpoint)
 
-
-
 theorem abs_integral_inner_gradient_linear_le (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
     (hfc : HasCompactSupport f) (v : EuclideanSpace ℝ (Fin n)) {ε : ℝ}
@@ -151,7 +135,6 @@ theorem abs_integral_inner_gradient_linear_le (D : LeviCivitaData g)
   simpa only [integral_const_mul] using
     norm_integral_le_of_norm_le (hdi.const_mul (ε * ‖v‖)) (Eventually.of_forall hbound)
 
-
 theorem abs_integral_inner_gradient_coordinate_le (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
     (hfc : HasCompactSupport f) (i : Fin n) {ε : ℝ}
@@ -167,8 +150,6 @@ theorem abs_integral_inner_gradient_coordinate_le (D : LeviCivitaData g)
   simpa only [hlinear, OrthonormalBasis.norm_eq_one, mul_one] using
     abs_integral_inner_gradient_linear_le D hf hfc
       (EuclideanSpace.basisFun (Fin n) ℝ i) hclose
-
-
 
 theorem abs_integral_inner_gradient_linear_le_half_energy (D : LeviCivitaData g)
     {R a b ε : ℝ} (ha : 0 < a) (hb : 0 < b) (hε : 0 ≤ ε)
@@ -254,8 +235,6 @@ theorem abs_integral_inner_gradient_linear_le_half_energy (D : LeviCivitaData g)
   rw [hc] at hi
   exact hres.trans hi
 
-
-
 theorem weakPoisson_gradientEnergy_le_of_divergence_close (D : LeviCivitaData g)
     {R a b ε P : ℝ} (ha : 0 < a) (hb : 0 < b) (hε : 0 ≤ ε)
     (hell : ∀ x ∈ Metric.ball 0 R, ∀ z : EuclideanSpace ℝ (Fin n),
@@ -319,8 +298,6 @@ theorem weakPoisson_gradientEnergy_le_of_divergence_close (D : LeviCivitaData g)
   rw [hcross, abs_neg, abs_of_nonneg (gradientEnergy_self_nonneg w)] at h
   change gradientEnergy D Ω w w ≤ c
   linarith
-
-
 
 theorem exists_weakHarmonicCoordinate_small_energy [NeZero n] (D : LeviCivitaData g)
     {R a b ε : ℝ} (hR : 0 < R) (ha : 0 < a) (hb : 0 < b) (hε : 0 ≤ ε)

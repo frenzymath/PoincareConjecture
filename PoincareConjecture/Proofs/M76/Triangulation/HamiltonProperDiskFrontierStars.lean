@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Filter
@@ -25,9 +16,6 @@ local notation "P2" => (ℝ × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_frontier_star_plane_chart
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)
@@ -129,9 +117,6 @@ theorem HamiltonProperDiskTriangulation.exists_frontier_star_plane_chart
   rwa [hqval ⟨p, hpfront⟩] at hint
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem HamiltonProperDiskTriangulation.frontier_edge_triangle_count
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}

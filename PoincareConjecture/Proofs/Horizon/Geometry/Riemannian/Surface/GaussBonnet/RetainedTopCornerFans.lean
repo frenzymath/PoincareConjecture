@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandCoreFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.AmbientSectorAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -52,8 +45,6 @@ theorem band_internal_top_point_eq_vertex
   rw [B.faces.height_eq_upperGraph ht, (B.faces.upperGraph_endpoints j).2]
   exact B.cut_top_eq_chartTopVertex j j.succ (Or.inr rfl)
 
-
-
 theorem collar_germ_at_internal_band_top
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     (j k : Fin (T.bands p i).faces.interface.count) (hjk : j.succ = k.castSucc) :
@@ -91,8 +82,6 @@ theorem collar_germ_at_internal_band_top
       have hys := T.chart_source p.1.1 (T.band_regions p i hy)
       simpa only [C.right_inv hys] using hy
   exact hc.trans himage
-
-
 
 theorem core_complement_germ_at_internal_band_top
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -166,7 +155,6 @@ theorem core_germ_at_internal_band_top_of_band_germ
 
 set_option maxHeartbeats 1600000 in
 
-
 theorem vertex_fan_at_convex_internal_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i : Fin (T.graphs p).count)
@@ -214,7 +202,6 @@ theorem vertex_fan_at_convex_internal_band_top
 
 set_option maxHeartbeats 1600000 in
 
-
 theorem vertex_fan_at_reflex_internal_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i : Fin (T.graphs p).count)
@@ -254,7 +241,6 @@ theorem vertex_fan_at_reflex_internal_band_top
   linarith
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem canonical_vertex_fan_at_straight_internal_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
@@ -303,7 +289,6 @@ theorem canonical_vertex_fan_at_straight_internal_band_top
   linarith
 
 set_option maxHeartbeats 1600000 in
-
 
 theorem canonical_vertex_fan_at_internal_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

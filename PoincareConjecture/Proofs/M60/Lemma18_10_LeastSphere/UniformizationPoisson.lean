@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Poisson.Approximation
 import PoincareConjecture.Proofs.M03.Existence.SpectralHeatNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
-
 
 theorem exists_weak_poisson_closed_surface (D : LeviCivitaData g)
     (F : Lp ℝ 2 (g.volumeMeasure.restrict univ))

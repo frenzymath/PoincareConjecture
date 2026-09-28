@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M03.CurvatureDifferenceTime
 import PoincareConjecture.Proofs.M03.CurvatureFluxVectorDivergence
 import PoincareConjecture.Proofs.M03.CurvatureRateAlgebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -54,8 +46,6 @@ theorem curvature_rate_absorb_shared_gradient
     _ ≤ -(lambda / 4) * G + (A + C) * (KH * E) + B * (KU * E) := by
       exact add_le_add_right hU' _
     _ = -(lambda / 4) * G + ((A + C) * KH + B * KU) * E := by ring
-
-
 
 theorem exists_uniform_curvature_coordinate_integral_rate_bound
     {n : ℕ} {I X : Type*} [Fintype I] [TopologicalSpace X]
@@ -257,7 +247,6 @@ theorem exists_uniform_curvature_coordinate_integral_rate_bound
   dsimp only [C]
   nlinarith only [hElliptic, hDivergence, hReaction, hHF, hUF, hZF]
 
-
 theorem hasDerivAt_ricciFlow_curvature_coordinates
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -388,7 +377,6 @@ theorem hasDerivAt_ricciFlow_curvature_coordinates
   rw [htrace, hdiv, map_add, hcoord, hQ] at hs
   exact hs
 
-
 theorem exists_ricciFlow_coordinate_ellipticity
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -472,8 +460,6 @@ theorem exists_ricciFlow_coordinate_ellipticity
   have h := ((hbound (t, z) ⟨ht, hz⟩).2.2 l).1
   rw [hnorm, heval] at h
   exact h
-
-
 
 theorem hasDerivAt_ricciFlow_curvature_difference_divergence
     {n : ℕ} {M : Type u} [TopologicalSpace M]

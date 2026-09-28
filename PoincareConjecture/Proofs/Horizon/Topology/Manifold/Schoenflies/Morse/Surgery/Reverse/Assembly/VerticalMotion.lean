@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 noncomputable section
 
@@ -19,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_vertical_translation_within
     {K O : Set (E × Real)} (hK : IsCompact K) (hO : IsOpen O) (d : Real)
@@ -85,8 +75,6 @@ theorem exists_vertical_translation_within
     simpa only [one_mul] using he (show (1 : Real) ∈ Icc 0 1 by simp)
   · exact strictMono_vertical_of_compact_support
       (Phi 0 1).toHomeomorph (hfirst 0 1) hJ (hfix 0 1)
-
-
 
 theorem exists_translation_along_within
     {V : Type*} [NormedAddCommGroup V] [InnerProductSpace Real V]

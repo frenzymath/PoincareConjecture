@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {V : Type v} [NormedAddCommGroup V] [NormedSpace ℝ V]
   {M : Type w} [TopologicalSpace M] [ChartedSpace E M]
-
-
-
 
 theorem smooth_retraction_differentials [IsManifold 𝓘(ℝ, E) ∞ M] {e : M → V}
     (he : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, V) ∞ e) {U : Set V} (hU : IsOpen U)

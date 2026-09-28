@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PositionedSeparatedCaps
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PlanarDiskBallNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76

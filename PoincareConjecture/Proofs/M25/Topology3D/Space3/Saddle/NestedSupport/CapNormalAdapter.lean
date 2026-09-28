@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonExteriorHalf
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_two_circle_positive_normal_collar
     (B : Fin 2 → BallNeighborhoodChart E2 E2)

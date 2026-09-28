@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.HigherRegularity.ContDiffOnK
-
 
 noncomputable section
 
@@ -79,7 +68,6 @@ theorem contDiffOn_partial_fderiv_of_succ
     rw [hpostL_apply]
     exact h
   exact hcomp_Ck.congr heq
-
 
 omit [CompleteSpace E] in
 lemma partial_fderiv_eq_comp_inr_on_open

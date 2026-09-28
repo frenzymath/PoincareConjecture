@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Reaction
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ open scoped BigOperators
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
-
-
 
 theorem hamiltonBlock_posSemidef_of_unit_skew_quadratic_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)

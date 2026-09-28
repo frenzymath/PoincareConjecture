@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcNormalNeighborhood
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopInwardCollar
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -53,10 +41,6 @@ private theorem signed_arc_strip_of_point
       have hf : F q ∈ frontier U := ⟨hz, by simpa only [hU.interior_eq] using hn⟩
       exact (mul_ne_zero hsne hq.2.1.ne') ((hfront _ (hS q hq)).mp hf))
   exact fun t ht r hr => hsub ⟨(t, r), ⟨ht, hr⟩, rfl⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_global_arc_inward_sign
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B : ℝ}
@@ -100,10 +84,6 @@ theorem m64Intrinsic_exists_global_arc_inward_sign
   filter_upwards [Ioo_mem_nhdsGT hrho] with r hr
   simpa only [hJmap, normalStrip, smul_smul, mul_comm] using
     hinside t ⟨min_le_right _ _, le_max_right _ _⟩ r hr
-
-
-
-
 
 theorem m64Intrinsic_exists_global_arc_inward_orientation
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ}

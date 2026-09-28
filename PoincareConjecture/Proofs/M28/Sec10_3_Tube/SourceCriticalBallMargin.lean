@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNormalizedConnector
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RegularMinimizerExtension
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
-
 
 theorem exists_source_criticalBall_small_scale_margin_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

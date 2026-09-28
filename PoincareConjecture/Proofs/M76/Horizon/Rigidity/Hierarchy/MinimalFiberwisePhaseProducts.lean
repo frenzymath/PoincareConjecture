@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.OriginalPhaseGro
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.MinimalFirstPhaseComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.PrescribedFiberwiseProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -25,8 +17,6 @@ local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
 open Classical in
-
-
 
 theorem exists_hamiltonZero_minimal_fiberwise_phase_products {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)
@@ -133,4 +123,3 @@ theorem exists_hamiltonZero_minimal_fiberwise_phase_products {ι κ : Type*}
     exact hproducts theta htheta
 
 end PoincareConjecture.M76
-

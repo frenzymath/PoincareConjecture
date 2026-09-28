@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -35,8 +23,6 @@ local instance scalarBufferCarrierConnected (D : FlowCarrier 3) : ConnectedSpace
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem eventually_base_curvatureDerivativeNorm_le
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -126,8 +112,6 @@ private theorem scalar_time_bound
     (fun s hs => (hevol s hs).differentiableAt.differentiableWithinAt)
     hslope t ⟨le_rfl, ht⟩ 0 ⟨ht, le_rfl⟩ ht
 
-
-
 theorem exists_base_scalar_positive_time_buffer
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hc : ∀ k t, t ≤ 0 → MetricComplete ((F k).metric t))
@@ -166,8 +150,6 @@ theorem exists_base_scalar_positive_time_buffer
     mul_le_mul_of_nonneg_left (by linarith [ht.1]) hB.le
   change 1 - ((F k).connection t).scalarCurvature (p k) ≤ B * (0 - t) at h
   linarith
-
-
 
 theorem exists_eventually_base_scalar_time_error_constant
     (P : M23NormalizedKappaCompactnessPredecessors)

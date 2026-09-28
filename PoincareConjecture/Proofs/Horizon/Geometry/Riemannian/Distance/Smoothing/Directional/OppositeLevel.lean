@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -115,8 +105,6 @@ private theorem upper_level_distance_control
   have hdefect := mul_le_mul_of_nonneg_left hdmax (show 0 ≤ 2 * δ ^ 2 by positivity)
   refine ⟨hne, hlower, hgapy.1.trans hlower, by linarith, ?_⟩
   nlinarith
-
-
 
 theorem exists_near_opposite_smoothing_of_upper_level
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -223,6 +211,5 @@ theorem exists_near_opposite_smoothing_of_upper_level
   rw [D.gradient_add ((hf x).mdifferentiableAt (by simp))
     ((hrho x).mdifferentiableAt (by simp))] at hosc
   exact hosc.trans hnum
-
 
 end PoincareConjecture.RiemannianMetric

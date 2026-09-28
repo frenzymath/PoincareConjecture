@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBicollar
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ local notation "I" => Icc (0 : ℝ) 1
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {K : Set X}
-
-
-
 
 theorem ChartwisePLSphere.collar_core (sph : ChartwisePLSphere e (frontier K))
     (hK : IsCompact K) (L : SimplicialComplex ℝ E) (hL : L.faces.Finite)
@@ -60,8 +48,6 @@ theorem ChartwisePLSphere.collar_core (sph : ChartwisePLSphere e (frontier K))
   exact compact_collar_core (δ := δ) hK (sph.isConnected_region hK)
     (L.isCompact_space_of_finite hL) hLne HB c hc.continuousOn hi hinside hbase hproper
     (half_pos hδ) (by linarith) (by linarith) (hopen (δ / 2) (half_pos hδ) (by linarith))
-
-
 
 theorem connectedSpace_hamiltonSolidTorusAmbient :
     ConnectedSpace (LatticeHandleAmbient (Fin 2) (Fin 1)

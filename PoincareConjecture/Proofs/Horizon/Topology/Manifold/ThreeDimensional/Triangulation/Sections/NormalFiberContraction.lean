@@ -1,14 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Topology.MetricSpace.Contracting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

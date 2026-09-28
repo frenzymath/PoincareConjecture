@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCurvature
 import PoincareConjecture.Proofs.M03.CurvatureTrilinear
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_model_angular_vector
     (D : LeviCivitaData (M35.cylinderEuclideanMetric 0 (by norm_num)))

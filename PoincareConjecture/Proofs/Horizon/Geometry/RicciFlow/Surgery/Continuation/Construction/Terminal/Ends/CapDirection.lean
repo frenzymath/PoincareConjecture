@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.TubeSides
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

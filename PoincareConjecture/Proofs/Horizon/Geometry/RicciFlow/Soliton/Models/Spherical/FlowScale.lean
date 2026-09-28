@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData n M}
-
 
 theorem inner_eq_neg_time_mul_of_einstein (G : ShrinkingSolitonFlow S)
     (hEinstein : ∀ x : M, ∀ u v : TangentSpace (𝓡 n) x,

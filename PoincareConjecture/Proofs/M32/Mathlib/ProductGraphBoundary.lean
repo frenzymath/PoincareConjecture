@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M32.Mathlib.ProductCompactBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem not_isCompact_of_product_graph_frontier
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

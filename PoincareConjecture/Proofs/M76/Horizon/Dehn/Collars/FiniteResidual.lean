@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_triangulation_closed_subcomplex_complement
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hLK : L ≤ K) :
@@ -54,8 +43,6 @@ theorem exists_triangulation_closed_subcomplex_complement
     rw [hJs]
     exact mem_iUnion.mpr ⟨⟨s, hs, hsL⟩, hxs⟩
 
-
-
 theorem exists_triangulation_closed_polyhedral_complement
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hL : L.faces.Finite)
     (hLK : L.space ⊆ K.space) :
@@ -65,9 +52,6 @@ theorem exists_triangulation_closed_polyhedral_complement
     K.exists_subdivision_with_polyhedron_subcomplex L hK hL hLK
   obtain ⟨J, hJ, hJs⟩ := exists_triangulation_closed_subcomplex_complement R A hR hAR
   exact ⟨J, hJ, by simpa only [hRK.space_eq, hAL] using hJs⟩
-
-
-
 
 theorem exists_triangulation_collar_residual
     (K C B : SimplicialComplex ℝ E)

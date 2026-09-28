@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugeCovariantFields
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +23,6 @@ private theorem acceleration_transport_heq {q r : G.Point} (h : q = r)
     (v : G.Horizontal q) : HEq (h.symm ▸ v : G.Horizontal r) v := by
   cases h
   rfl
-
-
-
 
 theorem variationEndpointAcceleration_gauge
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)

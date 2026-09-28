@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.SlabInj
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.FrontierComparison
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.StandardMeridian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -28,8 +20,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem slab_frontier_ambient_homotopic
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)
@@ -62,9 +52,6 @@ theorem slab_frontier_ambient_homotopic
     intro x
     exact congrArg Subtype.val ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm_apply_apply _)
   rwa [hleft, hright] at hh
-
-
-
 
 theorem exists_source_slab_meridian_disk
     {α : Type*} (e : α → OpenPartialHomeomorph X V3)

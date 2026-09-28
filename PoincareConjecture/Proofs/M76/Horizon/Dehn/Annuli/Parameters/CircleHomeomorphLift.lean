@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

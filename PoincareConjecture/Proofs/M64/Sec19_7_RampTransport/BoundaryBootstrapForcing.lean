@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.It
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import Mathlib.MeasureTheory.Function.Holder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -42,18 +31,9 @@ local instance : NormedAddCommGroup (Target →L[ℝ] Target →L[ℝ] Target �
 local instance : NormedSpace ℝ (Target →L[ℝ] Target →L[ℝ] Target →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
 def quadraticForcing (B : Target → Target →L[ℝ] Target →L[ℝ] ℝ)
     (u : Plane → Target) (V : Fin 2 → Plane → Target) : Plane → ℝ :=
   fun z => ∑ i, B (u z) (V i z) (V i z)
-
-
-
-
-
 
 def quadraticForcingPartial (B : Target → Target →L[ℝ] Target →L[ℝ] ℝ)
     (u : Plane → Target) (V : Fin 2 → Plane → Target)
@@ -76,10 +56,6 @@ private theorem quadratic_term_fderiv_apply
   simp only [add_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.flip_apply]
   ring
-
-
-
-
 
 theorem quadraticForcing_fderiv_apply
     {B : Target → Target →L[ℝ] Target →L[ℝ] ℝ}
@@ -141,11 +117,6 @@ private theorem quadratic_forcing_memLp
     (ContinuousLinearMap.apply ℝ ℝ («E» := Target)).memLp_of_bilin
       (p := 2) (q := ⊤) 2 (hW a i) (hBV i)
   exact (h0.add h1).add h2
-
-
-
-
-
 
 theorem quadraticForcing_memWkp_one
     {U : Set Plane} {T : Set Target} (hU : IsOpen U)

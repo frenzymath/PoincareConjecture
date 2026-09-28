@@ -7,14 +7,6 @@ import Mathlib.Analysis.Normed.Operator.Extend
 import Mathlib.Analysis.Distribution.TemperedDistribution
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option synthInstance.maxHeartbeats 200000
@@ -34,7 +26,6 @@ open TensorProbeNative ChartMeasureNative HilbertResolventNative
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
 
 structure Data (g : RiemannianMetric n M) where
   fieldCount : ℕ
@@ -95,7 +86,6 @@ private theorem projection_compact : IsCompactOperator
   change IsCompactOperator (fun x : firstOrderGraph d.fields d.charts.measure =>
     (WithLp.ofLp (x : FirstOrderAmbient d.fields d.charts.measure)).1) at h
   exact h
-
 
 def resolvent : d.Value →L[ℝ] d.Value :=
   operator (V := firstOrderGraph d.fields d.charts.measure)
@@ -176,7 +166,6 @@ instance index_countable : Countable d.Index := by
     (WithLp.ofLp (x : FirstOrderAmbient d.fields d.charts.measure)).1)
   exact d.projection_compact
 
-
 theorem exists_response {T : ℝ} (hT : 0 ≤ T) {F : ℝ → d.Value}
     (hF : MemLp F 2 (SpectralHeatNative.timeMeasure T)) :
     ∃ U D G : ℝ → d.Value,
@@ -256,7 +245,6 @@ def coefficientActionLinear : Lp E 2 μ →ₗ[ℝ] Lp V 2 μ where
       Lp.coeFn_smul c (coefficientActionFun μ A f)] with x hcf hf hin hout
     simp only [RingHom.id_apply, hcf, hout, Pi.smul_apply, hf, hin, map_smul]
 
-
 def coefficientAction : Lp E 2 μ →L[ℝ] Lp V 2 μ :=
   (coefficientActionLinear μ A).mkContinuous ‖A‖ (norm_coefficientActionFun_le μ A)
 
@@ -279,7 +267,6 @@ variable {g : RiemannianMetric n M} (d : Data g)
 
 abbrev ProbeIndex := Fin d.fieldCount × Fin d.fieldCount
 
-
 def derivative : d.Form →L[ℝ] Lp (DerivativeCoefficients (Fin d.fieldCount)) 2 d.charts.measure :=
   (WithLp.sndL 2 ℝ d.Value
     (Lp (DerivativeCoefficients (Fin d.fieldCount)) 2 d.charts.measure)).comp
@@ -296,7 +283,6 @@ def derivativeCoefficient (i : Fin d.fieldCount) (ab : d.ProbeIndex) :
     d.Form →L[ℝ] Lp ℝ 2 d.charts.measure :=
   (coefficientL2 d.charts.measure (i, ab)).comp d.derivative
 
-
 def projectionValueCoefficient (ab : d.ProbeIndex) :
     C(M, Coefficients (Fin d.fieldCount) →L[ℝ] ℝ) where
   toFun x := ∑ cd : d.ProbeIndex,
@@ -307,7 +293,6 @@ def projectionValueCoefficient (ab : d.ProbeIndex) :
     intro cd _
     exact ((scalarLaplacian_contMDiff d.fields d.charts
       (projectionKernel_contMDiff d.fields g ab cd)).continuous).smul continuous_const
-
 
 def projectionDerivativeCoefficient (ab : d.ProbeIndex) :
     C(M, DerivativeCoefficients (Fin d.fieldCount) →L[ℝ] ℝ) where
@@ -342,7 +327,6 @@ theorem projectionCoefficients_apply (ab : d.ProbeIndex) (x : M)
     Finset.sum_congr rfl (fun _ _ => mul_comm _ _)
   rw [hval]
   ring
-
 
 def lowerSource (ab : d.ProbeIndex) : d.Form →L[ℝ] Lp ℝ 2 d.charts.measure :=
   (coefficientAction d.charts.measure (d.projectionValueCoefficient ab)).comp
@@ -404,7 +388,6 @@ theorem valueCoefficient_into_coe (ab : d.ProbeIndex)
   rw [hh]
   rfl
 
-
 def scalarTest (ab : d.ProbeIndex) (η : M → ℝ)
     (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) : SmoothTensor (n := n) (M := M) :=
   smoothDecode g d.fields (fun x => η x • EuclideanSpace.basisFun d.ProbeIndex ℝ ab)
@@ -418,7 +401,6 @@ theorem probes_scalarTest (ab : d.ProbeIndex) (η : M → ℝ)
     probes d.fields (d.scalarTest ab η hη) x =
       nativeProjection g d.fields x (η x • EuclideanSpace.basisFun d.ProbeIndex ℝ ab) :=
   probes_smoothDecode g d.fields _ _ x
-
 
 theorem scalarTest_pairing (ab : d.ProbeIndex) (η : M → ℝ)
     (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) (v : d.Value) :
@@ -453,7 +435,6 @@ theorem scalarLaplacian_pairing_symmetric {f η : M → ℝ}
       apply integral_congr_ae
       exact Eventually.of_forall (fun x => Finset.sum_congr rfl (fun _ _ => mul_comm _ _))
     _ = _ := integral_scalarLaplacian_pairing d.fields d.charts hη hf
-
 
 theorem scalarLaplacian_smooth_pairing (ab : d.ProbeIndex) (η : M → ℝ)
     (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) (h : SmoothTensor (n := n) (M := M)) :
@@ -490,7 +471,6 @@ theorem scalarLaplacian_smooth_pairing (ab : d.ProbeIndex) (η : M → ℝ)
       rw [hadd, Pi.add_apply, heta, hvalue, hsource, Real.inner_apply,
         scalarLaplacian_probe_eq d.fields d.charts g d.parseval h ab x]
       rfl
-
 
 theorem scalarLaplacian_form_pairing (ab : d.ProbeIndex) (η : M → ℝ)
     (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) (z : d.Form) :
@@ -535,7 +515,6 @@ theorem scalarLaplacian_form_pairing (ab : d.ProbeIndex) (η : M → ℝ)
     linarith only [hform]
   exact congrFun heq z
 
-
 theorem generatorGraph_scalar_weak {u a : d.Value} (ha : d.GeneratorGraph u a) :
     ∃ z : d.Form, d.inclusion z = u ∧
       ∀ (ab : d.ProbeIndex) (η : M → ℝ) (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η),
@@ -570,7 +549,6 @@ theorem derivativeCoefficient_into_coe (i : Fin d.fieldCount) (ab : d.ProbeIndex
   change derivativeToLp d.fields d.charts.measure h x (i, ab) = _
   rw [hh]
   rfl
-
 
 theorem directional_form_pairing (i : Fin d.fieldCount) (ab : d.ProbeIndex)
     (η : M → ℝ) (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) (z : d.Form) :
@@ -614,7 +592,6 @@ theorem directional_form_pairing (i : Fin d.fieldCount) (ab : d.ProbeIndex)
         rw [heta, hh, Real.inner_apply, mul_comm]
   exact congrFun heq z
 
-
 theorem norm_form_le_of_variational {u a : d.Value} {z : d.Form}
     (hz : d.inclusion z = u)
     (hform : ∀ w : d.Form, inner ℝ w z = inner ℝ (d.inclusion w) (u + a)) :
@@ -630,7 +607,6 @@ theorem norm_form_le_of_variational {u a : d.Value} {z : d.Form}
       _ ≤ (‖u‖ + ‖a‖) ^ 2 := by
         nlinarith [norm_nonneg u, norm_nonneg a]
   exact (sq_le_sq₀ (norm_nonneg z) (add_nonneg (norm_nonneg u) (norm_nonneg a))).mp hb
-
 
 theorem generatorGraph_scalar_equations {u a : d.Value} (ha : d.GeneratorGraph u a) :
     ∃ z : d.Form, d.inclusion z = u ∧ ‖z‖ ≤ ‖u‖ + ‖a‖ ∧
@@ -668,7 +644,6 @@ open NativeChartScalarLocalization NativeChartGradientEnergyNative
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
 
 variable (L : FiniteChartLocalizationData d.charts) (a : L.patches) (ab : d.ProbeIndex)
-
 
 def localizedSchwartz : SmoothTensor (n := n) (M := M) →ₗ[ℝ] 𝓢(ModelE, ℝ) where
   toFun h :=
@@ -720,7 +695,6 @@ theorem localizedDerivativeCore_norm_sq (j : Fin n) (h : SmoothTensor (n := n) (
   change ‖(∂_{EuclideanSpace.single j (1 : ℝ)} (d.localizedSchwartz L a ab h)).toLp 2 volume x‖ ^ 2 = _
   rw [hx, SchwartzMap.lineDerivOp_apply_eq_fderiv, Real.norm_eq_abs, sq_abs]
 
-
 theorem exists_localizedDerivativeCore_bound (j : Fin n) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ h : SmoothTensor (n := n) (M := M),
       ‖d.localizedDerivativeCore L a ab j h‖ ≤
@@ -759,7 +733,6 @@ theorem exists_localizedDerivativeCore_bound (j : Fin n) :
     (sq_nonneg ‖intoFirstOrderGraph d.fields d.charts.measure h‖)
   simpa only [mul_pow] using hbound.trans hsq
 
-
 def localizedDerivative (j : Fin n) : d.Form →L[ℝ] Lp ℝ 2 (volume : Measure ModelE) :=
   (d.localizedDerivativeCore L a ab j).extendOfNorm
     (intoFirstOrderGraph d.fields d.charts.measure)
@@ -796,7 +769,6 @@ section Complexification
 variable {n : ℕ}
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 def coordinateComplexification : Lp ℝ 2 (volume : Measure ModelE) →L[ℝ]
     Lp ℂ 2 (volume : Measure ModelE) :=
@@ -836,7 +808,6 @@ variable {g : RiemannianMetric n M} (d : Data g)
   [MeasurableSpace M] [BorelSpace M]
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 theorem localizedDerivative_distribution (L : FiniteChartLocalizationData d.charts)
     (a : L.patches) (ab : d.ProbeIndex) (j : Fin n) (z : d.Form) :
@@ -879,7 +850,6 @@ theorem scalarLp_scalarProbe (h : SmoothTensor (n := n) (M := M)) (ab : d.ProbeI
   apply Lp.ext
   exact (d.scalarLp_coe _ _).trans (d.valueCoefficient_into_coe ab h).symm
 
-
 theorem scalarLp_scalarLaplacian_probe (h : SmoothTensor (n := n) (M := M))
     (ab : d.ProbeIndex) :
     d.scalarLp (scalarLaplacian d.fields d.charts (scalarProbe d.fields h ab))
@@ -899,7 +869,6 @@ theorem scalarLp_scalarLaplacian_probe (h : SmoothTensor (n := n) (M := M))
     with x hL hvalue hlower hadd
   rw [hadd, Pi.add_apply, hL, hvalue, hlower]
   exact scalarLaplacian_probe_eq d.fields d.charts g d.parseval h ab x
-
 
 theorem exists_smooth_secondDirectional_graph_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ h : SmoothTensor (n := n) (M := M),

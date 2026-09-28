@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Defs
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M14
 variable {E F H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace H]
   (IM : ModelWithCorners ℝ F H) [TopologicalSpace M] [ChartedSpace H M]
-
-
-
 
 theorem contMDiffOn_union_closed_tubes {k : WithTop ℕ∞} {U : Set E} {a l c d : ℝ}
     (hlc : l < c) {f : E × ℝ → M}

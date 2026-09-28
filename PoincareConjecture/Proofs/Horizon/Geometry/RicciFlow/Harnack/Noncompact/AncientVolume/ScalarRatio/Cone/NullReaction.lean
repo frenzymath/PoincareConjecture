@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.NullPlane
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem curvatureReaction_eq_zero_of_curvature_null_vector
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -46,8 +34,6 @@ theorem curvatureReaction_eq_zero_of_curvature_null_vector
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem tensorLaplacian_nonpos_on_terminal_curvature_null_vector
     {n : ℕ} {M : Type u} [TopologicalSpace M]

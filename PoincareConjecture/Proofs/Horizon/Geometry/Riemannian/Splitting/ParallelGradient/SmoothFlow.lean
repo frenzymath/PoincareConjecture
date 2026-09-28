@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.CompleteFlow
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +41,6 @@ theorem hasDerivAt_chart_integralCurve
   ext
   exact (congrArg (mfderiv (𝓡 n) (𝓡 n) (extChartAt (𝓡 n) p) (γ t))
     (one_smul ℝ (D.gradient f (γ t)))).trans (one_smul ℝ _).symm
-
-
 
 theorem contMDiff_gradientFlow
     {D : LeviCivitaData g} {f : M → ℝ} {Φ : ℝ → M → M}

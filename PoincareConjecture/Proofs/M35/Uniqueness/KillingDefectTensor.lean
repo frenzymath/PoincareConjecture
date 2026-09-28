@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingCovector
 import PoincareConjecture.Proofs.M04.TensorLaplacianDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,7 +58,6 @@ private theorem laplacian_add {n : ℕ} {M : Type*} [TopologicalSpace M]
       (M04.isSmoothCovariantTensor_covariantTensorDerivative D hS)
       (M04.isSmoothCovariantTensor_covariantTensorDerivative D hT), Finset.sum_add_distrib]
 
-
 noncomputable def killingDefectTensor {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) : CovariantTensorEvaluation n (V n) 2 :=
   fun x v => DeTurckNative.metricLieDerivative D X x (v 0) (v 1)
@@ -86,8 +76,6 @@ private theorem defect_eq {n : ℕ} {g : RiemannianMetric n (V n)}
   change DeTurckNative.metricLieDerivative D X x (v 0) (v 1) = _
   rw [killing_defect_eq_covector_symmetrization D X hX, M04.tensorPermute, hs, hv]
 
-
-
 theorem isSmoothCovariantTensor_killingDefectTensor {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
     (X : V n → V n) (hX : ContDiff ℝ ∞ X) :
@@ -96,8 +84,6 @@ theorem isSmoothCovariantTensor_killingDefectTensor {n : ℕ}
   have hK := M04.isSmoothCovariantTensor_covariantTensorDerivative D
     (isSmoothCovariantTensor_killingCovector g X hX)
   exact smooth_add hK (M04.isSmoothCovariantTensor_tensorPermute hK _)
-
-
 
 theorem killingDefectTensor_laplacian {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)

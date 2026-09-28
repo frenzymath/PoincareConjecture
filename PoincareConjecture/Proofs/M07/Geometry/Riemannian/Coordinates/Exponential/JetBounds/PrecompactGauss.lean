@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CovariantPullback
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -113,8 +106,6 @@ private theorem chart_velocity_eq_deriv {q : ℝ → M} {a : M} {t : ℝ}
     fderiv ℝ ((extChartAt (𝓡 n) a) ∘ q) t 1 at hd1
   simpa only [fderiv_eq_smul_deriv, one_smul] using hd1
 
-
-
 theorem hasDerivAt_manifold_variation_pairing
     (g : RiemannianMetric n M) {u : ℝ × ℝ → M} {A : Set (ℝ × ℝ)}
     (hA : IsOpen A) (hu : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 n) ∞ u A)
@@ -198,8 +189,6 @@ theorem hasDerivAt_manifold_variation_pairing
   apply hh.congr_of_eventuallyEq
   filter_upwards [hI.mem_nhds htI] with r hr
   exact hpair hr
-
-
 
 theorem gauss_identity_of_radial_family
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}

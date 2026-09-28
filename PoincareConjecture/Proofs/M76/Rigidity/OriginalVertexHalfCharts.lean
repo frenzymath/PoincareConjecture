@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalBlockExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +15,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_vertex_half_chart (p : (T.marked 2).vertices)
     (w : ℝ) (hw : w ≠ 0) :

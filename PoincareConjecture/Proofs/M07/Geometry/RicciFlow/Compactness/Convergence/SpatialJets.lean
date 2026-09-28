@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SpatialJets
 import Mathlib.Topology.Instances.Matrix
 
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem eventually_contDiffAt_coordinateCoefficient
     (G : PointedGeometricConvergence S)
@@ -36,8 +32,6 @@ theorem eventually_contDiffAt_coordinateCoefficient
   filter_upwards [eventually_ge_atTop j] with k hk a b
   exact (G.embedding k).contDiffAt_coordinateCoefficient_pullback (G.exhaustion_open k)
     q a b p ht ⟨hp, G.exhaustion_monotone hk (hj (mem_singleton _))⟩
-
-
 
 theorem tendsto_coordinate_spatial_metricJet (G : PointedGeometricConvergence S)
     (q : G.limitCarrier.carrier) (r : ℕ) (a b : Fin n)
@@ -73,7 +67,6 @@ theorem tendsto_coordinate_spatial_metricJet (G : PointedGeometricConvergence S)
   filter_upwards [G.eventually_contDiffAt_coordinateCoefficient q p ht hp] with k hk
   ext v
   exact (Poincare.Analysis.iteratedFDeriv_spatial_slice _ (hk a b) r v).symm
-
 
 theorem tendsto_coordinate_metric_inverse (G : PointedGeometricConvergence S)
     (q : G.limitCarrier.carrier) (p : ℝ × EuclideanSpace ℝ (Fin n))

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OrientedFiniteHeightCutBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarDiskCutOrientation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,11 +9,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_inward_oriented_affine_height_cut_boxes
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

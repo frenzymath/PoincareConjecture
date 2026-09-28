@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M11CompatibleEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,9 +7,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture
-
-
-
 
 structure CompatibleSpacetimeTheory {n : ℕ} {X : Type u} [TopologicalSpace X]
     {time : X → ℝ} {I : SpacetimeInterval}
@@ -74,7 +62,6 @@ structure CompatibleSpacetimeTheory {n : ℕ} {X : Type u} [TopologicalSpace X]
     ∃ r : CompatibleSpacetimeCylinder F (D.interval K) U,
       ∀ (t : (D.interval K).Point) (x : U),
         r.toSpacetime (t, x) = e.toSpacetime (t, x.val)
-
 
   cylinder_glue : ∀ (C : Type v) [TopologicalSpace C]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]

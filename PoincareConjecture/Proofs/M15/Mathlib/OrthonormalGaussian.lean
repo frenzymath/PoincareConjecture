@@ -1,22 +1,11 @@
 import Mathlib.Analysis.SpecialFunctions.Gaussian.FourierTransform
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped BigOperators
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem Module.Basis.bilin_apply_equivFun_symm
     (b : Module.Basis (Fin n) ℝ E) (B : E →L[ℝ] E →L[ℝ] ℝ)
@@ -29,8 +18,6 @@ theorem Module.Basis.bilin_apply_equivFun_symm
 namespace MeasureTheory
 
 variable [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
 
 theorem integral_exp_neg_bilin_of_orthonormal_basis
     (b : Module.Basis (Fin n) ℝ E) (B : E →L[ℝ] E →L[ℝ] ℝ)
@@ -49,9 +36,6 @@ theorem integral_exp_neg_bilin_of_orthonormal_basis
   rw [← (PiLp.volume_preserving_toLp (Fin n)).integral_comp
     (MeasurableEquiv.toLp 2 _).measurableEmbedding] at h
   simpa [EuclideanSpace.real_norm_sq_eq] using h
-
-
-
 
 theorem integrable_exp_neg_bilin_of_orthonormal_basis
     (b : Module.Basis (Fin n) ℝ E) (B : E →L[ℝ] E →L[ℝ] ℝ)

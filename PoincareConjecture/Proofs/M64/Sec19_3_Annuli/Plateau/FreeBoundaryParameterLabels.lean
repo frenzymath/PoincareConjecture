@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseBoundaryLabels
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +7,6 @@ set_option warningAsError true
 open Set
 
 namespace PoincareConjecture.M64FreeWeakPhaseAnnulus
-
-
-
 
 theorem exists_lower_parameter_chord_label {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

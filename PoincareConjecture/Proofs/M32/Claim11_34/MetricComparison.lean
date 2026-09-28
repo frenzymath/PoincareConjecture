@@ -4,28 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.LimitTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
-
-
 
 theorem blowup_tendstoUniformlyOn_zeroCoefficient
     (G : GeneralizedBlowupConvergence S J) (q : G.limit.carrier.carrier)
@@ -160,8 +136,6 @@ private theorem eventually_zeroPullbackForm_error_on_chart
   erw [hi v, hi w, c.left_inv hx] at h
   exact h
 
-
-
 theorem blowup_eventually_zeroPullbackForm_error
     (G : GeneralizedBlowupConvergence S J)
     {K : Set G.limit.carrier.carrier} (hK : IsCompact K) {ε : ℝ} (hε : 0 < ε) :
@@ -191,8 +165,6 @@ theorem blowup_eventually_zeroPullbackForm_error
     filter_upwards [eventually_zeroPullbackForm_error_on_chart G q
       (isCompact_closedBall (c q) r) hrc hε] with k hk x hx
     exact hk x hx.1 (Metric.ball_subset_closedBall hx.2)
-
-
 
 theorem blowup_eventually_zero_tangentNorm_bounds
     (G : GeneralizedBlowupConvergence S J)

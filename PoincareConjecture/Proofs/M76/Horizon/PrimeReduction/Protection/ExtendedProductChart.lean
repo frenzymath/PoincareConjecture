@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ExtendedProtectedProduct
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.MarkedProductInteriorChart
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry

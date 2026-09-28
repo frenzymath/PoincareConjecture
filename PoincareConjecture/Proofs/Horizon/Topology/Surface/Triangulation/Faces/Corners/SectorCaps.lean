@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CornerCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.Right
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -162,9 +151,6 @@ private theorem exists_sector_cap_coordinates
       exact ⟨w, hVcover ⟨hw, hquad⟩, rfl⟩
 
 variable [T2Space M]
-
-
-
 
 theorem exists_smoothFace_sector_caps
     (P : ChartCircleArrangementVertexPatch r p) (i : Bool × Bool) (x : M)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GeometricExceptionalEdgeCollar
 import PoincareConjecture.Proofs.M76.Mathlib.RegularTriangleSlabCollar
 import PoincareConjecture.Proofs.M76.Mathlib.StrictCrossingPointIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,14 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
 
 theorem exists_singleVertex_triangle_collar_with_geometry (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)
@@ -165,13 +147,6 @@ theorem exists_singleVertex_triangle_collar_with_geometry (K : SimplicialComplex
     · intro x hx _
       exact ⟨β, hβ, hx, hβ.le, le_rfl⟩
 
-
-
-
-
-
-
-
 theorem exists_singleVertex_triangle_collar_with_source (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)
     {β : ℝ} (hβ : 0 < β)
@@ -198,13 +173,6 @@ theorem exists_singleVertex_triangle_collar_with_source (K : SimplicialComplex �
   obtain ⟨S, T, H, hH, _, hrest⟩ :=
     K.exists_singleVertex_triangle_collar_with_geometry A hqK hAq hβ hreg hs hsc hnontriv
   exact ⟨S, T, H, hH, hrest⟩
-
-
-
-
-
-
-
 
 theorem exists_singleVertex_triangle_collar (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology intervalIntegral
@@ -61,9 +51,6 @@ structure M14JointMapData
         E.reduced_length z.1.1 z.1.2 =
           M14ReducedLengthValue G T 0 (z.1.2 ^ 2) x (E.gamma z.1.1 z.1.2)
 
-
-
-
 def M14ActionDifferentialStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T : ℝ) (x : G.Point) (E : M14ExponentialFamily G T x),
@@ -96,7 +83,6 @@ structure M14ExponentialConclusion
     (E.differential Z s hs W).val =
       M14InitialVectorDerivative G E.gamma s Z W
 
-
   path_euler_transport : ∀ (T : ℝ) (x : G.Point)
     (E : M14ExponentialFamily G T x) (Z : G.Horizontal x) (s : ℝ)
     (hs : (Z, s) ∈ E.domain) (hpos : 0 < s),
@@ -120,7 +106,6 @@ structure M14ExponentialConclusion
     M14IsMinimizing (E.path Z s hs hpos) →
       E.reduced_length Z s =
         M14ReducedLengthValue G T 0 (s ^ 2) x (E.gamma Z s)
-
 
   positive_survival : ∀ (T : ℝ) (x : G.Point)
     (E : M14ExponentialFamily G T x) (Z : G.Horizontal x) (s : ℝ),

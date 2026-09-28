@@ -1,15 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SignedAxisMonodromy
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem signed_axis_closing_classification {n : ℕ}
     (P : Polygon P2 (n + 3)) (hP : P.HasSimplicialEdges)
@@ -41,8 +37,6 @@ theorem signed_axis_closing_classification {n : ℕ}
     intro j u hu
     simpa [SignedAxisPermutation.index, jointSheetIndex, hs] using hclose j u hu
 
-
-
 theorem signed_axis_closing_eq_refl_of_planar_strips
     (n : Fin 2 → ℕ) (P : ∀ j, Polygon P2 (n j + 3))
     (hP : ∀ j, (P j).HasSimplicialEdges) (hinjP : ∀ j, Function.Injective (P j))
@@ -67,4 +61,3 @@ theorem signed_axis_closing_eq_refl_of_planar_strips
   simpa [SignedAxisPermutation.refl] using hsign j.rev
 
 end PoincareConjecture.M76.Dehn.Annuli
-

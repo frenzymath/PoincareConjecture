@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.NormalizedParameterProduct
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductOpenSubsets
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +18,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem OriginalDiskProduct.exists_marked_correction (P : OriginalDiskProduct e R j)
     (he : PLDomain e R)

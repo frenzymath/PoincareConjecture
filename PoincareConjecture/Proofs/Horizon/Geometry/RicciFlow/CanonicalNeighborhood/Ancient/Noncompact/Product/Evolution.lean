@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M27ProductModels
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.FlowNormalization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Flow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem round_surface_inner_backward
     (F : RicciFlow 2 M (Iic 0))

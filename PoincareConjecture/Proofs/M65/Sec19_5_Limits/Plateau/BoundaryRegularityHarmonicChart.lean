@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityRe
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskHarmonicChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHarmonicPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,11 +13,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Boundary
 
 open M65Branch M65StrictTrace
-
-
-
-
-
 
 theorem continuous_boundary_harmonic_chart
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.U
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.UniversalProperty
 
-
-
-
-
-
-
-
 noncomputable section
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
@@ -111,8 +104,6 @@ private theorem PoincareConjecture.RiemannianMetric.exists_empty_corner_model
   rw [htransport (g.ball p 1) (fun x => max 0 (D.scalarCurvature x)),
     htransport (g.ball p 2) (fun _ => 1)]
   simp only [integral_const, smul_eq_mul, measureReal_restrict_apply_univ, mul_one]
-
-
 
 theorem PoincareConjecture.exists_uniform_unitBall_scalar_integral_bound_of_corner_models
     (n : ℕ) (hn : 2 ≤ n) (δ : ℝ)

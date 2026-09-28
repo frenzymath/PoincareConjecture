@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocality
 import PoincareConjecture.Definitions.M13MetricHomothety
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RoundCylinderClose
-
-
 
 theorem congr_cylinder {epsilon u : ℝ} {B D : RoundCylinderTwoTensor}
     (hB : RoundCylinderClose epsilon u B)
@@ -40,8 +29,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
 
 theorem metricIsometry_comparison (N : EpsilonNeck g)
     (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞) (hf : MetricHomothety g h f 1) :

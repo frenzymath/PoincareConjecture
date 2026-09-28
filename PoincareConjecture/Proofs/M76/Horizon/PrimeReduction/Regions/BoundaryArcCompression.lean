@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.CompactParameterThickening
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

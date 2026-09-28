@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Coordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,8 +54,6 @@ private theorem scaled_contact_mem_openSquare_iff {r t : Real} (hr : 0 < r)
     nlinarith [hx.1]
   · intro ht0
     constructor <;> nlinarith
-
-
 
 theorem exists_contact_halfInterval
     {h : S2 → Real} (e : OpenPartialHomeomorph E2 S2)

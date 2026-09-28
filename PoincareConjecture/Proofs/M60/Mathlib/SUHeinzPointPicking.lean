@@ -2,21 +2,11 @@ import Mathlib.Analysis.Normed.Group.Basic
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M60
-
-
 
 theorem exists_heinz_disk {E : Type*} [NormedAddCommGroup E] [ProperSpace E]
     {u : E → ℝ} {R : ℝ} (hR : 0 < R)

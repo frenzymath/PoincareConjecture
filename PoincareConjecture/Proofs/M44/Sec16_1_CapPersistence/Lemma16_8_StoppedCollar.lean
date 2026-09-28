@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.FirstExit
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StandardCollar
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,10 +27,6 @@ noncomputable local instance stoppedTwoJetNormedGroup :
 
 noncomputable local instance stoppedTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_stopped_local_collar (P : M44CapPersistencePredecessors.{u})
     (C : ℝ) (u v : E) {model : Set (MetricTwoJet 3)} (hmodel : IsCompact model)

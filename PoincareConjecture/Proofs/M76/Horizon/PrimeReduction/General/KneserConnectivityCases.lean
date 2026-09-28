@@ -2,22 +2,9 @@ import Mathlib.Data.Fin.Basic
 import Mathlib.Data.Fintype.Fin
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem fin3_equivalence_partition_cases
     (r : Fin 3 → Fin 3 → Prop)

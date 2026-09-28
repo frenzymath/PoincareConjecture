@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CubeTransport
 import PoincareConjecture.Proofs.M02.HurewiczMap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -27,8 +14,6 @@ open M02
 
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
   [CategoryWithHomology C]
-
-
 
 theorem simplexDifferenceHomologyClass_eq_of_paired_homotopies (R : C)
     {A X : TopCat.{w}} {f g p q : A ⟶ X}
@@ -59,8 +44,6 @@ theorem simplexDifferenceHomologyClass_eq_of_paired_homotopies (R : C)
   apply simplicialSimplexDifferenceHomologyClass_eq_of_boundary R _ _ _ _ _ _ _ b
   rw [hb]
   abel
-
-
 
 theorem genLoopSingularHomologyClass_eq_of_homotopyAlong (R : C) (X : TopCat.{w})
     {n : ℕ} {x y : X} {a : GenLoop (Fin (n + 1)) X x}
@@ -102,8 +85,6 @@ theorem genLoopSingularHomologyClass_eq_of_homotopyAlong (R : C) (X : TopCat.{w}
     H' K' s (hfaces a) (hfaces b) htrace
   simpa only [himage, genLoopSingularSimplex_const,
     genLoopSingularHomologyClass, singularSimplexHomologyClass] using heq
-
-
 
 theorem genLoopSingularHomologyClass_boundaryTransport (R : C) (X : TopCat.{w})
     {n : ℕ} {x y : X} (p : Path x y) (a : GenLoop (Fin (n + 1)) X x) :

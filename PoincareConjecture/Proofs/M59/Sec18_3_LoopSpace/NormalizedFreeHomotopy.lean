@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.Claim18_16_PiTwoPiThree
 import PoincareConjecture.Proofs.M59.Mathlib.CubeTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -24,16 +14,12 @@ open Proofs.M02
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m59NormalizedFamily_pole (q : M59SphereQuotient) (x : M)
     (Gamma : FreeTwoSphereFamily (M := M)) (hGamma : M59NormalizedAt q x Gamma) :
     m59FamilyMap Gamma q.pole = constantC1Loop x := by
   have hz : (fun _ : Fin 2 => (0 : I)) ∈ Cube.boundary (Fin 2) := ⟨0, Or.inl rfl⟩
   rw [← q.boundary_collapsed _ hz, ← m59NormalizedCube_agreement q x Gamma hGamma]
   exact GenLoop.boundary (m59NormalizedCube q x Gamma hGamma) _ hz
-
-
 
 theorem m59NormalizedCube_homotopyAlong (q : M59SphereQuotient) (x : M)
     (Gamma Delta : FreeTwoSphereFamily (M := M))
@@ -57,9 +43,6 @@ theorem m59NormalizedCube_homotopyAlong (q : M59SphereQuotient) (x : M)
       (m59NormalizedCube_agreement q x Delta hDelta v).symm
     boundary_path := fun t v => congrArg (fun s => H (t, s))
       (q.boundary_collapsed v v.2) }⟩⟩
-
-
-
 
 theorem m59_normalized_classes_eq_of_continuous_free_class [T2Space M]
     (hcompact : IsCompact (Set.univ : Set M)) (q : M59SphereQuotient) (x : M)

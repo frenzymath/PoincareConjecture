@@ -1,3 +1,1 @@
 import PoincareConjecture.Definitions.Ch09.NormalizedKappaCompactness
-
-

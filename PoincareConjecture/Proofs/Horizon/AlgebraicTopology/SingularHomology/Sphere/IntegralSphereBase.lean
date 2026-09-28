@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphere.IntegralZeroSphere
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphere.IntegralSphereHomology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

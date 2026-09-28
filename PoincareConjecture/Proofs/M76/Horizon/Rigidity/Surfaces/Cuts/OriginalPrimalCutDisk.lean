@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalExte
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalExteriorGapCharts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalSectorAttachmentFibers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
 
 theorem exists_heightGraph_of_projection_homeomorph
     {gap : Set (E × F)} {arc : Set E} (e : gap ≃ₜ arc) (he : e.symm.IsFinitePL)
@@ -47,8 +37,6 @@ theorem exists_heightGraph_of_projection_homeomorph
     refine ⟨e ⟨y, hy⟩, (e ⟨y, hy⟩).property, ?_⟩
     exact (hgraph (e ⟨y, hy⟩)).trans
       (congrArg Subtype.val (e.symm_apply_apply ⟨y, hy⟩))
-
-
 
 theorem exists_primal_sector_graph_attachment
     {s b : Set (E × F)} (hs : IsFinitePLBallPair (ℝ × ℝ) s b)
@@ -128,8 +116,6 @@ variable [DecidableEq E]
   [Fintype (ResidualComplementaryEdge K P D)]
   (labels : ResidualComplementaryEdge K P D ≃ Fin 2)
 
-
-
 structure OriginalPrimalCutDiskData where
   bands : ∀ s : ResidualComplementaryEdge K P D,
     OriginalResidualHalfBands K (complementaryOriginalEdge K P hcofaces s.val)
@@ -192,8 +178,6 @@ noncomputable def OriginalPrimalCutDiskData.rim
 def OriginalPrimalCutDiskData.sourceMap
     (_C : OriginalPrimalCutDiskData K P D hD hcofaces hP labels) :
     ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ)) → E := fun p ↦ p.1.1
-
-
 
 theorem nonempty_originalPrimalCutDiskData
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

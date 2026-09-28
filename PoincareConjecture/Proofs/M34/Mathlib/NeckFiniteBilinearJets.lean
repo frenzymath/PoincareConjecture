@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteBilinearCoordinates
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
 
 open scoped ContDiff BigOperators
 open Poincare.Analysis.Calculus
-
-
-
 
 theorem exists_piLpBilinearFromCoordinates_jet_bound
     {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)]

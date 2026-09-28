@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Boundary.SquareExtension
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -15,9 +13,6 @@ private theorem normalized_interval {l u x : ℝ} (h : l < u) :
     (2 * x - l - u) / (u - l) ∈ Icc (-1 : ℝ) 1 ↔ x ∈ Icc l u := by
   rw [mem_Icc, le_div_iff₀ (sub_pos.mpr h), div_le_iff₀ (sub_pos.mpr h)]
   constructor <;> rintro ⟨h₀, h₁⟩ <;> constructor <;> linarith
-
-
-
 
 theorem exists_finitePL_rectangle_extension_of_injective_rim
     (f : V2 → ℝ × ℝ) (hf : FinitePiecewiseAffineOn f D)

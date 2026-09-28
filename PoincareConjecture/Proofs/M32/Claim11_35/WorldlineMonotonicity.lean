@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.WorldlineScalar
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem normalizedCylinderScalar_monotoneOn_of_laplacian_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -49,9 +35,6 @@ theorem normalizedCylinderScalar_monotoneOn_of_laplacian_bound
     (fun s hs => (hd s (interior_subset hs)).1.mono interior_subset)
   intro s hs
   exact (div_nonneg (sq_nonneg _) (by norm_num)).trans (hd s (interior_subset hs)).2
-
-
-
 
 theorem exists_strongNeck_scalarComparison_along_cylinder
     (hM04 : RicciFlowCurvatureTheory.{u}) :

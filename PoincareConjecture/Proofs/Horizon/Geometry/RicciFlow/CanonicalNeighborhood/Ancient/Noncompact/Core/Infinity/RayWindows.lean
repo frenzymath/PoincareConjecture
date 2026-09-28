@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,7 +8,6 @@ open scoped Topology
 namespace Poincare.Riemannian.Soul
 
 variable {M : Type*} [MetricSpace M]
-
 
 theorem IsRay.eventually_rescaled_window_distance
     {ray : ℝ → M} (hray : IsRay ray)

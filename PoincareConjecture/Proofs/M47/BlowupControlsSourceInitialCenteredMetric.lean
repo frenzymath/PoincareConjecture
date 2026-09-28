@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNativeMetric
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialModelMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_centered_tensor_evaluation
     (B : RoundCylinderTwoTensor) (q : UnitTwoSphere) (s : ℝ) (p : E)
@@ -65,8 +54,6 @@ theorem source_initial_centered_tensor_evaluation
     rfl
   rw [hcoeff]
   exact hL (D v) (D w)
-
-
 
 theorem source_initial_centered_metric_bounds
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 2)

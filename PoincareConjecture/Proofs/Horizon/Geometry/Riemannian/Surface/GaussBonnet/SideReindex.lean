@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.SideFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +27,6 @@ theorem coordinateTriangleSideField_reindex_on_side
     simpa only [AffineBasis.coe_reindex, EquivLike.range_comp] using hb
   exact (coordinateTriangle_side_velocity F (b.reindex r) hF hFi hbr i j ht).2.symm.trans
     (coordinateTriangle_side_velocity F b hF hFi hb (r.symm i) (r.symm j) ht).2
-
-
 
 theorem surfaceTurningForm_coordinate_side_reindex
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
@@ -87,8 +78,6 @@ theorem surfaceTurningForm_coordinate_side_reindex
     (coordinateTriangleSideUnitField g F (b.reindex r) i j)
     (coordinateTriangleSideField F (b.reindex r) i j) hz
   exact hframe.trans (congrArg (trianglePermutationOrientation r * ·) hturn)
-
-
 
 theorem integral_coordinateTriangle_side_reindex
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

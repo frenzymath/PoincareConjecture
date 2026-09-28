@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.OriginalDiskStarNeighborho
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -24,8 +14,6 @@ open Set Metric Geometry SignType
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ChartwisePLSphere.exists_finite_graph_image
     {X G ι : Type*} [TopologicalSpace X]
@@ -56,10 +44,6 @@ theorem ChartwisePLSphere.exists_finite_graph_image
   obtain ⟨P, hP, hPs⟩ :=
     (hsJ.finitePiecewiseAffineOn_comp J hJ hF).exists_finite_triangulation_image
   exact ⟨P, hP, by rw [hPs, hJs, image_comp, hmap]⟩
-
-
-
-
 
 theorem ChartwisePLSphere.exists_oriented_domain_stars
     {X ι : Type*} [MetricSpace X]

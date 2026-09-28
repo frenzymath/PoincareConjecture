@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

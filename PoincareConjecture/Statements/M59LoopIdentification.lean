@@ -1,28 +1,6 @@
 import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal unitInterval
@@ -35,8 +13,6 @@ section Carrier
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 structure M59IdentificationCore (q : M59SphereQuotient) (x : M) where
   pi_two_pi_three :
@@ -59,7 +35,6 @@ structure M59IdentificationCore (q : M59SphereQuotient) (x : M) where
         ((m59FamilyMap Gamma).Homotopic (m59FamilyMap Delta) ↔
           familySigmaClass Gamma = familySigmaClass Delta)
 
-
   regular_homotopy :
     ∀ Gamma Delta : FreeTwoSphereFamily (M := M),
       M59NormalizedAt q x Gamma → M59NormalizedAt q x Delta →
@@ -77,9 +52,6 @@ structure M59IdentificationCore (q : M59SphereQuotient) (x : M) where
 
 end Carrier
 
-
-
-
 structure M59IdentificationSystem where
   quotient : M59SphereQuotient
   core : ∀ {M : Type u} [TopologicalSpace M]
@@ -94,7 +66,6 @@ structure M59IdentificationSystem where
       [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
       (f : ContinuousMap M N), ContMDiff (𝓡 3) (𝓡 3) ∞ f →
         Nonempty (M59LoopPostcomposition f)
-
 
   regular_postcomposition : ∀ {M N : Type u}
       [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

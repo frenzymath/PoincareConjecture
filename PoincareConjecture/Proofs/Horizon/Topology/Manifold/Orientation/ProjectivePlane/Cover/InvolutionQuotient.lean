@@ -1,15 +1,6 @@
 import Mathlib.Topology.IsLocalHomeomorph
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ universe u
 namespace Poincare.Topology.Orientation.ProjectivePlane
 
 variable {X : Type u} [TopologicalSpace X]
-
-
 
 theorem involutionQuotient_isOpenMap
     (s : Setoid X) (a : X ≃ₜ X) (ha : Function.Involutive a)
@@ -42,8 +31,6 @@ theorem involutionQuotient_isOpenMap
   change IsOpen ((Quotient.mk s) ⁻¹' ((Quotient.mk s) '' U))
   rw [he]
   exact hU.union (a.isOpenMap U hU)
-
-
 
 theorem involutionQuotient_isLocalHomeomorph [T2Space X]
     (s : Setoid X) (a : X ≃ₜ X) (ha : Function.Involutive a)

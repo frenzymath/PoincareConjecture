@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBaseSets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,8 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem edge_dual_subset_vertex_link (p : (T.marked 2).vertices)
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

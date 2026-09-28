@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Lap
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,7 +28,6 @@ def chartOperator (g : RiemannianMetric n M) (p : M)
   (∑ i, fderiv ℝ (fderiv ℝ f) y (EuclideanSpace.basisFun (Fin n) ℝ i)
     ((chartMetric g p y).inverse (EuclideanSpace.proj i))) -
       fderiv ℝ f y (chartDrift g p y)
-
 
 theorem laplacian_in_chart {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {f : M → ℝ} (p : M) {y : EuclideanSpace ℝ (Fin n)}

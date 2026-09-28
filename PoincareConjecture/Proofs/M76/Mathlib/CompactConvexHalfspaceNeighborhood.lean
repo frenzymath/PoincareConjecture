@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmallConvexHalfspaceNeighborhood
 import Mathlib.Analysis.LocallyConvex.Separation
 import Mathlib.Analysis.LocallyConvex.WithSeminorms
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,11 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {ι : Type*} [Finite ι] [Nonempty ι]
-
-
-
-
-
 
 theorem IsCompact.exists_convex_halfspace_frontier_neighborhood
     {S U : Set E} (hS : IsCompact S) (hcvS : Convex ℝ S)

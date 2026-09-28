@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.SpatialBounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.DistanceBound
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem sqrt_reducedLength_coordinates_lipschitz_ball
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -77,8 +67,6 @@ theorem sqrt_reducedLength_coordinates_lipschitz_ball
       (hB x (Metric.ball_subset_closedBall hx.1))
     rw [Real.coe_toNNReal _ (by positivity)]
     exact hc
-
-
 
 theorem reducedLength_coordinates_le_center
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

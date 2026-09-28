@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryLimitTopology
 import PoincareConjecture.Statements.M27KappaAlternatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M34
-
-
-
-
 
 theorem ordinaryChapter11_limit_neck_or_cap (P : RepairedKappaAlternativeTheory.{0}) :
     ∃ epsilonPrime : ℝ, 0 < epsilonPrime ∧

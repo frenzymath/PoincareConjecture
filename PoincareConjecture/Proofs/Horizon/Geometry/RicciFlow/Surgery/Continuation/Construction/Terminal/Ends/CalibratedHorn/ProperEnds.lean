@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.TubeEnds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.Regions
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
-
-
 
 theorem exists_proper_tube_end_above (Q : SingularLimitConclusion H)
     (A : RepairedNeckCapTopologyTheory.{u})

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalCapLocalAnalytics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_cap_eventually_compact_analytics
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

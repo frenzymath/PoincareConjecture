@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalVariation
 import PoincareConjecture.Proofs.M58.Mathlib.TwoVectorArea
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65AreaDensity_le_energyDensity (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) :
@@ -49,9 +37,6 @@ theorem m65AreaDensity_le_energyDensity (g : RiemannianMetric n M)
   rw [harea, henergy]
   exact (Proofs.M58.twoVectorArea_le x y).trans (by nlinarith [sq_nonneg (‖x‖ - ‖y‖)])
 
-
-
-
 theorem m65AreaDensity_eq_energyDensity_of_conformal (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) (c : ℝ)
     (hconf : m60AreaGram g f z = c • (1 : Matrix (Fin 2) (Fin 2) ℝ)) :
@@ -68,16 +53,11 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m65ParametrizedArea_le_energy (g : RiemannianMetric 3 M) (f : LoopPlane → M)
     (harea : IntegrableOn (parametrizedAreaDensity g f) loopDiskSet volume)
     (henergy : IntegrableOn (m60EnergyDensity g f) loopDiskSet volume) :
     parametrizedRiemannianArea g f ≤ ∫ z in loopDiskSet, m60EnergyDensity g f z := by
   exact integral_mono harea henergy (m65AreaDensity_le_energyDensity g f)
-
-
-
 
 theorem m65ParametrizedArea_eq_energy_of_conformal
     (g : RiemannianMetric 3 M) (f : LoopPlane → M)

@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.CompactCompletion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.LocalRellich
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 theorem isCompactOperator_testToL2 (D : LeviCivitaData g) (Ω : Set M)
     (hc : IsCompact (closure Ω)) : IsCompactOperator (testToL2CLM D Ω) := by
@@ -54,13 +38,11 @@ theorem isCompactOperator_testToL2 (D : LeviCivitaData g) (Ω : Set M)
       (fun i _ => hL i)
   rwa [hsum] at hcompact
 
-
 theorem isCompactOperator_toL2
     (D : LeviCivitaData g) (Ω : Set M) (_hn : 0 < n) (_hΩ : IsOpen Ω)
     (hc : IsCompact (closure Ω)) : IsCompactOperator (toL2 D Ω) := by
   exact Poincare.Analysis.Dirichlet.isCompactOperator_completionMap
     (testToL2CLM D Ω) (isCompactOperator_testToL2 D Ω hc)
-
 
 theorem exists_subseq_tendsto_toL2
     (D : LeviCivitaData g) (Ω : Set M) (hn : 0 < n) (hΩ : IsOpen Ω)

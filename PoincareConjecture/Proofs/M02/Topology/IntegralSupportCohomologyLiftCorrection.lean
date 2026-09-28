@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyMV
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexHomologyClass
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

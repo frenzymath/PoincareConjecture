@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EmptyEvents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

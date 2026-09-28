@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicDerivativeConvergence
 import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,9 +9,6 @@ open scoped Topology NNReal
 universe u v
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_derivative_limit_along_filter
     {E : Type u} [NormedAddCommGroup E] [NormedSpace Real E] [CompleteSpace E]

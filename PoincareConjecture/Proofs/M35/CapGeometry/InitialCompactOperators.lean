@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.JointScalarOperators
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthSlabContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem exists_initial_radial_carrier_compact
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -44,8 +33,6 @@ theorem exists_initial_radial_carrier_compact
   change |rawInverseRadius P E.flow.base E.rotation_invariant t R| ≤ B at hh
   rw [Metric.mem_closedBall, dist_zero_right]
   exact (hnorm.trans (le_abs_self _)).trans (hh.trans (by linarith only [le_abs_self B]))
-
-
 
 theorem exists_compact_initial_scalar_operator_bounds
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

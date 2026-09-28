@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTargetCorrection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +18,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem m64LipschitzDisk_observed_chart_composition
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

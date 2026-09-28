@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartLipschitz
 import PoincareConjecture.Proofs.M10.NullTransport
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,9 +15,7 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem calibratedMetricVolume_image_eq_zero_of_mdifferentiableOn
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}

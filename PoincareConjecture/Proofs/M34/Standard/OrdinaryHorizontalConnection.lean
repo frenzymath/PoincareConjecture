@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CompatibleCylinderDifferential
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +14,6 @@ variable {n : ℕ} {I : SpacetimeInterval}
   {g : ℝ → RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProductHorizontalLift_timeDerivative
     (R : OrdinaryProductSpacetimeConclusion g I) (v : EuclideanSpace ℝ (Fin n))
@@ -43,8 +32,6 @@ theorem ordinaryProductHorizontalLift_timeDerivative
   rfl
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinaryProductHorizontalLift_rawDerivative
     (R : OrdinaryProductRicciGeometry g I) (c : MetricLeviCivitaFamily g)

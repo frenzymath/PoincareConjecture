@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Interval.UniqueDifferent
 import PoincareConjecture.Proofs.M12.Analysis.Calculus.InverseWithin
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

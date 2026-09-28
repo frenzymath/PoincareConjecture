@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.SideFields
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +30,6 @@ theorem coordinateTriangleSideUnitField_swap (g : RiemannianMetric 2 S)
   simp only [coordinateTriangleSideUnitField, coordinateTriangleSideField_swap F b i j,
     Pi.neg_apply, map_neg, neg_apply, neg_neg, smul_neg]
 
-
 theorem surfaceTurningForm_coordinate_side_swap
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -55,7 +48,6 @@ theorem surfaceTurningForm_coordinate_side_swap
     (((coordinateTriangleSideUnitField_smooth g F b hF hFi hij).contMDiffAt
       (F.open_target.mem_nhds hx)).mdifferentiableAt (by simp))]
   simp only [LeviCivitaData.surfaceTurningForm, Pi.neg_apply, map_neg, neg_apply]
-
 
 theorem integral_coordinateTriangle_side_swap
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

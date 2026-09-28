@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Caps.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapSlice.Region
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Nested
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -73,8 +65,6 @@ theorem exists_smooth_capCircle (i : Fin 3) :
       height_contMDiff 1 height_one_regular p (hinner hp)
     exact ⟨γ, hg, hi, hd, hr.trans (connectedComponentIn_lower_of_mem_inner hp)⟩
   · exact exists_smooth_circle_upper_height_level
-
-
 
 theorem exists_cap_disk_neighborhood (i : Fin 3) :
     ∃ d : OpenPartialHomeomorph E2 S2,

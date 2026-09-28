@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.TranslatedEndCharts
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,25 +10,17 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def endEnergyProfile : ContDiffBump (5 : ℝ) where
   rIn := 3 / 5
   rOut := 9 / 10
   rIn_pos := by norm_num
   rIn_lt_rOut := by norm_num
 
-
-
 noncomputable def endEnergyCutoff (e : StandardCylindricalEnd g) : StandardCapSpace → ℝ :=
   endEnergyProfile ∘ endExhaustion e
 
-
-
 noncomputable def coreEnergyCutoff (e : StandardCylindricalEnd g)
     (x : StandardCapSpace) : ℝ := Real.smoothTransition (6 - endExhaustion e x)
-
-
 
 theorem energyCutoffs_contDiff (e : StandardCylindricalEnd g) :
     ContDiff ℝ ∞ (endEnergyCutoff e) ∧ ContDiff ℝ ∞ (coreEnergyCutoff e) := by
@@ -45,14 +28,10 @@ theorem energyCutoffs_contDiff (e : StandardCylindricalEnd g) :
   exact ⟨endEnergyProfile.contDiff.comp hrho,
     Real.smoothTransition.contDiff.comp (contDiff_const.sub hrho)⟩
 
-
-
 theorem energyCutoffs_mem_Icc (e : StandardCylindricalEnd g) (x : StandardCapSpace) :
     endEnergyCutoff e x ∈ Icc (0 : ℝ) 1 ∧ coreEnergyCutoff e x ∈ Icc (0 : ℝ) 1 :=
   ⟨⟨endEnergyProfile.nonneg, endEnergyProfile.le_one⟩,
     ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩⟩
-
-
 
 theorem endEnergyCutoff_eq_one (e : StandardCylindricalEnd g) {x : StandardCapSpace}
     (hx : endExhaustion e x ∈ Icc (22 / 5 : ℝ) (28 / 5)) : endEnergyCutoff e x = 1 := by
@@ -62,13 +41,9 @@ theorem endEnergyCutoff_eq_one (e : StandardCylindricalEnd g) {x : StandardCapSp
   rw [abs_le]
   constructor <;> linarith [hx.1, hx.2]
 
-
-
 theorem coreEnergyCutoff_eq_one (e : StandardCylindricalEnd g) {x : StandardCapSpace}
     (hx : endExhaustion e x ≤ 5) : coreEnergyCutoff e x = 1 :=
   Real.smoothTransition.one_of_one_le (by linarith)
-
-
 
 theorem endEnergyCutoff_tsupport (e : StandardCylindricalEnd g) :
     tsupport (endEnergyCutoff e) ⊆
@@ -82,8 +57,6 @@ theorem endEnergyCutoff_tsupport (e : StandardCylindricalEnd g) :
   obtain ⟨hl, hu⟩ := abs_le.mp hh
   constructor <;> linarith
 
-
-
 theorem coreEnergyCutoff_tsupport (e : StandardCylindricalEnd g) :
     tsupport (coreEnergyCutoff e) ⊆ {x | endExhaustion e x ≤ 6} := by
   apply closure_minimal
@@ -95,8 +68,6 @@ theorem coreEnergyCutoff_tsupport (e : StandardCylindricalEnd g) :
     exact hx hz
   · exact isClosed_le (endExhaustion_contMDiff e).continuous continuous_const
 
-
-
 theorem energyCutoffs_hasCompactSupport (e : StandardCylindricalEnd g) :
     HasCompactSupport (endEnergyCutoff e) ∧ HasCompactSupport (coreEnergyCutoff e) := by
   constructor
@@ -104,8 +75,6 @@ theorem energyCutoffs_hasCompactSupport (e : StandardCylindricalEnd g) :
       (isClosed_tsupport _) (fun x hx => (endEnergyCutoff_tsupport e hx).2)
   · exact (endExhaustion_sublevel_isCompact e 6).of_isClosed_subset
       (isClosed_tsupport _) (coreEnergyCutoff_tsupport e)
-
-
 
 theorem endExhaustion_large_coordinate (e : StandardCylindricalEnd g) {x : StandardCapSpace}
     (hx : 3 < endExhaustion e x) :
@@ -126,8 +95,6 @@ theorem endExhaustion_large_coordinate (e : StandardCylindricalEnd g) {x : Stand
   refine ⟨e.inverse x, htwo, e.coordinate_right_inverse hcar, ?_⟩
   have heq := endExhaustion_coordinate_of_two_le e htwo.le
   rwa [e.coordinate_right_inverse hcar] at heq
-
-
 
 theorem endEnergyCutoff_tsupport_subset_region (e : StandardCylindricalEnd g) :
     tsupport (endEnergyCutoff e) ⊆ endReferenceRegion e := by

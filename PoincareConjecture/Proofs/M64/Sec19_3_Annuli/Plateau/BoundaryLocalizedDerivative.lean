@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSlice
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceCoefficients
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +13,6 @@ namespace PoincareConjecture
 
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem m64LocalizedSource_horizontal_derivative
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -41,10 +31,6 @@ theorem m64LocalizedSource_horizontal_derivative
   exact hd.unique ((hasDerivAt_id (p 0)).add
     (((heta (p 0)).hasDerivAt.const_mul t).mul_const (rho (p 1))))
 
-
-
-
-
 theorem m64LocalizedSource_radial_derivative
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
     {eta rho : ℝ → ℝ} (hrho : Differentiable ℝ rho) {t : ℝ}
@@ -60,10 +46,6 @@ theorem m64LocalizedSource_radial_derivative
   have hd := m64Source_verticalSlice_hasDerivAt hT (p 0) (p 1)
   rw [hpoint, hfun] at hd
   exact hd.unique (((hrho (p 1)).hasDerivAt.const_mul (t * eta (p 0))).const_add (p 0))
-
-
-
-
 
 theorem m64LocalizedSourceInverse_first_tendsto
     (T : ℝ → LoopPlane ≃ₜ LoopPlane) (hsecond : ∀ t p, T t p 1 = p 1)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarMetricJets
 import PoincareConjecture.Proofs.M35.Mathlib.FiniteJetOperations
 import Mathlib.LinearAlgebra.Multilinear.FiniteDimensional
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation:max "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem metric_jet_tendsto_of_scalar_jets {n r : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -77,8 +67,6 @@ private theorem koszul_smooth {n : ℕ} (u v : E n) :
     (ContinuousLinearMap.flipₗᵢ ℝ (E n) (E n) (E n →L[ℝ] ℝ)).contDiff
   unfold metricKoszulCovector
   fun_prop
-
-
 
 theorem euclideanConnection_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

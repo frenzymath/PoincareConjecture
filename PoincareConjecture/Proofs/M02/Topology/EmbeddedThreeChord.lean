@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeTangent
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

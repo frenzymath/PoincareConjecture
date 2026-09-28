@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_MaximalSamp
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMovingModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,11 +30,6 @@ noncomputable local instance maximalAlternativeTwoJetNorm :
 
 noncomputable local instance maximalAlternativeTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
-
 
 theorem exists_maximal_cap_alternative_cutoff
     (P : M44CapPersistencePredecessors.{u})

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M59.Sec4_1_Whiskering.GenLoopWhisker
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -18,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 def m59HigherBasepointTransportService : M59HigherBasepointTransportService.{u} where
   transport n {X} _ := m59HigherBasepointTransport X n
   naturality := by
@@ -27,8 +17,6 @@ def m59HigherBasepointTransportService : M59HigherBasepointTransportService.{u} 
     refine Quotient.inductionOn a ?_
     intro a
     exact Quotient.sound (GenLoop.boundaryTransport_map p a f)
-
-
 
 theorem m59HigherBasepointTransportService_nonempty :
     Nonempty M59HigherBasepointTransportService.{u} :=

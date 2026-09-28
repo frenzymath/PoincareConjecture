@@ -11,17 +11,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PositiveFaceCenterAtPoint
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -452,9 +441,6 @@ private theorem free_point_height_crossing
   · exact triangle_height_crossing K hK hbound hs (by have := hbound s hs; omega)
       ell hps hpzero hne hO hpO
 
-
-
-
 theorem exists_free_point_height_crossing
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
     {q : V3 → V2} (hq : K.AffineOnFaces q) (hi : InjOn q K.space)
@@ -470,9 +456,6 @@ theorem exists_free_point_height_crossing
       (∀ x ∈ H.source, x ∈ K.space ↔ (H x).1.1 = 0) ∧
       ∀ x ∈ H.source, ell x = (H x).2 := by
   exact free_point_height_crossing K hK hq hi ell hp hpzero hint hfaces hO hpO
-
-
-
 
 theorem exists_carrier_height_crossing
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
@@ -491,11 +474,6 @@ theorem exists_carrier_height_crossing
   exists_free_point_height_crossing K hK hq hi ell hp hpzero hint hfaces hO hpO
 
 open Classical in
-
-
-
-
-
 
 theorem exists_repaired_free_branch_crossings
     (J K K₀ : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
@@ -581,13 +559,6 @@ local notation "Rim" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
-
-
 
 theorem Step.exists_original_free_branch_crossings
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

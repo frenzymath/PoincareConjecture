@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Exhaustion.ComponentReattachment
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.FinalFrontier
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

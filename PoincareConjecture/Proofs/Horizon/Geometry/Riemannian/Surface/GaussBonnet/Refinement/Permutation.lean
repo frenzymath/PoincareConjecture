@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MetricCorners
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +37,6 @@ private theorem reindex_complementary_vertices (e : Fin 3 ≃ Fin 3) (i : Fin 3)
       (Fin.succAbove_right_injective (e.symm.injective h))
   fin_cases u <;> fin_cases v <;> simp_all
 
-
 theorem coordinateTriangleAngle_reindex (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -56,8 +48,6 @@ theorem coordinateTriangleAngle_reindex (g : RiemannianMetric 2 S)
   · rw [h0, h1]
   · rw [h0, h1]
     exact g.cornerAngle_comm _ _ _
-
-
 
 theorem sum_coordinateTriangleAngle_reindex (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

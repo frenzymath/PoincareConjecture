@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainExterior
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -54,8 +43,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem PLDomain.exists_open_preconnected_inter_interior
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {P : Set X}
@@ -74,8 +61,6 @@ theorem PLDomain.exists_open_preconnected_inter_interior
       intro y hy
       exact iff_of_true hy.2 zero_lt_one
     exact H.exists_open_preconnected_inter_of_affine_pos ell hpos ⟨hxj, hxI⟩
-
-
 
 theorem PLDomain.isConnected_interior
     {X ι : Type*} [TopologicalSpace X]

@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Heat.Dirichlet.Resolvent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem integral_mul_laplacian_of_compact_test {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -99,8 +82,6 @@ theorem integral_mul_laplacian_of_compact_test {f h : M → ℝ}
         dsimp only
         rw [hgrad, map_sum, sum_apply]
 
-
-
 theorem exists_energyTest_approximation (u : H1Zero D Ω) :
     ∃ f : ℕ → EnergyTest D Ω,
       Tendsto (fun k => (f k : H1Zero D Ω)) atTop (𝓝 u) ∧
@@ -116,7 +97,6 @@ theorem exists_energyTest_approximation (u : H1Zero D Ω) :
     simpa only [Function.comp_def, toL2_coe] using
       (toL2 D Ω).continuous.continuousAt.tendsto.comp hfu⟩
 
-
 theorem energyInner_eq_integral_oneSubLaplacian_of_compact_test
     (f h : EnergyTest D Ω) :
     energyInner f h = ∫ x, (f x - D.laplacian f x) * h x ∂g.volumeMeasure := by
@@ -128,7 +108,6 @@ theorem energyInner_eq_integral_oneSubLaplacian_of_compact_test
     (D.integrable_mul_laplacian h.smooth f.smooth h.hasCompactSupport), hgreen,
     energyInner_symm f h]
   simp only [energyInner, sub_neg_eq_add]
-
 
 theorem inner_test_eq_oneSubLaplacian (f : EnergyTest D Ω)
     (u : H1Zero D Ω) :
@@ -147,8 +126,6 @@ theorem inner_test_eq_oneSubLaplacian (f : EnergyTest D Ω)
     rw [show f.oneSubLaplacian x = f x - D.laplacian f x from hfx,
       show (testToL2 D Ω h) x = h x from hhx]
     simp [mul_comm]
-
-
 
 theorem weakEigen_oneSubLaplacian_test
     (u : H1Zero D Ω) (lambda : ℝ)
@@ -175,8 +152,6 @@ theorem integral_test_mul (v : Lp ℝ 2 g.volumeMeasure) (f : EnergyTest D Ω) :
   change f x * v x = inner ℝ (v x) ((testToL2 D Ω f) x)
   rw [show (testToL2 D Ω f) x = f x from hx]
   simp
-
-
 
 theorem weakEigen_integral_laplacian_test
     (u : H1Zero D Ω) (lambda : ℝ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Splice.Slabs
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,7 +56,6 @@ def identifyAfter (t : ℝ) (ht : T ≤ t) :
 
 def eventTimes : Set ℝ := insert T F.surgery_times
 
-
 theorem slab_side {a b : ℝ}
     (hfree : Disjoint (eventTimes F T) (Set.Ioc a b)) : b < T ∨ T ≤ a := by
   by_cases hb : b < T
@@ -74,7 +64,6 @@ theorem slab_side {a b : ℝ}
     by_contra ha
     exact Set.disjoint_left.mp hfree (Set.mem_insert T F.surgery_times)
       ⟨lt_of_not_ge ha, le_of_not_gt hb⟩
-
 
 def regularSlab (hF : F.time_domain = Set.Ico 0 T)
     {a b : ℝ} (hab : a < b)

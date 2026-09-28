@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.SourceCircleCut
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.PairedOrientedCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.ComponentRetention
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open _root_.Dehn
@@ -38,7 +29,6 @@ theorem oriented_collar_boundary_subsets (B : OrientedPolygonCollar l r A) :
     exact ⟨subset_closure (B.nested hc), fun hi ↦ hf.2
       ((B.inner.interior_closure_inside B.inner_simplicial B.inner_injective).symm ▸ hi)⟩
 
-
 theorem oriented_collar_enclosing_iff (B : OrientedPolygonCollar l r A)
     (hA : A ⊆ {p : P2 | -d < depth L p ∧ depth L p < d}) :
     annulusSquare L d ⊆ B.outer.inside ↔ annulusSquare L d ⊆ B.inner.inside := by
@@ -48,8 +38,6 @@ theorem oriented_collar_enclosing_iff (B : OrientedPolygonCollar l r A)
     have hc : x ∈ A := B.carrier.symm ▸ ⟨subset_closure (ho hx), hi⟩
     exact (not_lt_of_ge ((mem_annulusSquare_iff L d x).mp hx)) (hA hc).2
   · exact fun hi x hx ↦ B.nested (subset_closure (hi hx))
-
-
 
 theorem oriented_collar_disk_or_enclosing (B : OrientedPolygonCollar l r A)
     (hA : A ⊆ {p : P2 | -d < depth L p ∧ depth L p < d}) :
@@ -65,8 +53,6 @@ theorem oriented_collar_disk_or_enclosing (B : OrientedPolygonCollar l r A)
     hout, ?_⟩
   exact hcase.imp ((oriented_collar_enclosing_iff B hA).mp) id
 
-
-
 theorem oriented_collar_component_sides (B : OrientedPolygonCollar l r A)
     {U : Set P2} (hU : IsPreconnected U) (havoid : Disjoint U A) :
     U ⊆ B.inner.inside ∨ U ⊆ (closure B.outer.inside)ᶜ := by
@@ -75,8 +61,6 @@ theorem oriented_collar_component_sides (B : OrientedPolygonCollar l r A)
       simpa only [B.inner.interior_closure_inside B.inner_simplicial B.inner_injective,
         ← B.carrier] using havoid)
   simpa only [B.inner.interior_closure_inside B.inner_simplicial B.inner_injective] using h
-
-
 
 theorem disjoint_oriented_collars_source_cases {A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ : ℝ}
     (B₀ : OrientedPolygonCollar l₀ r₀ A₀) (B₁ : OrientedPolygonCollar l₁ r₁ A₁)
@@ -112,8 +96,6 @@ theorem disjoint_oriented_collars_source_cases {A₀ A₁ : Set P2} {l₀ r₀ l
           B₁.outer_simplicial B₁.outer_injective).symm ▸ B₁.outer.vertex_mem_boundary 0)
       exact (ho (B₁.outer.vertex_mem_boundary 0) (subset_closure (hn hx))).elim
   · exact Or.inr (Or.inr hd)
-
-
 
 theorem enclosing_oriented_collars_nested {A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ : ℝ}
     (B₀ : OrientedPolygonCollar l₀ r₀ A₀) (B₁ : OrientedPolygonCollar l₁ r₁ A₁)

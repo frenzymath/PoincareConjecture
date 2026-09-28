@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 def recenter (P : AlexanderSectionProfile E) (c : ℝ) : AlexanderSectionProfile E where
   carrier := P.carrier
@@ -31,22 +20,14 @@ def recenter (P : AlexanderSectionProfile E) (c : ℝ) : AlexanderSectionProfile
     change ((fun d : ℝ => d + c) ⁻¹' Function.support P.charge).Finite
     exact P.finite_support.preimage (fun _ _ _ _ h => add_right_cancel h)
 
-
 @[simp] theorem recenter_carrier (P : AlexanderSectionProfile E) (c : ℝ) :
     (P.recenter c).carrier = P.carrier := rfl
-
-
 
 @[simp] theorem recenter_height_apply (P : AlexanderSectionProfile E) (c : ℝ) (x : E) :
     (P.recenter c).height x = P.height x - c := rfl
 
-
-
 @[simp] theorem recenter_charge_apply (P : AlexanderSectionProfile E) (c d : ℝ) :
     (P.recenter c).charge d = P.charge (d + c) := rfl
-
-
-
 
 @[simp] theorem complexity_recenter (P : AlexanderSectionProfile E) (c : ℝ) :
     (P.recenter c).complexity = P.complexity := by

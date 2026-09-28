@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenSurjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -63,8 +54,6 @@ private theorem connectedConnector_mem (U V : Set X) (hcover : U ∪ V = univ)
     exact Subtype.prop _
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem map_loops_nullhomotopic_of_open_cover (f : C(X, Y)) (U V : Set X)
     (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)

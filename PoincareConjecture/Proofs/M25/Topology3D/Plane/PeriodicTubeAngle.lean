@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AngularCoherence
 import Mathlib.Algebra.Order.Floor.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem circleAngularCoordinate_add_int_period
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -29,9 +18,6 @@ theorem circleAngularCoordinate_add_int_period
     exact Circle.periodic_exp.sub_int_mul_eq m
   simp only [circleAngularCoordinate, hphase]
   ring
-
-
-
 
 theorem curveTubeAngle_lift_properties
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

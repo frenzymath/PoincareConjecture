@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.BalancedDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem EpsilonNeck.closure_negative_quarter_diff_carrier_subset (N N' : EpsilonNeck g)
     (hpos : N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹ ⊆ N'.carrier)
@@ -46,7 +35,6 @@ theorem EpsilonNeck.closure_negative_quarter_diff_carrier_subset (N N' : Epsilon
 namespace BalancedNeckChain
 
 variable {ε : ℝ} (C : BalancedNeckChain g ε)
-
 
 theorem frontier_subset_outer_ends {a b : ℤ} (hshape : C.shape = .finite a b) :
     frontier (⋃ i : {i // i ∈ C.shape.active}, (C.neck i.1).carrier) ⊆
@@ -97,8 +85,6 @@ theorem frontier_subset_outer_ends {a b : ℤ} (hshape : C.shape = .finite a b) 
       (hcapture ⟨by simpa only [hie] using hpos, hout i hi⟩))
 
 end BalancedNeckChain
-
-
 
 theorem NeckOnlyCover.exists_neck_at_balanced_outer_end (H : NeckOnlyCover g)
     (hε : H.epsilon ≤ 1 / 1000) (C : BalancedNeckChain g H.epsilon)

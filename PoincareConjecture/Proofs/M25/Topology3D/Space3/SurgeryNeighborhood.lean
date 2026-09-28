@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CircleRadialChart
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_uniform_zero_level_band
     {X : Type*} [TopologicalSpace X] [CompactSpace X]
@@ -36,8 +24,6 @@ theorem exists_uniform_zero_level_band
   apply hball (show h x ∈ ball 0 d by simpa [Real.dist_eq] using hx)
   exact ⟨x, hn, rfl⟩
 
-
-
 theorem exists_uniform_upper_level_band
     {X : Type*} [TopologicalSpace X] [CompactSpace X]
     (h : X → ℝ) (hh : Continuous h) {U : Set X} (hU : IsOpen U)
@@ -50,8 +36,6 @@ theorem exists_uniform_upper_level_band
   by_cases hpos : 0 ≤ h x
   · exact hz hpos
   · exact hb x (abs_lt.mpr ⟨hx, lt_trans (lt_of_not_ge hpos) hd⟩)
-
-
 
 theorem exists_circle_radial_band {P : E2 → Prop}
     (hP : ∀ᶠ x in 𝓝ˢ (sphere (0 : E2) 1), P x) :

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,12 +28,6 @@ private theorem planar_pullback_nonneg (g : RiemannianMetric n M)
   by_cases hv : mfderiv (𝓡 2) (𝓡 n) f p v = 0
   · simp [hv]
   · exact (g.pos _ _ hv).le
-
-
-
-
-
-
 
 def m64RegularizedPullbackMetric (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -78,23 +60,12 @@ def m64RegularizedPullbackMetric (g : RiemannianMetric n M)
   contMDiff p := (M60.metricPullbackForm_contMDiffAt g (hf p)).add_section
     ((regularizationPlaneMetric.contMDiff p).const_smul_section (a := delta))
 
-
-
-
-
-
 theorem m64RegularizedPullbackMetric_inner (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) (p v w : LoopPlane) :
     (m64RegularizedPullbackMetric g f hf delta hdelta).inner p v w =
       g.inner (f p) (mfderiv (𝓡 2) (𝓡 n) f p v)
         (mfderiv (𝓡 2) (𝓡 n) f p w) + delta * inner ℝ v w := rfl
-
-
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_dominates (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -104,12 +75,6 @@ theorem m64RegularizedPullbackMetric_dominates (g : RiemannianMetric n M)
       (m64RegularizedPullbackMetric g f hf delta hdelta).inner p v v := by
   rw [m64RegularizedPullbackMetric_inner]
   exact le_add_of_nonneg_right (mul_nonneg hdelta.le (real_inner_self_nonneg (x := v)))
-
-
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_gram (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -121,12 +86,6 @@ theorem m64RegularizedPullbackMetric_gram (g : RiemannianMetric n M)
   simp only [m60AreaGram, mfderiv_id, ContinuousLinearMap.id_apply,
     m64RegularizedPullbackMetric_inner, id_eq]
 
-
-
-
-
-
-
 theorem m64RegularizedPullbackMetric_energyDensity (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) (p : LoopPlane) :
@@ -136,12 +95,6 @@ theorem m64RegularizedPullbackMetric_energyDensity (g : RiemannianMetric n M)
     real_inner_self_eq_norm_sq, (EuclideanSpace.basisFun (Fin 2) ℝ).norm_eq_one,
     one_pow, mul_one]
   ring
-
-
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_det (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -154,11 +107,6 @@ theorem m64RegularizedPullbackMetric_det (g : RiemannianMetric n M)
   norm_num [EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
   ring
 
-
-
-
-
-
 theorem m64RegularizedPullbackMetric_areaDensity_bound (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) (hdelta' : delta ≤ 1) (p : LoopPlane) :
@@ -170,12 +118,6 @@ theorem m64RegularizedPullbackMetric_areaDensity_bound (g : RiemannianMetric n M
     _ = m60EnergyDensity g f p + delta :=
       m64RegularizedPullbackMetric_energyDensity g f hf delta hdelta p
     _ ≤ _ := add_le_add_right hdelta' _
-
-
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_area_tendsto (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -209,12 +151,6 @@ theorem m64RegularizedPullbackMetric_area_tendsto (g : RiemannianMetric n M)
     apply m64RegularizedPullbackMetric_areaDensity_bound
     exact inv_le_one_of_one_le₀ (by have h := Nat.cast_nonneg (α := ℝ) k; linarith)
   · exact Filter.Eventually.of_forall hpoint
-
-
-
-
-
-
 
 theorem m64RegularizedPullbackMetric_exists_area_lt (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

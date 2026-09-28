@@ -1,20 +1,10 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Path.Homotopic
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem of_constant_connectors {a b x y : X}
     (c : Path a x) (d : Path b y) (q : Path a b) (p : Path x y)
@@ -31,8 +21,6 @@ theorem of_constant_connectors {a b x y : X}
   exact (refl_trans _).trans (trans_refl p)
 
 end Path.Homotopic
-
-
 
 theorem IsSimplyConnected.paths_homotopic_of_mem
     {X : Type*} [TopologicalSpace X] {s : Set X} (hs : IsSimplyConnected s)
@@ -54,8 +42,6 @@ namespace Path.Homotopic.Quotient
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
 @[simp] theorem map_trans {x y z : X} (p : Path.Homotopic.Quotient x y)
     (q : Path.Homotopic.Quotient y z) (f : C(X, Y)) :
     (p.trans q).map f = (p.map f).trans (q.map f) := by
@@ -64,31 +50,21 @@ variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     induction q using Path.Homotopic.Quotient.ind with
     | mk q => exact congrArg Path.Homotopic.Quotient.mk (Path.map_trans p q f.continuous)
 
-
-
 @[simp] theorem map_symm {x y : X} (p : Path.Homotopic.Quotient x y) (f : C(X, Y)) :
     p.symm.map f = (p.map f).symm := by
   induction p using Path.Homotopic.Quotient.ind with
   | mk p => rfl
 
-
-
 @[simp] theorem map_refl (x : X) (f : C(X, Y)) : (refl x).map f = refl (f x) := rfl
-
-
 
 @[simp] theorem map_id {x y : X} (p : Path.Homotopic.Quotient x y) :
     p.map (.id X) = p := by
   induction p using Path.Homotopic.Quotient.ind with
   | mk p => rfl
 
-
-
 @[simp] theorem trans_symm_assoc {x y z : X} (p : Path.Homotopic.Quotient x y)
     (q : Path.Homotopic.Quotient x z) : p.trans (p.symm.trans q) = q := by
   rw [← trans_assoc, trans_symm, refl_trans]
-
-
 
 @[simp] theorem symm_trans_assoc {x y z : X} (p : Path.Homotopic.Quotient x y)
     (q : Path.Homotopic.Quotient y z) : p.symm.trans (p.trans q) = q := by
@@ -100,14 +76,10 @@ namespace FundamentalGroup
 
 variable {X Y Z : Type*} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
 
-
-
 theorem map_comp (f : C(X, Y)) (g : C(Y, Z)) (x : X) :
     map (g.comp f) x = (map g (f x)).comp (map f x) := by
   ext p
   exact Path.Homotopic.Quotient.map_comp
-
-
 
 @[simp] theorem map_id (x : X) : map (.id X) x = MonoidHom.id (FundamentalGroup X x) := by
   ext p

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderChristoffel
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetNorm
 import PoincareConjecture.Proofs.M35.Mathlib.FiniteJetOperations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle BigOperators Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem contDiffAt_roundCylinderIteratedDerivative {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (B : RoundCylinderTwoTensor) (p : RoundCylinderCoordinates)
@@ -67,9 +56,6 @@ private theorem difference_succ_germ {u : ℝ} (hu : u < 1)
   simp only [roundCylinderIteratedDerivative, roundCylinderTensorDerivative,
     sub_apply, mul_sub, Finset.sum_sub_distrib]
   exact sub_sub_sub_comm _ _ _ _
-
-
-
 
 theorem roundCylinderIteratedDerivative_difference_jets_tendsto_zero
     (order : ℕ) (u : ℕ → ℝ) (hu : ∀ k, u k < 1) (q : ℕ → UnitTwoSphere)
@@ -175,8 +161,6 @@ theorem roundCylinderIteratedDerivative_difference_jets_tendsto_zero
     simp only [sub_zero] at hout
     exact hout.congr' (Eventually.of_forall fun k => (heq k).symm)
 
-
-
 noncomputable def roundCylinderJetDifferenceSquared (u : ℝ) (B C : RoundCylinderTwoTensor)
     (order : ℕ) (z : RoundCylinderSpace) : ℝ :=
   let c := chartAt (EuclideanSpace ℝ (Fin 2)) z.1
@@ -185,14 +169,10 @@ noncomputable def roundCylinderJetDifferenceSquared (u : ℝ) (B C : RoundCylind
     (fun a => roundCylinderIteratedDerivative u c B n p a -
       roundCylinderIteratedDerivative u c C n p a)
 
-
-
 theorem roundCylinderJetDifferenceSquared_nonneg {u : ℝ} (hu : u < 1)
     (B C : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace) :
     0 ≤ roundCylinderJetDifferenceSquared u B C order z :=
   Finset.sum_nonneg (fun _ _ => roundCylinderTensorNormSquared_nonneg hu z.1 z.2 _)
-
-
 
 theorem roundCylinderTensorNormSquared_le_twice {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ} (T S : (Fin r → Fin 3) → ℝ) :
@@ -213,9 +193,6 @@ theorem roundCylinderTensorNormSquared_le_twice {u : ℝ} (hu : u < 1)
   convert mul_le_mul_of_nonneg_left hs hw using 1
   ring
 
-
-
-
 theorem roundCylinderJetErrorSquared_le_twice {u : ℝ} (hu : u < 1)
     (B C : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace) :
     roundCylinderJetErrorSquared u B order z ≤
@@ -225,9 +202,6 @@ theorem roundCylinderJetErrorSquared_le_twice {u : ℝ} (hu : u < 1)
   simp only [Finset.mul_sum, ← Finset.sum_add_distrib]
   exact Finset.sum_le_sum (fun _ _ =>
     roundCylinderTensorNormSquared_le_twice hu z.1 z.2 _ _)
-
-
-
 
 theorem roundCylinderJetDifferenceSquared_tendsto_zero
     (order : ℕ) (u : ℕ → ℝ) (hu : ∀ k, u k < 1) (u₀ : ℝ) (hu₀ : u₀ < 1)

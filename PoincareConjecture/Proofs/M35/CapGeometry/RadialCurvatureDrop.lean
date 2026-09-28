@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialSectionalDerivative
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single (2 : Fin 3) 1
-
-
 
 theorem radialMixedSectional_slope_drop
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

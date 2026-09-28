@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcGerms
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateSecondReflection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter AffineMap CoordinateHalfBoxes
@@ -117,12 +107,6 @@ private theorem cutArcs_pullback_of_positive_slope
         (hhalves hxb).2.mp hxa⟩
     · rintro ⟨hxheight, hxplane, hxsign⟩
       exact (hhalves ((hsection x hx).mpr ⟨hxheight, hxplane⟩)).2.mpr hxsign
-
-
-
-
-
-
 
 theorem exists_oriented_affine_cut_box
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

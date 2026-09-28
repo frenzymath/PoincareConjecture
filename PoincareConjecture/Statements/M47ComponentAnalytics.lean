@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M47ComponentAnalytics
 import PoincareConjecture.Statements.M47ScalarPersistence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
 
 structure M47ComponentAnalyticPredecessors : Prop
     extends M47ScalarPersistencePredecessors.{u} where

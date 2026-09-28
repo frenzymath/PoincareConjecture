@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.GoodPointAnalytic
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryScalarGradientLimits
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryScalarEvolutionLimits
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11_eventually_scalar_bounds
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))
@@ -83,8 +70,6 @@ theorem ordinaryChapter11_eventually_scalar_bounds
   rw [abs_div, abs_of_pos hq] at hek
   exact ⟨((div_lt_iff₀ (Real.rpow_pos_of_pos (hpositive (C.subsequence k)) _)).mp hgk).le,
     ((div_lt_iff₀ hq).mp hek).le⟩
-
-
 
 theorem ordinaryChapter11_eventually_goodPoint
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

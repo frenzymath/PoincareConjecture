@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ClosedSideSubcomplexes
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.CommonSubcomplexUnion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -21,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
 
 theorem exists_closed_side_star_partition
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)
@@ -115,10 +103,6 @@ end Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem ChartwisePLSphere.exists_original_side_subcomplexes
     {X ι : Type*} [MetricSpace X]

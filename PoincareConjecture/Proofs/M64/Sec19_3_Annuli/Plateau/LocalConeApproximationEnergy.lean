@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeCorrectedCu
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeContinuous
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ open scoped Topology Manifold ContDiff ENNReal
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m64_integral_norm_sq_le_twice_error
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
@@ -48,8 +35,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem m64_corrected_circle_energy_le
     (g : RiemannianMetric n M) (f : ℝ → M) (w v : ℝ → E)
@@ -81,9 +66,6 @@ theorem m64_corrected_circle_energy_le
     _ = _ := by ring
 
 variable [T2Space M]
-
-
-
 
 theorem m64ChartReadable_local_cone_approximation_uniform
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M))
@@ -181,8 +163,6 @@ theorem m64ChartReadable_local_cone_approximation_uniform
     have hd := m64_corrected_circle_energy_le g (f j) (w (j + k)) v
       (hfc j) (hw _) hv hD (hspeed j)
     exact hc.trans ((mul_le_mul_of_nonneg_left hd hA).trans_eq (by ring))
-
-
 
 theorem m64ChartReadable_local_cone_approximation
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M))

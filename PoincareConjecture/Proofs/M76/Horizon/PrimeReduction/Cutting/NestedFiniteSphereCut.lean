@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.FiniteSphereBicollars
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TwoSidedCollarFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

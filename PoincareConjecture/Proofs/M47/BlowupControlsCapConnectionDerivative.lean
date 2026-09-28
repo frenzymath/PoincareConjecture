@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapConnectionCoefficients
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseCoefficients
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCurvatureDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem cap_connectionDifference_fderiv_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

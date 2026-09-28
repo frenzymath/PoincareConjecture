@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Targ
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Translations.DisplacementLift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Polyhedra.Mathlib.PolyhedralPLSelection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

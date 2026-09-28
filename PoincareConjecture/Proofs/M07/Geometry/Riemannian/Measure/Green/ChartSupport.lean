@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +12,6 @@ namespace PoincareConjecture
 universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
-
 
 noncomputable def chartPullback
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M) (u : M → ℝ) :
@@ -38,8 +30,6 @@ theorem chartPullback_eventuallyEq
     chartPullback e u =ᶠ[𝓝 x] u ∘ e := by
   filter_upwards [e.open_source.mem_nhds hx] with y hy
   exact chartPullback_apply e u hy
-
-
 
 theorem tsupport_chartPullback_subset_image
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M) {u : M → ℝ}

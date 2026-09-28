@@ -11,15 +11,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSphereBase
 import PoincareConjecture.Proofs.M02.Topology.HomotopyGroupHomeomorph
 import PoincareConjecture.Proofs.M02.Topology.CWThreeSphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -109,7 +100,6 @@ private theorem exists_threeDimensionalCW
     (by exact_mod_cast Nat.add_le_add_right (hdim n j) 1)
     (_root_.Topology.RelCWComplex.openCell_subset_skeletonLT
       (C := (univ : Set M)) n j hj)
-
 
 theorem nonempty_threeManifoldTopologyConclusion_of_integralHomology_two_isZero
     {M : Type u} [TopologicalSpace M]

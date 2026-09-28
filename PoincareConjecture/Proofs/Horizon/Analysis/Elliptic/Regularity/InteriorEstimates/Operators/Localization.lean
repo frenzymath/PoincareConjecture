@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Operators.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Coefficients
 
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Topology

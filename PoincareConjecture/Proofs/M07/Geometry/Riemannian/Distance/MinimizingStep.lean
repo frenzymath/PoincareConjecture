@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentLocalit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_short_minimizing_geodesic_step
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.Straightening
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.CompactCut
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapTubeAttachment
-
-
 
 theorem exists_tube_collar_straightening_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneAnnulusTwist
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOnePhysicalFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -50,10 +41,6 @@ private theorem block_face {x : W} (hx : x ∈ squareBlock)
   rcases hs with hs | hs
   · exact (lt_irrefl (-1 : ℝ)) (hs ▸ hi.1.1)
   · exact (lt_irrefl (1 : ℝ)) (hs ▸ hi.1.2)
-
-
-
-
 
 theorem exists_actual_zero_winding_marked_arc
     (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock)

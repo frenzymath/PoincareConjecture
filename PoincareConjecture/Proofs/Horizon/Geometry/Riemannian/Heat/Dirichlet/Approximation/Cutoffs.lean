@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Dens
 import Mathlib.Geometry.Manifold.BumpFunction
 import Mathlib.Geometry.Manifold.Algebra.Monoid
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -89,8 +81,6 @@ private theorem exists_energyTest_eq_one_on_compact (D : LeviCivitaData g)
       Finset.prod_eq_zero hi (sub_eq_zero.mpr hix.symm)
     change 1 - (∏ i ∈ s, (1 - b i x)) = 1
     rw [hz, sub_zero]
-
-
 
 theorem exists_energyTest_cutoffs (D : LeviCivitaData g)
     (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω)) :

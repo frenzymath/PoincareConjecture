@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarTensorBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
@@ -41,8 +33,6 @@ private theorem scalar_numeric_reduction
   have hquadratic := mul_le_mul_of_nonneg_right hq hy0
   nlinarith only [hbase, hhessian, hquadratic]
 
-
-
 theorem cap_scalar_arithmetic_fine
     {a x y z r : ℝ}
     (ha0 : 0 ≤ a) (hx0 : 0 ≤ x) (hy0 : 0 ≤ y) (hz0 : 0 ≤ z) (hr0 : 0 ≤ r)
@@ -54,7 +44,6 @@ theorem cap_scalar_arithmetic_fine
   scalar_numeric_reduction ha0 hx0 hy0 hz0 hr0 (by norm_num) (by norm_num)
     ha hx hy hr (by norm_num) (by norm_num) (by norm_num)
 
-
 theorem cap_scalar_arithmetic_coarse
     {a x y z r : ℝ}
     (ha0 : 0 ≤ a) (hx0 : 0 ≤ x) (hy0 : 0 ≤ y) (hz0 : 0 ≤ z) (hr0 : 0 ≤ r)
@@ -65,7 +54,6 @@ theorem cap_scalar_arithmetic_coarse
       (3 / 4 : ℝ) * x + (1 / 10 : ℝ) * y + (31 / 10 : ℝ) * z :=
   scalar_numeric_reduction ha0 hx0 hy0 hz0 hr0 (by norm_num) (by norm_num)
     ha hx hy hr (by norm_num) (by norm_num) (by norm_num)
-
 
 theorem cap_scalar_arithmetic_energy
     {x y z epsilon : ℝ} (hepsilon : 0 ≤ epsilon)

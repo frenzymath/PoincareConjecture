@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
 import Mathlib.Analysis.Calculus.FDeriv.Congr
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture
 
 variable {ε : ℝ} {B C : RoundCylinderTwoTensor}
-
-
 
 theorem roundCylinderTensorCoefficient_eq_of_eqOn_strip
     (hBC : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-ε⁻¹) ε⁻¹ →
@@ -33,8 +19,6 @@ theorem roundCylinderTensorCoefficient_eq_of_eqOn_strip
     roundCylinderTensorCoefficient B c p a b =
       roundCylinderTensorCoefficient C c p a b :=
   hBC (c.symm p.1, p.2) hp _ _
-
-
 
 theorem roundCylinderIteratedDerivative_eq_of_eqOn_strip
     (hBC : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-ε⁻¹) ε⁻¹ →
@@ -62,8 +46,6 @@ theorem roundCylinderIteratedDerivative_eq_of_eqOn_strip
     rw [ih p hp]
     rfl
 
-
-
 theorem roundCylinderJetErrorSquared_eq_of_eqOn_strip
     (hBC : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-ε⁻¹) ε⁻¹ →
       ∀ v w, B z v w = C z v w)
@@ -75,8 +57,6 @@ theorem roundCylinderJetErrorSquared_eq_of_eqOn_strip
   apply Finset.sum_congr rfl
   intro k hk
   rw [roundCylinderIteratedDerivative_eq_of_eqOn_strip hBC u _ k _ hz]
-
-
 
 theorem roundCylinderTensorSmoothOn_congr
     (hBC : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-ε⁻¹) ε⁻¹ →
@@ -91,8 +71,6 @@ theorem roundCylinderTensorSmoothOn_congr
     apply (h q a b).congr
     intro p hp
     exact roundCylinderTensorCoefficient_eq_of_eqOn_strip hBC _ p hp.2 a b
-
-
 
 theorem roundCylinderClose_congr
     (hBC : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-ε⁻¹) ε⁻¹ →

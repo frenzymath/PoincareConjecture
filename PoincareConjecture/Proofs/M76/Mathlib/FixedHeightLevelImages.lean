@@ -1,22 +1,9 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Image
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem Function.Injective.image_inter_eq_of_fixed {E : Type*} {f : E → E}
     (hf : Function.Injective f) {s t : Set E} (hfix : ∀ x ∈ t, f x = x) :
@@ -30,9 +17,6 @@ theorem Function.Injective.image_inter_eq_of_fixed {E : Type*} {f : E → E}
     exact ⟨⟨y, hy.1, hfix y hy.2⟩, hy.2⟩
 
 namespace Set
-
-
-
 
 theorem image_negative_level_eq_of_height_le {E : Type*} {S : Set E} (A : E → ℝ)
     (f : E → E) (hraise : ∀ x ∈ S, A x ≤ A (f x))

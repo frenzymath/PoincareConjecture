@@ -1,12 +1,8 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.Collinear
 
-
 set_option autoImplicit false
 
 namespace Poincare.Alexandrov
-
-
-
 
 theorem CurvatureGEnegOne.cosh_distance_chord_lower_bound
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X) {p y z q : X}

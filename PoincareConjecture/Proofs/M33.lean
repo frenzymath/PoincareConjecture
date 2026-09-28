@@ -13,35 +13,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Conclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -49,8 +20,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem repairedBranchContinuation
     (P : M33Predecessors.{u}) : RepairedBranchContinuationTheory.{u} := by

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.SurfaceStars
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedStarDualInterval
 
-
-
 set_option autoImplicit false
 
 open Set

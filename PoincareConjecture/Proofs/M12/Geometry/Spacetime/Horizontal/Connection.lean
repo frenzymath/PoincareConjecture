@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Restriction
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.LieTensor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -115,7 +105,6 @@ theorem rawHorizontalCovariantDerivative_isCovariantDerivative
     rw [hd]
     simp only [GeneralizedFlowSpacetime.timeFunction]
     module
-
 
 noncomputable def rawHorizontalConnection (D : LeafwiseLeviCivitaFamily F S) :
     CovariantDerivative (spacetimeModel n) (EuclideanSpace ℝ (Fin n)) F.Horizontal :=

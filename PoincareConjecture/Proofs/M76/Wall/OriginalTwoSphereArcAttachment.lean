@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalSphereGraphModel
 import PoincareConjecture.Proofs.M76.Wall.OriginalTwoFootSphereImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex TriangularRoofModel
@@ -23,11 +14,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
-
 
 theorem PLDomain.exists_two_sphere_arc_attachment
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

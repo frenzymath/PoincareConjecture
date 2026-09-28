@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapWeak
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapHigher
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapClosedC2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -48,11 +38,6 @@ local instance : NormedSpace ℝ
     (Target →L[ℝ] Target →L[ℝ] Target →L[ℝ] Target →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
-
 theorem local_mixed_memWkp_add_three
     (k : ℕ) {W V : Set Plane} (hW : IsOpen W) (hWc : IsCompact (closure W))
     (hV : IsOpen V) (hVc : IsCompact (closure V)) (hVW : closure V ⊆ W)
@@ -86,11 +71,6 @@ theorem local_mixed_memWkp_add_three
       (hu j).memW1p (hf j)
     intro phi hphi hc hsupp
     simpa [flatBoundaryForm, Matrix.one_apply] using heq j phi hphi hc hsupp
-
-
-
-
-
 
 theorem mixed_quadratic_system_contDiffOn_closure
     {W0 W1 W2 W3 O : Set Plane} {T : Set Target}

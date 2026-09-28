@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.ConeTriangleFaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,8 +35,6 @@ theorem cone_edge_iff (K L : SimplicialComplex ℝ E) {c : E}
     · have hcq : c ≠ q := fun h => hc (h.symm ▸ hq)
       refine ⟨(hfaces _).mpr ⟨by simp, Or.inr ?_⟩, Finset.card_pair hcq⟩
       simpa [hcq, Ne.symm hcq] using (show ({q} : Finset E) ∈ K.faces from hq)
-
-
 
 theorem cone_edge_has_unmarked_vertex (K L : SimplicialComplex ℝ E) {c : E}
     (hfaces : ∀ s, s ∈ L.faces ↔ s.Nonempty ∧ (s.erase c = ∅ ∨ s.erase c ∈ K.faces))

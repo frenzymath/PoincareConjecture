@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open MeasureTheory
@@ -21,7 +13,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
 
 theorem measurePreserving_volumeMeasure_of_edist_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -41,7 +32,6 @@ theorem measurePreserving_volumeMeasure_of_edist_eq
   let : EMetricSpace N := EMetricSpace.ofRiemannianMetric (𝓡 n) N
   let e' : M ≃ᵢ N := ⟨e, he⟩
   exact e'.measurePreserving_euclideanHausdorffMeasure n
-
 
 theorem integral_comp_equiv_volumeMeasure
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

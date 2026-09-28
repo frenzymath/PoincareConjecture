@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -95,8 +87,6 @@ private theorem localFlow_comp_eventuallyEq
     (fun r hr => hstays (Φ (s, y)) hs r (hsub hr)) hα hβ
     (by simpa using hinit (Φ (s, y)) hs)
   simpa only [add_comm] using heq ⟨ha't, htb'⟩
-
-
 
 theorem mfderiv_localFlow_vectorField
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

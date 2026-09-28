@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledInterpolatorAn
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformInterpolatorHorizontal
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.TwoEndpointMinimizingInterpolator
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Bundle
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m64_uniform_sampled_polygon_annuli
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -87,9 +71,6 @@ theorem m64_uniform_sampled_polygon_annuli
         simpa only [mul_comm] using (lt_div_iff₀ hdenom).mp (hmesh N hNAN)
   exact m64_sampled_interpolator_annulus g D hS hB H hH hprops hN
     (Gamma z) polygon hsampled (hspeed z) hshort hcol0 hstrict
-
-
-
 
 theorem m64_uniform_compact_sampled_polygon_annuli
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

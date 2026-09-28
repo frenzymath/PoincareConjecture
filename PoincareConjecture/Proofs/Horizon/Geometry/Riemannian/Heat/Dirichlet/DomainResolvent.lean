@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Density
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,7 +23,6 @@ theorem inner_toDomainL2 (hΩ : MeasurableSet Ω) (u v : H1Zero D Ω) :
     ⟪toDomainL2 D Ω u, toDomainL2 D Ω v⟫_ℝ = ⟪toL2 D Ω u, toL2 D Ω v⟫_ℝ := by
   simp only [real_inner_eq_norm_mul_self_add_norm_mul_self_sub_norm_sub_mul_self_div_two,
     ← map_sub, norm_toDomainL2 hΩ]
-
 
 def domainResolvent (D : LeviCivitaData g) (Ω : Set M) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] H1Zero D Ω :=
@@ -58,7 +49,6 @@ theorem inner_restrict_toDomainL2 (hΩ : MeasurableSet Ω)
       intro hxΩ
       rw [hx hxΩ, inner_zero_right]
 
-
 theorem domainResolvent_restrict (hΩ : MeasurableSet Ω) (f : Lp ℝ 2 g.volumeMeasure) :
     domainResolvent D Ω (LpToLpRestrictCLM M ℝ ℝ g.volumeMeasure 2 Ω f) =
       resolvent D Ω f := by
@@ -80,7 +70,6 @@ theorem domainResolvent_injective (hΩ : IsOpen Ω) (hcompact : IsCompact (closu
   apply eq_zero_of_inner_toDomainL2_test_eq_zero (D := D) hΩ hcompact
   intro φ
   rw [← domainResolvent_inner, hf, inner_zero_left]
-
 
 def domainL2Resolvent (D : LeviCivitaData g) (Ω : Set M) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=

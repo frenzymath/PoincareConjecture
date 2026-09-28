@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +34,6 @@ private theorem image_diff_of_fixed
     exact hn (he.symm ▸ hx)
   · rintro ⟨⟨y, hy, rfl⟩, hn⟩
     exact ⟨y, ⟨hy, fun hc => hn (hF hc ▸ hc)⟩, rfl⟩
-
-
-
 
 theorem exists_two_parameter_matching_of_exterior_transport_and_anchor
     (A B : Real → Set E2) (C : Set E2) (I : Set Real) {a : Real} (ha : a ∈ I)

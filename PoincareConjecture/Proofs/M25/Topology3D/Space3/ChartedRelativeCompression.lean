@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RelativeCapCompression
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem exists_charted_relative_cap_compression (B : BallNeighborhoodChart E F)
     (u : E) (hu : ‖u‖ = 1) (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1)

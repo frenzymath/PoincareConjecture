@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +12,6 @@ namespace PoincareConjecture.M32
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
 
-
-
-
 noncomputable def evolvingCylinderAxialEquiv (tau : ℝ) (htau : tau < 1) : V ≃L[ℝ] V :=
   (ContinuousLinearEquiv.refl ℝ E2).prodCongr
     (LinearEquiv.smulOfNeZero ℝ ℝ (Real.sqrt (1 - tau))
@@ -40,9 +20,6 @@ noncomputable def evolvingCylinderAxialEquiv (tau : ℝ) (htau : tau < 1) : V �
 private theorem evolvingCylinderAxialEquiv_apply (tau : ℝ) (htau : tau < 1) (p : V) :
     evolvingCylinderAxialEquiv tau htau p = (p.1, Real.sqrt (1 - tau) * p.2) := by
   rfl
-
-
-
 
 theorem evolving_roundCylinderGram_diagonal (tau : ℝ) (q : UnitTwoSphere) (p : V) :
     roundCylinderGram tau (chartAt E2 q) p =
@@ -113,9 +90,6 @@ private theorem evolving_roundCylinderGram_inv {tau : ℝ} (htau : tau < 1)
 
 set_option maxHeartbeats 800000 in
 
-
-
-
 theorem evolving_roundCylinderChristoffel_eq_zero {tau : ℝ} (htau : tau < 1)
     (q : UnitTwoSphere) (p : V) (a b d : Fin 3) :
     roundCylinderChristoffel tau (chartAt E2 q) p a b d =
@@ -140,9 +114,6 @@ private theorem evolving_diagonal_tensor_product {r : ℕ}
     obtain ⟨i, hi⟩ := Function.ne_iff.mp hab
     exact Finset.prod_eq_zero (Finset.mem_univ i) (by simp [Matrix.diagonal, hi])
 
-
-
-
 theorem evolving_roundCylinderTensorNormSquared_center {tau : ℝ} (htau : tau < 1)
     {r : ℕ} (q : UnitTwoSphere) (z : ℝ) (T : (Fin r → Fin 3) → ℝ) :
     roundCylinderTensorNormSquared tau (chartAt E2 q) (0, z) T =
@@ -164,9 +135,6 @@ theorem evolving_roundCylinderTensorNormSquared_center {tau : ℝ} (htau : tau <
   · intro b _ hba
     rw [evolving_diagonal_tensor_product, if_neg (Ne.symm hba), zero_mul, zero_mul]
   · simp
-
-
-
 
 theorem evolving_model_axialNormalization {tau : ℝ} (htau : tau ∈ Icc (-1) 0) :
     ‖(evolvingCylinderAxialEquiv tau (lt_of_le_of_lt htau.2 zero_lt_one) : V →L[ℝ] V)‖ ≤ 2 ∧

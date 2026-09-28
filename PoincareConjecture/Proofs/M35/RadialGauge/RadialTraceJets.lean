@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialProfileCalculus
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem radialTrace_iteratedDeriv_norm_le {u : V → ℝ} (hu : ContDiff ℝ ∞ u)
     {e : V} (he : ‖e‖ = 1) (j : ℕ) (r : ℝ) :
@@ -38,7 +27,6 @@ theorem radialTrace_iteratedDeriv_norm_le {u : V → ℝ} (hu : ContDiff ℝ ∞
   simpa only [norm_smul, he, mul_one] using
     (iteratedFDeriv ℝ j u (r • e)).le_opNorm (fun i => v i • e)
 
-
 theorem radialTrace_weighted_jet_le {u : V → ℝ} (hu : ContDiff ℝ ∞ u)
     {e : V} (he : ‖e‖ = 1) (j : ℕ) (r : ℝ) :
     (1 + |r|) * |iteratedDeriv j (fun s : ℝ => u (s • e)) r| ≤
@@ -46,8 +34,6 @@ theorem radialTrace_weighted_jet_le {u : V → ℝ} (hu : ContDiff ℝ ∞ u)
   simpa only [norm_smul, Real.norm_eq_abs, he, mul_one] using
     mul_le_mul_of_nonneg_left (radialTrace_iteratedDeriv_norm_le hu he j r)
       (show 0 ≤ 1 + |r| by positivity)
-
-
 
 theorem radialTrace_weighted_jet_vanishes_uniformly
     {A : Type*} {u : A → V → ℝ} (hu : ∀ a, ContDiff ℝ ∞ (u a))

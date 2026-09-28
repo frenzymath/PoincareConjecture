@@ -15,11 +15,4 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedCylinderCompletion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.FixedWallIntrinsicSegments
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.EuclideanImageDistance
 
-
-
-
-
-
-
 set_option autoImplicit false
-

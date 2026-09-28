@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCrossCapture
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ variable {M : Type u} {N : Type v} {X : Type w}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
-
-
 
 theorem terminalCommonInterval_cross_distance
     (g : RiemannianMetric 3 M) (k : RiemannianMetric 3 N)

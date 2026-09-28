@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Topology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.BlowupProduct
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,8 +28,6 @@ namespace SelectedAncientRescalings
 
 variable {b κ : ℝ} {F : RicciFlow 3 M (Iic b)} {p : M}
   (S : SelectedAncientRescalings F κ p)
-
-
 
 theorem exists_terminal_projectiveNeck_threshold
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -79,9 +70,6 @@ theorem exists_terminal_projectiveNeck_threshold
   have hcl := hneck.2.2.2
   rw [S.terminal_metric_eq_rescaled] at hcl
   exact hcl
-
-
-
 
 theorem exists_roundProductBlowup_with_terminal_projective_necks
     (P : M23NormalizedKappaCompactnessPredecessors) (hκ : 0 < κ)

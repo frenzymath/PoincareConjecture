@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem isLocalDiffeomorphOn_of_contMDiffOn_bijective_mfderiv
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -91,8 +81,6 @@ theorem isLocalDiffeomorphOn_of_contMDiffOn_bijective_mfderiv
     contMDiffOn_toFun := hH
     contMDiffOn_invFun := hHi }
   exact ⟨Φ, hxH, heq⟩
-
-
 
 theorem isLocalDiffeomorph_of_contMDiff_bijective_mfderiv
     {f : M → N} (hf : ContMDiff (𝓡 n) (𝓡 n) ∞ f)

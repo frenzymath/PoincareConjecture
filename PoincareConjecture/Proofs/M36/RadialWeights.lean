@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.PolarInverse
 import PoincareConjecture.Proofs.M36.SmoothProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

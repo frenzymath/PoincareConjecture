@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ClosedStripDifferential
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceDifferential
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem closedStrip_horizontal_velocity {f : LoopPlane → M}
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f S) {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1)
@@ -53,10 +38,6 @@ theorem closedStrip_horizontal_velocity {f : LoopPlane → M}
   have h := congrArg (fun L => L (1 : ℝ)) hchain
   simpa +instances only [curveVelocity, Function.comp_def,
     ContinuousLinearMap.comp_apply, hd] using! h
-
-
-
-
 
 theorem annulus_closedStrip_slice_immersed
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedCutFro
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedSphereCutAmbientTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ProtectedProductEscape
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -57,4 +50,3 @@ theorem HamiltonMarkedProtectedBall.exists_index_two_disjoint_noL3_cut
   exact hFD.mono_left (image_mono (subset_iUnion S i))
 
 end PoincareConjecture.M76
-

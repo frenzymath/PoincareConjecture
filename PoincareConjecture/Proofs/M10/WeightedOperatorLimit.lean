@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.WeightedOperatorFormula
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem trace_weightedMetricDual_tendsto {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ u : E → ℝ}

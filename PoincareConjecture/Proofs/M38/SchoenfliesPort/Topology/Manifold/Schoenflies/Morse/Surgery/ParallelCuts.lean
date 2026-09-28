@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Clearance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -29,8 +21,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : EuclideanSpace Real (Fin 2)) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_parallel_cutting_disks
     {f : S2 -> E3} (hf : Continuous f) (hinj : Function.Injective f)

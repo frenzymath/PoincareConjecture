@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ClosedCylinderQuotientFibers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -29,9 +20,6 @@ theorem closedBicollarMap_mem_baseImage_iff
   rw [bicollar_apply_mem_baseImage_iff e hes]
   change (z.2 : ℝ) / 2 = 0 ↔ (z.2 : ℝ) = 0
   constructor <;> intro h <;> linarith
-
-
-
 
 theorem closed_cylinder_quotient_regions
     (e : OpenPartialHomeomorph (sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) X)

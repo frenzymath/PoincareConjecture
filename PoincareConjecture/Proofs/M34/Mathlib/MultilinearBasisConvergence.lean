@@ -2,21 +2,10 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Module.Multilinear.Basic
 import Mathlib.LinearAlgebra.Multilinear.Basis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology
-
-
 
 theorem ContinuousMultilinearMap.tendsto_of_basis
     {𝕜 ι : Type*} [NontriviallyNormedField 𝕜] [CompleteSpace 𝕜] [Finite ι]

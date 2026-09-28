@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_volumeMeasure_of_subset
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -105,7 +95,6 @@ theorem hasDerivAt_volumeMeasure_of_subset
       rwa [heA] at hd
   obtain ⟨V, hV, hKV, hd⟩ := hp
   exact hd S hS (fun _ hx => ⟨hKV (hSK hx), hSK hx⟩)
-
 
 theorem hasDerivAt_volumeMeasure
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

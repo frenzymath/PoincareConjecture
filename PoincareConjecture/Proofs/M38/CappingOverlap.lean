@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Basic
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,21 +13,15 @@ namespace PoincareConjecture.M38
 variable {I : Type u} {P : I → Type v} {O : Type w}
   [∀ i, TopologicalSpace (P i)] [TopologicalSpace O]
 
-
-
 noncomputable def cappingTransition (e : ∀ i, OpenPartialHomeomorph (P i) O)
     (i j : I) : OpenPartialHomeomorph (P i) (P j) := by
   classical
   exact if h : i = j then h ▸ OpenPartialHomeomorph.refl (P i)
     else (e i).trans (e j).symm
 
-
-
 @[simp] theorem cappingTransition_self (e : ∀ i, OpenPartialHomeomorph (P i) O)
     (i : I) : cappingTransition e i i = OpenPartialHomeomorph.refl (P i) := by
   simp [cappingTransition]
-
-
 
 theorem cappingTransition_graph (e : ∀ i, OpenPartialHomeomorph (P i) O)
     {i j : I} (hij : i ≠ j) (x : P i) (y : P j) :
@@ -52,8 +38,6 @@ theorem cappingTransition_graph (e : ∀ i, OpenPartialHomeomorph (P i) O)
       rw [hxy]
       exact (e j).map_source hy
     rw [hxy, (e j).left_inv hy]
-
-
 
 noncomputable def cappingOverlap (e : ∀ i, OpenPartialHomeomorph (P i) O) :
     Poincare.Gluing.OverlapSystem P where

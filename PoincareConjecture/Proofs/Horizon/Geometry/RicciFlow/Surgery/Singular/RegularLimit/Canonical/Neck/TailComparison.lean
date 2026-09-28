@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Closeness
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,9 +42,6 @@ theorem cylinder_scaled_static_jetError_short_tail
   have hsmall : (c - 1) ^ 2 ≤ (ε / 4) ^ 2 := by nlinarith
   have hold' := mul_le_mul_of_nonneg_left hold (show 0 ≤ 2 * c ^ 2 by positivity)
   nlinarith
-
-
-
 
 theorem exists_short_tail_coefficient_tolerance {ε : ℝ} (hε : 0 < ε) :
     ∃ η : ℝ, 0 < η ∧ ∀ {c d : ℝ},

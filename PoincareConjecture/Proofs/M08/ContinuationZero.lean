@@ -68,5 +68,3 @@ theorem exists_continuation_to_zero {J : Set ℝ} (F : RicciFlow n M J)
     exact (hβα (hc.trans hs.1)).trans (hαtail hs)
 
 end PoincareConjecture.M08
-
-

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcSideClassification
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionArcTurning
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +25,6 @@ private theorem cyclic_side_image {K : Set AnnulusCoordinates}
   module
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_region_circle_two_geodesics_turning_le
     (N : IntrinsicAnnulus) {K : Set AnnulusCoordinates}

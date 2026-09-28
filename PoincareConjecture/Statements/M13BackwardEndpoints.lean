@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M13HorizontalTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {A : AdaptedMetricAtlas n X} {R : GeneralizedFlowCarrierConclusion A}
   {Q : ℝ} {hQ : 0 < Q} {a : ℝ}
-
 
 structure ParabolicBackwardEndpointCalculus
     (P : ParabolicSpacetimeRescaling R Q hQ a) : Prop where

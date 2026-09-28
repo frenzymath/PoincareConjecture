@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Common
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -63,8 +49,6 @@ theorem uniform_regions_of_core_of_services
   obtain ⟨G⟩ := hregions K S H
   exact ⟨S, G, G.center_mem_interior_core (zero_lt_one.trans hD) H.soul_scalar_pos,
     hbound K S G hnoncompact (hest.trans hstarBounds)⟩
-
-
 
 theorem uniform_regions_of_core
     (P : M26CanonicalNeighborhoodPredecessors.{u}) (hcore : UniformSoulCenteredCoreConclusion P) :

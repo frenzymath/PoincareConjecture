@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.CanonicalInduction
 import PoincareConjecture.Definitions.M46NoncollapseInduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

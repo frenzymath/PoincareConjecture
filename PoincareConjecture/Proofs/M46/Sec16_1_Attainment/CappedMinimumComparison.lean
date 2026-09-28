@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_MinimumComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem capped_minimum_le_of_upper_competitors {f : ℝ → ℝ} {a b : ℝ}
     (ha : 0 < a) (hf : ContinuousOn f (Icc a b)) (hstart : f a ≤ 3 / 2)

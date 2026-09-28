@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandTracks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,8 +20,6 @@ variable (m : ℝ) {d : ℝ} (hd : 0 < d)
 variable (hβ : ∀ z ∈ Ioo (m - d) (m + d), β z = 1)
 
 include hβK hβL hFβ hS hd hβ
-
-
 
 theorem horizontalBand_level_image {z : ℝ} (hz : z ∈ Ioo (m - d) (m + d)) :
     clockEvolution (horizontalBandField u F) hKV hLV m z ''
@@ -76,8 +63,6 @@ theorem horizontalBand_level_image {z : ℝ} (hz : z ∈ Ioo (m - d) (m + d)) :
       rwa [horizontalBandLift_reconstruct u x m hxH]
     · have heq := congrArg (horizontalBandProjection u) ht
       simpa only [y, horizontalBandProjection_lift] using heq
-
-
 
 theorem horizontalBand_lift_mem_iff {z : ℝ} (hz : z ∈ Ioo (m - d) (m + d)) (p : E2) :
     horizontalBandLift u

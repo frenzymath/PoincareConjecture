@@ -5,16 +5,6 @@ import Mathlib.Algebra.Category.ModuleCat.Abelian
 import Mathlib.Algebra.Category.ModuleCat.Colimits
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -50,7 +40,6 @@ noncomputable def surgeryThirdHomologyMap {X Y : Type u}
   (((AlgebraicTopology.singularHomologyFunctor (ModuleCat.{u} ℤ) 3).obj
     (ModuleCat.of ℤ (ULift.{u} ℤ))).map (TopCat.ofHom f)).hom
 
-
 structure SurgerySelectedComponent (A : GeneralizedSliceCarrier.{u}) where
   carrier : GeneralizedSliceCarrier.{u}
   basepoint : carrier.carrier
@@ -63,8 +52,6 @@ structure SurgerySelectedComponent (A : GeneralizedSliceCarrier.{u}) where
   range_eq_component : Set.range inclusion = connectedComponent (inclusion basepoint)
   compact : IsCompact (Set.univ : Set carrier.carrier)
   connected : IsConnected (Set.univ : Set carrier.carrier)
-
-
 
 structure SurgeryComparisonInput (F : SurgeryFlowData.{u})
     (T : ℝ) (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier] where

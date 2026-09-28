@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialCoordinateEncoder
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothSpectralInitialOrbit
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -26,10 +17,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle L, W)
 local notation "J" => ((X × X) × X) × ℝ
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_continuous_vectorPeriodic_initialJet_encoder :
     ∃ A : J →L[ℝ] S, ∀ p : J,

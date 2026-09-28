@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.SubdivisionCorners
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Permutation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem coordinateTriangle_vertex_contribution_reindex (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -34,8 +25,6 @@ theorem coordinateTriangle_vertex_contribution_reindex (g : RiemannianMetric 2 S
       ∑ k : Fin 3, if F (b k) = x then coordinateTriangleAngle g F b k else 0 := by
   simp only [coordinateTriangleAngle_reindex, AffineBasis.reindex_apply]
   exact e.symm.sum_comp (fun k => if F (b k) = x then coordinateTriangleAngle g F b k else 0)
-
-
 
 theorem sum_coordinateSplitBasis_angles (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -50,8 +39,6 @@ theorem sum_coordinateSplitBasis_angles (g : RiemannianMetric 2 S)
   obtain ⟨h1, h2⟩ := coordinateSplitBasis_endpoint_angles g F b hF hb ht
   simp only [Fintype.sum_bool, Fin.sum_univ_three]
   linarith only [h0, hq, h1, h2]
-
-
 
 theorem coordinateSplitBasis_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -88,8 +75,6 @@ theorem coordinateSplitBasis_cut_ne_vertex
   rw [AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring] at hcoord
   fin_cases k <;> norm_num [b.coord_apply, Fin.ext_iff] at hcoord <;> linarith [ht.1, ht.2]
 
-
-
 theorem coordinateSplitBasis_new_vertex_fan (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -105,8 +90,6 @@ theorem coordinateSplitBasis_new_vertex_fan (g : RiemannianMetric 2 S)
     coordinateSplitBasis_vertex_contribution g F b hF hFi hb ht
       (F (AffineMap.lineMap (b 1) (b 2) t))
 
-
-
 theorem coordinateSplitBasis_old_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -121,8 +104,6 @@ theorem coordinateSplitBasis_old_vertex_contribution (g : RiemannianMetric 2 S)
       ∑ k : Fin 3, if F (b k) = x then coordinateTriangleAngle g F b k else 0 := by
   simpa only [hx, if_false, add_zero] using
     coordinateSplitBasis_vertex_contribution g F b hF hFi hb ht x
-
-
 
 theorem coordinateSplitBasis_paired_cut_angle_sum (g : RiemannianMetric 2 S)
     (F G : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

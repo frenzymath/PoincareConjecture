@@ -4,8 +4,6 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Perfect
 
-
-
 set_option autoImplicit false
 open Set Geometry
 universe u

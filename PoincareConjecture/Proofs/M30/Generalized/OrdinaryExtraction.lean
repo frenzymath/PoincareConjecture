@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +13,6 @@ universe u
 namespace PoincareConjecture.M30.Cylinder
 
 open PoincareConjecture.Proofs.M12
-
-
 
 theorem rescale_physicalInterval_domain (origin scale : ℝ) (hscale : 0 < scale)
     (J : SpacetimeInterval) :
@@ -45,19 +31,12 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
 
-
-
-
 theorem physicalInterval_subset [Nonempty C.carrier]
     (e : GeneralizedFlowCylinder F C origin scale J.domain U) :
     (cylinderPhysicalInterval origin scale e.scale_pos J).domain ⊆ F.interval := by
   rintro _ ⟨s, hs, rfl⟩
   apply (F.slice_nonempty_iff _).mp
   exact ⟨e.forward s hs (Classical.choice (inferInstance : Nonempty C.carrier))⟩
-
-
-
-
 
 theorem exists_ordinaryFlow
     (e : GeneralizedFlowCylinder F C origin scale J.domain U)

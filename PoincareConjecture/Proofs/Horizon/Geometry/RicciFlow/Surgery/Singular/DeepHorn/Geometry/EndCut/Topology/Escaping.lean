@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Component
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,7 +61,6 @@ theorem escapingComponent_isConnected (horn : StrongHorn E epsilon)
     (K : Set (E.extended.slice T).carrier) (hK : IsCompact K) :
     IsConnected (horn.escapingComponent K hK) :=
   isConnected_connectedComponentIn_iff.mpr (horn.escapingPoint_mem K hK)
-
 
 theorem component_subset_prefix_of_ne_escaping (horn : StrongHorn E epsilon)
     (K : Set (E.extended.slice T).carrier) (hK : IsCompact K)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ConvexCov
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

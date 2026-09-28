@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeLinkInterval
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualLink
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem isFinitePLBallPair_dualLink_of_interval
     {s : Finset E} (hs : s ∈ K.faces)

@@ -13,20 +13,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -44,11 +30,6 @@ local notation "Rim" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.exists_original_double_partner
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}
@@ -144,10 +125,6 @@ theorem Step.exists_original_double_partner
     rw [← hvalue x]
 
 open Classical in
-
-
-
-
 
 theorem Step.exists_original_ordinary_double_graph
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

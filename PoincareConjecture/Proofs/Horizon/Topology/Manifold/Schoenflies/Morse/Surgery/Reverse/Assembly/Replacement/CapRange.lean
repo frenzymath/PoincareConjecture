@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.CapCollar
 
-
-
 set_option autoImplicit false
 
 open Set Metric Function

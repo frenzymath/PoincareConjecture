@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundControl
 import PoincareConjecture.Proofs.M47.LimitNoncollapsePhysicalTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option linter.style.haveILetI false
@@ -30,8 +22,6 @@ private local instance (G : GeneralizedBlowupConvergence V J) :
     ChartedSpace E3 G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance (G : GeneralizedBlowupConvergence V J) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_eventually_physical_round_comparison
     (P : M47Predecessors.{u})

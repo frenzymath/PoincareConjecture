@@ -1,20 +1,10 @@
 import PoincareConjecture.Definitions.Ch04.Harnack
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem metricComplete_of_compact {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.CompactApproximation
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.InteriorCutoff
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Cutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -90,11 +81,6 @@ private theorem m65WeakCutoff_norm_bounds
       exact mul_le_mul_of_nonneg_right (hθD i z) (norm_nonneg _))
   rw [hsplit]
   simpa only [one_mul] using (norm_add_le F G).trans (add_le_add hFnorm hGnorm)
-
-
-
-
-
 
 theorem m65WeakTrace_disk_totallyBounded {I : Type*}
     (u : I → Lp ℝ 2 (volume.restrict loopDiskSet))

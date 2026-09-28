@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Reverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -66,9 +54,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 local instance {n : ℕ} : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
-
 
 theorem exists_level_diffeomorphisms_on_compact_regular_band
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

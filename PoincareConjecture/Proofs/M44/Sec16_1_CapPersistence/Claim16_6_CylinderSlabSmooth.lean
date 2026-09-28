@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderTi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_WithinRicciEquation
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem cylinderTimeCoefficients_slab_smooth_ricci
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)

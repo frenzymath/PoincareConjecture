@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeWeakTra
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeCutoff
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,19 +10,12 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
 
-
-
-
 theorem dbar_eq_zero_of_differentiableAt_complex {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] {F : ℂ → E} {z : ℂ}
     (hF : DifferentiableAt ℂ F z) : dbar F z = 0 := by
   have hI := (differentiableAt_complex_iff_differentiableAt_real.mp hF).2
   change (2 : ℂ)⁻¹ • (fderiv ℝ F z 1 + I • fderiv ℝ F z I) = 0
   rw [hI, smul_smul, I_mul_I, neg_one_smul, add_neg_cancel, smul_zero]
-
-
-
-
 
 theorem exists_C1_matrix_germ {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E] [Nontrivial E]
@@ -72,11 +52,6 @@ theorem exists_C1_matrix_germ {E : Type*}
   have hcancel : z0 + (z - z0) = z := by abel
   simp only [Ashift, hcancel, Q]
 
-
-
-
-
-
 theorem contDiffOn_of_weak_matrix_equation {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {F : ℂ → Fin n → ℂ}
     {U : Set ℂ} (hU : IsOpen U) (hA : ContDiffOn ℝ 1 A U) (hF : Continuous F)
@@ -111,10 +86,6 @@ theorem contDiffOn_of_weak_matrix_equation {n : ℕ} [Nonempty (Fin n)]
     change dbar F z = A z (Q z (H z)) at hp
     simpa only [congrFun hidentity z] using hp
   exact ⟨fun z hz => (hlocal z hz).1.contDiffWithinAt, fun z hz => (hlocal z hz).2⟩
-
-
-
-
 
 theorem cauchyGauge_contDiffOn_of_C1_coefficient {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B0 : ℝ} {U : Set ℂ}

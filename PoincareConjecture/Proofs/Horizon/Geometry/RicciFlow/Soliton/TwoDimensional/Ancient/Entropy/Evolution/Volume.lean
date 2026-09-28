@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Bochner
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

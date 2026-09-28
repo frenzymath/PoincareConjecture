@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluin
 import PoincareConjecture.Proofs.M76.Rigidity.HomeomorphInverseCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -22,8 +14,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "T" => (Fin 2 → AddCircle (4 * (128 : ℝ)))
-
-
 
 theorem exists_handle_winding_correction (f : C(H, H))
     (hfix : ∀ x ∈ B, f x = x) :
@@ -63,9 +53,6 @@ theorem exists_handle_winding_correction (f : C(H, H))
     change E.symm (E (f (E.symm (torusIntegerTwist n (E x))))) = f (handleIntegerTwist n x)
     rw [E.symm_apply_apply]
     rfl
-
-
-
 
 theorem exists_relative_endpoint_of_standard_to_source
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

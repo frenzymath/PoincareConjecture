@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeNormalWitnesses
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeZeroArcs
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_edge_normal_halves
     (p : (T.marked 2).vertices) {s : Finset (T.index → ℝ × V3)}

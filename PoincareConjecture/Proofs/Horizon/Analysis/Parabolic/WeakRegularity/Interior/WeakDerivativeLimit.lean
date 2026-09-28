@@ -1,20 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.StrongLimit
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology ENNReal
@@ -85,7 +71,6 @@ variable {D : Type*} [NormedAddCommGroup D] [NormedSpace ℝ D]
   [FiniteDimensional ℝ D] [MeasureSpace D] [BorelSpace D]
   [Measure.IsAddHaarMeasure (volume : Measure D)]
 
-
 theorem setIntegral_test_fderiv_spacetime {s : Set D} (hs : IsOpen s) {u : D → ℝ}
     (hu : ContDiffOn ℝ 1 u s) {phi : D → ℝ} (hphi : ContDiff ℝ ∞ phi)
     (hc : HasCompactSupport phi) (hsub : tsupport phi ⊆ s) (v : D) :
@@ -114,7 +99,6 @@ theorem setIntegral_test_fderiv_spacetime {s : Set D} (hs : IsOpen s) {u : D →
     (fun x _ => hphi.differentiable (by norm_num) x)
     (fun x hx => (hu.contDiffAt (hs.mem_nhds (hsub hx))).differentiableAt (by norm_num))
 
-
 theorem distributional_identity_of_weak_limits_spacetime {s : Set D} (hs : IsOpen s)
     (f : ℕ → D → ℝ) (hf : ∀ n, ContDiffOn ℝ 1 (f n) s) (v : D)
     (hU : ∀ n, MemLp (f n) 2 (volume.restrict s))
@@ -137,7 +121,6 @@ theorem distributional_identity_of_weak_limits_spacetime {s : Set D} (hs : IsOpe
       simpa only [smul_eq_mul] using
         setIntegral_test_fderiv_spacetime hs (hf n) hphi hc hsub v)
   simpa only [testIntegral_apply] using hh
-
 
 theorem weak_w12_subsequence_spacetime {s : Set D} (hs : IsOpen s)
     (f : ℕ → D → ℝ) (hf : ∀ n, ContDiffOn ℝ 1 (f n) s)
@@ -202,7 +185,6 @@ variable {n : ℕ}
 local instance : Measure.IsAddHaarMeasure (volume : Measure (Spacetime n)) := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
-
 
 theorem weak_derivatives_of_uniform_limit
     {s : Set (Spacetime n)} (hs : IsOpen s) [IsFiniteMeasure (volume.restrict s)]

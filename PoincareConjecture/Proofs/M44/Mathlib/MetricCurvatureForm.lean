@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SectionalPolarization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -15,8 +7,6 @@ set_option maxSynthPendingDepth 8
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 def metricCurvatureForm (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) :
     E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ where
@@ -59,7 +49,6 @@ def metricCurvatureForm (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) :
     simp only [map_smul, LinearMap.coe_mk, AddHom.coe_mk, LinearMap.sub_apply,
       LinearMap.smul_apply, smul_eq_mul, RingHom.id_apply]
     ring
-
 
 theorem metricCurvatureForm_apply (B : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) (a b c d : E) :
     metricCurvatureForm B a b c d = B a c * B b d - B b c * B a d := rfl

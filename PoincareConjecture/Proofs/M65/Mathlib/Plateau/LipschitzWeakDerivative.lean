@@ -3,15 +3,6 @@ import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Measure Filter
@@ -22,10 +13,6 @@ namespace LipschitzWith
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [IsAddHaarMeasure μ] {C : ℝ≥0} {f : E → ℝ}
-
-
-
-
 
 theorem inner_toLp_fderiv_schwartz (hf : LipschitzWith C f)
     (hsupport : HasCompactSupport f) (hfL2 : MemLp f 2 μ) (v : E)

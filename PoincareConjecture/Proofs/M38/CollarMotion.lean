@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.ProjectiveDoubleCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_ambient_collar_motion
     {Q : Type*} [TopologicalSpace Q] [ChartedSpace StandardCapSpace Q] [T2Space Q]

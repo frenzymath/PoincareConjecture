@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -23,8 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   {N : Type*} [TopologicalSpace N] [ChartedSpace H' N]
   {n : ℕ∞ω} {f : M → N} {x : M}
-
-
 
 theorem injective_mfderiv_modelWithCornersSelf
     (h : IsImmersionAt 𝓘(𝕜, E) J n f x) (hn : n ≠ 0) :
@@ -76,13 +66,10 @@ namespace Poincare.Manifold.Schoenflies
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 
-
 theorem injective_mfderiv_sphere_embedding {f : S2 → E3}
     (hf : Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f) (p : S2) :
     Injective (mfderiv (𝓡 2) (𝓡 3) f p) :=
   (hf.isImmersion.isImmersionAt p).injective_mfderiv_modelWithCornersSelf (by simp)
-
-
 
 theorem injOn_fderiv_extension_tangent_sphere {f : S2 → E3}
     (hf : Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

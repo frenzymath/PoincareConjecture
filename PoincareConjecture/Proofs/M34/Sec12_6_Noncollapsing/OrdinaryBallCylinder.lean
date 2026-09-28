@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Definitions.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 def ordinaryBallInterval (T r : ℝ) (hr : 0 < r) : SpacetimeInterval where
   domain := Icc (T - r ^ 2) T
@@ -34,8 +23,6 @@ def ordinaryBallInterval (T r : ℝ) (hr : 0 < r) : SpacetimeInterval where
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def ordinaryBallSource [T2Space M]
     (g : RiemannianMetric n M) (p : M) (r : ℝ) :
     TopologicalSpace.Opens M := ⟨g.ball p r, M04.initial_ball_isOpen g p r⟩
@@ -43,7 +30,6 @@ noncomputable def ordinaryBallSource [T2Space M]
 variable [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProduct_ballCylinder {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
     (R : OrdinaryProductRicciGeometry F.metric I)

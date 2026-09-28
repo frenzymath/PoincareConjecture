@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CapBarrierWindow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open PoincareConjecture.Proofs.M12
 variable {F : GeneralizedRicciFlowData.{u}} {G : FlowBoxRicciGeometry F}
   {C : GeneralizedSliceCarrier.{u}} {gBirth : RiemannianMetric 3 C.carrier}
   {center : C.carrier} {origin T A h c mu theta : ℝ}
-
-
 
 theorem CapBarrierWindow.scalar_birth_lower
     (Q : CapBarrierWindow G C gBirth center origin T A h c mu theta)
@@ -44,9 +33,6 @@ theorem CapBarrierWindow.scalar_birth_lower
   have hden : 0 < 2 * (1 - (w.1.val - origin) / h ^ 2) * h ^ 2 := by positivity
   apply (div_le_div_of_nonneg_left hc.le hden ?_).trans (Q.scalar_lower w)
   nlinarith [mul_nonneg hs0 hsq.le]
-
-
-
 
 theorem CapBarrierWindow.avoids_early_inner
     [CompactSpace C.carrier]

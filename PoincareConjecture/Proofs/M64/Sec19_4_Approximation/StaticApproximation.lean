@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformCompactApproxi
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformRawFamily
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.StaticTheoryAssembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64StaticApproximationTheory_of_compact
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_local_metric_of_normalized_pullback_limit
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -79,9 +64,6 @@ theorem exists_local_metric_of_normalized_pullback_limit
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_terminal_exponential_metric_subsequence
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

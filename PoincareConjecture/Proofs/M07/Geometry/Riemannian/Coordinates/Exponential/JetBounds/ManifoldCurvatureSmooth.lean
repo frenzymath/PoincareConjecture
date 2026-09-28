@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalSecondBianchi
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_chart_metric (g : RiemannianMetric n M) (x : M) :
     ∃ (gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) (_D : LeviCivitaData gE),
@@ -61,7 +51,6 @@ theorem exists_chart_metric (g : RiemannianMetric n M) (x : M) :
   filter_upwards [hVo.mem_nhds hpV] with y hy u v
   exact congrArg (fun B => B u v) (heq y hy)
 
-
 theorem curvatureOnFields_eq_curvature_manifold (D : LeviCivitaData g)
     {X Y Z : (y : M) → TangentSpace (𝓡 n) y} {x : M}
     (hX : ContMDiffAt (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% X) x)
@@ -92,8 +81,6 @@ theorem curvatureOnFields_eq_curvature_manifold (D : LeviCivitaData g)
   have h := congrArg (mfderiv (𝓡 n) (𝓡 n) c.symm p) hf
   simp only [hi.self_of_nhds.self_apply_inverse] at h
   exact hp ▸ h.symm
-
-
 
 theorem riemannEvaluation_isSmooth_manifold (D : LeviCivitaData g) :
     IsSmoothCovariantTensor D.riemannEvaluation := by

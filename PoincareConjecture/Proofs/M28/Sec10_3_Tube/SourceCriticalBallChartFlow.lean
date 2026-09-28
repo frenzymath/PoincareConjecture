@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckChartFlow
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ChartMaps
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +24,6 @@ variable {epsilon C A : ℝ}
 
 include he in
 
-
 theorem tubeCritical_chart_original_localDiffeomorph :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (fun x : U => (e x).val.val) := by
@@ -56,8 +45,6 @@ variable (S : GeneralizedStrongNeck (E (k + H.shift)).flow
   (hwindow : tau ≤ (E (k + H.shift)).flow.scalar
     ⟨(E (k + H.shift)).time, (E (k + H.shift)).basepoint⟩ * S.scale ^ 2 / 4)
 
-
-
 def tubeCritical_chart_flow :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 3) (n := ∞)
@@ -67,9 +54,6 @@ def tubeCritical_chart_flow :
       ⟨(E (k + H.shift)).time, (E (k + H.shift)).basepoint⟩)
     (H.base_scalar_pos k) tau htau hwindow U hU (fun x : U => (e x).val.val)
     (H.tubeCritical_chart_original_localDiffeomorph T A1 k U hU e he) hcapture
-
-
-
 
 theorem tubeCritical_chart_flow_metric_at_zero :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.AmbientMorseChart
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 noncomputable def morseBridgeDiffeomorph (c ε : ℝ) (hε : 0 < ε) :
     Diffeomorph 𝓘(ℝ, C3) 𝓘(ℝ, C3) C3 C3 ∞ := by
@@ -82,19 +70,13 @@ noncomputable def morseBridgeDiffeomorph (c ε : ℝ) (hε : 0 < ε) :
 variable (c ε : ℝ) (hε : 0 < ε)
 local notation "F" => morseBridgeDiffeomorph c ε hε
 
-
-
 theorem morseBridgeDiffeomorph_apply (p : C3) :
     F p = ((Real.sqrt (ε + p.2 ^ 2) * p.1.1, p.2),
       c + (ε + p.2 ^ 2) * (p.1.2 + p.1.1 ^ 2) - p.2 ^ 2) := rfl
 
-
-
 theorem morseBridgeDiffeomorph_symm_apply (p : C3) :
     (F).symm p = ((p.1.1 / Real.sqrt (ε + p.1.2 ^ 2),
       (p.2 - c - p.1.1 ^ 2 + p.1.2 ^ 2) / (ε + p.1.2 ^ 2)), p.1.2) := rfl
-
-
 
 theorem morseBridgeDiffeomorph_residuals (p : C3) :
     (F p).1.2 = p.2 ∧
@@ -106,8 +88,6 @@ theorem morseBridgeDiffeomorph_residuals (p : C3) :
     ring
   · simp only [morseBridgeDiffeomorph_apply]
     ring
-
-
 
 theorem morseBridgeDiffeomorph_image_lens (β : ℝ) (_hβ : 0 ≤ β) :
     F '' {p : C3 | 0 ≤ p.1.2 ∧ p.1.1 ^ 2 + p.1.2 ≤ 1 ∧ |p.2| ≤ β} =
@@ -138,8 +118,6 @@ theorem morseBridgeDiffeomorph_image_lens (β : ℝ) (_hβ : 0 ≤ β) :
       linarith
     · exact hy.1
 
-
-
 theorem morseBridgeDiffeomorph_buffer_bounds {δ B : ℝ} (hδ : 0 ≤ δ) (hB : 0 ≤ B)
     (p : C3) (hp : -δ ≤ p.1.2 ∧ p.1.1 ^ 2 + p.1.2 ≤ 1 + δ ∧ |p.2| ≤ B) :
     (F p).1.1 ^ 2 + (F p).1.2 ^ 2 ≤ (ε + B ^ 2) * (1 + 2 * δ) + B ^ 2 ∧
@@ -161,21 +139,15 @@ theorem morseBridgeDiffeomorph_buffer_bounds {δ B : ℝ} (hδ : 0 ≤ δ) (hB :
   simp only [morseBridgeDiffeomorph_apply, mul_pow, Real.sq_sqrt hd]
   exact ⟨by nlinarith, by nlinarith, by nlinarith⟩
 
-
-
 noncomputable def morseBridgeChart (A : OpenPartialHomeomorph C3 E3) :
     OpenPartialHomeomorph C3 E3 := (F).toHomeomorph.toOpenPartialHomeomorph.trans A
 
 variable (A : OpenPartialHomeomorph C3 E3)
 local notation "Bridge" => morseBridgeChart c ε hε A
 
-
-
 theorem morseBridgeChart_source_target :
     (Bridge).source = F ⁻¹' A.source ∧ (Bridge).target = A.target := by
   constructor <;> ext p <;> simp [morseBridgeChart]
-
-
 
 theorem morseBridgeChart_smooth (hA : ContDiffOn ℝ ∞ A A.source)
     (hi : ContDiffOn ℝ ∞ A.symm A.target) :
@@ -183,8 +155,6 @@ theorem morseBridgeChart_smooth (hA : ContDiffOn ℝ ∞ A A.source)
       ContDiffOn ℝ ∞ (Bridge).symm (Bridge).target := by
   refine ⟨hA.comp (F).contDiff.contDiffOn (fun _ hp => hp.2), ?_⟩
   exact (F).symm.contDiff.comp_contDiffOn (hi.mono inter_subset_left)
-
-
 
 theorem morseBridgeChart_identities (H : E3 →L[ℝ] ℝ) (S : Set E3)
     (hH : ∀ q ∈ A.source, H (A q) = q.2)
@@ -217,8 +187,6 @@ theorem morseBridgeChart_identities (H : E3 →L[ℝ] ℝ) (S : Set E3)
       have hh : 1 - p.1.2 - p.1.1 ^ 2 = 0 := by linarith
       rw [hh, mul_zero] at hz
       linarith
-
-
 
 theorem morseBridgeChart_buffer_subset_source {R h δ B β : ℝ}
     (hA : {q : C3 | q.1.1 ^ 2 + q.1.2 ^ 2 ≤ R ^ 2 ∧ |q.2 - c| ≤ h} ⊆ A.source)

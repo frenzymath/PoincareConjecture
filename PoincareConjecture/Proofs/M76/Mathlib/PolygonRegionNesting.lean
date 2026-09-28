@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem subset_outside_of_unbounded_preconnected {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ} (P : Polygon E n)
@@ -25,9 +13,6 @@ theorem subset_outside_of_unbounded_preconnected {E : Type*}
   intro q hq
   refine ⟨hsub hq, fun h => hunbounded ?_⟩
   exact h.subset (hS.subset_connectedComponentIn hq hsub)
-
-
-
 
 theorem outside_subset_outside_of_boundary_subset {n m : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (Q : Polygon (ℝ × ℝ) m)
@@ -39,9 +24,6 @@ theorem outside_subset_outside_of_boundary_subset {n m : ℕ}
   have hqcl := hboundary hqQ
   rw [P.closure_inside hP hinj] at hqcl
   exact hqcl hq
-
-
-
 
 theorem inside_subset_inside_of_boundary_subset {n m : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (Q : Polygon (ℝ × ℝ) (m + 3))
@@ -55,8 +37,6 @@ theorem inside_subset_inside_of_boundary_subset {n m : ℕ}
     exact Set.disjoint_left.mp Q.disjoint_inside_outside hq (hout hqP)
   have h := interior_maximal hclosed (Q.isOpen_inside hQ hinjQ)
   rwa [P.interior_closure_inside hP hinjP] at h
-
-
 
 theorem closure_inside_inter_eq_boundary_inter {n m : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (Q : Polygon (ℝ × ℝ) (m + 3))

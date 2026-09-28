@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Distance.MetricPathLength
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle RealInnerProductSpace

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckExitTime
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPathLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
-
 
 theorem center_ball_subset_carrier {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

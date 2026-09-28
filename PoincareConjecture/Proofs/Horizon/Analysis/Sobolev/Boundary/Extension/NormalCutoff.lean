@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.TangentialTes
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

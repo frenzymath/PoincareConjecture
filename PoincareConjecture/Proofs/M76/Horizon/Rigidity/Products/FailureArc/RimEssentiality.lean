@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Marked
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.PathHomotopy
 import Mathlib.GroupTheory.OrderOfElement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76
 open Dehn
 
 local notation "Q2" => sphere (0 : Fin 2 → ℝ) 1
-
-
 
 theorem not_nullhomotopic_of_injective_boundary_power
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
@@ -49,8 +38,6 @@ theorem not_nullhomotopic_of_injective_boundary_power
     rw [boundaryLoopIterate_class]
     exact Path.Homotopic.Quotient.eq.mpr h
   exact (orderOf_eq_zero_iff'.mp ha n hn) (hi (heq.trans (map_one _).symm))
-
-
 
 theorem not_nullhomotopic_of_boundary_power_homotopy
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

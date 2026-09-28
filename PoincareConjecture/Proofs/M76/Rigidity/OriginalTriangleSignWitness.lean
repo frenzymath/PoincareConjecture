@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleApex
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ShortSegmentNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry SignType
@@ -23,9 +14,6 @@ local notation "D" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_triangle_coface_sign_witness
     (p q : (T.marked 2).vertices) {s t : Finset (T.index → ℝ × V3)}

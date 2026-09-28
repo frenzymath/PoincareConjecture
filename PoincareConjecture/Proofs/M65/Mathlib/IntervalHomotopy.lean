@@ -2,14 +2,6 @@ import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped unitInterval
@@ -17,10 +9,6 @@ open scoped unitInterval
 namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
-
 
 theorem homotopic_of_continuous_icc {a b : ℝ}
     (family : Set.Icc a b → C(X, Y))

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Canonica
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.RoundCylinderCongruence
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +15,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale ε : ℝ} {I : Set ℝ} {U : Set C.carrier}
   (e : GeneralizedFlowCylinder F C origin scale I U)
   {coordinate : RoundCylinderSpace → C.carrier}
-
-
 
 theorem pullback_tensor_smooth (hU : IsOpen U)
     (hcoordinate : ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ coordinate

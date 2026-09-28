@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexRepres
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubePrescribedNullhomotopy
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
 
 theorem exists_stdSimplex_boundary_face_quotient (n : ℕ) :
     ∃ q : C((Σ _i : Fin (n + 2), stdSimplex ℝ (Fin (n + 1))),
@@ -44,7 +35,6 @@ theorem exists_stdSimplex_boundary_face_quotient (n : ℕ) :
     exact ⟨⟨i, z⟩, Subtype.ext hz⟩
   exact ⟨q, IsQuotientMap.of_surjective_continuous hsurjective q.continuous,
     fun _ _ => rfl⟩
-
 
 theorem existsUnique_stdSimplex_boundary_face_homotopy
     (n : ℕ) {X : Type*} [TopologicalSpace X]
@@ -79,7 +69,6 @@ theorem existsUnique_stdSimplex_boundary_face_homotopy
   ext ⟨t, y⟩
   obtain ⟨⟨i, z⟩, rfl⟩ := hq.surjective y
   exact (hK t i z).trans (hH t i z).symm
-
 
 theorem exists_stdSimplex_nullhomotopy_with_prescribed_boundary
     (n : ℕ) {X : Type*} [TopologicalSpace X] (x : X)

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
 set_option autoImplicit false
 open Set
 

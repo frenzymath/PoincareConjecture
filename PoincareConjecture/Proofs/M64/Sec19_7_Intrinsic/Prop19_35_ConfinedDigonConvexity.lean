@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_DigonTerminalTa
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_DigonConvexity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedDigonRegion
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +10,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_confined_digon_convex_coordinates
     (N : IntrinsicAnnulus) {K : ℝ} (hK : N.GaussianCurvatureBound K)

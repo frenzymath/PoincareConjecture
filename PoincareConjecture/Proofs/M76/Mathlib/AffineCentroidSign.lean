@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CentroidMesh
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open scoped BigOperators
 namespace Finset
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem affine_nonpos_on_hull_of_centroid (s : Finset E) (hs : s.Nonempty)
     (A : E →ᵃ[ℝ] ℝ)

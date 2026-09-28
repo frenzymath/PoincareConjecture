@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.LocalInvariantProperties
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +8,6 @@ open Set Topology
 open scoped Manifold ContDiff
 
 noncomputable section
-
-
-
 
 theorem ContinuousLinearEquiv.exists_compatibleChartedSpace
     {K E F : Type*} [NontriviallyNormedField K]

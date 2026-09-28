@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNumericalComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M47
 open PoincareConjecture.Proofs.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_calibrated_angular_plane
     {g0 g1 : RiemannianMetric 3 E} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

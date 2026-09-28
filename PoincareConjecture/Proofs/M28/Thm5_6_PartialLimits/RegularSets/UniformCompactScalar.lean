@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.UniformCha
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {g : ∀ k, RiemannianMetric 3 (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem tendstoUniformlyOn_scalarCurvature
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :
@@ -64,9 +53,6 @@ theorem tendstoUniformlyOn_scalarCurvature
   have hinverse : (extChartAt (𝓡 3) q).symm ((extChartAt (𝓡 3) q) x) = x :=
     (extChartAt (𝓡 3) q).left_inv ((hC q hq).2.2.2.1 hxC').1
   simpa only [hinverse] using hk q hq _ (mem_image_of_mem _ hxC')
-
-
-
 
 theorem exists_eventual_compact_scalar_bound
     (G : RegularPointedMetricConvergence g p) (D : ∀ k, LeviCivitaData (g k)) :

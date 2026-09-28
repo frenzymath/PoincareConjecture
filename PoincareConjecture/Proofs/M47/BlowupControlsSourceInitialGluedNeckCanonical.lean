@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M45NeckGluing
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +19,6 @@ theorem roundCylinderFamilyClose_congr {epsilon : ℝ} {I : Set ℝ}
   · rw [heq u hu]
     exact herror u hu z hz
 
-
-
 theorem surgeryCanonicalControl_of_close_pullback {F : SurgeryFlowData.{u}}
     {t epsilon C : ℝ} (neck : EpsilonNeck (F.metric t)) (heps : neck.epsilon = epsilon)
     (hconn : neck.connection = F.connection t)
@@ -43,9 +32,6 @@ theorem surgeryCanonicalControl_of_close_pullback {F : SurgeryFlowData.{u}}
     SurgeryCanonicalControl F t neck.center epsilon C :=
   SurgeryCanonicalControl.neck
     ⟨neck, heps, hconn, cyl, hterm, roundCylinderFamilyClose_congr hT hpull⟩ rfl
-
-
-
 
 theorem surgeryCanonicalControl_of_neck_gluing {epsilon beta : ℝ}
     (hglue : M45NeckGluingProperty.{u} epsilon beta)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.BoundedContinuation
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapChapter11Geometry
 import PoincareConjecture.Proofs.M34.Standard.NonnegativeCurvatureNorm
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +18,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F.base) (F := F.base.flow) R
 
 include P
-
-
 
 theorem standardFlow_chapter11_compact_center_sequence (E0 : StandardCapEstimate g0)
     {T0 B : ℝ} (hT0 : T0 ∈ Ioo 0 F.base.lifetime) {X : Set StandardCapSpace}

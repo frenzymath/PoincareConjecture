@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdg
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PuncturedSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -85,9 +76,6 @@ theorem exists_subdivision_with_finite_ball_pairs
     hR.subset (hC (i, false)).1, hCa i, hCr i,
     (hC (i, true)).2.2, (hC (i, false)).2.2⟩
 
-
-
-
 theorem exists_finite_closed_punctured_ball_carrier
     {V X ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
     [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X] [Finite ι]
@@ -127,9 +115,6 @@ theorem exists_finite_closed_punctured_ball_carrier
       (((hAB i).2.2.2.2.2.1.subset.trans (hrkeep i)).trans hrem.symm.subset)
   · intro J hJR hJp
     exact hkeep J hJR (hJp.trans hrem.symm.subset)
-
-
-
 
 theorem exists_finite_punctured_ambient_ball_carrier
     {V X ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]

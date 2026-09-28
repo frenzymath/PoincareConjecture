@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureSourceCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Nested.ChartTests
 import Mathlib.Data.Nat.Pairing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +30,6 @@ private noncomputable local instance earlierJetBilinearNormedAddCommGroup :
 
 private noncomputable local instance earlierJetBilinearNormedSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem terminalCurvature_exists_earlier_source_jets
     {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

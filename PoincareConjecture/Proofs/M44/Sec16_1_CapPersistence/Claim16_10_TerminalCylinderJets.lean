@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalPullbackJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalCylinderMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,14 +29,9 @@ noncomputable local instance terminalCylinderTwoJetNorm : NormedAddCommGroup
 noncomputable local instance terminalCylinderTwoJetSpace : NormedSpace ℝ
     (MetricTwoJet 3) := Prod.normedSpace
 
-
-
-
 theorem metricTwoJet_const_smul (Q : ℝ) (B : E → MetricCoefficient 3) (x : E) :
     metricTwoJet (Q • B) x = Q • metricTwoJet B x := by
   simp only [metricTwoJet, fderiv_const_smul_field, Pi.smul_apply, Prod.smul_mk]
-
-
 
 theorem metricTwoJet_rescaled_pullback
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -61,9 +47,6 @@ theorem metricTwoJet_rescaled_pullback
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c : ℝ} {U : Set C.carrier}
 
-
-
-
 theorem CylinderRicciFlow.normalized_coefficients_eq
     {e : SurgeryFlowCylinder F C origin scale (Ico 0 c) U}
     {f : PartialDiffeomorph (𝓡 3) (𝓡 3) E C.carrier ∞}
@@ -77,9 +60,6 @@ theorem CylinderRicciFlow.normalized_coefficients_eq
     scale * cylinderPhysicalCoefficients e f s hs x v w
   rw [G.physical_coefficients_eq hmap p s hs hx, ← mul_assoc,
     mul_inv_cancel₀ e.scale_pos.ne', one_mul]
-
-
-
 
 theorem cylinderTerminalChart_twoJet_near_of_tail
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -153,9 +133,6 @@ theorem cylinderTerminalChart_twoJet_near_of_tail
       (heq.fderiv (𝕜 := ℝ)).fderiv_eq]
   rw [← htwo]
   exact hbound s hs hs0s
-
-
-
 
 theorem cylinderTerminalChart_twoJet_near
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

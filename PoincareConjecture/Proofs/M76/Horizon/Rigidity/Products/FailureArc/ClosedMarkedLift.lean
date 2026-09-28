@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.CocycleCharacters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric PoincareConjecture.M76.Dehn
@@ -16,8 +8,6 @@ open Set Metric PoincareConjecture.M76.Dehn
 namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 
 local notation "Q2" => sphere (0 : Fin 2 → ℝ) 1
-
-
 
 theorem exists_squareRim_lift_of_pathValue_eq_zero
     {ι : Type*} [Fintype ι] {A : PreAbstractSimplicialComplex ι}

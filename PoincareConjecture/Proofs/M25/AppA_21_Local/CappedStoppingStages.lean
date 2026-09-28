@@ -5,15 +5,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Logic.Function.Iterate
 import Mathlib.Order.Monotone.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem ConnectedNeckCapCover.exists_finite_capped_stopping_stages :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

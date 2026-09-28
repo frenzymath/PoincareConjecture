@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapHessianTensor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -35,8 +26,6 @@ private def hessianCycle : Equiv.Perm (Fin 4) :=
 
 private def hessianPairs : Equiv.Perm (Fin 4) :=
   (Equiv.swap 0 2).trans (Equiv.swap 1 3)
-
-
 
 theorem cap_hessian_scalar_contraction
     (A : Mat) (hA : ∀ i j, A i j = A j i) (H : Idx → ℝ)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineArclength
 import Mathlib.Topology.Algebra.Order.Archimedean
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,7 +52,6 @@ theorem line_geodesic_mfderiv_bijective (g : RiemannianMetric 1 M)
       (finrank_euclideanSpace_fin : Module.finrank ℝ (EuclideanSpace ℝ (Fin 1)) = 1)
       hne w
     exact ⟨a, (hL a).trans ha⟩
-
 
 theorem periodic_line_geodesic_of_eq (g : RiemannianMetric 1 M)
     {γ : ℝ → M} (hγ : g.IsGeodesicOn γ univ) {p : M} (hp : γ 0 = p)
@@ -149,8 +141,6 @@ theorem periodic_line_geodesic_of_eq (g : RiemannianMetric 1 M)
     have htwo : (2 : ℝ) • w = 0 := by simpa only [two_smul] using hzero'
     exact hne s ((smul_eq_zero.mp htwo).resolve_left (by norm_num))
 
-
-
 theorem line_geodesic_chart_deriv_eq_of_eq (g : RiemannianMetric 1 M)
     {γ : ℝ → M} (hγ : g.IsGeodesicOn γ univ) {p : M} (hp : γ 0 = p)
     {v : EuclideanSpace ℝ (Fin 1)} (hv0 : v ≠ 0)
@@ -172,8 +162,6 @@ theorem line_geodesic_chart_deriv_eq_of_eq (g : RiemannianMetric 1 M)
       hb'.scomp a ((hasDerivAt_id a).add_const (b - a))
   exact ha.unique (hshift.congr_of_eventuallyEq
     (Eventually.of_forall (fun t => congrArg (extChartAt (𝓡 1) (γ a)) (hper t).symm)))
-
-
 
 theorem exists_pos_period_line_geodesic [CompactSpace M] [PreconnectedSpace M]
     (g : RiemannianMetric 1 M) (hc : MetricComplete g)
@@ -202,8 +190,6 @@ private def periodSubgroup (γ : ℝ → M) : AddSubgroup ℝ where
   zero_mem' := Function.periodic_with_period_zero γ
   add_mem' := fun h₁ h₂ => h₁.add_period h₂
   neg_mem' := fun h => h.neg
-
-
 
 theorem exists_fundamental_period_line_geodesic [CompactSpace M] [PreconnectedSpace M]
     (g : RiemannianMetric 1 M) (hc : MetricComplete g)

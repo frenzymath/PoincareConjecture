@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.TensionFamily
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawJointInverse
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -50,9 +40,6 @@ private theorem composed_smooth_spatial_jets
       (hDS.of_le (by simp)) hDDF (hDDS.of_le (by simp))⟩
   exact hF.comp (contDiffOn_fst.prodMk (hS.of_le (by simp)))
     (fun _ hp => ⟨hp.1, mem_univ _⟩)
-
-
-
 
 theorem rawIntrinsicGaugeMap_joint_c2
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

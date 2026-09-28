@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarInverse
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,22 +10,16 @@ open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture.M65Interior
 
-
-
 def coneDiskMap {M : Type*} (P : EuclideanSpace ℝ (Fin 3) → M)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))
     (v : ℝ → EuclideanSpace ℝ (Fin 3)) (x z : LoopPlane) : M :=
   P (coneCoordinates r v0 v (polarCoordinates x z).1 (polarCoordinates x z).2)
-
-
 
 def coneDiskField {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (g : EuclideanSpace ℝ (Fin 3) → E) (r : ℝ)
     (v0 : EuclideanSpace ℝ (Fin 3)) (v d : ℝ → EuclideanSpace ℝ (Fin 3))
     (x : LoopPlane) (i : Fin 2) (z : LoopPlane) : E :=
   coneCartesianField g r v0 v d (polarCoordinates x z).1 (polarCoordinates x z).2 i
-
-
 
 theorem coneDiskMap_polar {M : Type*} (P : EuclideanSpace ℝ (Fin 3) → M)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))
@@ -44,8 +28,6 @@ theorem coneDiskMap_polar {M : Type*} (P : EuclideanSpace ℝ (Fin 3) → M)
     coneDiskMap P r v0 v x (polarPlane x p) = P (coneCoordinates r v0 v p.1 p.2) := by
   simp only [coneDiskMap, polarCoordinates_polarPlane x hp]
 
-
-
 theorem coneDiskField_polar {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (g : EuclideanSpace ℝ (Fin 3) → E) (r : ℝ)
     (v0 : EuclideanSpace ℝ (Fin 3)) (v d : ℝ → EuclideanSpace ℝ (Fin 3))
@@ -53,8 +35,6 @@ theorem coneDiskField_polar {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ 
     coneDiskField g r v0 v d x i (polarPlane x p) =
       coneCartesianField g r v0 v d p.1 p.2 i := by
   simp only [coneDiskField, polarCoordinates_polarPlane x hp]
-
-
 
 theorem coneDisk_coordinates_mem {r ρ : ℝ} (hr : 0 < r)
     {v0 : EuclideanSpace ℝ (Fin 3)} {v : ℝ → EuclideanSpace ℝ (Fin 3)}
@@ -66,8 +46,6 @@ theorem coneDisk_coordinates_mem {r ρ : ℝ} (hr : 0 < r)
   have hp : polarCoordinates x z ∈ Icc (0 : ℝ) r ×ˢ Icc (-Real.pi) Real.pi := by
     rwa [← polarCoordinates_preimage_rectangle x r] at hz
   exact coneCoordinates_mem_closedBall hr h0 (hv hp.2) hp.1
-
-
 
 theorem coneDisk_memLp {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {g : EuclideanSpace ℝ (Fin 3) → E}

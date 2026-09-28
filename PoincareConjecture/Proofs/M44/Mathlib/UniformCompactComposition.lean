@@ -2,22 +2,10 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
-
-
-
 
 theorem ContinuousOn.comp_tendstoUniformlyOn_of_compact_image
     {P E F ι : Type*} [MetricSpace E] [LocallyCompactSpace E] [UniformSpace F]

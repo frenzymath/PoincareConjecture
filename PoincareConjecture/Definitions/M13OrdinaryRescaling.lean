@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.M13IntervalGeometry
 import PoincareConjecture.Statements.M13MetricHomothety
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval}
-
-
-
 
 structure OrdinaryParabolicRescaling (F : RicciFlow n M I.domain)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) where
@@ -40,13 +26,9 @@ structure OrdinaryParabolicRescaling (F : RicciFlow n M I.domain)
     MetricHomothetyCalculus (F.metric (parabolicTimeInv Q a s)) (flow.metric s)
       (Diffeomorph.refl (𝓡 n) M ∞) Q
 
-
 noncomputable def ordinaryProductTimeMap (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) : (parabolicInterval Q hQ a I).domain × M → I.domain × M :=
   fun p ↦ (parabolicTimePointInv Q hQ a I p.1, p.2)
-
-
-
 
 structure OrdinaryParabolicProductComparison [Nonempty M]
     {F : RicciFlow n M I.domain} {Q : ℝ} {hQ : 0 < Q} {a : ℝ}

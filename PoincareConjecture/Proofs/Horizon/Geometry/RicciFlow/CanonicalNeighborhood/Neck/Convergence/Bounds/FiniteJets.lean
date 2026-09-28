@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -234,8 +226,6 @@ private theorem tensor_contraction_le
         _ = _ := by ring
     _ = _ := by simp only [Finset.sum_mul]
 
-
-
 theorem exists_roundCylinder_finiteJet_bound
     {K : Set RoundCylinderCoordinates} (hK : IsCompact K) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (q : UnitTwoSphere) (B : RoundCylinderTwoTensor)
@@ -285,9 +275,6 @@ theorem exists_roundCylinder_finiteJet_bound
       apply Finset.sum_congr rfl
       intro k hk
       ring
-
-
-
 
 theorem exists_roundCylinderJetErrorSquared_bound
     {J : Set ℝ} (hJ : IsCompact J) (m : ℕ) :

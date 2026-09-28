@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassical
 import PoincareConjecture.Proofs.M60.Mathlib.SecondDerivativeChain
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,24 +20,12 @@ open Weak Euclidean WeakCompactness BoundaryLocalization BoundaryTangential Eucl
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => halfSpace 2
 
-
-
-
-
 def boundaryClassicalPartial (i : Fin 2) (u : Plane → ℝ) : Plane → ℝ :=
   fun z => fderiv ℝ u z (EuclideanSpace.single i 1)
-
-
-
-
 
 def boundaryVectorPartial {n : ℕ} (i : Fin 2)
     (u : Plane → EuclideanSpace ℝ (Fin n)) : Plane → EuclideanSpace ℝ (Fin n) :=
   fun z => fderiv ℝ u z (EuclideanSpace.single i 1)
-
-
-
-
 
 theorem hasWeakPartial_boundaryClassicalPartial
     {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
@@ -63,10 +41,6 @@ theorem hasWeakPartial_boundaryClassicalPartial
   rw [heq] at h
   linarith
 
-
-
-
-
 theorem memWkp_succ_of_boundaryClassicalPartial
     (k : ℕ) {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hs : ContDiffOn ℝ 1 u O) (hu : MemLp u 2 (volume.restrict O))
@@ -80,10 +54,6 @@ theorem memWkp_succ_of_boundaryClassicalPartial
     (chosenWeakPartial'_memLp_of_mem hw i) (chosenWeakPartial'_isWeakPartial_of_mem hw i)
   exact (MemWkp_congr_ae (by norm_num) hO hae).mpr (hd i)
 
-
-
-
-
 theorem boundaryClassicalPartial_memWkp
     (k : ℕ) {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hs : ContDiffOn ℝ 1 u O) (hu : MemWkp (k + 1) 2 u O) (i : Fin 2) :
@@ -92,10 +62,6 @@ theorem boundaryClassicalPartial_memWkp
     (chosenWeakPartial'_memLp_of_mem hu.memW1p i)
     (chosenWeakPartial'_isWeakPartial_of_mem hu.memW1p i)
   exact (MemWkp_congr_ae (by norm_num) hO hae).mp (hu.chosenWeakPartial_mem i)
-
-
-
-
 
 theorem memWkp_two_of_classical_hessian
     {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
@@ -111,10 +77,6 @@ theorem memWkp_two_of_classical_hessian
     (hd i)
   exact hdd i
 
-
-
-
-
 theorem boundaryClassicalPartial_coordinate {n : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin n)} {z : Plane}
     (hu : DifferentiableAt ℝ u z) (i : Fin 2) (j : Fin n) :
@@ -124,11 +86,6 @@ theorem boundaryClassicalPartial_coordinate {n : ℕ}
   change fderiv ℝ (P ∘ u) z (EuclideanSpace.single i 1) = _
   rw [fderiv_comp z P.differentiableAt hu, P.fderiv]
   rfl
-
-
-
-
-
 
 theorem boundaryVectorPartial_coordinate_memWkp {n : ℕ}
     (k : ℕ) {O : Set Plane} (hO : IsOpen O)
@@ -141,10 +98,6 @@ theorem boundaryVectorPartial_coordinate_memWkp {n : ℕ}
   filter_upwards [ae_restrict_mem hO.measurableSet] with z hz
   exact boundaryClassicalPartial_coordinate
     ((hs.contDiffAt (hO.mem_nhds hz)).differentiableAt (by simp)) i j
-
-
-
-
 
 theorem boundaryClassicalSecond_coordinate {n : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin n)} {z : Plane}
@@ -169,10 +122,6 @@ theorem boundaryClassicalSecond_coordinate {n : ℕ}
       boundaryClassicalPartial_coordinate (hs.differentiableAt (by simp)) b j]
   rw [M60.fderiv_column (hu.of_le (WithTop.coe_le_coe.mpr le_top))]
 
-
-
-
-
 theorem vector_memWkp_two_of_classical_hessian {n : ℕ}
     {O : Set Plane} (hO : IsOpen O) {u : Plane → EuclideanSpace ℝ (Fin n)}
     (hs : ContDiffOn ℝ ∞ u O) (hu : MemLp u 2 (volume.restrict O))
@@ -193,10 +142,6 @@ theorem vector_memWkp_two_of_classical_hessian {n : ℕ}
     apply MemLp.ae_eq ?_ ((hdd b a).eval_piLp j)
     filter_upwards [ae_restrict_mem hO.measurableSet] with z hz
     exact (boundaryClassicalSecond_coordinate (hs.contDiffAt (hO.mem_nhds hz)) a b j).symm
-
-
-
-
 
 theorem hessian_memLp_of_coordinate_memWkp_two {n : ℕ}
     {O : Set Plane} (hO : IsOpen O) {u : Plane → EuclideanSpace ℝ (Fin n)}
@@ -219,11 +164,6 @@ theorem hessian_memLp_of_coordinate_memWkp_two {n : ℕ}
     ((hs.contDiffAt (hO.mem_nhds hz)).of_le (WithTop.coe_le_coe.mpr le_top))
     (EuclideanSpace.single a 1) (EuclideanSpace.single b 1)
 
-
-
-
-
-
 theorem compact_halfSpace_H1_memLp_four {u : Plane → ℝ}
     (hc : HasCompactSupport u) (hu : MemWkp 1 2 u Half) :
     MemLp u 4 (volume.restrict Half) := by
@@ -236,10 +176,6 @@ theorem compact_halfSpace_H1_memLp_four {u : Plane → ℝ}
       (by norm_num : (1 : ℝ) ≤ 4 / 3) (by norm_num : (4 / 3 : ℝ) < 2) hc hup using 1
     norm_num
   exact h
-
-
-
-
 
 theorem local_halfSpace_H1_memLp_four
     {W V : Set Plane} (hW : IsOpen W) (hV : IsOpen V)
@@ -257,10 +193,6 @@ theorem local_halfSpace_H1_memLp_four
   change chi z * u z = u z
   rw [hone z (subset_closure hz.1), one_mul]
 
-
-
-
-
 theorem local_H3_classical_hessian_memLp_four
     {W V : Set Plane} (hW : IsOpen W) (hV : IsOpen V)
     (hVc : IsCompact (closure V)) (hVW : closure V ⊆ W)
@@ -274,10 +206,6 @@ theorem local_H3_classical_hessian_memLp_four
     ((hs.fderiv_of_isOpen hWH (m := 1)
       (WithTop.coe_le_coe.mpr le_top)).clm_apply contDiffOn_const)
   exact boundaryClassicalPartial_memWkp 2 hWH (hs.of_le (by simp)) hu i
-
-
-
-
 
 theorem H3_classical_third_memLp_two
     {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}

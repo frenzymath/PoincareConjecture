@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M01.NormalizationPinching
 import PoincareConjecture.Proofs.M01.CurvatureCalculusTensorial
 import Mathlib.Algebra.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

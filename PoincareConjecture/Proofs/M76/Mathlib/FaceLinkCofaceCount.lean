@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,18 +9,12 @@ namespace Geometry.SimplicialComplex
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup E] [Module 𝕜 E] [DecidableEq E]
 
-
-
 theorem faceLink_singleton_eq_link (K : SimplicialComplex 𝕜 E) (q : E) :
     K.faceLink {q} = K.link q := by
   ext t
   change (t ∈ K.faces ∧ Disjoint ({q} : Finset E) t ∧ {q} ∪ t ∈ K.faces) ↔
     (t ∈ K.faces ∧ q ∉ t ∧ insert q t ∈ K.faces)
   simp only [Finset.disjoint_singleton_left, Finset.singleton_union]
-
-
-
-
 
 theorem ncard_faceLink_vertices_eq_cofaces (K : SimplicialComplex 𝕜 E) (s : Finset E) :
     (K.faceLink s).vertices.ncard =

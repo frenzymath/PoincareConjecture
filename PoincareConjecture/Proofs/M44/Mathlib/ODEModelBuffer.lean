@@ -4,21 +4,10 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology NNReal ContDiff
-
-
 
 theorem ode_mapsTo_ball_and_dist_le_of_model_buffer
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -69,9 +58,6 @@ theorem ode_mapsTo_ball_and_dist_le_of_model_buffer
   exact dist_le_gronwall_of_vectorField_error hG hdelta hepsilon hγ hη
     (fun s hs => ball_subset_closedBall (hγU hs)) hηU herror hinitial ht
 
-
-
-
 theorem tendstoUniformlyOn_ode_of_model_buffer
     {E P ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {l : Filter ι} {F : ι → E → E} {G : E → E} {K : ℝ≥0} {R r T : ℝ}
@@ -113,9 +99,6 @@ theorem tendstoUniformlyOn_ode_of_model_buffer
     (hi z.1 hz.1) (hη z.1 hz.1) (hηnorm z.1 hz.1) hrR hstart
     (fun y hy => by simpa only [dist_comm] using (hif y hy).le) hin hnR
   simpa only [dist_comm] using (h.2 z.2 hz.2).trans_lt hnε
-
-
-
 
 theorem tendstoUniformlyOn_ode_of_compact_model
     {E P ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

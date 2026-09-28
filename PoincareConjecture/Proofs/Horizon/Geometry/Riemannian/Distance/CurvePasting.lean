@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -108,7 +102,6 @@ theorem edist_le_of_speed_le_on_Icc (g : RiemannianMetric n M)
     (intervalIntegrable_const : IntervalIntegrable (fun _ : ℝ => K) volume a b) hspeed
   simpa only [intervalIntegral.integral_const, smul_eq_mul, mul_comm] using hi
 
-
 theorem eventually_edist_le_mul_of_lt_speed_bound (g : RiemannianMetric n M)
     {γ : ℝ → M} {I : Set ℝ} (hI : IsOpen I)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ γ I)
@@ -141,7 +134,6 @@ theorem eventually_edist_le_mul_of_lt_speed_bound (g : RiemannianMetric n M)
     congr 1
     ring
 end PoincareConjecture.RiemannianMetric
-
 
 theorem PoincareConjecture.RiemannianMetric.edist_piecewise_curve_le_of_speed_le
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

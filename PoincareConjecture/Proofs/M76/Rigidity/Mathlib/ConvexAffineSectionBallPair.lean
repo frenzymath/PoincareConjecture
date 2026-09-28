@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineSectionFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ namespace Geometry
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [Finite ι]
-
-
-
 
 theorem isFinitePLBallPair_convex_affine_section
     {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

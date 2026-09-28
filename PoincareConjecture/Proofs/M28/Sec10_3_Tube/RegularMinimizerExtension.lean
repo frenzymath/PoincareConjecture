@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.OpenRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +16,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem exists_radial_gain_of_regular_regional_minimizer
     (g : RiemannianMetric 3 M) (T : TopologicalSpace.Opens M)

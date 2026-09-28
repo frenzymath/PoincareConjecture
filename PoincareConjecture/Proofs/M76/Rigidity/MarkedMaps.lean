@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.IdentityHomotopy
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +18,6 @@ local notation "BR" =>
 
 omit [Fintype κ] in
 
-
-
-
 theorem exists_hamilton_boundary_homeomorph
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B) :
     ∃ b : B ≃ₜ B, ∀ x : B, (b x : H) = phi x := by
@@ -40,8 +26,6 @@ theorem exists_hamilton_boundary_homeomorph
   exact F.fst_eq_snd x.property
 
 omit [Fintype κ] in
-
-
 
 theorem latticeHandleMapInDomain_preimage_boundary
     (phi : C(H, H)) (hproper : phi ⁻¹' B = B) :
@@ -53,9 +37,6 @@ theorem latticeHandleMapInDomain_preimage_boundary
   change q.symm (phi (q x)) ∈ BR ↔ x ∈ BR
   rw [← hb, q.apply_symm_apply, ← hb]
   exact Set.ext_iff.mp hproper (q x)
-
-
-
 
 def latticeHandleMapInDomain_homotopyRel
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B) :

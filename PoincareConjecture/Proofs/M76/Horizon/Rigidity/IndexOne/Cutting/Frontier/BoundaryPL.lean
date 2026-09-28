@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhaseCharts
 import PoincareConjecture.Proofs.M76.Rigidity.SourceBoundaryCylinder
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -28,8 +19,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem polyhedralPL_original_boundaryTranslation
     {E α β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -65,9 +54,6 @@ theorem polyhedralPL_original_boundaryTranslation
     rw [frontier_prod_univ_eq] at hb ⊢
     exact ⟨hb.1, mem_univ _⟩
   exact hphi.polyhedralPLInCharts_boundary_fixed hfix K hK q' hq' hqB' htranslated
-
-
-
 
 theorem finitePiecewiseAffineOn_sourcePhase_coordinate
     {E α β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -167,8 +153,6 @@ theorem complementaryOldStripReversal_eq_translation
       rw [handleTranslation_domain]
       congr 1
       exact Prod.ext rfl (congrArg Subtype.val ((oldSlabCoordinates phi a b F).symm_apply_apply x))
-
-
 
 theorem polyhedralPL_complementaryOldStripReversal
     {E α β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

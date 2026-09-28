@@ -3,21 +3,11 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Algebra.Ring.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare
-
-
 
 theorem exists_sphere_point_of_local_ascent
     {X : Type*} [MetricSpace X] {f : X → ℝ} {x : X} {T c : ℝ}
@@ -49,8 +39,6 @@ theorem exists_sphere_point_of_local_ascent
   have hvalue : f x - c * dist x x ≤ f q - c * dist x q := hmax hx
   simp only [dist_self, mul_zero, sub_zero, hboundary] at hvalue
   linarith only [hvalue]
-
-
 
 theorem exists_small_excess_of_local_distance_ascent
     {X : Type*} [MetricSpace X] (p : X) {x : X} {T c : ℝ}

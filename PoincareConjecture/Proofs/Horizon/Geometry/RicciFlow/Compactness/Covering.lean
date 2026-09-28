@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Covering
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence
-
-
-
-
-
-
-

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.TerminalEventual
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.TimeShift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -28,8 +19,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 local instance embeddingConvergenceCarrierConnected (C : FlowCarrier.{0} 3) :
     ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
-
-
 
 theorem tendstoUniformlyOn_bilinear_jets_of_components
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
@@ -75,8 +64,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
 theorem embedding_coordinateCoefficient_eq_pullbackCoefficients_unshifted
     (q : G.limitCarrier.carrier) (k : ℕ) (t : ℝ)
     (x : EuclideanSpace ℝ (Fin 3))
@@ -92,8 +79,6 @@ theorem embedding_coordinateCoefficient_eq_pullbackCoefficients_unshifted
       (EuclideanSpace.basisFun (Fin 3) ℝ a) (EuclideanSpace.basisFun (Fin 3) ℝ b) := by
   simpa only [FlowCarrier.coordinateCoefficient, add_sub_cancel_right] using
     S.embedding_coordinateCoefficient_eq_pullbackCoefficients G q k (t + 1) x hx hxe a b
-
-
 
 theorem eventually_embedding_contDiffAt_originalTime
     (q : G.limitCarrier.carrier)
@@ -118,8 +103,6 @@ theorem eventually_embedding_contDiffAt_originalTime
   exact Fneg.smooth.contDiffAt_spacetime_pullbackCoefficients isOpen_Iio
     (hk z.2 (mem_image_of_mem _ hz)).contMDiffAt (hKt z hz)
 
-
-
 theorem interiorLimit_contDiffAt_pullbackCoefficients_unshifted
     (q : G.limitCarrier.carrier) (z : ℝ × EuclideanSpace ℝ (Fin 3))
     (ht : z.1 < 0) (hx : z.2 ∈ (extChartAt (𝓡 3) q).target) :
@@ -131,8 +114,6 @@ theorem interiorLimit_contDiffAt_pullbackCoefficients_unshifted
   have hg := G.limitFlow.smooth.contDiffAt_spacetime_pullbackCoefficients isOpen_Iio hc
     (show z.1 + 1 ∈ Iio (1 : ℝ) by change z.1 + 1 < 1; linarith)
   exact hg.comp z ((contDiffAt_fst.add contDiffAt_const).prodMk contDiffAt_snd)
-
-
 
 theorem tendstoUniformlyOn_embedding_bilinear_metricJet_unshifted
     (q : G.limitCarrier.carrier) (m : ℕ)
@@ -191,9 +172,6 @@ theorem tendstoUniformlyOn_embedding_bilinear_metricJet_unshifted
       (heq.iteratedFDeriv ℝ m).self_of_nhds] at h
   rw [dist_eq_norm, norm_sub_rev]
   exact h
-
-
-
 
 theorem exists_smooth_terminal_embedding_coefficients
     (P : M23NormalizedKappaCompactnessPredecessors)

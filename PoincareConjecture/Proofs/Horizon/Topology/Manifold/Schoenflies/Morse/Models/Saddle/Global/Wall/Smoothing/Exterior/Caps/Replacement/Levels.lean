@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Graft
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +14,6 @@ open Split
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
-
 
 def verticalCapLift (H : Real ≃ₘ[Real] Real) : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
   toFun p := vector (p 0) (p 1) (H (p 2))
@@ -86,8 +83,6 @@ theorem horizontalScaleLift_upper_slice
   · rintro ⟨q, hq, rfl⟩
     refine ⟨⟨tangentPlanarLatitude t q, ⟨sphereLatitude_mem_sphere ht ⟨q, hq⟩, ht0⟩,
       hB q⟩, rfl⟩
-
-
 
 theorem verticalCapLift_preserves_upper_scale_cap
     (r : Real → Real) (hr : ContDiff Real ∞ r) (hpos : ∀ t, 0 < r t)

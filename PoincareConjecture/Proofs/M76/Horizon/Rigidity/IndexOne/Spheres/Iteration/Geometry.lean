@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Frontier.AmbientPhases
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,7 +13,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
 
 structure PairedSourceGeometry {α : Type*}
     (e : α → OpenPartialHomeomorph X V3) (phi : C(H, H)) (a b : ℝ) : Prop where
@@ -47,8 +38,6 @@ structure PairedSourceGeometry {α : Type*}
   ambient_injective : ∀ theta ∈ ({a, b} : Set ℝ),
     ∀ x : sourceSurface phi (theta : C), Function.Injective (FundamentalGroup.map
       (⟨Subtype.val, continuous_subtype_val⟩ : C(sourceSurface phi (theta : C), X)) x)
-
-
 
 theorem exists_relative_paired_source_geometry
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

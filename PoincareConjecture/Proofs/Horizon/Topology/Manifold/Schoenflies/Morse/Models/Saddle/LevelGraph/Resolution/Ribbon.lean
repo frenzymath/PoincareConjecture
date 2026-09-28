@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Connector
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -134,10 +132,8 @@ private theorem exists_filled_planar_circle_pair_with_ribbon_region
     have hs₀ := preconnected_region_subset_compl hS hK₀ hav₀ hmidS (hbetween hmid).2
     exact ⟨hnest, fun x hx => ⟨hi₁ ▸ hs₁ hx, hs₀ hx⟩⟩
 
-
 def positiveLevelRibbon (t : Real) (z : E2) : E2 :=
   WithLp.toLp 2 ![z 0, (2 * z 1 - 1) * Real.sqrt (t + (z 0)^2)]
-
 
 def negativeLevelRibbon (t : Real) (z : E2) : E2 :=
   saddleCoordinateSwap (positiveLevelRibbon t z)
@@ -188,7 +184,6 @@ theorem contDiff_positiveLevelRibbon {t : Real} (ht : 0 < t) :
   · exact ((contDiff_const.mul h1).sub contDiff_const).mul
       ((contDiff_const.add (h0.pow 2)).sqrt (fun z => ne_of_gt (by positivity)))
 
-
 def positiveLevelRibbonDiffeomorph {t : Real} (ht : 0 < t) :
     Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
   toFun := positiveLevelRibbon t
@@ -225,7 +220,6 @@ def positiveLevelRibbonDiffeomorph {t : Real} (ht : 0 < t) :
 theorem contDiff_negativeLevelRibbon {t : Real} (ht : 0 < t) :
     ContDiff Real ∞ (negativeLevelRibbon t) :=
   contDiff_saddleCoordinateSwap.comp (contDiff_positiveLevelRibbon ht)
-
 
 def negativeLevelRibbonDiffeomorph {t : Real} (ht : 0 < t) :
     Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ :=
@@ -287,9 +281,6 @@ theorem negativeLevelRibbon_height_gt {t : Real} (ht : 0 < t) {z : E2}
   have hh := positiveLevelRibbon_height_lt ht hz
   change -t < -(positiveLevelRibbon t z 1)^2 + (positiveLevelRibbon t z 0)^2
   linarith
-
-
-
 
 theorem exists_saddle_level_ribbons
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -396,8 +387,6 @@ theorem exists_saddle_level_ribbons
     have hlt := negativeLevelRibbon_height_gt ht hs
     change inner Real v (f q) = inner Real v (f p) - t at hq
     linarith
-
-
 
 theorem exists_saddle_circle_pair_ribbon_regions
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

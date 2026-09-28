@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckHalfFlow
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,12 +26,8 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
 
 include hQ
 
-
-
 theorem GeneralizedStrongNeck.global_scale_pos : 0 < Q * S.scale ^ 2 :=
   mul_pos hQ (sq_pos_of_pos S.scale_pos)
-
-
 
 def GeneralizedStrongNeck.global_rescaling :
     OrdinaryParabolicRescaling (I := strongNeckHalfInterval)
@@ -51,8 +37,6 @@ def GeneralizedStrongNeck.global_rescaling :
     (GeneralizedStrongNeck.rescaled_half_flow S H) (Q * S.scale ^ 2)
     (GeneralizedStrongNeck.global_scale_pos S Q hQ) 0)
 
-
-
 theorem GeneralizedStrongNeck.global_time_mem_quarter {tau s : ℝ}
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (hs : s ∈ Icc (-tau) 0) :
     s / (Q * S.scale ^ 2) ∈ Icc (-(1 / 4 : ℝ)) 0 := by
@@ -61,8 +45,6 @@ theorem GeneralizedStrongNeck.global_time_mem_quarter {tau s : ℝ}
   · apply (le_div_iff₀ ha).2
     linarith [hs.1]
   · exact div_nonpos_of_nonpos_of_nonneg hs.2 ha.le
-
-
 
 def GeneralizedStrongNeck.global_flow (tau : ℝ) (htau : 0 < tau)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) :
@@ -82,8 +64,6 @@ def GeneralizedStrongNeck.global_flow (tau : ℝ) (htau : 0 < tau)
     ⟨-tau, ⟨le_rfl, neg_nonpos.mpr htau.le⟩,
       0, ⟨neg_nonpos.mpr htau.le, le_rfl⟩, ne_of_lt (neg_lt_zero.mpr htau)⟩
 
-
-
 theorem GeneralizedStrongNeck.global_flow_metric (tau : ℝ) (htau : 0 < tau)
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ)
     (x : strongNeckOpen S) (v w : TangentSpace (𝓡 3) x) :
@@ -97,14 +77,10 @@ theorem GeneralizedStrongNeck.global_flow_metric (tau : ℝ) (htau : 0 < tau)
   simpa only [parabolicTimeInv, zero_add] using
     (GeneralizedStrongNeck.global_rescaling S H Q hQ).metric_eq s x v w
 
-
-
 @[simp] theorem GeneralizedStrongNeck.global_flow_connection
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (s : ℝ) :
     (GeneralizedStrongNeck.global_flow S H Q hQ tau htau hwindow).connection s =
       (GeneralizedStrongNeck.global_rescaling S H Q hQ).flow.connection s := rfl
-
-
 
 theorem GeneralizedStrongNeck.global_flow_metric_at_zero
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4)
@@ -120,8 +96,6 @@ theorem GeneralizedStrongNeck.global_flow_metric_at_zero
     GeneralizedStrongNeck.rescaled_half_flow_metric,
     GeneralizedStrongNeck.rescaled_metric_at_zero]
   field_simp [S.scale_pos.ne']
-
-
 
 theorem GeneralizedStrongNeck.global_flow_metric_eq_restriction
     (tau : ℝ) (htau : 0 < tau) (hwindow : tau ≤ Q * S.scale ^ 2 / 4) :
@@ -142,13 +116,9 @@ theorem GeneralizedStrongNeck.global_flow_metric_eq_restriction
   funext x
   exact ContinuousLinearMap.ext (fun v => ContinuousLinearMap.ext (hinner x v))
 
-
-
 theorem GeneralizedStrongNeck.global_physical_time (s : ℝ) :
     t + (s / (Q * S.scale ^ 2)) / (S.scale⁻¹ ^ 2) = t + s / Q := by
   field_simp [hQ.ne', S.scale_pos.ne']
-
-
 
 theorem GeneralizedStrongNeck.global_physical_time_mem {tau s : ℝ}
     (hwindow : tau ≤ Q * S.scale ^ 2 / 4) (hs : s ∈ Icc (-tau) 0) :

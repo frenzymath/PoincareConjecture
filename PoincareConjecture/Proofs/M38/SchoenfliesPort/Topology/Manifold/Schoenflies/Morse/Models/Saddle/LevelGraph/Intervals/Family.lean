@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Intervals.Contacts
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteBoundaryComponents
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,14 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.SaddleLevel
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -35,7 +21,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
 
 theorem card_exterior_connectedComponents_eq_two
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -81,8 +66,6 @@ private theorem class_eq_of_component_eq {K : Set S2} {x y : K}
   obtain ⟨z, hz, heq⟩ := hx
   have hzx : z = x := Subtype.ext heq
   exact hzx ▸ hz
-
-
 
 theorem exists_two_exterior_intervals
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryZeroExtension
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +11,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64ZeroTrace_boundaryReflect_weak {u v : LoopPlane → ℝ} (i : Fin 2)
     (hu : Continuous u) (hzero : ∀ p : LoopPlane, p 0 = 0 → u p = 0)
@@ -54,10 +39,6 @@ theorem m64ZeroTrace_boundaryReflect_weak {u v : LoopPlane → ℝ} (i : Fin 2)
   convert m64Continuous_zeroTrace_weak_test i hu hzero huLp hvLp hw hps hpc using 1
   apply integral_congr_ae
   exact Eventually.of_forall fun p => by dsimp only; rw [hderiv]
-
-
-
-
 
 theorem m64OddBoundaryReflect_weak {u v : LoopPlane → ℝ} (i : Fin 2)
     (hu : Continuous u) (hzero : ∀ p : LoopPlane, p 0 = 0 → u p = 0)

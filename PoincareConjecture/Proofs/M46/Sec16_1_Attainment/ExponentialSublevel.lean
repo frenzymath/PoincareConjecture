@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_CompactMinimizers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_action_sublevel_compact
     (hM04 : RicciFlowCurvatureTheory.{0})

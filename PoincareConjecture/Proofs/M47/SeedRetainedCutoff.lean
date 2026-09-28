@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedRetainedConfinement
 import PoincareConjecture.Proofs.M47.SeedM15CapFloor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_seedRetained_commonCutoff
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

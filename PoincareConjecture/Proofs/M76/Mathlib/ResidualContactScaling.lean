@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlabPartition
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualOppositeEdge
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualLevelScaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exceptional_collar_residual_contact_homothety (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) {β c : ℝ} (hβ : 0 < β) (hβv : β < A v)

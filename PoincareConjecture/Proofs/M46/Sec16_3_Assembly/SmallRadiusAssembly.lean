@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.LowScalarCylinder
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_CanonicalVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 def RegularSourceProducer {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (rNext cutoff rho taubar l0 V : ℝ) : Prop :=
   ∀ (F : SurgeryFlowData.{u}) (O : SurgeryObservation F),
@@ -30,8 +20,6 @@ def RegularSourceProducer {K : MetricSurgeryConstants}
       rho ≤ D.radius →
       ∃ H : HalfRadiusHistory D, Nonempty (StableSource H taubar l0 V)
 
-
-
 def LowScalarCylinderProducer {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (rNext cutoff rho : ℝ) : Prop :=
   ∀ (F : SurgeryFlowData.{u}) (O : SurgeryObservation F),
@@ -39,8 +27,6 @@ def LowScalarCylinderProducer {K : MetricSurgeryConstants}
     ∀ D : NoncollapseTest F O, surgeryEpochStart p.i ≤ D.time →
       (F.connection D.time).scalarCurvature D.center < rNext⁻¹ ^ 2 →
       Nonempty (LowScalarCylinder D rho)
-
-
 
 theorem testConclusion_of_regularSource_and_cylinder (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -73,9 +59,6 @@ theorem testConclusion_of_regularSource_and_cylinder (P : M46Predecessors.{u})
   exact (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_right
     (smallRadiusUniformData_le_small_ball p U _ _) (pow_nonneg D.radius_pos.le 3))).trans
       (C.small_volume P p U hrho hepsilon (le_of_not_ge hlarge) source)
-
-
-
 
 theorem induction_of_regular_sources_and_cylinders (P : M46Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

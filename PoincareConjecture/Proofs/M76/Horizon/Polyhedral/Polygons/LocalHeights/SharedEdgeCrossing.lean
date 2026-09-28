@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularTriangleIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.StrictCrossingPointIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem StraddlesZero.of_zero_set_eq {A B : E →ᵃ[ℝ] ℝ} {e : Finset E}
     (he : A.StraddlesZero e)
@@ -28,7 +18,6 @@ theorem StraddlesZero.of_zero_set_eq {A B : E →ᵃ[ℝ] ℝ} {e : Finset E}
   intro v hv hBv
   exact he.ne_zero hv ((hzero v (subset_convexHull ℝ (e : Set E) hv)).mpr hBv)
 
-
 theorem straddlingPoint_eq_of_zero_set_eq {A B : E →ᵃ[ℝ] ℝ} {e : Finset E}
     (hA : A.StraddlesZero e) (hB : B.StraddlesZero e)
     (hzero : ∀ x ∈ convexHull ℝ (e : Set E), A x = 0 ↔ B x = 0) :
@@ -36,8 +25,6 @@ theorem straddlingPoint_eq_of_zero_set_eq {A B : E →ᵃ[ℝ] ℝ} {e : Finset 
   have hp := B.straddlingPoint_mem e hB
   exact (StraddlesZero.existsUnique A hA).unique (A.straddlingPoint_mem e hA)
     ⟨hp.1, (hzero _ hp.1).mpr hp.2⟩
-
-
 
 theorem exists_straddlingPoint_eq_of_zero_set_eq {A B : E →ᵃ[ℝ] ℝ} {e : Finset E}
     (hA : A.StraddlesZero e)

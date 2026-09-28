@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.MildExistence
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardSmoothBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
 
 theorem exists_gauge_smooth_mild_solution
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B L C : ℝ}

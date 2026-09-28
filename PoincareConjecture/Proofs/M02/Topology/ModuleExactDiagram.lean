@@ -1,7 +1,5 @@
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 
-
-
 set_option autoImplicit false
 
 open CategoryTheory

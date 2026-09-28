@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ScalarTrimming
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem CounterexamplePathSegment.exists_level_eight_suffix
     (P : RicciFlowCurvatureTheory.{u}) {epsilon C A D₀ D : ℝ}

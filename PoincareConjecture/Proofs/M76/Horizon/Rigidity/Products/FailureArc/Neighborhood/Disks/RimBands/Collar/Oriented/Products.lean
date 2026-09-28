@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.NormalizedPair
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.Geometry
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Topology.Orientation.ProjectivePlane

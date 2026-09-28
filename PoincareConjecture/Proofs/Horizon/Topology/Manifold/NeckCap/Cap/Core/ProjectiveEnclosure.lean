@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Cover.InvolutionQuotient
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -144,8 +133,6 @@ private theorem exists_projective_topological_coordinates (C : CapCertificate g)
       hct, hps, Homeomorph.toOpenPartialHomeomorph_source, preimage_univ, inter_univ]
   · simp only [e, OpenPartialHomeomorph.trans_target, OpenPartialHomeomorph.symm_target,
       hcs, hpt, Homeomorph.toOpenPartialHomeomorph_target, preimage_univ, inter_univ]
-
-
 
 theorem CapCertificate.exists_enclosing_region_projective (C : CapCertificate g)
     (hkind : C.model_kind = .puncturedProjective) {S : Set M}

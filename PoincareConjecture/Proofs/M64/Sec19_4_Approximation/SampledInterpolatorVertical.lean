@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorColumnSup
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorVerticalColumnAE
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformSampledPolygonCloseness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Bundle
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem m64_isOpen_short_pair_tube (g : RiemannianMetric 3 M) (r : ℝ) :
     IsOpen {pq : M × M | g.edist pq.1 pq.2 < ENNReal.ofReal r} := by
   let : LocallyCompactSpace M := ChartedSpace.locallyCompactSpace LoopAmbient M
@@ -37,10 +23,6 @@ theorem m64_isOpen_short_pair_tube (g : RiemannianMetric 3 M) (r : ℝ) :
     ⟨⟨g.inner, g.contMDiff.continuous, fun _ _ _ => rfl⟩⟩
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact isOpen_lt continuous_edist continuous_const
-
-
-
-
 
 theorem m64_sampled_interpolator_vertical_column_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

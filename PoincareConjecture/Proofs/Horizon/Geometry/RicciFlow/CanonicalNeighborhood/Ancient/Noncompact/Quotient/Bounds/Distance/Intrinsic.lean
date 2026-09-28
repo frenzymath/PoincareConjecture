@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -155,7 +146,6 @@ private theorem normalizedCover_slab_intrinsicEDist_le
   congr 1
   rw [div_eq_mul_inv, mul_comm]
 
-
 theorem intrinsicEDist_interior_slabCore_le
     (C : M27TwistedSphereLineFlowCertificate K) {t : ℝ} (ht : t ≤ 0)
     (q : UnitTwoSphere) {r : ℝ} {x y : M}
@@ -201,7 +191,6 @@ theorem intrinsicDiameter_interior_slabCore_le
   rintro _ ⟨⟨x, y⟩, rfl⟩
   exact C.intrinsicEDist_interior_slabCore_le ht q x.property y.property
 
-
 theorem interior_slabCore_subset_ball
     (C : M27TwistedSphereLineFlowCertificate K) {t : ℝ} (ht : t ≤ 0)
     (q : UnitTwoSphere) {r B : ℝ} (hr : 0 < r)
@@ -219,7 +208,6 @@ theorem interior_slabCore_subset_ball
         Real.sqrt ((K.flow.connection t).scalarCurvature (C.cover (q, 0))) := by positivity
     linarith
   exact h.trans_lt ((ENNReal.ofReal_lt_ofReal_iff hBpos).mpr hB)
-
 
 theorem closure_ball_subset_slabCore
     (C : M27TwistedSphereLineFlowCertificate K) {t r R : ℝ} (ht : t ≤ 0) (hR : 0 ≤ R)

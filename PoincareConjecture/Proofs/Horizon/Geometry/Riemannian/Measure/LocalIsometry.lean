@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,8 +63,6 @@ theorem volumeMeasure_image_eq_of_injOn_metric_pullback
     (by norm_num : (0 : ℝ) < 1) hinverse' hs hsU
   exact le_antisymm (by simpa only [heq, ENNReal.ofReal_one, one_pow, one_mul] using hupper)
     (by simpa only [heq, ENNReal.ofReal_one, one_pow, one_mul] using hlower)
-
-
 
 theorem volumeMeasure_ball_le_of_injOn_metric_pullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) {f : M → N}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RetainedReturnCover
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_closing_return_geometry :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

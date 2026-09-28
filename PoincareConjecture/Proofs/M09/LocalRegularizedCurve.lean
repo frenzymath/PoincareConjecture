@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CompactRegularizedEquation
 import PoincareConjecture.Proofs.M09.GeometricUniqueness
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

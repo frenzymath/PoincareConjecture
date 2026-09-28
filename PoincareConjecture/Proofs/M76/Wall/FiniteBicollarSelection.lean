@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.BicollarComponentSelection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace BrownCollar
 
 variable {X ι : Type*} [TopologicalSpace X] [Finite ι]
   {F C K : Set X}
-
-
-
 
 theorem exists_finite_bicollar_frontier_selection
     (H : (F × Ioo (-1 : ℝ) 1) ≃ₜ C) (hC : IsOpen C)

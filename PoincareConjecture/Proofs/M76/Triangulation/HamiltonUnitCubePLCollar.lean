@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +15,6 @@ local notation "I" => Icc (0 : ℝ) (1 / 8)
 local notation "S" => sphere (0 : V3) 1
 local notation "C" => (S ×ˢ I)
 local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
-
-
-
 
 noncomputable def unitCubeInwardCollarMap (p : V3 × ℝ) : V3 :=
   fun i => PLAnnularStrip.coordinate 2 (p.1 i + 1) p.2 - 1
@@ -185,9 +172,6 @@ private theorem collar_finitePL_on_complex (K : SimplicialComplex ℝ (V3 × ℝ
   convert ((hs.add h₁).sub h₂).sub hone using 1
   rfl
 
-
-
-
 theorem locallyPiecewiseAffineOn_unitCubeInwardCollarMap :
     LocallyPiecewiseAffineOn unitCubeInwardCollarMap univ := by
   intro x _
@@ -196,10 +180,6 @@ theorem locallyPiecewiseAffineOn_unitCubeInwardCollarMap :
       isOpen_univ (singleton_subset_iff.mpr (mem_univ x))
   obtain ⟨J, hJ, hJs, hmap⟩ := collar_finitePL_on_complex K hK
   exact ⟨J, hJ, hJs.symm ▸ hxK (mem_singleton x), hJs.subset.trans hKU, hmap⟩
-
-
-
-
 
 theorem exists_unitCube_inward_finitePL_collar :
     ∃ e : C ≃ₜ T, e.IsFinitePL ∧

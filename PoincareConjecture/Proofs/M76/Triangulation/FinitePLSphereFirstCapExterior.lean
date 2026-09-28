@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierConeExterior
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveHeightCutEnvelope
 import PoincareConjecture.Proofs.M76.Mathlib.SmallConvexHalfspaceNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,11 +12,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_first_height_cap_ball_with_exterior_zero
     {s : Set E} {T : Set F} {e : s ≃ₜ frontier T} (he : e.IsFinitePL)

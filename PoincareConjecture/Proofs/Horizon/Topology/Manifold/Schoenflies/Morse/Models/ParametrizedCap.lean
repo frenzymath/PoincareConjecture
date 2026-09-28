@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.RadialGerm
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,10 +16,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
-
-
 
 theorem exists_parametrized_cylindrical_cap_with_range
     {v : E3} (hv : ‖v‖ = 1)
@@ -117,8 +111,6 @@ theorem exists_parametrized_cylindrical_cap_with_range
     exact hkbound (D x)
   · change (k ∘ D) '' closedBall (0 : E2) 1 = _
     rw [image_comp, hDclosed, hkrange]
-
-
 
 theorem exists_parametrized_cylindrical_cap
     {v : E3} (hv : ‖v‖ = 1)

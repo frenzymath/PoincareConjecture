@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Homothety
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +25,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology 
   [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def RiemannianMetric.HasCompactRoundParallelFactor (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) : Prop :=
   ∃ (f : M → ℝ) (hf : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ f)
@@ -53,8 +40,6 @@ def RiemannianMetric.HasCompactRoundParallelFactor (g : RiemannianMetric 3 M)
     CompactSpace (zeroLevelSet f) ∧ ConstantPositiveSectionalCurvature h h.leviCivitaData
 
 namespace RicciFlow
-
-
 
 theorem exists_compact_round_parallel_factor_of_ancient_line
     (hP : ThreeDimensionalClassificationPredecessors.{u})
@@ -122,8 +107,6 @@ theorem exists_compact_round_parallel_factor_of_ancient_line
   obtain ⟨C⟩ := hP.two_dimensional.ancient_classification A
   exact ⟨C.compact, C.round_at_all_times 0 le_rfl⟩
 
-
-
 theorem exists_compact_round_parallel_factor_of_line_at_each_time
     (hP : ThreeDimensionalClassificationPredecessors.{u})
     (F : RicciFlow 3 M (Iio 1))
@@ -157,8 +140,6 @@ theorem exists_compact_round_parallel_factor_of_line_at_each_time
   change (F.metric (0 + t)).HasCompactRoundParallelFactor (F.connection (0 + t)) at h
   exact (congrArg (fun s => (F.metric s).HasCompactRoundParallelFactor (F.connection s))
     (zero_add t)).mp h
-
-
 
 theorem scalarCurvature_spatially_constant_of_line_at_each_time
     (hP : ThreeDimensionalClassificationPredecessors.{u})

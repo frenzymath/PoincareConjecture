@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {p : M} {b epsilon : ℝ}
-
 
 def terminalNeckFromNormalization
     (A : AncientKappaNormalization K p b)
@@ -61,7 +52,6 @@ def terminalNeckFromNormalization
   change R * (K.flow.metric b).inner _ _ _ = (A.target.flow.metric 0).inner _ _ _
   rw [A.metric_eq, zero_div, add_zero, A.scale_eq]
 
-
 def strongNeckFromNormalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
     (N : StrongEvolvingNeck A.target 0 epsilon) (hcenter : N.center = p) :
@@ -88,7 +78,6 @@ def strongNeckFromNormalization
       (A.target.flow.metric s).inner _ _ _
   rw [A.metric_eq, A.scale_eq]
   rfl
-
 
 theorem exists_strongNeck_of_normalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0)

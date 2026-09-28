@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.RelativeApproximation.BoundaryProperApproximation
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerCasesNamedInputs
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +20,6 @@ local notation "X2" => LatticeHandleAmbient (Fin 2) (Fin 1) L2
 local notation "R0" => latticeHandleDomain (Fin 0) (Fin 3) L0
 local notation "R1" => latticeHandleDomain (Fin 1) (Fin 2) L1
 local notation "R2" => latticeHandleDomain (Fin 2) (Fin 1) L2
-
-
 
 theorem hasHamiltonRelativeApproximationFamily :
     (∀ (charts : Set (OpenPartialHomeomorph X0 V3))

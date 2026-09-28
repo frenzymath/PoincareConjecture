@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.Construction.OrientedReducedPair
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.BoundaryLocalConnectedness
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -19,7 +17,6 @@ local notation "I" => Icc (0 : ℝ) 1
 local notation "Q" => sphere (0 : V2) 1
 
 open Classical in
-
 
 theorem exists_marked_product_of_original_source_annulus_pair_of_localOrientation
     {X ι : Type} [TopologicalSpace X] [T2Space X] (O : LocalOrientation X)

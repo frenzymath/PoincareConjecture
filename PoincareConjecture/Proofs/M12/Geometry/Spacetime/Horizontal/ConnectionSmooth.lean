@@ -2,16 +2,6 @@ import PoincareConjecture.Statements.M12HorizontalTheory
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Koszul
 import PoincareConjecture.Proofs.M12.Geometry.Manifold.ContDiff.LinearMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -101,8 +91,6 @@ private theorem horizontalInner_derivative_smoothAt
   simp
   rfl
 
-
-
 theorem rawLeafwiseCovariantDerivative_inner_smooth
     (hCoordinates : M12MetricPredecessors.{0} n)
     (D : LeafwiseLeviCivitaFamily F S) {T : SpacetimeIntervalSystem}
@@ -187,8 +175,6 @@ private theorem horizontalMetric_smoothAt_of_dual
   rw [ContinuousLinearEquiv.symm_apply_apply]
   rfl
 
-
-
 theorem rawLeafwiseCovariantDerivative_apply_smooth
     (hCoordinates : M12MetricPredecessors.{0} n)
     (D : LeafwiseLeviCivitaFamily F S) {T : SpacetimeIntervalSystem}
@@ -230,8 +216,6 @@ theorem rawLeafwiseCovariantDerivative_apply_smooth
   simpa only [ContinuousLinearMap.inCoordinates, ContinuousLinearMap.comp_apply,
     he, Bundle.Trivial.continuousLinearMapAt_trivialization,
     ContinuousLinearMap.id_apply] using h
-
-
 
 theorem rawLeafwiseCovariantDerivative_smooth
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -391,8 +375,6 @@ noncomputable def spacetimeHorizontalConnection_of_leafwise_smooth
     exact rawHorizontalCovariantDerivative_metric_defect D
       ((hV.contMDiffAt (hU.mem_nhds hp)).mdifferentiableAt (by simp))
       ((hW.contMDiffAt (hU.mem_nhds hp)).mdifferentiableAt (by simp)) Z
-
-
 
 noncomputable def spacetimeHorizontalConnection
     (hCoordinates : M12MetricPredecessors.{0} n)

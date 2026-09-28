@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem redecorateTo_standard_flow {K : MetricSurgeryConstants}
     {p : SurgeryParameterPrefix K} {F : SurgeryFlowData.{u}}
@@ -26,8 +12,6 @@ theorem redecorateTo_standard_flow {K : MetricSurgeryConstants}
     (hstandard : F.standard_initial = p.setup.standard_initial) :
     HEq (O.redecorateTo hstandard).standard_flow p.setup.standard_flow := by
   exact eqRec_heq _ _
-
-
 
 theorem exists_overlapCapCutoff {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {K : MetricSurgeryConstants}
@@ -80,8 +64,6 @@ theorem exists_overlapCapCutoff {g0 : StandardInitialMetric}
   exact persistence F (O.redecorateTo old.standard_initial_eq)
     (redecorateTo_standard_flow O old.standard_initial_eq)
     modelScales hadmissible hpinched hcanonical t hT ht hstart hdelta_t j
-
-
 
 theorem exists_seedCompatibleOverlapCapCutoff
     (S : RepairedControlledSchedulesData.{u})

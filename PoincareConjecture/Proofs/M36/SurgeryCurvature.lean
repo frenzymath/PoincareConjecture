@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.SurgeryTransitionCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E₃ M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem surgeryOutputHeight_ge_one_of_mem_innerCapImage (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g)
@@ -45,11 +34,6 @@ theorem surgeryOutputHeight_ge_one_of_mem_innerCapImage (g₀ : StandardInitialM
     radialArclength g₀ ‖surgeryBallInclusion g₀ _ (surgeryBallChart g₀ _ x)‖
   rw [surgeryBallChart_right_inverse g₀ _ houtput]
   linarith only [hradius]
-
-
-
-
-
 
 theorem exists_surgeryMetric_curvature (g₀ : StandardInitialMetric) :
     ∃ (r : ℝ) (hr : 0 < r), r ≤ g₀.cylindrical_end.radius ∧

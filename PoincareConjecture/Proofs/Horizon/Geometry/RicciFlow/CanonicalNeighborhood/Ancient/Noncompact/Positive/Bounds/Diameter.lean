@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Fields
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -56,8 +46,6 @@ theorem uniform_region_intrinsic_diameter_bound_of_services
   apply ENNReal.ofReal_le_ofReal
   simpa only [mul_assoc, soulScalar] using
     mul_le_mul_of_nonneg_left hm (show 0 ≤ 9 * R by positivity)
-
-
 
 theorem uniform_region_intrinsic_diameter_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {R : ℝ} (hR : 0 < R) :

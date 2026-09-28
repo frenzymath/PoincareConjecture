@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,9 +25,6 @@ private theorem inner_mfderiv_of_slice_identity (F : GeneralizedRicciFlowData.{u
   change (F.metric s).inner (f x) v w = (F.metric s).inner x v w
   exact congrArg (fun y => (F.metric s).inner y v w) heq.eq_of_nhds
 
-
-
-
 theorem Cylinder.pullbackInner_zero_of_identity
     {F : GeneralizedRicciFlowData.{u}} {origin scale : ℝ} {I : Set ℝ}
     {U : Set (F.slice origin).carrier} (hU : IsOpen U)
@@ -52,9 +39,6 @@ theorem Cylinder.pullbackInner_zero_of_identity
   apply inner_mfderiv_of_slice_identity F (by simp) (e.forward 0 h₀) x ?_ v w
   filter_upwards [hU.mem_nhds hx] with y hy
   exact hzero y hy
-
-
-
 
 theorem scaled_terminal_ball_eq_baseBall (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (R : ℝ) :

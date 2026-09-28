@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.ZeroSet
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,8 +25,6 @@ private theorem zero_crossing_segment (K : SimplicialComplex ℝ E)
   rw [(A (insert q.val e.val)).straddlingPoint_eq_zeroCrossing he hu hv heq,
     Finset.coe_insert, heq]
   exact ((A t).convexHull_zero_apex_pair_inter_zero hqt hu hv).symm
-
-
 
 theorem triangleSliceGraph_segment (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

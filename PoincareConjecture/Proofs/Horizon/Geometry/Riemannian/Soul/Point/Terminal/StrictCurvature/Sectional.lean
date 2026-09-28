@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

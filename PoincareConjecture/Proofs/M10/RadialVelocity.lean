@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.ActionEquality
 import PoincareConjecture.Proofs.M10.ExponentialActionDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -79,7 +71,6 @@ theorem exponential_velocity_eq_radial
   linarith only [hpos, hzero]
 
 variable [ConnectedSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem exponential_velocity_eq_radial_of_volume_eq
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

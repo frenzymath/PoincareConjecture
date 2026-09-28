@@ -2,23 +2,12 @@ import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Proofs.M10.ScalarBound
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.PartialStandardCapFlow
-
-
 
 theorem exists_unit_backward_duration_threshold {g₀ : StandardInitialMetric}
     (F : PartialStandardCapFlow g₀) :
@@ -48,7 +37,6 @@ theorem exists_unit_backward_duration_threshold {g₀ : StandardInitialMetric}
     have hprod := (div_le_iff₀ F.lifetime_pos).mp hscale
     nlinarith [mul_nonneg (sub_nonneg.mpr htime.le) hpos]
 
-
 theorem tendsto_time_of_scalar_diverges {g₀ : StandardInitialMetric}
     (F : PartialStandardCapFlow g₀) (t : ℕ → ℝ) (x : ℕ → StandardCapSpace)
     (ht : ∀ k, t k ∈ Ico 0 F.lifetime)
@@ -70,7 +58,6 @@ theorem tendsto_time_of_scalar_diverges {g₀ : StandardInitialMetric}
     · exact Eventually.of_forall (fun k => lt_of_lt_of_le (lt_of_not_ge hT0) (ht k).1)
   · intro T hT
     exact Eventually.of_forall (fun k => (ht k).2.trans hT)
-
 
 theorem tendsto_scalar_mul_time_of_diverges {g₀ : StandardInitialMetric}
     (F : PartialStandardCapFlow g₀) (t : ℕ → ℝ) (x : ℕ → StandardCapSpace)

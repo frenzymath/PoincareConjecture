@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.Coordinates
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -90,8 +83,6 @@ private theorem exists_hemisphere_alignment
       (Hemisphere.extendLinear_plane T.toContinuousLinearEquiv)]
     change (Hemisphere.toSphere hw (Jw (Jv.symm (Rp.symm (Rp (Jv x))))) : E2) = _
     rw [Rp.symm_apply_apply, Jv.symm_apply_apply]
-
-
 
 theorem exists_marked_disk_matching
     (A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

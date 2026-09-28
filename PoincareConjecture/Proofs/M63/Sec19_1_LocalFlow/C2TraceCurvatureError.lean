@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalization
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureVectorEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle Manifold
@@ -24,10 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem curvatureVector_diffusionError_norm_le [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

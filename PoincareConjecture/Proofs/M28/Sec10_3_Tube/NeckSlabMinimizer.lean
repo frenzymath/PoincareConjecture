@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizer
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Regions
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,17 +18,13 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
 def neckTailRegion (N : EpsilonNeck g) : TopologicalSpace.Opens M :=
   ⟨N.region (-(2 : ℝ) * N.epsilon⁻¹ / 3) ((7 : ℝ) * N.epsilon⁻¹ / 8),
     N.region_open _ _⟩
 
-
 def neckTailCompactSet (N : EpsilonNeck g) : Set M :=
   N.coordinate_map ''
     (univ ×ˢ Icc (-(5 : ℝ) * N.epsilon⁻¹ / 8) ((3 : ℝ) * N.epsilon⁻¹ / 4))
-
-
 
 theorem neckTailCompactSet_compact_subset (N : EpsilonNeck g) :
     IsCompact (neckTailCompactSet N) ∧
@@ -55,8 +41,6 @@ theorem neckTailCompactSet_compact_subset (N : EpsilonNeck g) :
   exact ⟨N.coordinate_map_mem_of_axial z hzA,
     by linarith [hz.2.1], by linarith [hz.2.2]⟩
 
-
-
 theorem mem_neckTailCompactSet_iff (N : EpsilonNeck g) {x : M}
     (hx : x ∈ N.carrier) :
     x ∈ neckTailCompactSet N ↔
@@ -72,8 +56,6 @@ theorem mem_neckTailCompactSet_iff (N : EpsilonNeck g) {x : M}
   · intro hheight
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, hheight⟩,
       N.coordinate_map_coordinate_inverse hx⟩
-
-
 
 theorem neck_tail_incoming_sphere (N : EpsilonNeck g) :
     IsCompact (N.coordinate_map ''
@@ -174,10 +156,6 @@ private theorem exists_tail_level_return (N : EpsilonNeck g)
     · change N.epsilon⁻¹ / 24 ≤ |height t - height c|
       have hhcs : height c = (5 : ℝ) * N.epsilon⁻¹ / 8 := hcs
       linarith [le_abs_self (height t - height c)]
-
-
-
-
 
 theorem exists_neck_tail_minimizer [T2Space M] [T3Space M]
     (N : EpsilonNeck g) (hε : N.epsilon ≤ neckLevelShorteningEpsilon)

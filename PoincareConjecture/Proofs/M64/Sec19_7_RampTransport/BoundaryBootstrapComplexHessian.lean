@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexGradi
 import PoincareConjecture.Proofs.M60.Mathlib.SecondDerivativeChain
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -33,10 +22,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {n : ℕ}
 local notation "Target" => EuclideanSpace ℝ (Fin n)
 
-
-
-
-
 theorem complexGradient_fderiv_apply {H : ℂ → Target} {z : ℂ}
     (hH : ContDiffAt ℝ ∞ H z) (v : ℂ) :
     fderiv ℝ (complexGradient H) z v =
@@ -51,10 +36,6 @@ theorem complexGradient_fderiv_apply {H : ℂ → Target} {z : ℂ}
   change HasFDerivAt (complexGradient H) _ z at hder
   simp only [hder.fderiv, ContinuousLinearMap.comp_apply, sub_apply, smul_apply,
     add_apply, ContinuousLinearMap.flip_apply, zero_apply, map_zero, zero_add]
-
-
-
-
 
 theorem complexGradient_hessian_memLp {O : Set ℂ} (hO : IsOpen O)
     {H : ℂ → Target} (hH : ContDiffOn ℝ ∞ H O) {v : ℂ}
@@ -83,26 +64,14 @@ theorem complexGradient_hessian_memLp {O : Set ℂ} (hO : IsOpen O)
     rw [heq z hz j]
     simp
 
-
-
-
-
 def boundaryComplexCoordinates : Plane ≃ₗᵢ[ℝ] ℂ :=
   m64BoundaryCoordinateSwap.trans Complex.orthonormalBasisOneI.repr.symm
-
-
-
-
 
 theorem boundaryComplexCoordinates_basis (i : Fin 2) :
     boundaryComplexCoordinates (EuclideanSpace.single i 1) = if i = 0 then I else 1 := by
   simp only [boundaryComplexCoordinates, LinearIsometryEquiv.trans_apply,
     m64BoundaryCoordinateSwap_basis, Complex.orthonormalBasisOneI_repr_symm_apply]
   fin_cases i <;> simp
-
-
-
-
 
 theorem boundaryComplexCoordinates_hessian {H : ℂ → Target} {p : Plane}
     (hH : ContDiffAt ℝ ∞ H (boundaryComplexCoordinates p)) (a b : Fin 2) :
@@ -122,11 +91,6 @@ theorem boundaryComplexCoordinates_hessian {H : ℂ → Target} {p : Plane}
   simp only [fderiv_const_apply, zero_apply, map_zero, add_zero]
   exact congrArg₂ (fun v w => fderiv ℝ (fderiv ℝ H) (boundaryComplexCoordinates p) v w)
     (boundaryComplexCoordinates_basis a) (boundaryComplexCoordinates_basis b)
-
-
-
-
-
 
 theorem boundaryComplexCoordinates_hessian_memLp {O : Set ℂ} (hO : IsOpen O)
     {H : ℂ → Target} (hH : ContDiffOn ℝ ∞ H O)
@@ -151,11 +115,6 @@ theorem boundaryComplexCoordinates_hessian_memLp {O : Set ℂ} (hO : IsOpen O)
   filter_upwards [ae_restrict_mem (hO.preimage boundaryComplexCoordinates.continuous).measurableSet]
     with p hp
   exact (boundaryComplexCoordinates_hessian (hH.contDiffAt (hO.mem_nhds hp)) a b).symm
-
-
-
-
-
 
 theorem boundaryComplexCoordinates_memWkp_two {O : Set ℂ} (hO : IsOpen O)
     {H : ℂ → Target} (hH : ContDiffOn ℝ ∞ H O)

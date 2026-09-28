@@ -14,8 +14,6 @@ variable {X E : Type*} [MeasurableSpace X] {mu : Measure X}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
-
-
 def suConvexIntegral (F : X → E → ℝ) (u : Lp E 2 mu) : ℝ≥0∞ :=
   ∫⁻ x, ENNReal.ofReal (F x (u x)) ∂mu
 
@@ -25,7 +23,6 @@ theorem suConvexIntegral_aemeasurable (F : X → E → ℝ)
     AEMeasurable (fun x => ENNReal.ofReal (F x (u x))) mu := by
   exact ENNReal.continuous_ofReal.measurable.comp_aemeasurable
     (hF.comp_aemeasurable (aemeasurable_id.prodMk (Lp.aestronglyMeasurable u).aemeasurable))
-
 
 theorem suConvexIntegral_sublevel_convex (F : X → E → ℝ)
     (hF : Measurable (Function.uncurry F))
@@ -61,7 +58,6 @@ theorem suConvexIntegral_sublevel_convex (F : X → E → ℝ)
 
 omit [NormedSpace ℝ E] in
 
-
 theorem suConvexIntegral_sublevel_closed (F : X → E → ℝ)
     (hF : Measurable (Function.uncurry F))
     (hc : ∀ x, Continuous (F x)) (C : ℝ≥0∞) :
@@ -86,7 +82,6 @@ theorem suConvexIntegral_sublevel_closed (F : X → E → ℝ)
       obtain ⟨n, hn⟩ := hr.exists
       exact hn.trans (hu (k n))
 
-
 theorem suConvexIntegral_le_of_weak (F : X → E → ℝ)
     (hF : Measurable (Function.uncurry F))
     (hcont : ∀ x, Continuous (F x)) (hc : ∀ x, ConvexOn ℝ univ (F x))
@@ -101,8 +96,6 @@ theorem suConvexIntegral_le_of_weak (F : X → E → ℝ)
     (suConvexIntegral_sublevel_closed F hF hcont C) hv
   have hle : ∀ᶠ n in atTop, L (u n) ≤ r := hC.mono fun n hn => (hr (u n) hn).le
   exact hrv.not_ge (le_of_tendsto (hw L) hle)
-
-
 
 theorem suConvexIntegral_le_liminf (F : X → E → ℝ)
     (hF : Measurable (Function.uncurry F))

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Lift.Cutoff
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 theorem exists_parametric_height_cutoff_lift_product
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -31,8 +23,6 @@ theorem exists_parametric_height_cutoff_lift_product
   exact exists_height_cutoff_lift_product (fun z => Φ (χ z) z)
     (hΦ.comp ((hχ.comp contDiff_fst).prodMk contDiff_id))
     (hΦinv.comp ((hχ.comp contDiff_fst).prodMk contDiff_id)) id contDiff_id
-
-
 
 theorem exists_parametric_height_cutoff_lift
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -60,7 +50,6 @@ theorem exists_parametric_height_cutoff_lift
   · intro y hy
     rw [hH, hy, h0, hcoord]
 
-
 theorem image_iUnion_slice_parametric
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (χ : Real → Real) {I : Set Real} (L : Real → Set E2)
@@ -70,8 +59,6 @@ theorem image_iUnion_slice_parametric
     H '' (⋃ c ∈ I, slice (L c) c) =
       ⋃ c ∈ I, slice (Φ (χ c) c '' L c) c := by
   exact image_iUnion_slice (fun c => Φ (χ c) c) id L H hH
-
-
 
 theorem image_iUnion_slice_parametric_of_eq_one
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -88,7 +75,6 @@ theorem image_iUnion_slice_parametric_of_eq_one
   apply iUnion_congr
   intro hc
   rw [hχ c hc]
-
 
 theorem image_iUnion_slice_parametric_of_matching
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

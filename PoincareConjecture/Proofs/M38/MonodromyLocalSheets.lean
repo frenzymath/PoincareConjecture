@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M38
 
 variable (phi : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
-
-
 
 theorem monodromyLift_eventually_deck
     {g : monodromyPunctureOpen → monodromyPunctureOpen}
@@ -58,8 +48,6 @@ theorem monodromyLift_eventually_deck
   have hmn : m = n := by omega
   simpa only [hmn] using hm.symm
 
-
-
 theorem monodromyLift_contMDiffOn
     {g : monodromyPunctureOpen → monodromyPunctureOpen}
     {W : Set monodromyPunctureOpen} (hW : IsOpen W) (hg : ContinuousOn g W)
@@ -70,8 +58,6 @@ theorem monodromyLift_contMDiffOn
   intro x hx
   obtain ⟨n, hn⟩ := monodromyLift_eventually_deck phi hW hg hfiber hx
   exact ((monodromyDeck_smooth phi n x).congr_of_eventuallyEq hn).contMDiffWithinAt
-
-
 
 theorem monodromy_sheet_transition_smooth (a : monodromyPunctureOpen) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞

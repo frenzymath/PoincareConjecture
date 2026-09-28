@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexFaceInclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -21,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 local notation "KA" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 local notation "AA" => A.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
-
-
 theorem vertexCoboundary_subcomplex_restrict (hAK : A ≤ K)
     (a : K.vertices → ZMod 2) :
     vertexCoboundary AA (a ∘ K.subcomplexVertexEmbedding A hAK) =
@@ -34,8 +23,6 @@ theorem vertexCoboundary_subcomplex_restrict (hAK : A ≤ K)
   rw [vertexCoboundary_apply, vertexCoboundary_apply,
     K.subcomplexFaceEmbedding_map, Finset.sum_map]
   rfl
-
-
 
 theorem boundary1_subcomplex_include (hAK : A ≤ K)
     (c : Module.Dual (ZMod 2) (Edge AA → ZMod 2)) :
@@ -53,7 +40,6 @@ variable [Fintype K.vertices] [Fintype A.vertices]
 
 open Classical in
 
-
 theorem triangleEdges_subcomplex (hAK : A ≤ K) (t : Triangle AA) :
     triangleEdges KA (K.subcomplexFaceEmbedding A hAK 3 t) =
       (triangleEdges AA t).map (K.subcomplexFaceEmbedding A hAK 2) := by
@@ -66,8 +52,6 @@ theorem triangleEdges_subcomplex (hAK : A ≤ K) (t : Triangle AA) :
   · rintro ⟨u, hut, rfl⟩
     exact (K.subcomplexFaceEmbedding_subset_iff A hAK u t).mpr hut
 
-
-
 theorem edgeCoboundary_subcomplex_restrict (hAK : A ≤ K)
     (z : Edge KA → ZMod 2) :
     edgeCoboundary AA (z ∘ K.subcomplexFaceEmbedding A hAK 2) =
@@ -79,8 +63,6 @@ theorem edgeCoboundary_subcomplex_restrict (hAK : A ≤ K)
   rw [edgeCoboundary_apply, edgeCoboundary_apply,
     K.triangleEdges_subcomplex A hAK, Finset.sum_map]
   rfl
-
-
 
 theorem boundary2_subcomplex_include (hAK : A ≤ K)
     (c : Module.Dual (ZMod 2) (Triangle AA → ZMod 2)) :

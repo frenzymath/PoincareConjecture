@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Product.CoverFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -85,7 +75,6 @@ theorem normalizedCover_metric (C : M27TwistedSphereLineFlowCertificate K)
   change (1 - u) * (2 * _) + v.2 * w.2 = 2 * (1 - u) * _ + v.2 * w.2
   rw [← mul_assoc, mul_comm (1 - u) 2]
   rfl
-
 
 noncomputable def strongNeck
     (C : M27TwistedSphereLineFlowCertificate K)
@@ -175,7 +164,6 @@ noncomputable def strongNeck
   · intro u hu z _
     dsimp only
     rw [hmodel u hu.2, roundCylinderJetErrorSquared_model]
-
 
 theorem exists_strongEvolvingNeck_of_positive_height
     (C : M27TwistedSphereLineFlowCertificate K)

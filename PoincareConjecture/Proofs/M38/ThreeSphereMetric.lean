@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.InducedForm
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M38
 
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
-
-
 
 noncomputable def threeSphereMetric : RiemannianMetric 3 UnitThreeSphere := by
   let g₄ : RiemannianMetric 4 (EuclideanSpace ℝ (Fin 4)) :=
@@ -66,8 +55,6 @@ noncomputable def threeSphereMetric : RiemannianMetric 3 UnitThreeSphere := by
     nlinarith [norm_nonneg (A x v)]
   · intro x
     exact Poincare.Gluing.inducedForm_contMDiffAt g₄ (contMDiff_coe_sphere x)
-
-
 
 theorem threeSphereMetric_inner (x : UnitThreeSphere) (v w : TangentSpace (𝓡 3) x) :
     threeSphereMetric.inner x v w = inner ℝ

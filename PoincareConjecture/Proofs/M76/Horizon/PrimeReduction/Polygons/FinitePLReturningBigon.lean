@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningPathPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Prod.snd : V → ℝ) ⁻¹' ({0} : Set ℝ)
-
-
 
 theorem exists_finite_pl_returning_bigon {W : Set V} {a b : V}
     (hW : IsFinitePLBallPair ℝ W {a, b}) (hab : a ≠ b)

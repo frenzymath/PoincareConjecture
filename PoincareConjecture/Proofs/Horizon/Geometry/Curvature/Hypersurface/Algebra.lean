@@ -1,15 +1,5 @@
 import Mathlib
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -17,7 +7,6 @@ open scoped BigOperators
 namespace Poincare.Geometry.Curvature.Hypersurface
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
 
 def negativePart (x : ℝ) : ℝ := max 0 (-x)
 
@@ -56,9 +45,6 @@ lemma principal_curvature_lower_bound_of_card
         rw [Finset.sum_const]
         simp [Finset.card_erase_of_mem (Finset.mem_univ i)]
   · exact hm
-
-
-
 
 lemma principal_curvature_product_lower_bound
     {a b H β : ℝ} {m : ℕ}
@@ -101,8 +87,6 @@ lemma principal_curvature_pair_lower_bound_of_card
   · exact principal_curvature_lower_bound_of_card κ j H β htrace hupper hβ
   · exact hupper j
   · exact hβ
-
-
 
 lemma diagonal_extrinsic_determinant_eq_half_sum
     {ι : Type*} [Fintype ι] [DecidableEq ι]
@@ -195,9 +179,6 @@ lemma diagonal_extrinsic_determinant_lower_bound_of_card
   simp only [← Finset.mul_sum] at hscaled
   rw [hminor] at hscaled
   nlinarith
-
-
-
 
 theorem sectional_lower_bound_of_gauss
     {K β H : ℝ} {m : ℕ} {Plane : Type*}

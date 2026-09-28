@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleRegion
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -25,33 +15,25 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
-
-
 def signedTubeCorner (i : Fin 2) (sign : Bool) : P2 :=
   if i = 0 then (0, if sign then 1 else -1)
   else (if sign then 1 else -1, 0)
 
-
 def signedTubeRadius (i : Fin 2) (sign : Bool) : Set P2 :=
   segment ℝ (0, 0) (signedTubeCorner i sign)
 
-
 def signedTubeOuterArc (eps delta : Bool) : Set P2 :=
   segment ℝ (signedTubeCorner 1 eps) (signedTubeCorner 0 delta)
-
 
 def signedTubeQuarter (eps delta : Bool) : Set P2 :=
   convexHull ℝ (range ![(0, 0), signedTubeCorner 1 eps,
     signedTubeCorner 0 delta])
 
-
 def signedTubeDiamond : Set P2 :=
   ⋃ eps : Bool, ⋃ delta : Bool, signedTubeQuarter eps delta
 
-
 def signedTubeRadialRim (eps delta : Bool) : Set P2 :=
   signedTubeRadius 0 delta ∪ signedTubeRadius 1 eps
-
 
 def signedTubeSheet (i : Fin 2) : Set P2 :=
   signedTubeRadius i false ∪ signedTubeRadius i true
@@ -181,7 +163,6 @@ theorem signedTube_center_mem :
     (0, 0) ∈ signedTubeQuarter false false := by
   apply subset_convexHull ℝ
   simp [signedTubeQuarter, signedTubeCorner]
-
 
 private def jointSign (b : Bool) : ℝ := if b then 1 else -1
 
@@ -413,7 +394,6 @@ private theorem signedTube_quarter_extension
   · intro x
     exact (congrArg Subtype.val (hfR ⟨x, Or.inr x.property⟩)).trans (hr1 x)
 
-
 theorem signedTubeRadius_subset_diamond (i : Fin 2) (sign : Bool) :
     signedTubeRadius i sign ⊆ signedTubeDiamond := by
   intro x hx
@@ -424,10 +404,6 @@ theorem signedTubeRadius_subset_diamond (i : Fin 2) (sign : Bool) :
       (signedTube_quarter_ball sign false).1 (Or.inr (Or.inr hx))⟩⟩
 
 open Classical in
-
-
-
-
 
 theorem exists_original_signed_tube_joint_boundary_maps
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -733,10 +709,6 @@ theorem exists_original_signed_tube_joint_boundary_maps
     · exact (hKeep sign false ⟨x, hSrc1 sign false x.property⟩).trans (hkeep1 sign false x)
 
 open Classical in
-
-
-
-
 
 theorem exists_original_signed_tube_joint_maps
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamReplacement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "v" => m64AnnulusSeamTranslation
 
-
-
 theorem m64AnnulusSeamTranslation_norm : ‖v‖ = curvePeriod := by
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
   have heq : v = curvePeriod • EuclideanSpace.single (0 : Fin 2) 1 := by
@@ -33,8 +20,6 @@ theorem m64AnnulusSeamTranslation_norm : ‖v‖ = curvePeriod := by
     fin_cases i <;> simp [m64AnnulusSeamTranslation, annulusPoint]
   rw [heq, norm_smul]
   simp only [PiLp.norm_single, norm_one, mul_one, Real.norm_eq_abs, abs_of_pos hP]
-
-
 
 theorem m64AnnulusSeamDisk_disjoint (a : LoopPlane) {r : ℝ} (hr : 2 * r < curvePeriod) :
     Disjoint (Metric.closedBall a r)
@@ -58,8 +43,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem M64ObservedWeakAnnulus.exists_seam_replacement_of_outer_agreement
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

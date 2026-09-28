@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Spire
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,9 +7,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem exists_subseq_prescribed_center_scalar_integral_tendsto_atTop_of_bounded_radii
     {n : ℕ} {M : ℕ → Type*}

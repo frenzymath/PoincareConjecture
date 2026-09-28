@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckError
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -74,8 +65,6 @@ private theorem source_neck_image_coefficient_difference
     rw [hA _ hx]
     rfl
   exact hdiff _ _
-
-
 
 theorem exists_actualCap_fixed_neck_coefficient_error_bound
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

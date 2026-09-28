@@ -1,11 +1,5 @@
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -13,9 +7,6 @@ universe u
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ComparisonTheory_of_fields
     (hintrinsic : M64IntrinsicAnnulusComparison)

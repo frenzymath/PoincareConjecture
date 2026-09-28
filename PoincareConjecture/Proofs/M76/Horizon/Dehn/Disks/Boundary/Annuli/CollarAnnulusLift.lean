@@ -12,7 +12,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
 
-
 def annulusDepthImage {A : Set E} (a : A2 ≃ₜ A) (u : ℝ) : Set E :=
   (fun p : A2 ↦ (a p : E)) '' {p | depth 8 (p : P2) = u}
 
@@ -30,8 +29,6 @@ theorem mem_annulusDepthImage_iff {A : Set E} (a : A2 ≃ₜ A) (u : ℝ) (p : A
     exact a.injective (Subtype.ext heq) ▸ hq
   · intro hp
     exact ⟨p, hp, rfl⟩
-
-
 
 theorem exists_boundary_annulus_lift {L : SimplicialComplex ℝ E} {R A : Set F}
     (HB : L.space ≃ₜ frontier R) (hHB : HB.IsFinitePL)

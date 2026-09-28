@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsDiffeomorphCharts
 import PoincareConjecture.Proofs.M47.TerminalGermsPrecompactFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_lifted_precompact_flow
     {n : ℕ} {ι : Type*} {P : ι → Type*} {Q : Type u}

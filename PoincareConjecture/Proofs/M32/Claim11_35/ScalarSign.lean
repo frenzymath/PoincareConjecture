@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -17,9 +7,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem scalar_evolution_ge_half_sq_of_laplacian_bound
     {M : Type u} [TopologicalSpace M]

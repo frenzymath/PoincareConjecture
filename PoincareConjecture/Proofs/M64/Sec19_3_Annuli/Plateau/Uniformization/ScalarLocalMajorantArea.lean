@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarRegularizedArea
 import PoincareConjecture.Proofs.M60.Mathlib.UniformizationPositiveForms
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +18,6 @@ local notation "Form" => Plane →L[ℝ] Plane →L[ℝ] ℝ
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 theorem scalarC1_AreaGram_continuousOn
     (g : RiemannianMetric n M) {f : Plane → M} {U : Set Plane}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f U) :
@@ -43,10 +29,6 @@ theorem scalarC1_AreaGram_continuousOn
   have hA := scalarC1_pullback_continuousOn g f hU hf
   exact (hA.clm_apply continuousOn_const).clm_apply continuousOn_const
 
-
-
-
-
 theorem scalarC1_EnergyDensity_continuousOn
     (g : RiemannianMetric n M) {f : Plane → M} {U : Set Plane}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f U) :
@@ -57,10 +39,6 @@ theorem scalarC1_EnergyDensity_continuousOn
   unfold m60EnergyDensity
   simp only [Matrix.trace_fin_two]
   exact continuousOn_const.mul ((hentry 0 0).add (hentry 1 1))
-
-
-
-
 
 theorem scalarLocalC1_majorant_area_tendsto
     (g : RiemannianMetric n M) (f : Plane → M)
@@ -129,10 +107,6 @@ theorem scalarLocalC1_majorant_area_tendsto
     exact hdom k p hp
   · filter_upwards [ae_restrict_mem hK.measurableSet] with p hp
     exact hpoint p hp
-
-
-
-
 
 theorem scalarLocalC1_exists_metric_majorant_area_lt
     (g : RiemannianMetric n M) (f : Plane → M)

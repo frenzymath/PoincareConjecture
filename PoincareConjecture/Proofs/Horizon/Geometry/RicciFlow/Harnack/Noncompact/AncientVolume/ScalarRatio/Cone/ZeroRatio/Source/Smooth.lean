@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Positive.Manifold
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Gluing.Smooth
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +32,6 @@ private theorem realization_quotientChart_symm_dist (i : ι)
   have hyU : y ∈ U i := quotientChart_target U hU O i ▸ hy
   rw [quotientChart_symm_apply U hU O i hxU, quotientChart_symm_apply U hU O i hyU]
   exact hdist i ⟨x, hxU⟩ ⟨y, hyU⟩
-
-
 
 theorem quotient_isManifold_of_isometric_realization :
     letI := quotientChartedSpace U hU O
@@ -81,10 +67,6 @@ variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p) {n : ℕ}
   (hne : Nonempty (AsymptoticConePositive p hc))
   (hcover : ∀ z : AsymptoticConeUnitSlice p hc,
     ∃ (d : UnitSliceRadialChartData hc n) (x : d.Level), (d.levelHomeomorph x).1 = z)
-
-
-
-
 
 theorem isLocalDiffeomorph_positiveCone_realization
     {ι : Type*} (U : ι → Set (EuclideanSpace ℝ (Fin (n + 1))))

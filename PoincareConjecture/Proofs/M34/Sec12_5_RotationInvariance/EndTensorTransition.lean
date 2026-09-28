@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndChartTransition
 import PoincareConjecture.Proofs.M34.Standard.LocalIsometryDifferences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
-
-
 
 theorem endReferenceTransition_mfderiv_isInvertible (p : endReferenceRegion e)
     (r : ℝ) (hr : -3 < r) :
@@ -36,8 +24,6 @@ theorem endReferenceTransition_mfderiv_isInvertible (p : endReferenceRegion e)
   intro x hx
   rw [endReferenceTransition_mfderiv e p r hr x hx]
   exact endReferenceTranslation_mfderiv_isInvertible e hr x.property
-
-
 
 theorem endReferenceTransition_connection_difference {J J' : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (F' : RicciFlow 3 StandardCapSpace J')
@@ -80,8 +66,6 @@ theorem endReferenceTransition_connection_difference {J J' : Set ℝ}
     hf hi (hm F) (hm F') u v
   erw [endReferenceTransition_mfderiv e p r hr x hx] at hh
   exact hh
-
-
 
 theorem endReferenceTransition_curvature {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (p : endReferenceRegion e) (r : ℝ) (hr : -3 < r) (s : ℝ) (hs : -3 < s)

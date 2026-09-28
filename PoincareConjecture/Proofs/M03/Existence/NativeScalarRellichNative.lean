@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.NativeScalarLocalizationOperators
 import PoincareConjecture.Proofs.M03.Existence.NativeChartGradientEnergyNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -37,7 +29,6 @@ variable (g : RiemannianMetric n M) (F : iota → SmoothField (n := n) (M := M))
   {d : FiniteChartData (n := n) (M := M)} (L : FiniteChartLocalizationData d)
 
 include g hF L
-
 
 theorem totallyBounded_smooth_scalar {S : Set (Lp ℝ 2 d.measure)} {R : ℝ} (hR : 0 ≤ R)
     (hS : ∀ u ∈ S, ∃ f : M → ℝ,

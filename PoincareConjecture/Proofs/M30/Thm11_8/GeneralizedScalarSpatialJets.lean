@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M30.Mathlib.VaryingSpatialJets
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 import PoincareConjecture.Proofs.M11.IntervalTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
-
 
 theorem tendstoUniformlyOn_generalized_scalar_spatial_jets
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

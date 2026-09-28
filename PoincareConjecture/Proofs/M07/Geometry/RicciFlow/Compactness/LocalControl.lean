@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Subsequence
 import PoincareConjecture.Proofs.M07.Topology.Order.TimeInterval
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
 
 def SmoothSpacetimeEmbedding.refl
     {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
@@ -52,8 +36,6 @@ def SmoothSpacetimeEmbedding.refl
 
 namespace PointedRicciFlowCompactnessHypotheses
 
-
-
 theorem exists_identity_cylinder_control
     {n : ℕ} {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -67,8 +49,6 @@ theorem exists_identity_cylinder_control
   refine ⟨K, hK, hbound.mono ?_⟩
   intro k hk I hI
   exact ⟨hK, fun t ht x hx => hk t (hI ht) x hx⟩
-
-
 
 theorem exists_uniform_local_control
     {n : ℕ} {T' T : ℝ}
@@ -97,9 +77,6 @@ theorem exists_uniform_local_control
       (fun j => hvolume.and (hlocal j))
   exact ⟨r₀, κ, hr₀, hκ, K, hK, φ, hφ, fun k =>
     ⟨(hstage k 0 (Nat.zero_le k)).1, fun j hj => (hstage k j hj).2⟩⟩
-
-
-
 
 theorem exists_controlled_exhaustion_cylinders
     {n : ℕ} {T' T : ℝ}

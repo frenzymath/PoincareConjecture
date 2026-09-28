@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem barycentricDualBlock_singleton_eq_closedStar
     {p : E} (hp : p ∈ K.vertices) :
@@ -45,8 +33,6 @@ theorem barycentricDualBlock_singleton_eq_closedStar
     exact ⟨t.val, t.property, Finset.singleton_subset_iff.mpr (hpa t ht), htx⟩
 
 omit [DecidableEq E] in
-
-
 
 theorem barycentricDualBlock_space_inter_subcomplex
     (L : SimplicialComplex ℝ E) [Fintype L.faces] (hLK : L ≤ K) (s : Finset E) :

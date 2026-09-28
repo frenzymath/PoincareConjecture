@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.Gluing
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.BackwardPath
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -181,6 +174,5 @@ theorem exists_smooth_finite_chart_recovery {J : Set ℝ} (F : RicciFlow n M J)
   rcases mem_fin_partition t ht hs with rfl | ⟨i, hi⟩
   · simpa only [(hα k).2.1, dist_self] using hε
   · exact hk i s hi
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variational

@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusSourceCoordinates
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.PeriodicStripEquation
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -14,10 +9,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem annulusBoundarySource_mapsTo_closedStrip (r x : ℝ) (hr : r ≠ 0)
     {R : ℝ} (hR : R < 1) (upper : Bool) :
@@ -34,10 +25,6 @@ theorem annulusBoundarySource_mapsTo_closedStrip (r x : ℝ) (hr : r ≠ 0)
   · exact ⟨hy, him.trans hR.le⟩
   · exact ⟨by linarith, by linarith⟩
 
-
-
-
-
 theorem annulusBoundarySource_mapsTo_openStrip (r x : ℝ) (hr : r ≠ 0)
     {R : ℝ} (hR : R < 1) (upper : Bool) :
     MapsTo (annulusBoundarySource r hr upper x)
@@ -52,11 +39,6 @@ theorem annulusBoundarySource_mapsTo_openStrip (r x : ℝ) (hr : r ≠ 0)
   cases upper <;> simp only [Bool.false_eq_true, if_false, if_true]
   · exact ⟨hy, him.trans_lt hR⟩
   · exact ⟨by linarith, by linarith⟩
-
-
-
-
-
 
 theorem annulusBoundarySource_strip_radius (r x : ℝ) (hr : r ≠ 0) (upper : Bool)
     {O : Set LoopPlane} (hO : IsOpen O)

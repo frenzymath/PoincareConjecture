@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.TailSplice
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,9 +25,6 @@ def rawTailCoordinates (e : OpenPartialHomeomorph E2 S2)
 def rawTailPoint (e : OpenPartialHomeomorph E2 S2)
     (F : OpenPartialHomeomorph (Real × Real) S2) (z : Real × Real) : S2 :=
   e (rawTailCoordinates e F z)
-
-
-
 
 theorem exists_raw_tail_transport_neighborhood
     {height : S2 → Real} {c : Real}

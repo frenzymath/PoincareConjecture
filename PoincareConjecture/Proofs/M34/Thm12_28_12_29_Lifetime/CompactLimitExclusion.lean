@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CompactImmersion
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M34
 
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
   (C : GeneralizedBlowupConvergence S J)
-
-
 
 theorem generalizedBlowupConvergence_not_compact
     (hsource : ∀ k t, t ∈ (S.flow k).interval →

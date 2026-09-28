@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,7 +41,6 @@ private theorem edist_le_mul_edist_of_global_tangentNorm_le
     (euclideanMetric n).edist x y = EDist.edist x y :=
   (IsRiemannianManifold.out (I := 𝓡 n) x y).symm
 
-
 theorem edist_bounds_of_uniform_tangentNorm_bounds
     {n : ℕ} (G : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (hbound : ∀ x v : EuclideanSpace ℝ (Fin n),
@@ -79,8 +68,6 @@ theorem edist_bounds_of_uniform_tangentNorm_bounds
     congr 1
     ring
 
-
-
 theorem isCompact_closure_ball_of_uniform_tangentNorm_bounds
     {n : ℕ} (G : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     (hbound : ∀ x v : EuclideanSpace ℝ (Fin n),
@@ -96,8 +83,6 @@ theorem isCompact_closure_ball_of_uniform_tangentNorm_bounds
     linarith
   exact (isCompact_closedBall x (2 * R)).of_isClosed_subset isClosed_closure
     (closure_minimal hsub Metric.isClosed_closedBall)
-
-
 
 theorem exists_confined_minimizing_geodesic_of_uniform_tangentNorm_bounds
     {n : ℕ} (G : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

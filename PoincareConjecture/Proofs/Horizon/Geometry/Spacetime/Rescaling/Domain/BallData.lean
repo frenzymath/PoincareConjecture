@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Domain.Laws
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Length
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped unitInterval
 namespace Poincare.Topology
 
 variable {E Y : Type*} [TopologicalSpace E] [TopologicalSpace Y]
-
-
 
 theorem exists_circle_map_of_product_handle {P H : Set E}
     (hP : IsClosed P) (hH : IsClosed H)
@@ -60,8 +48,6 @@ theorem exists_circle_map_of_product_handle {P H : Set E}
       (continuous_subtype_val.comp (continuous_snd.comp C.symm.continuous))
   refine ⟨⟨fun x => g x, (hgPc.union_of_isClosed hgHc hP hH).domRestrict⟩,
     fun x => hgP x x.property, hgH⟩
-
-
 
 theorem exists_nontrivial_loop_of_product_handle [Nonempty Y] {P H : Set E}
     (hP : IsClosed P) (hH : IsClosed H) (hPc : IsPathConnected P)
@@ -121,8 +107,6 @@ theorem exists_nontrivial_loop_of_product_handle [Nonempty Y] {P H : Set E}
     exact hf0
   rw [hrefl] at h
   exact AddCircle.periodLoop_not_homotopic_refl 1 (hperiod.symm.trans h)
-
-
 
 theorem not_simplyConnectedSpace_of_product_handle [Nonempty Y] {P H : Set E}
     (hP : IsClosed P) (hH : IsClosed H) (hPc : IsPathConnected P)

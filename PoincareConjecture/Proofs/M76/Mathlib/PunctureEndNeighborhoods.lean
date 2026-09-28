@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedBallSimplyConnected
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_simplyConnected_punctured_neighborhood
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -55,11 +38,6 @@ theorem exists_simplyConnected_punctured_neighborhood
     rw [← Q.image_sdiff_singleton_of_subset_source hball h0]
     exact Q.isSimplyConnected_image_of_subset_source (sdiff_subset.trans hball)
       (isSimplyConnected_ball_sdiff_center_of_two_lt_finrank hdim 0 hr)
-
-
-
-
-
 
 theorem exists_compact_core_simplyConnected_punctured_complement
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

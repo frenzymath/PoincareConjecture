@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_original_atlas_parametrization
     {E F V X ι : Type*}

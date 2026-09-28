@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Convex.UpperSupport
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace Poincare.Analysis
 section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem second_deriv_comp_lineMap {u : E → ℝ} {x y : E} {t : ℝ}
     (hu : ContDiffAt ℝ 2 u (AffineMap.lineMap x y t)) :
@@ -40,8 +30,6 @@ theorem second_deriv_comp_lineMap {u : E → ℝ} {x y : E} {t : ℝ}
     (hasDerivAt_const t (y - x))
   rw [hfirst.deriv_eq]
   simpa using hsecond.deriv
-
-
 
 theorem concaveOn_of_hessian_upper_support {s : Set E} {f : E → ℝ}
     (hs : Convex ℝ s) (hf : ContinuousOn f s)
@@ -77,8 +65,6 @@ theorem concaveOn_of_hessian_upper_support {s : Set E} {f : E → ℝ}
 end Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem concaveOn_sub_norm_sq_of_hessian_upper_support
     {s : Set E} {f : E → ℝ} {C : ℝ}

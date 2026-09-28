@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.CarrierLift
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Radius.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,16 +21,12 @@ variable {M : Type} [TopologicalSpace M]
 
 namespace M26CanonicalNeighborhoodPredecessors
 
-
-
 theorem scalar_pos_small (P : M26CanonicalNeighborhoodPredecessors.{u})
     (K : AncientKappaSolution 3 M) (t : ℝ) (ht : t ≤ 0) (x : M) :
     0 < (K.flow.connection t).scalarCurvature x := by
   obtain ⟨N⟩ := P.normalization (ULift.{u} M) K.ulift (ULift.up x) t ht
   have hpos := N.scale_eq ▸ N.scale_pos
   simpa only [AncientKappaSolution.ulift_scalarCurvature] using hpos
-
-
 
 theorem past_norm_le_scalar_small (P : M26CanonicalNeighborhoodPredecessors.{u})
     (K : AncientKappaSolution 3 M) (t b : ℝ) (htb : t ≤ b) (hb : b ≤ 0) (x : M) :
@@ -51,8 +37,6 @@ theorem past_norm_le_scalar_small (P : M26CanonicalNeighborhoodPredecessors.{u})
       P.past_norm_le_scalar (ULift.{u} M) K.ulift t b htb hb (ULift.up x)
 
 end M26CanonicalNeighborhoodPredecessors
-
-
 
 theorem scalar_radius_volume_lower_small
     (P : M26CanonicalNeighborhoodPredecessors.{u})

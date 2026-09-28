@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallMargin
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallMarginOrScale
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
 
 theorem exists_source_node_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -71,9 +59,6 @@ theorem exists_source_node_scalar_accuracy :
     field_simp [hQ.ne']
   rw [hcancel]
   exact h
-
-
-
 
 theorem exists_source_criticalBall_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

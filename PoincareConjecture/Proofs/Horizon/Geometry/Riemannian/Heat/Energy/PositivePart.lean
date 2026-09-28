@@ -4,23 +4,12 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle
 
 namespace Poincare.Analysis.Heat
-
 
 noncomputable def smoothPositivePart (s : ℝ) : ℝ :=
   ∫ z in 0..s, Real.smoothTransition z
@@ -91,7 +80,6 @@ end Poincare.Analysis.Heat
 namespace PoincareConjecture.LeviCivitaData
 
 open Poincare.Analysis.Heat
-
 
 theorem smoothPositivePart_subsolution
     {n : ℕ} {M : Type*} [TopologicalSpace M]

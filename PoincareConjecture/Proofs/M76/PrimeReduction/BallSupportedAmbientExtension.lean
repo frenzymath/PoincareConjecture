@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.FinitePolyhedralIdentityExte
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ namespace Set
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem IsFinitePLBallPair.exists_supported_ambient_extension
     {C bd : Set E} (hC : IsFinitePLBallPair F C bd)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.TwoRaySupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -29,8 +23,6 @@ theorem preimage_regular_closed_germ
   have h := congrArg (fun K : Set X => z ∈ K) (F.preimage_closure (interior A))
   simp only [mem_inter_iff, hzs, true_and, mem_preimage, hregular] at h
   exact hz.trans h.symm
-
-
 
 theorem regular_closed_complement_interior_germ
     {A K : Set X} {q : X}

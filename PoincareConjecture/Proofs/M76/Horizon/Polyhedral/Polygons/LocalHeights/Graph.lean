@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.CrossingLabels
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,16 +9,13 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
 def triangleZeroSet (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : Set E :=
   {x | ∃ t ∈ K.faces, t.card = 3 ∧ x ∈ convexHull ℝ (t : Set E) ∧ A t x = 0}
 
-
 def triangleZeroVertices (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : Set E :=
   {q | q ∈ K.vertices ∧ ∃ t ∈ K.faces, t.card = 3 ∧ q ∈ t ∧ A t q = 0}
-
 
 theorem triangleZeroVertex_zero (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)
@@ -36,17 +25,14 @@ theorem triangleZeroVertex_zero (K : SimplicialComplex ℝ E)
   exact (hA s hs hsc t ht htc q.val (subset_convexHull ℝ (s : Set E) hqs)
     (subset_convexHull ℝ (t : Set E) hqt)).mp hzero
 
-
 abbrev TriangleSliceLabel (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) :=
   K.triangleZeroVertices A ⊕ K.triangleCrossingEdges A
-
 
 noncomputable def triangleSlicePoint (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : K.TriangleSliceLabel A → E
   | .inl q => q.val
   | .inr e => K.triangleCrossingPoint A e
-
 
 theorem triangleSlicePoint_injective (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : Function.Injective (K.triangleSlicePoint A) := by
@@ -60,7 +46,6 @@ theorem triangleSlicePoint_injective (K : SimplicialComplex ℝ E)
     cases b with
     | inl q => exact False.elim (K.triangleCrossingPoint_ne_vertex A e q.property.1 h)
     | inr f => exact congrArg Sum.inr (K.triangleCrossingPoint_injective A h)
-
 
 theorem triangleSlicePoint_mem (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) (v : K.TriangleSliceLabel A) :
@@ -77,13 +62,10 @@ theorem triangleSlicePoint_mem (K : SimplicialComplex ℝ E)
 
 variable [DecidableEq E]
 
-
 def triangleSliceOriginalVertices (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : K.TriangleSliceLabel A → Finset E
   | .inl q => {q.val}
   | .inr e => e.val
-
-
 
 def triangleSliceGraph (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) : SimpleGraph (K.TriangleSliceLabel A) where
@@ -100,7 +82,6 @@ def triangleSliceGraph (K : SimplicialComplex ℝ E)
       have hc3 : e.val.card = 3 := h.2
       have hc := K.triangleCrossingEdge_card A e
       omega⟩
-
 
 theorem triangleSliceGraph_not_adj_zero (K : SimplicialComplex ℝ E)
     (A : Finset E → E →ᵃ[ℝ] ℝ) (q r : K.triangleZeroVertices A) :

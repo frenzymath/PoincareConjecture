@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceScalarWin
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceCutConjugacy
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_lower_cut_motion
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Integra
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
 theorem continuousOn_cutoffMass
     (F : RicciFlow n M J) {α β : ℝ}
     (ht : ∀ τ ∈ Icc α β, -τ ∈ interior J)
@@ -32,8 +28,6 @@ theorem continuousOn_cutoffMass
   intro τ hτ x hx
   change u (x, τ) * χ x = 0
   rw [image_eq_zero_of_notMem_tsupport hx, mul_zero]
-
-
 
 theorem tendsto_integral_weighted_cutoffMass
     (F : RicciFlow n M J) {α β V : ℝ} (hV : 0 ≤ V)
@@ -92,7 +86,6 @@ theorem tendsto_integral_weighted_cutoffMass
     · filter_upwards [ae_restrict_mem measurableSet_Icc] with τ hτ
       exact tendsto_const_nhds.mul (hmlim τ hτ)
   simpa only [integral_mul_const] using hconv
-
 
 theorem tendsto_integral_deriv_cutoffMass
     (F : RicciFlow n M J) {α β V : ℝ} (hαβ : α ≤ β) (hV : 0 ≤ V)

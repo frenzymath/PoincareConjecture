@@ -4,15 +4,6 @@ import Mathlib.Geometry.Manifold.Algebra.SMul
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 import Mathlib.Analysis.Convex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,33 +15,22 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   [TopologicalSpace M] [ChartedSpace H M]
 
-
-
-
 noncomputable def chartContraction (c : M) (v : ℝ × (M × M)) : M :=
   (extChartAt I c).symm
     ((1 - v.1) • extChartAt I c v.2.2 + v.1 • extChartAt I c v.2.1)
-
-
 
 theorem chartContraction_zero (c p q : M) (hq : q ∈ (extChartAt I c).source) :
     chartContraction I c (0, p, q) = q := by
   simpa [chartContraction] using (extChartAt I c).left_inv hq
 
-
-
 theorem chartContraction_one (c p q : M) (hp : p ∈ (extChartAt I c).source) :
     chartContraction I c (1, p, q) = p := by
   simpa [chartContraction] using (extChartAt I c).left_inv hp
-
-
 
 theorem chartContraction_diagonal (c p : M) (hp : p ∈ (extChartAt I c).source)
     (t : ℝ) : chartContraction I c (t, p, p) = p := by
   simp only [chartContraction, ← add_smul, sub_add_cancel, one_smul]
   exact (extChartAt I c).left_inv hp
-
-
 
 theorem extChartAt_chartContraction (c : M) (v : ℝ × (M × M))
     (hv : (1 - v.1) • extChartAt I c v.2.2 + v.1 • extChartAt I c v.2.1 ∈
@@ -58,8 +38,6 @@ theorem extChartAt_chartContraction (c : M) (v : ℝ × (M × M))
     extChartAt I c (chartContraction I c v) =
       (1 - v.1) • extChartAt I c v.2.2 + v.1 • extChartAt I c v.2.1 :=
   (extChartAt I c).right_inv hv
-
-
 
 theorem chartContraction_mem_convex (c p q : M) {V : Set E}
     (hV : Convex ℝ V) (hsub : V ⊆ (extChartAt I c).target)
@@ -73,9 +51,6 @@ theorem chartContraction_mem_convex (c p q : M) {V : Set E}
     (extChartAt_chartContraction I c (t, p, q) (hsub hv)) ▸ hv⟩
 
 variable [I.Boundaryless] [IsManifold I ∞ M]
-
-
-
 
 theorem contMDiffAt_chartContraction (c : M) (v : ℝ × (M × M))
     (hp : v.2.1 ∈ (extChartAt I c).source)
@@ -97,9 +72,6 @@ theorem contMDiffAt_chartContraction (c : M) (v : ℝ × (M × M))
     ((contMDiffAt_const.sub contMDiffAt_fst).smul hq').add (contMDiffAt_fst.smul hp')
   exact ((contMDiffOn_extChartAt_symm c).contMDiffAt
     ((isOpen_extChartAt_target c).mem_nhds hv)).comp v hcoord
-
-
-
 
 theorem contMDiffAt_chartContraction_diagonal (c p : M)
     (hp : p ∈ (extChartAt I c).source) (t : ℝ) :

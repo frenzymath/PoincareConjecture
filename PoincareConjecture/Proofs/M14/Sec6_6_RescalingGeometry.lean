@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingLie
 import PoincareConjecture.Proofs.M13.SliceConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,15 +14,11 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {time : X → ℝ} {I : SpacetimeInterval}
 
-
-
 noncomputable def rescalingLeafwise
     (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
     LeafwiseLeviCivitaFamily (M13.parabolicSpacetime G.spacetime Q hQ a)
       (M13.parabolicSpacetimeSlice G.spacetime G.slices Q hQ a) :=
   M13.parabolicLeafwiseConnection G.leafwise Q hQ a
-
-
 
 noncomputable def rescalingTransport
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -60,8 +48,6 @@ noncomputable def rescalingTransport
         (rescalingLeafwise G Q hQ a) hM13]
     exact G.ricciEquation p v w
 
-
-
 theorem rescalingTransport_scalar
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
@@ -72,8 +58,6 @@ theorem rescalingTransport_scalar
   rescalingHorizontalScalar G.spacetime G.slices Q hQ a G.leafwise
     (rescalingLeafwise G Q hQ a) hM13 p
 
-
-
 noncomputable def rescalingInitialEquiv
     (S : GeneralizedFlowSpacetime n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (p : S.Point) : S.Horizontal p ≃L[ℝ] (M13.parabolicSpacetime S Q hQ a).Horizontal p :=
@@ -82,8 +66,6 @@ noncomputable def rescalingInitialEquiv
     (Real.sqrt Q • (M13.parabolicSpacetimeHorizontal S Q hQ a p).symm.toContinuousLinearMap)
     (by intro v; simp [smul_smul, (Real.sqrt_pos.mpr hQ).ne'])
     (by intro v; simp [smul_smul, (Real.sqrt_pos.mpr hQ).ne'])
-
-
 
 theorem rescalingInitialEquiv_inner
     (S : GeneralizedFlowSpacetime n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)

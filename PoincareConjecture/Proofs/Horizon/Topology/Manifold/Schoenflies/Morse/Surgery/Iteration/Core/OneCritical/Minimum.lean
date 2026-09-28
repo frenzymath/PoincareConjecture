@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Maximum
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Extrema
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 -> E3} (M : SphereMorseReduction f)
-
-
 
 theorem exists_single_cap_of_local_minimum
     {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
@@ -52,8 +48,6 @@ theorem exists_single_cap_of_local_minimum
   · rintro ⟨A, hA, hq⟩
     rwa [hsingle A hA] at hq
   · exact fun hq => ⟨D, hD, hq⟩
-
-
 
 theorem exists_ambient_filling_of_minimum_core
     {g : S2 -> E3} (hg : g ∈ M.tree.leaves)

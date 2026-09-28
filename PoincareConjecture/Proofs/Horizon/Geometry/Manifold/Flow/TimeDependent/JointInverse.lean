@@ -3,12 +3,6 @@ import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -100,11 +94,8 @@ private theorem exists_smooth_euclidean_parameterInverse
     have hv : f (Q.symm z) = z.2 := congrArg Prod.snd hq
     simpa only [← ht, Prod.mk.eta] using And.intro hpU hv
 
-
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_smooth_spatial_rightInverse_near_initial
     {J : Set ℝ} {V : Set M} (hJ : IsOpen J) (hV : IsOpen V)

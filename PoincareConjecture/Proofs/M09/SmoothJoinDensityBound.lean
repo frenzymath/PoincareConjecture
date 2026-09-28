@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.SmoothChartJoin
 import PoincareConjecture.Proofs.M09.SquareComparisonDensity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

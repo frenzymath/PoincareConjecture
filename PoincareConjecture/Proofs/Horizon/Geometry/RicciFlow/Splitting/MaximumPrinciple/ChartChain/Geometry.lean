@@ -2,16 +2,6 @@ import Mathlib.Geometry.Manifold.IsManifold.ExtChartAt
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set Metric Filter Topology
 
@@ -20,7 +10,6 @@ namespace PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple.ChartChain
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M]
-
 
 structure ChartBall (I : ModelWithCorners ℝ E H) (U : Set M) where
   center : M
@@ -35,43 +24,34 @@ namespace ChartBall
 
 variable {U : Set M} (B : ChartBall I U)
 
-
 def domain : Set M := (extChartAt I B.center).symm ''
   closedBall (extChartAt I B.center B.center) B.radius
 
-
 def core : Set M := (extChartAt I B.center).source ∩
   extChartAt I B.center ⁻¹' ball (extChartAt I B.center B.center) B.radius
-
 
 theorem isCompact_domain [FiniteDimensional ℝ E] : IsCompact B.domain :=
   (isCompact_closedBall _ _).image_of_continuousOn
     ((continuousOn_extChartAt_symm B.center).mono B.in_target)
 
-
 theorem domain_subset : B.domain ⊆ U := B.in_domain
-
 
 theorem domain_chart : B.domain ⊆ (chartAt H B.center).source := by
   rintro x ⟨y, hy, rfl⟩
   simpa only [extChartAt_source] using
     (extChartAt I B.center).map_target (B.in_target hy)
 
-
 theorem isOpen_core : IsOpen B.core :=
   isOpen_extChartAt_preimage' B.center isOpen_ball
 
-
 theorem center_mem_core : B.center ∈ B.core :=
   ⟨mem_extChartAt_source B.center, mem_ball_self B.radius_pos⟩
-
 
 theorem core_subset_interior : B.core ⊆ interior B.domain := by
   apply interior_maximal _ B.isOpen_core
   intro x hx
   exact ⟨extChartAt I B.center x, ball_subset_closedBall hx.2,
     (extChartAt I B.center).left_inv hx.1⟩
-
 
 theorem inverse_mem_core {y : E}
     (hy : y ∈ ball (extChartAt I B.center B.center) B.radius) :
@@ -81,7 +61,6 @@ theorem inverse_mem_core {y : E}
     by simpa only [mem_preimage, (extChartAt I B.center).right_inv ht] using hy⟩
 
 end ChartBall
-
 
 theorem exists_chartBall [I.Boundaryless] {U : Set M} (hU : IsOpen U)
     {p : M} (hp : p ∈ U) :
@@ -117,7 +96,6 @@ theorem exists_compact_path {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
   exact ⟨hj.somePath, isCompact_range hj.somePath.continuous,
     by rintro _ ⟨t, rfl⟩; exact hj.somePath_mem t⟩
 
-
 structure Subdivision {U : Set M} {p q : M} (γ : Path p q) where
   count : ℕ
   count_pos : 0 < count
@@ -128,7 +106,6 @@ structure Subdivision {U : Set M} {p q : M} (γ : Path p q) where
   ball : Fin count → ChartBall I U
   subordinate : ∀ i : Fin count, ∀ t ∈ Icc (cut i) (cut (i + 1)),
     γ t ∈ (ball i).core
-
 
 theorem exists_subdivision [I.Boundaryless] {U : Set M} (hU : IsOpen U) {p q : M}
     (γ : Path p q) (hγ : range γ ⊆ U) : Nonempty (Subdivision (I := I) (U := U) γ) := by
@@ -145,7 +122,6 @@ theorem exists_subdivision [I.Boundaryless] {U : Set M} (hU : IsOpen U) {p q : M
   choose B hB using hsub
   exact ⟨⟨n + 1, Nat.succ_pos n, cut, hzero, hn _ (Nat.le_succ n), hmono,
     fun i => B i, fun i => hB i⟩⟩
-
 
 theorem exists_compact_path_subdivision [I.Boundaryless] {U : Set M} (hU : IsOpen U)
     (hconn : IsConnected U) {p q : M} (hp : p ∈ U) (hq : q ∈ U) :

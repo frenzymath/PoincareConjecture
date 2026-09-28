@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterJoint
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Metric
@@ -19,8 +10,6 @@ namespace Poincare.ODE.Parameter
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P] [FiniteDimensional ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E] [FiniteDimensional ℝ E]
-
-
 
 theorem exists_local_linearOperator
     (A : P × ℝ → E →L[ℝ] E) (hA : ContDiff ℝ ∞ A)
@@ -94,4 +83,3 @@ theorem exists_local_linearOperator
       (fun q hq => ⟨hinit_mem q.1 hq.1, hq.2⟩)).snd.snd
 
 end Poincare.ODE.Parameter
-

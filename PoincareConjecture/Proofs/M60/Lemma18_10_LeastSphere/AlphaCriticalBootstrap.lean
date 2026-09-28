@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterface
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakAverages
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory ContinuousLinearMap
@@ -30,10 +14,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 structure SUC1HolderGain {m : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin m))
@@ -51,10 +31,6 @@ structure SUC1HolderGain {m : ℕ}
     ∀ y ∈ Metric.closedBall center (radius / 2),
     dist (fderiv ℝ u x) (fderiv ℝ u y) ≤
       constant * Real.sqrt (Real.sqrt (dist x y))
-
-
-
-
 
 theorem SUWeakAlphaCoordinate.kernel_derivative
     {g : RiemannianMetric n M} {b : M} {alpha : ℝ}

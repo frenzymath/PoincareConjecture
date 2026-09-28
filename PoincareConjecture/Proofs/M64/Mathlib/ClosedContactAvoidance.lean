@@ -2,23 +2,10 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
-
 
 theorem m64ContinuousOn_avoids_closed_of_local_contact
     {X : Type*} [TopologicalSpace X] {gamma : ℝ → X} {L : ℝ} {C : Set X}

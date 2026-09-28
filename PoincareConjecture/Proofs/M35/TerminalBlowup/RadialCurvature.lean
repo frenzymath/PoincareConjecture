@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.TerminalBlowup.RadialConnectionDerivative
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarMetricJets
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.Scalar.Trace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,14 +11,10 @@ namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e (i : Fin 3) : StandardCapSpace := EuclideanSpace.single i 1
 
-
-
 noncomputable def radialTangentialCurvatureFactor
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   radialConnectionBeta g r - radialConnectionAlpha g r +
     radialConnectionAlpha g r * radialConnectionBeta g r * r ^ 2
-
-
 
 noncomputable def radialMixedCurvatureFactor
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
@@ -36,9 +23,6 @@ noncomputable def radialMixedCurvatureFactor
     radialConnectionAlpha g r * r ^ 2 *
       (radialConnectionAlpha g r + radialConnectionBeta g r +
         radialConnectionGamma g r * r ^ 2)
-
-
-
 
 theorem rotational_curvature_vectors_axis
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -75,8 +59,6 @@ theorem rotational_curvature_vectors_axis
     simp [e, EuclideanSpace.inner_single_right,
       radialTangentialCurvatureFactor, radialMixedCurvatureFactor] <;>
     field_simp [hr.ne'] <;> ring
-
-
 
 theorem rotational_sectional_numerators_axis
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

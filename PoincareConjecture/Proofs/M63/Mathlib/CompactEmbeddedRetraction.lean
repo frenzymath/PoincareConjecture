@@ -7,15 +7,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,11 +19,6 @@ variable {E F M : Type*}
   [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
   [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓘(ℝ, E)) ∞ M]
   [CompactSpace M] [Nonempty M]
-
-
-
-
-
 
 theorem exists_smooth_compact_embedded_retraction [T2Space M] (e : M → F)
     (he : Topology.IsClosedEmbedding e)

@@ -1,16 +1,3 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.MetricDuality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators
-
-
-
-
-
-
-
-
-
-
-
-
-

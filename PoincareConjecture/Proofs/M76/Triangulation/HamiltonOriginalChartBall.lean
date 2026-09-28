@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,10 +15,6 @@ variable {X α : Type*} [TopologicalSpace X] [T2Space X]
   {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)} {D : Set X}
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem ChartwisePLSphere.ball_of_original_chart
     (s : ChartwisePLSphere e (frontier D))

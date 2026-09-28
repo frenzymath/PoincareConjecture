@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.UniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.MaximalBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open RiemannianMetric
-
-
 
 theorem noncompact_core_fixed_kappa_unit_volume_lower_of_services
     (P : NoncompactKappaServices.{u})
@@ -81,8 +69,6 @@ theorem noncompact_core_fixed_kappa_unit_volume_lower
         ENNReal.ofReal v < calibratedMetricVolume (K.flow.metric 0)
           ((K.flow.metric 0).ball p 1) := by
   exact noncompact_core_fixed_kappa_unit_volume_lower_of_services P.noncompactServices hkappa
-
-
 
 theorem noncompact_core_fixed_kappa_normalized_volume_bounds_of_services
     (P : NoncompactKappaServices.{u})
@@ -142,8 +128,6 @@ theorem noncompact_core_fixed_kappa_normalized_volume_bounds
           ENNReal.ofReal V := by
   exact noncompact_core_fixed_kappa_normalized_volume_bounds_of_services P.noncompactServices hkappa hD
 
-
-
 theorem noncompact_core_uniform_unit_volume_lower_of_services
     (P : NoncompactKappaServices.{u}) :
     ∃ v : ℝ, 0 < v ∧
@@ -174,8 +158,6 @@ theorem noncompact_core_uniform_unit_volume_lower
         ENNReal.ofReal v < calibratedMetricVolume (K.flow.metric 0)
           ((K.flow.metric 0).ball p 1) := by
   exact noncompact_core_uniform_unit_volume_lower_of_services P.noncompactServices
-
-
 
 theorem noncompact_core_uniform_normalized_volume_bounds_of_services
     (P : NoncompactKappaServices.{u})

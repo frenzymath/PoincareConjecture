@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTailFloor
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarExteriorReciprocal
 import PoincareConjecture.Proofs.M35.RadialGauge.ExteriorDriftJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_intrinsic_drift_coefficient_weighted_jets
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

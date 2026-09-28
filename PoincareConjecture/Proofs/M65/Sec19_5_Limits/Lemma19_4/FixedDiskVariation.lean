@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DensityDomination
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.DiskMetricTransport
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {K0 K1 K2 : ℝ}
-
-
-
 
 theorem m65Disk_metric_variation
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2) (hK2 : 0 ≤ K2)

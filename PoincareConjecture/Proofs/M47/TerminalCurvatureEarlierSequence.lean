@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierJets
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierPhysical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_earlier_physical_sequence
     (S : ℕ → SurgeryFlowData.{u}) (C : ℕ → GeneralizedSliceCarrier.{u})

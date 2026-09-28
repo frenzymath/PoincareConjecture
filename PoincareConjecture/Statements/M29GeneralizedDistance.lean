@@ -1,22 +1,6 @@
 import PoincareConjecture.Definitions.M29GeneralizedDistance
 import PoincareConjecture.Statements.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

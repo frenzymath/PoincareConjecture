@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.SurgeryBallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -20,8 +10,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
 
 theorem ball_local_inverse_smooth (f : StandardCapSpace → A.carrier)
     (hf : IsLocalDiffeomorphOn (𝓡 3) (𝓡 3) ∞ f (Metric.ball 0 2))
@@ -46,8 +34,6 @@ theorem ball_local_inverse_smooth (f : StandardCapSpace → A.carrier)
   apply hinj (Function.invFunOn_mem hzimage) hsz
   rw [Function.invFunOn_eq hzimage, hlocal.localInverse_right_inv hz]
 
-
-
 noncomputable def surgeryBallOfLocalDiffeomorph
     (f : StandardCapSpace → A.carrier)
     (hf : IsLocalDiffeomorphOn (𝓡 3) (𝓡 3) ∞ f (Metric.ball 0 2))
@@ -60,11 +46,6 @@ noncomputable def surgeryBallOfLocalDiffeomorph
   right_inverse := fun _ hx => Function.invFunOn_eq hx
   open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball
     hf.contMDiffOn (ball_local_inverse_smooth f hf hinj) hinj.leftInvOn_invFunOn
-
-
-
-
-
 
 theorem exists_surgeryBall_descend_finite_fibers
     {Q : GeneralizedSliceCarrier.{u}} (q : A.carrier → Q.carrier)

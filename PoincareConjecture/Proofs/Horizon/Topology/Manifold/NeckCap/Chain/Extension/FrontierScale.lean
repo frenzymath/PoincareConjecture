@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ScaleComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_ambient_scalar_control_on_closure {α : ℝ} (hα : 0 < α) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -42,8 +30,6 @@ theorem exists_ambient_scalar_control_on_closure {α : ℝ} (hα : 0 < α) :
   exact le_on_closure hinterior
     (((continuous_const.mul D.continuous_scalarCurvature).sub continuous_const).abs.continuousOn)
     continuous_const.continuousOn hx
-
-
 
 theorem exists_scale_comparison_on_closure :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

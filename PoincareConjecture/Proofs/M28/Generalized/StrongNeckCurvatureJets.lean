@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderCoefficientBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,7 +28,6 @@ private theorem half_window_tensor_weight {u : ℝ}
     interval_cases k <;> norm_num
   exact hsmall.trans hprod
 
-
 theorem cylinderTensorDerivative_time_eq {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) {r : ℕ}
     (T : RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ) :
@@ -47,8 +36,6 @@ theorem cylinderTensorDerivative_time_eq {u : ℝ} (hu : u < 1)
   funext p a
   simp only [roundCylinderTensorDerivative, roundCylinderChristoffel_chosen_chart hu,
     roundCylinderChristoffel_chosen_chart (by norm_num : (0 : ℝ) < 1)]
-
-
 
 theorem half_cylinder_covariant_component_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon)
@@ -88,8 +75,6 @@ theorem half_cylinder_covariant_component_le
     nlinarith
   exact (sq_le_sq₀ (abs_nonneg _) (by positivity)).mp hsq
 
-
-
 theorem half_cylinder_first_component_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon)
     (hu : u ∈ Icc (-(1 / 2 : ℝ)) 0) {B : RoundCylinderTwoTensor}
@@ -109,8 +94,6 @@ theorem half_cylinder_first_component_le
   rw [cylinderTensorDerivative_time_eq (lt_of_le_of_lt hu.2 (by norm_num)),
     roundCylinderTensorDerivative_center] at h
   exact h
-
-
 
 theorem exists_half_cylinder_second_component_bound :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ (epsilon u : ℝ), 0 < epsilon →

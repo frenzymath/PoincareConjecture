@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace IsLocalHomeomorph
-
-
-
-
-
 
 theorem exists_piecewiseAffine_coordinate_cover
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -46,10 +31,6 @@ theorem exists_piecewiseAffine_coordinate_cover
   exact (locallyPiecewiseAffineOn_affine (ContinuousAffineMap.id ℝ E)
     ((c i).symm.trans (c j)).open_source).congr (htrans i j).symm
 
-
-
-
-
 theorem exists_piecewiseAffine_chartedSpace
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X]
@@ -67,9 +48,6 @@ end IsLocalHomeomorph
 
 namespace IsLocalHomeomorphOn
 
-
-
-
 theorem isLocalHomeomorph_domRestrict
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     {f : X → Y} {U : Set X} (hf : IsLocalHomeomorphOn f U) (hU : IsOpen U) :
@@ -77,10 +55,6 @@ theorem isLocalHomeomorph_domRestrict
   apply isLocalHomeomorph_iff_isLocalHomeomorphOn_univ.mpr
   exact hf.comp hU.isOpenEmbedding_subtypeVal.isLocalHomeomorph.isLocalHomeomorphOn
     (fun x _ => x.property)
-
-
-
-
 
 theorem exists_piecewiseAffine_chartedSpace_domRestrict
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

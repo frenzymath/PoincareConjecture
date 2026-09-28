@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.ParameterSpatialDerivatives
 import PoincareConjecture.Proofs.M34.Mathlib.LinearPrecomposeLocalJets
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,16 +10,12 @@ open scoped Manifold ContDiff RealInnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem contDiff_stereoInvFunAux_joint {m : ℕ∞ω} :
     ContDiff ℝ m (fun z : E × E => stereoInvFunAux z.1 z.2) := by
   have hn : ContDiff ℝ m (fun z : E × E => ‖z.2‖ ^ 2) :=
     (contDiff_norm_sq ℝ).comp contDiff_snd
   exact ((hn.add contDiff_const).inv (fun z => by positivity)).smul
     ((contDiff_const.smul contDiff_snd).add ((hn.sub contDiff_const).smul contDiff_fst))
-
-
 
 theorem stereoInvFunAux_uniform_spatial_jet_bound [FiniteDimensional ℝ E]
     (R : ℝ) (m : ℕ) :
@@ -44,8 +30,6 @@ theorem stereoInvFunAux_uniform_spatial_jet_bound [FiniteDimensional ℝ E]
   intro v w hv hw
   apply (hC (v, w) ?_).trans (le_max_left _ _)
   simpa only [mem_prod, mem_closedBall, dist_zero_right] using And.intro hv hw
-
-
 
 theorem sphere_chart_symm_uniform_jet_bound [FiniteDimensional ℝ E]
     {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)] (R : ℝ) (m : ℕ) :

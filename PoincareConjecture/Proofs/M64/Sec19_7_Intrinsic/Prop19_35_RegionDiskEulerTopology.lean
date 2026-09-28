@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionDiskEuler
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionDiskEulerPaths
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionDiskEulerColoring
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,10 +10,6 @@ open Set Function
 open PoincareConjecture.Surface.Combinatorial.Incidence
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_midpoint_mem_selected_edge_union
     {X E : Type*} (edge : E → ℝ → X)
@@ -50,11 +35,6 @@ theorem m64Intrinsic_midpoint_mem_selected_edge_union
   · intro he
     exact mem_iUnion.mpr ⟨e, mem_iUnion.mpr ⟨he,
       mem_image_of_mem (edge e) (by norm_num : (1 / 2 : ℝ) ∈ Icc 0 1)⟩⟩
-
-
-
-
-
 
 theorem m64Intrinsic_plane_graph_cycle_fill
     {V E I : Type*} [Finite V] [Fintype E] [Fintype I]

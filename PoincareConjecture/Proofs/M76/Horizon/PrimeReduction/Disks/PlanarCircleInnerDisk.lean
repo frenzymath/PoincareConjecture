@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PlanarPLDiskUniqueness
 import PoincareConjecture.Proofs.M76.Mathlib.DisjointPolygonNesting
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -20,8 +12,6 @@ open Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 theorem exists_inner_disk_of_planar_circle_strip
     {n : ℕ} (P : Polygon P2 (n + 3)) (hP : P.HasSimplicialEdges)
@@ -126,10 +116,6 @@ theorem exists_inner_disk_of_planar_circle_strip
     fun c hc t ht => houtside (hout c hc t ht), m, Q, hQi, hQ,
     hQb.trans hloopImage, Q.isFinitePLBallPair_closed_inside hQ hQi,
     (P.closure_inside_subset_inside_of_boundary_subset_inside Q hP hPi hQ hQi hQinside).trans hinside⟩
-
-
-
-
 
 theorem exists_inner_disk_of_identity_circle_tube
     {n : ℕ} (L : Polygon V3 (n + 3)) (hL : L.HasSimplicialEdges)

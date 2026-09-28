@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Barycentric.DerivedSphereCollar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
-
-
-
-
 
 theorem ChartwisePLSphere.exists_original_small_bicollar_with_model
     {X ι : Type*} [MetricSpace X]
@@ -175,10 +162,6 @@ theorem ChartwisePLSphere.exists_original_small_bicollar_with_model
       hrel.preimage (continuous_inclusion (interior_subset (s := R)))
     have hAopen : IsOpen (interior R ∩ A) := isOpen_interior.inter_preimage_val_iff.mp hrelint
     simpa only [inter_eq_right.mpr hAint] using hAopen
-
-
-
-
 
 theorem ChartwisePLSphere.exists_original_small_bicollar
     {X ι : Type*} [MetricSpace X]

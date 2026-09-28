@@ -7,12 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalEquat
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.VariationalEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -110,8 +104,6 @@ private theorem memLp_compact_coeff_mul {K O : Set E} (hK : IsCompact K)
   rw [norm_mul]
   exact mul_le_mul_of_nonneg_right (hC z (hOK hz)) (norm_nonneg _)
 
-
-
 theorem weakSolution_localized_divergence
     (e : OpenPartialHomeomorph E M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -193,8 +185,6 @@ theorem weakSolution_localized_divergence
     filter_upwards [ae_all_iff.mpr hpeq] with z hz
     simp only [hz]
 
-
-
 theorem exists_local_memWkp_two (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :
     ∃ (e : OpenPartialHomeomorph E M) (χ : M → ℝ) (V : Set E),
@@ -245,8 +235,6 @@ theorem exists_local_memWkp_two (D : LeviCivitaData g)
   intro φ hφ hφc hφs
   simpa only [Finset.sum_mul] using hrestrict φ hφ hφc hφs
 
-
-
 theorem exists_local_eigenbasis_memWkp_two (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :
     ∃ (e : OpenPartialHomeomorph E M) (χ : M → ℝ) (V : Set E),
@@ -269,8 +257,6 @@ theorem exists_local_eigenbasis_memWkp_two (D : LeviCivitaData g)
   exact hreg _ (eigenvalue D Ω i)
     (energyEigenfunction_equation D Ω (Nat.pos_of_ne_zero (NeZero.ne n))
       S.isOpen S.isCompact_closure i)
-
-
 
 theorem exists_local_memWkp_two_of_weakSolution (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :

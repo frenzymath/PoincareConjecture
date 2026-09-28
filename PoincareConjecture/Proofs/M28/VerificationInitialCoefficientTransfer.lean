@@ -4,16 +4,7 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialCoeff
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawChartBounds
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialNeck
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.M28.tube PoincareConjecture.M28.CounterexampleNeckFamily
 open PoincareConjecture.Proofs.M28.NeckTransfer
-

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoherence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Composition
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem terminalSource_actual_coordinate_readout
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -61,8 +49,6 @@ theorem terminalSource_actual_coordinate_readout
         (e.forward s hs ∘ ((Subtype.val : U → C.carrier) ∘ p)) x w)
   rw [hdE, hdU, hmetric]
   rfl
-
-
 
 theorem terminalSource_actual_overlap_coefficients
     {F : SurgeryFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}

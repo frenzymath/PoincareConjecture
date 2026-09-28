@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCircleCurrent
 import PoincareConjecture.Proofs.M63.Mathlib.LocalDiffeomorphLift
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64CircleProduct_pairing_eq_lift_deriv
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -78,11 +61,6 @@ private theorem horizontal_smooth (x s : ℝ) :
   · simpa [annulusPoint] using (contDiffAt_const (c := s) :
       ContDiffAt ℝ ∞ (fun _ : ℝ => s) x)
 
-
-
-
-
-
 theorem m64Annulus_phase_contDiffAt
     (P : M62.CircleProductData F circumference)
     {f : LoopPlane → P.charts.Point} {L : ℝ → ℝ} {x s : ℝ}
@@ -101,10 +79,6 @@ theorem m64Annulus_phase_contDiffAt
   have heq : P.circle.quotient ∘ L = fun y => (f (annulusPoint y s)).2 := funext hquot
   rw [heq]
   exact hproj
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_eq_phase_deriv
     (P : M62.CircleProductData F circumference) (t : ℝ)

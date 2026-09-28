@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaLoss
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,24 +9,16 @@ open scoped intervalIntegral
 
 namespace PoincareConjecture
 
-
-
-
 def m64IntrinsicLocalHighCurvatureLength
     (N : IntrinsicAnnulus) (alpha l u : ℝ) : ℝ :=
   ∫ x in Ioo l u ∩
     {x | alpha < intrinsicGeodesicCurvature N.metric N.connection 1 x},
     intrinsicBoundarySpeed N.metric 1 x
 
-
-
 theorem m64IntrinsicLocalHighCurvatureLength_nonneg
     (N : IntrinsicAnnulus) (alpha l u : ℝ) :
     0 ≤ m64IntrinsicLocalHighCurvatureLength N alpha l u :=
   integral_nonneg (fun _ => Real.sqrt_nonneg _)
-
-
-
 
 theorem m64Intrinsic_local_high_curvature_length_mul_le_turning
     (N : IntrinsicAnnulus) {alpha l u : ℝ} (hlu : l ≤ u) :
@@ -78,9 +60,6 @@ theorem m64Intrinsic_local_high_curvature_length_mul_le_turning
     _ = intrinsicGeodesicCurvatureIntegral N.metric N.connection 1 l u := by
       rw [intrinsicGeodesicCurvatureIntegral, intervalIntegral.integral_of_le hlu]
 
-
-
-
 theorem m64Intrinsic_local_high_curvature_length_lt_hundredth
     (N : IntrinsicAnnulus) {delta r alpha l u : ℝ}
     (hdelta : 0 < delta) (hr : 0 < r) (hlu : l ≤ u)
@@ -101,9 +80,6 @@ theorem m64Intrinsic_local_high_curvature_length_lt_hundredth
     field_simp [hr.ne']
   apply (mul_lt_mul_iff_right₀ hfactor).mp
   exact hless.trans_eq heq
-
-
-
 
 theorem m64Intrinsic_local_long_fiber_length_le
     (N : IntrinsicAnnulus) {l u : ℝ} {S : Set ℝ} (hS : MeasurableSet S)
@@ -145,9 +121,6 @@ theorem m64Intrinsic_local_long_fiber_length_le
   apply (le_div_iff₀ (mul_pos (sq_pos_of_pos hc) hR)).mpr
   change (∫ s in A, speed s) * (c ^ 2 * R) ≤ intrinsicAnnulusArea N.metric
   nlinarith only [hreal]
-
-
-
 
 theorem m64Intrinsic_local_long_fiber_length_lt_tenth
     (N : IntrinsicAnnulus) {l u : ℝ} {S : Set ℝ} (hS : MeasurableSet S)

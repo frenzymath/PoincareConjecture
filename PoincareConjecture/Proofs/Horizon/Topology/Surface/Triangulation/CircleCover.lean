@@ -1,19 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCircle
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartLevel
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,8 +13,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
-
 
 theorem exists_finite_buffered_chart_ball_cover [CompactSpace M] :
     ∃ (s : Finset M) (R : M → ℝ),
@@ -49,8 +34,6 @@ theorem exists_finite_buffered_chart_ball_cover [CompactSpace M] :
   exact ⟨s, R, hpos, hsub, Subset.antisymm (subset_univ _) hs⟩
 
 variable [T2Space M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_chart_circle_radii_finite_intersections
     (s : Finset M) (R : M → ℝ) (hpos : ∀ x, 0 < R x)
@@ -103,9 +86,6 @@ theorem exists_chart_circle_radii_finite_intersections
           · simpa [hyx] using hnew ⟨y, hys⟩
           · have hzx : z ≠ x := fun h => hx (h ▸ hzs)
             simpa [hyx, hzx] using hfinite y hys z hzs hyz
-
-
-
 
 theorem exists_finite_chart_ball_cover_finite_intersections [CompactSpace M] :
     ∃ (s : Finset M) (r : M → ℝ),

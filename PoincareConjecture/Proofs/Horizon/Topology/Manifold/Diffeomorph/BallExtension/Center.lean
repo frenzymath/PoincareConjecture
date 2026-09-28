@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.PointAdjustment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,8 +9,6 @@ namespace Poincare
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => sphere (0 : E3) 1
-
-
 
 theorem exists_ball_preserving_centering {a : E3} (ha : ‖a‖ < 1) :
     ∃ (η : ℝ) (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞),
@@ -53,8 +43,6 @@ theorem exists_ball_preserving_centering {a : E3} (ha : ‖a‖ < 1) :
   apply hfix
   have hrt : r < Real.exp t := hrη.trans (Real.exp_lt_exp.mpr (abs_lt.mp ht).1)
   simpa [norm_smul, Real.norm_eq_abs, Real.abs_exp] using hrt.le
-
-
 
 theorem exists_centered_ball_neighborhood
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M]

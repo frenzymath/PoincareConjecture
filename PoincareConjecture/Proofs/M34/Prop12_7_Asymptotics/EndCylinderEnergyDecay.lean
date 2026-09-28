@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackBound
 import PoincareConjecture.Proofs.M34.Standard.UniformFamilyEnergyBounds
 import PoincareConjecture.Proofs.M34.Mathlib.BoundedBoundaryEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -33,9 +23,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}
   (qS : FS 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) (p : endReferenceRegion e)
 
 include P E0
-
-
-
 
 theorem partialFlow_endCylinderDifferenceEnergy_bounds {T : ℝ}
     (hT : T ∈ Ico 0 F.lifetime ∩ Ico 0 1) :
@@ -89,9 +76,6 @@ theorem partialFlow_endCylinderDifferenceEnergy_bounds {T : ℝ}
         (hsupport F.flow p (hcommon t ⟨ht.1.le, ht.2.le⟩) j) hL
     _ = _ := (mul_assoc _ _ _).symm
 
-
-
-
 theorem partialFlow_endCylinderDifferenceEnergy_decay {T : ℝ}
     (hT : T ∈ Ico 0 F.lifetime ∩ Ico 0 1) :
     ∃ M C : ℝ, 0 ≤ M ∧ 0 ≤ C ∧ ∀ j t, t ∈ Icc 0 T →
@@ -114,9 +98,6 @@ theorem partialFlow_endCylinderDifferenceEnergy_decay {T : ℝ}
     hvalue hrate
   refine ⟨M, C, hM, hC, ?_⟩
   simpa only [sub_zero] using hdecay
-
-
-
 
 theorem partialFlow_endCylinderDifferenceEnergy_tendstoUniformlyOn {T : ℝ}
     (hT : T ∈ Ico 0 F.lifetime ∩ Ico 0 1) :

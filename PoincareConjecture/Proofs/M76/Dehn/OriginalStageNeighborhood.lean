@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalPLStage
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.IntrinsicImageDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralImageRelativeDeformationNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -23,10 +13,6 @@ variable {U E M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [FiniteDimensional ℝ E] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C R : Set M}
-
-
-
-
 
 theorem Stage.exists_compact_relative_neighborhood
     (s : Stage e S f r C) (hS : S.faces.Finite)

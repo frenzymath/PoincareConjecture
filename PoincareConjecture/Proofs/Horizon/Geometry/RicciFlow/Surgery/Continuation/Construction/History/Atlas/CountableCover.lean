@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.OrdinaryBoxes
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ universe u
 namespace PoincareConjecture.Surgery.RegularHistory
 
 variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
-
-
 
 theorem exists_countable_ordinary_boxes :
     ∃ A : Set (OrdinaryTimeWindow W), A.Countable ∧

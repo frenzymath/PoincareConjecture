@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_UniformBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem m60Contraction_timeDerivative_zero (C : ℝ × (M × M) → M)
     (hfix : ∀ t p, C (t, p, p) = p) (t : ℝ) (p : M)
@@ -42,9 +31,6 @@ theorem m60Contraction_timeDerivative_zero (C : ℝ × (M × M) → M)
   simp only [mfderiv_id, mfderiv_const] at hc
   exact hc.symm
 
-
-
-
 theorem m60Contraction_timeNorm_continuousAt (g : RiemannianMetric 3 M)
     {C : ℝ × (M × M) → M} {x : ℝ × (M × M)}
     (hC : ContMDiffAt (𝓘(ℝ, ℝ).prod ((𝓡 3).prod (𝓡 3))) (𝓡 3) 1 C x) :
@@ -59,9 +45,6 @@ theorem m60Contraction_timeNorm_continuousAt (g : RiemannianMetric 3 M)
   exact Proofs.M58.continuous_bundle_norm.continuousAt.comp
     ((Proofs.M58.continuousAt_tangentMap_of_contMDiffAt hC).comp
       Proofs.M58.continuous_contraction_time_input.continuousAt)
-
-
-
 
 theorem m60Contraction_small_timeDerivative [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M))

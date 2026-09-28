@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.QuadraticHeat
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -25,8 +17,6 @@ open PoincareConjecture
 section Array
 
 variable {I : Type*} [Fintype I] [DecidableEq I]
-
-
 
 lemma perturbed_hamiltonBlock_vector_contraction
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -76,8 +66,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
 noncomputable def hamiltonHeatJetQuadratic
     (F : RicciFlow n M J) (T₀ t : ℝ) (x : M)
     (U : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)) →
@@ -107,8 +95,6 @@ noncomputable def hamiltonHeatJetQuadratic
     2 * (∑ e, ∑ a, ∑ c, ∑ d, ∑ f,
       D.curvatureTensor x (b a) (b c) (b d) (b f) * V e a c * V e d f)
 
-
-
 lemma hamiltonHeatJetQuadratic_eq_reaction
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     (T₀ : ℝ) {t : ℝ} (ht : t ∈ interior J) (hτ : t - T₀ ≠ 0) (x : M)
@@ -130,9 +116,6 @@ lemma hamiltonHeatJetQuadratic_eq_reaction
   simp_rw [F.tensorHeatOperator_riemann hC ht]
   simp only [LeviCivitaData.curvatureB, mul_assoc, ← Finset.mul_sum] at hm hp ⊢
   linarith only [hm, hp]
-
-
-
 
 lemma hamiltonHeatJetQuadratic_ge_perturbed_null
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -199,8 +182,6 @@ lemma hamiltonHeatJetQuadratic_ge_perturbed_null
       hamiltonCollectedReaction R P Q U W at he
   linarith only [hr, he, hz']
 
-
-
 lemma abs_hamiltonM_le_curvatureDerivativeNorm
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     {τ : ℝ} (hτ : 0 < τ) (x : M) (a b : TangentSpace (𝓡 n) x) :
@@ -218,8 +199,6 @@ lemma abs_hamiltonM_le_curvatureDerivativeNorm
   calc
     _ ≤ _ := he.trans (add_le_add hm hrd)
     _ = _ := by ring
-
-
 
 lemma hamiltonHeatJetQuadratic_ge_perturbed_null_of_curvature
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

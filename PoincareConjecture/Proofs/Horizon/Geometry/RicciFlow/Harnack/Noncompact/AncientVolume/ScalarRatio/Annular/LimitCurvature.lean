@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.CurvatureLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.RicciConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -44,8 +32,6 @@ private theorem scalarCurvature_eq_inverse_gram
     ∑ i, ∑ j, (Matrix.of (fun i j => g.inner x (b i) (b j)))⁻¹ i j * B (b i) (b j) at h
   simpa only [B, LinearMap.sum_apply, curvatureTensor_bilinear_first_third_apply,
     ricci, scalarCurvature] using h
-
-
 
 theorem tendsto_scalarCurvature_of_scalar_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}
@@ -114,8 +100,6 @@ private theorem scalar_jets_of_bilinear_jets
   rw [← heq g] at hpost
   exact hpost.congr (fun k => (heq (gseq k)).symm)
 
-
-
 theorem curvature_of_partialDiffeomorph_metric_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -182,8 +166,6 @@ theorem curvature_of_partialDiffeomorph_metric_jets
   refine ⟨nonnegativeCurvatureOperator_of_scalar_metric_jets Ds D x b hscalar hpositive, ?_⟩
   exact (tendsto_scalarCurvature_of_scalar_metric_jets Ds D x b hscalar).congr hscal
 
-
-
 theorem curvature_of_partialDiffeomorph_metric_limit
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -215,8 +197,6 @@ namespace PoincareConjecture.RicciFlow
 universe u
 
 set_option maxHeartbeats 600000 in
-
-
 
 theorem exists_terminal_normalized_annular_metric_limit_with_curvature
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

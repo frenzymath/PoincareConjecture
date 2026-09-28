@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ClosedComplementSubcomplex
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -41,10 +32,6 @@ private theorem closure_complement_inside {C L : Set X}
 variable [T2Space X]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_originalExterior_subcomplex
     {C L : Set X} (hC : IsCompact C) (hLC : L ⊆ interior C)

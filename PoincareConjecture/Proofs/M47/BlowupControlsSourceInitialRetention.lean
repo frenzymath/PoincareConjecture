@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialAvoidance
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedChart
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {t : ℝ} (hT : t ∈ F.surgery_times)
   [Nonempty (F.slice t).carrier] (i : Fin (F.event t hT).cap_count)
-
-
 
 theorem source_negative_neck_interior_retained
     {y : (F.event t hT).terminal.carrier}
@@ -58,8 +46,6 @@ theorem source_negative_neck_interior_retained
   refine ⟨hregular, ?_⟩
   change E.limit_identify.map (E.limit_identify.inverse y) ∈ V
   rwa [hmap]
-
-
 
 theorem source_initial_chart_retention {A : ℝ}
     (initial : SurgeryCapInitialComparison F t hT i A)

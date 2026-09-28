@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SeparatingNeckComponents
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderComponentSide
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_neck_component_inside_of_compl_preconnected
     (N : EpsilonNeck g) (hsep : N.IsSeparating) {X : Set M}
@@ -60,10 +46,6 @@ theorem exists_neck_component_inside_of_compl_preconnected
     refine ⟨?_, connectedComponentIn_subset _ _ hx⟩
     by_contra hnot
     exact Set.disjoint_left.mp hd hx (hside hnot)
-
-
-
-
 
 theorem exists_positive_ambient_cylinder_half
     (N : EpsilonNeck g) (hsep : N.IsSeparating) {X : Set M}

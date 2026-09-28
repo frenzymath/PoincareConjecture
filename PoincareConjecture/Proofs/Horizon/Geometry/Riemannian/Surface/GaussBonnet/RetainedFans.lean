@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.IndependentNewVertices
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.ComplementFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,9 +33,6 @@ theorem cap_center_contribution (g : RiemannianMetric 2 S) (p : T.decomposition.
   simp_rw [heq]
   exact (T.caps p).sum_refined_center_contributions g
     (fun s => (T.refinement.subdivision (.inl (p, s))).refinement_lines)
-
-
-
 
 theorem cap_contribution_away_from_original_vertices (g : RiemannianMetric 2 S)
     (p : T.decomposition.vertices)
@@ -77,7 +67,6 @@ theorem cap_contribution_away_from_original_vertices (g : RiemannianMetric 2 S)
   exact hw
 
 omit [T2Space S] in
-
 
 theorem core_contribution_at_used_vertex (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (u : (T.refined.mesh R).Triangle)
@@ -129,7 +118,6 @@ theorem core_mesh_interior_fan (g : RiemannianMetric 2 S) (R : T.decomposition.r
 
 omit [T2Space S] in
 
-
 theorem core_contribution_at_used_interior_vertex (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (t : (T.refined.mesh R).Triangle)
     (v : (T.refined.mesh R).Vertex) (hv : v ∈ t.1)
@@ -143,7 +131,6 @@ theorem core_contribution_at_used_interior_vertex (g : RiemannianMetric 2 S)
 
 set_option maxHeartbeats 800000 in
 omit [T2Space S] in
-
 
 theorem core_parent_used_vertex
     (R : T.decomposition.regions)
@@ -168,7 +155,6 @@ theorem core_parent_used_vertex
 
 set_option maxHeartbeats 800000 in
 omit [T2Space S] in
-
 
 theorem core_contribution_at_interior_canonical_vertex (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions)

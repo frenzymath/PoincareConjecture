@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialInterval
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialScalar
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem standard_source_alternative_split (S : RepairedControlledSchedulesData.{u})
     {theta s : ℝ} (htheta : theta < 1) (hs : s ∈ Icc 0 theta) (z : StandardCapSpace) :

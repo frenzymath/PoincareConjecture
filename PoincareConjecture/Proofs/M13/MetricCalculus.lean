@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M13.Completeness
 import PoincareConjecture.Proofs.M13.Volume
 import PoincareConjecture.Statements.M13MetricHomothety
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
-
 
 theorem metricHomothetyCalculus
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

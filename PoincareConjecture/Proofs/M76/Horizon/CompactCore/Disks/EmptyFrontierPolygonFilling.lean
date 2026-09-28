@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialBallQuotient
 import Mathlib.Topology.Order.ProjIcc
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -35,9 +26,6 @@ private theorem clipUnit_zero : clipUnit 0 = 0 := by
 
 private theorem clipUnit_one : clipUnit 1 = 1 := by
   exact Subtype.ext (congrArg Subtype.val (clipUnit_eq ⟨zero_le_one, le_rfl⟩))
-
-
-
 
 theorem exists_radial_two_annulus_filling
     {X : Type*} [TopologicalSpace X] {N Y F : Set X}

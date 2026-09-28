@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.LineSecondDerivative
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Convex.Function
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem second_deriv_affine_line_at {f : E → ℝ} (x v : E) {t : ℝ}
     (hf : ContDiffAt ℝ 2 f (x + t • v)) :
@@ -36,7 +27,6 @@ theorem second_deriv_affine_line_at {f : E → ℝ} (x v : E) {t : ℝ}
   rw [hfirst, deriv_comp_const_add, add_zero] at h
   exact h
 
-
 theorem second_deriv_sub_norm_sq_on_line {f : E → ℝ} (x v : E) {t : ℝ}
     (hf : ContDiffAt ℝ 2 f (x + t • v)) (K : ℝ) :
     deriv (deriv (fun s : ℝ ↦ f (x + s • v) - K * ‖x + s • v‖ ^ 2 / 2)) t =
@@ -51,7 +41,6 @@ theorem second_deriv_sub_norm_sq_on_line {f : E → ℝ} (x v : E) {t : ℝ}
     hf.comp t (by fun_prop)
   rw [second_deriv_sub_quadratic hline, second_deriv_affine_line_at x v hf]
   ring
-
 
 theorem concaveOn_sub_norm_sq_of_upper_contacts {s : Set E} {f : E → ℝ} {K : ℝ}
     (hs : Convex ℝ s) (hf : ContinuousOn f s)

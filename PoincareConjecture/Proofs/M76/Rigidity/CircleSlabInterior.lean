@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.CircleSlabDomain
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem circle_slab_interior_nonempty
     {X : Type*} [TopologicalSpace X] (p : ℝ) [Fact (0 < p)]
@@ -29,8 +20,6 @@ theorem circle_slab_interior_nonempty
   have hsub : q ⁻¹' interior A ⊆ interior (q ⁻¹' A) :=
     hopen.subset_interior_iff.mpr (preimage_mono interior_subset)
   exact ⟨x, hsub (by change q x ∈ interior A; rw [hx]; exact hmid)⟩
-
-
 
 theorem circle_slab_exterior_interior_nonempty
     {X : Type*} [TopologicalSpace X] (p : ℝ) [Fact (0 < p)]
@@ -50,8 +39,6 @@ theorem circle_slab_exterior_interior_nonempty
   have hsub : Rᶜ ⊆ interior (interior R)ᶜ :=
     hR.isOpen_compl.subset_interior_iff.mpr (compl_subset_compl.mpr interior_subset)
   exact ⟨x, hsub hxR⟩
-
-
 
 theorem PLDomain.inter_closed_exterior
     {X ι : Type*} [TopologicalSpace X]

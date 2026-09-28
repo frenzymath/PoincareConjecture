@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import PoincareConjecture.Definitions.M45ModelAnalytics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M47ComponentAnalyticBounds (C : ℝ) where
   duration : ℝ

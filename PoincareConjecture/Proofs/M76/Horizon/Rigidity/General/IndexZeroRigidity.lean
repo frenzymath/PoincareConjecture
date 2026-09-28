@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.Pro
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTorusRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleRigidityTransport
 
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -19,9 +17,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
-
-
-
 
 theorem hasHamiltonRelativeTorusRigidity_fixed_zero
     {α β : Type*}
@@ -82,7 +77,6 @@ theorem hasHamiltonRelativeTorusRigidity_zero
     HasHamiltonRelativeTorusRigidity (Fin 0) (Fin 3) L0
       (fun c : charts => (c : OpenPartialHomeomorph X0 V3)) d :=
   hasHamiltonRelativeTorusRigidity_fixed_zero _ d
-
 
 theorem hasHamiltonRelativeTorusRigidity_of_card_zero_three
     {ι κ α β : Type*} [Fintype ι] [Fintype κ]

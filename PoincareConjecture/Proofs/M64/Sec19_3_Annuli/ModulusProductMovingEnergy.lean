@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingMetricDerivativ
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingMetricMajorant
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ProductRicciTraceBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64ModulusAnnulusEnergy_hasDerivAt_of_local_smooth_variation
     (g : RiemannianMetric n M) (r : ℝ) {v : ℝ × LoopPlane → M}
@@ -71,10 +56,6 @@ theorem m64ModulusAnnulusEnergy_hasDerivAt_of_local_smooth_variation
 
 variable [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
-
-
 theorem m64CircleProduct_modulusEnergyRicci_abs_le
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n)
     (t : ℝ) {r K : ℝ} (hr : 0 < r) (hK : 0 ≤ K)
@@ -113,10 +94,6 @@ theorem m64CircleProduct_modulusEnergyRicci_abs_le
           ((r * (P.flow.metric t).inner (f p) (u 0) (u 0) +
             r⁻¹ * (P.flow.metric t).inner (f p) (u 1) (u 1)) / 2)
       ring
-
-
-
-
 
 theorem m64CircleProduct_annulus_modulusEnergy_derivative_le
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n)

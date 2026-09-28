@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapComp
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapComplexHessian
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceHalfDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,31 +20,15 @@ open BoundaryTangential
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => halfSpace 2
 
-
-
-
-
 def boundaryHalfBall (R : ℝ) : Set Plane := ball 0 R ∩ Half
-
-
-
-
 
 def boundaryClosedHalfBall (R : ℝ) : Set Plane :=
   closedBall 0 R ∩ {z : Plane | 0 ≤ z 0}
-
-
-
-
 
 theorem boundaryComplexCoordinates_im (p : Plane) :
     (boundaryComplexCoordinates p).im = p 0 := by
   simp [boundaryComplexCoordinates, LinearIsometryEquiv.trans_apply,
     Complex.orthonormalBasisOneI_repr_symm_apply, m64BoundaryCoordinateSwap_apply]
-
-
-
-
 
 theorem boundaryComplexCoordinates_preimage_open (R : ℝ) :
     boundaryComplexCoordinates ⁻¹' (ball (0 : ℂ) R ∩ {z | 0 < z.im}) =
@@ -63,10 +37,6 @@ theorem boundaryComplexCoordinates_preimage_open (R : ℝ) :
   simp only [mem_preimage, mem_inter_iff, mem_ball_zero_iff, boundaryComplexCoordinates.norm_map,
     mem_ofPred_eq, boundaryComplexCoordinates_im, boundaryHalfBall, halfSpace]
 
-
-
-
-
 theorem boundaryComplexCoordinates_preimage_closed (R : ℝ) :
     boundaryComplexCoordinates ⁻¹' (closedBall (0 : ℂ) R ∩ {z | 0 ≤ z.im}) =
       boundaryClosedHalfBall R := by
@@ -74,11 +44,6 @@ theorem boundaryComplexCoordinates_preimage_closed (R : ℝ) :
   simp only [mem_preimage, mem_inter_iff, mem_closedBall_zero_iff,
     boundaryComplexCoordinates.norm_map, mem_ofPred_eq, boundaryComplexCoordinates_im,
     boundaryClosedHalfBall]
-
-
-
-
-
 
 theorem boundaryHalfBall_geometry {R : ℝ} (hR : 0 < R) :
     IsOpen (boundaryHalfBall R) ∧ Convex ℝ (boundaryHalfBall R) ∧
@@ -104,11 +69,6 @@ theorem boundaryHalfBall_geometry {R : ℝ} (hR : 0 < R) :
 
 variable {n : ℕ}
 local notation "Target" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
-
-
 
 theorem mixed_quadratic_halfBall_contDiffOn_two
     {R : ℝ} (hR : 0 < R) {T : Set Target} (hT : IsOpen T)

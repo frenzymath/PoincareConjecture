@@ -2,15 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.Separation.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

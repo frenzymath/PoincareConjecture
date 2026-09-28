@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem barycentricDualBlock_eq_of_cofaces_in_subcomplex
     (K L : SimplicialComplex ℝ E) [Fintype K.faces] [Fintype L.faces]

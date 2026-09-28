@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.BlendEnergyIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,9 +10,6 @@ namespace PoincareConjecture.M14
 open Proofs.M09
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem tendsto_integral_shrinking_left {F : ℝ → E} {a b : ℝ} (hab : a < b)
     (hF : IntervalIntegrable F volume a b) :
@@ -45,10 +34,6 @@ theorem tendsto_integral_shrinking_left {F : ℝ → E} {a b : ℝ} (hab : a < b
   exact hlim.comp hmap
 
 variable [CompleteSpace E]
-
-
-
-
 
 theorem tendsto_oneSidedBlend_energy_zero {f g : ℝ → E} {a b : ℝ} (hab : a < b)
     (hf : ContinuousOn f (Icc a b)) (hg : ContinuousOn g (Icc a b))

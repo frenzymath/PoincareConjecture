@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.RawBoundaryReparam
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta : ℝ}
-
-
-
-
 
 theorem m64_boundary_continuous_of_M63
     (A : M63RawApproximation F Gamma zeta)
@@ -46,9 +31,6 @@ theorem m64_boundary_continuous_of_M63
   exact (m64_polygon_boundary_eq_flattened_family A.count_positive
     (boundary := boundary p.1) (A.angular_eq p.1) p.2).symm
 
-
-
-
 theorem m64_polygon_continuous_of_M63
     (A : M63RawApproximation F Gamma zeta) :
     Continuous (fun p : LoopTwoSphere × ℝ => (A.polygon p.1).map p.2) := by
@@ -64,9 +46,6 @@ theorem m64_polygon_continuous_of_M63
   intro p
   exact (boundary p.1).angular_eq p.2
 
-
-
-
 theorem m64_raw_null_of_M63
     (A : M63RawApproximation F Gamma zeta)
     (boundary : ∀ z, M64PolygonBoundary (A.polygon z)) (z : LoopTwoSphere) :
@@ -75,10 +54,6 @@ theorem m64_raw_null_of_M63
     (m64CircleReparamFromFlattening A.count A.count_positive)
     (m64_polygon_boundary_eq_flattened_family A.count_positive
       (boundary := boundary z) (A.angular_eq z))
-
-
-
-
 
 noncomputable def m64RawBoundaryAnnulusPackage_of_annuli
     [T2Space M] [SecondCountableTopology M]

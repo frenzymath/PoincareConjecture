@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportRangeMap
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCap
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportEmbeddingHomologyIso
 
-
-
 set_option autoImplicit false
 
 noncomputable section

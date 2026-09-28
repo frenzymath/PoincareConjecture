@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem image_sub_le_mul_sub_of_finite_deriv_exceptions
     {f f' : ℝ → ℝ} {a b C : ℝ} {events : Set ℝ}
@@ -59,9 +48,6 @@ theorem image_sub_le_mul_sub_of_finite_deriv_exceptions
     apply le_of_tendsto_of_tendsto (hleft.sub_const (f a)) hclock
     filter_upwards [Ico_mem_nhdsLT ht.2.1] with s hs
     exact hbefore s hs
-
-
-
 
 theorem scalar_le_four_inv_sq_of_finite_events
     {f f' : ℝ → ℝ} {duration B r : ℝ} {events : Set ℝ}

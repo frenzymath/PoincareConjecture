@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.CircleComplexPolygon
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.PolygonCircleModels
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

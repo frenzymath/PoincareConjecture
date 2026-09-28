@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,20 +11,16 @@ variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
 
-
 noncomputable def tetrahedronCofaces (t : Triangle A) : Finset (Tetrahedron A) :=
   Finset.univ.filter (fun q => t.val ⊆ q.val)
 
 open Classical in
-
 
 noncomputable def totalTetrahedronChain :
     Module.Dual (ZMod 2) (Tetrahedron A → ZMod 2) :=
   ∑ q : Tetrahedron A, LinearMap.proj q
 
 open Classical in
-
-
 
 noncomputable def markedTriangleChain (B : Triangle A → Prop) :
     Module.Dual (ZMod 2) (Triangle A → ZMod 2) :=
@@ -51,7 +38,6 @@ theorem markedTriangleChain_apply (B : Triangle A → Prop) (c : Triangle A → 
 
 open Classical in
 
-
 theorem boundary3_total_apply (c : Triangle A → ZMod 2) :
     (triangleCoboundary A).dualMap (totalTetrahedronChain A) c =
       ∑ t : Triangle A, (tetrahedronCofaces A t).card • c t := by
@@ -67,8 +53,6 @@ theorem boundary3_total_apply (c : Triangle A → ZMod 2) :
     _ = _ := by simp only [Finset.sum_const]
 
 open Classical in
-
-
 
 theorem boundary3_total_eq_marked (B : Triangle A → Prop)
     (hcofaces : ∀ t : Triangle A,
@@ -87,8 +71,6 @@ theorem boundary3_total_eq_marked (B : Triangle A → Prop)
     exact CharTwo.two_nsmul (c t)
 
 open Classical in
-
-
 
 theorem boundary2_marked_eq_zero (B : Triangle A → Prop)
     (hcofaces : ∀ t : Triangle A,

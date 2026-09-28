@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderCurvature
 import PoincareConjecture.Proofs.M45.Ch9_Models.ScalarJetConstancy
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RicciJetNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +31,6 @@ noncomputable local instance modelScalarTwoJetNormedSpace :
 
 set_option maxHeartbeats 800000 in
 
-
-
 theorem model_evolvingCylinder_ricci_basis {t : ℝ} (ht : t < 1)
     (x : E) (i j : Fin 3) :
     jetRicci (metricTwoJet (evolvingCylinderModelField t) x) (e i) (e j) =
@@ -58,8 +47,6 @@ theorem model_evolvingCylinder_ricci_basis {t : ℝ} (ht : t < 1)
       cylinderHorizontalGram, roundCylinderCoordinateBasis,
       EuclideanSpace.inner_single_left, PiLp.proj_apply] <;>
     field_simp [htime, hden] <;> ring
-
-
 
 theorem model_evolvingCylinder_ricciBilinear {t : ℝ} (ht : t < 1) (x : E) :
     jetRicciBilinear (metricTwoJet (evolvingCylinderModelField t) x) =
@@ -78,8 +65,6 @@ theorem model_evolvingCylinder_ricciBilinear {t : ℝ} (ht : t < 1) (x : E) :
     cylinderSphereFactor, modelCylinderDenominator]
   ring
 
-
-
 theorem model_evolvingCylinder_scalar {t : ℝ} (ht : t < 1) (x : E) :
     jetScalarCurvature (metricTwoJet (evolvingCylinderModelField t) x) = (1 - t)⁻¹ := by
   have htime : 1 - t ≠ 0 := (sub_pos.mpr ht).ne'
@@ -94,9 +79,6 @@ theorem model_evolvingCylinder_scalar {t : ℝ} (ht : t < 1) (x : E) :
     PiLp.proj_apply]
   field_simp [htime, hden]
   ring
-
-
-
 
 theorem model_evolvingCylinder_scalarLaplacian {t : ℝ} (ht : t < 1) (x : E) :
     jetScalarLaplacian (scalarMetricFourJet (evolvingCylinderModelField t) x) = 0 := by

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralBasis
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSmoothing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Basic
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem lintegral_pullbackVolumeDensity_image (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M}

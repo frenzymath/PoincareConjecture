@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.LocalGain
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateEnergy
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 open LeviCivitaData.Dirichlet
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem setIntegral_sq_le_of_ellipticity
     {S : Set (EuclideanSpace ℝ (Fin n))} (hS : IsCompact S)
@@ -53,7 +45,6 @@ theorem setIntegral_sq_le_of_ellipticity
   simpa only [mul_comm] using mul_le_mul_of_nonneg_left
     (g.pullbackVolumeDensity_id_bounds x ha (hell x hx)).2 (sq_nonneg (V x))
 
-
 theorem eLpNorm_inner_le_cutoff {η V : EuclideanSpace ℝ (Fin n) → ℝ}
     {S : Set (EuclideanSpace ℝ (Fin n))} (hS : MeasurableSet S)
     (hone : ∀ x ∈ S, η x = 1) (q : ℝ≥0∞) :
@@ -63,8 +54,6 @@ theorem eLpNorm_inner_le_cutoff {η V : EuclideanSpace ℝ (Fin n) → ℝ}
     simp [hone x hx]
   rw [eLpNorm_congr_ae heq]
   exact eLpNorm_mono_measure _ Measure.restrict_le_self
-
-
 
 theorem exists_uniform_ball_power_step (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :

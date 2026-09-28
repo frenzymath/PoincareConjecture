@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem regularized_arcSecond_identity
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -71,9 +60,6 @@ theorem regularized_arcSecond_identity
   rw [hd]
   dsimp only [m62ArcDerivative]
   ring
-
-
-
 
 theorem regularized_deriv_le [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)

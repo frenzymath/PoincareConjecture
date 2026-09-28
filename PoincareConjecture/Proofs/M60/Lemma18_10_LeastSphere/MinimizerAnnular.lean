@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularArea
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory Topology
@@ -23,9 +10,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 def M60SphereAnnularReplacement (g : RiemannianMetric n M) : Prop :=
   ∀ (s : ℕ → UnitTwoSphere → M)

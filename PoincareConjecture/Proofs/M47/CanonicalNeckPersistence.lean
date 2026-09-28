@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckNormalization
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_neck_of_normalized_comparison
     {g h : RiemannianMetric 3 M} (N : EpsilonNeck g) (D : LeviCivitaData h)
@@ -65,8 +55,6 @@ theorem exists_neck_of_normalized_comparison
     metric_comparison := ⟨by simpa only [hscale] using hclose⟩ }
   exact ⟨N', rfl, rfl, rfl, rfl, rfl, rfl, rfl, HEq.rfl⟩
 
-
-
 theorem continuous_scalar_at_fixed_point
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J) (x : M) :
     Continuous (fun s : J => (F.connection s.val).scalarCurvature x) := by
@@ -77,9 +65,6 @@ theorem continuous_scalar_at_fixed_point
     (hC.scalar_regular 3 M J F).continuousOn
   have h := hscalar.comp_continuous hmap (fun s => ⟨s.property, mem_univ x⟩)
   exact h
-
-
-
 
 theorem eventually_same_epsilon_neck [T3Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeLowerNormalizedW
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RegularCurveBoundaryC1
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceAffineClassical
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,10 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
-
 
 theorem lower_boundary_contMDiff_representative
     (A : M64FreeWeakPhaseAnnulus (n := n + 1) e Robs c0 c1 H0 H1 k degree)

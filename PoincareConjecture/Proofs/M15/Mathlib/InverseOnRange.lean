@@ -1,21 +1,9 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
-
-
-
 
 theorem IsLocalDiffeomorph.contMDiffOn_invFun_of_injective
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

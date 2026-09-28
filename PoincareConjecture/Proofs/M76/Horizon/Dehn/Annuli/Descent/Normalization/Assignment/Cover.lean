@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.A
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteMarkedFaceCover
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdgeStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -24,9 +15,6 @@ variable {U V M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M] {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_relative_face_chart_cover (step : Step s t)
     {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.ClosedPullbackCoefficients
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowJetLimits
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {n : ℕ} {J : Set ℝ} (F : RicciFlow n (EuclideanSpace ℝ (Fin n)) J)
 
-
-
 theorem contDiffOn_euclideanCoefficients :
     ContDiffOn ℝ ∞ (fun p : ℝ × EuclideanSpace ℝ (Fin n) =>
       (F.metric p.1).euclideanCoefficients p.2) (J ×ˢ univ) := by
@@ -36,9 +24,6 @@ theorem contDiffOn_euclideanCoefficients :
       isOpen_univ (contMDiffOn_id (I := 𝓡 n))
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem hasDerivAt_euclideanCoefficients (hJ : IsOpen J) {t : ℝ} (ht : t ∈ J)
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -62,8 +47,6 @@ theorem hasDerivAt_euclideanCoefficients (hJ : IsOpen J) {t : ℝ} (ht : t ∈ J
   exact heq.symm
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem euclideanSpatialJet_mem_domain (t : ℝ) (x : EuclideanSpace ℝ (Fin n)) :
     spatialJet 2 (fun p : ℝ × EuclideanSpace ℝ (Fin n) =>

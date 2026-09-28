@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +7,8 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 def cylinderAxialReflection (s : ℝ) (z : StandardCylinderSpace) : StandardCylinderSpace :=
   (z.1, s - z.2)
-
 
 theorem cylinderAxialReflection_contMDiff (s : ℝ) :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞
@@ -29,7 +16,6 @@ theorem cylinderAxialReflection_contMDiff (s : ℝ) :
   contMDiff_fst.prodMk (contMDiff_const.sub contMDiff_snd)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem cylinderAxialReflection_mfderiv (s : ℝ) (z : StandardCylinderSpace)
     (v : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) :
@@ -50,8 +36,6 @@ theorem cylinderAxialReflection_mfderiv (s : ℝ) (z : StandardCylinderSpace)
     hd, mfderiv_fst, mfderiv_snd]
   rfl
 
-
-
 theorem cylinderAxialReflection_metric (s t : ℝ) (z : StandardCylinderSpace)
     (v w : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) :
     standardCylinderInner t (cylinderAxialReflection s z) (v.1, -v.2) (w.1, -w.2) =
@@ -62,13 +46,9 @@ theorem cylinderAxialReflection_metric (s t : ℝ) (z : StandardCylinderSpace)
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endAxialReflection (e : StandardCylindricalEnd g) (s : ℝ)
     (x : StandardCapSpace) : StandardCapSpace :=
   e.coordinate (cylinderAxialReflection s (e.inverse x))
-
-
 
 theorem endAxialReflection_coordinate (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 ≤ z.2) :
@@ -76,15 +56,11 @@ theorem endAxialReflection_coordinate (e : StandardCylindricalEnd g) (s : ℝ)
   rw [endAxialReflection, e.coordinate_left_inverse ⟨mem_univ _, hz⟩]
   rfl
 
-
-
 theorem endAxialReflection_involutive (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 ≤ z.2) (hsz : 0 ≤ s - z.2) :
     endAxialReflection e s (endAxialReflection e s (e.coordinate z)) = e.coordinate z := by
   rw [endAxialReflection_coordinate e s hz, endAxialReflection_coordinate e s hsz]
   simp
-
-
 
 theorem endAxialReflection_contMDiffAt (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < s - z.2) :
@@ -101,7 +77,6 @@ theorem endAxialReflection_contMDiffAt (e : StandardCylindricalEnd g) (s : ℝ)
   exact hc.comp (e.coordinate z) (ht.comp (e.coordinate z) (end_inverse_contMDiffAt e hz))
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem endAxialReflection_mfderiv (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < s - z.2)
@@ -135,7 +110,6 @@ theorem endAxialReflection_mfderiv (e : StandardCylindricalEnd g) (s : ℝ)
   exact congrArg (cylinderAxialReflection s) hleft
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem endAxialReflection_metric (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < s - z.2)

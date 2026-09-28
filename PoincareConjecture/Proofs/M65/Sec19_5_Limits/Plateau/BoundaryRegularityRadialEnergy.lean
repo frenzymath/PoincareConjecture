@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityCa
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadialIntegral
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPowerDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ universe u
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
-
 
 theorem weakDisk_boundary_memLp_uniform {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M} :
@@ -70,8 +58,6 @@ theorem weakDisk_boundary_memLp_uniform {M : Type u} {N : ℕ}
   simp only [weakDiskBoundaryField, Fin.sum_univ_two, Pi.add_apply, PiLp.add_apply,
     PiLp.smul_apply, smul_eq_mul, a, P]
 
-
-
 theorem weakDisk_boundary_memLp {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
     (F : M65WeakDisk e γ) {p : ℂ} (hp : ‖p‖ = 1) :
@@ -81,10 +67,6 @@ theorem weakDisk_boundary_memLp {M : Type u} {N : ℕ}
         ∀ i, MemLp (weakDiskBoundaryField F p i) 2 (volume.restrict S) := by
   obtain ⟨R, hR, h⟩ := weakDisk_boundary_memLp_uniform (e := e) (γ := γ)
   exact ⟨R, hR, h F hp⟩
-
-
-
-
 
 theorem weakDisk_boundary_energy_le {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -122,9 +104,6 @@ theorem weakDisk_boundary_energy_le {M : Type u} [TopologicalSpace M]
   exact setIntegral_mono_set (F.energy_integrable g he hinj hemb compact)
     (ae_of_all _ fun z => embeddedEnergyDensity_nonneg g e F.value
       (fun i z => F.derivative i z) z) (ae_of_all _ fun _ hz => hcap hz)
-
-
-
 
 theorem local_halfDisk_radial {f : LoopPlane → ℝ} {R : ℝ} (hR : 0 < R)
     (hf : IntegrableOn f (closedBall (0 : LoopPlane) R ∩ {z | 0 ≤ z 1})) :
@@ -202,10 +181,6 @@ theorem local_halfDisk_radial {f : LoopPlane → ℝ} {R : ℝ} (hR : 0 < R)
       _ = _ := setIntegral_congr_set Ico_ae_eq_Icc
   rw [hint] at hr
   exact ⟨by simpa only [IntegrableOn, hμ] using hgi, hr.2⟩
-
-
-
-
 
 theorem boundaryMinimum_radial_energy_inequality_uniform {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -354,8 +329,6 @@ theorem boundaryMinimum_radial_energy_inequality_uniform {M : Type u} [Topologic
     exact hEr.trans (hlarge.trans (by
       simpa only [mul_assoc] using mul_le_mul_of_nonneg_right hbK hX))
 
-
-
 theorem boundaryMinimum_radial_energy_inequality {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
     (g : RiemannianMetric 3 M) {e : M → EuclideanSpace ℝ (Fin N)}
@@ -378,9 +351,6 @@ theorem boundaryMinimum_radial_energy_inequality {M : Type u} [TopologicalSpace 
     boundaryMinimum_radial_energy_inequality_uniform g he hinj hemb compact hγ hsmooth
       hregular F hmin hp
   exact ⟨R, K, hR, hK, h hp (by simpa only [dist_self] using hη)⟩
-
-
-
 
 theorem boundaryMinimum_energy_power_decay_uniform {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -414,8 +384,6 @@ theorem boundaryMinimum_energy_power_decay_uniform {M : Type u} [TopologicalSpac
       rw [uIcc_of_le hrR.le, uIcc_of_le hR.le]
       exact Icc_subset_Icc hr.le le_rfl)
   · exact hineq r hr hrR
-
-
 
 theorem boundaryMinimum_energy_power_decay {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}

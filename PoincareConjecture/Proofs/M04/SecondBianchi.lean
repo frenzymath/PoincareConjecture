@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import PoincareConjecture.Proofs.M04.RiemannRegularity
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -302,4 +298,3 @@ theorem riemann_second_bianchi (D : LeviCivitaData g) (x : M)
   simpa [V, W, A] using hFinal
 
 end PoincareConjecture.M04
-

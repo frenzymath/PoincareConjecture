@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapVolume
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapScalar
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedScalarSup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -49,9 +40,6 @@ private theorem size_normalization {Q S T : ℝ} (hQ : 0 < Q) (hS : 0 < S) (hT :
   have hcube := pow_le_pow_left₀ (mul_nonneg hm (Real.rpow_nonneg hS.le _)) hfirst 3
   rw [mul_pow, mul_pow, ← hthree S hS.le, ← hthree T hT.le] at hcube
   simpa only [show (2 : ℝ) ^ 3 = 8 by norm_num] using hcube
-
-
-
 
 theorem blowupSequence_cap_size_bounds (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

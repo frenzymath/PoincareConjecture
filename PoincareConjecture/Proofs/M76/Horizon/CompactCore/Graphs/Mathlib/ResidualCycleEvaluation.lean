@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Graphs.Mathlib.Residual
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Graphs.Mathlib.DualWalkCochain
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.CocycleWalkValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 
 variable {V : Type*} [DecidableEq V] {A : AbstractSimplicialComplex V}
-
-
 
 theorem walkValue_eq_count_of_edge_indicator
     (c : A.toPreAbstractSimplicialComplex.ModTwoEdgeCocycle)
@@ -39,9 +28,6 @@ end PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 open PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace AbstractSimplicialComplex
-
-
-
 
 theorem exists_detected_cycle_of_residual_edge
     {V : Type*} [Fintype V] [DecidableEq V] (A : AbstractSimplicialComplex V)

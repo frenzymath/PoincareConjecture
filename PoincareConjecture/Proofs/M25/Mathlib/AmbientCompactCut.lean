@@ -1,20 +1,8 @@
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem Topology.IsOpenEmbedding.compactCut_topology
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]

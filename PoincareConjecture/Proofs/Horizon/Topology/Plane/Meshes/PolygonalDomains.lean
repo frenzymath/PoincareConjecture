@@ -1,16 +1,4 @@
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Compact
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Classical
@@ -20,7 +8,6 @@ namespace Poincare.Topology.Plane.Meshes
 namespace TriangleMesh
 
 variable (T : TriangleMesh)
-
 
 def triangleCarrier (t : Finset T.Vertex) : Set Plane :=
   convexHull ℝ (T.position '' (t : Set T.Vertex))
@@ -44,8 +31,6 @@ theorem closure_interior_triangleCarrier (t : T.Triangle) :
   rw [(convex_convexHull ℝ _).closure_interior_eq_closure_of_nonempty_interior
     (T.interior_triangleCarrier_nonempty t)]
   exact (t.1.finite_toSet.image T.position).isClosed_convexHull ℝ |>.closure_eq
-
-
 
 theorem IsMonochromatic.interior_disjoint_zero {l : Plane →ᵃ[ℝ] ℝ}
     (hmono : T.IsMonochromatic l) (hsurj : Function.Surjective l) (t : T.Triangle) :
@@ -73,8 +58,6 @@ theorem IsMonochromatic.interior_disjoint_zero {l : Plane →ᵃ[ℝ] ℝ}
       l.continuous_of_finiteDimensional,
       interior_Iic] at hzi
     exact (ne_of_lt hzi) hz0
-
-
 
 theorem exists_restriction_support_eq_closure_with_refinement {U : Set Plane} (hU : IsOpen U)
     (hUT : closure U ⊆ T.toPlaneComplex.support)
@@ -118,7 +101,6 @@ theorem exists_restriction_support_eq_closure_with_refinement {U : Set Plane} (h
   exact ⟨S, subset_antisymm hSU
     (closure_minimal hUS S.toPlaneComplex.isCompact_support.isClosed), rfl⟩
 
-
 theorem exists_restriction_support_eq_closure {U : Set Plane} (hU : IsOpen U)
     (hUT : closure U ⊆ T.toPlaneComplex.support)
     (hfront : ∀ t : T.Triangle, Disjoint (interior (T.triangleCarrier t.1)) (frontier U)) :
@@ -127,8 +109,6 @@ theorem exists_restriction_support_eq_closure {U : Set Plane} (hU : IsOpen U)
   exact ⟨S, hs⟩
 
 end TriangleMesh
-
-
 
 theorem exists_triangleMesh_of_frontier_in_finitely_many_lines_with_refinement
     {U : Set Plane} (hU : IsOpen U) (hbounded : Bornology.IsBounded U)
@@ -162,7 +142,6 @@ theorem exists_triangleMesh_of_frontier_in_finitely_many_lines_with_refinement
   obtain ⟨S, hs, hS⟩ :=
     T.exists_restriction_support_eq_closure_with_refinement hU hUT hfront
   exact ⟨S, hs, b, _, hS, hs ▸ hbint⟩
-
 
 theorem exists_triangleMesh_of_frontier_in_finitely_many_lines
     {U : Set Plane} (hU : IsOpen U) (hbounded : Bornology.IsBounded U)

@@ -5,8 +5,6 @@ open Set Metric Geometry Topology
 
 namespace Geometry.SimplicialComplex
 
-
-
 theorem face_mem_subcomplex_of_centroid
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (K L : SimplicialComplex ℝ E) [Fintype K.faces] [Fintype L.faces]
@@ -37,7 +35,6 @@ theorem jointSheetIndex_rev (swap : Bool) (j : Fin 2) :
   cases swap <;> rfl
 
 open Classical in
-
 
 theorem ComponentBranchModel.exists_incident_joint_signs
     {X ι : Type*} [TopologicalSpace X]

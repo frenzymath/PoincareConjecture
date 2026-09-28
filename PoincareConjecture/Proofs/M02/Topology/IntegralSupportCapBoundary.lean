@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCap
 import PoincareConjecture.Proofs.M02.Topology.IntegralCapDegrees
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

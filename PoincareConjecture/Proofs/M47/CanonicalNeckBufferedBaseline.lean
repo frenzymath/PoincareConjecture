@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckTerminalMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckNearbyPhysical
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem eventually_original_buffer_physical_necks
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T epsilon d b : ℝ}

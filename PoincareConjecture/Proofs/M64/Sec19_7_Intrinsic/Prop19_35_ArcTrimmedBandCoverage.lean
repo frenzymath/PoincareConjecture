@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandChainFronti
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutContacts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcRelativeBoundaryCover
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +30,6 @@ private theorem exists_adjacent_cell {n : ℕ} (c : Fin (n + 1) → ℝ)
   exact le_of_not_gt (Fin.find_min hex (show i.castSucc < j by
     rw [← hij]
     exact Fin.castSucc_lt_succ))
-
-
-
 
 theorem m64Intrinsic_arc_trimmed_band_chain_covers_region
     {gamma d : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

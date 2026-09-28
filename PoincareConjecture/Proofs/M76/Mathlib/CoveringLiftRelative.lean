@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringHomeomorphLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set unitInterval
@@ -17,8 +8,6 @@ namespace IsCoveringMap
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
   {p : E → X} (hp : IsCoveringMap p)
-
-
 
 theorem identityHomotopyLift_deck {f : C(X, X)}
     (H : (ContinuousMap.id X).Homotopy f)
@@ -40,9 +29,6 @@ theorem identityHomotopyLift_deck {f : C(X, X)}
     · rw [hp.identityHomotopyLift_zero, hp.identityHomotopyLift_zero]
   exact congrFun hpaths t
 
-
-
-
 theorem identityHomotopyLift_fixed {f : C(X, X)}
     (H : (ContinuousMap.id X).Homotopy f) {e : E}
     (he : ∀ t, H (t, p e) = p e) (t : I) :
@@ -55,8 +41,6 @@ theorem identityHomotopyLift_fixed {f : C(X, X)}
   exact h.trans (hp.identityHomotopyLift_zero H e)
 
 include hp in
-
-
 
 theorem exists_relative_homeomorph_lift (g : X ≃ₜ X) (S : Set X)
     (H : (ContinuousMap.id X).HomotopyRel ⟨g, g.continuous⟩ S) :

@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M03.Existence.QuasilinearDeTurckNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
-
-
-
-
 
 theorem exists_contDiffOn_fixedPoint_of_open_domain
     {P X : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P] [CompleteSpace P]

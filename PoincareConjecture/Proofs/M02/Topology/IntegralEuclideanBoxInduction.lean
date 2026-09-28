@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCapThreeCano
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportEmpty
 import PoincareConjecture.Proofs.M02.IntegralOpenCapData
 
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -290,7 +288,6 @@ theorem integralEuclideanOpenCapProperty_union
       hI4 (q + 1) (by omega)
     exact (integralCompactSupportOpenMayerVietoris_exact_union U V hU hV q).isZero_of_both_isZero
       hpair hnext
-
 
 set_option maxHeartbeats 800000 in
 

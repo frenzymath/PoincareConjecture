@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FullSubco
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.VertexStarHalfBalls
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.VertexStarZeroDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -51,9 +42,6 @@ end Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_original_side_star_halfballs
     {X ι : Type*} [MetricSpace X]

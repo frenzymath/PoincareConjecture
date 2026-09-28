@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapDistance
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -52,8 +44,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
 
-
-
 theorem inverse_tangentNorm_bound
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (phi : PartialDiffeomorph (𝓡 3) (𝓡 3) M N ∞) (A : ℝ)
@@ -80,9 +70,6 @@ theorem inverse_tangentNorm_bound
   have hnorm := congrArg₂ (fun z : N => fun w : EuclideanSpace ℝ (Fin 3) => h.tangentNorm z w)
     (phi.right_inv hy) hd
   exact (hbound (phi.invFun y) hsource _).trans_eq (congrArg (fun z : ℝ => A * z) hnorm)
-
-
-
 
 theorem ball_subset_image_of_tangentNorm_lower [T3Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

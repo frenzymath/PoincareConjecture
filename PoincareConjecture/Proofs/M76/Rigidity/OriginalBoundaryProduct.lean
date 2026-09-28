@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalOppositeCollars
 import PoincareConjecture.Proofs.M76.Rigidity.MatchedBoundaryProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
-
 
 theorem PLDomain.exists_small_boundary_product_of_interiors_nonempty
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

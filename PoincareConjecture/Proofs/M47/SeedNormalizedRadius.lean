@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedNormalizedM15
 import PoincareConjecture.Proofs.M47.OldRecentSplit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

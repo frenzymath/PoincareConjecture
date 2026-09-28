@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasCorrection
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.PLCarrierMotion
-
-
-
-
 
 theorem preserves_halfspace_and_fixes_plane
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

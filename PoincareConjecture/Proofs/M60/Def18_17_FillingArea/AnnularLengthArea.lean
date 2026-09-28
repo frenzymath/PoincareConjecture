@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularLengthMap
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ScalarFactorArea
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m60AnnularLengthMap_area_zero
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

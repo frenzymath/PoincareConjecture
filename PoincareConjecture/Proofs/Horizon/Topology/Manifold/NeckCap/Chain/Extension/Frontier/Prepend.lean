@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.SuccessorThreeQuarter
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.InnerSlabCover
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.HilbertFormBasisNative
 import PoincareConjecture.Proofs.M03.Existence.HilbertParabolicNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralScaleNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -24,7 +16,6 @@ open SpectralHeatNative (State)
 variable {V H : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [CompleteSpace V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
-
 
 def scaleValue (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hnorm : ‖J‖ ≤ 1) (k : ℕ) :
@@ -62,7 +53,6 @@ theorem scaleValue_denseRange (J : V →L[ℝ] H) (hc : IsCompactOperator J)
   (eigenbasis J hc hd).repr.symm.surjective.denseRange.comp
     (SpectralHeatNative.scaleDecode_denseRange _ _) (eigenbasis J hc hd).repr.symm.continuous
 
-
 def InHilbertScale (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hnorm : ‖J‖ ≤ 1) (k : ℕ) (u : H) : Prop :=
   SpectralHeatNative.InScale (generatorParameters J hc hd hnorm) k
@@ -98,7 +88,6 @@ theorem scaleValue_one (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     exact (eq_div_iff hq).mpr (sqrt_eigenparameter_mul_shifted J hc hd hnorm i)
   rw [heq]
 
-
 theorem inHilbertScale_one_iff (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hinj : Function.Injective J) (hnorm : ‖J‖ ≤ 1) (u : H) :
     InHilbertScale J hc hd hnorm 1 u ↔ u ∈ Set.range J := by
@@ -123,7 +112,6 @@ theorem scaleValue_two (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     rw [generatorParameters_coe]
     ring
   rw [heq, inv_inv]
-
 
 theorem inHilbertScale_two_iff (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hnorm : ‖J‖ ≤ 1) (u : H) :

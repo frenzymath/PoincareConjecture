@@ -12,23 +12,12 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.NativeLevelGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 private theorem saddle_nested_selected_comparison_fillings
     (hP : PlanarSchoenfliesService)

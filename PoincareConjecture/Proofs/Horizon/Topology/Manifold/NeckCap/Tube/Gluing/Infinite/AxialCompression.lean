@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.CylinderGluing
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_axial_compression (a b : ℝ) {δ : ℝ} (hδ : 0 < δ) :
     ∃ C : Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞,
@@ -99,8 +88,6 @@ theorem exists_axial_compression (a b : ℝ) {δ : ℝ} (hδ : 0 < δ) :
     apply hkmono.lt_iff_lt.mp
     rw [(hinverse (q, s)).2, (hinverse (q, t)).2]
     exact hst
-
-
 
 theorem exists_compression_into_open (V : Opens RoundCylinderSpace) (a b : ℝ)
     (hV : ∀ p : RoundCylinderSpace, p.2 ≤ a → p ∈ V) :

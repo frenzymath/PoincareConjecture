@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Localization
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Topology
@@ -19,7 +12,6 @@ open Sobolev.Weak Sobolev.NirenbergEuclidean
 
 variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem memLp_continuous_mul_of_hasCompactSupport
     {a v : E → ℝ} (ha : Continuous a) (hv : MemLp v 2 volume)
@@ -33,7 +25,6 @@ theorem memLp_continuous_mul_of_hasCompactSupport
     · simp [hx, image_eq_zero_of_notMem_tsupport hx]
   rw [← heq]
   exact (memLp_indicator_iff_restrict (isClosed_tsupport v).measurableSet).mpr hlocal
-
 
 theorem weakEquation_congr_restrict
     {O V : Set E} (hVO : V ⊆ O)
@@ -68,8 +59,6 @@ theorem weakEquation_congr_restrict
   by_cases hx : x ∈ V
   · simp only [ha hx, hp _ hx, Finset.sum_mul]
   · simp [hderivzero _ x hx]
-
-
 
 theorem exists_localized_weakEquation [NeZero n]
     {O : Set E} (hO : IsOpen O) (A : E → Matrix (Fin n) (Fin n) ℝ)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularLengthMap
 import PoincareConjecture.Proofs.M60.Mathlib.CompactExtendedLipschitz
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,15 +10,9 @@ open scoped Topology ContDiff NNReal ENNReal
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m64PolarAnnulusMap {Y : Type*} (f : LoopPlane → Y)
     (z : LoopPlane) : Y :=
   f (annulusPoint (m60PlaneAngle z) (2 * ‖z‖ - 1))
-
-
-
 
 theorem m64PolarAnnulusMap_eq_polar
     {Y : Type*} {f : LoopPlane → Y}
@@ -46,9 +29,6 @@ theorem m64PolarAnnulusMap_eq_polar
   exact m60Periodic_eq_of_angularPoint_eq
     (show Function.Periodic (fun x => f (annulusPoint x (2 * ‖z‖ - 1))) rampPeriod from
       fun x => hperiodic x _) heq
-
-
-
 
 theorem m64_periodic_rectangle_representative
     {Y : Type*} {f : LoopPlane → Y}
@@ -69,9 +49,6 @@ theorem m64_periodic_rectangle_representative
   have h := hp.int_mul k y
   simpa only [y, sub_add_cancel] using h.symm
 
-
-
-
 theorem m64PolarAnnulusMap_polar
     {Y : Type*} {f : LoopPlane → Y}
     (hperiodic : ∀ x s : ℝ,
@@ -85,9 +62,6 @@ theorem m64PolarAnnulusMap_polar
   have h := m64PolarAnnulusMap_eq_polar hperiodic hn
     (theta := theta) (by rw [hnorm])
   simpa only [hnorm] using h
-
-
-
 
 theorem m64PolarAnnulusMap_lipschitz
     {Y : Type*} [PseudoEMetricSpace Y] {f : LoopPlane → Y}

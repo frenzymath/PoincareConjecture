@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PureEdgeComplexPolygon
 import Mathlib.Topology.Order.ProjIcc
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

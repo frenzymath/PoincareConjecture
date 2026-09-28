@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_FamilyDensity
 import PoincareConjecture.Proofs.M14.Mathlib.CompactPartialDerivative
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem smallTimeCandidate_family_smooth (E : M14ExponentialFamily G T x)
     {U : Set (G.Horizontal x)} {O : Set G.Point} {η : ℝ} (hη : 0 ≤ η)
@@ -59,9 +47,6 @@ theorem smallTimeCandidate_family_smooth (E : M14ExponentialFamily G T x)
       (spacetimeModel n) ∞ (fun z => E.gamma z.1 z.2) E.domain := E.family_smooth
   exact ⟨hE.comp (contMDiff_snd.prodMk contMDiff_fst).contMDiffOn
     (fun z hz => (hmap z.2 hz.2 z.1 hz.1).1), hmap⟩
-
-
-
 
 theorem exists_smallTimeCandidate_coordinate_bound (E : M14ExponentialFamily G T x)
     (b : G.gaugeCover.index)
@@ -102,10 +87,6 @@ theorem exists_smallTimeCandidate_coordinate_bound (E : M14ExponentialFamily G T
     exact h.contDiffOn
   exact ⟨hcoord, hcoord.exists_uniform_derivWithin_bound_fst
     (uniqueDiffOn_Icc (Real.sqrt_pos.mpr hη)) isCompact_Icc hU hK hKU⟩
-
-
-
-
 
 theorem exists_smallTimeCandidate_density_bound
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)

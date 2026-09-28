@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.E
 import PoincareConjecture.Proofs.Horizon.Analysis.Asymptotics.Harnack
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem finite_backward_distance_bound
     {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -187,8 +174,6 @@ theorem finite_backward_distance_bound
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_finite_limit_distance_error
     (hC : RicciFlowCurvatureTheory.{u}) (hH : HarnackAncientTheory.{u})

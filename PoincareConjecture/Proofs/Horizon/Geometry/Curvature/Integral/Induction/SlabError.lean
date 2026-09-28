@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SectionalIntegral
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.AreaScaleEstimates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M}
-
-
 
 theorem integral_regularLevel_sectionalError_le_with_scale
     (D : LeviCivitaData g)
@@ -137,8 +127,6 @@ theorem integral_regularLevel_sectionalError_le_with_scale
     integral_const, smul_eq_mul, mul_one, Measure.real, Measure.restrict_apply_univ,
     ← Measure.real, Real.volume_real_Icc_of_le hab] at hbound
   linarith only [hbound, hareaErr, hKbound]
-
-
 
 theorem integral_regularLevel_sectionalError_le_of_power_bound
     (D : LeviCivitaData g)

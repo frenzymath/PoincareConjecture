@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace AffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem intrinsicInterior_image_of_injOn (f : E →ᵃ[ℝ] F) (s : Set E)
     (hf : InjOn f (affineSpan ℝ s)) :
@@ -54,4 +43,3 @@ theorem intrinsicInterior_image_of_injOn (f : E →ᵃ[ℝ] F) (s : Set E)
   rfl
 
 end AffineMap
-

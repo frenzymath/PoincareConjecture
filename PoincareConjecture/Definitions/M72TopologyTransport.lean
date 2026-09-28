@@ -1,21 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -30,7 +14,6 @@ private theorem m72TransportImage {X : Type*}
     (f : X → A.carrier) (U : Set X) :
     (d ∘ f) '' U = d.symm ⁻¹' (f '' U) := by
   rw [Set.image_comp, d.image_eq_preimage_symm]
-
 
 noncomputable def SurgeryRegionEquivalence.transportTarget
     {A B C : GeneralizedSliceCarrier.{u}}
@@ -57,7 +40,6 @@ noncomputable def SurgeryRegionEquivalence.transportTarget
   inverse_smooth := E.inverse_smooth.comp d.symm.contMDiff.contMDiffOn
     (fun _ hx => hx)
 
-
 noncomputable def SmoothDisjointUnionData.transportTarget
     {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {A B : GeneralizedSliceCarrier.{u}}
@@ -71,7 +53,6 @@ noncomputable def SmoothDisjointUnionData.transportTarget
   pairwise_disjoint := fun i j hij => (S.pairwise_disjoint i j hij).preimage d.symm
   cover := by
     rw [← Set.preimage_iUnion, S.cover, Set.preimage_univ]
-
 
 noncomputable def SmoothConnectedSumData.transportTarget
     {A B C D : GeneralizedSliceCarrier.{u}}
@@ -119,7 +100,6 @@ noncomputable def SmoothConnectedSumData.transportTarget
     rw [m72TransportImage, ← Set.preimage_union, ← Set.preimage_union,
       S.cover, Set.preimage_univ]
 
-
 theorem SmoothConnectedSumStep.transportTarget
     {A B C : GeneralizedSliceCarrier.{u}}
     (h : SmoothConnectedSumStep A B)
@@ -127,8 +107,6 @@ theorem SmoothConnectedSumStep.transportTarget
     SmoothConnectedSumStep A C := by
   rcases h with ⟨P, Q, hUnion, ⟨S⟩⟩
   exact ⟨P, Q, hUnion, ⟨S.transportTarget d⟩⟩
-
-
 
 theorem SmoothFiniteConnectedSumAssembly.nonempty_transportTarget
     {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
@@ -148,7 +126,6 @@ theorem SmoothFiniteConnectedSumAssembly.nonempty_transportTarget
       disjoint_union := disjointUnion
       operations := hPrefix.tail (hLast.transportTarget d) }⟩
 
-
 noncomputable def SmoothFiniteConnectedSumAssembly.transportTarget
     {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {A B : GeneralizedSliceCarrier.{u}}
@@ -156,8 +133,6 @@ noncomputable def SmoothFiniteConnectedSumAssembly.transportTarget
     (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞) :
     SmoothFiniteConnectedSumAssembly pieces B :=
   Classical.choice (S.nonempty_transportTarget d)
-
-
 
 noncomputable def SurgeryTopologyConclusion.transportPre
     {A A' B : GeneralizedSliceCarrier.{u}}

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval
@@ -21,10 +9,6 @@ open Set Metric unitInterval
 namespace ContinuousMap
 
 variable {Y : Type*} [TopologicalSpace Y] [SimplyConnectedSpace Y]
-
-
-
-
 
 theorem nullhomotopic_addCircle (f : C(UnitAddCircle, Y)) : f.Nullhomotopic := by
   let : Fact (0 < (1 : ℝ)) := ⟨zero_lt_one⟩
@@ -74,9 +58,6 @@ theorem nullhomotopic_addCircle (f : C(UnitAddCircle, Y)) : f.Nullhomotopic := b
     rw [hL s hs]
     exact H.toHomotopy.apply_one ⟨s, hs.1, hs.2.le⟩
 
-
-
-
 theorem nullhomotopic_circle (f : C(Circle, Y)) : f.Nullhomotopic := by
   let e : UnitAddCircle ≃ₜ Circle := AddCircle.homeomorphCircle one_ne_zero
   let ec : C(UnitAddCircle, Circle) := ⟨e, e.continuous⟩
@@ -87,21 +68,12 @@ theorem nullhomotopic_circle (f : C(Circle, Y)) : f.Nullhomotopic := by
     exact congrArg f (e.apply_symm_apply x)
   rwa [he] at h
 
-
-
-
-
 theorem exists_closedDisk_extension_of_simplyConnected (f : C(Circle, Y)) :
     ∃ g : C(closedBall (0 : ℂ) 1, Y),
       ∀ x : Circle, g ⟨x, sphere_subset_closedBall x.property⟩ = f x :=
   f.nullhomotopic_circle.exists_closedBall_extension f
 
 end ContinuousMap
-
-
-
-
-
 
 theorem IsSimplyConnected.exists_circle_extension
     {X : Type*} [TopologicalSpace X] {U : Set X} (hU : IsSimplyConnected U)

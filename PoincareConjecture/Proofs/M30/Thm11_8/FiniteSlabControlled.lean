@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.Restriction
 import PoincareConjecture.Proofs.M30.Generalized.Noncollapse
 import PoincareConjecture.Proofs.M30.Generalized.WorldlineUniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 structure NoncollapsedControlledBlowupCylinder
     (S : GeneralizedBlowupSequence.{u})
@@ -35,8 +21,6 @@ structure NoncollapsedControlledBlowupCylinder
     x ∈ S.baseBall k A →
     GeneralizedKappaNoncollapsedAt
       (S.flow k) (embedding.pointMap s hs x) kappa r₀
-
-
 
 noncomputable def controlledCylinderOfFiniteHorizonSlab
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}
@@ -59,8 +43,6 @@ noncomputable def controlledCylinderOfFiniteHorizonSlab
     FiniteHorizonSlab.closedEmbedding_zero_identity e hT h₀ x hx
   curvature_bound := fun s hs x hx => hcurv s hs x hx
   negative_curvature_bound := fun s hs x hx => hdefect s hs x hx }
-
-
 
 noncomputable def noncollapsedControlledCylinderOfFiniteHorizonSlab
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}
@@ -86,8 +68,6 @@ noncomputable def noncollapsedControlledCylinderOfFiniteHorizonSlab
   noncollapsed := fun s hs x hx =>
     FiniteHorizonSlab.closedEmbedding_noncollapsed e hT s hs x hx }
 
-
-
 theorem ControlledBlowupCylinder.noncollapsed_of_noncollapsed
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}
     {A T B eta kappa r₀ : ℝ}
@@ -109,7 +89,6 @@ theorem ControlledBlowupCylinder.noncollapsed_of_noncollapsed
     ordConnected_Icc ordConnected_Icc hx hx hzero hzero hmeet s hs hs
   rw [hpoint]
   exact N.noncollapsed s hs x hx
-
 
 theorem ControlledBlowupCylinder.noncollapsed_of_noncollapsed_mono
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ}

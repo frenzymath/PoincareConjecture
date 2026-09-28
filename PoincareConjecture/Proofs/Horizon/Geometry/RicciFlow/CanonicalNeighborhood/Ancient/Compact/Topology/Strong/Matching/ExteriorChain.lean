@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.CoreAvoidance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Topology.Global
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -191,9 +180,6 @@ private theorem exists_avoiding_outgoing_extension_threshold :
   · rwa [hnew, hsame.center_eq]
   · rw [← hext.2.2 j hj]
     exact havoid j hj hpos
-
-
-
 
 theorem exists_two_core_avoiding_outgoing_chain_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 1000 ∧

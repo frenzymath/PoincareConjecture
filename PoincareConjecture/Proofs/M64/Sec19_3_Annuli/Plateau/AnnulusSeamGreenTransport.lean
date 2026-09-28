@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamRadialPullbackTest
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,8 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff NNReal
 
 namespace PoincareConjecture
-
-
 
 theorem m64MatchingGreen_seam_pullback
     {m : ℕ} {K : Set LoopPlane} (hK : IsCompact K) (hKO : K ⊆ m64AnnulusSeamDomain)

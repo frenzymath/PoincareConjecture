@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph.Prod
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.CompactEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.SphereCover
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 variable {S : ℕ → FlowCarrier.{0} 3} {g : ∀ k, ℝ → (S k).metric}
   {p : ∀ k, (S k).carrier} {T : ℝ}
-
-
-
 
 theorem not_antipodal_cylinderMap_of_eventually_euclidean
     (G : AncientPointedGeometricConvergence S g p T)
@@ -60,8 +50,6 @@ theorem not_antipodal_cylinderMap_of_eventually_euclidean
 variable {C : Type*} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) C]
 
-
-
 theorem not_antipodal_cover_of_product_of_eventually_euclidean
     (G : AncientPointedGeometricConvergence S g p T)
     (hE : ∀ᶠ i in atTop, Nonempty
@@ -83,9 +71,6 @@ theorem not_antipodal_cover_of_product_of_eventually_euclidean
 
 variable [IsManifold (𝓡 2) ∞ C] [T2Space C] [T3Space C]
   [ConnectedSpace C] [CompactSpace C]
-
-
-
 
 theorem exists_centered_scalarNormalized_roundCylinder_of_round_surface_product
     (G : AncientPointedGeometricConvergence S g p T)

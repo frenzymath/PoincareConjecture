@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Volume.Components
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Normalization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_positive_volume_ancient_limit_of_rescaled_expanding_cylinders_components
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

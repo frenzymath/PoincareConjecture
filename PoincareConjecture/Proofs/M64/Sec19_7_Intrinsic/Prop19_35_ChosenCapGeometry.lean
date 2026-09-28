@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChosenCapFaces
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReflexCornerFrontier
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_chosen_cap_coordinate_data
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 < r)
@@ -78,10 +64,6 @@ theorem m64Intrinsic_chosen_cap_coordinate_data
       rw [htwo]
       simp [C, Function.comp_apply, affineChartSegment, rightTriangleBasis_apply,
         collarParameterEquiv, mul_comm]
-
-
-
-
 
 theorem m64Intrinsic_exists_coordinate_face_of_chosen_cap
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 < r)

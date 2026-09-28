@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Diagonal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricDuality
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +10,6 @@ open Matrix
 namespace Poincare.RicciFlow.Harnack
 
 variable {I J : Type*} [Fintype I] [Fintype J]
-
-
 
 lemma hamiltonBlock_posSemidef_change_coordinates
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
@@ -187,8 +180,6 @@ lemma tensor_four_expansion (g : RiemannianMetric n N)
   apply Finset.sum_congr rfl
   intro d _
   ring
-
-
 
 theorem tensor_block_posSemidef_of_basis
     (g : RiemannianMetric n N)

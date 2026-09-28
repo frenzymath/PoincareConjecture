@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityReflection
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalHolder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
-
-
 
 theorem localMinimum_energy_decay_actual_prefactor
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -59,9 +45,6 @@ theorem localMinimum_energy_decay_actual_prefactor
   exact ac_radial_power_decay hr hrR.le hKpos hE
     (hbound U X hU hmin x r R hr hrR hRU htotal)
 
-
-
-
 theorem diskBoundaryCoordinate_translate (p : ℂ) (s : ℝ) (z : LoopPlane) :
     diskBoundaryCoordinate p (s • EuclideanSpace.basisFun (Fin 2) ℝ 0 + z) =
       diskBoundaryCoordinate (p * Complex.exp (Complex.I * s)) z := by
@@ -73,8 +56,6 @@ theorem diskBoundaryCoordinate_translate (p : ℂ) (s : ℝ) (z : LoopPlane) :
     simp [EuclideanSpace.basisFun_apply]
   rw [hb, Complex.real_smul, mul_one, mul_add, Complex.exp_add]
   ring
-
-
 
 theorem weakDiskBoundaryField_translate {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
@@ -94,10 +75,6 @@ theorem weakDiskBoundaryField_translate {M : Type*} {N : ℕ}
     simpa only [ContinuousLinearMap.comp_id, Function.comp_def, hfunction] using hd.fderiv.symm
   ext j
   simp only [weakDiskBoundaryField, diskBoundaryCoordinate_translate, hderivative]
-
-
-
-
 
 theorem boundaryMinimum_energy_bound_uniform {M : Type*} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -158,9 +135,6 @@ theorem boundaryMinimum_energy_bound_uniform {M : Type*} [TopologicalSpace M]
       rw [Real.div_rpow hr.le hR.le]
       ring
 
-
-
-
 theorem weakDisk_boundary_energy_translate {M : Type*} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
     (g : RiemannianMetric 3 M) {e : M → EuclideanSpace ℝ (Fin N)}
@@ -191,9 +165,6 @@ theorem weakDisk_boundary_energy_translate {M : Type*} [TopologicalSpace M]
   intro z _
   simp only [en, x, m65EmbeddedEnergyDensity, diskBoundaryCoordinate_translate,
     weakDiskBoundaryField_translate]
-
-
-
 
 theorem reflected_energy_density {M : Type*} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -329,10 +300,6 @@ private theorem even_integral_reflection {f : LoopPlane → ℝ}
     boundaryPlaneReflection.toHomeomorph.measurableEmbedding f (closedBall x r)
   simpa only [hpre, heven] using h
 
-
-
-
-
 theorem even_energy_decay_of_halfDisk_and_interior
     {f : LoopPlane → ℝ} {R a b B : ℝ} (_hR : 0 < R) (hR1 : R ≤ 1)
     (hb1 : b ≤ 1) (hB : 0 ≤ B)
@@ -447,10 +414,6 @@ theorem even_energy_decay_of_halfDisk_and_interior
       exact neg_nonneg.mpr (le_of_not_ge hxpos)
     · exact hr
     · exact hrR
-
-
-
-
 
 theorem weakDisk_exists_boundary_full_energy_decay
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

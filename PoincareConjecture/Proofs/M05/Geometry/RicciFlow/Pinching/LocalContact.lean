@@ -1,17 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TensorRegion
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.CarrierContact
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +21,6 @@ omit [T2Space M] in
 private theorem finrank_tangent (x : M) : Module.finrank ℝ (TangentSpace (𝓡 3) x) = 3 := by
   rw [VectorBundle.finrank_eq ℝ (EuclideanSpace ℝ (Fin 3)), finrank_euclideanSpace]
   simp
-
-
 
 theorem tensorLaplacian_nonpos_at_pinching_contact
     (D : LeviCivitaData g) (p : M) {t : ℝ} (ht : 0 ≤ t) :

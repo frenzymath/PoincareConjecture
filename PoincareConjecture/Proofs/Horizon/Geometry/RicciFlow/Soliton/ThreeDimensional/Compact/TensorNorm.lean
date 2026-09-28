@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatProduct
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -106,8 +100,6 @@ lemma RicciFlow.tensorHeatOperator_tensorProduct_two_two
   simp only [RicciFlow.tensorHeatOperator, hp, deriv_fun_mul (hSt _ _) (hTt _ _), ha,
     LeviCivitaData.tensorLaplacian_tensorProduct_two_two _ hS hT hDS hDT]
   ring
-
-
 
 lemma RicciFlow.scalarHeatOperator_tensorTrace_two
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

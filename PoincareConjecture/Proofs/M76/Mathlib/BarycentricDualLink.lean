@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem barycentricDualBlock_link_faces {s : Finset E} (hs : s ∈ K.faces)
     (f : Finset E) :
@@ -130,10 +118,6 @@ theorem barycentricDualBlock_link_faces {s : Finset E} (hs : s ∈ K.faces)
       (he ▸ Finset.mem_union_right s hx) hx
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_barycentricDualLink {s : Finset E} (hs : s ∈ K.faces) :
     ∃ (f : E → E)

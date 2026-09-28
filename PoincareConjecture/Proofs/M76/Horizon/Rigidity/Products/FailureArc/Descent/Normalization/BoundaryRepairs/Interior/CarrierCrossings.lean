@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BoundaryContactFaces
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalBranchCharts
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 open PoincareConjecture.M76.Dehn

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapDistance
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem blowupSequence_selected_point_distance_bound
     (P : M35StandardCapPredecessors)

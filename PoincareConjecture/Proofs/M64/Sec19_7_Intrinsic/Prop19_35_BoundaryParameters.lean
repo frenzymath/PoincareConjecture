@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +8,6 @@ open Set
 open scoped ContDiff Matrix
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_boundary_periodic (radius : ℝ) :
     Function.Periodic (intrinsicAnnulusBoundary radius) rampPeriod := by
@@ -32,9 +18,6 @@ theorem m64Intrinsic_boundary_periodic (radius : ℝ) :
     rw [Real.cos_add_two_pi]
   · change radius * Real.sin (s + 2 * Real.pi) = radius * Real.sin s
     rw [Real.sin_add_two_pi]
-
-
-
 
 theorem m64Intrinsic_exists_boundary_parameter
     {x : AnnulusCoordinates} {radius : ℝ} (hnorm : ‖x‖ = radius) :

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ConnectedMiddle
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -88,9 +80,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
 
 set_option maxHeartbeats 400000 in
 
-
-
-
 theorem exists_terminal_actual_end_disk
     (d : TerminalSaddleGeometry M P p e) (i : d.ends.EndIndex) :
     ∃ m : OpenPartialHomeomorph E2 S2,
@@ -125,7 +114,6 @@ theorem exists_terminal_actual_end_disk
     rw [A.region_eq_image]
     exact hmc.trans (union_comm (i.1.1.chart '' closedBall (0 : E2) 1)
       (A.chart '' (univ ×ˢ Icc d.ends.upperCut i.1.1.center)))
-
 
 theorem exists_terminal_actual_end_disks
     (d : TerminalSaddleGeometry M P p e) :

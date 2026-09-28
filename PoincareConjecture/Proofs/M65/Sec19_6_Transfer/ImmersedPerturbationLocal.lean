@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationInvers
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFamily
 import PoincareConjecture.Proofs.M09.ChartVelocity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,10 +78,6 @@ private theorem chart_angular_derivative
       w.1.1 hq hcurve)
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem exists_angular_neighborhood
     (c : ((ℝ × P) × ℝ) → M) (U : Set ((ℝ × P) × ℝ)) (hU : IsOpen U)

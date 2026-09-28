@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarChartLocalLipschitz
 import PoincareConjecture.Proofs.M40.Mathlib.LocalSmoothLipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {n : ℕ} {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem scalar_locallyChartLipschitz_of_intrinsic
     (g : RiemannianMetric n M) {f : Plane → M} {O : Set Plane}

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsOpenMetrics
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenReadout
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_precompact_flow
     {n : ℕ} {ι : Type*} {P : ι → Type*} {N : Type*}

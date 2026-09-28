@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.EmptyTriangle
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.SupportingVertex
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.TriangleRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ} {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.admissibleVertex_of_triangle_arc (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (a : Fin n)
@@ -106,9 +95,6 @@ theorem IsSimplePolygon.admissibleVertex_of_triangle_arc (hp : IsSimplePolygon p
   · change polygonVertexTriangle p c ⊆ closure (polygonInterior p)
     rw [hTclosure]
     exact hnested.2
-
-
-
 
 theorem IsSimplePolygon.exists_admissible_vertex_away_edge (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) (hn : 3 < n) (i : Fin n) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.FlowBox
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Uniqueness.Open
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE.LocalFlow
@@ -47,10 +37,6 @@ private theorem transverse_eq_of_flowBox_visit
   have heq := Poincare.ODE.eqOn_of_hasDerivAt isOpen_univ hV.contDiffOn
     isOpen_Ioo (convex_Ioo (-ε) ε).isPreconnected hα hη hu hinit
   simpa only [α, add_zero] using heq (show (0 : ℝ) ∈ Ioo (-ε) ε from ⟨by linarith, hε⟩)
-
-
-
-
 
 theorem exists_flowBox_transverse_returns
     {V : EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)}

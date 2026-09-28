@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.OneBoundaryDisk
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open scoped unitInterval

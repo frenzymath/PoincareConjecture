@@ -1,3 +1,1 @@
 import PoincareConjecture.Definitions.M16StructuralKappa
-
-

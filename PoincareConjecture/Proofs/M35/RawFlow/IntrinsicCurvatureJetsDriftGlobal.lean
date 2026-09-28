@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsVelocity
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialFamilyBounds
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothGaugeIdentity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 open SmoothRadial RadialGauge
-
-
 
 theorem raw_intrinsic_gauge_drift_controls
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

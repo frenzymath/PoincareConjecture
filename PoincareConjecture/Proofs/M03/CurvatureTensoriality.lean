@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Curvature
 import PoincareConjecture.Proofs.M03.ConnectionRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

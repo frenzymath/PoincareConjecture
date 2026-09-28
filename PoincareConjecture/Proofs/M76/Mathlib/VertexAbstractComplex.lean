@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialEmbeddingSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ namespace Geometry.SimplicialComplex
 section General
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
-
-
 
 def vertexAbstractComplex (K : SimplicialComplex 𝕜 E) : AbstractSimplicialComplex K.vertices where
   faces := {s | s.map (Function.Embedding.subtype _) ∈ K.faces}
@@ -33,8 +21,6 @@ def vertexAbstractComplex (K : SimplicialComplex 𝕜 E) : AbstractSimplicialCom
     change ({v} : Finset K.vertices).map (Function.Embedding.subtype _) ∈ K.faces
     rw [Finset.map_singleton]
     exact v.property
-
-
 
 theorem faces_eq_vertexAbstractComplex_images (K : SimplicialComplex 𝕜 E) :
     K.faces = {t : Finset E | ∃ s ∈ K.vertexAbstractComplex.faces,
@@ -60,8 +46,6 @@ theorem faces_eq_vertexAbstractComplex_images (K : SimplicialComplex 𝕜 E) :
     change s.map (Function.Embedding.subtype _) ∈ K.faces at hs
     rwa [heq] at hs
 
-
-
 theorem finite_vertexAbstractComplex_faces {K : SimplicialComplex 𝕜 E}
     (hK : K.faces.Finite) : K.vertexAbstractComplex.faces.Finite :=
   Set.Finite.preimage (Finset.map_injective (Function.Embedding.subtype _)).injOn hK
@@ -70,8 +54,6 @@ end General
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem isRadialEmbedding_vertex_inclusion (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space) :
@@ -79,9 +61,6 @@ theorem isRadialEmbedding_vertex_inclusion (K : SimplicialComplex ℝ E)
   ⟨Subtype.val_injective, K, K.faces_eq_vertexAbstractComplex_images, hlin, hinj⟩
 
 variable [DecidableEq E]
-
-
-
 
 theorem isRadialEmbedding_link_vertex_inclusion (K : SimplicialComplex ℝ E) :
     (K.link 0).vertexAbstractComplex.IsRadialEmbedding ((↑) : (K.link 0).vertices → E) :=

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CountableCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Connectedness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,8 +9,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem quotient_preconnected_of_regular_component_covers
     {ι : Type v} {X : ι → Type*} [∀ i, MetricSpace (X i)]
@@ -136,9 +124,6 @@ theorem quotient_preconnected_of_regular_component_covers
 end PoincareConjecture.ChartDistance
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem regularChartQuotient_preconnected
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

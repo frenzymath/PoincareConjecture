@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonica
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stackMorseMeridian_geometry
     (rFlat rOne v0 v1 rho lambda : ℝ)
@@ -152,8 +141,6 @@ theorem stackMorseMeridian_geometry
   refine ⟨hwc, hpole, hzero, hbounds, hderiv, hmono, ?_⟩
   simpa only [hpole, hzero] using ContinuousOn.image_Icc_of_monotoneOn
     (by norm_num : (-1 : ℝ) ≤ 0) hwc.continuousOn hmono.monotoneOn
-
-
 
 theorem stackMorseMeridian_pole_and_seam
     (rFlat rOne v0 v1 rho lambda : ℝ)

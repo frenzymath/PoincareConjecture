@@ -53,8 +53,6 @@ theorem complementaryCentroid_triangle_val
   change (((K.vertexFaceEquiv 3).symm t).val.map (Function.Embedding.subtype _)).centroid ℝ id = _
   rw [K.vertexFaceEquiv_symm_map]
 
-
-
 theorem residualCofaceContact_subset_selectedDualRim [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices)
     (D : SimpleGraph (PreAbstractSimplicialComplex.ModTwoCochains.Triangle

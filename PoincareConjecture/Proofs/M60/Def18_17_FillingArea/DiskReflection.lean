@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ReflectedArea
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Reparameterization
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 
 omit [T2Space M] in
 
-
 theorem m60Disk_reflection_lipschitz (g : RiemannianMetric 3 M)
     {gamma : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g gamma) (x y : LoopDisk) :
     g.edist (D.map (m60PlaneReflection x)) (D.map (m60PlaneReflection y)) ≤
@@ -36,9 +27,6 @@ theorem m60Disk_reflection_lipschitz (g : RiemannianMetric 3 M)
   have h := D.lipschitz_on_disk ⟨m60PlaneReflection x, hmem x⟩
     ⟨m60PlaneReflection y, hmem y⟩
   simpa only [← map_sub, m60PlaneReflection.norm_map] using h
-
-
-
 
 noncomputable def m60Disk_reflect (g : RiemannianMetric 3 M)
     {gamma : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g gamma) :
@@ -60,8 +48,6 @@ noncomputable def m60Disk_reflect (g : RiemannianMetric 3 M)
     change 0 ≤ ∫ z in loopDiskSet, m60AreaDensity g (fun w => D.map (m60PlaneReflection w)) z
     rw [m60AreaIntegral_comp_reflection]
     exact D.area_nonnegative
-
-
 
 theorem m60Disk_reflect_area (g : RiemannianMetric 3 M)
     {gamma : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g gamma) :

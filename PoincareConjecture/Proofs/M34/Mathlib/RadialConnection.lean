@@ -1,28 +1,14 @@
 import PoincareConjecture.Proofs.M34.Mathlib.RadialCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 noncomputable def radialChristoffel (A B C : ℝ) (x u v : E) : E :=
   A • (inner ℝ x u • v + inner ℝ x v • u) +
     (B * inner ℝ u v) • x + (C * inner ℝ x u * inner ℝ x v) • x
-
-
 
 theorem radialChristoffel_pairing (c b A B C : ℝ) (x u v w : E)
     (hr : c + b * ‖x‖ ^ 2 = 1) :
@@ -36,8 +22,6 @@ theorem radialChristoffel_pairing (c b A B C : ℝ) (x u v w : E)
   linear_combination
     (B * inner ℝ u v * inner ℝ x w +
       C * inner ℝ x u * inner ℝ x v * inner ℝ x w) * hr
-
-
 
 theorem radialChristoffel_koszul (c b d e A B C : ℝ) (x u v w : E)
     (hr : c + b * ‖x‖ ^ 2 = 1) (hA : 2 * c * A = d)

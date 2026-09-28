@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckMetricProducerNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckJetAffineNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSourceJetNative
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -88,7 +82,6 @@ theorem exists_smooth_coefficient_forcing_extension (hT : 0 ≤ T)
       rw [dist_eq_norm]
       exact ((v ⟨t, htmem⟩ - u ⟨t, htmem⟩).norm_coe_le_norm x).trans_lt
         (((v - u).norm_coe_le_norm ⟨t, htmem⟩).trans_lt hv)⟩))]
-
 
 def augmentHighInput (Q : TimeL2 (Lp E 2 μ) T) : TimeL2 (Lp (E × ℝ) 2 μ) T :=
   ((ContinuousLinearMap.inl ℝ E ℝ).compLpL 2 μ).compLpL 2 (timeMeasure T) Q +
@@ -290,7 +283,6 @@ def finiteJetAffineOperator : ((E →L[ℝ] ℝ) × ℝ) →L[ℝ] (E × ℝ) �
 
 variable {iota : Type v}
 
-
 def augmentSpatialHighInput (Q : Lp E 2 μ) : Lp (E × ℝ) 2 μ :=
   (ContinuousLinearMap.inl ℝ E ℝ).compLpL 2 μ Q +
     (memLp_const ((0 : E), (1 : ℝ))).toLp (fun _ : M => ((0 : E), (1 : ℝ)))
@@ -323,7 +315,6 @@ def finiteSpatialJetCoefficient (p : Expr iota n) (m : ℕ) :
 theorem contDiff_finiteSpatialJetCoefficient (p : Expr iota n) (m : ℕ) :
     ContDiff ℝ ∞ (finiteSpatialJetCoefficient p m) :=
   (contDiff_finiteLinearPart p m).prodMk (contDiff_finiteConstantPart p m)
-
 
 def finiteSpatialJetAction (p : Expr iota n) (m : ℕ)
     (z : FiniteSpatialJetInput μ p m) : Lp ℝ 2 μ :=
@@ -360,7 +351,6 @@ theorem finiteSpatialJetAction_ae_eq_eval (p : Expr iota n) (m : ℕ)
   filter_upwards [finiteSpatialJetAction_coe μ p m z, hHigh] with x hx hQ
   rw [hx, ← hLow x, ← hQ]
   exact (eval_eq_finiteParts p m hp (values x)).symm
-
 
 def tracePathL2 (hT : 0 ≤ T) : TimePath E T →L[ℝ] TimeL2 E T :=
   (productOperator hT (ContinuousLinearMap.lsmul ℝ ℝ (E := E)).flip).flip
@@ -448,7 +438,6 @@ theorem finiteJetTraceForcing_ae_eq_eval (hT : 0 ≤ T) (p : Expr iota n) (m : �
   exact finiteSpatialJetAction_ae_eq_eval μ p m hp (z ⟨t, htmem⟩)
     (values t) (hLow t htmem) (hHigh t htmem)
 
-
 theorem exists_finiteJetTraceForcing_lipschitz_bound (p : Expr iota n) (m : ℕ)
     (u : FiniteSpatialJetInput μ p m) :
     ∃ K : NNReal, ∃ epsilon : ℝ, 0 < epsilon ∧
@@ -478,7 +467,6 @@ theorem exists_finiteJetTraceForcing_lipschitz_bound (p : Expr iota n) (m : ℕ)
   exact (norm_tracePathL2_apply_le hS (f.comp z - f.comp w)).trans
     ((mul_le_mul_of_nonneg_left hpath (Real.sqrt_nonneg S)).trans_eq (by ring))
 
-
 theorem exists_smooth_finite_jet_forcing_extension (hT : 0 ≤ T) (p : Expr iota n) (m : ℕ)
     (u : TimePath C(M, LowAtom p m → ℝ) T) :
     ∃ epsilon : ℝ, 0 < epsilon ∧
@@ -507,7 +495,6 @@ theorem exists_smooth_finite_jet_forcing_extension (hT : 0 ≤ T) (p : Expr iota
     1 * finiteConstantPart p m (v ⟨t, htmem⟩ x) = _
   rw [one_mul, add_comm]
 
-
 theorem finite_jet_forcing_ae_eq_eval (p : Expr iota n) (m : ℕ) (hp : p.degree ≤ 2 * m)
     (v : TimePath C(M, LowAtom p m → ℝ) T) (Q : TimeL2 (Lp (HighAtom p m → ℝ) 2 μ) T)
     (values : ℝ → M → Atom iota n → ℝ)
@@ -532,7 +519,6 @@ open scoped Manifold
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [Fintype iota]
-
 
 theorem exists_smooth_ordered_lower_forcing_extension (hT : 0 ≤ T)
     (F : iota → SmoothField (n := n) (M := M)) (e : Fin n → iota)
@@ -583,7 +569,6 @@ theorem exists_smooth_ordered_lower_forcing_extension (hT : 0 ≤ T)
 
 open DeTurckCompatibleJetNative DeTurckJetCoordinatesNative
 
-
 theorem exists_smooth_native_inverse_extension
     (F : iota → SmoothField (n := n) (M := M)) {a : M} {K : Set M}
     (C : Cutoffs (n := n) a K) (g0 : RiemannianMetric n M) (m : ℕ) :
@@ -613,7 +598,6 @@ theorem exists_smooth_native_inverse_extension
     exact (L.le_opNorm Q).trans_lt (by nlinarith [norm_nonneg Q])
   exact hInvEq (matrixValueContinuous F C g0 Q) hnear x
 
-
 theorem exists_smooth_native_low_atom_extension
     (F : iota → SmoothField (n := n) (M := M)) {a : M} {K : Set M}
     (C : Cutoffs (n := n) a K) (g0 : RiemannianMetric n M)
@@ -636,7 +620,6 @@ theorem exists_smooth_native_low_atom_extension
     contDiff_lowAtomTupleContinuous F C g0 p m Inv hInv, ?_⟩
   intro Q hQsmall g hQ x b
   exact lowAtomTupleContinuous_eq F C g0 hF p m Inv Q g hQ (hInvEq Q hQsmall) x b
-
 
 theorem exists_smooth_native_inverse_difference
     (F : iota → SmoothField (n := n) (M := M)) {a : M} {K : Set M}
@@ -672,7 +655,6 @@ theorem exists_smooth_native_inverse_difference
     rw [hInvEq Q hQsmall x, hbg, matrixValueContinuous_eq F C g0 hF Q g hQ x]
     rfl
 
-
 theorem exists_smooth_native_jet_action
     (F : iota → SmoothField (n := n) (M := M)) {a : M} {K : Set M}
     (C : Cutoffs (n := n) a K) (g0 : RiemannianMetric n M)
@@ -707,7 +689,6 @@ theorem exists_smooth_native_jet_action
     funext b
     exact (hlowEq Q hQsmall g hQ x b).symm
   · exact (highAtomTupleL2_ae_eq F C g0 μ hF p m k hk H g hH).symm
-
 
 theorem exists_smooth_compatible_ordered_lower_forcing_extension (hT : 0 ≤ T)
     (F : iota → SmoothField (n := n) (M := M)) {a : M} {K : Set M}

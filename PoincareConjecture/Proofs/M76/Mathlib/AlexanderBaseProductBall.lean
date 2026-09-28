@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ variable {E F G H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
-
 
 theorem FinitePiecewiseAffineOn.prodMap {f : E → G} {g : F → H} {s : Set E} {t : Set F}
     (hf : FinitePiecewiseAffineOn f s) (hg : FinitePiecewiseAffineOn g t) :
@@ -48,9 +35,6 @@ variable {E F G H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
 
-
-
-
 theorem IsFinitePL.prod {s : Set E} {t : Set F} {u : Set G} {v : Set H}
     {e : s ≃ₜ u} {d : t ≃ₜ v} (he : e.IsFinitePL) (hd : d.IsFinitePL) :
     ((Homeomorph.Set.prod s t).trans
@@ -72,9 +56,6 @@ variable {E F X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ Y]
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
-
-
 
 theorem IsFinitePLBallPair.prod {s b : Set X} {t c : Set Y}
     (hs : IsFinitePLBallPair E s b) (ht : IsFinitePLBallPair F t c) :

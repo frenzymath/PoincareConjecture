@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFields
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.IntrinsicRegularityFromSpatialLimits
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2SpeedPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +18,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem exists_larger_intrinsic_closed_prefix
     [T2Space M] (F : RicciFlow n M (Icc a b))

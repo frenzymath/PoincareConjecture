@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SurvivalSlice
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzConfinedEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +20,6 @@ private theorem transported_inner {a b : G.Point} (h : a = b) (v : G.Horizontal 
   cases h
   rfl
 
-
-
 theorem initialValue_energy_zero {Z : G.Horizontal x}
     (Q : M14SquareRootInitialValuePath G T tau x y Z) :
     G.spacetime.horizontalMetric.inner (Q.square_path.curve 0)
@@ -41,10 +29,6 @@ theorem initialValue_energy_zero {Z : G.Horizontal x}
   rw [← transported_inner hzero, hvelocity]
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
-
-
-
-
 
 theorem confined_minimizers_initial_bound
     (LG : GeneralizedLGeometryConclusion G)

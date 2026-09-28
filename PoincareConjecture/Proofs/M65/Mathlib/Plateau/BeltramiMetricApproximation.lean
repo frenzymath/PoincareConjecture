@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiEnergyLimits
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.PositiveGramApproximation
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,11 +11,6 @@ open Set Filter MeasureTheory Metric
 open scoped Topology ContDiff Matrix.Norms.Elementwise
 
 namespace Matrix
-
-
-
-
-
 
 theorem exists_smooth_metric_energy_lt_area
     (H : ℂ → Matrix (Fin 2) (Fin 2) ℝ) (hH : LocallyIntegrable H volume)

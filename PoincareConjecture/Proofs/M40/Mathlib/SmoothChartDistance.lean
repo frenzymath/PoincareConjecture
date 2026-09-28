@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.SmoothChartNormalization
 import PoincareConjecture.Proofs.M40.Mathlib.RiemannianVectorNorm
 import PoincareConjecture.Proofs.M01.NormalizationLocalDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,9 +19,6 @@ variable {E H M F : Type*}
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type _)]
   [IsRiemannianManifold I M]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem normalizedSmoothChart_exists_lipschitz_ball
     (e : OpenPartialHomeomorph M F) (he : e.MDifferentiable I 𝓘(ℝ, F))

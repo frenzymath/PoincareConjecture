@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicSideNei
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryMetricSegment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.MetricArc
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,11 +10,6 @@ open Set
 open scoped Topology ENNReal Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_geodesic_side
     (G : RiemannianMetric 2 AnnulusCoordinates) {K C : Set AnnulusCoordinates}

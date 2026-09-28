@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TorusHorizontalBand
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem exists_crossing_torus_band_charts {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) (hcore : 6 * d ≤ L) :

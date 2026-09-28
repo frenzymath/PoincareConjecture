@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.HarmonicMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 import Mathlib.Algebra.Order.ToIntervalMod
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,19 +10,10 @@ open scoped Topology
 
 namespace PoincareConjecture
 
-
-
-
 def m64AnnulusOpenStrip : Set LoopPlane := {p | 0 < p 1 ∧ p 1 < 1}
-
-
-
 
 theorem isOpen_m64AnnulusOpenStrip : IsOpen m64AnnulusOpenStrip :=
   isOpen_Ioo.preimage (EuclideanSpace.proj (1 : Fin 2)).continuous
-
-
-
 
 theorem isPreconnected_m64AnnulusOpenStrip : IsPreconnected m64AnnulusOpenStrip :=
   ((convex_Ioo (0 : ℝ) 1).linear_preimage
@@ -73,10 +51,6 @@ private theorem constant_on_domain {f : LoopPlane → ℝ} {c : ℝ}
   · rw [← m64AnnulusInterior_closure]
     exact subset_closure
   · rw [m64AnnulusInterior_closure]
-
-
-
-
 
 theorem m64PeriodicHarmonic_nonneg_of_boundary_nonneg
     {f : LoopPlane → ℝ} (hc : ContinuousOn f m64AnnulusDomain)
@@ -116,11 +90,6 @@ theorem m64PeriodicHarmonic_nonneg_of_boundary_nonneg
     rw [hboundary] at hb
     exact (not_lt_of_ge hb) hneg
   exact fun q hq => hnonneg.trans (hglobal q hq)
-
-
-
-
-
 
 theorem m64PeriodicHarmonic_pos_of_boundary_nonneg
     {f : LoopPlane → ℝ} (hc : ContinuousOn f m64AnnulusDomain)

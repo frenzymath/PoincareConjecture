@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Bundle Metric
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_lipschitzOn_nhds_of_cut_glue
     (g : RiemannianMetric n M) {f F G : LoopPlane → M}

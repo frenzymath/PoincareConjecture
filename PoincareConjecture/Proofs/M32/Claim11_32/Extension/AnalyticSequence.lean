@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.AnalyticTime
 import PoincareConjecture.Proofs.M32.Claim11_32.Sequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -37,8 +23,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
 
-
-
 theorem terminalBlowupSequence_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) {B : ℝ}
     (hB : ∀ k, (H k).analytic_constant = B)
@@ -54,8 +38,6 @@ theorem terminalBlowupSequence_scalar_gradient_bound
       B * ((Q k).extension.extended.connection t).scalarCurvature y ^ (3 / 2 : ℝ) := by
   simpa only [hB k] using extension_scalar_gradient_bound_of_strict
     hM04 (H k) (Q k).extension t ht y ((hcutoff k).trans_le hy) v hv
-
-
 
 theorem terminalBlowupSequence_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) {B : ℝ}

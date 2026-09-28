@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteLabelSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,10 +16,6 @@ variable {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X] [TopologicalSpace Y] [T1Space Y]
 
 open Classical in
-
-
-
-
 
 theorem exists_supported_displacement (L : SimplicialComplex ℝ E)
     (hL : L.faces.Finite) {delta r : ℝ} (hr : 0 < r) (hwidth : 2 * r < delta)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphIsotopy
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem central_sphere_subset_small_slab_of_capture
     {M : Type u} [TopologicalSpace M]
@@ -53,10 +41,6 @@ theorem central_sphere_subset_small_slab_of_capture
   have hnarrow : |(N.coordinate_inverse x).2| < N.epsilon⁻¹ / 32 := by
     linarith
   exact ⟨hcapture hx, (abs_lt.mp hnarrow).1, (abs_lt.mp hnarrow).2⟩
-
-
-
-
 
 theorem exists_same_center_neck_sphere_graph_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

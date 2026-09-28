@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalNewFrontierModels
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalOrientation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AbstractSimplicialComplex

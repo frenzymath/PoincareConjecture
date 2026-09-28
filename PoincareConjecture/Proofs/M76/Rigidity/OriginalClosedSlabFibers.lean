@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedSlabPhaseProducts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPhaseTargetParameter
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SignedIntervalImageHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -30,12 +19,6 @@ local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoord
 set_option maxHeartbeats 800000 in
 
 open Classical in
-
-
-
-
-
-
 
 theorem exists_hamiltonZero_adjusted_fibers {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

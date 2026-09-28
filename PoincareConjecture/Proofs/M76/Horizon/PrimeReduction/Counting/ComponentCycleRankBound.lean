@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CutGraphComponentHomology
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open CategoryTheory HomologicalComplex

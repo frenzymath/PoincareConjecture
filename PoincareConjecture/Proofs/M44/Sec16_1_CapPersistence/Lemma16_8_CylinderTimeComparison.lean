@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,12 +12,8 @@ open M36
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
 
-
-
 noncomputable def evolvingCylinderInverseWeight (t : ℝ) : Fin 3 → ℝ :=
   ![(2 * (1 - t))⁻¹, (2 * (1 - t))⁻¹, 1]
-
-
 
 theorem cylinderInverseWeight_le_evolving {t : ℝ} (ht0 : 0 ≤ t) (ht : t < 1)
     (i : Fin 3) : cylinderInverseWeight i ≤ evolvingCylinderInverseWeight t i := by
@@ -39,8 +25,6 @@ theorem cylinderInverseWeight_le_evolving {t : ℝ} (ht0 : 0 ≤ t) (ht : t < 1)
   · exact h
   · exact h
   · exact le_rfl
-
-
 
 theorem evolving_roundCylinderTensorNormSquared_center {t : ℝ} (ht : t < 1)
     {r : ℕ} (theta : UnitTwoSphere) (s : ℝ) (T : (Fin r → Fin 3) → ℝ) :
@@ -65,8 +49,6 @@ theorem evolving_roundCylinderTensorNormSquared_center {t : ℝ} (ht : t < 1)
     rw [diagonal_tensor_product, if_neg (Ne.symm hba), zero_mul, zero_mul]
   · simp
 
-
-
 theorem roundCylinderTensorNormSquared_zero_le {t : ℝ} (ht0 : 0 ≤ t) (ht : t < 1)
     {r : ℕ} (theta : UnitTwoSphere) (s : ℝ) (T : (Fin r → Fin 3) → ℝ) :
     roundCylinderTensorNormSquared 0 (chartAt E₂ theta)
@@ -81,23 +63,16 @@ theorem roundCylinderTensorNormSquared_zero_le {t : ℝ} (ht0 : 0 ≤ t) (ht : t
     (fun i _ => (show (0 : ℝ) ≤ 1 / 2 by norm_num).trans (cylinderInverseWeight_bounds _).1)
     (fun i _ => cylinderInverseWeight_le_evolving ht0 ht (a i))
 
-
-
-
 noncomputable def staticCylinderCorrection (t : ℝ) (B : RoundCylinderTwoTensor) :
     RoundCylinderTwoTensor :=
   fun z v w => B z v w + EvolvingRoundCylinderMetric 0 z v w -
     EvolvingRoundCylinderMetric t z v w
-
-
 
 theorem staticCylinderCorrection_coefficient (t : ℝ) (B : RoundCylinderTwoTensor)
     (c : OpenPartialHomeomorph UnitTwoSphere E₂) (p : V) (a b : Fin 3) :
     roundCylinderTensorCoefficient (staticCylinderCorrection t B) c p a b =
       roundCylinderTensorCoefficient B c p a b + roundCylinderGram 0 c p a b -
         roundCylinderGram t c p a b := rfl
-
-
 
 theorem staticCylinderCorrection_iteratedDerivative {t : ℝ} (ht : t < 1)
     (B : RoundCylinderTwoTensor) (theta : UnitTwoSphere) (k : ℕ) :
@@ -111,8 +86,6 @@ theorem staticCylinderCorrection_iteratedDerivative {t : ℝ} (ht : t < 1)
   | succ k ih =>
       simp only [roundCylinderIteratedDerivative, ih, evolving_roundCylinderTensorDerivative_eq ht]
 
-
-
 theorem staticCylinderCorrection_jetError_le {t : ℝ} (ht0 : 0 ≤ t) (ht : t < 1)
     (B : RoundCylinderTwoTensor) (k : ℕ) (z : RoundCylinderSpace) :
     roundCylinderJetErrorSquared 0 (staticCylinderCorrection t B) k z ≤
@@ -121,9 +94,6 @@ theorem staticCylinderCorrection_jetError_le {t : ℝ} (ht0 : 0 ≤ t) (ht : t <
   simp only [staticCylinderCorrection_iteratedDerivative ht]
   exact Finset.sum_le_sum (fun j _ =>
     roundCylinderTensorNormSquared_zero_le ht0 ht z.1 z.2 _)
-
-
-
 
 theorem staticCylinderCorrection_close {t epsilon : ℝ} (ht0 : 0 ≤ t) (ht : t < 1)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose epsilon t B) :

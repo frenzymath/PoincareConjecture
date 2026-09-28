@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.WithinCellLipschitz
 import PoincareConjecture.Proofs.M60.Mathlib.CompactExtendedLipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_lipschitzOn_cell_of_extension
     (g : RiemannianMetric n M) {f F : LoopPlane → M} {S : Set LoopPlane}

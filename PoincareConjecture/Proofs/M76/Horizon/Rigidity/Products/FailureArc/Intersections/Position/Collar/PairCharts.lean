@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.BoundaryInterior
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

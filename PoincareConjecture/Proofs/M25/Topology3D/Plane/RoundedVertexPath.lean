@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedCorner
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Algebra.Ring.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -22,13 +12,9 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
 
-
-
 noncomputable def roundedVertexPath (ρ : ℝ → ℝ) (P : ℤ → E) (t : ℝ) : E :=
   let j := ⌊t + 1 / 2⌋
   roundedCorner ρ (P j) (P j - P (j - 1)) (P (j + 1) - P j) (t - j)
-
-
 
 theorem roundedVertexPath_eq_local {ρ : ℝ → ℝ} (P : ℤ → E) {δ : ℝ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -67,8 +53,6 @@ theorem roundedVertexPath_eq_local {ρ : ℝ → ℝ} (P : ℤ → E) {δ : ℝ}
     simp only [add_sub_cancel_right]
     module
 
-
-
 theorem contDiff_roundedVertexPath {ρ : ℝ → ℝ} {P : V → ℤ → E} {δ : ℝ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
     (htail : ∀ s, δ ≤ |s| → ρ s = |s|)
@@ -94,8 +78,6 @@ theorem contDiff_roundedVertexPath {ρ : ℝ → ℝ} {P : V → ℤ → E} {δ 
     continuous_snd.continuousAt (isOpen_Ioo.mem_nhds hx)
   filter_upwards [hU] with y hy
   exact roundedVertexPath_eq_local (P y.1) hδ hδhalf htail hbound i hy
-
-
 
 theorem periodic_roundedVertexPath (ρ : ℝ → ℝ) (P : ℤ → E) (n : ℤ)
     (hP : ∀ i, P (i + n) = P i) : Periodic (roundedVertexPath ρ P) (n : ℝ) := by

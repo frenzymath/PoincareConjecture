@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ComponentSphereFromCount
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -18,10 +8,6 @@ open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_original_component_sphere_of_count
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

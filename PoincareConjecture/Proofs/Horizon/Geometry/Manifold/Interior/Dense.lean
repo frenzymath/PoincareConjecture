@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set
@@ -18,7 +11,6 @@ variable {E H M : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
-
 
 theorem dense_manifoldInterior : Dense (I.interior M) := by
   intro x

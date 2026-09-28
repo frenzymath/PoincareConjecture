@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialMetricContraction
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable (g : RiemannianMetric 3 V) (D : LeviCivitaData g)
 
 include D hsec
 
-
-
 theorem intrinsicWarpingQuotient_lower_on_ball {R m s : ℝ}
     (hR : 0 < R) (hm : m ≤ intrinsicWarpingRadius g hrotation hcomplete R / R)
     (hs : 0 ≤ s) (hsR : s ≤ R) :
@@ -48,8 +37,6 @@ theorem intrinsicWarpingQuotient_lower_on_ball {R m s : ℝ}
       simpa only [mul_comm] using mul_intrinsicWarpingQuotient g hrotation hcomplete s
     rw [heq]
     exact hm.trans h
-
-
 
 theorem intrinsicSpatialMetric_inner_lower {R m : ℝ} (hR : 0 < R) (hm0 : 0 ≤ m)
     (hm : m ≤ intrinsicWarpingRadius g hrotation hcomplete R / R)
@@ -74,8 +61,6 @@ theorem intrinsicSpatialMetric_inner_lower {R m : ℝ} (hR : 0 < R) (hm0 : 0 ≤
     have hproj : 0 ≤ (1 - q ^ 2) * (inner ℝ x v * inner ℝ x v) / ‖x‖ ^ 2 :=
       div_nonneg (mul_nonneg (sub_nonneg.mpr hqsq) (mul_self_nonneg _)) (sq_nonneg _)
     exact (mul_le_mul_of_nonneg_right hmsq hself).trans (le_add_of_nonneg_right hproj)
-
-
 
 theorem intrinsicSpatialInverse_tangentNorm_lower {R m : ℝ}
     (hR : 0 < R) (hm0 : 0 ≤ m)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetLogDensity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,14 +12,9 @@ namespace PoincareConjecture.M65Gauss
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
-
 def curvatureCoefficientBound (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
   ‖g.euclideanCoefficients x‖ *
     (2 * ‖fderiv ℝ (connectionCoefficient D) x‖ + 2 * ‖connectionCoefficient D x‖ ^ 2)
-
-
 
 theorem curvatureCoefficientBound_continuous (D : LeviCivitaData g) :
     Continuous (curvatureCoefficientBound D) := by
@@ -46,10 +32,6 @@ private theorem fderiv_connection_const (D : LeviCivitaData g)
   have he := congrArg (fun L => L u) hd.fderiv
   simp only [ContinuousLinearMap.comp_zero, zero_add, ContinuousLinearMap.flip_apply] at he
   exact he
-
-
-
-
 
 theorem abs_curvatureTensor_le_coefficient (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :

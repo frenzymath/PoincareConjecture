@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.I
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.NoReturn.Prepend
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem forward_cylinder_with_affine_tail_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]
@@ -136,6 +124,5 @@ theorem forward_cylinder_with_affine_tail_of_epsilon_le :
       simpa only [heN 0] using hTaffine p hp
   rw [hN0] at hout
   exact hUnion ▸ hout
-
 
 end PoincareConjecture.BalancedNeckChain

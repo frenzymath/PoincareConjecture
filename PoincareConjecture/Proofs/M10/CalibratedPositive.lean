@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem calibratedMetricVolume_univ_pos (g : RiemannianMetric n M) (p : M) :
     0 < calibratedMetricVolume g univ := by

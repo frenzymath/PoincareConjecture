@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.TerminalBlowup.Mathlib.WeightedRadius
 import PoincareConjecture.Proofs.M35.TerminalBlowup.EndScalarFloor
 import PoincareConjecture.Proofs.M35.TerminalBlowup.MetricNondegeneration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e (i : Fin 3) : StandardCapSpace := EuclideanSpace.single i 1
 
-
-
 theorem radialArclength_tendsto_atTop
     (g : RiemannianMetric 3 StandardCapSpace) (hcomplete : MetricComplete g) :
     Tendsto (radialArclength g) atTop atTop := by
@@ -33,8 +21,6 @@ theorem radialArclength_tendsto_atTop
   obtain ⟨r, _, hR⟩ := radialArclength_unbounded g hcomplete R
   exact (eventually_ge_atTop r).mono
     (fun u hu => hR.le.trans ((radialArclength_strictMono g).monotone hu))
-
-
 
 theorem axisWarpingRadius_sq_le_of_exterior_scalar_floor
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -91,8 +77,6 @@ namespace PoincareConjecture.RepairedStandardCapExistenceData
 
 open M35.Uniqueness
 
-
-
 theorem axisWarpingRadius_sq_le_remaining_time
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {t r : ℝ}
@@ -107,8 +91,6 @@ theorem axisWarpingRadius_sq_le_remaining_time
   convert h using 1
   field_simp
   ring
-
-
 
 theorem angular_tangent_inner_le_remaining_time
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -128,8 +110,6 @@ theorem angular_tangent_inner_le_remaining_time
     _ = (‖x‖ ^ 2 * axisAngularCoefficient (E.flow.metric t) ‖x‖) *
         (‖v‖ ^ 2 / ‖x‖ ^ 2) := by field_simp [hr.ne']
     _ ≤ _ := mul_le_mul_of_nonneg_right hrad' (div_nonneg (sq_nonneg _) (sq_nonneg _))
-
-
 
 theorem angular_tangent_metric_tendsto_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -164,8 +144,6 @@ private theorem exists_nonzero_angular_vector (x : StandardCapSpace) :
       simpa [e] using h
     · simp [e, inner_add_right, inner_smul_right, EuclideanSpace.inner_single_right]
       ring
-
-
 
 theorem scalar_tendsto_off_origin
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

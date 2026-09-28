@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.Orientable.FromPLTorus
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.AnnularLift
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open Poincare.Topology.Orientation.ProjectivePlane

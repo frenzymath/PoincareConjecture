@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCommonBuffers
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsFullCapAlignment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_stackNonnestedLowerCapAlignment
     (P : SurgeryCapProfile) (U V : Fin 2 → OpenPartialHomeomorph (E2 × ℝ) E3)

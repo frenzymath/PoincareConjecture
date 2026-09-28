@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OrderedChainCuts
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ScalarControl
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_locallyFinite_retained_slabs :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

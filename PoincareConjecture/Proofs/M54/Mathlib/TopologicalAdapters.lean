@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M54.Mathlib.PathMaps
 import Mathlib.Topology.Homotopy.Contractible
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped unitInterval
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 def ofSetInverse (f : X → Y) (g : Y → X) (s : Set X) (t : Set Y)
     (hf : ContinuousOn f s) (hg : ContinuousOn g t)
@@ -32,8 +21,6 @@ def ofSetInverse (f : X → Y) (g : Y → X) (s : Set X) (t : Set Y)
   right_inv y := Subtype.ext (hfg y.2)
   continuous_toFun := hf.domRestrict.subtype_mk _
   continuous_invFun := hg.domRestrict.subtype_mk _
-
-
 
 noncomputable def fundamentalGroupMulEquiv (e : X ≃ₜ Y) (b : X) :
     FundamentalGroup X b ≃* FundamentalGroup Y (e b) :=
@@ -61,8 +48,6 @@ noncomputable def fundamentalGroupMulEquiv (e : X ≃ₜ Y) (b : X) :
 
 end Homeomorph
 
-
-
 theorem simplyConnectedSpace_prod_contractible (X Y : Type*)
     [TopologicalSpace X] [TopologicalSpace Y]
     [SimplyConnectedSpace X] [ContractibleSpace Y] : SimplyConnectedSpace (X × Y) := by
@@ -73,13 +58,9 @@ namespace IsClopen
 
 variable {X T : Type*} [TopologicalSpace X] [TopologicalSpace T]
 
-
-
 theorem map_mem [PreconnectedSpace T] {U : Set X} (hU : IsClopen U)
     {f : T → X} (hf : Continuous f) (t : T) (ht : f t ∈ U) (s : T) : f s ∈ U := by
   exact (isPreconnected_range hf).subset_isClopen hU ⟨f t, ⟨t, rfl⟩, ht⟩ ⟨s, rfl⟩
-
-
 
 noncomputable def fundamentalGroupMulEquiv {U : Set X} (hU : IsClopen U) (b : U) :
     FundamentalGroup U b ≃* FundamentalGroup X b.1 :=

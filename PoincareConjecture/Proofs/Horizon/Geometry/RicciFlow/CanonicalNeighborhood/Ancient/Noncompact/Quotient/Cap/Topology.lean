@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.CoreTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

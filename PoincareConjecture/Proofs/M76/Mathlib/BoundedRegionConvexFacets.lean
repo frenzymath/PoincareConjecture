@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFullCofaces
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem hasTwoFullCofaces_of_mem_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -85,8 +72,6 @@ theorem hasTwoFullCofaces_of_mem_interior
   rw [hzi] at hnonneg
   linarith
 
-
-
 theorem hasTwoFullCofaces_of_intrinsicInterior_mem_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (_hcv : Convex ℝ K.space) {s : Finset E} (hs : s ∈ K.faces)
@@ -95,10 +80,6 @@ theorem hasTwoFullCofaces_of_intrinsicInterior_mem_interior
     (hxint : x ∈ interior K.space) :
     K.HasTwoFullCofaces (Module.finrank ℝ E) s :=
   K.hasTwoFullCofaces_of_mem_interior hK hs hcard hxs hxint
-
-
-
-
 
 theorem hasTwoFullCofaces_of_hull_meets_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

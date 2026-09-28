@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.StandardMeridian
 import PoincareConjecture.Proofs.M76.Rigidity.MarkedMaps
 import PoincareConjecture.Proofs.M76.Rigidity.BoundaryInverseCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_finite_hamiltonMeridianRim :
     ∃ K : SimplicialComplex ℝ V2, K.faces.Finite ∧ K.space = Q := by
@@ -36,8 +24,6 @@ theorem exists_finite_hamiltonMeridianRim :
 
 variable (L : Submodule ℤ (Fin 1 → ℝ))
 
-
-
 theorem StandardLatticeHandleAtlas.polyhedralPL_standardMeridianRim
     {β : Type*}
     {d : β → OpenPartialHomeomorph
@@ -49,16 +35,9 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_standardMeridianRim
   have h := (hd.polyhedralPL_standardMeridian L).restrict_finite K hK hKD
   rwa [hKQ] at h
 
-
-
-
 theorem isEmbedding_hamiltonMeridianRim :
     Topology.IsEmbedding (fun x : Q => hamiltonStandardMeridianMap L x) :=
   (isEmbedding_prodMkLeft 0).comp Topology.IsEmbedding.subtypeVal
-
-
-
-
 
 theorem polyhedralPL_source_hamiltonMeridianRim
     {α β : Type*}

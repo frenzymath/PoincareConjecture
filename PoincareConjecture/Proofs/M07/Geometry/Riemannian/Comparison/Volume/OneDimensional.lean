@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Radia
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Assembly
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Cutoff
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ namespace Poincare.VolumeComparison
 
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
-
 
 theorem polarDensity_antitone_one
     (g : PoincareConjecture.RiemannianMetric 1 M) (p : M)

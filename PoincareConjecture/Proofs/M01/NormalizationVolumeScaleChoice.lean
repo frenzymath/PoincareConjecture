@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M01.NormalizationVolumeScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutDomains
 import PoincareConjecture.Proofs.M38.CappingPatchSmooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,12 +15,10 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
 
-
 noncomputable def cutAttachmentChart (a : S × Bool) :
     OpenPartialHomeomorph capDoubleBall (eventCutOpen F T hT P S) :=
   ((((P a.1.val).cutAnnularChart a.2).subtypeRestr capDoubleBall_nonempty).symm.subtypeRestr
     (eventCutOpen_nonempty F T hT P S a.1.val a.2)).symm
-
 
 theorem cutAttachmentChart_source (a : S × Bool) :
     (cutAttachmentChart F T hT P S a).source = {x : capDoubleBall | 1 < ‖x.val‖} := by
@@ -37,7 +28,6 @@ theorem cutAttachmentChart_source (a : S × Bool) :
   change (1 < ‖x.val‖ ∧ ‖x.val‖ < 2) ↔ 1 < ‖x.val‖
   exact and_iff_left (by simpa only [capDoubleBall, TopologicalSpace.Opens.mem_mk,
     Metric.mem_ball, dist_zero_right] using x.property)
-
 
 theorem cutAttachmentChart_target (a : S × Bool) :
     (cutAttachmentChart F T hT P S a).target =
@@ -50,7 +40,6 @@ theorem cutAttachmentChart_target (a : S × Bool) :
   intro x hx
   exact Metric.mem_ball.mpr (by simpa only [dist_zero_right] using hx.2)
 
-
 theorem cutAttachmentChart_apply (a : S × Bool) {x : capDoubleBall} (hx : 1 < ‖x.val‖) :
     (cutAttachmentChart F T hT P S a x).val =
       (P a.1.val).collar (cutSideReflection a.2 (capAttachCoordinates x.val)) := by
@@ -59,7 +48,6 @@ theorem cutAttachmentChart_apply (a : S × Bool) {x : capDoubleBall} (hx : 1 < �
   exact (((P a.1.val).cutAnnularChart a.2).subtypeRestr
     capDoubleBall_nonempty).symm.subtypeRestr_symm_apply
       (eventCutOpen_nonempty F T hT P S a.1.val a.2) hsrc
-
 
 theorem cutAttachmentChart_symm_apply (a : S × Bool) {y : eventCutOpen F T hT P S}
     (hy : y ∈ (cutAttachmentChart F T hT P S a).target) :
@@ -71,7 +59,6 @@ theorem cutAttachmentChart_symm_apply (a : S × Bool) {y : eventCutOpen F T hT P
     OpenPartialHomeomorph.subtypeRestr_source, OpenPartialHomeomorph.symm_source,
     Set.mem_preimage] at hy
   exact ((P a.1.val).cutAnnularChart a.2).subtypeRestr_symm_apply capDoubleBall_nonempty hy
-
 
 theorem cutAttachmentChart_graph_closed (a : S × Bool) :
     IsClosed {q : capDoubleBall × eventCutOpen F T hT P S |
@@ -106,13 +93,11 @@ theorem cutAttachmentChart_graph_closed (a : S × Bool) :
   rw [heq]
   exact h
 
-
 theorem cutAttachmentChart_targets_disjoint (a b : S × Bool) (hab : a ≠ b) :
     Disjoint (cutAttachmentChart F T hT P S a).target
       (cutAttachmentChart F T hT P S b).target := by
   rw [cutAttachmentChart_target, cutAttachmentChart_target]
   exact (cutAnnularChart_targets_disjoint F T hT P S a b hab).preimage Subtype.val
-
 
 theorem cutAttachmentChart_smooth (a : S × Bool) :
     letI : Nonempty capDoubleBall := capDoubleBall_nonempty

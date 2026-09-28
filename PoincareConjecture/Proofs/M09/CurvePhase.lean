@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch06.LGeometry
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

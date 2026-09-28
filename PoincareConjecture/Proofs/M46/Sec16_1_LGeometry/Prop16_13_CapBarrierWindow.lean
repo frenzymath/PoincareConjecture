@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_TruncatedCapEnt
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_HistoryComparison
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_DisappearingImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 structure CapBarrierWindow {F : GeneralizedRicciFlowData.{u}}
     (G : FlowBoxRicciGeometry F) (C : GeneralizedSliceCarrier.{u})
@@ -52,9 +41,6 @@ structure CapBarrierWindow {F : GeneralizedRicciFlowData.{u}}
     ∀ v : G.toLGeometry.Point, G.realization.spacetime.timeFunction v = top →
       v ∉ closure (Set.range (rawCylinderMap G.realization cylinder))
 
-
-
-
 structure CapBarrierOriginData
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
     (H : M33RegularHistoryData W) {G : FlowBoxRicciGeometry H.generalized}
@@ -72,9 +58,6 @@ structure CapBarrierOriginData
   forward : ∀ s hs x, x ∈ Q.source →
     H.history.forward (origin + s / (h⁻¹ ^ 2)) (time_mem s hs)
       (Q.cylinder.forward s hs x) = original.forward s (interval_subset hs) x
-
-
-
 
 theorem exists_capBarrierWindow_of_persistence
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

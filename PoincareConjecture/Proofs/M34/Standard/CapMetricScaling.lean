@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 noncomputable def scaleMetric (N : CapCertificate g) (Q : ℝ) (hQ : 0 < Q) :
     CapCertificate (M13.scaleSmoothMetric g Q hQ) where

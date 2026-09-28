@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Topology

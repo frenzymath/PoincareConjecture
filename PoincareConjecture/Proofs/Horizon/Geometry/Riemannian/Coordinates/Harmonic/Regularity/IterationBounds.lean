@@ -1,14 +1,6 @@
 import Mathlib.Analysis.SpecificLimits.Normed
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -16,7 +8,6 @@ set_option autoImplicit false
 open Finset
 
 namespace PoincareConjecture.HarmonicCoordinates
-
 
 theorem geometric_iteration_bound_exp {χ D L : ℝ}
     (hχ : 1 < χ) (hD : 1 ≤ D) (hL : 1 ≤ L)
@@ -68,7 +59,6 @@ theorem geometric_iteration_bound_exp {χ D L : ℝ}
   exact (hprefix k).trans
     (mul_le_mul_of_nonneg_right (Real.exp_le_exp.mpr (hpartial k)) (hu 0))
 
-
 theorem exists_uniform_geometric_iteration_bound {χ D L : ℝ}
     (hχ : 1 < χ) (hD : 1 ≤ D) (hL : 1 ≤ L) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ u : ℕ → ℝ, (∀ k, 0 ≤ u k) →
@@ -80,8 +70,6 @@ theorem exists_uniform_geometric_iteration_bound {χ D L : ℝ}
   intro u hu hstep k
   exact (geometric_iteration_bound_exp hχ hD hL hu hstep k).trans
     (mul_le_mul_of_nonneg_right (le_max_right _ _) (hu 0))
-
-
 
 theorem geometric_iteration_bound_rpow {χ D L : ℝ}
     (hχ : 1 < χ) (hD : 1 ≤ D) (hL : 1 ≤ L)
@@ -99,8 +87,6 @@ theorem geometric_iteration_bound_rpow {χ D L : ℝ}
     congr 1
     field_simp [hχ0.ne', hχ1]
   simpa only [hexp] using geometric_iteration_bound_exp hχ hD hL hu hstep k
-
-
 
 theorem exists_uniform_scaled_iteration_bound {χ D L : ℝ}
     (hχ : 1 < χ) (hD : 1 ≤ D) (hL : 1 ≤ L) :

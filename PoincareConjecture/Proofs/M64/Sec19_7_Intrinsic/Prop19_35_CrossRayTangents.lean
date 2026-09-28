@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnTransverse
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,10 +52,6 @@ private theorem unequal_boundary_ordered_meeting_velocity_ne
     rw [← hback, ha0] at hnorm
     exact (lt_irrefl (1 : ℝ)) hnorm
 
-
-
-
-
 theorem m64Intrinsic_distinct_inward_meeting_velocity_ne
     (G : RiemannianMetric 2 AnnulusCoordinates)
     {alpha beta : ℝ → AnnulusCoordinates} {s t : ℝ}
@@ -85,9 +68,6 @@ theorem m64Intrinsic_distinct_inward_meeting_velocity_ne
       ha0 hstart hbInterior hmeet
   · exact Ne.symm (unequal_boundary_ordered_meeting_velocity_ne G ha hgb hga ht hts
       hb0 hstart.symm haInterior hmeet.symm)
-
-
-
 
 theorem m64Intrinsic_inward_meeting_opposite_or_transverse
     (G : RiemannianMetric 2 AnnulusCoordinates)

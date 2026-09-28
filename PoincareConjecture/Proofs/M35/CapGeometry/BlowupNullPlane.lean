@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.ActualFarTipRadialCurvature
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderRadialPlane
 import PoincareConjecture.Proofs.M35.CapGeometry.NullSectionalPlane
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +21,6 @@ attribute [local instance] nullPlaneCovectorNormedGroup
 @[instance_reducible] private noncomputable def nullPlaneBilinearNormedGroup :
     NormedAddCommGroup (V →L[ℝ] V →L[ℝ] ℝ) := inferInstance
 attribute [local instance] nullPlaneBilinearNormedGroup
-
-
-
 
 theorem blowupSequence_far_tip_exists_null_plane
     (P : M35StandardCapPredecessors)

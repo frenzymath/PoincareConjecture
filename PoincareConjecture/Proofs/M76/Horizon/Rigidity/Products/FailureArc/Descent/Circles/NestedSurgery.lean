@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.Rim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.NestedDecrease
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.OrdinaryPreservation
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip Topology
 open _root_.Dehn

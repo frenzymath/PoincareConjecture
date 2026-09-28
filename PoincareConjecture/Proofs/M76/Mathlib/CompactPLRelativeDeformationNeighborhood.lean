@@ -1,30 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCutDeformationFamily
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePLSuperlevelFrontier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
-
-
 
 theorem exists_compact_PL_relative_deformation_neighborhood
     {M E G ι : Type*} [TopologicalSpace M] [T2Space M]

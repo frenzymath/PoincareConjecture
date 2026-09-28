@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardC2Limit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric TopologicalSpace
@@ -47,8 +40,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   {H A M : Type*} [NormedAddCommGroup A] [NormedSpace Real A]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners Real A H}
-
-
 
 theorem exists_boundary_graph_push_within
     (C : Opens M) (e : Diffeomorph I 𝓘(Real, E × Real) C (E × Real) ∞)

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsRadialPh
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereNormalSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stackHeightChart_normal_pos
     (Q : OpenPartialHomeomorph (ℝ × E2) (ℝ × E2))
@@ -78,9 +66,6 @@ theorem stackHeightChart_normal_pos
     exact J.injective
   · filter_upwards [V.open_source.mem_nhds hs] with x hx
     exact hout x hx
-
-
-
 
 theorem stackCirclePhaseTransition_spec
     (E R : OpenPartialHomeomorph (ℝ × E2) (ℝ × E2))

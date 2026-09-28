@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatSphereBalls
 import PoincareConjecture.Proofs.M76.RelativeApproximation.HamiltonFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,9 +20,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "X1" => LatticeHandleAmbient (Fin 1) (Fin 2) L1
 local notation "X2" => LatticeHandleAmbient (Fin 2) (Fin 1) L2
 local notation "Y0" => ((Set.singleton hamiltonZeroHandlePuncture)ᶜ : Set X0)
-
-
-
 
 theorem lowerCases_of_four_inputs
     (wall :

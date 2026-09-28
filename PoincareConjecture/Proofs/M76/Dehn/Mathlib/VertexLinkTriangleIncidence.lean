@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem faceLink_singleton_triangular_pure
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 4) (p : E) :
@@ -39,8 +28,6 @@ theorem faceLink_singleton_triangular_pure
       ⟨fun hvp => Finset.disjoint_singleton_left.mp hs.2.1 (hvp ▸ hv),
         hst (Finset.mem_union_right _ hv)⟩
 
-
-
 theorem vertexLink_triangle_cofaces_ncard
     {p : E} {e : Finset E} (he : e ∈ (K.faceLink {p}).faces) (hec : e.card = 2) :
     {t : Finset E | t ∈ (K.faceLink {p}).faces ∧ t.card = 3 ∧ e ⊆ t}.ncard =
@@ -49,17 +36,12 @@ theorem vertexLink_triangle_cofaces_ncard
   rw [K.faceLink_faceLink _ _ he.2.1, Finset.singleton_union] at hcount
   simpa only [hec, Nat.reduceAdd] using hcount.symm
 
-
-
 theorem insert_notMem_faces_of_vertex_off_subcomplex
     (A : SimplicialComplex ℝ E) {p : E} (hp : p ∉ A.vertices) (e : Finset E) :
     insert p e ∉ A.faces := by
   intro h
   exact hp (A.down_closed h (Finset.singleton_subset_iff.mpr
     (Finset.mem_insert_self p e)) (Finset.singleton_nonempty p))
-
-
-
 
 theorem exists_vertexLink_edge_in_subcomplex
     (A : SimplicialComplex ℝ E) (hAK : A ≤ K)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutCircles
 import Mathlib.Topology.Connected.Clopen
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -53,8 +51,6 @@ private theorem range_eq_component_of_circle_family
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
 
-
-
 theorem lowerCutCircle_range_eq_connectedComponentIn
     (A : AnnularEndFamily v g B C) (i : A.LowerCutIndex)
     {p : S2} (hp : p ∈ range (A.lowerCutCircle i)) :
@@ -63,8 +59,6 @@ theorem lowerCutCircle_range_eq_connectedComponentIn
   range_eq_component_of_circle_family A.lowerCutCircle
     (fun j => (A.lowerCutCircle_geometry j).1.continuous)
     A.lowerCutCircle_joint_injective A.iUnion_range_lowerCutCircle i hp
-
-
 
 theorem upperCutCircle_range_eq_connectedComponentIn
     (A : AnnularEndFamily v g B C) (i : A.UpperCutIndex)

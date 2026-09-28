@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTerminalPair
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem exists_protected_finite_domain_triangulation
     {e : ι → OpenPartialHomeomorph X V3} {R D : Set X}

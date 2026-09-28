@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.GeometricLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -33,8 +23,6 @@ local instance ancientNormal_sourceManifold (k : ℕ) : IsManifold (𝓡 n) ∞ 
   (S.carrier k).isManifold
 local instance ancientNormal_sourceMetric (k : ℕ) : MetricSpace (S.carrier k).carrier :=
   (S.carrier k).metricSpaceOf ((S.flow k).metricAt 0)
-
-
 
 theorem exists_complete_ancient_geometric_limit
     {J : ℕ → Set ℝ} (Fseq : ∀ k, RicciFlow n (S.carrier k).carrier (J k))

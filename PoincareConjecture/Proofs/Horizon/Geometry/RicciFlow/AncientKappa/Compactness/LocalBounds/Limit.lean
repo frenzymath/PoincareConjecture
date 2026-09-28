@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Completeness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.VolumeBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +22,6 @@ local instance localBoundsLimitCarrierConnected (C : FlowCarrier 3) : ConnectedS
   connectedSpace_iff_univ.mpr C.connected
 
 variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
-
-
 
 theorem interiorLimit_base_curvatureTensorNorm_pos_of_scalar_buffer
     (G : AncientPointedGeometricConvergence (fun k ↦ (S.term k).carrier)
@@ -65,8 +52,6 @@ theorem interiorLimit_base_curvatureTensorNorm_pos_of_scalar_buffer
       simpa only [Nat.cast_ofNat, show (3 : ℝ) ^ 2 = 9 by norm_num] using ((S.term (G.subsequence k)).flow.flow.connection (s - 1)).abs_scalarCurvature_le_curvatureTensorNorm
         (S.term (G.subsequence k)).base))
   linarith
-
-
 
 theorem exists_complete_bounded_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors) {B : ℝ} (hB : 0 ≤ B)
@@ -103,9 +88,6 @@ theorem exists_complete_bounded_interior_geometric_limit
   refine ⟨G, ?_, hnorm, ?_⟩
   · exact S.interiorLimit_complete G P hcontrol hcomplete
   · exact S.interiorLimit_nonnegativeCurvatureOperator G
-
-
-
 
 theorem exists_complete_bounded_positive_volume_interior_limit
     (P : M23NormalizedKappaCompactnessPredecessors) {B ν : ℝ} (hB : 0 ≤ B)

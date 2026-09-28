@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyReference
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyTensor
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyTolerance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +37,6 @@ private theorem recent_jet_sub_triangle {f k g : V → ℝ} {x : V}
     iteratedFDeriv_sub_apply (hk.of_le (by exact_mod_cast le_top))
       (hg.of_le (by exact_mod_cast le_top))]
   exact norm_sub_le_norm_sub_add_norm_sub _ _ _
-
-
 
 theorem exists_actualCap_initial_recent_family_tolerance
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

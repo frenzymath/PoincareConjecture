@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Readout
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
@@ -19,8 +10,6 @@ namespace PoincareConjecture.ChartDistance
 variable {ι : Type*} {n : ℕ}
     (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
     [∀ i, Nonempty (Piece U i)]
-
-
 
 theorem exists_eventual_corrected_readout_eqOn
     {i j : ι} (τ : OpenPartialHomeomorph (Piece U i) (Piece U j))
@@ -67,7 +56,6 @@ variable {M : ℕ → Type*} [∀ k, MetricSpace (M k)]
       ∀ k i, IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (e k i))
 
 include hD he hc hlower hopen hconn hsmooth in
-
 
 theorem corrected_source_readout_smooth_convergence
     (hbound : ∀ i j, LocallyEventuallyBoundedDerivatives

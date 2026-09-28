@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeCoordinates
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityUniformCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem cone_reconstruction_angular {v d : ℝ → EuclideanSpace ℝ (Fin 3)}
     {v0 : EuclideanSpace ℝ (Fin 3)} {g : EuclideanSpace ℝ (Fin 3) → ℝ}
@@ -58,10 +45,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {N : ℕ}
-
-
-
-
 
 theorem m65Cone_embedded_angular (e : M → EuclideanSpace ℝ (Fin N))
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e) (P : EuclideanSpace ℝ (Fin 3) → M)

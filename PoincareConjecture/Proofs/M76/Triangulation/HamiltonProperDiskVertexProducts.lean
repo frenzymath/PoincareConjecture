@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskDualSigns
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedDiskProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,14 +13,10 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
 
-
-
 noncomputable def HamiltonProperDiskTriangulation.diskVertexBlock
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices) : Set E :=
   let : Fintype T.disk.faces := (T.finite.subset T.disk_le).fintype
   (T.disk.barycentricDualBlock {(p : E)}).space
-
-
 
 structure HamiltonProperDiskVertexProducts
     (T : HamiltonProperDiskTriangulation R D b) where

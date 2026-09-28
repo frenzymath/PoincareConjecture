@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M61.Def18_17_Width.FreeClassInfimum
 import PoincareConjecture.Proofs.M59
 import PoincareConjecture.Proofs.M60
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,34 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m61Widths (S : M59IdentificationSystem.{u}) (P60 : M60AreaTheory.{u}) :
     M61WidthTheory.{u} S.quotient := by
@@ -77,7 +40,6 @@ theorem m61Widths (S : M59IdentificationSystem.{u}) (P60 : M60AreaTheory.{u}) :
       g compact alpha
   · intro n M _ _ _ _ _ g compact x piTwo
     exact m61SphereWidth_from_M60 g (P60.least_sphere g compact x piTwo)
-
 
 theorem m61Widths_from_predecessors :
     ∃ S : M59IdentificationSystem.{u}, M61WidthTheory.{u} S.quotient := by

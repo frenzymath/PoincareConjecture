@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.ProfileGeometry
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapCollar
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 def quadraticMinimumLowerSurface (v : E3) : Set E3 :=
   {y | inner Real v y ∈ Icc (-2 : Real) 0 ∧
@@ -165,8 +161,6 @@ theorem quadraticMinimumLowerSurface_eq_cap_union_cylinder {v : E3} (hv : ‖v�
       rw [hq, one_pow, minimumCapSquaredRadius_eq_one (by linarith [hh.1])]
     · refine ⟨⟨by norm_num at hh; linarith [hh.1], hh.2⟩, ?_⟩
       rw [hq, one_pow, minimumCapSquaredRadius_eq_one (by norm_num at hh; linarith [hh.1])]
-
-
 
 theorem exists_ambient_quadraticMinimum_model {v : E3} (hv : ‖v‖ = 1) :
     ∃ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,

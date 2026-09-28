@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

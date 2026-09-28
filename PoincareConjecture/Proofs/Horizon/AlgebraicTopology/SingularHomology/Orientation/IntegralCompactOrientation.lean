@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orie
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralCompactGluing
 import Mathlib.Topology.Sets.Compacts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

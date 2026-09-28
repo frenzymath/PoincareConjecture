@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_ContactTime
 import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_first_annulus_contact_unique
     {q : ℝ → AnnulusCoordinates} {R b d : ℝ}
@@ -44,9 +30,6 @@ theorem m64Intrinsic_first_annulus_contact_unique
     · linarith [h.1]
     · linarith [h.2]
 
-
-
-
 theorem m64Intrinsic_isClosed_contact_window
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : Continuous u) (a b : ℝ) :
     IsClosed {s : ℝ | ∃ t ∈ Icc a b, ‖u (s, t)‖ ≤ 1 ∨ 2 ≤ ‖u (s, t)‖} := by
@@ -64,9 +47,6 @@ theorem m64Intrinsic_isClosed_contact_window
     exact ⟨(s, ⟨t, ht⟩), hbad, rfl⟩
   · rintro ⟨⟨s, t⟩, hbad, rfl⟩
     exact ⟨t.val, t.property, hbad⟩
-
-
-
 
 theorem m64Intrinsic_first_annulus_contact_measurable
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : Continuous u)
@@ -108,9 +88,6 @@ theorem m64Intrinsic_first_annulus_contact_measurable
     rw [heq]
     exact MeasurableSet.iUnion (fun n => (m64Intrinsic_isClosed_contact_window hu
       (1 / (n + 1 : ℝ)) r).measurableSet)
-
-
-
 
 theorem m64Intrinsic_exists_measurable_contact_times
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : Continuous u) {R : ℝ} (hR : 0 < R)

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -9,8 +8,6 @@ open Set Filter Topology
 
 namespace Poincare.GromovHausdorff
 universe u
-
-
 
 theorem exists_subseq_expanding_pointed_realizations
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}

@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M28.Mathlib.ComponentLabels
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem IsCompact.exists_connected_envelope_within
     {X : Type*} [TopologicalSpace X] [T2Space X]
@@ -50,10 +38,6 @@ theorem IsCompact.exists_connected_envelope_within
   · intro x hx
     obtain ⟨y, _, rfl⟩ := hAQ hx
     exact y.property
-
-
-
-
 
 theorem IsCompact.eventually_component_mem_iff
     {X : Type*} [TopologicalSpace X] [T2Space X]

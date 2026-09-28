@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Retaine
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedPairing
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.RetainedCrossings
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem RetainedSquareMapFacts.nonempty_ordinary_model
     {X ι : Type*} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
@@ -73,8 +63,6 @@ theorem RetainedSquareMapFacts.nonempty_ordinary_model
   intro i x hx
   exact facts.partner_mem_component old.pieces old.mate old.cover old.partner
     old.partner_value old.partner_free old.partner_component q hqunique i.val i.property.2 x hx
-
-
 
 theorem OriginalNormalizedResolutionPairData.nonempty_ordinary_models
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

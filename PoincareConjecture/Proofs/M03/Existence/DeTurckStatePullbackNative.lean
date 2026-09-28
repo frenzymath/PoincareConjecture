@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartMeasureUpperNative
 import Mathlib.Geometry.Manifold.Metrizable
 import Mathlib.MeasureTheory.Function.ContinuousMapDense
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +24,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def transportedField (Phi : Diffeomorph (𝓡 n) (𝓡 n) M M ∞)
     (V : SmoothField (n := n) (M := M)) : SmoothField (n := n) (M := M) where
@@ -123,7 +116,6 @@ theorem pullbackProbes_contMDiff (Phi : Diffeomorph (𝓡 n) (𝓡 n) M M ∞)
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => pullbackProbes d Phi h x ab) :=
   (contMDiff_pairing h (transportedField Phi (d.fields ab.1))
     (transportedField Phi (d.fields ab.2))).comp Phi.contMDiff
-
 
 def smoothPullback (Phi : Diffeomorph (𝓡 n) (𝓡 n) M M ∞)
     (h : SmoothTensor (n := n) (M := M)) : SmoothTensor (n := n) (M := M) :=
@@ -282,7 +274,6 @@ section Dominated
 variable (Phi : Diffeomorph (𝓡 n) (𝓡 n) M M ∞) {C : ℝ≥0∞}
   (hC : C ≠ ⊤) (hdom : d.charts.measure.map Phi ≤ C • d.charts.measure)
 
-
 def pullbackTuple (k : ℕ) : ProbeTuples d k →L[ℝ] ProbeTuples d k :=
   ContinuousLinearMap.pi (fun ab => ContinuousLinearMap.pi (fun w =>
     (dominatedPullbackL2 Phi Phi.continuous.measurable.aemeasurable hC hdom).comp
@@ -374,7 +365,6 @@ theorem evenPullback_refl (L : FiniteChartLocalizationData d.charts) (r : ℕ)
     rw [evenPullback_smoothTensorCoordinates]
     simp only [smoothPullback_refl]
   exact tendsto_nhds_unique (by simpa only [Function.comp_def, hid] using hout) hlim
-
 
 theorem evenPullback_scaleDecode_two (L : FiniteChartLocalizationData d.charts)
     (Phi : Diffeomorph (𝓡 n) (𝓡 n) M M ∞) {C : ℝ≥0∞}
@@ -489,7 +479,6 @@ theorem inverseCoordinateMap_spatialDerivative_zero
     simp only [inverseCoordinateMap, hzero, Diffeomorph.symm_refl,
       Diffeomorph.coe_refl, id_eq, (L.chart a).right_inv hy]
   exact ((hasFDerivAt_id z).congr_of_eventuallyEq heq).fderiv
-
 
 theorem eventually_inverse_coordinate_volume_bound
     (hzero : Phi 0 = Diffeomorph.refl (𝓡 n) M ∞)
@@ -659,7 +648,6 @@ variable {X : Type*} [TopologicalSpace X]
   (Phi : X → Diffeomorph (𝓡 n) (𝓡 n) M M ∞)
   {C : ℝ≥0∞} (hC : C ≠ ⊤)
   (hdom : ∀ p, d.charts.measure.map (Phi p) ≤ C • d.charts.measure)
-
 
 theorem continuous_dominatedPullbackL2
     (hPhi : Continuous (fun q : X × M => Phi q.1 q.2)) :

@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.InteriorDerivativeControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Limit.DerivativeBounds
-
-
-
-
-
-
-

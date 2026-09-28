@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M12HorizontalCalculus
 import PoincareConjecture.Definitions.M12MovingGauge
 import PoincareConjecture.Definitions.M12GaugeCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,17 +15,14 @@ section Ordinary
 variable {n : ℕ} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
 
-
 abbrev MetricLeviCivitaFamily (g : ℝ → RiemannianMetric n C) :=
   (t : ℝ) → LeviCivitaData (g t)
-
 
 def OrdinaryMetricRicciPDE (g : ℝ → RiemannianMetric n C)
     (D : MetricLeviCivitaFamily g) (I : SpacetimeInterval) : Prop :=
   ∀ t ∈ I.domain, ∀ x : C, ∀ u v : TangentSpace (𝓡 n) x,
     HasDerivWithinAt (fun s ↦ (g s).inner x u v)
       (-2 * (D t).ricci x u v) I.domain t
-
 
 noncomputable def ordinaryMetricLieDerivative (g : RiemannianMetric n C)
     (D : LeviCivitaData g) (V : (x : C) → TangentSpace (𝓡 n) x)
@@ -47,12 +35,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I K : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ t : ℝ, SpacetimeSliceGeometry F t}
 
-
 def IntrinsicGeneralizedRicciEquationOn (D : LeafwiseLeviCivitaFamily F S)
     (U : Set F.Point) : Prop :=
   ∀ p ∈ U, ∀ u v : F.Horizontal p,
     horizontalMetricLieDerivative F p u v = -2 * horizontalRicci D p u v
-
 
 structure IntrinsicRicciFlow (F : GeneralizedFlowSpacetime n X time I)
     (S : ∀ t : ℝ, SpacetimeSliceGeometry F t) where
@@ -62,15 +48,12 @@ structure IntrinsicRicciFlow (F : GeneralizedFlowSpacetime n X time I)
 variable {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
 
-
 def MovingGaugeRicciPDE {e : MovingSpacetimeGauge F T C}
     (G : MovingSpacetimeGaugeGeometry e) (D : MetricLeviCivitaFamily G.metric) : Prop :=
   ∀ t (ht : t ∈ K.domain), ∀ x : C, ∀ u v : TangentSpace (𝓡 n) x,
     HasDerivWithinAt (fun s ↦ (G.metric s).inner x u v)
       (-2 * (D t).ricci x u v - ordinaryMetricLieDerivative (G.metric t) (D t)
         (movingGaugeDrift G ⟨t, ht⟩) x u v) K.domain t
-
-
 
 structure OrdinaryGaugeWitness (D : LeafwiseLeviCivitaFamily F S)
     (e : CompatibleSpacetimeCylinder F T C) (G : SpacetimeCylinderMetric e) where

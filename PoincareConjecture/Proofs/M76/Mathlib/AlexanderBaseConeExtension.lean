@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,14 +10,8 @@ namespace LinearMap
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 noncomputable def radialExtension (L : E →ₗ[ℝ] ℝ) (f : E → F) (x : E) : F :=
   L x • f ((L x)⁻¹ • x)
-
-
-
 
 theorem radialExtension_smul (L : E →ₗ[ℝ] ℝ) (f : E → F)
     {y : E} (hy : L y = 1) (r : ℝ) :
@@ -34,9 +19,6 @@ theorem radialExtension_smul (L : E →ₗ[ℝ] ℝ) (f : E → F)
   by_cases hr : r = 0
   · simp [radialExtension, hr]
   · simp [radialExtension, map_smul, hy, smul_eq_mul, inv_smul_smul₀ hr]
-
-
-
 
 theorem radialExtension_image_convexJoin (L : E →ₗ[ℝ] ℝ) (f : E → F)
     {s : Set E} (hL : ∀ x ∈ s, L x = 1) :
@@ -52,10 +34,6 @@ theorem radialExtension_image_convexJoin (L : E →ₗ[ℝ] ℝ) (f : E → F)
       (mem_convexJoin_zero_iff (f '' s) z).mp hz
     exact ⟨r • y, (mem_convexJoin_zero_iff s _).mpr ⟨y, hy, r, hr, rfl⟩,
       L.radialExtension_smul f (hL y hy) r⟩
-
-
-
-
 
 theorem injOn_radialExtension (L : E →ₗ[ℝ] ℝ) (M : F →ₗ[ℝ] ℝ)
     {f : E → F} {s : Set E} (hL : ∀ x ∈ s, L x = 1)
@@ -80,10 +58,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [DecidableEq E] {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
-
 
 theorem AffineOnFaces.radialExtension (hf : K.AffineOnFaces f)
     (L : E →ₗ[ℝ] ℝ) (hL : ∀ x ∈ K.space, L x = 1) :
@@ -125,9 +99,6 @@ namespace Geometry
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem FinitePiecewiseAffineOn.radialExtension {f : E → F} {s : Set E}
     (hf : FinitePiecewiseAffineOn f s) (hne : s.Nonempty)
     (L : E →ₗ[ℝ] ℝ) (hL : ∀ x ∈ s, L x = 1) :
@@ -146,10 +117,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem IsFinitePL.exists_radial_cone_extension {s : Set E} {t : Set F}
     {e : s ≃ₜ t} (he : e.IsFinitePL) (hne : s.Nonempty)

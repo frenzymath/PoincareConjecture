@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitRegions
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionLinearImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePlanarShear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem hasNonverticalEdges_of_injective_fst {n : ℕ} (P : Polygon (ℝ × ℝ) n)
     (hn : 2 ≤ n) (hinj : Function.Injective (fun i => (P i).1)) : P.HasNonverticalEdges := by
@@ -30,10 +19,6 @@ theorem hasNonverticalEdges_of_injective_fst {n : ℕ} (P : Polygon (ℝ × ℝ)
   change 1 % n = 0 at hval
   rw [Nat.mod_eq_of_lt (by omega)] at hval
   exact Nat.one_ne_zero hval
-
-
-
-
 
 theorem region_partition_split {m n : ℕ} (u : Fin (m + 2) → ℝ × ℝ)
     (v : Fin (n + 2) → ℝ × ℝ)

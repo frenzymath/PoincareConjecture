@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem m64Intrinsic_mdifferentiable_tangent_field
     {γ Y : ℝ → AnnulusCoordinates} {x : ℝ}
     (hγ : ContDiffAt ℝ ∞ γ x) (hY : ContDiffAt ℝ ∞ Y x) :
@@ -38,10 +23,6 @@ theorem m64Intrinsic_mdifferentiable_tangent_field
   refine ⟨contMDiffAt_iff_contDiffAt.mpr hγ, ?_⟩
   simpa only [trivializationAt_model_space_apply] using
     (contMDiffAt_iff_contDiffAt.mpr hY)
-
-
-
-
 
 theorem m64Intrinsic_focusing_endpoint_le_absoluteTurning
     (N : IntrinsicAnnulus) {radius a b C S : ℝ} (hradius : radius ≠ 0)

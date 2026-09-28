@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneActualRetraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +10,7 @@ local notation "V2" => (ℝ × ℝ)
 local notation "W" => (ℝ × V2)
 local notation "Q" => sphere (0 : V2) 1
 
-
 def squareUnitBlock : Set W := Icc (-1) 1 ×ˢ closedBall 0 1
-
 
 def squareCoreShell : Set W :=
   Icc (-1) 1 ×ˢ ((norm : V2 → ℝ) ⁻¹' Icc 1 2)
@@ -61,18 +50,12 @@ private theorem closure_block_without_unit :
       have hlim := hf.continuousWithinAt.mem_closure hbase hmaps
       simpa only [f, one_smul, Prod.mk.eta] using hlim
 
-
-
-
 theorem coreExterior_image_unit (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock) :
     coreExterior (A '' squareUnitBlock) = A '' squareCoreShell := by
   have hdiff : A '' (squareBlock \ squareUnitBlock) =
       squareBlock \ (A '' squareUnitBlock) := by
     rw [image_sdiff A.injective, hAL]
   rw [coreExterior, ← hdiff, ← A.image_closure, closure_block_without_unit]
-
-
-
 
 theorem exists_actual_core_angular_map
     (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock)
@@ -124,10 +107,6 @@ theorem exists_actual_core_angular_map
     apply Subtype.ext
     change ‖free y‖⁻¹ • free y = (u : V2)
     rw [hfree, hv, smul_smul, inv_mul_cancel₀ (by norm_num : (3 / 2 : ℝ) ≠ 0), one_smul]
-
-
-
-
 
 theorem exists_same_A_complement_retraction
     (A : W ≃ₜ W) (hAL : A '' squareBlock = squareBlock)

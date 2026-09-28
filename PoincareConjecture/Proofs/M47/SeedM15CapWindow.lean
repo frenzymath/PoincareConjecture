@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CapBarrierWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46 Proofs.M12
-
-
 
 theorem seedM15_capBarrierWindow
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

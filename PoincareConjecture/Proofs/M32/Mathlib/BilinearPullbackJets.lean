@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -104,9 +94,6 @@ private theorem exists_two_bilinear_jet_bound
   have hb := norm_jet_bilinear_of_bounds op₂ hfirst hd m
     (mul_nonneg hC₁ hA) hfirstjet hdjet
   exact hb.trans_eq (by ring)
-
-
-
 
 theorem exists_bilinear_pullback_jet_bound (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (f : E → F) (B : F → F →L[ℝ] F →L[ℝ] G) (x : E),

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfacePosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.NestedFiniteCoordinateCubes
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +10,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_point_avoiding_motion
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

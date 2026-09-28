@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusSquareChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddCircle
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_comp_centeredSquareQuotient
     (p : ℝ) [Fact (0 < p)] {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

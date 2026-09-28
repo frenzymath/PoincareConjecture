@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripHalfDiskComplement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_embedded_strip_arm_parameter
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -47,8 +37,6 @@ theorem exists_embedded_strip_arm_parameter
   intro t
   exact (hjval (q t)).trans (congrArg c (hqval t))
 
-
-
 theorem embedded_strip_arm_inter_old_rim
     {E : Type*} {Q : Set E} (c : P2 → E)
     (hcQ : ∀ x ∈ source, c x ∈ Q ↔ x.1 = 0 ∨ x.1 = 1)
@@ -66,8 +54,6 @@ theorem embedded_strip_arm_inter_old_rim
         (hcQ (0, u) ⟨by norm_num, hu⟩).mpr (Or.inl rfl)⟩
     · exact ⟨⟨(1, u), ⟨by norm_num, rfl⟩, rfl⟩,
         (hcQ (1, u) ⟨by norm_num, hu⟩).mpr (Or.inr rfl)⟩
-
-
 
 theorem outer_disk_old_rim_is_interval
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

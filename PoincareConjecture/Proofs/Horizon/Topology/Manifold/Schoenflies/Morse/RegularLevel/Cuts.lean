@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.RegularCuts
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Compact
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,9 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev S2 := Metric.sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_finite_regular_cuts_of_distinct_critical_values
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

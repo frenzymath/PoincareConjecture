@@ -2,24 +2,12 @@ import Mathlib.MeasureTheory.Measure.MeasureSpace
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.AEStronglyMeasurable
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem ae_imp_of_locally_ae {X : Type*} [TopologicalSpace X] [MeasurableSpace X]
     (μ : Measure X) {S : Set X} (hS : IsLindelof S) {p : X → Prop}
@@ -34,9 +22,6 @@ theorem ae_imp_of_locally_ae {X : Type*} [TopologicalSpace X] [MeasurableSpace X
   obtain ⟨x, hx⟩ := mem_iUnion.mp (hcover hys)
   obtain ⟨hxT, hyU⟩ := mem_iUnion.mp hx
   exact hy x hxT hyU
-
-
-
 
 theorem aestronglyMeasurable_restrict_of_locally
     {X Y : Type*} [TopologicalSpace X] [MeasurableSpace X]

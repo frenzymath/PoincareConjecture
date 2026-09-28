@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.MarkedAnnuli
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Intersections.PlanarSpanningPair
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 

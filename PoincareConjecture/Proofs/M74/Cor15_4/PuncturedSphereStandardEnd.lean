@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereCollar
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereExterior
 import PoincareConjecture.Proofs.M74.ServiceMirror
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -38,8 +28,6 @@ private theorem sphere_image_mem_source {x : StandardCapSpace} (hx : x ∈ spher
   have := mem_sphere_zero_iff_norm.mp hx
   simp [h] at this
 
-
-
 theorem punctureCollar_central_image :
     B.punctureCollar d '' (univ ×ˢ {0}) =
       B.punctureChart d '' (B.map '' sphere (0 : StandardCapSpace) 1) := by
@@ -52,8 +40,6 @@ theorem punctureCollar_central_image :
   · rintro ⟨_, ⟨x, hx, rfl⟩, rfl⟩
     exact ⟨(⟨x, hx⟩, 0), ⟨mem_univ _, mem_singleton 0⟩, by simp [punctureCollar]⟩
 
-
-
 theorem punctureChart_image_puncturedBall_isOpen {r : ℝ} (hr : r ≤ 2) :
     IsOpen ((B.punctureChart d) ''
       ((B.map '' ball (0 : StandardCapSpace) r) \ {B.map 0})) := by
@@ -61,8 +47,6 @@ theorem punctureChart_image_puncturedBall_isOpen {r : ℝ} (hr : r ≤ 2) :
     ((B.map_ball_isOpen hr).sdiff isClosed_singleton)
   intro x hx
   simpa only [B.punctureChart_source d, mem_compl_iff] using hx.2
-
-
 
 theorem punctureChart_interior_disjoint_exterior :
     Disjoint ((B.punctureChart d) ''
@@ -76,8 +60,6 @@ theorem punctureChart_interior_disjoint_exterior :
     (B.closedBall_compl_subset_punctureChart_source d hb) (hay.trans hby.symm)
   subst b
   exact hb (image_mono ball_subset_closedBall ha)
-
-
 
 theorem punctureChart_interior_union_exterior :
     ((B.punctureChart d) ''
@@ -121,21 +103,15 @@ theorem punctureChart_interior_union_exterior :
       simpa only [B.punctureChart_source d, mem_compl_iff] using has
     · exact Or.inr ⟨_, ha, hay⟩
 
-
-
 theorem punctureCollar_positive_mem_exterior (q : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (0 : ℝ) 1) :
     B.punctureCollar d (q, s) ∈ (B.punctureChart d) '' B.closedBallᶜ := by
   exact mem_image_of_mem _ (B.radial_mem_complement q ⟨by linarith [hs.1],
     by linarith [hs.2]⟩)
 
-
-
 theorem schoenflies_side_eq_neg_one {δ : ℝ} (D : SchoenfliesData (B.punctureCollar d) δ) :
     D.side = -1 :=
   B.punctureCollar_side_eq_neg_one d D.side D.side_sq D.inside_bounded D.collar_inside
-
-
 
 theorem schoenflies_inside_eq_exterior {δ : ℝ}
     (D : SchoenfliesData (B.punctureCollar d) δ) :

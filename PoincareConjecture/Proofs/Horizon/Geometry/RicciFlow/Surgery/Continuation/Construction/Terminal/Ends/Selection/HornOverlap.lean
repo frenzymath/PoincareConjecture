@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.Selection.Separation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.EndCorrespondence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -55,8 +48,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E} (e : TerminalEnd K)
-
-
 
 theorem exists_tail_subset_horn_cut_of_overlapping_necks
     {epsilon delta rho constant h : ℝ} (horn : StrongHorn E epsilon)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCenterMetricJet
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundNormalizedGaussChart
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussScalarReadout
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +16,6 @@ universe u
 namespace PoincareConjecture.M28.tube
 
 open PoincareConjecture.SpacetimeBounds
-
-
 
 theorem exists_round_scalar_accuracy {delta : ℝ} (hdelta : 0 < delta) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -70,8 +58,6 @@ theorem exists_round_scalar_accuracy {delta : ℝ} (hdelta : 0 < delta) :
   rw [round_gauss_source_scalar_eq N D isOpen_ball he hi (mem_ball_self hR),
     he0, N.right_inverse hx] at hscalar
   exact hscalar
-
-
 
 theorem exists_round_scalar_ratio_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.M
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.LowerBound
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ParallelFrame
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,8 +51,6 @@ private theorem exists_multilinear_curvatureTensor
             D.curvatureTensor_smul_last x c (v 0) (v 1) (v 2) a }
   exact ⟨A, by intro v; rfl⟩
 
-
-
 theorem curvature_norm_le
     (D : LeviCivitaData g) (x : M)
     (u v w : TangentSpace (𝓡 n) x) :
@@ -81,11 +78,6 @@ theorem curvature_norm_le
   · have hpos : 0 < ‖R‖ := lt_of_le_of_ne (norm_nonneg _) (Ne.symm hR)
     apply (mul_le_mul_iff_right₀ hpos).mp
     nlinarith only [h]
-
-
-
-
-
 
 theorem transported_jacobi_two_sided_norm_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -266,7 +258,6 @@ private theorem exists_manifold_jacobi_reduction
           (Real.sqrt_nonneg _)
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem manifold_jacobi_estimates
     (D : LeviCivitaData g) {q : ℝ → M} {I : Set ℝ}

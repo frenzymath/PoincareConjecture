@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphStripFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +30,6 @@ private theorem positive_strip_of_point
       have hpf : H q ∈ frontier U := ⟨hp, by simpa only [hU.interior_eq] using hn⟩
       exact hq.2.1.ne' ((hfront q (hS hq)).mp hpf))
   exact fun t ht z hz => hsub ⟨(t, z), ⟨ht, hz⟩, rfl⟩
-
-
-
 
 theorem m64Intrinsic_exists_inward_graph_strip
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {T a b : ℝ}

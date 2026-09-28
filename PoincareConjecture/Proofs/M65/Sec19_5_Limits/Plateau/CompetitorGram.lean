@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Measurable
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Analysis.Matrix.Normed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaGram_posSemidef (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) : (m60AreaGram g f z).PosSemidef := by
@@ -104,10 +92,6 @@ private theorem areaGram_aestronglyMeasurable_in_chart
   dsimp only [Jext, Function.comp_apply]
   rw [Set.piecewise_eq_of_mem U _ _ (chi.map_source (hmap hzd))]
   exact (areaGram_eq_chart g p hz (hmap hzd)).symm
-
-
-
-
 
 theorem m65AreaGram_aestronglyMeasurable
     (g : RiemannianMetric n M) {f : LoopPlane → M} {domain : Set LoopPlane}

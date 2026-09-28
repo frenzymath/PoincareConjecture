@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Collars.OriginalRegionMotion
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Original.SurfaceMotion
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip unitInterval
 

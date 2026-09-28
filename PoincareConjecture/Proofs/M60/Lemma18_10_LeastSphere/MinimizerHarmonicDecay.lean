@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEs
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerPlanePoisson
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakRescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "L" => secondOrderOperator (fun _ : Plane => (1 : Matrix (Fin 2) (Fin 2) ℝ))
   (fun _ : Fin 2 => fun _ : Plane => (0 : ℝ))
 
-
-
 theorem suPlaneLaplace_rescale (u : Plane → ℝ) (a : Plane) (s : ℝ) (z : Plane) :
     L (fun y => u (a + s • y)) z = s ^ 2 * L u (a + s • z) := by
   have hform (f : Plane → ℝ) (x : Plane) : L f x =
@@ -43,8 +32,6 @@ theorem suPlaneLaplace_rescale (u : Plane → ℝ) (a : Plane) (s : ℝ) (z : Pl
   rw [hform, hform]
   rw [hscale, hscale]
   ring
-
-
 
 theorem suPlaneLaplace_partial {u : Plane → ℝ} (hu : ContDiff ℝ ∞ u) (i : Fin 2) :
     L (partialDeriv i u) = partialDeriv i (L u) := by
@@ -60,9 +47,6 @@ theorem suPlaneLaplace_partial {u : Plane → ℝ} (hu : ContDiff ℝ ∞ u) (i 
   exact congrArg (fun A : Plane →L[ℝ] ℝ => A (EuclideanSpace.single i 1)) (fderiv_fun_add
     ((contDiff_partial (contDiff_partial hu 0) 0).differentiable (by simp) x)
     ((contDiff_partial (contDiff_partial hu 1) 1).differentiable (by simp) x)).symm
-
-
-
 
 theorem suHarmonic_unit_value_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {u : Plane → ℝ},
@@ -127,9 +111,6 @@ theorem suHarmonic_unit_value_bound :
   exact integral_mono_measure (Measure.restrict_mono (subset_closure.trans hVO) le_rfl)
     (Eventually.of_forall fun y => sq_nonneg _) hm.integrable_sq
 
-
-
-
 theorem suHarmonic_disk_value_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {u : Plane → ℝ} (a : Plane) {R : ℝ}, 0 < R →
       ContDiffOn ℝ ∞ u (Metric.ball a R) →
@@ -171,9 +152,6 @@ theorem suHarmonic_disk_value_bound :
   change R ^ 2 * u (A y) ^ 2 ≤ R ^ 2 * (C * ∫ z in Metric.ball 0 1, (u ∘ A) z ^ 2) at hs
   rw [hxy, ← mul_assoc, mul_comm (R ^ 2) C, mul_assoc, hi] at hs
   exact hs
-
-
-
 
 theorem suHarmonic_disk_decay :
     ∃ C : ℝ, 0 < C ∧ ∀ {u : Plane → ℝ} (a : Plane) {R r : ℝ},

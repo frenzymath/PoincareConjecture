@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Incidence
 import Mathlib.Topology.LocallyConstant.Basic
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +12,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_exactly_two_incident_components_along_chartCircle_edge
     {I : Type v} [Finite I] (edge : I → SmoothEdge M) (i : I) (p q : M)

@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M38.LateSphereBundleIncident
 import PoincareConjecture.Proofs.M38.LateProjectiveIncident
 import PoincareConjecture.Proofs.M38.LateSpaceformIncident
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem closed_certificate_incident_assembly
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
@@ -56,10 +42,6 @@ theorem closed_certificate_incident_assembly
         fun _ => (Classical.choice hs).connected, fun _ => Or.inr hs, ha⟩
   | realProjectiveThreeConnectedSum =>
       exact projectiveDouble_incident_assembly_of_closed_double F T hT P x t C hsource
-
-
-
-
 
 theorem exists_positiveCap_discarded_assembly
     (N : RepairedNeckCapTopologyTheory.{u}) :

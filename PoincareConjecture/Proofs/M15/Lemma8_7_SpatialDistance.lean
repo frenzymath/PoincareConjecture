@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.Riemannian.PathELength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory Set
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem edist_le_of_tangentNorm_mfderivWithin_le
     {n : ℕ} {M : Type u} [TopologicalSpace M]

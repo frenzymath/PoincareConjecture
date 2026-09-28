@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_HessianIndexComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,9 +21,6 @@ private theorem hessian_pair_time_congr {T τ σ : ℝ} (h : τ = σ) (q : G.Poi
       M14ReducedLengthHessianPairing G ⟨q, hq'⟩ f Y Y := by
   subst σ
   rfl
-
-
-
 
 theorem variation_index_eq_hessian_of_action_germ
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RectangleCollarSides
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem exists_rectangle_side_of_height_interval
     {α β : ℝ} (hαβ : α ≤ β) {T S : Set X}
@@ -65,11 +52,6 @@ namespace Homeomorph
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_bottom_normalized_rectangle_chart_with_overlaps
     {α β : ℝ} (hαβ : α < β) {T : Set E}

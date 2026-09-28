@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CyclicFocusingC
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryPeriodicity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,9 +9,6 @@ open Set MeasureTheory
 open scoped Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_cyclic_boundary_focusing_cover
     (N : IntrinsicAnnulus) {A τ : ℝ} (hA : 0 ≤ A) (hτ : 3 < τ)
@@ -51,9 +34,6 @@ theorem m64Intrinsic_exists_cyclic_boundary_focusing_cover
     (m64Intrinsic_boundarySpeed_periodic N 1)
     (m64Intrinsic_turning_density_periodic N (by norm_num : (1 : ℝ) ≠ 0))
     Real.two_pi_pos hA hτ T hT hfocus
-
-
-
 
 theorem m64Intrinsic_exists_cyclic_injective_retained_normal_domain
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -104,10 +84,6 @@ theorem m64Intrinsic_exists_cyclic_injective_retained_normal_domain
   fin_cases i
   · exact heq
   · exact ht
-
-
-
-
 
 theorem m64Intrinsic_exists_cyclic_retained_domain_with_focusing_loss
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

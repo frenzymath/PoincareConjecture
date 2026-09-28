@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenCapDirectedInduction
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenCapPropertyHomeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

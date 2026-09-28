@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M08.ChartCover
 import PoincareConjecture.Proofs.M08.IntegratedEnergy
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ namespace PoincareConjecture.M08
 variable {n : ℕ} {M : Type u} [mTop : TopologicalSpace M]
   [mChart : ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [mSmooth : IsManifold (𝓡 n) ∞ M] [mConnected : ConnectedSpace M] [mT3 : T3Space M]
-
 
 theorem exists_backward_minimizing_uniform_limit {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax τ₁ τ₂ : ℝ} (hM04 : RicciFlowCurvatureTheory.{u}) (hT : T ∈ J)
@@ -117,7 +108,6 @@ theorem exists_backward_minimizing_uniform_limit {J : Set ℝ} {F : RicciFlow n 
     rw [projIcc_of_mem _ s.2]
   simpa only [f, Function.comp_def, hclamp] using hlim
 
-
 theorem finite_chartH1_limit {ι : Type*} [Fintype ι]
     (g : RiemannianMetric n M) (a b : ι → ℝ) (hab : ∀ i, a i ≤ b i)
     (x : ι → M) (K : ι → Set M) (hK : ∀ i, IsCompact (K i))
@@ -180,7 +170,6 @@ theorem finite_chartH1_limit {ι : Type*} [Fintype ι]
       (hpoint i t ht)).comp hφ.tendsto_atTop
 
 set_option synthInstance.maxHeartbeats 200000 in
-
 
 theorem finite_chart_action_le {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) {ι : Type*} [Fintype ι]
@@ -276,7 +265,6 @@ theorem finite_chart_action_le {J : Set ℝ} (F : RicciFlow n M J)
     (tendsto_finsetSum Finset.univ (fun i _ ↦ hpotential i)) haction
     (fun k ↦ by simpa only [hQkeq, ← Finset.sum_add_distrib, B, V] using henergy k)
   simpa only [hQeq, ← Finset.sum_add_distrib, D, V] using htotal
-
 
 theorem chart_piece_action_eq {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) {a b : ℝ} (hab : a ≤ b)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckSequenceT
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckMetricTransport
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +30,6 @@ private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     SecondCountableTopology L.carrier.carrier := L.carrier.secondCountable
 private local instance {J : Set ℝ} {L : BlowupLimitFlow.{u} J} :
     ConnectedSpace L.carrier.carrier := L.connectedSpace
-
-
 
 theorem exists_normalized_limit_neck_of_ancient
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval ⊤)) {kappa delta : ℝ}
@@ -80,8 +69,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11_eventually_strongNeck_of_ancient
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

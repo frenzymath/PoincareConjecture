@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderReverseBall
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCompactMetricComparison
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,10 +18,6 @@ local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.top
 local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carrier.carrier :=
   C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
-
-
 
 theorem eventually_source_ball_localization_zero (a : ℝ) (ha : 0 < a) :
     ∀ᶠ k : ℕ in atTop, ∀ x ∈ S.baseBall (C.subsequence k) a,

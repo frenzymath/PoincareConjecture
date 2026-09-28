@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteNeckDistances
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_neck_return_impossible
     {M : Type u} [TopologicalSpace M]

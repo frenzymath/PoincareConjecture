@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Locality
 import Mathlib.Topology.Order.ProjIcc
 import Mathlib.Topology.Separation.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +23,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem closed_c2_tail_of_terminal_fields
     [T2Space M] (F : RicciFlow n M (Icc a b))

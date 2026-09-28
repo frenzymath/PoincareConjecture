@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import Mathlib.Analysis.Convex.GaugeRescale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,10 +9,6 @@ namespace ContinuousMap
 
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace Y] [ContractibleSpace Y]
-
-
-
-
 
 theorem exists_convexBody_extension_of_contractible {s : Set E}
     (hs : IsClosed s) (hc : Convex ℝ s) (hi : (interior s).Nonempty)

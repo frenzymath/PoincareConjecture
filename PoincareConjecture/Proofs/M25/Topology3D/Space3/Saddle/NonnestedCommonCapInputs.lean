@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonExteriorHalf
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -23,8 +16,6 @@ namespace PoincareConjecture.M25.Topology3D
 set_option maxHeartbeats 1000000 in
 
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_nonnested_common_cap_inputs
     (hP : PlanarSchoenfliesService)

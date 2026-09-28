@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M47
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem jointSeed_ball_subset_of_local_tangent_lower
     (g h : RiemannianMetric n M) (q : M) {R r K : ℝ}
@@ -65,7 +54,6 @@ theorem jointSeed_ball_subset_of_local_tangent_lower
 
 omit [T3Space M] in
 
-
 theorem jointSeed_tangent_reverse_le_two
     (g h : RiemannianMetric n M) (x : M) (w : TangentSpace (𝓡 n) x)
     (hlower : Real.exp (-1 / 4 : ℝ) * g.inner x w w ≤ h.inner x w w) :
@@ -87,9 +75,6 @@ theorem jointSeed_tangent_reverse_le_two
   change Real.sqrt (g.inner x w w) ≤ 2 * Real.sqrt (h.inner x w w)
   apply (Real.sqrt_le_iff).2
   exact ⟨by positivity, by nlinarith [Real.sq_sqrt hh]⟩
-
-
-
 
 theorem jointSeed_seed_ball_inclusions
     (g h : RiemannianMetric n M) (q : M) {R : ℝ} (hR : 0 < R)

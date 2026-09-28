@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetConnection
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +17,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   (b : G.gaugeCover.index)
-
-
-
-
 
 theorem exists_continuous_gaugeVelocity_coordinates {U : Set G.Point}
     (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
@@ -78,9 +65,6 @@ theorem exists_continuous_gaugeVelocity_coordinates {U : Set G.Point}
     · exact (((G.gaugeCover.metric b).spatialTangentEquiv (beta z).1 (beta z).2).symm_apply_apply
         (v z)).symm
   exact ⟨v, hv.continuousOn, hfield⟩
-
-
-
 
 theorem gaugeMomentum_coordinates_continuousOn
     (W : OrdinaryGaugeWitness G.leafwise (G.gaugeCover.cylinder b) (G.gaugeCover.metric b))

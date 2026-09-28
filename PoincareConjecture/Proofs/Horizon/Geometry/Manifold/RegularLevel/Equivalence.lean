@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +12,6 @@ namespace Poincare.Geometry.Manifold.RegularLevel
 
 variable {M : Type*} [TopologicalSpace M]
   {f h : M → ℝ} {U V : Opens M} {c d : ℝ}
-
 
 def openLevelEquivOfEq
     (he : ∀ x, (x ∈ U ∧ f x = c) ↔ (x ∈ V ∧ h x = d)) :
@@ -44,7 +36,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (n : ℕ) [Fact (Module.finrank ℝ E = n + 1)]
   (hregf : ∀ x ∈ U, mfderiv I 𝓘(ℝ, ℝ) f x ≠ 0)
   (hregh : ∀ x ∈ V, mfderiv I 𝓘(ℝ, ℝ) h x ≠ 0)
-
 
 def openLevelDiffeomorphOfEq
     (he : ∀ x, (x ∈ U ∧ f x = c) ↔ (x ∈ V ∧ h x = d)) :

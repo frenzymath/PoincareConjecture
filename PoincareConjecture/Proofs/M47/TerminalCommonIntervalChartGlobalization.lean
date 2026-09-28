@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCoordinateMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,7 +30,6 @@ variable {ι : Type*} {M : Type u} {N : Type v}
 omit [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N] in
 include a b U hU hUb hcover hsmooth in
 
-
 theorem terminalCommonInterval_smooth_of_coordinate_rows :
     ContMDiff (𝓡 3) (𝓡 3) ∞ d := by
   intro x
@@ -59,7 +50,6 @@ theorem terminalCommonInterval_smooth_of_coordinate_rows :
   exact ((b i).toPartialEquiv.left_inv hdy).symm
 
 include hU hUb hcover hsmooth in
-
 
 theorem terminalCommonInterval_metric_of_coordinate_rows
     (g : RiemannianMetric 3 M) (k : RiemannianMetric 3 N)
@@ -116,7 +106,6 @@ theorem terminalCommonInterval_metric_of_coordinate_rows
 
 omit d hUb hcover hsmooth in
 include hU in
-
 
 theorem terminalCommonInterval_diffeomorph_of_coordinate_rows
     (d : M ≃ₜ N) (g : RiemannianMetric 3 M) (k : RiemannianMetric 3 N)

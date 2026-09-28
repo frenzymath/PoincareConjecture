@@ -3,13 +3,6 @@ import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -91,4 +84,3 @@ theorem ricci_timeDerivative_extend (F : RicciFlow n M J)
   exact ((hf t ht).differentiableWithinAt (by simp)).hasDerivWithinAt.congr_deriv (heq ht)
 
 end PoincareConjecture.M04
-

@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
 open Set Function TopologicalSpace Poincare.EuclideanSpace
 open scoped Manifold ContDiff Topology
 

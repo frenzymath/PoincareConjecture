@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.HilbertFormBasisNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +36,6 @@ theorem form_repr_adjoint_decode (J : V →L[ℝ] H) (hc : IsCompactOperator J)
         (J.adjoint ((eigenbasis J hc hd).repr.symm z)) i =
       Real.sqrt i.1.val * z i := by
   rw [form_repr_adjoint, LinearIsometryEquiv.apply_symm_apply]
-
-
 
 theorem form_variational_pairing (J : V →L[ℝ] H) (w v : V) :
     inner ℝ w (v - J.adjoint (J v)) = inner ℝ w v - inner ℝ (J w) (J v) := by

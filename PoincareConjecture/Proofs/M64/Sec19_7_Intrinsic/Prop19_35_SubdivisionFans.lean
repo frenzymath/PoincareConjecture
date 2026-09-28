@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.IndependentFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexContributions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +15,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 namespace PoincareConjecture
 
 open Classical in
-
-
-
-
 
 theorem m64Intrinsic_subdivision_used_vertex_contribution
     (g : RiemannianMetric 2 AnnulusCoordinates)
@@ -92,11 +75,6 @@ theorem m64Intrinsic_subdivision_used_vertex_contribution
       · intro horiginal
         exact hcorner ⟨M.position v, horiginal, hvq⟩
 
-
-
-
-
-
 theorem m64Intrinsic_subdivision_interior_fan
     (g : RiemannianMetric 2 AnnulusCoordinates)
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -112,11 +90,6 @@ theorem m64Intrinsic_subdivision_interior_fan
   classical
   rw [m64Intrinsic_subdivision_used_vertex_contribution g F b S R hF hFi hsource hused,
     if_pos hq]
-
-
-
-
-
 
 theorem m64Intrinsic_subdivision_open_edge_fan
     (g : RiemannianMetric 2 AnnulusCoordinates)

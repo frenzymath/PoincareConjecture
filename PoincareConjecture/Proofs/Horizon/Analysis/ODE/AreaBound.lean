@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.ScalarComparison
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace Poincare.ODE
-
-
 
 theorem le_mul_exp_of_integral_le_of_deriv_le_mul
     {A A' : ℝ → ℝ} {a m b K V : ℝ}

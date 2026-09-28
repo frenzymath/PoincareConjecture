@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 open Poincare.Geometry.Euclidean
 
-
-
 theorem boundedCylinderRadius_eq_of_sq_height_eq (v : E3) {p q : S2}
     (h : inner Real v (p : E3) ^ 2 = inner Real v (q : E3) ^ 2) :
     boundedCylinderRadius v p = boundedCylinderRadius v q := by
@@ -32,8 +28,6 @@ theorem boundedCylinderRadius_eq_of_sq_height_eq (v : E3) {p q : S2}
         inner Real v (p : E3) ^ 2 = _
   rw [h]
   rfl
-
-
 
 theorem exists_ambient_boundedCylinder_two_caps
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
@@ -103,8 +97,6 @@ theorem exists_ambient_boundedCylinder_two_caps
     · exact ⟨p, p.property, hF p⟩
     · refine ⟨r p, (r p).property, ?_⟩
       rw [hF, hbr, ← hT]
-
-
 
 theorem exists_ambient_diffeomorph_of_opposite_cap_ranges
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

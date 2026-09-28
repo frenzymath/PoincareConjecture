@@ -3,13 +3,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +15,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
-
-
 
 theorem isClopen_minimum_disk_annulus_region
     {h : M → Real} (hh : Continuous h)
@@ -104,8 +95,6 @@ theorem isClopen_minimum_disk_annulus_region
   refine ⟨hcompact.isClosed.preimage continuous_subtype_val, ?_⟩
   rw [heq]
   exact hU.preimage continuous_subtype_val
-
-
 
 theorem subset_minimum_disk_annulus_region_of_isPreconnected
     {h : M → Real} (hh : Continuous h)

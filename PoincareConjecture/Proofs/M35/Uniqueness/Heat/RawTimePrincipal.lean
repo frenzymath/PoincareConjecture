@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatEnergy
 import PoincareConjecture.Proofs.M03.ConnectionFamily
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +39,6 @@ theorem rawInverseGram_family_continuousOn {J : Set ℝ} (F : RicciFlow n V J) :
   DeTurckNative.continuousOn_inverse_posDef _ (rawCoordinateGram_family_continuousOn F)
     (fun p _ => rawCoordinateGram_posDef (F.metric p.1) p.2)
 
-
-
 theorem exists_raw_slab_ellipticity {J I : Set ℝ} (F : RicciFlow n V J)
     (hI : IsCompact I) (hIJ : I ⊆ J) {K : Set V} (hK : IsCompact K) :
     ∃ c : ℝ, 0 < c ∧ ∀ t ∈ I, ∀ x ∈ K, ∀ ξ : Fin n → ℝ,
@@ -59,8 +48,6 @@ theorem exists_raw_slab_ellipticity {J I : Set ℝ} (F : RicciFlow n V J)
     ((rawCoordinateGram_family_continuousOn F).mono (prod_mono hIJ (subset_univ K)))
     (fun p _ => rawCoordinateGram_posDef (F.metric p.1) p.2)
   exact ⟨c, hc, fun t ht x hx ξ => hb (t, x) ⟨ht, hx⟩ ξ⟩
-
-
 
 theorem exists_raw_principal_small_time_change {J : Set ℝ} (F : RicciFlow n V J)
     {a b : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J)

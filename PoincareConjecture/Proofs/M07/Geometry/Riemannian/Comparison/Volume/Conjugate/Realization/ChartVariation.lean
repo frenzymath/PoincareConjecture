@@ -1,13 +1,3 @@
-
-
-
-
-
-
-
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.ContDiff.Operations
@@ -19,26 +9,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace PoincareConjecture.Conjugate.Realization
@@ -48,20 +18,10 @@ open Set Filter Topology
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {τ₀ τ₁ : ℝ} {ŷ Ŷ ĉ₀ ĉ₁ : ℝ → E}
 
-
-
-
-
-
-
-
 def chartVariation (τ₀ τ₁ : ℝ) (ŷ Ŷ ĉ₀ ĉ₁ : ℝ → E) (p : ℝ × ℝ) : E :=
   ŷ p.2 + p.1 • Ŷ p.2
     + ((τ₁ - p.2) / (τ₁ - τ₀)) • (ĉ₀ p.1 - ŷ τ₀ - p.1 • Ŷ τ₀)
     + ((p.2 - τ₀) / (τ₁ - τ₀)) • (ĉ₁ p.1 - ŷ τ₁ - p.1 • Ŷ τ₁)
-
-
-
 
 theorem chartVariation_left (hne : τ₀ ≠ τ₁) (s : ℝ) :
     chartVariation τ₀ τ₁ ŷ Ŷ ĉ₀ ĉ₁ (s, τ₀) = ĉ₀ s := by
@@ -69,27 +29,19 @@ theorem chartVariation_left (hne : τ₀ ≠ τ₁) (s : ℝ) :
   simp only [chartVariation, sub_self, zero_div, div_self h, one_smul, zero_smul, add_zero]
   abel
 
-
-
 theorem chartVariation_right (hne : τ₀ ≠ τ₁) (s : ℝ) :
     chartVariation τ₀ τ₁ ŷ Ŷ ĉ₀ ĉ₁ (s, τ₁) = ĉ₁ s := by
   have h : τ₁ - τ₀ ≠ 0 := sub_ne_zero.mpr (Ne.symm hne)
   simp only [chartVariation, sub_self, zero_div, div_self h, one_smul, zero_smul, add_zero]
   abel
 
-
-
 theorem chartVariation_zero (hc₀ : ĉ₀ 0 = ŷ τ₀) (hc₁ : ĉ₁ 0 = ŷ τ₁) (t : ℝ) :
     chartVariation τ₀ τ₁ ŷ Ŷ ĉ₀ ĉ₁ (0, t) = ŷ t := by
   simp [chartVariation, hc₀, hc₁]
 
-
 theorem chartVariation_comp_zero (hc₀ : ĉ₀ 0 = ŷ τ₀) (hc₁ : ĉ₁ 0 = ŷ τ₁) :
     (fun t : ℝ => chartVariation τ₀ τ₁ ŷ Ŷ ĉ₀ ĉ₁ (0, t)) = ŷ :=
   funext (chartVariation_zero hc₀ hc₁)
-
-
-
 
 theorem hasDerivAt_chartVariation_fst (hc₀' : HasDerivAt ĉ₀ (Ŷ τ₀) 0)
     (hc₁' : HasDerivAt ĉ₁ (Ŷ τ₁) 0) (t : ℝ) :
@@ -116,10 +68,6 @@ theorem hasDerivAt_chartVariation_fst (hc₀' : HasDerivAt ĉ₀ (Ŷ τ₀) 0)
   rw [hfun]
   simpa using h
 
-
-
-
-
 theorem differentiableAt_chartVariation {s t : ℝ} (hy : DifferentiableAt ℝ ŷ t)
     (hY : DifferentiableAt ℝ Ŷ t) (h₀ : DifferentiableAt ℝ ĉ₀ s)
     (h₁ : DifferentiableAt ℝ ĉ₁ s) :
@@ -144,9 +92,6 @@ theorem differentiableAt_chartVariation {s t : ℝ} (hy : DifferentiableAt ℝ �
 
 set_option linter.unusedVariables false in
 
-
-
-
 theorem fderiv_chartVariation_snd_zero (hne : τ₀ ≠ τ₁)
     (hc₀ : ĉ₀ 0 = ŷ τ₀) (hc₁ : ĉ₁ 0 = ŷ τ₁)
     (hc₀' : HasDerivAt ĉ₀ (Ŷ τ₀) 0) (hc₁' : HasDerivAt ĉ₁ (Ŷ τ₁) 0)
@@ -163,8 +108,6 @@ theorem fderiv_chartVariation_snd_zero (hne : τ₀ ≠ τ₁)
   exact (h1.unique h2)
 
 set_option linter.unusedVariables false in
-
-
 
 theorem fderiv_chartVariation_fst_zero (hne : τ₀ ≠ τ₁)
     (hc₀ : ĉ₀ 0 = ŷ τ₀) (hc₁ : ĉ₁ 0 = ŷ τ₁)
@@ -184,9 +127,6 @@ theorem fderiv_chartVariation_fst_zero (hne : τ₀ ≠ τ₁)
 
 set_option linter.unusedVariables false in
 
-
-
-
 theorem contDiff_chartVariation {n : WithTop ℕ∞} (hne : τ₀ ≠ τ₁)
     (hŷ : ContDiff ℝ n ŷ) (hŶ : ContDiff ℝ n Ŷ)
     (hc₀ : ContDiff ℝ n ĉ₀) (hc₁ : ContDiff ℝ n ĉ₁) :
@@ -202,10 +142,6 @@ theorem contDiff_chartVariation {n : WithTop ℕ∞} (hne : τ₀ ≠ τ₁)
       ((h₀'.sub (contDiff_const)).sub (hfst.smul contDiff_const))
   · exact (((hsnd.sub (contDiff_const)).div_const _)).smul
       ((h₁'.sub (contDiff_const)).sub (hfst.smul contDiff_const))
-
-
-
-
 
 theorem exists_forall_mem_of_isOpen_of_continuous {U : Set E} (hU : IsOpen U)
     (hcont : Continuous (chartVariation τ₀ τ₁ ŷ Ŷ ĉ₀ ĉ₁))

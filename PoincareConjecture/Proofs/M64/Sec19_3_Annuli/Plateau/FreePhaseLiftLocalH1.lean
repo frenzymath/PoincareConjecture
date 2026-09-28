@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseCoordinateC
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularAngles
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped ContDiff
 namespace PoincareConjecture
 
 open Proofs.M58 Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem m64ContinuousPhase_local_angle
     {u : LoopPlane → ℝ} {q : LoopPlane → LoopPlane} {k : ℝ} (hk : k ≠ 0)
@@ -70,8 +60,6 @@ theorem m64ContinuousPhase_local_angle
   refine ⟨V, F, hV, haV, hF0.mono hVV, ?_⟩
   filter_upwards [hleft, hright] with p hp hFp
   exact (mul_left_cancel₀ hk) (hinj hp hFp (hFeq p).symm)
-
-
 
 theorem m64ContinuousPhase_local_memW1p
     {O : Set LoopPlane} (hO : IsOpen O)

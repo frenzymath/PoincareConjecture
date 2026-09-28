@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HalfLineMaximum
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -63,7 +54,6 @@ theorem polynomialBarrier_deriv_hasDerivAt (N A L t r : ℝ) :
   field_simp [hn]
   ring
 
-
 theorem polynomialBarrier_first_bound {N A L t r : ℝ}
     (hN : 0 ≤ N) (hA : 0 ≤ A) (hr : 0 ≤ r) :
     |deriv (polynomialBarrier N A L t) r| ≤ 2 * N * polynomialBarrier N A L t r := by
@@ -84,8 +74,6 @@ theorem polynomialBarrier_first_bound {N A L t r : ℝ}
   rw [hcoef]
   exact mul_le_mul_of_nonneg_right (by simpa only [mul_one] using hbound) hq
 
-
-
 theorem polynomialBarrier_second_bound {N A L t r : ℝ}
     (hN : 0 ≤ N) (hA : 0 ≤ A) :
     deriv (deriv (polynomialBarrier N A L t)) r ≤
@@ -104,8 +92,6 @@ theorem polynomialBarrier_second_bound {N A L t r : ℝ}
   rw [(polynomialBarrier_deriv_hasDerivAt N A L t r).deriv]
   apply mul_le_mul_of_nonneg_right _ hq
   nlinarith only [hbound, hneg]
-
-
 
 theorem polynomialBarrier_supersolution {N A K V t r v c : ℝ}
     (hN : 0 ≤ N) (hA : 0 ≤ A) (hV : 0 ≤ V) (hr : 0 ≤ r)

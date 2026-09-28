@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Uniform
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem radial_lower_bound_on_ball
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -51,8 +36,6 @@ namespace PoincareConjecture.RicciFlow
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 noncomputable def ancientRescaleAt (F : RicciFlow n M (Iic 0))
     (Q : ℝ) (hQ : 0 < Q) (t₀ : ℝ) (ht₀ : t₀ ≤ 0) : RicciFlow n M (Iic 0) :=
@@ -85,7 +68,6 @@ theorem ancientRescaleAt_edist_toReal_zero (F : RicciFlow n M (Iic 0))
   rw [ancientRescaleAt_metric, zero_div, add_zero, rescaledMetric_edist,
     ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.sqrt_nonneg Q)]
 
-
 theorem ancientRescaleAt_scalarCurvature_mul_sq_edist_zero
     (F : RicciFlow n M (Iic 0))
     (Q : ℝ) (hQ : 0 < Q) (t₀ : ℝ) (ht₀ : t₀ ≤ 0) (p x : M) :
@@ -97,8 +79,6 @@ theorem ancientRescaleAt_scalarCurvature_mul_sq_edist_zero
   field_simp
 
 variable [T3Space M] [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
-
-
 
 theorem ancientRescaleAt_scalarCurvature_le_of_quadratic_decay
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -145,8 +125,6 @@ theorem ancientRescaleAt_scalarCurvature_le_of_quadratic_decay
     exact mul_le_mul_of_nonneg_left hmono (inv_nonneg.mpr hQ.le)
   exact hmonoG.trans hterminal
 
-
-
 theorem ancientRescaleAt_curvatureTensorNorm_le_of_quadratic_decay
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
     (hcomplete : ∀ t ≤ 0, MetricComplete (F.metric t))
@@ -176,7 +154,6 @@ theorem ancientRescaleAt_curvatureTensorNorm_le_of_quadratic_decay
 
 omit [T3Space M] [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M] in
 
-
 theorem scalarCurvature_tendsto_zero_of_finite_ratio
     (F : RicciFlow n M (Iic 0)) (t₀ : ℝ) (p : M) (q : ℕ → M)
     (hd : Tendsto (fun i => ((F.metric t₀).edist p (q i)).toReal) atTop atTop)
@@ -190,7 +167,6 @@ theorem scalarCurvature_tendsto_zero_of_finite_ratio
 
 omit [T3Space M] [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M] in
 
-
 theorem ancientRescaleAt_basepoint_edist_tendsto_of_finite_ratio
     (F : RicciFlow n M (Iic 0)) (t₀ : ℝ) (ht₀ : t₀ ≤ 0) (p : M) (q : ℕ → M)
     (hQ : ∀ i, 0 < (F.connection t₀).scalarCurvature (q i))
@@ -203,8 +179,6 @@ theorem ancientRescaleAt_basepoint_edist_tendsto_of_finite_ratio
   funext i
   rw [Function.comp_apply, ancientRescaleAt_edist_toReal_zero, Real.sqrt_mul (hQ i).le,
     Real.sqrt_sq ENNReal.toReal_nonneg]
-
-
 
 theorem eventually_ancientRescaleAt_annular_curvature_control
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -233,8 +207,6 @@ theorem eventually_ancientRescaleAt_annular_curvature_control
   filter_upwards [hsmall.eventually_lt_const hb] with i hi
   exact F.ancientRescaleAt_curvatureTensorNorm_le_of_quadratic_decay hC hcomplete hoperator
     hK hbound _ (hQ i) t₀ ht₀ p hb hdecay hi.le
-
-
 
 theorem ancientRescaleAt_volume_lower_bound_of_quadratic_decay
     [MeasurableSpace M] [BorelSpace M]
@@ -295,8 +267,6 @@ theorem ancientRescaleAt_volume_lower_bound_of_quadratic_decay
       _ = κ * r ^ n := by rw [mul_div_cancel₀ _ hsq.ne']
   rwa [hid] at h
 
-
-
 theorem ancientRescaleAt_uniform_exponential_chart_of_quadratic_decay
     [MeasurableSpace M] [BorelSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -352,9 +322,6 @@ theorem ancientRescaleAt_uniform_exponential_chart_of_quadratic_decay
   exact (G.metric 0).exists_uniform_precompact_exponential_diffeomorph
     (G.connection 0) q hn (mul_nonneg (sq_nonneg _) (div_nonneg hA (sq_nonneg _)))
     hr (mul_pos hκ (pow_pos hr n)) hcompact hcurv hvolume
-
-
-
 
 theorem eventually_ancientRescaleAt_uniform_exponential_charts
     [MeasurableSpace M] [BorelSpace M]

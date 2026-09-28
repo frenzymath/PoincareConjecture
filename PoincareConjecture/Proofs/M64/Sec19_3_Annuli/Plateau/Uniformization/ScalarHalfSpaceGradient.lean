@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryContinuous
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,12 +45,6 @@ private theorem scalar_wholeSpace_continuous_representative
     have hχ0 : χ x = 0 := image_eq_zero_of_notMem_tsupport (fun h => hxB (hχs h))
     simp [hu0, hχ0]
 
-
-
-
-
-
-
 theorem scalar_halfSpace_H2_continuous_extension {u : Plane → ℝ}
     (hc : HasCompactSupport u) (hu : MemWkp 2 2 u Half) :
     ∃ F : Plane → ℝ, Continuous F ∧ u =ᵐ[volume.restrict Half] F := by
@@ -84,12 +64,6 @@ theorem scalar_halfSpace_H2_continuous_extension {u : Plane → ℝ}
   filter_upwards [ae_restrict_of_ae hae, ae_restrict_mem isOpen_halfSpace.measurableSet]
     with x hx hxH
   exact (evenReflect_eq_on_halfSpace u hxH).symm.trans hx
-
-
-
-
-
-
 
 theorem scalar_halfSpace_H3_continuous_gradient {u : Plane → ℝ}
     (hc : HasCompactSupport u) (hu : MemWkp 3 2 u Half) :

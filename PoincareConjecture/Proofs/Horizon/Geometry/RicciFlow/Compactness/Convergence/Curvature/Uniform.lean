@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature.MovingJets
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -215,8 +204,6 @@ private theorem tendsto_coordinate_curvatureTensorNorm_prod (q : G.limitCarrier.
     (G.limitFlow.metricAt p.1) (G.limitFlow.flow.connection p.1) q p.1 p.2 hp g D hg] at hn
   exact hn
 
-
-
 theorem tendsto_curvatureTensorNorm_prod (p : ℝ × G.limitCarrier.carrier)
     (ht : p.1 ∈ Ioo T' T) :
     Tendsto (fun z : ℕ × (ℝ × G.limitCarrier.carrier) ↦
@@ -248,8 +235,6 @@ private theorem exists_local_curvatureTensorNorm_lt (p : ℝ × G.limitCarrier.c
   obtain ⟨P, hP, Q, hQ, hPQ⟩ := eventually_prod_iff.mp
     ((G.tendsto_curvatureTensorNorm_prod p ht).eventually (Iio_mem_nhds hB))
   exact ⟨{z | Q z}, hQ, hP.mono (fun k hk z hz ↦ hPQ hk hz)⟩
-
-
 
 theorem eventually_curvatureTensorNorm_lt_on_compact
     {A : Set (ℝ × G.limitCarrier.carrier)} (hA : IsCompact A)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodFibers
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.QuotientFibersHomeomorph
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -26,8 +17,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_period_homeomorph
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.IntervalFamily
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

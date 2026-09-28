@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerInterior
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65AlphaOneSmoothness {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -47,12 +35,6 @@ theorem m65AlphaOneSmoothness {n : ℕ} {M : Type u} [TopologicalSpace M]
   · intro φ hφ hcomp hs
     simpa only [M60.suAlphaChartVariation, sub_self, Real.rpow_zero, mul_one, one_mul]
       using (hvar φ hφ hcomp hs).2
-
-
-
-
-
-
 
 theorem m65PlateauInteriorRegularityInput_proved {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

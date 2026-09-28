@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedVertexMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProtectedMotionImage
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_finite_protected_vertex_motion
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,22 +1,8 @@
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
-
 
 theorem Function.injOn_fst_double_relation
     {X Y : Type*} {f : X → Y}

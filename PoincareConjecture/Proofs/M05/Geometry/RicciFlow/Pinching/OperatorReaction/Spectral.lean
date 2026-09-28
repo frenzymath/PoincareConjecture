@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Region
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Spectrum
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -51,8 +40,6 @@ theorem diagonal_rayleigh_ge_least
     _ ≤ _ := Finset.sum_le_sum fun i _ =>
       mul_le_mul_of_nonneg_right (horder (by omega)) (sq_nonneg _)
 
-
-
 theorem diagonal_least_eigenvalue
     (hn : Module.finrank ℝ E = 3) {A : E →ₗ[ℝ] E} (hA : A.IsSymmetric)
     (e : OrthonormalBasis (Fin 3) ℝ E) {d : Fin 3 → ℝ}
@@ -72,7 +59,6 @@ theorem diagonal_trace
     LinearMap.trace ℝ E A = ∑ i, d i := by
   rw [LinearMap.trace_eq_matrix_trace ℝ e.toBasis]
   simp [Matrix.trace, LinearMap.toMatrix_apply, hd]
-
 
 theorem mem_region_iff_diagonal
     (hn : Module.finrank ℝ E = 3) {A : E →ₗ[ℝ] E} (hA : A.IsSymmetric)

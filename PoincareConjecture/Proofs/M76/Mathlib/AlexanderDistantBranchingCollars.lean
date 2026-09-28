@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBranchingPoint
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderDistantCollarRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +9,6 @@ namespace Geometry.AlexanderCollarSlab
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
-
 
 theorem exists_distant_child_branching_collars
     {S s₀ s₁ d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {c β γ : ℝ}

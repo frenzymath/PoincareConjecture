@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.ModelScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.FlowExtension
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -22,8 +11,6 @@ open Poincare.Geometry.Riemannian.SpaceForm
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem m25_roundCylinderMetric_ricci_transverse :
     let := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)
@@ -54,9 +41,6 @@ theorem m25_roundCylinderMetric_ricci_transverse :
     D.normalization_curvatureTensorCalculus
     (contMDiff_snd.comp roundCylinderModelDiffeomorph.symm.contMDiff) hu hz z v w
   rwa [roundCylinderMetric_scalar_one] at h
-
-
-
 
 theorem roundCylinderEuclideanModelConnection_ricci
     (x v w : EuclideanSpace ℝ (Fin 3)) :
@@ -93,8 +77,6 @@ theorem roundCylinderEuclideanModelConnection_ricci
   change _ = (1 / 2 : ℝ) * (_ - mvfderiv (𝓡 3) r _ _ * mvfderiv (𝓡 3) r _ _) at h
   rwa [hheight, hheight] at h
 
-
-
 theorem roundCylinderEuclideanModelConnection_ricci_zero_basis (i j : Fin 3) :
     roundCylinderEuclideanModelConnection.ricci 0
       (m25_roundCylinderEuclideanBasis i) (m25_roundCylinderEuclideanBasis j) =
@@ -108,8 +90,6 @@ theorem roundCylinderEuclideanModelConnection_ricci_zero_basis (i j : Fin 3) :
   fin_cases i <;> fin_cases j <;>
     norm_num [roundCylinderCoordinateBasis, EuclideanSpace.inner_single_left,
       PiLp.single_apply, Fin.ext_iff]
-
-
 
 theorem roundCylinderEuclideanModelConnection_ricci_zero_self
     (v : EuclideanSpace ℝ (Fin 3)) :

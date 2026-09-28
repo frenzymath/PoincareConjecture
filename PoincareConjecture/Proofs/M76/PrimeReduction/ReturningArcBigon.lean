@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonConvexContainment
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
 
 theorem closed_inside_axis_contact {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
@@ -44,11 +32,6 @@ theorem closed_inside_axis_contact {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     exact (lt_irrefl (0 : ℝ)) (hz0 ▸ hstrict.2)
   · rintro ⟨hz, hz0⟩
     exact ⟨frontier_subset_closure (P.frontier_inside hP hi ▸ hz), hz0⟩
-
-
-
-
-
 
 theorem exists_returning_arc_bigon {m n : ℕ}
     (K : SimplicialComplex ℝ (ℝ × ℝ))

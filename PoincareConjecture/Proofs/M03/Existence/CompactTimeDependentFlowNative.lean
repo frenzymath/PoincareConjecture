@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.SmoothManifoldLocalFlowNative
 import PoincareConjecture.Proofs.M03.Existence.TimeDependentConjugatingFlowNative
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Manifold

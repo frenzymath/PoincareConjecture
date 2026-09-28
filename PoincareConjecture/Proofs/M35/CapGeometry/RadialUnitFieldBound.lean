@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitField
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialPointIdentification
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
 
 include hrotation
-
-
 
 theorem radialUnitField_connection_sq_le
     {x : StandardCapSpace} (hx : x ≠ 0) (w : StandardCapSpace) :
@@ -49,8 +38,6 @@ theorem radialUnitField_connection_sq_le
   rw [hproj]
   nlinarith only [sq_nonneg
     ((axisWarpingSlope g ‖x‖ / axisWarpingRadius g ‖x‖) * a)]
-
-
 
 theorem radial_shape_le_inverse_tip_distance
     (P : M35StandardCapPredecessors) (hsec : D.NonnegativeSectionalCurvature)
@@ -81,8 +68,6 @@ theorem radial_shape_le_inverse_tip_distance
     _ ≤ axisWarpingRadius g ‖x‖ := axisWarpingSlope_mul_arclength_le D hrotation hsec hr
     _ = 1 * axisWarpingRadius g ‖x‖ := (one_mul _).symm
 
-
-
 theorem radial_shape_bound_on_ball
     (P : M35StandardCapPredecessors) (hsec : D.NonnegativeSectionalCurvature)
     (hcomplete : MetricComplete g) (x : StandardCapSpace) (R : ℝ)
@@ -104,8 +89,6 @@ theorem radial_shape_bound_on_ball
     radial_shape_le_inverse_tip_distance D hrotation P hsec hcomplete hypos
   refine ⟨hyne, hnonneg, hbound.trans ?_⟩
   exact one_div_le_one_div_of_le (sub_pos.mpr hfar) (by linarith)
-
-
 
 theorem radialUnitField_connection_sq_le_on_ball
     (P : M35StandardCapPredecessors) (hsec : D.NonnegativeSectionalCurvature)

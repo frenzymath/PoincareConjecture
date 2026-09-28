@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Matrix.Bounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -29,7 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 theorem fderiv_ricci_eq_covariant_add_christoffel (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x d u v : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ (fun y => D.ricci y u v) x d =
@@ -41,8 +30,6 @@ theorem fderiv_ricci_eq_covariant_add_christoffel (D : LeviCivitaData g)
     (p := x) differentiableAt_id (fun _ => differentiableAt_const _) d
   simpa [manifoldCovDerivAlong_model, covDerivAlong_def, ricciEvaluation,
     Fin.sum_univ_two, Function.update, add_assoc] using h
-
-
 
 theorem norm_fderiv_ricci_le (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x u v : EuclideanSpace ℝ (Fin n)) {c G K L : ℝ}

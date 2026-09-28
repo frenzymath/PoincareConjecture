@@ -1,3 +1,1 @@
 import PoincareConjecture.Statements.M12GeneralizedEquation
-
-

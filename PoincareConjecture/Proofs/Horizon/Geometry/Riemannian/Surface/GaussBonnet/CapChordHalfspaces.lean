@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreCapIntersections
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +32,6 @@ private theorem transverse_sign_radius {f : ℝ × ℝ → ℝ}
   exact ⟨δ, hδ, fun r t hr ht =>
     ⟨(hsign 0 r t (by simpa using hδ) hr ht).1.1,
       (hsign 0 r t (by simpa using hδ) hr ht).1.2.1⟩⟩
-
-
 
 theorem exists_affine_halfspace_of_regular_line
     {g : Plane → ℝ} {a v d : Plane}
@@ -122,8 +113,6 @@ theorem exists_affine_halfspace_of_regular_line
     dsimp only [Function.comp_apply] at hs
     rw [he, ← hℓ] at hs
     exact ⟨hs.1, hs.2, le_iff_le_iff_lt_iff_lt.mpr hs.1⟩
-
-
 
 theorem exists_cap_chord_excess_affine_germ
     (F : OpenPartialHomeomorph (ℝ × ℝ) Plane)
@@ -208,8 +197,6 @@ theorem exists_cap_chord_excess_affine_germ
   have haeq : a = (1 - t) • F (ε, 0) + t • F (0, ε) := hchord t
   exact ⟨ℓ, hsurj, haeq ▸ ha, hld, haeq ▸ hsign⟩
 
-
-
 theorem affine_functionals_eq_smul_of_common_line
     (f ℓ : Plane →ᵃ[ℝ] ℝ) (hf : Function.Surjective f) (hℓ : Function.Surjective ℓ)
     {a d : Plane} (hd : d ≠ 0) (hfa : f a = 0) (hℓa : ℓ a = 0)
@@ -263,8 +250,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
 
-
-
 theorem exists_chart_carrier_chord_affine_halfspace (i : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :
     let a := (1 - t) • B.planarCoordinates i (B.scale, 0) +
@@ -281,7 +266,6 @@ theorem exists_chart_carrier_chord_affine_halfspace (i : Bool × Bool) {t : ℝ}
   filter_upwards [B.chart_carrier_chord_eventually_iff i ht, hsign] with z hz hs
   exact hz.trans hs.2.2
 
-
 theorem planar_chord_direction_ne_zero (i : Bool × Bool) :
     B.planarCoordinates i (0, B.scale) - B.planarCoordinates i (B.scale, 0) ≠ 0 := by
   intro he
@@ -289,8 +273,6 @@ theorem planar_chord_direction_ne_zero (i : Bool × Bool) :
     (B.planar_source i ⟨le_rfl, B.scale_pos.le, by simp⟩)
     (B.planar_source i ⟨B.scale_pos.le, le_rfl, by simp⟩) (sub_eq_zero.mp he)
   exact B.scale_pos.ne' (congrArg Prod.snd hp)
-
-
 
 theorem chart_carrier_chord_supportingLine_germ (i : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Carriers.Sum
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Reindex
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -23,8 +11,6 @@ universe u
 namespace PoincareConjecture
 
 namespace SmoothDisjointUnionData
-
-
 
 noncomputable def append {m n : ℕ}
     {pieces : Fin m → GeneralizedSliceCarrier.{u}}
@@ -104,9 +90,6 @@ noncomputable def append {m n : ℕ}
         rcases Set.mem_iUnion.mp hx with ⟨i, hi⟩
         refine Set.mem_iUnion.mpr ⟨Fin.natAdd m i, ?_⟩
         simpa only [Fin.append_right] using Set.mem_image_of_mem Sum.inr hi
-
-
-
 
 noncomputable def sumRight {A B X : GeneralizedSliceCarrier.{u}}
     (D : SmoothDisjointUnionData ![A, B] X)

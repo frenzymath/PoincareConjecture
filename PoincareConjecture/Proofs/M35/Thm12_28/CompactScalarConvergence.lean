@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TerminalScalarConvergence
 import PoincareConjecture.Proofs.M09.HessianTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem uniform_of_moving_point_limits
     {X : Type*} [TopologicalSpace X] [FirstCountableTopology X]
@@ -42,8 +32,6 @@ theorem uniform_of_moving_point_limits
       atTop (𝓝 0) := by
     simpa only [Function.comp_apply, sub_self, abs_zero] using (hF.sub hGl).abs
   exact (not_le.mpr heta) (ge_of_tendsto herr (Eventually.of_forall (fun n => hbad (rho n))))
-
-
 
 theorem blowupSequence_terminal_scalar_uniform_chart (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -88,9 +76,6 @@ theorem blowupSequence_terminal_scalar_uniform_chart (P : M35StandardCapPredeces
       blowupSequence_terminal_scalar_tendsto_chart P E t x ht hR L q j K hK hKU
         sigma hsigma pseq hpseq p hp hplim) heta
   exact ⟨max j N, le_max_left _ _, fun k hk => hN k ((le_max_right _ _).trans hk)⟩
-
-
-
 
 theorem blowupSequence_terminal_scalar_uniform_compact (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

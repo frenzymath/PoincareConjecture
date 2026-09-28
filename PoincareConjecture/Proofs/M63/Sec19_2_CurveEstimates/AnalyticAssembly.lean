@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.PolygonEstimates
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m63AnalyticConclusion_of_local_uniform
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

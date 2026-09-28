@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicLieMetricNative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -38,7 +29,6 @@ private theorem mdifferentiableAt_const_field {n : ℕ}
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem metricLieDerivative_linear {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g)
@@ -65,8 +55,6 @@ theorem metricLieDerivative_linear {n : ℕ}
   rw [hm] at h
   simpa only [map_neg, neg_apply, sub_neg_eq_add] using h
 
-
-
 theorem standardRotation_mfderiv
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x : StandardCapSpace) :
     mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x =
@@ -74,8 +62,6 @@ theorem standardRotation_mfderiv
   rw [mfderiv_eq_fderiv]
   change fderiv ℝ (Matrix.toEuclideanLin A.1) x = _
   exact (Matrix.toEuclideanLin A.1).toContinuousLinearMap.fderiv
-
-
 
 theorem initial_rotation_path_killing
     (g₀ : StandardInitialMetric)

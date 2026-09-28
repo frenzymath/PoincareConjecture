@@ -1,17 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.FamilyWidths
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.RegionBands
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Frontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -31,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {dLeft dRight : D.IncidentEdgeIndex → EuclideanSpace ℝ (Fin 2)}
   (K : ∀ p, (S p).CutChain (dLeft p) (dRight p)) {δ r : ℝ}
   (B : ∀ p i, ((S p).piece i).FixedStripBandFaces ((K p).graphCuts i) δ r r)
-
 
 def graphBandsInRegion (R : D.regions) : Set M :=
   ⋃ a : {a : D.IncidentGraphPieceIndex chart cut S // a.1.1.1 = R},
@@ -78,7 +67,6 @@ variable {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p 
   {x : D.vertices → Bool × Bool → M}
   (caps : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
-
 
 def fittedRegionCollar (R : D.regions) : Set M :=
   D.vertexCapsInRegion caps region R ∪ D.graphBandsInRegion chart cut S K B R

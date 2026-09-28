@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M54GroupEffects
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -15,8 +7,6 @@ universe u
 namespace PoincareConjecture.RepairedGroupFactorData
 
 variable {G H K : Type u} [Group G] [Group H] [Group K]
-
-
 
 def ofRetraction (r : G →* H) (j : H →* G)
     (h : r.comp j = MonoidHom.id H) : RepairedGroupFactorData G H where
@@ -32,12 +22,8 @@ def ofRetraction (r : G →* H) (j : H →* G)
     exact ha.symm.trans ((congrArg r hab).trans hb)
   factor_retraction := h
 
-
-
 def ofMulEquiv (e : G ≃* H) : RepairedGroupFactorData G H :=
   ofRetraction e.toMonoidHom e.symm.toMonoidHom (by ext x; exact e.apply_symm_apply x)
-
-
 
 def trans (D : RepairedGroupFactorData G H) (E : RepairedGroupFactorData H K) :
     RepairedGroupFactorData G K :=
@@ -50,8 +36,6 @@ def trans (D : RepairedGroupFactorData G H) (E : RepairedGroupFactorData H K) :
         E.survivor_injection x from
           DFunLike.congr_fun D.factor_retraction (E.survivor_injection x)]
       exact DFunLike.congr_fun E.factor_retraction x)
-
-
 
 def transport {G' H' : Type u} [Group G'] [Group H']
     (D : RepairedGroupFactorData G H) (e : G' ≃* G) (f : H ≃* H') :

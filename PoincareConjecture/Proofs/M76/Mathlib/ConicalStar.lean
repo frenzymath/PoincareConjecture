@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCone
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -16,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K : SimplicialComplex ℝ E}
-
-
 
 theorem coneAtZero_vertices
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -38,8 +28,6 @@ theorem coneAtZero_vertices
       exact zero_mem_coneAtZero_vertices hlin hinj
     · exact le_coneAtZero hlin hinj hx
 
-
-
 theorem insert_zero_mem_coneAtZero_faces
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
@@ -47,8 +35,6 @@ theorem insert_zero_mem_coneAtZero_faces
   have hs0 : (0 : E) ∉ s := fun h =>
     (hlin s hs).zero_notMem_convexHull (subset_convexHull ℝ _ h)
   exact ⟨Finset.insert_nonempty _ _, Or.inr (by rwa [Finset.erase_insert hs0])⟩
-
-
 
 theorem finite_coneAtZero_faces (hK : K.faces.Finite)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -66,9 +52,6 @@ theorem finite_coneAtZero_faces (hK : K.faces.Finite)
     by_cases hs0 : (0 : E) ∈ s
     · exact Or.inr ⟨s.erase 0, hface, Finset.insert_erase hs0⟩
     · exact Or.inl (by simpa only [Finset.erase_eq_of_notMem hs0] using hface)
-
-
-
 
 theorem coneAtZero_link_eq_closedStar (K : SimplicialComplex ℝ E)
     (hzero : (0 : E) ∈ K.vertices) :

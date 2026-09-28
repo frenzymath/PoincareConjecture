@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.FinalEndpointArcPairChart
 import PoincareConjecture.Proofs.M76.Wall.InteriorArcPairChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,12 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
-
-
 
 theorem PLDomain.exists_original_arc_model_chart
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

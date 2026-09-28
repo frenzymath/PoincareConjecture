@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSphereProjection
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -131,9 +121,6 @@ private theorem neck_graph_isImmersion (N : EpsilonNeck g)
       RiemannianMetric.lineModelEquiv 2 (y, 0)
     rw [(chartAt SE p).right_inv hy', sub_self]
 
-
-
-
 theorem neck_graph_isSmoothEmbedding [T2Space M] (N : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
     (hdom : ∀ p, f p ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -147,8 +134,6 @@ theorem neck_graph_isSmoothEmbedding [T2Space M] (N : EpsilonNeck g)
     exact h
   exact ⟨neck_graph_isImmersion N f hf hdom,
     ((neck_graph_contMDiff N f hf hdom).continuous.isClosedEmbedding hinj).isEmbedding⟩
-
-
 
 theorem neck_graph_isotopic_central [T2Space M] (N : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
@@ -186,9 +171,6 @@ theorem neck_graph_isotopic_central [T2Space M] (N : EpsilonNeck g)
     exact N.coordinate_map_mem ⟨mem_univ _, hheight t ht p⟩
   · simp only [height, sub_zero, one_mul]
   · simpa only [height, sub_self, zero_mul] using N.centralSphere_range
-
-
-
 
 theorem exists_buffered_neck_sphere_isotopy_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

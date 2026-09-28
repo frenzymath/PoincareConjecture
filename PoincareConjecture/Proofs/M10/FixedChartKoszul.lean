@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M10.FixedChartHessian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle

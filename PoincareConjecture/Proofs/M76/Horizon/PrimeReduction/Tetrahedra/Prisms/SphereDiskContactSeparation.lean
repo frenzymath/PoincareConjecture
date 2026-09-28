@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt

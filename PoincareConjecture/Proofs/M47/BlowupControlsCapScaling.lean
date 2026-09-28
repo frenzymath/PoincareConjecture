@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapPhysicalAnalytics
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScaling
 import PoincareConjecture.Proofs.M34.Standard.CapIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem capComparison_scaled_analytic_readout
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
@@ -62,8 +51,6 @@ theorem capComparison_scaled_analytic_readout
     M13.scaleLeviCivitaData_scalarEvolution]
   exact (capComparison_analytic_readout e initial comparison hh s hs hx).symm.trans
     (capComparison_analytic_height_readout e initial comparison hh s hs hx)
-
-
 
 theorem exists_cap_of_rescaled_metric
     {M : Type u} [TopologicalSpace M]

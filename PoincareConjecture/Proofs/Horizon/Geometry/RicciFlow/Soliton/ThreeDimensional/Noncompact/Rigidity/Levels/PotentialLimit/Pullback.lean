@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.PotentialLimit.Source
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.AtInfinity.UnscaledLimit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,11 +28,8 @@ variable {M : Type u} [TopologicalSpace M]
     (fun _ => G.unscaledSourceFlow.shrink.metric)
     (fun k => equivShrink M (q k)) 1)
 
-
 def unscaledOriginalEmbedding (k : ℕ) (x : L.limitCarrier.carrier) : M :=
   (equivShrink M).symm (L.embedding k x)
-
-
 
 def normalizedPotentialPullback (k : ℕ) (x : L.limitCarrier.carrier) : ℝ :=
   S.normalizedPotential (q (L.subsequence k)) (G.unscaledOriginalEmbedding L k x)
@@ -66,8 +53,6 @@ theorem normalizedPotentialPullback_contMDiffOn (k : ℕ) :
       (G.normalizedPotentialPullback L k) (L.exhaustion k) :=
   (S.normalizedPotential_contMDiff (q (L.subsequence k))).comp_contMDiffOn
     (G.unscaledOriginalEmbedding_contMDiffOn L k)
-
-
 
 theorem unscaledOriginalEmbedding_inner (k : ℕ) (x : L.limitCarrier.carrier)
     (hx : x ∈ L.exhaustion k) (v w : TangentSpace (𝓡 3) x) :
@@ -95,9 +80,6 @@ theorem normalizedPotentialPullback_scale_tendsto_atTop
     Tendsto (fun k => S.potentialGradientScale (q (L.subsequence k))) atTop atTop :=
   (S.potentialGradientScale_tendsto_atTop_of_escape hD p q hescape).comp
     L.subsequence_strictMono.tendsto_atTop
-
-
-
 
 theorem normalizedPotentialPullback_hessian_eventually_lt
     (hD : S.connection.CurvatureTensorCalculus) (p : M)

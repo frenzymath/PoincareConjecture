@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M49.EventLossCertificate
 import PoincareConjecture.Proofs.M49.DirectVolumeGrowth
 import PoincareConjecture.Proofs.M49.UniformEventCount
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,38 +12,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedVolumeLoss : RepairedVolumeLossTheory.{u} := by
   classical

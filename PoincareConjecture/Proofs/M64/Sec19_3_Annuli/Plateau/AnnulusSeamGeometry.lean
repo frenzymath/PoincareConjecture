@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamTests
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.CutBoundary
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64AnnulusInterior_coordinates (p : LoopPlane) :
     p ∈ S ↔ 0 < p 0 ∧ p 0 < curvePeriod ∧ 0 < p 1 ∧ p 1 < 1 := by
@@ -41,16 +28,10 @@ theorem m64AnnulusInterior_coordinates (p : LoopPlane) :
   change ((0 < p 0 ∧ p 0 < curvePeriod) ∧ (0 < p 1 ∧ p 1 < 1)) ↔ _
   tauto
 
-
-
 def m64AnnulusSeamLeft : Set LoopPlane := (fun p => v + p) ⁻¹' S
-
-
 
 theorem m64AnnulusSeamLeft_isOpen : IsOpen m64AnnulusSeamLeft :=
   isOpen_interior.preimage (continuous_const.add continuous_id)
-
-
 
 theorem m64AnnulusSeamLeft_coordinates (p : LoopPlane) :
     p ∈ m64AnnulusSeamLeft ↔
@@ -63,15 +44,11 @@ theorem m64AnnulusSeamLeft_coordinates (p : LoopPlane) :
   · exact ⟨by linarith [h.2.1], h.2.2⟩
   · exact ⟨by linarith [h.2.1], h.2.2⟩
 
-
-
 theorem m64AnnulusSeam_rect_subset : S ⊆ m64AnnulusSeamDomain := by
   intro p hp
   have h := (m64AnnulusInterior_coordinates p).mp hp
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
   exact ⟨by linarith [h.1], h.2⟩
-
-
 
 theorem m64AnnulusSeam_left_subset : m64AnnulusSeamLeft ⊆ m64AnnulusSeamDomain := by
   intro p hp
@@ -79,15 +56,11 @@ theorem m64AnnulusSeam_left_subset : m64AnnulusSeamLeft ⊆ m64AnnulusSeamDomain
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
   exact ⟨h.1, by linarith [h.2.1], h.2.2⟩
 
-
-
 theorem m64AnnulusSeam_disjoint : Disjoint S m64AnnulusSeamLeft := by
   apply disjoint_left.mpr
   intro p hp hq
   exact (lt_asymm ((m64AnnulusInterior_coordinates p).mp hp).1
     ((m64AnnulusSeamLeft_coordinates p).mp hq).2.1)
-
-
 
 theorem m64AnnulusSeamDomain_ae_union :
     m64AnnulusSeamDomain =ᵐ[volume] (S ∪ m64AnnulusSeamLeft : Set LoopPlane) := by
@@ -105,15 +78,11 @@ theorem m64AnnulusSeamDomain_ae_union :
     · exact m64AnnulusSeam_rect_subset h
     · exact m64AnnulusSeam_left_subset h
 
-
-
 theorem m64AnnulusSeam_translation_measurePreserving :
     MeasurePreserving (fun p : LoopPlane => v + p)
       (volume.restrict m64AnnulusSeamLeft) (volume.restrict S) :=
   (measurePreserving_add_left (volume : Measure LoopPlane) v).restrict_preimage_emb
     (MeasurableEquiv.addLeft v).measurableEmbedding S
-
-
 
 theorem m64AnnulusSeam_negative_translation_measurePreserving :
     MeasurePreserving (fun p : LoopPlane => p - v)
@@ -128,34 +97,24 @@ theorem m64AnnulusSeam_negative_translation_measurePreserving :
   funext p
   abel
 
-
-
 def m64AnnulusSeamExtend {E : Type*} (f : LoopPlane → E) (p : LoopPlane) : E :=
   if p 0 < 0 then f (v + p) else f p
-
-
 
 theorem m64AnnulusSeamExtend_right {E : Type*} (f : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusSeamExtend f p = f p := by
   simp only [m64AnnulusSeamExtend, not_lt.mpr ((m64AnnulusInterior_coordinates p).mp hp).1.le,
     ↓reduceIte]
 
-
-
 theorem m64AnnulusSeamExtend_left {E : Type*} (f : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ m64AnnulusSeamLeft) :
     m64AnnulusSeamExtend f p = f (v + p) := by
   simp only [m64AnnulusSeamExtend, ((m64AnnulusSeamLeft_coordinates p).mp hp).2.1, ↓reduceIte]
-
-
 
 theorem m64AnnulusSeamExtend_comp {E F : Type*} (f : LoopPlane → E) (g : E → F) :
     g ∘ m64AnnulusSeamExtend f = m64AnnulusSeamExtend (g ∘ f) := by
   funext p
   simp only [Function.comp_def, m64AnnulusSeamExtend]
   split_ifs <;> rfl
-
-
 
 theorem m64AnnulusSeamExtend_sub {E : Type*} (f : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusSeamExtend f (p - v) = f p := by
@@ -164,8 +123,6 @@ theorem m64AnnulusSeamExtend_sub {E : Type*} (f : LoopPlane → E)
     change v + (p - v) ∈ S
     simpa only [heq] using hp
   rw [m64AnnulusSeamExtend_left f hm, heq]
-
-
 
 theorem m64AnnulusSeamExtend_memLp {E : Type*} [NormedAddCommGroup E]
     {q : ENNReal} {f : LoopPlane → E} (hf : MemLp f q (volume.restrict S)) :
@@ -190,8 +147,6 @@ theorem m64AnnulusSeamExtend_memLp {E : Type*} [NormedAddCommGroup E]
     simp only [F, Pi.add_apply, indicator_of_notMem hns, indicator_of_mem hl, zero_add,
       m64AnnulusSeamExtend_left f hl]
 
-
-
 theorem m64AnnulusSeam_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (F : LoopPlane → E) (hF : IntegrableOn F m64AnnulusSeamDomain volume) :
@@ -208,8 +163,6 @@ theorem m64AnnulusSeam_integral
         abel
       rw [hfun]
       exact (MeasurableEquiv.addLeft (-v)).measurableEmbedding) F).symm
-
-
 
 theorem m64AnnulusSeamExtend_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

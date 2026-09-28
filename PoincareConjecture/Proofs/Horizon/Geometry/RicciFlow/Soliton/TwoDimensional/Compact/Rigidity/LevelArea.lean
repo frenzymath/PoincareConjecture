@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Area
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem levelMeanCurvature_div_speed_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
@@ -52,7 +42,6 @@ theorem levelMeanCurvature_div_speed_of_surface_soliton (D : LeviCivitaData g)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
 theorem hasDerivAt_regularLevelArea_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
     (hsol : ∀ x, ∀ v w : TangentSpace (𝓡 2) x,
@@ -79,8 +68,6 @@ theorem hasDerivAt_regularLevelArea_of_surface_soliton (D : LeviCivitaData g)
       hQ _ hz, hR _ hz, hzt]
   rw [heq, integral_const]
   simp only [smul_eq_mul, RiemannianMetric.regularLevelArea, mul_comm]
-
-
 
 theorem exists_const_regularLevelArea_div_sqrt_of_surface_soliton
     (D : LeviCivitaData g) {f : M → ℝ} {lambda a b : ℝ}

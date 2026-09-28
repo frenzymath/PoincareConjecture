@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteParameterJets
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingMetricDerivative
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,10 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m64ParameterAnnulus_moving_metric_energy_hasDerivAt
     (F : RicciFlow n M (Icc a b)) (r : ℝ) {t : ℝ} (ht : t ∈ Ioo a b)

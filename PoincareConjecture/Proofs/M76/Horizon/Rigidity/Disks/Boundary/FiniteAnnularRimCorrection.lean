@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.FiniteModel
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.FiniteEssentialOutputPolygon
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.EssentialPolygonAnnuli
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn
@@ -23,8 +14,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 1 (1 / 8 : ℝ)
-
-
 
 theorem OriginalFiniteCollarModel.exists_proper_disk_of_essential_annular_rim
     {X ι : Type*} [TopologicalSpace X]

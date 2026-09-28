@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +13,6 @@ section Curves
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def m63RestrictFlow {J : Set ℝ} (F : RicciFlow n M J) (J' : Set ℝ)
     (hsub : J' ⊆ J) (hOrd : J'.OrdConnected) (hNontriv : J'.Nontrivial) :
     RicciFlow n M J' where
@@ -32,14 +23,12 @@ def m63RestrictFlow {J : Set ℝ} (F : RicciFlow n M J) (J' : Set ℝ)
   smooth := F.smooth.mono (Set.prod_mono hsub Set.Subset.rfl)
   equation t ht x v w := (F.equation t (hsub ht) x v w).mono hsub
 
-
 def m63RestrictClosedFlow {J : Set ℝ} (F : RicciFlow n M J) (s t : ℝ)
     (hsub : Set.Icc s t ⊆ J) (hst : s < t) : RicciFlow n M (Set.Icc s t) :=
   m63RestrictFlow F (Set.Icc s t) hsub Set.ordConnected_Icc
     ⟨s, ⟨le_rfl, hst.le⟩, t, ⟨hst.le, le_rfl⟩, hst.ne⟩
 
 variable {a b : ℝ}
-
 
 def m63RestrictCircleProduct {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
@@ -49,7 +38,6 @@ def m63RestrictCircleProduct {F : RicciFlow n M (Set.Icc a b)}
   charts := P.charts
   flow := m63RestrictClosedFlow P.flow s t hsub hst
   metric_eq := P.metric_eq
-
 
 theorem m63C2_of_m62 {F : RicciFlow n M (Set.Icc a b)} {c : ℝ → ℝ → M}
     (h : M62ShrinkingCurve F c) : M63C2ShrinkingCurveOn F c (Set.Icc a b) where
@@ -63,7 +51,6 @@ theorem m63C2_of_m62 {F : RicciFlow n M (Set.Icc a b)} {c : ℝ → ℝ → M}
   velocity_continuous := h.velocity_continuous
   curvature_continuous := h.curvature_continuous
   equation := by simpa only [interior_Icc] using h.equation
-
 
 theorem m63SmoothClosed_iff_m62 {F : RicciFlow n M (Set.Icc a b)} {c : ℝ → ℝ → M} :
     M63SmoothShrinkingCurveOn F c (Set.Icc a b) ↔ M62ShrinkingCurve F c := by
@@ -81,8 +68,6 @@ theorem m63SmoothClosed_iff_m62 {F : RicciFlow n M (Set.Icc a b)} {c : ℝ → �
   · intro h
     exact ⟨m63C2_of_m62 h, by simpa only [interior_Icc] using h.joint_smooth⟩
 
-
-
 theorem m63SmoothRestriction {F : RicciFlow n M (Set.Icc a b)}
     {c : ℝ → ℝ → M} {J : Set ℝ} (h : M63SmoothShrinkingCurveOn F c J)
     (s t : ℝ) (hJ : Set.Icc s t ⊆ J) (hst : s < t) :
@@ -99,7 +84,6 @@ theorem m63SmoothRestriction {F : RicciFlow n M (Set.Icc a b)}
     curvature_continuous := h.1.curvature_continuous.mono (Set.prod_mono Set.Subset.rfl hJ)
     equation := fun r hr => h.1.equation r (hi hr) }
 
-
 theorem m63RestrictAmbientBounds {F : RicciFlow n M (Set.Icc a b)} {K0 K1 K2 : ℝ}
     (h : CurveEvolutionAmbientBounds F K0 K1 K2) (s t : ℝ)
     (hsub : Set.Icc s t ⊆ Set.Icc a b) (hst : s < t) :
@@ -107,8 +91,6 @@ theorem m63RestrictAmbientBounds {F : RicciFlow n M (Set.Icc a b)} {K0 K1 K2 : �
   riemann r hr := h.riemann r (hsub hr)
   ricci_derivative r hr := h.ricci_derivative r (hsub hr)
   ricci r hr := h.ricci r (hsub hr)
-
-
 
 theorem m63M62RestrictedEstimates [T2Space M] [SecondCountableTopology M]
     (hM62 : M62CurveEvolutionTheory.{u}) {F : RicciFlow n M (Set.Icc a b)}
@@ -131,8 +113,6 @@ section Labels
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m63Represents_of_homotopic {q : M59SphereQuotient} {x : M}
     {alpha : HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M)) (constantC1Loop x)}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M09.SmoothFamilyRestart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

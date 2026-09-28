@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePolyhedralPatches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -31,9 +21,6 @@ private theorem vertex_mapsTo_of_faces {K : SimplicialComplex ℝ E}
   obtain ⟨t, ht, hst⟩ := hv {x} hx
   exact L.down_closed ht
     (Finset.singleton_subset_iff.mpr (hst ⟨x, by simp, rfl⟩)) (Finset.singleton_nonempty _)
-
-
-
 
 theorem exists_inverse_affineOnFaces_of_vertex_maps (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (v : E → F) (w : F → E)
@@ -74,10 +61,6 @@ theorem exists_inverse_affineOnFaces_of_vertex_maps (K : SimplicialComplex ℝ E
     change f (g y) = y
     rw [hfv (vertex_mapsTo_of_faces hfacesG hy), hgw hy]
     exact hright hy
-
-
-
-
 
 theorem exists_homeomorph_of_local_vertex_maps (K : SimplicialComplex ℝ E)
     (L : SimplicialComplex ℝ F) (hKopen : IsOpen K.space) (hLopen : IsOpen L.space)

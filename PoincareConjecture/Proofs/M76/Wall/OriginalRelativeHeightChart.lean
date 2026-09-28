@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalSelectedHeightChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -16,10 +7,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 open Classical in
-
-
-
-
 
 theorem exists_original_relative_height_chart
     {E V X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

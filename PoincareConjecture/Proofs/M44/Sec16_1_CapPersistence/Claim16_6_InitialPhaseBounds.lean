@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M01.NormalizationScaling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,13 +18,9 @@ local notation "E" => StandardCapSpace
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
 
-
-
 theorem normalizedCoefficients_symm (Q : SurgeryCapClose g₀ S g tip scale eta)
     (x v w : E) : Q.normalizedCoefficients x v w = Q.normalizedCoefficients x w v := by
   simp only [normalizedCoefficients_apply, g.symm]
-
-
 
 theorem normalizedCoefficients_pos (Q : SurgeryCapClose g₀ S g tip scale eta)
     {x : E} (hx : x ∈ g₀.metric.ball 0 eta⁻¹) {v : E} (hv : v ≠ 0) :
@@ -47,8 +33,6 @@ theorem normalizedCoefficients_pos (Q : SurgeryCapClose g₀ S g tip scale eta)
   rw [Q.normalizedCoefficients_apply]
   exact mul_pos (sq_pos_of_pos (inv_pos.mpr Q.scale_pos)) (g.pos _ _ hDv)
 
-
-
 theorem normalizedCoefficients_isInvertible (Q : SurgeryCapClose g₀ S g tip scale eta)
     {x : E} (hx : x ∈ g₀.metric.ball 0 eta⁻¹) :
     (Q.normalizedCoefficients x).IsInvertible := by
@@ -60,8 +44,6 @@ theorem normalizedCoefficients_isInvertible (Q : SurgeryCapClose g₀ S g tip sc
     rfl
   rw [heq]
   exact h.isInvertible_pullbackCoefficients hD.1
-
-
 
 theorem exists_normalized_uniform_lower_bound
     (g₀ : StandardInitialMetric) {K : Set E} (hK : IsCompact K) :
@@ -89,8 +71,6 @@ theorem exists_normalized_uniform_lower_bound
 end PoincareConjecture.SurgeryCapClose
 
 namespace PoincareConjecture.M44
-
-
 
 theorem exists_standard_geodesicField_lipschitz
     (g₀ : StandardInitialMetric) {K : Set (StandardCapSpace × StandardCapSpace)}

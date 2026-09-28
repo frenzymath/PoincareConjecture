@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportCapNaturalit
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientationCompatibility
 import PoincareConjecture.Proofs.M02.IntegralOpenCapData
 
-
-
 set_option autoImplicit false
 
 noncomputable section

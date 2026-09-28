@@ -4,22 +4,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_nonnested_reference_lower_planar_chart
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))

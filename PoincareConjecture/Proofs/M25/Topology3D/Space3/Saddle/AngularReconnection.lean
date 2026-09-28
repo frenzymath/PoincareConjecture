@@ -6,24 +6,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_angular_reconnection
     (J2 : E2 ≃L[ℝ] (ℝ × ℝ))

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -94,8 +85,6 @@ private theorem physicalClock (s : ℝ) :
   rw [div_one, add_div, mul_div_cancel_left₀ _ e.scale_pos.ne']
   ring
 
-
-
 noncomputable def limitNoncollapseCylinderReclock :
     GeneralizedFlowCylinder F C (origin + a / scale) 1 J U := by
   refine {
@@ -141,15 +130,11 @@ noncomputable def limitNoncollapseCylinderReclock :
     obtain ⟨hb, he⟩ := h _ (hrange hs') hnear'
     exact clockForward_vertical e _ _ _ (physicalClock e a s') x b y hb he
 
-
-
 theorem limitNoncollapseCylinderReclock_pointMap (s : ℝ) (hs : s ∈ J)
     (x : C.carrier) :
     (limitNoncollapseCylinderReclock e a hrange).pointMap s hs x =
       e.pointMap (a + scale * s) (hrange hs) x :=
   clockForward_point e _ _ _ (physicalClock e a s) _
-
-
 
 theorem limitNoncollapseCylinderReclock_pullbackInner (s : ℝ) (hs : s ∈ J)
     (x : C.carrier) (v w : TangentSpace (𝓡 3) x) :

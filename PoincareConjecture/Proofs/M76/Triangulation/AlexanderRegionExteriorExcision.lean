@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionProtectedExcision
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem alexander_attached_spherical_exterior_ball {b c d q U V D : Set E}
     (hdim : Module.finrank ℝ E = 3)

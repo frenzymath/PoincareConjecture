@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Eigenfunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -37,9 +28,6 @@ private theorem smooth_memWkpLocally {n : ℕ} {f : EuclideanSpace ℝ (Fin n) �
   filter_upwards [ae_restrict_mem hW.measurableSet] with y hy
   change eta y * f y = f y
   rw [heta1 y (Metric.ball_subset_closedBall hy.2), one_mul]
-
-
-
 
 theorem exists_smooth_representative_of_smooth_forcing
     {n : ℕ} (hn : 0 < n)

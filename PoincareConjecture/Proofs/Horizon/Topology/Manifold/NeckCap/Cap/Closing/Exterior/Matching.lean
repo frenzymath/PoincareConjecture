@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Exterior.Filling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.CollarFilling
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_matching_exterior_ball_in_euclidean_cap
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture)

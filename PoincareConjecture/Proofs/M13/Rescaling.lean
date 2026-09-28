@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M13.DomainCalculus
 import PoincareConjecture.Proofs.M13.BallNeighborhoods
 import PoincareConjecture.Definitions.M13Rescaling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

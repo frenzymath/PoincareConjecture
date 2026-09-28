@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,16 +9,11 @@ namespace Polygon
 variable {E F : Type*} [AddCommGroup E] [Module ℝ E]
   [AddCommGroup F] [Module ℝ F] {n : ℕ}
 
-
-
 theorem vertex_mem_boundary (P : Polygon E n) (i : Fin n) : P i ∈ P.boundary ℝ := by
   apply mem_iUnion.mpr
   refine ⟨i, ?_⟩
   rw [edgeSet, affineSegment_eq_segment]
   exact left_mem_segment ℝ _ _
-
-
-
 
 theorem hasSimplicialEdges_affineImage_of_injOn (P : Polygon E n)
     (hP : P.HasSimplicialEdges) (f : E →ᵃ[ℝ] F) (hf : InjOn f (P.boundary ℝ)) :
@@ -41,9 +27,6 @@ theorem hasSimplicialEdges_affineImage_of_injOn (P : Polygon E n)
   apply convexHull_mono (image_inter_subset f _ _)
   rw [← f.image_convexHull]
   exact ⟨x, hP i j ⟨hxi, hzj⟩, rfl⟩
-
-
-
 
 theorem affineImage_of_leftInvOn (P : Polygon E n) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (r : E →ᵃ[ℝ] F) (a : F →ᵃ[ℝ] E)

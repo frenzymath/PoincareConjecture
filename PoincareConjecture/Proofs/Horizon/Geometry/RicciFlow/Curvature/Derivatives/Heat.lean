@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Derivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Bochner
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Energy.Time
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -176,9 +164,6 @@ theorem curvatureDerivative_heat_inequality_interior_of_correction
   simp only [tensorPairing] at hpair
   dsimp only [D] at hderiv hbochner hpair hCorrection ⊢
   linarith
-
-
-
 
 theorem curvatureDerivative_heat_inequality_interior
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M) :

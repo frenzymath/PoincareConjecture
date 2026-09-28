@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MetricInteriorFan
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,10 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff Manifold Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_linear_kernel_null
     (ell : AnnulusCoordinates →L[ℝ] ℝ) (hell : ell ≠ 0) :
@@ -35,11 +19,6 @@ theorem m64Intrinsic_linear_kernel_null
   apply hell
   ext w
   exact congrArg (fun L : AnnulusCoordinates →ₗ[ℝ] ℝ => L w) hzero
-
-
-
-
-
 
 theorem m64Intrinsic_metric_halfplane_fan_angle_sum
     {I : Type*} [Fintype I]

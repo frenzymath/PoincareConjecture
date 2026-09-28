@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63PositiveDegree_preserved
     {F : RicciFlow n M (Icc a b)} {circumference T : ℝ}

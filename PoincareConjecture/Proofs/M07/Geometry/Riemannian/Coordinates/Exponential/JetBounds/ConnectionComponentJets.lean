@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialIntegral
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureComponentExpansion
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +13,6 @@ open scoped ContDiff Topology BigOperators
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem norm_iteratedFDeriv_linear_coordinate_le
     (L : E →L[ℝ] ℝ) (hL : ‖L‖ ≤ 1) (m : ℕ) {x : E} {r : ℝ}
@@ -54,7 +42,6 @@ theorem norm_iteratedFDeriv_position_mul_le_scaled_bound
     (hf.of_le hm).contDiffOn (L.contDiff.of_le hm).contDiffOn (mem_univ x)
     A (fun _ => max 1 r) hs hA (fun j _ => norm_iteratedFDeriv_linear_coordinate_le L hL j hx)
 
-
 def connectionComponentJetBound (n m : ℕ) (r : ℝ) (A C : ℕ → ℝ) : ℝ :=
   n * n * scalarJetProductBound m
     (fun j => scalarJetProductBound j A C) (fun _ => max 1 r) / (m + 1)
@@ -66,8 +53,6 @@ theorem connectionComponentJetBound_nonneg (n m : ℕ) (r : ℝ) (A C : ℕ → 
       (scalarJetProductBound_nonneg ..)) (by positivity)
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem norm_iteratedFDeriv_radial_component_integral_le
     {n : ℕ} (L : Fin n → E →L[ℝ] ℝ) (hL : ∀ i, ‖L i‖ ≤ 1)
@@ -129,8 +114,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem radialConnectionCoeff_eq_component_integral
     (D : LeviCivitaData g)
     (b : OrthonormalBasis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))
@@ -183,8 +166,6 @@ theorem radialConnectionCoeff_eq_component_integral
   intro k _
   simp only [radialCoframeCoeff, map_smul, PiLp.smul_apply, smul_eq_mul]
   ring
-
-
 
 theorem norm_iteratedFDeriv_radialConnectionCoeff_le
     (D : LeviCivitaData g)

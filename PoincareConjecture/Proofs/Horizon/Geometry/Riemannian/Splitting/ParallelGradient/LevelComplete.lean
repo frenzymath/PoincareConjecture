@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.LevelSet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
-
-
 
 theorem zeroLevelMetric_complete
     (g : RiemannianMetric (n + 1) M) {f : M → ℝ}

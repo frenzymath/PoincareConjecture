@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M08.ChartPerturbation
 import PoincareConjecture.Proofs.M08.ChartStationarity
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option synthInstance.maxSize 2048
 
@@ -34,8 +26,6 @@ private noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[�
 private noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem compact_three_norm_bounds {Y A B C : Type*} [TopologicalSpace Y]
     [NormedAddCommGroup A] [NormedAddCommGroup B] [NormedAddCommGroup C]
     {K : Set Y} (hK : IsCompact K) (f : Y → A) (g : Y → B) (h : Y → C)
@@ -50,9 +40,6 @@ theorem compact_three_norm_bounds {Y A B C : Type*} [TopologicalSpace Y]
   exact ⟨by linarith [norm_nonneg (g z), norm_nonneg (h z), le_abs_self D],
     by linarith [norm_nonneg (f z), norm_nonneg (h z), le_abs_self D],
     by linarith [norm_nonneg (f z), norm_nonneg (g z), le_abs_self D]⟩
-
-
-
 
 theorem weak_quadratic_affine_stationary {a b : ℝ} (hab : a ≤ b)
     {S : Set E} (hS : IsOpen S)

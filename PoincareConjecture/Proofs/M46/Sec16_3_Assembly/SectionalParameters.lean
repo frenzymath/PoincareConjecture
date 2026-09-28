@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SectionalAlgebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,8 +14,6 @@ open PoincareConjecture.M04
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 structure CompactSectionalParameters (F : RicciFlow n M J) where
   carrier : Type u
@@ -55,7 +45,6 @@ attribute [instance] CompactSectionalParameters.topology CompactSectionalParamet
 set_option maxHeartbeats 1800000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem compactSectionalParameters [CompactSpace M] (F : RicciFlow n M J) :
     Nonempty (CompactSectionalParameters F) := by

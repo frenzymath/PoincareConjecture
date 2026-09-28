@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNativeEnergy
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 import PoincareConjecture.Proofs.M34.Mathlib.LinearPrecomposeLocalJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -53,8 +44,6 @@ private theorem initialNative_error (u : ℝ) (B : RoundCylinderTwoTensor)
     ContinuousLinearMap.apply_apply, centeredCylinderBilinear_basis,
     ContinuousLinearEquiv.apply_symm_apply, sub_add_cancel]
 
-
-
 theorem source_initial_native_coefficients_contDiffAt
     (B : RoundCylinderTwoTensor) (theta : UnitTwoSphere) (c : ℝ)
     (hB : ContDiffAt ℝ ∞ (centeredCylinderMetric B theta c) (0 : E))
@@ -75,8 +64,6 @@ theorem source_initial_native_coefficients_contDiffAt
       (centeredCylinderMetric B theta c (cylinderEuclideanEquiv.symm (y - (0, c)))))
       (0, c) := (initialNativeEvaluation a b).contDiff.contDiffAt.comp (0, c) hcomp
   simpa only [← initialNative_coefficient] using h
-
-
 
 theorem exists_source_initial_centered_coefficient_bound (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (u : ℝ) (B : RoundCylinderTwoTensor)
@@ -134,8 +121,6 @@ theorem exists_source_initial_centered_coefficient_bound (m : ℕ) :
     _ ≤ (V0 * A) * H ^ m :=
       mul_le_mul hfjet hpower (pow_nonneg (norm_nonneg _) _) (mul_nonneg hV0 hA)
     _ = (V0 * H ^ m) * A := by ring
-
-
 
 theorem exists_source_initial_centered_native_bound (m : ℕ) :
     ∃ K : ℝ, 0 ≤ K ∧ ∀ {u : ℝ}, u ≤ 0 →

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapCoreFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedAttachmentCompleteFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +19,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (T : RetainedCoordinateTriangulation (M := S))
 
 set_option maxHeartbeats 1200000 in
-
 
 theorem canonical_vertex_fan_in_cap_of_not_unmatched_tip
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (hr : T.length < 1)

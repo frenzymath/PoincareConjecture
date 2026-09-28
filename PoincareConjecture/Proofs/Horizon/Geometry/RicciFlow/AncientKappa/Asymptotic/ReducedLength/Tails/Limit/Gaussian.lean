@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Tails.Limit.Bounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Measure.GaussianTails.PolynomialVolume
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

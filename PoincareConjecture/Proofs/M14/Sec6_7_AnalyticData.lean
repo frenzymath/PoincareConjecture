@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_FixedSourceMonotonicity
 import PoincareConjecture.Proofs.M14.Sec6_7_ReducedVolumeAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point}
-
-
-
 
 noncomputable def reducedVolumeAnalyticDataWithBasis
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -57,8 +45,6 @@ noncomputable def reducedVolumeAnalyticDataWithBasis
   · intro W hW _ _ hm _ σ hσ hle
     exact stableDensity_fixed_source_mono hCoordinates hM04 hM12 E H b hb hW hm hσ hle
 
-
-
 theorem reducedVolumeAnalyticData
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -66,8 +52,6 @@ theorem reducedVolumeAnalyticData
     Nonempty (M14ReducedVolumeAnalyticData G T τ x E H) := by
   obtain ⟨b, hb⟩ := exists_orthonormal_horizontalBasis G x
   exact ⟨reducedVolumeAnalyticDataWithBasis hCoordinates hM04 hM12 E H b hb⟩
-
-
 
 theorem reducedVolumeStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

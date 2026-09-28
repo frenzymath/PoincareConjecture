@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NormalFaceStar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Submodule
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 noncomputable def normalTangentEquiv (L : Submodule ℝ E) : E ≃L[ℝ] (↥(Lᗮ) × L) where
   toFun x := (Lᗮ.orthogonalProjectionOnto x, L.orthogonalProjectionOnto x)
@@ -42,22 +31,14 @@ noncomputable def normalTangentEquiv (L : Submodule ℝ E) : E ≃L[ℝ] (↥(L�
   continuous_invFun := (continuous_subtype_val.comp continuous_fst).add
     (continuous_subtype_val.comp continuous_snd)
 
-
-
 theorem normalTangentEquiv_fst (L : Submodule ℝ E) (x : E) :
     (L.normalTangentEquiv x).1 = Lᗮ.orthogonalProjectionOnto x := rfl
-
-
 
 theorem normalTangentEquiv_snd (L : Submodule ℝ E) (x : E) :
     (L.normalTangentEquiv x).2 = L.orthogonalProjectionOnto x := rfl
 
-
-
 theorem normalTangentEquiv_symm_apply (L : Submodule ℝ E) (y : ↥(Lᗮ) × L) :
     L.normalTangentEquiv.symm y = (y.1 : E) + (y.2 : E) := rfl
-
-
 
 noncomputable def normalTangentCoordinates (L : Submodule ℝ E) (p : E) :
     E ≃ₜ (↥(Lᗮ) × L) where
@@ -72,18 +53,11 @@ noncomputable def normalTangentCoordinates (L : Submodule ℝ E) (p : E) :
   continuous_toFun := L.normalTangentEquiv.continuous.comp (continuous_id.sub continuous_const)
   continuous_invFun := L.normalTangentEquiv.symm.continuous.add continuous_const
 
-
-
 theorem normalTangentCoordinates_apply (L : Submodule ℝ E) (p x : E) :
     L.normalTangentCoordinates p x = L.normalTangentEquiv (x - p) := rfl
 
-
-
 theorem normalTangentCoordinates_fst (L : Submodule ℝ E) (p x : E) :
     (L.normalTangentCoordinates p x).1 = L.normalAffineProjection p x := rfl
-
-
-
 
 theorem image_normalTangentCoordinates_add (L : Submodule ℝ E) (p : E) (S : Set E) :
     L.normalTangentCoordinates p '' (S + (L : Set E)) =

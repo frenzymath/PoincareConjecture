@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace AffineBasis
 
 variable {ι E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem coord_eq_zero_of_mem_affineSpan_image (b : AffineBasis ι ℝ E)
     {s : Set ι} {i : ι} (hi : i ∉ s) {x : E}
@@ -29,9 +19,6 @@ theorem coord_eq_zero_of_mem_affineSpan_image (b : AffineBasis ι ℝ E)
     rw [AffineMap.map_vadd, map_smul, AffineMap.linearMap_vsub]
     simp only [hu, hv, hw, vsub_self, smul_zero, zero_vadd]
 
-
-
-
 theorem mem_affineSpan_image_iff_coord_eq_zero [Finite ι]
     (b : AffineBasis ι ℝ E) (s : Set ι) (x : E) :
     x ∈ affineSpan ℝ (b '' s) ↔ ∀ i, i ∉ s → b.coord i x = 0 := by
@@ -42,9 +29,6 @@ theorem mem_affineSpan_image_iff_coord_eq_zero [Finite ι]
     simpa only [b.affineCombination_coord_eq_self] using
       affineCombination_mem_affineSpan_image (b.sum_coord_apply_eq_one x)
         (fun i _ hi => hx i hi) b
-
-
-
 
 theorem mem_convexHull_image_iff_coord [Finite ι]
     (b : AffineBasis ι ℝ E) (s : Set ι) (x : E) :

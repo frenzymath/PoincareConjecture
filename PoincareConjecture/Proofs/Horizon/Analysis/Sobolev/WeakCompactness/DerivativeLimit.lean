@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Analysis.InnerProductSpace.Dual
@@ -10,21 +5,12 @@ import Mathlib.Analysis.Normed.Module.WeakDual
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.Topology.Order.LiminfLimsup
 
-
-
-
-
-
-
-
-
 open Set Filter MeasureTheory
 open scoped ContDiff Topology ENNReal
 
 noncomputable section
 
 namespace Poincare.Analysis.Sobolev.WeakCompactness
-
 
 def WeakConverges {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     (u : ℕ → F) (v : F) : Prop :=
@@ -44,8 +30,6 @@ private theorem weakConverges_iff_inner {u : ℕ → F} {v : F} :
   · intro hu A
     let z := (InnerProductSpace.toDual ℝ F).symm A
     simpa only [← InnerProductSpace.toDual_symm_apply, real_inner_comm] using hu z
-
-
 
 private theorem extract_hilbert (u : ℕ → F) (hu : Bornology.IsBounded (range u)) :
     ∃ v : F, ∃ k : ℕ → ℕ, StrictMono k ∧ WeakConverges (fun n => u (k n)) v := by
@@ -85,8 +69,6 @@ private theorem extract_hilbert (u : ℕ → F) (hu : Bornology.IsBounded (range
   have hw := weakConverges_iff_inner.mpr hv (A.comp S.subtypeL)
   simpa only [ContinuousLinearMap.comp_apply, Submodule.subtypeL_apply, uS] using hw
 
-
-
 theorem norm_sq_le_liminf {u : ℕ → F} {v : F} (hw : WeakConverges u v)
     {B : ℝ} (hB : ∀ n, ‖u n‖ ^ 2 ≤ B) :
     ‖v‖ ^ 2 ≤ liminf (fun n => ‖u n‖ ^ 2) atTop := by
@@ -115,11 +97,8 @@ section Pairing
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X}
   {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F] [CompleteSpace F]
 
-
-
 def testIntegral (phi : X → ℝ) (hphi : MemLp phi 2 μ) : Lp F 2 μ →L[ℝ] F :=
   (ContinuousLinearMap.lsmul ℝ ℝ).lpPairing μ 2 2 (hphi.toLp phi)
-
 
 theorem testIntegral_apply (phi : X → ℝ) (hphi : MemLp phi 2 μ) (u : Lp F 2 μ) :
     testIntegral phi hphi u = ∫ x, phi x • u x ∂μ := by
@@ -128,16 +107,12 @@ theorem testIntegral_apply (phi : X → ℝ) (hphi : MemLp phi 2 μ) (u : Lp F 2
   filter_upwards [hphi.coeFn_toLp] with x hx
   simp only [ContinuousLinearMap.lsmul_apply, hx]
 
-
-
 theorem testIntegral_toLp (phi : X → ℝ) (hphi : MemLp phi 2 μ)
     (u : X → F) (hu : MemLp u 2 μ) :
     testIntegral phi hphi (hu.toLp u) = ∫ x, phi x • u x ∂μ := by
   rw [testIntegral_apply]
   exact integral_congr_ae (hu.coeFn_toLp.mono fun x hx =>
     congrArg (fun v => phi x • v) hx)
-
-
 
 theorem weak_limit_linear_identity {u v : ℕ → Lp F 2 μ} {u0 v0 : Lp F 2 μ}
     (hu : WeakConverges u u0) (hv : WeakConverges v v0)
@@ -164,7 +139,6 @@ variable {D : Type*} [NormedAddCommGroup D] [InnerProductSpace ℝ D]
 
 omit [CompleteSpace E] in
 
-
 theorem integrable_test_smul {s : Set D} (hs : IsOpen s)
     {phi : D → ℝ} (hphi : Continuous phi) (hc : HasCompactSupport phi)
     (hsub : tsupport phi ⊆ s) {u : D → E} (hu : ContinuousOn u s) :
@@ -175,7 +149,6 @@ theorem integrable_test_smul {s : Set D} (hs : IsOpen s)
   exact hcont.integrable_of_hasCompactSupport hc.smul_right
 
 omit [CompleteSpace E] in
-
 
 theorem integral_test_fderiv {s : Set D} (hs : IsOpen s) {u : D → E}
     (hu : ContDiffOn ℝ 1 u s) {phi : D → ℝ} (hphi : ContDiff ℝ ∞ phi)
@@ -197,7 +170,6 @@ theorem integral_test_fderiv {s : Set D} (hs : IsOpen s) {u : D → E}
 
 omit [CompleteSpace E] in
 
-
 theorem setIntegral_test_fderiv {s : Set D} (hs : IsOpen s) {u : D → E}
     (hu : ContDiffOn ℝ 1 u s) {phi : D → ℝ} (hphi : ContDiff ℝ ∞ phi)
     (hc : HasCompactSupport phi) (hsub : tsupport phi ⊆ s) (v : D) :
@@ -208,8 +180,6 @@ theorem setIntegral_test_fderiv {s : Set D} (hs : IsOpen s) {u : D → E}
     rw [image_eq_zero_of_notMem_tsupport
       (fun ht => hx (hsub (tsupport_fderiv_apply_subset ℝ v ht))), zero_smul])]
   exact integral_test_fderiv hs hu hphi hc hsub v
-
-
 
 theorem distributional_identity_of_weak_limits {s : Set D} (hs : IsOpen s)
     (f : ℕ → D → E) (hf : ∀ n, ContDiffOn ℝ 1 (f n) s) (v : D)
@@ -232,9 +202,6 @@ theorem distributional_identity_of_weak_limits {s : Set D} (hs : IsOpen s)
       rw [testIntegral_toLp, testIntegral_toLp]
       exact setIntegral_test_fderiv hs (hf n) hphi hc hsub v)
   simpa only [testIntegral_apply] using hh
-
-
-
 
 theorem weak_w12_subsequence {s : Set D} (hs : IsOpen s)
     (f : ℕ → D → E) (hf : ∀ n, ContDiffOn ℝ 1 (f n) s)

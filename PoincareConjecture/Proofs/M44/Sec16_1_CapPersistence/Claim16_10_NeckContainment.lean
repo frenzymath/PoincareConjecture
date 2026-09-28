@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_NeckBuffer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_neck_containment_cutoff {K D : ℝ} (hK : 0 < K) (hD : 0 < D) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧

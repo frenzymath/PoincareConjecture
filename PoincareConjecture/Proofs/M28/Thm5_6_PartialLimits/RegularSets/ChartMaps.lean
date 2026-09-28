@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.MetricConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28.RegularPointedMetricConvergence
-
-
-
 
 theorem chart_embedding_localDiffeomorph
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

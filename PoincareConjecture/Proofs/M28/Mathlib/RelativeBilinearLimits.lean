@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M28.Mathlib.RelativeBilinearComparison
 import Mathlib.Topology.UniformSpace.UniformConvergence
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter
 open scoped Topology
-
-
-
-
 
 theorem ContinuousLinearMap.eventually_mutual_quadratic_bounds_of_uniform_squeeze
     {E X I : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

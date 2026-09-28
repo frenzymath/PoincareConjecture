@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.LatticeSphereBall
 
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry
@@ -36,8 +33,6 @@ theorem preconnected_meets_frontier_of_inside_outside
   · obtain ⟨x, hx, hxQ⟩ := hin
     exact h hx (interior_subset hxQ)
 
-
-
 theorem single_contact_interval_avoids_interior
     {Q : Set X} (hQ : IsClosed Q) (gamma : ℝ → X)
     (hc : ContinuousOn gamma (Icc (0 : ℝ) 1))
@@ -62,8 +57,6 @@ theorem single_contact_interval_avoids_interior
       ⟨gamma t, ⟨t, ⟨le_rfl, ht.2⟩, rfl⟩, hint⟩
       ⟨gamma 1, ⟨1, ⟨ht.2, le_rfl⟩, rfl⟩, hone⟩
     exact htc ((hcontact u (hsub hu) huf) ▸ hu.1)
-
-
 
 theorem two_sided_crossing_meets_interior
     {Q U : Set X} (hQ : IsClosed Q) (hreg : closure (interior Q) = Q)
@@ -93,9 +86,6 @@ theorem two_sided_crossing_meets_interior
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
-
 theorem ChartwisePLSphere.exists_lattice_ball_with_single_contact_arc_exclusion
     {ι κ α : Type*} [Fintype ι] [Fintype κ]
     (L : Submodule ℤ (κ → ℝ)) [DiscreteTopology L]
@@ -119,9 +109,6 @@ theorem ChartwisePLSphere.exists_lattice_ball_with_single_contact_arc_exclusion
     (fun h => hzero.2 (hQR h)) (fun h => hone.2 (hQR h)) c
   intro t ht htf
   exact hcontact t ht (hfront ▸ htf)
-
-
-
 
 theorem ChartwisePLSphere.no_single_two_sided_lattice_arc_crossing
     {ι κ α : Type*} [Fintype ι] [Fintype κ]
@@ -148,9 +135,6 @@ theorem ChartwisePLSphere.no_single_two_sided_lattice_arc_crossing
   obtain ⟨t, ht, htQ⟩ := two_sided_crossing_meets_interior hQ.isClosed hreg
     (hfront.symm ▸ hp) hU hpU V hV (hfront.symm ▸ hsub) (hfront.symm ▸ hcover) gamma hcross
   exact havoid gamma hc hzero hone c hcontact t ht htQ
-
-
-
 
 theorem ChartwisePLSphere.no_single_plane_chart_lattice_arc_crossing
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

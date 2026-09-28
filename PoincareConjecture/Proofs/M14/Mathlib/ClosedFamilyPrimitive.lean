@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathCurrying
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathJointSmooth
 import PoincareConjecture.Proofs.M08.ChartConnectionVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {E F : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {C : Set ℝ} {U : Set E}
 
-
-
 noncomputable def closedFamilyTimeJet (C : Set ℝ) (U : Set E) (f : ℝ × E → F) :
     ℕ → ℝ × E → F
   | 0 => f
@@ -33,17 +22,12 @@ noncomputable def closedFamilyTimeJet (C : Set ℝ) (U : Set E) (f : ℝ × E �
 
 omit [FiniteDimensional ℝ E] in
 
-
-
 theorem closedFamilyTimeJet_contDiffOn (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
     (f : ℝ × E → F) (hf : ContDiffOn ℝ ∞ f (C ×ˢ U)) (j : ℕ) :
     ContDiffOn ℝ ∞ (closedFamilyTimeJet C U f j) (C ×ˢ U) := by
   induction j with
   | zero => exact hf
   | succ j ih => exact M08.timeWithinFDeriv_contDiffOn hC hU _ ih
-
-
-
 
 theorem closedFamilyPrimitive_contDiffOn [CompleteSpace F]
     {a b : ℝ} (hab : a < b) (hU : IsOpen U)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanRegion
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,11 +8,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_compact_region_subset_annulus
     {K : Set AnnulusCoordinates} (hK : IsCompact K) (hzero : (0 : AnnulusCoordinates) ∉ K)
@@ -82,10 +65,6 @@ theorem m64Intrinsic_compact_region_subset_annulus
     change ‖(1 + d / 2) • p‖ ≤ ‖p‖ at h
     rw [norm_smul, Real.norm_eq_abs, abs_of_pos (by linarith : 0 < 1 + d / 2)] at h
     nlinarith [mul_pos (half_pos hd) (by linarith : 0 < ‖p‖)]
-
-
-
-
 
 theorem m64Intrinsic_jordan_closure_subset_annulus
     {U : Set AnnulusCoordinates} (hcompact : IsCompact (closure U))

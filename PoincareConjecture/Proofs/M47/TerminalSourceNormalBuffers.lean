@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceNormalScaling
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalTransfer
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [T3Space M] [T3Space N] [MeasurableSpace M] [BorelSpace M]
   [MeasurableSpace N] [BorelSpace N]
   [SecondCountableTopology M] [SecondCountableTopology N]
-
-
 
 theorem terminalSourceNormal_physical_ball_volume
     (g : RiemannianMetric 3 M) (gphys : RiemannianMetric 3 N)
@@ -48,8 +38,6 @@ theorem terminalSourceNormal_physical_ball_volume
     terminalSourceNormal_scaled_ball gphys hQ (e p) r
   rw [terminalSourceNormal_ball_volume g h e hsource hm p r (hball.symm ▸ hcover), hball]
   exact terminalSourceNormal_scaled_volume gphys hQ _
-
-
 
 theorem terminalSourceNormal_physical_buffers
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

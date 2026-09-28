@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem disjoint_collar_component_retained_piece_on_source
     {A₀ A₁ U S : Set P2} {l₀ r₀ l₁ r₁ : ℝ}
     (B₀ : OrientedPolygonCollar l₀ r₀ A₀) (B₁ : OrientedPolygonCollar l₁ r₁ A₁)
@@ -22,8 +20,6 @@ theorem disjoint_collar_component_retained_piece_on_source
   rcases oriented_collar_component_sides B₁ hU havoid₁ with hi | ho₁
   · exact Or.inr (Or.inl hi)
   · exact Or.inr (Or.inr (fun x hx ↦ ⟨hUS hx, fun h ↦ h.elim (ho₀ hx) (ho₁ hx)⟩))
-
-
 
 theorem SourceCircleDecomposition.disjoint_planar_component_retention
     {X : Type*} {f : P2 → X} {S A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ : ℝ}

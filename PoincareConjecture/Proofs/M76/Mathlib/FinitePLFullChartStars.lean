@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,11 +13,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {ι κ : Type*} [Finite ι] [Finite κ]
-
-
-
-
-
 
 theorem exists_full_subcomplex_faceAffine_chart_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -108,10 +94,6 @@ theorem exists_full_subcomplex_faceAffine_chart_stars
       exact (show (R.closedStar p).AffineOnFaces (g i) from
         fun s hs => hgR s hs.1).congr
           (fun x hx => hgf i (interior_subset (hsub hx)))
-
-
-
-
 
 theorem exists_full_subcomplex_faceAffine_local_chart_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

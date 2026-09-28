@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Preco
 import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Definitions.Ch09.AsymptoticVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem calibrated_ball_volume_ratio_antitoneOn_of_precompact
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)
@@ -58,8 +46,6 @@ theorem calibrated_ball_volume_ratio_antitoneOn_of_precompact
   have hmul := mul_le_mul' (hmono hr hs hrs)
     (le_refl (ENNReal.ofReal (euclideanUnitBallVolume n)))
   simpa only [hnorm r hr.1, hnorm s hs.1] using hmul
-
-
 
 theorem antitoneMetricBallVolumeRatio_of_complete_nonnegative_ricci
     [ConnectedSpace M] (g : RiemannianMetric n M) (D : LeviCivitaData g)

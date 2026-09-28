@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,9 +26,6 @@ theorem transition_axis_contDiffAt (N N' : EpsilonNeck g) (q : UnitTwoSphere)
   have hinv := (N.coordinate_inverse_smooth.contMDiffAt
     (N.carrier_open.mem_nhds hx)).comp s hmap
   exact (contMDiffAt_snd.comp s hinv).contDiffAt
-
-
-
 
 theorem exists_transition_axis_monotonicity :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

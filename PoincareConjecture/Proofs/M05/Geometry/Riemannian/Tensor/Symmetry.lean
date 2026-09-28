@@ -1,13 +1,4 @@
-
 import PoincareConjecture.Definitions.Ch01.TensorOperators
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma covariantTensorDerivative_perm (D : LeviCivitaData g) {k : ℕ}
     (T : CovariantTensorEvaluation n M k) (σ : Equiv.Perm (Fin k))
@@ -56,8 +45,6 @@ lemma covariantTensorDerivative_perm (D : LeviCivitaData g) {k : ℕ}
       exact hp
     _ = _ := Equiv.sum_comp σ (fun i ↦ T x (Function.update v i
       (D.connection (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) (v i)) x u)))
-
-
 
 lemma covariantTensorDerivative_symm_last_three (D : LeviCivitaData g)
     (T : CovariantTensorEvaluation n M 3)

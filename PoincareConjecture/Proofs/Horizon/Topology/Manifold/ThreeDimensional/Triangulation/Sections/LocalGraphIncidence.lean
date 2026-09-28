@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Sections.LocalGraphSection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Sections.FiniteAffineIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

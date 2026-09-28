@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ProtectedEndDiskCollars
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLClosedUnion
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry

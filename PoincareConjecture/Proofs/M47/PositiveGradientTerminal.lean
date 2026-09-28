@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveGradientCurvature
 import PoincareConjecture.Proofs.M47.ComponentEstimateMinimum
 import PoincareConjecture.Statements.M47PositiveComponent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
-
 
 theorem positive_component_blowup (hC : RicciFlowCurvatureTheory.{u}) :
     M47PositiveComponentBlowupStatement.{u} := by

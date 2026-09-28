@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.UpperEndReparametrization
 import PoincareConjecture.Proofs.M38.CylinderEndScaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +8,6 @@ open Set Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def cylinderScalarDiffeomorph (e : ℝ ≃o ℝ)
     (he : ContDiff ℝ ∞ e) (hei : ContDiff ℝ ∞ e.symm) :
@@ -26,7 +17,6 @@ noncomputable def cylinderScalarDiffeomorph (e : ℝ ≃o ℝ)
     toEquiv := e.toEquiv
     contMDiff_toFun := he.contMDiff
     contMDiff_invFun := hei.contMDiff }
-
 
 noncomputable def cylinderEndReflection :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -52,7 +42,6 @@ variable (A : UnitTwoSphere → ℝ) (k : ℝ)
   (hA : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ A) (hk : 0 < k) (hk2 : k ≤ 1 / 2)
   (hAk : ∀ z : UnitTwoSphere, k < A z)
 
-
 noncomputable def cylinderEndDiffeomorph :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       RoundCylinderSpace RoundCylinderSpace ∞ :=
@@ -63,18 +52,15 @@ noncomputable def cylinderEndDiffeomorph :
           (upperEndProfile_smooth k) (upperEndOrderIso_symm_smooth hk))).trans
             cylinderEndReflection
 
-
 theorem cylinderEndDiffeomorph_apply (p : RoundCylinderSpace) :
     cylinderEndDiffeomorph A k hA hk hk2 hAk p =
       (p.1, 1 - upperEndProfile k
         (endScaleProfile (k / A p.1) (1 - lowerEndProfile k p.2))) := rfl
 
-
 theorem cylinderEndDiffeomorph_symm_apply (p : RoundCylinderSpace) :
     (cylinderEndDiffeomorph A k hA hk hk2 hAk).symm p =
       (p.1, (lowerEndOrderIso k hk hk2).symm
         (1 - endScaleInverse (k / A p.1) ((upperEndOrderIso k hk).symm (1 - p.2)))) := rfl
-
 
 theorem cylinderEndDiffeomorph_zero (z : UnitTwoSphere) :
     cylinderEndDiffeomorph A k hA hk hk2 hAk (z, 0) = (z, 0) := by
@@ -83,14 +69,12 @@ theorem cylinderEndDiffeomorph_zero (z : UnitTwoSphere) :
   have hu : upperEndProfile k 1 = 1 := upperEndOrderIso_one k hk
   simp only [hl, sub_zero, endScaleProfile_one, hu, sub_self]
 
-
 theorem cylinderEndDiffeomorph_one (z : UnitTwoSphere) :
     cylinderEndDiffeomorph A k hA hk hk2 hAk (z, 1) = (z, 1) := by
   rw [cylinderEndDiffeomorph_apply]
   have hl : lowerEndProfile k 1 = 1 := lowerEndOrderIso_one k hk hk2
   have hu : upperEndProfile k 0 = 0 := upperEndOrderIso_zero k hk
   simp only [hl, sub_self, endScaleProfile_zero, hu, sub_zero]
-
 
 theorem cylinderEndDiffeomorph_strictMono (z : UnitTwoSphere) :
     StrictMono (fun t : ℝ => (cylinderEndDiffeomorph A k hA hk hk2 hAk (z, t)).2) := by
@@ -103,7 +87,6 @@ theorem cylinderEndDiffeomorph_strictMono (z : UnitTwoSphere) :
     (cylinderEndScale_coefficient A k hk hAk z).1
     (cylinderEndScale_coefficient A k hk hAk z).2
   exact sub_lt_sub_left (lowerEndProfile_strictMono hk hk2 hst) 1
-
 
 theorem cylinderEndDiffeomorph_mem_iff (p : RoundCylinderSpace) :
     cylinderEndDiffeomorph A k hA hk hk2 hAk p ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 ↔
@@ -121,7 +104,6 @@ theorem cylinderEndDiffeomorph_mem_iff (p : RoundCylinderSpace) :
     · simpa only [hzero] using hmono hp.2.1
     · simpa only [hone] using hmono hp.2.2
 
-
 theorem cylinderEndDiffeomorph_image_strip :
     cylinderEndDiffeomorph A k hA hk hk2 hAk '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) =
       Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 := by
@@ -134,7 +116,6 @@ theorem cylinderEndDiffeomorph_image_strip :
     apply (cylinderEndDiffeomorph_mem_iff A k hA hk hk2 hAk _).mp
     rw [(cylinderEndDiffeomorph A k hA hk hk2 hAk).apply_symm_apply]
     exact hy
-
 
 theorem cylinderEndDiffeomorph_lower (z : UnitTwoSphere) {s : ℝ}
     (hs : 0 < s) (hs8 : s ≤ 1 / 8) :
@@ -153,8 +134,6 @@ theorem cylinderEndDiffeomorph_lower (z : UnitTwoSphere) {s : ℝ}
     endScaleProfile_outer (k / A z) (by linarith), upperEndProfile_outer k (by linarith)]
   congr 1
   ring
-
-
 
 theorem cylinderEndDiffeomorph_upper (z : UnitTwoSphere) {s : ℝ}
     (hsource : A z * punctureRadialOrderIso (1 + s) ≤ 5 / 32)

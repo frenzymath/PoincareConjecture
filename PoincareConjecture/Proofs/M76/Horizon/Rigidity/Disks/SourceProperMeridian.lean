@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.SourceMerid
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.FiniteCylinderDiskCorrection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.OriginalDiskParametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -25,8 +16,6 @@ local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
-
-
 
 theorem exists_source_proper_meridian
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

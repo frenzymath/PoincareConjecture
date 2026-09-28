@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology Bundle
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem norm_pullbackCoefficients_le_of_quadratic_upper
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -43,9 +30,6 @@ theorem norm_pullbackCoefficients_le_of_quadratic_upper
     rw [abs_of_nonneg hnonneg]
     exact hupper v
 
-
-
-
 theorem differentiableAt_spatialJet_of_mem_interior
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -65,9 +49,6 @@ theorem differentiableAt_spatialJet_of_mem_interior
     (contDiffAt_id.prodMk contDiffAt_const)).differentiableAt (by simp)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_affine_spatialJet_evolution_bound_interior
     (n q : ℕ) (K : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellSequence
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology Geometry
 
 namespace CubeShell
-
-
-
-
-
 
 theorem exists_supported_punctured_cube_compression {r R B : ℝ}
     (hr : 0 < r) (hrR : r < R) (hRB : R < B) :

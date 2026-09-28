@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.WholeSpace
 
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Set
@@ -23,9 +18,6 @@ omit [NeZero d] in
 theorem C_poinc_val_pos (hd : 0 < d) : 0 < CPoincVal d := by
   unfold CPoincVal
   positivity
-
-
-
 
 noncomputable def smoothGradNorm (u : E → ℝ) : E → ℝ :=
   fun x => ‖WithLp.toLp 2 (fun i => (fderiv ℝ u x) (EuclideanSpace.single i 1))‖
@@ -1210,6 +1202,5 @@ theorem representation_formula_smooth
         congr 1
         simp only [C_rep, hvolB_eq, mul_pow]
         field_simp
-
 
 end Poincare.Analysis.Sobolev.Weak

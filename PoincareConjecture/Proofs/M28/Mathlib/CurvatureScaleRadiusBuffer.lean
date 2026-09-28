@@ -2,15 +2,6 @@ import Mathlib.Topology.MetricSpace.Completion
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,9 +9,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem eventually_curvatureScale_radius_mem_Icc
     {S X : Type*} [MetricSpace X]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalEssentialCompression
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -113,8 +105,6 @@ theorem exists_finitePL_disk_in_annulus_of_null_circle
   refine ⟨f '' d, hbd ▸ hd.image_of_subset hf hdAnn hfi, ?_⟩
   rintro x ⟨z, hz, rfl⟩
   exact ⟨⟨z, hdAnn hz⟩, hdopen hz, hfval ⟨z, hdAnn hz⟩⟩
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_original_annular_disk_filling
     {ι κ α W : Type*} [Fintype ι] [Fintype κ]

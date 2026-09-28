@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerMetric
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -90,11 +80,6 @@ private theorem quadratic_derivative_bound {N : ℕ}
     mul_le_mul_of_nonneg_left hb hC]
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem hasDerivAt_integral_quadratic {N : ℕ} {μ : Measure LoopPlane}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))

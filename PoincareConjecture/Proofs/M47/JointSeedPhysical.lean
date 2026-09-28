@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedWorldline
 import PoincareConjecture.Proofs.M47.ComponentEstimateCanonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_physical_low_point_gap
     (P : M47ScalarPersistencePredecessors.{u})
@@ -42,9 +30,6 @@ theorem jointSeed_physical_low_point_gap
   obtain ⟨p, hp⟩ := jointSeed_compact_low_point_gap P G q hst hJ hC hscalar hterminal hhigh
   refine ⟨phi p, himage p, ?_⟩
   simpa only [hread] using hp
-
-
-
 
 theorem exists_jointSeed_physical_analytic_bound (C : ℝ) :
     ∃ A : ℝ, 1 ≤ A ∧ C ≤ A ∧

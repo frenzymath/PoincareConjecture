@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Connected.Clopen
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,7 +10,6 @@ open Set Metric Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
 
 def ballAffineDiffeomorph {n : Nat} (x : EuclideanSpace Real (Fin n))
     {r : Real} (hr : 0 < r) :
@@ -46,8 +43,6 @@ theorem ballAffineDiffeomorph_image_ball {n : Nat}
   · intro hy
     refine ⟨C.symm y, ?_, C.apply_symm_apply y⟩
     exact (hmem _).mp (by simpa only [C.apply_symm_apply] using hy)
-
-
 
 theorem exists_supported_point_motion_in_open_region {n : Nat}
     (O : Set (EuclideanSpace Real (Fin n))) (hO : IsOpen O) (hc : IsPreconnected O)

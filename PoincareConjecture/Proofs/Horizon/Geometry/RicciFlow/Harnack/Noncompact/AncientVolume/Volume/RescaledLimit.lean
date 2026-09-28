@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Geometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +14,6 @@ open scoped Manifold ContDiff Topology Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem rescaled_ball_volume_lower_bound_of_asymptoticVolumeRatio
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -65,8 +49,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
-
-
 noncomputable def ancientRescaledPointedSequence
     {n : ℕ} {T' T : ℝ} (C : FlowCarrier n)
     (F : RicciFlow n C.carrier (Iic 0)) (Q : ℕ → ℝ) (hQ : ∀ k, 0 < Q k)
@@ -83,9 +65,6 @@ noncomputable def ancientRescaledPointedSequence
       spacetimeVectorField := fun _ _ => (1, 0)
       spacetimeVectorField_time := fun _ _ => rfl
       spacetimeVectorField_spatial_zero := fun _ _ => rfl }
-
-
-
 
 theorem rescaled_limit_ball_volume_lower_bound_of_asymptoticVolumeRatio
     {n : ℕ} {T' T : ℝ} (C : FlowCarrier n)
@@ -119,9 +98,6 @@ theorem rescaled_limit_ball_volume_lower_bound_of_asymptoticVolumeRatio
     (rescaledMetric (F.metric (t₀ + 0 / Q j)) (Q j) (hQ j)).volumeMeasure
       ((rescaledMetric (F.metric (t₀ + 0 / Q j)) (Q j) (hQ j)).ball (q j) r)
   simpa only [zero_div, add_zero] using hbound
-
-
-
 
 theorem earlier_rescaled_limit_ball_volume_lower_bound_of_asymptoticVolumeRatio
     {m : ℕ} {T' T : ℝ} (C : FlowCarrier (m + 1))

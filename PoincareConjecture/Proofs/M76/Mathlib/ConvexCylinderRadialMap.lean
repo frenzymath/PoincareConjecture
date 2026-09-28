@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierRadialData
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCylinderRadialGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,11 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_finitePL_nested_cylinder_frontier_map
     (K : SimplicialComplex ℝ (E × ℝ)) (hK : K.faces.Finite)

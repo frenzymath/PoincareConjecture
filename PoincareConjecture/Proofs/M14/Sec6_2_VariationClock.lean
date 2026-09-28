@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationAction
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 private theorem parameterDomain_isOpen (V : M14LVariationData G p R) :
     IsOpen V.parameterDomain := V.parameterDomain_eq ▸ isOpen_Ioo
 
-
-
 theorem variation_squareFamily_time (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
     (hu : u ∈ V.parameterDomain) :
@@ -42,16 +31,12 @@ theorem variation_squareFamily_time (V : M14LVariationData G p R)
   · nlinarith [Real.sq_sqrt (p.tau_nonneg.trans p.tau_lt.le), hs.2,
       Real.sqrt_nonneg τ₂]
 
-
-
 theorem variation_parameter_smooth (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞
       (fun u => V.squareFamily s u) V.parameterDomain :=
   (V.square_smooth.mono V.square_contains).comp
     ((contMDiff_const (c := s)).prodMk contMDiff_id).contMDiffOn (fun _ hu => ⟨hs, hu⟩)
-
-
 
 theorem variation_parameter_clock_eq_zero (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
@@ -72,8 +57,6 @@ theorem variation_parameter_clock_eq_zero (V : M14LVariationData G p R)
     exact variation_squareFamily_time V hs hr
   exact hd.unique hc
 
-
-
 theorem endpointVariationField_val_eq_tangent (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
     (hu : u ∈ V.parameterDomain) :
@@ -88,8 +71,6 @@ theorem endpointVariationField_val_eq_tangent (V : M14LVariationData G p R)
   rw [show (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) G.spacetime.timeFunction
     (V.squareFamily s u) v) = 0 from variation_parameter_clock_eq_zero V hs hu,
     zero_smul, sub_zero]
-
-
 
 theorem variation_square_tangent_clock (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
@@ -115,8 +96,6 @@ theorem variation_square_tangent_clock (V : M14LVariationData G p R)
   have hJ := uniqueDiffOn_Icc (Real.sqrt_lt_sqrt p.tau_nonneg p.tau_lt) s hs
   exact (hd.derivWithin hJ).symm.trans (hc.derivWithin hJ)
 
-
-
 theorem variationSquareVelocity_val_eq_tangent_add_time (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)
     (hu : u ∈ V.parameterDomain) :
@@ -141,9 +120,6 @@ private theorem horizontal_transport_val {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
-
 theorem variationSquareVelocity_zero (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     variationSquareVelocity V s 0 = (V.square_base s).symm ▸ R.horizontal_velocity s := by
@@ -161,8 +137,6 @@ private theorem inner_transport {q r : G.Point} (h : q = r) (v w : G.Horizontal 
       G.spacetime.horizontalMetric.inner r v w := by
   cases h
   rfl
-
-
 
 theorem variationActionDensity_zero (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Components
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 noncomputable def rescaledTerminalFlow (F : RicciFlow n M J)
     (Q : ℝ) (hQ : 0 < Q) (τ : ℝ) :
@@ -107,8 +99,6 @@ theorem rescaledTerminalFlow_unit_volume_lower_bound
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_nonflat_pointed_limit_of_rescaled_terminal_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)

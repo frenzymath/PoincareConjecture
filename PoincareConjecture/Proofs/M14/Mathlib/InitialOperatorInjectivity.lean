@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.InitialFamilyNeighborhood
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {E H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup H] [NormedSpace ℝ H]
-
-
-
 
 theorem exists_open_initial_operator_injective
     {U : Set E} (hU : IsOpen U) {x : E} (hx : x ∈ U)

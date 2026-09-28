@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteDistanceDyadic
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +37,6 @@ private local instance finiteLowPointCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance finiteLowPointManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
-
 
 theorem limitFinite_exists_fixed_low_point
     (P : M47Predecessors.{u}) (hH : 0 < H) (hfinite : H ≠ ⊤) {epsilon C : ℝ}

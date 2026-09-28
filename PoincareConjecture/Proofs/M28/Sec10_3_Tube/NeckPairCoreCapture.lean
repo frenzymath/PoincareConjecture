@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeCommonOrientation
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem quarter_subset_core_of_tail_closure (N Q : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) (hQε : Q.epsilon = N.epsilon)
@@ -89,7 +78,6 @@ theorem quarter_subset_core_of_tail_closure (N Q : EpsilonNeck g)
 namespace SourceEdgeCommonOrientationPacket
 
 variable {N P Q : EpsilonNeck g} {γ : ℝ → M} {tN tP : ℝ}
-
 
 theorem forward_core (H : SourceEdgeCommonOrientationPacket N P Q (γ := γ) tN tP)
     (hε : N.epsilon ≤ 1 / 1000) :

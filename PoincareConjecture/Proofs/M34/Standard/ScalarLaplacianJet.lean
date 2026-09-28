@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetConvergence
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def scalarLaplacianJet (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 4) : ℝ :=
   let K := twoJetProjection n (baseProjection 2 2 J)
@@ -32,8 +21,6 @@ noncomputable def scalarLaplacianJet (n : ℕ)
       K.1.inverse (EuclideanSpace.proj i)] -
     scalarJetOperator n 1 (truncate 3 J) ![jetChristoffel K
       (EuclideanSpace.basisFun (Fin n) ℝ i) (K.1.inverse (EuclideanSpace.proj i))])
-
-
 
 theorem continuousOn_scalarLaplacianJet (n : ℕ) :
     ContinuousOn (scalarLaplacianJet n) (curvatureJetDomain n 2) := by
@@ -68,8 +55,6 @@ theorem continuousOn_scalarLaplacianJet (n : ℕ) :
     · exact continuousAt_const
     · exact hi.continuousAt
   · exact continuousAt_pi.mpr (fun j => by fin_cases j; exact hΓ.continuousAt)
-
-
 
 theorem scalarLaplacianJet_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.OrdinaryCaptureVolumeChart
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureValues
 import PoincareConjecture.Proofs.M14.Sec6_3_StableSliceChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -34,8 +25,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include hCoordinates
 
-
-
 theorem ordinaryCapture_slice_preimage (t : (G.timeIntervals.interval K).Point)
     {A : Set (G.slices t.val).Point}
     (hcaptured : (fun q => q.val) '' A ⊆ range e.toSpacetime) :
@@ -51,8 +40,6 @@ theorem ordinaryCapture_slice_preimage (t : (G.timeIntervals.interval K).Point)
     change f (f.symm r) ∈ A
     rw [f.right_inv (hcaptured ⟨r, hr, rfl⟩)]
     exact hr
-
-
 
 theorem ordinaryCapture_slice_measure (t : (G.timeIntervals.interval K).Point)
     {A : Set (G.slices t.val).Point} (hA : MeasurableSet A)
@@ -71,8 +58,6 @@ theorem ordinaryCapture_slice_measure (t : (G.timeIntervals.interval K).Point)
     inter_eq_left.mpr hAtarget] at h
   rw [← h, ordinaryCapture_slice_preimage D hCoordinates t hcaptured]
 
-
-
 theorem ordinaryCapture_stable_slice_measure
     (hwindow : Icc (T - τmax) T ⊆ K.domain)
     {τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
@@ -87,9 +72,6 @@ theorem ordinaryCapture_stable_slice_measure
   exact ordinaryCapture_slice_measure D hCoordinates ⟨T - τ, ht⟩
     (stableSliceChart H).open_target.measurableSet
     (ordinaryCapture_endpoint_image D H hmax hx)
-
-
-
 
 theorem ordinaryCapture_volume_transport
     (hwindow : Icc (T - τmax) T ⊆ K.domain)

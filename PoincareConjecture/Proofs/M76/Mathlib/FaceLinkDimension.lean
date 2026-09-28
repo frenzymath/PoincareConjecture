@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,16 +13,11 @@ section Combinatorial
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
   [DecidableEq E]
 
-
-
-
 theorem card_add_card_le_of_mem_faceLink (K : SimplicialComplex 𝕜 E)
     {m : ℕ} (hbound : ∀ t ∈ K.faces, t.card ≤ m) (s : Finset E)
     {t : Finset E} (ht : t ∈ (K.faceLink s).faces) : s.card + t.card ≤ m := by
   have h := hbound (s ∪ t) ht.2.2
   rwa [Finset.card_union_of_disjoint ht.2.1] at h
-
-
 
 theorem faceLink_faces_eq_empty_of_card_eq (K : SimplicialComplex 𝕜 E)
     {m : ℕ} (hbound : ∀ t ∈ K.faces, t.card ≤ m) {s : Finset E} (hs : s.card = m) :
@@ -43,8 +29,6 @@ theorem faceLink_faces_eq_empty_of_card_eq (K : SimplicialComplex 𝕜 E)
   omega
 
 omit [DecidableEq E] in
-
-
 
 theorem exists_faces_eq_two_singletons (K : SimplicialComplex 𝕜 E)
     (hbound : ∀ t ∈ K.faces, t.card ≤ 1) (hvertices : K.vertices.ncard = 2) :
@@ -74,9 +58,6 @@ theorem exists_faces_eq_two_singletons (K : SimplicialComplex 𝕜 E)
 end Combinatorial
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem finrank_faceDirection_of_card (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) {n : ℕ} (hcard : s.card = n + 1) :

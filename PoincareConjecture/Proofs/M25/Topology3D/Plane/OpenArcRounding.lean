@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcRoundingProducer
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenLineInjection
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothAbsolute
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -21,8 +11,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 variable {n : ℕ}
-
-
 
 noncomputable def roundedOpenArcParameter (ρ : ℝ → ℝ)
     (p : Polygon (ℝ × ℝ) (n + 2)) : ℝ → ℝ × ℝ :=
@@ -38,8 +26,6 @@ private theorem openArcExtendedVertex_identity (p : Polygon (ℝ × ℝ) (n + 2)
     simp only [Int.cast_natCast]
   · exact if_neg hj
 
-
-
 theorem roundedOpenArcParameter_identity (ρ : ℝ → ℝ)
     (p : Polygon (ℝ × ℝ) (n + 2))
     (hp : ∀ k, p k = ((k.val : ℝ), 0)) (u : ℝ) :
@@ -53,8 +39,6 @@ theorem roundedOpenArcParameter_identity (ρ : ℝ → ℝ)
   simp only [Int.cast_sub, Int.cast_add, Int.cast_one]
   ext <;> dsimp <;> ring
 
-
-
 theorem roundedOpenArcParameter_axis (ρ : ℝ → ℝ)
     (p : Polygon (ℝ × ℝ) (n + 2)) (hp : ∀ k, (p k).2 = 0) (u : ℝ) :
     (roundedOpenArcParameter ρ p u).2 = 0 := by
@@ -64,8 +48,6 @@ theorem roundedOpenArcParameter_axis (ρ : ℝ → ℝ)
     · simp only [openArcExtendedVertex, if_neg hj]
   simp only [roundedOpenArcParameter, roundedVertexPath, roundedCorner,
     Prod.snd_add, Prod.smul_snd, Prod.snd_sub, hP, sub_self, smul_zero, add_zero]
-
-
 
 theorem roundedOpenArcParameter_tail (ρ : ℝ → ℝ)
     (p : Polygon (ℝ × ℝ) (n + 2)) (u : ℝ) (hu : (n + 6 : ℕ) ≤ |u|) :
@@ -116,10 +98,6 @@ private theorem dist_roundedVertexPath_abs_le (P : ℤ → ℝ × ℝ)
   change dist (roundedCorner ρ _ _ _ u) (roundedCorner abs _ _ _ u) ≤ _
   rw [dist_eq_norm, heq, norm_smul, Real.norm_eq_abs, abs_of_nonneg hnonneg]
   exact mul_le_mul hle (hB j) (norm_nonneg _) (by linarith)
-
-
-
-
 
 theorem exists_smooth_rounded_openArc_family
     {K : Set (ℝ × ℝ)} (hK : IsCompact K)

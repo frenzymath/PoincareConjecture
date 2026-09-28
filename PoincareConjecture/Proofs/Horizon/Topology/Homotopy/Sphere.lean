@@ -2,25 +2,10 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.OpenCover
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 namespace Poincare.Topology
 
 open Metric Set
-
-
-
-
 
 theorem sphereComplementHomeomorphEuclidean {n : ℕ}
     (x : Metric.sphere (0 : EuclideanSpace ℝ (Fin (n + 1))) 1) :
@@ -33,8 +18,6 @@ theorem sphereComplementHomeomorphEuclidean {n : ℕ}
     (((stereographic' n x).toHomeomorphSourceTarget.trans
       (Homeomorph.setCongr (stereographic'_target (n := n) x))).trans
       (Homeomorph.Set.univ _))⟩
-
-
 
 theorem sphereComplementTwoPointsHomeomorphPuncturedEuclidean {n : ℕ}
     (v : Metric.sphere (0 : EuclideanSpace ℝ (Fin (n + 2))) 1) :
@@ -87,13 +70,9 @@ theorem sphereComplementTwoPointsHomeomorphPuncturedEuclidean {n : ℕ}
       simp [hy_not_v, hy_not_neg]
   exact ⟨e.homeomorphOfImageSubsetSource hs himage⟩
 
-
-
-
 def standardSpherePole (k : ℕ) :
     Metric.sphere (0 : EuclideanSpace ℝ (Fin (k + 3))) 1 :=
   ⟨EuclideanSpace.single 0 1, by simp⟩
-
 
 def standardSphereBasepoint (k : ℕ) :
     Metric.sphere (0 : EuclideanSpace ℝ (Fin (k + 3))) 1 :=
@@ -157,8 +136,6 @@ private theorem standardSphereTwoPointComplement_isPathConnected (k : ℕ) :
     e.symm.surjective.pathConnectedSpace e.symm.continuous
   exact isPathConnected_iff_pathConnectedSpace.mpr inferInstance
 
-
-
 def standardSpherePathConnectedOpenCover (k : ℕ) :
     PathConnectedOpenCover (standardSphereBasepoint k) Bool where
   carrier
@@ -206,7 +183,6 @@ private theorem standardSphereCover_isSimplyConnected (k : ℕ) :
   · exact standardSphereComplement_isSimplyConnected k (standardSpherePole k)
   · exact standardSphereComplement_isSimplyConnected k (-standardSpherePole k)
 
-
 theorem standardSphereSimplyConnected (k : ℕ) :
     SimplyConnectedSpace
       (Metric.sphere (0 : EuclideanSpace ℝ (Fin (k + 3))) 1) := by
@@ -223,7 +199,6 @@ theorem standardSphereSimplyConnected (k : ℕ) :
     (standardSpherePathConnectedOpenCover k)
     (standardSphereCover_isSimplyConnected k)
 
-
 theorem sphereSimplyConnected_of_two_le {n : ℕ} (hn : 2 ≤ n) :
     SimplyConnectedSpace
       (Metric.sphere (0 : EuclideanSpace ℝ (Fin (n + 1))) 1) := by
@@ -231,6 +206,5 @@ theorem sphereSimplyConnected_of_two_le {n : ℕ} (hn : 2 ≤ n) :
   have hdim : 2 + k + 1 = k + 3 := by omega
   rw [hdim]
   exact standardSphereSimplyConnected k
-
 
 end Poincare.Topology

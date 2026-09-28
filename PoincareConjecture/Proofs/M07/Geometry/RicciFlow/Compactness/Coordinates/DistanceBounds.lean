@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.IndexedCovering
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -60,11 +52,6 @@ theorem chart_lower_distance_of_distance_bounds
 end PoincareConjecture.NormalChartCover
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem NormalChartCover.chart_lipschitzWith_of_flow
     {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}

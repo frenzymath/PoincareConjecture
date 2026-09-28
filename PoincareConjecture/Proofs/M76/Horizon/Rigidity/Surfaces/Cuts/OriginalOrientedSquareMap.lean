@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCohe
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPeriodicSquareMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.GeometricCofaceSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical AbstractSimplicialComplex
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem nonempty_sourceSquareMap64_of_euler_zero_and_geometric_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -53,8 +42,6 @@ theorem nonempty_sourceSquareMap64_of_euler_zero_and_geometric_signs
     exact htc ▸ Finset.card_le_card hst
   exact ⟨A.sourceSquareMap64_of_source_reversal hbound
     (A.source_bridge_reversal_of_original_coherent_signs hpure number hnumber sourceSign hcancel)⟩
-
-
 
 theorem nonempty_sourceSquareMap64_of_euler_zero_and_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

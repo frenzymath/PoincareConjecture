@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Models
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Generation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,7 +34,6 @@ theorem constantPositiveSectionalCurvature_of_compact
         simp [G.at_minus_one] }
   exact E.constantPositiveSectionalCurvature_three (by norm_num)
     (G.flow.connection (-1)) S.connection (C.round_at_time (-1) (by norm_num))
-
 
 theorem threeDimensionalClassificationData_of_compact
     (hC : RicciFlowCurvatureTheory.{u}) (S : GradientShrinkingSolitonData 3 M) :

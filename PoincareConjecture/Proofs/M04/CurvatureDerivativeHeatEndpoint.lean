@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M04.ScalarEvolutionCoefficients
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

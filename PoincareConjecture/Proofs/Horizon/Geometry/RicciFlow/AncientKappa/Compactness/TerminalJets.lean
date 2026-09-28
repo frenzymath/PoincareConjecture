@@ -7,16 +7,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +15,6 @@ open scoped Topology
 namespace PoincareConjecture.AncientCompactness
 
 variable {X Y : Type*} [TopologicalSpace X] [PseudoMetricSpace Y]
-
-
 
 theorem time_lipschitz_of_interior_tendsto
     {f : ℕ → ℝ → Y} {g : ℝ → Y} {a b L : ℝ} (hab : a < b)
@@ -54,9 +42,6 @@ theorem time_lipschitz_of_interior_tendsto
   apply le_of_tendsto ((hconv p.1 hp.1).dist (hconv p.2 hp.2))
   exact hL.mono (fun k hk => hk p.1 ⟨hp.1.1.le, hp.1.2.le⟩
     p.2 ⟨hp.2.1.le, hp.2.2.le⟩)
-
-
-
 
 theorem tendstoUniformlyOn_past_of_time_lipschitz
     {f : ℕ → ℝ × X → Y} {g : ℝ × X → Y} {U : Set X}
@@ -130,8 +115,6 @@ theorem tendstoUniformlyOn_past_of_time_lipschitz
   have htriangle' := dist_triangle (f k (shift z)) (g (shift z)) (g z)
   rw [dist_comm] at hinterior ⊢
   linarith
-
-
 
 theorem tendstoUniformlyOn_past_of_locallyUniformlyOn
     {f : ℕ → ℝ × X → Y} {g : ℝ × X → Y} {U : Set X}

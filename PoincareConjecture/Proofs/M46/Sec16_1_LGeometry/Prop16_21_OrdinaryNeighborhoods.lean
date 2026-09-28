@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_CompactOrdinaryTrace
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
 
 theorem exists_compact_nonsurgery_clock_neighborhood
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

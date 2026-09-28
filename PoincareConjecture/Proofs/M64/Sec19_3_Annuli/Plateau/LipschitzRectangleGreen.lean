@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzRectangleFTC
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64_lipschitz_green_integrable {f phi : LoopPlane → ℝ} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain) (hphi : ContDiff ℝ 1 phi) (i : Fin 2) :
@@ -37,8 +24,6 @@ theorem m64_lipschitz_green_integrable {f phi : LoopPlane → ℝ} {K : ℝ≥0}
   · have hc := ((hphi.continuous_fderiv (by simp)).clm_apply
       (continuous_const (y := EuclideanSpace.single i 1))).continuousOn.mul hf.continuousOn
     exact (hc.integrableOn_compact m64AnnulusDomain_isCompact).mono_set interior_subset
-
-
 
 theorem m64Annulus_vertical_green_lipschitz
     {f phi : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzWith K f)
@@ -82,8 +67,6 @@ theorem m64Annulus_vertical_green_lipschitz
     _ = _ := by
       rw [integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le zero_le_one]
       exact hpac.integral_deriv_mul_eq_sub hac
-
-
 
 theorem m64Annulus_horizontal_green_lipschitz
     {f phi : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzWith K f)
@@ -132,8 +115,6 @@ theorem m64Annulus_horizontal_green_lipschitz
         ← intervalIntegral.integral_of_le (by unfold curvePeriod; positivity : 0 ≤ curvePeriod)]
       exact hpac.integral_deriv_mul_eq_sub hac
 
-
-
 theorem m64Annulus_vertical_green_lipschitzOn
     {f phi : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzOnWith K f m64AnnulusDomain)
     (hphi : ContDiff ℝ 1 phi) :
@@ -169,8 +150,6 @@ theorem m64Annulus_vertical_green_lipschitzOn
   have h1 := heq (show annulusPoint x 1 ∈ m64AnnulusDomain from
     ⟨hx.1, hx.2, zero_le_one, le_rfl⟩)
   rw [h0, h1]
-
-
 
 theorem m64Annulus_horizontal_green_lipschitzOn
     {f phi : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzOnWith K f m64AnnulusDomain)

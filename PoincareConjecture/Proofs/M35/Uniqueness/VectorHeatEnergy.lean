@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M04.ScalarHessian
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.MetricDerivative.ProductRule
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M35.Uniqueness
 
 local notation:max "V" n:max => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem euclidean_field_contMDiff {n : ℕ} {X : V n → V n}
     (hX : ContDiff ℝ ∞ X) :
     ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞
@@ -33,8 +21,6 @@ theorem euclidean_field_contMDiff {n : ℕ} {X : V n → V n}
   intro x
   rw [Bundle.contMDiffAt_totalSpace]
   exact ⟨contMDiffAt_id, by simpa using hX.contMDiff.contMDiffAt⟩
-
-
 
 theorem hessian_field_normSq {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X)
@@ -72,8 +58,6 @@ theorem hessian_field_normSq {n : ℕ} {g : RiemannianMetric n (V n)}
   simp only [fieldHessian, map_sub, sub_apply]
   ring
 
-
-
 theorem laplacian_field_normSq {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X) (x : V n) :
     D.laplacian (fun y => g.inner y (X y) (X y)) x =
@@ -83,8 +67,6 @@ theorem laplacian_field_normSq {n : ℕ} {g : RiemannianMetric n (V n)}
         (D.connection X x (g.orthonormalBasis x i)) := by
   simp only [LeviCivitaData.laplacian, hessian_field_normSq D X hX,
     map_sum, sum_apply, Finset.sum_add_distrib, Finset.mul_sum]
-
-
 
 theorem field_normSq_trace_le_laplacian {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X) (x : V n) :
@@ -99,8 +81,6 @@ theorem field_normSq_trace_le_laplacian {n : ℕ} {g : RiemannianMetric n (V n)}
   by_cases hz : D.connection X x (g.orthonormalBasis x i) = 0
   · simp [hz]
   · exact (g.pos x _ hz).le
-
-
 
 theorem vector_heat_normSq_hasDerivWithinAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

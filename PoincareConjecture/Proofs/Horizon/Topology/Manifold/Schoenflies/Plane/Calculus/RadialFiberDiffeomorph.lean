@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.RadialFiber
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_radialFiberDiffeomorph
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

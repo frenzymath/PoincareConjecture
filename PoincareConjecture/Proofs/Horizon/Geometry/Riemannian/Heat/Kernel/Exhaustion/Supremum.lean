@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Monotone
 import Mathlib.Topology.Semicontinuity.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

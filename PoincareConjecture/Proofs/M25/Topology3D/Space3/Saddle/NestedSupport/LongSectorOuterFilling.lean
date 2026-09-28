@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.RaisedReturnBoundaryAvoid
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorOuterGeometry
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.LongSectorOuterSide
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_nested_raised_long_return_outer_filling
     (kappa : OpenPartialHomeomorph E2 E2)

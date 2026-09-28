@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Branches.ComponentNeighborhoods
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Branches.FiniteChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem SourceDoubleComponents.exists_paired_component_charts
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -83,4 +73,3 @@ theorem SourceDoubleComponents.exists_paired_component_charts
     hO, hTO, hfull, hinter, hB⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

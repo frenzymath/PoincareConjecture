@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.NormalCornerTypes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -56,9 +48,6 @@ theorem no_return_in_corner_coordinates (c : Fin 3) {r : Set (ℝ × ℝ)}
       have h := hbad (mem_image_of_mem (cornerMap 2) hx)
       change (_ ∧ 1 - x.1 - x.2 = 0) at h
       exact ⟨hr hx, by linarith [h.2]⟩
-
-
-
 
 theorem normal_family_in_corner_coordinates
     {ι : Type*} (c : Fin 3) (D : ι → Set (ℝ × ℝ)) (p q : ι → ℝ × ℝ)

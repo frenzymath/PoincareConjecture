@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCapAvoidance
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerArcCollar
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,10 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M64IntrinsicTriangleCollar
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}
@@ -34,28 +27,16 @@ namespace M64IntrinsicTriangleCollar
 variable {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}
   {C : M64IntrinsicTriangleCaps base alpha beta D A B U} (P : M64IntrinsicTriangleCollar C)
 
-
-
-
 abbrev carrier : Set AnnulusCoordinates :=
   (⋃ j, C.carrier j) ∪ (P.baseArc.bands ∪ (P.firstSide.bands ∪ P.secondSide.bands))
-
-
-
 
 theorem isClosed_carrier : IsClosed P.carrier :=
   (isClosed_iUnion_of_finite fun j => (C.compact j).isClosed).union
     (P.baseArc.bands_closed.union (P.firstSide.bands_closed.union P.secondSide.bands_closed))
 
-
-
-
 theorem occupied : P.carrier ⊆ closure U :=
   union_subset (iUnion_subset C.occupied) (union_subset P.baseArc.bands_occupied
     (union_subset P.firstSide.bands_occupied P.secondSide.bands_occupied))
-
-
-
 
 theorem boundary_covered
     (hfront : frontier U = base '' Icc 0 D ∪ (alpha '' Icc 0 A ∪ beta '' Icc 0 B)) :

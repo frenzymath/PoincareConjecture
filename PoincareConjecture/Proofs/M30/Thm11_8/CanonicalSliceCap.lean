@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutDiame
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_cap_side_of_inverse_neck_coordinates
     {M : Type v} [TopologicalSpace M] [T3Space M]

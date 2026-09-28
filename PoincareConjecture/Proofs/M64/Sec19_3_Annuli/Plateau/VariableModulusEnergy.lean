@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,14 +16,10 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 
-
-
 def weightedEnergy (B : M → E →L[ℝ] E →L[ℝ] ℝ) (r : ℝ)
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : ℝ :=
   ∫ p in S, (r * B (A.map p) (A.column 0 p) (A.column 0 p) +
     r⁻¹ * B (A.map p) (A.column 1 p) (A.column 1 p)) / 2
-
-
 
 theorem weightedEnergy_nonneg (B : M → E →L[ℝ] E →L[ℝ] ℝ)
     (hpos : ∀ q v, 0 ≤ B q v v) {r : ℝ} (hr : 0 ≤ r)
@@ -43,8 +28,6 @@ theorem weightedEnergy_nonneg (B : M → E →L[ℝ] E →L[ℝ] ℝ)
     (add_nonneg (mul_nonneg hr (hpos _ _))
       (mul_nonneg (inv_nonneg.mpr hr) (hpos _ _))) (by norm_num)
 
-
-
 theorem weightedEnergy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
     (hei : IsEmbedding e) {K : ℝ} (hb : ∀ q, ‖B q‖ ≤ K)
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (r : ℝ) :
@@ -52,8 +35,6 @@ theorem weightedEnergy_integrable (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : 
       r⁻¹ * B (A.map p) (A.column 1 p) (A.column 1 p)) / 2) S volume :=
   (((A.column_energy_integrable B hB hei hb 0).const_mul r).add
     ((A.column_energy_integrable B hB hei hb 1).const_mul r⁻¹)).div_const 2
-
-
 
 theorem weightedEnergy_eq_column_integrals
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
@@ -67,9 +48,6 @@ theorem weightedEnergy_eq_column_integrals
     ((A.column_energy_integrable B hB hei hb 1).const_mul r⁻¹),
     integral_const_mul, integral_const_mul]
   ring
-
-
-
 
 theorem column_energy_le_norm_sq
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
@@ -87,9 +65,6 @@ theorem column_energy_le_norm_sq
         rw [Real.norm_eq_abs] at hop
         nlinarith [le_abs_self (B (A.map p) (A.column i p) (A.column i p))]
     _ = _ := by rw [integral_const_mul, ← LpFiniteCoordinatesNative.l2_norm_sq]
-
-
-
 
 theorem energy_le_weightedEnergy_of_mem
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)

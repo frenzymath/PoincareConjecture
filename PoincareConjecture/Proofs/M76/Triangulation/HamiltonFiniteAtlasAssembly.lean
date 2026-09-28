@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSimplexOrder
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSimplexCarrier
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonSimplexAtlasStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_finite_atlas_supported_straightening
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]

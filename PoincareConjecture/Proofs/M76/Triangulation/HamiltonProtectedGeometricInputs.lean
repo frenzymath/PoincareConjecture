@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,26 +15,18 @@ section Markings
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   (L : Submodule ℤ (κ → ℝ))
 
-
-
 def hamiltonMarkedProjection (x : (ι → ℝ) × (κ → ℝ)) :
     LatticeHandleAmbient ι κ L := (x.1, QuotientAddGroup.mk x.2)
-
-
 
 def hamiltonHandleBlock (r : ℝ) : Set (LatticeHandleAmbient ι κ L) :=
   hamiltonMarkedProjection ι κ L ''
     (closedBall (0 : ι → ℝ) 1 ×ˢ closedBall (0 : κ → ℝ) r)
-
-
 
 def hamiltonAttachingBlock (r : ℝ) : Set (LatticeHandleAmbient ι κ L) :=
   hamiltonMarkedProjection ι κ L ''
     (sphere (0 : ι → ℝ) 1 ×ˢ closedBall (0 : κ → ℝ) r)
 
 variable {α : Type*}
-
-
 
 structure HamiltonRetainedBlockChart
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) V3)
@@ -56,9 +38,6 @@ structure HamiltonRetainedBlockChart
     hamiltonMarkedProjection ι κ L x ∈ (e index).source
   formula : ∀ x ∈ closedBall (0 : ι → ℝ) 1 ×ˢ closedBall (0 : κ → ℝ) 2,
     e index (hamiltonMarkedProjection ι κ L x) = h x
-
-
-
 
 structure HamiltonDehnEnclosingRegion
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) V3)
@@ -86,9 +65,6 @@ section Dehn
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 
-
-
-
 structure HamiltonProtectedDehnAnnulus
     (L : Submodule ℤ V2) {α : Type*}
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient (Fin 1) (Fin 2) L) V3) where
@@ -109,9 +85,6 @@ structure HamiltonProtectedDehnAnnulus
     (parametrization x : LatticeHandleAmbient (Fin 1) (Fin 2) L) ∈
         frontier (latticeHandleDomain (Fin 1) (Fin 2) L) ↔
       (x : V1 × V2).1 ∈ sphere (0 : V1) 1
-
-
-
 
 structure HamiltonProtectedDehnDisks
     (L : Submodule ℤ V1) {α : Type*}
@@ -135,9 +108,6 @@ structure HamiltonProtectedDehnDisks
         frontier (latticeHandleDomain (Fin 2) (Fin 1) L) ↔
       (x : V2) ∈ sphere (0 : V2) 1
 
-
-
-
 def HasHamiltonProtectedDehnAnnulus
     (L : Submodule ℤ V2) {α : Type*}
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient (Fin 1) (Fin 2) L) V3) : Prop :=
@@ -150,9 +120,6 @@ def HasHamiltonProtectedDehnAnnulus
               Nonempty (HamiltonRetainedBlockChart (Fin 1) (Fin 2) L e h) →
                 ∃ T : HamiltonProtectedDehnAnnulus L e,
                   Nonempty (HamiltonDehnEnclosingRegion (Fin 1) (Fin 2) L e T.surface)
-
-
-
 
 def HasHamiltonProtectedDehnDisks
     (L : Submodule ℤ V1) {α : Type*}
@@ -168,10 +135,6 @@ def HasHamiltonProtectedDehnDisks
                   Nonempty (HamiltonDehnEnclosingRegion (Fin 2) (Fin 1) L e
                     (⋃ b, T.surface b))
 
-
-
-
-
 def HasHamiltonProtectedDehnSurfaces : Prop :=
   (∀ (L : Submodule ℤ V2) [DiscreteTopology L], IsZLattice ℝ L →
     ∀ (α : Type) (e : α →
@@ -181,12 +144,6 @@ def HasHamiltonProtectedDehnSurfaces : Prop :=
     ∀ (α : Type) (e : α →
       OpenPartialHomeomorph (LatticeHandleAmbient (Fin 2) (Fin 1) L) V3),
       HasHamiltonProtectedDehnDisks L e)
-
-
-
-
-
-
 
 def HasHamiltonStandardProperDehnDisks : Prop :=
   ∀ R : Set V3, IsCompact R →
@@ -203,10 +160,6 @@ def HasHamiltonStandardProperDehnDisks : Prop :=
               ∀ x : closedBall (0 : V2) 1,
                 (b x : V3) ∈ frontier R ↔ (x : V2) ∈ sphere (0 : V2) 1
 
-
-
-
-
 def HasHamiltonGeneralizedDehnInput : Prop :=
   HasHamiltonProtectedDehnSurfaces ∧ HasHamiltonStandardProperDehnDisks
 
@@ -216,10 +169,6 @@ section Prime
 
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
   (L : Submodule ℤ (κ → ℝ)) {α : Type*}
-
-
-
-
 
 structure HamiltonMarkedProtectedBall
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) V3)
@@ -237,12 +186,6 @@ structure HamiltonMarkedProtectedBall
           interior ((Subtype.val : latticeHandleDomain ι κ L →
             LatticeHandleAmbient ι κ L) ⁻¹' D) ∧
       D ∩ frontier (latticeHandleDomain ι κ L) = hamiltonAttachingBlock ι κ L (3 / 2))
-
-
-
-
-
-
 
 def HasHamiltonProtectedIrreducibleReplacement
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) V3) : Prop :=

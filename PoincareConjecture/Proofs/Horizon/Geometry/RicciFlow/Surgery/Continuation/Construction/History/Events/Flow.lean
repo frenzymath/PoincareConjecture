@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Gluing.AbsoluteFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Theory
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,7 +25,6 @@ private theorem metric_eq_of_inner {S : GeneralizedSliceCarrier.{u}}
   cases h
   congr
 
-
 theorem SurgeryRegularSlab.initial_metric
     {S : ℝ → GeneralizedSliceCarrier.{u}}
     {g : ∀ t, RiemannianMetric 3 (S t).carrier} {a b : ℝ}
@@ -56,7 +45,6 @@ namespace Surgery.RegularHistory.EventTimeWindow
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F} {T : ℝ}
     {hT : T ∈ F.surgery_times} {hTW : T ∈ W.interval}
     [Nonempty (F.slice T).carrier] (A : EventTimeWindow W hT hTW)
-
 
 theorem exists_flow_of_right_mem (hr : A.right ∈ W.interval) :
     ∃ H : RicciFlow 3 (EventIdentify.carrier hT).carrier A.interval,
@@ -81,7 +69,6 @@ theorem exists_flow_of_right_mem (hr : A.right ∈ W.interval) :
     exact hpre (A.pre_subset ht)
   · intro t ht
     exact hpost ⟨ht.2, ht.1.2.2⟩
-
 
 theorem exists_flow_of_terminal
     (L : RicciFlowLocalTheory 3 (F.slice T).carrier)

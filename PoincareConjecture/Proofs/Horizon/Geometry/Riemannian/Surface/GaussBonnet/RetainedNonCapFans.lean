@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedPointClassification
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +18,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (T : RetainedCoordinateTriangulation (M := S))
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_of_not_mem_caps (g : RiemannianMetric 2 S)
     (q : Euler.CoordinateVertex T.refinement.coordinates T.refinement.basis)

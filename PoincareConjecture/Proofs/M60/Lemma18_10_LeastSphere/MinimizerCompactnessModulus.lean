@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessDisk
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,9 +12,6 @@ noncomputable section
 universe u
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suEquicontinuousAt_of_tail {X Y : Type*} [TopologicalSpace X]
     [PseudoMetricSpace Y] (F : ℕ → X → Y) (a : X) (N : ℕ)
@@ -40,10 +35,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem suObservedJets_equicontinuousAt_of_chart
     {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

@@ -2,22 +2,10 @@ import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetUniqueness
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem tendstoUniformlyOn_withinJets_comp_of_compact_capture
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

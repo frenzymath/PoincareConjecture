@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentHeight
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,22 +8,14 @@ open scoped Topology
 
 namespace PlanarSegment
 
-
-
 noncomputable def horizontalStep (a : ℝ) (q : ℝ × ℝ) : ℤ :=
   if a ≤ q.1 then 1 else 0
-
-
 
 noncomputable def aboveLine (a b q : ℝ × ℝ) : ℤ :=
   if q.2 < height a b q.1 then 1 else 0
 
-
-
 noncomputable def crossingContribution (a b q : ℝ × ℝ) : ℤ :=
   (horizontalStep a.1 q - horizontalStep b.1 q) * aboveLine a b q
-
-
 
 theorem eventuallyEq_horizontalStep {a : ℝ} {q : ℝ × ℝ} (h : q.1 ≠ a) :
     ∀ᶠ z in 𝓝 q, horizontalStep a z = horizontalStep a q := by
@@ -41,8 +24,6 @@ theorem eventuallyEq_horizontalStep {a : ℝ} {q : ℝ × ℝ} (h : q.1 ≠ a) :
     simp [horizontalStep, not_le_of_gt h, not_le_of_gt hz]
   · filter_upwards [continuous_fst.continuousAt.eventually_const_lt h] with z hz
     simp [horizontalStep, h.le, hz.le]
-
-
 
 theorem eventuallyEq_aboveLine {a b q : ℝ × ℝ} (h : q.2 ≠ height a b q.1) :
     ∀ᶠ z in 𝓝 q, aboveLine a b z = aboveLine a b q := by
@@ -54,10 +35,6 @@ theorem eventuallyEq_aboveLine {a b q : ℝ × ℝ} (h : q.2 ≠ height a b q.1)
   · filter_upwards [hc.eventually_lt continuous_snd.continuousAt h] with z hz
     change height a b z.1 < z.2 at hz
     simp [aboveLine, not_lt_of_ge h.le, not_lt_of_ge hz.le]
-
-
-
-
 
 theorem eventually_crossingContribution {a b q : ℝ × ℝ}
     (hab : a.1 ≠ b.1) (hq : q ∉ segment ℝ a b) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseReadout
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 open M36 M44 M45
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem negativeCylinder_coefficient_upper {epsilon t : ℝ} (hepsilon : 0 < epsilon)
     (hsmall : epsilon ≤ 1 / 200) (ht : t ∈ Icc (-1 : ℝ) 0)
@@ -57,7 +47,6 @@ theorem negativeCylinder_coefficient_upper {epsilon t : ℝ} (hepsilon : 0 < eps
   have hsmall' : 36 * epsilon ≤ 1 := by linarith
   nlinarith [(abs_le.mp herr).2,
     mul_le_mul_of_nonneg_right hsmall' (sq_nonneg ‖v‖)]
-
 
 theorem neck_metric_le_ten
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

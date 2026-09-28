@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +16,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
 
 theorem normalizedSlice_low_neck_scale (H : CounterexampleNeckFamily E) (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
@@ -60,8 +47,6 @@ theorem normalizedSlice_low_neck_scale (H : CounterexampleNeckFamily E) (k : ℕ
   rw [inv_eq_one_div]
   exact (eq_div_iff (by positivity : (4 * max C 2 : ℝ) ≠ 0)).mpr hproduct
 
-
-
 theorem normalizedSlice_low_neck_ball (H : CounterexampleNeckFamily E) (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
     (hepsilon : N.epsilon = epsilon)
@@ -83,8 +68,6 @@ theorem normalizedSlice_low_neck_ball (H : CounterexampleNeckFamily E) (k : ℕ)
     (M13.identity_metricHomothety _ Q hQ) N.center (N.scale * N.epsilon⁻¹ / 8)
   rw [hradius] at hball
   simpa using hball.symm
-
-
 
 theorem normalizedSlice_low_neck_regular (H : CounterexampleNeckFamily E) (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
@@ -117,9 +100,6 @@ theorem normalizedSlice_low_neck_regular (H : CounterexampleNeckFamily E) (k : �
   exact hx.trans_le (ENNReal.ofReal_le_ofReal hr.le)
 
 end CounterexampleNeckFamily
-
-
-
 
 theorem exists_source_initial_ball_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeChartRestriction
 import PoincareConjecture.Proofs.M76.Brown.LocalPairChartCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_relative_pair_product_with_normal
     {X P : Type*} [TopologicalSpace X] [TopologicalSpace P]

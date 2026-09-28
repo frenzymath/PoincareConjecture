@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardThirdBound
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessianWeightedDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 

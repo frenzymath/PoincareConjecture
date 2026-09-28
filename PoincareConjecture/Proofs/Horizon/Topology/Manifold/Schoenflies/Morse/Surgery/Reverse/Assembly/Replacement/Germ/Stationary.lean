@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Localized
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
-
 
 theorem exists_supported_germ_of_stationary
     {D : E -> E} (hD : ContDiff Real ∞ D)

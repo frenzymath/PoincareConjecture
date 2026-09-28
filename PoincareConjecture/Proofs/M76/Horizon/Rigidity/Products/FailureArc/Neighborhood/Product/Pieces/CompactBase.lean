@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.Construction.TubeAndStrips
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology

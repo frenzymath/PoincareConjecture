@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
-
 
 theorem abs_multilinear_apply_le_of_inverse_gram_contraction_le
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -40,8 +31,6 @@ theorem abs_multilinear_apply_le_of_inverse_gram_contraction_le
   exact (abs_multilinear_apply_le_orthonormal_tensor_norm A c v).trans
     (mul_le_mul_of_nonneg_right hsqrt (Finset.prod_nonneg fun _ _ => norm_nonneg _))
 
-
-
 def bilinearEvaluationTwoTensor
     {E : Type*} [AddCommMonoid E] [Module ℝ E]
     (A : E →ₗ[ℝ] E →ₗ[ℝ] ℝ) :
@@ -51,8 +40,6 @@ def bilinearEvaluationTwoTensor
     fin_cases i <;> simp
   map_update_smul' v i c x := by
     fin_cases i <;> simp
-
-
 
 theorem abs_bilinear_apply_self_le_of_inverse_gram_contraction_le
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

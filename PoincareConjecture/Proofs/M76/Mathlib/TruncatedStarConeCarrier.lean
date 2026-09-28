@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TruncatedStarRadialBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -19,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
 
 theorem smul_mem_closedStar_zero (K : SimplicialComplex ℝ E)
     {x : E} (hx : x ∈ (K.closedStar 0).space)
@@ -32,10 +20,6 @@ theorem smul_mem_closedStar_zero (K : SimplicialComplex ℝ E)
   apply convexHull_subset_space his
   rw [Finset.coe_insert]
   exact smul_mem_convexHull_insert_zero hxs hr
-
-
-
-
 
 theorem exists_truncatedStarBoundary_rayEndpoint
     (K : SimplicialComplex ℝ E) (L : E →ₗ[ℝ] ℝ)
@@ -75,8 +59,6 @@ theorem exists_truncatedStarBoundary_rayEndpoint
           y ∈ (K.link 0).space ∩ {x | L x ∈ Icc α β}
       exact Or.inr ⟨hy, not_lt.mp hlo, not_lt.mp hhi⟩
 
-
-
 theorem truncatedStarBoundary_nonempty (K : SimplicialComplex ℝ E)
     (L : E →ₗ[ℝ] ℝ) {α β : ℝ} (hα : α < 0) (hβ : 0 < β)
     (hne : (K.link 0).space.Nonempty) :
@@ -84,10 +66,6 @@ theorem truncatedStarBoundary_nonempty (K : SimplicialComplex ℝ E)
   obtain ⟨y, hy⟩ := hne
   obtain ⟨r, _, hr, _⟩ := K.exists_truncatedStarBoundary_rayEndpoint L hα hβ hy
   exact ⟨r • y, hr⟩
-
-
-
-
 
 theorem convexJoin_truncatedStarBoundary_eq_band
     (K : SimplicialComplex ℝ E) (L : E →ₗ[ℝ] ℝ)

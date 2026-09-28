@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.StandardProperDisk
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Domains.OpenStandardSubdomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,9 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_proper_disk_in_open_ambient
     (U : TopologicalSpace.Opens V3) (hU : Nonempty U) {R : Set U}

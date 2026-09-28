@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.Spacetime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 def capCarrier : GeneralizedSliceCarrier where
   carrier := StandardCapSpace
@@ -27,8 +17,6 @@ def capCarrier : GeneralizedSliceCarrier where
   t2Space := inferInstance
   t3Space := inferInstance
   secondCountable := inferInstance
-
-
 
 noncomputable def box {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) :
     GeneralizedRicciFlowBox (slice J) (metric F) J where
@@ -44,7 +32,6 @@ noncomputable def box {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) :
   left_inverse _ ht := (sliceDiffeomorph ht).apply_symm_apply
   right_inverse _ ht _ _ := (sliceDiffeomorph ht).symm_apply_apply _
   metric_pullback _ ht := metric_pullback F ht
-
 
 noncomputable def generalizedFlow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) :
     GeneralizedRicciFlowData where
@@ -74,12 +61,8 @@ noncomputable def generalizedFlow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpac
     have hxy := congrArg (fun z : (slice J t).carrier => z.val) h
     exact Subtype.ext hxy
 
-
-
 theorem generalizedFlow_interval {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) :
     (generalizedFlow F).interval = J := rfl
-
-
 
 theorem generalizedFlow_box_flow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) :
     ((generalizedFlow F).box ()).flow = F := rfl

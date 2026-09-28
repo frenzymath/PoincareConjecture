@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionExteriorExcisi
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem alexander_attached_open_region_balls {b c d q U V D : Set E}
     (hdim : Module.finrank ℝ E = 3)

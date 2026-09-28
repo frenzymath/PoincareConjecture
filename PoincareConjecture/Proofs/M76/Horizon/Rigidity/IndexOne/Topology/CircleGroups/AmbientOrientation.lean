@@ -2,17 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.Projectiv
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardAtlasExistence
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace AddMonoidHom
-
-
 
 theorem exists_positiveThreeAtlas_of_quotient
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -77,8 +72,6 @@ namespace PoincareConjecture.M76.HamiltonIntervalTorus
 local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 
-
-
 theorem hamiltonIntervalTorusAmbient_positiveThreeAtlas :
     Nonempty (Poincare.Topology.PositiveThreeAtlas X) := by
   let E := (Fin 1 → ℝ) × (Fin 2 → ℝ)
@@ -100,8 +93,6 @@ theorem hamiltonIntervalTorusAmbient_positiveThreeAtlas :
     (LinearEquiv.ofFinrankEq _ _ (by
       simp [E, Module.finrank_prod, finrank_euclideanSpace])).toContinuousLinearEquiv
   exact p.exists_positiveThreeAtlas_of_quotient hp hsurj a
-
-
 
 theorem hamiltonIntervalTorusAmbient_localOrientation :
     Nonempty (Poincare.Topology.Orientation.ProjectivePlane.LocalOrientation X) := by

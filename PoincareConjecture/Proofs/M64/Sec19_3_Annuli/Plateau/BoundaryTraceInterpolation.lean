@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceEstimate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64Annulus_lower_trace_interpolation
     {f : LoopPlane → ℝ} (hf : ContDiff ℝ 1 f) {delta : ℝ}

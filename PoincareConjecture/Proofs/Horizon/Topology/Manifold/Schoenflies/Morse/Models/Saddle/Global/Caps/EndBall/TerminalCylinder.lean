@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.TerminalSlices
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Family.Cylinder
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +14,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem Saddle.Caps.exists_terminal_cylinder_straightening
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) {g : S2 → E3}
@@ -95,8 +91,6 @@ namespace SphereSurgeryCoreCap.AnnularEndFamily
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
 
-
-
 theorem exists_lower_terminal_cylinder_straightening
     (ends : AnnularEndFamily v g B C)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g) (hv : ‖v‖ = 1)
@@ -116,7 +110,6 @@ theorem exists_lower_terminal_cylinder_straightening
     (fun i => (ends.lower i.1.1 i.1.2 i.2).symm_smooth) ends.lowerCut
     (fun i => ends.exists_lower_terminal_physical_height i.1.1 i.1.2 i.2)
     ends.lowerCutCircle_joint_injective hR
-
 
 theorem exists_upper_terminal_cylinder_straightening
     (ends : AnnularEndFamily v g B C)

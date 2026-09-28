@@ -2,18 +2,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem norm_fderiv_le_of_hessian_bound
     {f : E → F} {s : Set E} {B K ε : ℝ}
@@ -71,8 +57,6 @@ theorem norm_fderiv_le_of_hessian_bound
     _ = ε * (2 * B / ε + K * ε) := by
       rw [mul_add, mul_div_cancel₀ _ hε.ne']
       ring
-
-
 
 theorem norm_fderiv_le_on_ball_of_hessian_bound
     {f : E → F} {center x : E} {r R B K ε : ℝ}

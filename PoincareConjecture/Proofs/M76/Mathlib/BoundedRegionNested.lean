@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem closure_inter_compl_eq_frontier_inter_of_subset {X : Type*}
     [TopologicalSpace X] {U V : Set X} (hV : IsOpen V)
@@ -30,10 +17,6 @@ theorem closure_inter_compl_eq_frontier_inter_of_subset {X : Type*}
     refine ⟨hx.1.1, ?_⟩
     intro hxV
     exact hx.2.2 (by rwa [hV.interior_eq])
-
-
-
-
 
 theorem alexander_nested_region_inter_exterior {X : Type*} [TopologicalSpace X]
     {U V b c d q : Set X} (hV : IsOpen V)
@@ -52,12 +35,6 @@ theorem alexander_nested_region_inter_exterior {X : Type*} [TopologicalSpace X]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem alexander_region_attachment_incidence {b c d q U V : Set E}
     (hb : IsFinitePLBallPair (ℝ × ℝ) b q)

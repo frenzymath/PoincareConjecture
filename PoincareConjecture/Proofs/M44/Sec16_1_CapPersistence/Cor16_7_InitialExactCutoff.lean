@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_UniformExactComparison
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_PhysicalInitialChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem exists_initial_cap_exact_comparison_cutoff
     (g₀ : StandardInitialMetric) (K : MetricSurgeryConstants)
@@ -63,10 +50,6 @@ theorem exists_initial_cap_exact_comparison_cutoff
   rw [← hg₀] at hrefine
   obtain ⟨Q', hballs⟩ := hrefine _ _ _ _ delta Q le_rfl
   exact ⟨Q', houtput, hballs⟩
-
-
-
-
 
 theorem exists_initial_cap_exact_chart_cutoff
     (g₀ : StandardInitialMetric) (K : MetricSurgeryConstants)

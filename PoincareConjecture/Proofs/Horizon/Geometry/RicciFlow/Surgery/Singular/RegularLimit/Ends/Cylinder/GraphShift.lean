@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.AxialShift
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.CylinderGluing
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_variable_axial_expansion (a δ d : UnitTwoSphere → ℝ)
     (ha : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ a)
@@ -75,8 +64,6 @@ theorem exists_variable_axial_expansion (a δ d : UnitTwoSphere → ℝ)
   refine ⟨D, hD, ?_⟩
   intro q s t hst
   simpa only [hD] using hkmono q hst
-
-
 
 theorem exists_supported_graph_shift {l b r : ℝ} (hlb : l < b)
     (h : UnitTwoSphere → ℝ) (hh : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ h)

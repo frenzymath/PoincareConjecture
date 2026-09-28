@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Topology.Mathlib.FiniteClosedComponentPartition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem retained_double_locus_eq_paired_components
     {E X I : Type*} {S G K : Set E} {f : E → X}
@@ -51,8 +41,6 @@ theorem retained_double_locus_eq_paired_components
     let xG : G := ⟨x, hsub i.val hxi⟩
     have hpK : (partner xG : E) ∈ K := i.property.2 (hmate i.val xG hxi)
     exact ⟨⟨partner xG, hpK⟩, hpartner xG, hne xG⟩
-
-
 
 theorem image_retained_double_locus_eq_paired_components
     {E X I : Type*} {S G K : Set E} {f : E → X}

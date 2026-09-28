@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothSpectralInitialOrbi
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothSpectralTraceOrbit
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SpectralResponseClassical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_ambient_classical_curve_of_unit_initial
     (F : RicciFlow n M (Icc a b))

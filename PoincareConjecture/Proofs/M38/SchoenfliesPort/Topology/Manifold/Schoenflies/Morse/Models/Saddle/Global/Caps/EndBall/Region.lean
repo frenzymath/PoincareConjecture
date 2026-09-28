@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.UpperFamily
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,13 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -37,7 +24,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
   {D : SphereSurgeryCoreCap v g B} {C : Set S2} {h : S2 → Real} {a b : Real}
-
 
 def cappedRegion (A : LowerAnnularEnd D C h a b) (c : Real) : Set S2 :=
   (D.chart '' closedBall 0 1) ∪ A.chart '' (univ ×ˢ Icc D.center c)
@@ -90,7 +76,6 @@ theorem annulus_inter_cap (A : LowerAnnularEnd D C h a b)
     rw [← A.boundary] at hp
     obtain ⟨q, rfl⟩ := hp
     exact mem_image_of_mem _ ⟨mem_univ _, le_rfl, hDc⟩
-
 
 theorem exists_physical_terminal_collar (A : LowerAnnularEnd D C h a b)
     {c : Real} (hDc : D.center < c) (hcb : c < b) :

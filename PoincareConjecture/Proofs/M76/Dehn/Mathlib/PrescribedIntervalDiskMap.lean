@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -86,11 +76,6 @@ private theorem exists_prescribed_disk_identification
   have h := congrArg (fun y : T => (y : P2)) (hHW (p t))
   change (H ⟨p t, _⟩ : P2) = (q (p.symm (p t)) : P2) at h
   simpa only [p.symm_apply_apply] using h
-
-
-
-
-
 
 theorem exists_prescribed_interval_disk_map
     {E0 E1 F X ι : Type*}

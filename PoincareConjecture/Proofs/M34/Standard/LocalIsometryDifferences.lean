@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g₀ g₁ : RiemannianMetric n M} {h₀ h₁ : RiemannianMetric n N}
-
-
 
 theorem connection_difference_eq_of_local_isometries
     (D₀ : LeviCivitaData g₀) (D₁ : LeviCivitaData g₁)
@@ -70,9 +58,6 @@ theorem connection_difference_eq_of_local_isometries
     D₁.connection_mpullback_of_metric_pullback E₁ hf hinv hmetric₁ hY, ← map_sub] at hs
   simpa only [Y, FiberBundle.extend_apply_self] using
     hs.trans (congrArg (mfderiv (𝓡 n) (𝓡 n) f x).inverse ht.symm)
-
-
-
 
 theorem curvature_eq_of_local_isometry
     (D : LeviCivitaData g₀) (E : LeviCivitaData h₀)

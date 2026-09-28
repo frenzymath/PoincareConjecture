@@ -1,18 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +28,6 @@ private theorem exp_secant_derivative_pos {x : ℝ} (hx : 0 < x) :
   have h := hm (show (0 : ℝ) ∈ Ici 0 by simp) (show x ∈ Ici 0 from hx.le) hx
   simpa [F] using h
 
-
-
 theorem exp_secant_lt_endpoint_average {x : ℝ} (hx : 0 < x) :
     2 * (Real.exp x - 1) < x * (Real.exp x + 1) := by
   let F := fun t : ℝ => t * (Real.exp t + 1) - 2 * (Real.exp t - 1)
@@ -63,8 +49,6 @@ theorem exp_secant_lt_endpoint_average {x : ℝ} (hx : 0 < x) :
   have h' : 0 < x * (Real.exp x + 1) - 2 * (Real.exp x - 1) := by
     simpa [F] using h
   linarith
-
-
 
 theorem critical_values_eq_of_opposite_slopes {a b A lambda : ℝ}
     (hab : a ≤ b) (hA : 0 < A)

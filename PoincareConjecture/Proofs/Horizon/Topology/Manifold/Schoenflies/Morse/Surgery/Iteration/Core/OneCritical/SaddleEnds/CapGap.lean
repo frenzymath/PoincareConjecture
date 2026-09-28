@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Caps
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,8 +13,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_gap_around_protected_height
     (L : List (SphereSurgeryCoreCap v g B)) {c : Real} (hc : c ∈ B) :

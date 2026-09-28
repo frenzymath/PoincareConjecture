@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem pathELength_diffeomorph
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
@@ -55,8 +44,6 @@ theorem pathELength_diffeomorph
     ‖mfderiv (𝓡 n) (𝓡 n) e (γ t) (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ t 1)‖
   rw [norm_eq_sqrt_real_inner, norm_eq_sqrt_real_inner]
   exact congrArg Real.sqrt (hinner (γ t) _ _)
-
-
 
 theorem edist_diffeomorph
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
@@ -95,8 +82,6 @@ theorem edist_diffeomorph
     rw [← pathELength_diffeomorph gM gN e hinner γ hγ] at hle
     exact hle.trans_lt hlen
 
-
-
 theorem image_ball_diffeomorph
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
     (e : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ N)
@@ -112,8 +97,6 @@ theorem image_ball_diffeomorph
     refine ⟨e.symm y, ?_, e.apply_symm_apply y⟩
     simpa only [ball, mem_ofPred_eq, edist_diffeomorph gM gN e hinner,
       e.apply_symm_apply] using hy
-
-
 
 theorem metricComplete_iff_diffeomorph [T3Space M] [T3Space N]
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
@@ -139,8 +122,6 @@ theorem metricComplete_iff_diffeomorph [T3Space M] [T3Space N]
       isometry_toFun := fun x y => (edist_diffeomorph gM gN e hinner x y).symm }
   exact ei.completeSpace_iff
 
-
-
 theorem volumeMeasure_image_diffeomorph [T3Space M] [T3Space N]
     [MeasurableSpace M] [BorelSpace M] [MeasurableSpace N] [BorelSpace N]
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
@@ -164,8 +145,6 @@ theorem volumeMeasure_image_diffeomorph [T3Space M] [T3Space N]
   have hi : @Isometry M N mM.toPseudoEMetricSpace mN.toPseudoEMetricSpace e :=
     fun x y => (edist_diffeomorph gM gN e hinner x y).symm
   exact @Isometry.euclideanHausdorffMeasure_image M N mM _ _ mN _ _ e n hi s
-
-
 
 theorem volumeMeasure_ball_diffeomorph [T3Space M] [T3Space N]
     [MeasurableSpace M] [BorelSpace M] [MeasurableSpace N] [BorelSpace N]

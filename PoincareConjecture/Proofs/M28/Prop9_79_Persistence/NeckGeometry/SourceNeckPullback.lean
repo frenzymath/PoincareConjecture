@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.Embedding
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckTransfer
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +12,6 @@ universe u
 namespace PoincareConjecture.M28.NeckGeometry
 
 open PoincareConjecture.Proofs.M28.NeckTransfer
-
-
-
-
 
 noncomputable def captured_source_neck_geometry
     {M : ℕ → Type u}
@@ -184,10 +170,6 @@ noncomputable def captured_source_neck_geometry
   · intro x hx
     rcases hx with ⟨y, hy, rfl⟩
     exact ⟨y, N.central_sphere_subset hy, rfl⟩
-
-
-
-
 
 noncomputable def captured_source_neck_geometry_of_window
     {M : ℕ → Type u}

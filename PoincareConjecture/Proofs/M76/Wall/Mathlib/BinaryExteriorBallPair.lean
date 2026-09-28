@@ -3,27 +3,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryEndpointFeet
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryFootRim
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_binary_exterior_ball_pair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

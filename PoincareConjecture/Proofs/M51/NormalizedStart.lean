@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M51.InitialControls
 import PoincareConjecture.Proofs.M51.MaximalOrdinary
 import PoincareConjecture.Proofs.M03
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M51Initial
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [CompactSpace M] [Nonempty M]
-
-
-
 
 theorem exists_initial_flow (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)

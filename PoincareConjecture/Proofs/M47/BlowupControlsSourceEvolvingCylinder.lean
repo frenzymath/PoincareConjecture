@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingTensor
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +37,6 @@ private theorem source_cap_physical_clock (u : ℝ) :
   field_simp [hh.ne', hQ.ne']
   ring
 
-
-
 noncomputable def sourceCapRebasedCylinder :
     SurgeryFlowCylinder F (F.slice (t + s / ((F.parameters.h t)⁻¹ ^ 2)))
       (t + s / ((F.parameters.h t)⁻¹ ^ 2)) Q (Ioc (-1 : ℝ) 0)
@@ -74,8 +63,6 @@ noncomputable def sourceCapRebasedCylinder :
       (comparison.choose_spec.2.2.2.1 ▸ mem_image_of_mem initial.chart (hsource hx))
   have hmaps : MapsTo D.symm V U := fun _ hx => D.map_target (hV hx)
   exact seedCylinderSource raw D.symm V hV hmaps
-
-
 
 theorem sourceCapRebasedCylinder_terminal_identity
     (hzero : (0 : ℝ) ∈ Ioc (-1 : ℝ) 0)
@@ -110,8 +97,6 @@ theorem sourceCapRebasedCylinder_terminal_identity
     rfl
   exact he.trans ((hsame _ _ (by simp only [sigma, zero_div, add_zero])).trans
     (heq_of_eq (D.right_inv hxD)))
-
-
 
 theorem sourceCapRebasedCylinder_pullback
     (u : ℝ) (hu : u ∈ Ioc (-1 : ℝ) 0) {z : RoundCylinderSpace}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.TranslatedEndCharts
 import PoincareConjecture.Proofs.M34.Standard.PullbackLaplacianEstimate
 import PoincareConjecture.Proofs.M04.SpacetimeScalarCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem partialFlow_end_laplacian_bound (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)
@@ -75,9 +64,6 @@ theorem partialFlow_end_laplacian_bound (P : RicciFlowCurvatureTheory.{0})
   dsimp only [f] at h
   rw [hxeq] at h
   exact h.trans (le_max_left _ _)
-
-
-
 
 theorem partialFlow_exhaustion_laplacian_bound (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

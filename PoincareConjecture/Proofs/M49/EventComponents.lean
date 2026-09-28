@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M49.NeckCoordinates
 import PoincareConjecture.Proofs.M49.Mathlib.FiniteComponents
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M49
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem epsilonNeck_isConnected_central_sphere (N : EpsilonNeck g) :
     IsConnected N.central_sphere := by
@@ -45,8 +33,6 @@ theorem epsilonNeck_isConnected_central_sphere (N : EpsilonNeck g) :
   subst t
   exact ⟨hq, neg_lt_zero.mpr (inv_pos.mpr N.epsilon_pos), inv_pos.mpr N.epsilon_pos⟩
 
-
-
 theorem epsilonNeck_negative_half_nonempty (N : EpsilonNeck g) :
     (N.region (-N.epsilon⁻¹) 0).Nonempty := by
   have he : 0 < N.epsilon⁻¹ := inv_pos.mpr N.epsilon_pos
@@ -59,17 +45,12 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem event_boundary_isConnected
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count) :
     IsConnected (E.limit_identify.inverse '' (E.necks i).neck.central_sphere) := by
   exact (epsilonNeck_isConnected_central_sphere (E.necks i).neck).image
     E.limit_identify.inverse (E.limit_identify.inverse_smooth.continuousOn.mono
       (subset_univ _))
-
-
-
 
 theorem event_post_component_meets_retained
     (E : SurgeryEventData g0 K P slice metric T) (y : (slice T).carrier) :
@@ -99,9 +80,6 @@ theorem event_post_component_meets_retained
   rw [E.local_retention i a ha]
   exact E.retention.map_image.subset (mem_image_of_mem _ hinv)
 
-
-
-
 theorem event_retention_connectedComponentsMap_surjective
     (E : SurgeryEventData g0 K P slice metric T) :
     Function.Surjective
@@ -115,9 +93,6 @@ theorem event_retention_connectedComponentsMap_surjective
   change ConnectedComponents.mk (E.retention.map x) = ConnectedComponents.mk y
   rw [hxz]
   exact ConnectedComponents.coe_eq_coe'.mpr hzy
-
-
-
 
 theorem event_retained_components_finite
     (E : SurgeryEventData g0 K P slice metric T)
@@ -134,8 +109,6 @@ theorem event_retained_components_finite
     exact mem_iUnion.mpr ⟨i, hx⟩
   · exact E.pre_boundary.subset
 
-
-
 theorem event_post_components_finite
     (E : SurgeryEventData g0 K P slice metric T)
     [Finite (ConnectedComponents (slice E.tMinus).carrier)] :
@@ -144,8 +117,6 @@ theorem event_post_components_finite
   exact Finite.of_surjective
     E.retention.map_smooth.continuousOn.domRestrict.connectedComponentsMap
     (event_retention_connectedComponentsMap_surjective E)
-
-
 
 theorem event_components_card_le
     (E : SurgeryEventData g0 K P slice metric T)
@@ -164,9 +135,6 @@ theorem event_components_card_le
     (fun i x hx => E.retained_pre_compact.isClosed.frontier_subset
       (E.pre_boundary.symm ▸ mem_iUnion.mpr ⟨i, hx⟩)) E.pre_boundary.subset
   exact hpost.trans (by simpa using hret)
-
-
-
 
 theorem event_components_card_add_one_le
     (E : SurgeryEventData g0 K P slice metric T)

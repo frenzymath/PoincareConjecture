@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestriction
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.PolarCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,20 +19,14 @@ variable {M : Type u} [TopologicalSpace M]
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def ambientCoordinate (z : E₃ × ℝ) : M :=
   N.coordinate_map (capDirection z.1, z.2)
-
-
 
 theorem ambientCoordinate_coe (q : UnitTwoSphere) (s : ℝ) :
     N.ambientCoordinate ((q : E₃), s) = N.coordinate_map (q, s) := by
   have hq : capDirection (q : E₃) = q := by
     simpa only [one_smul] using capDirection_smul zero_lt_one q
   exact congrArg (fun p => N.coordinate_map (p, s)) hq
-
-
 
 theorem ambientCoordinate_contMDiffAt {z : E₃ × ℝ} (hz : z.1 ≠ 0)
     (hs : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -57,8 +41,6 @@ theorem ambientCoordinate_contMDiffAt {z : E₃ × ℝ} (hz : z.1 ≠ 0)
   exact hn.comp z
     (((capDirection_contMDiffAt hz).comp z hf).prodMk ht)
 
-
-
 theorem chart_ambientCoordinate_contDiffAt (q : M) {z : E₃ × ℝ} (hz : z.1 ≠ 0)
     (hs : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (hq : N.ambientCoordinate z ∈ (extChartAt (𝓡 3) q).source) :
@@ -68,9 +50,6 @@ theorem chart_ambientCoordinate_contDiffAt (q : M) {z : E₃ × ℝ} (hz : z.1 �
     (by simpa only [extChartAt_source] using
       (isOpen_extChartAt_source q).mem_nhds hq)).comp z
       (N.ambientCoordinate_contMDiffAt hz hs)
-
-
-
 
 theorem ambientCoordinate_sphereChart (q : UnitTwoSphere) :
     (fun p : E₂ × ℝ => N.ambientCoordinate

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionNestedExcision
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalPartition
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionSphericalAttachment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem alexander_nested_spherical_ball_excision {b c d q U V D : Set E}
     (hdim : Module.finrank ℝ E = 3)

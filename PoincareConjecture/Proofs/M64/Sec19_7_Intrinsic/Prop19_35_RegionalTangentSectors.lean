@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionParentFans
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -62,12 +50,6 @@ private theorem inverse_coord_ray_derivative
     simpa only [zero_smul, add_zero] using hd
   convert! hd'.comp_hasDerivAt 0 hray using 1
 
-
-
-
-
-
-
 theorem m64Intrinsic_coordinate_triangle_ray_enters
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
     (b : AffineBasis (Fin 3) ℝ AnnulusCoordinates)
@@ -107,11 +89,6 @@ theorem m64Intrinsic_coordinate_triangle_ray_enters
   rw [b.interior_convexHull]
   exact hr
 
-
-
-
-
-
 theorem m64Intrinsic_coordinate_triangle_ray_exits
     (F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
     (b : AffineBasis (Fin 3) ℝ AnnulusCoordinates)
@@ -135,11 +112,6 @@ theorem m64Intrinsic_coordinate_triangle_ray_exits
   rw [← hzq, F.left_inv (hsource hz)] at hr
   linarith
 
-
-
-
-
-
 theorem m64Intrinsic_coordinate_triangle_tangent_sectors_disjoint
     (F G : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
     (b c : AffineBasis (Fin 3) ℝ AnnulusCoordinates)
@@ -160,12 +132,6 @@ theorem m64Intrinsic_coordinate_triangle_tangent_sectors_disjoint
   have hG := m64Intrinsic_coordinate_triangle_ray_enters G c hGi hGsource hqG hGpositive
   obtain ⟨r, hrF, hrG⟩ := (hF.and hG).exists
   exact (hfront ⟨interior_subset hrF, interior_subset hrG⟩).2 hrF
-
-
-
-
-
-
 
 theorem m64Intrinsic_regional_tangent_sector_unique
     {I : Type*} [Finite I]

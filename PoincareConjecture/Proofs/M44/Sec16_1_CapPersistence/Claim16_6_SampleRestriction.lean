@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_MaximalSamp
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalInterval
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
 
 namespace CylinderCompactnessSample
 
-
-
-
 noncomputable def restrictLifetime (D : CylinderCompactnessSample g0 F a ha i)
     {b : ℝ} (hb : 0 < b) (hbD : b ≤ D.lifetime) :
     CylinderCompactnessSample g0 F a ha i :=
@@ -45,8 +33,6 @@ noncomputable def restrictLifetime (D : CylinderCompactnessSample g0 F a ha i)
         metric_link := fun s hs y v w => D.ordinary.metric_link s
           (Ico_subset_Ico_right hbD hs) y v w } }
 
-
-
 theorem restrictLifetime_coefficients (D : CylinderCompactnessSample g0 F a ha i)
     {b : ℝ} (hb : 0 < b) (hbD : b ≤ D.lifetime) :
     (D.restrictLifetime hb hbD).coefficients = D.coefficients := rfl
@@ -55,9 +41,6 @@ end CylinderCompactnessSample
 
 namespace MaximalCapSample
 
-
-
-
 theorem region_subset_of_radius_le {B1 B2 : ℝ}
     (D1 : MaximalCapSample g0 F a ha i B1) (D2 : MaximalCapSample g0 F a ha i B2)
     (hR : D1.radius ≤ D2.radius) : D1.region ⊆ D2.region := by
@@ -65,9 +48,6 @@ theorem region_subset_of_radius_le {B1 B2 : ℝ}
   have hh := F.parameters.h_pos a (F.time_domain_nonnegative (F.surgery_times_subset ha))
   exact fun _ hx => hx.trans_le
     (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_left hR hh.le))
-
-
-
 
 theorem lifetime_antitone {B : ℝ}
     (D1 D2 : MaximalCapSample g0 F a ha i B) (hR : D1.radius ≤ D2.radius) :

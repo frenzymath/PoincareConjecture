@@ -50,8 +50,6 @@ theorem inverse_agree {z : P2} (hz₀ : z ∈ D.disk 0) (hz₁ : z ∈ D.disk 1)
 
 end NestedShellSquareCharts
 
-
-
 theorem exists_nested_shell_homeomorph {S T S' T' : Set P2}
     (hS : IsFinitePLBallPair P2 S (frontier S))
     (hT : IsFinitePLBallPair P2 T (frontier T)) (hST : S ⊆ interior T)

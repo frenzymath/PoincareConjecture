@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.Ti
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.SpatialRegularity
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
 
 theorem tendsto_referenceMap_pullbackCoefficients
     {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}

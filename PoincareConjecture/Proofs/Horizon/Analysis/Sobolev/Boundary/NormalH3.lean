@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.NormalDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.DifferentiatedEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ open Weak Poincare.Analysis.Sobolev.Euclidean NirenbergEuclidean
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem memWkp_three_of_tangential_memWkp_two
     (B : SmoothEllipticBilinearForm d univ)

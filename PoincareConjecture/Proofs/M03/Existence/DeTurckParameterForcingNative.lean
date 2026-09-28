@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSmoothForcingNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckBackgroundVariationNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +22,6 @@ section ParameterForcing
 variable {iota : Type v} {B : Type u} [Countable iota]
   [NormedAddCommGroup B] [NormedSpace ℝ B]
   {T : ℝ} (lambda : iota → NNReal)
-
 
 def highGenerator : State iota →L[ℝ] State iota :=
   ContinuousLinearMap.id ℝ (State iota) - scaleDecode lambda 2
@@ -194,7 +186,6 @@ theorem parameterForcing_contDiff (hT : 0 ≤ T)
       (ContinuousMap.const (Icc (0 : ℝ) T) (highGenerator lambda q.1.2)))
   exact ((htop.add hlower).add hcorrection).sub hfixed
 
-
 theorem parameterForcing_zero (hT : 0 ≤ T) (hDelta : ∀ z, Delta (0, z) = 0)
     (F : ForcingSpace iota T) :
     parameterForcing lambda A b Delta hT ((0, 0), F) = uncutForcing lambda A b hT F := by
@@ -206,7 +197,6 @@ theorem parameterForcing_zero (hT : 0 ≤ T) (hDelta : ∀ z, Delta (0, z) = 0)
     exact hDelta _
   simp only [parameterForcing, traceShift_zero, highShift_zero, hcomp,
     map_zero, ContinuousMap.const_zero, add_zero, sub_zero, uncutForcing]
-
 
 theorem exists_parameter_fixedPoint [CompleteSpace B]
     (hA : ContDiff ℝ ∞ (A : State iota → State iota →L[ℝ] State iota))
@@ -409,7 +399,6 @@ theorem exists_native_backgroundCorrection (r p : ℕ) (hpr : 2 * p ≤ r)
     exact backgroundOutput_ae_eq d.fields g0 d.charts.measure A
       (Psi (QB, QC, HC)) background g D B B0 hQ ab word hw
 
-
 structure NativeParameterData (r : ℕ) where
   coefficient : StateD → StateD →L[ℝ] StateD
   lower : StateD → StateD
@@ -542,7 +531,6 @@ theorem spatialResidual_agreement
     K.principalConstant K.lowerConstant K.mixed (by rw [hJ]; exact hsmall)]
   exact K.raw_agreement g D B0 h hsymm hmetric hsmall
 
-
 theorem exists_smooth_fixedPoint :
     ∃ T : ℝ, ∃ hT : 0 < T, T ≤ 1 ∧ ∃ F : ForcingSpace d.SymmetricIndex T,
       K.spatialResidual.forcingResidual hT.le F = F ∧
@@ -660,7 +648,6 @@ theorem smoothTensorCoordinates_add_sub (k : ℕ)
   rw [hinto, map_sub, map_add]
   simp only [lp.coeFn_sub, lp.coeFn_add, Pi.sub_apply, Pi.add_apply]
   ring
-
 
 theorem NativeParameterData.rawCorrection_agreement {r : ℕ} (K : NativeParameterData d r)
     (QB : NativeProbeContinuous (M := M) (iota := Fin d.fieldCount) (2 * r + 2))

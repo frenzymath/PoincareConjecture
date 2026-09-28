@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugate
 import Mathlib.MeasureTheory.Integral.CurveIntegral.Poincare
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,12 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarConjugateForm_smooth_closed {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -60,19 +41,9 @@ theorem scalarConjugateForm_smooth_closed {H : Plane → ℝ}
       simp only [minSmoothness_of_isRCLikeNormedField]
       exact WithTop.coe_le_coe.mpr le_top)).eq v w
 
-
-
-
-
-
 def scalarCirclePoint (r t : ℝ) : Plane :=
   (r * Real.cos (2 * Real.pi * t)) • EuclideanSpace.basisFun (Fin 2) ℝ 0 +
     (r * Real.sin (2 * Real.pi * t)) • EuclideanSpace.basisFun (Fin 2) ℝ 1
-
-
-
-
-
 
 theorem scalarCirclePoint_norm (r t : ℝ) : ‖scalarCirclePoint r t‖ = |r| := by
   have hsq : ‖scalarCirclePoint r t‖ ^ 2 = r ^ 2 := by
@@ -81,11 +52,6 @@ theorem scalarCirclePoint_norm (r t : ℝ) : ‖scalarCirclePoint r t‖ = |r| :
       simp [EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_two, scalarCirclePoint]
     rw [heq, mul_pow, mul_pow, ← mul_add, Real.cos_sq_add_sin_sq, mul_one]
   exact (sq_eq_sq₀ (norm_nonneg _) (abs_nonneg _)).mp (by simpa only [sq_abs] using hsq)
-
-
-
-
-
 
 def scalarCirclePath (r : ℝ) :
     Path (r • EuclideanSpace.basisFun (Fin 2) ℝ 0)
@@ -102,19 +68,8 @@ private def scalarCircleHomotopy (r s : ℝ) :
   map_zero_left := by intro t; simp [scalarCirclePath]
   map_one_left := by intro t; simp [scalarCirclePath]
 
-
-
-
-
-
 def scalarFluxPeriod (H : Plane → ℝ) (r : ℝ) : ℝ :=
   curveIntegral (scalarConjugateForm D H) (scalarCirclePath r)
-
-
-
-
-
-
 
 theorem scalarFluxPeriod_eq {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

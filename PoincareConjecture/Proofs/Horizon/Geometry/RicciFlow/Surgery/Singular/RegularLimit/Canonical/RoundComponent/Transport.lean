@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.Reference
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,8 +17,6 @@ namespace SingularRoundComponent
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {epsilon : ℝ}
-
-
 
 def restrictToOpen (N : SingularRoundComponent g epsilon) (U : Opens M)
     (hNU : N.carrier ⊆ U) (gU : RiemannianMetric 3 U)
@@ -107,7 +98,6 @@ namespace SingularTimeReference
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 def referenceRoundComponent (R : SingularTimeReference F T M)
     (t : ℝ) (ht : t ∈ Ico R.tMinus T) {epsilon : ℝ}

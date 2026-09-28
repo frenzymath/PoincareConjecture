@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.FiniteCapComponents
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedAttachmentComponentCarriers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
 namespace Set
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem componentIn_finite_cap_attachment
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

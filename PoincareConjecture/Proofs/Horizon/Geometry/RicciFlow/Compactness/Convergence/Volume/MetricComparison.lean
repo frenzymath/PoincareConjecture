@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embedding.BallTransfer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem abs_pullback_inner_sub_le
     (G : PointedGeometricConvergence S) (k : ℕ) (t : ℝ)
@@ -72,7 +62,6 @@ theorem abs_pullback_inner_sub_le
   rw [mul_comm (a⁻¹ ^ 2), mul_assoc, hi, mul_one, ha2] at h
   exact h
 
-
 theorem eventually_pullback_inner_bounds
     (G : PointedGeometricConvergence S) {K : Set G.limitCarrier.carrier}
     (hK : @IsCompact G.limitCarrier.carrier G.limitCarrier.topologicalSpace K)
@@ -92,8 +81,6 @@ theorem eventually_pullback_inner_bounds
   have h := abs_le.mp (G.abs_pullback_inner_sub_le k t x
     (hN k hk t (mem_singleton t) x hx) v)
   constructor <;> linarith [h.1, h.2]
-
-
 
 theorem eventually_pullback_tangentNorm_bounds
     (G : PointedGeometricConvergence S) {K : Set G.limitCarrier.carrier}

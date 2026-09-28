@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +7,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem IsConnected.exists_closure_subset_of_finite_closed_cover
     {ι : Type*} [Finite ι] {s g : Set X} (hs : IsConnected s)
@@ -52,10 +37,6 @@ theorem IsConnected.exists_closure_subset_of_finite_closed_cover
     rw [hinter] at hx
     exact hx
   exact ⟨i, closure_minimal hsub (hD i)⟩
-
-
-
-
 
 theorem IsConnected.closure_subset_four_region_of_arc_witnesses
     {s : Set X} (hs : IsConnected s) (arc D : Bool × Bool → Set X)
@@ -99,10 +80,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
 
-
-
-
-
 theorem IsFinitePLBallPair.subset_four_region_of_arc_witnesses
     {d q : Set X} (hd : IsFinitePLBallPair E d q)
     (arc D : Bool × Bool → Set X) {a b : X}
@@ -124,11 +101,6 @@ theorem IsFinitePLBallPair.subset_four_region_of_arc_witnesses
   have hsub := hd.isConnected_sdiff.closure_subset_four_region_of_arc_witnesses
     arc D hArc hD (sdiff_subset.trans hcover) hpair hcontact havoid k hw₀' hw₁'
   rwa [hd.closure_sdiff] at hsub
-
-
-
-
-
 
 theorem IsFinitePLBallPair.attached_to_four_region_of_graph_contact
     {d u w : Set X} (hd : IsFinitePLBallPair E d (u ∪ w))

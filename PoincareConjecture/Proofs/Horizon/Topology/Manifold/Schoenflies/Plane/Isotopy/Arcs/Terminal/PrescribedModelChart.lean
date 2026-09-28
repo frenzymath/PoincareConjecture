@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coo
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Arcs
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +18,6 @@ private abbrev S2 := sphere (0 : E3) 1
 private abbrev axis : E3 := EuclideanSpace.single 2 1
 
 open Saddle.Nested
-
 
 theorem prescribed_nested_model_chart_critical
     (d : OpenPartialHomeomorph E2 S2) (hd0 : 0 ∈ d.source)
@@ -43,8 +35,6 @@ theorem prescribed_nested_model_chart_critical
     height_contMDiff d hd hdi hd0 hlocal]
   exact (Poincare.Analysis.Calculus.Morse.fderiv_diagonal_quadratic_eq_zero_iff
     (height (d 0)) σ (by intro i; fin_cases i <;> norm_num [σ]) 0).mpr rfl
-
-
 
 theorem exists_filled_nested_matching_with_prescribed_chart
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -151,7 +141,6 @@ theorem exists_filled_nested_matching_with_prescribed_chart
       ring
     rw [halg, ← hDform (Real.sqrt s • x) (hscale x hx), D.symm_apply_apply]
 
-
 def negativeBranchReflection : E2 ≃ₗᵢ[Real] E2 where
   toFun x := WithLp.toLp 2 ![-x 0, x 1]
   invFun x := WithLp.toLp 2 ![-x 0, x 1]
@@ -176,7 +165,6 @@ def negativeBranchReflection : E2 ≃ₗᵢ[Real] E2 where
   fin_cases i <;> ext j <;> fin_cases j <;>
     simp [SaddleLevel.negativeLevelArc, SaddleLevel.positiveLevelArc,
       SaddleLevel.saddleCoordinateSwap]
-
 
 def negativeBranchReflectedChart (d : OpenPartialHomeomorph E2 S2) :
     OpenPartialHomeomorph E2 S2 :=

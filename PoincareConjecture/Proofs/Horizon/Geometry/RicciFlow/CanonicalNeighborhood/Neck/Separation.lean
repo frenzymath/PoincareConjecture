@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -32,7 +22,6 @@ private lemma coordinate_inverse_axis_mem (x : M) (hx : x ∈ N.carrier) :
     (N.coordinate_inverse x).2 ∈ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ :=
   (N.coordinate_inverse_mem x hx).2
 
-
 theorem region_disjoint_of_le {a b c d : ℝ} (hbc : b ≤ c) :
     Disjoint (N.region a b) (N.region c d) := by
   rw [Set.disjoint_left]
@@ -41,11 +30,9 @@ theorem region_disjoint_of_le {a b c d : ℝ} (hbc : b ≤ c) :
     lt_of_lt_of_le hx.2.2 hbc
   exact (not_lt_of_ge hxc.le) hy.2.1
 
-
 theorem region_subset_carrier (a b : ℝ) : N.region a b ⊆ N.carrier := by
   intro x hx
   exact hx.1
-
 
 theorem central_sphere_disjoint_region (a b : ℝ) (ha : b ≤ 0 ∨ 0 ≤ a) :
     Disjoint N.central_sphere (N.region a b) := by
@@ -84,13 +71,11 @@ theorem central_sphere_disjoint_region (a b : ℝ) (ha : b ≤ 0 ∨ 0 ≤ a) :
     rw [hx0] at hxR
     exact (not_lt_of_ge haa) hxR.2.1
 
-
 theorem central_sphere_nonempty : N.central_sphere.Nonempty :=
   ⟨N.center, N.center_on_central_sphere⟩
 
 theorem central_sphere_subset_carrier : N.central_sphere ⊆ N.carrier :=
   N.central_sphere_subset
-
 
 theorem carrier_subset_region_union_central_union_region :
     N.carrier ⊆ N.region (-N.epsilon⁻¹) 0 ∪ N.central_sphere ∪
@@ -112,7 +97,6 @@ theorem carrier_subset_region_union_central_union_region :
     )
   · exact Or.inr ⟨hx, hpos, ha.2⟩
 
-
 theorem carrier_eq_region_union_central_union_region :
     N.carrier = N.region (-N.epsilon⁻¹) 0 ∪ N.central_sphere ∪
       N.region 0 N.epsilon⁻¹ := by
@@ -123,8 +107,6 @@ theorem carrier_eq_region_union_central_union_region :
     · exact N.region_subset_carrier _ _ hx
     · exact N.central_sphere_subset_carrier hx
     · exact N.region_subset_carrier _ _ hx
-
-
 
 theorem mem_central_sphere_iff (x : M) :
     x ∈ N.central_sphere ↔ x ∈ N.carrier ∧ (N.coordinate_inverse x).2 = 0 := by
@@ -147,11 +129,9 @@ theorem mem_central_sphere_iff (x : M) :
     rw [N.coordinate_map_eq] at h
     exact h
 
-
 theorem isOpen_region (a b : ℝ) : IsOpen (N.region a b) := by
   exact N.coordinate_inverse_smooth.continuousOn.snd.isOpen_inter_preimage
     N.carrier_open isOpen_Ioo
-
 
 theorem isCompact_coordinate_slab {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :
@@ -161,8 +141,6 @@ theorem isCompact_coordinate_slab {a b : ℝ}
   rintro z ⟨_, hz⟩
   exact ⟨Set.mem_univ _, ha.trans_le hz.1, hz.2.trans_lt hb⟩
 
-
-
 theorem isCompact_central_sphere : IsCompact N.central_sphere := by
   rw [N.central_sphere_eq, ← Set.Icc_self (0 : ℝ)]
   exact N.isCompact_coordinate_slab
@@ -170,8 +148,6 @@ theorem isCompact_central_sphere : IsCompact N.central_sphere := by
 
 theorem isClosed_central_sphere : IsClosed N.central_sphere :=
   N.isCompact_central_sphere.isClosed
-
-
 
 theorem exists_mem_central_sphere_of_crossing
     {curve : ℝ → M} {a b : ℝ} (hab : a ≤ b)

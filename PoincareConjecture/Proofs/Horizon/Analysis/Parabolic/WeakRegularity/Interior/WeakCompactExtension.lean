@@ -1,19 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Producer
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory MeasureTheory.Measure Metric
 open scoped Topology ContDiff
@@ -32,9 +18,6 @@ variable {n : ℕ} {U : Set (Spacetime n)}
 local instance : Measure.IsAddHaarMeasure (volume : Measure (Spacetime n)) := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
-
-
-
 
 theorem exists_weak_compact_extension
     (hU : IsOpen U) {C : Coefficients n} (hC : C.IsSmoothOn U)

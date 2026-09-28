@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
 
 theorem neck_scale_le_cap_height_of_scalar {c D a h R : ℝ}
     (hc : 0 < c) (hD : 0 < D) (ha : 0 < a) (hh : 0 < h)
@@ -44,8 +34,6 @@ theorem neck_scale_le_cap_height_of_scalar {c D a h R : ℝ}
     rw [mul_pow]
     exact hsquare.trans (mul_le_mul_of_nonneg_right hratioSq (sq_nonneg h))
   nlinarith [mul_pos (show 0 < 1 + 2 * D / c by linarith) hh]
-
-
 
 theorem exists_strongNeck_bottom_capture_radius (P : M47Predecessors.{u})
     (g0 : StandardInitialMetric) {epsilon c : ℝ} (hepsilon : 0 < epsilon)

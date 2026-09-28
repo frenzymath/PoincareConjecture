@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.B
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.LevelScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SlabError
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -26,8 +17,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 2))) M]
   [IsManifold (𝓡 (m + 2)) ∞ M]
   {g : RiemannianMetric (m + 2) M}
-
-
 
 theorem integral_scalarCurvature_posPart_slab_le_of_scaled_level_induction
     (D : LeviCivitaData g)
@@ -195,7 +184,6 @@ theorem integral_scalarCurvature_posPart_slab_le_of_scaled_level_induction
         (((m + 1 : ℕ) : ℝ) * (1 + α) * α ^ 3 + α ^ 2) * b ^ m) +
       2 * ((m + 1 : ℕ) : ℝ) * (α ^ 2 + α ^ 3) * b ^ m - 2 * deriv A b
   nlinarith only [hboundary, hlevels, hleft, hright]
-
 
 theorem integral_scalarCurvature_posPart_slab_le_of_level_induction
     (D : LeviCivitaData g)

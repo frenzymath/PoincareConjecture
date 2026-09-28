@@ -3,20 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.RadialNeighborhood
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Quantitative
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem exists_distance_smoothing_on_compact_with_common_level_constraints
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

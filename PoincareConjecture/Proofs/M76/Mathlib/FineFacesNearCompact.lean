@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FineSimplicialSubdivision
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem exists_subdivision_faces_near_compact
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M10.ScalarBound
 import PoincareConjecture.Proofs.M10.LaplacianLinearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_positive_scalar_comparison (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

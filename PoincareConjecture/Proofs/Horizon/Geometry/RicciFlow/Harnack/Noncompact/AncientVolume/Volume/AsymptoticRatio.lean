@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.AncientLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.VolumeRatio.Monotonicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem le_asymptoticVolumeRatio_of_ball_volume_lower_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -44,8 +34,6 @@ namespace PoincareConjecture.AncientPointedGeometricConvergence
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem asymptoticVolumeRatio_pos_of_source_ball_volume_lower_bound
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}

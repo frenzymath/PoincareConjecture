@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.PositiveHistoryFlow
 import PoincareConjecture.Proofs.M10.ScalarBound
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M47Positive
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
-
 
 theorem positive_component_curvature_bounded_near
     (hC : RicciFlowCurvatureTheory.{u})
@@ -50,9 +38,6 @@ theorem positive_component_curvature_bounded_near
   have h := htail t ⟨hst, ht.2⟩ q hq
   linarith only [h, htq]
 
-
-
-
 theorem component_subset_regular_of_curvature_tail
     (E : SurgeryEventData g₀ K P slice metric T)
     (v : Ico E.tMinus T) (x : (slice E.tMinus).carrier)
@@ -73,9 +58,6 @@ theorem component_subset_regular_of_curvature_tail
   have hnorm := hbound t ⟨hvs, htT⟩ y hy
   norm_num only [Nat.cast_ofNat, Nat.reducePow] at hscalar
   nlinarith only [hscalar, hnorm]
-
-
-
 
 theorem positive_component_subset_regular
     (hC : RicciFlowCurvatureTheory.{u})

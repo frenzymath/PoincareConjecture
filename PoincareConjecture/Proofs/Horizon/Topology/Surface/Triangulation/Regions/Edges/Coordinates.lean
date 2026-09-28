@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Collars
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric

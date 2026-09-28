@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Interval.T
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Atlas.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.GeometryTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -539,6 +529,5 @@ noncomputable def rescaledCarrierCore
                 (fun q ↦ (V q).val) p)) = 0 := hbracket
         rw [hbracket']
         field_simp [hQ.ne']
-
 
 end PoincareConjecture.ParabolicRescaling

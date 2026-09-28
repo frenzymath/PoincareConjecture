@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedNormalizedPath
 import PoincareConjecture.Proofs.M47.JointSeedOrdinary
 import PoincareConjecture.Proofs.M09.PathComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [ConnectedSpace M]
-
-
 
 theorem seed_reducedLength_normalized_le
     {J K : Set ℝ} {F : RicciFlow 3 M J} {G : RicciFlow 3 M K}
@@ -49,8 +39,6 @@ theorem seed_reducedLength_normalized_le
   rw [hpValue, seedNormalizedPath_length hd hsigma hwindow hmetric hscalar p,
     Real.sqrt_mul hd.le]
   ring
-
-
 
 theorem seed_compact_normalized_access
     (P : M14OrdinaryProviders.{u} 3)

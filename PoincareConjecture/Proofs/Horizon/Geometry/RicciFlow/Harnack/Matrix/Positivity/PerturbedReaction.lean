@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.QuadraticReaction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -14,7 +7,6 @@ open scoped BigOperators
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [DecidableEq I]
-
 
 noncomputable def twoFormIdentity (a b c d : I) : ℝ :=
   ((if a = c ∧ b = d then 1 else 0) - (if a = d ∧ b = c then 1 else 0)) / 2
@@ -121,8 +113,6 @@ private lemma abs_curvature_shift_product_error_le
     hψ hψ hψone hK hK hr hs hi hj
   nlinarith only [h]
 
-
-
 lemma abs_curvature_twoTensor_replacement_le
     (R : I → I → I → I → ℝ) (M : I → I → ℝ) (W : I → ℝ)
     (α ψ KR KM : ℝ) (hα : 0 ≤ α) (hψ : 0 ≤ ψ) (hψone : ψ ≤ 1)
@@ -188,8 +178,6 @@ private lemma abs_mixed_shift_term_le
     _ ≤ _ := by
       have hh := mul_le_mul_of_nonneg_left hbound hψ
       nlinarith only [hh]
-
-
 
 lemma abs_curvature_threeTensor_replacement_le
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -275,8 +263,6 @@ private lemma abs_curvatureB_replacement_le
           (abs_twoFormIdentity_le_one a e b f) (abs_twoFormIdentity_le_one c e d f)))
     _ = _ := by simp; ring
 
-
-
 lemma abs_curvature_reaction_replacement_le
     (R : I → I → I → I → ℝ) (U : I → I → ℝ) (ψ K : ℝ)
     (hψ : 0 ≤ ψ) (hψone : ψ ≤ 1) (hK : 0 ≤ K)
@@ -341,7 +327,6 @@ lemma abs_curvature_reaction_replacement_le
       dsimp only [C]
       ring
 
-
 noncomputable def hamiltonCollectedReaction
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
     (M U : I → I → ℝ) (W : I → ℝ) : ℝ :=
@@ -354,9 +339,6 @@ noncomputable def hamiltonCollectedReaction
         U a b * W c) +
     2 * (∑ a, ∑ b, ∑ c, ∑ d,
       (B a b c d - B a b d c - B a d b c + B a c b d) * U a b * U c d)
-
-
-
 
 lemma abs_hamiltonCollectedReaction_replacement_le
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -381,8 +363,6 @@ lemma abs_hamiltonCollectedReaction_replacement_le
   dsimp only [hamiltonCollectedReaction] at h₁ h₂ h₃ ⊢
   apply abs_le.mpr
   constructor <;> nlinarith only [h₁.1, h₁.2, h₂.1, h₂.2, h₃.1, h₃.2]
-
-
 
 lemma hamiltonCollectedReaction_ge_neg_replacement_error
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -428,8 +408,6 @@ lemma hamiltonCollectedReaction_ge_neg_replacement_error
   have he := abs_le.mp (abs_hamiltonCollectedReaction_replacement_le
     R P M U W α ψ KR KP KM hα hψ hψone hKR hKP hKM hR hPb hM)
   linarith only [hnonneg, he.2]
-
-
 
 lemma abs_hamiltonCollectedReaction_replacement_le_time_bound
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)

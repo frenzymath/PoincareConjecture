@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operati
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Linear.JetBounds
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -198,12 +189,6 @@ private theorem m65JetBound_speedODE {κ : Type*} {a b r s : ℝ}
   refine h.trans (mul_le_mul (hv₀ k.1) ?_ (Real.exp_nonneg _) hB₀)
   apply Real.exp_le_exp.mpr
   exact mul_le_mul_of_nonneg_left (sub_le_sub_right k.2.property.2 r) (by positivity)
-
-
-
-
-
-
 
 theorem m65UniformSpatialJets_of_triangularRecurrences
     {κ ι V : Type*} [Finite ι] [NormedAddCommGroup V] [NormedSpace ℝ V]

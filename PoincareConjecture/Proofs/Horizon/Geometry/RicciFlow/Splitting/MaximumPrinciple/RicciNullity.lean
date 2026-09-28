@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.PartialTraceEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.Positive
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +16,8 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def ricciKernel (D : LeviCivitaData g) (x : M) :
     Submodule ℝ (TangentSpace (𝓡 n) x) := (ricciBilinear D x).ker
-
 
 def ricciNullity (D : LeviCivitaData g) (x : M) : ℕ :=
   Module.finrank ℝ (ricciKernel D x)
@@ -75,8 +64,6 @@ theorem ricciPartialTrace_eq_zero_iff_nullity (D : LeviCivitaData g)
 
 variable [T2Space M]
 
-
-
 theorem ricciNullity_eq_of_heatLowerContacts
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)
     {g : ℝ → RiemannianMetric n M} (D : ∀ t, LeviCivitaData (g t))
@@ -101,7 +88,6 @@ theorem ricciNullity_eq_of_heatLowerContacts
   exact le_antisymm
     ((hthreshold _ (ricciNullity_le (D t) p)).mp le_rfl)
     ((hthreshold _ (ricciNullity_le (D t) q)).mpr le_rfl)
-
 
 theorem ricciNullity_antitoneOn_of_heatLowerContacts
     {U : Set M} (hU : IsOpen U) (hconn : IsConnected U)

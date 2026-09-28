@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry Topology
 namespace PoincareConjecture.M76
@@ -122,4 +113,3 @@ theorem ChartwisePLSphere.planar_exterior_interior_of_not_rim
   exact hGS y (hTG hy)
 
 end PoincareConjecture.M76
-

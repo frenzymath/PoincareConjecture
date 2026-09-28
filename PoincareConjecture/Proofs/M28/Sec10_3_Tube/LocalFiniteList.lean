@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.ZeroSphere
 import Mathlib.Data.List.Chain
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +37,6 @@ theorem finiteNeckUnion_carrier_m28 (xs : List (EpsilonNeck g)) :
     ext x
     simp only [Opens.coe_sup, mem_union, ih, mem_iUnion, List.mem_cons]
     aesop
-
-
 
 theorem exists_cylinder_extension_over_list_with_tail_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -134,7 +120,6 @@ theorem exists_cylinder_extension_over_list_with_tail_m28 :
       exact havoidPrefix
     · exact (hexclude hxs).mono_left subset_union_left
 
-
 theorem exists_cylinder_extension_over_list_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -170,8 +155,6 @@ theorem exists_cylinder_extension_over_list_m28 :
   obtain ⟨_, _, D, _⟩ := h A xs hsmall b hb hbq U L K S hAU F T hFtail hTside
     hK hfront hdecomp hupper r hr hcollar hchain havoid
   exact ⟨D⟩
-
-
 
 theorem exists_finite_neck_cylinder_with_middle_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -245,8 +228,6 @@ theorem exists_finite_neck_cylinder_with_middle_m28 :
       hcollar hchain havoids
   exact ⟨D, N, c, hN, hc, N.zeroSphere_eq_of_positive_tail _ c hc D T' hDtail hT'side,
     hlast, hexclude⟩
-
-
 
 theorem exists_finite_neck_cylinder_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

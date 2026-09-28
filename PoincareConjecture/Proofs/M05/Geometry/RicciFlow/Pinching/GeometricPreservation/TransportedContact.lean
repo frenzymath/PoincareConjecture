@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.LocalContact
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.TensorConnection
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -39,8 +28,6 @@ private theorem finrank_tangent_contact (x : M) :
     Module.finrank ℝ (TangentSpace (𝓡 3) x) = 3 := by
   change Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 3
   simp
-
-
 
 theorem tensorLaplacian_pullback_nonpos_at_pinching_contact
     {E : M → Type*} [∀ x, NormedAddCommGroup (E x)]

@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalPeriodicity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -75,9 +62,6 @@ private theorem glue_periodic_arc_collars
   rcases le_total x y with hxy | hyx
   · exact hordered x hx y hy hxy t ht s hs heq
   · exact (hordered y hy x hx hyx s hs t ht heq.symm).symm
-
-
-
 
 theorem m64Intrinsic_exists_embedded_full_normal_collar (N : IntrinsicAnnulus) :
     ∃ (G : RiemannianMetric 2 AnnulusCoordinates)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.AnnulusSeparation
 import PoincareConjecture.Proofs.M32.Claim11_34.HornNonFilling
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem strongNeck_centralSphere_subset_normalizedBall
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
@@ -46,10 +31,6 @@ theorem strongNeck_centralSphere_subset_normalizedBall
   rw [← hradius]
   exact (ENNReal.ofReal_lt_ofReal_iff
     (mul_pos (by positivity) N.scale_pos)).mpr (by nlinarith [N.scale_pos])
-
-
-
-
 
 theorem terminalBlowupSequence_eventually_horn_annulus_separation :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

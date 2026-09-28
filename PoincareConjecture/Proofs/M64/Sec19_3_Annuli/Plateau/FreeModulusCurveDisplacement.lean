@@ -2,20 +2,6 @@ import Mathlib.Topology.MetricSpace.HausdorffDimension
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,10 +10,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem exists_small_c1_periodic_translation_disjoint
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -73,9 +55,6 @@ theorem exists_small_c1_periodic_translation_disjoint
   apply sub_eq_iff_eq_add.mpr
   simpa [add_comm] using hx.trans hy.symm
 
-
-
-
 theorem exists_small_euclidean_periodic_translation_disjoint
     {n : ℕ} (hn : 3 ≤ n) {P eps : ℝ} (heps : 0 < eps)
     {c0 c1 : ℝ → EuclideanSpace ℝ (Fin n)}
@@ -87,10 +66,6 @@ theorem exists_small_euclidean_periodic_translation_disjoint
       Disjoint (range c0) (range (fun x => c1 x + v)) := by
   apply exists_small_c1_periodic_translation_disjoint heps hc0 hc1 hp0 hp1
   simpa [EuclideanSpace] using (show 2 < n by omega)
-
-
-
-
 
 theorem exists_translation_radius_subset_open
     {E : Type*} [NormedAddCommGroup E] {U : Set E} (hU : IsOpen U)

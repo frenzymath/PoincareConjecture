@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelField
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 theorem ricciKernel_antitoneOn
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -44,8 +28,6 @@ theorem ricciKernel_antitoneOn
   intro t ht v hv w
   exact ricci_hasDerivWithinAt_zero_of_null_vector hC F hsec
     (fun s hs => ricciNullity_eq_on_positive_slice hC hab F hsec hs) ht x v (hv v) w
-
-
 
 theorem terminal_parallel_field_persists
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
@@ -69,7 +51,6 @@ theorem terminal_parallel_field_persists
   exact hterminal x
 
 omit [T2Space M] in
-
 
 theorem backward_persistence_of_parallel_gradient
     [T3Space M]

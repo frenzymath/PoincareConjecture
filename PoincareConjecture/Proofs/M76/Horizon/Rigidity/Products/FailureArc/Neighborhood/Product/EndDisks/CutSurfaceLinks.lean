@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleCofaceConstancy
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CircleIncidence
 
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 open PreAbstractSimplicialComplex.ModTwoCochains PoincareConjecture.M76.Dehn
@@ -171,8 +169,6 @@ private theorem edge_eq_pair_of_mem {s : Finset E} {v : E}
     subst v
     exact ⟨a,hab.symm,Finset.pair_comm _ _⟩
 
-
-
 theorem closedFaceComplement_links_of_circle_interface
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -257,7 +253,6 @@ theorem closedFaceComplement_links_of_circle_interface
     exact hlinks v (hCK hvC)
 
 open Classical in
-
 
 theorem closedFaceComplement_incidence_of_circle_interface
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)

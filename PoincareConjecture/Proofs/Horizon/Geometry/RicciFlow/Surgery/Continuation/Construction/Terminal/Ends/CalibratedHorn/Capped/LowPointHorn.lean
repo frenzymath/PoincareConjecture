@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.Capped.LowNeck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.TubeHorn
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -81,8 +80,6 @@ theorem exists_calibrated_strongHorn_of_cappedTube_low_neck (Q : SingularLimitCo
       ring
     rw [← Q.terminal_scalar_eq, hscale]
     linarith
-
-
 
 theorem exists_calibrated_strongHorn_of_cappedTube_low_tube_point
     (Q : SingularLimitConclusion H)

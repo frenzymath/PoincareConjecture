@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactBounds.Alternatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Topology.PositiveCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +13,6 @@ universe u
 namespace PoincareConjecture
 
 open CompactKappa
-
-
 
 theorem compact_positive_classification_of_m27
     (P : M27KappaAlternativePredecessors.{u}) :

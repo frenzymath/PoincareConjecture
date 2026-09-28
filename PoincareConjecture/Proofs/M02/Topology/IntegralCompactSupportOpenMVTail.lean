@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportImageTransport
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSubtype
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

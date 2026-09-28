@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPrimalCutDisk
 import PoincareConjecture.Proofs.M76.Mathlib.NestedPLBallBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -76,8 +68,6 @@ theorem complementaryCutRim_eq_bridgeCopies_union_gaps :
 
 variable (hP : P ≤ K.vertexAbstractComplex.edgeGraph)
 
-
-
 theorem OriginalPrimalCutDiskData.sectorGraph_endpoints
     (T : OriginalPrimalCutDiskData K P D hD hcofaces hP labels) (i : Fin 4) :
     ({heightGraph (T.sectorHeight i)
@@ -95,8 +85,6 @@ theorem OriginalPrimalCutDiskData.sectorGraph_endpoints
   rw [T.sectorGraph_eq_gap i] at hgraph
   exact hgraph.boundary_eq_of_same_carrier
     (T.gaps.gap_isFinitePLBallPair_cyclic (T.matching.symm i))
-
-
 
 theorem OriginalPrimalCutDiskData.bridgeCopies_inter_sectorGraph
     (T : OriginalPrimalCutDiskData K P D hD hcofaces hP labels) (i : Fin 4) :

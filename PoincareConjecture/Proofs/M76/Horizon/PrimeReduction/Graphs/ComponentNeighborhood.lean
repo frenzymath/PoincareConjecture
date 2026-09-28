@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ActualArcComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace SimpleGraph
-
 
 theorem isCompact_segmentCarrier
     {V E : Type*} [Finite V] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,9 +26,6 @@ end SimpleGraph
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_open_component_neighborhood
     (G : SimplicialComplex ℝ E) (hG : G.faces.Finite)
@@ -80,8 +68,6 @@ theorem exists_open_component_neighborhood
     · exact (hxU (mem_iUnion₂.mpr ⟨D, hDC, hxD⟩)).elim
   · intro x hx
     exact ⟨hwhole.symm.subset (mem_iUnion.mpr ⟨C, hx⟩), hCU hx⟩
-
-
 
 theorem exists_open_component_neighborhood_disjoint
     (G : SimplicialComplex ℝ E) (hG : G.faces.Finite)

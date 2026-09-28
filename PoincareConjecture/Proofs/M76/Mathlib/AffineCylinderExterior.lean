@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +11,6 @@ variable {E F V : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.affine_cylinderExterior
     {C B b : Set E} {D : Set ℝ} {z : ℝ}

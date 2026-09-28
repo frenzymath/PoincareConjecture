@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPeriodicBand
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
@@ -30,12 +17,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarConjugateForm_norm_bound (H : Plane → ℝ) (x : Plane) :
     ‖scalarConjugateForm D H x‖ ≤
@@ -82,12 +63,6 @@ theorem scalarConjugateForm_norm_bound (H : Plane → ℝ) (x : Plane) :
       mul_le_mul_of_nonneg_left hgrad (by positivity)
     _ = _ := by ring
 
-
-
-
-
-
-
 theorem scalarCoverMap_angular_norm (z : Cover) :
     ‖fderiv ℝ scalarCoverMap z (0, 1)‖ = |z.1| * (2 * Real.pi) := by
   have heq : fderiv ℝ scalarCoverMap z (0, 1) =
@@ -97,12 +72,6 @@ theorem scalarCoverMap_angular_norm (z : Cover) :
     fin_cases i <;> simp [angularPoint, Real.cos_add, Real.sin_add] <;> ring
   rw [heq, norm_smul, Real.norm_eq_abs, abs_mul, norm_angularPoint, mul_one,
     abs_of_pos (mul_pos (by norm_num) Real.pi_pos)]
-
-
-
-
-
-
 
 theorem exists_scalarCover_angular_flux_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ (H : Plane → ℝ) (z : Cover), z ∈ scalarCoverStrip →

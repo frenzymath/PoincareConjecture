@@ -1,10 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
-
-
-
 
 set_option autoImplicit false
 
@@ -35,8 +29,6 @@ theorem interior_boundary_image [T2Space M] (f : SmoothFace M) (k : Fin 3) :
   apply subset_empty_iff.mp
   rw [← interior_frontier f.isClosed_carrier]
   exact interior_mono (f.boundary_image_subset_frontier k)
-
-
 
 theorem disjoint_interiors_of_inter_subset_frontier (f g : SmoothFace M)
     (h : f.carrier ∩ g.carrier ⊆ frontier f.carrier) :

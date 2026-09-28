@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.State
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.PlanarPosition
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,8 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem exists_initial_cap_comparison_cutoff (K : MetricSurgeryConstants)
     {A tolerance : ℝ} (hA : 0 < A) (htolerance : 0 < tolerance) (k : ℕ) :
@@ -53,14 +41,10 @@ theorem exists_initial_cap_comparison_cutoff (K : MetricSurgeryConstants)
     rw [(F.event t hT).neck_delta i, hK]
     exact hdelta
 
-
-
 theorem SurgeryParameters.height_le_delta_sq_mul_epsilon (P : SurgeryParameters)
     {t : ℝ} (ht : 0 ≤ t) : P.h t ≤ P.delta t ^ 2 * P.epsilon :=
   (P.h_le t ht).trans
     (mul_le_mul_of_nonneg_left (P.r_le_epsilon t ht) (sq_nonneg _))
-
-
 
 theorem surgery_delta_tendsto_zero
     (F : ℕ → SurgeryFlowData.{u}) (t : ℕ → ℝ)
@@ -70,8 +54,6 @@ theorem surgery_delta_tendsto_zero
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds
     tendsto_one_div_add_atTop_nhds_zero_nat
     (fun n => ((F n).parameters.delta_pos (t n) (ht n)).le) hdelta
-
-
 
 theorem surgery_height_tendsto_zero
     (F : ℕ → SurgeryFlowData.{u}) (t : ℕ → ℝ) {epsilon : ℝ}

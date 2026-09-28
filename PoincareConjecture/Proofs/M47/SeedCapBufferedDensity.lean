@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCapImageDensity
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_cap_buffered_density (g0 : StandardInitialMetric)
     {Rtip Rmax : ℝ} (htip : 0 < Rtip) (hmax : 0 < Rmax) :

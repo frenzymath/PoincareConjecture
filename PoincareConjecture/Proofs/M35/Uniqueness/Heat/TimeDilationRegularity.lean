@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DilatedIntegralHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.SmoothInitialHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.UnforcedHeatUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

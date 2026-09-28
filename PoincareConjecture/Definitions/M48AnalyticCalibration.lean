@@ -1,25 +1,11 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Definitions.M47ComponentAnalytics
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure M48AnalyticCalibration (S : RepairedControlledSchedulesData.{u}) where
   component : M47ComponentAnalyticBounds.{u} S.setup.C

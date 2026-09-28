@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SliceCover
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundUniformScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalCarrierUnion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_claim10_4_compact_exclusion_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :
@@ -79,10 +66,6 @@ theorem exists_claim10_4_compact_exclusion_accuracy
       epsilon N hsmall (γ b) (hsubset (mem_image_of_mem γ (right_mem_Icc.mpr hab)))
       (γ a) (hsubset (mem_image_of_mem γ (left_mem_Icc.mpr hab)))
     exact (not_lt_of_ge hratio) hroundRatio
-
-
-
-
 
 theorem exists_claim10_4_source_necks_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

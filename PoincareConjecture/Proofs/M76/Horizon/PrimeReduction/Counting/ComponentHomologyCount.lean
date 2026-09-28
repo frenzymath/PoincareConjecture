@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.FiniteComponentHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set CategoryTheory Limits
 open scoped BigOperators

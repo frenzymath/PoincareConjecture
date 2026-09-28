@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.AffineBoundarySign
 import PoincareConjecture.Proofs.M76.Brown.NormalTransitionSigns
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry SignType

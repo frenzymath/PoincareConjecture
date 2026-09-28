@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_SmoothNormalMap
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MetricGerm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,9 +29,6 @@ private theorem normal_endpoint_geodesic_on
   filter_upwards [hlocal, isOpen_Ioo.mem_nhds ht] with r hr hrI
   exact ⟨(m64Intrinsic_normal_endpoint_eq_geodesic G hend hzero hgamma hinit hderiv hrI).trans
     hr.1, hr.2⟩
-
-
-
 
 theorem m64Intrinsic_exists_common_normal_geodesic_domain
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -80,9 +64,6 @@ theorem m64Intrinsic_exists_common_normal_geodesic_domain
   by_cases hlt : t < 0
   · exact hnegative t ⟨ht.1, hlt.trans hdelta⟩
   · exact hpositive t ⟨by linarith [le_of_not_gt hlt], by linarith [ht.2]⟩
-
-
-
 
 theorem m64Intrinsic_exists_actual_normal_geodesic_neighborhood
     (N : IntrinsicAnnulus) (G : RiemannianMetric 2 AnnulusCoordinates)

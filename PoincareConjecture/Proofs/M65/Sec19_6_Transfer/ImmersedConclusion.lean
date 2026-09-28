@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedComparison
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.Conclusion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m65ImmersedFillingAreaComparison_proved
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

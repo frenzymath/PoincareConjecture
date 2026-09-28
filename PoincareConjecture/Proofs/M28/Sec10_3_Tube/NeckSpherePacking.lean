@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import Mathlib.Data.Finset.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_standardSphere_small_path_cover {tau : ℝ} (htau : 0 < tau) :
     ∃ F : Finset UnitTwoSphere, ∀ q : UnitTwoSphere, ∃ z ∈ F,
@@ -96,10 +84,6 @@ private theorem intrinsicEDist_coordinate_sphere_path_lt
     simpa only [sigma, ← ENNReal.ofReal_mul hscale.le] using hbound
   have hfinal := hle.trans_lt hbound'
   simpa only [sigma, h0, h1] using hfinal
-
-
-
-
 
 theorem exists_central_sphere_packing_number {eta : ℝ} (heta : 0 < eta) :
     ∃ K : ℕ, 1 ≤ K ∧

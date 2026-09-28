@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Coefficients
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -53,7 +46,6 @@ theorem hessian_eq_fderiv_sub_connectionCoefficient_of_C2 (D : LeviCivitaData g)
   simp only [add_apply, ContinuousLinearMap.comp_apply, zero_apply,
     map_zero, zero_add, ContinuousLinearMap.flip_apply] at h
   linarith
-
 
 theorem contDiffOn_of_C2_hessian_eq_smooth_mul_metric (D : LeviCivitaData g)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

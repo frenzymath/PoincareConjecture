@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventCapCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +10,8 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def capAttachVector (z : RoundCylinderSpace) : StandardCapSpace :=
   (1 + z.2) • z.1.val
-
 
 theorem capAttachVector_smooth :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ capAttachVector := by
@@ -31,12 +21,10 @@ theorem capAttachVector_smooth :
     contMDiff_coe_sphere
   exact (hrad.contMDiff.comp contMDiff_snd).smul (hcoe.comp contMDiff_fst)
 
-
 theorem capAttachVector_coordinates (x : StandardCapSpace) :
     capAttachVector (capAttachCoordinates x) = x := by
   change (1 + (‖x‖ - 1)) • (capUnitDirection x).val = x
   rw [show 1 + (‖x‖ - 1) = ‖x‖ by ring, capUnitDirection_radial]
-
 
 theorem capAttachCoordinates_vector {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
@@ -49,11 +37,9 @@ theorem capAttachCoordinates_vector {z : RoundCylinderSpace}
       show ‖z.1.val‖ = 1 by simp, mul_one]
     ring
 
-
 theorem capAttachCoordinates_mem {x : StandardCapSpace} (hx : 1 < ‖x‖ ∧ ‖x‖ < 2) :
     capAttachCoordinates x ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 := by
   refine ⟨Set.mem_univ _, ?_, ?_⟩ <;> dsimp [capAttachCoordinates] <;> linarith [hx.1, hx.2]
-
 
 theorem capAttachVector_mem {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
@@ -62,7 +48,6 @@ theorem capAttachVector_mem {z : RoundCylinderSpace}
   simp only [capAttachVector, norm_smul, Real.norm_eq_abs, abs_of_pos hpos,
     show ‖z.1.val‖ = 1 by simp, mul_one]
   constructor <;> linarith [hz.2.1, hz.2.2]
-
 
 theorem positive_collar_subset :
     (Set.univ : Set UnitTwoSphere) ×ˢ Set.Ioo (0 : ℝ) 1 ⊆
@@ -75,7 +60,6 @@ variable {F : SurgeryFlowData.{u}} {T : ℝ} {hT : T ∈ F.surgery_times}
   [Nonempty (F.slice T).carrier] {i : Fin (F.event T hT).cap_count}
   (P : EventCapCoordinates F T hT i)
 
-
 theorem annular_map_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (P.collar ∘ capAttachCoordinates)
       {x : StandardCapSpace | 1 < ‖x‖ ∧ ‖x‖ < 2} := by
@@ -85,14 +69,12 @@ theorem annular_map_smooth :
     exact norm_pos_iff.mp (zero_lt_one.trans hx.1)
   · exact fun x hx => positive_collar_subset (capAttachCoordinates_mem hx)
 
-
 theorem annular_inverse_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (capAttachVector ∘ P.collarInverse)
       (P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1)) :=
   capAttachVector_smooth.comp_contMDiffOn
     ((event_cap_collar_inverse_smooth F T hT i P.width_pos P.width_lt P.shell_domain).mono
       (Set.image_mono positive_collar_subset))
-
 
 noncomputable def annularChart :
     OpenPartialHomeomorph StandardCapSpace (F.slice (F.event T hT).tMinus).carrier where
@@ -125,7 +107,6 @@ noncomputable def annularChart :
   open_source := (isOpen_lt continuous_const continuous_norm).inter
     (isOpen_lt continuous_norm continuous_const)
   open_target := P.collar_open_on (isOpen_univ.prod isOpen_Ioo) positive_collar_subset
-
 
 theorem annular_target_discarded :
     P.annularChart.target ⊆ (F.event T hT).retained_preᶜ :=

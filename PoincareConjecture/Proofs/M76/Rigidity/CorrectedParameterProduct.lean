@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.ParameterFrontierOpenness
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PrescribedProductCorrection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperProductOpenness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,10 +16,6 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 local notation "J" => Icc (-(1 / 4 : ℝ)) (1 / 4)
 local notation "Jo" => Ioo (-(1 / 4 : ℝ)) (1 / 4)
-
-
-
-
 
 theorem exists_corrected_parameter_product (B : E → E)
     (hB : FinitePiecewiseAffineOn B (Q ×ˢ J)) (hBi : InjOn B (Q ×ˢ J))

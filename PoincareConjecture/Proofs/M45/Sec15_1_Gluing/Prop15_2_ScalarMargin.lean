@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_ScalarEvolution
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderMargin
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -37,9 +28,6 @@ noncomputable local instance : NormedAddCommGroup (MetricTwoJet 3) := Prod.norme
 noncomputable local instance : NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 noncomputable local instance : NormedAddCommGroup (ScalarMetricFourJet 3) := Prod.normedAddCommGroup
 noncomputable local instance : NormedSpace ℝ (ScalarMetricFourJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_recent_scalar_margin :
     ∃ eta0 : ℝ, 0 < eta0 ∧ eta0 ≤ 1 / 4 ∧
@@ -103,9 +91,6 @@ theorem exists_recent_scalar_margin :
   rw [scalarMetricFourJet_congr hcoeff, hA0] at hL
   exact ⟨by simpa only [scalarMetricFourJet, hS] using hscalar,
     by simpa only [hL] using hlap⟩
-
-
-
 
 theorem exists_short_input_scale_bounds :
     ∃ eta0 : ℝ, 0 < eta0 ∧ eta0 ≤ 1 / 4 ∧

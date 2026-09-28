@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.PathCrossingDistance
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCrossings
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallRetainedPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ namespace SourceTubeData
 variable {epsilon C A D0 D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D0 D}
   {S : CounterexampleNeckSegment E}
-
-
-
 
 theorem intrinsic_edist_add_le_of_fresh_sphere_height (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 10000 : ℝ)) (f : UnitTwoSphere → ℝ)
@@ -102,9 +90,6 @@ namespace CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
 
 theorem tube_edist_add_le_of_fresh_sphere_height
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))

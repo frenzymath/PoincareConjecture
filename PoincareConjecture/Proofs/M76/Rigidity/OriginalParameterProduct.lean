@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalModelProduct
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskParameterInverse
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,7 +19,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {T : OriginalProperDiskTriangulation e R j}
 
 open Classical in
-
 
 theorem OriginalVertexProducts.exists_parameter_product (P : OriginalVertexProducts T) :
     ∃ k : V2 × ℝ → (T.index → ℝ × V3),

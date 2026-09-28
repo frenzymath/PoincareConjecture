@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallSourcePacket
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeLargeInitialBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
 
 theorem exists_retained_criticalBall_large_radius_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredSecantBounds
 import PoincareConjecture.Proofs.M76.Mathlib.IndependentSecantBound
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap AbstractSimplicialComplex
@@ -22,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_pos_secant_bound_frame_closedFaceStar (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))
@@ -67,9 +54,6 @@ theorem exists_pos_secant_bound_frame_closedFaceStar (K : SimplicialComplex ℝ 
   have h := hdc x (hsubset hx) y (hsubset hy)
   rw [← hform] at h
   exact h
-
-
-
 
 theorem isSecantTransverse_ker_iff_injOn_frame_closedFaceStar
     (K : SimplicialComplex ℝ E) (hv : AffineIndependent ℝ ((↑) : K.vertices → E))

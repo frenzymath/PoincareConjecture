@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCurve
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   (b : G.gaugeCover.index)
-
-
-
 
 theorem gauge_projectedDifferential
     (t : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
@@ -50,9 +38,6 @@ theorem gauge_projectedDifferential
       (G.gaugeCover.cylinder b).toSpacetime (t, x) (v.1, v.2)) = _
   rw [ht, hd, map_add, map_smul, horizontalProjection_timeVector_eq_zero,
     smul_zero, zero_add, G.spacetime.horizontalProjection_identity]
-
-
-
 
 theorem gaugeCurve_projectedVelocityWithin
     {β : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
@@ -82,9 +67,6 @@ private theorem projected_tangent_heq {q r : G.Point} (h : q = r)
   cases h
   cases hv
   rfl
-
-
-
 
 theorem projectedCurveVelocityWithin_congrOn {γ β : ℝ → G.Point} {J : Set ℝ}
     (h : EqOn γ β J) {s : ℝ} (hs : s ∈ J) :

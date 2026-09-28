@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.Capping.ClosedCover
 
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
@@ -16,9 +14,6 @@ private def cappingRelativeSetHomeomorph
   right_inv _ := rfl
   continuous_toFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
   continuous_invFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
-
-
-
 
 theorem isSimplyConnected_union_of_closed_cover_capping
     {X : Type*} [MetricSpace X] {N M : Set X}

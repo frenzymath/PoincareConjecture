@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalStandardRecutCertificate
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnchoredData
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardCoreData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_same_constant_epsilon_recut (N : CapCertificate g)
     (hcomplete : MetricComplete g) (hsmall : N.epsilon ≤ 1 / 1200)

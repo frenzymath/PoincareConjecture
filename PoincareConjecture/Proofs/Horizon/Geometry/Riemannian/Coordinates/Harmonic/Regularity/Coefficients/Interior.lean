@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.EquationBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.DensityBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -28,8 +17,6 @@ open scoped Manifold ContDiff Topology NNReal
 namespace PoincareConjecture.HarmonicCoordinates
 
 open Poincare.Parabolic.Interior
-
-
 
 theorem exists_uniform_scalar_interior_halfHolder {n : ℕ} (hn : 2 ≤ n) :
     let V := EuclideanSpace ℝ (Fin n)
@@ -158,9 +145,6 @@ theorem exists_uniform_scalar_interior_halfHolder {n : ℕ} (hn : 2 ≤ n) :
   have h := hholder.dist_le x y
   rw [dist_eq_norm, heq x hx, heq y hy, dist_eq_norm] at h
   exact h
-
-
-
 
 theorem exists_uniform_harmonic_metric_halfHolder {n : ℕ} (hn : 2 ≤ n) :
     let V := EuclideanSpace ℝ (Fin n)

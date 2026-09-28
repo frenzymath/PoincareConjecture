@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsBoundary
 import PoincareConjecture.Proofs.M47.TerminalGermsBallTransfer
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalGerms_source_ball_coverage
     {M : Type u} [TopologicalSpace M]
@@ -43,8 +33,6 @@ theorem terminalGerms_source_ball_coverage
   filter_upwards [hj, eventually_ge_atTop (j + 1)] with k hk hjk
   exact terminalGerms_ball_subset_image (h k) (hf k) (hE j) (hcompact j)
     ((hstep j).trans (hmono hjk)) (hp j) hA hk
-
-
 
 theorem terminalGerms_compact_ball_closure
     {M : Type u} [TopologicalSpace M]
@@ -81,8 +69,6 @@ theorem terminalGerms_compact_ball_closure
     simpa only [hyx] using hy
   exact (hcompact j).of_isClosed_subset isClosed_closure (closure_mono hsub)
 
-
-
 theorem terminalGerms_metricComplete_of_compact_balls
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -117,8 +103,6 @@ theorem terminalGerms_metricComplete_of_compact_balls
   obtain ⟨x, _, hx⟩ := (hcompact R hR).isComplete (map a atTop) ha
     (le_principal_iff.mpr htail)
   exact ⟨x, hx⟩
-
-
 
 theorem terminalGerms_metricComplete_of_boundary_escape
     {M : Type u} [TopologicalSpace M]

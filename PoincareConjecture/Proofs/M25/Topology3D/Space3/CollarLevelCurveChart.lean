@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarLevelTopology
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CurveOrbitCharts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_collar_level_curve_time_chart
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

@@ -2,34 +2,11 @@ import PoincareConjecture.Statements.M53SphereSeparation
 import PoincareConjecture.Proofs.M53.Prop15_12_Complement
 import PoincareConjecture.Proofs.M53.Prop15_12_Separation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem repairedSphereSeparation : RepairedSphereSeparationTheory.{u} := by
   refine ⟨?_⟩

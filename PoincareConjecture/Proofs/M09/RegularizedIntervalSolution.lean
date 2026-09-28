@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalRegularizedCurve
 import PoincareConjecture.Proofs.M09.GeometricRestartFamily
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

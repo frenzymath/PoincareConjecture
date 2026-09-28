@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CurvatureMetricJets
 import PoincareConjecture.Proofs.M35.Thm12_28.InverseGramMetricJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -27,7 +19,6 @@ private theorem ricci_formula {n : ℕ} {g : RiemannianMetric n (E n)}
   D.ricci_eq_inverse_gram x b (D.exists_multilinear_curvatureTensor x).choose
     (D.exists_multilinear_curvatureTensor x).choose_spec u v
 
-
 theorem ricci_contDiffAt_euclidean {n : ℕ} {g : RiemannianMetric n (E n)}
     (D : LeviCivitaData g) (x u v : E n) :
     ContDiffAt ℝ ∞ (fun y => D.ricci y u v) x := by
@@ -36,8 +27,6 @@ theorem ricci_contDiffAt_euclidean {n : ℕ} {g : RiemannianMetric n (E n)}
   exact ContDiffAt.sum fun i _ => ContDiffAt.sum fun j _ =>
     (inverseGram_contDiffAt g x b i j).mul
       (curvatureTensor_contDiffAt_euclidean D x u (b i) v (b j))
-
-
 
 theorem ricci_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}
@@ -83,7 +72,6 @@ theorem ricci_jets_tendsto_of_metric_jets {n : ℕ}
     (fun m hm => curvatureTensor_jets_tendsto_of_metric_jets Dseq D pseq p u (b i) v (b j)
       m (fun l hl => hjet l (by omega)))
 
-
 theorem scalarCurvature_contDiffAt_euclidean {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) :
     ContDiffAt ℝ ∞ D.scalarCurvature x := by
@@ -92,8 +80,6 @@ theorem scalarCurvature_contDiffAt_euclidean {n : ℕ}
   simp_rw [scalarCurvature_eq_inverse_gram D _ b]
   exact ContDiffAt.sum fun i _ => ContDiffAt.sum fun j _ =>
     (inverseGram_contDiffAt g x b i j).mul (ricci_contDiffAt_euclidean D x (b i) (b j))
-
-
 
 theorem scalarCurvature_jets_tendsto_of_metric_jets {n : ℕ}
     {gseq : ℕ → RiemannianMetric n (E n)} {g : RiemannianMetric n (E n)}

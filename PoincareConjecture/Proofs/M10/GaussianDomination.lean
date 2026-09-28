@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.InitialWeightedLimit
 import PoincareConjecture.Proofs.M10.RegularWeights
 import PoincareConjecture.Proofs.M10.SourceGaussian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 theorem regularWeightedJacobian_tendsto_initial
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
     (hT : T ∈ J) (hwindow : Icc (T - τmax) T ⊆ J)
@@ -35,7 +26,6 @@ theorem regularWeightedJacobian_tendsto_initial
     (regularWeightedJacobian_eventually_eq G x).symm
 
 variable [ConnectedSpace M]
-
 
 theorem weightedExponentialJacobian_le_sourceGaussian
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -51,7 +41,6 @@ theorem weightedExponentialJacobian_le_sourceGaussian
   exact weightedExponentialJacobian_antitoneOn hwindow hL hDifferential G x
     (G.backward_nesting _ τ hreg s hs.1 hs.2.le) hreg hs.2.le
 
-
 theorem regularWeightedJacobian_le_sourceGaussian
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
@@ -66,7 +55,6 @@ theorem regularWeightedJacobian_le_sourceGaussian
       hcurvature x (by rwa [exponentialSliceChart_source] at hx)
   · simpa only [regularWeightedJacobian, indicator_of_notMem hx] using
       (sourceGaussian_pos n x).le
-
 
 theorem regularWeightedJacobian_integrable
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

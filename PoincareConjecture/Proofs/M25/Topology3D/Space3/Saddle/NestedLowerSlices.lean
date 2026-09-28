@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedReferenceModel
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem slice_radial_tests :
     let H : ℝ := 17 / 16

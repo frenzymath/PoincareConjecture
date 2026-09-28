@@ -4,25 +4,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.FDeriv.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace PoincareConjecture.ConjugateVariation
 
-
 open scoped Topology
 open Set Filter MeasureTheory
-
 
 theorem deriv_deriv_nonneg_of_isLocalMin {f : ℝ → ℝ} {x₀ : ℝ}
     (hmin : IsLocalMin f x₀) (hc : ContinuousAt f x₀) :
@@ -45,12 +32,9 @@ section Box
 
 variable {F : ℝ → ℝ → ℝ} {a b s₀ r : ℝ}
 
-
-
 theorem continuousOn_slice {g : ℝ × ℝ → ℝ} {I J : Set ℝ} (hg : ContinuousOn g (I ×ˢ J))
     {σ : ℝ} (hσ : σ ∈ I) : ContinuousOn (fun t => g (σ, t)) J :=
   hg.comp (continuous_const.prodMk continuous_id).continuousOn fun _ ht => ⟨hσ, ht⟩
-
 
 theorem hasDerivAt_partial_of_contDiffOn_box
     (hF : ContDiffOn ℝ 1 (Function.uncurry F)
@@ -69,7 +53,6 @@ theorem hasDerivAt_partial_of_contDiffOn_box
   have hg : HasDerivAt (fun ρ : ℝ => (ρ, t)) ((1 : ℝ), (0 : ℝ)) σ :=
     (hasDerivAt_id σ).prodMk (hasDerivAt_const σ t)
   exact hfd.comp_hasDerivAt σ hg
-
 
 theorem hasDerivAt_intervalIntegral_of_contDiffOn_box
     {F : ℝ → ℝ → ℝ} {a b s₀ r : ℝ} (hab : a ≤ b) (hr : 0 < r)
@@ -155,7 +138,6 @@ theorem hasDerivAt_intervalIntegral_of_contDiffOn_box
     exact (hHD s hs t (hIccJ ht)).deriv
   rw [intervalIntegral.integral_congr hcongr]
   exact key.2
-
 
 theorem deriv_deriv_intervalIntegral_of_contDiffOn_box
     {F : ℝ → ℝ → ℝ} {a b s₀ r : ℝ} (hab : a ≤ b) (hr : 0 < r)

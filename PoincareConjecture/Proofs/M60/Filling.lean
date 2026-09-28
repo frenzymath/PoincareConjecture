@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,7 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 theorem m60FillingArea_le_disk (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (D : LipschitzSpanningDisk g γ) :
     fillingArea g γ ≤ D.area := by
@@ -29,7 +20,6 @@ theorem m60FillingArea_le_disk (g : RiemannianMetric 3 M)
     rintro a ⟨E, rfl⟩
     exact E.area_nonnegative
   · exact ⟨D, rfl⟩
-
 
 theorem m60FillingArea_nonneg_of_disk (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (D : LipschitzSpanningDisk g γ) :

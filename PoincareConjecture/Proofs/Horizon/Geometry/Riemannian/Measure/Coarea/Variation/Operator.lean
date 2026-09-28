@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.HypersurfaceFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem inner_gradient_levelProjection (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hreg : 0 < D.levelQ f x)
@@ -35,8 +27,6 @@ theorem inner_gradient_levelProjection (D : LeviCivitaData g)
   rw [hs]
   ring
 
-
-
 theorem levelMeanCurvature_eq_sum_inner_connection_normal (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
     {x : M} (hreg : 0 < D.levelQ f x) :
@@ -49,7 +39,6 @@ theorem levelMeanCurvature_eq_sum_inner_connection_normal (D : LeviCivitaData g)
   intro i _
   exact (D.inner_connection_unitNormal hf x hreg _ _
     (D.inner_gradient_levelProjection hreg _)).symm
-
 
 noncomputable def levelVariation (D : LeviCivitaData g) (f h : M → ℝ) (x : M) : ℝ :=
   (g.inner x (D.gradient h x) (D.gradient f x) +
@@ -90,8 +79,6 @@ theorem contMDiff_levelVariation (D : LeviCivitaData g)
   · apply (contMDiffAt_const (c := (0 : ℝ))).congr_of_eventuallyEq
     filter_upwards [(isClosed_tsupport h).isOpen_compl.mem_nhds hx] with y hy
     exact D.levelVariation_eq_zero_of_notMem_tsupport hy
-
-
 
 theorem levelVariation_eq_meanCurvature (D : LeviCivitaData g)
     {f h : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

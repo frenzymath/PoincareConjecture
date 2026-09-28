@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compression.MarkedCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -80,9 +71,6 @@ theorem exists_hamiltonZero_compressed_third_marked_surface_chart
       rcases hkind with ⟨_, _, _, _, hdis⟩ | ⟨ell, height, u, v, hu, hv, huv, hS, hB⟩
       · exact (disjoint_left.mp hdis hxT hx.2).elim
       · exact ⟨T, ell, height, u, v, hxT, hcompat, hu, hv, huv, hS, hB⟩)
-
-
-
 
 theorem exists_hamiltonZero_third_whole_component_alternatives
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3)

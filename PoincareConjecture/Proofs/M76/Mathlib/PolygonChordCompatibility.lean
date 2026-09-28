@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem chord_inter_edge (P : Polygon E n) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (a b : Fin n)
@@ -43,9 +32,6 @@ theorem chord_inter_edge (P : Polygon E n) (hP : P.HasSimplicialEdges)
     · simp [edgeVertices]
     · simp [edgeVertices, hi]
 
-
-
-
 theorem convexHull_inter_of_edges_or_chord (P : Polygon E n)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (a b : Fin n)
     (hchord : segment ℝ (P a) (P b) ∩ P.boundary ℝ ⊆ {P a, P b})
@@ -60,9 +46,6 @@ theorem convexHull_inter_of_edges_or_chord (P : Polygon E n)
   · simpa only [convexHull_pair, ← edgeSet_eq_convexHull] using
       P.chord_inter_edge hP hinj a b hchord j
   · simp only [inter_self, Subset.rfl]
-
-
-
 
 theorem hasSimplicialEdges_of_edges_or_chord (P : Polygon E n)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (a b : Fin n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeAction
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePrimitivePartition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem exists_gauge_weak_partition (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} {x y : G.Point} (p : ℕ → M14BackwardPath G T 0 tau x y)

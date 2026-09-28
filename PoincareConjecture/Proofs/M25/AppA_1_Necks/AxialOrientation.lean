@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialTransversality
 import PoincareConjecture.Proofs.M25.Mathlib.RealPartialDerivative
 import PoincareConjecture.Proofs.M25.Mathlib.ConnectedSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem scaled_cross_axis_eq_real_deriv (N N' : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain)
@@ -64,9 +51,6 @@ theorem scaled_cross_axis_eq_real_deriv (N N' : EpsilonNeck g)
   change N'.scale * L (N.normalizedAxialVector (N.coordinate_map z)) = _
   rw [ha, map_smul, smul_eq_mul, hd, div_eq_mul_inv, mul_assoc]
 
-
-
-
 theorem continuousOn_scaled_cross_axis (N N' : EpsilonNeck g) :
     ContinuousOn (fun z : RoundCylinderSpace =>
       N'.scale * mvfderiv (𝓡 3) (fun y => (N'.coordinate_inverse y).2)
@@ -86,9 +70,6 @@ theorem continuousOn_scaled_cross_axis (N N' : EpsilonNeck g) :
     exact ((hH.contMDiffAt (hU.mem_nhds hz)).real_partial_deriv_snd).contMDiffWithinAt
   have hscaled := hD.continuousOn.const_mul (N'.scale / N.scale)
   exact hscaled.congr (fun z hz => N.scaled_cross_axis_eq_real_deriv N' hz.1 hz.2)
-
-
-
 
 theorem exists_intersecting_coherent_orientation {η : ℝ} (hη : η ∈ Ioc 0 (1 / 2)) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

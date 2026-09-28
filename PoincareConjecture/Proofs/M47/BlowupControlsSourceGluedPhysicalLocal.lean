@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalAssembly
 import PoincareConjecture.Definitions.M45NeckGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -54,7 +46,6 @@ theorem roundCylinderIteratedDerivative_eq_on {t : ℝ}
     congr 1
     exact congrArg (fun L => L (roundCylinderCoordinateBasis (a 0))) hfd
 
-
 theorem roundCylinderFamilyClose_congr_on {epsilon : ℝ} {I : Set ℝ}
     {B B' : ℝ → RoundCylinderTwoTensor} (h : RoundCylinderFamilyClose epsilon I B)
     (heq : ∀ s ∈ I, ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
@@ -84,7 +75,6 @@ theorem roundCylinderFamilyClose_congr_on {epsilon : ℝ} {I : Set ℝ}
       rw [roundCylinderIteratedDerivative_eq_on hO hcoef k _ hp]
     rw [key]
     exact herror s hs z hz
-
 
 theorem surgeryCanonicalControl_of_neck_gluing_family_on {epsilon beta : ℝ}
     (hglue : M45NeckGluingProperty.{u} epsilon beta) (I : M45NeckGluingInput.{u} epsilon beta)

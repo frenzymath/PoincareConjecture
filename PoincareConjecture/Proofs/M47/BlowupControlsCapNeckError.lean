@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckPullback
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRecordedJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -31,9 +23,6 @@ noncomputable local instance capNeckCoefficientNorm :
 
 noncomputable local instance capNeckCoefficientSpace : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_actualCap_neck_coefficient_error_bound {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

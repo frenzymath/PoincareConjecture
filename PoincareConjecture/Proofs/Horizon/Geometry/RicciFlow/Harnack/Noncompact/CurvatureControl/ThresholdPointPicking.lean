@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.MetricMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,14 +16,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
-
-
-
-
-
-
 
 theorem exists_scalarCurvature_threshold_point_with_radius_control
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -161,7 +142,6 @@ theorem exists_scalarCurvature_threshold_point_with_radius_control
       have hmul := mul_le_mul_of_nonneg_right hle hsa_pos.le
       linarith
     linarith
-
 
 theorem exists_scalarCurvature_threshold_point
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

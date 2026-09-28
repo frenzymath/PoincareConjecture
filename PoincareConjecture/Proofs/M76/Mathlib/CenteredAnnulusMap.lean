@@ -1,31 +1,15 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
 
-
-
 noncomputable def centeredAnnulusMap (L : ℝ) (hL : 0 < L)
     (p : AddCircle (4 * L) × ℝ) : ℝ × ℝ :=
   let q := annulusMap L hL ((((L / 2 : ℝ) : AddCircle (4 * L)) + p.1), p.2)
   (q.1 - L / 2, q.2)
-
-
-
-
 
 theorem centeredAnnulusMap_core {L d s t : ℝ}
     (hL : 0 < L) (hwidth : 4 * d < L) (hcore : 6 * d ≤ L)
@@ -40,9 +24,6 @@ theorem centeredAnnulusMap_core {L d s t : ℝ}
   unfold centeredAnnulusMap
   rw [← AddCircle.coe_add, annulusMap_middle hL hsmall hleft hright]
   exact Prod.ext (by dsimp; ring) rfl
-
-
-
 
 theorem locallyPiecewiseAffineOn_centeredAnnulusMap_lift {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :

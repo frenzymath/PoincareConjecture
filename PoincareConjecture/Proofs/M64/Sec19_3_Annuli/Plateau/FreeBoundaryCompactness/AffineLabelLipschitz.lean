@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LiftNormalization
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology NNReal
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem monotone_period_shift_lipschitz_of_locallyLipschitz
     {sigma : ℝ → ℝ} {P : ℝ} (hP : 0 < P) (hm : Monotone sigma)

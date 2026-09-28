@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerStationarity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +7,6 @@ open Set Metric Filter MeasureTheory
 open scoped Topology ContDiff Manifold SchwartzMap LineDeriv
 
 namespace PoincareConjecture.M65Euler
-
-
-
 
 theorem connection_quadratic_bound {N : ℕ}
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)
@@ -35,9 +22,6 @@ theorem connection_quadratic_bound {N : ℕ}
       (M65Gauss.connectionCoefficient D y).le_opNorm₂ a a
     _ ≤ max C 0 * ‖a‖ * ‖a‖ := by gcongr; exact (hC y hy).trans (le_max_left _ _)
     _ = _ := by ring
-
-
-
 
 theorem connection_quadratic_integrable {N : ℕ} {μ : Measure LoopPlane}
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)
@@ -56,11 +40,6 @@ theorem connection_quadratic_integrable {N : ℕ} {μ : Measure LoopPlane}
   exact hbound _ hz _
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem variational_weak_equation {N : ℕ}
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)

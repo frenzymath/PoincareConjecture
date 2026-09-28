@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} {g h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 lemma harmonic_coordinates_of_inverse_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -71,8 +60,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ}
-
-
 
 lemma inverse_pullback_elliptic
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -119,8 +106,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} [NeZero n]
-
-
 
 lemma exists_metric_of_harmonic_map
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) (D : LeviCivitaData g)

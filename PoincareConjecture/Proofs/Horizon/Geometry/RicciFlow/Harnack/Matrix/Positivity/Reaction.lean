@@ -2,15 +2,6 @@ import Mathlib.Analysis.Matrix.Order
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators Kronecker
@@ -20,8 +11,6 @@ namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
 
-
-
 lemma tensorSquare_contraction_nonneg {A : Matrix I I ℝ}
     (hA : A.PosSemidef) (K : Matrix I I ℝ) :
     0 ≤ ∑ i, ∑ k, ∑ j, ∑ l, K i k * (A i j * A k l) * K j l := by
@@ -29,10 +18,6 @@ lemma tensorSquare_contraction_nonneg {A : Matrix I I ℝ}
     (fun ik : I × I => K ik.1 ik.2)
   simpa only [dotProduct, Matrix.mulVec, Fintype.sum_prod_type, Pi.star_apply,
     star_trivial, Matrix.kronecker_apply, Finset.mul_sum, mul_assoc] using h
-
-
-
-
 
 lemma hamiltonSharpReaction_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -154,8 +139,6 @@ lemma hamiltonSharpReaction_nonneg
     Finset.sum_neg_distrib] at h
   linarith only [h]
 
-
-
 lemma hamiltonReaction_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
     (M U : I → I → ℝ) (W : I → ℝ)
@@ -174,8 +157,6 @@ lemma hamiltonReaction_nonneg
       ∑ a, ∑ b, ((∑ c, P a b c * W c) + (∑ c, ∑ d, R a b c d * U c d)) ^ 2 := by
   exact add_nonneg (hamiltonSharpReaction_nonneg R P M U W hR hP hU hQ)
     (Finset.sum_nonneg fun a _ => Finset.sum_nonneg fun b _ => sq_nonneg _)
-
-
 
 lemma hamiltonBlock_quadratic_eq
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -209,8 +190,6 @@ lemma hamiltonBlock_quadratic_eq
   have htwo (p u w : ℝ) : p * u * 2 * w = 2 * (p * u * w) := by ring
   simp_rw [htwo, ← Finset.mul_sum]
   ring
-
-
 
 lemma hamiltonBlock_posSemidef_iff
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
@@ -248,12 +227,6 @@ lemma hamiltonBlock_posSemidef_iff
       have h := hQ (fun a b => z (.inl (a, b))) (fun a => z (.inr a))
       rw [← hamiltonBlock_quadratic_eq] at h
       simpa only [star_trivial, hz] using h
-
-
-
-
-
-
 
 lemma hamiltonBlock_quadratic_nonneg_of_posSemidef
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
@@ -298,9 +271,6 @@ private lemma sum_four_swap_pairs (f : I → I → I → I → ℝ) :
   apply Finset.sum_congr rfl
   intro c _
   exact Finset.sum_comm_cycle
-
-
-
 
 lemma hamiltonBlock_antisymmetrize
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -347,8 +317,6 @@ lemma hamiltonBlock_antisymmetrize
   simp_rw [hleft]
   exact (sum_four_swap_pairs _).symm
 
-
-
 lemma hamiltonBlock_posSemidef_of_skew_quadratic_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
     (hR : ∀ a b c d, R a b c d = R c d a b)
@@ -368,9 +336,6 @@ lemma hamiltonBlock_posSemidef_of_skew_quadratic_nonneg
   intro U W
   have h := hQ (fun a b => (U a b - U b a) / 2) W (by intros; ring)
   rwa [hamiltonBlock_antisymmetrize R P M U W hfirst hlast hP] at h
-
-
-
 
 lemma hamiltonBlock_null_equations
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)
@@ -404,8 +369,6 @@ lemma hamiltonBlock_null_equations
     simp only [A, z, Matrix.mulVec, dotProduct, Fintype.sum_sum_type,
       Fintype.sum_prod_type] at h
     exact h
-
-
 
 lemma hamiltonBlock_vector_contraction_zero
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ)

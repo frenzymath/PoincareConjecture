@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M01.ConnectionExistence
 import PoincareConjecture.Proofs.M04.MetricPairings
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem exists_spacetimeMetric (F : RicciFlow n M (Set.Icc a b))
     (C : SpacetimeCharts n M a b) :
@@ -136,8 +125,6 @@ theorem exists_spacetimeMetric (F : RicciFlow n M (Set.Icc a b))
     Pi.add_apply, Pi.mul_apply, S]
   rw [Trivialization.symmL_apply e hq, Trivialization.symmL_apply e hq]
   rfl
-
-
 
 theorem nonempty_spacetimeData_of_charts [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow n M (Set.Icc a b)) (C : SpacetimeCharts n M a b) :

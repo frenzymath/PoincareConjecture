@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcStripSeparation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,10 +8,6 @@ open scoped Topology
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_strip_neighborhood_width
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates)

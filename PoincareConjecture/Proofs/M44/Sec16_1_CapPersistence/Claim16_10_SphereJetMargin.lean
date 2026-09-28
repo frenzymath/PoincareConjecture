@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StandardCollar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,13 +27,9 @@ noncomputable local instance sphereTwoJetNormedGroup :
 noncomputable local instance sphereTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 def sectionalJetLowerRegion (k : ℝ) (u v : E) : Set (MetricTwoJet 3) :=
   {J | J.1.IsInvertible ∧ 0 < collarJetGram u v J ∧
     k * collarJetGram u v J < jetCurvature J u v u v}
-
-
 
 theorem isOpen_sectionalJetLowerRegion (k : ℝ) (u v : E) :
     IsOpen (sectionalJetLowerRegion k u v) := by
@@ -61,8 +46,6 @@ theorem isOpen_sectionalJetLowerRegion (k : ℝ) (u v : E) :
   filter_upwards [hinv, hgram, hpositive] with K hI hG hP
   exact ⟨hI, hG, sub_pos.mp hP⟩
 
-
-
 theorem exists_uniform_sectional_jet_lower_margin (k : ℝ) (u v : E)
     {K : Set (MetricTwoJet 3)} (hK : IsCompact K)
     (hsub : K ⊆ sectionalJetLowerRegion k u v) :
@@ -74,8 +57,6 @@ theorem exists_uniform_sectional_jet_lower_margin (k : ℝ) (u v : E)
   intro J hJ J' hnear
   exact hinside (Metric.mem_cthickening_of_dist_le J' J delta K hJ
     (by simpa only [dist_eq_norm] using hnear))
-
-
 
 theorem evolvingCylinderModelJet_horizontalGram (t : ℝ) :
     collarJetGram (e 0) (e 1) (evolvingCylinderModelJet t) = (2 * (1 - t)) ^ 2 := by
@@ -89,16 +70,12 @@ theorem evolvingCylinderModelJet_horizontalGram (t : ℝ) :
   simp [cylinderHorizontalGram, roundCylinderCoordinateBasis, pow_two,
     EuclideanSpace.inner_single_left]
 
-
-
 theorem evolvingCylinderModelJet_horizontalCurvature (t : ℝ) :
     jetCurvature (evolvingCylinderModelJet t) (e 0) (e 1) (e 0) (e 1) = 2 * (1 - t) := by
   rw [jetCurvature_evolvingCylinderModelJet]
   simp only [cylinderHorizontalForm_basis]
   simp [cylinderHorizontalGram, roundCylinderCoordinateBasis,
     EuclideanSpace.inner_single_left]
-
-
 
 theorem evolvingCylinderModelJet_mem_sphereRegion {t : ℝ} (ht0 : 0 ≤ t) (ht : t < 1) :
     evolvingCylinderModelJet t ∈ sectionalJetLowerRegion (1 / 4) (e 0) (e 1) := by
@@ -108,8 +85,6 @@ theorem evolvingCylinderModelJet_mem_sphereRegion {t : ℝ} (ht0 : 0 ≤ t) (ht 
   · rw [evolvingCylinderModelJet_horizontalGram, evolvingCylinderModelJet_horizontalCurvature]
     have hmul := mul_nonneg ht0 (sub_pos.mpr ht).le
     nlinarith
-
-
 
 theorem exists_evolvingCylinder_sphere_tolerance {theta : ℝ} (htheta : theta < 1) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ t ∈ Icc (0 : ℝ) theta, ∀ J : MetricTwoJet 3,
@@ -122,9 +97,6 @@ theorem exists_evolvingCylinder_sphere_tolerance {theta : ℝ} (htheta : theta <
         rintro J ⟨t, ht, rfl⟩
         exact evolvingCylinderModelJet_mem_sphereRegion ht.1 (ht.2.trans_lt htheta))
   exact ⟨delta, hdelta, fun t ht J hnear => hmargin _ ⟨t, ht, rfl⟩ J hnear⟩
-
-
-
 
 theorem exists_evolvingCylinder_whole_collar_tolerance {C theta : ℝ}
     (hC : 0 < C) (htheta : theta < 1) :
@@ -150,9 +122,6 @@ theorem exists_evolvingCylinder_whole_collar_tolerance {C theta : ℝ}
   apply hsphere t ht
   exact (evolving_roundCylinderClose_twoJet_error hepsilon ht.1 (ht.2.trans_lt htheta)
     hB horder z hz).trans (by linarith only [hdelta])
-
-
-
 
 theorem exists_standard_whole_collar {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {C theta : ℝ}

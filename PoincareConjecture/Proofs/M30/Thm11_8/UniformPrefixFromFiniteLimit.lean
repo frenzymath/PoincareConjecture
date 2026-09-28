@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.BlowupSubsequence
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSourcePrefix
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
-
 
 theorem eventually_uniform_prefix_scalar_of_finite_limit
     {S : GeneralizedBlowupSequence.{u}} {T : ℝ}

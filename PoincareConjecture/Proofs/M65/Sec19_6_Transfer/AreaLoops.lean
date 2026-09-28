@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FillingWitnesses
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.AnnularInfimum
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.AreaAlternative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -22,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65FamilyFillingDifference_le_initial (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (Set.univ : Set M)) (V : M64ThreeDimensionalFlowConclusion F)
@@ -43,8 +33,6 @@ theorem m65FamilyFillingDifference_le_initial (hM64 : M64ComparisonTheory.{u})
   exact (m65ProjectedAreaDifference_le_infimum S
     (V.flow.projection circumference h) (V.disks circumference h) z w E t D).trans
       (m65FamilyAnnulusArea_le_initial S z w E A t)
-
-
 
 theorem m65AreaLoopTransfer (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (Set.univ : Set M)) (V : M64ThreeDimensionalFlowConclusion F)

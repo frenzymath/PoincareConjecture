@@ -16,8 +16,6 @@ local notation "Rim" => Set.prod (sphere (0 : V1) 1) (sphere (0 : V2) 1)
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 
-
-
 theorem Stage.exists_original_parameter_annulus
     {M ι : Type*} [TopologicalSpace M]
     {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ A}

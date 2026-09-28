@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakVerticalSeparation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +14,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem observed_boundary_discrepancy_uniform_bound
     (g : RiemannianMetric n M) (e : M → E)
@@ -58,9 +43,6 @@ theorem observed_boundary_discrepancy_uniform_bound
     field_simp [hr.ne', hC.ne']
   rw [heq, hWE] at hh
   exact hh
-
-
-
 
 theorem free_annulus_boundary_discrepancy_tendsto_zero_of_modulus_collapse
     (g : RiemannianMetric n M) (e : M → E)

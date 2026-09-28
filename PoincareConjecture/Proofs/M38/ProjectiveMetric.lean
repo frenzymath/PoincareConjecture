@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ThreeSphereConnection
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Descent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M38
 
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
-
-
 
 theorem threeSphereMetric_antipodal (x : UnitThreeSphere)
     (u v : TangentSpace (𝓡 3) x) :
@@ -48,8 +37,6 @@ theorem threeSphereMetric_antipodal (x : UnitThreeSphere)
 variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q] [IsManifold (𝓡 3) ∞ Q]
 
-
-
 theorem projectiveCover_antipodal_deriv (C : StandardProjectiveSmoothCover Q)
     (x : UnitThreeSphere) :
     (mfderiv (𝓡 3) (𝓡 3) C.cover (-x)).comp
@@ -63,8 +50,6 @@ theorem projectiveCover_antipodal_deriv (C : StandardProjectiveSmoothCover Q)
     ((contMDiff_neg_sphere (n := 3) (m := ∞) x).mdifferentiableAt (by simp))
   rw [he] at hc
   exact hc.symm
-
-
 
 theorem projectiveCover_metric_compatible (C : StandardProjectiveSmoothCover Q)
     (x y : UnitThreeSphere) (hxy : C.cover x = C.cover y)
@@ -88,8 +73,6 @@ theorem projectiveCover_metric_compatible (C : StandardProjectiveSmoothCover Q)
     rw [heu, hev]
     exact threeSphereMetric_antipodal y u' v'
 
-
-
 theorem exists_projectiveMetric (C : StandardProjectiveSmoothCover Q) :
     ∃ g : RiemannianMetric 3 Q,
       ∀ (x : UnitThreeSphere) (u v : TangentSpace (𝓡 3) x),
@@ -102,18 +85,14 @@ theorem exists_projectiveMetric (C : StandardProjectiveSmoothCover Q) :
     (fun _ _ => projectiveCover_metric_compatible C)
   exact ⟨g, hg ()⟩
 
-
-
 noncomputable def projectiveMetric (C : StandardProjectiveSmoothCover Q) :
     RiemannianMetric 3 Q := Classical.choose (exists_projectiveMetric C)
-
 
 theorem projectiveMetric_inner (C : StandardProjectiveSmoothCover Q)
     (x : UnitThreeSphere) (u v : TangentSpace (𝓡 3) x) :
     threeSphereMetric.inner x u v = (projectiveMetric C).inner (C.cover x)
       (mfderiv (𝓡 3) (𝓡 3) C.cover x u) (mfderiv (𝓡 3) (𝓡 3) C.cover x v) :=
   Classical.choose_spec (exists_projectiveMetric C) x u v
-
 
 noncomputable def projectiveConnection (C : StandardProjectiveSmoothCover Q) :
     LeviCivitaData (projectiveMetric C) := by

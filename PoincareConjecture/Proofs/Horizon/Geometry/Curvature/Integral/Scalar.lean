@@ -56,50 +56,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.HypersurfaceSlab
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -108,11 +64,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem exists_uniform_unitBall_scalar_integral_bound_zero :
     ∃ C : ℝ, 0 < C ∧
@@ -140,11 +91,6 @@ theorem exists_uniform_unitBall_scalar_integral_bound_zero :
     exact Fintype.sum_empty _
   simp only [hscalar, integral_zero]
   norm_num
-
-
-
-
-
 
 theorem exists_uniform_unitBall_scalar_integral_bound_one :
     ∃ C : ℝ, 0 < C ∧
@@ -178,8 +124,6 @@ theorem exists_uniform_unitBall_scalar_integral_bound_one :
       (g.orthonormalBasis x i) (g.orthonormalBasis x i)
   simp only [hscalar, integral_zero]
   norm_num
-
-
 
 theorem exists_uniform_unitBall_scalar_integral_bound (n : ℕ) :
     ∃ C : ℝ, 0 < C ∧

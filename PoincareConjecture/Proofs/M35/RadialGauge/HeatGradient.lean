@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatWeight
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -20,20 +11,15 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
 noncomputable def gaussianSecondMoment (n : ℕ) : ℝ :=
   ∫ z : EuclideanSpace ℝ (Fin n), ‖z‖ ^ 2 ∂stdGaussian (EuclideanSpace ℝ (Fin n))
 
 theorem gaussianSecondMoment_nonneg : 0 ≤ gaussianSecondMoment n :=
   integral_nonneg (fun _ => sq_nonneg _)
 
-
-
 noncomputable def heatGradientKernel (t : ℝ) (f : V → F) (x : V) : V →L[ℝ] F :=
   (Real.sqrt (2 * t))⁻¹ • ∫ z,
     (innerSL ℝ z).smulRight (f (x + Real.sqrt (2 * t) • z)) ∂stdGaussian V
-
-
 
 theorem heatGradientKernel_integrable {f : V → F} (hf : Continuous f) {C : ℝ}
     (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C) (t : ℝ) (x : V) :
@@ -52,8 +38,6 @@ theorem heatGradientKernel_integrable {f : V → F} (hf : Continuous f) {C : ℝ
   nlinarith [hbound (x + Real.sqrt (2 * t) • z),
     mul_nonneg (norm_nonneg (x + Real.sqrt (2 * t) • z))
       (norm_nonneg (f (x + Real.sqrt (2 * t) • z)))]
-
-
 
 theorem heatGradientKernel_weighted_norm_le {f : V → F} (hf : Continuous f)
     {C : ℝ} (hbound : ∀ x, (1 + ‖x‖) * ‖f x‖ ≤ C)

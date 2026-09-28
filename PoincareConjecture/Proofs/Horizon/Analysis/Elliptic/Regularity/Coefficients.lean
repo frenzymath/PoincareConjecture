@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Metric Filter Topology
@@ -43,8 +35,6 @@ theorem matrix_energy_smul (A : Matrix (Fin n) (Fin n) ℝ) (v : E) (r : ℝ) :
   apply Finset.sum_congr rfl
   intro j _
   ring
-
-
 
 theorem exists_uniform_matrix_lower_bound
     {A : E → Matrix (Fin n) (Fin n) ℝ} {K : Set E} (hK : IsCompact K)
@@ -108,8 +98,6 @@ theorem matrix_energy_smul_left (A : Matrix (Fin n) (Fin n) ℝ) (v : E) (r : �
 theorem matrix_energy_one (v : E) :
     ⟪v, matMulE (1 : Matrix (Fin n) (Fin n) ℝ) v⟫_ℝ = ‖v‖ ^ 2 := by
   simp [matMulE]
-
-
 
 theorem exists_global_elliptic_extension [NeZero n]
     {O K : Set E} (hO : IsOpen O) (hK : IsCompact K) (hKO : K ⊆ O)

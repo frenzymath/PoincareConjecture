@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallLocalInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X] {d b R : Set X}
-
-
-
 
 theorem IsFinitePLBallPair.boundary_height_side (hd : IsFinitePLBallPair E d b)
     (f : X → ℝ) (hf : ContinuousOn f d) (hbzero : ∀ x ∈ b, f x = 0)

@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.CriticalSet.Closed
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenSubset
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +32,6 @@ private theorem frontier_patch_subset {M : Type*} [TopologicalSpace M] [T2Space 
   refine ⟨x, ⟨hx, ?_⟩, rfl⟩
   intro hxo
   exact (hopen.frontier_eq ▸ hq).2 (mem_image_of_mem e hxo)
-
-
 
 theorem compact_regular_exterior
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -135,8 +126,6 @@ theorem compact_regular_exterior
     have hlev := connectedComponentIn_subset (h ⁻¹' {h p}) p hq.1
     have hqp := hunique q hlev hc
     exact hq.2 (hqp ▸ hpV)
-
-
 
 theorem exists_compact_regular_exterior
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

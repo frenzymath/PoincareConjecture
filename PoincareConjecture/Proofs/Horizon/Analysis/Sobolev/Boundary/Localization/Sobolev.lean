@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.WeakDerivatives
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +42,6 @@ private theorem memLp_mul_smooth_extend {W O : Set E} (hW : IsOpen W)
     · simp [hx]
     · simp [hx, image_eq_zero_of_notMem_tsupport (fun ht => hx (hs ht))]
   rwa [heq] at hext
-
-
 
 theorem hasWeakPartialDeriv_mul_smooth_of_tsupport_subset
     {W O : Set E} (hW : IsOpen W)
@@ -114,8 +106,6 @@ theorem hasWeakPartialDeriv_mul_smooth_of_tsupport_subset
   rw [hsplitR]
   linarith
 
-
-
 theorem memWkp_mul_smooth_of_tsupport_subset
     (k : ℕ) {O W : Set E} (hO : IsOpen O) (hW : IsOpen W)
     {u χ : E → ℝ} (hu : MemWkp k 2 u (W ∩ O))
@@ -139,7 +129,6 @@ theorem memWkp_mul_smooth_of_tsupport_subset
       exact hasWeakPartialDeriv_mul_smooth_of_tsupport_subset hW i hu.memLp
         (chosenWeakPartial'_memLp_of_mem hu.memW1p i)
         (chosenWeakPartial'_isWeakPartial_of_mem hu.memW1p i) hχ hc hs
-
 
 theorem memWkp_mul_smooth_of_isCompact_closure
     (k : ℕ) {O : Set E} (hO : IsOpen O) (hOc : IsCompact (closure O))

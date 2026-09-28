@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.LocalODE
 import PoincareConjecture.Proofs.M10.TerminalVelocity
 import PoincareConjecture.Proofs.M10.EulerTail
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -97,7 +89,6 @@ theorem noncritical_gamma_eventuallyEq_of_terminal_velocity
     (EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) ↦ a.2.1) ht
 
 variable [ConnectedSpace M]
-
 
 theorem minimizing_noncritical_gamma_eqOn
     (hL : LGeodesicTheory F T τmax) (hwindow : Icc (T - τmax) T ⊆ J)

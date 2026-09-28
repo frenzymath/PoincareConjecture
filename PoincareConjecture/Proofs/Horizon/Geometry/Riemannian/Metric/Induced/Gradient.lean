@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Submersion.FiniteDimensional
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ variable {m n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 m) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem mfderiv_gradient_comp_eq_starProjection
     (g : RiemannianMetric m M) (h : RiemannianMetric n N)
@@ -53,8 +44,6 @@ theorem mfderiv_gradient_comp_eq_starProjection
         (mfderiv (𝓡 m) (𝓡 n) F x w) = 0
     rw [← hmetric, g.inner_gradient, h.inner_gradient, mvfderiv_comp x hf hF]
     simp only [ContinuousLinearMap.comp_apply, sub_self]
-
-
 
 theorem ker_mfderiv_pi_eq_orthogonal_span_gradients
     {ι : Type*} [Fintype ι] (g : RiemannianMetric m M)

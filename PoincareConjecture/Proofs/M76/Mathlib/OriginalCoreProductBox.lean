@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,11 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_original_core_product_box
     (F : ((ℝ × ℝ) × ℝ) → E) {r : ℝ} (hr : 0 < r)

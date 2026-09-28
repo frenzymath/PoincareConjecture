@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusReduction
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,9 +20,6 @@ open Proofs.M58
 local notation "S" => interior m64AnnulusDomain
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem full_strip_phase_horizontal_energy
     {L : LoopPlane → ℝ} (hL : ContDiffOn ℝ 1 L Strip) {d : ℝ}
@@ -89,8 +74,6 @@ theorem full_strip_phase_horizontal_energy
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem annulus_weighted_energy_ge_phase_degree
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -157,9 +140,6 @@ theorem annulus_weighted_energy_ge_phase_degree
     (by positivity : 0 ≤ 2 * curvePeriod)
   nlinarith
 
-
-
-
 theorem free_ramp_annulus_weighted_energy_ge_winding
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)
     (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 (n + 1)) 2 gamma)
@@ -186,8 +166,6 @@ theorem free_ramp_annulus_weighted_energy_ge_winding
     nlinarith [mul_le_mul_of_nonneg_right hdeg hcirc.le]
   exact (div_le_div_of_nonneg_right
     (mul_le_mul_of_nonneg_left hsq hr.le) (by unfold curvePeriod; positivity)).trans hh
-
-
 
 theorem free_ramp_annulus_modulus_le_of_energy_bound
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)

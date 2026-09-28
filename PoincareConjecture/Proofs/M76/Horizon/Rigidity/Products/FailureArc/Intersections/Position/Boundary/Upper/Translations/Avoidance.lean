@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineParameterAvoidance
 
-
-
 set_option autoImplicit false
 open Set Metric AffineSubspace
 

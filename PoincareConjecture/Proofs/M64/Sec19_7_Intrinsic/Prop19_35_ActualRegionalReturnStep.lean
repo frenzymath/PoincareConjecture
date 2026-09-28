@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseCentr
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CentralReturnChild
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedTransverseReturnLength
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,11 +16,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_exists_actual_regional_return_step
     (N : IntrinsicAnnulus)

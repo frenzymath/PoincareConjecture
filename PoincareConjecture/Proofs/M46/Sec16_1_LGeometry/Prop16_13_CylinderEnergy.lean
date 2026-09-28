@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureAction
 import PoincareConjecture.Proofs.M08.ReferenceEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +23,6 @@ variable {F : GeneralizedRicciFlowData.{u}} (G : FlowBoxRicciGeometry F)
   (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
 
 include hI in
-
-
 
 theorem rawCylinder_birthEnergy_lower
     (gBirth : RiemannianMetric 3 C.carrier) (mu : ℝ)
@@ -87,8 +76,6 @@ theorem rawCylinder_birthEnergy_lower
   exact (le_div_iff₀ e.scale_pos).mpr (by
     simpa only [mul_comm] using hbound s.val s.property (z r)
       (mfderiv (𝓡 3) (𝓡 3) (Subtype.val : U → C.carrier) (z r) (curveVelocity z r)))
-
-
 
 theorem realizedHorizontalEnergy_congr
     {gamma eta : ℝ → G.realization.spacetime.Point} {r : ℝ}

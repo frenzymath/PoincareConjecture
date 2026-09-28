@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMetricBounds
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderFiniteJets
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.VaryingScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
   (H : CounterexampleNeckFamily E)
-
-
-
 
 theorem normalizedSlice_fresh_coefficient_lower (k : ℕ)
     (N : EpsilonNeck ((E (k + H.shift)).flow.metric (E (k + H.shift)).time))
@@ -56,10 +44,6 @@ theorem normalizedSlice_fresh_coefficient_lower (k : ℕ)
     _ ≤ _ := mul_le_mul_of_nonneg_left
       (cylinderNeckCoefficients_quadratic_bounds N q hs v).1
       (mul_nonneg hQ.le (sq_nonneg _))
-
-
-
-
 
 theorem hasUniformJetBoundsAt_normalizedSlice_fresh_coefficients
     {ι : Type*} (k : ι → ℕ)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,21 +11,14 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def zeroApexCoordinates (A : E →ᵃ[ℝ] ℝ) (q w v : E) :
     (ℝ × ℝ) →ᴬ[ℝ] E :=
   ((ContinuousLinearMap.fst ℝ ℝ ℝ).smulRight (w - q) +
     (ContinuousLinearMap.snd ℝ ℝ ℝ).smulRight (A.heightRay w v)).toContinuousAffineMap +
       ContinuousAffineMap.const ℝ (ℝ × ℝ) q
 
-
-
 theorem zeroApexCoordinates_apply (A : E →ᵃ[ℝ] ℝ) (q w v : E) (p : ℝ × ℝ) :
     A.zeroApexCoordinates q w v p = p.1 • (w - q) + p.2 • A.heightRay w v + q := rfl
-
-
 
 theorem apply_zeroApexCoordinates (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hq : A q = 0) (hw : A w = 0) (hv : A v ≠ 0) (p : ℝ × ℝ) :
@@ -50,9 +34,6 @@ theorem apply_zeroApexCoordinates (A : E →ᵃ[ℝ] ℝ) {q w v : E}
   change p.1 * 0 + p.2 * 1 + 0 = p.2
   ring
 
-
-
-
 theorem zeroApexCoordinates_injective (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0) (hv : A v ≠ 0) :
     Function.Injective (A.zeroApexCoordinates q w v) := by
@@ -63,23 +44,16 @@ theorem zeroApexCoordinates_injective (A : E →ᵃ[ℝ] ℝ) {q w v : E}
   have hs := add_right_cancel (add_right_cancel hpz)
   exact Prod.ext (smul_left_injective ℝ (sub_ne_zero.mpr hqw.symm) hs) ht
 
-
-
 theorem zeroApexCoordinates_bottom (A : E →ᵃ[ℝ] ℝ) (q w v : E) (s : ℝ) :
     A.zeroApexCoordinates q w v (s, 0) = lineMap q w s := by
   rw [zeroApexCoordinates_apply, lineMap_apply_module']
   simp
-
-
 
 theorem zeroApexCoordinates_side (A : E →ᵃ[ℝ] ℝ) (q w v : E)
     (hw : A w = 0) (t : ℝ) :
     A.zeroApexCoordinates q w v (1, t) = A.edgeLevel w v t := by
   rw [zeroApexCoordinates_apply, edgeLevel, hw]
   module
-
-
-
 
 theorem zeroApexCoordinates_image (A : E →ᵃ[ℝ] ℝ) (q w v : E)
     (hw : A w = 0) {β : ℝ} (hβ : 0 < β) :
@@ -97,10 +71,6 @@ theorem zeroApexCoordinates_image (A : E →ᵃ[ℝ] ℝ) (q w v : E)
     image_insert_eq, image_singleton]
   change convexHull ℝ {F (0, 0), F (1, 0), F (1, β)} = _
   rw [h0, h1, h2]
-
-
-
-
 
 theorem exists_zeroApex_tapered_collar (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0) (hv : A v ≠ 0)
@@ -120,9 +90,6 @@ theorem exists_zeroApex_tapered_collar (A : E →ᵃ[ℝ] ℝ) {q w v : E}
   change A (G p) = (p : ℝ × ℝ).2
   rw [hGval]
   exact A.apply_zeroApexCoordinates hq hw hv p
-
-
-
 
 theorem zeroApex_collar_subset_triangle (A : E →ᵃ[ℝ] ℝ) (q : E) {w v : E}
     (hw : A w = 0) (hv : 0 < A v) {β : ℝ} (hβ : 0 < β) (hβv : β ≤ A v) :

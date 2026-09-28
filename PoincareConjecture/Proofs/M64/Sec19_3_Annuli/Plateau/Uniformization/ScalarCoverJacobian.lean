@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateJacobian
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarMetricEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +14,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
-
-
 
 theorem scalarCoverMap_radial_column (r t : ℝ) :
     fderiv ℝ scalarCoverMap (r, t) (1, 0) =
@@ -49,11 +31,6 @@ theorem scalarCoverMap_radial_column (r t : ℝ) :
         Real.sin (2 * Real.pi * t) • EuclideanSpace.basisFun (Fin 2) ℝ 1) r := by
     simpa only [scalarCoverMap, scalarCirclePoint, one_mul, Pi.add_apply, id_eq] using! h
   exact hactual.unique hsimple
-
-
-
-
-
 
 theorem scalarCoverMap_angular_column (r t : ℝ) :
     fderiv ℝ scalarCoverMap (r, t) (0, 1) =
@@ -75,12 +52,6 @@ theorem scalarCoverMap_angular_column (r t : ℝ) :
     simpa only [Function.comp_def, scalarCirclePoint, Pi.add_apply] using! h
   exact (scalarCirclePoint_hasDerivAt r t).unique hsimple
 
-
-
-
-
-
-
 theorem scalarCoverMap_column_determinant (r t : ℝ) :
     (fderiv ℝ scalarCoverMap (r, t) (1, 0)) 0 *
         (fderiv ℝ scalarCoverMap (r, t) (0, 1)) 1 -
@@ -94,12 +65,6 @@ theorem scalarCoverMap_column_determinant (r t : ℝ) :
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 theorem scalarConjugate_wedge (H : Plane → ℝ) (x v w : Plane) :
     fderiv ℝ H x v * scalarConjugateForm D H x w -
       fderiv ℝ H x w * scalarConjugateForm D H x v =
@@ -110,12 +75,6 @@ theorem scalarConjugate_wedge (H : Plane → ℝ) (x v w : Plane) :
   simp only [scalarConjugateForm, M60.rotatedFlux, scalarMetricFlux,
     add_apply, smul_apply, smul_eq_mul, EuclideanSpace.coe_proj]
   ring
-
-
-
-
-
-
 
 theorem scalarCoverJacobian_eq_metric_energy {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -133,11 +92,6 @@ theorem scalarCoverJacobian_eq_metric_energy {H : Plane → ℝ}
   rw [scalarConjugate_wedge]
   rw [scalarCoverMap_column_determinant z.1 z.2]
 
-
-
-
-
-
 theorem scalarCoverJacobian_nonneg {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     {z : Cover} (hz : z ∈ scalarCoverStrip) : 0 ≤ scalarCoverJacobian D H z := by
@@ -148,12 +102,6 @@ theorem scalarCoverJacobian_nonneg {H : Plane → ℝ}
       (by simpa using Function.injective_id)).2
   exact mul_nonneg (mul_nonneg (mul_nonneg (mul_nonneg (by norm_num) Real.pi_pos.le) hr.le)
     hrho.le) (scalarGradient_energy_nonneg D H _)
-
-
-
-
-
-
 
 theorem scalarCoverWeightedFlux_mono {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

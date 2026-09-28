@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.DifferenceFluxAlgebra
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M34.DifferenceEnergy
 
 variable {X : Type*} [TopologicalSpace X] {K : Set X} {n : ℕ}
 
-
-
 theorem continuousOn_curvatureAction {gamma : X → Gamma n} {T : X → Raw n}
     (hgamma : ∀ i j l, ContinuousOn (fun p => gamma p i j l) K)
     (hT : ∀ l j k m, ContinuousOn (fun p => T p l j k m) K) (d l j k m : Fin n) :
@@ -32,8 +20,6 @@ theorem continuousOn_curvatureAction {gamma : X → Gamma n} {T : X → Raw n}
   exact continuousOn_finsetSum _ (fun b _ =>
     ((((hgamma d b l).mul (hT b j k m)).sub ((hgamma d j b).mul (hT l b k m))).sub
       ((hgamma d k b).mul (hT l j b m))).sub ((hgamma d m b).mul (hT l j k b)))
-
-
 
 theorem continuousOn_divergenceAction {gamma : X → Gamma n} {T : X → Flux n}
     (hgamma : ∀ i j l, ContinuousOn (fun p => gamma p i j l) K)
@@ -44,8 +30,6 @@ theorem continuousOn_divergenceAction {gamma : X → Gamma n} {T : X → Flux n}
     (continuousOn_curvatureAction hgamma (hT i) i l j k m).add
       (continuousOn_finsetSum _ (fun b _ => (hgamma i b i).mul (hT b l j k m))))
 
-
-
 theorem continuousOn_curvatureContraction {dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) {T : X → Raw n}
     (hT : ∀ l j k m, ContinuousOn (fun p => T p l j k m) K) (alpha : Fin dS) :
@@ -54,8 +38,6 @@ theorem continuousOn_curvatureContraction {dS : ℕ}
   exact continuousOn_finsetSum _ (fun l _ => continuousOn_finsetSum _ (fun j _ =>
     continuousOn_finsetSum _ (fun k _ => continuousOn_finsetSum _ (fun m _ =>
       continuousOn_const.mul (hT l j k m)))))
-
-
 
 theorem continuousOn_metricFlux {I0 I1 : X → Inverse n} {kp : X → Flux n}
     (hI0 : ContinuousOn I0 K) (hI1 : ContinuousOn I1 K)
@@ -69,8 +51,6 @@ theorem continuousOn_metricFlux {I0 I1 : X → Inverse n} {kp : X → Flux n}
     (hI0.clm_apply (H.continuous.comp_continuousOn
       (hI1.clm_apply continuousOn_const)))).neg).mul (hkp d l j k m)
 
-
-
 theorem continuousOn_connectionFlux {I0 : X → Inverse n} {R1 : X → Raw n}
     (hI0 : ContinuousOn I0 K)
     (hR1 : ∀ l j k m, ContinuousOn (fun p => R1 p l j k m) K)
@@ -82,8 +62,6 @@ theorem continuousOn_connectionFlux {I0 : X → Inverse n} {R1 : X → Raw n}
       (hI0.clm_apply continuousOn_const)).mul
         (continuousOn_curvatureAction (gamma := fun _ : X => ag A)
           (fun _ _ _ => continuousOn_const) hR1 d l j k m))
-
-
 
 theorem continuousOn_curvatureFlux {I0 : X → Inverse n} {gamma : X → Gamma n}
     (hI0 : ContinuousOn I0 K)
@@ -97,8 +75,6 @@ theorem continuousOn_curvatureFlux {I0 : X → Inverse n} {gamma : X → Gamma n
         (continuousOn_curvatureAction (T := fun _ : X => raw S)
           hgamma (fun _ _ _ _ => continuousOn_const) d l j k m))
 
-
-
 theorem continuousOn_principalFlux {dS : ℕ} {I0 : X → Inverse n}
     (hI0 : ContinuousOn I0 K) (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
     (d : Fin dS × Fin n → ℝ) (i l j k m : Fin n) :
@@ -107,8 +83,6 @@ theorem continuousOn_principalFlux {dS : ℕ} {I0 : X → Inverse n}
   exact continuousOn_finsetSum _ (fun b _ =>
     ((EuclideanSpace.proj i).continuous.comp_continuousOn
       (hI0.clm_apply continuousOn_const)).mul continuousOn_const)
-
-
 
 theorem continuousOn_connectionRemainder {vp : X → Flux n}
     (hvp : ∀ i l j k m, ContinuousOn (fun p => vp p i l j k m) K)

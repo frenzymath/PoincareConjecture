@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.ResidualCompressionDecrease
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskCutDomainConstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

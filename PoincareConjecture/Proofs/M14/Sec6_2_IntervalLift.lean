@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M13.IntervalSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +11,6 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] (IM : ModelWithCorners ℝ E H)
   [TopologicalSpace M] [ChartedSpace H M]
   {I : SpacetimeInterval} (D : SmoothSpacetimeInterval I)
-
-
-
 
 theorem intervalLift_contMDiffWithinAt {f : M → D.Point} {S : Set M} {x : M}
     (hf : ContMDiffWithinAt IM (𝓘(ℝ, ℝ)) ∞ (fun y => (f y : ℝ)) S x) :
@@ -40,9 +29,6 @@ theorem intervalLift_contMDiffWithinAt {f : M → D.Point} {S : Set M} {x : M}
       ((Subtype.val : D.Point → ℝ) '' e.source) from fun y hy => ⟨f y, hy.2, rfl⟩)
   have hpoint := hcomp.mono_of_mem_nhdsWithin (inter_mem self_mem_nhdsWithin hU)
   simpa only [Function.comp_def, M13.intervalChartExtension_val] using hpoint
-
-
-
 
 theorem intervalLift_contMDiffOn {f : M → D.Point} {S : Set M}
     (hf : ContMDiffOn IM (𝓘(ℝ, ℝ)) ∞ (fun y => (f y : ℝ)) S) :

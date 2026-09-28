@@ -2,21 +2,11 @@ import PoincareConjecture.Definitions.M11AdaptedAtlas
 import Mathlib.Geometry.Manifold.Instances.Icc
 import Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
 
 structure SmoothSpacetimeInterval (I : SpacetimeInterval) where
   chartedSpace : ChartedSpace (EuclideanHalfSpace 1) I.domain
@@ -39,7 +29,6 @@ namespace SmoothSpacetimeInterval
 
 variable {I : SpacetimeInterval}
 
-
 abbrev Point (_D : SmoothSpacetimeInterval I) := I.domain
 
 instance (D : SmoothSpacetimeInterval I) :
@@ -48,19 +37,15 @@ instance (D : SmoothSpacetimeInterval I) :
 instance (D : SmoothSpacetimeInterval I) : IsManifold (𝓡∂ 1) ∞ D.Point :=
   D.isManifold
 
-
 noncomputable def positiveTangent (D : SmoothSpacetimeInterval I) (t : D.Point) :
     TangentSpace (𝓡∂ 1) t := (D.inclusionDerivative t).symm 1
 
 end SmoothSpacetimeInterval
 
-
 def spacetimeIntervalInclusion {I J : SpacetimeInterval}
     (D : SmoothSpacetimeInterval I) (E : SmoothSpacetimeInterval J)
     (h : I.domain ⊆ J.domain) : D.Point → E.Point :=
   fun t ↦ ⟨t.val, h t.property⟩
-
-
 
 structure SpacetimeIntervalSystem where
   interval : ∀ I : SpacetimeInterval, SmoothSpacetimeInterval I

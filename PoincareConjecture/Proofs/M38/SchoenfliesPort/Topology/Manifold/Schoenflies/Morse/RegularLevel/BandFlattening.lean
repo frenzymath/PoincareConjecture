@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Projection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.SpatialCylinder
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,14 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -246,9 +232,6 @@ private theorem exists_supported_height_family
     change A (t, Phi (β t) x) = _
     rw [hβid t ht, hA]
 
-
-
-
 theorem exists_supported_ambient_regular_band_flattening_of_smooth
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -340,7 +323,6 @@ theorem exists_supported_ambient_regular_band_flattening_of_smooth
       change F (q, a) = z at hq
       refine ⟨f (F (q, t)), ⟨F (q, t), ⟨(q, t), ⟨mem_univ _, ht⟩, rfl⟩, rfl⟩, ?_⟩
       rw [hflat t ht q, hq]
-
 
 theorem exists_supported_ambient_regular_band_flattening
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

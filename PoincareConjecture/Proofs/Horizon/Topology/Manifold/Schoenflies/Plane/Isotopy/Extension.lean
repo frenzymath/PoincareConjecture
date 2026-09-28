@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.Tube
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [Fact (Module.finrank ℝ E = 2)]
-
-
 
 theorem exists_ambient_isotopy_of_smooth_circle_family
     (o : Orientation ℝ E (Fin 2)) (q0 : sphere (0 : E) 1)

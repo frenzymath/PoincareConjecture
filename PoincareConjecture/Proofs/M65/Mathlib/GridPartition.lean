@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.GoodTimeGrid
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,16 +7,12 @@ open scoped BigOperators
 
 namespace PoincareConjecture.M65
 
-
-
 noncomputable def delayedGridTime (a b step : ℝ) (n i : ℕ) : ℝ :=
   if i ≤ n + 2 then a + (i : ℝ) * step else b
-
 
 theorem delayedGridTime_endpoints (a b step : ℝ) (n : ℕ) :
     delayedGridTime a b step n 0 = a ∧ delayedGridTime a b step n (n + 3) = b := by
   simp [delayedGridTime]
-
 
 theorem delayedGridTime_mem {a b step : ℝ} {n : ℕ} (hstep : 0 ≤ step)
     (hend : a + ((n : ℝ) + 2) * step ≤ b) (i : ℕ) :
@@ -40,8 +28,6 @@ theorem delayedGridTime_mem {a b step : ℝ} {n : ℕ} (hstep : 0 ≤ step)
     constructor <;> linarith
   · simpa only [delayedGridTime, if_neg hi, mem_Icc] using And.intro hab le_rfl
 
-
-
 theorem delayedGridTime_ordered {a b step : ℝ} {n : ℕ} (hstep : 0 ≤ step)
     (hend : a + ((n : ℝ) + 2) * step ≤ b) {i : ℕ} (hi : i < n + 3) :
     delayedGridTime a b step n i ≤ delayedGridTime a b step n (i + 1) := by
@@ -53,8 +39,6 @@ theorem delayedGridTime_ordered {a b step : ℝ} {n : ℕ} (hstep : 0 ≤ step)
   · have heq : i = n + 2 := by omega
     subst i
     simpa [delayedGridTime] using hend
-
-
 
 theorem delayedGrid_badCell_sum (n : ℕ) (good : Finset ℕ) (step : ℝ) :
     (∑ i ∈ Finset.range (n + 2),
@@ -85,8 +69,6 @@ theorem delayedGrid_badCell_sum (n : ℕ) (good : Finset ℕ) (step : ℝ) :
     hzero, hone, if_false, zero_add]
   rw [hsum]
   ring
-
-
 
 theorem delayedGrid_gap_sum (a b step : ℝ) (n : ℕ) (good : Finset ℕ)
     (hgood : good ⊆ Finset.range n) :

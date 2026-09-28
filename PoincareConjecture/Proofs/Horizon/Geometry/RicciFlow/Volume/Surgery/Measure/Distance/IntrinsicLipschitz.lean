@@ -1,25 +1,6 @@
 import PoincareConjecture.Proofs.M10.IntrinsicLipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Distance.PathSupports
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Product.Certificate
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +17,6 @@ variable {M N : Type u} [TopologicalSpace M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N]
   [IsManifold (𝓡 2) ∞ N]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
-
 
 def productSphereLineCertificateOfRawProduct
     (s : N ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,8 +59,6 @@ theorem open_endpointEdge_ne_vertex (right : Bool) {t : ℝ} (ht : t ∈ Ioo (0 
     rw [hheight] at hy
     have hh := B.height_pos (by norm_num : (1 : ℝ) ∈ Icc 0 1)
     cases hvb : v.2 <;> simp only [hvb, Bool.false_eq_true, ↓reduceIte] at hy <;> nlinarith [ht.1, ht.2]
-
-
 
 theorem open_endpointEdge_mem_face_iff (right : Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) (p : Fin B.interface.count × Bool) :
@@ -126,8 +118,6 @@ theorem open_endpointEdge_mem_face_iff (right : Bool) {t : ℝ}
     · exact (B.pair B.lastCell).lower.isClosed_carrier.frontier_subset
         ((B.pair B.lastCell).lower.boundary_image_subset_frontier 0
           ⟨t, Ioo_subset_Icc_self ht, rfl⟩)
-
-
 
 theorem open_endpoint_refined_vertex_fan
     (g : RiemannianMetric 2 S)

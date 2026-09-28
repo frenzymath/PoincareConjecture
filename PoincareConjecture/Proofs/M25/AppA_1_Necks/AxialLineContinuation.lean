@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionHeight
 import PoincareConjecture.Proofs.M25.Mathlib.ClosedPrefixTrap
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_signed_axial_line_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

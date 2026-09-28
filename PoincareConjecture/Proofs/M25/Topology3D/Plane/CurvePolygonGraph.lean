@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubePolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PolygonGraph
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_curve_inscribed_normal_graph
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

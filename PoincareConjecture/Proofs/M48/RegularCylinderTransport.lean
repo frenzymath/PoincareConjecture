@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.RegularSpacetime
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

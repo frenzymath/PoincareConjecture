@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterface
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByParts
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +34,6 @@ local instance suCompactVariationTrilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 def suWeightedChartVariation (g : RiemannianMetric n M) (b : M)
     (u : LoopPlane → E) (w : LoopPlane → ℝ) (phi : LoopPlane → E)
     (z : LoopPlane) : ℝ :=
@@ -47,9 +43,6 @@ def suWeightedChartVariation (g : RiemannianMetric n M) (b : M)
     2 * ∑ i : Fin 2, G (u z) (V i) (fderiv ℝ phi z (e i)))
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem suWeightedEuler_variation
     (g : RiemannianMetric n M) (b : M)

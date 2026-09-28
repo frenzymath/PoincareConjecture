@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerReconstruction
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +12,6 @@ open scoped Topology ContDiff Manifold
 universe u
 
 namespace PoincareConjecture.M65Euler
-
-
-
 
 theorem exists_bounded_chart_extension {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -57,10 +42,6 @@ theorem exists_bounded_chart_extension {M : Type u} [TopologicalSpace M]
   rw [hHq, hPq]
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem exists_chart_field_transfer {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

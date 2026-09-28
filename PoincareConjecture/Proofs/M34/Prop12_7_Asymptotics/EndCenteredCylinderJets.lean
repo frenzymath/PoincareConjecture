@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderJetLocality
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderPatches
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderIntrinsicJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 variable {g0 : RiemannianMetric 3 StandardCapSpace}
-
-
-
 
 theorem endCenteredCylinderMap_eq_translated_germ (e : StandardCylindricalEnd g0)
     (j : ℕ) (H : ℝ) {z : RoundCylinderSpace} (hz : 0 < z.2 + (H - j)) :
@@ -39,8 +27,6 @@ theorem endCenteredCylinderMap_eq_translated_germ (e : StandardCylindricalEnd g0
   · dsimp
     ring
 
-
-
 theorem endCenteredCylinderPullback_eq_shift (e : StandardCylindricalEnd g0)
     (j : ℕ) (H : ℝ) (g : RiemannianMetric 3 StandardCapSpace)
     {z : RoundCylinderSpace} (hz : 0 < z.2 + (H - j)) :
@@ -55,8 +41,6 @@ theorem endCenteredCylinderPullback_eq_shift (e : StandardCylindricalEnd g0)
     (endCenteredCylinderMap_eq_translated_germ e j H hz)).trans
     (roundCylinderPullback_comp_axialTranslation g _ _ z (hs.mdifferentiableAt (by simp)))
 
-
-
 theorem endCenteredCylinderCoefficient_eq_shift_germ (e : StandardCylindricalEnd g0)
     (j : ℕ) (H : ℝ) (g : RiemannianMetric 3 StandardCapSpace)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -70,8 +54,6 @@ theorem endCenteredCylinderCoefficient_eq_shift_germ (e : StandardCylindricalEnd
   have h := endCenteredCylinderPullback_eq_shift e j H g
     (z := (c.symm y.1, y.2)) hy
   exact congrFun (congrFun h _) _
-
-
 
 theorem endCenteredCylinderJetErrorSquared_eq (e : StandardCylindricalEnd g0)
     (j : ℕ) (H : ℝ) (g : RiemannianMetric 3 StandardCapSpace)

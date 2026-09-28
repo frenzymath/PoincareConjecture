@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AcyclicEdgeChains
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainKernel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
-
-
 
 def complementaryTriangleGraph (T : SimpleGraph ι) : SimpleGraph (Triangle A) where
   Adj q r := q ≠ r ∧ ∃ e : Edge A,
@@ -28,9 +16,6 @@ def complementaryTriangleGraph (T : SimpleGraph ι) : SimpleGraph (Triangle A) w
   loopless := ⟨fun _ h => h.1 rfl⟩
 
 variable [Fintype ι]
-
-
-
 
 theorem complementaryTriangleGraph_connected (T : SimpleGraph ι) (hT : T.IsAcyclic)
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)

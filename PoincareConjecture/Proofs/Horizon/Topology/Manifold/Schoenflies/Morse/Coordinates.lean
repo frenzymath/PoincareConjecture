@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Hes
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.NormalForm
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +26,6 @@ private theorem fderiv_sphere_parametrization_apply
     ((hc x).mdifferentiableAt (by simp))
   rw [mfderiv_eq_fderiv] at h
   exact congrArg (fun A : E2 →L[Real] E3 => A u) h
-
-
 
 theorem exists_height_coordinates_of_regular_normal
     {f : S2 -> E3} (hf : ContMDiff (𝓡 2) (𝓡 3) ∞ f)
@@ -132,8 +128,6 @@ theorem exists_height_coordinates_of_regular_normal
   · intro x hx
     change inner Real (N p : E3) (f (b.symm (a x))) = _
     simpa only [h, g, Function.comp_apply, hn0, hc0] using hform x hx.1
-
-
 
 theorem exists_morse_height
     (f : sphere (0 : EuclideanSpace Real (Fin 3)) 1 ->

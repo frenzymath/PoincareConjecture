@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialJacobianCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +25,6 @@ private theorem metric_pair_heq {q r : G.Point} (h : q = r)
   cases hv
   cases hw
   rfl
-
-
-
 
 theorem tendsto_initialJacobi_scaled_pair
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)

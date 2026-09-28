@@ -3,13 +3,6 @@ import Mathlib.Topology.MetricSpace.Bounded
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Function
@@ -18,7 +11,6 @@ open scoped ENNReal
 namespace Poincare.MeasureTheory.GaussianMoment
 
 variable {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]
-
 
 def shell (x : X) (r : ℝ) (j : ℕ) : Set X :=
   {y | (j : ℝ) * r ≤ dist x y ∧ dist x y < ((j : ℝ) + 1) * r}
@@ -55,8 +47,6 @@ theorem pairwiseDisjoint_shell (x : X) {r : ℝ} (hr : 0 < r) :
     exact (not_lt_of_ge (hj.1.trans' (mul_le_mul_of_nonneg_right h hr.le))) hi.2
   · have h : (j : ℝ) + 1 ≤ i := by exact_mod_cast hji
     exact (not_lt_of_ge (hi.1.trans' (mul_le_mul_of_nonneg_right h hr.le))) hj.2
-
-
 
 theorem integrable_of_shell_bounds (μ : Measure X) (x : X) {r : ℝ} (hr : 0 < r)
     {f : X → ℝ} (hf : AEStronglyMeasurable f μ) (K D : ℕ → ℝ)

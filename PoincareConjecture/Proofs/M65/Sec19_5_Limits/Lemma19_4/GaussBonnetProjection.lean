@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetResidual
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M65Branch
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem actual_comp_derivative_memLp
     {q : ℂ → E} {H : E → F} {K U : Set ℂ} {V : Set E}
@@ -53,18 +41,11 @@ theorem actual_comp_derivative_memLp
       ((hq1.contDiffAt (hU.mem_nhds hz.2)).differentiableAt one_ne_zero).hasFDerivAt
   exact (congrArg (fun L : ℂ →L[ℝ] F => L v) hdz.fderiv).symm
 
-
-
-
 def twoPlaneProjection (G : E →L[ℝ] E →L[ℝ] ℝ) (a b : E) : E →L[ℝ] E :=
   (G a a)⁻¹ • ((G a).smulRight a + (G b).smulRight b)
 
-
-
 theorem twoPlaneProjection_apply (G : E →L[ℝ] E →L[ℝ] ℝ) (a b v : E) :
     twoPlaneProjection G a b v = (G a a)⁻¹ • (G a v • a + G b v • b) := rfl
-
-
 
 theorem twoPlaneProjection_fixes (G : E →L[ℝ] E →L[ℝ] ℝ)
     (hG : ∀ v w, G v w = G w v) {a b : E}
@@ -77,8 +58,6 @@ theorem twoPlaneProjection_fixes (G : E →L[ℝ] E →L[ℝ] ℝ)
   · rw [twoPlaneProjection_apply, hab, zero_smul, zero_add, hbb, smul_smul,
       inv_mul_cancel₀ hpos, one_smul]
 
-
-
 theorem twoPlaneProjection_normal (G : E →L[ℝ] E →L[ℝ] ℝ)
     (hG : ∀ v w, G v w = G w v) {a b : E}
     (hpos : G a a ≠ 0) (hab : G a b = 0) (hbb : G b b = G a a) (v : E) :
@@ -90,8 +69,6 @@ theorem twoPlaneProjection_normal (G : E →L[ℝ] E →L[ℝ] ℝ)
   rw [hba, hab, hbb, hG v a, hG v b]
   constructor <;> field_simp <;> ring
 
-
-
 theorem twoPlaneProjection_idempotent (G : E →L[ℝ] E →L[ℝ] ℝ)
     (hG : ∀ v w, G v w = G w v) {a b : E}
     (hpos : G a a ≠ 0) (hab : G a b = 0) (hbb : G b b = G a a) (v : E) :
@@ -101,9 +78,6 @@ theorem twoPlaneProjection_idempotent (G : E →L[ℝ] E →L[ℝ] ℝ)
   nth_rw 2 [twoPlaneProjection_apply]
   rw [map_smul, map_add, map_smul, map_smul, hfix.1, hfix.2]
   rfl
-
-
-
 
 theorem contDiffOn_twoPlaneProjection :
     ContDiffOn ℝ ∞
@@ -117,10 +91,6 @@ theorem contDiffOn_twoPlaneProjection :
   have hGb := contDiff_fst.clm_apply hb
   exact ((hGa.clm_apply ha).contDiffOn.inv (fun _ h => h)).smul
     ((hGa.smulRight ha).add (hGb.smulRight hb)).contDiffOn
-
-
-
-
 
 theorem twoPlaneProjection_rotate_scale (G : E →L[ℝ] E →L[ℝ] ℝ)
     (hG : ∀ v w, G v w = G w v) {a b : E}
@@ -143,9 +113,6 @@ theorem twoPlaneProjection_rotate_scale (G : E →L[ℝ] E →L[ℝ] ℝ)
   rw [twoPlaneProjection_apply, hden, hnum, twoPlaneProjection_apply, smul_smul,
     mul_inv_rev, mul_assoc, inv_mul_cancel₀ hcd, mul_one]
 
-
-
-
 theorem normal_second_derivative_eq_projection_derivative
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
     {P : X → E →L[ℝ] E} {f : X → E} {z : X}
@@ -166,11 +133,6 @@ theorem normal_second_derivative_eq_projection_derivative
   simp only [add_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.flip_apply, zero_apply, zero_add, map_zero] at hv
   exact (eq_sub_of_add_eq' hv).symm
-
-
-
-
-
 
 theorem twoPlaneProjection_derivative_memLp
     {G : ℂ → E →L[ℝ] E →L[ℝ] ℝ} {a b : ℂ → E} {K U : Set ℂ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalVectorMixed
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawCompactHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

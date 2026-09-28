@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierChartMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierChartTransitions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_original_chart_surface_motion
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

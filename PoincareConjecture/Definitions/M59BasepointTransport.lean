@@ -1,24 +1,6 @@
 import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology unitInterval
@@ -45,13 +27,6 @@ def map {X : Type u} [TopologicalSpace X] {n : ℕ}
     exact W.respects_homotopy p h)
 
 end M59GenLoopWhisker
-
-
-
-
-
-
-
 
 structure M59HigherBasepointTransport (X : Type u) [TopologicalSpace X]
     (n : ℕ) where
@@ -84,7 +59,6 @@ abbrev map {X : Type u} [TopologicalSpace X] {n : ℕ}
 
 end M59HigherBasepointTransport
 
-
 structure M59HigherBasepointTransportService where
   transport : ∀ (n : ℕ) {X : Type u} [TopologicalSpace X],
     M59HigherBasepointTransport X n
@@ -98,9 +72,6 @@ structure M59HigherBasepointTransportService where
         surgeryHomotopyMap (n := n) f (rfl : f y = f y)
           (M59HigherBasepointTransport.map
             (transport n (X := X)) p a)
-
-
-
 
 structure M59ConstantLoopPath {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

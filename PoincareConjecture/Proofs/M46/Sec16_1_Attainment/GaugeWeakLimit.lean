@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeVelocity
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
-
-
-
 
 theorem finite_gauge_weak_limit {iota : Type*} [Finite iota]
     (e : iota → AttainmentGauge G) (a b : iota → ℝ)

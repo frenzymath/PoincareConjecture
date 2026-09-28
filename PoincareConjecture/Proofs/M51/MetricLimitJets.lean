@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.MetricJetCurvature
 import PoincareConjecture.Proofs.M51.LimitPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +12,6 @@ namespace PoincareConjecture.M51
 
 variable {A : GeneralizedSliceCarrier.{u}}
 
-
 theorem contDiffAt_singularMetricCoefficient
     (g : RiemannianMetric 3 A.carrier) (q : A.carrier) (a b : Fin 3)
     {p : EuclideanSpace ℝ (Fin 3)} (hp : p ∈ (extChartAt (𝓡 3) q).target) :
@@ -29,7 +19,6 @@ theorem contDiffAt_singularMetricCoefficient
   have hc := (g.contDiffOn_chartCoefficients q).contDiffAt
     ((isOpen_extChartAt_target (I := 𝓡 3) q).mem_nhds hp)
   exact (hc.clm_apply contDiffAt_const).clm_apply contDiffAt_const
-
 
 theorem metricLimit_jets_tendsto
     (g : ℝ → RiemannianMetric 3 A.carrier) (g₀ : RiemannianMetric 3 A.carrier)

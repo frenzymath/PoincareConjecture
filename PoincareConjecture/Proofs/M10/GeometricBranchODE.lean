@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.BranchODE
 import PoincareConjecture.Proofs.M10.CoordinateAction
 import PoincareConjecture.Proofs.M10.MetricPositive
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

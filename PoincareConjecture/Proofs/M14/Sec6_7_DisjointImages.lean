@@ -4,15 +4,6 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.MeasureTheory.Constructions.Polish.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped MeasureTheory Bundle
@@ -25,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
 
-
-
 theorem stable_slice_image_measurable (H : M14StableSet G T τ x E)
     {W : Set (G.Horizontal x)} (hW : W ⊆ H.carrier) (hm : MeasurableSet W) :
     MeasurableSet (H.endpoint_slice_map '' W) := by
@@ -34,8 +23,6 @@ theorem stable_slice_image_measurable (H : M14StableSet G T τ x E)
   let : PolishSpace (G.Horizontal x) := e.isClosedEmbedding.polishSpace
   exact hm.image_of_continuousOn_injOn (H.endpoint_slice_continuous.mono hW)
     ((stable_slice_endpoint_injective H).mono hW)
-
-
 
 theorem analyticCarrier_eq_densityIntegral (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
@@ -49,15 +36,11 @@ theorem analyticCarrier_eq_densityIntegral (H : M14StableSet G T τ x E)
   intro q hq
   exact A.density_eq q ((Set.image_mono hW) hq)
 
-
-
 theorem analyticCarrier_eq_stableVolume (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H) :
     M14ReducedVolumeOnAnalyticCarrier A H.carrier =
       M14ReducedVolumeOnStable G T x τ H :=
   analyticCarrier_eq_densityIntegral H A Set.Subset.rfl H.carrier_open.measurableSet
-
-
 
 theorem disjointImageAdditivity (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H) :

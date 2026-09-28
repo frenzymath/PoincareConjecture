@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveCapRegion
 import PoincareConjecture.Proofs.M38.LateSpaceformIncident
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (x : eventDiscardedOpen F T hT) (t : Ico (F.event T hT).tMinus T)
-
-
 
 theorem spaceform_incident_assembly_of_projective_cap
     (C : CapCertificate (F.metric t.val)) (hkind : C.model_kind = .puncturedProjective)
@@ -38,8 +27,6 @@ theorem spaceform_incident_assembly_of_projective_cap
   exact spaceform_incident_assembly_of_late_chart F T hT P x t projectiveCarrier
     projectiveSpaceform d.toOpenPartialHomeomorph d.contMDiffOn_toFun d.contMDiffOn_invFun hsource
 
-
-
 theorem spaceform_incident_assembly_of_cap
     (C : CapCertificate (F.metric t.val))
     (hsource : (F.event T hT).pre_identify t ''
@@ -53,9 +40,6 @@ theorem spaceform_incident_assembly_of_cap
       exact spherical_incident_assembly_of_euclidean_cap F T hT P x t C hkind hsource
   | puncturedProjective =>
       exact spaceform_incident_assembly_of_projective_cap F T hT P x t C hkind hsource
-
-
-
 
 theorem spaceform_incident_assembly_of_cap_comparison
     (C : CapCertificate (F.metric t.val)) {U : Set (F.slice t.val).carrier}

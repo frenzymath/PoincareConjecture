@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -60,10 +51,6 @@ private theorem nonincrease_of_upperRight_interior (A : ℝ → ℝ) {s t : ℝ}
     exact ⟨le_rfl, hst.le⟩
   exact ContinuousWithinAt.closure_le hclosure continuousWithinAt_const
     ((hA s ⟨le_rfl, hst.le⟩).mono Ioo_subset_Icc_self) hle
-
-
-
-
 
 theorem nonincrease_of_upperRight_finite (A : ℝ → ℝ) (E : Finset ℝ)
     {s t : ℝ} (hst : s ≤ t) (hA : ContinuousOn A (Icc s t))

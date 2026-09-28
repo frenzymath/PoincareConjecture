@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusEnergyIdentity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -15,9 +8,6 @@ set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ObservedMetric_energyDensity_le_columns {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

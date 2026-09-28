@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.TransverseFaceGraph
 
-
-
 set_option autoImplicit false
 open Set Geometry Module
 

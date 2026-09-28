@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.QuotientFibersHomeomorph
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianQuotient
 import PoincareConjecture.Proofs.M76.Rigidity.SolidTorusRelativeHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,10 +13,6 @@ local notation "L" => hamiltonLowerPeriodLattice (Fin 1)
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
-
-
 
 theorem exists_hamiltonSolidTorus_regluing
     (r : C(HamiltonMeridianClosedCut, H)) (hr : Function.Surjective r)
@@ -49,10 +35,6 @@ theorem exists_hamiltonSolidTorus_regluing
   intro x hx
   obtain ⟨a, rfl⟩ := hamiltonMeridianQuotient_surjective x
   exact (hg a).trans (hboundary a ((hamiltonMeridianQuotient_mem_boundary a).mp hx))
-
-
-
-
 
 theorem exists_hamiltonSolidTorus_regluing_with_homotopies
     (r : C(HamiltonMeridianClosedCut, H)) (hr : Function.Surjective r)

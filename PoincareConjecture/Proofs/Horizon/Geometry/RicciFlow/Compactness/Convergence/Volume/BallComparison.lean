@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SourceBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t3Space FlowCarrier.secondCountable
 
-
 def BasedFlow.riemannianBallVolume {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
     (F : BasedFlow n T' T C) (t r : ℝ) : ℝ≥0∞ :=
   (F.metricAt t).volumeMeasure (F.ballAt t r)
@@ -29,8 +21,6 @@ def BasedFlow.riemannianBallVolume {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
 namespace PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem eventually_ball_volume_bounds
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

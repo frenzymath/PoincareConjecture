@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedM15PathPositivity
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_ObservedSeedCylinder
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SeedPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_oldSeed
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

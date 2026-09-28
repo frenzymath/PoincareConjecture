@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothInitialForcing
 import PoincareConjecture.Proofs.M63.Mathlib.CompactParameterNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,10 +9,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative DeTurckMetricProducerNative
-
-
-
-
 
 theorem initialForcing_eventuallyEq_of_coefficients
     {iota E : Type*} [Countable iota] [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -72,10 +59,6 @@ theorem initialForcing_eventuallyEq_of_coefficients
     simpa only [Z, hV] using hnear z hz ⟨t, hmem⟩
   obtain ⟨hG, hQ⟩ := heq t _ hmem.1 hinside
   rw [h1 hmem, h2 hmem, hG, hQ]
-
-
-
-
 
 theorem contDiffAt_initialForcing_of_local_extensions
     {iota E : Type*} [Countable iota] [NormedAddCommGroup E] [NormedSpace ℝ E]

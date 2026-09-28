@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.HarmonicSphereChar
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.PoleExtension
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.CurvatureIntegralBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem m60Sphere_logConformalFactor_curvature_inequality
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -44,9 +33,6 @@ theorem m60Sphere_logConformalFactor_curvature_inequality
   have hround := m60Sphere_logConformalFactor_laplacian S g f hf hc z hz
   apply (mul_le_mul_iff_right₀ hσ).mp
   nlinarith
-
-
-
 
 theorem m60SphereConformalFactor_curvature_inequality
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -80,9 +66,6 @@ theorem m60SphereConformalFactor_curvature_inequality
   convert! hmul using 1
   field_simp
   ring
-
-
-
 
 theorem m60SphereRicciTrace_integral_lower_bound_of_harmonic
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

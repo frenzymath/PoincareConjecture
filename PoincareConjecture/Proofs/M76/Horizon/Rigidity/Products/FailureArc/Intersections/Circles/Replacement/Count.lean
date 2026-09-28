@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Topology.Mathlib.FiniteClosedComponentPartition
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
 set_option autoImplicit false
 open Set Topology
 

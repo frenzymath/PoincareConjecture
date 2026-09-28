@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -103,4 +96,3 @@ theorem covariantTensorDerivative_tensorLaplacian (D : LeviCivitaData g)
   rfl
 
 end PoincareConjecture.M04
-

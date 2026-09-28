@@ -1,7 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,7 +17,6 @@ theorem integral_inv_sqrt_of_pos {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
   have hs' : 0 < s := ha.trans_le ((uIcc_of_le hab) ▸ hs).1
   convert! (Real.hasDerivAt_sqrt hs'.ne').const_mul 2 using 1
   field_simp
-
 
 theorem integral_speed_le_weighted_action
     {f v : ℝ → ℝ} {a b τ C : ℝ} (ha : 0 < a) (hab : a ≤ b) (hb : b ≤ τ)

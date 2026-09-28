@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M48.PrefixControls
 import PoincareConjecture.Proofs.M48.RegularAnalytics
 import PoincareConjecture.Proofs.M45.Calibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -60,8 +52,6 @@ theorem terminal_height_bounds :
   · rw [old.local_constants_eq]
     exact hm.trans (hm'.trans S.calibration.selector_initial_bound)
   · simpa only [old.C_eq, hp.setup_eq] using hsmall.2
-
-
 
 noncomputable def continuationInput
     (hdomain : F.time_domain = Ico 0 O.H)

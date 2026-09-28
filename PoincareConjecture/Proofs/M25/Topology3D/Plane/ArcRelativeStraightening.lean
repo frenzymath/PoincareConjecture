@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcFiniteJunctions
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcCellStraightening
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.InscribedIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ open scoped ContDiff BigOperators
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_relative_polygonalArc_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

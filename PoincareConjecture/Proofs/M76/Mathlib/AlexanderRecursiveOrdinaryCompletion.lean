@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCapSigns
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveOrdinaryTerminal
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRimLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,13 +15,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_capped_deformation_with_band_geometry
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}
@@ -247,9 +230,6 @@ theorem AlexanderCollarSlab.exists_ordinary_capped_deformation_with_band_geometr
   · exact fun x hx => hfixV x (fun h => hx h.1)
   · exact fun x hx => hfixV x (fun h => (not_lt_of_ge hx) h.2)
 
-
-
-
 theorem AlexanderCollarSlab.exists_ordinary_capped_deformation_with_remainder_and_cap_signs
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}
     (M : AlexanderCollarSlab S A q β) (Mneg : AlexanderCollarSlab S (-A) q γ)
@@ -336,10 +316,6 @@ theorem AlexanderCollarSlab.exists_ordinary_capped_deformation_with_remainder_an
     hraise, hzero, hsuccessor, hminimum, hempty, hdisks, hlevels, hlow, hcapSigns,
     TX, TY, hTX, hTY, hXs, hYs, hsplit, hdisj, hdcap, hCX, hCY,
     F, hF, hFA, hFR, hFT, hFRmem, hroof, hmoved⟩
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_capped_deformation_with_remainder
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

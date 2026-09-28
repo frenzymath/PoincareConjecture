@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M13.CurvatureMultilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 

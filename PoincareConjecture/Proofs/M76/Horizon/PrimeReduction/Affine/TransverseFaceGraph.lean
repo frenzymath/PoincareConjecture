@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -21,8 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem finrank_affine_intersection_le_one
     (hdim : finrank ℝ E = 3) {s t : Finset E}
@@ -42,9 +30,6 @@ theorem finrank_affine_intersection_le_one
   omega
 
 namespace SimplicialComplex
-
-
-
 
 theorem exists_finite_line_cover_of_face_position
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -87,8 +72,6 @@ theorem exists_finite_line_cover_of_face_position
           convexHull_subset_affineSpan (s := (t : Set E)) hxt⟩
     · exact (disjoint_left.mp hdisj hxs hxt).elim
 
-
-
 theorem intersection_face_card_le_two_of_face_position
     (K J : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hdim : finrank ℝ E = 3) (hcard : ∀ s ∈ K.faces, s.card ≤ 3)
@@ -107,9 +90,6 @@ theorem intersection_face_card_le_two_of_face_position
     ht htc Q hQ hprotected hposition
   exact fun s hs => J.face_card_le_of_finite_affine_cover L hL
     (fun x hx => hcover x (hJ hx)) hs
-
-
-
 
 theorem exists_face_intersection_graph_of_face_position
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

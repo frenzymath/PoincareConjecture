@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFacetFibers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +14,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
-
-
-
 
 structure HamiltonProperDiskTriangleFibers
     (C : HamiltonProperDiskCoherentSides T c) where
@@ -42,9 +30,6 @@ structure HamiltonProperDiskTriangleFibers
   negative : ∀ s ∈ T.disk.faces, s.card = 3 →
     ∀ p : T.disk.vertices, (p : E) ∈ s → ∀ t ∈ I,
       C.labels.height p (map s t) ≤ 0 ↔ t ≤ 0
-
-
-
 
 structure HamiltonProperDiskFaceProduct
     (C : HamiltonProperDiskCoherentSides T c) (s : Finset E) where
@@ -63,8 +48,6 @@ structure HamiltonProperDiskFaceProduct
     C.labels.height p (map x) ≤ 0 ↔ x.2 ≤ 0
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem HamiltonProperDiskCoherentSides.exists_triangle_fibers
     (C : HamiltonProperDiskCoherentSides T c) (h3 : Module.finrank ℝ E = 3)
@@ -101,9 +84,6 @@ theorem HamiltonProperDiskCoherentSides.exists_triangle_fibers
   · intro s hs hc
     rw [hval ⟨s, hs, hc⟩]
     exact hneg ⟨s, hs, hc⟩
-
-
-
 
 theorem HamiltonProperDiskTriangleFibers.exists_triangle_product
     {C : HamiltonProperDiskCoherentSides T c} (F : HamiltonProperDiskTriangleFibers C)

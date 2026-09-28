@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.M12.GeneralizedBoxes
 import PoincareConjecture.Proofs.M13.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -19,14 +10,10 @@ namespace PoincareConjecture.M28
 
 open scoped Topology
 
-
-
 @[instance_reducible]
 noncomputable def rescaledSpaceTopology (F : GeneralizedRicciFlowData.{u}) (Q a : ℝ) :
     TopologicalSpace (Σ s : ℝ, (F.slice (parabolicTimeInv Q a s)).carrier) :=
   F.space_topology.induced (fun p ↦ (⟨parabolicTimeInv Q a p.1, p.2⟩ : F.point))
-
-
 
 noncomputable def rescaledSpaceHomeomorph (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
@@ -38,15 +25,11 @@ noncomputable def rescaledSpaceHomeomorph (F : GeneralizedRicciFlowData.{u})
       (parabolicTimeOrderIso Q hQ a).symm.toEquiv
   exact e.toHomeomorphOfIsInducing ⟨rfl⟩
 
-
-
 @[simp]
 theorem rescaledSpaceHomeomorph_apply (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (p : Σ s : ℝ, (F.slice (parabolicTimeInv Q a s)).carrier) :
     rescaledSpaceHomeomorph F Q hQ a p = ⟨parabolicTimeInv Q a p.1, p.2⟩ := rfl
-
-
 
 theorem rescaledSpace_t2 (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
@@ -56,8 +39,6 @@ theorem rescaledSpace_t2 (F : GeneralizedRicciFlowData.{u})
   let : T2Space F.point := F.space_t2
   exact (rescaledSpaceHomeomorph F Q hQ a).isEmbedding.t2Space
 
-
-
 theorem rescaledSpace_secondCountable (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
     letI := rescaledSpaceTopology F Q a
@@ -65,8 +46,6 @@ theorem rescaledSpace_secondCountable (F : GeneralizedRicciFlowData.{u})
   let := rescaledSpaceTopology F Q a
   let : SecondCountableTopology F.point := F.space_secondCountable
   exact (rescaledSpaceHomeomorph F Q hQ a).isEmbedding.secondCountableTopology
-
-
 
 theorem rescaledSpace_time_continuous (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
@@ -79,8 +58,6 @@ theorem rescaledSpace_time_continuous (F : GeneralizedRicciFlowData.{u})
       ((F.time_continuous.comp (rescaledSpaceHomeomorph F Q hQ a).continuous).sub continuous_const)
   simpa only [rescaledSpaceHomeomorph_apply, parabolicTime_parabolicTimeInv Q hQ] using h
 
-
-
 theorem rescaledSpace_slice_embedding (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a s : ℝ) :
     letI := rescaledSpaceTopology F Q a
@@ -89,9 +66,6 @@ theorem rescaledSpace_slice_embedding (F : GeneralizedRicciFlowData.{u})
   let := rescaledSpaceTopology F Q a
   apply (rescaledSpaceHomeomorph F Q hQ a).isEmbedding.of_comp_iff.mp
   exact F.slice_embedding (parabolicTimeInv Q a s)
-
-
-
 
 theorem rescaledSpace_box_openEmbedding (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) (b : F.box_index) :

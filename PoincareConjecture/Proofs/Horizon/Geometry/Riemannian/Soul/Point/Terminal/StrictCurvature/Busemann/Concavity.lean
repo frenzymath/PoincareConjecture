@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Ray
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.UpperSupport
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +20,6 @@ variable {n : ℕ} {M : Type*} [MetricSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem exists_uniform_concave_transformed_busemann
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

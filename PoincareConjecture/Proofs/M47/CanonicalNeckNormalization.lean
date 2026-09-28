@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckMetricJets
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M]
-
-
-
 
 theorem eventually_weighted_neck_metric_jets
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -93,9 +81,6 @@ theorem eventually_weighted_neck_metric_jets
       (mul_le_mul hweight.le (hDbound q z hz j hj i l) (norm_nonneg _) heta.le)
     _ = (L + D) * eta := by ring
     _ < rho := hsmall
-
-
-
 
 theorem eventually_normalized_neck_comparison
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

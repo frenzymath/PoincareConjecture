@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.JointSeedSquarePath
 import PoincareConjecture.Proofs.M09.SmoothJoinDensityBound
 import PoincareConjecture.Proofs.M09.JoinIntegralEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J}
-
-
-
 
 theorem exists_jointSeed_smooth_join
     (hM04 : RicciFlowCurvatureTheory.{u}) (T d b0 c : ℝ) (hd : 0 < d)

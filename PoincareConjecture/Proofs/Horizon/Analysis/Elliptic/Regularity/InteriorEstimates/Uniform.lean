@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEs
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Operators.Localization
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Embedding.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology
@@ -23,8 +11,6 @@ namespace Poincare.Analysis.Elliptic.InteriorEstimates
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem uniform_interior_estimate_of_elliptic_powers
     {O V K : Set E} (hO : IsOpen O) (hV : IsOpen V)

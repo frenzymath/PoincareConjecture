@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.LocalIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.FactorMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +16,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 def M27RoundSphereFamily.flowOfProductCover (S : M27RoundSphereFamily)
     (F : RicciFlow 3 M (Iic 0)) (f : UnitTwoSphere × ℝ → M)
@@ -85,17 +73,13 @@ def M27RoundSphereFamily.flowOfProductCover (S : M27RoundSphereFamily)
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] {K : AncientKappaSolution 3 M}
 
-
 def M27TwistedSphereLineFlowCertificate.sphereFlow
     (C : M27TwistedSphereLineFlowCertificate K) : RicciFlow 2 UnitTwoSphere (Iic 0) :=
   C.sphere.flowOfProductCover K.flow C.cover C.cover_local_diffeomorph C.metric_transport
 
-
 def M27ProjectivePlaneLineFlowCertificate.sphereFlow
     (C : M27ProjectivePlaneLineFlowCertificate K) : RicciFlow 2 UnitTwoSphere (Iic 0) :=
   C.sphere.flowOfProductCover K.flow C.cover C.cover_local_diffeomorph C.metric_transport
-
-
 
 theorem M27TwistedSphereLineFlowCertificate.sphere_inner_backward
     (C : M27TwistedSphereLineFlowCertificate K) {t u : ℝ} (ht : t ≤ 0) (hu : u ≤ 0)

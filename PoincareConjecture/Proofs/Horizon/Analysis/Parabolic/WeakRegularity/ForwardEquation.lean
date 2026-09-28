@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Smoot
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,8 +64,6 @@ private theorem spatial_mul_second (hU : IsOpen U) {f g : Spacetime n → ℝ}
       f z * fderiv ℝ (fun y => fderiv ℝ g y (spatialDirection i)) z (spatialDirection j)) = _
   ring
 
-
-
 def forwardCoefficients (a : Fin n → Fin n → Spacetime n → ℝ)
     (b : Fin n → Spacetime n → ℝ) : Coefficients n where
   principal := a
@@ -129,8 +117,6 @@ theorem forwardCoefficients_adjoint (hU : IsOpen U)
   rw [hcross]
   ring
 
-
-
 theorem Coefficients.adjoint_eq_zero_of_notMem_tsupport (C : Coefficients n)
     (φ : Spacetime n → ℝ) {z : Spacetime n} (hz : z ∉ tsupport φ) :
     C.adjoint φ z = 0 := by
@@ -147,8 +133,6 @@ theorem Coefficients.adjoint_eq_zero_of_notMem_tsupport (C : Coefficients n)
   simp only [Coefficients.adjoint, ha, hb, Finset.sum_const_zero,
     timeDeriv, hd Subset.rfl, image_eq_zero_of_notMem_tsupport hz]
   ring
-
-
 
 theorem contDiffOn_of_weak_forward_equation (hU : IsOpen U)
     {a : Fin n → Fin n → Spacetime n → ℝ} {b : Fin n → Spacetime n → ℝ}

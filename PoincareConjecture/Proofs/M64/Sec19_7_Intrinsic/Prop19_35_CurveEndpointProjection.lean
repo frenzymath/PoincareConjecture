@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurveEndpointChart
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_curve_endpoint_projection_measure_le
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -124,9 +112,6 @@ theorem m64Intrinsic_curve_endpoint_projection_measure_le
         (Real.sqrt (N.metric.inner (target t) (deriv target t) (deriv target t))) :=
       (lintegral_iUnion (fun n => (hlocal n).1) hBdisj _).symm
     _ ≤ _ := lintegral_mono_set hBsub
-
-
-
 
 theorem m64Intrinsic_unit_curve_endpoint_projection_length_le
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)

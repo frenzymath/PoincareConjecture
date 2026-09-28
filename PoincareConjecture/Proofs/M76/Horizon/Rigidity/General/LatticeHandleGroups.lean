@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerPeriodLattice
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +10,6 @@ open Set Metric
 namespace PoincareConjecture.M76
 
 local notation "p" => (4 * (128 : ℝ))
-
-
 
 theorem exists_lattice_handle_circle_retraction
     {ι κ : Type*} [Fintype ι] [Fintype κ] [Nonempty κ]
@@ -62,8 +50,6 @@ theorem exists_lattice_handle_circle_retraction
     change t (t.symm (v z)) k - t x.2 k = z
     rw [t.apply_symm_apply]
     simp only [v, if_pos rfl, add_sub_cancel_right]
-
-
 
 theorem nontrivial_pi1_latticeHandle
     {ι κ : Type*} [Fintype ι] [Fintype κ] [Nonempty κ]

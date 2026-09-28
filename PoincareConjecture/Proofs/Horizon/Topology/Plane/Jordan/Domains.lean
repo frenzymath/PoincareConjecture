@@ -1,18 +1,8 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Basic
-
-
-
-
-
-
 
 namespace Poincare.Topology.Plane.Jordan
 
 open Metric Set Function Bornology
-
 
 theorem isConnected_compl_image_Icc
     {f : ℝ → EuclideanSpace ℝ (Fin 2)}
@@ -24,7 +14,6 @@ theorem isConnected_compl_image_Icc
       (f := Equiv.Set.imageOfInjOn f (Icc (0 : ℝ) 1) hinj)
       (continuous_induced_rng.2 hf.domRestrict)
   exact arc_not_separates Brouwer.brouwerFPT e.symm
-
 
 theorem exists_complementary_domains
     {r : sphere (0 : EuclideanSpace ℝ (Fin 2)) 1 → EuclideanSpace ℝ (Fin 2)}

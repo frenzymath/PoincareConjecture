@@ -1,7 +1,5 @@
 import Mathlib.GroupTheory.Perm.Cycle.Type
 
-
-
 set_option autoImplicit false
 
 namespace Equiv.Perm

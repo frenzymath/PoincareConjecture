@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.BoundedExistence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -42,8 +34,6 @@ private theorem contDiffAt_solution_family_of_nonneg
   exact (hΨ.contDiffAt hmem).congr_of_eventuallyEq
     (Filter.Eventually.mono hmem fun _ hz => heq hz)
 
-
-
 theorem contDiff_solution_family
     {F : E → E} (hF : ContDiff ℝ ∞ F) {Φ : E × ℝ → E}
     (hinit : ∀ x, Φ (x, 0) = x)
@@ -64,9 +54,6 @@ theorem contDiff_solution_family
     have hr : ContDiff ℝ ∞ (fun z : E × ℝ => (z.1, -z.2)) :=
       contDiff_fst.prodMk contDiff_snd.neg
     simpa only [Ψ, Function.comp_def, neg_neg] using hs.comp (x, t) hr.contDiffAt
-
-
-
 
 theorem exists_smooth_parametric_flow
     {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]

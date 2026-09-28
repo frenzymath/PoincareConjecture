@@ -2,18 +2,6 @@ import PoincareConjecture.Definitions.M40ComparisonHomotopy
 import PoincareConjecture.Definitions.M56Ancestry
 import PoincareConjecture.Definitions.M59BasepointTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -29,13 +17,6 @@ noncomputable def repairedDiffeomorphContinuousMap
     [IsManifold (𝓡 3) ∞ A] [IsManifold (𝓡 3) ∞ B]
     (f : Diffeomorph (𝓡 3) (𝓡 3) A B ∞) : ContinuousMap A B :=
   ⟨f, f.continuous⟩
-
-
-
-
-
-
-
 
 structure RepairedAncestryTransportInput
     {g₀ : StandardInitialMetric}
@@ -114,11 +95,6 @@ structure RepairedAncestryTransportInput
       (repairedDiffeomorphContinuousMap (P.regular_transport a b hab hdisjoint)
         (P.component a).basepoint)
       (P.component b).basepoint)
-
-
-
-
-
 
 structure RepairedAncestryTransportData
     {g₀ : StandardInitialMetric}

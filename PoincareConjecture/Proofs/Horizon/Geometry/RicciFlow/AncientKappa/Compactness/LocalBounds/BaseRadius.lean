@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Spheres
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.MaximalBalls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_radius_calibrated_volume_eq
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M)
@@ -73,8 +60,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 local instance baseRadiusCarrierConnected (C : FlowCarrier.{0} 3) :
     ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
 
-
-
 theorem m23_tendsto_base_ball_volume_zero_of_unbounded_scalar
     (P : M23NormalizedKappaCompactnessPredecessors)
     (C : ℕ → FlowCarrier.{0} 3) (K : ∀ k, AncientKappaSolution 3 (C k).carrier)
@@ -107,8 +92,6 @@ theorem m23_tendsto_base_ball_volume_zero_of_unbounded_scalar
       exact (ENNReal.ofReal_le_ofReal (le_of_not_gt hn)).trans_eq
         (ENNReal.ofReal_toReal (hfinite k))
     exact hk.not_ge (hbound (C k) (K k) (hkappa k) (p k) (x k) r hr (hx k) hvol)
-
-
 
 theorem m23_exists_half_euclidean_radii_of_volume_collapse
     (C : ℕ → FlowCarrier.{0} 3) (K : ∀ k, AncientKappaSolution 3 (C k).carrier)
@@ -157,8 +140,6 @@ theorem m23_exists_half_euclidean_radii_of_volume_collapse
     exact hk.not_ge (hle.trans (MeasureTheory.measure_mono hsub))
 
 namespace NormalizedKappaSolutionSequence
-
-
 
 theorem exists_half_euclidean_radii_of_not_localCurvatureEstimate
     {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)

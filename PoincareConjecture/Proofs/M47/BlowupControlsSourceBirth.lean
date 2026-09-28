@@ -8,16 +8,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PhysicalBirthMe
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +33,6 @@ private theorem exists_scaled_singleton_cylinder
   intro hs x hx
   exact (Proofs.M47.seedCylinderReclock_forward_heq e0 hq ordConnected_Icc id
     (mapsTo_id _) (strictMono_id.strictMonoOn _) hclock 0 hs x).trans (based _ x hx)
-
-
-
 
 theorem exists_cap_birth_family_comparison_cutoff
     (g0 : StandardInitialMetric) (K : MetricSurgeryConstants)

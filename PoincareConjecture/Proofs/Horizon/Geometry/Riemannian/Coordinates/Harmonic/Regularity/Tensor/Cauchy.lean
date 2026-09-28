@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Pairing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -57,7 +50,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace RiemannianMetric
 
-
 theorem abs_tensorPairingTwo_le (g : RiemannianMetric n M)
     (S T : CovariantTensorEvaluation n M 2) (x : M) :
     |g.tensorPairingTwo S T x| ≤
@@ -67,7 +59,6 @@ theorem abs_tensorPairingTwo_le (g : RiemannianMetric n M)
     (fun p : I × I => S x ![g.orthonormalBasis x p.1, g.orthonormalBasis x p.2])
     (fun p => T x ![g.orthonormalBasis x p.1, g.orthonormalBasis x p.2])
   simpa only [Fintype.sum_prod_type, tensorPairingTwo, pow_two] using h
-
 
 theorem abs_tensorPairingThree_le (g : RiemannianMetric n M)
     (F G : CovariantTensorEvaluation n M 3) (x : M) :
@@ -84,8 +75,6 @@ theorem abs_tensorPairingThree_le (g : RiemannianMetric n M)
 end RiemannianMetric
 
 namespace LeviCivitaData
-
-
 
 theorem abs_gradient_tensorPairingCovector_le (D : LeviCivitaData g)
     (φ : M → ℝ) (F : CovariantTensorEvaluation n M 3)

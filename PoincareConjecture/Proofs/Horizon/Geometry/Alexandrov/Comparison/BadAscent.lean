@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.NearVertex
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.DistanceAscent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Alexandrov
-
-
 
 theorem CurvatureGEnegOne.exists_pos_comparisonAngle_gt_of_not_local_ascent
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X)

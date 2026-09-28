@@ -2,24 +2,11 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_last_level_Icc {a b r : ℝ} {f : ℝ → ℝ} (hab : a ≤ b)
     (hf : ContinuousOn f (Icc a b)) (ha : f a ≤ r) (hb : r ≤ f b) :

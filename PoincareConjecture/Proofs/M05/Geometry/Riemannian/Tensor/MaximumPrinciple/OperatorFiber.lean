@@ -1,15 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.HilbertFiber
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,7 +11,6 @@ namespace TensorFiber
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
 
 noncomputable def operatorTensor (A : E →ₗ[ℝ] E) : TensorFiber E 2 :=
   toMultilinear.symm (MultilinearMap.mk'
@@ -37,7 +25,6 @@ noncomputable def operatorTensor (A : E →ₗ[ℝ] E) : TensorFiber E 2 :=
 @[simp] theorem operatorTensor_apply (A : E →ₗ[ℝ] E) (v w : E) :
     operatorTensor A ![v, w] = ⟪v, A w⟫_ℝ := by
   rfl
-
 
 noncomputable def operatorTensorLinear :
     (E →ₗ[ℝ] E) →ₗ[ℝ] TensorFiber E 2 where
@@ -66,8 +53,6 @@ theorem operatorTensor_injective : Function.Injective (operatorTensor (E := E)) 
   simpa only [operatorTensor_apply, InnerProductSpace.toDualMap_apply_apply,
     real_inner_comm] using hv
 
-
-
 noncomputable def operatorTensorEquiv : (E →L[ℝ] E) ≃L[ℝ] TensorFiber E 2 :=
   (LinearMap.toContinuousLinearMap.symm.trans
     (LinearEquiv.ofInjectiveOfFinrankEq operatorTensorLinear operatorTensor_injective (by
@@ -84,8 +69,6 @@ noncomputable def operatorTensorEquiv : (E →L[ℝ] E) ≃L[ℝ] TensorFiber E 
     operatorTensorEquiv.symm (operatorTensor A.toLinearMap) = A := by
   rw [← operatorTensorEquiv_apply, ContinuousLinearEquiv.symm_apply_apply]
 
-
-
 theorem transport_operatorTensor (e : E ≃ₗᵢ[ℝ] F) (A : E →ₗ[ℝ] E)
     (v w : F) :
     TensorFiber.transport e 2 (operatorTensor A) ![v, w] =
@@ -95,7 +78,6 @@ theorem transport_operatorTensor (e : E ≃ₗᵢ[ℝ] F) (A : E →ₗ[ℝ] E)
   rw [← e.inner_map_map (e.symm v) (A (e.symm w))]
   simp only [LinearEquiv.conj_apply, LinearMap.comp_apply, e.apply_symm_apply]
   rfl
-
 
 theorem transport_operatorTensor_eq (e : E ≃ₗᵢ[ℝ] F) (A : E →ₗ[ℝ] E) :
     TensorFiber.transport e 2 (operatorTensor A) =

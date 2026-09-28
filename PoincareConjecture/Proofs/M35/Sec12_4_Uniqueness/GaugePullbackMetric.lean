@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.HarmonicTension
 import PoincareConjecture.Proofs.M03.Existence.PullbackConnectionNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +43,6 @@ theorem contMDiff_gaugePullback_section (g : RiemannianMetric n V)
   have he := pinner_apply g Φ y v w
   simp only [mfderiv_eq_fderiv] at he
   exact he
-
 
 def gaugePullbackMetric (g : RiemannianMetric n V)
     (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞) : RiemannianMetric n V :=

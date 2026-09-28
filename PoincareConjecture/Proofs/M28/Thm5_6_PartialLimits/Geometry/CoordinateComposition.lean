@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullbackCoefficients_comp (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M}
@@ -39,9 +28,6 @@ theorem pullbackCoefficients_comp (g : RiemannianMetric n M)
       (mfderiv (𝓡 n) (𝓡 n) f (a x) (fderiv ℝ a x w))
   rw [mfderiv_comp x hf ha.mdifferentiableAt, mfderiv_eq_fderiv]
   rfl
-
-
-
 
 theorem pullbackCoefficients_eq_chart_pullback (g : RiemannianMetric n M) (q : M)
     {f : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}

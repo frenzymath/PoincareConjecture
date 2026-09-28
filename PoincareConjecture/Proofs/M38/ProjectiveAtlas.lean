@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveLocalSheets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,22 +10,17 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 noncomputable def projectiveRepresentative : RealProjectiveThree → UnitThreeSphere :=
   Function.surjInv Quotient.mk_surjective
-
 
 theorem projectiveRepresentative_spec (p : RealProjectiveThree) :
     Quotient.mk' (projectiveRepresentative p) = p :=
   Function.surjInv_eq Quotient.mk_surjective p
 
-
 noncomputable def projectiveChartedSpace :
     ChartedSpace (EuclideanSpace ℝ (Fin 3)) RealProjectiveThree :=
   projective_quotient_localHomeomorph.chartedSpaceOfRightInverse
     projectiveRepresentative_spec
-
-
 
 theorem projective_chart_transition_smooth (a b : UnitThreeSphere) :
     let e := (projective_quotient_localHomeomorph.localInverseAt a).trans
@@ -75,7 +61,6 @@ theorem projective_chart_transition_smooth (a b : UnitThreeSphere) :
     projective_quotient_localHomeomorph.localInverseAt_symm, Function.comp_assoc]
     using hcomp
 
-
 theorem projective_isManifold :
     letI := projectiveChartedSpace
     IsManifold (𝓡 3) ∞ RealProjectiveThree := by
@@ -91,7 +76,6 @@ theorem projective_isManifold :
       (projectiveRepresentative p')
 
 attribute [local instance] projectiveChartedSpace projective_isManifold
-
 
 theorem projective_quotient_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞
@@ -115,8 +99,6 @@ theorem projective_quotient_contMDiff :
     (c ∘ (s ∘ (Quotient.mk' : UnitThreeSphere → RealProjectiveThree))) x
   exact hc.comp x hs
 
-
-
 theorem projective_chosen_sheet_contMDiffAt (p : RealProjectiveThree) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞
       (projective_quotient_localHomeomorph.localInverseAt (projectiveRepresentative p)) p := by
@@ -133,8 +115,6 @@ theorem projective_chosen_sheet_contMDiffAt (p : RealProjectiveThree) :
   apply (hcs.comp p he).congr_of_eventuallyEq
   filter_upwards [e.open_source.mem_nhds hp] with y hy
   exact (c.left_inv hy.2).symm
-
-
 
 theorem projective_sheet_contMDiffOn (a : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞

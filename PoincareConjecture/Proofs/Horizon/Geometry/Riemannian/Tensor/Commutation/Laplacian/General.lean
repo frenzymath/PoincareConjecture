@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 lemma covariantTensorDerivative_tensorLaplacian_commutator_all_raw
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

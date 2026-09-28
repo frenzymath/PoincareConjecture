@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Metric
@@ -22,8 +11,6 @@ namespace PoincareConjecture.M65Boundary
 open EuclideanTranslationNative EuclideanMollificationNative DeTurckDomainRegularityNative
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem norm_mollify_le_of_ae_bound {ε : ℝ} (hε : 0 < ε)
     (u : ScalarL2 2) {B : ℝ} (hbound : ∀ᵐ z ∂volume, ‖u z‖ ≤ B) (x : E) :
@@ -43,10 +30,6 @@ theorem norm_mollify_le_of_ae_bound {ε : ℝ} (hε : 0 < ε)
       rw [norm_mul, Real.norm_eq_abs, abs_of_nonneg (mollifier_nonneg hε y)]
       exact mul_le_mul_of_nonneg_left hy (mollifier_nonneg hε y)
     _ = B := by rw [integral_mul_const, mollifier_integral, one_mul]
-
-
-
-
 
 theorem weak_equation_bounded_test (A : Fin 2 → ScalarL2 2) (f : E → ℝ)
     (hf : Integrable f volume) {U : Set E} (hU : IsOpen U)

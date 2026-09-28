@@ -3,18 +3,11 @@ import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Tactic.Choose
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace Poincare.Topology
-
 
 theorem components_card_le_of_image_ball_cover
     {X Y ι : Type*} [TopologicalSpace X] [PseudoMetricSpace Y] [Finite ι]

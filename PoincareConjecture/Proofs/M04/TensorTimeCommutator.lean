@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ConnectionVariationVector
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -189,4 +182,3 @@ theorem hasDerivAt_covariantTensorDerivative (F : RicciFlow n M J)
   exact h.congr_deriv hValue
 
 end PoincareConjecture.M04
-

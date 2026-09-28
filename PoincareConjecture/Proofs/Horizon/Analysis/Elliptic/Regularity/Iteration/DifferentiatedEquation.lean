@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.WeakEquation
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Function Filter Topology
@@ -94,7 +87,6 @@ theorem differentiated_equation
       (hq i j)).add (LocallyIntegrable.continuous_mul
       (contDiff_partial (contDiff_partial (hA i j) k) i).continuous (hp j)))
     (fun j _ => (hpq i j).mul_smooth hO (contDiff_partial (hA i j) k) (hp j) (hq i j))
-
 
 theorem weakGradient_of_weakHessian
     {O : Set E} (hO : IsOpen O) {u : E → ℝ} {p : Fin n → E → ℝ}

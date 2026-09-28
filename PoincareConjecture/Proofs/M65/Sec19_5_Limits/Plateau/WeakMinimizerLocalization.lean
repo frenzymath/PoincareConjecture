@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerTrace
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Restriction
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open Set MeasureTheory Filter Metric
 open scoped Topology SchwartzMap LineDeriv InnerProductSpace ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65WeakTrace_green_integral
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}
@@ -48,10 +35,6 @@ theorem m65WeakTrace_green_integral
     filter_upwards [hae] with θ hθ
     simp only [hθ, Real.inner_apply]
   simpa only [hleft, hright, SchwartzMap.lineDerivOp_apply_eq_fderiv] using htrace test i
-
-
-
-
 
 theorem m65WeakTrace_interior_integral
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}
@@ -99,10 +82,6 @@ private theorem m65Disk_zeroExtension_inner (f : LoopPlane → ℝ)
   by_cases hzd : z ∈ loopDiskSet
   · rw [indicator_of_mem hzd, indicator_of_mem hzd]
   · rw [indicator_of_notMem hzd, indicator_of_notMem hzd, zero_mul]
-
-
-
-
 
 theorem m65WeakTrace_cutoff_global
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

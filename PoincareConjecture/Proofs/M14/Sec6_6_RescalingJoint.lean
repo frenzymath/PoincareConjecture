@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingStable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,14 +18,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 noncomputable def rescalingParameterHomeomorph (x : G.Point) :
     G.Horizontal x × ℝ ≃ₜ (rescalingTransport hM12 hM13 G Q hQ a).Horizontal x × ℝ :=
   (rescalingInitialEquiv G.spacetime Q hQ a x).toHomeomorph.prodCongr
     (Homeomorph.mulLeft₀ (Real.sqrt Q) (Real.sqrt_pos.mpr hQ).ne')
-
-
 
 theorem rescalingAdmissible_iff (T : ℝ) (x : G.Point) (z : G.Horizontal x × ℝ) :
     z ∈ M14AdmissibleParameter G T x ↔
@@ -51,9 +38,6 @@ theorem rescalingAdmissible_iff (T : ℝ) (x : G.Point) (z : G.Horizontal x × �
     ring
   rw [he, parabolicTime_mem_parabolicInterval_iff]
   exact and_congr (mul_nonneg_iff_of_pos_left (Real.sqrt_pos.mpr hQ)).symm Iff.rfl
-
-
-
 
 noncomputable def rescalingStableSetInverse {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -73,7 +57,6 @@ noncomputable def rescalingStableSetInverse {T τ : ℝ} {x : G.Point}
   exact stableSetOfSlicePoint E hτ q₀
 
 include hCoordinates in
-
 
 theorem rescalingStableGraph_iff {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -127,7 +110,6 @@ private theorem relativeInterior_homeomorph_iff {α β : Type*}
     exact (hS w).mpr (hUS ⟨hw, (hA w).mp hwA⟩)
 
 include hCoordinates in
-
 
 theorem rescalingJointDomain_iff {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

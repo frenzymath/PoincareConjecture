@@ -1,17 +1,6 @@
 import PoincareConjecture.Statements.M64Annulus
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,11 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
   {gamma0 gamma1 : C1FreeLoopSpace (M := M)}
-
-
-
-
-
 
 theorem m64FillingArea_le_add_of_forward
     {q : ℝ}
@@ -54,11 +38,6 @@ theorem m64FillingArea_le_add_of_forward
   have hq : D1.area ≤ fillingArea g gamma0 + q + epsilon := hq'.le
   linarith
 
-
-
-
-
-
 theorem m64FillingArea_le_add_of_reverse
     {q : ℝ}
     (hD1 : Nonempty (LipschitzSpanningDisk g gamma1))
@@ -82,10 +61,6 @@ theorem m64FillingArea_le_add_of_reverse
       _ = fillingArea g gamma1 + q + epsilon := by ring
   have hq : D0.area ≤ fillingArea g gamma1 + q + epsilon := hq'.le
   linarith
-
-
-
-
 
 theorem m64FillingArea_abs_sub_le_of_gluing
     {q : ℝ}

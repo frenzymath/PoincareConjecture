@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapEndpoints
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Widths
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +33,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   (K : S.CutChain L.direction T.direction)
 
 include hdisjoint hlocal hcut hmatch
-
-
 
 theorem CutChain.exists_cap_barriers (i : Fin S.count) :
     ∃ (ℓa ℓb : (ℝ × ℝ) →L[ℝ] ℝ) (Wa Wb : Set (ℝ × ℝ)),
@@ -135,8 +123,6 @@ theorem CutChain.exists_cap_barriers (i : Fin S.count) :
   obtain ⟨ℓa, Wa, hWa, ha, hka, hta, hsa⟩ := hleft
   obtain ⟨ℓb, Wb, hWb, hb, hkb, htb, hsb⟩ := hright
   exact ⟨ℓa, ℓb, Wa, Wb, hWa, hWb, ha, hb, hka, hkb, hta, htb, hsa, hsb⟩
-
-
 
 theorem CutChain.exists_cap_avoiding_width (i : Fin S.count) :
     ∃ δ > 0, δ ≤ (K.graphCuts i).radius ∧

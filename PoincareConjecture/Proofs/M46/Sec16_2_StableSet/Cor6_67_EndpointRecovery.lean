@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,10 +17,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
-
 
 theorem smooth_action_recovery_of_represented_path
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

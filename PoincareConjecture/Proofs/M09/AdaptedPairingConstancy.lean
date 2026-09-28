@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.AdaptedFieldOn
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

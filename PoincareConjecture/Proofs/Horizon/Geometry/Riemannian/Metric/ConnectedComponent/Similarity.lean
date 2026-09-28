@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedCom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Equivalence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +15,6 @@ variable {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 m) ∞ N]
-
 
 theorem connectedComponentMetric_inner_diffeomorph
     (g : RiemannianMetric n M) (h : RiemannianMetric m N)
@@ -59,7 +57,6 @@ theorem connectedComponentMetric_inner_diffeomorph
       (mfderiv (𝓡 n) (𝓡 n) (Subtype.val : U → M) x w)
   rw [hchain, hchain]
   exact hinner x.val _ _
-
 
 theorem connectedComponentMetric_edist_diffeomorph
     (g : RiemannianMetric n M) (h : RiemannianMetric m N)

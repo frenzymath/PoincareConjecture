@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,14 +9,10 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X] {d q : Set X}
 
-
-
 theorem IsFinitePLBallPair.isCompact (hd : IsFinitePLBallPair E d q) : IsCompact d := by
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hspace, _⟩, _⟩, _⟩ := hd
   rw [← hspace]
   exact K.isCompact_space_of_finite hK
-
-
 
 theorem IsFinitePLBallPair.sdiff_nonempty (hd : IsFinitePLBallPair E d q) :
     (d \ q).Nonempty := by
@@ -36,8 +23,6 @@ theorem IsFinitePLBallPair.sdiff_nonempty (hd : IsFinitePLBallPair E d q) :
   have hfront := (heb (e.symm z)).mp hq
   rw [e.apply_symm_apply] at hfront
   exact hfront.2 hy
-
-
 
 theorem IsFinitePLBallPair.closure_sdiff (hd : IsFinitePLBallPair E d q) :
     closure (d \ q) = d := by
@@ -75,17 +60,12 @@ theorem IsFinitePLBallPair.closure_sdiff (hd : IsFinitePLBallPair E d q) :
   rw [← hgI]
   exact image_closure_subset_closure_image hgc him
 
-
-
 theorem IsFinitePLBallPair.closure_preimage_sdiff (hd : IsFinitePLBallPair E d q)
     {s : Set X} (hds : d ⊆ s) :
     closure ((Subtype.val : s → X) ⁻¹' (d \ q)) = (Subtype.val : s → X) ⁻¹' d := by
   rw [Topology.IsEmbedding.subtypeVal.closure_eq_preimage_closure_image,
     image_preimage_eq_of_subset (by simpa using (sdiff_subset.trans hds : d \ q ⊆ s)),
     hd.closure_sdiff]
-
-
-
 
 theorem IsFinitePLBallPair.frontier_preimage_val (hd : IsFinitePLBallPair E d q)
     {s : Set X} (hint : interior ((Subtype.val : s → X) ⁻¹' d) =

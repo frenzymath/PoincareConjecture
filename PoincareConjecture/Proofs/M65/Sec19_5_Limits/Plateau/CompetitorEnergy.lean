@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorGramBound
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiEnergy
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m65SpanningDisk_energy_integrable [T2Space M]
     {g : RiemannianMetric 3 M} {γ : C1FreeLoopSpace (M := M)}
@@ -51,9 +38,6 @@ theorem m65SpanningDisk_energy_integrable [T2Space M]
   simpa only [Matrix.trace, Fin.sum_univ_two,
     Pi.add_apply, Pi.mul_apply, Pi.ofNat_apply] using!
       ((he 0).add (he 1)).const_mul (1 / 2 : ℝ)
-
-
-
 
 theorem m65AreaGram_comp (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) (φ : LoopPlane → LoopPlane) (z : LoopPlane)

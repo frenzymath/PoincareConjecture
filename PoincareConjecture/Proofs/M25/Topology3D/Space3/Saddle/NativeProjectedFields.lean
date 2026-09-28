@@ -3,24 +3,12 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_native_projected_fields
     (u : UnitTwoSphere) (c rho delta e : ℝ)

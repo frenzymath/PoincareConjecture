@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subd
 import Mathlib.CategoryTheory.Abelian.Ext
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

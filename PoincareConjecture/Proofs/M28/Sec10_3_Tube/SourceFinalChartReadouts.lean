@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFinalChartDiagonal
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +16,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 def FinalSourceDiagonalReadouts
     (H : CounterexampleNeckFamily E) (W : CriticalBallSourcePacket H)

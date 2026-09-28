@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialVector
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Directional
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem normalizedAxialVector_axial_mvfderiv (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) :
     N.scale * mvfderiv (𝓡 3) (fun y => (N.coordinate_inverse y).2) x
@@ -41,9 +28,6 @@ theorem normalizedAxialVector_axial_mvfderiv (N : EpsilonNeck g)
   rw [N.coordinate_map_coordinate_inverse hx] at h
   change N.scale * L x (N.scale⁻¹ • a) = 1
   rw [map_smul, smul_eq_mul, h, mul_one, mul_inv_cancel₀ N.scale_pos.ne']
-
-
-
 
 theorem exists_intersecting_axial_derivative_control {η : ℝ} (hη : 0 < η) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -87,9 +71,6 @@ theorem exists_intersecting_axial_derivative_control {η : ℝ} (hη : 0 < η) :
     (abs_nonneg (1 - σ * N'.scale * L (N.normalizedAxialVector x)))
   change |1 - σ * N'.scale * L (N.normalizedAxialVector x)| < η
   linarith
-
-
-
 
 theorem exists_intersecting_axial_transversality :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

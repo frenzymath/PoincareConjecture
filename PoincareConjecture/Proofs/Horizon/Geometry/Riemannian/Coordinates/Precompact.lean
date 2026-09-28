@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continuation.ChangeCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continuation.FixedChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Continuation.Speed
-
-
-
-
-
-
-

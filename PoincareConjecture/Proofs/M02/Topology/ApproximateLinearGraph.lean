@@ -5,19 +5,11 @@ import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped NNReal Topology
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem exists_approximate_linear_graph {N : Nat}
     (T : Submodule Real (EuclideanSpace Real (Fin N)))

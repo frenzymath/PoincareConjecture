@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollarBands
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +10,6 @@ open Set
 namespace PoincareConjecture
 
 namespace M64IntrinsicCornerArcCollar
-
-
-
-
 
 theorem lower_subset_original
     {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}
@@ -43,22 +36,13 @@ namespace M64IntrinsicTriangleCollar
 variable {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}
   {C : M64IntrinsicTriangleCaps base alpha beta D A B U} (P : M64IntrinsicTriangleCollar C)
 
-
-
-
 abbrev BandIndex := Fin P.baseArc.chain.count ⊕
   (Fin P.firstSide.chain.count ⊕ Fin P.secondSide.chain.count)
-
-
-
 
 def bandData : P.BandIndex → M64IntrinsicLinearBandData
   | .inl i => .ofChain P.baseArc.chain i
   | .inr (.inl i) => .ofChain P.firstSide.chain i
   | .inr (.inr i) => .ofChain P.secondSide.chain i
-
-
-
 
 theorem band_union : (⋃ i, (P.bandData i).band.carrier) =
     P.baseArc.bands ∪ (P.firstSide.bands ∪ P.secondSide.bands) := by
@@ -78,17 +62,11 @@ theorem band_union : (⋃ i, (P.bandData i).band.carrier) =
     · obtain ⟨i, hi⟩ := mem_iUnion.mp hp
       exact mem_iUnion.mpr ⟨.inr (.inr i), hi⟩
 
-
-
-
 theorem band_subset (i : P.BandIndex) : (P.bandData i).band.carrier ⊆ P.carrier := by
   intro p hp
   apply Or.inr
   rw [← P.band_union]
   exact mem_iUnion.mpr ⟨i, hp⟩
-
-
-
 
 theorem band_lower_subset
     (hfront : frontier U = base '' Icc 0 D ∪ (alpha '' Icc 0 A ∪ beta '' Icc 0 B))

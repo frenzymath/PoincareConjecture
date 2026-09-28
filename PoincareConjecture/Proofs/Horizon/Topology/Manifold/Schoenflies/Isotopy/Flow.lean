@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.CompactSupport
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,8 +62,6 @@ private theorem exists_euclidean_diffeomorph_evolution
       simpa using hasMFDerivAt_const (I := 𝓘(Real, Real)) (I' := 𝓡 n) x r)
     (mem_univ s) (hi s (mem_univ _) x)
   exact heq (mem_univ t)
-
-
 
 theorem exists_diffeomorph_evolution_of_compact_spatial_support
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

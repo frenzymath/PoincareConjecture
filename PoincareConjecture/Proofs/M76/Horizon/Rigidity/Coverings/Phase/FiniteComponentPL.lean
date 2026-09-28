@@ -2,14 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.FiniteComp
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.PhaseMap
 import Mathlib.Topology.LocallyFinite
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
 
 namespace Geometry
-
 
 theorem PolyhedralPLInCharts.iUnion_of_closed_disjoint
     {E V X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -65,7 +62,6 @@ variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (J : SimplicialComplex ℝ E) (K : ι → SimplicialComplex ℝ E)
   (hcover : (⋃ i, (K i).space) = J.space)
 
-
 def componentCarrierInclusion (i : ι) : C((K i).space, J.space) :=
   ⟨fun x => ⟨x, hcover ▸ mem_iUnion.mpr ⟨i, x.property⟩⟩,
     continuous_subtype_val.subtype_mk _⟩
@@ -73,8 +69,6 @@ def componentCarrierInclusion (i : ι) : C((K i).space, J.space) :=
 omit [Finite ι] in
 @[simp] theorem componentCarrierInclusion_coe (i : ι) (x : (K i).space) :
     (componentCarrierInclusion J K hcover i x : E) = x := rfl
-
-
 
 theorem exists_coveringMap_with_phasePL
     (hJ : J.faces.Finite) (hK : ∀ i, (K i).faces.Finite)
@@ -138,8 +132,6 @@ theorem exists_coveringMap_with_phasePL
   have hv := hL t i ((e i).symm x)
   change L (t, componentCarrierInclusion J K hcover i x) = H i (t, e i ((e i).symm x)) at hv
   simpa only [Homeomorph.apply_symm_apply] using hv
-
-
 
 theorem exists_coveringMap_of_component_phasePL
     (hJ : J.faces.Finite) (hK : ∀ i, (K i).faces.Finite)

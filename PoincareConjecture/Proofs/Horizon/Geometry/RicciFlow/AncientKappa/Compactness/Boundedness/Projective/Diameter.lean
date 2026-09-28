@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +37,6 @@ private theorem cylinderClose_zeroth_normSquared_lt
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
 
 theorem roundCylinderClose_scaled_pullback_quadratic_error
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)
@@ -96,8 +87,6 @@ theorem roundCylinderClose_scaled_pullback_quadratic_error
     ∀ w : RoundCylinderTangent y,
       |Q * roundCylinderPullback g f y w w - EvolvingRoundCylinderMetric 0 y w w| ≤
         ε * EvolvingRoundCylinderMetric 0 y w w) hx) hbound v
-
-
 
 theorem edist_cylinderCover_slice_le
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)

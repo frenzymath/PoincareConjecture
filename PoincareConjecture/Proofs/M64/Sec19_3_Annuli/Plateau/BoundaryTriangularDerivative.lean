@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularSource
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,21 +14,15 @@ namespace PoincareConjecture
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
 def m64TriangularDerivative (a b : ℝ) : LoopPlane →L[ℝ] LoopPlane :=
   (a • (EuclideanSpace.proj 0 : LoopPlane →L[ℝ] ℝ) +
     b • (EuclideanSpace.proj 1 : LoopPlane →L[ℝ] ℝ)).smulRight e0 +
     (EuclideanSpace.proj 1 : LoopPlane →L[ℝ] ℝ).smulRight e1
 
-
-
 theorem m64TriangularDerivative_apply (a b : ℝ) (v : LoopPlane) :
     m64TriangularDerivative a b v = annulusPoint (a * v 0 + b * v 1) (v 1) := by
   ext i
   fin_cases i <;> simp [m64TriangularDerivative, annulusPoint]
-
-
 
 theorem m64TriangularDerivative_det (a b : ℝ) : (m64TriangularDerivative a b).det = a := by
   change LinearMap.det (m64TriangularDerivative a b).toLinearMap = a
@@ -42,8 +30,6 @@ theorem m64TriangularDerivative_det (a b : ℝ) : (m64TriangularDerivative a b).
     Matrix.det_fin_two]
   simp [LinearMap.toMatrix_apply, EuclideanSpace.basisFun_repr,
     EuclideanSpace.basisFun_apply, m64TriangularDerivative_apply, annulusPoint]
-
-
 
 theorem m64TriangularSource_second_derivative
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -53,8 +39,6 @@ theorem m64TriangularSource_second_derivative
   have hd := (L.hasFDerivAt.comp p (hT p).hasFDerivAt).fderiv
   rw [hfun, L.fderiv] at hd
   exact (congrArg (fun A : LoopPlane →L[ℝ] ℝ => A v) hd).symm
-
-
 
 theorem m64TriangularSource_fderiv
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -73,8 +57,6 @@ theorem m64TriangularSource_fderiv
   · rw [m64TriangularDerivative_apply]
     exact m64TriangularSource_second_derivative hT hsecond p v
 
-
-
 theorem m64TriangularSource_det
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
     (hsecond : ∀ p, T p 1 = p 1) (p : LoopPlane) :
@@ -85,15 +67,10 @@ theorem m64TriangularSource_det
         (m64TriangularSource_fderiv hT hsecond p)
     _ = _ := m64TriangularDerivative_det _ _
 
-
-
 theorem m64TriangularSource_inverse_second
     (T : LoopPlane ≃ₜ LoopPlane) (hsecond : ∀ p, T p 1 = p 1) (p : LoopPlane) :
     T.symm p 1 = p 1 := by
   simpa only [Homeomorph.apply_symm_apply] using (hsecond (T.symm p)).symm
-
-
-
 
 theorem m64TriangularSource_inverse_derivative
     (T : LoopPlane ≃ₜ LoopPlane) (hT : Differentiable ℝ T)

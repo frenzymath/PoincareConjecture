@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry
 variable {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [TopologicalSpace X]
-
-
-
 
 theorem polyhedralPLInCharts_of_compatible_inverse
     (e : ι → OpenPartialHomeomorph X F) (B : OpenPartialHomeomorph X F)
@@ -53,7 +41,6 @@ theorem polyhedralPLInCharts_of_compatible_inverse
   exact ⟨i, J, V, hJ, hJK, hV, hxV, hVJ, hJi, hcoords⟩
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem locallyPiecewiseAffineOn_inverse_normal_coordinates
     (e : ι → OpenPartialHomeomorph X F) (B : OpenPartialHomeomorph X F)

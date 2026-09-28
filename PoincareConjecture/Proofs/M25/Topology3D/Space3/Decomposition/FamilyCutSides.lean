@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutHi
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCore
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.component_cut_side
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -60,7 +50,6 @@ theorem FamilyCutState.component_cut_side
         hf.continuousOn ⟨hp, le_of_not_gt hq⟩
     obtain ⟨z, _hz, heq⟩ := hmem
     exact hne z heq
-
 
 theorem FamilyCutState.cap_points_on_birth_side
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

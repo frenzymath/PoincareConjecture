@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarOperatorScaling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_local_scalar_operator_realization
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -65,8 +55,6 @@ theorem exists_local_scalar_operator_realization
     scalarGradientNorm_eq_pullback_of_scalar_germ D' D (hf p hp) (hi p hp)
       (hmetric p hpV) hR hscalar,
     scalar_evolution_eq_pullback_of_scalar_germ D' D (hf p hp) hinv hmet hR hscalar⟩
-
-
 
 theorem exists_scaled_scalar_operator_realization
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 < Q)

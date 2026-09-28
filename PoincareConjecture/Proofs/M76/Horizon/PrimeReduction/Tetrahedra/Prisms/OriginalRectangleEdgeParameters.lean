@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Re
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.SimplicialEdgeGapMatching
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Counting.CornerVertexComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangularRoofModel
 namespace PoincareConjecture.M76.PrismBelt

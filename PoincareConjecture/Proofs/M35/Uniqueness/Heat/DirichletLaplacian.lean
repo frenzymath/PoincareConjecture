@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DirichletCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +22,6 @@ theorem supportedTests_tsupport_subset {K : Set V} (hK : IsClosed K)
   by_contra hn
   exact hx (f.property x hn)
 
-
 def testPartial {K : Set V} (hK : IsClosed K) (i : Fin n) :
     supportedTests K →ₗ[ℝ] supportedTests K :=
   (((LineDeriv.lineDerivOpCLM ℝ 𝓢(V, ℝ) (EuclideanSpace.single i (1 : ℝ))).toLinearMap.comp
@@ -40,8 +30,6 @@ def testPartial {K : Set V} (hK : IsClosed K) (i : Fin n) :
       apply image_eq_zero_of_notMem_tsupport
       exact fun h => hx ((SchwartzMap.tsupport_lineDerivOp_subset
         (EuclideanSpace.single i 1) (f : 𝓢(V, ℝ))).trans (supportedTests_tsupport_subset hK f) h))
-
-
 
 def testLaplacian {K : Set V} (hK : IsClosed K) : supportedTests K →ₗ[ℝ] supportedTests K :=
   ∑ i : Fin n, (testPartial hK i).comp (testPartial hK i)
@@ -59,8 +47,6 @@ theorem testLaplacian_apply {K : Set V} (hK : IsClosed K)
     (∂_{EuclideanSpace.single i (1 : ℝ)} (f : 𝓢(V, ℝ)))) x = _
   rw [SchwartzMap.lineDerivOp_apply_eq_fderiv]
   congr 2
-
-
 
 theorem testGradient_pairing_laplacian {K : Set V} (hK : IsClosed K)
     (φ f : supportedTests K) :
@@ -100,8 +86,6 @@ theorem dirichletForm_pairing_laplacian {K : Set V} (hK : IsClosed K)
     rw [testGradient_pairing_laplacian hK]
     ring
   exact congrFun he z
-
-
 
 theorem dirichletGenerator_laplacian {K : Set V} (hK : IsClosed K)
     (f : supportedTests K) :

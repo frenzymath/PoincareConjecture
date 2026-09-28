@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M39.Prop15_12_PathBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y] [RegularSpace Y]
-
-
-
 
 theorem metric_edist_le_mul_of_local_pair_bound
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)

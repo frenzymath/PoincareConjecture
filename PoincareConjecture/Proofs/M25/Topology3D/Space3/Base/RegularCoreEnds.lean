@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreSeamFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreExtrema
 import Mathlib.Data.Fintype.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.regular_core_cap_eq_of_sign_eq
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -232,7 +222,6 @@ theorem FamilyCutState.regular_core_cap_eq_of_sign_eq
       exact h.2
     exact disjoint_left.mp (S.caps_disjoint hab) hxac (hxab.symm ▸ hxbc)
   · exact (hno b a hb ha hsign.symm xb xa hxb hxa hrel' hrel hgt).elim
-
 
 theorem FamilyCutState.exists_regular_core_two_ends
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

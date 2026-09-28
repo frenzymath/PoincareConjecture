@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ProductAmbientDeriva
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.LocalCurveTheory
 import PoincareConjecture.Proofs.M63.Adapters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -30,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 set_option maxHeartbeats 400000 in
-
-
-
-
 
 theorem m63CircleProduct_curvatureJetSquared_bound_of_inverse_age [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

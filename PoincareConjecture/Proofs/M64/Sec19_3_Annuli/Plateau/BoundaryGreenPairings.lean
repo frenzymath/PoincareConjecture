@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,9 +7,6 @@ set_option warningAsError true
 open MeasureTheory
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64L2_scalar_green_pairing {X : Type*} [MeasurableSpace X] {mu : Measure X}
     {u v phi psi : X → ℝ} (hu : MemLp u 2 mu) (hv : MemLp v 2 mu)
@@ -33,9 +19,6 @@ theorem m64L2_scalar_green_pairing {X : Type*} [MeasurableSpace X] {mu : Measure
   congr 1
   funext x
   ring
-
-
-
 
 theorem m64L2_vector_green_pairing {X : Type*} [MeasurableSpace X] {mu : Measure X}
     {N : ℕ} {u v : X → EuclideanSpace ℝ (Fin N)} {phi psi : X → ℝ}

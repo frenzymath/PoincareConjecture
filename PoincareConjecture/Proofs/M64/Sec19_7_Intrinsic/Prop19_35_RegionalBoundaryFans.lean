@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryTangentSectors
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexIncidence
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,11 +10,6 @@ open scoped Topology ContDiff Manifold Bundle
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_coordinate_boundary_vertex_angle_sum
     {I : Type*} [Fintype I]
@@ -82,11 +65,6 @@ theorem m64Intrinsic_coordinate_boundary_vertex_angle_sum
       exact coordinateTriangleAngle_mem_Ioo g (F i) (b i) (hF i) (hFi i) (hsource i) 0)
     hside hpartition
   simpa only [hangle] using hsum
-
-
-
-
-
 
 theorem m64Intrinsic_regional_boundary_vertex_fan
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M10.EndpointCoordinates
 import PoincareConjecture.Proofs.M10.TerminalGradient
 import PoincareConjecture.Proofs.M10.RegularGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.LocalSides
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.RegionBounds
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -24,8 +12,6 @@ open Set Metric Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem IsSimplePolygon.exists_local_incident_segments {p : Polygon E n}
     (hp : IsSimplePolygon p) (k : Fin n) :
@@ -50,9 +36,6 @@ theorem IsSimplePolygon.exists_local_incident_segments {p : Polygon E n}
   change z ∈ ⋃ i, p.edgeSet ℝ i ↔ _
   rw [hlocal z hz, hsegj, hsegk]
   simp only [mem_insert_iff, mem_singleton_iff, exists_eq_or_imp, exists_eq_left, mem_union]
-
-
-
 
 theorem IsSimplePolygon.exists_local_inside_wedge [FiniteDimensional ℝ E]
     {p : Polygon E n} (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2)

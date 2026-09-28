@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M28
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
-
-
-
-
 
 theorem exists_source_neck_forward_exit
     (T : SourceTubeData S) {i : ℤ} (_hi : i ∈ T.chain.shape.active)

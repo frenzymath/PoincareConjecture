@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.ClosedIntervalDerivativeBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -25,14 +16,10 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {g0 : StandardInitialMetric} (A : CompactCapApproximation g0)
 
-
-
 theorem contDiffOn_interior_coefficients (k : ℕ) :
     ContDiffOn ℝ ∞ (fun p : ℝ × StandardCapSpace => A.coefficients k p.1 p.2)
       (Ioo 0 A.time ×ˢ compactCapSource g0 k) :=
   (A.contDiffOn_coefficients k).mono (prod_mono Ioo_subset_Icc_self (Subset.refl _))
-
-
 
 theorem spatialJet_mem_domain (k : ℕ) (t : ℝ) {x : StandardCapSpace}
     (hx : x ∈ compactCapSource g0 k) :
@@ -43,8 +30,6 @@ theorem spatialJet_mem_domain (k : ℕ) (t : ℝ) {x : StandardCapSpace}
   rw [twoJetProjection_spatialJet]
   exact ((A.flow k).metric t).isInvertible_pullbackCoefficients
     (compactCapChart_mfderiv_isInvertible g0 k hx).injective
-
-
 
 theorem deriv_coefficients_eq_operator (k : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
     {x : StandardCapSpace} (hx : x ∈ compactCapSource g0 k) :
@@ -57,8 +42,6 @@ theorem deriv_coefficients_eq_operator (k : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.t
     (fun _ hy => compactCapChart_mfderiv_isInvertible g0 k hy) ht hx
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem exists_compact_spatialJet_box (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :
@@ -80,8 +63,6 @@ theorem exists_compact_spatialJet_box (P : RicciFlowCurvatureTheory.{0})
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem exists_compact_timeDeriv_spatialJet_bound (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ k t, t ∈ Ioo 0 A.time →
@@ -102,8 +83,6 @@ theorem exists_compact_timeDeriv_spatialJet_bound (P : RicciFlowCurvatureTheory.
     (fun z hz => A.deriv_coefficients_eq_operator k hz.1 hz.2) m (z := (t, x)) ⟨ht, hsource⟩
   rw [heq]
   exact (hC _ (hrange k t (Ioo_subset_Icc_self ht) x hx hsource)).trans (le_max_left _ _)
-
-
 
 theorem exists_compact_spatialJet_initial_modulus (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

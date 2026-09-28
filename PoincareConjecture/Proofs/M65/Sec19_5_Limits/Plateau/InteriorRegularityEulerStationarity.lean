@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerFirstVariation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerDual
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +10,6 @@ open Set Metric Filter MeasureTheory
 open scoped Topology ContDiff Manifold SchwartzMap
 
 namespace PoincareConjecture.M65Euler
-
-
-
-
 
 theorem integral_firstVariation_eq_zero {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
@@ -56,10 +42,6 @@ theorem integral_firstVariation_eq_zero {N : ℕ}
     exact hcmp t ht'
   exact ⟨hI, hmin.hasDerivAt_eq_zero hderiv⟩
 
-
-
-
-
 theorem exists_bounded_metricDual {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))) (k : Fin N)
     (a : EuclideanSpace ℝ (Fin N)) {ε : ℝ} (hε : 0 < ε) :
@@ -86,10 +68,6 @@ theorem exists_bounded_metricDual {N : ℕ}
     change χ z • metricDualField g k z = metricDualField g k z
     simp only [hz, Pi.one_apply, one_smul]
   exact ⟨heq.eq_of_nhds, heq.fderiv_eq⟩
-
-
-
-
 
 theorem firstVariation_metricDual {N : ℕ}
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)

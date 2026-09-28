@@ -3,26 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarOrientation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarRadialCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallCollarUnion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem schoenfliesData_of_ball (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (B : BallNeighborhoodChart E3 E3)

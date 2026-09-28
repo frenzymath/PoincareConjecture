@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedPartitionHeightSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E F : Type*} [TopologicalSpace E] [TopologicalSpace F]
-
-
-
-
 
 theorem mem_both_height_closures_of_closed_band_cover
     {S R Z : Set E} {R' : Set F} (H : R ≃ₜ R') (A : E → ℝ) (B : F → ℝ)

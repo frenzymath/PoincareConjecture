@@ -2,14 +2,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open Set
 namespace BrownCollar
 
 variable {X P : Type*} [TopologicalSpace X] [TopologicalSpace P]
-
-
-
 
 noncomputable def zeroSliceHomeomorph
     (e : OpenPartialHomeomorph X (P × ℝ)) (S : Set X)
@@ -61,9 +50,6 @@ noncomputable def zeroSliceHomeomorph
     apply Continuous.subtype_mk
     exact e.symm.continuousOn.comp_continuous
       (continuous_subtype_val.prodMk continuous_const) (fun p => p.property)
-
-
-
 
 theorem exists_zeroSliceChart
     (e : OpenPartialHomeomorph X (P × ℝ)) (S : Set X)
@@ -107,10 +93,6 @@ theorem exists_zeroSliceChart
   change (f (iw.symm s) : P) = (e (s : X)).1
   rw [hiwinv]
   rfl
-
-
-
-
 
 theorem exists_local_pair_chart
     (e : OpenPartialHomeomorph X (P × ℝ)) (S : Set X)

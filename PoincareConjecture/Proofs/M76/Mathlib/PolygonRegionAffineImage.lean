@@ -4,19 +4,9 @@ import Mathlib.Analysis.Normed.Operator.NNNorm
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem ContinuousAffineMap.lipschitz {K E F : Type*}
     [NontriviallyNormedField K] [NormedAddCommGroup E] [NormedSpace K E]
@@ -27,8 +17,6 @@ theorem ContinuousAffineMap.lipschitz {K E F : Type*}
   have h : f.contLinear (x - y) = f x - f y := f.contLinear_map_vsub x y
   rw [← h]
   exact f.contLinear.le_opNorm (x - y)
-
-
 
 theorem ContinuousAffineEquiv.isBounded_image_iff {K E F : Type*}
     [NontriviallyNormedField K] [NormedAddCommGroup E] [NormedSpace K E]
@@ -52,8 +40,6 @@ private theorem complement_affineImage (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) :
   rw [P.affineImage_boundary]
   exact (e.toHomeomorph.image_compl _).symm
 
-
-
 theorem mem_inside_affineImage_iff (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) (x : E) :
     e x ∈ (P.affineImage e.toAffineEquiv.toAffineMap).inside ↔ x ∈ P.inside := by
   change (e x ∈ _ ∧ Bornology.IsBounded _) ↔ (x ∈ _ ∧ Bornology.IsBounded _)
@@ -65,15 +51,11 @@ theorem mem_inside_affineImage_iff (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) (x : 
     rw [← hc, e.isBounded_image_iff]
   · simp only [hx, false_and]
 
-
-
 theorem inside_affineImage (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) :
     (P.affineImage e.toAffineEquiv.toAffineMap).inside = e '' P.inside := by
   ext y
   obtain ⟨x, rfl⟩ := e.surjective y
   rw [P.mem_inside_affineImage_iff, e.injective.mem_set_image]
-
-
 
 theorem outside_affineImage (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) :
     (P.affineImage e.toAffineEquiv.toAffineMap).outside = e '' P.outside := by
@@ -88,8 +70,6 @@ theorem outside_affineImage (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) :
       e.toHomeomorph.image_connectedComponentIn hx
     rw [← hc, e.isBounded_image_iff]
   · simp only [hx, false_and]
-
-
 
 theorem closure_inside_affineImage (P : Polygon E n) (e : E ≃ᴬ[ℝ] F) :
     closure (P.affineImage e.toAffineEquiv.toAffineMap).inside = e '' closure P.inside := by

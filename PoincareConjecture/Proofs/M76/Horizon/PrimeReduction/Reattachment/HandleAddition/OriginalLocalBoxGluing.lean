@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalF
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -22,8 +14,6 @@ local notation "Box" => Set.prod Square (Icc (-1 : ℝ) 1)
 local notation "Minus" => Set.prod Square (Icc (-1 : ℝ) 0)
 local notation "Plus" => Set.prod Square (Icc (0 : ℝ) 1)
 local notation "Base" => Set.prod Square ({0} : Set ℝ)
-
-
 
 theorem exists_original_chart_of_ball_embedding
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -102,8 +92,6 @@ theorem exists_original_chart_of_ball_embedding
     change LocallyPiecewiseAffineOn T T.source
     simpa [Function.comp_def] using hAi.comp hlocal
 
-
-
 theorem exists_original_chart_of_glued_half_boxes
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3}
@@ -177,8 +165,6 @@ theorem exists_original_chart_of_glued_half_boxes
   · rw [hQs,←hf0]
     exact ⟨0,h0,rfl⟩
   · rw [←hf0,hQf 0 h0,map_zero]
-
-
 
 theorem exists_original_marked_chart_of_glued_half_boxes
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

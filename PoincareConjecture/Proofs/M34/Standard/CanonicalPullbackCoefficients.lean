@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.OpenDomainCoordinates
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CanonicalDomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +19,6 @@ variable {n : ℕ} {N : Type*} [TopologicalSpace N]
       IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (fun x : U => e x))
 
 include he
-
-
 
 theorem canonicalDomain_pullback_inner (g : RiemannianMetric n N) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -50,8 +38,6 @@ theorem canonicalDomain_pullback_inner (g : RiemannianMetric n N) :
   rw [hd]
   rfl
 
-
-
 theorem canonicalDomain_pullback_chart_coefficients (g : RiemannianMetric n N) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -64,8 +50,6 @@ theorem canonicalDomain_pullback_chart_coefficients (g : RiemannianMetric n N) :
   rw [RiemannianMetric.pullbackCoefficients_canonicalChart U hU]
   exact canonicalDomain_pullback_inner U hU e he hle g x
 
-
-
 theorem canonicalDomain_flow_inner {J : Set ℝ} (F : RicciFlow n N J) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -76,8 +60,6 @@ theorem canonicalDomain_flow_inner {J : Set ℝ} (F : RicciFlow n N J) :
   let := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
   intro t x
   exact canonicalDomain_pullback_inner U hU e he hle (F.metric t) x
-
-
 
 theorem canonicalDomain_flow_metric_coordinates {J : Set ℝ} (F : RicciFlow n N J) :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

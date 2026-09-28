@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Matrix.Determinant
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,8 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m65AreaGram_det_nonneg (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) :
     0 ≤ (m60AreaGram g f z).det := by
@@ -35,8 +24,6 @@ theorem m65AreaGram_det_nonneg (g : RiemannianMetric n M)
   exact (Matrix.posSemidef_gram ℝ
     (fun i : Fin 2 => mfderiv (𝓡 2) (𝓡 n) f z
       (EuclideanSpace.basisFun (Fin 2) ℝ i))).det_nonneg
-
-
 
 theorem m65AreaGram_det_ne_zero_iff (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) :
@@ -49,9 +36,6 @@ theorem m65AreaGram_det_ne_zero_iff (g : RiemannianMetric n M)
     (v := fun i : Fin 2 => mfderiv (𝓡 2) (𝓡 n) f z
       (EuclideanSpace.basisFun (Fin 2) ℝ i))
 
-
-
-
 noncomputable def m65PlaneRicciTraceDensity {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (f : LoopPlane → M) (z : LoopPlane) : ℝ :=
   let e : Fin 2 → TangentSpace (𝓡 n) (f z) := fun i =>
@@ -60,9 +44,6 @@ noncomputable def m65PlaneRicciTraceDensity {g : RiemannianMetric n M}
   if G.det = 0 then 0
   else Matrix.trace (G⁻¹ * Matrix.of (fun i j => D.ricci (f z) (e i) (e j))) *
     m60AreaDensity g f z
-
-
-
 
 theorem m65AreaDensity_metric_hasDerivAt {J : Set ℝ}
     (F : RicciFlow n M J) (f : LoopPlane → M) (z : LoopPlane)

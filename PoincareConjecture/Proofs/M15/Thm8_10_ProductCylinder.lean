@@ -4,16 +4,6 @@ import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] {I : SpacetimeInterval}
 
-
-
-
 theorem ordinaryProduct_slice_calculus
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
     (F : RicciFlow n M I.domain)
@@ -46,8 +33,6 @@ theorem ordinaryProduct_slice_calculus
   simpa only [one_mul] using! P.product.sliceMetric_eq t x v w
 
 variable [SecondCountableTopology M]
-
-
 
 theorem ordinaryProduct_actualBallCylinder
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

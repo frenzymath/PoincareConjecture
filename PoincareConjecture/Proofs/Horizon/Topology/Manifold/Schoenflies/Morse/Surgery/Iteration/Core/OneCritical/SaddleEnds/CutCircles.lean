@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Decomposition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.PlanarTube
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,7 +70,6 @@ theorem upperCutCircle_mem_end (A : AnnularEndFamily v g B C)
   rw [(A.upper i.1.1 i.1.2 i.2).region_eq_image]
   exact mem_image_of_mem _ ⟨mem_univ q, le_rfl, i.2.le⟩
 
-
 theorem iUnion_range_lowerCutCircle (A : AnnularEndFamily v g B C) :
     (⋃ i, range (A.lowerCutCircle i)) = {p | inner Real v (g p) = A.lowerCut} := by
   apply Subset.antisymm
@@ -92,7 +89,6 @@ theorem iUnion_range_lowerCutCircle (A : AnnularEndFamily v g B C) :
       rw [heq, hp] at hh
       exact hh.symm
     exact mem_iUnion.mpr ⟨⟨⟨D, hD⟩, hDc⟩, q, by simpa [lowerCutCircle, htc] using heq⟩
-
 
 theorem iUnion_range_upperCutCircle (A : AnnularEndFamily v g B C) :
     (⋃ i, range (A.upperCutCircle i)) = {p | inner Real v (g p) = A.upperCut} := by

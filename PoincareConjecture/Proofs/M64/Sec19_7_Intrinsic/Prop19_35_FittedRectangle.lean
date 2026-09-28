@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionRectangle
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_region_rectangle_covers_boundary
     {U : Set AnnulusCoordinates}
@@ -58,10 +42,6 @@ theorem m64Intrinsic_region_rectangle_covers_boundary
       simpa only [abs_mul, habs, one_mul] using (hdist.2.trans hdr).le)
     exact h
   exact ⟨q, ⟨hfirst, hheight⟩, rfl⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_fitted_loop_region_rectangle
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

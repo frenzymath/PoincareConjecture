@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusCollapse
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.FreeTraceSubsequence
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +9,6 @@ open Set Filter MeasureTheory Topology
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem free_labels_common_target_subsequence_of_discrepancy
     {X E : Type*} [TopologicalSpace X] [CompactSpace X]
@@ -97,8 +81,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem free_annulus_modulus_collapse_common_trace
     (g : RiemannianMetric n M) (e : M → E)

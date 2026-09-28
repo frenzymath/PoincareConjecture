@@ -1,15 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.LocalBranchSourceComplex
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ComponentBranchModel.exists_local_branch_inverses
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -122,8 +118,6 @@ theorem ComponentBranchModel.exists_local_branch_inverses
       have haT := hTsource.symm.subset ha
       exact ⟨haT, C.whole_preimage.subset ⟨hTD haT, hTC haT⟩⟩
 
-
-
 theorem ComponentBranchModel.exists_star_branch_inverses
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] {S : Set E}
@@ -153,4 +147,3 @@ theorem ComponentBranchModel.exists_star_branch_inverses
     (SimplicialComplex.space_subset_of_le (fun _ ht => ht.1)) C hmap
 
 end PoincareConjecture.M76.Dehn.Annuli
-

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.SpaceformSphereFilling
 import PoincareConjecture.Proofs.M38.FilledRegionComplement
 import PoincareConjecture.Proofs.M38.EnclosingBallSphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem spaceform_incident_assembly_of_component_chart
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

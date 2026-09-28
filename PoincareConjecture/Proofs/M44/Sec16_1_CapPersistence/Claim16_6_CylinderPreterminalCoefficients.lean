@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Coefficien
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem cylinderPhysicalCoefficients_eq_preterminal
     (e : SurgeryFlowCylinder F C origin scale I U)

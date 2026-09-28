@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialExponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +17,6 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
 
-
-
-
 theorem map_mfderiv_zero (D : NormalizedCapExponential Q R) :
     mfderiv (𝓡 3) (𝓡 3) D.map 0 = D.frame.toContinuousLinearMap := by
   have h0 : (0 : E) ∈ Metric.ball 0 R := Metric.mem_ball_self D.radius_pos
@@ -43,8 +32,6 @@ theorem map_mfderiv_zero (D : NormalizedCapExponential Q R) :
   rw [D.initial_derivative.fderiv, D.map_zero, mfderiv_extChartAt_self,
     ContinuousLinearMap.id_comp] at hd
   exact hd.symm
-
-
 
 theorem coordinateMap_fderiv_zero (D : NormalizedCapExponential Q R) :
     fderiv ℝ D.coordinateMap 0 =
@@ -64,9 +51,6 @@ theorem coordinateMap_fderiv_zero (D : NormalizedCapExponential Q R) :
       mfderiv (𝓡 3) (𝓡 3) Q.inverse tip :=
     congrArg invD D.map_zero
   exact hd.trans (congrArg (fun A : E →L[ℝ] E => A.comp D.frame.toContinuousLinearMap) hpoint)
-
-
-
 
 theorem coordinate_frame_inner (D : NormalizedCapExponential Q R) (v w : E) :
     Q.normalizedCoefficients 0 (fderiv ℝ D.coordinateMap 0 v) (fderiv ℝ D.coordinateMap 0 w) =

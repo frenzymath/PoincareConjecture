@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Model
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem m23_earlier_ball_volume_le_exp_mul_terminal_ball
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)
@@ -108,8 +97,6 @@ local instance earlierVolumeCarrierConnected (D : FlowCarrier 3) : ConnectedSpac
 variable (C : ℕ → FlowCarrier.{0} 3)
   (K : ∀ k, AncientKappaSolution 3 (C k).carrier) (p : ∀ k, (C k).carrier)
 
-
-
 theorem exists_earlier_unit_ball_volume_upper_bound
     (P : M23NormalizedKappaCompactnessPredecessors) {B ν : ℝ} (hB : 0 ≤ B)
     (hbound : ∀ k t, t ≤ 0 → ∀ x ∈ ((K k).flow.metric 0).ball (p k) 1,
@@ -130,8 +117,6 @@ theorem exists_earlier_unit_ball_volume_upper_bound
   calc
     _ ≤ ENNReal.ofReal (3 / 2 : ℝ) * ENNReal.ofReal ν := mul_le_mul' hfactor' (hvolume k)
     _ = ENNReal.ofReal ((3 / 2) * ν) := (ENNReal.ofReal_mul (by norm_num)).symm
-
-
 
 theorem exists_earlier_half_euclidean_unit_ball_volume_bound
     (P : M23NormalizedKappaCompactnessPredecessors) {B : ℝ} (hB : 0 ≤ B)

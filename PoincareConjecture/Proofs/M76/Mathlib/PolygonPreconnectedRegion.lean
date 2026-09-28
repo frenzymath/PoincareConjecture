@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
 
 theorem subset_inside_of_preconnected_inter (P : Polygon E n) {S : Set E}
     (hS : IsPreconnected S) (hsub : S ⊆ (P.boundary ℝ)ᶜ)
@@ -29,9 +17,6 @@ theorem subset_inside_of_preconnected_inter (P : Polygon E n) {S : Set E}
   have heq := connectedComponentIn_eq (hS.subset_connectedComponentIn hxS hsub hy)
   rw [← heq]
   exact hxi.2
-
-
-
 
 theorem subset_outside_of_preconnected_inter (P : Polygon E n) {S : Set E}
     (hS : IsPreconnected S) (hsub : S ⊆ (P.boundary ℝ)ᶜ)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteFlagDisplacement
 import PoincareConjecture.Proofs.M02.Topology.FiniteFlagComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

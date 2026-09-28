@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallCompactScala
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallSourcePacket
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
-
 
 theorem exists_matching_high_neck_scalar_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧
@@ -56,10 +44,6 @@ theorem exists_matching_high_neck_scalar_accuracy :
   linarith only [hk, hhigh, hnormalized]
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem exists_matching_high_neck_compact_exclusion_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

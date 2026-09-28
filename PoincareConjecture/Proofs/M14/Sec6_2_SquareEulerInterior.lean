@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_EulerResidual
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexPositivity
 import PoincareConjecture.Proofs.M14.Mathlib.IntervalTestFunctions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem variationEulerDensity_supportedGauge_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -78,9 +65,6 @@ theorem variationEulerDensity_supportedGauge_eq_zero
     M14SquareRootEulerResidual G R Dξ.base_extension s (M14VariationField Vξ s)
   rw [variationEulerDensity_eq_residual hCoordinates hM12 V Dξ.base_extension hs,
     hfield s (Ioo_subset_Icc_self hs), squareRootEulerResidual_smul hM12, smul_eq_mul]
-
-
-
 
 theorem squareRootEulerResidual_eq_zero_of_minimizing_interior
     (hCoordinates : M12MetricPredecessors.{0} n)

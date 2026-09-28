@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Analysis.ODE.ExistUnique
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -21,17 +13,13 @@ namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
-
 noncomputable def coordinateChristoffel
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (x u v : E) : E :=
   (B x).inverse (metricKoszulCovector (fderiv ℝ B x) u v)
 
-
 noncomputable def coordinateGeodesicField
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (z : E × E) : E × E :=
   (z.2, -coordinateChristoffel B z.1 z.2 z.2)
-
-
 
 theorem contDiffAt_coordinateGeodesicField
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {z : E × E}
@@ -80,8 +68,6 @@ theorem hasDerivAt_coordinate_geodesic_energy
   rw [hsymm (w t) (coordinateChristoffel B (q t) (w t) (w t)), hG]
   ring
 
-
-
 theorem exists_coordinate_geodesic
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} (hU : IsOpen U)
     (hB : ContDiffOn ℝ ∞ B U) (hinv : ∀ x ∈ U, (B x).IsInvertible)
@@ -110,8 +96,6 @@ theorem exists_coordinate_geodesic
     have hd := hderiv t (by simpa using htε)
     exact ⟨htU, hd.fst, hd.snd⟩
 
-
-
 theorem exists_coordinate_geodesic_with_energy
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} (hU : IsOpen U)
     (hB : ContDiffOn ℝ ∞ B U) (hinv : ∀ x ∈ U, (B x).IsInvertible)
@@ -136,7 +120,6 @@ theorem exists_coordinate_geodesic_with_energy
     (fun s hs => (henergy s hs).deriv) ht
     (show (0 : ℝ) ∈ Ioo (-δ) δ by constructor <;> linarith)
   simpa only [hq0, hw0] using hconst
-
 
 theorem coordinate_geodesic_unique_germ
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x v : E}
@@ -171,8 +154,6 @@ end PoincareConjecture
 namespace PoincareConjecture.RiemannianMetric
 
 open scoped Manifold
-
-
 
 theorem exists_chart_geodesic
     {n : ℕ} {M : Type*} [TopologicalSpace M]

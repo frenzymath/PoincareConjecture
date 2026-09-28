@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M51.GlobalExtension
 import PoincareConjecture.Proofs.M48.ExtensionCylinderMetric
 import PoincareConjecture.Proofs.M48.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F0 k)
   (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
-
-
 
 noncomputable def globalTerminalStrongNeck
     (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)

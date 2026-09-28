@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainCoordinates
 import Mathlib.GroupTheory.Perm.Cycle.Type
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -19,7 +9,6 @@ open scoped BigOperators
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {V : Type*} [Fintype V] (A : PreAbstractSimplicialComplex V)
-
 
 abbrev SurfaceDart := (e : Edge A) × (triangleCofaces A e)
 

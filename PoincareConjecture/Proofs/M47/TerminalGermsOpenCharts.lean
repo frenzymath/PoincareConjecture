@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
 
-
-
 theorem terminalGerms_open_codomain_localDiffeomorph (V : Opens N) {f : M → V}
     (hf : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (Subtype.val ∘ f)) :
     IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ f := by
@@ -37,11 +25,9 @@ theorem terminalGerms_open_codomain_localDiffeomorph (V : Opens N) {f : M → V}
   filter_upwards [hfc.continuousAt hinc.localInverse_eventuallyEq_left] with y hy
   exact hy.symm
 
-
 def terminalGermsOpenChartSource (q : M → N)
     (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q) (V : Opens N) : Opens M :=
   ⟨q ⁻¹' (V : Set N), V.isOpen.preimage hq.contMDiff.continuous⟩
-
 
 def terminalGermsOpenChartMap (q : M → N)
     (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q) (V : Opens N) :
@@ -55,8 +41,6 @@ theorem terminalGerms_openChartMap_localDiffeomorph (q : M → N)
   intro x
   exact (Poincare.isLocalDiffeomorph_opensSubtypeVal (𝓡 n)
     (terminalGermsOpenChartSource q hq V) x).comp (𝓡 n) N (hq x.val)
-
-
 
 theorem terminalGerms_openChartMap_differential (q : M → N)
     (hq : IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ q) (V : Opens N)

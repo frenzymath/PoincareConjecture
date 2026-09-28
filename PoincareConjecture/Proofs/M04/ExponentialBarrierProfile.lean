@@ -118,4 +118,3 @@ theorem exists_exponential_barrier_decay
       _ ≤ A * expNegInvGlue (q x) := mul_le_mul_of_nonneg_right hcoeff hψ.le
 
 end PoincareConjecture.M04
-

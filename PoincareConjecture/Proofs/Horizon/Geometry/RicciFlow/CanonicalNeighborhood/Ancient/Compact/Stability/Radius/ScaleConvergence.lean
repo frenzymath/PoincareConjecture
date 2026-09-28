@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Radius.Continuity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Terminal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [ConnectedSpace M]
 
-
-
 theorem scalarCoreRadius_le_max_distance_scale (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hc : MetricComplete g)
     (hpos : ∀ x : M, 0 < D.scalarCurvature x) (p x : M) :
@@ -36,8 +26,6 @@ theorem scalarCoreRadius_le_max_distance_scale (g : RiemannianMetric 3 M)
   apply CompactKappaCoreRadius.radius_le_max_distance_scale
     D.continuous_scalarCurvature hpos p hs.1
   simpa only [scalarCurvatureSupOn, ← Set.image_eq_range, ← g.toMetricSpace_ball] using hs.2
-
-
 
 theorem exists_scalarCoreRadius_witness (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -71,8 +59,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem tendstoUniformlyOn_terminal_scalarScale
     (hconv : M23TerminalMetricConvergence G e)

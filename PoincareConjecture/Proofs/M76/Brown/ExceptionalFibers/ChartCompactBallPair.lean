@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.AmbientBallPairTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -16,9 +8,6 @@ namespace OpenPartialHomeomorph
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem exists_compact_ballPair_enclosing (C : OpenPartialHomeomorph X E)
     (hCt : C.target = univ) {A : Set X} (hA : IsCompact A) (hAs : A ⊆ C.source) :

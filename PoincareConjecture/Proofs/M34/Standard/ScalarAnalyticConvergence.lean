@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionJet
 import PoincareConjecture.Proofs.M34.Standard.ScalarDifferentialJet
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.LeviCivitaData
 
 open M34 SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
 
 theorem tendsto_scalarGradient_tangentNorm_of_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}
@@ -51,8 +39,6 @@ theorem tendsto_scalarGradient_tangentNorm_of_metric_jets
   have ht := hcont.tendsto.comp hjet
   rw [scalarDifferentialNormJet_spatialJet D] at ht
   exact ht.congr (fun a => scalarDifferentialNormJet_spatialJet (Dseq a) x)
-
-
 
 theorem tendsto_scalarEvolution_of_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}

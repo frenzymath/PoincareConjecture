@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralFrontierGraph
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGraphs
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
 
 namespace CoordinateHalfBoxes
-
-
 
 theorem base_eq_closedBall (r : ℝ) : base r = Metric.closedBall 0 r := by
   ext p
@@ -29,13 +16,6 @@ theorem base_eq_closedBall (r : ℝ) : base r = Metric.closedBall 0 r := by
 end CoordinateHalfBoxes
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
-
 
 theorem exists_halfspace_frontier_disk_patch
     (H : Finset (((ℝ × ℝ) × ℝ) →ₗ[ℝ] ℝ))

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMixedTests
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakChain
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem m64CompactCoefficientTest_weak_derivatives
     {u : LoopPlane → E} (hu : Continuous u) {V : Fin 2 → LoopPlane → E}
@@ -81,10 +66,6 @@ theorem m64CompactCoefficientTest_weak_derivatives
     simpa only [inter_univ] using (hdu i).restrict (ball 0 r)
   apply hasWeakPartialDeriv_mul_smooth_of_tsupport_subset isOpen_ball i hfuLp hduLp
     (by simpa only [inter_univ] using hchain) hp hc hsr
-
-
-
-
 
 theorem m64NaturalGrowth_coefficient_mixed_test
     (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)

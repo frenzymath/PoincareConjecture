@@ -1,21 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +16,6 @@ private theorem segment_tangentNorm_smul (g : RiemannianMetric n M)
     g.tangentNorm p (c • v) = |c| * g.tangentNorm p v := by
   simp only [tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg c), Real.sqrt_sq_eq_abs]
-
-
-
 
 theorem exists_unit_speed_minimizing_geodesic_of_metricComplete
     [T3Space M] [PreconnectedSpace M]

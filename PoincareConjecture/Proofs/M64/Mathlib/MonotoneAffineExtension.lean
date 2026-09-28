@@ -2,18 +2,6 @@ import Mathlib.Topology.Instances.AddCircle.Defs
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -22,11 +10,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Monotone_affine_periodic_extension
     {P D : ℝ} (hP : 0 < P) (f : ℝ → ℝ)

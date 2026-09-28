@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLTwoAttachedDiskExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedGraphGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_finitePL_relative_region_gluing {ι : Type*} [Finite ι]
     (S R : ι → Set E) (T Q : ι → Set F)

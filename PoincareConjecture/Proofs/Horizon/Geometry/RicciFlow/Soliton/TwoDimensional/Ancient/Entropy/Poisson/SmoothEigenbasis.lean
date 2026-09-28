@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Poisson.Spectrum
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,7 +12,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 omit [PreconnectedSpace M] in
 theorem exists_smooth_eigenbasis_representative (D : LeviCivitaData g)

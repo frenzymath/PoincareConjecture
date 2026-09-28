@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,7 +10,6 @@ namespace Poincare.Geometry.Euclidean
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E] {v : E}
-
 
 def heightReflection (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, E) 𝓘(Real, E) E E ∞ :=

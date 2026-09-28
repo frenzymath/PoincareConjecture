@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarLevelResidualGluing
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCollarLevelCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_terminal_whole_level_comparison_with_chart
     {B T d b R : Set E} {upper g r : E → ℝ}
@@ -106,10 +92,6 @@ theorem IsFinitePL.exists_terminal_whole_level_comparison_with_chart
   let y : ((T ∪ R) ∩ {x | A x = c} : Set E) :=
     ⟨L₀ z, Or.inl (L₀ z).property.1, (L₀ z).property.2⟩
   exact ⟨y, hL₀val z, hGchart z⟩
-
-
-
-
 
 theorem IsFinitePL.exists_terminal_whole_level_comparison
     {B T d b R : Set E} {upper g r : E → ℝ}

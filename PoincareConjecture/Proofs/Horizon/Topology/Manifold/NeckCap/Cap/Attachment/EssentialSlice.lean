@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem exists_essential_overlap_slice_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -199,8 +185,6 @@ theorem exists_essential_overlap_slice_threshold :
 end PoincareConjecture.CapCertificate
 
 namespace PoincareConjecture.CapTubeAttachment
-
-
 
 theorem exists_essential_slice_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

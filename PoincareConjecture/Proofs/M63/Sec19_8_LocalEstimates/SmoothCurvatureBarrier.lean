@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicQuadraticBarrier
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RatioRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m63SmoothCurvatureSquared_shortTime (F : RicciFlow n M (Icc a b))
     (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c) {K0 K1 K2 R : ℝ}

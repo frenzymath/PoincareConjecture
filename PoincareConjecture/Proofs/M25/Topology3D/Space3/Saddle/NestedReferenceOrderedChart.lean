@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M09.LocalSmoothInverse
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_nestedReference_ordered_morse_chart
     (w : ℝ) (hw_lower : 1 / 2 < w) (hw_upper : w < 3 / 4)

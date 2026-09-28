@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalFaceLabels
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryFaceColors
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem exists_complementary_barycentric_trees
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3)

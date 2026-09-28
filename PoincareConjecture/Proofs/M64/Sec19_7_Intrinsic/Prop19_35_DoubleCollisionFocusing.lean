@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CollisionFocusing
 import Mathlib.Analysis.Real.Pi.Bounds
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,11 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_normal_collision_double_focusing
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

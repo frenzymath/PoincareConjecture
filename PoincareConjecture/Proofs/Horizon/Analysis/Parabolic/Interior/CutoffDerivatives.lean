@@ -4,16 +4,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Bilinear
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -50,8 +40,6 @@ theorem fderiv_fderiv_smul_apply {χ : E → ℝ} {f : E → F}
   change fderiv ℝ (fun y => χ y • fderiv ℝ f y + (fderiv ℝ χ y).smulRight (f y)) x = _ at hsumeq
   rw [hsumeq]
   simp [ContinuousLinearMap.precompR, add_assoc]
-
-
 
 theorem norm_hessian_smul_sub_le {χ : E → ℝ} {f : E → F}
     (hχ : ContDiff ℝ ∞ χ) (hf : ContDiff ℝ ∞ f) (x : E) :
@@ -94,7 +82,6 @@ theorem timeDerivative_smul {χ : E × ℝ → ℝ} {f : E × ℝ → F}
 section Principal
 
 variable {ι : Type*} [Fintype ι]
-
 
 theorem norm_principal_cutoff_commutator_le
     (a : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι)

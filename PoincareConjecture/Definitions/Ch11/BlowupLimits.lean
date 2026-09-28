@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.Ch09.AsymptoticSoliton
 import PoincareConjecture.Definitions.Ch04.Pinching
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure GeneralizedSliceCarrier where
   carrier : Type u
@@ -37,9 +27,6 @@ attribute [instance] GeneralizedSliceCarrier.topologicalSpace
   GeneralizedSliceCarrier.chartedSpace GeneralizedSliceCarrier.isManifold
   GeneralizedSliceCarrier.t2Space GeneralizedSliceCarrier.t3Space
   GeneralizedSliceCarrier.secondCountable
-
-
-
 
 structure GeneralizedRicciFlowBox
     (S : ℝ → GeneralizedSliceCarrier.{u})
@@ -62,11 +49,6 @@ structure GeneralizedRicciFlowBox
       (mfderiv (𝓡 3) (𝓡 3) (forward t ht) x u)
       (mfderiv (𝓡 3) (𝓡 3) (forward t ht) x v) =
       (flow.metric t).inner x u v
-
-
-
-
-
 
 structure GeneralizedRicciFlowData where
   slice : ℝ → GeneralizedSliceCarrier.{u}
@@ -112,9 +94,6 @@ noncomputable def GeneralizedRicciFlowData.curvatureNorm
     (F : GeneralizedRicciFlowData) (p : F.point) : ℝ :=
   (F.connection p.1).curvatureTensorNorm p.2
 
-
-
-
 structure GeneralizedFlowCylinder (F : GeneralizedRicciFlowData.{u})
     (C : GeneralizedSliceCarrier.{u}) (origin scale : ℝ)
     (I : Set ℝ) (U : Set C.carrier) where
@@ -141,7 +120,6 @@ noncomputable def GeneralizedFlowCylinder.pointMap {F : GeneralizedRicciFlowData
     (s : ℝ) (hs : s ∈ I) (x : C.carrier) : F.point :=
   ⟨origin + s / scale, e.forward s hs x⟩
 
-
 noncomputable def GeneralizedFlowCylinder.pullbackInner
     {F : GeneralizedRicciFlowData} {C : GeneralizedSliceCarrier}
     {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
@@ -152,12 +130,8 @@ noncomputable def GeneralizedFlowCylinder.pullbackInner
     (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x v)
     (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x w)
 
-
 def blowupBackwardInterval (T : ℝ≥0∞) : Set ℝ :=
   {t | t ≤ 0 ∧ ENNReal.ofReal (-t) < T}
-
-
-
 
 structure BlowupLimitFlow (J : Set ℝ) where
   carrier : FlowCarrier.{u} 3
@@ -190,18 +164,12 @@ structure BlowupLimitFlow (J : Set ℝ) where
       ∀ t ∈ I, ∀ x : carrier.carrier,
         |(flow.connection t).curvatureTensorNorm x| ≤ B
 
-
-
-
 def blowupMetricChartDomain {J : Set ℝ} (L : BlowupLimitFlow J)
     (q : L.carrier.carrier) : Set (ℝ × EuclideanSpace ℝ (Fin 3)) :=
   letI : TopologicalSpace L.carrier.carrier := L.carrier.topologicalSpace
   letI : ChartedSpace (EuclideanSpace ℝ (Fin 3)) L.carrier.carrier :=
     L.carrier.chartedSpace
   J ×ˢ (extChartAt (𝓡 3) q).target
-
-
-
 
 def BlowupLimitNoncollapsed {J : Set ℝ} (L : BlowupLimitFlow J) (κ : ℝ) : Prop :=
   let C := L.carrier
@@ -218,7 +186,6 @@ def BlowupLimitNoncollapsed {J : Set ℝ} (L : BlowupLimitFlow J) (κ : ℝ) : P
     ENNReal.ofReal (κ * r ^ 3) ≤
       calibratedMetricVolume (L.flow.metric t) ((L.flow.metric t).ball p r)
 
-
 def BlowupLimitFlow.sliceCarrier {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     GeneralizedSliceCarrier.{u} where
   carrier := L.carrier.carrier
@@ -230,9 +197,6 @@ def BlowupLimitFlow.sliceCarrier {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
   t2Space := L.carrier.t2Space
   t3Space := L.carrier.t3Space
   secondCountable := L.carrier.secondCountable
-
-
-
 
 def GeneralizedKappaNoncollapsedAt (F : GeneralizedRicciFlowData.{u})
     (p : F.point) (κ r₀ : ℝ) : Prop :=
@@ -246,7 +210,6 @@ def GeneralizedKappaNoncollapsedAt (F : GeneralizedRicciFlowData.{u})
       |F.curvatureNorm (e.pointMap s hs x)| ≤ r⁻¹ ^ 2) →
     ENNReal.ofReal (κ * r ^ 3) ≤
       calibratedMetricVolume (F.metric p.1) ((F.metric p.1).ball p.2 r)
-
 
 structure GeneralizedBlowupSequence where
   flow : ℕ → GeneralizedRicciFlowData.{u}
@@ -262,20 +225,14 @@ def GeneralizedBlowupSequence.baseBall (S : GeneralizedBlowupSequence)
     (k : ℕ) (A : ℝ) : Set ((S.flow k).slice (S.base k).1).carrier :=
   ((S.flow k).metric (S.base k).1).ball (S.base k).2 (A / Real.sqrt (S.scale k))
 
-
 def BlowupBaseBallsCompact (S : GeneralizedBlowupSequence) : Prop :=
   ∀ A : ℝ, 0 < A → ∀ᶠ k : ℕ in Filter.atTop,
     IsCompact (closure (S.baseBall k A))
-
-
-
 
 def GeneralizedBlowupBoundedDistance (S : GeneralizedBlowupSequence) : Prop :=
   ∀ A : ℝ, 0 < A → ∃ D : ℝ, 0 < D ∧ ∀ᶠ k : ℕ in Filter.atTop,
     ∀ x ∈ S.baseBall k A,
       (S.flow k).scalar ⟨(S.base k).1, x⟩ ≤ D * S.scale k
-
-
 
 structure ControlledBlowupCylinder (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (A T B η : ℝ) where
@@ -288,9 +245,6 @@ structure ControlledBlowupCylinder (S : GeneralizedBlowupSequence.{u})
   negative_curvature_bound : ∀ s hs, ∀ x ∈ S.baseBall k A,
     let p := embedding.pointMap s hs x
     ((S.flow k).connection p.1).negativeCurvaturePart p.2 ≤ η * S.scale k
-
-
-
 
 structure ShortControlledBlowupHypotheses (S : GeneralizedBlowupSequence.{u})
     (κ r₀ : ℝ) where
@@ -308,8 +262,6 @@ structure ShortControlledBlowupHypotheses (S : GeneralizedBlowupSequence.{u})
     ∀ x ∈ S.baseBall k A,
       GeneralizedKappaNoncollapsedAt (S.flow k) ⟨(S.base k).1, x⟩ κ r₀
 
-
-
 structure LongControlledBlowupHypotheses (S : GeneralizedBlowupSequence.{u})
     (κ r₀ : ℝ) (T₀ : ℝ≥0∞) where
   kappa_pos : 0 < κ
@@ -322,7 +274,6 @@ structure LongControlledBlowupHypotheses (S : GeneralizedBlowupSequence.{u})
         ∃ e : ControlledBlowupCylinder S k A T B η,
           ∀ s hs, ∀ x ∈ S.baseBall k A,
             GeneralizedKappaNoncollapsedAt (S.flow k) (e.embedding.pointMap s hs x) κ r₀
-
 
 structure BlowupExhaustion {J : Set ℝ} (L : BlowupLimitFlow.{u} J) where
   space : ℕ → Set L.sliceCarrier.carrier
@@ -339,9 +290,6 @@ structure BlowupExhaustion {J : Set ℝ} (L : BlowupLimitFlow.{u} J) where
   time_cofinal : ∀ I : Set ℝ, IsCompact I → I ⊆ J →
     ∀ᶠ k : ℕ in Filter.atTop, I ⊆ Set.Icc (-time k) 0
 
-
-
-
 noncomputable def blowupPullbackCoefficient {J : Set ℝ}
     {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}
     {origin scale : ℝ} {I : Set ℝ} {U : Set L.sliceCarrier.carrier}
@@ -356,8 +304,6 @@ noncomputable def blowupPullbackCoefficient {J : Set ℝ}
       (D (EuclideanSpace.basisFun (Fin 3) ℝ a))
       (D (EuclideanSpace.basisFun (Fin 3) ℝ b))
   else 0
-
-
 
 structure GeneralizedBlowupConvergence (S : GeneralizedBlowupSequence.{u})
     (J : Set ℝ) where
@@ -395,8 +341,6 @@ structure GeneralizedBlowupConvergence (S : GeneralizedBlowupSequence.{u})
               (FlowCarrier.coordinateCoefficient limit.carrier q
                 (fun t x v w ↦ (limit.flow.metric t).inner x v w) a b)
               (blowupMetricChartDomain limit q) p‖ < ε
-
-
 
 structure BlowupAncientKappaIdentification
     (L : BlowupLimitFlow (blowupBackwardInterval ⊤)) (κ : ℝ) where

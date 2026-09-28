@@ -3,23 +3,10 @@ import PoincareConjecture.Proofs.M28.Mathlib.WithinBilinear
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.SpacetimePullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Poincare.Analysis.Calculus
 open scoped ContDiff Topology
-
-
-
 
 theorem tendstoUniformlyOn_withinJets_spacetime_bilinear_pullback
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

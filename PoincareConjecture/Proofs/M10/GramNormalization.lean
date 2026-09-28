@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.PullbackJacobian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -39,7 +31,6 @@ theorem sqrt_det_pullbackMetric_change_source (g : RiemannianMetric n M)
   rw [← hs, Real.sqrt_sq (D.comp C).normDet_nonneg,
     LinearMap.normDet_comp_of_finrank_eq C D rfl,
     pullbackJacobian_eq_normDet]
-
 
 theorem source_normalization_normDet_pos
     (C : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n)) :

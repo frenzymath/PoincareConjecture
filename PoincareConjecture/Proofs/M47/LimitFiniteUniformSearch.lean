@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFinitePreservedBounds
 import PoincareConjecture.Proofs.M47.LimitFiniteForwardScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ private theorem uniform_readout_eq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   exact ⟨rfl, rfl, rfl⟩
-
-
 
 theorem limitFinite_exists_uniform_preserved_search
     (S : RepairedControlledSchedulesData.{u})

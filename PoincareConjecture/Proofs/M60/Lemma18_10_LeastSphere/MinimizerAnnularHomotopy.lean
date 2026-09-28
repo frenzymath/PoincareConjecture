@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularGluing
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -116,9 +108,6 @@ private theorem annularStart_one
   · simp only [Set.Icc.coe_one, one_mul, sub_sub_cancel]
     rfl
 
-
-
-
 theorem suAnnularBlend_continuous_family
     {X : Type*} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) {U : Set (M × M)}
@@ -171,9 +160,6 @@ theorem suAnnularBlend_continuous_family
 
 set_option maxHeartbeats 400000 in
 
-
-
-
 theorem suAnnularBlend_plane_homotopy
     (C : ℝ × (M × M) → M) {U : Set (M × M)}
     (h0 : ∀ p q, C (0, p, q) = q) (h1 : ∀ v ∈ U, C (1, v) = v.1)
@@ -222,9 +208,6 @@ theorem suAnnularBlend_plane_homotopy
     · dsimp only [G₁, DFunLike.coe, ContinuousMap.Homotopy.instFunLike]
       exact suAnnularBlend_outer C f _ hz
 
-
-
-
 theorem suSpherePlanePatch_continuous_family
     {X : Type*} [TopologicalSpace X]
     {f : UnitTwoSphere → M} (hf : Continuous f) (c : UnitTwoSphere)
@@ -253,8 +236,6 @@ theorem suSpherePlanePatch_continuous_family
     apply (hf.comp continuous_snd).continuousAt.congr
     filter_upwards [(hK.isClosed.isOpen_compl.preimage continuous_snd).mem_nhds hxK] with y hy
     exact (suSpherePlanePatch_outside f c (hout y.1) hy).symm
-
-
 
 theorem suSpherePlanePatch_homotopic
     (f : C(UnitTwoSphere, M)) (c : UnitTwoSphere)

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderTimeWeights
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderTimeJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem roundCylinderJetErrorSquared_time_affine_le
     (B : ℝ → RoundCylinderTwoTensor)

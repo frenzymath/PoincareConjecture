@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.DerivativeControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Coordinates.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -94,7 +85,6 @@ theorem eventually_uniform_zero_time_exponential_metric_jet_bound_of_m23_predece
     rw [ENNReal.ofReal_add hA.le hR.le]
     exact Manifold.riemannianEDist_triangle.trans_lt (ENNReal.add_lt_add hp hxp)
 
-
 theorem eventually_normalChartCover_metric_jet_bound_of_m23_predecessors
     {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses 3 T' T)
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -122,7 +112,6 @@ theorem eventually_normalChartCover_metric_jet_bound_of_m23_predecessors
   obtain ⟨L, hL, hderiv⟩ := C.normalized i
   exact hk (C.centre i) (C.centre_mem i) L (C.chart i) (C.source i) (C.target i)
     (C.map_zero i) hL hderiv (C.radial_geodesic i) x hx
-
 
 theorem eventually_normalChartCover_spatial_bounds_on_interval_of_m23_predecessors
     {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses 3 T' T)
@@ -228,7 +217,6 @@ theorem eventually_normalChartCover_spatial_bounds_on_interval_of_m23_predecesso
         · linarith [(hJ ht).2, le_abs_self T, abs_nonneg T']
       · exact (hk cover i t ht x hx j (by omega)).trans (le_max_left B E)
 
-
 theorem eventually_normalChartCover_spacetime_jet_bound_of_m23_predecessors
     {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses 3 T' T)
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -329,7 +317,6 @@ theorem eventually_normalChartCover_spacetime_jet_bound_of_m23_predecessors
   intro cover i t ht x hx
   exact hk ⟨k, cover, i⟩ rfl (t, x) ⟨ht, hx⟩
 
-
 theorem eventually_referenceNormalChartCover_spacetime_jet_bound_of_m23_predecessors
     {T' T S' S : ℝ} (H : PointedRicciFlowCompactnessHypotheses 3 T' T)
     (P : M23NormalizedKappaCompactnessPredecessors) (hS : S' < 0 ∧ 0 < S)
@@ -353,6 +340,5 @@ theorem eventually_referenceNormalChartCover_spacetime_jet_bound_of_m23_predeces
   intro cover
   obtain ⟨wide, hchart⟩ := hextk cover
   simpa only [hchart] using hjetsk wide
-
 
 end PoincareConjecture.PointedRicciFlowCompactnessHypotheses

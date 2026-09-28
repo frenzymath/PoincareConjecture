@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteNeckDistances
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Triangle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_neck_opposite_exits
     {M : Type u} [TopologicalSpace M]

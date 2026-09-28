@@ -3,8 +3,6 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -63,7 +61,6 @@ theorem tangentFlattenDepth_sq (p : E3) :
 theorem tangentFlattenDepth_nonneg (p : E3) : 0 ≤ tangentFlattenDepth p :=
   Real.sqrt_nonneg _
 
-
 def tangentFlatShear : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
   toFun p := p - tangentFlattenDepth p • EuclideanSpace.single 0 1
   invFun p := p + tangentFlattenDepth p • EuclideanSpace.single 0 1
@@ -103,7 +100,6 @@ theorem tangentFlatShear_body_nonpos {y : E3}
     (tangentFlattenCutoff_bounds (tangentRadiusSq p)).2 (tangentRadiusSq_nonneg p)
   rw [tangentFlatShear_zero]
   nlinarith [norm_nonneg p]
-
 
 theorem tangentFlatShear_body_inter_wall :
     (tangentFlatShear '' closedBall (0 : E3) 1) ∩ {p : E3 | p 0 = 0} =

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M13.SpacetimeBase
 import PoincareConjecture.Proofs.M13.SliceData
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

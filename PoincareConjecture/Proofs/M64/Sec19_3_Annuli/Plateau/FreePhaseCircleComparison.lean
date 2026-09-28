@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseGoodCircleR
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseReplacementEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CircleConeComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space 
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem auxiliaryCircle_free_phase_circle_energy_comparison
     (P : M62.CircleProductData F circumference)

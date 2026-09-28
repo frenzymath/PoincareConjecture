@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.LeafAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -46,7 +37,6 @@ theorem exists_triangle_affine_interpolation (p : Fin 3 → E)
 
 variable [FiniteDimensional ℝ F]
 
-
 theorem exists_triangle_affine_inverse (p : Fin 3 → E) (q : Fin 3 → F)
     (hp : AffineIndependent ℝ p) (hq : AffineIndependent ℝ q) :
     ∃ (A : E →ᴬ[ℝ] F) (B : F →ᴬ[ℝ] E),
@@ -74,7 +64,6 @@ theorem exists_triangle_affine_inverse (p : Fin 3 → E) (q : Fin 3 → F)
     exact fun _ hx => AffineMap.eqOn_affineSpan hvertices (convexHull_subset_affineSpan _ hx)
   exact ⟨A, B, hA, hB, hleft, hright, himage, hleft.injOn, hedge⟩
 
-
 def triangleRim (p : Fin 3 → E) : Set E :=
   segment ℝ (p 0) (p 1) ∪ segment ℝ (p 1) (p 2) ∪ segment ℝ (p 2) (p 0)
 
@@ -99,7 +88,6 @@ theorem triangle_interpolation_frontier (p : Fin 3 → E)
       _ = _ := by rw [hA, hA]
   simp only [himage, triangleRim]
 
-
 theorem isFinitePLBallPair_triangleRim (p : Fin 3 → E)
     (hp : AffineIndependent ℝ p) :
     IsFinitePLBallPair (ℝ × ℝ) (convexHull ℝ (range p)) (triangleRim p) := by
@@ -108,7 +96,6 @@ theorem isFinitePLBallPair_triangleRim (p : Fin 3 → E)
   have h := (rightTriangle.isFinitePLBallPair_convexHull_triangle
     independent_rightTriangle).affine_image A hinj
   rwa [himage, triangle_interpolation_frontier p A hA] at h
-
 
 theorem exists_original_triangle_disk (K : SimplicialComplex ℝ E) (s : Triangle K) :
     ∃ p : Fin 3 → E, range p = (s.val : Set E) ∧ AffineIndependent ℝ p ∧

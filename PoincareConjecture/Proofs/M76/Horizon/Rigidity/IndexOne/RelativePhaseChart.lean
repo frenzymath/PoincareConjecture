@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLevelSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_relative_circle_height_chart
     {X α : Type*} [TopologicalSpace X] {R : Set X}

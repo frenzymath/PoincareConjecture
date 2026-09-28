@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvaturePositiveSphere
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCalibratedLift
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem terminalCurvature_calibrated_null_cover_bound
     {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

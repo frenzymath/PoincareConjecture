@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.FiniteConvexSeparation
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

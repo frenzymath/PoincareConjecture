@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedOldBufferedBirthVolume
 import PoincareConjecture.Proofs.M47.SeedYoungMidpointVolume
 import PoincareConjecture.Proofs.M47.SeedNormalizedPhysical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_old_buffered_young_accessible_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -118,8 +108,6 @@ theorem exists_seed_old_buffered_young_accessible_volume
   refine ⟨T - b - v / 2, hage, hageTop, E, hE, access, ?_⟩
   have hmidClock : T - (T - b - v / 2) = b + v / 2 := by ring
   simpa only [hmidClock, V, mul_assoc] using hmid
-
-
 
 theorem exists_seed_old_buffered_young_physical_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

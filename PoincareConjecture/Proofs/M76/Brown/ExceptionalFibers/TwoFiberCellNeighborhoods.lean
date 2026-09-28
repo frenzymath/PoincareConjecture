@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.RegularQuotientChar
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.ChartCompactBallPair
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.CofinalFiberBallPairs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,10 +12,6 @@ namespace ContinuousMap
 variable {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [Infinite E] [TopologicalSpace X] [T2Space X] [RegularSpace X]
   [TopologicalSpace Y] [RegularSpace Y] [T1Space Y]
-
-
-
-
 
 theorem exists_second_fiber_ballPair_subset (q : C(X, Y)) (hq : IsQuotientMap q)
     (a b : Y) (hab : a ≠ b)

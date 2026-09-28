@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentScalarRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_real_extrema_of_uniform_error
     {X : Type v} [Nonempty X] (f g : X → ℝ)
@@ -69,8 +57,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_component_eventually_radius_extrema
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

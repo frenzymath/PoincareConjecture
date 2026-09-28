@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Weak.Supports
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem le_on_compact_of_tendsto_lower_supports (D : LeviCivitaData g)
     {K : Set M} (hK : IsCompact K) {u : ℝ → M → ℝ} {b : M → ℝ}
@@ -66,8 +54,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
 
-
-
 theorem busemann_le_on_compact_of_laplacian_neg
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -90,8 +76,6 @@ theorem busemann_le_on_compact_of_laplacian_neg
       hcomplete hRic γ hγ hK hε] with t ht x hx
     obtain ⟨U, σ, hU, hxU, hσ, heq, hle, _, hσlap⟩ := ht x hx
     exact ⟨U, σ, hU, hxU, hσ, heq, hle, hσlap⟩
-
-
 
 theorem eventually_busemannApprox_add_reverse_lower_supports_on_compact
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
@@ -133,8 +117,6 @@ theorem eventually_busemannApprox_add_reverse_lower_supports_on_compact
   · rw [LeviCivitaData.Dirichlet.laplacian_sub_on D (hU.inter hV) hσW
       hnegτ ⟨hxU, hxV⟩, D.laplacian_const_mul]
     linarith
-
-
 
 theorem busemann_add_reverse_le_on_compact_of_laplacian_neg
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)

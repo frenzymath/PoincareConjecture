@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTomiIteration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory
@@ -31,10 +22,6 @@ private theorem lower_singular_power {r s a : ℝ}
       (le_add_of_nonneg_left zero_le_one)
   · exact (Real.rpow_le_one_of_one_le_of_nonpos (le_of_not_ge hr1) (neg_nonpos.mpr hs.le)).trans
       (le_add_of_nonneg_right (Real.rpow_nonneg hr _))
-
-
-
-
 
 theorem forcing_weight_of_local_energy
     (E f : LoopPlane → ℝ) (hE : Integrable E) (hE0 : ∀ z, 0 ≤ E z)
@@ -106,8 +93,6 @@ theorem forcing_weight_of_local_energy
   rw [← integral_add_compl hU hglobal]
   exact add_le_add hlocalBound htailBound
 
-
-
 def WeightedIntegralNear (F : LoopPlane → ℝ) (p : LoopPlane) (a : ℝ) : Prop :=
   ∃ r > 0, ∃ B ≥ 0, ∀ x ∈ ball p r,
     IntegrableOn (fun z => ‖z - x‖ ^ (-a) * F z) (ball p (2 * r)) ∧
@@ -130,9 +115,6 @@ private theorem WeightedIntegralNear.exists_radius
     hsub.eventuallyLE).trans hb⟩
 
 set_option maxHeartbeats 1400000 in
-
-
-
 
 theorem gradient_weight_of_energy {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → LoopPlane → ℝ)
@@ -241,9 +223,6 @@ theorem gradient_weight_of_energy {N : ℕ} (u : Fin N → ScalarL2 2)
 
 set_option maxHeartbeats 1800000 in
 
-
-
-
 theorem energy_weight_increment {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f v : Fin N → LoopPlane → ℝ)
     (hf : ∀ j, Integrable (f j)) {U : Set LoopPlane} (hU : IsOpen U)
@@ -343,9 +322,6 @@ theorem energy_weight_increment {N : ℕ} (u : Fin N → ScalarL2 2)
   rw [hpower]
   exact add_le_add le_rfl (mul_le_mul_of_nonneg_left (hgrad0 x hxr).2 (by positivity))
 
-
-
-
 theorem energy_weight_above_one {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f v : Fin N → LoopPlane → ℝ)
     (hf : ∀ j, Integrable (f j)) {U : Set LoopPlane} (hU : IsOpen U)
@@ -390,10 +366,6 @@ theorem energy_weight_above_one {N : ℕ} (u : Fin N → ScalarL2 2)
   exact hno _ hlarge (hseq n)
 
 set_option maxHeartbeats 900000 in
-
-
-
-
 
 theorem C1_of_energy_weight {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f v : Fin N → LoopPlane → ℝ)
@@ -450,9 +422,6 @@ theorem C1_of_energy_weight {N : ℕ} (u : Fin N → ScalarL2 2)
     (hweak j) (fun φ hc hs => heq j φ hc (hs.trans hrU)) (v j) ((hv j).mono hrU)
     (ae_restrict_of_ae_restrict_of_subset hrU (huv j)) ha
     (fun x hx => (hforce x hx).1) (fun x hx => (hforce x hx).2)
-
-
-
 
 theorem initial_energy_weight
     (E : LoopPlane → ℝ) (hE : Integrable E) (hE0 : ∀ z, 0 ≤ E z)

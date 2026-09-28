@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeDerivative
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_2_LocalTestField
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -40,9 +30,6 @@ private theorem horizontal_value_of_heq {q r : G.Point} (h : q = r)
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
-
 theorem variationField_val_eq_parameter_tangent (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     (M14VariationField V s).val =
@@ -56,9 +43,6 @@ theorem variationField_val_eq_parameter_tangent (V : M14LVariationData G p R)
 variable (V W : M14LVariationData G p R) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n)) (c : ℝ)
-
-
-
 
 theorem variationField_supportedAffineGauge_val
     (hW : ∀ s v, W.squareFamily s v = supportedAffineGaugeFamily V b lift η c (s, v))
@@ -137,9 +121,6 @@ theorem variationField_supportedAffineGauge_val
       heq, image_eq_zero_of_notMem_tsupport hsupp, map_zero, Submodule.coe_zero,
       smul_zero, add_zero]
     rfl
-
-
-
 
 theorem variationField_supportedAffineGauge_eq (Z : M14LVariationData G p R)
     (hW : ∀ s v, W.squareFamily s v = supportedAffineGaugeFamily V b lift η c (s, v))

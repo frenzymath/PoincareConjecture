@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietorisConnectingCla
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallRelativeRepresentative
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyLiftCorrection
 
-
-
 set_option autoImplicit false
 
 noncomputable section

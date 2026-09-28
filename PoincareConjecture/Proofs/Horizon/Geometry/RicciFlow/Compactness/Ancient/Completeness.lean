@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Window
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Completeness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ namespace PoincareConjecture.RicciFlow
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem metricComplete_of_ancient_uniform_curvature_bound
     {n : ℕ} (C : FlowCarrier n) {T K : ℝ} (hT : 0 < T)

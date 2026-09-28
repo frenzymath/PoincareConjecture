@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.RegularSecondCoordinate
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.CompactMarkedImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +13,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
-
-
-
 
 def HamiltonZeroSecondCoordinateRegularity {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
@@ -49,9 +38,6 @@ def HamiltonZeroSecondCoordinateRegularity {ι : Type*}
       (∀ y ∈ T.source, y ∈ frontier R ↔ psi (T y) = 0) ∧
       (∀ y : R, (y : X0) ∈ T.source → q y = ((ell (T y) + a : ℝ) : C0)) ∧
       ∀ y : R, (y : X0) ∈ T.source → (q y = theta ↔ ell (T y) = 0)
-
-
-
 
 theorem exists_hamiltonZero_second_surface_polyhedral_charts {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

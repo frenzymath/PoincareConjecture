@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCapPhysicalDensity
 import PoincareConjecture.Proofs.M47.SeedCapBirthTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_cap_birth_density (g0 : StandardInitialMetric)
     {Rtip Rmax : ℝ} (htip : 0 < Rtip) (hmax : 0 < Rmax) :

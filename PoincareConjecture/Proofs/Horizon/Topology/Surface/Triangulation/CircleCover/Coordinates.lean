@@ -1,15 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.GeneralPosition
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,16 +12,12 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 theorem chartCircle_subset_chart_source (x : M) {r : ℝ}
     (hsub : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
       (chartAt (EuclideanSpace ℝ (Fin 2)) x).target) :
     chartCircle x r ⊆ (chartAt (EuclideanSpace ℝ (Fin 2)) x).source := by
   rintro p ⟨z, hz, rfl⟩
   exact (chartAt (EuclideanSpace ℝ (Fin 2)) x).map_target (hsub (sphere_subset_closedBall hz))
-
-
 
 theorem mem_chartCircle_iff_norm_sq (x : M) {r : ℝ} (hr : 0 < r)
     (hsub : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
@@ -49,8 +34,6 @@ theorem mem_chartCircle_iff_norm_sq (x : M) {r : ℝ} (hr : 0 < r)
     refine ⟨e p, ?_, e.left_inv hp⟩
     rw [mem_sphere, dist_eq_norm]
     exact (sq_eq_sq₀ (norm_nonneg _) hr.le).mp h
-
-
 
 theorem coordinateSquaredRadius_regular_at_sphere
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r)
@@ -70,8 +53,6 @@ theorem coordinateSquaredRadius_regular_at_sphere
   rw [hradial, zero_apply] at heval
   nlinarith [sq_pos_of_pos hr]
 
-
-
 theorem chartCircle_coordinateSquaredRadius_regular (x : M) {r : ℝ} (hr : 0 < r)
     (hsub : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
       (chartAt (EuclideanSpace ℝ (Fin 2)) x).target)
@@ -83,8 +64,6 @@ theorem chartCircle_coordinateSquaredRadius_regular (x : M) {r : ℝ} (hr : 0 < 
   apply coordinateSquaredRadius_regular_at_sphere _ hr
   obtain ⟨z, hz, rfl⟩ := hp
   rwa [(chartAt (EuclideanSpace ℝ (Fin 2)) x).right_inv (hsub (sphere_subset_closedBall hz))]
-
-
 
 theorem chartCircle_pair_local_level_sets (x y : M) {rx ry : ℝ}
     (hrx : 0 < rx) (hry : 0 < ry)
@@ -119,8 +98,6 @@ theorem chartCircle_pair_local_level_sets (x y : M) {rx ry : ℝ}
     exact mem_chartCircle_iff_norm_sq x hrx hxsub hz.2
 
 variable [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem chartCircle_pair_coordinate_derivatives (x y : M) {rx ry : ℝ}
     (hrx : 0 < rx) (hry : 0 < ry)

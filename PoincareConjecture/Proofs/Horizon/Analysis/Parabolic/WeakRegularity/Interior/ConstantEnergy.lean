@@ -1,22 +1,8 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Variation.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergyCross
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set
 open scoped ContDiff Topology
@@ -60,15 +46,12 @@ theorem integral_directionalDeriv_mul_eq_neg
   rw [integral_add hleft hright] at hz
   linarith [hz]
 
-
 def spatialSecond (i j : Fin n) (v : Spacetime n → ℝ) : Spacetime n → ℝ :=
   spatialDeriv i (spatialDeriv j v)
-
 
 def constantPrincipal (A : Fin n → Fin n → ℝ) (v : Spacetime n → ℝ)
     (z : Spacetime n) : ℝ :=
   ∑ i, ∑ j, A i j * spatialSecond i j v z
-
 
 theorem spatialSecond_comm (v : Spacetime n → ℝ) (hv : ContDiff ℝ ∞ v)
     (i j : Fin n) (z : Spacetime n) :
@@ -81,8 +64,6 @@ theorem spatialSecond_comm (v : Spacetime n → ℝ) (hv : ContDiff ℝ ∞ v)
     fderiv ℝ (fun y => fderiv ℝ v y (spatialDirection i)) z
       (spatialDirection j)
   simpa [PoincareConjecture.ConnectionVariation.covDerivAlong] using h
-
-
 
 theorem hasCompactSupport_spatialSecond
     {v : Spacetime n → ℝ} (i j : Fin n) (hvc : HasCompactSupport v) :

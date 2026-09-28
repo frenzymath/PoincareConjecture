@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_reparametrized_arcs
     (q : Fin 2 → UnitCircle → UnitTwoSphere)

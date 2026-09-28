@@ -7,21 +7,12 @@ import Mathlib.Topology.Homotopy.Affine
 import Mathlib.Topology.Homotopy.HomotopyGroup
 import Mathlib.Topology.MetricSpace.HausdorffDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval ContDiff
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem exists_contDiff_approx_preserving_value
     {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -45,7 +36,6 @@ theorem exists_contDiff_approx_preserving_value
       have hmem := hsupp (show z ∈ Function.support g from hne)
       exact hmem (sub_eq_zero.mpr hz)
     simp only [hgz, zero_add]
-
 
 theorem exists_sphere_point_not_normalized_range
     {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -73,8 +63,6 @@ theorem exists_sphere_point_not_normalized_range
         rw [NormedSpace.normalize, mul_smul]
       _ = ‖w‖ • NormedSpace.normalize w := congrArg (fun a => ‖w‖ • a) hz
       _ = w := NormedSpace.norm_smul_normalize w
-
-
 
 theorem sphere_genLoop_homotopic_const_of_avoids
     {N E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -112,8 +100,6 @@ theorem sphere_genLoop_homotopic_const_of_avoids
     change e.symm (AffineMap.lineMap (e (p a)) (e x) (t : ℝ)) = p a
     rw [GenLoop.boundary p a ha, AffineMap.lineMap_same_apply]
     exact e.left_inv hxsource
-
-
 
 theorem sphere_genLoop_homotopic_const_of_dim_lt
     {N E : Type*} [Fintype N] [Nonempty N]
@@ -205,7 +191,6 @@ theorem sphere_genLoop_homotopic_const_of_dim_lt
       ⟨Classical.choice (inferInstance : Nonempty N), Or.inl rfl⟩).trans heq
   exact hpq.trans (sphere_genLoop_homotopic_const_of_avoids v hx q havoid)
 
-
 theorem sphere_homotopyGroup_subsingleton_of_dim_lt
     {N E : Type*} [Fintype N] [Nonempty N]
     [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
@@ -216,8 +201,6 @@ theorem sphere_homotopyGroup_subsingleton_of_dim_lt
   intro p q
   exact Quotient.sound ((sphere_genLoop_homotopic_const_of_dim_lt hdim p).trans
     (sphere_genLoop_homotopic_const_of_dim_lt hdim q).symm)
-
-
 
 theorem sphere_simplyConnectedSpace_of_two_lt_finrank
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

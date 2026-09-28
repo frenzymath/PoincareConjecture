@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Frontier.StripReversal
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -24,8 +15,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_complementary_frontier_homeomorph
     (phi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)

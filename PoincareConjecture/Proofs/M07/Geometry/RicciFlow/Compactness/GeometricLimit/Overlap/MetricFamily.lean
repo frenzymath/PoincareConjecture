@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Construction
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Topology Bundle PoincareConjecture
@@ -13,8 +11,6 @@ variable {n : ℕ}
 
 variable {A : Type*} (U : A → Set (EuclideanSpace ℝ (Fin n)))
     (hU : ∀ i, IsOpen (U i)) [∀ i, Nonempty (Piece U i)]
-
-
 
 theorem quotientMetric_isSmoothFamilyOn
     (O : OverlapSystem (fun i => Piece U i)) (hs : SmoothOverlap U hU O)

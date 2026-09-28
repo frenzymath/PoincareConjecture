@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Centered
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem abs_normalized_pullback_covariant_component_center_le
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}
@@ -78,7 +65,6 @@ theorem abs_normalized_pullback_covariant_component_center_le
   simpa only [T, sphere_chart_center, mul_comm] using hfinal
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem two_le_floor_inv_epsilon (N : EpsilonNeck g) :
     2 ≤ ⌊N.epsilon⁻¹⌋₊ := by

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace OpenPartialHomeomorph
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
 
 theorem isImage_interior_of_affine_nonneg (B : OpenPartialHomeomorph X E)
     {R : Set X} (ell : E →ᴬ[ℝ] ℝ) (v : E) (hv : ell.contLinear v = 1)
@@ -47,14 +37,10 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
 
-
-
 theorem PLDomain.frontier_closed_exterior (he : PLDomain e R) :
     frontier (interior R)ᶜ = frontier R := by
   rw [frontier_compl, frontier, he.closure_interior, interior_interior]
   exact he.closed.frontier_eq.symm
-
-
 
 theorem PLDomain.closed_exterior (he : PLDomain e R) :
     PLDomain e (interior R)ᶜ := by

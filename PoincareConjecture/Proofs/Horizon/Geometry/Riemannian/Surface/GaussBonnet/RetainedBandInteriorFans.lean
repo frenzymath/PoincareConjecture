@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.InteriorFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.IndependentFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -41,7 +34,6 @@ theorem band_parent_support_union (p : T.decomposition.IncidentEdgeIndex)
     (T.bands p i).faces.face_carrier_eq_coordinates a]
   rfl
 
-
 theorem vertex_contribution_eq_band_sum_of_interior
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i : Fin (T.graphs p).count) {q : S}
@@ -68,8 +60,6 @@ theorem vertex_contribution_eq_band_sum_of_interior
     rwa [T.band_parent_support_union]
   · intro a
     rfl
-
-
 
 theorem band_contribution_at_interior_canonical_vertex
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
@@ -106,8 +96,6 @@ theorem band_contribution_at_interior_canonical_vertex
   have hw := hused a ha
   rw [heq a] at hw
   exact hw
-
-
 
 theorem canonical_vertex_fan_of_band_interior
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

@@ -2,14 +2,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Calculus.Deriv.Support
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -73,7 +65,6 @@ def neckDepthConstant : ℝ := exists_half_neck_profile.choose
 
 theorem neckDepthConstant_pos : 0 < neckDepthConstant :=
   exists_half_neck_profile.choose_spec.1
-
 
 def neckSeparationThreshold : ℝ := min (1 / 4) (1 / (8 * Real.pi * neckDepthConstant))
 

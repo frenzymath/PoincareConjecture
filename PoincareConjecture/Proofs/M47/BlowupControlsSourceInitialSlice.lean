@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialReadout
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {T : ℝ} (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
   (old : SurgeryTerminalStrongNeck F T hT i)
-
-
 
 theorem source_initial_old_scalar_bounds
     (hsmall : F.parameters.delta T ≤ 1 / 200) (s : ℝ) (hs : s ∈ Ioo (-1 : ℝ) 0)
@@ -54,8 +43,6 @@ theorem source_initial_old_scalar_bounds
   have h := (lt_div_iff₀ hq).mp hlow
   change q / 4 < R
   linarith only [h]
-
-
 
 theorem source_initial_axial_slice
     (hsmall : F.parameters.delta T ≤ 1 / 200) (s : ℝ) (hs : s ∈ Ioo (-1 : ℝ) 0)

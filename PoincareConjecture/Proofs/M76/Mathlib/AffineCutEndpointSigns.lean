@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineCutOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap CoordinateHalfBoxes
@@ -16,11 +7,6 @@ open Set AffineMap CoordinateHalfBoxes
 namespace ContinuousAffineEquiv
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem original_endpoint_signs_of_forward_tail
     (f : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] E) {a b : E} (hab : a ≠ b)
@@ -114,10 +100,6 @@ end ContinuousAffineEquiv
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
 
 theorem original_endpoint_signs_of_oriented_cut
     (P : Polygon E (n + 3)) (hinj : Function.Injective P)

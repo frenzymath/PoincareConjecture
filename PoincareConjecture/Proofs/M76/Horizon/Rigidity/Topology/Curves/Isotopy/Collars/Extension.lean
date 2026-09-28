@@ -3,14 +3,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Order.Lattice
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology unitInterval
 
@@ -95,7 +87,6 @@ theorem collarExtension_zero (hzero : ∀ x, H 0 x = x) :
 theorem collarExtension_fixed (x : S) (hx : ∀ t, H t x = x) (t r : I) :
     collarExtension H hc hci t (r, x) = (r, x) := by
   rw [collarExtension_apply, hx]
-
 
 def collarHomotopyRelInner (hzero : ∀ x, H 0 x = x) :
     (ContinuousMap.id (I × S)).HomotopyRel

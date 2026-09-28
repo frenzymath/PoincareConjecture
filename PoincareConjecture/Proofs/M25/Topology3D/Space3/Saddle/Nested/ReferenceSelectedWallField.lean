@@ -10,9 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology Matrix NNReal
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
 
-
-
-
 theorem exists_reference_selected_wall_field
     (ws wm d sigma : ℝ)
     (hwslo : (1 : ℝ) / 2 < ws) (hwshi : ws < 3 / 4)

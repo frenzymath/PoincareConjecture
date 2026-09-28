@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Diameter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.AxialCoordinate
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem roundCylinderClose_scaled_pullback_bilinear_error
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)
@@ -97,8 +89,6 @@ theorem roundCylinderClose_scaled_pullback_bilinear_error
         ε * Real.sqrt (EvolvingRoundCylinderMetric 0 y v v) *
           Real.sqrt (EvolvingRoundCylinderMetric 0 y w w)) hx) hbound v w
 
-
-
 theorem cylinderCover_scaled_model_length_le_two
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)
     {ε r : ℝ} (hε : 0 ≤ ε) (hεhalf : ε < 1 / 2) (hr : 0 < r)
@@ -121,8 +111,6 @@ theorem cylinderCover_scaled_model_length_le_two
     rw [mul_pow, Real.sq_sqrt hnonneg]
     nlinarith [mul_nonneg (sq_nonneg r) hnonneg]
   nlinarith [mul_nonneg hr.le (Real.sqrt_nonneg (EvolvingRoundCylinderMetric 0 z v v))]
-
-
 
 theorem cylinderCover_pullback_scaled_axial_pairing_error
     (g : RiemannianMetric 3 M) (f : RoundCylinderSpace → M)
@@ -147,9 +135,6 @@ theorem cylinderCover_pullback_scaled_axial_pairing_error
   rw [heq] at hscaled
   exact hscaled.trans (by
     nlinarith [cylinderCover_scaled_model_length_le_two g f hε hεhalf hr hclose hz v hv])
-
-
-
 
 theorem cylinderCover_tangentNorm_sub_scaled_axial_le_of_velocity
     (g : RiemannianMetric 3 M) {f : RoundCylinderSpace → M} {ε r : ℝ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Rigidity.PeriodProductCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem map_mem_cutCarrier_iff_ends (P : OriginalDiskProduct e R j)
     {z : E} (hz : z ∈ D ×ˢ Icc (-(1 / 2 : ℝ)) (1 / 2)) :
@@ -46,8 +36,6 @@ theorem map_mem_cutCarrier_iff_ends (P : OriginalDiskProduct e R j)
     have htime : w.2 = z.2 := congrArg Prod.snd (P.injective hwI hzI heq)
     rcases ht with ht | ht <;> linarith [hw.2.1, hw.2.2]
 
-
-
 theorem lowerCoordinates_mem_cut_iff (P : OriginalDiskProduct e R j)
     {a : ℝ} (ha : 0 < a) {z : E} (hz : z ∈ D ×ˢ Icc 0 (a / 2)) :
     P.map (periodLowerCoordinates a z) ∈ P.cutCarrier ↔ z.2 = a / 2 := by
@@ -65,8 +53,6 @@ theorem lowerCoordinates_mem_cut_iff (P : OriginalDiskProduct e R j)
   · intro ht
     right
     rw [ht, div_right_comm, div_self ha.ne']
-
-
 
 theorem upperCoordinates_mem_cut_iff (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) {z : E} (hz : z ∈ D ×ˢ Icc (p - a / 2) p) :

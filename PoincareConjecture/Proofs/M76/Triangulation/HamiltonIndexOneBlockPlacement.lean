@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMiddleBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -106,9 +97,6 @@ private theorem protected_ball_complement_geometry {B T : Set W}
       exact closure_mono
         (show Bᶜ ∩ interior squareBlock ⊆ interior squareBlock \ B from
           fun _ hy => ⟨hy.2, hy.1⟩) h
-
-
-
 
 theorem exists_supported_block_placement_of_marked_shell {B T : Set W}
     (hB : IsFinitePLBallPair W B (T ∪ squareAttachingDisks))

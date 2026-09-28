@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPolarColumns
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakLocalEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.PhaseEnergy
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,9 +13,6 @@ open scoped Topology Manifold
 namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem m64UpperBoundaryDisk_eq_annulus {x r : ℝ}
     (hx : r < x) (hP : x + r < curvePeriod) (hr : r < 1) :
@@ -43,32 +31,20 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 
 namespace M64ObservedWeakAnnulus
 
-
-
-
 def boundaryDiskEnergy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (x r : ℝ) : ℝ :=
   ∫ p in closedBall (annulusPoint x 0) r ∩ S,
     (B (A.map p) (A.column 0 p) (A.column 0 p) +
       B (A.map p) (A.column 1 p) (A.column 1 p)) / 2
 
-
-
-
 def boundaryAngularEnergy (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (x r : ℝ) : ℝ :=
   ∫ theta in Icc (0 : ℝ) Real.pi,
     ‖M64.boundaryAngularColumn x r (fun i p => A.column i p) theta‖ ^ 2
-
-
-
 
 theorem boundaryDiskEnergy_nonneg (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hpos : ∀ q v, 0 ≤ B q v v) (x r : ℝ) :
     0 ≤ A.boundaryDiskEnergy B x r :=
   integral_nonneg (fun p => div_nonneg (add_nonneg (hpos _ _) (hpos _ _)) (by norm_num))
-
-
-
 
 theorem boundaryDiskEnergy_mono (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B) (hei : IsEmbedding e)
@@ -79,9 +55,6 @@ theorem boundaryDiskEnergy_mono (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (ae_of_all _ (fun p => div_nonneg (add_nonneg (hpos _ _) (hpos _ _)) (by norm_num)))
     (ae_of_all _ (inter_subset_inter_left _ (closedBall_subset_closedBall hrR)))
 
-
-
-
 theorem boundaryDiskEnergy_le_energy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B) (hei : IsEmbedding e)
     {bound : ℝ} (hb : ∀ q, ‖B q‖ ≤ bound) (hpos : ∀ q v, 0 ≤ B q v v) (x r : ℝ) :
@@ -89,9 +62,6 @@ theorem boundaryDiskEnergy_le_energy (A : M64ObservedWeakAnnulus (n := n) e c0 c
   setIntegral_mono_set (A.energy_integrable B hB hei hb)
     (ae_of_all _ (fun p => div_nonneg (add_nonneg (hpos _ _) (hpos _ _)) (by norm_num)))
     (ae_of_all _ inter_subset_right)
-
-
-
 
 theorem column_boundaryDisk_energy_le (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B) (hei : IsEmbedding e)

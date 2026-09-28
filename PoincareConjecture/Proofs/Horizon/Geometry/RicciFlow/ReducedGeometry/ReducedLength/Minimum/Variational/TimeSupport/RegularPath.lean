@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Extension.Manifold
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.TraceIntegral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variational
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finite_chart_primitive_of_smooth {a b : ℝ} (hab : a ≤ b)
     (α γ : ℝ → M) (hγ : Continuous γ) {U : Set ℝ} (hU : IsOpen U)
@@ -101,8 +92,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
 theorem stationary_time_comparison_of_sqrtRegularPath (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) (q : BackwardTimePath K.flow 0 0 τ)
     (S : SqrtRegularPath q) (hq0 : q.curve 0 = p)
@@ -175,7 +164,6 @@ theorem stationary_time_comparison_of_sqrtRegularPath (K : AncientKappaSolution 
   have hinf := mul_le_mul_of_nonneg_left
     (K.spatialReducedLengthInfimum_le p (S.curve (Real.sqrt τ)) u) hupos.le
   simpa only [stationaryTimeSupport, mul_comm] using hinf.trans hext
-
 
 theorem right_time_upper_support_of_sqrtRegularPath (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) (q : BackwardTimePath K.flow 0 0 τ)

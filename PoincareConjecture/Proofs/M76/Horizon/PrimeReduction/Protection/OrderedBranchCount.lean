@@ -4,14 +4,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Data.Fintype.Card
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Topology

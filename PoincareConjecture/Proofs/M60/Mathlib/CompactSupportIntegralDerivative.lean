@@ -1,25 +1,12 @@
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
-
-
 
 theorem hasDerivAt_integral_of_common_compact_support
     {X : Type*} [TopologicalSpace X] [T2Space X] [MeasurableSpace X] [BorelSpace X]

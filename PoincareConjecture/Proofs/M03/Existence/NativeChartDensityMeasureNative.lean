@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.NativeChartDensitySmoothNative
 import PoincareConjecture.Proofs.M03.Existence.ChartPushforwardLpNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +19,6 @@ open ChartPushforwardLpNative
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem weightedChartMeasure_apply_chart_image (e : OpenPartialHomeomorph M E) (φ : C(M, ℝ))
     {S : Set M} (hS : MeasurableSet S) :
@@ -77,7 +68,6 @@ theorem chartWeightDensity_measure_apply (p q : M) {φ : M → ℝ}
     · rintro ⟨hzB, hzU⟩
       exact ⟨hzU, hzB, hzU.1⟩
   rw [hset]
-
 
 theorem map_restrict_weightedChartMeasure_eq_density (p q : M) (φ : C(M, ℝ))
     (hφ : ∀ x, 0 ≤ φ x) :
@@ -131,7 +121,6 @@ namespace FiniteChartData
 
 variable (d : FiniteChartData (n := n) (M := M))
 
-
 theorem map_measurableChart_eq_density (p : M) :
     (d.measure.restrict (chartAt E p).source).map (measurableChart (chartAt E p)) =
       (volume.restrict (chartAt E p).target).withDensity
@@ -166,7 +155,6 @@ theorem map_measurableChart_eq_density (p : M) :
   intro i _
   exact ((chartWeightDensity_contDiffOn p i.val (d.weight_smooth i)
     (d.weight_support_subset i)).continuousOn.aemeasurable e.open_target.measurableSet).ennreal_ofReal.restrict
-
 
 theorem map_chart_eq_density (p : M) :
     (d.measure.restrict (chartAt E p).source).map (chartAt E p) =

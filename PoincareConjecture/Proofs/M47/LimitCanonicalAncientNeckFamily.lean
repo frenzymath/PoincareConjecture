@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalCompressedFamily
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckMetricTransport
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ private local instance : T2Space L.carrier.carrier := L.carrier.t2Space
 private local instance : T3Space L.carrier.carrier := L.carrier.t3Space
 private local instance : SecondCountableTopology L.carrier.carrier := L.carrier.secondCountable
 private local instance : ConnectedSpace L.carrier.carrier := L.connectedSpace
-
-
 
 theorem limitCanonical_exists_ancient_neck_family
     {kappa epsilon : ℝ} (A : M30AncientKappaIdentification L kappa)

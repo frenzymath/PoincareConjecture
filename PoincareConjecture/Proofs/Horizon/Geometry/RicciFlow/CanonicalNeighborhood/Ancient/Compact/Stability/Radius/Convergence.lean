@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Topology.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_scalarCoreRadius_le_add_on_compact
     (hconv : M23TerminalMetricConvergence G e)
@@ -135,8 +124,6 @@ theorem eventually_scalarCoreRadius_le_add_on_compact
   exact (scalarCoreRadius_le_max_distance_scale gk Dk
     ((S.term (G.subsequence k)).flow.complete 0 le_rfl) (hsource k) (E p) (E x)).trans
       (max_le hdistance.le hscalarScale.le)
-
-
 
 theorem eventually_scalarCoreRadius_le_mul_on_compact
     (hconv : M23TerminalMetricConvergence G e)

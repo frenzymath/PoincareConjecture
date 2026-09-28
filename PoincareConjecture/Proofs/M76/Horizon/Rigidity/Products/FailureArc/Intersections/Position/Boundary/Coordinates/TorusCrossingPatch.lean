@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusSquareChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

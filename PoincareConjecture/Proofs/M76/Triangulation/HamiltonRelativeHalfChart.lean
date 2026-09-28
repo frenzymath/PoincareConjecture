@@ -4,15 +4,6 @@ import Mathlib.Topology.Constructions.SumProd
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +16,6 @@ variable {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]
 local notation "P" => Set.prod (Ico (0 : ℝ) r) O
 local notation "N" => Set.prod (Ioc (-r) (0 : ℝ)) O
 local notation "T" => Set.prod (Ioo (-r) r) O
-
-
-
-
 
 theorem exists_cap_chart_of_relative_half_embeddings
     (hK : IsClosed K) (hD : IsClosed D) (hcover : K ∪ D = univ)

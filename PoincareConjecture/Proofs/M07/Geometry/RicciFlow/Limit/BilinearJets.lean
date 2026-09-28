@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.Smooth
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPostcompose
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 open Filter Set
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_of_bilinear_spacetime_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

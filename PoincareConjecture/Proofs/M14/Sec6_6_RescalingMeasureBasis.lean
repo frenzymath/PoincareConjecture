@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_MeasureTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
-
 
 noncomputable def rescalingMeasureDataWithBasis (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))
@@ -91,8 +79,6 @@ noncomputable def rescalingMeasureDataWithBasis (H : M14StableSet G T τ x E)
   have htargetIntegral := M10.integralOn_calibrated_eq_pullback
     (G.slices (T - τ)).metricOnPoints e he hei hρ hφae
   exact ⟨hsource.trans htarget.symm, hsourceIntegral.trans htargetIntegral.symm⟩
-
-
 
 theorem rescalingMeasureDataWithBasis_sourceBasis (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))

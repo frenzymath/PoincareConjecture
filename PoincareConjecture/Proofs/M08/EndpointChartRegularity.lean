@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 import PoincareConjecture.Proofs.M08.EndpointMomentum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

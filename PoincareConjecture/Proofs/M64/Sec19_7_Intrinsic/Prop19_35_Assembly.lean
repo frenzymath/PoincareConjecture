@@ -1,20 +1,5 @@
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,12 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_length_loss_budget
     {L L₂ c f a : ℝ}
@@ -39,8 +18,6 @@ theorem m64Intrinsic_length_loss_budget
     (3 / 4 : ℝ) * L ≤ L₂ := by
   linarith
 
-
-
 theorem m64Intrinsic_total_loss_budget
     {L L₂ e : ℝ}
     (hL : 0 ≤ L)
@@ -48,16 +25,6 @@ theorem m64Intrinsic_total_loss_budget
     (hremaining : L - e ≤ L₂) :
     (3 / 4 : ℝ) * L ≤ L₂ := by
   linarith
-
-
-
-
-
-
-
-
-
-
 
 structure M64IntrinsicLengthLossWitness (N : IntrinsicAnnulus)
     (delta r K mu : ℝ) where
@@ -73,10 +40,6 @@ structure M64IntrinsicLengthLossWitness (N : IntrinsicAnnulus)
   remaining_length :
     first_length - curvature_loss - focusing_loss - area_loss ≤
       intrinsicBoundaryLength N.metric 2 0 rampPeriod
-
-
-
-
 
 theorem m64Intrinsic_length_loss_witness_of_explicit_losses
     (N : IntrinsicAnnulus) (delta r K mu : ℝ)
@@ -103,9 +66,6 @@ theorem m64Intrinsic_length_loss_witness_of_explicit_losses
     remaining_length := hremaining
   }⟩
 
-
-
-
 theorem m64Intrinsic_comparison_of_explicit_losses
     (N : IntrinsicAnnulus) {r : ℝ} (hr : 0 < r)
     (hfirst : r < intrinsicBoundaryLength N.metric 1 0 rampPeriod)
@@ -125,10 +85,6 @@ theorem m64Intrinsic_comparison_of_explicit_losses
     linarith
   exact m64Intrinsic_length_loss_budget hL hcurvature hfocusing harea hremaining
 
-
-
-
-
 def M64IntrinsicLengthLossEstimates : Prop :=
   ∀ delta r K : ℝ, 0 < delta → delta < 1 / 100 → 0 < r →
     ∃ mu : ℝ, 0 < mu ∧
@@ -138,9 +94,6 @@ def M64IntrinsicLengthLossEstimates : Prop :=
         N.SmallBoundaryTurning delta r →
         intrinsicAnnulusArea N.metric < mu →
           Nonempty (M64IntrinsicLengthLossWitness N delta r K mu)
-
-
-
 
 theorem m64IntrinsicAnnulusComparison_of_length_loss_estimates
     (h : M64IntrinsicLengthLossEstimates) :

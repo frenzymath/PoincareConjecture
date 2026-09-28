@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConstrainedMinimizer
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,9 +8,6 @@ open Set
 open scoped Topology ENNReal NNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_variation_rescale
     {X : Type*} [PseudoEMetricSpace X] (γ : ℝ → X) {L : ℝ} (hL : 0 ≤ L) :
@@ -34,10 +19,6 @@ theorem m64Intrinsic_variation_rescale
       (by norm_num : (0 : ℝ) ≤ 1) hmono
   change eVariationOn (γ ∘ fun t => L * t) (Icc 0 1) = _
   rw [eVariationOn.comp_eq_of_monotoneOn γ _ hmono, himage]
-
-
-
-
 
 theorem m64Intrinsic_unit_speed_constrained_minimizer_injOn
     {X : Type*} [MetricSpace X] {K : Set X} {γ : ℝ → X} {L : ℝ}
@@ -118,10 +99,6 @@ theorem m64Intrinsic_unit_speed_constrained_minimizer_injOn
   have hreal := (ENNReal.ofReal_le_ofReal_iff
     (add_nonneg ha.1 (sub_nonneg.mpr hb.2))).mp hmin'
   linarith
-
-
-
-
 
 theorem m64Intrinsic_exists_embedded_constrained_minimizer
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)

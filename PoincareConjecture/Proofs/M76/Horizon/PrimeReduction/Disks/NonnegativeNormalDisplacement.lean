@@ -4,22 +4,10 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_nonnegative_normal_displacement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -83,9 +71,6 @@ theorem exists_nonnegative_normal_displacement
     ring
   · intro t x hx
     rw [hformula', hρzero x (fun h => hx h.1), mul_zero, zero_smul, add_zero]
-
-
-
 
 theorem exists_separated_normal_cap_pair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

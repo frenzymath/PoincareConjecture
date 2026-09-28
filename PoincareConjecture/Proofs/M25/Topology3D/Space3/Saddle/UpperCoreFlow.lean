@@ -6,26 +6,12 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Order.Filter.Finite
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function Metric
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_upper_core_flow
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

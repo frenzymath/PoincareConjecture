@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.FrechetKolmogorov
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -20,7 +11,6 @@ namespace Poincare.Analysis.Sobolev
 variable {d : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem uniform_translation_of_eLpNorm_fderiv_le
     {p : ℝ≥0∞} (hp_one : 1 ≤ p) (hp_top : p ≠ ∞)
@@ -53,8 +43,6 @@ theorem uniform_translation_of_eLpNorm_fderiv_le
     _ ≤ ENNReal.ofReal ε :=
       ENNReal.ofReal_le_ofReal ((lt_div_iff₀ hC).mp hh).le
 
-
-
 theorem rellich_smooth_common_compact_support
     {p : ℝ≥0∞} (hp_one : 1 ≤ p) (hp_top : p ≠ ∞)
     {K : Set E} (hK : IsCompact K)
@@ -76,7 +64,6 @@ theorem rellich_smooth_common_compact_support
     (fun n x hx => image_eq_zero_of_notMem_tsupport fun h => hx (hu_support n h))
     hu_bound
   exact uniform_translation_of_eLpNorm_fderiv_le hp_one hp_top hu_smooth hu_deriv
-
 
 theorem rellich_smooth_common_compact_support_integral_sq
     {K : Set E} (hK : IsCompact K)
@@ -101,7 +88,6 @@ theorem rellich_smooth_common_compact_support_integral_sq
     hK hu_smooth hu_support
     (fun n => eLpNorm_two_le_sqrt_of_integral_sq_le (hu_mem n) (hu_bound n))
     (fun n => eLpNorm_two_le_sqrt_of_integral_sq_le (hd_mem n) (hu_deriv n))
-
 
 theorem rellich_smooth_common_compact_support_cauchySeq
     {K : Set E} (hK : IsCompact K)

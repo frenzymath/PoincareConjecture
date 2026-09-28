@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CalibratedRay
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_unit_tangent_mvfderiv_eq_neg_one_of_calibrated_point
     (g : RiemannianMetric n M) (hc : MetricComplete g) {f : M → ℝ}
@@ -73,8 +60,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem gradient_norm_eq_one_of_calibrated_point
     (D : LeviCivitaData g) (hc : MetricComplete g) {f : M → ℝ}
     (hLip : ∀ x y, |f x - f y| ≤ (g.edist x y).toReal)
@@ -90,7 +75,6 @@ theorem gradient_norm_eq_one_of_calibrated_point
       D.abs_mvfderiv_le_gradient_norm f x v
 
 omit [T3Space M] [PreconnectedSpace M] in
-
 
 theorem eq_neg_gradient_of_unit_tangent_mvfderiv_eq_neg_one
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -116,8 +100,6 @@ theorem eq_neg_gradient_of_unit_tangent_mvfderiv_eq_neg_one
   exact eq_neg_of_add_eq_zero_left (norm_eq_zero.mp (sq_eq_zero_iff.mp hzero))
 
 omit [T3Space M] [PreconnectedSpace M] in
-
-
 
 theorem tangent_eq_neg_gradient_of_calibrated_segment
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -151,9 +133,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [MetricSpace M] [T3Space M]
   [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_ray_busemann_calibrated_segment
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -189,9 +168,6 @@ theorem exists_ray_busemann_calibrated_segment
     abs_of_nonpos (sub_nonpos.mpr ht.2), neg_sub, hγL, hcal L hL.le] at h1
   linarith [(abs_le.mp h0).2, (abs_le.mp h1).2]
 
-
-
-
 theorem exists_ray_busemann_calibrated_segment_initial_tangent
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)
@@ -215,9 +191,6 @@ theorem exists_ray_busemann_calibrated_segment_initial_tangent
   apply D.tangent_eq_neg_gradient_of_calibrated_segment hLip hL hγ hspeed
     (by simpa only [hγ0] using hcal) ⟨le_rfl, hL.le⟩
   simpa only [hγ0] using hf
-
-
-
 
 theorem exists_ray_busemann_calibrated_segment_outside_compact
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -253,8 +226,6 @@ theorem exists_ray_busemann_calibrated_segment_outside_compact
   rw [Metric.mem_closedBall, hdistL] at hbound
   exact (not_lt_of_ge hbound) hRL
 
-
-
 theorem exists_ray_busemann_unit_calibrated_point
     (g : RiemannianMetric n M) (hc : MetricComplete g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)
@@ -267,8 +238,6 @@ theorem exists_ray_busemann_unit_calibrated_point
   rw [← hdist, ← hcoray0]
   simpa using hcoray (s := 0) le_rfl (t := 1) zero_le_one
 
-
-
 theorem ray_busemann_gradient_norm_eq_one
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)
@@ -280,8 +249,6 @@ theorem ray_busemann_gradient_norm_eq_one
   intro x y
   simpa only [Real.dist_eq, NNReal.coe_one, one_mul, hdist] using
     (lipschitz_busemann hray).dist_le_mul x y
-
-
 
 theorem ae_ray_busemann_gradient_norm_eq_one
     [MeasurableSpace M] [BorelSpace M]

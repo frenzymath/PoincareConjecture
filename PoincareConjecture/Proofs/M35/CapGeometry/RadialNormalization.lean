@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
 
 theorem axisWarpingRadius_scale (g : RiemannianMetric 3 StandardCapSpace)
     (Q : ℝ) (hQ : 0 < Q) (r : ℝ) :
@@ -27,16 +17,12 @@ theorem axisWarpingRadius_scale (g : RiemannianMetric 3 StandardCapSpace)
   rw [M13.scaleSmoothMetric_inner, Real.sqrt_mul hQ.le]
   ring
 
-
-
 theorem axisRadialSpeed_scale (g : RiemannianMetric 3 StandardCapSpace)
     (Q : ℝ) (hQ : 0 < Q) (r : ℝ) :
     axisRadialSpeed (M13.scaleSmoothMetric g Q hQ) r =
       Real.sqrt Q * axisRadialSpeed g r := by
   unfold axisRadialSpeed axisRadialCoefficient
   rw [M13.scaleSmoothMetric_inner, Real.sqrt_mul hQ.le]
-
-
 
 theorem axisWarpingSlope_scale (g : RiemannianMetric 3 StandardCapSpace)
     (Q : ℝ) (hQ : 0 < Q) {r : ℝ} (hr : 0 < r) :
@@ -52,8 +38,6 @@ theorem axisWarpingSlope_scale (g : RiemannianMetric 3 StandardCapSpace)
     mul_ne_zero (Real.sqrt_pos.mpr hQ).ne' (axisRadialSpeed_pos g r).ne'
   apply mul_left_cancel₀ hfactor
   simpa only [mul_assoc] using h
-
-
 
 theorem axisWarpingSecond_scale (g : RiemannianMetric 3 StandardCapSpace)
     (Q : ℝ) (hQ : 0 < Q) {r : ℝ} (hr : 0 < r) :
@@ -71,8 +55,6 @@ theorem axisWarpingSecond_scale (g : RiemannianMetric 3 StandardCapSpace)
   have hspeed := (axisRadialSpeed_pos g r).ne'
   apply mul_left_cancel₀ hspeed
   nlinarith only [h]
-
-
 
 theorem radialMixedSectional_scale (g : RiemannianMetric 3 StandardCapSpace)
     (Q : ℝ) (hQ : 0 < Q) {r : ℝ} (hr : 0 < r) :

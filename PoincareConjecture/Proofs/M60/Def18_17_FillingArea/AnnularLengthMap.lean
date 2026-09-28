@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularAngles
 import PoincareConjecture.Proofs.M60.Mathlib.LengthParameterHomotopy
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,13 +9,9 @@ open scoped Topology NNReal
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m60AnnularLengthMap {E : Type*} (beta : ℝ → E) (a b : ℝ → ℝ)
     (z : LoopPlane) : E :=
   beta (M60.lengthParameterInterpolation a b (2 * ‖z‖ - 1, m60PlaneAngle z))
-
-
 
 theorem m60AnnularLengthMap_eq_polar {E : Type*} {beta : ℝ → E} {a b : ℝ → ℝ}
     (hp : ∀ u ∈ Icc (0 : ℝ) 1, Function.Periodic
@@ -40,9 +27,6 @@ theorem m60AnnularLengthMap_eq_polar {E : Type*} {beta : ℝ → E} {a b : ℝ �
     simpa only [smul_smul, inv_mul_cancel₀ hn, one_smul] using h
   exact m60Periodic_eq_of_angularPoint_eq
     (hp (2 * ‖z‖ - 1) ⟨by linarith [hz.1], by linarith [hz.2]⟩) heq
-
-
-
 
 theorem m60AnnularLengthMap_traces {E : Type*} {beta : ℝ → E} {a b : ℝ → ℝ}
     (hp : ∀ u ∈ Icc (0 : ℝ) 1, Function.Periodic
@@ -62,10 +46,6 @@ theorem m60AnnularLengthMap_traces {E : Type*} {beta : ℝ → E} {a b : ℝ →
       (by rw [Proofs.M58.norm_angularPoint, one_smul])
     norm_num [Proofs.M58.norm_angularPoint, M60.lengthParameterInterpolation] at h
     exact h
-
-
-
-
 
 theorem m60AnnularLengthMap_local_scalar {E : Type*} {beta : ℝ → E} {a b : ℝ → ℝ}
     {A B : ℝ≥0} (ha : LipschitzWith A a) (hb : LipschitzWith B b)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.Calibration
 import Mathlib.Analysis.InnerProductSpace.NormDet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

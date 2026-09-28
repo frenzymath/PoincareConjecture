@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.WeightedAreaEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -111,10 +97,6 @@ private theorem m64MixedModulusEnergy_contDiffAt
   simp only [m64ModulusEnergyDensity, m60AreaGram,
     m64MovingAnnulus_spatial_differential hmd, u]
 
-
-
-
-
 theorem m64ModulusAnnulusEnergy_hasDerivAt_of_local_moving_metric
     (F : RicciFlow n M (Icc a b)) (r : ℝ) {t : ℝ} (ht : t ∈ Ioo a b)
     {v : ℝ × LoopPlane → M} {epsilon : ℝ} (hepsilon : 0 < epsilon)
@@ -170,12 +152,6 @@ theorem m64ModulusAnnulusEnergy_hasDerivAt_of_local_moving_metric
     (F := fun s p => E (s, p)) (F' := fun s p => fderiv ℝ E (s, p) (1, 0))
     hdelta hF hF' hdiff
   simpa only [E] using hresult
-
-
-
-
-
-
 
 theorem m64AnnulusArea_forward_majorant_of_modulus_conformal_moving_metric
     (F : RicciFlow n M (Icc a b)) (r : ℝ) {t : ℝ} (ht : t ∈ Ioo a b)

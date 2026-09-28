@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightJoinNeighborhood
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuousGraphRelativeCover
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,10 +8,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_straight_join_relative_cover
     {alpha beta : ℝ → AnnulusCoordinates}

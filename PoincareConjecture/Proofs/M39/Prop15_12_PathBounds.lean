@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 import PoincareConjecture.Proofs.M39.Mathlib.LengthSpace_LocalToGlobal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,9 +14,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y]
-
-
-
 
 theorem intrinsicEDist_le_pathELength
     (g : RiemannianMetric 3 X) {U : Set X} {γ : ℝ → X}
@@ -57,9 +45,6 @@ theorem intrinsicEDist_le_pathELength
   · simp [r, ContinuousAffineMap.coe_lineMap_eq]
   · simp [r, ContinuousAffineMap.coe_lineMap_eq]
 
-
-
-
 theorem pathELength_comp_le_mul
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
     {f : X → Y} {U : Set X} {C : ℝ} (hC : 0 < C)
@@ -76,9 +61,6 @@ theorem pathELength_comp_le_mul
     (Set.mapsTo_iff_image_subset.mp hU)
   rwa [m01RescaledMetric_pathELength, Real.sqrt_sq hC.le] at hb
 
-
-
-
 theorem edist_comp_le_mul_pathELength
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
     {f : X → Y} {U : Set X} {C : ℝ} (hC : 0 < C)
@@ -94,9 +76,6 @@ theorem edist_comp_le_mul_pathELength
     (m01RescaledMetric g (C ^ 2) (sq_pos_of_pos hC)) h hf hmetric hab hγ
     (Set.mapsTo_iff_image_subset.mp hU)
   rwa [m01RescaledMetric_pathELength, Real.sqrt_sq hC.le] at hb
-
-
-
 
 theorem edist_comp_le_mul_pathELength_of_intrinsic_bound
     {Z : Type w} [TopologicalSpace Z]
@@ -123,9 +102,6 @@ theorem edist_comp_le_mul_pathELength_of_intrinsic_bound
     ((intrinsicEDist_le_pathELength h hab hcomp (hfV.comp hU)).trans
       (pathELength_comp_le_mul g h hC hf hmetric hγ hU))
 
-
-
-
 theorem metric_edist_le_mul_of_open_cover [RegularSpace Y]
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
     {ι : Type*} (U : ι → Set X) (hU : ∀ i, IsOpen (U i))
@@ -146,9 +122,6 @@ theorem metric_edist_le_mul_of_open_cover [RegularSpace Y]
   let : PseudoEMetricSpace Y := PseudoEMetricSpace.ofRiemannianMetric (𝓡 3) Y
   exact Manifold.edist_le_mul_riemannianEDist_of_open_cover U hU hcover f
     (ENNReal.ofReal_ne_zero_iff.mpr hC) ENNReal.ofReal_ne_top hlocal x y
-
-
-
 
 theorem metric_edist_le_mul_of_pullback [RegularSpace Y]
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)

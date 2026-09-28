@@ -4,21 +4,11 @@ import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Data.Finset.Card
 import Mathlib.Data.Int.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
-
 
 structure MarkedTensorContraction (k : Nat) where
   order : Nat
@@ -27,11 +17,9 @@ structure MarkedTensorContraction (k : Nat) where
 
 namespace MarkedTensorContraction
 
-
 def weight {k : Nat} (A : MarkedTensorContraction k) : Nat :=
   A.order + Finset.sum
     ((Finset.univ : Finset (Fin (k + A.order))).erase A.test) A.jet
-
 
 def tensorStep {k : Nat} (A : MarkedTensorContraction k) :
     MarkedTensorContraction k :=
@@ -39,13 +27,11 @@ def tensorStep {k : Nat} (A : MarkedTensorContraction k) :
     test := A.test.succ
     jet := Fin.cons 0 A.jet }
 
-
 def slotStep {k : Nat} (A : MarkedTensorContraction k)
     (i : Fin (k + A.order)) : MarkedTensorContraction k :=
   { order := A.order
     test := A.test
     jet := Function.update A.jet i (A.jet i + 1) }
-
 
 noncomputable def derivativeBranches {k : Nat}
     (A : MarkedTensorContraction k) : List (MarkedTensorContraction k) :=
@@ -55,18 +41,14 @@ noncomputable def derivativeBranches {k : Nat}
 
 end MarkedTensorContraction
 
-
 noncomputable def markedTensorExpressionDerivative {k : Nat}
     (P : List (Int × MarkedTensorContraction k)) :
     List (Int × MarkedTensorContraction k) :=
   P.flatMap (fun q => q.2.derivativeBranches.map (fun A => (q.1, A)))
 
-
 def markedTensorCoefficientMass {k : Nat}
     (P : List (Int × MarkedTensorContraction k)) : Nat :=
   (P.map (fun q => q.1.natAbs)).sum
-
-
 
 theorem MarkedTensorContraction.derivativeBranches_spec
     {k : Nat} (A : MarkedTensorContraction k) :
@@ -126,8 +108,6 @@ theorem MarkedTensorContraction.derivativeBranches_spec
     · exact ⟨htensor, Nat.le_succ _, le_rfl⟩
     · obtain ⟨i, hi, rfl⟩ := List.mem_map.mp hB
       exact ⟨hslot i (Finset.mem_toList.mp hi), le_rfl, Nat.le_succ _⟩
-
-
 
 theorem markedTensorExpressionDerivative_spec
     {k : Nat} (P : List (Int × MarkedTensorContraction k))

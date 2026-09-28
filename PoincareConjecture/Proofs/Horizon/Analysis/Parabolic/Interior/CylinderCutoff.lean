@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Cutoffs
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactSlices
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false

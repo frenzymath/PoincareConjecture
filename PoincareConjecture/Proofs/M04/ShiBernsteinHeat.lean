@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.ShiBernsteinEnergy
 import PoincareConjecture.Proofs.M04.ShiHeatBridgeGeneral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -367,4 +360,3 @@ theorem shi_bernstein_heat_inequality
     (hW (m + 2)) hβ hγ hineq
 
 end PoincareConjecture.M04
-

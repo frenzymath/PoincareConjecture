@@ -4,7 +4,6 @@ set_option autoImplicit false
 
 namespace PoincareConjecture
 
-
 theorem le_of_factor_sq_mul_forall_eta {v w : ℝ} (hw : 0 ≤ w)
     (h : ∀ eta : ℝ, 0 < eta → v ≤ (1 + eta) ^ 2 * w) :
     v ≤ w := by

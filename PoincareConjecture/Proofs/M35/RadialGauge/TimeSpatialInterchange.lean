@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -85,8 +75,6 @@ private theorem time_fderiv_interchange_on_closed_interval
   apply (hi.const_add (fderiv ℝ (u a) x)).congr_of_eventuallyEq
   filter_upwards [Icc_mem_nhds ht.1 ht.2] with s hs'
   exact hdeq s hs'
-
-
 
 theorem time_fderiv_interchange
     {u H : ℝ → E → F} {a b t C : ℝ} (ht : t ∈ Ioo a b)

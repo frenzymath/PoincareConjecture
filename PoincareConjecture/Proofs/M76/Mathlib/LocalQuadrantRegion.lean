@@ -3,22 +3,10 @@ import Mathlib.Topology.MetricSpace.Pseudo.Constructions
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem exists_positive_square_subset_region {A U V : Set (ℝ × ℝ)}
     (hU : IsOpen U) (hV : IsOpen V) (hdis : Disjoint U V) (hcover : Aᶜ = U ∪ V)

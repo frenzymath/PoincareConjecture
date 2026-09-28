@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homo
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralBallSupport
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

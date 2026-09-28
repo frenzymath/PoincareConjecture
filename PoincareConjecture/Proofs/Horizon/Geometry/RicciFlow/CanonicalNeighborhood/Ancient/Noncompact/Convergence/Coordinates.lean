@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Embedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -108,7 +97,6 @@ theorem terminalSpatialInverse_contMDiffAt (hU : IsOpen U)
   exact (hs (f x) (mem_image_of_mem f hx)).snd.contMDiffAt
     ((e.terminalSpatialMap_isOpen_image hU ht).mem_nhds (mem_image_of_mem f hx))
 
-
 noncomputable def terminalSpatialHomeomorph (hU : IsOpen U)
     {t : ℝ} (ht : t ≤ 0) :
     OpenPartialHomeomorph target.carrier.carrier source.carrier.carrier := by
@@ -143,7 +131,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   (e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j))
 
-
 noncomputable def terminalNeckEmbedding
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (ε : ℝ) (k : ℕ) :
     OpenPartialHomeomorph RoundCylinderSpace (S.term (G.subsequence k)).carrier.carrier :=
@@ -170,7 +157,6 @@ theorem closedSmallerNeckCylinder_subset
   intro z hz
   exact ⟨hz.1, (neg_lt_neg hinv).trans_le hz.2.1, hz.2.2.trans_lt hinv⟩
 
-
 theorem eventually_terminalNeckCylinder_subset_exhaustion
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) {ε : ℝ} (hε : N.epsilon < ε) :
     ∀ᶠ k in atTop, N.coordinate_map '' (univ ×ˢ Icc (-ε⁻¹) ε⁻¹) ⊆ G.exhaustion k := by
@@ -180,8 +166,6 @@ theorem eventually_terminalNeckCylinder_subset_exhaustion
   obtain ⟨j, hj⟩ := G.exists_exhaustion_superset
     (hcompact.image_of_continuousOn hsmooth.continuousOn)
   exact (eventually_ge_atTop j).mono fun k hk => hj.trans (G.exhaustion_monotone hk)
-
-
 
 theorem eventually_terminalNeckEmbedding
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) {ε : ℝ} (hε : N.epsilon < ε) :
@@ -234,7 +218,6 @@ theorem eventually_terminalNeckEmbedding
     have hpos := inv_pos.mpr (N.epsilon_pos.trans hε)
     exact ⟨hz.1, by simpa only [mem_singleton_iff.mp hz.2] using
       (show (0 : ℝ) ∈ Ioo (-ε⁻¹) ε⁻¹ from ⟨neg_neg_of_pos hpos, hpos⟩)⟩
-
 
 theorem terminalNeckEmbedding_center
     (hbase : ∀ k, (e k).toFun (0, G.limit.base) = (0, (S.term (G.subsequence k)).base))

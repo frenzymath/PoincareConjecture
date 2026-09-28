@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapBandRadialRays
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +31,6 @@ theorem sector_ne_of_region_ne (hR : R₀ ≠ R₁) : E₀.sector ≠ E₁.secto
   intro h
   exact hR (E₀.sector_region.symm.trans ((congrArg (region _) h).trans E₁.sector_region))
 
-
-
 theorem horizontal_tip_incidence (he : E₀.radialEdge = 2) :
     E₁.radialEdge = 2 ∧ E₁.sector.1 = E₀.sector.1 := by
   have hpoint := E₀.tip_eq_firstOuterTip he
@@ -55,8 +45,6 @@ theorem horizontal_tip_incidence (he : E₀.radialEdge = 2) :
     simpa [affineChartSegment, Fin.succAbove, Fin.lt_def] using
       (caps _).coordinate_first_outer_tip E₁.sector.1 E₁.sector.2
   exact E₁.radial_end.trans (hpoint.trans (by simpa only [hs] using hb.symm))
-
-
 
 theorem vertical_tip_incidence (he : E₀.radialEdge = 1) :
     E₁.radialEdge = 1 ∧ E₁.sector.2 = E₀.sector.2 := by
@@ -76,8 +64,6 @@ theorem vertical_tip_incidence (he : E₀.radialEdge = 1) :
 private theorem sum_bool_eq_pair (f : Bool → ℝ) {i j : Bool} (hij : i ≠ j) :
     (∑ k : Bool, f k) = f i + f j := by
   cases i <;> cases j <;> simp_all [add_comm]
-
-
 
 theorem sum_refined_caps_add_endpoint_angles (g : RiemannianMetric 2 S)
     (hR : R₀ ≠ R₁) (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :
@@ -143,8 +129,6 @@ variable {e : D.EdgeIndex} {cut : D.EdgeIndex → Bool → ℝ}
   (K : ∀ side : Bool, (Q side).CutChain (L side).direction (T side).direction)
   {r δ : ℝ}
 
-
-
 theorem first_cap_tip_refined_fan (g : RiemannianMetric 2 S)
     (B : ∀ side : Bool, ((Q side).piece (Q side).firstPiece).FixedStripBandFaces
       ((K side).graphCuts (Q side).firstPiece) δ r r)
@@ -172,8 +156,6 @@ theorem first_cap_tip_refined_fan (g : RiemannianMetric 2 S)
           (L false).outwardRadialVelocity (L false).chordVelocity := by simp
   rw [hsum]
   simpa only [add_assoc] using hfan
-
-
 
 theorem last_cap_tip_refined_fan (g : RiemannianMetric 2 S)
     (B : ∀ side : Bool, ((Q side).piece (Q side).lastPiece).FixedStripBandFaces

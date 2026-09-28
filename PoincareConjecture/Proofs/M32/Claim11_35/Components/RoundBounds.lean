@@ -13,24 +13,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -469,10 +451,6 @@ private theorem round_radius_estimate {q m : ℝ} (hq : 0 < q) (hm : 0 < m)
     rw [Real.sqrt_eq_rpow, ← Real.rpow_add hm]
     norm_num
   rw [mul_assoc, hinv, mul_one]
-
-
-
-
 
 theorem exists_round_component_normalized_bounds :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

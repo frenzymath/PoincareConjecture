@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -26,23 +16,17 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
-
 theorem m63ArcTotalCurvature_continuousOn (hc : M62ShrinkingCurve F c)
     (alpha beta : ℝ) :
     ContinuousOn (fun t => m63ArcTotalCurvature F c t alpha beta) (Set.Icc a b) :=
   ((curvature_continuousOn F c hc).mul
     (speed_continuousOn F c hc)).intervalIntegral_prod_left alpha beta
 
-
-
 theorem m63ArcTotalCurvature_nonneg {alpha beta : ℝ}
     (hab : alpha ≤ beta) (t : ℝ) :
     0 ≤ m63ArcTotalCurvature F c t alpha beta :=
   intervalIntegral.integral_nonneg_of_forall hab fun x =>
     mul_nonneg (curvature_nonneg F c t x) (speed_nonneg F c t x)
-
-
 
 theorem m63ArcLength_le_length (hc : M62ShrinkingCurve F c)
     {alpha beta : ℝ} (hab : alpha ≤ beta)
@@ -59,9 +43,6 @@ theorem m63ArcLength_le_length (hc : M62ShrinkingCurve F c)
     _ = m62Length F c t := by
       simpa only [zero_add, m62Length] using
         (speed_periodic F c hc ht).intervalIntegral_add_eq alpha 0
-
-
-
 
 theorem m63ArcTotalCurvature_le_total (hc : M62ShrinkingCurve F c)
     {alpha beta : ℝ} (hab : alpha ≤ beta)

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Div
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,11 +25,9 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 def coordinatePrincipalCoefficients (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph E M) (x : E) : Matrix (Fin n) (Fin n) ℝ :=
   fun i j => divergenceCoefficients g e x i j / g.pullbackVolumeDensity e x
-
 
 def coordinateDriftCoefficients (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph E M) (j : Fin n) (x : E) : ℝ :=
@@ -146,8 +136,6 @@ theorem coordinateGradientFlux_eq_sum
   intro j _
   ring
 
-
-
 theorem secondOrderOperator_coordinate_eq_laplacian
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph E M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -211,7 +199,6 @@ theorem secondOrderOperator_coordinate_eq_laplacian
     partialDeriv i (fun y => divergenceCoefficients g e y i j) x *
       partialDeriv j (u ∘ e) x)]
 
-
 theorem contMDiffOn_laplacian_of_isOpen [T3Space M]
     (D : LeviCivitaData g) {U : Set M} (hU : IsOpen U) {u : M → ℝ}
     (hu : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ u U) :
@@ -233,8 +220,6 @@ theorem contMDiffOn_iterate_laplacian [T3Space M]
   | succ j ih =>
       rw [Function.iterate_succ_apply']
       exact contMDiffOn_laplacian_of_isOpen D hU ih
-
-
 
 theorem iterate_secondOrderOperator_coordinate_eq_laplacian [T3Space M]
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph E M)
@@ -260,8 +245,6 @@ theorem iterate_secondOrderOperator_coordinate_eq_laplacian [T3Space M]
         (contMDiffOn_iterate_laplacian D hU hu j) (hVs hx) (hVU (mem_image_of_mem e hx))
 
 open MeasureTheory
-
-
 
 theorem eventually_eLpNorm_coordinateOperator_powers_exhaustion_bound
     [NeZero n] [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrimalDualTrees
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
 set_option autoImplicit false
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 
@@ -12,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_sphere_model_of_surfaceEulerCount_eq_two
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace Poincare
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners ℝ E H}
-
-
 
 theorem exists_diffeomorph_of_local_opening
     (U V O : Opens M) (e : OpenPartialHomeomorph M M)

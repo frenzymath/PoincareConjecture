@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import Mathlib.Analysis.Calculus.Deriv.Support
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -60,8 +52,6 @@ theorem abs_mvfderiv_axialCutoff_le {φ : ℝ → ℝ} {a b C : ℝ}
     rw [he.mfderiv_eq]
     simp only [mfderiv_const, ContinuousLinearMap.comp_zero, zero_apply, abs_zero]
     exact mul_nonneg (div_nonneg hC hfactor.le) (Real.sqrt_nonneg _)
-
-
 
 theorem abs_axialCutoff_sub_le [PreconnectedSpace M]
     {φ : ℝ → ℝ} {a b C : ℝ}

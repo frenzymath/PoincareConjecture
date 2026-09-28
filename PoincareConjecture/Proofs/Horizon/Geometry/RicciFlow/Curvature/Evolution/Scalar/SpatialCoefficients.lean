@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Calculus.Fields.MetricPairings
 import Mathlib.LinearAlgebra.Trace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -398,7 +387,6 @@ theorem continuousOn_flow_scalarGradientSq (F : RicciFlow n M J)
         continuousOn_snd (fun _ hp ↦ hp.2))
   simpa only [scalarGradientSq, T, MultilinearMap.mk'_apply, pow_two,
     Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_fin_one] using htrace
-
 
 theorem continuousOn_flow_tensorTrace (F : RicciFlow n M J) (hU : IsOpen U)
     (T : (p : ℝ × M) → MultilinearMap ℝ (fun _ : Fin 2 ↦ TangentSpace (𝓡 n) p.2) ℝ)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -129,8 +121,6 @@ private theorem descent_field_smooth
   simpa only [ContinuousLinearMap.inCoordinates, ContinuousLinearMap.comp_apply,
     he, Bundle.Trivial.continuousLinearMapAt_trivialization,
     ContinuousLinearMap.id_apply] using h
-
-
 
 theorem smooth_covariantDerivative_of_torsion_eq_zero_of_metricCompatible :
     CovariantDerivative.ContMDiffCovariantDerivative cov ∞ := by
@@ -335,9 +325,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 noncomputable def leviCivitaDataOfCover
     {ι : Type w} {N : ι → Type v} [∀ i, TopologicalSpace (N i)]

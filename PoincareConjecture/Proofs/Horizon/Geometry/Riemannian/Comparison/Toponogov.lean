@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Hinge
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Triangle
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set
 open scoped Manifold ContDiff
@@ -21,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 theorem toponogov_comparison
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem IsFinitePLBallPair.exists_marked_interval_homeomorph
     {s : Set E} {t : Set F} {a b : E} {c d : F}
@@ -62,11 +50,6 @@ theorem IsFinitePLBallPair.exists_marked_interval_homeomorph
     · intro hx
       have h : x = ⟨b, hb⟩ := Subtype.ext hx
       simpa only [h] using heb
-
-
-
-
-
 
 theorem exists_finitePL_marked_graph {ι : Type*} [Finite ι]
     (S : ι → Set E) (T : ι → Set F) {a b : E} {c d : F}

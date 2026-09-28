@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialResponseTrace
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,11 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative
-
-
-
-
-
 
 theorem exists_initialResponseTrace_neighborhood
     {iota K Y : Type*} [Countable iota] [TopologicalSpace K] [CompactSpace K]

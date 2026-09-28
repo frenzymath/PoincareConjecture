@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckRotationalTip
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "B" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem exists_native_tip_metric_realization
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)

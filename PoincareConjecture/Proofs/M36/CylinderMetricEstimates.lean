@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M36.CurvatureTrace
 import PoincareConjecture.Definitions.Ch04.Pinching
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

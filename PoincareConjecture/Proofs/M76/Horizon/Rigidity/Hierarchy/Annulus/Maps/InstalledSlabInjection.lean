@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.Ins
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Compression.MarkedCorners
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.MarkedCoverSideInjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

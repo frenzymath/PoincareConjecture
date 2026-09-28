@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_critical_port
     (rho delta : ℝ) (hrho : 0 < rho) (hdelta : 0 < delta)

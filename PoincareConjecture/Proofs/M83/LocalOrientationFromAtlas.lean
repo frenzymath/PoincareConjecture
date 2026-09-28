@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M83.PositiveLocalOrientation
 import PoincareConjecture.Proofs.M83.LocalOrientationGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -193,8 +184,6 @@ private theorem chart_overlap_orientation
       (hpositive_pullback.trans hright_orientation.symm))
   exact hlocal
 
-
-
 theorem exists_localOrientation_of_positiveThreeAtlas
     {M : Type} [TopologicalSpace M] [T2Space M]
     [SecondCountableTopology M] [Nonempty M]
@@ -275,8 +264,6 @@ theorem exists_localOrientation_of_positiveThreeAtlas
     have hmaps := congrArg (fun q => localHomologyMap incW hincW.injective z 3 q) hlocal
     exact hli'.trans (hmaps.trans hlj'.symm)
   exact ⟨LocalOrientation.glue U hU O hcover hcompat⟩
-
-
 
 theorem exists_localOrientation_of_orientationCompatibleAtlas
     {M : Type} [TopologicalSpace M] [T2Space M]

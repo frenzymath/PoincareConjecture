@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PlaneReflection
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -16,20 +10,11 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture
 
-
-
-
 def m64AnnulusRadialFlip : LoopPlane ≃ₜ LoopPlane :=
   m60PlaneReflection.toHomeomorph.trans (Homeomorph.addLeft (annulusPoint 0 1))
 
-
-
-
 theorem m64AnnulusRadialFlip_apply (p : LoopPlane) :
     m64AnnulusRadialFlip p = annulusPoint 0 1 + m60PlaneReflection p := rfl
-
-
-
 
 theorem m64AnnulusRadialFlip_point (x s : ℝ) :
     m64AnnulusRadialFlip (annulusPoint x s) = annulusPoint x (1 - s) := by
@@ -37,21 +22,13 @@ theorem m64AnnulusRadialFlip_point (x s : ℝ) :
   fin_cases i <;> simp [m64AnnulusRadialFlip_apply, m60PlaneReflection_apply, annulusPoint,
     sub_eq_add_neg]
 
-
-
-
 theorem m64AnnulusRadialFlip_involutive : Function.Involutive m64AnnulusRadialFlip := by
   intro p
   ext i
   fin_cases i <;> simp [m64AnnulusRadialFlip_apply, m60PlaneReflection_apply, annulusPoint]
 
-
-
 theorem m64AnnulusRadialFlip_contDiff : ContDiff ℝ ∞ m64AnnulusRadialFlip :=
   contDiff_const.add m60PlaneReflection.toContinuousLinearEquiv.contDiff
-
-
-
 
 theorem m64AnnulusRadialFlip_preimage_interior :
     m64AnnulusRadialFlip ⁻¹' interior m64AnnulusDomain = interior m64AnnulusDomain := by
@@ -62,16 +39,10 @@ theorem m64AnnulusRadialFlip_preimage_interior :
     show (1 : Fin 2) ≠ 0 from by decide, ite_false]
   constructor <;> rintro ⟨h0, hP, h1, h2⟩ <;> exact ⟨h0, hP, by linarith, by linarith⟩
 
-
-
-
 theorem m64AnnulusRadialFlip_measurePreserving :
     MeasurePreserving m64AnnulusRadialFlip volume volume :=
   (measurePreserving_add_left (volume : Measure LoopPlane) (annulusPoint 0 1)).comp
     m60PlaneReflection.measurePreserving
-
-
-
 
 theorem m64AnnulusRadialFlip_restrict_measurePreserving :
     MeasurePreserving m64AnnulusRadialFlip
@@ -81,9 +52,6 @@ theorem m64AnnulusRadialFlip_restrict_measurePreserving :
     m64AnnulusRadialFlip.measurableEmbedding (interior m64AnnulusDomain)
   rwa [m64AnnulusRadialFlip_preimage_interior] at h
 
-
-
-
 theorem m64AnnulusRadialFlip_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (f : LoopPlane → E) :
@@ -91,9 +59,6 @@ theorem m64AnnulusRadialFlip_integral
       ∫ p in interior m64AnnulusDomain, f p :=
   m64AnnulusRadialFlip_restrict_measurePreserving.integral_comp
     m64AnnulusRadialFlip.measurableEmbedding f
-
-
-
 
 theorem m64AnnulusRadialFlip_fderiv_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -111,9 +76,6 @@ theorem m64AnnulusRadialFlip_fderiv_comp
     fin_cases i <;> fin_cases j <;> simp [m60PlaneReflection_apply]
   change fderiv ℝ f (m64AnnulusRadialFlip p) (m60PlaneReflection (EuclideanSpace.single i 1)) = _
   rw [hb, map_smul]
-
-
-
 
 theorem m64AnnulusRadialFlip_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

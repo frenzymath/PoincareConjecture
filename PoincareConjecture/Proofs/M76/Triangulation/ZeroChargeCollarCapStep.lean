@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointOriginalCollar
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAffineHeightStep
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_paired_step_of_original_polygon_collar
     (hdim : Module.finrank ℝ E = 3)

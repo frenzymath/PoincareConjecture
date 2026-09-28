@@ -1,23 +1,12 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral
 
 namespace intervalIntegral
-
-
-
 
 theorem forward_quotient_le_of_sub_le_integral {u f : ℝ → ℝ} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b))

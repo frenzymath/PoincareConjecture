@@ -2,32 +2,11 @@ import PoincareConjecture.Statements.M58LoopSmoothing
 import PoincareConjecture.Proofs.M58.Lemma18_27_Triviality
 import PoincareConjecture.Proofs.M58.Cor18_28_SmallDisks
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem repairedShortLoopTriviality : RepairedShortLoopTrivialityTheory.{u} := by
   refine ⟨⟨?_, ?_, ?_⟩⟩

@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMinimizerExisten
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.SmoothAnnulusAdmission
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +23,6 @@ variable {n m : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem m64ObservedWeakAnnulus.exists_admissible_heinz_regularization
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

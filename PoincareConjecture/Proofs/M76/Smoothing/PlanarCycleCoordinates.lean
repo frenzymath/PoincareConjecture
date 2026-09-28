@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Smoothing.PlanarCycleGaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -16,8 +7,6 @@ open Set NormedSpace
 namespace PoincareConjecture.M76.Smoothing
 
 variable {n : ℕ}
-
-
 
 theorem exp_gapAngle_cycleIncrement (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ)
     (hzero : unitCycleVertex v 0 = 1) (i : Fin (n + 3)) :
@@ -30,17 +19,12 @@ theorem exp_gapAngle_cycleIncrement (v : (cyclicEdgeComplex n).UnitRadialEmbeddi
         Circle.mul_exp_shortIncrement (unitCycleVertex v i.castSucc)
           (unitCycleVertex v (i.castSucc + 1))
 
-
-
 theorem exp_sum_cycleIncrement (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ)
     (hzero : unitCycleVertex v 0 = 1) : Circle.exp (∑ i, cycleIncrement v i) = 1 := by
   rw [← gapAngle_last_add, Circle.exp_add, exp_gapAngle_cycleIncrement v hzero]
   simpa only [cycleIncrement, Fin.last_add_one, hzero] using
     Circle.mul_exp_shortIncrement (unitCycleVertex v (Fin.last (n + 2)))
       (unitCycleVertex v (Fin.last (n + 2) + 1))
-
-
-
 
 theorem gapAngle_cycleIncrement_lt_fullTurn
     (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ) {theta : ℝ}
@@ -80,8 +64,6 @@ theorem gapAngle_cycleIncrement_lt_fullTurn
         · exact hi0 he.symm
         · exact Fin.succ_ne_zero i (by simpa only [Fin.coeSucc_eq_succ] using he.symm)
 
-
-
 theorem sum_cycleIncrement (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi)
     (hzero : unitCycleVertex v 0 = 1) (hone : unitCycleVertex v 1 = Circle.exp theta) :
@@ -100,9 +82,6 @@ theorem sum_cycleIncrement (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ) {
   have hmone : m = 1 := by omega
   simpa only [hmone, Int.cast_one, one_mul] using hm
 
-
-
-
 theorem cycleIncrement_mem_shortArcGapSpace
     (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi)
@@ -110,9 +89,6 @@ theorem cycleIncrement_mem_shortArcGapSpace
     cycleIncrement v ∈ shortArcGapSpace n theta :=
   ⟨fun i => ⟨cycleIncrement_pos v htheta hzero hone i, (cycleIncrement_mem_Ioo v i).2⟩,
     sum_cycleIncrement v htheta hzero hone, cycleIncrement_zero v htheta hzero hone⟩
-
-
-
 
 theorem planarGapVertices_cycleIncrement
     (v : (cyclicEdgeComplex n).UnitRadialEmbedding ℂ) {theta : ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLImageWalk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricCyclePolygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Path
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
 
 def imageIntervalLoop (f : ℝ → E) (hc : ContinuousOn f (Icc (0 : ℝ) 1))
     (hclosed : f 1 = f 0) :
@@ -61,10 +48,6 @@ namespace Geometry
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_excluded_marked_image_cycle
     {f : ℝ → E} (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1))

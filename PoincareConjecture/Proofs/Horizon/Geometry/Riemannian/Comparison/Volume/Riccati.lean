@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.S
 import Mathlib.Algebra.Order.Chebyshev
 import Mathlib.LinearAlgebra.Matrix.Symmetric
 import Mathlib.LinearAlgebra.Matrix.Trace
-
-
-
-
-
-
-

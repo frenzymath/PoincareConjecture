@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.GraphTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem exists_boundary_slice_in_end (C : CapCertificate g) :
     ∃ a : ℝ, a ∈ Ioo (-C.boundary_neck.epsilon⁻¹) C.boundary_neck.epsilon⁻¹ ∧
@@ -47,8 +36,6 @@ theorem exists_boundary_slice_in_end (C : CapCertificate g) :
       constructor <;> linarith
     refine ⟨-B.epsilon⁻¹ / 2, ht, fun q => hn (hmem ht ?_ q)⟩
     constructor <;> linarith
-
-
 
 theorem exists_boundary_end_transport_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

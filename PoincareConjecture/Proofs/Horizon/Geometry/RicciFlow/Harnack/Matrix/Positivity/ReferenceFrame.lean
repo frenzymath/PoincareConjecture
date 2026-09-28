@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.BlockContact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedSpatialContact
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +15,6 @@ universe u
 
 variable {n : ℕ} {N : Type u} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem tensor_block_posSemidef_of_reference_unit_tests
     {I : Type*} [Fintype I] (g : RiemannianMetric n N)
@@ -71,8 +63,6 @@ theorem tensor_block_posSemidef_of_reference_unit_tests
       Matrix.fromBlocks_apply₁₂, Matrix.fromBlocks_apply₂₁, Matrix.fromBlocks_apply₂₂,
       σ, Equiv.sumCongr_apply, Equiv.prodCongr_apply, Prod.map_fst, Prod.map_snd,
       Sum.map_inl, Sum.map_inr, b, OrthonormalBasis.reindex_apply, Equiv.symm_apply_apply]
-
-
 
 theorem perturbedHamiltonBlock_posSemidef_of_reference_unit_tests
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ}
@@ -149,8 +139,6 @@ theorem perturbedHamiltonBlock_posSemidef_of_reference_unit_tests
     Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val_two, Matrix.cons_val_three,
     Matrix.head_cons, Matrix.tail_cons,
     metricTwoFormIdentity_orthonormalBasis, metric_inner_orthonormalBasis] using h
-
-
 
 theorem hamiltonBlockPos_of_reference_unit_tests
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

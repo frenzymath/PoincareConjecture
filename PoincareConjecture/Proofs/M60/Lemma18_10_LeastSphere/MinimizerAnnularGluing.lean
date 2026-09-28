@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,18 +36,14 @@ private theorem annularTime_one {R d r : ℝ} (hd : 0 < d) (hr : R + d ≤ r) :
 
 variable {M : Type*}
 
-
-
 def suAnnularBlend (C : ℝ × (M × M) → M) (f a : LoopPlane → M)
     (R d : ℝ) (z : LoopPlane) : M :=
   if R + d ≤ ‖z‖ then f z else if ‖z‖ ≤ R - d then a z
     else C (annularTime R d ‖z‖, f z, a z)
 
-
 theorem suAnnularBlend_outer (C : ℝ × (M × M) → M) (f a : LoopPlane → M)
     {R d : ℝ} {z : LoopPlane} (hz : R + d ≤ ‖z‖) :
     suAnnularBlend C f a R d z = f z := by simp only [suAnnularBlend, if_pos hz]
-
 
 theorem suAnnularBlend_inner (C : ℝ × (M × M) → M) (f a : LoopPlane → M)
     {R d : ℝ} (hd : 0 < d) {z : LoopPlane} (hz : ‖z‖ ≤ R - d) :
@@ -79,8 +66,6 @@ variable {n : ℕ} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem suAnnularBlend_contMDiff
     (C : ℝ × (M × M) → M) {U : Set (M × M)}
@@ -117,16 +102,12 @@ theorem suAnnularBlend_contMDiff
   filter_upwards [hnear] with w hw
   exact annularBlend_eq_contraction C h0 h1 f a hd (hpairs w hw.1 hw.2)
 
-
-
-
 def suSpherePlanePatch (f : UnitTwoSphere → M) (c : UnitTwoSphere)
     (F : LoopPlane → M) (p : UnitTwoSphere) : M := by
   classical
   exact if p ∈ (chartAt LoopPlane c).source then F (chartAt LoopPlane c p) else f p
 
 omit [TopologicalSpace M] in
-
 
 theorem suSpherePlanePatch_parameter (f : UnitTwoSphere → M) (c : UnitTwoSphere)
     (F : LoopPlane → M) (z : LoopPlane) :
@@ -137,7 +118,6 @@ theorem suSpherePlanePatch_parameter (f : UnitTwoSphere → M) (c : UnitTwoSpher
     (chartAt LoopPlane c).right_inv ht]
 
 omit [TopologicalSpace M] in
-
 
 theorem suSpherePlanePatch_outside (f : UnitTwoSphere → M) (c : UnitTwoSphere)
     {F : LoopPlane → M} {R : ℝ}
@@ -155,8 +135,6 @@ theorem suSpherePlanePatch_outside (f : UnitTwoSphere → M) (c : UnitTwoSphere)
   · rfl
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem suSpherePlanePatch_contMDiff
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (c : UnitTwoSphere)
@@ -187,8 +165,6 @@ theorem suSpherePlanePatch_contMDiff
     exact suSpherePlanePatch_outside f c hout hq
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem suSphere_annular_candidate
     (C : ℝ × (M × M) → M) {U : Set (M × M)}
@@ -347,10 +323,6 @@ private theorem annular_endpoint_bound [CompactSpace M] [T2Space M]
   exact (div_le_iff₀ hNpos).mp (by simpa only [div_eq_mul_inv, mul_comm] using hb)
 
 set_option maxHeartbeats 400000 in
-
-
-
-
 
 theorem suAnnular_contraction [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) :

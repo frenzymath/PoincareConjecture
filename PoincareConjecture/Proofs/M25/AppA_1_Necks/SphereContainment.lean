@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.CarrierBuffer
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SliceProjectionDifferential
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
-
 
 theorem exists_middle_central_sphere_containment {κ : ℝ} (hκ : κ ∈ Ioc 0 1) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -84,10 +68,6 @@ theorem exists_middle_central_sphere_containment {κ : ℝ} (hκ : κ ∈ Ioc 0 
     _ ≤ ENNReal.ofReal R := ENNReal.ofReal_le_ofReal (by
       have hpos : 0 < Real.pi * N.scale := mul_pos Real.pi_pos N.scale_pos
       linarith)
-
-
-
-
 
 theorem exists_middle_central_sphere_graph {κ : ℝ} (hκ : κ ∈ Ioc 0 1) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

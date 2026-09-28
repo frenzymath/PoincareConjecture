@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import PoincareConjecture.Proofs.M38.AssemblyCombinators
 import PoincareConjecture.Proofs.M38.OneCapReconstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def sumCarrier (B D : GeneralizedSliceCarrier.{u}) :
     GeneralizedSliceCarrier.{u} := by
@@ -73,7 +63,6 @@ noncomputable def sumCarrier (B D : GeneralizedSliceCarrier.{u}) :
     t3Space := inferInstance
     secondCountable := inferInstance }
 
-
 noncomputable def sumInlEquivalence (B D : GeneralizedSliceCarrier.{u})
     (hB : Nonempty B.carrier) :
     SurgeryRegionEquivalence B (sumCarrier B D) Set.univ
@@ -107,7 +96,6 @@ noncomputable def sumInlEquivalence (B D : GeneralizedSliceCarrier.{u})
     exact ContMDiff.inl.contMDiffOn
   · exact (ContMDiff.sumElim contMDiff_id contMDiff_const).contMDiffOn
 
-
 noncomputable def sumInrEquivalence (B D : GeneralizedSliceCarrier.{u})
     (hD : Nonempty D.carrier) :
     SurgeryRegionEquivalence D (sumCarrier B D) Set.univ
@@ -140,7 +128,6 @@ noncomputable def sumInrEquivalence (B D : GeneralizedSliceCarrier.{u})
       (Sum.inr : D.carrier → (sumCarrier B D).carrier) Set.univ
     exact ContMDiff.inr.contMDiffOn
   · exact (ContMDiff.sumElim contMDiff_const contMDiff_id).contMDiffOn
-
 
 noncomputable def oneCapDisjointUnion (B D : GeneralizedSliceCarrier.{u})
     (hB : Nonempty B.carrier) (hD : Nonempty D.carrier) :
@@ -178,7 +165,6 @@ noncomputable def oneCapDisjointUnion (B D : GeneralizedSliceCarrier.{u})
         exact Set.mem_iUnion.mpr ⟨0, Set.mem_range_self x⟩
     | inr x =>
         exact Set.mem_iUnion.mpr ⟨1, Set.mem_range_self x⟩
-
 
 theorem exists_one_cap_assembly
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

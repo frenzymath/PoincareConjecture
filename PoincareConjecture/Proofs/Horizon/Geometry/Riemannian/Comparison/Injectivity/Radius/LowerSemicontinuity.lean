@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectiv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 import Mathlib.Topology.Semicontinuity.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +28,6 @@ theorem chartGlobalExponential_center (g : RiemannianMetric n M)
     (mfderiv (𝓡 n) (𝓡 n) c.symm (c p) v) = g.globalExponential hc p v
   rw [hvec]
   exact congrArg (fun q => g.globalExponential hc q v) (c.left_inv (mem_extChartAt_source p))
-
-
 
 theorem eventually_le_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -129,8 +115,6 @@ theorem eventually_le_truncatedInjectivityRadius
     with q hq hqc
   change r ≤ g.truncatedInjectivityRadius hc C (c.symm (c q)) at hq
   simpa only [c.left_inv hqc] using hq
-
-
 
 theorem lowerSemicontinuous_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)

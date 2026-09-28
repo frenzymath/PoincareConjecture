@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import Mathlib.Geometry.Convex.Cone.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -23,13 +14,10 @@ variable {𝕜 E : Type*} [Field 𝕜] [LinearOrder 𝕜] [IsStrictOrderedRing �
 
 omit [IsStrictOrderedRing 𝕜] in
 
-
 theorem hull_convexHull (s : Set E) : hull 𝕜 (convexHull 𝕜 s) = hull 𝕜 s := by
   apply le_antisymm
   · exact hull_min (convexHull_min subset_hull (hull 𝕜 s).convex)
   · exact hull_min ((subset_convexHull 𝕜 s).trans subset_hull)
-
-
 
 theorem hull_image_pos_smul (s : Set E) (r : E → 𝕜) (hr : ∀ x ∈ s, 0 < r x) :
     hull 𝕜 ((fun x => r x • x) '' s) = hull 𝕜 s := by
@@ -44,8 +32,6 @@ theorem hull_image_pos_smul (s : Set E) (r : E → 𝕜) (hr : ∀ x ∈ s, 0 < 
     have h := (hull 𝕜 ((fun y => r y • y) '' s)).smul_mem (inv_pos.mpr (hr x hx)) hmem
     rw [inv_smul_smul₀ (hr x hx).ne'] at h
     exact h
-
-
 
 theorem zero_notMem_hull_iff (s : Set E) : (0 : E) ∉ hull 𝕜 s ↔ 0 ∉ convexHull 𝕜 s := by
   constructor
@@ -64,8 +50,6 @@ end Algebra
 end ConvexCone
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem normalize_image_convexHull_eq_sphere_inter_cone {s : Set E}
     (hs : (0 : E) ∉ convexHull ℝ s) :
@@ -89,8 +73,6 @@ theorem normalize_image_convexHull_eq_sphere_inter_cone {s : Set E}
         (normalize_smul_of_pos hr y).symm
       _ = NormedSpace.normalize x := congrArg NormedSpace.normalize hry
       _ = x := normalize_eq_self_of_norm_eq_one (by simpa [Metric.mem_sphere] using hxsphere)
-
-
 
 theorem normalize_image_convexHull_pos_smul {s : Set E} (hs : (0 : E) ∉ convexHull ℝ s)
     (r : E → ℝ) (hr : ∀ x ∈ s, 0 < r x) :

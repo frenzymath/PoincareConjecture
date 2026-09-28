@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointSourceSign
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointFlow
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSectionalLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -141,8 +133,6 @@ private theorem operator_of_open_chart_jets
       ((A k).connection t) (f := e) isOpen_univ he.contMDiff.contMDiffOn
       (fun _ _ _ _ => rfl) (mem_univ x) v w]
     exact hk t ht _ _ _
-
-
 
 theorem limitFinite_endpoint_chart_operator
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

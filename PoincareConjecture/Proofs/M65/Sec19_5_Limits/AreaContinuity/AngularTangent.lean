@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopExtension
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m65AngularPoint_hasDerivAt (x : ℝ) :
     HasDerivAt angularPoint (loopCircleTangent ⟨angularPoint x, norm_angularPoint x⟩) x := by
@@ -39,8 +28,6 @@ theorem m65AngularPoint_hasDerivAt (x : ℝ) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m65PeriodicLoopTangent_eq (gamma : C1FreeLoopSpace (M := M)) (x : ℝ) :
     (⟨periodicFreeLoop gamma x, curveVelocity (periodicFreeLoop gamma) x⟩ :
       TangentBundle (𝓡 3) M) =
@@ -56,8 +43,6 @@ theorem m65PeriodicLoopTangent_eq (gamma : C1FreeLoopSpace (M := M)) (x : ℝ) :
   apply TotalSpace.ext
   · exact gamma.boundary z
   · exact heq_of_eq hchain
-
-
 
 theorem m65Continuous_periodicLoopTangent :
     Continuous (fun p : C1FreeLoopSpace (M := M) × ℝ =>

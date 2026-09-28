@@ -3,16 +3,6 @@ import Mathlib.Topology.Compactness.LocallyFinite
 import Mathlib.Data.Finset.Max
 import Mathlib.Data.Int.Interval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 open Classical in
-
-
 
 theorem exists_trimmed_cut_cover :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

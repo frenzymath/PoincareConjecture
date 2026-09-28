@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Collars
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapHeight
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +18,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
 
-
 theorem regular_of_normalized_height_mem_Ioo (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
     {p : S2} (hp : p ∈ D.chart '' closedBall (0 : E2) 1)
@@ -35,8 +32,6 @@ theorem regular_of_normalized_height_mem_Ioo (D : SphereSurgeryCoreCap v g B)
   have hh : |(inner Real v (g p) - D.center) / D.scale - 1/2| < (1/2 : Real) :=
     abs_lt.mpr ⟨by linarith [ht.1], by linarith [ht.2]⟩
   nlinarith [abs_pos.mpr D.scale_ne_zero]
-
-
 
 theorem critical_mem_complement_of_truncated_cap
     (D : SphereSurgeryCoreCap v g B)
@@ -53,8 +48,6 @@ theorem critical_mem_complement_of_truncated_cap
   exact D.regular_of_normalized_height_mem_Ioo hg hpclosed
     ⟨D.normalized_height_pos_on_open_disk hpD, hle.trans_lt ha1⟩ hc
 
-
-
 theorem image_normalized_superlevel (D : SphereSurgeryCoreCap v g B) (a : Real) :
     g '' ((D.chart '' closedBall (0 : E2) 1) ∩
       {p : S2 | a ≤ (inner Real v (g p) - D.center) / D.scale}) =
@@ -65,8 +58,6 @@ theorem image_normalized_superlevel (D : SphereSurgeryCoreCap v g B) (a : Real) 
     g ⁻¹' {y : E3 | a ≤ (inner Real v y - D.center) / D.scale}) = _
   rw [image_inter_preimage, D.image_closedBall, D.range_eq]
   rfl
-
-
 
 theorem range_eq_complement_union_truncated_cap (D : SphereSurgeryCoreCap v g B) (a : Real) :
     range g = g '' ((D.chart '' closedBall (0 : E2) 1) ∩

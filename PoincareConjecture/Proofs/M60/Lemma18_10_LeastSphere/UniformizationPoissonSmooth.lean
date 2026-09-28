@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPoissonCoordinates
 import PoincareConjecture.Proofs.M60.Mathlib.UniformizationEllipticRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g}
-
-
-
 
 theorem exists_smooth_poisson_representative (hn : 0 < n)
     {Omega : Set M} (hOmega : IsOpen Omega)
@@ -103,9 +90,6 @@ theorem exists_smooth_poisson_representative (hn : 0 < n)
   obtain ⟨H, hHs, hHae⟩ := g.exists_smooth_representative_on_coordinate_image
     e he hei hO hOs (toL2 D Omega u) hVs hVae
   exact ⟨e '' O, e.isOpen_image_of_subset_source hO hOs, hxO, hOOmega, H, hHs, hHae⟩
-
-
-
 
 theorem laplacian_eq_of_closed_smooth_poisson [CompactSpace M]
     (u : H1Zero D univ) (F : Lp ℝ 2 g.volumeMeasure)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerClass
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCourantLebesgue
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerRotatedTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -95,11 +85,6 @@ private theorem m65CoordinateL2_norm_sum {N : ℕ}
       exact (EuclideanSpace.real_norm_sq_eq (u z)).symm
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem m65WeakDisk_boundary_courantLebesgue
     {M : Type u} [TopologicalSpace M] {N : ℕ}

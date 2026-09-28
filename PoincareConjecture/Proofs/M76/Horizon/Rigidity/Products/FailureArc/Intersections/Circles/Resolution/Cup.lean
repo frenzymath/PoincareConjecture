@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.CupEmbedding
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.UnpushedAnnulus
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open _root_.Dehn

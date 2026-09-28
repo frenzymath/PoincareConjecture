@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.TensorNorms
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -96,7 +87,6 @@ private theorem tensor_coefficient_center (B : RoundCylinderTwoTensor)
     sphere_chart_symm_mfderiv]
   rfl
 
-
 theorem roundCylinderMetric_self_eq (z : RoundCylinderSpace)
     (v : RoundCylinderCoordinates) :
     RoundCylinderMetric z v v = 2 * ‖v.1‖ ^ 2 + v.2 ^ 2 := by
@@ -180,7 +170,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
 theorem normalized_metric_quadratic_bounds (N : EpsilonNeck g)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : RoundCylinderCoordinates) :
@@ -249,7 +238,6 @@ theorem normalized_metric_quadratic_bounds (N : EpsilonNeck g)
         add_le_add hhi le_rfl
       _ = (1 + N.epsilon) * RoundCylinderMetric z v v := by ring
 
-
 theorem coordinate_speed_bounds (N : EpsilonNeck g)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : RoundCylinderCoordinates) :
@@ -295,7 +283,6 @@ theorem coordinate_speed_bounds (N : EpsilonNeck g)
     rw [mul_pow, Real.sq_sqrt hH, Real.sq_sqrt hP]
     nlinarith only [hhigh']
 
-
 theorem coordinate_axial_speed_lower (N : EpsilonNeck g)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : RoundCylinderCoordinates) :
@@ -309,7 +296,6 @@ theorem coordinate_axial_speed_lower (N : EpsilonNeck g)
     nlinarith only [sq_nonneg ‖v.1‖]
   exact (mul_le_mul_of_nonneg_left hmodel (by positivity)).trans
     (N.coordinate_speed_bounds z hz v).1
-
 
 theorem coordinate_sphere_speed_upper (N : EpsilonNeck g)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)

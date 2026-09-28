@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Basic
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,9 +9,7 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def squareGauge (x : E2) : Real := max |x 0| |x 1|
-
 
 def squareInversion (r : Real) (x : E2) : E2 := (r / squareGauge x) ^ 2 • x
 
@@ -57,7 +53,6 @@ theorem continuousOn_squareInversion {r : Real} (hr : 0 < r) :
 theorem squareInversion_fixed {r : Real} (hr : 0 < r) {x : E2}
     (hx : squareGauge x = r) : squareInversion r x = x := by
   simp [squareInversion, hx, ne_of_gt hr]
-
 
 theorem squareInversion_mem_square {r : Real} (hr : 0 < r) {x : E2}
     (hx : r ≤ squareGauge x) :

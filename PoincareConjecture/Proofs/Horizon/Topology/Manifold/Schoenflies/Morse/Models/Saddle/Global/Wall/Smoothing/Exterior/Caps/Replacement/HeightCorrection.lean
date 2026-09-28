@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Height
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -10,8 +8,6 @@ open Set Metric Function Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Smoothing.Exterior.Caps.Replacement
-
-
 
 theorem exists_relative_cylindrical_height_correction
     (H : Real ≃ₘ[Real] Real) {σ b : Real} (hσ : 0 < σ) (hb : 0 < b)
@@ -63,8 +59,6 @@ private theorem contDiff_upper_graft
       filter_upwards [Ioi_mem_nhds ht] with s hs
       simp [not_le.mpr (show 0 < s from hs)]
     exact hf.contDiffAt.congr_of_eventuallyEq heq
-
-
 
 theorem exists_lower_fixed_cylindrical_height_correction
     (H : Real ≃ₘ[Real] Real) {σ b : Real} (hσ : 0 < σ) (hb : 0 < b)

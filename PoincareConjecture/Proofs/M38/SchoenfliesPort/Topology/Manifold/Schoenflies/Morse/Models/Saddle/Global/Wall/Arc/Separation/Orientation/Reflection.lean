@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Arc.Separation.Orientation.PositiveAnchors
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,13 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -37,7 +24,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR2" => 𝓘(Real, Real × Real)
 
-
 def coordinateSwap : E2 ≃ₗᵢ[Real] E2 where
   toFun := saddleCoordinateSwap
   invFun := saddleCoordinateSwap
@@ -51,7 +37,6 @@ def coordinateSwap : E2 ≃ₗᵢ[Real] E2 where
     have h2 := EuclideanSpace.real_norm_sq_eq (saddleCoordinateSwap x)
     simp only [Fin.sum_univ_two, saddleCoordinateSwap_zero, saddleCoordinateSwap_one] at h1 h2
     nlinarith [norm_nonneg x, norm_nonneg (saddleCoordinateSwap x)]
-
 
 def stripReflection : Diffeomorph IR2 IR2 (Real × Real) (Real × Real) ∞ where
   toFun z := (z.1, -z.2)
@@ -139,8 +124,6 @@ private theorem orthogonal_neg (v : E3) : (Real ∙ v)ᗮ = (Real ∙ (-v))ᗮ :
     Submodule.mem_orthogonal_singleton_iff_inner_right, inner_neg_left]
   exact (neg_eq_zero).symm
 
-
-
 def reflectedPlaneFrame {v : E3} (J : E2 ≃ₗᵢ[Real] (Real ∙ v)ᗮ) :
     E2 ≃ₗᵢ[Real] (Real ∙ (-v))ᗮ :=
   (coordinateSwap.trans J).trans (LinearIsometryEquiv.ofEq _ _ (orthogonal_neg v))
@@ -208,8 +191,6 @@ theorem reflectedChart_graph {v : E3} {g : S2 → E3}
     refine ⟨saddleCoordinateSwap x, (saddleCoordinateSwap_mem_openSquare r x).mpr hx, ?_⟩
     simp only [reflectedChart_apply, saddleCoordinateSwap_swap]
 
-
-
 theorem first_pairing_reflected_of_second_pairing
     (e : OpenPartialHomeomorph E2 S2) (h : S2 → Real) (c r : Real)
     (hsecond : ∀ i j : Fin 2 × Fin 2,
@@ -236,8 +217,6 @@ theorem reflected_critical_point_avoids_strip (e : OpenPartialHomeomorph E2 S2)
   have hslice := reflectedStrip_negative_slice F a b 0
   simp only [neg_zero] at hslice
   simpa only [reflectedChart_zero, hslice] using hnot
-
-
 
 theorem positive_anchor_as_reflected_negative
     {v : E3} {g : S2 → E3} (e : OpenPartialHomeomorph E2 S2)

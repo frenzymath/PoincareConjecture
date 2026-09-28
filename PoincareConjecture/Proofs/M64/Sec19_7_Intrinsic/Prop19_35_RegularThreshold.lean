@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.OneDimensional
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_contDiff_geodesicCurvature_sq
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) :
@@ -54,8 +38,6 @@ theorem m64Intrinsic_contDiff_geodesicCurvature_sq
     rw [hzero, map_zero]
   · exact (N.metric.pos (gamma x) (V x) hzero).le
 
-
-
 theorem m64Intrinsic_contDiffAt_geodesicCurvature_of_pos
     (N : IntrinsicAnnulus) {radius x : ℝ} (hradius : radius ≠ 0)
     (hpos : 0 < intrinsicGeodesicCurvature N.metric N.connection radius x) :
@@ -66,9 +48,6 @@ theorem m64Intrinsic_contDiffAt_geodesicCurvature_of_pos
   funext t
   exact (Real.sqrt_sq (show 0 ≤ intrinsicGeodesicCurvature N.metric N.connection radius t
     from Real.sqrt_nonneg _)).symm
-
-
-
 
 theorem m64Intrinsic_exists_regular_curvature_threshold
     (N : IntrinsicAnnulus) {A B : ℝ} (hA : 0 < A) (hAB : A < B) :
@@ -123,9 +102,6 @@ theorem m64Intrinsic_exists_regular_curvature_threshold
     change deriv k t = 0 at hzero
     apply hreg.2.2.2 t ht' (by change k t ^ 2 = c; rw [hkt, hsquare])
     rw [hfd, hzero, mul_zero]
-
-
-
 
 theorem m64Intrinsic_exists_regular_curvature_cutoff
     (N : IntrinsicAnnulus) {delta r : ℝ} (hdelta : 0 < delta) (hr : 0 < r)

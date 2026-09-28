@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem faces_of_edge_chain_cover
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

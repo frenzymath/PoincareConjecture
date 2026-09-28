@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardBoundaryAtlas
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,10 +20,6 @@ local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ L
 local notation "pi" => (fun x : V =>
   (Prod.fst x, (QuotientAddGroup.mk (Prod.snd x) : (κ → ℝ) ⧸ L.toAddSubgroup)))
-
-
-
-
 
 theorem ChartwisePLSphere.exists_standard_lattice_ball
     (s : ChartwisePLSphere d S) (hd : StandardLatticeHandleAtlas ι κ L d)
@@ -90,10 +76,6 @@ theorem ChartwisePLSphere.exists_standard_lattice_ball
     change pi (b.symm x) ∈ S ↔ (x : Fin 3 → ℝ) ∈ sphere (0 : Fin 3 → ℝ) 1
     rw [hSboundary, hboundary, b.apply_symm_apply, frontier_closedBall _ one_ne_zero]
 
-
-
-
-
 theorem StandardLatticeHandleAtlas.isPLIrreducible
     (hd : StandardLatticeHandleAtlas ι κ L d)
     (hdim : Fintype.card ι + Fintype.card κ = 3) :
@@ -101,10 +83,6 @@ theorem StandardLatticeHandleAtlas.isPLIrreducible
   refine ⟨hd.domain, ?_⟩
   intro S hS ⟨s⟩
   exact s.exists_standard_lattice_ball ι κ L hd hdim (hS.trans interior_subset)
-
-
-
-
 
 theorem exists_standard_irreducible_lattice_handle_atlas
     (hdim : Fintype.card ι + Fintype.card κ = 3) :

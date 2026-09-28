@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedSquarePath
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,15 +14,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J}
 
-
-
 theorem jointSeed_constant_square_density (T s : ℝ) (q : M) :
     Proofs.M09.squareCurveActionDensity F T (fun _ => q) s =
       2 * s ^ 2 * (F.connection (T - s ^ 2)).scalarCurvature q := by
   simp only [Proofs.M09.squareCurveActionDensity, Proofs.M09.regularizedCurveEnergy,
     curveVelocity, mfderiv_const, zero_apply, map_zero, mul_zero, add_zero]
-
-
 
 theorem jointSeed_constant_square_action_le
     (hM04 : RicciFlowCurvatureTheory.{u}) (T d v K : ℝ) (q : M)
@@ -71,8 +59,6 @@ theorem jointSeed_constant_square_action_le
     rw [Real.sq_sqrt hd.le, Real.sq_sqrt htheta.le]
     ring
   exact hcompare.trans_eq hvalue
-
-
 
 theorem jointSeed_birth_action_normalization {d A L v : ℝ}
     (hd : 0 < d) (hA : 0 < A) (hbudget : A * L * v ≤ 1 / 4) :

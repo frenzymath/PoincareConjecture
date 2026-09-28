@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.SimplexCompre
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Hurewicz.HurewiczMap
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.SingularComplex.SingularHomologyDetection
 
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial

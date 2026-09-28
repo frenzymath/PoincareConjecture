@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SphericalRegionComplement
 import PoincareConjecture.Proofs.M38.CollaredRegionComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_spherical_collared_region_complement
     {ι : Type*} [Finite ι] {U : Set sphereCarrier.{u}.carrier}

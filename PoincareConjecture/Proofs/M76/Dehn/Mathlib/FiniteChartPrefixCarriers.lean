@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartImageIntersection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_prefix_face_chart_carriers
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -61,9 +46,6 @@ theorem PolyhedralPLInCharts.exists_prefix_face_chart_carriers
 end Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem eqOn_of_fixed_clipped_carrier
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

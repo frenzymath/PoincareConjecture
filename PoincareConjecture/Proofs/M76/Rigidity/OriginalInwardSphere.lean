@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalChartBall
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarLevelSphere
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
 
 theorem exists_original_inward_sphere
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

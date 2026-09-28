@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Range
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Annulus.Clearance
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
-
-
 
 theorem exists_protected_lower_replacement
     (B L D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -55,7 +51,6 @@ theorem exists_protected_lower_replacement
     fun y hy => hFC y (Or.inr hy)⟩
   rw [← hB]
   exact Reverse.image_filled_sphere_of_image_filled_ball F B L hFball
-
 
 theorem exists_protected_upper_replacement
     (B L D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

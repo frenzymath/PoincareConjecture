@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalAnalyt
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,17 +11,11 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 noncomputable def seedCurvatureConstant (r : ℝ) : ℝ :=
   13 * max (2 * r⁻¹ ^ 2) (Real.exp 4)
 
-
-
 theorem seedCurvatureConstant_pos (r : ℝ) : 0 < seedCurvatureConstant r :=
   mul_pos (by norm_num) ((Real.exp_pos 4).trans_le (le_max_right _ _))
-
-
 
 theorem pinched_curvature_norm_le (P : M46Predecessors.{u})
     {M : Type u} [TopologicalSpace M]
@@ -48,8 +33,6 @@ theorem pinched_curvature_norm_le (P : M46Predecessors.{u})
       simpa only [LeviCivitaData.negativeCurvaturePart, hleast] using hX
     simpa only [LeviCivitaData.negativeCurvaturePart, hleast] using hpinch.2.2 x hx hX'
   exact Poincare.fullNorm_le_of_hamiltonIvey hpinch.1 h12 h23 hscalar hnorm le_rfl hlog
-
-
 
 theorem seed_curvature_bound (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t r : ℝ} (hpinch : SurgeryPinchedAt (F.connection t) t)

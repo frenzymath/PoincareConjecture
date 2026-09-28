@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ZeroSliceCharts
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,9 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {X P : Type*} [TopologicalSpace X] [TopologicalSpace P]
-
-
-
 
 theorem exists_local_pair_chart_with_normal
     (e : OpenPartialHomeomorph X (P × ℝ)) (S : Set X)

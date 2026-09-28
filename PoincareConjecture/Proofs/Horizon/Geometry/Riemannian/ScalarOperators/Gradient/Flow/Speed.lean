@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Expansion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurveLength
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -31,7 +25,6 @@ theorem tangentNorm_normalizedGradient_le
     (‖D.gradient f x‖ ^ 2)⁻¹ * ‖D.gradient f x‖ = 1 / ‖D.gradient f x‖ := by
       field_simp
     _ ≤ 1 / l := div_le_div_of_nonneg_left zero_le_one hl hgrad
-
 
 theorem edist_le_of_normalizedGradient_curve
     (D : LeviCivitaData g) {f : M → ℝ} {γ : ℝ → M}

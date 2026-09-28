@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexRimCover
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
 
 theorem BoundaryEdgeFamily.exists_vertex_band (P : BoundaryEdgeFamily T)
     (hLK : L ≤ K) (hLcard : ∀ u ∈ L.faces, u.card ≤ 3)

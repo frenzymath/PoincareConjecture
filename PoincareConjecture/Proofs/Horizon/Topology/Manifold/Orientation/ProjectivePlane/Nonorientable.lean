@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.Projectiv
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Euclidean.Antipodal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Cover.Shell
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,9 +43,6 @@ private theorem shellOrientation_reversed (x : Shell) :
         (O.pullback negation (Homeomorph.neg E3).isOpenEmbedding) O (-1)
         (fun y => by simpa only [neg_one_zsmul] using negation_pullback O y)
         shellEmbedding shellEmbedding_open x
-
-
-
 
 theorem projectivePlaneThickening_not_orientable
     [T2Space (RealProjectiveTwo × NormalInterval)]

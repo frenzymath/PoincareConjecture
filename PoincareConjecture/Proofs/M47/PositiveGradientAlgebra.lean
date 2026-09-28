@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ContractedBianchi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -63,10 +53,6 @@ private theorem bianchi_projection_pairing {ι : Type*} [Fintype ι] [DecidableE
   rw [h1, h2, h3]
   ring
 
-
-
-
-
 theorem ricci_derivative_trace_improved {ι : Type*} [Fintype ι]
     (hdim : Fintype.card ι = 3) (T : ι → ι → ι → ℝ) (X : ι → ℝ)
     (hsym : ∀ i j k, T i j k = T i k j)
@@ -113,10 +99,6 @@ theorem ricci_derivative_trace_improved {ι : Type*} [Fintype ι]
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem scalar_gradient_le_ricci_derivative (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) :

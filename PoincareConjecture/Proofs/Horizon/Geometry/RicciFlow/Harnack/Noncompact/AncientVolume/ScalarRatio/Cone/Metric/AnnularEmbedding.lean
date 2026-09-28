@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.AnnulusApproximation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.CompactLimit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +9,6 @@ open Set Filter Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_isometric_cone_limit_of_annular_distance_convergence
     {n : ℕ} {M A : Type*} [TopologicalSpace M] [T3Space M]

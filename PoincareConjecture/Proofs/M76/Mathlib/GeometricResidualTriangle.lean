@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ResidualTaperedTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroApexTriangleCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,17 +9,12 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem zeroApexCoordinates_diagonal (A : E →ᵃ[ℝ] ℝ) (q w v : E)
     (hw : A w = 0) (β s : ℝ) :
     A.zeroApexCoordinates q w v (s, β * s) =
       lineMap q (A.edgeLevel w v β) s := by
   rw [zeroApexCoordinates_apply, lineMap_apply_module', edgeLevel, hw, sub_zero]
   module
-
-
-
 
 theorem zeroApexCoordinates_residual_image (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hq : A q = 0) (hw : A w = 0) {β : ℝ} (hβ : 0 < β) (hβv : β < A v) :
@@ -48,9 +34,6 @@ theorem zeroApexCoordinates_residual_image (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     image_insert_eq, image_singleton]
   change convexHull ℝ {F (0, 0), F (1, β), F (β / A v, β)} = _
   rw [h0, h1, h2]
-
-
-
 
 theorem zeroApex_slab_partition (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0)

@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M10.MetricCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

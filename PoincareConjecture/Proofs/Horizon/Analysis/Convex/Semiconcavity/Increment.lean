@@ -4,15 +4,11 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Analysis
-
-
 
 theorem increment_ge_of_concaveOn_sub_quadratic {f : ℝ → ℝ} {L H t : ℝ}
     (hL : 0 < L) (hconc : ConcaveOn ℝ (Icc 0 L) (fun s => f s - H * s ^ 2 / 2))
@@ -33,8 +29,6 @@ theorem increment_ge_of_concaveOn_sub_quadratic {f : ℝ → ℝ} {L H t : ℝ}
     field_simp
     ring
   linarith
-
-
 
 theorem mul_lt_increment_of_concaveOn_sub_quadratic {f : ℝ → ℝ} {L H c t : ℝ}
     (hL : 0 < L) (hH : 0 ≤ H)

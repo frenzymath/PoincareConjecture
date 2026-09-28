@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,9 +10,6 @@ namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι]
-
-
-
 
 theorem sum_bilinear_conformal_basis (B : LinearMap.BilinForm ℝ E)
     (b : OrthonormalBasis κ ℝ E) (w : ι → E)

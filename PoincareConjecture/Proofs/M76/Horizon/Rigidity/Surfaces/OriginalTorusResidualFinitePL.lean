@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusResidualGeometricSides
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex
@@ -199,7 +190,6 @@ theorem residualBoundarySourcePath_isFinitePLBallPair
 
 private def reverseParameter (t : Icc (0 : ℝ) 1) : Icc (0 : ℝ) 1 :=
   ⟨1 - (t : ℝ), by have ht := t.2.2; linarith, by have ht := t.2.1; linarith⟩
-
 
 noncomputable def residualEdgeOrientedPath
     (K : SimplicialComplex ℝ E)

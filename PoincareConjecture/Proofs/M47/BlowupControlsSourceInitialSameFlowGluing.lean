@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M45NeckGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
 
 def sourceInitial_ricciFlowRestrict {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -47,18 +37,15 @@ variable {epsilon beta : ℝ} {S : GeneralizedSliceCarrier.{u}}
   {J : Set ℝ} (F : RicciFlow 3 S.carrier J) {dr dold : ℝ}
   (hdr : 0 < dr) (hord : dr < dold) (hJ : Ioc (-dold) 0 ⊆ J)
 
-
 def sourceInitial_sameFlowRecent : RicciFlow 3 S.carrier (Icc (-dr) 0) :=
   sourceInitial_ricciFlowRestrict F
     (fun t ht => hJ ⟨by linarith [ht.1], ht.2⟩) ordConnected_Icc
     (sourceInitial_icc_nontrivial_of_lt (neg_lt_zero.mpr hdr))
 
-
 def sourceInitial_sameFlowOlder : RicciFlow 3 S.carrier (Ioc (-dold) (-dr)) :=
   sourceInitial_ricciFlowRestrict F
     (fun _t ht => hJ ⟨ht.1, ht.2.trans (neg_nonpos.mpr hdr.le)⟩) ordConnected_Ioc
     (sourceInitial_ioc_nontrivial_of_lt (neg_lt_neg hord))
-
 
 def sourceInitial_sameFlowGluingInput
     (center : S.carrier) (hscalar : (F.connection 0).scalarCurvature center = 1)
@@ -93,7 +80,6 @@ def sourceInitial_sameFlowGluingInput
   joining_metric := fun x _ v w => by
     rw [mfderiv_id]
     rfl
-
 
 theorem sourceInitial_sameFlowGluingInput_piecewiseTensor
     (center : S.carrier) (hscalar : (F.connection 0).scalarCurvature center = 1)

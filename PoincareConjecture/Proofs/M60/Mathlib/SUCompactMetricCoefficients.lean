@@ -11,8 +11,6 @@ namespace PoincareConjecture.M60
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 theorem suCompactMetric_coercive {Y : Type*} [TopologicalSpace Y]
     {K : Set Y} (hK : IsCompact K) (B : Y → E →L[ℝ] E →L[ℝ] ℝ)
     (hB : ContinuousOn B K) (hpos : ∀ y ∈ K, ∀ v ≠ 0, 0 < B y v v) :
@@ -45,7 +43,6 @@ theorem suCompactMetric_coercive {Y : Type*} [TopologicalSpace Y]
   simpa only [hscale] using this
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem suCompactMetric_uniform_errors {X Y : Type*} [UniformSpace Y] [CompactSpace Y]
     (B : Y → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
@@ -93,8 +90,6 @@ variable {X Y : Type*} [MeasurableSpace X] {mu : Measure X}
 
 local instance : MeasurableSpace (E →L[ℝ] E →L[ℝ] ℝ) := borel _
 local instance : BorelSpace (E →L[ℝ] E →L[ℝ] ℝ) := ⟨rfl⟩
-
-
 
 theorem suCompactRegularizedQuadratic_le_liminf
     (B : Y → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)

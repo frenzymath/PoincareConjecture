@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothIndexDensity
 import PoincareConjecture.Proofs.M09.CompactDerivativeExtension
 import PoincareConjecture.Proofs.M09.VariationFieldSmooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

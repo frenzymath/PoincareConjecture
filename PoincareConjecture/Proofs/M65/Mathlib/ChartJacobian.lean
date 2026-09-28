@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.PlaneMapRegularity
 import Mathlib.Geometry.Manifold.MFDeriv.Tangent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle Filter
@@ -20,16 +13,12 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def m65ChartJacobian (g : RiemannianMetric n M) (p : M)
     (d : EuclideanSpace ℝ (Fin n) × (LoopPlane →L[ℝ] EuclideanSpace ℝ (Fin n))) : ℝ :=
   let inv := (chartAt (EuclideanSpace ℝ (Fin n)) p).symm
   let v : Fin 2 → TangentSpace (𝓡 n) (inv d.1) := fun i =>
     mfderiv (𝓡 n) (𝓡 n) inv d.1 (d.2 (EuclideanSpace.basisFun (Fin 2) ℝ i))
   Real.sqrt (max 0 (Matrix.det fun i j => g.inner (inv d.1) (v i) (v j)))
-
-
 
 theorem m65ChartJacobian_continuousOn (g : RiemannianMetric n M) (p : M) :
     ContinuousOn (m65ChartJacobian g p)
@@ -64,8 +53,6 @@ theorem m65ChartJacobian_continuousOn (g : RiemannianMetric n M) (p : M) :
   apply continuousOn_iff_continuous_domRestrict.mpr
   have hgram' := continuousOn_iff_continuous_domRestrict.mp hgram
   exact (continuous_const.max hgram'.matrix_det).sqrt
-
-
 
 theorem m65AreaDensity_eq_chartJacobian (g : RiemannianMetric n M) (p : M)
     {f : LoopPlane → M} {z : LoopPlane} (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z)

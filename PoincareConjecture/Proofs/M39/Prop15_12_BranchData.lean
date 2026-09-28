@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M39.Prop15_12_NeckCollars
 import PoincareConjecture.Definitions.M39ComparisonMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,10 +15,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   (I : RepairedComparisonMapInput D T hT)
 
 local notation "E" => D.flow.event T hT
-
-
-
-
 
 structure ComparisonBranches where
   caps : Set (Fin (E).cap_count)

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Bounded
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Topology
-
 
 theorem not_nonempty_homeomorph_compact_prod_real_euclidean_three
     {C : Type*} [TopologicalSpace C] [CompactSpace C] [Nonempty C] :

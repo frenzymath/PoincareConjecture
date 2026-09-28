@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,10 +8,6 @@ open Set Filter
 open scoped Topology ContDiff ComplexConjugate SchwartzMap
 
 namespace Complex
-
-
-
-
 
 theorem exists_annular_disk_beltrami_diffeomorphism (μ : ℂ → ℂ)
     (hμsmooth : ContDiff ℝ ∞ μ) (hzero : ∀ᶠ z in 𝓝 (0 : ℂ), μ z = 0)

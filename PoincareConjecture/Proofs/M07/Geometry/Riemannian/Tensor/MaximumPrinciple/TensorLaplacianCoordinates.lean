@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.TensorCoordinates
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.BundleContact
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +13,6 @@ namespace PoincareConjecture.TensorFiber
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] {k : ℕ}
-
 
 def evaluation (a : Fin k → E) : TensorFiber E k →L[ℝ] ℝ :=
   (show TensorFiber E k →ₗ[ℝ] ℝ from
@@ -52,7 +43,6 @@ lemma fderiv_evaluation {H : Type*} [NormedAddCommGroup H] [NormedSpace ℝ H]
     fderiv ℝ (fun z => S z a) x u = (fderiv ℝ S x u) a := by
   exact congrArg (fun L => L u) ((evaluation a).hasFDerivAt.comp x hS.hasFDerivAt).fderiv
 
-
 def slotAction (A : E →L[ℝ] E) (i : Fin k) (T : TensorFiber E k) :
     TensorFiber E k :=
   toMultilinear.symm ((toMultilinear T).compLinearMap
@@ -66,7 +56,6 @@ omit [FiniteDimensional ℝ E] in
   congr 1
   ext j
   by_cases h : j = i <;> simp [h, Function.update_of_ne]
-
 
 def negativeSlotAction (A : E →L[ℝ] E) : TensorFiber E k →L[ℝ] TensorFiber E k :=
   (show TensorFiber E k →ₗ[ℝ] TensorFiber E k from
@@ -104,7 +93,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def tensorCoordinateSection {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T) (p x : M) :
     TensorFiber (EuclideanSpace ℝ (Fin n)) k :=
@@ -135,7 +123,6 @@ lemma contDiffAt_tensorCoordinateSection {k : ℕ}
   have hc := (contMDiffWithinAt_extChartAt_symm_range (I := 𝓡 n) (n := ∞) p hz).contMDiffAt
     (by simp)
   exact (ht.comp z hc).contDiffAt
-
 
 def tensorCoordinateConnectionCoefficient (D : LeviCivitaData g) (p x : M) (k : ℕ) :
     EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -179,7 +166,6 @@ def tensorCoordinateConnectionCoefficient (D : LeviCivitaData g) (p x : M) (k : 
       -∑ i, T (Function.update a i (D.coordinateConnectionCoefficient p x u (a i))) :=
   TensorFiber.negativeSlotAction_apply _ _ _
 
-
 theorem covariantDerivative_tensorCoordinateSection_apply (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     (p : M) {z : EuclideanSpace ℝ (Fin n)}
@@ -202,8 +188,6 @@ theorem covariantDerivative_tensorCoordinateSection_apply (D : LeviCivitaData g)
     tensorCoordinateSection_apply, sub_eq_add_neg]
   congr 1
   simpa only [tensorCoordinateSection_apply] using (TensorFiber.fderiv_evaluation hf a u).symm
-
-
 
 theorem second_covariantDerivative_tensorCoordinateSection_apply (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
@@ -272,8 +256,6 @@ theorem second_covariantDerivative_tensorCoordinateSection_apply (D : LeviCivita
       (Fin.cons u (Fin.cons v a))
   linarith [hDD]
 
-
-
 def orthonormalCoordinateDirection (p x : M)
     (i : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x))) :
     EuclideanSpace ℝ (Fin n) :=
@@ -313,8 +295,6 @@ theorem coordinateTensorTrace_eq_tensorLaplacian {k : ℕ}
           exact e.symmL_continuousLinearMapAt (R := ℝ) hx (g.orthonormalBasis x i)
       | succ j =>
           rfl
-
-
 
 theorem coordinateRoughLaplacian_tensorCoordinateSection {k : ℕ}
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M k}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.ChosenChart
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_regular_metric_limit_of_coordinate_limits
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M44.Mathlib.FirstExit
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlPath
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 C.carrier} (N : EpsilonNeck g)
   {origin scale : ℝ} {I : Set ℝ}
   (e : SurgeryFlowCylinder F C origin scale I N.carrier)
-
-
 
 theorem source_neck_slice_axial_path_length
     (hsmall : N.epsilon ≤ 1 / 2) (s : ℝ) (hs : s ∈ I) (hs0 : s ≤ 0)
@@ -65,8 +55,6 @@ theorem source_neck_slice_axial_path_length
     (s := e.forward s hs '' N.carrier) (K := Real.toNNReal (2 * Real.sqrt scale))
     (fun x hx => (source_neck_slice_axial_smooth N e s hs hx).of_le (by simp))
     (fun x hx => by exact hbound x hx) hgamma himage
-
-
 
 theorem source_neck_slice_path_capture
     (hsmall : N.epsilon ≤ 1 / 2) (s : ℝ) (hs : s ∈ I) (hs0 : s ≤ 0)

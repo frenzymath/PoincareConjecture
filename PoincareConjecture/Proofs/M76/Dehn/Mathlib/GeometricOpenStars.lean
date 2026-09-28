@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BarycentricOpenStars
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalFaceLabels
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteBarycentricCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore
@@ -21,28 +11,19 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) [Fintype K.vertices]
 
-
-
 def geometricOpenVertexStar (i : K.vertices) : Set K.space :=
   K.finiteBarycentricHomeomorph.symm ⁻¹'
     K.vertexAbstractComplex.toPreAbstractSimplicialComplex.openVertexStar i
-
-
 
 theorem isOpen_geometricOpenVertexStar (i : K.vertices) :
     IsOpen (K.geometricOpenVertexStar i) :=
   (K.vertexAbstractComplex.toPreAbstractSimplicialComplex.isOpen_openVertexStar i).preimage
     K.finiteBarycentricHomeomorph.symm.continuous
 
-
-
 theorem exists_mem_geometricOpenVertexStar (x : K.space) :
     ∃ i, x ∈ K.geometricOpenVertexStar i :=
   K.vertexAbstractComplex.toPreAbstractSimplicialComplex.exists_mem_openVertexStar
     (K.finiteBarycentricHomeomorph.symm x)
-
-
-
 
 theorem mem_face_of_mem_geometricOpenVertexStar {x : K.space} {t : Finset E}
     (ht : t ∈ K.faces) (hxt : x.val ∈ convexHull ℝ (t : Set E))

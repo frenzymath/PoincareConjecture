@@ -1,18 +1,8 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.CompatibleCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Intersections
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -68,7 +58,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 
 omit [T2Space M] [ChartedSpace Plane M] [IsManifold (𝓡 2) ∞ M] in
 
-
 theorem mesh_coordinate_triangle_intersection (T : TriangleMesh)
     (C : OpenPartialHomeomorph Plane M) (hsource : T.toPlaneComplex.support ⊆ C.source)
     (s t : T.Triangle) (hst : s ≠ t) :
@@ -114,7 +103,6 @@ theorem region_disjoint_closure {R S : D.regions} (hne : R ≠ S) :
       ⟨hqS, connectedComponentIn_subset _ _ hqR⟩)
 
 omit [T2Space M] in
-
 
 theorem core_parent_coordinate_intersection
     {R S : D.regions} (hne : R ≠ S)

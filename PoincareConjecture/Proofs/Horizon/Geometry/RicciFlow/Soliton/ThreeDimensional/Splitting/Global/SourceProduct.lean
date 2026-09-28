@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.SolitonEquation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +22,6 @@ open RiemannianMetric
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ConnectedSpace M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 def CanonicalAncientRoundProduct (F : RicciFlow 3 M (Iic 0)) {r : M → ℝ}
     (hr : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ r)
@@ -64,8 +52,6 @@ def CanonicalAncientRoundProduct (F : RicciFlow 3 M (Iic 0)) {r : M → ℝ}
             (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) e z b) =
               (A.flow.metric t).inner z.1 a.1 b.1 + a.2 * b.2) ∧
         (∀ q, (e.symm q).2 = r q)
-
-
 
 theorem canonicalAncientRoundProduct_of_parallel_coordinate
     (hP : ThreeDimensionalClassificationPredecessors.{u})
@@ -150,9 +136,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
-
-
 
 theorem exists_nullCover_component_ancientRound_product
     (hP : ThreeDimensionalClassificationPredecessors.{u})
@@ -248,8 +231,6 @@ theorem exists_nullCover_component_ancientRound_product
         (G.ancientSource.nonnegative_curvature_operator 0 le_rfl y))
   exact exists_ancientRound_product_of_parallel_coordinate hP F hcomplete hop hK hnorm
     S.kappa_pos hanc hscalar hrC huC hzC
-
-
 
 theorem exists_nullCover_component_canonicalAncientRound_product
     (hP : ThreeDimensionalClassificationPredecessors.{u})

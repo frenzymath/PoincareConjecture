@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem hasDerivWithinAt_pullbackCoefficients_ricci
     {n : ℕ} {M : Type*} [TopologicalSpace M]

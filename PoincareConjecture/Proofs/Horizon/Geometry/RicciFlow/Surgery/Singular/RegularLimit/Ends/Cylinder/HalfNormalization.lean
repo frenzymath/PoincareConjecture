@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Cylinder.ClosedHalf
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +46,6 @@ private theorem not_closedHalf_subset_compact (Q : OpenCylinderModel U) (side : 
 
 omit [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
 
-
 theorem isClosed_closedTail_of_subset (Q : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) {Y : Set M}
     (hY : IsClosed Y) (hYU : Y ⊆ U) (hsub : Q.closedTail side a ⊆ Y) :
@@ -73,8 +65,6 @@ theorem isClosed_closedTail_of_subset (Q : OpenCylinderModel U) (side : Bool)
       cases side <;> exact hx
   rw [heq]
   exact (Q.inverse_smooth.continuousOn.snd.mono hYU).preimage_isClosed_of_isClosed hY hS
-
-
 
 theorem exists_closedHalf_inside_closedTail (Q P : OpenCylinderModel U) (side : Bool)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hclosed : IsClosed (Q.closedTail side a))

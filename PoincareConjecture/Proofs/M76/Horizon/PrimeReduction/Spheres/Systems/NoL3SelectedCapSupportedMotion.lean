@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.FinitePolyhedralIdentityExte
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartPLTransition
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

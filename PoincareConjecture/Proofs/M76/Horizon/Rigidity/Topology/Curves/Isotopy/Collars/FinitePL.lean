@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Co
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 
@@ -48,7 +40,6 @@ theorem finitePiecewiseAffineOn_collarTrack
     exact ⟨⟨le_min t.property.1 (sub_nonneg.mpr hz.1.2),
       (min_le_left _ _).trans t.property.2⟩, hz.2⟩
   exact hfst.prod_mk (htrack.comp hparameter hmaps)
-
 
 def collarExtensionOnCarrier {A : Set E} (H : I → A ≃ₜ A)
     (hc : Continuous (fun z : I × A => H z.1 z.2))

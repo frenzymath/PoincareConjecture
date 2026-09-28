@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.Essential
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAnnularCarrier
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.SquareCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

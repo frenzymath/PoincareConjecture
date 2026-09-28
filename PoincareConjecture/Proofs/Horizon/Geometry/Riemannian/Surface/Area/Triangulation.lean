@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area.Curve
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Integrability
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,7 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
   [T3Space S] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S]
   [IsManifold (𝓡 2) ∞ S]
-
 
 theorem SmoothEdge.volumeMeasure_image_eq_zero
     (e : SmoothEdge S) (g : RiemannianMetric 2 S) :
@@ -32,13 +24,11 @@ theorem SmoothFace.isCompact_carrier (f : SmoothFace S) : IsCompact f.carrier :=
   rw [f.carrier_eq_image]
   exact f.source_compact.image_of_continuousOn f.smooth.continuousOn
 
-
 theorem SmoothFace.volumeMeasure_frontier_eq_zero
     (f : SmoothFace S) (g : RiemannianMetric 2 S) :
     g.volumeMeasure (frontier f.carrier) = 0 := by
   rw [f.boundary_carrier]
   exact measure_iUnion_null fun i => (f.boundary i).volumeMeasure_image_eq_zero g
-
 
 theorem SmoothFace.integral_carrier_eq_integral_interior
     (f : SmoothFace S) (g : RiemannianMetric 2 S) (H : S → ℝ) :
@@ -55,8 +45,6 @@ namespace FiniteSmoothTriangulation
 
 variable (T : FiniteSmoothTriangulation (M := S)) (g : RiemannianMetric 2 S)
 
-
-
 theorem aedisjoint_faces : Pairwise (fun f h =>
     AEDisjoint g.volumeMeasure (T.face f).carrier (T.face h).carrier) := by
   intro f h hfh
@@ -65,8 +53,6 @@ theorem aedisjoint_faces : Pairwise (fun f h =>
   · rw [he]
     exact (T.edge e).volumeMeasure_image_eq_zero g
   · exact measure_mono_null hv (g.volumeMeasure_singleton_eq_zero (T.vertex v))
-
-
 
 theorem integral_eq_sum_faces {H : S → ℝ} (hH : Integrable H g.volumeMeasure) :
     (∫ x, H x ∂g.volumeMeasure) =
@@ -77,7 +63,6 @@ theorem integral_eq_sum_faces {H : S → ℝ} (hH : Integrable H g.volumeMeasure
     (fun f => (T.face f).isCompact_carrier.measurableSet.nullMeasurableSet)
     (T.aedisjoint_faces g) (hH.integrableOn (s := ⋃ f, (T.face f).carrier))
   simpa only [T.face_cover, Measure.restrict_univ, tsum_fintype] using h
-
 
 theorem integral_scalarCurvature_eq_sum_faces [CompactSpace S]
     (D : LeviCivitaData g) :

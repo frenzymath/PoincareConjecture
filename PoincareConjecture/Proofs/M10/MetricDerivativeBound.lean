@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.BilinearCoefficientBound
 import PoincareConjecture.Proofs.M10.BackwardMetricDerivative
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M10
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem abs_ricci_basis_le (g : RiemannianMetric n M) (D : LeviCivitaData g) (q : M)
     (i j : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) q))) :

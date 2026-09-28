@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,8 +54,6 @@ private theorem exists_geodesic_to_time (g : RiemannianMetric n M)
   simpa only [Function.comp_def, id_eq, mul_one, smul_smul, inv_mul_cancel₀ ht, one_smul]
     using hv'.scomp 0 ((hasDerivAt_id (0 : ℝ)).const_mul t⁻¹)
 
-
-
 theorem exists_global_geodesic (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin n)) :
     ∃ γ : ℝ → M, g.IsGeodesicOn γ univ ∧ γ 0 = p ∧
@@ -90,8 +78,6 @@ theorem exists_global_geodesic (g : RiemannianMetric n M)
   refine ⟨q, a, w, ?_⟩
   filter_upwards [hlocal, hgerm t] with u hu heq
   exact ⟨heq.trans hu.1, hu.2⟩
-
-
 
 theorem contMDiff_global_geodesic {g : RiemannianMetric n M}
     {γ : ℝ → M} (hγ : g.IsGeodesicOn γ univ) :

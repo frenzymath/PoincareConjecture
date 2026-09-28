@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapNeckTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem neck_axial_derivative (N : EpsilonNeck g) {x : M} (hx : x ∈ N.carrier) :
     ∃ d : TangentSpace (𝓡 3) x,
@@ -46,8 +36,6 @@ theorem neck_axial_derivative (N : EpsilonNeck g) {x : M} (hx : x ∈ N.carrier)
   rw [mvfderiv_comp_apply_of_eq z hf hk hright] at hd
   exact ⟨_, hd⟩
 
-
-
 theorem neck_core_iff_nonpos (N : EpsilonNeck g) {K : Set M} (hK : IsClosed K)
     (hB : frontier K = N.central_sphere)
     (hleft : N.region (-N.epsilon⁻¹) 0 ⊆ interior K)
@@ -64,9 +52,6 @@ theorem neck_core_iff_nonpos (N : EpsilonNeck g) {K : Set M} (hK : IsClosed K)
     · have hxB := (M36.neck_central_iff N).mpr ⟨hx, h⟩
       rw [← hB] at hxB
       exact hK.closure_eq ▸ frontier_subset_closure hxB
-
-
-
 
 theorem neck_boundary_defining_function [PreconnectedSpace M]
     (N : EpsilonNeck g) {K C : Set M} (hK : IsClosed K)

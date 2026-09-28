@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.AmbientCompression
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.NeckRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,13 +17,11 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
 
-
 noncomputable def capEndTensor (N : CapCertificate g) : RoundCylinderTwoTensor :=
   fun z v w => N.end_neck.scale⁻¹ ^ 2 *
     roundCylinderPullback g N.end_neck.coordinate_map z v w
 
 omit [T2Space M] in
-
 
 theorem exists_capEndTensor_bound (N : CapCertificate g) {eta : ℝ}
     (heta : N.epsilon ≤ eta) :
@@ -48,9 +37,6 @@ theorem exists_capEndTensor_bound (N : CapCertificate g) {eta : ℝ}
       exact N.end_neck.metric_comparison.close
     exact hold.mono_epsilon_m28 N.epsilon_pos heta (by norm_num)
   exact hclose.2
-
-
-
 
 structure ConditionalPersistenceInput (N : CapCertificate g) where
   eta : ℝ
@@ -74,10 +60,6 @@ structure ConditionalPersistenceInput (N : CapCertificate g) where
     ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-eta⁻¹) eta⁻¹ →
       cylinderJetDifferenceSquared 0 (candidate k) (capEndTensor N)
         ⌊eta⁻¹⌋₊ z ≤ difference_budget
-
-
-
-
 
 structure ConditionalPersistencePacket (N : CapCertificate g)
     (I : ConditionalPersistenceInput N) (delta : ℕ → ℝ) (k : ℕ)
@@ -109,10 +91,6 @@ structure ConditionalPersistencePacket (N : CapCertificate g)
     I.eta ^ 2 - ((1 + I.theta) * I.base_bound +
       (1 + I.theta⁻¹) * I.difference_budget)
   transfer_slack_pos : 0 < transfer_slack
-
-
-
-
 
 theorem eventually_exists_conditional_cap_persistence
     (N : CapCertificate g) {delta : ℕ → ℝ}

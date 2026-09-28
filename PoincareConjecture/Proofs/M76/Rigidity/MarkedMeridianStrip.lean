@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalStripBoundaryTrace
 import PoincareConjecture.Proofs.M76.Rigidity.SourceComplementCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +18,6 @@ local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
   (P : OriginalDiskProduct e R j) {a : ℝ}
-
-
 
 theorem marked_meridian_strip_trace (ha : 0 < a)
     (hmark : ∀ z ∈ Q, ∀ t ∈ I,
@@ -53,9 +43,6 @@ theorem marked_meridian_strip_trace (ha : 0 < a)
     refine ⟨(z.1, z.2 / a), ⟨hz.1, ht⟩, ?_⟩
     rw [hmark _ hz.1 _ (hI ht), mul_div_cancel₀ _ ha.ne']
 
-
-
-
 theorem marked_meridian_cap_rims
     (hmark : ∀ z ∈ Q, ∀ t ∈ I,
       P.map (z, t) = hamiltonMeridianCutAmbientMap (z, a * t)) :
@@ -69,8 +56,6 @@ theorem marked_meridian_cap_rims
   · intro z hz
     rw [hamiltonComplementCylinder_upper]
     simpa only [mul_neg, mul_one_div] using hmark z hz (-(1 / 2)) (by norm_num)
-
-
 
 theorem marked_meridian_retained_frontier (ha : 0 < a) (ha_small : a ≤ 1 / 2)
     (hmark : ∀ z ∈ Q, ∀ t ∈ I,

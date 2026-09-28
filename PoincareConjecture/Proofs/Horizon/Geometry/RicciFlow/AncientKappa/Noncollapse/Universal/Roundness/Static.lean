@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +19,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
 
 theorem einstein_of_ricciComplement_mem_all_pinchingCones
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -74,8 +64,6 @@ theorem einstein_of_ricciComplement_mem_all_pinchingCones
   rw [hrval] at heval
   nlinarith [heval v w]
 
-
-
 theorem isRoundMetricSlice_of_einstein
     [ConnectedSpace M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -99,8 +87,6 @@ theorem isRoundMetricSlice_of_einstein
   refine ⟨c, hc, fun x u v => ?_⟩
   exact D.curvatureTensor_diagonal_of_constant_sectional x c
     (D.sectionalCurvature_eq_of_orthonormal x c (hsec x)) u v
-
-
 
 theorem isRoundMetricSlice_of_ricciComplement_mem_all_pinchingCones
     [ConnectedSpace M]

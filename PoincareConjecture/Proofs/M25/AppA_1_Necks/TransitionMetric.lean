@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionHeight
 import PoincareConjecture.Proofs.M25.Mathlib.SphereQuadraticComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
-
 theorem normalized_pullback_inverse_tangent (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x) :
     N.normalized_pullback (N.coordinate_inverse x)
@@ -39,10 +25,6 @@ theorem normalized_pullback_inverse_tangent (N : EpsilonNeck g)
     N.coordinate_product_mfderiv_right_inverse hx v]
   exact congrArg (fun y : M => N.scale⁻¹ ^ 2 * g.inner y v v)
     (N.coordinate_map_coordinate_inverse hx)
-
-
-
-
 
 theorem normalized_pullback_transition (N N' : EpsilonNeck g)
     {z : RoundCylinderSpace} (hx' : N.coordinate_map z ∈ N'.carrier)
@@ -56,9 +38,6 @@ theorem normalized_pullback_transition (N N' : EpsilonNeck g)
   rw [N'.normalized_pullback_inverse_tangent hx']
   simp only [normalized_pullback, roundCylinderPullback]
   field_simp [N.scale_pos.ne', N'.scale_pos.ne']
-
-
-
 
 theorem transition_slice_mfderiv_components (N N' : EpsilonNeck g)
     {q : UnitTwoSphere} {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -95,11 +74,6 @@ theorem transition_slice_mfderiv_components (N N' : EpsilonNeck g)
       mfderiv_comp q hi (hm.comp q hp), mfderiv_comp q hm hp,
       mfderiv_prod_left, mfderiv_snd]
     rfl
-
-
-
-
-
 
 theorem exists_intersecting_transition_sphere_norm_bounds {K : ℝ} (hK : 1 < K) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

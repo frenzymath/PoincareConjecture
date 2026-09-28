@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConform
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.ThreePointNormalization
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -102,10 +92,6 @@ private theorem m65Weak_energy_conformal_columns {N : ℕ}
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}
   {γ : LoopCircle → M}
-
-
-
-
 
 theorem m65WeakDisk_holomorphic_change (g : RiemannianMetric 3 M)
     (he : Continuous e)
@@ -207,11 +193,6 @@ theorem m65WeakDisk_holomorphic_change (g : RiemannianMetric 3 M)
     apply Subtype.ext
     exact (heq z (mem_closedBall_zero_iff.mpr z.property.le)).trans hw.symm
 
-
-
-
-
-
 theorem m65WeakDisk_conformal_normalization (g : RiemannianMetric 3 M)
     (he : Continuous e) (hγ : Continuous γ) (F : M65WeakDisk e γ)
     (a b c : LoopCircle) (hab : a ≠ b) (hac : a ≠ c) (hbc : b ≠ c) :
@@ -268,10 +249,6 @@ theorem m65WeakDisk_conformal_normalization (g : RiemannianMetric 3 M)
       change r.val = E (ψ (E.symm (E (-I))))
       rw [E.symm_apply_apply, ← hR, hleft _ (hnorm r).le]
       exact (E.apply_symm_apply r.val).symm
-
-
-
-
 
 theorem M65WeakDisk.normalized_minimum_is_minimum (g : RiemannianMetric 3 M)
     (he : Continuous e) (hγ : Continuous γ) (F : M65WeakDisk e γ)

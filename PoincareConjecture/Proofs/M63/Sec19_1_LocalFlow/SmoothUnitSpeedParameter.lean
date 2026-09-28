@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UnitSpeedInitialPeriod
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem speed_contDiff_of_smooth (F : RicciFlow n M (Icc a b))
     (q : ℝ → ℝ → M) {t : ℝ}
@@ -51,10 +39,6 @@ theorem speed_contDiff_of_smooth (F : RicciFlow n M (Icc a b))
     intro x
     exact (Bundle.contMDiffAt_totalSpace.mp (hpair x)).2
   exact hsq.contDiff.sqrt fun x => ((F.metric t).pos _ _ (himm x)).ne'
-
-
-
-
 
 theorem exists_smooth_unit_speed_parameter (F : RicciFlow n M (Icc a b))
     (gamma : ℝ → M) (t : ℝ) (hperiod : Function.Periodic gamma curvePeriod)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.BallApproximation
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.Curves.Midpoints
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -80,8 +69,6 @@ private theorem source_metric_split
       show t * dist x y = r from div_mul_cancel₀ r hd.ne'] at hh
     exact hh
 
-
-
 theorem asymptoticCone_exists_distance_split [NoncompactSpace M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature) (p : M) :
@@ -146,8 +133,6 @@ theorem asymptoticCone_exists_distance_split [NoncompactSpace M]
   rw [hac, mul_div_cancel_right₀ _ hL.ne'] at haz
   rw [hcb, sub_div, mul_div_cancel_right₀ _ hL.ne'] at hzb
   exact ⟨z, z.property, by linarith, by linarith⟩
-
-
 
 theorem exists_asymptoticCone_metric_segment [NoncompactSpace M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

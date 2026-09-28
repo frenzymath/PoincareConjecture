@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.M10.InverseMeasure
 import PoincareConjecture.Proofs.M10.MeasureGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -28,9 +17,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   [T3Space M] [T3Space N] [MeasurableSpace M] [MeasurableSpace N]
   [BorelSpace M] [BorelSpace N]
-
-
-
 
 theorem calibratedMetricVolume_image_le_of_edist_le_on
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -49,10 +35,6 @@ theorem calibratedMetricVolume_image_le_of_edist_le_on
   calc
     _ ≤ euclideanVolumeCalibration n * ((C : ℝ≥0∞) ^ n * _) := mul_le_mul_right hH _
     _ = _ := by ac_rfl
-
-
-
-
 
 theorem calibratedMetricVolume_image_le_of_local_tangentNorm_le
     [SecondCountableTopology M]
@@ -79,9 +61,6 @@ theorem calibratedMetricVolume_image_le_of_local_tangentNorm_le
     simpa only [ENNReal.ofNNReal_toNNReal] using hb
   have hb := M10.measure_le_mul_of_local_comparison hlocal hA hAsource
   rwa [M10.map_inverse_restrict_apply e μ hA hAsource] at hb
-
-
-
 
 theorem calibratedMetricVolume_le_mul_image_of_local_tangentNorm_lower
     [SecondCountableTopology N]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.MarkedTriangle
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.OrientedVertexCut
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.IncidentJointSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -42,8 +34,6 @@ theorem interval_eq_of_preconnected_subset_endpoints
   have h := e.symm.injective (Subtype.ext hy)
   have hxy : (y : E) = x := congrArg Subtype.val h
   exact hxy ▸ y.property
-
-
 
 theorem exists_covering_vertex_arc_triangle_chain
     (A : SimplicialComplex ℝ E) [Fintype A.faces] {v a b : E}
@@ -183,8 +173,6 @@ theorem exists_covering_vertex_arc_triangle_chain
   · rw [← Finset.insert_erase hvt]
     exact Finset.insert_subset_insert v hsk
   · rw [htc, (htri k hk).2.2.1]
-
-
 
 theorem vertex_arc_triangles_same_marked_component
     (A L : SimplicialComplex ℝ E) [Fintype A.faces] {v a b : E}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereJetMargin
 import PoincareConjecture.Proofs.M44.Mathlib.SectionalPlane
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +18,6 @@ noncomputable local instance pullbackPlaneCoefficientNormedGroup :
 
 noncomputable local instance pullbackPlaneCoefficientNormedSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem jetCurvature_pullbackCoefficients
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -66,9 +53,6 @@ theorem jetCurvature_pullbackCoefficients
   exact DE.curvatureTensor_eq_of_local_isometry D hV (hf.mono hVU)
     (fun y hy a b => congrArg (fun B => B a b) (hmetric y hy)) hxV u w v z
 
-
-
-
 theorem sectional_lower_of_pullback_twoJet
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
     [IsManifold (𝓡 3) ∞ M] [T2Space M]
@@ -87,9 +71,6 @@ theorem sectional_lower_of_pullback_twoJet
   apply (lt_div_iff₀ hJ.2.1).mpr
   rw [← jetCurvature_pullbackCoefficients g D hU hf hinv hx]
   exact hJ.2.2
-
-
-
 
 theorem sectional_lower_on_physical_plane
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]

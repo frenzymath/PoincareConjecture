@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.CoordinateCutoff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

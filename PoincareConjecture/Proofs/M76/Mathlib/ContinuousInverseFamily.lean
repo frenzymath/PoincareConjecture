@@ -2,24 +2,12 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.MetricSpace.Antilipschitz
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology NNReal
 
 namespace Homeomorph
-
-
-
 
 theorem continuous_symm_family_of_antilipschitz {T X Y : Type*}
     [TopologicalSpace T] [PseudoMetricSpace X] [PseudoMetricSpace Y]

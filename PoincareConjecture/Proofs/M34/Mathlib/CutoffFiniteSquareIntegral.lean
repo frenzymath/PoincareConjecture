@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CutoffIntegralComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped BigOperators
 
 namespace MeasureTheory
-
-
 
 theorem integral_cutoff_sq_finsetSum
     {X I : Type*} [TopologicalSpace X] [MeasurableSpace X] [OpensMeasurableSpace X]

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.MetricPullbackForm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarC1_pullback_continuousAt (g : RiemannianMetric n M) {f : Plane → M}
     {p : Plane} (hf : ContMDiffAt (𝓡 2) (𝓡 n) 1 f p) :
@@ -69,18 +54,10 @@ theorem scalarC1_pullback_continuousAt (g : RiemannianMetric n M) {f : Plane →
     simp [hom_trivializationAt_apply, ContinuousLinearMap.inCoordinates, TangentSpace]
   exact hplain.continuousAt
 
-
-
-
-
 theorem scalarC1_pullback_continuous (g : RiemannianMetric n M) (f : Plane → M)
     (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
     Continuous (show Plane → Form from fun x => M60.metricPullbackForm (n := 2) g f x) :=
   continuous_iff_continuousAt.mpr (fun _ => scalarC1_pullback_continuousAt g (hf _))
-
-
-
-
 
 theorem scalarC1_pullback_continuousOn (g : RiemannianMetric n M) (f : Plane → M)
     {U : Set Plane} (hU : IsOpen U) (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f U) :

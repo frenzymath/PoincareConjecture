@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.mem_rim_of_selected_image_height_eq
     {S TY rim : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β t : ℝ}
@@ -44,10 +31,6 @@ theorem AlexanderCollarSlab.mem_rim_of_selected_image_height_eq
     rw [hw, hheight] at ht
     exact lt_irrefl _ ht
   exact ((M.bottom w hzero).symm.trans hw) ▸ hbase
-
-
-
-
 
 theorem AlexanderCollarSlab.ordinary_lower_band_eq_cap_union_remainder
     {S s d TX TY : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β t : ℝ}

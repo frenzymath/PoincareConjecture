@@ -1,14 +1,6 @@
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open Set
 namespace PoincareConjecture.M10
 
 variable {X A : Type*} [TopologicalSpace X] [TopologicalSpace A]
-
 
 theorem exists_global_minimum_of_compact_sublevel {f : X → ℝ} (hf : Continuous f)
     {K : Set X} (hK : IsCompact K) {L : ℝ}
@@ -35,7 +26,6 @@ theorem exists_global_minimum_of_compact_sublevel {f : X → ℝ} (hf : Continuo
   refine ⟨mem_range_self x, ?_⟩
   rintro _ ⟨y, rfl⟩
   exact hglobal y
-
 
 theorem continuous_sInf_of_compact_sublevels {f : A → X → ℝ}
     (hf : Continuous (fun z : A × X ↦ f z.1 z.2))

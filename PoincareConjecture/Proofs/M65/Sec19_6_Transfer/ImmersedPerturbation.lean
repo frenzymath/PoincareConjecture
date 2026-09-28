@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationGeneric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -40,12 +31,6 @@ private theorem enlarge_loop_time_interval {J : Set ℝ} (hJ : IsOpen J)
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b : ℝ} {J : Set ℝ} {s t : ℝ}
-
-
-
-
-
-
 
 theorem m65Exists_generic_loop_perturbation (F : RicciFlow 3 M (Icc a b))
     (hJ : IsOpen J) (_hJF : J ⊆ Ioo a b) (C : M65SmoothFilledLoopFamily F J)

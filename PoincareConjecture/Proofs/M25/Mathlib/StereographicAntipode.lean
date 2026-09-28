@@ -1,23 +1,10 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Metric
 open scoped Manifold ContDiff InnerProductSpace
-
-
-
 
 theorem exists_stereographic_antipode_linearIsometry
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

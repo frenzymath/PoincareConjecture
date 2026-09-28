@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Maximum
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +26,6 @@ private theorem gradient_const_mul (g : RiemannianMetric (m + 1) M)
   ext v
   simp only [D.inner_gradient, mvfderiv_const_mul, map_smul, smul_apply,
     smul_eq_mul]
-
-
 
 theorem exists_busemannApprox_lower_support
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
@@ -73,8 +61,6 @@ theorem exists_busemannApprox_lower_support
     simp only [mul_zero, add_zero] at hlap
     linarith
 
-
-
 theorem eventually_le_toReal_edist_line_on_compact
     (g : RiemannianMetric (m + 1) M) (γ : ℝ → M)
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|)
@@ -94,8 +80,6 @@ theorem eventually_le_toReal_edist_line_on_compact
   have hxR := hR (mem_image_of_mem _ hx)
   have hAR : A + R ≤ t := (le_max_right _ _).trans ht
   linarith
-
-
 
 theorem eventually_busemannApprox_lower_supports_on_compact
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
@@ -141,8 +125,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem laplacian_upper_test_ge_of_lower_support (D : LeviCivitaData g)
     {u φ σ : M → ℝ} {U V : Set M} {x : M} {a : ℝ}
     (hU : IsOpen U) (hxU : x ∈ U)
@@ -164,8 +146,6 @@ theorem laplacian_upper_test_ge_of_lower_support (D : LeviCivitaData g)
   rw [Dirichlet.laplacian_sub_on D (hU.inter hV)
     (hσ.mono inter_subset_left) (hφ.mono inter_subset_right) ⟨hxU, hxV⟩] at hsub
   linarith
-
-
 
 theorem le_on_compact_of_lower_supports (D : LeviCivitaData g)
     {K : Set M} (hK : IsCompact K) {u φ : M → ℝ} {a : ℝ}

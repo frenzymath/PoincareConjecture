@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.RawCh
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTowerDescent
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -21,13 +12,9 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
-
 abbrev RawCrossingChart {X ι : Type*} [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X V3) (f : V2 → X) (R : Set X) (x y : V2) :=
   Annuli.RawSourceCrossing e f D2 R x y
-
-
 
 theorem nonempty_rawCrossingChart_of_twoBranchWindow
     {X Y ι : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -60,8 +47,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
 open PoincareConjecture.M76.Dehn
-
-
 
 theorem Step.nonempty_raw_crossing_charts
     {M ι : Type*} [TopologicalSpace M]

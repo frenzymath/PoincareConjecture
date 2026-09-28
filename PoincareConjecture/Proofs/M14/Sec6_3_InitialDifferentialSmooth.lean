@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.OpenFirstPartialTangent
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +18,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 theorem initialValueDifferential_contMDiffOn
     {U : Set (G.Horizontal x)} {C : Set ℝ} (hU : IsOpen U)
@@ -63,9 +51,6 @@ theorem initialValueDifferential_contMDiffOn
           (G.spacetime.horizontalProjection v.proj v.2)) :=
     G.spacetime.horizontalProjection_smooth
   exact hproj.comp_contMDiffOn htan
-
-
-
 
 theorem initialValueDifferential_field_contMDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

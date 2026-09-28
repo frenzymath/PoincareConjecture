@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.Calabi
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,8 +63,6 @@ private lemma finite_hasDerivAt_radial_length
   dsimp only
   rw [hspeed s hs]
   exact neg_div _ _
-
-
 
 theorem exists_distance_spacetime_upper_support_of_finite
     (F : RicciFlow (m + 1) M J)

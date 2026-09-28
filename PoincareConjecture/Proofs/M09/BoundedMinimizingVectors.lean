@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.CompactActionBound
 import PoincareConjecture.Proofs.M09.ExponentialCoercivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

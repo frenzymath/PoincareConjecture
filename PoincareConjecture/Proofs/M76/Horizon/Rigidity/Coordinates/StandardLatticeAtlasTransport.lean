@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PLAtlasTransport
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem StandardLatticeHandleAtlas.preimage_linear_coordinates
     {ι ι' κ κ' α : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']
@@ -40,9 +29,6 @@ theorem StandardLatticeHandleAtlas.preimage_linear_coordinates
     apply h.injective
     rw [h.apply_symm_apply, hA, A.apply_symm_apply]
     exact ha z hz
-
-
-
 
 theorem exists_standard_marked_lattice_handle_coordinates
     {ι ι' κ κ' α : Type*} [Fintype ι] [Fintype ι'] [Fintype κ] [Fintype κ']

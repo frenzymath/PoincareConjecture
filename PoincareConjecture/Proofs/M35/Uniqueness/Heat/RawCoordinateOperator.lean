@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingBochner
 import PoincareConjecture.Proofs.M03.Existence.CoordinateEllipticityNative
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ namespace PoincareConjecture.M35.Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 def rawConnectionCoefficient {g : RiemannianMetric n V} (D : LeviCivitaData g)
     (x : V) : V →L[ℝ] V →L[ℝ] V :=
@@ -68,8 +58,6 @@ theorem raw_connection_field_contDiff {g : RiemannianMetric n V}
   rw [raw_connection_field_eq D hX v]
   exact ((hX.fderiv_right (by simp)).clm_apply contDiff_const).add
     (((rawConnectionCoefficient_contDiff D).clm_apply contDiff_const).clm_apply hX)
-
-
 
 theorem fieldHessian_coordinate_expansion {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} (hX : ContDiff ℝ ∞ X) (x u v : V) :

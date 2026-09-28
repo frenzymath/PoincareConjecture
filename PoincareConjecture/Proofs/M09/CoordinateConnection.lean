@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.PositiveForm
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

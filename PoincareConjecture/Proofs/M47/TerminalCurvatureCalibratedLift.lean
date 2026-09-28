@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureCalibratedNeck
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSmoothLift
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_lifted_calibrated_neck_sphere
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

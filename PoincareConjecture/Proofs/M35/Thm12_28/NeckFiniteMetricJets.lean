@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetBoundsAux
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,9 +43,6 @@ private theorem model_connection_jet_bound (ell : ℝ) (r : ℕ) :
   exact (hc (a, b, d) (0, s) ⟨mem_singleton 0, hs⟩).trans
     ((le_max_left _ _).trans
       (Finset.single_le_sum (fun _ _ => le_max_right _ _) (Finset.mem_univ (a, b, d))))
-
-
-
 
 theorem full_neck_covariant_component_jet_bounds
     {epsilon : ℝ} {B : RoundCylinderTwoTensor}
@@ -159,8 +147,6 @@ theorem full_neck_covariant_component_jet_bounds
         Real.norm_eq_abs] at hnorm
       exact hnorm.trans hderiv
 
-
-
 theorem full_neck_metric_error_jet_bounds
     {epsilon : ℝ} {B : RoundCylinderTwoTensor}
     (hclose : RoundCylinderClose epsilon 0 B) (he : 0 < epsilon)
@@ -174,9 +160,6 @@ theorem full_neck_metric_error_jet_bounds
   refine ⟨C, hC, ?_⟩
   intro q s hs a b
   exact hbound q s hs ![a, b]
-
-
-
 
 theorem full_neck_metric_coefficient_jet_bounds
     {epsilon : ℝ} {B : RoundCylinderTwoTensor}

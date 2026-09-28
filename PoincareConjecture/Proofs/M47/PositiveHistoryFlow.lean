@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.PositiveGradientTerminal
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveLocalIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {J : Set ℝ}
-
-
 
 def zeroBasedHalfOpenRestriction (F : RicciFlow 3 M J)
     {a b : ℝ} (hab : a < b) (hI : Ico a b ⊆ J) : RicciFlow 3 M (Ico 0 (b - a)) where
@@ -49,8 +38,6 @@ def zeroBasedHalfOpenRestriction (F : RicciFlow 3 M J)
       (fun t ht => hI ⟨by linarith [ht.1], by linarith [ht.2]⟩)
     convert! h using 1
     simp only [mul_one]
-
-
 
 theorem positive_blowup_on_interval
     [CompactSpace M] [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]
@@ -92,9 +79,6 @@ theorem positive_blowup_on_interval
   change L ≤ (F.connection (a + (t - a))).scalarCurvature x at h
   exact (congrArg (fun z => L ≤ (F.connection z).scalarCurvature x)
     (show a + (t - a) = t by ring)).mp h
-
-
-
 
 theorem positive_blowup_on_component
     [CompactSpace M] [T3Space M] [SecondCountableTopology M]

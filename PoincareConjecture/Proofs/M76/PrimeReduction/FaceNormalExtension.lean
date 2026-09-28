@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningFaceCoordinates
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -18,9 +9,6 @@ namespace ContinuousAffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_normal_extension (F : (ℝ × ℝ) →ᴬ[ℝ] E)
     (hi : Function.Injective F) (h3 : Module.finrank ℝ E = 3) :

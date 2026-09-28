@@ -1,15 +1,5 @@
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -27,9 +17,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace N] [ChartedSpace E' N]
   {n : ℕ∞ω} {f : M → N} {x : M}
 
-
-
-
 theorem writtenInCharts_source
     (h : IsImmersionAtOfComplement F 𝓘(𝕜, E) 𝓘(𝕜, E') n f x)
     {z : M} (hz : z ∈ h.domChart.source) :
@@ -39,10 +26,6 @@ theorem writtenInCharts_source
   have he := h.writtenInCharts ht
   simpa [OpenPartialHomeomorph.extend_coe, OpenPartialHomeomorph.extend_coe_symm,
     h.domChart.left_inv hz] using he
-
-
-
-
 
 theorem exists_isOpen_range_iff
     (h : IsImmersionAtOfComplement F 𝓘(𝕜, E) 𝓘(𝕜, E') n f x)

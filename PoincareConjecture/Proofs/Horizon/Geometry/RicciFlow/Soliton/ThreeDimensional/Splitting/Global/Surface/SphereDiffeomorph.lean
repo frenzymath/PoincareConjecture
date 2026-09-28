@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.IsometryLift
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_sphereDiffeomorph_of_bijective_round_cover
     (g : RiemannianMetric 2 M) (q : UnitTwoSphere → M)
@@ -57,8 +45,6 @@ theorem exists_sphereDiffeomorph_of_bijective_round_cover
 
 variable [T2Space M] [T3Space M] [ConnectedSpace M] [CompactSpace M]
 
-
-
 theorem normalized_round_surface_sphere_or_antipodal_cover
     {g : RiemannianMetric 2 M} (D : LeviCivitaData g) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 φ)
@@ -90,8 +76,6 @@ theorem normalized_round_surface_sphere_or_antipodal_cover
   · exact Or.inl (exists_sphereDiffeomorph_of_bijective_round_cover
       g q hlocal ⟨hinj, hsurj⟩ hmetric)
   · exact Or.inr ⟨q, hq, hsurj, hlocal, hcover, hmetric, hpair⟩
-
-
 
 theorem exists_sphereDiffeomorph_of_round_soliton_free_isometry
     {g : RiemannianMetric 2 M} (D : LeviCivitaData g) {φ : M → ℝ}

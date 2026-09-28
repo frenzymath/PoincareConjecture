@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Scalar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +11,6 @@ universe u
 noncomputable section
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 structure SliceGeometry where
   slice : GeneralizedSliceCarrier.{u}
@@ -38,7 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def terminalSliceCarrier (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : GeneralizedSliceCarrier.{u} where
   carrier := H.regularRegion P04
@@ -55,7 +46,6 @@ def terminalSliceGeometry (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : SingularRegularLimit.SliceGeometry.{u} :=
   ⟨H.terminalSliceCarrier P04, H.terminalMetric P04, H.terminalConnection P04⟩
 
-
 def extendedSliceGeometry (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) : SingularRegularLimit.SliceGeometry.{u} :=
   if t = T then H.terminalSliceGeometry P04 else SingularRegularLimit.SliceGeometry.ofFlow F t
@@ -70,7 +60,6 @@ theorem extendedSliceGeometry_of_ne
     {t : ℝ} (ht : t ≠ T) :
     H.extendedSliceGeometry P04 t = SingularRegularLimit.SliceGeometry.ofFlow F t := by
   simp only [extendedSliceGeometry, if_neg ht]
-
 
 def extendedTimeInterval (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : Set ℝ := by

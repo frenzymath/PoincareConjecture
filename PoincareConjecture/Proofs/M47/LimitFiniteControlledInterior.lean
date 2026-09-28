@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteRetainedInterior
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSource
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -70,8 +61,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (W : ∀ k, M33RegularHistoryWindow (
     ((H k).history.forward (t k) (ht k) (x k))) atTop atTop)
 
 local notation "V" => regularHistoryBlowupSequence F W H t ht x hPositive hDiverges
-
-
 
 theorem limitFinite_controlled_of_preserved_interior
     (k : ℕ) {C : GeneralizedSliceCarrier.{u}} {U : Set C.carrier}

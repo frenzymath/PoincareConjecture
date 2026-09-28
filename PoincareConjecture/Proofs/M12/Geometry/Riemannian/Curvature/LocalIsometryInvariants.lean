@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.Scalar.Trace
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Tensorial
 import PoincareConjecture.Proofs.M12.Geometry.Curvature.Operator.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem scalarCurvature_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -106,8 +97,6 @@ private theorem fourTensor_expand {E ι : Type*} [AddCommGroup E] [Module ℝ E]
   funext a
   fin_cases a <;> rfl
 
-
-
 theorem curvatureOperator_nonneg_in_frame
     (D : LeviCivitaData g) (x : M) (hD : D.NonnegativeCurvatureOperator x)
     {d : ℕ} (v : Fin d → TangentSpace (𝓡 n) x)
@@ -166,8 +155,6 @@ theorem curvatureOperator_nonneg_in_frame
     ring
   rw [hquad]
   exact hD B hB
-
-
 
 theorem nonnegativeCurvatureOperator_iff_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

@@ -2,18 +2,6 @@ import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.MeasureTheory.Measure.Haar.Unique
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory MeasureTheory.Measure
@@ -24,16 +12,12 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
 variable (μ : Measure E) [IsAddHaarMeasure μ]
 
-
-
 theorem criticalValues_null (f : E → E) (s : Set E)
     (hf : ∀ x ∈ s, DifferentiableAt ℝ f x) :
     μ (f '' {x ∈ s | (fderiv ℝ f x).det = 0}) = 0 := by
   exact addHaar_image_eq_zero_of_det_fderivWithin_eq_zero μ
     (fun x hx => (hf x hx.1).hasFDerivAt.hasFDerivWithinAt)
     (fun _ hx => hx.2)
-
-
 
 theorem dense_opposite_regularValues [Measure.IsNegInvariant μ]
     (f : E → E) (s : Set E) (hf : ∀ x ∈ s, DifferentiableAt ℝ f x) :

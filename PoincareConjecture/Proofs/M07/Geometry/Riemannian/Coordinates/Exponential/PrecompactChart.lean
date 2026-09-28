@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.SmoothExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.EndpointAgreement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_exponential_of_precompact_ball
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

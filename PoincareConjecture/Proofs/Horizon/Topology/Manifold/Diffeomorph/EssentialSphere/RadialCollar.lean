@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quotient.Collars.Extension
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ open PoincareConjecture
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 def radialPartialDiffeomorph :
     PartialDiffeomorph CylModel (𝓡 3) RoundCylinderSpace E3 ∞ := by
@@ -60,8 +50,6 @@ def radialPartialDiffeomorph :
   simp [radialPartialDiffeomorph, PartialDiffeomorph.trans,
     Diffeomorph.toPartialDiffeomorph, puncturedThreeSpace,
     PartialDiffeomorph.toOpenPartialHomeomorph]
-
-
 
 theorem exists_supported_radial_collar_transition
     (c : OpenPartialHomeomorph RoundCylinderSpace E3)

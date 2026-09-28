@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Topology.Compactness.LocallyFinite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +14,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [SigmaCompactSpace M]
-
-
 
 theorem exists_finite_chart_decomposition {u : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u) (hc : HasCompactSupport u) :

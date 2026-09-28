@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UnitSpeedInitialPeriod
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ open M62
 variable {n : Nat} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
 
 theorem m63ArcLength_exists_centered_enlargement
     (F : RicciFlow n M (Icc a b)) (c : Real → Real → M)
@@ -97,8 +86,6 @@ theorem m63ArcLength_exists_centered_enlargement
   · rw [hprimitive, hprimitive, hx0]
     dsimp only [middle]
     ring
-
-
 
 theorem m63ArcCutoff_eq_one_of_half_lengths
     (F : RicciFlow n M (Icc a b)) (c : Real → Real → M)

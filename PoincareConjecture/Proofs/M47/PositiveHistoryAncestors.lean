@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveHistory
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveCylinderLines
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
 
 theorem ancestor_nonpositive_of_retained_child_meets_cap
     (hC : RicciFlowCurvatureTheory.{u}) (F : SurgeryFlowData.{u})

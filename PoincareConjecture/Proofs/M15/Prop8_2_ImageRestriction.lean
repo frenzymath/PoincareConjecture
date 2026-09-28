@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M15Noncollapsing
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -25,16 +15,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
   {H : M14StableSet G T τ x E}
 
-
-
 theorem stable_image_measurable (S : M14ReducedVolumeSourceCoverageData G)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
     {W : Set (G.Horizontal x)} (hW : MeasurableSet W) (hWH : W ⊆ H.carrier) :
     MeasurableSet (H.endpoint_slice_map '' W) :=
   ((S.disjoint_image_additivity T τ x E H A).2 W ∅ hWH
     (Set.empty_subset _) hW MeasurableSet.empty (by simp)).1
-
-
 
 theorem reducedVolumeOn_subset_eq_source
     (S : M14ReducedVolumeSourceCoverageData G)
@@ -91,9 +77,6 @@ theorem reducedVolumeOn_subset_eq_source
         A.density (H.endpoint_slice_map Z) * A.measure_data.jacobian Z
           ∂A.measure_data.sourceMeasure := by
       rw [setIntegral_indicator hW, Set.inter_eq_right.mpr hWH]
-
-
-
 
 theorem reducedVolumeOn_le_initial_density
     (S : M14ReducedVolumeSourceCoverageData G)

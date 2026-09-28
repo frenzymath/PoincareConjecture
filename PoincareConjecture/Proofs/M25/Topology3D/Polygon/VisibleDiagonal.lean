@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TriangleEntry
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.LocalInsideWedge
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   {p : Polygon E n}
-
-
 
 theorem IsSimplePolygon.normalized_nonincident_edge_inter_corner_subset
     (hp : IsSimplePolygon p) (k : Fin n) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -71,8 +58,6 @@ theorem IsSimplePolygon.normalized_nonincident_edge_inter_corner_subset
       change f w = (0, 1)
       rw [heq, hfs]
 
-
-
 theorem IsSimplePolygon.normalized_triangle_vertex_pos (hp : IsSimplePolygon p)
     (k : Fin n) (f : E ≃ᴬ[ℝ] (ℝ × ℝ)) (hfk : f (p k) = (0, 0))
     (hfp : f (p ((finRotate n).symm k)) = (1, 0))
@@ -108,8 +93,6 @@ theorem IsSimplePolygon.normalized_triangle_vertex_pos (hp : IsSimplePolygon p)
   · by_contra! h
     have heq : (f (p j)).2 = 0 := le_antisymm h hjT.2.1
     exact hjC ((mem_unitCorner_iff _).mpr (Or.inl ⟨hjT.1, by linarith [hjT.2.2], heq⟩))
-
-
 
 theorem IsSimplePolygon.openSegment_disjoint_boundary_of_minimal_triangle_vertex
     (hp : IsSimplePolygon p) (k : Fin n) (f : E ≃ᴬ[ℝ] (ℝ × ℝ))
@@ -184,9 +167,6 @@ theorem IsSimplePolygon.openSegment_disjoint_boundary_of_minimal_triangle_vertex
     rw [heq, hfs] at hcoords
     exact (lt_irrefl 0) hcoords.1
   exact (not_lt_of_ge (hmin l hlk hlp hls (interior_subset hcT))) (hcH.trans_lt hzH)
-
-
-
 
 theorem IsSimplePolygon.exists_visible_diagonal_of_triangle_vertex
     [FiniteDimensional ℝ E] (hp : IsSimplePolygon p)

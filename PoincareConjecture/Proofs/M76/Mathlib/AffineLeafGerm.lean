@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.KernelLeafConstancy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem eventuallyEq_affineLeaf_extension (a : F →ᴬ[ℝ] E)
     (Q : F → E →L[ℝ] F) (x0 : F)

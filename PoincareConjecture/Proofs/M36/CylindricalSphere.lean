@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylindricalAngular
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

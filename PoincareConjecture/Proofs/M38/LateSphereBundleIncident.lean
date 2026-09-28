@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.SphereBundleIncidentAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (x : eventDiscardedOpen F T hT) (t : Ico (F.event T hT).tMinus T)
-
-
 
 theorem sphereBundle_incident_assembly_of_late_chart
     (Q : GeneralizedSliceCarrier.{u}) [CompactSpace Q.carrier] (B : SurgerySphereBundle Q)
@@ -47,8 +36,6 @@ theorem sphereBundle_incident_assembly_of_late_chart
     c.toOpenPartialHomeomorph c.contMDiffOn_toFun c.contMDiffOn_invFun
   intro y hy
   exact ⟨mem_univ _, hsource ⟨y, hy, rfl⟩⟩
-
-
 
 theorem sphereBundle_incident_assembly_of_fibration
     {X : Set (F.slice t.val).carrier}

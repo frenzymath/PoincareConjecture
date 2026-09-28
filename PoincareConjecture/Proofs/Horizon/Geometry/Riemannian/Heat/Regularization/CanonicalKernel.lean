@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +18,6 @@ variable {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M] [PreconnectedSpace M]
   {g : RiemannianMetric (m + 1) M}
-
-
 
 def canonicalConservativeHeatKernelData
     (D : LeviCivitaData g) (hm : 0 < m) (hc : MetricComplete g)
@@ -105,8 +93,6 @@ def canonicalConservativeHeatKernelData
     (canonicalConservativeHeatKernelData D hm hc hK hRic S hΩmono hcover).kernel x y t =
       dirichletExhaustionKernel (fun j => Dirichlet.heatKernelContinuousTime D (S j))
         t x y := rfl
-
-
 
 theorem exists_canonical_kernel_integral_displacement_bound
     (m : ℕ) (K : ℝ) (hm : 0 < m) (hK : 0 ≤ K) :

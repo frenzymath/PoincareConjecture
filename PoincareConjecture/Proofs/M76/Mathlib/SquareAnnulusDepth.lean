@@ -1,34 +1,17 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusFiber
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
 
-
-
-
 noncomputable def depth (L : ℝ) (p : ℝ × ℝ) : ℝ :=
   min (min p.1 p.2) (min (L - p.1) (L - p.2))
-
-
 
 theorem continuous_depth (L : ℝ) : Continuous (depth L) := by
   unfold depth
   fun_prop
-
-
-
 
 theorem mem_squareAnnulus_iff_depth {L d : ℝ} {p : ℝ × ℝ} :
     p ∈ squareAnnulus L d ↔ depth L p ∈ Icc (-d) d := by
@@ -56,14 +39,10 @@ theorem mem_squareAnnulus_iff_depth {L d : ℝ} {p : ℝ × ℝ} :
       (lt_min (by linarith [hinner.1.2]) (by linarith [hinner.2.2]))
     exact (not_lt_of_ge hupp) h
 
-
-
 theorem depth_stripRotation (L : ℝ) (i : Fin 4) (p : ℝ × ℝ) :
     depth L (stripRotation L i p) = depth L p := by
   fin_cases i <;>
     simp [depth, stripRotation, sub_sub_cancel, min_comm, min_left_comm]
-
-
 
 theorem depth_stripMap {L s t : ℝ} (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) :
     depth L (stripMap L (s, t)) = t := by
@@ -73,9 +52,6 @@ theorem depth_stripMap {L s t : ℝ} (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) :
     (min (L - coordinate L s t) (L - t)) = t
   rw [min_eq_right hu.1]
   exact min_eq_left (le_min (by linarith [hu.2]) htd)
-
-
-
 
 theorem depth_annulusMap {L t : ℝ} (hL : 0 < L) (ht : 4 * |t| < L)
     (z : AddCircle (4 * L)) : depth L (annulusMap L hL (z, t)) = t := by

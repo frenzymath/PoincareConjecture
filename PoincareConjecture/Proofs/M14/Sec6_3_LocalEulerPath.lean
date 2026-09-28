@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerJointFamily
 import PoincareConjecture.Proofs.M14.Sec6_3_PhasePath
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareClockWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_gaugeEulerPath_through_velocity
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -95,11 +83,6 @@ theorem exists_gaugeEulerPath_through_velocity
   rw [hC, hβ₀, hvd, ContinuousLinearEquiv.apply_symm_apply] at hV
   exact ⟨l, r, hal, hlr, hrc, hs₀, hnear, _, _, p, R, E, hEuler,
     (hrec s₀.val hsC).trans (congrArg (G.gaugeCover.cylinder b).toSpacetime hβ₀), hV⟩
-
-
-
-
-
 
 theorem exists_squareRootEulerPath_through_velocity
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

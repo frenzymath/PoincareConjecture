@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_cut_collar_chart
     {S s s' b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

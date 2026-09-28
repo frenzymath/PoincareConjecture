@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeDirectionalClosedNative
 import Mathlib.Topology.Order.Compact
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -50,7 +41,6 @@ theorem chartParsevalCoefficient_contDiffOn (g : RiemannianMetric n M)
   exact (hpair.comp (contMDiffOn_chart_symm (I := 𝓡 n) (x := p))
     (chartAt ModelE p).symm.mapsTo).contDiffOn
 
-
 theorem coordinate_derivative_eq_parseval (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -80,7 +70,6 @@ theorem coordinate_derivative_eq_parseval (g : RiemannianMetric n M)
       simp only [map_sum, map_smul, smul_eq_mul]
       rfl
 
-
 theorem exists_chartParsevalCoefficient_bound (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M)) (p : M)
     {K : Set ModelE} (hK : IsCompact K) (hKt : K ⊆ (chartAt ModelE p).target) :
@@ -98,7 +87,6 @@ theorem exists_chartParsevalCoefficient_bound (g : RiemannianMetric n M)
   intro a i z hz
   exact (hc (a, i) z hz).trans ((le_max_left (c (a, i)) 0).trans
     (Finset.single_le_sum (fun ai _ => le_max_right (c ai) 0) (Finset.mem_univ (a, i))))
-
 
 theorem coordinate_gradient_sq_le (g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))

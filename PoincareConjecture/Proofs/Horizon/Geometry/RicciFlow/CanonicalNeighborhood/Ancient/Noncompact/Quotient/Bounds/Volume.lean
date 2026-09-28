@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Rigidity.MaximalBalls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,7 +69,6 @@ theorem scalarRadius_volume_lower_bound_of_noncollapsed
   exact (P.past_norm_le_scalar M K s t hs.2 ht y).trans_eq
     (C.scalarCurvature_eq ht y x)
 
-
 theorem exists_universal_scalarRadius_volume_lower_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ kappa : ℝ, 0 < kappa ∧
@@ -99,7 +87,6 @@ theorem exists_universal_scalarRadius_volume_lower_bound
   intro M _ _ _ _ _ _ _ _ _ K C t ht x
   exact C.scalarRadius_volume_lower_bound_of_noncollapsed P
     (hnc K (K.not_isRound_of_noncompact C.not_isCompact_univ)) ht x
-
 
 theorem calibratedVolume_le_of_subset_ball
     (P : M26CanonicalNeighborhoodPredecessors.{u})

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison.LocalCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

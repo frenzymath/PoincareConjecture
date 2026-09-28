@@ -2,39 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidenc
 import PoincareConjecture.Proofs.M64.Mathlib.SupportMinimal
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
 
 open PoincareConjecture.Surface.Combinatorial.Incidence
-
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_euler_upper_bound_of_external_face
     {V E F : Type*}
@@ -133,13 +105,6 @@ private lemma m64_rank_add_one_le_card
   have hrank := m64_rank_add_ker_eq_card (incidenceMatrix ends)
   omega
 
-
-
-
-
-
-
-
 theorem m64Intrinsic_region_euler_ge_one_of_capped_cycle_fill
     {V E F : Type*} [Fintype V] [Fintype E] [Fintype F] [Nonempty V]
     (ends : E → V × V)
@@ -169,13 +134,6 @@ theorem m64Intrinsic_region_euler_ge_one_of_capped_cycle_fill
     exact_mod_cast hcard
   omega
 
-
-
-
-
-
-
-
 theorem m64Intrinsic_region_euler_ge_one_of_minimal_cycle_fill
     {V E F : Type*} [Fintype V] [Fintype E] [Fintype F] [Nonempty V]
     (ends : E → V × V)
@@ -188,14 +146,6 @@ theorem m64Intrinsic_region_euler_ge_one_of_minimal_cycle_fill
     (1 : ℤ) ≤ (Fintype.card V : ℤ) - Fintype.card E + Fintype.card F := by
   apply m64Intrinsic_region_euler_ge_one_of_capped_cycle_fill ends adjacentFaces
   exact Submodule.le_of_mem_of_support_minimal _ _ hfill
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_euler_eq_one_of_capped_exactness
     {V E F : Type*}
@@ -240,14 +190,6 @@ theorem m64Intrinsic_region_euler_eq_one_of_capped_exactness
   have hrankSum' : (A.rank : ℤ) + B.rank = Fintype.card E := by
     exact_mod_cast hrankSum
   omega
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_curvature_lower_bound_of_euler_ge_one
     {V E F : Type*} [Fintype V] [Fintype E] [Fintype F]

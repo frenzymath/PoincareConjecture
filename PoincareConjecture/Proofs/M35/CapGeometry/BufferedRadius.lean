@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [ConnectedSpace M]
-
-
 
 theorem exists_larger_ball_closure_subset (g : RiemannianMetric 3 M)
     (x : M) {r : ℝ} (hr : 0 < r) {U : Set M} (hU : IsOpen U)
@@ -40,9 +29,6 @@ theorem exists_larger_ball_closure_subset (g : RiemannianMetric 3 M)
   rw [riemannian_closure_ball g x hr]
   exact (thickening_mono (show r + d / 3 - r + d / 3 ≤ d by linarith)
     (closedBall x r)) (hproj hy)
-
-
-
 
 theorem exists_scalar_witness_in_curvature_ball (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (x : M) {r a : ℝ} (hr : 0 < r) (hra : r < a)
@@ -70,9 +56,6 @@ theorem exists_scalar_witness_in_curvature_ball (g : RiemannianMetric 3 M)
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem exists_buffered_core_scalar_witness
     {M : Type u} [TopologicalSpace M]

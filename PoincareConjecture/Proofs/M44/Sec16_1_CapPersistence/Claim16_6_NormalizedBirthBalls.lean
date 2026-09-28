@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_PhysicalBi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_BufferBalls
 import PoincareConjecture.Proofs.M01.NormalizationVolumeScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +25,6 @@ private theorem metric_eq_of_inner {n : ℕ} {M : Type*} [TopologicalSpace M]
   cases hi
   rfl
 
-
-
 theorem normalized_birth_ball {M : Type*} [TopologicalSpace M]
     [ChartedSpace StandardCapSpace M] [IsManifold (𝓡 3) ∞ M]
     [T3Space M]
@@ -48,9 +37,6 @@ theorem normalized_birth_ball {M : Type*} [TopologicalSpace M]
     metric_eq_of_inner _ _ hmetric
   rw [heq, m01RescaledMetric_ball, Real.sqrt_sq (inv_pos.mpr hh).le,
     div_inv_eq_mul, mul_comm R h]
-
-
-
 
 theorem physical_birth_chart_image_ball
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)
@@ -72,10 +58,6 @@ theorem physical_birth_chart_image_ball
   have hh := F.parameters.h_pos t (F.time_domain_nonnegative (F.surgery_times_subset hT))
   rw [normalized_birth_ball (F.metric t) g hh hg, ← htarget, ← e.image_source_eq_target, hsource]
   exact image_congr (fun x hx => (hf x hx).trans (hmap x).symm)
-
-
-
-
 
 theorem physical_birth_chart_buffer_balls
     (F : SurgeryFlowData.{u}) {t : ℝ} (ht : t ∈ F.time_domain)

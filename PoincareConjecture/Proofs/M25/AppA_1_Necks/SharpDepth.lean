@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Mathlib.SmoothTentProfile
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapSlab
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,15 +15,10 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def axialDepth (N : EpsilonNeck g) (x : M) : ℝ := by
   classical
   exact if x ∈ N.carrier then
     N.epsilon⁻¹ - |(N.coordinate_inverse x).2| else 0
-
-
-
 
 theorem axialDepth_edist_le (N : EpsilonNeck g) (x y : M) :
     ENNReal.ofReal (N.scale * Real.sqrt (1 - N.epsilon) *
@@ -94,9 +79,6 @@ theorem axialDepth_edist_le (N : EpsilonNeck g) (x y : M) :
     field_simp
   have hscaled := mul_lt_mul_of_pos_left hnear hc
   nlinarith
-
-
-
 
 theorem edist_center_closure_bounds (N : EpsilonNeck g) {y : M}
     (hy : y ∈ closure N.carrier) (hyout : y ∉ N.carrier) :

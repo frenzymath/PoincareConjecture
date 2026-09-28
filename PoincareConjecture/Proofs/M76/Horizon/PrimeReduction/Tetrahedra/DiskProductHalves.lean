@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalCubeDiskCutBalls
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallActualDiskAttachment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76.OriginalDiskProduct

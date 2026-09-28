@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Branch
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,8 +58,6 @@ theorem sourceInverse_contMDiffOn :
     (Q.terminal_source_regular y)
     (Eventually.of_forall Q.sourceInverse_source)).contMDiffWithinAt
 
-
-
 def sourceDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) (Q.extension.extended.slice T).carrier Q.regularOpen ∞ where
   toFun x := ⟨Q.terminal_source x, Q.terminal_source_mem x⟩
@@ -83,8 +74,6 @@ def sourceDiffeomorph :
     apply contMDiffAt_subtype_iff.mpr
     exact (Q.sourceInverse_contMDiffOn x.val x.property).contMDiffAt
       (Q.regular_open.mem_nhds x.property)
-
-
 
 def sourceRegionEquivalence :
     SurgeryRegionEquivalence Q.referenceCarrier (Q.extension.extended.slice T)

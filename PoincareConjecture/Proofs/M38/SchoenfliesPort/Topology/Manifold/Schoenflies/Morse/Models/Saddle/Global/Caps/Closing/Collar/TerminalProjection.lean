@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.SphereProjection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.ProjectionChart
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,8 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -38,7 +30,6 @@ open SaddleLevel
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
 
 def actualCapModelCoordinates (data : TerminalSaddleData M P p e)
     (H : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (i : Fin 3) (x : E2) : E3 :=
@@ -80,8 +71,6 @@ theorem injective_fderiv_actualCapModelCoordinates
   exact (injective_mfderiv_sphere_embedding hs _).comp
     (hm.mfderivToContinuousLinearEquiv (by simp)).injective
 
-
-
 theorem exists_actual_terminal_sphere_projection
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -122,8 +111,6 @@ theorem exists_actual_terminal_sphere_projection
     ((contDiffOn_actualCapModelCoordinates data hg H i).contDiffAt
       ((data.actualDisk i).open_source.mem_nhds hqs))
     (injective_fderiv_actualCapModelCoordinates data hg H i hqs)
-
-
 
 theorem exists_actual_terminal_projection_chart
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

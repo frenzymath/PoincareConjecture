@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ variable {E F : Type*} [AddCommGroup E] [Module ℝ E]
   (hind : ∀ s ∈ K.faces, AffineIndependent ℝ ((↑) : ↥(f '' (s : Set E)) → F))
   (hhull : ∀ s ∈ K.faces,
     f '' convexHull ℝ (s : Set E) = convexHull ℝ (f '' (s : Set E)))
-
-
-
 
 noncomputable def hullImage : SimplicialComplex ℝ F := by
   classical
@@ -53,8 +40,6 @@ noncomputable def hullImage : SimplicialComplex ℝ F := by
       exact ⟨x, by simpa using hxi, hxy⟩
     exact convexHull_mono (Set.image_inter_subset _ _ _) hyi
 
-
-
 theorem hullImage_faces [DecidableEq F] :
     (K.hullImage f hinj hind hhull).faces =
       (fun s : Finset E => s.image f) '' K.faces := by
@@ -64,8 +49,6 @@ theorem hullImage_faces [DecidableEq F] :
   funext s
   ext y
   simp only [Finset.mem_image]
-
-
 
 theorem hullImage_space : (K.hullImage f hinj hind hhull).space = f '' K.space := by
   classical
@@ -85,8 +68,6 @@ theorem hullImage_space : (K.hullImage f hinj hind hhull).space = f '' K.space :
         (K.hullImage_faces f hinj hind hhull) ▸ mem_image_of_mem _ hs)
     rw [Finset.coe_image, ← hhull s hs]
     exact mem_image_of_mem f hxs
-
-
 
 theorem hullImage_vertices : (K.hullImage f hinj hind hhull).vertices = f '' K.vertices := by
   classical

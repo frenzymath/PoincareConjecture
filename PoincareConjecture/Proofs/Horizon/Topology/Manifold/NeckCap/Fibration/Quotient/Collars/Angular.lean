@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.AngularCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.CylinderGluing
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
 
 theorem exists_supported_angular_extension
     (D : Diffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞)

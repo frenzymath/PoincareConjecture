@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellBoundaryNull
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_c1_subarc_edist_le_speed
     (g : RiemannianMetric n M) {gamma : ℝ → M}
@@ -48,9 +33,6 @@ theorem m64_c1_subarc_edist_le_speed
   simpa only [M04.pathSpeed, curveVelocity, intervalIntegral.integral_const,
     smul_eq_mul, mul_comm] using hi
 
-
-
-
 theorem m64_minimizing_side_prefix_edist_le
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
     {ell s : ℝ} {p q : M}
@@ -61,10 +43,6 @@ theorem m64_minimizing_side_prefix_edist_le
     (side.smooth.of_le (m := 1) (by norm_num)).mono side.interval_subset
   have hd := g.edist_le_pathELength_of_mem_Icc hside hs
   simpa only [side.start, side.minimizing] using hd
-
-
-
-
 
 theorem m64_sampled_polygon_cell_edist_le
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
@@ -128,9 +106,6 @@ theorem m64_sampled_polygon_cell_edist_le
   rw [← ENNReal.ofReal_add (mul_nonneg hS hell.le) (mul_nonneg hS hell.le)]
   congr 1
   ring
-
-
-
 
 theorem m64_sampled_polygon_edist_le
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

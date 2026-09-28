@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusCubeChart
 import PoincareConjecture.Proofs.M76.Mathlib.StableTorusBands
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem hasOneSimplyConnectedEnd_of_chart_puncture
     {E X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -63,9 +51,6 @@ theorem hasOneSimplyConnectedEnd_of_chart_puncture
   refine ⟨H, fun z hz => ?_⟩
   exact hH z (interior_subset (hCD hz))
 
-
-
-
 theorem zero_punctured_torus_hasOneSimplyConnectedEnd :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
     let p := AddCircle.centeredCubeQuotient (4 * (16 : ℝ)) 0
@@ -80,9 +65,6 @@ theorem zero_punctured_torus_hasOneSimplyConnectedEnd :
     (by norm_num [CubeShell.Ambient, Module.finrank_prod])
     (Subtype.val : ({Q 0}ᶜ : Set _) → _) Topology.IsEmbedding.subtypeVal
   exact Subtype.range_coe
-
-
-
 
 theorem zero_punctured_torus_domain_hasOneSimplyConnectedEnd :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

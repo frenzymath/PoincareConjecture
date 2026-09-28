@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.DifferenceJetFluxParameters
 import PoincareConjecture.Proofs.M34.Standard.UniformDifferenceRemainder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,15 +13,11 @@ namespace PoincareConjecture.M34.DifferenceEnergy
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def curvatureDifferenceFluxFromJets {n : ℕ}
     (J0 J1 : Jet (V n) (MetricCoefficient n) 3) (H : FH n) (A : FA n) (S : FS n) : Flux n :=
   curvatureDifferenceFlux (inverseMetricThreeJet n J0) (inverseMetricThreeJet n J1)
     (connectionThreeJet n J0) (curvatureThreeJet n J1)
       (covariantCurvatureThreeJet n J1) H A S
-
-
 
 noncomputable def curvatureDifferenceRemainderFromJets {n dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS))
@@ -40,9 +26,6 @@ noncomputable def curvatureDifferenceRemainderFromJets {n dS : ℕ}
   curvatureDifferenceRemainder qS (inverseMetricThreeJet n J0) (inverseMetricThreeJet n J1)
     (connectionThreeJet n J0) (curvatureThreeJet n J1)
       (covariantCurvatureThreeJet n J1) (raisedCurvatureFluxThreeJet n J1) d H A S
-
-
-
 
 theorem exists_uniform_differenceJetFlux_bounds
     {n dH dA dS : ℕ}

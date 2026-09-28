@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.LocalL2
 
-
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace Poincare.Analysis.Elliptic
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem hasWeakPartialDeriv_fderiv_of_lipschitzOn
     {O : Set E} (hO : IsOpen O) {u : E → ℝ} {L : ℝ≥0}
@@ -50,7 +41,6 @@ theorem hasWeakPartialDeriv_fderiv_of_lipschitzOn
       filter_upwards [hae] with x hx
       rw [hx]
 
-
 theorem lipschitzOnWith_of_tendstoUniformlyOn
     {O : Set E} {u : ℕ → E → ℝ} {v : E → ℝ} {L : ℝ≥0}
     (hu : ∀ k, LipschitzOnWith L (u k) O)
@@ -59,8 +49,6 @@ theorem lipschitzOnWith_of_tendstoUniformlyOn
   intro x hx y hy
   exact le_of_tendsto ((hv.tendsto_at hx).dist (hv.tendsto_at hy))
     (Eventually.of_forall fun k => (hu k).dist_le_mul x hx y hy)
-
-
 
 theorem tendsto_toLp_of_tendstoUniformlyOn
     {X : Type*} [MeasurableSpace X] {μ : Measure X} {O : Set X}
@@ -97,8 +85,6 @@ theorem tendsto_toLp_of_tendstoUniformlyOn
   have hsq := (norm_toLp_sub_sq_eq_integral (hu k) hv).trans_le hI
   have hs := hsq.trans_lt hbound
   nlinarith only [hs, hε, norm_nonneg ((hu k).toLp (u k) - hv.toLp v)]
-
-
 
 theorem tendsto_lipschitzPartialL2_of_cauchy
     {O : Set E} (hO : IsOpen O) [IsFiniteMeasure (volume.restrict O)]

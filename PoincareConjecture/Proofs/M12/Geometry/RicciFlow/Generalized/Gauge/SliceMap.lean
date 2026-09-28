@@ -2,17 +2,6 @@ import PoincareConjecture.Statements.M12MovingGaugeTheory
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.LinearAlgebra.Basis.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I K : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
-
-
 
 private theorem isOpenMap_of_map_nhds_eq {M N : Type*} [TopologicalSpace M]
     [TopologicalSpace N] {f : M → N}
@@ -201,8 +188,6 @@ theorem isLocalDiffeomorph_of_contMDiff_mfderiv_bijective
             contMDiffOn_invFun := hinv }, hx, ?_⟩
   · exact hf.contMDiffOn.congr fun z _z ↦ (congr_fun he z).symm
   · exact fun z _z ↦ congr_fun he z
-
-
 
 theorem movingGaugeSliceMap_comp_inclusion
     (e : MovingSpacetimeGauge F T C)

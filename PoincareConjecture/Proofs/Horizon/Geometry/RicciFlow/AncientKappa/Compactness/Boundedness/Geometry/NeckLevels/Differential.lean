@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.SignedSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.Gradient.LowerBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem mvfderiv_initial_mul_length_le_of_hessian_ge
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -78,8 +67,6 @@ theorem mvfderiv_initial_mul_length_le_of_hessian_ge
   change -f (γ L) ≤ -f (γ 0) + L *
     (-mvfderiv (𝓡 n) f (γ 0) (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ 0 1)) + H * L ^ 2 / 2 at hbound
   linarith
-
-
 
 theorem abs_mvfderiv_axial_ge_of_signed_alignment
     (D : LeviCivitaData g) (f : M → ℝ) (x : M)

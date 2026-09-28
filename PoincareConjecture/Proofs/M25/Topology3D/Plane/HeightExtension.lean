@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialExtension
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_ambient_height_extension
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

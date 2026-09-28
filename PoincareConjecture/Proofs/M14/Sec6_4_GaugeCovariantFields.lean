@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugePullback
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeCoefficients
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetVelocity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -39,10 +30,6 @@ private theorem gauge_within_spatialVelocity {s : ℝ}
     mfderivWithin (𝓘(ℝ, ℝ)) (𝓡 n) (fun r => (β r).2) J s (1 : ℝ) at hd
   exact hd.trans ((G.gaugeCover.spatial b).mfderivWithin_curve_eq_derivWithin_val hβ.snd hJ)
 
-
-
-
-
 theorem horizontalCovariantDerivative_gauge_coefficient
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
     (W : OrdinaryGaugeWitness G.leafwise (G.gaugeCover.cylinder b) (G.gaugeCover.metric b))
@@ -70,9 +57,6 @@ theorem horizontalCovariantDerivative_gauge_coefficient
   rw [hclock, openSubset_chartConnection (G.gaugeCover.spatial b) W.flow T htime x
     (β s).2 hσ, gauge_within_spatialVelocity b hβ hJ] at h
   exact h
-
-
-
 
 theorem horizontalCovariantDerivative_gauge_chart
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

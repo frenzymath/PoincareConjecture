@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Differential
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem compatibleCylinder_horizontalDerivative_lift
     {n : ℕ} {X : Type u} [TopologicalSpace X]

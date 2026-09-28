@@ -2,17 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -100,22 +89,13 @@ private theorem step_eventually {x : ℝ} (hx : 0 < x) :
   exact ⟨Real.smoothTransition.one_of_one_le hh, by
     rw [step_deriv, transition_deriv_zero (Or.inr hh), mul_zero]⟩
 
-
-
 def m64EndpointCutoff (a b : ℝ) (f : ℝ → ℝ) (j : ℕ) (x : ℝ) : ℝ :=
   f x * step j (x - a) * step j (b - x)
-
-
-
 
 theorem m64EndpointCutoff_contDiff {a b : ℝ} {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (j : ℕ) : ContDiff ℝ ∞ (m64EndpointCutoff a b f j) :=
   (hf.mul ((step_smooth j).comp (contDiff_id.sub contDiff_const))).mul
     ((step_smooth j).comp (contDiff_const.sub contDiff_id))
-
-
-
-
 
 theorem m64EndpointCutoff_tsupport {a b : ℝ} {f : ℝ → ℝ} (j : ℕ) :
     tsupport (m64EndpointCutoff a b f j) ⊆
@@ -137,10 +117,6 @@ theorem m64EndpointCutoff_tsupport {a b : ℝ} {f : ℝ → ℝ} (j : ℕ) :
     linarith
   · have h := (div_le_iff₀ hk).mpr (show 1 ≤ (b - x) * ((j : ℝ) + 1) by nlinarith)
     linarith
-
-
-
-
 
 theorem m64EndpointCutoff_compact {a b : ℝ} {f : ℝ → ℝ} (j : ℕ) :
     HasCompactSupport (m64EndpointCutoff a b f j) ∧
@@ -167,10 +143,6 @@ private theorem cutoff_deriv {a b : ℝ} {f : ℝ → ℝ}
   simp only [Function.comp_apply, Pi.mul_apply, id_eq]
   ring
 
-
-
-
-
 theorem m64EndpointCutoff_eventually {a b x : ℝ} {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (hx : x ∈ Ioo a b) :
     ∀ᶠ j : ℕ in atTop, m64EndpointCutoff a b f j x = f x ∧
@@ -180,10 +152,6 @@ theorem m64EndpointCutoff_eventually {a b x : ℝ} {f : ℝ → ℝ}
   rw [cutoff_deriv hf]
   simp only [m64EndpointCutoff, hl.1, hl.2, hr.1, hr.2, mul_one, zero_mul,
     add_zero, sub_zero, and_self]
-
-
-
-
 
 theorem m64EndpointCutoff_uniform_bound {a b : ℝ} {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (ha : f a = 0) (hb : f b = 0) :

@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M03.CurvatureFluxAlgebra
 import PoincareConjecture.Proofs.M03.CurvatureFluxDivergenceAlgebra
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -22,8 +14,6 @@ open Bundle Manifold Set Filter
 universe u
 
 namespace PoincareConjecture.Proofs.M03
-
-
 
 theorem add_young_and_reaction_bound
     {L R X Y Z ε C : ℝ}

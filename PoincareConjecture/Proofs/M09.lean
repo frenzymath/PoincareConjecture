@@ -9,16 +9,6 @@ import PoincareConjecture.Proofs.M09.ZeroResidualBarrier
 import PoincareConjecture.Proofs.M09.LocalBarrierBounds
 import PoincareConjecture.Proofs.M09.RegularSharpEquality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral BigOperators
@@ -30,27 +20,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem reducedLengthDifferentialInequalities
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]
@@ -85,7 +54,6 @@ theorem reducedLengthDifferentialInequalities
   intro p H z hz
   exact Proofs.M09.regular_sharp_laplacian_tensor_eq hM04 hL hτmax hwindow
     H.toLExponentialFamily (H.regular_point z hz)
-
 
 theorem reducedLengthDifferentialInequalities_from_M04_M08
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]

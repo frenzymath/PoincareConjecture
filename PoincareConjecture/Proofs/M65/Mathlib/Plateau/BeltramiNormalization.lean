@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiGlobal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,10 +21,6 @@ private def normalizePlaneHomeomorph (e : ℂ ≃ₜ ℂ) : ℂ ≃ₜ ℂ where
   continuous_toFun := (e.continuous.sub continuous_const).div_const _
   continuous_invFun := e.symm.continuous.comp
     ((continuous_const.mul continuous_id).add continuous_const)
-
-
-
-
 
 theorem exists_normalized_smooth_beltrami_diffeomorphism (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

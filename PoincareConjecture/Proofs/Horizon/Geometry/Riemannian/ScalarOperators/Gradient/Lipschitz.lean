@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.InitialData
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_norm_le_of_eventual_distance_bound (D : LeviCivitaData g)
     {f : M → ℝ} {C : ℝ} {x : M} (hC : 0 ≤ C)
@@ -60,8 +52,6 @@ theorem gradient_norm_le_of_eventual_distance_bound (D : LeviCivitaData g)
     ENNReal.toReal_ofReal (abs_nonneg _)] at hdist'
   simpa only [Real.norm_eq_abs, sub_zero, abs_sub_comm, mul_assoc] using
     htLip.trans (mul_le_mul_of_nonneg_left hdist' hC)
-
-
 
 theorem gradient_norm_le_of_distance_lipschitz (D : LeviCivitaData g)
     {f : M → ℝ} {C : ℝ} (hC : 0 ≤ C)

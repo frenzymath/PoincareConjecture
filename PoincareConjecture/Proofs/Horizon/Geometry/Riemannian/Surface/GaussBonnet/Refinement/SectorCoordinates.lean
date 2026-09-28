@@ -5,20 +5,12 @@ import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.LinearAlgebra.Dual.Basis
 
-
-
-
-
-
-
-
 open Poincare.Topology.Plane.Meshes
 open Set
 namespace PoincareConjecture.Topology.Surface
 noncomputable section
 open Classical
 set_option autoImplicit false
-
 
 theorem exists_affineBasis_coords_of_independent_functionals
     (l m : Plane →ᵃ[ℝ] ℝ) (q : Plane) (hlq : l q = 0) (hmq : m q = 0)

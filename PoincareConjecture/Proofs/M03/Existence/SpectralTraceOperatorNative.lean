@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.SpectralSmallTimeNative
 import PoincareConjecture.Proofs.M03.Existence.SpectralLpOperatorNative
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 

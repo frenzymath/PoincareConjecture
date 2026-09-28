@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace AddCircle
 
 open Classical in
-
-
 
 theorem signed_phase_arc_membership (p : ℝ) [Fact (0 < p)]
     {a b r rho t : ℝ} (hr : 0 ≤ r)

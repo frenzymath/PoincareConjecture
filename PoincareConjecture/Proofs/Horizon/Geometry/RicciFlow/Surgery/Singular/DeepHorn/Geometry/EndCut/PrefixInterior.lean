@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Component
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -41,8 +33,6 @@ theorem mem_coordinatePrefix_iff (horn : StrongHorn E epsilon)
       ⟨mem_univ _, (horn.coordinate.symm x).2.property.1, hx⟩,
       horn.parameterization_coordinate_symm x⟩
 
-
-
 theorem mem_interior_coordinatePrefix (horn : StrongHorn E epsilon)
     {b : ℝ} (hb : b < 1) (x : horn.carrier)
     (hboundary : (x : (E.extended.slice T).carrier) ∉ horn.boundary_sphere)
@@ -62,8 +52,6 @@ theorem mem_interior_coordinatePrefix (horn : StrongHorn E epsilon)
   have hyA : y ∈ Subtype.val '' A := by rw [hAV]; exact ⟨hy.1, hy.2.1⟩
   obtain ⟨z, hz, rfl⟩ := hyA
   exact (horn.mem_coordinatePrefix_iff hb z).mpr (le_of_lt hz)
-
-
 
 theorem mem_interior_coordinatePrefix_of_scalar_bounds (horn : StrongHorn E epsilon)
     {b lower upper : ℝ} (hb0 : 0 ≤ b) (hb1 : b < 1)

@@ -15,7 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
 
-
 theorem ComponentBranchModel.exists_raw_edge_joint
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

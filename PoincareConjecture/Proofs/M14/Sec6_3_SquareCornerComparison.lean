@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixMinimality
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b c : ℝ} {x y : G.Point}
-
-
-
 
 theorem integral_squareCurveDensity_eq_action_of_curve
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (p : M14BackwardPath G T a b x y)
@@ -42,9 +30,6 @@ theorem integral_squareCurveDensity_eq_action_of_curve
   exact (integral_squareCurveDensity_eq_action_between hM12 p.tau_nonneg p.tau_lt
     α hα Subset.rfl hclock hx hy).trans
       (action_eq_of_curve_eqOn q p (fun _ ht => heq (Ioo_subset_Icc_self ht)))
-
-
-
 
 theorem minimizing_action_le_square_prefix_add_tail
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

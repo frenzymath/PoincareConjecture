@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckLocalMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +27,6 @@ private local instance {K : Set ℝ} {L : BlowupLimitFlow.{u} K} :
     ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance {K : Set ℝ} {L : BlowupLimitFlow.{u} K} :
     IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
-
 
 theorem ordinaryChapter11_uniform_neck_coefficientJets
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

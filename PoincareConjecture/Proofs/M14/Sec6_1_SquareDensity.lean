@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareRootComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,9 +21,6 @@ private theorem inner_heq {x y : G.Point} (h : x = y)
   cases hv
   rfl
 
-
-
-
 theorem squareRootLIntegrand_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
@@ -45,9 +33,6 @@ theorem squareRootLIntegrand_contDiffOn
   simp only [squareRootLIntegrand, squareCurveDensity,
     squareRoot_horizontalVelocity_eq_projection R hs, projectedCurveVelocityWithin,
     M14SqrtParameterInterval]
-
-
-
 
 theorem squareRootLIntegrand_eq_on_subset
     {T₁ T₂ a b c d : ℝ} {x₁ y₁ x₂ y₂ : G.Point}

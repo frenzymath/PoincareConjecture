@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Completeness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space
 
 namespace RicciFlow
-
-
-
 
 theorem metricComplete_terminal_of_local_curvature_bound
     {n : ℕ} (C : FlowCarrier n) (F : RicciFlow n C.carrier (Iic 0)) (p : C.carrier)
@@ -79,9 +66,6 @@ theorem metricComplete_terminal_of_local_curvature_bound
 end RicciFlow
 
 namespace AncientCompactness
-
-
-
 
 theorem eventually_mem_source_ball_of_compact_pullback_bound
     {n : ℕ} (L : FlowCarrier.{0} n) (C : ℕ → FlowCarrier.{0} n)
@@ -146,9 +130,6 @@ attribute [local instance] FlowCarrier.measurableSpace FlowCarrier.borelSpace
 
 local instance terminalCompleteCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.carrier :=
   connectedSpace_iff_univ.mpr D.connected
-
-
-
 
 theorem terminal_curvature_bound_of_source_convergence
     (C : ℕ → FlowCarrier.{0} 3) (K : ∀ k, AncientKappaSolution 3 (C k).carrier)

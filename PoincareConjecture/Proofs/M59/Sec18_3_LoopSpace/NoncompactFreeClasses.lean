@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.CoveringManifold
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NoncompactCover
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.Claim18_16_PiTwoPiThree
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ universe u
 namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M] [T2Space M]
-
-
 
 theorem m59_piThree_subsingleton_of_noncompact_pathCover
     (hconnected : IsConnected (univ : Set M)) (x : M)
@@ -50,9 +38,6 @@ theorem m59_piThree_subsingleton_of_noncompact_pathCover
     Proofs.M59.noncompactSimplyConnectedThree_piThree_subsingleton
       (PathClassCover.basepoint x) hnoncompact hpiCover
   exact (hp.homotopyGroupEquiv (N := Fin 3) (PathClassCover.basepoint x)).surjective.subsingleton
-
-
-
 
 theorem m59_normalized_classes_eq_of_noncompact_pathCover [IsManifold (𝓡 3) ∞ M]
     (hcompact : IsCompact (univ : Set M)) (hconnected : IsConnected (univ : Set M))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Analysis.LocallyConvex.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -105,8 +96,6 @@ private noncomputable def constantChartMetric
     nlinarith [sq_nonneg (‖v‖ - 1 / 2)]
   contMDiff := contMDiff_constant_chart_section hchart B hsmooth
 
-
-
 theorem exists_of_constant_chart_limit
     (Bseq : ℕ → M → EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -131,8 +120,6 @@ theorem exists_of_constant_chart_limit
   exact ⟨constantChartMetric hchart B hsmooth hsymmB hlowerB, fun _ _ _ => rfl⟩
 
 end ConstantCharts
-
-
 
 theorem exists_of_coordinate_limit
     {n : ℕ} (U : Opens (EuclideanSpace ℝ (Fin n)))

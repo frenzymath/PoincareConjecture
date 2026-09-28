@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.ScalarRatio
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem tendstoUniformlyOn_scalarCurvature_rpow_of_nonneg
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -47,8 +43,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem eventually_captured_cap_terminal_scalarGradient_bound
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPotentialBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,9 +24,6 @@ local instance m64BoundaryBounds_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem m64Bilinear_norm_bound (G : E →L[ℝ] E →L[ℝ] ℝ)
     {C : ℝ} (hG : ‖G‖ ≤ C) (v w : E) : |G v w| ≤ C * ‖v‖ * ‖w‖ := by
   calc
@@ -45,10 +31,6 @@ theorem m64Bilinear_norm_bound (G : E →L[ℝ] E →L[ℝ] ℝ)
     _ ≤ (‖G‖ * ‖v‖) * ‖w‖ :=
       mul_le_mul_of_nonneg_right (G.le_opNorm v) (norm_nonneg _)
     _ ≤ _ := by gcongr
-
-
-
-
 
 theorem m64WeightedBoundary_principal_bound
     (G : E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V D : Fin 2 → E)
@@ -90,9 +72,6 @@ theorem m64WeightedBoundary_principal_bound
   have hsum := Finset.sum_le_sum (fun i (_ : i ∈ (Finset.univ : Finset (Fin 2))) => hpoint i)
   simpa only [Finset.sum_sub_distrib, ← Finset.mul_sum] using hsum
 
-
-
-
 theorem m64WeightedBoundary_cross_bound
     (G : E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V : Fin 2 → E)
     (v : E) (d : Fin 2 → ℝ) {C Lambda : ℝ}
@@ -115,9 +94,6 @@ theorem m64WeightedBoundary_cross_bound
   exact (Finset.sum_mul_sq_le_sq_mul_sq Finset.univ (fun i => w i * G (V i) v) d).trans
     (mul_le_mul_of_nonneg_right hsum (Finset.sum_nonneg fun _ _ => sq_nonneg _))
 
-
-
-
 theorem m64Trilinear_norm_bound (T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
     {C : ℝ} (hT : ‖T‖ ≤ C) (v w : E) : |T v w w| ≤ C * ‖v‖ * ‖w‖ ^ 2 := by
   calc
@@ -129,10 +105,6 @@ theorem m64Trilinear_norm_bound (T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)
         (mul_le_mul_of_nonneg_right (T.le_opNorm v) (norm_nonneg _)) (norm_nonneg _)
     _ ≤ ((C * ‖v‖) * ‖w‖) * ‖w‖ := by gcongr
     _ = _ := by ring
-
-
-
-
 
 theorem m64WeightedBoundary_source_bound
     (T : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) (w : Fin 2 → ℝ) (V : Fin 2 → E)

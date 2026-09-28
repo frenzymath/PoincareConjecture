@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.TimeDerivative
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hessian_in_smooth_parametrization (D : LeviCivitaData g)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -88,8 +79,6 @@ private theorem ricci_eq_of_metric_eq {g h : RiemannianMetric 3 M}
   subst h
   simp only [LeviCivitaData.ricci, D.horizon_curvatureTensor_eq D']
 
-
-
 theorem normalizedPotential_fderiv2_in_parametrization (q : M)
     {U : Set (EuclideanSpace ℝ (Fin 3))} (hU : IsOpen U)
     {e : EuclideanSpace ℝ (Fin 3) → M}
@@ -137,9 +126,6 @@ variable {q : ℕ → M}
     (fun _ => AncientRescalingSequence.smallRescalingCarrier (M := M))
     (fun _ => G.unscaledSourceFlow.shrink.metric)
     (fun k => equivShrink M (q k)) 1)
-
-
-
 
 theorem normalizedPotentialPullback_fderiv2
     (z : L.limitCarrier.carrier) (k : ℕ) (x : EuclideanSpace ℝ (Fin 3))

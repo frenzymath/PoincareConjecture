@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Exhausti
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem exists_dirichletHeatKernel_exhaustion
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

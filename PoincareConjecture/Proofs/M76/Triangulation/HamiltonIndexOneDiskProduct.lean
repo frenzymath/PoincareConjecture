@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneProductCut
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMeridianBand
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,10 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
-
 
 structure HamiltonMarkedDiskProduct {B : Set W}
     (e : frontier squareShell ≃ₜ frontier (complementaryRegion B)) where
@@ -47,20 +34,13 @@ namespace HamiltonMarkedDiskProduct
 variable {B : Set W} {e : frontier squareShell ≃ₜ frontier (complementaryRegion B)}
   (P : HamiltonMarkedDiskProduct e)
 
-
 def closedStrip : Set W := P.map '' (D2 ×ˢ Icc (-(P.width / 2)) (P.width / 2))
-
 
 def openStrip : Set W := P.map '' (D2 ×ˢ Ioo (-(P.width / 2)) (P.width / 2))
 
-
 def endDisks : Set W := P.map '' (D2 ×ˢ ({-(P.width / 2), P.width / 2} : Set ℝ))
 
-
 def cutCarrier : Set W := complementaryRegion B \ P.openStrip
-
-
-
 
 theorem cut_geometry (hR : IsCompact (complementaryRegion B)) :
     IsCompact P.cutCarrier ∧

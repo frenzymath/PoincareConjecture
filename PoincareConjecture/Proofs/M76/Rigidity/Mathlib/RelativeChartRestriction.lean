@@ -1,14 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace OpenPartialHomeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem IsImage.exists_subtype_chart
     {e : OpenPartialHomeomorph X Y} {A : Set X} {B : Set Y}

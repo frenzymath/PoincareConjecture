@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M02.HomotopyHomologyIso
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroObjects
 
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -19,8 +15,6 @@ variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
 noncomputable section
 
 variable {X Y : TopCat.{w}}
-
-
 
 theorem isZero_singularHomology_of_homotopyEquiv
     (R : C) (n : ℕ) (e : ContinuousMap.HomotopyEquiv X Y)

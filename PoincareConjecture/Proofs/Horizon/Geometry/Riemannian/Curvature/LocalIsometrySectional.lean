@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle

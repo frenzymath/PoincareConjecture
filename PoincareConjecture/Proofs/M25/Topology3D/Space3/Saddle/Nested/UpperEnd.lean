@@ -6,25 +6,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NorthCapEndTranspo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTransport
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_saddle_upper_end_with_later_scales
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,9 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem unit_observation_tangent_orthogonal
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -55,8 +40,6 @@ theorem unit_observation_tangent_orthogonal
     inner ℝ (R (e q)) (R (mfderiv (𝓡 n) (𝓡 m) e q w)) at hchain
   linarith
 
-
-
 theorem planarCircleCurrent_zero_of_tangent
     (u v w : LoopPlane) (hu : ‖u‖ = 1)
     (hv : inner ℝ u v = 0) (hw : inner ℝ u w = 0) :
@@ -77,9 +60,6 @@ theorem planarCircleCurrent_zero_of_tangent
     unfold planarCircleCurrent
     ring
   simpa only [hu2, hv', hw', one_mul, zero_mul, sub_zero] using hid
-
-
-
 
 theorem observedWeakAnnulus_circle_jacobian_zero
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

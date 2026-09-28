@@ -3,15 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Integral
 import Mathlib.Analysis.Complex.Basic
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric
@@ -19,14 +10,8 @@ open scoped Topology Convolution ContDiff
 
 namespace PoincareConjecture.M60
 
-
-
-
 noncomputable def cauchyTransformKernel : ℂ → ℂ :=
   (ball (0 : ℂ) 3).indicator (fun z => (Real.pi⁻¹ : ℝ) • z⁻¹)
-
-
-
 
 theorem integrable_cauchyTransformKernel : Integrable cauchyTransformKernel := by
   have hi : IntegrableOn (fun z : ℂ => z⁻¹) (ball 0 3) := by
@@ -40,21 +25,14 @@ theorem integrable_cauchyTransformKernel : Integrable cauchyTransformKernel := b
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V]
 
-
-
 noncomputable def cauchyTransform (f : ℂ → V) : ℂ → V :=
   cauchyTransformKernel ⋆[ContinuousLinearMap.lsmul ℝ ℂ, volume] f
-
-
-
 
 theorem contDiff_cauchyTransform {k : ℕ∞} {f : ℂ → V}
     (hf : ContDiff ℝ k f) (hc : HasCompactSupport f) :
     ContDiff ℝ k (cauchyTransform f) :=
   hc.contDiff_convolution_right (ContinuousLinearMap.lsmul ℝ ℂ)
     integrable_cauchyTransformKernel.locallyIntegrable hf
-
-
 
 theorem norm_cauchyTransform_le {f : ℂ → V} {B : ℝ}
     (hB : ∀ z, ‖f z‖ ≤ B) (z : ℂ) :
@@ -65,9 +43,6 @@ theorem norm_cauchyTransform_le {f : ℂ → V} {B : ℝ}
   exact Eventually.of_forall fun w => by
     rw [norm_smul]
     exact mul_le_mul_of_nonneg_left (hB (z - w)) (norm_nonneg _)
-
-
-
 
 theorem fderiv_cauchyTransform_apply {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (hc : HasCompactSupport f) (z d : ℂ) :

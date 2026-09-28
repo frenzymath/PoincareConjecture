@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusCubeChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TorusCube
-
-
-
 
 def crossingBands (p d : ℝ) : Set ((AddCircle p × AddCircle p) × AddCircle p) :=
   {z | z.1.1 ∈ ((↑) : ℝ → AddCircle p) '' Ioo (-d) d ∨
@@ -24,8 +12,6 @@ def crossingBands (p d : ℝ) : Set ((AddCircle p × AddCircle p) × AddCircle p
     z.2 ∈ ((↑) : ℝ → AddCircle p) '' Ioo (-d) d}
 
 variable (p : ℝ) [Fact (0 < p)]
-
-
 
 theorem centeredCubeQuotient_mem_crossingBands_iff {d : ℝ}
     (hd : 0 < d) (hdhalf : d < p / 2) {x : CubeShell.Ambient}
@@ -48,8 +34,6 @@ theorem centeredCubeQuotient_mem_crossingBands_iff {d : ℝ}
     AddCircle.coe_center_mem_shortArc_iff p hd hdhalf (hinterval hcoords.2)]
   simp only [Prod.norm_def, Real.norm_eq_abs, lt_max_iff, or_assoc]
 
-
-
 theorem outside_centeredCubeQuotient_mem_crossingBands {d : ℝ} (hd : 0 < d)
     (z : (AddCircle p × AddCircle p) × AddCircle p)
     (hz : z ∉ (AddCircle.centeredCubeQuotient p).target) : z ∈ crossingBands p d := by
@@ -65,15 +49,11 @@ theorem outside_centeredCubeQuotient_mem_crossingBands {d : ℝ} (hd : 0 < d)
     exact hz ⟨⟨h1, h2⟩, hn⟩
   exact Or.inr (Or.inr (h3.symm ▸ hzero))
 
-
-
 theorem closedCube_subset_source {R : ℝ} (hR : R < p / 2) :
     {x : CubeShell.Ambient | ‖x‖ ≤ R} ⊆ (AddCircle.centeredCubeQuotient p).source := by
   intro x hx
   rw [AddCircle.centeredCubeQuotient_source]
   exact hx.trans_lt hR
-
-
 
 theorem isCompact_centeredCubeImage {R : ℝ} (hR : R < p / 2) :
     IsCompact (AddCircle.centeredCubeQuotient p '' {x : CubeShell.Ambient | ‖x‖ ≤ R}) := by
@@ -82,9 +62,6 @@ theorem isCompact_centeredCubeImage {R : ℝ} (hR : R < p / 2) :
       isCompact_closedBall (0 : CubeShell.Ambient) R
   exact hK.image_of_continuousOn ((AddCircle.centeredCubeQuotient p).continuousOn_toFun.mono
     (closedCube_subset_source p hR))
-
-
-
 
 theorem crossingBands_subset_compl_centeredCubeImage {d R : ℝ}
     (hd : 0 < d) (hdhalf : d < p / 2) (hR : R ≤ p / 2 - d) :
@@ -95,9 +72,6 @@ theorem crossingBands_subset_compl_centeredCubeImage {d R : ℝ}
   have hxB : ‖x‖ < p / 2 := lt_of_le_of_lt hx (by linarith)
   have hxband := (centeredCubeQuotient_mem_crossingBands_iff p hd hdhalf hxB).mp hz
   exact (not_lt_of_ge (hx.trans hR)) hxband
-
-
-
 
 theorem compl_centeredCubeImage_subset_crossingBands {d R : ℝ}
     (hd : 0 < d) (hdhalf : d < p / 2) (hR : p / 2 - d ≤ R) :

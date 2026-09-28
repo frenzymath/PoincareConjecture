@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.MaximalAdaptedField
 import Mathlib.Data.Set.Piecewise
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

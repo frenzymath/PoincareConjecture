@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CompactAdaptedField
 import PoincareConjecture.Proofs.M09.AdaptedPairingConstancy
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

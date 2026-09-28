@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarWeightedProducts
 import PoincareConjecture.Proofs.M35.RadialGauge.ExteriorCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +9,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 variable {A : Type*} {f v : A → ℝ → ℝ}
-
 
 theorem radialGaugeDrift_jets_bounded
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hv : ∀ a, ContDiff ℝ ∞ (v a))
@@ -80,8 +70,6 @@ theorem radialGaugeDrift_jets_bounded
   have hinv := reciprocal_radius_jet_bound j hr
   have hvbound := hVb a r hr
   linarith
-
-
 
 theorem radialGaugeDrift_div_radius_weighted_jets
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hv : ∀ a, ContDiff ℝ ∞ (v a))

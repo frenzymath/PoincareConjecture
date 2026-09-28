@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.Orig
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.SlabExcision
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Topology.ExcisionInjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -29,9 +20,6 @@ local notation "Q" => hamiltonOneHierarchyCoordinates
 local notation "E" => latticeHandleDomainEquiv (Fin 1) (Fin 2) L
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_closed_source_component_removal
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

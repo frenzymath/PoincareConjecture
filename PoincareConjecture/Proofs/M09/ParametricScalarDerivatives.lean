@@ -1,11 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

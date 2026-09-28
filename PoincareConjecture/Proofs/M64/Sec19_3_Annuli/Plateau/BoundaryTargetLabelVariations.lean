@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,11 +10,6 @@ open Set Function Filter
 open scoped Topology ContDiff NNReal
 
 namespace PoincareConjecture.M64
-
-
-
-
-
 
 theorem smooth_periodic_target_variation
     {theta : ℝ → ℝ} (hregular : ContDiff ℝ ∞ theta)
@@ -116,11 +98,6 @@ theorem smooth_periodic_target_variation
       (abs_nonneg t)).trans_lt htC
   linarith [(abs_lt.mp hb).1]
 
-
-
-
-
-
 theorem smooth_periodic_target_variation_preserves_labels
     {theta : ℝ → ℝ} (hregular : ContDiff ℝ ∞ theta)
     (hperiod : Function.Periodic theta curvePeriod) :
@@ -133,12 +110,6 @@ theorem smooth_periodic_target_variation_preserves_labels
   intro t ht sigma
   obtain ⟨T, hT, -⟩ := hvar t ht
   exact ⟨T.comp sigma, fun x => hT (sigma.map x)⟩
-
-
-
-
-
-
 
 theorem monotone_label_variation_velocity_eq_on_fiber
     {v : ℝ → ℝ → ℝ} {x y vx vy : ℝ} (hxy : x ≤ y)

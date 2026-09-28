@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProductCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   (hRicci : IntrinsicGeneralizedRicciEquation R.leafwiseConnection)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProjectedCurve_velocity {T a b : ℝ}
     {x y : (ordinaryProductLGeometry R hRicci).Point}
@@ -49,8 +39,6 @@ theorem ordinaryProjectedCurve_velocity {T a b : ℝ}
   rw [hzero, neg_zero, zero_add] at hv
   exact hv
 
-
-
 theorem ordinaryProjectedCurve_integrand {T a b : ℝ}
     {x y : (ordinaryProductLGeometry R hRicci).Point}
     (p : M14BackwardPath (ordinaryProductLGeometry R hRicci) T a b x y)
@@ -72,8 +60,6 @@ theorem ordinaryProjectedCurve_integrand {T a b : ℝ}
     ordinaryProductProjection_eq, hscalar]
   rfl
 
-
-
 noncomputable def ordinaryProjectedPath {T a b : ℝ} (hT : T ∈ I.domain)
     {x y : (ordinaryProductLGeometry R hRicci).Point}
     (p : M14BackwardPath (ordinaryProductLGeometry R hRicci) T a b x y) :
@@ -93,8 +79,6 @@ noncomputable def ordinaryProjectedPath {T a b : ℝ} (hT : T ∈ I.domain)
     rw [uIoo_of_le p.tau_lt.le]
     intro s hs
     exact (ordinaryProjectedCurve_integrand R hRicci p hs).symm)
-
-
 
 theorem ordinaryProjectedPath_action {T a b : ℝ} (hT : T ∈ I.domain)
     {x y : (ordinaryProductLGeometry R hRicci).Point}

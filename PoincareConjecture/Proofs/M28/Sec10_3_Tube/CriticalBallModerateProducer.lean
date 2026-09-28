@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallMarginOrScale
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryTransport
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

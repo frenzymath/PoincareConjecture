@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_supported_motion_margin
     {E X ι : Type*} [MetricSpace E] [TopologicalSpace X] [T2Space X] [Finite ι]

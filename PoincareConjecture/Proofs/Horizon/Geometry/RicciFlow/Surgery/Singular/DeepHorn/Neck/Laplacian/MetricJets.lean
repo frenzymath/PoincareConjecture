@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Laplacian.ScalarMap
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
@@ -245,7 +241,6 @@ theorem tendsto_euclideanMetricState_jets
       exact tendsto_jet_directional (b d) r (fun i => hf (gseq i) e a c) (hf g e a c)
         (tendsto_jet_directional (b e) (r + 1) (fun i => hs (gseq i) a c) (hs g a c)
           (hjets (r + 1 + 1) (by omega) a c))
-
 
 theorem tendsto_scalarCurvature_derivatives_of_four_jets
     {α : Type*} {l : Filter α}

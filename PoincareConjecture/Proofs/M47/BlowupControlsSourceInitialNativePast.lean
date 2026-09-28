@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialPastComparison
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialActualCoefficients
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCenteredJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M47
 open M36 M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_source_initial_native_past_bound (P : M47Predecessors.{u})
     {zeta K : ℝ} (hzeta : 0 < zeta) (hzetaSmall : zeta ≤ 1 / 8)

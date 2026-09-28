@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M09.LocalAdaptedEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

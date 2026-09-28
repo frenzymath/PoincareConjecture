@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteBoundaryComponents
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,7 +9,6 @@ open Set Function
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
 
 theorem connectedComponentIn_eq_of_finite_closed_cover
     {I : Type*} [Finite I] (C : I → Set X)
@@ -49,8 +41,6 @@ theorem connectedComponentIn_eq_of_finite_closed_cover
     · exact False.elim (disjoint_left.mp hsep hp
         (hright (mem_connectedComponentIn (hsub hp))))
   · exact (hconn i).subset_connectedComponentIn hp hsub
-
-
 
 theorem card_connectedComponents_of_finite_closed_cover
     {I : Type*} [Finite I] (C : I → Set X)
@@ -85,8 +75,6 @@ theorem card_connectedComponents_of_finite_closed_cover
     exact hi
   exact (Nat.card_congr (Equiv.ofBijective f ⟨hinj, hsurj⟩)).symm
 
-
-
 theorem isConnected_four_arc_resolution_crossed
     (A B : Fin 2 → Set X) (b : Fin 2 × Fin 2 → X)
     (hA : ∀ i, IsConnected (A i)) (hB : ∀ i, IsConnected (B i))
@@ -104,7 +92,6 @@ theorem isConnected_four_arc_resolution_crossed
     tauto
   exact heq ▸ h01
 
-
 theorem card_connectedComponents_four_arc_resolution_crossed
     (A B : Fin 2 → Set X) (b : Fin 2 × Fin 2 → X)
     (hA : ∀ i, IsConnected (A i)) (hB : ∀ i, IsConnected (B i))
@@ -113,9 +100,6 @@ theorem card_connectedComponents_four_arc_resolution_crossed
   let : ConnectedSpace ↥((⋃ i, A i) ∪ ⋃ i, B i) :=
     isConnected_iff_connectedSpace.mp (isConnected_four_arc_resolution_crossed A B b hA hB hbA hbB)
   exact Nat.card_unique
-
-
-
 
 theorem four_arc_resolution_parallel
     (A B : Fin 2 → Set X) (b : Fin 2 × Fin 2 → X)
@@ -155,8 +139,6 @@ theorem four_arc_resolution_parallel
     (fun i => (hconn i).isPreconnected) hdisjoint hcover hp, hdisjoint, ?_⟩
   simpa using card_connectedComponents_of_finite_closed_cover C hclosed hconn hdisjoint hcover
 
-
-
 theorem contact_index_eq_iff_mem_connectedComponentIn
     {I J : Type*} [Finite I] (C : I → Set X)
     (hclosed : ∀ i, IsClosed (C i)) (hconn : ∀ i, IsPreconnected (C i))
@@ -171,8 +153,6 @@ theorem contact_index_eq_iff_mem_connectedComponentIn
   · intro hi
     by_contra hne
     exact disjoint_left.mp (hdisjoint hne) (hb i) hi
-
-
 
 theorem exists_equiv_of_four_contact_first_pairing
     (k : Fin 2 × Fin 2 → Fin 2)

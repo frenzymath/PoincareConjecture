@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.CylinderRescaling
 import PoincareConjecture.Proofs.M28.Generalized.CylinderRestriction
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
 
 def strongNeckBackwardInterval : SpacetimeInterval where
   domain := Ioc (-1 : ℝ) 0

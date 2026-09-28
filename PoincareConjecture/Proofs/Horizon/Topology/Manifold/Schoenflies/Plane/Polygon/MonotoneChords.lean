@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tub
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
-
 
 theorem exists_uniform_monotone_tube_chords
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

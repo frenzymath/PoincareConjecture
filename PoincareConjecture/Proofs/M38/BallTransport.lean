@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.BallCoordinatePatch
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -15,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def transportSurgeryBall {A D : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A)
@@ -39,18 +30,15 @@ noncomputable def transportSurgeryBall {A D : GeneralizedSliceCarrier.{u}}
     rw [e.symm_apply_apply, B.left_inverse hx]
   open_embedding := e.toHomeomorph.isOpenEmbedding.comp B.open_embedding
 
-
 theorem transportSurgeryBall_map {A D : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞) (x : StandardCapSpace) :
     (transportSurgeryBall B e).map x = e (B.map x) := rfl
 
-
 theorem transportSurgeryBall_inverse {A D : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞) (x : D.carrier) :
     (transportSurgeryBall B e).inverse x = B.inverse (e.symm x) := rfl
-
 
 theorem transportSurgeryBall_image {A D : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A)
@@ -59,13 +47,11 @@ theorem transportSurgeryBall_image {A D : GeneralizedSliceCarrier.{u}}
   change (e ∘ B.map) '' s = e '' (B.map '' s)
   exact Set.image_comp _ _ _
 
-
 theorem transportSurgeryBall_closedBall {A D : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞) :
     (transportSurgeryBall B e).closedBall = e '' B.closedBall :=
   transportSurgeryBall_image B e _
-
 
 theorem surgeryBall_image_ball_open {A : GeneralizedSliceCarrier.{u}}
     (B : SurgeryBallEmbedding A) (r : ℝ) (hr : r ≤ 2) :

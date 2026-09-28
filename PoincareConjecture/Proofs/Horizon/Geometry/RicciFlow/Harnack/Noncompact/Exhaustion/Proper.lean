@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.E
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] {J : Set ℝ} {F : RicciFlow n M J} {O : M}
-
-
-
 
 theorem SmoothExhaustion.isCompact_sublevel_component
     (S : SmoothExhaustion F O) {t : ℝ} (ht : t ∈ J)
@@ -57,8 +45,6 @@ theorem SmoothExhaustion.isCompact_sublevel_component
   rw [← ENNReal.ofReal_toReal hx.2]
   exact ENNReal.ofReal_le_ofReal hbound
 
-
-
 theorem SmoothExhaustion.isCompact_sublevel_of_metricComplete [PreconnectedSpace M]
     (S : SmoothExhaustion F O) {t : ℝ} (ht : t ∈ J)
     (hcomplete : MetricComplete (F.metric t)) (r : ℝ) :
@@ -69,9 +55,6 @@ theorem SmoothExhaustion.isCompact_sublevel_of_metricComplete [PreconnectedSpace
     exact and_iff_left ((F.metric t).edist_ne_top O x)
   rw [← heq]
   exact S.isCompact_sublevel_component ht hcomplete r
-
-
-
 
 theorem exists_proper_smoothExhaustion_of_curvature_bound
     [PreconnectedSpace M] [NoncompactSpace M]

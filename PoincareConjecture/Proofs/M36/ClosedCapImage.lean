@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.StandardBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal Topology

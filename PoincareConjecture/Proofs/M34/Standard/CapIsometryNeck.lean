@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapIsometryPullback
 import PoincareConjecture.Proofs.M34.Standard.CapIsometryScalar
 import PoincareConjecture.Proofs.M34.Standard.CapNeckImageIdentities
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X] [T2Space X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
 
 theorem exists_isometric_image (N : EpsilonNeck g)
     (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞) (hf : MetricHomothety g h f 1)

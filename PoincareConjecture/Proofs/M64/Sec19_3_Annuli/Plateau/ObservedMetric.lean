@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderMetric
 import Mathlib.Topology.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,9 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem m64ChartReadable_observed_metric
     (g : RiemannianMetric n M) (e : M → E)

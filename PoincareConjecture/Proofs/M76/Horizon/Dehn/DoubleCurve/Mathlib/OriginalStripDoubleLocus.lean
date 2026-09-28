@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripHalfDiskComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
 
 def originalStripSheet (i : Bool) (p : P2) : C3 :=
   ((p.2, if i then -p.2 else p.2), p.1)
@@ -29,8 +19,6 @@ theorem originalStripSheet_mem_tube (i : Bool) {p : P2} (hp : p ∈ source) :
   · refine ⟨⟨hp.2, ?_⟩, hp.1⟩
     change -1 ≤ -p.2 ∧ -p.2 ≤ 1
     constructor <;> linarith [hp.2.1, hp.2.2]
-
-
 
 theorem originalStripSheet_eq_iff (i j : Bool) (p q : P2) :
     originalStripSheet i p = originalStripSheet j q ↔ p = q ∧ (i = j ∨ p.2 = 0) := by
@@ -53,8 +41,6 @@ theorem originalStripSheet_eq_iff (i j : Bool) (p q : P2) :
   · rintro ⟨rfl, hij | hp⟩
     · rw [hij]
     · cases i <;> cases j <;> simp [originalStripSheet, hp]
-
-
 
 theorem original_strip_distinct_mate_iff
     {E X : Type*} {S : Set E} (c : Bool → P2 → E) {f : E → X} {τ : C3 → X}
@@ -107,7 +93,6 @@ theorem original_strip_distinct_mate_iff
     apply (originalStripSheet_eq_iff (!i) i (p.val.1, 0) p).mpr
     exact ⟨Prod.ext rfl hp0.symm, Or.inr rfl⟩
 
-
 theorem original_strip_has_mate_iff
     {E X : Type*} {S : Set E} (c : Bool → P2 → E) {f : E → X} {τ : C3 → X}
     (hcS : ∀ i, MapsTo (c i) source S)
@@ -126,8 +111,6 @@ theorem original_strip_has_mate_iff
     exact (original_strip_distinct_mate_iff c hdisj hτ hfull h0 h1 i p
       (hcS (!i) hcenter)).mpr ⟨hp0, rfl⟩
 
-
-
 theorem original_strip_center_unique_mate
     {E X : Type*} {S : Set E} (c : Bool → P2 → E) {f : E → X} {τ : C3 → X}
     (hcS : ∀ i, MapsTo (c i) source S)
@@ -144,8 +127,6 @@ theorem original_strip_center_unique_mate
   refine ⟨c (!i) (t, 0), ⟨hcenter, (hmate _ hcenter).mpr ⟨rfl, rfl⟩⟩, ?_⟩
   intro x hx
   exact ((hmate x hx.1).mp hx.2).2
-
-
 
 theorem original_double_locus_inter_strips
     {E X : Type*} {S : Set E} (c : Bool → P2 → E) {f : E → X} {τ : C3 → X}
@@ -178,8 +159,6 @@ theorem original_double_locus_inter_strips
     · exact ⟨(hpoint false p (hcenter hp)).mpr hp.2, Or.inl ⟨p, hcenter hp, rfl⟩⟩
     · exact ⟨(hpoint true p (hcenter hp)).mpr hp.2, Or.inr ⟨p, hcenter hp, rfl⟩⟩
 
-
-
 theorem old_double_subset_avoids_strips
     {E X : Type*} {S K : Set E} (c : Bool → P2 → E) {f : E → X} {τ : C3 → X}
     (hcS : ∀ i, MapsTo (c i) source S)
@@ -196,8 +175,6 @@ theorem old_double_subset_avoids_strips
     ((original_double_locus_inter_strips c hcS hdisj hτ hfull h0 h1).subset
       ⟨hK hx, hxstrips⟩)
 
-
-
 theorem strip_center_disjoint_of_far_contact
     {E : Type*} (c : P2 → E) (hci : InjOn c source) (positive : Bool)
     {A : Set E} (hcontact : A ∩ c '' source = c '' arm (farArmParameter positive)) :
@@ -209,7 +186,6 @@ theorem strip_center_disjoint_of_far_contact
   exact disjoint_left.mp (disjoint_center_far_images c hci positive) hx
     (hcontact.subset ⟨hxA, image_mono hcenter hx⟩)
 
-
 theorem strip_center_disjoint_of_no_contact
     {E : Type*} (c : P2 → E) {A : Set E} (hcontact : A ∩ c '' source = ∅) :
     Disjoint (c '' arm 0) A := by
@@ -218,8 +194,6 @@ theorem strip_center_disjoint_of_no_contact
   apply disjoint_left.mpr
   intro x hx hxA
   exact Set.notMem_empty x (hcontact.subset ⟨hxA, image_mono hcenter hx⟩)
-
-
 
 theorem original_strip_centers_disjoint_exteriors
     {E : Type*} (c : Bool → P2 → E) (hci : ∀ i, InjOn (c i) source)

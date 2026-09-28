@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalStageNeighborhood
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTerminalPair
 import PoincareConjecture.Proofs.M76.Dehn.FullMarkedTerminalStars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w z
@@ -31,8 +23,6 @@ variable {M : Type w} {ι : Type z} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {f : (V1 × V2) → M}
   {r : M → ℝ} {C : Set M}
-
-
 
 structure MarkedTerminalRegion (st : Stage e S f r C) (R : Set M) where
   region : Set st.Carrier
@@ -84,8 +74,6 @@ structure MarkedTerminalRegion (st : Stage e S f r C) (R : Set M) where
       Module.finrank (ZMod 2)
         (Submodule.Subquotient (LinearMap.ker (vertexCoboundary A).dualMap)
           (LinearMap.range (edgeCoboundary A).dualMap)) ≤ 2
-
-
 
 theorem Stage.nonempty_marked_terminal_region (st : Stage e S f r C)
     (hS : S.faces.Finite) (hsource : S.space = ProtectedAnnulus.source)

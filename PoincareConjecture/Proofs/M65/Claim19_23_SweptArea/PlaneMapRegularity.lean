@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Bundle
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m65Continuous_derivative_column {f : LoopPlane → M}
     (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (i : Fin 2) :
     Continuous (fun z : LoopPlane =>
@@ -33,8 +22,6 @@ theorem m65Continuous_derivative_column {f : LoopPlane → M}
   (hf.continuous_tangentMap le_rfl).comp
     ((tangentBundleModelSpaceHomeomorph (𝓡 2)).symm.continuous.comp
       (continuous_id.prodMk continuous_const))
-
-
 
 theorem m65Continuous_areaDensity (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
@@ -48,8 +35,6 @@ theorem m65Continuous_areaDensity (g : RiemannianMetric n M)
       (m65Continuous_derivative_column hf i).inner_bundle (m65Continuous_derivative_column hf j)
   exact (continuous_const.max hgram.matrix_det).sqrt
 
-
-
 theorem m65Continuous_derivative_column_norm (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (i : Fin 2) :
     Continuous (fun z => g.tangentNorm (f z)
@@ -60,8 +45,6 @@ theorem m65Continuous_derivative_column_norm (g : RiemannianMetric n M)
     ⟨⟨g.inner, g.contMDiff.continuous, fun _ _ _ => rfl⟩⟩
   exact ((m65Continuous_derivative_column hf i).inner_bundle
     (m65Continuous_derivative_column hf i)).sqrt
-
-
 
 theorem m65Exists_compact_derivative_bound (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)

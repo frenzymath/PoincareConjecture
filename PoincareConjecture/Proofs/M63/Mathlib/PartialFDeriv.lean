@@ -1,22 +1,9 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
-
-
-
 
 theorem ContDiffOn.fderiv_snd_of_isOpen_m63
     {𝕜 E V W : Type*} [NontriviallyNormedField 𝕜]

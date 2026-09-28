@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem pathELength_le_mul_of_speed_le
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.Translations.Crossings
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
 set_option autoImplicit false
 open Set
 

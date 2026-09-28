@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBoun
 import PoincareConjecture.Definitions.Ch04.Pinching
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,29 +30,18 @@ noncomputable local instance collarTwoJetNormedGroup :
 noncomputable local instance collarTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 noncomputable def collarJetGram (u v : E) (J : MetricTwoJet 3) : ℝ :=
   J.1 u u * J.1 v v - (J.1 u v) ^ 2
-
-
-
 
 noncomputable def collarJetMargin (C : ℝ) (u v : E) (J : MetricTwoJet 3) : ℝ :=
   C⁻¹ * jetScalarCurvature J - jetCurvature J u v u v / collarJetGram u v J
 
-
-
 def collarJetRegion (C : ℝ) (u v : E) : Set (MetricTwoJet 3) :=
   {J | J.1.IsInvertible ∧ 0 < collarJetGram u v J ∧ 0 < collarJetMargin C u v J}
-
-
 
 theorem continuous_collarJetGram (u v : E) : Continuous (collarJetGram u v) := by
   unfold collarJetGram
   fun_prop
-
-
 
 theorem continuousAt_collarJetMargin (C : ℝ) (u v : E) {J : MetricTwoJet 3}
     (hJ : J.1.IsInvertible) (hgram : collarJetGram u v J ≠ 0) :
@@ -70,8 +49,6 @@ theorem continuousAt_collarJetMargin (C : ℝ) (u v : E) {J : MetricTwoJet 3}
   (continuousAt_const.mul (contDiffAt_jetScalarCurvature hJ).continuousAt).sub
     ((contDiffAt_jetCurvature hJ u v u v).continuousAt.div
       (continuous_collarJetGram u v).continuousAt hgram)
-
-
 
 theorem isOpen_collarJetRegion (C : ℝ) (u v : E) : IsOpen (collarJetRegion C u v) := by
   rw [isOpen_iff_mem_nhds]
@@ -86,9 +63,6 @@ theorem isOpen_collarJetRegion (C : ℝ) (u v : E) : IsOpen (collarJetRegion C u
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
-
 theorem exists_uniform_collar_jet_margin (C : ℝ) (u v : E)
     {K : Set (MetricTwoJet 3)} (hK : IsCompact K) (hsub : K ⊆ collarJetRegion C u v) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ J ∈ K, ∀ J' : MetricTwoJet 3,
@@ -100,9 +74,6 @@ theorem exists_uniform_collar_jet_margin (C : ℝ) (u v : E)
   apply hinside
   exact Metric.mem_cthickening_of_dist_le J' J delta K hJ (by
     simpa only [dist_eq_norm] using hnear)
-
-
-
 
 theorem exists_collar_plane_of_twoJet
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E) (C : ℝ) (u v : E)
@@ -134,9 +105,6 @@ theorem exists_collar_plane_of_twoJet
     _ < C⁻¹ * D.scalarCurvature x := hmargin
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_collar_jet_time_margin (C : ℝ) (u v : E)
     {K : Set (MetricTwoJet 3)} (hK : IsCompact K) (hsub : K ⊆ collarJetRegion C u v)

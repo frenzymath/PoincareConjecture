@@ -1,19 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set
 open scoped ContDiff Topology
@@ -45,8 +32,6 @@ private theorem integrable_fderiv_contDiff_compactSupport
   apply (integrableOn_iff_integrable_of_support_subset
     (subset_tsupport _)).mp
   exact hq'.continuous.continuousOn.integrableOn_compact hqc'.isCompact
-
-
 
 theorem integral_fderiv_eq_zero_of_contDiff_compactSupport
     {q : Spacetime n → ℝ} (hq : ContDiff ℝ ∞ q) (hqc : HasCompactSupport q)

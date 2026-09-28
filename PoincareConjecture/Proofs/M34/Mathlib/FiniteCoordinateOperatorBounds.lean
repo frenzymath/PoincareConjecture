@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Normed.Lp.PiLp
 import Mathlib.Analysis.Normed.Operator.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
 
 theorem PiLp.norm_le_card_mul_of_coordinates
     {p : ENNReal} [Fact (1 ≤ p)] {𝕜 I : Type*} [NontriviallyNormedField 𝕜]
@@ -32,9 +20,6 @@ theorem PiLp.norm_le_card_mul_of_coordinates
     _ = ∑ i : I, ‖v i‖ := by simp only [e, norm_smul, PiLp.norm_single, norm_one, mul_one]
     _ ≤ ∑ _i : I, C := Finset.sum_le_sum (fun i _ => hC i)
     _ = Fintype.card I * C := by simp
-
-
-
 
 theorem ContinuousLinearMap.opNorm_le_card_mul_of_coordinates
     {p : ENNReal} [Fact (1 ≤ p)] {𝕜 I F : Type*} [NontriviallyNormedField 𝕜]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_PullbackErrors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -19,9 +12,6 @@ namespace PoincareConjecture.M45.PointJetsVanish
 variable {ι E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem bilinear_pullback {l : Filter ι} {x : ι → E}
     {B : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {a : ι → E → E}

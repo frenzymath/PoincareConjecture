@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugeTensorDerivatives
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetConnection
 import PoincareConjecture.Proofs.M08.SecondVariationCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ universe u
 
 namespace PoincareConjecture.M14
 
-
-
 theorem openSubset_chartFrame {n : ℕ}
     (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))
     (x y : U) (v : EuclideanSpace ℝ (Fin n)) : M08.chartFrame x v y = v :=
@@ -35,9 +24,6 @@ private theorem openSubset_extChartAt {n : ℕ}
     extChartAt (𝓡 n) x y = y.val := by
   rw [extChartAt_coe]
   rfl
-
-
-
 
 theorem openSubset_chartConnection {n : ℕ}
     (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))
@@ -66,8 +52,6 @@ private theorem gauge_chart_source (x y : G.gaugeCover.spatial b) :
   rw [(G.gaugeCover.spatial b).chartAt_source_eq_univ]
   exact mem_univ y
 
-
-
 theorem gauge_chartActionMetric (T : ℝ) (x y : G.gaugeCover.spatial b) (s : ℝ)
     (t : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
     (ht : T - s ^ 2 = t.val) (v w : EuclideanSpace ℝ (Fin n)) :
@@ -78,8 +62,6 @@ theorem gauge_chartActionMetric (T : ℝ) (x y : G.gaugeCover.spatial b) (s : �
   have h := M08.chartActionMetric_apply W.flow T (gauge_chart_source b x y) s v w
   rw [openSubset_chartFrame, openSubset_chartFrame, ht, W.metric_pullback] at h
   exact h
-
-
 
 theorem gauge_chartActionPotential
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -92,8 +74,6 @@ theorem gauge_chartActionPotential
   have h := M08.chartActionPotential_apply W.flow T (gauge_chart_source b x y) s
   rw [ht, (ordinaryGauge_movingCalculus b hCoordinates W).scalar_eq] at h
   exact h
-
-
 
 theorem gauge_coordinateCurvature_pair
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -115,8 +95,6 @@ theorem gauge_coordinateCurvature_pair
   rw [ht, (ordinaryGauge_movingCalculus b hCoordinates W).riemann_eq] at h
   simpa only [openSubset_chartFrame, openSubset_extChartAt, ordinaryGaugeGeometry,
     CompatibleSpacetimeCylinder.toMovingSpacetimeGauge] using h
-
-
 
 theorem gauge_chartActionPotential_hessian
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -141,9 +119,6 @@ theorem gauge_chartActionPotential_hessian
   simpa only [openSubset_chartFrame, openSubset_extChartAt, ordinaryGaugeGeometry,
     CompatibleSpacetimeCylinder.toMovingSpacetimeGauge] using h
 
-
-
-
 theorem gauge_chartConnection_time_pair
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
     (hM04 : RicciFlowCurvatureTheory.{0}) (T : ℝ) {C : Set ℝ}
@@ -162,9 +137,6 @@ theorem gauge_chartConnection_time_pair
   rw [ht, movingGauge_bcalPairing (ordinaryGauge_movingCalculus b hCoordinates W)] at h
   simpa only [openSubset_chartFrame, openSubset_extChartAt, ordinaryGaugeGeometry,
     CompatibleSpacetimeCylinder.toMovingSpacetimeGauge] using h
-
-
-
 
 theorem gauge_chartActionMetric_time_pair
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

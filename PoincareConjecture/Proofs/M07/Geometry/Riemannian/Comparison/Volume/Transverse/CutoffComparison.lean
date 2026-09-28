@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Nonterminal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.OneDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 open Poincare.VolumeComparison
-
-
 
 theorem radialDensity_cross_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)
@@ -84,7 +80,6 @@ theorem radialDensity_cross_le
       ENNReal.ofReal_mul (pow_nonneg hs.1.le m),
       ENNReal.ofReal_mul (pow_nonneg ht.1.le m)] using ENNReal.ofReal_le_ofReal hreal
   · simp only [indicator_of_notMem hsS, mul_zero, zero_mul, zero_le]
-
 
 theorem antitoneOn_radialDensity_div_modelS
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hn : 1 ≤ n)

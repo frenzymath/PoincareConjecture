@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SelectedNeckJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -152,8 +144,6 @@ private theorem fixed_coordinate_error_jets
     iteratedFDeriv_fun_sum_apply (fun b _ => (hk a b).of_le hr))
 
 namespace OrdinaryRealization
-
-
 
 theorem blowupSequence_fixed_coordinate_error_jets
     (P : M35StandardCapPredecessors)

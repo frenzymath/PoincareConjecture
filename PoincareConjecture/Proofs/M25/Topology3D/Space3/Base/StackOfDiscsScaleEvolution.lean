@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleCyl
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNeighborhood
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,7 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
 
 theorem exists_stackCapScale_tracking_widths (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (hsmall : lambda < C.scale)
@@ -147,7 +136,6 @@ theorem exists_stackCapScale_tracking_widths (C : SurgeryCapTag psi u)
     apply hVrho
     exact hflatband (⟨t, ht⟩, ⟨x, mem_closedBall_zero_iff.mpr hx⟩, ⟨z, hzmem⟩)
       (hz.trans_le (min_le_left _ _))
-
 
 theorem exists_stackCapScaleEvolution (C : SurgeryCapTag psi u)
     (hpsi : IsCollarEmbedding psi) (K L : Set E3) (hK : IsCompact K) (hL : IsCompact L)

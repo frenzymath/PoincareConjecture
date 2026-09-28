@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FiniteJetComparison
 import PoincareConjecture.Proofs.M63.Adapters
 import PoincareConjecture.Proofs.M04.FlowRiemannRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -30,10 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m63SecondJetSquared_bound_of_curvature_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

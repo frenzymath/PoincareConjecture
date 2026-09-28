@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.ActualSurfaceStars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -18,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X]
-
-
 
 theorem marked_surface_planar_halfspace_stars_of_intrinsic_mark
     (K B : SimplicialComplex ℝ E) (hK : K.faces.Finite)

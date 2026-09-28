@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardSourc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoPlacement
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -54,10 +46,6 @@ private theorem unit_box_image :
       abs_le.mp (hx 2)⟩, ?_⟩
     ext i
     fin_cases i <;> rfl
-
-
-
-
 
 theorem exists_supported_placement
     (T : HamiltonIndexTwoMarkedBall frame)

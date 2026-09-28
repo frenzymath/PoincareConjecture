@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialSides
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRecut
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRecutDiameter
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +18,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 3200000 in
-
-
-
 
 structure RetainedPositiveRecutData
     (H : CounterexampleNeckFamily E) (W : CriticalBallSourcePacket H)
@@ -152,9 +141,6 @@ structure RetainedPositiveRecutData
       ENNReal.ofReal diameter
 
 set_option maxHeartbeats 4800000 in
-
-
-
 
 theorem exists_retained_positive_recut_data_accuracy (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 10000 : ℝ) ∧

@@ -1,9 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

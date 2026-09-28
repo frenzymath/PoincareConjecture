@@ -7,13 +7,6 @@ import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 import PoincareConjecture.Definitions.M33RegularHistory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,9 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure M46Predecessors : Prop where
   m04 : RicciFlowCurvatureTheory.{u}
@@ -34,14 +24,6 @@ structure M46Predecessors : Prop where
   m15 : GeneralizedNoncollapsingConclusion.{u} 3
   regular_history : ∀ (F : SurgeryFlowData.{u}) (W : M33RegularHistoryWindow F),
     Nonempty (M33RegularHistoryData W)
-
-
-
-
-
-
-
-
 
 structure RepairedNoncollapseInductionTheory : Prop where
   induction : ∀ S : RepairedControlledSchedulesData.{u},

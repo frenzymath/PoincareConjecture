@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteOrderComplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -24,8 +13,6 @@ open M02.Topology
 variable {J : Type u} {K : Type v} [PartialOrder J] [PartialOrder K]
   [Fintype J] [Fintype K]
 
-
-
 theorem orderComplex_reindex_mem (e : J ≃o K) {z : J → ℝ}
     (hz : z ∈ (finiteOrderComplex J).space) :
     (fun k => z (e.symm k)) ∈ (finiteOrderComplex K).space := by
@@ -37,9 +24,6 @@ theorem orderComplex_reindex_mem (e : J ≃o K) {z : J → ℝ}
     rcases h.2.2 (e.symm i) (e.symm j) hi hj with hij | hji
     · exact Or.inl (e.symm.le_iff_le.mp hij)
     · exact Or.inr (e.symm.le_iff_le.mp hji)
-
-
-
 
 noncomputable def orderComplexHomeomorph (e : J ≃o K) :
     (finiteOrderComplex J).space ≃ₜ (finiteOrderComplex K).space where
@@ -54,14 +38,9 @@ noncomputable def orderComplexHomeomorph (e : J ≃o K) :
     apply Continuous.subtype_mk
     exact continuous_pi fun j => (continuous_apply (e j)).comp continuous_subtype_val
 
-
-
 @[simp] theorem orderComplexHomeomorph_apply (e : J ≃o K)
     (z : (finiteOrderComplex J).space) (k : K) :
     (orderComplexHomeomorph e z).val k = z.val (e.symm k) := rfl
-
-
-
 
 noncomputable def orderComplexULiftHomeomorph (J : Type u) [PartialOrder J] [Fintype J] :
     (finiteOrderComplex (ULift.{w} J)).space ≃ₜ (finiteOrderComplex J).space :=

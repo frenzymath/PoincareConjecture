@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.ChartDistances
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.AnnularEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ open Set Filter Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_isometric_cone_limit_of_rescaled_normal_charts
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -130,10 +117,6 @@ end PoincareConjecture.RiemannianMetric
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
-
 
 theorem exists_flat_radial_cone_embedding_along_ray_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

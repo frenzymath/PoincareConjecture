@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped unitInterval
 
 namespace Path
-
-
-
-
 
 theorem exists_convex_subpath_partition
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

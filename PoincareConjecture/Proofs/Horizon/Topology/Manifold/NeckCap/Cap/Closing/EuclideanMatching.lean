@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.EuclideanComplement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Collar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_two_cap_euclidean_matching_balls (C D : CapCertificate g)
     (hC : C.model_kind = .euclidean) (hD : D.model_kind = .euclidean)

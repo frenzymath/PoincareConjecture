@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Projection
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance restrictedGradient_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem tangentNorm_gradient_openRegularFiberMetric_ge_half
     {f : M → Fin k → ℝ}
@@ -68,9 +57,6 @@ theorem tangentNorm_gradient_openRegularFiberMetric_ge_half
     (fun i => g.gradient (fun y => f y i) (openFiberIncl f U c x)) w
     (g.gradient φ (openFiberIncl f U c x)) wφ hδ (by simpa using hsmall)
     hw hopposite hcross hφw hφopp hφcross
-
-
-
 
 theorem strainer_openFiber_gradient_ge_half
     (g : RiemannianMetric (m + k) M) (f : Fin k → M → ℝ)

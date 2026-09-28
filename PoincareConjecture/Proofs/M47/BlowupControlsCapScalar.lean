@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CapBirth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_blowupCap_scalarRate_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) :
@@ -45,8 +34,6 @@ theorem exists_blowupCap_scalarRate_tolerance {g0 : StandardInitialMetric}
   refine ⟨eta, heta, hetaHalf, ?_⟩
   intro F hinitial O hmodel
   exact hbound F hinitial O.standard_flow hmodel
-
-
 
 theorem cap_birth_rescaled_height_lower
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

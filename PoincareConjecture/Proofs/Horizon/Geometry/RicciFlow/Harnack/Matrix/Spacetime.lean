@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.Spacetime
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Tensors
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

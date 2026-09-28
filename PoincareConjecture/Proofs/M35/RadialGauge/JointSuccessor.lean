@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JointC1
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem joint_contDiffOn_succ_of_partials
     {J : Set ℝ} (hJ : IsOpen J) {u H : ℝ → E → F} (k : ℕ)

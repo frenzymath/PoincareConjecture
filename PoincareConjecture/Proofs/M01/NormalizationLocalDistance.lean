@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M01.NormalizationVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Metric Set Filter MeasureTheory
@@ -24,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type u} [TopologicalSpace M] [ChartedSpace H M]
   [RiemannianBundle (fun x : M ↦ TangentSpace I x)]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem m01_edist_image_le_pathELength [IsManifold I 1 M]
     {f : M → F} {U : Set M} (hU : IsOpen U)

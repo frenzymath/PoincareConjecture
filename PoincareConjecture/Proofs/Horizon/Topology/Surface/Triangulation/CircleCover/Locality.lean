@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.GeneralPosition
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 theorem isCompact_chartCircle (x : M) {r : ℝ}
     (htarget : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ⊆
       (chartAt (EuclideanSpace ℝ (Fin 2)) x).target) :
@@ -34,8 +22,6 @@ theorem isCompact_chartCircle (x : M) {r : ℝ}
       (sphere_subset_closedBall.trans htarget))
 
 variable [T2Space M]
-
-
 
 theorem chartDiskBoundaryUnion_eq_iUnion_chartCircle (s : Finset M) (r : M → ℝ)
     (hpos : ∀ x ∈ s, 0 < r x)
@@ -51,8 +37,6 @@ theorem chartDiskBoundaryUnion_eq_iUnion_chartCircle (s : Finset M) (r : M → �
   rw [frontier_chart_image x (isCompact_closedBall _ _) (htarget x hx),
     frontier_closedBall _ (hpos x hx).ne']
   rfl
-
-
 
 theorem exists_open_chartCircle_locality (s : Finset M) (r : M → ℝ)
     (htarget : ∀ x ∈ s,

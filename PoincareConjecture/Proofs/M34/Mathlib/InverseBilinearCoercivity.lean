@@ -3,24 +3,11 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.Algebra.Module.Equiv
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace ContinuousLinearMap
-
-
 
 theorem inverse_inner_coercive_of_coercive
     {E : Type*} [SeminormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -45,9 +32,6 @@ theorem inverse_inner_coercive_of_coercive
   rw [div_mul_eq_mul_div, div_le_iff₀ (sq_pos_of_pos hB)]
   nlinarith only [hh]
 
-
-
-
 theorem inverse_inner_eq_sum_coordinates
     {I : Type*} [Fintype I]
     (G : EuclideanSpace ℝ I →L[ℝ] EuclideanSpace ℝ I →L[ℝ] ℝ)
@@ -66,9 +50,6 @@ theorem inverse_inner_eq_sum_coordinates
   intro j _
   change z j * (z i * (G.inverse (EuclideanSpace.proj j)) i) = _
   ring
-
-
-
 
 theorem inverse_sum_coordinates_coercive
     {I : Type*} [Fintype I]

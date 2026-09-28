@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ noncomputable local instance capEnergyAtCoefficientNorm : NormedAddCommGroup Bil
 
 noncomputable local instance capEnergyAtCoefficientSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem cap_moving_comparison_continuous_at
     {g0 : StandardInitialMetric} (S : MaximalStandardCapFlow g0)

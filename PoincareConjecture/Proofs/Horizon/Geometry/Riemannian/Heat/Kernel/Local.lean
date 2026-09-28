@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Weak
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -61,8 +51,6 @@ private lemma exists_spatial_cutoff_extension
   · intro t x hx
     filter_upwards [hχK x hx] with y hy
     simp [hy]
-
-
 
 theorem hasDerivAt_integral_test_mul_of_heatEquationOn
     (D : LeviCivitaData g) {F : ℝ × M → ℝ} {Ω : Set M} (hΩ : IsOpen Ω)

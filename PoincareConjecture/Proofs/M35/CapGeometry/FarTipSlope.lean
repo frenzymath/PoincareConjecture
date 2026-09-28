@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialPointIdentification
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.RepairedStandardCapExistenceData
 
 open M35.Uniqueness
-
-
 
 theorem axisWarpingSlope_tendsto_zero_of_normalized_arclength
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
@@ -61,8 +50,6 @@ theorem axisWarpingSlope_tendsto_zero_of_normalized_arclength
       _ ≤ B := hbound (t k) (ht k) (x k) hk hRk
   exact squeeze_zero' hnonneg hupper (tendsto_const_nhds.div_atTop hs)
 
-
-
 theorem axisWarpingSlope_tendsto_zero_of_normalized_distance
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀)
@@ -84,8 +71,6 @@ theorem axisWarpingSlope_tendsto_zero_of_normalized_distance
     (E.rotation_invariant (t k) (ht k)) (x k)).2]
   exact edist_axis_le_radialArclength (E.flow.metric (t k)) (norm_nonneg (x k))
 
-
-
 theorem one_le_normalized_orbit_radius_of_slope_small
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {t : ℝ}
@@ -103,8 +88,6 @@ theorem one_le_normalized_orbit_radius_of_slope_small
     (mul_nonneg (axisWarpingRadius_pos (E.flow.metric t) hr).le (Real.sqrt_nonneg _))
   rw [mul_pow, Real.sq_sqrt (E.scalar_pos ht x).le]
   nlinarith
-
-
 
 theorem axisWarpingSlope_div_normalized_radius_tendsto_zero
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

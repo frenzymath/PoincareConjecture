@@ -2,12 +2,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,9 +26,6 @@ private theorem exists_interval_image_subset_component
   · rwa [← connectedComponentIn_eq ht] at hc
   · rintro x ⟨s, hs, rfl⟩
     exact hWK ⟨huv hs, hL (mem_range_self s)⟩
-
-
-
 
 theorem inter_connectedComponentIn_eq_interval_endpoints
     [T1Space X] {K L B : Set X} {q z : X} (hKL : K ⊆ L) (hz : z ∉ K)

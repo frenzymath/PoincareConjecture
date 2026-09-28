@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ReferenceCylinder
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
   {t : ℝ} (ht : t ∈ Ico H.reference.tMinus T)
-
 
 def terminalNeckToOld : (H.extendedSliceGeometry P04 T).slice.carrier → (F.slice t).carrier :=
   H.regularNeckSourceMap P04 ht ∘ H.terminalSliceHomeomorph P04
@@ -78,8 +68,6 @@ def terminalNeckCarrier : Set (H.extendedSliceGeometry P04 T).slice.carrier :=
 
 theorem terminalNeckCarrier_open : IsOpen (H.terminalNeckCarrier P04 ht N) :=
   N.carrier_open.preimage (H.terminalNeckToOld_openEmbedding P04 ht).continuous
-
-
 
 def terminalNeckCarrierHomeomorph (x₀ : H.regularRegion P04)
     (hcapture : MapsTo (H.reference.inverse t ht) N.carrier H.reference.regularLimitSet) :

@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -27,10 +13,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
-
 
 theorem exists_terminal_normalized_annular_metric_limit
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

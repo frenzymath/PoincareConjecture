@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +18,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 
-
-
-
 theorem hasDerivAt_weightedEnergy
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)
     (hei : IsEmbedding e) {K : ℝ} (hb : ∀ q, ‖B q‖ ≤ K)
@@ -45,9 +34,6 @@ theorem hasDerivAt_weightedEnergy
     exact A.weightedEnergy_eq_column_integrals B hB hei hb s
   · dsimp only [E0, E1]
     ring
-
-
-
 
 theorem weightedEnergy_modulus_balance
     (B : M → E →L[ℝ] E →L[ℝ] ℝ) (hB : Continuous B)

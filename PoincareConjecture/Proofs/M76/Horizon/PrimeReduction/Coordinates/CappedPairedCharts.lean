@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +15,6 @@ private theorem restricted_chart_mem
   apply (mem_piecewiseAffineGroupoid_iff_forward _).mpr
   exact ((mem_piecewiseAffineGroupoid_iff_forward B).mp hB).mono
     (B.restrOpen U hU).open_source inter_subset_left
-
-
-
-
 
 theorem exists_capped_paired_chart_family
     (A R : Set V3) (D : Fin 2 → Set V3) (p : Fin 2 → V3)

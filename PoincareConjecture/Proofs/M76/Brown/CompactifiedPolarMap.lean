@@ -2,17 +2,6 @@ import Mathlib.Topology.Compactification.OnePoint.Basic
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,9 +9,7 @@ open scoped Topology OnePoint
 
 namespace BrownSchoenflies
 
-
 noncomputable def polarRadius (t : ℝ) : ℝ := (1 + t) / (1 - t)
-
 
 theorem polarRadius_nonneg {t : ℝ} (ht : -1 ≤ t) (ht' : t < 1) :
     0 ≤ polarRadius t :=
@@ -30,21 +17,15 @@ theorem polarRadius_nonneg {t : ℝ} (ht : -1 ≤ t) (ht' : t < 1) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 noncomputable def compactifiedPolar (z : sphere (0 : E) 1 × Icc (-1 : ℝ) 1) :
     OnePoint E :=
   if (z.2 : ℝ) = 1 then ∞ else ((polarRadius z.2) • (z.1 : E) : E)
-
 
 theorem norm_polarVector (z : sphere (0 : E) 1 × Icc (-1 : ℝ) 1)
     (hz : (z.2 : ℝ) < 1) :
     ‖(polarRadius z.2) • (z.1 : E)‖ = polarRadius z.2 := by
   rw [norm_smul, Real.norm_eq_abs, abs_of_nonneg (polarRadius_nonneg z.2.property.1 hz),
     mem_sphere_zero_iff_norm.mp z.1.property, mul_one]
-
-
-
-
 
 theorem continuous_compactifiedPolar :
     Continuous (compactifiedPolar : sphere (0 : E) 1 × Icc (-1 : ℝ) 1 → OnePoint E) := by

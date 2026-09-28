@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarLevelProper
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,25 +13,14 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
 def scalarNormalizedCoverMap (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ)
     (z : Cover) : Cover := (H (scalarCoverMap z), V z / P)
-
-
-
 
 theorem scalarNormalizedCoverMap_continuousOn {H : Plane → ℝ} (hHc : Continuous H)
     {V : Cover → ℝ} (hVc : ContinuousOn V scalarCoverStrip) (P : ℝ) :
     ContinuousOn (scalarNormalizedCoverMap H V P) scalarCoverStrip :=
   (hHc.comp scalarCoverMap_smooth.continuous).continuousOn.prodMk
     (hVc.div_const P)
-
-
-
-
 
 theorem scalarCover_deck_defect_bounded {V : Cover → ℝ}
     (hVc : ContinuousOn V scalarCoverStrip) {P : ℝ}
@@ -73,10 +48,6 @@ theorem scalarCover_deck_defect_bounded {V : Cover → ℝ}
   have hbound := hC _ hmem
   rw [Real.norm_eq_abs, heq] at hbound
   exact hbound.trans (le_max_right _ _)
-
-
-
-
 
 theorem scalarNormalizedCoverMap_compact_preimage {H : Plane → ℝ}
     (hHc : Continuous H)

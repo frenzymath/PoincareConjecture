@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalCapNearbyPhysical
 import PoincareConjecture.Proofs.M47.CanonicalStandardCapCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem exists_compact_standard_cap_physical_tolerance_above {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta gamma C R : ℝ}
@@ -94,9 +84,6 @@ theorem exists_compact_standard_cap_physical_tolerance_above {g0 : StandardIniti
   refine ⟨H, hHe.trans (hNe p), hHC.le.trans (hNC p), hHD, ?_⟩
   rw [hHcore]
   exact mem_image_of_mem _ hpV.2
-
-
-
 
 theorem exists_compact_standard_cap_physical_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta gamma C R : ℝ}

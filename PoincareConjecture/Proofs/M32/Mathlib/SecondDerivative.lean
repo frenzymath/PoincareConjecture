@@ -1,25 +1,12 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M32
-
-
 
 theorem second_fderiv_comp_of_contDiffAt
     {E J F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -51,10 +38,6 @@ theorem second_fderiv_comp_of_contDiffAt
     Function.comp_apply, add_apply, zero_apply, map_zero, zero_add, add_zero, add_comm]
     using h
 
-
-
-
-
 theorem continuousAt_secondDerivativeContraction
     {E J X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup J] [NormedSpace ℝ J] [TopologicalSpace X] [Fintype ι]
@@ -77,9 +60,6 @@ theorem continuousAt_secondDerivativeContraction
       (hb.clm_apply (hv i))).add
         (hfirst.clm_apply ((hd.clm_apply continuousAt_const).clm_apply (hv i)))
   · exact hfirst.clm_apply (hb.clm_apply hc)
-
-
-
 
 theorem secondDerivativeTriple_sub
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

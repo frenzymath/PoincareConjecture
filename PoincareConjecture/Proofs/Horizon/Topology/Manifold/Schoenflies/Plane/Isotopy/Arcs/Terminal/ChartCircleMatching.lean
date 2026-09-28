@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.MarkedCircleMatching
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,9 +54,6 @@ private theorem mem_pulledback_circle
     exact ⟨q, (R.apply_symm_apply _).symm⟩
   · rintro ⟨q, hq⟩
     exact ⟨q, by change R.symm (C q) = x; rw [hq, R.symm_apply_apply]⟩
-
-
-
 
 theorem exists_chart_marked_circle_pair_isotopy_fixing_morse_square
     (R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

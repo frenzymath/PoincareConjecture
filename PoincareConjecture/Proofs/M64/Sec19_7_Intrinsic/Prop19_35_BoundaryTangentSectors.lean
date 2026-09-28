@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MetricHalfplaneFan
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,11 +42,6 @@ private theorem linear_pos_on_open_nonnegative
   have hmem := interior_mono himage
     (hopen.interior_eq.symm ▸ mem_image_of_mem ell hw)
   simpa only [interior_Ici, mem_Ioi] using hmem
-
-
-
-
-
 
 theorem m64Intrinsic_regional_tangent_sector_unique_of_ray
     {I : Type*} [Finite I]
@@ -117,11 +100,6 @@ theorem m64Intrinsic_regional_tangent_sector_unique_of_ray
     (F i) (F j) (b i) (b j) (hFi i) (hFi j) (hsource i) (hsource j)
     (hfront i j (Ne.symm hji)) hi hj.1 hpos hj.2
 
-
-
-
-
-
 theorem m64Intrinsic_boundary_tangent_partition_ae
     {I : Type*} [Finite I]
     (F : I → OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -172,12 +150,6 @@ theorem m64Intrinsic_boundary_tangent_partition_ae
     simp only [zero_add, zero_smul, add_zero, hzero, sub_zero, smul_eq_mul] at hr
     exact ((mul_pos_iff_of_pos_left (inv_pos.mpr hrpos')).mp hr).le
   exact m64Intrinsic_regional_tangent_sector_unique_of_ray F b hFi hsource hfront hray hw
-
-
-
-
-
-
 
 theorem m64Intrinsic_boundary_tangent_sector_inward
     {I : Type*}

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AnnularRegularity
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_openPartialHomeomorph_of_injective_localInverses
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -82,9 +70,6 @@ variable (hm : ∀ z ∈ Icc a b, ∀ q : sphere (0 : E) 1,
   Injective (mfderiv (𝓡 1) 𝓘(ℝ, E) (c z) q))
 
 include hc hab hi hm
-
-
-
 
 theorem exists_uniform_curveAnnularNeighborhood :
     ∃ m : ℝ, 0 < m ∧ ∃ w : ℝ, 0 < w ∧ w < 1 ∧
@@ -167,9 +152,6 @@ theorem exists_uniform_curveAnnularNeighborhood :
     exact hrecover ▸ hmem
   exact ⟨m, hm0, w, hw, hw1, hinjW.mono (hsubset.trans inter_subset_left),
     fun p hp => hregular p (hsubset hp).2⟩
-
-
-
 
 theorem exists_curveAnnularTube :
     ∃ m : ℝ, 0 < m ∧ ∃ w : ℝ, 0 < w ∧ w < 1 ∧

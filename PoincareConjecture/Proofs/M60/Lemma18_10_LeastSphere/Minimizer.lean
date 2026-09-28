@@ -7,18 +7,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularRepl
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSmoothSequence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -32,8 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [SecondCountableTopology M]
 
-
-
 theorem m60HarmonicSphere_area_pos (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hharm : M60SphereChartHarmonic g f) (hnc : ∃ p q, f p ≠ f q) :
@@ -42,8 +28,6 @@ theorem m60HarmonicSphere_area_pos (g : RiemannianMetric n M)
   exact m60SphereArea_pos_of_finite_branch_set g f (hf.of_le (by simp))
     (m60SphereBranchSet_finite_of_chartHarmonic g f hf hharm hnc)
     (m60WeaklyConformal_injective_off_branchSet g f hconf)
-
-
 
 theorem m60LeastSphere_of_nonNull_energy_bound (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -71,8 +55,6 @@ theorem m60LeastSphere_of_nonNull_energy_bound (g : RiemannianMetric n M)
   intro h hh hsmall
   by_contra hhn
   exact (not_lt_of_ge (hae.le.trans (hleast h hh hhn))) hsmall
-
-
 
 theorem m60MaxGradientLimit_nonNull (g : RiemannianMetric n M)
     (f : ℕ → UnitTwoSphere → M)
@@ -141,8 +123,6 @@ theorem m60MaxGradientLimit_nonNull (g : RiemannianMetric n M)
   change 3 * A / 4 < D at hmass
   linarith
 
-
-
 theorem m60LeastSphere_of_perturbedMinimizers [CompactSpace M] (g : RiemannianMetric n M)
     (alpha : ℕ → ℝ) (f : ℕ → UnitTwoSphere → M)
     (ha : Tendsto alpha atTop (𝓝 1))
@@ -160,10 +140,6 @@ theorem m60LeastSphere_of_perturbedMinimizers [CompactSpace M] (g : RiemannianMe
   exact m60LeastSphere_of_nonNull_energy_bound g L.sphere L.smooth L.harmonic
     L.nonconstant (m60MaxGradientLimit_nonNull g f hf hn harea L
       (M60.m60Sphere_annular_replacement g)) L.energy_bound
-
-
-
-
 
 theorem m60LeastSphere_of_suProducers (g : RiemannianMetric n M)
     (hcompact : IsCompact (univ : Set M)) (x : M)

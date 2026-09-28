@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M72.Transport
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -19,12 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m72SuccessorPredecessor_le
     {F : SurgeryFlowData.{u}} {T T' : ℝ}
@@ -42,8 +25,6 @@ theorem m72SuccessorPredecessor_le
       E'.predecessor_lt.trans E'.pre_time_lt
     exact (not_lt_of_ge (hminimal E'.predecessor hTp hpred)) hpT'
 
-
-
 theorem m72SuccessorNextPredecessor
     {F : SurgeryFlowData.{u}} {T T' : ℝ}
     {hT' : T' ∈ F.surgery_times}
@@ -60,8 +41,6 @@ theorem m72SuccessorNextPredecessor
   · exact Set.disjoint_left.mp E'.no_surgery_after hT
       ⟨lt_of_not_ge hTpre, horder⟩
 
-
-
 theorem m72SuccessorPreAfter
     {F : SurgeryFlowData.{u}} {T T' : ℝ}
     {hT' : T' ∈ F.surgery_times}
@@ -69,8 +48,6 @@ theorem m72SuccessorPreAfter
     (hpredecessor : E'.predecessor = T) :
     T < E'.pre_time := by
   simpa [hpredecessor] using E'.predecessor_lt
-
-
 
 theorem m72SuccessorTimeDomain
     {F : SurgeryFlowData.{u}} {T T' : ℝ}
@@ -80,8 +57,6 @@ theorem m72SuccessorTimeDomain
     Set.Icc T E'.pre_time ⊆ F.time_domain := by
   simpa [hpredecessor] using E'.predecessor_time_domain
 
-
-
 theorem m72SuccessorNoSurgery
     {F : SurgeryFlowData.{u}} {T T' : ℝ}
     {hT' : T' ∈ F.surgery_times}
@@ -89,9 +64,6 @@ theorem m72SuccessorNoSurgery
     (hpredecessor : E'.predecessor = T) :
     Disjoint F.surgery_times (Set.Ioc T E'.pre_time) := by
   simpa [hpredecessor] using E'.no_surgery_before
-
-
-
 
 theorem m72DiffeomorphImageConnectedComponent
     {A B : GeneralizedSliceCarrier.{u}}
@@ -107,8 +79,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [T3Space M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
-
-
 
 theorem m72SurvivorBeforeExtinction
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I)
@@ -128,9 +98,6 @@ theorem m72SurvivorBeforeExtinction
       (M72EventTopology I L e).conclusion.kind i ≠ .survivor :=
     (M72EventTopology I L e).no_survivor_if_empty hempty i
   exact (hnot hi).elim
-
-
-
 
 theorem m72ImmediateSuccessor
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I)
@@ -171,8 +138,6 @@ theorem m72ImmediateSuccessor
     · exact hT'leH.trans (le_of_lt (lt_of_not_ge hsH))
   exact ⟨⟨T', hT'ledger⟩, (Finset.mem_filter.mp hT'later).2, hminimal⟩
 
-
-
 theorem m72FirstEventPredecessor
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I)
     (e : M72EventIndex I L)
@@ -189,13 +154,6 @@ theorem m72FirstEventPredecessor
     rw [L.event_times_eq]
     exact ⟨hmem, hnonnegative, hlt.le.trans (M72EventBeforeExtinction I L e)⟩
   exact (not_lt_of_ge (hfirst ⟨E.predecessor, hledger⟩) hlt).elim
-
-
-
-
-
-
-
 
 noncomputable def m72SuccessorChoice
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I)

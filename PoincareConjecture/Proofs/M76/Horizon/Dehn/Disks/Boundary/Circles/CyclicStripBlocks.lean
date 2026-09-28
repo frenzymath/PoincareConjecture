@@ -9,7 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
 structure BoundaryCircleBlockData
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [DecidableEq E] (A L : SimplicialComplex ℝ E) [Fintype A.faces]
@@ -27,8 +26,6 @@ structure BoundaryCircleBlockData
     (map j ⟨(x, 1), x.property, zero_le_one, le_rfl⟩ : E) = joint j x
   axis : ∀ j (x : ↥(signedTubeSheet 0 ×ˢ Icc (0 : ℝ) 1)),
     (map j x : E) ∈ L.space ↔ x.val.1 = (0, 0)
-
-
 
 theorem exists_boundary_circle_blocks
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Arcs.Mathlib.PrescribedTwoIntervalCircle
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripArmCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -24,15 +15,12 @@ local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 
-
 def markedTargetMap {Y X : Type*} [TopologicalSpace Y] [TopologicalSpace X]
     {D : Set Y} {Z : Set X} {g : Y → X} (hg : ContinuousOn g D) :
     C((D ∩ g ⁻¹' Z : Set Y), Z) where
   toFun x := ⟨g x, x.property.2⟩
   continuous_toFun := (hg.comp_continuous continuous_subtype_val
     (fun x ↦ x.property.1)).subtype_mk _
-
-
 
 def markedSourcePath
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y] [TopologicalSpace X]
@@ -50,15 +38,12 @@ def markedSourcePath
   source' := Subtype.ext (by simpa only [p.source] using hx.symm)
   target' := Subtype.ext (by simpa only [p.target] using hy.symm)
 
-
 def intervalChartSubtypePath {Y : Type*} [TopologicalSpace Y] (q : I01 ≃ₜ Y) :
     Path (q i0) (q i1) where
   toFun := q
   continuous_toFun := q.continuous
   source' := rfl
   target' := rfl
-
-
 
 theorem marked_interval_chart_homotopic
     {Y X : Type*} [TopologicalSpace Y] [TopologicalSpace X]
@@ -70,9 +55,6 @@ theorem marked_interval_chart_homotopic
         (P.map (markedTargetMap hg).continuous) :=
   (homotopic_of_interval_chart q
     ((intervalChartSubtypePath q).cast hx.symm hy.symm) P).map (markedTargetMap hg)
-
-
-
 
 theorem exists_marked_attachment_traversal
     {E0 E1 X : Type*} [TopologicalSpace E0] [TopologicalSpace E1]

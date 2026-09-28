@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.Pullback
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalMarkedProductConstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
-
-
 
 theorem cylinderBandInterior_eq_open_parameter_image
     {X : Type*} [TopologicalSpace X] {B : Set X}
@@ -35,10 +23,6 @@ theorem cylinderBandInterior_eq_open_parameter_image
     exact ⟨z, ⟨z.property.1, hz⟩, (hcq z).symm.trans hzx⟩
   · rintro ⟨z, hz, rfl⟩
     exact ⟨⟨z, hz.1, hz.2.1.le, hz.2.2.le⟩, hz.2, hcq _⟩
-
-
-
-
 
 theorem exists_original_cylindrical_band_marked_product
     {X α : Type*} [TopologicalSpace X] [T2Space X]

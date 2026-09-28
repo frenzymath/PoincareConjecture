@@ -4,26 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmallSupportedPLIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_small_protected_vertex_motion
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

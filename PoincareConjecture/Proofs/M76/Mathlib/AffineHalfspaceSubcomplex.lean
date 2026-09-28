@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 def affineHalfspaceSubcomplex (K : SimplicialComplex ℝ E)
     (H : Finset (E →ᵃ[ℝ] ℝ)) : SimplicialComplex ℝ E where
@@ -29,14 +19,9 @@ def affineHalfspaceSubcomplex (K : SimplicialComplex ℝ E)
     exact ⟨K.down_closed hs.1 hts ht, fun v hv => hs.2 v (hts hv)⟩
   inter_subset_convexHull hs ht := K.inter_subset_convexHull hs.1 ht.1
 
-
-
 theorem affineHalfspaceSubcomplex_finite (K : SimplicialComplex ℝ E)
     (H : Finset (E →ᵃ[ℝ] ℝ)) (hK : K.faces.Finite) :
     (K.affineHalfspaceSubcomplex H).faces.Finite := hK.subset (fun _ hs => hs.1)
-
-
-
 
 theorem affineHalfspaceSubcomplex_space (K : SimplicialComplex ℝ E)
     (H : Finset (E →ᵃ[ℝ] ℝ)) (hH : ∀ A ∈ H, K.RespectsAffineHyperplane A) :
@@ -51,9 +36,6 @@ theorem affineHalfspaceSubcomplex_space (K : SimplicialComplex ℝ E)
   · rintro ⟨hxK, hxH⟩
     obtain ⟨s, hs, hxs, hverts⟩ := K.exists_face_in_halfspaces H hH hxK hxH
     exact mem_space_iff.mpr ⟨s, ⟨hs, hverts⟩, hxs⟩
-
-
-
 
 theorem exists_finite_triangulation_inter_halfspaces [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (H : Finset (E →ᵃ[ℝ] ℝ)) :

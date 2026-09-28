@@ -1,19 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.Normalization
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Metric Set Filter MeasureTheory
@@ -30,7 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type u} [TopologicalSpace M] [ChartedSpace H M]
   [RiemannianBundle (fun x : M ↦ TangentSpace I x)]
   [IsManifold I 1 M]
-
 
 theorem m01_riemannianEDist_symm_extChartAt_le (x : M)
     (hcont : IsContinuousRiemannianBundle E (fun x : M ↦ TangentSpace I x))
@@ -119,7 +104,6 @@ theorem m01_euclideanHausdorffCalibration_lt_top : euclideanHausdorffCalibration
   apply ENNReal.div_lt_top
   · exact Metric.isBounded_ball.measure_lt_top.ne
   · exact m01_euclideanHausdorff_unitBall_pos.ne'
-
 
 theorem m01_hausdorffVolume_finite [CompactSpace M] (g : RiemannianMetric 3 M) :
     g.hausdorffVolume Set.univ < ⊤ := by

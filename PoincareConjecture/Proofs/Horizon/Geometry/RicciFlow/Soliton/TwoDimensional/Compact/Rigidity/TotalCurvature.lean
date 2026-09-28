@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.VolumeDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.TotalCurvature
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem density_mul_scalar_difference_le_integral (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ}
@@ -66,7 +57,6 @@ theorem density_mul_scalar_difference_le_integral (D : LeviCivitaData g)
   rwa [← hR z, ← hR p] at hbound'
 
 omit [PreconnectedSpace M] in
-
 
 theorem density_mul_scalar_difference_le_eight_pi [ConnectedSpace M]
     (D : LeviCivitaData g) {f : M → ℝ} {lambda : ℝ}

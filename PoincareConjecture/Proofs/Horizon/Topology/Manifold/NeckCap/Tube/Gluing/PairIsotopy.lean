@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Pair
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -22,7 +13,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
 
-
 theorem SmoothSphereIsotopicIn.mono {U V S₀ S₁ : Set M}
     (h : SmoothSphereIsotopicIn U S₀ S₁) (hUV : U ⊆ V) :
     SmoothSphereIsotopicIn V S₀ S₁ := by
@@ -31,9 +21,6 @@ theorem SmoothSphereIsotopicIn.mono {U V S₀ S₁ : Set M}
     hzero, hone⟩
 
 namespace EpsilonNeck
-
-
-
 
 theorem exists_two_neck_openCylinderModel :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

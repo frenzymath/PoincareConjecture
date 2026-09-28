@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Topology.OpenPartialHomeomorph.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral BigOperators
@@ -25,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 noncomputable def reducedHarnackDensity {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (γ : ℝ → M)
     (timeDerivative : ℝ → ℝ) (τ : ℝ) : ℝ :=
@@ -37,12 +26,10 @@ noncomputable def reducedHarnackDensity {J : Set ℝ}
     2 * (F.connection (T - τ)).ricci (γ τ)
       (curveVelocity (n := n) γ τ) (curveVelocity (n := n) γ τ)
 
-
 noncomputable def reducedHarnackIntegral {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (γ : ℝ → M)
     (timeDerivative : ℝ → ℝ) (τ : ℝ) : ℝ :=
   ∫ s in 0..τ, s * Real.sqrt s * reducedHarnackDensity F T γ timeDerivative s
-
 
 noncomputable def reducedLengthGradientNormSq {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (representative : M × ℝ → ℝ)
@@ -51,12 +38,10 @@ noncomputable def reducedLengthGradientNormSq {J : Set ℝ}
   ∑ i, (mvfderiv (𝓡 n)
     (fun x ↦ representative (x, τ)) q (b i)) ^ 2
 
-
 noncomputable def reducedLengthLaplacian {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (representative : M × ℝ → ℝ)
     (τ : ℝ) (q : M) : ℝ :=
   (F.connection (T - τ)).laplacian (fun x ↦ representative (x, τ)) q
-
 
 structure ReducedLengthRegularPoint {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) (p q : M) (τ : ℝ) where
@@ -103,7 +88,6 @@ structure ReducedLengthRegularPoint {J : Set ℝ} (F : RicciFlow n M J)
       (fun s ↦ s * Real.sqrt s * reducedHarnackDensity F T path.curve
         path_scalar_time_derivative s) MeasureTheory.volume 0 τ
 
-
 structure ReducedLengthUpperBarrier {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (p q : M) (τ : ℝ) where
   neighborhood : Set (M × ℝ)
@@ -126,15 +110,12 @@ structure ReducedLengthUpperBarrier {J : Set ℝ} (F : RicciFlow n M J)
   representative_time_derivative : ∃ d : ℝ,
     HasDerivAt (fun s ↦ representative (q, s)) d τ
 
-
 noncomputable def reducedLengthBarrierResidual {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (p q : M) (τ : ℝ)
     (B : ReducedLengthUpperBarrier F T p q τ) : ℝ :=
   deriv (fun s ↦ B.representative (q, s)) τ +
     reducedLengthLaplacian F T B.representative τ q -
       ((n : ℝ) / 2 - B.representative (q, τ)) / τ
-
-
 
 structure LExponentialFamily {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) (p : M) where
@@ -166,12 +147,10 @@ structure LExponentialFamily {J : Set ℝ} (F : RicciFlow n M J)
     ContMDiffOn ((𝓘(ℝ, TangentSpace (𝓡 n) p)).prod (𝓘(ℝ, ℝ))) (𝓡 n) ∞
       (fun z ↦ gamma z.1 z.2) (Set.univ ×ˢ Set.Ioo 0 τmax)
 
-
 noncomputable def LExponentialFamily.action {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax : ℝ} {p : M} (E : LExponentialFamily F T τmax p)
     (Z : TangentSpace (𝓡 n) p) (τ : ℝ) : ℝ :=
   backwardLLength F T 0 τ (E.gamma Z)
-
 
 noncomputable def LExponentialFamily.sliceDifferential {J : Set ℝ}
     {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
@@ -181,7 +160,6 @@ noncomputable def LExponentialFamily.sliceDifferential {J : Set ℝ}
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨(F.metric T).toRiemannianMetric⟩
   mfderiv (𝓘(ℝ, TangentSpace (𝓡 n) p)) (𝓡 n) (fun V ↦ E.gamma V τ) Z
-
 
 def LExponentialFamily.uniqueMinimizing {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax : ℝ} {p : M} (E : LExponentialFamily F T τmax p)
@@ -193,13 +171,11 @@ def LExponentialFamily.uniqueMinimizing {J : Set ℝ} {F : RicciFlow n M J}
       IsMinimizingBackwardLPath F T 0 τ q →
         Set.EqOn q.curve (E.gamma Z) (Set.Icc 0 τ)
 
-
 def LExponentialFamily.regularDomain {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax : ℝ} {p : M} (E : LExponentialFamily F T τmax p) :
     Set (TangentSpace (𝓡 n) p × ℝ) :=
   {z | E.uniqueMinimizing z.1 z.2 ∧
     Function.Bijective (E.sliceDifferential z.1 z.2)}
-
 
 def LExponentialFamily.localRegularDomain {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax : ℝ} {p : M} (E : LExponentialFamily F T τmax p) :
@@ -208,12 +184,6 @@ def LExponentialFamily.localRegularDomain {J : Set ℝ} {F : RicciFlow n M J}
     Function.Bijective (E.sliceDifferential z.1 z.2) ∧
     ∃ N : Set (TangentSpace (𝓡 n) p),
       IsOpen N ∧ z.1 ∈ N ∧ ∀ Z ∈ N, E.uniqueMinimizing Z z.2}
-
-
-
-
-
-
 
 structure LExponentialGeometry {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) (p : M) extends LExponentialFamily F T τmax p where
@@ -294,11 +264,9 @@ structure LExponentialGeometry {J : Set ℝ} (F : RicciFlow n M J)
       ∀ Z : TangentSpace (𝓡 n) p, (F.metric T).tangentNorm p Z ≤ A →
         ∀ τ, 0 < τ → τ < δ → (Z, τ) ∈ toLExponentialFamily.regularDomain
 
-
 def LExponentialGeometry.regularImage {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax : ℝ} {p : M} (G : LExponentialGeometry F T τmax p) : Set (M × ℝ) :=
   G.regular_chart.target
-
 
 noncomputable def LExponentialGeometry.representative {J : Set ℝ}
     {F : RicciFlow n M J} {T τmax : ℝ} {p : M}

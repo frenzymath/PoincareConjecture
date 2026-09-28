@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonDehnRegionLift
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoCoverCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -119,10 +109,6 @@ variable (L : Submodule ℤ V1) {α : Type*}
   (T : HamiltonProtectedDehnDisks L e)
   (region : HamiltonDehnEnclosingRegion (Fin 2) (Fin 1) L e (⋃ b, T.surface b))
 
-
-
-
-
 structure HamiltonIndexTwoDehnGeometry where
   Psum : Set W
   deltaSum : Bool → Set W
@@ -164,10 +150,6 @@ structure HamiltonIndexTwoDehnGeometry where
     latticeCoordinateProjection (Fin 2) (Fin 1) L y ∈ frontier region.region ↔
       coverCoordinates y ∈
         (side ∪ coverCoordinates '' deltaSum false) ∪ coverCoordinates '' deltaSum true
-
-
-
-
 
 theorem HamiltonRetainedBlockChart.exists_indexTwo_dehn_geometry
     [DiscreteTopology L] {h : OpenPartialHomeomorph (V2 × V1) V3}

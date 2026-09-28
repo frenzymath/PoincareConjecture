@@ -9,13 +9,6 @@ import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -49,11 +42,9 @@ namespace DeTurckMetricProducerNative
 open MeasureTheory TensorProbeNative DeTurckInverseCompositionNative
 open DeTurckNative DeTurckQuasilinearEstimateNative
 
-
 def lowerPerturbationSource (background : MetricJet2 (n := n))
     (p : MetricLowerJet n) : Matrix (Fin n) (Fin n) ℝ :=
   lowerJetContraction p.1⁻¹ background.second + lowerJetSource background p
-
 
 theorem perturbationRemainder_split (background : MetricJet2 (n := n))
     (dp : MetricLowerJet n) (DQ : MetricSecondJet n)
@@ -72,7 +63,6 @@ theorem perturbationRemainder_split (background : MetricJet2 (n := n))
 
 variable [MeasurableSpace M] [BorelSpace M] (μ : Measure M) [IsFiniteMeasure μ]
 
-
 def inverseCoefficientBound (n r : ℕ) (A I H : ℝ) : ℝ :=
   let J := inverseSupBound n (r + 1) A I
   let C := inverseL2Bound n (2 * r) A J
@@ -88,7 +78,6 @@ theorem inverseCoefficientBound_nonneg (n r : ℕ) {A I H : ℝ}
   have hV : 0 ≤ lpNorm (fun _ : M => (1 : ℝ)) 2 μ := lpNorm_nonneg
   dsimp only [inverseCoefficientBound]
   positivity
-
 
 theorem inverse_difference_bounds
     {iota : Type*} [Fintype iota]
@@ -149,7 +138,6 @@ theorem inverse_difference_bounds
     change _ ≤ (L + K) * δ
     exact hbound.trans (mul_le_mul_of_nonneg_right (le_add_of_nonneg_left hL) hδ)
 
-
 structure MetricDerivativeBounds {iota : Type*} [Fintype iota]
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (A I B : ℝ)
     (G : M → Matrix (Fin n) (Fin n) ℝ) : Prop where
@@ -160,7 +148,6 @@ structure MetricDerivativeBounds {iota : Type*} [Fintype iota]
   inverse : ∀ (i j : Fin n) (x : M), ‖(G x)⁻¹ i j‖ ≤ I
   high : ∀ w : List iota, w.length ≤ 2 * r → ∀ i j : Fin n,
     lpNorm (directionalWord F w (fun y => G y i j)) 2 μ ≤ B
-
 
 theorem inverse_principal_sub_mixed_le
     {iota : Type*} [Fintype iota]
@@ -241,7 +228,6 @@ theorem inverse_principal_sub_mixed_le
     htraceDiff htraceRight hfLow huvLow hfgLow hvLow hfHigh huvHigh hfgHigh hvHigh
   simpa only [L, f, g, mul_assoc] using h
 
-
 def lowerPerturbationBudget (q r : ℕ) (v p a : ℝ × ℝ) (c c1 c2 : ℝ) : ℝ × ℝ :=
   budgetSum q (budgetSum q (budgetProduct r a (c2, 0))) +
     lowerJetSourceBudget q r v p a c c1
@@ -274,8 +260,6 @@ theorem lowerPerturbationSource_difference_bounds
     ScalarDifferenceBounds.finSum _ _ (fun l =>
       (hinverse k l).mul (ScalarDifferenceBounds.refl (hbackground2 k l i j))))).add
         (hsource i j)
-
-
 
 theorem perturbationRemainder_directional_difference_le
     {iota : Type*} [Fintype iota]
@@ -390,7 +374,6 @@ theorem perturbationRemainder_directional_difference_le
 section JointSourceRegularity
 
 open scoped Matrix.Norms.Elementwise
-
 
 theorem contDiffAt_jointChartStateSource_infty
     (z : ChartState (n := n) × ChartState (n := n))
@@ -513,7 +496,6 @@ theorem contDiffAt_jointLowerJetSource_infty
   exact (contDiffAt_jointChartStateSource_infty
     (z.1, lowerJetState z.2 0) hB hp).comp z hslots
 
-
 theorem contDiffAt_jointLowerPerturbationSource_infty
     (z : ChartState (n := n) × MetricLowerJet n)
     (hB : z.1.1.PosDef) (hp : z.2.1.PosDef) :
@@ -547,7 +529,6 @@ section CompactRangeRegularity
 
 open Set Filter Metric
 open scoped Topology Matrix.Norms.Elementwise
-
 
 theorem contDiffAt_jointChartStateSource_of_det_ne_zero
     (z : ChartState (n := n) × ChartState (n := n))
@@ -695,7 +676,6 @@ theorem contDiffAt_jointLowerPerturbationSource_of_det_ne_zero
       (hi a b).mul (by fun_prop)))
   exact hcontraction.add (contDiffAt_jointLowerJetSource_of_det_ne_zero z hB hp)
 
-
 theorem exists_contDiff_extension_near_compact
     {V W : Type u} [NormedAddCommGroup V] [NormedSpace ℝ V]
     [FiniteDimensional ℝ V] [NormedAddCommGroup W] [NormedSpace ℝ W]
@@ -721,7 +701,6 @@ theorem exists_contDiff_extension_near_compact
   intro x hx
   change eta x • f x = f x
   rw [hOone hx, one_smul]
-
 
 theorem exists_smooth_pointwise_extension
     {V W : Type u} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -847,7 +826,6 @@ def lowerJetContractionOperator : Matrix (Fin n) (Fin n) ℝ →L[ℝ]
         apply Finset.sum_congr rfl; intro a _
         apply Finset.sum_congr rfl; intro b _; ring)).mkContinuous₂
     ((n : ℝ) ^ 2) norm_lowerJetContraction_le
-
 
 def spatialJetContraction : C(M, Matrix (Fin n) (Fin n) ℝ) →L[ℝ]
     Lp (MetricSecondJet n) 2 μ →L[ℝ] Lp (Matrix (Fin n) (Fin n) ℝ) 2 μ :=

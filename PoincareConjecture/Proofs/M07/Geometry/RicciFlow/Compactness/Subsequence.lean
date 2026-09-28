@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
 
 namespace PointedFlowSequence
-
 
 def subsequence {n : ℕ} {T' T : ℝ} (S : PointedFlowSequence n T' T)
     (φ : ℕ → ℕ) : PointedFlowSequence n T' T where
@@ -24,8 +15,6 @@ def subsequence {n : ℕ} {T' T : ℝ} (S : PointedFlowSequence n T' T)
 end PointedFlowSequence
 
 namespace PointedRicciFlowCompactnessHypotheses
-
-
 
 def subsequence {n : ℕ} {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -49,7 +38,6 @@ end PointedRicciFlowCompactnessHypotheses
 
 namespace PointedGeometricConvergence
 
-
 def ofSubsequence {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     {φ : ℕ → ℕ} (hφ : StrictMono φ)
     (L : PointedGeometricConvergence (S.subsequence φ)) :
@@ -71,8 +59,6 @@ def ofSubsequence {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
   pullback_metric_CInfinity := L.pullback_metric_CInfinity
 
 end PointedGeometricConvergence
-
-
 
 def PointedRicciFlowCompactnessConclusion.ofSubsequence
     {n : ℕ} {T' T : ℝ} {H : PointedRicciFlowCompactnessHypotheses n T' T}

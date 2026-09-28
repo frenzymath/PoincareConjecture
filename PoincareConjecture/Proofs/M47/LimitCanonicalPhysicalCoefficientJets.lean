@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundCoefficientJets
 import PoincareConjecture.Proofs.M13.ConnectionScale
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def limitCanonicalNativeChart
     {M : Type v} [TopologicalSpace M] [ChartedSpace E M]
     [IsManifold (𝓡 3) ∞ M] (q : M) :
@@ -37,8 +25,6 @@ noncomputable def limitCanonicalNativeChart
     simpa only [extChartAt_source] using
       (contMDiffOn_extChartAt (I := 𝓡 3) (x := q) (n := ∞))
   contMDiffOn_invFun := contMDiffOn_extChartAt_symm q
-
-
 
 theorem limitCanonical_physical_chart_coefficients
     {H : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
@@ -79,16 +65,12 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 
-
-
 theorem limitCanonical_terminal_clock_mem (k : ℕ) :
     (V.base (G.subsequence k)).1 + 0 / V.scale (G.subsequence k) ∈
       (V.flow (G.subsequence k)).interval :=
   ((V.flow (G.subsequence k)).slice_nonempty_iff _).mp
     ⟨(G.embedding k).forward 0
       ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩ G.limit.base⟩
-
-
 
 noncomputable def limitCanonicalPhysicalTerminalChart
     (F : ℕ → SurgeryFlowData.{u})
@@ -100,8 +82,6 @@ noncomputable def limitCanonicalPhysicalTerminalChart
     (R (G.subsequence k)) 0
     ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩
     (limitCanonical_terminal_clock_mem G k)
-
-
 
 theorem limitCanonical_physical_terminal_coefficient_jets
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

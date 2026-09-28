@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.SphereMotions
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +21,6 @@ variable {M N : Type u} [TopologicalSpace M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N]
   [IsManifold (𝓡 2) ∞ N]
   {S : GradientShrinkingSolitonData 3 M}
-
-
 
 def quotientSphereLineCertificateOfAntipodalSurface
     (G : ShrinkingSolitonFlow S) (g : RiemannianMetric 2 N)

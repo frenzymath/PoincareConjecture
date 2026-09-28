@@ -2,26 +2,12 @@ import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem continuous_compLpL_of_strong
     {P E X : Type*} [TopologicalSpace P] [FirstCountableTopology P]

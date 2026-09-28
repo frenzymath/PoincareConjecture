@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedGradient
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
-
 theorem curveSpeed_inverseSquared_hasDerivAt [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) (v0 : ℝ) {t : ℝ} (ht : t ∈ Icc a b) (x : ℝ) :
@@ -39,9 +27,6 @@ theorem curveSpeed_inverseSquared_hasDerivAt [T2Space M]
   simp only [Pi.pow_apply]
   field_simp
   ring
-
-
-
 
 theorem curveSpeed_inverseSquared_initial_bounds [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPl
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityIteration
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Complex
 open scoped Topology ContDiff SchwartzMap LineDeriv InnerProductSpace
 
 namespace PoincareConjecture.M65Boundary
-
-
-
-
 
 theorem plane_weighted_gradient_estimate {b : ℝ} (hb : 1 < b) (hb2 : b < 2)
     (u : Lp ℝ 2 (volume : Measure LoopPlane))
@@ -158,10 +145,6 @@ theorem plane_weighted_gradient_estimate {b : ℝ} (hb : 1 < b) (hb2 : b < 2)
     _ ≤ 2 * (A + C * (k * ∫ w, |f w| * ‖w - x‖ ^ (1 - b))) :=
       mul_le_mul_of_nonneg_left hGbound (by norm_num)
     _ = _ := by ring
-
-
-
-
 
 theorem weighted_gradient_tail {b ρ : ℝ} (hb : 1 < b) (hρ : 0 < ρ) :
     ∃ K ≥ 0, ∀ (x : LoopPlane) (u : Lp ℝ 2 (volume : Measure LoopPlane)),

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFinitePLBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +11,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem IsFinitePL.exists_radial_boundary_cone_extension
     {S C : Set E} {T : Set F} {e : S ≃ₜ frontier T} (he : e.IsFinitePL)
@@ -70,11 +56,6 @@ theorem IsFinitePL.exists_radial_boundary_cone_extension
   apply Subtype.ext
   change (H ⟨x, _⟩ : F) = e x
   exact (hbase ⟨x, hKs.symm ▸ x.property⟩).trans (hef x).symm
-
-
-
-
-
 
 theorem IsFinitePL.isFinitePLBallPair_radial_cone
     {S C : Set E} {T : Set F} {e : S ≃ₜ frontier T} (he : e.IsFinitePL)

@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.FiniteComponents
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SectionalIntegral
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle Topology BigOperators
 open Poincare.Geometry.Manifold.RegularLevel
-
-
 
 theorem PoincareConjecture.LeviCivitaData.integral_regularLevel_pos_scalar_le_of_component_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.InitialVariationFields
 import PoincareConjecture.Proofs.M09.FamilySquareVelocity
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

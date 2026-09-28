@@ -1,13 +1,5 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Topology.IsEmbedding
 
 variable {E X V : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [TopologicalSpace V] {S N : Set E} {f : E → X}
-
-
-
 
 theorem exists_open_chart_image_eq_of_patch
     (hf : IsEmbedding (fun z : S => f z))

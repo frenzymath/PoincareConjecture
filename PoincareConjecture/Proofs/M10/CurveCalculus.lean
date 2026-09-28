@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch06.LGeometry
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedManifoldConditions
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

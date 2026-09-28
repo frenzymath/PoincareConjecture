@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowCompleteness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_compactPullback_ellipticity (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)

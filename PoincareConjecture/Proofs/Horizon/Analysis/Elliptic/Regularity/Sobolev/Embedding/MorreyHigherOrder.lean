@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Em
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.ClassicalNorm
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Iterated.Multiply
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcEnd
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondReflection
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -25,7 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
 open Classical in
-
 
 theorem exists_original_endpoint_joint_boundary_disk
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

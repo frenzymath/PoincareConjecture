@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Curvature
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.NeckPatch
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -270,10 +253,6 @@ private theorem glue_cylinders_on_compact_source
     obtain ⟨i, hxi⟩ := hcover x (subset_closure hx)
     exact ⟨i, hxi, congrArg (fun z => (⟨origin + s / q, z⟩ : F.point))
       (hfpatch i s ⟨hs.1, hsa⟩ (subset_closure hx) hxi)⟩
-
-
-
-
 
 theorem exists_cylinder_backward_extension_of_strongNecks
     (hM04 : RicciFlowCurvatureTheory.{u}) :

@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Euclidean
-
-
-
-
-
-
-

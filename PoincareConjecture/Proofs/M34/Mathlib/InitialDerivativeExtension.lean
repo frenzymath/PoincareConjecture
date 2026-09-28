@@ -1,20 +1,9 @@
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem hasFDerivWithinAt_Ico_prod_of_continuousOn
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

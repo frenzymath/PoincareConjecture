@@ -5,8 +5,6 @@ open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem reflection_open_retained_source
     {E X : Type*} [TopologicalSpace E] {f g : E → X} {S T C : Set E}
     (hT : IsClosed T) (htrace : doubleLocusOn f S ∩ T = C)
@@ -27,8 +25,6 @@ theorem reflection_open_retained_source
   refine ⟨hxK.1, ?_⟩
   intro hxT
   exact hxK.2 (hinside (htrace.subset ⟨⟨hxK.1, y, hyK.1, hxy, hne⟩, hxT⟩))
-
-
 
 theorem reflection_raw_source_crossings
     {E X ι : Type*} [TopologicalSpace E] [TopologicalSpace X] [T2Space X]

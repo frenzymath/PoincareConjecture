@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicChangeOfVariables
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped intervalIntegral
 
 namespace Function.Periodic
-
-
-
 
 theorem integral_norm_sq_comp_le {E : Type*} [NormedAddCommGroup E]
     {f : ℝ → E} {P : ℝ} (hper : Function.Periodic f P) (hf : Continuous f)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_PhysicalInit
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
-
-
-
 
 theorem singularMetricJetErrorSquared_eq_of_eventuallyEq
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g)
@@ -44,10 +31,6 @@ theorem singularMetricJetErrorSquared_eq_of_eventuallyEq
   congr 1
   unfold RiemannianMetric.tensorNorm
   rw [(M36.comparison_iteratedCovariantTensorDerivative_eventuallyEq D hdiff j).self_of_nhds]
-
-
-
-
 
 theorem initial_comparison_of_enlarged_birth_chart
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)
@@ -132,10 +115,6 @@ theorem initial_comparison_of_enlarged_birth_chart
     · intro x hx
       exact (hchart x hx).trans (hfmap x)
   · exact (image_congr hchart).trans himage
-
-
-
-
 
 theorem cap_persistence_alternative_of_enlarged_cylinder
     (F : SurgeryFlowData.{u}) (O : SurgeryObservation F)

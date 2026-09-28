@@ -1,21 +1,9 @@
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
-
-
-
 
 theorem Homeomorph.card_connectedComponents_eq
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

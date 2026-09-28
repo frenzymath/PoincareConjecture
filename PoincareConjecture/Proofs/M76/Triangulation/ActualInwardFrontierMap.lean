@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ActualSurfaceFrontierMap
 import PoincareConjecture.Proofs.M76.Mathlib.PairedInwardSourcePolePatches
 import PoincareConjecture.Proofs.M76.Mathlib.LinearFrontierGermTarget
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -21,13 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem exists_actual_inward_frontier_map
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

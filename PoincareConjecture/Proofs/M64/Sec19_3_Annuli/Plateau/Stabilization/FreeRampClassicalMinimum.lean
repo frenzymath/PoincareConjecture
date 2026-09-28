@@ -7,11 +7,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ClassicalCompletionC
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicClassicalRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,10 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [CompactSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
 local notation "S" => interior m64AnnulusDomain
-
-
-
-
 
 theorem auxiliaryCircle_free_ramp_classical_minimum
     (P : M62.CircleProductData F circumference)

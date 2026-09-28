@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.DeckSphereLifts
 import PoincareConjecture.Proofs.M38.SphericalSphereFilling
 import PoincareConjecture.Proofs.M38.LiftedSphereDescent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_surgeryBall_of_finite_spherical_cover
     (Q : GeneralizedSliceCarrier.{u})

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPathInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
-
-
 
 theorem rescalingPath_unique_iff
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) :

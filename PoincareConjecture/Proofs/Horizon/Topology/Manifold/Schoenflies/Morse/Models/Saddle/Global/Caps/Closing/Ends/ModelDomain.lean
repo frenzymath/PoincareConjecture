@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sublevel.LowerSide
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.DiskSublevels
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +20,6 @@ open SaddleLevel
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem terminal_model_critical_height_location
     (data : TerminalSaddleData M P p e) {y : S2}
@@ -81,7 +77,6 @@ theorem terminal_model_critical_height_location
   | some j =>
     have he : q j = y := congrArg Subtype.val ha
     exact Or.inr (he ▸ hqout j)
-
 
 theorem terminal_model_cut_regular
     (data : TerminalSaddleData M P p e) (q : S2)
@@ -142,8 +137,6 @@ private theorem closure_strict_component_eq_closed_component
         Poincare.Geometry.Manifold.hasConnectedLowerSide_of_regular hh isOpen_univ
           (mem_univ x) (hreg x hxa)))
   simpa only [univ_inter] using heq.symm
-
-
 
 theorem terminal_model_domain_component
     (data : TerminalSaddleData M P p e) (i : Fin 3) :
@@ -211,8 +204,6 @@ private theorem height_eq_on_frontier_of_closed_sublevel_component
   rw [← connectedComponentIn_eq hqc, ← hcomp] at hnhds
   exact hq.2 (mem_interior_iff_mem_nhds.mpr hnhds)
 
-
-
 theorem terminal_model_domain_boundary
     (data : TerminalSaddleData M P p e) (i : Fin 3) :
     let h : S2 → Real := fun q => inner Real (M.v : E3)
@@ -240,8 +231,6 @@ theorem terminal_model_domain_boundary
       simpa only [preimage, mem_Iic, mem_Ici, Pi.neg_apply, neg_le_neg_iff, h] using heq
     exact neg_injective (height_eq_on_frontier_of_closed_sublevel_component hh.neg
       isClosed_closure heq' (hfront x hx))
-
-
 
 theorem terminal_model_domain_extremum
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

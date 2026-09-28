@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallNativeC
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallBoundaryParametrization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_native_cap_chart
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

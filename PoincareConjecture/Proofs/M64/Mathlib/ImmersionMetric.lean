@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.PositiveMetricExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def m64ImmersionCoefficients (g : RiemannianMetric n M)
     (f : EuclideanSpace ℝ (Fin m) → M) (x : EuclideanSpace ℝ (Fin m)) :
     EuclideanSpace ℝ (Fin m) →L[ℝ] EuclideanSpace ℝ (Fin m) →L[ℝ] ℝ := by
@@ -33,8 +27,6 @@ def m64ImmersionCoefficients (g : RiemannianMetric n M)
     infer_instance
   exact ContinuousLinearMap.bilinearComp (g.inner (f x))
     (mfderiv (𝓡 m) (𝓡 n) f x) (mfderiv (𝓡 m) (𝓡 n) f x)
-
-
 
 theorem m64_contDiffAt_immersionCoefficients (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin m) → M} {x : EuclideanSpace ℝ (Fin m)}
@@ -53,10 +45,6 @@ theorem m64_contDiffAt_immersionCoefficients (g : RiemannianMetric n M)
   simp only [Bundle.Trivial.fiberBundle_trivializationAt',
     Bundle.Trivial.trivialization_apply] at hh
   convert! hh using 1
-
-
-
-
 
 theorem m64_exists_induced_metric_near (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin m) → M} {S U : Set (EuclideanSpace ℝ (Fin m))}

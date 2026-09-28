@@ -1,20 +1,9 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem le_two_mul_of_deriv_le_sq_above {f f' : ℝ → ℝ} {a b C M q : ℝ}
     (hC : 0 < C) (hM : 0 < M) (hq : q ≤ M)

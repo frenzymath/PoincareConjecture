@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -21,8 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem squareRoot_scalarField_hasDerivWithinAt (R : M14SquareRootPath G p)
     {f : G.Point → ℝ} {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingGauges
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,16 +17,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (D : ∀ t, SpacetimeSliceGeometry S t)
   (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 theorem rescalingSlicePoint (p : S.Point) :
     M13.parabolicSliceIdentification S D Q hQ a (S.timeFunction p)
       (spacetimeSlicePoint D p) =
         spacetimeSlicePoint (M13.parabolicSpacetimeSlice S D Q hQ a) p := by
   apply Subtype.ext
   exact M13.parabolicSliceIdentification_val S D Q hQ a _ _
-
-
 
 theorem rescalingSliceTangent (p : S.Point) (v : S.Horizontal p) :
     mfderiv (𝓡 n) (𝓡 n)
@@ -57,8 +45,6 @@ theorem rescalingSliceTangent (p : S.Point) (v : S.Horizontal p) :
   simp only [ContinuousLinearEquiv.apply_symm_apply] at h
   exact h
 
-
-
 theorem rescalingSliceCalculus (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
     (t : ℝ) :
     MetricHomothetyCalculus (D t).metricOnPoints
@@ -74,8 +60,6 @@ theorem rescalingSliceCalculus (hM13 : GeneralizedParabolicRescalingTheory.{u} n
 variable (L : LeafwiseLeviCivitaFamily S D)
   (L' : LeafwiseLeviCivitaFamily (M13.parabolicSpacetime S Q hQ a)
     (M13.parabolicSpacetimeSlice S D Q hQ a))
-
-
 
 theorem rescalingHorizontalRiemann
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
@@ -97,8 +81,6 @@ theorem rescalingHorizontalRiemann
     rescalingSliceTangent S D Q hQ a p q] at h
   exact h
 
-
-
 theorem rescalingHorizontalRicci
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
     (p : S.Point) (v w : S.Horizontal p) :
@@ -113,8 +95,6 @@ theorem rescalingHorizontalRicci
   erw [rescalingSlicePoint, rescalingSliceTangent S D Q hQ a p v,
     rescalingSliceTangent S D Q hQ a p w] at h
   exact h
-
-
 
 theorem rescalingHorizontalScalar
     (hM13 : GeneralizedParabolicRescalingTheory.{u} n) (p : S.Point) :

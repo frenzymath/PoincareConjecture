@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallReplacement
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +10,6 @@ open Set Geometry
 namespace Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem polygon_closed_inside_eq_of_ball_pair {n : ℕ}
     (P : Polygon P2 (n + 3)) (hP : P.HasSimplicialEdges)
@@ -32,9 +21,6 @@ theorem polygon_closed_inside_eq_of_ball_pair {n : ℕ}
     (hD.frontier_interior_of_finrank_eq rfl)
   rw [hi]
   exact hD.closure_interior_of_finrank_eq rfl
-
-
-
 
 theorem polygon_annulus_region_of_cap
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

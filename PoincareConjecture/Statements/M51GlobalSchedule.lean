@@ -6,18 +6,6 @@ import PoincareConjecture.Statements.M46NoncollapseInduction
 import PoincareConjecture.Statements.M47CanonicalInduction
 import PoincareConjecture.Statements.M49VolumeLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,41 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedGlobalScheduleTheory : Prop where
   uniform_schedule :

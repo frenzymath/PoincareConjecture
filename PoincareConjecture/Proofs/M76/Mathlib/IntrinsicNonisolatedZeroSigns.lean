@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicCollarLocalSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.mem_closure_positive_of_zero_accumulation
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q x : E} {β : ℝ}
@@ -32,10 +18,6 @@ theorem AlexanderCollarSlab.mem_closure_positive_of_zero_accumulation
     exact M.mem_closure_positive_of_ne_apex hy.1 hy.2
   have h := closure_mono hsub hx
   rwa [closure_closure] at h
-
-
-
-
 
 theorem AlexanderCollarSlab.mem_both_zero_height_closures_of_nonisolated_apex
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,15 +19,11 @@ open PoincareConjecture.SpacetimeBounds
 private abbrev CE := EuclideanSpace ℝ (Fin 3)
 private abbrev cb := EuclideanSpace.basisFun (Fin 3) ℝ
 
-
-
 def jetCurvatureNorm (J : MetricTwoJet 3) : ℝ :=
   Real.sqrt (∑ a : Fin 4 → Fin 3, ∑ b : Fin 4 → Fin 3,
     (∏ i : Fin 4, EuclideanSpace.proj (b i) (J.1.inverse (EuclideanSpace.proj (a i)))) *
       (jetCurvature J (cb (a 0)) (cb (a 1)) (cb (a 2)) (cb (a 3)) *
         jetCurvature J (cb (b 0)) (cb (b 1)) (cb (b 2)) (cb (b 3))))
-
-
 
 theorem continuousAt_jetCurvatureNorm
     {J : MetricTwoJet 3} (hJ : J.1.IsInvertible) :
@@ -57,8 +44,6 @@ theorem continuousAt_jetCurvatureNorm
   exact (tendsto_finsetProd _ (fun i _ => (hentry (a i) (b i)).tendsto)).mul
     ((contDiffAt_jetCurvature hJ _ _ _ _).continuousAt.tendsto.mul
       (contDiffAt_jetCurvature hJ _ _ _ _).continuousAt.tendsto)
-
-
 
 theorem exists_jetCurvatureNorm_uniform_modulus
     {K : Set (MetricTwoJet 3)} (hK : IsCompact K)
@@ -89,8 +74,6 @@ theorem exists_jetCurvatureNorm_uniform_modulus
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem jetCurvatureNorm_metricTwoJet_eq
     {g : RiemannianMetric 3 CE} (D : LeviCivitaData g) (x : CE) :
     jetCurvatureNorm (metricTwoJet g.euclideanCoefficients x) =
@@ -105,8 +88,6 @@ theorem jetCurvatureNorm_metricTwoJet_eq
   unfold jetCurvatureNorm tensorNormFromComponents
   simp only [hI, jetCurvature_metricTwoJet D]
   rfl
-
-
 
 theorem jetCurvatureNorm_metricTwoJet_pullback
     {M : Type u} [TopologicalSpace M]

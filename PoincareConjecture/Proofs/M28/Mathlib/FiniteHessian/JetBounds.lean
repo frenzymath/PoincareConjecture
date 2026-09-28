@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,21 +13,14 @@ variable {ι E F G H : Type*}
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   [NormedAddCommGroup H] [NormedSpace ℝ H]
 
-
-
-
 def HasUniformJetBoundsAt (n : ℕ) (f : ι → E → F) (x : ι → E) : Prop :=
   ∀ m : ℕ, m ≤ n → ∃ C : ℝ, ∀ i,
     ‖iteratedFDeriv ℝ m (f i) (x i)‖ ≤ C
-
-
 
 theorem HasUniformJetBoundsAt.mono_order {m n : ℕ} {f : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt n f x) (hmn : m ≤ n) :
     HasUniformJetBoundsAt m f x :=
   fun j hj => h j (hj.trans hmn)
-
-
 
 theorem HasUniformJetBoundsAt.bound_all {n : ℕ} {f : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt n f x) :
@@ -52,8 +36,6 @@ theorem HasUniformJetBoundsAt.bound_all {n : ℕ} {f : ι → E → F} {x : ι �
   exact (hc j i).trans ((le_max_left _ _).trans
     (Finset.single_le_sum (fun k _ => le_max_right _ _) (Finset.mem_univ j)))
 
-
-
 theorem HasUniformJetBoundsAt.congr_germ {n : ℕ} {f g : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt n f x) (heq : ∀ i, f i =ᶠ[𝓝 (x i)] g i) :
     HasUniformJetBoundsAt n g x := by
@@ -62,8 +44,6 @@ theorem HasUniformJetBoundsAt.congr_germ {n : ℕ} {f g : ι → E → F} {x : �
   refine ⟨C, fun i => ?_⟩
   rw [← ((heq i).iteratedFDeriv ℝ m).eq_of_nhds]
   exact hC i
-
-
 
 theorem HasUniformJetBoundsAt.succ_of_fderiv {n : ℕ} {f : ι → E → F} {x : ι → E}
     (hzero : ∃ C : ℝ, ∀ i, ‖f i (x i)‖ ≤ C)
@@ -76,8 +56,6 @@ theorem HasUniformJetBoundsAt.succ_of_fderiv {n : ℕ} {f : ι → E → F} {x :
       obtain ⟨C, hC⟩ := h m (by omega)
       exact ⟨C, fun i => by simpa only [norm_iteratedFDeriv_fderiv] using hC i⟩
 
-
-
 theorem HasUniformJetBoundsAt.clm {n : ℕ} {f : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt n f x)
     (hf : ∀ i, ContDiffAt ℝ ∞ (f i) (x i)) (L : F →L[ℝ] G) :
@@ -88,8 +66,6 @@ theorem HasUniformJetBoundsAt.clm {n : ℕ} {f : ι → E → F} {x : ι → E}
   exact (L.norm_iteratedFDeriv_comp_left (hf i)
     (by exact_mod_cast le_top : (m : ℕ∞ω) ≤ ∞)).trans
       (mul_le_mul_of_nonneg_left (hC i) (norm_nonneg L))
-
-
 
 theorem HasUniformJetBoundsAt.sub {n : ℕ} {f g : ι → E → F} {x : ι → E}
     (hf : HasUniformJetBoundsAt n f x) (hg : HasUniformJetBoundsAt n g x)
@@ -106,8 +82,6 @@ theorem HasUniformJetBoundsAt.sub {n : ℕ} {f g : ι → E → F} {x : ι → E
     ((hcg i).of_le (by exact_mod_cast le_top))]
   exact (norm_sub_le _ _).trans (add_le_add (hC i) (hD i))
 
-
-
 theorem norm_iteratedFDeriv_bilinear_le_at
     (B : F →L[ℝ] G →L[ℝ] H) {f : E → F} {g : E → G} {x : E}
     (hf : ContDiffAt ℝ ∞ f x) (hg : ContDiffAt ℝ ∞ g x) (m : ℕ) :
@@ -123,8 +97,6 @@ theorem norm_iteratedFDeriv_bilinear_le_at
     (hfs.mono (fun _ hy => (hv hy).1)) (hgt.mono (fun _ hy => (hv hy).2))
     hvo.uniqueDiffOn hxv (le_refl (m : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
 
 theorem HasUniformJetBoundsAt.bilinear {n : ℕ} {f : ι → E → F} {g : ι → E → G}
     {x : ι → E} (hf : HasUniformJetBoundsAt n f x) (hg : HasUniformJetBoundsAt n g x)
@@ -145,8 +117,6 @@ theorem HasUniformJetBoundsAt.bilinear {n : ℕ} {f : ι → E → F} {g : ι �
   · exact hC j (hjm.trans hm) i
   · exact hD (m - j) ((Nat.sub_le _ _).trans hm) i
 
-
-
 theorem HasUniformJetBoundsAt.clm_comp {n : ℕ}
     {f : ι → E → G →L[ℝ] H} {g : ι → E → F →L[ℝ] G} {x : ι → E}
     (hf : HasUniformJetBoundsAt n f x) (hg : HasUniformJetBoundsAt n g x)
@@ -154,8 +124,6 @@ theorem HasUniformJetBoundsAt.clm_comp {n : ℕ}
     (hcg : ∀ i, ContDiffAt ℝ ∞ (g i) (x i)) :
     HasUniformJetBoundsAt n (fun i y => (f i y).comp (g i y)) x :=
   hf.bilinear hg hcf hcg (ContinuousLinearMap.compL ℝ F G H)
-
-
 
 theorem HasUniformJetBoundsAt.comp_of_fderiv {n : ℕ}
     {f : ι → E → F} {g : ι → F → G} {x : ι → E}

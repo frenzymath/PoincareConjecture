@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBase
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : Cube ≃ₜ D}
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem HamiltonProperDiskTriangulation.edge_dual_subset_vertex_link
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)
@@ -54,9 +43,6 @@ theorem HamiltonProperDiskTriangulation.edge_dual_subset_vertex_link
     omega
   have hfst : f ∈ (N.closedStar p).faces := hstar.symm ▸ hfN
   exact (N.link p).convexHull_subset_space ⟨hfN, hpnot, hfst.2⟩ hxf
-
-
-
 
 theorem HamiltonProperDiskTriangulation.mem_boundary_vertex_base_endpoints_iff
     (T : HamiltonProperDiskTriangulation R D b)

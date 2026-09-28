@@ -2,17 +2,6 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
 
 theorem strictMono_vertical_of_compact_support
     (F : E × Real ≃ₜ E × Real)
@@ -50,8 +37,6 @@ theorem strictMono_vertical_of_compact_support
       hfix _ (hout (R + 1) (by linarith))] at ha'
     simp only at ha'
     linarith
-
-
 
 theorem image_lowerHalfSpace_eq_subgraph
     (F : E × Real ≃ₜ E × Real)

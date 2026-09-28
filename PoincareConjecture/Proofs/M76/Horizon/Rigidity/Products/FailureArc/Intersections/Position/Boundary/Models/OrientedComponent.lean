@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Models.Component
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Models.FrontierSigns
 
-
-
 set_option autoImplicit false
 open Set Geometry AbstractSimplicialComplex
 open PreAbstractSimplicialComplex.ModTwoCochains

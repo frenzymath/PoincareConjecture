@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.JetBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,7 +37,6 @@ def jetRicci {n : ℕ} (J : MetricTwoJet n) (u v : EuclideanSpace ℝ (Fin n)) :
   ∑ i, ∑ j, EuclideanSpace.proj j (J.1.inverse (EuclideanSpace.proj i)) *
     jetCurvature J u (EuclideanSpace.basisFun (Fin n) ℝ i) v
       (EuclideanSpace.basisFun (Fin n) ℝ j)
-
 
 def ricciFlowOperator (n : ℕ) (J : MetricTwoJet n) : MetricCoefficient n :=
   ∑ i, ∑ j, (-2 * jetRicci J (EuclideanSpace.basisFun (Fin n) ℝ i)

@@ -1,33 +1,16 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLScalarTent
 
-
-
-
 noncomputable def value (r R s : ℝ) : ℝ :=
   min 1 (max 0 ((R - |s|) / (R - r)))
 
-
-
 theorem value_mem_unit (r R s : ℝ) : value r R s ∈ Icc 0 1 :=
   ⟨le_min (by norm_num) (le_max_left _ _), min_le_left _ _⟩
-
-
 
 theorem value_eq_one {r R s : ℝ} (hrR : r < R) (hs : |s| ≤ r) :
     value r R s = 1 := by
@@ -35,22 +18,15 @@ theorem value_eq_one {r R s : ℝ} (hrR : r < R) (hs : |s| ≤ r) :
     (one_le_div (sub_pos.mpr hrR)).mpr (by linarith)
   exact min_eq_left (h.trans (le_max_right _ _))
 
-
-
 theorem value_eq_zero {r R s : ℝ} (hrR : r < R) (hs : R ≤ |s|) :
     value r R s = 0 := by
   unfold value
   rw [max_eq_left (div_nonpos_of_nonpos_of_nonneg (sub_nonpos.mpr hs) (sub_pos.mpr hrR).le)]
   norm_num
 
-
-
 theorem continuous_value (r R : ℝ) : Continuous (value r R) := by
   unfold value
   fun_prop
-
-
-
 
 theorem finitePiecewiseAffineOn_value (r R : ℝ)
     (K : SimplicialComplex ℝ ℝ) (hK : K.faces.Finite) :
@@ -69,8 +45,6 @@ theorem finitePiecewiseAffineOn_value (r R : ℝ)
     change (R - r)⁻¹ * (R - |s|) = (R - |s|) / (R - r)
     rw [div_eq_mul_inv, mul_comm]
   exact hone.min hdiv.positivePart
-
-
 
 theorem locallyPiecewiseAffineOn_value (r R : ℝ) :
     LocallyPiecewiseAffineOn (value r R) univ := by

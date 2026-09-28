@@ -4,13 +4,6 @@ open Set MeasureTheory
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

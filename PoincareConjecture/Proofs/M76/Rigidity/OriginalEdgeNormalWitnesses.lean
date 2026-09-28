@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalEdgeChartWitnesses
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDualRegionFacts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalRegionCofaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +15,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_edge_normal_witnesses
     (p : (T.marked 2).vertices) {s t : Finset (T.index → ℝ × V3)}

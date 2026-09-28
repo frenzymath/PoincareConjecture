@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.CompactSupp
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_radial_sphere_isotopy
     (a : S2 -> Real) (ha : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ a) :
@@ -89,8 +85,6 @@ theorem exists_radial_sphere_isotopy
     (fun s hs => by rw [hvel s (Ico_subset_Icc_self hs)]; exact (hder s).hasDerivWithinAt)
     (by simp [hi, g])
   exact heq ht
-
-
 
 theorem exists_radial_sphere_extension
     (r : sphere (0 : EuclideanSpace Real (Fin 3)) 1 -> Real)

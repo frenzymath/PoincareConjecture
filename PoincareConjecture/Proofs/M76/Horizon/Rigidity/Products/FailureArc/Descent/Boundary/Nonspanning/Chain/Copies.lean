@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Nonspanning.Chain.Geometry
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedAttachmentSources
 
-
-
 set_option autoImplicit false
 open Set Geometry TriangleDiskModel
 

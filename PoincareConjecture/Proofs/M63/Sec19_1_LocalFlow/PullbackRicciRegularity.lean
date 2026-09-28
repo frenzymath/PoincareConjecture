@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PullbackMetricHessian
 import PoincareConjecture.Proofs.M08.ChartConnectionVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {V : Type v} [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
 
 theorem flow_pullback_ricci_contDiffOn {a b : ℝ} (F : RicciFlow n M (Icc a b))
     {U : Set V} (hU : IsOpen U) {ρ : V → M}

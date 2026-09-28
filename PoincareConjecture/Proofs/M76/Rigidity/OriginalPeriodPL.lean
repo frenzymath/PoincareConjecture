@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodMap
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianParameter
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem polyhedral_periodCutMap (P : OriginalDiskProduct e R j)
     (he : PLDomain e R) {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)

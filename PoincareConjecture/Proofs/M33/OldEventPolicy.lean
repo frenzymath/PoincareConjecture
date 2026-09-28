@@ -1,20 +1,11 @@
 import PoincareConjecture.Definitions.M33EventPreservation
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
 
 private theorem cuts_of_literal_data
     {S0 S1 : GeneralizedSliceCarrier.{u}}
@@ -45,7 +36,6 @@ private theorem cuts_of_literal_data
   have hR' : R1 = R0 := eq_of_heq hR
   subst R1
   exact h
-
 
 theorem M33NonemptyEventDataPreservation.transportPolicy
     {g0 g1 : StandardInitialMetric} {K0 K1 : MetricSurgeryConstants}
@@ -83,8 +73,6 @@ private theorem vanishing_margin_congr
   subst X₁
   exact h
 
-
-
 theorem M33VanishingEventDataPreservation.transportPolicy
     {P₀ P₁ : SurgeryParameters} {slice₀ slice₁ : ℝ → GeneralizedSliceCarrier.{u}}
     {metric₀ : ∀ t, RiemannianMetric 3 (slice₀ t).carrier}
@@ -98,8 +86,6 @@ theorem M33VanishingEventDataPreservation.transportPolicy
     A.tMinus B.tMinus T ((P₀.delta T * P₀.r T)⁻¹ ^ 2)
     A.pre_flow B.pre_flow H.pre_carrier_eq H.reference_eq H.pre_flow_heq policy
   simpa only [SurgeryVanishingEventTerminalPolicy, hP] using h
-
-
 
 theorem M33OldEventDataPreservation.transportPolicy
     {F : SurgeryFlowData.{u}} {E : SurgeryFlowExtension F}

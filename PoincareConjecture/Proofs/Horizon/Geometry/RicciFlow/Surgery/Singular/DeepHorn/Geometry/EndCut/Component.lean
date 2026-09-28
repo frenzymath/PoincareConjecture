@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.CoordinateCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 theorem GeneralizedStrongNeck.isCompact_central_sphere
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
@@ -44,7 +35,6 @@ namespace StrongHorn
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
 def coordinatePrefix (horn : StrongHorn E epsilon) (b : ℝ) :
     Set (E.extended.slice T).carrier :=
   horn.parameterization '' (univ ×ˢ Icc 0 b)
@@ -66,8 +56,6 @@ theorem carrier_subset_prefix_union_tail (horn : StrongHorn E epsilon) (b : ℝ)
   rcases le_or_gt (z.2 : ℝ) b with hle | hgt
   · exact Or.inl ⟨(z.1, z.2), ⟨mem_univ _, z.2.property.1, hle⟩, hz⟩
   · exact Or.inr ⟨(z.1, z.2), ⟨mem_univ _, hgt, z.2.property.2⟩, hz⟩
-
-
 
 theorem exists_unique_escaping_component (horn : StrongHorn E epsilon)
     (K : Set (E.extended.slice T).carrier) (hK : IsCompact K) :
@@ -104,8 +92,6 @@ theorem exists_unique_escaping_component (horn : StrongHorn E epsilon)
     · exact False.elim (hne ((connectedComponentIn_eq hz).trans
         (connectedComponentIn_eq (htail ht)).symm))
 
-
-
 theorem exists_neck_escaping_component (horn : StrongHorn E epsilon)
     {delta : ℝ} (N : TerminalStrongNeck E delta) :
     ∃ x ∈ horn.carrier \ N.central_sphere, ∃ b : ℝ, 0 ≤ b ∧ b < 1 ∧
@@ -118,8 +104,6 @@ theorem exists_neck_escaping_component (horn : StrongHorn E epsilon)
         connectedComponentIn (horn.carrier \ N.central_sphere) y =
           connectedComponentIn (horn.carrier \ N.central_sphere) x) :=
   horn.exists_unique_escaping_component N.central_sphere N.isCompact_central_sphere
-
-
 
 noncomputable def endCutOfNoLowCurvature (horn : StrongHorn E epsilon)
     {delta : ℝ} (N : TerminalStrongNeck E delta) (rho : ℝ)

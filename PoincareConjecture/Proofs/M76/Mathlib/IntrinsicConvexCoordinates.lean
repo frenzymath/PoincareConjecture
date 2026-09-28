@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleIntrinsicExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,19 +8,13 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def directionCoordinates (A : AffineSubspace ℝ E) (p : A) :
     A.direction →ᵃⁱ[ℝ] E := by
   let : Nonempty A := ⟨p⟩
   exact A.subtypeₐᵢ.comp (AffineIsometryEquiv.vaddConst ℝ p).toAffineIsometry
 
-
-
 theorem directionCoordinates_apply (A : AffineSubspace ℝ E) (p : A) (x : A.direction) :
     A.directionCoordinates p x = (x : E) + (p : E) := rfl
-
-
 
 theorem range_directionCoordinates (A : AffineSubspace ℝ E) (p : A) :
     range (A.directionCoordinates p) = (A : Set E) := by
@@ -38,9 +24,6 @@ theorem range_directionCoordinates (A : AffineSubspace ℝ E) (p : A) :
   simp
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem convexBody_directionCoordinates {S : Set E} (hS : IsCompact S)
     (hc : Convex ℝ S) (p : affineSpan ℝ S) :

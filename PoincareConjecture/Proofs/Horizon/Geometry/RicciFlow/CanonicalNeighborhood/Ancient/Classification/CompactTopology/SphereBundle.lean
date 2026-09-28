@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Covering.OpenLift
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quotient.Circle
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +13,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.SphereBundleCircleModel
-
 
 theorem isOpenMap_projection (B : SphereBundleCircleModel.{u}) :
     letI := B.carrier_topology
@@ -61,9 +50,6 @@ theorem isOpenMap_projection (B : SphereBundleCircleModel.{u}) :
   rintro _ ⟨_, ⟨y, hy, rfl⟩, rfl⟩
   exact ⟨y, hy.1, (hproj y hy.2).symm⟩
 
-
-
-
 theorem not_compactSpace_of_continuous_open_map
     (B : SphereBundleCircleModel.{u}) {E : Type*} [TopologicalSpace E]
     [SimplyConnectedSpace E] [LocallyPathConnectedSpace E] :
@@ -86,8 +72,6 @@ theorem not_compactSpace_of_continuous_open_map
       (range_nonempty F)
   exact noncompact_univ ℝ (hfull ▸ hK)
 
-
-
 theorem not_compactSpace_covering
     (B : SphereBundleCircleModel.{u}) {E : Type*} [TopologicalSpace E]
     [SimplyConnectedSpace E] [LocallyPathConnectedSpace E] :
@@ -107,8 +91,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [CompactSpace M] [ConnectedSpace M] {g : RiemannianMetric 3 M}
-
-
 
 theorem not_whole_of_compact_positive_sectional {X : Set M}
     (C : SphereBundleCircleCertificate g X) (D : LeviCivitaData g)

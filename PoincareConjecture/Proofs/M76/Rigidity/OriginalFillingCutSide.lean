@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRegionSideTransport
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,8 +18,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
-
-
 theorem isConnected_openStrip (P : OriginalDiskProduct e R j) :
     IsConnected P.openStrip := by
   apply ((isConnected_closedBall (x := (0 : V2)) zero_le_one).prod
@@ -36,9 +25,6 @@ theorem isConnected_openStrip (P : OriginalDiskProduct e R j) :
   apply P.polyhedral.continuousOn.mono
   intro z hz
   exact ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
-
-
-
 
 theorem exists_old_frontier_witnesses (P : OriginalDiskProduct e R j) :
     (P.openStrip ∩ frontier R).Nonempty ∧ (P.endDisks ∩ frontier R).Nonempty := by
@@ -50,8 +36,6 @@ theorem exists_old_frontier_witnesses (P : OriginalDiskProduct e R j) :
     exact (P.proper (z, 0) ⟨hzD, by norm_num⟩).mpr hzQ
   · refine ⟨P.map (z, 1 / 2), ⟨(z, 1 / 2), ⟨hzD, by simp⟩, rfl⟩, ?_⟩
     exact (P.proper (z, 1 / 2) ⟨hzD, by norm_num⟩).mpr hzQ
-
-
 
 theorem ball_subset_cut [T2Space X] (P : OriginalDiskProduct e R j)
     {B S : Set X} (b : ChartwisePLBall e B S) (hBR : B ⊆ R)

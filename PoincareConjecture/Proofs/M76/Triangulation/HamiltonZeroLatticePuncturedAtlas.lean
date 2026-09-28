@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroPunctureConnected
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroPuncturedAtlas
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,18 +13,11 @@ local notation "T" => ((StableTorus.Circle × StableTorus.Circle) × StableTorus
 local notation "W" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
-
 noncomputable def hamiltonZeroHandleProductEquiv : W ≃ₜ T :=
   (Homeomorph.uniqueProd (Fin 0 → ℝ) _).trans hamiltonZeroLatticeProductEquiv
 
-
-
 def hamiltonZeroHandlePuncture : W :=
   (0, QuotientAddGroup.mk (fun _ : Fin 3 => (32 : ℝ)))
-
-
 
 noncomputable def hamiltonZeroPunctureModelEquiv :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
@@ -49,10 +32,6 @@ noncomputable def hamiltonZeroPunctureModelEquiv :
   simp only [mem_compl_iff, mem_singleton_iff]
   rw [← hp]
   exact (not_congr hamiltonZeroHandleProductEquiv.injective.eq_iff).symm
-
-
-
-
 
 theorem exists_zero_lattice_punctured_PL_domain
     (h : OpenPartialHomeomorph CubeShell.Ambient V3) (hsource : h.source = univ) :

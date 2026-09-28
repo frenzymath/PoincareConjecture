@@ -3,16 +3,6 @@ import Mathlib.Topology.Algebra.Support
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Tactic.Abel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -25,21 +15,15 @@ section Continuous
 variable {M N F : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 noncomputable def chartPerturb (e : OpenPartialHomeomorph N F) (U : Set M)
     (f : M → N) (δ : M → F) : M → N := by
   classical
   exact fun x => if x ∈ U then e.symm (e (f x) + δ x) else f x
 
-
-
 theorem chartPerturb_of_mem (e : OpenPartialHomeomorph N F) (U : Set M)
     (f : M → N) (δ : M → F) {x : M} (hx : x ∈ U) :
     chartPerturb e U f δ x = e.symm (e (f x) + δ x) := by
   simp [chartPerturb, hx]
-
-
 
 theorem chartPerturb_eq_of_zero (e : OpenPartialHomeomorph N F) (U : Set M)
     (f : M → N) (δ : M → F) (hfU : MapsTo f U e.source)
@@ -49,15 +33,11 @@ theorem chartPerturb_eq_of_zero (e : OpenPartialHomeomorph N F) (U : Set M)
   · rw [chartPerturb_of_mem e U f δ hx, hδ, add_zero, e.left_inv (hfU hx)]
   · simp [chartPerturb, hx]
 
-
-
 theorem chartPerturb_eventuallyEq (e : OpenPartialHomeomorph N F) (U : Set M)
     (f : M → N) (δ : M → F) (hfU : MapsTo f U e.source)
     {x : M} (hx : x ∉ tsupport δ) : chartPerturb e U f δ =ᶠ[𝓝 x] f := by
   filter_upwards [(isClosed_tsupport δ).isOpen_compl.mem_nhds hx] with y hy
   exact chartPerturb_eq_of_zero e U f δ hfU (image_eq_zero_of_notMem_tsupport hy)
-
-
 
 theorem continuous_chartPerturb (e : OpenPartialHomeomorph N F) {U : Set M}
     (hU : IsOpen U) {f : M → N} {δ : M → F}
@@ -79,8 +59,6 @@ theorem continuous_chartPerturb (e : OpenPartialHomeomorph N F) {U : Set M}
     exact chartPerturb_of_mem e U f δ hy
   · exact hf.continuousAt.congr_of_eventuallyEq
       (chartPerturb_eventuallyEq e U f δ hfU (fun h => hx (hsupp h)))
-
-
 
 noncomputable def chartPerturbHomotopy
     (e : OpenPartialHomeomorph N F) {U : Set M} (hU : IsOpen U)
@@ -107,8 +85,6 @@ noncomputable def chartPerturbHomotopy
     change chartPerturb e U f (fun y => (1 : ℝ) • δ y) x = chartPerturb e U f δ x
     simp only [one_smul]
 
-
-
 theorem chartPerturb_eq_target (e : OpenPartialHomeomorph N F) (U : Set M)
     (f : M → N) (δ : M → F) {b : M} (hb : b ∈ U) {y : N}
     (hy : y ∈ e.source) (hδ : δ b = e y - e (f b)) :
@@ -128,9 +104,6 @@ variable {E H F K M N : Type*}
   [TopologicalSpace N] [ChartedSpace K N]
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
 
-
-
-
 theorem contMDiffAt_chartPerturb_of_mem
     (e : OpenPartialHomeomorph N F) {U : Set M} (hU : IsOpen U)
     {f : M → N} {δ : M → F} {x : M} (hx : x ∈ U)
@@ -142,8 +115,6 @@ theorem contMDiffAt_chartPerturb_of_mem
   apply (hi_at.comp x hcoord).congr_of_eventuallyEq
   filter_upwards [hU.mem_nhds hx] with y hy
   exact chartPerturb_of_mem e U f δ hy
-
-
 
 theorem contMDiff_chartPerturb (e : OpenPartialHomeomorph N F) {U : Set M}
     (hU : IsOpen U) {f : M → N} {δ : M → F}

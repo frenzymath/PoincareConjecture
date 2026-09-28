@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.PhysicalModelChart
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -58,8 +50,6 @@ theorem terminal_raw_model_critical_of_physical
     ((hh q).mdifferentiableAt (by simp)), hq]
   ext x
   simp
-
-
 
 theorem exists_terminal_model_regular_window
     (d : TerminalSaddleGeometry M P p e)

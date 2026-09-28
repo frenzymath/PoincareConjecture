@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem gauss_radial_inner_eq (g : RiemannianMetric n M) (p : M)
     {e : EuclideanSpace ℝ (Fin n) → M}
     {v : EuclideanSpace ℝ (Fin n)} {t : ℝ} (ht : t ≠ 0)
@@ -39,7 +28,6 @@ theorem gauss_radial_inner_eq (g : RiemannianMetric n M) (p : M)
   have hh := hgauss
   simp only [map_smul, smul_apply, smul_eq_mul] at hh
   exact (mul_left_cancel₀ ht) hh
-
 
 theorem pathELength_radial_eq_of_gauss
     (g : RiemannianMetric n M) (p : M)
@@ -84,7 +72,6 @@ theorem pathELength_radial_eq_of_gauss
   rw [lintegral_congr_ae heq, lintegral_const, Measure.restrict_apply_univ,
     Real.volume_Ioo]
   simp
-
 
 theorem edist_radial_le_of_gauss
     (g : RiemannianMetric n M) (p : M)

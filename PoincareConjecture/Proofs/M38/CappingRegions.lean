@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.CappingBalls
 import PoincareConjecture.Proofs.M38.CappingSmooth
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ noncomputable local instance cappedRegionChartedSpace :
     ChartedSpace StandardCapSpace (CappedDiscardedSpace F T hT P) :=
   cappedDiscardedChartedSpace F T hT P
 
-
 theorem cappedCapPatch_disjoint (i j : Fin (F.event T hT).cap_count) (hij : i ≠ j) :
     Disjoint (Set.range (eventCappingInclude F T hT P (.inr i)))
       (Set.range (eventCappingInclude F T hT P (.inr j))) := by
@@ -41,19 +32,16 @@ theorem cappedCapPatch_disjoint (i j : Fin (F.event T hT).cap_count) (hij : i �
     ((P i).attachmentChart.map_source h.1)
     (h.2.2.symm ▸ (P j).attachmentChart.map_source h.2.1)
 
-
 theorem cappedCapBall_subset_patch (i : Fin (F.event T hT).cap_count) :
     (cappedCapBall F T hT P i).closedBall ⊆
       Set.range (eventCappingInclude F T hT P (.inr i)) := by
   rw [cappedCapBall_closedBall]
   exact Set.image_subset_range _ _
 
-
 theorem cappedCapBall_disjoint (i j : Fin (F.event T hT).cap_count) (hij : i ≠ j) :
     Disjoint (cappedCapBall F T hT P i).closedBall (cappedCapBall F T hT P j).closedBall :=
   (cappedCapPatch_disjoint F T hT P i j hij).mono
     (cappedCapBall_subset_patch F T hT P i) (cappedCapBall_subset_patch F T hT P j)
-
 
 theorem cappedCapBall_disjoint_old (i : Fin (F.event T hT).cap_count) :
     Disjoint (cappedCapBall F T hT P i).closedBall
@@ -75,7 +63,6 @@ theorem cappedCapBall_disjoint_old (i : Fin (F.event T hT).cap_count) :
     change x ∈ (P i).attachmentChart.source at hsrc
     rwa [(P i).attachmentChart_source] at hsrc
   exact (not_lt_of_ge hx) hnorm
-
 
 theorem cappedOldInclusion_range :
     Set.range (cappedOldInclusion F T hT P) =
@@ -103,8 +90,6 @@ theorem cappedOldInclusion_range :
               rw [cappedCapBall_closedBall]
               exact ⟨x, le_of_not_gt h, rfl⟩
             exact ⟨(P i).attachmentChart x, cappedOldInclusion_cap F T hT P i x hnorm⟩
-
-
 
 noncomputable def cappedOldRegionEquivalence :
     SurgeryRegionEquivalence

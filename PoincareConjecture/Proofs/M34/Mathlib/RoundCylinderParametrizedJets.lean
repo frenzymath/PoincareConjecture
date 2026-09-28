@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderFiniteJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.Model
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -40,8 +30,6 @@ private theorem norm_cylinderCoefficientEvaluation_le (a b : Fin 3) :
     ContinuousLinearMap.apply_apply, norm_roundCylinderCoordinateBasis_eq_one,
     mul_one, one_mul] using
     B.le_opNorm₂ (roundCylinderCoordinateBasis a) (roundCylinderCoordinateBasis b)
-
-
 
 noncomputable def evolvingRoundCylinderModelCoefficients (u : ℝ)
     (p : RoundCylinderCoordinates) :
@@ -103,8 +91,6 @@ private theorem cylinder_coefficient_error_eventuallyEq
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.apply_apply,
     sub_apply, RiemannianMetric.parametrizedCoefficients_apply,
     evolvingRoundCylinderModelCoefficients_apply]
-
-
 
 theorem exists_evolvingRoundCylinderJetErrorSquared_bound_of_parametrizedJets
     {u : ℝ} (hu : u < 1) {J : Set ℝ} (hJ : IsCompact J) (m : ℕ) :

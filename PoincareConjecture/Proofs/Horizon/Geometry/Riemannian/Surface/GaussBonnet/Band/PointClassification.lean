@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ variable {S : Type*} [TopologicalSpace S]
   {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
 
 theorem carrier_point_cases {q : S} (hq : q ∈ B.carrier) :
     q ∈ interior B.carrier ∨
@@ -54,8 +45,6 @@ theorem carrier_point_cases {q : S} (hq : q ∈ B.carrier) :
       ⟨t, ht, by simpa only [← htop] using congrArg B.coordinates hxcoord⟩)))
   exact Or.inl (B.openBand_image_subset_interior
     ⟨x, ⟨ht, lt_of_le_of_ne hx.2.1 (Ne.symm hz), lt_of_le_of_ne hx.2.2 htop⟩, rfl⟩)
-
-
 
 theorem interior_parameter_cell_cases {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
     (∃ j : Fin B.interface.count, t ∈ Ioo (B.cut j.castSucc) (B.cut j.succ)) ∨

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

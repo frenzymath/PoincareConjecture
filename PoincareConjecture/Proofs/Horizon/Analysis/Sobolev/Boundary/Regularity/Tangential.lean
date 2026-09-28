@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.LocalTangenti
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.WeakEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -247,8 +241,6 @@ private theorem exists_precompact_between {W V : Set E}
   refine ⟨U, hU, hVU, ?_, fun x hx => (hUW hx).1⟩
   exact hU₀c.of_isClosed_subset isClosed_closure
     (fun x hx => subset_closure (hUW hx).2)
-
-
 
 theorem memWkp_add_two_of_local_weakEquation
     (k : ℕ) (B : SmoothEllipticBilinearForm d univ)

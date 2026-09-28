@@ -2,21 +2,10 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
 
 theorem Convex.norm_image_sub_ge_of_norm_fderiv_sub_id_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -31,8 +20,6 @@ theorem Convex.norm_image_sub_ge_of_norm_fderiv_sub_id_le
   rw [norm_sub_rev (y - x) (f y - f x)] at hn
   nlinarith
 
-
-
 theorem Convex.injOn_of_norm_fderiv_sub_id_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {f : E → E} {U : Set E} (hU : Convex ℝ U) {c : ℝ} (hc : c < 1)
@@ -44,8 +31,6 @@ theorem Convex.injOn_of_norm_fderiv_sub_id_le
   rw [hxy, sub_self, norm_zero] at h
   have hn : ‖y - x‖ = 0 := by nlinarith [norm_nonneg (y - x)]
   exact (sub_eq_zero.mp (norm_eq_zero.mp hn)).symm
-
-
 
 theorem TendstoUniformlyOn.eventually_injOn_of_fderiv_tendsto_id
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -59,8 +44,6 @@ theorem TendstoUniformlyOn.eventually_injOn_of_fderiv_tendsto_id
   apply hU.injOn_of_norm_fderiv_sub_id_le (c := 1 / 2) (by norm_num) (hf i)
   intro x hx
   simpa only [dist_eq_norm, norm_sub_rev] using (hi x hx).le
-
-
 
 theorem TendstoUniformlyOn.eventually_bijective_of_tendsto_id
     {E P ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

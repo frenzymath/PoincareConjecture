@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedInteriorWall
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckRegionConnector
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
-
 theorem intrinsicEDist_central_sphere_le (N : EpsilonNeck g)
     {U : Set M} (hSU : N.central_sphere ⊆ U) {x y : M}
     (hx : x ∈ N.central_sphere) (hy : y ∈ N.central_sphere) :
@@ -38,9 +26,6 @@ theorem intrinsicEDist_central_sphere_le (N : EpsilonNeck g)
     (fun t (_ : t ∈ Icc (0 : ℝ) 1) => hSU (hS (mem_univ t)))
   rw [h0, h1] at hle
   exact hle.trans hlength.le
-
-
-
 
 theorem intrinsicOpenMetric_edist_neck_to_sphere_le (N : EpsilonNeck g)
     (U : TopologicalSpace.Opens M) (hNU : N.carrier ⊆ (U : Set M))
@@ -81,10 +66,6 @@ theorem intrinsicOpenMetric_edist_neck_to_sphere_le (N : EpsilonNeck g)
       ring
 
 variable [T2Space M] [MeasurableSpace M] [BorelSpace M] [T3Space M] {X : Set M}
-
-
-
-
 
 theorem exists_selected_chain_tail_with_scale_lt
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

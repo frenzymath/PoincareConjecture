@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
-
-
-
-
-
-
-

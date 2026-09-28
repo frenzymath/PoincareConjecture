@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.TimeDerivative
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +30,6 @@ theorem contDiffOn_spatialFDeriv {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
   intro z hz
   exact spatial_fderiv_eq ((hf.contDiffAt ((hJ.prod hU).mem_nhds hz)).differentiableAt
     (by simp))
-
-
 
 theorem contDiffOn_timeDeriv {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
     (hf : ContDiffOn ℝ ∞ f (J ×ˢ U)) (hJ : IsOpen J) (hU : IsOpen U) :
@@ -106,7 +90,6 @@ theorem contDiffOn_spatialJet {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
       convert! e.toContinuousLinearEquiv.toContinuousLinearMap.contDiff.comp_contDiffOn
         (contDiffOn_spatialFDeriv ih hJ hU) using 1
 
-
 theorem hasDerivAt_spatialJet {f : ℝ × V → E} {k : V → E}
     {J : Set ℝ} {U : Set V} (hf : ContDiffOn ℝ ∞ f (J ×ˢ U))
     (hJ : IsOpen J) (hU : IsOpen U) {t : ℝ} (ht : t ∈ J)
@@ -132,8 +115,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_spatialJet_pullbackCoefficients_apply (F : RicciFlow n M J)
     (hJ : IsOpen J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

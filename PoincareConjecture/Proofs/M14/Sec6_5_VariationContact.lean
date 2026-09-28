@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
 
-
-
 theorem variationAction_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (V : M14LVariationData G p R) : ContDiffOn ℝ ∞ (M14VariationAction V) V.parameterDomain := by
   have hP : IsOpen V.parameterDomain := V.parameterDomain_eq ▸ isOpen_Ioo
@@ -42,16 +31,11 @@ theorem variationAction_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     hi.comp (contDiffOn_id.prodMk contDiffOn_const) (fun _ hv => ⟨hv, hab.le, le_rfl⟩)
   exact hslice.congr (fun _ hv => variationAction_eq_squareIntegral V hv)
 
-
-
 theorem variationEndpoint_contMDiffOn (V : M14LVariationData G p R)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval a b) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ (V.squareFamily s) V.parameterDomain :=
   V.square_smooth.comp ((contMDiff_const (c := s)).prodMk contMDiff_id).contMDiffOn
     (fun _ hv => V.square_contains ⟨hs, hv⟩)
-
-
-
 
 theorem exists_initialFixed_variationEndpointPath
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)
@@ -74,9 +58,6 @@ theorem exists_initialFixed_variationEndpointPath
     α hα Subset.rfl hclock hleft rfl, variationAction_eq_squareIntegral V hv]
   rfl
 
-
-
-
 theorem reducedLengthAt_le_variationAction
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)
     (hfix : V.left_endpoint_fixed) {v : ℝ} (hv : v ∈ V.parameterDomain)
@@ -90,8 +71,6 @@ theorem reducedLengthAt_le_variationAction
     Real.sq_sqrt hb.le, sub_sub_cancel]
   exact (div_le_div_of_nonneg_right (actionValue_le_action hfinite q)
     (mul_pos zero_lt_two (Real.sqrt_pos.mpr hb)).le).trans_eq (congrArg (· / (2 * Real.sqrt b)) hq)
-
-
 
 theorem isLocalMin_variationAction_gap
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)

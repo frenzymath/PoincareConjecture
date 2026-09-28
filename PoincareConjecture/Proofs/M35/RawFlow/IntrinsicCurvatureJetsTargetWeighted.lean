@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTargetSpace
 import PoincareConjecture.Proofs.M35.RadialGauge.DilatedWeightedProfile
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

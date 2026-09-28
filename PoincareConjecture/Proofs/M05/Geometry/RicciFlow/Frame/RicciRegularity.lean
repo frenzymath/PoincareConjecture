@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.RicciTransport
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Connection.BoundaryRegularity
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Curvature.Regularity
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -68,8 +57,6 @@ private lemma contMDiffWithinAt_derivWithin_time
   rw [inTangentCoordinates_model_space]
   simp only [mfderivWithin_eq_fderivWithin, derivWithin]
 
-
-
 theorem contMDiffWithinAt_ricci_fields
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b) {x : M}
     {X Y : (y : M) → TangentSpace (𝓡 n) y}
@@ -88,8 +75,6 @@ theorem contMDiffWithinAt_ricci_fields
   rw [(F.equation p.1 hp.1 p.2 (X p.2) (Y p.2)).derivWithin
     (uniqueDiffOn_Ico a b p.1 hp.1)]
   ring
-
-
 
 theorem contMDiffWithinAt_ricciEndomorphism_inCoordinates
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b) (x : M) :
@@ -186,7 +171,6 @@ theorem contMDiffWithinAt_ricciEndomorphism_inCoordinates
   rw [ContinuousLinearEquiv.symm_apply_apply]
   rw [((F.metric p.1).inner_isInvertible p.2).self_apply_inverse]
 
-
 theorem contMDiffOn_ricciEndomorphism
     (F : RicciFlow n M (Ico a b)) :
     ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n))
@@ -199,7 +183,6 @@ theorem contMDiffOn_ricciEndomorphism
   rw [contMDiffWithinAt_hom_bundle]
   exact ⟨contMDiffWithinAt_snd,
     contMDiffWithinAt_ricciEndomorphism_inCoordinates F hp.1 p.2⟩
-
 
 theorem contMDiffWithinAt_ricciEndomorphism_inCoordinates_of_mem
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b) (x : M) {y : M}
@@ -224,7 +207,6 @@ theorem contMDiffWithinAt_ricciEndomorphism_inCoordinates_of_mem
       p.2 (ricciEndomorphism F p.2 p.1)) (x₀ := (t, y)) hm).mp
     (contMDiffOn_ricciEndomorphism F (t, y) ⟨ht, mem_univ y⟩) |>.2
 
-
 noncomputable def ricciEndomorphismInChart
     (F : RicciFlow n M (Ico a b)) (x : M)
     (p : EuclideanSpace ℝ (Fin n) × ℝ) :
@@ -234,7 +216,6 @@ noncomputable def ricciEndomorphismInChart
     (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n))
     (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n))
     x y x y (ricciEndomorphism F y p.2)
-
 
 theorem contDiffWithinAt_ricciEndomorphismInChart
     (F : RicciFlow n M (Ico a b)) (x : M) {z : EuclideanSpace ℝ (Fin n)}
@@ -258,7 +239,6 @@ theorem contDiffWithinAt_ricciEndomorphismInChart
       (univ ×ˢ Ico a b) (Ico a b ×ˢ univ) from fun p hp => ⟨hp.2, mem_univ _⟩)
   simp +instances only [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at h
   exact h.contDiffWithinAt
-
 
 theorem contDiffOn_ricciEndomorphismInChart
     (F : RicciFlow n M (Ico a b)) (x : M) :

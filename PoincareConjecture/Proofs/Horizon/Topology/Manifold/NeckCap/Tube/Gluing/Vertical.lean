@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.CylinderGluing
-
-
 
 theorem axial_deriv_ne_zero_of_mfderiv_injective (F : RoundCylinderSpace → RoundCylinderSpace)
     (hF : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ F)
@@ -60,8 +46,6 @@ theorem axial_deriv_ne_zero_of_mfderiv_injective (F : RoundCylinderSpace → Rou
     hinj (hv.trans (map_zero _).symm)
   exact one_ne_zero (congrArg Prod.snd hvzero)
 
-
-
 theorem vertical_mfderiv_bijective (h : RoundCylinderSpace → ℝ)
     (hh : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ h)
     (p : RoundCylinderSpace) {a : ℝ} (ha : a ≠ 0)
@@ -98,8 +82,6 @@ theorem vertical_mfderiv_bijective (h : RoundCylinderSpace → ℝ)
     mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       (fun z : RoundCylinderSpace => (z.1, h z)) p
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := L.toLinearMap)).mp hinj⟩
-
-
 
 theorem exists_vertical_diffeomorph (h : RoundCylinderSpace → ℝ)
     (hh : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ h)

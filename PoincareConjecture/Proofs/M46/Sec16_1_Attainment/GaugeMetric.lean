@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeGaugeAction
 import PoincareConjecture.Proofs.M14.Sec6_1_PathRestriction
 import PoincareConjecture.Proofs.M08.ChartCoercivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -45,22 +37,15 @@ private noncomputable local instance bilinearNormedSpace :
       (EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 noncomputable def gaugeLiftMetric (q : G.Point) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   Proofs.M11.ordinaryChartMetric (G.gaugeCover.metric j).metric x0
     ((lift q).1.val, (lift q).2.val)
 
-
-
 theorem gaugeLiftMetric_apply (q : G.Point) (v w : EuclideanSpace ℝ (Fin 3)) :
     gaugeLiftMetric j lift x0 q v w =
       ((G.gaugeCover.metric j).metric (lift q).1.val).inner (lift q).2 v w :=
   M14.ordinaryChartMetric_openSubset_apply _ _ _ _ _ _ _
-
-
-
 
 theorem gaugeLiftMetric_continuousOn {U : Set G.Point}
     (hlift : ContMDiffOn (spacetimeModel 3) (spacetimeModel 3) ∞ lift U) :
@@ -75,9 +60,6 @@ theorem gaugeLiftMetric_continuousOn {U : Set G.Point}
   rw [(G.gaugeCover.spatial j).chartAt_target_eq]
   exact (lift q).2.property
 
-
-
-
 theorem compact_gaugeLiftMetric_coercive {U K : Set G.Point}
     (hlift : ContMDiffOn (spacetimeModel 3) (spacetimeModel 3) ∞ lift U)
     (hK : IsCompact K) (hKU : K ⊆ U) :
@@ -88,9 +70,6 @@ theorem compact_gaugeLiftMetric_coercive {U K : Set G.Point}
   intro q _ v hv
   rw [gaugeLiftMetric_apply]
   exact ((G.gaugeCover.metric j).metric (lift q).1.val).pos (lift q).2 v hv
-
-
-
 
 theorem squarePath_gaugeLiftMetric_eq {T tau : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T 0 tau x y) {U : Set G.Point}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -94,8 +85,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M] [ConnectedSpace M]
 
-
-
 theorem riemannian_closure_ball (g : RiemannianMetric 3 M) (x : M)
     {r : ℝ} (hr : 0 < r) :
     letI : MetricSpace M := Proofs.M09.selectedMetricSpace g
@@ -110,8 +99,6 @@ theorem riemannian_closure_ball (g : RiemannianMetric 3 M) (x : M)
   exact closure_ball_eq_of_radial_projection x hr
     (Proofs.M09.selectedMetricSpace_radial_projection g x)
 
-
-
 theorem continuousOn_scalar_closedBall_sup (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
     (hR : Continuous D.scalarCurvature) (x : M) :
@@ -121,8 +108,6 @@ theorem continuousOn_scalar_closedBall_sup (g : RiemannianMetric 3 M)
   have : ProperSpace M := Proofs.M09.selectedMetricSpace_proper g hcomplete
   exact continuousOn_closedBall_sup x D.scalarCurvature hR
     (Proofs.M09.selectedMetricSpace_radial_projection g x)
-
-
 
 theorem scalar_ball_sup_eq_closedBall (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)
@@ -158,9 +143,6 @@ theorem scalar_ball_sup_eq_closedBall (g : RiemannianMetric 3 M)
   apply csSup_le ((nonempty_closedBall.mpr hr.le).image _)
   rintro _ ⟨y, hy, rfl⟩
   exact hboundClosure y (hclosure.symm ▸ hy)
-
-
-
 
 theorem exists_scalar_curvature_radius_le (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)

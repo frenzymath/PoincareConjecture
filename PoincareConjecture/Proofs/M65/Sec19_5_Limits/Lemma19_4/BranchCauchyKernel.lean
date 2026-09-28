@@ -2,17 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Integral
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 import Mathlib.MeasureTheory.Group.Integral
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -20,18 +9,12 @@ open scoped Topology
 
 namespace PoincareConjecture.M65Branch
 
-
-
-
 theorem locallyIntegrable_cauchyKernel :
     LocallyIntegrable (fun w : ℂ => w⁻¹) volume := by
   apply locallyIntegrable_of_norm_le_rpow (C := 1) (α := 1) (by simp) (by simp)
   · filter_upwards with w
     simp [norm_inv, Real.rpow_neg_one]
   · exact measurable_inv.aestronglyMeasurable
-
-
-
 
 theorem integral_norm_inv_ball {R : ℝ} (hR : 0 ≤ R) :
     (∫ w in ball (0 : ℂ) R, ‖w‖⁻¹) = 2 * Real.pi * R := by
@@ -58,9 +41,6 @@ theorem integral_norm_inv_ball {R : ℝ} (hR : 0 ≤ R) :
   rw [hradial] at hpolar
   simpa [Measure.real, Complex.volume_ball, smul_eq_mul, mul_assoc] using hpolar
 
-
-
-
 theorem locallyIntegrable_cauchyKernel_sub (z : ℂ) :
     LocallyIntegrable (fun w : ℂ => (z - w)⁻¹) volume := by
   have h := locallyIntegrable_map_homeomorph (Homeomorph.subLeft z)
@@ -70,9 +50,6 @@ theorem locallyIntegrable_cauchyKernel_sub (z : ℂ) :
       LocallyIntegrable (fun w : ℂ => (z - w)⁻¹) volume at h
   rw [Measure.map_sub_left_eq_self] at h
   exact h.mp locallyIntegrable_cauchyKernel
-
-
-
 
 theorem integral_norm_inv_ball_center (z : ℂ) {R : ℝ} (hR : 0 ≤ R) :
     (∫ w in ball z R, ‖z - w‖⁻¹) = 2 * Real.pi * R := by
@@ -87,10 +64,6 @@ theorem integral_norm_inv_ball_center (z : ℂ) {R : ℝ} (hR : 0 ≤ R) :
     _ = ∫ w in ball (0 : ℂ) R, ‖w‖⁻¹ := by
       rw [integral_sub_left_eq_self, integral_indicator measurableSet_ball]
     _ = _ := integral_norm_inv_ball hR
-
-
-
-
 
 theorem integral_norm_inv_closedBall_le {R : ℝ} (hR : 0 < R)
     {z : ℂ} (hz : z ∈ closedBall (0 : ℂ) R) :
@@ -116,17 +89,11 @@ theorem integral_norm_inv_closedBall_le {R : ℝ} (hR : 0 < R)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
-
 theorem integrableOn_cauchyIntegrand {h : ℂ → E} {R : ℝ}
     (hh : ContinuousOn h (closedBall (0 : ℂ) R)) (z : ℂ) :
     IntegrableOn (fun w => (z - w)⁻¹ • h w) (closedBall (0 : ℂ) R) :=
   ((locallyIntegrable_cauchyKernel_sub z).integrableOn_isCompact
     (isCompact_closedBall (0 : ℂ) R)).smul_continuousOn hh (isCompact_closedBall _ _)
-
-
-
 
 theorem norm_cauchyIntegral_le [CompleteSpace E] {h : ℂ → E} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : ContinuousOn h (closedBall (0 : ℂ) R))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RetainedReturnCover
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.Cyclic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_compact_whole_union_of_retained_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

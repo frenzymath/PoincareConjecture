@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionOpenAttachment
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionOpenExcision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,12 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_alexander_uncapped_region_balls {b c d q U V D : Set E}
     (hdim : Module.finrank ℝ E = 3)

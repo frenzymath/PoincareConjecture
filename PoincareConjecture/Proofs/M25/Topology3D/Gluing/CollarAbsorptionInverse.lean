@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -117,10 +106,6 @@ private theorem collar_contMDiffAt_left_inverse
 
 end InverseInCharts
 
-
-
-
-
 noncomputable def sphereIsotopyTrackDiffeomorph
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hF : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 2)) (𝓡 2) ∞
@@ -205,8 +190,6 @@ noncomputable def sphereIsotopyTrackDiffeomorph
     simpa only [e.apply_symm_apply] using hinv
   exact { toEquiv := e, contMDiff_toFun := hT, contMDiff_invFun := hTi }
 
-
-
 @[simp] theorem sphereIsotopyTrackDiffeomorph_apply
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hF : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 2)) (𝓡 2) ∞
@@ -214,8 +197,6 @@ noncomputable def sphereIsotopyTrackDiffeomorph
     (hFt : ∀ t : ℝ, ∃ g : Diffeomorph (𝓡 2) (𝓡 2)
       UnitTwoSphere UnitTwoSphere ∞, ∀ q, g q = F t q) (p : ℝ × UnitTwoSphere) :
     sphereIsotopyTrackDiffeomorph hF hFt p = (p.1, F p.1 p.2) := rfl
-
-
 
 @[simp] theorem sphereIsotopyTrackDiffeomorph_symm_fst
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}

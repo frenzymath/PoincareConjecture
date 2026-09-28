@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AllNonzeroCappedLevels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_ordinary_terminal_level_comparisons
     {s b d : Set X} (hs : IsFinitePLBallPair E s b) (A : X →ᵃ[ℝ] ℝ)

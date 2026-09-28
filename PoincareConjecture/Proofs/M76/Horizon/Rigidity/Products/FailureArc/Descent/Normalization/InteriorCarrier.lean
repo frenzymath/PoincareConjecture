@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProperFaceHalfCarrier
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ScalarPairSubcomplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,11 +15,6 @@ variable {U E V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.exists_interior_surface_face_carrier
     {s t : Stage e S f r C} (step : Step s t)

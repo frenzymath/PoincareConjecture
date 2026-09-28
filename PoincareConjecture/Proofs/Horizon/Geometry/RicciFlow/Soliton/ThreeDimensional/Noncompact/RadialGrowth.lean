@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hes
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Geodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -135,8 +127,6 @@ private theorem hasDerivAt_deriv_potential_geodesic {g : RiemannianMetric 3 M}
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_radial_derivative_lower_bound
     (S : GradientShrinkingSolitonData 3 M) :

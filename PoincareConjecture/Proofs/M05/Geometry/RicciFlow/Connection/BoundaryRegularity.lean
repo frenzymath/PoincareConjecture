@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Connection.Regularity
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -178,8 +169,6 @@ private lemma contDiffWithinAt_connection_apply
   exact Filter.Eventually.of_forall fun s =>
     (((F.metric s).inner_isInvertible x).inverse_apply_self _).symm
 
-
-
 theorem contDiffWithinAt_connection
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ J) {x : M}
     {Y : (y : M) → TangentSpace (𝓡 n) y}
@@ -194,8 +183,6 @@ theorem contDiffWithinAt_connection
     VectorBundle.finiteDimensional ℝ (EuclideanSpace ℝ (Fin n))
       (TangentSpace (𝓡 n) : M → Type _) x
   exact contDiffWithinAt_clm_of_apply (contDiffWithinAt_connection_apply F ht hY)
-
-
 
 lemma contDiffWithinAt_hessian
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ J)

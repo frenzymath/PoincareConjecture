@@ -1,16 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.AdjointIdentity
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter
 open scoped ContDiff Topology
@@ -174,6 +162,5 @@ theorem WeakSolutionOn.first_order_pairing
       (∑ i, g i y * (C.drift i y * φ y)) + u y * (C.zeroth y * φ y)) = 0 := by
   exact (first_order_pairing_eq_adjoint hU hC hw.1 hg hweak hφ hφc hφU).trans
     (hw.2 φ hφ hφc hφU)
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Canonical

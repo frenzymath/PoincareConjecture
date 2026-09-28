@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CyclicDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,19 +8,15 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
 def polygonCyclicPathBoundary (p : Polygon E n) (a b : Fin n) : Set E :=
   ⋃ i : Fin (cyclicDistance a b),
     p.edgeSet ℝ (cyclicArcIndex a (cyclicDistance a b) i.castSucc)
-
-
 
 theorem polygonCyclicPathBoundary_subset_boundary (p : Polygon E n) (a b : Fin n) :
     polygonCyclicPathBoundary p a b ⊆ p.boundary ℝ := by
   intro x hx
   obtain ⟨i, hi⟩ := mem_iUnion.mp hx
   exact polygon_edgeSet_subset_boundary p _ hi
-
 
 theorem polygonCyclicPathBoundary_isCompact (p : Polygon E n) (a b : Fin n) :
     IsCompact (polygonCyclicPathBoundary p a b) :=
@@ -59,8 +46,6 @@ private theorem cyclic_path_vertex_mem (p : Polygon E n) (a b : Fin n) (hab : b 
     exact polygon_right_mem_edgeSet p _
   · exact mem_iUnion.mpr ⟨j, polygon_left_mem_edgeSet p _⟩
 
-
-
 theorem polygonCyclicPathBoundary_endpoints (p : Polygon E n) (a b : Fin n)
     (hab : b ≠ a) :
     p a ∈ polygonCyclicPathBoundary p a b ∧ p b ∈ polygonCyclicPathBoundary p a b := by
@@ -69,8 +54,6 @@ theorem polygonCyclicPathBoundary_endpoints (p : Polygon E n) (a b : Fin n)
   constructor
   · simpa only [cyclicArcIndex_zero] using ha
   · simpa only [cyclicArcIndex_last, iterate_cyclicDistance] using hb
-
-
 
 theorem polygonCyclicPathBoundary_union (p : Polygon E n) (a b : Fin n) (hab : b ≠ a) :
     polygonCyclicPathBoundary p a b ∪ polygonCyclicPathBoundary p b a = p.boundary ℝ := by
@@ -88,8 +71,6 @@ theorem polygonCyclicPathBoundary_union (p : Polygon E n) (a b : Fin n) (hab : b
     rcases hindex with ⟨j, rfl⟩ | ⟨j, rfl⟩
     · exact Or.inl (mem_iUnion.mpr ⟨j, hi⟩)
     · exact Or.inr (mem_iUnion.mpr ⟨j, hi⟩)
-
-
 
 theorem IsSimplePolygon.polygonCyclicPathBoundary_inter {p : Polygon E n}
     (hp : IsSimplePolygon p) (a b : Fin n) (hab : b ≠ a) :
@@ -127,8 +108,6 @@ theorem IsSimplePolygon.polygonCyclicPathBoundary_inter {p : Polygon E n}
     rintro x (rfl | rfl)
     · exact ⟨hA.1, hB.2⟩
     · exact ⟨hA.2, hB.1⟩
-
-
 
 theorem IsSimplePolygon.vertex_mem_polygonCyclicPathBoundary_iff {p : Polygon E n}
     (hp : IsSimplePolygon p) (a b : Fin n) (hab : b ≠ a) (i : Fin n) :

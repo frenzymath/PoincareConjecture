@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.RelativeChartStars
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ variable {E F ι κ : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [Finite ι] [Finite κ]
-
-
-
-
 
 theorem exists_full_subcomplex_faceAffine_marked_relative_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

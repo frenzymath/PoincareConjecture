@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Tree
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step.ProtectedHeights
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,8 +13,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 -> E3} {v : E3} {A : Finset Real} {B : Set Real}
-
-
 
 theorem protected_germ_of_mem_leaves (tree : SphereSurgeryTree v A f)
     (hprotects : tree.Protects B) {g : S2 -> E3} (hg : g ∈ tree.leaves)
@@ -34,8 +30,6 @@ theorem protected_germ_of_mem_leaves (tree : SphereSurgeryTree v A f)
     · have hgp := ihP hprotects.2.2 hP
       have hpp : inner Real v (S.fPlus p) ∈ B := hgp.self_of_nhds ▸ hp
       exact hgp.trans (S.protected_plus_eventuallyEq (hprotects.1 _ hpp))
-
-
 
 theorem exists_protected_point_in_leaf (tree : SphereSurgeryTree v A f)
     (hprotects : tree.Protects B) {p : S2} (hp : inner Real v (f p) ∈ B) :

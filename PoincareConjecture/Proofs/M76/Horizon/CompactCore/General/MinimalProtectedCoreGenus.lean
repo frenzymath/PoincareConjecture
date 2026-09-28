@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Wall.CompressionComplexity
 import PoincareConjecture.Proofs.M76.Wall.ProtectedOpenRegion
 import Mathlib.Order.WellFounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

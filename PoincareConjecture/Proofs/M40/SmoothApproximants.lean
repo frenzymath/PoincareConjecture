@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M40.GlobalSmoothing
 import PoincareConjecture.Proofs.M40.Mathlib.PointCorrectionManifold
 import PoincareConjecture.Statements.M40ComparisonHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,10 +14,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {T : ℝ} {hT : T ∈ D.flow.surgery_times}
   [Nonempty (D.flow.slice T).carrier]
   {I : RepairedComparisonHomotopyInput D T hT}
-
-
-
-
 
 theorem comparison_smooth_approximants
     (Q : RepairedComparisonMapConclusion I.toRepairedComparisonMapInput) :

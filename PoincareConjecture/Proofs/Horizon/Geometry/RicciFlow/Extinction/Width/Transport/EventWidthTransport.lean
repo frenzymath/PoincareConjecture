@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskExistence
 import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Proofs.M61.Def18_17_Width.SphereCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

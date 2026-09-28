@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +10,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K L : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype L.faces]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 structure BoundaryEdgeFamily (T : BoundaryTriangleFibers K L) where
   map : Finset E → E × ℝ → E
@@ -35,9 +25,6 @@ structure BoundaryEdgeFamily (T : BoundaryTriangleFibers K L) where
     s ⊆ t → t.card = 3 → ∀ r ∈ I, map s (t.centroid ℝ id, r) = T.map t r
   boundary : ∀ s ∈ L.faces, s.card = 2 →
     ∀ x ∈ (L.barycentricDualBlock s).space ×ˢ I, map s x ∈ L.space ↔ x.2 = 0
-
-
-
 
 theorem BoundaryTriangleFibers.exists_edge_family [FiniteDimensional ℝ E] [DecidableEq E]
     (T : BoundaryTriangleFibers K L) (hLK : L ≤ K)

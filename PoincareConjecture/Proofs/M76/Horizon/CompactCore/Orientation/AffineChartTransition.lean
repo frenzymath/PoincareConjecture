@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedNerve
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexSimplex
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +16,6 @@ namespace PoincareConjecture.Proofs.M59
 open M02.Topology
 
 variable {J : Type u} [PartialOrder J] [Fintype J]
-
-
 
 theorem orderComplexSimplex_mem_neighborhood (s : Finset J) {n : ℕ}
     (z : (supportedNerve s).toSSet _⦋n⦌) (t : stdSimplex ℝ (Fin (n + 1))) :
@@ -45,12 +33,8 @@ theorem orderComplexSimplex_mem_neighborhood (s : Finset J) {n : ℕ}
 
 variable {E : Type u} [TopologicalSpace E] (p : C(E, (finiteOrderComplex J).space))
 
-
-
 def liftedCoordinateNeighborhood (s : Finset J) : Set E :=
   p ⁻¹' orderComplexNeighborhood s
-
-
 
 def supportedLiftSimplex (s : Finset J) {n : ℕ}
     (z : (supportedSingularLift p (orderComplexSingular J) s).toSSet _⦋n⦌) :
@@ -66,9 +50,6 @@ def supportedLiftSimplex (s : Finset J) {n : ℕ}
     exact orderComplexSimplex_mem_neighborhood s ⟨z.val.val.1, z.property⟩ t
   · exact ((TopCat.of E).toSSetObjEquiv _ z.val.val.2).continuous.subtype_mk _
 
-
-
-
 def supportedSingularComparison (s : Finset J) :
     (supportedSingularLift p (orderComplexSingular J) s).toSSet ⟶
       TopCat.toSSet.obj (TopCat.of (liftedCoordinateNeighborhood p s)) :=
@@ -77,8 +58,6 @@ def supportedSingularComparison (s : Finset J) :
     ext t : 1
     apply Subtype.ext
     rfl)
-
-
 
 theorem supportedSingularComparison_projection (s : Finset J) :
     supportedSingularComparison p s ≫ TopCat.toSSet.map
@@ -92,14 +71,10 @@ theorem supportedSingularComparison_projection (s : Finset J) :
   apply ((TopCat.of E).toSSetObjEquiv n).injective
   rfl
 
-
-
 def liftedCoordinateNeighborhoodInclusion {s t : Finset J} (h : s ⊆ t) :
     C(liftedCoordinateNeighborhood p s, liftedCoordinateNeighborhood p t) :=
   ⟨fun e => ⟨e.val, orderComplexNeighborhood_mono h e.property⟩,
     continuous_subtype_val.subtype_mk _⟩
-
-
 
 theorem supportedSingularComparison_naturality {s t : Finset J} (h : s ⊆ t) :
     SSet.Subcomplex.homOfLE (show supportedSingularLift p (orderComplexSingular J) s ≤

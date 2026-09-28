@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.CurvatureTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -42,7 +32,6 @@ private theorem connection_torsion_difference (D : LeviCivitaData g)
   rw [D.connection_sub (hXY.mdifferentiableAt (by simp))
     (hYX.mdifferentiableAt (by simp))] at hc
   exact congrArg (fun L => L v) hc
-
 
 theorem curvatureOnFields_cyclic_eq_zero_local (D : LeviCivitaData g)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -82,7 +71,6 @@ theorem curvatureOnFields_cyclic_eq_zero_local (D : LeviCivitaData g)
   unfold curvatureOnFields
   linear_combination (norm := abel) d1 + d2 + d3 + t1 + t2 + t3 + hj
 
-
 theorem curvature_cyclic_eq_zero (D : LeviCivitaData g) (x : M)
     (u v w : TangentSpace (𝓡 n) x) :
     D.curvature x u v w + D.curvature x v w u + D.curvature x w u v = 0 := by
@@ -90,7 +78,6 @@ theorem curvature_cyclic_eq_zero (D : LeviCivitaData g) (x : M)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) u)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) v)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) w)
-
 
 theorem inner_radialCurvature_symm (D : LeviCivitaData g) (x : M)
     (v u w : TangentSpace (𝓡 n) x) :

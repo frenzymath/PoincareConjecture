@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotionRegularity
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.PLCarrierMotion
-
-
-
-
 
 theorem slice_mem_piecewiseAffineGroupoid {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

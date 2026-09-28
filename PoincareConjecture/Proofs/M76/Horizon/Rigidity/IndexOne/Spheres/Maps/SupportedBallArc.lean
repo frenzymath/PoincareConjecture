@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.BallArcHomotopy
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,8 +13,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Q" => hamiltonOneHierarchyCoordinates
-
-
 
 theorem exists_supported_ball_phase_clamp {ι : Type*}
     {e : ι → OpenPartialHomeomorph X V3} {D S : Set X}

@@ -1,23 +1,8 @@
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_region_budget_contradiction
     {K mu delta area curvature turning : ℝ}

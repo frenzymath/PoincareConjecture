@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Smoothing.CircleGapConfigurations
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,17 +9,12 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {n : ℕ} {theta : ℝ}
 
-
-
 def gapAngle (w : Fin (n + 3) → ℝ) (i : Fin (n + 3)) : ℝ :=
   ∑ j ∈ Finset.Iio i, w j
-
 
 @[simp] theorem gapAngle_zero (w : Fin (n + 3) → ℝ) : gapAngle w 0 = 0 := by
   change (∑ j ∈ Finset.Iio (⊥ : Fin (n + 3)), w j) = 0
   rw [Finset.Iio_bot, Finset.sum_empty]
-
-
 
 theorem gapAngle_succ (w : Fin (n + 3) → ℝ) (i : Fin (n + 2)) :
     gapAngle w i.succ = gapAngle w i.castSucc + w i.castSucc := by
@@ -41,8 +27,6 @@ theorem gapAngle_succ (w : Fin (n + 3) → ℝ) (i : Fin (n + 2)) :
   rw [hset, Finset.sum_insert (by simp)]
   exact add_comm _ _
 
-
-
 theorem strictMono_gapAngle {w : Fin (n + 3) → ℝ} (hw : w ∈ shortArcGapSpace n theta) :
     StrictMono (gapAngle w) := by
   intro i j hij
@@ -51,8 +35,6 @@ theorem strictMono_gapAngle {w : Fin (n + 3) → ℝ} (hw : w ∈ shortArcGapSpa
     (Finset.mem_Iio.mpr hij) (by simp) (hw.1 i).1
   intro k _ _
   exact (hw.1 k).1.le
-
-
 
 theorem gapAngle_mem_Ico {w : Fin (n + 3) → ℝ} (hw : w ∈ shortArcGapSpace n theta)
     (i : Fin (n + 3)) : gapAngle w i ∈ Ico (0 : ℝ) (2 * Real.pi) := by
@@ -63,26 +45,17 @@ theorem gapAngle_mem_Ico {w : Fin (n + 3) → ℝ} (hw : w ∈ shortArcGapSpace 
         (by simp) (hw.1 i).1 (fun j _ _ => (hw.1 j).1.le)
     _ = 2 * Real.pi := hw.2.1
 
-
-
 theorem gapAngle_one {w : Fin (n + 3) → ℝ} (hw : w ∈ shortArcGapSpace n theta) :
     gapAngle w 1 = theta := by
   have h := gapAngle_succ w (0 : Fin (n + 2))
   simpa [hw.2.2] using h
 
-
-
 theorem continuous_gapAngle (i : Fin (n + 3)) :
     Continuous (fun w : Fin (n + 3) → ℝ => gapAngle w i) :=
   continuous_finsetSum _ fun j _ => continuous_apply j
 
-
-
 noncomputable def circleGapVertices (w : shortArcGapSpace n theta) (i : Fin (n + 3)) :
     AddCircle (2 * Real.pi) := (gapAngle w i : AddCircle (2 * Real.pi))
-
-
-
 
 theorem injective_circleGapVertices (w : shortArcGapSpace n theta) :
     Function.Injective (circleGapVertices w) := by
@@ -92,8 +65,6 @@ theorem injective_circleGapVertices (w : shortArcGapSpace n theta) :
   exact (AddCircle.coe_eq_coe_iff_of_mem_Ico (a := 0)
     (by simpa using gapAngle_mem_Ico w.property i)
     (by simpa using gapAngle_mem_Ico w.property j)).mp hij
-
-
 
 theorem continuous_circleGapVertices :
     Continuous (circleGapVertices : shortArcGapSpace n theta → Fin (n + 3) →

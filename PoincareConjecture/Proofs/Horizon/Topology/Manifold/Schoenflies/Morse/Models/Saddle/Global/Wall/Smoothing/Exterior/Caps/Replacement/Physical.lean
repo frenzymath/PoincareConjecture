@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.WholeCap
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev axis : E3 := EuclideanSpace.single 2 1
-
-
 
 def capPhysicalFrame {v : E3} (hv : ‖v‖ = 1)
     (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2) :
@@ -71,7 +67,6 @@ theorem capPhysicalFrame_smul {v : E3} (hv : ‖v‖ = 1)
   have hh : horizontal (s • p) = s • horizontal p := by ext i; fin_cases i <;> rfl
   simp [capPhysicalFrame_apply, hh, smul_add, smul_smul]
 
-
 theorem capPhysicalFrame_northernCap {v : E3} (hv : ‖v‖ = 1)
     (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2) :
     capPhysicalFrame hv J '' boundedCylinderNorthernCap axis =
@@ -111,8 +106,6 @@ theorem capPhysicalFrame_northernCap {v : E3} (hv : ‖v‖ = 1)
       simpa [axis, EuclideanSpace.inner_single_left, ← he] using hp
     · rw [capPhysicalFrame_smul, hq, hr]
 
-
-
 def capPhysicalCoordinates {v : E3} (hv : ‖v‖ = 1)
     (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2) (c z : Real) (hz : z ≠ 0) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ :=
@@ -131,7 +124,6 @@ theorem capPhysicalCoordinates_apply {v : E3} (hv : ‖v‖ = 1)
   rw [capPhysicalCoordinates_apply]
   simp [inner_add_right, inner_smul_right, hv,
     Submodule.mem_orthogonal_singleton_iff_inner_right.mp (J.symm (horizontal p)).property]
-
 
 def capPlanarCoordinates {v : E3} (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2)
     (B : Diffeomorph 𝓘(Real, Hemisphere.Plane v) 𝓘(Real, Hemisphere.Plane v)
@@ -159,8 +151,6 @@ theorem capPhysicalCoordinates_liftedCap {v : E3} (hv : ‖v‖ = 1)
   rw [hh]
   change (c + z * p 2) • v + (J.symm (J (B (J.symm (horizontal p)))) : E3) = _
   rw [J.symm_apply_apply]
-
-
 
 theorem exists_physical_relative_cap_replacement
     {v : E3} (hv : ‖v‖ = 1) (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2)

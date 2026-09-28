@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalTerminalEndCover
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -201,4 +194,3 @@ theorem HamiltonMarkedProtectedBall.original_labeled_end_frontier
   exact closed_cylinder_end_frontier hA W hcover hWends p av hav hpa hlabel
 
 end PoincareConjecture.M76
-

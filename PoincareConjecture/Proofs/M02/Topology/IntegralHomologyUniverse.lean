@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralChainUniverse
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexUniverse
 import PoincareConjecture.Proofs.M02.Topology.IntegralChartSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

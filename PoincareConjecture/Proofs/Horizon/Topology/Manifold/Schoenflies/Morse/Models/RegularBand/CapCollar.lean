@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.SpatialBoundaryAlignment
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.TwoCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +18,9 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 
-
 def boundedCylinderNorthernCap (v : E3) : Set E3 :=
   (fun p : S2 => boundedCylinderRadius v p • (p : E3)) ''
     {p : S2 | 0 ≤ inner Real v (p : E3)}
-
 
 def boundedCylinderCapCollar (v : E3) (ε : Real) : Set E3 :=
   boundedCylinderNorthernCap v ∩
@@ -63,8 +59,6 @@ private theorem mem_northernCap_of_height_norm_eq {v y z : E3}
     exact hp
   · change boundedCylinderRadius v q • (r⁻¹ • z) = z
     rw [hqr, smul_smul, mul_inv_cancel₀ hr.ne', one_smul]
-
-
 
 theorem boundedCylinderNorthernCap_mem_iff_of_height_projection_norm
     {v : E3} (hv : ‖v‖ = 1) {y z : E3}
@@ -192,9 +186,6 @@ private theorem image_capCollar_of_radial_alignment
     rw [hyproj]
     exact hD _ p ρ (hbc.trans (le_add_of_nonneg_right
       (mul_nonneg hs.le (height_nonneg_of_mem_boundedCylinderNorthernCap hz.1)))) hρε
-
-
-
 
 theorem exists_upper_cap_collar_alignment
     {v : E3} (hv : ‖v‖ = 1)

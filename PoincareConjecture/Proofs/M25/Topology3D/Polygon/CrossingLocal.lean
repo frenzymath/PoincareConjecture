@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CrossingBasics
 import Mathlib.Topology.Order.OrderClosed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,13 +12,9 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 noncomputable def lineSideParity (X H : E →ₗ[ℝ] ℝ) (a b q : E) : ZMod 2 := by
   classical
   exact if X q < X (lineLevelPoint H a b (H q)) then 1 else 0
-
-
 
 theorem segmentRayParity_factor (X H : E →ₗ[ℝ] ℝ) (a b q : E) :
     segmentRayParity X H a b q = lineSideParity X H a b q *
@@ -42,8 +28,6 @@ theorem segmentRayParity_factor (X H : E →ₗ[ℝ] ℝ) (a b q : E) :
 
 end Module
 
-
-
 theorem heightStep_eventually_eq {T : Type*} [TopologicalSpace T]
     {f : T → ℝ} {q : T} {a : ℝ} (hf : ContinuousAt f q) (ha : a ≠ f q) :
     ∀ᶠ z in 𝓝 q, heightStep a (f z) = heightStep a (f q) := by
@@ -52,8 +36,6 @@ theorem heightStep_eventually_eq {T : Type*} [TopologicalSpace T]
     simp only [heightStep, if_pos hlt.le, if_pos hz.le]
   · filter_upwards [hf.eventually (eventually_lt_nhds hgt)] with z hz
     simp only [heightStep, if_neg (not_le_of_gt hgt), if_neg (not_le_of_gt hz)]
-
-
 
 theorem segmentRayParity_eventually_eq_factor
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem exists_marked_full_surface_refinement
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

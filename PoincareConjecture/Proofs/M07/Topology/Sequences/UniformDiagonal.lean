@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 
-
-
-
-
-
-
-
-
 namespace Poincare
 
 open Filter Set
 open scoped Topology
-
-
-
 
 theorem exists_strictMono_tendstoUniformlyOn_diagonal
     {X Y : ℕ → Type*} [∀ i, PseudoMetricSpace (Y i)]

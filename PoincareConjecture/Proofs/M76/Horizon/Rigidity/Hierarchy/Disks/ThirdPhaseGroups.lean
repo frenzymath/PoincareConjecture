@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.SecondPhaseGroups
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -20,7 +12,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
-
 
 noncomputable def hamiltonZeroThirdCircleMap (phi : C(H0, H0)) : C(X0, C0) :=
   ⟨fun x => (hamiltonZeroHierarchyCoordinates (phi (hamiltonZeroAmbientEquiv x))).1.1,

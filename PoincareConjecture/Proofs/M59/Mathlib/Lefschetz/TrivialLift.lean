@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLift
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.DiscreteSingular
 import Mathlib.AlgebraicTopology.SimplicialSet.Monoidal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,13 +18,9 @@ variable {E X F : Type u} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (A : SSet.{u}) (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X))
   (e : E ≃ₜ X × F) (he : ∀ z, p z = (e z).1)
 
-
-
 def singularLiftFiberLabel (n : SimplexCategoryᵒᵖ)
     (z : (singularLiftSSet p A χ).obj n) : F :=
   (e ((TopCat.of E).toSSetObjEquiv n z.val.2 (stdSimplex.vertex 0))).2
-
-
 
 def singularTrivialLift (n : SimplexCategoryᵒᵖ) (a : A.obj n) (b : F) :
     (TopCat.toSSet.obj (TopCat.of E)).obj n :=
@@ -45,7 +31,6 @@ def singularTrivialLift (n : SimplexCategoryᵒᵖ) (a : A.obj n) (b : F) :
 include he in
 omit [DiscreteTopology F] in
 
-
 theorem singularTrivialLift_projection (n : SimplexCategoryᵒᵖ) (a : A.obj n) (b : F) :
     (TopCat.toSSet.map (TopCat.ofHom p)).app n (singularTrivialLift A χ e n a b) =
       χ.app n a := by
@@ -53,9 +38,6 @@ theorem singularTrivialLift_projection (n : SimplexCategoryᵒᵖ) (a : A.obj n)
   ext t
   change p (e.symm (((TopCat.of X).toSSetObjEquiv n (χ.app n a) t), b)) = _
   rw [he, e.apply_symm_apply]
-
-
-
 
 def singularLiftTrivializationIso : singularLiftSSet p A χ ≅
     (SimplicialObject.const (Type u)).obj F ⊗ A where

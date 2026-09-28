@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +11,6 @@ universe u
 namespace PoincareConjecture.SurgeryRegionEquivalence
 
 variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
-
 
 def symm (e : SurgeryRegionEquivalence A B U V) : SurgeryRegionEquivalence B A V U where
   map := e.inverse
@@ -35,7 +27,6 @@ variable (e : SurgeryRegionEquivalence A B U V)
 theorem mapsTo : MapsTo e.map U V := by
   intro x hx
   exact e.map_image.subset (mem_image_of_mem _ hx)
-
 
 theorem mfderiv_bijective {x : A.carrier} (hx : x ∈ interior U) :
     Function.Bijective (mfderiv (𝓡 3) (𝓡 3) e.map x) := by
@@ -81,7 +72,6 @@ theorem mapsTo_interior : MapsTo e.map (interior U) (interior V) := by
   intro x hx
   exact h (mem_image_of_mem _ hx)
 
-
 theorem image_interior : e.map '' interior U = interior V := by
   apply Subset.antisymm
   · rintro _ ⟨x, hx, rfl⟩
@@ -93,7 +83,6 @@ theorem image_interior : e.map '' interior U = interior V := by
 def sourceInterior : TopologicalSpace.Opens A.carrier := ⟨interior U, isOpen_interior⟩
 
 def targetInterior : TopologicalSpace.Opens B.carrier := ⟨interior V, isOpen_interior⟩
-
 
 noncomputable def interiorDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) (sourceInterior (U := U)) (targetInterior (V := V)) ∞ where

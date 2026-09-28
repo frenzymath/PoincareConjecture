@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactConfinement
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +21,6 @@ variable {X : Type*} [MetricSpace X] {p : X} {hc : RayComparison p} {n : ℕ}
 variable (hne : Nonempty (AsymptoticConePositive p hc))
   (hcover : ∀ z : AsymptoticConeUnitSlice p hc,
     ∃ (d : UnitSliceRadialChartData hc n) (x : d.Level), (d.levelHomeomorph x).1 = z)
-
-
 
 theorem exists_positiveCone_local_ambient_realization :
     letI := positiveConeChartedSpace hc n hne hcover
@@ -127,7 +110,6 @@ private theorem positive_pathELength_comp_eq_on
   rw [hm _ (hγU hu)]
   rfl
 
-
 theorem positiveCone_edist_le_pathELength :
     letI := positiveConeChartedSpace hc n hne hcover
     letI := positiveCone_isManifold hc n hne hcover
@@ -190,8 +172,6 @@ theorem positiveCone_edist_le_pathELength :
   rw [hN N le_rfl] at hfinal
   exact hfinal
 
-
-
 theorem positiveCone_edist_le_metric_edist :
     letI := positiveConeChartedSpace hc n hne hcover
     letI := positiveCone_isManifold hc n hne hcover
@@ -211,8 +191,6 @@ theorem positiveCone_edist_le_metric_edist :
   have hle := positiveCone_edist_le_pathELength hne hcover γ hγ
   rw [h0, h1] at hle
   exact hle.trans_lt hlen
-
-
 
 theorem UnitSliceRadialChartData.positiveChart_symm_inner
     (d : UnitSliceRadialChartData hc n) :
@@ -242,9 +220,6 @@ theorem UnitSliceRadialChartData.positiveChart_symm_inner
   have hm := positiveConeMetric_inner hne hcover d y v w
   rw [d.positiveMap_eq_chart_symm hne y, hderiv] at hm
   exact hm
-
-
-
 
 theorem exists_positiveCone_local_metric_edist_eq :
     letI := positiveConeChartedSpace hc n hne hcover
@@ -323,8 +298,6 @@ theorem exists_positiveCone_local_metric_edist_eq :
     (by simpa only [Function.comp_apply, h1] using C.left_inv hz.1) zero_le_one
   exact (hpath.trans_eq heq).trans_lt (hlen.trans_le (min_le_left _ _))
 
-
-
 theorem positiveCone_metric_edist_le_of_lipschitz_path :
     letI := positiveConeChartedSpace hc n hne hcover
     letI := positiveCone_isManifold hc n hne hcover
@@ -377,8 +350,6 @@ theorem positiveCone_metric_edist_le_of_lipschitz_path :
   have hfinal := hind N
   rw [hN N le_rfl] at hfinal
   simpa using hfinal
-
-
 
 theorem positiveCone_metric_edist_eq_of_metric_segment :
     letI := positiveConeChartedSpace hc n hne hcover
@@ -448,11 +419,6 @@ private theorem exists_distinct_nearby_chart_point
   · intro h
     exact hneq ((e.right_inv hu.1).symm.trans (congrArg e h))
   · simpa only [mem_preimage, Metric.mem_ball, dist_comm] using hu.2
-
-
-
-
-
 
 theorem positiveConeMetric_edist_eq
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -555,9 +521,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem positiveConeMetric_edist_eq_of_zero_ratio
     {n : ℕ} (hn : 1 ≤ n) {M : Type u} [TopologicalSpace M] [T3Space M]

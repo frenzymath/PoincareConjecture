@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskLipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,9 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 noncomputable def spanningDiskOfC1 (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (F : LoopPlane → M)
@@ -50,15 +38,10 @@ noncomputable def spanningDiskOfC1 (g : RiemannianMetric 3 M)
     area_integrable := integrableOn_parametrizedAreaDensity g hF
     area_nonnegative := parametrizedRiemannianArea_nonneg g F }
 
-
-
 theorem spanningDiskOfC1_area (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (F : LoopPlane → M)
     (hF : ContMDiff (𝓡 2) (𝓡 3) 1 F) (hboundary : ∀ z : LoopCircle, F z.val = γ z) :
     (spanningDiskOfC1 g γ F hF hboundary).area = parametrizedRiemannianArea g F := rfl
-
-
-
 
 theorem exists_lipschitz_disk_of_short [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M)) :

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.TimeTransport.Regularity
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,8 +12,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {a b : ℝ}
-
-
 
 theorem contMDiffOn_scalarCurvature_surface_Icc (hab : a < b)
     (F : RicciFlow 2 M (Icc a b)) :
@@ -40,7 +37,6 @@ theorem contMDiffOn_scalarCurvature_surface_Icc (hab : a < b)
   simp only [Pi.div_apply, Pi.mul_apply]
   rw [(F.connection p.1).ricci_eq_half_scalarCurvature_mul_inner]
   field_simp [hp]
-
 
 theorem continuousOn_scalarCurvature_surface_Icc_swap (hab : a < b)
     (F : RicciFlow 2 M (Icc a b)) :

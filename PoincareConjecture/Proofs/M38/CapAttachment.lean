@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.CapCollarSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +10,8 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def capAttachCoordinates (x : StandardCapSpace) : RoundCylinderSpace :=
   (capUnitDirection x, ‖x‖ - 1)
-
 
 theorem capAttachCoordinates_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ capAttachCoordinates
@@ -30,8 +20,6 @@ theorem capAttachCoordinates_smooth :
   intro x hx
   have hn : ContDiffAt ℝ ∞ (fun y : StandardCapSpace => ‖y‖) x := contDiffAt_norm ℝ hx
   exact (hn.sub contDiffAt_const).contMDiffAt.contMDiffWithinAt
-
-
 
 theorem cap_attachment_graph_closed {A : Type u} [TopologicalSpace A] [T2Space A]
     (C : RoundCylinderSpace → A)
@@ -85,8 +73,6 @@ theorem cap_attachment_graph_closed {A : Type u} [TopologicalSpace A] [T2Space A
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
 
-
-
 theorem event_cap_collar_central_retained {r : ℝ} (hr : 0 < r) (c : ℝ)
     (hball : F.standard_initial.metric.ball 0
       (F.standard_initial.cylindrical_end.radius + 4) = Metric.ball 0 r)
@@ -98,8 +84,6 @@ theorem event_cap_collar_central_retained {r : ℝ} (hr : 0 < r) (c : ℝ)
   refine ⟨i, ?_⟩
   rw [← event_cap_collar_central F T hT i hr c hball]
   exact Set.mem_image_of_mem _ ⟨Set.mem_univ _, Set.mem_singleton _⟩
-
-
 
 theorem event_cap_attachment_graph_closed {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (hdom : {x : StandardCapSpace | r - c < ‖x‖ ∧ ‖x‖ < r + c} ⊆

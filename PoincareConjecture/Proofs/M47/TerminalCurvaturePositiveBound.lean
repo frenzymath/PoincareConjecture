@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureStaticGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_positive_bound_of_neck_readout
     {epsilon1 epsilon A H : ℝ} (hM45 : M45SmallNeckScaleBound.{u} epsilon1)

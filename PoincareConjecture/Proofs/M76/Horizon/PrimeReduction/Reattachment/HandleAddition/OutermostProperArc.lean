@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -38,8 +29,6 @@ private theorem exists_proper_arc_cut_away
   · refine ⟨A,B,U,V,hA,hB',hU,hV,hAB,hABi,hAq,hBq,?_⟩
     exact disjoint_left.mpr (fun x hxA hxK => disjoint_left.mp hKW hxK
       (hABi.subset ⟨hxA,hKB hxK⟩))
-
-
 
 theorem exists_outermost_proper_arc_disk
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -128,9 +117,6 @@ theorem exists_outermost_proper_arc_disk
       intro j hj hji
       exact hout j hj hji (fun hjJ => hJe ⟨j,hjJ⟩)
 
-
-
-
 theorem exists_outermost_proper_arc_disk_with_contact
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (I : Finset ι) (W : ι → Set E) (a b : ι → E)
@@ -166,4 +152,3 @@ theorem exists_outermost_proper_arc_disk_with_contact
   exact disjoint_left.mpr (fun x hx hy => hx.2 (Or.inr (hcontact.subset ⟨hx.1,hy⟩)))
 
 end PoincareConjecture.M76
-

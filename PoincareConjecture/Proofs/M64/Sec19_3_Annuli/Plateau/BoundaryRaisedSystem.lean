@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMetricSource
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRaisedWeakEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -29,10 +20,6 @@ local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem m64WeightedMixedMetric_raised_quadratic_system
     {O S : Set LoopPlane} (hO : IsOpen O) (hS : MeasurableSet S)

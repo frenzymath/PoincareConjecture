@@ -1,20 +1,10 @@
 import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem SurgeryPrefixControls.capPersistenceScales
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

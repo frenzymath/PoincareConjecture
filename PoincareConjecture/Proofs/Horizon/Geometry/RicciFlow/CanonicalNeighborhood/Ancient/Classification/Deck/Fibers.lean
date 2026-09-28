@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Product
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +10,6 @@ open Function Poincare.Geometry.Riemannian.SpaceForm
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.AncientCylinderDeck
-
 
 theorem fiber_alternatives {M : Type*} [TopologicalSpace M]
     (q : UnitTwoSphere × ℝ → M) (hc : IsCoveringMap q)

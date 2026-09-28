@@ -3,17 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Bounds
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,14 +43,8 @@ private theorem m65Circle_slit {z p : Circle} (h : z ≠ p) :
   have hdiv : z / p = 1 := neg_injective (by simpa only [neg_div] using heq)
   exact h (div_eq_one.mp hdiv)
 
-
-
-
 def m65WeakCircleArg (p z : LoopCircle) : ℝ :=
   Complex.arg (-orthonormalBasisOneI.repr.symm z / orthonormalBasisOneI.repr.symm p)
-
-
-
 
 theorem m65WeakCircleArg_continuousAt {p z : LoopCircle} (h : z ≠ p) :
     ContinuousAt (fun q : LoopCircle × LoopCircle => m65WeakCircleArg q.1 q.2) (p, z) := by
@@ -141,11 +124,6 @@ private theorem m65Homeomorph_arc_dist
     (m65Circle_quotient_dist _ _ _).trans (m65CircleComplex_dist _ _)
   rw [← he]
   exact (m65Circle_arg_dist _ _).trans harg
-
-
-
-
-
 
 theorem m65WeakCircleParameter_arc_dist
     (β : C(LoopCircle, LoopCircle)) (hβ : M65WeakCircleParameter β)

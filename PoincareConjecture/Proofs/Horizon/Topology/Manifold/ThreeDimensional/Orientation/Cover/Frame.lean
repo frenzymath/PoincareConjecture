@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orie
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Cover.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Manifold
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,7 +34,6 @@ private theorem det_ne_zero_of_invertible
   obtain ⟨e, rfl⟩ := hA
   exact e.toLinearEquiv.isUnit_det'.ne_zero
 
-
 def frameLift (q : ℝ → M)
     (P : ℝ → EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
     (t : ℝ) : TotalSpace M := ⟨q t, decide ((P t).det < 0)⟩
@@ -52,7 +41,6 @@ def frameLift (q : ℝ → M)
 @[simp] theorem proj_frameLift (q : ℝ → M)
     (P : ℝ → EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
     (t : ℝ) : proj M (frameLift q P t) = q t := rfl
-
 
 theorem localTriv_frameLift (q : ℝ → M)
     (P : ℝ → EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3))
@@ -70,7 +58,6 @@ theorem localTriv_frameLift (q : ℝ → M)
       (mfderiv (𝓡 3) (𝓡 3) i.1 (q t)).det * (P t).det := LinearMap.det_comp _ _
   rw [hcomp]
   rw [decide_mul_neg _ _ hd (det_ne_zero_of_invertible hi), Bool.xor_comm]
-
 
 theorem continuousOn_frameLift {q : ℝ → M} {I : Set ℝ}
     {P : ℝ → EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3)}
@@ -105,7 +92,6 @@ theorem continuousOn_frameLift {q : ℝ → M} {I : Set ℝ}
     exact localTriv_frameLift q P i hsrc (hi s hs)
   · exact localTriv_frameLift q P i ((core M).mem_baseSet_at (q t)) (hi t ht)
 
-
 theorem eq_or_eq_flip_of_proj_eq {p q : TotalSpace M} (h : proj M p = proj M q) :
     p = q ∨ p = flip M q := by
   rcases p with ⟨x, b⟩
@@ -113,7 +99,6 @@ theorem eq_or_eq_flip_of_proj_eq {p q : TotalSpace M} (h : proj M p = proj M q) 
   change x = y at h
   subst y
   cases b <;> cases c <;> simp [flip]
-
 
 theorem endpoint_flip_of_lift {c d : ℝ → TotalSpace M} {a b : ℝ}
     (hab : a ≤ b) (hc : ContinuousOn c (Icc a b)) (hd : ContinuousOn d (Icc a b))
@@ -127,8 +112,6 @@ theorem endpoint_flip_of_lift {c d : ℝ → TotalSpace M} {a b : ℝ}
   · have he := (isCoveringMap M).eqOn_of_comp_eqOn isPreconnected_Icc hd
       ((continuous_flip M).comp_continuousOn hc) hproj ha hflip
     simp only [he hb, he ha, Function.comp_apply, hend, flip_flip]
-
-
 
 theorem det_inverse_comp_neg_of_flip_lift
     {q : ℝ → M} {c : ℝ → TotalSpace M} {a b : ℝ}
@@ -165,8 +148,6 @@ theorem det_inverse_comp_neg_of_flip_lift
   · exact mul_neg_of_pos_of_neg (by nlinarith [hmul]) hna
   · exact mul_neg_of_neg_of_pos (by nlinarith [hmul]) hpa
   · simp [not_lt_of_gt hpa, not_lt_of_gt hpb] at hs
-
-
 
 theorem holonomy_det_neg_of_flip_endpoint :
     letI := chartedSpace M

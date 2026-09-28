@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M25
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {U : Set M} (T : OpenCylinderModel U)
-
-
 
 theorem openCylinderModel_mem_tail_iff (side : Bool) {a : ℝ}
     (ha : a ∈ Set.Ioo (0 : ℝ) 1) (x : M) :
@@ -57,13 +46,9 @@ theorem openCylinderModel_mem_tail_iff (side : Bool) {a : ℝ}
       exact ⟨T.inverse x, ⟨mem_univ _, hheight, (T.inverse_mem x hx).2.2⟩,
         T.right_inverse hx⟩
 
-
-
 theorem openCylinderModel_tail_subset (side : Bool) {a : ℝ}
     (ha : a ∈ Set.Ioo (0 : ℝ) 1) : T.tail side a ⊆ U :=
   fun x hx => ((openCylinderModel_mem_tail_iff T side ha x).mp hx).1
-
-
 
 theorem openCylinderModel_coordinate_slab_subset {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) :
@@ -73,8 +58,6 @@ theorem openCylinderModel_coordinate_slab_subset {a b : ℝ}
     ⟨ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
   have hm := (T.homeomorph (z.1, ⟨z.2, hzs⟩)).property
   rwa [T.coordinate_eq] at hm
-
-
 
 theorem openCylinderModel_isCompact_coordinate_slab {a b : ℝ}
     (ha : 0 < a) (hb : b < 1) :

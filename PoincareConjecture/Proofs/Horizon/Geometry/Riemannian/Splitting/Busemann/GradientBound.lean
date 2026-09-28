@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem one_le_gradient_norm_of_calibrated_spheres (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {x : M}
@@ -83,8 +73,6 @@ theorem one_le_gradient_norm_of_calibrated_spheres (D : LeviCivitaData g)
   rw [habs] at hreal
   change (r : ℝ) / 2 ≤ C * ((r : ℝ) / 2) at hreal
   nlinarith
-
-
 
 theorem gradient_normSq_eq_one_of_distance_lipschitz_of_calibrated_spheres
     (D : LeviCivitaData g) {f : M → ℝ}

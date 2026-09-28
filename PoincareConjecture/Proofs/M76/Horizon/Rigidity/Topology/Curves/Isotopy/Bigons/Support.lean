@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.ProperArcPai
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry PLAnnularStrip
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
-
 
 noncomputable def annularLiftProjection (x : P2) : P2 :=
   annulusMap 8 (by norm_num) ((x.2 : Circle), x.1)

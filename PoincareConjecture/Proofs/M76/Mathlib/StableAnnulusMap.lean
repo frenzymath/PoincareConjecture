@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredAnnulusChart
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem centeredAnnulusMap_middle {L s t : ℝ} (hL : 0 < L)
     (ht : 4 * |t| < L) (hl : 2 * |t| ≤ L / 2 + s)
@@ -29,9 +15,6 @@ theorem centeredAnnulusMap_middle {L s t : ℝ} (hL : 0 < L)
   unfold centeredAnnulusMap
   rw [← AddCircle.coe_add, annulusMap_middle hL ht hl (by linarith)]
   exact Prod.ext (by dsimp; ring) rfl
-
-
-
 
 theorem centeredAnnulusMap_snd_mem {L d : ℝ} (hL : 0 < L)
     (hd : 0 ≤ d) (hwidth : 4 * d < L) (z : AddCircle (4 * L))
@@ -47,9 +30,6 @@ end PLAnnularStrip
 
 namespace StableAnnulus
 
-
-
-
 noncomputable def squash : (ℝ × ℝ) ≃ₜ (ℝ × ℝ) where
   toFun z := (z.1, z.2 / 64)
   invFun z := (z.1, 64 * z.2)
@@ -57,9 +37,6 @@ noncomputable def squash : (ℝ × ℝ) ≃ₜ (ℝ × ℝ) where
   right_inv z := Prod.ext rfl (by dsimp; ring)
   continuous_toFun := continuous_fst.prodMk (continuous_snd.div_const 64)
   continuous_invFun := continuous_fst.prodMk (continuous_snd.const_mul 64)
-
-
-
 
 theorem squash_mem_piecewiseAffineGroupoid :
     squash.toOpenPartialHomeomorph ∈ piecewiseAffineGroupoid (ℝ × ℝ) := by
@@ -70,19 +47,11 @@ theorem squash_mem_piecewiseAffineGroupoid :
   intro z _
   exact Prod.ext rfl (by change 1 / 64 * z.2 = z.2 / 64; ring)
 
-
-
-
 noncomputable def width (x : ℝ) : ℝ := max 0 (|x| - 1)
-
-
 
 theorem continuous_width : Continuous width := by
   unfold width
   fun_prop
-
-
-
 
 theorem locallyPiecewiseAffineOn_width : LocallyPiecewiseAffineOn width univ := by
   intro x _
@@ -100,22 +69,15 @@ theorem locallyPiecewiseAffineOn_width : LocallyPiecewiseAffineOn width univ := 
   rw [hJK]
   exact hxK (mem_singleton x)
 
-
-
 noncomputable def expand : (ℝ × ℝ) ≃ₜ (ℝ × ℝ) :=
   PLFiberCompression.homeomorph 64 (by norm_num) width
     (fun _ => le_max_left _ _) continuous_width
-
-
 
 theorem expand_mem_piecewiseAffineGroupoid :
     expand.toOpenPartialHomeomorph ∈ piecewiseAffineGroupoid (ℝ × ℝ) :=
   PLFiberCompression.homeomorph_mem_piecewiseAffineGroupoid
     64 (by norm_num) width (fun _ => le_max_left _ _)
       continuous_width locallyPiecewiseAffineOn_width
-
-
-
 
 theorem expand_squash_core {s : ℝ} (hs : |s| ≤ 1) (t : ℝ) :
     expand (squash (s, t)) = (s, t) := by
@@ -124,9 +86,6 @@ theorem expand_squash_core {s : ℝ} (hs : |s| ≤ 1) (t : ℝ) :
   · change PLFiberCompression.value 64 (width s) (t / 64) = t
     rw [width, max_eq_left (sub_nonpos.mpr hs), PLFiberCompression.value_zero_width]
     ring
-
-
-
 
 theorem expand_squash_outer {s t : ℝ} (hs : 5 < |s|) (ht : |t| < 1) :
     expand (squash (s, t)) = squash (s, t) := by
@@ -138,9 +97,6 @@ theorem expand_squash_outer {s t : ℝ} (hs : 5 < |s|) (ht : |t| < 1) :
     apply PLFiberCompression.value_of_mem
     have ht' := abs_lt.mp ht
     constructor <;> linarith [ht'.1, ht'.2]
-
-
-
 
 theorem expand_squash_snd_mem (s : ℝ) {t : ℝ} (ht : |t| < 1) :
     (expand (squash (s, t))).2 ∈ Ioo (-1) 1 := by

@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StableTwoTorus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableTorus
-
-
-
-
-
-
 
 theorem exists_threeTorus_band_PL_immersion :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

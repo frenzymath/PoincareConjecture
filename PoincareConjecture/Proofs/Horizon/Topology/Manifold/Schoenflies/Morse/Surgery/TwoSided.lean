@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.ParallelCuts
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.ParallelDisks.CuttingCharts
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +31,6 @@ private theorem projection_mem_transported_cap
   rw [Poincare.Geometry.Euclidean.projection_liftPlaneDiffeomorph]
   exact mem_image_of_mem A (mem_closedBall_zero_iff.mpr
     (norm_boundedCylinder_projection_le v hv p))
-
-
-
 
 theorem exists_two_sided_surgery_of_cylindrical_tube
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

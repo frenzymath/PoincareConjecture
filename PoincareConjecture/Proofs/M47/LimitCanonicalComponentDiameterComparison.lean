@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.SeedLimitPhysicalTangent
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_component_eventually_diameter_comparison
     (F : ℕ → SurgeryFlowData.{u})

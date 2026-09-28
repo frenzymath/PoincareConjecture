@@ -6,15 +6,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Prod
 import Mathlib.Topology.Algebra.Module.Equiv
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "D2" => Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
 
 theorem planarDiffeomorphFamily_contDiff_symm
     (Phi : ℝ → D2)
@@ -109,10 +97,6 @@ theorem planarDiffeomorphFamily_contDiff_symm
     rw [← heInv]
     exact contDiffOn_univ.mp heInvOn
   exact hN.snd
-
-
-
-
 
 theorem exists_compact_planar_family_height_lift
     (Phi : ℝ → D2)

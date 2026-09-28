@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.ContainedSphere
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.CoreExpansion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem compact_component_of_outward_boundary_graph (C D : CapCertificate g)
     (h : UnitTwoSphere → ℝ) (hh : Continuous h)
@@ -55,7 +43,6 @@ theorem compact_component_of_outward_boundary_graph (C D : CapCertificate g)
   obtain ⟨x, hx, hxD⟩ := hcontact
   exact ⟨x, hx, D.closed_core_subset_graphTransport_of_graph_in_end
     hr hrB h hh hbound hend hxD⟩
-
 
 theorem compact_component_of_outward_boundary_slice (C D : CapCertificate g)
     {a : ℝ} (ha : a ∈ Ioo (-D.boundary_neck.epsilon⁻¹) D.boundary_neck.epsilon⁻¹)

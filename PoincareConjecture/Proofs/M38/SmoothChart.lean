@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem smooth_left_inverse_mfderiv_bijective {f : M → N} {g : N → M} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
@@ -56,7 +45,6 @@ theorem smooth_left_inverse_mfderiv_bijective {f : M → N} {g : N → M} {U : S
   exact ⟨hleft.injective,
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hfin).mp hleft.injective⟩
 
-
 theorem smooth_left_inverse_image_open {f : M → N} {g : N → M} {U V : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
     (hg : ContMDiffOn (𝓡 n) (𝓡 n) ∞ g (f '' U))
@@ -68,8 +56,6 @@ theorem smooth_left_inverse_image_open {f : M → N} {g : N → M} {U V : Set M}
     (hf.contMDiffAt (hU.mem_nhds (hVU hx)))
     (smooth_left_inverse_mfderiv_bijective hU hf hg hinv (hVU hx))]
   exact image_mem_map (hV.mem_nhds hx)
-
-
 
 theorem smooth_left_inverse_openEmbedding {f : M → N} {g : N → M} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)

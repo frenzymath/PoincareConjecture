@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.PositiveHistoryComponent
 import PoincareConjecture.Proofs.M47.PositiveHistoryOrdinary
 import PoincareConjecture.Proofs.M47.PositiveHistoryOnset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,11 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
-
-
 
 theorem exists_positive_component_history
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {origin b : ℝ}

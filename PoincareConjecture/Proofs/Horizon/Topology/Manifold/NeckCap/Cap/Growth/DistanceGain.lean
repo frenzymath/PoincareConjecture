@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.BoundaryDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,7 +36,6 @@ theorem frontier_inter_nonempty_of_carrier_crossing (C : CapCertificate g)
   exact hmem
 
 omit [T2Space M] in
-
 
 theorem complement_distance_gain_of_frontier_separation (C D : CapCertificate g)
     (hCD : C.carrier ⊆ D.carrier) {δ : ℝ≥0∞}

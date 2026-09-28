@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.M63LocalFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {c d : ℝ → ℝ → M} {J K : Set ℝ}
 
-
-
 theorem c2_restrict (hc : M63C2ShrinkingCurveOn F c J) (hK : K ⊆ J) :
     M63C2ShrinkingCurveOn F c K where
   domain_subset := hK.trans hc.domain_subset
@@ -36,9 +24,6 @@ theorem c2_restrict (hc : M63C2ShrinkingCurveOn F c J) (hK : K ⊆ J) :
   velocity_continuous := hc.velocity_continuous.mono (Set.prod_mono Subset.rfl hK)
   curvature_continuous := hc.curvature_continuous.mono (Set.prod_mono Subset.rfl hK)
   equation t ht := hc.equation t (interior_mono hK ht)
-
-
-
 
 theorem c2_congr (hc : M63C2ShrinkingCurveOn F c J)
     (h : ∀ t ∈ J, ∀ x, d x t = c x t) : M63C2ShrinkingCurveOn F d J := by
@@ -79,9 +64,6 @@ theorem c2_congr (hc : M63C2ShrinkingCurveOn F c J)
         (hslice t (interior_subset ht))
     rw [hv, hH]
     exact hc.equation t ht x
-
-
-
 
 theorem c2_of_closed_prefixes {T : ℝ}
     (hprefix : ∀ t ∈ Ico a T, ∃ s, t < s ∧ s < T ∧

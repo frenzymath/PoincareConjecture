@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RestrictedGaugeJets
 import PoincareConjecture.Proofs.M35.RadialGauge.EuclideanGaugeSecondJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -22,8 +13,6 @@ variable {m n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 local notation "W" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem restricted_euclideanGauge_jets_joint_c1 (I : V →L[ℝ] W)
     {u : ℝ → W → ℝ} {J : Set ℝ}

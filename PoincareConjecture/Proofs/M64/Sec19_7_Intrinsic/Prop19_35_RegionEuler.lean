@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionFrontier
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexContributions
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,12 +36,6 @@ private theorem sum_endpoint_degree
     Finset.sum_const, Finset.card_univ, nsmul_eq_mul]
   ring
 
-
-
-
-
-
-
 theorem m64Intrinsic_region_boundary_degree_sum
     {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)
     (F : I → OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -77,12 +59,6 @@ theorem m64Intrinsic_region_boundary_degree_sum
     (fun e => Euler.coordinateEdgeEnds_distinct face F b hsource e.1)
 
 open Classical in
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_gaussBonnet_euler
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

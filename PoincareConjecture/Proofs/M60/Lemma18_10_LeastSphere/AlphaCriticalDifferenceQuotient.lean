@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalPotential
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.Subcritical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open Poincare.Analysis.Sobolev.EuclideanEmbedding.EuclideanSubcritical
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
 
 theorem suNaturalGrowth_error_bound
     {I K J L a b c d e nu C : ℝ} (hnu : 0 < nu) (hC : 0 ≤ C)
@@ -57,9 +47,6 @@ private theorem suDual_apply_sq_le
     (L : E →L[ℝ] ℝ) (v : E) : (L v) ^ 2 ≤ ‖L‖ ^ 2 * ‖v‖ ^ 2 := by
   have h := pow_le_pow_left₀ (norm_nonneg (L v)) (L.le_opNorm v) 2
   simpa only [Real.norm_eq_abs, sq_abs, mul_pow] using h
-
-
-
 
 theorem suNaturalGrowth_dual_pointwise
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -123,8 +110,6 @@ theorem suNaturalGrowth_dual_pointwise
   dsimp only [I, L]
   simp only [add_apply, map_add, map_smul, smul_eq_mul]
   nlinarith
-
-
 
 theorem suWeakPartial_two_dim_memLp
     {center : LoopPlane} {r R : ℝ} (hrR : r < R)
@@ -191,8 +176,6 @@ theorem suWeakPartial_two_dim_memLp
   filter_upwards [ae_restrict_mem measurableSet_ball] with x hx
   simp only [v, hchi1 x (Metric.ball_subset_closedBall hx), one_mul]
 
-
-
 theorem suInitialGain_of_integral_diffQuot_bound
     {m : ℕ} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -237,9 +220,6 @@ theorem suInitialGain_of_integral_diffQuot_bound
     apply MemLp.of_eval_piLp
     intro a
     exact (hHm a i k).mono_measure (Measure.restrict_mono hsub le_rfl)
-
-
-
 
 theorem suNaturalGrowth_translated_potential
     {center : LoopPlane} {r R kappa : ℝ} {H W : LoopPlane → ℝ}
@@ -310,8 +290,6 @@ theorem suNaturalGrowth_translated_potential
   exact add_le_add (hpot phi hphi hc (hs.trans
     (Metric.ball_subset_ball (by linarith [norm_nonneg a])))) (hpot psi hpsi hpsic hpsis)
 
-
-
 theorem suNaturalGrowth_column_pointwise {m : ℕ}
     (L : (EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m)) →L[ℝ] ℝ)
     (B : EuclideanSpace ℝ (Fin m) →L[ℝ] ℝ)
@@ -380,8 +358,6 @@ theorem suNaturalGrowth_column_pointwise {m : ℕ}
   have hj := mul_le_mul_of_nonneg_left hcutoff (mul_nonneg hC hW)
   nlinarith
 
-
-
 theorem suNaturalGrowth_cutoff_remainder_bounded
     {m : ℕ} {p r t : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) [Fact (1 ≤ r)]
     [ENNReal.HolderTriple p p t] [ENNReal.HolderConjugate r t]
@@ -437,8 +413,6 @@ namespace SUQuadraticWeakSystem
 variable {m : ℕ} {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
   {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {R : ℝ}
 
-
-
 theorem flux_coercive (S : SUQuadraticWeakSystem u V center R)
     {x : LoopPlane × EuclideanSpace ℝ (Fin m)}
     (hx : x ∈ Metric.closedBall center R ×ˢ
@@ -462,9 +436,6 @@ theorem flux_coercive (S : SUQuadraticWeakSystem u V center R)
     exact le_rfl
   have hnonneg : 0 ≤ S.constant ^ 2 / S.nu := by positivity [S.nu_pos]
   nlinarith
-
-
-
 
 theorem difference_pointwise (S : SUQuadraticWeakSystem u V center R)
     {x y : LoopPlane × EuclideanSpace ℝ (Fin m)}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizationJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -16,8 +7,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capPersistence_normalized_tensor_error_jet_le
     (B D : RoundCylinderTwoTensor) (q : UnitTwoSphere) (s lambda : ℝ)

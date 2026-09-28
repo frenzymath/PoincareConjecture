@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.LevelCutoff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,36 +15,29 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def levelQ (D : LeviCivitaData g) (f : M → ℝ) (x : M) : ℝ :=
   g.inner x (D.gradient f x) (D.gradient f x)
-
 
 def levelUnitNormal (D : LeviCivitaData g) (f : M → ℝ) (x : M) :
     TangentSpace (𝓡 n) x :=
   (Real.sqrt (D.levelQ f x))⁻¹ • D.gradient f x
 
-
 def levelProjection (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     (v : TangentSpace (𝓡 n) x) : TangentSpace (𝓡 n) x :=
   v - (g.inner x (D.levelUnitNormal f x) v) • D.levelUnitNormal f x
-
 
 def levelSecondFundamental (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     (v w : TangentSpace (𝓡 n) x) : ℝ :=
   D.hessian f x (D.levelProjection f x v) (D.levelProjection f x w) /
     Real.sqrt (D.levelQ f x)
 
-
 def levelMeanCurvature (D : LeviCivitaData g) (f : M → ℝ) (x : M) : ℝ :=
   ∑ i, D.levelSecondFundamental f x (g.orthonormalBasis x i) (g.orthonormalBasis x i)
-
 
 def levelGaussTerm (D : LeviCivitaData g) (f : M → ℝ) (x : M) : ℝ :=
   (D.levelMeanCurvature f x) ^ 2 -
     ∑ i, ∑ j, (D.levelSecondFundamental f x
       (g.orthonormalBasis x i) (g.orthonormalBasis x j)) ^ 2
-
 
 def levelBochnerDifference (D : LeviCivitaData g) (f : M → ℝ) (x : M) : ℝ :=
   D.levelGaussTerm f x -
@@ -62,9 +47,6 @@ theorem contMDiff_levelQ (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (D.levelQ f) :=
   D.contMDiff_inner_gradient hf hf
-
-
-
 
 theorem levelGaussTerm_eq_scalarOperators (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M)
@@ -133,7 +115,6 @@ theorem levelGaussTerm_eq_scalarOperators (D : LeviCivitaData g)
   rw [← hrq]
   field_simp
 
-
 theorem levelMeanCurvature_eq_scalarOperators (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M)
     (hreg : 0 < D.levelQ f x) :
@@ -160,7 +141,6 @@ theorem levelMeanCurvature_eq_scalarOperators (D : LeviCivitaData g)
   field_simp [hreg.ne']
   rw [hs]
   ring
-
 
 theorem levelBochnerDifference_eq_scalarOperators (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M)

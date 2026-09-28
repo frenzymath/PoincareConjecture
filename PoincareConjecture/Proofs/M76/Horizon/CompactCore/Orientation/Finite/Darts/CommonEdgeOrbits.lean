@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.VertexFibers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AbstractSimplicialComplex

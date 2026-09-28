@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.PolarDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem capMetricInner_polar (a : ℝ) {r : ℝ} (hr : 0 < r)
     (u V W : StandardCapSpace) (hu : ‖u‖ = 1)
@@ -38,7 +26,6 @@ theorem capMetricInner_polar (a : ℝ) {r : ℝ} (hr : 0 < r)
     congrArg (fun q : ℝ => q * (s * t)) hb]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capRiemannianMetric_cylinder_pullback {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (hn : capProfile a Real.pi = Real.sqrt 2)

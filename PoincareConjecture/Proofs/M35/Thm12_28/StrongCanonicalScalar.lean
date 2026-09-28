@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ReturnedNeck
 import PoincareConjecture.Proofs.M35.Thm12_28.EvolvingNeckScalar
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,9 +21,6 @@ private theorem component_noncompact {J : Set ℝ} {t : ℝ} (ht : t ∈ J)
     exact (sliceDiffeomorph ht).surjective.range_eq
   exact noncompact_univ StandardCapSpace
     (him ▸ hc.image (sliceDiffeomorph ht).continuous)
-
-
-
 
 theorem exists_strong_canonical_scalar_bounds (P : M35StandardCapPredecessors) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧

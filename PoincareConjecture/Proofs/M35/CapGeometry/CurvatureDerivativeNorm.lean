@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureDerivativeJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ attribute [local instance] covectorNormedGroup
 
 attribute [local instance] bilinearNormedGroup
 
-
-
 theorem curvatureDerivativeNorm_one_eq_components
     {g : RiemannianMetric 3 V} (D : LeviCivitaData g) (x : V) :
     D.curvatureDerivativeNorm 1 x =
@@ -48,8 +38,6 @@ theorem curvatureDerivativeNorm_one_eq_components
   have h := tensorNormFromComponents_eq_sqrt_sum A b (g.orthonormalBasis x)
   simp_rw [← hA] at h
   exact h.symm
-
-
 
 theorem curvatureDerivativeNorm_one_tendsto_of_metric_jets
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

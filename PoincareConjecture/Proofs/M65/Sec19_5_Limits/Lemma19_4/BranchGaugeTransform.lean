@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeCalculu
 import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.Analysis.Analytic.IsolatedZeros
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ private theorem isUnit_clm_injective {P : E →L[ℂ] E} (hP : IsUnit P) :
   exact hh
 
 variable [CompleteSpace E]
-
-
-
 
 theorem differentiableOn_inverse_matrix_field
     {A P : ℂ → E →L[ℂ] E} {F : ℂ → E} {s : Set ℂ}
@@ -67,10 +54,6 @@ theorem differentiableOn_inverse_matrix_field
   have hzH : dbar H z = 0 :=
     isUnit_clm_injective (hunit z) (by simpa only [map_zero] using hzP)
   exact (differentiableAt_complex_of_dbar_eq_zero hH hzH).differentiableWithinAt
-
-
-
-
 
 theorem exists_power_factor_of_matrix_field
     {A P : ℂ → E →L[ℂ] E} {F : ℂ → E} {s : Set ℂ} {z0 : ℂ}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalPullbackTensors
 import PoincareConjecture.Proofs.M34.Standard.ReverseCoordinateTransport
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndFixedDerivativeBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_endOriginal_density_bounds
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

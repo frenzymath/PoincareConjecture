@@ -3,25 +3,12 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem exists_linear_local_inverse {T E : Type*}
     [NormedAddCommGroup T] [InnerProductSpace ℝ T] [FiniteDimensional ℝ T]
@@ -57,10 +44,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
-
-
-
-
 
 theorem m65Embedding_exists_linear_chart (e : M → EuclideanSpace ℝ (Fin N))
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

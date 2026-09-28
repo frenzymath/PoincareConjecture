@@ -4,23 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,7 +22,6 @@ variable {M : Type*} [TopologicalSpace M]
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
 
-
 theorem four_le_floor_inv_epsilon (N : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 4) :
     4 ≤ ⌊N.epsilon⁻¹⌋₊ := by
   apply (Nat.le_floor_iff (inv_nonneg.mpr N.epsilon_pos.le)).mpr
@@ -48,9 +30,6 @@ theorem four_le_floor_inv_epsilon (N : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 4
   linarith
 
 end Neck
-
-
-
 
 theorem exists_roundCylinderChristoffel_threeJet_center_bound :
     ∃ J : ℝ, 0 < J ∧ ∀ (q : UnitTwoSphere) (s : ℝ) (r : ℕ), r ≤ 3 →
@@ -86,9 +65,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_pullback_covariant_contDiffAt (N : EpsilonNeck g)
     (q : UnitTwoSphere) {p : RoundCylinderCoordinates}
@@ -132,9 +108,6 @@ private theorem norm_iteratedFDeriv_succ_le_of_cylinder_basis_bound
     rw [← heq]
     exact (ContinuousMultilinearMap.le_opNorm _ v).trans
       (mul_le_mul_of_nonneg_right (hb i) hp)
-
-
-
 
 theorem exists_normalized_pullback_covariant_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

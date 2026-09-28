@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundarySubdivision
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -13,11 +8,6 @@ open Set MeasureTheory
 open scoped BigOperators
 
 namespace PoincareConjecture.M64
-
-
-
-
-
 
 theorem exists_subordinate_scaled_subdivision {a b r : ℝ} (hab : a < b) (hr : 0 < r)
     (e : ℝ → ℝ) (he : ∀ x, 0 < e x) :
@@ -43,11 +33,6 @@ theorem exists_subordinate_scaled_subdivision {a b r : ℝ} (hab : a < b) (hr : 
   change tag i - r * e (tag i) < tag i + r * t ∧
     tag i + r * t < tag i + r * e (tag i) at hh
   constructor <;> nlinarith only [hh.1, hh.2, hr]
-
-
-
-
-
 
 theorem scaled_subdivision_integral {N : ℕ} (v : ℕ → ℝ) (tag : Fin N → ℝ)
     {r : ℝ} (hr : r ≠ 0) (f : ℝ → ℝ)

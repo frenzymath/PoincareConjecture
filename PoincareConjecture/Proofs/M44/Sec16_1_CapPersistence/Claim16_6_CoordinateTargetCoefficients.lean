@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_PhysicalCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_OpenCoordinateRicci
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoefficientTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ namespace PoincareConjecture.M44
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 
-
-
-
 theorem open_extChartAt_symm_apply {n : ℕ} (U : Opens (E n)) (q x : U) :
     (extChartAt (𝓡 n) q).symm (x : E n) = x := by
   have hcharts : extChartAt (𝓡 n) q = extChartAt (𝓡 n) x := by
@@ -32,9 +21,6 @@ theorem open_extChartAt_symm_apply {n : ℕ} (U : Opens (E n)) (q x : U) :
   have h := extChartAt_to_inv (I := 𝓡 n) x
   rw [congrFun (open_extChartAt_coe U x) x] at h
   exact h
-
-
-
 
 theorem coordinateFlowToTarget_pullbackCoefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]

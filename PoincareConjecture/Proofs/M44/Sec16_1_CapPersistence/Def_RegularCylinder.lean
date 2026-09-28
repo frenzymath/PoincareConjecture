@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ variable (F : SurgeryFlowData.{u}) {a b q : ℝ} (hab : a < b)
   (hJ : Icc a b ⊆ F.time_domain) (hS : Disjoint F.surgery_times (Ioc a b))
   (hq : 0 < q) {I : Set ℝ} (hI : I.OrdConnected)
   (htime : ∀ s ∈ I, a + s / q ∈ Icc a b) (U : Set (F.slice a).carrier)
-
-
-
 
 noncomputable def regularCylinder : SurgeryFlowCylinder F (F.slice a) a q I U := by
   let S := F.regular_slabs a b hab hJ hS
@@ -77,14 +65,10 @@ noncomputable def regularCylinder : SurgeryFlowCylinder F (F.slice a) a q I U :=
     rw [event_at_birth s hs hT] at hbefore
     exact ((not_lt_of_ge (htime t ht).1) hbefore).elim
 
-
-
 theorem regularCylinder_initial (hzero : (0 : ℝ) ∈ I) (x : (F.slice a).carrier) :
     HEq ((F.regularCylinder hab hJ hS hq hI htime U).forward 0 hzero x) x := by
   exact (F.regular_slabs a b hab hJ hS).identify_initial_heq
     ⟨a + 0 / q, htime 0 hzero⟩ (by simp) x
-
-
 
 theorem regularCylinder_pullbackInner (s : ℝ) (hs : s ∈ I)
     (x : (F.slice a).carrier) (v w : TangentSpace (𝓡 3) x) :

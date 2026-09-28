@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -255,7 +247,6 @@ private theorem paired_retractions
     nlinarith [mul_le_mul_of_nonneg_left (show f z-t≤2*r by linarith [hzf.2]) hH]
 
 end PoincareConjecture.LeviCivitaData
-
 
 theorem PoincareConjecture.LeviCivitaData.regularLevel_edist_le_of_opposite_gradients
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

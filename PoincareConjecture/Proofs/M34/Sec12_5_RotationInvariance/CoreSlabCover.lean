@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndSlabCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem endExhaustion_six_sublevel_cover
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g) :

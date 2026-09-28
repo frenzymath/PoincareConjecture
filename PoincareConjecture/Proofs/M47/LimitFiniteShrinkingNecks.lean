@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteChartBuffer
 import PoincareConjecture.Proofs.M47.LimitFiniteNeckObstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,9 +49,6 @@ private theorem finite_metric_comm (g : RiemannianMetric 3 M) (x y : M) :
     (g.edist x y).toReal = (g.edist y x).toReal := by
   let := g.toMetricSpace
   exact dist_comm x y
-
-
-
 
 theorem limitFinite_shrinking_necks_impossible
     (g0 : RiemannianMetric 3 M) (g : ℕ → RiemannianMetric 3 M)

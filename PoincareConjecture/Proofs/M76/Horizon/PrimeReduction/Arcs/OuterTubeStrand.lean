@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.PlanarTubeStrands
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.ReturningRibbonSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -20,9 +12,6 @@ local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "D" => Dehn.signedTubeDiamond
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
 
 theorem exists_outer_strand_of_planar_signed_ribbon
     {r : ℝ} (hr : 0 < r) (f : V → V)
@@ -124,9 +113,6 @@ theorem exists_outer_strand_of_planar_signed_ribbon
         (hBS c (hIc hc) hc0).symm.mono_left hAS⟩) hε
   exact ⟨c, hc, hcε, hc0, hac, huv, hbc, (hstrands c (hIc hc)).1,
     (hstrands c (hIc hc)).2.1, hball, haxis c hc, hBS c (hIc hc) hc0⟩
-
-
-
 
 theorem exists_outer_signed_tube_strand
     {T triangle sphere arc : Set V3}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.AntipodalBallChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.AntipodalPunctureExpansion
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric IsManifold
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 2000000 in
-
-
 
 theorem capCertificates_exists_projective_compact_side_dichotomy
     (hS : SchoenfliesService)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereDiskExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -101,7 +94,6 @@ theorem exists_disk_prism_retraction
   · apply Subtype.ext
     change x p.val = p.val.2.val
     simp [x, hd]
-
 
 theorem exists_disk_homotopy_extension
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

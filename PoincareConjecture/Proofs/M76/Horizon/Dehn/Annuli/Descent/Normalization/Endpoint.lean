@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.ExceptionalValues
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -68,8 +58,6 @@ theorem projected_proper : ∀ x ∈ K.space,
   rw [step.frontier_preimage R] at h
   exact h
 
-
-
 theorem exists_endpoint_double_locus (hK : K.faces.Finite) :
     PolyhedralPLInCharts s.charts D.projected K.space ∧
       IsLocallyInjective (fun x : K.space ↦ D.projected x) ∧
@@ -101,7 +89,6 @@ theorem projected_fiber_finite (z : s.Carrier) : (K.space ∩ D.projected ⁻¹'
 
 omit [FiniteDimensional ℝ V] in
 
-
 theorem exceptional_pairs_finite :
     {z : V × V | z.1 ∈ K.space ∧ z.2 ∈ K.space ∧
       D.projected z.1 = D.projected z.2 ∧ D.projected z.1 ∈ D.exceptionalValues}.Finite := by
@@ -113,8 +100,6 @@ theorem exceptional_pairs_finite :
   intro z hz
   exact mem_iUnion₂.mpr ⟨D.projected z.1, hz.2.2.2,
     ⟨hz.1, rfl⟩, hz.2.1, hz.2.2.1.symm⟩
-
-
 
 theorem exists_endpoint_boundary_neighborhood (hK : K.faces.Finite)
     (hb : IsCompact boundary) (hrim : InjOn (t.projection ∘ j) boundary) :

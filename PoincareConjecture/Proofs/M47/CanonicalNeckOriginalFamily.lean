@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckSourceTransfer
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderOrdinary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem strongNeck_original_ordinary_family
     {F : SurgeryFlowData.{u}} {T epsilon a b : ℝ} {J : Set ℝ}

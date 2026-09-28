@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalizedCompactness
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Density
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +11,6 @@ open scoped ContDiff Topology ENNReal
 namespace PoincareConjecture
 
 open EuclideanTranslationNative
-
-
-
 
 theorem m64Annulus_l2_isCompact_of_localized
     (f : ℕ → LoopPlane → ℝ)
@@ -112,9 +96,6 @@ theorem m64Annulus_l2_isCompact_of_localized
     rw [Metric.mem_ball] at hv ⊢
     exact (dist_triangle (U j) (V j) v).trans_lt (by linarith [herr j])
   exact ⟨hU, hTB.closure.isCompact_of_isClosed isClosed_closure⟩
-
-
-
 
 theorem m64Annulus_l2_isCompact
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ j, ContDiff ℝ 1 (f j))

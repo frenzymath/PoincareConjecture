@@ -1,22 +1,11 @@
 import PoincareConjecture.Definitions.M11AdaptedAtlas
 import Mathlib.Algebra.Order.GroupWithZero.OrderIso
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
 
-
 noncomputable def parabolicTime (Q a t : ℝ) : ℝ := Q * (t - a)
-
 
 noncomputable def parabolicTimeInv (Q a s : ℝ) : ℝ := a + s / Q
 
@@ -29,7 +18,6 @@ theorem parabolicTimeInv_parabolicTime (Q : ℝ) (hQ : 0 < Q) (a t : ℝ) :
 theorem parabolicTime_parabolicTimeInv (Q : ℝ) (hQ : 0 < Q) (a s : ℝ) :
     parabolicTime Q a (parabolicTimeInv Q a s) = s := by
   simpa [parabolicTime, parabolicTimeInv] using mul_div_cancel₀ s hQ.ne'
-
 
 noncomputable def parabolicTimeOrderIso (Q : ℝ) (hQ : 0 < Q) (a : ℝ) : ℝ ≃o ℝ where
   toFun := parabolicTime Q a
@@ -57,7 +45,6 @@ theorem parabolicTimeInv_strictMono (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
     StrictMono (parabolicTimeInv Q a) :=
   (parabolicTimeOrderIso Q hQ a).symm.strictMono
 
-
 noncomputable def parabolicInterval (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) : SpacetimeInterval where
   domain := parabolicTime Q a '' I.domain
@@ -71,7 +58,6 @@ theorem parabolicInterval_domain (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) :
     (parabolicInterval Q hQ a I).domain = parabolicTime Q a '' I.domain := rfl
 
-
 theorem mem_parabolicInterval_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) (s : ℝ) :
     s ∈ (parabolicInterval Q hQ a I).domain ↔ parabolicTimeInv Q a s ∈ I.domain := by
@@ -80,7 +66,6 @@ theorem mem_parabolicInterval_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     simpa only [parabolicTimeInv_parabolicTime Q hQ a t] using ht
   · intro hs
     exact ⟨parabolicTimeInv Q a s, hs, parabolicTime_parabolicTimeInv Q hQ a s⟩
-
 
 @[simp]
 theorem parabolicTime_mem_parabolicInterval_iff (Q : ℝ) (hQ : 0 < Q) (a : ℝ)

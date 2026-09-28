@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvolution.CurvatureVariation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.TimeDerivative.Trace
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -150,8 +144,6 @@ end LeviCivitaData
 namespace RicciFlow
 
 variable {J : Set ℝ}
-
-
 
 theorem hasDerivAt_scalarCurvature
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M) :

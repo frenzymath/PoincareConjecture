@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Absorption
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false

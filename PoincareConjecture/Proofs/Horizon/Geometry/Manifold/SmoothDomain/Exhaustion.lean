@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Componen
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.FromEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Exhaustion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +21,6 @@ private theorem exists_connected_compact_superset
   obtain ⟨j, hj⟩ := hC.elim_directed_cover U ho (by rw [hcover]; exact subset_univ C)
     hmono.directed_le
   exact ⟨closure (U j), hk j, (hc j).closure, hj.trans subset_closure⟩
-
-
 
 theorem exists_smoothDomain_superset
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -59,8 +50,6 @@ theorem exists_smoothDomain_superset
   let := VS
   let := hmV
   exact ⟨interior V, nonempty_smoothDomain_interior hV hcV heV, hCL.trans hLV⟩
-
-
 
 theorem exists_smoothDomain_exhaustion
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

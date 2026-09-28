@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M37SurgeryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,21 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedSurgeryFlow : RepairedSurgeryFlowTheory.{u} := by
   refine ⟨?_⟩

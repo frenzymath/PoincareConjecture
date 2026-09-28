@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M03.FamilyBundleCoordinates
 import PoincareConjecture.Proofs.M03.CurvatureHom
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceJetFluxParameters
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy Proofs.M03
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_raw_flow_curvature :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -46,9 +34,6 @@ theorem canonicalDomain_raw_flow_curvature :
   rfl
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem canonicalDomain_contDiffOn_flow_curvature
     {dS : ℕ} (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :

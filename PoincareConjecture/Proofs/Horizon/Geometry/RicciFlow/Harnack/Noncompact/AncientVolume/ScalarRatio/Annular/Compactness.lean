@@ -7,19 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -34,8 +21,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem antitoneOn_metric_inner_self_on_ancient_of_ricci_nonneg
     (F : RicciFlow n M (Iic 0)) (x : M) (v : TangentSpace (𝓡 n) x)
     (hRic : ∀ t ≤ 0, 0 ≤ (F.connection t).ricci x v v) :
@@ -49,7 +34,6 @@ theorem antitoneOn_metric_inner_self_on_ancient_of_ricci_nonneg
     exact mul_nonpos_of_nonpos_of_nonneg (by norm_num)
       (hRic t (show t ∈ Iic (0 : ℝ) from interior_subset ht))
 
-
 theorem ball_subset_terminal_ball_of_ancient_ricci_nonneg
     (F : RicciFlow n M (Iic 0)) (p : M) (r : ℝ) {s : ℝ} (hs : s ≤ 0)
     (hRic : ∀ t ≤ 0, ∀ x ∈ (F.metric s).ball p r,
@@ -62,8 +46,6 @@ theorem ball_subset_terminal_ball_of_ancient_ricci_nonneg
         simpa only [one_mul, RiemannianMetric.tangentNorm] using Real.sqrt_le_sqrt
           (F.antitoneOn_metric_inner_self_on_ancient_of_ricci_nonneg x v
             (fun t ht => hRic t ht x hx v) hs (by simp) hs))
-
-
 
 theorem exists_terminal_ball_curvatureDerivative_bound
     (hC : RicciFlowCurvatureTheory.{u}) (n k : ℕ) {K R : ℝ}
@@ -154,8 +136,6 @@ theorem exists_terminal_ball_curvatureDerivative_bound
   change (F.connection (δ + -δ)).curvatureDerivativeNorm k x ≤ _ at h
   rwa [add_neg_cancel] at h
 
-
-
 theorem exists_terminal_exponential_metric_jet_bound
     (hC : RicciFlowCurvatureTheory.{u}) (n m : ℕ) {K S ρ : ℝ}
     (hK : 0 < K) (hS : 0 < S) (hρ : 0 < ρ) (hρS : ρ < S / 2) :
@@ -214,9 +194,6 @@ theorem exists_terminal_exponential_metric_jet_bound
     rw [hdist x (hsub hx), ENNReal.ofReal_lt_ofReal_iff_of_nonneg (norm_nonneg x)]
     have hxnorm : ‖x‖ < S / 2 := by simpa only [Metric.mem_ball, dist_zero_right] using hx
     linarith
-
-
-
 
 theorem exists_terminal_exponential_coefficient_subsequence
     [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]

@@ -1,28 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ProductCellEndNeighborhoods
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_closedBall_interior_chart {E : Type*} [NormedAddCommGroup E]
     {R : ℝ} (hR : 0 < R) :
@@ -57,10 +40,6 @@ theorem exists_closedBall_interior_chart {E : Type*} [NormedAddCommGroup E]
 
 end OpenPartialHomeomorph
 
-
-
-
-
 theorem collared_punctured_product_eq_compl_cell
     {E Y : Type*} [NormedAddCommGroup E] (R r : ℝ) (q : Y) :
     ((univ : Set (closedBall (0 : E) R)) ×ˢ {q}ᶜ) ∪
@@ -71,9 +50,6 @@ theorem collared_punctured_product_eq_compl_cell
     mem_singleton_iff, mem_setOf_eq, not_and_or, not_le]
   exact or_comm
 
-
-
-
 theorem isOpen_collared_punctured_product
     {E Y : Type*} [NormedAddCommGroup E] [TopologicalSpace Y] [T1Space Y]
     (R r : ℝ) (q : Y) :
@@ -83,12 +59,6 @@ theorem isOpen_collared_punctured_product
     ((isOpen_lt continuous_const continuous_subtype_val.norm).prod isOpen_univ)
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_compact_closedBall_deleted_cell_core
     {E F Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.IntrinsicC2LocalExistence
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFields
 import Mathlib.Order.ConditionallyCompleteLattice.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem c2ShrinkingCurve_intrinsic_regularity
     [T2Space M] (F : RicciFlow n M (Icc a b))

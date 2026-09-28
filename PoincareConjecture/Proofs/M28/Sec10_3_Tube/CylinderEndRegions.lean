@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
-
-
 
 theorem mem_tail_iff_m28 (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
     (ha : 0 < a) (ha' : a < 1) {x : M} :
@@ -49,11 +38,9 @@ theorem mem_tail_iff_m28 (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
       exact ⟨T.inverse x, ⟨mem_univ _, hh, (T.inverse_mem x hx).2.2⟩,
         T.right_inverse hx⟩
 
-
 theorem tail_subset_m28 (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
     (ha : 0 < a) (ha' : a < 1) : T.tail side a ⊆ U :=
   fun _ hx => ((T.mem_tail_iff_m28 side ha ha').mp hx).1
-
 
 theorem isPreconnected_tail (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
     (ha : 0 < a) (ha' : a < 1) : IsPreconnected (T.tail side a) := by
@@ -70,7 +57,6 @@ theorem isPreconnected_tail (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
     intro z hz
     exact ⟨mem_univ _, ha.trans hz.2.1, hz.2.2⟩
 
-
 theorem tail_nonempty (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
     (ha : 0 < a) (ha' : a < 1) : (T.tail side a).Nonempty := by
   have hs : IsConnected (Metric.sphere (0 : EuclideanSpace ℝ (Fin 3)) 1) :=
@@ -83,7 +69,6 @@ theorem tail_nonempty (T : OpenCylinderModel U) (side : Bool) {a : ℝ}
   · obtain ⟨t, ht, ht'⟩ := exists_between ha'
     exact ⟨T.coordinate (q, t), ⟨(q, t), ⟨mem_univ _, ht, ht'⟩, rfl⟩⟩
 
-
 theorem isCompact_middleSphere (T : OpenCylinderModel U) :
     IsCompact T.middleSphere := by
   apply (isCompact_univ.prod (isCompact_singleton (x := (1 / 2 : ℝ)))).image_of_continuousOn
@@ -92,13 +77,11 @@ theorem isCompact_middleSphere (T : OpenCylinderModel U) :
   exact ⟨mem_univ _, by simpa only [mem_singleton_iff.mp hz] using
     (show (1 / 2 : ℝ) ∈ Ioo 0 1 by norm_num)⟩
 
-
 theorem middleSphere_subset (T : OpenCylinderModel U) : T.middleSphere ⊆ U := by
   rintro x ⟨z, ⟨_, hz⟩, rfl⟩
   apply T.coordinate_mem_m28
   simpa only [mem_singleton_iff.mp hz] using
     (show (1 / 2 : ℝ) ∈ Ioo 0 1 by norm_num)
-
 
 theorem mem_middleSphere_iff (T : OpenCylinderModel U) {x : M} (hx : x ∈ U) :
     x ∈ T.middleSphere ↔ (T.inverse x).2 = 1 / 2 := by

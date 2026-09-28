@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2EstimatesFromLocal
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NullLoopHomotopy
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ universe u
 namespace PoincareConjecture
 
 open M63 Proofs.M58
-
-
 
 theorem m63ProductSolutionFamily_nonempty
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M32.Mathlib.CompactUniformComposition
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +16,6 @@ namespace PoincareConjecture.M32
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem tendstoUniformlyOn_bilinear_metricJet_of_scalar_entries
     {n r : ℕ} {I : Type*} {l : Filter I} {K : Set (E n)}
@@ -83,9 +65,6 @@ theorem tendstoUniformlyOn_bilinear_metricJet_of_scalar_entries
       exact mul_div_cancel₀ epsilon (ne_of_gt (by positivity : 0 < (n : ℝ) * n + 1))
     nlinarith
 
-
-
-
 theorem tendstoUniformlyOn_metricTwoJet_of_bilinear_jets
     {n : ℕ} {I : Type*} {l : Filter I} {K : Set (E n)}
     {B : I → E n → MetricCoefficient n} {C : E n → MetricCoefficient n}
@@ -106,11 +85,6 @@ theorem tendstoUniformlyOn_metricTwoJet_of_bilinear_jets
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem tendstoUniformlyOn_ricci_of_scalar_pullback_jets
     {n : ℕ} {I : Type w} {l : Filter I}

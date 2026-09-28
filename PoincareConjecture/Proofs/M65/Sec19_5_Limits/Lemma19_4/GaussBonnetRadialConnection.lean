@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetFrameConnection
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetMinimalDiskPotential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Gauss
 
 open M65Branch M65StrictTrace
-
-
-
-
 
 theorem boundaryCoordinate_logarithmic_radial
     {lambda localFactor : ℂ → ℝ} {p z : ℂ} (hp : ‖p‖ = 1)
@@ -61,11 +47,6 @@ theorem boundaryCoordinate_logarithmic_radial
   rw [hPI, map_neg] at hv
   rw [hlogs.fderiv_eq]
   linarith only [hv]
-
-
-
-
-
 
 theorem residual_boundary_radial_le {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -139,12 +120,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {gamma : C1FreeLoopSpace (M := M)}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
-
 
 theorem boundary_branch_radial_connection (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

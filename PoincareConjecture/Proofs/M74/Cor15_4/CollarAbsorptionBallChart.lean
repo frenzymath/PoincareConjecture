@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M74ConnectedSumReduction
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,24 +8,16 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M74
 
-
-
 noncomputable def collarBallMap (x : StandardCapSpace) : StandardCapSpace :=
   (2 / (Real.sqrt (1 + ‖x‖ ^ 2) + 1)) • x
 
-
-
 noncomputable def collarBallInverse (y : StandardCapSpace) : StandardCapSpace :=
   (4 / (4 - ‖y‖ ^ 2)) • y
-
-
 
 theorem contDiff_collarBallMap : ContDiff ℝ ∞ collarBallMap := by
   have hs : ContDiff ℝ ∞ (fun x : StandardCapSpace => Real.sqrt (1 + ‖x‖ ^ 2)) :=
     (contDiff_const.add (contDiff_norm_sq ℝ)).sqrt (by intro x; positivity)
   exact (contDiff_const.div (hs.add contDiff_const) (by intro x; positivity)).smul contDiff_id
-
-
 
 theorem contDiffOn_collarBallInverse :
     ContDiffOn ℝ ∞ collarBallInverse (ball (0 : StandardCapSpace) 2) := by
@@ -45,13 +28,9 @@ theorem contDiffOn_collarBallInverse :
     (contDiffAt_const.sub (contDiff_norm_sq ℝ).contDiffAt) hd.ne').smul
       contDiffAt_id).contDiffWithinAt
 
-
-
 theorem collarBallMap_norm (x : StandardCapSpace) :
     ‖collarBallMap x‖ = (2 / (Real.sqrt (1 + ‖x‖ ^ 2) + 1)) * ‖x‖ := by
   rw [collarBallMap, norm_smul, Real.norm_eq_abs, abs_of_pos (by positivity)]
-
-
 
 theorem collarBallMap_mem (x : StandardCapSpace) :
     collarBallMap x ∈ ball (0 : StandardCapSpace) 2 := by
@@ -62,11 +41,7 @@ theorem collarBallMap_mem (x : StandardCapSpace) :
   rw [div_mul_eq_mul_div, div_lt_iff₀ hd]
   linarith
 
-
-
 @[simp] theorem collarBallMap_zero : collarBallMap 0 = 0 := by simp [collarBallMap]
-
-
 
 @[simp] theorem collarBallInverse_zero : collarBallInverse 0 = 0 := by
   simp [collarBallInverse]
@@ -79,8 +54,6 @@ private theorem collarBallMap_denominator (x : StandardCapSpace) :
   field_simp
   nlinarith
 
-
-
 theorem collarBallInverse_map (x : StandardCapSpace) :
     collarBallInverse (collarBallMap x) = x := by
   rw [collarBallInverse, collarBallMap_denominator, collarBallMap, smul_smul]
@@ -90,8 +63,6 @@ theorem collarBallInverse_map (x : StandardCapSpace) :
     field_simp
     norm_num
   rw [hc, one_smul]
-
-
 
 theorem collarBallMap_inverse {y : StandardCapSpace} (hy : y ∈ ball (0 : StandardCapSpace) 2) :
     collarBallMap (collarBallInverse y) = y := by
@@ -109,8 +80,6 @@ theorem collarBallMap_inverse {y : StandardCapSpace} (hy : y ∈ ball (0 : Stand
       (4 / (4 - ‖y‖ ^ 2)) = 1 := by field_simp; ring
   rw [hc, one_smul]
 
-
-
 noncomputable def collarBallChart :
     OpenPartialHomeomorph StandardCapSpace StandardCapSpace where
   toFun := collarBallMap
@@ -126,21 +95,13 @@ noncomputable def collarBallChart :
   continuousOn_toFun := contDiff_collarBallMap.continuous.continuousOn
   continuousOn_invFun := contDiffOn_collarBallInverse.continuousOn
 
-
-
 @[simp] theorem collarBallChart_source : collarBallChart.source = univ := rfl
-
-
 
 @[simp] theorem collarBallChart_target :
     collarBallChart.target = ball (0 : StandardCapSpace) 2 := rfl
 
-
-
 @[simp] theorem collarBallChart_apply (x : StandardCapSpace) :
     collarBallChart x = collarBallMap x := rfl
-
-
 
 @[simp] theorem collarBallChart_symm_apply (x : StandardCapSpace) :
     collarBallChart.symm x = collarBallInverse x := rfl

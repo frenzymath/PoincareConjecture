@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckQuarterBounds
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeLower
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.LocalNormalCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ universe u
 namespace PoincareConjecture.M28
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem exists_strongNeck_source_center_charts_accuracy
     (hShi : LocalCurvatureDerivativeEstimates.{u}) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureCharts
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedCurvatureReadout
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_strongNeck_rescaled_buffered_curvature_bound :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricPotential
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTestBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,8 +67,6 @@ theorem metricEntropyPotential_derivative_lipschitz (g : RiemannianMetric n V)
   apply Finset.sum_le_sum
   intro j _
   simpa only [sub_apply, metricEntropyPotential_value_test] using hbound j x z w
-
-
 
 theorem metricEntropyPotential_quadratic_remainder (g : RiemannianMetric n V)
     {η : V → ℝ} (hη : ContDiff ℝ ∞ η) (hc : HasCompactSupport η) (Q : ℝ) :

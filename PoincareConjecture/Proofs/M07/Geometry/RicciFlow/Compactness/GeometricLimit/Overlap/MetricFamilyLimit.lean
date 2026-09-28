@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.CoordinateFamily
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.MetricFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +29,6 @@ variable {ι : Type*} {n : ℕ}
       ∀ k i, IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (e k i))
 
 include hD he hc hlower hopen hconn hsmooth in
-
-
 
 theorem exists_compatibleMetricFamilies_of_spacetime_limits
     {J : Set ℝ} (t₀ : ℝ) (ht₀ : t₀ ∈ J)

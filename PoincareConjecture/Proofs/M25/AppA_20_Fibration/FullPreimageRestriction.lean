@@ -2,22 +2,11 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.M25
-
-
 
 theorem exists_full_preimage_product_restriction
     {M : Type u} [TopologicalSpace M] [CompactSpace M]

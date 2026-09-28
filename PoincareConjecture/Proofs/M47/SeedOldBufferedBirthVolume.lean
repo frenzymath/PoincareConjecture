@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedPastSearchVolume
 import PoincareConjecture.Proofs.M47.SeedOldBufferedWindow
 import PoincareConjecture.Proofs.M47.SeedOrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_old_buffered_ordinary_birth_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

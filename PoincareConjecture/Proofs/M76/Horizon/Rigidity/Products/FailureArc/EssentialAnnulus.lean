@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.RimEssentiality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -31,8 +23,6 @@ noncomputable def sourceAnnulusRimHomotopy {X : Type*} [TopologicalSpace X]
   toContinuousMap := f.comp ⟨cylinder, cylinder.continuous⟩
   map_zero_left := by intro u; change f (cylinder (0, u)) = _; rw [cylinder_zero]; rfl
   map_one_left := by intro u; change f (cylinder (1, u)) = _; rw [cylinder_one]; rfl
-
-
 
 theorem exists_essential_marked_PL_annulus_of_commensurable
     {E₀ E₁ X ι : Type*} [TopologicalSpace E₀] [TopologicalSpace E₁]

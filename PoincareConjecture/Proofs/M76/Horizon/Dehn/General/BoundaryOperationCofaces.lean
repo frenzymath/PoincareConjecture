@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -35,11 +24,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem Step.exists_boundary_rim_cofaces_with_history
     {s t : Stage e S f r C} (step : Step s t) {R Fmark : Set M}

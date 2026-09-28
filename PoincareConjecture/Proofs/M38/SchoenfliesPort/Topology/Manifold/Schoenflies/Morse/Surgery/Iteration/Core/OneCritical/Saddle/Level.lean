@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Critical
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Boundary
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,9 +24,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 namespace SphereSurgeryCoreCap
-
-
-
 
 theorem exists_physical_band_avoiding_caps
     {v : E3} {g : S2 → E3} {B : Set Real}
@@ -77,8 +66,6 @@ end SphereSurgeryCoreCap
 
 namespace SphereSurgeryPath
 
-
-
 theorem exists_protected_physical_height_band
     {v : E3} {f g : S2 → E3} (P : SphereSurgeryPath v f g)
     (hcaps : P.PreservesCaps) {B : Set Real} (hP : P.Protects B)
@@ -105,9 +92,6 @@ variable {f : S2 → E3} (M : SphereMorseReduction f)
       (fun q => inner Real (M.v : E3) (g q)) p = 0)
 
 include hg hP hcaps hp hc
-
-
-
 
 theorem exists_physical_band_with_unique_critical_point :
     ∃ ε : Real, 0 < ε ∧

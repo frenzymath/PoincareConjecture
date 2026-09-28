@@ -1,20 +1,10 @@
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.MetricSpace.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem exists_open_frontier_mark_neighborhood
     {X : Type*} [TopologicalSpace X] {R F : Set X}
@@ -34,8 +24,6 @@ theorem exists_open_frontier_mark_neighborhood
       · exact (htrace x hfront).mp hx
     · intro hx
       exact ⟨Or.inr ((htrace x (hF hx)).mpr hx), hF hx⟩
-
-
 
 theorem exists_open_neighborhood_of_proper_marked_map
     {X A : Type*} [TopologicalSpace X] {R F : Set X} {S B : Set A} {f : A → X}

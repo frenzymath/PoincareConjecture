@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerOriginalAtlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem lower_lattice_puncture_isConnected
     (κ : Type*) [Finite κ] [Nonempty κ] :
@@ -86,9 +73,6 @@ theorem lower_lattice_puncture_isConnected
     simp only [mem_preimage, mem_compl_iff, mem_singleton_iff, ← hp, t.injective.eq_iff]
   have h := t.isConnected_preimage.mpr hconn
   simpa only [hpre] using h
-
-
-
 
 theorem lower_original_domain_isConnected
     {ι κ : Type*} [Fintype ι] [Finite κ] [Nonempty κ]

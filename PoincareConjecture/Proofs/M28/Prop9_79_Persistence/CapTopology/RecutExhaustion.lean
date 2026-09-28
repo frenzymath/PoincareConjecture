@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_recut_capturing_compact (N : CapCertificate g)
     {K : Set M} (hK : IsCompact K) (hKN : K ⊆ N.carrier) :
@@ -68,9 +56,6 @@ theorem exists_recut_capturing_compact (N : CapCertificate g)
     simpa only [N.end_neck_epsilon] using
       (N.end_neck.coordinate_inverse_mem x (hDE hxD)).2.1
 
-
-
-
 theorem eventually_subset_recutTarget (N : CapCertificate g)
     {delta : ℕ → ℝ} (hdelta : Tendsto delta atTop (𝓝 0))
     {K : Set M} (hK : IsCompact K) (hKN : K ⊆ N.carrier) :
@@ -82,9 +67,6 @@ theorem eventually_subset_recutTarget (N : CapCertificate g)
   rcases hKq hx with hxY | hxE
   · exact Or.inl hxY
   · exact Or.inr ⟨hxE.1, hxE.2.1, by linarith [hxE.2.2]⟩
-
-
-
 
 theorem eventually_core_ball_subset_recutTarget (N : CapCertificate g)
     {delta : ℕ → ℝ} (hdelta : Tendsto delta atTop (𝓝 0))

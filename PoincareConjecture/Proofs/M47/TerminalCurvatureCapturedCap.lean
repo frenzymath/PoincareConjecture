@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureFiniteCoverScalar
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCapLocalization
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCapScalarReadout
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_captured_cap_readout
     {ι : Type*} [Finite ι] [Nonempty ι]

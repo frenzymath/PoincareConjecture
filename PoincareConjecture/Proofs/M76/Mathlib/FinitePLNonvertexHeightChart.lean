@@ -2,28 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHeightShear
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFinitePolyhedralPatches
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_nonvertex_height_chart_preserving_affine
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -138,11 +121,6 @@ theorem exists_nonvertex_height_chart_preserving_affine
     rw [hHinv]
     change psi (-(f y - ell y) • w +ᵥ y) = psi y
     simp only [ContinuousAffineMap.map_vadd, map_smul, hpsiw, smul_zero, zero_vadd]
-
-
-
-
-
 
 theorem exists_nonvertex_height_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

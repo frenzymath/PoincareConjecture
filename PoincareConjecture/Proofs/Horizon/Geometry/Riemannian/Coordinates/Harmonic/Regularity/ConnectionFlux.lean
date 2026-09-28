@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidean
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,13 +12,11 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 def connectionFlux (D : LeviCivitaData g)
     (V Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))
     (x : EuclideanSpace ℝ (Fin n)) : EuclideanSpace ℝ (Fin n) :=
   (g.euclideanCoefficients x).inverse
     ((g.euclideanCoefficients x (Z x)).comp (D.connection V x))
-
 
 theorem inner_connectionFlux (D : LeviCivitaData g)
     (V Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))
@@ -37,7 +27,6 @@ theorem inner_connectionFlux (D : LeviCivitaData g)
       ((g.inner x (Z x)).comp (D.connection V x)))
   change g.inner x (D.connectionFlux V Z x) w = g.inner x (Z x) (D.connection V x w) at h
   exact h.trans (g.symm x _ _)
-
 
 theorem contDiff_connectionFlux (D : LeviCivitaData g)
     {V Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -64,12 +53,10 @@ theorem contDiff_connectionFlux (D : LeviCivitaData g)
   have hNv := contMDiffAt_vectorSpace_iff_contDiffAt.mp hN
   exact ((hG.clm_apply hZ.contDiffAt).clm_apply hNv).contMDiffAt
 
-
 theorem connectionFlux_eq_zero_of_eq_zero (D : LeviCivitaData g)
     (V Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))
     {x : EuclideanSpace ℝ (Fin n)} (hZ : Z x = 0) : D.connectionFlux V Z x = 0 := by
   simp [connectionFlux, hZ]
-
 
 theorem hasCompactSupport_connectionFlux (D : LeviCivitaData g)
     (V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))
@@ -79,8 +66,6 @@ theorem hasCompactSupport_connectionFlux (D : LeviCivitaData g)
   intro x hx
   by_contra hn
   exact hx (D.connectionFlux_eq_zero_of_eq_zero V Z (image_eq_zero_of_notMem_tsupport hn))
-
-
 
 theorem trace_connectionFlux (D : LeviCivitaData g)
     {V Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}

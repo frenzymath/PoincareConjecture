@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocalPairChartCoordinates
 import PoincareConjecture.Proofs.M76.Brown.SpindleHeight
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {B X : Type*} [TopologicalSpace B] [TopologicalSpace X]
-
-
-
 
 theorem exists_relative_halfspace_chart
     (q : OpenPartialHomeomorph (B × ℝ) X) (R : Set X)
@@ -104,9 +93,6 @@ theorem exists_relative_halfspace_chart
   change ((f (id.symm z) : T).val : X) = q (F z)
   rw [hinv]
   rfl
-
-
-
 
 theorem exists_relative_halfspace_local_collar
     (q : OpenPartialHomeomorph (B × ℝ) X) (R : Set X)

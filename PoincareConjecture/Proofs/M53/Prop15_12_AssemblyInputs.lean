@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_LocalParity
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +12,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M53
 
-
-
-
 theorem nonempty_integralThreePointHomology_equiv_int
     {V : Type u} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
     (hdim : Module.finrank ℝ V = 3) (x : V) :
@@ -34,9 +21,6 @@ theorem nonempty_integralThreePointHomology_equiv_int
   let : ChartedSpace (EuclideanSpace ℝ (Fin 3)) V := e.symm.toHomeomorph.chartedSpace
   obtain ⟨A⟩ := exists_integralThreeLocalHomologyAtlas (X := V)
   exact ⟨(A.localFrame x x (A.mem_baseSet x)).symm.toAddEquiv⟩
-
-
-
 
 theorem even_threeManifoldRelativeRestriction_iff_of_isPreconnected
     {X : Type u} [TopologicalSpace X] [T2Space X]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderDifferential
 import PoincareConjecture.Proofs.M34.Mathlib.ManifoldOpenMap
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ namespace PoincareConjecture.GeneralizedFlowCylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
   (e : GeneralizedFlowCylinder F C origin scale I U)
-
-
 
 noncomputable def restrictedSpatialHomeomorph {V : Set C.carrier} (hV : V ⊆ U)
     (s : ℝ) (hs : s ∈ I) : V ≃ₜ (e.forward s hs '' V) := by
@@ -47,8 +35,6 @@ noncomputable def restrictedSpatialHomeomorph {V : Set C.carrier} (hV : V ⊆ U)
   · exact ((e.inverse_smooth s hs).continuousOn.comp_continuous
       continuous_subtype_val (fun y => (image_mono hV) y.property)).subtype_mk _
 
-
-
 theorem forward_mfderiv_bijective (hU : IsOpen U) {s : ℝ} (hs : s ∈ I)
     {x : C.carrier} (hx : x ∈ U) :
     Function.Bijective (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x) := by
@@ -65,16 +51,12 @@ theorem forward_mfderiv_bijective (hU : IsOpen U) {s : ℝ} (hs : s ∈ I)
   have hi := e.forward_mfderiv_injective hU hs hx
   exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hd).mp hi⟩
 
-
-
 theorem isOpen_forward_image (hU : IsOpen U) {V : Set C.carrier}
     (hV : IsOpen V) (hVU : V ⊆ U) {s : ℝ} (hs : s ∈ I) :
     IsOpen (e.forward s hs '' V) :=
   M34.isOpen_image_of_contMDiffOn_mfderiv_bijective hV
     ((e.forward_smooth s hs).mono hVU)
     (fun _ hx => e.forward_mfderiv_bijective hU hs (hVU hx))
-
-
 
 noncomputable def spatialOpenPartialHomeomorph (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ I) :
@@ -94,23 +76,17 @@ noncomputable def spatialOpenPartialHomeomorph (hU : IsOpen U)
   open_source := hU
   open_target := e.isOpen_forward_image hU hU (Subset.refl U) hs
 
-
-
 theorem spatialOpenPartialHomeomorph_contMDiffOn (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ I) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (e.spatialOpenPartialHomeomorph hU s hs)
       (e.spatialOpenPartialHomeomorph hU s hs).source :=
   e.forward_smooth s hs
 
-
-
 theorem spatialOpenPartialHomeomorph_symm_contMDiffOn (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ I) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (e.spatialOpenPartialHomeomorph hU s hs).symm
       (e.spatialOpenPartialHomeomorph hU s hs).target :=
   e.inverse_smooth s hs
-
-
 
 theorem isOpenEmbedding_forward_restrict (hU : IsOpen U) {V : Set C.carrier}
     (hV : IsOpen V) (hVU : V ⊆ U) {s : ℝ} (hs : s ∈ I) :

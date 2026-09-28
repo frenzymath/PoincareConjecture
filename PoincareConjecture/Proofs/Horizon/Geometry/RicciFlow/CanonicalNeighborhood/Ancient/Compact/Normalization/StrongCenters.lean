@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.StrongNeck
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +21,6 @@ private theorem inverse_scalar_scale_sq {R : ℝ} (hR : 0 < R) :
   rw [neg_div, Real.rpow_neg hR.le, inv_inv, ← Real.rpow_natCast,
     ← Real.rpow_mul hR.le]
   norm_num
-
 
 def terminalNeckAtCenterFromNormalization
     (A : AncientKappaNormalization K p b)
@@ -64,7 +53,6 @@ def terminalNeckAtCenterFromNormalization
     (R / A.scale) * (A.target.flow.metric 0).inner _ _ _
   rw [A.metric_eq, zero_div, add_zero]
   field_simp [A.scale_pos.ne']
-
 
 def strongNeckAtCenterFromNormalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
@@ -102,7 +90,6 @@ def strongNeckAtCenterFromNormalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
     (N : StrongEvolvingNeck A.target 0 epsilon) :
     (A.strongNeckAtCenterFromNormalization hb N).center = N.center := rfl
-
 
 theorem strongNeck_coverage_fromNormalization
     (A : AncientKappaNormalization K p b) (hb : b ≤ 0) {X : Set M}

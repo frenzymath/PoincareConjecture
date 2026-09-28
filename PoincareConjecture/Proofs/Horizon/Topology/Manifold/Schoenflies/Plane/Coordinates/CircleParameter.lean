@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tub
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -24,21 +14,16 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) (s : ℝ) : sphere (0 : E) 1 :=
   ⟨e (Circle.exp s : ℂ), by
     rw [mem_sphere_zero_iff_norm, e.norm_map]
     exact Circle.norm_coe _⟩
-
 
 theorem periodic_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) :
     Periodic (sphereCircleParameter e) (2 * Real.pi) := by
   intro s
   apply Subtype.ext
   exact congrArg (fun q : Circle => e (q : ℂ)) (Circle.periodic_exp s)
-
-
 
 theorem surjective_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) :
     Surjective (sphereCircleParameter e) := by
@@ -52,8 +37,6 @@ theorem surjective_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) :
   rw [hs]
   exact e.apply_symm_apply _
 
-
-
 theorem injOn_sphereCircleParameter_Ico (e : ℂ ≃ₗᵢ[ℝ] E) {a b : ℝ}
     (hab : b - a ≤ 2 * Real.pi) : InjOn (sphereCircleParameter e) (Ico a b) := by
   intro s hs t ht h
@@ -61,8 +44,6 @@ theorem injOn_sphereCircleParameter_Ico (e : ℂ ≃ₗᵢ[ℝ] E) {a b : ℝ}
   apply Subtype.ext
   apply e.injective
   exact congrArg Subtype.val h
-
-
 
 theorem hasDerivAt_sphereCircleParameter_coe (e : ℂ ≃ₗᵢ[ℝ] E) (s : ℝ) :
     HasDerivAt (fun t : ℝ => (sphereCircleParameter e t : E))
@@ -80,8 +61,6 @@ section InnerProduct
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [Fact (Module.finrank ℝ E = 2)]
 
-
-
 theorem contMDiff_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) {k : ℕ∞ω} :
     ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) k (sphereCircleParameter e) := by
   let : Fact (Module.finrank ℝ ℂ = 1 + 1) := Complex.finrank_real_complex_fact
@@ -92,8 +71,6 @@ theorem contMDiff_sphereCircleParameter (e : ℂ ≃ₗᵢ[ℝ] E) {k : ℕ∞ω
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem contDiff_curveFamily_circleParameter (e : ℂ ≃ₗᵢ[ℝ] E)
     (c : ℝ → sphere (0 : E) 1 → F) {k : ℕ∞ω}
     (hc : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 1)) 𝓘(ℝ, F) k
@@ -101,9 +78,6 @@ theorem contDiff_curveFamily_circleParameter (e : ℂ ≃ₗᵢ[ℝ] E)
     ContDiff ℝ k (fun p : ℝ × ℝ => c p.1 (sphereCircleParameter e p.2)) := by
   exact (hc.comp (contDiff_fst.contMDiff.prodMk
     ((contMDiff_sphereCircleParameter e).comp contDiff_snd.contMDiff))).contDiff
-
-
-
 
 theorem deriv_curveFamily_circleParameter_ne_zero (e : ℂ ≃ₗᵢ[ℝ] E)
     (c : ℝ → sphere (0 : E) 1 → F)

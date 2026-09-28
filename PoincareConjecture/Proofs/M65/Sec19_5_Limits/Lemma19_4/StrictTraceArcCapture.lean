@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace PoincareConjecture.M65StrictTrace
-
-
-
 
 theorem embedded_loop_arc_capture {M : Type*} [TopologicalSpace M] [T2Space M]
     {gamma : LoopCircle → M} (hgamma : Continuous gamma)

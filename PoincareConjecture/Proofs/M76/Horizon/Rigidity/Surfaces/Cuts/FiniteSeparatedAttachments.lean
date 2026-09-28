@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.SeparatedDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -163,8 +155,6 @@ theorem mem_separatedCarrier_iff_sheet (h : ι → E → ℝ)
     rcases i with _ | i
     · exact Or.inl ⟨p.1, hx, hp.symm⟩
     · exact Or.inr (mem_iUnion₂.mpr ⟨i, hi, p.1, hx, hp.symm⟩)
-
-
 
 theorem separated_projection_eq_iff_source_overlap (h : ι → E → ℝ)
     (s : Set E) (u : ι → Set E) (T : Finset ι)

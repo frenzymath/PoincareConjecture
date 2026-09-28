@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryInverseMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -38,11 +26,6 @@ local instance m64BoundaryInverseCoefficientBounds_trilinearGroup :
 local instance m64BoundaryInverseCoefficientBounds_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
-
 
 theorem m64BoundaryMetric_inverse_coefficient_bounds
     {U K : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

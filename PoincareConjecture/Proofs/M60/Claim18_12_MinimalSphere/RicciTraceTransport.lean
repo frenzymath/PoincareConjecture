@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.IntrinsicRicciTrace
 import PoincareConjecture.Proofs.M60.Mathlib.ConformalTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem m60SphereRicciTraceDensity_eq_intrinsic_mul (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)
@@ -63,8 +53,6 @@ theorem m60SphereRicciTraceDensity_eq_intrinsic_mul (D : LeviCivitaData g)
       M60.tensorPullbackEvaluation, LeviCivitaData.ricciEvaluation,
       B, LinearMap.compl₁₂_apply, ContinuousLinearMap.coe_coe, hR, Fin.cons_zero, Fin.cons_one]
   rw [hleft, ht, hright, mul_comm]
-
-
 
 theorem m60SphereRicciTrace_integral_eq_intrinsic (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)

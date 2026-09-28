@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Smooth.Coercivity
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -377,7 +369,6 @@ theorem translated_coeff_cutoff_gradient_pointwise_bound
         (diffQuot k h u x)^2 = 0 := by
       rw [h_indicator]; ring
     linarith
-
 
 theorem diffQuot_coeff_cutoff_squared_pointwise_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

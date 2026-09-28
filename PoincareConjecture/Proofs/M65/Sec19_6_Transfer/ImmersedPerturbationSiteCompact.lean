@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFiniteControls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,12 +15,8 @@ namespace PoincareConjecture.M65Perturbation
 local notation "ang" => (fun x : ℝ =>
   (Subtype.mk (Proofs.M58.angularPoint x) (Proofs.M58.norm_angularPoint x) : LoopCircle))
 
-
-
 def angularSiteBox (K : Set ℝ) : Set LoopAmbient :=
   {z | z 0 ∈ Icc 0 rampPeriod ∧ z 1 ∈ Icc 0 rampPeriod ∧ z 2 ∈ K}
-
-
 
 theorem angularSiteBox_compact (K : Set ℝ) (hK : IsCompact K) :
     IsCompact (angularSiteBox K) := by
@@ -54,9 +40,6 @@ theorem angularSiteBox_compact (K : Set ℝ) (hK : IsCompact K) :
   rw [← himage]
   exact ((isCompact_Icc.prod isCompact_Icc).prod hK).image hf
 
-
-
-
 theorem angularSiteBox_lift (K : Set ℝ) (x y : LoopCircle) (t : ℝ) (ht : t ∈ K) :
     ∃ z ∈ angularSiteBox K, loopSite z = ((x, y), t) := by
   obtain ⟨u, hu, hux⟩ := Proofs.M58.exists_angularPoint x
@@ -68,9 +51,6 @@ theorem angularSiteBox_lift (K : Set ℝ) (x y : LoopCircle) (t : ℝ) (ht : t �
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem site_value_contMDiffAt (Gamma : P → ℝ → C1FreeLoopSpace (M := M))
     (J : Set ℝ) (d : ℝ) (hJ : IsOpen J)
@@ -89,10 +69,6 @@ theorem site_value_contMDiffAt (Gamma : P → ℝ → C1FreeLoopSpace (M := M))
 variable [T2Space M]
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem exists_site_zero_capture (Gamma : P → ℝ → C1FreeLoopSpace (M := M))
     (J : Set ℝ) (d : ℝ) (hJ : IsOpen J) (hd : 0 < d)
@@ -126,9 +102,6 @@ theorem exists_site_zero_capture (Gamma : P → ℝ → C1FreeLoopSpace (M := M)
   obtain ⟨eps, heps, hepsO⟩ := Metric.mem_nhds_iff.mp hall
   exact ⟨min eps d, lt_min heps hd, min_le_right _ _,
     fun p hp => hepsO (ball_subset_ball (min_le_left _ _) hp)⟩
-
-
-
 
 theorem compact_site_collisions [ProperSpace P]
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (J K : Set ℝ) (d r rho : ℝ)

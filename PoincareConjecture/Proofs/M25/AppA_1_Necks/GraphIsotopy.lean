@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.CentralSphere
 import PoincareConjecture.Proofs.M25.Mathlib.SmoothGraph
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem m25_coordinate_graph_isSmoothEmbedding (f : UnitTwoSphere → ℝ)
     (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
     (hdom : ∀ q, f q ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -35,8 +23,6 @@ theorem m25_coordinate_graph_isSmoothEmbedding (f : UnitTwoSphere → ℝ)
   N.coordinatePartialHomeomorph.m25_isSmoothEmbedding_graph N.coordinate_map_smooth
     N.coordinate_inverse_smooth (RiemannianMetric.lineModelEquiv 2) f hf
       (fun q => ⟨mem_univ q, hdom q⟩)
-
-
 
 theorem m25_coordinate_graphs_isotopic (f₀ f₁ : UnitTwoSphere → ℝ)
     (hf₀ : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f₀)

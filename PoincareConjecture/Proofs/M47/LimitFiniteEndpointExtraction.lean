@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteOriginalEllipticity
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSmoothExtraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +37,6 @@ variable (j : ℕ → ℕ)
 
 local notation "U" => (fun i : ℕ =>
   TopologicalSpace.Opens.mk (G.exhaustion.space (j i)) (G.exhaustion.space_open (j i)))
-
-
 
 theorem limitFinite_endpoint_row_extraction
     (d K R ρ : ℕ → ℝ) (hd : ∀ i, 0 < d i) (hK : ∀ i, 0 < K i)

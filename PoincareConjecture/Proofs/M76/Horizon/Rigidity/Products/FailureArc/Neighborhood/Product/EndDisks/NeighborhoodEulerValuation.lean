@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.BoundaryCount.RectangleCoverCount
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.SharedBoundaryConeUnion
 
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 

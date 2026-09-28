@@ -4,19 +4,6 @@ import PoincareConjecture.Statements.M38LocalTopology
 import PoincareConjecture.Statements.M54GroupEffects
 import PoincareConjecture.Statements.M55ChildComponents
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,34 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 def RepairedLocalTopologyProviderRealization
     (G38 : RepairedLocalSurgeryTopologyTheory.{u})
@@ -77,8 +36,6 @@ def RepairedLocalTopologyProviderRealization
             letI := hpost
             W.topology T hT hpost =
               (Classical.choice (L.nonempty_reconstruction T hT)).conclusion
-
-
 
 def M56PoincareProviderRealization
     (G54 : RepairedGroupEffectsTheory.{u})
@@ -135,10 +92,6 @@ structure RepairedAncestryTheory : Prop where
             (W.topology T hT hpost) (W.effects T hT hpost) hEffects
             (W.parent_groups_subsingleton T hT hpost))) →
       Nonempty (RepairedFiniteAncestryData D.certificate.flow (hF ▸ W))
-
-
-
-
 
   poincare : ∀ (G54 : RepairedGroupEffectsTheory.{u})
     (G55 : RepairedChildComponentsTheory.{u})

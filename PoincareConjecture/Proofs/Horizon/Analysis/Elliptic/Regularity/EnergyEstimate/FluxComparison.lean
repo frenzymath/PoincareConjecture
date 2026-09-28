@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.ComparisonTest
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -33,8 +25,6 @@ private theorem memLp_top_difference_weight
   have h := abs_le.mp (herr x hx)
   apply abs_le.mpr
   constructor <;> linarith [ε.coe_nonneg]
-
-
 
 theorem weak_flux_comparison_energy_le
     {O : Set E} (hO : IsOpen O) {F G : Fin d → E → ℝ} {f g u v φ : E → ℝ}

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.OrdinaryProductPaths
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -127,7 +120,6 @@ theorem liftCurve_integrand
           (P.liftVelocity F q s) (P.liftVelocity F q s)) = _
   rw [P.horizontalScalarCurvature_eq F.connection, ← P.pointMap_horizontal_metric,
     P.liftVelocity_projection F q hs, ht, P.pointMap_liftCurve]
-
 
 def liftBackwardPath (h : IntrinsicGeneralizedRicciEquation P.leafwiseConnection) :
     M14BackwardPath (P.toLGeometry h) T τ₁ τ₂

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem cap_scalarSup_error_of_pointwise_error {X : Type*} {U : Set X}
     (hne : U.Nonempty) (R R' : X → ℝ) (hbounded : BddAbove (R '' U))
@@ -47,8 +37,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem cap_image_scalarSup_close {g : RiemannianMetric 3 M}
     (N : CapCertificate g) (h : RiemannianMetric 3 X) (D : LeviCivitaData h)

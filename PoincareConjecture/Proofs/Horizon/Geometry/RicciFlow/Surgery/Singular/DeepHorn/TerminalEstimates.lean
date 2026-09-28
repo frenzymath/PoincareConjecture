@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,7 +64,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
     [T2Space M] [T3Space M] [SecondCountableTopology M]
 
-
 theorem extension_scalar_gradient_bound
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
     (t : ℝ) (ht : t ∈ F.interval) (x : (E.extended.slice t).carrier)
@@ -97,7 +88,6 @@ private theorem box_scalar_pullback (G : GeneralizedRicciFlowData.{u})
   exact (((G.box b).flow.connection t).scalarCurvature_eq_of_local_isometry
     (G.connection t) isOpen_univ ((G.box b).forward_smooth t ht).contMDiffOn
     (fun y _ v w => ((G.box b).metric_pullback t ht y v w).symm) (mem_univ x)).symm
-
 
 theorem extension_box_scalar_gradient_bound
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -135,7 +125,6 @@ private theorem terminal_box_eventually
   have htF : t ∈ F.interval := H.interval_exhausts_preterminal ⟨ht0.le, ht⟩
   exact ⟨htF, heq ▸ ⟨E.old_times htF, htU⟩⟩
 
-
 theorem terminal_box_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -162,8 +151,6 @@ theorem terminal_box_scalar_gradient_bound
     (hupper.mul (hmetric.tendsto.mono_left hfilter).sqrt)
   filter_upwards [hevent, hscalar.eventually (Ioi_mem_nhds hx)] with t ht htx
   exact extension_box_scalar_gradient_bound H E b t ht.1 ht.2 x htx.le v
-
-
 
 theorem terminal_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})
@@ -202,8 +189,6 @@ private theorem box_time_mem (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) {t : ℝ} (ht : t ∈ (G.box b).interval) : t ∈ G.interval := by
   obtain ⟨U, _, heq⟩ := (G.box b).relatively_open
   exact (heq ▸ ht).1
-
-
 
 theorem extension_box_scalar_evolution_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})
@@ -250,7 +235,6 @@ theorem extension_box_scalar_evolution_bound
   rw [hev.unique hdb, heqt]
   exact hd_bound
 
-
 private theorem scalarEvolution_continuousOn
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (G : GeneralizedRicciFlowData.{u}) (b : G.box_index)
@@ -267,8 +251,6 @@ private theorem scalarEvolution_continuousOn
   apply h.congr
   intro t ht
   exact ((hM04.scalar_evolution 3 _ _ (G.box b).flow t ht x).derivWithin (hJ t ht)).symm
-
-
 
 theorem terminal_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})
@@ -309,8 +291,6 @@ private theorem initial_box_eventually
   have htF : t ∈ F.interval := H.interval_exhausts_preterminal ⟨ht0.le, htT⟩
   exact ⟨⟨ht0, htT⟩, heq ▸ ⟨E.old_times htF, htU⟩⟩
 
-
-
 theorem initial_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -334,8 +314,6 @@ theorem initial_scalar_time_derivative_bound
   filter_upwards [hevent, hscalar.eventually (Ioi_mem_nhds hx)] with t ht htx
   exact extension_box_scalar_evolution_bound hM04 H E b ht.1 ht.2 x htx.le
 
-
-
 theorem extension_scalar_gradient_bound_of_strict
     (hM04 : RicciFlowCurvatureCalculus.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -349,8 +327,6 @@ theorem extension_scalar_gradient_bound_of_strict
   · have htT' : t = T := mem_singleton_iff.mp htT
     subst t
     exact terminal_scalar_gradient_bound hM04 H E x hx v hv
-
-
 
 theorem extension_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureCalculus.{u})

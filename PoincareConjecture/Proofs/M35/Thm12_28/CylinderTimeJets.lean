@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.EuclideanCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
 
 theorem cylinderEuclideanCoefficients_time_affine (u : ℝ)
     (p v w : EuclideanSpace ℝ (Fin 3)) :
@@ -33,8 +23,6 @@ private theorem coefficient_zero_smooth (v w : EuclideanSpace ℝ (Fin 3)) :
       32 * (1 - (0 : ℝ)) / (‖(cylinderCoordinateEquiv p).1‖ ^ 2 + 4) ^ 2) :=
     contDiff_const.div ((hn.add contDiff_const).pow 2) (fun _ => ne_of_gt (by positivity))
   exact (hf.mul contDiff_const).add contDiff_const
-
-
 
 theorem continuous_cylinder_metric_jet (r : ℕ) (p v w : EuclideanSpace ℝ (Fin 3)) :
     Continuous (fun u : ℝ => iteratedFDeriv ℝ r

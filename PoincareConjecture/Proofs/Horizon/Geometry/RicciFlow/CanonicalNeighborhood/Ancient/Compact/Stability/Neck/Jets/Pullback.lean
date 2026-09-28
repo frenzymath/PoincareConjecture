@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Comparison.Jets.ComparisonCoordinateJets
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.TerminalNeck
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem eventually_small_bilinearPullback_jets_at_filter
     {κ : Type*} {l : Filter κ}
@@ -54,7 +43,6 @@ theorem eventually_small_bilinearPullback_jets_at_filter
       all_goals norm_num
     _ = η := mul_div_cancel₀ η hD.ne'
 
-
 theorem eventually_small_bilinearPullback_jets_at
     {ι : Type*} {f : ι → E → E} (x : ι → E) {K : Set E}
     {B : ℕ → E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -71,8 +59,6 @@ theorem eventually_small_bilinearPullback_jets_at
       ‖iteratedFDeriv ℝ j (fun y => (B k (f i y)).bilinearComp
         (fderiv ℝ (f i) y) (fderiv ℝ (f i) y)) (x i)‖ ≤ η :=
   eventually_small_bilinearPullback_jets_at_filter x hf hmap hBs m hC hfj hBj hη
-
-
 
 theorem eventually_small_bilinearPullback_jets_of_compact_convergence
     {ι : Type*} {f : ι → E → E} (x : ι → E) {U K : Set E}

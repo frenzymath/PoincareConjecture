@@ -2,28 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.RegularC
 import Mathlib.Geometry.Manifold.SmoothEmbedding
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
-
 open Set Function
 open scoped Topology ContDiff Manifold
 
 noncomputable section
 
-
-
-
-
 namespace Poincare.Manifold
-
-
 
 def subtypeRestrictImage {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (e : OpenPartialHomeomorph X Y) {S : Set X} {T : Set Y}
@@ -81,8 +65,6 @@ def subtypeRestrictImage {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (h : e.IsImage S T) (y : ↥(e.target ∩ T)) :
     (((subtypeRestrictImage e h).symm y : ↥(e.source ∩ S)) : X) = e.symm y := by
   rfl
-
-
 
 def subtypeRestrictImageOn {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (e : OpenPartialHomeomorph X Y) {S : Set X} {T : Set Y}
@@ -162,7 +144,6 @@ def subtypeRestrictImageOn {X Y : Type*} [TopologicalSpace X] [TopologicalSpace 
     (subtypeRestrictImageOn e h a ha).target = Subtype.val ⁻¹' e.target := by
   rfl
 
-
 @[reducible] def chartedSpaceOfRelativeCharts {S H : Type*} [TopologicalSpace S]
     [TopologicalSpace H] (charts : S → OpenPartialHomeomorph S H)
     (hsource : ∀ x : S, x ∈ (charts x).source) : ChartedSpace H S :=
@@ -179,9 +160,6 @@ def subtypeRestrictImageOn {X Y : Type*} [TopologicalSpace X] [TopologicalSpace 
     (((subtypeRestrictImageOn e h a ha).symm y : S) : X) = e.symm y := by
   simp [subtypeRestrictImageOn, hy]
 
-
-
-
 theorem contDiffOn_corner_transition_of_eqOn
     {𝕜 E H : Type*} [NontriviallyNormedField 𝕜]
     [NormedAddCommGroup E] [NormedSpace 𝕜 E] [TopologicalSpace H]
@@ -193,6 +171,5 @@ theorem contDiffOn_corner_transition_of_eqOn
   apply (hk.mono hsub).congr
   intro x hx
   exact heq hx
-
 
 end Poincare.Manifold

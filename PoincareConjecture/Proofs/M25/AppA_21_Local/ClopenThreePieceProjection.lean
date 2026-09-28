@@ -11,18 +11,6 @@ universe u
 namespace PoincareConjecture.M25
 open Topology3D
 
-
-
-
-
-
-
-
-
-
-
-
-
 theorem exists_circle_projection_on_clopen_three_piece_union
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]

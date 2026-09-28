@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TransportedCarrier
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Isometry
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 

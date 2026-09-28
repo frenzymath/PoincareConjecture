@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Volume.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory
@@ -38,7 +31,6 @@ end Balls
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem rescaledMetric_hausdorffVolume (g : RiemannianMetric 3 M) (c : ℝ)
     (hc : 0 < c) (s : Set M) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.LocalInverse
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Length
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_exponential_chart
     {n : ℕ} {M : Type*} [TopologicalSpace M]

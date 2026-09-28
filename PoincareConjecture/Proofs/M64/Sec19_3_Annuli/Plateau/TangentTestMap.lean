@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ChartReaderProjection
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_exists_smooth_tangent_test (q : M) (w : TangentSpace (𝓡 n) q) :
     ∃ f : LoopPlane → M, ContMDiff (𝓡 2) (𝓡 n) 1 f ∧ f 0 = q ∧

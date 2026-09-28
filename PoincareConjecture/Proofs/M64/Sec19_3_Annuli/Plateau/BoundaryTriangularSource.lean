@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryLocalizedSource
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
-
 theorem m64Source_horizontalSlice_hasDerivAt
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T) (x s : ℝ) :
     HasDerivAt (fun y => T (annulusPoint y s) 0)
@@ -41,9 +27,6 @@ theorem m64Source_horizontalSlice_hasDerivAt
   have hcurve := (hT (annulusPoint x s)).hasFDerivAt.comp_hasDerivAt x hline
   exact (EuclideanSpace.proj (0 : Fin 2) : LoopPlane →L[ℝ] ℝ).hasFDerivAt.comp_hasDerivAt
     x hcurve
-
-
-
 
 theorem m64Source_horizontal_derivative_pos
     {T : LoopPlane → LoopPlane}
@@ -61,18 +44,12 @@ theorem m64Source_horizontal_derivative_pos
   have hh := (abs_le.mp hfirst).1
   linarith
 
-
-
-
 theorem m64Source_horizontalSlice_strictMono
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
     (hclose : ∀ p, ‖fderiv ℝ T p - ContinuousLinearMap.id ℝ LoopPlane‖ ≤ 1 / 2)
     (s : ℝ) : StrictMono (fun x => T (annulusPoint x s) 0) :=
   strictMono_of_hasDerivAt_pos (fun x => m64Source_horizontalSlice_hasDerivAt hT x s)
     (fun x => m64Source_horizontal_derivative_pos hclose (annulusPoint x s))
-
-
-
 
 theorem m64TriangularSource_preimage_interior
     {T : LoopPlane → LoopPlane} (hT : Differentiable ℝ T)
@@ -91,9 +68,6 @@ theorem m64TriangularSource_preimage_interior
   have hhi : T p 0 < curvePeriod ↔ p 0 < curvePeriod := by
     simpa only [hP, hpoint] using hm.lt_iff_lt (a := p 0) (b := curvePeriod)
   simp only [mem_preimage, m64AnnulusInterior_coordinates, hsecond, hlo, hhi]
-
-
-
 
 theorem m64_exists_localized_horizontal_rectangle_source
     {eta rho : ℝ → ℝ} (heta : ContDiff ℝ ∞ eta)

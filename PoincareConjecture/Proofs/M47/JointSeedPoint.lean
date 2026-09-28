@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.JointSeedOrdinary
 import PoincareConjecture.Proofs.M47.JointSeedLogarithmic
 import PoincareConjecture.Proofs.M47.JointSeedPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_action_normalization {d v A : ℝ} (hd : 0 < d)
     (hv : v ≤ d / 2) (hA : A ≤ 3 * Real.sqrt d) :
@@ -44,9 +33,6 @@ theorem jointSeed_action_normalization {d v A : ℝ} (hd : 0 < d)
   rw [div_mul_eq_mul_div]
   apply (le_div_iff₀ htwo).2
   nlinarith
-
-
-
 
 theorem exists_jointSeed_point
     (P : M14OrdinaryProviders.{u} 3)

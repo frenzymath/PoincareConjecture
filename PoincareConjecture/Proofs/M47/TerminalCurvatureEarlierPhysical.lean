@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOrdinaryBirthVolume
 import PoincareConjecture.Proofs.M47.TerminalSourceRealizationCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Metric.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u v w
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_physical_slice_chart
     {S : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -55,8 +44,6 @@ theorem terminalCurvature_exists_physical_slice_chart
   rw [hmap, hd]
   exact hmetric y v w
 
-
-
 theorem terminalCurvature_physical_composite_source
     {M : Type u} {N : Type v} {X : Type w}
     [TopologicalSpace M] [ChartedSpace E M]
@@ -69,8 +56,6 @@ theorem terminalCurvature_physical_composite_source
   change (x ∈ phi.source ∧ phi x ∈ chi.source) ↔ x ∈ phi.source
   rw [hchi]
   simp only [mem_univ, and_true]
-
-
 
 theorem terminalCurvature_physical_composite_jets
     {M : Type u} {N : Type v} {X : Type w}

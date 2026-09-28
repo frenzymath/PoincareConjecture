@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedPureDomainModel
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalFacetIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem exists_protected_facet_domain_model
     {e : ι → OpenPartialHomeomorph X V3} {R D : Set X}

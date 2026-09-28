@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderEnergyDecay
 import PoincareConjecture.Proofs.M34.Standard.CanonicalMetricEnergyComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -23,15 +12,10 @@ namespace PoincareConjecture.M34
 
 open DifferenceEnergy
 
-
-
 noncomputable def endCylinderDifferenceCoefficients
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (j : ℕ) (t : ℝ) : StandardCapSpace → FH 3 :=
   (F.metric t).pullbackCoefficients (endAxialTranslation e j) - endCylinderCoefficients e t
-
-
-
 
 theorem endCylinderDifferenceCoefficients_contDiffOn
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
@@ -44,9 +28,6 @@ theorem endCylinderDifferenceCoefficients_contDiffOn
       ((endReferenceRegion_isOpen e).mem_nhds hx))).contDiffWithinAt
   exact hA.sub (((endCylinderCoefficients_contDiff e).comp
     (contDiff_const.prodMk contDiff_id)).contDiffOn)
-
-
-
 
 theorem partialFlow_endCylinderDifferenceCoefficients_bounds
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}
@@ -90,9 +71,6 @@ theorem partialFlow_endCylinderDifferenceCoefficients_bounds
   rw [iteratedFDeriv_sub_apply (hcA.of_le (by exact_mod_cast le_top))
     (hcB.of_le (by exact_mod_cast le_top))]
   exact (norm_sub_le _ _).trans (add_le_add hjA hjB)
-
-
-
 
 theorem endCylinderDifferenceCoefficients_energy_le
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

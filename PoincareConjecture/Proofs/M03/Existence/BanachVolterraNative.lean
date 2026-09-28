@@ -1,16 +1,6 @@
 import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Function MeasureTheory Set

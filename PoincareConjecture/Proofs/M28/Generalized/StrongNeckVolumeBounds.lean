@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeLower
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeModelCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M28
 open tube RiemannianMetric
 
 private abbrev E := EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_normalized_neck_ball_volume_upper (S : ℝ) (hSpos : 0 < S) :
     ∃ V : ℝ, 0 < V ∧
@@ -82,10 +69,6 @@ theorem exists_normalized_neck_ball_volume_upper (S : ℝ) (hSpos : 0 < S) :
       simp only [Finset.sum_const, nsmul_eq_mul,
         ENNReal.ofReal_mul (Nat.cast_nonneg t.card), ENNReal.ofReal_natCast]
     _ ≤ ENNReal.ofReal V := ENNReal.ofReal_le_ofReal (by dsimp only [V]; linarith)
-
-
-
-
 
 theorem exists_normalized_neck_volume_bounds :
     ∃ v : ℝ, 0 < v ∧ ∀ S : ℝ, 0 < S →

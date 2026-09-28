@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,15 +11,10 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] {f : E → F} {s : Set E}
 
-
-
 theorem FinitePiecewiseAffineOn.postcomp (hf : FinitePiecewiseAffineOn f s)
     (a : F →ᴬ[ℝ] G) : FinitePiecewiseAffineOn (a ∘ f) s := by
   obtain ⟨K, hK, rfl, hfaces⟩ := hf
   exact ⟨K, hK, rfl, hfaces.postcomp a⟩
-
-
-
 
 theorem FinitePiecewiseAffineOn.precomp_affineEquiv [FiniteDimensional ℝ E]
     (hf : FinitePiecewiseAffineOn f s) (a : G ≃ᴬ[ℝ] E) :
@@ -45,9 +32,6 @@ theorem FinitePiecewiseAffineOn.precomp_affineEquiv [FiniteDimensional ℝ E]
 end Geometry
 
 namespace Homeomorph
-
-
-
 
 theorem IsFinitePL.affine_conjugate {E F E' F' : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_InitialDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CovariantPullback
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +14,6 @@ open ConnectionAlongCurve ConnectionVariation CoordinateExponential RiemannianMe
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_jacobi_preserves_normality
     (N : IntrinsicAnnulus) {q X : ℝ → AnnulusCoordinates} {I : Set ℝ} {b : ℝ}
@@ -90,9 +75,6 @@ theorem m64Intrinsic_jacobi_preserves_normality
   have hB0 : B 0 = 0 := horth
   simpa only [hB0, sub_zero, zero_mul, norm_le_zero_iff] using h
 
-
-
-
 theorem m64Intrinsic_boundary_normal_derivative_orthogonal
     (N : IntrinsicAnnulus) {radius : ℝ} {normal : ℝ → AnnulusCoordinates}
     (hnormal : ContDiff ℝ ∞ normal)
@@ -112,9 +94,6 @@ theorem m64Intrinsic_boundary_normal_derivative_orthogonal
   have hz := h.unique (hasDerivAt_const a (1 : ℝ))
   rw [N.metric.symm] at hz
   linarith
-
-
-
 
 theorem m64Intrinsic_normal_variation_orthogonal
     (N : IntrinsicAnnulus) {radius : ℝ}

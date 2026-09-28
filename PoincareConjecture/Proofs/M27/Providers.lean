@@ -8,13 +8,6 @@ import PoincareConjecture.Proofs.M24
 import PoincareConjecture.Proofs.M25
 import PoincareConjecture.Proofs.M26.Providers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

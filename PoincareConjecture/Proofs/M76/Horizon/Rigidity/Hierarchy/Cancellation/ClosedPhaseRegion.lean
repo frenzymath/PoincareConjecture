@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalPhaseSelectionPL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.SupportedSlabDomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -26,8 +16,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem exists_hamiltonZero_closed_phase_region_cancellation
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -147,9 +135,6 @@ theorem exists_hamiltonZero_closed_phase_region_cancellation
       change (Q0 ((Q0).symm (T (t, ⟨x, hx⟩)))).2 ∈ _
       rw [(Q0).apply_symm_apply]
       exact (hT t ⟨x, hx⟩).2.1
-
-
-
 
 theorem exists_hamiltonZero_closed_phase_pair_cancellation
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

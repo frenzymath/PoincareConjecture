@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.WeakReplacement
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -22,8 +14,6 @@ open LeviCivitaData.Dirichlet
 
 variable {n : ℕ} [NeZero n]
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem existsUnique_weakHarmonicReplacement_of_smooth (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) {q : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -53,8 +43,6 @@ theorem existsUnique_weakHarmonicReplacement_of_smooth (D : LeviCivitaData g)
   refine ⟨w, fun f => (hint w f).trans (hw f), ?_⟩
   intro w' hw'
   exact huniq w' (fun f => (hint w' f).symm.trans (hw' f))
-
-
 
 theorem existsUnique_weakHarmonicCoordinate (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) (i : Fin n) :

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_LocalCoord
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarPullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,9 +28,6 @@ noncomputable local instance physicalCollarTwoJetNormedGroup :
 
 noncomputable local instance physicalCollarTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_collar_plane_of_pullback_twoJet
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -91,10 +78,6 @@ theorem exists_collar_plane_of_pullback_twoJet
       (hgeom x hxV p q).symm.trans horth.2.2⟩
   · rw [← hsectional, hscalar]
     exact hmargin
-
-
-
-
 
 theorem exists_local_collar_preservation (P : M44CapPersistencePredecessors.{u})
     (C : ℝ) (u v : E) {model : Set (MetricTwoJet 3)} (hmodel : IsCompact model)

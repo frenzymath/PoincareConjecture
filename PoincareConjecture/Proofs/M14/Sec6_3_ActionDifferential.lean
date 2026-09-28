@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ActionFirstVariation
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationActionComparison
 import PoincareConjecture.Statements.M14Exponential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -40,9 +30,6 @@ private theorem inner_transport_heq {q r : G.Point} (h : q = r)
   cases hY
   rfl
 
-
-
-
 theorem initialVectorVariation_action (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
     (V : M14LVariationData G (E.path Z s hs hpos) (E.square_path Z s hs hpos))
@@ -55,9 +42,6 @@ theorem initialVectorVariation_action (E : M14ExponentialFamily G T x)
   apply variationAction_eq_of_squareFamily V (E.square_path _ _ (hmem u hu) hpos) hu
   intro r hr
   exact (hV r hr u).trans (exponential_square_curve_eq E _ (hmem u hu) hpos hr).symm
-
-
-
 
 theorem exponentialFamily_action_differential
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -125,9 +109,6 @@ theorem exponentialFamily_action_differential
     have hactual := hdiff.hasMFDerivAt.hasFDerivAt.comp_hasDerivAt_of_eq 0 hline
       (by simp only [zero_smul, add_zero])
     exact ⟨h, hactual.unique hfirst'⟩
-
-
-
 
 theorem actionDifferentialStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

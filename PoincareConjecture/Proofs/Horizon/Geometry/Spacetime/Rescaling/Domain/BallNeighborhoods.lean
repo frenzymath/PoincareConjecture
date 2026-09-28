@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Domain.BallData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

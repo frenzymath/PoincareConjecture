@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BoundaryChainIntersection
 import Mathlib.Algebra.Field.ZMod
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -24,8 +15,6 @@ local notation "KA" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 local notation "AA" => A.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
 open Classical in
-
-
 
 theorem boundary_topCycle_rank_bound (hAK : A ≤ K)
     (hcofaces : ∀ t : Triangle KA, (tetrahedronCofaces KA t).card =

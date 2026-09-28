@@ -1,20 +1,8 @@
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 protected theorem Convex.intrinsicInterior
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

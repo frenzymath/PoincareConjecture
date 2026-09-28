@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.IndependentVertexRealization
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedManifoldConditions
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedStarCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,11 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {E : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem smoothingConclusion_of_finite_geometric_triangulation
     (P : SmoothingBridgeInput (M := M)) (K : SimplicialComplex ℝ E)

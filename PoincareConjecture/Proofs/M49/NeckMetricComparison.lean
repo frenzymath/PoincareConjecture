@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M49.RoundCylinderGram
 import PoincareConjecture.Proofs.M49.Mathlib.InverseGramBound
 import Mathlib.LinearAlgebra.Matrix.BilinearForm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,7 @@ universe u
 
 namespace PoincareConjecture.M49
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem roundCylinder_bilinear_error_le_jet (u : ℝ) (hu : u < 1)
     (B : RoundCylinderTwoTensor) (k : ℕ) (z : RoundCylinderSpace)
@@ -100,9 +89,7 @@ theorem roundCylinder_bilinear_error_le_jet (u : ℝ) (hu : u < 1)
       (Real.sqrt_le_sqrt (roundCylinder_zeroth_le_jetErrorSquared_of_lt_one u hu B k z))
       (Real.sqrt_nonneg _)) (Real.sqrt_nonneg _))
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem epsilonNeck_bilinear_error_le
     {M : Type u} [TopologicalSpace M]

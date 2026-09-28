@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_LocalScala
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceScalarContinuity
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +22,6 @@ noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) 
 
 noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem standard_tip_scalar_gt_three_quarters (g₀ : StandardInitialMetric) :
     (3 / 4 : ℝ) < g₀.connection.scalarCurvature 0 := by
@@ -60,9 +48,6 @@ private theorem coefficient_jet_norm_le_bilinear
     (c := EuclideanSpace.basisFun (Fin 3) ℝ b)
   simp only [OrthonormalBasis.norm_eq_one, one_mul] at h1 h2
   exact h2.trans h1
-
-
-
 
 theorem exists_tip_scalar_accuracy (g₀ : StandardInitialMetric) :
     ∃ eta₀ : ℝ, 0 < eta₀ ∧ eta₀ ≤ 1 / 4 ∧

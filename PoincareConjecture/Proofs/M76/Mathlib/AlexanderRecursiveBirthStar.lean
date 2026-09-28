@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialStar
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_ball_inter_space_subset_closedStar [DecidableEq E]
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -46,11 +31,6 @@ theorem exists_ball_inter_space_subset_closedStar [DecidableEq E]
   exact hball (show (⟨x, hx.1⟩ : K.space) ∈ Metric.ball a η from hx.2)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_local_minimum_union_triangulation [DecidableEq E]
     (Kd Ks : SimplicialComplex ℝ E) (hd : Kd.faces.Finite) (hs : Ks.faces.Finite)

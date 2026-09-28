@@ -2,23 +2,12 @@ import PoincareConjecture.Definitions.M34StandardCapExistence
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M35.Mathlib.UniformReciprocalRate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem scalar_lower_rate_of_blowup_and_guarded_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

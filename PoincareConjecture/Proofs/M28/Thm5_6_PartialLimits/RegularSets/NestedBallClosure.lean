@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem intrinsicOpenMetric_isCompact_closure_ball
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p : U) {r : ℝ}
     (hcompact : IsCompact (closure (g.ball (p : M) r)))
@@ -35,8 +23,6 @@ theorem intrinsicOpenMetric_isCompact_closure_ball
   apply Topology.IsEmbedding.subtypeVal.isInducing.isCompact_preimage' hcompact
   intro x hx
   exact ⟨⟨x, hclosure hx⟩, rfl⟩
-
-
 
 theorem nested_intrinsicOpenMetric_isCompact_closure_ball
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteOldSlabBound
 import PoincareConjecture.Proofs.M47.FiniteHorizonCapLineScalar
 import PoincareConjecture.Statements.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,10 +46,6 @@ local notation "Q" => (fun k => GeneralizedBlowupSequence.scale
   (G.subsequence (sigma (etaIndex k))))
 local notation "c" => (-H.toReal)
 local notation "g" => (G.limit.flow.metric 0)
-
-
-
-
 
 theorem finiteHorizon_eventually_cap_line_bound
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,16 +31,9 @@ noncomputable local instance rescaledLimitCurvatureTwoJetSpace :
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
-
 noncomputable def standardJetCurvatureNorm (J : MetricTwoJet 3) : ℝ :=
   tensorNormFromComponents (Matrix.of (fun i j : Fin 3 => J.1 (e i) (e j)))
     (fun a : Fin 4 → Fin 3 => jetCurvature J (e (a 0)) (e (a 1)) (e (a 2)) (e (a 3)))
-
-
-
 
 theorem standardJetCurvatureNorm_metricTwoJet
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E) :
@@ -60,10 +44,6 @@ theorem standardJetCurvatureNorm_metricTwoJet
   unfold standardJetCurvatureNorm
   simp only [jetCurvature_metricTwoJet D]
   rfl
-
-
-
-
 
 theorem tendsto_standardJetCurvatureNorm
     {alpha : Type*} {l : Filter alpha} {g : RiemannianMetric 3 E}
@@ -88,10 +68,6 @@ theorem tendsto_standardJetCurvatureNorm
   change Tendsto (fun a => standardJetCurvatureNorm (J a)) l
     (𝓝 (standardJetCurvatureNorm (metricTwoJet g.euclideanCoefficients x))) at h
   simpa only [standardJetCurvatureNorm_metricTwoJet D] using h
-
-
-
-
 
 theorem standardJetCurvatureNorm_pullbackCoefficients
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -127,10 +103,6 @@ theorem standardJetCurvatureNorm_pullbackCoefficients
     (eventually_of_mem (hV.mem_nhds hxV) (fun y hy => hinv y (hVU hy)))
     (eventually_of_mem (hV.mem_nhds hxV)
       (fun y hy a b => congrArg (fun C => C a b) (hmetric y hy)))
-
-
-
-
 
 theorem curvature_locally_bounded_of_rescaled_twoJet_limits
     (g0 : StandardInitialMetric) {lifetime : ℝ}

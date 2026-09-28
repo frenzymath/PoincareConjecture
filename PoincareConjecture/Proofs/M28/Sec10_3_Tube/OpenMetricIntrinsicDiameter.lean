@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem intrinsicOpenMetric_intrinsicEDist (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) {S : Set M} (hSV : S ⊆ (V : Set M))
@@ -52,8 +40,6 @@ theorem intrinsicOpenMetric_intrinsicEDist (g : RiemannianMetric 3 M)
     change (Subtype.val ∘ β) t ∈ S
     rw [heq ht]
     exact hαS ⟨t, ht, rfl⟩
-
-
 
 theorem intrinsicOpenMetric_intrinsicDiameter (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) {S : Set M} (hSV : S ⊆ (V : Set M)) :

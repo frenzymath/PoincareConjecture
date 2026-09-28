@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Sourc
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SupportedCollarDisplacement
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -205,4 +197,3 @@ theorem exists_hamiltonZero_slab_adjustment {ι κ : Type*}
     rw [hGvalue, hDinner z hz, hamiltonZeroTargetTranslation_coordinates, hw, hnormal]
 
 end PoincareConjecture.M76.PrescribedSlab
-

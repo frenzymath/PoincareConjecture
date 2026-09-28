@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.GeodesicFlow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem IsGeodesicOn.hasDerivAt_chart_at
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
@@ -48,7 +39,6 @@ private theorem contDiffAt_coordinate_transition (p r : M)
     ((contMDiffOn_extChartAt_symm p).contMDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 n) p).mem_nhds hx))
 
-
 theorem IsGeodesicOn.chart_deriv_transition
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
     (hγ : g.IsGeodesicOn γ s) {t : ℝ} (ht : t ∈ s) (p r : M)
@@ -69,7 +59,6 @@ theorem IsGeodesicOn.chart_deriv_transition
   filter_upwards [(hγ.contMDiffAt ht).continuousAt.preimage_mem_nhds
     ((isOpen_extChartAt_source p).mem_nhds hp)] with u hu
   simp only [f, (extChartAt (𝓡 n) p).left_inv hu, Function.comp_apply]
-
 
 theorem isGeodesicOn_chart_flow_translate
     (g : RiemannianMetric n M) (p : M)
@@ -95,7 +84,6 @@ theorem isGeodesicOn_chart_flow_translate
       (((hΦ (u - a) hu).2.hasFDerivAt.snd).hasDerivAt.scomp u
         ((hasDerivAt_id u).sub_const a))
 
-
 theorem hasDerivAt_chart_flow_translate
     (g : RiemannianMetric n M) (p : M)
     {Φ : ℝ → EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n)}
@@ -118,7 +106,6 @@ theorem hasDerivAt_chart_flow_translate
   exact (extChartAt (𝓡 n) p).right_inv (hΦ (u - a) hu).1
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
-
 
 theorem contDiffAt_chart_velocity_transition
     {g : RiemannianMetric n M} {Γ : P → ℝ → M} {s : Set ℝ} {v : P} {t : ℝ}
@@ -145,8 +132,6 @@ theorem contDiffAt_chart_velocity_transition
     hpnt.continuousAt.preimage_mem_nhds ((isOpen_extChartAt_source r).mem_nhds hr)]
     with z hz hzp hzr
   exact hz.chart_deriv_transition ht p r hzp hzr
-
-
 
 theorem IsGeodesicOn.eq_nhds_chart_flow [T2Space M]
     {g : RiemannianMetric n M} {γ : ℝ → M} {s : Set ℝ}
@@ -182,7 +167,6 @@ theorem IsGeodesicOn.eq_nhds_chart_flow [T2Space M]
       (a := a) (t := a) (by simpa using (show (0 : ℝ) ∈ Ioo (-δ) δ by
         constructor <;> linarith))
     simpa only [sub_self, hinit] using hd.deriv.symm
-
 
 def SmoothGeodesicDataAt (Γ : P → ℝ → M) (v : P) (t : ℝ) : Prop :=
   ContMDiffAt (𝓘(ℝ, P)) (𝓡 n) ∞ (fun z => Γ z t) v ∧
@@ -252,8 +236,6 @@ theorem smooth_geodesic_step [T2Space M]
   exact ⟨hpnt, contDiffAt_chart_velocity_transition hgeo hb hpnt p (Γ v b)
     hpb (mem_extChartAt_source _) hvelocity⟩
 
-
-
 theorem exists_smooth_geodesic_step_nhds [T2Space M]
     {g : RiemannianMetric n M} {Γ : P → ℝ → M} {s : Set ℝ} {v : P}
     (hgeo : ∀ᶠ z in 𝓝 v, g.IsGeodesicOn (Γ z) s) (hs : Convex ℝ s)
@@ -289,8 +271,6 @@ theorem exists_smooth_geodesic_step_nhds [T2Space M]
     (hUsub ha.1).1 hsmooth hinit
     (fun z hz u hu => ⟨(hflow z hz u hu).1, (hflow z hz u hu).2.1⟩) hab hsa
 
-
-
 theorem SmoothGeodesicDataAt.propagate [T2Space M]
     {g : RiemannianMetric n M} {Γ : P → ℝ → M} {s : Set ℝ} {v : P}
     (hgeo : ∀ᶠ z in 𝓝 v, g.IsGeodesicOn (Γ z) s) (hs : Convex ℝ s)
@@ -320,8 +300,6 @@ theorem SmoothGeodesicDataAt.propagate [T2Space M]
       ⟨⟨a, ha⟩, hinit⟩
   have hbS : (⟨b, hb⟩ : s) ∈ S := hall ▸ mem_univ _
   exact hbS
-
-
 
 theorem contMDiffAt_geodesic_endpoint [T2Space M]
     {g : RiemannianMetric n M} {Γ : P → ℝ → M} {s : Set ℝ} {v : P}

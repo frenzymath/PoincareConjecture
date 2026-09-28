@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M78EndpointTransport
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,12 +10,6 @@ universe u
 namespace PoincareConjecture
 
 set_option linter.style.haveILetI false
-
-
-
-
-
-
 
 theorem m78EndpointTransport : M78EndpointTransportStatement.{u} := by
   intro M _ _ _ _ _ _ P S T hSmooth

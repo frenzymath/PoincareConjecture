@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem rescaledMetric_volumeMeasure (g : RiemannianMetric n M) (c : ℝ)
     (hc : 0 < c) :

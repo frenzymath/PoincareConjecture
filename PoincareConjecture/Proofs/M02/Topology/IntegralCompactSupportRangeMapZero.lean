@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportRangeMap
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.FiniteGeometricCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.FiniteFlagCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

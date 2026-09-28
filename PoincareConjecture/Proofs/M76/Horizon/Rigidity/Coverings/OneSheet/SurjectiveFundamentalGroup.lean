@@ -1,13 +1,5 @@
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace IsCoveringMap
@@ -31,8 +23,6 @@ theorem eq_basepoint_of_fundamentalGroup_map_surjective [PathConnectedSpace E]
   rw [← hδ', hp.monodromy_map] at hΓ
   exact (congrArg Subtype.val hΓ).symm
 
-
-
 theorem bijective_of_fundamentalGroup_map_surjective
     [PathConnectedSpace E] [PathConnectedSpace X]
     (e : E) (hsurj : Function.Surjective (FundamentalGroup.map ⟨p, hp.continuous⟩ e)) :
@@ -52,8 +42,6 @@ theorem bijective_of_fundamentalGroup_map_surjective
     let γ : Path.Homotopic.Quotient (p e) x :=
       .mk (PathConnectedSpace.somePath (p e) x)
     exact ⟨(hp.monodromy γ ⟨e, rfl⟩).1, (hp.monodromy γ ⟨e, rfl⟩).2⟩
-
-
 
 def homeomorphOfFundamentalGroupMapSurjective
     [PathConnectedSpace E] [PathConnectedSpace X]

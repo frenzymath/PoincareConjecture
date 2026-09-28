@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedInteriorSmooth
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,11 +23,6 @@ local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) :=
 
 local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
-
 
 theorem weighted_interior_smooth_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

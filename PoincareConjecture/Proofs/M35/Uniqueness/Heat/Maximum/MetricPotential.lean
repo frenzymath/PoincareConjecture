@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricEntropyTest
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.L2IntegralVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

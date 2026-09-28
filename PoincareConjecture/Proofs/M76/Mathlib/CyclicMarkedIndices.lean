@@ -1,19 +1,7 @@
 import Mathlib.Logic.Equiv.Fin.Rotate
 import Lean.Elab.Tactic.Omega
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-
-
-
 
 theorem Fin.exists_cyclic_marked_split {N : ℕ} (a b : Fin (N + 3)) (hab : a ≠ b) :
     ∃ (m n : ℕ) (e : Fin ((m + 1) + (n + 1)) ≃ Fin (N + 3)),

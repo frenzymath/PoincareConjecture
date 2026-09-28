@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinProductRotation
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteOrderedPartition
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,14 +10,9 @@ namespace Polygon
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n m : ℕ}
 
-
-
-
 def subdivide (P : Polygon E n) (t : Fin (m + 2) → ℝ) : Polygon E (n * (m + 1)) :=
   ⟨fun k => let ij := finProdFinEquiv.symm k
     AffineMap.lineMap (P ij.1) (P (finRotate n ij.1)) (t ij.2.castSucc)⟩
-
-
 
 theorem subdivide_apply (P : Polygon E n) (t : Fin (m + 2) → ℝ)
     (i : Fin n) (j : Fin (m + 1)) :
@@ -35,9 +21,6 @@ theorem subdivide_apply (P : Polygon E n) (t : Fin (m + 2) → ℝ)
   exact congrArg (fun ij : Fin n × Fin (m + 1) =>
     AffineMap.lineMap (P ij.1) (P (finRotate n ij.1)) (t ij.2.castSucc))
       (finProdFinEquiv.symm_apply_apply (i, j))
-
-
-
 
 theorem subdivide_rotate_apply (P : Polygon E n) (t : Fin (m + 2) → ℝ)
     (ht0 : t 0 = 0) (ht1 : t (Fin.last (m + 1)) = 1)
@@ -51,8 +34,6 @@ theorem subdivide_rotate_apply (P : Polygon E n) (t : Fin (m + 2) → ℝ)
   · rw [finRotate_finProdFinEquiv_castSucc, subdivide_apply]
     rfl
 
-
-
 theorem subdivide_edgeSet (P : Polygon E n) (t : Fin (m + 2) → ℝ)
     (ht : StrictMono t) (ht0 : t 0 = 0) (ht1 : t (Fin.last (m + 1)) = 1)
     (i : Fin n) (j : Fin (m + 1)) :
@@ -60,9 +41,6 @@ theorem subdivide_edgeSet (P : Polygon E n) (t : Fin (m + 2) → ℝ)
       AffineMap.lineMap (P i) (P (finRotate n i)) '' Icc (t j.castSucc) (t j.succ) := by
   rw [edgeSet, subdivide_apply, subdivide_rotate_apply P t ht0 ht1]
   rw [← affineSegment_image, affineSegment_eq_segment, segment_eq_Icc (ht Fin.castSucc_lt_succ).le]
-
-
-
 
 theorem subdivide_boundary (P : Polygon E n) (t : Fin (m + 2) → ℝ)
     (ht : StrictMono t) (ht0 : t 0 = 0) (ht1 : t (Fin.last (m + 1)) = 1) :

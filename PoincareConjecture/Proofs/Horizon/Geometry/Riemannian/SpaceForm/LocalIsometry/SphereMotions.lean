@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphe
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.InnerProductSpace.Projection.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -78,8 +71,6 @@ private theorem sphere_tangent_normal {n : ℕ} (p : UnitSphere n)
   rw [real_inner_comm (p : E n) (sphereInclusionDeriv p v)]
   exact sphere_normal_tangent p v
 
-
-
 theorem exists_ambient_sphere_motion {n : ℕ} (p q : UnitSphere n)
     (A : TangentSpace (𝓡 n) p ≃L[ℝ] TangentSpace (𝓡 n) q)
     (hA : ∀ u v, (roundSphereMetric n).inner q (A u) (A v) =
@@ -144,8 +135,6 @@ theorem exists_ambient_sphere_motion {n : ℕ} (p q : UnitSphere n)
   rw [hT, sphere_normal_tangent, zero_smul, zero_add, hPv]
   rfl
 
-
-
 def sphereMotion {n : ℕ} (L : E n ≃ₗᵢ[ℝ] E n) :
     Diffeomorph (𝓡 n) (𝓡 n) (UnitSphere n) (UnitSphere n) ∞ := by
   let : Fact (Module.finrank ℝ (E n) = n + 1) := ⟨by simp [E]⟩
@@ -188,7 +177,6 @@ private theorem sphereMotion_deriv {n : ℕ} (L : E n ≃ₗᵢ[ℝ] E n) (x : U
   rw [hder] at hcomp
   exact (congrArg (fun T => T v) hcomp).symm
 
-
 theorem sphereMotion_inner {n : ℕ} (L : E n ≃ₗᵢ[ℝ] E n) (x : UnitSphere n)
     (u v : TangentSpace (𝓡 n) x) :
     (roundSphereMetric n).inner (sphereMotion L x)
@@ -200,8 +188,6 @@ theorem sphereMotion_inner {n : ℕ} (L : E n ≃ₗᵢ[ℝ] E n) (x : UnitSpher
     (sphereInclusionDeriv (sphereMotion L x) (mfderiv (𝓡 n) (𝓡 n) (sphereMotion L) x v)) =
       inner ℝ (sphereInclusionDeriv x u) (sphereInclusionDeriv x v)
   rw [sphereMotion_deriv, sphereMotion_deriv, L.inner_map_map]
-
-
 
 theorem exists_ambient_sphere_motion_firstOrder {n : ℕ} (x y : UnitSphere n)
     (A : TangentSpace (𝓡 n) x ≃L[ℝ] TangentSpace (𝓡 n) y)
@@ -220,9 +206,6 @@ theorem exists_ambient_sphere_motion_firstOrder {n : ℕ} (x y : UnitSphere n)
   rw [hLA] at he
   erw [hpos] at he
   exact sphereInclusionDeriv_injective y he
-
-
-
 
 theorem exists_sphere_motion {n : ℕ} (p q : UnitSphere n)
     (A : TangentSpace (𝓡 n) p ≃L[ℝ] TangentSpace (𝓡 n) q)

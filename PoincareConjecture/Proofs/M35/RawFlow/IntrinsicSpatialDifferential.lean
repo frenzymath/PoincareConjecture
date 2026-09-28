@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialCoordinate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicInverseScale (s : ℝ) : ℝ :=
   axisDivision (radialArclengthOrderIso g hrotation hcomplete).symm s
@@ -57,7 +48,6 @@ theorem intrinsicInverseScale_pos {s : ℝ} (hs : 0 < s) :
   rw [← mul_intrinsicInverseScale g hrotation hcomplete] at h
   exact (mul_pos_iff_of_pos_left hs).mp h
 
-
 theorem intrinsicInverseScale_radial_derivative (s : ℝ) :
     intrinsicInverseScale g hrotation hcomplete s + s ^ 2 *
       axisDivision (deriv (intrinsicInverseScale g hrotation hcomplete)) s =
@@ -80,7 +70,6 @@ theorem intrinsicInverseScale_radial_derivative (s : ℝ) :
   calc
     _ = k s + s * deriv k s := by rw [← hs]; ring
     _ = _ := hu
-
 
 theorem intrinsicSpatialInverse_fderiv (x v : StandardCapSpace) :
     fderiv ℝ (intrinsicSpatialInverse g hrotation hcomplete) x v =

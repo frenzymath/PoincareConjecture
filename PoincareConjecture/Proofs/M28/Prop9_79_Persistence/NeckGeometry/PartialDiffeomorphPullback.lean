@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckTransfer
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +15,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
-
-
 
 noncomputable def pullbackNeckGeometry
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
@@ -122,15 +108,11 @@ noncomputable def pullbackNeckGeometry
   · rintro _ ⟨y, hy, rfl⟩
     exact ⟨y, N.central_sphere_subset hy, rfl⟩
 
-
-
 @[simp] theorem pullbackNeckGeometry_center
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
     (hcapture : N.carrier ⊆ e.target) (D : LeviCivitaData g)
     (hscalar : 0 < D.scalarCurvature (e.symm N.center)) :
     (pullbackNeckGeometry e N hcapture D hscalar).center = e.symm N.center := rfl
-
-
 
 @[simp] theorem pullbackNeckGeometry_coordinate_map
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
@@ -139,15 +121,11 @@ noncomputable def pullbackNeckGeometry
     (pullbackNeckGeometry e N hcapture D hscalar).coordinate_map z =
       e.symm (N.coordinate_map z) := rfl
 
-
-
 @[simp] theorem pullbackNeckGeometry_carrier
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
     (hcapture : N.carrier ⊆ e.target) (D : LeviCivitaData g)
     (hscalar : 0 < D.scalarCurvature (e.symm N.center)) :
     (pullbackNeckGeometry e N hcapture D hscalar).carrier = e.symm '' N.carrier := rfl
-
-
 
 @[simp] theorem pullbackNeckGeometry_scale
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)

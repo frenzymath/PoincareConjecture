@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.ComponentBand
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -28,8 +20,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
-
-
 
 theorem isClopen_annular_strip_in_region
     (F : OpenPartialHomeomorph (S1 × Real) M) {l a b u : Real}
@@ -60,9 +50,6 @@ theorem isClopen_annular_strip_in_region
   refine ⟨hcompact.isClosed.preimage continuous_subtype_val, ?_⟩
   rw [heq]
   exact F.open_target.preimage continuous_subtype_val
-
-
-
 
 theorem subset_annular_strip_of_isPreconnected
     (F : OpenPartialHomeomorph (S1 × Real) M) {l a b u : Real}

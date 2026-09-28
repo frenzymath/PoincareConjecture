@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalCylinderJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderUniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,17 +27,11 @@ variable {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
   {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
   {i : Fin (F.event a ha).cap_count}
 
-
-
-
 theorem chart_eq_of_comparison_map_eq
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)
     (hmap : D₁.comparison.map = D₂.comparison.map) (x : E) :
     D₁.chart x = D₂.chart x := by
   rw [D₁.chart_eq, D₂.chart_eq, hmap]
-
-
-
 
 theorem forward_chart_eq_of_comparison_map_eq
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)
@@ -70,9 +54,6 @@ theorem forward_chart_eq_of_comparison_map_eq
     (D₁.chart x) hy₁ hy₂ hinit
   simpa only [hchart] using h
 
-
-
-
 theorem coefficients_eq_of_comparison_map_eq
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)
     (hmap : D₁.comparison.map = D₂.comparison.map)
@@ -90,8 +71,6 @@ theorem coefficients_eq_of_comparison_map_eq
   congr 1
   exact pullbackCoefficients_congr_of_eventuallyEq _ heq
 
-
-
 theorem spatial_jet_eq_of_comparison_map_eq
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)
     (hmap : D₁.comparison.map = D₂.comparison.map)
@@ -105,8 +84,6 @@ theorem spatial_jet_eq_of_comparison_map_eq
       D₂.chart.open_source.mem_nhds hx₂] with y hy₁ hy₂
     exact D₁.coefficients_eq_of_comparison_map_eq D₂ hmap hs₁ hs₂ hy₁ hy₂
   exact (heq.iteratedFDeriv ℝ m).eq_of_nhds
-
-
 
 theorem twoJet_eq_of_comparison_map_eq
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)
@@ -123,9 +100,6 @@ theorem twoJet_eq_of_comparison_map_eq
   simp only [metricTwoJet, heq.eq_of_nhds, heq.fderiv_eq,
     (heq.fderiv (𝕜 := ℝ)).fderiv_eq]
 
-
-
-
 theorem curvatureTensorNorm_eq_coefficient_twoJet
     (D : CylinderCompactnessSample g0 F a ha i)
     (s : ℝ) {x : E} (hx : x ∈ D.chart.source) :
@@ -135,9 +109,6 @@ theorem curvatureTensorNorm_eq_coefficient_twoJet
     (D.ordinary.flow.metric s) (D.ordinary.flow.connection s)
     D.chart.open_source (contMDiffOn_targetChart D.chart D.target_point)
     (fun _ hy => D.target_derivative_invertible hy) hx).symm
-
-
-
 
 theorem curvature_bound_of_radius_le
     (D₁ D₂ : CylinderCompactnessSample g0 F a ha i)

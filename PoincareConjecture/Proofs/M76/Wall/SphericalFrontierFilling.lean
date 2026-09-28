@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalFiniteFrontierFilling
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ open Set Metric
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.compact_connected
     {X ι : Type*} [TopologicalSpace X]
@@ -34,11 +22,6 @@ theorem ChartwisePLSphere.compact_connected
   let : ConnectedSpace S := s.parametrization.connectedSpace_iff.mp inferInstance
   exact ⟨isCompact_iff_compactSpace.mpr inferInstance,
     isConnected_iff_connectedSpace.mpr inferInstance⟩
-
-
-
-
-
 
 theorem exists_spherical_frontier_filling
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

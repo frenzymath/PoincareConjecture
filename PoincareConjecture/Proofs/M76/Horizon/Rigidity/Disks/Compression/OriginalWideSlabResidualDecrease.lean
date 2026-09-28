@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.ResidualCompressionD
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalHandleHomotopy
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalRelativeStripFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

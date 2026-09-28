@@ -1,7 +1,5 @@
 import Mathlib.Topology.Closure
 
-
-
 set_option autoImplicit false
 open Set Topology
 

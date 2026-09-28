@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularCo
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularMeasure
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +16,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem m64TriangularSource_horizontal_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -62,8 +54,6 @@ theorem m64TriangularSource_horizontal_green
       _ = _ := m64TriangularSource_integral T (hT.differentiable (by simp))
         hsecond hpos hpre (fun p => fderiv ℝ psi p e0 • u p)
 
-
-
 theorem m64TriangularCofactorTest_at_source
     (T : LoopPlane ≃ₜ LoopPlane) (hT : Differentiable ℝ T)
     (hi : Differentiable ℝ T.symm) (hsecond : ∀ p, T p 1 = p 1)
@@ -78,9 +68,6 @@ theorem m64TriangularCofactorTest_at_source
   · linear_combination -(fderiv ℝ T p e0 0 * phi p) * hinv.2 +
       (fderiv ℝ T p e1 0 * phi p) * hinv.1
   · rw [← mul_assoc, mul_comm (fderiv ℝ T p e0 0), hinv.1, one_mul]
-
-
-
 
 theorem m64TriangularSource_radial_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

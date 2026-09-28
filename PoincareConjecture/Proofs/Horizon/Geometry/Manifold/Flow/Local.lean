@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.VectorField.Pullback
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_smooth_localFlow_on_open
     {X : (x : M) → TangentSpace (𝓡 n) x} {U : Set M} (hU : IsOpen U)
@@ -106,8 +96,6 @@ theorem exists_smooth_localFlow_on_open
       a • X (c.symm (q (c y, t)))
     rw [map_smul, hpush _ (hpoint t y hy ht)]
 
-
-
 theorem exists_uniform_smooth_local_flows
     {X : (x : M) → TangentSpace (𝓡 n) x} {U K : Set M} (hU : IsOpen U)
     (hK : IsCompact K) (hKU : K ⊆ U)
@@ -148,8 +136,6 @@ theorem exists_uniform_smooth_local_flows
       exists_smooth_localFlow_on_open hU hX (hKU hx)
     refine ⟨V, mem_nhdsWithin_of_mem_nhds (hV.mem_nhds hxV), δ, hδ, ?_⟩
     exact fun y hy => ⟨V, Φ, hV, hy, hs, hinit, horbit⟩
-
-
 
 theorem exists_uniform_local_integralCurves
     {X : (x : M) → TangentSpace (𝓡 n) x} {U K : Set M} (hU : IsOpen U)

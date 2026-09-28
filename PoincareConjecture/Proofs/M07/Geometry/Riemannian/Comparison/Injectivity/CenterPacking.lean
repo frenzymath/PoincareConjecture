@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.FiniteFibers
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Coverage
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finite_fiber_on_ball_of_center_fiber
     (g : RiemannianMetric n M) (p : M)
@@ -63,9 +50,6 @@ theorem exists_finite_fiber_on_ball_of_center_fiber
       have hvlt : ‖v‖ < r := by simpa using hvr
       linarith [hshort i])
   exact ⟨z, hz, fun i => ⟨(hzp i).1, by simpa only [one_smul, hvq] using (hzp i).2.1⟩⟩
-
-
-
 
 theorem mul_volumeMeasure_ball_le_of_center_fiber
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

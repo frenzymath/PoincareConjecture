@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M40.DegreeOfComparison
 import PoincareConjecture.Proofs.M40.Mathlib.DegreeHomotopySphere
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +10,6 @@ open scoped Manifold ContDiff Topology ContinuousMap
 universe u
 
 namespace PoincareConjecture.M40
-
-
-
-
 
 theorem exists_homotopyEquiv_of_homotopy_three_spheres
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
@@ -47,9 +30,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   [Nonempty (D.flow.slice T).carrier]
   {I : RepairedComparisonHomotopyInput D T hT}
   (Q : RepairedComparisonMapConclusion I.toRepairedComparisonMapInput)
-
-
-
 
 theorem comparison_homotopy_equivalence (P : RepairedClosedTopologyProvider.{u}) :
     ∃ e : I.parent.carrier.carrier ≃ₕ I.child.carrier.carrier, e.toFun = Q.map := by

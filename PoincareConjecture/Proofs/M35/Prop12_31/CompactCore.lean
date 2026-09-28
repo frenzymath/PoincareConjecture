@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M35.Prop12_31.ScalarPositivity
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem exists_scalar_floor_on_compact
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -33,8 +24,6 @@ theorem exists_scalar_floor_on_compact
   obtain ⟨B, hB, hbound⟩ := (isCompact_Icc.prod hK).exists_forall_le' hcont
     (fun p hp => E.scalar_pos ⟨hp.1.1, hp.1.2.trans_lt hT.2⟩ p.2)
   exact ⟨B, hB, fun t ht x hx => hbound (t, x) ⟨ht, hx⟩⟩
-
-
 
 theorem exists_scalar_floor_of_exterior_bound
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

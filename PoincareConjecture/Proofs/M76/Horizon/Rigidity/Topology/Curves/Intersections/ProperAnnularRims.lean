@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.AnnulusProjection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.CoordinateRimIntersection
 
-
-
 set_option autoImplicit false
 open Set Metric
 

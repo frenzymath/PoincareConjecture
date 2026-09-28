@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CompactPhaseBound
 import PoincareConjecture.Proofs.M09.LocalRegularizedCurve
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

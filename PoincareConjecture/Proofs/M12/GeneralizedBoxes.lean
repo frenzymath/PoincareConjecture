@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.M11.OrdinaryAtlas
 import PoincareConjecture.Proofs.M11.IntervalTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +21,6 @@ def flowInterval : SpacetimeInterval :=
 
 def boxInterval (b : F.box_index) : SpacetimeInterval :=
   ⟨(F.box b).interval, (F.box b).flow.interval, (F.box b).flow.nontrivial⟩
-
 
 def boxSliceMap (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval) :
     OpenPartialHomeomorph (F.box b).carrier.carrier (F.slice t).carrier where
@@ -63,7 +54,6 @@ noncomputable def refinedBox (b : refinedBoxIndex F) :
   metric_smooth := ordinaryChartMetric_smooth _ _ (F.box b.1).flow.smooth b.2
   metric_symm := fun t _ x _ v w => ordinaryChartMetric_symm _ b.2 t x v w
   metric_pos := fun t _ x hx v hv => ordinaryChartMetric_pos _ b.2 t x hx v hv
-
 
 theorem commonInterval_nontrivial (b c : F.box_index) (t : ℝ)
     (hb : t ∈ (F.box b).interval) (hc : t ∈ (F.box c).interval) :

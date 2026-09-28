@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineStarPurity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Neighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M}
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {epsilon D R : ℝ}
   (G : SoulNeckRegion K S epsilon D R)
-
-
 
 theorem exists_closed_side_ball_neighborhood :
     ∃ b : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M,

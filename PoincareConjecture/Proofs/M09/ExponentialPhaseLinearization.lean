@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.InitialVectorVariation
 import PoincareConjecture.Proofs.M09.LinearizedODE
 import PoincareConjecture.Proofs.M09.SquareChartAtFlow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

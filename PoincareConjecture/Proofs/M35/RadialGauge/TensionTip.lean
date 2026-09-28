@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionEquivariance
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +32,6 @@ private theorem vector_eq_zero_of_rotations (v : StandardCapSpace)
       _ = 0 := add_neg_cancel v
   exact (smul_eq_zero.mp hz).resolve_left (by norm_num)
 
-
-
 theorem mapTension_radialScale_rotation_all
     {g b : RiemannianMetric 3 StandardCapSpace}
     (D : LeviCivitaData g) (B : LeviCivitaData b)
@@ -74,8 +62,6 @@ theorem mapTension_radialScale_rotation_all
     exact mapTension_radialScale_rotation D B hg hb A hh he
       (by simpa only [mem_compl_iff, mem_singleton_iff] using hy) (hp ‖y‖)
   exact congrFun heq x
-
-
 
 theorem mapTension_radialScale_zero
     {g b : RiemannianMetric 3 StandardCapSpace}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity.Derivative
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -13,8 +11,6 @@ open scoped Topology ContDiff
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem eventually_quadratic_bounds_of_fderiv2
     {f : E → ℝ} (hf : ContDiffAt ℝ ∞ f 0) (hzero : fderiv ℝ f 0 = 0)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.FiniteFibers
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_bounded_loop_powers
     (g : RiemannianMetric n M)
@@ -96,8 +83,6 @@ theorem exists_bounded_loop_powers
           · simpa only [Fin.snoc_castSucc] using hkzero
           · simpa only [← Fin.castSucc_succ, Fin.snoc_castSucc] using hkone
           · simpa only [Fin.snoc_castSucc] using hkbound
-
-
 
 theorem exists_bounded_radial_loop_powers
     (g : RiemannianMetric n M)

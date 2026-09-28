@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.Net
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.NearVertex
 import Mathlib.Data.Finset.Lattice.Fold
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

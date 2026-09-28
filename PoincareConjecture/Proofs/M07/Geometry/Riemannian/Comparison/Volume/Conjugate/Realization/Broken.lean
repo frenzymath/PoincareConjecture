@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Piece
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Partition
 
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold Topology ContDiff
 
@@ -37,7 +29,6 @@ theorem glueField_eq_piece {F : Type*} {V₀ V₁ : ℝ → F} {c : ℝ}
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 structure BrokenRealization (g : RiemannianMetric n M) (γ : ℝ → M)
     (V₀ V₁ : ℝ → EuclideanSpace ℝ (Fin n)) (a c b : ℝ) where

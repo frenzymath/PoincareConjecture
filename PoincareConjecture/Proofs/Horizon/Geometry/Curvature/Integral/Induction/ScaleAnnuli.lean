@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.S
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SlabNormalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.GeometricParameters
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -54,8 +44,6 @@ private theorem normalized_scale_area_seed_le (n : ℕ) {r : ℝ}
     _ ≤ _ := by
       rw [hseed, ← hexp']
       exact scaleSlabArea_seed_le n hr hr1
-
-
 
 theorem exists_annular_induction_geometry_with_dimensional_constant
     {m : ℕ} {M : Type u} [TopologicalSpace M]

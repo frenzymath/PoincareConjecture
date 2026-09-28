@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M30.Universe.OutputLift
 import Mathlib.Analysis.Calculus.ContDiff.FTaylorSeries
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,9 +66,6 @@ private theorem ulift_down_mfderiv_extChartAt_symm {n : ℕ} {M : Type}
   rw [hfun] at h
   exact h.symm
 
-
-
-
 theorem liftFlowCarrier_coordinateCoefficient_eqOn {n : ℕ}
     (C : FlowCarrier.{0} n) (q : C.carrier)
     (B : ∀ _t : ℝ, ∀ x : C.carrier, C.tangent x → C.tangent x → ℝ)
@@ -120,8 +102,6 @@ theorem liftFlowCarrier_coordinateCoefficient_eqOn {n : ℕ}
     ulift_down_mfderiv_extChartAt_symm q p.2 hp.2
       (EuclideanSpace.basisFun (Fin n) ℝ b), ulift_extChartAt_symm]
 
-
-
 theorem liftBlowupLimit_metricChartDomain {J : Set ℝ}
     (L : BlowupLimitFlow.{0} J) (q : L.carrier.carrier) :
     blowupMetricChartDomain (liftBlowupLimit.{u} L) (ULift.up q) =
@@ -133,9 +113,6 @@ theorem liftBlowupLimit_metricChartDomain {J : Set ℝ}
   change J ×ˢ (extChartAt (𝓡 3) (ULift.up.{u} q)).target =
     J ×ˢ (extChartAt (𝓡 3) q).target
   rw [ulift_extChartAt_target]
-
-
-
 
 theorem liftBlowupLimit_iteratedFDerivWithin_coordinateCoefficient {J : Set ℝ}
     (L : BlowupLimitFlow.{0} J) (q : L.carrier.carrier) (a b : Fin 3) (r : ℕ)

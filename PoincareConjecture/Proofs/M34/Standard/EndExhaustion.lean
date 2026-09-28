@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.EndTruncation
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,15 +10,11 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def endExhaustion (e : StandardCylindricalEnd g) (x : StandardCapSpace) : ℝ := by
   classical
   exact if x ∈ e.carrier then
     1 + (e.inverse x).2 * Real.smoothTransition ((e.inverse x).2 - 1)
   else 1
-
-
 
 theorem one_le_endExhaustion (e : StandardCylindricalEnd g) (x : StandardCapSpace) :
     1 ≤ endExhaustion e x := by
@@ -37,15 +23,11 @@ theorem one_le_endExhaustion (e : StandardCylindricalEnd g) (x : StandardCapSpac
     exact mul_nonneg (e.inverse_domain x hx) (Real.smoothTransition.nonneg _)
   · simp [endExhaustion, hx]
 
-
-
 theorem endExhaustion_coordinate (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 ≤ z.2) :
     endExhaustion e (e.coordinate z) = 1 + z.2 * Real.smoothTransition (z.2 - 1) := by
   simp only [endExhaustion, if_pos (end_coordinate_mem_carrier e hz),
     e.coordinate_left_inverse ⟨mem_univ _, hz⟩]
-
-
 
 theorem endExhaustion_eq_one_on_truncation (e : StandardCylindricalEnd g)
     {x : StandardCapSpace} (hx : x ∈ endTruncation e 1) : endExhaustion e x = 1 := by
@@ -57,15 +39,11 @@ theorem endExhaustion_eq_one_on_truncation (e : StandardCylindricalEnd g)
     ring
   · simp [endExhaustion, hcar]
 
-
-
 theorem endExhaustion_coordinate_of_two_le (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 2 ≤ z.2) :
     endExhaustion e (e.coordinate z) = 1 + z.2 := by
   rw [endExhaustion_coordinate e (by linarith),
     Real.smoothTransition.one_of_one_le (by linarith), mul_one]
-
-
 
 theorem endExhaustion_contMDiff (e : StandardCylindricalEnd g) :
     ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ (endExhaustion e) := by
@@ -91,8 +69,6 @@ theorem endExhaustion_contMDiff (e : StandardCylindricalEnd g) :
       filter_upwards [hopen.mem_nhds hx] with y hy
       exact endExhaustion_eq_one_on_truncation e hy
     exact contMDiffAt_const.congr_of_eventuallyEq heq
-
-
 
 theorem endExhaustion_sublevel_isCompact (e : StandardCylindricalEnd g) (R : ℝ) :
     IsCompact {x : StandardCapSpace | endExhaustion e x ≤ R} := by

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CollarUnionNeighborhood
 import PoincareConjecture.Proofs.M76.Brown.SignedCylinderCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -56,8 +47,6 @@ theorem gluedCollar_negativeHalfInclusion (z : S × Ico (0 : ℝ) 1) :
       have hpos : 0 < (z.2 : ℝ) := lt_of_le_of_ne z.2.property.1 (Ne.symm hz0)
       linarith
     rw [gluedCollar, if_neg hz, negativeClamp_negativeHalfInclusion]
-
-
 
 theorem equal_opposite_collar_points (u v : S × Ico (0 : ℝ) 1)
     (h : C.positiveUnionMap u = C.negativeUnionMap v) :
@@ -125,8 +114,6 @@ theorem gluedCollar_surjective : Function.Surjective C.gluedCollar := by
     change (C.negativeImageHomeomorph (C.negativeImageHomeomorph.symm ym) : X) = y.val
     exact congrArg Subtype.val (C.negativeImageHomeomorph.apply_symm_apply ym)
 
-
-
 theorem gluedCollar_image (F : Set (S × Ioo (-1 : ℝ) 1)) :
     C.gluedCollar '' F =
       C.positiveUnionMap '' (positiveHalfInclusion ⁻¹' F) ∪
@@ -160,8 +147,6 @@ theorem isClosedMap_gluedCollar : IsClosedMap C.gluedCollar := by
     (hF.preimage continuous_positiveHalfInclusion)).union
       (C.isClosedEmbedding_negativeUnionMap.isClosedMap _
         (hF.preimage continuous_negativeHalfInclusion))
-
-
 
 noncomputable def bicollarHomeomorph : (S × Ioo (-1 : ℝ) 1) ≃ₜ C.collarUnion :=
   (Equiv.ofBijective C.gluedCollar

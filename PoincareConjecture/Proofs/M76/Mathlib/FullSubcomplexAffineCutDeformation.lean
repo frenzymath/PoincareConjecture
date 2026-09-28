@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FullSubcomplexSuperlevelDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLevelSubcomplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -20,11 +9,6 @@ open Set unitInterval
 namespace Geometry.SimplicialComplex
 
 open scoped Classical in
-
-
-
-
-
 
 theorem exists_full_subcomplex_affine_cut_deformation_mass
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -83,9 +67,6 @@ theorem exists_full_subcomplex_affine_cut_deformation_mass
     exact hHZ.2
 
 open scoped Classical in
-
-
-
 
 theorem exists_full_subcomplex_affine_cut_deformation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

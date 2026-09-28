@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineIntrinsicFrontier
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,8 +60,6 @@ private theorem mem_closure_negative_of_plane_germ
       (fun x hx => hnonzero hx.1 hx.2.ne') ⟨v, ⟨hv, hvp⟩, hz⟩ ⟨hyball, hyA⟩
     exact ⟨f y, (hball hyball).2.2, ⟨y, ⟨hyS, hballsource hyball⟩, rfl⟩, hyB⟩
 
-
-
 theorem mem_closure_both_signs_of_plane_germ
     (f : OpenPartialHomeomorph E F) (A : E →ᵃ[ℝ] ℝ) (B : F →ᵃ[ℝ] ℝ)
     (hB : B.linear ≠ 0) {p : E} (hp : p ∈ f.source) (hpB : B (f p) = 0)
@@ -93,8 +83,6 @@ end OpenPartialHomeomorph
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem mem_closure_both_signs_on_zero_plane
     (A C : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)
@@ -130,7 +118,6 @@ theorem mem_closure_both_signs_on_zero_plane
 end AffineMap
 
 namespace AffineMap
-
 
 theorem intrinsicInterior_image_of_injOn_span
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

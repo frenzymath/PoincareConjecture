@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierConeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -26,7 +16,6 @@ local notation "Q2" => sphere (0 : V2) 1
 noncomputable def circleLevelLift : E →ᴬ[ℝ] (E × ℝ) :=
   (ContinuousAffineMap.id ℝ E).prod (ContinuousAffineMap.const ℝ E 1)
 
-
 def boundaryCircleCone (S : Set E) : Set (E × ℝ) :=
   convexJoin ℝ {0} (circleLevelLift '' S)
 
@@ -40,7 +29,6 @@ theorem mem_boundaryCircleCone_iff (S : Set E) (x : E × ℝ) :
   · rintro ⟨y, hy, r, hr, rfl⟩
     refine ⟨circleLevelLift y, mem_image_of_mem _ hy, r, hr, ?_⟩
     ext <;> simp [circleLevelLift]
-
 
 theorem isFinitePLBallPair_boundaryCircleCone {S : Set E}
     (b : Q2 ≃ₜ S) (hb : b.IsFinitePL) :
@@ -71,7 +59,6 @@ theorem isFinitePLBallPair_boundaryCircleCone {S : Set E}
     (isCompact_closedBall _ _) (convex_closedBall _ _)
     ⟨0, ball_subset_interior_closedBall (mem_ball_self zero_lt_one)⟩
 
-
 def capSign (positive : Bool) : ℝ := if positive then 1 else -1
 
 noncomputable def capRebase (positive : Bool) : (E × ℝ) →ᴬ[ℝ] (E × ℝ) :=
@@ -90,8 +77,6 @@ theorem capRebase_injective (positive : Bool) :
   change capSign positive - capSign positive * x.2 =
     capSign positive - capSign positive * y.2 at ht
   cases positive <;> simp only [capSign, Bool.false_eq_true, if_false, if_true] at ht <;> linarith
-
-
 
 def boundaryCircleCap (positive : Bool) (S : Set E) : Set (E × ℝ) :=
   capRebase positive '' boundaryCircleCone S
@@ -163,8 +148,6 @@ theorem isFinitePLBallPair_boundaryCircleCap (positive : Bool) {S : Set E}
       rw [show x.2 = 0 from hx0]
       ring
   rwa [himage] at hd
-
-
 
 theorem exists_boundaryCircleCap_parametrization (positive : Bool) {S : Set E}
     (b : Q2 ≃ₜ S) (hb : b.IsFinitePL) :

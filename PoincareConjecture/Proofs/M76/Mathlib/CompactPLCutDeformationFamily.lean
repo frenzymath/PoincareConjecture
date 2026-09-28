@@ -2,30 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FullSubcomplexConfinement
 import PoincareConjecture.Proofs.M76.Mathlib.FullSubcomplexAffineCutDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPolyhedralPLPullback
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
-
 
 theorem exists_compact_PL_cut_deformation_family_mass
     {M E G ι : Type*} [TopologicalSpace M] [T2Space M]
@@ -191,10 +172,6 @@ theorem exists_compact_PL_cut_deformation_family_mass
     rw [hDmass]
     change (1 - (t : ℝ)) * w (F x) + (t : ℝ) = _
     exact congrArg (fun a => (1 - (t : ℝ)) * a + (t : ℝ)) (hzC (hxC x)).symm
-
-
-
-
 
 theorem exists_compact_PL_cut_deformation_family
     {M E G ι : Type*} [TopologicalSpace M] [T2Space M]

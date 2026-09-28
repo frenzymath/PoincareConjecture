@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem IsCompact.gauge_inv_smul_mem_frontier {s : Set E} (hs : IsCompact s)
     (hcv : Convex ℝ s) (hzero : (0 : E) ∈ interior s) {x : E} (hx : x ≠ 0) :
@@ -30,9 +18,6 @@ theorem IsCompact.gauge_inv_smul_mem_frontier {s : Set E} (hs : IsCompact s)
   rw [gauge_smul_of_nonneg (inv_nonneg.mpr hpos.le), smul_eq_mul,
     inv_mul_cancel₀ hpos.ne']
 
-
-
-
 theorem IsCompact.exists_frontier_normalize_eq {s : Set E} (hs : IsCompact s)
     (hcv : Convex ℝ s) (hzero : (0 : E) ∈ interior s) {x : E} (hx : x ≠ 0) :
     ∃ y ∈ frontier s, normalize y = normalize x := by
@@ -40,10 +25,6 @@ theorem IsCompact.exists_frontier_normalize_eq {s : Set E} (hs : IsCompact s)
   exact ⟨_, hmem, normalize_smul_of_pos hpos x⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem frontier_finite_linear_unit_halfspaces {ι : Type*} [Finite ι]
     (L : ι → E →ₗ[ℝ] ℝ) (hL : ∀ i, L i ≠ 0) :
@@ -56,9 +37,6 @@ theorem frontier_finite_linear_unit_halfspaces {ι : Type*} [Finite ι]
   have h := frontier_finite_affine_halfspaces A hA
   simpa only [A, AffineMap.coe_sub, Pi.sub_apply, LinearMap.coe_toAffineMap,
     AffineMap.const_apply, sub_nonpos, sub_eq_zero] using h
-
-
-
 
 theorem linear_maximum_eq_one_of_radial_frontier {ι : Type*} [Finite ι]
     (L : ι → E →ₗ[ℝ] ℝ) (hL : ∀ i, L i ≠ 0)

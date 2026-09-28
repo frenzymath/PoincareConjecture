@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryFactor
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundaryReality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,11 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
-
-
-
-
-
 
 theorem halfDisk_Jordan_differential_factor_holder
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)
@@ -133,9 +119,6 @@ theorem halfDisk_Jordan_differential_factor_holder
   intro z hz
   rw [← hgrad z ⟨closedBall_subset_closedBall hdr2.le hz.1, hz.2⟩]
   exact hfactor z hz
-
-
-
 
 theorem halfDisk_Jordan_differential_factor
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)

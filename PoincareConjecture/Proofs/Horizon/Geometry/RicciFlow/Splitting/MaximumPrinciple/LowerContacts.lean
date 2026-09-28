@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Maximum
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set Filter
 open scoped ContDiff Manifold Topology
@@ -19,8 +9,6 @@ namespace PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 def HeatLowerContacts {g : ℝ → RiemannianMetric n M}
     (D : ∀ t, LeviCivitaData (g t)) (U : Set M)

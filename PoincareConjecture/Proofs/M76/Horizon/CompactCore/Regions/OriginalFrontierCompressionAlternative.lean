@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalNewFrontierModels
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Loops.OriginalComponentAlternative
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.ProtectedFrontierFilling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NestedPLBallBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

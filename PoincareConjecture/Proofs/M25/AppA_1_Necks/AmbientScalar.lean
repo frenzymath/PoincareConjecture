@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.GermRealization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -28,13 +17,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def euclideanParametrization (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) : M :=
   N.centeredParametrization q ((0, s) + (RiemannianMetric.lineModelEquiv 2).symm x)
-
-
 
 theorem euclideanParametrization_contMDiffAt (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : EuclideanSpace ℝ (Fin 3)}
@@ -44,15 +29,11 @@ theorem euclideanParametrization_contMDiffAt (N : EpsilonNeck g)
   exact (N.centeredParametrization_contMDiffAt q hx).comp x
     ((contDiff_const.add (RiemannianMetric.lineModelEquiv 2).symm.contDiff).contMDiff x)
 
-
-
 theorem euclideanParametrization_zero (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) :
     N.euclideanParametrization q s 0 = N.coordinate_map (q, s) := by
   simp only [euclideanParametrization, map_zero, add_zero, centeredParametrization,
     Poincare.Geometry.Riemannian.SpaceForm.sphere_chart_symm_zero]
-
-
 
 theorem normalizedEuclideanCoefficients_pullback (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : EuclideanSpace ℝ (Fin 3)}
@@ -76,8 +57,6 @@ theorem normalizedEuclideanCoefficients_pullback (N : EpsilonNeck g)
     normalizedCenteredCoefficients, smul_apply, smul_eq_mul,
     RiemannianMetric.parametrizedCoefficients_apply, hder]
   rfl
-
-
 
 theorem realization_scalar_eq (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ)

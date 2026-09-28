@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.RoundSphere
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [Nonempty M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [NoncompactSpace M]
-
-
 
 def TotallyConvexSet (g : RiemannianMetric 3 M) (S : Set M) : Prop :=
   ∀ (curve : ℝ → M) (a b : ℝ),
@@ -48,14 +34,10 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [IsManifold (𝓡 3) ∞ M] [NoncompactSpace M]
   {g : RiemannianMetric 3 M}
 
-
 def StrictlyPositiveSectionalCurvature (D : LeviCivitaData g) : Prop :=
   ∀ (x : M) (u v : TangentSpace (𝓡 3) x),
     g.inner x u u = 1 → g.inner x v v = 1 → g.inner x u v = 0 →
       0 < D.sectionalCurvature x u v
-
-
-
 
 theorem StrictlyPositiveSectionalCurvature.nonnegative
     (D : LeviCivitaData g)
@@ -77,14 +59,11 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
 
 abbrev UnitTwoSphere := Poincare.Geometry.Riemannian.SpaceForm.UnitSphere 2
 
-
 def distanceSphere (g : RiemannianMetric 3 M) (p : M) (r : ℝ) : Set M :=
   {x | (g.edist p x).toReal = r}
 
-
 def distanceAnnulus (g : RiemannianMetric 3 M) (p : M) (a b : ℝ) : Set M :=
   {x | a ≤ (g.edist p x).toReal ∧ (g.edist p x).toReal ≤ b}
-
 
 structure RadialHomeomorph (g : RiemannianMetric 3 M) (p : M) where
   toHomeomorph :
@@ -105,7 +84,6 @@ theorem map_mem_distanceSphere (H : RadialHomeomorph g p)
   exact H.distance_eq z
 
 end RadialHomeomorph
-
 
 structure PointSoulData (g : RiemannianMetric 3 M) where
   center : M

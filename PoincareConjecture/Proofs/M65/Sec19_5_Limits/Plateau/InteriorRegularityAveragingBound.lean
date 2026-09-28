@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingWeak
 import PoincareConjecture.Proofs.M65.Mathlib.WeightedCauchySchwarz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem averagingProfile_bounded : ∃ B : ℝ, 0 < B ∧ ∀ z, averagingProfile z ≤ B := by
   have hc : Continuous averagingProfile :=
@@ -28,10 +16,6 @@ theorem averagingProfile_bounded : ∃ B : ℝ, 0 < B ∧ ∀ z, averagingProfil
       (by norm_num : (0 : ℝ) < 1))
   refine ⟨1 + |averagingProfile z0|, by positivity, fun z => ?_⟩
   exact (hz0 z).trans (by linarith [le_abs_self (averagingProfile z0)])
-
-
-
-
 
 theorem averagingValue_sq_le {B : ℝ} (hB : ∀ z, averagingProfile z ≤ B)
     {r : ℝ} (hr : 0 < r) (x : LoopPlane) {f : LoopPlane → ℝ}

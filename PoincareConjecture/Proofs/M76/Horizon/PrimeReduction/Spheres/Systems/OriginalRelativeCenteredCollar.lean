@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedSphere
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CenteredCollarRawMarks
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.GlobalExteriorDiskProduct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

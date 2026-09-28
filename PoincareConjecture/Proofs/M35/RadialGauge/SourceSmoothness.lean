@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.RadialSymmetry
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -21,8 +12,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem contDiff_squared_dual_norm
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
     {p : X → V →L[ℝ] ℝ} (hp : ContDiff ℝ ∞ p) :
@@ -32,8 +21,6 @@ theorem contDiff_squared_dual_norm
   intro i _
   exact (hp.clm_apply contDiff_const).pow 2
 
-
-
 theorem gaugeSource_contDiff {b : V → V} {G : V → ℝ → ℝ} {u : V → ℝ}
     (hb : ContDiff ℝ ∞ b)
     (hG : ContDiff ℝ ∞ (fun p : V × ℝ => G p.1 p.2))
@@ -41,9 +28,6 @@ theorem gaugeSource_contDiff {b : V → V} {G : V → ℝ → ℝ} {u : V → �
   have hdu := (contDiff_infty_iff_fderiv.mp hu).2
   exact ((hdu.clm_apply hb).add (contDiff_squared_dual_norm hdu)).add
     (hG.comp (contDiff_id.prodMk hu))
-
-
-
 
 theorem parametrizedGaugeSource_contDiff
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

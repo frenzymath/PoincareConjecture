@@ -126,5 +126,3 @@ theorem integral_pullbackIndexPairDensity {J : Set ℝ} (F : RicciFlow n M J)
   linarith
 
 end PoincareConjecture.M08
-
-

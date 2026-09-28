@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureFiniteGermsBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_bound_of_finite_germs_floor
     {epsilon1 epsilon A H : ℝ} (hM45 : M45SmallNeckScaleBound.{u} epsilon1)

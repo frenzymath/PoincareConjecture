@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SliceLabelSmooth
 import PoincareConjecture.Proofs.M11.SliceBoxMetric
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.Lift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Annuli.JointPLComposition
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -78,9 +76,6 @@ theorem annular_lift_winding_invariant
                  rw [hgamma₀, hrims, hrims])
     (fun t => by change (C.symm (H t (gamma 1))).1 = (C.symm (H 0 (gamma 1))).1
                  rw [hgamma₁, hrims, hrims]) hbase
-
-
-
 
 theorem exists_zero_winding_annular_lift_after_joint_PL_isotopy
     (gamma : C(I, Ann)) (hinj : Function.Injective gamma)

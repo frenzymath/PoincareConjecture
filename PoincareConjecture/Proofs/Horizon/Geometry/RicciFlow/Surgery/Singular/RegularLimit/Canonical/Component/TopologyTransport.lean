@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.ComponentTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Component.Reference
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,8 +15,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 def SmoothClosedComponentModel.restrictToOpen {kind : ClosedComponentKind} {Y : Set M}
     (K : SmoothClosedComponentModel kind Y) (U : Opens M) (hYU : Y ⊆ U) :
@@ -49,7 +39,6 @@ def SmoothClosedComponentModel.restrictToOpen {kind : ClosedComponentKind} {Y : 
     let := K.model_topology
     let := K.model_charted
     exact K.inverse_smooth.comp contMDiff_subtype_val.contMDiffOn (fun _ hx => hx)
-
 
 def ClosedComponentCertificate.restrictToOpen {kind : ClosedComponentKind} {Y : Set M}
     (K : ClosedComponentCertificate kind Y) (U : Opens M) (hYU : Y ⊆ U) :
@@ -85,8 +74,6 @@ def ClosedComponentCertificate.restrictToOpen {kind : ClosedComponentKind} {Y : 
     refine ⟨e, fun x => ?_⟩
     exact he ⟨x.val.val, x.property⟩
 
-
-
 def ClosedComponentCertificate.restrictToComponent {kind : ClosedComponentKind} {Y : Set M}
     (K : ClosedComponentCertificate kind Y) (U : Opens M) (hYU : Y ⊆ U)
     (x : U) (hx : (x : M) ∈ Y) :
@@ -99,8 +86,6 @@ def ClosedComponentCertificate.restrictToComponent {kind : ClosedComponentKind} 
       (by simpa only [← hcomp] using hYU), hcomp]
     rfl
   exact heq ▸ K.restrictToOpen U hYU
-
-
 
 theorem SingularCComponent.topology_restrictToOpen
     {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {C : ℝ}
@@ -120,8 +105,6 @@ namespace SingularTimeAssumptions
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem terminal_topology_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

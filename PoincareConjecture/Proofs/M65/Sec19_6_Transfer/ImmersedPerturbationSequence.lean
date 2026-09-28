@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbation
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,9 +10,6 @@ open Set Filter Metric MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M65Perturbation
-
-
-
 
 theorem exists_small_generic_parameter {N : ℕ} (Bad : Set (Fin N → ℝ))
     (hBad : volume Bad = 0) (r : ℝ) (hr : 0 < r) :
@@ -33,9 +21,6 @@ theorem exists_small_generic_parameter {N : ℕ} (Bad : Set (Fin N → ℝ))
     exact h p (by simpa only [mem_ball, dist_zero_right] using hp)
   have hpos := Metric.measure_ball_pos volume (0 : Fin N → ℝ) hr
   exact (not_le_of_gt hpos) (hBad ▸ measure_mono hsub)
-
-
-
 
 theorem exists_generic_parameter_sequence {N : ℕ} (Bad : Set (Fin N → ℝ))
     (hBad : volume Bad = 0) (delta : ℝ) (hdelta : 0 < delta)

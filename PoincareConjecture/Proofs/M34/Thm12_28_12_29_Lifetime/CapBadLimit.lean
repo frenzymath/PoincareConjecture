@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapLongControls
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapBadPoints
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,9 +16,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F.base) (F := F.base.flow) R
 
 include P
-
-
-
 
 theorem standardFlow_chapter11_bad_limit (E0 : StandardCapEstimate g0)
     (H : StandardFlowNoncollapsingCertificate F) {epsilon0 epsilon C A : ℝ}

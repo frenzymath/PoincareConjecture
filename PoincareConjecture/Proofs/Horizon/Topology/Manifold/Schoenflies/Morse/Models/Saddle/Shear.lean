@@ -1,12 +1,6 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Saddle
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 def shear : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
   toFun p := p - (p 0) ^ 2 • EuclideanSpace.single 2 1
@@ -65,7 +58,6 @@ theorem shear_symm_apply (p : E3) :
   rw [shear_symm_apply]
   simp
 
-
 def polynomial (p : E3) : Real := (p 0) ^ 2 + (p 1) ^ 2 + (p 2 + (p 0) ^ 2) ^ 2
 
 theorem norm_shear_symm_sq (p : E3) : ‖shear.symm p‖ ^ 2 = polynomial p := by
@@ -80,7 +72,6 @@ private theorem mem_shear_image (p : E3) (K : Set E3) :
   · intro hp
     exact ⟨shear.symm p, hp, shear.apply_symm_apply p⟩
 
-
 theorem shear_image_closedBall :
     shear '' closedBall (0 : E3) 1 = {p | polynomial p ≤ 1} := by
   ext p
@@ -89,7 +80,6 @@ theorem shear_image_closedBall :
   rw [← norm_shear_symm_sq]
   constructor <;> intro h <;> nlinarith [norm_nonneg (shear.symm p)]
 
-
 theorem shear_image_ball :
     shear '' ball (0 : E3) 1 = {p | polynomial p < 1} := by
   ext p
@@ -97,7 +87,6 @@ theorem shear_image_ball :
   change ‖shear.symm p‖ < 1 ↔ polynomial p < 1
   rw [← norm_shear_symm_sq]
   constructor <;> intro h <;> nlinarith [norm_nonneg (shear.symm p)]
-
 
 theorem shear_image_sphere :
     shear '' sphere (0 : E3) 1 = {p | polynomial p = 1} := by

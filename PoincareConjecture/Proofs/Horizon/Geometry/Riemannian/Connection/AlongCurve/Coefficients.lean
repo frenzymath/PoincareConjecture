@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Geodesi
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -22,7 +14,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 def connectionCoefficient (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -75,7 +66,6 @@ private theorem fderiv_metric_symm (x a b c : EuclideanSpace ℝ (Fin n)) :
   ext y
   exact g.symm y a b
 
-
 theorem connectionCoefficient_metricCompatible (D : LeviCivitaData g)
     (x u v w : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ g.euclideanCoefficients x u v w =
@@ -88,7 +78,6 @@ theorem connectionCoefficient_metricCompatible (D : LeviCivitaData g)
     fderiv_metric_symm x u w v] at huw
   rw [g.symm x v]
   linarith
-
 
 def parallelCoefficient (D : LeviCivitaData g)
     (q : ℝ → EuclideanSpace ℝ (Fin n)) (t : ℝ) :
@@ -109,7 +98,6 @@ theorem contDiffOn_parallelCoefficient (D : LeviCivitaData g)
   exact ((D.contDiff_connectionCoefficient.comp_contDiffOn hq).clm_apply
     (hq.deriv_of_isOpen hI (by simp))).neg
 
-
 theorem hasDerivAt_metricAlong {q : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ}
     (hq : DifferentiableAt ℝ q t) :
     HasDerivAt (fun s => g.euclideanCoefficients (q s))
@@ -125,7 +113,6 @@ theorem deriv_metricAlong_apply (D : LeviCivitaData g)
         (g.euclideanCoefficients (q t)) v (D.euclideanConnection (deriv q t) w (q t)) := by
   rw [(hasDerivAt_metricAlong hq).deriv]
   exact D.connectionCoefficient_metricCompatible (q t) (deriv q t) v w
-
 
 theorem parallelCoefficient_metricCompatible (D : LeviCivitaData g)
     {q : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ} (hq : DifferentiableAt ℝ q t)

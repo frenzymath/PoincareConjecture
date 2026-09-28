@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Manifold
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -268,7 +262,6 @@ theorem sectionalCurvature_lower_bound_on_manifold
       hambient_coord hupper u v hu hv huv
   simpa [R, Ncoord] using hbound
 
-
 theorem chartShapeOperator_selfAdjoint
     {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
     [ChartedSpace (E (m + 1)) L] [IsManifold (𝓡 (m + 1)) ∞ L]
@@ -310,8 +303,6 @@ theorem chartShapeOperator_selfAdjoint
   rw [hshape u, hshape v]
   exact hcoord
 
-
-
 theorem exists_chartShapeOperator_eigenbasis
     {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
     [ChartedSpace (E (m + 1)) L] [IsManifold (𝓡 (m + 1)) ∞ L]
@@ -345,8 +336,6 @@ theorem exists_chartShapeOperator_eigenbasis
   · exact hA.apply_eigenvectorBasis hdim
   · exact hA.hasEigenvalue_eigenvalues hdim
   · exact hA.trace_eq_sum_eigenvalues hdim
-
-
 
 theorem sectionalCurvature_lower_bound_of_induced_metric
     {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
@@ -390,8 +379,6 @@ theorem sectionalCurvature_lower_bound_of_induced_metric
     (extChartAt (𝓡 (m + 1)) x).left_inv (mem_extChartAt_source x)] at hb
   exact hb
 
-
-
 theorem sectionalCurvature_lower_bound_of_normal_curvatures
     {m : ℕ} {L M : Type*} [TopologicalSpace L] [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) L]
@@ -429,7 +416,6 @@ theorem sectionalCurvature_lower_bound_of_normal_curvatures
     simp only [map_neg, neg_apply, hNT w, neg_zero]
   exact sectionalCurvature_lower_bound_of_induced_metric g h Dg Dh hf x hmetric
     (-N) hnegN hnegNT K β hβ hambient hupper u v hu hv huv
-
 
 theorem no_unit_tangent_zero_dimensional
     {L : Type*} [TopologicalSpace L] [ChartedSpace (EuclideanSpace ℝ (Fin 0)) L]

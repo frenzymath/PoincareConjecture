@@ -1,25 +1,11 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Homeomorph
-
-
-
-
 
 theorem exists_finite_family_history_composite
     {X V : Type*} [TopologicalSpace X] {n : ℕ}

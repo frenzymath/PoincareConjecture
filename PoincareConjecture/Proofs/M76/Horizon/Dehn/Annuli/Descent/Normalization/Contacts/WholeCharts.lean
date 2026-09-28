@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Contacts.SourceIsolation
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ProjectedCrossingCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -43,9 +34,6 @@ theorem double_point_interior {x y : V} (hx : x ∈ K.space) (hy : y ∈ K.space
   have h := hxy
   rw [D.projected_boundary hxb, D.projected_boundary hyb] at h
   exact h
-
-
-
 
 theorem exists_whole_projected_crossing
     (hcard : ∀ a ∈ K.faces, a.card ≤ 3)

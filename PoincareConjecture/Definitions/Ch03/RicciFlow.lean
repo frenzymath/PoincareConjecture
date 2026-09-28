@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Curvature
 import Mathlib.Analysis.Calculus.Deriv.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,7 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
 
 def RiemannianMetric.IsSmoothFamilyOn {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -31,7 +20,6 @@ def RiemannianMetric.IsSmoothFamilyOn {n : ℕ} {M : Type u}
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
       (E := fun x : M ↦ TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ)
       p.2 ((g p.1).inner p.2)) (J ×ˢ Set.univ)
-
 
 structure RicciFlow (n : ℕ) (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

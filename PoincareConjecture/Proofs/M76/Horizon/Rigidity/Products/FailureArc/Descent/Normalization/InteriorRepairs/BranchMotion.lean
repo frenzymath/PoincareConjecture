@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Repairs.CoordinateSupport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierInteriorChartMotion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -28,7 +19,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C} {step : Step s t}
   {K : SimplicialComplex ℝ A} {j : A → t.Carrier} {R : Set M}
-
 
 structure PlanarSurfaceBranchMotion
     (step : Step s t) (K : SimplicialComplex ℝ A) (j : A → t.Carrier) (R : Set M)
@@ -134,8 +124,6 @@ structure PlanarSurfaceBranchMotion
     ((ambient u).toOpenPartialHomeomorph.trans (t.charts l)) ∈ piecewiseAffineGroupoid V3
   inverse_PL : ∀ u k l, (t.charts k).symm.trans
     ((ambient u).symm.toOpenPartialHomeomorph.trans (t.charts l)) ∈ piecewiseAffineGroupoid V3
-
-
 
 theorem Step.nonempty_planar_surface_branch_motion
     (step : Step s t) (hK : K.faces.Finite)
@@ -251,4 +239,3 @@ theorem Step.nonempty_planar_surface_branch_motion
     ambient_PL := hGPL, inverse_PL := hGiPL }⟩
 
 end Geometry.OriginalPLTower
-

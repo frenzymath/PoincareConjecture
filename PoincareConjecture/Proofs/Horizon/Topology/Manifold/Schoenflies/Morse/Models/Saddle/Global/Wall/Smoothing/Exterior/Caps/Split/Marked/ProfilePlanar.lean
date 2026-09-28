@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.PlanarGerm
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Matching.GraphPatch
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +26,6 @@ theorem contDiff_profilePlanarDisplacement {ρ : Real → Real}
     ContDiff Real ∞ (profilePlanarDisplacement ρ H a R t) :=
   (contDiff_profileX hρ).comp
     (H.symm.contDiff.comp (contDiff_const.sub ((contDiff_id.pow 2).add contDiff_const)))
-
-
 
 def profilePlanarDiffeomorph {ρ : Real → Real} (hρ : ContDiff Real ∞ ρ)
     (H : Real ≃ₘ[Real] Real) (a R t : Real) (ht : t ∈ Ioo (-1 : Real) 1) :
@@ -139,8 +135,6 @@ theorem profilePlanarDiffeomorph_sphere_graph_bound {ρ : Real → Real}
     p 0 ≤ profilePlanarDisplacement ρ H a R t (p 1) :=
   profilePlanarDiffeomorph_body_graph_bound hρ H a R t ht
     (image_mono sphere_subset_closedBall hp)
-
-
 
 theorem profilePlanarDiffeomorph_graph_germ {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R t : Real)

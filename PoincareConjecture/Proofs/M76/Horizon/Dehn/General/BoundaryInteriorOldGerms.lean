@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInitialSegment
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 import PoincareConjecture.Proofs.M76.Mathlib.CentralLinkSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology

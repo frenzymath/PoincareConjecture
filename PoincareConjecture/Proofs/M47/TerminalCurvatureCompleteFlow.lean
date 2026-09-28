@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Global
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Flow.LinearGrowth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_complete_unit_flow
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

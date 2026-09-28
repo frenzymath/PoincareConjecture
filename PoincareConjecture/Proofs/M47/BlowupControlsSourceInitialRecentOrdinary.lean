@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceRealization
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckOpenSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,9 +42,6 @@ private theorem recentBased_zero_metric
   change mfderiv (𝓡 3) (𝓡 3) (fun y : U => e.forward 0 hz y.val) x = _ at hd
   rw [hd] at hm
   exact hm
-
-
-
 
 theorem exists_source_initial_recent_ordinary
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

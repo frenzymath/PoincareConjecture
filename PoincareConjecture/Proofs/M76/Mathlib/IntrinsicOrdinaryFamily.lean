@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ProtectedOrdinaryCappedIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.OrdinaryCappedLevelComparisons
 import PoincareConjecture.Proofs.M76.Mathlib.DirectionalScalarRecovery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_capped_family_with_rim_scalar
     {S s s' d U : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -149,9 +135,6 @@ theorem AlexanderCollarSlab.exists_ordinary_capped_family_with_rim_scalar
         hlow c ⟨hc.1, hc.2.trans (t.property.2.trans_lt hεβ)⟩ hc.2
           (fun x hx => hc.2.trans ((t.property.2.trans_lt hεη).trans_le (hηroof x hx)))
       exact ⟨_, f, X, Y, hf, hinj, hb, hsrc, hsep, htgt, hcapSep, F, hF⟩
-
-
-
 
 theorem AlexanderCollarSlab.exists_ordinary_capped_family
     {S s s' d U : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

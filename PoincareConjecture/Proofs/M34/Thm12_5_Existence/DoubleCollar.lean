@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.EndReflection
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.EndTruncation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +10,8 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 def endDoubleCollar (e : StandardCylindricalEnd g) (L : ℝ) : Set StandardCapSpace :=
   e.coordinate '' (univ ×ˢ Ioo (L - 1) (L + 1))
-
-
 
 theorem endDoubleCollar_isOpen (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : IsOpen (endDoubleCollar e L) := by
@@ -34,15 +20,11 @@ theorem endDoubleCollar_isOpen (e : StandardCylindricalEnd g)
   have hh := hz.2.1
   linarith
 
-
-
 theorem endDoubleCollar_subset_truncation (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : endDoubleCollar e L ⊆ endTruncation e (L + 1) := by
   rintro _ ⟨z, hz, rfl⟩
   have hzpos : 0 ≤ z.2 := by linarith [hz.2.1]
   exact (endTruncation_coordinate_iff e (by linarith) hzpos).mpr hz.2.2
-
-
 
 theorem endAxialReflection_maps_collar (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -52,8 +34,6 @@ theorem endAxialReflection_maps_collar (e : StandardCylindricalEnd g)
   refine ⟨(z.1, 2 * L - z.2), ⟨mem_univ _, ?_, ?_⟩, rfl⟩ <;>
     dsimp only <;> linarith [hz.2.1, hz.2.2]
 
-
-
 theorem endAxialReflection_collar_leftInvOn (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     LeftInvOn (endAxialReflection e (2 * L)) (endAxialReflection e (2 * L))
@@ -62,16 +42,12 @@ theorem endAxialReflection_collar_leftInvOn (e : StandardCylindricalEnd g)
   exact endAxialReflection_involutive e (2 * L)
     (by linarith [hz.2.1]) (by linarith [hz.2.2])
 
-
-
 theorem endAxialReflection_collar_contMDiffOn (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (endAxialReflection e (2 * L)) (endDoubleCollar e L) := by
   rintro _ ⟨z, hz, rfl⟩
   exact (endAxialReflection_contMDiffAt e (2 * L)
     (by linarith [hz.2.1]) (by linarith [hz.2.2])).contMDiffWithinAt
-
-
 
 def endDoubleCollarHomeomorph (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : OpenPartialHomeomorph StandardCapSpace StandardCapSpace where
@@ -88,21 +64,15 @@ def endDoubleCollarHomeomorph (e : StandardCylindricalEnd g)
   continuousOn_toFun := (endAxialReflection_collar_contMDiffOn e hL).continuousOn
   continuousOn_invFun := (endAxialReflection_collar_contMDiffOn e hL).continuousOn
 
-
-
 theorem endDoubleCollarHomeomorph_symm (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : (endDoubleCollarHomeomorph e hL).symm =
       endDoubleCollarHomeomorph e hL := rfl
-
-
 
 def endClosedReflectionGraph (e : StandardCylindricalEnd g) (L : ℝ) :
     Set (StandardCapSpace × StandardCapSpace) :=
   (fun z : StandardCylinderSpace =>
     (e.coordinate z, e.coordinate (cylinderAxialReflection (2 * L) z))) ''
       (univ ×ˢ Icc (L - 1) (L + 1))
-
-
 
 theorem endClosedReflectionGraph_isCompact (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : IsCompact (endClosedReflectionGraph e L) := by
@@ -119,8 +89,6 @@ theorem endClosedReflectionGraph_isCompact (e : StandardCylindricalEnd g)
     refine ⟨mem_univ _, ?_⟩
     change -e.collar < 2 * L - z.2
     linarith [hz.2.2, e.collar_pos]
-
-
 
 theorem endClosedReflectionGraph_iff (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) {x y : StandardCapSpace}

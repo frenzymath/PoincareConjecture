@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.AmbientHeightCompr
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapCompressionBuffers
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerLevelHeightCompression
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "D1" => Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
 
 theorem exists_short_saddle_piece
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

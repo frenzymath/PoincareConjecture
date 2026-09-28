@@ -2,19 +2,9 @@ import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace AddCircle
-
-
 
 theorem exists_homeomorph_of_strictMono {p : ℝ} (hp : 0 < p) {f : ℝ → ℝ}
     (hf : Continuous f) (hmono : StrictMono f) (hshift : ∀ x, f (x + p) = f x + p) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetTranslation
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,29 +13,20 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
-
 noncomputable def hamiltonZeroPhaseProduct (theta : ℝ) : C((C0 × C0) × ℝ, X0) :=
   ⟨fun z => (Q0).symm (z.1, ((theta + z.2 : ℝ) : C0)),
     (Q0).symm.continuous.comp (continuous_fst.prodMk
       ((AddCircle.continuous_mk' (4 * (16 : ℝ))).comp
         (continuous_const.add continuous_snd)))⟩
 
-
-
 theorem hamiltonZeroPhaseProduct_coordinates (theta : ℝ) (z : (C0 × C0) × ℝ) :
     Q0 (hamiltonZeroPhaseProduct theta z) = (z.1, ((theta + z.2 : ℝ) : C0)) :=
   (Q0).apply_symm_apply _
-
-
 
 theorem hamiltonZeroPhaseProduct_zero (theta : ℝ) (z : C0 × C0) :
     hamiltonZeroPhaseProduct theta (z, 0) = (Q0).symm (z, (theta : C0)) := by
   change (Q0).symm (z, ((theta + 0 : ℝ) : C0)) = _
   rw [add_zero]
-
-
 
 theorem image_hamiltonZeroPhaseProduct (theta : ℝ) (T : Set ℝ) :
     hamiltonZeroPhaseProduct theta '' ((univ : Set (C0 × C0)) ×ˢ T) =
@@ -63,8 +44,6 @@ theorem image_hamiltonZeroPhaseProduct (theta : ℝ) (T : Set ℝ) :
     rw [hamiltonZeroPhaseProduct_coordinates]
     exact Prod.ext rfl he
 
-
-
 theorem image_hamiltonZeroPhaseProduct_Icc (theta rho : ℝ) :
     hamiltonZeroPhaseProduct theta '' ((univ : Set (C0 × C0)) ×ˢ Icc (-rho) rho) =
       (fun y : X0 => (Q0 y).2) ⁻¹'
@@ -78,9 +57,6 @@ theorem image_hamiltonZeroPhaseProduct_Icc (theta rho : ℝ) :
   · rintro ⟨t, ht, rfl⟩
     refine ⟨t - theta, ⟨by linarith [ht.1], by linarith [ht.2]⟩, ?_⟩
     exact congrArg (fun u : ℝ => (u : C0)) (show theta + (t - theta) = t by ring)
-
-
-
 
 theorem isEmbedding_hamiltonZeroPhaseProduct {theta rho : ℝ}
     (hlower : 0 < theta - rho) (hupper : theta + rho < 4 * 16) :
@@ -108,9 +84,6 @@ theorem isEmbedding_hamiltonZeroPhaseProduct {theta rho : ℝ}
     apply Subtype.ext
     exact Prod.ext hfirst (by linarith)
   exact (hc.isClosedEmbedding hi).isEmbedding
-
-
-
 
 theorem isOpen_image_hamiltonZeroPhaseProduct {theta eps : ℝ}
     (hlower : 0 < theta - eps) (hupper : theta + eps < 4 * 16) :

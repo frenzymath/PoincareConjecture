@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Diver
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.ReactionDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Finite
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -26,8 +20,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma hamiltonM_isSmoothCovariantTensor
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (τ : ℝ) :
@@ -100,8 +92,6 @@ private lemma blockTensor_eq {I : Type}
       Matrix.fromBlocks_apply₁₁, Matrix.fromBlocks_apply₁₂,
       Matrix.fromBlocks_apply₂₁, Matrix.fromBlocks_apply₂₂,
       map_vec_two, map_vec_three, map_vec_four]
-
-
 
 theorem tensor_block_diffusion_nonneg_at_null [T2Space M]
     {I : Type} [Fintype I] (D : LeviCivitaData g)
@@ -227,9 +217,6 @@ private lemma sum_five_last {I : Type} [Fintype I] (f : I → I → I → I → 
       intro a _
       exact sum_four_last (f a)
     _ = _ := Finset.sum_comm
-
-
-
 
 theorem hamilton_diffusion_quadratic_nonneg_at_null [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

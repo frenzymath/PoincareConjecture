@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ModelExponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,18 +10,12 @@ namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
 
-
-
 noncomputable def standardFrameLogarithm (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     E → E := L.symm ∘ standardRadialLogarithm g₀
-
-
 
 theorem standardFrameLogarithm_contDiff (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     ContDiff ℝ ∞ (standardFrameLogarithm g₀ L) :=
   L.symm.contDiff.comp (standardRadialLogarithm_contDiff g₀)
-
-
 
 theorem standardFrameLogarithm_exponential
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (v : E) :
@@ -38,24 +23,17 @@ theorem standardFrameLogarithm_exponential
   simp only [standardFrameLogarithm, standardFrameExponential, Function.comp_apply,
     standardRadialLogarithm_exponential, ContinuousLinearEquiv.symm_apply_apply]
 
-
-
 theorem standardFrameExponential_logarithm
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (v : E) :
     standardFrameExponential g₀ L (standardFrameLogarithm g₀ L v) = v := by
   simp only [standardFrameLogarithm, standardFrameExponential, Function.comp_apply,
     ContinuousLinearEquiv.apply_symm_apply, standardRadialExponential_logarithm]
 
-
-
 theorem standard_frame_tangentNorm (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)
     (hL : ∀ v w, g₀.metric.inner 0 (L v) (L w) = inner ℝ v w) (v : E) :
     g₀.metric.tangentNorm 0 (L v) = ‖v‖ := by
   rw [RiemannianMetric.tangentNorm, hL, real_inner_self_eq_norm_sq,
     Real.sqrt_sq (norm_nonneg v)]
-
-
-
 
 theorem standardFrameExponential_image_ball
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)
@@ -81,8 +59,6 @@ theorem standardFrameExponential_image_ball
     _ = g₀.metric.ball 0 r := by
       rw [hframe]
       exact standardRadialExponential_image_tangent_ball g₀ hr
-
-
 
 theorem standardFrameLogarithm_image_ball
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)

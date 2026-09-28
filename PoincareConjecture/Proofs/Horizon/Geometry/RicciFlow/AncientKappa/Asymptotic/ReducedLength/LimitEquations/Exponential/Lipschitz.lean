@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordi
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Lipschitz.Exponential
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

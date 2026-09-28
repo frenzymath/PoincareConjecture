@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M49.Mathlib.ComponentCardinality
 import PoincareConjecture.Proofs.M49.Mathlib.FiniteJumpBalance
 import Mathlib.Topology.Instances.Nat
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ open scoped Manifold ContDiff Topology BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem regular_component_count_eq (F : SurgeryFlowData.{u})
     {a b : ℝ} (hab : a ≤ b) (hJ : Icc a b ⊆ F.time_domain)
@@ -35,8 +24,6 @@ theorem regular_component_count_eq (F : SurgeryFlowData.{u})
   · let S := F.regular_slabs a b hab hJ hno
     exact (S.identify ⟨b, hab.le, le_rfl⟩).toHomeomorph.card_connectedComponents_eq.symm
   · rfl
-
-
 
 theorem event_component_count_tendsto
     {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
@@ -49,8 +36,6 @@ theorem event_component_count_tendsto
   filter_upwards [Ioo_mem_nhdsLT E.tMinus_lt] with t ht
   exact (E.pre_identify ⟨t, ht.1.le, ht.2⟩).toHomeomorph.card_connectedComponents_eq
 
-
-
 theorem vanishing_component_count_tendsto
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
@@ -60,9 +45,6 @@ theorem vanishing_component_count_tendsto
   apply tendsto_const_nhds.congr'
   filter_upwards [Ioo_mem_nhdsLT E.tMinus_lt] with t ht
   exact (E.pre_identify ⟨t, ht.1.le, ht.2⟩).toHomeomorph.card_connectedComponents_eq
-
-
-
 
 theorem event_component_jump_balance (F : SurgeryFlowData.{u})
     (T : ℝ) (hT : T ∈ F.surgery_times)
@@ -106,8 +88,6 @@ theorem event_component_jump_balance (F : SurgeryFlowData.{u})
         event_components_card_add_one_le E hzero x hx
     · simpa [eventDeletionCount_eq F T hT, hcap, hzero] using event_components_card_le E
 
-
-
 theorem component_history_balance (F : SurgeryFlowData.{u}) {b : ℝ}
     (hb : b ∈ F.time_domain)
     (hdiscard : ∀ (T : ℝ) (hT : T ∈ F.surgery_times), T ∈ Icc 0 b →
@@ -137,9 +117,6 @@ theorem component_history_balance (F : SurgeryFlowData.{u}) {b : ℝ}
     have hT := (hmem T).mp hTS
     exact event_component_jump_balance F T hT.1
       (hdiscard T hT.1 ⟨hT.2.1.le, hT.2.2⟩)
-
-
-
 
 theorem event_card_le_initial_add_twice_caps (F : SurgeryFlowData.{u}) {b : ℝ}
     (hb : b ∈ F.time_domain)

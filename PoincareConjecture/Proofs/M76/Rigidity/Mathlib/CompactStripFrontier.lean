@@ -1,22 +1,10 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [T2Space X]
-
-
-
-
 
 theorem frontier_compact_strip_subset_ends {B : Set E} (hB : IsCompact B)
     {a b : ℝ} {f : E × ℝ → X} (hc : ContinuousOn f (B ×ˢ Icc a b))

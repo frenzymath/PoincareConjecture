@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import PoincareConjecture.Proofs.M02.BallHomotopyExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,9 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m65NullHomotopic_of_spanningDisk {g : RiemannianMetric 3 M}
     {gamma : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g gamma) :

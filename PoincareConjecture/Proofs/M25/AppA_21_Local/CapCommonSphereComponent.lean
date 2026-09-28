@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapGraphCompactSide
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapTubeEnds
 import PoincareConjecture.Proofs.M25.AppA_21_Local.Opposite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.compact_union_component_of_common_outward_graph
     {M : Type u} [TopologicalSpace M]

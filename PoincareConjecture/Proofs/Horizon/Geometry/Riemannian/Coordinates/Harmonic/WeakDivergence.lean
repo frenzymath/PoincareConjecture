@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Minimization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.DivergenceEquation
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -24,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem gradientEnergy_eq_divergence_compact
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -112,8 +103,6 @@ theorem gradientEnergy_eq_divergence_compact
   have hcont : Continuous (fun w : H1Zero D Ω => gradientEnergy D Ω w h) := by fun_prop
   exact tendsto_nhds_unique hsum' (hcont.continuousAt.tendsto.comp hf)
 
-
-
 theorem weakPoisson_replacement_divergence_compact [PreconnectedSpace M]
     {Ω' : Set M} (hΩ : Ω ⊆ Ω') {P : ℝ} (hP0 : 0 ≤ P)
     (hP : HasTestPoincare D Ω P) (q : EnergyTest D Ω')
@@ -138,8 +127,6 @@ theorem weakPoisson_replacement_divergence_compact [PreconnectedSpace M]
     rfl
   rw [hext, ← inclusion_coe] at h
   exact h.trans (weakPoisson_gradientEnergy_orthogonal hΩ hP0 hP q _)
-
-
 
 theorem divergence_integral_eq_local
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -175,8 +162,6 @@ theorem divergence_integral_eq_local
       apply integral_congr_ae
       filter_upwards [hae] with x hx
       simp only [hx]
-
-
 
 theorem weakPoisson_replacement_divergence_local [PreconnectedSpace M]
     {Ω' : Set M} (hΩ : Ω ⊆ Ω') {P : ℝ} (hP0 : 0 ≤ P)

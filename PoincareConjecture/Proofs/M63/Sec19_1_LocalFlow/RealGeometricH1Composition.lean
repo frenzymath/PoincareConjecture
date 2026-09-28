@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicH1Coefficients
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1ParametricComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -17,9 +8,6 @@ open PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)] {P ι : Type*} [TopologicalSpace P] [Fintype ι]
-
-
-
 
 theorem exists_realScalarH1_composition
     (f : P → ((Fin 2 × ι) → ℝ) → ℝ)
@@ -106,9 +94,6 @@ theorem exists_realScalarH1_composition
       _ ≤ 4 * (1 + (Fintype.card J : ℝ)) *
           (A * ‖u - v‖ + B * (d * ‖u - v‖) * ‖v‖) := by gcongr
       _ = _ := by ring
-
-
-
 
 theorem exists_realVectorH1_composition
     (f : P → ((Fin 2 × ι) → ℝ) → (ι → ℝ))

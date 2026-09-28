@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.EdgePairing
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.NumberedTriangleParity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AbstractSimplicialComplex

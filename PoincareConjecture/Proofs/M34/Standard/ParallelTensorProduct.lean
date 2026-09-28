@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.TensorScalarProduct
 import PoincareConjecture.Proofs.M04.ScalarHessian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem covariantTensorDerivative_differential_mul_parallel {k : ℕ}
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M k}
@@ -62,9 +50,6 @@ theorem covariantTensorDerivative_differential_mul_parallel {k : ℕ}
   simp only [p, q, Y, Z, FiberBundle.extend_apply_self]
   simp only [hessian, hessianOnFields, FiberBundle.extend_apply_self]
   ring
-
-
-
 
 theorem tensorLaplacian_smoothScalar_mul_parallel {k : ℕ}
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M k}

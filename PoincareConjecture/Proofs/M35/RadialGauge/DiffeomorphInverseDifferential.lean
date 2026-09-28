@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DiffeomorphFamilyInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -22,7 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 theorem diffeomorph_fderiv_symm_eq_inverse
     (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞) (y : V) :
@@ -42,8 +31,6 @@ theorem diffeomorph_fderiv_symm_eq_inverse
     have he : (Φ.symm : V → V) ∘ (Φ : V → V) = id := funext Φ.symm_apply_apply
     rw [he, fderiv_id, Φ.apply_symm_apply] at h
     exact h.symm
-
-
 
 theorem diffeomorph_family_symm_fderiv_contDiffAt
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {J : Set ℝ} (hJ : IsOpen J)
@@ -68,8 +55,6 @@ theorem diffeomorph_family_symm_fderiv_contDiffAt
   have h := hInv.contDiffAt_map_inverse.comp p hD
   apply h.congr_of_eventuallyEq
   exact Eventually.of_forall (fun z => diffeomorph_fderiv_symm_eq_inverse (Φ z.1) z.2)
-
-
 
 theorem diffeomorph_family_symm_fderiv_continuous
     {S : Type*} [TopologicalSpace S]

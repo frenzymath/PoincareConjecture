@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerProduc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskTriangleBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +13,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
-
-
 
 theorem HamiltonProperDiskTriangulation.diskDualBase_eq_dual
     (T : HamiltonProperDiskTriangulation R D b) (s : Finset E) :
@@ -42,8 +31,6 @@ theorem HamiltonProperDiskTriangulation.diskDualBase_eq_dual
   · intro hx
     obtain ⟨hxN, hxD⟩ := hND.symm.subset hx
     exact ⟨⟨hxN, T.disk_subset_region hxD⟩, hxD⟩
-
-
 
 theorem HamiltonProperDiskTriangulation.dualRegion_subset_rim_of_ssubset
     (T : HamiltonProperDiskTriangulation R D b) {s t : Finset E}
@@ -69,8 +56,6 @@ theorem HamiltonProperDiskTriangulation.dualRegion_subset_rim_of_ssubset
   intro x hx
   exact Or.inl ⟨SimplicialComplex.space_subset_of_le hML hx.1, hx.2⟩
 
-
-
 theorem HamiltonProperDiskTriangulation.dualRegion_inter
     (T : HamiltonProperDiskTriangulation R D b) (s t : Finset E) :
     T.dualRegion s ∩ T.dualRegion t = T.dualRegion (s ∪ t) := by
@@ -84,9 +69,6 @@ theorem HamiltonProperDiskTriangulation.dualRegion_inter
     have hxt := h.symm.subset hx.1
     exact ⟨⟨hxt.1, hx.2⟩, hxt.2, hx.2⟩
 
-
-
-
 theorem HamiltonProperDiskTriangulation.dualRegion_eq_empty_of_not_disk_face
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}
     (hne : s.Nonempty) (hverts : (s : Set E) ⊆ T.disk.vertices) (hs : s ∉ T.disk.faces) :
@@ -99,8 +81,6 @@ theorem HamiltonProperDiskTriangulation.dualRegion_eq_empty_of_not_disk_face
   rw [he, empty_inter]
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem HamiltonProperDiskTriangulation.triangle_base_eq_singleton
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E}
@@ -122,9 +102,6 @@ theorem HamiltonProperDiskTriangulation.triangle_base_eq_singleton
   · rintro x rfl
     exact (T.disk.barycentricDualBlock s).vertices_subset_space
       (T.disk.faceCentroid_mem_barycentricDualBlock_vertices hs)
-
-
-
 
 theorem HamiltonProperDiskTriangulation.boundary_edge_base_contact
     (T : HamiltonProperDiskTriangulation R D b)

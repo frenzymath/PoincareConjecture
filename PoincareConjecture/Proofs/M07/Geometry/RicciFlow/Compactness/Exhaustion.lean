@@ -1,19 +1,9 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Carrier
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.FlowCarrier
-
-
 
 theorem exists_connected_open_exhaustion {n : ℕ} (C : FlowCarrier n) (base : C.carrier) :
     letI : TopologicalSpace C.carrier := C.topologicalSpace

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.NormalCoverCharts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem eventually_normalCover_jet_bound_of_curvature
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateCoefficients
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,11 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem m64WeightedChart_scalar_equation
     (g : RiemannianMetric n M) (b : M) (modulus : ℝ)

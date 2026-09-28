@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCha
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CollarMatching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.ComplementaryDomain
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -36,8 +25,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
-
 
 theorem exists_two_cap_projective_enclosing_ball (C D : CapCertificate g)
     (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
@@ -70,8 +57,6 @@ theorem exists_two_cap_projective_enclosing_ball (C D : CapCertificate g)
       rw [← hzy, neg_neg]
       exact hz
     exact havoid (-y) hny hnyp (hnyx ▸ hx)
-
-
 
 theorem exists_two_cap_projective_matching_ball (C D : CapCertificate g)
     (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)

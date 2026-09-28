@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_ExtensionBalls
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +8,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_model_chart_coefficients
     (G : RiemannianMetric 2 AnnulusCoordinates) (p : AnnulusCoordinates) :
@@ -32,9 +18,6 @@ theorem m64Intrinsic_model_chart_coefficients
     G.inner x v w
   rw [mfderiv_id]
   rfl
-
-
-
 
 theorem m64Intrinsic_geodesic_of_metric_germ
     (G H : RiemannianMetric 2 AnnulusCoordinates)
@@ -62,16 +45,12 @@ theorem m64Intrinsic_geodesic_of_metric_germ
     simp only [coordinateChristoffel, hmr.self_of_nhds, hmr.fderiv_eq]
   simpa only [m64Intrinsic_model_chart_coefficients, hGamma] using hr.2.2.2
 
-
-
 theorem m64Intrinsic_isOpen_metric_agreement
     (G H : RiemannianMetric 2 AnnulusCoordinates) :
     IsOpen {p | G.euclideanCoefficients =ᶠ[𝓝 p] H.euclideanCoefficients} := by
   rw [isOpen_iff_mem_nhds]
   intro p hp
   exact hp.eventually_nhds
-
-
 
 theorem m64Intrinsic_exists_metric_agreement_tube
     (N : IntrinsicAnnulus) (G : RiemannianMetric 2 AnnulusCoordinates)

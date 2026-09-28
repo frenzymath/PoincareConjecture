@@ -12,7 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 noncomputable def m59ConstantFamily
     (q : M59SphereQuotient) (x : M) : FreeTwoSphereFamily (M := M) := by
   let F : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)) :=

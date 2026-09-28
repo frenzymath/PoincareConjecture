@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_middle_exterior_coordinates
     (u : UnitTwoSphere) (c : ℝ)
@@ -75,9 +63,6 @@ theorem saddle_middle_exterior_coordinates
         intro hn
         exact hnot ⟨g.symm v, mem_ball_zero_iff.mpr hn, g.apply_symm_apply v⟩
 
-
-
-
 theorem saddle_middle_exterior_source_disc
     {A : Type*} (u : UnitTwoSphere) (c t : ℝ)
     (g : Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)
@@ -106,9 +91,6 @@ theorem saddle_middle_exterior_source_disc
     refine ⟨mem_range_self p, hh, le_of_not_gt ?_⟩
     intro hn
     exact hnot ⟨p, (hV p hh).mp ((hdisc _).mpr hn), rfl⟩
-
-
-
 
 theorem saddle_middle_exterior_scaled_source
     {A : Type*} (u : UnitTwoSphere) (c t scale : ℝ) (hscale : scale ≠ 0)

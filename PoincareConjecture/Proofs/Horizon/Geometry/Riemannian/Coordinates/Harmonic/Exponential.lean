@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -32,8 +22,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 universe u
 
 variable {n : ℕ}
-
-
 
 theorem exists_uniform_elliptic_radial_lift {K : ℝ} (hK : 0 ≤ K) :
     ∃ R : ℝ, 0 < R ∧

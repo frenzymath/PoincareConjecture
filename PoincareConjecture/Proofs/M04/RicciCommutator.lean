@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 import PoincareConjecture.Definitions.Ch03.CurvatureReaction
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -194,4 +186,3 @@ theorem ricci_second_derivative_commutator_trace (D : LeviCivitaData g) (x : M)
   simpa only [H, b, R, K, mul_sub] using congrArg (fun z : ℝ ↦ 2 * z) hReaction
 
 end PoincareConjecture.M04
-

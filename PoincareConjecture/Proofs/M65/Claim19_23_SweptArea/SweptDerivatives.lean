@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.InteriorSweptAnnulus
 import PoincareConjecture.Proofs.M65.Mathlib.SmoothTimeChange
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -53,8 +45,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
 
-
-
 theorem m65SweptMap_angular_derivative {c : ℝ → ℝ → M} (hc : M62ShrinkingCurve F c)
     {s t : ℝ} (has : a < s) (hst : s ≤ t) (htb : t < b) (x y : ℝ) :
     mfderiv (𝓡 2) (𝓡 n) (m65SweptMap c s t) (annulusPoint x y)
@@ -70,8 +60,6 @@ theorem m65SweptMap_angular_derivative {c : ℝ → ℝ → M} (hc : M62Shrinkin
     hd.differentiableAt.mdifferentiableAt (1 : ℝ)
   erw [hdv] at hchain
   exact hchain.symm
-
-
 
 theorem m65SweptMap_time_derivative {c : ℝ → ℝ → M} (hc : M62ShrinkingCurve F c)
     {s t : ℝ} (has : a < s) (hst : s ≤ t) (htb : t < b) (x y : ℝ) :

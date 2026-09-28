@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.ShearPair
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Contact
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +22,6 @@ theorem contDiff_profileCapShift {ρ : Real → Real} (hρ : ContDiff Real ∞ �
     ((EuclideanSpace.proj (𝕜 := Real) (1 : Fin 3)).contDiff.pow 2).add
       ((EuclideanSpace.proj (𝕜 := Real) (2 : Fin 3)).contDiff.pow 2)
   exact (contDiff_profileX hρ).comp (H.symm.contDiff.comp (contDiff_const.sub hs))
-
 
 def profileCapShear {ρ : Real → Real} (hρ : ContDiff Real ∞ ρ)
     (H : Real ≃ₘ[Real] Real) (a R : Real) :
@@ -176,7 +173,6 @@ theorem profileCapShear_closing_slice {ρ : Real → Real} (hρ : ContDiff Real 
       vector (profileX ρ (H.symm (a + R ^ 2 - y ^ 2))) y 0 := by
   simpa only [zero_pow (by norm_num : 2 ≠ 0), add_zero] using
     profileCapShear_positive_patch hρ H a R y 0 (by simpa using hy)
-
 
 theorem exists_profile_cap_shear (H : Real ≃ₘ[Real] Real)
     {ρ : Real → Real} (hρ : ContDiff Real ∞ ρ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalStopped
 import PoincareConjecture.Proofs.M47.BlowupControlsScales
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,11 +8,6 @@ open Set Filter
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
-
 
 theorem terminalCommonInterval_after_terminal_curvature_floor
     (S : RepairedControlledSchedulesData.{u})

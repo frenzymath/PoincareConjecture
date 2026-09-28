@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePartitionAt
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeWeakPartition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem exists_anchored_weak_minimum (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau s : ℝ} {x y : G.Point} (hs : s ∈ Ioo 0 (Real.sqrt tau))

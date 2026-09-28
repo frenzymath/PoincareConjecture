@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.OverlapTransport
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenRetraction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -84,8 +74,6 @@ private theorem glueLocalTransports_first {A : Type*} [Group A]
   simp only [glueLocalTransports, dif_pos hp]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem inclusion_injective_of_overlap_injective
     (U V : Set X) (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)

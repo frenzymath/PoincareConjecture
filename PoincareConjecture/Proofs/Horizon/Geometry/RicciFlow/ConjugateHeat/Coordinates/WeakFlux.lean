@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.Operator
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.FluxIdentity
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -74,8 +73,6 @@ private theorem testFlux_tsupport_subset (φ : Spacetime n → ℝ) (i : Fin n) 
     image_eq_zero_of_notMem_tsupport
       (fun h => hzφ (tsupport_fderiv_apply_subset ℝ (Canonical.spatialDirection j) h))
   exact hz (by simp only [hd, mul_zero, Finset.sum_const_zero])
-
-
 
 theorem integral_heat_flux_eq_coordinate_pairing
     {U : Set (Spacetime n)} (hU : IsOpen U) (hUD : U ⊆ domain J e)

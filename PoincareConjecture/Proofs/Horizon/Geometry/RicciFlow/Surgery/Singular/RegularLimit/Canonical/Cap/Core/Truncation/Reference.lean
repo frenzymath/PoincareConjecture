@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Centered
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Topology.Transport
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
   {t : ℝ} (ht : t ∈ Ico H.reference.tMinus T) (x₀ : H.regularRegion P04)
-
 
 def regularReferencePartialHomeomorph :
     OpenPartialHomeomorph (F.slice t).carrier (H.regularRegion P04) where
@@ -122,7 +119,6 @@ theorem regularReferencePreimage_frontier (S : Set (F.slice t).carrier) :
     |>.preimage_frontier_eq_frontier_preimage
       (H.regularNeckSourceMap_smooth P04 ht).continuous S
 
-
 def regularReferenceModelEquivalence {S : Set (F.slice t).carrier}
     (hcapture : H.reference.inverse t ht '' S ⊆ H.reference.regularLimitSet)
     {kind : CapModelKind} {p : RealProjectiveThree} (J : CapModelEquivalence kind p S) :
@@ -160,7 +156,6 @@ def regularReferenceModelEquivalence {S : Set (F.slice t).carrier}
     simpa only [mem_preimage, e.left_inv (hS hy)] using hy
   · exact (H.regularReferencePartialHomeomorph_smooth P04 ht x₀).comp J.inverse_smooth
       (fun y _ => hS (J.inverse_mem y))
-
 
 theorem regularReferencePreimage_local_defining_function
     {U K B : Set (F.slice t).carrier} (hKU : K ⊆ U)

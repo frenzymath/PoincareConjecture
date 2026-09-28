@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.InteriorLimit
 import PoincareConjecture.Proofs.M34.Standard.SpatialJetConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,8 +18,6 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   {A : MetricFlowApproximation ginit Mfamily}
   (G : MetricInteriorCoefficientLimit A)
 
-
-
 theorem coefficients_tendstoUniformlyOn {K : Set (ℝ × StandardCapSpace)}
     (hK : IsCompact K) (hKU : K ⊆ Ioo 0 A.time ×ˢ univ) :
     TendstoUniformlyOn
@@ -38,16 +27,12 @@ theorem coefficients_tendstoUniformlyOn {K : Set (ℝ × StandardCapSpace)}
   simpa only [Function.comp_def, iteratedFDeriv_zero_apply] using
     hev.comp_tendstoUniformlyOn (G.jet_convergence 0 K hK hKU)
 
-
-
 theorem coefficients_tendsto {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :
     Tendsto (fun k => A.coefficients (G.subsequence k) t x) atTop
       (𝓝 (G.coefficients (t, x))) := by
   have h := G.coefficients_tendstoUniformlyOn (K := {(t, x)}) isCompact_singleton
     (singleton_subset_iff.mpr ⟨ht, mem_univ x⟩)
   exact h.tendsto_at (x := (t, x)) (mem_singleton (t, x))
-
-
 
 theorem spatialJet_tendstoUniformlyOn (m : ℕ) {K : Set (ℝ × StandardCapSpace)}
     (hK : IsCompact K) (hKU : K ⊆ Ioo 0 A.time ×ˢ univ) :
@@ -66,8 +51,6 @@ theorem spatialJet_tendstoUniformlyOn (m : ℕ) {K : Set (ℝ × StandardCapSpac
     exact G.smooth.contDiffAt ((isOpen_Ioo.prod isOpen_univ).mem_nhds (hKU hp))
   · exact G.jet_convergence m K hK hKU
 
-
-
 theorem spatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
     (x : StandardCapSpace) :
     Tendsto (fun k => iteratedFDeriv ℝ m (A.coefficients (G.subsequence k) t) x)
@@ -75,8 +58,6 @@ theorem spatialJet_tendsto (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
   have h := G.spatialJet_tendstoUniformlyOn m (K := {(t, x)}) isCompact_singleton
     (singleton_subset_iff.mpr ⟨ht, mem_univ x⟩)
   exact h.tendsto_at (x := (t, x)) (mem_singleton (t, x))
-
-
 
 theorem exists_compact_initial_modulus (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

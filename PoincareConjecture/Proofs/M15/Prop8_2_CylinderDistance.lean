@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Prop8_2_CylinderFlow
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
-
-
-
 
 theorem actualBallCylinder_terminal_edist_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

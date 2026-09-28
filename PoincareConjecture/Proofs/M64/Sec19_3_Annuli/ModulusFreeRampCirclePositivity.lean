@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FreeRampBoundaryCurrent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusCircleCurrent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCirclePeriodicity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64FreeRampModulusMinimum_circleCurrent_pos
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

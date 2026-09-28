@@ -7,8 +7,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem raw_source_crossings_of_retained_open_copy
     {E Y X ι : Type*} [TopologicalSpace E] [TopologicalSpace Y]
     [TopologicalSpace X] [T2Space X]

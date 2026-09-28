@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.GradientFrame
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped InnerProductSpace BigOperators
@@ -14,7 +7,6 @@ open scoped InnerProductSpace BigOperators
 namespace Poincare.CurvatureIntegral
 
 variable {ι : Type*} [Fintype ι]
-
 
 theorem matrix_row_sum_lower_bound
     (A : ι → ι → ℝ) {a δ : ℝ} (hδ : 0 ≤ δ)
@@ -31,8 +23,6 @@ theorem matrix_row_sum_lower_bound
       exact (abs_le.mp (hcross i j hij)).1
   simpa [Finset.sum_sub_distrib] using
     (Finset.sum_le_sum (s := Finset.univ) fun j _ => hterm j)
-
-
 
 theorem coefficients_nonpos_of_positive_row_sum
     (A : ι → ι → ℝ) (c : ι → ℝ)
@@ -56,8 +46,6 @@ theorem coefficients_nonpos_of_positive_row_sum
   have hpositive := mul_pos (hrow i₀) hpos
   linarith [hpair i₀]
 
-
-
 theorem coefficients_nonpos_of_diagonal_dominance
     (A : ι → ι → ℝ) (c : ι → ℝ) {a δ : ℝ} (hδ : 0 ≤ δ)
     (hdiag : ∀ i, a ≤ A i i)
@@ -69,8 +57,6 @@ theorem coefficients_nonpos_of_diagonal_dominance
   · intro i
     exact hpos.trans_le (matrix_row_sum_lower_bound A hδ hdiag hcross i)
   · exact hpair
-
-
 
 theorem coefficients_abs_le_of_diagonal_dominance
     (A : ι → ι → ℝ) (c : ι → ℝ) {a δ ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε)
@@ -107,7 +93,6 @@ theorem coefficients_abs_le_of_diagonal_dominance
   change |c i| ≤ B
   exact abs_le.mpr ⟨by linarith [hl i], by linarith [hu i]⟩
 
-
 theorem sum_abs_coefficients_le_of_diagonal_dominance
     (A : ι → ι → ℝ) (c : ι → ℝ) {a δ ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε)
     (hdiag : ∀ i, a ≤ A i i)
@@ -126,7 +111,6 @@ theorem sum_abs_coefficients_le_of_diagonal_dominance
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 theorem gram_pairing_eq_of_orthogonal_decomposition
     (v : ι → E) (c : ι → ℝ) (z zT : E)
     (hdecomp : z = zT + ∑ j, c j • v j)
@@ -137,8 +121,6 @@ theorem gram_pairing_eq_of_orthogonal_decomposition
   intro j _
   rw [real_inner_smul_left, real_inner_comm (v j) (v i)]
   ring
-
-
 
 theorem gram_coefficients_nonpos_of_orthogonal_decomposition
     (v : ι → E) (c : ι → ℝ) (z zT : E) {a δ : ℝ} (hδ : 0 ≤ δ)
@@ -155,8 +137,6 @@ theorem gram_coefficients_nonpos_of_orthogonal_decomposition
   rw [gram_pairing_eq_of_orthogonal_decomposition v c z zT hdecomp horth i]
   exact hz i
 
-
-
 theorem gram_coefficients_abs_le_of_orthogonal_decomposition
     (v : ι → E) (c : ι → ℝ) (z zT : E) {a δ ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε)
     (hdiag : ∀ i, a ≤ ‖v i‖ ^ 2)
@@ -172,7 +152,6 @@ theorem gram_coefficients_abs_le_of_orthogonal_decomposition
   intro i
   rw [gram_pairing_eq_of_orthogonal_decomposition v c z zT hdecomp horth i]
   exact hz i
-
 
 theorem sum_abs_gram_coefficients_le_of_orthogonal_decomposition
     (v : ι → E) (c : ι → ℝ) (z zT : E) {a δ ε : ℝ} (hδ : 0 ≤ δ) (hε : 0 ≤ ε)

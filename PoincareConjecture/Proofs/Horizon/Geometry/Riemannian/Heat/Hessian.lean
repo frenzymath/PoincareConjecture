@@ -11,18 +11,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Uniform
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.HarmonicEstimate
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Distance
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,11 +30,6 @@ namespace RiemannianMetric
 
 variable (g : RiemannianMetric n M) (D : LeviCivitaData g)
 
-
-
-
-
-
 structure HeatSolution where
   toFun : M → ℝ → ℝ
   smooth : ContMDiffOn ((𝓡 n).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞
@@ -59,19 +42,15 @@ namespace HeatSolution
 
 variable {g : RiemannianMetric n M} {D : LeviCivitaData g}
 
-
 lemma contMDiff_slice (F : HeatSolution g D) {t : ℝ} (ht : 0 < t) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x ↦ F.toFun x t) := by
   exact contMDiff_slice_of_pos F.smooth ht
-
 
 lemma deriv_eq_laplacian (F : HeatSolution g D) {t : ℝ} (ht : 0 < t) (x : M) :
     deriv (fun s ↦ F.toFun x s) t = D.laplacian (fun y ↦ F.toFun y t) x := by
   exact (F.heatEquation t ht x).deriv
 
 omit [NoncompactSpace M] in
-
-
 
 lemma abs_sub_center_le (F : HeatSolution g D) {u : M → ℝ} {A R t : ℝ}
     (hA : 0 ≤ A) (ht : 0 < t)
@@ -98,8 +77,6 @@ lemma abs_sub_center_le (F : HeatSolution g D) {u : M → ℝ} {A R t : ℝ}
 
 omit [T3Space M] [PreconnectedSpace M] [NoncompactSpace M] in
 
-
-
 lemma hasDerivAt_lift_sub_const (F : HeatSolution g D)
     {N : Type*} [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
@@ -124,7 +101,6 @@ lemma hasDerivAt_lift_sub_const (F : HeatSolution g D)
   exact (F.heatEquation t ht (f x)).sub_const c
 
 omit [T3Space M] [PreconnectedSpace M] [NoncompactSpace M] in
-
 
 lemma hasDerivAt_harmonic_lift_sub_const (F : HeatSolution g D)
     {h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D' : LeviCivitaData h)
@@ -151,7 +127,6 @@ lemma hasDerivAt_harmonic_lift_sub_const (F : HeatSolution g D)
 
 set_option backward.isDefEq.respectTransparency false in
 omit [T3Space M] [PreconnectedSpace M] [NoncompactSpace M] in
-
 
 lemma norm_fderiv_lift_sub_const_le (F : HeatSolution g D)
     {e : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -189,9 +164,6 @@ lemma norm_fderiv_lift_sub_const_le (F : HeatSolution g D)
   simpa only [mul_assoc] using h
 
 end HeatSolution
-
-
-
 
 theorem exists_centered_arclength_heat_lift_one
     {M : Type*} [TopologicalSpace M]
@@ -266,13 +238,6 @@ namespace LeviCivitaData
 
 variable {g : RiemannianMetric n M} (D : LeviCivitaData g)
 
-
-
-
-
-
-
-
 theorem abs_hessian_le_of_local_isometric_lift
     {N : Type u} [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
@@ -298,9 +263,6 @@ theorem abs_hessian_le_of_local_isometric_lift
 
 set_option backward.isDefEq.respectTransparency false in
 set_option maxSynthPendingDepth 8 in
-
-
-
 
 theorem exists_uniform_hessian_bound_on_harmonic_lift
     (hn : 1 ≤ n) {r a b G A : ℝ}
@@ -387,8 +349,6 @@ theorem exists_uniform_hessian_bound_on_harmonic_lift
     (mul_le_mul_of_nonneg_right (by dsimp [Q]; linarith) (Real.sqrt_nonneg _))
     (Real.sqrt_nonneg _))
 
-
-
 theorem exists_uniform_time_one_hessian_bound_one
     {A : ℝ} (hA : 0 ≤ A) :
     ∃ C : ℝ, 0 < C ∧
@@ -462,12 +422,6 @@ theorem exists_uniform_time_one_hessian_bound_one
   exact hb v w
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
-
-
-
 
 theorem exists_uniform_time_one_hessian_bound
     {K A : ℝ} (hK : 0 < K) (hA : 0 ≤ A) :

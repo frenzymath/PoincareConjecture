@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ F]
 
 omit [FiniteDimensional ℝ F] in
-
-
-
 
 theorem finitePL_prod_refl_on_finite_polyhedron (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →
@@ -48,9 +36,6 @@ theorem finitePL_prod_refl_on_finite_polyhedron (H : E ≃ₜ E)
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E] in
 
-
-
-
 theorem image_eq_self_of_eqOn_compl (H : E ≃ₜ E) {C : Set E}
     (hfix : EqOn H id Cᶜ) : H '' C = C := by
   have hcompl : (H '' C)ᶜ = Cᶜ :=
@@ -59,8 +44,6 @@ theorem image_eq_self_of_eqOn_compl (H : E ≃ₜ E) {C : Set E}
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedSpace ℝ F] [FiniteDimensional ℝ F] in
-
-
 
 theorem image_prod_frontier_of_image_eq (H : E ≃ₜ E) {C : Set E}
     (hC : H '' C = C) (D : Set F) :
@@ -72,9 +55,6 @@ theorem image_prod_frontier_of_image_eq (H : E ≃ₜ E) {C : Set E}
     (congrArg frontier hprod)
 
 omit [FiniteDimensional ℝ F] in
-
-
-
 
 theorem exists_finitePL_cylinder_frontier_homeomorph (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →
@@ -97,20 +77,11 @@ theorem exists_finitePL_cylinder_frontier_homeomorph (H : E ≃ₜ E)
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedSpace ℝ F] [FiniteDimensional ℝ F] in
 
-
-
 theorem image_prod_refl_face_image (H : E ≃ₜ E) (z : F) (s : Set E) :
     H.prodCongr (Homeomorph.refl F) '' ((fun x : E => (x, z)) '' s) =
       (fun x : E => (x, z)) '' (H '' s) := by
   rw [image_image, image_image]
   rfl
-
-
-
-
-
-
-
 
 theorem isFinitePLBallPair_cylinderComplement_image_iff
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

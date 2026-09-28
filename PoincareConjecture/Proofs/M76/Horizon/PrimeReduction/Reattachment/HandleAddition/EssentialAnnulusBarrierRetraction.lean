@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.Attaching
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneRetraction
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedCrossingBoundaryValues
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

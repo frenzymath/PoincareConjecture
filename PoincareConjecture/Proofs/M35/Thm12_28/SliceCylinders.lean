@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.Cylinders
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 noncomputable def sliceCylinder {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {a : ℝ} (ha : a ∈ J) (Q : ℝ) (hQ : 0 < Q) (I : Set ℝ)
@@ -41,16 +31,12 @@ noncomputable def sliceCylinder {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace 
     intro s hs _
     exact ⟨htime s hs, rfl⟩
 
-
-
 theorem sliceCylinder_pointMap {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {a : ℝ} (ha : a ∈ J) (Q : ℝ) (hQ : 0 < Q) (I : Set ℝ)
     (U : Set (slice J a).carrier) (htime : ∀ s ∈ I, a + s / Q ∈ J)
     (s : ℝ) (hs : s ∈ I) (x : (slice J a).carrier) :
     (sliceCylinder F ha Q hQ I U htime).pointMap s hs x =
       (⟨a + s / Q, ⟨x.val, htime s hs⟩⟩ : (generalizedFlow F).point) := rfl
-
-
 
 theorem sliceCylinder_zero_identity {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {a : ℝ} (ha : a ∈ J) (Q : ℝ) (hQ : 0 < Q) (I : Set ℝ)
@@ -66,8 +52,6 @@ theorem sliceCylinder_zero_identity {J : Set ℝ} (F : RicciFlow 3 StandardCapSp
   change ((⟨a + 0 / Q, htime 0 h₀⟩ : J), x) = ((⟨a, hx⟩ : J), x)
   congr 1
   exact Subtype.ext (by simp only [zero_div, add_zero])
-
-
 
 theorem sliceCylinder_curvatureNorm (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)

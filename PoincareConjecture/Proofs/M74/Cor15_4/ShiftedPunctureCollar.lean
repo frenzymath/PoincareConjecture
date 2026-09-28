@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.CollarReparametrization
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereImmersion
 import PoincareConjecture.Proofs.M74.Cor15_4.PuncturedSphereStandardEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -25,12 +16,8 @@ open M74 M25.Topology3D
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
   (d : Diffeomorph (𝓡 3) (𝓡 3) A.carrier ThreeSphere ∞)
 
-
-
 noncomputable def shiftedPunctureCollar : RoundCylinderSpace → StandardCapSpace :=
   B.punctureCollar d ∘ shiftCollar
-
-
 
 theorem shiftedPunctureCollar_isCollarEmbedding :
     IsCollarEmbedding (B.shiftedPunctureCollar d) :=
@@ -42,8 +29,6 @@ private theorem shifted_radial_norm {p : RoundCylinderSpace}
   have hs := shiftCollarParam_mem hp.2
   rw [norm_smul, Real.norm_eq_abs, abs_of_pos (by linarith [hs.1]),
     mem_sphere_zero_iff_norm.mp p.1.2, mul_one]
-
-
 
 theorem shiftedPunctureCollar_negative_image :
     B.shiftedPunctureCollar d '' (univ ×ˢ Ioo (-1) 0) =
@@ -86,14 +71,10 @@ theorem shiftedPunctureCollar_negative_image :
     rw [shift_unshiftCollarParam ht, show 1 + (‖x‖ - 1) = ‖x‖ by ring,
       smul_smul, mul_inv_cancel₀ (ne_of_gt hn), one_smul]
 
-
-
 theorem shiftedPunctureCollar_negative_unbounded :
     ¬Bornology.IsBounded (B.shiftedPunctureCollar d '' (univ ×ˢ Ioo (-1) 0)) := by
   rw [B.shiftedPunctureCollar_negative_image d]
   exact B.punctureChart_image_puncturedBall_unbounded d (by norm_num) (by norm_num)
-
-
 
 theorem shiftedSchoenflies_side_eq_neg_one {δ : ℝ}
     (D : SchoenfliesData (B.shiftedPunctureCollar d) δ) : D.side = -1 := by
@@ -109,8 +90,6 @@ theorem shiftedSchoenflies_side_eq_neg_one {δ : ℝ}
     simpa only [h, one_mul, Prod.eta] using D.collar_inside
   · exact h
 
-
-
 theorem shiftedSchoenflies_original_boundary
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) (q : UnitTwoSphere) :
     D.chart (D.radial (1 / 2) • (D.boundary_map q).1) = B.punctureCollar d (q, 0) := by
@@ -118,9 +97,6 @@ theorem shiftedSchoenflies_original_boundary
   rw [B.shiftedSchoenflies_side_eq_neg_one d D] at h
   norm_num [shiftedPunctureCollar, shiftCollar, shiftCollarParam, Function.comp_apply] at h
   exact h
-
-
-
 
 theorem exists_shiftedSchoenflies_boundary (hS : SchoenfliesService) :
     ∃ D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4),
@@ -131,8 +107,6 @@ theorem exists_shiftedSchoenflies_boundary (hS : SchoenfliesService) :
     (1 / 4) (by norm_num) (by norm_num)
   exact ⟨D, B.shiftedSchoenflies_side_eq_neg_one d D, D.radial_pos _ (by norm_num),
     D.radial_lt _ (by norm_num), B.shiftedSchoenflies_original_boundary d D⟩
-
-
 
 theorem exists_schoenflies_inside_exterior (hS : SchoenfliesService) {δ : ℝ}
     (hδ : 0 < δ) (hδ1 : δ < 1) :

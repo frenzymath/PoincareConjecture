@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyHolderRepresentative
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakRescaling
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +15,6 @@ open Poincare.Analysis.Sobolev.Weak M60
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
-
 theorem m64Morrey_affine_image_ball (a b : Plane) {rho : ℝ} (hrho : 0 < rho)
     (r : ℝ) :
     (fun z : Plane => a + rho • z) '' ball b r = ball (a + rho • b) (rho * r) := by
@@ -38,9 +23,6 @@ theorem m64Morrey_affine_image_ball (a b : Plane) {rho : ℝ} (hrho : 0 < rho)
   change (fun z : Plane => a + z) '' (rho • ball b r) = _
   rw [_root_.smul_ball hrho.ne', Real.norm_of_nonneg hrho.le]
   exact (IsometryEquiv.addLeft a).image_ball (rho • b) (rho * r)
-
-
-
 
 theorem m64Morrey_local_disk_holder_representative {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}
@@ -133,8 +115,6 @@ theorem m64Morrey_local_disk_holder_representative {m : ℕ}
     _ = _ := by
       rw [hdist, Real.div_rpow dist_nonneg hrho.le]
       ring
-
-
 
 theorem m64Morrey_local_disk_representative {m : ℕ}
     {u : Plane → EuclideanSpace ℝ (Fin m)}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderIntervalModel
 import PoincareConjecture.Proofs.M28.Mathlib.UnitIntervalReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
-
-
 
 theorem exists_midlevel_model (T : OpenCylinderModel U) {a : ℝ}
     (ha : a ∈ Ioo (0 : ℝ) 1) :

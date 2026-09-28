@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckMetricJets
 import Mathlib.Algebra.Order.Chebyshev
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,8 +28,6 @@ private theorem bilinear_basis_expansion
       apply Finset.sum_congr rfl
       intro j _
       ring
-
-
 
 theorem abs_bilinear_le_of_components
     (B : EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ)
@@ -72,8 +61,6 @@ theorem abs_bilinear_le_of_components
     _ ≤ K * (3 * ‖v‖ ^ 2) := mul_le_mul_of_nonneg_left hCS hK
     _ = 3 * K * ‖v‖ ^ 2 := by ring
 
-
-
 theorem cylinderEuclideanCoefficients_lower {u : ℝ} (hu : u ≤ 0)
     (s : ℝ) (v : EuclideanSpace ℝ (Fin 3)) :
     ‖v‖ ^ 2 ≤ cylinderEuclideanCoefficients u (cylinderCoordinateEquiv.symm (0, s)) v v := by
@@ -92,9 +79,6 @@ theorem cylinderEuclideanCoefficients_lower {u : ℝ} (hu : u ≤ 0)
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
-
 
 theorem euclidean_pullback_lower {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

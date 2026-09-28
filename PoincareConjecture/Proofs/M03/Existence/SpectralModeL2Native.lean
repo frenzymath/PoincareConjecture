@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.SpectralModeNative
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -17,7 +9,6 @@ open MeasureTheory Set
 noncomputable section
 
 namespace PoincareConjecture
-
 
 theorem absolutelyContinuousOnInterval_spectralMode
     {lambda c T : ℝ} {f : ℝ → ℝ}
@@ -35,7 +26,6 @@ theorem absolutelyContinuousOnInterval_spectralMode
     apply ContDiffOn.absolutelyContinuousOnInterval
     fun_prop
   exact hdecay.fun_mul (hconst.fun_add hprimitive)
-
 
 theorem ae_hasDerivAt_spectralMode
     {lambda c T : ℝ} {f : ℝ → ℝ}
@@ -72,7 +62,6 @@ theorem ae_hasDerivAt_spectralMode
       rw [hcancel]
       ring
 
-
 theorem intervalIntegrable_spectralMode_defect_sq
     {lambda c T : ℝ} {f : ℝ → ℝ}
     (hf : IntervalIntegrable f volume 0 T)
@@ -90,7 +79,6 @@ theorem intervalIntegrable_spectralMode_defect_sq
   apply ((hf2.sub hcross).add hA).congr
   intro t ht
   ring
-
 
 theorem spectralMode_energy_identity_of_integrable
     {lambda c T : ℝ} {f : ℝ → ℝ}
@@ -147,7 +135,6 @@ theorem spectralMode_energy_identity_of_integrable
       (∫ t in (0 : ℝ)..T, (lambda * u t) ^ 2) + lambda * u T ^ 2 = _
   linarith
 
-
 theorem intervalIntegrable_and_sq_of_memLp_two
     {T : ℝ} {f : ℝ → ℝ} (hT : 0 ≤ T)
     (hf : MemLp f 2 (volume.restrict (Ioc (0 : ℝ) T))) :
@@ -156,7 +143,6 @@ theorem intervalIntegrable_and_sq_of_memLp_two
   rw [intervalIntegrable_iff_integrableOn_Ioc_of_le hT,
     intervalIntegrable_iff_integrableOn_Ioc_of_le hT]
   exact ⟨hf.integrable (by norm_num), hf.integrable_sq⟩
-
 
 theorem spectralMode_energy_identity_of_memLp
     {lambda c T : ℝ} {f : ℝ → ℝ} (hT : 0 ≤ T)
@@ -167,7 +153,6 @@ theorem spectralMode_energy_identity_of_memLp
       (∫ t in (0 : ℝ)..T, f t ^ 2) + lambda * c ^ 2 := by
   obtain ⟨hfi, hfi2⟩ := intervalIntegrable_and_sq_of_memLp_two hT hf
   exact spectralMode_energy_identity_of_integrable hfi hfi2
-
 
 theorem spectralMode_zero_initial_generator_energy_le_of_memLp
     {lambda T : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda) (hT : 0 ≤ T)

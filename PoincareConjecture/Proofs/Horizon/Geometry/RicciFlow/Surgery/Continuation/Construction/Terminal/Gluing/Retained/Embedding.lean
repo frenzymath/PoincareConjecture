@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Gluing.Inclusions
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -116,7 +109,6 @@ omit [Countable ι] in
 theorem retainedPieceOpen_subset_neighborhood (j : Option ι) :
     (retainedPieceOpen I U j : Set S.carrier) ⊆ retainedNeighborhood I U :=
   fun _ hx => mem_iUnion.mpr ⟨j, hx⟩
-
 
 def retainedMap (x : S.carrier) : (cutCarrier I R U hU hd hc).carrier := by
   classical

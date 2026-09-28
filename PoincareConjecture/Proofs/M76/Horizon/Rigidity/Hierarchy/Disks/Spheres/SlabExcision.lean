@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Maps.SlabExcision
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Spheres.OriginalArcRemoval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -126,4 +118,3 @@ theorem plDomains_hamiltonZero_third_slabs_of_supported_phase_avoidance
     exact ⟨hPL, hfront⟩
 
 end PoincareConjecture.M76
-

@@ -11,19 +11,9 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
-
-
 set_option maxHeartbeats 600000 in
 
 set_option linter.unusedVariables false in
-
 
 theorem CapCertificate.exists_full_boundary_second_overlap_cylinder :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

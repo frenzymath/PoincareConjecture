@@ -1,7 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +20,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M₄ : Type*} [TopologicalSpace M₄] [ChartedSpace H₄ M₄]
   {n : ℕ∞ω}
 
-
 theorem IsLocalDiffeomorphAt.prodMap {f : M₁ → M₂} {g : M₃ → M₄}
     {x : M₁} {y : M₃} (hf : IsLocalDiffeomorphAt I₁ I₂ n f x)
     (hg : IsLocalDiffeomorphAt I₃ I₄ n g y) :
@@ -39,7 +36,6 @@ theorem IsLocalDiffeomorphAt.prodMap {f : M₁ → M₂} {g : M₃ → M₄}
   refine ⟨e, ⟨hx, hy⟩, ?_⟩
   intro z hz
   exact Prod.ext (hΦ hz.1) (hΨ hz.2)
-
 
 theorem IsLocalDiffeomorph.prodMap {f : M₁ → M₂} {g : M₃ → M₄}
     (hf : IsLocalDiffeomorph I₁ I₂ n f) (hg : IsLocalDiffeomorph I₃ I₄ n g) :

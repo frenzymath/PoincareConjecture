@@ -3,16 +3,6 @@ import Mathlib.Analysis.Fourier.LpSpace
 import Mathlib.Analysis.Normed.Operator.Mul
 import Mathlib.Topology.MetricSpace.Contracting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -53,19 +43,12 @@ private theorem norm_beurlingSymbol_le (z : ℂ) : ‖conj z / z‖ ≤ 1 := by
   · simp [hz]
   · simp [norm_ne_zero_iff.mpr hz]
 
-
-
-
 def beurlingL2 : Lp ℂ 2 (volume : Measure ℂ) →L[ℝ] Lp ℂ 2 (volume : Measure ℂ) :=
   let F := (Lp.fourierTransformₗᵢ ℂ ℂ).toContinuousLinearEquiv
   (F.symm.toContinuousLinearMap.restrictScalars ℝ).comp
     ((multiplierL2 (fun z => conj z / z) measurable_beurlingSymbol.aestronglyMeasurable
       1 (Eventually.of_forall norm_beurlingSymbol_le)).comp
         (F.toContinuousLinearMap.restrictScalars ℝ))
-
-
-
-
 
 theorem fourier_beurlingL2_ae (u : Lp ℂ 2 (volume : Measure ℂ)) :
     (𝓕 (beurlingL2 u) : Lp ℂ 2 (volume : Measure ℂ)) =ᵐ[volume]
@@ -77,8 +60,6 @@ theorem fourier_beurlingL2_ae (u : Lp ℂ 2 (volume : Measure ℂ)) :
   rw [LinearIsometryEquiv.apply_symm_apply]
   exact multiplierL2_ae _ _ _ _ _
 
-
-
 theorem norm_beurlingL2_le (u : Lp ℂ 2 (volume : Measure ℂ)) :
     ‖beurlingL2 u‖ ≤ ‖u‖ := by
   change ‖(Lp.fourierTransformₗᵢ ℂ ℂ).symm (multiplierL2 (fun z => conj z / z)
@@ -88,11 +69,6 @@ theorem norm_beurlingL2_le (u : Lp ℂ 2 (volume : Measure ℂ)) :
   simpa using norm_multiplierL2_le (fun z => conj z / z)
     measurable_beurlingSymbol.aestronglyMeasurable 1
     (Eventually.of_forall norm_beurlingSymbol_le) (𝓕 u)
-
-
-
-
-
 
 theorem existsUnique_beltramiL2 {μ : ℂ → ℂ}
     (hμ : AEStronglyMeasurable μ volume) {k : ℝ≥0} (hk : k < 1)

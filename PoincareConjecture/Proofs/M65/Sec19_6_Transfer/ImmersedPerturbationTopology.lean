@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationVelocity
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.LoopTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {V : Set P} {J : Set ℝ}
-
-
-
 
 theorem loop_family_continuousOn
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (hV : IsOpen V) (hJ : IsOpen J)
@@ -49,11 +36,6 @@ theorem loop_family_continuousOn
     rw [← nhds_prod_eq]
     exact (hphase.continuousOn.continuousAt (hU.mem_nhds
       ⟨hz.1, mem_univ _, hz.2⟩)).comp hmap.continuousAt
-
-
-
-
-
 
 theorem loop_tendsto_of_parameter
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (hV : IsOpen V) (hJ : IsOpen J)

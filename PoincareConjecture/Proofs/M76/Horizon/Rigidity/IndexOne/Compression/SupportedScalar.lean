@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Compa
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.OriginalCompressionScalar
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainIntersection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Filter
 open scoped Topology
@@ -65,8 +56,6 @@ private theorem paste_PL_scalars
         ((hoPL i).mono hT inter_subset_left).congr (fun z hz => (hgoff _ hz.2).symm)
       exact ⟨T, ⟨hy, fun h => hyU (hKU h)⟩,
         hg.mono ((e i).open_target.inter hT) inter_subset_right⟩
-
-
 
 theorem exists_supported_compression_scalar
     {X α : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]

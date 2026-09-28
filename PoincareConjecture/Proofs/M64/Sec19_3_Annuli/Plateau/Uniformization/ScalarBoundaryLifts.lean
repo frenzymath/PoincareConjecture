@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,9 +7,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 def scalarIdentityDegreeOneLift : M64PeriodicDegreeOneLift where
   map := id
@@ -30,22 +16,13 @@ def scalarIdentityDegreeOneLift : M64PeriodicDegreeOneLift where
   lipschitz_nonnegative := by norm_num
   lipschitz_on := by intro x y; simp
 
-
-
-
 theorem scalarIdentityDegreeOneLift_apply (x : ℝ) :
     scalarIdentityDegreeOneLift.map x = x := rfl
-
-
-
 
 theorem scalarIdentityDegreeOneLift_period :
     ∀ x : ℝ, scalarIdentityDegreeOneLift.map (x + curvePeriod) =
       scalarIdentityDegreeOneLift.map x + curvePeriod :=
   scalarIdentityDegreeOneLift.period_shift
-
-
-
 
 theorem exists_scalar_boundary_degree_one_lifts :
     ∃ (sigma0 sigma1 : M64PeriodicDegreeOneLift),

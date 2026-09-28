@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Oblique
 import Mathlib.Topology.LocallyFinite
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,7 +40,6 @@ theorem upperGraphs_eq_on_overlap {i j : Fin B.interface.count} {t : ℝ}
   · subst j
     rfl
   · exact (hordered hij hj hi).symm
-
 
 noncomputable def height (t : ℝ) : ℝ :=
   if h : ∃ i : Fin B.interface.count, t ∈ Icc (B.cut i.castSucc) (B.cut i.succ)
@@ -109,7 +97,6 @@ theorem band_subset_source : B.band ⊆ B.coordinates.source := by
   obtain ⟨i, hi⟩ := mem_iUnion.mp hq
   exact (B.pair i).band_subset_source hi
 
-
 def carrier : Set M := ⋃ i, (B.face i).carrier
 
 omit [T2Space M] in
@@ -133,7 +120,6 @@ theorem mem_carrier_iff {z : M} (hz : z ∈ B.coordinates.target) :
     rwa [B.coordinates.left_inv (B.band_subset_source hq)]
   · intro hq
     exact ⟨B.coordinates.symm z, hq, B.coordinates.right_inv hz⟩
-
 
 def openBand : Set (EuclideanSpace ℝ (Fin 2)) :=
   {q | (collarParameterEquiv q).1 ∈ Ioo (0 : ℝ) 1 ∧
@@ -197,10 +183,8 @@ theorem height_one : B.height 1 = B.cuts.right.parameter rb := by
   rw [hlast, B.cut_last, B.interface.height_last] at h
   exact h
 
-
 def lowerArc (_B : ObliqueBandFaces F lo a b ua wa ub wb ra rb) : Set M :=
   (fun x => F (collarParameterEquiv.symm (x, lo x))) '' Icc a b
-
 
 def polygonalTop : Set M := ⋃ i : Fin B.interface.count,
   (fun q : ℝ × ℝ => F (collarParameterEquiv.symm q)) ''
@@ -208,11 +192,9 @@ def polygonalTop : Set M := ⋃ i : Fin B.interface.count,
       (B.interface.cut i.castSucc, lo (B.interface.cut i.castSucc) + B.interface.height i.castSucc)
       (B.interface.cut i.succ, lo (B.interface.cut i.succ) + B.interface.height i.succ)
 
-
 def leftCut (_B : ObliqueBandFaces F lo a b ua wa ub wb ra rb) : Set M :=
   (fun q : ℝ × ℝ => F (collarParameterEquiv.symm q)) ''
   segment ℝ (a, lo a) (a + ra * ua, lo a + ra * wa)
-
 
 def rightCut (_B : ObliqueBandFaces F lo a b ua wa ub wb ra rb) : Set M :=
   (fun q : ℝ × ℝ => F (collarParameterEquiv.symm q)) ''
@@ -282,7 +264,6 @@ theorem right_height_image :
         (B.cut B.lastCell.succ) - 0)))
   rw [hlast, B.cut_last, hh, B.height_one, sub_zero, zero_add]
 
-
 theorem frontier_carrier_subset : frontier B.carrier ⊆
     B.lowerArc ∪ B.polygonalTop ∪ B.leftCut ∪ B.rightCut := by
   intro z hz
@@ -332,7 +313,6 @@ theorem frontier_carrier_subset : frontier B.carrier ⊆
     ⟨q, ⟨⟨lt_of_le_of_ne hq'.1.1 (Ne.symm hx0), lt_of_le_of_ne hq'.1.2 hx1⟩,
       lt_of_le_of_ne hq'.2.1 (Ne.symm hy0), lt_of_le_of_ne hq'.2.2 hyH⟩, rfl⟩))
 
-
 def lowerParameterNeighborhood : Set (EuclideanSpace ℝ (Fin 2)) :=
   B.coordinates.source ∩ {q | (collarParameterEquiv q).1 ∈ Ioo (0 : ℝ) 1 ∧
     |(collarParameterEquiv q).2| < B.height (collarParameterEquiv q).1}
@@ -363,7 +343,6 @@ theorem axis_mem_lowerParameterNeighborhood {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 
       And.intro ht' (And.intro (le_refl (0 : ℝ)) (B.height_pos ht').le)
   · simpa only [mem_ofPred_eq, collarParameterEquiv.apply_symm_apply, Prod.fst, Prod.snd, abs_zero] using
       And.intro ht (B.height_pos ht')
-
 
 def lowerNeighborhood : Set M := B.coordinates '' B.lowerParameterNeighborhood
 
@@ -398,7 +377,6 @@ theorem ambient_height_eq {q : EuclideanSpace ℝ (Fin 2)} (hq : q ∈ B.coordin
 
 omit [T2Space M] in
 
-
 theorem mem_carrier_iff_above_lower {z : M} (hz : z ∈ B.lowerNeighborhood) :
     z ∈ B.carrier ↔
       lo (collarParameterEquiv (F.symm z)).1 ≤ (collarParameterEquiv (F.symm z)).2 := by
@@ -412,7 +390,6 @@ theorem mem_carrier_iff_above_lower {z : M} (hz : z ∈ B.lowerNeighborhood) :
     exact ⟨⟨hq.2.1.1.le, hq.2.1.2.le⟩, hy, (le_abs_self _).trans hq.2.2.le⟩
 
 omit [T2Space M] in
-
 
 theorem mem_interior_of_above_lower {z : M} (hz : z ∈ B.lowerNeighborhood)
     (hpos : lo (collarParameterEquiv (F.symm z)).1 < (collarParameterEquiv (F.symm z)).2) :
@@ -559,11 +536,9 @@ theorem outer_boundaries_subset_frontier :
         And.intro (show (1 : ℝ) ∈ Icc (0 : ℝ) 1 by simp) hs
     · exact Or.inr (Or.inl (by simp))
 
-
 theorem frontier_carrier : frontier B.carrier =
     B.lowerArc ∪ B.polygonalTop ∪ B.leftCut ∪ B.rightCut :=
   Subset.antisymm B.frontier_carrier_subset B.outer_boundaries_subset_frontier
-
 
 theorem mem_frontier_iff_on_lower {z : M} (hz : z ∈ B.lowerNeighborhood) :
     z ∈ frontier B.carrier ↔
@@ -583,7 +558,6 @@ theorem mem_frontier_iff_on_lower {z : M} (hz : z ∈ B.lowerNeighborhood) :
       exact ⟨⟨hq.2.1.1.le, hq.2.1.2.le⟩, hy.symm.le,
         (le_abs_self _).trans hq.2.2.le⟩
     · exact Or.inr (Or.inr (Or.inl hy))
-
 
 theorem mem_interior_iff_above_lower {z : M} (hz : z ∈ B.lowerNeighborhood) :
     z ∈ interior B.carrier ↔

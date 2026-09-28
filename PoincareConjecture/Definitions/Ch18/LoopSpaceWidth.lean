@@ -6,16 +6,6 @@ import Mathlib.Topology.EMetricSpace.Lipschitz
 import Mathlib.Topology.Homotopy.HomotopyGroup
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal unitInterval
@@ -27,21 +17,15 @@ namespace PoincareConjecture
 abbrev LoopPlane := EuclideanSpace ℝ (Fin 2)
 abbrev LoopAmbient := EuclideanSpace ℝ (Fin 3)
 
-
 def loopDiskSet : Set LoopPlane := Metric.closedBall 0 1
-
 
 abbrev LoopCircle := {z : LoopPlane // ‖z‖ = 1}
 
-
 abbrev LoopDisk := {z : LoopPlane // z ∈ loopDiskSet}
-
 
 abbrev LoopTwoSphere := {z : LoopAmbient // ‖z‖ = 1}
 
-
 def loopAnnulus : Set LoopPlane := {z | 1 / 2 < ‖z‖ ∧ ‖z‖ < 2}
-
 
 noncomputable def loopCircleTangent (z : LoopCircle) : LoopPlane :=
   !₂[-z.1 1, z.1 0]
@@ -50,7 +34,6 @@ instance : Coe LoopCircle LoopPlane := ⟨Subtype.val⟩
 instance : Coe LoopDisk LoopPlane := ⟨Subtype.val⟩
 instance : Coe LoopTwoSphere LoopAmbient := ⟨Subtype.val⟩
 
-
 structure CircleReparameterization where
   map : LoopCircle → LoopCircle
   inverse : LoopCircle → LoopCircle
@@ -58,7 +41,6 @@ structure CircleReparameterization where
   right_inverse : Function.RightInverse inverse map
   continuous_map : Continuous map
   continuous_inverse : Continuous inverse
-
 
 structure CompactConnectedThreeManifold (M : Type u) [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] where
@@ -71,14 +53,10 @@ structure CompactConnectedThreeManifold (M : Type u) [TopologicalSpace M]
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 def IsC1Loop (γ : LoopCircle → M) : Prop :=
   ∃ extension : LoopPlane → M,
     (∀ z : LoopCircle, extension z = γ z) ∧
       ContMDiffOn (𝓡 2) (𝓡 3) 1 extension loopAnnulus
-
-
-
 
 structure C1FreeLoopSpace where
   toFun : LoopCircle → M
@@ -93,31 +71,23 @@ structure C1FreeLoopSpace where
 instance : CoeFun (C1FreeLoopSpace (M := M)) (fun _ => LoopCircle → M) :=
   ⟨fun γ => γ.toFun⟩
 
-
 def c1LoopExtension (γ : C1FreeLoopSpace (M := M)) : LoopPlane → M :=
   γ.extension
-
-
 
 noncomputable def c1LoopDerivative (γ : C1FreeLoopSpace (M := M))
     (z : LoopCircle) (i : Fin 2) : TangentBundle (𝓡 3) M :=
   ⟨γ z, (mfderiv (𝓡 2) (𝓡 3) (c1LoopExtension γ) z)
     (EuclideanSpace.basisFun (Fin 2) ℝ i)⟩
 
-
-
 noncomputable def c1LoopTangent (γ : C1FreeLoopSpace (M := M)) :
     ContinuousMap LoopCircle (TangentBundle (𝓡 3) M) :=
   ⟨fun z => ⟨γ z, mfderiv (𝓡 2) (𝓡 3) γ.extension z.1 (loopCircleTangent z)⟩,
     γ.tangent_continuous⟩
 
-
-
 noncomputable instance : TopologicalSpace (C1FreeLoopSpace (M := M)) :=
   TopologicalSpace.induced
     (fun γ => ((⟨γ.toFun, γ.continuous⟩ : ContinuousMap LoopCircle M),
       c1LoopTangent γ)) inferInstance
-
 
 noncomputable def constantC1Loop (x : M) : C1FreeLoopSpace (M := M) :=
   { toFun := fun _ => x
@@ -134,21 +104,17 @@ noncomputable def constantC1Loop (x : M) : C1FreeLoopSpace (M := M) :=
       simp only [mfderiv_const]
       rfl }
 
-
 def InIdentityComponent (x₀ : M) (γ : C1FreeLoopSpace (M := M)) : Prop :=
   ∃ H : Set.Icc (0 : ℝ) 1 → C1FreeLoopSpace,
     Continuous H ∧ H ⟨0, by simp⟩ = γ ∧
       H ⟨1, by simp⟩ = constantC1Loop x₀
-
 
 def IsNullHomotopicLoop (γ : C1FreeLoopSpace (M := M)) : Prop :=
   ∃ extension : LoopPlane → M,
     Continuous extension ∧
       ∀ z : LoopCircle, extension z = γ z
 
-
 def loopBoundary : Set LoopPlane := {z | ‖z‖ = 1}
-
 
 noncomputable def parametrizedAreaDensity (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) (z : LoopPlane) : ℝ :=
@@ -157,18 +123,14 @@ noncomputable def parametrizedAreaDensity (g : RiemannianMetric 3 M)
     fun i => d (EuclideanSpace.basisFun (Fin 2) ℝ i)
   Real.sqrt (max 0 (Matrix.det (fun i j => g.inner (f z) (e i) (e j))))
 
-
 noncomputable def parametrizedRiemannianArea (g : RiemannianMetric 3 M)
     (f : LoopPlane → M) : ℝ :=
   ∫ z in loopDiskSet, parametrizedAreaDensity g f z ∂MeasureTheory.volume
-
-
 
 structure LipschitzSpanningDisk (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) where
   map : LoopPlane → M
   continuous_on_disk : ContinuousOn map loopDiskSet
-
 
   ae_manifold_differentiable : ∀ᵐ z ∂MeasureTheory.volume,
     z ∈ loopDiskSet → MDifferentiableAt (𝓡 2) (𝓡 3) map z
@@ -192,22 +154,15 @@ noncomputable def area {g : RiemannianMetric 3 M}
 
 end LipschitzSpanningDisk
 
-
 structure FillingAreaData (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) where
   nonempty : Nonempty (LipschitzSpanningDisk g γ)
   finite_witness : ∃ D : LipschitzSpanningDisk g γ, ∃ C : ℝ, D.area ≤ C
   bounded_below : BddBelow (Set.range (fun D : LipschitzSpanningDisk g γ => D.area))
 
-
 noncomputable def fillingArea (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) : ℝ :=
   sInf (Set.range (fun D : LipschitzSpanningDisk g γ => D.area))
-
-
-
-
-
 
 structure FreeTwoSphereClassCertificate
     (basepoint : M)
@@ -231,7 +186,6 @@ structure FreeTwoSphereClassCertificate
     (⟨cube_representative, boundary_const⟩ :
       GenLoop (Fin 2) (C1FreeLoopSpace (M := M)) (constantC1Loop basepoint))
 
-
 structure FreeTwoSphereFamily where
 
   basepoint : M
@@ -250,17 +204,14 @@ structure FreeTwoSphereFamily where
       (∀ c (z : LoopCircle), extension (c, z.1) = family c z) ∧
       ∀ c, ContMDiffOn (𝓡 2) (𝓡 3) 1 (fun z => extension (c, z)) loopAnnulus
 
-
 noncomputable def familyWidth (g : RiemannianMetric 3 M)
     (Γ : FreeTwoSphereFamily (M := M)) : ℝ :=
   sSup (Set.range (fun c => fillingArea g (Γ.family c)))
-
 
 def familySigmaClass (Γ : FreeTwoSphereFamily (M := M)) :
     Σ x : M, HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M))
       (constantC1Loop x) :=
   ⟨Γ.basepoint, Γ.homotopy_class⟩
-
 
 structure FamilyWidthData (g : RiemannianMetric 3 M)
     (Γ : FreeTwoSphereFamily (M := M)) where
@@ -269,7 +220,6 @@ structure FamilyWidthData (g : RiemannianMetric 3 M)
   attained : ∃ c : LoopTwoSphere,
     fillingArea g (Γ.family c) = familyWidth g Γ
 
-
 def FreeTwoSphereHomotopic (Γ₁ Γ₂ : FreeTwoSphereFamily (M := M)) : Prop :=
   ∃ H : Set.Icc (0 : ℝ) 1 → FreeTwoSphereFamily,
     Γ₁.basepoint = Γ₂.basepoint ∧
@@ -277,7 +227,6 @@ def FreeTwoSphereHomotopic (Γ₁ Γ₂ : FreeTwoSphereFamily (M := M)) : Prop :
       (∀ s, (H s).basepoint = Γ₁.basepoint) ∧
       Continuous (fun p : Set.Icc (0 : ℝ) 1 × LoopTwoSphere => (H p.1).family p.2) ∧
       H ⟨0, by simp⟩ = Γ₁ ∧ H ⟨1, by simp⟩ = Γ₂
-
 
 noncomputable def classWidthRange (g : RiemannianMetric 3 M)
     (ξ : FreeTwoSphereFamily (M := M)) : Set ℝ :=
@@ -292,7 +241,6 @@ noncomputable def classWidth (g : RiemannianMetric 3 M)
     (ξ : FreeTwoSphereFamily (M := M)) : ℝ :=
   by classical
     exact sInf (classWidthRange g ξ)
-
 
 structure ClassWidthData (g : RiemannianMetric 3 M)
     (ξ : FreeTwoSphereFamily (M := M)) where

@@ -5,19 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Derivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Derivatives.Reaction.Bounds
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

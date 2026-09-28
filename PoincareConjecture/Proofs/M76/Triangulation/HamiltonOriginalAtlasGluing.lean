@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.ImmersionPLAtlas
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLChartRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem pl_transition_mem_of_overlap_cover
     {X ι : Type*} [TopologicalSpace X]
@@ -60,12 +45,6 @@ theorem pl_transition_mem_of_overlap_cover
   change f ((c i).symm (c i (e.symm y))) = f (e.symm y)
   have hyi : e.symm y ∈ (c i).source := hy.2.2
   rw [(c i).left_inv hyi]
-
-
-
-
-
-
 
 theorem exists_original_immersion_collar_PL_domain
     {X ι : Type*} [TopologicalSpace X]

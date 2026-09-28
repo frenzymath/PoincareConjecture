@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set Metric Filter Function
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies.Reverse
-
-
 
 theorem bijective_convex_identity_of_positive_normal
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
@@ -57,8 +53,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
 
-
-
 theorem fderiv_eq_self_on_fixed_sphere_patch
     {D : E3 -> E3} (hD : ContDiff Real ∞ D)
     {U : Set E3} (hU : IsOpen U)
@@ -81,8 +75,6 @@ theorem fderiv_eq_self_on_fixed_sphere_patch
     exact hu
   obtain ⟨w, rfl⟩ := huL
   exact (congrArg (fun A => A w) hchain).symm
-
-
 
 theorem positive_normal_of_ball_preserving_sphere_patch
     {D : E3 -> E3} (hD : ContDiff Real ∞ D)
@@ -124,8 +116,6 @@ theorem positive_normal_of_ball_preserving_sphere_patch
     rw [heq] at hz
     simp at hz
   exact lt_of_le_of_ne (by linarith) hne.symm
-
-
 
 theorem bijective_fderiv_homotopy_of_ball_preserving_sphere_patch
     (D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

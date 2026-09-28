@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Region
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (T : CoorientedSurfaceStars E)
 
 open Classical in
-
 
 theorem nonboundary_dual_inter_boundary {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hsB : s ∉ (T.marked 1).faces) :
@@ -35,7 +27,6 @@ theorem nonboundary_dual_inter_boundary {s : Finset E}
     ((T.marked 2).nonempty_of_mem_faces hs) hsB
 
 open Classical in
-
 
 theorem nonboundary_dual_subset_region {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hsB : s ∉ (T.marked 1).faces) :
@@ -79,7 +70,6 @@ theorem nonboundary_dual_subset_region {s : Finset E}
     exact hzero z hz haz
 
 open Classical in
-
 
 theorem dualRegion_eq_dualBlock_of_not_boundary {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hsB : s ∉ (T.marked 1).faces) :

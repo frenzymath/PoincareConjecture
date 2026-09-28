@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedBallVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,9 +17,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem generalized_limit_noncollapsed_of_longSlabService
     {S : GeneralizedBlowupSequence.{u}} {T0 : ℝ≥0∞} {kappa r0 : ℝ}

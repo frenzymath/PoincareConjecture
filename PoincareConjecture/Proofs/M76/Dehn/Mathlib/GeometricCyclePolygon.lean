@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricWalkPaths
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem exists_polygon_of_geometric_cycle {v : K.vertices}
     (w : K.vertexAbstractComplex.edgeGraph.Walk v v) (hw : w.IsCycle) :

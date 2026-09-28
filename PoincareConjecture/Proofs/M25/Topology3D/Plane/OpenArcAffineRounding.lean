@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcRounding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -17,8 +8,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 variable {n : ℕ}
-
-
 
 theorem IsSimplePolygonalArc.map_affine {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -50,8 +39,6 @@ theorem IsSimplePolygonalArc.map_affine {E F : Type*}
     · exact Or.inl (hyx.symm.trans (congrArg A h))
     · exact Or.inr (hyx.symm.trans (congrArg A h))
 
-
-
 theorem affineMap_roundedVertexPath {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -67,13 +54,9 @@ theorem affineMap_roundedVertexPath {E F : Type*}
     module
   exact hformula _ _ _ _ _
 
-
-
 noncomputable def normalizeOpenArc (a h : ℝ) (p : Polygon (ℝ × ℝ) (n + 2)) :
     Polygon (ℝ × ℝ) (n + 2) :=
   ⟨fun k => h⁻¹ • (p k - (a, 0))⟩
-
-
 
 noncomputable def affineRoundedOpenArcParameter (ρ : ℝ → ℝ) (a h : ℝ)
     (p : Polygon (ℝ × ℝ) (n + 2)) (u : ℝ) : ℝ × ℝ :=
@@ -83,8 +66,6 @@ private noncomputable def normalizeOpenArcMap (a h : ℝ) : (ℝ × ℝ) →ᵃ[
   toFun := fun x => h⁻¹ • (x - (a, 0))
   linear := h⁻¹ • LinearMap.id
   map_vadd' := by intro p v; dsimp; module
-
-
 
 theorem normalizeOpenArc_good {a h : ℝ} (hh : 0 < h)
     (p : Polygon (ℝ × ℝ) (n + 2))
@@ -117,9 +98,6 @@ theorem normalizeOpenArc_good {a h : ℝ} (hh : 0 < h)
       h⁻¹ * ((p k).1 - a) < h⁻¹ * ((a + h * (n + 1 : ℕ)) - a) :=
         mul_lt_mul_of_pos_left (by linarith) (inv_pos.mpr hh)
       _ = (n + 1 : ℕ) := by field_simp; ring
-
-
-
 
 theorem affineRoundedOpenArcParameter_eq_samples {a h R : ℝ} (hh : 0 < h)
     (C : ℝ → ℝ × ℝ) (p : Polygon (ℝ × ℝ) (n + 2))

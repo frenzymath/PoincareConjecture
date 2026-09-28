@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.RegularC
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -85,8 +78,6 @@ private theorem hasConnectedLowerSide_of_scalar_chart
       exact ⟨by change (e y).1 ≤ f x; rw [hef y hye]; exact hy.2, mem_univ _⟩
     exact isOpen_ball.inter_closure ⟨hyball, hyhalf⟩
 
-
-
 theorem hasConnectedLowerSide_of_regular
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
@@ -104,8 +95,6 @@ theorem hasConnectedLowerSide_of_regular
   obtain ⟨e, hxe, _, _, _, hef, _⟩ :=
     Poincare.Manifold.exists_manifold_superlevel_chart hf x hsurj
   exact hasConnectedLowerSide_of_scalar_chart hO hx e hxe hef
-
-
 
 theorem hasConnectedLowerSide_of_regular_on
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -144,8 +133,6 @@ theorem hasConnectedLowerSide_of_regular_on
     rcases hy with ⟨z, hz, rfl⟩
     rw [← himage (Iio (f x))]
     exact image_closure_subset_closure_image continuous_subtype_val ⟨z, hdense hz, rfl⟩
-
-
 
 theorem hasConnectedLowerSide_of_strict_maximum
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M02.CubeSphere
 import PoincareConjecture.Proofs.M40.Mathlib.HomotopyGroupFunctorialityExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Topology unitInterval
 
 namespace PoincareConjecture.M60
-
-
-
-
 
 theorem genLoop_homotopic_const_of_uniform_nullhomotopy
     {Y : Type*} [TopologicalSpace Y] {n : ℕ} {y z : Y}
@@ -42,10 +28,6 @@ theorem genLoop_homotopic_const_of_uniform_nullhomotopy
   split_ifs
   · exact hp _ q
   · rfl
-
-
-
-
 
 theorem exists_nonNull_sphere_of_nontrivial_homotopyGroup
     {Y : Type*} [TopologicalSpace Y] (n : ℕ) (y : Y)

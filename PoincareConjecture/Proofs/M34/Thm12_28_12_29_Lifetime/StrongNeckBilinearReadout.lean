@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckChartDerivative
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckBilinearJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -31,8 +22,6 @@ variable {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
 private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
 
 theorem blowupCoordinateBilinear_apply
     {G : GeneralizedRicciFlowData.{u}} {origin scale : ℝ} {K : Set ℝ}
@@ -68,8 +57,6 @@ theorem blowupCoordinateBilinear_apply
   rw [hB]
   rfl
 
-
-
 theorem limitCoordinateBilinear_apply (q : L.sliceCarrier.carrier) (s : ℝ) (y v w : E₃) :
     limitCoordinateBilinear L q s y v w =
       (L.flow.metric s).inner ((extChartAt (𝓡 3) q).symm y)
@@ -98,8 +85,6 @@ theorem limitCoordinateBilinear_apply (q : L.sliceCarrier.carrier) (s : ℝ) (y 
   rw [hB]
   rfl
 
-
-
 theorem blowupCoordinateBilinear_pullback_apply
     {G : GeneralizedRicciFlowData.{u}} {origin scale : ℝ} {K : Set ℝ}
     {U : Set L.sliceCarrier.carrier}
@@ -124,7 +109,6 @@ theorem blowupCoordinateBilinear_pullback_apply
       (congrArg (fun Y : L.sliceCarrier.carrier => e.pullbackInner s hs Y
         (mfderiv 𝓘(ℝ, E) (𝓡 3) φ x v) (mfderiv 𝓘(ℝ, E) (𝓡 3) φ x w))
         ((extChartAt (𝓡 3) q).left_inv hq))
-
 
 theorem limitCoordinateBilinear_pullback_apply
     (q : L.sliceCarrier.carrier) (s : ℝ)

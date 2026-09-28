@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching.GramLowerBound
 import PoincareConjecture.Definitions.Ch04.Harnack
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ private theorem skew_product_sum (f A : Fin 3 → Fin 3 → ℝ)
     Matrix.cons_val_fin_one, Finset.sum_const, Finset.card_singleton, one_smul]
   rw [hf 1 0, hf 0 2, hf 2 1, hA 1 0, hA 0 2, hA 2 1]
   ring
-
-
 
 theorem skew_curvature_contraction_eq_four_rayleigh
     (R : Fin 3 → Fin 3 → Fin 3 → Fin 3 → ℝ)
@@ -81,9 +70,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem nonnegativeCurvatureOperator_of_plane_nonneg
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

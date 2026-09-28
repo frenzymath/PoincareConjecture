@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckRegion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckShortening
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckExcursionSubarcs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem intrinsic_minimizer_return_stays_in_middle
     {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -55,9 +43,6 @@ theorem intrinsic_minimizer_return_stays_in_middle
       (add_le_add hminσ (le_refl
         (ENNReal.ofReal (N.scale * N.epsilon⁻¹ / 8)))).trans hsave
   exact (not_le_of_gt (ENNReal.ofReal_pos.mpr (neck_shortening_saving_pos N))) hcancel
-
-
-
 
 theorem exists_source_neck_no_return_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

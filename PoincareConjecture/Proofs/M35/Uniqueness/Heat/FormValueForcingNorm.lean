@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormValueForcing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -46,7 +38,6 @@ def formValueHeatOperator (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)
     {T : ℝ} (hT : 0 ≤ T) : Lp H 2 (timeMeasure T) →L[ℝ] Lp V 2 (timeMeasure T) :=
   (formWeakHeatOperator J hc hd hi hn hT).comp (J.adjoint.compLpL 2 (timeMeasure T))
-
 
 theorem norm_formValueHeatOperator_le (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

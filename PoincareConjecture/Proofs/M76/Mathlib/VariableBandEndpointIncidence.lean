@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.VariableHeightBand
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,10 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_variable_band_level_endpoint_charts
     {g : E × ℝ → ℝ} {B : Set E} {lower upper : E → ℝ}

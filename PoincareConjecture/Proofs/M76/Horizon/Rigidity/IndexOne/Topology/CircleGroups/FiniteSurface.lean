@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComponentParity
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CountTwoSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -57,7 +46,6 @@ theorem incidence_rank_le_one_of_isCyclic
 
 open Classical in
 
-
 theorem surfaceEulerCount_eq_two_of_isCyclic_and_geometric_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -82,7 +70,6 @@ theorem surfaceEulerCount_eq_two_of_isCyclic_and_geometric_signs
   omega
 
 open Classical in
-
 
 theorem exists_sphere_model_of_isCyclic_and_geometric_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

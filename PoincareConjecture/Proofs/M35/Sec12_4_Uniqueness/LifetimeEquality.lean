@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M35.RawFlow.Splicing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.MaximalStandardCapFlow
-
-
 
 theorem partial_lifetime_le_of_metric_agreement
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)
@@ -29,8 +19,6 @@ theorem partial_lifetime_le_of_metric_agreement
     intro t ht
     exact hmetric ⟨ht, ht.1, ht.2.trans hlt⟩
   exact F.maximal G.lifetime ⟨F.base.extensionOfMetricAgreement G hlt hagree⟩
-
-
 
 theorem lifetime_eq_of_metric_agreement
     {g₀ : StandardInitialMetric} (F G : MaximalStandardCapFlow g₀)

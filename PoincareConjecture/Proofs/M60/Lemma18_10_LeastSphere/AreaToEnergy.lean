@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Uniformization
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyC1
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +10,6 @@ noncomputable section
 
 namespace PoincareConjecture
 
-
 theorem m60SphereAreaToEnergy {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (f : UnitTwoSphere → M)
@@ -28,8 +18,6 @@ theorem m60SphereAreaToEnergy {n : ℕ} {M : Type*} [TopologicalSpace M]
       m60SphereEnergy g h < m60SphereArea g f + eta ∧
       (IsNullHomotopicSphere h → IsNullHomotopicSphere f) :=
   m60SphereAreaToEnergy_of_uniformization M60.sphere_uniformization g f hf eta heta
-
-
 
 theorem m60SphereArea_energy_infimum {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]

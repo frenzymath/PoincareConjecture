@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Operator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.GaussNormalization
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -93,8 +86,6 @@ private theorem connection_radial_field_eq (D : LeviCivitaData g)
   rw [D.connection_const_eq_inverse]
   rfl
 
-
-
 theorem connection_radial_field_le (D : LeviCivitaData g)
     (h0 : ∀ v w : EuclideanSpace ℝ (Fin n), g.inner 0 v w = inner ℝ v w)
     {R K A : ℝ} (hK : 0 ≤ K) (hA : 0 ≤ A)
@@ -145,8 +136,6 @@ theorem connection_radial_field_le (D : LeviCivitaData g)
       _ = _ := by ring
   simpa only [sub_zero, abs_one, mul_one] using
     intervalIntegral.norm_integral_le_of_norm_le_const hbound
-
-
 
 theorem exists_radial_frame_of_gauss (D : LeviCivitaData g)
     (hgauss : ∀ x w, g.euclideanCoefficients x x w = inner ℝ x w)

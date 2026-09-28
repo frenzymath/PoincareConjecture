@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonFiniteAtlasAssembly
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOverlapModelTransport
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAlexanderConsequences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 
 variable {M E : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem hasSupportedPLOverlapStraightening_of_chart_handles
     (hdim : Module.finrank ℝ E = 3)
@@ -39,10 +27,6 @@ theorem hasSupportedPLOverlapStraightening_of_chart_handles
   have hpoint (x : X) : ∃ i, x ∈ (a i).source :=
     mem_iUnion.mp (hcover.symm ▸ mem_univ x)
   exact exists_finite_atlas_supported_straightening a hac hpoint b hb hhandle hK
-
-
-
-
 
 theorem hasSupportedPLOverlapStraightening_of_lower_handle_cases
     (hdim : Module.finrank ℝ E = 3)

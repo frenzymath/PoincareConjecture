@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageIncidence
 import Mathlib.LinearAlgebra.FiniteDimensional.Defs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
 
 theorem AffineOnFaces.face_card_le_of_injOn [FiniteDimensional ℝ F]
     (hf : K.AffineOnFaces f) (hi : InjOn f K.space)
@@ -34,8 +24,6 @@ theorem AffineOnFaces.face_card_le_of_injOn [FiniteDimensional ℝ F]
   have himage : (s.image f).card = s.card :=
     Finset.card_image_iff.mpr (hi.mono (K.subset_space hs))
   simpa only [Fintype.card_coe, himage] using hcard
-
-
 
 theorem AffineOnFaces.pullback_embeddedImage_coface [DecidableEq F]
     (hf : K.AffineOnFaces f) (hi : InjOn f K.space)

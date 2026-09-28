@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ManifoldSecondFund
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalBilinearTrace
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ChartMetricRealization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {h : RiemannianMetric 2 LoopPlane}
-
-
-
-
-
 
 theorem m65PlaneSecondFundamentalForm_metricTrace
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)

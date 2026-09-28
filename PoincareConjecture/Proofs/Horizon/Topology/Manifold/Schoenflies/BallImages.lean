@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Interior
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.SmoothDomain
-
 
 theorem interior_closure {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace Real (Fin (n + 1))) M]
@@ -48,7 +39,6 @@ private theorem isImage_closedBall : e.IsImage (closedBall (0 : E) 1) K := by
   apply IsImage.of_image_eq
   rw [inter_eq_right.mpr hs, inter_eq_right.mpr ht, himage]
 
-
 theorem image_ball_eq_interior : e '' ball (0 : E) 1 = interior K := by
   have ht : K ⊆ e.target := by
     rw [← himage]
@@ -59,7 +49,6 @@ theorem image_ball_eq_interior : e '' ball (0 : E) 1 = interior K := by
     inter_eq_right.mpr (ball_subset_closedBall.trans hs),
     inter_eq_right.mpr (interior_subset.trans ht)] at h
   exact h
-
 
 theorem image_sphere_eq_frontier [T2Space M] [ProperSpace E] :
     e '' sphere (0 : E) 1 = frontier K := by

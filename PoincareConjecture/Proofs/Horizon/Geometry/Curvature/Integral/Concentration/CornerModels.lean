@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedFiberBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiberLimits
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +9,6 @@ open Poincare.GromovHausdorff
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture
-
 
 structure PointedCornerModel (m k : ℕ) (δ H : ℝ) where
   carrier : Type
@@ -102,7 +94,6 @@ theorem boundedFiberSection_dist_le (A : PointedCornerModel m k δ H)
   exact hz
 end PointedCornerModel
 
-
 def IsExpandingCornerLimit {m k : ℕ} {δ H : ℝ}
     (A : ℕ → PointedCornerModel m k δ H)
     (S : CompatiblePointedCompactSystem.{0})
@@ -161,9 +152,6 @@ theorem exists_subseq_expandingCornerLimit
   exact ⟨φ, hφ, S, K, hproper, hgeo, hconv, s, t, ε, hsTop, htTop, hεpos,
     hεzero, hs, ht, Q, hQzero, hK, hbase, hforward, hbackward⟩
 
-
-
-
 theorem IsExpandingCornerLimit.comp
     {m k : ℕ} {δ H : ℝ} {A : ℕ → PointedCornerModel m k δ H}
     {S : CompatiblePointedCompactSystem.{0}}
@@ -181,6 +169,5 @@ theorem IsExpandingCornerLimit.comp
     hsTop.comp hφ,htTop.comp hφ,fun j => hεp (φ j),hεzero.comp hφ,
     (fun j => hs (φ j)),(fun j => ht (φ j)),(fun j => Q (φ j)),hQ.comp hφ,
     hK,hbase,(fun j => hf (φ j)),(fun j => hb (φ j))⟩
-
 
 end PoincareConjecture

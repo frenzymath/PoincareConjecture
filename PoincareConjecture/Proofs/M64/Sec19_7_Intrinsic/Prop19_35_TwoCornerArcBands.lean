@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoCornerArcStr
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcObstacleBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcStripNeighborhood
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +12,6 @@ open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_two_corner_arc_bands
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ}

@@ -15,15 +15,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaLocalComparis
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaStrongConvergence
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaFirstVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +34,6 @@ section Variational
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereAlphaEnergy_bounded_minimizing_sequences
     [T2Space M] [SecondCountableTopology M]
@@ -71,8 +60,6 @@ theorem m60SphereAlphaEnergy_bounded_minimizing_sequences
 end Variational
 
 namespace M60
-
-
 
 theorem eventually_homotopic_of_tendstoUniformly
     {n : ℕ} {M : Type u} [UniformSpace M]
@@ -103,8 +90,6 @@ theorem eventually_homotopic_of_tendstoUniformly
 
 end M60
 
-
-
 theorem m60NonNullSphere_of_uniform_limit
     {n : ℕ} {M : Type u} [UniformSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -116,9 +101,6 @@ theorem m60NonNullSphere_of_uniform_limit
   obtain ⟨j, hj⟩ := (M60.eventually_homotopic_of_tendstoUniformly (n := n) f f0 hlim).exists
   rintro ⟨_, x, hx⟩
   exact hn j ⟨(f j).continuous, x, hj.trans hx⟩
-
-
-
 
 theorem m60SphereAlphaEnergy_nonNull_subsequence
     [CompactSpace M] [T2Space M]
@@ -293,9 +275,6 @@ private theorem uniform_affine_chart_range
     linarith
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem suAlpha_attained_local_minimum [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha C : ℝ} (ha : 1 ≤ alpha)
@@ -472,8 +451,6 @@ theorem suAlpha_attained_local_minimum [CompactSpace M] [T2Space M]
 
 set_option maxHeartbeats 1600000 in
 
-
-
 theorem suAlpha_attained_weakChart [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {alpha C : ℝ} (ha : 1 ≤ alpha)
     (f : ℕ → UnitTwoSphere → M) (hf : ∀ j, ContMDiff (𝓡 2) (𝓡 n) ∞ (f j))
@@ -571,8 +548,6 @@ theorem suAlpha_attained_weakChart [CompactSpace M] [T2Space M]
     suAlphaChartCoordinate, Function.comp_apply, mul_comm] using hh'.symm
 
 end M60
-
-
 
 theorem m60_exists_nonNull_weakAlphaSphere
     [CompactSpace M] [T2Space M] [SecondCountableTopology M]

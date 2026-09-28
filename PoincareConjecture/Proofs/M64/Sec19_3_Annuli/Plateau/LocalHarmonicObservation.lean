@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityDecay
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
 
 theorem m64LocalHarmonic_scalar_observation_laplacian {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {s : M → ℝ} (hs : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ s)

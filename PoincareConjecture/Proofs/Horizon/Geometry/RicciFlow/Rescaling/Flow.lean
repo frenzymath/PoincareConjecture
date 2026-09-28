@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Contraction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J K : Set ℝ}
-
 
 noncomputable def parabolicRescale
     (F : RicciFlow n M J) (c : ℝ) (hc : 0 < c) (τ : ℝ)

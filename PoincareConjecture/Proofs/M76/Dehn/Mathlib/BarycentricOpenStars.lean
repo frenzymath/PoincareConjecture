@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricMix
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore
@@ -19,8 +9,6 @@ open scoped BigOperators
 namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
-
 
 theorem single_mem_barycentricFace {s : Finset ι} {i : ι} (hi : i ∈ s) :
     Pi.single i (1 : ℝ) ∈ barycentricFace s := by
@@ -35,18 +23,12 @@ namespace PreAbstractSimplicialComplex
 
 variable {ι : Type*} [Fintype ι]
 
-
-
 def openVertexStar (A : PreAbstractSimplicialComplex ι) (i : ι) :
     Set A.barycentricSpace := {q | 0 < q.val i}
-
-
 
 theorem isOpen_openVertexStar (A : PreAbstractSimplicialComplex ι) (i : ι) :
     IsOpen (A.openVertexStar i) :=
   isOpen_lt continuous_const ((continuous_apply i).comp continuous_subtype_val)
-
-
 
 theorem exists_mem_openVertexStar (A : PreAbstractSimplicialComplex ι)
     (q : A.barycentricSpace) : ∃ i, q ∈ A.openVertexStar i := by
@@ -57,8 +39,6 @@ theorem exists_mem_openVertexStar (A : PreAbstractSimplicialComplex ι)
   rw [hqs.1.2] at hsum
   norm_num at hsum
 
-
-
 theorem mem_face_of_mem_openVertexStar (A : PreAbstractSimplicialComplex ι)
     {q : A.barycentricSpace} {s : Finset ι}
     (hqs : q.val ∈ barycentricFace s) {i : ι} (hi : q ∈ A.openVertexStar i) :
@@ -68,32 +48,21 @@ theorem mem_face_of_mem_openVertexStar (A : PreAbstractSimplicialComplex ι)
   rw [hqs.2 i his] at hpos
   exact lt_irrefl _ hpos
 
-
-
-
 theorem exists_face_containing_openStars (A : PreAbstractSimplicialComplex ι)
     (q : A.barycentricSpace) :
     ∃ s ∈ A.faces, ∀ i, q ∈ A.openVertexStar i → i ∈ s := by
   obtain ⟨s, hs, hqs⟩ := mem_iUnion₂.mp q.property
   exact ⟨s, hs, fun _ hi => A.mem_face_of_mem_openVertexStar hqs hi⟩
 
-
-
 def barycentricVertex [DecidableEq ι] (A : PreAbstractSimplicialComplex ι) (i : ι)
     (hi : {i} ∈ A.faces) : A.barycentricSpace :=
   ⟨Pi.single i 1, A.barycentricFace_subset_barycentricSpace hi
     (single_mem_barycentricFace (Finset.mem_singleton_self i))⟩
 
-
-
 theorem barycentricVertex_mem_openVertexStar [DecidableEq ι] (A : PreAbstractSimplicialComplex ι)
     (i : ι) (hi : {i} ∈ A.faces) :
     A.barycentricVertex i hi ∈ A.openVertexStar i := by
   simp [barycentricVertex, openVertexStar]
-
-
-
-
 
 theorem starConvex_openVertexStar_carrier [DecidableEq ι]
     (A : PreAbstractSimplicialComplex ι) (i : ι) :
@@ -111,8 +80,6 @@ theorem starConvex_openVertexStar_carrier [DecidableEq ι]
     simp [← hb0, ha1]
   · exact add_pos_of_nonneg_of_pos ha (mul_pos hbpos hq.2)
 
-
-
 theorem isPathConnected_openVertexStar (A : PreAbstractSimplicialComplex ι)
     (i : ι) (hi : {i} ∈ A.faces) : IsPathConnected (A.openVertexStar i) := by
   classical
@@ -125,9 +92,6 @@ theorem isPathConnected_openVertexStar (A : PreAbstractSimplicialComplex ι)
     ext q
     exact and_iff_right q.property
   rwa [heq] at hpre
-
-
-
 
 theorem openVertexStar_inter_nonempty_of_common_face
     (A : PreAbstractSimplicialComplex ι) {s : Finset ι} (hs : s ∈ A.faces)

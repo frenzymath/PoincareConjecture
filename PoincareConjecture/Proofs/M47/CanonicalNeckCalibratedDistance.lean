@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCalibratedMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,7 +48,6 @@ private theorem static_neck_distance_coefficient {epsilon : ℝ}
   rw [hleft, hright]
   exact hfactor
 
-
 theorem neck_center_distance_calibrated {g : RiemannianMetric 3 M}
     (N : EpsilonNeck g) (hsmall : N.epsilon ≤ 1 / 200)
     {x : M} (hx : x ∈ N.carrier) :
@@ -98,7 +88,6 @@ theorem neck_center_distance_calibrated {g : RiemannianMetric 3 M}
     _ ≤ _ := ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_right
       (static_neck_distance_coefficient N.epsilon_pos hsmall) N.scale_pos.le)
 
-
 theorem ordinary_closed_neck_center_distance_calibrated {J : Set ℝ}
     (G : RicciFlow 3 M J) (T : ℝ)
     (N : EpsilonNeck (G.metric T)) (hsmall : N.epsilon ≤ 1 / 200)
@@ -133,7 +122,6 @@ theorem ordinary_closed_neck_center_distance_calibrated {J : Set ℝ}
     _ ≤ _ := ENNReal.ofReal_le_ofReal
       (mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_right (by norm_num)
         (inv_pos.mpr N.epsilon_pos).le) N.scale_pos.le)
-
 
 theorem strongNeck_closed_center_distance_calibrated (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {T epsilon : ℝ}

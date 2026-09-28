@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaussianCoordinates
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatWeight
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem integral_stdGaussian_eq_pi (f : V → F) :
     (∫ z, f z ∂stdGaussian V) =
@@ -43,8 +33,6 @@ private theorem hasDerivAt_insert_euclidean (i : Fin (n + 1)) (z : Fin n → ℝ
   rw [heq]
   simpa using ((hasDerivAt_id s).smul_const (EuclideanSpace.single i (1 : ℝ))).add_const
     (WithLp.toLp 2 (i.insertNth (α := fun _ => ℝ) 0 z))
-
-
 
 theorem integral_stdGaussian_coordinate_derivative (i : Fin (n + 1))
     {f : V → F} {f' : V → V →L[ℝ] F} (hf : Continuous f) (hf' : Continuous f')

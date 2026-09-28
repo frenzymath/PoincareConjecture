@@ -2,40 +2,11 @@ import PoincareConjecture.Statements.M57Transport
 import PoincareConjecture.Proofs.M57.Adapters
 import PoincareConjecture.Proofs.M57.Sec18_Prop18_18.AncestryInput
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem repairedAncestryTransport : RepairedTransportTheory.{u} := by
   refine { poincare_inputs := ?_, transport := ?_ }

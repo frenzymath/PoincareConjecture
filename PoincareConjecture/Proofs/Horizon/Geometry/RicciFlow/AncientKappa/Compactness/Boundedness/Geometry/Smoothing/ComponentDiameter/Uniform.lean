@@ -3,13 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,9 +42,6 @@ private theorem exists_centered_chart_ball
       (contMDiffOn_chart_symm (I := I₃) (n := 1) (x := p)).mdifferentiableOn one_ne_zero
         _ hxt |>.mdifferentiableAt (c.open_target.mem_nhds hxt)
     exact (hc.comp x (mdifferentiableAt_id.sub mdifferentiableAt_const)).mdifferentiableWithinAt
-
-
-
 
 theorem exists_uniform_collared_regular_level_diameter
     {M : Type*} [MetricSpace M] [ChartedSpace CoordinateThree M]

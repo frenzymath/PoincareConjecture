@@ -2,15 +2,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace Homeomorph
 
 variable {E F : Type*} [TopologicalSpace E] [TopologicalSpace F]
-
-
-
-
 
 theorem mem_both_height_closures_of_height_preserving
     {R : Set E} {R' : Set F} (H : R ≃ₜ R') (A : E → ℝ) (B : F → ℝ)
@@ -49,10 +36,6 @@ theorem mem_both_height_closures_of_height_preserving
     change B (H x) < B (H y)
     rw [hheight y, hheight x]
     exact hy
-
-
-
-
 
 theorem mem_both_height_closures_of_closed_band_partition
     {S R Z : Set E} {R' : Set F} (H : R ≃ₜ R') (A : E → ℝ) (B : F → ℝ)

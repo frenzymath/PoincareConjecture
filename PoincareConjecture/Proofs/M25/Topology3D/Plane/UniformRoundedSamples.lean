@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedTubeDirection
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SampledRounding
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_uniform_rounded_tube_samples
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

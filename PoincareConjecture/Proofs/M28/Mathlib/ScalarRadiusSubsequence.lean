@@ -5,26 +5,12 @@ import Mathlib.Topology.Sequences
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Real
-
-
-
-
 
 theorem exists_strict_scalar_radius_subsequence
     (R : ℝ → ℝ) {eta c B : ℝ} (heta : 0 < eta) (hc : 0 < c)

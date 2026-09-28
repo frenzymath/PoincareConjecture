@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -45,7 +44,6 @@ private theorem exists_integralCurve_extend (q : M)
   exact FiberBundle.contMDiffAt_extend (k := 1) (𝓡 n)
     (EuclideanSpace ℝ (Fin n)) v
 
-
 theorem mvfderiv_eq_zero_of_isLocalMax_contMDiffAt
     {f : M → ℝ} {q : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f q)
     (hmax : IsLocalMax f q) : mvfderiv (𝓡 n) f q = 0 := by
@@ -84,7 +82,6 @@ private theorem contMDiffAt_mvfderiv_apply_C2
     rfl
   have h := hdf.clm_bundle_apply hX
   simpa using (Bundle.contMDiffAt_totalSpace.mp h).2
-
 
 theorem hessian_nonpos_of_isLocalMax_contMDiffAt
     (D : LeviCivitaData g) {f : M → ℝ} {q : M}
@@ -140,7 +137,6 @@ theorem hessian_nonpos_of_isLocalMax_contMDiffAt
   rw [← hdd, hconn, sub_zero]
   exact hnonpos
 
-
 theorem hessian_nonneg_of_isLocalMin_contMDiffAt
     (D : LeviCivitaData g) {f : M → ℝ} {q : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f q)
@@ -162,14 +158,12 @@ theorem hessian_nonneg_of_isLocalMin_contMDiffAt
   rw [hneg] at h
   linarith
 
-
 theorem laplacian_nonpos_of_isLocalMax_contMDiffAt
     (D : LeviCivitaData g) {f : M → ℝ} {q : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f q)
     (hmax : IsLocalMax f q) : D.laplacian f q ≤ 0 := by
   unfold laplacian
   exact Finset.sum_nonpos fun i _ => D.hessian_nonpos_of_isLocalMax_contMDiffAt hf hmax _
-
 
 theorem laplacian_nonneg_of_isLocalMin_contMDiffAt
     (D : LeviCivitaData g) {f : M → ℝ} {q : M}
@@ -178,12 +172,10 @@ theorem laplacian_nonneg_of_isLocalMin_contMDiffAt
   unfold laplacian
   exact Finset.sum_nonneg fun i _ => D.hessian_nonneg_of_isLocalMin_contMDiffAt hf hmin _
 
-
 theorem mvfderiv_eq_zero_of_isLocalMax_C2
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) 2 f) {q : M}
     (hmax : IsLocalMax f q) : mvfderiv (𝓡 n) f q = 0 :=
   mvfderiv_eq_zero_of_isLocalMax_contMDiffAt (hf q) hmax
-
 
 theorem hessian_nonpos_of_isLocalMax_C2
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -191,7 +183,6 @@ theorem hessian_nonpos_of_isLocalMax_C2
     (hmax : IsLocalMax f q) (v : TangentSpace (𝓡 n) q) :
     D.hessian f q v v ≤ 0 :=
   D.hessian_nonpos_of_isLocalMax_contMDiffAt (hf q) hmax v
-
 
 theorem hessian_nonneg_of_isLocalMin_C2
     (D : LeviCivitaData g) {f : M → ℝ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialReadout
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothetyRicci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 C.carrier} (N : EpsilonNeck g)
   {origin scale : ℝ} {I : Set ℝ}
   (e : SurgeryFlowCylinder F C origin scale I N.carrier)
-
-
 
 theorem source_neck_slice_metric_of_coefficients (s : ℝ) (hs : s ∈ I)
     (q : UnitTwoSphere) (g1 : RiemannianMetric 3 E) {y : E}
@@ -86,8 +76,6 @@ theorem source_neck_slice_metric_of_coefficients (s : ℝ) (hs : s ∈ I)
       SurgeryFlowCylinder.pullbackInner, cylinderHeightCovector_basis, hP,
       f, Function.comp_apply, centeredNeckLift, centeredCylinderLift]
   exact congrArg (fun B => B v w) hmetric
-
-
 
 theorem source_neck_slice_ricci_of_coefficients (s : ℝ) (hs : s ∈ I)
     (q : UnitTwoSphere) (g1 : RiemannianMetric 3 E) (D1 : LeviCivitaData g1)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarHalfSpaceGradient
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +16,6 @@ namespace PoincareConjecture
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => BoundaryTangential.halfSpace 2
-
-
-
-
-
 
 theorem m64Vector_halfSpace_H3_continuous_gradient
     {m : ℕ} {u : Plane → EuclideanSpace ℝ (Fin m)}

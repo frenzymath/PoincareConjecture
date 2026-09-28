@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryTriangleMod
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeLinkInterval
 import PoincareConjecture.Proofs.M76.Dehn.OriginalChartConnectedLinks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_protected_boundary_edge_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

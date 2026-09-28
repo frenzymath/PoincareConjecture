@@ -1,14 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
 
 lemma LeviCivitaData.CurvatureTensorCalculus.contMDiff_scalarCurvature
     {n : ℕ} {M : Type*} [TopologicalSpace M]

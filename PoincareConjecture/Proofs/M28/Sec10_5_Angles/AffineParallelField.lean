@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Frame.Field
 
-
-
-
-
-
-
-
-
-
-
 open Set
 open scoped Topology ContDiff Manifold Bundle
 
@@ -26,9 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_affine_field_with_index_bound
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

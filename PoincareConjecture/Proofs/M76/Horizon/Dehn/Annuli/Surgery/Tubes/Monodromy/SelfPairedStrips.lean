@@ -10,9 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
-
 theorem ComponentBranchModel.exists_self_paired_source_strips
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {R : Set X}

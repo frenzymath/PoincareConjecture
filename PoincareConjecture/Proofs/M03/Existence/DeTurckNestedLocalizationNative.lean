@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckLocalizedH2Native
 import PoincareConjecture.Proofs.M03.Existence.DeTurckHigherDomainNative
 import PoincareConjecture.Proofs.M03.Existence.SymmetricTensorHilbertNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +33,6 @@ theorem sourcePositiveRegion_mono (c : FiniteChartData (n := n) (M := M))
   refine ⟨hx.1, ?_⟩
   have hden : (k : ℝ) + 1 ≤ (l : ℝ) + 1 := by exact_mod_cast Nat.add_le_add_right hkl 1
   exact (one_div_le_one_div_of_le (by positivity) hden).trans_lt hx.2
-
 
 theorem exists_localization_weight_one (c : FiniteChartData (n := n) (M := M))
     (L : FiniteChartLocalizationData c) (p : c.centers) (k : ℕ)
@@ -109,7 +100,6 @@ variable [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric n M} (d : TensorHilbertNative.Data g)
   (L : FiniteChartLocalizationData d.charts) (a : L.patches)
 
-
 theorem exists_nested_localization :
     ∃ L' : FiniteChartLocalizationData d.charts, ∃ b : L'.patches,
       b.val.1 = a.val.1 ∧
@@ -129,7 +119,6 @@ theorem exists_nested_localization :
     ((chartAt E a.val.1.val).mapsTo hychart),
     (chartAt E a.val.1.val).left_inv hychart]
   exact hone y hy
-
 
 theorem cutoffPullback_eq_multiplier_localization
     (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
@@ -152,7 +141,6 @@ theorem cutoffPullback_eq_multiplier_localization
   by_cases hx : x ∈ tsupport θ
   · rw [hone x hx, one_mul]
   · rw [image_eq_zero_of_notMem_tsupport hx, zero_mul, zero_mul]
-
 
 theorem cutoffPullback_value_eq (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
     (hcenter : b.val.1 = a.val.1) (θ : 𝓢(E, ℝ))
@@ -190,8 +178,6 @@ private theorem localizedSchwartz_fderiv_eq_of_cutoff_ne_zero
       scalarProbe d.fields h ab ((L.chart a).symm y)
     rw [hone', one_mul, hchart]
   exact heq.fderiv_eq
-
-
 
 theorem cutoffPullback_derivative_eq
     (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
@@ -260,7 +246,6 @@ theorem cutoffPullback_derivative_eq
       ring
   exact congrFun heq z
 
-
 def projectionValueCutoff (ab cd : d.ProbeIndex) : 𝓢(E, ℝ) :=
   cutoffCoefficient d L a (L.scalarCutoff a) (Subset.refl _)
     (scalarLaplacian d.fields d.charts
@@ -268,7 +253,6 @@ def projectionValueCutoff (ab cd : d.ProbeIndex) : 𝓢(E, ℝ) :=
     (contDiffOn_scalar_chartInverse a.val.1.val
       (scalarLaplacian_contMDiff d.fields d.charts
         (projectionKernel_contMDiff d.fields g ab cd)))
-
 
 def projectionDerivativeCutoff (ab cd : d.ProbeIndex) (r : Fin d.fieldCount) : 𝓢(E, ℝ) :=
   cutoffCoefficient d L a (L.scalarCutoff a) (Subset.refl _)
@@ -286,7 +270,6 @@ theorem projectionDerivativeCutoff_support (ab cd : d.ProbeIndex)
     (r : Fin d.fieldCount) :
     tsupport (projectionDerivativeCutoff d L a ab cd r) ⊆ tsupport (L.scalarCutoff a) :=
   cutoffCoefficient_support d L a _ _ _ _
-
 
 theorem localization_projectionLowerSource_eq (ab : d.ProbeIndex) (z : d.Form) :
     L.localizationL2 a (d.lowerSource ab z) =
@@ -360,7 +343,6 @@ theorem localization_projectionLowerSource_eq (ab : d.ProbeIndex) (z : d.Form) :
     simp only [mul_assoc, mul_left_comm, mul_comm]
   exact congrFun heq z
 
-
 theorem lowerSource_eq_nested_jet
     (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
     (hcenter : b.val.1 = a.val.1)
@@ -402,7 +384,6 @@ theorem lowerSource_eq_nested_jet
     (firstOrderCutoff_support d L a r)
     (fun x hx => hone x (firstOrderCutoff_support d L a r hx)) r ab z
 
-
 abbrev SourceIndex :=
   d.ProbeIndex ⊕ (d.ProbeIndex × Fin d.fieldCount × Fin n) ⊕
     Unit ⊕ (Fin d.fieldCount × Fin n) ⊕ (Fin n × Fin n)
@@ -429,7 +410,6 @@ theorem sourceExpression_order (A : Fin n → Fin n → 𝓢(E, ℝ)) (ab : d.Pr
   rcases c with cd | (cd | (c | (r | ij))) <;>
     simp only [sourceExpression, JetExpression.orderLE, List.length_nil,
       List.length_cons] <;> omega
-
 
 def sourceSolutionJet (ab : d.ProbeIndex)
     (Q : d.ProbeIndex → List (Fin n) → ScalarL2 n)
@@ -464,7 +444,6 @@ theorem isWeakSchwartzJet_divergenceSourceJet
   · exact hQ ab
   · exact hQ ab
   · exact hq
-
 
 theorem divergenceSourceJet_nil
     (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
@@ -504,7 +483,6 @@ theorem localizedValue_weakDerivative (ab : d.ProbeIndex) (z : d.Form) (i : Fin 
   simp only [PiLp.basisFun_apply] at h
   linarith
 
-
 theorem weakJet_singleton_eq_localizedDerivative
     (ab : d.ProbeIndex) (z : d.Form) (q : List (Fin n) → ScalarL2 n) {s : ℕ}
     (hq : IsWeakSchwartzJet q (s + 1))
@@ -520,7 +498,6 @@ theorem localizedValue_ae_support (ab : d.ProbeIndex) (z : d.Form) :
     with x hx hnot
   change L.localizationL2 a (d.valueCoefficient ab (d.inclusion z)) x = 0
   rw [hx, image_eq_zero_of_notMem_tsupport hnot, zero_mul]
-
 
 theorem divergenceSourceJet_nil_of_weak
     (L' : FiniteChartLocalizationData d.charts) (b : L'.patches)
@@ -542,8 +519,6 @@ theorem divergenceSourceJet_nil_of_weak
     (fun cd => weakJet_singleton_eq_localizedDerivative d L' b cd z (Q cd)
       (hQ cd) (hQ0 cd))
     (weakJet_singleton_eq_localizedDerivative d L a ab z q hq hq0)
-
-
 
 theorem generatorGraph_extend_localizedJet
     (ab : d.ProbeIndex) (z : d.Form) (v : d.Value)
@@ -654,7 +629,6 @@ theorem symmetricScale_generatorGraph (k : ℕ)
   exact (d.symmetricGeneratorGraph_iff (d.symmetricScaleValue (k + 2) x)
     (d.symmetricScaleValue k x - d.symmetricScaleValue (k + 2) x)).mp hs
 
-
 theorem exists_symmetricScale_localized_weakJet (k : ℕ) :
     ∀ (L : FiniteChartLocalizationData d.charts) (a : L.patches) (ab : d.ProbeIndex)
       (x : SpectralHeatNative.State d.SymmetricIndex),
@@ -720,7 +694,6 @@ theorem exists_symmetricScale_localized_weakJet (k : ℕ) :
     rw [← hz]
     exact hq'0
 
-
 theorem exists_symmetricScale_localized_weakJet_bound (k : ℕ) (ab : d.ProbeIndex) :
     ∃ C : ℝ, 0 < C ∧
       ∃ q : SpectralHeatNative.State d.SymmetricIndex → List (Fin n) → ScalarL2 n,
@@ -760,7 +733,6 @@ theorem exists_localizedScaleDerivative (ab : d.ProbeIndex) (k : ℕ)
     exact hq0
   simpa only [hzero] using DeTurckDomainRegularityNative.finite_weakJet_pairing q k hq w hw φ
 
-
 def localizedScaleDerivative (ab : d.ProbeIndex) (k : ℕ)
     (w : List (Fin n)) (hw : w.length ≤ k) :
     SpectralHeatNative.State d.SymmetricIndex →L[ℝ] ScalarL2 n :=
@@ -796,7 +768,6 @@ theorem localizedScaleDerivative_nil (ab : d.ProbeIndex) (k : ℕ) :
   simp only [SchwartzMap.toLpCLM_apply, localizedScaleDerivative_pairing,
     List.length_nil, pow_zero, List.reverse_nil,
     DeTurckDomainRegularityNative.orderedSchwartzDerivative, one_mul]
-
 
 theorem localizedScaleDerivative_scaleDecode (ab : d.ProbeIndex) (k l : ℕ)
     (w : List (Fin n)) (hw : w.length ≤ k)

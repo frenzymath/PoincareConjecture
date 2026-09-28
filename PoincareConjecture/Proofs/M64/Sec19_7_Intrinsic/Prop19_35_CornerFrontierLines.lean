@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnBandLines
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +10,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane
 open ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_retained_corner_frontier_lines
     {r : ℝ} (hr : 0 < r)

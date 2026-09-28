@@ -2,16 +2,6 @@ import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Data.Set.Image
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,27 +10,17 @@ namespace Set
 
 variable {X Y ι : Type*}
 
-
-
-
-
 noncomputable def alexanderCurveCount [Finite ι] (D : ι → Set X) : ℕ := by
   classical
   exact if Pairwise (fun i j => Disjoint (D i) (D j)) then 0 else Nat.card ι
 
 variable [Finite ι]
 
-
-
 theorem alexanderCurveCount_le_card (D : ι → Set X) :
     alexanderCurveCount D ≤ Nat.card ι := by
   classical
   unfold alexanderCurveCount
   split_ifs <;> omega
-
-
-
-
 
 theorem alexanderCurveCount_eq_zero_iff (D : ι → Set X) :
     alexanderCurveCount D = 0 ↔ Pairwise (fun i j => Disjoint (D i) (D j)) := by
@@ -56,10 +36,6 @@ theorem alexanderCurveCount_eq_zero_iff (D : ι → Set X) :
     omega
   · intro h
     simp only [alexanderCurveCount, if_pos h]
-
-
-
-
 
 theorem alexanderCurveCount_image (D : ι → Set X) {s : Set X}
     (hD : ∀ i, D i ⊆ s) (f : X → Y) (hf : InjOn f s) :
@@ -80,9 +56,6 @@ theorem alexanderCurveCount_image (D : ι → Set X) {s : Set X}
       have hxz : x = z := hf (hD i hxi) (hD j hzj) (hxy.trans hzy.symm)
       exact disjoint_left.mp (h hij) hxi (hxz.symm ▸ hzj)
   simp only [alexanderCurveCount, hdisj]
-
-
-
 
 theorem alexanderCurveCount_partition_le (D : ι → Set X) (I : Set ι) :
     alexanderCurveCount (fun i : I => D i) +
@@ -105,10 +78,6 @@ theorem alexanderCurveCount_partition_le (D : ι → Set X) (I : Set ι) :
       simp only [alexanderCurveCount, if_neg h]
     rw [hcount]
     omega
-
-
-
-
 
 theorem alexanderCurveCount_partition_after_deletion
     (D : ι → Set X) (hbranch : ¬ Pairwise (fun i j => Disjoint (D i) (D j)))
@@ -143,10 +112,6 @@ end Set
 namespace Homeomorph
 
 variable {X Y ι : Type*} [TopologicalSpace X] [TopologicalSpace Y] [Finite ι]
-
-
-
-
 
 theorem alexanderCurveCount_image {s : Set X} {t : Set Y} (e : s ≃ₜ t)
     (D : ι → Set X) (hD : ∀ i, D i ⊆ s) (f : X → Y)

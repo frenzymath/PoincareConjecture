@@ -2,15 +2,6 @@ import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Algebra.ContinuousAffineMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 variable {𝕜 E F : Type*} [NontriviallyNormedField 𝕜] [CompleteSpace 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E] [FiniteDimensional 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
-
-
-
 
 theorem AffineIndependent.exists_continuousAffineMap_eqOn {s : Set E}
     (hs : AffineIndependent 𝕜 ((↑) : s → E)) (f : E → F) :

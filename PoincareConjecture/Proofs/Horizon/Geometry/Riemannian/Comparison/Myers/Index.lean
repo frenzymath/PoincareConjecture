@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import Mathlib.Analysis.InnerProductSpace.Trace
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +40,6 @@ private theorem integral_polynomial_test (a b : ℝ) :
         integral_pow]
       norm_num
       ring
-
-
 
 theorem trace_lower_le_of_polynomial_index_nonneg {n : ℕ}
     {R : ℝ → EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedCom
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
 
-
 @[instance_reducible] noncomputable def terminalSourceComponentMetricSpace
     (g : RiemannianMetric 3 M) (p : M) :
     MetricSpace (Poincare.connectedComponentOpens E p) :=
@@ -38,7 +28,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
     ⟨⟨h.inner, h.toContinuousRiemannianMetric.continuous, fun _ _ _ => rfl⟩⟩
   letI : EMetricSpace C := EMetricSpace.ofRiemannianMetric (𝓡 3) C
   EMetricSpace.toMetricSpace (fun x y => h.edist_ne_top x y)
-
 
 theorem terminalSourceComponent_distances (g : RiemannianMetric 3 M) (p : M) :
     let C := Poincare.connectedComponentOpens E p
@@ -55,8 +44,6 @@ theorem terminalSourceComponent_distances (g : RiemannianMetric 3 M) (p : M) :
     RiemannianMetric.edist_subtype_val isClosed_connectedComponent g h
       (fun _ _ _ => rfl) x y
   exact ⟨heq, congrArg ENNReal.toReal heq⟩
-
-
 
 theorem terminalSourceComponent_balls (g : RiemannianMetric 3 M) (p : M) :
     let C := Poincare.connectedComponentOpens E p

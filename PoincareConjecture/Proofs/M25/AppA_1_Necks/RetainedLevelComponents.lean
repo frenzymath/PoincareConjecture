@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SaturatedHeight
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_opposite_retained_components
     (N : EpsilonNeck g) (hsep : N.IsSeparating)

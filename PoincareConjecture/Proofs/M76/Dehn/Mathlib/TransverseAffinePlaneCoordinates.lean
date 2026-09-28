@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_direction_height_of_codim_one (P : AffineSubspace ℝ E)
     (hdim : Module.finrank ℝ P.direction + 1 = Module.finrank ℝ E)
@@ -41,10 +28,6 @@ theorem exists_direction_height_of_codim_one (P : AffineSubspace ℝ E)
   intro x
   rw [← vsub_right_mem_direction_iff_mem hp x, hker]
   rfl
-
-
-
-
 
 theorem exists_centered_crossing_coordinates (P Q : AffineSubspace ℝ E)
     (hdim : Module.finrank ℝ E = 3)

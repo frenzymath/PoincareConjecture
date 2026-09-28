@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.WeightedChartPerturbation
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 import PoincareConjecture.Proofs.M09.CompactFieldExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

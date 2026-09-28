@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalDiskReplacement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 open Dehn.Annuli
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 def capSpoke (x : E) : ℝ →ᴬ[ℝ] E × ℝ :=
   ContinuousAffineMap.lineMap (0, 1) (x, 0)
@@ -55,9 +46,6 @@ theorem capSpoke_finitePL (x : E) :
   exact ⟨J, hJ, hJs, J.affineOnFaces_affine (capSpoke x)⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_primal_disk_spokes {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (x₀ : q) :

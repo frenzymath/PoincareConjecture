@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslation
 import PoincareConjecture.Proofs.M03.Existence.HeatKernelNative
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -21,8 +12,6 @@ variable {L : ℝ} [Fact (0 < L)]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
 omit [CompleteSpace E] in
-
-
 
 theorem integrable_periodicGaussian (t : ℝ) (f : C(AddCircle L, E)) :
     Integrable (fun s : ℝ => gaussianHeatKernel 1 s •
@@ -44,7 +33,6 @@ theorem integrable_periodicGaussian (t : ℝ) (f : C(AddCircle L, E)) :
 
 omit [CompleteSpace E] in
 
-
 theorem norm_integral_periodicGaussian_le (t : ℝ) (f : C(AddCircle L, E)) :
     ‖∫ s : ℝ, gaussianHeatKernel 1 s •
       periodicTranslation (2 * Real.sqrt t * s) f‖ ≤ ‖f‖ := by
@@ -58,9 +46,6 @@ theorem norm_integral_periodicGaussian_le (t : ℝ) (f : C(AddCircle L, E)) :
         abs_of_pos (gaussianHeatKernel_pos (by norm_num) s)]
     _ = ‖f‖ := by
       rw [integral_mul_const, integral_gaussianHeatKernel (by norm_num), one_mul]
-
-
-
 
 noncomputable def periodicGaussianHeat (t : ℝ) :
     C(AddCircle L, E) →L[ℝ] C(AddCircle L, E) :=
@@ -77,16 +62,11 @@ noncomputable def periodicGaussianHeat (t : ℝ) :
         exact integral_smul c _ }
     1 (fun f => by simpa using norm_integral_periodicGaussian_le t f)
 
-
-
 theorem periodicGaussianHeat_apply (t : ℝ) (f : C(AddCircle L, E)) (x : AddCircle L) :
     periodicGaussianHeat t f x = ∫ s : ℝ, gaussianHeatKernel 1 s •
       f (x - ((2 * Real.sqrt t * s : ℝ) : AddCircle L)) := by
   exact ((ContinuousMap.evalCLM ℝ x).integral_comp_comm
     (integrable_periodicGaussian t f)).symm
-
-
-
 
 theorem periodicGaussianHeat_properties (f : C(AddCircle L, E)) :
     (∀ t : ℝ, ‖periodicGaussianHeat t f‖ ≤ ‖f‖) ∧
@@ -113,9 +93,6 @@ theorem periodicGaussianHeat_properties (f : C(AddCircle L, E)) :
       exact (continuous_const : Continuous (fun _ : ℝ => gaussianHeatKernel 1 s)).smul htrans
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
-
 
 theorem periodicGaussianHeat_comp (A : E →L[ℝ] F) (t : ℝ) (f : C(AddCircle L, E)) :
     periodicGaussianHeat t (A.compLeftContinuous ℝ (AddCircle L) f) =

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteMarkedFaceOrder
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_finite_marked_face_prefixes
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

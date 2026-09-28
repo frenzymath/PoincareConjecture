@@ -1,25 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Normed.Module.WeakDual
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace PoincareConjecture.ReducedLengthMinimum.Variational
-
-
 
 theorem exists_weak_subsequence {H : Type*} [NormedAddCommGroup H]
     [InnerProductSpace ℝ H] [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
@@ -52,8 +38,6 @@ theorem exists_weak_subsequence {H : Type*} [NormedAddCommGroup H]
       exact heval w
     have htest : Tendsto (fun k => inner ℝ (v (φ k)) z) atTop (𝓝 (ζ z)) := h
     simpa only [heval, hw] using htest
-
-
 
 theorem exists_finite_weak_subsequence {ι : Type*} [Fintype ι] {H : ι → Type*}
     [∀ i, NormedAddCommGroup (H i)] [∀ i, InnerProductSpace ℝ (H i)]

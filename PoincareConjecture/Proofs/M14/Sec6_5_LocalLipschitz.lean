@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzBranches
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzTail
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzSmooth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,10 +18,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
-
-
 
 theorem localLipschitzStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

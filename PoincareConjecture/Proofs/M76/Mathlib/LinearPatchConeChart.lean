@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RelativeHeightPlaneConeChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,12 +12,6 @@ variable {M E F ι : Type*} [Finite ι]
   [NormedAddCommGroup M] [NormedSpace ℝ M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_height_plane_cone_chart_linear_patches
     {S P : Set E} {D : Set F} {H : frontier S ≃ₜ frontier D} (hH : H.IsFinitePL)

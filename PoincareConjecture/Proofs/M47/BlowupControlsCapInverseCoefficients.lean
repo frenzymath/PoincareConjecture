@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapGramDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ theorem cap_frameInverseGram_contDiff (g : RiemannianMetric n V)
         (EuclideanSpace.basisFun (Fin n) ℝ j)))
   exact ContDiff.inner ℝ contDiff_const
     ((cap_frameInverse_contDiff g e).clm_apply contDiff_const)
-
-
 
 theorem cap_frameInverseGram_fderiv (g : RiemannianMetric n V)
     (e : V ≃L[ℝ] V) (x u : V) (i j : Fin n) :

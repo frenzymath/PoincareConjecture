@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularTriangleEdgeCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_regular_triangle_collar (A : E →ᵃ[ℝ] ℝ) {s : Finset E}
     (hi : AffineIndependent ℝ ((↑) : s → E)) (hs : s.card = 3) {α β : ℝ}

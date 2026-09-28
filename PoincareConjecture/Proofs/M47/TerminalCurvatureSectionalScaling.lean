@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.ConformalPinching
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Sectional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
 
-
 theorem terminalCurvature_negative_part_sectional_lower
     (D : LeviCivitaData g) (x : M) (v w : TangentSpace (𝓡 3) x) :
     -D.negativeCurvaturePart x ≤ D.sectionalCurvature x v w := by
@@ -34,7 +24,6 @@ theorem terminalCurvature_negative_part_sectional_lower
   intro a b haa hbb hab
   exact M36.neg_negativeCurvaturePart_le_sectional_of_orthonormal D x
     ⟨haa, hbb, hab⟩
-
 
 theorem terminalCurvature_sectional_local_homothety [T2Space N]
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q : ℝ} (hQ : 0 < Q)
@@ -54,7 +43,6 @@ theorem terminalCurvature_sectional_local_homothety [T2Space N]
       (Diffeomorph.refl (𝓡 3) N ∞) Q hQ (M13.identity_metricHomothety h Q hQ)
       D' (M13.scaleLeviCivitaData D' Q hQ) (f x)
         (mfderiv (𝓡 3) (𝓡 3) f x v) (mfderiv (𝓡 3) (𝓡 3) f x w)
-
 
 theorem terminalCurvature_sectional_lower_of_scaled_negative [T2Space N]
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {Q eta : ℝ} (hQ : 0 < Q)

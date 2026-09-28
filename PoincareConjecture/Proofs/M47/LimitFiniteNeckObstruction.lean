@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteNeckExits
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.MinimizingSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_captured_neck_impossible
     {M : Type u} [TopologicalSpace M]

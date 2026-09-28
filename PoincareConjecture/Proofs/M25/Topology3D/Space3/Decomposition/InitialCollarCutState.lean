@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.InitialLevelFamily
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutState
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_initial_collar_cut_state
     (hP : PlanarSchoenfliesService)

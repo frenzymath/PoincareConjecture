@@ -4,19 +4,6 @@ import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Group.Integral
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -30,11 +17,6 @@ variable {d : ℕ} {E : Type*} [NormedAddCommGroup E]
   {J : Type*} {l : Filter J}
 
 local notation "X" => EuclideanSpace ℝ (Fin d)
-
-
-
-
-
 
 theorem m64MemLp_add_tendsto {u : X → E} (hu : MemLp u 2 volume)
     {h : J → X} {a : X} (hh : Tendsto h l (𝓝 a)) :
@@ -58,10 +40,6 @@ theorem m64MemLp_add_tendsto {u : X → E} (hu : MemLp u 2 volume)
   exact (Lp.tendsto_Lp_iff_tendsto_eLpNorm''
     (fun j x => u (x + h j)) (fun j => hmem (h j))
     (fun x => u (x + a)) (hmem a)).mp hlim
-
-
-
-
 
 theorem m64MemLp_add_restrict_tendsto {O K : Set X}
     (hO : MeasurableSet O) (hK : MeasurableSet K)

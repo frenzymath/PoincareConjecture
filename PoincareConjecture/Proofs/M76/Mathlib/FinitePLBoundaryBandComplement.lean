@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPrismRim
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryAttachedDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -71,10 +61,6 @@ private theorem band_rectangle_data
   · simpa only [image_union, image_pair, hzero a ha, hzero b hb] using hlow
   · simpa only [image_pair] using htopBall
   · simpa only [image_union, hbottom, image_pair] using hupp
-
-
-
-
 
 theorem IsFinitePLBallPair.boundary_band_complement
     {s q : Set E} (hs : IsFinitePLBallPair (ℝ × ℝ) s q)

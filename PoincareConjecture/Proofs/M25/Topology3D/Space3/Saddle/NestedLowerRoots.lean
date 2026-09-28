@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedLowerEstimates
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem exists_smooth_roots :
     let I : Set ℝ := Set.Ioo (-3 / 2) (3 / 2)

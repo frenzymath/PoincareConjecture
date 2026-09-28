@@ -1,19 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureCarrier
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TensorRegion
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,12 +22,10 @@ private instance ricciComplementFiniteDimensional (x : M) :
   unfold TangentSpace
   infer_instance
 
-
 noncomputable def ricciComplementEvaluation (D : LeviCivitaData g) :
     CovariantTensorEvaluation n M 2 :=
   fun x v => (D.scalarCurvature x / 2) * g.inner x (v 0) (v 1) -
     D.ricci x (v 0) (v 1)
-
 
 theorem isSmoothCovariantTensor_ricciComplementEvaluation
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) :
@@ -67,7 +53,6 @@ theorem isSmoothCovariantTensor_ricciComplementEvaluation
   · intro U hU X hX
     exact ((hscalar.contMDiffOn.div_const 2).mul
       ((hX 0).inner_bundle (hX 1))).sub (hD.2.1.2 U hU X hX)
-
 
 noncomputable def ricciComplementTensor (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) :
@@ -138,7 +123,6 @@ private theorem complement_curvature_skew_first (D : LeviCivitaData g)
   rw [(hD.2.2.2.1 x u v w z).2.1, (hD.2.2.2.1 x w z u v).1,
     (hD.2.2.2.1 x w z v u).2.1]
 
-
 theorem ricci_eq_sum_orthonormalBasis [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
@@ -156,7 +140,6 @@ theorem ricci_eq_sum_orthonormalBasis [T2Space M]
   simp only [ricci, hswap]
   exact bilinear_sum_orthonormalBasis_eq
     (D.curvatureTensor_bilinear_first_third x u v) (g.orthonormalBasis x) b
-
 
 theorem ricciComplementTensor_apply_orthonormalBasis [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
@@ -178,7 +161,6 @@ theorem ricciComplementTensor_apply_orthonormalBasis [T2Space M]
     (fun i j k l => complement_curvature_skew_first D hD x (b i) (b j) (b k) (b l))
     (fun i j k l => (hD.2.2.2.1 x (b i) (b j) (b k) (b l)).1)
     (fun i j k l => (hD.2.2.2.1 x (b i) (b j) (b k) (b l)).2.1) i j).symm
-
 
 theorem ricciComplementTensor_eq_transport_operatorTensor [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
@@ -202,8 +184,6 @@ theorem ricciComplementTensor_eq_transport_operatorTensor [T2Space M]
     OrthonormalBasis.repr_self, curvatureOperator, Matrix.toLpLin_apply,
     EuclideanSpace.inner_single_left, Matrix.mulVec_single, Matrix.col]
 
-
-
 theorem ricciComplementTensor_mem_tensorRegion_iff [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (hn : Module.finrank ℝ (TangentSpace (𝓡 3) x) = 3)
@@ -219,8 +199,6 @@ theorem ricciComplementTensor_mem_tensorRegion_iff [T2Space M]
     tensorRegion_transport_equiv_iff (by simp) hn b.repr.symm ht,
     operatorTensor_mem_tensorRegion]
   exact D.curvatureOperator_mem_region_iff hD x t b
-
-
 
 theorem scaled_ricciComplementTensor_mem_tensorRegion_of_pinching [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -242,7 +220,6 @@ theorem scaled_ricciComplementTensor_mem_tensorRegion_of_pinching [T2Space M]
   · nlinarith [htrace]
   · intro hX
     nlinarith [hlog hX]
-
 
 theorem logarithmic_pinching_of_scaled_ricciComplementTensor_mem [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

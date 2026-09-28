@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.ProtectedMarkedCu
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.EssentialCutDiskProjection
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopTheorem
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem exists_original_terminal_spherical_family
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

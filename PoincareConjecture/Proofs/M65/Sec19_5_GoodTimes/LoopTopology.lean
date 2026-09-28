@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.CircleRelabeling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -41,10 +31,6 @@ private theorem circle_tendsto_of_angular
   obtain ⟨x, rfl⟩ := m65AngularCircle_surjective z
   rw [← m65AngularCircle_map_nhds x, Filter.prod_map_right, tendsto_map'_iff]
   exact h x
-
-
-
-
 
 theorem m65C1Loop_tendsto_of_angular
     {ι M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

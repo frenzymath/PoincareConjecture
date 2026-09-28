@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CapShrinking
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ E]
-
-
 
 theorem exists_charted_cap_shrinking_isotopy (B : BallNeighborhoodChart E F)
     (u : E) (hu : ‖u‖ = 1) (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :

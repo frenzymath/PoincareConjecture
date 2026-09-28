@@ -1,22 +1,9 @@
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem IsCompact.eq_of_frontier_eq_of_preconnected_interior_compl
     {X : Type*} [MetricSpace X]

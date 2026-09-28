@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PhysicalBuffer
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y]
-
-
-
 
 theorem edist_comp_le_of_pullback_bound
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
@@ -46,10 +34,6 @@ theorem edist_comp_le_of_pullback_bound
     (subset_univ _)
   rw [hγ0, hγ1] at hd
   exact hd.trans hlength.le
-
-
-
-
 
 theorem closure_ball_subset_ball_of_margin [RegularSpace X]
     (g : RiemannianMetric 3 X) {p x : X} {a r R : ℝ}
@@ -75,9 +59,6 @@ namespace PoincareConjecture.M44
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem physicalBufferFlow_isCompact_closure_ball
     {J : Set ℝ} (F : RicciFlow 3 M J)
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) (EuclideanSpace ℝ (Fin 3)) M ∞)
@@ -97,9 +78,6 @@ theorem physicalBufferFlow_isCompact_closure_ball
   exact (((physicalBufferFlow F e).metric t).edist_comp_le_of_pullback_bound
     (F.metric t) (f := Subtype.val) contMDiff_subtype_val
     (fun _ _ => le_rfl) p x).trans_lt hx
-
-
-
 
 theorem physicalBufferFlow_isCompact_closure_ball_of_margin [RegularSpace M]
     {J : Set ℝ} (F : RicciFlow 3 M J)

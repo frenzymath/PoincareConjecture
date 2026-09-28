@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedPartnerPL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 def retainedComponentMate {I : Type*} (U : I → Set V2) (K : Set V2)
     (mate : I → I) (hmate : Function.Involutive mate) :
@@ -31,8 +21,6 @@ theorem retainedComponentMate_involutive {I : Type*} (U : I → Set V2) (K : Set
     (mate : I → I) (hmate : Function.Involutive mate) :
     Function.Involutive (retainedComponentMate U K mate hmate) :=
   fun i ↦ Subtype.ext (hmate i.val)
-
-
 
 theorem RetainedSquareMapFacts.partner_copy_eq
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}
@@ -55,8 +43,6 @@ theorem RetainedSquareMapFacts.partner_copy_eq
   have hx : j ⟨x, hxK⟩ ∈ doubleLocusOn g D2 :=
     ⟨facts.mapsTo _, _, facts.mapsTo _, hval, hne⟩
   exact ⟨hx, (hunique ⟨_, hx⟩ _ (facts.mapsTo _) hval hne).symm⟩
-
-
 
 theorem RetainedSquareMapFacts.partner_mem_component
     {X I : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}

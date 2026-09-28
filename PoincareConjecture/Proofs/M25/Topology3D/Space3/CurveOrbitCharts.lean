@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M09.LocalSmoothInverse
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,8 +10,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem exists_curve_time_chart (γ : ℝ → X) (hγ : Continuous γ)
     (e : OpenPartialHomeomorph X ℝ) (t : ℝ) (ht : γ t ∈ e.source)
@@ -48,8 +35,6 @@ theorem exists_curve_time_chart (γ : ℝ → X) (hγ : Continuous γ)
     rw [congrFun he0 s]
     exact e.left_inv (h0U hs.1)
 
-
-
 theorem curve_isOpenMap_of_time_charts (γ : ℝ → X)
     (hchart : ∀ t, ∃ k : OpenPartialHomeomorph ℝ X, t ∈ k.source ∧
       ∀ s ∈ k.source, k s = γ s) : IsOpenMap γ := by
@@ -60,8 +45,6 @@ theorem curve_isOpenMap_of_time_charts (γ : ℝ → X)
   refine ⟨k '' (k.source ∩ U), ?_, k.isOpen_image_source_inter hU, ⟨t, ⟨htk, ht⟩, hk t htk⟩⟩
   rintro z ⟨s, hs, rfl⟩
   exact ⟨s, hs.2, (hk s hs.1).symm⟩
-
-
 
 theorem curve_injOn_interval_of_time_chart (γ : ℝ → X)
     (k : OpenPartialHomeomorph ℝ X) (h0 : 0 ∈ k.source)

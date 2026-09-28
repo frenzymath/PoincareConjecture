@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInteriorChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_radial_convex_extension
     {C : Set E} {D : Set F} {e : frontier C ≃ₜ frontier D}
@@ -78,8 +65,6 @@ theorem exists_radial_convex_extension
   rw [hg.cone_extension_smul hg0 hbase (hKs.symm ▸ hx) ht, ← hef ⟨x, hx⟩]
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
-
 
 theorem radial_extension_image_convexJoin
     {C : Set E} {D : Set F} (e : frontier C ≃ₜ frontier D)

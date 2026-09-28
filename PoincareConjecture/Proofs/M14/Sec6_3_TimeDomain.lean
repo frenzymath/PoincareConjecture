@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialValueContinuation
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialDomain
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalCoherence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem initialValueDomain_time_mem_nhdsWithin
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -46,9 +34,6 @@ theorem initialValueDomain_time_mem_nhdsWithin
     rw [Real.sqrt_sq hs₀.le] at hsr hnear
     filter_upwards [hnear] with t ht
     exact initialValueDomain_prefix (Or.inr ⟨hs₀.trans_le hsr, z, ⟨Q⟩⟩) ht.1 ht.2
-
-
-
 
 theorem initialValueCurve_time_contMDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

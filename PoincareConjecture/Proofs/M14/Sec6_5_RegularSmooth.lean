@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_JointMap
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionSmooth
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem reducedLengthAt_jointEndpoint (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hz : (Z, s) ∈ M14JointDomain G E) :
     M14ReducedLengthAt G T 0 x (E.gamma Z s) = E.action Z s / (2 * s) := by
@@ -34,8 +23,6 @@ theorem reducedLengthAt_jointEndpoint (E : M14ExponentialFamily G T x)
   obtain ⟨_, _, _, _, _, hlength⟩ := jointDomain_action_branch E hz
   unfold M14ReducedLengthAt
   rw [E.clock Z s hsurv, sub_sub_cancel, ← hlength, E.reduced_length_eq Z s hsurv hs]
-
-
 
 theorem reducedLengthAt_jointInverse (E : M14ExponentialFamily G T x) {q : G.Point}
     (hq : q ∈ range (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2)) :
@@ -46,9 +33,6 @@ theorem reducedLengthAt_jointInverse (E : M14ExponentialFamily G T x) {q : G.Poi
   exact (congrArg (M14ReducedLengthAt G T 0 x) heq).symm.trans
     (reducedLengthAt_jointEndpoint E (Z := (jointEndpointInverse E q).1)
       (s := (jointEndpointInverse E q).2) hmem)
-
-
-
 
 theorem reducedLengthAt_contMDiffOn_jointImage
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -86,8 +70,6 @@ theorem reducedLengthAt_contMDiffOn_jointImage
     (fun q hq => mul_ne_zero (by norm_num) (jointDomain_time_pos E
       (jointEndpointInverse_spec E hq).1).ne')
   exact hnorm.congr (fun q hq => reducedLengthAt_jointInverse E hq)
-
-
 
 theorem reducedLengthAt_slice_contMDiffAt
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

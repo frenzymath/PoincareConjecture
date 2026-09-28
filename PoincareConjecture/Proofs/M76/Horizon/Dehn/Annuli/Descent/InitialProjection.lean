@@ -13,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "A" => (V1 × V2)
 local notation "Rim" => Set.prod (sphere (0 : V1) 1) (sphere (0 : V2) 1)
 
-
-
 theorem Stage.exists_projected_annulus
     {M ι : Type*} [TopologicalSpace M]
     {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ A}

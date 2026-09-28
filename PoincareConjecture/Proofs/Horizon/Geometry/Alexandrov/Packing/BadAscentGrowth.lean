@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.BadAscen
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.RadialMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.ScaledConfigurations
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -60,8 +52,6 @@ private theorem exists_common_radius_configuration
   intro i l hil
   exact (hangle i l hil).trans_le (hX.comparisonAngle_le_of_two_radial_shortenings
     (by rw [hrad]; exact hr) (by rw [hrad]; exact hr) (hbetween i) (hbetween l))
-
-
 
 theorem exists_eventually_scaled_angle_configuration_of_bad_ascent
     {X : ℕ → BasedMetricSpaceBundle.{u}}
@@ -151,8 +141,6 @@ theorem exists_eventually_scaled_angle_configuration_of_bad_ascent
       intro _
       simpa only [v, Fin.cons_zero, Fin.cons_succ, comparisonAngle_comm,
         dist_comm (q j i) (y j)] using hjnew i
-
-
 
 theorem exists_small_angle_configuration_of_bad_ascent_blowup
     {X Z : ℕ → BasedMetricSpaceBundle.{u}}

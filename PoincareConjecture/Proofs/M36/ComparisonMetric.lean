@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonPullback
 import PoincareConjecture.Proofs.M36.ComparisonNeckJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalTransport
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_RetainedScalarLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,11 @@ namespace PoincareConjecture.Proofs.M46
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def cylinderScalar
     (e : SurgeryFlowCylinder F C origin scale I U) (x : C.carrier) (s : ℝ) : ℝ := by
   classical
   exact if hs : s ∈ I then
     (F.connection (origin + s / scale)).scalarCurvature (e.forward s hs x) else 0
-
 
 noncomputable def cylinderScalarRate
     (e : SurgeryFlowCylinder F C origin scale I U) (x : C.carrier) (s : ℝ) : ℝ := by
@@ -41,15 +29,12 @@ noncomputable def cylinderScalarRate
       (F.connection (origin + s / scale)).scalarCurvature (e.forward s hs x) +
       2 * (F.connection (origin + s / scale)).ricciNormSq (e.forward s hs x) else 0
 
-
 theorem cylinderScalar_of_mem (e : SurgeryFlowCylinder F C origin scale I U)
     (x : C.carrier) (s : ℝ) (hs : s ∈ I) :
     cylinderScalar e x s =
       (F.connection (origin + s / scale)).scalarCurvature (e.forward s hs x) := by
   classical
   simp only [cylinderScalar, dif_pos hs]
-
-
 
 theorem cylinderScalar_eq_slab (e : SurgeryFlowCylinder F C origin scale I U)
     {x : C.carrier} (hx : x ∈ U) {a b : ℝ}
@@ -69,8 +54,6 @@ theorem cylinderScalar_eq_slab (e : SurgeryFlowCylinder F C origin scale I U)
       e.forward s hs x at hmap
   rw [← hmap]
   exact M44.regularSlab_scalar_eq F S ⟨origin + s / scale, hs'⟩ _
-
-
 
 theorem cylinderScalarRate_eq_slab
     (P : M44CapPersistencePredecessors.{u})
@@ -96,8 +79,6 @@ theorem cylinderScalarRate_eq_slab
       e.forward s hs x at hmap
   rw [← hmap]
   exact (M44.regularSlab_scalar_evolution_eq P F S ⟨origin + s / scale, hs'⟩ _).symm
-
-
 
 theorem cylinderScalar_eq_preterminal
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

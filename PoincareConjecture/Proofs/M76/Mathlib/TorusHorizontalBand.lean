@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredAnnulusChart
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem exists_horizontal_torus_band {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) (hcore : 6 * d ≤ L) :

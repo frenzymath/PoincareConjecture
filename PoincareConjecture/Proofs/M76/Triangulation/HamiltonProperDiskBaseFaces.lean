@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.original_parameter_image
     (T : HamiltonProperDiskTriangulation R D b) :
@@ -68,9 +56,6 @@ private theorem pullback_full_coface
     exact hi (T.disk.subset_space hu hy) (T.disk.subset_space hs hx) hyx ▸ hy
   · exact (Finset.card_image_iff.mpr (hi.mono (T.disk.subset_space hu))).symm.trans htcard
 
-
-
-
 theorem HamiltonProperDiskTriangulation.disk_face_card_le
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E} (hs : s ∈ T.disk.faces) :
     s.card ≤ 3 := by
@@ -86,9 +71,6 @@ theorem HamiltonProperDiskTriangulation.disk_face_card_le
     Finset.card_image_iff.mpr (hi.mono (T.disk.subset_space hs))
   simpa only [Fintype.card_coe, Module.finrank_fintype_fun_eq_card,
     Fintype.card_fin, himage] using hcard
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_disk_triangle_coface
     (T : HamiltonProperDiskTriangulation R D b) {s : Finset E} (hs : s ∈ T.disk.faces) :
@@ -107,9 +89,6 @@ theorem HamiltonProperDiskTriangulation.exists_disk_triangle_coface
   obtain ⟨t, ht, hst, htc⟩ := L.exists_full_coface_of_convex_space hL hcv hint hsL
   obtain ⟨u, hu, hsu, huc, _⟩ := pullback_full_coface T hi hs ht hst (by simpa using htc)
   exact ⟨u, hu, hsu, huc⟩
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_boundary_triangle_coface
     (T : HamiltonProperDiskTriangulation R D b)

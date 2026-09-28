@@ -1,16 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.LinearAlgebra.Multilinear.Basic
 import Mathlib.Geometry.Manifold.Algebra.Monoid
 import Mathlib.Geometry.Manifold.Algebra.Structures
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -29,7 +20,6 @@ private def finSumFinEquiv (k l : ℕ) : Fin k ⊕ Fin l ≃ Fin (k + l) :=
     invFun := @Fin.addCases k l (fun _ => Fin k ⊕ Fin l) Sum.inl Sum.inr
     left_inv := by rintro (_ | _) <;> simp
     right_inv := by refine Fin.addCases (fun i => ?_) (fun i => ?_) <;> simp }
-
 
 def tensorProduct {k l : ℕ} (S : CovariantTensorEvaluation n M k)
     (T : CovariantTensorEvaluation n M l) : CovariantTensorEvaluation n M (k + l) :=

@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -22,7 +8,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M32
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem contDiffOn_clock_pullbackCoefficients_of_smoothFamily
     {n : ℕ} {M : Type*} [TopologicalSpace M]

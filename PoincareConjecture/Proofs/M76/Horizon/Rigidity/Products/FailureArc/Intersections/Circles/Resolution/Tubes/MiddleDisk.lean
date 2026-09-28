@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Tubes.OriginalCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.NestedPolygonAnnulus
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip _root_.Dehn
 

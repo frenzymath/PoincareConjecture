@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsDecay
 import PoincareConjecture.Proofs.M35.RadialGauge.TargetRapidJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_intrinsic_target_jets_polynomial_decay
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialFuture
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSearchClock
 import PoincareConjecture.Proofs.M47.LimitFinitePreservedBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_old_bounded_search
     (S : RepairedControlledSchedulesData.{u})

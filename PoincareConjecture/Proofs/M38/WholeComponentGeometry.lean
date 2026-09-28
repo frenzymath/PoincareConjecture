@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.WholeComponentModels
 import PoincareConjecture.Proofs.M38.RoundComponentSpaceforms
 import PoincareConjecture.Proofs.M38.SphereBundles
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem whole_canonical_component_geometry
     (N : RepairedNeckCapTopologyTheory.{u}) (F : SurgeryFlowData.{u}) (t : ℝ)

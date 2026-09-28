@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.ProtectedGerms
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -30,9 +22,6 @@ private abbrev S2 := sphere (0 : E3) 1
 namespace SphereSurgeryStep
 
 variable {f : S2 -> E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
-
-
-
 
 theorem protected_preconnected_survives {K : Set S2} (hK : IsPreconnected K)
     (hfar : ∀ p ∈ K, R < |inner Real v (f p) - c|) :
@@ -68,7 +57,6 @@ namespace SphereSurgeryTree
 
 variable {f : S2 -> E3} {v : E3} {A : Finset Real} {B : Set Real}
 
-
 theorem eq_of_mem_leaves_of_eq_at_protected_height (tree : SphereSurgeryTree v A f)
     (hprotects : tree.Protects B) {g g' : S2 -> E3}
     (hg : g ∈ tree.leaves) (hg' : g' ∈ tree.leaves) {p q : S2}
@@ -93,8 +81,6 @@ theorem eq_of_mem_leaves_of_eq_at_protected_height (tree : SphereSurgeryTree v A
       exact (Set.disjoint_left.mp S.children_disjoint (mem_range_self q)
         ⟨p, hMP.symm⟩).elim
     · exact ihP hprotects.2.2 hgP hg'P
-
-
 
 theorem exists_protected_preconnected_set_in_leaf (tree : SphereSurgeryTree v A f)
     (hprotects : tree.Protects B) {K : Set S2} (hK : IsPreconnected K)

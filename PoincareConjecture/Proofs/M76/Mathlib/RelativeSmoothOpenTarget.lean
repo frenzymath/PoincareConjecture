@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.SmoothApprox
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open scoped Topology ContDiff
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem Continuous.exists_contDiff_eqOn_mem_open {f : E → F} (hf : Continuous f)
     (n : ℕ∞) {C S U : Set E} (hC : IsCompact C) (hS : IsClosed S)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.RegionTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.OperatorReaction.Spectral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ namespace PoincareConjecture.AncientKappaRoundness
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 def pinchingCone (c : ℝ) : Set (E →L[ℝ] E) :=
   {A | A.toLinearMap.IsSymmetric ∧
@@ -58,7 +48,6 @@ theorem convex_pinchingCone (c : ℝ) : Convex ℝ (pinchingCone (E := E) c) := 
       inner_add_right, inner_smul_right, smul_eq_mul] using (show
         a * inner ℝ v (A v) + b * inner ℝ v (B v) ≤
           c * (a * inner ℝ w (A w) + b * inner ℝ w (B w)) by nlinarith [h])
-
 
 theorem pinchingCone_conj_iff
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
@@ -100,7 +89,6 @@ private theorem diagonal_rayleigh_le_greatest {A : E →ₗ[ℝ] E} (hA : A.IsSy
         (horder (by omega)) (sq_nonneg _)
     _ = d 0 := by rw [← Finset.mul_sum, hsq, mul_one]
 
-
 theorem mem_pinchingCone_iff_diagonal {A : E →ₗ[ℝ] E} (hA : A.IsSymmetric)
     (e : OrthonormalBasis (Fin 3) ℝ E) {d : Fin 3 → ℝ}
     (hd : ∀ i, A (e i) = d i • e i) (horder : Antitone d)
@@ -122,14 +110,12 @@ theorem mem_pinchingCone_iff_diagonal {A : E →ₗ[ℝ] E} (hA : A.IsSymmetric)
         (hratio.trans (mul_le_mul_of_nonneg_left
           (Poincare.HamiltonIvey.diagonal_rayleigh_ge_least hA e hd horder hw) hc))
 
-
 theorem mem_pinchingCone_iff_eigenvalues (hn : Module.finrank ℝ E = 3)
     {A : E →ₗ[ℝ] E} (hA : A.IsSymmetric) {c : ℝ} (hc : 0 ≤ c) :
     A.toContinuousLinearMap ∈ pinchingCone c ↔
       0 ≤ hA.eigenvalues hn 2 ∧ hA.eigenvalues hn 0 ≤ c * hA.eigenvalues hn 2 :=
   mem_pinchingCone_iff_diagonal hA (hA.eigenvectorBasis hn)
     (hA.apply_eigenvectorBasis hn) (hA.eigenvalues_antitone hn) hc
-
 
 theorem eq_smul_id_of_mem_all_pinchingCones (hn : Module.finrank ℝ E = 3)
     {A : E →ₗ[ℝ] E}

@@ -3,21 +3,11 @@ import Mathlib.Analysis.Convex.Basic
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AddCircle
-
 
 theorem compl_interior_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {a b : ℝ} (ha : 0 < a) (hab : a < b) (hb : b < p) :
@@ -41,8 +31,6 @@ theorem compl_interior_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     linarith [hu.2, ht.1]
 
 variable {W Z : Type*} [TopologicalSpace W] [TopologicalSpace Z]
-
-
 
 theorem exists_shifted_closedArc_normal_contraction
     (p : ℝ) [Fact (0 < p)] {c a b theta : ℝ}
@@ -125,8 +113,6 @@ theorem exists_shifted_closedArc_normal_contraction
       (convex_Icc a b) (hl x).1 htheta (sub_nonneg.mpr t.property.2) t.property.1
         (show 1 - (t : ℝ) + (t : ℝ) = 1 by ring)
   exact ⟨_, hconvex, rfl⟩
-
-
 
 theorem exists_complementarySlab_normal_contraction
     (p : ℝ) [Fact (0 < p)] {a b theta : ℝ}

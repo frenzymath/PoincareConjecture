@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallCoordinatePatch
 import PoincareConjecture.Proofs.M38.PunctureRadial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,7 +10,6 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 theorem punctureCollapse_mem_ball {x : StandardCapSpace}
     (hx : 1 < ‖x‖) (hupper : ‖x‖ < 2) : punctureCollapse x ∈ Metric.ball 0 2 := by
   rw [Metric.mem_ball, dist_zero_right, punctureCollapse_norm hx]
@@ -26,7 +17,6 @@ theorem punctureCollapse_mem_ball {x : StandardCapSpace}
     punctureRadialOrderIso ‖x‖ < punctureRadialOrderIso 2 :=
       punctureRadialOrderIso.strictMono hupper
     _ = 2 := punctureRadialOrderIso_eq_self 2 (by norm_num)
-
 
 theorem punctureExpand_mem_ball {x : StandardCapSpace}
     (hx : 0 < ‖x‖) (hupper : ‖x‖ < 2) : punctureExpand x ∈ Metric.ball 0 2 := by
@@ -38,14 +28,12 @@ theorem punctureExpand_mem_ball {x : StandardCapSpace}
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 theorem surgeryBall_exterior_coordinates {x : A.carrier}
     (hx : x ∈ B.closedBallᶜ) (hu : x ∈ B.map '' Metric.ball 0 2) :
     1 < ‖B.inverse x‖ ∧ ‖B.inverse x‖ < 2 := by
   constructor
   · exact lt_of_not_ge (fun h => hx ((surgeryBall_mem_closedBall_iff B hu).mpr h))
   · simpa only [Metric.mem_ball, dist_zero_right] using surgeryBall_inverse_mem B hu
-
 
 theorem surgeryBall_puncture_coordinates {x : A.carrier}
     (hx : x ∈ ({B.map 0} : Set A.carrier)ᶜ) (hu : x ∈ B.map '' Metric.ball 0 2) :
@@ -58,26 +46,21 @@ theorem surgeryBall_puncture_coordinates {x : A.carrier}
     rw [← B.right_inverse hu, hzero]
   · simpa only [Metric.mem_ball, dist_zero_right] using surgeryBall_inverse_mem B hu
 
-
 noncomputable def surgeryBallCollapse : A.carrier → A.carrier :=
   surgeryBallPatch B punctureCollapse
 
-
 noncomputable def surgeryBallExpand : A.carrier → A.carrier :=
   surgeryBallPatch B punctureExpand
-
 
 theorem surgeryBallCollapse_map {z : StandardCapSpace} (hz : z ∈ Metric.ball 0 2) :
     surgeryBallCollapse B (B.map z) = B.map (punctureCollapse z) := by
   rw [surgeryBallCollapse, surgeryBallPatch_of_mem B _ (Set.mem_image_of_mem _ hz),
     B.left_inverse hz]
 
-
 theorem surgeryBallExpand_map {z : StandardCapSpace} (hz : z ∈ Metric.ball 0 2) :
     surgeryBallExpand B (B.map z) = B.map (punctureExpand z) := by
   rw [surgeryBallExpand, surgeryBallPatch_of_mem B _ (Set.mem_image_of_mem _ hz),
     B.left_inverse hz]
-
 
 theorem surgeryBallCollapse_mapsTo :
     Set.MapsTo (surgeryBallCollapse B) B.closedBallᶜ ({B.map 0} : Set A.carrier)ᶜ := by
@@ -98,7 +81,6 @@ theorem surgeryBallCollapse_mapsTo :
     intro heq
     exact hx (heq ▸ surgeryBall_center_mem B)
 
-
 theorem surgeryBallExpand_mapsTo :
     Set.MapsTo (surgeryBallExpand B) ({B.map 0} : Set A.carrier)ᶜ B.closedBallᶜ := by
   intro x hx
@@ -112,7 +94,6 @@ theorem surgeryBallExpand_mapsTo :
     exact (not_le_of_gt (punctureRadialOrderIso_symm_gt_one hpos)) hn
   · rw [surgeryBallExpand, surgeryBallPatch_of_not_mem B _ hu]
     exact fun hclosed => hu (surgeryBall_closedBall_subset_image B hclosed)
-
 
 theorem surgeryBallExpand_collapse :
     Set.LeftInvOn (surgeryBallExpand B) (surgeryBallCollapse B) B.closedBallᶜ := by
@@ -129,7 +110,6 @@ theorem surgeryBallExpand_collapse :
       _ = x := B.right_inverse hu
   · rw [surgeryBallCollapse, surgeryBallPatch_of_not_mem B _ hu,
       surgeryBallExpand, surgeryBallPatch_of_not_mem B _ hu]
-
 
 theorem surgeryBallCollapse_expand :
     Set.LeftInvOn (surgeryBallCollapse B) (surgeryBallExpand B)
@@ -148,7 +128,6 @@ theorem surgeryBallCollapse_expand :
   · rw [surgeryBallExpand, surgeryBallPatch_of_not_mem B _ hu,
       surgeryBallCollapse, surgeryBallPatch_of_not_mem B _ hu]
 
-
 theorem surgeryBallCollapse_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (surgeryBallCollapse B) B.closedBallᶜ := by
   apply surgeryBallPatch_smooth B punctureCollapse
@@ -160,7 +139,6 @@ theorem surgeryBallCollapse_smooth :
     (fun _ h => punctureCollapse_eq_self h)
   exact fun _ hx hu => surgeryBall_exterior_coordinates B hx hu
 
-
 theorem surgeryBallExpand_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (surgeryBallExpand B) ({B.map 0} : Set A.carrier)ᶜ := by
   apply surgeryBallPatch_smooth B punctureExpand
@@ -171,8 +149,6 @@ theorem surgeryBallExpand_smooth :
     (fun _ h => punctureExpand_mem_ball h.1 h.2)
     (fun _ h => punctureExpand_eq_self h)
   exact fun _ hx hu => surgeryBall_puncture_coordinates B hx hu
-
-
 
 noncomputable def surgeryBallPunctureEquivalence :
     SurgeryRegionEquivalence A A B.closedBallᶜ ({B.map 0} : Set A.carrier)ᶜ where

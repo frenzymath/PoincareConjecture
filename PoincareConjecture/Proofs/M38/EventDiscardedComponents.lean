@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ComponentClosures
 import PoincareConjecture.Proofs.M38.RegularClosedSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,9 +12,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
-
-
-
 
 theorem event_collar_discarded_inter (i : Fin (F.event T hT).cap_count) :
     (eventCollarMap F T hT i '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) ∩
@@ -55,7 +44,6 @@ theorem event_collar_discarded_inter (i : Fin (F.event T hT).cap_count) :
     exact fun hret => Set.disjoint_left.mp
       (event_collar_positive_discarded F T hT i) hy hret
 
-
 theorem event_collar_positive_connected (i : Fin (F.event T hT).cap_count) :
     IsConnected (eventCollarMap F T hT i '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1)) := by
   let : ConnectedSpace UnitTwoSphere :=
@@ -64,8 +52,6 @@ theorem event_collar_positive_connected (i : Fin (F.event T hT).cap_count) :
   apply (isConnected_univ.prod (isConnected_Ioo zero_lt_one)).image
   exact (event_collar_smooth F T hT i).continuousOn.mono
     (fun z hz => ⟨hz.1, neg_one_lt_zero.trans hz.2.1, hz.2.2⟩)
-
-
 
 theorem event_discarded_connected_neighborhoods :
     ∀ x ∈ closure (F.event T hT).retained_preᶜ,
@@ -99,9 +85,6 @@ theorem event_discarded_connected_neighborhoods :
     rw [event_collar_discarded_inter]
     exact (event_collar_positive_connected F T hT i).isPreconnected
 
-
-
-
 theorem event_discarded_component_closure
     (x : (F.slice (F.event T hT).tMinus).carrier)
     (hx : x ∈ (F.event T hT).retained_preᶜ) :
@@ -109,8 +92,6 @@ theorem event_discarded_component_closure
       connectedComponentIn (interior (F.event T hT).retained_pre)ᶜ x := by
   simpa only [closure_compl] using
     closure_componentIn_eq (event_discarded_connected_neighborhoods F T hT) x hx
-
-
 
 theorem exists_event_discarded_component_closure
     (z : (F.slice (F.event T hT).tMinus).carrier)
@@ -121,7 +102,6 @@ theorem exists_event_discarded_component_closure
   simpa only [closure_compl] using
     exists_component_closure (event_discarded_connected_neighborhoods F T hT) z
       (show z ∈ closure (F.event T hT).retained_preᶜ by rwa [closure_compl])
-
 
 theorem event_discarded_component_closure_compact
     (x : (F.slice (F.event T hT).tMinus).carrier) :

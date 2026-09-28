@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Hessian.RegularFiber
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +18,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance cornerHessian_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem exists_hessian_restriction_gram_coefficients_openRegularFiberMetric
     {f : M → Fin k → ℝ}
@@ -78,8 +68,6 @@ theorem exists_hessian_restriction_gram_coefficients_openRegularFiberMetric
     rw [g.symm]
     exact hz _
   rw [hz', zero_add]
-
-
 
 theorem hessian_openRegularFiberMetric_le_of_tight_strainer
     {f : M → Fin k → ℝ}
@@ -173,9 +161,6 @@ theorem hessian_openRegularFiberMetric_le_of_tight_strainer
       rw [openRegularFiberMetric_inner]
       dsimp only [p, dι]
       ring
-
-
-
 
 theorem tight_strainer_openFiber_hessian_le
     {g : RiemannianMetric (m + k) M} (D : LeviCivitaData g)

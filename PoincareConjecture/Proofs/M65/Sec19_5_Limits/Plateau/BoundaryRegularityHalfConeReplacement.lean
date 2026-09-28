@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHalfCone
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCircleEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
 
 def halfConeDiameter (r : ℝ) (a b : LoopAmbient) (s : ℝ) : LoopAmbient :=
   AffineMap.lineMap b a ((s + r) / (2 * r))
@@ -43,10 +32,6 @@ private theorem midpoint_mem_closedBall {ρ : ℝ} {a b : LoopAmbient}
   have h := (convex_closedBall (0 : LoopAmbient) ρ) ha hb
     (by norm_num : 0 ≤ (1 / 2 : ℝ)) (by norm_num : 0 ≤ (1 / 2 : ℝ)) (by norm_num)
   simpa only [smul_add] using h
-
-
-
-
 
 theorem midpoint_halfCone_green {g : LoopAmbient → ℝ}
     {v d : ℝ → LoopAmbient} {r ρ K : ℝ}
@@ -135,9 +120,6 @@ theorem midpoint_halfCone_green {g : LoopAmbient → ℝ}
   rw [hedge] at hgreen
   refine ⟨hgreen.1, ?_⟩
   simpa [polarPlane, m, e, h, L, sub_eq_add_neg] using hgreen.2
-
-
-
 
 theorem midpoint_angular_energy_le {v d : ℝ → LoopAmbient}
     (hv : ContinuousOn v (Icc (0 : ℝ) Real.pi))

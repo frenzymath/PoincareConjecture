@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SquareAnnulusEulerCount
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem surfaceEulerCount_eq_zero_of_four_convex_cover
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

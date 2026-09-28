@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.PrescribedIntervalSourceFibers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -64,11 +53,6 @@ private theorem exists_interval_image_parameter
       exact ⟨⟨x, hWS hx⟩, hx, hval ⟨x, hWS hx⟩⟩
     · rintro ⟨x, hx, rfl⟩
       exact ⟨x, hx, (hval x).symm⟩
-
-
-
-
-
 
 theorem exists_three_disk_chain_map
     {E0 E1 E2 F X ι : Type*}

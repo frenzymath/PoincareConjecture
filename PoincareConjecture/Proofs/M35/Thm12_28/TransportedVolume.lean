@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedBall
 import PoincareConjecture.Proofs.M10.InverseMeasure
 import PoincareConjecture.Proofs.M10.MeasureGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -71,9 +62,6 @@ private theorem edist_image_le_on_inner_ball
     hbound gamma 0 1 hsmooth.contMDiffOn hmaps
   rw [ENNReal.ofReal_coe_nnreal] at hpath
   exact hdist.trans (hpath.trans (mul_le_mul' le_rfl hlength.le))
-
-
-
 
 theorem calibratedVolume_image_le_of_tangentNorm_le
     [T3Space M] [T3Space N] [SecondCountableTopology M]
@@ -143,9 +131,6 @@ theorem calibratedVolume_image_le_of_tangentNorm_le
     M10.map_inverse_restrict_apply phi.toOpenPartialHomeomorph
       (calibratedMetricVolume h) hA (hAU.trans hUsource)
   exact hmeasure ▸ hglobal
-
-
-
 
 theorem calibratedVolume_le_image_of_tangentNorm_lower
     [T3Space M] [T3Space N] [SecondCountableTopology N]

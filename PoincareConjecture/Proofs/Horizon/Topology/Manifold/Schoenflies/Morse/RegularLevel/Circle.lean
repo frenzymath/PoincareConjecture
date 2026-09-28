@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Circle.UnitSphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OneDimensional.Classification
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevelComponent
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +23,6 @@ private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 2)) = 1 + 1) :=
   ⟨by simp⟩
 
-
-
 theorem nonempty_unitCircle_diffeomorph_regularLevelComponent_of_isCompact
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     (U : Opens S2) (hreg : ∀ x ∈ U, mfderiv (𝓡 2) 𝓘(Real, Real) h x ≠ 0)
@@ -52,8 +41,6 @@ theorem nonempty_unitCircle_diffeomorph_regularLevelComponent_of_isCompact
   let := A
   let := hA
   exact ⟨(AddCircle.unitSphereDiffeomorph hT hquotient).symm.trans e⟩
-
-
 
 theorem nonempty_unitCircle_diffeomorph_regularLevelComponent
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

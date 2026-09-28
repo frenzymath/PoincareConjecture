@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusCurrent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusBoundaryConormalBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64Annulus_curvature_motion_current_flux_le
     (F : RicciFlow n M (Icc a b)) {t : ℝ}

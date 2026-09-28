@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckComparison
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_inverse_coordinate_map_of_axial_mem {z : RoundCylinderSpace}
     (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     N.coordinate_inverse (N.coordinate_map z) = z := by
@@ -34,25 +22,18 @@ theorem coordinate_inverse_coordinate_map_of_axial_mem {z : RoundCylinderSpace}
   rw [N.coordinate_map_eq] at h
   exact h
 
-
-
 theorem coordinate_map_mem_of_axial_mem {z : RoundCylinderSpace}
     (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) : N.coordinate_map z ∈ N.carrier := by
   let z' : NeckDomain N.epsilon := (z.1, ⟨z.2, hz⟩)
   rw [← N.coordinate_map_eq z']
   exact (N.coordinate z').property
 
-
-
 def restrictedCarrier (epsilon : ℝ) : Set M :=
   N.carrier ∩ N.coordinate_inverse ⁻¹' (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹)
-
-
 
 theorem restrictedCarrier_isOpen (epsilon : ℝ) : IsOpen (N.restrictedCarrier epsilon) :=
   N.coordinate_inverse_smooth.continuousOn.isOpen_inter_preimage N.carrier_open
     (isOpen_univ.prod isOpen_Ioo)
-
 
 noncomputable def restrictedCoordinate {epsilon : ℝ} (h : N.epsilon ≤ epsilon) :
     NeckDomain epsilon ≃ₜ N.restrictedCarrier epsilon := by
@@ -91,8 +72,6 @@ noncomputable def restrictedCoordinate {epsilon : ℝ} (h : N.epsilon ≤ epsilo
     apply Subtype.ext
     exact congrArg (fun y : N.carrier => (y : M))
       (N.coordinate_inverse_right x x.property.1)
-
-
 
 noncomputable def restrict {epsilon : ℝ} (h : N.epsilon ≤ epsilon)
     (hepsilon : epsilon < 1 / 2) : EpsilonNeck g where
@@ -143,8 +122,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {t delta : ℝ}
-
-
 
 noncomputable def restrict (N : StrongEvolvingNeck K t delta)
     {epsilon : ℝ} (h : delta ≤ epsilon) (hepsilon : epsilon < 1 / 2) :

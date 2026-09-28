@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies.Hemisphere
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   {v : E}
-
 
 abbrev Plane (v : E) := (Real ∙ v)ᗮ
 
@@ -33,12 +24,10 @@ theorem add_center_ne_zero (hv : ‖v‖ = 1) (x : Plane v) : (x : E) + v ≠ 0 
   rw [h, inner_zero_right] at this
   exact zero_ne_one this
 
-
 def toSphere (hv : ‖v‖ = 1) (x : Plane v) : sphere (0 : E) 1 :=
   ⟨‖(x : E) + v‖⁻¹ • ((x : E) + v), by
     rw [mem_sphere_zero_iff_norm, norm_smul]
     simp [norm_ne_zero_iff.mpr (add_center_ne_zero hv x)]⟩
-
 
 def fromSphere (v : E) (p : sphere (0 : E) 1) : Plane v :=
   (⟪v, (p : E)⟫)⁻¹ • (Plane v).orthogonalProjectionOnto (p : E)
@@ -97,7 +86,6 @@ theorem continuousOn_fromSphere (v : E) :
   · exact ((Plane v).orthogonalProjectionOnto.continuous.comp
       continuous_subtype_val).continuousOn
 
-
 def chart (hv : ‖v‖ = 1) : OpenPartialHomeomorph (Plane v) (sphere (0 : E) 1) where
   toFun := toSphere hv
   invFun := fromSphere v
@@ -130,8 +118,6 @@ def chart (hv : ‖v‖ = 1) : OpenPartialHomeomorph (Plane v) (sphere (0 : E) 1
     (chart hv 0 : E) = v := by
   simp [chart, toSphere, hv]
 
-
-
 theorem normalized_linear_chart (hv : ‖v‖ = 1)
     (A : E ≃L[Real] E) (B : Plane v ≃L[Real] Plane v)
     (hAv : A v = v) (hAB : ∀ x : Plane v, A (x : E) = (B x : E)) (x : Plane v) :
@@ -149,8 +135,6 @@ theorem normalized_linear_chart (hv : ‖v‖ = 1)
 section FiniteDimensional
 
 variable [FiniteDimensional Real E]
-
-
 
 def extendLinear (v : E) (B : Plane v ≃L[Real] Plane v) : E ≃L[Real] E :=
   let e := ((Real ∙ v).prodEquivOfIsCompl (Plane v)

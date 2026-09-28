@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineBasisEquivalence
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonExtremeVertex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ private theorem independent_axis_corner :
   · simp [S]
   · simp [S]
 
-
-
-
 theorem AffineIndependent.exists_axis_corner_coordinates {a b c : ℝ × ℝ}
     (h : AffineIndependent ℝ ![a, b, c]) :
     ∃ e : (ℝ × ℝ) ≃ᴬ[ℝ] (ℝ × ℝ), e a = (1, 0) ∧ e b = (0, 0) ∧ e c = (0, 1) := by
@@ -41,10 +29,6 @@ theorem AffineIndependent.exists_axis_corner_coordinates {a b c : ℝ × ℝ}
   exact ⟨e.toContinuousAffineEquiv, he 0, he 1, he 2⟩
 
 namespace Polygon
-
-
-
-
 
 theorem exists_supported_axis_corner {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

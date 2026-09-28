@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M04.RicciTraceVariation
 import PoincareConjecture.Proofs.M04.ScalarContractions
 import PoincareConjecture.Proofs.M04.RicciReactionSymmetry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -149,4 +142,3 @@ theorem hasDerivAt_ricci_evolution (F : RicciFlow n M J)
   rw [hevol, hL, add_comm]
 
 end PoincareConjecture.M04
-

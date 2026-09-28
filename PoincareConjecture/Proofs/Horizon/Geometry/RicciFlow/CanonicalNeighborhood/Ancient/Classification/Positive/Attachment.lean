@@ -2,18 +2,6 @@ import PoincareConjecture.Definitions.M27KappaAlternatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Cap
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem NoncompactKappa.strongCappedTube_of_covered_attachment
     (K : AncientKappaSolution 3 M) {t epsilon C : ℝ} (ht : t ≤ 0)
@@ -51,8 +37,6 @@ theorem NoncompactKappa.strongCappedTube_of_covered_attachment
   by_cases hx : x ∈ A.cap.core
   · exact Or.inl hx
   · exact Or.inr (hstrong x hx)
-
-
 
 theorem m27CappedEuclidean_of_covered_attachment
     (K : AncientKappaSolution 3 M)

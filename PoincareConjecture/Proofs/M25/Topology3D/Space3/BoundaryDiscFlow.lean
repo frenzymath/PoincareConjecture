@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldFlowTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_boundaryDisc_ambient_flow (v : E) (hv : ‖v‖ = 1)
     (f : (ℝ ∙ v)ᗮ → (ℝ ∙ v)ᗮ) (hf : ContDiff ℝ ∞ f) (hfc : HasCompactSupport f)

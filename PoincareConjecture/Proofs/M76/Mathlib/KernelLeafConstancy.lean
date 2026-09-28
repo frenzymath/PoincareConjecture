@@ -3,15 +3,6 @@ import Mathlib.Analysis.Normed.Operator.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter unitInterval
@@ -19,9 +10,6 @@ open scoped Topology
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem ContinuousOn.eq_of_sub_mem_ker_of_convex {G : E → E →L[ℝ] F}
     {V : Set E} (hG : ContinuousOn G V) (hV : Convex ℝ V)

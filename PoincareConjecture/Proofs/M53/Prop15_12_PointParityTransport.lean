@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_RestrictionNaturality
 import PoincareConjecture.Proofs.M53.Prop15_12_OpenEmbeddingExcision
 import PoincareConjecture.Proofs.M53.Mathlib.EvenEquiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +12,6 @@ open PoincareConjecture.Proofs.M02.Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
-
 
 theorem even_point_restriction_openEmbedding_iff
     {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y] [T1Space Y]

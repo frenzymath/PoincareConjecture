@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.ComponentSourceRestriction
 import PoincareConjecture.Proofs.M74.Cor15_4.ComponentTargetRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.SmoothConnectedSumData
 
 variable {A B C P : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
-
-
 
 theorem selectedFirstRegion_isClopen_of_disjoint_chart {W : Set A.carrier}
     (hW : IsClopen W)
@@ -35,8 +25,6 @@ theorem selectedFirstRegion_isClopen_of_disjoint_chart {W : Set A.carrier}
   simpa only [compl_compl, compl_univ, selectedSecondRegion, preimage_empty,
     inter_empty, union_empty] using h
 
-
-
 theorem selectedSecondRegion_isClopen_of_disjoint_chart {W : Set B.carrier}
     (hW : IsClopen W)
     (hdisjoint : Disjoint W (S.second_ball.map '' ball (0 : StandardCapSpace) 2)) :
@@ -49,8 +37,6 @@ theorem selectedSecondRegion_isClopen_of_disjoint_chart {W : Set B.carrier}
   rw [S.selectedComponentRegion_compl] at h
   simpa only [compl_compl, compl_univ, selectedFirstRegion, preimage_empty,
     inter_empty, empty_union] using h
-
-
 
 noncomputable def firstUntouchedEquivalence {W : Set A.carrier}
     (E : SurgeryRegionEquivalence P A univ W)
@@ -69,8 +55,6 @@ noncomputable def firstUntouchedEquivalence {W : Set A.carrier}
     inverse_image := by rw [← himage]; exact F.inverse_image
     right_inverse := by rw [← himage]; exact F.right_inverse
     inverse_smooth := by rw [← himage]; exact F.inverse_smooth }
-
-
 
 noncomputable def secondUntouchedEquivalence {W : Set B.carrier}
     (E : SurgeryRegionEquivalence P B univ W)

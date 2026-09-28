@@ -3,17 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Exp
 import Mathlib.Analysis.Normed.Group.Tannery
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,7 +24,6 @@ private theorem multiplier_mem (m : iota → ℝ) {C : ℝ} (hC : 0 ≤ C)
   simpa only [norm_mul, Real.norm_eq_abs, Pi.smul_apply, smul_eq_mul,
     abs_mul, abs_of_nonneg hC] using
     mul_le_mul_of_nonneg_right (hm i) (abs_nonneg (x i))
-
 
 def multiplier (m : iota → ℝ) (C : ℝ) (hC : 0 ≤ C)
     (hm : ∀ i, |m i| ≤ C) : State iota →L[ℝ] State iota :=
@@ -86,7 +74,6 @@ private theorem heatCoefficient_bound (lambda : iota → NNReal) (t : NNReal)
   exact mul_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr t.coe_nonneg)
     (lambda i).coe_nonneg
 
-
 def heat (lambda : iota → NNReal) (t : NNReal) :
     State iota →L[ℝ] State iota :=
   multiplier (fun i => Real.exp (-(t : ℝ) * (lambda i : ℝ))) 1
@@ -117,7 +104,6 @@ theorem heat_add (lambda : iota → NNReal) (s t : NNReal) :
 theorem norm_sq_eq_tsum (x : State iota) :
     ‖x‖ ^ 2 = ∑' i, |x i| ^ 2 := by
   simpa using lp.norm_rpow_eq_tsum (by norm_num : 0 < (2 : ENNReal).toReal) x
-
 
 theorem continuous_heat_apply (lambda : iota → NNReal) (x : State iota) :
     Continuous (fun t : NNReal => heat lambda t x) := by
@@ -179,7 +165,6 @@ theorem spectralCoefficient_bound {t a : ℝ} (ht : 0 < t) (ha : 0 ≤ a) :
       ring
     _ ≤ 1 := h
 
-
 def heatGenerator (lambda : iota → NNReal) (t : ℝ) (ht : 0 < t) :
     State iota →L[ℝ] State iota :=
   multiplier (fun i => (lambda i : ℝ) * Real.exp (-t * lambda i))
@@ -215,7 +200,6 @@ theorem spectralCoefficient_pow_bound {t a : ℝ} (ht : 0 < t) (ha : 0 ≤ a)
       rw [neg_mul, mul_pow]
       ring
     _ ≤ k.factorial := h
-
 
 def heatPower (lambda : iota → NNReal) (k : ℕ) (t : ℝ) (ht : 0 < t) :
     State iota →L[ℝ] State iota :=

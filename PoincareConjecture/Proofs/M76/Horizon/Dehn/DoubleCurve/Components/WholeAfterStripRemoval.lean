@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.RetainedComponentContainment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem whole_components_of_selected_strip_pair
     {E I : Type*} [TopologicalSpace E] {S G A M C B0 B1 : Set E}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryArithme
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,9 +9,6 @@ open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_boundaryLength_pos
     (N : IntrinsicAnnulus) {radius a b : ℝ} (hradius : radius ≠ 0) (hab : a < b) :
@@ -40,9 +27,6 @@ theorem m64Intrinsic_boundaryLength_pos
   change F a + intrinsicBoundaryLength N.metric radius a b = F b at hadd
   linarith [hFmono hab]
 
-
-
-
 theorem m64Intrinsic_boundaryLength_subarc_decomposition
     (N : IntrinsicAnnulus) {radius a b c d : ℝ} (hradius : radius ≠ 0) :
     intrinsicBoundaryLength N.metric radius a b =
@@ -57,9 +41,6 @@ theorem m64Intrinsic_boundaryLength_subarc_decomposition
     (hf.intervalIntegrable a d) (hf.intervalIntegrable d b)
   unfold intrinsicBoundaryLength
   linarith
-
-
-
 
 theorem m64Intrinsic_boundaryLength_subarc_quantitative
     (N : IntrinsicAnnulus) {radius a b c d : ℝ} (hradius : radius ≠ 0)
@@ -76,8 +57,6 @@ theorem m64Intrinsic_boundaryLength_subarc_quantitative
   have hleft := m64Intrinsic_boundaryLength_nonneg N radius a c hac
   have hright := m64Intrinsic_boundaryLength_nonneg N radius d b hdb
   constructor <;> linarith
-
-
 
 theorem m64Intrinsic_boundaryLength_proper_subarc_lt
     (N : IntrinsicAnnulus) {radius a b c d : ℝ} (hradius : radius ≠ 0)

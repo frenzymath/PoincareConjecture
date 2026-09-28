@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalizedMetricJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceOrdinaryPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem capPersistence_eventually_ordinary_neck_error
     (p : ℕ → (G).point) (hp : ∀ k, 0 < (G).scalar (p k))

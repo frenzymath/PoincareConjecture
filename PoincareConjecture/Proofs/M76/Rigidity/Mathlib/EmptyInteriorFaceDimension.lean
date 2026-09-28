@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFacetInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem face_card_le_of_interior_space_eq_empty
     (K : SimplicialComplex ℝ E) (hint : interior K.space = ∅)
@@ -37,8 +25,6 @@ theorem face_card_le_of_interior_space_eq_empty
     simpa [b] using b.tot
   obtain ⟨x, hx⟩ := hnonempty
   exact Set.notMem_empty x (hint ▸ interior_mono (K.convexHull_subset_space hs) hx)
-
-
 
 theorem AffineOnFaces.face_card_le_of_injOn_of_empty_interior
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

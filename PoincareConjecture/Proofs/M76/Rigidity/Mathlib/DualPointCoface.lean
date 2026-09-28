@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_coface_of_mem_dualBlock
     (K : SimplicialComplex ℝ E) [Fintype K.faces] {s : Finset E} {x : E}

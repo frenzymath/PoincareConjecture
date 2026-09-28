@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Div
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.TraceBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -30,7 +18,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem neg_laplacian_logarithmic_heat_evolution (D : LeviCivitaData g)
     {f : ℝ × M → ℝ} {t : ℝ}
@@ -60,8 +47,6 @@ theorem neg_laplacian_logarithmic_heat_evolution (D : LeviCivitaData g)
   rw [hneg, D.bochner_identity hs, mvfderiv_fun_neg]
   simp only [neg_apply]
   ring
-
-
 
 theorem neg_laplacian_logarithmic_heat_evolution_le (D : LeviCivitaData g)
     (hn : 0 < n) {f : ℝ × M → ℝ} {t k : ℝ}
@@ -96,8 +81,6 @@ theorem neg_laplacian_logarithmic_heat_evolution_le (D : LeviCivitaData g)
   rw [he]
   linarith
 
-
-
 theorem gradient_normSq_logarithmic_heat_evolution (D : LeviCivitaData g)
     {f : ℝ × M → ℝ} {t : ℝ}
     (hf : ∀ x, ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ f (t, x))
@@ -122,8 +105,6 @@ theorem gradient_normSq_logarithmic_heat_evolution (D : LeviCivitaData g)
       ((D.contMDiff_inner_gradient hs hs x).mdifferentiableAt (by simp))]
   simp only [add_apply]
   ring
-
-
 
 theorem liYau_logarithmic_heat_evolution (D : LeviCivitaData g)
     {f : ℝ × M → ℝ} {t : ℝ}
@@ -173,8 +154,6 @@ theorem liYau_logarithmic_heat_evolution (D : LeviCivitaData g)
   change deriv (fun s => w s x) t - D.laplacian (w t) x = _ at h₂
   linear_combination α * h₁ + (1 - α) * h₂
 
-
-
 theorem liYau_evolution_inequality (D : LeviCivitaData g)
     (hn : 0 < n) {k : ℝ}
     (hRic : ∀ x (v : TangentSpace (𝓡 n) x), -k * g.inner x v v ≤ D.ricci x v v)
@@ -223,8 +202,6 @@ theorem liYau_evolution_inequality (D : LeviCivitaData g)
     rw [he]
     dsimp only [f] at htrace hr
     linarith
-
-
 
 theorem liYau_evolution_inequality_of_abs_sectionalCurvature_le [T2Space M]
     (D : LeviCivitaData g) (hn : 0 < n) {K : ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexHalfC
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBase
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +15,6 @@ local notation "V" => ((ℝ × ℝ) × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.vertex_half_ballPair_and_outside
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)
@@ -109,9 +96,6 @@ theorem HamiltonProperDiskTriangulation.vertex_half_ballPair_and_outside
   refine ⟨x, hrim.subset (Or.inl hx), ?_⟩
   intro hxB
   exact hnot ⟨hx, hactive.symm.subset (Or.inr hxB)⟩
-
-
-
 
 theorem HamiltonProperDiskTriangulation.vertex_half_base_complement
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

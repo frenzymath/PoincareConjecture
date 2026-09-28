@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Mollifier
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,8 +18,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
 omit [CompleteSpace E] in
-
-
 
 theorem scalarVector_normed_convolution_lipschitz {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) (phi : ContDiffBump (0 : Plane)) :
@@ -62,10 +48,6 @@ theorem scalarVector_normed_convolution_lipschitz {u : Plane → E} {L : ℝ≥0
     _ = (L : ℝ) * ‖x - y‖ := by
       rw [integral_mul_const, phi.integral_normed, one_mul]
 
-
-
-
-
 theorem scalarVector_mollifier_error {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) {r : ℝ} (hr : 0 < r) (x : Plane) :
     dist ((mollifierEps hr ⋆[lsmul ℝ ℝ, volume] u) x) (u x) ≤ (L : ℝ) * r := by
@@ -78,8 +60,6 @@ theorem scalarVector_mollifier_error {u : Plane → E} {L : ℝ≥0}
 
 omit [CompleteSpace E] in
 
-
-
 theorem scalarVector_mollifier_smooth {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) {r : ℝ} (hr : 0 < r) :
     ContDiff ℝ ∞ (mollifierEps hr ⋆[lsmul ℝ ℝ, volume] u) :=
@@ -88,18 +68,11 @@ theorem scalarVector_mollifier_smooth {u : Plane → E} {L : ℝ≥0}
 
 omit [CompleteSpace E] in
 
-
-
-
 theorem scalarVector_mollifier_derivative_bound {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) {r : ℝ} (hr : 0 < r) (x : Plane) :
     ‖fderiv ℝ (mollifierEps hr ⋆[lsmul ℝ ℝ, volume] u) x‖ ≤ (L : ℝ) :=
   norm_fderiv_le_of_lipschitz ℝ
     (scalarVector_normed_convolution_lipschitz hu (mollifierBumpEps hr))
-
-
-
-
 
 theorem scalarVector_mollifier_uniform {u : Plane → E} {L : ℝ≥0}
     (hu : LipschitzWith L u) {r : ℕ → ℝ} (hr : ∀ j, 0 < r j)

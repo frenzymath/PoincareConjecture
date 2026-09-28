@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.IncidenceSi
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -64,7 +56,6 @@ theorem singularValue_pathSimplex (c : A.ModTwoEdgeCocycle)
   change c.pathValue (simplexEdgePath f) = c.pathValue p
   change c.pathValue (simplexEdgePath f) = c.pathValue p - 0 at h
   exact h.trans (sub_zero _)
-
 
 theorem singularValue_cocycle (c : A.ModTwoEdgeCocycle)
     (s : (TopCat.toSSet.obj (TopCat.of A.barycentricSpace)) _⦋2⦌) :

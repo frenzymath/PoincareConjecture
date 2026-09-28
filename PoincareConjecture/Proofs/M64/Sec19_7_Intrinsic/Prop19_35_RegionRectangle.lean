@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopRegionChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_region_rectangle_of_halfplane
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)
@@ -64,10 +48,6 @@ theorem m64Intrinsic_exists_region_rectangle_of_halfplane
   change 0 < sigma * (sigma * t)
   rw [hsign]
   exact htpos
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_region_rectangle
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

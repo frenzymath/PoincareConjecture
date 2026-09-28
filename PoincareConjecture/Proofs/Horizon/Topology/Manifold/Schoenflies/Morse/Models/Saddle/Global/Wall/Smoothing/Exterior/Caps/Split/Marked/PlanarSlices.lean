@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.ShearPair
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -74,7 +72,6 @@ theorem contDiffOn_tangentPlanarInverse :
   · exact ((by fun_prop : ContDiffOn Real ∞ (fun z : Real × E2 => z.2 0) _).add
       (contDiff_tangentFlattenDepth.comp he).contDiffOn).div hr hn
   · exact (by fun_prop : ContDiffOn Real ∞ (fun z : Real × E2 => z.2 1) _).div hr hn
-
 
 def tangentPlanarDiffeomorph (t : Real) (ht : t ∈ Ioo (-1 : Real) 1) :
     Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where

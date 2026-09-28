@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
 
-
-
 noncomputable def M64PeriodicDegreeOneLift.identity : M64PeriodicDegreeOneLift where
   map := id
   monotone := monotone_id
@@ -29,8 +16,6 @@ noncomputable def M64PeriodicDegreeOneLift.identity : M64PeriodicDegreeOneLift w
   lipschitz_constant := 1
   lipschitz_nonnegative := by norm_num
   lipschitz_on := by intro x y; simp
-
-
 
 noncomputable def M64PeriodicDegreeOneLift.comp
     (outer inner : M64PeriodicDegreeOneLift) : M64PeriodicDegreeOneLift where
@@ -56,13 +41,9 @@ noncomputable def M64PeriodicDegreeOneLift.comp
           outer.lipschitz_nonnegative
       _ = (outer.lipschitz_constant * inner.lipschitz_constant) * |x - y| := by ring
 
-
-
 theorem M64PeriodicDegreeOneLift.comp_map
     (outer inner : M64PeriodicDegreeOneLift) (x : ℝ) :
     (outer.comp inner).map x = outer.map (inner.map x) := rfl
-
-
 
 theorem M64PeriodicDegreeOneLift.comp_assoc
     (a b c : M64PeriodicDegreeOneLift) :
@@ -73,15 +54,11 @@ theorem M64PeriodicDegreeOneLift.comp_assoc
   simp [M64PeriodicDegreeOneLift.comp, Function.comp_def]
   ring
 
-
-
 theorem M64PeriodicDegreeOneLift.identity_comp
     (a : M64PeriodicDegreeOneLift) :
     M64PeriodicDegreeOneLift.identity.comp a = a := by
   cases a
   simp [M64PeriodicDegreeOneLift.identity, M64PeriodicDegreeOneLift.comp]
-
-
 
 theorem M64PeriodicDegreeOneLift.comp_identity
     (a : M64PeriodicDegreeOneLift) :

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FillingTimeContinuity
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FillingWitnesses
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.ProjectedAreaEstimate
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
 
 theorem m65InteriorFillingDifference (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (Set.univ : Set M)) (V : M64ThreeDimensionalFlowConclusion F)
@@ -53,8 +43,6 @@ theorem m65InteriorFillingDifference (hM64 : M64ComparisonTheory.{u})
   obtain ⟨_, _, hdiff⟩ := m65ProjectedDiskComparison
     (V.flow.projection circumference h q q.2) gluing D
   exact hdiff.trans (m65FamilyInteriorSweptAnnulus_area_le C h hlt z has hst htb q.2)
-
-
 
 theorem m65ClosedTimeFillingDifference (hM61 : M61RawWidthCore.{u})
     (hM64 : M64ComparisonTheory.{u}) (compact : IsCompact (Set.univ : Set M))

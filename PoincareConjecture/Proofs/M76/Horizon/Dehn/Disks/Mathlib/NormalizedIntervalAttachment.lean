@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.PrescribedAttachmentRim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoIntervalDiskNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -26,7 +17,6 @@ local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
 
-
 noncomputable def squareDiskRimPath {X : Type*} [TopologicalSpace X] (f : V2 → X)
     (hf : ContinuousOn f D) : Path (f squareRimBase) (f squareRimBase) where
   toFun t := f (squareRimLoop t)
@@ -35,8 +25,6 @@ noncomputable def squareDiskRimPath {X : Type*} [TopologicalSpace X] (f : V2 →
     (fun t ↦ sphere_subset_closedBall (squareRimLoop t).property)
   source' := congrArg (fun x : Q ↦ f x) squareRimLoop.source
   target' := congrArg (fun x : Q ↦ f x) squareRimLoop.target
-
-
 
 theorem exists_normalized_prescribed_interval_disk_map
     {E0 E1 F X ι : Type*}

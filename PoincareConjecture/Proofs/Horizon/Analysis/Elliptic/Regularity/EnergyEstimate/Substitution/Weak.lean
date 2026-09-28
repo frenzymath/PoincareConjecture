@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Master
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Standard
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -357,7 +349,6 @@ theorem principal_term_ge_lambda_norm_sq_nonsmooth
     exact integrable_finsetSum _ (fun i _ => h_inner i)
   exact integral_mono h_lhs_int h_rhs_int h_pointwise
 
-
 theorem nirenberg_master_inequality_nonsmooth
     {Ω : Set EuclN} (B : SmoothEllipticBilinearForm d Ω)
     {u f : EuclN → ℝ}
@@ -646,7 +637,5 @@ theorem nirenberg_master_inequality_nonsmooth
     hΩ' hΩ'_closure hΩ'_compact hh_supp_in_Ω' k
     h_FK_diffQuot_u_bound h_v_test_sq_bound
     h_master_nonsmooth
-
-
 
 end Poincare.Analysis.Sobolev.NirenbergSubstitutionNonSmooth

@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalPolarEndp
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuousFocusingArc
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingLoss
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_normal_collision_focusing
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

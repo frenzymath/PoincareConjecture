@@ -12,9 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "I" => Icc (-1 : ℝ) 1
 
-
-
-
 theorem nonboundary_base_contact_empty {s : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hsF : s ∉ (T.marked 1).faces) :
     T.surfaceBase s ∩ (T.marked 1).space = ∅ := by
@@ -28,8 +25,6 @@ theorem nonboundary_base_contact_empty {s : Finset E}
     ((T.marked 2).nonempty_of_mem_faces hs) hnot
 
 open Classical in
-
-
 
 theorem vertex_mem_boundary_of_dual_contact (p : (T.marked 2).vertices)
     {x : E} (hxN : x ∈ (T.vertexBlock p).space)
@@ -49,6 +44,4 @@ theorem vertex_mem_boundary_of_dual_contact (p : (T.marked 2).vertices)
       (Finset.singleton_nonempty _) hnot
   exact he.subset ⟨hxN, hxF⟩
 
-
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

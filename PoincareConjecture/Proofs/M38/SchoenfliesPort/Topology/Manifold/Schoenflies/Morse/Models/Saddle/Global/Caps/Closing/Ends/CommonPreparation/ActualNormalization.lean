@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Actual.TerminalNormalization
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CylindricalNormalizationUpper
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -39,9 +31,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
 set_option maxHeartbeats 2000000 in
-
-
-
 
 theorem exists_terminal_actual_normalization_with_common_preparation
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves) (i : Fin 3)

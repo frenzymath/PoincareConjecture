@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Normed.Lp.PiLp
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
-
 
 theorem ContinuousLinearMap.eq_sum_piLp_bilinear_coordinates
     {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
@@ -46,9 +34,6 @@ theorem ContinuousLinearMap.eq_sum_piLp_bilinear_coordinates
   change v j • (u i • L (e i) (f j)) = u i • (v j • L (e i) (f j))
   exact smul_comm _ _ _
 
-
-
-
 noncomputable def ContinuousLinearMap.piLpBilinearFromCoordinates
     {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
     {𝕜 I J F : Type*} [NontriviallyNormedField 𝕜]
@@ -63,8 +48,6 @@ noncomputable def ContinuousLinearMap.piLpBilinearFromCoordinates
       ((ContinuousLinearMap.proj j : (J → F) →L[𝕜] F).comp
         (ContinuousLinearMap.proj i : (I → J → F) →L[𝕜] (J → F)))
 
-
-
 theorem ContinuousLinearMap.piLpBilinearFromCoordinates_apply
     {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)]
     {𝕜 I J F : Type*} [NontriviallyNormedField 𝕜]
@@ -76,8 +59,6 @@ theorem ContinuousLinearMap.piLpBilinearFromCoordinates_apply
   simp only [ContinuousLinearMap.piLpBilinearFromCoordinates, sum_apply,
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.proj_apply]
   rfl
-
-
 
 theorem ContinuousLinearMap.piLpBilinearFromCoordinates_evaluations
     {p q : ENNReal} [Fact (1 ≤ p)] [Fact (1 ≤ q)]

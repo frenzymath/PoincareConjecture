@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveBoxLines
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,19 +10,15 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 def HistoryPositive {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
     (H : M33RegularHistoryRealization G F) (p : G.point) : Prop :=
   ∀ ht : p.1 ∈ G.interval, SurgeryPositiveComponentAt F p.1 (H.forward p.1 ht p.2)
-
 
 def componentBoxImage (G : GeneralizedRicciFlowData.{u})
     (i : Σ q : G.box_index, (G.box q).carrier.carrier) : Set G.point :=
   (fun p : (G.box i.1).interval × (G.box i.1).carrier.carrier =>
     (⟨p.1.1, (G.box i.1).forward p.1.1 p.1.2 p.2⟩ : G.point)) ''
       (univ ×ˢ connectedComponent i.2)
-
 
 theorem componentBoxImage_isOpen (G : GeneralizedRicciFlowData.{u})
     (i : Σ q : G.box_index, (G.box q).carrier.carrier) :
@@ -40,7 +28,6 @@ theorem componentBoxImage_isOpen (G : GeneralizedRicciFlowData.{u})
   exact (G.box_openEmbedding i.1).isOpenMap _
     (isOpen_univ.prod isOpen_connectedComponent)
 
-
 theorem componentBoxImage_cover (G : GeneralizedRicciFlowData.{u}) :
     (univ : Set G.point) ⊆ ⋃ i, componentBoxImage G i := by
   intro p _
@@ -48,8 +35,6 @@ theorem componentBoxImage_cover (G : GeneralizedRicciFlowData.{u}) :
   apply mem_iUnion.mpr
   refine ⟨⟨q, x⟩, ⟨(⟨p.1, ht⟩, x), ⟨mem_univ _, mem_connectedComponent⟩, ?_⟩⟩
   exact congrArg (fun z => (⟨p.1, z⟩ : G.point)) hx
-
-
 
 theorem historyPositive_of_mem_componentBox
     {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
@@ -65,8 +50,6 @@ theorem historyPositive_of_mem_componentBox
   intro ht
   exact positive_component_history_box_connected H i.1 hxy s.2 t.2 hpr
     (hpos (m33BoxIntervalSubset G i.1 s.2))
-
-
 
 theorem historyPositive_along_path
     {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}

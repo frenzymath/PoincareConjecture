@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -85,7 +74,6 @@ theorem isNonseparating_iff (h : N.SameUpToReversal N') :
     N.IsNonseparating ↔ N'.IsNonseparating := by
   simp only [IsNonseparating, h.center_eq, h.central_sphere_eq]
 
-
 theorem exists_coordinate_inverse (h : N.SameUpToReversal N') :
     ∃ σ : ℝ, (σ = 1 ∨ σ = -1) ∧
       ∀ x ∈ N.carrier, N'.coordinate_inverse x =
@@ -108,7 +96,6 @@ theorem exists_coordinate_inverse (h : N.SameUpToReversal N') :
       congrArg N'.coordinate_inverse (hcoord (N.coordinate_inverse x) hz)
     _ = ((N.coordinate_inverse x).1, σ * (N.coordinate_inverse x).2) :=
       N'.coordinate_inverse_coordinate_map hz'
-
 
 theorem regions_eq_or_reversed (h : N.SameUpToReversal N') :
     (∀ a b : ℝ, N.region a b = N'.region a b) ∨

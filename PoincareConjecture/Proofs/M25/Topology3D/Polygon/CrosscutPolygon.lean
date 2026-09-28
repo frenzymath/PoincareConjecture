@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CyclicBoundaryPath
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.PolygonalArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -56,8 +46,6 @@ private theorem crosscut_vertex_count (hp : IsSimplePolygon p) (a b : Fin n)
   exact Set.disjoint_left.mp havoid
     ⟨polygon_arcEdge_subset_boundary q (0 : Fin 1) (hedge.symm ▸ hx),
       fun he => he.elim hxa hxb⟩ (polygon_edgeSet_subset_boundary p a hx)
-
-
 
 theorem IsSimplePolygon.exists_polygon_of_boundary_path_and_crosscut
     (hp : IsSimplePolygon p) (hq : IsSimplePolygonalArc q) (a b : Fin n) (hab : b ≠ a)

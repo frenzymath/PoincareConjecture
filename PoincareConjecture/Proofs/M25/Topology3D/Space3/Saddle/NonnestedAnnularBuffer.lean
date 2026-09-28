@@ -4,15 +4,6 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,12 +11,8 @@ open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 set_option linter.unusedVariables false in
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_saddle_nonnested_annular_buffer
     (kappa : OpenPartialHomeomorph E2 E2)

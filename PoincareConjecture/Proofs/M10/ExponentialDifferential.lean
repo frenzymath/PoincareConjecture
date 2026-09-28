@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.EndpointCoordinates
 import PoincareConjecture.Proofs.M10.SmoothMetric
 import PoincareConjecture.Proofs.M10.PullbackMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

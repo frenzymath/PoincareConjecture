@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.CompactSlabParabolic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Linearity
 import PoincareConjecture.Proofs.M10.LaplacianLinearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open M04
-
-
-
 
 theorem sectional_ge_heat_subsolution_on_compact
     {J : Set ℝ} {a b : ℝ} (hab : a < b)

@@ -6,14 +6,6 @@ import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Convex.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -22,8 +14,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_saddle_short_sector_templates
     (kappa : OpenPartialHomeomorph E2 E2)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.ThreeSphereConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
-
 noncomputable def stereoDifferential
     (a : EuclideanSpace ℝ (Fin 4))
     (L : EuclideanSpace ℝ (Fin 3) →ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
@@ -30,8 +19,6 @@ noncomputable def stereoDifferential
   (4 / (‖z‖ ^ 2 + 4)) • L.toContinuousLinearMap -
     (8 / (‖z‖ ^ 2 + 4) ^ 2) • (innerSL ℝ z).smulRight (L z) +
     (16 / (‖z‖ ^ 2 + 4) ^ 2) • (innerSL ℝ z).smulRight a
-
-
 
 theorem hasFDerivAt_stereo_comp_isometry
     (a : EuclideanSpace ℝ (Fin 4))
@@ -59,8 +46,6 @@ theorem hasFDerivAt_stereo_comp_isometry
     field_simp
     <;> ring
 
-
-
 theorem stereoDifferential_inner
     (a : UnitThreeSphere)
     (L : EuclideanSpace ℝ (Fin 3) →ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
@@ -84,14 +69,11 @@ theorem stereoDifferential_inner
   field_simp
   <;> ring
 
-
-
 noncomputable def sphereStereoPlane (a : UnitThreeSphere) :
     EuclideanSpace ℝ (Fin 3) →ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4) :=
   ((ℝ ∙ (a : EuclideanSpace ℝ (Fin 4)))ᗮ.subtypeₗᵢ).comp
     (OrthonormalBasis.fromOrthogonalSpanSingleton 3
       (ne_zero_of_mem_unit_sphere a)).repr.symm.toLinearIsometry
-
 
 theorem sphereStereoPlane_orthogonal (a : UnitThreeSphere)
     (z : EuclideanSpace ℝ (Fin 3)) :
@@ -99,8 +81,6 @@ theorem sphereStereoPlane_orthogonal (a : UnitThreeSphere)
   exact Submodule.mem_orthogonal_singleton_iff_inner_right.mp
     ((OrthonormalBasis.fromOrthogonalSpanSingleton 3
       (ne_zero_of_mem_unit_sphere a)).repr.symm z).property
-
-
 
 theorem threeSphereStereoInverse_coe (a : UnitThreeSphere)
     (z : EuclideanSpace ℝ (Fin 3)) :
@@ -112,13 +92,10 @@ theorem threeSphereStereoInverse_coe (a : UnitThreeSphere)
       (ne_zero_of_mem_unit_sphere a)).repr.symm z) : EuclideanSpace ℝ (Fin 4))
   rw [stereoInvFunAux_apply, smul_add]
 
-
 noncomputable def threeSphereStereoMetric (a : UnitThreeSphere) :
     RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=
   threeSphereMetric.pullbackOfLocalDiffeomorph (threeSphereStereoInverse a)
     (threeSphereStereoLocalDiffeomorph a)
-
-
 
 theorem threeSphereStereoMetric_inner (a : UnitThreeSphere)
     (z u v : EuclideanSpace ℝ (Fin 3)) :

@@ -1,16 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,19 +12,12 @@ namespace OpenPartialHomeomorph
 variable {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]
   (e : OpenPartialHomeomorph X (E × ℝ))
 
-
-
 def zeroSliceDomain : Set E := {u | (u, (0 : ℝ)) ∈ e.target}
-
-
 
 theorem isOpen_zeroSliceDomain : IsOpen e.zeroSliceDomain :=
   e.open_target.preimage (continuous_id.prodMk continuous_const)
 
 variable (S : Set X) (hS : ∀ x ∈ e.source, x ∈ S ↔ (e x).2 = 0)
-
-
-
 
 def zeroSliceHomeomorph : e.zeroSliceDomain ≃ₜ
     ((Subtype.val : S → X) ⁻¹' e.source) where
@@ -68,20 +51,14 @@ def zeroSliceHomeomorph : e.zeroSliceDomain ≃ₜ
     exact (e.continuousOn.comp_continuous
       (continuous_subtype_val.comp continuous_subtype_val) (fun s => s.property)).fst
 
-
-
 def zeroSliceMap : C(e.zeroSliceDomain, S) :=
   (⟨Subtype.val, continuous_subtype_val⟩ :
       C((Subtype.val : S → X) ⁻¹' e.source, S)).comp (e.zeroSliceHomeomorph S hS)
-
-
 
 theorem isOpenEmbedding_zeroSliceMap : IsOpenEmbedding (e.zeroSliceMap S hS) := by
   have hopen : IsOpen ((Subtype.val : S → X) ⁻¹' e.source) :=
     e.open_source.preimage continuous_subtype_val
   exact hopen.isOpenEmbedding_subtypeVal.comp (e.zeroSliceHomeomorph S hS).isOpenEmbedding
-
-
 
 theorem mem_range_zeroSliceMap (s : S) :
     s ∈ range (e.zeroSliceMap S hS) ↔ s.val ∈ e.source := by

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Descent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +38,6 @@ private theorem chartInverse_localDiffeomorph (p : M)
   exact (Poincare.isLocalDiffeomorph_subtypeVal (𝓡 n) U hU ∞ y).comp
     (𝓡 n) M ((chartDiffeomorph p).symm.isLocalDiffeomorphAt
       (𝓡 n) (𝓡 n) ∞ y.property)
-
-
 
 noncomputable def leviCivitaData (g : RiemannianMetric n M) : LeviCivitaData g := by
   let U (p : M) := (chartAt (EuclideanSpace ℝ (Fin n)) p).target

@@ -2,19 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.PrefixVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.SliceVolume
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology
-
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_prefix_volume_le_on_ambient_closedBall
     {d k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

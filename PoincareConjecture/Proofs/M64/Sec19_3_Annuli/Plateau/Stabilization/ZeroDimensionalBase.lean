@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.DoubleProductRicci
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem curvatureTensorNorm_eq_zero_of_dimension_zero
     (hn : n = 0) (g : RiemannianMetric n M) (D : LeviCivitaData g) (x : M) :
     D.curvatureTensorNorm x = 0 := by
@@ -35,8 +22,6 @@ theorem curvatureTensorNorm_eq_zero_of_dimension_zero
   let : IsEmpty (Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x))) :=
     ⟨fun i => by have hi := i.isLt; omega⟩
   simp [LeviCivitaData.curvatureTensorNorm]
-
-
 
 theorem ricci_eq_zero_of_dimension_zero
     (hn : n = 0) (g : RiemannianMetric n M) (D : LeviCivitaData g) (x : M)
@@ -50,8 +35,6 @@ theorem ricci_eq_zero_of_dimension_zero
 
 variable {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
 
-
-
 theorem curvatureSupremum_eq_zero_of_dimension_zero (hn : n = 0) (time : ℝ) :
     m64CurvatureSupremum F time = 0 := by
   have hzero (x : M) : (F.connection time).curvatureTensorNorm x = 0 :=
@@ -64,8 +47,6 @@ theorem curvatureSupremum_eq_zero_of_dimension_zero (hn : n = 0) (time : ℝ) :
   · let : IsEmpty M := not_nonempty_iff.mp hM
     rw [Set.range_eq_empty, Real.sSup_empty]
 
-
-
 theorem auxiliaryCircle_ricci_eq_zero_of_dimension_zero
     (P : M62.CircleProductData F circumference)
     (Q : M62.CircleProductData P.flow auxiliary) (hn : n = 0) (time : ℝ)
@@ -76,8 +57,6 @@ theorem auxiliaryCircle_ricci_eq_zero_of_dimension_zero
   rw [M62.circleProduct_ricci (F.metric time) (F.connection time)
     P.circle P.charts (P.flow.metric time) (P.flow.connection time) (P.metric_eq time)]
   exact ricci_eq_zero_of_dimension_zero hn _ _ _ _ _
-
-
 
 theorem auxiliaryCircle_annulus_ricciTraceDensity_eq_zero_of_dimension_zero
     (P : M62.CircleProductData F circumference)

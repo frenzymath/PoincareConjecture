@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CanonicalCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -43,9 +34,6 @@ theorem isCompact_closed_subset_cap (Q : SingularLimitConclusion H)
     rw [← cap.connection.scalarCurvature_eq (Q.extension.extended.connection T) y]
     exact hratio x (hsub hx) y (hsub hy)
   · simpa only [Set.not_nonempty_iff_eq_empty.mp hX] using isCompact_empty
-
-
-
 
 theorem tube_or_cappedTube_of_noncompact (Q : SingularLimitConclusion H)
     (C : ConnectedNeckCapCover (Q.extension.extended.metric T))

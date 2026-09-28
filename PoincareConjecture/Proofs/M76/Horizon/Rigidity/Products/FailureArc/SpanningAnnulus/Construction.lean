@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Spanni
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.Cylinder
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.Tower
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology Geometry
 open Geometry.OriginalPLTower

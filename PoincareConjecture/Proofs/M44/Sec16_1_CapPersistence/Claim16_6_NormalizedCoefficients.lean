@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Coordinate
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ChartTopology
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,13 +23,9 @@ noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
 
-
-
 noncomputable def normalizedCoefficients (Q : SurgeryCapClose g₀ S g tip scale eta) :
     E → E →L[ℝ] E →L[ℝ] ℝ :=
   fun x => scale⁻¹ ^ 2 • g.pullbackCoefficients Q.map x
-
-
 
 theorem normalizedCoefficients_apply (Q : SurgeryCapClose g₀ S g tip scale eta)
     (x : E) (v w : E) :
@@ -46,16 +33,12 @@ theorem normalizedCoefficients_apply (Q : SurgeryCapClose g₀ S g tip scale eta
       g.inner (Q.map x) (mfderiv (𝓡 3) (𝓡 3) Q.map x v)
         (mfderiv (𝓡 3) (𝓡 3) Q.map x w) := rfl
 
-
-
 theorem contDiffOn_normalizedCoefficients (Q : SurgeryCapClose g₀ S g tip scale eta) :
     ContDiffOn ℝ ∞ Q.normalizedCoefficients (g₀.metric.ball 0 eta⁻¹) := by
   intro x hx
   have hf := Q.map_smooth.contMDiffAt (Q.toPartialDiffeomorph.open_source.mem_nhds hx)
   exact ((contDiffAt_const (c := scale⁻¹ ^ 2)).smul
     (g.contDiffAt_pullbackCoefficients hf)).contDiffWithinAt
-
-
 
 theorem exists_normalized_coefficient_jet_bound
     (g₀ : StandardInitialMetric) {K : Set E} (hK : IsCompact K) (j : ℕ) :

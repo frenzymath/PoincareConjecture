@@ -8,15 +8,6 @@ import Mathlib.Data.Int.Interval
 import Mathlib.Topology.Order.IntermediateValue
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RelativeHeightControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem BalancedNeckChain.exists_finite_forward_extension_or_deep_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

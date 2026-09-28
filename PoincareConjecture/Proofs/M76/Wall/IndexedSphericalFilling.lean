@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.SphericalFrontierFilling
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_indexed_spherical_frontier_filling
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

@@ -1,21 +1,6 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem negativeCurvaturePart_eq_of_local_isometry
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -68,8 +51,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
-
 theorem extension_negativeCurvaturePart_pullback
     (E : GeneralizedFlowExtension F T) (t : ℝ) (ht : t ∈ F.interval)
     (x : (F.slice t).carrier) :
@@ -78,8 +59,6 @@ theorem extension_negativeCurvaturePart_pullback
   exact (negativeCurvaturePart_eq_of_local_isometry (F.connection t)
     (E.extended.connection t) isOpen_univ (E.forward_smooth t ht).contMDiffOn
     (fun y _ v w => (E.metric_pullback t ht y v w).symm) (mem_univ x)).symm
-
-
 
 theorem extension_hamiltonIveyPinchedAt_old
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)

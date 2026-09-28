@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapNormalDerivative
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ theorem cap_frameInverse_contDiff (g : RiemannianMetric n V) (e : V ≃L[ℝ] V)
   intro x
   exact (M04.frameGramOperator_isInvertible g x e).contDiffAt_map_inverse.comp x
     (cap_frameGram_contDiff g e.toContinuousLinearMap).contDiffAt
-
-
 
 theorem cap_frameGram_fderiv_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0)

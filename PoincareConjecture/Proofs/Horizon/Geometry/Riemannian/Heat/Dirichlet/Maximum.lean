@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Loc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -66,7 +56,6 @@ theorem laplacian_sub_on (D : LeviCivitaData g) {Ω : Set M} (hΩ : IsOpen Ω)
   rw [← D.laplacian_eq_of_eventuallyEq he, D.laplacian_sub hF hH,
     D.laplacian_eq_of_eventuallyEq hFf, D.laplacian_eq_of_eventuallyEq hHh]
 
-
 theorem nonpos_of_subsolution
     (D : LeviCivitaData g) {Ω : Set M} (hΩ : IsOpen Ω)
     (hc : IsCompact (closure Ω)) {F F' : M → ℝ → ℝ} {K a b : ℝ}
@@ -100,7 +89,6 @@ theorem nonpos_of_subsolution
     have hlap := laplacian_nonpos_of_isLocalMax_on D hΩ (hsmooth t ht) hx hlocal
     exact (hsub x hx t ht).trans (by linarith)
 
-
 theorem le_of_subsolution_supersolution
     (D : LeviCivitaData g) {Ω : Set M} (hΩ : IsOpen Ω)
     (hc : IsCompact (closure Ω)) {F G F' G' : M → ℝ → ℝ} {a b : ℝ}
@@ -127,7 +115,6 @@ theorem le_of_subsolution_supersolution
   · exact fun x hx t ht => sub_nonpos.mp (h x hx t ht)
   · rw [laplacian_sub_on D hΩ (hFs t ht) (hGs t ht) hx, zero_mul, add_zero]
     exact sub_le_sub (hsub x hx t ht) (hsuper x hx t ht)
-
 
 theorem eq_of_heat_equation
     (D : LeviCivitaData g) {Ω : Set M} (hΩ : IsOpen Ω)

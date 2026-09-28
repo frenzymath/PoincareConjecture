@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MovingDensityVariation
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem m65CurveVelocity_affineLine {f : LoopPlane → M} {z : LoopPlane}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z) (v : LoopPlane) :
     curveVelocity (fun r : ℝ => f (z + r • v)) 0 = mfderiv (𝓡 2) (𝓡 n) f z v := by
@@ -37,9 +27,6 @@ theorem m65CurveVelocity_affineLine {f : LoopPlane → M} {z : LoopPlane}
   have h := mfderiv_comp_apply_of_eq 0 hf hline.differentiableAt.mdifferentiableAt
     (by simp : z + (0 : ℝ) • v = z) (1 : ℝ)
   simpa only [curveVelocity, hlinev, Function.comp_def] using h
-
-
-
 
 theorem m65PlaneCovariantColumn_commute {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (u : ℝ → LoopPlane → M)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteDoubleRelation
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 import PoincareConjecture.Proofs.M76.Wall.CutDiskProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -25,11 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
 
 theorem Step.exists_finite_projected_double_complex
     {s t : Stage e S f r C} (step : Step s t)

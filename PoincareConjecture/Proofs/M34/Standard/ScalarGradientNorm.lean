@@ -2,23 +2,12 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.ScalarOperators.Gradient
 import Mathlib.Analysis.Normed.Operator.NNNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem scalarGradientNorm_eq_tangentNorm
     {M : Type*} [TopologicalSpace M]

@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Caps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Separators
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -108,8 +98,6 @@ theorem edgeFromEndpoint_frontier_iff (a : D.EdgeIndex) (terminal : Bool)
   · exact D.edge_interior_incidence a (1 - cut)
       ⟨by linarith [hcut.2], by linarith [hcut.1]⟩ R
 
-
-
 theorem region_eq_of_mem_frontier_two_sectors
     {p : M} (P : ChartCircleArrangementVertexPatch D.radius p)
     (region : Bool × Bool → D.regions)
@@ -147,8 +135,6 @@ theorem region_eq_of_mem_frontier_two_sectors
       ((connectedComponentIn_eq hw.2).trans (connectedComponentIn_eq (hsector s hs)).symm))
   exact hsi.elim (fun h => Or.inl (hReq.trans (congrArg region h)))
     (fun h => Or.inr (hReq.trans (congrArg region h)))
-
-
 
 theorem matched_caps_incidence
     {p : D.vertices} {P : ChartCircleArrangementVertexPatch D.radius (p : M)}
@@ -230,8 +216,6 @@ theorem matched_caps_incidence
     fun s => ⟨honly s, fun hs => B.carrier_subset_sector s (hqcap s hs)⟩,
     fun s => ⟨fun hs => honly s (B.carrier_subset_sector s hs), hqcap s⟩⟩
 
-
-
 theorem matched_caps_global_incidence
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))
     {x : D.vertices → Bool × Bool → M}
@@ -266,7 +250,6 @@ theorem matched_caps_global_incidence
     exact ⟨rfl, (hcap s).mp hq⟩
   · rintro ⟨rfl, hs⟩
     exact (hcap s).mpr hs
-
 
 def vertexCapsInRegion
     {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M)}
@@ -304,8 +287,6 @@ theorem isClosed_vertexCapsInRegion
     IsClosed (D.vertexCapsInRegion B region R) :=
   isClosed_iUnion_of_finite (fun a => ((B a.1.1).face a.1.2).isClosed_carrier)
 
-
-
 theorem exists_neighborhood_vertexCapsInRegion_eq_cap
     {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M)}
     {x : D.vertices → Bool × Bool → M}
@@ -337,8 +318,6 @@ theorem exists_neighborhood_vertexCapsInRegion_eq_cap
     · exact False.elim (hzK (mem_iUnion.mpr ⟨⟨a.val, a.property, h⟩, ha⟩))
   · rintro z ⟨hzK, hz⟩
     exact ⟨hzK, mem_iUnion.mpr ⟨⟨(p, i), hregion⟩, hz⟩⟩
-
-
 
 theorem exists_incident_region_cap_neighborhood
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))
@@ -398,7 +377,6 @@ theorem vertexCapsInRegion_subset_chart
 
 omit [T2Space M] in
 
-
 theorem isClosed_chart_vertexCapsInRegion
     {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M)}
     (region : D.vertices → Bool × Bool → D.regions) (chart : D.regions → M)
@@ -408,8 +386,6 @@ theorem isClosed_chart_vertexCapsInRegion
   ((D.isCompact_vertexCapsInRegion B region R).image_of_continuousOn
     ((chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).continuousOn.mono
       (D.vertexCapsInRegion_subset_chart region chart B R))).isClosed
-
-
 
 theorem exists_incident_region_cap_separator
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

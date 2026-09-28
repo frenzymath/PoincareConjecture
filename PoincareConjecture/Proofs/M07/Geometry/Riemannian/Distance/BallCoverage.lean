@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeod
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.PrecompactChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exponential_range_subset_ball_of_precompact
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
@@ -43,8 +29,6 @@ theorem exponential_range_subset_ball_of_precompact
   change g.edist p (e v) < ENNReal.ofReal R
   obtain ⟨ε, hε, γ, hγ, hγp, hγv, hγe, hbd⟩ := hbound v hv
   exact lt_of_le_of_lt hbd ((ENNReal.ofReal_lt_ofReal_iff hR).mpr hv)
-
-
 
 theorem exponential_image_eq_ball_of_precompact
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)

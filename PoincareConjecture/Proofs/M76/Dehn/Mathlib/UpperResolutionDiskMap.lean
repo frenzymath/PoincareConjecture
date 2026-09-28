@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ThreeDiskChainMap
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -23,10 +12,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
-
-
-
-
 
 theorem exists_upper_resolution_disk_map
     {EA EC F X ι : Type*}

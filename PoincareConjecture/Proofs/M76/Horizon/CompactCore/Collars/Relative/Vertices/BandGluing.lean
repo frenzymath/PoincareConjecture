@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.EdgeBase
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -219,6 +217,5 @@ theorem SurfaceLowerProducts.exists_vertex_band (P : SurfaceLowerProducts T)
     have hp := hfrontp hx.1 hx.2
     obtain ⟨y, hy, hyx⟩ := (G hp).image_eq.symm.subset hx
     exact ⟨y, ⟨hAQ hy.1, hy.2⟩, (hvalue (.inr ⟨hp⟩) y hy).trans hyx⟩
-
 
 end Geometry.SimplicialComplex

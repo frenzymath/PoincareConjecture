@@ -4,24 +4,11 @@ import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.LinearAlgebra.Ray
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_linearMap_neg_pos_of_not_sameRay {E : Type*}
     [AddCommGroup E] [Module ℝ E] {u v : E} (hnot : ¬ SameRay ℝ u v) :
@@ -55,8 +42,6 @@ theorem exists_linearMap_neg_pos_of_not_sameRay {E : Type*}
     · change 0 < -f v
       linarith
 
-
-
 theorem exists_continuousLinearEquiv_fst_neg_pos {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (hdim : Module.finrank ℝ E = 2) {u v : E} (hnot : ¬ SameRay ℝ u v) :
@@ -74,8 +59,6 @@ theorem exists_continuousLinearEquiv_fst_neg_pos {E : Type*}
   · change 0 < (e v).2
     rw [he]
     exact hXv
-
-
 
 theorem not_sameRay_sub_of_segments_inter_subset_singleton {E : Type*}
     [AddCommGroup E] [Module ℝ E] {q a b : E} (ha : a ≠ q) (hb : b ≠ q)

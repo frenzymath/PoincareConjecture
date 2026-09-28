@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteOriginalSourceJets
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +47,6 @@ private local instance finiteOriginalEllipticCharts :
     ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance finiteOriginalEllipticManifold :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_original_source_ellipticity
     {d K R ρ : ℝ} (hd : 0 < d) (hK : 0 < K) (_hρ : 0 < ρ) (hρR : 2 * ρ < R)

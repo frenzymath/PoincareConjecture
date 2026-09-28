@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateBoundaryForm
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,12 +12,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
-
-
-
 
 theorem scalarCoverFormOfDifferential_uniform_bound
     (g : RiemannianMetric 2 Plane) (J : Plane → Plane →L[ℝ] ℝ)
@@ -62,12 +44,6 @@ theorem scalarCoverFormOfDifferential_uniform_bound
   exact (hC _ hmem).trans (le_max_right _ _)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem exists_scalar_conjugate_closed_differential
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)

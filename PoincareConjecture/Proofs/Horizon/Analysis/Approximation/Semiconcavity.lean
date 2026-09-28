@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Convolution
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap MeasureTheory
@@ -18,7 +10,6 @@ open scoped Convolution NNReal ContDiff
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem concaveOn_sub_norm_sq_translate {f : E → ℝ} {C : ℝ} {s T : Set E}
     (hf : ConcaveOn ℝ T (fun x => f x - C * ‖x‖ ^ 2 / 2))
@@ -38,8 +29,6 @@ theorem concaveOn_sub_norm_sq_translate {f : E → ℝ} {C : ℝ} {s T : Set E}
 
 variable [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   (μ : Measure E) [μ.IsAddHaarMeasure]
-
-
 
 theorem concaveOn_sub_norm_sq_normed_convolution_on
     {f : E → ℝ} {C : ℝ} {s T : Set E} (hs : Convex ℝ s)
@@ -76,7 +65,6 @@ theorem concaveOn_sub_norm_sq_normed_convolution_on
   rw [integral_sub (hi x) (φ.integrable_normed.mul_const _),
     integral_mul_const, φ.integral_normed, one_mul]
 
-
 theorem concaveOn_sub_norm_sq_normed_convolution {f : E → ℝ} {C : ℝ}
     (hf : Continuous f)
     (hconc : ConcaveOn ℝ univ (fun x => f x - C * ‖x‖ ^ 2 / 2))
@@ -89,7 +77,6 @@ theorem concaveOn_sub_norm_sq_normed_convolution {f : E → ℝ} {C : ℝ}
 end Poincare
 
 namespace Poincare
-
 
 theorem exists_contDiff_lipschitz_semiconcave_approx
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -115,8 +102,6 @@ theorem exists_contDiff_lipschitz_semiconcave_approx
     change (K : ℝ) * r ≤ ε
     have heq : r * (K + 1) = ε := div_mul_cancel₀ _ (by positivity)
     nlinarith
-
-
 
 theorem exists_contDiff_lipschitz_hessian_approx_on_ball
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -157,8 +142,6 @@ theorem exists_contDiff_lipschitz_hessian_approx_on_ball
     intro x hx v
     exact Analysis.fderiv_fderiv_le_of_concaveOn_sub_norm_sq
       Metric.isOpen_ball hu.contDiffOn hc hx v
-
-
 
 theorem exists_contDiff_hessian_approx_of_lipschitzOn_ball
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

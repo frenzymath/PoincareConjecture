@@ -1,16 +1,6 @@
 import Mathlib.Algebra.Module.Submodule.Union
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -20,7 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 section Algebra
 
 variable {K V I : Type*} [Field K] [Infinite K] [AddCommGroup V] [Module K V]
-
 
 theorem exists_linearMap_injective_comp_finite [Finite I] (v : I → V) (hv : Injective v) :
     ∃ f : V →ₗ[K] K, Injective (f ∘ v) := by
@@ -36,7 +25,6 @@ theorem exists_linearMap_injective_comp_finite [Finite I] (v : I → V) (hv : In
   rw [map_sub, sub_eq_zero]
   exact hij
 
-
 theorem exists_linearMap_injOn_finite {s : Set V} (hs : s.Finite) :
     ∃ f : V →ₗ[K] K, InjOn f s := by
   classical
@@ -47,8 +35,6 @@ theorem exists_linearMap_injOn_finite {s : Set V} (hs : s.Finite) :
   exact congrArg Subtype.val (hf (a₁ := ⟨x, hx⟩) (a₂ := ⟨y, hy⟩) hxy)
 
 end Algebra
-
-
 
 theorem exists_continuousLinearMap_injOn_finite {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

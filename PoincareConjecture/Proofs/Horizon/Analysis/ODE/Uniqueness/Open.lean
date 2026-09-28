@@ -1,13 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 
-
 namespace Poincare.ODE
 
 open Set Filter
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem eq_nhds_of_hasDerivAt
     {F : E → E} {γ η : ℝ → E} {t : ℝ}
@@ -22,8 +20,6 @@ theorem eq_nhds_of_hasDerivAt
     hη.self_of_nhds.continuousAt.preimage_mem_nhds (heq ▸ hS)
   exact ODE_solution_unique_of_eventually (v := fun _ => F) (s := fun _ => S)
     (Eventually.of_forall (fun _ => hLip)) (hγ.and hmemγ) (hη.and hmemη) heq
-
-
 
 theorem eqOn_of_hasDerivAt
     {F : E → E} {U : Set E} (hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U)
@@ -46,8 +42,6 @@ theorem eqOn_of_hasDerivAt
       (hη t ht.2).2.continuousAt (hfreq.mono fun s hs => hs.self_of_nhds)
   have hall := hconn.subset_of_closure_inter_subset hopen ⟨a, ha, hlocal a ha heq⟩ hclosed
   exact fun t ht => (hall ht).self_of_nhds
-
-
 
 theorem eqOn_const_of_solution_hits_equilibrium
     {F : E → E} {U : Set E} (hU : IsOpen U) (hF : ContDiffOn ℝ ∞ F U)

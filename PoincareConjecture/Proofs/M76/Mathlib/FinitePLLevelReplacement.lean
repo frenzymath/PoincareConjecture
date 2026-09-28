@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CollarLevelResidualGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Geometry
 variable {V E : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_level_replacement_fixing_residual
     {f₀ f₁ : V → E} {S₀ S₁ u j w q : Set V} {a R : Set E}

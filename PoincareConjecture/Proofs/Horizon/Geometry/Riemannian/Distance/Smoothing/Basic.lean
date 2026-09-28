@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Averaging
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ZeroDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -40,8 +31,6 @@ lemma mvfderiv_add_const {f : M → ℝ}
   simpa only [mvfderiv_const, add_zero] using
     mvfderiv_fun_add (hf x) (mdifferentiableAt_const (c := c))
 
-
-
 lemma LeviCivitaData.hessian_add_const {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {f : M → ℝ}
     (hf : MDifferentiable (𝓡 n) 𝓘(ℝ, ℝ) f) (c : ℝ) (x : M)
@@ -49,8 +38,6 @@ lemma LeviCivitaData.hessian_add_const {g : RiemannianMetric n M}
     D.hessian (fun y ↦ f y + c) x v w = D.hessian f x v w := by
   simp only [LeviCivitaData.hessian, LeviCivitaData.hessianOnFields,
     mvfderiv_add_const hf]
-
-
 
 lemma LeviCivitaData.hessian_quadratic_le_of_abs_le
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -66,7 +53,6 @@ lemma LeviCivitaData.hessian_quadratic_le_of_abs_le
   have hnorm : g.tangentNorm x v * g.tangentNorm x v = g.inner x v v := by
     exact Real.mul_self_sqrt hv
   simpa only [mul_assoc, hnorm] using (le_abs_self (D.hessian f x v v)).trans (h x v v)
-
 
 lemma dimension_pos_of_noncompact [PreconnectedSpace M] [NoncompactSpace M] :
     0 < n := by
@@ -84,9 +70,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 structure SmoothDistanceLike (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (O : M) where
   toFun : M → ℝ
@@ -100,7 +83,6 @@ structure SmoothDistanceLike (g : RiemannianMetric n M)
   hessian_bound : ∀ x v,
     D.hessian toFun x v v ≤ bound * g.inner x v v
 
-
 lemma SmoothDistanceLike.one_le_bound {g : RiemannianMetric n M}
     {D : LeviCivitaData g} {O : M} (h : SmoothDistanceLike g D O) :
     1 ≤ h.bound := by
@@ -108,17 +90,12 @@ lemma SmoothDistanceLike.one_le_bound {g : RiemannianMetric n M}
   have hd := ENNReal.toReal_nonneg (a := g.edist O O)
   nlinarith
 
-
-
 lemma abs_sub_distance_le_of_approximation (g : RiemannianMetric n M) (O : M)
     {u f : M → ℝ} {ε A : ℝ}
     (hu : ∀ x, |u x - (g.edist O x).toReal| ≤ ε)
     (hf : ∀ x, |f x - u x| ≤ A) (x : M) :
     |f x - (g.edist O x).toReal| ≤ A + ε :=
   (abs_sub_le (f x) (u x) (g.edist O x).toReal).trans (add_le_add (hf x) (hu x))
-
-
-
 
 noncomputable def SmoothDistanceLike.of_additive_estimates
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (O : M)

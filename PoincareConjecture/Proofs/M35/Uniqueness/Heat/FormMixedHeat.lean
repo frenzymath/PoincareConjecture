@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormPerturbedHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormValueForcingNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -46,8 +37,6 @@ theorem norm_mixed_form_response_le (J : V →L[ℝ] H) (hc : IsCompactOperator 
   · exact (ContinuousLinearMap.opNorm_comp_le _ _).trans
       (mul_le_mul_of_nonneg_right (norm_formValueHeatOperator_le J hc hd hi hn hT)
         (norm_nonneg L))
-
-
 
 theorem exists_mixed_perturbed_form_heat (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

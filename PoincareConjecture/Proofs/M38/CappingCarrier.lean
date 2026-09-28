@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.CappingCompact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 noncomputable def cappedDiscardedCarrier : GeneralizedSliceCarrier.{u} := by
   letI := cappedDiscardedChartedSpace F T hT P
@@ -39,7 +30,6 @@ noncomputable def cappedDiscardedCarrier : GeneralizedSliceCarrier.{u} := by
     t2Space := inferInstance
     t3Space := inferInstance
     secondCountable := ChartedSpace.secondCountable_of_sigmaCompact StandardCapSpace _ }
-
 
 theorem cappedDiscardedCarrier_compact :
     IsCompact (Set.univ : Set (cappedDiscardedCarrier F T hT P).carrier) := by

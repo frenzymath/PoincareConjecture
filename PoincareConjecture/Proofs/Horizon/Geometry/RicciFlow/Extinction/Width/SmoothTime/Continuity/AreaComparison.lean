@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzDiskArea
 import PoincareConjecture.Proofs.M60.Filling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -24,7 +22,6 @@ private theorem metric_self_nonneg (g : RiemannianMetric 3 M) (x : M)
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
 
 theorem m66_gram_det_le_of_metric_le (g h : RiemannianMetric 3 M)
     {c : ℝ} (hc : 0 ≤ c)
@@ -58,7 +55,6 @@ theorem m66_gram_det_le_of_metric_le (g h : RiemannianMetric 3 M)
         (mul_nonneg hc hgu.le)
     _ = _ := by ring
 
-
 theorem m66_area_density_le_of_metric_le (g h : RiemannianMetric 3 M)
     {c : ℝ} (hc : 0 ≤ c)
     (hbound : ∀ x : M, ∀ v : TangentSpace (𝓡 3) x,
@@ -83,7 +79,6 @@ theorem m66_area_density_le_of_metric_le (g h : RiemannianMetric 3 M)
   calc
     _ ≤ Real.sqrt (c ^ 2 * Matrix.det (m60AreaGram g f z)) := Real.sqrt_le_sqrt hdet'
     _ = _ := by rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq hc]
-
 
 noncomputable def m66TransferDisk [T2Space M]
     (g h : RiemannianMetric 3 M) {c : ℝ} (hc : 0 < c)
@@ -121,7 +116,6 @@ noncomputable def m66TransferDisk [T2Space M]
     area_integrable := m60AreaDensity_integrableOn_of_disk_lipschitz h hC hLip
     area_nonnegative := integral_nonneg (fun _ => Real.sqrt_nonneg _) }
 
-
 theorem m66TransferDisk_area_le [T2Space M]
     (g h : RiemannianMetric 3 M) {c : ℝ} (hc : 0 < c)
     (hbound : ∀ x : M, ∀ v : TangentSpace (𝓡 3) x,
@@ -133,7 +127,6 @@ theorem m66TransferDisk_area_le [T2Space M]
   rw [← integral_const_mul]
   exact integral_mono (m66TransferDisk g h hc hbound D).area_integrable
     (D.area_integrable.const_mul c) (m66_area_density_le_of_metric_le g h hc.le hbound D.map)
-
 
 theorem m66_fillingArea_le_of_metric_le [T2Space M]
     (g h : RiemannianMetric 3 M) {c : ℝ} (hc : 0 < c)

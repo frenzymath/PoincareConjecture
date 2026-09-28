@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.CoreNeighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_projective_exterior_ball_neighborhood
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :
@@ -144,10 +130,6 @@ theorem exists_projective_exterior_ball_neighborhood
     exact image_subset_iff.mpr (fun _ hx => b.map_source (hbs hx))
   · exact (b.image_ball_eq_interior hbs hbL).trans hiA
   · exact (b.image_sphere_eq_frontier hbs hbL).trans hLf
-
-
-
-
 
 theorem exists_projective_exterior_antipodal_balls
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :

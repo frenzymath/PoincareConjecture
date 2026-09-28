@@ -2,22 +2,9 @@ import PoincareConjecture.Proofs.M03.ScalarEnergyComparison
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.Topology.Algebra.InfiniteSum.Order
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem eq_zero_of_summable_weighted_energy_rates
     {ι : Type*} {E : ι → ℝ → ℝ} {w u v : ι → ℝ} {a b C : ℝ}

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.NeckProductGraph.Axial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.ProjectionDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Quadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,11 +68,6 @@ private theorem neck_graph_projection_mfderiv
   rw [N.sphereSlice_mfderiv ha]
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
-
-
-
 
 theorem neckSlice_product_projection_mfderiv_bijective
     (gC : RiemannianMetric 2 C) (gL : RiemannianMetric 3 L)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.EnergyIntegral
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem m65Mfderiv_diskDilation (f : LoopPlane → M) (r : ℝ) (z v : LoopPlane)
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f (r • z)) :
     mfderiv (𝓡 2) (𝓡 n) (fun w => f (r • w)) z v =
@@ -39,8 +29,6 @@ theorem m65Mfderiv_diskDilation (f : LoopPlane → M) (r : ℝ) (z v : LoopPlane
   simpa +instances only [Function.comp_def, smul_apply,
     ContinuousLinearMap.id_apply, map_smul] using! h
 
-
-
 theorem m65AreaGram_diskDilation (g : RiemannianMetric n M)
     (f : LoopPlane → M) (r : ℝ) (z : LoopPlane)
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f (r • z)) :
@@ -51,8 +39,6 @@ theorem m65AreaGram_diskDilation (g : RiemannianMetric n M)
   simp only [map_smul, smul_apply, Matrix.smul_apply, smul_eq_mul]
   ring
 
-
-
 theorem m65EnergyDensity_diskDilation (g : RiemannianMetric n M)
     (f : LoopPlane → M) (r : ℝ) (z : LoopPlane)
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f (r • z)) :
@@ -61,9 +47,6 @@ theorem m65EnergyDensity_diskDilation (g : RiemannianMetric n M)
   change (1 / 2 : ℝ) * (r ^ 2 * Matrix.trace (m60AreaGram g f (r • z))) = _
   dsimp only [m60EnergyDensity]
   ring
-
-
-
 
 theorem m65DiskDilation_mem_interior {r : ℝ} (hr : 0 ≤ r) (hr1 : r < 1)
     {z : LoopPlane} (hz : z ∈ loopDiskSet) : r • z ∈ Metric.ball (0 : LoopPlane) 1 := by

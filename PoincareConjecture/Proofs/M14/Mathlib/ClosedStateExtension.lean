@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_closedTime_state_extension {C : Set ℝ} {U : Set E} (hU : IsOpen U)
     (f : ℝ × E → F) (hf : ContDiffOn ℝ ∞ f (C ×ˢ U)) {x₀ : E} (hx₀ : x₀ ∈ U) :

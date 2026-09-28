@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SUHopfCauchyRiemann
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +13,6 @@ open Poincare.Riemannian.RadialTransport
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem m64WeightedHarmonicPairing_cauchyRiemann
     {Gamma : P → P →L[ℝ] E →L[ℝ] E} {G : P → E →L[ℝ] E →L[ℝ] ℝ}

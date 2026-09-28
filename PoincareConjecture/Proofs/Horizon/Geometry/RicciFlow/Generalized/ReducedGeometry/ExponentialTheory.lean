@@ -1,9 +1,2 @@
 import PoincareConjecture.Statements.M14Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.Exponential
-
-
-
-
-
-
-

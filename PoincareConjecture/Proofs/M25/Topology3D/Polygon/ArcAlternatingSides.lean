@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.CornerSectors
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalSideRefinement
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SegmentSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -67,8 +58,6 @@ private theorem cornerMinHomeomorph_smul (t : ℝ) (ht : 0 ≤ t) (x : ℝ × �
     · rw [min_eq_right h, min_eq_right (mul_le_mul_of_nonneg_left h ht)]
   · change t * x.1 - t * x.2 = t * (x.1 - x.2)
     ring
-
-
 
 theorem exists_homeomorph_corner_crossing (u v : ℝ × ℝ)
     (hu : 0 < u.1 ∧ 0 < u.2) (hv : v.1 < 0 ∨ v.2 < 0) :
@@ -226,9 +215,6 @@ private theorem rectangle_sides_spec {X : Type*} [TopologicalSpace X]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   {p : Polygon E (n + 2)}
-
-
-
 
 theorem exists_local_alternating_sides_at_arc_vertex
     (hp : IsSimplePolygonalArc p) (k l j : Fin (n + 2))

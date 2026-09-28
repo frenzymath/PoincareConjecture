@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Pullback.SpatialDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.MetricDuality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

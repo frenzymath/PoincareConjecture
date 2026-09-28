@@ -1,18 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartLevel
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -25,10 +11,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
-
-
 
 theorem exists_chart_circle_transverse_edge_intersections {I : Type*} [Finite I]
     (x : M) (edge : I → SmoothEdge M) (S : Finset M) {a b r R : ℝ}

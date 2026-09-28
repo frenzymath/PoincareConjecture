@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonOriginalCutRays
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter AffineMap
@@ -20,9 +10,6 @@ open scoped Topology
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
 
 theorem isClosed_cutArc (P : Polygon E n) (t : Fin n → ℝ) (i : Fin n) :
     IsClosed (P.cutArc t i) := by
@@ -33,10 +20,6 @@ theorem isClosed_cutArc (P : Polygon E n) (t : Fin n → ℝ) (i : Fin n) :
     (P (finRotate n i))).continuous).union
       (isCompact_Icc.image (ContinuousAffineMap.lineMap (P (finRotate n i))
         (P (finRotate n (finRotate n i)))).continuous)).isClosed
-
-
-
-
 
 theorem eventually_boundary_iff_original_cut_segments
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
@@ -74,11 +57,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {n : ℕ}
-
-
-
-
-
 
 theorem original_cut_link_zero_data
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

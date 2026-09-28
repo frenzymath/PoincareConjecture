@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeFields
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeParameterDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ}
-
-
-
 
 theorem exponentialGauge_initial_velocity
     (b : G.gaugeCover.index)
@@ -62,9 +49,6 @@ theorem exponentialGauge_initial_velocity
   apply ((G.gaugeCover.metric b).spatialTangentEquiv t₀ x₀).injective
   rw [map_smul, ContinuousLinearEquiv.apply_symm_apply]
   exact eq_of_heq (hv.symm.trans hi)
-
-
-
 
 theorem exponentialGauge_differential_heq {x : G.Point}
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}

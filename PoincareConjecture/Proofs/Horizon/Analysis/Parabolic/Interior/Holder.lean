@@ -4,16 +4,6 @@ import Mathlib.Topology.MetricSpace.HolderNorm
 import Mathlib.Topology.MetricSpace.Snowflaking
 import Mathlib.Topology.ContinuousMap.Bounded.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set

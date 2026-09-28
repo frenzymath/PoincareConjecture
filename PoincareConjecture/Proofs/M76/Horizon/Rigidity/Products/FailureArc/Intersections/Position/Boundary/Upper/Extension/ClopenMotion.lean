@@ -7,7 +7,6 @@ open Set
 
 variable {X P : Type*}
 
-
 noncomputable def extendSubsetMap (S : Set X) (f : S → S) (x : X) : X := by
   classical
   exact if hx : x ∈ S then f ⟨x, hx⟩ else x
@@ -21,7 +20,6 @@ noncomputable def extendSubsetMap (S : Set X) (f : S → S) (x : X) : X := by
   simp [extendSubsetMap, hx]
 
 variable [TopologicalSpace X] [TopologicalSpace P]
-
 
 theorem continuous_extendSubsetMap {S : Set X} (hS : IsClopen S)
     (f : P → S → S) (hf : Continuous fun z : P × S => f z.1 z.2) :
@@ -47,7 +45,6 @@ theorem continuous_extendSubsetMap {S : Set X} (hS : IsClopen S)
   · exact hOn.continuousAt (hA.mem_nhds hz)
   · exact hOff.continuousAt (hAc.mem_nhds hz)
 
-
 noncomputable def extendClopenHomeomorph {S : Set X} (hS : IsClopen S)
     (g : S ≃ₜ S) : X ≃ₜ X where
   toFun := extendSubsetMap S g
@@ -71,7 +68,6 @@ noncomputable def extendClopenHomeomorph {S : Set X} (hS : IsClopen S)
     have hc := continuous_extendSubsetMap (P := Unit) hS (fun _ => g.symm)
       (g.symm.continuous.comp continuous_snd)
     exact hc.comp ((continuous_const (y := ())).prodMk continuous_id)
-
 
 theorem exists_clopen_motion_extension {S : Set X} (hS : IsClopen S)
     (G : P → S ≃ₜ S)

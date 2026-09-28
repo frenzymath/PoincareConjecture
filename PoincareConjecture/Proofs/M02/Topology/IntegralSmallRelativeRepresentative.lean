@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralSmallRelativeChains
 import PoincareConjecture.Proofs.M02.Topology.IntegralMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexHomologyClass
 
-
-
 set_option autoImplicit false
 
 noncomputable section

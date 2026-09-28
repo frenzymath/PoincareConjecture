@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowCoincidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +8,6 @@ open scoped Topology NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem boundedFlow_mapsTo_of_backward_agreement (f g : E → E)
     {kf lf kg lg : ℝ≥0} (hfK : LipschitzWith kf f) (hfL : ∀ x, ‖f x‖ ≤ lf)

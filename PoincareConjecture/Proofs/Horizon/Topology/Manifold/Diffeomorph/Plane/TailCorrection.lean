@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.TailCorrection.TriangularFamily
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.TailCorrection.SlowCutoff
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +28,6 @@ private theorem exists_uniform_strip_bound
       exact hy.imp le_of_lt le_of_lt
     rw [hfix p hp y hy', abs_zero]
     exact le_max_right _ _
-
-
-
 
 theorem exists_compactly_supported_family_of_triangular_tail
     (D : ℝ → Diffeomorph (𝓡 2) (𝓡 2) E₂ E₂ ∞)

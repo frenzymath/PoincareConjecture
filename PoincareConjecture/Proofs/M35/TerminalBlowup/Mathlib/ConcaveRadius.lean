@@ -1,18 +1,6 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -40,8 +28,6 @@ private theorem false_of_nonneg_of_uniform_negative_deriv
   rw [heq] at hgrow
   linarith [hpos b hab]
 
-
-
 theorem radial_derivative_nonneg_of_positive_concave
     {f f₁ f₂ : ℝ → ℝ}
     (hpos : ∀ s, 0 < s → 0 < f s)
@@ -59,9 +45,6 @@ theorem radial_derivative_nonneg_of_positive_concave
     (fun r hr => (hpos r (hs.trans_le hr)).le)
     (fun r hr => hderiv r (hs.trans_le hr))
     (fun r hr => hanti hs (hs.trans_le hr) hr)
-
-
-
 
 theorem radial_radius_sq_le_of_eventual_scalar_floor
     {f f₁ f₂ : ℝ → ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +11,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.WeakCompactness
-
-
 
 theorem m64SeparableHilbert_weak_subsequence
     {H : Type*} [NormedAddCommGroup H] [InnerProductSpace ℝ H]

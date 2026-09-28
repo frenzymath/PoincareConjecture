@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Descent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ noncomputable section
 namespace Poincare.Gluing
 
 variable {n : ℕ}
-
-
 
 theorem inducedForm_family_contMDiffWithinAt
     {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -121,8 +110,6 @@ theorem inducedForm_family_contMDiffWithinAt
     LinearMap.id_coe, id_eq, inducedForm, ← htT, ← hsT, hkey]
   rfl
 
-
-
 theorem isSmoothFamilyOn_of_local_diffeomorphisms
     {A : Type*} {P : A → Type*} {N : Type*}
     [∀ i, TopologicalSpace (P i)] [TopologicalSpace N]
@@ -168,6 +155,5 @@ theorem isSmoothFamilyOn_of_local_diffeomorphisms
   filter_upwards [mem_nhdsWithin_of_mem_nhds (continuousAt_snd hspatial),
     self_mem_nhdsWithin] with p hp hpJ
   exact congrArg (fun B => Bundle.TotalSpace.mk' _ p.2 B) (hp p.1 hpJ.1)
-
 
 end Poincare.Gluing

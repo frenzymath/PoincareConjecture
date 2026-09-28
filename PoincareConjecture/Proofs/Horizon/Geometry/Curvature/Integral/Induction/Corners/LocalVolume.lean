@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.PrefixSliceVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.EmptyPrefix
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
@@ -139,9 +133,6 @@ private theorem PoincareConjecture.RiemannianMetric.strainer_volume_iterate
     convert he using 1
     rw [Real.exp_add, pow_succ]
     ring
-
-
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_openFiber_volume_le_on_ambient_closedBall
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

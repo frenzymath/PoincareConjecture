@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.GramDiagonal
 import PoincareConjecture.Proofs.M10.InitialPairing
 import PoincareConjecture.Proofs.M10.HomogeneousRay
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

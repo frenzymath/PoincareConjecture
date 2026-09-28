@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Section
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -57,7 +51,6 @@ private theorem unit_immersion_normal {m n : ℕ} {F : E m → E n} {x : E m}
 
 open Poincare.Geometry.Curvature.Hypersurface in
 
-
 theorem curvatureTensor_of_unit_immersion {m : ℕ}
     {h : RiemannianMetric m (E m)} (D' : LeviCivitaData h)
     {F : E m → E (m + 1)} {x : E m}
@@ -94,8 +87,6 @@ theorem curvatureTensor_of_unit_immersion {m : ℕ}
     rw [hB, hB, neg_mul_neg]
   rw [gauss_curvatureTensor_of_eventually D D' hF hmetric',
     euclidean_curvatureTensor, zero_add, hpair, hpair]
-
-
 
 theorem roundSphereMetric_curvatureTensor {n : ℕ}
     (D : LeviCivitaData (roundSphereMetric n)) (x : UnitSphere n)
@@ -167,8 +158,6 @@ theorem roundSphereMetric_curvatureTensor {n : ℕ}
   erw [hp] at ht
   exact ht
 
-
-
 theorem roundSphereMetric_sectionalCurvature {n : ℕ}
     (D : LeviCivitaData (roundSphereMetric n)) (x : UnitSphere n)
     (u v : TangentSpace (𝓡 n) x)
@@ -179,8 +168,6 @@ theorem roundSphereMetric_sectionalCurvature {n : ℕ}
   rw [roundSphereMetric_curvatureTensor,
     (roundSphereMetric n).symm x v u, ← pow_two]
   exact div_self huv
-
-
 
 theorem roundSphereMetric_unit_sectionalCurvature {n : ℕ} (x : UnitSphere n)
     (u v : TangentSpace (𝓡 n) x)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatC1Bounds
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialSymmetry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gaugeSource_weighted_bound {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ}
     {u : ℝ → V → ℝ} {eta B L C t : ℝ}
@@ -42,9 +31,6 @@ theorem gaugeSource_weighted_bound {b : ℝ → V → V} {G : ℝ → V → ℝ 
     semilinearSource_weighted_bound (by linarith [norm_nonneg x]) heta hB hL
       (b s x) (G s x) (fderiv ℝ (u s) x) (hb s hs x) (hu s hs x) (hdu s hs x)
       (hGzero s hs x) (by simpa using hGlip s hs x (u s x) 0 hua (by simpa using heta))
-
-
-
 
 theorem gaugeDuhamel_c1_difference_bound
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u v : ℝ → V → ℝ}
@@ -93,8 +79,6 @@ theorem gaugeDuhamel_c1_difference_bound
     nlinarith [h, h1, h2]
   exact heatDuhamel_c1_difference_bound hS hS (by positivity) ht
     hmu hmv hru hrv hbu hbv hfu hfv hdiff x
-
-
 
 theorem exists_short_time_gauge_constants {eta S K T : ℝ}
     (heta : 0 < eta) (hS : 0 ≤ S) (hK : 0 ≤ K) (hT : 0 < T) :

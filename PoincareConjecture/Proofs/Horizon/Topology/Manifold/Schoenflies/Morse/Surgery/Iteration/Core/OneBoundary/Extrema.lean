@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Caps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +19,6 @@ private abbrev S2 := sphere (0 : E3) 1
 namespace SphereSurgeryCoreCap
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_minimum_in_complement
     (D : SphereSurgeryCoreCap v g B)
@@ -59,8 +55,6 @@ theorem exists_minimum_in_complement
     exact congrArg (inner Real v) (D.parametrization_eq y hy)
   rw [heq] at hlt
   linarith
-
-
 
 theorem exists_maximum_in_complement
     (D : SphereSurgeryCoreCap v g B)
@@ -120,8 +114,6 @@ private theorem regular_one_cap_boundary {g : S2 → E3}
       D.source D.smooth D.symm_smooth]
   simpa only [hfront] using P.regular_on_frontier_core hP
 
-
-
 theorem exists_minimum_chart_of_one_cap {g : S2 → E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)
     (hP : P.Protects ((fun p => inner Real (M.v : E3) (M.D (f p))) ''
@@ -158,7 +150,6 @@ theorem exists_minimum_chart_of_one_cap {g : S2 → E3} (hg : g ∈ M.tree.leave
     e, he0, hep, he, hei, het, ?_⟩
   intro x hx
   simpa only [hsign, one_mul, ← EuclideanSpace.real_norm_sq_eq] using hform x hx
-
 
 theorem exists_maximum_chart_of_one_cap {g : S2 → E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)

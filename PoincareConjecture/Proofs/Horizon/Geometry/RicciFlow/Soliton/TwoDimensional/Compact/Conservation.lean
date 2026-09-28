@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Differential
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric 2 M}
 
-
 theorem exists_scalar_conservation_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
     (hsol : ∀ x, ∀ v w : TangentSpace (𝓡 2) x,
@@ -35,7 +27,6 @@ theorem exists_scalar_conservation_of_surface_soliton (D : LeviCivitaData g)
   exact Poincare.Manifold.exists_eq_const_of_mvfderiv_eq_zero
     (fun x => (hcont x).mdifferentiableAt (by simp))
     (D.mvfderiv_weighted_scalar_of_surface_soliton hf hsol)
-
 
 theorem exists_hamilton_conservation_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -57,7 +48,6 @@ theorem exists_hamilton_conservation_of_surface_soliton (D : LeviCivitaData g)
   exact Poincare.Manifold.exists_eq_const_of_mvfderiv_eq_zero
     (fun x => (hcont x).mdifferentiableAt (by simp))
     (D.mvfderiv_hamilton_of_surface_soliton hf hsol)
-
 
 theorem exists_conservation_constants_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)

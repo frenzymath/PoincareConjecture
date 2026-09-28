@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsMapTension
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsMapRegularity
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 open RadialGauge DeTurckNative
-
-
 
 theorem exists_raw_native_deturck_gauge
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

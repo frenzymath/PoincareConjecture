@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PairedQuarterSpireScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.AnnularComponents
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +9,6 @@ open Poincare.CurvatureIntegral Poincare.Geometry.Manifold.RegularLevel
 open Poincare.GromovHausdorff
 open scoped Manifold ContDiff Bundle Topology BigOperators
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_quarter_spire_scalar_concentration_with_controlled_levels
     {m : ℕ} (hm : 1 ≤ m) {M : ℕ → Type}

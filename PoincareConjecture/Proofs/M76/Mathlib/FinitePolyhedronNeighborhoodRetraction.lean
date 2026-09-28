@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodRetraction
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_subcomplex_neighborhood_retraction
     (K L : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hL : L.faces.Finite)
@@ -59,10 +44,6 @@ theorem exists_subcomplex_neighborhood_retraction
   · rwa [hK'space] at hUN
   · rwa [hL'space] at hmap
   · rwa [hL'space] at hfix
-
-
-
-
 
 theorem exists_subdivision_with_polyhedron_subcomplex
     (K J : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hJ : J.faces.Finite)
@@ -112,10 +93,6 @@ theorem exists_subdivision_with_polyhedron_subcomplex
     have hsJ : convexHull ℝ (s : Set E) ⊆ J.space :=
       (convexHull_min hst (convex_convexHull ℝ _)).trans (J.convexHull_subset_space ht)
     exact mem_space_iff.mpr ⟨s, ⟨hs, hsJ⟩, hxs⟩
-
-
-
-
 
 theorem exists_finitePL_neighborhood_retraction
     (J : SimplicialComplex ℝ E) (hJ : J.faces.Finite) {W : Set E}

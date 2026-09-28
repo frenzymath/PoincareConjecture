@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedYoungAccessibleVolume
 import PoincareConjecture.Proofs.M47.SeedNormalizedPhysical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_young_physical_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

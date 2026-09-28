@@ -1,19 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Curvature.Operator.Sectional
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Spectrum
 import PoincareConjecture.Proofs.M05.LinearAlgebra.CrossProduct.Orthonormal
-
-
-
-
-
-
-
-
-
-
-
-
 
 open scoped BigOperators Matrix
 
@@ -25,7 +12,6 @@ private theorem repr_dotProduct (b : OrthonormalBasis (Fin 3) ℝ E) (u v : E) :
     dotProduct (b.repr u) (b.repr v) = inner ℝ u v := by
   rw [← b.repr.inner_map_map u v, EuclideanSpace.inner_eq_star_dotProduct,
     star_trivial, dotProduct_comm]
-
 
 theorem multilinear_plane_eq_curvatureOperator_rayleigh
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)
@@ -43,7 +29,6 @@ theorem multilinear_plane_eq_curvatureOperator_rayleigh
     (fun i j k l => A ![b i, b j, b k, b l])
     (fun i j k l => hfirst (b i) (b j) (b k) (b l))
     (fun i j k l => hlast (b i) (b j) (b k) (b l)) (b.repr u) (b.repr v)
-
 
 theorem sectional_inf_eq_least_eigenvalue
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)
@@ -98,8 +83,6 @@ theorem sectional_inf_eq_least_eigenvalue
   have hnonempty : S.Nonempty := ⟨e 2, hattained⟩
   have hbounded : BddBelow S := ⟨e 2, hlower⟩
   exact le_antisymm (csInf_le hbounded hattained) (le_csInf hnonempty hlower)
-
-
 
 theorem algebraic_three_spectrum
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)

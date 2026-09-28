@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.EuclideanMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem normalizedEuclideanCoefficients_lower (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : EuclideanSpace ℝ (Fin 3)) :
@@ -40,8 +28,6 @@ theorem normalizedEuclideanCoefficients_lower (N : EpsilonNeck g)
     (sq_nonneg ‖v‖).trans hm
   have hsmall := mul_le_mul_of_nonneg_right N.epsilon_lt_half.le hp
   nlinarith
-
-
 
 theorem normalizedEuclideanCoefficients_upper (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -56,8 +42,6 @@ theorem normalizedEuclideanCoefficients_upper (N : EpsilonNeck g)
     rw [roundCylinderEuclideanModelCoefficients_zero, RiemannianMetric.lineModelEquiv_norm_sq v]
     nlinarith [sq_nonneg (((RiemannianMetric.lineModelEquiv 2).symm v).2)]
   nlinarith
-
-
 
 theorem exists_normalizedEuclideanCoefficients_firstJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -108,8 +92,6 @@ theorem exists_normalizedEuclideanCoefficients_firstJet_bound :
         (le_max_right _ _) (norm_nonneg _)
         (mul_nonneg (by norm_num) N.epsilon_pos.le)
     _ = C * N.epsilon := by dsimp [C]; ring
-
-
 
 theorem exists_normalizedEuclideanCoefficients_christoffel_bound :
     ∃ K : ℝ, 0 < K ∧ ∀ {M : Type u} [TopologicalSpace M]

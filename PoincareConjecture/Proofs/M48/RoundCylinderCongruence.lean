@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

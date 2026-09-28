@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalizationJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceIntrinsicError
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem exists_capNeckNormalization_ordinary_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :
@@ -91,9 +79,6 @@ theorem exists_capNeckNormalization_ordinary_tolerance
   exact (capNeckNormalization_error_jet_le B z.1 z.2 (epsilon⁻¹ - delta⁻¹)
     beta j a b hsB (hOld z.1 _ hzold j hj a b)
       (hGram z.1 z.2 j hj a b)).trans herrorBound
-
-
-
 
 theorem exists_capNeckNormalization_tolerance {epsilon : ℝ} (hepsilon : 0 < epsilon) :
     ∃ delta0 : ℝ, 0 < delta0 ∧ ∃ eta : ℝ, 0 < eta ∧

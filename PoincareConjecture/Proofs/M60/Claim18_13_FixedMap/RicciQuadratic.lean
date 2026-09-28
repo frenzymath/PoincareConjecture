@@ -4,16 +4,6 @@ import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import Mathlib.LinearAlgebra.BilinearForm.Basic
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 theorem m60Ricci_tensorNorm_sq (D : LeviCivitaData g) (x : M) :
     (g.tensorNorm D.ricciEvaluation x) ^ 2 = D.ricciNormSq x := by
   let b := g.orthonormalBasis x
@@ -39,8 +27,6 @@ theorem m60Ricci_tensorNorm_sq (D : LeviCivitaData g) (x : M) :
     ∑ i : k, ∑ j : k, (D.ricci x (b i) (b j)) ^ 2
   simpa [Fintype.sum_prod_type] using
     (finTwoArrowEquiv k).sum_comp (fun p : k × k => (D.ricci x (b p.1) (b p.2)) ^ 2)
-
-
 
 theorem m60Ricci_quadratic_bound (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) {C : ℝ} (hC : 0 ≤ C)
@@ -57,8 +43,6 @@ theorem m60Ricci_quadratic_bound (D : LeviCivitaData g)
   rw [sq_abs, mul_pow]
   simpa only [pow_two] using h.trans
     (mul_le_mul_of_nonneg_right hnorm (mul_nonneg hv hv))
-
-
 
 theorem m60Ricci_exists_bilinear (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) :

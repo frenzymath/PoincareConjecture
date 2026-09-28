@@ -8,16 +8,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Partial
 import Mathlib.Analysis.Calculus.UniformLimitsDeriv
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -543,7 +533,6 @@ theorem hasDerivAt_iteratedFDeriv_family
       Function.comp_def, heq, iteratedFDeriv_succ_eq_comp_right] using hc
 
 open Filter
-
 
 theorem exists_contDiffOn_limit_of_iteratedFDeriv_time_lipschitz
     {n : ℕ} {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -19,10 +10,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_sphere_model_of_disk_union {b d q : Set X}
     (hb : IsFinitePLBallPair (ℝ × ℝ) b q) (hd : IsFinitePLBallPair (ℝ × ℝ) d q)
@@ -38,10 +25,6 @@ theorem IsFinitePLBallPair.exists_sphere_model_of_disk_union {b d q : Set X}
   let G := (Homeomorph.setCongr (rfl : b ∪ d = b ∪ d)).trans
     (H.trans (Homeomorph.setCongr hfront))
   exact ⟨G, hH.setCongr rfl hfront, hHb, hHd⟩
-
-
-
-
 
 theorem IsFinitePLBallPair.union_of_ball_disk_attachment {s u b c d q : Set X}
     (hs : IsFinitePLBallPair ((ℝ × ℝ) × ℝ) s (b ∪ d))

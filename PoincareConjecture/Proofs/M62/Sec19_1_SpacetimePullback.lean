@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpatialConnection
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem covariantAlong_space_slice {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (t : OpenTime a b) {gamma : ℝ → M}

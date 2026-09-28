@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronAdjacency
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -16,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E)
-
-
-
 
 noncomputable def vertexFaceEquiv (n : ℕ) :
     {s : Finset K.vertices // s ∈ K.vertexAbstractComplex.faces ∧ s.card = n} ≃
@@ -47,13 +36,9 @@ noncomputable def vertexFaceEquiv (n : ℕ) :
       exact t.property.2
     exact ⟨⟨s, hs, hsc⟩, Subtype.ext hmap⟩
 
-
-
 theorem vertexFaceEquiv_map (n : ℕ)
     (s : {s : Finset K.vertices // s ∈ K.vertexAbstractComplex.faces ∧ s.card = n}) :
     (K.vertexFaceEquiv n s).val = s.val.map (Function.Embedding.subtype _) := rfl
-
-
 
 theorem vertexFaceEquiv_symm_map (n : ℕ)
     (s : {s : Finset E // s ∈ K.faces ∧ s.card = n}) :
@@ -61,8 +46,6 @@ theorem vertexFaceEquiv_symm_map (n : ℕ)
   congrArg Subtype.val ((K.vertexFaceEquiv n).apply_symm_apply s)
 
 open Classical in
-
-
 
 theorem vertexFaceEquiv_symm_val (n : ℕ)
     (s : {s : Finset E // s ∈ K.faces ∧ s.card = n}) :
@@ -74,9 +57,6 @@ theorem vertexFaceEquiv_symm_val (n : ℕ)
   intro x hx
   exact K.down_closed s.property.1 (Finset.singleton_subset_iff.mpr hx)
     (Finset.singleton_nonempty x)
-
-
-
 
 theorem vertex_tetrahedronGraph_connected
     (hconn : (tetrahedronGraph K.toPreAbstractSimplicialComplex).Connected) :

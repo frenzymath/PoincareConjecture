@@ -1,15 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -48,8 +39,6 @@ private theorem det_sub_one_ne_zero_of_no_unit_fixed_vector
   have hz : (A - 1) *ᵥ (x - y) = 0 := by
     rw [Matrix.mulVec_sub, hxy, sub_self]
   simpa only [Matrix.sub_mulVec, Matrix.one_mulVec, sub_eq_zero] using hz
-
-
 
 theorem det_eq_one_of_no_unit_fixed_vector
     (A : Matrix ι ι ℝ) (hA : A * A.transpose = 1)

@@ -2,14 +2,6 @@ import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.LinearAlgebra.AffineSpace.Combination
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

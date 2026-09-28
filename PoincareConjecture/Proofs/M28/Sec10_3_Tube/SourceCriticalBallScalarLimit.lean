@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCenteredNecks
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 theorem tubeCritical_scalar_eq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ) (k : ℕ)
     (D : LeviCivitaData (H.tubeCriticalMetric T A1 k))
@@ -40,8 +29,6 @@ theorem tubeCritical_scalar_eq (H : CounterexampleNeckFamily E)
   rw [intrinsicOpenMetric_scalarCurvature (H.tubeMetric T k)
     (H.tubeCriticalRegion T A1 k) D (H.tubeConnection T k) x,
     H.tube_scalar_eq, H.normalizedSlice_scalar_eq]
-
-
 
 theorem exists_source_criticalBall_scalar_lower_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -62,9 +49,6 @@ theorem exists_source_criticalBall_scalar_lower_accuracy :
       ((T k).carrier_subset_neckCarrierUnion x.val.property)).1
   rw [H.tubeCritical_scalar_eq T A1 k D x]
   exact (le_div_iff₀ (H.base_scalar_pos k)).mpr h
-
-
-
 
 theorem exists_source_criticalBall_limit_scalar_lower_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -95,10 +79,6 @@ theorem exists_source_criticalBall_limit_scalar_lower_accuracy :
   exact G.scalarCurvature_lower_bound D D₀ q _ (Eventually.of_forall
     (fun k => hlower H T hepsilon A1 (phi (G.subsequence k))
       (D (G.subsequence k)) (G.embedding k q)))
-
-
-
-
 
 theorem source_centered_neck_scale_sq_eq_inverse_scalar
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))

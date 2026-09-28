@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeJoinRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b)
   (α β : ℝ → G.Point)
-
-
-
 
 theorem oneSidedGaugeJoin_clock {A B c r d : ℝ} (hr : 0 < r) (θ : ℝ → ℝ)
     (hα : ∀ s ∈ Icc A c, G.spacetime.timeFunction (α s) = θ s)
@@ -46,9 +34,6 @@ theorem oneSidedGaugeJoin_clock {A B c r d : ℝ} (hr : 0 < r) (θ : ℝ → ℝ
   rw [oneSidedGaugeJoin_eq_middle b lift α β ⟨hleft, hsc⟩,
     gaugeBlend_time b lift α β _ _ _ (hβrec s ⟨hleft, hsc.le⟩)]
   exact hβ s ⟨hleft, hs.2⟩
-
-
-
 
 theorem oneSidedGaugeJoin_continuousOn {A B c r d : ℝ} (hr : 0 < r)
     (hA : A < c - r) (hB : c < B)

@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CompactBic
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.DisjointUnionBicollar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem compact_signed_collar_enlargement
     {E X : Type*} [TopologicalSpace E] [T2Space E]
@@ -107,8 +96,6 @@ theorem compact_signed_collar_enlargement
         ⟨hz.1, by rw [ht]; exact ⟨by linarith, le_rfl⟩⟩))
     simpa only [closure_compl, mem_compl_iff] using hlimit
 
-
-
 theorem compact_phase_collar_enlargement
     {E X : Type*} [TopologicalSpace E] [T2Space E]
     [TopologicalSpace X] [T2Space X] {p : ℝ} [Fact (0 < p)]
@@ -153,8 +140,6 @@ theorem compact_phase_collar_enlargement
     refine ⟨c (z, 0), ?_, hPi (hP.isClosed.frontier_subset hbase)⟩
     change q (c (z, 0)) = (theta : AddCircle p)
     rw [hphase (z, 0) ⟨hz, neg_nonpos.mpr heps.le, le_rfl⟩, add_zero]
-
-
 
 theorem compact_signed_two_collar_enlargement
     {E F X : Type*} [TopologicalSpace E] [T2Space E]

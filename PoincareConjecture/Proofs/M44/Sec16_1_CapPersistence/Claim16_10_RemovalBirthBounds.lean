@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialCom
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderBirthMetric
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_PhysicalBirthChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ noncomputable local instance removalBirthCoefficientNorm : NormedAddCommGroup
 
 noncomputable local instance removalBirthCoefficientSpace : NormedSpace ℝ
     (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem cylinder_birth_coefficient_bound
     (F : SurgeryFlowData.{u}) (a : ℝ) (ha : a ∈ F.surgery_times)

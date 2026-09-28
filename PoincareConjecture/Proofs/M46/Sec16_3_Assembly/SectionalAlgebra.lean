@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M04.CompactSectionalPreservation
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -105,7 +97,6 @@ set_option maxHeartbeats 1200000 in
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem sectional_lower_from_model_pairs (D : LeviCivitaData g) (c y : M)
     (hy : y ∈ (trivializationAt (EuclideanSpace ℝ (Fin n))
       (TangentSpace (𝓡 n) : M → Type _) c).baseSet) (m : ℝ)
@@ -151,7 +142,6 @@ theorem sectional_lower_from_model_pairs (D : LeviCivitaData g) (c y : M)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem scalar_lower_of_sectional_lower {N : Type u} [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
     {g : RiemannianMetric 3 N} (D : LeviCivitaData g) (x : N) (m : ℝ)
@@ -195,7 +185,6 @@ theorem scalar_lower_of_sectional_lower {N : Type u} [TopologicalSpace N]
 set_option maxHeartbeats 1200000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem curvature_pair_positive_of_orthonormal {N : Type u} [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]

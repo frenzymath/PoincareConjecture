@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.HittingTime
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace Poincare.Manifold
-
-
 
 theorem contMDiffAt_of_unique_zero
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -92,8 +83,6 @@ theorem contMDiffAt_of_unique_zero
   change G (e z, ψ (e z)) = 0
   rw [heq]
   simpa only [G, q₀, e.left_inv (mem_extChartAt_source y)] using (hroot y hy).2
-
-
 
 theorem contMDiffAt_of_unique_time_root
     {n : ℕ} {M : Type*} [TopologicalSpace M]

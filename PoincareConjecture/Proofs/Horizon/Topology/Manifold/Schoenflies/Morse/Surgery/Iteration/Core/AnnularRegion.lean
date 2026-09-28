@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.CircleInAnnulus
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.Fibers
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +44,6 @@ theorem boundary_deriv_injective (D : SphereSurgeryCoreCap v g B) (q : S1) :
   apply (hloc.mfderivToContinuousLinearEquiv (by simp)).injective.comp
   convert! injective_mvfderiv_subtypeVal_sphere q
 
-
-
 theorem boundary_eq_annular_slice (D : SphereSurgeryCoreCap v g B)
     (F : OpenPartialHomeomorph (S1 × Real) S2) {a b : Real}
     (hFs : F.source = univ ×ˢ Ioo a b)
@@ -70,9 +66,6 @@ theorem boundary_eq_annular_slice (D : SphereSurgeryCoreCap v g B)
     (fun q : S1 => D.chart q) D.smooth_boundary D.boundary_deriv_injective
   · rwa [hrange]
   · exact fun q => hDheight _ (mem_image_of_mem D.chart q.property)
-
-
-
 
 theorem core_eq_annular_band
     (L : List (SphereSurgeryCoreCap v g B))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartConjugation
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +14,6 @@ variable (e : OpenPartialHomeomorph E F)
 variable (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)
 
 include he hi
-
-
 
 theorem chartConjugateMap_contDiff_family (f : ℝ → E → E)
     (hf : ContDiff ℝ ∞ (fun p : ℝ × E => f p.1 p.2))
@@ -57,7 +45,6 @@ theorem chartConjugateMap_contDiff_family (f : ℝ → E → E)
     filter_upwards [hn] with q hq
     exact chartConjugateMap_eq_self e (f q.1) (hfix q.1) hq
 
-
 theorem chartConjugateMap_contDiff (f : E → E) (hf : ContDiff ℝ ∞ f)
     (hmap : MapsTo f e.source e.source) {C : Set E}
     (hC : IsCompact C) (hCs : C ⊆ e.source) (hfix : ∀ x ∉ C, f x = x) :
@@ -66,9 +53,6 @@ theorem chartConjugateMap_contDiff (f : E → E) (hf : ContDiff ℝ ∞ f)
     (hf.comp contDiff_snd) (fun _ => hmap) hC hCs (fun _ => hfix)
   simpa only [Function.comp_def, id_eq] using
     h.comp ((contDiff_const (c := (0 : ℝ))).prodMk contDiff_id)
-
-
-
 
 noncomputable def chartConjugateDiffeomorph
     (f : Diffeomorph 𝓘(ℝ, E) 𝓘(ℝ, E) E E ∞)
@@ -87,15 +71,11 @@ noncomputable def chartConjugateDiffeomorph
     contMDiff_invFun :=
       (chartConjugateMap_contDiff e he hi f.symm f.symm.contDiff hmapi hC hCs hfixi).contMDiff }
 
-
-
 theorem chartConjugateDiffeomorph_apply
     (f : Diffeomorph 𝓘(ℝ, E) 𝓘(ℝ, E) E E ∞)
     {C : Set E} (hC : IsCompact C) (hCs : C ⊆ e.source)
     (hfix : ∀ x ∉ C, f x = x) (y : F) :
     chartConjugateDiffeomorph e he hi f hC hCs hfix y = chartConjugateMap e f y := rfl
-
-
 
 theorem exists_chart_transport_isotopy
     (Φ : ℝ → Diffeomorph 𝓘(ℝ, E) 𝓘(ℝ, E) E E ∞)

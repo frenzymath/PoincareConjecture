@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [DecidableEq F] {K : SimplicialComplex ℝ E} {f : E → F}
 
 omit [DecidableEq E] in
-
-
 
 theorem AffineOnFaces.image_mem_embeddedImage_iff (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : (s : Set E) ⊆ K.space) :
@@ -52,8 +41,6 @@ private theorem disjoint_images_iff (hinj : InjOn f K.space) {s t : Finset E}
     have he := hinj (hs hx) (ht hz) (hxy.trans hzy.symm)
     exact Finset.disjoint_left.mp h hx (he.symm ▸ hz)
 
-
-
 theorem AffineOnFaces.embeddedImage_closedFaceStar_faces (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :
     ((hf.embeddedImage hinj).closedFaceStar (s.image f)).faces =
@@ -73,8 +60,6 @@ theorem AffineOnFaces.embeddedImage_closedFaceStar_faces (hf : K.AffineOnFaces f
     refine ⟨(hf.image_mem_embeddedImage_iff hinj (K.subset_space ht)).mpr ht, ?_⟩
     simpa only [Finset.image_union] using
       (hf.image_mem_embeddedImage_iff hinj (K.subset_space hst)).mpr hst
-
-
 
 theorem AffineOnFaces.embeddedImage_faceLink_faces (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :

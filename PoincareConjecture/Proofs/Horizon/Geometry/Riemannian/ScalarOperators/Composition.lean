@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -34,7 +25,6 @@ private lemma mvfderiv_scalar_comp {f : M → ℝ} {F : ℝ → ℝ} {x : M}
     deriv F (f x) * mvfderiv (𝓡 n) f x v
   exact mul_comm _ _
 
-
 theorem gradient_comp (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ → ℝ} {x : M}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
     (hF : DifferentiableAt ℝ F (f x)) :
@@ -43,7 +33,6 @@ theorem gradient_comp (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ → ℝ} {
   ext v
   rw [D.inner_gradient, mvfderiv_scalar_comp hf hF]
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
-
 
 theorem hessian_comp (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hF : ContDiff ℝ ∞ F)
@@ -67,7 +56,6 @@ theorem hessian_comp (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ → ℝ}
     Function.comp_apply, D.inner_gradient]
   rw [mvfderiv_scalar_comp ((hf x).mdifferentiableAt (by simp))
     ((hF.deriv' (n := ∞)).differentiable (by simp) (f x))]
-
 
 theorem laplacian_comp (D : LeviCivitaData g) {f : M → ℝ} {F : ℝ → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hF : ContDiff ℝ ∞ F) (x : M) :

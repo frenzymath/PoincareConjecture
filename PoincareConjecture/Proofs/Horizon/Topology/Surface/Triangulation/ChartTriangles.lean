@@ -1,20 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCover
 import Mathlib.Analysis.Normed.Affine.Convex
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -28,8 +13,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 theorem exists_chart_triangle (x : M) :
     ∃ b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)),
       chartAt (EuclideanSpace ℝ (Fin 2)) x x ∈ interior (convexHull ℝ (range b)) ∧
@@ -41,8 +24,6 @@ theorem exists_chart_triangle (x : M) :
     finrank_euclideanSpace_fin
   rw [hdim] at h
   exact h
-
-
 
 theorem exists_finite_chart_triangle_cover [CompactSpace M] :
     ∃ (s : Finset M) (b : M → AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))),

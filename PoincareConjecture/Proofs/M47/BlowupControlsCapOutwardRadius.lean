@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineFactor
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxVolume
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem cap_neck_scalar_quarter (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200) {y : M} (hy : y ∈ N.carrier) :
     (1 / 4 : ℝ) ≤ N.scale ^ 2 * N.connection.scalarCurvature y := by
@@ -37,8 +26,6 @@ theorem cap_neck_scalar_quarter (N : EpsilonNeck g)
     from M36.neck_coordinate_inverse N hy] at h
   have hlo := (abs_le.mp h).1
   linarith
-
-
 
 theorem cap_neck_normalized_radius_le (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200) {y : M} (hy : y ∈ N.carrier)
@@ -68,8 +55,6 @@ theorem cap_neck_normalized_radius_le (N : EpsilonNeck g)
   linarith
 
 variable [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem cap_neck_central_ball_volume (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200) {y : M} (hy : y ∈ N.central_sphere)

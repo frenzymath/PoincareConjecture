@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M42VanishingContinuation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

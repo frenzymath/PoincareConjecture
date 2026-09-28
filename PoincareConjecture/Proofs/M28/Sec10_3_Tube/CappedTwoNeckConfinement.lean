@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactCapSideOrder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem exists_chain_neck_confinement (T : CappedTubeCertificate g)
     (i j : ℤ) (hi : i ∈ T.tube.chain.shape.active) (hj : j ∈ T.tube.chain.shape.active)

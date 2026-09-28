@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.ProjectivePolarCover
 import PoincareConjecture.Proofs.M38.LinearSphereDiffeomorph
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -25,7 +15,6 @@ private instance sphereDimension : Fact (Module.finrank ℝ StandardCapSpace = 2
 
 variable (L : StandardCapSpace ≃L[ℝ] StandardCapSpace)
 
-
 theorem linearSphereDiffeomorph_neg (z : UnitTwoSphere) :
     linearSphereDiffeomorph L (-z) = -linearSphereDiffeomorph L z := by
   apply Subtype.ext
@@ -33,13 +22,11 @@ theorem linearSphereDiffeomorph_neg (z : UnitTwoSphere) :
   change ‖L (-z.val)‖⁻¹ • L (-z.val) = -(linearSphereDiffeomorph L z).val
   rw [map_neg, norm_neg, smul_neg, linearSphereDiffeomorph_coe]
 
-
 theorem linearSphere_norm_smooth :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ (fun z : UnitTwoSphere => ‖L z.val‖) := by
   intro z
   exact (contDiffAt_norm ℝ (linearSphereVector_ne_zero L z)).contMDiffAt.comp z
     ((L.contDiff.contMDiff.comp contMDiff_coe_sphere) z)
-
 
 noncomputable def linearCylinderFrame :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -70,7 +57,6 @@ noncomputable def linearCylinderFrame :
       (contMDiff_snd.mul ((linearSphere_norm_smooth L).comp
         ((linearSphereDiffeomorph L).symm.contMDiff.comp contMDiff_fst)))
 
-
 theorem linearCylinderFrame_reflection (p : RoundCylinderSpace) :
     linearCylinderFrame L (-p.1, -p.2) =
       (-(linearCylinderFrame L p).1, -(linearCylinderFrame L p).2) := by
@@ -81,10 +67,8 @@ theorem linearCylinderFrame_reflection (p : RoundCylinderSpace) :
 
 variable (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
 
-
 noncomputable def projectiveFramedPolarMap (p : RoundCylinderSpace) : projectiveCarrier.{u}.carrier :=
   projectivePolarMap R (linearCylinderFrame L p)
-
 
 theorem projectiveFramedPolar_fibers (x y : RoundCylinderSpace) :
     projectiveFramedPolarMap.{u} L R x = projectiveFramedPolarMap L R y ↔
@@ -93,20 +77,17 @@ theorem projectiveFramedPolar_fibers (x y : RoundCylinderSpace) :
   change projectivePolarMap R _ = projectivePolarMap R _ ↔ _
   rw [projectivePolar_fibers, ← linearCylinderFrame_reflection, hinj.eq_iff, hinj.eq_iff]
 
-
 theorem projectiveFramedPolar_localDiffeomorph :
     IsLocalDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (projectiveFramedPolarMap.{u} L R) := by
   intro p
   exact ((linearCylinderFrame L).isLocalDiffeomorph p).comp
     (𝓡 3) projectiveCarrier.carrier (projectivePolar_localDiffeomorph R _)
 
-
 theorem projectiveFramedPolar_range : range (projectiveFramedPolarMap.{u} L R) =
     {projectiveAffineMap R 0}ᶜ := by
   have hsurj : Function.Surjective (linearCylinderFrame L) := (linearCylinderFrame L).surjective
   change range (projectivePolarMap R ∘ linearCylinderFrame L) = _
   rw [range_comp, hsurj.range_eq, image_univ, projectivePolar_range]
-
 
 theorem projectiveFramedPolar_affine (z : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
     projectiveFramedPolarMap.{u} L R (z, t) = projectiveAffineMap R (L (t⁻¹ • z.val)) := by

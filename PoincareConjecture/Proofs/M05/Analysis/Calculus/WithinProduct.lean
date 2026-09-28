@@ -1,26 +1,10 @@
-
-
-
-
-
-
-
-
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Basic
-
-
-
-
-
-
-
 
 open Set Filter Asymptotics
 open scoped Topology Convex
 
 namespace Poincare
-
 
 private theorem isLittleO_sub_sub_fderiv
     {α E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -50,9 +34,6 @@ private theorem isLittleO_sub_sub_fderiv
 variable {P Q V : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup Q] [NormedSpace ℝ Q]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
 
 theorem hasFDerivWithinAt_prod_of_continuous_partial
     {f : P × Q → V} {U : Set P} {T : Set Q} (hT : Convex ℝ T)
@@ -95,7 +76,6 @@ theorem hasFDerivWithinAt_prod_of_continuous_partial
     htime.trans_isBigO (isBigO_of_le _ (fun q => norm_snd_le (q - p)))
   simpa [ContinuousLinearMap.coprod_apply, Prod.fst_sub, Prod.snd_sub,
     sub_eq_add_neg, add_assoc, add_comm, add_left_comm] using hspace'.add htime'
-
 
 theorem hasFDerivWithinAt_prod_Ico_of_continuous_partial
     {f : P × ℝ → V} {U : Set P} {a b : ℝ}

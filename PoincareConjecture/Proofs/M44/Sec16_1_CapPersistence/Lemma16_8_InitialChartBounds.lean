@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialComparisonBounds
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Topology Bundle BigOperators
 universe u v
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem abs_scalar_le_curvatureTensorNorm {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -55,10 +42,6 @@ noncomputable local instance initialChartCoefficientNormedGroup :
 
 noncomputable local instance initialChartCoefficientNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem exists_initial_chart_bounds (g0 : StandardInitialMetric)
     {K : Set E} (hK : IsCompact K) (m : ℕ) :

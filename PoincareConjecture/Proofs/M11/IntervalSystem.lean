@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M11.IntervalDifferential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,7 +54,6 @@ theorem smoothInterval_inclusion_derivative (I J : SpacetimeInterval)
     ((smoothInterval I).inclusionDerivative t).apply_symm_apply 1
   have hnorm' := ((smoothInterval J).inclusionDerivative (f t)).apply_symm_apply (1 : ℝ)
   exact hchain.symm.trans (hnorm.trans hnorm'.symm)
-
 
 noncomputable def intervalSystem : SpacetimeIntervalSystem where
   interval := smoothInterval

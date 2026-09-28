@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInitialSegment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_small_endpoint_levels
     {f : E → ℝ} {s : Set E} (hf : FinitePiecewiseAffineOn f s)

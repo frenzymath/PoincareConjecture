@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsEndLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
 local notation "CircleDiff" => Diffeomorph (𝓡 1) (𝓡 1) UnitCircle UnitCircle ∞
-
-
 
 theorem exists_stackTubeEndLabels
     (T : OpenPartialHomeomorph P P)

@@ -2,24 +2,13 @@ import Mathlib.Analysis.Calculus.Deriv.Add
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.DeTurckNative
 
-
 theorem pullback_source_cancel (A L : ℝ) :
     (A + L) + (-L) = A := by
   ring
-
 
 theorem hasDerivWithinAt_pullback_source_cancel
     {f h : ℝ → ℝ} {A L : ℝ} {J : Set ℝ} {t : ℝ}
@@ -30,8 +19,6 @@ theorem hasDerivWithinAt_pullback_source_cancel
   exact hadd.congr_deriv (by ring)
 
 open Filter MeasureTheory Set
-
-
 
 theorem integral_hasDerivWithinAt_Ico
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -65,8 +52,6 @@ open scoped Manifold ContDiff
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasDerivWithinAt_metric_of_intervalIntegral_Ico
     {g₀ : RiemannianMetric n M} {g : ℝ → RiemannianMetric n M}

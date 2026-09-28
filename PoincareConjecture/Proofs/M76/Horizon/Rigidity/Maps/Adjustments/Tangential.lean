@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Translations.OriginalVector
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalScalarHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -22,8 +13,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_tangential_homotopy {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

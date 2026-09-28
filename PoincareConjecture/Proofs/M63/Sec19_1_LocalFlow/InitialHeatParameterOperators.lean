@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialResponseTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +9,6 @@ namespace PoincareConjecture.M63
 open SpectralHeatNative QuasilinearDeTurckNative
 
 variable {iota : Type*} (lambda : iota → NNReal) {T : ℝ}
-
-
-
 
 theorem exists_initialHeatPath_operator [Countable iota] (_hT : 0 ≤ T) :
     ∃ V : State iota →L[ℝ] ResponsePath iota T, ‖V‖ ≤ 1 ∧
@@ -48,10 +35,6 @@ theorem exists_initialHeatPath_operator [Countable iota] (_hT : 0 ≤ T) :
       (fun t => norm_heat_apply_le lambda (t : ℝ).toNNReal w)
   let V := V1.mkContinuous 1 hnorm
   exact ⟨V, ContinuousLinearMap.opNorm_le_bound _ zero_le_one hnorm, fun _ _ => rfl⟩
-
-
-
-
 
 theorem exists_initialHeatHigh_operator [Countable iota] (hT : 0 ≤ T) :
     ∃ P : State iota →L[ℝ] ForcingSpace iota T, ‖P‖ ≤ Real.sqrt (2 * T + 1) ∧

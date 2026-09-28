@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.ProfilePlanar
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,7 +50,6 @@ theorem profilePlanarDiffeomorph_time_smooth {ρ : Real → Real}
         (hζp.prodMk hB).contDiffOn
         (fun z _ => ⟨hζrange z.1, mem_univ _⟩)
     exact contDiffOn_univ.mp hd
-
 
 def horizontalFamilyLift
     (Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -157,8 +154,6 @@ private theorem exists_cylindrical_planar_family {ρ : Real → Real}
     change profilePlanarDiffeomorph hρ H a R (β t) (hβrange t)
       ((profilePlanarDiffeomorph hρ H a R (ζ t) (hζrange t)).symm _) = _
     simp only [hβt, hζt, Diffeomorph.symm_apply_apply]
-
-
 
 theorem exists_cylindrical_profile_cap {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R : Real) :

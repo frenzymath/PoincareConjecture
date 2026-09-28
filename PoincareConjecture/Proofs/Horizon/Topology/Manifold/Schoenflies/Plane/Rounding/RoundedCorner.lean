@@ -2,15 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function
@@ -21,11 +12,8 @@ namespace Poincare.Manifold.Schoenflies.Plane
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
 
-
 noncomputable def roundedCorner (ρ : ℝ → ℝ) (p u v : E) (t : ℝ) : E :=
   p + ((t - ρ t) / 2) • u + ((t + ρ t) / 2) • v
-
-
 
 theorem contDiff_roundedCorner {ρ : ℝ → ℝ} {p u v : V → E}
     (hρ : ContDiff ℝ ∞ ρ) (hp : ContDiff ℝ ∞ p)
@@ -37,16 +25,12 @@ theorem contDiff_roundedCorner {ρ : ℝ → ℝ} {p u v : V → E}
     (((contDiff_snd.add (hρ.comp contDiff_snd)).div_const 2).smul
       (hv.comp contDiff_fst))
 
-
-
 theorem hasDerivAt_roundedCorner {ρ : ℝ → ℝ} (p u v : E) {t : ℝ}
     (hρ : DifferentiableAt ℝ ρ t) :
     HasDerivAt (roundedCorner ρ p u v)
       (((1 - deriv ρ t) / 2) • u + ((1 + deriv ρ t) / 2) • v) t :=
   ((((hasDerivAt_id t).sub hρ.hasDerivAt).div_const 2).smul_const u).const_add p |>.add
     ((((hasDerivAt_id t).add hρ.hasDerivAt).div_const 2).smul_const v)
-
-
 
 theorem roundedCorner_tail_bounds {ρ : ℝ → ℝ} (p u v : E) {δ : ℝ}
     (hδ : 0 < δ) (htail : ∀ t, δ ≤ |t| → ρ t = |t|)
@@ -83,8 +67,6 @@ theorem roundedCorner_tail_bounds {ρ : ℝ → ℝ} (p u v : E) {δ : ℝ}
     rw [← hpiece t, dist_eq_norm, heq, norm_smul, Real.norm_eq_abs,
       abs_of_nonneg hnonneg]
     exact mul_le_mul_of_nonneg_right hle (norm_nonneg _)
-
-
 
 theorem strictMono_roundedCorner_projection {ρ : ℝ → ℝ} (p u v : E)
     (hρ : Differentiable ℝ ρ) (hbound : ∀ t, |deriv ρ t| ≤ 1)

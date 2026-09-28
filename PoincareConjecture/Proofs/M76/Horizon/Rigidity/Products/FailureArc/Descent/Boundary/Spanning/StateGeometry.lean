@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Spanning.Canonical
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.MarkedFrontierNeighborhood
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.Annuli

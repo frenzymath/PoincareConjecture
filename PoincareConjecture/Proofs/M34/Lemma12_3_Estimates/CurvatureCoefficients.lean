@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.CoefficientCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -17,18 +7,13 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def initialWeightedSlope (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   deriv (initialWarping g₀) r / initialRadialSpeed g₀ r
-
-
 
 theorem initialWeightedSlope_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (initialWeightedSlope g₀) := by
   exact (initialWarping_contDiff g₀).deriv'.div (initialRadialSpeed_contDiff g₀)
     (fun r => (initialRadialSpeed_pos g₀ r).ne')
-
 
 theorem initialWeightedSlope_hasDerivAt (g₀ : StandardInitialMetric) (r : ℝ) :
     HasDerivAt (initialWeightedSlope g₀)
@@ -41,8 +26,6 @@ theorem initialWeightedSlope_hasDerivAt (g₀ : StandardInitialMetric) (r : ℝ)
   have hd := (((initialRadialSpeed_contDiff g₀).differentiable (by simp)) r).hasDerivAt
   convert! hp.div hd ha using 1
   field_simp
-
-
 
 theorem initialChristoffelB_hasDerivAt (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : r ≠ 0) :
@@ -73,8 +56,6 @@ theorem initialChristoffelB_hasDerivAt (g₀ : StandardInitialMetric)
   field_simp
   ring
 
-
-
 theorem initialCurvature_coefficient_F (g₀ : StandardInitialMetric) {r : ℝ}
     (hr : 0 < r) :
     initialChristoffelB g₀ r - initialChristoffelA g₀ r +
@@ -86,8 +67,6 @@ theorem initialCurvature_coefficient_F (g₀ : StandardInitialMetric) {r : ℝ}
   unfold initialWeightedSlope
   field_simp
   ring
-
-
 
 theorem initialCurvature_coefficient_radial (g₀ : StandardInitialMetric) {r : ℝ}
     (hr : 0 < r) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapExcursionSubarcs
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckShortening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_core_excursion_replacement (N : CapCertificate g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)
@@ -113,9 +100,6 @@ theorem exists_core_excursion_replacement (N : CapCertificate g)
       hγ hγU hvSphere hdSphere hslabN hheight
   refine ⟨σ, hσ0, hσ1, hσ, hσU, ?_⟩
   simpa only [N.end_neck_epsilon] using hsave
-
-
-
 
 theorem endpoint_mem_of_intrinsic_minimizer (N : CapCertificate g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)

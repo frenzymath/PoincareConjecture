@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeSmoothOpenTarget
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFrameNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap
@@ -19,11 +10,6 @@ variable {X E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X] [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem Continuous.exists_contDiff_frameTransverse_eqOn
     {f : X → E →L[ℝ] F} (hf : Continuous f) (J : F →L[ℝ] E)

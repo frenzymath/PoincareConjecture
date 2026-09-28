@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Certi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Certificates.QuotientTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.NormalForm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem horizon_m24ModelCertificates
     {S : GradientShrinkingSolitonData 3 M}

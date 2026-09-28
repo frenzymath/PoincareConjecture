@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.HomotheticField
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Positivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type u} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
 
 theorem scalarCurvature_eq_zero_of_curvature_null_vector
     (D : LeviCivitaData g) (x : S) (v : TangentSpace (𝓡 2) x)
@@ -58,7 +48,6 @@ theorem scalarCurvature_eq_zero_of_curvature_null_vector
     nlinarith
   exact (mul_eq_zero.mp hprod).resolve_right (ne_of_gt (g.pos x v hv))
 
-
 theorem curvatureTensor_eq_zero_of_curvature_null_vector
     (D : LeviCivitaData g) (x : S) (v : TangentSpace (𝓡 2) x)
     (hv : v ≠ 0)
@@ -74,8 +63,6 @@ end PoincareConjecture.LeviCivitaData
 open Set
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem parallel_field_eq_zero_of_bounded_ancient_surface
     {S : Type u} [TopologicalSpace S] [T3Space S]

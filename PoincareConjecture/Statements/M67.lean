@@ -3,40 +3,6 @@ import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Statements.M65
 import PoincareConjecture.Statements.M66
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -44,7 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure M67RegularPiece
     (hM61 : M61RawWidthCore.{u})
@@ -89,15 +54,11 @@ structure M67ChangingWidthPath
   ambient_metric_eq : ∀ s,
     (slice s).ambient_metric = D.flow.metric s.1
 
-
   regular_flow : ∀ {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ T),
     Disjoint D.flow.surgery_times (Set.Ioc a b) →
       RicciFlow 3
         (P.component ⟨a, ⟨ha, hab.le.trans hb⟩⟩).carrier.carrier
         (Set.Icc a b)
-
-
-
 
   regular_flow_metric_calibration : ∀ {a b : ℝ}
       (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ T)
@@ -112,7 +73,6 @@ structure M67ChangingWidthPath
           (P.component ⟨a, ⟨ha, hab.le.trans hb⟩⟩).inclusion x v)
         (mfderiv (𝓡 3) (𝓡 3)
           (P.component ⟨a, ⟨ha, hab.le.trans hb⟩⟩).inclusion x w)
-
 
   regular_flow_scalar_calibration : ∀ {a b : ℝ}
       (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ T)
@@ -142,8 +102,6 @@ structure M67ChangingWidthPath
           (P.component ⟨a, ⟨ha, hab.le.trans hb⟩⟩).carrier.carrier)
         hM61 hM65 (actual_flow := regular_flow ha hab hb hJ) width
         D.flow.surgery_times (a := a) (b := b) (T := T))
-
-
 
   event_transport : ∀ (S : Set.Icc (0 : ℝ) T)
       (hS : S.1 ∈ D.flow.surgery_times)
@@ -189,9 +147,6 @@ structure M67Conclusion
       ∃ delta : ℝ, 0 < delta ∧
         ∀ t : Set.Icc (0 : ℝ) T,
           s.1 ≤ t.1 → t.1 < s.1 + delta → |X.width t - X.width s| < epsilon
-
-
-
 
 structure M67ClassCoherence
     {g₀ : StandardInitialMetric}
@@ -245,8 +200,6 @@ structure M67ClassCoherence
                   E.f (P.component s).basepoint =
                     E.f (P.component s).basepoint)) E.pre.alpha) =
                 E.post.alpha))
-
-
 
 structure M67AnchoredConclusion
     {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}

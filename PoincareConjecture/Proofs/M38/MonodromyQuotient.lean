@@ -3,15 +3,6 @@ import Mathlib.Topology.Covering.Quotient
 import Mathlib.Topology.Order.Compact
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,13 +12,11 @@ namespace PoincareConjecture.M38
 
 variable (phi : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
 
-
 theorem monodromy_continuousConstVAdd :
     letI := monodromyAddAction phi
     ContinuousConstVAdd ℤ monodromyPunctureOpen := by
   let := monodromyAddAction phi
   exact ⟨fun n => (monodromyDeck_smooth phi n).continuous⟩
-
 
 theorem monodromy_isCancelVAdd :
     letI := monodromyAddAction phi
@@ -40,8 +29,6 @@ theorem monodromy_isCancelVAdd :
     monodromyLogRadius (monodromyDeck phi n x) at heq
   rw [monodromyDeck_logRadius, monodromyDeck_logRadius] at heq
   exact Int.cast_injective (add_right_cancel heq)
-
-
 
 theorem monodromy_properlyDiscontinuous :
     letI := monodromyAddAction phi
@@ -71,18 +58,14 @@ theorem monodromy_properlyDiscontinuous :
     have := Int.le_ceil (bL - aK)
     linarith
 
-
 noncomputable def monodromyOrbitRel : Setoid monodromyPunctureOpen :=
   letI := monodromyAddAction phi
   AddAction.orbitRel ℤ monodromyPunctureOpen
 
-
 abbrev MonodromyQuotient := Quotient (monodromyOrbitRel phi)
-
 
 instance monodromyPuncture_locallyCompact : LocallyCompactSpace monodromyPunctureOpen :=
   monodromyPunctureOpen.isOpen.locallyCompactSpace
-
 
 theorem monodromy_quotientCovering :
     letI := monodromyAddAction phi
@@ -94,13 +77,11 @@ theorem monodromy_quotientCovering :
   have := monodromy_properlyDiscontinuous phi
   exact isAddQuotientCoveringMap_quotientMk_of_properlyDiscontinuousVAdd
 
-
 instance monodromyQuotient_t2 : T2Space (MonodromyQuotient phi) := by
   let := monodromyAddAction phi
   have := monodromy_continuousConstVAdd phi
   have := monodromy_properlyDiscontinuous phi
   exact inferInstanceAs (T2Space (Quotient (AddAction.orbitRel ℤ monodromyPunctureOpen)))
-
 
 theorem monodromy_open_quotient :
     IsOpenQuotientMap
@@ -108,18 +89,15 @@ theorem monodromy_open_quotient :
   let := monodromyAddAction phi
   exact (monodromy_quotientCovering phi).isOpenQuotientMap
 
-
 instance monodromyQuotient_secondCountable :
     SecondCountableTopology (MonodromyQuotient phi) :=
   TopologicalSpace.Quotient.secondCountableTopology (monodromy_open_quotient phi).isOpenMap
-
 
 theorem monodromy_quotient_localHomeomorph :
     IsLocalHomeomorph
       (Quotient.mk (monodromyOrbitRel phi) : monodromyPunctureOpen → MonodromyQuotient phi) := by
   let := monodromyAddAction phi
   exact (monodromy_quotientCovering phi).isCoveringMap.isLocalHomeomorph
-
 
 theorem monodromy_quotient_eq_iff (x y : monodromyPunctureOpen) :
     (Quotient.mk (monodromyOrbitRel phi) x : MonodromyQuotient phi) =
@@ -128,22 +106,17 @@ theorem monodromy_quotient_eq_iff (x y : monodromyPunctureOpen) :
   let := monodromyAddAction phi
   exact (monodromy_quotientCovering phi).apply_eq_iff_mem_orbit
 
-
 instance monodromyPuncture_connected : ConnectedSpace monodromyPunctureOpen :=
   isConnected_iff_connectedSpace.mp
     (isConnected_compl_singleton_of_one_lt_rank
       (Module.one_lt_rank_of_one_lt_finrank (by simp [StandardCapSpace])) 0)
 
-
 instance monodromyQuotient_connected : ConnectedSpace (MonodromyQuotient phi) :=
   (monodromy_open_quotient phi).surjective.connectedSpace
     (monodromy_open_quotient phi).continuous
 
-
-
 def monodromyFundamentalDomain : Set monodromyPunctureOpen :=
   {x | 1 ≤ ‖x.val‖ ∧ ‖x.val‖ ≤ Real.exp 1}
-
 
 theorem monodromyFundamentalDomain_compact : IsCompact monodromyFundamentalDomain := by
   apply Subtype.isCompact_iff.mpr
@@ -165,7 +138,6 @@ theorem monodromyFundamentalDomain_compact : IsCompact monodromyFundamentalDomai
     simp only [Set.mem_ofPred_eq, Set.mem_inter_iff, Metric.mem_closedBall, dist_zero_right]
   exact hset.symm ▸ hc
 
-
 theorem monodromy_mem_fundamental_of_log (x : monodromyPunctureOpen)
     (hx : monodromyLogRadius x ∈ Icc (0 : ℝ) 1) :
     x ∈ monodromyFundamentalDomain := by
@@ -174,8 +146,6 @@ theorem monodromy_mem_fundamental_of_log (x : monodromyPunctureOpen)
   constructor
   · simpa only [Real.exp_zero, he] using Real.exp_le_exp.mpr hx.1
   · simpa only [he] using Real.exp_le_exp.mpr hx.2
-
-
 
 theorem monodromyFundamentalDomain_image :
     (Quotient.mk (monodromyOrbitRel phi) : monodromyPunctureOpen → MonodromyQuotient phi) ''
@@ -192,7 +162,6 @@ theorem monodromyFundamentalDomain_image :
     rw [Int.cast_neg]
     constructor <;> linarith
   · exact (monodromy_quotient_eq_iff phi _ _).mpr ⟨n, rfl⟩
-
 
 instance monodromyQuotient_compact : CompactSpace (MonodromyQuotient phi) := by
   constructor

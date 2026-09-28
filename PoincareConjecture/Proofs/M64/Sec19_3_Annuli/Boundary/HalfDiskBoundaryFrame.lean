@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.MetricFrameReflection
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,10 +15,6 @@ open M65Branch M65StrictTrace
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem halfDisk_metricFrame_reality_of_label
     {g : RiemannianMetric n E} {H : ℂ → E} {r t : ℝ}

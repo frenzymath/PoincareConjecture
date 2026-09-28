@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.UniformNeckJets
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPullbackSmoothness
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckJetTransfer
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_neck_family_close (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem neckScale_sq_mul_scalar_center
     {M : Type u} [TopologicalSpace M]
@@ -31,8 +17,6 @@ theorem neckScale_sq_mul_scalar_center
   rw [N.scale_eq_scalar, show (-1 / 2 : ℝ) = -(1 / 2 : ℝ) by ring,
     Real.rpow_neg N.scalar_center_pos.le, ← Real.sqrt_eq_rpow, inv_pow,
     Real.sq_sqrt N.scalar_center_pos.le, inv_mul_cancel₀ N.scalar_center_pos.ne']
-
-
 
 theorem exists_neck_scalarControl {alpha : ℝ} (halpha : 0 < alpha) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -54,8 +38,6 @@ theorem exists_neck_scalarControl {alpha : ℝ} (halpha : 0 < alpha) :
   have h := (hcontrol N N.connection he (N.coordinate_inverse x).1
     (N.coordinate_inverse_mem x hx).2).1
   simpa only [hmap] using h
-
-
 
 theorem exists_strongNeck_scalarComparison :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

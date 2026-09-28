@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.VerticalSetImage
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Manifold.Schoenflies.Reverse
-
-
 
 theorem image_cap_eq_affine_union_cylinder
     {E : Type*} [TopologicalSpace E]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.OrientedCollar
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.TubeArmReindex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -17,8 +9,6 @@ namespace Dehn
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 structure OrientedPolygonCollar
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -37,8 +27,6 @@ structure OrientedPolygonCollar
   chart_PL : chart.IsFinitePL
   outer_depth : ∀ p, (chart p : E) ∈ outer.boundary ℝ ↔ depth L p = -d
   inner_depth : ∀ p, (chart p : E) ∈ inner.boundary ℝ ↔ depth L p = d
-
-
 
 theorem exists_paired_oriented_polygon_collars
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

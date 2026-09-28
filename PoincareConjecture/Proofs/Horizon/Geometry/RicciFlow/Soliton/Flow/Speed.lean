@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBa
 import Mathlib.Geometry.Manifold.IntegralCurve.Basic
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem hasDerivAt_gradient_energy (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {γ : ℝ → M} {t : ℝ}
@@ -43,7 +32,6 @@ theorem hasDerivAt_gradient_energy (D : LeviCivitaData g) {f : M → ℝ}
     (mvfderiv (𝓡 n) (fun x => g.inner x (D.gradient f x) (D.gradient f x))
       (γ t) ((1 : ℝ) • D.gradient f (γ t))) t at hd
   simpa only [one_smul, D.mvfderiv_gradient_normSq (hf (γ t)), Function.comp_def] using hd
-
 
 theorem gradient_energy_le_exp (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {C : ℝ}
@@ -92,7 +80,6 @@ theorem gradient_energy_le_exp (D : LeviCivitaData g) {f : M → ℝ}
   simpa only [Real.norm_eq_abs, one_mul, abs_of_nonneg (hq t), sub_zero,
     gronwallBound_ε0, mul_one] using h
 
-
 theorem gradient_speed_le_on_bounded_interval (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {C : ℝ} (hC : 0 ≤ C)
     (hess : ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,
@@ -118,7 +105,6 @@ theorem gradient_speed_le_on_bounded_interval (D : LeviCivitaData g) {f : M → 
     mul_nonneg (hq _) (Real.exp_pos _).le
   exact (Real.sqrt_le_iff).mpr ⟨by linarith,
     by nlinarith [sq_nonneg (q (γ 0) * Real.exp (2 * C * A))]⟩
-
 
 theorem edist_le_of_bounded_hessian_gradient_curve (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {C : ℝ} (hC : 0 ≤ C)
@@ -162,7 +148,6 @@ theorem edist_le_of_bounded_hessian_gradient_curve (D : LeviCivitaData g) {f : M
     apply ENNReal.ofReal_le_ofReal
     dsimp only [B] at *
     nlinarith [ht.1]
-
 
 theorem exists_compact_confinement_of_bounded_hessian [T3Space M]
     (D : LeviCivitaData g) (hc : MetricComplete g) {f : M → ℝ}

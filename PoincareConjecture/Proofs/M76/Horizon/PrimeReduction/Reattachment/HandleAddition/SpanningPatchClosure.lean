@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalSpherePatchReplacement
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem ChartwisePLSphere.original_disk_complement_eq_closure
     {X F ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -41,8 +31,6 @@ theorem ChartwisePLSphere.original_disk_complement_eq_closure
     simpa only [hk.closure_sdiff] using hc.image_closure
   rw [←himage,←hraw]
   exact Subset.antisymm hdense (closure_minimal (image_mono sdiff_subset) hclosed)
-
-
 
 theorem ChartwisePLSphere.original_ball_patch_replacement_eq_closures
     {X F ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -72,8 +60,6 @@ theorem ChartwisePLSphere.original_ball_patch_replacement_eq_closures
     simp only [mem_sdiff,mem_inter_iff]
     tauto
   rw [hS,hT]
-
-
 
 theorem patch_closures_corner_model
     {X : Type*} [TopologicalSpace X]

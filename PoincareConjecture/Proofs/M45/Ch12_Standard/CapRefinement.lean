@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M45.Ch12_Standard.NeckReflection
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapUniformBounds
 import PoincareConjecture.Proofs.M45.Sec15_2_Constants.ProducerEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ open M45
 variable {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
   {F : MaximalStandardCapFlow g₀} {t epsilon C : ℝ} {x : StandardCapSpace}
 
-
-
 theorem core_frontier_eq_end (N : StandardCapNeighborhood atlas F t epsilon C x) :
     frontier N.closed_core = N.carrier ∩ frontier N.end_neck.patch.carrier := by
   rw [N.core_compact.isClosed.frontier_eq, N.closed_core_eq]
@@ -36,8 +25,6 @@ theorem core_frontier_eq_end (N : StandardCapNeighborhood atlas F t epsilon C x)
   ext y
   simp only [mem_sdiff, mem_inter_iff, mem_compl_iff]
   tauto
-
-
 
 noncomputable def euclideanModel (N : StandardCapNeighborhood atlas F t epsilon C x)
     (p : RealProjectiveThree) : CapModelEquivalence .euclidean p N.carrier where
@@ -54,8 +41,6 @@ noncomputable def euclideanModel (N : StandardCapNeighborhood atlas F t epsilon 
   right_inverse := N.ball_map_left_inverse
   forward_smooth := N.ball_inverse_smooth
   inverse_smooth := N.ball_map_smooth.contMDiffOn
-
-
 
 theorem exists_refinement (N : StandardCapNeighborhood atlas F t epsilon C x)
     (hepsilon : epsilon ≤ 1 / 200) : Nonempty (M45StandardCapRefinement N) := by
@@ -132,8 +117,6 @@ theorem exists_refinement (N : StandardCapNeighborhood atlas F t epsilon C x)
 end PoincareConjecture.StandardCapNeighborhood
 
 namespace PoincareConjecture.M45
-
-
 
 theorem capRefinementProducer : CapRefinementProducer := by
   intro atlas g₀ F t epsilon C x hepsilon N

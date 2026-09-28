@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.CalibratedPushforward
 import PoincareConjecture.Proofs.M10.ExponentialSlice
 import PoincareConjecture.Proofs.M10.RegularImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,17 +15,14 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 noncomputable def exponentialSliceJacobian (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) (z : EuclideanSpace ℝ (Fin n)) : ℝ :=
   pullbackJacobian (F.metric (T - τ)) (exponentialSliceChart G τ) z
-
 
 theorem exponentialSliceJacobian_nonneg (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) (z : EuclideanSpace ℝ (Fin n)) :
     0 ≤ exponentialSliceJacobian G τ z :=
   pullbackJacobian_nonneg _ _ _
-
 
 theorem exponentialSliceJacobian_continuousOn (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) :
@@ -44,7 +33,6 @@ theorem exponentialSliceJacobian_continuousOn (G : LExponentialGeometry F T τma
       ((exponentialSliceChart G τ).open_source.mem_nhds hz)).of_le (by simp))).continuousWithinAt
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem map_exponentialSliceJacobian_eq_restrict (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) :
@@ -58,7 +46,6 @@ theorem map_exponentialSliceJacobian_eq_restrict (G : LExponentialGeometry F T �
 
 variable [ConnectedSpace M]
 
-
 theorem calibratedMetricVolume_restrict_exponentialSlice_target
     (hL : LGeodesicTheory F T τmax)
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -68,7 +55,6 @@ theorem calibratedMetricVolume_restrict_exponentialSlice_target
       (exponentialSliceChart G τ).target = calibratedMetricVolume (F.metric (T - τ)) := by
   apply Measure.restrict_eq_self_of_ae_mem
   exact ae_iff.mpr (regularImage_slice_complement_eq_zero hL hDifferential hwindow G hτ hmax)
-
 
 theorem map_exponentialSliceJacobian_eq_calibratedMetricVolume
     (hL : LGeodesicTheory F T τmax)
@@ -80,7 +66,6 @@ theorem map_exponentialSliceJacobian_eq_calibratedMetricVolume
         calibratedMetricVolume (F.metric (T - τ)) := by
   rw [map_exponentialSliceJacobian_eq_restrict,
     calibratedMetricVolume_restrict_exponentialSlice_target hL hDifferential hwindow G hτ hmax]
-
 
 theorem lintegral_eq_exponentialSliceJacobian
     (hL : LGeodesicTheory F T τmax)

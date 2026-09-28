@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.BallShrinking
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}}
 
-
-
 theorem exists_surgeryBall_radius_in_open (B : SurgeryBallEmbedding A)
     {O : Set A.carrier} (hO : IsOpen O) (hp : B.map 0 ∈ O) :
     ∃ r : ℝ, 0 < r ∧ r ≤ 1 ∧ B.map '' Metric.ball 0 r ⊆ O := by
@@ -31,8 +21,6 @@ theorem exists_surgeryBall_radius_in_open (B : SurgeryBallEmbedding A)
   refine ⟨min r 1, lt_min hr (by norm_num), min_le_right _ _, ?_⟩
   rintro y ⟨x, hx, rfl⟩
   exact hball (Metric.ball_subset_ball (min_le_left r 1) hx)
-
-
 
 theorem exists_pairBallShrink_in_open (B D : SurgeryBallEmbedding A)
     (hBD : Disjoint (B.map '' Metric.ball (0 : StandardCapSpace) 2)

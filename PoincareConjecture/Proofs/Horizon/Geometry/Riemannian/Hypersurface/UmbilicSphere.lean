@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.Euclidean.SphereMap
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.MFDeriv.Zero
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem surjective_unitMap_of_injective_mfderiv
     {m : ℕ} (hm : 1 ≤ m) {S : Type*} [TopologicalSpace S]
@@ -52,8 +42,6 @@ theorem surjective_unitMap_of_injective_mfderiv
     (show IsClopen (range F) from ⟨hclosed, hlocal.isOpen_range⟩).eq_univ
       (range_nonempty F)
   exact range_eq_univ.mp hrange
-
-
 
 theorem exists_center_range_sphere_of_unit_derivative
     {m : ℕ} (hm : 1 ≤ m) {S : Type*} [TopologicalSpace S]
@@ -90,8 +78,6 @@ theorem exists_center_range_sphere_of_unit_derivative
     calc
       f z = c + N z := sub_eq_iff_eq_add.mp (hcenter z)
       _ = y := by rw [hz']; abel
-
-
 
 theorem exists_homeomorph_sphere_of_injective_unit_derivative
     {m : ℕ} (hm : 1 ≤ m) {S : Type*} [TopologicalSpace S]

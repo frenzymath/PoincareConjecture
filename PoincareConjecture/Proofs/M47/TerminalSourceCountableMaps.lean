@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableScale
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,20 +14,17 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : ℕ → Type u} {rho : ℕ → ℝ} {N : ℕ → ℕ}
 
-
 noncomputable def terminalSourceCountableMap (hrho : ∀ j, 0 < rho j)
     (e : ∀ k j, j ≤ k → Fin (N j + 1) → terminalSourceCountableDomain (rho j) → M k)
     (k j : ℕ) (i : Fin (N j + 1)) : terminalSourceCountableDomain (rho j) → M k :=
   if hjk : j ≤ k then e k j hjk i
   else e k 0 (Nat.zero_le k) 0 ∘ terminalSourceCountableScaleMap (hrho 0) (hrho j)
 
-
 theorem terminalSourceCountableMap_good (hrho : ∀ j, 0 < rho j)
     (e : ∀ k j, j ≤ k → Fin (N j + 1) → terminalSourceCountableDomain (rho j) → M k)
     {k j : ℕ} (hjk : j ≤ k) (i : Fin (N j + 1)) :
     terminalSourceCountableMap hrho e k j i = e k j hjk i := by
   simp only [terminalSourceCountableMap, dif_pos hjk]
-
 
 theorem terminalSourceCountableMap_eventually_good (hrho : ∀ j, 0 < rho j)
     (e : ∀ k j, j ≤ k → Fin (N j + 1) → terminalSourceCountableDomain (rho j) → M k)
@@ -46,7 +35,6 @@ theorem terminalSourceCountableMap_eventually_good (hrho : ∀ j, 0 < rho j)
   exact ⟨hk, terminalSourceCountableMap_good hrho e hk i⟩
 
 variable [∀ k, MetricSpace (M k)] [∀ k, ChartedSpace E (M k)]
-
 
 theorem terminalSourceCountableMap_geometry (hrho : ∀ j, 0 < rho j)
     (e : ∀ k j, j ≤ k → Fin (N j + 1) → terminalSourceCountableDomain (rho j) → M k)

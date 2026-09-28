@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimit
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_joint_radial_filling
     (rho : ℝ × ℝ → ℝ)

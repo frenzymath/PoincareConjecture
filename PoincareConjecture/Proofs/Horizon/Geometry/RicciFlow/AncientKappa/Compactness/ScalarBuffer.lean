@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -77,8 +66,6 @@ variable {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa)
 local instance scalarBufferSourceConnected (k : ℕ) : ConnectedSpace (S.term k).carrier.carrier :=
   (S.term k).connectedSpace
 
-
-
 theorem exists_base_scalar_time_constant
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S) :
@@ -105,8 +92,6 @@ theorem exists_base_scalar_time_constant
     (fun s hs => hderiv k s hs p hp) hscalar
     (fun s hs => B.flow.nonnegative_curvature_operator s hs p) ht
   simpa only [F, p, B.scalar_normalized] using h
-
-
 
 theorem exists_base_scalar_positive_time_buffer
     (P : M23NormalizedKappaCompactnessPredecessors)

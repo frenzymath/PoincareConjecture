@@ -1,31 +1,16 @@
 import PoincareConjecture.Proofs.M15.Thm8_1_Reduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M15
 
-
-
 noncomputable def theorem81Kappa (n : ℕ) (epsilon0 lower : ℝ) : ℝ :=
   min (epsilon0 ^ n) (lower ^ 2 / 9)
-
-
 
 theorem theorem81Kappa_pos {n : ℕ} {epsilon0 lower : ℝ}
     (hepsilon0 : 0 < epsilon0) (hlower : 0 < lower) :
     0 < theorem81Kappa n epsilon0 lower := by
   exact lt_min (pow_pos hepsilon0 _) (div_pos (sq_pos_of_pos hlower) (by norm_num))
-
-
 
 theorem theorem81Kappa_le_ratio {n : ℕ} {epsilon0 lower epsilon : ℝ}
     (hepsilon0 : 0 ≤ epsilon0) (hlower : 0 ≤ lower) (hepsilon : 0 < epsilon)

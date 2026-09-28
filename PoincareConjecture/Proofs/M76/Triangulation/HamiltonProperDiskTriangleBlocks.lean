@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskBaseFaces
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
 
 theorem HamiltonProperDiskTriangulation.disk_subset_region
     (T : HamiltonProperDiskTriangulation R D b) : D ⊆ R := by
@@ -39,10 +28,6 @@ theorem HamiltonProperDiskTriangulation.disk_subset_region
   · exact (hregion x hxH).mpr ((hdisk x hxH).mp hx).1
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_triangle_normal_interval
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)

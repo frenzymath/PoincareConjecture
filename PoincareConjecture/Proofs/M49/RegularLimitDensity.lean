@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M49VolumeLoss
 import PoincareConjecture.Proofs.M10.PullbackJacobian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 def regionOpenPartialHomeomorph {A B : GeneralizedSliceCarrier.{u}}
     {U : Set A.carrier} {V : Set B.carrier} (E : SurgeryRegionEquivalence A B U V)
@@ -45,8 +34,6 @@ variable {A B : GeneralizedSliceCarrier.{u}}
   {g : ℝ → RiemannianMetric 3 A.carrier} {gT : RiemannianMetric 3 B.carrier}
   {f : A.carrier → B.carrier} {U : Set A.carrier} {T : ℝ}
 
-
-
 theorem surgeryMetricLimitOn_coefficient_tendsto
     (h : SurgeryMetricLimitOn A B g gT f U T) {q : A.carrier} (hq : q ∈ U)
     {x : EuclideanSpace ℝ (Fin 3)} (hx : x ∈ (extChartAt (𝓡 3) q).target)
@@ -65,9 +52,7 @@ theorem surgeryMetricLimitOn_coefficient_tendsto
   simpa only [iteratedFDeriv_zero_eq_comp, Function.comp_apply, ← map_sub,
     LinearIsometryEquiv.norm_map] using hb
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem surgeryMetricLimitOn_jacobian_tendsto
     (h : SurgeryMetricLimitOn A B g gT f U T) {q : A.carrier} (hq : q ∈ U)

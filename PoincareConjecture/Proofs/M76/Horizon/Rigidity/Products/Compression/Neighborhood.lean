@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Level
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleAvoidance
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SignedPhaseArcMembership
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -259,4 +251,3 @@ theorem exists_hamiltonZero_adjusted_neighborhood {ι κ : Type*}
     rho, hrho, hrhor, hpre, hpreA, hpreB⟩
 
 end PoincareConjecture.M76.PrescribedSlab
-

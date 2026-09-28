@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BoundedHeightTrack
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +10,6 @@ open scoped NNReal Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem boundedFlow_exterior_level_images
     (F : E → E) {K L : ℝ≥0}

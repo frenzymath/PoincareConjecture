@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SourceSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.BufferedSegments
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +9,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle ENNReal
 
 namespace Poincare.AncientVolume.Splitting
-
-
 
 theorem exists_small_diverging_radii
     {L D : ℕ → ℝ} (hL : ∀ i, 0 < L i) (hD : ∀ i, 0 < D i)
@@ -67,9 +52,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_trimmed_normalized_opposite_segments
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
@@ -197,8 +179,6 @@ theorem exists_trimmed_normalized_opposite_segments
     linarith [(hs i).1]
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_selected_normalized_opposite_segments_of_comparison
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)

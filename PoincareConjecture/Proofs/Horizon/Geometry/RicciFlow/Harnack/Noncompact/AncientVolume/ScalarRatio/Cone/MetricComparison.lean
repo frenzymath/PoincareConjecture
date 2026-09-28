@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.NoBranching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.BrokenSegment
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -70,8 +57,6 @@ private theorem geodesic_of_germ {g : RiemannianMetric n M}
   refine ⟨p, q, v, ?_⟩
   filter_upwards [h, heq] with s hs he
   exact ⟨he.trans hs.1, hs.2⟩
-
-
 
 theorem exists_unit_minimizing_geodesic_through
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -263,8 +248,6 @@ theorem exists_unit_minimizing_geodesic_through
   · simpa only [RiemannianMetric.edist, Manifold.riemannianEDist_comm,
       abs_of_nonneg (sub_nonneg.mpr hvu)] using hforward v hv u hu hvu
 
-
-
 theorem toponogov_corresponding_side_of_edist_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
@@ -298,8 +281,6 @@ theorem toponogov_corresponding_side_of_edist_segments
   simpa only [hγs, hσt, hγa, hσb] using
     (g.toponogov_comparison D hc hsec ha hb hγ hσ hγ0 hσ0
       hγspeed hσspeed hγmin hσmin).2 s hs t ht
-
-
 
 theorem toponogov_equal_radius_of_edist_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

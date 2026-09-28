@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerReconstruction
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ChartMetricRealization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +13,6 @@ namespace PoincareConjecture.M65Euler
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
-
-
-
-
-
 
 theorem reconstruction_pairing (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (ψ : EuclideanSpace ℝ (Fin 3) → M)
@@ -45,11 +29,6 @@ theorem reconstruction_pairing (g : RiemannianMetric 3 M)
     exact mfderiv_comp y he hψ
   rw [hd]
   exact m65EmbeddingMetric_image g e (ψ y) hinj _ _
-
-
-
-
-
 
 theorem exists_chart_energy_metric (g : RiemannianMetric 3 M)
     (e : M → EuclideanSpace ℝ (Fin N)) (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

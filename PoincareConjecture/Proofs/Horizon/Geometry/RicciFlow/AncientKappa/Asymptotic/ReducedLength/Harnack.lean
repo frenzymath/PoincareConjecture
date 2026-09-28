@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bilinear
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +47,6 @@ variable [MeasurableSpace M] [BorelSpace M]
 
 namespace AncientKappaSolution
 
-
-
 theorem harnack_operator_bound (K : AncientKappaSolution n M)
     (t : ℝ) (ht : t ≤ 0) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ x : M, (K.flow.connection t).CurvatureOperatorBound C x := by
@@ -77,8 +67,6 @@ private theorem ricci_neg_neg {g : RiemannianMetric n M}
   change (D.curvatureTensor_bilinear_first_third x _ _) (-v) (-v) =
     (D.curvatureTensor_bilinear_first_third x _ _) v v
   simp only [map_neg, LinearMap.neg_apply, neg_neg]
-
-
 
 theorem reducedHarnackDensity_lower (K : AncientKappaSolution n M)
     (H : HarnackAncientTheory.{u}) {R τ : ℝ} {p q : M}
@@ -103,8 +91,6 @@ theorem reducedHarnackDensity_lower (K : AncientKappaSolution n M)
   rw [hderiv]
   simp only [neg_neg, neg_div]
   linarith
-
-
 
 theorem reducedHarnackIntegral_lower (K : AncientKappaSolution n M)
     (H : HarnackAncientTheory.{u}) {R τ : ℝ} {p q : M}
@@ -134,8 +120,6 @@ theorem reducedHarnackIntegral_lower (K : AncientKappaSolution n M)
     using intervalIntegral.integral_mono_on_of_le_Ioo r.tau_pos.le
       r.path.l_integrable.neg r.harnack_integrable hpoint
 
-
-
 theorem reducedHarnackIntegral_div_lower (K : AncientKappaSolution n M)
     (H : HarnackAncientTheory.{u}) {R τ : ℝ} {p q : M}
     (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
@@ -153,7 +137,6 @@ theorem reducedHarnackIntegral_div_lower (K : AncientKappaSolution n M)
       field_simp [r.tau_pos.ne']
     _ ≤ _ := K.reducedHarnackIntegral_lower H r
 
-
 theorem reducedLength_regular_gradient_bound (K : AncientKappaSolution n M)
     (H : HarnackAncientTheory.{u}) {R τ : ℝ} {p q : M}
     (Q : ReducedLengthDifferentialTheory K.flow 0 R)
@@ -167,8 +150,6 @@ theorem reducedLength_regular_gradient_bound (K : AncientKappaSolution n M)
   dsimp only at hformula
   simp only [mul_div_assoc] at h ⊢
   linarith
-
-
 
 theorem reducedLength_regular_time_lower (K : AncientKappaSolution n M)
     (H : HarnackAncientTheory.{u}) {R τ : ℝ} {p q : M}
@@ -193,7 +174,6 @@ end AncientKappaSolution
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
 theorem regular_reducedLength_gradient_bound {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
     (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
@@ -202,7 +182,6 @@ theorem regular_reducedLength_gradient_bound {K : AncientKappaSolution n M}
       3 * reducedLength K.flow 0 p q τ / τ := by
   obtain ⟨Q⟩ := P.reduced_length R (r.tau_pos.trans r.tau_lt)
   exact K.reducedLength_regular_gradient_bound P.harnack Q r
-
 
 theorem regular_reducedLength_time_lower {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
@@ -216,7 +195,6 @@ theorem regular_reducedLength_time_lower {K : AncientKappaSolution n M}
   simp only [mul_div_assoc] at h ⊢
   linarith
 
-
 theorem continuous_reducedLength {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) (τ : ℝ) (hτ : 0 < τ) :
     Continuous (fun q => reducedLength K.flow 0 p q τ) := by
@@ -224,8 +202,6 @@ theorem continuous_reducedLength {K : AncientKappaSolution n M}
   obtain ⟨D⟩ := V.measure_regularity p
   exact D.continuous.comp_continuous (continuous_id.prodMk continuous_const)
     (fun q => ⟨mem_univ q, hτ, by linarith⟩)
-
-
 
 theorem scalar_le_reducedLength {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (p q : M) (τ : ℝ) (hτ : 0 < τ) :
@@ -247,8 +223,6 @@ theorem scalar_le_reducedLength {K : AncientKappaSolution n M}
     exact (le_add_of_nonneg_left hnorm).trans hbound
   exact hclosed.closure_subset_iff.mpr hsubset (hU q)
 
-
-
 theorem reducedLength_pos {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (p q : M) (τ : ℝ) (hτ : 0 < τ) :
     0 < reducedLength K.flow 0 p q τ := by
@@ -259,8 +233,6 @@ theorem reducedLength_pos {K : AncientKappaSolution n M}
     (div_pos_iff.mp (hscalar.trans_le hbound)).resolve_right
       (fun h => (not_lt_of_ge hτ.le) h.2) |>.1
   linarith
-
-
 
 theorem regular_reducedLength_time_abs_bound {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
@@ -289,8 +261,6 @@ end AncientAsymptoticSolitonPredecessors
 
 namespace AncientRescalingSequence
 
-
-
 theorem scalar_at_base_le {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) (P : AncientAsymptoticSolitonPredecessors K)
     (k : ℕ) :
@@ -303,8 +273,6 @@ theorem scalar_at_base_le {K : AncientKappaSolution n M}
   rw [(S.rescaling k).scalar_scale (-1) (by norm_num)]
   rw [show S.scale k * (-1) = 0 - S.scale k by ring]
   simpa only [mul_comm] using hmul.trans hdim
-
-
 
 theorem curvature_at_base_past_le {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) (P : AncientAsymptoticSolitonPredecessors K)

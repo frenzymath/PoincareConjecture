@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.TranslationOrbitJets
 import PoincareConjecture.Proofs.M63.Mathlib.CompactPathComposition
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothSpectralTraceOrbit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +10,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative
-
-
-
-
 
 theorem initialResponseTrace_spatial_jets
     {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι] {T : ℝ} (hT : 0 ≤ T)

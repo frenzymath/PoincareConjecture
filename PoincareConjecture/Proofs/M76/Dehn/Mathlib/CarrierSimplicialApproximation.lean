@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricOpenStars
 import PoincareConjecture.Proofs.M76.Mathlib.FineSimplicialSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
 
 theorem exists_carrier_simplicial_approximation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

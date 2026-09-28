@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ConnectionDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem metricError_jet_evaluation_le {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (m : ℕ) (x : E) {epsilon : ℝ}
@@ -31,9 +19,6 @@ theorem metricError_jet_evaluation_le {g h : RiemannianMetric 3 E}
     (D.iteratedCovariantTensorDerivative_isSmooth (metricError_isSmooth g h) m).1 x
   exact (abs_tensor_evaluation_le_tensorNorm g _ x A hA v).trans
     (mul_le_mul_of_nonneg_right hbound (Finset.prod_nonneg fun _ _ => Real.sqrt_nonneg _))
-
-
-
 
 theorem abs_inner_connectionDifference_le {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}
@@ -56,9 +41,6 @@ theorem abs_inner_connectionDifference_le {g h : RiemannianMetric 3 E}
     (abs_sub _ _).trans (add_le_add (abs_add_le _ _) le_rfl)
   rw [← heq, abs_mul, abs_of_pos (by norm_num : (0 : ℝ) < 2)] at h
   nlinarith! only [h, h1, h2, h3]
-
-
-
 
 theorem tangentNorm_connectionDifference_le {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}

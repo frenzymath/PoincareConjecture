@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeakCR
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory Complex
@@ -39,9 +28,6 @@ private theorem cauchy_truncation {h : ℂ → ℂ} {R S : ℝ}
     have hzw : z - w ∈ closedBall (0 : ℂ) (R + S) :=
       mem_closedBall_zero_iff.mpr ((norm_sub_le z w).trans (by linarith))
     rw [indicator_of_mem hzw, mul_comm]
-
-
-
 
 theorem locallyIntegrable_cauchyOperator_L1 {h : ℂ → ℂ} {R : ℝ}
     (hh : Integrable h volume)
@@ -100,10 +86,6 @@ private theorem cauchy_test_integrable {h : ℂ → ℂ} {R : ℝ}
   rw [indicator_of_mem hzw]
   ring
 
-
-
-
-
 theorem cauchyOperator_L1_weak_dbar {h : ℂ → ℂ} {R : ℝ}
     (hh : Integrable h volume) (hs : Function.support h ⊆ closedBall (0 : ℂ) R)
     (φ : ℂ → ℂ) (hφ : ContDiff ℝ 1 φ) (hφs : HasCompactSupport φ) :
@@ -143,10 +125,6 @@ theorem cauchyOperator_L1_weak_dbar {h : ℂ → ℂ} {R : ℝ}
   simp_rw [hinner]
   rw [integral_const_mul]
   field_simp
-
-
-
-
 
 theorem exists_cauchy_decomposition {W h : ℂ → ℂ} {U : Set ℂ} {R : ℝ}
     (hW : LocallyIntegrable W volume) (hh : Integrable h volume)

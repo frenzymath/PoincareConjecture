@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanConstruction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Descent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +14,8 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
 
-
 noncomputable def threeSphereStereoInverse (a : UnitThreeSphere) :
     EuclideanSpace ℝ (Fin 3) → UnitThreeSphere := (stereographic' 3 a).symm
-
-
 
 theorem threeSphereStereoLocalDiffeomorph (a : UnitThreeSphere) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (threeSphereStereoInverse a) := by
@@ -49,15 +37,12 @@ theorem threeSphereStereoLocalDiffeomorph (a : UnitThreeSphere) :
   change z ∈ e.target
   simp only [e, stereographic'_target, Set.mem_univ]
 
-
 theorem threeSphereStereo_cover (x : UnitThreeSphere) :
     ∃ a z, threeSphereStereoInverse a z = x := by
   refine ⟨-x, stereographic' 3 (-x) x, ?_⟩
   apply (stereographic' 3 (-x)).left_inv
   simpa only [stereographic'_source, Set.mem_compl_iff, Set.mem_singleton_iff] using
     ne_neg_of_mem_unit_sphere ℝ x
-
-
 
 noncomputable def threeSphereConnection : LeviCivitaData threeSphereMetric := by
   let h (a : UnitThreeSphere) : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonGeome
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.CanonicalRampLength
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.CurveGermGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem m63FlattenedPolygon_graph_cell_density (P : M62.CircleProductData F circumference)
     (t : ℝ) {N : ℕ} (polygon : M63GeodesicPolygon (F.metric t) (F.connection t) N)

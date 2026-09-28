@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.SelectedCircleSurgeryFamily
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -33,9 +24,6 @@ theorem selectedCircleSurgeryFamily_contact_ncard_le
         ((⋃ j, S j) ∩ T).ncard := by
   have hsub := selectedCircleSurgeryFamily_inter_subset_of_full S i new b hfull
   exact ⟨hfinite.subset hsub, ncard_le_ncard hsub hfinite⟩
-
-
-
 
 theorem selectedCircleSurgeryFamily_original_edge_contact_counts
     {E X κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -91,8 +79,6 @@ theorem selectedCircleSurgeryFamily_original_edge_contact_counts
 end PoincareConjecture.M76
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem faces_ncard_lt_of_le_deleteEdgeComponent
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

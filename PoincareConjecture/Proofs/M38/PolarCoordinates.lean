@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RadialCoordinates
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +8,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def capUnitDirection (x : StandardCapSpace) : UnitTwoSphere := by
   classical
@@ -26,18 +17,15 @@ noncomputable def capUnitDirection (x : StandardCapSpace) : UnitTwoSphere := by
     ⟨‖x‖⁻¹ • x, by
       simp [norm_smul, norm_ne_zero_iff.mpr hx]⟩
 
-
 theorem capUnitDirection_coe {x : StandardCapSpace} (hx : x ≠ 0) :
     (capUnitDirection x).val = ‖x‖⁻¹ • x := by
   simp [capUnitDirection, hx]
-
 
 theorem capUnitDirection_radial (x : StandardCapSpace) :
     ‖x‖ • (capUnitDirection x).val = x := by
   by_cases hx : x = 0
   · simp [hx]
   rw [capUnitDirection_coe hx, smul_smul, mul_inv_cancel₀ (norm_ne_zero_iff.mpr hx), one_smul]
-
 
 theorem capUnitDirection_smul (z : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
     capUnitDirection (t • z.val) = z := by
@@ -49,8 +37,6 @@ theorem capUnitDirection_smul (z : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
   rw [capUnitDirection_coe (smul_ne_zero ht.ne' hzn), norm_smul,
     Real.norm_eq_abs, abs_of_pos ht, hz, mul_one, smul_smul,
     inv_mul_cancel₀ ht.ne', one_smul]
-
-
 
 theorem capUnitDirection_smooth :
     ContMDiffOn (𝓡 3) (𝓡 2) ∞ capUnitDirection ({0}ᶜ : Set StandardCapSpace) := by
@@ -80,8 +66,6 @@ theorem capUnitDirection_smooth :
   have h := hsphere.contMDiffAt (x := (⟨x, hx⟩ : U))
   exact (contMDiffAt_subtype_iff.mp h).contMDiffWithinAt
 
-
-
 theorem exists_cap_sphere_shell {r : ℝ} (hr : 0 < r) {U : Set StandardCapSpace}
     (hU : IsOpen U) (hsub : Metric.sphere 0 r ⊆ U) :
     ∃ c : ℝ, 0 < c ∧ c < r ∧ {x : StandardCapSpace | r - c < ‖x‖ ∧ ‖x‖ < r + c} ⊆ U := by
@@ -104,14 +88,11 @@ theorem exists_cap_sphere_shell {r : ℝ} (hr : 0 < r) {U : Set StandardCapSpace
     rw [dist_eq_norm, heq, norm_smul, Real.norm_eq_abs, hnorm, mul_one, abs_lt]
     exact ⟨by linarith [hx.1], by linarith [hx.2]⟩
 
-
 noncomputable def capShellMap (r c : ℝ) (z : RoundCylinderSpace) : StandardCapSpace :=
   (r - c * z.2) • z.1.val
 
-
 noncomputable def capShellInverse (r c : ℝ) (x : StandardCapSpace) : RoundCylinderSpace :=
   (capUnitDirection x, (r - ‖x‖) / c)
-
 
 theorem capShellMap_smooth (r c : ℝ) :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (capShellMap r c) := by
@@ -122,7 +103,6 @@ theorem capShellMap_smooth (r c : ℝ) :
     contMDiff_coe_sphere
   exact (hrad.contMDiff.comp contMDiff_snd).smul (hcoe.comp contMDiff_fst)
 
-
 theorem capShellInverse_smooth (r c : ℝ) :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (capShellInverse r c)
       ({0}ᶜ : Set StandardCapSpace) := by
@@ -131,7 +111,6 @@ theorem capShellInverse_smooth (r c : ℝ) :
   have hnorm : ContDiffAt ℝ ∞ (fun y : StandardCapSpace => ‖y‖) x :=
     contDiffAt_norm ℝ hx
   exact ((contDiffAt_const.sub hnorm).div_const c).contMDiffAt.contMDiffWithinAt
-
 
 theorem capShell_left_inverse {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     Set.LeftInvOn (capShellInverse r c) (capShellMap r c)
@@ -145,13 +124,11 @@ theorem capShell_left_inverse {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     field_simp
     ring
 
-
 theorem capShell_right_inverse {r c : ℝ} (hc : 0 < c) :
     Function.LeftInverse (capShellMap r c) (capShellInverse r c) := by
   intro x
   change (r - c * ((r - ‖x‖) / c)) • (capUnitDirection x).val = x
   rw [mul_div_cancel₀ _ hc.ne', sub_sub_cancel, capUnitDirection_radial]
-
 
 theorem capShell_norm {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     {z : RoundCylinderSpace} (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
@@ -159,13 +136,11 @@ theorem capShell_norm {r c : ℝ} (hc : 0 < c) (hcr : c < r)
   have ht : 0 < r - c * z.2 := by nlinarith [hz.2.2]
   simp [capShellMap, norm_smul, abs_of_pos ht]
 
-
 theorem capShell_mem {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     {z : RoundCylinderSpace} (hz : z ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :
     r - c < ‖capShellMap r c z‖ ∧ ‖capShellMap r c z‖ < r + c := by
   rw [capShell_norm hc hcr hz]
   constructor <;> nlinarith [hz.2.1, hz.2.2]
-
 
 theorem capShellInverse_mem {r c : ℝ} (hc : 0 < c) {x : StandardCapSpace}
     (hx : r - c < ‖x‖ ∧ ‖x‖ < r + c) :
@@ -175,8 +150,6 @@ theorem capShellInverse_mem {r c : ℝ} (hc : 0 < c) {x : StandardCapSpace}
     exact (lt_div_iff₀ hc).mpr (by linarith [hx.2])
   · change (r - ‖x‖) / c < 1
     exact (div_lt_iff₀ hc).mpr (by linarith [hx.1])
-
-
 
 noncomputable def capShellHomeomorph (r c : ℝ) (hc : 0 < c) (hcr : c < r) :
     (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 : Set RoundCylinderSpace) ≃ₜ
@@ -194,7 +167,6 @@ noncomputable def capShellHomeomorph (r c : ℝ) (hc : 0 < c) (hcr : c < r) :
       simpa only [Set.mem_compl_iff, Set.mem_singleton_iff] using norm_pos_iff.mp hnorm
     exact ((capShellInverse_smooth r c).continuousOn.mono hsub).domRestrict.subtype_mk _
 
-
 theorem capShell_openEmbedding {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     Topology.IsOpenEmbedding (fun z : (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 :
       Set RoundCylinderSpace) => capShellMap r c z.val) := by
@@ -202,7 +174,6 @@ theorem capShell_openEmbedding {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     (isOpen_lt continuous_const continuous_norm).inter
       (isOpen_lt continuous_norm continuous_const)
   exact hopen.isOpenEmbedding_subtypeVal.comp (capShellHomeomorph r c hc hcr).isOpenEmbedding
-
 
 theorem capShell_image {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     capShellMap r c '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) =

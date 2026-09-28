@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedNerve
 import Mathlib.AlgebraicTopology.ExtraDegeneracy
 import Mathlib.AlgebraicTopology.SimplicialSet.Monoidal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +16,6 @@ namespace PoincareConjecture.Proofs.M59
 variable {J : Type u} [PartialOrder J]
   (s : Finset J) (v : J) (hv : v ∈ s) (hmin : ∀ j ∈ s, v ≤ j)
 
-
-
 def nerveConePrepend {n : ℕ} (z : (supportedNerve s).toSSet _⦋n⦌) :
     (supportedNerve s).toSSet _⦋n + 1⦌ := by
   refine ⟨z.val.precomp (homOfLE (hmin _ (z.property 0))), ?_⟩
@@ -35,16 +24,12 @@ def nerveConePrepend {n : ℕ} (z : (supportedNerve s).toSSet _⦋n⦌) :
   | zero => exact hv
   | succ i => exact z.property i
 
-
-
 theorem nerveConePrepend_face_zero {n : ℕ} (z : (supportedNerve s).toSSet _⦋n⦌) :
     (supportedNerve s).toSSet.δ 0 (nerveConePrepend s v hv hmin z) = z := by
   apply Subtype.ext
   apply nerve.ext_of_isThin
   funext i
   rfl
-
-
 
 theorem nerveConePrepend_face_succ {n : ℕ} (i : Fin (n + 2))
     (z : (supportedNerve s).toSSet _⦋n + 1⦌) :
@@ -59,8 +44,6 @@ theorem nerveConePrepend_face_succ {n : ℕ} (i : Fin (n + 2))
   | zero => rw [Fin.succ_succAbove_zero]; rfl
   | succ j => rw [Fin.succ_succAbove_succ]; rfl
 
-
-
 theorem nerveConePrepend_degeneracy_succ {n : ℕ} (i : Fin (n + 1))
     (z : (supportedNerve s).toSSet _⦋n⦌) :
     (supportedNerve s).toSSet.σ i.succ (nerveConePrepend s v hv hmin z) =
@@ -74,12 +57,8 @@ theorem nerveConePrepend_degeneracy_succ {n : ℕ} (i : Fin (n + 1))
   | zero => rw [Fin.predAbove_right_zero]; rfl
   | succ j => rw [Fin.succ_predAbove_succ]; rfl
 
-
-
 def nerveConeVertex : (supportedNerve s).toSSet _⦋0⦌ :=
   ⟨ComposableArrows.mk₀ v, fun _ => hv⟩
-
-
 
 theorem nerveConePrepend_face_one (z : (supportedNerve s).toSSet _⦋0⦌) :
     (supportedNerve s).toSSet.δ 1 (nerveConePrepend s v hv hmin z) =
@@ -89,15 +68,10 @@ theorem nerveConePrepend_face_one (z : (supportedNerve s).toSSet _⦋0⦌) :
   funext i
   exact Fin.cases rfl (fun j => Fin.elim0 j) i
 
-
-
 def fiberConeAugmented (F : Type u) : SimplicialObject.Augmented (Type u) where
   left := (SimplicialObject.const (Type u)).obj F ⊗ (supportedNerve s).toSSet
   right := F
   hom := { app _ := ↾Prod.fst }
-
-
-
 
 def fiberConeExtraDegeneracy (F : Type u) :
     SimplicialObject.Augmented.ExtraDegeneracy (fiberConeAugmented s F) where

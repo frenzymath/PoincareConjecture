@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactSlices
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.DuhamelRepresentation
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -40,8 +33,6 @@ theorem hasCompactSupport_heatResidual {f : V × ℝ → F} (hf : HasCompactSupp
   (hasCompactSupport_timeDerivative hf).sub
     ((hasCompactSupport_spatialDerivative (hasCompactSupport_spatialDerivative hf)).comp_left
       (g := Kernel.lapEval) (map_zero _))
-
-
 
 theorem heatDuh_compactSlice_residual {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f)

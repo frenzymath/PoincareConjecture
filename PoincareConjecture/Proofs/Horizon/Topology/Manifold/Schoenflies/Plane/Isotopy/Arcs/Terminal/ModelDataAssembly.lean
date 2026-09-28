@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelBoundary
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualEndDisjoint
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,14 +20,11 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 def _root_.Poincare.Manifold.Schoenflies.SaddleLevel.TerminalSaddleGeometry.withModelSeeds
     (d : TerminalSaddleGeometry M P p e) (seed : Fin 3 → S2)
     (hseed : ∀ i, inner Real (M.v : E3) (d.filledModel (seed i)) ∉ d.I) :
     TerminalSaddleGeometry M P p e :=
   { d with modelSeed := seed, modelSeed_outside := hseed }
-
-
 
 theorem exists_terminal_data_of_model_component_disks
     (d : TerminalSaddleGeometry M P p e) (hg : g ∈ M.tree.leaves)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.M34.Mathlib.ManifoldOpenMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem standardCylinderInner_pos (z : StandardCylinderSpace)
     (v : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) (hv : v ≠ 0) :
@@ -43,7 +32,6 @@ theorem standardCylinderInner_pos (z : StandardCylinderSpace)
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem end_coordinate_mfderiv_bijective (e : StandardCylindricalEnd g)
     (z : StandardCylinderSpace) (hz : 0 ≤ z.2) :
@@ -70,16 +58,12 @@ theorem end_coordinate_mfderiv_bijective (e : StandardCylindricalEnd g)
     infer_instance
   exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mp hi⟩
 
-
-
 theorem end_coordinate_contMDiffAt (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 < z.2) :
     ContMDiffAt ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ e.coordinate z := by
   apply e.coordinate_smooth.contMDiffAt
   apply (isOpen_univ.prod isOpen_Ioi).mem_nhds
   exact ⟨mem_univ _, by change -e.collar < z.2; linarith [e.collar_pos]⟩
-
-
 
 theorem end_isOpen_coordinate_image (e : StandardCylindricalEnd g)
     {U : Set StandardCylinderSpace} (hU : IsOpen U) (hpos : ∀ z ∈ U, 0 < z.2) :
@@ -91,14 +75,10 @@ theorem end_isOpen_coordinate_image (e : StandardCylindricalEnd g)
   · intro z hz
     exact end_coordinate_mfderiv_bijective e z (hpos z hz).le
 
-
-
 theorem end_coordinate_mem_carrier (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 ≤ z.2) : e.coordinate z ∈ e.carrier := by
   rw [← e.coordinate_image]
   exact ⟨z, ⟨mem_univ _, hz⟩, rfl⟩
-
-
 
 theorem end_inverse_contMDiffAt (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 < z.2) :
@@ -113,7 +93,6 @@ theorem end_inverse_contMDiffAt (e : StandardCylindricalEnd g)
     (hU.mem_nhds ⟨z, ⟨mem_univ _, hz⟩, rfl⟩)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem end_coordinate_inverse_mfderiv (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 < z.2)
@@ -144,7 +123,6 @@ theorem end_coordinate_inverse_mfderiv (e : StandardCylindricalEnd g)
   rw [hleft]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem end_inverse_metric (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 0 < z.2)

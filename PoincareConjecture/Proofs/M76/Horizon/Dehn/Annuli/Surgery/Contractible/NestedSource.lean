@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Collars.SourceA
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.BoundaryCorrespondence
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip

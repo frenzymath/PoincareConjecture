@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Escape
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Filter
@@ -24,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem eventually_disjoint_central_sphere_compact_of_scale_tendsto_zero
     (D : LeviCivitaData g) {ι : Type*} {l : Filter ι}
@@ -54,8 +41,6 @@ theorem eventually_disjoint_central_sphere_compact_of_scale_tendsto_zero
   apply Metric.mem_cthickening_of_edist_le (N i).center x δ K hxK
   exact ((N i).edist_central_sphere_le_two_pi_mul_scale
     (N i).center_on_central_sphere hx).trans (ENNReal.ofReal_le_ofReal hdiam.le)
-
-
 
 theorem exists_escaping_central_sphere_sequence_of_no_scale_lower_bound
     (D : LeviCivitaData g) (ε : ℝ)

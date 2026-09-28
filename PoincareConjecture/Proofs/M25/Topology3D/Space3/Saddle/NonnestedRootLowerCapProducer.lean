@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleLowerCapAlignment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,8 +8,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem exists_nonnested_root_lower_cap_producer
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

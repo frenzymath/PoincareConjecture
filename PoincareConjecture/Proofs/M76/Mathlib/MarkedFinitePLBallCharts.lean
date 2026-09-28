@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSpherePoleNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
 
 theorem IsFinitePLBallPair.exists_cube_chart_boundary_point {s b : Set X}
     (hs : IsFinitePLBallPair E s b) {ι : Type*} [Fintype ι] [Nonempty ι]
@@ -51,10 +39,6 @@ theorem IsFinitePLBallPair.exists_cube_chart_boundary_point {s b : Set X}
   change (H (e ⟨p, hs.1 p.property⟩) : ι → ℝ) = fun _ => 1
   rw [hq, hHb]
   exact hebq
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_homeomorph_boundary_point [Nontrivial E]
     {Y : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]

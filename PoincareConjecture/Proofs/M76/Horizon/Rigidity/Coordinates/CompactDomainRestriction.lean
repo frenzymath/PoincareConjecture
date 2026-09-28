@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.EmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

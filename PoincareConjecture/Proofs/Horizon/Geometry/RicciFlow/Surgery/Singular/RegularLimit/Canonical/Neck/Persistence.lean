@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.StrongNeck
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Accuracy
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -14,9 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
-
 
 theorem exists_terminal_strong_neck_persistence_doubled_threshold
     (P04 : RicciFlowCurvatureTheory.{u}) :
@@ -74,8 +69,6 @@ theorem exists_terminal_strong_neck_persistence_doubled_threshold
   exact ⟨H.terminalStrongNeckOfComparison P04 hΩ ht N x hcenter hR
       (show H.epsilon ≤ 2 * H.epsilon by linarith [H.epsilon_pos]) hcaptureN hclose,
     H.terminalStrongNeckOfComparison_center P04 hΩ ht N x hcenter hR _ hcaptureN hclose⟩
-
-
 
 theorem exists_terminal_strong_neck_persistence_threshold
     (P04 : RicciFlowCurvatureTheory.{u}) :

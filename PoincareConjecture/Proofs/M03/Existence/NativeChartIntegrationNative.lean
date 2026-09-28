@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeChartAdjointNative
 import PoincareConjecture.Proofs.M03.Existence.NativeChartScalarLocalization
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +26,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
 variable (d : FiniteChartData (n := n) (M := M))
-
 
 theorem integral_eq_chartDensity (p : M) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) {K : Set M}
@@ -123,7 +114,6 @@ theorem partitionTest_compactSupport (i : d.centers) {f : M → ℝ}
     (d.weight_compactSupport i) (d.weight_support_subset i)
     (fun x hx => by rw [image_eq_zero_of_notMem_tsupport hx, zero_mul])
 
-
 def partitionAdjoint (i : d.centers) (V : SmoothField (n := n) (M := M))
     (f : M → ℝ) (x : M) : ℝ :=
   -scalarDirectional V (fun y => d.weight i y * f y) x -
@@ -162,7 +152,6 @@ theorem coordinateAdjoint_partitionTest (i : d.centers)
   rw [(d.chart i).right_inv hz]
   dsimp only [FiniteChartData.chart]
   ring
-
 
 theorem integral_partition_directional_eq_adjoint (i : d.centers)
     (V : SmoothField (n := n) (M := M)) {f η : M → ℝ}
@@ -226,7 +215,6 @@ theorem integral_partition_directional_eq_adjoint (i : d.centers)
     _ = _ := (d.integral_eq_chartDensity i.val hright (d.weight_compactSupport i)
       (d.weight_support_subset i) hrightzero).symm
 
-
 theorem sum_weight_directional_eq_zero (V : SmoothField (n := n) (M := M)) (x : M) :
     (∑ i : d.centers, scalarDirectional V (d.weight i) x) = 0 := by
   classical
@@ -237,7 +225,6 @@ theorem sum_weight_directional_eq_zero (V : SmoothField (n := n) (M := M)) (x : 
       (scalarDirectional_finsetSum_smooth Finset.univ V
         (fun i : d.centers => (d.weight i : M → ℝ)) (fun i _ => d.weight_smooth i) x).symm
     _ = 0 := by rw [hsum]; simp only [scalarDirectional, mfderiv_const, ContinuousLinearMap.zero_apply]
-
 
 theorem sum_partitionAdjoint_eq (V : SmoothField (n := n) (M := M)) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
@@ -256,7 +243,6 @@ theorem sum_partitionAdjoint_eq (V : SmoothField (n := n) (M := M)) {f : M → �
     ← Finset.sum_mul, ← Finset.mul_sum, ← Finset.sum_mul,
     d.weight_sum, d.sum_weight_directional_eq_zero]
   simp only [one_mul, mul_zero, sub_zero, fieldAdjoint, fieldDivergence]
-
 
 theorem integral_directional_eq_adjoint (V : SmoothField (n := n) (M := M))
     {f η : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -293,8 +279,6 @@ theorem integral_directional_eq_adjoint (V : SmoothField (n := n) (M := M))
       dsimp only
       rw [← Finset.mul_sum, d.sum_partitionAdjoint_eq V hη]
 
-
-
 def principalDrift (V : SmoothField (n := n) (M := M)) (a : M → ℝ) (x : M) : ℝ :=
   scalarDirectional V a x + d.fieldDivergence V x * a x
 
@@ -303,7 +287,6 @@ theorem principalDrift_contMDiff (V : SmoothField (n := n) (M := M))
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (d.principalDrift V a) :=
   (contMDiff_directional ha V).add ((d.fieldDivergence_contMDiff V).mul ha)
 
-
 theorem exists_principalDrift_bound (V : SmoothField (n := n) (M := M))
     {a : M → ℝ} (ha : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ a) :
     ∃ B : ℝ, 0 ≤ B ∧ ∀ x : M, |d.principalDrift V a x| ≤ B := by
@@ -311,8 +294,6 @@ theorem exists_principalDrift_bound (V : SmoothField (n := n) (M := M))
     (d.principalDrift_contMDiff V ha).continuous.abs.continuousOn
   exact ⟨max B 0, le_max_right _ _, fun x =>
     (hB ⟨x, mem_univ x, rfl⟩).trans (le_max_left _ _)⟩
-
-
 
 theorem integral_principal_pairing_eq
     (V W : SmoothField (n := n) (M := M)) {a f : M → ℝ}
@@ -373,8 +354,6 @@ private theorem principal_pairing_pointwise_le {a b p q z delta B epsilon : ℝ}
     exact hbound.trans hyoung
   exact (abs_add_le _ _).trans (by linarith)
 
-
-
 theorem abs_integral_principal_pairing_le
     (V W : SmoothField (n := n) (M := M)) {a f : M → ℝ}
     (ha : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ a)
@@ -432,8 +411,6 @@ theorem abs_integral_principal_pairing_le
         integral_const_mul, integral_const_mul] at hsum
       exact hsum
 
-
-
 theorem abs_integral_principal_sum_le {iota : Type*} [Fintype iota]
     (V : iota → SmoothField (n := n) (M := M)) {a : iota → iota → M → ℝ}
     {f : M → ℝ}
@@ -475,7 +452,6 @@ theorem abs_integral_principal_sum_le {iota : Type*} [Fintype iota]
         nsmul_eq_mul, ← Finset.mul_sum, ← Finset.sum_mul]
       ring
 
-
 theorem fieldAdjoint_directional_commutator
     (V W : SmoothField (n := n) (M := M)) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
@@ -495,7 +471,6 @@ theorem fieldAdjoint_directional_commutator
     scalarDirectional_mul W (hdiv.mdifferentiable (by simp) x)
       (hf.mdifferentiable (by simp) x), scalarDirectional_bracket V W hf]
   ring
-
 
 theorem integral_secondDirectional_sq_eq
     (V W : SmoothField (n := n) (M := M)) {f : M → ℝ}
@@ -623,7 +598,6 @@ theorem exists_directional_divergence_bound {iota : Type*} [Fintype iota]
   refine ⟨∑ i, b i, Finset.sum_nonneg (fun i _ => hb0 i), ?_⟩
   intro i j x
   exact (hb i j x).trans (Finset.single_le_sum (fun k _ => hb0 k) (Finset.mem_univ i))
-
 
 theorem exists_secondDirectional_energy_bound {iota : Type*} [Fintype iota]
     (g : RiemannianMetric n M) (F : iota → SmoothField (n := n) (M := M))
@@ -809,7 +783,6 @@ theorem exists_secondDirectional_energy_bound {iota : Type*} [Fintype iota]
   dsimp only [S, N, Efirst] at hsum habsorb ⊢
   nlinarith only [hsum, habsorb]
 
-
 theorem directional_energy_le_graph {iota : Type*} [Fintype iota]
     (F : iota → SmoothField (n := n) (M := M)) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
@@ -846,7 +819,6 @@ theorem directional_energy_le_graph {iota : Type*} [Fintype iota]
       integral_mono (hInt _ (hf.mul hL)) (hInt _ ((hf.pow 2).add (hL.pow 2)))
         (fun x => by nlinarith [sq_nonneg (f x - L x), sq_nonneg (f x + L x)])
     _ = _ := integral_add (hInt _ (hf.pow 2)) (hInt _ (hL.pow 2))
-
 
 theorem exists_secondDirectional_graph_bound {iota : Type*} [Fintype iota]
     (g : RiemannianMetric n M) (F : iota → SmoothField (n := n) (M := M))

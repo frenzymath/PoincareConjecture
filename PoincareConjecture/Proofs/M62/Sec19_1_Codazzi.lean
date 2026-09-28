@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_CurvaturePairing
 import PoincareConjecture.Proofs.M62.Sec19_1_SpatialConnection
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem codazzi {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)

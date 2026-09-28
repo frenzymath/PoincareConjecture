@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleCollarRetainedDisks
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -20,9 +9,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
-
-
-
 
 theorem ChartwisePLSphere.circle_surgery_contact_ledger
     {X ι : Type*} [TopologicalSpace X]

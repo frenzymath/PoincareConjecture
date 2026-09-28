@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.BicollarEndGeometry
 import PoincareConjecture.Proofs.M76.Brown.CompactifiedPolarFibers
 import Mathlib.Topology.Constructions.SumProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -21,9 +11,6 @@ namespace BrownSchoenflies
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace X] [CompactSpace X] [T2Space X]
-
-
-
 
 theorem exists_closed_cylinder_quotient [Nonempty (sphere (0 : E) 1)]
     (e : OpenPartialHomeomorph (sphere (0 : E) 1 × Ioo (-1 : ℝ) 1) X)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyDisplacement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -16,9 +8,6 @@ open scoped intervalIntegral
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem integral_sq_norm_le_length_sq_energy {f : ℝ → E} {a b : ℝ}
     (hab : a ≤ b) (hf : ContinuousOn f (Icc a b))
@@ -39,9 +28,6 @@ theorem integral_sq_norm_le_length_sq_energy {f : ℝ → E} {a b : ℝ}
     exact (continuous_pow 2).comp_continuousOn hf.norm
   have h := intervalIntegral.integral_mono_on hab hi intervalIntegrable_const hpoint
   simpa only [intervalIntegral.integral_const, smul_eq_mul, pow_two, mul_assoc] using h
-
-
-
 
 theorem eq_zero_of_interval_energy_eq_zero {f : ℝ → E} {a b : ℝ}
     (hf : ContinuousOn f (Icc a b)) (hdf : DifferentiableOn ℝ f (Ioo a b))

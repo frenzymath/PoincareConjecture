@@ -4,21 +4,9 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Algebra.CharZero.Infinite
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem Set.Finite.exists_planar_coordinates_injOn_fst
     {s : Set (ℝ × ℝ)} (hs : s.Finite) :

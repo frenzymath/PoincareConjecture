@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem radial_shape_hasDerivAt
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
@@ -29,8 +18,6 @@ theorem radial_shape_hasDerivAt
   unfold axisWarpingSecond
   field_simp [(axisWarpingRadius_pos g hr).ne', (axisRadialCoefficient_pos g r).ne']
   ring
-
-
 
 theorem radialUnitField_inner
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -59,8 +46,6 @@ private theorem radius_hasFDerivAt {x : StandardCapSpace} (hx : x ≠ 0) :
   ext w
   simp [smul_eq_mul]
   ring
-
-
 
 theorem radial_shape_hasFDerivAt
     (g : RiemannianMetric 3 StandardCapSpace)

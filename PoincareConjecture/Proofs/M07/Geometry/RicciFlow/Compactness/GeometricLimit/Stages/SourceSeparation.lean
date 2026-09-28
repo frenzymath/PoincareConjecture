@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.ChartCorrection
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.UniformDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal Manifold ContDiff
@@ -71,8 +61,6 @@ theorem tendstoUniformlyOn_corrected_chart_dist
         dist_dist_dist_le (e k p.1) (f k p.2) (e k p.1) (f k (a k p.2))
     _ < ε := by linarith [hkD p hp]
 
-
-
 theorem eventually_corrected_source_eq_iff
     {X Y : Type*} [MetricSpace X] [MetricSpace Y]
     {M : ℕ → Type*} [∀ k, MetricSpace (M k)]
@@ -126,8 +114,6 @@ variable {ι : Type*} {n : ℕ}
       ∀ k i, IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (e k i))
 
 include hD he hc hlower hopen hconn hsmooth in
-
-
 
 theorem exists_source_chart_corrections_with_exact_identifications
     (hbound : ∀ i j, Poincare.Analysis.Calculus.LocallyEventuallyBoundedDerivatives

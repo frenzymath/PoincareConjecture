@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -62,9 +53,6 @@ private theorem exists_translated_metric
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
-
 
 theorem exists_axial_curvature_realization {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center)

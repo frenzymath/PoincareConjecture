@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

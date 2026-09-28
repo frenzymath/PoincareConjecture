@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianInwardSphere
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingCore
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,8 +23,6 @@ local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L0
 private instance : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
 
 open Classical in
-
-
 
 theorem exists_source_meridian_core_ball
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

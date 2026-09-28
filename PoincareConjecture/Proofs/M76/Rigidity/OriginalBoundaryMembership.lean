@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskModelFacts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,14 +13,9 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
 
-
-
-
 theorem frontier_subset_neighborhood : frontier R ⊆ T.neighborhood :=
   frontier_subset_closure.trans (closure_minimal
     (T.region_interior.trans interior_subset) T.compact_neighborhood.isClosed)
-
-
 
 theorem inverse_mem_boundary_iff {x : T.index → ℝ × V3}
     (hx : x ∈ T.ambient.space) :

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
 
 theorem exists_eventually_generalized_terminal_image_baseBall
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.NormalizedActionDerivative
 import PoincareConjecture.Proofs.M09.ParametricCurveDerivative
 import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

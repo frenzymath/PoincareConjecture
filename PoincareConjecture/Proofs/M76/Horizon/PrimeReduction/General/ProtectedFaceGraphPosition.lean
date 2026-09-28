@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.TransverseFac
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.ClosedSetProtectedSurfacePosition
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ProtectedFaceCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_face_graph_position_with_height_within
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -99,7 +87,6 @@ theorem exists_face_graph_position_with_height_within
     exact ⟨hyx' ▸ hy, hxW⟩
   · rintro ⟨hx, hxW⟩
     exact ⟨⟨x, hx, hfixed τ hxW⟩, hxW⟩
-
 
 theorem exists_face_graph_position_preserving_contact_germs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

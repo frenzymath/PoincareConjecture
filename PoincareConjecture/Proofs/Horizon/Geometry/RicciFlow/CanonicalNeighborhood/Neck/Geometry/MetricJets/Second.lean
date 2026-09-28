@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Covariant
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.ModelConnection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem normalized_pullback_second_jet_center
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}
@@ -164,9 +150,6 @@ private theorem second_derivative_bound_of_model_bound
   exact (abs_add_le _ _).trans ((add_le_add htwo hsum).trans_eq (by ring))
 
 end Neck
-
-
-
 
 theorem exists_normalized_pullback_second_derivative_center_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.CollarAn
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.DiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology
 open PoincareConjecture.M76.Dehn

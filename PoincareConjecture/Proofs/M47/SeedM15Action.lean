@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_21_ObservedAction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_path_scalar_lower (P : M46Predecessors.{u})
     {F : SurgeryFlowData.{u}} (hpinch : SurgeryFlowPinched F)
@@ -46,8 +36,6 @@ theorem seedM15_path_scalar_lower (P : M46Predecessors.{u})
   rw [Proofs.M13.originalSlice_scalar R.geometry P.m13 _ (path.curve s).2,
     ← R.history.scalar_pullback _ ht (path.curve s).2]
   exact hfloor.trans (hp.2.1 _ (mem_univ _))
-
-
 
 theorem seedM15_path_positiveAction_le (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -75,8 +63,6 @@ theorem seedM15_path_positiveAction_le (P : M46Predecessors.{u})
     (Real.sqrt_nonneg tau) hH
   unfold positiveActionBudget
   nlinarith
-
-
 
 theorem seedM15_path_squareEnergy_le (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

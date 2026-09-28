@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalPLSuccessor
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ProjectedEmbedding
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
@@ -26,14 +16,9 @@ variable {U E M ι : Type*}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
 
-
-
 theorem Step.projectionInclusion_local (step : Step s t) :
     IsLocalHomeomorph (step.projection ∘ step.inclusion) :=
   step.covering.isLocalHomeomorph.comp step.openEmbedding.isLocalHomeomorph
-
-
-
 
 theorem Step.projectionInclusion_fiber (step : Step s t) (y : s.Carrier) :
     ((step.projection ∘ step.inclusion) ⁻¹' {y}).Finite ∧
@@ -42,10 +27,6 @@ theorem Step.projectionInclusion_fiber (step : Step s t) (y : s.Carrier) :
     finite_of_ncard_pos (by rw [step.two y]; norm_num)
   have h := step.openEmbedding.injective.finite_fiber_comp_ncard_le hf
   exact ⟨h.1, h.2.trans_eq (step.two y)⟩
-
-
-
-
 
 theorem Step.branch_chart_PL (step : Step s t)
     (B : OpenPartialHomeomorph t.Carrier s.Carrier)
@@ -73,17 +54,12 @@ theorem Step.branch_chart_PL (step : Step s t)
   exact (((mem_piecewiseAffineGroupoid_iff_forward A).mp
     (s.compatible (step.chartIndex k) l)).mono T.open_source hsub).congr heq.symm
 
-
-
 theorem Step.region_preimage (step : Step s t) (R : Set M) :
     t.projection ⁻¹' R =
       (step.projection ∘ step.inclusion) ⁻¹' (s.projection ⁻¹' R) := by
   ext x
   change t.projection x ∈ R ↔ s.projection (step.projection (step.inclusion x)) ∈ R
   rw [step.original_eq]
-
-
-
 
 theorem Step.frontier_preimage (step : Step s t) (R : Set M) :
     frontier (t.projection ⁻¹' R) =

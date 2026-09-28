@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitMetricJets
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateOperatorBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.top
 local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carrier.carrier :=
   C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
-
 
 theorem eventually_chart_pullback_inner_comparison_zero
     (q : C.limit.sliceCarrier.carrier) {H : Set (EuclideanSpace ℝ (Fin 3))}

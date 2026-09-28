@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticTolerance
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -32,8 +23,6 @@ noncomputable local instance capAnalyticCoefficientNorm :
 noncomputable local instance capAnalyticCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
 
-
-
 theorem limitCanonical_partial_chart_scalarAnalytic
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
     [IsManifold (𝓡 3) ∞ M] [T2Space M]
@@ -51,8 +40,6 @@ theorem limitCanonical_partial_chart_scalarAnalytic
   simpa only [one_smul, Real.one_rpow, one_pow, div_one] using
     cap_analyticJet_normalizedPullback g D f.open_source f.contMDiffOn_toFun hinj
       (by norm_num : (0 : ℝ) < 1) hx
-
-
 
 theorem limitCanonical_eventually_actual_analytic_error
     {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)] [∀ k, ChartedSpace E (M k)]

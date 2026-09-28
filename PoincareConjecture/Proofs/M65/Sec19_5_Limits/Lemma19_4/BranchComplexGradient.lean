@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchLocalFactor
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussMapConnection
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,19 +13,12 @@ namespace PoincareConjecture.M65Branch
 
 variable {n : ℕ}
 
-
-
 def coordinateComplexification : EuclideanSpace ℝ (Fin n) →L[ℝ] (Fin n → ℂ) :=
   ContinuousLinearMap.pi fun i => Complex.ofRealCLM.comp (EuclideanSpace.proj i)
-
-
 
 def complexGradient (H : ℂ → EuclideanSpace ℝ (Fin n)) (z : ℂ) : Fin n → ℂ :=
   coordinateComplexification (fderiv ℝ H z 1) -
     I • coordinateComplexification (fderiv ℝ H z I)
-
-
-
 
 theorem contDiffOn_complexGradient {H : ℂ → EuclideanSpace ℝ (Fin n)}
     {s : Set ℂ} (hs : IsOpen s) (hH : ContDiffOn ℝ ∞ H s) :
@@ -46,9 +29,6 @@ theorem contDiffOn_complexGradient {H : ℂ → EuclideanSpace ℝ (Fin n)}
     (hD.clm_apply contDiffOn_const)).sub
       ((coordinateComplexification.contDiff.comp_contDiffOn
         (hD.clm_apply contDiffOn_const)).const_smul I)
-
-
-
 
 theorem dbar_complexGradient {H : ℂ → EuclideanSpace ℝ (Fin n)} {z : ℂ}
     (hH : ContDiffAt ℝ ∞ H z) :
@@ -74,9 +54,6 @@ theorem dbar_complexGradient {H : ℂ → EuclideanSpace ℝ (Fin n)} {z : ℂ}
   rw [hsym I 1]
   simp only [smul_sub, smul_smul, I_mul_I, neg_one_smul, sub_neg_eq_add, map_add]
   module
-
-
-
 
 theorem complexGradient_eq_zero_iff (H : ℂ → EuclideanSpace ℝ (Fin n)) (z : ℂ) :
     complexGradient H z = 0 ↔ fderiv ℝ H z = 0 := by

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondMaps
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

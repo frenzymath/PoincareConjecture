@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.CutTime
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.VolumeComparison
-
-
 
 theorem exists_ray_interval_sdiff_terminal
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -6,15 +6,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function MeasureTheory
@@ -23,8 +14,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
-
 
 theorem exists_stackCanonicalBallModel
     (ell r lambdaMinus lambdaPlus : ℝ)

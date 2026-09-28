@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.UniformUpperCutoffJetBounds
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceSpeedGradient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem exists_terminal_speed_jet_bounds
     [T2Space M] (F : RicciFlow n M (Icc a b))

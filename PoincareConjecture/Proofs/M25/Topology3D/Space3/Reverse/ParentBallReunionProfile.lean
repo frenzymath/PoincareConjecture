@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNeighborhood
 import Mathlib.Analysis.Calculus.Deriv.Abs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,10 +10,8 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def reunionReflectedHorizontal (P : SurgeryCapProfile)
     (z : ℝ) : ℝ := P.horizontal |z|
-
 
 theorem reunionReflectedHorizontal_spec (P : SurgeryCapProfile) :
     ContDiff ℝ ∞ (reunionReflectedHorizontal P) ∧
@@ -76,7 +64,6 @@ theorem reunionReflectedHorizontal_spec (P : SurgeryCapProfile) :
       apply hz
       constructor <;> nlinarith only [lt_of_not_ge h, lt_of_not_ge hsmall, habs]
     rw [hfar z hlarge, P.horizontal_far z hlarge]
-
 
 theorem reunion_reflected_model_spec (P : SurgeryCapProfile) :
     let M := stackCapProfilePath P.horizontal (reunionReflectedHorizontal P)

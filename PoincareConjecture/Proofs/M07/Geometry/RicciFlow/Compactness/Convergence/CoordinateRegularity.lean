@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.SpatialRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
@@ -19,7 +12,6 @@ namespace RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 theorem contDiffAt_family_pullback_inner (F : RicciFlow n M J)
     {f : ℝ × EuclideanSpace ℝ (Fin n) → M}
@@ -46,7 +38,6 @@ end RicciFlow
 
 namespace FlowCarrier
 
-
 theorem contDiffAt_coordinateCoefficient_metric {n : ℕ} (C : FlowCarrier n)
     (g : C.metric) (q : C.carrier) (a b : Fin n) (t : ℝ)
     (y : EuclideanSpace ℝ (Fin n))
@@ -63,8 +54,6 @@ theorem contDiffAt_coordinateCoefficient_metric {n : ℕ} (C : FlowCarrier n)
     (extChartAt_target_mem_nhds' hy)
   exact g.contDiffAt_pullback_inner hc
     (EuclideanSpace.basisFun (Fin n) ℝ a) (EuclideanSpace.basisFun (Fin n) ℝ b)
-
-
 
 theorem coordinateCoefficient_metric_det_ne_zero {n : ℕ} (C : FlowCarrier n)
     (g : C.metric) (q : C.carrier) (p : ℝ × EuclideanSpace ℝ (Fin n))
@@ -86,8 +75,6 @@ theorem coordinateCoefficient_metric_det_ne_zero {n : ℕ} (C : FlowCarrier n)
 end FlowCarrier
 
 namespace BasedFlow
-
-
 
 theorem contDiffAt_coordinateCoefficient_metric
     {n : ℕ} {T' T : ℝ} {C : FlowCarrier n} (F : BasedFlow n T' T C)
@@ -124,8 +111,6 @@ theorem contDiffAt_coordinateCoefficient_metric
 end BasedFlow
 
 namespace SmoothSpacetimeEmbedding
-
-
 
 theorem contDiffAt_coordinateCoefficient_pullback
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}

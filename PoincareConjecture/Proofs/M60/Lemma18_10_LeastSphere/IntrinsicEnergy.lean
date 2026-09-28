@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.ParametricMetricTrace
 import PoincareConjecture.Proofs.M60.Mathlib.ConformalTrace
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,15 +15,11 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def m60SphereIntrinsicEnergy (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (p : UnitTwoSphere) : ℝ :=
   (1 / 2 : ℝ) * ∑ i, g.inner (f p)
     (mfderiv (𝓡 2) (𝓡 n) f p (m60RoundSphereMetric.orthonormalBasis p i))
     (mfderiv (𝓡 2) (𝓡 n) f p (m60RoundSphereMetric.orthonormalBasis p i))
-
-
 
 theorem m60SphereIntrinsicEnergy_family_contMDiffAt (g : RiemannianMetric n M)
     (v : ℝ × UnitTwoSphere → M) (q : ℝ × UnitTwoSphere)
@@ -55,8 +43,6 @@ theorem m60SphereIntrinsicEnergy_family_contMDiffAt (g : RiemannianMetric n M)
   exact (M60.contMDiffAt_parametric_tangentMap F Prod.snd hF contMDiffAt_snd V hV).inner_bundle
     (M60.contMDiffAt_parametric_tangentMap F Prod.snd hF contMDiffAt_snd W hW)
 
-
-
 theorem m60SphereIntrinsicEnergy_contMDiff (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
     ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ (m60SphereIntrinsicEnergy g f) := by
@@ -64,8 +50,6 @@ theorem m60SphereIntrinsicEnergy_contMDiff (g : RiemannianMetric n M)
   have h := m60SphereIntrinsicEnergy_family_contMDiffAt g (fun q => f q.2) (0, p)
     ((hf p).comp (0, p) contMDiffAt_snd)
   exact h.comp p (contMDiffAt_const.prodMk contMDiffAt_id)
-
-
 
 theorem m60SphereEnergyDensity_eq_intrinsic_mul (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (z : LoopPlane) :
@@ -101,8 +85,6 @@ theorem m60SphereEnergyDensity_eq_intrinsic_mul (g : RiemannianMetric n M)
   simp only [B, ContinuousLinearMap.toBilinForm_apply, M60.metricPullbackForm_apply,
     m60SphereIntrinsicEnergy, p]
   ring
-
-
 
 theorem m60SphereEnergy_eq_intrinsic_integral (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :

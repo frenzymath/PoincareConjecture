@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.OriginalAnnulusMark
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Support.ClosedExtension
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology
 
@@ -188,7 +186,6 @@ theorem originalAnnularExtension_symm
   rfl
 
 open unitInterval in
-
 
 noncomputable def originalAnnularHomotopyRel
     (A : Ann ≃ₜ B) (hBS : B ⊆ S) (hB : IsClosed B)

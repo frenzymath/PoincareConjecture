@@ -1,20 +1,6 @@
 import PoincareConjecture.Definitions.M70
 import PoincareConjecture.Statements.M69
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

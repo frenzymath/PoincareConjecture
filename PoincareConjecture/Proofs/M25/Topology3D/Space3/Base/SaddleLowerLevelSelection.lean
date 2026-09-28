@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleTwoCircleSide
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleLowerLevelData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleHeightReflection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem SaddlePieceData.exists_lowerLevelData_or_reflected
     (hP : PlanarSchoenfliesService)

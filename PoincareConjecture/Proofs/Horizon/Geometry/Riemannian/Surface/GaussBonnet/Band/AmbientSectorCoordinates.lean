@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapChordHalfspaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreBandRefinement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -46,7 +39,6 @@ theorem ambientTopFunctional_surjective (i : Fin B.faces.interface.count) :
   have h := (B.ambientTopFunctional i).map_vadd (B.chartTopVertex i.castSucc) (r • G.frame.symm (0,1))
   simpa only [vadd_eq_add, map_smul, ambientTopFunctional_vertical, smul_eq_mul,
     mul_one, ambientTopFunctional_left_vertex, add_zero] using h
-
 
 theorem ambientTopFunctional_eq_smul_topSupportingLine (i : Fin B.faces.interface.count) :
     ∃ r : ℝ, r ≠ 0 ∧ B.ambientTopFunctional i = r • B.topSupportingLine i := by
@@ -115,7 +107,6 @@ theorem ambient_carrier_internal_top_eventually_iff
   rw [mem_chart_image_iff_mem_linearGraphCoordinates_image C G.frame B.faces.carrier]
   exact hz
 
-
 theorem exists_ambient_internal_top_sector_coordinates
     (i j : Fin B.faces.interface.count) (hij : i.succ = j.castSucc)
     (hne : (B.faces.interface.piece i).linear 1 ≠ (B.faces.interface.piece j).linear 1) :
@@ -126,14 +117,12 @@ theorem exists_ambient_internal_top_sector_coordinates
     (B.ambientTopFunctional_right_vertex i) (hij ▸ B.ambientTopFunctional_left_vertex j)
     (B.ambientTopFunctional_pair_independent i j hne)
 
-
 theorem ambientTopFunctional_eq_of_adjacent_slope_eq
     (i j : Fin B.faces.interface.count) (hij : i.succ = j.castSucc)
     (he : (B.faces.interface.piece i).linear 1 = (B.faces.interface.piece j).linear 1) :
     B.ambientTopFunctional i = B.ambientTopFunctional j := by
   unfold ambientTopFunctional
   rw [B.faces.topLineFunctional_eq_of_adjacent_slope_eq i j hij he]
-
 
 theorem ambient_carrier_internal_top_halfspace_of_slope_eq
     (i j : Fin B.faces.interface.count) (hij : i.succ = j.castSucc)
@@ -145,8 +134,6 @@ theorem ambient_carrier_internal_top_halfspace_of_slope_eq
   apply propext
   change z ∈ C.symm '' B.faces.carrier ↔ B.ambientTopFunctional i z ≤ 0
   simpa only [he, le_refl, if_true, hfun, or_self] using hz
-
-
 
 theorem exists_ambient_internal_top_convex_sector_coordinates
     (N : TriangleMesh) (hN : ∀ l ∈ B.coreContactLines, N.IsMonochromatic l)
@@ -183,8 +170,6 @@ theorem exists_ambient_internal_top_convex_sector_coordinates
   change z ∈ C.symm '' B.faces.carrier ↔ 0 ≤ -(B.ambientTopFunctional i z) ∧
     0 ≤ -(B.ambientTopFunctional j z)
   simpa only [not_le.mpr hslope, if_false, neg_nonneg] using hz
-
-
 
 theorem exists_ambient_internal_top_reflex_sector_coordinates
     (N : TriangleMesh) (hN : ∀ l ∈ B.coreContactLines, N.IsMonochromatic l)

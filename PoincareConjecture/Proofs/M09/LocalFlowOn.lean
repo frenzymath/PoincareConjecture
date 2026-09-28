@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalSmoothFlow
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

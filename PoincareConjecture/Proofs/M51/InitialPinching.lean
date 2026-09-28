@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M51.InitialRawFlow
 import PoincareConjecture.Proofs.M01.NormalizationTensorNorm
 import PoincareConjecture.Proofs.M05
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,7 +21,6 @@ theorem initial_pinched (I : NormalizedInitialMetric (M := M))
     {J : Set ℝ} (F : RicciFlow 3 M J) (h0 : F.metric 0 = I.metric) :
     HamiltonIveyPinchedAt (F.connection 0) 0 :=
   m01HamiltonIveyPinchedAt_zero_of_norm_le (F.connection 0) (initial_norm_bound I F h0)
-
 
 theorem pinched_on [CompactSpace M] (I : NormalizedInitialMetric (M := M))
     {J : Set ℝ} (F : RicciFlow 3 M J) (h0 : F.metric 0 = I.metric)

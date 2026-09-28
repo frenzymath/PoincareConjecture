@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,9 +20,6 @@ private theorem ratio_stable {a B C delta u v U V : ℝ}
   have hmul := mul_le_mul_of_nonneg_left hupp hB
   have hmargin := mul_le_mul_of_nonneg_left hlow (sub_nonneg.mpr hBC)
   nlinarith
-
-
-
 
 theorem blowupSequence_cap_scalar_control (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

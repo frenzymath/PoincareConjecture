@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePartition
 import PoincareConjecture.Proofs.M08.OverlappingIntervals
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem exists_compact_overlapping_gauge_partition {a b : ℝ} (hab : a < b)
     (gamma : ℝ → G.Point) (hgamma : Continuous gamma) (paths : ℕ → ℝ → G.Point)

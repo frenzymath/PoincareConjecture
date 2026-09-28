@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalStageNeighborhood
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTerminalPair
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TerminalModTwoChains
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z
@@ -27,10 +16,6 @@ variable {U : Type u} {E : Type v} {M : Type w} {ι : Type z}
   [NormedAddCommGroup U] [NormedSpace ℝ U] [FiniteDimensional ℝ U]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]
-
-
-
-
 
 theorem exists_original_terminal_pair
     (e : ι → OpenPartialHomeomorph M E)

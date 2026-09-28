@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -49,7 +42,6 @@ theorem chartPullback_memLp (e : OpenPartialHomeomorph M E) {A : Set E}
     {f : M → ℝ} (hf : MemLp f 2 μ) : MemLp (f ∘ e.symm) 2 (volume.restrict A) :=
   MemLp.ae_eq (chartPullbackL2_toLp_coe e hA hAt hc hdom hf)
     (Lp.memLp (chartPullbackL2 e hA hAt hc hdom (hf.toLp f)))
-
 
 theorem chartPullback_integral_sq_le (e : OpenPartialHomeomorph M E) {A : Set E}
     (hA : MeasurableSet A) (hAt : A ⊆ e.target) {μ : Measure M} {c : ℝ}

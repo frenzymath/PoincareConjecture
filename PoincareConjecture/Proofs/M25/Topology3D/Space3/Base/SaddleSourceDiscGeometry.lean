@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HyperbolaDiscArcs
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem saddle_source_disc_arc_geometry
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

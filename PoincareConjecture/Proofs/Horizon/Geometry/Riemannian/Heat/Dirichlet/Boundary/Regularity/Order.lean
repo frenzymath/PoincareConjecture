@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boun
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ClassicalEquation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Maximum
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +25,6 @@ theorem contMDiffOn_heat_test_extension (φ : EnergyTest D Ω) (F : ℝ → (M �
     ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ (F t : M → ℝ) Ω := by
   rw [hpos t ht, heatPowerContinuousTime_of_pos D S 0 ht]
   exact contMDiffOn_heatPowerContinuous D S 0 t ht _
-
-
 
 theorem hasDerivAt_heat_test_extension (φ : EnergyTest D Ω) (F : ℝ → (M →ᵇ ℝ))
     (hpos : ∀ t : ℝ, 0 < t → F t =
@@ -58,8 +50,6 @@ theorem hasDerivAt_heat_test_extension (φ : EnergyTest D Ω) (F : ℝ → (M �
     exact heatPowerContinuous_laplacian D S 0 t ht f x hx
   rw [hLap]
   exact hd.congr_of_eventuallyEq heq
-
-
 
 theorem heatPowerContinuous_test_le (φ : EnergyTest D Ω) (C : ℝ) (hC : 0 ≤ C)
     (hφ : ∀ x : M, φ x ≤ C) (t : ℝ) (ht : 0 < t) (x : M) :
@@ -94,8 +84,6 @@ theorem heatPowerContinuous_test_le (φ : EnergyTest D Ω) (C : ℝ) (hC : 0 ≤
   · rw [heatPowerContinuous_zero_outside D S 0 t ht _ x hx]
     exact hC
 
-
-
 theorem heatPowerContinuous_test_nonneg (φ : EnergyTest D Ω)
     (hφ : ∀ x : M, 0 ≤ φ x) (t : ℝ) (ht : 0 < t) (x : M) :
     0 ≤ heatPowerContinuous D S 0 t ht (toDomainL2 D Ω (φ : H1Zero D Ω)) x := by
@@ -103,8 +91,6 @@ theorem heatPowerContinuous_test_nonneg (φ : EnergyTest D Ω)
     (fun y => neg_nonpos.mpr (hφ y)) t ht x
   simpa only [UniformSpace.Completion.coe_neg, map_neg,
     BoundedContinuousFunction.neg_apply, neg_nonpos] using h
-
-
 
 theorem heatPowerContinuous_test_mem_Icc (φ : EnergyTest D Ω) (C : ℝ) (hC : 0 ≤ C)
     (hφ : ∀ x : M, φ x ∈ Icc 0 C) (t : ℝ) (ht : 0 < t) (x : M) :

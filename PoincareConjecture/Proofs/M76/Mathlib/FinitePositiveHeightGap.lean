@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
-
-
-
-
 
 theorem Set.Finite.exists_pos_lt_positive_values {ι : Type*} {s : Set ι}
     (hs : s.Finite) (f : ι → ℝ) {δ : ℝ} (hδ : 0 < δ) :
@@ -39,9 +26,6 @@ theorem Set.Finite.exists_pos_lt_positive_values {ι : Type*} {s : Set ι}
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_singleVertex_slab_width (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) {q : E}

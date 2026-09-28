@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Exponentia
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_InitialJetConvergence
 import PoincareConjecture.Proofs.M44.Mathlib.FrameCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) (R n))
 
-
-
 theorem exists_initial_exponential_frame_bound (heta : Tendsto eta atTop (𝓝 0)) :
     ∃ C : ℝ, 0 < C ∧ ∀ᶠ n in atTop, ‖fderiv ℝ (D n).coordinateMap 0‖ ≤ C := by
   obtain ⟨c, hc, hbound⟩ := SurgeryCapClose.exists_normalized_uniform_lower_bound
@@ -53,9 +42,6 @@ theorem exists_initial_exponential_frame_bound (heta : Tendsto eta atTop (𝓝 0
       ((hdomain (eta n) (Q n).eta_pos (hn.le.trans (min_le_right _ _))).2)
       0 (mem_singleton 0) v)
     (fderiv ℝ (D n).coordinateMap 0) (D n).coordinate_frame_inner
-
-
-
 
 theorem exists_subseq_initial_exponential_frames (heta : Tendsto eta atTop (𝓝 0)) :
     ∃ (φ : ℕ → ℕ), StrictMono φ ∧ ∃ L₀ : E ≃L[ℝ] E,

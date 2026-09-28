@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarAnnulusMap
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzArea
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
-
 theorem m64Annulus_polar_traces (A : M64Annulus g c0 c1) (theta : ℝ) :
     m64PolarAnnulusMap A.map ((1 / 2 : ℝ) • Proofs.M58.angularPoint theta) = c0 theta ∧
       m64PolarAnnulusMap A.map (Proofs.M58.angularPoint theta) = c1 theta := by
@@ -39,9 +26,6 @@ theorem m64Annulus_polar_traces (A : M64Annulus g c0 c1) (theta : ℝ) :
   · have h := m64PolarAnnulusMap_polar A.periodic (r := 1) zero_lt_one theta
     norm_num at h
     exact h.trans (A.upper_boundary theta)
-
-
-
 
 theorem m64Annulus_polar_lipschitz [T2Space M] (A : M64Annulus g c0 c1) :
     ∃ L : ℝ, 0 ≤ L ∧
@@ -75,9 +59,6 @@ theorem m64Annulus_polar_lipschitz [T2Space M] (A : M64Annulus g c0 c1) :
   change g.edist (m64PolarAnnulusMap A.map x) (m64PolarAnnulusMap A.map y) ≤
     (L : ℝ≥0∞) * edist x y at h
   simpa only [edist_dist, dist_eq_norm, ENNReal.ofReal_coe_nnreal] using h
-
-
-
 
 theorem m64Annulus_polar_area_integrable [T2Space M] (A : M64Annulus g c0 c1) :
     IntegrableOn (m60AreaDensity g (m64PolarAnnulusMap A.map))

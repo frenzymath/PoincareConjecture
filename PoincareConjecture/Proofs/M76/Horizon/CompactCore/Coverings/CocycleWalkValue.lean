@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCocycleOfClosed
 import PoincareConjecture.Proofs.M76.Mathlib.ComplexCycleLabels
 
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Uniform
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.SpatialRescaling
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +9,6 @@ open Set
 open scoped ContDiff
 
 namespace Poincare.Parabolic
-
-
 
 theorem exists_uniform_interior_heat_hessian_bound_scaled
     (n : ℕ) (hn : 1 ≤ n) {r lam Λ H : ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathEvaluation
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathMixedDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 variable {P F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [FiniteDimensional ℝ P] [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
   {a b : ℝ}
-
-
-
 
 theorem closedPath_timeJets_contDiff_nat (hab : a < b) (t₀ : Icc a b)
     {U : Set P} (hU : IsOpen U) (n : ℕ) (Φ : ℕ → P → C(Icc a b, F))
@@ -65,9 +53,6 @@ theorem closedPath_timeJets_contDiff_nat (hab : a < b) (t₀ : Icc a b)
     have hparam := ih Ψ hΨ hΨt
     have htime := ih (fun j => Φ (j + 1)) (fun j => hΦ (j + 1)) (fun j => ht (j + 1))
     exact hparam.add (htime.const_smul w.2)
-
-
-
 
 theorem closedPath_timeJets_contDiff (hab : a < b) (t₀ : Icc a b)
     {U : Set P} (hU : IsOpen U) (Φ : ℕ → P → C(Icc a b, F))

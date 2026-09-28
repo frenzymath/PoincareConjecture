@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +10,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 namespace BallNeighborhoodChart
-
-
 
 theorem interior_closedRegion (B : BallNeighborhoodChart E F) :
     interior B.closedRegion = B.inside := by
@@ -43,13 +31,9 @@ theorem interior_closedRegion (B : BallNeighborhoodChart E F) :
     exact ⟨x, hxi, rfl⟩
   · exact B.inside_open.subset_interior_iff.mpr (image_mono ball_subset_closedBall)
 
-
-
 theorem closure_outside (B : BallNeighborhoodChart E F) :
     closure B.closedRegionᶜ = B.insideᶜ := by
   rw [closure_compl, B.interior_closedRegion]
-
-
 
 theorem boundary_subset_closure_sides [ProperSpace E] (B : BallNeighborhoodChart E F) :
     B.boundary ⊆ closure B.inside ∩ closure B.closedRegionᶜ := by

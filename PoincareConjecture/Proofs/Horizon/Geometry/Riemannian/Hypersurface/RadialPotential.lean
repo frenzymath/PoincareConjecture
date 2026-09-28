@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +29,6 @@ private theorem connection_gradient_eq_id
   apply (g.inner_isInvertible x).injective
   ext w
   rw [← D.hessian_eq_inner_connection_gradient (hu x), hess]
-
-
 
 theorem radial_gradient_pushforward_smooth_and_mfderiv
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -128,8 +119,6 @@ theorem radial_gradient_pushforward_smooth_and_mfderiv
     rw [ContinuousLinearMap.comp_apply, mfderiv_eq_fderiv]
     exact hDY _
   exact ⟨fun x => (hlocal x).1, fun x => (hlocal x).2⟩
-
-
 
 theorem exists_unit_umbilic_of_radial_potential
     {m : ℕ} {S : Type*} [TopologicalSpace S]

@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinc
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.TimeTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.LowerContacts
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -88,7 +78,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def ricciBilinear (D : LeviCivitaData g) (x : M) :
     TangentSpace (𝓡 n) x →ₗ[ℝ] TangentSpace (𝓡 n) x →ₗ[ℝ] ℝ :=
   ∑ i, D.curvatureTensor_bilinear_first_third x
@@ -97,7 +86,6 @@ def ricciBilinear (D : LeviCivitaData g) (x : M) :
 @[simp] theorem ricciBilinear_apply (D : LeviCivitaData g) (x : M)
     (v w : TangentSpace (𝓡 n) x) : ricciBilinear D x v w = D.ricci x v w := by
   simp [ricciBilinear, LeviCivitaData.ricci, LinearMap.sum_apply]
-
 
 def metricRicciOperator (D : LeviCivitaData g) (x : M) :
     TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x :=
@@ -124,7 +112,6 @@ theorem metricRicciOperator_inner (D : LeviCivitaData g) (x : M)
   apply Finset.sum_congr rfl
   intro i _
   ring
-
 
 def ricciPartialTrace (D : LeviCivitaData g) (k : ℕ) (x : M) : ℝ :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -205,8 +192,6 @@ theorem ricciPartialTrace_eq_zero_iff (D : LeviCivitaData g)
   have hdim : Module.finrank ℝ (TangentSpace (𝓡 n) x) = n := finrank_euclideanSpace_fin
   exact partialTrace_eq_zero_iff (hk.trans hdim.ge) (metricRicciOperator_isPositive D hD x hRic)
 
-
-
 theorem ricci_movingReaction_nonneg (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
     (hsec : ∀ v w : TangentSpace (𝓡 n) x, 0 ≤ D.curvatureTensor x v w v w)
@@ -246,8 +231,6 @@ theorem ricci_movingReaction_nonneg (D : LeviCivitaData g)
   simp only [mul_ite, mul_one, mul_zero, Finset.sum_ite_eq, Finset.mem_univ, if_true]
   exact Finset.sum_nonneg fun i _ => mul_nonneg (hsec v (e i))
     (hlin.nonneg_eigenvalues rfl i)
-
-
 
 theorem exists_ricci_partialTrace_spatial_support (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
@@ -311,8 +294,6 @@ theorem ricciSharp_pairing_right (D : LeviCivitaData g) (x : M)
         D.ricci x v (g.orthonormalBasis x i) := by
   rw [← ricciBilinear_apply]
   simp only [ricciSharp, map_sum, map_smul, smul_eq_mul, ricciBilinear_apply]
-
-
 
 theorem hasDerivAt_ricci_transport (hC : RicciFlowCurvatureTheory.{u})
     {a b : ℝ} (F : RicciFlow n M (Icc a b)) {t : ℝ} (ht : t ∈ Ioo a b)
@@ -405,8 +386,6 @@ theorem exists_ricci_frame_time_support (hC : RicciFlowCurvatureTheory.{u})
   · exact Finset.sum_le_sum fun i _ => le_add_of_nonneg_right
       (ricci_movingReaction_nonneg (F.connection t)
         (hC.tensor_calculus n M (F.metric t) (F.connection t)) x hsec (v i))
-
-
 
 theorem ricciPartialTrace_heatLowerContacts [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

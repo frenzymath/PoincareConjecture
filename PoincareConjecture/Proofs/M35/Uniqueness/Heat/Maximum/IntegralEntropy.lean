@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.FieldEntropy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -23,7 +14,6 @@ namespace PoincareConjecture.M35.Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 theorem integral_fieldEntropySource {g : RiemannianMetric n V} (D : LeviCivitaData g)
     {X : V → V} {φ : ℝ → ℝ} (hX : ContDiff ℝ ∞ X) (hφ : ContDiff ℝ ∞ φ)
@@ -52,7 +42,6 @@ theorem integral_fieldEntropySource {g : RiemannianMetric n V} (D : LeviCivitaDa
       rw [fieldEntropy_balance D hX hφ x, mul_add]
   linarith only [hz, he]
 
-
 theorem integral_fieldEntropySource_nonpos {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} {φ : ℝ → ℝ}
     (hX : ContDiff ℝ ∞ X) (hφ : ContDiff ℝ ∞ φ)
@@ -66,7 +55,6 @@ theorem integral_fieldEntropySource_nonpos {g : RiemannianMetric n V}
   intro x
   exact mul_nonneg (by rw [raw_volumeDensity_eq]; exact Real.sqrt_nonneg _)
     (fieldEntropyDissipation_nonneg D X φ x (hφnn _) (hφ' _) (hφ'' _) (hR x))
-
 
 theorem vector_heat_density_entropy_hasDerivWithinAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckGlobalBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,14 +26,10 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ e)
   (hcapture : ∀ x, e x ∈ S.carrier)
 
-
-
 def GeneralizedStrongNeck.captured_chart_map : U → strongNeckOpen S :=
   fun x => ⟨e x, hcapture x⟩
 
 include he
-
-
 
 theorem GeneralizedStrongNeck.captured_chart_map_localDiffeomorph :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -62,8 +47,6 @@ theorem GeneralizedStrongNeck.captured_chart_map_localDiffeomorph :
   apply Subtype.ext
   exact hy.symm
 
-
-
 def GeneralizedStrongNeck.global_chart_flow :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 3) (n := ∞)
@@ -71,9 +54,6 @@ def GeneralizedStrongNeck.global_chart_flow :
   (GeneralizedStrongNeck.global_flow S H Q hQ tau htau hwindow).pullbackToCanonicalDomain
     U hU (GeneralizedStrongNeck.captured_chart_map S U e hcapture)
     (GeneralizedStrongNeck.captured_chart_map_localDiffeomorph S U hU e he hcapture)
-
-
-
 
 theorem GeneralizedStrongNeck.global_chart_flow_metric_at_zero :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -100,8 +80,6 @@ theorem GeneralizedStrongNeck.global_chart_flow_metric_at_zero :
   rw [GeneralizedStrongNeck.global_flow_metric_at_zero, hderiv, hderiv]
   rfl
 
-
-
 theorem GeneralizedStrongNeck.global_chart_flow_curvatureTensorNorm :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 3) (n := ∞)
@@ -120,8 +98,6 @@ theorem GeneralizedStrongNeck.global_chart_flow_curvatureTensorNorm :
     U hU e he hcapture).connection s).curvatureTensorNorm_eq_of_local_isometry
       ((GeneralizedStrongNeck.global_flow S H Q hQ tau htau hwindow).connection s)
       isOpen_univ hf.contMDiff.contMDiffOn (fun _ _ _ _ => rfl) (mem_univ x)
-
-
 
 theorem GeneralizedStrongNeck.global_chart_flow_curvatureDerivativeNorm :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingLocal
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric ContinuousLinearMap
@@ -21,9 +12,6 @@ noncomputable section
 namespace PoincareConjecture.M60
 
 variable {n : ℕ}
-
-
-
 
 theorem suC1_compact_extension
     {f : LoopPlane → EuclideanSpace ℝ (Fin n)} {K U : Set LoopPlane}
@@ -50,8 +38,6 @@ theorem suC1_compact_extension
   intro x hx
   simp only [F, hchi1 x hx, one_smul]
 
-
-
 theorem suC1_normalizedConvolution_fderiv
     {f : LoopPlane → EuclideanSpace ℝ (Fin n)}
     (hf : ContDiff ℝ 1 f) (hc : HasCompactSupport f)
@@ -61,8 +47,6 @@ theorem suC1_normalizedConvolution_fderiv
   have h := hc.hasFDerivAt_convolution_right (μ := volume) (lsmul ℝ ℝ)
     ((phi.continuous_normed (μ := volume)).locallyIntegrable) hf x
   exact h.fderiv
-
-
 
 theorem suC1_compactSupport_smooth_approximation
     {f : LoopPlane → EuclideanSpace ℝ (Fin n)}
@@ -90,9 +74,6 @@ theorem suC1_compactSupport_smooth_approximation
   rw [suC1_normalizedConvolution_fderiv hf hc]
   exact h1 phi hr1' x
 
-
-
-
 theorem suC1_smooth_approximation_on_compact
     {f : LoopPlane → EuclideanSpace ℝ (Fin n)} {K U : Set LoopPlane}
     (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -109,9 +90,6 @@ theorem suC1_smooth_approximation_on_compact
     exact hEq (thickening_subset_cthickening _ _ hy)
   rw [← hnear.self_of_nhds, ← hnear.fderiv_eq]
   exact ⟨hG0 x, hG1 x⟩
-
-
-
 
 theorem suC1_smooth_approximation_jet_observable
     {f : LoopPlane → EuclideanSpace ℝ (Fin n)} {K U : Set LoopPlane}

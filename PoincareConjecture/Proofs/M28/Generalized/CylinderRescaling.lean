@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.CylinderFlow
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,8 +15,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
   (hI : (Proofs.M12.cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
 
-
-
 structure RescaledRawCylinderData where
   geometry : Proofs.M12.FlowBoxRicciGeometry F
   metric : SpacetimeCylinderMetric
@@ -32,9 +22,6 @@ structure RescaledRawCylinderData where
   ordinary : OrdinaryGaugeWitness geometry.leafwise
     (Proofs.M12.rawCylinderTransport geometry.realization e hI) metric
   rescaling : OrdinaryParabolicRescaling ordinary.flow q e.scale_pos a
-
-
-
 
 theorem exists_rescaled_raw_cylinder_flow :
     Nonempty (RescaledRawCylinderData e hI) := by
@@ -46,8 +33,6 @@ theorem exists_rescaled_raw_cylinder_flow :
     ordinary := W
     rescaling := P
   }⟩
-
-
 
 theorem rescaled_metric_eq
     (H : RescaledRawCylinderData e hI) (s : ℝ)
@@ -71,8 +56,6 @@ noncomputable def rescaledTime
   unfold rescaledTime
   dsimp [Proofs.M12.cylinderClockHomeomorph]
   exact parabolicTime_parabolicTimeInv q e.scale_pos a s.val
-
-
 
 theorem rescaled_pullback_metric_eq
     (H : RescaledRawCylinderData e hI)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_GradientNorm
 import PoincareConjecture.Proofs.M14.Sec6_5_HarnackIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
 
 theorem exponential_harnackIntegral_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
@@ -42,8 +32,6 @@ theorem exponential_harnackIntegral_eq
       simpa only [M14SqrtParameterInterval, Real.sqrt_zero] using Ioo_subset_Icc_self hr)
   rw [Real.sqrt_sq hpos.le, ← E.action_eq Z s hs hpos] at h
   exact h
-
-
 
 theorem reducedLengthGradientNormSq_joint_identity
     (hCoordinates : M12MetricPredecessors.{0} n)

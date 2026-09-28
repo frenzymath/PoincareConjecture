@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.M76.Brown.SpindleHeight
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
 set_option autoImplicit false
 open Set BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_local_collar_of_parametrized_collar
     {C S T B : Type*} [TopologicalSpace C] [TopologicalSpace S]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.RecenteredCylinder
 import PoincareConjecture.Proofs.M30.Generalized.PhysicalClock
 import PoincareConjecture.Proofs.M13.Volume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M30.Cylinder
-
-
-
 
 theorem normalized_volume_of_recentered_noncollapse
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

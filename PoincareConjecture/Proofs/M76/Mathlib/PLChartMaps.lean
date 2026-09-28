@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartFamilies
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedCircleQuarterTurn
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +14,6 @@ variable {E F X Y ι κ : Type*}
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
 
-
-
 theorem plInCharts_inverseChart (Q : ι → OpenPartialHomeomorph E X)
     (A : OpenPartialHomeomorph F X)
     (hA : ∀ i, LocallyPiecewiseAffineOn ((Q i).trans A.symm)
@@ -36,9 +24,6 @@ theorem plInCharts_inverseChart (Q : ι → OpenPartialHomeomorph E X)
   exact hA i
 
 omit [FiniteDimensional ℝ F] in
-
-
-
 
 theorem plInCharts_homeomorph (Q : ι → OpenPartialHomeomorph E X)
     (R : κ → OpenPartialHomeomorph F Y) (H : X ≃ₜ Y)
@@ -58,10 +43,6 @@ namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
 
-
-
-
-
 theorem plInCharts_coe :
     PLInCharts (realCharts ℝ) (quotientCharts p) ((↑) : ℝ → AddCircle p) univ := by
   refine ⟨isOpen_univ, (AddCircle.continuous_mk' p).continuousOn, ?_⟩
@@ -73,17 +54,12 @@ theorem plInCharts_coe :
   change LocallyPiecewiseAffineOn (toIcoMod (Fact.out : 0 < p) a) D
   exact locallyPiecewiseAffineOn_toIcoMod (Fact.out : 0 < p) a hD (fun _ hx => hx.2)
 
-
-
 theorem plInCharts_shortArc_inverse (d : ℝ) :
     PLInCharts (quotientCharts p) (realCharts ℝ)
       (shortArcQuotient p d).symm (shortArcQuotient p d).target :=
   plInCharts_inverseChart (quotientCharts p) (shortArcQuotient p d)
     (fun a => (mem_piecewiseAffineGroupoid_iff ℝ _).mp
       (shortArcQuotient_transition_mem_piecewiseAffineGroupoid p d a) |>.1)
-
-
-
 
 theorem plInCharts_cylinder_homeomorph
     (H : (AddCircle p × ℝ) ≃ₜ (AddCircle p × ℝ))

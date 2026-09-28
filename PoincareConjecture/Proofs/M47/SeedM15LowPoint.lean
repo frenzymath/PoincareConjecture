@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Action
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_EpochWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_lowScalarMinimizer (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -65,8 +55,6 @@ theorem seedM15_lowScalarMinimizer (P : M46Predecessors.{u})
   refine ⟨endpoint, path, hmin, haction, tau, htauwindow, ?_, hlow⟩
   rw [prefix_epochStart_eq_twice p]
   linarith [htau.1]
-
-
 
 theorem seedM15_lowPoint_before_recent {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {T tau Delta1 b : ℝ}

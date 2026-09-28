@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureScaledRound
 import PoincareConjecture.Proofs.M47.TerminalCurvatureComponentCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_compact_of_scaled_source_component
     {ι : Type*}
@@ -70,8 +59,6 @@ theorem terminalCurvature_eventually_compact_of_scaled_source_component
     exact hmono hjk hz
   exact terminalCurvature_compact_of_component_captured (phi k)
     N.component_eq N.compact hc
-
-
 
 theorem terminalCurvature_eventually_compact_of_scaled_source_round
     {ι : Type*}

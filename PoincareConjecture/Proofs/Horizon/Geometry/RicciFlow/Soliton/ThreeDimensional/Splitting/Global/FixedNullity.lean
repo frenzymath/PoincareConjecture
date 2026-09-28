@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.Persistence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 theorem ricciKernel_eq_initial_of_constant_nullity
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -42,8 +31,6 @@ theorem ricciKernel_eq_initial_of_constant_nullity
   apply Submodule.eq_of_le_of_finrank_eq
     (ricciKernel_antitoneOn hC hab F hsec x ⟨le_rfl, hab.le⟩ ht ht.1)
   exact hdim t ht x
-
-
 
 theorem parallel_gradient_persists_of_constant_nullity
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)

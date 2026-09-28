@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CollaredDomain
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem ball_neighborhood_in_coordinates
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]

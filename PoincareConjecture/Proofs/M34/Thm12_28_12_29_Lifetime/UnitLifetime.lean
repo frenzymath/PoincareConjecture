@@ -5,25 +5,12 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.NoncollapsingCertific
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.ScalarPositivity
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowCompleteness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
-
-
 
 theorem standardFlow_lifetime_ge_one (P : M34StandardCapPredecessors)
     {g0 : StandardInitialMetric} (F : MaximalStandardCapFlow g0) :

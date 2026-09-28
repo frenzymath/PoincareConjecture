@@ -1,36 +1,10 @@
 import PoincareConjecture.Statements.M41NonemptyContinuation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedNonemptyContinuation : RepairedNonemptyContinuationTheory.{u} := by
   refine ⟨?_⟩

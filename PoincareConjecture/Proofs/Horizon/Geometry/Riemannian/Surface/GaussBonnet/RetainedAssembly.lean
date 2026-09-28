@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CoordinateCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilyIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +20,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem vertex_contribution_eq_parent_sum (g : RiemannianMetric 2 S) (q : S) :
     coordinateVertexAngleContribution g T.refinement.coordinates T.refinement.basis q =
       ∑ i : T.Parent, meshVertexAngleContribution g (T.parentCoordinates i)
@@ -35,8 +27,6 @@ theorem vertex_contribution_eq_parent_sum (g : RiemannianMetric 2 S) (q : S) :
   coordinateVertexAngleContribution_mesh_family g T.parentCoordinates T.refinement.mesh q
 
 omit [T2Space S] in
-
-
 
 theorem parent_mesh_vertex_is_used
     (q : Euler.CoordinateVertex T.refinement.coordinates T.refinement.basis)
@@ -49,8 +39,6 @@ theorem parent_mesh_vertex_is_used
     T.refinement.boundary_map T.refinement.boundary_injective T.refinement.intersections q i hq
 
 variable [MeasurableSpace S] [BorelSpace S] [T3Space S] [CompactSpace S]
-
-
 
 theorem integral_scalarCurvature_eq_euler_add_parent_excess
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g) :
@@ -68,8 +56,6 @@ theorem integral_scalarCurvature_eq_euler_add_parent_excess
     T.refinement.boundary_map T.refinement.boundary_injective T.refinement.intersections
     T.refinement.intersection_frontier T.refinement.cover D
   simpa only [T.vertex_contribution_eq_parent_sum] using h
-
-
 
 theorem integral_scalarCurvature_le_eight_pi_add_parent_excess [ConnectedSpace S]
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g) :
@@ -90,7 +76,6 @@ end PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 namespace PoincareConjecture.Topology.Surface
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_retained_scalar_integral_estimate
     {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]

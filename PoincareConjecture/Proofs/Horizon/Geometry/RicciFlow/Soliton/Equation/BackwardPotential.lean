@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Equation.EntropyEvolution
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +29,6 @@ theorem deriv_reverse_potential {l : M × ℝ → ℝ}
     (hpoint.comp (-t) (contMDiffAt_const.prodMk contMDiffAt_id)).contDiffAt.differentiableAt
       (by simp)
   simpa [Function.comp_def] using (hd.hasDerivAt.comp t (hasDerivAt_neg t)).deriv
-
-
 
 theorem soliton_equation_of_backward_scalar_equalities
     (F : RicciFlow n M (Iio (0 : ℝ))) {l : M × ℝ → ℝ}

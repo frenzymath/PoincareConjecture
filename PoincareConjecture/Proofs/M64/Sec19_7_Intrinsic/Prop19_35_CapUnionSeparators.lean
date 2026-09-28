@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopCapTips
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapEndpointSeparator
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +10,6 @@ open scoped Topology ContDiff
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_cap_isCompact
     (F : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ}
@@ -40,10 +26,6 @@ theorem m64Intrinsic_cap_isCompact
       ⟨hq.2.1, by linarith [hq.1, hq.2.2]⟩⟩
   exact ((isCompact_Icc.prod isCompact_Icc).of_isClosed_subset hclosed hsub).image_of_continuousOn
     (F.continuousOn.mono hsource)
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_cap_union_separator
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

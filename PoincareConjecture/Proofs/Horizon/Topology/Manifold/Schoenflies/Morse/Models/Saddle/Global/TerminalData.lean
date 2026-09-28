@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Filling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Decomposition
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function
@@ -23,14 +13,12 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
-
 def terminalEndCap {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
     (ends : SphereSurgeryCoreCap.AnnularEndFamily v g B C)
     (i : ends.EndIndex) : Set S2 :=
   ends.endRegion i ∪ match i with
     | .inl d => d.1.1.chart '' closedBall 0 1
     | .inr d => d.1.1.chart '' closedBall 0 1
-
 
 structure TerminalSaddleGeometry
     {f : S2 → E3} (M : SphereMorseReduction f) {g : S2 → E3}
@@ -120,7 +108,6 @@ def modelBand (d : TerminalSaddleGeometry M P p e) : Set E3 :=
   ⋃ z ∈ d.I, Saddle.slice (d.B z) z
 end TerminalSaddleGeometry
 
-
 structure TerminalSaddleData
     {f : S2 → E3} (M : SphereMorseReduction f) {g : S2 → E3}
     (P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g)
@@ -157,6 +144,5 @@ structure TerminalSaddleData
 def planarHeightMap
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (t : Real) (y : E3) : E3 :=
   Saddle.toE3 (Φ t (y 2) (Saddle.toE2 y)) (y 2)
-
 
 end Poincare.Manifold.Schoenflies.SaddleLevel

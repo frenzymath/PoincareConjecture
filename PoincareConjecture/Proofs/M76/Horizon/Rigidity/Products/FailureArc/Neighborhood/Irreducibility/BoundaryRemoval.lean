@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRegionSideTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem IsPLIrreducible.sdiff_of_preconnected_boundary_meeting
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

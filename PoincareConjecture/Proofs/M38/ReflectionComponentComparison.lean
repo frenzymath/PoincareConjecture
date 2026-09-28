@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.DihedralCutComponents
 import PoincareConjecture.Proofs.M38.MatchingCoverComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,7 +12,6 @@ namespace PoincareConjecture.M38
 
 private instance sphereDimension : Fact (Module.finrank ℝ StandardCapSpace = 2 + 1) := ⟨by simp⟩
 
-
 noncomputable def cylinderReflectionCenterShift (n : ℤ) :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
       RoundCylinderSpace RoundCylinderSpace ∞ where
@@ -33,7 +22,6 @@ noncomputable def cylinderReflectionCenterShift (n : ℤ) :
   contMDiff_toFun := contMDiff_fst.prodMk (contMDiff_snd.sub contMDiff_const)
   contMDiff_invFun := contMDiff_fst.prodMk (contMDiff_snd.add contMDiff_const)
 
-
 theorem cylinderReflectionCenterShift_reflection (n : ℤ) (p : RoundCylinderSpace) :
     cylinderReflectionCenterShift n (cylinderIntegerReflection n p) =
       (-(cylinderReflectionCenterShift n p).1, -(cylinderReflectionCenterShift n p).2) := by
@@ -41,7 +29,6 @@ theorem cylinderReflectionCenterShift_reflection (n : ℤ) (p : RoundCylinderSpa
   · rfl
   · change (n : ℝ) - p.2 - (n : ℝ) / 2 = -(p.2 - (n : ℝ) / 2)
     ring
-
 
 theorem centeredProjectivePolar_fibers
     (L : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
@@ -53,8 +40,6 @@ theorem centeredProjectivePolar_fibers
     (cylinderReflectionCenterShift n).injective
   rw [projectivePolar_fibers, ← cylinderReflectionCenterShift_reflection,
     hinj.eq_iff, hinj.eq_iff]
-
-
 
 theorem reflection_open_region_projective_comparison
     {Q : GeneralizedSliceCarrier.{u}}
@@ -74,9 +59,6 @@ theorem reflection_open_region_projective_comparison
       (𝓡 3) projectiveCarrier.carrier (projectivePolar_localDiffeomorph L _)
   exact exists_partialDiffeomorph_of_matching_local_covers ((𝓡 2).prod 𝓘(ℝ, ℝ)) q f hq hf hC
     (fun x hx y hy => (hfibers x hx y hy).trans (centeredProjectivePolar_fibers L n x y).symm)
-
-
-
 
 theorem reflection_component_projective_comparison
     {Q : GeneralizedSliceCarrier.{u}}
@@ -102,8 +84,6 @@ theorem reflection_component_projective_comparison
   rw [hes]
   exact connected_subset_image_precompact_component q hq.contMDiff.continuous
     hq.isLocalHomeomorph.isOpenMap hU (hKU hKa) hcompact hK hKU hKa
-
-
 
 theorem reflection_comparison_affine_collar
     {Q : GeneralizedSliceCarrier.{u}} (q : RoundCylinderSpace → Q.carrier)

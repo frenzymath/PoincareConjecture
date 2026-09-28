@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedAnnularApproximation
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.CurvatureScaleAnnularLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 def SelectedCurvatureAnnularEmbeddingStatement
     {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -76,10 +60,6 @@ def SelectedCurvatureAnnularEmbeddingStatement
               (UniformSpace.Completion (MetricEndRay E alpha)) (m / 2) (2 * m),
             (∀ u v : S, edist (j u) (j v) = referenceDistance u v) ∧
             ∀ u : S, ((j u).2 : ℝ) ∈ Icc (3 * m / 4) (5 * m / 4)
-
-
-
-
 
 theorem exists_selected_curvatureScale_annular_embedding
     {M : Type*} [TopologicalSpace M] [T2Space M]

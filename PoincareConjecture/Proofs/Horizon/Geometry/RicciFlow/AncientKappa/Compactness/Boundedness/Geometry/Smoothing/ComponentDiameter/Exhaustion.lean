@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.ComponentDiameter.Components
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.RegularBand
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +18,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 omit [NoncompactSpace M] in
-
 
 theorem exists_uniform_exhaustion_level_component_diameter_with_error
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -84,7 +76,6 @@ theorem exists_uniform_exhaustion_level_component_diameter_with_error
 
 omit [NoncompactSpace M] in
 
-
 theorem exists_uniform_exhaustion_level_component_diameter
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (hc : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
@@ -106,7 +97,6 @@ theorem exists_uniform_exhaustion_level_component_diameter
   exact ⟨d, min (a/8) (1/8), hd, lt_min (by positivity) (by norm_num), hbound⟩
 
 omit [NoncompactSpace M] in
-
 
 theorem exists_uniform_exhaustion_low_level_component_diameter
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -155,9 +145,6 @@ theorem exists_uniform_exhaustion_low_level_component_diameter
       exact ⟨⟨hx.1.1, by linarith [hx.1.2]⟩, hx.2⟩
   rw [hsets]
   exact hbound u hu hregO herrorO 1 ⟨le_rfl, le_rfl⟩
-
-
-
 
 theorem exists_smooth_exhaustion_approx_with_regular_component_diameters
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

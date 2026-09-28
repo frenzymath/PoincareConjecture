@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +7,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
 
 noncomputable def radialCylinderTensor (A : ℝ → ℝ) (b : ℝ) : RoundCylinderTwoTensor :=
   fun z v w => A z.2 / 2 * RoundCylinderMetric z v w +
@@ -77,7 +67,6 @@ private theorem round_model_iterated_zero (u : ℝ)
     convert! congrArg (fun L : RoundCylinderCoordinates →L[ℝ] ℝ =>
       L (roundCylinderCoordinateBasis (a 0)))
       (hasFDerivAt_const (𝕜 := ℝ) (0 : ℝ) p).fderiv using 1
-
 
 theorem roundCylinderJetDifferenceSquared_model (u : ℝ) (B : RoundCylinderTwoTensor)
     (order : ℕ) (z : RoundCylinderSpace) :

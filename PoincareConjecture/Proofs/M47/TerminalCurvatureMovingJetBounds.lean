@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceIsometryGerm
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open Poincare.Analysis.Calculus
 namespace PoincareConjecture.M47
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_moving_isometry_jet_bound
     (m : ℕ) {a K : ℝ} (ha : 0 < a) (hK : 1 ≤ K) :
@@ -42,8 +31,6 @@ theorem terminalCurvature_exists_moving_isometry_jet_bound
   simpa only using
     (PoincareConjecture.CoordinateTransition.exists_local_isometry_germ_jet_bound
       (E := E₃) m ha hK)
-
-
 
 theorem terminalCurvature_exists_moving_pullback_jet_bound
     (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :

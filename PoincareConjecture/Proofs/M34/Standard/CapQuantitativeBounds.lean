@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem scalar_bounds_on_image_of_close
     {C : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)
@@ -45,8 +34,6 @@ theorem scalar_bounds_on_image_of_close
   have herror := abs_sub_le_iff.mp (hclose x hx)
   constructor <;> linarith
 
-
-
 theorem gradient_le_of_normalized_base
     {C : ℝ} (hC : N.cap_constant ≤ C)
     {o : M} (ho : o ∈ N.carrier) (hnormal : N.connection.scalarCurvature o = 1)
@@ -61,8 +48,6 @@ theorem gradient_le_of_normalized_base
       mul_le_mul_of_nonneg_right (hb.le.trans hC) (Real.rpow_nonneg (N.scalar_pos x hx).le _)
     _ ≤ C * C ^ (3 / 2 : ℝ) :=
       mul_le_mul_of_nonneg_left hp (N.cap_constant_pos.trans_le hC).le
-
-
 
 theorem evolution_le_of_normalized_base
     {C : ℝ} (hC : N.cap_constant ≤ C)
@@ -79,8 +64,6 @@ theorem evolution_le_of_normalized_base
     _ ≤ C * N.connection.scalarCurvature x ^ 2 :=
       mul_le_mul_of_nonneg_right (hb.le.trans hC) (sq_nonneg _)
     _ ≤ C * C ^ 2 := mul_le_mul_of_nonneg_left hp hCpos.le
-
-
 
 theorem gradient_bound_on_image_of_close
     {C : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)
@@ -110,8 +93,6 @@ theorem gradient_bound_on_image_of_close
         ((2 * C) ^ (3 / 2 : ℝ) * D.scalarCurvature (f x) ^ (3 / 2 : ℝ)) :=
       le_mul_of_one_le_right (by positivity) hp
     _ = _ := by ring
-
-
 
 theorem evolution_bound_on_image_of_close
     {C : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Services
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +37,6 @@ variable [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {p : M} {b : ℝ}
 
 namespace AncientKappaNormalization
-
-
 
 theorem scalarGradientNorm_le (N : AncientKappaNormalization K p b)
     {B : ℝ} (hB : 0 ≤ B)
@@ -101,7 +88,6 @@ theorem scalarGradientNorm_le (N : AncientKappaNormalization K p b)
   · rw [Set.not_nonempty_iff_eq_empty.mp hne, Real.sSup_empty]
     exact mul_nonneg hB (mul_nonneg N.scale_pos.le hq.le)
 
-
 theorem scalar_derivative_eq (N : AncientKappaNormalization K p b)
     (hb : b ≤ 0) {d d' : ℝ}
     (hd : HasDerivWithinAt (fun s => (K.flow.connection s).scalarCurvature p)
@@ -124,8 +110,6 @@ theorem scalar_derivative_eq (N : AncientKappaNormalization K p b)
   field_simp [N.scale_pos.ne'] at heq
   nlinarith
 
-
-
 theorem scalarEvolution_bound (N : AncientKappaNormalization K p b)
     (S : ScalarDerivativeServices.{u}) (hb : b ≤ 0) {B : ℝ}
     (hderiv : |(N.target.flow.connection 0).laplacian
@@ -139,7 +123,6 @@ theorem scalarEvolution_bound (N : AncientKappaNormalization K p b)
     (S.scalar_evolution M (Set.Iic 0) N.target.flow 0 (by simp) p),
     abs_mul, abs_of_nonneg (sq_nonneg N.scale), ← N.scale_eq]
   exact (mul_le_mul_of_nonneg_left hderiv (sq_nonneg N.scale)).trans_eq (mul_comm _ _)
-
 
 theorem scalarDerivWithin_bound (N : AncientKappaNormalization K p b)
     (S : ScalarDerivativeServices.{u}) (hb : b ≤ 0) {B : ℝ}

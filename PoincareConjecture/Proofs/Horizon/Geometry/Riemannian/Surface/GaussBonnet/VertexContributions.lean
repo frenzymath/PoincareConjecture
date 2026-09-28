@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.MeshTransport
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Cells
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,15 +17,12 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 def coordinateVertexAngleContribution {I : Type*} [Fintype I]
     (g : RiemannianMetric 2 S) (F : I → OpenPartialHomeomorph Plane S)
     (b : I → AffineBasis (Fin 3) ℝ Plane) (x : S) : ℝ :=
   ∑ i, ∑ k : Fin 3, if F i (b i k) = x then coordinateTriangleAngle g (F i) (b i) k else 0
 
 omit [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem sum_coordinate_vertex_weights {I : Type*} [Fintype I]
     (F : I → OpenPartialHomeomorph Plane S) (b : I → AffineBasis (Fin 3) ℝ Plane)
@@ -52,8 +42,6 @@ theorem sum_coordinate_vertex_weights {I : Type*} [Fintype I]
     ⟨fun h => Subtype.ext h, fun h => congrArg Subtype.val h⟩
   simp only [heq, Finset.sum_ite_eq, Finset.mem_univ, if_true]
 
-
-
 theorem sum_coordinateVertexAngleContribution {I : Type*} [Fintype I]
     (g : RiemannianMetric 2 S) (F : I → OpenPartialHomeomorph Plane S)
     (b : I → AffineBasis (Fin 3) ℝ Plane) :
@@ -62,14 +50,11 @@ theorem sum_coordinateVertexAngleContribution {I : Type*} [Fintype I]
       ∑ i, ∑ k : Fin 3, coordinateTriangleAngle g (F i) (b i) k :=
   sum_coordinate_vertex_weights F b (fun i k => coordinateTriangleAngle g (F i) (b i) k)
 
-
 theorem coordinateVertexAngleContribution_mesh
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (x : S) :
     coordinateVertexAngleContribution g (fun _ : M.Triangle => F) (meshTriangleBasis M) x =
       meshVertexAngleContribution g F M x := rfl
-
-
 
 theorem coordinateVertexAngleContribution_mesh_family {I : Type*} [Fintype I]
     (g : RiemannianMetric 2 S) (F : I → OpenPartialHomeomorph Plane S)
@@ -80,8 +65,6 @@ theorem coordinateVertexAngleContribution_mesh_family {I : Type*} [Fintype I]
         ∑ i, meshVertexAngleContribution g (F i) (M i) x := by
   unfold coordinateVertexAngleContribution meshVertexAngleContribution
   rw [Fintype.sum_sigma]
-
-
 
 theorem coordinateVertexAngleContribution_reindex {I J : Type*} [Fintype I] [Fintype J]
     (g : RiemannianMetric 2 S) (F : I → OpenPartialHomeomorph Plane S)

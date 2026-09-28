@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGraphEndpointExtension
 import PoincareConjecture.Proofs.M76.Mathlib.LinearPatchHomeomorphisms
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,12 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem exists_finitePL_marked_graph_with_linear_ends {ι : Type*} [Finite ι]
     (S : ι → Set E) (T : ι → Set F) (d : ι → Bool → Set E)

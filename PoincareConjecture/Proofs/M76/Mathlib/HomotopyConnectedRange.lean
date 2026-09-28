@@ -1,21 +1,10 @@
 import Mathlib.Topology.Homotopy.Path
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace ContinuousMap.Homotopy
-
-
-
 
 theorem pathConnectedSpace_of_range
     {X : Type*} [TopologicalSpace X] {r : C(X, X)}

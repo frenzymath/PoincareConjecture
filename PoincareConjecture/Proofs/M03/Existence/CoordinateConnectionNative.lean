@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Ch01.Koszul
 import PoincareConjecture.Proofs.M03.Existence.ChartJetSource
 import Mathlib.Analysis.InnerProductSpace.GramMatrix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityWeakMap
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -48,11 +38,6 @@ end PoincareConjecture.M65Interior
 namespace PoincareConjecture.M65LocalWeakMap
 
 open M65Interior
-
-
-
-
-
 
 theorem exists_disk_replacement {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

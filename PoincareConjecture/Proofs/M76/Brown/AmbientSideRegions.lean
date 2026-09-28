@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.FiniteAmbientAgreement
 import PoincareConjecture.Proofs.M76.Brown.OrientedFlatteningCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -17,9 +8,6 @@ open Set SignType
 namespace BrownCollar
 
 variable {X P : Type*} [MetricSpace X] [TopologicalSpace P]
-
-
-
 
 theorem exists_ambient_side_regions {S : Set X} (hS : IsCompact S)
     (E : S → OpenPartialHomeomorph X (P × ℝ))

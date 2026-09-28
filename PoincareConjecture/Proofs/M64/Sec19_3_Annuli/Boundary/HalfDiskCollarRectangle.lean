@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RegularArcFrame
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -14,10 +9,6 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M64
 
-
-
-
-
 theorem collar_rectangle_norm_lt {e R t h : ℝ} (heR : 2 * e < R)
     (ht : t ∈ Icc (-e) e) (hh : h ∈ Icc (0 : ℝ) e) :
     ‖(t : ℂ) + (h : ℂ) * I‖ < R := by
@@ -25,10 +16,6 @@ theorem collar_rectangle_norm_lt {e R t h : ℝ} (heR : 2 * e < R)
   have hn := norm_add_le (t : ℂ) ((h : ℂ) * I)
   simp only [norm_real, Real.norm_eq_abs, norm_mul, norm_I, mul_one, abs_of_nonneg hh.1] at hn
   linarith [hh.2]
-
-
-
-
 
 theorem halfDisk_boundary_collar_width
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

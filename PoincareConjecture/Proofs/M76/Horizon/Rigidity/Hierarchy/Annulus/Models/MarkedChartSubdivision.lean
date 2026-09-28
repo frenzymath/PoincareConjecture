@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.P
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.BoundaryLineStars
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -118,6 +110,5 @@ theorem exists_marked_surface_incidence_subdivision
     exists_marked_surface_incidence_subdivision_with_rim_polygons
       e K0 B0 hK0 hB0 hB0K H0 g hH0 hgPL hB0M hlocal
   exact ⟨K, B, hK, hKK0, hBK, hBs, hfull, hpure, hcounts, hlinks⟩
-
 
 end PoincareConjecture.M76

@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {I : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   {γ : ℝ → M} {J : Set ℝ}
-
-
 
 theorem contMDiffOn_succ_of_curveVelocity (hJ : IsOpen J)
     (hγ : MDifferentiableOn (𝓘(ℝ, ℝ)) I γ J) (k : ℕ)
@@ -62,9 +51,6 @@ theorem contMDiffOn_succ_of_curveVelocity (hJ : IsOpen J)
     (contDiffOn_succ_iff_deriv_of_isOpen hO).mpr ⟨hcoord, by simp, hderiv⟩
   exact (contMDiffAt_iff_target.mpr ⟨(hγd s hsO).continuousAt,
     (hregular.contMDiffOn s hsO).contMDiffAt (hO.mem_nhds hsO)⟩).contMDiffWithinAt
-
-
-
 
 theorem contMDiffOn_of_smooth_curveVelocity (hJ : IsOpen J)
     (hγ : MDifferentiableOn (𝓘(ℝ, ℝ)) I γ J)

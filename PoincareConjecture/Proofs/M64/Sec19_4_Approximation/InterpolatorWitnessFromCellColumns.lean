@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorVerticalColumnAE
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorWitness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64_interpolator_annulus_witness_of_cell_columns
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

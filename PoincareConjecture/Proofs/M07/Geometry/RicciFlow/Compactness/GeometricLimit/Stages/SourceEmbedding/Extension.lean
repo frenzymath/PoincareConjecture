@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.Separation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.ChartContainment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal ContDiff Manifold
@@ -143,8 +133,6 @@ theorem exists_source_embedding_extension
     exact (hG' ⟨x, Or.inl (mem_range_self (⟨x, hx⟩ : interior A))⟩).trans (hleft ⟨x, hx⟩)
   · intro y hy
     exact (hG' ⟨q y, Or.inr (mem_range_self (⟨y, hy⟩ : interior C))⟩).trans (hright ⟨y, hy⟩)
-
-
 
 theorem isLocalDiffeomorphOn_source_extension
     {d : ℕ} {Q M : Type*} [TopologicalSpace Q] [TopologicalSpace M]

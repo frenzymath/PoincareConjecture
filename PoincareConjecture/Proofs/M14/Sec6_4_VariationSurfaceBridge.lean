@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_AccelerationPair
 import PoincareConjecture.Proofs.M14.Sec6_4_SurfacePartials
 import PoincareConjecture.Proofs.M08.SecondVariationBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -49,8 +40,6 @@ private theorem surface_inner_eq_of_heq {q r : G.Point} (h : q = r)
 
 include hCoordinates hN hP hβ hrec hclock
 
-
-
 theorem surfaceActionDensity_gauge {s u : ℝ}
     (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) (hsN : s ∈ N) (hu : u ∈ P) :
     M08.surfaceActionDensity (M08.chartActionMetric W.flow T x₀)
@@ -76,9 +65,6 @@ theorem surfaceActionDensity_gauge {s u : ℝ}
       (hclock s hsC u hu).symm, hm, hrec s hsC u hu]
   unfold variationActionDensity
   ring
-
-
-
 
 theorem surfaceAccelerationBoundaryPair_gauge (D : M14VariationDerivativeData V)
     (hzero : (0 : ℝ) ∈ P) (hPsub : P ⊆ V.parameterDomain)

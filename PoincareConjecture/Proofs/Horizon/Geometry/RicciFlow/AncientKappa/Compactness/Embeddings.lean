@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +17,6 @@ variable {kappa : ℝ} {source target : BasedKappaSolution kappa}
   {U : Set target.carrier.carrier}
 
 local instance : ConnectedSpace source.carrier.carrier := source.connectedSpace
-
-
 
 noncomputable def of_spatial
     (hU : IsOpen U) (f : target.carrier.carrier → source.carrier.carrier)
@@ -115,7 +103,6 @@ theorem of_spatial_base_preserving
     (of_spatial hU f hinj hf J).toFun (t, target.base) = (t, source.base) :=
   congrArg (Prod.mk t) hbase
 
-
 theorem of_spatial_toFun_timeDomain
     (hU : IsOpen U) (f : target.carrier.carrier → source.carrier.carrier)
     (hinj : InjOn f U) (hf : IsLocalDiffeomorphOn (𝓡 3) (𝓡 3) ∞ f U)
@@ -127,7 +114,6 @@ theorem of_spatial_inverse_timeDomain
     (hinj : InjOn f U) (hf : IsLocalDiffeomorphOn (𝓡 3) (𝓡 3) ∞ f U)
     (I J : Set ℝ) :
     (of_spatial hU f hinj hf I).inverse = (of_spatial hU f hinj hf J).inverse := rfl
-
 
 theorem pullbackInnerValue_of_spatial
     (hU : IsOpen U) (f : target.carrier.carrier → source.carrier.carrier)
@@ -144,7 +130,6 @@ theorem pullbackCoefficient_of_spatial_timeDomain
     (I J : Set ℝ) (q : target.carrier.carrier) (a b : Fin 3) :
     normalizedKappaPullbackCoefficient (of_spatial hU f hinj hf I) q a b =
       normalizedKappaPullbackCoefficient (of_spatial hU f hinj hf J) q a b := rfl
-
 
 def restrict {domain domain' : Set (ℝ × target.carrier.carrier)}
     (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) domain)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.OriginalFrontie
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.ProtectedCollaredPolygonFilling
 import PoincareConjecture.Proofs.M76.Wall.ProtectedOpenRegion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval
@@ -25,8 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 theorem PLDomain.exists_essential_proper_filling_of_protected_filling
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -61,10 +48,6 @@ theorem PLDomain.exists_essential_proper_filling_of_protected_filling
       hK.exists_proper_filling_of_empty_frontier_preimage hcut gamma residual A B
         hA0 hAB hB1' (fun x => havoid x x.property) hAside hBside
     exact ⟨f, gamma, hf, hproper, hessential⟩
-
-
-
-
 
 theorem PLDomain.exists_new_frontier_spheres_or_essential_proper_fillings
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

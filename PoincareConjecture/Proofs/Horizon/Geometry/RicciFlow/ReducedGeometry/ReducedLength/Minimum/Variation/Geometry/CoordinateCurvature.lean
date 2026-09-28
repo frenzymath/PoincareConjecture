@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.CoefficientRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Second.Surface
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +58,6 @@ theorem chartActionMetric_eq_pullbackCoefficients
   rw [e.right_inv hq, chartFrame_inverse_derivative hy v,
     chartFrame_inverse_derivative hy w, e.right_inv hq] at h
   exact h
-
-
 
 theorem chartConnection_eq_coordinateChristoffel
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x : M)
@@ -159,8 +146,6 @@ private theorem coordinateCurvature_eq_pullbackCurvature
   unfold coordinateCurvature CoordinateExponential.coordinateCurvature
   rw [hD, hD, hvalue, hvalue, hvalue, hvalue]
   abel
-
-
 
 theorem coordinateCurvature_pair
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)

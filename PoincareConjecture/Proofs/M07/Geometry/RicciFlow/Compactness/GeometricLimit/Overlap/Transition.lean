@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Coverage
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
@@ -18,10 +9,8 @@ namespace PoincareConjecture.ChartDistance
 
 variable {ι : Type*} {X : ι → Type*}
 
-
 def overlap (D : ∀ i j, X i × X j → ℝ) (i j : ι) : Set (X i) :=
   {x | ∃ y, D i j (x, y) = 0}
-
 
 noncomputable def transition [∀ i, Nonempty (X i)]
     (D : ∀ i j, X i × X j → ℝ) (i j : ι) (x : X i) : X j := by
@@ -108,7 +97,6 @@ theorem lipschitzOn_transition (i j : ι) :
 
 include hD he hlower hc in
 
-
 noncomputable def overlapHomeomorph [∀ i, LocallyCompactSpace (X i)]
     (hopen : ∀ k i, Topology.IsOpenEmbedding (e k i))
     (hconn : ∀ k (p : M k) r, IsPreconnected (ball p r)) (i j : ι) :
@@ -127,7 +115,6 @@ noncomputable def overlapHomeomorph [∀ i, LocallyCompactSpace (X i)]
   continuousOn_invFun := (lipschitzOn_transition hD L he c hc hlower j i).continuousOn
 
 include hD hlower hc in
-
 
 theorem transition_cocycle {i j l : ι} {x : X i}
     (hx : x ∈ overlap D i j) (hy : transition D i j x ∈ overlap D j l) :

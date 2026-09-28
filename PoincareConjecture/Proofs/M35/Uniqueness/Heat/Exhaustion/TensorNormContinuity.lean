@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.DefectTestCoefficient
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

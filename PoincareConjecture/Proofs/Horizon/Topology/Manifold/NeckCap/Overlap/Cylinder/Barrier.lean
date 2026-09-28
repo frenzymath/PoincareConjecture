@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.InteriorCapture
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.AxialMonotonicity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -71,7 +59,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
 noncomputable def overlapBarrier (N Q : EpsilonNeck g) (x : M) : ℝ :=
   (N.epsilon⁻¹ - (N.coordinate_inverse x).2)⁻¹ -
     (Q.epsilon⁻¹ + (Q.coordinate_inverse x).2)⁻¹
@@ -89,8 +76,6 @@ theorem overlapBarrier_continuousOn (N Q : EpsilonNeck g) :
     have h := (Q.coordinate_inverse_mem x hx.2).2.1
     change Q.epsilon⁻¹ + (Q.coordinate_inverse x).2 ≠ 0
     linarith
-
-
 
 theorem isCompact_overlapBarrier_band [MeasurableSpace M] [BorelSpace M]
     [T2Space M] [T3Space M] (N Q : EpsilonNeck g)

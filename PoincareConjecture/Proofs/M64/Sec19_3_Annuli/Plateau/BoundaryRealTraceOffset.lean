@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRealTraceCompactness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,10 +13,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem m64MonotoneAffinePhase_boundary_mean_bounds
     (b : ℝ → ℝ) (hb : Monotone b) {D : ℝ}
@@ -50,11 +35,6 @@ theorem m64MonotoneAffinePhase_boundary_mean_bounds
   simp only [setIntegral_const, Real.volume_real_Icc, sub_zero, max_eq_left hP,
     smul_eq_mul] at hlo hhi
   exact ⟨hlo, hhi⟩
-
-
-
-
-
 
 theorem m64WeakPhase_upper_zero_bound
     (u v : LoopPlane → ℝ) (b0 b1 : ℝ → ℝ)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -30,7 +23,6 @@ theorem rescaledMetric_curvatureTensor
   unfold LeviCivitaData.curvatureTensor
   rw [rescaledMetric_inner]
   rfl
-
 
 theorem rescaledMetric_bilinear_trace
     (g : RiemannianMetric n M) (c : ℝ) (hc : 0 < c) (x : M)
@@ -65,7 +57,6 @@ theorem rescaledMetric_bilinear_trace
   rw [h, hgram, hinv]
   simp [b, Matrix.diagonal_apply, Finset.mul_sum]
 
-
 theorem rescaledMetric_ricci
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (c : ℝ) (hc : 0 < c) (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -82,7 +73,6 @@ theorem rescaledMetric_ricci
     ((rescaledMetric g c hc).orthonormalBasis x i)) = _
   rw [h, ← mul_assoc, mul_inv_cancel₀ hc.ne', one_mul]
   rfl
-
 
 theorem rescaledMetric_scalarCurvature
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

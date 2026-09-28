@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFinitePhysicalCoherence
 import PoincareConjecture.Proofs.M47.LimitFiniteInteriorFlow
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_original_interior_flow (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

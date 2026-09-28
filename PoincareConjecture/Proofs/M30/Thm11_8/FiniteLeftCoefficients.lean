@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M04.TensorNorm
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricComparison
 import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,11 +22,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem generalized_stage_coefficients_and_closed_bounds
     {S : GeneralizedBlowupSequence.{u}} {T tau : ℝ} (hT : 0 < T)

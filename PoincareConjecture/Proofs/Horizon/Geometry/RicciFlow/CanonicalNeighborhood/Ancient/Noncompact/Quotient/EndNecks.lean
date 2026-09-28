@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.End
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.Bounds.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,7 +32,6 @@ theorem strong_necks_outside_slabCore (C : M27TwistedSphereLineFlowCertificate K
   apply C.exists_strongEvolvingNeck_of_positive_height ht hε hεhalf (q.1, q.2.1)
   rw [C.scalarCurvature_eq ht (C.cover (q.1, q.2.1)) p]
   exact q.2.2.le
-
 
 theorem exists_compact_core_strong_necks (C : M27TwistedSphereLineFlowCertificate K)
     {t epsilon : ℝ} (ht : t ≤ 0) (hε : 0 < epsilon) (hεhalf : epsilon < 1 / 2) :

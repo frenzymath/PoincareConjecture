@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.CoordinateSemiconcavity
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Semiconcavity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_local_distance_smoothing
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

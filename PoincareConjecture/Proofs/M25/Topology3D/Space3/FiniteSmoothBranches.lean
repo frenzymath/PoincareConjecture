@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularFibers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +12,6 @@ variable [FiniteDimensional ℝ E]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
 variable [TopologicalSpace N] [ChartedSpace E N] [IsManifold 𝓘(ℝ, E) ∞ N]
 variable [CompactSpace M] [T2Space M] [T2Space N]
-
-
-
 
 theorem exists_finite_smooth_inverse_branches
     (f : M → N) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, E) ∞ f) (y : N)

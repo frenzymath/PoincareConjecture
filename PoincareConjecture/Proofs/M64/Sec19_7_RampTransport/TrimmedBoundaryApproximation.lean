@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StripCurveConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -25,9 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
 
 structure TrimmedBoundaryControl (F : RicciFlow n M (Icc a b)) (time : ℝ)
     (f : LoopPlane → M) (r epsilon width : ℝ) : Prop where
@@ -47,10 +32,6 @@ structure TrimmedBoundaryControl (F : RicciFlow n M (Icc a b)) (time : ℝ)
   lower_turning : ∀ alpha beta : ℝ, alpha ≤ beta → beta ≤ alpha + curvePeriod →
     m63ArcLength F (fun y _ => f (annulusPoint y width)) time alpha beta ≤ r / 4 →
     m63ArcTotalCurvature F (fun y _ => f (annulusPoint y width)) time alpha beta < (7 / 800 : ℝ)
-
-
-
-
 
 theorem exists_trimmed_boundary_tolerance [T2Space M] [CompactSpace M]
     (F : RicciFlow n M (Icc a b)) {time : ℝ} (htime : time ∈ Icc a b)

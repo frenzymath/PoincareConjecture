@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SupportedPlanarShear
-
-
-
 
 theorem exists_vertical_shear_homeomorph (R c : ℝ) (hc : |c| < 1) :
     ∃ V : (ℝ × ℝ) ≃ₜ (ℝ × ℝ),
@@ -46,10 +32,6 @@ theorem exists_vertical_shear_homeomorph (R c : ℝ) (hc : |c| < 1) :
     have hz' : 2 * ‖z.swap‖ ≤ R := by simpa [Prod.norm_def, max_comm] using hz
     rw [hval, hHcore z.swap hz']
     rfl
-
-
-
-
 
 theorem exists_quarterTurn_homeomorph {a : ℝ} (ha : 0 < a) :
     ∃ F : (ℝ × ℝ) ≃ₜ (ℝ × ℝ),

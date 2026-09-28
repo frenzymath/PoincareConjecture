@@ -2,25 +2,11 @@ import PoincareConjecture.Definitions.M64Annulus
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Algebra.Ring.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M64Uniformization
-
-
-
-
 
 theorem scalar_periodic_eqOn_closedStrip {Y : Type*} {f g : LoopPlane → Y}
     (hf : ∀ x s : ℝ, s ∈ Icc (0 : ℝ) 1 →

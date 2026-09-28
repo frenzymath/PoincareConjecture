@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Metric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ContDiff
 
@@ -28,29 +15,9 @@ open PoincareConjecture.ConnectionVariation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
-
-
-
-
-
-
-
 def IsMetricCompatibleAt (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (x : E) : Prop :=
   ∀ X V W : E, fderiv ℝ G x X V W = G x (Γ x X V) W + G x V (Γ x X W)
-
-
-
-
-
-
-
-
-
 
 theorem fderiv_metricAlong {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}
     {u V W : P → E} {p : P} (hcompat : IsMetricCompatibleAt G Γ (u p))
@@ -73,8 +40,6 @@ theorem fderiv_metricAlong {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E
   simp only [map_add, ContinuousLinearMap.add_apply]
   ring
 
-
-
 theorem differentiableAt_metricAlong {G : E → E →L[ℝ] E →L[ℝ] ℝ} {u V W : P → E} {p : P}
     (hG : DifferentiableAt ℝ G (u p)) (hu : DifferentiableAt ℝ u p)
     (hV : DifferentiableAt ℝ V p) (hW : DifferentiableAt ℝ W p) :
@@ -84,13 +49,6 @@ theorem differentiableAt_metricAlong {G : E → E →L[ℝ] E →L[ℝ] ℝ} {u 
       HasFDerivAt.comp (x := p) (g := G) (f := u) hG.hasFDerivAt hu.hasFDerivAt
   exact ((hGu.clm_apply hV.hasFDerivAt).clm_apply hW.hasFDerivAt).differentiableAt
 
-
-
-
-
-
-
-
 theorem fderiv_fderiv_apply_dir {A : P → ℝ} {p : P} (hA : ContDiffAt ℝ 2 A p) (d : P) :
     fderiv ℝ (fun q => fderiv ℝ A q d) p = (fderiv ℝ (fderiv ℝ A) p).flip d := by
   have h21 : ((1 : ℕ∞ω) + 1 : ℕ∞ω) ≤ 2 := by norm_num
@@ -99,29 +57,6 @@ theorem fderiv_fderiv_apply_dir {A : P → ℝ} {p : P} (hA : ContDiffAt ℝ 2 A
   have h : HasFDerivAt (fun q => fderiv ℝ A q d) ((fderiv ℝ (fderiv ℝ A) p).flip d) p := by
     simpa using hD2A.clm_apply (hasFDerivAt_const d p)
   exact h.fderiv
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem metricAlong_christoffelCurvature_antisymm
     {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}
@@ -226,21 +161,8 @@ theorem metricAlong_christoffelCurvature_antisymm
   simp only [map_sub, ContinuousLinearMap.sub_apply]
   linarith [hswap]
 
-
-
-
-
-
 def energyDensity (G : E → E →L[ℝ] E →L[ℝ] ℝ) (u : P → E) (dt : P) : P → ℝ :=
   fun p => (1 / 2 : ℝ) * G (u p) (fderiv ℝ u p dt) (fderiv ℝ u p dt)
-
-
-
-
-
-
-
-
 
 theorem fderiv_energyDensity {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}
     (hGsymm : ∀ x X Y, G x X Y = G x Y X) {u : P → E} {p : P}
@@ -267,38 +189,6 @@ theorem fderiv_energyDensity {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E →
   rw [hED, fderiv_const_mul hdiff, ContinuousLinearMap.smul_apply, smul_eq_mul, hbase, hsymm]
   rw [hGsymm (u p) (fderiv ℝ u p dt) (covDerivAlong Γ u (fun r => fderiv ℝ u r ds) dt p)]
   ring
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem secondVariation_energyDensity
     {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E}

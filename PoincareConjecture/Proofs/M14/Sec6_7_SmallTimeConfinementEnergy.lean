@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeConfinementGauge
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b)
-
-
-
 
 theorem squarePath_gauge_prefix_displacement_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {U K : Set G.Point}

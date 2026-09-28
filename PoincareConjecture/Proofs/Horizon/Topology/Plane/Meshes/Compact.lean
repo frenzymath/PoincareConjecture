@@ -1,21 +1,10 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Fine
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.Rectangle
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
 
 namespace Poincare.Topology.Plane.Meshes
-
 
 theorem exists_triangle_containing_bounded {C : Set Plane} (hC : Bornology.IsBounded C) :
     ∃ b : AffineBasis (Fin 3) ℝ Plane, C ⊆ convexHull ℝ (range b) := by
@@ -33,8 +22,6 @@ theorem exists_triangle_containing_bounded {C : Set Plane} (hC : Bornology.IsBou
     nlinarith [mul_lt_mul_of_pos_right hx.1 hR, mul_lt_mul_of_pos_right hy.2 hR]
   · rw [div_le_iff₀ (by linarith : 0 < R - -3 * R)]
     linarith
-
-
 
 theorem exists_triangleMesh_covering_compact_in_open {C U : Set Plane}
     (hC : IsCompact C) (hU : IsOpen U) (hCU : C ⊆ U) :

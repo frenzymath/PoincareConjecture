@@ -8,24 +8,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedProfileChoice
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CircleBoundaryAssembly
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.FamilyPersistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem nonempty_planarSchoenfliesData_of_diffeomorph
     (c : UnitCircle → E2) (F : E2 ≃ₘ[ℝ] E2)
@@ -76,9 +64,6 @@ theorem nonempty_planarSchoenfliesData_of_diffeomorph
   exact (isPathConnected_compl_closedBall_of_one_lt_rank hrank (0 : E2) 1).isConnected.image
     F F.continuous.continuousOn
 
-
-
-
 theorem nonempty_planarSchoenfliesFamilyData_of_diffeomorphs
     (a b : ℝ) (c : ℝ → UnitCircle → E2) (F : ℝ → (E2 ≃ₘ[ℝ] E2))
     (hF : ContDiff ℝ ∞ (fun p : ℝ × E2 => F p.1 p.2))
@@ -121,9 +106,6 @@ theorem nonempty_planarSchoenfliesFamilyData_of_diffeomorphs
     exact Set.disjoint_left.mp sphere_disjoint_ball hmem hx
   · exact ((isCompact_closedBall (0 : E2) 1).image (F z).continuous).isBounded.subset
       (image_mono ball_subset_closedBall)
-
-
-
 
 theorem exists_planar_curve_ambient_diffeomorph (c : UnitCircle → E2)
     (hc : IsPlanarEmbedding c) :
@@ -263,15 +245,10 @@ theorem exists_planar_curve_ambient_diffeomorph (c : UnitCircle → E2)
   rw [hH]
   exact D.symm_apply_apply _
 
-
-
 theorem nonempty_planarSchoenfliesData (c : UnitCircle → E2)
     (hc : IsPlanarEmbedding c) : Nonempty (PlanarSchoenfliesData c) := by
   obtain ⟨Φ, hΦ⟩ := exists_planar_curve_ambient_diffeomorph c hc
   exact nonempty_planarSchoenfliesData_of_diffeomorph c Φ hΦ
-
-
-
 
 theorem exists_planar_curve_family_ambient_diffeomorphs
     (a b : ℝ) (c : ℝ → UnitCircle → E2) (hab : a < b)
@@ -370,8 +347,6 @@ theorem exists_planar_curve_family_ambient_diffeomorphs
   rw [hHb]
   change A z ((A z).symm (c (θ z) (sphereCircleParameter e s))) = _
   rw [Diffeomorph.apply_symm_apply, hθid z hz]
-
-
 
 theorem planarSchoenfliesService : PlanarSchoenfliesService := by
   refine ⟨nonempty_planarSchoenfliesData, ?_⟩

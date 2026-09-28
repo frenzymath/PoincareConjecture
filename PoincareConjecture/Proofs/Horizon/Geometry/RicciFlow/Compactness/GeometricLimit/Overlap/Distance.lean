@@ -5,10 +5,3 @@ import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Topology.MetricSpace.ProperSpace.Real
 import Mathlib.Topology.Algebra.Order.Field
 import PoincareConjecture.Proofs.Horizon.Topology.Sequences.Diagonal
-
-
-
-
-
-
-

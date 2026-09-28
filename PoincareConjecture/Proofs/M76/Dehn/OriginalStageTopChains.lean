@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalTetrahedronChains
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRimFrontier
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactTerminalCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -25,9 +16,6 @@ variable {U G M ι : Type*}
   [DecidableEq G] [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem Stage.connectedSpace_relative_region (st : Stage e S f r C)
     {N : Set st.Carrier} (hDN : st.sourceMap '' S.space ⊆ N)
@@ -49,8 +37,6 @@ theorem Stage.connectedSpace_relative_region (st : Stage e S f r C)
     ((ha.trans hb.symm).symm ▸ isConnected_range b.continuous)
 
 open Classical in
-
-
 
 theorem Stage.relative_region_top_chains (st : Stage e S f r C)
     {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

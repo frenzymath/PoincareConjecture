@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Pullbac
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 

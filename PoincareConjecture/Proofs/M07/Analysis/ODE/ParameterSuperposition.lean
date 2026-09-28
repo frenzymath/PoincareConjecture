@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterCurveSpace
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
 open Filter Set
 open scoped Topology ContDiff
 

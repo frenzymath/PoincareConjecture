@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ContinuousSliceTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CurveTraceFundamental
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteS
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem m64Annulus_h1_slices_of_strong_approximation
     (f : ℕ → LoopPlane → E) (hf : ∀ j, ContDiff ℝ 1 (f j))

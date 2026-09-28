@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricSlabBounds
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.TimePotentialContinuity
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.GramNormalization
 import PoincareConjecture.Proofs.M10.JacobianEvolution
 import PoincareConjecture.Proofs.M10.MetricTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,7 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 set_option backward.isDefEq.respectTransparency false in
 set_option synthInstance.maxHeartbeats 80000 in
-
 
 theorem pullbackJacobian_fderiv_eq (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {y : EuclideanSpace ℝ (Fin n)}

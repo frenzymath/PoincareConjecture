@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import PoincareConjecture.Proofs.M25.Mathlib.ClosedPrefixTrap
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem FamilyCutState.retainedCore_of_affine_height_path
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -121,8 +109,6 @@ theorem FamilyCutState.retainedCore_of_affine_height_path
       simp only [hs, neg_one_mul] at hstrict hu
       linarith only [hstrict, hu, hz]
 
-
-
 theorem FamilyCutState.regular_core_flow_segment
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
     {r : ℕ} {cut : Fin r → ℝ} {D : ℝ}
@@ -207,8 +193,6 @@ theorem FamilyCutState.regular_core_flow_segment
     hgc.continuousOn (fun t _ => hgs t) hstart
     (fun t ht => by simpa only [hg0] using hheight t ht)
   exact fun t ht => ⟨hcore t ht, hheight t ht⟩
-
-
 
 theorem FamilyCutState.regular_core_middle_retraction
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

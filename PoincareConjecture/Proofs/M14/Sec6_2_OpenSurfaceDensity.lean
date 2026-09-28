@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {α : ℝ × ℝ → G.Point} {J P : Set ℝ} {T s v : ℝ}
-
-
 
 theorem hasDerivAt_surfaceRawDensity (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hJ : IsOpen J) (hP : IsOpen P)
@@ -60,9 +50,6 @@ theorem hasDerivAt_surfaceRawDensity (hM12 : GeneralizedRicciGaugeTheory.{u} n)
         (fun u => surfaceHorizontalFst α s u) E v)] at hmetric
   have hd := (hscalar.add (hmetric.hasDerivAt (hP.mem_nhds hv))).const_mul (Real.sqrt s)
   convert hd using 1 <;> first | rfl | ring
-
-
-
 
 theorem hasDerivAt_surfaceWeightedPair (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))

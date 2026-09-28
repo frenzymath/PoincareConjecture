@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.BicollarSignSeparation
 import PoincareConjecture.Proofs.M76.Brown.BicollarOpenHalves
 import PoincareConjecture.Proofs.M76.Brown.ComplementComponentNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {S C : Set X}
-
-
-
-
 
 theorem exists_bicollar_complement_components [SimplyConnectedSpace X]
     [LocallyPathConnectedSpace X] [ConnectedSpace S]

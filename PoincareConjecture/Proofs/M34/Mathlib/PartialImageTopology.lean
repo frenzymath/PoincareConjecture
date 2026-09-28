@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Mathlib.CompactPartialImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace OpenPartialHomeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   (e : OpenPartialHomeomorph X Y)
-
-
 
 theorem image_interior_eq_of_subset_source {S : Set X} (hS : S ⊆ e.source) :
     e '' interior S = interior (e '' S) := by
@@ -28,8 +18,6 @@ theorem image_interior_eq_of_subset_source {S : Set X} (hS : S ⊆ e.source) :
   · intro y hy
     obtain ⟨x, hx, rfl⟩ := interior_subset hy
     exact ⟨x, (hi.apply_mem_iff (hS hx)).mp hy, rfl⟩
-
-
 
 theorem image_sdiff_eq_of_subset_source {S T : Set X}
     (hS : S ⊆ e.source) (hT : T ⊆ e.source) :
@@ -42,8 +30,6 @@ theorem image_sdiff_eq_of_subset_source {S T : Set X}
     exact hxT ((e.injOn (hT hz) (hS hxS) he) ▸ hz)
   · rintro ⟨⟨x, hx, rfl⟩, hnot⟩
     exact ⟨x, ⟨hx, fun ht => hnot ⟨x, ht, rfl⟩⟩, rfl⟩
-
-
 
 theorem image_inter_frontier_eq_of_subset_source {S T : Set X}
     (hS : S ⊆ e.source) (hT : T ⊆ e.source) :

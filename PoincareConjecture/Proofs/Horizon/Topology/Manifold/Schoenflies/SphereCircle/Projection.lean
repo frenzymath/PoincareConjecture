@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quotient.Circle
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +20,6 @@ private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
 private instance : Nonempty S2 := ⟨⟨EuclideanSpace.single 0 1, by simp⟩⟩
-
 
 theorem dense_compl_range_smooth_circle_sphere
     {f : S1 -> S2} (hf : ContMDiff (𝓡 1) (𝓡 2) ∞ f) :
@@ -66,19 +56,15 @@ theorem dense_compl_range_smooth_circle_sphere
   apply hp
   simpa [comp_apply, L, g, ht] using hq
 
-
 theorem interior_range_smooth_circle_sphere_eq_empty
     {f : S1 -> S2} (hf : ContMDiff (𝓡 1) (𝓡 2) ∞ f) :
     interior (range f) = ∅ :=
   interior_eq_empty_iff_dense_compl.mpr (dense_compl_range_smooth_circle_sphere hf)
 
-
 theorem exists_point_not_mem_range_smooth_circle_sphere
     {f : S1 -> S2} (hf : ContMDiff (𝓡 1) (𝓡 2) ∞ f) :
     ∃ p : S2, p ∉ range f :=
   (dense_compl_range_smooth_circle_sphere hf).nonempty
-
-
 
 theorem isSmoothEmbedding_stereographic_circle_of_injective_mfderiv
     {f : S1 -> S2} (hf : ContMDiff (𝓡 1) (𝓡 2) ∞ f)
@@ -107,8 +93,6 @@ theorem isSmoothEmbedding_stereographic_circle_of_injective_mfderiv
     (hf.mdifferentiable (by simp) q)]
   exact (hem.mfderiv_injective (hsource q)).comp (hfd q)
 
-
-
 theorem isSmoothEmbedding_stereographic_circle
     {f : S1 -> S2} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ f)
     {p : S2} (hp : p ∉ range f) :
@@ -116,8 +100,6 @@ theorem isSmoothEmbedding_stereographic_circle
   isSmoothEmbedding_stereographic_circle_of_injective_mfderiv hf.contMDiff
     hf.isEmbedding.injective (fun q =>
       (hf.isImmersion.isImmersionAt q).injective_mfderiv_modelWithCornersSelf (by simp)) hp
-
-
 
 theorem exists_stereographic_planar_circle
     {f : S1 -> S2} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ f) :

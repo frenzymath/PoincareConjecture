@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallCoverDescent
 import PoincareConjecture.Proofs.M38.InnermostBallTranslates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_surgeryBall_descend_with_frontier
     {A Q : GeneralizedSliceCarrier.{u}} (q : A.carrier → Q.carrier)
@@ -55,9 +43,6 @@ theorem exists_surgeryBall_descend_with_frontier
   · rw [surgeryBall_closedBall_frontier D, ← hCB, surgeryBall_closedBall_frontier C]
     change (q ∘ C.map) '' Metric.sphere 0 1 = q '' (C.map '' Metric.sphere 0 1)
     exact image_comp _ _ _
-
-
-
 
 theorem exists_descended_innermost_sphereBall
     {Q : GeneralizedSliceCarrier.{u}}

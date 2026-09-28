@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.Covering
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.RadialTransition
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +16,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   {p : RealProjectiveThree} {U : Set M}
   (S : StandardPuncturedProjectiveCover M p U)
-
-
 
 theorem exists_puncture_ball_avoiding_compact
     (a : UnitThreeSphere) (ha : Quotient.mk' a = p)

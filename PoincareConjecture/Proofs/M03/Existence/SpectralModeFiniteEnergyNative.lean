@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set

@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.OrientedSubdivision
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Transversals
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 variable (D : FiniteChartRegionDecomposition (M := M))
 
 omit [T2Space M] in
-
-
 
 theorem exists_oriented_graph_cut_chain (e : D.EdgeIndex) (R : D.regions)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

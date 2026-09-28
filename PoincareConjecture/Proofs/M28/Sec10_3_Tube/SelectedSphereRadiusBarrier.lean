@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMetricRayRegularity
 import Mathlib.Topology.MetricSpace.Completion
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem completion_radius_le_endpoint_sum_of_metric_segment
     {Y : Type*} [MetricSpace Y] (E : UniformSpace.Completion Y)
@@ -63,10 +47,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem exists_selected_sphere_radius_barrier
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
@@ -184,9 +164,6 @@ theorem exists_selected_sphere_radius_barrier
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
 
-
-
-
 theorem exists_intrinsic_segment_below_completion_radius_barrier
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
     (U : TopologicalSpace.Opens M) (f : M → ℝ)
@@ -232,9 +209,6 @@ theorem exists_intrinsic_segment_below_completion_radius_barrier
     completion_radius_le_endpoint_sum_of_metric_segment E h0 h1 hreal⟩
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
-
-
 
 theorem exists_smooth_intrinsic_segment_below_completion_radius_barrier
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

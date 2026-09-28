@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryVerticalPrimitive
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.NonnegativeApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +18,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
-
 
 theorem m64WeakPhase_smooth_pairing_sq_le
     (u V : LoopPlane → ℝ) (b : ℝ → ℝ)
@@ -70,11 +56,6 @@ theorem m64WeakPhase_smooth_pairing_sq_le
   rw [heq]
   nlinarith [sq_nonneg ((∫ p in S, m64VerticalPrimitive f p * V p) -
     ∫ x in Icc (0 : ℝ) curvePeriod, m64VerticalPrimitive f (annulusPoint x 0) * b x)]
-
-
-
-
-
 
 theorem m64WeakPhase_lower_trace_l2_bound
     (u V : LoopPlane → ℝ) (b : ℝ → ℝ)

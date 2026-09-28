@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.QuadraticSmoothing
 import PoincareConjecture.Proofs.M10.MollifierLocalJets
 import PoincareConjecture.Proofs.M10.ShrinkingBump
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory ContinuousLinearMap

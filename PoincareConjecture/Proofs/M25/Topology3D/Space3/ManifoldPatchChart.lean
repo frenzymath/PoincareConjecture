@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -24,8 +12,6 @@ variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
 variable [TopologicalSpace N] [ChartedSpace F N] [IsManifold 𝓘(ℝ, F) ∞ N]
-
-
 
 theorem exists_manifold_patch_local_inverse (f : M → N) {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn 𝓘(ℝ, E) 𝓘(ℝ, F) ∞ f U)
@@ -69,8 +55,6 @@ variable (hb : ∀ x ∈ U, Bijective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, F) f x))
 
 include hU hf hb
 
-
-
 theorem manifold_patch_isOpen_image {T : Set M} (hT : IsOpen T) (hTU : T ⊆ U) :
     IsOpen (f '' T) := by
   apply isOpen_iff_mem_nhds.mpr
@@ -82,8 +66,6 @@ theorem manifold_patch_isOpen_image {T : Set M} (hT : IsOpen T) (hTU : T ⊆ U) 
   apply mem_of_superset (hopen.mem_nhds ⟨x, ⟨hxe, hx⟩, he hxe⟩)
   rintro z ⟨v, hv, rfl⟩
   exact ⟨v, hv.2, (he hv.1).symm⟩
-
-
 
 theorem manifold_patch_isOpenMap_restrict : IsOpenMap (U.domRestrict f) := by
   intro T hT
@@ -97,25 +79,18 @@ theorem manifold_patch_isOpenMap_restrict : IsOpenMap (U.domRestrict f) := by
 
 variable [Nonempty M] (hi : InjOn f U)
 
-
-
 noncomputable def manifoldPatchChart : OpenPartialHomeomorph M N :=
   OpenPartialHomeomorph.ofContinuousOpenRestrict (hi.toPartialEquiv f U)
     hf.continuousOn (manifold_patch_isOpenMap_restrict f hU hf hb) hU
 
-
 @[simp] theorem manifoldPatchChart_apply (x : M) :
     manifoldPatchChart f hU hf hb hi x = f x := rfl
-
 
 @[simp] theorem manifoldPatchChart_source :
     (manifoldPatchChart f hU hf hb hi).source = U := rfl
 
-
 @[simp] theorem manifoldPatchChart_target :
     (manifoldPatchChart f hU hf hb hi).target = f '' U := rfl
-
-
 
 theorem manifoldPatchChart_symm_contMDiffOn :
     ContMDiffOn 𝓘(ℝ, F) 𝓘(ℝ, E) ∞ (manifoldPatchChart f hU hf hb hi).symm (f '' U) := by

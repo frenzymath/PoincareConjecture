@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.NativeDirectionalClosedNative
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -26,7 +16,6 @@ namespace PoincareConjecture.TensorProbeNative
 section Coordinates
 
 variable {X : Type u} [MeasurableSpace X] {alpha : Type v} [Fintype alpha]
-
 
 def coefficientL2 (μ : Measure X) (i : alpha) :
     Lp (EuclideanSpace ℝ alpha) 2 μ →L[ℝ] Lp ℝ 2 μ :=
@@ -47,7 +36,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   (p : kappa → M) (φ : kappa → C(M, ℝ)) (μ : Measure M) [IsFiniteMeasure μ]
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 theorem derivativeToLp_limit_zero
     (hμ : μ = Measure.sum (fun i : kappa =>
@@ -140,7 +128,6 @@ theorem graphValue_eq_zero_iff
     exact Prod.ext hx hQx
   · rintro rfl
     exact map_zero _
-
 
 theorem graphValue_injective
     (hμ : μ = Measure.sum (fun i : kappa =>

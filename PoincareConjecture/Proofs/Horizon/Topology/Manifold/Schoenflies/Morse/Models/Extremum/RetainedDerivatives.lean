@@ -3,8 +3,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.MFDeriv.UniqueDifferential
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
 
 theorem mfderiv_eq_on_smooth_closed_disk
     {h k : S2 → Real}

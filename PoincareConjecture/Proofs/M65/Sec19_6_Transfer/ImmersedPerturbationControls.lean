@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaMotion
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem exists_smooth_field [T2Space M] (p : M) (v : TangentSpace (𝓡 3) p) :
     ∃ V : (y : M) → TangentSpace (𝓡 3) y,
       ContMDiff (𝓡 3) ((𝓡 3).prod (𝓡 3)) ∞
@@ -43,9 +31,6 @@ theorem exists_smooth_field [T2Space M] (p : M) (v : TangentSpace (𝓡 3) p) :
   · exact ContMDiffOn.smul_section_of_tsupport (u := W) (s := Z)
       (ψ := chi.toFun) chi.contMDiff.contMDiffOn hW hchi (hZU.mono hWU)
   · simp only [chi.eq_one, one_smul, Z, FiberBundle.extend_apply_self]
-
-
-
 
 theorem exists_smooth_motion_with_velocity [T2Space M] [CompactSpace M]
     (p : M) (v : TangentSpace (𝓡 3) p) :
@@ -68,8 +53,6 @@ theorem exists_smooth_motion_with_velocity [T2Space M] [CompactSpace M]
   exact hv.trans ((congrArg (fun y => (V y : LoopAmbient)) (hzero p (mem_univ _))).trans hpV)
 
 omit [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem exists_source_bump (x y : LoopCircle) (hxy : x ≠ y) :
     ∃ beta : LoopPlane → ℝ, ContDiff ℝ ∞ beta ∧

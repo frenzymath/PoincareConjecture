@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricResidualTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevelUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem zeroApexCoordinates_mem_edgeLine_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0) (hv : A v ≠ 0) (p : ℝ × ℝ) :
@@ -36,8 +24,6 @@ theorem zeroApexCoordinates_mem_edgeLine_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     have hpeq : p = (1, p.2) := Prod.ext hp rfl
     rw [hpeq, A.zeroApexCoordinates_side q w v hw p.2, edgeLevel_eq_lineMap]
     exact lineMap_mem_affineSpan_pair _ w v
-
-
 
 theorem zeroApex_residual_edgeLine_intersection (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0)
@@ -59,9 +45,6 @@ theorem zeroApex_residual_edgeLine_intersection (A : E →ᵃ[ℝ] ℝ) {q w v :
     · simp [TaperedStrip.residualDomain, hβv.le]
     · rw [edgeLevel_eq_lineMap]
       exact lineMap_mem_affineSpan_pair _ w v
-
-
-
 
 theorem exceptional_residual_opposite_edge_intersection (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) {β : ℝ} (hβ : 0 < β) (hβv : β < A v)

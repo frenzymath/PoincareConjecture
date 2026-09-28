@@ -9,16 +9,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import PoincareConjecture.Definitions.Ch05.Compactness
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -32,18 +22,12 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
-
 noncomputable def metricDiameter (g : RiemannianMetric 3 M) (X : Set M) : ℝ :=
   sSup (Set.range (fun p : X × X => ENNReal.toReal (g.edist p.1 p.2)))
-
-
 
 noncomputable def scalarCurvatureSup (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) : ℝ :=
   sSup (Set.range D.scalarCurvature)
-
 
 instance realProjectiveTwoSetoid : Setoid UnitTwoSphere where
   r x y := x = y ∨ x = -y
@@ -63,10 +47,6 @@ instance realProjectiveTwoSetoid : Setoid UnitTwoSphere where
 
 abbrev RealProjectiveTwo := Quotient realProjectiveTwoSetoid
 
-
-
-
-
 structure StrongEvolvingNeck (K : AncientKappaSolution 3 M) (t : ℝ)
     (epsilon : ℝ) where
   time_mem : t ≤ 0
@@ -85,14 +65,11 @@ structure StrongEvolvingNeck (K : AncientKappaSolution 3 M) (t : ℝ)
         (K.flow.metric (t + u / (K.flow.connection t).scalarCurvature center))
         terminal_neck.coordinate_map z v w)
 
-
-
 def StrongEvolvingNeck.spacetime_coordinate
     {K : AncientKappaSolution 3 M} {t epsilon : ℝ}
     (N : StrongEvolvingNeck K t epsilon) :
     Set.Ioc (t - N.duration) t → RoundCylinderSpace → M :=
   fun _ ↦ N.terminal_neck.coordinate_map
-
 
 structure StrongCapCertificate (K : AncientKappaSolution 3 M) (t : ℝ)
     (epsilon C : ℝ) where
@@ -133,8 +110,6 @@ structure StrongCapCertificate (K : AncientKappaSolution 3 M) (t : ℝ)
     ENNReal.ofReal (C⁻¹ * r ^ 3) ≤
       calibratedMetricVolume (K.flow.metric t) ((K.flow.metric t).ball y r)
 
-
-
 structure CComponentCertificate (K : AncientKappaSolution 3 M) (t : ℝ)
     (C : ℝ) where
   time_mem : t ≤ 0
@@ -164,9 +139,6 @@ structure CComponentCertificate (K : AncientKappaSolution 3 M) (t : ℝ)
   diameter_upper : metricDiameter (K.flow.metric t) carrier <
     C * sInf (Set.range (fun y : carrier ↦
       (K.flow.connection t).scalarCurvature y.1 ^ (-1 / 2 : ℝ)))
-
-
-
 
 structure EpsilonRoundComponentCertificate (K : AncientKappaSolution 3 M)
     (t epsilon : ℝ) where
@@ -207,8 +179,6 @@ structure EpsilonRoundComponentCertificate (K : AncientKappaSolution 3 M)
               (EuclideanSpace.basisFun (Fin 3) ℝ b)))
         (extChartAt (𝓡 3) q).target p‖ ≤ epsilon
 
-
-
 structure StrongCappedTube (K : AncientKappaSolution 3 M) (t epsilon C : ℝ) where
   time_mem : t ≤ 0
   epsilon_pos : 0 < epsilon
@@ -242,8 +212,6 @@ structure StrongDoubleCappedTube (K : AncientKappaSolution 3 M)
   first_attachment : CapTubeAttachment cap₁.cap tube false
   second_attachment : CapTubeAttachment cap₂.cap tube true
 
-
-
 structure SmoothLocalDiffeomorph (X : Set M) where
   model : Type u
   model_topology : TopologicalSpace model
@@ -257,15 +225,12 @@ structure SmoothLocalDiffeomorph (X : Set M) where
   smooth : ContMDiffOn (𝓡 3) (𝓡 3) ∞ toFun Set.univ
   smooth_inverse : ContMDiffOn (𝓡 3) (𝓡 3) ∞ inverse X
 
-
 structure StrongTubeCertificate (K : AncientKappaSolution 3 M) (t epsilon : ℝ) where
   time_mem : t ≤ 0
   epsilon_pos : 0 < epsilon
   tube : EpsilonTubeCertificate (K.flow.metric t) Set.univ
   strong_at : ∀ x : M, ∃ N : StrongEvolvingNeck K t epsilon,
     N.center = x ∧ x ∈ tube.carrier
-
-
 
 structure SphereLineProductSliceCertificate (K : AncientKappaSolution 3 M)
     (t epsilon : ℝ) where
@@ -391,7 +356,6 @@ structure RoundAncientQuotientCertificate (K : AncientKappaSolution 3 M) where
       quotient_diffeomorph (quotient_map y) ↔
       ∃ a : group, action a x = y
 
-
 structure ProjectivePlaneLineCertificate (K : AncientKappaSolution 3 M) where
   model_carrier : Type u
   model_topology : TopologicalSpace model_carrier
@@ -427,8 +391,6 @@ structure ProjectivePlaneLineCertificate (K : AncientKappaSolution 3 M) where
       (mfderiv (𝓡 3) (𝓡 3) (slice_diffeomorph t ht) x u)
       (mfderiv (𝓡 3) (𝓡 3) (slice_diffeomorph t ht) x v) =
       model_connection.sectionalCurvature x u v
-
-
 
 inductive StrongCanonicalNeighborhood (K : AncientKappaSolution 3 M)
     (p : ℝ × M) (epsilon C : ℝ) : Prop where

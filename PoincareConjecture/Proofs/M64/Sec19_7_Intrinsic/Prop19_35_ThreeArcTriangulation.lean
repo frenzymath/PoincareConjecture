@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCoordinateParents
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MarkedRegionTriangulation
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,10 +10,6 @@ open scoped Topology
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture.M64IntrinsicThreeArcCollar
-
-
-
-
 
 theorem exists_triangulation
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}

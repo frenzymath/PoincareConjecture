@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleCofaceConstancy
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseLinkSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -83,7 +74,6 @@ theorem closedFaceComplement_link_at_original_vertex
       hs.2.1, hkeep⟩
 
 omit [FiniteDimensional ℝ E] in
-
 
 private theorem link_reaches_unmarked_vertex
     (L : SimplicialComplex ℝ E)
@@ -185,7 +175,6 @@ private theorem unmarked_vertices_reachable
 
 omit [FiniteDimensional ℝ E] in
 
-
 theorem closedFaceComplement_link_at_nonoriginal_centroid
     (L : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -221,7 +210,6 @@ theorem closedFaceComplement_link_at_nonoriginal_centroid
   exact (J.isPathConnected_space_of_connected_edgeGraph hgraph).isConnected
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem closedFaceComplement_derived_links
     (L : SimplicialComplex ℝ E) (hLK : L ≤ K)

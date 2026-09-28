@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Thm8_1_Assembly
 import PoincareConjecture.Proofs.M15.Thm8_1_Provider
 import PoincareConjecture.Proofs.M15.Thm8_10_Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
@@ -19,35 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem noncollapsingGeneralizedAndCompact
     (n : ℕ)

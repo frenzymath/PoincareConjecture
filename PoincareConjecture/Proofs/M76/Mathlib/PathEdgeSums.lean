@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CyclicEdgeSums
 import Mathlib.Data.Fin.Rev
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -20,14 +9,8 @@ namespace Fin
 
 variable {E G : Type*} [AddCommGroup G] {m n k : ℕ}
 
-
-
-
 def pathEdgeSum (w : E → E → G) (u : Fin (n + 1) → E) : G :=
   ∑ i : Fin n, w (u i.castSucc) (u i.succ)
-
-
-
 
 theorem pathEdgeSum_reverse (w : E → E → G)
     (hw : ∀ a b, w b a = -w a b) (u : Fin (n + 1) → E) :
@@ -46,10 +29,6 @@ theorem pathEdgeSum_reverse (w : E → E → G)
       congrArg Neg.neg (Equiv.sum_comp revPerm
         (fun i : Fin n => w (u i.castSucc) (u i.succ)))
 
-
-
-
-
 theorem cyclicEdgeSum_init_append (w : E → E → G)
     (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
     (huv : u (last (m + 1)) = v 0)
@@ -65,11 +44,6 @@ theorem cyclicEdgeSum_init_append (w : E → E → G)
     rw [← hvu, snoc_init_self]
   rw [hu, hv]
   rfl
-
-
-
-
-
 
 theorem cyclicEdgeSum_three_paths (w : E → E → G)
     (hw : ∀ a b, w b a = -w a b)

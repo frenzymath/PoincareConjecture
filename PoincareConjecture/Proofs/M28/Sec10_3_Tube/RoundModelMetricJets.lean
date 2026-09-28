@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FiniteOrder.Frame
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,11 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 open PoincareConjecture.CoordinateExponential
 open Poincare.Riemannian.RadialTransport
-
-
-
-
-
 
 theorem exists_round_model_pullback_metric_jet_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -63,10 +47,6 @@ theorem exists_round_model_pullback_metric_jet_bound
   intro l hl y hy
   exact singularRound_curvatureDerivativeNorm_le_nine N l (e y)
 
-
-
-
-
 theorem exists_round_model_pullback_metric_two_jet_bound
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon)
@@ -84,12 +64,6 @@ theorem exists_round_model_pullback_metric_two_jet_bound
         ‖iteratedFDeriv ℝ 2
           (N.model_metric.pullbackCoefficients e) x‖ ≤ B := by
   simpa using exists_round_model_pullback_metric_jet_bound N 2 hρ hρR e he hi h0 hgauss
-
-
-
-
-
-
 
 theorem exists_C9_radial_connection_jet_bound
     (r : ℝ) (m : ℕ) :

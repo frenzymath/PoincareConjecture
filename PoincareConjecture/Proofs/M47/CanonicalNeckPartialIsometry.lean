@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckIsometricImage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem partialIsometry_metric_symm
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

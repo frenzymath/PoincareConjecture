@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem ordinary_crossings_preserved_by_retained_copy
     {E Y X ι : Type*} [TopologicalSpace E] [TopologicalSpace Y] [T2Space Y]
     [TopologicalSpace X] [T2Space X]

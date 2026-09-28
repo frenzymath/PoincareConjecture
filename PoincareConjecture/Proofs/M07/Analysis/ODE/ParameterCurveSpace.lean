@@ -9,14 +9,6 @@ import Mathlib.Analysis.Calculus.ImplicitFunction.ProdDomain
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Filter MeasureTheory Asymptotics

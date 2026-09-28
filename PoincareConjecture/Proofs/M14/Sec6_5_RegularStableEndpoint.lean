@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_LaplacianBound
 import PoincareConjecture.Proofs.M14.Sec6_5_TimeIdentity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,12 +18,8 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include hpos hZ in
 
-
 theorem stableEndpoint_eq_exponential : H.endpoint_map Z = E.gamma Z s := by
   rw [H.endpoint_map_eq Z hZ, Real.sqrt_sq hpos.le]
-
-
-
 
 noncomputable def regularStablePath : M14BackwardPath G T 0 (s ^ 2) x (H.endpoint_map Z) :=
   { E.path Z s hs hpos with
@@ -41,8 +28,6 @@ noncomputable def regularStablePath : M14BackwardPath G T 0 (s ^ 2) x (H.endpoin
       exact (E.path Z s hs hpos).endpoint_time
     curve_end := (E.path Z s hs hpos).curve_end.trans
       (stableEndpoint_eq_exponential E hpos H hZ).symm }
-
-
 
 theorem regularStablePath_minimizing : M14IsMinimizing (regularStablePath E hs hpos H hZ) := by
   have hmin := exponentialPath_minimizing_of_uniqueBranch E hpos hs
@@ -54,8 +39,6 @@ theorem regularStablePath_minimizing : M14IsMinimizing (regularStablePath E hs h
       curve_end := p.curve_end.trans (stableEndpoint_eq_exponential E hpos H hZ) }
   exact hmin q
 
-
-
 theorem regularStablePath_actualK_eq :
     M14GeneralizedKIntegral G (regularStablePath E hs hpos H hZ)
       (fun t => M14BackwardTimeDerivative G (horizontalScalarCurvature G.leafwise)
@@ -64,15 +47,12 @@ theorem regularStablePath_actualK_eq :
         (fun t => M14BackwardTimeDerivative G (horizontalScalarCurvature G.leafwise)
           ((E.path Z s hs hpos).curve t)) := rfl
 
-
-
 theorem regular_square_endpoint : (E.square_path Z s hs hpos).curve s = E.gamma Z s := by
   apply exponential_square_curve_eq E Z hs hpos
   simpa only [M14SqrtParameterInterval, Real.sqrt_zero, Real.sqrt_sq hpos.le] using
     (show s ∈ Icc 0 s from ⟨hpos.le, le_rfl⟩)
 
 include hZ in
-
 
 theorem regularStable_slicePoint_eq
     (hq : G.spacetime.timeFunction ((E.square_path Z s hs hpos).curve s) = T - s ^ 2) :
@@ -81,8 +61,6 @@ theorem regularStable_slicePoint_eq
   exact (H.endpoint_slice_map_val Z hZ).trans
     ((stableEndpoint_eq_exponential E hpos H hZ).trans
       (regular_square_endpoint E hs hpos).symm)
-
-
 
 theorem reducedLengthAt_stable_joint_time_identity
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -99,8 +77,6 @@ theorem reducedLengthAt_stable_joint_time_identity
   have h := reducedLengthAt_joint_time_identity hCoordinates hM04 hM12 E hs hpos hz
     (regular_square_endpoint E hs hpos)
   simpa only [← stableEndpoint_eq_exponential E hpos H hZ] using h
-
-
 
 theorem reducedLengthGradientNormSq_stable_joint_identity
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -130,8 +106,6 @@ theorem reducedLengthGradientNormSq_stable_joint_identity
     exact reducedLengthGradientNormSq_joint_identity hCoordinates hM04 hM12 E hs hpos hz
       (regular_square_endpoint E hs hpos) b hb
   exact h (H.endpoint_map Z) (stableEndpoint_eq_exponential E hpos H hZ) b hb
-
-
 
 theorem reducedLengthLaplacian_stable_joint_bound
     (hCoordinates : M12MetricPredecessors.{0} n)

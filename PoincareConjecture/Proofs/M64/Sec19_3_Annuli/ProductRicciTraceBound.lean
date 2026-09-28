@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductRicci
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,10 +35,6 @@ private theorem areaGram_det_eq_zero_of_dimension_lt_two
 variable [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)}
   {circumference : ℝ}
 
-
-
-
-
 theorem m64CircleProduct_ricci_quadratic_abs_le
     (P : M62.CircleProductData F circumference)
     (hn : 1 ≤ n) (t : ℝ) {K : ℝ} (hK : 0 ≤ K)
@@ -75,11 +60,6 @@ theorem m64CircleProduct_ricci_quadratic_abs_le
   rw [M62.circleProduct_ricci (F.metric t) (F.connection t) P.circle P.charts
     (P.flow.metric t) (P.flow.connection t) (P.metric_eq t)]
   exact hbase.trans (mul_le_mul_of_nonneg_left hmetric hcoef)
-
-
-
-
-
 
 theorem m64CircleProductAnnulusRicciTraceDensity_abs_le
     (P : M62.CircleProductData F circumference)
@@ -132,10 +112,6 @@ theorem m64CircleProductAnnulusRicciTraceDensity_abs_le
   rw [if_neg hdeg, abs_mul, abs_of_nonneg harea]
   exact (mul_le_mul_of_nonneg_right htrace harea).trans_eq (by ring)
 
-
-
-
-
 theorem m64CircleProductAnnulusRicciTraceIntegral_abs_le
     (P : M62.CircleProductData F circumference)
     (t : ℝ) {K : ℝ} (hK : 0 ≤ K)
@@ -161,11 +137,6 @@ theorem m64CircleProductAnnulusRicciTraceIntegral_abs_le
         simpa only [Real.norm_eq_abs] using
           m64CircleProductAnnulusRicciTraceDensity_abs_le P t hK hcurv f z)
     _ = _ := integral_const_mul _ _
-
-
-
-
-
 
 theorem m64CircleProductAnnulusArea_variation_on_compact
     (hab : a < b) (hcompact : IsCompact (univ : Set M))

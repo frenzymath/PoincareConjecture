@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeFirstDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +26,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (ht : T - s ^ 2 = t.val)
 
 include hCoordinates hscalar hM04 hC htime hs hsN ht
-
-
-
 
 theorem gauge_surfaceIndex_expression (a v d : EuclideanSpace ℝ (Fin n)) :
     let m := M08.chartActionMetric W.flow T x
@@ -66,9 +54,6 @@ theorem gauge_surfaceIndex_expression (a v d : EuclideanSpace ℝ (Fin n)) :
     ((G.gaugeCover.metric b).spatialTangentEquiv t y a)
   simp only [M14BcalPairing, hsym]
   ring
-
-
-
 
 theorem gauge_surfaceEuler_expression (a d z : EuclideanSpace ℝ (Fin n)) :
     let m := M08.chartActionMetric W.flow T x

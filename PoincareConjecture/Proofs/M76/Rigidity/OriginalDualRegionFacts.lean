@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDualRegion
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualPointCoface
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,7 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
 
-
 theorem dualRegion_subset_star (p : (T.marked 2).vertices)
     {s : Finset (T.index → ℝ × V3)} (hps : (p : T.index → ℝ × V3) ∈ s) :
     T.dualRegion s ⊆ (T.ambient.closedStar p).space := by
@@ -37,7 +28,6 @@ theorem dualRegion_subset_star (p : (T.marked 2).vertices)
 
 open Classical in
 
-
 theorem continuousOn_height_star (p : (T.marked 2).vertices) :
     ContinuousOn (T.height p) (T.ambient.closedStar p).space := by
   have hstar : T.ambient.closedStar p ≤ T.ambient := fun _ ht => ht.1
@@ -48,22 +38,16 @@ theorem continuousOn_height_star (p : (T.marked 2).vertices) :
   exact continuousOn_const.mul
     (((T.chart (T.chart_index p)).continuousOn.comp hgc (T.star_source p)).snd)
 
-
-
 theorem continuousOn_height_dualRegion (p : (T.marked 2).vertices)
     {s : Finset (T.index → ℝ × V3)} (hps : (p : T.index → ℝ × V3) ∈ s) :
     ContinuousOn (T.height p) (T.dualRegion s) :=
   (T.continuousOn_height_star p).mono (T.dualRegion_subset_star p hps)
-
-
 
 theorem height_eq_zero_iff_on_dualRegion (p : (T.marked 2).vertices)
     {s : Finset (T.index → ℝ × V3)} (hps : (p : T.index → ℝ × V3) ∈ s)
     {x : T.index → ℝ × V3} (hx : x ∈ T.dualRegion s) :
     T.height p x = 0 ↔ x ∈ (T.marked 2).space :=
   T.height_eq_zero_iff p (T.dualRegion_subset_star p hps hx) hx.2
-
-
 
 theorem dualRegion_antitone {s t : Finset (T.index → ℝ × V3)} (hst : s ⊆ t) :
     T.dualRegion t ⊆ T.dualRegion s := by

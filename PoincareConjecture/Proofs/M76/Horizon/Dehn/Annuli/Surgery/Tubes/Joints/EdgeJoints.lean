@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalBranchTarge
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalVertexCoordinateSectors
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Branches.TargetComplex
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 

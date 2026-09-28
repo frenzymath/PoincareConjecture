@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Smooth.CrossTerms
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -541,7 +533,6 @@ private lemma gradL2sqOn_nonsmooth_nonneg
   intro x
   exact Finset.sum_nonneg (fun _ _ => sq_nonneg _)
 
-
 theorem cross_1_bound_nonsmooth_quantitative
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
     {u : E → ℝ}
@@ -818,7 +809,6 @@ theorem cross_1_bound_nonsmooth_quantitative
     refine mul_le_mul_of_nonneg_left h_diffQuot_sq_le ?_
     rw [h_C_eq]; exact mul_nonneg h_d_real_sq_nn h_factor_nn
   linarith
-
 
 theorem cross_1_bound_nonsmooth
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

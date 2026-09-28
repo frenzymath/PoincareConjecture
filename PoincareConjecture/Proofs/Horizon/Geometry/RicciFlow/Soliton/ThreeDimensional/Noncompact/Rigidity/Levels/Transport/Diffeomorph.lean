@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.RegularDomain
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +23,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   (hs : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 (n + 1))) (𝓡 (n + 1)) ∞ (Function.uncurry Φ))
 
 include ha h0 hΦ hadd hs
-
-
 
 theorem exists_normalizedGradient_levelDiffeomorph {c d : ℝ} (hc : a < c) (hd : a < d) :
     let U := g.regularDomain hf

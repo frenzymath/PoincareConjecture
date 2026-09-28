@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.Inheritance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.Monotonicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 local instance closedLimitConnected (C : FlowCarrier.{0} 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
-
-
 
 theorem exists_complete_noncollapsed_closed_geometric_limit
     {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)

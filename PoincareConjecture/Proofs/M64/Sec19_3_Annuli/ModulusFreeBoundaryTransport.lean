@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FreeBoundaryTranspo
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.BoundaryCurveLipschitz
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.SlopeRegularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 theorem m64PeriodicDegreeOneLift_continuous_map
     (sigma : M64PeriodicDegreeOneLift) : Continuous sigma.map := by
   have hLip : LipschitzWith
@@ -41,9 +26,6 @@ theorem m64PeriodicDegreeOneLift_continuous_map
   exact hLip.continuous
 
 omit [T2Space M] in
-
-
-
 
 theorem m64PeriodicC1Curve_metric_lipschitz (g : RiemannianMetric n M)
     {c : ℝ → M} (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 c)
@@ -67,10 +49,6 @@ theorem m64PeriodicC1Curve_metric_lipschitz (g : RiemannianMetric n M)
   intro x
   exact (hB (mem_range_self x)).trans (le_max_left _ _)
 
-
-
-
-
 theorem m64C2ShrinkingCurves_freeBoundaryAreaTransport
     {a b : ℝ} (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}
     (hc0 : M63C2ShrinkingCurveOn F c0 (Icc a b))
@@ -87,10 +65,6 @@ theorem m64C2ShrinkingCurves_freeBoundaryAreaTransport
     (m64PeriodicC1Curve_metric_lipschitz (F.metric t) h1 (hc1.periodic t ht))
 
 omit [T2Space M] in
-
-
-
-
 
 theorem m64FreeAnnulus_minimizes_own_boundary
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.LocallyFlatOrientedBicollar
 import PoincareConjecture.Proofs.M76.Brown.BicollarEndGeometry
 import Mathlib.Topology.Compactification.OnePoint.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 local notation "V3" => (Fin 3 → ℝ)
 local notation "X3" => OnePoint V3
 local notation "T2" => sphere (0 : V3) 1
-
-
-
 
 theorem exists_compactified_bicollar {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     ∃ D : Set V3, IsCompact D ∧ frontier D = S ∧ S ⊆ D ∧

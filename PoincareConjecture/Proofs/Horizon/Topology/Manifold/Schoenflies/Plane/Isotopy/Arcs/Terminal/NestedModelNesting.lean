@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.CircleComponents
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.CircleMatching
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -109,8 +102,6 @@ private theorem nesting_or_reverse_of_equal_pair_union
   · exact Or.inl hn
   · exact Or.inr hn
   · exact (hne rfl).elim
-
-
 
 theorem exists_nested_model_negative_branch_circle_pairs
     (d : TerminalSaddleGeometry M P p e)

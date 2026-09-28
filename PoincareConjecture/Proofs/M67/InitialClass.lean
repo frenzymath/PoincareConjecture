@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M67
 import PoincareConjecture.Statements.Ch01.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -36,17 +27,6 @@ theorem m67AnchoredInitialWidth
       m61BasedClassWidth S.quotient initial.metric
         (P.component (m67InitialTime P)).basepoint initial.alpha := by
   rw [X.width_eq_based, B.initial_metric_eq, B.initial_class_eq]
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m67InitialClassFromM02
     {A : GeneralizedSliceCarrier.{u}}
@@ -93,18 +73,6 @@ theorem m67InitialClassFromM02
       _ = 1 := map_one e
   change (1 : ℤ) = 0 at heq
   norm_num at heq
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option linter.style.haveILetI false in
 theorem m67InitialClassFromM02AtSelectedPoint

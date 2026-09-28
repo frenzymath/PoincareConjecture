@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EndpointPrefixDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialLineRegularity
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixGaugeVelocity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_prefixAction_fderiv_eventually
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.TraceRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -108,8 +99,6 @@ private theorem normalization_ricci_symm
   apply Finset.sum_congr rfl
   intro i _
   exact normalization_curvatureTensor_pair_exchange D x u _ v _
-
-
 
 theorem normalization_curvatureTensorCalculus (D : LeviCivitaData g) :
     D.CurvatureTensorCalculus := by

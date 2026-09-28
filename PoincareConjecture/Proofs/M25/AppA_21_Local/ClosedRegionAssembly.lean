@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem repairedData_of_two_cap_component
     (H : ConnectedNeckCapCover g) (C1 C2 : CapCertificate g)
@@ -38,7 +28,6 @@ theorem repairedData_of_two_cap_component
   exact ⟨{
     region := .twoCaps kind C1 C2 component rfl hcontains
     compatible := ⟨hε1, hε2, hC1, hC2⟩ }⟩
-
 
 theorem repairedData_of_double_capped_tube_component
     (H : ConnectedNeckCapCover g) (D : DoubleCappedTubeCertificate g)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeSlices
 import PoincareConjecture.Proofs.M62.Lemma19_6_InteriorRegularity
 import PoincareConjecture.Statements.M62CurveEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem liftCurve_smooth {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c) :
@@ -41,8 +30,6 @@ theorem liftCurve_smooth {F : RicciFlow n M (Set.Icc a b)}
     rw [← contMDiffOn_univ]
     exact hcurve.comp hj.contMDiffOn (fun z _ => ⟨mem_univ _, z.2.property⟩)
   exact G.charts.from_product_smooth.comp (hbase.prodMk contMDiff_snd)
-
-
 
 theorem lifted_time {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)
@@ -108,8 +95,6 @@ theorem lifted_time {F : RicciFlow n M (Set.Icc a b)}
   rw [hspatial, mfderiv_snd]
   simp [m62LiftedCurvature, SpacetimeCharts.horizontal, SpacetimeCharts.timeVector]
   rfl
-
-
 
 theorem lifted_spatial_velocity {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)

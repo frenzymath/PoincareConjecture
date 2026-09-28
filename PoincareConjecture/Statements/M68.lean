@@ -1,26 +1,6 @@
 import PoincareConjecture.Definitions.M68
 import PoincareConjecture.Statements.M67
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M59.Mathlib.PathClassSheets
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace Function Bundle
 open scoped Topology
 
 universe u
-
-
 
 class LocallySimplyConnectedSpace (X : Type u) [TopologicalSpace X] : Prop where
 
@@ -28,18 +17,12 @@ namespace PathClassCover
 
 variable {X : Type u} [TopologicalSpace X]
 
-
-
 def sheetBasis (x₀ : X) : Set (Set (PathClassCover x₀)) :=
   {S | ∃ (U : Set X) (a : PathClassCover x₀),
     IsOpen U ∧ IsSimplyConnected U ∧ a.endpoint ∈ U ∧ S = sheet U a}
 
-
-
 instance (x₀ : X) : TopologicalSpace (PathClassCover x₀) :=
   TopologicalSpace.generateFrom (sheetBasis x₀)
-
-
 
 theorem isOpen_sheet {x₀ : X} {U : Set X} (hU : IsOpen U)
     (hsc : IsSimplyConnected U) (a : PathClassCover x₀) (ha : a.endpoint ∈ U) :
@@ -47,8 +30,6 @@ theorem isOpen_sheet {x₀ : X} {U : Set X} (hU : IsOpen U)
   TopologicalSpace.GenerateOpen.basic _ ⟨U, a, hU, hsc, ha, rfl⟩
 
 variable [LocallySimplyConnectedSpace X]
-
-
 
 theorem isTopologicalBasis (x₀ : X) : IsTopologicalBasis (sheetBasis x₀) where
   exists_subset_inter := by
@@ -72,8 +53,6 @@ theorem isTopologicalBasis (x₀ : X) : IsTopologicalBasis (sheetBasis x₀) whe
     exact Set.mem_sUnion.mpr ⟨sheet U a, ⟨U, a, hU, hsc, ha, rfl⟩, mem_sheet_self a ha⟩
   eq_generateFrom := rfl
 
-
-
 theorem continuous_endpoint (x₀ : X) : Continuous (endpoint : PathClassCover x₀ → X) := by
   apply continuous_def.mpr
   intro U hU
@@ -84,15 +63,12 @@ theorem continuous_endpoint (x₀ : X) : Continuous (endpoint : PathClassCover x
   exact ⟨sheet V a, ⟨V, a, hV, hsc, hav, rfl⟩, mem_sheet_self a hav,
     fun _ hb => hVU (endpoint_mem_of_mem_sheet hb)⟩
 
-
-
 theorem isOpenMap_endpoint (x₀ : X) : IsOpenMap (endpoint : PathClassCover x₀ → X) := by
   apply (isTopologicalBasis x₀).isOpenMap_iff.mpr
   rintro _ ⟨U, a, hU, hsc, ha, rfl⟩
   simpa only [image_sheet hsc.isPathConnected a ha] using hU
 
 omit [LocallySimplyConnectedSpace X] in
-
 
 theorem pairwise_disjoint_sheets {x₀ x : X} {U : Set X} (hsc : IsSimplyConnected U)
     (hx : x ∈ U) : Pairwise (Disjoint on
@@ -110,7 +86,6 @@ theorem pairwise_disjoint_sheets {x₀ x : X} {U : Set X} (hsc : IsSimplyConnect
 
 omit [LocallySimplyConnectedSpace X] in
 
-
 theorem sheets_exhaustive {x₀ x : X} {U : Set X} (hsc : IsSimplyConnected U)
     (hx : x ∈ U) :
     endpoint ⁻¹' U ⊆ ⋃ a : Path.Homotopic.Quotient x₀ x, sheet U ⟨x, a⟩ := by
@@ -119,8 +94,6 @@ theorem sheets_exhaustive {x₀ x : X} {U : Set X} (hsc : IsSimplyConnected U)
   let a : Path.Homotopic.Quotient x₀ x := b.pathClass.trans (.mk p)
   have ha : (⟨x, a⟩ : PathClassCover x₀) ∈ sheet U b := ⟨p, hp, rfl⟩
   exact mem_iUnion.mpr ⟨a, mem_sheet_symm ha⟩
-
-
 
 theorem isCoveringMap_endpoint [PathConnectedSpace X] (x₀ : X) :
     IsCoveringMap (endpoint : PathClassCover x₀ → X) := by

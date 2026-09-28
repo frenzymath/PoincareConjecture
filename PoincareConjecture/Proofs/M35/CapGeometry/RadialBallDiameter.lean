@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapDistance
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,8 +78,6 @@ theorem intrinsicSpatialInverse_edist_le (x y : V) :
   rw [edist_dist, dist_eq_norm, norm_sub_rev]
   exact h.trans (intrinsic_inverse_segment_length_le g D hrotation hcomplete hsec x y)
 
-
-
 theorem intrinsicSpatialInverse_image_ball (P : M35StandardCapPredecessors) (R : ℝ) :
     intrinsicSpatialInverse g hrotation hcomplete '' Metric.ball (0 : V) R =
       g.ball 0 R := by
@@ -112,7 +101,6 @@ theorem intrinsicSpatialInverse_image_ball (P : M35StandardCapPredecessors) (R :
     simpa only [Metric.mem_ball, dist_zero_right] using hy
 
 include D hsec hrotation hcomplete in
-
 
 theorem radial_ball_intrinsic_diameter (P : M35StandardCapPredecessors)
     {R : ℝ} {x y : V} (hx : x ∈ g.ball 0 R) (hy : y ∈ g.ball 0 R) :

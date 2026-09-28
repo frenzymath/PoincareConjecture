@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable (v : ℝ → ℝ) {K L : ℝ≥0}
 variable (hK : LipschitzWith K v) (hL : ∀ z, ‖v z‖ ≤ L)
-
-
-
 
 theorem boundedFlow_strictMono (hv : ContDiff ℝ ∞ v) (hs : HasCompactSupport v)
     (t : ℝ) : StrictMono (fun z => boundedFlow v hK hL z t) := by
@@ -46,10 +33,6 @@ theorem boundedFlow_strictMono (hv : ContDiff ℝ ∞ v) (hs : HasCompactSupport
     change boundedFlow v hK hL R t < boundedFlow v hK hL (-R) t at hbad
     rw [hp, hm] at hbad
     linarith
-
-
-
-
 
 theorem boundedFlow_eq_scalar_contraction (c r R z : ℝ) {t : ℝ}
     (ht : 0 ≤ t) (hlower : r ≤ Real.exp (-t) * |z - c|)

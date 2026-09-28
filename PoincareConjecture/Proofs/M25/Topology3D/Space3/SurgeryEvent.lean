@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularDiscSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 structure RegularSurgeryEvent
     (parent : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) where
@@ -65,7 +54,6 @@ structure RegularSurgeryEvent
     ∀ p ∈ ret.source, ∀ s : ℝ, |s| < 1 →
       child i (p, s) = parent (ret p, retainedTime i * s)
 
-
 theorem exists_regular_surgery_event (P : SurgeryCapProfile)
     (parent : UnitTwoSphere × ℝ → E3) (hparent : IsCollarEmbedding parent)
     (u : UnitTwoSphere) (t : ℝ) (D : RegularSurgeryData parent u t) :
@@ -105,7 +93,6 @@ theorem exists_regular_surgery_event (P : SurgeryCapProfile)
       ⟨hgamma i, hgammaSmall i, hsrc i, htar i, hret i, hreti i,
         hretK i, htarget i, hsm i, hsi i, heq i⟩ }
   exact ⟨E, rfl, HEq.rfl, rfl⟩
-
 
 theorem RegularSurgeryEvent.parameter_bounds
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

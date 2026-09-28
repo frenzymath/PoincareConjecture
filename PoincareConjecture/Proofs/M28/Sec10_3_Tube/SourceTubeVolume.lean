@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeScaleBudget
 import PoincareConjecture.Proofs.M28.Generalized.FullNeckVolume
 import PoincareConjecture.Proofs.M28.Generalized.MetricVolumeCalibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem SourceTubeData.carrier_eq_iUnion_nodes
     {epsilon C A D₀ D : ℝ}
@@ -58,8 +47,6 @@ namespace CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
 
 theorem tube_cubic_scale_sum_bound (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
@@ -98,9 +85,6 @@ theorem tube_cubic_scale_sum_bound (H : CounterexampleNeckFamily E)
   exact add_le_add hfirst hlast
 
 end CounterexampleNeckFamily
-
-
-
 
 theorem exists_actual_source_tube_volume_constant :
     ∃ cvol : ℝ, 0 < cvol ∧
@@ -177,8 +161,6 @@ theorem exists_actual_source_tube_volume_constant :
           ENNReal.ofReal (cvol * (smax ^ 2 * L / (0.99 : ℝ) + smax ^ 3 * epsilon⁻¹))
       congr 1
       field_simp [heps.ne']
-
-
 
 theorem CounterexampleNeckFamily.exists_tube_volume_bound
     {epsilon C A : ℝ}

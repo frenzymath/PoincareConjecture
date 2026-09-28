@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientCurveCoefficients
 import PoincareConjecture.Proofs.M63.Mathlib.CompactProductLipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem isOpen_ambientCurveJetDomain (F : RicciFlow n M (Icc a b))
     {U : Set W} (hU : IsOpen U) {ρ : W → M}
@@ -54,10 +42,6 @@ theorem isOpen_ambientCurveJetDomain (F : RicciFlow n M (Icc a b))
     exact (lt_irrefl 0) hpos
   rw [heq]
   exact hG.isOpen_inter_preimage (hU.prod isOpen_univ) isOpen_Ioi
-
-
-
-
 
 theorem ambientCurveCoefficients_uniform_bounds (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

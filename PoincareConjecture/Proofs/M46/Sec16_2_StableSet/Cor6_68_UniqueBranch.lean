@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_68_TerminalMomentum
 import PoincareConjecture.Proofs.M14.Sec6_3_EulerUnique
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
 
 theorem minimizing_branches_unique_of_differentiable
     (hM04 : RicciFlowCurvatureTheory.{0})

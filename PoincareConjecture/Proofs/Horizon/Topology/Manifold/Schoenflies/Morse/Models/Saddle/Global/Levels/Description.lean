@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.FilledModel
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,10 +11,8 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Levels
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
-
 def slice (S : Set E2) (z : Real) : Set E3 :=
   {y | WithLp.toLp 2 ![y 0, y 1] ∈ S ∧ y 2 = z}
-
 
 theorem band_eq_iUnion_slices :
     band = ⋃ z ∈ Icc (-9 / 8 : Real) (1 / 2),
@@ -33,7 +25,6 @@ theorem band_eq_iUnion_slices :
   · rintro ⟨z, hz, hy, heq⟩
     subst z
     exact ⟨hy, hz⟩
-
 
 theorem shear_image_sphere_eq_slices_union_caps :
     shear '' sphere (0 : E3) 1 =

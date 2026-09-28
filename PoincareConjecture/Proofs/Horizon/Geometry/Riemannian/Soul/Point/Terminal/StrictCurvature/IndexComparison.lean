@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Index.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +9,6 @@ open scoped RealInnerProductSpace
 namespace Poincare.ODE.Jacobi
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
-
 
 theorem IsJacobiSolOn.inner_endpoint_le_affine_sub_curvature_integral
     {R : ℝ → F →L[ℝ] F} {y v : ℝ → F}
@@ -83,7 +69,6 @@ theorem IsJacobiSolOn.inner_endpoint_le_affine_sub_curvature_integral
   change 0 ≤ indexForm R 0 1 (y - z) (v - w) (y - z) (v - w) at hindex
   linarith
 
-
 theorem IsJacobiSolOn.inner_endpoint_lt_affine_of_curvature_integral_pos
     {R : ℝ → F →L[ℝ] F} {y v : ℝ → F}
     (hsol : IsJacobiSolOn R 0 1 y v)
@@ -98,8 +83,6 @@ theorem IsJacobiSolOn.inner_endpoint_lt_affine_of_curvature_integral_pos
   have hle := hsol.inner_endpoint_le_affine_sub_curvature_integral hR hRs hy0 hindex
   linarith
 
-
-
 theorem affine_curvature_integral_pos_of_nonneg_of_pos
     {R : ℝ → F →L[ℝ] F} {u : F}
     (hR : ContinuousOn R (Icc 0 1))
@@ -111,8 +94,6 @@ theorem affine_curvature_integral_pos_of_nonneg_of_pos
   apply intervalIntegral.integral_pos zero_lt_one ((hR.clm_apply hz).inner hz)
   · exact fun t ht => hnonneg t (Ioc_subset_Icc_self ht)
   · exact hpos
-
-
 
 theorem IsJacobiSolOn.inner_endpoint_lt_affine_of_curvature_pos
     {R : ℝ → F →L[ℝ] F} {y v : ℝ → F}

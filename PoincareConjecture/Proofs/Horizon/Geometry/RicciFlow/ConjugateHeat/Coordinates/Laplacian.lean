@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.Slices
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.CoordinateOperator
 
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +47,6 @@ theorem drift_eq_coordinateDrift {z : Spacetime n} (hz : z ∈ domain J e)
   exact (partialDeriv_spatialSlice
     (((contDiffOn_weightedPrincipal F e he hei j i).contDiffAt
       ((isOpen_domain e).mem_nhds hz)).differentiableAt (by simp)) j).symm
-
-
 
 theorem laplacian_coordinateTest {φ : Spacetime n → ℝ}
     (hφ : ContDiff ℝ ∞ φ) {z : Spacetime n} (hz : z ∈ domain J e) :

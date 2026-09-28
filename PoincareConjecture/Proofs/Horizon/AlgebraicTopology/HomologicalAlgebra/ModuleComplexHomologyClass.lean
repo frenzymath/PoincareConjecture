@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.HomologicalAlgebra.ModuleHomologyNaturality
 
-
 set_option autoImplicit false
 
 noncomputable section

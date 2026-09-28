@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenMVUnion
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenKernel
 
-
-
 set_option autoImplicit false
 
 noncomputable section

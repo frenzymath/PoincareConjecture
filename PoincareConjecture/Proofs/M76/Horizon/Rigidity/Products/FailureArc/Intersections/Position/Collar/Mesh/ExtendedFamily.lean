@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartImageIntersection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Composition.PatchExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Mesh.ContactRetention
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

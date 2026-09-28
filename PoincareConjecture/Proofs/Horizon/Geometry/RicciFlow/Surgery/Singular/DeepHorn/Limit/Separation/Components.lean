@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.NonFilling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.NoReturn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,8 +34,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem complementary_component_frontiers (N : EpsilonNeck g) (hN : N.IsSeparating)
     {p q : M} (hp : p ∈ N.region (-N.epsilon⁻¹) 0)
@@ -119,8 +109,6 @@ theorem complementary_component_frontiers (N : EpsilonNeck g) (hN : N.IsSeparati
 end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.StrongHorn
-
-
 
 theorem exists_complementary_components_escape_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

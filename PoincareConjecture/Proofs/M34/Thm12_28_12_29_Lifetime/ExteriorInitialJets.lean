@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem partialFlow_exists_exterior_initial_jet_bounds
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

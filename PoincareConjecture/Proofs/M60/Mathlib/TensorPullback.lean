@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.LocalCalculus
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ local notation "TX" => TangentSpace (𝓡 n) (M := X)
 local notation "TY" => TangentSpace (𝓡 m) (M := Y)
 
 omit [IsManifold (𝓡 n) ∞ X] in
-
-
 
 theorem contMDiffAt_tensorEvaluation_along {k : ℕ}
     {T : CovariantTensorEvaluation m Y k} (hT : IsSmoothCovariantTensor T)
@@ -77,14 +67,9 @@ theorem contMDiffAt_tensorEvaluation_along {k : ℕ}
   rw [hdecomp, A.map_sum]
   simp only [A.map_smul_univ, smul_eq_mul]
 
-
-
 noncomputable def tensorPullbackEvaluation {k : ℕ} (f : X → Y)
     (T : CovariantTensorEvaluation m Y k) : CovariantTensorEvaluation n X k :=
   fun x v => T (f x) (fun i => mfderiv (𝓡 n) (𝓡 m) f x (v i))
-
-
-
 
 theorem isSmoothCovariantTensor_pullback {k : ℕ}
     {T : CovariantTensorEvaluation m Y k} (hT : IsSmoothCovariantTensor T)

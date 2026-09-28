@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.CommonEssentialComponent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -23,7 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 open Classical in
-
 
 theorem surfaceEulerCount_ne_two_of_essential_rim
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -42,7 +31,6 @@ theorem surfaceEulerCount_ne_two_of_essential_rim
     (SimplyConnectedSpace.paths_homotopic _ _))
 
 open Classical in
-
 
 theorem exists_common_component_of_essential_rims
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

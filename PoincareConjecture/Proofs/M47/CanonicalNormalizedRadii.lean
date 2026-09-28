@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalScalarStability
 import PoincareConjecture.Proofs.M47.CanonicalMetricStability
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [CompactSpace M]
-
-
 
 theorem scalar_normalized_radius_le_of_close
     (g h : RiemannianMetric 3 M) (Dg : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -91,9 +80,6 @@ theorem scalar_normalized_radius_le_of_close
   exact hlarge.not_ge (hshort.trans hAcr)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem cap_normalized_radii_close
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

@@ -1,15 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Regularity
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.FDeriv.Extend
-
-
-
-
-
-
-
-
 
 open Set Filter
 open scoped Topology ContDiff
@@ -100,8 +91,6 @@ private theorem hasDerivWithinAt_Icc_of_continuousOn
   rw [hcl] at hfderiv
   simpa using hfderiv.hasDerivWithinAt
 
-
-
 theorem linearODE_hasDerivWithinAt_fderiv_param
     [FiniteDimensional ℝ P] [CompleteSpace G]
     (A : P → ℝ → G →L[ℝ] G) {a b : ℝ} (hab : a ≤ b)
@@ -156,7 +145,6 @@ theorem linearODE_hasDerivWithinAt_fderiv_param
     exact add_comm _ _
   rw [hR] at hd
   exact hd
-
 
 theorem linearODE_hasDerivWithinAt_fderiv_param_apply
     [FiniteDimensional ℝ P] [CompleteSpace G]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem pullbackExtension_field_contMDiffOn {γ : ℝ → G.Point} {J : Set ℝ}
     {Y : ∀ s, G.Horizontal (γ s)} (E : M14PullbackExtension G γ J Y)
@@ -40,9 +29,6 @@ theorem pullbackExtension_field_contMDiffOn {γ : ℝ → G.Point} {J : Set ℝ}
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
 
-
-
-
 noncomputable def horizontalJacobiPairResidual (s : ℝ)
     (Y P DP W : G.Horizontal (R.curve s)) : ℝ :=
   let q := R.curve s
@@ -53,8 +39,6 @@ noncomputable def horizontalJacobiPairResidual (s : ℝ)
     2 * s ^ 2 * M14HorizontalHessianPairing G q Y W +
     4 * s * M14HorizontalRicciDerivativePairing G q Y A W +
     4 * s * horizontalRicci G.leafwise q P W
-
-
 
 structure IsHorizontalJacobiPairOn (a b : ℝ)
     (z : ∀ s, G.Horizontal (R.curve s) × G.Horizontal (R.curve s)) : Prop where
@@ -77,8 +61,6 @@ structure IsHorizontalJacobiPairOn (a b : ℝ)
 variable {R} {a b : ℝ}
   {z w : ∀ s, G.Horizontal (R.curve s) × G.Horizontal (R.curve s)}
 
-
-
 theorem IsHorizontalJacobiPairOn.congr (h : IsHorizontalJacobiPairOn R a b z)
     (hzw : ∀ s ∈ Icc a b, z s = w s) : IsHorizontalJacobiPairOn R a b w := by
   obtain ⟨EY, EP, hY, hP⟩ := h.equations
@@ -96,8 +78,6 @@ theorem IsHorizontalJacobiPairOn.congr (h : IsHorizontalJacobiPairOn R a b z)
       (M14HorizontalCovariantDerivative G R.curve (Icc a b) (fun r => (z r).2) EP s) W = 0
     rw [← hzw s hs]
     exact hP s hs W
-
-
 
 theorem IsHorizontalJacobiPairOn.equations_for_extensions
     (h : IsHorizontalJacobiPairOn R a b z)
@@ -119,8 +99,6 @@ theorem IsHorizontalJacobiPairOn.equations_for_extensions
     rw [← horizontalCovariantDerivative_extension_independent EP₀ EP hs
       (uniqueDiffOn_Icc h.ordered s hs) ((hR s hs).mdifferentiableWithinAt (by simp))]
     exact hP s hs W
-
-
 
 theorem IsHorizontalJacobiPairOn.restrict (h : IsHorizontalJacobiPairOn R a b z)
     {c d : ℝ} (hac : a ≤ c) (hcd : c < d) (hdb : d ≤ b) :

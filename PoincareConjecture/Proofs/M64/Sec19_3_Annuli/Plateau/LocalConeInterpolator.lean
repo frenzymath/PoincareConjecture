@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorHorizontalColumn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64_exists_local_cone_interpolator
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M)) :

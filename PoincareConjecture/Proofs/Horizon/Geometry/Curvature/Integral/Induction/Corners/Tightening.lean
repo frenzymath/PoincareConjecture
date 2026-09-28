@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +10,6 @@ open scoped InnerProductSpace BigOperators
 namespace Poincare.CurvatureIntegral
 
 variable {E ι : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [Fintype ι]
-
-
 
 theorem strainer_tilt_norm_bounds
     (u : E) (w : ι → E) {a : ℝ} (ha : 0 ≤ a) (ha1 : a ≤ 1)
@@ -57,8 +46,6 @@ theorem strainer_tilt_norm_bounds
   have hmainbound := mul_le_mul_of_nonneg_left hu ha
   linarith
 
-
-
 theorem inner_strainer_tilt_le
     (u : E) (v w : ι → E) {ε a : ℝ} (ha : 0 ≤ a) (ha1 : a ≤ 1)
     (hopposite : ∀ i, ⟪v i, w i⟫_ℝ ≤ -1 + 2 * ε)
@@ -94,8 +81,6 @@ theorem inner_strainer_tilt_le
         (mul_le_mul_of_nonneg_left hsum hβ)
     _ = ε - β := by nlinarith only [congrArg (fun a : ℝ => a * ε) hβeq]
 
-
-
 theorem abs_inner_le_of_strainer_perturbation
     (u U v : E) {ε η : ℝ} (hv : ‖v‖ ≤ 1)
     (hmove : ‖U - u‖ ≤ η) (hinner : |⟪u, v⟫_ℝ| ≤ ε) :
@@ -108,8 +93,6 @@ theorem abs_inner_le_of_strainer_perturbation
   rw [mul_one] at hCS
   rw [heq]
   exact (abs_add_le _ _).trans (add_le_add hinner (hCS.trans hmove))
-
-
 
 theorem inner_opposite_le_of_strainer_perturbations
     (u z U Z : E) {ε η : ℝ} (hu : ‖u‖ ≤ 1) (hZ : ‖Z‖ ≤ 1)
@@ -172,7 +155,6 @@ private theorem hessian_finset_sum_tightening
     simp only [Finset.sum_insert hi]
     rw [D.hessian_add (hf i) (ContMDiff.sum fun j _ => hf j), ih]
 
-
 theorem strainer_tilt_differential_data
     (D : LeviCivitaData g) (u : M → ℝ) (w : ι → M → ℝ)
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
@@ -201,8 +183,6 @@ theorem strainer_tilt_differential_data
   · intro x v z
     rw [D.hessian_add hu' hs', D.hessian_const_mul, D.hessian_const_mul,
       hessian_finset_sum_tightening D w hw]
-
-
 
 theorem smooth_strainer_extension_tightening
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -348,6 +328,5 @@ theorem smooth_strainer_extension_tightening
       exact hcombine _ _ huH (fun i => (hfhH i).2)
     · rw [hGhess]
       exact hcombine _ _ hvH (fun i => (hfhH i).1)
-
 
 end PoincareConjecture.LeviCivitaData

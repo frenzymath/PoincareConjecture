@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckRicciDiagonals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ namespace PoincareConjecture.Proofs.M47
 open PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem neck_reference_ricci_not_isotropic {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1) (x : E) (e : E ≃L[ℝ] E)

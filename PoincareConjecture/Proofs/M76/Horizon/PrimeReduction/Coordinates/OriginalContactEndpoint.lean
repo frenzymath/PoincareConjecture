@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.Original
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalEndpoint
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -21,8 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_segment_germ_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -44,8 +32,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_segment_germ_in_char
   exact h.exists_surface_contact_segment_germ_in_chart sS.chart_source_cover hgi hSV hpq hwp hwq
     ht hy Q hQ hyQ
 
-
-
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_segment_germ_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -65,9 +51,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_segment_germ_of_affi
         x ∈ segment ℝ (Q y) u := by
   exact h.exists_surface_contact_segment_germ_of_affine_chart sS.chart_source_cover hs hs3 has ha2
     hgi hSV hy Q hQ A hmap hA
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.ncard_contact_neighborSet_eq_one_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

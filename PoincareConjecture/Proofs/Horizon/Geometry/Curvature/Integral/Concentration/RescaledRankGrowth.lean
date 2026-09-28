@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Rescaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.PointedLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.RiemannianLimit
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +32,6 @@ private theorem dist_eq_mul_rescaled_inverse_square
   rw [rescaledMetric_edist, ENNReal.toReal_mul,
     ENNReal.toReal_ofReal (Real.sqrt_nonneg _), Real.sqrt_inv, Real.sqrt_sq hr.le]
   field_simp
-
-
 
 theorem rank_growth_of_four_badAscentRadius_rescaling_at_scaled_spire
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
@@ -99,8 +90,6 @@ theorem rank_growth_of_four_badAscentRadius_rescaling_at_scaled_spire
     (fun j => 4 * a j) ht (fun _ => rfl)
     (Z := Z) (fun j => Equiv.refl (M j)) (fun _ => rfl)
     (fun j x y => dist_eq_mul_rescaled_inverse_square (g j) (ht j) x y) hnewconv
-
-
 
 theorem exists_rescaled_pointed_limit_with_rank_growth_at_scaled_spire
     (n : ℕ) (hn : 1 ≤ n) (θ : ℝ) (hθ : 0 < θ) (hθpi : θ < Real.pi / 2) :
@@ -219,7 +208,6 @@ theorem exists_rescaled_pointed_limit_with_rank_growth_at_scaled_spire
   exact ⟨φ, S, hφ, hretained, hproper, hgeo, hnew, hcurv, hpackV, hpackY,
     hgrowth.2.2.1, hgrowth.2.2.2 N N hpackV hpackY⟩
 
-
 theorem rank_growth_of_four_badAscentRadius_rescaling
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
     [∀ j, T3Space (M j)] [∀ j, PreconnectedSpace (M j)]
@@ -268,7 +256,6 @@ theorem rank_growth_of_four_badAscentRadius_rescaling
     hρ (by simpa only [one_mul] using hρb) hbcap hascent B hmax
     (fun y hy => by simpa only [one_mul] using hspire y hy)
     hqball hqref hqmin hapos
-
 
 theorem exists_rescaled_pointed_limit_with_rank_growth
     (n : ℕ) (hn : 1 ≤ n) (θ : ℝ) (hθ : 0 < θ) (hθpi : θ < Real.pi / 2) :

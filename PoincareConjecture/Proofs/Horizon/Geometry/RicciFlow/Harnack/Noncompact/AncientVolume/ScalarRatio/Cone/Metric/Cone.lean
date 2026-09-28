@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.Link
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +9,6 @@ open scoped Topology NNReal
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem tendsto_rescaled_ray_distance_cosine (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) (r s : ℝ≥0) :
@@ -72,7 +59,6 @@ theorem tendsto_rescaled_ray_distance_cosine (hcomparison : RayComparison p)
   exact (hlim r s (by exact_mod_cast (pos_iff_ne_zero.mpr hr))
     (by exact_mod_cast (pos_iff_ne_zero.mpr hs))).2
 
-
 def conePairDistance (hcomparison : RayComparison p)
     (a b : ℝ≥0 × AsymptoticLink p hcomparison) : ℝ :=
   Real.sqrt (((a.1 : ℝ) - b.1) ^ 2 + a.1 * b.1 * dist a.2 b.2 ^ 2)
@@ -96,7 +82,6 @@ theorem tendsto_conePairDistance (hcomparison : RayComparison p)
         (r, asymptoticLinkProjection hcomparison γ) (s, asymptoticLinkProjection hcomparison η))) := by
   simpa only [conePairDistance, dist_asymptoticLinkProjection] using
     tendsto_rescaled_ray_distance_cosine hcomparison γ η r s
-
 
 theorem conePairDistance_triangle (hcomparison : RayComparison p)
     (a b c : ℝ≥0 × AsymptoticLink p hcomparison) :
@@ -122,14 +107,12 @@ theorem abs_sub_le_conePairDistance (hcomparison : RayComparison p)
   exact le_add_of_nonneg_right (mul_nonneg (mul_nonneg a.1.coe_nonneg b.1.coe_nonneg)
     (sq_nonneg _))
 
-
 @[instance_reducible] def conePairPseudoMetric (hcomparison : RayComparison p) :
     PseudoMetricSpace (ℝ≥0 × AsymptoticLink p hcomparison) where
   dist := conePairDistance hcomparison
   dist_self := conePairDistance_self hcomparison
   dist_comm := conePairDistance_comm hcomparison
   dist_triangle := conePairDistance_triangle hcomparison
-
 
 def AsymptoticCone (p : X) (hcomparison : RayComparison p) :=
   @SeparationQuotient (ℝ≥0 × AsymptoticLink p hcomparison)
@@ -156,7 +139,6 @@ theorem surjective_asymptoticConeProjection (hcomparison : RayComparison p) :
     Function.Surjective (asymptoticConeProjection hcomparison) := by
   exact @SeparationQuotient.surjective_mk (ℝ≥0 × AsymptoticLink p hcomparison)
     (conePairPseudoMetric hcomparison).toUniformSpace.toTopologicalSpace
-
 
 def asymptoticConeRadius (hcomparison : RayComparison p) :
     AsymptoticCone p hcomparison → ℝ≥0 := by
@@ -196,7 +178,6 @@ theorem conePairDistance_mul (hcomparison : RayComparison p) (c : ℝ≥0)
       ring
     _ = _ := by rw [Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq c.coe_nonneg]
 
-
 def asymptoticConeDilation (hcomparison : RayComparison p) (c : ℝ≥0) :
     AsymptoticCone p hcomparison → AsymptoticCone p hcomparison := by
   exact @SeparationQuotient.lift (ℝ≥0 × AsymptoticLink p hcomparison)
@@ -229,7 +210,6 @@ theorem asymptoticConeRadius_dilation (hcomparison : RayComparison p) (c : ℝ�
   obtain ⟨a, rfl⟩ := surjective_asymptoticConeProjection hcomparison a
   rfl
 
-
 theorem tendsto_dist_asymptoticConeProjection (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) (r s : ℝ≥0) :
     Tendsto (fun L : ℝ => dist (rayExtension γ (r * L)) (rayExtension η (s * L)) / L)
@@ -261,7 +241,6 @@ theorem dist_asymptoticConeProjection_same_link (hcomparison : RayComparison p)
   rw [dist_asymptoticConeProjection]
   simp [Real.sqrt_sq_eq_abs, NNReal.dist_eq]
 
-
 theorem isometry_asymptoticCone_unit_link (hcomparison : RayComparison p) :
     Isometry (fun l : AsymptoticLink p hcomparison => asymptoticConeProjection hcomparison (1, l)) := by
   apply isometry_iff_dist_eq.mpr
@@ -269,20 +248,17 @@ theorem isometry_asymptoticCone_unit_link (hcomparison : RayComparison p) :
   rw [dist_asymptoticConeProjection]
   simp [Real.sqrt_sq, dist_nonneg]
 
-
 theorem continuous_asymptoticConeProjection (hcomparison : RayComparison p) :
     Continuous (asymptoticConeProjection hcomparison) := by
   apply continuous_iff_continuous_dist.mpr
   simp only [dist_asymptoticConeProjection]
   fun_prop
 
-
 theorem isCompact_asymptoticConeProjection_radial_interval [ProperSpace X]
     (hcomparison : RayComparison p) (R : ℝ≥0) :
     IsCompact (asymptoticConeProjection hcomparison ''
       (Icc (0 : ℝ≥0) R ×ˢ (univ : Set (AsymptoticLink p hcomparison)))) :=
   (isCompact_Icc.prod isCompact_univ).image (continuous_asymptoticConeProjection hcomparison)
-
 
 theorem isCompact_asymptoticConeRadius_sublevel [ProperSpace X]
     (hcomparison : RayComparison p) (R : ℝ≥0) :

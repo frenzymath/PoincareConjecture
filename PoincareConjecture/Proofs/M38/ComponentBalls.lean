@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.RetainedComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 theorem surgeryBall_image_connected :
     IsConnected (B.map '' Metric.ball (0 : StandardCapSpace) 2) := by
   let : ConnectedSpace (Metric.ball (0 : StandardCapSpace) 2) := capDoubleBall_connected
@@ -29,18 +20,14 @@ theorem surgeryBall_image_connected :
     (Subtype.val : Metric.ball (0 : StandardCapSpace) 2 → StandardCapSpace))) at h
   simpa only [Set.range_comp, Subtype.range_coe_subtype, Set.ofPred_mem_eq] using h
 
-
 theorem surgeryBall_image_subset_center_component :
     B.map '' Metric.ball (0 : StandardCapSpace) 2 ⊆ connectedComponent (B.map 0) :=
   (surgeryBall_image_connected B).subset_connectedComponent ⟨0, by simp, rfl⟩
-
 
 theorem surgeryBall_image_subset_component (x : A.carrier)
     (hx : B.map 0 ∈ connectedComponent x) :
     B.map '' Metric.ball (0 : StandardCapSpace) 2 ⊆ connectedComponent x := by
   simpa only [connectedComponent_eq hx] using surgeryBall_image_subset_center_component B
-
-
 
 noncomputable def componentBall (x : A.carrier) (hx : B.map 0 ∈ connectedComponent x) :
     SurgeryBallEmbedding (componentCarrier A x) := by
@@ -78,18 +65,15 @@ noncomputable def componentBall (x : A.carrier) (hx : B.map 0 ∈ connectedCompo
     rw [hfun]
     exact B.open_embedding
 
-
 theorem componentBall_map_val (x : A.carrier) (hx : B.map 0 ∈ connectedComponent x)
     {z : StandardCapSpace} (hz : z ∈ Metric.ball (0 : StandardCapSpace) 2) :
     ((componentBall B x hx).map z).val = B.map z :=
   (componentRegionEquivalence A x).right_inverse
     (surgeryBall_image_subset_component B x hx ⟨z, hz, rfl⟩)
 
-
 theorem componentBall_inverse (x : A.carrier) (hx : B.map 0 ∈ connectedComponent x)
     (z : (componentCarrier A x).carrier) :
     (componentBall B x hx).inverse z = B.inverse z.val := rfl
-
 
 theorem componentBall_closedBall_image (x : A.carrier) (hx : B.map 0 ∈ connectedComponent x) :
     Subtype.val '' (componentBall B x hx).closedBall = B.closedBall := by

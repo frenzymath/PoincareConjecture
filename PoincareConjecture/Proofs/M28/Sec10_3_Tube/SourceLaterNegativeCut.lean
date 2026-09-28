@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlapAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ theorem adjacent_later_negative_cut (N Q : EpsilonNeck g)
   exact absurd hyN.2.2 (not_lt.mpr h.le)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem later_negative_cut_of_minimizer
     (N P : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)

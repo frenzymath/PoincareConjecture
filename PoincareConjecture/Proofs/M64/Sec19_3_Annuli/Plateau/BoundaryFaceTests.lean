@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalZeroExtension
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoefficientTests
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +10,6 @@ open scoped Topology ENNReal ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64NaturalGrowth_face_boundary_test
     (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)
@@ -76,10 +61,6 @@ theorem m64NaturalGrowth_face_boundary_test
     rwa [hleft, hright] at hh
   · exact m64NaturalGrowth_mixed_boundary_test dirichlet hO hF hb hu hc hs hup hdu hw
       (fun hd => (hD hd).elim) heq
-
-
-
-
 
 theorem m64NaturalGrowth_coefficient_face_test
     {n : ℕ} (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)

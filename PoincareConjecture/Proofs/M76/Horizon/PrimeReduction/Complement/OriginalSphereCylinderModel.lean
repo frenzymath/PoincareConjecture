@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalS
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedSphereModel
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 
@@ -43,8 +34,6 @@ private theorem exists_halfBall_sphere_product_coordinates :
     ⟨id, ⟨J, hJ, hJs, J.affineOnFaces_affine (ContinuousAffineMap.id ℝ ℝ)⟩,
       fun _ => rfl⟩
   exact ⟨_, hD.prod hI, fun _ => rfl⟩
-
-
 
 theorem original_sphere_cylinder_frontier
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -88,8 +77,6 @@ theorem original_sphere_cylinder_frontier
     · exact Or.inl (le_antisymm h hbounds.1)
     · exact Or.inr (le_antisymm hbounds.2 (le_of_not_gt (fun h' => hn ⟨h, h'⟩)))
   · rintro (h | h) <;> rw [h] <;> norm_num
-
-
 
 theorem hasPuncturedSphereModel_of_original_sphere_cylinder
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

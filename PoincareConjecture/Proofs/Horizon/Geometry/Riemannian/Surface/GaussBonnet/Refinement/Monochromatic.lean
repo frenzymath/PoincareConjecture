@@ -1,17 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Lines
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture.Topology.Surface
-
 
 theorem isMonochromatic_smul (N : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ)
     (hN : N.IsMonochromatic f) (r : ℝ) : N.IsMonochromatic (r • f) := by

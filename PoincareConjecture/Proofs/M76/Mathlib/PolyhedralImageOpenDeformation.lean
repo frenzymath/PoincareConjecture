@@ -3,26 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLScalarNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_polyhedral_image_open_cut_deformation
     {M E D ι : Type*} [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]

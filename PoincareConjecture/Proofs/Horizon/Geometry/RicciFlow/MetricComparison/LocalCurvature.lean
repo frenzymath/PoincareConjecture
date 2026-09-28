@@ -5,17 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 import Mathlib.MeasureTheory.Integral.Lebesgue.Add
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

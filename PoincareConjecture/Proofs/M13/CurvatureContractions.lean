@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M13.CurvatureMultilinear
 import PoincareConjecture.Proofs.M13.BasisContractions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {g : RiemannianMetric n M}
-
 
 noncomputable def ricciLinear (D : LeviCivitaData g) (x : M) :
     TangentSpace (𝓡 n) x →ₗ[ℝ] TangentSpace (𝓡 n) x →ₗ[ℝ] ℝ :=
@@ -39,7 +30,6 @@ noncomputable def ricciLinear (D : LeviCivitaData g) (x : M) :
 theorem ricciLinear_apply (D : LeviCivitaData g) (x : M)
     (u v : TangentSpace (𝓡 n) x) : ricciLinear D x u v = D.ricci x u v := rfl
 
-
 theorem ricci_eq_sum_basis (D : LeviCivitaData g) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
       ⟨g.toRiemannianMetric⟩
@@ -55,7 +45,6 @@ theorem ricci_eq_sum_basis (D : LeviCivitaData g) (x : M) :
   exact sum_bilinear_diagonal_basis_eq ((curvatureTensorLinear D x u).flip v)
     (g.orthonormalBasis x) b
 
-
 theorem scalarCurvature_eq_sum_basis (D : LeviCivitaData g) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
       ⟨g.toRiemannianMetric⟩
@@ -68,7 +57,6 @@ theorem scalarCurvature_eq_sum_basis (D : LeviCivitaData g) (x : M) :
       (TangentSpace (𝓡 n) : M → Type _) x
   intro ι _ b
   exact sum_bilinear_diagonal_basis_eq (ricciLinear D x) (g.orthonormalBasis x) b
-
 
 theorem curvatureTensorNorm_eq_sqrt_sum_basis (D : LeviCivitaData g) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

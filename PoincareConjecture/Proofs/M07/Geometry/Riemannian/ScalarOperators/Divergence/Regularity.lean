@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Localit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.TraceRegularity
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem contMDiff_laplacian (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (D.laplacian f) := by
@@ -34,12 +25,10 @@ theorem contMDiff_laplacian (D : LeviCivitaData g) {f : M → ℝ}
   unfold laplacian
   simpa [contMDiffOn_univ, RiemannianMetric.tensorTrace] using h
 
-
 theorem continuous_laplacian (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     Continuous (D.laplacian f) :=
   (D.contMDiff_laplacian hf).continuous
-
 
 theorem contMDiff_inner_gradient (D : LeviCivitaData g) {u v : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
@@ -51,13 +40,11 @@ theorem contMDiff_inner_gradient (D : LeviCivitaData g) {u v : M → ℝ}
     (D.contMDiffAt_gradient (hv x))
   simpa using (contMDiffAt_totalSpace.mp h).2
 
-
 theorem continuous_inner_gradient (D : LeviCivitaData g) {u v : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
     (hv : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ v) :
     Continuous (fun x => g.inner x (D.gradient u x) (D.gradient v x)) :=
   (D.contMDiff_inner_gradient hu hv).continuous
-
 
 theorem gradient_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hx : x ∉ tsupport f) :
@@ -66,7 +53,6 @@ theorem gradient_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
   rw [gradient, Poincare.mvfderiv_eq_of_eventuallyEq heq]
   change (g.inner x).inverse (mvfderiv (𝓡 n) (fun _ : M => (0 : ℝ)) x) = 0
   simp only [mvfderiv_const, map_zero]
-
 
 theorem laplacian_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hx : x ∉ tsupport f) :
@@ -82,7 +68,6 @@ theorem laplacian_eq_zero_of_notMem_tsupport (D : LeviCivitaData g)
     Poincare.mvfderiv_eq_of_eventuallyEq heq]
   simp
 
-
 theorem tsupport_laplacian_subset (D : LeviCivitaData g) (f : M → ℝ) :
     tsupport (D.laplacian f) ⊆ tsupport f := by
   apply closure_minimal _ (isClosed_tsupport _)
@@ -90,11 +75,9 @@ theorem tsupport_laplacian_subset (D : LeviCivitaData g) (f : M → ℝ) :
   by_contra hxf
   exact hx (D.laplacian_eq_zero_of_notMem_tsupport hxf)
 
-
 theorem hasCompactSupport_laplacian (D : LeviCivitaData g)
     {f : M → ℝ} (hf : HasCompactSupport f) : HasCompactSupport (D.laplacian f) :=
   hf.of_isClosed_subset (isClosed_tsupport _) (D.tsupport_laplacian_subset f)
-
 
 theorem tsupport_inner_gradient_subset_left (D : LeviCivitaData g)
     (u v : M → ℝ) :
@@ -104,12 +87,10 @@ theorem tsupport_inner_gradient_subset_left (D : LeviCivitaData g)
   by_contra hxu
   exact hx (by simp [D.gradient_eq_zero_of_notMem_tsupport hxu])
 
-
 theorem hasCompactSupport_inner_gradient (D : LeviCivitaData g)
     {u : M → ℝ} (hu : HasCompactSupport u) (v : M → ℝ) :
     HasCompactSupport (fun x => g.inner x (D.gradient u x) (D.gradient v x)) :=
   hu.of_isClosed_subset (isClosed_tsupport _) (D.tsupport_inner_gradient_subset_left u v)
-
 
 theorem gradient_finset_sum (D : LeviCivitaData g) {ι : Type*}
     (s : Finset ι) (f : ι → M → ℝ) (x : M)

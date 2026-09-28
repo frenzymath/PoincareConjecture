@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckInverseCenterChart
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateGerms
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +20,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
   (H : RescaledRawCylinderData (C := F.slice t)
     (U := strongNeckOpen S) (J := strongNeckBackwardInterval)
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
-
-
-
 
 theorem strongNeck_half_pullbackCoefficients
     {Phi : E3 → strongNeckOpen S} {z : E3}
@@ -57,10 +45,6 @@ theorem strongNeck_half_pullbackCoefficients
 
 variable {M : Type v} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem inverseStrongNeckCenterChart_relative_metric
     (hepsilon : epsilon ≤ (1 / 200 : ℝ)) {R : ℝ} (hR : R < 1 / 8)

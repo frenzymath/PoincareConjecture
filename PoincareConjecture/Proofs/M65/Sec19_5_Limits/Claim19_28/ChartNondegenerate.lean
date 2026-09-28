@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ChartLimit
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectedSpeed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m65ProjectedChart_metric_energy {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -43,8 +33,6 @@ theorem m65ProjectedChart_metric_energy {circumference : ℝ}
   rw [← M62.speed_sq F (fun y r => (c y r).1) t x]
   exact m65Projection_speed_sq P c hc ht x
 
-
-
 theorem m65ProjectedChart_joint_metric_energy {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) (p : M) {t x : ℝ} (ht : t ∈ Ioo a b)
@@ -62,9 +50,6 @@ theorem m65ProjectedChart_joint_metric_energy {circumference : ℝ}
   rw [m65ProjectedChartState_spatial_deriv P c hc p ht hx] at hd
   rw [← hd]
   exact m65ProjectedChart_metric_energy P c hc p (Ioo_subset_Icc_self ht) hx
-
-
-
 
 theorem m65ProjectedChart_limit_nondegenerate
     {circumference : ℕ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))

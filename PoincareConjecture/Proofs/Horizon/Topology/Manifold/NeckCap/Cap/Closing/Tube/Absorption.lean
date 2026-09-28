@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.ClosedSidePasting
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Models
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +40,6 @@ private theorem ambient_cylinder_chart (A : Opens M)
   · exact contMDiff_subtype_val.comp_contMDiffOn
       (F.contMDiff.contMDiffOn.mono inter_subset_left)
   · exact F.symm.contMDiff.comp_contMDiffOn (hi.mono inter_subset_left)
-
-
 
 theorem exists_absorption_of_matching_cylinders
     (U A B : Opens M) {K : Set M} (hK : IsClosed K) (hKU : K ⊆ U)

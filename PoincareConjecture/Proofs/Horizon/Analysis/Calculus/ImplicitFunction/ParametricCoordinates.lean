@@ -1,15 +1,4 @@
-
-
-
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,9 +11,6 @@ universe u v
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   {F : Type v} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_uniform_parametric_coordinates {H : ℝ × E → F}
     (hH : ContDiff ℝ ∞ H) (L : E ≃L[ℝ] F)

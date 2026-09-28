@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeTerms
 import Mathlib.Analysis.Calculus.SmoothSeries
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,12 +13,7 @@ namespace PoincareConjecture.M65Branch
 
 variable {B : Type*} [NormedRing B] [NormedAlgebra ℂ B]
 
-
-
 def cauchyGauge (A : ℂ → B) (z : ℂ) : B := ∑' n, cauchyTerm A n z
-
-
-
 
 theorem cauchyGauge_spec [CompleteSpace B] [NormOneClass B]
     {A : ℂ → B} {R B0 B1 δ : ℝ}

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.RadialNull
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.NullImage
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Metric
@@ -22,9 +10,6 @@ namespace Poincare.VolumeComparison
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
-
-
-
 
 def terminalRadialPoints (S : Set E) (R : ℝ) : Set E :=
   S ∩ ({v | v ≠ 0} ∩ ⋂ q : ℚ,
@@ -55,7 +40,6 @@ theorem zero_not_mem_terminalRadialPoints {S : Set E} {R : ℝ} :
     (0 : E) ∉ terminalRadialPoints S R := by
   intro h
   exact h.2.1 rfl
-
 
 theorem isRadialGraph_terminalRadialPoints {S : Set E} {R : ℝ}
     (hS : S ⊆ Metric.ball (0 : E) R)
@@ -96,8 +80,6 @@ theorem isRadialGraph_terminalRadialPoints {S : Set E} {R : ℝ}
   · exact hcontra hr₁ hr₂ hlt h₁ h₂
   · exact hcontra hr₂ hr₁ hgt h₂ h₁
 
-
-
 theorem addHaar_eq_zero_terminalRadialPoints
     {S : Set E} {R : ℝ} (μ : Measure E) [μ.IsAddHaarMeasure]
     (hS : MeasurableSet S)
@@ -108,8 +90,6 @@ theorem addHaar_eq_zero_terminalRadialPoints
     (measurableSet_terminalRadialPoints hS)
     zero_not_mem_terminalRadialPoints
     (isRadialGraph_terminalRadialPoints hSball hstar)
-
-
 
 def localMinimizingSet (d : E → ℝ≥0∞) (R : ℝ) : Set E :=
   Metric.ball (0 : E) R ∩ {v | d v = ENNReal.ofReal ‖v‖}
@@ -134,9 +114,6 @@ theorem measurableSet_localMinimizingSet
     by_cases hv : v ∈ U <;> simp [localMinimizingSet, U, d', hv]
   rw [hrewrite]
   exact Metric.isOpen_ball.measurableSet.inter heq
-
-
-
 
 theorem volumeMeasure_image_eq_zero_terminalRadialPoints
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

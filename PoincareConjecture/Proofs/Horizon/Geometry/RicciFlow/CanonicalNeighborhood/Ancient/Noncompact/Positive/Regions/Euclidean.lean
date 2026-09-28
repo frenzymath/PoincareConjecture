@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,7 +36,6 @@ theorem frontier_euclidean_inside :
       S.euclidean.symm '' G.neck.terminal_neck.central_sphere := by
   exact (S.euclidean.symm.toHomeomorph.image_frontier G.inside).symm.trans
     (congrArg (fun A => S.euclidean.symm '' A) G.inside_frontier)
-
 
 theorem nonempty_smoothDomain_euclidean_inside :
     Nonempty (Poincare.Manifold.SmoothDomain 3 (S.euclidean.symm '' G.inside)) := by
@@ -89,7 +78,6 @@ theorem nonempty_smoothDomain_euclidean_inside :
     S.euclidean.symm.continuous.continuousOn
   simpa only [G.interior_euclidean_closed_side] using
     Poincare.Manifold.nonempty_smoothDomain_interior (n := 2) hc hconn hemb
-
 
 theorem euclidean_boundary_isSmoothEmbedding :
     Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞

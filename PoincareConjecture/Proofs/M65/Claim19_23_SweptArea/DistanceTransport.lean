@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FlowMetricScaling
 import PoincareConjecture.Proofs.M65.Mathlib.RiemannianDistanceComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65FlowTangentNorm_comparison {a b : ℝ} (F : RicciFlow n M (Icc a b))
     {K0 K1 K2 : ℝ} (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -39,8 +29,6 @@ theorem m65FlowTangentNorm_comparison {a b : ℝ} (F : RicciFlow n M (Icc a b))
         congr 1
         ring
       rw [Real.sqrt_mul (Real.exp_nonneg _), hexp, Real.sqrt_sq (Real.exp_nonneg _)]
-
-
 
 theorem m65FlowEdist_comparison {a b : ℝ} (F : RicciFlow n M (Icc a b))
     {K0 K1 K2 : ℝ} (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)

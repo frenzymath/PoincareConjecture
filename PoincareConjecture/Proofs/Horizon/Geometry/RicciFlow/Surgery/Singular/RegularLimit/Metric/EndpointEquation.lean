@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.TimeFamily
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -27,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem terminalMetricFamily_inner_of_ne
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -49,7 +40,6 @@ theorem terminalMetricFamily_hasDerivAt_of_lt
     (Ico_mem_nhds_iff.mpr ht)).congr_of_eventuallyEq
   filter_upwards [Iio_mem_nhds ht.2] with s hs
   exact H.terminalMetricFamily_inner_of_ne P04 (ne_of_lt hs) x v w
-
 
 theorem terminalMetricFamily_endpoint_equation
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronCofaceConstancy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -15,8 +7,6 @@ open Set PreAbstractSimplicialComplex.ModTwoCochains
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*}
-
-
 
 def tetrahedronGraph (A : PreAbstractSimplicialComplex ι) : SimpleGraph (Tetrahedron A) where
   Adj q r := q ≠ r ∧ ∃ t : Triangle A, t.val ⊆ q.val ∧ t.val ⊆ r.val
@@ -31,8 +21,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
 
 theorem tetrahedronGraph_preconnected_of_links
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 4)
@@ -52,8 +40,6 @@ theorem tetrahedronGraph_preconnected_of_links
         fun h => h.trans hadj.reachable.symm⟩
   exact heq ▸ SimpleGraph.Reachable.refl q
 
-
-
 theorem tetrahedronGraph_connected_of_links
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 4)
     (hconn : K.vertexAbstractComplex.edgeGraph.Connected)
@@ -66,9 +52,6 @@ theorem tetrahedronGraph_connected_of_links
   exact ⟨K.tetrahedronGraph_preconnected_of_links hpure hconn.preconnected hlinks⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem tetrahedronGraph_connected_of_isConnected
     (hK : K.faces.Finite)

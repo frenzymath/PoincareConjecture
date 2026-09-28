@@ -1,15 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.PathHomotopy
 
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
-
-
 
 theorem convex_end_selects_nonnull_spanning_rim
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

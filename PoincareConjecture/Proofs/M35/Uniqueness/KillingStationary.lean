@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingBochner
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Curvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 local notation:max "V" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem inner_ricciSharp {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (x v w : V n) :
@@ -37,8 +25,6 @@ theorem inner_ricciSharp {n : ℕ} {g : RiemannianMetric n (V n)}
   simp only [map_sum, map_smul, sum_apply, smul_apply, smul_eq_mul]
   rw [← DeTurckNative.intrinsicRicci_symm D x v w, ← h]
   exact Finset.sum_congr rfl (fun i _ => mul_comm _ _)
-
-
 
 theorem killing_hessian_trace_add_ricciSharp_eq_zero {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
@@ -62,9 +48,6 @@ theorem killing_hessian_trace_add_ricciSharp_eq_zero {n : ℕ}
         exact killing_hessian_trace_pair D X hX hkill x w
   by_contra hne
   exact (ne_of_gt (g.pos x _ hne)) (hpair _)
-
-
-
 
 theorem evolving_killing_field_stationary
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

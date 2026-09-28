@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBoundaryMembership
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Filter
@@ -28,8 +19,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem exists_frontier_star_plane_chart (p : (T.marked 2).vertices)
     (hpfront : (T.inverse p : X) ∈ frontier R) :

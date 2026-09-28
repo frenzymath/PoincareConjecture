@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartLipschitz
 import PoincareConjecture.Proofs.M10.NullTransport
 import Mathlib.Analysis.Calculus.Rademacher
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter

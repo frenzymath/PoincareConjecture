@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalLocalGeometry
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.NormalCoverService
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem exists_terminalComponent_normal_covers
     (hNormal : UniformNormalCoverService.{u})

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GeometricPathIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem isFinitePLBallPair_of_pure_edges_with_leaf
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

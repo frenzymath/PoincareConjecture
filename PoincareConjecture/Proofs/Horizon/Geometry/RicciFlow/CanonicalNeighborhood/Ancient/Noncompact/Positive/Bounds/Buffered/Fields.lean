@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Bounds.Fields
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Cap.Geometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -71,7 +60,6 @@ theorem scalarSup_pos_le_source
 
 end SoulCapGeometry
 
-
 structure BufferedRegionBounds {K : AncientKappaSolution 3 M}
     {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {delta epsilon D R : ℝ}
     {G : SoulNeckRegion K S delta D R} (H : SoulCapGeometry G epsilon) (C : ℝ) : Prop where
@@ -99,7 +87,6 @@ structure BufferedRegionBounds {K : AncientKappaSolution 3 M}
     |(K.flow.connection 0).laplacian (K.flow.connection 0).scalarCurvature x +
       2 * (K.flow.connection 0).ricciNormSq x| ≤
       B * (K.flow.connection 0).scalarCurvature x ^ 2
-
 
 theorem uniform_buffered_core_radius_fields_of_services
     (P : NoncompactKappaServices.{u}) :
@@ -142,8 +129,6 @@ theorem uniform_buffered_core_radius_fields_of_services
     hsubset.trans (union_subset (fun _ hx => Or.inl hx) H.boundary_subset), hcompact,
     hvolume K hnoncompact 0 le_rfl p (radius p) (hspec p).1 (hspec p).2⟩
 
-
-
 theorem uniform_buffered_core_radius_fields
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ epsilon₀ C kappa : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -164,7 +149,6 @@ theorem uniform_buffered_core_radius_fields
           ENNReal.ofReal (kappa * radius p ^ 3) ≤
             calibratedMetricVolume (K.flow.metric 0) ((K.flow.metric 0).ball p (radius p)) := by
   exact uniform_buffered_core_radius_fields_of_services P.noncompactServices
-
 
 theorem uniform_buffered_intrinsic_diameter_bound_of_services
     (P : NoncompactKappaServices.{u}) {R : ℝ} (hR : 0 < R) :
@@ -204,8 +188,6 @@ theorem uniform_buffered_intrinsic_diameter_bound_of_services
   simpa only [mul_assoc, soulScalar] using
     mul_le_mul_of_nonneg_left hm (show 0 ≤ 9 * R by positivity)
 
-
-
 theorem uniform_buffered_intrinsic_diameter_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {R : ℝ} (hR : 0 < R) :
     ∃ C : ℝ, 0 < C ∧
@@ -220,7 +202,6 @@ theorem uniform_buffered_intrinsic_diameter_bound
           ENNReal.ofReal (C * scalarCurvatureSupOn (K.flow.metric 0) (K.flow.connection 0)
             H.carrier ^ (-1 / 2 : ℝ)) := by
   exact uniform_buffered_intrinsic_diameter_bound_of_services P.noncompactServices hR
-
 
 theorem uniform_bufferedRegionBounds_of_services
     (P : NoncompactKappaServices.{u}) :
@@ -279,8 +260,6 @@ theorem uniform_bufferedRegionBounds_of_services
     core_ball_fields := ⟨radius, kappa, (inv_anti₀ hCball hballC).trans_lt hstrict, hradius⟩
     gradient_bound := ⟨B, hB.trans_le hderivC, fun x _ => (hfields x).2.1⟩
     laplacian_bound := ⟨B, hB.trans_le hderivC, fun x _ => (hfields x).2.2⟩ }
-
-
 
 theorem uniform_bufferedRegionBounds
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

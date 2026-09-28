@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.PositiveHistoryAnalytics
 import PoincareConjecture.Proofs.M47.SeedTube
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_old_history_analytic_bound
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

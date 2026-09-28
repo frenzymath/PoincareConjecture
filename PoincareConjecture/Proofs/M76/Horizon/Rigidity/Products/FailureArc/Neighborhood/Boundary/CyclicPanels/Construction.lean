@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Boundary.CyclicPanels.Annulus
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

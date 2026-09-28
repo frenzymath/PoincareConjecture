@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Lemma12_6_Curvature.Nonnegative
 import PoincareConjecture.Proofs.M34.Standard.SectionalPositiveTransfer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M34
 
 open M04
-
-
 
 theorem initial_modelLeastSectional_tip_pos (g0 : StandardInitialMetric) :
     0 < modelLeastSectional g0.connection 0 := by
@@ -56,8 +45,6 @@ theorem initial_modelLeastSectional_tip_pos (g0 : StandardInitialMetric) :
     exact (le_div_iff₀ (metricGram_pos_of_linearIndependent g0.metric 0 p.1 p.2
       (modelOrthonormalPairs_linearIndependent hp))).mpr (hbar p.1 p.2)
   exact lt_of_lt_of_le (by norm_num) hleast
-
-
 
 theorem partialFlow_positiveSectional (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

@@ -1,13 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorBundle.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,9 +18,7 @@ variable {B C EB EC HB HC F : Type*}
   [∀ b, TopologicalSpace (E b)] [TopologicalSpace (TotalSpace F E)]
   [FiberBundle F E] {k : ℕ∞ω}
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem contMDiffWithinAt_pullback_section_iff
     (f : ContMDiffMap IC IB C B k) (v : ∀ z : C, E (f z))

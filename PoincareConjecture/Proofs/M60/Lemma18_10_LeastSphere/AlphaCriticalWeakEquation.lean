@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalFluxChain
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetWeakCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,31 +13,22 @@ namespace PoincareConjecture.M60
 
 open Poincare.Analysis.Sobolev.Weak
 
-
-
 def suAlphaJetEquiv {n : ℕ} : EuclideanSpace ℝ (Fin ((2 + n) + (n + n))) ≃L[ℝ]
     ((LoopPlane × EuclideanSpace ℝ (Fin n)) ×
       (EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n))) :=
   EuclideanSpace.finAddEquivProd.trans
     (EuclideanSpace.finAddEquivProd.prodCongr EuclideanSpace.finAddEquivProd)
 
-
-
 def suWeakAlphaJet {n : ℕ} (u : LoopPlane → EuclideanSpace ℝ (Fin n))
     (V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin n))
     (x : LoopPlane) : EuclideanSpace ℝ (Fin ((2 + n) + (n + n))) :=
   suAlphaJetEquiv.symm ((x, u x), (V 0 x, V 1 x))
-
-
 
 def suWeakAlphaJetColumn {n : ℕ}
     (V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin n))
     (H : Fin 2 → Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin n))
     (i : Fin 2) (x : LoopPlane) : EuclideanSpace ℝ (Fin ((2 + n) + (n + n))) :=
   suAlphaJetEquiv.symm ((EuclideanSpace.single i 1, V i x), (H 0 i x, H 1 i x))
-
-
-
 
 theorem SUInitialGain.weak_jet_data {n : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin n)}
@@ -108,9 +90,6 @@ local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
 
 local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem suAlphaJetFlux_extension
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -206,9 +185,6 @@ theorem suAlphaJetFlux_extension
     rw [hw]
     rfl
 
-
-
-
 def suAlphaJetFlux
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -216,8 +192,6 @@ def suAlphaJetFlux
     (z : EuclideanSpace ℝ (Fin ((2 + n) + (n + n)))) : ℝ :=
   suAlphaCoordinateFlux g b alpha (suAlphaJetEquiv z).1 (suAlphaJetEquiv z).2
     (if i = 0 then (EuclideanSpace.single a 1, 0) else (0, EuclideanSpace.single a 1))
-
-
 
 theorem SUWeakAlphaCoordinate.jet_flux_eq
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -230,9 +204,6 @@ theorem SUWeakAlphaCoordinate.jet_flux_eq
   unfold suAlphaJetFlux suWeakAlphaJet
   rw [suAlphaJetEquiv.apply_symm_apply, suAlphaCoordinateFlux_apply]
   fin_cases i <;> simp [SUWeakAlphaCoordinate.flux, Fin.sum_univ_two]
-
-
-
 
 theorem SUInitialGain.alpha_flux_weak_derivative
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -279,9 +250,6 @@ theorem SUInitialGain.alpha_flux_weak_derivative
   filter_upwards [ae_restrict_mem Metric.isOpen_ball.measurableSet] with x hx
   rw [← S.jet_flux_eq a k x]
   exact (heq x (Metric.ball_subset_closedBall (hsub hx))).self_of_nhds.symm
-
-
-
 
 theorem SUInitialGain.alpha_flux_equation_ae
     {n : ℕ} {M : Type*} [TopologicalSpace M]

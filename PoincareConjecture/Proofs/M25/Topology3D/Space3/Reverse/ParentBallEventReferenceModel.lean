@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallNativeC
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem SurgeryCapProfile.closedBall_model_bounds
     (P : SurgeryCapProfile) :
@@ -109,7 +99,6 @@ theorem SurgeryCapProfile.closedBall_model_bounds
         mul_le_mul_of_nonneg_right (P.horizontal_bound p.2 hz) hs.le
       _ = 1 := inv_mul_cancel₀ hs.ne'
 
-
 noncomputable def RegularSurgeryEvent.canonicalCapBall
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (E : RegularSurgeryEvent parent u) (j : Fin 2) :
@@ -127,7 +116,6 @@ noncomputable def RegularSurgeryEvent.canonicalCapBall
   have hfirst : ‖(D y).1‖ ≤ 1 := hbound.1
   exact ⟨mem_univ _, E.data.tube_source
     ⟨mem_closedBall_zero_iff.mpr hfirst, mem_univ _⟩⟩
-
 
 theorem RegularSurgeryEvent.canonicalCapBall_spec
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

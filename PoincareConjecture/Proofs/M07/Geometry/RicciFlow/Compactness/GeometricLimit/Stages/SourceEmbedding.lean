@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Embedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal Manifold ContDiff
@@ -167,8 +156,6 @@ theorem tendstoUniformlyOn_chartParametrization_displacement
   exact tendstoUniformlyOn_source_displacement_of_corrections (fun k => he k j) hb
 
 include hD he hc hlower hopen hconn hsmooth in
-
-
 
 theorem exists_two_chart_source_embedding_sequence
     (hbound : ∀ i j, Poincare.Analysis.Calculus.LocallyEventuallyBoundedDerivatives

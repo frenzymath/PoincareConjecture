@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.LineLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.OppositeSegments
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +12,6 @@ open scoped Manifold ContDiff Topology Bundle ENNReal
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem properSpace_zero_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -53,9 +39,6 @@ theorem properSpace_zero_of_source_ball_coverage
   rw [hball] at hcompact
   apply hcompact.of_isClosed_subset isClosed_closedBall
   exact (closedBall_subset_ball (by linarith : (i : ℝ) < i + 1)).trans subset_closure
-
-
-
 
 theorem exists_isometric_line_of_source_arcs
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -113,9 +96,6 @@ theorem exists_isometric_line_of_source_arcs
     (hbounded s (by linarith [abs_nonneg t]))
     (hbounded t (by linarith [abs_nonneg s])) (hdist s t)
   exact hh
-
-
-
 
 theorem exists_isometric_line_of_opposite_segments
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

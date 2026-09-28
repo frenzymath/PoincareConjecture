@@ -13,8 +13,6 @@ local notation "Left" => Set.prod Q (Icc (-1 : ℝ) (-1 / 2))
 local notation "Middle" => Set.prod Q (Icc (-1 / 2 : ℝ) 0)
 local notation "Right" => Set.prod Q (Icc (0 : ℝ) 1)
 
-
-
 theorem resolving_middle_singleton_of_full_tube_preimage
     {E X : Type*} [TopologicalSpace E] {O I U A B : Set E} {D : Set P2}
     {f : E → X} {a : P2 → X} {g : (V2 × ℝ) → X} {tube : Set X}

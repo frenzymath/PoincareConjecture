@@ -2,13 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

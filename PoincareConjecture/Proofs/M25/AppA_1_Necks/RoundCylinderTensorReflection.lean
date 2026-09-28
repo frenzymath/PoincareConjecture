@@ -1,26 +1,14 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RoundCylinderReflection
 import Mathlib.Algebra.BigOperators.Fin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
 
-
 noncomputable def roundCylinderSlotSign {r : ℕ} (a : Fin r → Fin 3) : ℝ :=
   ∏ i, roundCylinderAxialSign (a i)
-
-
 
 theorem roundCylinderSlotSign_mul_self {r : ℕ} (a : Fin r → Fin 3) :
     roundCylinderSlotSign a * roundCylinderSlotSign a = 1 := by
@@ -30,15 +18,11 @@ theorem roundCylinderSlotSign_mul_self {r : ℕ} (a : Fin r → Fin 3) :
   intro i _
   by_cases h : a i = 2 <;> simp [roundCylinderAxialSign, h]
 
-
-
 theorem roundCylinderSlotSign_succ {r : ℕ} (a : Fin (r + 1) → Fin 3) :
     roundCylinderSlotSign a =
       roundCylinderAxialSign (a 0) *
         roundCylinderSlotSign (fun i : Fin r => a i.succ) :=
   Fin.prod_univ_succ _
-
-
 
 theorem roundCylinderSlotSign_update {r : ℕ}
     (a : Fin r → Fin 3) (i : Fin r) (j : Fin 3) :
@@ -60,14 +44,10 @@ theorem roundCylinderSlotSign_update {r : ℕ}
   rw [hnew, hold]
   by_cases h : a i = 2 <;> simp [roundCylinderAxialSign, h]
 
-
-
 noncomputable def roundCylinderTensorReflection {r : ℕ}
     (T : RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ)
     (p : RoundCylinderCoordinates) (a : Fin r → Fin 3) : ℝ :=
   roundCylinderSlotSign a * T (roundCylinderCoordinateReflection p) a
-
-
 
 theorem roundCylinderTensorDerivative_axialReflection
     (q : UnitTwoSphere) {r : ℕ}
@@ -113,8 +93,6 @@ theorem roundCylinderTensorDerivative_axialReflection
   simp_rw [hterm, ← Finset.mul_sum]
   rw [roundCylinderSlotSign_succ]
   ring
-
-
 
 theorem roundCylinderTensorNormSquared_axialReflection
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) {r : ℕ}

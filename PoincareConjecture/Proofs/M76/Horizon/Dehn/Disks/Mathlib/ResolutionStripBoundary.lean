@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripArmCharts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.TubeArmOrientation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,7 +10,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def stripEnds : Set P2 := ({0, 1} : Set ℝ) ×ˢ Icc (-1 : ℝ) 1
 
 theorem stripEnds_subset_source : stripEnds ⊆ source := by
@@ -27,7 +17,6 @@ theorem stripEnds_subset_source : stripEnds ⊆ source := by
   rcases hx with hx | hx
   · exact ⟨by rw [hx]; norm_num, hu⟩
   · exact ⟨by rw [hx]; norm_num, hu⟩
-
 
 theorem stripRim_eq_ends_union_arms : stripRim = (stripEnds ∪ arm (-1)) ∪ arm 1 := by
   ext x
@@ -45,8 +34,6 @@ theorem resolutionMap_longitudinal (b : ℝ) (alternatePair positive : Bool) (p 
     (resolutionMap b alternatePair positive p).2 = p.1 := by
   cases alternatePair <;> rfl
 
-
-
 theorem reoriented_tube_frontier_iff
     {X : Type*} {F : Set X} (τ : C3 → X)
     (hτF : ∀ z ∈ tube, τ z ∈ F ↔ z.2 = 0 ∨ z.2 = 1)
@@ -55,7 +42,6 @@ theorem reoriented_tube_frontier_iff
   have h := hτF _ ((tubeArmOrientation_mem_tube s0 s1 z).mpr hz)
   rwa [tubeArmOrientation_longitudinal] at h
 
-
 theorem reoriented_tube_marked_ends
     {X : Type*} {Fmark : Set X} (τ : C3 → X)
     (hτmark : ∀ z ∈ tube, z.2 = 0 ∨ z.2 = 1 → τ z ∈ Fmark)
@@ -63,8 +49,6 @@ theorem reoriented_tube_marked_ends
     (τ ∘ tubeArmOrientation s0 s1) z ∈ Fmark := by
   apply hτmark _ ((tubeArmOrientation_mem_tube s0 s1 z).mpr hz)
   simpa only [tubeArmOrientation_longitudinal] using ht
-
-
 
 theorem resolution_strip_frontier_preimage
     {X : Type*} {F : Set X} (τ : C3 → X)
@@ -82,8 +66,6 @@ theorem resolution_strip_frontier_preimage
     refine ⟨hpS, (hτF _ (resolutionMap_mapsTo_tube hb alternatePair positive hpS)).mpr ?_⟩
     simpa only [resolutionMap_longitudinal, mem_insert_iff, mem_singleton_iff] using hp.1
 
-
-
 theorem resolution_strip_ends_in_mark
     {X : Type*} {Fmark : Set X} (τ : C3 → X)
     (hτmark : ∀ z ∈ tube, z.2 = 0 ∨ z.2 = 1 → τ z ∈ Fmark)
@@ -92,8 +74,6 @@ theorem resolution_strip_ends_in_mark
   intro p hp
   apply hτmark _ (resolutionMap_mapsTo_tube hb alternatePair positive (stripEnds_subset_source hp))
   simpa only [resolutionMap_longitudinal, mem_insert_iff, mem_singleton_iff] using hp.1
-
-
 
 theorem resolution_strip_arm_frontier_inter
     {X : Type*} {F : Set X} (τ : C3 → X)
@@ -107,14 +87,12 @@ theorem resolution_strip_arm_frontier_inter
     simpa only [resolutionMap_longitudinal, mem_preimage, id_eq, Function.comp_apply] using h
   simpa only [id_eq, image_id'] using embedded_strip_arm_inter_old_rim id hQ u hu
 
-
 theorem retained_piece_frontier_preimage
     {E X : Type*} {S Q A : Set E} {F : Set X} (f : E → X)
     (hf : ∀ x ∈ S, f x ∈ F ↔ x ∈ Q) (hAS : A ⊆ S) :
     A ∩ f ⁻¹' F = A ∩ Q := by
   ext x
   exact and_congr_right fun hx ↦ hf x (hAS hx)
-
 
 theorem original_strip_arm_frontier_inter
     {E X : Type*} {S Q : Set E} {F : Set X} (f : E → X) (c : P2 → E)

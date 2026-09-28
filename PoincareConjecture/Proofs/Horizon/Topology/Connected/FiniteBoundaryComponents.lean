@@ -2,12 +2,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,8 +9,6 @@ open Set
 open scoped BigOperators
 
 namespace Poincare.Topology
-
-
 
 theorem card_preimage_eq_two_of_range_inter_eq_pair
     {I X : Type*} {b : I → X} (hb : Function.Injective b) {C : Set X}
@@ -26,7 +18,6 @@ theorem card_preimage_eq_two_of_range_inter_eq_pair
   rw [← Nat.card_image_of_injective hb, image_preimage_eq_inter_range, inter_comm,
     hinter]
   exact Set.ncard_pair hpq
-
 
 theorem card_eq_two_of_card_four_of_card_fiber_two
     {I J : Type*} [Finite I] (f : I → J) (hf : Function.Surjective f)
@@ -41,8 +32,6 @@ theorem card_eq_two_of_card_four_of_card_fiber_two
   exact Nat.eq_of_mul_eq_mul_right (by decide : 0 < 2)
     (show Nat.card J * 2 = 2 * 2 by simpa [Nat.card_eq_fintype_card] using h)
 
-
-
 theorem connectedComponents_eq_iff_mem
     {X : Type*} [TopologicalSpace X] {K : Set X} (p q : K) :
     ConnectedComponents.mk p = ConnectedComponents.mk q ↔
@@ -53,8 +42,6 @@ theorem connectedComponents_eq_iff_mem
   · rintro ⟨r, hr, heq⟩
     have : r = p := Subtype.ext heq
     exact this ▸ hr
-
-
 
 theorem card_connectedComponents_eq_two_of_boundary_fibers
     {X I : Type*} [TopologicalSpace X] [Finite I] {K : Set X}
@@ -82,7 +69,6 @@ theorem card_connectedComponents_eq_two_of_boundary_fibers
   intro c
   obtain ⟨q, rfl⟩ := ConnectedComponents.surjective_coe c
   exact hcard q
-
 
 theorem nonempty_connectedComponents_equiv_fin_two_of_boundary_fibers
     {X I : Type*} [TopologicalSpace X] [Finite I] {K : Set X}

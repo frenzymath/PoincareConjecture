@@ -1,8 +1,3 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Producer
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.RescaledKernel
 open MeasureTheory Set
@@ -122,75 +117,6 @@ end Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem memLp_of_abs_le_of_memLp
     {α : Type*} [MeasurableSpace α] {μ : Measure α}
     {c g : α → ℝ} (hc : AEStronglyMeasurable c μ)
@@ -241,9 +167,6 @@ theorem memLp_lebesgueConvolution_flux_commutator
       lebesgueConvolution (rescaledKernel ρ r)
         (fun y => fderiv ℝ q y (0 : Spacetime n) * u y) x) 2 volume := by
   exact memLp_of_abs_le_of_memLp hC hpoint hg
-
-
-
 
 theorem memLp_lebesgueConvolution_flux_commutator_of_integrable_majorant
     {n : ℕ} {q u ρ : Spacetime n → ℝ} {L : ℝ≥0} {r : ℝ}

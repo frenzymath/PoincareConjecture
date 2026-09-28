@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.CubeCollarInnerExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +16,6 @@ local notation "Q0" => sphere (0 : V3) (7 / 8)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {C S : Set X}
-
-
-
 
 theorem ChartwisePLBall.exists_inner_cube_map (b : ChartwisePLBall e C S)
     (β : Q ≃ₜ Q0) (A : B0 ≃ₜ B) (hA : A.IsFinitePL)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.PointSelection
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +24,6 @@ private theorem continuous_terminal_scalar
     (f := fun x : M => (b, x))
     (continuous_const.prodMk continuous_id).continuousOn
     (fun x _ => ⟨by simp only [mem_Iic, le_refl], mem_univ x⟩)
-
-
 
 theorem exists_backward_controlled_point_of_m23_predecessors
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -74,9 +61,6 @@ theorem exists_backward_controlled_point_of_m23_predecessors
   rw [abs_of_nonneg (show 0 ≤ (F.connection s).curvatureTensorNorm y from
     Real.sqrt_nonneg _)]
   exact (hnorm s hs y).trans ((hmono s hs y).trans (hcontrol y hy))
-
-
-
 
 theorem exists_escaping_backward_controlled_sequence_of_m23_predecessors
     (P : M23NormalizedKappaCompactnessPredecessors)

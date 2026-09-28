@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

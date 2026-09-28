@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.FlatCellComposition
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlatteningCells
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,8 +10,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
-
-
 
 theorem M63GeodesicPolygon.integer_cell (polygon : M63GeodesicPolygon g D N)
     (hN : 0 < N) (j : ℤ) :
@@ -43,15 +32,11 @@ theorem M63GeodesicPolygon.integer_cell (polygon : M63GeodesicPolygon g D N)
   rw [hshift, polygon.periodic.int_mul (j / (N : ℤ))]
   exact polygon.cell_agreement i s hs
 
-
-
 theorem m63FlattenedPolygon_periodic (polygon : M63GeodesicPolygon g D N) (hN : 0 < N) :
     Function.Periodic (m63FlattenedPolygon polygon) curvePeriod := by
   intro x
   change polygon.map (m63Flattening N (x + curvePeriod)) = polygon.map (m63Flattening N x)
   rw [m63Flattening_period_shift hN, polygon.periodic]
-
-
 
 theorem m63FlattenedPolygon_smooth (polygon : M63GeodesicPolygon g D N) (hN : 0 < N) :
     ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) ∞ (m63FlattenedPolygon polygon) := by

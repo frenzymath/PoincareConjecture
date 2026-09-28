@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusLeaf
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTriangleOwnerIntervals
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SurfaceDualEdgeGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -60,9 +49,6 @@ theorem selected_unselected_dual_interval_on_leaf_rim
   exact ⟨t, ht, u, hu, htc, huc, hpt, hpu, hcent, hpair, hfacet, hcontact, hrim'⟩
 
 open PreAbstractSimplicialComplex.ModTwoCochains
-
-
-
 
 theorem residual_owner_interval_on_leaf_rim
     {K : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype K.vertices]

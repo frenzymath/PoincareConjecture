@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckConnectionBounds
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRicciFrame
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 private theorem abs_difference_le (a b : ℝ) : |a - b| ≤ |a| + |b| := by
   simpa only [sub_eq_add_neg, abs_neg] using abs_add_le a (-b)
-
 
 theorem neck_ricci_diagonal_error_bound {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1) (x : E) (e : E ≃L[ℝ] E)
@@ -85,7 +76,6 @@ theorem neck_ricci_diagonal_error_bound {g0 g1 : RiemannianMetric 3 E}
     _ ≤ ∑ _k : Fin 3, (2 * D + 3 * (2 * (9 * gamma) ^ 2)) :=
       Finset.sum_le_sum fun k _ => hrow k
     _ = _ := by simp [D]; ring
-
 
 theorem neck_ricci_diagonal_error_small {g0 g1 : RiemannianMetric 3 E}
     (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1) (x : E) (e : E ≃L[ℝ] E)

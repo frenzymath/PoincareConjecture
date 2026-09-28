@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryAnchoredEntry
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerAnchors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_source_anchored_entry_below_cap_graph_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

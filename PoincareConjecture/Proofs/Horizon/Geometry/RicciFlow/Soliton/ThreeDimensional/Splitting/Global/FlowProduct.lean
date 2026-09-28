@@ -8,17 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGr
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Nonflatness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Classification
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +21,6 @@ universe u
 namespace PoincareConjecture.RicciFlow.Splitting
 
 open RiemannianMetric
-
-
 
 theorem exists_connectedComponent_ancient_product
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
@@ -107,8 +94,6 @@ theorem exists_connectedComponent_ancient_product
   rw [heq]
   exact gradientFlow_product_metric hrs (huG t ht) (hzG t ht) hs hΦt h0 z v w
 
-
-
 theorem exists_unitRicciKernelFlow_component_ancient_product
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -157,9 +142,6 @@ theorem exists_unitRicciKernelFlow_component_ancient_product
   intro t ht q
   rw [unitRicciKernelFlow_curvatureTensorNorm]
   exact hbound t ht _
-
-
-
 
 theorem exists_ancientRound_product_of_parallel_coordinate
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M] [ConnectedSpace M]

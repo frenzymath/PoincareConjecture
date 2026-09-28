@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedDistance
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckBalancedScale
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -171,9 +160,6 @@ private theorem exists_positive_quarter_subset_accuracy :
 
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
-
-
-
 
 theorem exists_source_frontier_quarter_accuracy (S : CounterexampleNeckSegment E) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

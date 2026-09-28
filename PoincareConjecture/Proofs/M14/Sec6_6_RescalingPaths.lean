@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingGeometry
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
-
-
 
 theorem rescalingRawIntegrand (γ : ℝ → G.Point) (v : ∀ t, G.Horizontal (γ t)) (t : ℝ) :
     M14RawLIntegrand (rescalingTransport hM12 hM13 G Q hQ a)
@@ -47,8 +36,6 @@ theorem rescalingRawIntegrand (γ : ℝ → G.Point) (v : ∀ t, G.Horizontal (�
   rw [hs]
   field_simp [hQ.ne']
 
-
-
 theorem rescalingRawIntegrand_integrable
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) :
     IntervalIntegrable
@@ -66,8 +53,6 @@ theorem rescalingRawIntegrand_integrable
     funext (rescalingRawIntegrand hM12 hM13 G Q hQ a p.curve p.horizontal_velocity)
   rw [heq]
   simpa only [div_eq_mul_inv, inv_inv, mul_comm τ₁ Q, mul_comm τ₂ Q] using h
-
-
 
 noncomputable def rescalingPath
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) :
@@ -135,15 +120,11 @@ noncomputable def rescalingPath
         Q⁻¹ • (p.horizontal_velocity (s / Q)).val
     simp only [smul_add, smul_neg, one_div]
 
-
-
 theorem rescalingPath_curve
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) (s : ℝ) :
     (rescalingPath hM12 hM13 G Q hQ a p).curve (Q * s) = p.curve s := by
   change p.curve (Q * s / Q) = p.curve s
   rw [mul_div_cancel_left₀ _ hQ.ne']
-
-
 
 theorem rescalingPath_action
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y) :

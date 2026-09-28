@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularitySm
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalGreen
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadialEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -21,9 +11,6 @@ universe u
 
 namespace PoincareConjecture.M65Interior
 
-
-
-
 theorem embeddedEnergyDensity_nonneg {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M] {N : ℕ} {α : Type*}
     (g : RiemannianMetric 3 M) (e : M → EuclideanSpace ℝ (Fin N))
@@ -32,11 +19,6 @@ theorem embeddedEnergyDensity_nonneg {M : Type u} [TopologicalSpace M]
   unfold m65EmbeddedEnergyDensity
   exact mul_nonneg (by norm_num) (Finset.sum_nonneg fun i _ =>
     m65EmbeddingMetric_nonneg g e (q z) (d i z))
-
-
-
-
-
 
 theorem localMinimum_radial_energy_inequality
     {M : Type u} [TopologicalSpace M]

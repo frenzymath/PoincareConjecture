@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.NativeLevelGeometry
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceHighRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem saddle_nested_reference_positive_level_connected_of_roots
     (ws wm : ℝ)

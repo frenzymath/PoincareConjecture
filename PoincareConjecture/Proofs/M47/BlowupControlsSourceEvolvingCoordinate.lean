@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingTensor
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineFields
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +30,6 @@ private theorem source_affine_metric_pullback
   have hchain := mfderiv_comp z hf hA
   simp only [roundCylinderPullback, neckAxialTensorPullback, Function.comp_apply,
     hchain, ContinuousLinearMap.comp_apply, neckAxialSpaceMap_mfderiv]
-
-
 
 theorem sourceCapNeckTensor_affine_coordinate
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

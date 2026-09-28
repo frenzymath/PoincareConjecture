@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Quotient.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Quotient.DeckAction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,7 +46,6 @@ theorem compactRound_sectionalCurvature
   obtain ⟨c, hc, hcurv⟩ := hround
   refine ⟨c, hc, fun x v w hv hw hvw => ?_⟩
   simp [LeviCivitaData.sectionalCurvature, hcurv, hv, hw, hvw]
-
 
 theorem compactRoundAncientQuotient
     (K : AncientKappaSolution 3 M) (hcompact : IsCompact (Set.univ : Set M))

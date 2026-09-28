@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.StandardCylinderPatch
 
 variable {length : ℝ} {center : StandardCapSpace}
-
-
 
 theorem coordinate_localDiffeomorph (N : StandardCylinderPatch length center) :
     IsLocalDiffeomorphOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ N.coordinate
@@ -43,8 +32,6 @@ theorem coordinate_localDiffeomorph (N : StandardCylinderPatch length center) :
   intro z
   exact ⟨P, z.property, fun _ _ => rfl⟩
 
-
-
 theorem euclideanChart_contMDiffAt (N : StandardCylinderPatch length center)
     (q : UnitTwoSphere) {p : EuclideanSpace ℝ (Fin 3)}
     (hp : (M35.cylinderCoordinateEquiv p).2 ∈ Ioo (-length) length) :
@@ -52,8 +39,6 @@ theorem euclideanChart_contMDiffAt (N : StandardCylinderPatch length center)
   have hc := (N.coordinate_localDiffeomorph
     ⟨M35.cylinderChart q p, ⟨mem_univ _, hp⟩⟩).contMDiffAt
   exact hc.comp p (M35.cylinderChart_contMDiff q p)
-
-
 
 theorem euclideanChart_mfderiv_invertible (N : StandardCylinderPatch length center)
     (q : UnitTwoSphere) {p : EuclideanSpace ℝ (Fin 3)}
@@ -67,8 +52,6 @@ theorem euclideanChart_mfderiv_invertible (N : StandardCylinderPatch length cent
   rw [mfderiv_comp p (hc.mdifferentiableAt (by simp))
     ((M35.cylinderChart_contMDiff q p).mdifferentiableAt (by simp))]
   exact hi.comp (M35.cylinderChart_mfderiv_invertible q p)
-
-
 
 theorem euclideanChart_coefficient (N : StandardCylinderPatch length center)
     (g : RiemannianMetric 3 StandardCapSpace) (q : UnitTwoSphere)

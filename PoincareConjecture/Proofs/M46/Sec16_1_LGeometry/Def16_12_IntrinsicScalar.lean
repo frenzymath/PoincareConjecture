@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_ScalarTolerance
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsBounds
 import PoincareConjecture.Proofs.M36.JetProductBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -40,9 +30,6 @@ noncomputable local instance intrinsicScalarTwoJetNorm : NormedAddCommGroup (Met
 
 noncomputable local instance intrinsicScalarTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
-
 
 theorem exists_standardCap_intrinsic_twoJet_bound {g0 : StandardInitialMetric}
     (S : MaximalStandardCapFlow g0) {theta : ℝ} (htheta : theta < S.base.lifetime)
@@ -100,9 +87,6 @@ theorem exists_standardCap_intrinsic_twoJet_bound {g0 : StandardInitialMetric}
     (fun m hm => hjets m (by omega)) hframe
     (fun m hm => hnorm m (hm.trans hj))).trans
       (mul_le_mul_of_nonneg_right hCsum hrho)
-
-
-
 
 theorem exists_standardCap_intrinsic_scalarRate_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {c theta : ℝ}

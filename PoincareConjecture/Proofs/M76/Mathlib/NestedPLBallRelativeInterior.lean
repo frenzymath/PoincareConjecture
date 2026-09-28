@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeSetInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +11,6 @@ namespace Set
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePLBallPair.interior_preimage_subball {a b d q : Set E}
     (hd : IsFinitePLBallPair F d q) (ha : IsFinitePLBallPair F a b)

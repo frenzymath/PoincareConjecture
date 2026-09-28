@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Tubes.SynchronizedCollars
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Tubes.SelectedTube
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip _root_.Dehn
 

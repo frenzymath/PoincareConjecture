@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Differ
 import PoincareConjecture.Proofs.M12.Geometry.Manifold.VectorField.Product
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.TimeBracket
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

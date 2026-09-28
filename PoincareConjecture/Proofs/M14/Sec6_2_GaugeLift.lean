@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport n X time I)
-
-
-
 
 theorem exists_smooth_gauge_lift (p : G.Point) :
     ∃ (b : G.gaugeCover.index) (U : Set G.Point)

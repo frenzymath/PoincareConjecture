@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryCollar
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalChartBall
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,10 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
-
 
 theorem exists_original_boundary_disk_push
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

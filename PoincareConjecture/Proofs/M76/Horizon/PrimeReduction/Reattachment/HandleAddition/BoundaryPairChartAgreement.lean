@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Mesh.Restriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -45,4 +37,3 @@ theorem OriginalSurfacePairChart.exists_boundary_model_of_agreement
   exact ⟨C',fun z hz => hR z (hsub hz),fun z hz => hfront z (hsub hz)⟩
 
 end PoincareConjecture.M76
-

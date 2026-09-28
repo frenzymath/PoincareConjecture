@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.MaximalFaceAffineGerm
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -14,8 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_nonzero_height_vertex_of_triangle_interior_sign
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

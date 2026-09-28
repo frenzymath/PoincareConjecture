@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M13.Metric
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M28
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem intrinsicOpenMetric_scaleSmoothMetric_edist
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -44,9 +32,6 @@ theorem intrinsicOpenMetric_scaleSmoothMetric_edist
   exact M13.homothety_edist (intrinsicOpenMetric g U)
     (intrinsicOpenMetric (M13.scaleSmoothMetric g Q hQ) U)
     (Diffeomorph.refl (𝓡 3) U ∞) Q hQ hh p q
-
-
-
 
 theorem intrinsicOpenMetric_scaleSmoothMetric_edist_toReal
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

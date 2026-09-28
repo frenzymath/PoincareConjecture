@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.NeckCovariantJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Realization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_normalizedEuclideanCoefficients_scalar_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -66,9 +51,6 @@ theorem exists_normalizedEuclideanCoefficients_scalar_fourJet_bound :
     exact hbound N hε q hs r 0 (by omega) ![i, j]
   exact h.trans ((mul_le_mul hE hpow (pow_nonneg (norm_nonneg _) _)
     (mul_nonneg hC.le N.epsilon_pos.le)).trans_eq (by ring))
-
-
-
 
 theorem exists_normalizedEuclideanCoefficients_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

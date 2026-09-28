@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.RadialBall
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -42,8 +36,6 @@ theorem PoincareConjecture.RiemannianMetric.eventually_radial_pair_bound_of_comm
     simpa only [mem_singleton_iff] using hpx.symm),
     eventually_all.mpr hb] with y hy hb
   exact ⟨(show y ≠ p from hy).symm, hb⟩
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_radial_support_neighborhood_of_common_level
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

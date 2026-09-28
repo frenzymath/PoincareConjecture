@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 import PoincareConjecture.Proofs.M58.Mathlib.SphereNullhomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,8 +11,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M]
-
-
 
 theorem loopTwoSphere_homotopic_const
     (hconnected : IsConnected (Set.univ : Set M)) (x : M)
@@ -40,16 +29,12 @@ theorem loopTwoSphere_homotopic_const
 
 variable [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem constant_loop_family_homotopic
     (hconnected : IsConnected (Set.univ : Set M)) (x : M)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 M x)) (f : C(LoopTwoSphere, M)) :
     (constantLoopMap.comp f).Homotopic (constantLoopFamily x) := by
   exact (ContinuousMap.Homotopic.refl constantLoopMap).comp
     (loopTwoSphere_homotopic_const hconnected x hpi f)
-
-
 
 theorem raw_family_homotopic_const_of_contraction
     (hconnected : IsConnected (Set.univ : Set M)) (x : M)

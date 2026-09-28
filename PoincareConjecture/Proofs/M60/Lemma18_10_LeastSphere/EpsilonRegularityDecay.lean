@@ -8,14 +8,6 @@ import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +20,7 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 open scoped Bundle in
-
 
 theorem suEmbedding_differential_lower_bound [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {k : ℕ} (e : M → EuclideanSpace ℝ (Fin k))
@@ -159,8 +149,6 @@ private theorem harmonic_composition_laplacian {g : RiemannianMetric n M}
   erw [hH 0, hH 1]
   linarith only [ht']
 
-
-
 theorem suHarmonic_observation_laplacian_bound [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {s : M → ℝ} (hs : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ s) :
@@ -187,8 +175,6 @@ theorem suHarmonic_observation_laplacian_bound [CompactSpace M]
     _ = _ := by
       simp only [m60EnergyDensity, Matrix.trace, Matrix.diag, Fin.sum_univ_two]
       ring
-
-
 
 theorem suHarmonic_observation_vector_laplacian_bound [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {k : ℕ}
@@ -475,8 +461,6 @@ private theorem harmonic_unit_disk_estimate [CompactSpace M]
   simp only [one_pow, one_mul, div_one, ψ, energy_translate g hφ, add_zero] at h
   linarith only [h]
 
-
-
 theorem suHarmonicCylinder_small_tail [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {φ : LoopPlane → M}
     (hφ : ContMDiff (𝓡 2) (𝓡 n) ∞ φ) {T : ℝ} (hT : 2 ≤ T)
@@ -544,8 +528,6 @@ theorem suHarmonicCylinder_small_tail [CompactSpace M]
   have ht := hF.const_mul (T * C)
   rw [mul_zero] at ht
   exact ⟨C, hC, hpoint, squeeze_zero' (Eventually.of_forall hEn) hupper ht⟩
-
-
 
 theorem suHarmonicCylinder_energy_decay [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {k : ℕ}

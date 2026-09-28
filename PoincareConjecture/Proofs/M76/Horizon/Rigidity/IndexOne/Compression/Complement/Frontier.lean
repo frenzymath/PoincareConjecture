@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.Preservation
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

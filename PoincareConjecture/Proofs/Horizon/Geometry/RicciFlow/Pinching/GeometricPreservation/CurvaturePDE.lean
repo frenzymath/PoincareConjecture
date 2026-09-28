@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Laplacian.Pr
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.LaplacianTrace.Four
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.LaplacianRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
-
-
-
-
-
-
-

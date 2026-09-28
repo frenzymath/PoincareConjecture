@@ -3,14 +3,6 @@ import PoincareConjecture.Statements.M77Transport
 import PoincareConjecture.Statements.M78EndpointTransport
 import PoincareConjecture.Statement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

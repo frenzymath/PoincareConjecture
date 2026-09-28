@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.HorizontalMetricSmooth
 import PoincareConjecture.Proofs.M11.PositiveFormBounded
 import PoincareConjecture.Proofs.M11.HorizontalProjection
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

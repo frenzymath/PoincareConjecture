@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ConeHeightLink
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSubdivisionComposition
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualEdgeDisk
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 set_option maxHeartbeats 1000000 in
 
 omit [Fintype K.faces] in
-
-
-
 
 theorem subcomplex_preserving_pullback_affineOnFaces
     (R : SimplicialComplex ℝ E) (hRK : R.IsSubdivision K) {F : E → E} {h : E → ℝ}
@@ -58,11 +44,6 @@ theorem subcomplex_preserving_pullback_affineOnFaces
   exact ⟨t, ht, fun x hx => himage.subset ⟨x, hst hx, rfl⟩⟩
 
 variable [DecidableEq E]
-
-
-
-
-
 
 theorem image_dualBlock_link_binaryLevel
     (A : SimplicialComplex ℝ E) (hAK : A ≤ K)

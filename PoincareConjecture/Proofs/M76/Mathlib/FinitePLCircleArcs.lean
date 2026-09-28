@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MarkedPolygonArcs
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_arcs {d c : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d c) {a b : E}
@@ -34,9 +21,6 @@ theorem IsFinitePLBallPair.exists_boundary_arcs {d c : Set E}
     P.exists_arcs_at_marks hP hPi (hPc.symm ▸ ha) (hPc.symm ▸ hb) hab
 
 omit [FiniteDimensional ℝ E] in
-
-
-
 
 theorem isFinitePLBallPair_signed_halves_of_arcs {U V c : Set E} {a b : E}
     (hU : IsFinitePLBallPair ℝ U {a, b}) (hV : IsFinitePLBallPair ℝ V {a, b})
@@ -113,9 +97,6 @@ theorem isFinitePLBallPair_signed_halves_of_arcs {U V c : Set E} {a b : E}
 end Set
 
 namespace Polygon
-
-
-
 
 theorem isFinitePLBallPair_signed_halves {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

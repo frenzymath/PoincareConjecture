@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ChosenHolePuncturedBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.CubicalThreeSphere
@@ -17,8 +9,6 @@ namespace Set
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
-
-
 
 theorem exists_physical_punctured_sphere_cap_filling
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -156,8 +146,6 @@ theorem exists_physical_punctured_sphere_cap_filling
       (x : E) ∈ q i ↔ (H x : V4) ∈ r i :=
     H.mem_subset_iff_of_extension b hqi hri (fun y => Subtype.ext (hkeep ⟨y, hqR i y.property⟩)) x
   exact ⟨H, hH, hkeep, hboundary, hchosen.1.of_homeomorph hqi H hH hboundary⟩
-
-
 
 theorem exists_physical_punctured_sphere_all_cap_filling
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

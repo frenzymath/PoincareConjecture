@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusPeriodMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusBoundaryParameters
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

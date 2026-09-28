@@ -1,24 +1,13 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.BallPartitionRefinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
 
-
 def HasTwoWholeOwners {E κ : Type*} (B : κ → Set E) (D : Set E) : Prop :=
   ∃ a b, a ≠ b ∧ D ⊆ B a ∧ D ⊆ B b ∧
     ∀ k, k ≠ a → k ≠ b → Disjoint D (B k)
-
-
 
 theorem exists_whole_child_avoiding_other
     {E : Type*} [TopologicalSpace E] {B W D : Set E} (C : Bool → Set E)
@@ -99,7 +88,6 @@ theorem HasTwoWholeOwners.refine
       exact hother j (fun he => hja (congrArg Sum.inl (Subtype.ext he)))
         (fun he => hjb (congrArg Sum.inl (Subtype.ext he)))
     | inr c => exact (hother k hka hkb).mono_right (hCB c)
-
 
 theorem new_cut_has_two_whole_owners
     {E κ : Type*} {B : κ → Set E} {W : Set E} (k : κ) (C : Bool → Set E)

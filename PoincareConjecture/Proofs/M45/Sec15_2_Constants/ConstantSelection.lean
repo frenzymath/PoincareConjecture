@@ -1,18 +1,8 @@
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M45
-
-
 
 theorem exists_calibration_epsilon
     (epsilon₁ epsilonPrime epsilon₁₀ common delta radiusBound prescribed : ℝ)
@@ -51,8 +41,6 @@ theorem exists_calibration_epsilon
     by linarith [hb.2.2.1], by linarith [hb.2.2.2.1],
     by linarith [hb.2.2.2.2], by linarith [hs.2.2.2.1], by linarith [hs.2.2.1]⟩
 
-
-
 theorem comparison_accuracy {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200)
     (hbeta : 0 < beta) (hhalf : beta < 1 / 2) :
@@ -61,8 +49,6 @@ theorem comparison_accuracy {epsilon beta : ℝ}
   have hpos : 0 < beta * epsilon / 3 := div_pos (mul_pos hbeta hepsilon) (by norm_num)
   have hle : beta * epsilon / 3 ≤ epsilon := by nlinarith
   exact ⟨hpos, hle.trans hsmall, lt_of_le_of_lt (hle.trans hsmall) (by norm_num)⟩
-
-
 
 theorem initial_cutoff_bounds {gamma delta₁₃ V D : ℝ}
     (hgamma : 0 < gamma) (hdelta : 0 < delta₁₃) (hV : 0 < V) (hD : 0 < D) :

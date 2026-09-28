@@ -1,15 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.AttachmentIncidence
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.CapTransversals
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Intersections
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -24,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {r : M → ℝ} {p : M} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → M} (B : VertexCapFaces P x)
 
-
 noncomputable def chordRemainderInterval (K : Set M) (i : Bool × Bool) (ρ : ℝ) : Set ℝ := by
   classical
   exact Icc (if ((B.face i).boundary 0).map 0 ∈ K then ρ else 0)
@@ -32,7 +22,6 @@ noncomputable def chordRemainderInterval (K : Set M) (i : Bool × Bool) (ρ : �
 
 def chordRemainder (K : Set M) (i : Bool × Bool) (ρ : ℝ) : Set M :=
   ((B.face i).boundary 0).map '' B.chordRemainderInterval K i ρ
-
 
 noncomputable def openChordAttachment (K : Set M) (i : Bool × Bool)
     (terminal : Bool) (ρ : ℝ) : Set M := by
@@ -118,7 +107,6 @@ theorem chordRemainder_disjoint (K : Set M)
     ((hlocal _ (P.closedSector_subset_carrier i (P.sector_subset_closed i hsector))).mp hK)
 
 omit [T2Space M] in
-
 
 theorem chord_subset_remainder_attachments (K : Set M) (i : Bool × Bool) (ρ : ℝ) :
     ((B.face i).boundary 0).map '' Icc (0 : ℝ) 1 ⊆

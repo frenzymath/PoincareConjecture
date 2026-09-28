@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Length
 import PoincareConjecture.Proofs.M08.ReferenceEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
-
-
 
 theorem edist_le_energy_of_interior_regular (g : RiemannianMetric n M)
     {gamma : ℝ → M} {a b C : ℝ} (hab : a < b) (hC : 0 < C)
@@ -80,9 +69,6 @@ theorem edist_le_energy_of_interior_regular (g : RiemannianMetric n M)
   · exact continuousOn_const
   · simp only [closure_Ioo hab.ne, mem_Icc, le_refl, and_true]
     exact hab.le
-
-
-
 
 theorem sq_distance_le_duration_mul_energy (g : RiemannianMetric n M)
     {gamma : ℝ → M} {a b d : ℝ} (hab : a < b) (hd : 0 < d)

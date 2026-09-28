@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ImmersionPLAtlas
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace IsLocalHomeomorph
-
-
-
-
-
 
 theorem exists_piecewiseAffine_coordinate_cover_over
     {X M E ι : Type*} [TopologicalSpace X] [TopologicalSpace M]
@@ -85,10 +70,6 @@ theorem exists_piecewiseAffine_coordinate_cover_over
 end IsLocalHomeomorph
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.lift
     {V E M X ι : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

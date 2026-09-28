@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

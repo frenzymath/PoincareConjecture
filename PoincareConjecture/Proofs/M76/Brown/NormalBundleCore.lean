@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.NormalPairAtlas
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Algebra.Group.Units
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -17,8 +10,6 @@ namespace BrownCollar.FlatteningAtlas
 
 variable {X P ι : Type*} [TopologicalSpace X] [NormedAddCommGroup P]
   [NormedSpace ℝ P] {S : Set X} (A : FlatteningAtlas P S ι)
-
-
 
 noncomputable def transitionUnit (i j : ι) (x : S) : SignTypeˣ :=
   Units.mk0 (A.transitionSign i j x) (A.transitionSign_ne_zero i j x)
@@ -42,9 +33,6 @@ theorem continuousOn_transitionUnit (i j : ι) :
   · exact (A.continuousOn_transitionSign i j).domRestrict
   · exact (A.continuousOn_transitionSign i j).domRestrict
 
-
-
-
 noncomputable def normalBundleCore : FiberBundleCore ι S SignTypeˣ where
   baseSet := A.baseSet
   isOpen_baseSet := A.isOpen_baseSet
@@ -57,8 +45,6 @@ noncomputable def normalBundleCore : FiberBundleCore ι S SignTypeˣ where
       (fun _ h => h.1)).mul continuous_snd.continuousOn
   coordChange_comp i j k x hx v := by
     rw [← mul_assoc, A.transitionUnit_cocycle i j k x hx]
-
-
 
 theorem normalBundle_isCoveringMap : IsCoveringMap A.normalBundleCore.proj :=
   FiberBundle.isCoveringMap

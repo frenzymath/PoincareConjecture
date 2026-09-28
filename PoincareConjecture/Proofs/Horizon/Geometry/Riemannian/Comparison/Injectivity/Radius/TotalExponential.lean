@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.Exponential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem mfderiv_globalGeodesic_zero (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin n)) :
@@ -44,7 +34,6 @@ theorem mfderiv_globalGeodesic_zero (g : RiemannianMetric n M)
     (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) (g.globalGeodesic hc p v) 0 1))
     (mfderiv_extChartAt_self (I := 𝓡 n) (x := p))
   exact (hcomp.trans (hreplace.trans hid)).symm
-
 
 theorem hasDerivAt_globalGeodesic_in_chart (g : RiemannianMetric n M)
     (hc : MetricComplete g) (a : M)
@@ -83,15 +72,11 @@ theorem hasDerivAt_globalGeodesic_in_chart (g : RiemannianMetric n M)
   have hinv' := congrArg (fun L => L v) hinv
   exact hd.congr_deriv (hcomp.trans (hreplace.trans hinv'))
 
-
-
 noncomputable def chartGlobalExponential (g : RiemannianMetric n M)
     (hc : MetricComplete g) (a : M)
     (z : EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n)) : M :=
   let c := extChartAt (𝓡 n) a
   g.globalExponential hc (c.symm z.1) (mfderiv (𝓡 n) (𝓡 n) c.symm z.1 z.2)
-
-
 
 theorem contMDiffAt_chartGlobalExponential (g : RiemannianMetric n M)
     (hc : MetricComplete g) (a : M)

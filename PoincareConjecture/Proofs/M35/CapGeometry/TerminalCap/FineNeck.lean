@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.LimitAlternatives
 import PoincareConjecture.Proofs.M35.CapGeometry.CertificateConnection
 import PoincareConjecture.Proofs.M09.TensorEvaluationBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ private theorem equal_metric_neck
       N'.connection = D ∧ N'.carrier = N.carrier := by
   subst h
   exact ⟨N.withConnection D, rfl, rfl, rfl⟩
-
-
-
 
 theorem exists_limit_fine_neck (P : M35StandardCapPredecessors) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -93,8 +81,6 @@ private theorem scalar_of_equal_metrics
     D.scalarCurvature y = D'.scalarCurvature y := by
   subst h
   exact D.scalarCurvature_eq D' y
-
-
 
 theorem blowupSequence_limit_scalar_ceiling (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

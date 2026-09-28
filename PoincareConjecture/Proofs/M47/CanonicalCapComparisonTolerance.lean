@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
 
 theorem singularMetricJetErrorSquared_mono_order
     {X : Type u} [TopologicalSpace X]
@@ -28,8 +19,6 @@ theorem singularMetricJetErrorSquared_mono_order
   apply Finset.sum_le_sum_of_subset_of_nonneg (Finset.range_mono (Nat.add_le_add_right hkm 1))
   intro j _ _
   exact sq_nonneg _
-
-
 
 theorem capFamilyComparison_mono_tolerance
     {F : SurgeryFlowData.{u}} {S : MaximalStandardCapFlow F.standard_initial}

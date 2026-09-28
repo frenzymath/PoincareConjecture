@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.ConfigurationTransfer
 import PoincareConjecture.Proofs.M44.Scales
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 structure NoncollapseTest (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) where
   time : ℝ
@@ -39,13 +29,10 @@ structure NoncollapseTest (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) w
     (F.connection (time + s / 1)).curvatureTensorNorm
       (cylinder.forward s hs y) ≤ radius⁻¹ ^ 2
 
-
 def NoncollapseTest.window {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     (D : NoncollapseTest F O) : M33RegularHistoryWindow F :=
   F.closedRegularHistoryWindow D.time
     (D.cylinder.test_time_pos D.radius_pos) D.time_domain ⟨D.center⟩
-
-
 
 structure HalfRadiusHistory {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     (D : NoncollapseTest F O) where
@@ -71,8 +58,6 @@ structure HalfRadiusHistory {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
       ((spacetime.geometry.sliceIdentification D.time).identification center)
       (D.radius / 2)))
 
-
-
 structure ActionConfinement {X : Type u} [TopologicalSpace X]
     {time : X → ℝ} {I : SpacetimeInterval}
     (G : GeneralizedLGeometryTransport 3 X time I)
@@ -84,8 +69,6 @@ structure ActionConfinement {X : Type u} [TopologicalSpace X]
   paths_mem : ∀ tau : ℝ, 0 < tau → tau ≤ T - start → ∀ y : G.Point,
     ∀ path : M14BackwardPath G T 0 tau x y,
       M14BackwardLAction G path < barrier → MapsTo path.curve (Icc 0 tau) cage
-
-
 
 structure MinimizingRegion {X : Type u} [TopologicalSpace X]
     {time : X → ℝ} {I : SpacetimeInterval}
@@ -113,8 +96,6 @@ structure MinimizingRegion {X : Type u} [TopologicalSpace X]
         M14ActionValue G T 0 (T - G.spacetime.timeFunction y) x y ≤
           M14ActionValue G T 0 (T - G.spacetime.timeFunction y) x z}
 
-
-
 def PositiveAncestorExclusion {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     {D : NoncollapseTest F O} (H : HalfRadiusHistory D) : Prop :=
   ∀ tau : ℝ, 0 < tau →
@@ -125,9 +106,6 @@ def PositiveAncestorExclusion {F : SurgeryFlowData.{u}} {O : SurgeryObservation 
       ((H.spacetime.geometry.sliceIdentification (D.time - tau)).identification y).val) →
     ¬ SurgeryPositiveComponentAt F (D.time - tau)
       (H.spacetime.history.history.forward (D.time - tau) ht y)
-
-
-
 
 def OverlapCapControl {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

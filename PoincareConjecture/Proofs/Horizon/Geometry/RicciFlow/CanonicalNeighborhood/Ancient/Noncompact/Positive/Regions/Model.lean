@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Positive.Regions.Ball
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M}
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {epsilon D R : ℝ}
   (G : SoulNeckRegion K S epsilon D R)
-
 
 theorem exists_inside_euclidean_coordinates :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 3)) M,
@@ -59,7 +50,6 @@ theorem exists_inside_euclidean_coordinates :
       (fun x _ => has x)
   · exact OpenPartialHomeomorph.contDiffOn_univUnitBall_symm.contMDiffOn.comp
       (hbi.mono (fun x hx => hx.1)) (fun x hx => hx.2)
-
 
 theorem nonempty_capModel_image_inside (F : Diffeomorph (𝓡 3) (𝓡 3) M M ∞)
     (p : RealProjectiveThree) :

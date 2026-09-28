@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Diffeomorphism.Pertur
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ open scoped ContDiff Topology
 namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
-
-
 
 theorem fderiv_add_mul_ne_zero_of_norm_lt
     {h b : E -> Real} {x : E} (hh : DifferentiableAt Real h x)
@@ -37,8 +27,6 @@ theorem fderiv_add_mul_ne_zero_of_norm_lt
   have hnorm := congrArg norm heq'
   rw [norm_neg, norm_smul, Real.norm_eq_abs] at hnorm
   linarith
-
-
 
 theorem exists_pos_forall_fderiv_add_mul_ne_zero_on_compact
     {h b : E -> Real} (hh : ContDiff Real ∞ h) (hb : ContDiff Real ∞ b)
@@ -63,8 +51,6 @@ theorem exists_pos_forall_fderiv_add_mul_ne_zero_on_compact
       _ < ‖fderiv Real h x0‖ := (lt_div_iff₀ hC).mp ht
       _ ≤ ‖fderiv Real h x‖ := hmin hx
   · exact ⟨1, zero_lt_one, fun _ _ x hx => (hne ⟨x, hx⟩).elim⟩
-
-
 
 theorem exists_pos_forall_cutoff_translation_homeomorph [CompleteSpace E]
     {χ : E -> Real} (hχ : ContDiff Real ∞ χ) (hχc : HasCompactSupport χ) :
@@ -111,8 +97,6 @@ theorem exists_pos_forall_cutoff_translation_homeomorph [CompleteSpace E]
   · intro x hx
     simp [he, image_eq_zero_of_notMem_tsupport hx]
 
-
-
 theorem exists_bump_preserving_critical_points [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h) (p : E)
     {r R : Real} (hr : 0 < r) (hrR : r < R)
@@ -152,9 +136,6 @@ theorem exists_bump_preserving_critical_points [FiniteDimensional Real E]
     have hxχ : x ∉ tsupport χ := by rwa [χ.tsupport_eq]
     simp [image_eq_zero_of_notMem_tsupport hxχ]
 
-
-
-
 theorem exists_bump_shift_avoiding_finite_heights [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h) (p : E)
     {r R ε : Real} (hr : 0 < r) (hrR : r < R) (hε : 0 < ε)
@@ -178,8 +159,6 @@ theorem exists_bump_shift_avoiding_finite_heights [FiniteDimensional Real E]
   intro ha
   apply htA
   exact ⟨h p + t, ha, by ring⟩
-
-
 
 theorem exists_ambient_graph_cutoff [FiniteDimensional Real E]
     {h b : E -> Real} (hh : Continuous h) (hb : ContDiff Real ∞ b)
@@ -212,10 +191,6 @@ theorem exists_ambient_graph_cutoff [FiniteDimensional Real E]
     · simp [χ, image_eq_zero_of_notMem_tsupport hx]
   · intro x z hx
     simp [χ, image_eq_zero_of_notMem_tsupport hx]
-
-
-
-
 
 theorem exists_ambient_graph_shift_avoiding_finite_heights [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h) (p : E)
@@ -256,10 +231,6 @@ theorem exists_ambient_graph_shift_avoiding_finite_heights [FiniteDimensional Re
   · rw [hinner (mem_closedBall_self hr.le)]
     intro ha
     exact htA ⟨h p + t, ha, by ring⟩
-
-
-
-
 
 theorem exists_ambient_graph_shift_of_finite_critical_points [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h)
@@ -311,14 +282,6 @@ theorem exists_ambient_graph_shift_of_finite_critical_points [FiniteDimensional 
       have hqeq := hout q hqR
       filter_upwards [isClosed_closedBall.isOpen_compl.mem_nhds hqR] with x hx
       simpa [hqeq] using hout x hx
-
-
-
-
-
-
-
-
 
 theorem exists_ambient_graph_distinct_critical_values [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h)

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySourc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.NativeCapCore
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 def FamilyCutState.retainedCore
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -30,7 +19,6 @@ def FamilyCutState.retainedCore
     (S : FamilyCutState P u r cut D m0 B Phi n psi)
     (i : Fin n) : Set E3 :=
   (fun q : UnitTwoSphere => psi i (q, 0)) '' S.sourceCore i
-
 
 theorem FamilyCutState.sourceCore_compact_connected
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -66,7 +54,6 @@ theorem FamilyCutState.sourceCore_compact_connected
       ⋃ a ∈ (Finset.univ : Finset I), (C a).sourceCapInterior) = S.sourceCore i := by
     simp only [Finset.mem_univ, iUnion_true, hinterior, FamilyCutState.sourceCore, I]
   exact ⟨hcore ▸ hc, hcore ▸ hn⟩
-
 
 theorem FamilyCutState.retainedCore_geometry
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -132,7 +119,6 @@ theorem FamilyCutState.retainedCore_geometry
     rw [image_inter (hinj (S.owner a))] at himage
     change (S.cap a).cap ∩ S.retainedCore (S.owner a) = (S.cap a).seam at himage
     simpa only [ha, inter_comm] using himage
-
 
 theorem FamilyCutState.core_of_no_owned_caps
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

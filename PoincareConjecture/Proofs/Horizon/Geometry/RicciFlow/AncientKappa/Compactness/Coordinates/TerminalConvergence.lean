@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.EmbeddingConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -36,8 +25,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (hF : ∀ t : ℝ, t < 0 → F.metric t = G.limitFlow.metric (t + 1))
 
 include hF
-
-
 
 theorem terminal_embedding_coefficients_eqOn_actualFlow
     (q : G.limitCarrier.carrier) {x₀ : EuclideanSpace ℝ (Fin 3)} {ρ : ℝ}
@@ -85,8 +72,6 @@ theorem terminal_embedding_coefficients_eqOn_actualFlow
       fun t ht => show t ≤ 0 from le_of_lt ht) subset_rfl)
   rw [closure_prod_eq, closure_Iio, isClosed_closedBall.closure_eq]
 
-
-
 theorem tendstoUniformlyOn_terminal_bilinearJet_on_closedBall
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -121,8 +106,6 @@ private theorem halfspace_eq_closedBall_germ
   apply propext
   change (w.1 ≤ 0 ∧ w.2 ∈ closedBall x₀ ρ) ↔ (w.1 ≤ 0 ∧ True)
   simp only [ball_subset_closedBall hw, and_true]
-
-
 
 theorem tendstoUniformlyOn_terminal_metricJet_on_ball
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -206,8 +189,6 @@ theorem tendstoUniformlyOn_terminal_metricJet_on_ball
   exact Eventually.of_forall fun k z hz =>
     iteratedFDerivWithin_congr_set (halfspace_eq_closedBall_germ (hKU hz).2) m
 
-
-
 theorem tendstoUniformlyOn_terminal_metricJet
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -246,8 +227,6 @@ theorem tendstoUniformlyOn_terminal_metricJet
     exact ⟨⟨hw.1.1.le, hw.2.1⟩, ball_subset_closedBall hw.1.2⟩
   exact ⟨C, hCnhds, S.tendstoUniformlyOn_terminal_metricJet_on_ball G F hF
     P hcontrol hcomplete q hρ hchart m a b hC hCsmall⟩
-
-
 
 theorem terminal_pullback_metric_CInfinity
     (P : M23NormalizedKappaCompactnessPredecessors)

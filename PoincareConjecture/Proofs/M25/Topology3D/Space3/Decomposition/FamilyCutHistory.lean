@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutStateStep
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySurgeryHistory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.exists_terminal_history
     (hP : PlanarSchoenfliesService)
@@ -86,7 +75,6 @@ theorem FamilyCutState.exists_terminal_history
         apply (hKeq y hy).trans
         apply houter y
         simpa only [hcut] using hprotected y hy
-
 
 theorem FamilyCutState.height_gap_of_count_eq_zero
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

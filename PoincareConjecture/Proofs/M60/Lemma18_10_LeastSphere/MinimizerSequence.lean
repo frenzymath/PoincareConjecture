@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSmoothCompetitors
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerPerturbedLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [SecondCountableTopology M]
-
-
-
 
 theorem m60PerturbedMinimizers_area_energy_tendsto (g : RiemannianMetric n M)
     (alpha : ℕ → ℝ) (f : ℕ → UnitTwoSphere → M)
@@ -63,8 +50,6 @@ theorem m60PerturbedMinimizers_area_energy_tendsto (g : RiemannianMetric n M)
       (m60SphereEnergyDensity_integrable g (f j) ((hf j).of_le (by simp)))
 
 namespace M60
-
-
 
 theorem suAlphaSequence {eps0 : ℝ} (heps0 : 0 < eps0) :
     (∀ j : ℕ, 1 + eps0 / ((j : ℝ) + 2) ∈ Ioo 1 (1 + eps0)) ∧

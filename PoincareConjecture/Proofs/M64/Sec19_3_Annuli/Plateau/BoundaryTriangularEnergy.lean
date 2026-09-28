@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseTriangularSource
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff ENNReal Manifold
 
 namespace PoincareConjecture
-
-
 
 def m64TriangularEnergyDensity (r a b q00 q01 q10 q11 : ℝ) : ℝ :=
   (r * a * q00 + r⁻¹ * a⁻¹ * (b ^ 2 * q00 + b * q01 + b * q10 + q11)) / 2
@@ -30,8 +22,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem M64ObservedWeakAnnulus.weightedEnergy_triangularSource
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -71,9 +61,6 @@ theorem M64ObservedWeakAnnulus.weightedEnergy_triangularSource
 namespace M64FreeWeakPhaseAnnulus
 
 variable {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
-
-
-
 
 theorem triangular_source_energy_minimum
     (A : M64FreeWeakPhaseAnnulus (n := n) (m := m) e R c0 c1 H0 H1 k D)

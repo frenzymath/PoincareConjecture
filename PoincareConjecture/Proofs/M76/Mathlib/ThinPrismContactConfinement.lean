@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +8,6 @@ open Set
 namespace CoordinateHalfBoxes
 
 variable {E : Type*} [TopologicalSpace E] [T2Space E]
-
-
-
-
-
 
 theorem exists_thin_prism_contact_subset
     {F G : ((ℝ × ℝ) × ℝ) → E} {R S : ℝ} (hR : 0 < R) (hS : 0 < S)

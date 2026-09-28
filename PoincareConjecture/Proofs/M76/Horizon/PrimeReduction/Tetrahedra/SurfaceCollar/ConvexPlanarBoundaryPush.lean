@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.NonnegativeDirectionalIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLTransport
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

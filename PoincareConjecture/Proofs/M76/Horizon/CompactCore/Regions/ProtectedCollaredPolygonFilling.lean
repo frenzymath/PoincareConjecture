@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.ProtectedCollaredPLFilling
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.ProtectedDiskFrontierPolygons
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval

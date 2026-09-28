@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.RegularSliceCircles
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCharge
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_level_polygon_family_for_complexity
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)
@@ -78,10 +65,6 @@ theorem exists_level_polygon_family_for_complexity
       simpa only [hB] using hcover
     · intro i j hij
       exact (disjoint_iff_inter_eq_empty.mp (hdisj' hij)).subset
-
-
-
-
 
 theorem exists_finite_support_level_curve_families
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)

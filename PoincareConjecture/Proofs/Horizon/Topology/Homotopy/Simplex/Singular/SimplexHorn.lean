@@ -4,14 +4,6 @@ import Mathlib.Topology.Order.Lattice
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -19,7 +11,6 @@ open scoped Topology
 universe u
 
 namespace Poincare.Topology
-
 
 theorem exists_stdSimplex_horn_retraction (n : Nat) (i : Fin (n + 2)) :
     ∃ r : C(stdSimplex Real (Fin (n + 2)),
@@ -98,7 +89,6 @@ theorem exists_stdSimplex_horn_retraction (n : Nat) (i : Fin (n + 2)) :
   · subst k
     simp only [f, if_pos rfl, hmy, mul_zero, add_zero]
   · simp only [f, if_neg hki, hmy, sub_zero]
-
 
 theorem exists_stdSimplex_horn_extension
     {X : Type u} [TopologicalSpace X] (n : Nat) (i : Fin (n + 2))

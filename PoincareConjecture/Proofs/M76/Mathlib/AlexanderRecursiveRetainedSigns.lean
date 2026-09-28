@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveClosedPieces
 import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedComplementHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.ordinary_retained_mem_both_height_closures
     {S s s' d rim TX TY : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β t : ℝ}

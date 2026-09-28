@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealPeriodicJets
 import PoincareConjecture.Proofs.M63.Mathlib.FiniteLpCoordinates
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -17,9 +9,6 @@ open PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
-
-
-
 
 noncomputable def vectorPeriodicJet (k j : ℕ) (hj : j ≤ k) :
     State ((ℤ × Fin 2) × ι) →L[ℝ] C(AddCircle L, ι → ℝ) := by
@@ -52,9 +41,6 @@ noncomputable def vectorPeriodicJet (k j : ℕ) (hj : j ≤ k) :
       (mul_le_mul_of_nonneg_left
         ((norm_le_pi_norm (S u) i).trans (norm_lpFinitePiEquiv_le ℝ u)) (norm_nonneg _)))
 
-
-
-
 theorem norm_vectorPeriodicJet_le (k j : ℕ) (hj : j ≤ k) (u : State ((ℤ × Fin 2) × ι)) :
     ‖vectorPeriodicJet (L := L) k j hj u‖ ≤
       ‖(⟨(fun n : ℤ => 1 / Real.sqrt (1 + (2 * Real.pi * (n : ℝ) / L) ^ 2)),
@@ -70,9 +56,6 @@ theorem norm_vectorPeriodicJet_le (k j : ℕ) (hj : j ≤ k) (u : State ((ℤ ×
         ((norm_le_pi_norm (lpFinitePiEquiv ℝ u) i).trans (norm_lpFinitePiEquiv_le ℝ u))
         (norm_nonneg _)))
 
-
-
-
 theorem hasDerivAt_vectorPeriodicJet {k j : ℕ} (hj : j < k)
     (u : State ((ℤ × Fin 2) × ι)) (x : ℝ) :
     HasDerivAt (fun y : ℝ => vectorPeriodicJet (L := L) k j hj.le u (y : AddCircle L))
@@ -80,9 +63,6 @@ theorem hasDerivAt_vectorPeriodicJet {k j : ℕ} (hj : j < k)
   apply hasDerivAt_pi.mpr
   intro i
   exact hasDerivAt_realPeriodicJet hj (lpFinitePiEquiv ℝ u i) x
-
-
-
 
 theorem vectorPeriodicJet_scaleDecode (k j l : ℕ) (hj : j ≤ k)
     (u : State ((ℤ × Fin 2) × ι)) :

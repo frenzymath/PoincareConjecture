@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Gronwall
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem norm_le_exp_of_interior_affine_deriv_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

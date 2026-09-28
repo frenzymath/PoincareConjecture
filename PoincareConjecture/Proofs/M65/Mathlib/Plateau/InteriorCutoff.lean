@@ -4,25 +4,12 @@ import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory MeasureTheory.Measure Metric
 open scoped Topology ContDiff
 
 namespace ContDiffBump
-
-
-
 
 theorem exists_integral_sub_one_sq_lt
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

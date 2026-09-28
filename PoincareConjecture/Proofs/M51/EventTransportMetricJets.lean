@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LocalCo
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPostcompose
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,8 +24,6 @@ local instance : NormedAddCommGroup (V3 →L[ℝ] ℝ) :=
 local instance : NormedSpace ℝ (V3 →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 local instance : NormedAddCommGroup (Bil3) := ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ (Bil3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem bilinear_jets_of_scalar_jets
     {ι : Type*} {l : Filter ι} {K : Set V3}
@@ -86,21 +73,15 @@ theorem bilinear_jets_of_scalar_jets
       ((((hB₀ x hx).clm_apply contDiffAt_const).clm_apply contDiffAt_const).of_le hm)]
     simpa only [dist_eq_norm, norm_sub_rev] using (hi a b x hx).le
 
-
-
 def chartRegularDomain (A : GeneralizedSliceCarrier.{u})
     (q : A.carrier) (U : Set A.carrier) : Set V3 :=
   (extChartAt (𝓡 3) q).target ∩ (extChartAt (𝓡 3) q).symm ⁻¹' U
-
-
 
 theorem chartRegularDomain_open (A : GeneralizedSliceCarrier.{u})
     (q : A.carrier) {U : Set A.carrier} (hU : IsOpen U) :
     IsOpen (chartRegularDomain A q U) :=
   (continuousOn_extChartAt_symm q).isOpen_inter_preimage
     (isOpen_extChartAt_target q) hU
-
-
 
 theorem terminal_chart_contDiffOn
     {A B : GeneralizedSliceCarrier.{u}} (gT : RiemannianMetric 3 B.carrier)
@@ -115,8 +96,6 @@ theorem terminal_chart_contDiffOn
   exact (hf.contMDiffAt (hU.mem_nhds hx.2)).comp x
     ((contMDiffOn_extChartAt_symm q).contMDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 3) q).mem_nhds hx.1))
-
-
 
 theorem metricLimit_chart_jets_seq
     {A B : GeneralizedSliceCarrier.{u}}

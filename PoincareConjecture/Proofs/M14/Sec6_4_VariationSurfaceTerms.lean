@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeDerivative
 import PoincareConjecture.Proofs.M14.Sec6_4_BaseGaugeFields
 import PoincareConjecture.Proofs.M14.Sec6_4_SurfaceGaugeCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -56,9 +47,6 @@ private theorem horizontal_function_eq_of_heq
   rfl
 
 include hCoordinates hscalar hM04 hN hP hzero hβ hrec hclock
-
-
-
 
 theorem surfaceIndex_gauge {s : ℝ}
     (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) (hsN : s ∈ N) :
@@ -123,9 +111,6 @@ theorem surfaceIndex_gauge {s : ℝ}
   exact (gauge_surfaceIndex_expression b W hCoordinates hscalar hM04 T hS htime x₀
     (β (s, 0)).2 hsS hSneigh (β (s, 0)).1 (hclock s hsS 0 hzero).symm _ _ _).trans
       htransport.symm
-
-
-
 
 theorem surfaceEuler_gauge (hPsub : P ⊆ V.parameterDomain) {s : ℝ}
     (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) (hsN : s ∈ N) :

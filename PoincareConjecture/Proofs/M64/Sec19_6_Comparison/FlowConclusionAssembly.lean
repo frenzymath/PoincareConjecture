@@ -1,13 +1,6 @@
 import PoincareConjecture.Statements.M64Comparison
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionComplete
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -15,9 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ProjectionField_of_annulus
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -29,9 +19,6 @@ theorem m64ProjectionField_of_annulus
       M64AnnulusProjection (G.product circumference h) t := by
   intro circumference h t ht c0 c1 A
   exact m64ProjectedAnnulus_of_annulus (G.product circumference h) t c0 c1 A
-
-
-
 
 def m64FlowConclusion_of_fields
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -48,9 +35,6 @@ def m64FlowConclusion_of_fields
           evolution := evolution
           ramp_comparison := ramp_comparison
           projection := projection }
-
-
-
 
 theorem m64ThreeDimensionalFlowConclusion_of_fields
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

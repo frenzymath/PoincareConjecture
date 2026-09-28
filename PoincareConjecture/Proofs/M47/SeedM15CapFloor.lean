@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Confinement
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CapBirth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_cap_birth_floor
     (S : RepairedControlledSchedulesData.{u})
@@ -52,8 +42,6 @@ theorem seedM15_cap_birth_floor
       t hT hn i J U e initial comparison
         (F.parameters.h_pos t (F.time_domain_nonnegative (F.surgery_times_subset hT))))
   exact caps t hT ht hstart i
-
-
 
 theorem exists_seedM15_commonCutoff
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

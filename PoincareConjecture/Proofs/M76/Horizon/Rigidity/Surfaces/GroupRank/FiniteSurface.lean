@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteBarycentricCoordinates
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteCarrierLocalPathConnected
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AbstractSimplicialComplex
@@ -44,7 +36,6 @@ theorem exists_surface_three_coordinate_evaluation
 
 open Classical in
 
-
 theorem surfaceEulerCount_eq_zero_of_injective_integer_three
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E]
@@ -69,7 +60,6 @@ theorem surfaceEulerCount_eq_zero_of_injective_integer_three
     number hnumber sign hcancel (K.finiteBarycentricHomeomorph q) eval T hT
 
 open Classical in
-
 
 theorem surfaceEulerCount_eq_zero_of_injective_integer_three_and_signs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

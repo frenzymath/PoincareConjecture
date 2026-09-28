@@ -1,41 +1,13 @@
-
-
-
-
-
 module
 
 public import Mathlib.Topology.Connected.LocallyPathConnected
 public import Mathlib.Topology.IsLocalHomeomorph
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public section
 
 namespace Poincare.Topology
 
 variable {E B : Type*} [TopologicalSpace E] [TopologicalSpace B]
-
-
-
 
 theorem _root_.IsLocalHomeomorph.locallyPathConnectedSpace [LocallyPathConnectedSpace B]
     {p : E → B} (hp : IsLocalHomeomorph p) : LocallyPathConnectedSpace E := by

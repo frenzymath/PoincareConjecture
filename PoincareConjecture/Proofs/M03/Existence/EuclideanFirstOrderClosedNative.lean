@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanDerivativeClosedNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter LineDeriv
@@ -41,12 +32,10 @@ theorem inner_weightedSchwartzLineDeriv (a φ f : 𝓢(ModelE, ℝ)) (v : ModelE
 
 variable {iota : Type*} [Fintype iota]
 
-
 def firstOrderSchwartz (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE) :
     𝓢(ModelE, ℝ) →L[ℝ] 𝓢(ModelE, ℝ) :=
   ∑ i, (SchwartzMap.pairing (ContinuousLinearMap.mul ℝ ℝ) (a i)).comp
     (lineDerivOpCLM ℝ 𝓢(ModelE, ℝ) (v i))
-
 
 def firstOrderAdjointSchwartz (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE) :
     𝓢(ModelE, ℝ) →L[ℝ] 𝓢(ModelE, ℝ) :=
@@ -67,7 +56,6 @@ theorem inner_firstOrderSchwartz (a : iota → 𝓢(ModelE, ℝ)) (v : iota → 
     sum_inner, SchwartzMap.toLpCLM_apply, LineDeriv.lineDerivOpCLM_apply]
   simp_rw [inner_weightedSchwartzLineDeriv]
   simp only [Finset.sum_neg_distrib]
-
 
 theorem firstOrderSchwartz_limit_zero (a : iota → 𝓢(ModelE, ℝ)) (v : iota → ModelE)
     (f : ℕ → 𝓢(ModelE, ℝ)) (w : Lp ℝ 2 (volume : Measure ModelE))

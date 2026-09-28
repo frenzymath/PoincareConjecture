@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleDerivativeBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -16,22 +7,14 @@ open Set Filter
 
 namespace PoincareConjecture.M34
 
-
-
 def compactCapHeight (k : ℕ) : ℝ := (k : ℝ) + 2
-
-
 
 theorem compactCapHeight_gt_one (k : ℕ) : 1 < compactCapHeight k := by
   dsimp [compactCapHeight]
   linarith [Nat.cast_nonneg (α := ℝ) k]
 
-
-
 abbrev CompactCapDouble (g0 : StandardInitialMetric) (k : ℕ) :=
   EndDouble g0.cylindrical_end (compactCapHeight_gt_one k)
-
-
 
 structure CompactCapApproximation (g0 : StandardInitialMetric) where
 
@@ -50,8 +33,6 @@ structure CompactCapApproximation (g0 : StandardInitialMetric) where
 
   curvature_le (m k : ℕ) (t : ℝ) (ht : t ∈ Icc 0 time) (q : CompactCapDouble g0 k) :
     ((flow k).connection t).curvatureDerivativeNorm m q ≤ curvature_bound m
-
-
 
 theorem compactCapApproximation_exists (P : M34StandardCapPredecessors)
     (g0 : StandardInitialMetric) (E0 : StandardCapEstimate g0) :
@@ -72,22 +53,16 @@ theorem compactCapApproximation_exists (P : M34StandardCapPredecessors)
     curvature_le := fun m k => hderiv m (compactCapHeight k) (compactCapHeight_gt_one k)
       (F k) (hinit k) (hfull k) }⟩
 
-
-
 theorem CompactCapApproximation.complete {g0 : StandardInitialMetric}
     (A : CompactCapApproximation g0) (k : ℕ) (t : ℝ) :
     MetricComplete ((A.flow k).metric t) :=
   ((A.flow k).metric t).metricComplete_of_compact
-
-
 
 theorem CompactCapApproximation.full_curvature_le {g0 : StandardInitialMetric}
     (A : CompactCapApproximation g0) (k : ℕ) {t : ℝ} (ht : t ∈ Icc 0 A.time)
     (q : CompactCapDouble g0 k) :
     ((A.flow k).connection t).curvatureTensorNorm q ≤ A.curvature_bound 0 := by
   simpa only [LeviCivitaData.curvatureDerivativeNorm_zero] using A.curvature_le 0 k t ht q
-
-
 
 theorem eventually_compact_subset_double_source (g0 : StandardInitialMetric)
     {K : Set StandardCapSpace} (hK : IsCompact K) :

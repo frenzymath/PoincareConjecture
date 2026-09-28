@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Profile
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Radial
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +29,6 @@ theorem tangentPlanarLatitude_normalized_horizontal (p : E3)
   · change Real.sqrt (1 - p 2 ^ 2) * ((Real.sqrt (1 - p 2 ^ 2))⁻¹ * p 1) = p 1
     rw [← mul_assoc, mul_inv_cancel₀ hr, one_mul]
   · rfl
-
-
-
-
 
 theorem exists_profile_cap_transition_with_equatorial_formula {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (H : Real ≃ₘ[Real] Real) (a R : Real)

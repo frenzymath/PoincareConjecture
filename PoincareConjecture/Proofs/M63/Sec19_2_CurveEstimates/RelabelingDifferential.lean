@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingIntegrals
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SliceCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) {c d : ℝ → ℝ → M}
   {phi : ℝ → ℝ} {t x : ℝ}
 
-
-
 theorem smooth_arcSecondDerivative_comp (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (ht : t ∈ Icc a b) {f : ℝ → ℝ} (hf : ContDiff ℝ 2 f) :
@@ -43,8 +30,6 @@ theorem smooth_arcSecondDerivative_comp (hd : M62ShrinkingCurve F d)
     (fun y => hf.differentiable (by norm_num) (phi y))
     ((hv (phi x)).mul (hf'.differentiable (by norm_num) (phi x)))
 
-
-
 theorem regularized_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (ht : t ∈ Icc a b) (hcd : ∀ y, c y t = d (phi y) t) (epsilon : ℝ) :
@@ -55,8 +40,6 @@ theorem regularized_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     ((hd.spatial_regular t ht).mdifferentiable (by norm_num)) hphi hpos
     ((M62.unitTangent_contMDiff F d hd ht (phi x)).mdifferentiableAt (by simp)) epsilon
 
-
-
 theorem regularized_eventuallyEq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (hcd : ∀ s ∈ Icc a b, ∀ y, c y s = d (phi y) s)
@@ -65,8 +48,6 @@ theorem regularized_eventuallyEq_of_relabeling (hd : M62ShrinkingCurve F d)
       (fun s => m62RegularizedCurvature F d epsilon s (phi x)) := by
   filter_upwards [Icc_mem_nhds ht.1 ht.2] with s hs
   exact regularized_eq_of_relabeling F hd hphi hpos hs (hcd s hs) epsilon
-
-
 
 theorem regularized_time_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -81,8 +62,6 @@ theorem regularized_time_of_relabeling (hd : M62ShrinkingCurve F d)
     (by simp)
   exact (htime.hasDerivAt.congr_of_eventuallyEq
     (regularized_eventuallyEq_of_relabeling F hd hphi hpos hcd ht epsilon)).differentiableAt
-
-
 
 theorem regularized_bound_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -113,16 +92,12 @@ theorem regularized_bound_of_relabeling (hd : M62ShrinkingCurve F d)
     hsecond, hk, regularized_eq_of_relabeling F hd hphi hpos ht' (hcd t ht') epsilon]
   exact hE.regularized_bound epsilon hepsilon t ht (phi x)
 
-
-
 theorem length_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)
     (hshift : ∀ y, phi (y + curvePeriod) = phi y + curvePeriod)
     (ht : t ∈ Icc a b) (hcd : ∀ y, c y t = d (phi y) t) :
     m62Length F c t = m62Length F d t :=
   (length_congr_slice F hcd).trans (smooth_length_comp F d hd hphi hpos hshift ht)
-
-
 
 theorem totalCurvature_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -131,8 +106,6 @@ theorem totalCurvature_eq_of_relabeling (hd : M62ShrinkingCurve F d)
     m62TotalCurvature F c t = m62TotalCurvature F d t :=
   (totalCurvature_congr_slice F hcd).trans
     (smooth_totalCurvature_comp F d hd hphi hpos hshift ht)
-
-
 
 theorem length_derivative_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -164,8 +137,6 @@ theorem length_derivative_of_relabeling (hd : M62ShrinkingCurve F d)
       _ = _ := smooth_lengthEvolutionIntegral_comp F d hd hphi hpos hshift ht
   rw [hint]
   exact (hE.length_derivative t ht).congr_of_eventuallyEq heq
-
-
 
 theorem total_curvature_integral_of_relabeling (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ y, 0 < deriv phi y)

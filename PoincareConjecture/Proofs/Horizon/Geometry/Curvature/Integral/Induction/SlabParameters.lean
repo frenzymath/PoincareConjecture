@@ -3,14 +3,6 @@ import Mathlib.Analysis.Normed.Field.Basic
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology

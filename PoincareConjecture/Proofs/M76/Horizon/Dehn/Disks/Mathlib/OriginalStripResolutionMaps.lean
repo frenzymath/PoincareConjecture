@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.AlternateResolut
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.TubeArmOrientation
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -28,7 +18,6 @@ local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 
-
 theorem polyhedralPL_restrict_disk
     {E F X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -39,10 +28,6 @@ theorem polyhedralPL_restrict_disk
     PolyhedralPLInCharts e f A := by
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ := hA
   simpa only [hKs] using hf.restrict_finite K hK (hKs.subset.trans hAS)
-
-
-
-
 
 theorem exists_original_strip_resolution_maps
     {E F X ι : Type*}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 noncomputable def openCarrier (S : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens S.carrier) : GeneralizedSliceCarrier.{u} where
@@ -29,8 +20,6 @@ noncomputable def openCarrier (S : GeneralizedSliceCarrier.{u})
   t2Space := inferInstance
   t3Space := inferInstance
   secondCountable := inferInstance
-
-
 
 noncomputable def openRegionEquivalence (S : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens S.carrier) (x : U) :
@@ -67,24 +56,20 @@ noncomputable def openRegionEquivalence (S : GeneralizedSliceCarrier.{u})
       contMDiffOn_id.congr (fun z hz => hinverse z hz)
     exact h y hy
 
-
 def componentOpen (S : GeneralizedSliceCarrier.{u}) (x : S.carrier) :
     TopologicalSpace.Opens S.carrier := by
   let : LocallyConnectedSpace S.carrier :=
     ChartedSpace.locallyConnectedSpace (EuclideanSpace ℝ (Fin 3)) S.carrier
   exact ⟨connectedComponent x, isOpen_connectedComponent⟩
 
-
 noncomputable def componentCarrier (S : GeneralizedSliceCarrier.{u}) (x : S.carrier) :
     GeneralizedSliceCarrier.{u} :=
   openCarrier S (componentOpen S x)
-
 
 noncomputable def componentRegionEquivalence (S : GeneralizedSliceCarrier.{u})
     (x : S.carrier) :
     SurgeryRegionEquivalence (componentCarrier S x) S Set.univ (connectedComponent x) :=
   openRegionEquivalence S (componentOpen S x) ⟨x, mem_connectedComponent⟩
-
 
 theorem componentCarrier_connected (S : GeneralizedSliceCarrier.{u}) (x : S.carrier) :
     IsConnected (Set.univ : Set (componentCarrier S x).carrier) := by
@@ -92,7 +77,6 @@ theorem componentCarrier_connected (S : GeneralizedSliceCarrier.{u}) (x : S.carr
   let : ConnectedSpace (connectedComponent x) :=
     isConnected_iff_connectedSpace.mp isConnected_connectedComponent
   exact isConnected_univ
-
 
 theorem componentCarrier_compact (S : GeneralizedSliceCarrier.{u})
     (hS : IsCompact (Set.univ : Set S.carrier)) (x : S.carrier) :
@@ -102,8 +86,6 @@ theorem componentCarrier_compact (S : GeneralizedSliceCarrier.{u})
   let : CompactSpace (connectedComponent x) :=
     isCompact_iff_compactSpace.mp isClosed_connectedComponent.isCompact
   exact isCompact_univ
-
-
 
 theorem finite_components (S : GeneralizedSliceCarrier.{u})
     (hS : IsCompact (Set.univ : Set S.carrier)) :

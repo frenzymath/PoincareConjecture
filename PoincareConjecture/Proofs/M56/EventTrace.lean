@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M56.ComponentTrace
 import PoincareConjecture.Proofs.M56.EventOverlap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m56Trace_eventExtension {F : SurgeryFlowData.{u}} {T : ℝ}
     (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]
@@ -113,8 +103,6 @@ noncomputable def m56Trace_eventExtension {F : SurgeryFlowData.{u}} {T : ℝ}
       refine ⟨x, ?_, hxi, ?_⟩
       · rwa [old _ hpre]
       · rwa [old _ hsa]
-
-
 
 theorem m56Trace_eventExtension_terminal {F : SurgeryFlowData.{u}} {T : ℝ}
     (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]

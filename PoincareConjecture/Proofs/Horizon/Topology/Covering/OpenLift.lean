@@ -1,17 +1,10 @@
 import Mathlib.Topology.IsLocalHomeomorph
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter Topology
 
 variable {X E B : Type*} [TopologicalSpace X] [TopologicalSpace E] [TopologicalSpace B]
-
 
 theorem IsLocalHomeomorph.isOpenMap_lift {p : E → B} (hp : IsLocalHomeomorph p)
     {f : X → E} (hf : Continuous f) (hpf : IsOpenMap (p ∘ f)) : IsOpenMap f := by

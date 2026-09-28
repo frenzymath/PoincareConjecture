@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Energy
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -145,7 +136,6 @@ private theorem path_differential_of_half_velocity [T2Space M]
   simp only [map_smul, smul_apply, smul_eq_mul] at hdiff hbound
   nlinarith
 
-
 theorem finite_integrated_of_differential [T2Space M]
     (hM04 : PoincareConjecture.RicciFlowCurvatureTheory.{u})
     {T₀ T₁ a b : ℝ} (hTa : T₀ < a) (hab : a < b) (hbT : b < T₁)
@@ -177,7 +167,6 @@ theorem finite_integrated_of_differential [T2Space M]
     (hM04.tensor_calculus n M (F.metric t) (F.connection t))
     (γ t) (hcurv t htJ (γ t)) v dR _ hi
 
-
 theorem ancient_integrated_of_differential [T2Space M]
     (hM04 : PoincareConjecture.RicciFlowCurvatureTheory.{u})
     (F : PoincareConjecture.RicciFlow n M (Iic 0))
@@ -205,9 +194,6 @@ theorem ancient_integrated_of_differential [T2Space M]
     (hM04.tensor_calculus n M (F.metric t) (F.connection t))
     (γ t) (hcurv t ht0.le (γ t)) v dR 0 (by simpa only [add_zero] using hi)
 
-
-
-
 theorem with_path_harnack (hM04 : PoincareConjecture.RicciFlowCurvatureTheory.{u})
     (H : PoincareConjecture.HarnackAncientTheory.{u}) :
     PoincareConjecture.HarnackAncientTheory.{u} := by
@@ -228,10 +214,6 @@ theorem with_path_harnack (hM04 : PoincareConjecture.RicciFlowCurvatureTheory.{u
       (fun t ht x ↦ hcurv t ht x) ?_ ht₁₂ ht₂ γ hγ hγ₁ hγ₂
     intro t ht x v
     exact H'.ancient_differential n M F hcomplete hcurv hbound hnonflat t ht x v
-
-
-
-
 
 theorem assemble_harnack_from_finite_differential
     (hM04 : PoincareConjecture.RicciFlowCurvatureTheory.{u})

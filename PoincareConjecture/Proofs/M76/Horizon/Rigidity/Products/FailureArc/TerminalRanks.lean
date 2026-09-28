@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TerminalCocycleExactness
 import Mathlib.Algebra.Field.ZMod
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -22,8 +12,6 @@ open Set Metric PoincareConjecture.M76.Dehn
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 local notation "Q2" => sphere (0 : Fin 2 → ℝ) 1
-
-
 
 theorem finrank_closed_le_coboundaries_add_one_of_marked_loop
     {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]

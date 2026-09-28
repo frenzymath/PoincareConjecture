@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.PrescribedAttachmentRim
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -33,9 +24,6 @@ private theorem complement_eq_of_union_inter {E : Type*} {W B U Q P : Set E}
   have h4 := congrArg (fun A : Set E ↦ x ∈ A) hWiU
   simp only [mem_union, mem_inter_iff] at h1 h2 h3 h4
   tauto
-
-
-
 
 theorem marked_attachment_rim_eq
     {E0 E1 Y X : Type*} {S0 Q0 W0 B0 P0 : Set E0} {S1 Q1 W1 B1 V1 P1 : Set E1}
@@ -123,9 +111,6 @@ private theorem exists_marked_attachment
   exact ⟨n0, n1, p, g, hn0, hn1, hp, hpzero, hpone, hn0p, hn1p,
     hg, hg0, hg1, hgimage, hpre, hrim ▸ hball⟩
 
-
-
-
 theorem exists_marked_interval_disk_map
     {V1 : Set E1} {c1 d1 : E1}
     (hV1 : IsFinitePLBallPair ℝ V1 {c1, d1}) (hV1Q : V1 ⊆ Q1)
@@ -206,8 +191,6 @@ theorem exists_marked_interval_disk_map
         exact hend i1 (by simp [hpV1])
   exact ⟨n0, n1, p, g, V, q, hn0, hn1, hp, hpzero, hpone, hn0p, hn1p,
     hg, hg0, hg1, hgimage, hpre, hball, rfl, hVball, hq, hqval, hcontact⟩
-
-
 
 theorem exists_terminal_marked_interval_disk_map
     (hQ1 : Q1 = (S1 ∩ f1 ⁻¹' Z) ∪ W1) :

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M04.ShiGeometricCutoff
 import PoincareConjecture.Proofs.M04.ShiRecenteredCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -305,7 +296,6 @@ private theorem shi_local_prefix_bound (n k l : ℕ) (K alpha r : ℝ)
           simpa only [U] using hresult
   simpa only [P, hRfinal] using hInd k le_rfl
 
-
 theorem local_curvatureDerivative_bound (n k : ℕ) (K α r : ℝ)
     (hK : 0 < K) (hα : 0 < α) (hr : 0 < r) :
     ∃ C : ℝ, 0 < C ∧
@@ -342,7 +332,6 @@ theorem local_curvatureDerivative_bound (n k : ℕ) (K α r : ℝ)
   simpa only [Nat.sub_zero] using
     hcore N T hT hTK F p hcompact hRm hinit t ⟨ht.1.le, ht.2⟩ (Or.inl ht.1) x hx
 
-
 theorem local_curvatureDerivative_bound_of_initial (n k l : ℕ) (K α r : ℝ)
     (hK : 0 < K) (hα : 0 < α) (hr : 0 < r) :
     ∃ C : ℝ, 0 < C ∧
@@ -374,4 +363,3 @@ theorem local_curvatureDerivative_bound_of_initial (n k l : ℕ) (K α r : ℝ)
     (fun s hs y _ => hRm s hs y) (fun j hj y _ => hinit j hj y) t ht hbranch x hx
 
 end PoincareConjecture
-

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_LaplacianBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
-
 
 theorem adaptedIndexIntegral_eq_hessian_of_laplacian_eq
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteBilinearCoordinates
 import PoincareConjecture.Proofs.M34.Standard.CanonicalConnectionVelocity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_hasDerivAt_connection_difference_tensor :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -66,9 +54,6 @@ theorem canonicalDomain_hasDerivAt_connection_difference_tensor :
     (p := 2) (q := 2) (𝕜 := ℝ) (I := Fin n) (J := Fin n) (F := V n)
     (CovariantDerivative.difference (F.connection s).connection
       (F'.connection s).connection x : FA n)).symm
-
-
-
 
 theorem canonicalDomain_hasDerivAt_connection_difference_coordinate
     {dA : ℕ} (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA)) :

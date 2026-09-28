@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerClassicalGradient
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,13 +18,6 @@ open Weak Euclidean BoundaryTangential
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => Set.preimage (fun p : Plane => p 0) (Ioi (0 : ℝ))
-
-
-
-
-
-
-
 
 theorem scalar_halfSpace_H3_classical_gradient
     {u U : Plane → ℝ} (hc : HasCompactSupport u) (hu : MemWkp 3 2 u Half)
@@ -81,13 +62,6 @@ theorem scalar_halfSpace_H3_classical_gradient
   apply congrArg M60.suPlaneColumns
   funext i
   exact hpart i hx
-
-
-
-
-
-
-
 
 theorem scalar_halfSpace_H3_boundary_derivative
     {u U : Plane → ℝ} (hc : HasCompactSupport u) (hu : MemWkp 3 2 u Half)

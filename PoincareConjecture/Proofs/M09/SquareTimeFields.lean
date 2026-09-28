@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

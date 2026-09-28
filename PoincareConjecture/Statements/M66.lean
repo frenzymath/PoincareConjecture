@@ -3,29 +3,6 @@ import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Statements.M65
 import PoincareConjecture.Statements.M58LoopSmoothing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
@@ -36,7 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
 
 structure M66Predecessors {t₀ t₁ : ℝ}
     (hM61 : M61RawWidthCore.{u})
@@ -51,16 +27,12 @@ structure M66Predecessors {t₀ t₁ : ℝ}
       (m65PredecessorsFromServices hM61 hM64 Q))
   short_loop : RepairedShortLoopTrivialityTheory.{u}
 
-
-
   short_loop_application : ∀ t : Set.Icc t₀ t₁, ∃ ζ : ℝ, 0 < ζ ∧
     ∀ source : ContinuousMap LoopTwoSphere
         (C1FreeLoopSpace (M := M)),
       (∀ c, IsNullHomotopicLoop (source c)) →
       (∀ c, freeLoopLength (P.flow.metric t.1) (source c) < ζ) →
         source.Homotopic (constantLoopFamily C.basepoint)
-
-
 
 structure M66Conclusion {t₀ t₁ : ℝ}
     (hM61 : M61RawWidthCore.{u})
@@ -81,7 +53,6 @@ structure M66Conclusion {t₀ t₁ : ℝ}
     ContinuousAt (fun s : Set.Icc t₀ t₁ => m66Width P s) t
 
 set_option linter.style.haveILetI false
-
 
 theorem m66PredecessorsFromServices
     (hM61 : M61RawWidthCore.{u})

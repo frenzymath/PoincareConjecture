@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace RectangleCornerArcs
-
-
-
 
 def cornerArc (a b c d : ℝ) : Set (ℝ × ℝ) :=
   ({a} ×ˢ uIcc c d) ∪ (uIcc a b ×ˢ {c})
@@ -57,9 +44,6 @@ private theorem interval_pair {a b : ℝ} (hab : a ≠ b) :
   · rw [uIcc_of_ge h.le, pair_comm]
     exact isFinitePLBallPair_Icc h
 
-
-
-
 theorem cornerArc_ballPair {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d) :
     IsFinitePLBallPair ℝ (cornerArc a b c d) {(a, d), (b, c)} := by
   have hfirst : (a, d) ≠ (a, c) := fun h => hcd (congrArg Prod.snd h).symm
@@ -76,8 +60,6 @@ theorem cornerArc_ballPair {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d) :
   rw [vertical_segment, horizontal_segment, uIcc_comm d c] at h
   exact h
 
-
-
 theorem cornerArc_subset_rectangle (a b c d : ℝ) :
     cornerArc a b c d ⊆ uIcc a b ×ˢ uIcc c d := by
   rintro p (⟨hx, hy⟩ | ⟨hx, hy⟩)
@@ -88,8 +70,6 @@ theorem cornerArc_subset_rectangle (a b c d : ℝ) :
     rw [hy]
     exact left_mem_uIcc
 
-
-
 theorem cornerArc_union_opposite (a b c d : ℝ) :
     cornerArc a b c d ∪ cornerArc b a d c =
       ({a, b} ×ˢ uIcc c d) ∪ (uIcc a b ×ˢ {c, d}) := by
@@ -97,8 +77,6 @@ theorem cornerArc_union_opposite (a b c d : ℝ) :
   simp only [cornerArc, uIcc_comm b a, uIcc_comm d c, mem_union, mem_prod,
     mem_insert_iff, mem_singleton_iff]
   tauto
-
-
 
 theorem cornerArc_inter_opposite {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d) :
     cornerArc a b c d ∩ cornerArc b a d c = {(a, d), (b, c)} := by
@@ -113,17 +91,11 @@ theorem cornerArc_inter_opposite {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d)
     · exact ⟨Or.inl ⟨rfl, right_mem_uIcc⟩, Or.inr ⟨right_mem_uIcc, rfl⟩⟩
     · exact ⟨Or.inr ⟨right_mem_uIcc, rfl⟩, Or.inl ⟨rfl, right_mem_uIcc⟩⟩
 
-
-
 theorem rectangle_ballPair {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d) :
     IsFinitePLBallPair (ℝ × ℝ) (uIcc a b ×ˢ uIcc c d)
       (cornerArc a b c d ∪ cornerArc b a d c) := by
   rw [cornerArc_union_opposite]
   exact (interval_pair hab).prod (interval_pair hcd)
-
-
-
-
 
 theorem oppositeArc_sdiff_endpoints_subset_off_axes
     {a b c d : ℝ} (hab : a ≠ b) (hcd : c ≠ d) :

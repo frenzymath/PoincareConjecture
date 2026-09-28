@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem finitePL_coordinate_model_axis
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (W rim : Set E) (f : E → V3)

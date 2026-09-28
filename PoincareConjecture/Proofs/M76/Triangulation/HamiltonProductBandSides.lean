@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductBandContainment
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -93,10 +84,6 @@ private theorem both_time_signs_in_prescribed_band {R D : Set E} {b : D2 ≃ₜ 
     exact hs
   · rw [hqv]
     exact neg_neg_of_pos hs
-
-
-
-
 
 theorem exists_prescribed_band_opposite_sides {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b)

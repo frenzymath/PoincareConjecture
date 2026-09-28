@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -21,8 +11,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem contMDiffOn_contraction_loop (C : ℝ × (M × M) → M)
     (t : ℝ) (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -43,8 +31,6 @@ theorem contMDiffOn_contraction_loop (C : ℝ × (M × M) → M)
       change (t, p, γ.extension z.val) = (t, p, γ z)
       rw [γ.boundary])).contMDiffWithinAt
 
-
-
 noncomputable def contractionLoop (C : ℝ × (M × M) → M)
     (t : ℝ) (p : M) (γ : C1FreeLoopSpace (M := M))
     (hC : ∀ z : LoopCircle,
@@ -53,8 +39,6 @@ noncomputable def contractionLoop (C : ℝ × (M × M) → M)
   loopOfExtension (fun w => C (t, p, γ.extension (radialNormalization w)))
     (contMDiffOn_contraction_loop C t p γ hC)
 
-
-
 theorem contractionLoop_apply (C : ℝ × (M × M) → M)
     (t : ℝ) (p : M) (γ : C1FreeLoopSpace (M := M))
     (hC : ∀ z : LoopCircle,
@@ -62,8 +46,6 @@ theorem contractionLoop_apply (C : ℝ × (M × M) → M)
     (z : LoopCircle) : contractionLoop C t p γ hC z = C (t, p, γ z) := by
   change C (t, p, γ.extension (radialNormalization z.val)) = _
   rw [radialNormalization_of_norm_eq_one z.property, γ.boundary]
-
-
 
 theorem mfderiv_contraction_loop (C : ℝ × (M × M) → M)
     (t : ℝ) (p : M) (γ : C1FreeLoopSpace (M := M)) (z : LoopCircle)
@@ -97,8 +79,6 @@ theorem mfderiv_contraction_loop (C : ℝ × (M × M) → M)
         (loopCircleTangent z)) at hchain
   erw [mfderiv_radial_extension γ z] at hchain
   exact hchain
-
-
 
 theorem contractionLoop_tangent (C : ℝ × (M × M) → M)
     (t : ℝ) (p : M) (γ : C1FreeLoopSpace (M := M))

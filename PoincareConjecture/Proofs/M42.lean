@@ -1,38 +1,10 @@
 import PoincareConjecture.Statements.M42VanishingContinuation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedVanishingContinuation : RepairedVanishingContinuationTheory.{u} := by
   refine ⟨?_⟩

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteNerveChains
 import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +15,6 @@ namespace PoincareConjecture.Proofs.M59
 
 variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (A : SSet.{u}) (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X))
-
-
 
 def singularLiftSSet : SSet.{u} where
   obj n := {z : A.obj n × (TopCat.toSSet.obj (TopCat.of E)).obj n //
@@ -46,26 +34,18 @@ def singularLiftSSet : SSet.{u} where
     apply Subtype.ext
     exact Prod.ext (by simp) (by simp)
 
-
-
 def singularLiftBase : singularLiftSSet p A χ ⟶ A where
   app _ := ↾fun z => z.val.1
-
-
 
 def singularLiftProjection : singularLiftSSet p A χ ⟶
     TopCat.toSSet.obj (TopCat.of E) where
   app _ := ↾fun z => z.val.2
-
-
 
 theorem singularLiftProjection_comp :
     singularLiftProjection p A χ ≫ TopCat.toSSet.map (TopCat.ofHom p) =
       singularLiftBase p A χ ≫ χ := by
   ext n z
   exact z.property
-
-
 
 theorem compact_covering_fiber_finite [CompactSpace E] [T2Space X]
     (hp : IsCoveringMap p) (x : X) : Finite (p ⁻¹' {x}) := by
@@ -74,9 +54,6 @@ theorem compact_covering_fiber_finite [CompactSpace E] [T2Space X]
     (isClosed_singleton.preimage p.continuous).isCompact
   exact finite_of_compact_of_discrete
 
-
-
-
 def singularLiftVertex (n : ℕ) : (singularLiftSSet p A χ) _⦋n⦌ →
     Σ s : A _⦋n⦌,
       p ⁻¹' {(TopCat.of X).toSSetObjEquiv _ (χ.app _ s) (stdSimplex.vertex 0)} :=
@@ -84,8 +61,6 @@ def singularLiftVertex (n : ℕ) : (singularLiftSSet p A χ) _⦋n⦌ →
     have h := congrArg (fun s => (TopCat.of X).toSSetObjEquiv _ s (stdSimplex.vertex 0))
       z.property
     exact h⟩⟩
-
-
 
 theorem singularLiftVertex_injective (hp : IsCoveringMap p) (n : ℕ) :
     Function.Injective (singularLiftVertex p A χ n) := by
@@ -105,8 +80,6 @@ theorem singularLiftVertex_injective (hp : IsCoveringMap p) (n : ℕ) :
   rw [hbase] at hz
   have heq := hz.trans hw.symm
   exact congrArg (fun s => ((TopCat.of X).toSSetObjEquiv _ s).toFun) heq
-
-
 
 theorem singularLift_finite [CompactSpace E] [T2Space X]
     (hp : IsCoveringMap p) (n : ℕ) [Finite (A _⦋n⦌)] :

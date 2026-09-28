@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StandardPa
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PhysicalCollar
 import PoincareConjecture.Definitions.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,9 +30,6 @@ noncomputable local instance standardCollarTwoJetNormedGroup :
 noncomputable local instance standardCollarTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
-
 theorem continuousOn_pullback_twoJet_time
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {J : Set ℝ} (hJ : UniqueDiffOn ℝ J) (F : RicciFlow 3 M J)
@@ -63,9 +49,6 @@ theorem continuousOn_pullback_twoJet_time
   change ContinuousOn (fun t => (B (t, x), B1 (t, x), B2 (t, x))) J
   exact h.comp
     (continuous_id.prodMk continuous_const).continuousOn (fun _ ht => ⟨ht, hx⟩)
-
-
-
 
 theorem exists_evolvingCylinder_close_collar {C theta : ℝ}
     (hC : 0 < C) (htheta : theta < 1) :
@@ -87,10 +70,6 @@ theorem exists_evolvingCylinder_close_collar {C theta : ℝ}
   apply hmargin t ht
   exact (evolving_roundCylinderClose_twoJet_error hepsilon ht.1 (ht.2.trans_lt htheta)
     hB horder z hz).trans (by linarith only [hdelta'])
-
-
-
-
 
 theorem exists_standard_collar_chart {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {C theta : ℝ}
@@ -142,9 +121,6 @@ theorem exists_standard_collar_chart {g0 : StandardInitialMetric}
     simp only [metricTwoJet, heq.eq_of_nhds, heq.fderiv_eq,
       (heq.fderiv (𝕜 := ℝ)).fderiv_eq]
   exact htwo ▸ hjet
-
-
-
 
 theorem exists_standard_collar_point {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {C theta : ℝ}

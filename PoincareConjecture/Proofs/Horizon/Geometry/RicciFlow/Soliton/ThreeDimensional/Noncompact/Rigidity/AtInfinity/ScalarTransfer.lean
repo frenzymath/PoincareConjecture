@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.UnscaledSource
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,8 +28,6 @@ private theorem bilinear_eq_of_basis {n : ℕ}
   apply ContinuousLinearMap.coe_injective
   apply (EuclideanSpace.basisFun (Fin n) ℝ).toBasis.ext
   exact h a
-
-
 
 theorem SmoothSpacetimeEmbedding.scalarCurvature_eq_of_coordinate_germ
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
@@ -88,8 +79,6 @@ theorem SmoothSpacetimeEmbedding.scalarCurvature_eq_of_coordinate_germ
   exact fun u v ↦ congrArg (fun B ↦ B u v) hB
 
 namespace PointedGeometricConvergence
-
-
 
 theorem tendsto_scalarCurvature
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -150,8 +139,6 @@ end PointedGeometricConvergence
 
 namespace AncientPointedGeometricConvergence
 
-
-
 theorem tendsto_scalarCurvature
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {T : ℝ}
     (F : ∀ k, RicciFlow n (C k).carrier (Iio T)) {p : ∀ k, (C k).carrier}
@@ -167,8 +154,6 @@ theorem tendsto_scalarCurvature
   simpa only [W, window, sourceWindowSequence, FlowCarrier.basedWindow,
     Poincare.Geometry.RicciFlow.Harnack.restrictFlow, SmoothSpacetimeEmbedding.of_spatial,
     Nat.add_zero, id_eq] using h
-
-
 
 theorem scalarCurvature_lower_bound_of_source
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {T : ℝ}
@@ -198,8 +183,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
-
-
 
 theorem unscaledPointedLimit_scalar_lower_bound
     (hC : RicciFlowCurvatureTheory.{u}) (q : ℕ → M)

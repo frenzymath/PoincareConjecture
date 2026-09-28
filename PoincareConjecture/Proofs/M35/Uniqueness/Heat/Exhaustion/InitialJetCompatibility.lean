@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.ClosedJetEnergies
 import PoincareConjecture.Proofs.M35.Uniqueness.RotationGradientBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

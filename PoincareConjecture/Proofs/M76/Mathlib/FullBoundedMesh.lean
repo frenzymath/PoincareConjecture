@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FullNormedComplex
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,8 +8,6 @@ open Set Metric
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem IsSubdivision.diam_le {K L : SimplicialComplex ℝ E}
     (hKL : K.IsSubdivision L) {D : ℝ}
@@ -29,9 +18,6 @@ theorem IsSubdivision.diam_le {K L : SimplicialComplex ℝ E}
   exact (diam_mono hst (t.finite_toSet.isCompact_convexHull ℝ).isBounded).trans (hD t ht)
 
 variable (E) [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_full_locallyFinite_boundedMesh :
     ∃ (K : SimplicialComplex ℝ E) (D : ℝ), 0 ≤ D ∧ K.space = univ ∧

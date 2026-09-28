@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,7 +29,6 @@ private theorem mfderiv_canonicalSubtypeInverse (i : ι) (x : Piece U i) :
   have hd := mfderivWithin_range_extChartAt_symm (I := 𝓡 n) (x := x)
   rw [ModelWithCorners.range_eq_univ, mfderivWithin_univ, hc, hi] at hd
   exact hd
-
 
 theorem mfderiv_chartParametrization
     {M : Type*} [TopologicalSpace M]
@@ -75,7 +65,6 @@ theorem mfderiv_chartParametrization
 variable (O : OverlapSystem (fun i => Piece U i)) (hs : SmoothOverlap U hU O)
     (g : ∀ i, CanonicalMetric U hU i) (hg : CompatibleMetrics U hU O g)
 
-
 theorem quotientMetric_pullbackCoefficients (i : ι) (x : Piece U i) :
     letI : ∀ j, ChartedSpace (EuclideanSpace ℝ (Fin n)) (Piece U j) :=
       fun j => (hU j).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -103,7 +92,6 @@ theorem quotientMetric_pullbackCoefficients (i : ι) (x : Piece U i) :
   rw [chartParametrization_apply, hd]
   exact (quotientMetric_preserves U hU O hs g hg i x v w).symm
 
-
 theorem quotientMetric_pullbackCoefficients_eqOn
     (B : ι → EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -127,7 +115,6 @@ theorem quotientMetric_pullbackCoefficients_eqOn
   rw [quotientMetric_pullbackCoefficients U hU O hs g hg i ⟨x, hx⟩]
   ext v w
   exact hB i ⟨x, hx⟩ v w
-
 
 theorem quotientMetric_family_pullbackCoefficients_eqOn
     (gFamily : ∀ i, ℝ → CanonicalMetric U hU i)

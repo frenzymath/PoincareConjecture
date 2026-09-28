@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.RadialCoordinates
 import PoincareConjecture.Proofs.M38.SmoothChart
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +14,6 @@ namespace PoincareConjecture.M38
 
 variable {a : ℝ} (ha : 0 < a) (ha1 : a < 1)
 
-
 theorem annulusRadial_mapsTo :
     Set.MapsTo (capRadialDiffeomorph 1 a ha ha1)
       (Metric.ball 0 2) (Metric.ball 0 2) := by
@@ -35,7 +24,6 @@ theorem annulusRadial_mapsTo :
   exact Metric.ball_subset_ball (by linarith) hmem
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
-
 
 noncomputable def annulusReparametrizedBall : SurgeryBallEmbedding A := by
   let e := capRadialDiffeomorph 1 a ha ha1
@@ -63,16 +51,13 @@ noncomputable def annulusReparametrizedBall : SurgeryBallEmbedding A := by
       exact congrArg f (hleft hx)
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball hf hg hleft }
 
-
 theorem annulusReparametrizedBall_map (x : StandardCapSpace) :
     (annulusReparametrizedBall ha ha1 B).map x =
       B.map (capRadialDiffeomorph 1 a ha ha1 x) := rfl
 
-
 theorem annulusReparametrizedBall_inverse (x : A.carrier) :
     (annulusReparametrizedBall ha ha1 B).inverse x =
       (capRadialDiffeomorph 1 a ha ha1).symm (B.inverse x) := rfl
-
 
 theorem annulusReparametrizedBall_closedBall :
     (annulusReparametrizedBall ha ha1 B).closedBall = B.closedBall := by
@@ -80,19 +65,16 @@ theorem annulusReparametrizedBall_closedBall :
     B.map '' Metric.closedBall 0 1
   rw [Set.image_comp, capRadialDiffeomorph_closedBall ha ha1]
 
-
 theorem annulusReparametrizedBall_image :
     (annulusReparametrizedBall ha ha1 B).map '' Metric.ball 0 2 =
       B.map '' Metric.ball 0 (1 + a) := by
   change (B.map ∘ capRadialDiffeomorph 1 a ha ha1) '' Metric.ball 0 2 = _
   rw [Set.image_comp, capRadialDiffeomorph_ball_two ha ha1]
 
-
 theorem annulusReparametrizedBall_center :
     (annulusReparametrizedBall ha ha1 B).map 0 = B.map 0 := by
   change B.map (capRadialMap (capRadialOrderIso 1 a ha ha1) 0) = B.map 0
   rw [capRadialMap_zero]
-
 
 theorem annulusReparametrizedBall_positive (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -101,7 +83,6 @@ theorem annulusReparametrizedBall_positive (z : UnitTwoSphere) {s : ℝ}
   rw [annulusReparametrizedBall_map,
     capRadialDiffeomorph_smul ha ha1 z (1 + s) (by linarith [hs.1]),
     add_sub_cancel_left]
-
 
 theorem annulusReparametrizedBall_negative (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0) :

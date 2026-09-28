@@ -3,26 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCirclePullback
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCollarTranslation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceRectifiedPair
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 structure RegularSurgeryData (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) (t : ℝ) where
   width : ℝ
@@ -43,8 +29,6 @@ structure RegularSurgeryData (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphe
   reconstruction : ∀ θ : UnitCircle, ∀ s ∈ Ioo (-width) width,
     ψ (sourceCollar (θ, s), 0) = tube (θ.1, t + s)
   sourceDiscs : RectifiedSourceDiscPair sourceCollar width (width / 2)
-
-
 
 theorem exists_regular_surgery_data (hP : PlanarSchoenfliesService)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

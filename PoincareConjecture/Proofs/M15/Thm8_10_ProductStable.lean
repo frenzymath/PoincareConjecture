@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_OrdinaryCapture
 import PoincareConjecture.Proofs.M15.Thm8_10_StableSurvival
 import PoincareConjecture.Proofs.M08.PathCongruence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [ConnectedSpace M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M] {I : SpacetimeInterval}
-
-
-
 
 theorem ordinaryProduct_exists_stableSet
     (F : RicciFlow n M I.domain)

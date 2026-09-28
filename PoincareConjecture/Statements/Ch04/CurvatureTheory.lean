@@ -3,19 +3,10 @@ import PoincareConjecture.Definitions.Ch03.CurvatureReaction
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
 universe u
 namespace PoincareConjecture
-
 
 structure RicciFlowCurvatureTheory : Prop where
   tensor_calculus :

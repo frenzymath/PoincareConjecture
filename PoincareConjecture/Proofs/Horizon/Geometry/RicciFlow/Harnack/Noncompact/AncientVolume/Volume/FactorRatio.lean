@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +19,6 @@ variable {n : ℕ} {M : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   {g : RiemannianMetric (n + 1) M} {D : LeviCivitaData g}
-
-
-
 
 theorem parallelGradient_factor_volume_bounds_of_ball_volume_lower_bound
     (hn : 0 < n) (hc : MetricComplete g)
@@ -76,9 +62,6 @@ theorem parallelGradient_factor_volume_bounds_of_ball_volume_lower_bound
   intro y
   exact h.le_asymptoticVolumeRatio_of_ball_volume_lower_bound h.leviCivitaData hn
     hcomplete hfactorRic y (div_nonneg hκ.le (by norm_num)) (hfactorVolume y)
-
-
-
 
 theorem parallelGradient_factor_volume_bounds_of_asymptoticVolumeRatio
     (hn : 0 < n) (hc : MetricComplete g)

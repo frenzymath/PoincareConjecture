@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ universe u v
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
-
 
 theorem continuous_canonicalRamp_embedded_initial_jets
     {M : Type u} [TopologicalSpace M] [T2Space M]

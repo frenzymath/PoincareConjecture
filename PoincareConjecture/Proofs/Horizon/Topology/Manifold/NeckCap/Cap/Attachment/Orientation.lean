@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.ClosingTails
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Finite.Certificate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -35,7 +25,6 @@ namespace OpenCylinderModel
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {U : Set M}
-
 
 def reversed (T : OpenCylinderModel U) : OpenCylinderModel U where
   homeomorph := ((Homeomorph.refl UnitTwoSphere).prodCongr
@@ -65,7 +54,6 @@ def reversed (T : OpenCylinderModel U) : OpenCylinderModel U where
   inverse_smooth := (contMDiff_fst.prodMk (contMDiff_const.sub contMDiff_snd)).comp_contMDiffOn
     T.inverse_smooth
 
-
 theorem reversed_tail (T : OpenCylinderModel U) (side : Bool) (a : ℝ) :
     T.reversed.tail side a = T.tail (!side) (1 - a) := by
   cases side <;> ext x <;> constructor
@@ -79,7 +67,6 @@ theorem reversed_tail (T : OpenCylinderModel U) (side : Bool) (a : ℝ) :
     | (change a < 1 - t ∧ 1 - t < 1; constructor <;> linarith [ht.1, ht.2])
     | exact hxt
     | (change T.coordinate (q, 1 - (1 - t)) = x; simpa only [sub_sub_cancel] using hxt)
-
 
 theorem reversed_middleSphere (T : OpenCylinderModel U) :
     T.reversed.middleSphere = T.middleSphere := by
@@ -100,7 +87,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
 
-
 def reversedCylinder (tube : EpsilonTubeCertificate g X) : EpsilonTubeCertificate g X :=
   { tube with
     cylinder := tube.cylinder.reversed
@@ -119,7 +105,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} {X : Set M}
   {C : CapCertificate g} {tube : EpsilonTubeCertificate g X} {side : Bool}
 
-
 def reversedCylinder (A : CapTubeAttachment C tube side) :
     CapTubeAttachment C tube.reversedCylinder (!side) where
   overlap_model := A.overlap_model
@@ -134,9 +119,6 @@ def reversedCylinder (A : CapTubeAttachment C tube side) :
 end CapTubeAttachment
 
 namespace CapCertificate
-
-
-
 
 theorem exists_finite_chain_oriented_attachment_tails_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

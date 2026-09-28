@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Positive.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +13,6 @@ open scoped Manifold ContDiff Topology Bundle
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p)
-
 
 def positiveConeRadialPotential (a : AsymptoticConePositive p hc) : ℝ :=
   (asymptoticConeRadius hc a.1 : ℝ) ^ 2 / 2

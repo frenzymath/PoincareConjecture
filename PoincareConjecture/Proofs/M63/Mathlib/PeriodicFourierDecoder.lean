@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierTrace
 import Mathlib.Analysis.Normed.Lp.lpHolder
 import Mathlib.Analysis.PSeries
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory AddCircle
@@ -32,14 +21,9 @@ private theorem norm_fourierModeProduct_le (n : ℤ) :
   simp [fourierModeProduct, ContinuousLinearMap.norm_smulRight_apply,
     ContinuousLinearMap.norm_id, fourier_norm]
 
-
-
-
 noncomputable def weightedFourier (w : lp (fun _ : ℤ => ℂ) 2) :
     lp (fun _ : ℤ => ℂ) 2 →L[ℂ] C(AddCircle L, ℂ) :=
   lp.dualPairing 2 2 (fourierModeProduct (L := L)) (norm_fourierModeProduct_le (L := L)) w
-
-
 
 theorem norm_weightedFourier_le (w u : lp (fun _ : ℤ => ℂ) 2) :
     ‖weightedFourier (L := L) w u‖ ≤ ‖w‖ * ‖u‖ := by
@@ -49,9 +33,6 @@ theorem norm_weightedFourier_le (w u : lp (fun _ : ℤ => ℂ) 2) :
         (norm_fourierModeProduct_le (L := L)))
       (le_refl ‖w‖) (le_refl ‖u‖)
   simpa only [weightedFourier, NNReal.coe_one, one_mul] using h
-
-
-
 
 theorem weightedFourier_hasSum (w u : lp (fun _ : ℤ => ℂ) 2) :
     HasSum (fun n : ℤ => (w n * u n) • (fourier n : C(AddCircle L, ℂ)))
@@ -65,9 +46,6 @@ theorem weightedFourier_hasSum (w u : lp (fun _ : ℤ => ℂ) 2) :
     ContinuousLinearMap.id_apply, smul_smul]
     using hn.of_norm.hasSum
 
-
-
-
 theorem weightedFourier_eq_of_coeff (w u : lp (fun _ : ℤ => ℂ) 2)
     (f : C(AddCircle L, ℂ)) (hcoeff : ∀ n, w n * u n = fourierCoeff f n) :
     weightedFourier w u = f := by
@@ -80,8 +58,6 @@ theorem weightedFourier_eq_of_coeff (w u : lp (fun _ : ℤ => ℂ) 2)
   simpa only [hcoeff] using (hasSum_fourier_series_of_summable hc)
 
 omit [Fact (0 < L)] in
-
-
 
 theorem memℓp_periodic_decayWeight (hL : 0 < L) :
     Memℓp (fun n : ℤ => 1 / Real.sqrt (1 + (2 * Real.pi * (n : ℝ) / L) ^ 2)) 2 := by

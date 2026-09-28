@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalReturnReg
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcRegionTriangulation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_Continuation
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +11,6 @@ open scoped Topology ContDiff Manifold Bundle Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_constructed_circle_geodesic_region_curvature_lower_bound
     (N : IntrinsicAnnulus)

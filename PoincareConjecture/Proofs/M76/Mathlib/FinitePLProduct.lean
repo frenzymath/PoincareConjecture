@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.pi_on_complex
     {ι : Type*} [Fintype ι] {F : ι → Type*}

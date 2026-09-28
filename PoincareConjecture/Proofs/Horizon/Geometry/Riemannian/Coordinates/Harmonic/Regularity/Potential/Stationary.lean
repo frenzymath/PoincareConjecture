@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Cutoffs
 import Mathlib.Analysis.Calculus.Deriv.Support
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,9 +21,7 @@ section Lift
 variable {V F : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
 def stationaryLift (u : V → F) (p : V × ℝ) : F := timeCutoff 1 p.2 • u p.1
-
 
 def stationaryForcing (u G : V → F) (p : V × ℝ) : F :=
   deriv (timeCutoff 1) p.2 • u p.1 - timeCutoff 1 p.2 • G p.1
@@ -123,7 +111,6 @@ theorem holderWith_stationaryLift {u : V → F} {K α : ℝ≥0}
 
 omit [NormedAddCommGroup V] [NormedSpace ℝ V] in
 
-
 theorem exists_stationaryForcing_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (u G : V → F) (U B : ℝ), 0 ≤ U → 0 ≤ B →
       (∀ x, ‖u x‖ ≤ U) → (∀ x, ‖G x‖ ≤ B) →
@@ -152,7 +139,6 @@ section Residual
 variable {V F : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 def stationaryEllipticResidual {ι : Type*} [Fintype ι]
     (u : V → F) (Q : ι → V → F) (e : ι → V) (x : V) : F :=
@@ -199,8 +185,6 @@ theorem heatResidual_stationaryLift {u : V → F} (hu : ContDiff ℝ ∞ u) (x :
       deriv (timeCutoff 1) s • u x - timeCutoff 1 s • Kernel.lapEval (fderiv ℝ (fderiv ℝ u) x) := by
   simp only [heatResidual, timeDerivative_stationaryLift hu,
     spatialDerivative_spatialDerivative_stationaryLift hu, map_smul]
-
-
 
 theorem heatResidual_stationaryLift_eq_forcing_sub_divergence {ι : Type*} [Fintype ι]
     {u : V → F} {Q : ι → V → F} (e : ι → V)

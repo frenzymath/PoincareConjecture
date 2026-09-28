@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Lemma8_7_CompactContinuation
 import PoincareConjecture.Proofs.M15.Lemma8_7_PrefixDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_actualBallCylinder_confinement
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

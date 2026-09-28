@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedSpatialBounds
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.WithinJetBoundsService
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_retained_local_coefficient_bounds
     (hMixed : WithinFlowJetBoundsService.{0, 0})

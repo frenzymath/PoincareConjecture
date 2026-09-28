@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitClosedJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,11 +25,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   {a : ℕ → ℝ} {ha : ∀ k, a k ∈ (F k).surgery_times}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
-
-
-
-
-
 
 theorem exists_partial_standard_flow_of_cylinder_sequence
     (P : M44CapPersistencePredecessors.{u})
@@ -78,10 +62,6 @@ theorem exists_partial_standard_flow_of_cylinder_sequence
     intro R _hRpos
     exact (eventually_cylinder_coefficient_curvature_bound D hR hcurv R).mono
       fun _ hk t ht x hx => hk t ⟨ht.1, ht.2.trans hT0T.le⟩ x hx
-
-
-
-
 
 theorem cylinder_subsequence_closed_spatial_jets
     (P : M44CapPersistencePredecessors.{u})

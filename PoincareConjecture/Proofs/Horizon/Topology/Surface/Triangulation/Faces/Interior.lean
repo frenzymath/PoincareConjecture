@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -49,8 +39,6 @@ theorem coordinate_triangle_interior_nonempty
     (interior (F '' convexHull ℝ (range b))).Nonempty := by
   rw [interior_smooth_coordinate_image F hsub]
   exact Set.Nonempty.image F ⟨_, b.centroid_mem_interior_convexHull⟩
-
-
 
 theorem coordinate_triangle_closure_interior
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

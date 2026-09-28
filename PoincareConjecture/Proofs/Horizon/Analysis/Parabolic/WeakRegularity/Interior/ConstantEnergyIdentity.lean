@@ -1,8 +1,3 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.PrincipalHessianBound
 open MeasureTheory Set Filter
@@ -143,7 +138,6 @@ theorem integral_timeDeriv_mul_constantPrincipal_eq_zero
         exact hweighted i j
   linarith
 
-
 theorem constant_energy_identity_of_cross_zero
     {A : Fin n → Fin n → ℝ} {v : Spacetime n → ℝ}
     (hvt : Integrable (fun z => (timeDeriv v z) ^ 2) volume)
@@ -165,9 +159,6 @@ theorem constant_energy_identity_of_cross_zero
   rw [hdecomp, hadd, integral_const_mul, hcross_zero]
   ring
 
-
-
-
 theorem constant_parabolic_l2_coercivity_of_principal_bound
     {A : Fin n → Fin n → ℝ} {κ : ℝ} {v : Spacetime n → ℝ}
     (hvt : Integrable (fun z => (timeDeriv v z) ^ 2) volume)
@@ -187,8 +178,6 @@ theorem constant_parabolic_l2_coercivity_of_principal_bound
         add_le_add (le_refl _) hbound
     _ = ∫ z, (timeDeriv v z - constantPrincipal A v z) ^ 2 := hid
 
-
-
 theorem constant_parabolic_l2_coercivity_smooth_compact_support
     {A : Fin n → Fin n → ℝ} {κ : ℝ} {v : Spacetime n → ℝ}
     (hv : ContDiff ℝ ∞ v) (hvc : HasCompactSupport v)
@@ -203,7 +192,6 @@ theorem constant_parabolic_l2_coercivity_smooth_compact_support
     (integrable_constantPrincipal_sq hv hvc)
     (integrable_timeDeriv_mul_constantPrincipal hv hvc)
     hcross_zero hbound
-
 
 theorem constant_parabolic_l2_coercivity
     {A : Fin n → Fin n → ℝ} {κ : ℝ} {v : Spacetime n → ℝ}

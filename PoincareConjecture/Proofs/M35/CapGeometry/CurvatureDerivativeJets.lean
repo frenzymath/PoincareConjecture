@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialSectionalDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,8 +66,6 @@ private theorem linear_eval_tendsto
   apply tendsto_finsetSum
   intro i _
   exact (((EuclideanSpace.proj i : V →L[ℝ] ℝ).continuous.tendsto v).comp hv).mul (hL i)
-
-
 
 theorem covariantCurvatureDerivative_tendsto_of_metric_jets
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

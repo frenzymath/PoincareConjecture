@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CapBandIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.RegionBands
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -103,7 +93,6 @@ variable
   (B : G.FixedStripBandFaces Q δ ra rb)
 
 include hdisjoint hlocal hcut hmatch hclosed in
-
 
 theorem cross_region_cap_band_coordinate_intersection
     (hab : a < b) (hI : Icc a b ⊆ Icc (cut e false) (1 - cut e true))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Statement
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ namespace NormalizedKappaSpacetimeEmbedding
 variable {kappa : ℝ} {source target : BasedKappaSolution kappa}
   {J : Set ℝ} {U : Set target.carrier.carrier}
 
-
-
 theorem spatial_contMDiffAt
     (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) (J ×ˢ U))
     (hU : IsOpen U) {t : ℝ} (ht : t ∈ J)
@@ -39,7 +28,6 @@ theorem spatial_contMDiffAt
   have hs := e.smooth_on.comp
     (contMDiff_const.prodMk contMDiff_id).contMDiffOn (fun y hy ↦ ⟨ht, hy⟩)
   exact (hs x hx).snd.contMDiffAt (hU.mem_nhds hx)
-
 
 theorem spatial_mfderiv_injective
     (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) (J ×ˢ U))
@@ -74,7 +62,6 @@ theorem spatial_mfderiv_injective
   rw [← ContinuousLinearMap.comp_apply, ← ContinuousLinearMap.comp_apply, ← hcomp] at h
   exact h
 
-
 theorem spatial_isOpen_image
     (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) (J ×ˢ U))
     (hU : IsOpen U) {t : ℝ} (ht : t ∈ J) :
@@ -94,8 +81,6 @@ theorem spatial_isOpen_image
   rw [← Poincare.map_nhds_eq_of_contMDiffAt_mfderiv_bijective
     (e.spatial_contMDiffAt hU ht hx) hbij]
   exact image_mem_map (hU.mem_nhds hx)
-
-
 
 theorem spatial_surjective_of_compact
     (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) (J ×ˢ U))
@@ -118,7 +103,6 @@ end NormalizedKappaSpacetimeEmbedding
 namespace M23InteriorConvergence
 
 variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
-
 
 theorem eventually_exhaustion_eq_univ (G : M23InteriorConvergence S)
     (hcompact : IsCompact (univ : Set G.limit.carrier.carrier)) :

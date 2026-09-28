@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.Compariso
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.PullbackSmooth
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -27,11 +17,6 @@ namespace PoincareConjecture.Proofs.M28.NeckTransfer
 open PoincareConjecture.Proofs.M28.FiniteHessian
 open PoincareConjecture.Proofs.M28.NeckAnalysis
 open PoincareConjecture.M28
-
-
-
-
-
 
 structure NeckGeometryCore
     {M : Type u} [TopologicalSpace M]
@@ -70,7 +55,6 @@ structure NeckGeometryCore
   center_on_central_sphere : center ∈ central_sphere
   central_sphere_subset : central_sphere ⊆ carrier
 
-
 noncomputable def NeckGeometryCore.tensor
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -78,10 +62,6 @@ noncomputable def NeckGeometryCore.tensor
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (C : NeckGeometryCore g epsilon) : RoundCylinderTwoTensor :=
   fun z v w => C.scale⁻¹ ^ 2 * roundCylinderPullback g C.coordinate_map z v w
-
-
-
-
 
 theorem NeckGeometryCore.tensor_smooth
     {M : Type u} [TopologicalSpace M]
@@ -95,7 +75,6 @@ theorem NeckGeometryCore.tensor_smooth
     C.coordinate_map_smooth q a b
   simpa [NeckGeometryCore.tensor, roundCylinderTensorCoefficient, smul_eq_mul]
     using (contDiffOn_const.mul h)
-
 
 noncomputable def NeckGeometryCore.toEpsilonNeck
     {M : Type u} [TopologicalSpace M]
@@ -130,22 +109,12 @@ noncomputable def NeckGeometryCore.toEpsilonNeck
   central_sphere_subset := C.central_sphere_subset
   metric_comparison := ⟨hclose⟩
 
-
-
-
 noncomputable def normalizedTensor
     {X : Type u} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
     [IsManifold (𝓡 3) ∞ X] {h : RiemannianMetric 3 X}
     (N : EpsilonNeck h) : RoundCylinderTwoTensor :=
   fun z v w => (N.scale ^ 2)⁻¹ * roundCylinderPullback h N.coordinate_map z v w
-
-
-
-
-
-
-
 
 structure PartialLimitNeckExport
     {M : ℕ → Type u}
@@ -178,7 +147,6 @@ structure PartialLimitNeckExport
         cylinderJetDifferenceSquared 0 (targetCore j).tensor
           (normalizedTensor (sourceNeck j)) ⌊eta⁻¹⌋₊ z ≤ delta
 
-
 noncomputable def PartialLimitNeckExport.target_core
     {M : ℕ → Type u}
     [∀ k, TopologicalSpace (M k)]
@@ -194,10 +162,6 @@ noncomputable def PartialLimitNeckExport.target_core
     letI := E.limit.limitCarrier.isManifold
     NeckGeometryCore E.limit.limitMetric eta :=
   D.targetCore j
-
-
-
-
 
 theorem eventually_exists_neck_of_partial_limit_export
     {M : ℕ → Type u}
@@ -238,11 +202,6 @@ theorem eventually_exists_neck_of_partial_limit_export
     exact hj
   refine ⟨(D.targetCore j).toEpsilonNeck hclose, rfl, ?_, rfl⟩
   exact D.targetCore_center j
-
-
-
-
-
 
 structure VaryingSourceTransferData
     (ι : Type*) [Preorder ι] (l : Filter ι)
@@ -290,14 +249,6 @@ structure VaryingSourceTransferData
       cylinderJetDifferenceSquared 0 (targetCore i).tensor
         (normalizedTensor (sourceNeck i))
         ⌊eta⁻¹⌋₊ z ≤ delta
-
-
-
-
-
-
-
-
 
 theorem eventually_exists_neck_of_transferred_geometry_and_jet_error
     {ι : Type*} [Preorder ι] (l : Filter ι)

@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.TimeDerivati
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.Algebra.Structures
-
-
-
-
-
-
-

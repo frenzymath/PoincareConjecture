@@ -1,19 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
-
-
 
 theorem m64CurvatureRange_bddAbove_of_compact
     (hcompact : IsCompact (Set.univ : Set M))
@@ -58,10 +41,6 @@ theorem m64CurvatureRange_bddAbove_of_compact
   refine ⟨K, ?_⟩
   rintro _ ⟨x, rfl⟩
   exact hK ⟨x, mem_univ _, rfl⟩
-
-
-
-
 
 theorem m64CurvatureSupremum_continuous_of_compact
     (hcompact : IsCompact (Set.univ : Set M)) :
@@ -94,10 +73,6 @@ theorem m64CurvatureSupremum_continuous_of_compact
   change Continuous (fun t : J => m64CurvatureSupremum F (t : ℝ))
   simpa [f, m64CurvatureSupremum] using hs
 
-
-
-
-
 theorem m64CurvatureSupremum_nonneg
     {t : ℝ}
     (hbounded : BddAbove
@@ -109,10 +84,6 @@ theorem m64CurvatureSupremum_nonneg
     exact (Real.sqrt_nonneg _).trans (le_csSup hbounded (Set.mem_range_self x))
   · have hEmpty : S = (∅ : Set ℝ) := not_nonempty_iff_eq_empty.mp hS
     rw [show m64CurvatureSupremum F t = sSup S by rfl, hEmpty, Real.sSup_empty]
-
-
-
-
 
 theorem m64Curvature_le_supremum
     {t : ℝ}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetDissipation
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetAmbientBounds
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -26,9 +16,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63FirstJetSquared_bound_of_curvature_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -232,9 +219,6 @@ theorem m63FirstJetSquared_bound_of_curvature_bound [T2Space M]
   have hlimit := le_of_tendsto_of_tendsto hleft hright hevent
   apply (le_div_iff₀ (sub_pos.mpr ht.1)).mpr
   nlinarith only [hlimit, mul_le_mul_of_nonneg_left hshort hD]
-
-
-
 
 theorem m63Exists_boundedCurvature_firstJet_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

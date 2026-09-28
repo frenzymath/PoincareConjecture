@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_StandardPo
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +12,11 @@ namespace PoincareConjecture.M44
 
 open M36 RiemannianMetric
 
-
 theorem continuous_standard_tangentNorm (g₀ : StandardInitialMetric) :
     Continuous (fun v : StandardCapSpace => g₀.metric.tangentNorm 0 v) := by
   unfold tangentNorm
   exact Real.continuous_sqrt.comp
     ((continuous_const.clm_apply continuous_id).clm_apply continuous_id)
-
-
 
 theorem standardRadialExponential_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (standardRadialExponential g₀) := by
@@ -54,9 +41,6 @@ theorem standardRadialExponential_contDiff (g₀ : StandardInitialMetric) :
   filter_upwards [hV.mem_nhds hv] with w hw
   exact (heq hw).symm
 
-
-
-
 theorem standardRadialExponential_hasFDerivAt_zero (g₀ : StandardInitialMetric) :
     HasFDerivAt (standardRadialExponential g₀)
       (ContinuousLinearMap.id ℝ StandardCapSpace) 0 := by
@@ -76,8 +60,6 @@ theorem standardRadialExponential_hasFDerivAt_zero (g₀ : StandardInitialMetric
   filter_upwards [hV.mem_nhds hzero] with w hw
   exact (heq hw).symm
 
-
-
 theorem standardRadialLogarithm_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (standardRadialLogarithm g₀) := by
   rw [contDiff_iff_contDiffAt]
@@ -95,8 +77,6 @@ theorem standardRadialLogarithm_contDiff (g₀ : StandardInitialMetric) :
   · have hn : ContDiffAt ℝ ∞ (fun y : StandardCapSpace => ‖y‖) x := contDiffAt_norm ℝ hx
     exact (((radialArclength_contDiff g₀).contDiffAt.comp x hn).div_const
       (radialSpeed g₀ 0)).smul ((hn.inv (norm_ne_zero_iff.mpr hx)).smul contDiffAt_id)
-
-
 
 noncomputable def standardRadialDiffeomorph (g₀ : StandardInitialMetric) :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ where

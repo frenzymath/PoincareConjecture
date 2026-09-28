@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceHorizontal
 import Mathlib.MeasureTheory.Function.JacobianOneDim
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
 theorem m64HorizontalSource_inverse_deriv {tau : ℝ ≃ₜ ℝ}
     (ht : Differentiable ℝ tau) (hi : Differentiable ℝ tau.symm) (x : ℝ) :
     deriv tau x * deriv tau.symm (tau x) = 1 := by
@@ -36,14 +23,10 @@ theorem m64HorizontalSource_inverse_deriv {tau : ℝ ≃ₜ ℝ}
   rw [heq, deriv_id] at h
   exact (mul_comm _ _).trans h.symm
 
-
-
 theorem m64HorizontalSource_symm_strictMono {tau : ℝ ≃ₜ ℝ}
     (ht : StrictMono tau) : StrictMono tau.symm := by
   intro x y hxy
   exact ht.lt_iff_lt.mp (by simpa using hxy)
-
-
 
 theorem m64HorizontalSource_interval_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -56,8 +39,6 @@ theorem m64HorizontalSource_interval_integral
     (fun x _ => (ht x).hasDerivAt.hasDerivWithinAt) (hmono.monotone.monotoneOn _) f
   rw [tau.continuous.image_Icc_of_strictMono hmono, h0, hP] at h
   exact h.symm
-
-
 
 theorem m64HorizontalSource_horizontal_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -98,13 +79,9 @@ theorem m64HorizontalSource_horizontal_green
       _ = _ := m64HorizontalSource_integral (ht.differentiable (by simp))
         hpos hmono h0 hP (fun p => fderiv ℝ psi p e0 • u p)
 
-
-
 def m64HorizontalSourceRadialTest (tau : ℝ ≃ₜ ℝ) (phi : LoopPlane → ℝ)
     (p : LoopPlane) : ℝ :=
   deriv tau.symm (p 0) * phi ((m64HorizontalSource tau).symm p)
-
-
 
 theorem m64HorizontalSourceRadialTest_contDiff {tau : ℝ ≃ₜ ℝ}
     (hi : ContDiff ℝ ∞ tau.symm) {phi : LoopPlane → ℝ} {q : WithTop ℕ∞}
@@ -114,9 +91,6 @@ theorem m64HorizontalSourceRadialTest_contDiff {tau : ℝ ≃ₜ ℝ}
   exact ((hid.of_le hq).comp
     (EuclideanSpace.proj (0 : Fin 2) : LoopPlane →L[ℝ] ℝ).contDiff).mul
       (hp.comp (m64HorizontalSource_contDiff (hi.of_le hq)))
-
-
-
 
 theorem m64HorizontalSourceRadialTest_fderiv {tau : ℝ ≃ₜ ℝ}
     (hi : ContDiff ℝ ∞ tau.symm) {phi : LoopPlane → ℝ} (hp : ContDiff ℝ 1 phi)
@@ -144,8 +118,6 @@ theorem m64HorizontalSourceRadialTest_fderiv {tau : ℝ ≃ₜ ℝ}
   simpa only [psi, m64HorizontalSource_symm, show (1 : Fin 2) ≠ 0 from by decide,
     ite_false, one_smul, smul_eq_mul, one_mul, mul_zero, add_zero, w] using
     congrArg (fun z : ℝ => deriv tau.symm (p 0) * z) hp1
-
-
 
 theorem m64HorizontalSource_radial_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

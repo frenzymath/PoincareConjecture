@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderPullback
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.EndTranslation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +14,10 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 
-
-
 noncomputable def endSphereCylinderMap {g : RiemannianMetric 3 StandardCapSpace}
     (e : StandardCylindricalEnd g) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) : StandardCapSpace :=
   e.coordinate ((chartAt E₂ q).symm p.1, p.2)
-
-
 
 theorem evolvingRoundCylinderModelCoefficients_eq_standardCylinderInner
     (u : ℝ) (q : UnitTwoSphere) (p v w : RoundCylinderCoordinates) :
@@ -48,16 +34,12 @@ theorem evolvingRoundCylinderModelCoefficients_eq_standardCylinderInner
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
 
-
-
 theorem endSphereCylinderMap_contMDiffAt (q : UnitTwoSphere)
     {p : RoundCylinderCoordinates} (hp : 0 < p.2) :
     ContMDiffAt 𝓘(ℝ, RoundCylinderCoordinates) (𝓡 3) ∞
       (endSphereCylinderMap e q) p :=
   (end_coordinate_contMDiffAt e (z := ((chartAt E₂ q).symm p.1, p.2)) hp).comp p
     (cylinderChart_symm_smooth q p)
-
-
 
 theorem endSphereCylinderMap_mfderiv (q : UnitTwoSphere)
     {p : RoundCylinderCoordinates} (hp : 0 < p.2)
@@ -85,8 +67,6 @@ theorem endSphereCylinderMap_mfderiv (q : UnitTwoSphere)
   rw [mfderiv_prodMk h₁ h₂, mfderiv_comp p hc L₁.mdifferentiableAt, hL₁, hL₂] at hh
   exact congrArg (fun L => L v) hh
 
-
-
 theorem endCylinderCoefficients_endSphereCylinderMap (s : ℝ) (q : UnitTwoSphere)
     {p : RoundCylinderCoordinates} (hp : 2 < p.2)
     (v w : RoundCylinderCoordinates) :
@@ -107,8 +87,6 @@ theorem endCylinderCoefficients_endSphereCylinderMap (s : ℝ) (q : UnitTwoSpher
   rw [endCylinderCoefficients_coordinate e s hp]
   exact (evolvingRoundCylinderModelCoefficients_eq_standardCylinderInner
     s q p v w).symm
-
-
 
 theorem endAxialTranslation_endSphereCylinderMap (j : ℕ) (q : UnitTwoSphere)
     {p : RoundCylinderCoordinates} (hp : 0 ≤ p.2) :

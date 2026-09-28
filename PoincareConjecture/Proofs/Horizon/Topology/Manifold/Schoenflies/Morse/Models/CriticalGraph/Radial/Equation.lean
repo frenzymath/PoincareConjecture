@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.Radial.Parameters
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +14,6 @@ private theorem radius_le_one {u : Real} (hu : 0 ≤ u) :
       (show (1 / 2 : Real) ∈ Icc (0 : Real) (1 / 2) by norm_num) hhalf
     simpa only [minimumCapSquaredRadius_eq_one le_rfl] using hm
   · rw [minimumCapSquaredRadius_eq_one (le_of_not_ge hhalf)]
-
-
 
 theorem minimumCapLowerRadius_equation {t : Real} (ht : t ∈ Icc (-1 : Real) 0) :
     minimumCapLowerRadius t * t ∈ Icc (-2 : Real) 0 ∧
@@ -54,7 +50,6 @@ theorem minimumCapLowerRadius_equation {t : Real} (ht : t ∈ Icc (-1 : Real) 0)
     refine ⟨⟨by linarith, hupper⟩, ?_⟩
     rw [minimumCapSquaredRadius_eq_one (by linarith)]
     rw [inv_pow, hroot, inv_mul_cancel₀ hrad.ne']
-
 
 theorem minimumCapLowerRadius_eq_of_equation {t u l : Real}
     (ht : t ∈ Icc (-1 : Real) 0) (hu : u ∈ Icc (0 : Real) 2) (hl : 0 < l)

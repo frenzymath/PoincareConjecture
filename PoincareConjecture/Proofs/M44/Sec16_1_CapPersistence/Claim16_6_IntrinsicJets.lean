@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_MetricBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 variable {X : Type u} [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
 
-
-
 theorem metric_covariant_error_sq_le_jet_error
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
     (B : CovariantTensorEvaluation 3 X 2) {j k : ℕ} (hjk : j ≤ k) (x : X) :
@@ -34,8 +23,6 @@ theorem metric_covariant_error_sq_le_jet_error
       (fun y v => B y v - g.inner y (v 0) (v 1)) l) x))
     (Finset.mem_range.mpr (Nat.lt_succ_of_le hjk))
 
-
-
 theorem metric_covariant_error_lt_of_jet_error
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
     (B : CovariantTensorEvaluation 3 X 2) {j k : ℕ} (hjk : j ≤ k)
@@ -45,8 +32,6 @@ theorem metric_covariant_error_lt_of_jet_error
       (fun y v => B y v - g.inner y (v 0) (v 1)) j) x < eta := by
   exact (sq_lt_sq₀ (Real.sqrt_nonneg _) heta.le).mp
     ((metric_covariant_error_sq_le_jet_error g D B hjk x).trans_lt hjet)
-
-
 
 theorem metric_bilinear_error_le_of_jet_error
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
@@ -74,8 +59,6 @@ theorem metric_bilinear_error_le_of_jet_error
   simp only [Fin.prod_univ_two, Matrix.cons_val_zero, Matrix.cons_val_one] at h
   exact h.trans (mul_le_mul_of_nonneg_right hnorm.le
     (mul_nonneg (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)))
-
-
 
 theorem SurgeryCapClose.covariant_error_lt
     {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}

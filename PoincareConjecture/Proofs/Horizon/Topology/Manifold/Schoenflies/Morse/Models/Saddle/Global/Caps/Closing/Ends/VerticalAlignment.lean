@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.AffineMotion
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function
@@ -11,8 +9,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_vertical_cap_alignment
     {C : Set (E × Real)} (hC : IsCompact C) {Q : Set E} (hQ : IsCompact Q)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.LabelLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.RampContinuousWeakLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "Strip" => preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
 local notation "mu" => volume.restrict (interior m64AnnulusDomain)
-
-
 
 theorem auxiliaryCircle_observed_continuous_energy_limit
     (P : M62.CircleProductData F circumference)

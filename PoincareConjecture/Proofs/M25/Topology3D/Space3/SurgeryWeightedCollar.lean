@@ -6,27 +6,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPairImage
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgerySmoothReplacement
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ImmersedSphereNormal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Manifold InnerProductSpace Topology BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_surgery_north_collar_band
     (P : SurgeryCapProfile) (psi : UnitTwoSphere × ℝ → E3)
@@ -66,10 +51,6 @@ theorem exists_surgery_north_collar_band
   by_cases hpn : 0 ≤ H p
   · exact surgeryNorthChart_contains_hemisphere R e he hr1.le hRball hpn
   · exact (hoverlap p (abs_lt.mpr ⟨hpband, (lt_of_not_ge hpn).trans hd⟩)).1
-
-
-
-
 
 theorem exists_surgery_replacement_weighted_collar
     (P : SurgeryCapProfile) (psi : UnitTwoSphere × ℝ → E3)

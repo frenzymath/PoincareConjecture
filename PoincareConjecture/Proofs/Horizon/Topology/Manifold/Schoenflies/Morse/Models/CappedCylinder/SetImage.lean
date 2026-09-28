@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.HeightStretch
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,8 +7,6 @@ open Set Function
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies.CappedCylinder
-
-
 
 theorem image_heightMap_eq_caps_union_cylinder
     {P : Type*} (B : Set (Real × P)) (Q : Set P)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentSectionalTolerance
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_TwoJetModulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M47
 open M04 M44 SpacetimeBounds
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem limitCanonical_component_eventually_sectional_lower
     {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)] [∀ k, ChartedSpace E (M k)]

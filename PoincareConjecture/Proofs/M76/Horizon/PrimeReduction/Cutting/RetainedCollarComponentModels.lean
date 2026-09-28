@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalExteriorCapSpheres
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalSphereProductDomain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 

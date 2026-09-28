@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.PeriodicSmoothApproxi
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RelabelLength
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem c1_label_deriv_pos_of_immersed
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma)
     {sigma : ℝ → ℝ} (hsigma : ContDiff ℝ 1 sigma) (hmono : Monotone sigma)
@@ -44,10 +30,6 @@ theorem c1_label_deriv_pos_of_immersed
       (hsigma.differentiable (by norm_num) x).hasDerivAt
     simpa +instances only [Function.comp_def, hzero, zero_smul] using! hvel
   exact lt_of_le_of_ne hmono.deriv_nonneg (Ne.symm hn)
-
-
-
-
 
 theorem curvature_comp_immersed_c1
     (F : RicciFlow n M (Icc a b)) (time : ℝ)
@@ -65,10 +47,6 @@ theorem curvature_comp_immersed_c1
       (hS.mdifferentiableAt (by norm_num) (x := sigma x))
   unfold m62Curvature m62CurvatureSquared
   rw [hvec]
-
-
-
-
 
 theorem c1_lift_subarc_geometry [T2Space M] [CompactSpace M]
     (F : RicciFlow n M (Icc a b)) {time : ℝ} (htime : time ∈ Icc a b)
@@ -106,9 +84,6 @@ theorem c1_lift_subarc_geometry [T2Space M] [CompactSpace M]
       rw [curvature_comp_immersed_c1 F time hgamma hgammaImm hsigma sigma.monotone himm x]
     _ = _ := integral_density_comp_monotone F (fun y _ => gamma y) hdiff hsigma
       sigma.monotone (m62Curvature F (fun y _ => gamma y) time) hcont.2 alpha beta
-
-
-
 
 theorem c1_lift_turning_bound [T2Space M] [CompactSpace M]
     (F : RicciFlow n M (Icc a b)) {time : ℝ} (htime : time ∈ Icc a b)

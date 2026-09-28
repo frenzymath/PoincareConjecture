@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

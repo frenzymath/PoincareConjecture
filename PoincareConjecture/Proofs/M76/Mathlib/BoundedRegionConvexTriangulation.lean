@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_full_face_of_mem_closure_interior (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {x : E} (hx : x ∈ closure (interior K.space)) :
@@ -64,17 +49,11 @@ theorem exists_full_face_of_mem_closure_interior (K : SimplicialComplex ℝ E)
     exact hs.2
   simpa using (K.indep hs.1).affineSpan_eq_top_iff_card_eq_finrank_add_one.mp hspan
 
-
-
-
 theorem exists_full_face_of_mem_interior (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {x : E} (hx : x ∈ interior K.space) :
     ∃ s ∈ K.faces, s.card = Module.finrank ℝ E + 1 ∧
       x ∈ convexHull ℝ (s : Set E) :=
   K.exists_full_face_of_mem_closure_interior hK (subset_closure hx)
-
-
-
 
 theorem exists_full_face_of_mem_convex_space (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hcv : Convex ℝ K.space)
@@ -85,10 +64,6 @@ theorem exists_full_face_of_mem_convex_space (K : SimplicialComplex ℝ E)
     rw [hcv.closure_interior_eq_closure_of_nonempty_interior hne,
       (K.isCompact_space_of_finite hK).isClosed.closure_eq]
   exact K.exists_full_face_of_mem_closure_interior hK (hspace.symm ▸ hx)
-
-
-
-
 
 theorem exists_full_coface_of_convex_space (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hcv : Convex ℝ K.space)

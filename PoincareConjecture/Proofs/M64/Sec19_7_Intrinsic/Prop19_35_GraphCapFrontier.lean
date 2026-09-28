@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphCap
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_graph_cap_frontier_subset
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ)) {h : ℝ → ℝ} {X : Set ℝ} {a b d : ℝ}
@@ -66,10 +50,6 @@ theorem m64Intrinsic_graph_cap_frontier_subset
     exact ⟨⟨hw₁.le, hw₂.le⟩, hw₃.le, hw₄.le⟩
   exact False.elim (hz.2 (mem_interior_iff_mem_nhds.mpr
     (L.symm.toHomeomorph.isOpenMap.image_mem_nhds hn)))
-
-
-
-
 
 theorem m64Intrinsic_graph_cap_interface_lines
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ)) (a b d : ℝ) :

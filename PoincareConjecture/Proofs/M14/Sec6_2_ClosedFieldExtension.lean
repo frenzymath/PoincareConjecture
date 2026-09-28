@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_ChartPullbackExtension
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedExtensionGluing
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {Y : ∀ s, G.Horizontal (γ s)}
-
-
 
 theorem exists_local_pullbackExtension_Icc {a b : ℝ} (hab : a < b)
     (hγ : ContinuousOn γ (Set.Icc a b))
@@ -73,8 +62,6 @@ theorem exists_local_pullbackExtension_Icc {a b : ℝ} (hab : a < b)
   intro t ht
   rw [hgy (hUsub ht)]
   exact e.symm_apply_apply_mk (hsrc t (hUsub ht)) (Y t)
-
-
 
 theorem exists_pullbackExtension_Icc {a b : ℝ} (hab : a < b)
     (hY : ContMDiffOn (𝓘(ℝ, ℝ))

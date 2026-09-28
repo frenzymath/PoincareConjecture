@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusBoundaryCurv
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteRegularBoundaryTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RelabelAreaRange
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -23,10 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {a b : ℝ}
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
-
 
 theorem c2_annulus_boundary_curvature_le (F : RicciFlow n M (Icc a b))
     (c : Bool → ℝ → ℝ → M) (hc : ∀ u, M63C2ShrinkingCurveOn F (c u) (Icc a b))

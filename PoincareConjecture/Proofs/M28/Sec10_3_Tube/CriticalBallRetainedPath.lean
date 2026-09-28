@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCapBoundaryContact
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizerSubsegments
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -79,9 +69,6 @@ private theorem intrinsicEDist_scaleSmoothMetric
       _ = h.pathELength γ 0 1 := hscale.symm
       _ < r := hγlen).le
 
-
-
-
 theorem normalizedSlice_intrinsicEDist (H : CounterexampleNeckFamily E) (k : ℕ)
     (U : Set ((E (k + H.shift)).flow.slice (E (k + H.shift)).time).carrier)
     (p q : ((E (k + H.shift)).flow.slice (E (k + H.shift)).time).carrier) :
@@ -91,9 +78,6 @@ theorem normalizedSlice_intrinsicEDist (H : CounterexampleNeckFamily E) (k : ℕ
         intrinsicEDist ((E (k + H.shift)).flow.metric (E (k + H.shift)).time)
           U p q :=
   intrinsicEDist_scaleSmoothMetric _ _ (H.base_scalar_pos k)
-
-
-
 
 theorem normalizedSlice_source_path_minimizing
     (H : CounterexampleNeckFamily E) (k : ℕ) :

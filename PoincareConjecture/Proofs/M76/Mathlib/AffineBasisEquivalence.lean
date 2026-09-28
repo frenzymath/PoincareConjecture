@@ -1,21 +1,9 @@
 import Mathlib.LinearAlgebra.AffineSpace.Basis
 import Mathlib.LinearAlgebra.AffineSpace.AffineEquiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Affine
-
-
-
 
 theorem AffineBasis.exists_affineEquiv_map {ι K V W P Q : Type*}
     [Ring K] [AddCommGroup V] [Module K V] [AffineSpace V P]

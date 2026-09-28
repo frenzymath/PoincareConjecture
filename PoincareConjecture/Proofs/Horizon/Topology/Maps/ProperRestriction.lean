@@ -3,14 +3,6 @@ import Mathlib.Topology.LocalAtTarget
 import Mathlib.Topology.Sequences
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -31,7 +23,6 @@ theorem isProperMap_restrictPreimage_of_isCompact
   change f x ∈ I
   rw [← heq]
   exact y.property
-
 
 theorem isProperMap_real_restrictPreimage_of_isCompact
     {X : Type*} [TopologicalSpace X] {f : X → ℝ}

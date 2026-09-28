@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPeriodPositive
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 open Proofs.M58
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem scalarPotential_compact_levels {H : Plane → ℝ} (hHc : Continuous H)
     (hinner : ∀ x : Plane, ‖x‖ = 1 → H x = 0)
@@ -54,10 +37,6 @@ theorem scalarPotential_compact_levels {H : Plane → ℝ} (hHc : Continuous H)
   rw [heq]
   exact scalarClosedAnnulus_isCompact.inter_right (hK.isClosed.preimage hHc)
 
-
-
-
-
 theorem scalarPotential_levels_radially_separated {H : Plane → ℝ} (hHc : Continuous H)
     (hinner : ∀ x : Plane, ‖x‖ = 1 → H x = 0)
     (houter : ∀ x : Plane, ‖x‖ = 2 → H x = 1)
@@ -75,10 +54,6 @@ theorem scalarPotential_levels_radially_separated {H : Plane → ℝ} (hHc : Con
   · refine ⟨3 / 2, 3 / 2, by norm_num, le_rfl, by norm_num, ?_⟩
     intro x hx hxK
     exact (hne ⟨x, hx, hxK⟩).elim
-
-
-
-
 
 theorem scalarPotential_surjOn_interval {H : Plane → ℝ} (hHc : Continuous H)
     (hinner : ∀ x : Plane, ‖x‖ = 1 → H x = 0)

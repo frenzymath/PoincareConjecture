@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityOddGraph
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityReflectedTests
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -114,10 +105,6 @@ private theorem equation_integral_split {R : ℝ} {f : LoopPlane → ℝ}
   simpa only [Function.comp_def, reflection_involution] using hc
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem halfDisk_odd_localMap_equation {N : ℕ} {R : ℝ}
     (D : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin N))
@@ -237,9 +224,6 @@ theorem halfDisk_odd_localMap_equation {N : ℕ} {R : ℝ}
     ring
   rw [hleft, hright]
   exact hw
-
-
-
 
 theorem halfDisk_odd_localMap_growth {N : ℕ} {R C : ℝ}
     (D : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin N))

@@ -1,16 +1,12 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 open scoped Topology
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem integral_le_of_compl_ball_bounds
     {X : Type*} [MetricSpace X] [MeasurableSpace X] [BorelSpace X]

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabeledSolution
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.FamilySlope
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.IntrinsicFields
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,10 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem m65FamilyCell_normalization_bounds (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℕ → ℝ) (h : ∀ k, 0 < circumference k)

@@ -1,8 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,8 +10,6 @@ namespace Poincare.Geometry.Euclidean
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E] {v : E}
-
-
 
 def heightCoordinates (hv : ‖v‖ = 1) : (Real × (Real ∙ v)ᗮ) ≃L[Real] E :=
   LinearEquiv.toContinuousLinearEquiv {

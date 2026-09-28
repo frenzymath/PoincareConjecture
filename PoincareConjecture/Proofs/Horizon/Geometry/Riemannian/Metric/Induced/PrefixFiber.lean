@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.IteratedFiber
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Equivalence
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +9,6 @@ open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularL
 open scoped Manifold ContDiff Topology
 
 set_option maxHeartbeats 600000 in
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_prefix_openFiber_metric_equivalence
     {m k : ℕ} {M : Type*} [TopologicalSpace M]

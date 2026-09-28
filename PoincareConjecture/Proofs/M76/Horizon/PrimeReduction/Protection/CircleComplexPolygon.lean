@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.PureEdgeInterval
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

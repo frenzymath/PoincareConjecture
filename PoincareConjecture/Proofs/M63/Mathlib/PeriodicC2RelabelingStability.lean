@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_C2_relabeling_tolerance
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

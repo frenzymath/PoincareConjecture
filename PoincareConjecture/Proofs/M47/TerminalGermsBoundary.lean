@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_ball_subset_image
     {M : Type u} [TopologicalSpace M]

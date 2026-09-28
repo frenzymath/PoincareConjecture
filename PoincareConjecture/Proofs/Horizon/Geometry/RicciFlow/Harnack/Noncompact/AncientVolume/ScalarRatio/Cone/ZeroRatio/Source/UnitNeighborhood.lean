@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Quotient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.ConeTopology
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +12,6 @@ open Set Filter Poincare.Gluing Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology NNReal ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem unitSlice_subset_iUnion_uniformBallRestriction
     {n : ℕ} {X : Type*} [MetricSpace X] {p : X}
@@ -52,10 +39,6 @@ theorem unitSlice_subset_iUnion_uniformBallRestriction
   change dist z (e j ⟨0, Metric.mem_closedBall_self hr.le⟩) < r / 8
   rw [hcenter]
   exact hj
-
-
-
-
 
 theorem exists_open_unitNeighborhood_of_normal_chart_family
     {n : ℕ} {X : Type*} [MetricSpace X] [ProperSpace X] {p : X}
@@ -98,10 +81,6 @@ theorem exists_open_unitNeighborhood_of_normal_chart_family
   exact ⟨f, hopen, (fun _ _ => rfl), hrange, hunit,
     hopen.isEmbedding.isInducing.isCompact_preimage'
       (isCompact_asymptoticCone_unit_slice hc) hunit⟩
-
-
-
-
 
 theorem exists_isometric_unitNeighborhood_of_source_distance_limits
     {n : ℕ} {X : Type*} [MetricSpace X] [ProperSpace X] {p : X}

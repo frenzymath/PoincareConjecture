@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.BoundaryEscape
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology NNReal
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem boundary_escape_of_reindexed_chart_approximation
     {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialReflectionColumns
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzObservedColumns
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,9 +34,6 @@ private theorem scalar_weak_partial_on_open
 
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem m64LipschitzOn_precompact_weak_columns
     {K O : Set LoopPlane} (hK : IsCompact K) (hO : IsOpen O) (hOK : O ⊆ K)
@@ -86,8 +72,6 @@ theorem m64LipschitzOn_precompact_weak_columns
   · intro i b
     exact m64WeakPartialDeriv_ae_congr EventuallyEq.rfl (hd i b)
       (scalar_weak_partial_on_open hO (hcoordinate b) i)
-
-
 
 theorem m64RadialCorrect_weak_data
     {f h : LoopPlane → E} (hf : ContDiff ℝ 1 f) (hh : ContDiff ℝ 1 h)

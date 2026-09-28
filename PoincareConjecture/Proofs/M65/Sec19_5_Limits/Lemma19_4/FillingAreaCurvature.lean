@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaBoundaryLength
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M65Filling
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 def loopCurvature {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (gamma : C1FreeLoopSpace (M := M)) (x : ℝ) :
@@ -90,10 +79,6 @@ private theorem loopCurvature_periodic {g : RiemannianMetric 3 M}
       (congrArg (fun w => (e.symmL ℝ (c x) w +
         D.connection (FiberBundle.extend LoopAmbient (Y x)) (c x) (curveVelocity c x) :
           LoopAmbient)) hd))
-
-
-
-
 
 theorem exists_curvature_section {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (gamma : C1FreeLoopSpace (M := M)) (hinj : Function.Injective (gamma : LoopCircle → M)) :

@@ -9,16 +9,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.Order.Filter.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,9 +37,6 @@ local notation "b" => (fun (k : ℕ) (x : G.limitCarrier.carrier) =>
 set_option maxHeartbeats 800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_good_static_stage_slice_sequence
     {W T B : ℝ} (hT : 0 < T)

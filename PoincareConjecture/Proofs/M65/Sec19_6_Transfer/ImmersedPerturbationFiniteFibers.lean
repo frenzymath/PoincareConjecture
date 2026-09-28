@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationZeroChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,10 +14,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X] [T2Space X]
 
 set_option maxHeartbeats 600000 in
-
-
-
-
 
 theorem finite_fibers_of_zero_charts (mu : Measure E) [IsAddHaarMeasure mu]
     (K : Set X) (hK : IsCompact K) (parameter : X → E)

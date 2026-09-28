@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.FamilySlices
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeInitialPair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem SourceTubeData.initial_node_geometry
     {epsilon C A D₀ D : ℝ}
@@ -50,9 +38,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
-
 theorem tubeCritical_contains_initial_node (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k))
     (hsmall : epsilon ≤ (1 / 1000 : ℝ)) {Acrit : ℝ}
@@ -76,9 +61,6 @@ theorem tubeCritical_contains_initial_node (H : CounterexampleNeckFamily E)
     (inv_pos.mpr hε)]
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_retained_initial_node_capture_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

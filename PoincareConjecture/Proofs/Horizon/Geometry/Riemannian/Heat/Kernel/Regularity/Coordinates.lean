@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateRepresentative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.ExhaustionPowers
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,7 +15,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_eLpNorm_coordinate_pullback_le
     (g : RiemannianMetric n M)
@@ -105,7 +97,6 @@ theorem exists_eLpNorm_coordinate_pullback_le
   have hbt := ENNReal.toReal_mono (ENNReal.mul_ne_top hAt hf.2.ne) hb
   simpa only [ENNReal.toReal_mul] using hbt
 
-
 theorem exists_eLpNorm_coordinate_pullback_restrict_le
     (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -138,9 +129,6 @@ variable {n : ℕ} [NeZero n] {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
-
-
-
 
 theorem eventually_eLpNorm_coordinate_laplacian_powers_exhaustion_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)

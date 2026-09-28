@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.PointedHorn
 import Mathlib.Algebra.Group.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -17,7 +10,6 @@ universe u v
 namespace PoincareConjecture.Proofs.M02.Topology
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem pointedSimplex_additive_mulStruct
     (X : SSet.{u}) [SSet.KanComplex X] (n : Nat)

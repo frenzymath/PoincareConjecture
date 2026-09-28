@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.CompactDiskDerivative
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m65Ae_mem_openLoopDisk :
     ∀ᵐ z ∂volume.restrict loopDiskSet, z ∈ Metric.ball (0 : LoopPlane) 1 := by
@@ -30,9 +19,6 @@ theorem m65Ae_mem_openLoopDisk :
   rw [mem_ball_zero_iff]
   exact lt_of_le_of_ne hclosed (by simpa only [mem_compl_iff, Metric.mem_sphere,
     dist_zero_right] using hz)
-
-
-
 
 theorem m65HasDerivAt_integral_loopDisk_of_trace
     (f v : ℝ × LoopPlane → ℝ) {t δ : ℝ} (hδ : 0 < δ)

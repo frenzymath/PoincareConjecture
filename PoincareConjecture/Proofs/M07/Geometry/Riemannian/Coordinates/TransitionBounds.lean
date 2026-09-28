@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +15,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 noncomputable def transitionHessianField
     [CompleteSpace E]
@@ -52,8 +32,6 @@ noncomputable def transitionHessianField
       D (coordinateChristoffel A x u v) -
         coordinateChristoffel B y (D u) (D v) := by
   rfl
-
-
 
 theorem contDiff_transitionHessianField
     [CompleteSpace E]
@@ -88,9 +66,6 @@ theorem contDiff_transitionHessianField
       (hD.clm_apply contDiff_const)).clm_apply
         (hD.clm_apply contDiff_const)))
 
-
-
-
 theorem norm_le_of_pullback_quadratic_bounds
     (A : E →L[ℝ] E →L[ℝ] ℝ) (B : F →L[ℝ] F →L[ℝ] ℝ) (D : E →L[ℝ] F)
     {a C : ℝ} (ha : 0 < a) (hC : 0 ≤ C)
@@ -115,8 +90,6 @@ theorem norm_le_of_pullback_quadratic_bounds
         field_simp
   exact (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (Real.sqrt_nonneg _) (norm_nonneg _))).mp hsq
 
-
-
 theorem norm_fderiv_le_of_pullback_quadratic_bounds
     {U : Set E} {V : Set F} {f : E → F}
     {A : E → E →L[ℝ] E →L[ℝ] ℝ} {B : F → F →L[ℝ] F →L[ℝ] ℝ}
@@ -129,13 +102,6 @@ theorem norm_fderiv_le_of_pullback_quadratic_bounds
   intro x hx
   exact norm_le_of_pullback_quadratic_bounds (A x) (B (f x)) (fderiv ℝ f x)
     ha hC (hA x hx) (hB (f x) (hfV hx)) (hmetric x hx)
-
-
-
-
-
-
-
 
 theorem hasUniformJetBounds_of_hessian
     {ι : Type*} {n : ℕ} {f : ι → E → F} {H : ι → E → E →L[ℝ] F}
@@ -157,8 +123,6 @@ theorem hasUniformJetBounds_of_hessian
         refine ⟨C, ?_⟩
         intro i x
         simpa only [hEq i] using hC i x)
-
-
 
 theorem hasUniformJetBoundsOn_of_christoffel_hessian
     {ι : Type*} {U V : Set E} (hU : IsOpen U) (hV : IsOpen V)
@@ -227,8 +191,6 @@ theorem hasUniformJetBoundsOn_of_christoffel_hessian
         exact (hEq i x hx u v).symm
   intro n
   exact (HasUniformJetBoundsOn.succ_of_fderiv hzero (hDj n)).mono_order (Nat.le_succ n)
-
-
 
 theorem uniform_derivative_bounds_of_local_isometries
     {d : ℕ} {U V : Set (EuclideanSpace ℝ (Fin d))}
@@ -308,8 +270,6 @@ theorem uniform_derivative_bounds_of_local_isometries
   intro m
   obtain ⟨C, hC⟩ := hF m m le_rfl
   exact ⟨C, fun i x hx => hC i x hx⟩
-
-
 
 theorem exists_smoothSubsequenceExtraction_of_local_isometries
     {d : ℕ} {U V : Set (EuclideanSpace ℝ (Fin d))}

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.Mathlib.FiniteSigma
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -15,7 +13,6 @@ variable {ι F Y : Type*} [Finite ι] [TopologicalSpace F] [CompactSpace F] [T2S
   (hcover : (⋃ i, S i) = univ)
 
 include hclosed hdisjoint hcover
-
 
 noncomputable def finiteClosedCoverHomeomorph : (Σ i, S i) ≃ₜ F := by
   let : ∀ i, CompactSpace (S i) := fun i => isCompact_iff_compactSpace.mp (hclosed i).isCompact
@@ -41,7 +38,6 @@ noncomputable def finiteClosedCoverHomeomorph : (Σ i, S i) ≃ₜ F := by
 @[simp] theorem finiteClosedCoverHomeomorph_apply (i : ι) (x : S i) :
     finiteClosedCoverHomeomorph S hclosed hdisjoint hcover ⟨i, x⟩ = x := rfl
 
-
 noncomputable def componentMap (g : ∀ i, C(S i, Y)) : C(F, Y) :=
   (ContinuousMap.sigma g).comp
     ⟨(finiteClosedCoverHomeomorph S hclosed hdisjoint hcover).symm,
@@ -61,7 +57,6 @@ theorem isCoveringMap_componentMap [T2Space Y] (g : ∀ i, C(S i, Y))
   let : ∀ i, CompactSpace (S i) := fun i => isCompact_iff_compactSpace.mp (hclosed i).isCompact
   exact (isCoveringMap_finite_sigma g hg).comp_homeomorph
     (finiteClosedCoverHomeomorph S hclosed hdisjoint hcover).symm
-
 
 noncomputable def componentHomotopy (f : C(F, Y)) (g : ∀ i, C(S i, Y))
     (H : ∀ i, (f.restrict (S i)).Homotopy (g i)) :

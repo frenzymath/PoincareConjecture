@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.C
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.ModelComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.TerminalAnnuli
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Geometry PLAnnularStrip
@@ -107,8 +98,6 @@ theorem exists_hamiltonZero_compressed_whole_component_family
     exact hUdis (fun h => hij (r.symm.injective h))
   · intro i
     exact ⟨hUK (r.symm i), hUconn (r.symm i), hcomponent (r.symm i)⟩
-
-
 
 theorem exists_hamiltonZero_terminal_finite_annulus_family
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3)

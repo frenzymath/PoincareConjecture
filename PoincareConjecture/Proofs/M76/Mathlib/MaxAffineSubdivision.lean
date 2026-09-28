@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyFiniteHyperplaneSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCentroidSign
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_locallyFinite_subdivision_max_affine (K : SimplicialComplex ℝ E)
     (hK : LocallyFinite (fun s : K.faces => convexHull ℝ (s.val : Set E)))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialJacobiDerivative
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +21,6 @@ private theorem eq_zero_of_heq_zero {q r : G.Point} (h : q = r)
     {v : G.Horizontal q} (hv : HEq (0 : G.Horizontal r) v) : v = 0 := by
   cases h
   exact (eq_of_heq hv).symm
-
-
-
-
 
 theorem tendsto_initialGauge_scaledField
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

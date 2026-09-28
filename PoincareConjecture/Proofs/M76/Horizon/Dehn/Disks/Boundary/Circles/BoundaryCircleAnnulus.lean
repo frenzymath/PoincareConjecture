@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.CyclicStripAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.CyclicStripBlocks
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -15,8 +8,6 @@ open Set Geometry PLAnnularStrip
 namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem BoundaryCircleBlockData.exists_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

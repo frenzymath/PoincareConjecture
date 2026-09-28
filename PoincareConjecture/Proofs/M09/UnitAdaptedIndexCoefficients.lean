@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.CompactDerivativeExtension
 import PoincareConjecture.Proofs.M09.ScaledAdaptedField
 import PoincareConjecture.Proofs.M09.FiniteFieldSum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

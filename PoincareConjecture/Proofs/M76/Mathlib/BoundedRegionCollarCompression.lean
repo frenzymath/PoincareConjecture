@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_collar_compression
     {s C b d e q : Set X}

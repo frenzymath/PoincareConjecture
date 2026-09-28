@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronAdjacency
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronChainCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,8 +10,6 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
-
-
 
 theorem tetrahedronCofaces_eq_pair_of_distinct
     (B : Triangle A → Prop)
@@ -43,8 +33,6 @@ theorem tetrahedronCofaces_eq_pair_of_distinct
   rw [hcofaces t, if_neg hnot, Finset.card_pair hqr]
 
 open Classical in
-
-
 
 theorem exists_scalar_total_of_relative_boundary
     (B : Triangle A → Prop)
@@ -78,8 +66,6 @@ theorem exists_scalar_total_of_relative_boundary
   rw [hc, map_smul, boundary3_total_eq_marked A B hcofaces]
 
 open Classical in
-
-
 
 theorem boundary3_injective_of_boundary_nonempty
     (B : Triangle A → Prop)

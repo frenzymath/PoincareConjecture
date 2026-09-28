@@ -2,20 +2,10 @@ import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 open scoped ContDiff Manifold
 
 namespace Poincare.Geometry.Manifold
-
-
 
 def sphereDiffeomorphOfLocalDiffeomorph
     {n : ℕ} {S : Type*} [TopologicalSpace S] [T2Space S]

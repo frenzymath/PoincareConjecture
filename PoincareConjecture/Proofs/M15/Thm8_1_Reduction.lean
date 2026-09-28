@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
@@ -21,20 +11,13 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 noncomputable def reducedVolumeLowerBound (n : ℕ) (taubar l₀ V : ℝ) : ℝ :=
   Real.rpow taubar (-(n : ℝ) / 2) * Real.exp (-l₀) * V
-
-
 
 theorem reducedVolumeLowerBound_pos {taubar l₀ V : ℝ}
     (htaubar : 0 < taubar) (hV : 0 < V) :
     0 < reducedVolumeLowerBound n taubar l₀ V := by
   exact mul_pos (mul_pos (Real.rpow_pos_of_pos htaubar _) (Real.exp_pos _)) hV
-
-
-
 
 theorem stable_reducedLength_le_branch {T τ : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} (H : M14StableSet G T τ x E)
@@ -63,8 +46,6 @@ variable {T : ℝ} {x : (G.slices T).Point}
   [IsManifold (𝓡 n) ∞ C] [T2Space C] [SecondCountableTopology C]
   {B : M15ActualBallCylinder G T x r K C}
 
-
-
 theorem configuration_W_nonempty
     (D : M15Theorem81Configuration G T x E taubar l₀ V r K C B)
     (hV : 0 < V) : D.W.Nonempty := by
@@ -74,17 +55,12 @@ theorem configuration_W_nonempty
     simpa [hempty] using D.terminal_image_volume
   exact (not_le_of_gt (ENNReal.ofReal_pos.mpr hV)) hzero
 
-
-
 theorem configuration_reducedLength_le
     (D : M15Theorem81Configuration G T x E taubar l₀ V r K C B)
     {Z : G.Horizontal x.val} (hZ : Z ∈ D.W) :
     M14ReducedLengthValue G T 0 D.tau₀ x.val (D.stable.endpoint_map Z) ≤ l₀ :=
   (stable_reducedLength_le_branch D.stable (D.W_subset_stable hZ)).trans
     (D.normalized_reduced_length Z hZ)
-
-
-
 
 theorem configuration_reducedVolume_lower_bound
     (hM14 : GeneralizedLGeometryTheory.{u} n)

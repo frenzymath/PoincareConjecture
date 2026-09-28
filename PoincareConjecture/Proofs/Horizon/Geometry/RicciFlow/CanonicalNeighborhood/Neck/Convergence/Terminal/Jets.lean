@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.ParametrizedTerminalJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Parametrized.Diffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,9 +17,6 @@ namespace PoincareConjecture.PointedGeometricConvergence
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.secondCountable
   normedAddCommGroupTangentSpaceVectorSpace normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_terminal_cylinder_parametrized_jet_constant
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (hJ : IsCompact J) (d : ℕ) :

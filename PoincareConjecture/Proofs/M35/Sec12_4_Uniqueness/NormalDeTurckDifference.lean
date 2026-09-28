@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.NormalDeTurckJet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,9 +65,6 @@ theorem exists_normalLowerJetSource_lipschitz
   simpa [dist_eq_norm, Prod.norm_def] using
     hL.dist_le_mul (C, p) ⟨hCB, hp⟩ (C, q) ⟨hCB, hq⟩
 
-
-
-
 theorem native_normal_covariant_difference (b p q : MetricJet2 (n := n))
     (hb : b.first = 0)
     (hbs : ∀ a c i j, b.second a c i j = b.second a c j i)
@@ -95,8 +84,6 @@ theorem native_normal_covariant_difference (b p q : MetricJet2 (n := n))
     lowerJetContraction_sub_left, lowerJetContraction_sub_right]
   simp only [Matrix.sub_apply]
   ring
-
-
 
 theorem exists_normal_covariant_difference_bound
     (K : Set (MetricLowerJet n)) (hKconv : Convex ℝ K) (hKcompact : IsCompact K)

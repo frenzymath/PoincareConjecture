@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.WithinVelocitySmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,9 +11,6 @@ variable {𝕜 E F E' H M : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace H] {I : ModelWithCorners 𝕜 E' H}
   [TopologicalSpace M] [ChartedSpace H M]
   {S : Set E} {U : Set F} {α : E × F → M} {m k : ℕ∞ω}
-
-
-
 
 theorem mfderivWithin_fst_eq_mfderivWithin_prod
     {x : E} {y : F} (hS : UniqueDiffWithinAt 𝕜 S x) (hy : y ∈ U)
@@ -39,10 +28,7 @@ theorem mfderivWithin_fst_eq_mfderivWithin_prod
   rw [mfderivWithin_eq_mfderiv hS.uniqueMDiffWithinAt hi, mfderiv_prod_left] at hchain
   exact congrArg (fun L => L v) hchain
 
-
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ContMDiffOn.contMDiffOn_partialTangentWithin_fst_prod
     [IsManifold I 1 M]
@@ -68,9 +54,6 @@ theorem ContMDiffOn.contMDiffOn_partialTangentWithin_fst_prod
   rw [modelWithCornersSelf_prod, ← chartedSpaceSelf_prod] at hpartial
   exact hpartial
 
-
-
-
 theorem mfderiv_snd_eq_mfderivWithin_prod (hU : IsOpen U)
     {x : E} {y : F} (hx : x ∈ S) (hy : y ∈ U)
     (hα : MDifferentiableWithinAt ((𝓘(𝕜, E)).prod (𝓘(𝕜, F))) I
@@ -86,10 +69,7 @@ theorem mfderiv_snd_eq_mfderivWithin_prod (hU : IsOpen U)
     mfderivWithin_of_mem_nhds (hU.mem_nhds hy), mfderiv_prod_right] at hchain
   exact congrArg (fun L => L v) hchain
 
-
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ContMDiffOn.contMDiffOn_partialTangent_snd_prod
     [IsManifold I 1 M]

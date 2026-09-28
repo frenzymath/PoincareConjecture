@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.AmbientFiniteSlabAvoidance
 import PoincareConjecture.Proofs.M02.Topology.AmbientGridPerturbation
 
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabControlled
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardGeneralizedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 structure M30LongSlabControlService
     (S : GeneralizedBlowupSequence.{u}) (kappa r₀ : ℝ) (T₀ : ℝ≥0∞) : Prop where
@@ -47,10 +34,6 @@ structure M30LongSlabControlService
                 ((FiniteHorizonSlab.closedEmbedding e hTplus).pointMap s hs x).2 ≤
                 eta * S.scale k)
 
-
-
-
-
 theorem M30LongSlabControlService.controlledBounds
     {S : GeneralizedBlowupSequence.{u}} {κ r : ℝ} {T₀ : ℝ≥0∞}
     (H : M30LongSlabControlService S κ r T₀)
@@ -68,8 +51,6 @@ theorem M30LongSlabControlService.controlledBounds
   exact ⟨Tplus, hTplusPos, hTplusT, hTplusT₀,
     ⟨controlledCylinderOfFiniteHorizonSlab e hTplusT hcurv hdefect⟩⟩
 
-
-
 theorem M30LongSlabControlService.noncollapsedBounds
     {S : GeneralizedBlowupSequence.{u}} {κ r : ℝ} {T₀ : ℝ≥0∞}
     (H : M30LongSlabControlService S κ r T₀)
@@ -86,8 +67,6 @@ theorem M30LongSlabControlService.noncollapsedBounds
   obtain ⟨Tplus, hTplusPos, hTplusT, hTplusT₀, e, hcurv, hdefect⟩ := hk
   exact ⟨Tplus, hTplusPos, hTplusT, hTplusT₀,
     ⟨noncollapsedControlledCylinderOfFiniteHorizonSlab e hTplusT hcurv hdefect⟩⟩
-
-
 
 theorem exists_backward_generalizedBlowupConvergence_of_longSlabService
     (hShi : LocalCurvatureDerivativeEstimates.{0})

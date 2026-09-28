@@ -1,24 +1,10 @@
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
 
 variable {X α : Type*} [PartialOrder α]
-
-
-
-
 
 theorem inter_eq_of_height_separation (A : X → α) {c : α} {B T d : Set X}
     (hB : B ⊆ {x | A x ≤ c}) (hT : T ⊆ {x | c ≤ A x})

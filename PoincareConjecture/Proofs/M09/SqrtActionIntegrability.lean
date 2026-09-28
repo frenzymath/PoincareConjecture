@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral

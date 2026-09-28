@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.AxisAngularRicci
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitRicci
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -91,8 +82,6 @@ theorem rotational_axis_ricci_form (r : ℝ) (u v : StandardCapSpace) :
       simp only [map_add, map_smul, LinearMap.add_apply, LinearMap.smul_apply, smul_eq_mul,
         h20, h21, h01, h02, h12, h10, h11, mul_zero, zero_add, add_zero]
       ring
-
-
 
 theorem radialMixedCurvatureFactor_eq_zero_of_ricci_null
     (hsec : D.NonnegativeSectionalCurvature) {r : ℝ} (hr : 0 < r)

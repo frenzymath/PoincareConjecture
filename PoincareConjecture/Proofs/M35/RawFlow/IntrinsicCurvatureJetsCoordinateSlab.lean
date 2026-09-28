@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.AxisTimeCoefficients
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialCoordinate
 import PoincareConjecture.Proofs.M35.RadialGauge.AxisDivisionJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +39,6 @@ private theorem raw_speed_jet_contDiffOn (j : ℕ) :
       simpa only [iteratedDeriv_succ] using
         hd (f := fun t => iteratedDeriv j (axisRadialSpeed (G.flow.metric t))) ih
 
-
-
 theorem raw_arclength_quotient_jet_continuous_slab
     {T : ℝ} (hTlt : T < G.lifetime) (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ =>
@@ -66,8 +54,6 @@ theorem raw_arclength_quotient_jet_continuous_slab
   apply axisDivision_jet_continuous
     (fun t : Icc (0 : ℝ) T => radialArclength_contDiff (G.flow.metric t.1)) j
   exact hc.congr (fun p => by rw [iteratedDeriv_succ', hd])
-
-
 
 theorem raw_intrinsic_coordinate_closed_slab_continuity
     (hrotation : ∀ t ∈ Ico 0 G.lifetime,

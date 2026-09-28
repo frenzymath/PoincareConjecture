@@ -1,18 +1,8 @@
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace SimpleGraph
-
-
 
 theorem exists_cycle_through_edge_with_support
     {V : Type*} (G T : SimpleGraph V) (hTG : T ≤ G) (hT : T.Connected)

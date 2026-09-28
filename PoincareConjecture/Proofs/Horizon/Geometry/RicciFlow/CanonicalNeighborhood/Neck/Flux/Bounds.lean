@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.BusemannGradient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,8 +14,6 @@ variable {M : Type*} [MetricSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem ae_abs_busemann_axial_flux_le
     (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -43,8 +32,6 @@ theorem ae_abs_busemann_axial_flux_le
     _ = g.tangentNorm x (D.gradient (fun y => (N.coordinate_inverse y).2) x) := by
       rw [hx, one_mul]
     _ ≤ _ := N.axial_gradient_norm_le D hxc
-
-
 
 theorem ae_abs_busemann_axialCutoff_flux_le
     (D : LeviCivitaData g) (hc : MetricComplete g)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzConfinedEnergy
 import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerEuler
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
-
 
 theorem exists_confined_minimizers_with_uniform_square_speed
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.AdaptedPolar
 import PoincareConjecture.Proofs.M36.OutputSpace
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

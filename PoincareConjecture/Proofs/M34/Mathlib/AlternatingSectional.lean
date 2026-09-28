@@ -2,19 +2,11 @@ import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace MultilinearMap
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem sectional_scale
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)
@@ -52,7 +44,6 @@ theorem sectional_scale
     linarith only [hlast a b c c]
   simp only [hs0, hs2, ha1, ha3, hs1, hs3, hf, hl]
   ring
-
 
 theorem sectional_nonneg_of_orthonormal
     (A : MultilinearMap ℝ (fun _ : Fin 4 => E) ℝ)

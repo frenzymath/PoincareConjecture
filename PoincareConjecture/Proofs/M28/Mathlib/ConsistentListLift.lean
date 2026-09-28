@@ -1,22 +1,10 @@
 import Mathlib.Data.List.Chain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
 
 namespace List
-
-
-
 
 theorem exists_consistent_lift {α : Type u} {β : Type v}
     (l : List α) (C : α → β → Prop) (R : α → α → Prop)

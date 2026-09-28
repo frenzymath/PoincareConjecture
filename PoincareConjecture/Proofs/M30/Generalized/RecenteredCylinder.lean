@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.CylinderSpatialHomeomorph
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 import Mathlib.Topology.Algebra.Group.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,9 +36,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
     e.forward t0.val t0.property '' (U : Set C.carrier))
   {I : Set ℝ}
   (hI : I ⊆ (fun s : ℝ => t0.val + s) ⁻¹' J.domain)
-
-
-
 
 noncomputable def recenter :
     GeneralizedFlowCylinder F (F.slice (a + t0.val / q))
@@ -144,18 +131,12 @@ noncomputable def recenter :
       exact eq_of_heq (Sigma.mk.inj_iff.mp hpoints).2 }
   exact R.restrict Subset.rfl hV
 
-
-
-
 @[simp] theorem recenter_pointMap (s : ℝ) (hs : s ∈ I)
     (y : (F.slice (a + t0.val / q)).carrier) :
     (recenter e t0 V hV hI).pointMap s hs y =
       e.pointMap (t0.val + s) (hI hs)
         (e.inverse t0.val t0.property y) :=
   recenterSliceDiffeomorph_point F (recenterClock_eq a q t0.val s) _
-
-
-
 
 theorem recenter_zero_identity (hzero : (0 : ℝ) ∈ I)
     (y : (F.slice (a + t0.val / q)).carrier) (hy : y ∈ V) :

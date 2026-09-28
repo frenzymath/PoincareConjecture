@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.TimeDerivative
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.IndexedCovering
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -28,7 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : ℝ → RiemannianMetric n M} {p : M} {T' T A R ρ a b : ℝ} {N : ℕ}
 
-
 theorem image_mem_zeroBall
     (C : NormalChartCover g p T' T A R ρ a b N)
     (hA : 0 ≤ A) (hR : 0 ≤ R) (i : Fin (N + 1))
@@ -43,7 +32,6 @@ theorem image_mem_zeroBall
   rw [ENNReal.ofReal_add hA hR]
   exact Manifold.riemannianEDist_triangle.trans_lt
     (ENNReal.add_lt_add (C.centre_mem i) hxp)
-
 
 theorem norm_pullbackCoefficients_le
     (C : NormalChartCover g p T' T A R ρ a b N) (hb : 0 ≤ b)
@@ -66,8 +54,6 @@ theorem norm_pullbackCoefficients_le
 end NormalChartCover
 
 namespace PointedRicciFlowCompactnessHypotheses
-
-
 
 theorem eventually_normalChartCover_time_derivative_bound
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
@@ -101,8 +87,6 @@ theorem eventually_normalChartCover_time_derivative_bound
   · intro v
     exact (cover.coefficients i t ht x hx v).2
   · exact hk t ht _ (cover.image_mem_zeroBall hA.le hR.le i hx')
-
-
 
 theorem eventually_normalChartCover_time_lipschitz_bound
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialPointIdentification
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLocality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +30,6 @@ theorem intrinsic_radial_center_norm (hcomplete : MetricComplete g)
     norm_eq_of_mem_sphere, mul_one]
   exact (radialArclengthOrderIso g hrotation hcomplete).symm_apply_apply ‖x‖
 
-
-
 theorem scalar_intrinsic_radial_center (P : M35StandardCapPredecessors)
     (D : LeviCivitaData g) (Q : ℝ) (hQ : 0 < Q) (hcomplete : MetricComplete g)
     (q : UnitTwoSphere) (x : StandardCapSpace) :
@@ -53,8 +41,6 @@ theorem scalar_intrinsic_radial_center (P : M35StandardCapPredecessors)
   dsimp only
   rw [(rotational_scalar_edist_eq_axis P D hrotation _).1,
     intrinsic_radial_center_norm, ← (rotational_scalar_edist_eq_axis P D hrotation x).1]
-
-
 
 noncomputable def radialStaticNeck
     (atlas : StandardCylinderAtlas) (D : LeviCivitaData g)

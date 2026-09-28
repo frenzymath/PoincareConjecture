@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalResponse
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormHeatEquivalent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -26,8 +17,6 @@ open SpectralHeatNative
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem exists_principal_nonautonomous_tolerance {K : Set V} (hK : IsCompact K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ell : ℝ} (hEll : 0 < ell)

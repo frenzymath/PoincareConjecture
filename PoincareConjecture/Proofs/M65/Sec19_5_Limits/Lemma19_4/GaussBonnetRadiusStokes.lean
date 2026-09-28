@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetDiskStokes
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityDiskGreen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +8,6 @@ open Set Metric MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M65Gauss
-
-
-
-
 
 theorem integral_divergence_disk_off_countable
     (X : LoopPlane → LoopPlane) (d : LoopPlane → ℝ) (S : Set LoopPlane)

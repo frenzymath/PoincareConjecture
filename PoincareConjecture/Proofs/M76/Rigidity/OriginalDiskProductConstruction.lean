@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalParameterProduct
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexProductConstruction
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,7 +19,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
 open Classical in
-
 
 theorem OriginalProperDiskTriangulation.exists_disk_product
     (T : OriginalProperDiskTriangulation e R j) :
@@ -70,9 +61,6 @@ theorem OriginalProperDiskTriangulation.exists_disk_product
   refine ⟨QP, ?_⟩
   change ((fun x : E => (T.inverse x : X)) ∘ k) '' (D ×ˢ I) = _
   rw [Set.image_comp, hkimage]
-
-
-
 
 theorem exists_original_disk_product
     (hR : IsCompact R) (he : PLDomain e R)

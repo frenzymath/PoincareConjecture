@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.PolarMap
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

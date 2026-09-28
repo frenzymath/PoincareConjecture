@@ -1,14 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedSourceAnnuli
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Dehn
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_identity_source_annuli_of_cut_strips
     {X E : Type*} (f : P2 → X) (inverse : E → X) (sigma : P2 × ℝ → E)

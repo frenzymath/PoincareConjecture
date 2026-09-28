@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Topology.Embedding
 import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -54,8 +45,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   BasedKappaSolution.connectedSpace
 
 namespace M23TerminalExtension
-
-
 
 theorem noEmbeddedTrivialNormalProjectivePlane
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

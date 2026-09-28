@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapOrdinaryEmbeddingSequence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +31,6 @@ variable (p : ℕ → (ordinaryChapter11Flow (I := I) (F := F) R).point)
   {J : Set ℝ} (C : GeneralizedBlowupConvergence
     (fixedFlowBlowupSequence (ordinaryChapter11Flow (I := I) (F := F) R) p hp hd) J)
 
-
-
 theorem capOrdinaryEmbedding_scalarAnalytic (k : ℕ)
     (h0 : (0 : ℝ) ∈ Icc (-C.exhaustion.time k) 0) (x : C.limit.sliceCarrier.carrier) :
     let Q := (G).scalar (p (C.subsequence k))
@@ -69,8 +59,6 @@ theorem capOrdinaryEmbedding_scalarAnalytic (k : ℕ)
   change V z.1 = _ at h
   have hresult := (congrArg V ht).symm.trans h
   simpa only [V, capOrdinaryEmbedding_apply] using hresult
-
-
 
 theorem capOrdinaryEmbedding_eventually_scalarAnalytic_close
     (hJ : UniqueDiffOn ℝ J) {K : Set C.limit.sliceCarrier.carrier}

@@ -2,12 +2,4 @@ import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedCurvatureAnnularEmbedd
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedRayScalarSequence
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedEndChordData
 
-
-
-
-
-
-
-
 set_option autoImplicit false
-

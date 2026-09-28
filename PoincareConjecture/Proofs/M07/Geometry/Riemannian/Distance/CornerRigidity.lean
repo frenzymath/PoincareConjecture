@@ -2,19 +2,8 @@ import Mathlib.Analysis.InnerProductSpace.Basic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
-
-
-
-
 
 theorem eq_neg_of_norm_lower_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -71,8 +60,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eq_neg_of_radial_edist_eq
     (g : RiemannianMetric n M) (p : M)

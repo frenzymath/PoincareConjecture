@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainCoordinates
 import Mathlib.LinearAlgebra.Dual.Basis
 import Mathlib.LinearAlgebra.StdBasis
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable (κ : Type*) [Finite κ]
-
-
 
 noncomputable def coordinateChainEquiv :
     (κ → ZMod 2) ≃ₗ[ZMod 2] Module.Dual (ZMod 2) (κ → ZMod 2) := by
@@ -24,7 +14,6 @@ noncomputable def coordinateChainEquiv :
   exact (Pi.basisFun (ZMod 2) κ).toDualEquiv
 
 open Classical in
-
 
 theorem coordinateChainEquiv_single (f : κ → ZMod 2) (q : κ) :
     coordinateChainEquiv κ f (Pi.single q 1) = f q := by
@@ -34,7 +23,6 @@ theorem coordinateChainEquiv_single (f : κ → ZMod 2) (q : κ) :
 
 open Classical in
 
-
 theorem coordinateChainEquiv_symm_apply
     (c : Module.Dual (ZMod 2) (κ → ZMod 2)) (q : κ) :
     (coordinateChainEquiv κ).symm c q = c (Pi.single q 1) := by
@@ -43,7 +31,6 @@ theorem coordinateChainEquiv_symm_apply
   exact h.symm
 
 open Classical in
-
 
 theorem chain_eq_of_single
     (c d : Module.Dual (ZMod 2) (κ → ZMod 2))

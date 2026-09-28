@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationControls
 import Mathlib.Data.List.FinRange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,10 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {M : Type u} {n : ℕ}
 
-
-
 def foldControls (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) :
     List (Fin n) → (Fin n → ℝ) → ℝ → M → M
   | [], _, _, y => y
   | i :: L, p, x, y => Phi i (foldControls Phi beta L p x y, beta i x * p i)
-
-
 
 theorem foldControls_eq_of_zero
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ)
@@ -45,9 +32,6 @@ theorem foldControls_eq_of_zero
     intro hp
     rw [foldControls, ih (fun j hj => hp j (List.mem_cons_of_mem i hj)),
       hp i (List.mem_cons_self), mul_zero, hzero]
-
-
-
 
 theorem foldControls_single
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ)
@@ -75,8 +59,6 @@ theorem foldControls_single
         simp [hij]
       rw [hp, mul_zero, hzero]
 
-
-
 theorem foldControls_periodic
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ)
     (hbeta : ∀ i, Function.Periodic (beta i) curvePeriod)
@@ -90,9 +72,6 @@ theorem foldControls_periodic
 variable [TopologicalSpace M] [ChartedSpace LoopAmbient M]
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem foldControls_contMDiffOn
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ)

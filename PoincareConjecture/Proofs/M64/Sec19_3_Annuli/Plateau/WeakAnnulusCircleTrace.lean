@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarStrongApproxima
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarAEPullback
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicClosedTrace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,8 +20,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
-
-
 theorem M64ObservedWeakAnnulus.polar_column_tangent
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) (hKS : Metric.closedBall a rho ⊆ S) :
@@ -47,9 +34,6 @@ theorem M64ObservedWeakAnnulus.polar_column_tangent
   refine ⟨w 0 • v0 + w 1 • v1, ?_⟩
   rw [map_add, map_smul, map_smul, hv0, hv1]
   rfl
-
-
-
 
 theorem M64ObservedWeakAnnulus.local_circle_traces
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (hei : IsClosedEmbedding e)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositio
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.ScheduledProjectedCrossings
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.OriginalStageModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval

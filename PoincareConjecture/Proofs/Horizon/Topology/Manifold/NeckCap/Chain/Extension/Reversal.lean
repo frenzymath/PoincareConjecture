@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder.Reflection.Jets
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Reversal
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -41,7 +31,6 @@ private theorem reversed_metric_comparison :
   refine ⟨?_⟩
   rw [roundCylinderPullback_comp]
   exact hclose
-
 
 def reversed : EpsilonNeck g :=
   { N with
@@ -92,7 +81,6 @@ def reversed : EpsilonNeck g :=
 @[simp] theorem reversed_coordinate_inverse (x : M) :
     N.reversed.coordinate_inverse x = ((N.coordinate_inverse x).1, -(N.coordinate_inverse x).2) :=
   rfl
-
 
 theorem reversed_sameUpToReversal : N.reversed.SameUpToReversal N := by
   refine ⟨rfl, rfl, rfl, rfl, rfl, -1, Or.inr rfl, ?_⟩

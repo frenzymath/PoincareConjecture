@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceExhaustion
 import PoincareConjecture.Proofs.M04.ShiBarrierMaximum
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem raw_scalar_nonnegative
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

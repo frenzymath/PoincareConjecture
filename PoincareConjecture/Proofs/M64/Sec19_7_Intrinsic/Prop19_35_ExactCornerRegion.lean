@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopCornerChart
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SignedCapContacts
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +10,6 @@ open scoped Topology ContDiff Manifold Matrix
 open Poincare.Topology.Plane.Triangles PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_exact_loop_corner_region
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

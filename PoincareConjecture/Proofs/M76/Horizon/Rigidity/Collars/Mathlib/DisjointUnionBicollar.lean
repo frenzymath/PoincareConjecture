@@ -1,14 +1,6 @@
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 

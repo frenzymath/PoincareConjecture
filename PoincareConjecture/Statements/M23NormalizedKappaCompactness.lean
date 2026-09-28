@@ -7,24 +7,11 @@ import PoincareConjecture.Statements.M19TwoDimensionalClassification
 import PoincareConjecture.Statements.M21AsymptoticVolume
 import PoincareConjecture.Statements.M22UniversalNoncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 structure M23NormalizedKappaCompactnessPredecessors : Prop where
   tensor_calculus :
@@ -150,10 +137,6 @@ structure M23NormalizedKappaCompactnessPredecessors : Prop where
       [SecondCountableTopology M] [ConnectedSpace M]
       (K : AncientKappaSolution 3 M), AncientAsymptoticVolumeRatioZero K
 
-
-
-
-
 def M23LocalCurvatureEstimate
     {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa) : Prop :=
   ∀ r : ℝ, 0 < r → ∃ C : ℝ, 0 ≤ C ∧
@@ -172,9 +155,6 @@ def M23LocalCurvatureEstimate
       ∀ x : Crr.carrier,
         x ∈ Crr.metricBall (B.flow.flow.metric 0) B.base r →
           (B.flow.flow.connection 0).scalarCurvature x ≤ C
-
-
-
 
 def M23AllTimeCurvatureControl
     {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa) : Prop :=
@@ -195,9 +175,6 @@ def M23AllTimeCurvatureControl
         x ∈ Crr.metricBall (B.flow.flow.metric 0) B.base r →
           |(B.flow.flow.connection t).curvatureTensorNorm x| ≤ C
 
-
-
-
 def M23LimitBoundedCurvature {kappa : ℝ}
     (B : BasedKappaSolution kappa) : Prop :=
   let C := B.carrier
@@ -212,10 +189,6 @@ def M23LimitBoundedCurvature {kappa : ℝ}
   letI : ConnectedSpace C.carrier := B.connectedSpace
   ∀ t : ℝ, t ≤ 0 → ∃ K : ℝ, 0 ≤ K ∧ ∀ x : C.carrier,
     |(B.flow.flow.connection t).curvatureTensorNorm x| ≤ K
-
-
-
-
 
 def M23TerminalNoncollapsing {kappa : ℝ}
     (B : BasedKappaSolution kappa) : Prop :=
@@ -279,17 +252,10 @@ def M23TerminalNormalization {kappa : ℝ}
   letI : ConnectedSpace C.carrier := B.connectedSpace
   (B.flow.flow.connection 0).scalarCurvature B.base = 1
 
-
-
-
 noncomputable def M23TerminalMetricJet (r : ℕ)
     (f : ℝ × EuclideanSpace ℝ (Fin 3) → ℝ)
     (p : ℝ × EuclideanSpace ℝ (Fin 3)) :=
   iteratedFDerivWithin ℝ r f (Set.Iic (0 : ℝ) ×ˢ Set.univ) p
-
-
-
-
 
 def M23TerminalMetricConvergence {kappa : ℝ}
     {S : NormalizedKappaSolutionSequence kappa}

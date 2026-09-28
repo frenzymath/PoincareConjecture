@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessLocalEstimate
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerGradientModulus
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +16,6 @@ namespace PoincareConjecture.M60
 
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
-
-
-
 theorem suSmooth_weak_columns {m : ℕ} (u : LoopPlane → EuclideanSpace ℝ (Fin m))
     (hu : ContDiff ℝ ∞ u) {O : Set LoopPlane} (hO : IsOpen O) (i : Fin 2) (a : Fin m) :
     HasWeakPartialDeriv i (fun x => (fderiv ℝ u x (b i)) a) (fun x => u x a) O := by
@@ -34,9 +29,6 @@ theorem suSmooth_weak_columns {m : ℕ} (u : LoopPlane → EuclideanSpace ℝ (F
     simp only [ContinuousLinearMap.comp_apply, EuclideanSpace.basisFun_apply]
   have h := HasWeakPartialDeriv.of_contDiff (i := i) (Ω := O) hO hc
   rwa [hd] at h
-
-
-
 
 theorem suSmooth_nearLaplacian_gradient_modulus :
     ∃ delta C : ℝ, 0 < delta ∧ 0 < C ∧ ∀ (m : ℕ) (D F : ℝ), 0 ≤ D → 0 ≤ F →
@@ -100,9 +92,6 @@ local instance suCompactHolderChristoffelNormedGroup : NormedAddCommGroup (E →
   ContinuousLinearMap.toNormedAddCommGroup
 local instance suCompactHolderChristoffelNormedSpace : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem suNormalizedAlphaCoordinateSource_continuousOn
     (g : RiemannianMetric n M) (p : M) (u : LoopPlane → E) (lambda : LoopPlane → ℝ)

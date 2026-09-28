@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.SquareEnergy
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +35,6 @@ private theorem young_sqrt_bound {E h : ℝ} (hE : 0 ≤ E) (hh : 0 < h) :
   rw [hquad, hprod]
   linarith
 
-
-
 theorem backward_squarePath_edist_le_sqrt (p : M14BackwardPath G T 0 tau x y)
     {D a b : ℝ} (hD : 0 ≤ D)
     (hkin : IntervalIntegrable (M14.pathSquareKinetic p) volume 0 (Real.sqrt tau))
@@ -71,9 +61,6 @@ theorem backward_squarePath_edist_le_sqrt (p : M14BackwardPath G T 0 tau x y)
     exact bot_le
   · rw [M14.auxiliarySpacetimeEDist_comm, abs_of_nonpos (sub_nonpos.mpr hab.le), neg_sub]
     exact hordered b a hb ha hab
-
-
-
 
 theorem backward_squarePaths_equicontinuous
     (p : ℕ → M14BackwardPath G T 0 tau x y) {D : ℝ} (hD : 0 ≤ D)

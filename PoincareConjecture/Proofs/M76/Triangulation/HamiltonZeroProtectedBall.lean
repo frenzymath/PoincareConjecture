@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInp
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "W" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLattice
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_hamilton_zero_protected_chart_ball
     {α : Type*} (e : α → OpenPartialHomeomorph W V3)

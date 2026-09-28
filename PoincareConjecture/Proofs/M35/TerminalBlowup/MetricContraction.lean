@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem metric_inner_antitone {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) (x : StandardCapSpace)
@@ -34,16 +22,12 @@ theorem metric_inner_antitone {g₀ : StandardInitialMetric}
     (M04.nonneg_ricci_of_nonnegativeSectionalAt (E.flow.connection t) x
       (E.nonnegative_sectional t (interior_subset ht) x) v)
 
-
-
 theorem tangentNorm_le_of_time_le {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {s t : ℝ}
     (hs : s ∈ Ico 0 E.flow.base.lifetime) (ht : t ∈ Ico 0 E.flow.base.lifetime)
     (hst : s ≤ t) (x : StandardCapSpace) (v : TangentSpace (𝓡 3) x) :
     (E.flow.metric t).tangentNorm x v ≤ (E.flow.metric s).tangentNorm x v :=
   Real.sqrt_le_sqrt (E.metric_inner_antitone x v hs ht hst)
-
-
 
 theorem ball_subset_of_time_le {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {s t : ℝ}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.EnergyBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -22,8 +14,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 open LeviCivitaData.Dirichlet
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 lemma divergenceCoefficients_refl_eq_energy (D : LeviCivitaData g)
     (x v : EuclideanSpace ℝ (Fin n)) :
@@ -55,8 +45,6 @@ lemma divergenceCoefficients_refl_eq_energy (D : LeviCivitaData g)
   rw [hb] at h
   simpa only [innerSL_apply_apply, EuclideanSpace.inner_single_right, starRingEnd_apply,
     star_trivial, one_mul, heq, hdual] using h
-
-
 
 theorem divergenceCoefficients_refl_bounds (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) {a b : ℝ} (ha : 0 < a) (hb : 0 < b)

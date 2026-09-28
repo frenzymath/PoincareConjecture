@@ -1,21 +1,10 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem preconnected_local_sides_subset_regions {X : Type*} [TopologicalSpace X]
     {I O C W A B : Set X} {q : X}

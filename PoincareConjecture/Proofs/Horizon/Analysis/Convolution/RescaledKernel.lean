@@ -1,8 +1,3 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.ConvolutionCommutator
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.Mul
@@ -18,10 +13,8 @@ namespace Poincare.Analysis.Convolution
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
 
-
 def rescaledKernel (ρ : E → ℝ) (r : ℝ) (x : E) : ℝ :=
   (r ^ Module.finrank ℝ E)⁻¹ * ρ (r⁻¹ • x)
-
 
 theorem integral_rescaledKernel
     (mu : Measure E) [mu.IsAddHaarMeasure] (ρ : E → ℝ)
@@ -32,7 +25,6 @@ theorem integral_rescaledKernel
     ← mul_assoc, inv_mul_cancel₀ (pow_ne_zero _ hr.ne'), one_mul]
 
 omit [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E] in
-
 
 theorem fderiv_rescaledKernel_apply
     {ρ : E → ℝ} (hρ : Differentiable ℝ ρ) (r : ℝ) (x v : E) :
@@ -46,8 +38,6 @@ theorem fderiv_rescaledKernel_apply
   simp only [_root_.smul_apply, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.id_apply, map_smul, smul_eq_mul, pow_succ, mul_inv_rev]
   ring
-
-
 
 theorem integral_firstMoment_derivative_scale
     (mu : Measure E) [mu.IsAddHaarMeasure] (κ : E → ℝ)
@@ -65,8 +55,6 @@ theorem integral_firstMoment_derivative_scale
     integral_comp_inv_smul_of_nonneg mu (fun y => ‖y‖ * |κ y|) hr.le,
     smul_eq_mul, ← mul_assoc, inv_mul_cancel₀ (pow_ne_zero _ hr.ne'), one_mul]
 
-
-
 theorem integral_firstMoment_fderiv_rescaledKernel
     (mu : Measure E) [mu.IsAddHaarMeasure]
     {ρ : E → ℝ} (hρ : Differentiable ℝ ρ) {r : ℝ} (hr : 0 < r) (v : E) :
@@ -74,8 +62,6 @@ theorem integral_firstMoment_fderiv_rescaledKernel
       ∫ y, ‖y‖ * |fderiv ℝ ρ y v| ∂mu := by
   simp_rw [fderiv_rescaledKernel_apply hρ]
   exact integral_firstMoment_derivative_scale mu (fun y => fderiv ℝ ρ y v) hr
-
-
 
 theorem abs_derivative_convolution_commutator_rescaled_le
     (mu : Measure E) [mu.IsAddHaarMeasure]
@@ -97,9 +83,6 @@ theorem abs_derivative_convolution_commutator_rescaled_le
   rw [integral_firstMoment_fderiv_rescaledKernel mu (hρ.differentiable one_ne_zero) hr v]
     at hbound
   exact hbound
-
-
-
 
 theorem abs_convolution_coefficient_commutator_rescaled_le
     (mu : Measure E) [mu.IsAddHaarMeasure]

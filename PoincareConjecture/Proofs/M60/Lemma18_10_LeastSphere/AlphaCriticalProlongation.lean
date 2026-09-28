@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetSyst
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetNormalization
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAffineHolder
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +16,6 @@ namespace PoincareConjecture.M60
 
 attribute [local instance] affineJetPrincipalNormedGroup affineJetPrincipalNormedSpace
   affineJetSourceNormedGroup affineJetSourceNormedSpace
-
-
 
 theorem suFirstJet_affine_coefficient_chain {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -75,7 +60,6 @@ theorem suFirstJet_affine_coefficient_chain {m : ℕ}
 
 namespace SUAffineJetCoefficients
 
-
 theorem prolong_flux_zero {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin (3 * m)))
     (q : EuclideanSpace ℝ (Fin (3 * m)) × EuclideanSpace ℝ (Fin (3 * m)))
@@ -88,7 +72,6 @@ theorem prolong_flux_zero {m : ℕ} (C : SUAffineJetCoefficients m)
   simp [prolong, flux, suJetBlockPrincipal, suJetBlock_columnBasis,
     ContinuousLinearMap.bilinearComp_apply, Fin.sum_univ_succ]
 
-
 theorem prolong_source_zero {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin (3 * m)))
     (q : EuclideanSpace ℝ (Fin (3 * m)) × EuclideanSpace ℝ (Fin (3 * m))) (a : Fin m) :
@@ -99,7 +82,6 @@ theorem prolong_source_zero {m : ℕ} (C : SUAffineJetCoefficients m)
   classical
   simp [prolong, source, suJetBlock_single, ContinuousLinearMap.compL_apply,
     Fin.sum_univ_succ]
-
 
 theorem prolong_flux_succ {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin (3 * m)))
@@ -115,7 +97,6 @@ theorem prolong_flux_succ {m : ℕ} (C : SUAffineJetCoefficients m)
   rw [C.flux_fderiv _ _ hA hc]
   fin_cases k <;> simp [prolong, flux, suJetBlockPrincipal, suJetBlock_columnBasis,
     ContinuousLinearMap.bilinearComp_apply, Fin.sum_univ_succ, suAlphaFirstJetPoint, add_assoc]
-
 
 theorem prolong_source_succ {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin (3 * m)))
@@ -133,9 +114,6 @@ theorem prolong_source_succ {m : ℕ} (C : SUAffineJetCoefficients m)
     ContinuousLinearMap.compL_apply, Fin.sum_univ_succ, suAlphaFirstJetPoint, add_assoc]
 
 end SUAffineJetCoefficients
-
-
-
 
 theorem suAffineWeakSystem_prolong_equation {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -354,9 +332,6 @@ theorem suAffineWeakSystem_prolong_equation {m : ℕ}
           (fun i => ((hFd a i).2 k).2) ((hBd a).2 k).2 (heq a) hp hpc hps
       _ = _ := integral_congr_ae (hright.mono fun x hx => by rw [hx])
 
-
-
-
 theorem suAffineWeakSystem_prolong_system {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {R : ℝ}
@@ -431,8 +406,6 @@ theorem suAffineWeakSystem_prolong_system {m : ℕ}
       (hd.of_le (by simp)) hr hrrho a hp hpc hps)
   exact ⟨r, hr, hrrho, hJmap, T, htF, htB⟩
 
-
-
 theorem suContDiffAt_succ_of_firstJet {m k : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {r : ℝ}
     (hr : 0 < r) (hu : ContDiffOn ℝ 1 u (ball center r))
@@ -462,10 +435,6 @@ theorem suContDiffAt_succ_of_firstJet {m k : ℕ}
     exact ((hu.contDiffAt (isOpen_ball.mem_nhds hx)).differentiableAt (by norm_num)).hasFDerivAt
   · rw [he]
     exact (hA.of_le (WithTop.coe_le_coe.mpr le_top)).contDiffAt.comp center hJ
-
-
-
-
 
 theorem suAffineWeakSystem_contDiff_finite :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (k m : ℕ)

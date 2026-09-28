@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarOrientation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +8,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
 variable [Nonempty X] [PreconnectedSpace X]
-
-
 
 theorem collar_complement_halves (Q : OpenPartialHomeomorph (X × ℝ) Y)
     {d : ℝ} (hd : 0 < d) (hs : Q.source = univ ×ˢ Ioo (-d) d)

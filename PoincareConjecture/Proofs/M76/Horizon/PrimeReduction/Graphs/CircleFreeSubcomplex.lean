@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.NonreturningSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -66,8 +57,6 @@ theorem subcomplex_component_segmentCarrier_of_ncard_eq
       exact hvw
     · change x ∈ segment ℝ v'.val w'.val
       simpa only [hvEq, hwEq] using hx
-
-
 
 theorem component_segmentCarrier_meets_of_subcomplex
     (hG : G.faces.Finite) (hHG : H ≤ G)

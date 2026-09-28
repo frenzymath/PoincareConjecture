@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -21,13 +11,9 @@ namespace PoincareConjecture.M28
 
 variable (F : GeneralizedRicciFlowData.{u}) {ι : Type v} (b : ι → F.box_index)
 
-
-
 def boxEvaluation (t : ℝ) (ht : ∀ i, t ∈ (F.box (b i)).interval)
     (q : Σ i, (F.box (b i)).carrier.carrier) : (F.slice t).carrier :=
   (F.box (b q.1)).forward t (ht q.1) q.2
-
-
 
 theorem range_boxEvaluation (t : ℝ) (ht : ∀ i, t ∈ (F.box (b i)).interval) :
     range (boxEvaluation F b t ht) = ⋃ i, range ((F.box (b i)).forward t (ht i)) := by
@@ -39,22 +25,16 @@ theorem range_boxEvaluation (t : ℝ) (ht : ∀ i, t ∈ (F.box (b i)).interval)
     obtain ⟨i, y, hy⟩ := mem_iUnion.mp hx
     exact ⟨⟨i, y⟩, hy⟩
 
-
-
 theorem isOpen_range_boxEvaluation (t : ℝ) (ht : ∀ i, t ∈ (F.box (b i)).interval) :
     IsOpen (range (boxEvaluation F b t ht)) := by
   rw [range_boxEvaluation]
   exact isOpen_iUnion fun i => ((F.box (b i)).forward_openEmbedding t (ht i)).isOpen_range
-
-
 
 noncomputable def boxTransport (s t : ℝ)
     (hs : ∀ i, s ∈ (F.box (b i)).interval) (ht : ∀ i, t ∈ (F.box (b i)).interval)
     (htF : t ∈ F.interval) : (F.slice s).carrier → (F.slice t).carrier :=
   Function.extend (boxEvaluation F b s hs) (boxEvaluation F b t ht)
     (fun _ => Classical.choice ((F.slice_nonempty_iff t).mpr htF))
-
-
 
 theorem boxTransport_apply (s t : ℝ)
     (hs : ∀ i, s ∈ (F.box (b i)).interval) (ht : ∀ i, t ∈ (F.box (b i)).interval)
@@ -67,8 +47,6 @@ theorem boxTransport_apply (s t : ℝ)
       a.2 c.2 h t (ht a.1) (ht c.1)
   exact hf.extend_apply _ ⟨i, x⟩
 
-
-
 theorem boxTransport_leftInverse (s t : ℝ)
     (hs : ∀ i, s ∈ (F.box (b i)).interval) (ht : ∀ i, t ∈ (F.box (b i)).interval)
     (hsF : s ∈ F.interval) (htF : t ∈ F.interval) :
@@ -79,8 +57,6 @@ theorem boxTransport_leftInverse (s t : ℝ)
     (boxTransport F b s t hs ht htF ((F.box (b i)).forward s (hs i) x)) = _
   rw [boxTransport_apply, boxTransport_apply]
   rfl
-
-
 
 theorem boxTransport_contMDiffOn (s t : ℝ)
     (hs : ∀ i, s ∈ (F.box (b i)).interval) (ht : ∀ i, t ∈ (F.box (b i)).interval)
@@ -96,9 +72,6 @@ theorem boxTransport_contMDiffOn (s t : ℝ)
   filter_upwards [hopen.mem_nhds ⟨x, rfl⟩] with y hy
   obtain ⟨z, rfl⟩ := hy
   rw [boxTransport_apply, Function.comp_apply, (F.box (b i)).left_inverse s (hs i) z]
-
-
-
 
 noncomputable def boxTransportDiffeomorph (s t : ℝ)
     (hs : ∀ i, s ∈ (F.box (b i)).interval) (ht : ∀ i, t ∈ (F.box (b i)).interval)

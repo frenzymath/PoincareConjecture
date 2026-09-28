@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.SmoothPartials
 import PoincareConjecture.Proofs.M09.LinearizedODE
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BoundaryExactnessRanks
 import Mathlib.LinearAlgebra.Dimension.RankNullity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -23,8 +12,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι]
 
 local notation "KA" => K.toPreAbstractSimplicialComplex
 local notation "AA" => A.toPreAbstractSimplicialComplex
-
-
 
 theorem boundary_incidence_rank_le_of_counts (k : ℕ)
     (hconn : K.edgeGraph.Connected)
@@ -61,8 +48,6 @@ namespace Submodule
 
 variable {F V : Type*} [Field F] [AddCommGroup V] [Module F V]
 
-
-
 abbrev Subquotient (S T : Submodule F V) := S ⧸ T.comap S.subtype
 
 theorem finrank_subquotient_le_of_finrank_le [FiniteDimensional F V]
@@ -81,8 +66,6 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
-
-
 theorem first_chain_rank_le_of_cochain_rank_le (k : ℕ)
     (hrank : Module.finrank (ZMod 2) (LinearMap.ker (edgeCoboundary A)) ≤
       Module.finrank (ZMod 2) (LinearMap.range (vertexCoboundary A)) + k) :
@@ -96,8 +79,6 @@ theorem first_chain_rank_le_of_cochain_rank_le (k : ℕ)
   rw [Module.finrank_pi] at h1
   rw [LinearMap.finrank_range_dualMap_eq_finrank_range]
   omega
-
-
 
 theorem first_chain_quotient_finrank_le_of_cochain_rank_le (k : ℕ)
     (hrank : Module.finrank (ZMod 2) (LinearMap.ker (edgeCoboundary A)) ≤

@@ -41,7 +41,6 @@ theorem m67_scalar_infimum_continuous
     (hcompact.continuous_sInf (f := fun t : Set.Icc a b =>
       (F.connection t.1).scalarCurvature) hc)
 
-
 noncomputable def m67RegularInputOfSlice
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
     {q : M59SphereQuotient} (slice : M67WidthSlice q C)
@@ -54,7 +53,6 @@ noncomputable def m67RegularInputOfSlice
   second_countable := inferInstance
   family := slice.family
   family_null := slice.family_null
-
 
 theorem m67_regular_piece_of_actual_slice
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)

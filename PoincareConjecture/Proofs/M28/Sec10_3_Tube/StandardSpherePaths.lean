@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -43,7 +32,6 @@ private theorem standardSphereInner_pos (q : UnitTwoSphere)
   apply hinj
   simpa only [map_zero] using hzero
 
-
 noncomputable def standardSphereMetric : RiemannianMetric 2 UnitTwoSphere where
   inner := Poincare.Gluing.inducedForm (I := 𝓡 2) (J := 𝓡 3)
     (RiemannianMetric.euclideanMetric 3) (fun x : UnitTwoSphere => x.1)
@@ -63,13 +51,11 @@ noncomputable def standardSphereMetric : RiemannianMetric 2 UnitTwoSphere where
   contMDiff q := Poincare.Gluing.inducedForm_contMDiffAt
     (RiemannianMetric.euclideanMetric 3) (contMDiff_coe_sphere q)
 
-
 @[simp] theorem standardSphereMetric_inner (q : UnitTwoSphere)
     (v w : TangentSpace (𝓡 2) q) :
     standardSphereMetric.inner q v w = inner ℝ
       (mfderiv (𝓡 2) (𝓡 3) (fun x : UnitTwoSphere => x.1) q v)
       (mfderiv (𝓡 2) (𝓡 3) (fun x : UnitTwoSphere => x.1) q w) := rfl
-
 
 theorem standardSphereMetric_tangentNorm (q : UnitTwoSphere)
     (v : TangentSpace (𝓡 2) q) :
@@ -77,8 +63,6 @@ theorem standardSphereMetric_tangentNorm (q : UnitTwoSphere)
       ‖mfderiv (𝓡 2) (𝓡 3) (fun x : UnitTwoSphere => x.1) q v‖ := by
   simp only [RiemannianMetric.tangentNorm, standardSphereMetric_inner,
     real_inner_self_eq_norm_sq, Real.sqrt_sq (norm_nonneg _)]
-
-
 
 theorem exists_standardSphere_path_ceiling :
     ∃ L : ℝ, 0 < L ∧ ∀ p q : UnitTwoSphere, ∃ γ : ℝ → UnitTwoSphere,
@@ -114,15 +98,11 @@ theorem exists_standardSphere_path_ceiling :
     linarith
   exact Manifold.exists_lt_locally_constant_of_riemannianEDist_lt hdist zero_lt_one
 
-
 noncomputable def standardSpherePathCeiling : ℝ :=
   Classical.choose exists_standardSphere_path_ceiling
 
-
 theorem standardSpherePathCeiling_pos : 0 < standardSpherePathCeiling :=
   (Classical.choose_spec exists_standardSphere_path_ceiling).1
-
-
 
 theorem exists_standardSphere_short_path (p q : UnitTwoSphere) :
     ∃ γ : ℝ → UnitTwoSphere, γ 0 = p ∧ γ 1 = q ∧

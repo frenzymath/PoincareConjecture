@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Translation
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

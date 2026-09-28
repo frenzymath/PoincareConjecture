@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawSpatialCoefficientBound
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.RawUniformRestart
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.VectorDivergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 import PoincareConjecture.Proofs.M03.Existence.CoordinateEllipticityNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -76,7 +69,6 @@ theorem gradientSize_le_of_energy (w : ι → H) {ell C : ℝ}
     apply (le_div_iff₀ hEll).mpr
     nlinarith
 
-
 theorem norm_le_of_discrete_energy (v w : ι → H) (r : ι → ι → H)
     (G test : H) {ell B principal : ℝ} (hEll : 0 < ell) (hB : 0 ≤ B)
     (hprincipal : ell * gradientSize w ^ 2 ≤ principal)
@@ -98,7 +90,6 @@ end FiniteEnergy
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def translateSchwartz (a : E) (f : 𝓢(E, ℝ)) : 𝓢(E, ℝ) :=
   SchwartzMap.compSubConstCLM ℝ (-a) f
@@ -172,7 +163,6 @@ theorem norm_schwartzMultiplier_le (A : 𝓢(E, ℝ)) (u : ScalarL2 n) {B : ℝ}
   rw [hx, norm_mul]
   exact mul_le_mul_of_nonneg_right (hA x) (norm_nonneg _)
 
-
 theorem differenceQuotient_schwartzMultiplier (A : 𝓢(E, ℝ)) (u : ScalarL2 n)
     (v : E) (h : ℝ) :
     differenceQuotient (schwartzMultiplier A u) v h =
@@ -192,7 +182,6 @@ theorem differenceQuotient_schwartzMultiplier (A : 𝓢(E, ℝ)) (u : ScalarL2 n
     translateSchwartz_apply, differenceQuotientSchwartz_apply]
   ring
 
-
 theorem norm_differenceQuotientSchwartz_apply_le (A : 𝓢(E, ℝ)) (v : E)
     {B : ℝ} (hB : 0 ≤ B) (hA : ∀ x, ‖fderiv ℝ A x‖ ≤ B) (h : ℝ) (x : E) :
     ‖differenceQuotientSchwartz A v h x‖ ≤ B * ‖v‖ := by
@@ -209,7 +198,6 @@ theorem norm_differenceQuotientSchwartz_apply_le (A : 𝓢(E, ℝ)) (v : E)
       rw [add_sub_cancel_left, norm_smul, Real.norm_eq_abs, Real.norm_eq_abs,
         abs_inv, ← mul_assoc, mul_comm |h|⁻¹ B, mul_assoc B,
         ← mul_assoc |h|⁻¹ |h|, inv_mul_cancel₀ (abs_ne_zero.mpr hh), one_mul]
-
 
 theorem norm_doubleQuotient_schwartz_le (f : 𝓢(E, ℝ)) (v : E) (h k : ℝ) :
     ‖differenceQuotient (differenceQuotient (f.toLp 2 volume) v h) v k‖ ≤
@@ -296,7 +284,6 @@ theorem tsupport_quotientTestSchwartz_subset (f : 𝓢(E, ℝ)) (v : E) (h : ℝ
   rw [tsupport_neg]
   exact hsecond.trans (cthickening_cthickening_subset hr hr K)
 
-
 theorem quotientTest_equation_of_denseRange {α β : Type*} [TopologicalSpace β]
     (e : α → β) (he : DenseRange e) (S : α → 𝓢(E, ℝ))
     (U : β → ScalarL2 n) (D : Fin n → β → ScalarL2 n)
@@ -353,7 +340,6 @@ theorem integrable_schwartz_triple (A f q : 𝓢(E, ℝ)) :
     f.coeFn_toLp 2 volume] with x hm hf
   simpa only [Pi.mul_apply, hm, hf]
 
-
 theorem schwartz_coercive_energy (A : Fin n → Fin n → 𝓢(E, ℝ))
     (w : Fin n → 𝓢(E, ℝ)) (ell : ℝ)
     (hpoint : ∀ x, ell * (∑ i, (w i x) ^ 2) ≤
@@ -375,7 +361,6 @@ theorem schwartz_coercive_energy (A : Fin n → Fin n → 𝓢(E, ℝ))
     ← inner_schwartzMultiplier_toLp, ← scalar_toLp_norm_sq ((w _).memLp 2 volume)] at hmono
   exact hmono
 
-
 theorem quadratic_lower_bound_sum {c : ℝ} (hc : 0 < c)
     (A : Matrix (Fin n) (Fin n) ℝ)
     (hA : ∀ ξ : Fin n → ℝ, c * ‖ξ‖ ^ 2 ≤ DeTurckNative.quadratic A ξ)
@@ -396,7 +381,6 @@ theorem quadratic_lower_bound_sum {c : ℝ} (hc : 0 < c)
         (div_nonneg hc.le hn.le)
     _ = c * ‖ξ‖ ^ 2 := by field_simp
     _ ≤ _ := hA ξ
-
 
 theorem quotientSchwartz_coercive_energy (A : Fin n → Fin n → 𝓢(E, ℝ))
     (f : 𝓢(E, ℝ)) {K : Set E} (hfK : tsupport f ⊆ K)
@@ -480,7 +464,6 @@ theorem exists_schwartz_matrix_derivative_bound (A : Fin n → Fin n → 𝓢(E,
     (Finset.single_le_sum (fun k _ => Finset.sum_nonneg (fun l _ => hC k l))
       (Finset.mem_univ i)))
 
-
 theorem norm_coordinateQuotient_le_of_weak_equation {α β : Type*} [TopologicalSpace β]
     (e : α → β) (he : DenseRange e) (S : α → 𝓢(E, ℝ))
     (U : β → ScalarL2 n) (D : Fin n → β → ScalarL2 n)
@@ -531,7 +514,6 @@ theorem norm_coordinateQuotient_le_of_weak_equation {α β : Type*} [Topological
     norm_le_of_discrete_energy (fun j => D j z) w R G (quotientTest (U z) v h)
       hEll hB hprincipal hR htest heq i
 
-
 theorem exists_secondDerivatives_of_weak_equation {α β : Type*} [TopologicalSpace β]
     (e : α → β) (he : DenseRange e) (S : α → 𝓢(E, ℝ))
     (U : β → ScalarL2 n) (D : Fin n → β → ScalarL2 n)
@@ -568,7 +550,6 @@ theorem exists_secondDerivatives_of_weak_equation {α β : Type*} [TopologicalSp
   choose W hW using fun i k =>
     exists_weakCoordinateDerivative_of_bounded_differenceQuotients (D i z) k (hbound i k)
   exact ⟨W, hW⟩
-
 
 theorem exists_secondDerivatives_of_weak_equation_integrable
     {α β : Type*} [TopologicalSpace β]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckBufferedBaseline
 import PoincareConjecture.Proofs.M47.CanonicalNeckSlabTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem regularSlab_limit_not_buffered_neck
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T c d b : ℝ}

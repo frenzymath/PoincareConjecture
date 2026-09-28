@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem image_ball_subset_ball_of_tangentNorm_le_on_open
     {n m : ℕ} {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
@@ -61,9 +48,6 @@ variable {n : ℕ} {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [MeasurableSpace X] [BorelSpace M] [BorelSpace X]
   [T3Space M] [T3Space X] [SecondCountableTopology X]
 
-
-
-
 theorem calibrated_ball_volume_le_mul_of_image_subset
     (g : RiemannianMetric n M) (h : RiemannianMetric n X)
     (e : OpenPartialHomeomorph M X)
@@ -82,9 +66,6 @@ theorem calibrated_ball_volume_le_mul_of_image_subset
   have hvol := calibratedMetricVolume_le_mul_image_of_local_tangentNorm_lower
     g h e hf hi hK hbound hopen.measurableSet hsource
   exact hvol.trans (mul_le_mul_right (measure_mono himage) (ENNReal.ofReal K ^ n))
-
-
-
 
 theorem calibrated_ball_volume_le_mul_of_tangent_bounds
     (g : RiemannianMetric n M) (h : RiemannianMetric n X)

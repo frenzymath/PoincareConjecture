@@ -2,22 +2,12 @@ import Mathlib.Topology.MetricSpace.Pseudo.Defs
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Data.Set.Finite.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped Topology
 
 namespace Set.Finite
-
-
 
 theorem exists_strict_sign_preserving_radius
     {E : Type*} [MetricSpace E] {V : Set E} (hV : V.Finite)

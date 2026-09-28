@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Localization
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Witnesses
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -220,7 +214,6 @@ private theorem localizedDerivative_coe (v : EuclideanSpace ℝ (Fin n))
     Completion.denseRange_coe (Completion.isUniformInducing_coe _) f
 
 include he hei hχ hc hs in
-
 
 theorem memW01p_chartPullback_toL2 [NeZero n]
     (hflat : ∀ z ∈ e.source, e z ∈ Ω ↔ 0 < z 0) (u : H1Zero D Ω) :

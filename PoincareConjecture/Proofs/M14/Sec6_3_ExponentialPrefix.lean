@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixUniqueness
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -35,9 +27,6 @@ private theorem exists_uniqueMinimizing_prefix
   intro r hr
   exact minimizing_prefix_eqOn hM04 hCoordinates hM12 q hq r hr hcb
 
-
-
-
 theorem uniqueMinimizingBranch_of_minimizing_extension
     (hM04 : RicciFlowCurvatureTheory.{0}) (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
@@ -50,8 +39,6 @@ theorem uniqueMinimizingBranch_of_minimizing_extension
   refine ⟨hD, p, ?_, hpmin, hpuniq⟩
   intro t ht
   exact (hpcurve ht).trans (hcurve ⟨ht.1, ht.2.trans hcb.le⟩)
-
-
 
 theorem uniqueMinimizingBranch_prefix
     (hM04 : RicciFlowCurvatureTheory.{0}) (hCoordinates : M12MetricPredecessors.{0} n)

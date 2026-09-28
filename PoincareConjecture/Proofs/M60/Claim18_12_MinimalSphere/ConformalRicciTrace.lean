@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.StereographicConformal
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.RicciQuadratic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60AreaGram_eq_diagonal_of_weaklyConformal (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -40,8 +29,6 @@ theorem m60AreaGram_eq_diagonal_of_weaklyConformal (g : RiemannianMetric n M)
   rw [hs, Matrix.diagonal_apply, harea]
   fin_cases i <;> fin_cases j <;>
     simp [EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
-
-
 
 theorem m60SphereRicciTraceDensity_eq_of_weaklyConformal
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleCollar
 import PoincareConjecture.Proofs.M34.Mathlib.OpenSubsetTransition
 import PoincareConjecture.Proofs.M34.Standard.TwoPieceOverlap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Poincare.Gluing
@@ -19,12 +10,8 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 abbrev EndDoublePiece (e : StandardCylindricalEnd g) (L : ℝ) :=
   endTruncation e (L + 1)
-
-
 
 theorem endDoublePiece_nonempty (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : Nonempty (EndDoublePiece e L) := by
@@ -33,16 +20,12 @@ theorem endDoublePiece_nonempty (e : StandardCylindricalEnd g)
     (endTruncation_coordinate_iff e (L := L + 1) (by linarith)
       (z := z) (by simp [z])).mpr (by dsimp [z]; linarith)⟩⟩
 
-
-
 noncomputable def endDoubleTransition (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     OpenPartialHomeomorph (EndDoublePiece e L) (EndDoublePiece e L) := by
   let := endDoublePiece_nonempty e hL
   exact (endDoubleCollarHomeomorph e hL).onOpenSubset
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
-
-
 
 theorem endDoubleTransition_source (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -52,8 +35,6 @@ theorem endDoubleTransition_source (e : StandardCylindricalEnd g)
   exact OpenPartialHomeomorph.onOpenSubset_source (endDoubleCollarHomeomorph e hL)
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (endDoubleCollar_subset_truncation e hL)
-
-
 
 theorem endDoubleTransition_apply_coe (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) {x : EndDoublePiece e L}
@@ -65,16 +46,12 @@ theorem endDoubleTransition_apply_coe (e : StandardCylindricalEnd g)
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)) x
     (endDoubleCollar_subset_truncation e hL (endAxialReflection_maps_collar e hL hx))
 
-
-
 theorem endDoubleTransition_symm (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     (endDoubleTransition e hL).symm = endDoubleTransition e hL := by
   let := endDoublePiece_nonempty e hL
   exact OpenPartialHomeomorph.onOpenSubset_symm_eq (endDoubleCollarHomeomorph e hL)
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)) (endDoubleCollarHomeomorph_symm e hL)
-
-
 
 theorem endDoubleTransition_closed (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -100,31 +77,21 @@ theorem endDoubleTransition_closed (e : StandardCylindricalEnd g)
     ((continuous_subtype_val.comp continuous_fst).prodMk
       (continuous_subtype_val.comp continuous_snd))
 
-
-
 noncomputable def endDoubleOverlap (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : OverlapSystem (fun _ : Bool => EndDoublePiece e L) :=
   twoPieceOverlap (endDoubleTransition e hL) (endDoubleTransition_symm e hL)
 
-
-
 abbrev EndDouble (e : StandardCylindricalEnd g) {L : ℝ} (hL : 1 < L) :=
   Quotient (endDoubleOverlap e hL).setoid
-
-
 
 instance endDouble_t2Space (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : T2Space (EndDouble e hL) :=
   (endDoubleOverlap e hL).quotient_t2Space
     (twoPieceOverlap_closed _ _ (endDoubleTransition_closed e hL))
 
-
-
 instance endDouble_secondCountableTopology (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : SecondCountableTopology (EndDouble e hL) :=
   (endDoubleOverlap e hL).quotient_secondCountableTopology
-
-
 
 theorem endDoublePiece_compactCore (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -135,8 +102,6 @@ theorem endDoublePiece_compactCore (e : StandardCylindricalEnd g)
   · exact endTruncatedCore_isCompact e (by linarith)
   · simpa only [Subtype.range_coe] using
       endTruncatedCore_subset_truncation e (show L < L + 1 by linarith)
-
-
 
 theorem endDoublePiece_core_cover (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (x : EndDoublePiece e L) :
@@ -163,8 +128,6 @@ theorem endDoublePiece_core_cover (e : StandardCylindricalEnd g)
     exact (endTruncatedCore_coordinate_iff e (L := L) (by linarith)
       (z := (z.1, 2 * L - z.2)) (by dsimp only; linarith)).mpr
         (by dsimp only; linarith)
-
-
 
 instance endDouble_compactSpace (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : CompactSpace (EndDouble e hL) :=

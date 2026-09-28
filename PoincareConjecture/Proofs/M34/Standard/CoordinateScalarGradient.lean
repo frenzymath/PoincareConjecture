@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateGermHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientHomothety
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.FlowCarrier
-
-
 
 theorem scalarGradientNorm_eq_of_coordinate_germ
     (C : FlowCarrier 3) (gM : C.metric)
@@ -53,9 +41,6 @@ theorem scalarGradientNorm_eq_of_coordinate_germ
 end PoincareConjecture.FlowCarrier
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
-
 
 theorem scalarGradientNorm_eq_of_coordinate_germ
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Proofs.M25.Mathlib.SecondDerivative
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +27,6 @@ private theorem fderiv_stereoInvFunAux_apply
   change HasFDerivAt (stereoInvFunAux a) _ x at hd
   rw [hd.fderiv]
   simp [smul_smul, inv_pow, add_comm, mul_comm, mul_left_comm, mul_assoc]
-
-
-
 
 theorem fderiv_fderiv_stereoInvFunAux_zero
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -99,9 +86,6 @@ private theorem sphere_chart_symm_inclusion_contDiff {n : ℕ} (q : UnitSphere n
     contMDiff_coe_sphere
   exact contMDiff_iff_contDiff.mp (hcoe.comp (sphere_chart_symm_contMDiff q))
 
-
-
-
 theorem sphere_chart_symm_inclusion_fderiv_fderiv_zero
     {n : ℕ} (q : UnitSphere n) (v w : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ (fderiv ℝ (fun x : EuclideanSpace ℝ (Fin n) =>
@@ -138,9 +122,6 @@ theorem sphere_chart_symm_inclusion_fderiv_fderiv_zero
     (fun _ _ => mem_univ _) v w
   rw [hfun]
   simpa [hDA, fderiv_fderiv_stereoInvFunAux_zero, hAinner, p] using hchain
-
-
-
 
 theorem norm_fderiv_roundSphere_chart_pullbackCoefficients_le
     {n : ℕ} (q : UnitSphere n) (x : EuclideanSpace ℝ (Fin n)) :
@@ -193,9 +174,6 @@ theorem norm_fderiv_roundSphere_chart_pullbackCoefficients_le
       _ = ‖x‖ * ‖v‖ := one_mul _
   have hI : ‖I‖ ≤ (1 : ℝ) := norm_innerSL_le ℝ
   exact (mul_le_mul hscalar hI (norm_nonneg I) (by positivity)).trans_eq (mul_one _)
-
-
-
 
 theorem sphere_chart_recenter_twoJet {n : ℕ} (q : UnitSphere n)
     (y : EuclideanSpace ℝ (Fin n)) (hy : ‖y‖ ≤ 1 / 4) :
@@ -334,9 +312,6 @@ theorem sphere_chart_recenter_twoJet {n : ℕ} (q : UnitSphere n)
         ((CoordinateExponential.christoffelBilinear B y).le_opNorm₂ v w |>.trans
           (by gcongr)) (norm_nonneg _) zero_le_one
     _ = (3 * ‖y‖) * ‖v‖ * ‖w‖ := one_mul _
-
-
-
 
 theorem norm_fderiv_fderiv_sphere_chart_symm_inclusion_le
     {n : ℕ} (q : UnitSphere n) (y : EuclideanSpace ℝ (Fin n))

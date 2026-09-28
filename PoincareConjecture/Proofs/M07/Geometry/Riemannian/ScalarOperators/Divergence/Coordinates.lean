@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Diverge
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +39,6 @@ private theorem exists_local_chart_realization
     apply heDiff.mfderiv_injective hy
     rw [map_zero]
     convert! hz using 1
-
-
 
 theorem density_mul_laplacian_eq_coordinate_divergence
     (D : LeviCivitaData g)
@@ -114,7 +101,6 @@ theorem density_mul_laplacian_eq_coordinate_divergence
   exact congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ =>
     L (EuclideanSpace.basisFun (Fin n) ℝ i)) hflux.fderiv_eq
 
-
 theorem contDiffAt_coordinateGradient
     (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -131,7 +117,6 @@ theorem contDiffAt_coordinateGradient
     (by simp : (∞ : ℕ∞ω) + 1 ≤ ∞)
   exact contMDiffAt_iff_contDiffAt.mp (by
     simpa using (Bundle.contMDiffAt_totalSpace.mp h).2)
-
 
 theorem contDiffAt_coordinateGradientFlux
     (D : LeviCivitaData g)
@@ -153,7 +138,6 @@ theorem contDiffAt_coordinateGradientFlux
     exact (EuclideanSpace.proj (𝕜 := ℝ) i).contDiff.contDiffAt.comp x
       (D.contDiffAt_coordinateGradient e he hei hx hf)
   exact hρ.mul hcoord
-
 
 theorem contDiffAt_laplacian_comp_chart
     (D : LeviCivitaData g)

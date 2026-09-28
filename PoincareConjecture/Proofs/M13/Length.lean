@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -20,7 +12,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
 
 theorem pathELength_eq_lintegral_tangentNorm (g : RiemannianMetric n M)
     (γ : ℝ → M) (a b : ℝ) :
@@ -36,7 +27,6 @@ theorem pathELength_eq_lintegral_tangentNorm (g : RiemannianMetric n M)
   dsimp only
   rw [← ofReal_norm, norm_eq_sqrt_real_inner]
   rfl
-
 
 theorem homothety_pathELength (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
@@ -56,7 +46,6 @@ theorem homothety_pathELength (g : RiemannianMetric n M) (h : RiemannianMetric n
     (mfderiv (𝓡 n) (𝓡 n) f (γ t) (mfderiv 𝓘(ℝ) (𝓡 n) γ t 1))) = _
   rw [homothety_tangentNorm g h f Q hQ hf, ENNReal.ofReal_mul (Real.sqrt_nonneg Q)]
 
-
 theorem edist_le_pathELength (g : RiemannianMetric n M) {x y : M} {γ : ℝ → M}
     {a b : ℝ} (hγ : ContMDiffOn 𝓘(ℝ) (𝓡 n) 1 γ (Set.Icc a b))
     (ha : γ a = x) (hb : γ b = y) (hab : a ≤ b) :
@@ -65,7 +54,6 @@ theorem edist_le_pathELength (g : RiemannianMetric n M) {x y : M} {γ : ℝ → 
     ⟨g.toRiemannianMetric⟩
   exact Manifold.riemannianEDist_le_pathELength hγ ha hb hab
 
-
 theorem exists_pathELength_lt (g : RiemannianMetric n M) {x y : M} {r : ℝ≥0∞}
     (hr : g.edist x y < r) :
     ∃ γ : ℝ → M, γ 0 = x ∧ γ 1 = y ∧
@@ -73,7 +61,6 @@ theorem exists_pathELength_lt (g : RiemannianMetric n M) {x y : M} {r : ℝ≥0�
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact Manifold.exists_lt_of_riemannianEDist_lt hr
-
 
 theorem homothety_edist (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
@@ -116,7 +103,6 @@ theorem homothety_edist (g : RiemannianMetric n M) (h : RiemannianMetric n N)
           zero_le_one) c
       _ = h.pathELength η 0 1 := hlen.symm
       _ < r := hηlt
-
 
 theorem homothety_ball_image (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)

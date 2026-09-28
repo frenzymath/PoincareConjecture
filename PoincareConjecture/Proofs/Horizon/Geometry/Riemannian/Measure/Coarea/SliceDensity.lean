@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Dens
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Fubini
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.ImmersionDensity
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Poincare.Coarea Poincare.EuclideanSpace
@@ -20,7 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 set_option backward.isDefEq.respectTransparency false in
 omit [IsManifold (𝓡 (n + 1)) ∞ M] in
-
 
 lemma mfderiv_euclideanCons_basisFun
     {e : EuclideanSpace ℝ (Fin (n + 1)) → M} {t : ℝ}
@@ -37,7 +30,6 @@ lemma mfderiv_euclideanCons_basisFun
   change mfderiv (𝓡 (n + 1)) (𝓡 (n + 1)) e (euclideanCons t y)
     (euclideanTailCLM n (EuclideanSpace.basisFun (Fin n) ℝ i)) = _
   rw [euclideanTailCLM_basisFun]
-
 
 theorem parametrizedVolumeDensity_slice (g : RiemannianMetric (n + 1) M)
     {e : EuclideanSpace ℝ (Fin (n + 1)) → M} {t : ℝ}

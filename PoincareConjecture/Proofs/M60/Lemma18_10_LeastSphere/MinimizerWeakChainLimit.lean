@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaStrongConvergence
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakClassical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem suMixedGrowth_L1_limit {X E F : Type*} [MeasurableSpace X]
     [NormedAddCommGroup E] [NormedAddCommGroup F] {μ : Measure X} [IsFiniteMeasure μ]
@@ -123,9 +110,6 @@ private theorem test_pairing_tendsto {μ : Measure Plane} {φ u : Plane → ℝ}
   have ht := (Lp.tendsto_Lp_iff_tendsto_eLpNorm'' v hv u hu).mpr hlim
   have h := (B.lpPairing μ ⊤ 1 (hφ.toLp φ)).continuous.tendsto (hu.toLp u)
   simpa only [Function.comp_def, heq] using h.comp ht
-
-
-
 
 theorem suWeakPartial_of_L1_approx {O : Set Plane} {i : Fin 2}
     {u p : Plane → ℝ} {v q : ℕ → Plane → ℝ}

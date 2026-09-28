@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactCohomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportUniv
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
 set_option autoImplicit false
 
 noncomputable section

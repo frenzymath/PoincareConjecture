@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M34StandardCapExistence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,12 +20,9 @@ structure RepairedStandardCapUniquenessData
     ∀ t ∈ Set.Ico 0 E.flow.base.lifetime ∩ Set.Ico 0 G.base.lifetime,
       E.flow.metric t = G.metric t
 
-
   partial_unique_metric : ∀ G : PartialStandardCapFlow g₀,
     ∀ t ∈ Set.Ico 0 E.flow.base.lifetime ∩ Set.Ico 0 G.lifetime,
       E.flow.metric t = G.flow.metric t
-
-
 
   scalar_lower_bound : ∃ c : ℝ, 0 < c ∧
     ∀ t ∈ Set.Ico 0 E.flow.base.lifetime, ∀ x : StandardCapSpace,

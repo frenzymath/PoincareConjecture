@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +19,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_nonflat_ancient_limit_with_terminal_parallel_gradient
     {m : ℕ} (hm : 0 < m) {M : Type u}

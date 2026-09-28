@@ -1,27 +1,7 @@
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Linear
 import Mathlib.Analysis.Normed.Operator.Prod
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
-
-
-
-
-
-
-
-
-
-
-
-
 
 open Set intervalIntegral
 open scoped Topology Interval
@@ -32,7 +12,6 @@ set_option autoImplicit false
 namespace Poincare.ODE.Jacobi
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 def pairCoeff (R : ℝ → E →L[ℝ] E) (t : ℝ) : (E × E) →L[ℝ] E × E :=
   (ContinuousLinearMap.snd ℝ E E).prod (-((R t).comp (ContinuousLinearMap.fst ℝ E E)))
@@ -59,7 +38,6 @@ theorem norm_pairCoeff_le (R : ℝ → E →L[ℝ] E) (t : ℝ) :
       _ ≤ max 1 ‖R t‖ * ‖p‖ :=
         mul_le_mul_of_nonneg_right (le_max_right _ _) (norm_nonneg _)
 
-
 structure IsJacobiSolOn (R : ℝ → E →L[ℝ] E) (a b : ℝ) (y v : ℝ → E) : Prop where
   hasDerivWithinAt_fst : ∀ t ∈ Icc a b,
     HasDerivWithinAt y (v t) (Icc a b) t
@@ -80,7 +58,6 @@ theorem isSolOn_pair (h : IsJacobiSolOn R a b y v) :
     Poincare.ODE.Linear.IsSolOn (pairCoeff R) a b (fun t => (y t, v t)) := by
   intro t ht
   simpa using (h.hasDerivWithinAt_fst t ht).prodMk (h.hasDerivWithinAt_snd t ht)
-
 
 theorem max_norm_le {C : ℝ} (h : IsJacobiSolOn R a b y v)
     (hC : ∀ t ∈ Icc a b, ‖R t‖ ≤ C) :
@@ -108,7 +85,6 @@ theorem max_norm_le {C : ℝ} (h : IsJacobiSolOn R a b y v)
 end IsJacobiSolOn
 
 variable [CompleteSpace E]
-
 
 theorem sub_eq_integral_of_hasDerivWithinAt_Icc {a b : ℝ} {f f' : ℝ → E}
     (hf : ∀ t ∈ Icc a b, HasDerivWithinAt f (f' t) (Icc a b) t)
@@ -149,7 +125,6 @@ theorem norm_snd_le (h : IsJacobiSolOn R 0 b y v)
       apply mul_le_mul_of_nonneg_left (Real.exp_le_exp.mpr ?_) (norm_nonneg _)
       exact mul_le_mul_of_nonneg_left ht.2 hK0
 
-
 theorem norm_fst_le (h : IsJacobiSolOn R 0 b y v)
     (hC : ∀ t ∈ Icc 0 b, ‖R t‖ ≤ C) (hy0 : y 0 = 0) :
     ∀ t ∈ Icc 0 b, ‖y t‖ ≤ (‖v 0‖ * Real.exp (max 1 C * b)) * t := by
@@ -165,7 +140,6 @@ theorem norm_fst_le (h : IsJacobiSolOn R 0 b y v)
     exact h.norm_snd_le hC hy0 x ⟨hx.1.le, hx.2.trans ht.2⟩
   have hi := norm_integral_le_of_norm_le_const hbound
   rwa [sub_zero, abs_of_nonneg ht.1] at hi
-
 
 theorem norm_snd_sub_le (h : IsJacobiSolOn R 0 b y v)
     (hR : ContinuousOn R (Icc 0 b)) (hC : ∀ t ∈ Icc 0 b, ‖R t‖ ≤ C)
@@ -203,7 +177,6 @@ theorem norm_snd_sub_le (h : IsJacobiSolOn R 0 b y v)
     _ = C * M * t ^ 2 / 2 := by
       rw [intervalIntegral.integral_const_mul, integral_id]
       ring
-
 
 theorem norm_fst_sub_le (h : IsJacobiSolOn R 0 b y v)
     (hR : ContinuousOn R (Icc 0 b)) (hC : ∀ t ∈ Icc 0 b, ‖R t‖ ≤ C)

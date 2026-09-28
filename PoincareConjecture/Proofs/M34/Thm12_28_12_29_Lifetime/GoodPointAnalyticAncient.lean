@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.GoodPointAnalytic
 import PoincareConjecture.Statements.M27KappaAlternatives
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem exists_chapter11_analytic_constant (T : RepairedKappaAlternativeTheory.{u}) :
     ∃ A : ℝ, 0 < A ∧

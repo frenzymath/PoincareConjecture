@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {gamma delta : ℝ → M} {x : ℝ}
 
-
-
 theorem curveSpeed_congr_germ (F : RicciFlow n M (Set.Icc a b)) (t : ℝ)
     (h : gamma =ᶠ[𝓝 x] delta) :
     curveSpeed F (fun y _ => gamma y) t x = curveSpeed F (fun y _ => delta y) t x := by
@@ -34,9 +22,6 @@ theorem curveSpeed_congr_germ (F : RicciFlow n M (Set.Icc a b)) (t : ℝ)
   change (F.metric t).tangentNorm (gamma x) (curveVelocity gamma x) =
     (F.metric t).tangentNorm (delta x) (curveVelocity delta x)
   rw [hvelocity, h.eq_of_nhds]
-
-
-
 
 theorem pullback_jet_congr_germ {g : RiemannianMetric n M} (D : LeviCivitaData g)
     {Y : (s : ℝ) → TangentSpace (𝓡 n) (gamma s)}
@@ -72,8 +57,6 @@ theorem pullback_jet_congr_germ {g : RiemannianMetric n M} (D : LeviCivitaData g
     rw [hpoint, hfield, hvelocity, hcoords.deriv_eq]
   apply TotalSpace.ext hpoint
   exact heq_of_eq hderiv
-
-
 
 theorem curvature_congr_germ (F : RicciFlow n M (Set.Icc a b)) (t : ℝ)
     (h : gamma =ᶠ[𝓝 x] delta) :

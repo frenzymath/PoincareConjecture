@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalStripClosure
 import PoincareConjecture.Proofs.M76.Mathlib.ProductStripCutTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,22 +18,16 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 namespace OriginalDiskProduct
 
-
 def closedStrip (P : OriginalDiskProduct e R j) : Set X :=
   P.map '' (D ×ˢ Icc (-(1 / 2 : ℝ)) (1 / 2))
-
 
 def openStrip (P : OriginalDiskProduct e R j) : Set X :=
   P.map '' (D ×ˢ Ioo (-(1 / 2 : ℝ)) (1 / 2))
 
-
 def endDisks (P : OriginalDiskProduct e R j) : Set X :=
   P.map '' (D ×ˢ ({-(1 / 2 : ℝ), 1 / 2} : Set ℝ))
 
-
 def cutCarrier (P : OriginalDiskProduct e R j) : Set X := R \ P.openStrip
-
-
 
 theorem closedStrip_sdiff_openStrip (P : OriginalDiskProduct e R j) :
     P.closedStrip \ P.openStrip = P.endDisks := by
@@ -70,9 +56,6 @@ theorem closedStrip_sdiff_openStrip (P : OriginalDiskProduct e R j) :
       (hfull hzsmall) hwz
     subst w
     rcases ht with ht | ht <;> linarith [hw.2.1, hw.2.2]
-
-
-
 
 theorem cut_geometry [T2Space X] (P : OriginalDiskProduct e R j)
     (hR : IsCompact R)
@@ -118,7 +101,6 @@ theorem cut_geometry [T2Space X] (P : OriginalDiskProduct e R j)
   change w.2 = 3 / 4 at ht
   linarith [hw.2.2]
 
-
 theorem disjoint_end_disks (P : OriginalDiskProduct e R j) :
     Disjoint (P.map '' (D ×ˢ ({-(1 / 2 : ℝ)} : Set ℝ)))
       (P.map '' (D ×ˢ ({1 / 2} : Set ℝ))) := by
@@ -130,7 +112,6 @@ theorem disjoint_end_disks (P : OriginalDiskProduct e R j) :
   have hwI : w ∈ D ×ˢ I := ⟨hw.1, by rw [hwt]; norm_num⟩
   have ht := congrArg Prod.snd (P.injective hwI hzI hwz)
   linarith
-
 
 theorem disjoint_central_cut (P : OriginalDiskProduct e R j) :
     Disjoint (j '' D) P.cutCarrier := by

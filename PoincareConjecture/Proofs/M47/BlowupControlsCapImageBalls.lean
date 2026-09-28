@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapImageTail
 import PoincareConjecture.Proofs.M47.CanonicalCoreBallContainment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M] [T3Space X]
-
-
 
 theorem cap_image_recut_compact_closure
     {g : RiemannianMetric 3 M} (N : CapCertificate g)
@@ -41,8 +31,6 @@ theorem cap_image_recut_compact_closure
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
   [MeasurableSpace X] [BorelSpace X]
-
-
 
 theorem scalar_normalized_ball_subset_cap_image_recut
     {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
@@ -112,8 +100,6 @@ theorem scalar_normalized_ball_subset_cap_image_recut
       _ ≤ h.pathELength gamma a t := htail
       _ ≤ h.pathELength gamma 0 1 := M36.metric_pathELength_mono h gamma ha.1 ht.2
   exact not_lt_of_ge hcontradiction hlength
-
-
 
 theorem scalar_normalized_cap_image_ball_captured
     {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}

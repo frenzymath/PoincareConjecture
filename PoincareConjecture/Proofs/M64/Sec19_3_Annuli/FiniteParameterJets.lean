@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,10 +13,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
-
-
 
 theorem m64ParameterAnnulus_spatial_differential
     {Phi : ℝ × E → M} {h : LoopPlane → E} {s : ℝ} {p : LoopPlane}
@@ -37,10 +29,6 @@ theorem m64ParameterAnnulus_spatial_differential
   rw [hd] at hc
   exact hc
 
-
-
-
-
 theorem m64ParameterAnnulus_differential_eq_of_firstJet
     {Phi : ℝ × E → M} {h k : LoopPlane → E} {s : ℝ} {p : LoopPlane}
     (hPhi : MDifferentiableAt 𝓘(ℝ, ℝ × E) (𝓡 n) Phi (s, h p))
@@ -55,10 +43,6 @@ theorem m64ParameterAnnulus_differential_eq_of_firstJet
       EuclideanSpace ℝ (Fin n))) hp
   exact (m64ParameterAnnulus_spatial_differential hPhi hh w).trans
     (hjet.trans (m64ParameterAnnulus_spatial_differential (hvalue ▸ hPhi) hk w).symm)
-
-
-
-
 
 theorem m64ParameterAnnulus_energy_eq_of_firstJet
     [IsManifold (𝓡 n) ∞ M]

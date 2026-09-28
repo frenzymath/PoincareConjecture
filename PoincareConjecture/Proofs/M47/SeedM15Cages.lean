@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedM15CapWindow
 import PoincareConjecture.Proofs.M47.SeedM15InitialCapture
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_ObservedCages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_surgery_cages
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -151,8 +141,6 @@ theorem seedM15_surgery_cages
     exact hcapture y (hbirth y hv)
   · exact exists_compact_postSurgery_cage H.spacetime.history H.spacetime.geometry
       htSurgery ht.2 hwindow hbuffer Q origin havoid hbirth
-
-
 
 theorem seedM15_actionConfinement
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

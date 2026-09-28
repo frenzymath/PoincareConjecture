@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PositiveCenteredInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,9 +12,6 @@ open SpectralHeatNative
 variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)]
   {lambda : iota → NNReal} {w : State iota} {T0 T : ℝ}
-
-
-
 
 theorem exists_strict_positive_interval (N : CenteredSpectralResidual lambda w T0)
     (hT0 : 0 < T0) (heps : (N.perturbationConstant : ℝ) < 1 / 2)
@@ -122,9 +110,6 @@ theorem exists_strict_positive_interval (N : CenteredSpectralResidual lambda w T
   change ‖Z‖ < _
   dsimp only [b] at hZb
   nlinarith only [hZb, hkappa, hr.le]
-
-
-
 
 theorem norm_fixedPoint_lt_half [BorelSpace (State iota)]
     (N : CenteredSpectralResidual lambda w T) (hT : 0 ≤ T) (hT1 : T ≤ 1)

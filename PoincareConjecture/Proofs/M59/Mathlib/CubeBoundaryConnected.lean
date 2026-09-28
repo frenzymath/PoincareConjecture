@@ -2,16 +2,6 @@ import Mathlib.Topology.Homotopy.HomotopyGroup
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable {N : Type*}
 
 private instance : ContractibleSpace I :=
   (convex_Icc (0 : ℝ) 1).contractibleSpace ⟨0, le_rfl, zero_le_one⟩
-
-
 
 theorem contractibleSpace (N : Type*) : ContractibleSpace (I^N) := by
   apply (contractible_iff_id_nullhomotopic _).mpr
@@ -38,8 +26,6 @@ theorem contractibleSpace (N : Type*) : ContractibleSpace (I^N) := by
       fun_prop
     map_zero_left := by intro v; ext i; simp
     map_one_left := by intro v; ext i; simp }⟩⟩
-
-
 
 theorem isPathConnected_face (i : N) (c : I) :
     IsPathConnected {v : I^N | v i = c} := by
@@ -58,8 +44,6 @@ theorem isPathConnected_face (i : N) (c : I) :
     · simp [hj]
   · intro hv
     simpa using hv i
-
-
 
 theorem isPathConnected_boundary [Nontrivial N] : IsPathConnected (boundary N) := by
   classical

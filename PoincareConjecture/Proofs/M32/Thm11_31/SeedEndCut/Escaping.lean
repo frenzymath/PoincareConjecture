@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Thm11_31.Levels
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem horn_exists_unique_escaping_component
     {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}

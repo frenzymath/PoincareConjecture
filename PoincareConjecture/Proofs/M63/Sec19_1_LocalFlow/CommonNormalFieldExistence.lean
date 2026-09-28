@@ -9,17 +9,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Locality
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.InitialCurvatureCap
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetAmbientBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,10 +29,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "StateV" => State ((ℤ × Fin 2) × ι)
 local notation "Y" => C(AddCircle curvePeriod, W)
 local notation "YR" => C(AddCircle curvePeriod, ℝ)
-
-
-
-
 
 theorem exists_common_normal_field_limits_of_unit_initial
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

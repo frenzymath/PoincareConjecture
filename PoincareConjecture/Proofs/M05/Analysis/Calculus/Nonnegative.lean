@@ -1,17 +1,9 @@
-
 import Mathlib.Analysis.Calculus.MeanValue
-
-
-
-
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare
-
-
-
 
 theorem nonneg_of_deriv_pos_on_neg
     {a b : ℝ} (hab : a ≤ b) {f : ℝ → ℝ}

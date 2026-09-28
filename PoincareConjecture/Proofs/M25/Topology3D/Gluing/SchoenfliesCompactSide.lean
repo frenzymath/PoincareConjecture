@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.CompactBallChart
 import PoincareConjecture.Proofs.M25.Mathlib.CofinalCylinderEnd
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesRadial
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,15 +13,11 @@ section Ball
 
 variable {ψ : UnitTwoSphere × ℝ → E3} {δ t : ℝ} (S : SchoenfliesData ψ δ)
 
-
-
 theorem isCompact_chart_closedBall (ht : t ∈ Ico δ 1) :
     IsCompact (S.chart '' closedBall 0 (S.radial t)) := by
   obtain ⟨D, hs, _, hD, _, _⟩ := S.exists_chart_openPartialHomeomorph
   rw [← hD]
   exact D.isCompact_image_closedBall hs (S.radial_lt t ht)
-
-
 
 theorem interior_chart_closedBall (ht : t ∈ Ico δ 1) :
     interior (S.chart '' closedBall 0 (S.radial t)) =
@@ -41,8 +26,6 @@ theorem interior_chart_closedBall (ht : t ∈ Ico δ 1) :
   rw [← hD]
   exact D.interior_image_closedBall hs (S.radial_pos t ht) (S.radial_lt t ht)
 
-
-
 theorem frontier_chart_closedBall (ht : t ∈ Ico δ 1) :
     frontier (S.chart '' closedBall 0 (S.radial t)) =
       S.chart '' sphere 0 (S.radial t) := by
@@ -50,18 +33,12 @@ theorem frontier_chart_closedBall (ht : t ∈ Ico δ 1) :
   rw [← hD]
   exact D.frontier_image_closedBall hs (S.radial_pos t ht) (S.radial_lt t ht)
 
-
-
-
 theorem isConnected_compl_chart_closedBall (ht : t ∈ Ico δ 1) :
     IsConnected (S.chart '' closedBall 0 (S.radial t))ᶜ := by
   obtain ⟨D, hs, _, hD, _, _⟩ := S.exists_chart_openPartialHomeomorph
   rw [← hD]
   exact D.m25_isConnected_compl_image_closedBall hs (S.radial_pos t ht)
     (S.radial_lt t ht) (by rw [← Module.finrank_eq_rank]; norm_num)
-
-
-
 
 theorem image_sphere_eq_collar_level (ht : t ∈ Ico δ 1) :
     S.chart '' sphere 0 (S.radial t) = (fun q => ψ (q, S.side * t)) '' univ := by
@@ -86,8 +63,6 @@ theorem image_sphere_eq_collar_level (ht : t ∈ Ico δ 1) :
 
 end Ball
 
-
-
 private theorem subset_compl_of_unbounded_image
     {W : Type*} [TopologicalSpace W] [T2Space W] (Phi : W ≃ₜ E3)
     {K T : Set W} (hK : IsCompact K) (hT : IsPreconnected T)
@@ -107,8 +82,6 @@ private theorem subset_compl_of_unbounded_image
       (image_mono (hinside.trans interior_subset)))).elim
   · exact houtside
 
-
-
 private theorem connectedSpace_unitTwoSphere : ConnectedSpace UnitTwoSphere := by
   apply isConnected_iff_connectedSpace.mp
   exact (isPathConnected_sphere
@@ -120,21 +93,14 @@ variable {W : Type*} [TopologicalSpace W] (Phi : W ≃ₜ E3)
   (e : OpenPartialHomeomorph (UnitTwoSphere × ℝ) W) {a b c h δ t : ℝ}
   (S : SchoenfliesData (fun p => Phi (e (p.1, c + h * p.2))) δ)
 
-
-
 theorem isCompact_buffered_ball (ht : t ∈ Ico δ 1) :
     IsCompact (Phi.symm '' (S.chart '' closedBall 0 (S.radial t))) :=
   (S.isCompact_chart_closedBall ht).image Phi.symm.continuous
-
-
 
 theorem interior_buffered_ball (ht : t ∈ Ico δ 1) :
     interior (Phi.symm '' (S.chart '' closedBall 0 (S.radial t))) =
       Phi.symm '' (S.chart '' ball 0 (S.radial t)) := by
   rw [← Phi.symm.image_interior, S.interior_chart_closedBall ht]
-
-
-
 
 theorem frontier_buffered_ball (ht : t ∈ Ico δ 1) :
     frontier (Phi.symm '' (S.chart '' closedBall 0 (S.radial t))) =
@@ -151,16 +117,11 @@ theorem frontier_buffered_ball (ht : t ∈ Ico δ 1) :
     exact ⟨Phi (e (q, c + h * (S.side * t))), ⟨q, mem_univ _, rfl⟩,
       Phi.symm_apply_apply _⟩
 
-
-
-
 theorem isConnected_compl_buffered_ball (ht : t ∈ Ico δ 1) :
     IsConnected (Phi.symm '' (S.chart '' closedBall 0 (S.radial t)))ᶜ := by
   rw [← Phi.symm.image_compl]
   exact (S.isConnected_compl_chart_closedBall ht).image Phi.symm
     Phi.symm.continuous.continuousOn
-
-
 
 private theorem signed_height_mem_Ioo (hh : 0 < h) (ha : a < c - h)
     (hb : c + h < b) (hδ : 0 ≤ δ) (ht : t ∈ Ico δ 1) :
@@ -171,8 +132,6 @@ private theorem signed_height_mem_Ioo (hh : 0 < h) (ha : a < c - h)
     constructor <;> nlinarith [ht.2]
   · simp only [hs, neg_one_mul, mem_Ioo]
     constructor <;> nlinarith [ht.2]
-
-
 
 private theorem cylinderTail_subset_compl_buffered_ball
     (hsource : e.source = univ ×ˢ Ioo a b)
@@ -197,10 +156,6 @@ private theorem cylinderTail_subset_compl_buffered_ball
   have hhgt := ((e.mem_cylinderTail_iff hsource hd.1 (e z)).mp hx).2.1
   rw [e.left_inv hzs, show z.2 = c + h * (S.side * t) from hz.2] at hhgt
   exact lt_irrefl _ hhgt
-
-
-
-
 
 theorem side_eq_one_of_cofinal_cylinder
     (hsource : e.source = univ ×ˢ Ioo a b)
@@ -233,9 +188,6 @@ theorem side_eq_one_of_cofinal_cylinder
       exact (S.radial_strictMono ht₁ ht₀ h₁₀).le
     · rw [S.chart_collar q₀ t₁ ht₁]
       exact Phi.symm_apply_apply _
-
-
-
 
 theorem compl_cylinderTail_eq_buffered_ball
     (hsource : e.source = univ ×ˢ Ioo a b)
@@ -278,9 +230,6 @@ theorem compl_cylinderTail_eq_buffered_ball
         obtain ⟨x, hx⟩ := (e.isConnected_cylinderTail hsource hd).nonempty
         exact ⟨x, hsub hx, hx⟩) hclosure_inter
   rw [Subset.antisymm hsub hreverse, compl_compl]
-
-
-
 
 theorem interior_compl_cylinderTail_eq_buffered_ball
     (hsource : e.source = univ ×ˢ Ioo a b)

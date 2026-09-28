@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.FiniteComp
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.RecognizedComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.ParametrizedPLSurface
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -17,7 +15,6 @@ variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [Finite ι]
   (hdisjoint : Pairwise fun i j => Disjoint (K i).space (K j).space)
 
 include hK hdisjoint
-
 
 theorem componentCarrier_fundamentalGroup_injective
     {Y : Type*} [TopologicalSpace Y] (f : C(J.space, Y))
@@ -53,8 +50,6 @@ theorem componentCarrier_fundamentalGroup_injective
 local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
-
-
 
 theorem exists_PL_coveringMap_of_recognized_components [FiniteDimensional ℝ E]
     (hJ : J.faces.Finite)

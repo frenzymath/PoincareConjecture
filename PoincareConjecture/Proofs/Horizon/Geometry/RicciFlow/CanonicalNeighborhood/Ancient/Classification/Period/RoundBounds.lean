@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Surface.Evolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Functional
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +15,6 @@ variable {N : Type*} [TopologicalSpace N] [MeasurableSpace N] [BorelSpace N]
   (hround : ∀ t ≤ 0, ConstantPositiveSectionalCurvature (F.metric t) (F.connection t))
 
 include hround
-
-
 
 theorem volumeMeasure_eq_terminal_scale_of_round (p : N) (t : ℝ) (ht : t ≤ 0) :
     (F.metric t).volumeMeasure =
@@ -57,7 +47,6 @@ theorem volumeMeasure_eq_terminal_scale_of_round (p : N) (t : ℝ) (ht : t ≤ 0
   rw [hmetric, SurfaceEntropy.volumeMeasure_rescaled_surface]
 
 omit [MeasurableSpace N] [BorelSpace N] [T3Space N] in
-
 
 theorem scalarCurvature_le_inv_neg_time_of_round (t : ℝ) (ht : t < 0) (p : N) :
     (F.connection t).scalarCurvature p ≤ (-t)⁻¹ := by

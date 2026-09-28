@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureDoubleMargin
 import PoincareConjecture.Proofs.M47.TerminalCurvatureUniformCoefficients
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M47
 open M34 PoincareConjecture.Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem terminalCurvature_exists_double_normalization_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :

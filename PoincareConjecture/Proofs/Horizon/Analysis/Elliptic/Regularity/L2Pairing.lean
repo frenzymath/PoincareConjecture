@@ -1,13 +1,6 @@
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Function.LpSpace.Complete
 
-
-
-
-
-
-
-
 open MeasureTheory Filter
 open scoped Topology InnerProductSpace
 

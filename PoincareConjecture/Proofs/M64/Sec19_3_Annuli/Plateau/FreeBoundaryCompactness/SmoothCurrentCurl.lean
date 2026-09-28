@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessHolder
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,8 +15,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
-
-
 
 theorem smooth_planar_current_curl
     (f : E → E) (hf : ContDiff ℝ ∞ f) (p : E) :
@@ -50,9 +41,6 @@ theorem smooth_planar_current_curl
   rw [hder 1 0, hder 0 1, hsymm]
   simp only [planarCurrentBilinear_apply, planarCircleCurrent]
   ring
-
-
-
 
 theorem smooth_planar_current_test_identity
     (f : E → E) (hf : ContDiff ℝ ∞ f)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +26,6 @@ private theorem scalar_bilinear_eq_of_basis {n : ℕ}
   apply ContinuousLinearMap.coe_injective
   apply (EuclideanSpace.basisFun (Fin n) ℝ).toBasis.ext
   exact h a
-
-
 
 theorem SmoothSpacetimeEmbedding.scalarCurvature_eq_of_coordinate_germ
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
@@ -86,8 +77,6 @@ theorem SmoothSpacetimeEmbedding.scalarCurvature_eq_of_coordinate_germ
   exact fun u v => congrArg (fun B => B u v) hB
 
 namespace PointedGeometricConvergence
-
-
 
 theorem tendsto_scalarCurvature
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -143,8 +132,6 @@ theorem tendsto_scalarCurvature
     (G.exhaustion_open k) x (t, p) ht
     ⟨hp, by rw [hcx]; exact G.exhaustion_monotone hjk (hj (mem_singleton x))⟩
     (gd k).1 (gd k).2 hk
-
-
 
 theorem tendsto_scalarCurvature_at_zero_base
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

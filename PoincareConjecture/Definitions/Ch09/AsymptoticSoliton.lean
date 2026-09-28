@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -26,13 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
-
-
-
-
-
-
 def AncientKappaNoncollapsed (F : RicciFlow n M (Set.Iic 0)) (κ : ℝ) : Prop :=
   ∀ r₀ : ℝ, 0 < r₀ →
     ∀ (t : ℝ), t ≤ 0 → ∀ p : M, ∀ r : ℝ, 0 < r → r ≤ r₀ →
@@ -40,7 +23,6 @@ def AncientKappaNoncollapsed (F : RicciFlow n M (Set.Iic 0)) (κ : ℝ) : Prop :
         |(F.connection s).curvatureTensorNorm q| ≤ r⁻¹ ^ 2) →
       ENNReal.ofReal (κ * r ^ n) ≤
         calibratedMetricVolume (F.metric t) ((F.metric t).ball p r)
-
 
 structure AncientKappaSolution (n : ℕ) (M : Type u)
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -59,12 +41,6 @@ structure AncientKappaSolution (n : ℕ) (M : Type u)
     (flow.connection t).curvatureTensorNorm x ≠ 0
   noncollapsed : AncientKappaNoncollapsed flow kappa
 
-
-
-
-
-
-
 structure AncientRescaling (K : AncientKappaSolution n M) (tau : ℝ) where
   tau_pos : 0 < tau
   flow : RicciFlow n M (Set.Iio 0)
@@ -82,7 +58,6 @@ structure AncientRescaling (K : AncientKappaSolution n M) (tau : ℝ) where
     (flow.connection t).curvatureTensorNorm x =
       tau * (K.flow.connection (tau * t)).curvatureTensorNorm x
 
-
 structure AncientRescalingSequence (K : AncientKappaSolution n M) where
   reference : M
   scale : ℕ → ℝ
@@ -95,7 +70,6 @@ structure AncientRescalingSequence (K : AncientKappaSolution n M) where
       reducedLength K.flow 0 reference y (scale k)
   base_reduced_length_bound : ∀ k,
     reducedLength K.flow 0 reference (base k) (scale k) ≤ (n : ℝ) / 2
-
 
 structure AncientLimitFlow (n : ℕ) where
   carrier : FlowCarrier n
@@ -114,7 +88,6 @@ structure AncientLimitFlow (n : ℕ) where
     letI : IsManifold (𝓡 n) ∞ carrier.carrier := carrier.isManifold
     ∀ x : carrier.carrier,
       LeviCivitaData.NonnegativeCurvatureOperator (flow.connection t) x
-
 
 structure AncientSpacetimeEmbedding {K : AncientKappaSolution n M}
     {tau : ℝ} {R : AncientRescaling K tau} (L : AncientLimitFlow n)
@@ -138,7 +111,6 @@ structure AncientSpacetimeEmbedding {K : AncientKappaSolution n M}
     ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n)) (𝓘(ℝ, ℝ).prod (𝓡 n)) ∞
       inverse (toFun '' domain)
 
-
 noncomputable def ancientPullbackInnerValue {K : AncientKappaSolution n M}
     {tau : ℝ} {R : AncientRescaling K tau} {L : AncientLimitFlow n}
     {domain : Set (ℝ × L.carrier.carrier)}
@@ -153,7 +125,6 @@ noncomputable def ancientPullbackInnerValue {K : AncientKappaSolution n M}
   (R.flow.metric t).inner (ψ x)
     (mfderiv (𝓡 n) (𝓡 n) ψ x v)
     (mfderiv (𝓡 n) (𝓡 n) ψ x w)
-
 
 noncomputable def ancientPullbackCoefficient {K : AncientKappaSolution n M}
     {tau : ℝ} {R : AncientRescaling K tau} {L : AncientLimitFlow n}
@@ -170,7 +141,6 @@ noncomputable def ancientPullbackCoefficient {K : AncientKappaSolution n M}
   ancientPullbackInnerValue e p.1 (c.symm p.2)
     (A (EuclideanSpace.basisFun (Fin n) ℝ a))
     (A (EuclideanSpace.basisFun (Fin n) ℝ b))
-
 
 structure AncientGeometricConvergence {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) where
@@ -214,7 +184,6 @@ structure AncientGeometricConvergence {K : AncientKappaSolution n M}
                 (fun t x v w ↦ (limit.flow.metric t).inner x v w)
                 a b) Kc p‖ < ε
 
-
 def AncientLimitKappaNoncollapsed (L : AncientLimitFlow n) (κ : ℝ) : Prop :=
   let C := L.carrier
   letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -229,7 +198,6 @@ def AncientLimitKappaNoncollapsed (L : AncientLimitFlow n) (κ : ℝ) : Prop :=
         |(L.flow.connection s).curvatureTensorNorm q| ≤ r⁻¹ ^ 2) →
       ENNReal.ofReal (κ * r ^ n) ≤ calibratedMetricVolume (L.flow.metric t)
         ((L.flow.metric t).ball p r)
-
 
 structure AsymptoticSolitonLimit {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) where

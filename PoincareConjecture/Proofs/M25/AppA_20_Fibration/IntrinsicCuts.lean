@@ -4,15 +4,6 @@ import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem BalancedNeckChain.intrinsic_ordered_cuts_of_relative_heights
     {M : Type u} [TopologicalSpace M]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryClassicalGradient
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryValues
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +18,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => Set.preimage (fun p : Plane => p 0) (Ioi (0 : ℝ))
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem annular_potential_boundary_differential
     (u : H1Zero D scalarAnnulus) {H : Plane → ℝ}
@@ -160,13 +142,6 @@ theorem annular_potential_boundary_differential
     have hQd := (hQs.contDiffAt (e.open_source.mem_nhds (hOs hz))).differentiableAt (by simp)
     rw [hsum]
     exact (hWbd z).add hQd.hasFDerivAt.hasFDerivWithinAt
-
-
-
-
-
-
-
 
 theorem exists_annular_harmonic_potential_boundary_differential :
     ∃ H : Plane → ℝ,

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.CarrierBuffer
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Overlap_A11
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff ENNReal Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem RiemannianMetric.m25_edist_le_intrinsicEDist
     {M : Type u} [TopologicalSpace M]
@@ -38,9 +24,6 @@ theorem RiemannianMetric.m25_edist_le_intrinsicEDist
 
 namespace EpsilonNeck
 
-
-
-
 theorem edist_le_axial_add
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -53,10 +36,6 @@ theorem edist_le_axial_add
   let : T2Space M := @T25Space.t2Space M _ (@T3Space.t25Space M _ inferInstance)
   exact (g.m25_edist_le_intrinsicEDist N.carrier x y).trans
     (N.intrinsicEDist_le_axial_add hx hy)
-
-
-
-
 
 theorem exists_middle_overlap_slab {L κ : ℝ} (hL : 0 ≤ L) (hκ : κ ∈ Ioc 0 1) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

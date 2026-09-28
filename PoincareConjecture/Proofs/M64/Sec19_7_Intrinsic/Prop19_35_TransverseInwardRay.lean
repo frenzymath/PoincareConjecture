@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseArcCuts
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +19,6 @@ private theorem eventually_positive_of_derivative
   have hrpos' : 0 < r := hrpos
   simp only [zero_add, hzero, sub_zero, smul_eq_mul] at hr
   exact (mul_pos_iff_of_pos_left (inv_pos.mpr hrpos')).mp hr
-
-
-
-
 
 theorem m64Intrinsic_transverse_ray_enters_region
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T p : ℝ}

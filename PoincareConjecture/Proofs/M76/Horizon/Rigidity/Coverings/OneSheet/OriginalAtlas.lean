@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.HomeomorphInverseCoordinates
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M76
 
 variable {ι κ α β : Type*} [Fintype ι]
   (L : Submodule ℤ (κ → ℝ))
-
-
 
 theorem latticeHandle_pathConnectedSpace : PathConnectedSpace (LatticeHandle ι κ L) := by
   let : PathConnectedSpace (closedBall (0 : ι → ℝ) 1) :=
@@ -32,9 +20,6 @@ theorem latticeHandle_pathConnectedSpace : PathConnectedSpace (LatticeHandle ι 
     (QuotientAddGroup.mk'_surjective L.toAddSubgroup).pathConnectedSpace
       QuotientAddGroup.continuous_mk
   infer_instance
-
-
-
 
 theorem exists_lattice_handle_rigidity_of_covering
     (e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3 → ℝ))

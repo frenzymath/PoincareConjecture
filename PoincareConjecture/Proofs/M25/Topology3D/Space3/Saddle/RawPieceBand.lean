@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.RelativeBand
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightPreservingCases
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapHeightCompression
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -26,8 +15,6 @@ local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
 set_option maxHeartbeats 3000000 in
 
 set_option maxRecDepth 4000 in
-
-
 
 theorem exists_raw_saddle_piece_band_verticalization
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

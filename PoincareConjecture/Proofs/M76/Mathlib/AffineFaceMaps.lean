@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {L : SimplicialComplex ℝ F}
   {f : E → F} {g : F → G}
 
-
-
 theorem AffineOnFaces.image_convexHull (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) :
     f '' convexHull ℝ (s : Set E) = convexHull ℝ (f '' (s : Set E)) := by
@@ -34,8 +22,6 @@ theorem AffineOnFaces.image_convexHull (hf : K.AffineOnFaces f)
     _ = convexHull ℝ (a '' (s : Set E)) := a.toAffineMap.image_convexHull _
     _ = convexHull ℝ (f '' (s : Set E)) := congrArg (convexHull ℝ) hav.image_eq.symm
 
-
-
 theorem AffineOnFaces.mapsTo_convexHull (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) {t : Set F} (hst : f '' (s : Set E) ⊆ t) :
     MapsTo f (convexHull ℝ (s : Set E)) (convexHull ℝ t) := by
@@ -44,8 +30,6 @@ theorem AffineOnFaces.mapsTo_convexHull (hf : K.AffineOnFaces f)
   rw [← hf.image_convexHull hs]
   exact mem_image_of_mem f hx
 
-
-
 theorem AffineOnFaces.mapsTo_space (hf : K.AffineOnFaces f)
     (hfaces : ∀ s ∈ K.faces, ∃ t ∈ L.faces, f '' (s : Set E) ⊆ (t : Set F)) :
     MapsTo f K.space L.space := by
@@ -53,9 +37,6 @@ theorem AffineOnFaces.mapsTo_space (hf : K.AffineOnFaces f)
   obtain ⟨s, hs, hxs⟩ := mem_space_iff.mp hx
   obtain ⟨t, ht, hst⟩ := hfaces s hs
   exact convexHull_subset_space ht (hf.mapsTo_convexHull hs hst hxs)
-
-
-
 
 theorem AffineOnFaces.comp_of_face_images (hf : K.AffineOnFaces f)
     (hg : L.AffineOnFaces g)

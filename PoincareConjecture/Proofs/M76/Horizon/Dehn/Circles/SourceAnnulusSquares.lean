@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Metric PLAnnularStrip
@@ -117,8 +110,6 @@ theorem exists_polygon_annulusSquare_frontier {L u : ℝ} (hu : 2 * u < L) :
     · have h := (heb y').mp hy
       rwa [frontier_closedBall _ one_ne_zero] at h
     · rw [← hef, e.symm_apply_apply]
-
-
 
 theorem exists_polygon_square_annulus_boundary {T : Set P2} {L d u : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) (hu : u = -d ∨ u = d)

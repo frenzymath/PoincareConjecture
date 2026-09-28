@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.FinitePLBallAttachment
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -34,9 +25,6 @@ private theorem exists_component_transport
     rw [heq]
     exact isConnected_singleton
   exact ⟨e.isQuotientMap.isCoinducing.connectedComponentsHomeomorph hfiber, fun _ => rfl⟩
-
-
-
 
 theorem exists_components_homeomorph_finite_cap_attachment
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

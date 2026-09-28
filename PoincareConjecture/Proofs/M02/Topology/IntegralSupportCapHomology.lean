@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCapBoundary
 import PoincareConjecture.Proofs.M02.Topology.ModuleBilinearHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

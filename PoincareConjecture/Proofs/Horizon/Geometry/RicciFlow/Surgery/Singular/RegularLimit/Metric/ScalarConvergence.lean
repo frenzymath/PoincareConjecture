@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -80,8 +73,6 @@ private theorem tendsto_scalar_jets_of_bilinear_jets
     (𝓝 (L.compContinuousMultilinearMap (iteratedFDeriv ℝ r g.euclideanCoefficients p))) at hpost
   rw [← heq g] at hpost
   exact hpost.congr (fun i => (heq (gseq i)).symm)
-
-
 
 theorem tendsto_scalarCurvature_of_chart_metric_jets
     {n : ℕ} {M : Type u} {X : Type v} {ι : Type w} {l : Filter ι}

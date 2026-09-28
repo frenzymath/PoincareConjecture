@@ -1,10 +1,6 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Tactic
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped intervalIntegral

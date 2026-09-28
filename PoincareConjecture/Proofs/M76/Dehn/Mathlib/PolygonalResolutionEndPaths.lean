@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,21 +9,14 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
-
 def endSquare (t : ℝ) : Set C3 :=
   (Icc (-1 : ℝ) 1 ×ˢ Icc (-1 : ℝ) 1) ×ˢ {t}
-
 
 def endCenter (t : ℝ) : endSquare t := ⟨((0, 0), t), by
   norm_num [endSquare]⟩
 
 private theorem convex_endSquare (t : ℝ) : Convex ℝ (endSquare t) :=
   ((convex_Icc (-1 : ℝ) 1).prod (convex_Icc (-1 : ℝ) 1)).prod (convex_singleton t)
-
-
-
-
-
 
 theorem exists_resolution_end_path
     {X : Type*} [TopologicalSpace X] {b : ℝ} (hb : b < 1)

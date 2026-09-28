@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicTwoChartRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
 local notation "S" => interior m64AnnulusDomain
 local notation "D" => Set.ofPred (fun p : LoopPlane =>
   p 0 ∈ Ioo (0 : ℝ) curvePeriod ∧ p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
 
 theorem m64Annulus_periodic_classical_regularity
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1)

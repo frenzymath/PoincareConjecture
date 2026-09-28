@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AxisStripCorrection
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.HalfPlaneCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_isotopy_of_axis_preserving_correction
     (h : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessNormalGraph
 import PoincareConjecture.Proofs.M63.Mathlib.ContinuousOrderIsoInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M63
 
 variable {E Z : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [CompleteSpace E] [TopologicalSpace Z]
-
-
-
-
 
 theorem exists_curveNormalGraph_continuous_family
     {r : ℝ → E} (hr : ContDiff ℝ ∞ r) {m M B rho eps : ℝ}

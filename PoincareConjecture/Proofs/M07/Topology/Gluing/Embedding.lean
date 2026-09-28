@@ -1,19 +1,10 @@
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 
 namespace Poincare.Gluing
-
-
 
 theorem exists_isOpenEmbedding_iUnion_ranges
     {ι : Type*} {X : ι → Type*} [∀ i, TopologicalSpace (X i)]

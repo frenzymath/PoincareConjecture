@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactEx
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Angular
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ namespace Poincare
 open PoincareConjecture
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
 
 theorem exists_smooth_height_retraction {R : ℝ} (hR : 0 < R) :
     ∃ r : ℝ, 0 < r ∧ r < R ∧ ∃ σ : ℝ → ℝ,
@@ -47,7 +38,6 @@ theorem exists_smooth_height_retraction {R : ℝ} (hR : 0 < R) :
     have hb : b t = 1 := b.one_of_mem_closedBall
       (by simpa [Metric.mem_closedBall, Real.dist_eq] using ht.le)
     simp only [hb, mul_one]
-
 
 theorem exists_angular_extension_of_fixing_zero
     (f : RoundCylinderSpace → RoundCylinderSpace)

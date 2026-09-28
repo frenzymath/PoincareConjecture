@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.CurveCalculus
 import PoincareConjecture.Proofs.M10.MinimizingLifts
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -45,7 +37,6 @@ theorem curve_energy_continuousOn (g : RiemannianMetric n M) {γ : ℝ → M} {U
   change g.inner (γ s) (curveVelocity γ s) (curveVelocity γ s) = _
   simp only [curveVelocity, mfderivWithin_of_mem_nhds (hU.mem_nhds hs)]
   rfl
-
 
 theorem curve_energy_eq_of_eventuallyEq (g : RiemannianMetric n M)
     {γ η : ℝ → M} {s : ℝ} (h : γ =ᶠ[𝓝 s] η) :

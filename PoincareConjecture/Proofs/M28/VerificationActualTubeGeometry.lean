@@ -5,9 +5,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeVolume
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFrontierBuffers
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckMinimizerTraversal
 
-
-
 set_option autoImplicit false
 
 set_option linter.hashCommand false
-

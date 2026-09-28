@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Planar.SourceCo
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Planar.Pullback
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.OriginalProjection
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.ProtectedAnnulus

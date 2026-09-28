@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetOperator
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,15 +13,11 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def scalarDifferentialNormJet (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 3) : ℝ :=
   let L := continuousMultilinearCurryFin1 ℝ (EuclideanSpace ℝ (Fin n)) ℝ
     (scalarJetOperator n 1 J)
   Real.sqrt (L ((twoJetProjection n (baseProjection 2 1 J)).1.inverse L))
-
-
 
 theorem continuousOn_scalarDifferentialNormJet (n : ℕ) :
     ContinuousOn (scalarDifferentialNormJet n) (curvatureJetDomain n 1) := by
@@ -47,8 +35,6 @@ theorem continuousOn_scalarDifferentialNormJet (n : ℕ) :
         (twoJetProjection n (baseProjection 2 1 A)).1.inverse) J := by
     convert! (hinv.contDiffAt_map_inverse.comp J hB.contDiffAt).continuousAt using 1
   exact (hL.clm_apply (hI.clm_apply hL)).sqrt
-
-
 
 theorem scalarDifferentialNormJet_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

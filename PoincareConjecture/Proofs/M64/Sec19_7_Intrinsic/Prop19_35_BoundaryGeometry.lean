@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingField
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +10,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_abs_metric_pairing_le
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -38,17 +24,11 @@ theorem m64Intrinsic_abs_metric_pairing_le
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem m64Intrinsic_curveVelocity_eq_deriv (γ : ℝ → AnnulusCoordinates) (x : ℝ) :
     curveVelocity (n := 2) γ x = deriv γ x := by
   rw [curveVelocity, mfderiv_eq_fderiv]
   change (fderiv ℝ γ x) (1 : ℝ) = deriv γ x
   rw [fderiv_eq_smul_deriv, one_smul]
-
-
-
 
 theorem m64Intrinsic_pullback_model
     (N : IntrinsicAnnulus) {γ V : ℝ → AnnulusCoordinates}
@@ -69,8 +49,6 @@ theorem m64Intrinsic_pullback_model
   congr 1
   rw [m64Intrinsic_curveVelocity_eq_deriv]
   rfl
-
-
 
 theorem m64Intrinsic_contDiff_pullback
     (N : IntrinsicAnnulus) {γ V : ℝ → AnnulusCoordinates}
@@ -93,8 +71,6 @@ theorem m64Intrinsic_contDiff_pullback
   funext x
   exact m64Intrinsic_pullback_model N hγ hV x
 
-
-
 theorem m64Intrinsic_contDiff_boundary (radius : ℝ) :
     ContDiff ℝ ∞ (intrinsicAnnulusBoundary radius) := by
   apply (contDiff_piLp 2).mpr
@@ -104,8 +80,6 @@ theorem m64Intrinsic_contDiff_boundary (radius : ℝ) :
     fun_prop
   · change ContDiff ℝ ∞ (fun x => radius * Real.sin x)
     fun_prop
-
-
 
 theorem m64Intrinsic_hasDerivAt_boundary (radius x : ℝ) :
     HasDerivAt (intrinsicAnnulusBoundary radius)
@@ -123,14 +97,10 @@ theorem m64Intrinsic_hasDerivAt_boundary (radius x : ℝ) :
         (Real.hasDerivAt_sin x).const_mul radius
   exact (PiLp.continuousLinearEquiv 2 ℝ (fun _ : Fin 2 => ℝ)).symm.hasFDerivAt.comp_hasDerivAt x hd
 
-
-
 theorem m64Intrinsic_boundary_velocity (radius x : ℝ) :
     curveVelocity (n := 2) (intrinsicAnnulusBoundary radius) x =
       !₂[-radius * Real.sin x, radius * Real.cos x] := by
   rw [m64Intrinsic_curveVelocity_eq_deriv, (m64Intrinsic_hasDerivAt_boundary radius x).deriv]
-
-
 
 theorem m64Intrinsic_boundarySpeed_pos (N : IntrinsicAnnulus)
     {radius : ℝ} (hradius : radius ≠ 0) (x : ℝ) :
@@ -146,8 +116,6 @@ theorem m64Intrinsic_boundarySpeed_pos (N : IntrinsicAnnulus)
   have hs : Real.sin x = 0 := (mul_eq_zero.mp hsin).resolve_left (neg_ne_zero.mpr hradius)
   have hc : Real.cos x = 0 := (mul_eq_zero.mp hcos).resolve_left hradius
   nlinarith [Real.sin_sq_add_cos_sq x]
-
-
 
 theorem m64Intrinsic_contDiff_boundarySpeed (N : IntrinsicAnnulus)
     {radius : ℝ} (hradius : radius ≠ 0) :
@@ -168,8 +136,6 @@ theorem m64Intrinsic_contDiff_boundarySpeed (N : IntrinsicAnnulus)
   have hpos := m64Intrinsic_boundarySpeed_pos N hradius x
   exact (Real.sqrt_pos.mp hpos).ne'
 
-
-
 theorem m64Intrinsic_contDiff_boundaryUnitTangent (N : IntrinsicAnnulus)
     {radius : ℝ} (hradius : radius ≠ 0) :
     ContDiff ℝ ∞ (intrinsicBoundaryUnitTangent N.metric radius) := by
@@ -182,17 +148,12 @@ theorem m64Intrinsic_contDiff_boundaryUnitTangent (N : IntrinsicAnnulus)
   rw [intrinsicBoundaryUnitTangent, m64Intrinsic_curveVelocity_eq_deriv]
   rfl
 
-
-
 theorem m64Intrinsic_tangentNorm_smul (N : IntrinsicAnnulus)
     (p : AnnulusCoordinates) (c : ℝ) (v : TangentSpace (𝓡 2) p) :
     N.metric.tangentNorm p (c • v) = |c| * N.metric.tangentNorm p v := by
   simp only [RiemannianMetric.tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [show c * (c * N.metric.inner p v v) = c ^ 2 * N.metric.inner p v v by ring,
     Real.sqrt_mul (sq_nonneg c), Real.sqrt_sq_eq_abs]
-
-
-
 
 theorem m64Intrinsic_turning_density (N : IntrinsicAnnulus)
     {radius : ℝ} (hradius : radius ≠ 0) (x : ℝ) :
@@ -205,9 +166,6 @@ theorem m64Intrinsic_turning_density (N : IntrinsicAnnulus)
   rw [intrinsicGeodesicCurvature, m64Intrinsic_tangentNorm_smul,
     abs_of_pos (inv_pos.mpr hs)]
   field_simp
-
-
-
 
 theorem m64Intrinsic_continuous_turning_density (N : IntrinsicAnnulus)
     {radius : ℝ} (hradius : radius ≠ 0) :

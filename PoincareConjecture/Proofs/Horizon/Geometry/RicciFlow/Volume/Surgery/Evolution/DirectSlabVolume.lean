@@ -3,26 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Evolu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.LocalIsometryVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u v
 
 namespace PoincareConjecture.SurgeryVolume
-
-
 
 theorem volume_univ_eq_of_metric_isometry_direct {n : ℕ}
     {M : Type u} {N : Type v} [TopologicalSpace M]
@@ -47,8 +25,6 @@ theorem volume_univ_eq_of_metric_isometry_direct {n : ℕ}
     (f := (f : M → N)) f.contMDiff f.injective
     (fun x a b => by simpa only [one_mul] using hf x a b) MeasurableSet.univ
   simpa only [image_univ_of_surjective (f := (f : M → N)) f.surjective] using he
-
-
 
 theorem regularSlab_volume_le_exp_mul_direct
     {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -76,8 +52,6 @@ theorem regularSlab_volume_le_exp_mul_direct
   rw [he]
   exact pinched_scalar_ge_neg_six (hpinched r rt.2) _
 
-
-
 theorem regular_volume_le_exp_mul_direct
     (F : SurgeryFlowData.{u}) {a b : ℝ} (hab : a ≤ b)
     (hJ : Icc a b ⊆ F.time_domain) (hevents : Disjoint F.surgery_times (Ioc a b))
@@ -88,8 +62,6 @@ theorem regular_volume_le_exp_mul_direct
   · exact regularSlab_volume_le_exp_mul_direct F.connection
       (F.regular_slabs a b hlt hJ hevents) hpinched ⟨le_rfl, hab⟩ ⟨hab, le_rfl⟩ hab
   · simp
-
-
 
 theorem preEvent_volume_le_exp_mul_direct
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

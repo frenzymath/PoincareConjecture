@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   [TopologicalSpace F]
-
-
-
-
 
 theorem injOn_and_interior_closedStar_of_chart (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {p : E} (hp : {p} ∈ K.faces)

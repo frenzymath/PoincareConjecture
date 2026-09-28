@@ -1,20 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Refinement
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -27,8 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_parametrized_chart_disk_boundary_refinement_of_finite_intersections
     (s : Finset M) (r : M → ℝ)
@@ -101,8 +84,6 @@ theorem exists_parametrized_chart_disk_boundary_refinement_of_finite_intersectio
     rw [hmap i.1 i.2]
     rfl
 
-
-
 theorem exists_chart_disk_boundary_refinement_of_finite_intersections
     (s : Finset M) (r : M → ℝ)
     (hr : ∀ x ∈ s, 0 < r x)
@@ -129,8 +110,6 @@ theorem exists_chart_disk_boundary_refinement_of_finite_intersections
     exists_parametrized_chart_disk_boundary_refinement_of_finite_intersections
       s r hr htarget hinter
   exact ⟨n, edge, hn, hinj, hfrontier, hmeet⟩
-
-
 
 theorem exists_finite_chart_disk_boundary_refinement [CompactSpace M] :
     ∃ (s : Finset M) (r : M → ℝ) (n : (s × Fin 2) → ℕ)

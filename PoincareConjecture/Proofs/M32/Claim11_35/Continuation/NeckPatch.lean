@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Uniqueness
 import PoincareConjecture.Proofs.M32.Claim11_34.CylinderOpen
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -199,9 +184,6 @@ private theorem attachedPatch_vertical (s : ℝ) (hs : s ∈ J) (x : C.carrier)
   exact (attachedPatchSlice_point e hW ha N hJ s' hs' x).trans
     (congrArg (fun z => (⟨(origin + a / q) + ((s' - a) * R / q) / R, z⟩ : F.point)) hv)
 
-
-
-
 noncomputable def strongNeckAttachedCylinder :
     GeneralizedFlowCylinder F C origin q J (W ∩ (e.forward a ha) ⁻¹' N.carrier) where
   scale_pos := e.scale_pos
@@ -221,8 +203,6 @@ noncomputable def strongNeckAttachedCylinder :
     exact hx
   embedding := attachedPatch_embedding e hW ha N hJ
   vertical_compatibility := attachedPatch_vertical e hW ha N hJ
-
-
 
 theorem strongNeckAttachedCylinder_pointMap (s : ℝ) (hs : s ∈ J) (x : C.carrier) :
     (strongNeckAttachedCylinder e hW ha N hJ).pointMap s hs x =

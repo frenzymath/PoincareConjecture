@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.CutOldLabels
 import PoincareConjecture.Proofs.M38.PartialCutBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +19,9 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
     label (.inl (ConnectedComponents.mk (P i).retainedAttachmentPoint)) =
       label (.inr (ConnectedComponents.mk (P i).attachmentPoint)))
 
-
 noncomputable def cutSideVertex (i : Fin (F.event T hT).cap_count) : Bool → EventCutVertex F T hT
   | false => .inl (ConnectedComponents.mk (P i).retainedAttachmentPoint)
   | true => .inr (ConnectedComponents.mk (P i).attachmentPoint)
-
 
 theorem cutOldLabel_attachment (a : S × Bool) (x : capDoubleBall) (hx : 1 < ‖x.val‖) :
     cutOldLabel F T hT P S label hagrees (cutAttachmentChart F T hT P S a x) =
@@ -63,13 +53,11 @@ theorem cutOldLabel_attachment (a : S × Bool) (x : capDoubleBall) (hx : 1 < ‖
       exact congrArg (fun c => label (.inr c))
         ((P i.val).positive_discarded_component_eq ⟨y.val, hd⟩ hpos)
 
-
 noncomputable def partialCutPatchLabel :
     (j : PartialCappingIndex F T hT P S) → partialCappingDomain F T hT P S j → D
   | .inl y, x => cutOldLabel F T hT P S label hagrees
       (partialCappingMap F T hT P S (.inl y) x)
   | .inr a, _ => label (cutSideVertex F T hT P a.1.val a.2)
-
 
 theorem partialCutPatchLabel_source (j : PartialCappingIndex F T hT P S)
     {x : partialCappingDomain F T hT P S j}
@@ -82,7 +70,6 @@ theorem partialCutPatchLabel_source (j : PartialCappingIndex F T hT P S)
       exact (cutOldLabel_attachment F T hT P S label hagrees a x
         (by change x ∈ (cutAttachmentChart F T hT P S a).source at hx
             rwa [cutAttachmentChart_source] at hx)).symm
-
 
 theorem partialCutPatchLabel_rel
     (a b : Sigma (fun j => partialCappingDomain F T hT P S j))
@@ -101,17 +88,14 @@ theorem partialCutPatchLabel_rel
     rw [partialCutPatchLabel_source F T hT P S label hagrees j h.1,
       partialCutPatchLabel_source F T hT P S label hagrees k h.2.1, h.2.2]
 
-
 noncomputable def partialCutLabel : PartialCappedSpace F T hT P S → D :=
   Quotient.lift (fun a => partialCutPatchLabel F T hT P S label hagrees a.1 a.2)
     (partialCutPatchLabel_rel F T hT P S label hagrees)
-
 
 theorem partialCutLabel_patch (j : PartialCappingIndex F T hT P S)
     (x : partialCappingDomain F T hT P S j) :
     partialCutLabel F T hT P S label hagrees (partialCappingInclude F T hT P S j x) =
       partialCutPatchLabel F T hT P S label hagrees j x := rfl
-
 
 theorem partialCutPatchLabel_continuous (j : PartialCappingIndex F T hT P S) :
     Continuous (partialCutPatchLabel F T hT P S label hagrees j) := by
@@ -121,11 +105,9 @@ theorem partialCutPatchLabel_continuous (j : PartialCappingIndex F T hT P S) :
         (partialCappingMap_old_openEmbedding F T hT P S y).continuous
   | inr a => exact continuous_const
 
-
 theorem partialCutLabel_continuous : Continuous (partialCutLabel F T hT P S label hagrees) :=
   (continuous_sigma (partialCutPatchLabel_continuous F T hT P S label hagrees)).quotient_lift
     (partialCutPatchLabel_rel F T hT P S label hagrees)
-
 
 theorem partialCutLabel_ball (a : S × Bool) (x : capDoubleBall) :
     partialCutLabel F T hT P S label hagrees ((partialCapBall F T hT P S a).map x.val) =

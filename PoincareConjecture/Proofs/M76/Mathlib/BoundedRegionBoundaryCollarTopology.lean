@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
 
-
-
-
 theorem IsFinitePLBallPair.isConnected_sdiff_of_subset_boundary
     {C b q : Set X} (hC : IsFinitePLBallPair E C b) (hqb : q ⊆ b) :
     IsConnected (C \ q) := by
@@ -31,9 +17,6 @@ theorem IsFinitePLBallPair.isConnected_sdiff_of_subset_boundary
   rw [hC.closure_sdiff]
   exact sdiff_subset
 
-
-
-
 theorem IsFinitePLBallPair.closure_sdiff_of_subset_boundary
     {C b q : Set X} (hC : IsFinitePLBallPair E C b) (hqb : q ⊆ b) :
     closure (C \ q) = C := by
@@ -41,11 +24,6 @@ theorem IsFinitePLBallPair.closure_sdiff_of_subset_boundary
   calc
     C = closure (C \ b) := hC.closure_sdiff.symm
     _ ⊆ closure (C \ q) := closure_mono (sdiff_subset_sdiff_right hqb)
-
-
-
-
-
 
 theorem IsFinitePLBallPair.boundary_collar_subset_relative_region
     {C b e q S : Set X} (hC : IsFinitePLBallPair E C (b ∪ e))

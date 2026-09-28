@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.Parametrization
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -18,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {epsilon : ℝ}
-
-
 
 def normalizedMetricAt (N : SingularRoundComponent g epsilon) (h : RiemannianMetric 3 M) :
     RiemannianMetric 3 N.model.carrier :=
@@ -66,8 +62,6 @@ theorem normalizedMetricAt_pullback_jet_eq
   exact (h.contDiffAt_pullbackCoefficients
     ((N.forward_smooth (f x)).comp x (hf.contMDiffAt (hU.mem_nhds hx)))).of_le
     (by exact_mod_cast le_top)
-
-
 
 theorem normalizedMetricAt_pullback_difference_jet_eq
     (N : SingularRoundComponent g epsilon) (h₁ h₂ : RiemannianMetric 3 M)

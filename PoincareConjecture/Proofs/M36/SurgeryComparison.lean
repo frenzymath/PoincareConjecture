@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 import PoincareConjecture.Proofs.M36.ComparisonDilationJets
 import PoincareConjecture.Proofs.M36.ComparisonParameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ namespace PoincareConjecture.M36
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 set_option maxHeartbeats 1200000 in
-
-
 
 theorem exists_surgeryMetric_standard_close (g₀ : StandardInitialMetric)
     (C q : ℝ) (hC : 0 ≤ C) {r : ℝ} (hr : 0 < r)

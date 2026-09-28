@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_NeckVolume
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_CapVolume
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_TestScalar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ENNReal
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem M47Predecessors.toM46 (P : M47Predecessors.{u}) : M46Predecessors.{u} :=
   { m04 := P.m04
@@ -36,19 +23,12 @@ theorem M47Predecessors.toM46 (P : M47Predecessors.{u}) : M46Predecessors.{u} :=
 
 namespace Proofs.M47
 
-
-
 noncomputable def canonicalSeedDensity (C : ℝ) : ℝ :=
   min M46.canonicalNeckVolumeFloor (M46.canonicalCapVolumeFloor (max 1 C))
-
-
 
 theorem canonicalSeedDensity_pos (C : ℝ) : 0 < canonicalSeedDensity C :=
   lt_min M46.canonicalNeckVolumeFloor_pos
     (M46.canonicalCapVolumeFloor_pos (le_max_left _ _))
-
-
-
 
 theorem canonical_seed_volume (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t rho s : ℝ} {x : (F.slice t).carrier}
@@ -87,9 +67,6 @@ theorem canonical_seed_volume (P : M47Predecessors.{u})
       hNpinch hsmall hNscalar
     apply (ENNReal.ofReal_le_ofReal ?_).trans hvolume
     exact mul_le_mul_of_nonneg_right (min_le_right _ _) (pow_nonneg hs.le 3)
-
-
-
 
 theorem canonical_crossing_seed_volume (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {t rho H : ℝ} {x : (F.slice t).carrier}

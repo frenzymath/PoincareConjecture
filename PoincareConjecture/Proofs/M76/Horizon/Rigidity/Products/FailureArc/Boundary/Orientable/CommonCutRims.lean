@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.Orientable.CommonCutCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.FourCollarRims
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -17,15 +15,12 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 
-
 variable {X ι : Type} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {g : (V1 × V2) → X}
   {r : X → ℝ} {C R : Set X} {st : Stage e S g r C} {F : Bool → Set X}
 
 open Classical in
 set_option maxHeartbeats 1200000 in
-
-
 
 theorem MarkedBoundaryPair.exists_common_component_cut_rims_of_localOrientation
     (P : MarkedBoundaryPair st R F) (O : LocalOrientation st.Carrier) :
@@ -102,4 +97,3 @@ theorem MarkedBoundaryPair.exists_common_component_cut_rims_of_localOrientation
     split_ifs <;> rfl
 
 end Geometry.OriginalPLTower
-

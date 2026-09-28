@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.SupportedCollar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 private instance : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem exists_sphere_diffeomorph_of_collar
     (c : OpenPartialHomeomorph RoundCylinderSpace E3)
@@ -72,8 +59,6 @@ theorem exists_sphere_diffeomorph_of_collar
     right_inv := hfk
     contMDiff_toFun := hf
     contMDiff_invFun := hk }, fun _ => rfl⟩
-
-
 
 theorem exists_ambient_extension_of_sphere_collar
     (c : OpenPartialHomeomorph RoundCylinderSpace E3)
@@ -128,9 +113,6 @@ theorem exists_ambient_extension_of_sphere_collar
   · intro p hp
     change A (B (Real.exp p.2 • (p.1 : E3))) = c p
     rw [hB p hp, heq, A.apply_symm_apply]
-
-
-
 
 theorem exists_ball_neighborhood_matching_collar
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M]

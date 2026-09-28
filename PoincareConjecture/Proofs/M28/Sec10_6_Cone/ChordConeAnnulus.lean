@@ -4,16 +4,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Tactic.FunProp
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +11,6 @@ open Set Filter
 open scoped Topology NNReal
 
 namespace PoincareConjecture.M28
-
-
 
 theorem chordConeTriangle_completion
     {Y : Type*} [PseudoMetricSpace Y]
@@ -43,7 +31,6 @@ theorem chordConeTriangle_completion
   · intro x y z
     simpa only [UniformSpace.Completion.dist_eq] using htriangle x y z r s t hr hs ht
 
-
 theorem chord_bound_completion {Y : Type*} [PseudoMetricSpace Y] {B : ℝ}
     (hB : ∀ x y : Y, dist x y ≤ B) :
     ∀ x y : UniformSpace.Completion Y, dist x y ≤ B := by
@@ -53,11 +40,7 @@ theorem chord_bound_completion {Y : Type*} [PseudoMetricSpace Y] {B : ℝ}
   · intro x y
     simpa only [UniformSpace.Completion.dist_eq] using hB x y
 
-
-
-
 def ChordConeAnnulus (L : Type*) (a b : ℝ) := L × Icc a b
-
 
 instance chordConeAnnulusTopologicalSpace {L : Type*} [TopologicalSpace L]
     {a b : ℝ} : TopologicalSpace (ChordConeAnnulus L a b) :=
@@ -70,9 +53,6 @@ variable {L : Type*} [MetricSpace L] {a b : ℝ}
     (htriangle : ∀ x y z : L, ∀ r s t : ℝ, 0 < r → 0 < s → 0 < t →
       chordConeDistance r t (dist x z) ≤
         chordConeDistance r s (dist x y) + chordConeDistance s t (dist y z))
-
-
-
 
 @[instance_reducible]
 def chordConeAnnulusMetric : MetricSpace (ChordConeAnnulus L a b) := by
@@ -149,20 +129,14 @@ def chordConeAnnulusMetric : MetricSpace (ChordConeAnnulus L a b) := by
       nlinarith only [ha, hh, hn]
     exact Prod.ext (dist_eq_zero.mp hl) (Subtype.ext hr)
 
-
-
 theorem chordConeAnnulus_dist_eq (x y : ChordConeAnnulus L a b) :
     letI := chordConeAnnulusMetric ha hab htriangle
     dist x y = chordConeDistance (x.2 : ℝ) (y.2 : ℝ) (dist x.1 y.1) := rfl
-
-
 
 theorem chordConeAnnulus_compact [CompactSpace L] :
     letI := chordConeAnnulusMetric ha hab htriangle
     CompactSpace (ChordConeAnnulus L a b) := by
   exact (inferInstance : CompactSpace (L × Icc a b))
-
-
 
 theorem chordConeAnnulus_radius_lipschitz :
     letI := chordConeAnnulusMetric ha hab htriangle
@@ -175,9 +149,6 @@ theorem chordConeAnnulus_radius_lipschitz :
   simpa only [one_mul] using
     (abs_sub_le_chordConeDistance (d := dist x.1 y.1)
       (ha.le.trans x.2.property.1) (ha.le.trans y.2.property.1))
-
-
-
 
 theorem chordConeAnnulus_local_radial_variation (x z y : ChordConeAnnulus L a b)
     (hz : (z.2 : ℝ) ∈ Ioo a b) :

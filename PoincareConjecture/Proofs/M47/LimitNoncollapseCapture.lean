@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem limitNoncollapse_capture_ball
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
@@ -43,8 +30,6 @@ theorem limitNoncollapse_capture_ball
     h.ball (e p) r ⊆ e '' g.ball p (C * r) := by
   exact RiemannianMetric.ball_subset_image_ball_of_inverse_tangentNorm_le
     g h e p hR hC hCr hcompact hsource hinv hbound
-
-
 
 theorem limitNoncollapse_image_volume_le
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

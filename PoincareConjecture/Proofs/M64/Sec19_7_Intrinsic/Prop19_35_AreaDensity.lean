@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal Manifold ContDiff Bundle Matrix
 
 namespace PoincareConjecture
-
-
 
 theorem m64Intrinsic_det_lower_of_quadratic_lower
     {a b d A D : ℝ} (hA : 0 ≤ A) (hD : 0 ≤ D)
@@ -47,9 +33,6 @@ theorem m64Intrinsic_det_lower_of_quadratic_lower
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_pullbackDensity_lower
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -85,9 +68,6 @@ theorem m64Intrinsic_pullbackDensity_lower
   change (c ^ 2 * speed) ^ 2 ≤ a * d - k * G.inner (e x) (L (b 1)) (L (b 0))
   rw [hsymm]
   nlinarith only [hdet]
-
-
-
 
 theorem m64Intrinsic_chart_area_lower
     (G : RiemannianMetric 2 AnnulusCoordinates)

@@ -5,17 +5,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Module.Normalize
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +14,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
-
 
 theorem exists_sphere_curve_with_velocity (x v : E) (hx : ‖x‖ = 1)
     (hv : ⟪x, v⟫_ℝ = 0) :
@@ -51,8 +38,6 @@ theorem exists_sphere_curve_with_velocity (x v : E) (hx : ‖x‖ = 1)
       hinv.fun_smul hraw
   · filter_upwards [hraw.continuousAt.eventually (eventually_ne_nhds hrawne)] with t ht
     exact NormedSpace.norm_normalize ht
-
-
 
 theorem inner_fderiv_eq_zero_of_local_sphere (f : E → F) (x v : E) (hx : ‖x‖ = 1)
     (hf : DifferentiableAt ℝ f x)

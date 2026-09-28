@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_PostSurgeryCage
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_GlobalCage
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CutoffFloor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ open scoped Manifold ContDiff Topology intervalIntegral
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_observed_surgery_cages
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

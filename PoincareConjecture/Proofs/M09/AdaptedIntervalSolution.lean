@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.AdaptedFieldUniqueness
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

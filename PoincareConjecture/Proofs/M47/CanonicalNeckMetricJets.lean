@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTenso
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -33,9 +23,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem neck_metric_coefficient_difference_fixed_chart
     {g0 : RiemannianMetric 3 M} (N : EpsilonNeck g0)
@@ -70,9 +57,6 @@ private noncomputable def neckCoefficientEvaluation (i l : Fin 3) :
     (E₃ →L[ℝ] E₃ →L[ℝ] ℝ) →L[ℝ] ℝ :=
   (ContinuousLinearMap.apply ℝ ℝ (EuclideanSpace.basisFun (Fin 3) ℝ l)).comp
     (ContinuousLinearMap.apply ℝ (E₃ →L[ℝ] ℝ) (EuclideanSpace.basisFun (Fin 3) ℝ i))
-
-
-
 
 theorem eventually_chart_neck_metric_jets [T2Space M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -189,9 +173,6 @@ theorem eventually_chart_neck_metric_jets [T2Space M]
       mul_le_mul hFjet hlin (pow_nonneg (norm_nonneg _) _) (by positivity)
     _ = A0 * eta := by dsimp only [A0]; ring
     _ < rho := hsmall
-
-
-
 
 theorem eventually_neck_metric_jets [T3Space M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Generalized.PhysicalClock
 import PoincareConjecture.Proofs.M30.Generalized.TerminalMetric
 import PoincareConjecture.Proofs.M13.Volume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem terminal_volume_of_controlledCylinder
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T B eta kappa r₀ rho : ℝ}
@@ -91,9 +78,6 @@ theorem terminal_volume_of_controlledCylinder
     exact (E.curvature_bound (Q * s) _ x (hspace hx)).trans hscale
   exact hnon r hr hcutoff hinterval etest hzero hcurvature
 
-
-
-
 theorem exists_eventually_terminal_volume_lower_bound
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}
     {epsilon canonicalConstant kappa r₀ mu : ℝ}
@@ -147,9 +131,6 @@ theorem exists_eventually_terminal_volume_lower_bound
     hrho hrho1 htime hcurv hcutoff
   simpa only [v, div_pow, mul_div_assoc] using hv
 
-
-
-
 theorem scaled_terminal_volume_lower_bound
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {rho v : ℝ}
     (hv : ENNReal.ofReal (v / (Real.sqrt (S.scale k)) ^ 3) ≤
@@ -183,9 +164,6 @@ theorem scaled_terminal_volume_lower_bound
       mul_div_cancel₀ _ (pow_ne_zero 3 hsqrt.ne')]
   rw [heq]
   exact mul_le_mul_right hv _
-
-
-
 
 theorem exists_eventually_scaled_terminal_volume_lower_bound
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

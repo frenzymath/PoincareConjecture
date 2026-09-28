@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlowFirstIntegral
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem boundedFlow_chart_pushforward (e : OpenPartialHomeomorph E F)
     (he : ContDiffOn ℝ ∞ e e.source) (V : E → E) (W : F → F)

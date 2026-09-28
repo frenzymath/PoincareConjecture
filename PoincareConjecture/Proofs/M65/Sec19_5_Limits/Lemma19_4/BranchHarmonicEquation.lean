@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexConnection
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Topology ContDiff BigOperators
 namespace PoincareConjecture.M65Branch
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
-
 
 theorem dbar_complexGradient_of_harmonic (D : LeviCivitaData g)
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {z : ℂ}
@@ -38,9 +25,6 @@ theorem dbar_complexGradient_of_harmonic (D : LeviCivitaData g)
   rw [eq_neg_of_add_eq_zero_left hh]
   simp only [smul_neg, neg_smul]
 
-
-
-
 private theorem secondDeriv_comp_equiv
     (G : LoopPlane → EuclideanSpace ℝ (Fin n)) (e : ℂ ≃L[ℝ] LoopPlane)
     (z u v : ℂ) :
@@ -53,9 +37,6 @@ private theorem secondDeriv_comp_equiv
   simpa only [iteratedFDeriv_two_apply,
     ContinuousMultilinearMap.compContinuousLinearMap_apply, Function.comp_apply,
     ContinuousLinearEquiv.coe_coe, Matrix.cons_val_zero, Matrix.cons_val_one] using hh
-
-
-
 
 theorem plane_harmonic_to_complex (D : LeviCivitaData g)
     {G : LoopPlane → EuclideanSpace ℝ (Fin n)} {z : ℂ}

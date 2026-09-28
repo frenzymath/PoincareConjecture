@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem neck_carrier_isPreconnected
     {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -34,7 +24,6 @@ theorem neck_carrier_isPreconnected
     exact ⟨fun hx => hx.1, fun hx => ⟨hx, (N.coordinate_inverse_mem x hx).2⟩⟩
   rw [← heq]
   exact N.region_isPreconnected le_rfl le_rfl
-
 
 theorem neck_central_sphere_isConnected
     {M : Type*} [TopologicalSpace M]
@@ -55,11 +44,9 @@ theorem neck_central_sphere_isConnected
   exact ⟨mem_univ _, neg_neg_of_pos (inv_pos.mpr N.epsilon_pos),
     inv_pos.mpr N.epsilon_pos⟩
 
-
 def preAttachment (event : SurgeryEventData g0 K P slice metric T)
     (i : Fin event.cap_count) : Set (slice event.tMinus).carrier :=
   event.limit_identify.inverse '' (event.necks i).neck.central_sphere
-
 
 theorem preAttachment_subset_retained
     (event : SurgeryEventData g0 K P slice metric T) (i : Fin event.cap_count) :
@@ -69,7 +56,6 @@ theorem preAttachment_subset_retained
   rw [event.pre_boundary]
   exact mem_iUnion.mpr ⟨i, hx⟩
 
-
 theorem preAttachment_isConnected
     (event : SurgeryEventData g0 K P slice metric T) (i : Fin event.cap_count) :
     IsConnected (preAttachment event i) :=
@@ -77,12 +63,10 @@ theorem preAttachment_isConnected
     event.limit_identify.inverse (event.limit_identify.inverse_smooth.continuousOn.mono
       (subset_univ _))
 
-
 def surgeryPostLabel (event : SurgeryEventData g0 K P slice metric T)
     (S : Set (slice event.tMinus).carrier) : Set (slice T).carrier :=
   event.retention.map '' (event.retained_pre ∩ S) ∪
     ⋃ i : {i : Fin event.cap_count // preAttachment event i ⊆ S}, (event.caps i.1).carrier
-
 
 theorem surgeryPostLabel_isCompact
     (event : SurgeryEventData g0 K P slice metric T)
@@ -110,7 +94,6 @@ private theorem attachment_in_retained_label
     (preAttachment_subset_retained event i hz) hx heq
   exact heq' ▸ hi hz
 
-
 theorem surgeryPostLabel_disjoint
     (event : SurgeryEventData g0 K P slice metric T)
     (S : Set (slice event.tMinus).carrier) :
@@ -132,7 +115,6 @@ theorem surgeryPostLabel_disjoint
         obtain ⟨x, hx⟩ := (preAttachment_isConnected event i).nonempty
         exact hj hx (hi hx)
       · exact Set.disjoint_left.mp (event.cap_disjoint i j hij) hy hz
-
 
 theorem surgeryPostLabel_union_compl
     (event : SurgeryEventData g0 K P slice metric T)
@@ -156,7 +138,6 @@ theorem surgeryPostLabel_union_compl
       exact Or.inr (Or.inr (mem_iUnion.mpr ⟨⟨i, hi'⟩, hy⟩))
     · exact Or.inl (Or.inr (mem_iUnion.mpr ⟨⟨i, hi⟩, hy⟩))
 
-
 theorem surgeryPostLabel_isClopen
     (event : SurgeryEventData g0 K P slice metric T)
     {S : Set (slice event.tMinus).carrier} (hS : IsClopen S) :
@@ -175,7 +156,6 @@ theorem surgeryPostLabel_isClopen
   refine ⟨hclosed, ?_⟩
   have hopen := hother.isOpen_compl
   rwa [← heq, compl_compl] at hopen
-
 
 theorem inverse_neck_subset_of_attachment_label
     (event : SurgeryEventData g0 K P slice metric T)

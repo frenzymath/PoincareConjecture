@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonExteriorL
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonCollarUnionGeometry
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric BrownCollar unitInterval

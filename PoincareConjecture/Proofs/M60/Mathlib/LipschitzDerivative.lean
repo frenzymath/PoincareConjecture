@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M40.Mathlib.SmoothChartDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {E F M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [RiemannianBundle (TangentSpace 𝓘(ℝ, F) : M → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : M → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) M]
-
-
-
 
 theorem norm_mfderiv_apply_le_of_lipschitzOn {f : E → M} {S : Set E}
     (hS : IsOpen S) {K : ℝ≥0} (hf : LipschitzOnWith K f S)

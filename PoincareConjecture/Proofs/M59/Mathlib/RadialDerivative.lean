@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M58.Mathlib.RadialNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped RealInnerProductSpace
@@ -17,9 +9,6 @@ namespace PoincareConjecture.Proofs.M59
 open M58
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem fderiv_radialNormalization_unit {x : E} (hx : ‖x‖ = 1) (v : E) :
     fderiv ℝ radialNormalization x v = v - ⟪x, v⟫ • x := by

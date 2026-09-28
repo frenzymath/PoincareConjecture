@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryAnchorOutside
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundaryEntryProducer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceBalancedChainAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -121,9 +112,6 @@ private theorem entry_below_graph_of_start_outside
   change (W.coordinate_inverse (γ a)).2 -
     f (W.coordinate_inverse (γ a)).1 < 0
   linarith only [haxis, hfa.1]
-
-
-
 
 theorem SourceEdgeCommonOrientationPacket.exists_anchored_entry_below_cap_graph
     {N P W : EpsilonNeck g} {γ : ℝ → M} {tN tW epsilon : ℝ}

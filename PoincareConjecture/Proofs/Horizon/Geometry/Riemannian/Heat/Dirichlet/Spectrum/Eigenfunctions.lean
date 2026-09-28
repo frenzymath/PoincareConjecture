@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.DomainResolvent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.WeakEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -63,8 +52,6 @@ theorem domainResolvent_lift_weak_equation (hΩ : MeasurableSet Ω)
   congr 1
   field_simp
   ring
-
-
 
 theorem exists_weak_eigenfunction_of_domainResolvent
     (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))

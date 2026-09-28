@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapMixed
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -61,11 +50,6 @@ private theorem fderiv_eqOn_open {E : Type*} [NormedAddCommGroup E] [NormedSpace
   intro z hz
   have h : U =ᶠ[𝓝 z] u := mem_of_superset (hO.mem_nhds hz) heq
   exact h.fderiv_eq
-
-
-
-
-
 
 theorem compact_mixed_quadratic_system_contDiffOn_closure
     {K W0 W1 W2 W3 O : Set Plane} {T : Set Target}

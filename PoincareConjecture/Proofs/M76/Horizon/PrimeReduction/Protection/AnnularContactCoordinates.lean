@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleNormalCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.OriginalBoundaryPolygons
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76

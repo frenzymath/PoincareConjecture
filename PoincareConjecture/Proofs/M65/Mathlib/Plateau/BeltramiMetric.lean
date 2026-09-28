@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiDisk
 import Mathlib.Analysis.Matrix.PosDef
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,8 +9,6 @@ open Matrix
 open scoped Topology ContDiff ComplexConjugate
 
 namespace Complex
-
-
 
 def positiveMetricBeltrami (K : Matrix (Fin 2) (Fin 2) ℝ) : ℂ :=
   ((K 0 0 - K 1 1 : ℝ) + (2 * K 0 1 : ℝ) * I) /
@@ -36,9 +24,6 @@ private theorem positive_metric_data (K : Matrix (Fin 2) (Fin 2) ℝ) (hK : K.Po
   refine ⟨?_, ?_⟩
   · linarith [hK.diag_pos (i := 0), hK.diag_pos (i := 1), Real.sqrt_nonneg K.det]
   · rw [Real.sq_sqrt hK.det_pos.le, hdet]
-
-
-
 
 theorem norm_positiveMetricBeltrami_lt_one
     (K : Matrix (Fin 2) (Fin 2) ℝ) (hK : K.PosDef) :
@@ -59,9 +44,6 @@ theorem norm_positiveMetricBeltrami_lt_one
   change ‖N / (d : ℂ)‖ < 1
   rw [norm_div, norm_real, Real.norm_eq_abs, abs_of_pos hd]
   exact (div_lt_one hd).mpr hnorm
-
-
-
 
 theorem positiveMetricBeltrami_quadratic
     (K : Matrix (Fin 2) (Fin 2) ℝ) (hK : K.PosDef) (v : ℂ) :

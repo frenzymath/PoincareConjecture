@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.CutoffL2SpatialJets
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderDifference
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndSlabCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -31,9 +21,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}
   (qS : FS 3 ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) (p : endReferenceRegion e)
 
 include P E0 qH qA qS p
-
-
-
 
 theorem partialFlow_endCylinder_cutoffCoordinateEnergy_tendstoUniformlyOn {T : ℝ}
     (hT : T ∈ Ico 0 F.lifetime ∩ Ico 0 1) :
@@ -67,9 +54,6 @@ theorem partialFlow_endCylinder_cutoffCoordinateEnergy_tendstoUniformlyOn {T : �
       at this
   rw [dist_comm, dist_eq_norm, sub_zero, Real.norm_eq_abs, abs_of_nonneg hnn]
   exact hle.trans_lt hEd
-
-
-
 
 theorem partialFlow_endCylinderDifferenceCoefficients_iteratedFDeriv_tendsto
     {T : ℝ} (hT : T ∈ Ico 0 F.lifetime ∩ Ico 0 1) (m : ℕ) {ε : ℝ} (hε : 0 < ε) :

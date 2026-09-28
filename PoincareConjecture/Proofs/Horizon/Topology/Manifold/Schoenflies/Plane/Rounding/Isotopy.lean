@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Periodic
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Tolerance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [Fact (Module.finrank ℝ E = 2)] {n : ℕ} [NeZero n]
-
-
 
 theorem exists_ambient_isotopy_of_polygon_family
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))
@@ -46,7 +34,6 @@ theorem exists_ambient_isotopy_of_polygon_family
   exact ⟨δ, hδ, hδsmall, ρ, hρ, htail, hbound, hder,
     exists_ambient_isotopy_of_periodic_family e o hn hab
       (fun t => roundedPolygonParameter ρ (p t)) hγ hper hinj hregular⟩
-
 
 theorem exists_uniform_ambient_isotopy_of_polygon_family
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))

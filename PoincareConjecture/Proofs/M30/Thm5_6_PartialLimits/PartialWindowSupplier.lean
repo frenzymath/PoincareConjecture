@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.PartialMetricAdapter
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.PartialWindowService
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SelectedParabolicApplication
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 def PartialPointedFlowConvergence.ofM28
     {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
@@ -35,8 +25,6 @@ def PartialPointedFlowConvergence.ofM28
   limitFlow := G.limitFlow
   metric_at_baseTime := G.metric_at_baseTime
   spacetime_metric_jets := G.spacetime_metric_jets
-
-
 
 def SelectedParabolicApplicationData.toM28
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
@@ -70,8 +58,6 @@ def SelectedParabolicApplicationData.toM28
   distance_eq := H.distance_eq
   metric_jets := H.metric_jets
   positive_ellipticity := H.positive_ellipticity
-
-
 
 theorem partialLimitWindowService : PartialLimitWindowService.{u} := by
   intro M _ _ _ tau A H

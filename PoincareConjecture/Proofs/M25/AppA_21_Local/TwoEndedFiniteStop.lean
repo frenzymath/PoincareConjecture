@@ -6,23 +6,11 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.FiniteChainFrontier
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.CoherentChainLimit
 import Mathlib.Logic.Function.Iterate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_two_ended_finite_chain_or_deep_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

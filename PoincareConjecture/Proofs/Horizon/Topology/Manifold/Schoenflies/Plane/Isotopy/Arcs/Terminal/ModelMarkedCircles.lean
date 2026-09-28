@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Planar.Pairing
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Components
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -517,9 +515,6 @@ private theorem model_negative_branch_circle_pairs_of_band
   change (⋃ i, range (γ i)) = {q : S2 | h q = h p₀ - t} at hcover
   rw [hcenter] at hcover
   exact hcover
-
-
-
 
 theorem exists_model_negative_branch_circle_pairs
     (d : TerminalSaddleGeometry M P p e)

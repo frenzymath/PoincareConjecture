@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +41,6 @@ section CoordinateNorm
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem standard_initial_patch_pullback_error_le {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)
     (he : 0 < epsilon) (hu : u ∈ Icc (-2) 0)
@@ -88,8 +77,6 @@ theorem standard_initial_patch_pullback_error_le {epsilon u : ℝ} {x : Standard
   have herr := M35.abs_bilinear_le_of_components (B - C) (by positivity) hB v
   change |B v v - C v v| ≤ 3 * (6 * epsilon) * ‖v‖ ^ 2 at herr
   simpa only [show (3 : ℝ) * (6 * epsilon) = 18 * epsilon by ring] using herr
-
-
 
 theorem standard_initial_patch_pullback_lower_sharp {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

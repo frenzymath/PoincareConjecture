@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.Uniform
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,8 +64,6 @@ private theorem normalChart_radial_speed
   exact (hc t ht').trans hc0.symm
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem terminalSourceNormal_of_center
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (p0 p : M)

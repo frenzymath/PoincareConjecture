@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.B
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.Nested
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.Disjoint
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +16,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Plane.Isotopy.ArcPairs
 
 abbrev UnitCircle := sphere (0 : E2) 1
-
-
 
 def NestedPair (inner outer : UnitCircle → E2) : Prop :=
   ∃ F : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞,
@@ -63,7 +59,6 @@ theorem nestedPair_iff_of_normalizations
     exact heq ▸ hin
   · intro hin
     exact ⟨B, hB, hA ▸ (image_mono sphere_subset_closedBall).trans hin⟩
-
 
 theorem exists_supported_circle_matching
     (c d : UnitCircle → E2)
@@ -158,8 +153,6 @@ private theorem supported_matching_disjoint
     have h := image_boundary_of_ball_matching (A₁.trans P) B₁ F hF
     change F '' ((P ∘ A₁) '' sphere (0 : E2) 1) = _ at h
     rwa [image_comp] at h
-
-
 
 theorem exists_supported_circle_pair_matching
     (c d : Fin 2 → UnitCircle → E2)

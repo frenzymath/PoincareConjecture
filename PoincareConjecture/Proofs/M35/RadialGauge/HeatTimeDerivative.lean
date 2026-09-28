@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatSmoothness
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem heatAverage_time_continuous {f : V → F} (hf : Continuous f)
     {C : ℝ} (hbound : ∀ x, ‖f x‖ ≤ C) (x : V) :
     Continuous (fun t : ℝ => heatAverage t f x) := by
@@ -36,12 +24,9 @@ theorem heatAverage_time_continuous {f : V → F} (hf : Continuous f)
   · exact integrable_const C
   · exact Eventually.of_forall (fun z => hf.comp (by fun_prop))
 
-
 theorem heatAverage_zero [CompleteSpace F] (f : V → F) (x : V) :
     heatAverage 0 f x = f x := by
   simp [heatAverage]
-
-
 
 theorem heatAverage_hasDerivAt_time_integral {f : V → F} {f' : V → V →L[ℝ] F}
     (hf : Continuous f) (hf' : Continuous f') (hderiv : ∀ x, HasFDerivAt f (f' x) x)

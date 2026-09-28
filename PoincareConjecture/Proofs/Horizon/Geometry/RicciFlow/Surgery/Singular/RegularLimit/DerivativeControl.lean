@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.CurvatureControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -51,8 +41,6 @@ private theorem metric_ball_neighborhood (g : RiemannianMetric 3 M)
   · change g.edist x x < ENNReal.ofReal ((r : ℝ) / 2)
     rw [show g.edist x x = 0 from Manifold.riemannianEDist_self]
     exact ENNReal.ofReal_pos.mpr (half_pos hr')
-
-
 
 theorem exists_open_uniform_curvature_derivative_tail
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -109,8 +97,6 @@ theorem exists_open_uniform_curvature_derivative_tail
     exact hder
   exact hder'.trans (div_le_div_of_nonneg_left hC.le (by positivity)
     (Real.rpow_le_rpow (sub_nonneg.mpr has.le) (by linarith [ht.1]) (by positivity)))
-
-
 
 theorem exists_uniform_curvature_derivative_tail_on_compact
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

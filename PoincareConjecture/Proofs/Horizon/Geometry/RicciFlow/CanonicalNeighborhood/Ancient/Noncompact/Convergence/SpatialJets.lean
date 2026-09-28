@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Embeddings
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.JetSlices
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -20,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture
 
 namespace AncientCompactness
-
-
 
 theorem iteratedFDeriv_spatial_slice_of_open_halfspace
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -63,9 +50,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
-
 
 theorem tendstoUniformlyOn_spatialJets
     (hconv : M23TerminalMetricConvergence G e)
@@ -118,8 +102,6 @@ theorem tendstoUniformlyOn_spatialJets
         |>.clm_apply (contDiffOn_const (c := EuclideanSpace.basisFun (Fin 3) ℝ b))
     exact (AncientCompactness.iteratedFDeriv_spatial_slice_of_open_halfspace
       (isOpen_extChartAt_target q) g hg (hKU hp).1 (hKU hp).2.1 r).symm
-
-
 
 theorem tendstoUniformlyOn_fixedPullbackSpatialJets
     (hconv : M23TerminalMetricConvergence G e)

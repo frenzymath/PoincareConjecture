@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.AdaptedFieldOn
 import PoincareConjecture.Proofs.M09.RicciContractions
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

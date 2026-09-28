@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.HistoryIndices
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Substitution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [T3Space M]
   [SecondCountableTopology M]
   {N : NormalizedInitialMetric (M := M)}
-
-
 
 theorem m72ReverseInduction
     (I : M72ReconstructionInput N) (L : M72ReconstructionLedger I)

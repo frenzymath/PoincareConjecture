@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSphe
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.SimplyConnected
 import PoincareConjecture.Proofs.M76.Horizon.Dependencies.Topology.Covering.Universal.Proper
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76.PrismBelt

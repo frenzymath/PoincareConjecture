@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskTriangleBou
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricBoundaryFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
-
-
 
 noncomputable def HamiltonProperDiskTriangulation.dualRegionRim
     (T : HamiltonProperDiskTriangulation R D b) (s : Finset E) : Set E :=
@@ -92,10 +81,6 @@ private theorem dualRegionRim_inter_disk
       exact ⟨Or.inr ⟨h.1, hxF.2⟩, h.2⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_edge_zero_arc
     (T : HamiltonProperDiskTriangulation R D b)

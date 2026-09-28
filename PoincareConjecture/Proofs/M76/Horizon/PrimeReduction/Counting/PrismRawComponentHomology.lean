@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHomeomorphTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.PrismInterpolationReflection
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set CategoryTheory Limits
 namespace PoincareConjecture.M76.PrismBelt

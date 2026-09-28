@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.Family.DenseDirections
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem exists_finite_ray_net_on_rescaled_annulus
     {X : Type*} [MetricSpace X] {p : X}
@@ -59,8 +49,6 @@ theorem exists_finite_ray_net_on_rescaled_annulus
   have hsmall := mul_le_mul_of_nonneg_right hδε hLpos.le
   have hbound := mul_le_mul_of_nonneg_left hupper (show 0 ≤ ε / 4 by positivity)
   nlinarith
-
-
 
 theorem eventually_finite_ray_net_on_rescaled_annulus
     {X : Type*} [MetricSpace X] {p : X}

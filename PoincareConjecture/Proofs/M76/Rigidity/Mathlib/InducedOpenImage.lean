@@ -1,13 +1,5 @@
 import Mathlib.Topology.Maps.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace Topology.IsInducing
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {f : X → Y}
-
-
 
 theorem isOpen_image_of_subset_open (hf : IsInducing f)
     {S : Set X} (hS : IsOpen S) {W : Set Y} (hW : IsOpen W)

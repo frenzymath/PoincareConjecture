@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Models
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Lift
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -25,8 +16,6 @@ namespace PoincareConjecture
 variable {M : Type u} {N : Type}
   [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
-
-
 
 noncomputable def CapModelEquivalence.pullbackSmall {kind : CapModelKind}
     {p : RealProjectiveThree} {U : Set N} (K : CapModelEquivalence kind p U)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalFluxExtension
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSourceWeakChain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ noncomputable section
 namespace PoincareConjecture.M60
 
 open Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem suQuadraticDerivative_comp_linear
     {E F H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -48,9 +37,6 @@ theorem suQuadraticDerivative_comp_linear
       (norm_nonneg _) (by positivity)
     _ ≤ (C * (B ^ 2 * (1 + ‖z‖ ^ 2))) * B := by gcongr
     _ = _ := by ring
-
-
-
 
 theorem suQuadraticDerivative_integrable
     {X E F : Type*} [MeasurableSpace X]
@@ -78,8 +64,6 @@ theorem suQuadraticDerivative_integrable
   simp only [Pi.add_apply, Real.norm_of_nonneg (by positivity :
     0 ≤ C * (1 + ‖u x‖ ^ 4 + ‖W x‖ ^ 2))]
   exact hb.trans (by nlinarith [mul_le_mul_of_nonneg_left hy hC.le])
-
-
 
 theorem suWeakPartial_pair_comp_quadratic {p q : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin p)}

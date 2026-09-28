@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.TwoCollarGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set BrownCollar
@@ -15,8 +7,6 @@ open Set BrownCollar
 namespace BrownCollar.AmbientSideCollars
 
 variable {X : Type*} [TopologicalSpace X] {S : Set X} (C : AmbientSideCollars S)
-
-
 
 theorem bicollar_mem_base_iff (z : S × Ioo (-1 : ℝ) 1) :
     (C.bicollarHomeomorph z : X) ∈ S ↔ (z.2 : ℝ) = 0 := by
@@ -47,8 +37,6 @@ private theorem bicollar_mem_negative_of_nonpos (z : S × Ioo (-1 : ℝ) 1)
   rw [heq]
   exact C.negativeImage_subset (C.negativeImageHomeomorph (negativeClamp z)).property
 
-
-
 theorem bicollar_mem_positive_iff (z : S × Ioo (-1 : ℝ) 1) :
     (C.bicollarHomeomorph z : X) ∈ C.positive ↔ 0 ≤ (z.2 : ℝ) := by
   refine ⟨?_, C.bicollar_mem_positive_of_nonneg z⟩
@@ -59,8 +47,6 @@ theorem bicollar_mem_positive_iff (z : S × Ioo (-1 : ℝ) 1) :
   have ht := (C.bicollar_mem_base_iff z).mp hbase
   rw [ht] at hz
   exact hz le_rfl
-
-
 
 theorem bicollar_mem_negative_iff (z : S × Ioo (-1 : ℝ) 1) :
     (C.bicollarHomeomorph z : X) ∈ C.negative ↔ (z.2 : ℝ) ≤ 0 := by

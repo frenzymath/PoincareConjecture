@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.UnequalHeight
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,8 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_quadraticMinimum_height_adjustment {b s : Real} (hb : 0 < b) (hs : 0 < s) :
     ∃ H : Real ≃ₘ[Real] Real, StrictMono H ∧

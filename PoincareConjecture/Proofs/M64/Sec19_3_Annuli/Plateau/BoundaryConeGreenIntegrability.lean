@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeFlux
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeL2
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,9 +14,6 @@ namespace PoincareConjecture.M64BoundaryCone
 open M65Interior
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
-
-
-
 
 theorem coneRadialFlux_deriv_continuous {g : C → ℝ}
     {v : ℝ → C} {v0 : C}
@@ -74,9 +58,6 @@ theorem coneRadialFlux_deriv_continuous {g : C → ℝ}
     ((hg.contDiffAt (isOpen_ball.mem_nhds hm)).differentiableAt one_ne_zero)
     (ht.differentiable one_ne_zero _)).deriv
 
-
-
-
 theorem coneGreen_integrable {g : C → ℝ}
     {v d : ℝ → C} {v0 : C}
     {r ρ a b K : ℝ} (hr : 0 < r) (hρ : 0 < ρ) (hK : 0 ≤ K)
@@ -108,10 +89,6 @@ theorem coneGreen_integrable {g : C → ℝ}
   exact IntegrableOn.continuousOn_mul continuous_fst.continuousOn
     ((hfield.mul_continuousOn hψ.continuousOn hS).add
       ((hQ.mul hψD.continuousOn).integrableOn_compact hS)) hS
-
-
-
-
 
 theorem coneAngularFlux_deriv_integrable [CompleteSpace C] {g : C → ℝ}
     {v d : ℝ → C} {v0 : C}

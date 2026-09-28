@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.MetricDuality
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -37,7 +28,6 @@ theorem inner_gradient (D : LeviCivitaData g) (f : M → ℝ) (x : M)
       (rfl : (g.inner x).inverse (mvfderiv (𝓡 n) f x) = D.gradient f x)
   exact (congrArg (fun q ↦ q v) hi).symm
 
-
 theorem contMDiffAt_gradient (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) :
     ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
@@ -55,13 +45,11 @@ theorem contMDiffAt_gradient (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     NormedSpace.fromTangentSpace]
   rfl
 
-
 theorem contMDiff_gradient (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞
       (T% (D.gradient f)) :=
   fun x => D.contMDiffAt_gradient (hf x)
-
 
 theorem hessianOnFields_eq_inner_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
@@ -82,7 +70,6 @@ theorem hessianOnFields_eq_inner_connection_gradient (D : LeviCivitaData g)
   simp only [D.inner_gradient] at h
   exact sub_eq_iff_eq_add.mpr h
 
-
 theorem hessian_eq_inner_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -93,7 +80,6 @@ theorem hessian_eq_inner_connection_gradient (D : LeviCivitaData g)
     (FiberBundle.mdifferentiableAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) v)]
   simp
 
-
 theorem laplacian_eq_sum_inner_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) :
@@ -103,7 +89,6 @@ theorem laplacian_eq_sum_inner_connection_gradient (D : LeviCivitaData g)
   unfold laplacian
   simp_rw [D.hessian_eq_inner_connection_gradient hf]
 
-
 theorem abs_mvfderiv_le_gradient_norm (D : LeviCivitaData g) (f : M → ℝ)
     (x : M) (v : TangentSpace (𝓡 n) x) :
     |mvfderiv (𝓡 n) f x v| ≤ g.tangentNorm x (D.gradient f x) * g.tangentNorm x v := by
@@ -111,7 +96,6 @@ theorem abs_mvfderiv_le_gradient_norm (D : LeviCivitaData g) (f : M → ℝ)
     ⟨g.toRiemannianMetric⟩
   rw [← D.inner_gradient]
   exact abs_real_inner_le_norm (D.gradient f x) v
-
 
 theorem gradient_norm_le_iff (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     {A : ℝ} (hA : 0 ≤ A) :
@@ -131,7 +115,6 @@ theorem gradient_norm_le_iff (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     rw [real_inner_self_eq_norm_sq, abs_of_nonneg (sq_nonneg _)] at hh
     change ‖D.gradient f x‖ ≤ A
     nlinarith [norm_nonneg (D.gradient f x)]
-
 
 theorem mvfderiv_gradient_normSq (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)

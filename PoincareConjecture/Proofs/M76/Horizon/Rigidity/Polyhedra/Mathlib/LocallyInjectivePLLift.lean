@@ -1,14 +1,6 @@
 import Mathlib.Topology.SeparatedMap
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ variable {E F G X ι : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [TopologicalSpace X]
-
-
 
 theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_lift_of_locallyInjective
     {e : ι → OpenPartialHomeomorph X F}

@@ -1,20 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCornerInterior
 import Mathlib.Data.Set.Finite.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem openSegment_zero_subset_cap {d : ℝ × ℝ} (hdx : 0 < d.1) (hdy : 0 < d.2) :
     openSegment ℝ (0, 0) d ⊆ {q : ℝ × ℝ | 0 < q.1 ∧ 0 < q.2 ∧ q.1 + q.2 < d.1 + d.2} := by
@@ -27,10 +16,6 @@ theorem openSegment_zero_subset_cap {d : ℝ × ℝ} (hdx : 0 < d.1) (hdy : 0 < 
   nlinarith [mul_lt_mul_of_pos_right hb1 (add_pos hdx hdy)]
 
 namespace Polygon
-
-
-
-
 
 theorem exists_corner_diagonal_of_triangle_vertex {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)

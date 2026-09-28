@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_LocalStrip
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Precompact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +13,6 @@ namespace PoincareConjecture
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_standardAnnulus_isCompact : IsCompact standardAnnulusDomain := by
   have hclosed : IsClosed standardAnnulusDomain :=
     (isClosed_le continuous_const continuous_norm).inter
@@ -35,9 +20,6 @@ theorem m64Intrinsic_standardAnnulus_isCompact : IsCompact standardAnnulusDomain
   apply (isCompact_closedBall (0 : AnnulusCoordinates) 2).of_isClosed_subset hclosed
   intro p hp
   simpa only [Metric.mem_closedBall, dist_zero_right] using hp.2
-
-
-
 
 theorem m64Intrinsic_annulus_geodesic_continuation
     (N : IntrinsicAnnulus) {a b : ℝ} (hab : a < b)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripExteriorDisks
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Nonspanning.HoleSelection
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

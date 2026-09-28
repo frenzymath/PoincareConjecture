@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SecantTransversality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace ContinuousLinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_inverse_secant_bound_of_ker_transverse (Q : E →L[ℝ] F)
     (J : F →L[ℝ] E) (hJ : Function.RightInverse J Q) {S : Set E}

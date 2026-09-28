@@ -1,13 +1,6 @@
 import Mathlib.AlgebraicTopology.SimplicialSet.KanComplex
 import Mathlib.AlgebraicTopology.SimplicialSet.KanComplex.MulStruct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -15,7 +8,6 @@ open CategoryTheory Simplicial
 universe u
 
 namespace Poincare.Topology
-
 
 theorem exists_pointedSimplex_of_constant_faces (X : SSet.{u}) (n : Nat)
     (x : X.obj (Opposite.op (SimplexCategory.mk 0)))
@@ -28,14 +20,12 @@ theorem exists_pointedSimplex_of_constant_faces (X : SSet.{u}) (n : Nat)
   rw [← Category.assoc, SSet.boundary.ι_ι, hF]
   rfl
 
-
 theorem pointedSimplex_horn_compatible (X : SSet.{u}) (n : Nat)
     (x : X.obj (Opposite.op (SimplexCategory.mk 0))) (i : Fin (n + 3))
     (f : forall j : Fin (n + 3), Ne j i -> X.PtSimplex (n + 1) x) :
     SSet.horn.IsCompatible (fun j hj => (f j hj).map) := by
   intro j k hj hk hjk
   rw [SSet.PtSimplex.δ_map, SSet.PtSimplex.δ_map]
-
 
 theorem exists_kan_pointedSimplex_horn_filler (X : SSet.{u}) [SSet.KanComplex X]
     (n : Nat) (x : X.obj (Opposite.op (SimplexCategory.mk 0))) (i : Fin (n + 3))
@@ -58,7 +48,6 @@ theorem exists_kan_pointedSimplex_horn_filler (X : SSet.{u}) [SSet.KanComplex X]
   obtain ⟨g, hg⟩ := exists_pointedSimplex_of_constant_faces X n x
     (SSet.stdSimplex.δ i ≫ F) hi
   exact ⟨F, g, hg.symm, hF⟩
-
 
 theorem exists_kan_mulStruct (X : SSet.{u}) [SSet.KanComplex X] (n : Nat)
     (x : X.obj (Opposite.op (SimplexCategory.mk 0)))

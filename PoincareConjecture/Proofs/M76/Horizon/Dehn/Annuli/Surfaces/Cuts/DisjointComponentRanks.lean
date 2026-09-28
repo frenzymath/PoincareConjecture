@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComponentCochainExactness
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Boundary.IncidenceRanks
 
-
-
 set_option autoImplicit false
 open Set PreAbstractSimplicialComplex.ModTwoCochains
 

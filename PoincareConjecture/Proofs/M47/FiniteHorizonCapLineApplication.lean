@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointService
 import PoincareConjecture.Proofs.M47.FiniteHorizonCapLineControls
 import PoincareConjecture.Proofs.M47.FiniteHorizonCapLineContradiction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -83,9 +73,6 @@ variable
             (F (G.subsequence k)).parameters.C)
 
 include hbad capBudget in
-
-
-
 
 theorem finiteHorizon_exists_cap_line_exclusion
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

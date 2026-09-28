@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.MorseCoordinates.Factors
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.MorseCoordinates.LowerHemisphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,8 +67,6 @@ private theorem chartTranslation_mem_ball_iff (z : Real) (q : E2) :
   change ‖chartTranslation z q‖ < 1 ↔ 0 < 1 - (z + q 0)^2 - (q 1)^2
   have hn := chartTranslation_norm_sq z q
   constructor <;> intro h <;> nlinarith [norm_nonneg (chartTranslation z q)]
-
-
 
 def negativeSphereChart (z : Real) : OpenPartialHomeomorph E2 S2 :=
   ((chartTranslation z).toHomeomorph.toOpenPartialHomeomorph.trans lowerSphereChart).trans

@@ -1,20 +1,9 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral
-
-
-
 
 theorem ContinuousOn.intervalIntegral_prod_left
     {X E : Type*} [TopologicalSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]

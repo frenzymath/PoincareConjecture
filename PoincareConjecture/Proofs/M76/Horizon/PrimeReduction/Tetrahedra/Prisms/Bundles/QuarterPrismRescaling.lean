@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.VariableSymmetricPrismTrim
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.PrismAffineFiberParameter
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Geometry

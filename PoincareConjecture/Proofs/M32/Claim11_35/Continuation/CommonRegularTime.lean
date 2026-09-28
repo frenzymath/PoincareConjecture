@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch11.SingularLimits
 import Mathlib.Topology.Compactness.Lindelof
 import Mathlib.Topology.DiscreteSubset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
-
 
 theorem singularTimeAssumptions_singularTimes_countable
     (H : SingularTimeAssumptions F T M) : H.singularTimes.Countable := by
@@ -62,10 +49,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
   {F : ℕ → GeneralizedRicciFlowData.{u}} {T : ℕ → ℝ}
-
-
-
-
 
 theorem exists_common_regular_normalized_time
     (H : ∀ k, SingularTimeAssumptions (F k) (T k) (M k))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLLocalDeterminantSign
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ComposableAffinePatches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem plLocalSign_trans (h k : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) (hk : k ∈ piecewiseAffineGroupoid E)
@@ -66,9 +53,6 @@ theorem plLocalSign_trans (h k : OpenPartialHomeomorph E E)
 private theorem sign_eq_of_product_one {a b : SignType} (h : a * b = 1) : a = b := by
   cases a <;> cases b <;> simp_all
 
-
-
-
 theorem plLocalSign_symm (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) (x : h.source) :
     plLocalSign h.symm ((piecewiseAffineGroupoid E).symm hh)
@@ -86,8 +70,6 @@ theorem plLocalSign_symm (h : OpenPartialHomeomorph E E)
       plLocalSign h hh x = 1 :=
     (plLocalSign_trans h h.symm hh hi z).symm.trans (heq.trans (plLocalSign_refl y))
   exact sign_eq_of_product_one hprod
-
-
 
 theorem plLocalSign_restr (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) {U : Set E} (hU : IsOpen U)

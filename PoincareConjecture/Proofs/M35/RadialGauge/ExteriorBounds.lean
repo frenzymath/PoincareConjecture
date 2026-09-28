@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ExteriorCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -26,8 +16,6 @@ private theorem logarithmicSlope_controls {f : ℝ → ℝ} {r : ℝ}
     exact hslope
   refine ⟨ha, ?_, har⟩
   nlinarith only [har, mul_nonneg (sub_nonneg.mpr hr) ha]
-
-
 
 theorem cylinderTargetForcing_weighted_bound {f velocity : ℝ → ℝ} {r V : ℝ}
     (hr : 1 ≤ r) (hf : 0 < f r) (hdf : 0 ≤ deriv f r)
@@ -51,8 +39,6 @@ theorem cylinderTargetForcing_weighted_bound {f velocity : ℝ → ℝ} {r V : �
     (by linarith only [hr] : 1 + r ≤ 2 * r)
     (abs_nonneg (cylinderTargetForcing f velocity r))
   nlinarith only [hb, hweight]
-
-
 
 theorem cylinderTargetForcing_weighted_derivative_bound
     {f velocity : ℝ → ℝ} (hfs : ContDiff ℝ ∞ f) {r V : ℝ}

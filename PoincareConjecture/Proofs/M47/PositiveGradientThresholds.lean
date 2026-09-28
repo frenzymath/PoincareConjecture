@@ -1,21 +1,8 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Asymptotics
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47Positive
-
-
-
 
 theorem exists_gradient_reaction_upper {epsilon beta C : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) :
@@ -44,9 +31,6 @@ theorem exists_gradient_reaction_upper {epsilon beta C : ℝ}
     have hcube : R ^ 3 ≤ B ^ 3 := by gcongr
     have hsubtract : 0 ≤ (4 * beta / 3) * R ^ 3 := by positivity
     nlinarith only [hmul, hcube, hsubtract]
-
-
-
 
 theorem exists_linear_cubic_absorption {eta C : ℝ} (heta : 0 < eta) (hC : 0 ≤ C) :
     ∃ K : ℝ, 0 < K ∧ ∀ R : ℝ, 0 < R → C * R ≤ eta * R ^ 3 + K := by

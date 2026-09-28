@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialChartBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,9 +27,6 @@ noncomputable local instance scalarModelTwoJetNorm :
 noncomputable local instance scalarModelTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
-
 theorem exists_global_standard_scalar_bound {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {H : ℝ} (hH0 : 0 ≤ H) (hH1 : H < 1) :
     ∃ M : ℝ, 0 < M ∧ ∀ t ∈ Icc (0 : ℝ) H, ∀ x : E,
@@ -56,9 +43,6 @@ theorem exists_global_standard_scalar_bound {g0 : StandardInitialMetric}
     _ ≤ 9 * (S.flow.connection t).curvatureTensorNorm x := hscalar
     _ ≤ 9 * K := mul_le_mul_of_nonneg_left hnorm (by norm_num)
     _ ≤ 9 * K + 1 := by linarith
-
-
-
 
 theorem exists_uniform_scalar_jet_upper_margin {C : Set (MetricTwoJet 3)}
     (hC : IsCompact C) {M : ℝ}
@@ -83,10 +67,6 @@ theorem exists_uniform_scalar_jet_upper_margin {C : Set (MetricTwoJet 3)}
   intro J hJ J' hnear
   exact (hinside (Metric.mem_cthickening_of_dist_le J' J delta C hJ
     (by simpa only [dist_eq_norm] using hnear))).2
-
-
-
-
 
 theorem exists_standard_scalar_comparison_tolerance {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {H M : ℝ} (hH1 : H < 1)

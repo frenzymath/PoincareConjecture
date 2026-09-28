@@ -3,15 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ open Set Metric
 namespace PoincareConjecture.CompactKappaCoreRadius
 
 variable {X : Type*} [PseudoMetricSpace X] [ProperSpace X]
-
-
 
 theorem exists_additive_closedBall_buffer
     {Y U : Set X} (hY : IsCompact Y) (hU : IsOpen U)
@@ -52,8 +41,6 @@ theorem exists_additive_closedBall_buffer
   have hnear : infDist y Uᶜ ≤ dist y x := infDist_le_dist_of_mem hxU
   have hmargin : delta ≤ infDist y Uᶜ - rho y := hbound y hy
   linarith
-
-
 
 theorem exists_multiplicative_closedBall_buffer
     {Y U : Set X} (hY : IsCompact Y) (hU : IsOpen U)

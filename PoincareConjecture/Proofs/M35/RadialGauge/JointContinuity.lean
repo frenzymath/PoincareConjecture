@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelJets
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
-
 theorem heatAverage_joint_continuous {f : V → F} (hf : Continuous f)
     {C : ℝ} (hbound : ∀ x, ‖f x‖ ≤ C) :
     Continuous (fun p : ℝ × V => heatAverage p.1 f p.2) := by
@@ -35,8 +23,6 @@ theorem heatAverage_joint_continuous {f : V → F} (hf : Continuous f)
     exact Eventually.of_forall (fun z => hbound _)
   · exact integrable_const C
   · exact Eventually.of_forall (fun z => hf.comp (by fun_prop))
-
-
 
 theorem heatDuhamel_joint_continuous {f : ℝ → V → F} {C : ℝ}
     (hm : StronglyMeasurable (Function.uncurry f))
@@ -59,8 +45,6 @@ theorem heatDuhamel_joint_continuous {f : ℝ → V → F} {C : ℝ}
     (by constructor <;> linarith [min_le_right (0 : ℝ) p.1, le_max_right (0 : ℝ) p.1])
     (measure_singleton p.1)
   exact h.comp (f := fun q : ℝ × V => (q, q.1)) (by fun_prop)
-
-
 
 theorem heatDuhamel_fderiv_slab_continuous {f : ℝ → V → F} {T C D : ℝ}
     (hm : StronglyMeasurable (fun p : Icc 0 T × V => f p.1.1 p.2))
@@ -107,8 +91,6 @@ theorem heatDuhamel_fderiv_slab_continuous {f : ℝ → V → F} {T C D : ℝ}
   dsimp only [Function.comp_def]
   rw [← hcomm, show heatDuhamel g p.1.1 = heatDuhamel f p.1.1 from
     heatDuhamel_slabSourceExtension p.1.2 f]
-
-
 
 theorem heatDuhamel_slab_continuous {f : ℝ → V → F} {T C : ℝ}
     (hm : StronglyMeasurable (fun p : Icc 0 T × V => f p.1.1 p.2))

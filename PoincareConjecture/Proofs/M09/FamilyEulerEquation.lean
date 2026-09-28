@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 import PoincareConjecture.Proofs.M09.LocalRegularizedEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

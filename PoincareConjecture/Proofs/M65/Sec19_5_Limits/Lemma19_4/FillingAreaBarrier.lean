@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaFlux
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem exists_differentiable_barrier [T2Space M] [CompactSpace M]
     {a b : ℝ} (F : RicciFlow 3 M (Icc a b)) {J : Set ℝ} (hJ : IsOpen J)

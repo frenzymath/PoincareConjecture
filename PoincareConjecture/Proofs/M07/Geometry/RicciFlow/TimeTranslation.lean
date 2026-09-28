@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,11 +9,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Set
-
-
-
-
-
 
 def translate
     {n : ℕ} {M : Type u} [TopologicalSpace M]

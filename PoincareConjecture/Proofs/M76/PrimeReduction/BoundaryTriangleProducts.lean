@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryDualIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K L : SimplicialComplex ℝ E)
   [Fintype K.faces] [Finite L.faces]
-
-
-
 
 theorem exists_boundary_facet_product (hLK : L ≤ K)
     {n : ℕ} (hKcard : ∀ u ∈ K.faces, u.card ≤ n + 1)
@@ -64,9 +53,6 @@ theorem exists_boundary_facet_product (hLK : L ≤ K)
       change lineMap (s.centroid ℝ id) (t.centroid ℝ id) (u : ℝ) = _
       rw [hu, lineMap_apply_zero]
     exact (hcontact.symm.subset hz).2
-
-
-
 
 theorem exists_boundary_triangle_products (hLK : L ≤ K)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 4)

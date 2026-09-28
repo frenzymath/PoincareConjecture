@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_EuclideanChart
 import PoincareConjecture.Proofs.M10.PullbackJacobian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,8 +17,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
 
 theorem pullbackJacobian_eq_metricJacobian (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x))

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.ConnectedSum.Factors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ universe u
 namespace PoincareConjecture
 
 namespace SmoothDisjointUnionData
-
-
 
 noncomputable def inclusionGroupEquiv {n : ℕ}
     {pieces : Fin n → GeneralizedSliceCarrier.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -33,8 +22,6 @@ noncomputable def inclusionGroupEquiv {n : ℕ}
 end SmoothDisjointUnionData
 
 namespace SmoothConnectedSumStep
-
-
 
 theorem factor {A C : GeneralizedSliceCarrier.{u}} (h : SmoothConnectedSumStep A C)
     (x : A.carrier) :
@@ -52,8 +39,6 @@ theorem factor {A C : GeneralizedSliceCarrier.{u}} (h : SmoothConnectedSumStep A
     obtain ⟨y, ⟨E⟩⟩ := S.second_factor a
     exact ⟨y, ⟨E.trans (RepairedGroupFactorData.ofMulEquiv (U.inclusionGroupEquiv 1 a))⟩⟩
 
-
-
 theorem factors_of_reflTransGen {A C : GeneralizedSliceCarrier.{u}}
     (h : Relation.ReflTransGen SmoothConnectedSumStep A C) (x : A.carrier) :
     ∃ y : C.carrier,
@@ -70,9 +55,6 @@ end SmoothConnectedSumStep
 
 namespace SmoothFiniteConnectedSumAssembly
 
-
-
-
 theorem piece_factor {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {C : GeneralizedSliceCarrier.{u}} (R : SmoothFiniteConnectedSumAssembly pieces C)
     (i : Fin n) (x : (pieces i).carrier) :
@@ -85,8 +67,6 @@ theorem piece_factor {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     (R.disjoint_union.inclusionGroupEquiv i x).symm)⟩⟩
 
 end SmoothFiniteConnectedSumAssembly
-
-
 
 theorem repairedSurgeryGroupEffects {A B : GeneralizedSliceCarrier.{u}}
     (C : SurgeryTopologyConclusion A B) : Nonempty (RepairedSurgeryGroupEffectsData C) := by

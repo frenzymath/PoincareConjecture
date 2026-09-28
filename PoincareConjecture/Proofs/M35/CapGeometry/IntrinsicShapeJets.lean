@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicShapeDerivative
 import PoincareConjecture.Proofs.M35.CapGeometry.VanishingMetricErrorJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ local instance intrinsicShapeJetsDualNormedGroup : NormedAddCommGroup (V →L[�
   inferInstance
 local instance intrinsicShapeJetsDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) :=
   inferInstance
-
-
 
 theorem intrinsic_shape_derivative_jets_zero
     (g : ℕ → RiemannianMetric 3 V)

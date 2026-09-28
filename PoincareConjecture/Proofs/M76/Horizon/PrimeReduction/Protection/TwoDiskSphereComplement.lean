@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.NestedDis
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.FinitePLBallCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.FinitePLBallBoundaryCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

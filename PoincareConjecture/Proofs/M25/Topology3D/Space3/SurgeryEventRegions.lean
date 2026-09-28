@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEvent
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryRegionIdentities
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.region_identities
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

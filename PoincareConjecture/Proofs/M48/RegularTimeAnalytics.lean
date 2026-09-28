@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M48.RegularAnalytics
 import PoincareConjecture.Proofs.M48.ScalarEvolution
 import PoincareConjecture.Proofs.M48.TimeEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +18,6 @@ variable (P : M48Predecessors.{u}) {F : SurgeryFlowData.{u}} {T : ℝ}
   {L : RepairedPreterminalSlab F T} (R : M48RegularSpacetimeData L)
 
 include P
-
 
 theorem regular_box_slab_scalar (b : R.history.generalized.box_index)
     (a c : ℝ) (hac : a < c) (hJ : Icc a c ⊆ F.time_domain)
@@ -94,7 +83,6 @@ theorem regular_box_ordinary_derivative {J : Set ℝ} {r C : ℝ}
     exact heq s hs
   · simpa only [heq t htc] using hb
 
-
 theorem regular_box_derivative {J : Set ℝ} {r C r' : ℝ}
     (hJ : R.history.generalized.interval ⊆ J)
     (hderiv : SurgeryScalarDerivativeControlOn F J r C)
@@ -120,7 +108,6 @@ theorem regular_box_derivative {J : Set ℝ} {r C r' : ℝ}
   exact ⟨hevent, R.history.interval_eq ▸ m33BoxIntervalSubset _ b (interior_subset hs.1)⟩
 
 end M48Predecessors
-
 
 theorem M48AnalyticCalibration.regular_time_derivative
     {S : RepairedControlledSchedulesData.{u}} (A : M48AnalyticCalibration S)

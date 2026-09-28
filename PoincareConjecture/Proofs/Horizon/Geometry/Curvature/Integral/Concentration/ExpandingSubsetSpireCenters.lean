@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.SubsetSpireCenters
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.SuppliedRebase
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,8 +34,6 @@ private theorem base_ascent_of_bad_radius_zero
   exact local_distance_ascent_of_tendsto_badAscentRadius_zero
     hL δ hδ hpos S _ _ hbase hc hcc'
     (by change dist Y.base Y.base + b < L; simp only [dist_self, zero_add]; dsimp [L]; linarith) ha
-
-
 
 theorem tendsto_dist_zero_of_badAscentRadius_zero_at_scaled_spire_in_expanding_subset
     {X : ℕ → BasedMetricSpaceBundle.{0}} {Y : BasedMetricSpaceBundle.{0}}
@@ -190,6 +180,5 @@ theorem tendsto_dist_zero_of_badAscentRadius_zero_at_scaled_spire_in_expanding_s
   have hηle : η ≤ (0 : ℝ) :=
     ge_of_tendsto hzero (Eventually.of_forall (fun j => le_of_not_gt (hbad (ψ j))))
   exact (not_le_of_gt hη) hηle
-
 
 end Poincare.CurvatureIntegral

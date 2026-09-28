@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartStarPurity
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,9 +16,6 @@ variable {U G X ι : Type*}
   [NormedAddCommGroup U] [NormedSpace ℝ U] [FiniteDimensional ℝ U]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [DecidableEq G] [TopologicalSpace X]
-
-
-
 
 theorem exists_full_marked_pair_chart_stars
     {e : ι → OpenPartialHomeomorph X V3} {N : Set X}

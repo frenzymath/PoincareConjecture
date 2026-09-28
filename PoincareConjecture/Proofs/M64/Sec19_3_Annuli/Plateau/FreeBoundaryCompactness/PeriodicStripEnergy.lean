@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundaryPolarEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicCircleShift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,27 +13,18 @@ namespace PoincareConjecture.M64
 local notation "S" => interior m64AnnulusDomain
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
 
-
-
 def angularStripShift (d : ℝ) (p : LoopPlane) : LoopPlane :=
   annulusPoint (p 0 + d) (p 1)
-
-
 
 theorem angularStripShift_eq_add (d : ℝ) (p : LoopPlane) :
     angularStripShift d p = annulusPoint d 0 + p := by
   ext i
   fin_cases i <;> simp [angularStripShift, annulusPoint, add_comm]
 
-
-
 theorem angularStripShift_contDiff (d : ℝ) : ContDiff ℝ ∞ (angularStripShift d) := by
   rw [show angularStripShift d = fun p => annulusPoint d 0 + p from
     funext (angularStripShift_eq_add d)]
   exact contDiff_const.add contDiff_id
-
-
-
 
 theorem periodic_strip_integral_shift
     (f : LoopPlane → ℝ) (hc : ContinuousOn f Strip)
@@ -81,16 +64,12 @@ theorem periodic_strip_integral_shift
   filter_upwards with s
   exact m64Periodic_integral_shift (f := fun x => f (annulusPoint x s)) hP (fun x => hp x s) d
 
-
-
 theorem phaseGradientDensity_angular_shift (L : LoopPlane → ℝ) (d : ℝ) (p : LoopPlane) :
     phaseGradientDensity (L ∘ angularStripShift d) p =
       phaseGradientDensity L (angularStripShift d p) := by
   have hfun : L ∘ angularStripShift d = fun q => L (annulusPoint d 0 + q) :=
     funext (fun q => congrArg L (angularStripShift_eq_add d q))
   simp only [phaseGradientDensity, hfun, fderiv_comp_add_left, angularStripShift_eq_add]
-
-
 
 theorem phaseGradientDensity_periodic
     (L : LoopPlane → ℝ) {d : ℝ}
@@ -109,9 +88,6 @@ theorem phaseGradientDensity_periodic
   rw [hfun] at hh
   simpa only [phaseGradientDensity, fderiv_add_const, angularStripShift, annulusPoint,
     Matrix.cons_val_zero, Matrix.cons_val_one] using hh.symm
-
-
-
 
 theorem phase_angular_shift_energy
     (L : LoopPlane → ℝ) (hL : ContDiffOn ℝ 1 L Strip) {d : ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.SpectralTraceOperatorNative
 import PoincareConjecture.Proofs.M03.Existence.VolterraContractionNative
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,7 +15,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.SpectralHeatNative
 
 variable {iota : Type*} {T r : ℝ} {K : NNReal}
-
 
 theorem exists_forcing_fixedPoint
     (R : ForcingSpace iota T → ForcingSpace iota T)
@@ -64,12 +55,10 @@ theorem exists_forcing_fixedPoint
   exact ⟨F, by simpa only [Metric.mem_closedBall, dist_zero_right] using hF,
     hfix, hiter, herror⟩
 
-
 def nonlinearForcingResidual (lambda : iota → NNReal)
     (N : (ℝ → State iota) → ForcingSpace iota T)
     (F : ForcingSpace iota T) : ForcingSpace iota T :=
   N (responseState lambda F)
-
 
 theorem exists_nonlinear_spectral_response [Countable iota]
     (hT : 0 ≤ T) (lambda : iota → NNReal)
@@ -106,7 +95,6 @@ theorem exists_nonlinear_spectral_response [Countable iota]
         integral_response_energy_le_of_memLp hT (Lp.memLp F) lambda
       _ = ‖F‖ ^ 2 := (forcing_norm_sq F).symm
       _ ≤ r ^ 2 := (sq_le_sq₀ (norm_nonneg F) hr).mpr hF
-
 
 def finiteProjection (s : Finset iota) : State iota →L[ℝ] State iota := by
   classical
@@ -155,7 +143,6 @@ theorem tendsto_finiteProjection (s : ℕ → Finset iota) (hs : Tendsto s atTop
       lp.hasSum_single (by norm_num : (2 : ENNReal) ≠ ∞) u
   simpa only [finiteProjection_eq_sum, Function.comp_def] using hsum.comp hs
 
-
 def forcingProjection (s : Finset iota) : ForcingSpace iota T →L[ℝ] ForcingSpace iota T :=
   (finiteProjection s).compLpL 2 (timeMeasure T)
 
@@ -180,8 +167,6 @@ theorem norm_forcingProjection_apply_le (s : Finset iota) (F : ForcingSpace iota
   filter_upwards [forcingProjection_coe s (forcingProjection s F), forcingProjection_coe s F]
     with t ht hF
   rw [ht, hF, finiteProjection_idempotent]
-
-
 
 theorem tendsto_forcingProjection (s : ℕ → Finset iota) (hs : Tendsto s atTop atTop)
     (F : ForcingSpace iota T) : Tendsto (fun N => forcingProjection (s N) F) atTop (𝓝 F) := by
@@ -221,7 +206,6 @@ theorem tendsto_forcingProjection (s : ℕ → Finset iota) (hs : Tendsto s atTo
   have hroot := Real.continuous_sqrt.continuousAt.tendsto.comp hnormSq
   simpa only [Function.comp_def, Real.sqrt_sq (norm_nonneg _), Real.sqrt_zero] using hroot
 
-
 theorem exists_projected_forcing_fixedPoint
     (R : ForcingSpace iota T → ForcingSpace iota T)
     (hr : 0 ≤ r) (hK : K < 1)
@@ -242,7 +226,6 @@ theorem exists_projected_forcing_fixedPoint
   refine ⟨F, hF, hfix, ?_⟩
   rw [← hfix, forcingProjection_idempotent]
 
-
 theorem projected_forcing_fixedPoint_error
     (R : ForcingSpace iota T → ForcingSpace iota T) (s : Finset iota)
     {F G : ForcingSpace iota T} (hF : ‖F‖ ≤ r) (hG : ‖G‖ ≤ r)
@@ -260,7 +243,6 @@ theorem projected_forcing_fixedPoint_error
     simpa only [sub_add_sub_cancel] using
       norm_add_le (G - forcingProjection s F) (forcingProjection s F - F)
   nlinarith
-
 
 theorem exists_projected_forcing_fixedPoints
     (R : ForcingSpace iota T → ForcingSpace iota T)
@@ -291,8 +273,6 @@ theorem exists_projected_forcing_fixedPoints
   · have h := ((tendsto_forcingProjection s hs F).sub_const F).norm.div_const (1 - (K : ℝ))
     simpa only [sub_self, norm_zero, zero_div] using h
 
-
-
 theorem tendsto_responseState_coeff_of_forcing [Countable iota]
     (hT : 0 ≤ T) (lambda : iota → NNReal) {F : ForcingSpace iota T}
     {G : ℕ → ForcingSpace iota T} (hG : Tendsto G atTop (𝓝 F))
@@ -305,7 +285,6 @@ theorem tendsto_responseState_coeff_of_forcing [Countable iota]
         ResponsePath iota T →L[ℝ] State iota).continuous
   have h := (heval.comp (responseOperator hT lambda).continuous).continuousAt.tendsto.comp hG
   simpa only [Function.comp_def, responseOperator_apply, responsePath_apply] using h
-
 
 theorem responseState_eq_zero_of_forcingProjection [Countable iota]
     (lambda : iota → NNReal) (s : Finset iota) (F : ForcingSpace iota T)
@@ -326,8 +305,6 @@ theorem responseState_eq_zero_of_forcingProjection [Countable iota]
   rw [heq]
   simp only [spectralMode, mul_zero, intervalIntegral.integral_zero, zero_add]
 
-
-
 theorem hasDerivWithinAt_responseState_coeff_of_continuous [Countable iota]
     (lambda : iota → NNReal) (F : ForcingSpace iota T) (i : iota)
     {f : ℝ → ℝ} (hf : ContinuousOn f (Icc (0 : ℝ) T))
@@ -347,8 +324,6 @@ theorem hasDerivWithinAt_responseState_coeff_of_continuous [Countable iota]
     hf (Ico_subset_Icc_self ht)).congr_of_mem hmode (Ico_subset_Icc_self ht)
   rw [← hmode t (Ico_subset_Icc_self ht)] at hd
   exact hd.mono_of_mem_nhdsWithin (Icc_mem_nhdsGE_of_mem ht)
-
-
 
 theorem projected_response_hasDerivWithinAt [Countable iota]
     (lambda : iota → NNReal) (s : Finset iota) (N : State iota → State iota)

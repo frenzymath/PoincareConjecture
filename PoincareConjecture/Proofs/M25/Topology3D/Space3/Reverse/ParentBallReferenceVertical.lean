@@ -4,17 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -69,10 +58,6 @@ private theorem reference_vertical_cutoff_integral_le (τ : ℝ) (hτ : 0 < τ)
     rw [hzero, zero_add] at hsplit
     rw [← hsplit]
     simpa only [neg_neg] using hbound (-τ) (by linarith only [hτ])
-
-
-
-
 
 theorem exists_reference_vertical_diffeomorph (L η : ℝ) (hL : 1 ≤ L) (hη : 0 < η) :
     ∃ f : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞,

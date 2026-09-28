@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Uniqueness
 import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
 
 theorem smooth_limit_of_eventual_jet_bounds
     {ι : Type*} {l : Filter ι} [l.IsCountablyGenerated] [l.NeBot]

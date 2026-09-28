@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.SquareModulus
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.UniformSpace.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport 3 X time I)
-
-
-
-
 
 theorem exists_compact_crossing_neighborhood {K : Set G.Point} (hK : IsCompact K)
     {D H : ℝ} (hD : 0 ≤ D) (hH : 0 ≤ H) :

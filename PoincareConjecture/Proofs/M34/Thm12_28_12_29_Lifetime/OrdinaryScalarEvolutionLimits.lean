@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.ScalarAnalyticConvergence
 import PoincareConjecture.Proofs.M34.Standard.MetricJetConvergence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.LocalRealization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11_tendsto_scalarEvolution_zero
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

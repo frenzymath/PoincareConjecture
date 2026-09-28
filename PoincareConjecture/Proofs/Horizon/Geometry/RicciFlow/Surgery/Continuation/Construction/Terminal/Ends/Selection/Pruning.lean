@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.Selection.Laminar
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,8 +35,6 @@ theorem tails_disjoint_or_subset_or_subset_of_core
       (connectedComponent_eq (D.tail_subset_component hxD)).symm
   exact C.tails_disjoint_or_subset_or_subset D hneck
     ⟨hpN, disjoint_left.mp hC hp⟩ ⟨hcomp ▸ hpN, disjoint_left.mp hD hp⟩
-
-
 
 theorem exists_disjoint_tail_subfamily {ι : Type v}
     (connection : LeviCivitaData g) (rho : ℝ)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.En
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.DensityBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.WeakDirichlet
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -21,7 +13,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 lemma fderiv_sq_le_gradient_energy (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n))
@@ -55,8 +46,6 @@ lemma fderiv_sq_le_gradient_energy (D : LeviCivitaData g)
 
 open LeviCivitaData.Dirichlet
 
-
-
 lemma gradient_energy_le_fderiv_sq (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n))
     {a : ℝ} (ha : 0 < a)
@@ -83,8 +72,6 @@ lemma gradient_energy_le_fderiv_sq (D : LeviCivitaData g)
     _ ≤ ‖fderiv ℝ f x‖ * (‖fderiv ℝ f x‖ / a) :=
       mul_le_mul_of_nonneg_left hzn (norm_nonneg _)
     _ = _ := by ring
-
-
 
 theorem integral_gradient_le_of_ellipticity (D : LeviCivitaData g)
     {R a b : ℝ} (ha : 0 < a)
@@ -141,8 +128,6 @@ theorem integral_gradient_le_of_ellipticity (D : LeviCivitaData g)
     (Eventually.of_forall fun x => mul_nonneg (hGn x) (hρ x).le)
     (hdi.const_mul _) (Eventually.of_forall hpoint)
 
-
-
 theorem integral_fderiv_sq_le_of_ellipticity (D : LeviCivitaData g)
     {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
     (hell : ∀ x ∈ Metric.ball 0 R, ∀ v : EuclideanSpace ℝ (Fin n),
@@ -195,7 +180,6 @@ theorem integral_fderiv_sq_le_of_ellipticity (D : LeviCivitaData g)
   rw [integral_const_mul, integral_const_mul, ← hint] at h
   rw [div_mul_eq_mul_div]
   exact (le_div_iff₀ hc).mpr (by simpa only [mul_comm] using h)
-
 
 lemma metric_poincare_of_density_bounds [NeZero n] (D : LeviCivitaData g)
     {R B c d : ℝ} (hR : 0 < R) (hB : 0 ≤ B) (hc : 0 < c) (hd : 0 ≤ d)
@@ -281,8 +265,6 @@ lemma metric_poincare_of_density_bounds [NeZero n] (D : LeviCivitaData g)
       gcongr
     _ = _ := by dsimp [G]; ring
 
-
-
 theorem metric_poincare_of_ellipticity [NeZero n] (D : LeviCivitaData g)
     {R a b : ℝ} (hR : 0 < R) (ha : 0 < a) (hb : 0 ≤ b)
     (hell : ∀ x ∈ Metric.ball 0 R, ∀ v : EuclideanSpace ℝ (Fin n),
@@ -294,8 +276,6 @@ theorem metric_poincare_of_ellipticity [NeZero n] (D : LeviCivitaData g)
   exact metric_poincare_of_density_bounds D hR hb (Real.sqrt_pos.mpr (pow_pos ha n))
     (Real.sqrt_nonneg _) (fun x hx v => (hell x hx v).2)
     (fun x hx => g.pullbackVolumeDensity_id_bounds x ha (hell x hx)) f
-
-
 
 theorem exists_weakDirichlet_of_ellipticity [NeZero n] (D : LeviCivitaData g)
     {R a b : ℝ} (hR : 0 < R) (ha : 0 < a) (hb : 0 ≤ b)

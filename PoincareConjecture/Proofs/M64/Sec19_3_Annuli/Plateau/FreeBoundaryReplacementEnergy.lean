@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusReplacement
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -32,10 +19,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
-
 
 theorem m64VariableModulus_boundary_replacement_energy
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
@@ -71,9 +54,6 @@ namespace M64FreeWeakPhaseAnnulus
 
 variable {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
 
-
-
-
 theorem weighted_boundary_local_energy_le
     (R : E →L[ℝ] LoopPlane)
     (A C : M64FreeWeakPhaseAnnulus (n := n) (m := m) e R c0 c1 H0 H1 k D)
@@ -93,10 +73,6 @@ theorem weighted_boundary_local_energy_le
     A.annulus C.annulus hK hKS f hf V hV hmap hcol
   rw [hE] at hminimum
   exact (add_le_add_iff_left _).mp (le_sub_iff_add_le.mp hminimum)
-
-
-
-
 
 theorem boundary_local_energy_le
     (R : E →L[ℝ] LoopPlane)

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParameters
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +16,6 @@ private theorem periodic_deriv {f : ℝ → AnnulusCoordinates} {P : ℝ}
   have hshift : (fun y => f (y + P)) = f := funext hf
   rw [← deriv_comp_add_const, hshift]
 
-
-
 theorem m64Intrinsic_boundarySpeed_periodic
     (N : IntrinsicAnnulus) (radius : ℝ) :
     Function.Periodic (intrinsicBoundarySpeed N.metric radius) rampPeriod := by
@@ -42,9 +27,6 @@ theorem m64Intrinsic_boundarySpeed_periodic
     Real.sqrt (N.metric.euclideanCoefficients (intrinsicAnnulusBoundary radius x) _ _)
   rw [m64Intrinsic_boundary_periodic radius x]
 
-
-
-
 theorem m64Intrinsic_boundaryUnitTangent_periodic
     (N : IntrinsicAnnulus) (radius : ℝ) :
     Function.Periodic (intrinsicBoundaryUnitTangent N.metric radius) rampPeriod := by
@@ -52,9 +34,6 @@ theorem m64Intrinsic_boundaryUnitTangent_periodic
   simp only [intrinsicBoundaryUnitTangent, m64Intrinsic_curveVelocity_eq_deriv,
     m64Intrinsic_boundarySpeed_periodic N radius x,
     periodic_deriv (m64Intrinsic_boundary_periodic radius) x]
-
-
-
 
 theorem m64Intrinsic_turning_density_periodic
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) :

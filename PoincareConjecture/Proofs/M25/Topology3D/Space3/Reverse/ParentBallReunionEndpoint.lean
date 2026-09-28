@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunionAxial
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunionProfile
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem reunion_axial_endpoint_image (P : SurgeryCapProfile)
     (a lambda ε : ℝ) (ha : 0 < a) (hlambda : 0 < lambda)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Reparametrization.Lift
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.RotatedResolutionWords
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ open scoped unitInterval
 namespace PoincareConjecture.M76.Dehn
 
 open PoincareConjecture Poincare.Manifold.Schoenflies
-
 
 theorem exists_real_homeomorph_lift_circle (q : UnitCircle ≃ₜ UnitCircle) :
     ∃ L : ℝ ≃ₜ ℝ, ∀ t, unitCircleExp (L t) = q (unitCircleExp t) := by
@@ -46,8 +38,6 @@ theorem exists_real_homeomorph_lift_circle (q : UnitCircle ≃ₜ UnitCircle) :
     continuous_toFun := L.continuous
     continuous_invFun := K.continuous }
   exact ⟨H, hLt⟩
-
-
 
 theorem real_circle_lift_orientation (q : UnitCircle ≃ₜ UnitCircle)
     (L : ℝ ≃ₜ ℝ) (hL : ∀ t, unitCircleExp (L t) = q (unitCircleExp t)) :
@@ -82,7 +72,6 @@ theorem real_circle_lift_orientation (q : UnitCircle ≃ₜ UnitCircle)
 
 variable {X : Type*} [TopologicalSpace X]
 
-
 theorem whiskeredLoopClass_change_path_mem_iff {b x : X}
     (J : Subgroup (FundamentalGroup X b)) [J.Normal]
     (p q : Path b x) (a : Path x x) :
@@ -92,13 +81,9 @@ theorem whiskeredLoopClass_change_path_mem_iff {b x : X}
     Path.whiskeredLoopClass_congr p (Path.Homotopic.refl_trans a)] at h
   exact h
 
-
-
 def realPathCircleLoop {x : ℝ} {n : ℤ} (a : Path x (x + n)) :
     Path (unitCircleExp x) (unitCircleExp x) :=
   (a.map contMDiff_unitCircleExp.continuous).cast rfl (unitCircleExp_add_int x n).symm
-
-
 
 theorem realPathCircleLoop_homotopic {x y : ℝ} {n : ℤ}
     (a : Path x (x + n)) (c : Path y (y + n)) :
@@ -128,8 +113,6 @@ theorem realPathCircleLoop_homotopic {x y : ℝ} {n : ℤ}
     Path.cast_trans _ _ rfl rfl (unitCircleExp_add_int y n).symm,
     Path.cast_rfl_rfl, he, realPathCircleLoop] using h'
 
-
-
 theorem realPathCircleLoop_mem_iff {x y : ℝ} {n : ℤ}
     (a : Path x (x + n)) (c : Path y (y + n)) (f : C(UnitCircle, X))
     {b : X} (J : Subgroup (FundamentalGroup X b)) [J.Normal]
@@ -147,7 +130,6 @@ theorem realPathCircleLoop_mem_iff {x y : ℝ} {n : ℤ}
   rw [he]
   exact whiskeredLoopClass_change_path_mem_iff J (p.trans d) q _
 
-
 theorem real_lift_add_int {L : ℝ → ℝ} {e : ℝ}
     (hp : ∀ t, L (t + 1) = L t + e) (t : ℝ) (n : ℤ) :
     L (t + n) = L t + n * e := by
@@ -159,8 +141,6 @@ theorem real_lift_add_int {L : ℝ → ℝ} {e : ℝ}
   have h := hper.int_mul n t
   simp only [mul_one] at h
   linarith
-
-
 
 theorem exists_realPathCircleLoop {z : UnitCircle} (rho : Path z z) :
     ∃ (x : ℝ) (n : ℤ) (a : Path x (x + n)) (hx : z = unitCircleExp x),
@@ -181,8 +161,6 @@ theorem exists_realPathCircleLoop {z : UnitCircle} (rho : Path z z) :
   apply Path.ext
   funext t
   exact (congrFun hA t).symm
-
-
 
 theorem circleLoop_homeomorph_mem_iff {z : UnitCircle} (rho : Path z z)
     (h : UnitCircle ≃ₜ UnitCircle) (f : C(UnitCircle, X))
@@ -238,8 +216,6 @@ theorem circleLoop_homeomorph_mem_iff {z : UnitCircle} (rho : Path z z)
         ((realPathCircleLoop a).map f.continuous))
       simpa only [basedPathWord_loop, inv_inv] using hh
     simpa only [hs, J.inv_mem_iff] using H'
-
-
 
 theorem circleLikeLoop_homeomorph_mem_iff
     {C : Type*} [TopologicalSpace C] (e : C ≃ₜ UnitCircle)

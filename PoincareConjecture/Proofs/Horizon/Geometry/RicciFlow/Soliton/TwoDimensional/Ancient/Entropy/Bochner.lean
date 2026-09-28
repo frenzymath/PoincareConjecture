@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hes
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.TraceBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,14 +18,12 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
 
-
 theorem integral_laplacian_eq_zero_compact (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f) :
     (∫ x, D.laplacian f x ∂g.volumeMeasure) = 0 := by
   simpa only [one_mul, D.inner_gradient, mvfderiv_const, zero_apply, integral_zero, neg_zero]
     using D.integral_mul_laplacian (u := fun _ => 1) contMDiff_const hf
       (HasCompactSupport.of_compactSpace _)
-
 
 theorem integral_laplacian_sq_eq_hessian_add_scalar_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f) :
@@ -77,7 +68,6 @@ theorem integral_laplacian_sq_eq_hessian_add_scalar_gradient (D : LeviCivitaData
     (HasCompactSupport.of_compactSpace _)
   simp only [← pow_two] at hgreen
   linarith
-
 
 theorem integral_scalar_gradient_le_laplacian_sq (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f) :

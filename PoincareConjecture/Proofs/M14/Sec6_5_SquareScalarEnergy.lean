@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
 
-
-
 theorem squareRoot_scalar_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p) :
     ContDiffOn ℝ ∞ (fun s => horizontalScalarCurvature G.leafwise (R.curve s))
@@ -32,8 +22,6 @@ theorem squareRoot_scalar_contDiffOn
   have H := (hM12.leafwise_calculus X time I G.spacetime G.slices
     G.timeIntervals G.gaugeCover).2 G.leafwise
   exact (H.scalar_smooth.comp_contMDiffOn (R.smooth.mono R.interval_subset)).contDiffOn
-
-
 
 theorem squareRoot_energy_contDiffOn (R : M14SquareRootPath G p) :
     ContDiffOn ℝ ∞ (fun s => G.spacetime.horizontalMetric.inner (R.curve s)
@@ -49,8 +37,6 @@ theorem squareRoot_energy_contDiffOn (R : M14SquareRootPath G p) :
     using (Bundle.contMDiffWithinAt_totalSpace.mp (hpair s hs)).2
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem squareRoot_scalar_hasDerivWithinAt
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -73,9 +59,6 @@ theorem squareRoot_scalar_hasDerivWithinAt
   convert hscalar using 1
   unfold M14BackwardTimeDerivative M14HorizontalScalarDifferential
   ring
-
-
-
 
 theorem squareRoot_energy_hasDerivWithinAt (R : M14SquareRootPath G p)
     (E : M14PullbackExtension G R.curve (M14SqrtParameterInterval τ₁ τ₂)

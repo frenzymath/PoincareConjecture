@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Statement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Surrounding
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,7 +24,6 @@ theorem neck_sphere_radial_bounds (N : EpsilonNeck g) (p : M)
   have h := abs_le.mp ((g.abs_toReal_edist_sub_le p N.center x).trans hdiam)
   constructor <;> linarith
 
-
 theorem radial_ball_subset_side
     [NoncompactSpace M] (S : RiemannianMetric.PointSoulData g)
     (N : EpsilonNeck g) {A B : Set M}
@@ -57,7 +44,6 @@ theorem radial_ball_subset_side
       simpa only [mem_ofPred_eq, RiemannianMetric.edist,
         Manifold.riemannianEDist_self, ENNReal.toReal_zero] using hr
     exact (Set.disjoint_left.mp hdisjoint hcenter (hright hp)).elim
-
 
 theorem compact_side_radial_bound
     [NoncompactSpace M] (S : RiemannianMetric.PointSoulData g)
@@ -83,8 +69,6 @@ theorem compact_side_radial_bound
           (isOpen_interior.mem_nhds hyinterior) (interior_subset.trans subset_closure))
       exact (neck_sphere_radial_bounds N S.center (hfrontier ▸ hyfrontier)).2
   exact fun x hx => (hmax hx).trans hbound
-
-
 
 theorem exists_quantitative_neck_regions
     [NoncompactSpace M] (S : RiemannianMetric.PointSoulData g)

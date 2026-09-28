@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.CompactMaximum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Parabolic
-
 
 lemma nonpos_of_deriv_le_mul_at_max_of_nonpos_outside_compact
     {X : Type*} [TopologicalSpace X]
@@ -46,8 +36,6 @@ lemma nonpos_of_deriv_le_mul_at_max_of_nonpos_outside_compact
     by_cases hp : p ∈ K
     · exact hsp ⟨p, hp⟩
     · exact (houtside p hp t ⟨ht.1.le, ht.2⟩).trans hpos.le
-
-
 
 lemma exists_compact_nonpos_outside_of_barrier
     {X I : Type*} [TopologicalSpace X]

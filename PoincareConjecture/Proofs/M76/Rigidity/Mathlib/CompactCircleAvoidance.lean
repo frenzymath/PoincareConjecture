@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AddCircle
-
-
-
-
 
 theorem exists_closed_phase_arcs_disjoint (p : ℝ) [Fact (0 < p)]
     {K : Set (AddCircle p)} (hK : IsCompact K) {a b r : ℝ}

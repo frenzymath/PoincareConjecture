@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLinearChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PlaneHessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +16,6 @@ universe u
 namespace PoincareConjecture.M65Boundary
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem exists_bounded_boundary_target_chart {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}

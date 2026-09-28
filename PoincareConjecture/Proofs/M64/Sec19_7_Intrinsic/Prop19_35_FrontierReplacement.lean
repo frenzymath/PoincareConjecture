@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.FirstLastFrontier
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionMinimizer
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -34,10 +30,6 @@ private theorem affine_variation_le
   rw [show a + (b - a) * s - (a + (b - a) * t) = (b - a) * (s - t) by ring,
     abs_mul, abs_of_nonneg (sub_nonneg.mpr hab)]
   ring
-
-
-
-
 
 theorem m64Intrinsic_exists_confined_competitor_of_frontier_segments
     (G : RiemannianMetric 2 AnnulusCoordinates) {K O : Set AnnulusCoordinates}

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeLower
 import PoincareConjecture.Proofs.M28.Generalized.MetricVolumeCalibration
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,16 +14,10 @@ universe u
 
 namespace PoincareConjecture.M28
 
-
-
 def strongNeckNoncollapseConstant : ℝ := normalizedNeckVolumeLowerConstant / 16 ^ 3
-
 
 theorem strongNeckNoncollapseConstant_pos : 0 < strongNeckNoncollapseConstant :=
   div_pos normalizedNeckVolumeLowerConstant_pos (by norm_num)
-
-
-
 
 theorem GeneralizedStrongNeck.scaled_ambient_ball_volume_lower
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}

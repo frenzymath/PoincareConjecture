@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularChartFlows
 import PoincareConjecture.Proofs.M47.TerminalRegularTerminalProjection
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableFiniteGerms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -63,8 +54,6 @@ local notation "chart" => (fun (j : ℕ) (a : {k : ℕ // j ≤ k}) =>
     (TerminalRegularStageData.cover (data (Subtype.val a) j (Subtype.property a))))
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem terminalSource_regular_finite_germs
     (P : M46Predecessors.{u}) (htau : ∀ j, 0 < tau j)

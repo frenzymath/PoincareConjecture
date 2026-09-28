@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ExteriorDiskAtt
 import PoincareConjecture.Proofs.M76.Wall.ProtectedOpenRegion
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ProtectedRelativeFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

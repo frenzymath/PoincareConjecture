@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Proofs.M03.CurvatureTrilinear
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 

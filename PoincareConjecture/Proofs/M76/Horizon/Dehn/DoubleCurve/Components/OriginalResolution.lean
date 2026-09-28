@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.WholeAf
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.OriginalResolutionWordExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +14,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem OriginalResolutionWordExclusionData.whole_double_components
     {X I : Type*} [TopologicalSpace X]

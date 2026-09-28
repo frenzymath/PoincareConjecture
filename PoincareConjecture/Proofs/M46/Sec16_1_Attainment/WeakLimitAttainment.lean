@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.WeakLimitSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem gauge_smooth_primitive_path (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} (htau : 0 < tau) (gamma : ℝ → G.Point)
@@ -56,9 +46,6 @@ theorem gauge_smooth_primitive_path (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
   intro i _
   exact gaugeCylinderAction_eq (R.gauge i) gamma (hsrc i)
     (R.monotone (Fin.castSucc_le_succ i)) (R.velocity i)
-
-
-
 
 theorem weak_limit_attained (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {T tau : ℝ} (htau : 0 < tau) (gamma : ℝ → G.Point) (hgamma : Continuous gamma)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 import PoincareConjecture.Proofs.M13.MetricCalculus
 import PoincareConjecture.Proofs.M51.EventMaximality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m56Slice_nonempty_of_le (F : SurgeryFlowData.{u})
     {s t : ℝ} (hs : s ∈ F.time_domain) (ht : t ∈ F.time_domain)
     (hst : s ≤ t) (hne : Nonempty (F.slice t).carrier) :
@@ -31,8 +18,6 @@ theorem m56Slice_nonempty_of_le (F : SurgeryFlowData.{u})
   by_contra h
   obtain ⟨x⟩ := hne
   exact (F.extinction_permanent s t hs ht hst ⟨fun y => h ⟨y⟩⟩).false x
-
-
 
 theorem m56Event_gap (F : SurgeryFlowData.{u}) {T : ℝ}
     (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier] :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.RestrictedFans
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +14,6 @@ open Classical
 
 namespace PoincareConjecture.Topology.Surface
 
-
 theorem exists_triangle_interior_containing_bounded {C : Set Plane}
     (hC : Bornology.IsBounded C) :
     ∃ b : AffineBasis (Fin 3) ℝ Plane, C ⊆ interior (convexHull ℝ (range b)) := by
@@ -34,9 +23,6 @@ theorem exists_triangle_interior_containing_bounded {C : Set Plane}
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
-
 
 theorem single_refineByLines_restrict_vertex_fan_add_compl
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTrianglePointwiseGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -106,10 +95,6 @@ theorem partialProjection_fiber_coordinate (label : Triangle K → ℝ)
     x.1.1 = y.1.1 := by
   apply Subtype.ext_iff.mp at hxy
   exact hxy
-
-
-
-
 
 noncomputable def partialProjectionHomeomorph_of_complete
     (hK : K.faces.Finite)

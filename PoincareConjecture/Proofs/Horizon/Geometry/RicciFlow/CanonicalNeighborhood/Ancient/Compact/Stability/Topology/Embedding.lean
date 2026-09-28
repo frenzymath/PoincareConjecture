@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.LimitEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +20,6 @@ variable {kappa : ℝ} {source target : BasedKappaSolution kappa}
   (e : NormalizedKappaSpacetimeEmbedding (source := source) (target := target) (J ×ˢ U))
   {t : ℝ} (ht : t ∈ J)
 
-
 theorem spatial_inverse_contMDiffOn (ht : t ∈ J) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (fun y ↦ (e.inverse (t, y)).2)
       ((fun x ↦ (e.toFun (t, x)).2) '' U) := by
@@ -42,7 +30,6 @@ theorem spatial_inverse_contMDiffOn (ht : t ∈ J) :
   intro y hy
   exact ((e.smooth_inverse_on.comp
     (contMDiff_const.prodMk contMDiff_id).contMDiffOn hmaps) y hy).snd
-
 
 noncomputable def spatialHomeomorph (hU : IsOpen U) :
     OpenPartialHomeomorph target.carrier.carrier source.carrier.carrier := by

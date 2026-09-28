@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.BoundaryDistance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.MixedBoundary
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_frontier_edist_lower_of_boundary_contact :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -80,8 +66,6 @@ theorem exists_frontier_edist_lower_of_boundary_contact :
     _ ≤ g.edist x z + g.edist z y := Manifold.riemannianEDist_triangle
     _ ≤ ENNReal.ofReal ((0.51 : ℝ) * C.end_neck.scale * D.epsilon⁻¹) + g.edist z y :=
       add_le_add hdiam le_rfl
-
-
 
 theorem exists_frontier_edist_lower_of_mixed_boundary :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

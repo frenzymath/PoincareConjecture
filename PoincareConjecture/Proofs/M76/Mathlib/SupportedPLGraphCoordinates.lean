@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import Mathlib.Analysis.Convex.Combination
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem AffineOnFaces.graph_vertex_bounds
     {K : SimplicialComplex ℝ E} {g : E → ℝ × E} (hg : K.AffineOnFaces g)
@@ -82,11 +67,6 @@ theorem AffineOnFaces.graph_vertex_bounds
     · simp [hgraph]
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_supported_graph_extension (J K : SimplicialComplex ℝ E)
     (hJ : J.faces.Finite) (hK : K.faces.Finite) (hJK : J.space ⊆ K.space)

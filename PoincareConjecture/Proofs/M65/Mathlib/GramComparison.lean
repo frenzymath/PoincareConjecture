@@ -1,20 +1,9 @@
 import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearMap
-
-
 
 theorem gramDet_two_le_of_quadratic_bound {E : Type*}
     [TopologicalSpace E] [AddCommGroup E] [Module ℝ E]

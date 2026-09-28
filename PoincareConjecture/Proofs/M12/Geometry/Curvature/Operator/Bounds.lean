@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M12.LinearAlgebra.BilinearForm.Trace
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Harnack.TwoForm
 import PoincareConjecture.Definitions.Ch04.Harnack
 
-
-
-
-
-
-
-
-
-
 open scoped BigOperators
 
 namespace Poincare.Geometry.Curvature.Operator
 
 variable {I : Type*} [Fintype I] [DecidableEq I]
-
 
 noncomputable def halfWedge (v : I → ℝ) (a i j : I) : ℝ :=
   (v i * (if j = a then 1 else 0) -

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 import PoincareConjecture.Proofs.M47.TerminalCurvatureUniformScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Bilinear" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalCurvature_compact_coefficient_bounds
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)
@@ -47,8 +37,6 @@ theorem terminalCurvature_compact_coefficient_bounds
   intro j hj
   exact ((hC ⟨j, by omega⟩ x hx).trans (hC1 ⟨j, by omega⟩)).trans
     ((le_max_right _ _).trans (le_max_right _ _))
-
-
 
 theorem terminalCurvature_eventually_compact_coefficient_bounds
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)

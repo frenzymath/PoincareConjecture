@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -245,8 +237,6 @@ private theorem euclideanConnection_smooth :
   simp [ContinuousLinearMap.inCoordinates, euclideanConnection,
     ContinuousLinearMap.one_def]
   rfl
-
-
 
 noncomputable def euclideanLeviCivitaData
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) : LeviCivitaData g where

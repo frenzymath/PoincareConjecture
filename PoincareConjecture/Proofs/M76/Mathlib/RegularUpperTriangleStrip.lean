@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RegularApexTriangleStrip
 import PoincareConjecture.Proofs.M76.Mathlib.PLSquareReflection
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevelUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLStrip
@@ -18,10 +9,6 @@ open Set Geometry PLStrip
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_upper_triangle_strip (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ}
     (hi : AffineIndependent ℝ ![v, u, w])

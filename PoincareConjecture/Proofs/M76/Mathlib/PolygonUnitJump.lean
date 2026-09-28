@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCrossingJump
 import Mathlib.Topology.Order.LeftRight
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter PlanarSegment
 open scoped Topology
 
 namespace Polygon
-
-
-
 
 theorem exists_crossingIndex_unit_jump {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (hnv : P.HasNonverticalEdges) :

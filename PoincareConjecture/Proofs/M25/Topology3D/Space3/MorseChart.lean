@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.MorseCoefficients
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.MorseSquareCompletion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_morse_chart_zero (hdim : Module.finrank ℝ E = 2)
     (f : E → ℝ) (hf : ContDiff ℝ ∞ f) (hzero : fderiv ℝ f 0 = 0)
@@ -49,9 +37,6 @@ theorem exists_morse_chart_zero (hdim : Module.finrank ℝ E = 2)
     rw [L.apply_symm_apply] at h
     change f x = f 0 + σ * (e0 (L.symm x)).1 ^ 2 + τ * (e0 (L.symm x)).2 ^ 2
     linarith
-
-
-
 
 theorem exists_morse_chart (hdim : Module.finrank ℝ E = 2)
     (f : E → ℝ) {U : Set E} (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U)

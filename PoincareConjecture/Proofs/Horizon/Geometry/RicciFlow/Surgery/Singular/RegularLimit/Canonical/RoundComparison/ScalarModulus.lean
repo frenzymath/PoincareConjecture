@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.MetricJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedSpatialContact
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,7 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ}
 
-
 def metricDifferenceTensor
     (g h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) :
     CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2 :=
@@ -35,8 +28,6 @@ theorem metricDifferenceTensor_isSmooth
     IsSmoothCovariantTensor (metricDifferenceTensor g h) :=
   (Poincare.RicciFlow.Harnack.metric_isSmoothCovariantTensor h).sub
     (Poincare.RicciFlow.Harnack.metric_isSmoothCovariantTensor g)
-
-
 
 theorem tendsto_scalarCurvature_of_covariant_metric_jets
     {ι : Type*} {l : Filter ι}
@@ -68,8 +59,6 @@ theorem tendsto_scalarCurvature_of_covariant_metric_jets
   simp_rw [hid] at he
   simpa only [sub_add_cancel, zero_add] using he.add_const
     (iteratedFDeriv ℝ r (fun y => g.inner y (b a) (b c)) x)
-
-
 
 theorem exists_scalar_control_of_covariant_metric_twoJet
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

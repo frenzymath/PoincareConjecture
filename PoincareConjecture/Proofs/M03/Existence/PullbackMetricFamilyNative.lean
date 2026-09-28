@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.PullbackMetricNative
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

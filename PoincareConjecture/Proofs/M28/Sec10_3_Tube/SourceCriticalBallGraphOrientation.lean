@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.RetainedWitnessLabel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallGraphLabels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_retained_initial_graph_orientation (H : CounterexampleNeckFamily E)
     (W : CriticalBallSourcePacket H)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.Approximation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Spectral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -85,8 +76,6 @@ theorem tendstoUniformlyOn_integral_of_exhaustion
       simpa only [hkernel] using hbound p.1 hp.1 p.2 hp.2 y
     simpa only [mul_left_comm] using mul_le_mul_of_nonneg_left hk' (abs_nonneg (u j y - f y))
   exact hestimate.trans_lt hj
-
-
 
 theorem tendstoLocallyUniformlyOn_integral_of_exhaustion
     (H : ConservativeHeatKernelData g) (D : LeviCivitaData g)

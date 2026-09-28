@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedSampling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -18,8 +8,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_uniform_shifted_rounded_sampling_estimates {X : Type*} [PseudoMetricSpace X]
     {K : Set X} (hK : IsCompact K) {c d : X → ℝ → E} {l u : ℝ}

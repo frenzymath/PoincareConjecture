@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AttachedReturnBands
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +19,6 @@ variable (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
     (collarParameterEquiv.trans L).toHomeomorph.toOpenPartialHomeomorph
     lo a b ua wa ub wb ra rb)
 
-
-
-
-
 theorem m64Intrinsic_band_left_parameter {u : ℝ} (hu : u ∈ B.cuts.left.parameter.source) :
     B.coordinates (collarParameterEquiv.symm (0, B.cuts.left.parameter u)) =
       L (a, lo a) + u • L (ua, wa) := by
@@ -48,10 +32,6 @@ theorem m64Intrinsic_band_left_parameter {u : ℝ} (hu : u ∈ B.cuts.left.param
   rw [B.cuts.left.horizontal_parameter hu, B.cuts.left.map_eq, ← map_smul, ← map_add]
   congr 1
   ext <;> simp [transverseCutHeight, smul_eq_mul]
-
-
-
-
 
 theorem m64Intrinsic_band_right_parameter {u : ℝ} (hu : u ∈ B.cuts.right.parameter.source) :
     B.coordinates (collarParameterEquiv.symm (1, B.cuts.right.parameter u)) =
@@ -67,10 +47,6 @@ theorem m64Intrinsic_band_right_parameter {u : ℝ} (hu : u ∈ B.cuts.right.par
   rw [B.cuts.right.horizontal_parameter hu, B.cuts.right.map_eq, ← map_smul, ← map_add]
   congr 1
   ext <;> simp [transverseCutHeight, smul_eq_mul]
-
-
-
-
 
 theorem m64Intrinsic_band_open_left_ray :
     (fun u : ℝ => L (a, lo a) + u • L (ua, wa)) '' Ioo 0 ra ⊆
@@ -93,10 +69,6 @@ theorem m64Intrinsic_band_open_left_ray :
   rw [div_mul_cancel₀ _ hh.ne']
   exact m64Intrinsic_band_left_parameter L B hus
 
-
-
-
-
 theorem m64Intrinsic_band_open_right_ray :
     (fun u : ℝ => L (b, lo b) + u • L (ub, wb)) '' Ioo 0 rb ⊆
       (B.endpointEdge true).map '' Ioo (0 : ℝ) 1 := by
@@ -118,9 +90,6 @@ theorem m64Intrinsic_band_open_right_ray :
   rw [div_mul_cancel₀ _ hh.ne']
   exact m64Intrinsic_band_right_parameter L B hus
 
-
-
-
 theorem m64Intrinsic_band_left_tip_mem_top :
     L (a, lo a) + ra • L (ua, wa) ∈ B.polygonalTop := by
   rw [← B.height_graph_image]
@@ -128,9 +97,6 @@ theorem m64Intrinsic_band_left_tip_mem_top :
   change B.coordinates (collarParameterEquiv.symm (0, B.height 0)) = _
   rw [B.height_zero]
   exact m64Intrinsic_band_left_parameter L B B.interface.left_parameter_mem
-
-
-
 
 theorem m64Intrinsic_band_right_tip_mem_top :
     L (b, lo b) + rb • L (ub, wb) ∈ B.polygonalTop := by
@@ -141,10 +107,6 @@ theorem m64Intrinsic_band_right_tip_mem_top :
   exact m64Intrinsic_band_right_parameter L B B.interface.right_parameter_mem
 
 end OneBand
-
-
-
-
 
 theorem m64Intrinsic_band_shared_cut_interior
     (L L' : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)

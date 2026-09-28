@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_EulerGaugePhase
 import PoincareConjecture.Proofs.M14.Sec6_3_PhasePath
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +16,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem exists_initialValuePath_realizing_phase_continuation
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

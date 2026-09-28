@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySourc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutSides
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilySourceAtlas.height_critical_iff
     {original : UnitTwoSphere × ℝ → E3}
@@ -80,7 +69,6 @@ theorem FamilySourceAtlas.height_critical_iff
     exact congrArg
       (fun L : TangentSpace (𝓡 2) (ret p) →L[ℝ] ℝ =>
         L (mfderiv (𝓡 2) (𝓡 2) ret p v)) hfzero
-
 
 theorem FamilySourceAtlas.morse_chart
     {original : UnitTwoSphere × ℝ → E3}
@@ -159,7 +147,6 @@ theorem FamilySourceAtlas.morse_chart
       sigma * (oldChart (ret x)).1 ^ 2 + tau * (oldChart (ret x)).2 ^ 2
   rw [hcentral x hx.1, hcenterEq]
   exact hold
-
 
 theorem FamilySourceAtlas.sourceCore_critical_subsingleton
     {original : UnitTwoSphere × ℝ → E3}

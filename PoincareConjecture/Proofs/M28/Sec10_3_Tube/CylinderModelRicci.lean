@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetReadout
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,8 +32,6 @@ private theorem cylinderModelMetricCoefficient_projection_apply (x v w : CE) :
   rw [cylinderModelMetricCoefficient_apply]
   rfl
 
-
-
 theorem cylinderModelMetricCoefficient_fderiv_apply (x u v w : CE) :
     fderiv ℝ cylinderModelMetricCoefficient x u v w =
       2 * (-64 / (‖cylinderSphereProjection x‖ ^ 2 + 4) ^ 3) *
@@ -61,15 +50,11 @@ theorem cylinderModelMetricCoefficient_fderiv_apply (x u v w : CE) :
     innerSL_apply_apply, smul_eq_mul] at heq
   exact heq.trans (by ring)
 
-
-
 theorem cylinderModelTwoJet_first_eq_zero : cylinderModelTwoJet.2.1 = 0 := by
   ext u v w
   change fderiv ℝ cylinderModelMetricCoefficient 0 u v w = 0
   rw [cylinderModelMetricCoefficient_fderiv_apply]
   simp
-
-
 
 theorem cylinderModelTwoJet_second_apply (u v w z : CE) :
     cylinderModelTwoJet.2.2 u v w z =
@@ -122,8 +107,6 @@ private theorem cylinderModelMetricCoefficient_zero_coordinates (v w : CE) :
   norm_num [sphereChartConformalFactor, EuclideanSpace.inner_eq_star_dotProduct,
     dotProduct, Fin.sum_univ_two, mul_comm]
 
-
-
 theorem cylinderModelTwoJet_inverse_coefficient (i j : Fin 3) :
     EuclideanSpace.proj j (cylinderModelTwoJet.1.inverse (EuclideanSpace.proj i)) =
       if i = j then (cylinderGramDiagonal 0 i)⁻¹ else 0 := by
@@ -160,8 +143,6 @@ private theorem cylinderModelTwoJet_christoffel (u v : CE) :
     jetChristoffel cylinderModelTwoJet u v = 0 := by
   simp [jetChristoffel, cylinderModelTwoJet_first_eq_zero, metricKoszulCovector]
 
-
-
 theorem cylinderModelTwoJet_curvature (u w v z : CE) :
     jetCurvature cylinderModelTwoJet u w v z =
       2 * (inner ℝ (cylinderSphereProjection u) (cylinderSphereProjection v) *
@@ -172,8 +153,6 @@ theorem cylinderModelTwoJet_curvature (u w v z : CE) :
     cylinderModelTwoJet_christoffel, cylinderModelTwoJet_second_apply,
     zero_apply, map_zero, neg_zero, add_zero, sub_zero]
   ring
-
-
 
 theorem cylinderModelTwoJet_ricci (u v : CE) :
     jetRicci cylinderModelTwoJet u v =

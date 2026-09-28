@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Orig
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.Darts.EulerParity
 import PoincareConjecture.Proofs.M76.Wall.OriginalComponentResidualEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains AbstractSimplicialComplex

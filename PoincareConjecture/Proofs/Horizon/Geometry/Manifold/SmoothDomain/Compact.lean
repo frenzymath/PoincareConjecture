@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothDomain.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.CompactCutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sard.Nullity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold
-
-
 
 theorem exists_compact_smooth_neighborhood
     {n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

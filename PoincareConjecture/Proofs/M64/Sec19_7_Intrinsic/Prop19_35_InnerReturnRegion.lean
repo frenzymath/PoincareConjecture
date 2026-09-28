@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParameters
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,10 +8,6 @@ open Set Function
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_embedded_inner_return_region
     {gamma : ℝ → AnnulusCoordinates} {a b T : ℝ}
@@ -91,11 +74,6 @@ theorem m64Intrinsic_embedded_inner_return_region
     m64Intrinsic_exists_region_between_arcs hc hq hci hqi hc0 hc1 hmeet
   rw [hcimage, hqimage] at hcover hfU hfV
   exact ⟨U, V, hU, hV, hpU, hpV, hbU, hbV, hd, hcover, hfU, hfV, hcompact⟩
-
-
-
-
-
 
 theorem m64Intrinsic_regular_inner_return_jordan
     {gamma : ℝ → AnnulusCoordinates} {a T : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureJets
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetReadout
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -94,8 +85,6 @@ private theorem affine_second_derivative
     (hf.fderiv_right (m := ∞) (by simp)).clm_apply contDiffAt_const
   exact affine_first_derivative s (hdf.differentiableAt (by simp)) j
 
-
-
 theorem exists_half_cylinder_metricTwoJet_bound :
     ∃ L : ℝ, 0 < L ∧ ∀ (epsilon u : ℝ), 0 < epsilon →
       u ∈ Icc (-(1 / 2 : ℝ)) 0 →
@@ -163,8 +152,6 @@ theorem exists_half_cylinder_metricTwoJet_bound :
     metricTwoJet_sub_of_smooth hF (contDiff_evolvingCylinderModelCoefficient u).contDiffAt
   rw [dist_eq_norm, ← hdiff]
   simpa only [mul_assoc] using hn
-
-
 
 theorem exists_half_cylinder_curvature_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

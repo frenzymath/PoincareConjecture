@@ -86,4 +86,3 @@ theorem exists_hamiltonZero_compressed_third_paired_phase_connected_cover
     | inr j => simpa [V, h] using hcU j
 
 end PoincareConjecture.M76
-

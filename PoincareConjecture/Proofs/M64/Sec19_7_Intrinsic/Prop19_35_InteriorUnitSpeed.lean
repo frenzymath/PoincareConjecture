@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InteriorGeodesi
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_unit_tangentNorm_of_local_metric_segment
     (G : RiemannianMetric 2 AnnulusCoordinates) {gamma : ℝ → AnnulusCoordinates}
@@ -80,9 +68,6 @@ theorem m64Intrinsic_unit_tangentNorm_of_local_metric_segment
     rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg d), Real.sqrt_sq hd.le]
   rw [hscale] at hreal
   exact (mul_left_cancel₀ hd.ne' (hreal.trans (mul_one d).symm))
-
-
-
 
 theorem m64Intrinsic_constrained_minimizer_interior_unit_speed
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

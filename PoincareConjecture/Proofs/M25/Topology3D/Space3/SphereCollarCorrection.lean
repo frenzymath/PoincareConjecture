@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereInterpolation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_sphere_collar_correction (f : E → E) {U : Set E}
     (hU : IsOpen U) (hSU : sphere (0 : E) 1 ⊆ U)

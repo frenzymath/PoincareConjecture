@@ -1,27 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleIntegration
 import PoincareConjecture.Proofs.M03.Existence.SpectralSmallTimeNative
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64AnnulusPoint_vertical_hasDerivAt (x t : ℝ) :
     HasDerivAt (annulusPoint x) (EuclideanSpace.single (1 : Fin 2) 1) t := by
@@ -34,8 +19,6 @@ theorem m64AnnulusPoint_vertical_hasDerivAt (x t : ℝ) :
   simpa only [one_smul, id_eq] using
     ((hasDerivAt_id t).smul_const (EuclideanSpace.single (1 : Fin 2) 1)).const_add
       (annulusPoint x 0)
-
-
 
 theorem m64Annulus_vertical_trace_sq_le
     {f : LoopPlane → ℝ} (hf : ContDiff ℝ 1 f) (x : ℝ) {s : ℝ}
@@ -62,8 +45,6 @@ theorem m64Annulus_vertical_trace_sq_le
   exact setIntegral_mono_set ((hd.pow 2).integrableOn_Icc)
     (Eventually.of_forall fun t => sq_nonneg (d t))
     (Eventually.of_forall fun t ht => ⟨ht.1.le, ht.2.trans hs.2⟩)
-
-
 
 theorem m64Annulus_lower_trace_l2_estimate
     {f : LoopPlane → ℝ} (hf : ContDiff ℝ 1 f) {s : ℝ}

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Matching.Transport
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +28,6 @@ theorem shear_sphere_smoothEmbedding (b : Real) :
     ((hc p).mdifferentiableAt (by simp))]
   apply ((shear b).mfderivToContinuousLinearEquiv (by simp) (p : E3)).injective.comp
   convert! injective_mvfderiv_subtypeVal_sphere p
-
-
 
 theorem exists_filled_nested_saddle_matching
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

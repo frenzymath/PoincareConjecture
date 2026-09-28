@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M08.SecondVariationCommutation
 import PoincareConjecture.Proofs.M09.SmoothTangentChartPhase
 import PoincareConjecture.Proofs.M09.CompactFieldExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem pullback_chart_field_coordinates [T2Space M]
     (D : LeviCivitaData g) (p : M) {gamma : ℝ → M} {x : ℝ}
@@ -61,8 +50,6 @@ theorem pullback_chart_field_coordinates [T2Space M]
     (M04.shiChart_mfderiv_isInvertible hc hi hsource).inverse_apply_self _
   rw [hcancel] at h
   exact h.symm
-
-
 
 theorem pullback_curvature_commute [T2Space M]
     (D : LeviCivitaData g) (c : ℝ → ℝ → M)

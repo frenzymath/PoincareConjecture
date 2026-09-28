@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -171,11 +160,6 @@ private theorem repaired_zero_positive_approach
     (subset_convexHull ℝ _ (mem_image_of_mem f hv)) (by simpa only [hxB] using hvB)
   have h := closure_mono (inter_subset_inter_left _ hface) hlimit
   simpa only [hxB] using h
-
-
-
-
-
 
 theorem exists_repaired_crossed_link_bands
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

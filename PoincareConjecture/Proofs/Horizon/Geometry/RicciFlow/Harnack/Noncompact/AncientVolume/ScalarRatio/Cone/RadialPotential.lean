@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +11,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 theorem endpoint_eq_of_quadratic_interpolation
     {F : ℝ → ℝ} {a c : ℝ} (hF : HasDerivAt F a 0)
@@ -54,9 +37,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_smooth_normal_potential_of_geodesic_quadratic
     (g : RiemannianMetric n M) (f : M → ℝ) (p : M)

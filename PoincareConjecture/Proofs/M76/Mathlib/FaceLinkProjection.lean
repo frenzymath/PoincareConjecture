@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AbstractSimplicialComplex
@@ -21,8 +12,6 @@ section Algebraic
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
   [DecidableEq E]
-
-
 
 def faceLink (K : SimplicialComplex 𝕜 E) (s : Finset E) : SimplicialComplex 𝕜 E where
   faces := {t | t ∈ K.faces ∧ Disjoint s t ∧ s ∪ t ∈ K.faces}
@@ -36,18 +25,12 @@ def faceLink (K : SimplicialComplex 𝕜 E) (s : Finset E) : SimplicialComplex �
         (Finset.union_nonempty.mpr (Or.inr hu))⟩
   inter_subset_convexHull ht hu := K.inter_subset_convexHull ht.1 hu.1
 
-
-
 theorem faceLink_le_closedFaceStar (K : SimplicialComplex 𝕜 E) (s : Finset E) :
     K.faceLink s ≤ K.closedFaceStar s := fun _ ht => ⟨ht.1, ht.2.2⟩
-
-
 
 theorem finite_faceLink_faces {K : SimplicialComplex 𝕜 E}
     (hK : K.faces.Finite) (s : Finset E) : (K.faceLink s).faces.Finite :=
   hK.subset (fun _ ht => ht.1)
-
-
 
 theorem faceLink_vertices_subset (K : SimplicialComplex 𝕜 E) (s : Finset E) :
     (K.faceLink s).vertices ⊆ K.vertices \ (s : Set E) := by
@@ -55,9 +38,6 @@ theorem faceLink_vertices_subset (K : SimplicialComplex 𝕜 E) (s : Finset E) :
   refine ⟨hx.1, ?_⟩
   intro hxs
   exact Finset.disjoint_left.mp hx.2.1 hxs (Finset.mem_singleton_self x)
-
-
-
 
 theorem sdiff_mem_faceLink_or_empty (K : SimplicialComplex 𝕜 E) (s : Finset E)
     {t : Finset E} (ht : t ∈ (K.closedFaceStar s).faces) :
@@ -87,9 +67,6 @@ private theorem image_union_of_zero_on (f : E →ᵃ[ℝ] F) {s : Finset E}
       exact ⟨x, hx, hf x hx⟩
   rw [hsimage, singleton_union]
 
-
-
-
 theorem affine_image_closedFaceStar (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (f : E →ᵃ[ℝ] F)
     (hf : ∀ x ∈ s, f x = 0) :
@@ -118,9 +95,6 @@ theorem affine_image_closedFaceStar (K : SimplicialComplex ℝ E)
     rw [← image_union_of_zero_on f hsne hf, ← f.image_convexHull] at hyt
     obtain ⟨x, hx, rfl⟩ := hyt
     exact mem_image_of_mem f (convexHull_subset_space hst hx)
-
-
-
 
 theorem affine_image_closedFaceStar_eq_radialCone (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) (f : E →ᵃ[ℝ] F)

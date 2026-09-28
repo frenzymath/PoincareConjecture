@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ChartLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65Projected_tendsto_continuousMap
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

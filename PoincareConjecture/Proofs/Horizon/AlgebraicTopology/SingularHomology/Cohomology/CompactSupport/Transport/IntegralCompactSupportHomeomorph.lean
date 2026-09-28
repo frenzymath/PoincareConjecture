@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.IntegralCompactCohomologyOpenMap
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralRelativeChains
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

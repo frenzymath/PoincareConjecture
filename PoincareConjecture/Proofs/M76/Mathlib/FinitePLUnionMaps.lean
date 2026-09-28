@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Geometry
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem FinitePiecewiseAffineOn.iUnion {ι : Type*} [Finite ι]
     {f : E → F} {s : ι → Set E} (hs : ∀ i, FinitePiecewiseAffineOn f (s i)) :
     FinitePiecewiseAffineOn f (⋃ i, s i) := by
@@ -30,9 +18,6 @@ theorem FinitePiecewiseAffineOn.iUnion {ι : Type*} [Finite ι]
   have hfK := finitePiecewiseAffineOn_of_finite_cover K hK J hJ hfaces
     (fun _ hx => hKspace ▸ hx)
   simpa only [hKspace, hspace] using hfK
-
-
-
 
 theorem finitePiecewiseAffineOn_union {f : E → F} {s u : Set E}
     (hs : FinitePiecewiseAffineOn f s) (hu : FinitePiecewiseAffineOn f u) :
@@ -50,10 +35,6 @@ theorem finitePiecewiseAffineOn_union {f : E → F} {s u : Set E}
 end Geometry
 
 namespace Homeomorph
-
-
-
-
 
 theorem exists_union_finitePL {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

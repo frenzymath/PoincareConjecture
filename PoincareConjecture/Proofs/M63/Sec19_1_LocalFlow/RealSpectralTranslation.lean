@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSpectralTranslation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealPeriodicJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -17,17 +9,11 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ}
 
-
-
-
 noncomputable def realPeriodicSpectralTranslation (a : ℝ) :
     State (ℤ × Fin 2) →L[ℝ] State (ℤ × Fin 2) :=
   complexLpRealEquiv.toContinuousLinearEquiv.toContinuousLinearMap.comp
     (((periodicSpectralTranslation (L := L) a).restrictScalars ℝ).comp
       complexLpRealEquiv.symm.toContinuousLinearEquiv.toContinuousLinearMap)
-
-
-
 
 theorem realPeriodicSpectralTranslation_spec (a : ℝ) (u : State (ℤ × Fin 2)) :
     complexLpRealEquiv.symm (realPeriodicSpectralTranslation (L := L) a u) =
@@ -40,9 +26,6 @@ theorem realPeriodicSpectralTranslation_spec (a : ℝ) (u : State (ℤ × Fin 2)
     rw [complexLpRealEquiv.norm_map, (periodicSpectralTranslation_spec a _).2,
       complexLpRealEquiv.symm.norm_map]
 
-
-
-
 theorem continuous_realPeriodicSpectralTranslation :
     Continuous (fun p : ℝ × State (ℤ × Fin 2) =>
       realPeriodicSpectralTranslation (L := L) p.1 p.2) := by
@@ -51,10 +34,6 @@ theorem continuous_realPeriodicSpectralTranslation :
     continuous_fst.prodMk (e.symm.continuous.comp continuous_snd)
   have hc := (continuous_periodicSpectralTranslation (L := L)).comp harg
   exact e.continuous.comp hc
-
-
-
-
 
 theorem realPeriodicSpectralTranslation_real_weight (m : ℤ → ℝ)
     (u v : State (ℤ × Fin 2)) (h : ∀ p, v p = m p.1 * u p) (a : ℝ) :
@@ -75,9 +54,6 @@ theorem realPeriodicSpectralTranslation_real_weight (m : ℤ → ℝ)
     (m n : ℂ) * (fourier n (-(a : AddCircle L)) * complexLpRealEquiv.symm u n)
   rw [hc n]
   ring
-
-
-
 
 theorem realPeriodicJet_spectralTranslation [Fact (0 < L)]
     (k j : ℕ) (hj : j ≤ k) (u : State (ℤ × Fin 2)) (a : ℝ) :

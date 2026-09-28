@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.MonotonePeriodicLipschitz
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularConvergence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,9 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
 
 theorem m64ObservedCurve_deriv_ne_zero
     {e : M → E} (he : ContMDiff (𝓡 n) (𝓡 m) ∞ e)
@@ -45,9 +34,6 @@ theorem m64ObservedCurve_deriv_ne_zero
   apply hregular t
   apply M60.suChartReadable_differential_injective he hread (c t)
   rw [← hchain, hz, map_zero]
-
-
-
 
 theorem m64ClosedC1Trace_exists_degreeOneLift
     {e : M → E} (he : ContMDiff (𝓡 n) (𝓡 m) ∞ e)

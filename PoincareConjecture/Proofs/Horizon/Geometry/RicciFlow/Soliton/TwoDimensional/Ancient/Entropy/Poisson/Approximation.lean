@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Poisson.SmoothEigenbasis
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
 
-
 def closedLaplacianTest (D : LeviCivitaData g) :
     EnergyTest D univ →ₗ[ℝ] EnergyTest D univ where
   toFun f := ⟨D.laplacian f, D.contMDiff_laplacian f.smooth,
@@ -34,7 +27,6 @@ def closedLaplacianTest (D : LeviCivitaData g) :
     apply Subtype.ext
     funext x
     exact D.laplacian_const_mul c f x
-
 
 def closedLaplacianToL2 (D : LeviCivitaData g) :
     EnergyTest D univ →ₗ[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict univ) :=
@@ -75,7 +67,6 @@ theorem eigenbasis_mem_range_closedLaplacian (D : LeviCivitaData g)
   rw [← hy]
   field_simp
   nlinarith
-
 
 theorem mem_closure_range_closedLaplacian_of_integral_eq_zero (D : LeviCivitaData g)
     (F : Lp ℝ 2 (g.volumeMeasure.restrict univ))

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFlowEndpoint
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusZeroAreaForward
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusFlow_forward_on_Ico_of_positive_on_Ioo
     (hcompact : IsCompact (univ : Set M)) (hcirc : 0 < circumference)
@@ -49,10 +33,6 @@ theorem m64AnnulusFlow_forward_on_Ico_of_positive_on_Ioo
     (m64AnnulusFlow_continuous_of_initial hcompact hcirc P hc0 hc1 A)
     (continuousOn_const.mul (m64CurvatureSupremum_continuous_of_compact hcompact))
     (m64AnnulusFlow_nonnegative_of_initial hcompact hcirc P hc0 hc1 A) hforward
-
-
-
-
 
 theorem m64AnnulusFlow_exponential_of_positive_forward
     (hcompact : IsCompact (univ : Set M)) (hcirc : 0 < circumference)

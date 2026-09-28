@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Rim.InwardMotion
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

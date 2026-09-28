@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSphereExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Homeomorph
-
-
-
 
 theorem exists_extension_of_unitBall_models
     {E F X Y A B : Type*}

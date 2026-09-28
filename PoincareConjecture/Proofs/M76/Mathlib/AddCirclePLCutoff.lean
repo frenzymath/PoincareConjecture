@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLScalarTent
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AddCircle
-
-
-
-
-
 
 theorem exists_shortArc_PL_cutoff (p : ℝ) [Fact (0 < p)] {r R : ℝ}
     (_hr : 0 < r) (hrR : r < R) (hRp : R < p / 2) :

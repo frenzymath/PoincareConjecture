@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -102,8 +92,6 @@ private theorem gradient_eq_of_eq_near (D : LeviCivitaData g)
     D.gradient f x = D.gradient h x := by
   unfold gradient
   rw [Poincare.mvfderiv_eq_of_eventuallyEq he]
-
-
 
 theorem liYau_evolution_inequality_on (D : LeviCivitaData g)
     (hn : 0 < n) {k : ℝ}

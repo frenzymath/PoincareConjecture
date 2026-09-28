@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem terminalCurvature_partial_chart_inverse_derivative
     (c : PartialDiffeomorph (𝓡 3) (𝓡 3) M E ∞)
     {phi : E → M} {x : E}
@@ -50,7 +40,6 @@ theorem terminalCurvature_partial_chart_inverse_derivative
   have hd := mfderiv_comp x hci (hc.comp x hphi)
   rw [mfderiv_eq_fderiv] at hd
   exact hd.symm.trans heq.mfderiv_eq
-
 
 theorem terminalCurvature_partial_chart_metric
     (g : RiemannianMetric 3 M)
@@ -74,8 +63,6 @@ theorem terminalCurvature_partial_chart_metric
     (congrArg (fun A => A v) hd) (congrArg (fun A => A w) hd)).trans
       (congrArg (fun y : M => g.inner y (mfderiv (𝓡 3) (𝓡 3) phi x v)
         (mfderiv (𝓡 3) (𝓡 3) phi x w)) (c.left_inv hx))
-
-
 
 theorem terminalCurvature_partial_chart_coefficients
     (g : RiemannianMetric 3 M)

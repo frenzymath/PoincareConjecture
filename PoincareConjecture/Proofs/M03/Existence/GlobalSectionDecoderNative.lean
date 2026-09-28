@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -31,13 +20,6 @@ variable {n : ℕ} {M : Type u}
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
 local notation "FiberBilin" =>
   fun x : M => TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ
-
-
-
-
-
-
-
 
 structure GlobalMetricSection (J : Set ℝ) where
   inner : ℝ → ∀ x : M, FiberBilin x
@@ -67,7 +49,6 @@ namespace GlobalMetricSectionOf
 variable {g₀ : RiemannianMetric n M} {J : Set ℝ}
   (S : GlobalMetricSectionOf (n := n) (M := M) g₀ J)
 
-
 noncomputable def constant (g₀ : RiemannianMetric n M) (J : Set ℝ) :
     GlobalMetricSectionOf (n := n) (M := M) g₀ J where
   inner := fun _ x => g₀.inner x
@@ -96,7 +77,6 @@ noncomputable def constant (g₀ : RiemannianMetric n M) (J : Set ℝ) :
   initial_eq := by
     intro x v w
     rfl
-
 
 noncomputable def metric (t : ℝ) : RiemannianMetric n M where
   inner x := S.inner t x

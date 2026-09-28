@@ -1,14 +1,5 @@
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,9 +7,6 @@ open Set Topology
 universe u v
 
 variable {X : Type u} [TopologicalSpace X]
-
-
-
 
 theorem IsPreconnected.disjoint_of_frontier_neighborhood
     {A V U : Set X} (hA : IsPreconnected A) (hAc : IsClosed A)
@@ -48,9 +36,6 @@ theorem IsPreconnected.disjoint_of_frontier_neighborhood
     exact (hxV (hin hxA).2).elim
   · exact Set.disjoint_left.mpr (fun _ hxA hxV => houtside hxA hxV)
 
-
-
-
 theorem IsPreconnected.subset_of_disjoint_frontier
     {A V : Set X} (hA : IsPreconnected A) (hV : IsOpen V)
     (hfront : Disjoint A (frontier V)) (hmeet : (A ∩ V).Nonempty) : A ⊆ V := by
@@ -73,9 +58,6 @@ theorem IsPreconnected.subset_of_disjoint_frontier
   · obtain ⟨x, hxA, hxV⟩ := hmeet
     exact (hout hxA hxV).elim
 
-
-
-
 theorem pairwise_disjoint_of_frontier_subset_root
     {ι : Type v} {A : Set X} (V : ι → Set X)
     (hV : ∀ i, IsOpen (V i)) (hconn : ∀ i, IsPreconnected (V i))
@@ -96,10 +78,6 @@ theorem pairwise_disjoint_of_frontier_subset_root
   have heq := subset_antisymm hijsub hjisub
   obtain ⟨z, hz⟩ := hne i
   exact Set.disjoint_left.mp (hdisj hij) hz (heq ▸ hz)
-
-
-
-
 
 theorem root_union_outward_eq_univ [PreconnectedSpace X]
     {ι : Type v} [Finite ι] {A : Set X} (hA : IsClosed A) (hne : A.Nonempty)

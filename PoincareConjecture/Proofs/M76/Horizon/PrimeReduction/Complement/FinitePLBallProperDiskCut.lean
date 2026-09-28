@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ProperDis
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.OriginalDiskCutCollars
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteConvexDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Cube" => closedBall (0 : V3) 1
 local notation "atlas" => (fun _ : Unit => OpenPartialHomeomorph.refl V3)
-
-
 
 theorem OriginalDiskProduct.finitePiecewiseAffineOn_standard
     {R : Set V3} {j : V2 → V3} (P : OriginalDiskProduct atlas R j) :
@@ -162,9 +151,6 @@ theorem exists_finitePL_ball_proper_disk_cut
 
 local notation "V4" => (Fin 4 → ℝ)
 local notation "Sphere" => Geometry.CubicalThreeSphere.sphere
-
-
-
 
 theorem exists_selected_hole_original_disk_cut
     {ι : Type*} [Finite ι] (a r : ι → Set V4)

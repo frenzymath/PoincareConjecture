@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.EmbeddedCharts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.ClippedParameters
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

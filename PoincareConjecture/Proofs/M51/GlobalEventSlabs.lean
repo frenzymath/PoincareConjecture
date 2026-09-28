@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalVanishingEvents
 import PoincareConjecture.Proofs.M51.GlobalSlabs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,8 +62,6 @@ private theorem globalSlab_preidentify_compatible
       _ = _ := congrArg (Q.globalIdentify n t (hKsource htK))
         (hcompat (min s t) (max s t) hcd hKsource hfreeSource s t hsK htK hs' ht' x)
 
-
-
 theorem globalEvent_slab_compatibility
     (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes) [Nonempty (Q.globalSlice T).carrier]
     (a b : ℝ) (hab : a < b) (hK : Icc a b ⊆ Ici 0)
@@ -94,8 +82,6 @@ theorem globalEvent_slab_compatibility
     ((Q.flow (Q.representativeIndex T)).event_slab_compatibility T
       (Q.eventStageSurgery T hT))
     a b hab hK hfree s t hs ht hs' ht' ((Q.globalEventInitialMap T hT).symm x)
-
-
 
 theorem globalVanishingEvent_slab_compatibility
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)

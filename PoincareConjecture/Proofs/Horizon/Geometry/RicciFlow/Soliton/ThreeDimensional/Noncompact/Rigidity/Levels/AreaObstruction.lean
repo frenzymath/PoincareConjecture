@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.VolumeSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ variable {N : Type*} [TopologicalSpace N] [MeasurableSpace N] [BorelSpace N]
   [T3Space N] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N]
   [IsManifold (𝓡 2) ∞ N] [CompactSpace N] [Nonempty N]
   {g h : RiemannianMetric 2 N}
-
-
 
 theorem volume_lt_of_unit_scalar_and_subunit_scalar
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

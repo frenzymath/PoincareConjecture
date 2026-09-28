@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
 
 theorem exists_two_zero_points_of_both_signs (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -54,10 +41,6 @@ theorem exists_two_zero_points_of_both_signs (P : Polygon E (n + 3))
   rcases heq with rfl | rfl
   · exact huA.ne haA
   · exact hvA.ne' haA
-
-
-
-
 
 theorem zero_section_eq_pair_of_preconnected_signs (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (A : E → ℝ)
@@ -118,9 +101,6 @@ theorem zero_section_eq_pair_of_preconnected_signs (P : Polygon E (n + 3))
   refine Subset.antisymm hzeroSubset ?_
   intro x hx
   exact ⟨hUs (hU.1 hx), hmarkzero x hx⟩
-
-
-
 
 theorem ncard_zero_eq_two_of_preconnected_signs (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

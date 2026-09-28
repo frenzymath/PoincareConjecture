@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarEnergyPeriod
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverFiniteFibers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +18,6 @@ local notation "Cover" => ℝ × ℝ
 local notation "Band" => Set.prod (Ioo (1 : ℝ) 2) (Ioo (0 : ℝ) 1)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarNormalizedCoverMap_det {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -56,10 +41,6 @@ theorem scalarNormalizedCoverMap_det {H : Plane → ℝ} {V : Cover → ℝ}
   simp only [scalarCoverJacobian, div_eq_mul_inv]
   ring
 
-
-
-
-
 theorem scalarNormalizedCoverMap_abs_det {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hdV : ∀ z ∈ scalarCoverStrip, HasFDerivAt V (scalarCoverForm D H z) z)
@@ -69,10 +50,6 @@ theorem scalarNormalizedCoverMap_abs_det {H : Plane → ℝ} {V : Cover → ℝ}
   rw [scalarNormalizedCoverMap_det D hHs hdV P hz]
   exact abs_of_nonneg (div_nonneg (scalarCoverJacobian_nonneg D hHs hz) hP.le)
 
-
-
-
-
 theorem scalarNormalizedCoverMap_abs_det_integrable {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hdV : ∀ z ∈ scalarCoverStrip, HasFDerivAt V (scalarCoverForm D H z) z)
@@ -81,10 +58,6 @@ theorem scalarNormalizedCoverMap_abs_det_integrable {H : Plane → ℝ} {V : Cov
   apply (hJ.div_const P).congr
   filter_upwards [ae_restrict_mem (measurableSet_Ioo.prod measurableSet_Ioo)] with z hz
   exact (scalarNormalizedCoverMap_abs_det D hHs hdV hP hz.1).symm
-
-
-
-
 
 theorem scalarNormalizedCoverMap_total_abs_det_one (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)
@@ -112,10 +85,6 @@ theorem scalarNormalizedCoverMap_total_abs_det_one (w : H1Zero D scalarAnnulus)
       erw [scalarCoverJacobian_integral_eq_period D hHc hHs hlap
         (scalarPotential_finite_differential_energy D w hHs hHae) hJ hinner houter,
         div_self hP.ne']
-
-
-
-
 
 theorem scalarNormalizedCoverMap_image_area_le_one (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)

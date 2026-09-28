@@ -5,16 +5,6 @@ import Mathlib.Algebra.Homology.HomologicalComplexAbelian
 import Mathlib.CategoryTheory.Abelian.CommSq
 import Mathlib.CategoryTheory.Limits.Preserves.SigmaConst
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,8 +19,6 @@ namespace SSet
 variable {C : Type v} [Category.{w} C] [Abelian C] [HasCoproducts.{u} C]
   (R : C)
 
-
-
 theorem chainComplexFunctor_preservesPushouts :
     PreservesColimitsOfShape WalkingSpan ((chainComplexFunctor C).obj R :
       SSet.{u} ⥤ ChainComplex C ℕ) := by
@@ -43,8 +31,6 @@ theorem chainComplexFunctor_preservesPushouts :
 variable {X : SSet.{u}} {A B : X.Subcomplex} (h : A ≤ B)
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem chainComplexMap_subcomplex_mono_f (n : ℕ) :
     Mono ((chainComplexMap (Subcomplex.homOfLE h) R).f n) := by
@@ -68,8 +54,6 @@ theorem chainComplexMap_subcomplex_mono_f (n : ℕ) :
     exact Subtype.ext rfl
   exact mono_of_mono_fac hr
 
-
-
 theorem chainComplexMap_subcomplex_mono :
     Mono (chainComplexMap (Subcomplex.homOfLE h) R) := by
   apply HomologicalComplex.mono_of_mono_f
@@ -77,8 +61,6 @@ theorem chainComplexMap_subcomplex_mono :
   exact chainComplexMap_subcomplex_mono_f R h n
 
 variable {A₁ A₂ A₃ A₄ : X.Subcomplex}
-
-
 
 theorem chainComplex_subcomplex_isPushout
     (sq : Subcomplex.BicartSq A₁ A₂ A₃ A₄) :
@@ -88,8 +70,6 @@ theorem chainComplex_subcomplex_isPushout
       (chainComplexMap (Subcomplex.homOfLE sq.le₃₄) R) := by
   let := chainComplexFunctor_preservesPushouts R
   exact sq.isPushout.map ((chainComplexFunctor C).obj R)
-
-
 
 theorem chainComplex_subcomplex_shortExact
     (sq : Subcomplex.BicartSq A₁ A₂ A₃ A₄) :

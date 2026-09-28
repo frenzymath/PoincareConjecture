@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M14Exponential
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -42,10 +32,6 @@ private theorem zero_mem_interior_survival_image (E : M14ExponentialFamily G T x
   by_cases ha : z ∈ M14AdmissibleParameter G T x
   · exact Or.inr (hVS ⟨hz, ha⟩)
   · exact Or.inl ha
-
-
-
-
 
 theorem compact_initial_survival_and_capture (E : M14ExponentialFamily G T x)
     {B : Set (G.Horizontal x)} (hB : IsCompact B) {K : Set G.Point}

@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem boundary_subset_inside_or_outside_of_disjoint {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))
@@ -29,9 +17,6 @@ theorem boundary_subset_inside_or_outside_of_disjoint {m n : ℕ}
   rw [← P.compl_boundary_eq_inside_union_outside]
   intro x hx hxb
   exact Set.disjoint_left.mp hdisj hxb hx
-
-
-
 
 theorem closure_inside_subset_inside_of_boundary_subset_inside {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.CircleMatching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.BoundaryReparametrization
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -83,8 +74,6 @@ private theorem supported_family_transport
     rw [← hCm i t ht p, (C t).symm_apply_apply, hMq]
     exact hDm i t ht _
 
-
-
 theorem exists_planar_circle_family_isotopy
     {a b : Real} (hab : a < b)
     (c d : Real → UnitCircle → E2)
@@ -117,9 +106,6 @@ theorem exists_planar_circle_family_isotopy
       C D hC hD hKC hKD hK₀ hCfix hDfix (fun _ => hCm) (fun _ => hDm)
       M hMfix (fun _ => q) (fun _ => hq)
   exact ⟨q, K, hK, Φ, hΦ, hΦinv, hfix, fun t ht => hm t ht ()⟩
-
-
-
 
 theorem exists_planar_circle_pair_family_isotopy
     {a b : Real} (hab : a < b)

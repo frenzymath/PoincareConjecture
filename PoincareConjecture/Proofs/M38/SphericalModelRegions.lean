@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M38.CylinderRegionTransport
 import PoincareConjecture.Proofs.M38.RoundExteriorCylinder
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M38
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
 
 variable {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier}
-
-
 
 noncomputable def closedSphereRegionEquivalence
     (C : SmoothClosedComponentModel .threeSphere U) :
@@ -63,8 +52,6 @@ noncomputable def closedSphereRegionEquivalence
     inverse_smooth := (C.forward_smooth.comp
       (d.symm.contMDiff.comp (threeManifold_down_contMDiff UnitThreeSphere))).contMDiffOn }
 
-
-
 noncomputable def euclideanCapRegionEquivalence {p : RealProjectiveThree}
     (C : CapModelEquivalence .euclidean p U) :
     SurgeryRegionEquivalence A euclideanCarrier.{u} U univ := by
@@ -99,8 +86,6 @@ noncomputable def euclideanCapRegionEquivalence {p : RealProjectiveThree}
       (d.contMDiff.comp_contMDiffOn C.forward_smooth)
     inverse_smooth := (contMDiffOn_univ.mp C.inverse_smooth).comp_contMDiffOn
       (d.symm.contMDiff.comp (threeManifold_down_contMDiff StandardCapSpace)).contMDiffOn }
-
-
 
 noncomputable def cylinderExteriorEquivalence (C : OpenCylinderModel U) :
     SurgeryRegionEquivalence A euclideanCarrier.{u} U {y | 1 < ‖y.down‖} := by
@@ -137,8 +122,6 @@ noncomputable def cylinderExteriorEquivalence (C : OpenCylinderModel U) :
     inverse_smooth := C.coordinate_smooth.comp
       (D.inverse_smooth.comp (threeManifold_down_contMDiff StandardCapSpace).contMDiffOn
         (fun _ hy => hy)) (fun y hy => D.inverse_mem y.down hy) }
-
-
 
 theorem exists_spherical_chart_of_euclidean_region {V : Set euclideanCarrier.{u}.carrier}
     (E : SurgeryRegionEquivalence A euclideanCarrier.{u} U V)

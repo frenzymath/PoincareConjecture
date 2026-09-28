@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteAnnulusFirstVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteCurrentPeriodicity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {d : ℕ} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64ParameterAnnulus_periodic_first_variation
     (F : RicciFlow n M (Icc a b)) {t : ℝ} (ht : t ∈ Ioo a b)

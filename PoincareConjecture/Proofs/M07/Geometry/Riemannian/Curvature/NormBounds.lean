@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,14 +12,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
-
-
-
-
 
 private theorem abs_ricci_quadratic_le_of_expansion
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 n) x)
@@ -149,8 +133,6 @@ private lemma metric_inner_nonneg (x : M) (v : TangentSpace (𝓡 n) x) :
   change 0 ≤ inner ℝ v v
   rw [real_inner_self_eq_norm_sq]
   positivity
-
-
 
 theorem abs_ricci_quadratic_le_curvatureTensorNorm [T2Space M]
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 n) x) :

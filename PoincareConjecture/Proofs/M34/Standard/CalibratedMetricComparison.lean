@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture
-
-
 
 @[instance_reducible] noncomputable def RiemannianMetric.comparisonEMetric
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -39,8 +27,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   [T3Space M] [T3Space N] [MeasurableSpace M] [MeasurableSpace N]
   [BorelSpace M] [BorelSpace N]
-
-
 
 theorem calibratedMetricVolume_image_le_of_edist_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -63,7 +49,6 @@ theorem calibratedMetricVolume_image_le_of_edist_le
 
 omit [MeasurableSpace M] [BorelSpace M] in
 
-
 theorem edist_le_of_tangentNorm_le (g h : RiemannianMetric n M)
     {C : ℝ} (hC : 0 < C)
     (hbound : ∀ x (v : TangentSpace (𝓡 n) x),
@@ -84,8 +69,6 @@ theorem edist_le_of_tangentNorm_le (g h : RiemannianMetric n M)
     exact ENNReal.ofReal_pos.mpr hr
   exact RiemannianMetric.edist_le_mul_edist_of_tangentNorm_le_on_ball
     g h x r C hr hC (fun z _ v => hbound z v) hx hy
-
-
 
 theorem calibratedMetricVolume_le_of_tangentNorm_le (g h : RiemannianMetric n M)
     {C : ℝ} (hC : 0 < C)

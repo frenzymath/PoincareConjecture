@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Finite.Balanced
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Certificate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_finite_openCylinderModel_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -39,8 +27,6 @@ theorem exists_finite_openCylinderModel_threshold :
   obtain ⟨D, j, hj, c, hc, hDzero⟩ := hfinite C
     (hε.trans (min_le_left _ _)) a b hshape
   exact hmodel C (hε.trans (min_le_right _ _)) D j hj c hc hDzero
-
-
 
 theorem exists_finite_tubeCertificate_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

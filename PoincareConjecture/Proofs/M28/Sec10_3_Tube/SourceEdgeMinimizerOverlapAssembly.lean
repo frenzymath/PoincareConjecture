@@ -16,9 +16,6 @@ variable {M : Type v} [TopologicalSpace M]
   [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
-
 set_option maxHeartbeats 1000000 in
 
 theorem source_edge_whole_overlap_of_minimizer_anchors
@@ -778,6 +775,5 @@ theorem source_edge_whole_overlap_of_minimizer_anchors
     simpa [A] using hQupper
   exact ⟨⟨hyN, hNlower', hyNcoord.2.2⟩,
     ⟨hyQ, hQlower', hQupper'⟩⟩
-
 
 end PoincareConjecture.M28

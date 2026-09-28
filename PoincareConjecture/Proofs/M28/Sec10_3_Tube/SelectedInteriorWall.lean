@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereOrder
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem exists_selected_chain_tail_above_cylinder_level
     [MeasurableSpace M] [BorelSpace M] [T3Space M]
@@ -70,10 +55,6 @@ theorem exists_selected_chain_tail_above_cylinder_level
   exact ⟨hNV hz, (T.chain.neck i).isConnected_carrier.isPreconnected.lt_of_ne
     hheight havoid ⟨y, hyN, hyc⟩ hz⟩
 
-
-
-
-
 theorem exists_selected_chain_neck_above_cylinder_level
     [MeasurableSpace M] [BorelSpace M] [T3Space M]
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
@@ -94,9 +75,6 @@ theorem exists_selected_chain_neck_above_cylinder_level
   exact ⟨i.1, i.2, htail i.1 i.2 y hyN hyread.2⟩
 
 omit [T2Space M] in
-
-
-
 
 theorem exists_fixed_positive_side_above_cylinder_level
     {V : TopologicalSpace.Opens M} (A : OpenCylinderModel (V : Set M))

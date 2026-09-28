@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
-
-
 
 theorem image_trans_union_of_nonnested_exchanges
     (g h : D3) (R E₀ E₁ S₀ S₁ : Set E3)
@@ -39,8 +24,6 @@ theorem image_trans_union_of_nonnested_exchanges
     _ = h '' R ∪ h '' S₀ ∪ h '' E₁ := by
       rw [image_union, image_union]
     _ = R ∪ S₀ ∪ S₁ := by rw [hhR, hh₀, hh₁]
-
-
 
 theorem image_trans_symm_union_of_nonnested_exchanges
     (g h : D3) (R E₀ E₁ S₀ S₁ : Set E3)

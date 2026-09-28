@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.ContinuousMap.Algebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

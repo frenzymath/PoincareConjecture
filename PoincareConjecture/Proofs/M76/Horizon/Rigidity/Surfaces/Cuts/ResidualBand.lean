@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ResidualBridges
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -146,7 +138,6 @@ theorem residualCofaceContact_subset_bandRim
   exact fun _ hx ↦ (K.barycentricSubdivision.dualEdge_space_subset_vertex_links
     (originalEdgeCentroid K e).property htv
     (originalEdgeCentroid_ne_triangleCentroid K e ht htc) hx).1
-
 
 theorem residualBandRim_eq_four_contacts
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
@@ -369,8 +360,6 @@ theorem residualCofaceContact_disjoint
   intro hf
   apply hnot
   exact K.barycentricSubdivision.down_closed hf (by simp) (Finset.insert_nonempty _ _)
-
-
 
 theorem exists_residualBand_rim_inventory
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3)

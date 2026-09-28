@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakClassCompactness
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.VaryingGreen
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -67,9 +54,6 @@ private theorem varying_trace_tangent_closed
   change W p - P (v p) (W p) = 0 at hp
   have heq : P (v p) (W p) = W p := (sub_eq_zero.mp hp).symm
   simpa only [heq] using hrange (v p) (W p)
-
-
-
 
 theorem observedWeakAnnulus_varying_trace_subsequence
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) (hei : IsClosedEmbedding e)

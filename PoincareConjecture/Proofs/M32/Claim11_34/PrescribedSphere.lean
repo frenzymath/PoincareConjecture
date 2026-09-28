@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M32.Neck.SliceTransport
 import PoincareConjecture.Proofs.M32.Claim11_34.Isotopy.AmbientFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_tube_prescribed_sphere_compact_transport :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

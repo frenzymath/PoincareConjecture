@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem sectional_nonneg_of_nonnegative_operator_m28
     (D : LeviCivitaData g) (x : M)
@@ -38,8 +28,6 @@ theorem sectional_nonneg_of_nonnegative_operator_m28
   have hboth := M04.curvatureTensor_swap_first D x w v w v
   linarith
 
-
-
 theorem nonnegativeRicci_at_of_nonnegativeOperator
     (D : LeviCivitaData g) (x : M)
     (hD : D.NonnegativeCurvatureOperator x) :
@@ -47,8 +35,6 @@ theorem nonnegativeRicci_at_of_nonnegativeOperator
   intro v
   exact M04.nonneg_ricci_of_nonnegativeSectionalAt D x
     (fun a b => D.sectional_nonneg_of_nonnegative_operator_m28 x hD a b) v
-
-
 
 theorem nonnegativeRicci_of_nonnegativeOperator
     (D : LeviCivitaData g)

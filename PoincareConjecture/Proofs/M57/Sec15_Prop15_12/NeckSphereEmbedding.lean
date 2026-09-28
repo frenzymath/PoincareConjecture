@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M57.Sec15_Prop15_12.RegionInverses
 import PoincareConjecture.Proofs.M57.Sec15_Prop15_12.FreeSphereNullHomotopy
 import PoincareConjecture.Statements.M53SphereSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m57Sphere_range_subset_component
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
@@ -39,8 +28,6 @@ theorem m57Sphere_range_subset_component
   rw [C.range_eq_component, connectedComponent_eq hxC]
   exact (isConnected_range hf).subset_connectedComponent hx
 
-
-
 theorem m57ComponentSphere_range
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
     (f : UnitTwoSphere → A.carrier) (hf : range f ⊆ range C.inclusion) :
@@ -51,9 +38,6 @@ theorem m57ComponentSphere_range
     exact ⟨p, (m57Component_inverse_right C (hf ⟨p, rfl⟩)).symm⟩
   · rintro ⟨p, hp⟩
     exact ⟨p, (congrArg C.inverse hp).trans (C.left_inverse x)⟩
-
-
-
 
 theorem m57ComponentSphere_separating
     (P02 : RepairedClosedTopologyProvider.{u}) (G53 : RepairedSphereSeparationTheory.{u})
@@ -81,9 +65,6 @@ theorem m57ComponentSphere_separating
   have h := G.separating S
   change SeparatingSphere (range (C.inverse ∘ f)) at h
   rwa [m57ComponentSphere_range C f hsub] at h
-
-
-
 
 theorem m57NeckSphere_separating
     (P02 : RepairedClosedTopologyProvider.{u}) (G53 : RepairedSphereSeparationTheory.{u})

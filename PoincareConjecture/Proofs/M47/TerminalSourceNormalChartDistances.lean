@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCharts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.DistanceLower
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem terminalSourceNormal_chart_distance_bounds
     (g : RiemannianMetric 3 M) {R rho : ℝ} (C : TerminalSourceChart g R)

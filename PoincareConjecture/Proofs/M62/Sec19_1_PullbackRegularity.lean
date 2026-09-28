@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_MovingConnection
 import PoincareConjecture.Proofs.M09.TangentPhaseZero
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem pullback_add {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {gamma : ℝ → M}
@@ -59,8 +48,6 @@ theorem pullback_add {g : RiemannianMetric n M}
       (e.symmL ℝ (gamma x) (deriv z x) + A (Z x))
   rw [heq.deriv_eq, deriv_fun_add hy hz, map_add, map_add]
   abel
-
-
 
 theorem flow_pullback_space_smooth [T2Space M]
     (F : RicciFlow n M J) (c : ℝ → ℝ → M)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NestedPLBallBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Set
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem mem_both_height_closures_of_ball_sublevels
     {S : Set E} (A : E → ℝ) {c b : ℝ} (hcb : c < b)
@@ -49,10 +36,6 @@ theorem mem_both_height_closures_of_ball_sublevels
   apply closure_mono _ hhi
   rintro y ⟨hy, hn⟩
   exact ⟨hy.1, show c < A y from lt_of_not_ge (fun hle => hn ⟨hy.1, hle⟩)⟩
-
-
-
-
 
 theorem ordinary_cap_mem_both_height_closures
     {D : Set E} (A : E → ℝ) {t : ℝ} (ht : 0 < t)

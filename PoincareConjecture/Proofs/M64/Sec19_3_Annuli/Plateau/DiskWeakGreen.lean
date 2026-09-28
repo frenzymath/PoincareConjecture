@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreenRescaling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongSquarePairing
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.UniformCircleIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +14,6 @@ namespace PoincareConjecture
 open Proofs.M58
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
-
-
 
 theorem m64Disk_weak_green_of_strong_approximation
     (a : LoopPlane) {r : ℝ} (hr : 0 < r)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M35
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem roundCylinderPullback_coefficient_eq_euclidean
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
@@ -44,8 +34,6 @@ theorem roundCylinderPullback_coefficient_eq_euclidean
       (congrArg (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) coordinate
         (cylinderChart q p)) hchart)
   exact congrArg₂ (fun v w => g.inner (coordinate (cylinderChart q p)) v w) (hv a) (hv b)
-
-
 
 theorem roundCylinderPullback_coefficient_contDiffAt
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
@@ -72,8 +60,6 @@ theorem roundCylinderPullback_coefficient_contDiffAt
   simpa only [ContinuousLinearEquiv.apply_symm_apply, Function.comp_apply] using
     (roundCylinderPullback_coefficient_eq_euclidean g coordinate q
       (cylinderCoordinateEquiv.symm y) a b (hc.contMDiffAt (hU.mem_nhds hdy))).symm
-
-
 
 theorem roundCylinderPullback_scaled_smoothOn
     {M : Type*} [TopologicalSpace M] [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]

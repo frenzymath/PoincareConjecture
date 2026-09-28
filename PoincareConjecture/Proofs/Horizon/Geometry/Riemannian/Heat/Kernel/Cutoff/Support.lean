@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Loc
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.Profile
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +29,6 @@ private lemma deriv_deriv_scale {χ : ℝ → ℝ} (hχ : ContDiff ℝ ∞ χ)
     funext (deriv_scale hχ hR)
   rw [he, deriv_div_const, deriv_scale (hχ.deriv' (n := ∞)) hR]
   ring
-
-
 
 lemma radial_profile_operator_bounds (D : LeviCivitaData g)
     {ρ : M → ℝ} (hρ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ρ)
@@ -82,8 +73,6 @@ lemma radial_profile_operator_bounds (D : LeviCivitaData g)
     calc
       _ = -C / R * L + -B / R ^ 2 := by ring
       _ ≤ _ := hsum
-
-
 
 lemma radial_cutoff_lower_support [T2Space M] (D : LeviCivitaData g)
     {r : M → ℝ} {χ : ℝ → ℝ} (hχ : ContDiff ℝ ∞ χ) (hanti : Antitone χ)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutArc
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -25,8 +17,6 @@ private theorem interval_endpoints_ne
   simp only [he, pair_eq_singleton, Set.ncard_singleton] at h
   norm_num at h
 
-
-
 theorem endpoint_pair_reversal_of_scalar
     {X : Type*} {Y : Type*} [LinearOrder Y]
     {f : X → Y} {a b c d : X}
@@ -37,9 +27,6 @@ theorem endpoint_pair_reversal_of_scalar
   · rw [hca, hdb] at hreverse
     exact (False.elim ((not_lt_of_ge hforward.le) hreverse))
   · exact ⟨hcb, hda⟩
-
-
-
 
 theorem ordered_middle_parameters
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
@@ -92,9 +79,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {labels : ResidualComplementaryEdge K P D ≃ Fin 2}
   (A : OriginalPrimalCutDiskData K P D hD hcofaces hP labels)
 
-
-
-
 theorem exists_ordered_longArc_bridge_chart (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
     (i : Fin 4) :
     ∃ (g : ℝ → ((E × (ResidualHalfBandIndex K P D → ℝ)) × (Fin 4 → ℝ))) (α β : ℝ),
@@ -143,10 +127,6 @@ theorem exists_ordered_longArc_bridge_chart (hbound : ∀ s ∈ K.faces, s.card 
       (hmiddle.symm ▸ mem_image_of_mem g hx) (hmiddle.symm ▸ mem_image_of_mem g hy) hxy)
   · rw [image_comp, ← hmiddle]
     exact A.sourceMap_boundaryBridge i
-
-
-
-
 
 theorem source_bridge_endpoint_reversal_of_scalar
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3) (i : Fin 4)

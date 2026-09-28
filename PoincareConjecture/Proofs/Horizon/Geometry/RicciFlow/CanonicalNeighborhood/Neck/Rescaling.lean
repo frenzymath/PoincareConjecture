@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -25,8 +18,6 @@ private theorem sqrt_mul_inverse_scalar_scale {c R : ℝ} (hc : 0 < c) (hR : 0 <
   rw [Real.mul_rpow (inv_nonneg.mpr hc.le) hR.le, Real.inv_rpow hc.le,
     neg_div, Real.rpow_neg hc.le, inv_inv, Real.sqrt_eq_rpow]
 
-
-
 theorem roundCylinderPullback_normalized_rescaledMetric
     (g : RiemannianMetric 3 M) (c : ℝ) (hc : 0 < c)
     (s : ℝ) (coordinate : RoundCylinderSpace → M) :
@@ -37,7 +28,6 @@ theorem roundCylinderPullback_normalized_rescaledMetric
   simp only [roundCylinderPullback, rescaledMetric_inner, mul_inv_rev, mul_pow]
   field_simp
   rw [Real.sq_sqrt hc.le]
-
 
 noncomputable def EpsilonNeck.rescale
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) (c : ℝ) (hc : 0 < c) :

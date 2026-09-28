@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Diffeomorph.Sphere
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +16,6 @@ universe u
 namespace PoincareConjecture.M28
 
 private abbrev CI := (𝓡 2).prod 𝓘(ℝ, ℝ)
-
-
-
-
 
 theorem exists_buffered_neck_sphere_graph_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

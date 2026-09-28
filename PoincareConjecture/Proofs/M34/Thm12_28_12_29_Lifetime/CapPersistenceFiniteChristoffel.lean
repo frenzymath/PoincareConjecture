@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +11,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem hasUniformJetBoundsOn_inverse_metric_finite
     {ι : Type*} {n : ℕ} {U : Set E} (hU : IsOpen U)
@@ -53,8 +41,6 @@ private noncomputable def capChristoffelContraction :
       (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] E →L[ℝ] E →L[ℝ] E :=
   (ContinuousLinearMap.compL ℝ E (E →L[ℝ] E →L[ℝ] ℝ) (E →L[ℝ] E)).comp
     (ContinuousLinearMap.compL ℝ E (E →L[ℝ] ℝ) E)
-
-
 
 theorem hasUniformJetBoundsOn_christoffelBilinear_finite
     {ι : Type*} {n : ℕ} {U : Set E} (hU : IsOpen U)

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CylinderTimeEstimate
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RoundCylinderFamilyClose
-
-
-
 
 theorem extend_affine_window {delta epsilon : ℝ} {B : ℝ → RoundCylinderTwoTensor}
     (h : RoundCylinderFamilyClose delta (Ioc (-1 : ℝ) 0) B)
@@ -54,8 +43,6 @@ theorem extend_affine_window {delta epsilon : ℝ} {B : ℝ → RoundCylinderTwo
 end PoincareConjecture.RoundCylinderFamilyClose
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_affine_window_accuracy (epsilon d : ℝ) (he : 0 < epsilon) (hd : 0 < d) :
     ∃ delta : ℝ, 0 < delta ∧ delta ≤ epsilon ∧ delta ≤ d ∧

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoiningHeightPath
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem source_initial_recent_patch_height_margin
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

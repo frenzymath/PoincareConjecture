@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryLocalizedDerivative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularIntegralVariation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +13,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
-
 
 theorem m64LocalizedSource_scalar_bounds
     {eta rho : ℝ → ℝ} (heta : ContDiff ℝ ∞ eta)
@@ -55,11 +45,6 @@ theorem m64LocalizedSource_scalar_bounds
   refine ⟨C, le_max_left _ _, fun x => ?_⟩
   exact ⟨(hC0 _ (mem_range_self x)).trans h0, (hC1 _ (mem_range_self x)).trans h1,
     (hC2 x).trans h2, (hC3 x).trans h3⟩
-
-
-
-
-
 
 theorem m64LocalizedSource_integral_firstVariation
     (T : ℝ → LoopPlane ≃ₜ LoopPlane) (hsecond : ∀ t p, T t p 1 = p 1)

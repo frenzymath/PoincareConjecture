@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,26 +11,17 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 noncomputable def m60DiskRadialClamp (z : LoopPlane) : LoopPlane :=
   (max (1 / 2 : ℝ) ‖z‖)⁻¹ • z
-
-
 
 theorem m60DiskRadialClamp_continuous : Continuous m60DiskRadialClamp :=
   ((continuous_const.max continuous_norm).inv₀
     (fun z => ne_of_gt (lt_of_lt_of_le (by norm_num) (le_max_left (1 / 2 : ℝ) ‖z‖)))).smul
     continuous_id
 
-
-
 theorem m60DiskRadialClamp_eq_radial {z : LoopPlane} (hz : 1 / 2 ≤ ‖z‖) :
     m60DiskRadialClamp z = radialNormalization z := by
   simp only [m60DiskRadialClamp, max_eq_right hz, radialNormalization]
-
-
-
 
 theorem m60_exists_boundary_regular_extension
     {M : Type u} [TopologicalSpace M]

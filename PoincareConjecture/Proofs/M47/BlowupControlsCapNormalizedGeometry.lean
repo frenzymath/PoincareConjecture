@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapImageGeometry
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticComparison
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => StandardCapSpace
-
-
-
 
 theorem exists_actualCap_image_geometric_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

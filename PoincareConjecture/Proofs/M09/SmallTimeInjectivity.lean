@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.CompactInitialJet
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

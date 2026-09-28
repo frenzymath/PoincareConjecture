@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCoordinateCaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalHalfBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem AffineOnFaces.isFinitePLBallPair_conical_outer_caps
     {K : SimplicialComplex ℝ E} {f : E → ((ℝ × ℝ) × ℝ)}

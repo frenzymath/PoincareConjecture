@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarInverse
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +9,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_compact_normal_inverse
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)
@@ -51,10 +43,6 @@ theorem m64Intrinsic_exists_compact_normal_inverse
   refine ⟨F, hsource, ?_, hF, hFs, hFi⟩
   rintro _ ⟨t, ht, rfl⟩
   exact htarget ⟨!₂[a, t], ⟨t, ht, rfl⟩, rfl⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_embedded_prefix_tube
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)

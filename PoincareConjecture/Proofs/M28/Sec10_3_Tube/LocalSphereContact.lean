@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFrontierScale
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem edist_le_of_mem_closure_positive_quarter_pair_m28
     {M : Type u} [TopologicalSpace M]
@@ -40,8 +27,6 @@ theorem edist_le_of_mem_closure_positive_quarter_pair_m28
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact closure_minimal (fun z hz => N.edist_le_of_mem_closure_positive_quarter_m28 hε hz hy)
     (isClosed_le (continuous_id.edist continuous_const) continuous_const) hx
-
-
 
 theorem exists_closure_positive_quarter_subset_of_central_sphere_contact_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -90,7 +75,6 @@ theorem exists_closure_positive_quarter_subset_of_central_sphere_contact_m28 :
   rw [← ENNReal.ofReal_add (by positivity) (by positivity)] at hupper
   have hlt := (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr hnum
   exact (not_lt_of_ge (hlower.trans hupper)) hlt
-
 
 theorem exists_positive_quarter_subset_of_central_sphere_contact_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

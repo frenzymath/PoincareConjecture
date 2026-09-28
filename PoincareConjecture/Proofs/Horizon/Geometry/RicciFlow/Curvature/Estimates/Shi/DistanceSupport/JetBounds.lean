@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory

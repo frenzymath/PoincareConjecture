@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckGeneratorRegularityNative
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -91,7 +83,6 @@ theorem HasWeakSchwartzDerivative.unique {u d e : ScalarL2 n} {v : E}
   intro φ
   exact (hd φ).trans (he φ).symm
 
-
 theorem HasWeakSchwartzDerivative.cutoff_fixed {u d : ScalarL2 n} {v : E}
     (hd : HasWeakSchwartzDerivative u d v) {K U : Set E} (hU : IsOpen U) (hKU : K ⊆ U)
     (huK : ∀ᵐ x ∂volume, x ∉ K → u x = 0)
@@ -129,7 +120,6 @@ theorem integrable_of_cutoff_fixed (u : ScalarL2 n) (η : 𝓢(E, ℝ))
   rw [hfix] at heq
   exact hprod.congr heq.symm
 
-
 theorem HasWeakSchwartzDerivative.integrable_of_ae_compact_support
     {u d : ScalarL2 n} {v : E} (hd : HasWeakSchwartzDerivative u d v)
     {K : Set E} (hK : IsCompact K) (huK : ∀ᵐ x ∂volume, x ∉ K → u x = 0) :
@@ -155,7 +145,6 @@ theorem ae_support_of_cutoff_fixed (u : ScalarL2 n) (η : 𝓢(E, ℝ))
   filter_upwards [heq] with x hx
   intro hη
   rw [hx, image_eq_zero_of_notMem_tsupport hη, zero_mul]
-
 
 theorem HasWeakSchwartzDerivative.exists_ae_compact_support
     {u d : ScalarL2 n} {v : E} (hd : HasWeakSchwartzDerivative u d v)
@@ -190,7 +179,6 @@ theorem lineDeriv_schwartz_comm (φ : 𝓢(E, ℝ)) (v w : E) :
     map_zero, zero_add]
   exact ((φ.smooth 2).contDiffAt.isSymmSndFDerivAt (by norm_num)).eq v w
 
-
 theorem weakSecond_symmetric (u : ScalarL2 n) (D : Fin n → ScalarL2 n)
     (W : Fin n → Fin n → ScalarL2 n)
     (hD : ∀ i, HasWeakSchwartzDerivative u (D i) (EuclideanSpace.single i (1 : ℝ)))
@@ -211,7 +199,6 @@ def differentiatedSource (A : Fin n → Fin n → 𝓢(E, ℝ))
     (schwartzMultiplier
       (∂_{EuclideanSpace.single j (1 : ℝ)} (∂_{EuclideanSpace.single k (1 : ℝ)} (A i j)))
       (D i) + schwartzMultiplier (∂_{EuclideanSpace.single k (1 : ℝ)} (A i j)) (W i j))
-
 
 theorem differentiated_divergence_equation
     (A : Fin n → Fin n → 𝓢(E, ℝ)) (D : Fin n → ScalarL2 n)
@@ -284,7 +271,6 @@ theorem norm_differentiatedSource_le (A : Fin n → Fin n → 𝓢(E, ℝ))
   exact (norm_add_le _ _).trans
     (add_le_add ((schwartzMultiplier _).le_opNorm _) ((schwartzMultiplier _).le_opNorm _))
 
-
 theorem exists_secondDerivatives_of_approximation
     (S : ℕ → 𝓢(E, ℝ)) (u : ScalarL2 n) (D : Fin n → ScalarL2 n)
     (hS : Tendsto (fun m => (S m).toLp 2 volume) atTop (𝓝 u))
@@ -330,7 +316,6 @@ theorem exists_secondDerivatives_of_approximation
   intro i k
   exact ⟨(hW i k).1, hasWeakSchwartzDerivative_of_integral _ _ _ (hW i k).2⟩
 
-
 theorem exists_secondDerivatives_of_weak_first
     (u : ScalarL2 n) (D : Fin n → ScalarL2 n)
     (hD : ∀ i, HasWeakSchwartzDerivative u (D i) (EuclideanSpace.single i (1 : ℝ)))
@@ -373,7 +358,6 @@ theorem exists_secondDerivatives_of_weak_first
     (fun x hx => hell x (hthick hx)) hAB G
     (fun i => (hD i).integrable_of_ae_compact_support hK huK)
     (fun φ hφ hφK => heq φ hφ (hφK.trans hthick))
-
 
 theorem exists_thirdDerivatives_of_weak_second
     (u : ScalarL2 n) (D : Fin n → ScalarL2 n)
@@ -456,7 +440,6 @@ theorem exists_thirdDerivatives_of_weak_second
     (add_le_add (norm_differentiatedSource_le A D W (Gk k) k) le_rfl) hEll.le),
     (hV k i j).2⟩
 
-
 def IsWeakSchwartzJet (q : List (Fin n) → ScalarL2 n) (m : ℕ) : Prop :=
   ∀ w, w.length < m → ∀ i,
     HasWeakSchwartzDerivative (q w) (q (i :: w)) (EuclideanSpace.single i (1 : ℝ))
@@ -503,7 +486,6 @@ theorem HasWeakSchwartzDerivative.sum (u d : Fin n → ScalarL2 n) (v : E)
     _ = ∑ i, -inner ℝ (u i) ((∂_{v} φ).toLp 2 volume) :=
       Finset.sum_congr rfl (fun i _ => h i φ)
     _ = _ := by rw [Finset.sum_neg_distrib]
-
 
 inductive JetExpression (n : ℕ) where
   | zero : JetExpression n
@@ -626,7 +608,6 @@ theorem commuted_divergence_equation (A : Fin n → Fin n → 𝓢(E, ℝ))
     hW hsource heq φ hφ hφU
   simpa only [hswap, differentiatedSource, commutedSource, commutatorExpression,
     JetExpression.eval, add_assoc] using h
-
 
 theorem exists_finite_weakJet_of_divergence
     (u : ScalarL2 n) (D : Fin n → ScalarL2 n)
@@ -779,7 +760,6 @@ theorem HasWeakSchwartzDerivative.finset_sum {ι : Type*} (s : Finset ι)
       Finset.sum_congr rfl (fun i hi => h i hi φ)
     _ = _ := by rw [Finset.sum_neg_distrib]
 
-
 def JetExpression.iteratedDerivative (e : JetExpression n) : List (Fin n) → JetExpression n
   | [] => e
   | i :: w => (e.iteratedDerivative w).derivative i
@@ -801,7 +781,6 @@ theorem JetExpression.isWeakJet_eval_iteratedDerivative (e : JetExpression n) {p
   exact (e.iteratedDerivative w).eval_hasWeakDerivative (e.iteratedDerivative_order he w) q i
     (fun v hv => hq v (by omega) i)
 
-
 def finiteSourceJet {ι : Type*} [Fintype ι]
     (B : List (Fin n) → ScalarL2 n) (Q : ι → List (Fin n) → ScalarL2 n)
     (e : ι → JetExpression n) (w : List (Fin n)) : ScalarL2 n :=
@@ -811,7 +790,6 @@ theorem finiteSourceJet_nil {ι : Type*} [Fintype ι]
     (B : List (Fin n) → ScalarL2 n) (Q : ι → List (Fin n) → ScalarL2 n)
     (e : ι → JetExpression n) :
     finiteSourceJet B Q e [] = B [] + ∑ c, (e c).eval (Q c) := rfl
-
 
 theorem isWeakSchwartzJet_finiteSourceJet {ι : Type*} [Fintype ι]
     (B : List (Fin n) → ScalarL2 n) (Q : ι → List (Fin n) → ScalarL2 n)
@@ -824,7 +802,6 @@ theorem isWeakSchwartzJet_finiteSourceJet {ι : Type*} [Fintype ι]
     (fun c => ((e c).iteratedDerivative (i :: w)).eval (Q c))
     (EuclideanSpace.single i (1 : ℝ))
     (fun c _ => (e c).isWeakJet_eval_iteratedDerivative (he c) (Q c) (hQ c) w hw i))
-
 
 theorem IsWeakSchwartzJet.eq_of_nil_eq
     {q q' : List (Fin n) → ScalarL2 n} {s : ℕ}
@@ -840,7 +817,6 @@ theorem IsWeakSchwartzJet.eq_of_nil_eq
     have hd := hq w hws i
     rw [htail] at hd
     exact hd.unique (hq' w hws i)
-
 
 def JetExpression.firstOrderTerm (a : 𝓢(E, ℝ)) (i : Option (Fin n)) : JetExpression n :=
   .term a (match i with | none => [] | some j => [j])
@@ -864,7 +840,6 @@ theorem finiteSourceJet_nil_eq_firstOrder {ι : Type*} [Fintype ι]
   cases h : o c with
   | none => simp only [JetExpression.firstOrderTerm, h, JetExpression.eval, hzero]
   | some i => simp only [JetExpression.firstOrderTerm, h, JetExpression.eval, hfirst]
-
 
 theorem exists_extended_weakJet_of_finiteSource {ι : Type*} [Fintype ι]
     (q : List (Fin n) → ScalarL2 n) (s : ℕ) (hq : IsWeakSchwartzJet q (s + 1))

@@ -3,8 +3,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedDiskProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperProductOpenness
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ local notation "I" => Icc (-(1 / 4 : ℝ)) (1 / 4)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_prescribed_band_width {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b) (a : E ≃ᴬ[ℝ] V3)
@@ -82,10 +70,6 @@ theorem exists_prescribed_band_width {R D : Set E} {b : D2 ≃ₜ D}
   have h := huv (show ((⟨p.1, hp.1⟩ : Q2), t) ∈ u ×ˢ v from
     ⟨hu (mem_univ _), htv⟩)
   exact h
-
-
-
-
 
 theorem exists_prescribed_band_coordinates {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b)

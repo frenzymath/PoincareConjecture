@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Termina
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalBoxDomain
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.BoundaryLocalHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

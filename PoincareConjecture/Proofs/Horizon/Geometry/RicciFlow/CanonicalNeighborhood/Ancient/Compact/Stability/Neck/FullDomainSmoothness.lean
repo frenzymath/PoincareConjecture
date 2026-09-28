@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Terminal
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   (e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j))
 
-
-
 theorem eventually_terminalNeck_full_tensorSmoothOn
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (hN : IsCompact (closure N.carrier)) :
     ∀ᶠ k in atTop, ∀ t s : ℝ, RoundCylinderTensorSmoothOn N.epsilon (fun z v w =>
@@ -42,8 +31,6 @@ theorem eventually_terminalNeck_full_tensorSmoothOn
   filter_upwards [G.eventually_terminalNeckEmbedding_full e N hN] with k hk t s
   exact roundCylinderTensorSmoothOn_smul_pullback
     ((S.term (G.subsequence k)).flow.flow.metric t) hk.2.2.1 s
-
-
 
 theorem eventually_terminalNeck_full_scalar_tensorSmoothOn
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (hN : IsCompact (closure N.carrier)) :
@@ -63,8 +50,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_terminalNeck_full_source_scalar_positive
     (hconv : M23TerminalMetricConvergence G e)

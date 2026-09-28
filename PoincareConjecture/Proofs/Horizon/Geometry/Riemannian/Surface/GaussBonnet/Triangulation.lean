@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.BoundarySum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ namespace PoincareConjecture.Topology.Surface.FiniteSmoothTriangulation
 variable {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
   [T3Space S] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S]
   [IsManifold (𝓡 2) ∞ S] [CompactSpace S]
-
-
-
 
 theorem integral_scalarCurvature_eq_metric_corner_sum
     (T : FiniteSmoothTriangulation (M := S))

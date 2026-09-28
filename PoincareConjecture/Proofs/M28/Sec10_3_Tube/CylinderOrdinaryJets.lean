@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.Covariant
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.TensorNorms
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundCylinderChristoffelBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators Topology
 
 namespace PoincareConjecture.Proofs.M28.NeckAnalysis
-
 
 theorem roundCylinderChristoffel_center_zero
     (q : UnitTwoSphere) (s : ℝ) (a b d : Fin 3) :
@@ -28,8 +18,6 @@ theorem roundCylinderChristoffel_center_zero
     fin_cases k <;> rfl
   simp [cylinderModelChristoffel, hz]
 
-
-
 theorem roundCylinderTensorDerivative_center
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
     (T : RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ)
@@ -38,9 +26,6 @@ theorem roundCylinderTensorDerivative_center
       (chartAt (EuclideanSpace ℝ (Fin 2)) q) T (0, s) (Fin.cons i a) =
       fderiv ℝ (fun p => T p a) (0, s) (roundCylinderCoordinateBasis i) := by
   simp [roundCylinderTensorDerivative, roundCylinderChristoffel_center_zero]
-
-
-
 
 theorem second_fderiv_cylinder_component
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ}

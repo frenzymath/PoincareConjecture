@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalOldProjectedCr
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.DiskChangeImages
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.ScheduledMarkedDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -28,8 +19,6 @@ variable {M ι α : Type*} [TopologicalSpace M]
   {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
   {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
   {old : StageMarkedDisk t R Fmark base Jgroup}
-
-
 
 theorem OriginalGeneralPositionData.nonempty_scheduled_projected_crossing
     (data : OriginalGeneralPositionData step old)
@@ -116,8 +105,6 @@ theorem OriginalGeneralPositionData.nonempty_scheduled_projected_crossing
       z ∈ p '' (data.initial.map '' D2 ∩ A)
     rw [himage H]
     exact Eq.to_iff (by simpa only [mem_sdiff, hzC, not_false_eq_true, and_true] using hm)
-
-
 
 theorem OriginalGeneralPositionData.exists_scheduled_crossed_marked_disk
     (data : OriginalGeneralPositionData step old)

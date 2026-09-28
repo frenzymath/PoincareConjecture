@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
-
 
 theorem endExhaustion_fderiv_coordinate (e : StandardCylindricalEnd g)
     {z : StandardCylinderSpace} (hz : 2 < z.2)
@@ -49,9 +37,6 @@ theorem endExhaustion_fderiv_coordinate (e : StandardCylindricalEnd g)
   rw [hs] at hd
   exact congrArg (fun L => L v) hd
 
-
-
-
 theorem endCylinderCoefficients_coordinate (e : StandardCylindricalEnd g) (s : ℝ)
     {z : StandardCylinderSpace} (hz : 2 < z.2)
     (v w : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) z) :
@@ -63,9 +48,6 @@ theorem endCylinderCoefficients_coordinate (e : StandardCylindricalEnd g) (s : �
     endExhaustion_fderiv_coordinate e hz, endExhaustion_fderiv_coordinate e hz]
   simp only [standardCylinderInner]
   ring
-
-
-
 
 theorem endCylinderAuxMetric_coordinate (e : StandardCylindricalEnd g) (t : ℝ)
     {z : StandardCylinderSpace} (hz : 2 < z.2)

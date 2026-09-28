@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StoppedCollar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_NormalizedSlabBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +26,6 @@ noncomputable local instance surgerySlabTwoJetNormedGroup :
 
 noncomputable local instance surgerySlabTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_stopped_surgery_slab_bound (P : M44CapPersistencePredecessors.{u})
     (C : ℝ) (u v : E) {model : Set (MetricTwoJet 3)} (hmodel : IsCompact model)

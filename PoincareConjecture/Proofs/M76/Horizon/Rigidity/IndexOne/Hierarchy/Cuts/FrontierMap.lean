@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -23,7 +15,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {N : Set X} {j : V2 → X}
-
 
 noncomputable def markedCutFrontierMap (P : OriginalDiskProduct e N j)
     (q : W → X) (l u : ℝ) (z : W) : X := by
@@ -106,7 +97,6 @@ private theorem markedCutFrontierMap_injOn_caps (P : OriginalDiskProduct e N j)
     have hfirst := congrArg Prod.fst (P.injective hzminus hwminus heq)
     exact Prod.ext hfirst (hz'.trans hw'.symm)
 
-
 theorem markedCutFrontierMap_injOn (P : OriginalDiskProduct e N j)
     (q : W → X) {l u : ℝ} (hlu : l < u)
     (hlower : ∀ z ∈ Q, q (z, l) = P.map (z, (1 / 2 : ℝ)))
@@ -135,7 +125,6 @@ theorem markedCutFrontierMap_injOn (P : OriginalDiskProduct e N j)
     exact P.markedCutFrontierMap_injOn_caps q hlu
       (hz.elim (fun h => (hzQ h.1).elim) id)
       (hw.elim (fun h => (hwQ h.1).elim) id) heq
-
 
 theorem markedCutFrontierMap_image (P : OriginalDiskProduct e N j)
     (q : W → X) {l u : ℝ} (hlu : l < u)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureNormContinuity
 import PoincareConjecture.Definitions.M45SmallNecks
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalCurvature_compact_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -29,7 +20,6 @@ theorem terminalCurvature_compact_bound
   refine ⟨max 1 B, lt_of_lt_of_le zero_lt_one (le_max_left _ _), ?_⟩
   intro x
   exact (hB (mem_image_of_mem D.curvatureTensorNorm (mem_univ x))).trans (le_max_right _ _)
-
 
 theorem terminalCurvature_neck_scalar_le_of_scale
     {M : Type*} [TopologicalSpace M]
@@ -44,8 +34,6 @@ theorem terminalCurvature_neck_scalar_le_of_scale
   rw [← hnormalize]
   exact pow_le_pow_left₀ (inv_nonneg.mpr N.scale_pos.le)
     ((inv_le_inv₀ N.scale_pos hscale0).mpr hscale) 2
-
-
 
 theorem terminalCurvature_cap_scalar_comparison
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

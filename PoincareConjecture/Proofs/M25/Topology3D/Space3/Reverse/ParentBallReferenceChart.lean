@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReferen
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def referenceCompressedDiffeomorph
     (a : ℝ) (ha : a ∈ Set.Ioo (1 / 2 : ℝ) 1)
@@ -41,7 +29,6 @@ noncomputable def referenceCompressedDiffeomorph
   exact (heightCoordinates.toDiffeomorph.trans
     (referenceFlatteningDiffeomorph a ha α hα hpos)).trans V
 
-
 theorem referenceCompressedDiffeomorph_apply
     (a : ℝ) (ha : a ∈ Set.Ioo (1 / 2 : ℝ) 1)
     (α : ℝ → ℝ) (hα : ContDiff ℝ ∞ α) (hpos : ∀ z, 0 < α z)
@@ -51,7 +38,6 @@ theorem referenceCompressedDiffeomorph_apply
         f ((heightCoordinates y).2 - referenceCapHeight a
           (α (heightCoordinates y).2 • (heightCoordinates y).1))) := rfl
 
-
 theorem referenceCompressedDiffeomorph_symm_apply
     (a : ℝ) (ha : a ∈ Set.Ioo (1 / 2 : ℝ) 1)
     (α : ℝ → ℝ) (hα : ContDiff ℝ ∞ α) (hpos : ∀ z, 0 < α z)
@@ -60,7 +46,6 @@ theorem referenceCompressedDiffeomorph_symm_apply
       heightCoordinates.symm
         ((α (f.symm p.2 + referenceCapHeight a p.1))⁻¹ • p.1,
           f.symm p.2 + referenceCapHeight a p.1) := rfl
-
 
 theorem exists_reference_chart_cylinder
     (C : OpenPartialHomeomorph (E2 × ℝ) E3) (H b : ℝ) (hb : 0 < b)
@@ -88,7 +73,6 @@ theorem exists_reference_chart_cylinder
   have hpabs : |p.2| ≤ η := abs_le.mpr hp.2
   exact mem_ball_zero_iff.mpr
     (by simpa only [Real.norm_eq_abs] using hpabs.trans_lt hηd)
-
 
 theorem referenceCompressedDiffeomorph_model_bounds
     (a : ℝ) (ha : a ∈ Set.Ioo (1 / 2 : ℝ) 1)
@@ -129,7 +113,6 @@ theorem referenceCompressedDiffeomorph_model_bounds
   change f ((referenceFlatteningDiffeomorph a ha α hα hpos
     (heightCoordinates y)).2) < 0
   simpa only [hfzero] using hfmono hneg
-
 
 theorem referenceCompressedDiffeomorph_cap_germ
     (a : ℝ) (ha : a ∈ Set.Ioo (1 / 2 : ℝ) 1)
@@ -178,7 +161,6 @@ theorem referenceCompressedDiffeomorph_cap_germ
   have hy' : |(F0 y).2| ≤ η / 8 := (show |(F0 y).2| < η / 8 from hy).le
   change ((F0 y).1, f (F0 y).2) = F0 y
   rw [hfnear _ hy']
-
 
 theorem exists_reference_ball_chart
     (C : OpenPartialHomeomorph (E2 × ℝ) E3)
@@ -279,7 +261,6 @@ theorem exists_reference_ball_chart
     filter_upwards [hgerm, B.chart.open_source.mem_nhdsSet.mpr hDsource] with y heqy hy
     have hDy : D y ∈ C.source := hy.2
     exact ⟨hy, heqy ▸ hDy, congrArg C heqy⟩
-
 
 theorem reference_ball_regions_of_side
     (A B : BallNeighborhoodChart E3 E3)

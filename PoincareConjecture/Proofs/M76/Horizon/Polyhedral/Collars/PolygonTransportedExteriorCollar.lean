@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonClosedExteriorCollar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval

@@ -17,8 +17,6 @@ variable {E F M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : M → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) M]
 
-
-
 theorem m67_norm_mfderiv_apply_le_of_lipschitzOn {f : E → M} {S : Set E}
     (hS : IsOpen S) {K : ℝ≥0} (hf : LipschitzOnWith K f S)
     {z : E} (hz : z ∈ S) (v : E) :
@@ -67,7 +65,6 @@ theorem m67_norm_mfderiv_apply_le_of_lipschitzOn {f : E → M} {S : Set E}
 
 end PoincareConjecture
 
-
 namespace PoincareConjecture
 
 variable {E F M N : Type*}
@@ -81,8 +78,6 @@ variable {E F M N : Type*}
   [RiemannianBundle (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace 𝓘(ℝ, F) : N → Type _)]
   [IsRiemannianManifold 𝓘(ℝ, F) N]
-
-
 
 theorem m67_norm_mfderiv_apply_le_of_lipschitz
     {f : M → N} (hd : MDifferentiable 𝓘(ℝ, E) 𝓘(ℝ, F) f)

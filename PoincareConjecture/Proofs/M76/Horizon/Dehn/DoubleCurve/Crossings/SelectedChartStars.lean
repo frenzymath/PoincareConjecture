@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn
-
-
 
 theorem exists_selected_compatible_chart_stars
     {E V X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

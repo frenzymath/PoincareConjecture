@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Regularit
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Matrix
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,7 +44,6 @@ private lemma hasDerivAt_matrix_inv_entry_at_one
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 lemma hasDerivAt_tensorTrace
     (F : RicciFlow n M J) {k : ℕ} {T W : ℝ → CovariantTensorEvaluation n M (k + 2)}

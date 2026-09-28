@@ -10,23 +10,12 @@ import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.LinearCombination
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_fixedTail_openLine_normalTube
     (C : ((ℝ × ℝ) × ℝ) → (ℝ × ℝ))

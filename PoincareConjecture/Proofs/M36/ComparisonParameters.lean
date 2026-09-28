@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.ComparisonSmoothJets
 import PoincareConjecture.Proofs.M36.ComparisonChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

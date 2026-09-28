@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M03.MetricGradientEvolution
 import PoincareConjecture.Proofs.M03.MetricInverse
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -748,7 +739,6 @@ theorem curvature_all_rank_metric_rate_le
     (2 * (n : ℝ) + 2 * (rank : ℝ) * (n : ℝ) ^ 2) * A * q
   rw [hall]
   nlinarith only [houtputBound, hallBound]
-
 
 theorem ricciFlow_iteratedCurvature_scalar_heat_identity
     {I : Set ℝ} (F : RicciFlow n M I) {t : ℝ} (ht : t ∈ interior I) (order : ℕ)

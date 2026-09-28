@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.LocalRegularity
 import Mathlib.Geometry.Manifold.VectorBundle.Tensoriality
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -23,12 +14,10 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def coordinateRepresentative (p : M) (Y : (x : M) → TangentSpace (𝓡 n) x)
     (x : M) : EuclideanSpace ℝ (Fin n) :=
   (trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p).continuousLinearMapAt
     ℝ x (Y x)
-
 
 def constantCoordinateField (p : M) (v : EuclideanSpace ℝ (Fin n))
     (x : M) : TangentSpace (𝓡 n) x :=
@@ -73,7 +62,6 @@ lemma coordinateRepresentative_constant (p : M) (v : EuclideanSpace ℝ (Fin n))
     (hx : x ∈ (trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p).baseSet) :
     coordinateRepresentative p (constantCoordinateField p v) x = v := by
   exact Trivialization.continuousLinearMapAt_symmL (R := ℝ) _ hx v
-
 
 def coordinateConnectionDifference (D : LeviCivitaData g) (p : M)
     (Y : (x : M) → TangentSpace (𝓡 n) x) (x : M) :
@@ -140,8 +128,6 @@ private def coordinateConnectionBilinear (D : LeviCivitaData g) (p x : M)
       exact map_smul _ c v
     simp [H, hfields, D.connection.isCovariantDerivativeOn.smul_const c (hfield v)]
 
-
-
 def coordinateConnectionCoefficient (D : LeviCivitaData g) (p x : M) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) := by
@@ -179,8 +165,6 @@ lemma contMDiffAt_coordinateConnectionCoefficient (D : LeviCivitaData g) (p : M)
   filter_upwards [(trivializationAt (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) p).open_baseSet.mem_nhds hx]
     with y hy
   exact D.coordinateConnectionCoefficient_apply p hy u v
-
-
 
 lemma coordinate_connection_eq (D : LeviCivitaData g) (p : M)
     {Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}

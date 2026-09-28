@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Ext
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Locality
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +18,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem deriv_cutoff_mul_scalarCurvature_le_at_max
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -73,8 +64,6 @@ theorem deriv_cutoff_mul_scalarCurvature_le_at_max
   rw [hcross] at hlap
   nlinarith
 
-
-
 theorem deriv_cutoff_mul_scalarCurvature_le_linear_at_max
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M) (φ : ℝ → M → ℝ)
@@ -98,8 +87,6 @@ theorem deriv_cutoff_mul_scalarCurvature_le_linear_at_max
       (mul_nonneg hφpos.le hR)
   · exact (mul_le_mul_of_nonneg_left hcutoff hR).trans
       (mul_le_mul_of_nonneg_right hQ hA)
-
-
 
 theorem deriv_cutoff_mul_scalarCurvature_le_at_max_on_open [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -142,8 +129,6 @@ theorem deriv_cutoff_mul_scalarCurvature_le_at_max_on_open [T2Space M]
     (by simpa only [hψx] using hφpos) hRic hlocal
   simpa only [hψx, hψ, hgrad,
     (F.connection t).laplacian_eq_of_eventuallyEq heq] using h
-
-
 
 theorem deriv_cutoff_mul_scalarCurvature_le_linear_at_max_on_open [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CanonicalCover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.HornTransport
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +42,6 @@ def strongEndRegionCover (Q : SingularLimitConclusion H)
     exact ⟨N.spatialNeck ((hA.trans A.epsilon₀_le_one_two_hundred).trans_lt (by norm_num)),
       ⟨N, rfl, hcenter ▸ hx⟩, hcenter⟩
   neck_epsilon := by rintro N ⟨S, rfl, _⟩; rfl
-
-
 
 theorem exists_source_tube_of_strong_centers (Q : SingularLimitConclusion H)
     (A : RepairedNeckCapTopologyTheory.{u}) (hA : terminalAccuracyFactor * H.epsilon ≤ A.epsilon₀)

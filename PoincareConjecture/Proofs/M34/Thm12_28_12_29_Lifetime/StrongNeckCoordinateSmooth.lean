@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckBilinearSmooth
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckBilinearJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -30,8 +22,6 @@ private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topolog
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
 
-
-
 theorem limitCoordinateBilinear_contDiffAt
     (q : L.sliceCarrier.carrier) {s : ℝ} (hs : s ∈ J) {y : E₃}
     (hy : y ∈ (extChartAt (𝓡 3) q).target) :
@@ -50,8 +40,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
   (R : OrdinaryProductRicciGeometry F.metric I)
-
-
 
 theorem ordinaryChapter11CoordinateBilinear_contDiffAt
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.CircleSurgeryGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,11 +8,9 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
 def selectedCircleSurgeryFamily {X κ : Type*} [DecidableEq κ]
     (S : κ → Set X) (i : κ) (new : Bool → Set X) (b : Bool) : κ → Set X :=
   Function.update S i (new b)
-
 
 def selectedCircleSurgeryIndex {κ : Type*} [DecidableEq κ] (i : κ) (b : Bool)
     (j : κ) : {j : κ // j ≠ i} ⊕ Bool :=
@@ -100,8 +89,6 @@ theorem selectedCircleSurgeryFamily_disjoint_omitted {X κ : Type*} [DecidableEq
     · simp only [selectedCircleSurgeryIndex, dif_neg hji, ne_eq, Sum.inl_ne_inr, not_false_eq_true]
   exact disjoint_left.mp (hfull hne)
     ((selectedCircleSurgeryFamily_eq_index S i new b j).subset hj) hxnew
-
-
 
 theorem selectedCircleSurgeryFamily_geometry
     {X ι κ : Type*} [TopologicalSpace X] [DecidableEq κ] [Finite κ]

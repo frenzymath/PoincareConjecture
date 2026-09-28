@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.PointwiseTerminalAlternative
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedConclusion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65Family_pointwise_terminal_alternative_proved
     (hM61 : M61RawWidthCore.{u}) (hM64 : M64ComparisonTheory.{u})

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Coordinates.ShellRetrac
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRimFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 open PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.ProtectedAnnulus
@@ -170,8 +162,6 @@ theorem stage_radial_rim (hS : S.space = source)
   rw [s.annulusRim_projection hS]
   exact chartShellRadial_prescribed L retained b u
     (hvalues _ ⟨endpoint_mem_sphere b, u.property⟩)
-
-
 
 theorem stage_rim_class_ne_one (hS : S.space = source)
     (hvalues : ∀ x ∈ sphere (0 : V1) 1 ×ˢ Q2, (f x : V3) = h (coordinates x))

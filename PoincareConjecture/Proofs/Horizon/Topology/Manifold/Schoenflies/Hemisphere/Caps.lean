@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff RealInnerProductSpace
 namespace Poincare.Manifold.Schoenflies.Hemisphere
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E] {v : E}
-
 
 def capHeight (r : Real) : Real := (Real.sqrt (r ^ 2 + 1))⁻¹
 
@@ -84,7 +74,6 @@ theorem image_closedBall_toSphere (hv : ‖v‖ = 1) {r : Real} (hr : 0 ≤ r) :
     rw [mem_closedBall, dist_zero_right, ← capHeight_le_inner_toSphere_iff hv hr, heq]
     exact hp
 
-
 def complementRadius (c : Real) : Real := Real.sqrt (4 * (1 + c) / (1 - c))
 
 theorem complementRadius_pos {c : Real} (hc : -1 < c) (hc1 : c < 1) :
@@ -135,8 +124,6 @@ theorem image_closedBall_stereoInvFun (hv : ‖v‖ = 1)
     refine ⟨stereographic hv p, ?_, heq⟩
     rw [mem_closedBall, dist_zero_right, ← inner_stereoInvFun_le_iff hv hc hc1, heq]
     exact hp
-
-
 
 theorem complement_image_ball_toSphere (hv : ‖v‖ = 1) {r : Real} (hr : 0 < r) :
     (toSphere hv '' ball (0 : Plane v) r)ᶜ =

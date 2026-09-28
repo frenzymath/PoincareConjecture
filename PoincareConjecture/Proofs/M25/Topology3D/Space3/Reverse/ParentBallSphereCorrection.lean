@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereCollarCorrection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FixedSphereBallPreservation
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_sphere_fixed_patch_extension
     (T : E3 → E3) {K U : Set E3}

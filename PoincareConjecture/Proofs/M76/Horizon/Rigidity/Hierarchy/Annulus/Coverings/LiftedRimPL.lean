@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.RimCircleCoo
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusReflection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,8 +55,6 @@ private theorem exists_rim_period_parameter (z : Circle) :
   refine ⟨t / 32, ⟨by linarith [ht.1], by linarith [ht.2]⟩, ?_⟩
   rw [show 32 * (t / 32) = t by ring]
   exact AddCircle.coe_equivIco
-
-
 
 theorem finitePiecewiseAffineOn_hamiltonZero_lifted_annulus_rims
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

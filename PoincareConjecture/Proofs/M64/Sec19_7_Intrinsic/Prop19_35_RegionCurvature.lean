@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_Continuation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,11 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_areaDensity_eq_pullbackVolumeDensity
     (G : RiemannianMetric 2 AnnulusCoordinates) (p : AnnulusCoordinates) :
@@ -51,11 +34,6 @@ theorem m64Intrinsic_areaDensity_eq_pullbackVolumeDensity
     exact Real.sqrt_pos.mp (hdensity ▸ hp)
   rw [max_eq_right hdet.le, hdensity]
 
-
-
-
-
-
 theorem m64Intrinsic_area_eq_volumeMeasure
     (G : RiemannianMetric 2 AnnulusCoordinates) :
     intrinsicAnnulusArea G = (G.volumeMeasure standardAnnulusDomain).toReal := by
@@ -75,11 +53,6 @@ theorem m64Intrinsic_area_eq_volumeMeasure
   exact integral_eq_lintegral_of_nonneg_ae
     (Eventually.of_forall fun p => (hρ p).2.le) hρc.aestronglyMeasurable
 
-
-
-
-
-
 theorem m64Intrinsic_region_volume_le_area
     (G : RiemannianMetric 2 AnnulusCoordinates) {S : Set AnnulusCoordinates}
     (hS : S ⊆ standardAnnulusDomain) :
@@ -88,12 +61,6 @@ theorem m64Intrinsic_region_volume_le_area
   refine ⟨(measure_mono hS).trans_lt hfinite, ?_⟩
   rw [m64Intrinsic_area_eq_volumeMeasure]
   exact ENNReal.toReal_mono hfinite.ne (measure_mono hS)
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_gaussian_integral_le_area
     (N : IntrinsicAnnulus) {K : ℝ} (hK : N.GaussianCurvatureBound K)

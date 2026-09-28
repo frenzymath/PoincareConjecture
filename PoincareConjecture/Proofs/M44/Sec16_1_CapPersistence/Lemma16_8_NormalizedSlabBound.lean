@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CollarTran
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CollarScalar
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 def restrictRegularSlabRight {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {a b c : ℝ}
@@ -36,10 +23,6 @@ def restrictRegularSlabRight {slice : ℝ → GeneralizedSliceCarrier.{u}}
   identify t := S.identify ⟨t.1, t.2.1, t.2.2.trans hcb⟩
   initial_identify := S.initial_identify
   metric_pullback t := S.metric_pullback ⟨t.1, t.2.1, t.2.2.trans hcb⟩
-
-
-
-
 
 theorem exists_normalized_slab_curvature_bound
     (P : M44CapPersistencePredecessors.{u}) (C : ℝ) :

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Strips.Flattening
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.DisjointSupport
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR2" => 𝓘(Real, Real × Real)
-
-
-
 
 theorem exists_supported_ambient_strip_family_flattening
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

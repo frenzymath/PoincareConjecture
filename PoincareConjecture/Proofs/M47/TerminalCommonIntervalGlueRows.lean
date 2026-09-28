@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCapturedRows
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_glue_row_limits
     {M : Type u} {N : Type v} [MetricSpace M] [MetricSpace N]

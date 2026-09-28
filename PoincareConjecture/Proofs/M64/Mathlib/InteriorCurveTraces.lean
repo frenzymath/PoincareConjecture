@@ -2,16 +2,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,12 +11,6 @@ open Set Filter MeasureTheory Topology
 open scoped ContDiff intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem interiorCurve_exists_primitive
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -54,11 +38,6 @@ theorem interiorCurve_exists_primitive
   rw [hFTC] at hadd
   rw [← hadd]
   abel
-
-
-
-
-
 
 theorem interiorCurve_unit_trace_averages {f d : ℝ → ℝ}
     (hd : ∀ s ∈ Ioo (0 : ℝ) 1, HasDerivAt f (d s) s)
@@ -121,10 +100,6 @@ theorem interiorCurve_unit_trace_averages {f d : ℝ → ℝ}
   · simpa only [sub_eq_add_neg, add_neg_cancel, mul_zero, mul_neg, mul_one,
       zero_sub, neg_neg, zero_add] using havg (-1)
   · simpa only [add_zero, mul_one, mul_zero, sub_zero] using havg 0
-
-
-
-
 
 theorem IntervalIntegrable.absolutelyContinuousOnInterval_intervalIntegral_vector
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

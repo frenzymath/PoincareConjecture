@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalComponentCertificate
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentScaling
 import PoincareConjecture.Proofs.M47.BlowupControlsComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterv
     ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterval ⊤)) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
 
 theorem limitCanonical_eventually_component_control
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

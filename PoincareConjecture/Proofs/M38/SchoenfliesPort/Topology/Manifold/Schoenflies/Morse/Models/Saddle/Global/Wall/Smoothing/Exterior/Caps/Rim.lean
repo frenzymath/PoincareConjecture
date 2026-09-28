@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.Topology
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.UpperGeometry
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,14 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -39,8 +25,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IP" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
-
-
 
 theorem exists_lower_physical_annulus_across_rim
     {v : E3} {g : S2 → E3} {P : Set Real}
@@ -101,8 +85,6 @@ theorem exists_lower_physical_annulus_across_rim
     rw [mem_ball, Real.dist_eq, abs_lt]
     exact ⟨by linarith [ht.1], by linarith⟩
   · exact A.actual_height q t ⟨le_of_not_gt htc, by linarith [ht.2]⟩
-
-
 
 theorem exists_upper_physical_annulus_across_rim
     {v : E3} {g : S2 → E3} {P : Set Real}

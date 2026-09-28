@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckIntegralPDENative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckSmoothMetricFamilyNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckFamilyRecoveryNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -49,7 +41,6 @@ structure Response where
     ContMDiff (𝓡 n) 𝓘(ℝ, C(Icc (0 : ℝ) T, ℝ)) ∞
       (probePath d L r p (by omega) hp
         (responsePath time_pos.le d.symmetricParameters forcing) ab)
-
 
 theorem exists_response : Nonempty (Response d L r p hpr hp) := by
   obtain ⟨A⟩ := exists_compatibleChartCover (n := n) (M := M)

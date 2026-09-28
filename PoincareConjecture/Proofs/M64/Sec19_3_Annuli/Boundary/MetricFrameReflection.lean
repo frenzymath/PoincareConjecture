@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.MetricRowFrame
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,10 +16,6 @@ variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
-
 def metricBoundaryReflection (j : Fin n) : (Fin n → ℂ) ≃ₗᵢ[ℝ] (Fin n → ℂ) := by
   let e (k : Fin n) : ℂ ≃ₗᵢ[ℝ] ℂ :=
     if k = j then conjLIE else conjLIE.trans (LinearIsometryEquiv.neg ℝ)
@@ -38,19 +25,11 @@ def metricBoundaryReflection (j : Fin n) : (Fin n → ℂ) ≃ₗᵢ[ℝ] (Fin n
       simp only [Pi.norm_def, LinearEquiv.piCongrRight_apply,
         LinearIsometryEquiv.coe_toLinearEquiv, LinearIsometryEquiv.nnnorm_map] }
 
-
-
-
-
 theorem metricBoundaryReflection_apply (j : Fin n) (v : Fin n → ℂ) (k : Fin n) :
     metricBoundaryReflection j v k = if k = j then star (v k) else -star (v k) := by
   simp only [metricBoundaryReflection, LinearIsometryEquiv.coe_mk,
     LinearEquiv.piCongrRight_apply]
   split_ifs <;> rfl
-
-
-
-
 
 theorem metricBoundaryReflection_smul (j : Fin n) (c : ℂ) (v : Fin n → ℂ) :
     metricBoundaryReflection j (c • v) = star c • metricBoundaryReflection j v := by
@@ -58,20 +37,12 @@ theorem metricBoundaryReflection_smul (j : Fin n) (c : ℂ) (v : Fin n → ℂ) 
   simp only [metricBoundaryReflection_apply, Pi.smul_apply, smul_eq_mul, star_mul]
   split_ifs <;> ring
 
-
-
-
-
 theorem metricBoundaryReflection_involutive (j : Fin n) :
     Function.Involutive (metricBoundaryReflection j) := by
   intro v
   ext k
   simp only [metricBoundaryReflection_apply]
   split_ifs <;> simp
-
-
-
-
 
 theorem metricRowFrame_boundary_columns
     (G : E →L[ℝ] E →L[ℝ] ℝ) (V X Y : E) (j : Fin n) (hV : V j ≠ 0)
@@ -97,10 +68,6 @@ theorem metricRowFrame_boundary_columns
     field_simp
     ring
 
-
-
-
-
 theorem metricBoundaryReflection_of_rows (j : Fin n) (X Y : E)
     (hY : Y j = 0) (hX : ∀ k, k ≠ j → X k = 0) :
     metricBoundaryReflection j (coordinateComplexification X - I • coordinateComplexification Y) =
@@ -113,10 +80,6 @@ theorem metricBoundaryReflection_of_rows (j : Fin n) (X Y : E)
   · subst k
     simp [hY]
   · simp [hk, hX k hk]
-
-
-
-
 
 theorem metricRowFrame_boundary_reflection
     (G : E →L[ℝ] E →L[ℝ] ℝ) (V X Y : E) (j : Fin n) (hV : V j ≠ 0)

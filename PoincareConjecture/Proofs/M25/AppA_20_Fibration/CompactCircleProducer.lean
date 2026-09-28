@@ -18,17 +18,6 @@ open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.M25
 
-
-
-
-
-
-
-
-
-
-
-
 theorem compactNonseparatingFibrationInput :
     CompactNonseparatingFibrationInput.{u} := by
   obtain ⟨ec, hcp, hccap, compactReturn⟩ :=

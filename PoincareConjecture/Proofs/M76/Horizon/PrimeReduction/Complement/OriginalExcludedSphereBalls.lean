@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.MarkedSphereSides
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.FiniteSphereSideAllocation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.CubicalThreeSphere
 

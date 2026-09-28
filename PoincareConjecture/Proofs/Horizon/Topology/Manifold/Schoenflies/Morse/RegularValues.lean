@@ -5,13 +5,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Perfect
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +17,6 @@ namespace Poincare.Manifold
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_regular_value_sphere
     {f : S2 -> S2} (hf : ContMDiff (𝓡 2) (𝓡 2) ∞ f)
@@ -95,7 +86,6 @@ theorem isOpen_regular_values_sphere
   exact (((Poincare.isOpen_isLocalDiffeomorphAt (f := f)).isClosed_compl.isCompact).image
     hf.continuous).isClosed.isOpen_compl
 
-
 theorem finite_fiber_of_regular_value_sphere
     {f : S2 -> S2} (hf : ContMDiff (𝓡 2) (𝓡 2) ∞ f) {q : S2}
     (hq : ∀ x, f x = q -> Function.Bijective (mfderiv (𝓡 2) (𝓡 2) f x)) :
@@ -117,8 +107,6 @@ theorem finite_fiber_of_regular_value_sphere
     exact (heq hy).symm.trans (hfy.trans (hx.symm.trans (heq he)))
   · rintro rfl
     exact ⟨he, hx⟩
-
-
 
 theorem exists_antipodal_regular_values_sphere
     {f : S2 -> S2} (hf : ContMDiff (𝓡 2) (𝓡 2) ∞ f)

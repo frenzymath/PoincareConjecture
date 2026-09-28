@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallChartReparametrizatio
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallBoundaryParametrization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +14,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] sourceCircle_stereographic_dimension
-
-
 
 theorem exists_sphere_disc_vertical_cap
     (e : OpenPartialHomeomorph E2 UnitTwoSphere)
@@ -106,8 +95,6 @@ theorem exists_sphere_disc_vertical_cap
   · change (fun y => R (F y)) ''
       (((↑) : UnitTwoSphere → E3) '' (e '' closedBall (0 : E2) 1)) = _
     rw [← image_image, hFimage, hRimage]
-
-
 
 theorem exists_normalized_child_cap_ball
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRegionSideTransport
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCirclePoleBranches
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Nonempty ι]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_common_planar_circle_side_labels
     {d q : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

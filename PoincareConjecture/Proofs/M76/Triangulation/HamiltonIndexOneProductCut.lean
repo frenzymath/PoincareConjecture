@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,11 +16,6 @@ local notation "Q2" => sphere (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem finitePL_proper_product_cut (hdim : Module.finrank ℝ E = 3)
     {R : Set E} (hR : IsClosed R) (c : (V2 × ℝ) → E)

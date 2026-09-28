@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PieceData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapHeightCompression
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "D1" => Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
 
 noncomputable def SaddlePieceData.heightCompress
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ZeroChargeSignedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCurvePresentation
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem zero_charge_vertex_link_sign_data
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

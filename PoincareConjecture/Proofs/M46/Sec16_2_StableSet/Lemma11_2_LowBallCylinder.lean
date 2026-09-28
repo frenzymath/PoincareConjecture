@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_SmallCurvature
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.LowScalarCylinder
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallTestScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem lowScalarCylinder_of_canonical_and_cap_floor
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

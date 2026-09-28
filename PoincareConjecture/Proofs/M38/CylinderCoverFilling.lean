@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.CollarCoverLift
 import PoincareConjecture.Proofs.M38.CylinderSphereFilling
 import PoincareConjecture.Proofs.M38.ProperDeckBallSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,10 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
-
 
 theorem cylinder_quotient_sphere_filling_or_lifted_coordinates_of_source_eq
     {A Q : GeneralizedSliceCarrier.{u}}
@@ -77,8 +64,6 @@ theorem cylinder_quotient_sphere_filling_or_lifted_coordinates_of_source_eq
     apply hqC p
     rw [hsource]
     exact ⟨mem_univ _, abs_lt.mp (hp.trans hηδ)⟩
-
-
 
 theorem cylinder_quotient_sphere_filling_or_lifted_coordinates
     {A Q : GeneralizedSliceCarrier.{u}}

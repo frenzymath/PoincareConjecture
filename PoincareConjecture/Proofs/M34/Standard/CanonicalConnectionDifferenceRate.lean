@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalRicciGradientDifference
 import PoincareConjecture.Proofs.M34.Standard.UniformConnectionJetRate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {n dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 noncomputable def canonicalDomain_connectionDifferenceRate
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
@@ -42,9 +30,6 @@ noncomputable def canonicalDomain_connectionDifferenceRate
     (canonicalDomain_differenceEnergyBackground U hU g0 D0 p x).1.2
     (canonicalDomain_curvatureArray U hU g1 D1 p x)
     (canonicalDomain_connectionVelocity U hU g1 D1 p x) d H A S
-
-
-
 
 theorem canonicalDomain_connectionVelocity_difference
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
@@ -86,8 +71,6 @@ theorem canonicalDomain_connectionVelocity_difference
       (fun j i => canonicalDomain_connectionVelocity U hU g1 D1 p x i j)) = _
   rw [map_sub]
   exact hf
-
-
 
 theorem canonicalDomain_connectionDifferenceRate_from_jets
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :

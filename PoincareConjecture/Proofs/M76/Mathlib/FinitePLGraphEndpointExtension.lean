@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalEndpointExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedGraphGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_finitePL_marked_graph_with_end_intervals {ι : Type*} [Finite ι]
     (S : ι → Set E) (T : ι → Set F)

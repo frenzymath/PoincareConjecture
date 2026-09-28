@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedMetric
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingQuadraticLiminf
 import Mathlib.Topology.Algebra.Order.LiminfLimsup
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -175,8 +163,6 @@ private theorem intrinsic_energy_le_liminf
     _ ≤ liminf (fun j => q j 0 + q j 1) atTop :=
       le_liminf_add (hlow 0) (hupp 0) (hlow 1) (hupp 1).isCoboundedUnder_ge
     _ = _ := by simp only [hqsum]
-
-
 
 theorem m64Annulus_intrinsic_sobolev_subsequence
     (g : RiemannianMetric n M) (e : M → E)

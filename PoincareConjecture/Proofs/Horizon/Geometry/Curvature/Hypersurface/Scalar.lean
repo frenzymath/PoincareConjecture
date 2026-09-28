@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Trace
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -49,7 +43,6 @@ private theorem exists_orthonormalBasis_adjoin
   let a := basisOfOrthonormalOfCardEqFinrank hv hcard
   have ha : Orthonormal ℝ a := by simpa [a] using hv
   refine ⟨a.toOrthonormalBasis ha, ?_, ?_⟩ <;> simp [a, v]
-
 
 theorem gauss_scalarCurvature_of_eventually {m : ℕ}
     {g : RiemannianMetric (m + 1) (EuclideanSpace ℝ (Fin (m + 1)))}

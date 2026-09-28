@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceRegions
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,11 +10,6 @@ namespace Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "R" => sphere (0 : V2) 1
-
-
-
-
-
 
 theorem exists_nested_circle_source_disk {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))

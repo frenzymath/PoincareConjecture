@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenSubset
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 
-
-
-
-
-
-
 open TopologicalSpace Function
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff
@@ -28,7 +22,6 @@ local instance ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
 
-
 def regularLevelMetric (g : RiemannianMetric (n + 1) M) :
     letI := openLevelSetChartedSpace hf U hreg n c
     letI := isManifold_openLevelSet hf U hreg n c
@@ -47,7 +40,6 @@ def regularLevelMetric (g : RiemannianMetric (n + 1) M) :
       g.inner (openLevelIncl f U c x)
         (mfderiv (𝓡 n) (𝓡 (n + 1)) (openLevelIncl f U c) x v)
         (mfderiv (𝓡 n) (𝓡 (n + 1)) (openLevelIncl f U c) x w) := rfl
-
 
 theorem regularLevelGeometry
     {n : ℕ} {M : Type*} [TopologicalSpace M]

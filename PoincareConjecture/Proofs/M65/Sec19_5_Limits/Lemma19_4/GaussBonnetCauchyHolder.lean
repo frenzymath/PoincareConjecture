@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyMeasur
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchMeasurableGauge
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
 
 theorem integral_norm_inv_closedBall_le_center {R : ℝ} (hR : 0 < R)
     (c z : ℂ) :
@@ -41,9 +29,6 @@ theorem integral_norm_inv_closedBall_le_center {R : ℝ} (hR : 0 < R)
         rw [integral_sub_left_eq_self, integral_indicator measurableSet_closedBall]
   rw [heq]
   exact integral_norm_inv_closedBall_le_global hR (c - z)
-
-
-
 
 theorem integral_cauchyKernel_sub_le {R : ℝ} (hR : 0 < R) (z w : ℂ) :
     (∫ u in closedBall (0 : ℂ) R, ‖(z - u)⁻¹ - (w - u)⁻¹‖) ≤
@@ -139,9 +124,6 @@ theorem integral_cauchyKernel_sub_le {R : ℝ} (hR : 0 < R) (z w : ℂ) :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
-
 theorem norm_cauchyOperator_sub_le_sqrt {h : ℂ → E} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : AEStronglyMeasurable h volume)
     (hsupport : Function.support h ⊆ closedBall (0 : ℂ) R)
@@ -186,9 +168,6 @@ theorem norm_cauchyOperator_sub_le_sqrt {h : ℂ → E} {R B : ℝ}
       mul_le_mul_of_nonneg_left hint (inv_nonneg.mpr Real.pi_pos.le)
     _ = _ := by field_simp
 
-
-
-
 theorem norm_cauchyGauge_sub_le_sqrt {B : Type*} [NormedRing B]
     [NormedAlgebra ℂ B] [CompleteSpace B] [NormOneClass B]
     {A : ℂ → B} {R B0 : ℝ}
@@ -213,11 +192,6 @@ theorem norm_cauchyGauge_sub_le_sqrt {B : Type*} [NormedRing B]
       _ = _ := mul_comm _ _
   rw [hP.2.1 z, hP.2.1 w, add_sub_add_left_eq_sub]
   exact norm_cauchyOperator_sub_le_sqrt hR (by positivity) hG hGs hGb z w
-
-
-
-
-
 
 theorem cauchyGauge_unframed_halfDisk_holder {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B : ℝ}

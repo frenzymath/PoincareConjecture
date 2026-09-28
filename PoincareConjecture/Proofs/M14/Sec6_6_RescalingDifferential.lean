@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingExponential
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialLineKernel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,23 +19,17 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 noncomputable def rescalingHorizontalAt
     (S : GeneralizedFlowSpacetime n X time I) (p q : S.Point) (h : q = p) :
     S.Horizontal p ≃L[ℝ] (M13.parabolicSpacetime S Q hQ a).Horizontal q := by
   subst q
   exact M13.parabolicSpacetimeHorizontal S Q hQ a p
 
-
-
 theorem rescalingHorizontalAt_val
     (S : GeneralizedFlowSpacetime n X time I) (p q : S.Point) (h : q = p) (v : S.Horizontal p) :
     (show SpacetimeModelVector n from (rescalingHorizontalAt Q hQ a S p q h v).val) = v.val := by
   subst q
   rfl
-
-
 
 theorem rescalingHorizontalAt_metric
     (S : GeneralizedFlowSpacetime n X time I) (p q : S.Point) (h : q = p)
@@ -56,8 +41,6 @@ theorem rescalingHorizontalAt_metric
   exact M13.parabolicSpacetime_metric S Q hQ a p v w
 
 include hCoordinates in
-
-
 
 theorem rescalingDifferential_val {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -85,9 +68,6 @@ theorem rescalingDifferential_val {T : ℝ} {x : G.Point}
   erw [exponentialLine_mfderiv E' (A Z) (A W) hs', exponentialLine_mfderiv E Z W hs] at hderiv
   exact hderiv
 
-
-
-
 theorem rescalingDifferential_comp {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
     (E' : M14ExponentialFamily (rescalingTransport hM12 hM13 G Q hQ a)
@@ -108,7 +88,6 @@ theorem rescalingDifferential_comp {T : ℝ} {x : G.Point}
     (rescalingHorizontalAt_val Q hQ a G.spacetime _ _ _ (E.differential Z s hs W)).symm
 
 include hCoordinates in
-
 
 theorem rescalingDifferential_bijective_iff {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

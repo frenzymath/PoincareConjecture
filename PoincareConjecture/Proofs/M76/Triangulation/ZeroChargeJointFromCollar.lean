@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointSignedImage
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAnnulusTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,11 +11,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] {n : ℕ}
-
-
-
-
-
 
 theorem exists_joint_cylinder_of_normalized_polygon_collar
     (P : Polygon V (n + 3)) (hP : P.HasSimplicialEdges)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.CompactDiskDerivat
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalRicci
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FluxIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b))
 
-
-
-
 theorem m65MovingEnergyDensity_hasDerivAt_of_conformal
     (u : ℝ → LoopPlane → M) {t : ℝ} {z : LoopPlane} (ht : t ∈ Ioo a b)
     (hu : ContMDiffAt ((𝓘(ℝ, ℝ)).prod (𝓡 2)) (𝓡 n) 2 (Function.uncurry u) (t, z))
@@ -40,9 +27,6 @@ theorem m65MovingEnergyDensity_hasDerivAt_of_conformal
   rw [m65PlaneRicciTraceDensity_eq_sum_of_conformal (F.connection t) (u t) z c hconf,
     m65PlaneMotionDensity_eq_sum_of_conformal F u t z c hconf]
   exact m65MovingEnergyDensity_hasDerivAt F u ht hu
-
-
-
 
 theorem m65Disk_energy_firstVariation
     (u : ℝ → LoopPlane → M) {U : Set (ℝ × LoopPlane)} (hU : IsOpen U)

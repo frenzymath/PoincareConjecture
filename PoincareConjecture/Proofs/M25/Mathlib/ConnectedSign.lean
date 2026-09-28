@@ -2,22 +2,11 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] {S : Set X} {B : X → ℝ} {η : ℝ}
-
-
-
 
 theorem IsPreconnected.exists_sign_mul_close (hS : IsPreconnected S)
     (hB : ContinuousOn B S) (hη : η ≤ 1)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricBoundaryFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualBlockUnionBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 omit [FiniteDimensional ℝ E] [DecidableEq E] in
-
 
 theorem mem_vertexDualUnion_iff_of_vertex
     (K : SimplicialComplex ℝ E) [Fintype K.faces]
@@ -49,9 +39,6 @@ theorem mem_vertexDualUnion_iff_of_vertex
     have hh := (K.barycentricDualBlock {p.val}).vertices_subset_space
       (K.faceCentroid_mem_barycentricDualBlock_vertices p.property)
     simpa only [Finset.centroid_singleton, id_eq] using hh
-
-
-
 
 theorem vertexDualUnion_edge_passage
     (K : SimplicialComplex ℝ E) [Fintype K.faces]

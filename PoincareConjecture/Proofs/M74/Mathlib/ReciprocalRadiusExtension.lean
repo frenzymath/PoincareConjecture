@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M74.Mathlib.RadialBallDiffeomorph
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M74
-
-
-
 
 theorem exists_reciprocalRadiusChart (σ : ℝ → ℝ) {a0 a b R : ℝ}
     (ha0 : 0 < a0) (ha : a0 < a) (hab : a < b) (hbR : b < R)

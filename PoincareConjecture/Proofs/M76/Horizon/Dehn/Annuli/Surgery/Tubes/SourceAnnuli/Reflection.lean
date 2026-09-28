@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 structure ComponentReflectionAnnulusData
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}
@@ -36,7 +34,6 @@ structure ComponentReflectionAnnulusData
   double_trace : source ∩ doubleLocusOn f S = old.pieces i
   middle : ∀ p : squareAnnulus L d, (chart p : P2) ∈ old.pieces i ↔ depth L p = 0
 
-
 theorem ComponentReflectionAnnulusData.middle_image
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}
@@ -53,8 +50,6 @@ theorem ComponentReflectionAnnulusData.middle_image
     · apply (D.middle _).mp
       simpa only [Homeomorph.apply_symm_apply] using hx
     · exact congrArg Subtype.val (D.chart.apply_symm_apply _)
-
-
 
 theorem ComponentBranchModel.nonempty_reflected_annulus_of_cyclic_map
     {X ι : Type*} [TopologicalSpace X]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointOriginalCover
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointExtraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +37,6 @@ local notation "U" => (fun j : ℕ =>
   TopologicalSpace.Opens.mk (G.exhaustion.space j) (G.exhaustion.space_open j))
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem limitFinite_actual_endpoint_extraction (P : M47Predecessors.{u})
     (d K : ℕ → ℝ) (hd : ∀ j, 0 < d j) (hK : ∀ j, 0 < K j)

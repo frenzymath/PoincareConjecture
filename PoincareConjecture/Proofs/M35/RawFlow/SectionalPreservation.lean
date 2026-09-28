@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalTimeSupport
 import PoincareConjecture.Proofs.M04.ShiBarrierMaximum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 open M04
-
 
 theorem raw_nonnegative_sectional_on_slab
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -116,8 +106,6 @@ theorem raw_nonnegative_sectional_on_slab
   intro t ht x u v
   simpa only [zero_mul] using sectional_lower_of_modelPairs (G.flow.connection t) x 0
     (fun p hp => hqnonneg t ht (x, ⟨p, hp⟩)) u v
-
-
 
 theorem raw_nonnegative_sectional
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

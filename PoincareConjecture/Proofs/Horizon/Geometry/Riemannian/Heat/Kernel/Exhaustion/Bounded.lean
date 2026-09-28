@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Bounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
-
 
 theorem exists_dirichletHeatKernel_exhaustion_local_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)
@@ -53,7 +45,6 @@ theorem exists_dirichletHeatKernel_exhaustion_local_bound
     (hbound (Ω (max j N)) (hΩ _) (hcontains.trans (hΩmono (le_max_right j N)))
       (K (max j N)) (hK _) t ht x hx y)
 
-
 theorem bddAbove_dirichletHeatKernel_exhaustion
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)
     {k : ℝ} (hk : 0 ≤ k)
@@ -75,8 +66,6 @@ theorem bddAbove_dirichletHeatKernel_exhaustion
     g.volumeMeasure.real (g.ball x 1), ?_⟩
   rintro _ ⟨j, rfl⟩
   exact hbound j t ht x hx y
-
-
 
 theorem exists_dirichletHeatKernel_exhaustion_compact_time_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)

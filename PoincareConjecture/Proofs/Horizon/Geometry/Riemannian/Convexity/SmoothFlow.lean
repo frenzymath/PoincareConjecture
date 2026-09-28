@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.FlowContraction
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace Poincare.Geometry.Riemannian.Convexity
 private abbrev E (n : ℕ) := EuclideanSpace ℝ (Fin n)
 
 variable {n : ℕ} {g : RiemannianMetric n (E n)}
-
-
 
 theorem exists_smooth_normalizedNegGradient_flow
     (D : LeviCivitaData g) {f : E n → ℝ} {U : Set (E n)} (hU : IsOpen U)
@@ -52,8 +40,6 @@ theorem exists_smooth_normalizedNegGradient_flow
       (fun _ hp => ⟨hp.2, hp.1⟩)
   · intro y hy t ht
     exact ⟨hmaps y hy t ht, hderiv y hy t ht⟩
-
-
 
 theorem exists_local_contracting_normalized_flow
     (D : LeviCivitaData g) {f : E n → ℝ} {U : Set (E n)} (hU : IsOpen U)

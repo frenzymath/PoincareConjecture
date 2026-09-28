@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem sphere_mvfderiv_inner_apply (f g : UnitTwoSphere → E3) (q : UnitTwoSphere)
     (hf : MDifferentiableAt (𝓡 2) 𝓘(ℝ, E3) f q)
@@ -30,8 +17,6 @@ theorem sphere_mvfderiv_inner_apply (f g : UnitTwoSphere → E3) (q : UnitTwoSph
     (f q, g q)).hasMFDerivAt.comp q (hf.hasMFDerivAt.prodMk hg.hasMFDerivAt)
   exact congrArg (fun L : TangentSpace (𝓡 2) q →L[ℝ] ℝ => L a) hd.mfderiv
 
-
-
 theorem sphere_height_critical_pairing (e : UnitTwoSphere → E3)
     (he : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ e) (q : UnitTwoSphere) (u : E3)
     (hcritical : mfderiv (𝓡 2) 𝓘(ℝ, ℝ) (fun p => ⟪u, e p⟫_ℝ) q = 0)
@@ -41,8 +26,6 @@ theorem sphere_height_critical_pairing (e : UnitTwoSphere → E3)
   have h : (InnerProductSpace.toDual ℝ E3 u).comp (mvfderiv (𝓡 2) e q) = 0 :=
     hd.mfderiv.symm.trans hcritical
   exact congrArg (fun L : TangentSpace (𝓡 2) q →L[ℝ] ℝ => L a) h
-
-
 
 theorem criticalBranch_height_mvfderiv (e : UnitTwoSphere → E3)
     (he : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ e) (g : UnitTwoSphere → UnitTwoSphere)
@@ -70,9 +53,6 @@ theorem criticalBranch_height_mvfderiv (e : UnitTwoSphere → E3)
   exact (congrArg (fun t : ℝ =>
     t + ⟪mvfderiv (𝓡 2) (fun p : UnitTwoSphere => (p : E3)) q a, e (g q)⟫_ℝ)
     hz).trans (zero_add _)
-
-
-
 
 theorem criticalBranch_height_difference_nonzero (e : UnitTwoSphere → E3)
     (he : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ e) (hinj : Function.Injective e)

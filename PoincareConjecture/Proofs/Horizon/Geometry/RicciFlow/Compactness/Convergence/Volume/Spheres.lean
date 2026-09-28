@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import Mathlib.MeasureTheory.Integral.Indicator
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +16,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem volumeMeasure_sphere_eq_zero_of_precompact_ball
     (g : RiemannianMetric n M) (p : M) {r R : ℝ} (hr : 0 < r) (hrR : r < R)
@@ -63,15 +48,12 @@ theorem volumeMeasure_sphere_eq_zero_of_precompact_ball
     rwa [hv']
   · exact Measure.addHaar_sphere_of_ne_zero volume 0 hr.ne'
 
-
 theorem volumeMeasure_sphere_eq_zero_of_metricComplete
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) (p : M)
     {r : ℝ} (hr : 0 < r) :
     g.volumeMeasure {q | g.edist p q = ENNReal.ofReal r} = 0 :=
   g.volumeMeasure_sphere_eq_zero_of_precompact_ball p hr (lt_add_one r)
     (g.isCompact_closure_ball_of_metricComplete hcomplete p (r + 1))
-
-
 
 theorem continuousAt_ball_volume_of_metricComplete
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) (p : M)
@@ -104,7 +86,6 @@ theorem continuousAt_ball_volume_of_metricComplete
     · filter_upwards [(ENNReal.continuous_ofReal.tendsto r).eventually_lt_const hgt]
         with s hs
       exact iff_of_false (not_lt_of_ge hs.le) (not_lt_of_ge hgt.le)
-
 
 theorem continuousAt_ball_volume_toReal_of_metricComplete
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) (p : M)

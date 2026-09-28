@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M30Providers
 import PoincareConjecture.Proofs.M30.Generalized.Restriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_boundedDistance_threshold (P : M30ControlledBlowupPredecessors.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 400 ∧
@@ -37,26 +25,18 @@ theorem exists_boundedDistance_threshold (P : M30ControlledBlowupPredecessors.{u
 variable {S : GeneralizedBlowupSequence.{u}} {k : ℕ}
   {x : ((S.flow k).slice (S.base k).1).carrier} {mu D : ℝ}
 
-
-
 theorem backwardDuration_denominator_pos :
     0 < max (S.scale k) ((S.flow k).scalar ⟨(S.base k).1, x⟩) :=
   (S.base_scalar_pos k).trans_le (le_max_left _ _)
-
-
 
 theorem backwardDuration_pos (hmu : 0 < mu) :
     0 < m30BackwardDuration S k x mu :=
   div_pos (mul_pos hmu (S.base_scalar_pos k)) backwardDuration_denominator_pos
 
-
-
 theorem backwardDuration_le (hmu : 0 ≤ mu) :
     m30BackwardDuration S k x mu ≤ mu := by
   apply (div_le_iff₀ backwardDuration_denominator_pos).mpr
   exact mul_le_mul_of_nonneg_left (le_max_left _ _) hmu
-
-
 
 theorem le_backwardDuration (hmu : 0 ≤ mu) (hD : 1 ≤ D)
     (hR : (S.flow k).scalar ⟨(S.base k).1, x⟩ ≤ D * S.scale k) :
@@ -72,10 +52,6 @@ theorem le_backwardDuration (hmu : 0 ≤ mu) (hD : 1 ≤ D)
         mu / D * (D * S.scale k) :=
       mul_le_mul_of_nonneg_left hmax (div_nonneg hmu hDpos.le)
     _ = mu * S.scale k := by rw [← mul_assoc, div_mul_cancel₀ _ hDpos.ne']
-
-
-
-
 
 theorem exists_uniform_backward_worldlines
     (hbound : GeneralizedBlowupBoundedDistance S)

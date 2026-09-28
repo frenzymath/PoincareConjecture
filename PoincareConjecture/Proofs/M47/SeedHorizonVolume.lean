@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedFirstFailureObservation
 import PoincareConjecture.Proofs.M47.SeedTerminalVolume
 import PoincareConjecture.Proofs.M47.NoncollapseHorizon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_seed_firstFailure_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

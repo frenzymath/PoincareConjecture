@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.InitialData
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.NormalChart
-
-
-
-
-
-
-

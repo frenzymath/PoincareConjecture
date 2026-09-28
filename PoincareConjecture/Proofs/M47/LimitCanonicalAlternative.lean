@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitAncientIdentification
 import PoincareConjecture.Proofs.M47.LimitRP2Transfer
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_ancient_alternative
     (h04 : RicciFlowCurvatureTheory.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.AnnulusOutsidePoint
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.FinitePLBallBoundaryCollar
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

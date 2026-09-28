@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Metric Set Filter ContinuousLinearMap
@@ -20,13 +12,11 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [Measure.IsAddHaarMeasure μ]
 
-
 theorem normed_convolution_contDiff (κ : ContDiffBump (0 : E))
     {f : E → ℝ} (hf : Continuous f) :
     ContDiff ℝ ∞ (κ.normed μ ⋆[lsmul ℝ ℝ, μ] f) :=
   κ.hasCompactSupport_normed.contDiff_convolution_left (lsmul ℝ ℝ)
     κ.contDiff_normed hf.locallyIntegrable
-
 
 theorem dist_normed_convolution_le_lipschitz (κ : ContDiffBump (0 : E))
     {f : E → ℝ} {L : ℝ≥0} (hf : LipschitzWith L f) (x : E) :
@@ -35,7 +25,6 @@ theorem dist_normed_convolution_le_lipschitz (κ : ContDiffBump (0 : E))
   intro y hy
   exact (hf.dist_le_mul y x).trans
     (mul_le_mul_of_nonneg_left hy.le L.coe_nonneg)
-
 
 theorem lipschitzWith_normed_convolution (κ : ContDiffBump (0 : E))
     {f : E → ℝ} {L : ℝ≥0} (hf : LipschitzWith L f) :

@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Pullback
 
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12

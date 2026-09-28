@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.IntersectingRegions
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -48,8 +41,6 @@ theorem neck_below_calibrated_level_of_linear_low_point
   rw [hid]
   nlinarith
 
-
-
 theorem exists_tube_neck_at_linear_level (Q : SingularLimitConclusion H)
     {X : Set (Q.extension.extended.slice T).carrier}
     (tube : EpsilonTubeCertificate (Q.extension.extended.metric T) X)
@@ -75,8 +66,6 @@ theorem exists_tube_neck_at_linear_level (Q : SingularLimitConclusion H)
     Q.neck_below_calibrated_level_of_linear_low_point (tube.chain.neck i.val)
       hepsilon rho hconstant ⟨x, hxi, hlevel.le⟩,
     tube.central_sphere_isotopy i.val i.property⟩
-
-
 
 theorem cappedTube_neck_or_cap_at_linear_level (Q : SingularLimitConclusion H)
     (Y : CappedTubeCertificate (Q.extension.extended.metric T))

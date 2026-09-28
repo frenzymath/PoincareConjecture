@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Extension.Interval
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Subdivision
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Coordinates
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -24,7 +13,6 @@ namespace PoincareConjecture.Topology.Surface
 universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 noncomputable def linearGraphCoordinates
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -39,7 +27,6 @@ theorem linearGraphCoordinates_apply
     linearGraphCoordinates C L z = C (L.symm (collarParameterEquiv z)) := rfl
 
 omit [T2Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M] in
-
 
 theorem linearGraphCoordinates_affineChartSegment
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -79,7 +66,6 @@ variable (D : FiniteChartRegionDecomposition (M := M))
 
 omit [T2Space M] in
 
-
 theorem exists_edge_coordinate_extension (e : D.EdgeIndex)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (hCinv : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C.symm C.target)
@@ -95,8 +81,6 @@ theorem exists_edge_coordinate_extension (e : D.EdgeIndex)
     (fun t ht => hchart ⟨t, ht, rfl⟩)
 
 omit [T2Space M] in
-
-
 
 theorem exists_edge_graph_subdivision (e : D.EdgeIndex)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

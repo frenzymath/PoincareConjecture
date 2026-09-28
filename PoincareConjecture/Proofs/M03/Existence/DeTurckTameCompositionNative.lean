@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeDirectionalProductNative
 import Mathlib.Analysis.Convolution
 import Mathlib.MeasureTheory.Function.LpSeminorm.LpNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +18,6 @@ namespace PoincareConjecture.DeTurckTameCompositionNative
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem weighted_integral_sq_le_mass {α : Type*} [MeasurableSpace α] {μ : Measure α}
     {w q : α → ℝ} (hw : Integrable w μ) (hwq : Integrable (fun x => w x * q x) μ)
@@ -110,7 +101,6 @@ theorem integrable_convolutionEnvelope_sq_integrand {a b : E → ℝ}
       (volume.prod volume) :=
   ha.convolution_integrand (ContinuousLinearMap.mul ℝ ℝ) hb2
 
-
 theorem integrable_convolutionEnvelope_sq {a b : E → ℝ}
     (ha : Integrable a volume) (ha0 : ∀ x, 0 ≤ a x)
     (hb : Continuous b) (hbdd : BddAbove (range (fun x => ‖b x‖)))
@@ -148,7 +138,6 @@ theorem memLp_convolutionEnvelope {a b : E → ℝ}
     (continuous_convolutionEnvelope ha hb hbdd).aestronglyMeasurable).mpr
     (integrable_convolutionEnvelope_sq ha ha0 hb hbdd hb2.integrable_sq)
 
-
 theorem norm_convolutionEnvelope_le {a b : E → ℝ}
     (ha : Integrable a volume) (ha0 : ∀ x, 0 ≤ a x)
     (hb : Continuous b) (hbdd : BddAbove (range (fun x => ‖b x‖)))
@@ -167,7 +156,6 @@ open TensorProbeNative
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {iota : Type*} [Fintype iota]
-
 
 def splitDirectionalWord : List iota → List (List iota × List iota)
   | [] => [([], [])]
@@ -229,7 +217,6 @@ private theorem scalarDirectional_list_sum {jota : Type*} (l : List jota)
         (fun y => (l.map (fun k => f k y)).sum) x at hd
     rw [hd, ih (fun k hk => hf k (List.mem_cons_of_mem j hk))]
 
-
 theorem directionalWord_mul (F : iota → SmoothField (n := n) (M := M))
     (w : List iota) {f g : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -290,8 +277,6 @@ private theorem lpNorm_list_sum_le {jota : Type*} (l : List jota) (f : jota → 
     exact (lpNorm_add_le (memLp_of_continuous μ (hf j List.mem_cons_self))
       (by norm_num : (1 : ENNReal) ≤ 2)).trans
       (add_le_add_right (ih (fun k hk => hf k (List.mem_cons_of_mem j hk))) _)
-
-
 
 theorem lpNorm_directionalWord_mul_le
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ) (w : List iota)

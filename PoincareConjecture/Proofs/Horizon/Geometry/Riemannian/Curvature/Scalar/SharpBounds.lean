@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import Mathlib.Algebra.QuadraticDiscriminant
 import Mathlib.Algebra.Order.Chebyshev
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,7 +37,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 800000 in
-
 
 theorem abs_scalarCurvature_le_curvatureTensorNorm_sharp
     (D : LeviCivitaData g) (x : M) :
@@ -85,14 +76,12 @@ theorem abs_scalarCurvature_le_curvatureTensorNorm_sharp
   have hboundnonneg : 0 ≤ (n : ℝ) * D.curvatureTensorNorm x := by positivity
   nlinarith only [hsq, hnorm, hboundnonneg, sq_abs (D.scalarCurvature x)]
 
-
 theorem scalarCurvature_le_curvatureTensorNorm_sharp
     (D : LeviCivitaData g) (x : M) :
     D.scalarCurvature x ≤ (n : ℝ) * D.curvatureTensorNorm x :=
   (le_abs_self _).trans (D.abs_scalarCurvature_le_curvatureTensorNorm_sharp x)
 
 set_option maxHeartbeats 800000 in
-
 
 theorem curvatureTensorNorm_le_scalarCurvature_sharp
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

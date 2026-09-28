@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem coordinate_product_mfderiv_left_inverse (N : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain) (v : RoundCylinderTangent z) :
@@ -41,8 +28,6 @@ theorem coordinate_product_mfderiv_left_inverse (N : EpsilonNeck g)
   have hcomp := mfderiv_comp z hi hm
   rw [heq.mfderiv_eq, mfderiv_id] at hcomp
   exact (congrArg (fun L => L v) hcomp).symm
-
-
 
 theorem sphere_coordinate_mfderiv (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x) :
@@ -60,9 +45,6 @@ theorem sphere_coordinate_mfderiv (N : EpsilonNeck g)
   rw [mfderiv_comp_apply x hc (mdifferentiableAt_fst.comp x hi),
     mfderiv_comp_apply x mdifferentiableAt_fst hi, mfderiv_fst]
   rfl
-
-
-
 
 theorem sphere_coordinate_mfderiv_norm_le [MeasurableSpace M] [BorelSpace M] [T3Space M]
     (N : EpsilonNeck g)
@@ -101,8 +83,6 @@ theorem sphere_coordinate_mfderiv_norm_le [MeasurableSpace M] [BorelSpace M] [T3
     mul_nonneg (inv_nonneg.mpr N.scale_pos.le) (Real.sqrt_nonneg _)
   nlinarith [norm_nonneg w0]
 
-
-
 theorem sphere_coordinate_mfderiv_axis (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) :
     mfderiv (𝓡 3) (𝓡 3) (fun y => (N.coordinate_inverse y).1.1) x
@@ -131,9 +111,6 @@ theorem sphere_coordinate_mfderiv_axis (N : EpsilonNeck g)
   rw [hinv]
   simp
 
-
-
-
 theorem differentiableAt_transition_sphere_axial (N N' : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain)
     (hx' : N.coordinate_map z ∈ N'.carrier) :
@@ -149,9 +126,6 @@ theorem differentiableAt_transition_sphere_axial (N N' : EpsilonNeck g)
   exact mdifferentiableAt_iff_differentiableAt.mp
     ((hc.contMDiffAt.comp z.2
       (contMDiffAt_fst.comp z.2 (hi.comp z.2 (hm.comp z.2 hp)))).mdifferentiableAt (by simp))
-
-
-
 
 theorem transition_sphere_axial_deriv (N N' : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain)
@@ -191,9 +165,6 @@ theorem transition_sphere_axial_deriv (N N' : EpsilonNeck g)
     D (N.coordinate_inverse (N.coordinate_map z)) (0, 1))
   rw [N.coordinate_inverse_coordinate_map hz, map_smul, smul_smul,
     mul_inv_cancel₀ N.scale_pos.ne', one_smul]
-
-
-
 
 theorem exists_intersecting_transition_sphere_axial_bound {η : ℝ} (hη : 0 < η) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

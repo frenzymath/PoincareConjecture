@@ -51,9 +51,6 @@ private theorem align_coface_pairs {T : Type*}
     · exact htrue true false h0
     · exact htrue false true h1
 
-
-
-
 theorem exists_oriented_boundary_vertex_cut
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     [DecidableEq E] (A L : SimplicialComplex ℝ E) [Fintype A.faces] [Fintype L.faces]

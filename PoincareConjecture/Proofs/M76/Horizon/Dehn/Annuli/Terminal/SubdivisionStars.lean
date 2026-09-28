@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,7 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [DecidableEq E]
-
 
 theorem IsSubdivision.exists_original_vertex_star
     {R K : SimplicialComplex ℝ E} (hRK : R.IsSubdivision K) (hK : K.faces.Finite)
@@ -39,8 +30,6 @@ theorem IsSubdivision.exists_original_vertex_star
   refine ⟨t, ⟨ht, ?_⟩, ?_⟩
   · simpa only [Finset.insert_eq_of_mem hvt] using ht
   · exact (convexHull_mono (Finset.subset_insert p s)).trans hst
-
-
 
 theorem IsSubdivision.exists_original_affine_vertex_star
     {R K : SimplicialComplex ℝ E} (hRK : R.IsSubdivision K) (hK : K.faces.Finite)

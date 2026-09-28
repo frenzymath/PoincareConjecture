@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.NorthSphereChart
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function Metric
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_selected_wall_no_bypass
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

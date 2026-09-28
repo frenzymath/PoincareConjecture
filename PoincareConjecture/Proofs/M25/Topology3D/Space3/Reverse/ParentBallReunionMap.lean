@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunionChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunionEndpoint
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_reunion_axial_diffeomorph (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)
@@ -131,7 +120,6 @@ theorem exists_reunion_axial_diffeomorph (P : SurgeryCapProfile)
   intro q hq
   have h := htrack 1 (by norm_num) (q : E3) ⟨q, hq, rfl⟩
   simpa only [heq, Prod.snd, hzero, L, B, F] using h
-
 
 theorem exists_reunion_diffeomorph (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)

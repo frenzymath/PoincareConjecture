@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,9 +62,6 @@ set_option synthInstance.maxHeartbeats 200000 in
 set_option maxSynthPendingDepth 12 in
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem tendsto_curvatureTensor_of_pullback_jets
     {n : ℕ} {α : Type*} {l : Filter α}

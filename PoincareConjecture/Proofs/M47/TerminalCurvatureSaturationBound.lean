@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureFlowInvariants
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNormContinuity
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSaturation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_bounded_of_parallel_saturation
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

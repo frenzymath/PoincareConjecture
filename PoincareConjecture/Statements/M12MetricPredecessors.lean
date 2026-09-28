@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M12MetricPredecessors (n : ℕ) : Prop where
   connection_exists : ∀ (M : Type u) [TopologicalSpace M]

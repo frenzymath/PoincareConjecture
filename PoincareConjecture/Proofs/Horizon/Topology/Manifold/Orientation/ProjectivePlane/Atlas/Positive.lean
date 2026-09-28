@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Basic
 
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

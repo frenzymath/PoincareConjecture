@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Round
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -91,7 +78,6 @@ theorem uniform_fixed_kappa_scalar_jets
     rw [abs_of_nonneg (mul_nonneg (by norm_num) hRicSq0)] at ht
     norm_num only [Nat.cast_ofNat, pow_succ, pow_zero, mul_one] at hlap
     linarith
-
 
 theorem uniform_normalized_scalar_jets
     (S : ScalarDerivativeServices.{u}) :

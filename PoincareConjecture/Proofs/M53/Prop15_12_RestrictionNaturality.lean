@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_BoundaryNaturality
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +14,6 @@ namespace PoincareConjecture.Proofs.M53
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
 theorem integralRelativeMap_id_eq_restriction {A B : Set X} (h : A ⊆ B) :
     integralRelativeMap (ContinuousMap.id X) h = integralRelativeRestriction h := by
   apply (cancel_epi (integralRelativeProjection A)).mp
@@ -33,8 +21,6 @@ theorem integralRelativeMap_id_eq_restriction {A B : Set X} (h : A ⊆ B) :
     integralRelativeRestriction_projection h]
   change integralChainsFunctor.map (𝟙 (TopCat.of X)) ≫ integralRelativeProjection B = _
   rw [CategoryTheory.Functor.map_id, Category.id_comp]
-
-
 
 theorem integralRelativeMap_restriction_naturality
     (f : C(X, Y)) {A A' : Set X} {B B' : Set Y}
@@ -46,10 +32,6 @@ theorem integralRelativeMap_restriction_naturality
   rw [← Category.assoc, integralRelativeMap_projection, Category.assoc,
     integralRelativeRestriction_projection, ← Category.assoc,
     integralRelativeRestriction_projection, integralRelativeMap_projection]
-
-
-
-
 
 theorem integralTripleBoundary_after_restriction
     {S A B : Set X} (hSA : S ⊆ A) (hBA : B ⊆ A) (n : Nat) :

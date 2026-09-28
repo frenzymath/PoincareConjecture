@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DomainBoundary
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -28,8 +16,6 @@ private theorem m64AnnulusDomain_ae_eq_interior :
     m64AnnulusDomain =ᵐ[volume] interior m64AnnulusDomain := by
   apply ae_eq_set.mpr
   exact ⟨m64AnnulusDomain_boundary_null, by rw [sdiff_eq_empty.mpr interior_subset]; simp⟩
-
-
 
 theorem m64AnnulusIntegral_eq_iterated (F : LoopPlane → ℝ) (hF : Continuous F) :
     (∫ p in m64AnnulusDomain, F p) =
@@ -65,8 +51,6 @@ theorem m64AnnulusIntegral_eq_iterated (F : LoopPlane → ℝ) (hF : Continuous 
           exact congrArg F (heq q)
         · simp only [indicator_of_notMem (mt (hmem q).mp hq), indicator_of_notMem hq]
     _ = _ := setIntegral_prod _ hInt
-
-
 
 theorem m64AnnulusInteriorIntegral_eq_iterated (F : LoopPlane → ℝ) (hF : Continuous F) :
     (∫ p in interior m64AnnulusDomain, F p) =

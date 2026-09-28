@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M48.TerminalBridge
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M48AnalyticCalibration
-
-
-
 
 theorem singular_continuation
     {S : RepairedControlledSchedulesData.{u}} (A : M48AnalyticCalibration S)

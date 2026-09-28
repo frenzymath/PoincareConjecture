@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundedRegions
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Analysis.Normed.Affine.AddTorsor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric AffineMap
@@ -19,9 +10,6 @@ open Set Metric AffineMap
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
 
 theorem exists_subdivision_short_edges (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -78,10 +66,6 @@ theorem exists_subdivision_short_edges (P : Polygon E (n + 3))
     rw [Nat.mul_add, Nat.mul_one]
     omega
   exact hN ▸ hex
-
-
-
-
 
 theorem exists_subdivision_subordinate_adjacent_edges
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

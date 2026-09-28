@@ -1,16 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.ComponentAxisModel
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 structure ComponentBranchModel
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -62,8 +57,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
   {old : SourceCircleDecomposition f S} {i : old.Index}
 
-
-
 theorem SourceCircleDecomposition.exists_component_branch_model [T2Space X]
     (Q : SimplicialComplex ℝ E) (hQ : Q.faces.Finite) (hQS : Q.space = S)
     (old : SourceCircleDecomposition f S) (hf : PolyhedralPLInCharts e f S)
@@ -98,8 +91,6 @@ theorem ComponentBranchModel.graph_inverse (D : ComponentBranchModel (e := e) (R
   have heq : D.inverse z = D.homeomorph.symm ⟨z, hz⟩ := Subtype.ext (D.inverse_value ⟨z, hz⟩)
   rw [heq, D.homeomorph.apply_symm_apply]
 
-
-
 theorem ComponentBranchModel.mem_sourceImage (D : ComponentBranchModel (e := e) (R := R) old i)
     (z : D.sample → ℝ × V3) (hz : z ∈ D.complex.space) :
     z ∈ D.sourceImage.space ↔ (D.inverse z : X) ∈ f '' S := by
@@ -120,7 +111,6 @@ theorem ComponentBranchModel.mem_sourceImage (D : ComponentBranchModel (e := e) 
 
 omit [NormedSpace ℝ E] [FiniteDimensional ℝ E] in
 
-
 theorem RawSourceCrossing.source_image_iff
     {x y : E} (C : RawSourceCrossing e f S R x y)
     (z : X) (hz : z ∈ C.chart.source) :
@@ -135,8 +125,6 @@ theorem RawSourceCrossing.source_image_iff
       · exact ⟨a, C.right_subset ha, haz⟩
   rw [h, mem_union, C.left_image z hz, C.right_image z hz]
   tauto
-
-
 
 theorem ComponentBranchModel.exists_raw_star (D : ComponentBranchModel (e := e) (R := R) old i)
     (p : D.sample → ℝ × V3) (hp : p ∈ D.axis.vertices) :

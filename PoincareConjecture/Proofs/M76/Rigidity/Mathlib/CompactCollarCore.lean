@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeCoreRetraction
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedInverse
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E X : Type*} [TopologicalSpace E] [T2Space E] [Zero E]
   [TopologicalSpace X] [T2Space X]
-
-
 
 theorem compact_collar_core {B : Set E} {K : Set X}
     (hK : IsCompact K) (hconnected : IsConnected K)

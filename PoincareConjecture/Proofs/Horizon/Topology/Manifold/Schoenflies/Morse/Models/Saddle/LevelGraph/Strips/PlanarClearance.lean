@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.IntervalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.HeightCoordinates
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +14,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR2" => 𝓘(Real, Real × Real)
-
-
-
 
 theorem exists_projected_strip_family_clearance
     {ι : Type*} [Finite ι]
@@ -104,9 +93,6 @@ theorem exists_projected_strip_family_clearance
         ⟨by linarith [hz.2.1, min_le_left d (w / 2)],
         by linarith [hz.2.2, min_le_left d (w / 2)]⟩⟩
     exact ⟨hsmall.trans (hrect i).1, (image_mono hsmall).trans (hrect i).2⟩
-
-
-
 
 theorem exists_planarly_separated_strip_restrictions
     {ι : Type*} [Finite ι]

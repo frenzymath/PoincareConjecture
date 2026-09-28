@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.SmoothFormEntropy
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.TimePotentialContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -70,8 +62,6 @@ theorem rawEntropyFormRate_test_nonpos {K : Set V} (hK : IsCompact K)
     (schwartzField (fun j => (f j : 𝓢(V, ℝ)))))
   rw [he]
   exact raw_smooth_form_entropy_nonpos hK D η hη hηK hQ hR f
-
-
 
 theorem exists_metric_entropy_dissipating_test {K : Set V} (hK : IsCompact K)
     {g : RiemannianMetric n V} (D : LeviCivitaData g)

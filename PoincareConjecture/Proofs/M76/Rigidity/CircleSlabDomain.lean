@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleEndpointHalfspace
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainExterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem circle_slab_PLDomain
     {X ι : Type*} [TopologicalSpace X] [CompactSpace X]

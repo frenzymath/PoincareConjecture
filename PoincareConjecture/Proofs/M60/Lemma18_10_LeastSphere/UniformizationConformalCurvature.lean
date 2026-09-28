@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M36.ConformalSectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem scalarCurvature_conformal_surface
     (g : RiemannianMetric 2 M) (D : LeviCivitaData g)

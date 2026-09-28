@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.AttachedCapNor
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.ProtectedSeparatedCircleCaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

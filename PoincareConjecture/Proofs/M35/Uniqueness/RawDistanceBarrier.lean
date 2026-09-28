@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.M04.ShiNativeDistanceSupport
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +12,10 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
-
 noncomputable def rawDistanceSquare {g₀ : StandardInitialMetric}
     (G : PartialStandardCapFlow g₀) (p : StandardCapSpace)
     (t : ℝ) (x : StandardCapSpace) : ℝ :=
   1 + ((G.flow.metric t).edist p x).toReal ^ 2
-
-
 
 theorem raw_distance_comparison_of_curvature_bound
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -60,9 +45,6 @@ theorem raw_distance_comparison_of_curvature_bound
   have hreal := ENNReal.toReal_mono
     (ENNReal.mul_ne_top ENNReal.ofReal_ne_top hfin) hdist
   simpa only [ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.exp_pos _).le] using hreal
-
-
-
 
 theorem exists_raw_distance_square_supports
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

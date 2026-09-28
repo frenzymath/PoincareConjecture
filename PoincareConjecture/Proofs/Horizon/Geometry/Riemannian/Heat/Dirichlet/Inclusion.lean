@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Resolvent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω₁ Ω₂ : Set M}
 
-
 def testInclusion (hΩ : Ω₁ ⊆ Ω₂) : EnergyTest D Ω₁ →ₗᵢ[ℝ] EnergyTest D Ω₂ where
   toFun f := ⟨f, f.smooth, f.hasCompactSupport, f.support_subset.trans hΩ⟩
   map_add' _ _ := rfl
@@ -33,7 +24,6 @@ def testInclusion (hΩ : Ω₁ ⊆ Ω₂) : EnergyTest D Ω₁ →ₗᵢ[ℝ] En
 
 @[simp] theorem testInclusion_apply (hΩ : Ω₁ ⊆ Ω₂) (f : EnergyTest D Ω₁) (x : M) :
     testInclusion hΩ f x = f x := rfl
-
 
 def inclusion (hΩ : Ω₁ ⊆ Ω₂) : H1Zero D Ω₁ →L[ℝ] H1Zero D Ω₂ :=
   Poincare.Analysis.Dirichlet.completionMap
@@ -48,7 +38,6 @@ def inclusion (hΩ : Ω₁ ⊆ Ω₂) : H1Zero D Ω₁ →L[ℝ] H1Zero D Ω₂ 
   induction u using Completion.induction_on with
   | hp => exact isClosed_eq (inclusion hΩ).continuous.norm continuous_norm
   | ih f => simp
-
 
 def inclusionIsometry (hΩ : Ω₁ ⊆ Ω₂) : H1Zero D Ω₁ →ₗᵢ[ℝ] H1Zero D Ω₂ where
   toLinearMap := (inclusion hΩ).toLinearMap
@@ -73,7 +62,6 @@ theorem resolvent_inner_inclusion (hΩ : Ω₁ ⊆ Ω₂)
     (f : Lp ℝ 2 g.volumeMeasure) (v : H1Zero D Ω₁) :
     ⟪resolvent D Ω₂ f, inclusion hΩ v⟫_ℝ = ⟪resolvent D Ω₁ f, v⟫_ℝ := by
   rw [resolvent_inner, toL2_inclusion, resolvent_inner]
-
 
 theorem l2Resolvent_quadratic_mono (hΩ : Ω₁ ⊆ Ω₂) (f : Lp ℝ 2 g.volumeMeasure) :
     ⟪l2Resolvent D Ω₁ f, f⟫_ℝ ≤ ⟪l2Resolvent D Ω₂ f, f⟫_ℝ := by

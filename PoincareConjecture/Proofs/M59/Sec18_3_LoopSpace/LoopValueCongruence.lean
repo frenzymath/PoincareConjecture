@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RadialLoops
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -22,8 +13,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59Loop_tangent_eq_of_values
     {gamma delta : C1FreeLoopSpace (M := M)} (h : ∀ z, gamma z = delta z)
@@ -44,8 +33,6 @@ theorem m59Loop_tangent_eq_of_values
       exact (gamma.boundary w').trans ((h w').trans (delta.boundary w').symm)
     exact congrArg (fun L : LoopPlane →L[ℝ] LoopAmbient => L (loopCircleTangent z))
       (hext.mfderiv_eq (I := 𝓡 2) (I' := 𝓡 3))
-
-
 
 theorem continuous_of_loop_values_eq {X : Type v} [TopologicalSpace X]
     {f g : X → C1FreeLoopSpace (M := M)} (hg : Continuous g)

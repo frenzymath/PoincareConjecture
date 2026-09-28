@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Invol
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.Rigidity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.SphereFactor
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} {G : ShrinkingSolitonFlow S}
-
-
 
 theorem involution_eq_antipodal_identity_or_reflection (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology

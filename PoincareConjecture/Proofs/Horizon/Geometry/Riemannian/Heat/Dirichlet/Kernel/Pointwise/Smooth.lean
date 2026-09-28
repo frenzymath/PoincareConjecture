@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.Time
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakSmooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,7 +35,6 @@ private theorem contMDiffOn_of_inner_smooth
     simpa only [mfld_simps, Function.comp_def] using h
 
 variable (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
-
 
 theorem contMDiffOn_evaluationRow_heatPowerContinuous (k : ℕ) (t : ℝ) (ht : 0 < t) :
     ContMDiffOn (𝓡 n) 𝓘(ℝ, Lp ℝ 2 (g.volumeMeasure.restrict Ω)) ∞
@@ -128,8 +120,6 @@ private theorem contMDiffAt_evaluationRow_heatPowerContinuousTime (k : ℕ)
     have h := evaluationRow_add_power D S k a (q.2 - a) ha hqa q.1
     simpa only [hsum, P, r] using h
   exact (hP.clm_apply hr).congr_of_eventuallyEq heq
-
-
 
 theorem contMDiffOn_heatKernelContinuousTime_joint :
     ContMDiffOn (((𝓡 n).prod (𝓡 n)).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞

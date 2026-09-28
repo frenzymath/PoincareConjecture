@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.TerminalFamily
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_annular_family_full_slice_coverage
     {X : Type*} [TopologicalSpace X] [CompactSpace X] {ι : Type*}
@@ -100,8 +96,6 @@ theorem terminal_physical_modelBand_mem_iff (data : TerminalSaddleData M P p e) 
     rw [← flatten_height data, hc]
     exact mem_image_of_mem _ hy
 
-
-
 theorem terminal_model_lower_level_eq_rims
     (data : TerminalSaddleData M P p e)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -174,8 +168,6 @@ theorem terminal_model_lower_level_eq_rims
     exact (terminal_labeled_model_lower_boundary data Φ χ H hH hχ hplanar hlabels
       (data.labels.symm (.inl j)) j (data.labels.apply_symm_apply _)).2 x hx
 
-
-
 theorem exists_terminal_lower_prepared_model_slice_coverage
     (data : TerminalSaddleData M P p e)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -235,8 +227,6 @@ theorem exists_terminal_lower_prepared_model_slice_coverage
   apply congrArg range
   funext q
   exact hcyl j q z ⟨by linarith [hz.1], by linarith [hz.2]⟩
-
-
 
 theorem exists_terminal_lower_prepared_modelBand_coverage
     (data : TerminalSaddleData M P p e)
@@ -304,6 +294,5 @@ theorem exists_terminal_lower_prepared_modelBand_coverage
     · change inner Real (M.v : E3) (Q (data.toTerminalSaddleGeometry.filledModel q)) = _
       rw [hQ]
       exact hq
-
 
 end Poincare.Manifold.Schoenflies.Saddle.Caps.Closing

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapGeometry
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductSlices
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,14 +15,11 @@ local notation "Q" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {L : Set X} {j : V2 → X}
 
-
 noncomputable def capParameter (P : OriginalDiskProduct e L j) (b : Bool) : V2 → X :=
   P.slice (if b then (1 / 2 : ℝ) else -(1 / 2))
 
 theorem capParameter_apply (P : OriginalDiskProduct e L j) (b : Bool) (z : V2) :
     P.capParameter b z = P.map (z, if b then (1 / 2 : ℝ) else -(1 / 2)) := rfl
-
-
 
 theorem polyhedral_capParameter (P : OriginalDiskProduct e L j) (b : Bool) :
     PolyhedralPLInCharts e (P.capParameter b) D :=
@@ -54,8 +43,6 @@ theorem capParameter_image_rim (P : OriginalDiskProduct e L j) (b : Bool) :
     change P.map (z.1, if b then (1 / 2 : ℝ) else -(1 / 2)) = P.map z
     rw [← ht]
 
-
-
 theorem capParameter_mem_rim_iff (P : OriginalDiskProduct e L j) (b : Bool) (z : D) :
     P.capParameter b z ∈ P.capRimSet b ↔ (z : V2) ∈ Q := by
   constructor
@@ -73,8 +60,6 @@ theorem capParameter_mem_rim_iff (P : OriginalDiskProduct e L j) (b : Bool) (z :
 theorem capParameter_mem_frontier_iff (P : OriginalDiskProduct e L j) (b : Bool) (z : D) :
     P.capParameter b z ∈ frontier L ↔ (z : V2) ∈ Q :=
   P.slice_proper (by cases b <;> norm_num) z
-
-
 
 theorem exists_capParameter_homeomorph (P : OriginalDiskProduct e L j) (b : Bool) :
     ∃ H : D ≃ₜ P.capDisk b,

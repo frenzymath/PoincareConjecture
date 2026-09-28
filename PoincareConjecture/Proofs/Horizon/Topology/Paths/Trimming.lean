@@ -1,18 +1,7 @@
-
-
-
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Tactic
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,8 +11,6 @@ open scoped Topology
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem exists_arc_trimming {f : ℝ → X} (hf : ContinuousOn f (Icc (0 : ℝ) 1))
     {U V : Set X} (hU : U ∈ 𝓝 (f 0)) (hV : V ∈ 𝓝 (f 1)) :
@@ -58,7 +45,6 @@ theorem exists_arc_trimming {f : ℝ → X} (hf : ContinuousOn f (Icc (0 : ℝ) 
 
 omit [TopologicalSpace X] in
 
-
 theorem disjoint_arc_interior_of_endpoint_intersections {f g : ℝ → X}
     (hf : InjOn f (Icc (0 : ℝ) 1))
     (hfg : f '' Icc (0 : ℝ) 1 ∩ g '' Icc (0 : ℝ) 1 ⊆ {f 0, f 1}) :
@@ -70,8 +56,6 @@ theorem disjoint_arc_interior_of_endpoint_intersections {f g : ℝ → X}
     exact ht.1.ne' heq
   · have heq := hf ⟨ht.1.le, ht.2.le⟩ (by norm_num) (mem_singleton_iff.mp h)
     exact ht.2.ne heq
-
-
 
 theorem exists_disjoint_compact_arc_cores {I : Type*} (f : I → ℝ → X)
     (hf : ∀ i, ContinuousOn (f i) (Icc (0 : ℝ) 1))

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalHalf
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBoundaryCollarTopology
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -169,8 +167,6 @@ theorem residualCofaceContact_subset_original_coface
     ht hq (hcq (by simp))
   have htu' : t = u := Finset.eq_of_subset_of_card_le htu (by rw [htc]; exact hbound u hu)
   exact htu'.symm ▸ hqu hxq
-
-
 
 theorem OriginalResidualHalfBands.piece_subset_original_coface
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

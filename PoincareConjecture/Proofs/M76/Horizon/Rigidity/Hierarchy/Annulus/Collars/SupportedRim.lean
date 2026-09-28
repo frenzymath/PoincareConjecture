@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CompactBicollarRestriction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Collars.RimRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

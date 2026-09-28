@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Gluing.Caps.Chart
 
-
-
-
 set_option autoImplicit false
 
 universe u

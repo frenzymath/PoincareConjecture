@@ -3,14 +3,6 @@ import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.ContinuousMap.Algebra
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology intervalIntegral

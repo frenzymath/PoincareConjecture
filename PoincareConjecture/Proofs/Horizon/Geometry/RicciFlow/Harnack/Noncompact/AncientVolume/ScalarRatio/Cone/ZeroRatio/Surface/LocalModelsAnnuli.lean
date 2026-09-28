@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Surface.LocalModelsCoverage
 import PoincareConjecture.Proofs.Horizon.Topology.Metric.CompactChartNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal

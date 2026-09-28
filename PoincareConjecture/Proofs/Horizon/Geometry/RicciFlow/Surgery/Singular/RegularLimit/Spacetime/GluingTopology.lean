@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Maps
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
 
-
 def regularInteriorInclusion :
     Ioo H.reference.tMinus T × H.regularRegion P04 →
       Ioc H.reference.tMinus T × H.regularRegion P04 :=
@@ -40,7 +32,6 @@ theorem regularInteriorInclusion_isOpenEmbedding :
       fun _ ht => ⟨ht.1, ht.2.le⟩)
     (isOpen_Ioo.preimage continuous_subtype_val)).prodMap IsOpenEmbedding.id
 
-
 theorem regularSpacetimeForward_interior_eq
     (p : Ioo H.reference.tMinus T × H.regularRegion P04) :
     H.regularSpacetimeForward P04 (H.regularInteriorInclusion P04 p) =
@@ -48,7 +39,6 @@ theorem regularSpacetimeForward_interior_eq
   rw [H.reference.openSpacetimeForward_eq]
   exact H.regularSpacetimeForward_old P04 p.1 ⟨p.1.property.1, p.1.property.2.le⟩
     p.1.property.2 p.2
-
 
 theorem old_regular_spacetime_eq_iff (p : F.point)
     (q : Ioc H.reference.tMinus T × H.regularRegion P04) :
@@ -120,7 +110,6 @@ theorem isOpen_regular_preimage_old_image (U : Set F.point) (hU : IsOpen U) :
   exact (H.regularInteriorInclusion_isOpenEmbedding P04).isOpenMap _
     (hU.preimage (H.reference.openSpacetimeForward_isOpenEmbedding (H.regularRegion P04)).continuous)
 
-
 @[instance_reducible] def extendedSpacetimeTopology : TopologicalSpace (H.extendedPoint P04) :=
   SingularRegularLimit.TwoChart.topology (H.oldSpacetimeForward P04) (H.regularSpacetimeForward P04)
 
@@ -175,7 +164,6 @@ theorem extendedSpacetime_t2 :
       · exact h
   · exact hold ⟨(H.mem_range_oldSpacetimeForward_iff P04 p).mpr hpT,
       (H.mem_range_oldSpacetimeForward_iff P04 q).mpr (hpq ▸ hpT)⟩
-
 
 theorem extendedSpacetime_slice_embedding (t : ℝ) :
     @IsEmbedding (H.extendedSliceGeometry P04 t).slice.carrier (H.extendedPoint P04)

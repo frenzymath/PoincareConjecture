@@ -6,27 +6,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.Comm
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.CommonBetaOuterInputs
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.CommonBetaInnerInputs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 private theorem commonBeta_pack_original_arcs
     (kappa : OpenPartialHomeomorph E2 E2)
@@ -115,9 +100,6 @@ private theorem commonBeta_pack_original_arcs
       exact hOrder 1 }
   exact ⟨I, rfl, rfl, rfl⟩
 
-
-
-
 private theorem commonBeta_physical_critical_images
     (u : UnitTwoSphere) (c : ℝ)
     (gRef : Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)
@@ -150,12 +132,9 @@ private theorem commonBeta_physical_critical_images
     _ = (⋃ i : Fin 2, alpha j i '' Icc (0 : ℝ) 1) := by
       rw [hopen, ← hUnion j]
 
-
 set_option maxHeartbeats 1500000 in
 
 set_option linter.unusedVariables false in
-
-
 
 theorem exists_saddle_common_beta_pair_of_original_nested_arcs
     (hP : PlanarSchoenfliesService)

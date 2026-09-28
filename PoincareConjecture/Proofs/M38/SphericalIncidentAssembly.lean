@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.CollaredIncidentComparison
 import PoincareConjecture.Proofs.M38.ComponentSpaceforms
 import PoincareConjecture.Proofs.M38.SumAssembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 theorem spherical_incident_component_assembly
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

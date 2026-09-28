@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Level.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem exists_bijective_lower_level_transport_of_hessian_ge_neg
     (D : LeviCivitaData g) {f : M → ℝ}
@@ -151,7 +140,6 @@ theorem exists_bijective_lower_level_transport_of_hessian_ge_neg
     dsimp only [RiemannianMetric.tangentNorm] at hn ⊢
     nlinarith [Real.sqrt_nonneg (g.inner (Q x) (mfderiv (𝓡 n) (𝓡 n) Q x v)
       (mfderiv (𝓡 n) (𝓡 n) Q x v))]
-
 
 theorem exists_onto_lower_level_transport_of_hessian_ge_neg
     (D : LeviCivitaData g) {f : M → ℝ}

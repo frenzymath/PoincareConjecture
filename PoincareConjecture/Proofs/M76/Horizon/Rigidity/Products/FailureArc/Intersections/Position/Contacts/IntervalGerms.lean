@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalGerm
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -135,9 +125,6 @@ private theorem halfInterval_germ_in_chart
   filter_upwards [hU.mem_nhds hx.2, hlocal] with a ha halocal
   exact (hfull a ha).trans halocal
 
-
-
-
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_two_segment_germs_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -164,9 +151,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_two_segment_germs_in_
   obtain ⟨i, hye⟩ := hcover y hy.1
   exact halfInterval_germ_in_chart (e i) B Q (hB i) (hQ i) hye hyB hyQ
     (S ∩ (g '' convexHull ℝ ({w, p, q} : Set E))) hzy hr hsection hemb
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_surface_contact_two_segment_germs_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -276,9 +260,6 @@ private theorem original_edge_contact_not_mem_triangle_intrinsicInterior
   have hwmem : w ∈ ({p, q} : Finset E) := hvw' ▸ hv
   simp only [Finset.mem_insert, Finset.mem_singleton, hwp, hwq, or_self] at hwmem
 
-
-
-
 theorem HasOriginalEdgeCofaceCharts.exists_surface_interior_two_segment_germs_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
@@ -313,4 +294,3 @@ theorem HasOriginalEdgeCofaceCharts.exists_surface_interior_two_segment_germs_of
     Q A hmap hA (hxy ▸ hx.1.2)
 
 end PoincareConjecture.M76
-

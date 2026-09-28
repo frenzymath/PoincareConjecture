@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.Backward
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientFactor
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +29,6 @@ variable {n : ℕ} {M : Type u}
   (hunit : HasUnitGradient (F.connection 0) f)
   (hzero : HasZeroHessian (F.connection 0) f)
 
-
-
 def terminalParallelGradientFactor :
     letI : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
       ⟨finrank_euclideanSpace_fin⟩
@@ -59,9 +47,6 @@ def terminalParallelGradientFactor :
     hc hop ⟨K, hK, hbound⟩ f hf hunit hzero
   exact F.parallelGradientFactor hf (show (0 : ℝ) ∈ Iic 0 by simp)
     (fun t ht => (hp t ht).2.1) (fun t ht => (hp t ht).2.2)
-
-
-
 
 theorem terminalParallelGradientFactor_ancient_geometry
     [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableClosedBounds
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableCoreCover
 import PoincareConjecture.Proofs.M47.TerminalGermsTerminalGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -31,8 +21,6 @@ local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
 
 private theorem locallyCompact_t3 (X : Type*) [TopologicalSpace X]
     [T2Space X] [LocallyCompactSpace X] : T3Space X := inferInstance
-
-
 
 def TerminalSourceCountableAtlasResult
     (U : ℕ → Set E) (hU : ∀ n, IsOpen (U n)) [∀ n, Nonempty (Piece U n)]
@@ -91,8 +79,6 @@ def TerminalSourceCountableAtlasResult
             (iteratedFDeriv ℝ m (B0 n)) atTop K) ∧
           ∀ r : ℝ, 0 < r → ∃ m, ∀ᶠ k in atTop, ∀ x ∈ frontier (X m),
             ENNReal.ofReal r ≤ (g (kappa k)).edist (f k (O.include 0 p0)) (f k x)
-
-
 
 theorem terminalSourceCountable_complete_atlas
     (S : RepairedControlledSchedulesData.{u})

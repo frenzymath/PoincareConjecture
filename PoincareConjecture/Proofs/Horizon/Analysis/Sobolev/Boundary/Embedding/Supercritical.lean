@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Embedding.Subcritical
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -45,8 +38,6 @@ private theorem tower_to_supercritical (s : ℕ) {p : ℝ} (hp : 1 ≤ p)
           (by simpa only [Nat.cast_add, Nat.cast_one] using hdp)
       exact ih hq hregq hdpq hc (by simpa only [Nat.add_comm 1, halfSpace] using hv)
     · exact ⟨p, hp, hpgt, MemWkp.le_of_le (by omega) hu⟩
-
-
 
 theorem exists_supercritical_memW1p {u : E → ℝ} (hc : HasCompactSupport u)
     (hu : MemWkp (d + 1) 2 u {x : E | 0 < x 0}) :

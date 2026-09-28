@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Exponenti
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Euclidean
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +40,6 @@ private theorem coordDeriv_comp_eq_of_firstOrder
     erw [hpos]
   rw [mfderiv_eq_fderiv, mfderiv_eq_fderiv] at hd
   exact congrArg (fun L => L 1) hd
-
-
 
 theorem local_isometry_germ_ext [T2Space M] [CompactSpace M] [T2Space N]
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -139,8 +132,6 @@ private theorem mfderiv_eq_of_frequently_equal_germs
     rw [mfderiv, if_pos (hk.mdifferentiableAt (by simp))]
     simp [K, c, d, hpos, writtenInExtChartAt]
   exact hdf.trans (hd.trans hdk.symm)
-
-
 
 theorem local_isometry_eqOn_of_firstOrder [T2Space M] [CompactSpace M] [T2Space N]
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

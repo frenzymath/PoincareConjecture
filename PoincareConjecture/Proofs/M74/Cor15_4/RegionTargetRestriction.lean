@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Carriers.Opens
 import PoincareConjecture.Proofs.M74.Mathlib.OpenTargetLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.SurgeryRegionEquivalence
 variable {A C : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set C.carrier}
   (E : SurgeryRegionEquivalence A C U V) (T : TopologicalSpace.Opens C.carrier)
   (hVT : V ⊆ T) (y0 : T)
-
-
 
 noncomputable def restrictOpenTargetOn :
     SurgeryRegionEquivalence A (C.opens T) U (Subtype.val ⁻¹' V) where
@@ -59,13 +48,9 @@ noncomputable def restrictOpenTargetOn :
   inverse_smooth := E.inverse_smooth.comp contMDiff_subtype_val.contMDiffOn
     (fun _ hx => hx)
 
-
-
 theorem restrictOpenTargetOn_map_val {x : A.carrier} (hx : x ∈ U) :
     ((E.restrictOpenTargetOn T hVT y0).map x).val = E.map x :=
   T.liftMap_val_of_mem y0 E.map (hVT (E.map_image.subset (mem_image_of_mem _ hx)))
-
-
 
 theorem restrictOpenTargetOn_inverse (x : (C.opens T).carrier) :
     (E.restrictOpenTargetOn T hVT y0).inverse x = E.inverse x.val := rfl
@@ -73,9 +58,6 @@ theorem restrictOpenTargetOn_inverse (x : (C.opens T).carrier) :
 end PoincareConjecture.SurgeryRegionEquivalence
 
 namespace PoincareConjecture.GeneralizedSliceCarrier
-
-
-
 
 noncomputable def opensEquivalence (C : GeneralizedSliceCarrier.{u})
     (T : TopologicalSpace.Opens C.carrier) (y0 : T) :

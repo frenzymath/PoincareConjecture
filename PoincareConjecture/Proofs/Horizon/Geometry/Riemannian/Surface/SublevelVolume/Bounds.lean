@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.SublevelVol
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] [CompactSpace M] in
-
 
 theorem exists_sublevel_chart_bounds (g : RiemannianMetric 2 M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -68,7 +65,6 @@ theorem exists_sublevel_chart_bounds (g : RiemannianMetric 2 M)
 
 omit [CompactSpace M] in
 
-
 theorem volumeMeasure_image_ball_bounds (g : RiemannianMetric 2 M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (he : ContMDiffOn (𝓡 2) (𝓡 2) ∞ e e.source)
@@ -92,7 +88,6 @@ theorem volumeMeasure_image_ball_bounds (g : RiemannianMetric 2 M)
   · simpa only [lintegral_const, Measure.restrict_apply_univ,
       ENNReal.ofReal_coe_nnreal] using hu
 
-
 theorem volumeMeasure_image_ball_toReal_bounds (g : RiemannianMetric 2 M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (he : ContMDiffOn (𝓡 2) (𝓡 2) ∞ e e.source)
@@ -112,8 +107,6 @@ theorem volumeMeasure_image_ball_toReal_bounds (g : RiemannianMetric 2 M)
     EuclideanSpace.volume_ball_fin_two, ENNReal.toReal_pow, ENNReal.toReal_ofReal hs0,
     ENNReal.toReal_ofReal Real.pi_pos.le] at hl' hu'
   exact ⟨hl', hu'⟩
-
-
 
 theorem eventually_sublevel_volume_ratio_bounds (g : RiemannianMetric 2 M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

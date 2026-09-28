@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointExtraction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,8 +66,6 @@ variable (j : ℕ)
 
 local notation "U" => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j)
-
-
 
 theorem limitFinite_endpoint_old_metric
     (σ : ℕ → ℕ) (hσ : StrictMono σ) {t : ℝ} (ht : t ∈ blowupBackwardInterval H)

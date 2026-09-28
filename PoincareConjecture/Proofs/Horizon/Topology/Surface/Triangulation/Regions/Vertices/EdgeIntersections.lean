@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Radial
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.MiddleArcs
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Trimming
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -55,8 +45,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem preconnected_boundary_subset_edge {S : Set M}
     (hS : IsPreconnected S) (hboundary : S ⊆ chartDiskBoundaryUnion D.centers D.radius)
@@ -150,8 +138,6 @@ theorem patch_inter_vertices_subset_center
   exact disjoint_left.mp (hdisjoint p ⟨q, hqV⟩ hne) hqP
     ((P ⟨q, hqV⟩).openCarrier_subset_carrier (P ⟨q, hqV⟩).mem_openCarrier)
 
-
-
 theorem radialSide_inter_edge_mem_endpoint_segment
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)
@@ -213,8 +199,6 @@ theorem radialSide_inter_edge_mem_endpoint_segment
     by_contra h
     exact hzS.2 ((P p).radialSide_inter_subset_center h hwidth ⟨hzS.1, hze⟩)
   exact ⟨b, hb, by simpa only [hde, he] using hqR⟩
-
-
 
 theorem vertex_caps_inter_edge_mem_endpoint_segment
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))
@@ -279,7 +263,6 @@ theorem endpoint_segment_subset_vertex_caps (a : D.EdgeIndex) (b : Bool) :
 
 include hdisjoint hlocal hcut hmatch in
 
-
 theorem endpoint_vertex_caps_inter_edge (a : D.EdgeIndex) (b : Bool) :
     (⋃ i, ((B (D.edgeEndpoint a b)).face i).carrier) ∩
       ((D.edge a.1 a.2).map '' Icc (0 : ℝ) 1) =
@@ -296,7 +279,6 @@ theorem endpoint_vertex_caps_inter_edge (a : D.EdgeIndex) (b : Bool) :
     exact image_mono (Icc_subset_Icc le_rfl ((hcut a b).2.le.trans (by norm_num))) hq
 
 include hdisjoint hlocal hcut hmatch in
-
 
 theorem vertex_caps_inter_edge (a : D.EdgeIndex) :
     (⋃ p, ⋃ i, ((B p).face i).carrier) ∩
@@ -320,7 +302,6 @@ theorem vertex_caps_inter_edge (a : D.EdgeIndex) :
     exact hq.elim (hsegment false) (hsegment true)
 
 include hdisjoint hlocal hcut hmatch in
-
 
 theorem vertex_caps_inter_middleArc (a : D.EdgeIndex) :
     (⋃ p, ⋃ i, ((B p).face i).carrier) ∩ D.middleArc cut a =
@@ -388,8 +369,6 @@ theorem vertex_caps_disjoint_open_middleArc (a : D.EdgeIndex) :
     exact (ne_of_lt ht.2) heq
 
 end CapFamily
-
-
 
 theorem exists_vertex_caps_with_edge_intersections
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

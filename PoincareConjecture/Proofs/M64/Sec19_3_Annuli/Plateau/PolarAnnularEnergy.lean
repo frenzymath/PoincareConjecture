@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarColumnEstimate
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarAEPullback
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -33,8 +22,6 @@ local notation "mu" => volume.restrict S
 
 namespace M64ObservedWeakAnnulus
 
-
-
 theorem polar_angular_memLp
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) (hKS : Metric.closedBall a rho ⊆ S) :
@@ -43,8 +30,6 @@ theorem polar_angular_memLp
     (e ∘ A.map) (fun i p => A.column i p) A.observed_memLp
     (fun i => Lp.memLp (A.column i)) A.weak_partial).2.1
 
-
-
 theorem angularEnergy_integrable
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) {rho : ℝ} (hrho : 0 < rho) (hKS : Metric.closedBall a rho ⊆ S) :
@@ -52,8 +37,6 @@ theorem angularEnergy_integrable
   have hz := A.polar_angular_memLp a hrho hKS
   have hi := (memLp_two_iff_integrable_sq_norm hz.aestronglyMeasurable).mp hz
   exact (m64AnnulusPoint_measurePreserving.integrable_comp_of_integrable hi).integral_prod_right
-
-
 
 theorem angularEnergy_integral_le_annular_energy
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

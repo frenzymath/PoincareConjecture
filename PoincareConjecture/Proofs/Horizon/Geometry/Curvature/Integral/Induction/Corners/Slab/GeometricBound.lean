@@ -8,13 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.ConnectedCo
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.SectionalErrorBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.AugmentedRegularity
 
-
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory PoincareConjecture
 open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology Bundle

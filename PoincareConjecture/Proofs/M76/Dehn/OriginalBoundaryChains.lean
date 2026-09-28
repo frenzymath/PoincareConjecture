@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTetrahedronCofaces
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalFacetIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -38,8 +29,6 @@ variable {G X : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]
 include hK hLK hfull hN J F g hJF hg hLs hpure hstars
 
 open Classical in
-
-
 
 theorem original_chart_stars_tetrahedron_cofaces :
     ∀ t : Triangle K.vertexAbstractComplex.toPreAbstractSimplicialComplex,
@@ -74,9 +63,6 @@ theorem original_chart_stars_tetrahedron_cofaces :
     exact (hinc s hs hsc).2 h
 
 open Classical in
-
-
-
 
 theorem original_chart_stars_total_boundary :
     let A := K.vertexAbstractComplex.toPreAbstractSimplicialComplex

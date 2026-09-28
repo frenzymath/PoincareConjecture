@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open Poincare.Geometry.Manifold.RegularLevel

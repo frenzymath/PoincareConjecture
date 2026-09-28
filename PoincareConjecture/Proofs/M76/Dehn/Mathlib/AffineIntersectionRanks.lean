@@ -3,16 +3,6 @@ import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.Analysis.Convex.Hull
 import Mathlib.Analysis.Normed.Affine.AddTorsor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -22,19 +12,12 @@ namespace AffineSubspace
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
-
 theorem finrank_inf_add_finrank_sup_of_mem
     (A B : AffineSubspace ℝ E) {x : E} (hxA : x ∈ A) (hxB : x ∈ B) :
     finrank ℝ (A ⊓ B).direction + finrank ℝ (A ⊔ B).direction =
       finrank ℝ A.direction + finrank ℝ B.direction := by
   rw [direction_inf_of_mem hxA hxB, direction_sup_eq_sup_direction hxA hxB, add_comm]
   exact Submodule.finrank_sup_add_finrank_inf_eq A.direction B.direction
-
-
-
 
 theorem finrank_inf_add_ambient_of_mem_of_sup_top
     (A B : AffineSubspace ℝ E) {x : E} (hxA : x ∈ A) (hxB : x ∈ B)
@@ -45,10 +28,6 @@ theorem finrank_inf_add_ambient_of_mem_of_sup_top
   rw [hAB] at h
   rw [direction_top] at h
   simpa only [finrank_top] using h
-
-
-
-
 
 theorem disjoint_convexHulls_of_span_top_of_rank_lt
     {s t : Set E} (hspan : affineSpan ℝ (s ∪ t) = ⊤)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonPreconnectedRegion
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSupportingHeight
 import PoincareConjecture.Proofs.M76.Mathlib.LocalQuadrantRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -38,9 +29,6 @@ private theorem mem_axis_corner_iff {q : ℝ × ℝ} (hx : q.1 ≤ 1) (hy : q.2 
 
 namespace Polygon
 
-
-
-
 theorem exists_positive_square_inside_corner {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 3))
     (hprev : P ((finRotate (n + 3)).symm i) = (1, 0)) (hcenter : P i = (0, 0))
@@ -63,9 +51,6 @@ theorem exists_positive_square_inside_corner {n : ℕ} (P : Polygon (ℝ × ℝ)
     rw [hq, edgeSet, edgeSet, Equiv.apply_symm_apply, hprev, hcenter, hnext,
       affineSegment_eq_segment, affineSegment_eq_segment]
     exact mem_axis_corner_iff hc.1.le hc.2.le
-
-
-
 
 theorem corner_cap_subset_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 3))

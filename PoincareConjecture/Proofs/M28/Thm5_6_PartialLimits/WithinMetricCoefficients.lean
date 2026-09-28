@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +7,6 @@ open Set Filter Bundle
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem IsSmoothFamilyOn.contDiffOn_spacetime_pullbackCoefficients_within
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.H2
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Sobolev.L2Profile
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter Topology

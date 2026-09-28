@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressMoment
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -65,9 +53,6 @@ private theorem separable_support {eta rho : ℝ → ℝ}
   exact ⟨m64AnnulusDomain_isCompact.of_isClosed_subset (isClosed_tsupport _)
     (hsub.trans interior_subset), hsub⟩
 
-
-
-
 theorem m64Annulus_second_stress_compact
     {U V : LoopPlane → ℝ} {c : ℝ}
     (hU : ContDiffOn ℝ 1 U S) (hV : ContDiffOn ℝ 1 V S)
@@ -107,9 +92,6 @@ theorem m64Annulus_second_stress_compact
       rw [(separable_deriv heta hrho p).1]
   rw [hu', hv'] at heq
   linarith
-
-
-
 
 theorem m64Annulus_second_stress_zero_cut
     {U V : LoopPlane → ℝ} {c : ℝ}

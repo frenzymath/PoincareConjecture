@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeH1Radius
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,10 +7,6 @@ set_option warningAsError true
 open Set MeasureTheory Metric
 
 namespace PoincareConjecture.M64BoundaryCone
-
-
-
-
 
 theorem semicircle_chart_capture {M E C : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedAddCommGroup C]

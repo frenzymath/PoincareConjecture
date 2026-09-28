@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BoxSpatialInver
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderSpatialInverse
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderFactor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +28,6 @@ private theorem originalBox_point_transport (b : F.box_index)
       (⟨t', (F.box b).forward t' ht' y⟩ : F.point) := by
   subst t'
   rfl
-
-
-
 
 theorem rawCylinder_factor_spatial_inverse
     (p : (R.timeIntervals.interval (cylinderPhysicalInterval a q e.scale_pos J)).Point × U)
@@ -76,9 +64,6 @@ theorem rawCylinder_factor_spatial_inverse
   change e.inverse s.val s.property ((F.box D.box).forward T ht (D.spatial z)) = z.val
   rw [← hspatial hz]
   exact e.left_inverse s.val s.property z.property
-
-
-
 
 theorem rawCylinder_spatial_local_inverse
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
@@ -135,9 +120,6 @@ theorem rawCylinder_spatial_local_inverse
   rw [← hmap]
   exact hlocal
 
-
-
-
 theorem rawCylinder_lift_spatial_contMDiffWithinAt
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
     {gamma : ℝ → R.spacetime.Point}
@@ -160,9 +142,6 @@ theorem rawCylinder_lift_spatial_contMDiffWithinAt
   · change (beta r).2.val = phi (gamma r)
     rw [← hpoint]
     exact hleft.eq_of_nhds.symm
-
-
-
 
 theorem exists_rawCylinder_lift
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)

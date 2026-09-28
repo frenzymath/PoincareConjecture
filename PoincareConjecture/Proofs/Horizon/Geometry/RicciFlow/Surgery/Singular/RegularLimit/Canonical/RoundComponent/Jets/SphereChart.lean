@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComparison.SphereModel
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,8 +17,6 @@ theorem sphereReferenceMetric_inner_zero (v w : E) :
     sphereReferenceMetric.inner 0 v w = ⟪v, w⟫_ℝ := by
   change (16 / (‖(0 : E)‖ ^ 2 + 4) ^ 2) * ⟪v, w⟫_ℝ = ⟪v, w⟫_ℝ
   norm_num
-
-
 
 theorem exists_centered_unit_curvature_chart
     {X : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]

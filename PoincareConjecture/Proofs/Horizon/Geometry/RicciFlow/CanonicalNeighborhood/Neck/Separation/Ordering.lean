@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ambient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem closure_subset_of_separator_subset
     {M : Type*} [TopologicalSpace M]
@@ -50,8 +40,6 @@ theorem closure_subset_of_separator_subset
   rcases hxclB₁ with hxB₁ | hxS₁
   · exact Set.disjoint_left.mp hclosedDisj hx hxB₁
   · exact hxA₂ (hS hxS₁)
-
-
 
 theorem closures_nested_of_common_point
     {M : Type*} [TopologicalSpace M]
@@ -106,8 +94,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem carrier_ordering_of_closure_subset
     (N₁ N₂ : EpsilonNeck g) {A₁ B₁ A₂ B₂ : Set M}

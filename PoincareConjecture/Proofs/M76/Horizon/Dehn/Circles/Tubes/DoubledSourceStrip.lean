@@ -42,8 +42,6 @@ private theorem rectangle_affine_finitePL {a b : ℝ} (hab : a < b)
     HeightBox.rectangle_ballPair (show (0 : ℝ) < 1 by norm_num) hab
   exact ⟨K, hK, hKs, K.affineOnFaces_affine A⟩
 
-
-
 theorem doubledSourceStrip_finitePL
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (sign : Bool) {a b : ℝ} (hab : a < b) (phi : Fin 2 → P2 → E)
@@ -96,7 +94,6 @@ theorem doubledSourceStrip_finitePL
 
 set_option maxHeartbeats 800000 in
 
-
 theorem doubledSourceStrip_fibers {E : Type*}
     (sign : Bool) {a b : ℝ} (hab : a < b) (phi : Fin 2 → P2 → E)
     (hfib : ∀ j k z, z ∈ Icc (-1 : ℝ) 1 ×ˢ Icc a b →
@@ -130,7 +127,6 @@ theorem doubledSourceStrip_fibers {E : Type*}
     rw [hfib 1 1 _ (hsecond z hz hzB) _ (hsecond w hw hwB)]
     cases sign <;> simp [Fin.rev] <;> grind
 
-
 theorem doubledSourceStrip_image {E : Type*}
     (sign : Bool) {a b : ℝ} (hab : a < b) (phi : Fin 2 → P2 → E)
     (hclose : ∀ u ∈ Icc (-1 : ℝ) 1, phi 1 (u, a) = phi 0 ((if sign then u else -u), b)) :
@@ -157,7 +153,6 @@ theorem doubledSourceStrip_image {E : Type*}
       rw [doubledSourceStrip_second sign phi hclose
         (z := (z.1, z.2 + (b - a))) hz.1 (by dsimp; linarith [hz.2.1])]
       simp
-
 
 theorem doubledSourceStrip_axis {E : Type*}
     (sign : Bool) {a b : ℝ} (phi : Fin 2 → P2 → E) (A : Set E)

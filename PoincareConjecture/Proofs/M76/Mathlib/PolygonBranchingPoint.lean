@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SegmentGermDirections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,11 +8,6 @@ open scoped Topology
 namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [Finite ι]
-
-
-
-
-
 
 theorem exists_local_segments_of_family_ne_common
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -63,11 +48,6 @@ theorem exists_local_segments_of_family_ne_common
   filter_upwards [hlocal, hnear] with x hx hy
   exact hx.trans hy
 
-
-
-
-
-
 theorem common_point_eq_of_pair_subset_family
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
     (hP : ∀ i, Function.Injective (P i) ∧ (P i).HasSimplicialEdges)
@@ -94,10 +74,6 @@ theorem common_point_eq_of_pair_subset_family
     ((subset_union_right.trans huvQ).trans hQS)
     ((subset_union_left.trans hwR).trans hRS)
     (hlocal.mono (fun _ hx => hx.mp))
-
-
-
-
 
 theorem common_point_eq_of_branching_family_subset
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

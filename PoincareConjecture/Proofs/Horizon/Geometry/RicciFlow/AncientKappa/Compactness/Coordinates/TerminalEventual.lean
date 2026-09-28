@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.Terminal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,9 +10,6 @@ namespace PoincareConjecture.AncientCompactness
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X] [NormedAddCommGroup Y] [NormedSpace ℝ Y]
   [FiniteDimensional ℝ Y]
-
-
-
 
 theorem exists_smooth_terminal_limit_same_sequence_of_eventually
     {x₀ : X} {ρ : ℝ} (hρ : 0 < ρ) (f : ℕ → ℝ × X → Y)

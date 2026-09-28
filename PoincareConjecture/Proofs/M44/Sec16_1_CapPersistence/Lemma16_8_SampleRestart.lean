@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderBirthBuffer
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StoppedCylinderRestart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,10 +26,6 @@ noncomputable local instance sampleRestartTwoJetNorm :
 
 noncomputable local instance sampleRestartTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_sample_restart_cutoff (P : M44CapPersistencePredecessors.{u})
     (g0 : StandardInitialMetric) (C0 : ℝ) (x u v : E)

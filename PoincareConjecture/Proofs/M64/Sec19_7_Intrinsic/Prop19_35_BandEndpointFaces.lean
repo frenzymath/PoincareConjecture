@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCoreMatching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.OpenEndpointFans
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +14,6 @@ namespace PoincareConjecture
 variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
-
-
-
 
 theorem m64Intrinsic_band_endpoint_inter_other_face
     (right : Bool) (p : Fin B.interface.count × Bool)
@@ -94,11 +77,6 @@ theorem m64Intrinsic_band_endpoint_inter_other_face
       change (B.endpointEdge true).map t = B.coordinates
         (collarParameterEquiv.symm (1, 1 * B.height 1))
       simpa only [one_mul] using he
-
-
-
-
-
 
 theorem m64Intrinsic_band_endpoint_subset_selected_face (right : Bool) :
     (B.endpointEdge right).map '' Icc (0 : ℝ) 1 ⊆

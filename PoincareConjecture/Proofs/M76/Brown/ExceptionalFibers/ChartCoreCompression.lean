@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoreRadialCompression
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ open Set Metric
 namespace OpenPartialHomeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_compression_fixing_core (x : E) {U : Set E}
     (hU : IsOpen U) (hx : x ∈ U) :
@@ -53,9 +41,6 @@ theorem exists_compression_fixing_core (x : E) {U : Set E}
       NormedSpace.coreCompression_of_norm_le_one (mem_ball_zero_iff.mp hw).le]
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_compression_in_chart (C : OpenPartialHomeomorph X E)
     (hCt : C.target = univ) {x : X} (hx : x ∈ C.source)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Differ
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.EquationBridge
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.MetricDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -78,7 +68,6 @@ theorem movingGaugeCalculus_of_derivatives
       horizontal_derivative_eq := hHorizontal
       equation_iff := movingGaugeEquation_iff_of_metric_derivative_ricci_eq D G c
         hMetricDerivative hc.ricci_eq }
-
 
 theorem movingGaugeCalculus
     (D : LeafwiseLeviCivitaFamily F S) (G : MovingSpacetimeGaugeGeometry e)

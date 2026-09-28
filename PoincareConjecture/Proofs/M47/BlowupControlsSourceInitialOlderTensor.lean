@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckScalarComparison
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -55,8 +44,6 @@ private theorem initialOlder_cylinder_smooth
   rw [mfderiv_comp z hDz hfz]
   rfl
 
-
-
 noncomputable def sourceInitialOlderTensor
     {F : SurgeryFlowData.{u}} {T left : ℝ} {hT : T ∈ F.surgery_times}
     [Nonempty (F.slice T).carrier] {i : Fin (F.event T hT).cap_count}
@@ -71,9 +58,6 @@ noncomputable def sourceInitialOlderTensor
       roundCylinderPullback (F.event T hT).limit_metric
         ((F.event T hT).necks i).neck.coordinate_map z v w
   else surgeryCylinderPullback old.cylinder ((F.event T hT).necks i).neck.coordinate_map s
-
-
-
 
 theorem exists_source_initial_older_tensor_tolerance (P : M47Predecessors.{u})
     {epsilon zeta K : ℝ} (hepsilon : 0 < epsilon)

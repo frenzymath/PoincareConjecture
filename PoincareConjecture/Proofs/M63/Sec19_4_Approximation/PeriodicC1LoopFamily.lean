@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopExtension
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ universe u v
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
-
 
 theorem exists_continuous_c1Loop_family_of_periodic
     {M : Type u} [TopologicalSpace M]

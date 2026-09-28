@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem alexander_nested_spherical_ball_attachment {b c d q U V C : Set E}
     (hb : IsFinitePLBallPair (ℝ × ℝ) b q)

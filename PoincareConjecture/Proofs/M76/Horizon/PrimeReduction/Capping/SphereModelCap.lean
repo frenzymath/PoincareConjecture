@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.LiftedSphereCone
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.SphereBicollarLevelCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem LeviCivitaData.scalarCurvature_eq_m28 {g : RiemannianMetric n M}
     (D D' : LeviCivitaData g) (x : M) :
@@ -41,13 +28,9 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem core_subset_carrier_m28 (N : CapCertificate g) : N.core ⊆ N.carrier := by
   rw [N.core_eq_interior_closed_core]
   exact interior_subset.trans (by rw [N.closed_core_eq_complement_end]; exact sdiff_subset)
-
-
 
 theorem one_lt_cap_constant_m28 (N : CapCertificate g) : 1 < N.cap_constant := by
   obtain ⟨x, hx⟩ := N.core_nonempty
@@ -58,14 +41,10 @@ theorem one_lt_cap_constant_m28 (N : CapCertificate g) : 1 < N.cap_constant := b
   have hbone : 1 ≤ b := by nlinarith
   exact hbone.trans_lt hb
 
-
-
 theorem scalar_pos_of_connection (N : CapCertificate g) (D : LeviCivitaData g)
     {x : M} (hx : x ∈ N.carrier) : 0 < D.scalarCurvature x := by
   rw [← N.connection.scalarCurvature_eq_m28 D x]
   exact N.scalar_pos x hx
-
-
 
 theorem scalar_lt_cap_constant_mul (N : CapCertificate g) (D : LeviCivitaData g)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier) :
@@ -74,16 +53,12 @@ theorem scalar_lt_cap_constant_mul (N : CapCertificate g) (D : LeviCivitaData g)
   rw [← N.connection.scalarCurvature_eq_m28 D x, ← N.connection.scalarCurvature_eq_m28 D y]
   exact (hratio x hx y hy).trans_lt (mul_lt_mul_of_pos_right hb (N.scalar_pos x hx))
 
-
-
 theorem scalar_lt_mul (N : CapCertificate g) (D : LeviCivitaData g)
     {C : ℝ} (hC : N.cap_constant ≤ C)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier) :
     D.scalarCurvature y < C * D.scalarCurvature x :=
   (N.scalar_lt_cap_constant_mul D hx hy).trans_le
     (mul_le_mul_of_nonneg_right hC (N.scalar_pos_of_connection D hx).le)
-
-
 
 theorem inter_nonempty_of_preconnected_union (N N' : CapCertificate g)
     (hconn : IsPreconnected (N.carrier ∪ N'.carrier)) :
@@ -95,8 +70,6 @@ theorem inter_nonempty_of_preconnected_union (N N' : CapCertificate g)
   obtain ⟨z, _, hz⟩ := hconn N.carrier N'.carrier N.carrier_open N'.carrier_open
     Subset.rfl ⟨x, Or.inl hxN, hxN⟩ ⟨y, Or.inr hyN, hyN⟩
   exact ⟨z, hz⟩
-
-
 
 theorem scalar_le_sq_mul_on_union (N N' : CapCertificate g) (D : LeviCivitaData g)
     {C : ℝ} (hC : N.cap_constant ≤ C) (hC' : N'.cap_constant ≤ C)

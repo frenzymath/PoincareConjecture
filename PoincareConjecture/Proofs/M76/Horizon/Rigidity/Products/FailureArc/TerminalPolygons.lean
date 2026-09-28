@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.EssentialImagePolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +12,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_essential_rim_polygon
     {M ι : Type*} [TopologicalSpace M]

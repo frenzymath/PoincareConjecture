@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.FamilyPhase
 import PoincareConjecture.Proofs.M09.IntrinsicEnergy
 import PoincareConjecture.Proofs.M09.SquareTimeFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

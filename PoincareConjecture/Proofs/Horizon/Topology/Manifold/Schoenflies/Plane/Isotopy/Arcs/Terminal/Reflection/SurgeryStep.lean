@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Arc.Separation.Orientation.AnnularReflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +18,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
 
 theorem sphere_embedding_postcompose
     (J : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -48,8 +45,6 @@ private theorem injective_derivative_postcompose
   convert! hi using 1
 
 variable {f : S2 → E3} {v : E3} {c R : Real}
-
-
 
 def reflected (S : SphereSurgeryStep f v c R) :
     SphereSurgeryStep (heightReflection S.unit_v ∘ f) v (-c) R := by

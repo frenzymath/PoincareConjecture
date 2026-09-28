@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import PoincareConjecture.Statements.M63CurveEstimates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (d : ℝ → ℝ → M)
   {phi : ℝ → ℝ} {t x : ℝ}
 
-
-
 theorem curvatureSquared_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -38,8 +26,6 @@ theorem curvatureSquared_comp
   unfold m62CurvatureSquared
   rw [curvatureVector_comp F d hd hphi hpos hS]
 
-
-
 theorem curvature_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -49,8 +35,6 @@ theorem curvature_comp
     m62Curvature F (fun y s => d (phi y) s) t x = m62Curvature F d t (phi x) := by
   unfold m62Curvature
   rw [curvatureSquared_comp F d hd hphi hpos hS]
-
-
 
 theorem regularizedCurvature_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
@@ -63,8 +47,6 @@ theorem regularizedCurvature_comp
   unfold m62RegularizedCurvature
   rw [curvatureSquared_comp F d hd hphi hpos hS]
 
-
-
 theorem tangentRicci_comp
     (hd : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t) (phi x))
     (hphi : DifferentiableAt ℝ phi x) (hpos : 0 < deriv phi x) :
@@ -72,8 +54,6 @@ theorem tangentRicci_comp
       m62TangentRicci F d t (phi x) := by
   unfold m62TangentRicci
   rw [spatialUnitTangent_comp F d hd hphi.hasDerivAt hpos]
-
-
 
 theorem arcDerivative_comp {f : ℝ → ℝ}
     (hd : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t) (phi x))
@@ -91,9 +71,6 @@ theorem arcDerivative_comp {f : ℝ → ℝ}
         (curveSpeed F d t (phi x))⁻¹ * deriv f (phi x) *
           ((deriv phi x)⁻¹ * deriv phi x) := by ring
     _ = _ := by rw [inv_mul_cancel₀ hpos.ne', mul_one]
-
-
-
 
 theorem arcSecondDerivative_comp {f : ℝ → ℝ}
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
@@ -114,8 +91,6 @@ section CircleProduct
 variable {F' : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
   (P : M62.CircleProductData F' circumference) (c : ℝ → ℝ → P.charts.Point)
 
-
-
 theorem slope_comp
     (hc : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 (n + 1)) (fun y => c y t) (phi x))
     (hphi : DifferentiableAt ℝ phi x) (hpos : 0 < deriv phi x) :
@@ -123,8 +98,6 @@ theorem slope_comp
   let := P.charts.chartedSpace
   unfold m62Slope
   rw [spatialUnitTangent_comp P.flow c hc hphi.hasDerivAt hpos]
-
-
 
 theorem rampRatio_comp
     (hc : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 (n + 1)) (fun y => c y t))

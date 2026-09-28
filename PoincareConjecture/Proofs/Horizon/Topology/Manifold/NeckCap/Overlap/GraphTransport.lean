@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.Geome
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.Homeomorph.Vertical
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,7 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 def closedCollar (r : ℝ) : Set M :=
   N.coordinate_map '' (univ ×ˢ Icc (-r) r)
@@ -69,8 +58,6 @@ private theorem graphCarrierHomeomorph_fixed {r : ℝ} (hr : 0 < r)
   exact N.coordinate_map_coordinate_inverse x.property
 
 variable [T2Space M]
-
-
 
 def graphTransport {r : ℝ} (hr : 0 < r) (hrN : r < N.epsilon⁻¹)
     (h : UnitTwoSphere → ℝ) (hh : Continuous h) (hbound : ∀ q, |h q| < r) : M ≃ₜ M :=
@@ -137,8 +124,6 @@ theorem exists_graph_collar (h : UnitTwoSphere → ℝ) (hh : Continuous h)
     have hp : |h p| ≤ |h q| := hq (mem_univ p)
     linarith
 
-
-
 theorem isSeparating_iff_of_central_sphere_graph (N' : EpsilonNeck g)
     (h : UnitTwoSphere → ℝ) (hh : Continuous h)
     (hdom : ∀ q, h q ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -155,8 +140,6 @@ theorem isSeparating_iff_of_central_sphere_graph (N' : EpsilonNeck g)
       exact N.coordinate_map_mem ⟨mem_univ _, hdom q⟩
     exact connectedComponent_eq (N.carrier_subset_connectedComponent hcenter)
   · exact (N.graphTransport_image_central_sphere hr hrN h hh hbound).trans hsphere.symm
-
-
 
 def supportedHomeomorphOfGraph (N' : EpsilonNeck g) {r : ℝ} (hr : 0 < r)
     (hrN : r < N.epsilon⁻¹) (h : UnitTwoSphere → ℝ) (hh : Continuous h)

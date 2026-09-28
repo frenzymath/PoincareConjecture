@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.CompatibleCover
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.SupportingLines
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -34,7 +24,6 @@ private theorem connectedIntersections_edge_subset (b : AffineBasis (Fin 3) ℝ 
   exact segment_subset_convexHull (mem_range_self _) (mem_range_self _)
 
 omit [T2Space M] in
-
 
 theorem exists_coordinate_edge_subinterval
     (F : OpenPartialHomeomorph Plane M) (b : AffineBasis (Fin 3) ℝ Plane)
@@ -95,8 +84,6 @@ theorem exists_coordinate_edge_subinterval
 
 namespace CoordinateTriangleBoundaryIntersection
 
-
-
 theorem of_isPreconnected_inter
     (F G : OpenPartialHomeomorph Plane M) (b c : AffineBasis (Fin 3) ℝ Plane)
     (hF : convexHull ℝ (range b) ⊆ F.source)
@@ -121,9 +108,6 @@ theorem of_isPreconnected_inter
     exact .subsegment i j a d a' d' ha hd ha' hd'
       (by rwa [uIcc_of_le had]) (by rwa [uIcc_of_le had'])
   · exact .disjoint (disjoint_iff_inter_eq_empty.mpr (not_nonempty_iff_eq_empty.mp hne))
-
-
-
 
 theorem of_convex_chart_contact
     (F G : OpenPartialHomeomorph Plane M) (b c : AffineBasis (Fin 3) ℝ Plane)

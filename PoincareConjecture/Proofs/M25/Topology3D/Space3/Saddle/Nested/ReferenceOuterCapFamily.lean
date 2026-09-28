@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceRo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceRadialFamily
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceCapGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_outer_reference_cap_family :
     let I : Set ℝ := Ioo (-3 / 2) (3 / 2)

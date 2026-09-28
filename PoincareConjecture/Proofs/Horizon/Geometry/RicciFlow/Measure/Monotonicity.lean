@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.MetricCompa
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

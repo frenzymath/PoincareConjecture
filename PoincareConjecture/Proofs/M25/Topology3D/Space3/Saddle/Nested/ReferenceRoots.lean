@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedLowerEstimates
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
-
 
 theorem exists_smooth_roots_in_height_window :
     let I : Set ℝ := Ioo (-3 / 2) (3 / 2)
@@ -315,6 +301,5 @@ theorem exists_smooth_roots_in_height_window :
   have hge : t.2 ≤ U t r ↔ ri t ≤ r ∧ r ≤ ro t := by
     rw [← not_lt, hless, not_or, not_lt, not_lt]
   exact ⟨hequal, hless, hgreater, hge⟩
-
 
 end PoincareConjecture.M25.Topology3D.NestedReferenceLower

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,7 +11,6 @@ universe u
 namespace PoincareConjecture.M51
 
 variable {A B : GeneralizedSliceCarrier.{u}}
-
 
 theorem singularMetricCoefficient_pullback
     (gT : RiemannianMetric 3 B.carrier)
@@ -41,7 +31,6 @@ theorem singularMetricCoefficient_pullback
     f ∘ (extChartAt (𝓡 3) q).symm from rfl, hcomp]
   rfl
 
-
 theorem singularMetricJet_pullback
     (gT : RiemannianMetric 3 B.carrier)
     (f : Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞)
@@ -58,8 +47,6 @@ theorem singularMetricJet_pullback
     filter_upwards [(isOpen_extChartAt_target (I := 𝓡 3) q).mem_nhds hp] with z hz
     exact singularMetricCoefficient_pullback gT f q a b hz
   exact heq.iteratedFDeriv ℝ k |>.eq_of_nhds
-
-
 
 theorem surgeryMetricLimitOn_pullback
     (g : ℝ → RiemannianMetric 3 A.carrier)

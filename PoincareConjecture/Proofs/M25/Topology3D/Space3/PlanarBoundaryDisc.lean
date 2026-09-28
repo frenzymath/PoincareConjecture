@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.StandardTube
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallChartIsometry
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscShrinking
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,10 +9,8 @@ open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 local instance space3_stereographic_dimension : Fact (Module.finrank ℝ E3 = 2 + 1) :=
   ⟨by simp [E3]⟩
-
 
 noncomputable def PlanarSchoenfliesData.ballNeighborhoodChart {c : UnitCircle → E2}
     (D : PlanarSchoenfliesData c) : BallNeighborhoodChart E2 E2 where
@@ -30,8 +18,6 @@ noncomputable def PlanarSchoenfliesData.ballNeighborhoodChart {c : UnitCircle �
   closedBall_subset_source := D.closedBall_subset_discChart_source
   smooth := D.discChart_contDiffOn
   smooth_symm := D.discChart_symm_contDiffOn
-
-
 
 theorem boundaryDisc_shrinking_of_planar (hP : PlanarSchoenfliesService)
     (c : UnitCircle → E2) (hc : IsPlanarEmbedding c) (v : UnitTwoSphere) :

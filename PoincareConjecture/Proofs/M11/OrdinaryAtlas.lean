@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.OrdinaryChartTransitions
 import PoincareConjecture.Definitions.M11AdaptedAtlas
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

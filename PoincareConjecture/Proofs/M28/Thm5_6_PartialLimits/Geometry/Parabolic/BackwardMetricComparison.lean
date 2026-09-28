@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {tau K : ℝ}
-
-
-
 
 theorem backward_metric_comparison
     (F : RicciFlow n M (Icc (-tau) 0)) (htau : 0 < tau) (hK : 0 ≤ K)
@@ -67,9 +55,6 @@ theorem backward_metric_comparison
   · apply hforward.trans
     apply mul_le_mul_of_nonneg_right _ h0
     exact Real.exp_le_exp.mpr htime
-
-
-
 
 theorem backward_pullback_ellipticity
     (F : RicciFlow n M (Icc (-tau) 0)) (htau : 0 < tau) (hK : 0 ≤ K)

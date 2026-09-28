@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Level.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.CriticalSet.Closed
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +19,6 @@ private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin (1 + 1))) = 1 + 1) :=
   ⟨by simp⟩
-
-
-
 
 theorem exists_sphere_height_level_diffeomorphisms_on_regular_band_of_smooth
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -79,8 +68,6 @@ theorem exists_sphere_height_level_diffeomorphisms_on_regular_band_of_smooth
       exact hc)
   · exact (roundSphereMetric 2).leviCivitaData.exists_level_diffeomorphisms_on_compact_regular_band
       hh U hreg hab hcompact
-
-
 
 theorem exists_sphere_height_level_diffeomorphisms_on_regular_band
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

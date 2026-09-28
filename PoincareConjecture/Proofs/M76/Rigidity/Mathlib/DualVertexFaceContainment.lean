@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem exists_original_star_face_of_vertex_dual_face
     {p : E} (hp : p ∈ K.vertices) {s : Finset E}

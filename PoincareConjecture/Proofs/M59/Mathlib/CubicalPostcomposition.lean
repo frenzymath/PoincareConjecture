@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M02.HomotopyMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -18,8 +11,6 @@ open PoincareConjecture.Proofs.M02
 variable {N X Y : Type*} [DecidableEq N] [TopologicalSpace X] [TopologicalSpace Y]
   {x : X} {y : Y}
 
-
-
 theorem mapGenLoop_transAt (f : C(X, Y)) (h : f x = y) (i : N)
     (a b : GenLoop N X x) :
     mapGenLoop f h (GenLoop.transAt i a b) =
@@ -28,8 +19,6 @@ theorem mapGenLoop_transAt (f : C(X, Y)) (h : f x = y) (i : N)
   change f ((GenLoop.transAt i a b) v) = _
   simp only [GenLoop.transAt, GenLoop.coe_copy]
   split_ifs <;> rfl
-
-
 
 noncomputable def homotopyGroupMapHom [Nonempty N] (f : C(X, Y)) (h : f x = y) :
     HomotopyGroup N X x →* HomotopyGroup N Y y where

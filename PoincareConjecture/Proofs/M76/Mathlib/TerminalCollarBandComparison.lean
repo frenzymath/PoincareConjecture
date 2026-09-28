@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CommonCollarBandRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.exists_terminal_collarBand_comparison
     {B : Set E} {T₀ T₁ R : Set F} {lower₀ lower₁ upper : E → ℝ}

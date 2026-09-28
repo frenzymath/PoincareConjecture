@@ -9,15 +9,6 @@ import PoincareConjecture.Proofs.M03.FamilyBundleCoordinates
 import PoincareConjecture.Proofs.M03.ConnectionFamily
 import PoincareConjecture.Proofs.M03.CurvatureHom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -88,7 +79,6 @@ theorem hasDerivAt_curvature_difference_apply
   simpa only [Function.comp_def] using
     HasFDerivAt.comp_hasDerivAt t hl
       (hasDerivAt_curvature_difference F F' hinit ht ht' x u v w)
-
 
 theorem curvature_hessian_trace_localFrame
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 : M) :
@@ -448,7 +438,6 @@ theorem curvature_hessian_trace_localFrame
   apply Finset.sum_congr rfl
   intro j _
   rw [← Finset.sum_smul, hcontract]
-
 
 theorem curvature_hessian_contraction_eq_covariant_divergence
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 : M) :

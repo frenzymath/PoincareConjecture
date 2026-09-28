@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M70
 import PoincareConjecture.Proofs.M71.WidthInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -20,8 +10,6 @@ namespace PoincareConjecture
 variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {W : RepairedEventChildWitness D.flow}
   {ancestry : RepairedFiniteAncestryData D.flow W}
-
-
 
 theorem m71EmptySlice
     (Q : M71FiniteContinuationService D W ancestry)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.LowerBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Bound
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,7 +42,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_pos_le_curvatureTensor_orthonormal
     (D : LeviCivitaData g) (x : M)
@@ -100,7 +93,6 @@ theorem exists_pos_le_curvatureTensor_orthonormal
   exact ⟨κ, hκ, fun u v hu hv huv => hbound (u, v) ⟨hu, hv, huv⟩⟩
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem exists_pos_eventually_le_curvatureTensor_orthonormal
     (D : LeviCivitaData g) (x : M)
@@ -235,8 +227,6 @@ theorem exists_pos_eventually_le_curvatureTensor_orthonormal
   have hb := hy (L y u, L y v) hmem
   simpa [F, r, hKL y hybase, hu, hv, huv] using hb.le
 
-
-
 theorem exists_pos_eventually_curvatureTensor_diagonal_lower_bound
     (D : LeviCivitaData g) (x : M)
     (hsec : ∀ u v, g.inner x u u = 1 → g.inner x v v = 1 →
@@ -252,8 +242,6 @@ theorem exists_pos_eventually_curvatureTensor_diagonal_lower_bound
   simpa [sectionalCurvature, ha, hb, hab] using hy a b ha hb hab
 
 variable [T3Space M] [PreconnectedSpace M]
-
-
 
 theorem exists_pos_curvatureTensor_lower_bound_on_edist_ball
     (D : LeviCivitaData g) (x : M)

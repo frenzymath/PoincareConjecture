@@ -1,15 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
-
 
 theorem exists_finite_three_level_cover
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]

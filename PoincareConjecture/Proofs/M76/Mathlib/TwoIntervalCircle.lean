@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangularPointedRim
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
-
-
-
 
 theorem isFinitePLBallPair_upper_rim :
     IsFinitePLBallPair ℝ (frontier base ∩ {p | 1 ≤ cornerHeight p})
@@ -57,10 +45,6 @@ open TriangularRoofModel
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_twoInterval_circle_model {a b q : Set E}
     (ha : IsFinitePLBallPair ℝ a q) (hb : IsFinitePLBallPair ℝ b q)

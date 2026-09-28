@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusBoundaryRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusFamily
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,11 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64FreeAnnulus_exists_c2_moving_family_with_literal_competitors
     (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M04.ShiEnergySqrt
 import PoincareConjecture.Proofs.M04.ShiDistanceJet
 import Mathlib.Analysis.Normed.Operator.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Topology
@@ -164,4 +156,3 @@ theorem exists_smooth_upper_support_of_energy_expansions
   exact ⟨P, r, hr, hrρ.trans hρρ0, hP, hP0.trans hf0, hPmajor, hPgrad, hPlap⟩
 
 end PoincareConjecture.M04
-

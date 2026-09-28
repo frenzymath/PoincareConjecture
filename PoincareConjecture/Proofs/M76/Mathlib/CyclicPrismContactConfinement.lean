@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ThinPrismContactConfinement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -19,11 +9,6 @@ open Set CoordinateHalfBoxes
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_thin_original_cutArc_contacts
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

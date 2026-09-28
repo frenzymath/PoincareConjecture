@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialIntrinsicEscape
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem initial_intrinsic_positive_jets_tendsto_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -45,9 +34,6 @@ theorem initial_intrinsic_positive_jets_tendsto_zero
     (abs_nonneg (iteratedDeriv (j + 1)
       (rawWarpingRadius P E.flow.base E.rotation_invariant (t k)) (s k)))
   simpa only [mul_comm] using hm.trans h
-
-
-
 
 theorem initial_intrinsic_squared_radius_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -122,8 +108,6 @@ theorem initial_intrinsic_squared_radius_tendsto
   apply Eventually.of_forall
   intro k
   exact mul_div_cancel_left₀ (f k (s k) ^ 2) (E.scalar_pos (htG k) _).ne'
-
-
 
 theorem exists_initial_intrinsic_squared_radius_control
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

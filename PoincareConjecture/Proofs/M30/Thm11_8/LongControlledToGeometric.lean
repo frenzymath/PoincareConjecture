@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalVolume
 import PoincareConjecture.Proofs.M30.Thm11_8.GeometricLongConvergence
 import PoincareConjecture.Proofs.M30.Thm11_8.LongSlabService
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem geometricLongControls_of_longControlled
     {S : GeneralizedBlowupSequence.{u}} {kappa r₀ : ℝ} {T₀ : ℝ≥0∞}
@@ -110,10 +98,6 @@ theorem geometricLongControls_of_longControlled
     terminal_volume := ⟨rho, v, hrho, mul_pos H.kappa_pos (pow_pos hrho 3), hvolume⟩
     cylinders := hcyl }
 
-
-
-
-
 theorem geometricLongControls_of_m30LongControls
     (hC : RicciFlowCurvatureTheory.{u})
     {S : GeneralizedBlowupSequence.{u}}
@@ -137,9 +121,6 @@ theorem geometricLongControls_of_m30LongControls
       filter_upwards [hfamily A hA eta heta] with k hk
       obtain ⟨Tplus, hTplus, hTTplus, hTplusT₀, hE⟩ := hk
       exact hE }
-
-
-
 
 theorem exists_geometric_long_of_longControlled
     (P : M30ControlledBlowupPredecessors.{u})

@@ -6,8 +6,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +16,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_regular_value_equal_dimension
     {f : EuclideanSpace ℝ (Fin n) → M}

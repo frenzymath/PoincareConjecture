@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphSectionPasting
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedCutEdgePaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

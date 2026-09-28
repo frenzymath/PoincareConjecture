@@ -1,21 +1,11 @@
 import Mathlib.MeasureTheory.Measure.MeasureSpace
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 
 namespace PoincareConjecture.M34
-
-
 
 theorem exists_open_image_measure_eq {X Y : Type*}
     [TopologicalSpace X] [TopologicalSpace Y] [MeasurableSpace Y]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoreCompressionDisplacement
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolationBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {p : E → E}
-
-
-
 
 theorem AffineOnFaces.norm_sub_coreCompression_le (hp : K.AffineOnFaces p)
     (hvertex : EqOn p NormedSpace.coreCompression K.vertices)

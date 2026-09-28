@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem covariantTensorDerivative_eq_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {x : M}
@@ -102,7 +93,6 @@ theorem covariantTensorDerivative_eq_pullback
   rw [htarget] at hright
   exact hleft.trans hright.symm
 
-
 theorem iteratedCovariantTensorDerivative_eq_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
@@ -137,7 +127,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
 
 theorem tensorNorm_eq_of_linearEquiv
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) {k : ℕ}

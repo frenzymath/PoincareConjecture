@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RotationRadialSplit
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingGradientEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -78,9 +69,6 @@ theorem rotational_linear_skew_derivative_bound
   rw [add_comm (axisAngularCoefficient g r * ‖y‖ ^ 2)
     (axisRadialCoefficient g r * p ^ 2)]
   exact he
-
-
-
 
 theorem rotational_linear_skew_gradient_normSq_le
     (B : StandardCapSpace →L[ℝ] StandardCapSpace)

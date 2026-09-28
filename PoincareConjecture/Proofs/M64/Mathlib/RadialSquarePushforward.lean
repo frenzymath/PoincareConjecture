@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.RadialTestVanishing
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,11 +11,6 @@ open scoped ContDiff
 namespace PoincareConjecture
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem exists_squaredRadius_representative {R : ℝ} {C : ℝ → F}
     (hC : IntegrableOn C (Ioo (0 : ℝ) R)) :
@@ -66,11 +47,6 @@ theorem exists_squaredRadius_representative {R : ℝ} {C : ℝ → F}
 
 variable [CompleteSpace F]
 
-
-
-
-
-
 theorem radialCoefficient_ae_eq_zero_of_sq_test_pairings
     {a b R : ℝ} {C : ℝ → F}
     (hC : IntegrableOn C (Ioo (0 : ℝ) R))
@@ -88,11 +64,6 @@ theorem radialCoefficient_ae_eq_zero_of_sq_test_pairings
   filter_upwards [heq, hpull] with r hr hz
   intro hrsq
   exact hr.symm.trans (hz hrsq)
-
-
-
-
-
 
 theorem radialWeightedCoefficients_ae_zero_of_sq_test_pairings
     {a b R : ℝ} {D0 D1 : ℝ → F}
@@ -114,11 +85,6 @@ theorem radialWeightedCoefficients_ae_zero_of_sq_test_pairings
   intro hrsq
   exact ⟨(smul_eq_zero.mp (hzero0 hrsq)).resolve_left hr.1.ne',
     (smul_eq_zero.mp (hzero1 hrsq)).resolve_left (pow_ne_zero 2 hr.1.ne')⟩
-
-
-
-
-
 
 theorem radialWeightedCoefficients_common_radius
     {a b R : ℝ} {D0 D1 : ℝ → F} (ha : 0 ≤ a) (hab : a < b) (hbR : b ≤ R)

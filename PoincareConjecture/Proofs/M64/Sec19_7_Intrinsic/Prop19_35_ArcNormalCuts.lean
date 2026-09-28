@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopGraphNeighb
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Subdivision
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.LinearCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -39,9 +27,6 @@ private theorem projection_quarterTurn
     hv.1, hv.2, hw.1, hw.2]
   ring
 
-
-
-
 theorem m64Intrinsic_graph_tangent
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)
     (L : AnnulusCoordinates ≃L[ℝ] (ℝ × ℝ))
@@ -61,9 +46,6 @@ theorem m64Intrinsic_graph_tangent
   have hderiv := (hleft.congr_of_eventuallyEq heq.symm).unique hright
   change L (deriv gamma t) = (deriv G t * 1, deriv G t * deriv f (G t))
   simpa only [mul_one, one_mul, mul_comm] using hderiv
-
-
-
 
 theorem m64Intrinsic_graph_normal_transverse
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)
@@ -97,9 +79,6 @@ theorem m64Intrinsic_graph_normal_transverse
       rw [real_inner_smul_right]
     have hself := real_inner_self_pos.mpr hregular
     exact (mul_pos_iff_of_pos_left hd).mp (hinner ▸ hself)
-
-
-
 
 theorem m64Intrinsic_exists_arc_normal_graph
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)
@@ -144,9 +123,6 @@ theorem m64Intrinsic_exists_arc_normal_graph
     (hmonoG ha hb hab) (G.map_source ha) (G.map_source hb)
     (htrans a (left_mem_Icc.mpr hab.le)).2.1
     (htrans b (right_mem_Icc.mpr hab.le)).2.1
-
-
-
 
 theorem m64Intrinsic_exists_arc_normal_cut_subdivision
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

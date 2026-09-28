@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.WeakReplacement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem integral_gradient_cutoff_mul_eq (D : LeviCivitaData g)
     {η U : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)
@@ -60,7 +53,6 @@ theorem integral_gradient_cutoff_mul_eq (D : LeviCivitaData g)
   rw [hf, hgreen]
   ring
 
-
 theorem integral_gradient_cutoff_mul_le (D : LeviCivitaData g)
     {η U : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)
     (hU : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ U) (hηc : HasCompactSupport η)
@@ -92,8 +84,6 @@ theorem integral_gradient_cutoff_mul_le (D : LeviCivitaData g)
     · simp [image_eq_zero_of_notMem_tsupport hx]
   rw [D.integral_gradient_cutoff_mul_eq hη hU hηc]
   linarith
-
-
 
 theorem caccioppoli_of_laplacian_lower (D : LeviCivitaData g)
     {η U : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)
@@ -164,8 +154,6 @@ theorem caccioppoli_of_laplacian_lower (D : LeviCivitaData g)
   rw [integral_add (hfi.const_mul 2) (hηi.const_mul 4),
     integral_const_mul, integral_const_mul] at hint
   linarith
-
-
 
 theorem harmonic_caccioppoli (D : LeviCivitaData g)
     {η U : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)

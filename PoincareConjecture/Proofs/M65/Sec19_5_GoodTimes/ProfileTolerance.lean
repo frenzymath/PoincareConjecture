@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.FiniteProfileComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
-
-
-
 
 theorem m65FiniteProfileTolerance (compact : IsCompact (univ : Set M))
     {A L eta : ℝ} (hA : 0 ≤ A) (hL : 0 ≤ L) (heta : 0 < eta) :

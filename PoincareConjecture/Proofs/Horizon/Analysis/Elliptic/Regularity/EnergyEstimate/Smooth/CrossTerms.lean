@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Smooth.Integrability
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Smooth.Pointwise
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -50,7 +42,6 @@ private lemma integral_const_indicator_eq
     · rw [Set.indicator_of_mem hx, Set.indicator_of_mem hx]; ring
     · rw [Set.indicator_of_notMem hx, Set.indicator_of_notMem hx]; ring]
   rw [MeasureTheory.integral_indicator (isClosed_tsupport η).measurableSet]
-
 
 theorem translated_coeff_cutoff_deriv_diffQuot_cross_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -328,7 +319,6 @@ theorem translated_coeff_cutoff_deriv_diffQuot_cross_bound
     refine mul_le_mul_of_nonneg_left h_diffQuot_sq_le ?_
     rw [h_C_eq]; exact mul_nonneg h_d_real_sq_nn h_factor_nn
   linarith
-
 
 theorem coeff_diffQuot_cutoff_sq_gradient_cross_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -841,7 +831,6 @@ theorem coeff_diffQuot_cutoff_sq_gradient_cross_bound
     rw [← h_C_eq]
   linarith
 
-
 theorem coeff_diffQuot_cutoff_deriv_cross_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
     {η : E → ℝ} (hη : ContDiff ℝ (⊤ : ℕ∞) η) (hη_supp : HasCompactSupport η)
@@ -1228,7 +1217,6 @@ theorem coeff_diffQuot_cutoff_deriv_cross_bound
     rw [← h_C_eq]
   exact h_total_bound
 
-
 omit [NeZero d] in
 private theorem nirenbergTestFunction_sq_integral_le
     {u : E → ℝ} (hu : ContDiff ℝ (⊤ : ℕ∞) u)
@@ -1379,7 +1367,6 @@ private theorem nirenbergTestFunction_sq_integral_le
         funext x; ring]
     rw [integral_const_mul]
   rw [h_t2_eq]
-
 
 theorem c_term_bound
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -1680,7 +1667,6 @@ theorem c_term_bound
         C * ∫ x in Ω', (u x)^2 ∂(volume : Measure E) := by ring
     linarith
   linarith
-
 
 omit [NeZero d] in
 theorem f_term_bound

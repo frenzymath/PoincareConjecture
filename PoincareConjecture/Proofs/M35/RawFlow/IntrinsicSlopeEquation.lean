@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicEvolution
 import PoincareConjecture.Proofs.M03.ScalarMixedDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -57,8 +48,6 @@ theorem rawWarpingSlope_contDiffOn :
     (rawWarpingRadius P G hrotation) (rawWarpingRadius_contDiffOn P G hrotation)
   simpa only [fderiv_apply_one_eq_deriv, Function.uncurry, rawWarpingSlope] using
     h.clm_apply (contDiffOn_const (c := (1 : ℝ)))
-
-
 
 theorem rawWarpingSlope_hasDerivAt_time {t s : ℝ}
     (ht : t ∈ Ioo 0 G.lifetime) (hs : 0 < s) :

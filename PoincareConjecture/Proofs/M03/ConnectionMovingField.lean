@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M03.ScalarMixedDerivative
 import PoincareConjecture.Proofs.M03.MetricPairRegularity
 import PoincareConjecture.Proofs.M03.CurvatureVectorTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 

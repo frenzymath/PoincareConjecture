@@ -1,17 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Topology.VectorBundle.Riemannian
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Filter ContinuousLinearMap
@@ -34,9 +23,6 @@ variable {X B₁ B₂ F₁ F₂ : Type*}
   [IsContinuousRiemannianBundle F₁ E₁] [IsContinuousRiemannianBundle F₂ E₂]
   {b₁ : X → B₁} {b₂ : X → B₂}
   {T : ∀ y, E₁ (b₁ y) →L[ℝ] E₂ (b₂ y)} {x : X} {C : ℝ}
-
-
-
 
 theorem eventually_norm_bundleHom_lt
     (hb₁ : ContinuousAt b₁ x) (hb₂ : ContinuousAt b₂ x)
@@ -114,9 +100,6 @@ variable {E H F K M N : Type*}
   [RiemannianBundle (TangentSpace J : N → Type _)]
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type _)]
   [IsContinuousRiemannianBundle F (TangentSpace J : N → Type _)]
-
-
-
 
 theorem eventually_norm_mfderiv_lt
     {f : M → N} {x : M} {C : ℝ} (hf : ContMDiffAt I J 1 f x)

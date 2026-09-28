@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.SphereOpenCover
 import Mathlib.Analysis.Convex.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.SecondPhaseGroups
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 

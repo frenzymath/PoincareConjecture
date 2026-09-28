@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.UniformJets
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -28,8 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 local instance terminalStabilityCarrierConnected (C : FlowCarrier.{0} 3) :
     ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
-
-
 
 theorem M23TerminalExtension.eventually_strongEvolvingNeck
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

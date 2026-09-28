@@ -2,14 +2,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +52,6 @@ theorem quadraticJet_second_fderiv (c : ℝ) (L : E →L[ℝ] ℝ)
   rw [quadraticJet_fderiv c L B hB]
   have hd := (B.hasFDerivAt.comp y ((hasFDerivAt_id y).sub_const x)).const_add L
   simpa only [ContinuousLinearMap.comp_id, Function.comp_def, id_eq] using hd.fderiv
-
-
 
 theorem quadraticJet_remainder_isLittleO {f : E → ℝ} {x : E}
     (hf : ContDiffAt ℝ 2 f x) :

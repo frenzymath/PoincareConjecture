@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SeparationLabels
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import PoincareConjecture.Definitions.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem NeckOnlyCover.exists_uniform_nonseparating_center_labels :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

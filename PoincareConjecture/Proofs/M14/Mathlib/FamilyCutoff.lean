@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,9 +8,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M14
 
 variable {P M : Type*} [TopologicalSpace P] [TopologicalSpace M]
-
-
-
 
 theorem exists_family_time_cutoff {f : ℝ × P → M} {c : ℝ} {p : P}
     (hf : ContinuousAt f (c, p)) {V : Set M} (hV : IsOpen V) (hfp : f (c, p) ∈ V)

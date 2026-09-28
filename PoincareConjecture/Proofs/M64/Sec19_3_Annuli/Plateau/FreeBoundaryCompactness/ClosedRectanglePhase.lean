@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseLift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -48,9 +36,6 @@ private theorem clampRectangle_eq {p : LoopPlane} (hp : p ∈ m64AnnulusDomain) 
       max_eq_right hp.1]
   · simp [clampRectangle, annulusPoint, clampRadial, min_eq_right hp.2.2.2,
       max_eq_right hp.2.2.1]
-
-
-
 
 theorem closed_rectangle_exists_circle_phase {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)
@@ -110,9 +95,6 @@ theorem closed_rectangle_exists_circle_phase {circumference : ℝ}
   intro x hx
   rw [hlower]
   simp only [clampAngular, min_eq_right hx.2, max_eq_right hx.1]
-
-
-
 
 theorem closed_rectangle_phase_boundary_difference {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)

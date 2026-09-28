@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MarkedMeridianStrip
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,26 +19,20 @@ local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
 
-
-
 noncomputable def meridianCutFrontierMap (P : OriginalDiskProduct e R j) (a : ℝ) : E → X := by
   classical
   exact fun z => if z.2 = a / 2 then P.map (z.1, (1 / 2 : ℝ)) else
     if z.2 = p - a / 2 then P.map (z.1, -(1 / 2 : ℝ)) else
       hamiltonMeridianCutAmbientMap z
 
-
 theorem meridianCutFrontierMap_lower (P : OriginalDiskProduct e R j) (a : ℝ) (z : V2) :
     P.meridianCutFrontierMap a (z, a / 2) = P.map (z, (1 / 2 : ℝ)) := by
   simp [meridianCutFrontierMap]
-
 
 theorem meridianCutFrontierMap_upper (P : OriginalDiskProduct e R j) {a : ℝ}
     (hgap : a / 2 < p - a / 2) (z : V2) :
     P.meridianCutFrontierMap a (z, p - a / 2) = P.map (z, -(1 / 2 : ℝ)) := by
   simp [meridianCutFrontierMap, ne_of_gt hgap]
-
-
 
 theorem meridianCutFrontierMap_lateral (P : OriginalDiskProduct e R j) {a : ℝ}
     (hgap : a / 2 < p - a / 2)

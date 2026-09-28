@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M32.Thm11_31.Levels
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem horn_exists_compact_connected_low_prefix
     {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}

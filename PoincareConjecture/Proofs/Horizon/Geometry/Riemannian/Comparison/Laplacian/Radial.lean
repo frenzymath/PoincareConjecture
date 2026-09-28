@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Radial
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem inner_gradient_radial_coordinate (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -38,8 +29,6 @@ theorem inner_gradient_radial_coordinate (D : LeviCivitaData g)
   rw [D.gradient_radial_coordinate e he hei hx hx0 hgauss]
   simp only [map_smul, smul_apply, smul_eq_mul, hgauss, real_inner_self_eq_norm_sq]
   field_simp [norm_ne_zero_iff.mpr hx0]
-
-
 
 theorem laplacian_radial_coordinate (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -127,8 +116,6 @@ theorem inner_gradient_inverse_branch (g : RiemannianMetric n M) (D : LeviCivita
   rw [hlocal.mfderiv_eq, heB hv] at hgauss
   rw [heB hv]
   exact D.inner_gradient_radial_coordinate B hB hBi hv hv0 hgauss
-
-
 
 theorem laplacian_inverse_branch (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {e : EuclideanSpace ℝ (Fin n) → M}

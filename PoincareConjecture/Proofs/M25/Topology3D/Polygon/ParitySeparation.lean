@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ParityLocal
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.SimplePolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.GenericFrame
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ open Set Filter
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem IsSimplePolygon.exists_polygonCrossingParity_ne {p : Polygon E n}
     (hp : IsSimplePolygon p) (X H : E →ₗ[ℝ] ℝ) (hX : Continuous X) (hH : Continuous H)
@@ -48,8 +36,6 @@ theorem IsSimplePolygon.exists_polygonCrossingParity_ne {p : Polygon E n}
   intro heq
   rw [heq, CharTwo.add_self_eq_zero] at hpar
   exact zero_ne_one hpar
-
-
 
 theorem IsSimplePolygon.not_isPreconnected_compl [FiniteDimensional ℝ E]
     {p : Polygon E n} (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) :

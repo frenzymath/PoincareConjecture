@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem supported_chart_symm_eqOn {E X : Type*}
     [TopologicalSpace E] [TopologicalSpace X]

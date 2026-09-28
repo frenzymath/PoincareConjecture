@@ -2,15 +2,6 @@ import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
 
 theorem exists_compact_convex_coordinate_box {U : Set X} (hU : IsOpen U)
     {x : X} (hx : x ∈ U) (f : X → E) (hf : ContinuousOn f U)

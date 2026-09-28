@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M32.Mathlib.InverseChartDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderCoefficients
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -111,8 +95,6 @@ private theorem mfderiv_chosen_cylinder_chart
   exact congrArg (fun L => L v) h
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem cylinder_coefficient_error_fixed_chart
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

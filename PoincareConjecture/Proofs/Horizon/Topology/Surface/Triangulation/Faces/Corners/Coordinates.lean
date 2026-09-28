@@ -1,10 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexCaps
-
-
-
 
 set_option autoImplicit false
 open Set

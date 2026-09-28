@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 attribute [local instance] uliftChartedSpace uliftIsManifold
-
-
 
 theorem ulift_asymptoticVolumeRatio_pos_of_ball_volume_lower_bound
     {n : ℕ} {M : Type} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

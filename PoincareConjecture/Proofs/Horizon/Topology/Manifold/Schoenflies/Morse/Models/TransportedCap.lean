@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CylindricalCap
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem exists_cylindrical_cap_over_disk_with_range
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)
@@ -79,7 +74,6 @@ theorem exists_cylindrical_cap_over_disk_with_range
         _ = 2 * |s| := mul_comm _ _
   · change (F ∘ k) '' closedBall (0 : Hemisphere.Plane v) 1 = _
     rw [image_comp, hkrange]
-
 
 theorem exists_cylindrical_cap_over_disk
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

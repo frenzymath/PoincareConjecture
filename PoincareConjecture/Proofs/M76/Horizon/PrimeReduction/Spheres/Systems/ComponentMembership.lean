@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ActualGraphCarrier
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_unique_member_of_preconnected_finite_closed_union
     {X κ : Type*} [TopologicalSpace X] [Finite κ]
@@ -53,8 +43,6 @@ theorem exists_unique_member_of_preconnected_finite_closed_union
   by_contra hji
   exact disjoint_left.mp (hdis hji) (hj hx) hxi
 
-
-
 theorem exists_unique_sphere_member_of_preconnected
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
     {e : ι → OpenPartialHomeomorph X V3}
@@ -64,8 +52,6 @@ theorem exists_unique_sphere_member_of_preconnected
     (hsub : C ⊆ ⋃ i, S i) : ∃! i, C ⊆ S i :=
   exists_unique_member_of_preconnected_finite_closed_union S
     (fun i => (sS i).isCompact.isClosed) hdis hne hC hsub
-
-
 
 theorem exists_unique_preimage_component_member
     {X Y κ : Type*} [TopologicalSpace X] [TopologicalSpace Y] [Finite κ]
@@ -87,8 +73,6 @@ theorem exists_unique_preimage_component_member
   · intro j hj
     by_contra hji
     exact disjoint_left.mp (hdis hji) hj.1 hxi
-
-
 
 theorem exists_unique_moved_sphere_member_of_preconnected
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -130,8 +114,6 @@ private theorem isConnected_segmentCarrier
       (left_mem_segment ℝ _ _) hx hy⟩
   exact hpath.isConnected
 
-
-
 theorem isConnected_actual_graph_component_carrier
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
     (G : SimplicialComplex ℝ E)
@@ -143,9 +125,6 @@ theorem isConnected_actual_graph_component_carrier
   intro v
   obtain ⟨w, hvw⟩ := hne v.val
   exact ⟨⟨w, C.mem_supp_of_adj_mem_supp v.property hvw⟩, hvw⟩
-
-
-
 
 theorem exists_unique_moved_sphere_member_of_graph_component
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

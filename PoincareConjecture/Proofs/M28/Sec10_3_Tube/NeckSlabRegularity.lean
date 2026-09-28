@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapBoundarySlabEscape
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricBalls
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,9 +16,6 @@ open M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem ball_subset_centered_region (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.carrier) {r : ℝ} (hr : 0 < r)
@@ -100,9 +85,6 @@ theorem ball_subset_centered_region (N : EpsilonNeck g) {p : M}
   apply ht.2
   simpa only [h0] using hinside
 
-
-
-
 theorem precompact_ball_of_axial_margin (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.carrier) {r : ℝ}
     (hr : r < (N.scale * Real.sqrt (1 - N.epsilon)) *
@@ -147,16 +129,12 @@ theorem precompact_ball_of_axial_margin (N : EpsilonNeck g) {p : M}
   exact ⟨hK.of_isClosed_subset isClosed_closure hclosure,
     hclosure.trans (N.coordinate_slab_subset_carrier_m28 hlo hhi)⟩
 
-
-
 theorem mem_regularPoints_of_axial_margin (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.carrier) :
     p ∈ regularPoints g ((N.scale * Real.sqrt (1 - N.epsilon)) *
       (N.epsilon⁻¹ - |(N.coordinate_inverse p).2|)) := by
   intro r hr
   exact (N.precompact_ball_of_axial_margin hp hr).1
-
-
 
 theorem central_sphere_subset_regularPoints (N : EpsilonNeck g) :
     N.central_sphere ⊆
@@ -166,9 +144,6 @@ theorem central_sphere_subset_regularPoints (N : EpsilonNeck g) :
     (N.mem_central_sphere_iff_of_mem_carrier (N.central_sphere_subset hp)).mp hp
   simpa only [hzero, abs_zero, sub_zero] using
     N.mem_regularPoints_of_axial_margin (N.central_sphere_subset hp)
-
-
-
 
 theorem mem_regularPoints_of_three_quarter (N : EpsilonNeck g) {p : M}
     (hp : p ∈ N.carrier)
@@ -181,9 +156,6 @@ theorem mem_regularPoints_of_three_quarter (N : EpsilonNeck g) {p : M}
     mul_nonneg N.scale_pos.le (Real.sqrt_nonneg _)
   apply regularPoints_antitone g _ (N.mem_regularPoints_of_axial_margin hp)
   nlinarith only [mul_le_mul_of_nonneg_left hmargin hfactor]
-
-
-
 
 theorem mem_regularPoints_intrinsicOpenMetric_of_axial_margin
     (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)
@@ -199,9 +171,6 @@ theorem mem_regularPoints_intrinsicOpenMetric_of_axial_margin
   apply Topology.IsEmbedding.subtypeVal.isInducing.isCompact_preimage' hcompact
   intro x hx
   exact ⟨⟨x, hclosure hx⟩, rfl⟩
-
-
-
 
 theorem mem_regularPoints_intrinsicOpenMetric_of_three_quarter
     (N : EpsilonNeck g) (V : TopologicalSpace.Opens M)

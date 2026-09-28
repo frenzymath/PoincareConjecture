@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Neighborhoods
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing.Frontier
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -27,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {x : D.vertices → Bool × Bool → M}
   (B : ∀ p, ChartCircleArrangementVertexPatch.VertexCapFaces (P p) (x p))
   (region : D.vertices → Bool × Bool → D.regions)
-
 
 def vertexCapChordsInRegion (R : D.regions) : Set M :=
   ⋃ a : {a : D.vertices × (Bool × Bool) // region a.1 a.2 = R},

@@ -12,17 +12,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Euc
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Gaussian
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flat.Exponential
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +28,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M]
-
-
 
 structure FlatShrinkingPotentialData where
   metric : RiemannianMetric n M
@@ -135,8 +122,6 @@ private theorem deriv_comp_globalGeodesic_at_zero
   rw [hvel', hp] at hcomp
   simpa only [← S.connection.inner_gradient] using hcomp
 
-
-
 theorem potential_globalGeodesic_eq_quadratic
     (S : FlatShrinkingPotentialData (n := n) (M := M)) (p : M)
     (v : EuclideanSpace ℝ (Fin n)) (t : ℝ) :
@@ -193,7 +178,6 @@ theorem potential_globalGeodesic_eq_quadratic
   rw [hφ0, S.deriv_comp_globalGeodesic_at_zero p v] at heq
   simpa [φ, a, div_eq_mul_inv, mul_assoc, mul_left_comm, mul_comm] using heq
 
-
 theorem exists_potential_zero
     (S : FlatShrinkingPotentialData (n := n) (M := M)) :
     ∃ p : M, S.potential p = 0 ∧ S.connection.gradient S.potential p = 0 := by
@@ -228,8 +212,6 @@ theorem exists_potential_zero
     by_contra hne
     exact (ne_of_gt (S.metric.pos p _ hne)) hinner0
   exact ⟨p, hzero, hgrad⟩
-
-
 
 theorem globalGeodesic_terminal_velocity
     (S : FlatShrinkingPotentialData (n := n) (M := M)) (p : M)
@@ -302,8 +284,6 @@ private theorem hasDerivAt_globalGeodesic_endpoint_chart
   simp only [mfderiv_extChartAt_self] at hchain
   exact hd.congr_deriv hchain
 
-
-
 theorem globalExponential_injective
     (S : FlatShrinkingPotentialData (n := n) (M := M)) (p : M)
     (hp : S.potential p = 0) (hpgrad : S.connection.gradient S.potential p = 0) :
@@ -335,7 +315,6 @@ theorem globalExponential_injective
   exact ((S.metric.globalGeodesic_spec S.complete p v).2.2.deriv.symm.trans
     hder).trans (S.metric.globalGeodesic_spec S.complete p w).2.2.deriv
 
-
 theorem globalExponential_surjective
     (S : FlatShrinkingPotentialData (n := n) (M := M)) (p : M) :
     Function.Surjective (S.metric.globalExponential S.complete p) := by
@@ -349,8 +328,6 @@ theorem globalExponential_surjective
   rw [S.metric.globalExponential_eq_endpoint S.complete p _
     (fun t ht => hγ t ⟨by linarith [ht.1], by linarith [ht.2]⟩) hp hchart]
   exact hq
-
-
 
 theorem radial_exponential_flat_pullback
     (S : FlatShrinkingPotentialData (n := n) (M := M)) (p : M)
@@ -380,9 +357,6 @@ theorem radial_exponential_flat_pullback
   · intro t ht
     exact S.flat (e (t • v))
   · exact fun t ht => ((hgeo v hv).2 t ht).1
-
-
-
 
 theorem weighted_volume_of_smooth_isometry
     (S : FlatShrinkingPotentialData (n := n) (M := M))
@@ -429,8 +403,6 @@ theorem weighted_volume_of_smooth_isometry
       simp only [finrank_euclideanSpace, Fintype.card_fin]
       have hbase : Real.pi * 4 * S.tau = S.tau * (Real.pi * 4) := by ring
       rw [hbase, Real.mul_rpow (by positivity) (by positivity)]
-
-
 
 theorem gaussian_rigidity
     (S : FlatShrinkingPotentialData (n := n) (M := M)) :

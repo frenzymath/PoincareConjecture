@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Hessian.Symmetry
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -26,13 +18,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 noncomputable def hamiltonP (D : LeviCivitaData g)
     (x : M) (u v w : TangentSpace (𝓡 n) x) : ℝ :=
   D.covariantTensorDerivative D.ricciEvaluation x ![u, v, w] -
     D.covariantTensorDerivative D.ricciEvaluation x ![v, u, w]
-
-
 
 noncomputable def hamiltonM (D : LeviCivitaData g) (τ : ℝ)
     (x : M) (u v : TangentSpace (𝓡 n) x) : ℝ :=
@@ -60,8 +49,6 @@ theorem hamiltonP_cyclic (D : LeviCivitaData g)
     D.covariantTensorDerivative_ricciEvaluation_symm hD x u w v]
   ring
 
-
-
 lemma hamiltonP_isSmoothCovariantTensor
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) :
     IsSmoothCovariantTensor (k := 3) (fun x v ↦ hamiltonP D x (v 0) (v 1) (v 2)) := by
@@ -82,7 +69,6 @@ lemma hamiltonP_isSmoothCovariantTensor
     simp only [hamiltonP, he, hs]
   rw [hp]
   exact hA.sub (hA.perm (Equiv.swap 0 1))
-
 
 lemma harnackReaction_symm (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -111,8 +97,6 @@ lemma harnackReaction_symm (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculu
   dsimp only
   rw [hRm, hRic]
 
-
-
 lemma hamiltonM_eq_laplacian_add_ricciReaction
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (τ : ℝ) (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -129,8 +113,6 @@ lemma hamiltonM_eq_laplacian_add_ricciReaction
   simp_rw [hflip (g.orthonormalBasis x _) u (g.orthonormalBasis x _) v]
   ring
 
-
-
 lemma ricci_hasDerivWithinAt_hamiltonM
     (hC : RicciFlowCurvatureTheory.{u}) (J : Set ℝ) (F : RicciFlow n M J)
     (t : ℝ) (ht : t ∈ J) (τ : ℝ)
@@ -146,8 +128,6 @@ lemma ricci_hasDerivWithinAt_hamiltonM
     (hC.tensor_calculus n M (F.metric t) (F.connection t))]
   ring
 
-
-
 lemma scalarCurvature_contMDiff_slice
     (hC : RicciFlowCurvatureTheory.{u}) (J : Set ℝ) (F : RicciFlow n M J)
     (t : ℝ) (ht : t ∈ J) :
@@ -158,8 +138,6 @@ lemma scalarCurvature_contMDiff_slice
   simpa only [Function.comp_def] using
     (hC.scalar_regular n M J F).comp_contMDiff (f := fun x : M ↦ (t, x))
       hs (fun x ↦ ⟨ht, Set.mem_univ x⟩)
-
-
 
 theorem hamiltonM_symm_of_curvatureTheory
     (hC : RicciFlowCurvatureTheory.{u}) (J : Set ℝ) (F : RicciFlow n M J)

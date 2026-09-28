@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConstructedThreeArcCurvature
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionCurvature
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_constructed_no_short_three_arc_region
     (N : IntrinsicAnnulus)

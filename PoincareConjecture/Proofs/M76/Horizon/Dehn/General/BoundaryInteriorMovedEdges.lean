@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.BoundaryInteriorLinkSe
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ClippedDiskParameter
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.MovedEdgeCrossing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval
@@ -141,4 +132,3 @@ theorem OriginalGeneralPositionData.boundary_moved_edge_crossing
     (H.map 1 z) hpInterior O hO hpO
 
 end Geometry.OriginalPLTower
-

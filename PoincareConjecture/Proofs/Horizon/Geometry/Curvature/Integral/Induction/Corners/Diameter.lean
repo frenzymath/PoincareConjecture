@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteCoverDiameter
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.BallCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem dist_le_of_unitBall_cover_and_local_distance_bound
     {n : ℕ} {M X : Type*} [TopologicalSpace M]

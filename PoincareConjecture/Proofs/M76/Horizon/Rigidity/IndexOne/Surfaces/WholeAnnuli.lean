@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.TerminalAnnuli
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.IrreducibleSlabs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -26,8 +16,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_relative_whole_source_annuli
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

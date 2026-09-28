@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M28
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem cylinderSignedHeight_middle_signs
     (phiS phiC phiH : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1))

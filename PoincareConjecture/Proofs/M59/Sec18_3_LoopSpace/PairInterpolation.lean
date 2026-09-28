@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.LoopValueCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -23,8 +15,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem contMDiffOn_m59PairInterpolation (C : ℝ × (M × M) → M) (t : ℝ)
     (delta gamma : C1FreeLoopSpace (M := M))
@@ -48,8 +38,6 @@ theorem contMDiffOn_m59PairInterpolation (C : ℝ × (M × M) → M) (t : ℝ)
     change (t, delta.extension z.val, gamma.extension z.val) = (t, delta z, gamma z)
     rw [delta.boundary, gamma.boundary])).contMDiffWithinAt
 
-
-
 def m59PairInterpolationLoop (C : ℝ × (M × M) → M) (t : ℝ)
     (delta gamma : C1FreeLoopSpace (M := M))
     (hC : ∀ z : LoopCircle,
@@ -57,8 +45,6 @@ def m59PairInterpolationLoop (C : ℝ × (M × M) → M) (t : ℝ)
         (t, delta z, gamma z)) : C1FreeLoopSpace (M := M) :=
   loopOfExtension (fun w => C (t, delta.extension (radialNormalization w),
     gamma.extension (radialNormalization w))) (contMDiffOn_m59PairInterpolation C t delta gamma hC)
-
-
 
 theorem m59PairInterpolationLoop_apply (C : ℝ × (M × M) → M) (t : ℝ)
     (delta gamma : C1FreeLoopSpace (M := M))
@@ -69,8 +55,6 @@ theorem m59PairInterpolationLoop_apply (C : ℝ × (M × M) → M) (t : ℝ)
   change C (t, delta.extension (radialNormalization z.val),
     gamma.extension (radialNormalization z.val)) = _
   rw [radialNormalization_of_norm_eq_one z.property, delta.boundary, gamma.boundary]
-
-
 
 theorem m59PairInterpolationLoop_tangent (C : ℝ × (M × M) → M) (t : ℝ)
     (delta gamma : C1FreeLoopSpace (M := M))
@@ -112,8 +96,6 @@ theorem m59PairInterpolationLoop_tangent (C : ℝ × (M × M) → M) (t : ℝ)
     erw [mfderiv_radial_extension delta z, mfderiv_radial_extension gamma z] at hchain
     exact hchain
 
-
-
 theorem continuous_m59PairInterpolation_input :
     Continuous (fun v : ℝ × (TangentBundle (𝓡 3) M × TangentBundle (𝓡 3) M) =>
       (⟨(v.1, v.2.1.proj, v.2.2.proj), (0, v.2.1.2, v.2.2.2)⟩ :
@@ -129,8 +111,6 @@ theorem continuous_m59PairInterpolation_input :
   exact (contMDiff_equivTangentBundleProd_symm (I := 𝓘(ℝ, ℝ))
     (I' := (𝓡 3).prod (𝓡 3)) (M := ℝ) (M' := M × M) (n := 0)).continuous.comp
       (ht.prodMk hpair)
-
-
 
 theorem continuous_m59PairInterpolationLoop {X : Type v} [TopologicalSpace X]
     (C : ℝ × (M × M) → M) (t : X → ℝ)

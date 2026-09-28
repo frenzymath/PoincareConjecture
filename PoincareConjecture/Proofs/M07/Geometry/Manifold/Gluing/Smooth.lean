@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Manifold.Gluing.Charts
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
 open Set Topology Manifold IsManifold
 open scoped ContDiff
 

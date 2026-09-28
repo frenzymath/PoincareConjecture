@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanCon
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -49,9 +39,6 @@ private def ofUniformEuclideanCoefficients
     convert! hB.contDiffAt.contMDiffAt using 1
     ext y v w
     simp [hom_trivializationAt_apply, ContinuousLinearMap.inCoordinates, TangentSpace]
-
-
-
 
 theorem exists_uniform_extension_of_quadratic_bounds
     {n : ℕ} {r R : ℝ} (hr : 0 < r) (hrR : r < R)
@@ -147,8 +134,6 @@ theorem exists_uniform_extension_of_quadratic_bounds
     change C x = innerSL ℝ
     simp only [C, hfx, zero_smul, zero_add, sub_zero, one_smul]
     rfl
-
-
 
 theorem exists_uniform_pullback_extension
     {n : ℕ} {M : Type*} [TopologicalSpace M]

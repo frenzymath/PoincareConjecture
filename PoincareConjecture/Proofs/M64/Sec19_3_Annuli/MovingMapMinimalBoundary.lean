@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapLocalFlux
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapChartVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ConformalMinimumHarmonic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,11 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64Annulus_chart_boundary_flux_of_conformal_minimum
     (A : M64Annulus g c0 c1)
@@ -137,11 +120,6 @@ theorem m64Annulus_chart_boundary_flux_of_conformal_minimum
   rw [m64Annulus_restrict_closed_eq_interior]
   simpa only [Fin.sum_univ_two, EuclideanSpace.basisFun_apply,
     G, C, W0, W1, e0, e1, M60.covariantDerivative_mapConnectionCoefficients] using hflux
-
-
-
-
-
 
 theorem m64Annulus_chart_first_variation_of_conformal_minimum
     (A : M64Annulus g c0 c1)

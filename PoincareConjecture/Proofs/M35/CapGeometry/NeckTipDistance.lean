@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.NeckTipExclusion
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckBufferedBall
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 namespace PoincareConjecture.M35
 
 open Uniqueness
-
-
 
 theorem neck_center_tip_distance_of_exclusion
     {epsilon : ℝ} {x : StandardCapSpace} (N : StandardCylinderPatch epsilon⁻¹ x)
@@ -45,8 +34,6 @@ theorem neck_center_tip_distance_of_exclusion
     @edist_comm StandardCapSpace g.toEMetricSpace.toPseudoEMetricSpace x 0
   rw [hsymm] at hnot
   exact (ENNReal.ofReal_le_iff_le_toReal (g.edist_ne_top 0 x)).mp (le_of_not_gt hnot)
-
-
 
 theorem exists_static_neck_tip_distance_threshold :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →

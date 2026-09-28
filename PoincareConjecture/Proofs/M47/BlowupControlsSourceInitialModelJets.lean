@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -39,8 +30,6 @@ private theorem initialModelJet_affine (m : ℕ) (u : ℝ) :
     ((hconstant.const_smul u).of_le (by exact_mod_cast le_top)),
     iteratedFDeriv_const_smul_apply' (hmodel.of_le (by exact_mod_cast le_top)),
     iteratedFDeriv_const_smul_apply' (hconstant.of_le (by exact_mod_cast le_top))]
-
-
 
 theorem source_initial_model_jet_bounds (m : ℕ) :
     ∃ Z L : ℝ, 0 ≤ Z ∧ 0 ≤ L ∧
@@ -73,8 +62,6 @@ theorem source_initial_model_jet_bounds (m : ℕ) :
       _ ≤ |u - v| * (‖B‖ + ‖A‖) :=
         mul_le_mul_of_nonneg_left (norm_sub_le _ _) (abs_nonneg _)
       _ = _ := by ring
-
-
 
 theorem exists_source_initial_terminal_jet_bound (m : ℕ) :
     ∃ Z : ℝ, 0 ≤ Z ∧ ∀ {epsilon u : ℝ}, 0 < epsilon → epsilon ≤ 1 / 2 →

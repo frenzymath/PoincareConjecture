@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Models.ModelArc
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcTubeMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem SourceDoubleComponents.exists_interval_tube_model
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

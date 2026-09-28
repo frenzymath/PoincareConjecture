@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalAnalyt
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem metric_ball_subset_connectedComponent
     {M : Type u} [TopologicalSpace M]
@@ -36,9 +24,6 @@ theorem metric_ball_subset_connectedComponent
     Manifold.exists_lt_of_riemannianEDist_lt hy
   exact (isPreconnected_Icc.image gamma hgamma.continuousOn).subset_connectedComponent
     ⟨0, ⟨le_rfl, zero_le_one⟩, hzero⟩ ⟨1, ⟨zero_le_one, le_rfl⟩, hone⟩
-
-
-
 
 theorem canonical_scalar_le_two_inv_sq_on_ball
     (S : RepairedControlledSchedulesData.{u}) (F : SurgeryFlowData.{u})

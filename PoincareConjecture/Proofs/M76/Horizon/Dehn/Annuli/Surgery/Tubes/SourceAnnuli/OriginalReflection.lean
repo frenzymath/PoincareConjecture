@@ -10,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem ComponentBranchModel.nonempty_original_reflected_annulus
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {f : P2 → X} {S : Set P2} {R : Set X}
@@ -50,8 +48,6 @@ theorem ComponentBranchModel.nonempty_original_reflected_annulus
   · simpa [t, Nat.add_assoc, add_assoc] using hfib
   · simpa [t, Nat.add_assoc, add_assoc] using haxis
   · simpa [t, Nat.add_assoc, add_assoc] using haxisImage
-
-
 
 theorem SourceCircleDecomposition.nonempty_reflection_annulus
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

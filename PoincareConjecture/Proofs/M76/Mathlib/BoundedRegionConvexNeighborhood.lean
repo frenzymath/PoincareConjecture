@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +8,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsOpen.exists_finite_convex_neighborhood {U : Set E}
     (hU : IsOpen U) {x : E} (hx : x ∈ U) :

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.PlanarTube
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.SpatialLocalizedCylinder
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,15 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -43,8 +28,6 @@ private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 2)) = 1 +
   ⟨by simp⟩
 private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
   prodChartedSpace E1 S1 Real Real
-
-
 
 theorem exists_supported_ambient_regular_level_flattening_within_of_smooth
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -125,7 +108,6 @@ theorem exists_supported_ambient_regular_level_flattening_within_of_smooth
     rw [(hlift t (hsmall t ht) q).2, ← hHmotion t ht q,
       H.symm_apply_apply, hzeroγ, add_smul]
     abel
-
 
 theorem exists_supported_ambient_regular_level_flattening_within
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

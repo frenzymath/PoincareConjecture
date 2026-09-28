@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M59BasepointTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -81,8 +72,6 @@ private theorem cylinder_projection_injective
         simp [unitInterval.le_one']
   intro a b h
   rw [← hinverse a, ← hinverse b, h]
-
-
 
 theorem m67_basepoint_transport_homotopy
     (B : M59HigherBasepointTransportService.{u})

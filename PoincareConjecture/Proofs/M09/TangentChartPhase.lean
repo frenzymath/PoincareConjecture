@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.CurvePhase
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

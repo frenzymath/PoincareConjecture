@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_StableOpenness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,10 +18,6 @@ private theorem tangent_transport_val {p q : G.Point} (h : p = q)
     (show SpacetimeModelVector n from (h ▸ v : TangentSpace (spacetimeModel n) q)) = v := by
   cases h
   rfl
-
-
-
-
 
 noncomputable def stableSetOfSlicePoint (E : M14ExponentialFamily G T x)
     (hτ : 0 < τ) (q₀ : (G.slices (T - τ)).Point) : M14StableSet G T τ x E := by
@@ -94,9 +80,6 @@ noncomputable def stableSetOfSlicePoint (E : M14ExponentialFamily G T x)
     exact (tangent_transport_val (exponentialSliceMap_val E hτ.le q₀ (hsurv Z hZ))
       (((G.slices (T - τ)).tangentEquiv (f Z)) (M14EndpointSliceMfderiv G f Z W)).val).trans
         (exponentialSliceMap_differential_val E hτ.le q₀ (hsurv Z hZ) W)
-
-
-
 
 theorem stableSet_nonempty (E : M14ExponentialFamily G T x) (hτ : 0 < τ)
     (hsurv : ∃ Z, (Z, Real.sqrt τ) ∈ E.domain) : Nonempty (M14StableSet G T τ x E) := by

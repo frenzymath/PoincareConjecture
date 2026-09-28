@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 import PoincareConjecture.Proofs.M08.ChartCoercivity
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option synthInstance.maxSize 2048
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem compact_spatial_lipschitz_within {a b : ℝ} (hab : a < b)
     {U S : Set E} (hU : IsOpen U) (hS : IsCompact S) (hconvex : Convex ℝ S) (hsub : S ⊆ U)

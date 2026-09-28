@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardSphereLift
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,10 +15,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
 
 local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ L
-
-
-
-
 
 theorem StandardLatticeHandleAtlas.finitePiecewiseAffineOn_lift
     {d : α → OpenPartialHomeomorph W (Fin 3 → ℝ)}

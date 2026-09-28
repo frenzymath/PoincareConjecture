@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Origina
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalNormalizedResolutionFibers
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology Geometry
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 structure RetainedSourceOpenHomeomorph {X : Type*} (f g : V2 → X)
     (K : Set V2) (j : K → V2) where
@@ -36,8 +25,6 @@ structure RetainedSourceOpenHomeomorph {X : Type*} (f g : V2 → X)
   keep : ∀ x : source, g (homeomorph x) = f x
   boundary : ∀ x : source, (homeomorph x : V2) ∈ Q2 ↔ (x : V2) ∈ Q2
   contains : ∀ x : K, (x : V2) ∈ doubleLocusOn f D2 → (x : V2) ∈ source
-
-
 
 theorem RetainedSquareMapFacts.nonempty_open_source_restriction
     {X : Type*} {f g : V2 → X} {K B C : Set V2} {j : K → V2}
@@ -94,8 +81,6 @@ theorem RetainedSquareMapFacts.nonempty_open_source_restriction
   · intro x hx
     exact ⟨facts.old_subset x.property, havoid x hx⟩
 
-
-
 theorem RetainedSourceOpenHomeomorph.contains_new_double
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}
     (H : RetainedSourceOpenHomeomorph f g K j)
@@ -116,9 +101,6 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Topologica
   {f : V2 → X} {Z : Set X} {base : Z} {G : Subgroup (FundamentalGroup Z base)}
   {c : Bool → P2 → V2} {τ : C3 → X}
   {D : OriginalResolutionWordExclusionData f Z base G c τ (1 / 4)}
-
-
-
 
 theorem OriginalNormalizedResolutionPairData.nonempty_retained_source_germs
     (P : OriginalNormalizedResolutionPairData e D)

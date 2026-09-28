@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedOldHistoryVolume
 import PoincareConjecture.Proofs.M47.SeedPositiveTestAge
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveCylinderLines
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47 M46
-
-
 
 theorem exists_seed_old_buffered_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

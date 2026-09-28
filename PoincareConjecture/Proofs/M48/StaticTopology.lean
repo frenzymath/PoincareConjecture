@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,7 +26,6 @@ variable {M N : Type u}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   (e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞)
-
 
 noncomputable def CapModelEquivalence.m48_pullback {kind : CapModelKind}
     {p : RealProjectiveThree} {U : Set N} (K : CapModelEquivalence kind p U) :
@@ -63,7 +54,6 @@ noncomputable def CapModelEquivalence.m48_pullback {kind : CapModelKind}
     let := K.model_charted
     exact e.symm.contMDiff.comp_contMDiffOn K.inverse_smooth
 
-
 noncomputable def SmoothClosedComponentModel.m48_pullback {kind : ClosedComponentKind}
     {U : Set N} (K : SmoothClosedComponentModel kind U) :
     SmoothClosedComponentModel kind (e ⁻¹' U) where
@@ -90,7 +80,6 @@ noncomputable def SmoothClosedComponentModel.m48_pullback {kind : ClosedComponen
     let := K.model_topology
     let := K.model_charted
     exact K.inverse_smooth.comp e.contMDiff.contMDiffOn (fun _ hx => hx)
-
 
 noncomputable def ClosedComponentCertificate.m48_pullback {kind : ClosedComponentKind}
     {U : Set N} (K : ClosedComponentCertificate kind U) :

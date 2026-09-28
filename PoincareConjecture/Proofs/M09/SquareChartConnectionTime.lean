@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.SquareChartCurvature
 import PoincareConjecture.Proofs.M09.CoordinateConnectionTime
 import PoincareConjecture.Proofs.M09.CoordinateCompatibility
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

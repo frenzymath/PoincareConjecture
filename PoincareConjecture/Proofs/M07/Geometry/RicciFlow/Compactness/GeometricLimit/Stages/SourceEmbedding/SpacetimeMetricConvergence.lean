@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.SpacetimePullback
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem contDiffOn_source_chart_spacetime_pullbackCoefficients
     {ι : Type*} {n : ℕ}
@@ -113,8 +100,6 @@ theorem source_spacetime_pullbackCoefficients_tendsto_jets
       (hopen k).injective (hopen k).isOpen_range (hk y.2 hy.2).1 (hk y.2 hy.2).2
   exact (eqOn_iteratedFDeriv_of_isOpen (hJ.prod hW) heq m).mono hCJW
 
-
-
 theorem source_exhaustion_spacetime_pullbackCoefficients_tendsto_jets
     {ι : Type*} {n : ℕ}
     (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
@@ -175,8 +160,6 @@ theorem source_exhaustion_spacetime_pullbackCoefficients_tendsto_jets
     exact (eventually_contMDiffOn_source_exhaustion_chart U hU O hO hE hEmono
       hEcover F hF i hK hKU).mono fun _ hk => hk.mono interior_subset
   · exact hreadout i
-
-
 
 theorem source_exhaustion_spacetime_pullbackCoefficients_tendsto_jets_of_smooth_families
     {ι : Type*} {n : ℕ}

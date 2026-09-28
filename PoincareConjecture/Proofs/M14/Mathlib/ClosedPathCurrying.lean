@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedStateExtension
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathSubstitution
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousPathFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {E F : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {C : Set ℝ} [CompactSpace C] {U : Set E}
-
-
-
 
 theorem contDiffOn_closedPathFamily (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
     (f : ℝ × E → F) (hf : ContDiffOn ℝ ∞ f (C ×ˢ U))
@@ -43,9 +31,6 @@ theorem contDiffOn_closedPathFamily (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
     intro t
     exact (hΦ y hyU t).trans (hgf ⟨t.property, ball_subset_closedBall hy⟩).symm
   exact (hΨ.contDiffAt.congr_of_eventuallyEq heq).contDiffWithinAt
-
-
-
 
 theorem exists_contDiffOn_closedPathFamily (hC : UniqueDiffOn ℝ C) (hU : IsOpen U)
     (f : ℝ × E → F) (hf : ContDiffOn ℝ ∞ f (C ×ˢ U)) :

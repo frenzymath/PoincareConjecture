@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M08.ChartCoercivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,9 +8,6 @@ open scoped ENNReal
 namespace MeasureTheory
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem memLp_two_of_integrable_positive_quadratic {a b : ℝ} (hab : a ≤ b)
     (B : ℝ → E →L[ℝ] E →L[ℝ] ℝ) (hB : ContinuousOn B (Icc a b))

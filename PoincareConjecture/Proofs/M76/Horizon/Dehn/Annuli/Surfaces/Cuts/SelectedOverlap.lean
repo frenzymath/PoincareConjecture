@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.CountZeroSelection
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.SquareCollars
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

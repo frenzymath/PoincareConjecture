@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Noncompact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Theory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.StrongHorn
-
-
 
 theorem exists_boundary_sphere_transport :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -68,8 +59,6 @@ theorem exists_boundary_sphere_transport :
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
-
 noncomputable def neckOnlyCover (horn : StrongHorn E epsilon)
     (A : RepairedNeckCapTopologyTheory.{u}) (hepsilon : 0 < epsilon)
     (hsmall : epsilon ≤ A.epsilon₀) : NeckOnlyCover (E.extended.metric T) where
@@ -95,8 +84,6 @@ noncomputable def neckOnlyCover (horn : StrongHorn E epsilon)
     rw [hN]
     exact hx
   neck_epsilon := fun _ hN => hN.1
-
-
 
 theorem exists_neckCap_tube_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

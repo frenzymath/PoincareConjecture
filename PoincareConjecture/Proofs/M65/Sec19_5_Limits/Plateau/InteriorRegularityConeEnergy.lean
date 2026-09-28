@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadialIntegral
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -27,9 +17,6 @@ private theorem integral_radial_product (f : ℝ → ℝ) {r : ℝ} (hr : 0 ≤ 
   rw [integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le hr,
     integral_id]
   ring
-
-
-
 
 theorem coneDisk_derivativeEnergy_le {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E]

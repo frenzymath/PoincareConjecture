@@ -1,21 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.LinearAlgebra.Trace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture.M48ScalarCalculus
-
-
 
 theorem sum_diag_eq_trace
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -32,8 +22,6 @@ theorem sum_diag_eq_trace
   change B (b i) (b i) = (b.repr (InnerProductSpace.continuousLinearMapOfBilin B (b i))) i
   rw [OrthonormalBasis.repr_apply_apply, real_inner_comm,
     InnerProductSpace.continuousLinearMapOfBilin_apply]
-
-
 
 theorem sum_diag_basis_independent
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

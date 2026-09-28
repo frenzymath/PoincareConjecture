@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPathInverse
 import Mathlib.Order.ConditionallyCompleteLattice.Indexed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
-
-
 
 theorem rescalingActionSet (T τ₁ τ₂ : ℝ) (x y : G.Point) :
     M14ActionSet (rescalingTransport hM12 hM13 G Q hQ a)
@@ -42,8 +32,6 @@ theorem rescalingActionSet (T τ₁ τ₂ : ℝ) (x y : G.Point) :
     exact ⟨rescalingPath hM12 hM13 G Q hQ a p,
       rescalingPath_action hM12 hM13 G Q hQ a p⟩
 
-
-
 theorem rescalingFiniteValue {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (h : M14FiniteValueDomain G T τ₁ τ₂ x y) :
     M14FiniteValueDomain (rescalingTransport hM12 hM13 G Q hQ a)
@@ -56,8 +44,6 @@ theorem rescalingFiniteValue {T τ₁ τ₂ : ℝ} {x y : G.Point}
   rintro r ⟨z, hz, rfl⟩
   exact mul_le_mul_of_nonneg_left (hc hz) (Real.sqrt_nonneg Q)
 
-
-
 theorem rescalingActionValue {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (h : M14FiniteValueDomain G T τ₁ τ₂ x y) :
     M14ActionValue (rescalingTransport hM12 hM13 G Q hQ a)
@@ -66,8 +52,6 @@ theorem rescalingActionValue {T τ₁ τ₂ : ℝ} {x y : G.Point}
   unfold M14ActionValue
   rw [rescalingActionSet]
   exact ((OrderIso.mulLeft₀ (Real.sqrt Q) (Real.sqrt_pos.mpr hQ)).map_csInf' h.1 h.2).symm
-
-
 
 theorem rescalingReducedLength {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (hτ₂ : 0 < τ₂) (h : M14FiniteValueDomain G T τ₁ τ₂ x y) :
@@ -78,13 +62,9 @@ theorem rescalingReducedLength {T τ₁ τ₂ : ℝ} {x y : G.Point}
   rw [rescalingActionValue hM12 hM13 G Q hQ a h, Real.sqrt_mul hQ.le]
   field_simp [(Real.sqrt_pos.mpr hQ).ne', (Real.sqrt_pos.mpr hτ₂).ne']
 
-
-
 noncomputable def rescalingDensity (G : GeneralizedLGeometryTransport n X time I)
     (T τ : ℝ) (x q : G.Point) : ℝ :=
   Real.rpow τ (-(n : ℝ) / 2) * Real.exp (-M14ReducedLengthValue G T 0 τ x q)
-
-
 
 theorem rescalingDensity_scale {T τ : ℝ} {x q : G.Point}
     (hτ : 0 < τ) (h : M14FiniteValueDomain G T 0 τ x q) :

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleLowerLevelSelection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem BallNeighborhoodChart.planar_closedRegion_trichotomy
     (A B : BallNeighborhoodChart E2 E2)
@@ -52,8 +42,6 @@ theorem BallNeighborhoodChart.planar_closedRegion_trichotomy
   rw [← A.inside_union_boundary] at hyA
   exact hyA.elim (fun hy => hout hy hyB) (fun hy => hAo hy hyB)
 
-
-
 theorem SaddlePieceData.nonnested_or_nested_of_disjoint_discs
     {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (D : SaddlePieceData ψ u) (W : SaddleLowerLevelData D)
@@ -64,8 +52,6 @@ theorem SaddlePieceData.nonnested_or_nested_of_disjoint_discs
   · exact Or.inl ⟨W, h⟩
   · exact Or.inr ⟨W, Or.inl h⟩
   · exact Or.inr ⟨W, Or.inr h⟩
-
-
 
 theorem SaddlePieceData.nonnested_or_nested_or_reflected
     (hP : PlanarSchoenfliesService)

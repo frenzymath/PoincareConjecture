@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedComponentDomains
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedSphereSubregionFinitePL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -74,8 +66,6 @@ theorem PLDomain.component_frontier_of_spheres
   exact isConnected_iff_connectedSpace.mpr
     ((sS i).parametrization.connectedSpace_iff.mp (isConnected_iff_connectedSpace.mp
       (isConnected_sphere (by simp) (0 : V3) zero_le_one)))
-
-
 
 theorem PLDomain.exists_finitePL_punctured_component_model
     {X E ι κ ν : Type*} [TopologicalSpace X] [T2Space X]

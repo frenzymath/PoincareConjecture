@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M11GeneralizedFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,8 +10,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
 
 structure SpacetimeSliceGeometry (F : GeneralizedFlowSpacetime n X time I) (t : ℝ) where
   chartedSpace : ChartedSpace (EuclideanSpace ℝ (Fin n)) (F.Slice t)
@@ -46,7 +36,6 @@ namespace SpacetimeSliceGeometry
 
 variable {F : GeneralizedFlowSpacetime n X time I} {t : ℝ}
 
-
 abbrev Point (_S : SpacetimeSliceGeometry F t) := F.Slice t
 
 instance (S : SpacetimeSliceGeometry F t) :
@@ -63,13 +52,10 @@ instance (S : SpacetimeSliceGeometry F t) : MeasurableSpace S.Point := S.measura
 
 instance (S : SpacetimeSliceGeometry F t) : BorelSpace S.Point := S.borelSpace
 
-
 noncomputable abbrev metricOnPoints (S : SpacetimeSliceGeometry F t) :
     RiemannianMetric n S.Point := S.metric
 
 end SpacetimeSliceGeometry
-
-
 
 structure SpacetimeSliceLabel (n : ℕ) (X : Type u) [TopologicalSpace X]
     (time : X → ℝ) (t : ℝ) where
@@ -89,7 +75,6 @@ attribute [instance] SpacetimeSliceLabel.topologicalSpace
   SpacetimeSliceLabel.chartedSpace SpacetimeSliceLabel.isManifold
   SpacetimeSliceLabel.measurableSpace SpacetimeSliceLabel.borelSpace
 
-
 structure SpacetimeSliceLabeling (A : AdaptedMetricAtlas n X) where
   slice : ∀ t, SpacetimeSliceLabel n X A.time t
   boxMap : ∀ b t, t ∈ (A.box b).interval.domain →
@@ -102,8 +87,6 @@ structure SpacetimeSliceLabeling (A : AdaptedMetricAtlas n X) where
       (mfderiv (𝓡 n) (𝓡 n) (boxMap b t ht) x v)
       (mfderiv (𝓡 n) (𝓡 n) (boxMap b t ht) x w) =
       (A.box b).metric (t, x) v w
-
-
 
 structure SpacetimeSliceIdentification (F : GeneralizedFlowSpacetime n X time I)
     (t : ℝ) (S : SpacetimeSliceGeometry F t) (L : SpacetimeSliceLabel n X time t) where

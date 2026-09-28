@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Compatibi
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Separation
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Connectedness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Topology PoincareConjecture Bundle
 open scoped ContDiff Manifold Topology
 

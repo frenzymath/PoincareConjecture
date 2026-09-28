@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.FaceProduct
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -82,6 +80,4 @@ theorem SurfaceTriangleFibers.exists_triangle_product
   · intro p hp x hx
     exact F.negative s hs hcard p hp x.2 hx.2
 
-
 end Geometry.SimplicialComplex
-

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Similarity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +19,6 @@ private theorem scaled_closedBall_iff
   rw [mul_comm (ENNReal.ofReal (Real.sqrt a)) (g.edist p x),
     mul_comm (ENNReal.ofReal (Real.sqrt a)) (ENNReal.ofReal r)]
   exact ENNReal.mul_le_mul_iff_left (by positivity) ENNReal.ofReal_ne_top
-
-
 
 theorem exists_scaled_openFiber_weighted_corner_geometry
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -172,6 +163,5 @@ theorem exists_scaled_openFiber_weighted_corner_geometry
         gNew.leviCivitaData e hap hmetric hKsec
     · intro p r R
       exact hratio K hK0 p r R
-
 
 end PoincareConjecture.RiemannianMetric

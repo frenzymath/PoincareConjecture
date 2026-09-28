@@ -1,17 +1,8 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Bounds
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Persistence
 import PoincareConjecture.Definitions.Ch04.Pinching
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.TimeEvolution
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -60,10 +51,6 @@ theorem full_norm_bound_of_persistent_hamiltonIvey
       (N := (F.connection t).curvatureTensorNorm x) (R := 2 * (k1 + k2 + k3))
       (R₀ := R₀) (t := t) (ha.trans ht.1) h12 h23 rfl hnorm hR hpinch
 
-
-
-
-
 theorem pinching_persistence_and_bounds_of_log
     [CompactSpace M]
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
@@ -96,11 +83,6 @@ theorem pinching_persistence_and_bounds_of_log
     (F.connection t).three_dimensional_curvature_spectrum
       (hM04.tensor_calculus 3 M (F.metric t) (F.connection t)) x
   exact ⟨k1, k2, k3, h12, h23, hleast, hscalar, hnorm⟩
-
-
-
-
-
 
 theorem full_norm_bound_of_ordered_reaction
     [CompactSpace M]

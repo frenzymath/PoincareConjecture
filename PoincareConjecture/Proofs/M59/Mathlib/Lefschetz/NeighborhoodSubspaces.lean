@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyEquiv
 import Mathlib.Algebra.Homology.QuasiIso
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +15,6 @@ open M02.Topology
 
 variable {X : Type u} [TopologicalSpace X]
 
-
-
 def nestedSubsetHomeomorph (S T : Set X) (h : T ⊆ S) :
     T ≃ₜ (Subtype.val ⁻¹' T : Set S) where
   toFun x := ⟨⟨x.val, h x.property⟩, x.property⟩
@@ -34,9 +23,6 @@ def nestedSubsetHomeomorph (S T : Set X) (h : T ⊆ S) :
   right_inv _ := rfl
   continuous_toFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
   continuous_invFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
-
-
-
 
 def intersectionSubsetHomeomorph (S A B L : Set X) (hA : A ⊆ S)
     (hL : A ∩ B = L) :
@@ -51,7 +37,6 @@ def intersectionSubsetHomeomorph (S A B L : Set X) (hA : A ⊆ S)
   continuous_invFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem homeomorphSingularChainMap_quasiIso
     {Y : Type u} [TopologicalSpace Y] (e : X ≃ₜ Y) :

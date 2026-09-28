@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabContinuation
 import PoincareConjecture.Proofs.M30.Thm11_8.LongSlabService
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,13 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
-
-
-
 
 theorem longSlabControlService_of_uniform_prefix
     (hC : RicciFlowCurvatureTheory.{u})

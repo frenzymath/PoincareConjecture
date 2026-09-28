@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImage
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -36,8 +25,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
 
-
-
 theorem closure_exterior_eq_component_diff_core :
     closure (connectedComponent C.boundary_neck.center \ C.closed_core) =
       connectedComponent C.boundary_neck.center \ C.core := by
@@ -50,8 +37,6 @@ theorem closure_exterior_eq_component_diff_core :
   simp only [mem_union, mem_sdiff]
   tauto
 
-
-
 theorem interior_closure_exterior :
     interior (closure (connectedComponent C.boundary_neck.center \ C.closed_core)) =
       connectedComponent C.boundary_neck.center \ C.closed_core := by
@@ -60,8 +45,6 @@ theorem interior_closure_exterior :
     isOpen_connectedComponent.interior_eq, interior_compl,
     C.closure_core_eq_closed_core]
   rfl
-
-
 
 theorem exists_ball_neighborhood_of_exterior_in_euclidean_cap (D : CapCertificate g)
     (hD : D.model_kind = .euclidean)

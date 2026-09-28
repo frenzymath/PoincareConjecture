@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalPolygonEventBodies
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredOriginalConnectorBody
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,20 +10,13 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
-
-
 noncomputable def sphereCollarCenter (q : E) : E ≃ᴬ[ℝ] E :=
   ContinuousAffineEquiv.constVAdd ℝ E (-q)
-
-
 
 noncomputable def sphereCollarOriginal (K : SimplicialComplex ℝ E) (q : E) :
     SimplicialComplex ℝ E :=
   (K.affineOnFaces_affine (sphereCollarCenter q).toContinuousAffineMap).embeddedImage
     (sphereCollarCenter q).injective.injOn
-
-
-
 
 structure SphereCollarBody (K : SimplicialComplex ℝ E) (q : E) where
   auxiliary : SimplicialComplex ℝ E

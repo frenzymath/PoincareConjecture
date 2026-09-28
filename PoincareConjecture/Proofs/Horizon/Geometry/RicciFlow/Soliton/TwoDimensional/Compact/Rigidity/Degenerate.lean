@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Conservation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.Extrema
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem scalar_eq_exp_potential_difference_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -34,8 +24,6 @@ theorem scalar_eq_exp_potential_difference_of_surface_soliton (D : LeviCivitaDat
       rw [mul_assoc, ← Real.exp_add, neg_add_cancel, Real.exp_zero, mul_one]
     _ = (D.scalarCurvature p * Real.exp (-f p)) * Real.exp (f x) := by rw [hA x, hA p]
     _ = _ := by rw [mul_assoc, ← Real.exp_add]; congr 2; ring
-
-
 
 theorem potential_eq_of_degenerate_critical_point (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)
@@ -58,8 +46,6 @@ theorem potential_eq_of_degenerate_critical_point (D : LeviCivitaData g)
   have hexp := Real.add_one_lt_exp (sub_ne_zero.mpr hne)
   have hmul := mul_lt_mul_of_pos_left hexp (show 0 < 2 * lambda by positivity)
   nlinarith
-
-
 
 theorem round_of_degenerate_critical_point (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)

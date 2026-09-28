@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnTransverse
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,10 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_convex_corner_return_velocity_ne
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ}
@@ -70,9 +56,6 @@ theorem m64Intrinsic_convex_corner_return_velocity_ne
   apply hreg
   apply L.injective
   simpa only [map_zero] using le_antisymm hnonpos hnonneg
-
-
-
 
 theorem m64Intrinsic_convex_corner_geodesic_return_velocity_ne
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -119,9 +102,6 @@ theorem m64Intrinsic_convex_corner_geodesic_return_velocity_ne
     simpa only [zero_add] using h.trans (hd 0).deriv
   exact m64Intrinsic_convex_corner_return_velocity_ne hg (sub_pos.mpr hst) hreg
     (fun x hx => hconf ⟨hx.1, by linarith [hx.2]⟩) L hphi hzero hcorner hback hdback
-
-
-
 
 theorem m64Intrinsic_unit_convex_corner_return_transverse
     (G : RiemannianMetric 2 AnnulusCoordinates)

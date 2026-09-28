@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SourceCi
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.Elimination
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.IrreducibleSlabs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

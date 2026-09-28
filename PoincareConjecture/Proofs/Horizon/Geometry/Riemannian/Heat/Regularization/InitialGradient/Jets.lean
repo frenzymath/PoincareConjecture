@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.Dirichlet
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +19,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem exists_heat_test_initial_coordinate_jet_bound
     (D : LeviCivitaData g)

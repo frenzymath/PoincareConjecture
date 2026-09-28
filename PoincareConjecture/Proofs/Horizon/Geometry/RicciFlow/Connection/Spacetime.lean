@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Regularit
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.SpatialDerivative
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 lemma contMDiffAt_inner_connection_fields
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) {x : M}

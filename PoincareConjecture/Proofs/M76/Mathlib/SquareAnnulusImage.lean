@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusBlocks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
-
-
-
 
 theorem wrappedStripMap_image {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < L) :
     wrappedStripMap L '' rectangle (4 * L) d = squareAnnulus L d := by
@@ -64,10 +51,6 @@ theorem wrappedStripMap_image {L d : ℝ} (hd : 0 ≤ d) (hwidth : 4 * d < L) :
     have hlo : 0 ≤ p.1 := hp.1.1
     have hhi : p.1 ≤ L := hp.1.2
     fin_cases i <;> dsimp <;> norm_num <;> constructor <;> linarith
-
-
-
-
 
 theorem range_annulusMap {L d : ℝ} (hL : 0 < L) (hd : 0 ≤ d) (hwidth : 4 * d < L) :
     range (fun p : AddCircle (4 * L) × Icc (-d) d => annulusMap L hL (p.1, p.2)) =

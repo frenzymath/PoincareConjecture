@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.MarkedDisk
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.SourceCollarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -46,9 +37,6 @@ theorem phase_interior_isOpen_frontier
       exact ⟨hmem.elim (fun h => (hf h.2).elim) (fun h => h.resolve_right hb), hf⟩
   rw [heq]
   exact (hF.union hB).isOpen_compl.preimage continuous_subtype_val
-
-
-
 
 theorem exists_sourceSlab_relative_compression_disks
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

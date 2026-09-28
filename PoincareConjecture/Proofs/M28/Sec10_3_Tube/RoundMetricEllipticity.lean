@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseEstimate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -36,7 +26,6 @@ theorem round_metric_zero_norm_lt
   exact singularMetricJetNorm_lt_of_error_lt N.model_metric N.model_connection
     (fun y v => N.scale * singularMetricPullback g N.forward y v)
     ⌊epsilon⁻¹⌋₊ 0 x (Nat.zero_le _) N.epsilon_pos (hmetric x) hbound
-
 
 theorem round_metric_error_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -71,7 +60,6 @@ theorem round_metric_error_le
   exact h.trans (by
     simpa [T, singularMetricPullback, Fin.prod_univ_succ, mul_assoc] using hprod)
 
-
 theorem round_metric_quadratic_bounds
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon) (x : N.model.carrier)
@@ -95,7 +83,6 @@ theorem round_metric_quadratic_bounds
   obtain ⟨hlo, hhi⟩ := abs_le.mp h
   constructor <;> nlinarith
 
-
 noncomputable def roundFrameCoefficients
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon) (x : N.model.carrier)
@@ -108,8 +95,6 @@ noncomputable def roundFrameCoefficients
 
 noncomputable def roundEuclideanCoefficients : SpacetimeBounds.MetricCoefficient 3 :=
   innerSL ℝ
-
-
 
 theorem exists_round_frame_ellipticity
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -148,7 +133,6 @@ theorem exists_round_frame_ellipticity
   refine ⟨L, hframe, herror, hell, ?_⟩
   simpa using CoordinateExponential.norm_inverse_le_of_ellipticity
     (by norm_num : (0 : ℝ) < 1 / 2) hell
-
 
 theorem exists_round_frame_inverse_error
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

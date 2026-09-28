@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.WeightedMetricDual
 import PoincareConjecture.Proofs.M10.LaplacianLinearity
 import PoincareConjecture.Proofs.M10.RegularGerms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,7 +15,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem tsupport_laplacian_subset (D : LeviCivitaData g) (f : M → ℝ) :
     tsupport (D.laplacian f) ⊆ tsupport f := by

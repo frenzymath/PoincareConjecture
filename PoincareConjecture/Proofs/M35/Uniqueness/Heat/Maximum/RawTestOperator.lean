@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.FieldEntropy
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawLowerBounds
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawCompactHeat
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

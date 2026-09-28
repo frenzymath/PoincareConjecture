@@ -2,14 +2,6 @@ import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology

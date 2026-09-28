@@ -1,28 +1,15 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CyclicEdgeSums
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCrossingIndex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PlanarSegment
-
-
 
 theorem height_swap {a b : ℝ × ℝ} (hab : a.1 ≠ b.1) (x : ℝ) :
     height b a x = height a b x := by
   simp only [height, AffineMap.lineMap_apply_module', smul_eq_mul]
   field_simp [sub_ne_zero.mpr hab, sub_ne_zero.mpr hab.symm]
   ring
-
-
-
 
 theorem crossingContribution_swap (a b q : ℝ × ℝ) :
     crossingContribution b a q = -crossingContribution a b q := by
@@ -33,10 +20,6 @@ theorem crossingContribution_swap (a b q : ℝ × ℝ) :
     ring
 
 end PlanarSegment
-
-
-
-
 
 theorem Polygon.crossingIndex_append_split {m n : ℕ}
     (u : Fin (m + 1) → ℝ × ℝ) (v : Fin (n + 1) → ℝ × ℝ) (q : ℝ × ℝ) :

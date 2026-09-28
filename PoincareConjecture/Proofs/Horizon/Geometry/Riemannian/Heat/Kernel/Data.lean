@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 structure ConservativeHeatKernelData (g : RiemannianMetric n M) where
   connection : LeviCivitaData g
@@ -53,15 +43,12 @@ structure ConservativeHeatKernelData (g : RiemannianMetric n M) where
     Tendsto (fun t => ⨆ x, ∫ y, (g.edist x y).toReal * kernel x y t
       ∂volumeMeasure g) (𝓝[>] 0) (𝓝 0)
 
-
 lemma ConservativeHeatKernelData.heat_operator_eq_laplacian
     {g : RiemannianMetric n M} (H : ConservativeHeatKernelData g)
     (x y : M) {t : ℝ} (ht : 0 < t) :
     deriv (fun s => H.kernel x y s) t =
       H.connection.laplacian (fun z => H.kernel z y t) x :=
   H.heat_equation x y t ht
-
-
 
 lemma ConservativeHeatKernelData.first_moment_iSup_le
     {g : RiemannianMetric n M} (H : ConservativeHeatKernelData g)
@@ -72,7 +59,6 @@ lemma ConservativeHeatKernelData.first_moment_iSup_le
     (⨆ x, ∫ y, (g.edist x y).toReal * H.kernel x y t
       ∂volumeMeasure g) ≤ C := by
   exact Real.iSup_le (fun x ↦ hC.2 x t ht ht1) hC.1.le
-
 
 lemma ConservativeHeatKernelData.exists_first_moment_iSup_bound
     {g : RiemannianMetric n M} (H : ConservativeHeatKernelData g) :

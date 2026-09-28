@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import Mathlib.Order.Preorder.Finite
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,15 +15,11 @@ variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 omit [ProperSpace E] in
 
-
 theorem boundary_connected (B : BallNeighborhoodChart E F)
     (hdim : 1 < Module.rank ℝ E) : IsConnected B.boundary :=
   (isConnected_sphere hdim 0 zero_le_one).image B.chart
     (B.chart.continuousOn.mono
       (Metric.sphere_subset_closedBall.trans B.closedBall_subset_source))
-
-
-
 
 theorem preconnected_subset_inside_or_outside (B : BallNeighborhoodChart E F)
     {A : Set F} (hA : IsPreconnected A) (hdis : Disjoint A B.boundary) :
@@ -54,8 +39,6 @@ theorem preconnected_subset_inside_or_outside (B : BallNeighborhoodChart E F)
       exact hky.elim hiy (Set.disjoint_left.mp hdis hy)
 
 variable [Nontrivial F]
-
-
 
 theorem not_mutual_boundary_inside (A B : BallNeighborhoodChart E F) :
     ¬(B.boundary ⊆ A.inside ∧ A.boundary ⊆ B.inside) := by
@@ -77,9 +60,6 @@ theorem not_mutual_boundary_inside (A B : BallNeighborhoodChart E F) :
   apply NormedSpace.unbounded_univ ℝ F
   rw [← huniv]
   exact A.inside_bounded.union B.inside_bounded
-
-
-
 
 theorem closedRegion_subset_inside_of_boundary_subset
     (A B : BallNeighborhoodChart E F)
@@ -111,9 +91,6 @@ theorem closedRegion_subset_inside_of_boundary_subset
         exact Or.inl hpA))
   rw [← B.inside_union_boundary]
   exact union_subset hBi hBA
-
-
-
 
 theorem exists_innermost {ι : Type*} [Finite ι] [Nonempty ι]
     (B : ι → BallNeighborhoodChart E F)

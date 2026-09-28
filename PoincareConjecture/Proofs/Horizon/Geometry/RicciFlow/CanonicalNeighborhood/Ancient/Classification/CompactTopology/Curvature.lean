@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.Uniform
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem ricci_lower_bound_of_curvatureTensor_diagonal_lower_bound
     (D : LeviCivitaData g) (x : M) (k : ℝ)
@@ -54,8 +44,6 @@ theorem ricci_lower_bound_of_curvatureTensor_diagonal_lower_bound
       intro i _
       simpa only [hb, mul_one] using hcurv v (b i)
     _ = D.ricci x v v := rfl
-
-
 
 theorem exists_pos_curvatureTensor_diagonal_lower_bound_of_compact
     [CompactSpace M] (D : LeviCivitaData g)
@@ -92,8 +80,6 @@ theorem exists_pos_curvatureTensor_diagonal_lower_bound_of_compact
       g.inner x u u * g.inner x v v at h
     nlinarith
   exact (mul_le_mul_of_nonneg_right (hcs y hys) hgram).trans (hUsub y hxy u v)
-
-
 
 theorem exists_pos_ricci_lower_bound_of_compact_positive_sectional
     [CompactSpace M] (D : LeviCivitaData g) (hn : 2 ≤ n)

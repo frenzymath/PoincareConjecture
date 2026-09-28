@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureDerivativeNorm
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialNormalization
 import PoincareConjecture.Proofs.M13.Completeness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single (2 : Fin 3) 1
-
-
 
 theorem rotational_curvatureDerivativeNorm_eq
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -36,8 +26,6 @@ theorem rotational_curvatureDerivativeNorm_eq
   exact (D.curvatureDerivativeNorm_eq_pullback D isOpen_univ e.contMDiff.contMDiffOn
     (fun y _ => ⟨e.mfderivToContinuousLinearEquiv (by simp) y, rfl⟩)
     (fun y _ u v => (hrotation A y u v).symm) m (mem_univ x)).symm
-
-
 
 theorem radial_curvatureDerivative_bound_of_ball_bound
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -72,7 +60,6 @@ theorem radial_curvatureDerivative_bound_of_ball_bound
   rw [rotational_curvatureDerivativeNorm_eq D hrotation A (r • e2) 1] at h
   exact h
 
-
 theorem scaleSmoothMetric_rotation_invariant
     {g : RiemannianMetric 3 StandardCapSpace}
     (hrotation : ∀ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ,
@@ -87,7 +74,6 @@ theorem scaleSmoothMetric_rotation_invariant
       (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) =
         (M13.scaleSmoothMetric g Q hQ).inner x u v := by
   simp only [M13.scaleSmoothMetric_inner, hrotation]
-
 
 theorem scaleLeviCivitaData_nonnegative_sectional
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -105,7 +91,6 @@ theorem scaleLeviCivitaData_nonnegative_sectional
     Q * D.curvatureTensor x u v u v at h
   rw [h]
   exact mul_nonneg hQ.le (hsec x u v)
-
 
 theorem scaleSmoothMetric_complete
     (g : RiemannianMetric 3 StandardCapSpace) (hcomplete : MetricComplete g)

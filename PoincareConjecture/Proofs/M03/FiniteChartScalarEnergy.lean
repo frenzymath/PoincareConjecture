@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.CompactCoordinateChange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 

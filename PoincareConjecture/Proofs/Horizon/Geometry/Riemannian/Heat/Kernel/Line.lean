@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineArclength
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,16 +13,12 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M]
   [IsManifold (𝓡 1) ∞ M] [PreconnectedSpace M] [NoncompactSpace M]
 
-
-
 theorem exists_conservativeHeatKernelData_dim_one
     (g : RiemannianMetric 1 M) (hc : MetricComplete g) (D : LeviCivitaData g) :
     Nonempty (ConservativeHeatKernelData g) := by
   obtain ⟨e, he, hi, hmetric⟩ := g.exists_metric_line_coordinate hc
   exact D.exists_conservativeHeatKernelData_of_metric_line_coordinate g e he
     (hi.of_le (by simp)) hmetric
-
-
 
 theorem exists_smooth_conservativeHeatKernel_dim_one
     (g : RiemannianMetric 1 M) (hc : MetricComplete g) (D : LeviCivitaData g) :

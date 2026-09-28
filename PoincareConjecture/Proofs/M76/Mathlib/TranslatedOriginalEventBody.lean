@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredOriginalEventBody
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,12 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
-
 
 theorem exists_original_event_body_in_centered_coordinates
     {ι : Type*} [Finite ι] [Nonempty ι]

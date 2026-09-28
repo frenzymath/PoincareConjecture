@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Band.GraphSlab
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +15,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 theorem mem_closure_region_iff_of_mem_carrier {a b : ℝ} (hab : a < b)
     {x : M} (hx : x ∈ N.carrier) :
@@ -49,7 +36,6 @@ theorem mem_closure_region_iff_of_mem_carrier {a b : ℝ} (hab : a < b)
 
 variable [T2Space M]
 
-
 theorem closure_region_eq_closedGraphSlab {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hab : a < b) (hb : b < N.epsilon⁻¹) :
     closure (N.region a b) = N.closedGraphSlab (fun _ => a) (fun _ => b) := by
@@ -60,7 +46,6 @@ theorem closure_region_eq_closedGraphSlab {a b : ℝ}
   · exact closure_minimal (fun _ hx => ⟨hx.1, hx.2.1.le, hx.2.2.le⟩) hclosed
   · intro x hx
     exact (N.mem_closure_region_iff_of_mem_carrier hab hx.1).mpr hx.2
-
 
 theorem frontier_region_eq_slices {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hab : a < b) (hb : b < N.epsilon⁻¹) :
@@ -106,7 +91,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M}
   {S : RiemannianMetric.PointSoulData (K.flow.metric 0)} {epsilon D R : ℝ}
   (G : SoulNeckRegion K S epsilon D R) (N : EpsilonNeck (K.flow.metric 0))
-
 
 def bufferedCarrier (t : ℝ) : Set M := G.inside ∪ N.region (-N.epsilon⁻¹) t
 
@@ -162,7 +146,6 @@ theorem closure_inside_subset_bufferedCarrier {t : ℝ} (ht : 0 < t) :
     exact Or.inr ⟨hxN, (N.coordinate_inverse_mem x hxN).2.1,
       by simpa only [heq] using ht⟩
 
-
 theorem bufferedCarrier_diff_region {t : ℝ} (ht : 0 < t) :
     G.bufferedCarrier N t \ N.region 0 t = closure G.inside := by
   ext x
@@ -175,7 +158,6 @@ theorem bufferedCarrier_diff_region {t : ℝ} (ht : 0 < t) :
     refine ⟨G.closure_inside_subset_bufferedCarrier N hsphere ht hc, ?_⟩
     intro hn
     exact (not_lt_of_ge ((hheight x hn.1).mp hc)) hn.2.1
-
 
 theorem bufferedCarrier_inter_frontier_region {t : ℝ}
     (ht : 0 < t) (htN : t < N.epsilon⁻¹) :
@@ -202,7 +184,6 @@ theorem bufferedCarrier_inter_frontier_region {t : ℝ}
         inv_pos.mpr N.epsilon_pos⟩)).mpr ⟨hxN, heq⟩
 
 omit hsphere in
-
 
 theorem buffered_boundary_local_defining_function {t : ℝ} (ht : 0 < t)
     {x : M} (hx : x ∈ N.central_sphere) :

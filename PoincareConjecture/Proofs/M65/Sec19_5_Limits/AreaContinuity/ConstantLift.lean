@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.SmoothAnnulus
 import PoincareConjecture.Statements.M64Annulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)} {circumference : ℝ}
-
-
 
 noncomputable def m65ConstantCircleAnnulus
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -43,8 +32,6 @@ noncomputable def m65ConstantCircleAnnulus
     (fun x => congrArg (fun q => (q, P.circle.quotient 0)) (h0 x))
     (fun x => congrArg (fun q => (q, P.circle.quotient 0)) (h1 x))
 
-
-
 theorem m65ConstantCircleAnnulus_projectedArea
     (P : M62.CircleProductData F circumference) (t : ℝ)
     {c0 c1 : ℝ → M} (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 3) 1 f)
@@ -53,9 +40,6 @@ theorem m65ConstantCircleAnnulus_projectedArea
     (h1 : ∀ x, f (annulusPoint x 1) = c1 x) :
     m64ProjectedAnnulusArea P t (m65ConstantCircleAnnulus P t f hf hp h0 h1) =
       m64AnnulusArea (F.metric t) f := rfl
-
-
-
 
 theorem m65BaseAnnulus_fillingComparison
     (P : M62.CircleProductData F circumference) (t : ℝ)

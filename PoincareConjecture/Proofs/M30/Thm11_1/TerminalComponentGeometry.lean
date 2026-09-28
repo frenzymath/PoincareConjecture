@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalDerivatives
 import PoincareConjecture.Proofs.M30.Thm11_1.TerminalVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,17 +16,13 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
-
 noncomputable def terminalComponentCarrier (S : GeneralizedBlowupSequence.{u}) (k : ℕ) :
     FlowCarrier.{u} 3 :=
   basedSliceCarrier ((S.flow k).slice (S.base k).1) (S.base k).2
 
-
 def terminalComponentBase (S : GeneralizedBlowupSequence.{u}) (k : ℕ) :
     (terminalComponentCarrier S k).carrier :=
   ⟨(S.base k).2, mem_connectedComponent⟩
-
-
 
 noncomputable def terminalComponentMetric (S : GeneralizedBlowupSequence.{u}) (k : ℕ) :
     (terminalComponentCarrier S k).metric :=
@@ -43,16 +30,12 @@ noncomputable def terminalComponentMetric (S : GeneralizedBlowupSequence.{u}) (k
     (M13.scaleSmoothMetric ((S.flow k).metric (S.base k).1)
       (S.scale k) (S.base_scalar_pos k))
 
-
-
 theorem terminalComponentMetric_image_ball (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (A : ℝ) :
     Subtype.val '' (terminalComponentMetric S k).ball (terminalComponentBase S k) A =
       S.baseBall k A := by
   exact (basedSliceMetric_image_ball ((S.flow k).slice (S.base k).1) (S.base k).2
     _ (terminalComponentBase S k) A).trans (scaled_terminal_ball_eq_baseBall S k A)
-
-
 
 theorem eventually_terminalComponent_compact_ball
     {S : GeneralizedBlowupSequence.{u}} {epsilon canonicalConstant kappa r₀ mu : ℝ}
@@ -63,8 +46,6 @@ theorem eventually_terminalComponent_compact_ball
   filter_upwards [H.balls_compact A hA] with k hk
   apply basedSliceMetric_isCompact_closure_ball
   simpa only [terminalComponentBase, scaled_terminal_ball_eq_baseBall] using hk
-
-
 
 theorem eventually_terminalComponent_curvatureDerivativeNorm_le
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}
@@ -84,8 +65,6 @@ theorem eventually_terminalComponent_curvatureDerivativeNorm_le
       (S.scale k) (S.base_scalar_pos k)
   exact (basedSliceMetric_curvatureDerivativeNorm ((S.flow k).slice (S.base k).1)
     (S.base k).2 g g.leviCivitaData m x).trans_le (hk x.val hx')
-
-
 
 theorem exists_eventually_terminalComponent_volume_lower_bound
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

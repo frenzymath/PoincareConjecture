@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PointedCapCollarIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.PointedCollarUpperBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_global_finitePL_and_signs
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
@@ -125,9 +109,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_global_fin
     · simpa only [hgbottom x x.property.1] using hplo
     · simpa only [hgfupper x x.property.1, mul_zero, add_zero] using hphi
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_global_finitePL
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -181,9 +162,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_global_fin
       Q hQ hQd hU hdU
   exact ⟨r, hr, hmin, hmax, hrest⟩
 
-
-
-
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_rim_intervals
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -236,12 +214,6 @@ theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper_with_rim_interv
       Q hQ hQd hU hdU
   exact ⟨r, hr, hmin, hmax, hrsub, hrsuper, g, hgT, hgn, hgr, hgQ, hgU, hgtop,
     ε, hε, H, hrest⟩
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_pointed_cap_collar_isotopy_fixed_upper
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

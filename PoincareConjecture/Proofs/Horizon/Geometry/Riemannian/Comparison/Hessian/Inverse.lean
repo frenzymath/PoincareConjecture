@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Inverse
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hessian_inverse_radius_sq
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -61,8 +58,6 @@ theorem hessian_inverse_radius_sq
     (g.isInvertible_pullbackCoefficients (hD.mfderiv_injective hx))
     (Eventually.of_forall fun _ a b => g.symm _ _ _) hgauss w
   linarith
-
-
 
 theorem hessian_inverse_radius_le_of_sectional_lower_bound [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

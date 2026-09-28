@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -23,8 +14,6 @@ theorem mapRadius_deriv_positive {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u)
     rw [abs_mul]
     exact (mul_le_mul_of_nonneg_right (by linarith : |r| ≤ 1 + |r|) (abs_nonneg _)).trans hd
   exact mul_pos (Real.exp_pos _) (by linarith only [neg_le_of_abs_le hr, heta])
-
-
 
 theorem mapRadius_third_deriv_bound {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u)
     {r eta H J : ℝ} (hr : 0 ≤ r) (heta : 0 ≤ eta)

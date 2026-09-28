@@ -3,24 +3,11 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 
 namespace PoincareConjecture.ReducedLengthMinimum
-
 
 theorem uniform_composition_on_compact_core {X Y : Type*} [MetricSpace X] [UniformSpace Y]
     {a b : ℝ} {K : Set X} (hK : IsCompact K) (B : ℝ × X → Y)
@@ -44,8 +31,6 @@ theorem uniform_composition_on_compact_core {X Y : Type*} [MetricSpace X] [Unifo
     (hαK.mono (fun k hk s hs ↦ ⟨hs, hk hs⟩))
     (fun s hs ↦ ⟨hs, hγK hs⟩)
     ((isCompact_Icc.prod hK).uniformContinuousOn_of_continuous hB) hpair
-
-
 
 theorem exists_compact_partition_of_uniform_limit {X ι : Type*}
     [MetricSpace X] [LocallyCompactSpace X] (U : ι → Set X)

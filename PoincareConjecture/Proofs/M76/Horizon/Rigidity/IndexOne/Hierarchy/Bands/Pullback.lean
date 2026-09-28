@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.FrontierComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,7 +11,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 
-
 def frontierBandPullback {X : Type*} [TopologicalSpace X] {N T : Set X}
     (E : ↥(frontier N) ≃ₜ ↥(frontier T)) (B : Set X) : Set X :=
   {x | ∃ hx : x ∈ frontier N, (E ⟨x, hx⟩ : X) ∈ B}
@@ -27,7 +18,6 @@ def frontierBandPullback {X : Type*} [TopologicalSpace X] {N T : Set X}
 theorem frontierBandPullback_subset {X : Type*} [TopologicalSpace X] {N T B : Set X}
     (E : ↥(frontier N) ≃ₜ ↥(frontier T)) :
     frontierBandPullback E B ⊆ frontier N := fun _ hx => hx.choose
-
 
 noncomputable def frontierBandPullbackHomeomorph
     {X : Type*} [TopologicalSpace X] {N T B : Set X}
@@ -53,7 +43,6 @@ noncomputable def frontierBandPullbackHomeomorph
     exact continuous_subtype_val.comp (E.continuous.comp
       (continuous_subtype_val.subtype_mk _))
 
-
 noncomputable def pulledBackBandCylinder
     {X : Type*} [TopologicalSpace X] {N T B : Set X}
     (E : ↥(frontier N) ≃ₜ ↥(frontier T)) (hB : B ⊆ frontier T)
@@ -74,7 +63,6 @@ theorem pulledBackBandCylinder_frontier_map
     (E ⟨pulledBackBandCylinder E hB c x,
       frontierBandPullback_subset E (pulledBackBandCylinder E hB c x).property⟩ : X) = c x :=
   congrArg Subtype.val (E.apply_symm_apply _)
-
 
 def cylinderBandInterior {X : Type*} [TopologicalSpace X] {B : Set X}
     (c : ↥(Q ×ˢ I) ≃ₜ B) : Set X :=
@@ -124,7 +112,6 @@ theorem pulledBackBandInterior_isOpen
   rw [heq]
   exact hopen.preimage E.continuous
 
-
 def cylinderZeroSection {X : Type*} [TopologicalSpace X] {B : Set X}
     (c : ↥(Q ×ˢ I) ≃ₜ B) : C(Q, B) where
   toFun x := c ⟨(x, 0), x.property, by norm_num⟩
@@ -140,9 +127,6 @@ theorem pulledBackBandZeroSection_frontier_map
         (cylinderZeroSection (pulledBackBandCylinder E hB c) x).property⟩ : X) =
       cylinderZeroSection c x :=
   pulledBackBandCylinder_frontier_map E hB c _
-
-
-
 
 theorem exists_proper_disk_in_pulledBackBand
     {X α : Type*} [TopologicalSpace X] [T2Space X]

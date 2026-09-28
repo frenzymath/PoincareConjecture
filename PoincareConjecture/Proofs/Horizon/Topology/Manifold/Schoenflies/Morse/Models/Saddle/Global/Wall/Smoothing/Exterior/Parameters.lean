@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Euclidean
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +39,6 @@ theorem exists_small_time_cutoff {ε : Real} (hε : 0 < ε) :
     change χ t * t = t
     rw [χ.one_of_mem_closedBall (by
       simpa only [mem_closedBall, Real.dist_eq, sub_zero] using abs_le.mpr ht), one_mul]
-
-
 
 theorem exists_cutoff_parameter_family
     (α : Real × Real → Real) (hα : ContDiff Real ∞ α)
@@ -129,8 +118,6 @@ theorem exists_cutoff_parameter_family
     change F (θ t, s) = _
     rw [hθid t ht]
 
-
-
 theorem exists_cutoff_parameter_family_on
     (α : Real × Real → Real) {W : Set (Real × Real)} (hW : IsOpen W)
     (χ : Real → Real) (hχ : ContDiff Real ∞ χ) (hχc : HasCompactSupport χ)
@@ -176,8 +163,6 @@ theorem exists_cutoff_parameter_family_on
       exact ⟨by linarith [ht.1], by linarith [ht.2]⟩
     rw [hεeq htε s hs]
   · simp only [image_eq_zero_of_notMem_tsupport hs, zero_mul]
-
-
 
 theorem exists_strip_tail_parameter_family
     {height : S2 → Real} {c : Real}

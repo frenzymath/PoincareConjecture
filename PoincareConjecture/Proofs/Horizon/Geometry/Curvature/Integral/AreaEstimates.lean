@@ -3,23 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set MeasureTheory
 
 namespace Poincare.CurvatureIntegral
-
-
 
 lemma neg_integral_deriv_mul_reciprocal_le
     {A : ℝ → ℝ} {a b α : ℝ} (ha : 0 < a) (hab : a ≤ b) (hα : 0 ≤ α)
@@ -56,8 +45,6 @@ lemma neg_integral_deriv_mul_reciprocal_le
   simp_rw [mul_comm (α / _) (deriv A _)] at hparts
   nlinarith
 
-
-
 lemma area_mul_reciprocal_sq_le
     {A : ℝ → ℝ} {t α : ℝ} {m : ℕ} (ht : 0 < t) (ht1 : t ≤ 1)
     (hm : 2 ≤ m) (hα : 0 ≤ α) (hA : A t ≤ α * t ^ m) :
@@ -68,7 +55,6 @@ lemma area_mul_reciprocal_sq_le
     A t * (α / t) ^ 2 ≤ (α * t ^ 2) * (α / t) ^ 2 :=
       mul_le_mul_of_nonneg_right hAt (sq_nonneg _)
     _ = α ^ 3 := by field_simp
-
 
 lemma integral_area_mul_reciprocal_sq_le
     {A : ℝ → ℝ} {a b α : ℝ} {m : ℕ} (ha : 0 < a) (hab : a ≤ b)
@@ -84,8 +70,6 @@ lemma integral_area_mul_reciprocal_sq_le
   have h := intervalIntegral.integral_mono_on hab hi intervalIntegrable_const
     (fun t ht => area_mul_reciprocal_sq_le (ha.trans_le ht.1) (ht.2.trans hb) hm hα (hA t ht))
   simpa only [intervalIntegral.integral_const, smul_eq_mul, mul_comm (b - a)] using h
-
-
 
 lemma neg_integral_deriv_mul_reciprocal_le_of_power_bound
     {A : ℝ → ℝ} {a b α : ℝ} {m : ℕ} (ha : 0 < a) (hab : a ≤ b)
@@ -104,8 +88,6 @@ lemma neg_integral_deriv_mul_reciprocal_le_of_power_bound
     _ ≤ (α * a) * (α / a) := mul_le_mul_of_nonneg_right
       (hleft.trans (mul_le_mul_of_nonneg_left hpow hα)) (div_nonneg hα ha.le)
     _ = α ^ 2 := by field_simp
-
-
 
 lemma area_error_le_of_power_bound
     {A : ℝ → ℝ} {a b α : ℝ} {m : ℕ} (ha : 0 < a) (hab : a ≤ b)
@@ -128,9 +110,6 @@ lemma area_error_le_of_power_bound
   have hcoef : 0 ≤ (m : ℝ) * (1 + α) := mul_nonneg (Nat.cast_nonneg _) (by linarith)
   have hmul := mul_le_mul_of_nonneg_left harea' hcoef
   linarith
-
-
-
 
 lemma le_mul_one_add_of_forall_le_sub_deriv
     {A : ℝ → ℝ} {b α C K S : ℝ} {m : ℕ}

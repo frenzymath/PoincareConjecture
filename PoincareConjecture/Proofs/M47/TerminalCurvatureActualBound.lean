@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePinchedChartBound
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierReadout
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,9 +39,6 @@ private noncomputable local instance actualOriginalChartSpace (i : ι) :
 private noncomputable local instance actualOriginalChartManifold (i : ι) :
     IsManifold (𝓡 3) ∞ (U i) :=
   (U i).isOpen.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 3) (n := ∞)
-
-
-
 
 theorem terminalCurvature_bound_of_actual_sources
     (sched : RepairedControlledSchedulesData.{u})

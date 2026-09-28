@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +8,6 @@ namespace Geometry.OriginalPLTower
 
 variable {X Y E : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace E] {p : X → Y}
-
-
 
 theorem right_branch_chart_support_subset
     (w : TwoBranchWindow p) (Q : OpenPartialHomeomorph Y E)
@@ -34,8 +23,6 @@ theorem right_branch_chart_support_subset
   rw [heq]
   exact hQV hzQ
 
-
-
 theorem right_branch_motion_fixed_off_window
     (w : TwoBranchWindow p) (Q : OpenPartialHomeomorph Y E)
     {J : Set E} {V : Set Y} (hJ : J ⊆ Q.target)
@@ -46,7 +33,6 @@ theorem right_branch_motion_fixed_off_window
   exact hfix (fun hmem ↦ hx (right_branch_chart_support_subset w Q hJ hQw hQV hmem))
 
 omit [TopologicalSpace Y] in
-
 
 theorem motion_image_inter_eq_off_target_support
     (G : X ≃ₜ X) {V W : Set Y} (hVW : Disjoint V W)
@@ -63,7 +49,6 @@ theorem motion_image_inter_eq_off_target_support
     exact ⟨⟨x, hx, hfixed x hxB⟩, hxB⟩
 
 omit [TopologicalSpace Y] in
-
 
 theorem motion_projected_branch_image_eq_off_target_support
     (G : X ≃ₜ X) {V W : Set Y} (hVW : Disjoint V W)

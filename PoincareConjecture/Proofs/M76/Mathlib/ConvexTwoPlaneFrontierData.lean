@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem IsCompact.exists_frontier_and_interior_linear_sign
     {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)
@@ -52,10 +36,6 @@ theorem IsCompact.exists_frontier_and_interior_linear_sign
   · rw [hmid, hAp, zero_div]
   · rw [hmid]
     exact half_pos hBp
-
-
-
-
 
 theorem Convex.frontier_inter_coordinate_planes_eq_poles
     {C : Set ((ℝ × ℝ) × ℝ)} (hcv : Convex ℝ C)

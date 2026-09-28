@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ProductSu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedLowerRimImage
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.TwoBoundaryCount
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry BrownCollar PLAnnularStrip

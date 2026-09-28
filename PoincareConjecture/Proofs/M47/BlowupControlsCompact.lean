@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem regular_history_compact_closure
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

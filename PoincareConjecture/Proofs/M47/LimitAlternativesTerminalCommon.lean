@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalScalar
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalFloorScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem limitAlternatives_terminal_common_duration
     (S : RepairedControlledSchedulesData.{u})

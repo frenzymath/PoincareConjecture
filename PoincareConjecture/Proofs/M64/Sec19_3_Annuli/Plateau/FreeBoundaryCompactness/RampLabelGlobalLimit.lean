@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactn
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.RampLabelLocalLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.UniformLogarithmicContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
-
-
-
 
 theorem free_ramp_global_lower_label_logarithmic_constant
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)
@@ -79,9 +68,6 @@ theorem free_ramp_global_lower_label_logarithmic_constant
     simpa only [mul_pow, mul_comm, K] using hcombined
   exact hdivide.trans_eq (by ring)
 
-
-
-
 theorem free_ramp_lower_labels_uniformEquicontinuous
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)
     (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 (n + 1)) 2 gamma)
@@ -107,9 +93,6 @@ theorem free_ramp_lower_labels_uniformEquicontinuous
     x rho hrho (lt_min_iff.mp hsmall).1 (lt_min_iff.mp hsmall).2 N hN).trans
     (div_le_div_of_nonneg_right (mul_le_mul_of_nonneg_left (hK j) hC.le)
       (by positivity : (0 : ℝ) ≤ N))
-
-
-
 
 theorem free_ramp_lower_labels_continuous_limit
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)

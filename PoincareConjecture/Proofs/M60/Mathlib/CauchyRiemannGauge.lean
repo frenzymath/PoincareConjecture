@@ -4,15 +4,6 @@ import Mathlib.Analysis.Complex.CauchyIntegral
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex Filter Set
@@ -21,9 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M60
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
-
-
-
 
 theorem differentiableAt_complex_of_cauchyRiemannDerivative_eq_zero
     {f : ℂ → V} {z : ℂ} (hf : DifferentiableAt ℝ f z)
@@ -35,9 +23,6 @@ theorem differentiableAt_complex_of_cauchyRiemannDerivative_eq_zero
   have hI := congrArg (fun v : V => I • v) hsum
   simp only [smul_add, smul_smul, I_mul_I, neg_one_smul, smul_zero] at hI
   exact (eq_of_sub_eq_zero (by simpa only [sub_eq_add_neg] using hI)).symm
-
-
-
 
 theorem cauchyRiemannDerivative_apply {A : ℂ → V →L[ℂ] V} {v : ℂ → V} {z : ℂ}
     (hA : DifferentiableAt ℝ A z) (hv : DifferentiableAt ℝ v z) :
@@ -57,9 +42,6 @@ theorem cauchyRiemannDerivative_apply {A : ℂ → V →L[ℂ] V} {v : ℂ → V
   abel
 
 variable [CompleteSpace V]
-
-
-
 
 theorem differentiableAt_frame_inverse_apply
     {P A : ℂ → V →L[ℂ] V} {v : ℂ → V} {z : ℂ}
@@ -90,9 +72,6 @@ theorem differentiableAt_frame_inverse_apply
   exact (ContinuousLinearMap.isUnit_iff_bijective.mp hPunit).1
     (hzero.trans (map_zero _).symm)
 
-
-
-
 theorem analyticAt_frame_inverse_apply
     {P A : ℂ → V →L[ℂ] V} {v : ℂ → V} {U : Set ℂ} {z : ℂ}
     (hU : IsOpen U) (hz : z ∈ U)
@@ -109,9 +88,6 @@ theorem analyticAt_frame_inverse_apply
     ((hv.contDiffAt (hU.mem_nhds hw)).differentiableAt (by simp))
     (Filter.mem_of_superset (hU.mem_nhds hw) fun x hx => hunit x hx)
     (hPeq w hw) (hveq w hw)
-
-
-
 
 theorem eventually_zero_or_isolated_of_frame
     {P A : ℂ → V →L[ℂ] V} {v : ℂ → V} {U : Set ℂ} {z : ℂ}

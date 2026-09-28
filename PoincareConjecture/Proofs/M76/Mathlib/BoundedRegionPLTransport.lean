@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.CommonSimplicialRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.on_finite_polyhedron_of_continuousOn_eq_affine_off
     {f : E → F} {S : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -97,11 +82,6 @@ theorem FinitePiecewiseAffineOn.on_finite_polyhedron_of_continuousOn_eq_affine_o
       (openSegment_subset_segment ℝ p x) segment_subset_closure_openSegment
       (right_mem_segment ℝ p x)
 
-
-
-
-
-
 theorem FinitePiecewiseAffineOn.on_finite_polyhedron_of_eq_affine_off
     {f : E → F} {S : Set E} (hf : FinitePiecewiseAffineOn f S)
     (hcont : Continuous f) (a : E →ᴬ[ℝ] F)
@@ -110,10 +90,6 @@ theorem FinitePiecewiseAffineOn.on_finite_polyhedron_of_eq_affine_off
     FinitePiecewiseAffineOn f L.space :=
   hf.on_finite_polyhedron_of_continuousOn_eq_affine_off L hL hcont.continuousOn a
     (fun x _ hx => hoff x hx)
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.homeomorph_on_finite_polyhedron_of_eq_id_off
     {H : E ≃ₜ E} {S : Set E} (hH : FinitePiecewiseAffineOn (H : E → E) S)
@@ -130,11 +106,6 @@ namespace Homeomorph
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem finitePiecewiseAffineOn_symm_of_forall_finite_polyhedron (H : E ≃ₜ F)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →
@@ -161,9 +132,6 @@ namespace Set
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 theorem IsFinitePLBallPair.image_of_finitePL_on_finite_polyhedra
     {s b : Set E} (hs : IsFinitePLBallPair F s b) (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →
@@ -175,9 +143,6 @@ theorem IsFinitePLBallPair.image_of_finitePL_on_finite_polyhedra
   rw [hKs] at hHs
   exact hs.image hHs H.injective.injOn
 
-
-
-
 theorem IsFinitePLBallPair.preimage_of_finitePL_on_finite_polyhedra
     {s b : Set E} (hs : IsFinitePLBallPair F s b) (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →
@@ -185,10 +150,6 @@ theorem IsFinitePLBallPair.preimage_of_finitePL_on_finite_polyhedra
     IsFinitePLBallPair F (H ⁻¹' s) (H ⁻¹' b) := by
   simpa only [H.image_symm] using hs.image_of_finitePL_on_finite_polyhedra H.symm
     (H.finitePiecewiseAffineOn_symm_of_forall_finite_polyhedron hH)
-
-
-
-
 
 theorem IsFinitePLBallPair.image_of_finitePL_eq_id_off
     {s b S : Set E} (hs : IsFinitePLBallPair F s b) (H : E ≃ₜ E)
@@ -200,10 +161,6 @@ theorem IsFinitePLBallPair.image_of_finitePL_eq_id_off
   have hHs := hH.homeomorph_on_finite_polyhedron_of_eq_id_off hoff K hK
   rw [hKs] at hHs
   exact hs.image hHs H.injective.injOn
-
-
-
-
 
 theorem IsFinitePLBallPair.preimage_of_finitePL_eq_id_off
     {s b S : Set E} (hs : IsFinitePLBallPair F s b) (H : E ≃ₜ E)
@@ -225,11 +182,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem isFinitePLBallPair_boundedComplement_image_iff (H : E ≃ₜ E)
     (hH : ∀ (K : SimplicialComplex ℝ E), K.faces.Finite →

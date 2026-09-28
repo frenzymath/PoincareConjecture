@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Events.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.Compatibility
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +20,6 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F} {T : ℝ}
 theorem carrier_nonempty : Nonempty (carrier hT).carrier := by
   obtain ⟨y, hy⟩ := (F.event T hT).retained_post_interior_nonempty
   exact ⟨(F.event T hT).retention.interiorDiffeomorph.symm ⟨y, hy⟩⟩
-
 
 def atEvent : (carrier hT).carrier → (slice W T).carrier :=
   fun x => ⟨(F.event T hT).retention.map x.val, hTW, by
@@ -79,7 +68,6 @@ namespace EventTimeWindow
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F} {T : ℝ}
     {hT : T ∈ F.surgery_times} {hTW : T ∈ W.interval}
     [Nonempty (F.slice T).carrier] (A : EventTimeWindow W hT hTW)
-
 
 def identify (t : ℝ) (ht : t ∈ A.interval) :
     (EventIdentify.carrier hT).carrier → (slice W t).carrier := by
@@ -153,7 +141,6 @@ theorem identify_event_surjective : Function.Surjective (A.identify T A.time_mem
   · rw [A.identify_at_terminal hr]
     rfl
 
-
 theorem exists_flow_metric (L : RicciFlowLocalTheory 3 (F.slice T).carrier) :
     ∃ H : RicciFlow 3 (EventIdentify.carrier hT).carrier A.interval,
       ∀ t (ht : t ∈ A.interval) x (v w : TangentSpace (𝓡 3) x),
@@ -199,7 +186,6 @@ theorem identify_metric (L : RicciFlowLocalTheory 3 (F.slice T).carrier)
       (mfderiv (𝓡 3) (𝓡 3) (A.identify t ht) x w) =
         ((A.flow L).metric t).inner x v w :=
   Classical.choose_spec (A.exists_flow_metric L) t ht x v w
-
 
 def box (L : RicciFlowLocalTheory 3 (F.slice T).carrier) :
     GeneralizedRicciFlowBox (slice W) (metric W) W.interval := by
@@ -261,7 +247,6 @@ theorem identify_slab_compatibility (a b : ℝ) (hab : a < b)
       subst s
       subst t
       simp only [SurgeryRegularSlab.transport, Diffeomorph.apply_symm_apply]
-
 
 theorem box_slab_compatibility (L : RicciFlowLocalTheory 3 (F.slice T).carrier) :
     SlabCompatible (A.box L) := A.identify_slab_compatibility

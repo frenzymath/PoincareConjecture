@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Simplex.Singular.SimplexHorn
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -16,7 +8,6 @@ open scoped Topology
 universe u
 
 namespace Poincare.Topology
-
 
 theorem stdSimplex_face_zero (n : Nat) (i : Fin (n + 2))
     (z : stdSimplex Real (Fin (n + 1))) :
@@ -29,7 +20,6 @@ theorem stdSimplex_face_zero (n : Nat) (i : Fin (n + 2))
     intro k hk
     exact Fin.succAbove_ne i k (Finset.mem_filter.mp hk).2
   rw [hf, Finset.sum_empty]
-
 
 theorem stdSimplex_face_succAbove (n : Nat) (i : Fin (n + 2))
     (z : stdSimplex Real (Fin (n + 1))) (k : Fin (n + 1)) :
@@ -48,7 +38,6 @@ theorem stdSimplex_face_succAbove (n : Nat) (i : Fin (n + 2))
       exact Finset.mem_filter.mpr ⟨Finset.mem_univ l,
         congrArg i.succAbove (Finset.mem_singleton.mp hl)⟩
   rw [hf, Finset.sum_singleton]
-
 
 theorem stdSimplex_face_range_iff (n : Nat) (i : Fin (n + 2))
     (y : stdSimplex Real (Fin (n + 2))) :
@@ -72,7 +61,6 @@ theorem stdSimplex_face_range_iff (n : Nat) (i : Fin (n + 2))
       exact (stdSimplex_face_zero n i z).trans hy.symm
     · obtain ⟨k, rfl⟩ := Fin.exists_succAbove_eq hji
       exact stdSimplex_face_succAbove n i z k
-
 
 theorem exists_stdSimplex_compatible_face_extension
     {X : Type u} [TopologicalSpace X] (n : Nat) (i : Fin (n + 2))

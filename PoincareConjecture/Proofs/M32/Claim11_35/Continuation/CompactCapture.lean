@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.InverseConfinement
 import PoincareConjecture.Proofs.M32.Claim11_34.ZeroSlicePoint
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Uniqueness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +14,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
 
 theorem blowup_exists_compact_capture_for_old_cylinders
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

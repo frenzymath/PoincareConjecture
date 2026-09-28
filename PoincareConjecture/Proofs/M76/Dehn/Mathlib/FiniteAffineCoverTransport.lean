@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_finite_affine_image_cover
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

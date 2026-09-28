@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.S
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.OriginalPLInverse
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.SourceMeridian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -30,15 +21,12 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 
-
 noncomputable def sourceMeridianBandCylinder
     {phi : C(H, H)} {a b : ℝ} (hab : a < b) (hshort : b < a + p)
     (E : frontier (sourceSlab phi a b) ≃ₜ frontier (sourceSlab (ContinuousMap.id H) a b)) :
     (Q ×ˢ I) ≃ₜ frontierBandPullback E (standardMeridianBand a b) :=
   pulledBackBandCylinder E (standardMeridianBand_subset_frontier a b hab hshort)
     (standardMeridianBandCoordinates a b hab hshort)
-
-
 
 theorem exists_sourceMeridianBand_parameter
     {α β : Type*}
@@ -79,9 +67,6 @@ theorem exists_sourceMeridianBand_parameter
   refine ⟨q, hKS ▸ hq, ?_⟩
   intro z
   exact (heq z (hKS.symm.subset z.property)).symm
-
-
-
 
 theorem exists_proper_sourceMeridianBand_disk
     {α : Type*} (e : α → OpenPartialHomeomorph X V3)

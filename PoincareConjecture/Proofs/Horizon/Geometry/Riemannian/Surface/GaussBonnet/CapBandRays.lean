@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CapBandIntersections
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem coordinateTriangleVelocity_pos_smul_of_image_subset
     (F G : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -123,16 +115,13 @@ variable {D : FiniteChartRegionDecomposition (M := S)}
   {G : D.OrientedGraphPiece e R (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm a b}
   (E : D.CapGraphEndpoint P region chart caps e R G terminal trim)
 
-
 def chordStartIndex : Fin 3 := if E.radialEdge = 1 then 2 else 1
-
 
 def chordEndIndex : Fin 3 := if E.radialEdge = 1 then 1 else 2
 
 theorem chord_indices_ne : E.chordStartIndex ≠ E.chordEndIndex := by
   unfold chordStartIndex chordEndIndex
   split_ifs <;> decide
-
 
 theorem chord_start_eq_tip :
     (caps (D.edgeEndpoint e terminal)).coordinates E.sector
@@ -143,8 +132,6 @@ theorem chord_start_eq_tip :
   rcases E.radialEdge_valid with he | he
   · simpa [chordStartIndex, he, affineChartSegment] using h
   · simpa [chordStartIndex, he, affineChartSegment, Fin.succAbove, Fin.lt_def] using h
-
-
 
 theorem chord_ray_map (t : ℝ) :
     (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm
@@ -167,8 +154,6 @@ theorem chord_ray_map (t : ℝ) :
     simp [affineChartSegment, AffineMap.lineMap_apply, vsub_eq_sub, vadd_eq_add, add_comm,
       Fin.succAbove]
 
-
-
 theorem chordSegment_subset_coordinate_side {r : ℝ} (hr : r ≤ 1) :
     E.chordSegment r ⊆
       (fun t : ℝ => (caps (D.edgeEndpoint e terminal)).coordinates E.sector
@@ -178,7 +163,6 @@ theorem chordSegment_subset_coordinate_side {r : ℝ} (hr : r ≤ 1) :
         Icc (0 : ℝ) 1 := by
   rintro _ ⟨t, ht, rfl⟩
   exact ⟨t, ⟨ht.1, ht.2.trans hr⟩, (E.chord_ray_map t).symm⟩
-
 
 noncomputable def chordVelocity : TangentSpace (𝓡 2) (D.edgeFromEndpoint e terminal trim) :=
   coordinateTriangleVelocity ((caps (D.edgeEndpoint e terminal)).coordinates E.sector)
@@ -228,8 +212,6 @@ variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
-
 theorem left_endpoint_coordinate_map (t : ℝ) :
     B.faceCoordinates (B.firstCell, true)
       (AffineMap.lineMap (B.faceBasis (B.firstCell, true) 0)
@@ -241,8 +223,6 @@ theorem left_endpoint_coordinate_map (t : ℝ) :
       B.smooth_lower) t
   rw [coordinateTriangle_first_map] at h
   exact h
-
-
 
 theorem right_endpoint_coordinate_map (t : ℝ) :
     B.faceCoordinates (B.lastCell, false)
@@ -266,8 +246,6 @@ variable {D : FiniteChartRegionDecomposition (M := S)} {e : D.EdgeIndex} {R : D.
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
-
-
 theorem left_endpoint_coordinate_start (hab : a ≤ b) :
     B.faces.faceCoordinates (B.faces.firstCell, true)
       (B.faces.faceBasis (B.faces.firstCell, true) 0) = (D.edge e.1 e.2).map a := by
@@ -278,8 +256,6 @@ theorem left_endpoint_coordinate_start (hab : a ≤ b) :
   rw [zero_mul, B.coordinates_eq, G.strip_axis]
   simp only [zero_mul, add_zero]
   exact (G.graph_map a (G.interval_source (left_mem_Icc.mpr hab))).symm
-
-
 
 theorem right_endpoint_coordinate_start (hab : a ≤ b) :
     B.faces.faceCoordinates (B.faces.lastCell, false)
@@ -309,8 +285,6 @@ variable {D : FiniteChartRegionDecomposition (M := S)}
   (K : Q.CutChain L.direction T.direction)
   {r δ : ℝ}
 
-
-
 theorem first_cap_cut_velocity_pos_smul
     (B : (Q.piece Q.firstPiece).FixedStripBandFaces (K.graphCuts Q.firstPiece) δ r r)
     (hr : r ≤ 1) :
@@ -337,8 +311,6 @@ theorem first_cap_cut_velocity_pos_smul
     exact L.chordSegment_subset_coordinate_side hr
   · rw [L.chord_start_eq_tip, B.left_endpoint_coordinate_start (Q.cut_lt Q.firstPiece).le]
     simp only [Q.firstPiece_castSucc, Q.cut_first, edgeFromEndpoint, Bool.false_eq_true, if_false]
-
-
 
 theorem last_cap_cut_velocity_pos_smul
     (B : (Q.piece Q.lastPiece).FixedStripBandFaces (K.graphCuts Q.lastPiece) δ r r)
@@ -367,8 +339,6 @@ theorem last_cap_cut_velocity_pos_smul
   · rw [T.chord_start_eq_tip, B.right_endpoint_coordinate_start (Q.cut_lt Q.lastPiece).le]
     simp only [Q.lastPiece_succ, Q.cut_last, edgeFromEndpoint, if_true]
 
-
-
 theorem first_cap_cut_cornerAngle (g : RiemannianMetric 2 S)
     (B : (Q.piece Q.firstPiece).FixedStripBandFaces (K.graphCuts Q.firstPiece) δ r r)
     (hr : r ≤ 1) (w : TangentSpace (𝓡 2) (D.edgeFromEndpoint e false (cut e false))) :
@@ -387,8 +357,6 @@ theorem first_cap_cut_cornerAngle (g : RiemannianMetric 2 S)
   dsimp only [TangentSpace] at hv w ⊢
   rw [hpoint, hv]
   exact g.cornerAngle_smul_pos_right _ _ _ ha
-
-
 
 theorem last_cap_cut_cornerAngle (g : RiemannianMetric 2 S)
     (B : (Q.piece Q.lastPiece).FixedStripBandFaces (K.graphCuts Q.lastPiece) δ r r)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalT
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VerticalTriangleGerm
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -95,9 +87,6 @@ private theorem edge_chart_endpoints_on_axis
     have hmul : t • (F.symm v).1 = 0 := hfirst
     exact (smul_eq_zero.mp hmul).resolve_left ht.ne'
   exact ⟨each p (left_mem_segment ℝ _ _), each q (right_mem_segment ℝ _ _)⟩
-
-
-
 
 theorem exists_edge_chart_triangle_halfplane
     (F : C3 ≃ᴬ[ℝ] V3) {p q w y : V3} {V : Set V3}
@@ -214,10 +203,6 @@ theorem exists_edge_chart_triangle_halfplane
     refine ⟨(L (F.symm x).1).2, hx.2, L.injective ?_⟩
     rw [map_smul, hLu]
     exact Prod.ext (by simpa using hx.1) (by simp)
-
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_endpoint_crossing_of_not_vertex
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -414,8 +399,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_endpoint_crossing_of_not_ver
         obtain ⟨x, hx, heq⟩ := hxother
         exact ⟨x, hx, by change B (g x) = T z; rw [heq, B.right_inv (hnewV hz)]⟩
     · exact Or.inl
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_endpoint_crossing
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

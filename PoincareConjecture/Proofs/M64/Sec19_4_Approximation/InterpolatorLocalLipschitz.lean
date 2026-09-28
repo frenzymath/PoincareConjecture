@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 n) ∞ M]
 
 omit [T2Space M] in
-
-
 
 theorem m64_interpolator_contMDiffAt_of_cell
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
@@ -100,9 +87,6 @@ theorem m64_interpolator_contMDiffAt_of_cell
   have hHat := hH.contMDiffAt ((isOpen_Ioo.prod hU).mem_nhds hpoint)
   have hcomp := (hHat.of_le (m := 1) (by norm_num)).comp x hinput
   simpa only [Function.comp_def, phi] using hcomp
-
-
-
 
 theorem m64_interpolator_lipschitzOn_nhds_of_cell
     (g : RiemannianMetric n M) {D : LeviCivitaData g}

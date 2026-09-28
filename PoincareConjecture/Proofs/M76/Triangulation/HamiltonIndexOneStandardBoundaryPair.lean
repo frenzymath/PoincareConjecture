@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierCoordinateQuadr
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexConeIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry CoordinateHalfBoxes
@@ -46,10 +37,6 @@ private theorem cone_frontier_sector {E : Type*}
     · obtain ⟨y, hy, t, ht, hxy⟩ := hC.exists_frontier_pos_smul hcv h0 hx.1 hx0
       exact (mem_convexJoin_zero_iff _ x).mpr
         ⟨y, ⟨hy, (hscale t ht.1 y).mp (hxy ▸ hx.2)⟩, t, ⟨ht.1.le, ht.2⟩, hxy⟩
-
-
-
-
 
 theorem exists_standard_boundary_pair_chart {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

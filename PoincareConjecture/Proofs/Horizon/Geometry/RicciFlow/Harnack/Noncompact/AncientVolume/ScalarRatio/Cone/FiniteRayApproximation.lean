@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RayApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +7,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_minimizing_rays_approximating_finite_escaping_sequences
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

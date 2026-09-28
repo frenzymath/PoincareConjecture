@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Horizontal
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Geometry.Clock
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SmoothPlaneLeaves
 import PoincareConjecture.Proofs.M76.Mathlib.FramePlaneCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -20,9 +11,6 @@ namespace ContinuousLinearMap
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem frameProjectionFormula_spec (J : F →L[ℝ] E) (hJ : Function.Injective J)
     (P : EuclideanSubspace E) (hP : IsCompl J.range P.subspace) :
@@ -42,10 +30,6 @@ namespace Geometry.EuclideanSubspace
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_frameRepresentation {P : E → EuclideanSubspace E}
     {U : Set E} (hP : IsSmoothLeafFieldOn P U) (J : F →L[ℝ] E)

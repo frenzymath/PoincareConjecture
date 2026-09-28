@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +16,6 @@ open Poincare.Analysis.Sobolev.Weak
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64AnnulusSeam_integral_smul
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -48,8 +35,6 @@ theorem m64AnnulusSeam_integral_smul
   filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hpS
   rw [m64AnnulusSeamExtend_right f hpS, m64AnnulusSeamExtend_sub f hpS, add_smul]
 
-
-
 theorem m64AnnulusSeam_test_memLp {phi : LoopPlane → ℝ}
     (hp : ContDiff ℝ ∞ phi) (hc : HasCompactSupport phi) (i : Fin 2) :
     MemLp phi 2 (volume.restrict O) ∧
@@ -67,8 +52,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 theorem M64ObservedWeakAnnulus.seam_extension_memLp
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :
     MemLp (e ∘ m64AnnulusSeamExtend A.map) 2 (volume.restrict O) ∧
@@ -78,8 +61,6 @@ theorem M64ObservedWeakAnnulus.seam_extension_memLp
     exact m64AnnulusSeamExtend_memLp A.observed_memLp
   · intro i
     exact m64AnnulusSeamExtend_memLp (Lp.memLp (A.column i))
-
-
 
 theorem M64ObservedWeakAnnulus.seam_extension_tangent
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (i : Fin 2) :
@@ -97,8 +78,6 @@ theorem M64ObservedWeakAnnulus.seam_extension_tangent
     rw [m64AnnulusSeamExtend_left _ hpS, m64AnnulusSeamExtend_left _ hpS]
     exact hp
 
-
-
 theorem M64ObservedWeakAnnulus.seam_extension_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     {phi : LoopPlane → ℝ} (hp : ContDiff ℝ ∞ phi) (hc : HasCompactSupport phi)
@@ -114,8 +93,6 @@ theorem M64ObservedWeakAnnulus.seam_extension_green
   rw [m64AnnulusSeam_integral_smul (Lp.memLp (A.column i)) hphi.1,
     m64AnnulusSeam_integral_smul A.observed_memLp hphi.2]
   exact A.seam_folded_green hp hs i
-
-
 
 theorem M64ObservedWeakAnnulus.seam_extension_weak_partial
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (i : Fin 2) (b : Fin m) :
@@ -138,8 +115,6 @@ theorem M64ObservedWeakAnnulus.seam_extension_weak_partial
     hproj _ hvalue _ hphi.2] at h
   simp only [mul_comm] at h ⊢
   linarith
-
-
 
 theorem M64ObservedWeakAnnulus.seam_extension_energy
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

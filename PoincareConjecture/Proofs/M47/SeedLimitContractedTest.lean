@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseTestParameters
 import PoincareConjecture.Proofs.M47.LimitNoncollapseUniformCurvature
 import PoincareConjecture.Proofs.M47.LimitNoncollapsePhysicalTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +48,6 @@ private local instance : T3Space G.limit.carrier.carrier := G.limit.carrier.t3Sp
 private local instance : SecondCountableTopology G.limit.carrier.carrier :=
   G.limit.carrier.secondCountable
 private local instance : ConnectedSpace G.limit.carrier.carrier := G.limit.connectedSpace
-
-
 
 theorem seedLimit_contracted_physical_test_volume
     (P : M47Predecessors.{u}) {a w epsilon kappa : ℝ}

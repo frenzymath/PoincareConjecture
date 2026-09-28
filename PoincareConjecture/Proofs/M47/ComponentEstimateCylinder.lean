@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem component_cylinder_image_eq
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -37,8 +25,6 @@ theorem component_cylinder_image_eq
   have hpoint := mem_image_of_mem (e.forward s hs) hx
   exact Subset.antisymm (hconnectedImage.subset_connectedComponent hpoint)
     ((show IsClopen _ from ⟨hcompactImage.isClosed, hopenImage⟩).connectedComponent_subset hpoint)
-
-
 
 theorem exists_component_singleton_cylinder
     (F : SurgeryFlowData.{u}) (origin : ℝ) (htime : origin ∈ F.time_domain)

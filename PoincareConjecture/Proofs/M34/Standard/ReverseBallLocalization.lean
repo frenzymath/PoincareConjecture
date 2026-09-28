@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.PathBallConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,10 +7,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
-
 
 theorem ball_subset_image_ball_of_guarded_inverse_tangentNorm_le
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

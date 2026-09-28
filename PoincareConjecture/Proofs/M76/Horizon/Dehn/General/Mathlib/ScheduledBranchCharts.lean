@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.FiniteBranchMotions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,8 +8,6 @@ namespace Geometry
 
 variable {X Y E α T : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace E]
-
-
 
 theorem homeomorph_eq_of_image_mem_support
     (H G : X ≃ₜ X) {U : Set X} (heq : EqOn H G U)
@@ -31,13 +21,10 @@ theorem homeomorph_eq_of_image_mem_support
   have he : H (G.symm (H x)) = H x := (heq hy).trans (G.apply_symm_apply _)
   exact heq (H.injective he ▸ hy)
 
-
 theorem homeomorph_eq_self_of_image_not_mem
     (H : X ≃ₜ X) {U : Set X} (hfix : EqOn H id Uᶜ)
     {x : X} (hx : H x ∉ U) : H x = x :=
   H.injective (hfix hx)
-
-
 
 theorem right_branch_motion_closed_support [T2Space Y]
     {p : X → Y} (w : TwoBranchWindow p) (Q : OpenPartialHomeomorph Y E)
@@ -56,8 +43,6 @@ theorem right_branch_motion_closed_support [T2Space Y]
   rw [← congrFun w.right_eq _, w.right.right_inv hzW]
   exact mem_image_of_mem Q.symm hz
 
-
-
 theorem composeSupportedMotions_whole_branch_chart
     (p : X → Y) (F : α → T → X ≃ₜ X) (V : α → Set Y)
     (hfix : ∀ a t, EqOn (F a t) id (p ⁻¹' V a)ᶜ)
@@ -75,8 +60,6 @@ theorem composeSupportedMotions_whole_branch_chart
     l hl t ha A w.left.source (hQV hy)).trans (hleft y hy),
     fun y hy ↦ (composeSupportedMotions_branch_iff p F V hfix hdis
     l hl t ha A w.right.source (hQV hy)).trans (hright y hy)⟩
-
-
 
 theorem composeSupportedMotions_open_unchanged_neighborhood
     (p : X → Y) (F : α → T → X ≃ₜ X) (C : α → Set Y)

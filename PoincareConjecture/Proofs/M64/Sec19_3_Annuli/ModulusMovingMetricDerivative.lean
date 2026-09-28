@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMetricEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusEnergyDensity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m64MixedAnnulusGram_contDiffAt
     (F : RicciFlow n M (Icc a b)) {v : ℝ × LoopPlane → M}
@@ -73,10 +57,6 @@ theorem m64MixedAnnulusGram_contDiffAt
   have hmd := hw.mdifferentiableAt one_ne_zero
   simp only [m60AreaGram, m64MovingAnnulus_spatial_differential hmd, u]
 
-
-
-
-
 theorem m64ModulusEnergyDensity_mixed_contDiffAt
     (F : RicciFlow n M (Icc a b)) (r : ℝ) {v : ℝ × LoopPlane → M}
     {q : ℝ × (ℝ × LoopPlane)} (ht : q.1 ∈ Ioo a b)
@@ -86,10 +66,6 @@ theorem m64ModulusEnergyDensity_mixed_contDiffAt
         (fun z => v (w.2.1, z)) w.2.2) q := by
   exact ((contDiffAt_const.mul (m64MixedAnnulusGram_contDiffAt F ht hv 0 0)).add
     (contDiffAt_const.mul (m64MixedAnnulusGram_contDiffAt F ht hv 1 1))).div_const 2
-
-
-
-
 
 theorem m64ModulusEnergyDensity_moving_metric_contDiffAt
     (F : RicciFlow n M (Icc a b)) (r t : ℝ) {v : ℝ × LoopPlane → M}
@@ -101,10 +77,6 @@ theorem m64ModulusEnergyDensity_moving_metric_contDiffAt
   exact (m64ModulusEnergyDensity_mixed_contDiffAt F r
     (q := (t + q.1, q)) ht hv).comp (f := fun w : ℝ × LoopPlane => (t + w.1, w)) q
       (((contDiffAt_const (c := t)).add contDiffAt_fst).prodMk contDiffAt_id)
-
-
-
-
 
 theorem m64ModulusAnnulus_moving_metric_energy_hasDerivAt
     (F : RicciFlow n M (Icc a b)) (r : ℝ) {v : ℝ × LoopPlane → M}

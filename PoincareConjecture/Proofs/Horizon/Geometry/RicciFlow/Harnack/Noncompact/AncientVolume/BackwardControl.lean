@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem curvatureTensorNorm_le_of_bounded_ancient_terminal_scalar
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -44,9 +32,6 @@ theorem curvatureTensorNorm_le_of_bounded_ancient_terminal_scalar
   exact mul_le_mul_of_nonneg_left
     (((F.scalarCurvature_monotoneOn_of_bounded_ancient hC hcomplete hoperator hK hbound x)
       hs0 ht hs).trans (hscalar x hx)) (sq_nonneg _)
-
-
-
 
 theorem exists_escaping_backward_curvature_controlled_sequence
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))
@@ -88,8 +73,6 @@ theorem exists_escaping_backward_curvature_controlled_sequence
   simpa only [mul_left_comm, mul_assoc] using
     F.curvatureTensorNorm_le_of_bounded_ancient_terminal_scalar hC hcomplete hoperator hK hbound
       ht (hcontrol i).2.2
-
-
 
 theorem ball_volume_lower_bound_of_bounded_ancient_terminal_scalar
     [MeasurableSpace M] [BorelSpace M]

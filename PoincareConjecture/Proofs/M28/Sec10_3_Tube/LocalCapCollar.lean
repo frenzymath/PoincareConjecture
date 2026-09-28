@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalCapSeparation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Regions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,7 +37,6 @@ private theorem boundary_region_side {a b : ℝ}
     apply h hx
     rw [C.closed_core_eq_complement_end]
     exact ⟨C.boundary_neck_subset hx.1, hn⟩
-
 
 theorem boundary_neck_sides_m28 :
     (C.boundary_neck.region (-C.boundary_neck.epsilon⁻¹) 0 ⊆ C.core ∧

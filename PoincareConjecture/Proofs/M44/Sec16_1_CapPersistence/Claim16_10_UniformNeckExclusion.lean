@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_NeckConta
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_NeckScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereNeckObstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ namespace PoincareConjecture.M44
 open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem exists_uniform_neck_exclusion_cutoff {K D k : ℝ}
     (hK : 0 < K) (hD : 0 < D) (hk : 0 < k) :

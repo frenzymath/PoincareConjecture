@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ClosedRectangleEnergyVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingMetricDerivative
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,17 +14,10 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 def m64AnnulusWithinColumn (f : LoopPlane → M) (i : Fin 2)
     (p : LoopPlane) : TangentBundle (𝓡 n) M :=
   ⟨f p, mfderivWithin (𝓡 2) (𝓡 n) f m64AnnulusDomain p
     (EuclideanSpace.basisFun (Fin 2) ℝ i)⟩
-
-
-
-
 
 theorem m64AnnulusWithinColumn_continuousOn {f : LoopPlane → M}
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f m64AnnulusDomain) (i : Fin 2) :
@@ -40,18 +29,10 @@ theorem m64AnnulusWithinColumn_continuousOn {f : LoopPlane → M}
 variable {k : ℕ} {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin k)) N] [IsManifold (𝓡 k) ∞ N]
 
-
-
-
-
 def m64AmbientMotionTangent (Phi : ℝ × M → N)
     (w : ℝ × TangentBundle (𝓡 n) M) : TangentBundle (𝓡 k) N :=
   ⟨Phi (w.1, w.2.proj),
     mfderiv ((𝓘(ℝ, ℝ)).prod (𝓡 n)) (𝓡 k) Phi (w.1, w.2.proj) (0, w.2.snd)⟩
-
-
-
-
 
 theorem m64AmbientMotionTangent_contMDiffOn {T : Set ℝ} (hT : IsOpen T)
     {O : Set M} (hO : IsOpen O) (Phi : ℝ × M → N)

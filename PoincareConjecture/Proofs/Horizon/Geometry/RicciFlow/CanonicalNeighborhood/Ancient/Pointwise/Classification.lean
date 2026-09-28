@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.M27KappaAlternatives
 import PoincareConjecture.Statements.M27Providers
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {C : ℝ}
 
-
 def canonicalComponentConstant (C : ℝ) : ℝ := C + C ^ (1 / 2 : ℝ) + 1
 
 private theorem lt_canonicalComponentConstant (hC : 0 < C) :
@@ -37,8 +27,6 @@ private theorem lt_canonicalComponentConstant (hC : 0 < C) :
   have hpow := Real.rpow_pos_of_pos hC (1 / 2 : ℝ)
   dsimp [canonicalComponentConstant]
   linarith
-
-
 
 theorem M27CompactPositiveGeometry.canonicalComponent
     (N : M27CompactPositiveGeometry K C) (hC : 0 < C)
@@ -91,8 +79,6 @@ theorem M27CompactPositiveGeometry.canonicalComponent
     rw [hsinf]
     exact (N.diameter_upper r).trans_le (mul_le_mul_of_nonneg_right hCC.le
       (Real.rpow_nonneg (hscalar r).le _))
-
-
 
 theorem strongCanonicalNeighborhood_of_classification
     (P : M27KappaAlternativePredecessors.{u}) (K : AncientKappaSolution 3 M)

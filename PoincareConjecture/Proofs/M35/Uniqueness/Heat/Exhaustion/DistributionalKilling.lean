@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.LieTestIntegral
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.TensorTestBound
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

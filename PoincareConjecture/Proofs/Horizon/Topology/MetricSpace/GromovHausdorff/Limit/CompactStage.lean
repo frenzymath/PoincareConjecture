@@ -1,19 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Assembly
-
-
-
-
-
-
-
-
-
 
 open Set Filter Metric Topology
 
@@ -24,8 +9,6 @@ namespace Poincare.GromovHausdorff
 universe u
 
 namespace CompatiblePointedCompactSystem
-
-
 
 theorem exists_stageEmbedding_range_superset_of_closedBall
     (S : CompatiblePointedCompactSystem.{u})
@@ -46,9 +29,6 @@ theorem exists_stageEmbedding_range_superset_of_closedBall
     _ ≤ R + dist x S.completedLimit.base := by gcongr
     _ = dist S.completedLimit.base x + R := by rw [dist_comm]; ring
 
-
-
-
 theorem exists_eventually_stageEmbedding_range_superset_of_bounded
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ R : ℝ, ∃ n : ℕ,
@@ -63,10 +43,6 @@ theorem exists_eventually_stageEmbedding_range_superset_of_bounded
   refine ⟨n, hK.trans hn, ?_⟩
   intro m hnm
   exact (hK.trans hn).trans (S.range_stageEmbedding_mono hnm)
-
-
-
-
 
 theorem cauchySeq_tendsto_mem_stage_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -83,13 +59,6 @@ theorem cauchySeq_tendsto_mem_stage_of_radial_stage_coverage
   refine ⟨n, ?_⟩
   apply (S.isCompact_range_stageEmbedding n).isClosed.mem_of_tendsto hy
   exact Filter.Eventually.of_forall (fun k => hn (Set.mem_range.2 ⟨k, rfl⟩))
-
-
-
-
-
-
-
 
 theorem exists_stageEmbedding_range_and_limit_of_cauchySeq
     (S : CompatiblePointedCompactSystem.{u})
@@ -111,4 +80,3 @@ theorem exists_stageEmbedding_range_and_limit_of_cauchySeq
 end CompatiblePointedCompactSystem
 
 end Poincare.GromovHausdorff
-

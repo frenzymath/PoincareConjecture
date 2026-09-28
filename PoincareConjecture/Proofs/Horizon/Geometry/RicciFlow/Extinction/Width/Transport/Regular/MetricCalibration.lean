@@ -43,8 +43,6 @@ theorem m67_regular_flow_initial_metric
   rw [m67_slab_initial_metric]
   exact hmetric x v w
 
-
-
 theorem m67_regular_flow_metric_at
     {g₀ : StandardInitialMetric} (D : RepairedSurgeryFlowData.{u} g₀)
     {W : RepairedEventChildWitness D.flow} {T : ℝ}

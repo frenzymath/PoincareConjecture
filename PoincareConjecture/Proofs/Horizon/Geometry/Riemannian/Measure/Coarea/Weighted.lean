@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Global
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory TopologicalSpace
@@ -22,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)
   (U : Opens M)
   (hreg : ∀ x ∈ U, mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
-
 
 theorem integral_mul_comp_coarea
     {h : M → ℝ} (hh : Continuous h) (hc : HasCompactSupport h)

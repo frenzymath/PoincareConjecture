@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPLSuccessor
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe v w z a
@@ -24,8 +14,6 @@ namespace Geometry.OriginalPLTower
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem protectedAnnulus_pathConnectedSpace : PathConnectedSpace ProtectedAnnulus.source := by
   let : PathConnectedSpace unitInterval := isPathConnected_iff_pathConnectedSpace.mp
@@ -40,9 +28,6 @@ variable {E : Type v} {M : Type w} {ι : Type z}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ (V1 × V2)}
   {f : (V1 × V2) → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem exists_annulus_step_of_two_sheet_cover
     (s : Stage e S f r C) (hS : S.faces.Finite)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.BrokenCostDifferential
 import PoincareConjecture.Proofs.M09.PositiveMomentumDerivative
 import PoincareConjecture.Proofs.M09.PhaseVariationUniqueness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 1600000

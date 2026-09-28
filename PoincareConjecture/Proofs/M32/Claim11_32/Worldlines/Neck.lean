@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Worldlines.Maximal
 import PoincareConjecture.Proofs.M32.Cor11_36.Restriction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 theorem strongNeck_maximalBackwardFlowLine {F : GeneralizedRicciFlowData.{u}}
     {t epsilon : ℝ} (N : GeneralizedStrongNeck F t epsilon)
@@ -57,8 +41,6 @@ theorem strongNeck_maximalBackwardFlowLine {F : GeneralizedRicciFlowData.{u}}
   have hlow := mul_le_mul_of_nonneg_right hs.1 hR.le
   dsimp only [R] at hduration hlow ⊢
   linarith
-
-
 
 theorem maximalBackwardFlowLineSurvival_of_strongNecks
     (S : GeneralizedBlowupSequence.{u}) {mu epsilon : ℝ}

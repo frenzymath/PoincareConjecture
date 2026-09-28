@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_cylinder_of_coverage
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

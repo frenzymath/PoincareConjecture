@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedCylinderSource
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale a : ℝ} {U : Set C.carrier}
-
-
 
 theorem exists_cap_birth_cylinder
     (e : SurgeryFlowCylinder F C origin scale (Icc a 0) U)
@@ -95,8 +84,6 @@ theorem exists_cap_birth_cylinder
       (e.forward (phi s) (hmem hs) (chart.symm (chart x))) at he
     exact Sigma.ext (hclock s hs)
       (he.trans (heq_of_eq (congrArg (e.forward (phi s) (hmem hs)) (chart.left_inv hx))))
-
-
 
 theorem exists_cap_birth_cylinder_scalar_bound
     (e : SurgeryFlowCylinder F C origin scale (Icc a 0) U)

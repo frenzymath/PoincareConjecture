@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappingComponents
 import PoincareConjecture.Proofs.M38.CappingRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ noncomputable local instance unattachedChartedSpace :
 
 include hunattached
 
-
-
 theorem unattached_component_subset_old :
     connectedComponent (cappedOldInclusion F T hT P x) ⊆
       Set.range (cappedOldInclusion F T hT P) := by
@@ -47,8 +36,6 @@ theorem unattached_component_subset_old :
   exact (cappedCapPatch_component F T hT P i z).symm.trans
     (ConnectedComponents.coe_eq_coe'.mpr hq)
 
-
-
 theorem unattached_old_image_component :
     cappedOldInclusion F T hT P '' connectedComponent x =
       connectedComponent (cappedOldInclusion F T hT P x) := by
@@ -61,8 +48,6 @@ theorem unattached_old_image_component :
         connectedComponent (cappedOldInclusion F T hT P x) := hq
     rwa [cappedOldInclusion_preimage_component F T hT P x] at hy
 
-
-
 theorem unattached_inverse_mem {q : CappedDiscardedSpace F T hT P}
     (hq : q ∈ connectedComponent (cappedOldInclusion F T hT P x)) :
     cappedOldInverse F T hT P q ∈ connectedComponent x := by
@@ -72,9 +57,6 @@ theorem unattached_inverse_mem {q : CappedDiscardedSpace F T hT P}
   rw [cappedOldInverse_right F T hT P
     (unattached_component_subset_old F T hT P x hunattached hq)]
   exact hq
-
-
-
 
 noncomputable def unattachedComponentDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3)
@@ -111,8 +93,6 @@ noncomputable def unattachedComponentDiffeomorph :
       (contMDiff_subtype_val (U := componentOpen Q (cappedOldInclusion F T hT P x)))
       (fun q => unattached_component_subset_old F T hT P x hunattached q.property)
 
-
-
 theorem unattached_old_component_compact :
     IsCompact (connectedComponentIn (F.event T hT).retained_preᶜ x.val) := by
   let O := openCarrier (F.slice (F.event T hT).tMinus) (eventDiscardedOpen F T hT)
@@ -138,8 +118,6 @@ theorem unattached_old_component_compact :
       exact ⟨⟨z, hz⟩, Set.mem_univ _, rfl⟩
   change IsCompact ((fun y : (componentCarrier O x).carrier => y.val.val) '' Set.univ) at hcImage
   rwa [hrange] at hcImage
-
-
 
 theorem unattached_component_eq_ambient :
     connectedComponentIn (F.event T hT).retained_preᶜ x.val = connectedComponent x.val := by

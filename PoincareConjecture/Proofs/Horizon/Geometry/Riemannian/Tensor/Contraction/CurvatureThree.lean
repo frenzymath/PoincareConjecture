@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace.Double
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.ProductDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

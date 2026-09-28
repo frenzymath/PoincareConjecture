@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DiffeomorphInverseTime
 import PoincareConjecture.Proofs.M35.RadialGauge.EuclideanGaugeTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem exists_euclideanGauge_family
     {u : ℝ → V → ℝ} {T : ℝ}
@@ -50,8 +39,6 @@ theorem exists_euclideanGauge_family
   intro p hp
   exact (diffeomorph_family_symm_contDiffAt isOpen_Ioo hforward hp.1).contDiffWithinAt
 
-
-
 theorem euclideanGauge_family_hasDerivAt_time
     {u : ℝ → V → ℝ} {T t q : ℝ} {x : V}
     {Φ : ℝ → Diffeomorph (𝓡 (n + 1)) (𝓡 (n + 1)) V V ∞}
@@ -61,8 +48,6 @@ theorem euclideanGauge_family_hasDerivAt_time
   apply (euclideanGauge_hasDerivAt_time hu).congr_of_eventuallyEq
   filter_upwards [isOpen_Ioo.mem_nhds ht] with s hs
   exact congrFun (hΦ s ⟨hs.1.le, hs.2.le⟩) x
-
-
 
 theorem euclideanGauge_family_symm_hasDerivAt_time
     {u : ℝ → V → ℝ} {T t q : ℝ} {x : V}

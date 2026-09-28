@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Tra
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.Event.Precomposition
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.Rebasing.Represents
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -103,8 +93,6 @@ theorem m67_event_transport_of_approximant
     pre.alpha lp.loop family hrep
   rw [htransport] at h
   exact h
-
-
 
 theorem m67_event_transport_family_exists
     (pre : ∀ s : Set.Icc (0 : ℝ) T, M67WidthSlice Syst.quotient (P.component s))

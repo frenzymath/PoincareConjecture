@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 import PoincareConjecture.Definitions.M63Polygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,16 +14,11 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem RiemannianMetric.tangentNorm_smul (g : RiemannianMetric n M)
     (p : M) (r : ℝ) (v : TangentSpace (𝓡 n) p) :
     g.tangentNorm p (r • v) = |r| * g.tangentNorm p v := by
   simp only [RiemannianMetric.tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg r), Real.sqrt_sq_eq_abs]
-
-
-
 
 theorem M63.minimizingGeodesicSide_nonempty [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g) {ell : ℝ} (hell : 0 < ell)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.AffineTriangleComponents
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcProtection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -53,8 +45,6 @@ theorem original_skeleton_triangle_intersection_subset_boundary
   rw [← A.toAffineMap.image_convexHull]
   rw [A.toAffineMap.intrinsicFrontier_image_of_injOn _ hAsp]
   exact mem_image_of_mem A hufront
-
-
 
 theorem exists_original_skeleton_coordinate_protection
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

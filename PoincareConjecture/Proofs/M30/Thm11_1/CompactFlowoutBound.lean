@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.RegularLeve
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open scoped Manifold ContDiff Bundle
 universe u v w
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem scalar_bounded_of_compact_transverse_isometric_flowout
     {n : ℕ} {S : Type u} {Q : Type v} {M : Type w}

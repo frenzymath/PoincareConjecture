@@ -1,17 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Graphs
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Subdivision
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.PolygonalApproximation
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -26,13 +16,10 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
-
 def coordinateGraphBand (lo hi : ℝ → ℝ) (a b : ℝ) :
     Set (EuclideanSpace ℝ (Fin 2)) :=
   collarParameterEquiv ⁻¹'
     {q : ℝ × ℝ | q.1 ∈ Icc a b ∧ lo q.1 ≤ q.2 ∧ q.2 ≤ hi q.1}
-
-
 
 structure SmoothGraphBandPair
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -59,8 +46,6 @@ structure SmoothGraphBandPair
     F (collarParameterEquiv.symm (b, lo b + t * (hi b - lo b)))
   left_edge : ∀ t : ℝ, (upper.boundary 2).map t =
     F (collarParameterEquiv.symm (a, lo a + t * (hi a - lo a)))
-
-
 
 theorem exists_smoothGraphBandPair
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -92,7 +77,6 @@ namespace SmoothGraphBandPair
 variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo hi : ℝ → ℝ} {a b : ℝ} {hab : a < b}
   (B : SmoothGraphBandPair F lo hi hab)
-
 
 def face : Bool → SmoothFace M
   | false => B.lower
@@ -211,7 +195,6 @@ theorem adjacent_edge_eq {hi' : ℝ → ℝ} {c d : ℝ} {hcd : c < d}
   funext t
   rw [B.right_edge, C.left_edge, hheight, hjoin]
 
-
 theorem adjacent_lower_upper_inter {hi' : ℝ → ℝ} {c d : ℝ} {hcd : c < d}
     (C : SmoothGraphBandPair F lo hi' hcd) (hjoin : b = c) (hheight : hi b = hi' c) :
     B.lower.carrier ∩ C.upper.carrier = (B.lower.boundary 0).map '' Icc (0 : ℝ) 1 := by
@@ -237,8 +220,6 @@ theorem disjoint_of_right_lt_left {hi' : ℝ → ℝ} {c d : ℝ} {hcd : c < d}
   have hB := B.parameter_mem hzB
   have hC := C.parameter_mem hzC
   exact (not_lt_of_ge (hC.1.1.trans hB.1.2)) hsep
-
-
 
 theorem adjacent_face_intersection {hi' : ℝ → ℝ} {c d : ℝ} {hcd : c < d}
     (C : SmoothGraphBandPair F lo hi' hcd) (hjoin : b = c) (hheight : hi b = hi' c)
@@ -270,8 +251,6 @@ theorem adjacent_face_intersection {hi' : ℝ → ℝ} {c d : ℝ} {hcd : c < d}
 
 end SmoothGraphBandPair
 
-
-
 structure PolygonalBandFaces
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (lo hi : ℝ → ℝ) (a b ya yb : ℝ) where
@@ -292,9 +271,6 @@ structure PolygonalBandFaces
   piece_bounds : ∀ i t, t ∈ Icc (cut i.castSucc) (cut i.succ) →
     lo t < piece i t ∧ piece i t < hi t
   pair : ∀ i, SmoothGraphBandPair F lo (piece i) (cut_strictMono (Fin.castSucc_lt_succ (i := i)))
-
-
-
 
 theorem exists_polygonalBandFaces
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -352,9 +328,7 @@ namespace PolygonalBandFaces
 variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo hi : ℝ → ℝ} {a b ya yb : ℝ} (P : PolygonalBandFaces F lo hi a b ya yb)
 
-
 def face (i : Fin P.count × Bool) : SmoothFace M := (P.pair i.1).face i.2
-
 
 def band : Set (EuclideanSpace ℝ (Fin 2)) :=
   ⋃ i, coordinateGraphBand lo (P.piece i) (P.cut i.castSucc) (P.cut i.succ)
@@ -400,7 +374,6 @@ theorem cut_interval_cover :
   simpa only [P.cut_first, P.cut_last] using
     iUnion_Icc_consecutive P.count_pos P.cut P.cut_strictMono.monotone
 
-
 noncomputable def vertex (i : Fin (P.count + 1) × Bool) : M :=
   F (collarParameterEquiv.symm
     (P.cut i.1, if i.2 then P.height i.1 else lo (P.cut i.1)))
@@ -412,7 +385,6 @@ theorem adjacent_edges {i j : Fin P.count} (hij : (i : ℕ) + 1 = j) :
   have he : i.succ = j.castSucc := Fin.ext hij
   apply (P.pair i).adjacent_edge_eq (P.pair j) (congrArg P.cut he)
   rw [(P.piece_endpoints i).2, (P.piece_endpoints j).1, he]
-
 
 theorem adjacent_intersection {i j : Fin P.count} (hij : (i : ℕ) + 1 = j) :
     (P.pair i).lower.carrier ∩ (P.pair j).upper.carrier =
@@ -462,8 +434,6 @@ private theorem face_intersection_of_lt {i j : Fin P.count} (hij : i < j) (s t :
     have hsep : (i : ℕ) + 1 < j := by have hval : (i : ℕ) < j := hij; omega
     rw [disjoint_iff_inter_eq_empty.mp (P.nonadjacent_disjoint hsep s t)]
     exact empty_subset _
-
-
 
 theorem face_intersection (i j : Fin P.count × Bool) (hij : i ≠ j) :
     (∃ k l : Fin 3, (P.face i).boundary k = (P.face j).boundary l ∧

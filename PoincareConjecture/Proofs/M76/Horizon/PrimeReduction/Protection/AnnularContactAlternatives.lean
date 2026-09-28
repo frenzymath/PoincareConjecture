@@ -9,9 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
-
 theorem exists_innermost_polygon_disk_in_region
     {ι : Type*} [Finite ι] (n : ι → ℕ) (P : ∀ i, Polygon P2 (n i + 3))
     (hP : ∀ i, (P i).HasSimplicialEdges) (hi : ∀ i, Function.Injective (P i))
@@ -57,10 +54,6 @@ theorem exists_innermost_polygon_disk_in_region
   intro x hx hxall
   exact hx.1 (heq.subset ⟨subset_closure hx, hxall⟩)
 
-
-
-
-
 theorem annular_polygon_family_disk_or_nested
     {ι : Type*} [Finite ι] (n : ι → ℕ) (P : ∀ i, Polygon P2 (n i + 3))
     (hP : ∀ i, (P i).HasSimplicialEdges) (hi : ∀ i, Function.Injective (P i))
@@ -84,9 +77,6 @@ theorem annular_polygon_family_disk_or_nested
     exact Or.inr ⟨hencl, fun i j hij =>
       Dehn.Annuli.enclosing_source_polygons_nested (P i) (P j)
         (hP i) (hi i) (hP j) (hi j) (hdis hij) hwidth (hencl i) (hencl j)⟩
-
-
-
 
 theorem exists_adjacent_enclosing_polygon_annulus
     {ι : Type*} [Finite ι] [Nontrivial ι]

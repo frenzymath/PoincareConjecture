@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Cuts.Re
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Cuts.PrismExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluing.PeriodHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -61,9 +53,6 @@ private theorem periodMap_lateral
         ⟨(not_le.mp hlo).le, (not_le.mp hup).le⟩
       rw [m.product.periodCutMap_middle m.width_pos hg u hlower hupper ⟨hzD, hmid⟩]
       exact hlateral z z.property t hmid
-
-
-
 
 theorem exists_slab_parameter
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d)

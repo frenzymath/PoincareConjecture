@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.NonseparatingCenters
 import PoincareConjecture.Proofs.M25.AppA_21_Local.NonseparatingFiniteAlternative
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicChainTube
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 namespace PoincareConjecture.M25
-
-
-
-
-
 
 theorem nonseparatingLocalInput_of_local_producers : NonseparatingLocalInput.{u} := by
   classical

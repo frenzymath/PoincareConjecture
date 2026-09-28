@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.FieldEntropy
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.EntropyFunction
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -100,7 +92,6 @@ theorem metricEntropyTest_eq_linear_add (g : RiemannianMetric n V)
       metricEntropyRemainder g η C e p + metricEntropyLinear g η e p.1 p.2 := by
   unfold metricEntropyTest metricEntropyRemainder
   ring
-
 
 theorem metricEntropyRemainder_hasCompactSupport (g : RiemannianMetric n V)
     {η : V → ℝ} (hη : HasCompactSupport η) (C : ℝ) (e : V) :

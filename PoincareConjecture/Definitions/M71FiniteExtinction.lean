@@ -4,26 +4,6 @@ import PoincareConjecture.Definitions.M70
 import PoincareConjecture.Definitions.M67InitialClass
 import PoincareConjecture.Definitions.Ch18.FiniteExtinction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -31,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure M71ComponentContinuationData
     {g₀ : StandardInitialMetric}
@@ -50,8 +27,6 @@ structure M71ComponentContinuationData
   A : RepairedAncestryTransportData D W
       (ancestry.path_for T hT terminal_point) K C H B
 
-
-
 abbrev M71ComponentContinuationData.P
     {g₀ : StandardInitialMetric}
     {D : RepairedSurgeryFlowData.{u} g₀}
@@ -62,9 +37,6 @@ abbrev M71ComponentContinuationData.P
     (J : M71ComponentContinuationData D W ancestry B T hT) :
     RepairedComponentPath D.flow T W :=
   ancestry.path_for T hT J.terminal_point
-
-
-
 
 structure M71FiniteContinuationService
     {g₀ : StandardInitialMetric}
@@ -92,8 +64,6 @@ structure M71FiniteContinuationService
               x ∈ Set.range
                 ((packages i).P.component
                   ⟨T, ⟨D.flow.time_domain_nonnegative hT, le_rfl⟩⟩).inclusion
-
-
 
 structure M71GlobalExtinctionInput
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

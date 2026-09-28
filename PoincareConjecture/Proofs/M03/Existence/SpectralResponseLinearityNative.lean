@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralL2ResponseNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -192,7 +183,6 @@ theorem ae_derivativeState_smul_of_memLp [Countable iota] {T : ℝ} (hT : 0 ≤ 
   rw [eq_sub_iff_add_eq.mpr hsmul, eq_sub_iff_add_eq.mpr hFi, hgen]
   simp only [Pi.smul_apply, smul_sub]
 
-
 theorem responseState_eq_of_ae_eq [Countable iota] {T t : ℝ}
     {F G : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))
     (hG : MemLp G 2 (timeMeasure T)) (lambda : iota → NNReal)
@@ -231,7 +221,6 @@ theorem ae_derivativeState_eq_of_ae_eq [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     derivativeState_add_generatorState_of_memLp hT hG lambda,
     ae_generatorState_eq_of_ae_eq hT hF hG lambda hFG, hFG] with t hFi hGi hgen hfg
   rw [eq_sub_iff_add_eq.mpr hFi, eq_sub_iff_add_eq.mpr hGi, hgen, hfg]
-
 
 theorem integral_response_difference_energy_le [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F G : ℝ → State iota} (hF : MemLp F 2 (timeMeasure T))

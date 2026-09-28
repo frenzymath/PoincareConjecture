@@ -7,14 +7,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcEarTransfer
 import Mathlib.Data.Finset.Max
 import Mathlib.Data.Nat.Dist
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -283,9 +275,6 @@ private theorem terminal_local_crossings {n k : ℕ}
   · intro t ht
     rw [hri]
     exact (hrays t ht).2.1
-
-
-
 
 theorem IsSimplePolygonalArc.exists_admissible_away_neighbors
     {n : ℕ} {p : Polygon E (n + 2)} (hp : IsSimplePolygonalArc p)

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InwardArcStrips
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -50,9 +38,6 @@ private theorem positive_normal_strip_of_ray
       rw [hfront] at hf
       exact hpS.2.1.ne' ((hline p (hS hpS)).mp hf))
   exact fun t ht r hr => hsub ⟨(t, r), ⟨ht, hr⟩, rfl⟩
-
-
-
 
 theorem m64Intrinsic_exists_global_inward_orientation
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)
@@ -101,9 +86,6 @@ theorem m64Intrinsic_exists_global_inward_orientation
     Ioo_mem_nhdsGT hdelta
   filter_upwards [hsmall] with r hr
   simpa only [hmap, normalStrip] using hinside t ⟨min_le_right _ _, le_max_right _ _⟩ r hr
-
-
-
 
 theorem m64Intrinsic_exists_positive_loop_collar
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T a b : ℝ}

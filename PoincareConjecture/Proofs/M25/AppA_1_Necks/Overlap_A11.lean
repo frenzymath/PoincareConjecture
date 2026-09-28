@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ScalarControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Escape
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -20,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_overlap_scale_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -49,9 +34,6 @@ theorem exists_overlap_scale_control {α : ℝ} (hα : 0 < α) :
   rw [Real.mul_rpow (sq_nonneg N.scale) N'.scalar_center_pos.le,
     hscale, ← N'.scale_eq_scalar, Real.one_rpow] at hclose
   simpa only [Real.dist_eq, div_eq_mul_inv, mul_comm N'.scale] using hclose
-
-
-
 
 theorem exists_intersecting_scale_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -101,16 +83,12 @@ theorem exists_intersecting_scale_control {α : ℝ} (hα : 0 < α) :
     nlinarith [abs_nonneg (t - 1)]
   exact ⟨hsq.trans_le hdalpha, hroot.trans_lt (hsq.trans_le hdalpha)⟩
 
-
-
 theorem scalar_center_eq_inv_scale_sq {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) :
     N.connection.scalarCurvature N.center = (N.scale ^ 2)⁻¹ := by
   rw [N.scale_eq_scalar, ← Real.rpow_natCast, ← Real.rpow_mul N.scalar_center_pos.le]
   norm_num [Real.rpow_neg_one]
-
-
 
 theorem exists_intersecting_center_scalar_scale_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

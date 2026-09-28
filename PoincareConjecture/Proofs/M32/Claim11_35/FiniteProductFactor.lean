@@ -2,25 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.FiniteProductPersistence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.FactorFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientRescaledLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -36,10 +17,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
-
 
 theorem blowupLimit_exists_fixed_product_on_closed_slab
     (P : RepairedHornSelectionPredecessors.{u}) {T₀ : ℝ≥0∞}

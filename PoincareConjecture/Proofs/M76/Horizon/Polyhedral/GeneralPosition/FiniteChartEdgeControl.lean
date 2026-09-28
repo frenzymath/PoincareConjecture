@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.GeneralPosition.ConvexSegmentNeighborhood
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

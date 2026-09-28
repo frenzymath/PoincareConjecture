@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetOperator
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M47
 open M34 SpacetimeBounds SpacetimeBounds.Bootstrap
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_compact_scalar_jet_tolerance
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)
@@ -67,8 +57,6 @@ theorem terminalCurvature_exists_compact_scalar_jet_tolerance
   dsimp only [F, Function.comp_apply, J0, J] at hout
   rw [twoJetProjection_spatialJet, twoJetProjection_spatialJet, Real.dist_eq] at hout
   simpa only [abs_sub_comm] using hout
-
-
 
 theorem terminalCurvature_eventually_uniform_scalar_jet_error
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)

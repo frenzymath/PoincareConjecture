@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_JacobiGaugeSecond
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeParameterDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeFamilyNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -33,10 +22,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
-
 
 theorem initialValuePath_differential_jacobi_interior
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

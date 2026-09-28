@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.not_both_subset_of_endpoint_contact
     {U s t : Set E} {a b : E} (hU : IsFinitePLBallPair ℝ U {a, b})
@@ -86,11 +71,6 @@ theorem IsFinitePLBallPair.not_both_subset_of_endpoint_contact
   have hva : (v : E) = a := hst ⟨v.property, hvw.symm ▸ w.property⟩
   have hv0 : fs v = 0 := (hzero ⟨v, hsU v.property⟩).mpr hva
   exact hr.ne' (hv.symm.trans hv0)
-
-
-
-
-
 
 theorem exists_opposite_circle_arc_labels
     (arc d : Bool → Set E) {a b : E} (c : Bool → E)

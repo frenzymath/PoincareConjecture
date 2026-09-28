@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.Homeomorph.CompactSupport
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ namespace Diffeomorph
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners ℝ E H}
-
 
 theorem exists_extension_of_isCompact (U : Opens M)
     (F : Diffeomorph I I U U ∞) {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U)

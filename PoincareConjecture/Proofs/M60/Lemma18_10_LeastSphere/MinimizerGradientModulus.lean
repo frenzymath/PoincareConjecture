@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerHessianBound
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerNearLaplacianHolder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,11 +40,6 @@ private theorem disk_integral_le_const {g : Plane → ℝ}
       filter_upwards [ae_restrict_mem Metric.isOpen_ball.measurableSet] with x hx using hb x hx
     _ = _ := by simp only [integral_const, smul_eq_mul, Measure.real,
       Measure.restrict_apply_univ] at hvol ⊢; rw [hvol]
-
-
-
-
-
 
 theorem suNearLaplacian_gradient_modulus :
     ∃ δ C : ℝ, 0 < δ ∧ 0 < C ∧ ∀ (m : ℕ) (D F : ℝ), 0 ≤ D → 0 ≤ F →

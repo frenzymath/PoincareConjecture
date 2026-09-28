@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.PathLengthComparison
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 m) ∞ N]
-
-
-
 
 theorem pathELength_comp_le_of_pointwise_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric m N)
@@ -49,9 +37,6 @@ theorem pathELength_comp_le_of_pointwise_tangentNorm_le
   change h.tangentNorm (f (γ t)) _ ≤ _
   rw [hd]
   exact hbound (γ t) (hγU ht') _
-
-
-
 
 theorem admissiblePath_sInf_image_le_mul
     (g : RiemannianMetric n M) (h : RiemannianMetric m N)
@@ -98,8 +83,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
 
-
-
 theorem intrinsicEDist_image_le_mul
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (f : M → N) (U : Set M) (hf : ∀ x ∈ U, ContMDiffAt (𝓡 3) (𝓡 3) 1 f x)
@@ -109,8 +92,6 @@ theorem intrinsicEDist_image_le_mul
     (x y : M) :
     intrinsicEDist h (f '' U) (f x) (f y) ≤ ENNReal.ofReal C * intrinsicEDist g U x y :=
   g.admissiblePath_sInf_image_le_mul h f U hf hC hbound x y
-
-
 
 theorem intrinsicDiameter_image_le_mul
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -129,8 +110,6 @@ theorem intrinsicDiameter_image_le_mul
     le_iSup_of_le (⟨x, hx⟩, ⟨y, hy⟩) le_rfl
   exact (g.intrinsicEDist_image_le_mul h f U hf hC hbound x y).trans
     (mul_le_mul_right hsource (ENNReal.ofReal C))
-
-
 
 theorem intrinsicDiameter_image_le_mul_of_isOpen
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

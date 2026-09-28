@@ -1,29 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_retained_short_base_length_lower
     (N : IntrinsicAnnulus) {alpha R : ℝ} {E : Set ℝ}
@@ -83,9 +66,6 @@ theorem m64Intrinsic_retained_short_base_length_lower
       m64IntrinsicLongFiberLength N S height R ≤
     ∫ s in S ∩ {s | height s < R}, speed s
   linarith
-
-
-
 
 theorem m64Intrinsic_retained_short_base_stretched_length_gt
     (N : IntrinsicAnnulus) {delta r alpha R : ℝ}

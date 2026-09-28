@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskNormalForm
 import Mathlib.Topology.Covering.AddCircle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Metric Geometry
@@ -167,6 +158,5 @@ theorem hamiltonZero_disk_coordinate_displacement_bound
   change U z + w z ∈ Icc alpha beta
   rw [heq, add_sub_cancel]
   exact (hlift _ (hv z)).1
-
 
 end PoincareConjecture.M76

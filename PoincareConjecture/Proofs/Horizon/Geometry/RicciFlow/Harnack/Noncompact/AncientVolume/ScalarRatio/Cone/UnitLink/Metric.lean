@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.UnitLink.SmoothAtlas
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gluing.Descent
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,13 +14,9 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
 
-
 def UnitSliceRadialChartData.levelMetric (d : UnitSliceRadialChartData hcomparison n) :
     RiemannianMetric n d.Level :=
   d.metric.regularLevelMetric d.smooth d.source d.regular (1 / 2)
-
-
-
 
 theorem exists_unique_unitSliceMetric
     (hcover : ∀ x : AsymptoticConeUnitSlice p hcomparison,
@@ -91,7 +81,6 @@ theorem exists_unique_unitSliceMetric
   rw [hda, hdb, hTz] at hm
   exact hm.symm
 
-
 def unitSliceMetric
     (hcover : ∀ x : AsymptoticConeUnitSlice p hcomparison,
       ∃ (d : UnitSliceRadialChartData hcomparison n) (z : d.Level),
@@ -100,7 +89,6 @@ def unitSliceMetric
     letI := unitSlice_isManifold hcomparison n hcover
     RiemannianMetric n (AsymptoticConeUnitSlice p hcomparison) :=
   (exists_unique_unitSliceMetric hcover).exists.choose
-
 
 theorem unitSliceMetric_inner
     (hcover : ∀ x : AsymptoticConeUnitSlice p hcomparison,
@@ -122,9 +110,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem exists_unitSliceMetric_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

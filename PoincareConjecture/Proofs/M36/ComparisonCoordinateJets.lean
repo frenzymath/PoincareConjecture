@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.RadialWeights
 import PoincareConjecture.Proofs.M36.CenteredNeckChart
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -191,8 +182,6 @@ theorem comparisonCenteredCoordinates_contDiffAt (g₀ : StandardInitialMetric)
       (adaptedInverseCoordinates g₀ x).1 (standardSurgeryHeight g₀ x)) x :=
   comparisonCenteredCoordinates_contDiffAt_of_mem g₀ _ _ hx (mem_chart_source E₂ _)
 
-
-
 theorem exists_comparisonCenteredCoordinates_jet_bound (g₀ : StandardInitialMetric)
     {K : Set StandardCapSpace} (hK : IsCompact K) (hK0 : ∀ x ∈ K, x ≠ 0) (m : ℕ) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ x ∈ K, ∀ j : ℕ, j ≤ m →
@@ -292,8 +281,6 @@ theorem exists_comparisonCenteredCoordinates_jet_bound (g₀ : StandardInitialMe
   change ‖iteratedFDeriv ℝ j
     (cylinderEuclideanEquiv.symm.toContinuousLinearMap ∘ pair) x‖ ≤ _
   exact hcomp.trans ((mul_le_mul_of_nonneg_left hpairb (norm_nonneg _)).trans (by linarith))
-
-
 
 theorem norm_iteratedFDeriv_bilinearPullback_at
     {B : E₃ → E₃ →L[ℝ] E₃ →L[ℝ] ℝ} {f : E₃ → E₃} {x : E₃}

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionHeight
 import PoincareConjecture.Proofs.M25.Mathlib.PlateauMeanValue
 import PoincareConjecture.Proofs.M25.Mathlib.ClosedPrefixTrap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ universe u
 namespace PoincareConjecture
 
 open Classical in
-
-
 
 theorem BalancedNeckChain.exists_oriented_frontier_initial_height_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

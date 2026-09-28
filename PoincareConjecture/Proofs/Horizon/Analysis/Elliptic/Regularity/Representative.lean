@@ -3,17 +3,6 @@ import Mathlib.MeasureTheory.Measure.OpenPos
 import Mathlib.MeasureTheory.Measure.Restrict
 import Mathlib.Data.Set.UnionLift
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Topology
@@ -24,7 +13,6 @@ namespace Poincare.Analysis.Elliptic
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [MeasurableSpace E] [BorelSpace E] [SecondCountableTopology E]
   {μ : Measure E} [μ.IsOpenPosMeasure]
-
 
 theorem eqOn_inter_of_ae_eq {s t : Set E} (hs : IsOpen s) (ht : IsOpen t)
     {f g u : E → ℝ} (hf : ContinuousOn f s) (hg : ContinuousOn g t)
@@ -37,7 +25,6 @@ theorem eqOn_inter_of_ae_eq {s t : Set E} (hs : IsOpen s) (ht : IsOpen t)
   have hg' : g =ᵐ[μ.restrict (s ∩ t)] u :=
     ae_restrict_of_ae_restrict_of_subset inter_subset_right hgu
   exact hf'.trans hg'.symm
-
 
 theorem exists_smooth_representative_of_local {O : Set E} {u : E → ℝ}
     (hlocal : ∀ x ∈ O, ∃ V : Set E, IsOpen V ∧ x ∈ V ∧ V ⊆ O ∧

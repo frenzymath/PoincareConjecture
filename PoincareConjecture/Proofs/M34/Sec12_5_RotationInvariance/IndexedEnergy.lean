@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalCoreFlow
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackFlow
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EnergyCutoffs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g
   {J J' : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
   (F' : RicciFlow 3 StandardCapSpace J') (p : endReferenceRegion e)
 
-
-
 noncomputable def capDifferenceEnergy : ℕ → ℝ → ℝ :=
   letI := (isOpen_univ : IsOpen (univ : Set (V 3))).isOpenEmbedding_subtypeVal.singletonChartedSpace
   letI := (isOpen_univ : IsOpen (univ : Set (V 3))).isOpenEmbedding_subtypeVal.isManifold_singleton
@@ -48,13 +37,9 @@ noncomputable def capDifferenceEnergy : ℕ → ℝ → ℝ :=
       (endPullbackFlow e F j (by have := Nat.cast_nonneg (α := ℝ) j; linarith))
       (endPullbackFlow e F' j (by have := Nat.cast_nonneg (α := ℝ) j; linarith)) p
 
-
-
 theorem capDifferenceEnergy_nonneg (i : ℕ) (t : ℝ) :
     0 ≤ capDifferenceEnergy e qH qA qS F F' p i t := by
   cases i <;> exact canonicalDifferenceEnergy_nonneg _ _ qH qA qS _ _ _ _ t
-
-
 
 theorem capDifferenceEnergy_continuousOn {K : Set ℝ} (hK : IsCompact K)
     (hKJ : K ⊆ J ∩ J') (i : ℕ) :
@@ -69,8 +54,6 @@ theorem capDifferenceEnergy_continuousOn {K : Set ℝ} (hK : IsCompact K)
       (endReferenceRegion e) (endReferenceRegion_isOpen e) qH qA qS
       (energyCutoffs_contDiff e).1.continuous (energyCutoffs_hasCompactSupport e).1
       (endEnergyCutoff_tsupport_subset_region e) _ _ _ hK hKJ
-
-
 
 theorem capDifferenceEnergy_differentiableAt {t : ℝ} (ht : t ∈ interior (J ∩ J'))
     (i : ℕ) : DifferentiableAt ℝ (capDifferenceEnergy e qH qA qS F F' p i) t := by

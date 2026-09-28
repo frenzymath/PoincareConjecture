@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CompactFieldVariation
 import PoincareConjecture.Proofs.M09.ScaledAdaptedField
 import PoincareConjecture.Proofs.M09.SmoothSquareVariation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

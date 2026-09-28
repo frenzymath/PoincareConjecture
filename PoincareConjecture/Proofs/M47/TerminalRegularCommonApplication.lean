@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularCommonBudget
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalHorizon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +9,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalSource_common_slab_of_physical_ceiling
     (F : ℕ → SurgeryFlowData.{u}) (W : ∀ n, M33RegularHistoryWindow (F n))
@@ -58,7 +47,6 @@ theorem terminalSource_common_slab_of_physical_ceiling
   intro z hz
   exact (hk z hz).trans (mul_le_mul_of_nonneg_right
     (by linarith : 2 * K ≤ 2 * ((m : ℝ) + 1)) (V.base_scalar_pos (sigma k)).le)
-
 
 theorem terminalSource_common_maximal_selected_limit
     (P : M47Predecessors.{u}) (V : GeneralizedBlowupSequence.{u})

@@ -152,4 +152,3 @@ theorem exists_closedEuler_extension_of_local {J : Set ℝ} (F : RicciFlow n M J
   exact heq i s (hρ i ((ρ.mem_fintsupport_iff ⟨s, hCU hs⟩ i).mp hi)) hs
 
 end PoincareConjecture.M08
-

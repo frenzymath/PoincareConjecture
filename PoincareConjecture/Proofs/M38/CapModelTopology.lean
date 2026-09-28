@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.TubeExclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M38
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
 
 noncomputable def capCarrierHomeomorph {kind : CapModelKind} {p : RealProjectiveThree}
     {U : Set M} (C : CapModelEquivalence kind p U) :
@@ -36,7 +27,6 @@ noncomputable def capCarrierHomeomorph {kind : CapModelKind} {p : RealProjective
     continuous_toFun := C.forward_smooth.continuousOn.domRestrict
     continuous_invFun := (contMDiffOn_univ.mp C.inverse_smooth).continuous.subtype_mk _ }
 
-
 theorem euclidean_cap_connected {p : RealProjectiveThree} {U : Set M}
     (C : CapModelEquivalence .euclidean p U) : IsConnected U := by
   let := C.model_topology
@@ -44,7 +34,6 @@ theorem euclidean_cap_connected {p : RealProjectiveThree} {U : Set M}
     (capCarrierHomeomorph C).trans C.standard_model
   let : ConnectedSpace U := e.connectedSpace_iff.mpr inferInstance
   exact isConnected_iff_connectedSpace.mpr inferInstance
-
 
 theorem euclidean_cap_not_compact {p : RealProjectiveThree} {U : Set M}
     (C : CapModelEquivalence .euclidean p U) : ¬ IsCompact U := by
@@ -55,7 +44,6 @@ theorem euclidean_cap_not_compact {p : RealProjectiveThree} {U : Set M}
   let : CompactSpace U := isCompact_iff_compactSpace.mp hU
   let : CompactSpace (EuclideanSpace ℝ (Fin 3)) := e.compactSpace
   exact noncompact_univ (EuclideanSpace ℝ (Fin 3)) isCompact_univ
-
 
 theorem no_euclidean_cap_containing_compact_component
     [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]

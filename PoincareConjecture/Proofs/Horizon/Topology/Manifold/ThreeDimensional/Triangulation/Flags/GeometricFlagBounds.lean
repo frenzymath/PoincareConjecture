@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.FiniteFlagDisplacement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.FiniteFlagComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

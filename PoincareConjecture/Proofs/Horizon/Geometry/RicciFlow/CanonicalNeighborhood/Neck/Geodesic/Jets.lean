@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Frame
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Evaluation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_pullback_iterated_normSquared_lt
     (N : EpsilonNeck g) {z : RoundCylinderSpace}
@@ -73,8 +62,6 @@ theorem normalized_pullback_iterated_normSquared_lt
     · exact Finset.mem_range.mpr (Nat.lt_succ_iff.mpr hk)
   exact lt_of_le_of_lt hterm (lt_of_le_of_lt (hjet z hz) hbound)
 
-
-
 theorem normalized_pullback_first_derivative_normSquared_lt
     (N : EpsilonNeck g) {z : RoundCylinderSpace}
     (hz : z.2 ∈ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -89,8 +76,6 @@ theorem normalized_pullback_first_derivative_normSquared_lt
   apply (Nat.one_le_floor_iff _).mpr
   exact (one_le_inv₀ N.epsilon_pos).mpr
     (le_trans (le_of_lt N.epsilon_lt_half) (by norm_num))
-
-
 
 theorem normalized_pullback_first_derivative_apply_le
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}

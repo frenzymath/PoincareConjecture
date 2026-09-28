@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M67.InitialClass
 import PoincareConjecture.Proofs.M59.Providers
 import PoincareConjecture.Proofs.M71.ContinuationInputs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,18 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option linter.style.haveILetI false in
 theorem m71InitialClassFromAncestry
@@ -49,8 +29,6 @@ theorem m71InitialClassFromAncestry
     (Classical.choice (m59BasepointTransport_from_M59 hM59))
     C (F.metric 0) metric hpullback topology
 
-
-
 theorem m71InitialClassFromM02M59
     (hM59 : M59LoopClassesAndComponentTopologyTheory.{u})
     (F : SurgeryFlowData.{u}) (L : RawLocalSurgeryTopologyData F)
@@ -58,10 +36,6 @@ theorem m71InitialClassFromM02M59
     Nonempty (M67InitialClassData (Classical.choose hM59)
       P.ancestry.initial_component (F.metric 0)) :=
   m71InitialClassFromAncestry m59ClosedTopologyProvider_from_M02 hM59 F L P
-
-
-
-
 
 theorem m71ContinuationFromInitialTopology
     (P02 : RepairedClosedTopologyProvider.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceJetFluxParameters
 import PoincareConjecture.Proofs.M34.Standard.UniformDifferenceJetFlux
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M34
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
-
 
 noncomputable def canonicalDomain_curvatureDifferenceFlux :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -42,9 +30,6 @@ noncomputable def canonicalDomain_curvatureDifferenceFlux :
     (canonicalDomain_differenceEnergyBackground U hU g D p x).1.2
     (canonicalDomain_curvatureArray U hU g' D' p x)
     (canonicalDomain_covariantCurvatureArray U hU g' D' p x) H A S
-
-
-
 
 noncomputable def canonicalDomain_curvatureDifferenceRemainder {dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :
@@ -63,8 +48,6 @@ noncomputable def canonicalDomain_curvatureDifferenceRemainder {dS : ℕ}
     (canonicalDomain_curvatureArray U hU g' D' p x)
     (canonicalDomain_covariantCurvatureArray U hU g' D' p x)
     (canonicalDomain_raisedCurvatureFlux U hU g' D' p x) d H A S
-
-
 
 theorem canonicalDomain_curvatureDifferenceFlux_from_jets :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -87,8 +70,6 @@ theorem canonicalDomain_curvatureDifferenceFlux_from_jets :
     canonicalDomain_connectionThreeJet U hU g D p x hx,
     canonicalDomain_curvatureThreeJet U hU g' D' p x hx,
     canonicalDomain_covariantCurvatureThreeJet U hU g' D' p x hx]
-
-
 
 theorem canonicalDomain_curvatureDifferenceRemainder_from_jets {dS : ℕ}
     (qS : FS n ≃L[ℝ] EuclideanSpace ℝ (Fin dS)) :

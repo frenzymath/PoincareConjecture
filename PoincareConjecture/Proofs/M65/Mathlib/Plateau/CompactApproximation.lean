@@ -1,22 +1,10 @@
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Metric
-
-
-
 
 theorem totallyBounded_range_of_uniform_approximation
     {X I : Type*} [PseudoMetricSpace X] (u : I → X)

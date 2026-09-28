@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.TwoCircleSphere
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.TwoCapComplement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -21,7 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Ann" => squareAnnulus 8 1
 
 open Classical in
-
 
 theorem exists_annulus_of_count_zero
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

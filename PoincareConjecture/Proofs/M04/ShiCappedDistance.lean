@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M04.ShiPathCarrier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -252,4 +245,3 @@ theorem continuousOn_shiCappedDistance_flow [T2Space M]
         (shiCappedDistance_flow_modulus F hK hR p hretain hRm hw.1 hz.1 w.2) le_rfl
 
 end PoincareConjecture.M04
-

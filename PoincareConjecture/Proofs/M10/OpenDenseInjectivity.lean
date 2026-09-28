@@ -1,13 +1,5 @@
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,7 +7,6 @@ open Set
 namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space X]
-
 
 theorem injective_of_open_dense_injOn {f : X → Y} (hf : Continuous f)
     (hfopen : IsOpenMap f) {S : Set X} (hS : IsOpen S) (hdense : Dense S)

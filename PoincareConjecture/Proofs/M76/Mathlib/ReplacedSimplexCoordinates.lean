@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +8,6 @@ open Set
 namespace AffineBasis
 
 variable {ι E : Type*} [Finite ι] [DecidableEq ι] [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem mem_convexHull_update_of_coord (b : AffineBasis ι ℝ E) (i : ι) (q y : E)
     (hqi : b.coord i q ≠ 0) (hc : 0 ≤ b.coord i y / b.coord i q)

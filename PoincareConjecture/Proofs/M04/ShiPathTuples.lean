@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M04.ShiNormalCoordinates
 import PoincareConjecture.Proofs.M04.ShiJoinedDensity
 import PoincareConjecture.Proofs.M04.ShiJoinedVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -647,4 +639,3 @@ theorem shiPathTuple_density_regular [T2Space M] (D : LeviCivitaData g)
   · simpa +instances only [Function.comp_def] using! hjets.2.comp htuple hbase
 
 end PoincareConjecture.M04
-

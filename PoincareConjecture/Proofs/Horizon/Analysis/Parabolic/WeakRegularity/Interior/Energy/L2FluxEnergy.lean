@@ -1,20 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.L2Commutator.FluxL2
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.L2Approximation
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open Poincare.Analysis.Convolution
@@ -134,6 +120,5 @@ theorem exists_uniform_l2_flux_commutator_bound
     have hm := hmajor y
     simpa only [← pow_two, sq_abs] using mul_self_le_mul_self (abs_nonneg (F y)) hm
   exact hcompare.trans (hsq.trans (by linarith))
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Canonical

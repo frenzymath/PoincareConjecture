@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFiniteAffineCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem free_face_hull_subset_closed_active
     (K P : SimplicialComplex ℝ E) (hPK : P ≤ K)
@@ -40,10 +26,6 @@ theorem free_face_hull_subset_closed_active
     · exact hxC
   exact (convex_convexHull ℝ (a : Set E)).subset_closure_intrinsicInterior.trans
     (closure_minimal hrel hC)
-
-
-
-
 
 theorem face_card_le_of_hull_subset_finite_carrier
     (K L : SimplicialComplex ℝ E) (hL : L.faces.Finite)

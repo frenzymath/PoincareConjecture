@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.CurvatureFormula
 import PoincareConjecture.Proofs.M34.Mathlib.RadialGram
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capMetricInner_gram (a : ℝ) (x u v : StandardCapSpace) :
     capMetricInner a x u u * capMetricInner a x v v - capMetricInner a x u v ^ 2 =
@@ -27,7 +16,6 @@ theorem capMetricInner_gram (a : ℝ) (x u v : StandardCapSpace) :
   exact Poincare.radial_pairing_gram _ _ x u v
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capCurvatureTensor_formula {a : ℝ} (ha : 0 < a) (hapi : a ≤ Real.pi / 2)
     (D : LeviCivitaData (capRiemannianMetric a ha hapi))
@@ -52,8 +40,6 @@ theorem capCurvatureTensor_formula {a : ℝ} (ha : 0 < a) (hapi : a ≤ Real.pi 
   ring
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem capCurvatureTensor_eq_quarter_of_profile {a : ℝ}
     (ha : 0 < a) (hapi : a ≤ Real.pi / 2)

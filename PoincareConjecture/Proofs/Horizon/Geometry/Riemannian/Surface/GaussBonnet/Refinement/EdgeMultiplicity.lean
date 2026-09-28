@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.CutMembership
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem affineTriangle_shared_edge_coord
     (b c : AffineBasis (Fin 3) ℝ Plane) (h0 : b 0 = c 0) (h1 : b 1 = c 1) :
@@ -38,8 +29,6 @@ theorem affineTriangle_shared_edge_coord_ne_zero
   have h := congrArg (fun l : Plane →ᵃ[ℝ] ℝ => l (b 2))
     (affineTriangle_shared_edge_coord b c h0 h1)
   simp [hzero] at h
-
-
 
 theorem affineTriangle_shared_edge_interiors_overlap
     (b c : AffineBasis (Fin 3) ℝ Plane) (h0 : b 0 = c 0) (h1 : b 1 = c 1)
@@ -87,8 +76,6 @@ theorem affineTriangle_shared_edge_interiors_overlap
       AffineMap.lineMap_apply_ring, hq, AffineBasis.coord_apply] <;>
       norm_num [Fin.ext_iff] <;> linarith
 
-
-
 theorem affineTriangle_shared_edge_coord_neg
     (b c : AffineBasis (Fin 3) ℝ Plane) (h0 : b 0 = c 0) (h1 : b 1 = c 1)
     (hdisjoint : Disjoint (interior (convexHull ℝ (range b)))
@@ -98,8 +85,6 @@ theorem affineTriangle_shared_edge_coord_neg
     obtain ⟨z, hzb, hzc⟩ := affineTriangle_shared_edge_interiors_overlap b c h0 h1 (lt_of_not_ge h)
     exact disjoint_left.mp hdisjoint hzb hzc
   exact lt_of_le_of_ne hnonpos (affineTriangle_shared_edge_coord_ne_zero b c h0 h1)
-
-
 
 theorem not_three_affineTriangles_shared_edge
     (a b c : AffineBasis (Fin 3) ℝ Plane)
@@ -119,7 +104,6 @@ theorem not_three_affineTriangles_shared_edge
     (affineTriangle_shared_edge_coord a b hab0 hab1)
   change a.coord 2 (c 2) = a.coord 2 (b 2) * b.coord 2 (c 2) at heq
   nlinarith
-
 
 theorem exists_meshTriangleBasis_with_edge (M : TriangleMesh) (t : M.Triangle)
     {a b : M.Vertex} (ha : a ∈ t.1) (hb : b ∈ t.1) (hab : a ≠ b) :
@@ -144,8 +128,6 @@ theorem exists_meshTriangleBasis_with_edge (M : TriangleMesh) (t : M.Triangle)
   · simpa only [AffineBasis.reindex_apply, Equiv.symm_symm, he1] using hj
   · simp only [AffineBasis.coe_reindex, Equiv.symm_symm, Set.range_comp, Equiv.range_eq_univ,
       Set.image_univ]
-
-
 
 theorem mesh_common_edge_intersection (M : TriangleMesh) (t u : M.Triangle)
     (htu : t ≠ u) {a b : M.Vertex} (hab : a ≠ b)
@@ -175,7 +157,6 @@ theorem mesh_common_edge_intersection (M : TriangleMesh) (t u : M.Triangle)
   simp only [Finset.coe_insert, Finset.coe_singleton, Set.image_insert_eq,
     Set.image_singleton, convexHull_pair]
 
-
 theorem mesh_common_edge_disjoint_interiors (M : TriangleMesh) (t u : M.Triangle)
     (htu : t ≠ u) {a b : M.Vertex} (hab : a ≠ b)
     (hat : a ∈ t.1) (hbt : b ∈ t.1) (hau : a ∈ u.1) (hbu : b ∈ u.1) :
@@ -194,8 +175,6 @@ theorem mesh_common_edge_disjoint_interiors (M : TriangleMesh) (t u : M.Triangle
   have hpos := hzt 2
   norm_num [← hc0, ← hc1, AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring,
     AffineBasis.coord_apply, Fin.ext_iff] at hpos
-
-
 
 theorem mesh_edge_parent_card_le_two (M : TriangleMesh) {a b : M.Vertex} (hab : a ≠ b) :
     (Finset.univ.filter fun t : M.Triangle => a ∈ t.1 ∧ b ∈ t.1).card ≤ 2 := by
@@ -218,8 +197,6 @@ theorem mesh_edge_parent_card_le_two (M : TriangleMesh) {a b : M.Vertex} (hab : 
   · rw [hru, hrv]
     exact mesh_common_edge_disjoint_interiors M u v huv hab hu'.1 hu'.2 hv'.1 hv'.2
 
-
-
 theorem localRefinementBoundaryCuts_parent_card_eq_two (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -240,7 +217,6 @@ theorem localRefinementBoundaryCuts_parent_card_eq_two (M : TriangleMesh)
     Finset.one_lt_card.mpr ⟨t, by simp [hqt], u, by simp [hqu], hut.symm⟩
   omega
 
-
 theorem localRefinementBoundaryCuts_card_eq_two (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
     (hq : q ∈ localRefinementBoundaryCuts M f t)
@@ -251,8 +227,6 @@ theorem localRefinementBoundaryCuts_card_eq_two (M : TriangleMesh)
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem lineRefinementMesh_new_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

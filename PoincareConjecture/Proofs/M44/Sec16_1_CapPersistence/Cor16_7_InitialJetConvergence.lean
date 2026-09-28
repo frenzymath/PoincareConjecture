@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedCoefficients
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) 
 
 noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_initial_comparison_domain_threshold (g₀ : StandardInitialMetric)
     {K : Set E} (hK : IsCompact K) (j : ℕ) :
@@ -49,9 +37,6 @@ theorem exists_initial_comparison_domain_threshold (g₀ : StandardInitialMetric
   have hb : M36.radialArclength g₀ ‖x‖ ≤ |B| :=
     (le_abs_self _).trans ((hB x hx).trans (le_abs_self B))
   linarith [Nat.cast_nonneg (α := ℝ) j]
-
-
-
 
 theorem tendstoUniformlyOn_initial_coefficient_jets
     (g₀ : StandardInitialMetric)

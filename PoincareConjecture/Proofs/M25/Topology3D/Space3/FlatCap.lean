@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +9,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_smooth_positive_profile [FiniteDimensional ℝ E]
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -53,9 +37,6 @@ theorem exists_smooth_positive_profile [FiniteDimensional ℝ E]
     simp only [a, hzero, zero_mul, zero_add]
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_smooth_profile_between [FiniteDimensional ℝ E]
     {K U : Set E} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
@@ -87,8 +68,6 @@ theorem exists_smooth_profile_between [FiniteDimensional ℝ E]
 
 variable (a : E → ℝ) (ha : ContDiff ℝ ∞ a) (ha0 : ∀ x, a x ≠ 0)
 
-
-
 noncomputable def fiberScalingDiffeomorph :
     Diffeomorph 𝓘(ℝ, E × F) 𝓘(ℝ, E × F) (E × F) (E × F) ∞ where
   toEquiv := {
@@ -106,10 +85,8 @@ noncomputable def fiberScalingDiffeomorph :
     (contDiff_fst.prodMk (((ha.comp contDiff_fst).inv
       (fun p => ha0 p.1)).smul contDiff_snd)).contMDiff
 
-
 @[simp] theorem fiberScalingDiffeomorph_apply (p : E × F) :
     fiberScalingDiffeomorph a ha ha0 p = (p.1, a p.1 • p.2) := rfl
-
 
 @[simp] theorem fiberScalingDiffeomorph_symm_apply (p : E × F) :
     (fiberScalingDiffeomorph a ha ha0).symm p = (p.1, (a p.1)⁻¹ • p.2) := rfl

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M02.CubeBoundaryAdjustment
 import PoincareConjecture.Proofs.M02.HomotopyMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -21,8 +12,6 @@ namespace GenLoop
 variable {N X Y : Type*} [Finite N] [TopologicalSpace X] [TopologicalSpace Y]
   {x y z : X}
 
-
-
 structure HomotopyAlong (p : Path x y) (a : GenLoop N X x) (b : GenLoop N X y)
     extends a.val.Homotopy b.val where
   boundary_path : ∀ (t : I) (v : Cube.boundary N), toHomotopy (t, v) = p t
@@ -32,19 +21,13 @@ namespace HomotopyAlong
 variable {p : Path x y} {q : Path y z}
   {a : GenLoop N X x} {b : GenLoop N X y} {c : GenLoop N X z}
 
-
-
 def refl (a : GenLoop N X x) : HomotopyAlong (Path.refl x) a a where
   toHomotopy := ContinuousMap.Homotopy.refl a.val
   boundary_path _ v := GenLoop.boundary a v v.property
 
-
-
 def symm (H : HomotopyAlong p a b) : HomotopyAlong p.symm b a where
   toHomotopy := H.toHomotopy.symm
   boundary_path _ v := H.boundary_path _ v
-
-
 
 def trans (H : HomotopyAlong p a b) (G : HomotopyAlong q b c) :
     HomotopyAlong (p.trans q) a c where
@@ -55,21 +38,15 @@ def trans (H : HomotopyAlong p a b) (G : HomotopyAlong q b c) :
     · exact H.boundary_path _ v
     · exact G.boundary_path _ v
 
-
-
 def ofRel {a b : GenLoop N X x} (H : a.val.HomotopyRel b.val (Cube.boundary N)) :
     HomotopyAlong (Path.refl x) a b where
   toHomotopy := H.toHomotopy
   boundary_path t v := (H.eq_fst t v.property).trans (GenLoop.boundary a v v.property)
 
-
-
 def toRel {a b : GenLoop N X x} (H : HomotopyAlong (Path.refl x) a b) :
     a.val.HomotopyRel b.val (Cube.boundary N) where
   toHomotopy := H.toHomotopy
   prop' t v hv := (H.boundary_path t ⟨v, hv⟩).trans (GenLoop.boundary a v hv).symm
-
-
 
 theorem change_path (H : HomotopyAlong p a b) {q : Path x y}
     (P : p.Homotopic q) : Nonempty (HomotopyAlong q a b) := by
@@ -87,15 +64,11 @@ theorem change_path (H : HomotopyAlong p a b) {q : Path x y}
     toHomotopy := H'
     boundary_path := fun t v => (hH' t v).trans (P.apply_one t) }⟩
 
-
-
 theorem endpoint_homotopic {c : GenLoop N X y}
     (H : HomotopyAlong p a b) (G : HomotopyAlong p a c) : Homotopic b c :=
   PoincareConjecture.Proofs.M02.cube_homotopicRel_of_homotopies_with_same_boundary
     a.val b.val c.val H.toHomotopy G.toHomotopy
     (fun t v => (H.boundary_path t v).trans (G.boundary_path t v).symm)
-
-
 
 def map (H : HomotopyAlong p a b) (f : C(X, Y)) :
     HomotopyAlong (p.map f.continuous)
@@ -103,8 +76,6 @@ def map (H : HomotopyAlong p a b) (f : C(X, Y)) :
       (PoincareConjecture.Proofs.M02.mapGenLoop f rfl b) where
   toHomotopy := (ContinuousMap.Homotopy.refl f).comp H.toHomotopy
   boundary_path t v := congrArg f (H.boundary_path t v)
-
-
 
 def const (p : Path x y) :
     HomotopyAlong p (GenLoop.const : GenLoop N X x) GenLoop.const where
@@ -115,8 +86,6 @@ def const (p : Path x y) :
   boundary_path _ _ := rfl
 
 end HomotopyAlong
-
-
 
 theorem exists_homotopyAlong (p : Path x y) (a : GenLoop N X x) :
     ∃ b : GenLoop N X y, Nonempty (HomotopyAlong p a b) := by
@@ -132,31 +101,21 @@ theorem exists_homotopyAlong (p : Path x y) (a : GenLoop N X x) :
                map_one_left := fun _ => rfl
                boundary_path := hFB }⟩⟩
 
-
-
 def boundaryTransport (p : Path x y) (a : GenLoop N X x) : GenLoop N X y :=
   Classical.choose (exists_homotopyAlong p a)
-
-
 
 def boundaryTransportHomotopy (p : Path x y) (a : GenLoop N X x) :
     HomotopyAlong p a (boundaryTransport p a) :=
   Classical.choice (Classical.choose_spec (exists_homotopyAlong p a))
-
-
 
 theorem boundaryTransport_homotopic_of_homotopyAlong
     {p : Path x y} {a : GenLoop N X x} {b : GenLoop N X y}
     (H : HomotopyAlong p a b) : Homotopic (boundaryTransport p a) b :=
   (boundaryTransportHomotopy p a).endpoint_homotopic H
 
-
-
 theorem boundaryTransport_refl (a : GenLoop N X x) :
     Homotopic (boundaryTransport (Path.refl x) a) a :=
   boundaryTransport_homotopic_of_homotopyAlong (HomotopyAlong.refl a)
-
-
 
 theorem boundaryTransport_trans (p : Path x y) (q : Path y z) (a : GenLoop N X x) :
     Homotopic (boundaryTransport (p.trans q) a)
@@ -165,13 +124,9 @@ theorem boundaryTransport_trans (p : Path x y) (q : Path y z) (a : GenLoop N X x
     ((boundaryTransportHomotopy p a).trans
       (boundaryTransportHomotopy q (boundaryTransport p a)))
 
-
-
 theorem boundaryTransport_symm (p : Path x y) (a : GenLoop N X x) :
     Homotopic (boundaryTransport p.symm (boundaryTransport p a)) a :=
   boundaryTransport_homotopic_of_homotopyAlong (boundaryTransportHomotopy p a).symm
-
-
 
 theorem boundaryTransport_homotopic (p : Path x y) {a b : GenLoop N X x}
     (h : Homotopic a b) : Homotopic (boundaryTransport p a) (boundaryTransport p b) := by
@@ -180,20 +135,14 @@ theorem boundaryTransport_homotopic (p : Path x y) {a b : GenLoop N X x}
     (Path.Homotopic.refl_trans p)
   exact boundaryTransport_homotopic_of_homotopyAlong G
 
-
-
 theorem boundaryTransport_path_homotopic {p q : Path x y} (h : p.Homotopic q)
     (a : GenLoop N X x) : Homotopic (boundaryTransport p a) (boundaryTransport q a) := by
   obtain ⟨H⟩ := (boundaryTransportHomotopy p a).change_path h
   exact (boundaryTransport_homotopic_of_homotopyAlong H).symm
 
-
-
 theorem boundaryTransport_const (p : Path x y) :
     Homotopic (boundaryTransport p (GenLoop.const : GenLoop N X x)) GenLoop.const :=
   boundaryTransport_homotopic_of_homotopyAlong (HomotopyAlong.const p)
-
-
 
 theorem boundaryTransport_map (p : Path x y) (a : GenLoop N X x) (f : C(X, Y)) :
     Homotopic

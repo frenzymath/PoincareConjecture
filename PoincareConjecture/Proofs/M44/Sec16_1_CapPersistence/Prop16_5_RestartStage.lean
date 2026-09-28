@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalRe
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_ScalarComparison
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_SmallHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +22,6 @@ noncomputable local instance restartStageCoefficientNorm :
 
 noncomputable local instance restartStageCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem exists_cap_sequence_restart
     (P : M44CapPersistencePredecessors.{u})

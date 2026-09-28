@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteDoublePairPatches
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactDoubleRelation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_double_relation_complex
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

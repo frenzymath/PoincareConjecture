@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.TerminalBlowup.Mathlib.ConcaveRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -43,9 +34,6 @@ private theorem false_of_nonneg_of_weighted_negative_deriv
   dsimp only [F] at h
   nlinarith [hpos b hb]
 
-
-
-
 theorem weighted_radial_derivative_nonneg
     {f f₁ f₂ s v : ℝ → ℝ}
     (hpos : ∀ r, 0 < r → 0 < f r)
@@ -69,8 +57,6 @@ theorem weighted_radial_derivative_nonneg
     (fun u hu => hs u (hr.trans_le hu))
     (fun u hu => (hv u (hr.trans_le hu)).le) hsinf
     (fun u hu => hanti hr (hr.trans_le hu) hu)
-
-
 
 theorem weighted_radial_radius_sq_le_of_eventual_scalar_floor
     {f f₁ f₂ s v : ℝ → ℝ}

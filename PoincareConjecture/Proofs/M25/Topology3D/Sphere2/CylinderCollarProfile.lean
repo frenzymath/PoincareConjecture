@@ -4,12 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Topology
@@ -243,7 +237,6 @@ noncomputable def collarProfileDiffeomorph : ℝ ≃ₘ[ℝ] ℝ := by
   apply ContDiff.contMDiff
   exact e.contDiff_symm_deriv (fun x => (P.collarProfile_deriv_pos x).ne')
     (fun x => P.hasDerivAt_collarProfile x) he
-
 
 @[simp] theorem collarProfileDiffeomorph_apply (h : ℝ) :
     P.collarProfileDiffeomorph h = collarProfile P h := rfl

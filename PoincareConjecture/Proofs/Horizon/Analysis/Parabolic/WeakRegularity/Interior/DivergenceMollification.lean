@@ -1,18 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Mollification
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
@@ -112,14 +99,6 @@ private theorem integrable_translated_product {η f : Spacetime n → ℝ}
   ((hη.comp (continuous_const.sub continuous_id)).mul hf).integrable_of_hasCompactSupport
     ((hηc.comp_homeomorph (Homeomorph.subLeft z)).mul_right)
 
-
-
-
-
-
-
-
-
 theorem divergence_form_operator_identity
     {C : Coefficients n} {u : Spacetime n → ℝ}
     (hCprincipal : ∀ i j, ContDiff ℝ ∞ (C.principal i j))
@@ -165,9 +144,6 @@ theorem divergence_form_operator_identity
   change timeDeriv u z - (D + A) =
     timeDeriv u z - A + B + C.zeroth z * u z - (B + D) - C.zeroth z * u z
   ring
-
-
-
 
 theorem spatial_deriv_coefficient_mollification
     {q u η : Spacetime n → ℝ} (hq : ContDiff ℝ ∞ q)

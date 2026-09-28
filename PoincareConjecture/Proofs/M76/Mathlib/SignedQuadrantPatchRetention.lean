@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FrontierPatchConeNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace CoordinateHalfBoxes
-
-
-
 
 def signedRectangle (r : ℝ) (i : Bool × Bool) : Set (ℝ × ℝ) :=
   uIcc 0 (if i.1 then -r else r) ×ˢ uIcc 0 (if i.2 then -r else r)
@@ -45,9 +31,6 @@ private theorem mem_Icc_iff_mem_signedInterval {r x : ℝ} (hr : 0 ≤ r) :
       rw [uIcc_of_ge (neg_nonpos.mpr hr)] at hi
       exact ⟨hi.1, hi.2.trans hr⟩
 
-
-
-
 theorem base_eq_iUnion_signedRectangle {r : ℝ} (hr : 0 ≤ r) :
     base r = ⋃ i : Bool × Bool, signedRectangle r i := by
   ext x
@@ -61,16 +44,10 @@ theorem base_eq_iUnion_signedRectangle {r : ℝ} (hr : 0 ≤ r) :
     exact ⟨(mem_Icc_iff_mem_signedInterval hr).mpr ⟨i.1, hi.1⟩,
       (mem_Icc_iff_mem_signedInterval hr).mpr ⟨i.2, hi.2⟩⟩
 
-
-
-
 theorem image_base_eq_iUnion_signedRectangle {E : Type*}
     (ψ : (ℝ × ℝ) → E) {r : ℝ} (hr : 0 ≤ r) :
     ψ '' base r = ⋃ i : Bool × Bool, ψ '' signedRectangle r i := by
   rw [base_eq_iUnion_signedRectangle hr, image_iUnion]
-
-
-
 
 theorem cone_image_base_eq_iUnion_signedRectangle
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -78,9 +55,6 @@ theorem cone_image_base_eq_iUnion_signedRectangle
     convexJoin ℝ {0} (ψ '' base r) =
       ⋃ i : Bool × Bool, convexJoin ℝ {0} (ψ '' signedRectangle r i) := by
   rw [image_base_eq_iUnion_signedRectangle ψ hr, convexJoin_iUnion_right]
-
-
-
 
 theorem eqOn_image_base_of_signedRectangles {E F : Type*} {S : Set E}
     (ψ : (ℝ × ℝ) → E) (g : S → F) (L : E → F) {r : ℝ} (hr : 0 ≤ r)
@@ -95,11 +69,6 @@ theorem eqOn_image_base_of_signedRectangles {E F : Type*} {S : Set E}
 end CoordinateHalfBoxes
 
 open CoordinateHalfBoxes
-
-
-
-
-
 
 theorem ContinuousAffineEquiv.exists_box_eq_linear_of_signed_quadrant_cones
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

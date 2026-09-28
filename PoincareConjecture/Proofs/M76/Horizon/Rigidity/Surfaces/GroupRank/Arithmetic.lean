@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEu
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.CharacterKernel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.EssentialClosedComponent
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -22,8 +11,6 @@ open PoincareConjecture.M76.Dehn
 open AbstractSimplicialComplex
 
 namespace PoincareConjecture.M76
-
-
 
 theorem finrank_closed_le_finrank_coboundaries_add_three
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -46,8 +33,6 @@ theorem finrank_closed_le_finrank_coboundaries_add_three
   have hcodim : Module.finrank (ZMod 2) (Fin 3 → ZMod 2) ≤ 3 := by
     norm_num [Module.finrank_pi]
   omega
-
-
 
 open Classical in
 theorem surfaceEulerCount_eq_zero_of_character_rank
@@ -105,8 +90,6 @@ theorem surfaceEulerCount_eq_zero_of_character_rank
     omega
   rcases hparity with ⟨k, hk⟩
   omega
-
-
 
 theorem FrontierResidualModel.residual_eq_two_of_character_rank
     {X ι : Type*} [TopologicalSpace X]

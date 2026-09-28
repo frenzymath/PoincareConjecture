@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.Regions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,13 +9,11 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n m : ℕ} {p : Polygon E n} {q : Polygon E m}
 
-
 theorem IsSimplePolygon.closure_polygonExterior (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
     closure (polygonExterior p) = polygonExterior p ∪ p.boundary ℝ := by
   obtain ⟨_, _, _, _, _, _, _, _, _, hfront⟩ := hp.polygonRegions_spec hdim
   rw [closure_eq_self_union_frontier, hfront]
-
 
 theorem IsSimplePolygon.polygonInterior_eq_compl_closure_exterior (hp : IsSimplePolygon p)
     (hdim : Module.finrank ℝ E = 2) :
@@ -43,8 +31,6 @@ theorem IsSimplePolygon.polygonInterior_eq_compl_closure_exterior (hp : IsSimple
     have hxcover : x ∈ polygonInterior p ∪ polygonExterior p := hcover.symm ▸ hxB
     exact hxcover.resolve_right fun hz => hx (Or.inl hz)
 
-
-
 theorem IsSimplePolygon.polygonExterior_subset_of_boundary_subset_closureInterior
     (hp : IsSimplePolygon p) (hq : IsSimplePolygon q) (hdim : Module.finrank ℝ E = 2)
     (hB : q.boundary ℝ ⊆ closure (polygonInterior p)) :
@@ -59,8 +45,6 @@ theorem IsSimplePolygon.polygonExterior_subset_of_boundary_subset_closureInterio
   rcases hOp.isConnected.isPreconnected.subset_or_subset hIq hOq hdis havoid with h | h
   · exact (hOb (hIb.subset h)).elim
   · exact h
-
-
 
 theorem IsSimplePolygon.polygonRegions_subset_of_boundary_subset_closureInterior
     (hp : IsSimplePolygon p) (hq : IsSimplePolygon q) (hdim : Module.finrank ℝ E = 2)

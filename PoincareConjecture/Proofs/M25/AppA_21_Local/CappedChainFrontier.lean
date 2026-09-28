@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCuts
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.FiniteChainFrontier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem CapCertificate.frontier_union_finite_chain_subset_positive_closure
     (C : CapCertificate g) (D : BalancedNeckChain g C.epsilon)
@@ -94,8 +81,6 @@ theorem CapCertificate.frontier_union_finite_chain_subset_positive_closure
       hxneg | hxpos
   · exact False.elim (hxC (hneg (by simpa only [hstart] using hxneg)))
   · exact hxpos
-
-
 
 theorem CapCertificate.exists_positive_chain_frontier
     (C : CapCertificate g) (D : BalancedNeckChain g C.epsilon)

@@ -6,24 +6,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTranspor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapHeightCompression
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_moved_lower_end_replacement
     (hP : PlanarSchoenfliesService)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricConvergence
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem terminalComponentMetric_scalarCurvature
     (S : GeneralizedBlowupSequence.{u}) (k : ℕ)
@@ -51,8 +39,6 @@ theorem terminalComponentMetric_scalarCurvature
     ((S.flow k).connection (S.base k).1) Dscaled x.val
   exact hscalar.trans hscale
 
-
-
 theorem terminalComponentMetric_base_scalar
     (S : GeneralizedBlowupSequence.{u}) (k : ℕ)
     (D : LeviCivitaData (terminalComponentMetric S k)) :
@@ -60,9 +46,6 @@ theorem terminalComponentMetric_base_scalar
   rw [terminalComponentMetric_scalarCurvature]
   change S.scale k / S.scale k = 1
   exact div_self (ne_of_gt (S.base_scalar_pos k))
-
-
-
 
 theorem exists_eventually_terminal_source_compact_capture
     (S : GeneralizedBlowupSequence.{u})

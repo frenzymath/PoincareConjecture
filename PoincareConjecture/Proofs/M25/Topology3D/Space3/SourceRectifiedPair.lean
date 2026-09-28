@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceSignedDiscs
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCollarRectification
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCollarReflection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 structure RectifiedSourceDiscPair
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere) (d k : ℝ) where
@@ -46,8 +33,6 @@ structure RectifiedSourceDiscPair
     x ∈ positive.source ∧ positive x = Q (circleDirection x, k * (1 - ‖x‖))
   negative_near : ∀ᶠ x in 𝓝ˢ (sphere (0 : E2) 1),
     x ∈ negative.source ∧ negative x = Q (circleDirection x, -(k * (1 - ‖x‖)))
-
-
 
 theorem exists_rectified_source_disc_pair (hP : PlanarSchoenfliesService)
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

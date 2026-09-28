@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Loca
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LocalGeometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -166,7 +157,6 @@ theorem eventually_zero_time_curvatureDerivativeNorm_le_of_local_derivative_esti
     rw [add_neg_cancel]
   rw [hnorm] at h
   exact h
-
 
 theorem eventually_zero_time_curvatureDerivativeNorm_le
     {n : ℕ} {T' T : ℝ}

@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LocalCollisionSeparation
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,10 +8,6 @@ open Set Metric
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_local_curvature_arc
     (N : IntrinsicAnnulus) {a M L : ℝ}

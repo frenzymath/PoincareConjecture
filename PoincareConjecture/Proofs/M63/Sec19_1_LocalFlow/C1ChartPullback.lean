@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem chartVectorField_param_contMDiff_one (p : M) (v : ℝ → E) (U : Set ℝ)
     (hv : ContDiffOn ℝ 1 v U) :
@@ -64,9 +51,6 @@ theorem chartVectorField_param_contMDiff_one (p : M) (v : ℝ → E) (U : Set �
     ((chartAt E p).map_source hz.2)
   rw [(chartAt E p).left_inv hz.2] at heq ⊢
   exact congrArg (Bundle.TotalSpace.mk' E z.2) heq
-
-
-
 
 theorem pullback_chart_field_of_contDiff_one {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) {gamma : ℝ → M} {x : ℝ}

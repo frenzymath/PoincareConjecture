@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M32.Neck.ConnectedTransport
 import PoincareConjecture.Proofs.M32.Claim11_34.Noncompact
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_horn_boundary_sphere_transport :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -75,8 +59,6 @@ theorem exists_horn_boundary_sphere_transport :
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
-
 noncomputable def horn_neckOnlyCover (horn : StrongHorn E epsilon)
     (A : RepairedNeckCapTopologyTheory.{u}) (hepsilon : 0 < epsilon)
     (hsmall : epsilon ≤ A.epsilon₀) : NeckOnlyCover (E.extended.metric T) where
@@ -102,8 +84,6 @@ noncomputable def horn_neckOnlyCover (horn : StrongHorn E epsilon)
     rw [hN]
     exact hx
   neck_epsilon := fun _ hN => hN.1
-
-
 
 theorem exists_horn_neckCap_tube_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

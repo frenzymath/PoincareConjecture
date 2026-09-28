@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sublevel.LowerSide
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Filter
@@ -13,9 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := Metric.sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_height_extension_above_sublevel_component
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

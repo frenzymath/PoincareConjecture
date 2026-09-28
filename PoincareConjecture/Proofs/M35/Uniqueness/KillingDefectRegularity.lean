@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingDefectTensor
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingCovectorHeat
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +10,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem killingDefectTensor_normSq_joint
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -60,8 +49,6 @@ theorem killingDefectTensor_normSq_joint
   rw [hv, hs]
   exact killing_defect_eq_covector_symmetrization (G.flow.connection p.1)
     (X p.1) (hX p.1) p.2 (Y 0 p.2) (Y 1 p.2)
-
-
 
 theorem killingDefectTensor_normSq_le {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

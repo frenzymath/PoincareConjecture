@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ObliqueCorners
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.ObliqueFrontier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ variable {S : Type*} [TopologicalSpace S]
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
 def cornerVertexIndex (p : Fin B.interface.count × Bool) (k : Fin 3) :
     Fin (B.interface.count + 1) × Bool :=
   if k = 0 then (p.1.castSucc, false)
@@ -35,7 +27,6 @@ private theorem faceCoordinates_apply (p : Fin B.interface.count × Bool)
     (z : EuclideanSpace ℝ (Fin 2)) :
     B.faceCoordinates p z = B.coordinates (collarParameterEquiv.symm
       (graphStripMap (fun _ => 0) (B.upperGraph p.1) (collarParameterEquiv z))) := rfl
-
 
 theorem face_corner_eq_vertex (p : Fin B.interface.count × Bool) (k : Fin 3) :
     B.faceCoordinates p (B.faceBasis p k) = B.vertex (B.cornerVertexIndex p k) := by
@@ -82,8 +73,6 @@ private theorem vertex_parameter_mem_source (p : Fin (B.interface.count + 1) × 
   rw [hh]
   cases p.2 <;> simp [hpos.le]
 
-
-
 theorem vertex_injective : Function.Injective B.vertex := by
   rintro ⟨i, s⟩ ⟨j, t⟩ h
   have hp := collarParameterEquiv.symm.injective
@@ -95,14 +84,10 @@ theorem vertex_injective : Function.Injective B.vertex := by
   have hpos := (B.interface.vertex_height_bounds i).1
   cases s <;> cases t <;> simp_all
 
-
-
 theorem face_corner_eq_vertex_iff (p : Fin B.interface.count × Bool) (k : Fin 3)
     (v : Fin (B.interface.count + 1) × Bool) :
     B.faceCoordinates p (B.faceBasis p k) = B.vertex v ↔ B.cornerVertexIndex p k = v := by
   rw [B.face_corner_eq_vertex, B.vertex_injective.eq_iff]
-
-
 
 theorem sum_corner_weights_internal_bottom
     (w : (Fin B.interface.count × Bool) → Fin 3 → ℝ)
@@ -121,9 +106,6 @@ theorem sum_corner_weights_internal_bottom
     and_true, and_false, Bool.true_eq_false, hstart, Fin.succ_inj, add_zero]
   simp only [Finset.sum_add_distrib, Finset.sum_ite_eq', Finset.mem_univ, if_true]
   ring
-
-
-
 
 theorem internal_bottom_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)

@@ -2,8 +2,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +18,6 @@ variable {E F H M : Type*}
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M]
   {I : ModelWithCorners Real F H}
 
-
-
 theorem eq_height_smul_add_projection
     {v : E} (hv : ‖v‖ = 1) {c : Real} {f : M -> E}
     (hheight : ∀ p, inner Real v (f p) = c) (p : M) :
@@ -29,8 +25,6 @@ theorem eq_height_smul_add_projection
   nth_rw 1 [← ((Real ∙ v).starProjection_add_starProjection_orthogonal (f p))]
   rw [Submodule.starProjection_unit_singleton Real hv, hheight]
   rfl
-
-
 
 theorem injective_projection_of_height_eq
     {v : E} (hv : ‖v‖ = 1) {c : Real} {f : M -> E}
@@ -42,8 +36,6 @@ theorem injective_projection_of_height_eq
   apply hinj
   rw [eq_height_smul_add_projection hv hheight p,
     eq_height_smul_add_projection hv hheight q, hpq]
-
-
 
 theorem injective_mfderiv_projection_of_height_eq
     {v : E} (hv : ‖v‖ = 1) {c : Real} {f : M -> E}

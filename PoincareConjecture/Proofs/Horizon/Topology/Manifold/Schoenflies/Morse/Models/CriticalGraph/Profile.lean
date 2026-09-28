@@ -2,8 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,14 +11,10 @@ open scoped ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
 
-
-
 def minimumCapWeight (u : Real) : Real := Real.smoothTransition (4 * u - 1)
-
 
 def minimumCapDenominator (u : Real) : Real :=
   (1 - minimumCapWeight u) + minimumCapWeight u * u
-
 
 def minimumCapSquaredRadius (u : Real) : Real := u / minimumCapDenominator u
 
@@ -77,8 +71,6 @@ theorem deriv_minimumCapSquaredRadius (u : Real) :
   congr 1
   ring
 
-
-
 theorem deriv_minimumCapSquaredRadius_pos {u : Real} (hu : u < 1 / 2) :
     0 < deriv minimumCapSquaredRadius u := by
   by_cases hu0 : u < 0
@@ -102,8 +94,6 @@ theorem strictMonoOn_minimumCapSquaredRadius :
   intro u hu
   rw [interior_Icc] at hu
   exact deriv_minimumCapSquaredRadius_pos hu.2
-
-
 
 theorem exists_unique_minimumCap_height {z : Real} (hz : 0 ≤ z) (hz1 : z < 1) :
     ∃! u : Real, u ∈ Ico (0 : Real) (1 / 2) ∧ minimumCapSquaredRadius u = z := by

@@ -9,16 +9,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedRayScalarSequence
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SourceChartConeObstruction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,10 +23,6 @@ namespace PoincareConjecture.M28
 open CounterexampleNeckFamily
 
 set_option maxHeartbeats 6400000 in
-
-
-
-
 
 theorem exists_actual_counterexample_exclusion_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T0 : RepairedNeckCapTopologyTheory.{u}) :

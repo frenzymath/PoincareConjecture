@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_StableImage
 import PoincareConjecture.Proofs.M15.Thm8_10_StableSurvival
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
-
-
 
 theorem seedM15_generalized_configuration
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

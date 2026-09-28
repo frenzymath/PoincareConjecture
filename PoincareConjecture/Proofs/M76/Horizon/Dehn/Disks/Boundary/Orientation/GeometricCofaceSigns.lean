@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.StandardFrontierOrientation
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.CofaceSideTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry AbstractSimplicialComplex PreAbstractSimplicialComplex.ModTwoCochains
 
@@ -24,8 +16,6 @@ theorem boundaryFaceParity_map {V W : Type*} [DecidableEq V] [DecidableEq W]
   intro x _
   rw [Finset.filter_map, Finset.card_map]
   rfl
-
-
 
 theorem exists_geometric_coface_signs
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
@@ -94,8 +84,6 @@ theorem exists_geometric_coface_signs
       rw [boundaryFaceParity_map, hnumber]
     rw [← hsign t', ← hsign u', ← hp t'.val, ← hp u'.val] at h
     simpa only [face, t', u', s', hmap t ht, hmap u hu, hmap s hs] using h
-
-
 
 theorem exists_standard_frontier_geometric_coface_signs
     (K A : SimplicialComplex ℝ (Fin 3 → ℝ)) (hAK : A ≤ K) (hA : A.faces.Finite)

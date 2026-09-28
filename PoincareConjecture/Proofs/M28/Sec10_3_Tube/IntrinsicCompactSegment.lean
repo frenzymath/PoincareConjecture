@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.IntrinsicMinimizer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_intrinsic_metric_segment_of_compact_sequence
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

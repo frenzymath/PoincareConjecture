@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M63
 variable {E : Type u} {F : Type v}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem fixedComposition_second_derivative {S : Set E} {U : Set F}
     (hS : IsOpen S) (hU : IsOpen U) {f : E → F} {r : F → F}

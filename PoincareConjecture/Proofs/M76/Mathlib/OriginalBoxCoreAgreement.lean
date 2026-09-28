@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
 
 namespace Geometry
-
-
-
-
-
 
 theorem original_box_eq_iff_core_coordinates
     {E : Type*} (F₀ F₁ f : ((ℝ × ℝ) × ℝ) → E) {r : ℝ} (hr : 0 < r)

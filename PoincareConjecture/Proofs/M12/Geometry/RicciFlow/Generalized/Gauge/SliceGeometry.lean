@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M12MovingGaugeTheory
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,7 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T : SmoothSpacetimeInterval K} {C : Type v} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
-
 
 structure MovingGaugeSliceGeometryFields
     (e : MovingSpacetimeGauge F T C)
@@ -40,7 +31,6 @@ structure MovingGaugeSliceGeometryFields
       (mfderiv (𝓡 n) (𝓡 n) (movingGaugeSliceMap e S t) x u)
       (mfderiv (𝓡 n) (𝓡 n) (movingGaugeSliceMap e S t) x v) =
         (G.metric t.val).inner x u v
-
 
 theorem movingGaugeSliceGeometryFields
     (e : MovingSpacetimeGauge F T C)

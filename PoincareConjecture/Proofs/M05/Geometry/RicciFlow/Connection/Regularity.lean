@@ -1,16 +1,7 @@
-
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.SecondBianchi
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.MetricDuality
 import PoincareConjecture.Proofs.M05.Geometry.Manifold.VectorField.Derivation
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -114,7 +105,6 @@ lemma contDiffAt_inner_time (F : RicciFlow n M J) {t : ℝ}
   have h' := h.comp t (contMDiffAt_id.prodMk contMDiffAt_const)
   simpa only [Function.comp_def, id_eq, FiberBundle.extend_apply_self] using h'.contDiffAt
 
-
 lemma contDiffAt_inner (F : RicciFlow n M J) {t : ℝ}
     (ht : t ∈ interior J) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -193,8 +183,6 @@ private lemma contDiffAt_connection_apply
   apply h.congr_of_eventuallyEq
   exact Filter.Eventually.of_forall fun s =>
     (((F.metric s).inner_isInvertible x).inverse_apply_self _).symm
-
-
 
 theorem contDiffAt_connection
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) {x : M}

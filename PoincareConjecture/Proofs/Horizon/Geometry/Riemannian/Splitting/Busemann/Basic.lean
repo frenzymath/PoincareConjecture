@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Topology.Order.MonotoneConvergence
 import Mathlib.Topology.UniformSpace.Dini
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,10 +14,8 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def busemannApprox (g : RiemannianMetric n M) (γ : ℝ → M) (t : ℝ) (x : M) : ℝ :=
   t - (g.edist (γ t) x).toReal
-
 
 def busemann (g : RiemannianMetric n M) (γ : ℝ → M) (x : M) : ℝ :=
   ⨆ t : Set.Ici (0 : ℝ), g.busemannApprox γ t x

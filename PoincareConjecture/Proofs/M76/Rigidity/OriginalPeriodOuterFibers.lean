@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,7 +14,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
 
 theorem lowerPiece_injective (P : OriginalDiskProduct e R j)
     {a : ℝ} (ha : 0 < a) :
@@ -41,7 +32,6 @@ theorem lowerPiece_injective (P : OriginalDiskProduct e R j)
   have ht : z.2 / a = w.2 / a := congrArg (fun x : E => x.2) hc
   exact Prod.ext hf ((div_left_inj' ha.ne').mp ht)
 
-
 theorem upperPiece_injective (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) :
     InjOn (P.map ∘ periodUpperCoordinates a p) (D ×ˢ Icc (p - a / 2) p) := by
@@ -59,8 +49,6 @@ theorem upperPiece_injective (P : OriginalDiskProduct e R j)
   have ht : (z.2 - p) / a = (w.2 - p) / a := congrArg (fun x : E => x.2) hc
   have htime := (div_left_inj' ha.ne').mp ht
   exact Prod.ext hf (by linarith)
-
-
 
 theorem lowerPiece_eq_upperPiece_iff (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) {z w : E}

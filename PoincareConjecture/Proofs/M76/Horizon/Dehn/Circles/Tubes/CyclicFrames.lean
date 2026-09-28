@@ -1,17 +1,8 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedPathFrames
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
-
 
 def signedCycleClosingFrame (first last frameFirst frameLast : Fin 2 → Bool) : Fin 2 → Bool :=
   fun i ↦ signedTubeReindex (frameLast i)
@@ -28,7 +19,6 @@ theorem signedCycleClosingFrame_agreement
   funext i
   dsimp only [signedCycleClosingFrame]
   cases first i <;> cases last i <;> cases frameFirst i <;> cases frameLast i <;> rfl
-
 
 theorem exists_signed_cycle_frames (n : ℕ)
     (left right : Fin (n + 2) → Fin 2 → Bool)

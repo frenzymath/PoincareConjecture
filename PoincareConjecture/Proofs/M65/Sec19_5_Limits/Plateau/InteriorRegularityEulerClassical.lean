@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEulerFields
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +20,6 @@ private theorem compact_continuous_memLp {E : Type*} [NormedAddCommGroup E]
     hf.aestronglyMeasurable hK.measurableSet
   exact (memLp_two_iff_integrable_sq_norm hm).mpr
     ((hf.norm.pow 2).integrableOn_compact hK)
-
-
-
-
 
 theorem classical_scalar_weak_identity {U : Set LoopPlane} (hU : IsOpen U)
     {f : LoopPlane → ℝ} (hf : ContDiffOn ℝ 1 f U)
@@ -71,9 +57,6 @@ theorem classical_scalar_weak_identity {U : Set LoopPlane} (hU : IsOpen U)
       rw [fderiv_of_notMem_tsupport ℝ (fun hm => hz (hs hm)), zero_apply, mul_zero])]
   linarith only [hw]
 
-
-
-
 def classicalMap {M : Type u} {N : ℕ} (e : M → EuclideanSpace ℝ (Fin N))
     {U : Set LoopPlane} (hU : IsOpen U) (q : LoopPlane → M)
     (hq : ContDiffOn ℝ 1 (e ∘ q) U) : M65LocalWeakMap e U where
@@ -104,10 +87,6 @@ def classicalMap {M : Type u} {N : ℕ} (e : M → EuclideanSpace ℝ (Fin N))
         congr 1
         apply integral_congr_ae
         exact ae_of_all _ fun z => mul_comm _ _
-
-
-
-
 
 theorem classical_derivative_eq_weak {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

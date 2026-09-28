@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Constructions.Pi
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -16,7 +8,6 @@ noncomputable section
 open MeasureTheory
 
 namespace Poincare.Analysis.Sobolev.BoundaryCoordinates
-
 
 def split (m : ℕ) :
     EuclideanSpace ℝ (Fin (m + 1)) ≃L[ℝ] EuclideanSpace ℝ (Fin m) × ℝ :=

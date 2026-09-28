@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalFiniteList
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 import Mathlib.Data.List.ChainOfFn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_finite_cylinder_with_middle_threshold_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -140,8 +127,6 @@ theorem exists_finite_cylinder_with_middle_threshold_m28 :
     refine ⟨D, a + (i.val : ℤ), hindex i, s, ?_, hDzero⟩
     simpa only [C.epsilon_eq _ (hindex i)] using hs
   exact hUnion ▸ hout
-
-
 
 theorem exists_finite_cylinder_threshold_m28 :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

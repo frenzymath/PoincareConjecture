@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ namespace OpenPartialHomeomorph
 variable {M E V : Type*} [TopologicalSpace M] [CompactSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
-
-
 
 theorem exists_finite_triangulation_range_of_locallyPL
     {ι : Type*} (e : ι → OpenPartialHomeomorph M E) (F : M → V)

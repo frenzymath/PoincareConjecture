@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapStandardEnd
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.BufferedCollar
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesCompactSide
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_exists_second_buffered_ball_chart
     (hS : SchoenfliesService)

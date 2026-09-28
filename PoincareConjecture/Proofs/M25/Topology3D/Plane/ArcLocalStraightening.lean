@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcDeformationLift
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcAdmissible
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_local_polygonalArc_straightening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

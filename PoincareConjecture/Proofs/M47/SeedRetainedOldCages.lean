@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Cages
 import PoincareConjecture.Proofs.M47.SeedRetainedCapAvoidance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedRetained_height_sq_le
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -55,8 +45,6 @@ theorem seedRetained_height_sq_le
     _ ≤ _ := hde
   nlinarith only [hh, (F.parameters.h_pos t ht.1).le,
     Real.sqrt_nonneg a, Real.sq_sqrt ha.le]
-
-
 
 theorem seedRetained_older_surgery_cages
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Branch
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -18,7 +11,6 @@ theorem RepairedPreterminalSlab.start_nonempty
     Nonempty (F.slice A.start).carrier := by
   obtain ⟨t, ht, x, hx⟩ := A.curvature_unbounded 0 A.start A.start_lt
   exact ⟨x⟩
-
 
 theorem RepairedContinuationInput.slices_nonempty
     {F : SurgeryFlowData.{u}} {T : ℝ} (I : RepairedContinuationInput F T)

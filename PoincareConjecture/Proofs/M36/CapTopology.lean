@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.CollapseMap
 import PoincareConjecture.Proofs.M36.ClosedCapImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ENNReal Topology

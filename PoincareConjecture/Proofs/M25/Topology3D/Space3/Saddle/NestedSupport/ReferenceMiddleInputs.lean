@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.MiddleExteriorCoor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 private theorem nested_reference_coordinate_scaling
     (rho rhoN Lambda : ℝ) (hrho : 0 < rho) (hrhoN : 0 < rhoN)
@@ -73,8 +63,6 @@ private theorem nested_reference_coordinate_scaling
         rhoN ^ 2 * ((r ^ 2 + t / rho ^ 2) / 2) := by ring
     rw [hm, hp, hsqrt, hsqrt]
     apply Prod.ext <;> dsimp only <;> ring
-
-
 
 theorem exists_saddle_nested_reference_middle_inputs
     (ws wm d sigma : ℝ)

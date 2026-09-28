@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.ClosedModels.ProjectivePair
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.ProjectiveCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology TopologicalSpace
@@ -28,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem nonempty_two_projective_cap_closedComponentCertificate (C D : CapCertificate g)
     (hC : C.model_kind = .puncturedProjective) (hD : D.model_kind = .puncturedProjective)

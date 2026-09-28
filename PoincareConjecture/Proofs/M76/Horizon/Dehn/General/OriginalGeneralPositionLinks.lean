@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalGeneralPositio
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalCrossingLink
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology Filter unitInterval
@@ -28,7 +19,6 @@ local notation "Rim" => sphere (0 : V2) 1
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
 
 theorem OriginalGeneralPositionData.exists_protected_link_sections_with_closed_support
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
@@ -500,7 +490,6 @@ theorem OriginalGeneralPositionData.exists_protected_link_sections_with_closed_s
     hKR, hKs, hqK, hqi.mono hKs.subset, hK₀K, hK₀s, hqint, hwhole,
     old_chart, happroach, hcount, hlinks,
     hL, hLs, hδ, hmargin, hmotions⟩
-
 
 theorem OriginalGeneralPositionData.exists_protected_link_sections
     {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}

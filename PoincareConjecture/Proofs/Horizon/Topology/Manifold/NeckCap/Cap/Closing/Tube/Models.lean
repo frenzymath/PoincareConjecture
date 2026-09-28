@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.ClosedMod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.ModelCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.ProjectiveCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -25,8 +14,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.DoubleCappedTubeCertificate
-
-
 
 theorem exists_closed_model_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

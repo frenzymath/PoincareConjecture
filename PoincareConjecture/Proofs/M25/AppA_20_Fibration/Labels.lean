@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,10 +17,6 @@ attribute [local instance] SphereBundleCircleModel.carrier_topology
   SphereBundleCircleModel.carrier_charted SphereBundleCircleModel.carrier_manifold
 
 namespace SphereBundleCircleModel
-
-
-
-
 
 theorem exists_bundle_chart (B : SphereBundleCircleModel.{u}) (c : UnitCircle) :
     ∃ U : Set UnitCircle, IsOpen U ∧ c ∈ U ∧
@@ -65,8 +50,6 @@ theorem exists_bundle_chart (B : SphereBundleCircleModel.{u}) (c : UnitCircle) :
       continuousOn_invFun := hg.continuousOn }
   exact ⟨U, hU, hc, e, rfl, rfl, hbase⟩
 
-
-
 theorem m25_isOpenMap_projection (B : SphereBundleCircleModel.{u}) :
     IsOpenMap B.projection := by
   intro O hO
@@ -83,9 +66,6 @@ theorem m25_isOpenMap_projection (B : SphereBundleCircleModel.{u}) :
     rintro y ⟨z, ⟨w, hw, rfl⟩, rfl⟩
     exact ⟨w, hw.1, (hbase w hw.2).symm⟩
   exact Filter.mem_of_superset (hW.mem_nhds hxW) hWsub
-
-
-
 
 theorem isConnected_projection_fiber (B : SphereBundleCircleModel.{u}) (c : UnitCircle) :
     IsConnected (B.projection ⁻¹' {c}) := by
@@ -114,16 +94,10 @@ theorem isConnected_projection_fiber (B : SphereBundleCircleModel.{u}) (c : Unit
   rw [← himage]
   exact (isConnected_univ : IsConnected (univ : Set UnitTwoSphere)).image G hG
 
-
-
-
 theorem isCoinducing_projection (B : SphereBundleCircleModel.{u}) :
     Topology.IsCoinducing B.projection :=
   (B.m25_isOpenMap_projection.isQuotientMap B.projection_continuous
     B.projection_surjective).isCoinducing
-
-
-
 
 theorem exists_fiberwise_chart_neighborhood (B : SphereBundleCircleModel.{u})
     (c : UnitCircle) :
@@ -171,10 +145,6 @@ namespace SphereBundleCircleCertificate
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem isNonseparating_of_fiberwise_graph (F : SphereBundleCircleCertificate g X)
     (N : EpsilonNeck g) (hsphere : N.central_sphere ⊆ F.carrier)
@@ -232,10 +202,6 @@ theorem isNonseparating_of_fiberwise_graph (F : SphereBundleCircleCertificate g 
   change IsConnected (connectedComponent N.center \ N.central_sphere)
   rw [hcomponent', ← himage]
   exact hcompl.image F.inverse hinverse.continuousOn
-
-
-
-
 
 theorem nonseparating_necks_of_fiberwise_graphs (H : NeckOnlyCover g)
     (F : SphereBundleCircleCertificate g H.X) (hwhole : F.carrier = univ)

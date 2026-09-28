@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +13,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem pullbackCoefficients_chartParametrization_restrict
     {ι : Type*} {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -44,8 +33,6 @@ theorem pullbackCoefficients_chartParametrization_restrict
     g.inner _ (mfderiv (𝓡 n) (𝓡 n) f x v) (mfderiv (𝓡 n) (𝓡 n) f x w)
   rw [heq.mfderiv_eq, heq.self_of_nhds]
 
-
-
 theorem isLocalDiffeomorph_normal_chart_restrict
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -58,10 +45,6 @@ theorem isLocalDiffeomorph_normal_chart_restrict
   intro x
   exact (Poincare.isLocalDiffeomorph_subtypeVal (𝓡 n) U hU ∞ x).comp (𝓡 n) M
     (Φ.isLocalDiffeomorphAt (𝓡 n) (𝓡 n) ∞ (hsource x.property))
-
-
-
-
 
 theorem locallyEventuallyBoundedDerivatives_normal_chart_transition
     {n : ℕ} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)] [∀ k, T3Space (M k)]

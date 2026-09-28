@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularNormalMaps
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialInverse
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSource_regular_component_inverse
     {F : SurgeryFlowData.{u}} {base Q tau A : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckBilinearReadout
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem capPersistence_tensor_coefficient
     (T : ∀ y : M, TangentSpace (𝓡 3) y → TangentSpace (𝓡 3) y → ℝ)
@@ -80,9 +69,6 @@ variable {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
 private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
-
-
-
 
 theorem capPersistence_coefficient_difference_fixed_chart
     {G : GeneralizedRicciFlowData.{u}} {origin scale : ℝ} {K : Set ℝ}

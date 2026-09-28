@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PolarDivergence
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.MeasureTheory.Integral.DivergenceTheorem
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Real
 open scoped Manifold ContDiff Topology intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65Integral_divergence_loopDisk
     (X : LoopPlane → LoopPlane)

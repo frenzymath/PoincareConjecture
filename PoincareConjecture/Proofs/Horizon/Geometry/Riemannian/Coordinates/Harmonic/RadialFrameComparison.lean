@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +10,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 theorem inner_eq_inner_frame_inverse (x : EuclideanSpace ℝ (Fin n))
     {T : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)}
     (hT : T.IsInvertible)
@@ -25,7 +17,6 @@ theorem inner_eq_inner_frame_inverse (x : EuclideanSpace ℝ (Fin n))
     (v w : EuclideanSpace ℝ (Fin n)) :
     g.inner x v w = inner ℝ (T.inverse v) (T.inverse w) := by
   simpa only [hT.self_apply_inverse] using hiso (T.inverse v) (T.inverse w)
-
 
 theorem inner_self_sub_norm_sq_le_of_frame_inverse (x : EuclideanSpace ℝ (Fin n))
     {T : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)}
@@ -50,8 +41,6 @@ theorem inner_self_sub_norm_sq_le_of_frame_inverse (x : EuclideanSpace ℝ (Fin 
         (mul_nonneg hδ (norm_nonneg _))
     _ = _ := by ring
 
-
-
 private theorem tangentNorm_le_of_inner_self_le (x : EuclideanSpace ℝ (Fin n))
     (z : EuclideanSpace ℝ (Fin n)) {a c : ℝ} (ha : 0 < a) (hc : 0 ≤ c)
     (hlower : a * ‖z‖ ^ 2 ≤ g.inner x z z)
@@ -73,8 +62,6 @@ private theorem tangentNorm_le_of_inner_self_le (x : EuclideanSpace ℝ (Fin n))
   have h := Real.sqrt_le_sqrt henergy
   simpa only [RiemannianMetric.tangentNorm, Real.sqrt_div (sq_nonneg c),
     Real.sqrt_sq hc] using h
-
-
 
 theorem gradient_linear_sub_frame_norm_le (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n))
@@ -116,7 +103,6 @@ theorem gradient_linear_sub_frame_norm_le (D : LeviCivitaData g)
       _ = _ := by ring
   exact tangentNorm_le_of_inner_self_le x z ha (mul_nonneg hδ (norm_nonneg e))
     (hlower z) hbound
-
 
 theorem gradient_coordinate_sub_frame_norm_le (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n))

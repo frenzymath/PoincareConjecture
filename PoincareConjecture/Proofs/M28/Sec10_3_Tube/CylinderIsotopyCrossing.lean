@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   {U : TopologicalSpace.Opens M}
-
-
-
 
 theorem exists_isotopic_sphere_end_crossing
     (T : OpenCylinderModel (U : Set M)) {S : Set M}

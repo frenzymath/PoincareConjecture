@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M37SurgeryFlow
 import PoincareConjecture.Statements.M33BranchContinuation
 import PoincareConjecture.Statements.M36MetricSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,12 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 def RepairedBranchApplication (B : RepairedBranchContinuationTheory.{u})
     (F : SurgeryFlowData.{u}) : Type (u + 1) :=

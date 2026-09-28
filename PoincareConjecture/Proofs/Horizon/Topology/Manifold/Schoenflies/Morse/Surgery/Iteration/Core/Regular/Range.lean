@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Regular.CapBelt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +16,6 @@ private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
 
 def truncatedImage (D : SphereSurgeryCoreCap v g B) (θ : Real) : Set E3 :=
   (D.parametrization '' closedBall 0 1) ∩
@@ -55,8 +52,6 @@ private theorem mem_truncated_or_annular_belt
     dsimp [θ]
     field_simp [D.scale_ne_zero]
     ring
-
-
 
 theorem exists_widened_annular_range
     (D E : SphereSurgeryCoreCap v g B)

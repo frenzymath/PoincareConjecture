@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitStrongEquation
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSequence
 
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,11 +18,6 @@ open M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M] [T2Space M]
-
-
-
-
-
 
 theorem m60PerturbedMinimizers_maxGradientLimit (g : RiemannianMetric n M)
     (regular : SUAlphaOneSmoothness g) : SUMaxGradientCompactnessProducer g := by

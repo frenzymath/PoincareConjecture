@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.SmoothRadial
-
 
 noncomputable def axisDivision (f : ℝ → ℝ) (r : ℝ) : ℝ :=
   CoordinateExponential.radialWeightedIntegral 0 (deriv f) r
@@ -30,7 +20,6 @@ theorem axisDivision_contDiff {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) :
   have hr : r ∈ Metric.ball (0 : ℝ) (‖r‖ + 1) := by simp
   exact (CoordinateExponential.contDiffOn_radialWeightedIntegral 0
     (r := ‖r‖ + 1) hd.contDiffOn r hr).contDiffAt (Metric.isOpen_ball.mem_nhds hr)
-
 
 theorem mul_axisDivision {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) (r : ℝ) :
     r * axisDivision f r = f r - f 0 := by
@@ -46,7 +35,6 @@ theorem mul_axisDivision {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f) (r : ℝ) :
 theorem axisDivision_zero {f : ℝ → ℝ} : axisDivision f 0 = deriv f 0 := by
   simp [axisDivision, CoordinateExponential.radialWeightedIntegral]
 
-
 theorem deriv_odd_of_even {f : ℝ → ℝ} (hf : Differentiable ℝ f) (he : Function.Even f) :
     Function.Odd (deriv f) := by
   intro r
@@ -58,7 +46,6 @@ theorem deriv_odd_of_even {f : ℝ → ℝ} (hf : Differentiable ℝ f) (he : Fu
     · ring
   have h := hd.unique (hf r).hasDerivAt
   linarith only [h]
-
 
 theorem deriv_even_of_odd {f : ℝ → ℝ} (hf : Differentiable ℝ f) (ho : Function.Odd f) :
     Function.Even (deriv f) := by
@@ -78,7 +65,6 @@ theorem deriv_zero_of_even {f : ℝ → ℝ} (hf : Differentiable ℝ f)
   rw [neg_zero] at h
   linarith only [h]
 
-
 theorem axisDivision_even_of_odd {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (ho : Function.Odd f) : Function.Even (axisDivision f) := by
   intro r
@@ -88,8 +74,6 @@ theorem axisDivision_even_of_odd {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
   intro t _
   simp only [pow_zero, smul_eq_mul, one_mul, mul_neg]
   exact hd (t * r)
-
-
 
 theorem axisDivision_deriv_even {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (he : Function.Even f) : Function.Even (axisDivision (deriv f)) :=

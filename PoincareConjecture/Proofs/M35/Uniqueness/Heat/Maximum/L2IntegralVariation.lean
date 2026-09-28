@@ -3,15 +3,6 @@ import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.Analysis.Calculus.FDeriv.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,7 +53,6 @@ theorem fieldIntegral_remainder_le (F : V × Z → ℝ)
   have hbound := norm_integral_le_of_norm_le
     (((Lp.memLp (v - u)).norm.integrable_sq).const_mul C) hb
   simpa only [integral_const_mul, integral_field_norm_sq] using hbound
-
 
 theorem fieldIntegral_hasFDerivAt (F : V × Z → ℝ)
     (hi : ∀ u : L2Z, Integrable (fun x => F (x, u x)))

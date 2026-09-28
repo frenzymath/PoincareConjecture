@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,9 +13,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "v" => m64AnnulusRadialTranslation
-
-
-
 
 theorem m64AnnulusLowerExtend_memLp
     {E : Type*} [NormedAddCommGroup E] {q : ENNReal} {f g : LoopPlane → E}
@@ -49,9 +40,6 @@ theorem m64AnnulusLowerExtend_memLp
     simp only [F, Pi.add_apply, indicator_of_notMem hns, indicator_of_mem hl, zero_add,
       m64AnnulusLowerExtend_left f g hl]
 
-
-
-
 theorem m64AnnulusLower_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (F : LoopPlane → E) (hF : IntegrableOn F O volume) :
@@ -67,9 +55,6 @@ theorem m64AnnulusLower_integral
         abel
       rw [hfun]
       exact (MeasurableEquiv.addLeft (-v)).measurableEmbedding) F).symm
-
-
-
 
 theorem m64AnnulusLowerExtend_integral_smul
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

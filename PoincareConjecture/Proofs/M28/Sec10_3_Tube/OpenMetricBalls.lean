@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem intrinsicOpenMetric_ball_eq_preimage (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (p : V) {r : ℝ}
@@ -58,8 +45,6 @@ theorem intrinsicOpenMetric_ball_eq_preimage (g : RiemannianMetric 3 M)
     rw [hα0, hα1] at hinf
     exact hinf.trans_lt hαlen
 
-
-
 theorem intrinsicOpenMetric_closure_ball_eq_preimage (g : RiemannianMetric 3 M)
     (V : TopologicalSpace.Opens M) (p : V) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (V : Set M)) :
@@ -70,9 +55,6 @@ theorem intrinsicOpenMetric_closure_ball_eq_preimage (g : RiemannianMetric 3 M)
   exact (hopen.preimage_closure_eq_closure_preimage continuous_subtype_val _).symm
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
-
-
 
 theorem CapCertificate.core_ball_intrinsicOpenMetric
     {g : RiemannianMetric 3 M} (N : CapCertificate g)

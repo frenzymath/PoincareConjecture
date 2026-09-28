@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.SquarePara
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalOrientedSquareMap
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardAtlasExistence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AbstractSimplicialComplex
@@ -72,7 +65,6 @@ theorem PLDomain.exists_original_oriented_component_euler_zero
 
 open Classical in
 
-
 theorem PLDomain.exists_original_frontier_torus_square_model
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3)
     (hcover : ∀ x, ∃ i, x ∈ (e i).source)
@@ -105,7 +97,6 @@ local notation "C0" => AddCircle p
 local notation "T0" => C0 × C0
 
 open Classical in
-
 
 theorem PLDomain.exists_original_frontier_torus_parametrization
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3)

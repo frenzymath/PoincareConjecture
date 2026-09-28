@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.FanAngles
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexCaps
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,7 +50,6 @@ namespace VertexCapFaces
 
 variable (B : VertexCapFaces P x)
 
-
 theorem first_velocity_zero (i : Bool × Bool) :
     mfderivWithin 𝓘(ℝ, ℝ) (𝓡 2) ((B.face i).boundary 2).map
         (Icc (0 : ℝ) 1) 0 1 =
@@ -82,7 +74,6 @@ theorem first_velocity_zero (i : Bool × Bool) :
     rcases i with ⟨i, j⟩
     cases i <;> cases j <;> simp [sectorParameterEquiv_apply, mul_comm]
 
-
 theorem second_velocity_zero (i : Bool × Bool) :
     mfderivWithin 𝓘(ℝ, ℝ) (𝓡 2) ((B.face i).boundary 1).map
         (Icc (0 : ℝ) 1) 0 1 =
@@ -106,7 +97,6 @@ theorem second_velocity_zero (i : Bool × Bool) :
     congr 1
     rcases i with ⟨i, j⟩
     cases i <;> cases j <;> simp [sectorParameterEquiv_apply, mul_comm]
-
 
 theorem sum_corner_angles (g : RiemannianMetric 2 S) :
     (∑ i : Bool, ∑ j : Bool,

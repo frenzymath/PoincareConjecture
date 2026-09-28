@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Com
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Extension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem le_on_compact_of_laplacian_upper_tests (D : LeviCivitaData g)
     {u : M → ℝ}
@@ -109,8 +98,6 @@ private theorem laplacian_exp_neg_mul_local (D : LeviCivitaData g)
   rw [hl]
   ring
 
-
-
 theorem exists_pos_laplacian_exp_on_compact (D : LeviCivitaData g)
     {f : M → ℝ} {K U : Set M} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)
     (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U)
@@ -189,8 +176,6 @@ private theorem coordinate_radius_sq_gradient_pos (D : LeviCivitaData g)
   have hnorm : ‖w - z‖ ^ 2 = 0 := by
     linarith
   exact hne (sub_eq_zero.mp (norm_eq_zero.mp (sq_eq_zero_iff.mp hnorm)))
-
-
 
 theorem neg_on_coordinate_ball_of_neg_on_inner_ball (D : LeviCivitaData g)
     {u : M → ℝ} (hu : Continuous u) (hzero : ∀ x, u x ≤ 0)
@@ -285,8 +270,6 @@ theorem neg_on_coordinate_ball_of_neg_on_inner_ball (D : LeviCivitaData g)
   have hφneg : φ (e v) < 0 := by dsimp [φ]; nlinarith
   exact (hcomp (e v) ⟨v, hvC, rfl⟩).trans_lt hφneg
 
-
-
 theorem neg_on_coordinate_ball (D : LeviCivitaData g)
     {u : M → ℝ} (hu : Continuous u) (hzero : ∀ x, u x ≤ 0)
     (htest : ∀ φ : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ → ∀ x,
@@ -310,8 +293,6 @@ theorem neg_on_coordinate_ball (D : LeviCivitaData g)
     (show 0 < -(u (e z) / 2) by linarith) hRU
   intro v hv
   simpa only [neg_neg] using (hsN (Metric.closedBall_subset_ball hrs hv)).le
-
-
 
 theorem zero_on_quarter_coordinate_ball (D : LeviCivitaData g)
     {u : M → ℝ} (hu : Continuous u) (hzero : ∀ x, u x ≤ 0)
@@ -343,7 +324,6 @@ theorem zero_on_quarter_coordinate_ball (D : LeviCivitaData g)
   have h := hneg z hzv
   rw [hz] at h
   exact lt_irrefl _ h
-
 
 theorem eq_zero_of_laplacian_upper_tests [PreconnectedSpace M] (D : LeviCivitaData g)
     {u : M → ℝ} (hu : Continuous u) (hzero : ∀ x, u x ≤ 0)
@@ -387,8 +367,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
 
-
-
 theorem busemann_add_reverse_eq_zero
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -403,7 +381,6 @@ theorem busemann_add_reverse_eq_zero
       g.busemann_add_reverse_laplacian_upper_test_nonneg D hm hcomplete hRic hγ hφ hmax)
     (g.busemann_add_reverse_apply_line hγ 0)
 
-
 theorem busemann_reverse_eq_neg
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -412,8 +389,6 @@ theorem busemann_reverse_eq_neg
     (hγ : ∀ s t : ℝ, g.edist (γ s) (γ t) = ENNReal.ofReal |s - t|) (x : M) :
     g.busemann (fun t => γ (-t)) x = -g.busemann γ x := by
   linarith [g.busemann_add_reverse_eq_zero D hm hcomplete hRic hγ x]
-
-
 
 theorem busemann_laplacian_lower_test_nonpos
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)

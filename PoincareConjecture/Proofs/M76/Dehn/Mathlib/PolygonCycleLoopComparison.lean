@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GraphWalkOriginalEdges
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonBoundaryLoop
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricWalkPaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,10 +55,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
-
-
 
 theorem polygon_boundaryLoop_homotopic_geometricWalk {v : K.vertices}
     (w : K.vertexAbstractComplex.edgeGraph.Walk v v) {n : ℕ}

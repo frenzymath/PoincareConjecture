@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -139,8 +132,6 @@ private theorem exists_local_distance_exp_comparison
   simpa only [ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.exp_nonneg _)] using
     ENNReal.toReal_mono hfinite hdist
 
-
-
 private theorem continuousOn_toReal_edist_of_ricci_nonneg_aux
     [T3Space M] [PreconnectedSpace M]
     (F : RicciFlow n M J) (hTensor : ∀ t, (F.connection t).CurvatureTensorCalculus)
@@ -185,8 +176,6 @@ private theorem continuousOn_toReal_edist_of_ricci_nonneg_aux
   · filter_upwards [self_mem_nhdsWithin, hnear.filter_mono nhdsWithin_le_nhds] with q hq hqy
     exact hcompare p.1 hp.1 q.1 hq.1 q.2 hqy
 
-
-
 theorem continuousOn_toReal_edist_of_ricci_nonneg
     [T3Space M] [PreconnectedSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -199,8 +188,6 @@ theorem continuousOn_toReal_edist_of_ricci_nonneg
       (Icc a b ×ˢ univ) :=
   continuousOn_toReal_edist_of_ricci_nonneg_aux F
     (fun t => hC.tensor_calculus n M (F.metric t) (F.connection t)) hJ hcomplete hRic O
-
-
 
 theorem continuousOn_toReal_edist_of_ricci_nonneg_intrinsic
     [T3Space M] [PreconnectedSpace M]

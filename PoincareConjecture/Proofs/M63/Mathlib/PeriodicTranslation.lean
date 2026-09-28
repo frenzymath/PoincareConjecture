@@ -1,22 +1,11 @@
 import Mathlib.Analysis.Fourier.AddCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 noncomputable def periodicTranslation (a : ℝ) :
     C(AddCircle L, E) ≃ₗᵢ[ℝ] C(AddCircle L, E) where
@@ -38,9 +27,6 @@ noncomputable def periodicTranslation (a : ℝ) :
         (⟨fun y => f (y - (a : AddCircle L)),
           f.continuous.comp (continuous_id.sub continuous_const)⟩ : C(AddCircle L, E))
         (x + (a : AddCircle L))
-
-
-
 
 theorem continuous_periodicTranslation :
     Continuous (fun p : ℝ × C(AddCircle L, E) => periodicTranslation p.1 p.2) := by

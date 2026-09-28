@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.RestartedProfile
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
-
-
-
-
 
 theorem m65Area_le_profile_of_upperRight
     (compact : IsCompact (univ : Set M)) (A : ℝ → ℝ) {s t : ℝ}

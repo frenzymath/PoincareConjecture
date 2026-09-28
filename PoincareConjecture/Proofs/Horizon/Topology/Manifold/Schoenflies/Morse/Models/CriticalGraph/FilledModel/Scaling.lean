@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +29,6 @@ theorem quadraticMinimumCapPoint_dilation {v : E3} (hv : ‖v‖ = 1)
     projection_quadraticMinimumCapPoint, hA, quadraticMinimumCapPoint, hn, hu]
   simp only [one_pow, div_one, Submodule.coe_smul]
   module
-
-
 
 theorem image_quadraticMinimumCap_of_dilation {v : E3} (hv : ‖v‖ = 1)
     (c : Real) {r : Real} (hr : 0 < r)

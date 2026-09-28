@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Re
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Definitions.M45ModelAnalytics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N} {f : M → N}
-
-
 
 theorem scalarGradientNorm_eq_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (hD' : D'.CurvatureTensorCalculus)
@@ -59,8 +48,6 @@ theorem scalarGradientNorm_eq_of_metric_pullback
   rw [scalarGradientNorm_eq_tangentNorm, scalarGradientNorm_eq_tangentNorm]
   exact congrArg Real.sqrt hnorm
 
-
-
 theorem scalarEvolution_eq_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (hD' : D'.CurvatureTensorCalculus)
     (hf : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ f)
@@ -83,9 +70,6 @@ theorem scalarEvolution_eq_of_metric_pullback
   rw [hlap, D.ricciNormSq_eq_of_local_isometry D' hD' isOpen_univ
     hf.contMDiff.contMDiffOn (fun z _hz => hmetric z) (mem_univ x)]
 
-
-
-
 theorem pointwise_analytic_estimate_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (hD' : D'.CurvatureTensorCalculus)
     (hf : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ f)
@@ -102,9 +86,6 @@ theorem pointwise_analytic_estimate_of_metric_pullback
   exact hbound
 
 end Geometry
-
-
-
 
 theorem cylinder_pointwise_analytic_estimate
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

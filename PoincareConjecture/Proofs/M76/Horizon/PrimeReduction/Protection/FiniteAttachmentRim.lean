@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.SharedBoundar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentFiniteModel
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.BoundedSphereRegion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem closedFaceComplement_space_eq_closure_sdiff
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K) :
@@ -41,8 +29,6 @@ theorem closedFaceComplement_space_eq_closure_sdiff
       (K.closedFaceComplement_finite N hK)).isClosed
     intro x hx
     exact ((K.closedFaceComplement_space_cover N hNK).symm.subset hx.1).resolve_left hx.2
-
-
 
 theorem inter_closedFaceComplement_space_eq_relative_frontier
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K) :
@@ -78,8 +64,6 @@ namespace PoincareConjecture.M76
 
 open Metric
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem HamiltonMarkedProtectedBall.marked_rim_eq_relative_frontier
     {ι κ α : Type*} [Fintype ι] [Fintype κ]
@@ -144,9 +128,6 @@ theorem HamiltonMarkedProtectedBall.marked_rim_eq_relative_frontier
     refine ⟨H (q (⟨z.1, hz.1⟩, z.2)), ?_, rfl⟩
     exact ⟨q (⟨z.1, hz.1⟩, z.2),
       ⟨(⟨z.1, hz.1⟩, z.2), ⟨mem_univ _, hz.2⟩, rfl⟩, rfl⟩
-
-
-
 
 theorem HamiltonMarkedProtectedBall.marked_rim_subcomplex_space
     {ι κ α E : Type*} [Fintype ι] [Fintype κ]

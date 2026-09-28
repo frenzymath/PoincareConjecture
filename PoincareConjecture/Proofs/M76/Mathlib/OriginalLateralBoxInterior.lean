@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.OriginalLateralBoxUnion
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -19,10 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem original_cut_mem_interior_box_union
     (F₀ F₁ : ((ℝ × ℝ) × ℝ) → E)

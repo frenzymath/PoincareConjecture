@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.StaticMetric
 import PoincareConjecture.Proofs.M48.StaticTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +18,6 @@ variable {M N : Type u}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
 
 noncomputable def SingularCComponent.m48_pullback {D' : LeviCivitaData h} {C : ℝ}
     (K : SingularCComponent h D' C) (he : MetricHomothety g h e 1)
@@ -97,7 +88,6 @@ theorem M48.singularMetricPullback_eq (he : MetricHomothety g h e 1)
   dsimp only [j, Function.comp_apply] at hm
   rw [e.apply_symm_apply] at hm
   exact hm.symm
-
 
 noncomputable def SingularRoundComponent.m48_pullback {epsilon : ℝ}
     (K : SingularRoundComponent h epsilon) (he : MetricHomothety g h e 1) :

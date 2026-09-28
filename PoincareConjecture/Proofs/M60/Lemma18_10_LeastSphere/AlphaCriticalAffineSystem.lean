@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetData
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSourceWeakChain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +32,6 @@ local instance affineSystemMixedNormedSpace {m : ℕ} :
     NormedSpace ℝ (Grad m →L[ℝ] E m →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem suCompactCoefficient_bound
     {P F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup F] [NormedSpace ℝ F] {K : Set P}
@@ -61,8 +51,6 @@ theorem suCompactCoefficient_bound
   exact Convex.norm_image_sub_le_of_norm_fderiv_le
     (fun z hz => (hf z hz).differentiableAt (by norm_num))
     (fun z hz => (hC1 z hz).trans h1) hconv hx hy
-
-
 
 theorem suScalarEquations_vectorEquation {m : ℕ} {center : LoopPlane} {R : ℝ}
     {F : LoopPlane → Grad m →L[ℝ] ℝ} {B : LoopPlane → E m →L[ℝ] ℝ}
@@ -127,9 +115,6 @@ theorem suScalarEquations_vectorEquation {m : ℕ} {center : LoopPlane} {R : ℝ
       (integral_finsetSum _ (fun a _ => hBI a)).symm
     _ = _ := integral_congr_ae (Eventually.of_forall fun x =>
       suCoordinateDual_pairing (B x) (phi x))
-
-
-
 
 theorem suAffineQuadraticSystem {m : ℕ}
     (C : SUAffineJetCoefficients m) {u : LoopPlane → E m}

@@ -1,17 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Lines
-
-
-
-
-
-
-
-
 
 namespace Poincare.Topology.Plane.Meshes
 
@@ -39,10 +26,8 @@ theorem affine_nonpos_on_cellCarrier {a : Plane →ᵃ[ℝ] ℝ}
 
 end PlaneComplex
 
-
 noncomputable def verticalCut (c : ℝ) : Plane →ᵃ[ℝ] ℝ :=
   cartesianX - AffineMap.const ℝ Plane c
-
 
 noncomputable def horizontalCut (c : ℝ) : Plane →ᵃ[ℝ] ℝ :=
   cartesianY - AffineMap.const ℝ Plane c
@@ -53,7 +38,6 @@ noncomputable def horizontalCut (c : ℝ) : Plane →ᵃ[ℝ] ℝ :=
 @[simp] theorem horizontalCut_apply (c : ℝ) (p : Plane) : horizontalCut c p = p 1 - c := by
   rfl
 
-
 noncomputable def boxCuts (p : Plane) (r : ℝ) : List (Plane →ᵃ[ℝ] ℝ) :=
   [verticalCut (p 0 - r), verticalCut (p 0 + r),
     horizontalCut (p 1 - r), horizontalCut (p 1 + r)]
@@ -63,7 +47,6 @@ noncomputable def boxCuts (p : Plane) (r : ℝ) : List (Plane →ᵃ[ℝ] ℝ) :
       a = verticalCut (p 0 - r) ∨ a = verticalCut (p 0 + r) ∨
       a = horizontalCut (p 1 - r) ∨ a = horizontalCut (p 1 + r) := by
   simp [boxCuts]
-
 
 noncomputable def coverCuts (centers : Finset Plane) (r : ℝ) :
     List (Plane →ᵃ[ℝ] ℝ) :=
@@ -79,8 +62,6 @@ private theorem coordinate_dist_le (x y : Plane) (k : Fin 2) :
     |x k - y k| ≤ dist x y := by
   have h := PiLp.norm_apply_le (x - y) k
   simpa only [PiLp.sub_apply, Real.norm_eq_abs, dist_eq_norm] using h
-
-
 
 theorem TriangleMesh.cellCarrier_subset_box_of_monochromatic
     (N : TriangleMesh) {p : Plane} {r : ℝ} (hr : 0 < r)
@@ -156,8 +137,6 @@ private theorem dist_lt_four_mul_of_mem_box {p x y : Plane} {r : ℝ} (hr : 0 < 
   simp only [sq_abs]
   nlinarith [sq_nonneg r]
 
-
-
 theorem PlaneComplex.exists_subdivision_image_dist_lt (K : PlaneComplex)
     (hpure : K.IsPure2) {h : Plane → Plane} (hcont : ContinuousOn h K.support)
     {eps : ℝ} (heps : 0 < eps) :
@@ -216,8 +195,6 @@ theorem PlaneComplex.exists_subdivision_image_dist_lt (K : PlaneComplex)
     linarith
   exact hcontrol x hxK y hyK hxy
 
-
-
 theorem PlaneComplex.exists_subdivision_subordinate_openCover
     (K : PlaneComplex) (hpure : K.IsPure2)
     {I : Type*} (U : I → Set Plane) (hU : ∀ i, IsOpen (U i))
@@ -244,9 +221,6 @@ theorem PlaneComplex.exists_subdivision_subordinate_openCover
   rw [Metric.mem_ball]
   exact hsmall t ht x hx (L.position v) hpCarrier
 
-
-
-
 structure PlaneComplex.OpenSubmesh
     (K : PlaneComplex) (C U : Set Plane) where
 
@@ -260,7 +234,6 @@ namespace PlaneComplex.OpenSubmesh
 
 variable {K : PlaneComplex} {C U : Set Plane}
 
-
 theorem support_subset_original (L : K.OpenSubmesh C U) :
     L.mesh.toPlaneComplex.support ⊆ K.support := by
   intro x hx
@@ -270,8 +243,6 @@ theorem support_subset_original (L : K.OpenSubmesh C U) :
   exact K.cellCarrier_subset_support hs (hts hxt)
 
 end PlaneComplex.OpenSubmesh
-
-
 
 theorem PlaneComplex.exists_openSubmesh
     (K : PlaneComplex) (hpure : K.IsPure2) {C U : Set Plane}

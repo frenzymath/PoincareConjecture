@@ -1,29 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreCutoffs
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLRegularLevels
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
-
 
 theorem exists_compact_PL_halfspace_neighborhood
     {M E ι : Type*} [TopologicalSpace M] [T2Space M] [LocallyCompactSpace M]

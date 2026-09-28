@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Collars.ComplementAnnuli
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 open _root_.Dehn
@@ -10,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem nested_collar_retained_component_location
     {A₀ A₁ U : Set P2} {l₀ r₀ l₁ r₁ L d : ℝ}
@@ -31,9 +27,6 @@ theorem nested_collar_retained_component_location
       fun h ↦ ho₁ hx (subset_closure h)⟩)
   · exact Or.inl fun x hx ↦ ⟨(mem_annulusSquare_iff L (-d) x).mpr
       (mem_squareAnnulus_iff_depth.mp (hUS hx)).1, fun h ↦ ho₀ hx (subset_closure h)⟩
-
-
-
 
 theorem exists_nested_essential_collars_retained_annuli
     {A₀ A₁ : Set P2} {l₀ r₀ l₁ r₁ L d : ℝ}

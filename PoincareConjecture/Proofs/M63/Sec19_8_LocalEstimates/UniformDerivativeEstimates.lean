@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ProductSmallTurningCurvature
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ProductInverseAgeJetBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 variable {n : Nat} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
-
 
 theorem m63UniformDerivativeEstimates_of_compact
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_GaussianBound
 import PoincareConjecture.Proofs.M14.Sec6_7_DensityIntegrability
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingMeasureBasis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,20 +14,14 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
 
-
-
 noncomputable def stableSourceDensity (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) : G.Horizontal x → ℝ :=
   H.carrier.indicator (fun Z => exponentialWeightedJacobian E b Z (Real.sqrt τ))
-
-
 
 theorem stableSourceDensity_nonneg (H : M14StableSet G T τ x E)
     (b : Module.Basis (Fin n) ℝ (G.Horizontal x)) (Z : G.Horizontal x) :
     0 ≤ stableSourceDensity H b Z :=
   indicator_nonneg (fun Z _ => exponentialWeightedJacobian_nonneg E b Z (Real.sqrt_nonneg τ)) Z
-
-
 
 theorem stableSourceDensity_measurable
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -49,9 +34,6 @@ theorem stableSourceDensity_measurable
       H.carrier := (stableDensity_jacobian_continuousOn hM04 hM12 H D).congr
         (fun _ hZ => (stableDensity_mul_jacobian_eq_weighted E H D hZ).symm)
   exact hw.measurable_piecewise continuousOn_const H.carrier_open.measurableSet
-
-
-
 
 theorem stableSourceDensity_le_gaussian
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -67,8 +49,6 @@ theorem stableSourceDensity_le_gaussian
     exact exponentialWeightedJacobian_le_gaussian hCoordinates hM04 hM12 E b hb H hZ
   · rw [stableSourceDensity, indicator_of_notMem hZ]
     exact mul_nonneg (Real.rpow_nonneg (by norm_num) _) (Real.exp_pos _).le
-
-
 
 theorem integral_stableSourceDensity
     (hCoordinates : M12MetricPredecessors.{0} n)

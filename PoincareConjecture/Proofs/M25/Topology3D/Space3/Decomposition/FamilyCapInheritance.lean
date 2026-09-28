@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.EventCapInheritance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_reindexed_surgery_cap_family
     (n : ℕ) (psi : Fin n → UnitTwoSphere × ℝ → E3)
@@ -207,9 +194,6 @@ theorem exists_reindexed_surgery_cap_family
       · refine mem_iUnion.mpr ⟨Sum.inr 1, ?_⟩
         rw [hNewCap' 1]
         exact hy
-
-
-
 
 theorem SurgeryCapTag.cap_avoids_separated_cuts
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetGauge
 import Mathlib.MeasureTheory.SpecificCodomains.Pi
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open Set Filter Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem cauchyGauge_derivatives_memLp {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B0 : ℝ} {U : Set ℂ}
@@ -59,10 +46,6 @@ theorem cauchyGauge_derivatives_memLp {n : ℕ} [Nonempty (Fin n)]
     have hh := T.symm.toContinuousLinearMap.comp_memLp' ht
     exact hh.ae_eq (ae_of_all _ fun z => T.symm_apply_apply _)
   exact ⟨hpart 1 (Or.inl rfl), hpart I (Or.inr rfl)⟩
-
-
-
-
 
 theorem cauchyGauge_residual_derivatives_memLp {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B0 : ℝ} {U V K : Set ℂ}
@@ -128,10 +111,6 @@ theorem cauchyGauge_residual_derivatives_memLp {n : ℕ} [Nonempty (Fin n)]
     have hD := hR.clm_apply huz.hasFDerivAt
     exact (congrArg (fun D : ℂ →L[ℝ] E => D v) hD.fderiv).symm
   exact ⟨hpart 1 (Or.inl rfl), hpart I (Or.inr rfl)⟩
-
-
-
-
 
 theorem cauchyGauge_analytic_residual_local_memLp {n : ℕ} [Nonempty (Fin n)]
     {A : ℂ → (Fin n → ℂ) →L[ℂ] (Fin n → ℂ)} {R B0 : ℝ}

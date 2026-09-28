@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryBoundedCoefficientIntegral
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,11 +13,6 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
-
-
 
 theorem m64TriangularSource_integral_firstVariation
     {A B : ℝ → LoopPlane → ℝ} {A0 B0 f g h : LoopPlane → ℝ} {C : ℝ}

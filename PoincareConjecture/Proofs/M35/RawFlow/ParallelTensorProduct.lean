@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 import PoincareConjecture.Proofs.M04.ScalarChainRule
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +27,6 @@ private theorem tensor_extend_smooth {k : ℕ}
   exact (hT.2 e.baseSet e.open_baseSet _ (fun i => contMDiffOn_extend_baseSet (v i))).contMDiffAt
     (e.open_baseSet.mem_nhds (FiberBundle.mem_baseSet_trivializationAt' x))
 
-
 theorem covariantTensorDerivative_scalar_mul (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -51,7 +41,6 @@ theorem covariantTensorDerivative_scalar_mul (D : LeviCivitaData g) {k : ℕ}
     ← Finset.mul_sum]
   ring
 
-
 theorem covariantTensorDerivative_scalar_mul_parallel (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     (hparallel : D.covariantTensorDerivative T = 0)
@@ -61,8 +50,6 @@ theorem covariantTensorDerivative_scalar_mul_parallel (D : LeviCivitaData g) {k 
   funext x v
   rw [covariantTensorDerivative_scalar_mul D hT (hf x), hparallel]
   simp only [Pi.zero_apply, mul_zero, add_zero]
-
-
 
 theorem second_covariantTensorDerivative_scalar_mul_parallel
     (D : LeviCivitaData g) {k : ℕ}
@@ -112,7 +99,6 @@ theorem second_covariantTensorDerivative_scalar_mul_parallel
   change _ = (mvfderiv (𝓡 n) q x a - mvfderiv (𝓡 n) f x (D.connection B x a)) * T x v
   ring
 
-
 theorem tensorLaplacian_scalar_mul_parallel (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     (hparallel : D.covariantTensorDerivative T = 0)
@@ -122,7 +108,6 @@ theorem tensorLaplacian_scalar_mul_parallel (D : LeviCivitaData g) {k : ℕ}
   simp only [LeviCivitaData.tensorLaplacian,
     second_covariantTensorDerivative_scalar_mul_parallel D hT hparallel hf,
     ← Finset.sum_mul, LeviCivitaData.laplacian]
-
 
 theorem tensorLaplacian_scalar_mul_metricGram (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -134,7 +119,6 @@ theorem tensorLaplacian_scalar_mul_metricGram (D : LeviCivitaData g)
   simp only [metricGramEvaluation, Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.cons_val,
     metricGram, g.symm x v u, pow_two]
 
-
 theorem isSmoothCovariantTensor_scalar_mul {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
@@ -145,7 +129,6 @@ theorem isSmoothCovariantTensor_scalar_mul {k : ℕ}
     exact ⟨f x • A, fun v => by simp only [smul_apply, smul_eq_mul, hA]⟩
   · intro U hU X hX
     exact hf.contMDiffOn.mul (hT.2 U hU X hX)
-
 
 theorem tensorLaplacian_add (D : LeviCivitaData g) {k : ℕ}
     {S T : CovariantTensorEvaluation n M k}

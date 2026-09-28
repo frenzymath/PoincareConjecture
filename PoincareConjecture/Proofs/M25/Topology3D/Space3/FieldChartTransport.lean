@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +12,8 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
 noncomputable def chartPushforward (e : OpenPartialHomeomorph E F) (V : E → E) (y : F) : F :=
   fderiv ℝ e (e.symm y) (V (e.symm y))
-
 
 theorem chartPushforward_contDiffOn (e : OpenPartialHomeomorph E F)
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)
@@ -36,8 +23,6 @@ theorem chartPushforward_contDiffOn (e : OpenPartialHomeomorph E F)
     (hV.contDiffOn : ContDiffOn ℝ ∞ V e.source).comp hi (fun _ hy => e.map_target hy)
   exact ((he.fderiv_of_isOpen e.open_source (by simp)).comp hi
     (fun _ hy => e.map_target hy)).clm_apply hVc
-
-
 
 theorem exists_chart_field_extension [FiniteDimensional ℝ F]
     (e : OpenPartialHomeomorph E F)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredCoefficientCutoff
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredSpectralResidual
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -23,10 +14,6 @@ variable {iota E : Type*} [Countable iota]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [SecondCountableTopology E]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
-
-
-
-
 
 theorem exists_centeredCoefficientResidual (lambda : iota → NNReal) (w : State iota)
     {T r : ℝ} (hT : 0 ≤ T) (hr : 0 < r)

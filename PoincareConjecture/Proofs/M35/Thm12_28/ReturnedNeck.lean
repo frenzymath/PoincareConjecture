@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricRigidity
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 noncomputable def standardPatchOfGeneralizedNeck {g₀ : StandardInitialMetric}
     {F : MaximalStandardCapFlow g₀} {t epsilon : ℝ}
@@ -67,9 +56,6 @@ noncomputable def standardPatchOfGeneralizedNeck {g₀ : StandardInitialMetric}
     refine ⟨z.1, ?_⟩
     exact (congrArg (fun s : ℝ => e (N.coordinate_map (z.1, s))) hz0.symm).trans
       (congrArg e hcenter)
-
-
-
 
 noncomputable def standardNeckOfGeneralizedNeck (P : M35StandardCapPredecessors)
     (atlas : StandardCylinderAtlas) {g₀ : StandardInitialMetric}

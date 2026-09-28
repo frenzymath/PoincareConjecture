@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalComponentResidualEdges
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.General.OriginalComponentEssentialPolygon
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

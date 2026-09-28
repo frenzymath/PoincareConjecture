@@ -2,32 +2,11 @@ import PoincareConjecture.Statements.M50FinitePrefix
 import PoincareConjecture.Proofs.M50.ObservedFiniteness
 import PoincareConjecture.Proofs.M50.Sec17_2_NoAccumulation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem repairedFinitePrefix : RepairedFinitePrefixTheory.{u} := by
   refine ⟨?_⟩

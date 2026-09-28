@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M38.UnionRefinement
 import PoincareConjecture.Proofs.M38.CompactCollarInjectivity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Slice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
-
-
 
 noncomputable def incidentOldAmbientEquivalence (x : eventDiscardedOpen F T hT) :
     SurgeryRegionEquivalence (componentCarrier (incidentOldCarrier F T hT) x)
@@ -54,15 +43,11 @@ noncomputable def incidentOldAmbientEquivalence (x : eventDiscardedOpen F T hT) 
     map_smooth := J.map_smooth
     inverse_smooth := by simpa only [← htarget] using J.inverse_smooth }
 
-
 theorem incidentOldAmbientEquivalence_map (x : eventDiscardedOpen F T hT)
     (y : (componentCarrier (incidentOldCarrier F T hT) x).carrier) :
     (incidentOldAmbientEquivalence F T hT x).map y = y.val.val := rfl
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 structure IncidentComponentRegion (P : ∀ i, EventCapCoordinates F T hT i)
     (x : eventDiscardedOpen F T hT) (Q : GeneralizedSliceCarrier.{u}) where
@@ -88,8 +73,6 @@ structure IncidentComponentRegion (P : ∀ i, EventCapCoordinates F T hT i)
     collar i (z, s) ∉ closure region
   collar_compare : ∀ i (z : UnitTwoSphere) (s : ℝ), 0 < s → s < width i →
     (identify.map (collar i (z, s))).val.val = (P i.val).collar (z, s)
-
-
 
 theorem exists_incident_component_region
     (P : ∀ i, EventCapCoordinates F T hT i) (x : eventDiscardedOpen F T hT)
@@ -216,10 +199,6 @@ theorem exists_incident_component_region
     collar_positive := hpositive
     collar_negative := hnegative
     collar_compare := hcompare }, rfl⟩
-
-
-
-
 
 theorem spherical_incident_assembly_of_component_chart
     (P : ∀ i, EventCapCoordinates F T hT i) (x : eventDiscardedOpen F T hT)

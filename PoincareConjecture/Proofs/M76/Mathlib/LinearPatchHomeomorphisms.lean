@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +11,6 @@ variable {M E F : Type*}
   [NormedAddCommGroup M] [NormedSpace ℝ M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem IsFinitePLBallPair.linear_image_patch_data
     {d q : Set E} (hd : IsFinitePLBallPair M d q) (e : E ≃L[ℝ] F) :

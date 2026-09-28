@@ -52,17 +52,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscBoundary
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularInnermostTube
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
-
 set_option linter.hashCommand false
-
-
-

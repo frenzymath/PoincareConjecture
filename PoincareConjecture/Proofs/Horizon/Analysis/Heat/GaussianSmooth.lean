@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.GaussianSemigroup
 import Mathlib.Analysis.Normed.Operator.Prod
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory ProbabilityTheory Filter

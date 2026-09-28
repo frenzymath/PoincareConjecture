@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralZeroSphere
 import PoincareConjecture.Proofs.M02.Topology.IntegralSphereHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

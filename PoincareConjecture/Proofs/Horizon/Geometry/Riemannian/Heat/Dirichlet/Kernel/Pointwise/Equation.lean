@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kern
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.Time
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ClassicalEquation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,7 +56,6 @@ private theorem hasDerivAt_heatKernelContinuousTime_fixed (t : ℝ) (ht : 0 < t)
     filter_upwards [Ioi_mem_nhds hat] with s hs
     exact heatKernelContinuousTime_eq_fixed D S a ha s hs x y
   exact hd.congr_of_eventuallyEq heq
-
 
 theorem hasDerivAt_heatKernelContinuousTime_laplacian
     (t : ℝ) (ht : 0 < t) (x y : M) (hx : x ∈ Ω) :

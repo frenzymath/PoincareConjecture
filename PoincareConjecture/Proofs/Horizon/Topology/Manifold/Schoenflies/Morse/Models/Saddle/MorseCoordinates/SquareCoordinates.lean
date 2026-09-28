@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.QuadraticPatch.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SquareCompletion
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +39,6 @@ private theorem positiveScale_smooth :
   intro q hq
   exact ne_of_gt (div_pos zero_lt_one (by have := sphereRoot_pos hq; positivity))
 
-
 def squareCoordinates (q : E2) : E2 :=
   WithLp.toLp 2 ![negativeScale q * q 0, positiveScale q * q 1]
 
@@ -57,8 +54,6 @@ theorem lowerGraph_eq_signed_squares {q : E2} (hq : q ∈ ball (0 : E2) 1) :
     Real.sq_sqrt (div_pos ht hd).le, Real.sq_sqrt (div_pos zero_lt_one hd).le]
   field_simp
   nlinarith [norm_sq_two q]
-
-
 
 theorem exists_squareCoordinates_inverse :
     ∃ e : OpenPartialHomeomorph E2 E2,

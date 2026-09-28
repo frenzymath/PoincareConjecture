@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates.Ambient
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev P := E2 × Real
-
-
 
 theorem exists_restriction_eq_surface_zero_section
     {f : S2 -> E3} (hf : Topology.IsEmbedding f) (p : S2)
@@ -76,8 +67,6 @@ theorem exists_restriction_eq_surface_zero_section
       refine ⟨e z.1, ?_⟩
       rw [hGeq, hz0, hFsurface _ (hz0 ▸ hzF)]
 
-
-
 theorem exists_ambient_height_coordinates_exact
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     (v p : S2)
@@ -105,8 +94,6 @@ theorem exists_ambient_height_coordinates_exact
   · intro z hz
     rw [hGeq]
     exact hFeq z (hGs hz)
-
-
 
 theorem exists_ambient_morse_coordinates_exact
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

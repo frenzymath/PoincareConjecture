@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.SquareChartMetric
 import PoincareConjecture.Proofs.M09.CoordinatePhase
 import PoincareConjecture.Proofs.M09.TimeDependentFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

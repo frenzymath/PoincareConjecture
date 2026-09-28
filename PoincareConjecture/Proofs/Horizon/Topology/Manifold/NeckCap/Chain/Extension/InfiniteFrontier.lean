@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.FiniteFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +11,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} {ε : ℝ} (C : BalancedNeckChain g ε)
-
-
 
 theorem frontier_endpoint_of_mem_closure {i : ℤ} (hi : i ∈ C.shape.active)
     {x : M}
@@ -76,8 +61,6 @@ theorem frontier_endpoint_of_mem_closure {i : ℤ} (hi : i ∈ C.shape.active)
       (by simpa only [hie, C.epsilon_eq (i + 1) hn] using hwithin)
     exact hout (i + 1) hn
       (hcapture ⟨by simpa only [hie] using hpos, hout i hi⟩)
-
-
 
 theorem frontier_inter_iUnion_closure_subset_outer_ends :
     frontier (⋃ i : {i // i ∈ C.shape.active}, (C.neck i.1).carrier) ∩
@@ -143,8 +126,6 @@ theorem frontier_inter_iUnion_closure_subset_outer_ends :
     | biInfinite =>
       exact (hnext (by simp [hshape, ChainShape.active])).elim
 
-
-
 theorem disjoint_frontier_closure_of_neighbors {i : ℤ} (hi : i ∈ C.shape.active)
     (hprev : i - 1 ∈ C.shape.active) (hnext : i + 1 ∈ C.shape.active) :
     Disjoint (frontier (⋃ j : {j // j ∈ C.shape.active}, (C.neck j.1).carrier))
@@ -156,7 +137,6 @@ theorem disjoint_frontier_closure_of_neighbors {i : ℤ} (hi : i ∈ C.shape.act
   · exact h.1 hnext
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 private theorem eventually_index_not_mem_finite_of_tendsto
     {ι : Type*} {l : Filter ι} {p : ι → M} {f : ι → ℤ} {x : M}
@@ -175,8 +155,6 @@ private theorem eventually_index_not_mem_finite_of_tendsto
     n hn hpn hf
   exact hn (mem_iUnion₂.mpr ⟨f n, hf, subset_closure hpn⟩)
 
-
-
 theorem eventually_index_not_mem_finite_of_tendsto_frontier
     {ι : Type*} {l : Filter ι} {p : ι → M} {f : ι → ℤ} {x : M}
     (htendsto : Tendsto p l (𝓝 x))
@@ -194,8 +172,6 @@ theorem eventually_index_not_mem_finite_of_tendsto_frontier
   intro i hi hxi
   exact houter (C.frontier_inter_iUnion_closure_subset_outer_ends
     ⟨hfront, mem_iUnion.mpr ⟨⟨i, hi⟩, hxi⟩⟩)
-
-
 
 theorem tendsto_indices_atTop_of_tendsto_forward_frontier
     {a : ℤ} (hshape : C.shape = .forward a)
@@ -219,7 +195,6 @@ theorem tendsto_indices_atTop_of_tendsto_forward_frontier
     by_contra h
     exact hn ⟨hna', le_of_not_gt h⟩
   exact hgt.le
-
 
 theorem tendsto_indices_atBot_of_tendsto_backward_frontier
     {b : ℤ} (hshape : C.shape = .backward b)

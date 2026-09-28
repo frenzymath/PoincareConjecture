@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialMeetingVelocity
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialJacobiZero
 import Mathlib.Topology.VectorBundle.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_prefix_kernel_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -50,8 +38,6 @@ theorem exponential_prefix_kernel_eq_zero
     exact ⟨hc.1.le, hc.2.le⟩
   exact initialValuePath_direction_eq_zero_of_phase hM04 hM12
     (exponentialInitialValuePath E Z b hb (hc.1.trans hc.2)) W hcC hfield hderiv
-
-
 
 theorem exponential_prefix_differential_bijective
     (hCoordinates : M12MetricPredecessors.{0} n)

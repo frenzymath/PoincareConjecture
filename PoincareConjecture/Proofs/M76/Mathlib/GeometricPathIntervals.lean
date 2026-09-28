@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePathLabels
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearChain
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace SimpleGraph
 
 variable {V E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem segmentCarrier_eq_linear_chain (G : SimpleGraph V) (p : V → E)
     {n : ℕ} (e : Fin (n + 2) ≃ V)
@@ -38,10 +26,6 @@ theorem segmentCarrier_eq_linear_chain (G : SimpleGraph V) (p : V → E)
     exact ⟨e i.castSucc, e i.succ, (he _ _).mpr ⟨i, Or.inl ⟨rfl, rfl⟩⟩, hi⟩
 
 variable [Finite V] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem isFinitePLBallPair_segmentCarrier_of_leaf (G : SimpleGraph V) (p : V → E)
     (hconn : G.Connected) (hdegree : ∀ v, (G.neighborSet v).ncard ≤ 2)
@@ -61,11 +45,6 @@ theorem isFinitePLBallPair_segmentCarrier_of_leaf (G : SimpleGraph V) (p : V →
     Set.ext (fun v => hends v)
   rw [hset, image_pair, G.segmentCarrier_eq_linear_chain p e he]
   exact hball
-
-
-
-
-
 
 theorem finitePL_interval_components (G : SimpleGraph V) (p : V → E)
     (hdegree : ∀ v, (G.neighborSet v).ncard ≤ 2)

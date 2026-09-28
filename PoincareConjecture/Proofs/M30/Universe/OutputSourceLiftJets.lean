@@ -1,22 +1,5 @@
 import PoincareConjecture.Proofs.M30.Universe.OutputLiftJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 noncomputable def liftCylinderFromMaps {J : Set ℝ} (L : BlowupLimitFlow.{0} J)
     (F : GeneralizedRicciFlowData.{u}) (origin scale : ℝ) (I : Set ℝ)
@@ -152,10 +132,6 @@ private theorem liftCylinder_coefficient_eq {J : Set ℝ} (L : BlowupLimitFlow.{
   dsimp only [GeneralizedFlowCylinder.pullbackInner, FlowCarrier.coordinateCoefficient]
   rw [mixedPullbackInner, dif_pos hp.1, hderiv, hforward]
   rfl
-
-
-
-
 
 theorem liftCylinder_iteratedFDerivWithin_coefficient
     {J : Set ℝ} (L : BlowupLimitFlow.{0} J)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.CylindricalRadial
 import PoincareConjecture.Proofs.M36.RadialEquality
 import PoincareConjecture.Proofs.M36.PolarInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology RealInnerProductSpace

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ContinuousOperator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.ClassicalEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -126,8 +119,6 @@ private theorem laplacian_eq_neg_of_smooth_forcing
   linarith
 
 variable [NeZero n] (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
-
-
 
 theorem heatPowerContinuous_laplacian (k : ℕ) (t : ℝ) (ht : 0 < t)
     (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω)) (x : M) (hx : x ∈ Ω) :

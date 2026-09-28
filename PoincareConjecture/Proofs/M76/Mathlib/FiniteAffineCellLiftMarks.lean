@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactAffineImageLiftFactorization
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyInjectiveConvexOverlap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe w
@@ -21,12 +8,6 @@ universe w
 open Set Topology
 
 namespace Geometry
-
-
-
-
-
-
 
 theorem exists_finite_marks_for_affine_cell_lifts
     {U V ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedTargetGerms
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Mathlib.OriginalStripDoubleLocus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +18,6 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Topologica
   {f : V2 → X} {Z : Set X} {base : Z} {G : Subgroup (FundamentalGroup Z base)}
   {c : Bool → P2 → V2} {τ : C3 → X}
   {D : OriginalResolutionWordExclusionData f Z base G c τ (1 / 4)}
-
-
 
 theorem OriginalNormalizedResolutionPairData.double_targets_avoid_tube
     (P : OriginalNormalizedResolutionPairData e D)
@@ -58,9 +48,6 @@ theorem OriginalNormalizedResolutionPairData.double_targets_avoid_tube
   obtain ⟨factsU, factsV⟩ := P.retained_fibers hτ hfull h0 h1 hfZ
   exact ⟨fun _ hx _ hy hxy hne ↦ factsU.double_target_avoids hbad hKU hx hy hxy hne,
     fun _ hx _ hy hxy hne ↦ factsV.double_target_avoids hbad hKV hx hy hxy hne⟩
-
-
-
 
 theorem OriginalNormalizedResolutionPairData.exists_double_target_germs
     [T2Space X] (P : OriginalNormalizedResolutionPairData e D)

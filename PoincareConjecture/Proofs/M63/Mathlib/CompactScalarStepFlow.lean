@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M03.Existence.CompactTimeDependentFlowNative
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Manifold
 open scoped ContDiff Bundle
-
-
-
 
 theorem exists_contDiff_scalar_local_flow_on_compact
     {k : ℕ∞} (hk : k ≠ 0) (Y : ℝ → ℝ → ℝ)

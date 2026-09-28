@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M10.TerminalGradient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem tangent_eq_of_metric_duals (g : RiemannianMetric n M) {x y : M}
     (hxy : x = y) (X : TangentSpace (𝓡 n) x) (Y : TangentSpace (𝓡 n) y)
@@ -34,7 +25,6 @@ theorem tangent_eq_of_metric_duals (g : RiemannianMetric n M) {x y : M}
 
 variable [ConnectedSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem minimizing_terminal_velocity_eq
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

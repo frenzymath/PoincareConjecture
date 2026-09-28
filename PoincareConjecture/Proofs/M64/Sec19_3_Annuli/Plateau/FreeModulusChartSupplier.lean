@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusChartUniformization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +9,6 @@ open Set
 open scoped Topology Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture.M64
-
-
 
 theorem m64FreeConformalModulusApproximation_of_chart_curves
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveInduction
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderInitialCollars
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_initial_alexanderSectionProfile_with_collars
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)

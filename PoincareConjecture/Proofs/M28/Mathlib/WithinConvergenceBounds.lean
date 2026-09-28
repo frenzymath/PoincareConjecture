@@ -1,20 +1,9 @@
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
 
 theorem TendstoUniformlyOn.exists_eventual_norm_bound
     {E F α : Type*} [TopologicalSpace E] [NormedAddCommGroup F]
@@ -30,8 +19,6 @@ theorem TendstoUniformlyOn.exists_eventual_norm_bound
     _ ≤ ‖g x‖ + ‖f k x - g x‖ := norm_add_le _ _
     _ ≤ B + 1 := add_le_add (hB x hx) (by
       simpa only [dist_eq_norm, norm_sub_rev] using (hk x hx).le)
-
-
 
 theorem exists_eventual_withinJet_bound_of_tendstoUniformlyOn
     {E F α : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

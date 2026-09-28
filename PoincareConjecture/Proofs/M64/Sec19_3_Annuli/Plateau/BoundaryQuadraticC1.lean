@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryReflectedEne
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryReflectedHolder
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryOddReflection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -29,10 +15,6 @@ open Poincare.Analysis.Sobolev.BoundaryExtension
 open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64MixedBoundary_quadratic_contDiffOn {N : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin N))

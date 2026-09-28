@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SeparationLabels
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SeparatingTube
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_separating_cover_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -65,10 +51,6 @@ theorem exists_separating_cover_accuracy :
   intro N hN hxN
   apply (hlabel N hN hxN).mp
   exact (label.apply_eq_of_preconnectedSpace ⟨N.center, hxN⟩ ⟨N0.center, hx0⟩).trans htrue
-
-
-
-
 
 theorem exists_limit_cover_tube_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -3,22 +3,11 @@ import Mathlib.Topology.Compactness.Compact
 import Mathlib.Tactic.Choose
 import Mathlib.Tactic.Push
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.CurvatureIntegral
-
-
-
 
 theorem exists_finite_punctured_ball_cover
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)
@@ -65,7 +54,6 @@ theorem exists_finite_punctured_ball_cover
     exact Finset.mem_image.mpr ⟨x, hyF, rfl⟩
   · exact mem_iUnion₂.mpr
       ⟨y, Finset.mem_union_left _ hyF, hxy, fun h => hxy' (mem_singleton_iff.mp h)⟩
-
 
 theorem finite_spires_of_isCompact
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K)

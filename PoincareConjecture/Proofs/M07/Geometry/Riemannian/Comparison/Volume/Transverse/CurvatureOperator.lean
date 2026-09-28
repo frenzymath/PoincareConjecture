@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Symmetry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ParallelFrame
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def radialCurvatureOperator (g : RiemannianMetric n M) (x : M)
     (v : TangentSpace (𝓡 n) x) :
@@ -43,7 +40,6 @@ theorem radialCurvatureOperator_apply (g : RiemannianMetric n M)
   rw [jacobiCurvature_apply hΓ, coordinateCurvature_in_chart g D x hx]
   exact (isInvertible_mfderiv_extChartAt hx).inverse_apply_self _
 
-
 theorem radialCurvatureOperator_self (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 n) x) :
     g.radialCurvatureOperator x v v = 0 := by
@@ -52,7 +48,6 @@ theorem radialCurvatureOperator_self (g : RiemannianMetric n M)
   have h := g.pos x (D.curvature x v v v) hne
   have hz := D.curvatureTensor_zero_first x v (D.curvature x v v v) v
   exact (ne_of_gt h) hz
-
 
 theorem isSymmetric_frame_radialCurvatureOperator
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (x : M)
@@ -68,8 +63,6 @@ theorem isSymmetric_frame_radialCurvatureOperator
   rw [← hP, ← hP, P.apply_symm_apply, P.apply_symm_apply,
     g.radialCurvatureOperator_apply D, g.radialCurvatureOperator_apply D]
   exact D.inner_radial_curvature_symm x (P u) v (P w)
-
-
 
 theorem trace_transverse_frame_radialCurvatureOperator
     {m : ℕ} {N : Type*} [TopologicalSpace N]

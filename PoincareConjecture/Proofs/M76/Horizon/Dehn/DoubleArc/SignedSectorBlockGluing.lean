@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedQuarterPrismVolumeMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

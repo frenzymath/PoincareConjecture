@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ConnectedRimProjection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -191,8 +184,6 @@ theorem complementaryCut_rim_subset_carrier :
     exact Or.inl ⟨x, hx.1, rfl⟩
   · obtain ⟨i, hi, x, hx, rfl⟩ := mem_iUnion₂.mp hz
     exact Or.inr (mem_iUnion₂.mpr ⟨i, hi, x, (B i.1).disk i.2 |>.1 hx, rfl⟩)
-
-
 
 theorem complementaryCut_rim_without_bridges_projects_to_primalRim
     (hP : P ≤ K.vertexAbstractComplex.edgeGraph)

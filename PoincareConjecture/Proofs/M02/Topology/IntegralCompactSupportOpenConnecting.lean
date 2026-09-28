@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportRangeMap
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyNaturality
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSubtype
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

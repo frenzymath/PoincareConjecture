@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartStateSmoothness
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 10000000
 

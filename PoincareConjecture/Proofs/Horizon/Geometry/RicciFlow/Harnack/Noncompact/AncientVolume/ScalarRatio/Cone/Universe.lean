@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Pullback
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem curvatureTensorNorm_eq_zero_of_terminal_homothetic_field_small
     {n : ℕ} {M : Type} [TopologicalSpace M]

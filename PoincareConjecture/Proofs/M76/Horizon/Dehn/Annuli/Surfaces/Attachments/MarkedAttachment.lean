@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.HalfCollarAttachment
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Attachments.SquareCylinder
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -27,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem full_euclidean_chart_regular (N : EpsilonNeck g) (q : UnitTwoSphere)
     {p : V} (hp : (M35.cylinderCoordinateEquiv p).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (N.coordinate_map ∘ M35.cylinderChart q) p ∧
@@ -43,8 +32,6 @@ theorem full_euclidean_chart_regular (N : EpsilonNeck g) (q : UnitTwoSphere)
   rw [mfderiv_comp p (hc.mdifferentiableAt (by simp))
     ((M35.cylinderChart_contMDiff q p).mdifferentiableAt (by simp))]
   exact hi.comp (M35.cylinderChart_mfderiv_invertible q p)
-
-
 
 theorem full_euclidean_coefficient (N : EpsilonNeck g) (q : UnitTwoSphere)
     {p : V} (hp : (M35.cylinderCoordinateEquiv p).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -78,8 +65,6 @@ theorem full_euclidean_coefficient (N : EpsilonNeck g) (q : UnitTwoSphere)
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem exists_full_normalized_metric_realization (N : EpsilonNeck g) (q : UnitTwoSphere)
     {p : V} (hp : (M35.cylinderCoordinateEquiv p).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     ∃ (g' : RiemannianMetric 3 V) (_D' : LeviCivitaData g'),
@@ -105,8 +90,6 @@ theorem exists_full_normalized_metric_realization (N : EpsilonNeck g) (q : UnitT
         ((N.full_euclidean_chart_regular q hy).2.injective
           (hz.trans (map_zero (mfderiv (𝓡 3) (𝓡 3) f y)).symm)))))
   exact ⟨g', D', Filter.mem_of_superset (hW.mem_nhds hpW) hcoeff⟩
-
-
 
 theorem full_normalized_metric_lower (N : EpsilonNeck g)
     (he : N.epsilon ≤ 1 / 24) (q : UnitTwoSphere) (s : ℝ)

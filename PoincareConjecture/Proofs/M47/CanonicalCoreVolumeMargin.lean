@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalModelVolumeMargin
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeRadius
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +15,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem cap_core_radii_bounded {g : RiemannianMetric 3 M} (N : CapCertificate g) :
     ∃ B : ℝ, 1 ≤ B ∧ ∀ y ∈ N.core, B⁻¹ ≤ N.core_radius y ∧ N.core_radius y ≤ B := by
@@ -49,9 +37,6 @@ theorem cap_core_radii_bounded {g : RiemannianMetric 3 M} (N : CapCertificate g)
   intro z hz
   have hzcarrier := N.core_ball_subset y hy (subset_closure hz)
   exact ⟨hBm.trans (hlower z hzcarrier), (hratio o hoc z hzcarrier).trans hupperB⟩
-
-
-
 
 theorem cap_core_ball_volume_bound_persists [CompactSpace M] [SecondCountableTopology M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

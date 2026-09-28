@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderCoefficientBounds
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderJetNorm
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundGaussJetReadout
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -107,11 +98,9 @@ variable {M : Type u} [TopologicalSpace M]
 private def normalizedNeckTensor (N : EpsilonNeck g) : RoundCylinderTwoTensor :=
   fun z v w => N.scale⁻¹ ^ 2 * roundCylinderPullback g N.coordinate_map z v w
 
-
 def cylinderErrorCoefficients (N : EpsilonNeck g) (z : RoundCylinderSpace) :
     CE → MetricCoefficient 3 :=
   fun x => cylinderNeckCoefficients N z.1 z.2 x - cylinderModelMetricCoefficient x
-
 
 theorem cylinderErrorCoefficients_contDiffAt (N : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -133,8 +122,6 @@ private theorem cylinder_error_frozen_germ (N : EpsilonNeck g)
     cylinderModelMetricCoefficient x (cb a) (cb b) = _
   rw [hx, cylinderModelMetricCoefficient_basis z.1 z.2 x a b]
   rfl
-
-
 
 theorem exists_cylinder_metricTwoJet_bound :
     ∃ L : ℝ, 0 < L ∧

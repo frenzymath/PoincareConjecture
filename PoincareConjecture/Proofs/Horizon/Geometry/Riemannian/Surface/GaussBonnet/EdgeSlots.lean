@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Planar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
-
 
 theorem coordinateTriangle_side_injective
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -61,7 +53,6 @@ variable [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S]
 
 namespace FiniteSmoothTriangulation
 
-
 theorem face_edge_injective_of_coordinates
     (T : FiniteSmoothTriangulation (M := S))
     (F : T.faces → OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -74,8 +65,6 @@ theorem face_edge_injective_of_coordinates
   apply coordinateTriangle_side_injective (F f) (b f) (hsource f)
   dsimp only
   rw [← hside f i, ← hside f j, T.face_edge_map, T.face_edge_map, hij]
-
-
 
 theorem exists_edge_slot_equiv
     (T : FiniteSmoothTriangulation (M := S))
@@ -117,7 +106,6 @@ theorem exists_edge_slot_equiv
       rw [hf]
       exact hindex e 1
   exact ⟨(Equiv.ofBijective pair ⟨hpair_inj, hpair_surj⟩).symm, hpair, fun _ => rfl⟩
-
 
 theorem three_card_faces_eq_two_card_edges
     (T : FiniteSmoothTriangulation (M := S))

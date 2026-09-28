@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.SmoothNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Topology
@@ -20,7 +11,6 @@ variable {M E : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace E] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) E]
   [IsManifold (𝓡 3) ∞ E] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 noncomputable def ofLiftedCoordinate {p : E → M}
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p) (e : E) (he : p e = N.center)
@@ -101,8 +91,6 @@ variable {M E : Type*} [TopologicalSpace M]
   [TopologicalSpace E] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) E]
   [IsManifold (𝓡 3) ∞ E] {g : RiemannianMetric 3 M}
 
-
-
 theorem exists_lifted_neck_with_coordinates (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hcover : IsCoveringMap p)
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p) (e : E) :
@@ -120,8 +108,6 @@ theorem exists_lifted_neck_with_coordinates (H : NeckOnlyCover g) (hwhole : H.X 
     N.injOn_projection_lifted_coordinate hF,
     fun _ hz => N.projection_liftedCoordinateMap F e hF hz⟩
 
-
-
 theorem exists_lifted_neck_with_sheet (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hcover : IsCoveringMap p)
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p) (e : E) :
@@ -133,8 +119,6 @@ theorem exists_lifted_neck_with_sheet (H : NeckOnlyCover g) (hwhole : H.X = univ
     H.exists_lifted_neck_with_coordinates hwhole hcover hp e
   exact ⟨L, hε, hc, N, hN, hs, hu, hinj⟩
 
-
-
 theorem exists_lifted_neck (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hcover : IsCoveringMap p)
     (hp : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ p) (e : E) :
@@ -144,8 +128,6 @@ theorem exists_lifted_neck (H : NeckOnlyCover g) (hwhole : H.X = univ)
   obtain ⟨L, hε, hc, N, hN, hs, _⟩ :=
     H.exists_lifted_neck_with_sheet hwhole hcover hp e
   exact ⟨L, hε, hc, N, hN, hs⟩
-
-
 
 theorem exists_lifted_cover_with_coordinate_sheets [ConnectedSpace E]
     (H : NeckOnlyCover g) (hwhole : H.X = univ)
@@ -174,8 +156,6 @@ theorem exists_lifted_cover_with_coordinate_sheets [ConnectedSpace E]
     neck_epsilon := by rintro _ ⟨e, rfl⟩; exact hε e }, rfl, rfl,
     by rintro _ ⟨e, rfl⟩; exact hs e⟩
 
-
-
 theorem exists_lifted_cover_with_sheets [ConnectedSpace E]
     (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hcover : IsCoveringMap p)
@@ -191,7 +171,6 @@ theorem exists_lifted_cover_with_sheets [ConnectedSpace E]
   obtain ⟨N, hN, hs, hu, hinj, _⟩ := hsheet L hL
   exact ⟨N, hN, hs, hu, hinj⟩
 
-
 theorem exists_lifted_cover [ConnectedSpace E]
     (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hcover : IsCoveringMap p)
@@ -203,8 +182,6 @@ theorem exists_lifted_cover [ConnectedSpace E]
   refine ⟨H', hX, hε, fun L hL => ?_⟩
   obtain ⟨N, hN, hs, _⟩ := hsheet L hL
   exact ⟨N, hN, hs⟩
-
-
 
 theorem exists_separating_lifted_cover_with_sheets [SimplyConnectedSpace E] [T2Space E]
     [T3Space E] [MeasurableSpace E] [BorelSpace E]
@@ -222,7 +199,6 @@ theorem exists_separating_lifted_cover_with_sheets [SimplyConnectedSpace E] [T2S
   intro L _
   exact L.isSeparating_iff_not_isNonseparating.mpr
     (fun hL => L.not_simplyConnectedSpace_of_isNonseparating hL inferInstance)
-
 
 theorem exists_separating_lifted_cover [SimplyConnectedSpace E] [T2Space E]
     [T3Space E] [MeasurableSpace E] [BorelSpace E]

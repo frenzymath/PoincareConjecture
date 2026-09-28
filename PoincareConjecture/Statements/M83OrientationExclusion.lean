@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Topology
 import PoincareConjecture.Definitions.Ch17.GlobalSurgery
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -20,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M83OrientationExclusionStatement : Prop :=
   ∀ (M : Type u) [TopologicalSpace M] [T2Space M]

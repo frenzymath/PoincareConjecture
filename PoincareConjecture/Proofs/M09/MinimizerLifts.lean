@@ -2,14 +2,6 @@ import PoincareConjecture.Statements.Ch06.LGeometry
 import PoincareConjecture.Proofs.M09.WithinGeometricUniqueness
 import PoincareConjecture.Proofs.M09.InitialVectorIdentification
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

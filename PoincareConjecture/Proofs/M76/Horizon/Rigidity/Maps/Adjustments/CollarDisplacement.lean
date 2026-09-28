@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalLocalScalarEx
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPLProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -104,9 +95,6 @@ theorem exists_supported_original_collar_scalar
   exact ⟨g, C, hC, hCU, hgPL,
     fun x hx => hbase x hx 0 ⟨by linarith, by linarith⟩, hzero⟩
 
-
-
-
 theorem exists_supported_original_collar_displacement_plateau
     (e : ι → OpenPartialHomeomorph X F)
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid F)
@@ -154,7 +142,6 @@ theorem exists_supported_original_collar_displacement_plateau
     rw [hg₀zero x (fun h => hx (Or.inl h)), hg₁zero x (fun h => hx (Or.inr h))]
     ext j
     fin_cases j <;> rfl
-
 
 theorem exists_supported_original_collar_displacement
     (e : ι → OpenPartialHomeomorph X F)

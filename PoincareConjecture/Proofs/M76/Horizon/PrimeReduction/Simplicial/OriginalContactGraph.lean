@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAffineCoverFaceBounds
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_graph
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

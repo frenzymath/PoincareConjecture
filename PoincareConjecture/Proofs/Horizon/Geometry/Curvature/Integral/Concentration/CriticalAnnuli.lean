@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.AscentRestriction
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.ScaleScalarAnnuli
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem hasLocalDistanceAscent_on_annulus_of_two_mul_badAscentRadius_le
     {X : Type*} [MetricSpace X] {p : X} {c c' b r r₀ : ℝ}
@@ -43,8 +30,6 @@ end Poincare.CurvatureIntegral
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.CurvatureIntegral
-
-
 
 theorem exists_radial_annulus_scalar_bound_above_badAscentRadius
     {m : ℕ} (hm : 1 ≤ m) {M : Type u} [TopologicalSpace M]

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.SmallChartBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -34,9 +22,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
-
-
-
 
 theorem exists_complete_ancient_limit_of_small_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -125,6 +110,5 @@ theorem exists_complete_ancient_limit_of_small_expanding_cylinders
     (fun j => by linarith [(hparams j).1, (hparams j).2.1])
     (fun j => (hparams j).2.2.1) hraw
   exact ⟨G.ofSubsequence hφ, hG⟩
-
 
 end PoincareConjecture.RicciFlow

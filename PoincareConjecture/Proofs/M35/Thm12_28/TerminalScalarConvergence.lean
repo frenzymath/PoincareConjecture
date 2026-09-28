@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarMetricJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -177,9 +169,6 @@ private theorem scalar_tendsto_of_moving_metric_jets
       exact hjet r hr a b)
   simpa only [hgs, hgd] using h
 
-
-
-
 theorem blowupSequence_terminal_scalar_tendsto (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
     (t : ℕ → ℝ) (x : ℕ → StandardCapSpace)
@@ -290,9 +279,6 @@ theorem blowupSequence_terminal_scalar_tendsto (P : M35StandardCapPredecessors)
     simpa only [div_one, hcp] using hscalar
   rw [hscalar'] at hsc
   exact hsc.congr' (hgd.mono (fun _ hk => hk.2))
-
-
-
 
 theorem blowupSequence_terminal_scalar_tendsto_chart (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

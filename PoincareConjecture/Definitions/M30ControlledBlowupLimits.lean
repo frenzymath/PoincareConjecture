@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M29GeneralizedDistance
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,16 +9,11 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m30BackwardDuration
     (S : GeneralizedBlowupSequence.{u}) (k : ℕ)
     (x : ((S.flow k).slice (S.base k).1).carrier) (mu : ℝ) : ℝ :=
   mu * S.scale k /
     max (S.scale k) ((S.flow k).scalar ⟨(S.base k).1, x⟩)
-
-
-
 
 structure GeneralizedMaximalBackwardFlowLine
     (F : GeneralizedRicciFlowData.{u}) (p : F.point)
@@ -49,8 +36,6 @@ structure GeneralizedMaximalBackwardFlowLine
         _e'.pointMap s (hI hs) p.2 = embedding.pointMap s hs p.2) →
       I' = maximal_interval
 
-
-
 def GeneralizedMaximalBackwardFlowLineSurvival
     (S : GeneralizedBlowupSequence.{u}) (mu : ℝ) : Prop :=
   ∀ A : ℝ, 0 < A → ∀ᶠ k : ℕ in Filter.atTop,
@@ -58,9 +43,6 @@ def GeneralizedMaximalBackwardFlowLineSurvival
       Nonempty (GeneralizedMaximalBackwardFlowLine
         (S.flow k) ⟨(S.base k).1, x⟩ (S.scale k)
         (m30BackwardDuration S k x mu))
-
-
-
 
 structure M30FiniteHorizonSlab
     (S : GeneralizedBlowupSequence.{u})
@@ -75,9 +57,6 @@ structure M30FiniteHorizonSlab
     GeneralizedKappaNoncollapsedAt
       (S.flow k) (embedding.pointMap s hs x) kappa r₀
 
-
-
-
 structure M30CommonBlowupControls
     (S : GeneralizedBlowupSequence.{u})
     (epsilon C kappa r₀ mu : ℝ) where
@@ -89,7 +68,6 @@ structure M30CommonBlowupControls
   branch : ∀ k, generalizedPinchedOrNonnegative (S.flow k)
   canonical : ∀ k, generalizedEarlierDenseStrongCanonicalNeighborhoods
     (S.flow k) epsilon C (S.base k).1 (S.base k).2
-
 
   analytic_constant : ℝ
   analytic_constant_pos : 0 < analytic_constant
@@ -116,7 +94,6 @@ structure M30CommonBlowupControls
   mu_pos : 0 < mu
   maximal_worldlines : GeneralizedMaximalBackwardFlowLineSurvival S mu
 
-
 structure M30LongBlowupControls
     (S : GeneralizedBlowupSequence.{u})
     (epsilon C kappa r₀ mu : ℝ) (T₀ : ℝ≥0∞)
@@ -125,11 +102,6 @@ structure M30LongBlowupControls
   slabs : ∀ T : ℝ, 0 < T → ENNReal.ofReal T < T₀ →
     ∀ A : ℝ, 0 < A → ∀ᶠ k : ℕ in Filter.atTop,
       Nonempty (M30FiniteHorizonSlab S k A T kappa r₀)
-
-
-
-
-
 
 structure M30GeometricLongControls
     (S : GeneralizedBlowupSequence.{u}) (T₀ : ℝ≥0∞) where
@@ -144,8 +116,6 @@ structure M30GeometricLongControls
     ∃ B : ℝ, 0 ≤ B ∧ ∀ A : ℝ, 0 < A → ∀ eta : ℝ, 0 < eta →
       ∀ᶠ k : ℕ in Filter.atTop,
         Nonempty (ControlledBlowupCylinder S k A T B eta)
-
-
 
 def M30LimitNoncollapsedAtScale
     {J : Set ℝ} (L : BlowupLimitFlow.{u} J) (kappa r₀ : ℝ) : Prop :=
@@ -162,9 +132,6 @@ def M30LimitNoncollapsedAtScale
       |(L.flow.connection s).curvatureTensorNorm q| ≤ r⁻¹ ^ 2) →
     ENNReal.ofReal (kappa * r ^ 3) ≤
       calibratedMetricVolume (L.flow.metric t) ((L.flow.metric t).ball p r)
-
-
-
 
 structure M30AncientKappaIdentification
     (L : BlowupLimitFlow (blowupBackwardInterval ⊤)) (kappa : ℝ) where

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalProperDiskTriangulation
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedStarEdgeLink
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolygonLinkDualDisk
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,8 +17,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem isFinitePLBallPair_edge_dualBlock
     {s : Finset (T.index → ℝ × V3)}

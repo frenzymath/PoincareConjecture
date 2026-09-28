@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.InitialAngularCorrection
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicSmoothChainChart
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.InitialGraphCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_initial_aligned_compact_cut_chart :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

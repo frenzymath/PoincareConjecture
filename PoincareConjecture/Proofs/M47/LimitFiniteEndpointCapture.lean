@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteSliceJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +41,6 @@ private local instance endpointCaptureCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance endpointCaptureManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_terminal_physical_ball_capture
     (P : M47Predecessors.{u}) {R : ℝ} (hR : 0 < R) :

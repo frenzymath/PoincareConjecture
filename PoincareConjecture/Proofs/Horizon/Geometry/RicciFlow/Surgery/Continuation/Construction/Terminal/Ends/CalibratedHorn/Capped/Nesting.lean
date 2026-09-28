@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Overlap
 
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
 theorem closed_core_meets_cap_of_cappedTube (D : CapCertificate g)
     (Y : CappedTubeCertificate g) (hD : D.closed_core ⊆ Y.carrier) :
     (D.closed_core ∩ Y.cap.carrier).Nonempty := by
@@ -26,16 +24,12 @@ theorem closed_core_meets_cap_of_cappedTube (D : CapCertificate g)
   exact (Y.carrier_eq_union ▸ hD hx).resolve_left
     (fun h => hnone ⟨x, hx, h⟩)
 
-
-
 theorem frontier_core_contact_of_cappedTube (D : CapCertificate g)
     (Y : CappedTubeCertificate g) (hD : D.closed_core ⊆ Y.carrier)
     {x : M} (hx : x ∈ D.core \ Y.cap.carrier) :
     (frontier Y.cap.carrier ∩ D.core).Nonempty :=
   Y.cap.frontier_core_contact_of_closed_core_contact D hx
     (D.closed_core_meets_cap_of_cappedTube Y hD)
-
-
 
 theorem mixed_boundary_of_frontier_core_contact_of_noncompact
     (C D : CapCertificate g)

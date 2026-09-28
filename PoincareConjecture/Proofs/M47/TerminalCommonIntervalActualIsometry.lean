@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalGlobalIsometry
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalActualCross
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carri
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
 private local instance : ConnectedSpace G.limit.carrier.carrier := G.limit.connectedSpace
-
-
 
 theorem terminalCommonInterval_actual_terminal_isometry
     {M : Type u} [TopologicalSpace M] [T3Space M]

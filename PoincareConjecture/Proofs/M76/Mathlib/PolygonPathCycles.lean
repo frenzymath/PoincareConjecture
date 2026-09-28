@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PathEdgeSums
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPolygon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,14 +9,8 @@ namespace Polygon
 
 variable {E : Type*} {m n : ℕ}
 
-
-
-
 def ofPaths (u : Fin (m + 1) → E) (v : Fin (n + 1) → E) : Polygon E (m + n) :=
   mk (Fin.append (Fin.init u) (Fin.init v))
-
-
-
 
 theorem injective_ofPaths (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
     (hu : Function.Injective u) (hv : Function.Injective v)
@@ -49,14 +32,8 @@ theorem injective_ofPaths (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
 
 variable [AddCommGroup E] [Module ℝ E]
 
-
-
-
-
 def pathCarrier (u : Fin (n + 1) → E) : Set E :=
   ⋃ i : Fin n, segment ℝ (u i.castSucc) (u i.succ)
-
-
 
 theorem vertex_mem_pathCarrier (u : Fin (n + 2) → E) (i : Fin (n + 2)) :
     u i ∈ pathCarrier u := by
@@ -64,9 +41,6 @@ theorem vertex_mem_pathCarrier (u : Fin (n + 2) → E) (i : Fin (n + 2)) :
   | last =>
     exact mem_iUnion.mpr ⟨Fin.last n, right_mem_segment ℝ _ _⟩
   | cast i => exact mem_iUnion.mpr ⟨i, left_mem_segment ℝ _ _⟩
-
-
-
 
 theorem pathCarrier_reverse (u : Fin (n + 1) → E) :
     pathCarrier (fun i => u i.rev) = pathCarrier u := by
@@ -84,7 +58,6 @@ theorem pathCarrier_reverse (u : Fin (n + 1) → E) :
 
 omit [AddCommGroup E] [Module ℝ E] in
 
-
 theorem edgeVertices_ofPaths_left [DecidableEq E]
     (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
     (huv : u (Fin.last (m + 1)) = v 0) (i : Fin (m + 1)) :
@@ -97,7 +70,6 @@ theorem edgeVertices_ofPaths_left [DecidableEq E]
 
 omit [AddCommGroup E] [Module ℝ E] in
 
-
 theorem edgeVertices_ofPaths_right [DecidableEq E]
     (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
     (hvu : v (Fin.last (n + 1)) = u 0) (i : Fin (n + 1)) :
@@ -107,9 +79,6 @@ theorem edgeVertices_ofPaths_right [DecidableEq E]
   rw [show Fin.init u 0 = v (Fin.last (n + 1)) from hvu.symm, Fin.snoc_init_self]
   ext x
   simp only [Finset.mem_insert, Finset.mem_singleton, Fin.init]
-
-
-
 
 theorem boundary_ofPaths (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
     (huv : u (Fin.last (m + 1)) = v 0)
@@ -138,10 +107,6 @@ theorem boundary_ofPaths (u : Fin (m + 2) → E) (v : Fin (n + 2) → E)
       exact mem_iUnion.mpr ⟨i.castAdd (n + 1), (hleft i).symm ▸ hi⟩
     · obtain ⟨i, hi⟩ := mem_iUnion.mp hx
       exact mem_iUnion.mpr ⟨Fin.natAdd (m + 1) i, (hright i).symm ▸ hi⟩
-
-
-
-
 
 theorem hasSimplicialEdges_ofPaths [DecidableEq E]
     (K : SimplicialComplex ℝ E)

@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Data
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Existence
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ZeroDimensional
 
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -16,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_conservativeHeatKernelData
     (g : RiemannianMetric n M) [PreconnectedSpace M] [NoncompactSpace M]

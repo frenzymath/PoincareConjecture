@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.CauchyTransformPolar
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M60
 
 variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V]
-
-
 
 noncomputable def cauchyRiemannDerivative (f : ℂ → V) (z : ℂ) : V :=
   (1 / 2 : ℝ) • (fderiv ℝ f z 1 + I • fderiv ℝ f z I)
@@ -57,7 +46,6 @@ private theorem realLinear_polar (L : ℂ →L[ℝ] V) (θ : ℝ) :
 
 omit [NormedSpace ℂ V] [IsScalarTower ℝ ℂ V] in
 
-
 theorem hasDerivAt_polar_radius {f : ℂ → V} (hf : Differentiable ℝ f)
     (z : ℂ) (r θ : ℝ) :
     HasDerivAt (fun s : ℝ => f (z - circleMap 0 s θ))
@@ -73,7 +61,6 @@ theorem hasDerivAt_polar_radius {f : ℂ → V} (hf : Differentiable ℝ f)
 
 omit [NormedSpace ℂ V] [IsScalarTower ℝ ℂ V] in
 
-
 theorem hasDerivAt_polar_angle {f : ℂ → V} (hf : Differentiable ℝ f)
     (z : ℂ) (r θ : ℝ) :
     HasDerivAt (fun t : ℝ => f (z - circleMap 0 r t))
@@ -85,8 +72,6 @@ theorem hasDerivAt_polar_angle {f : ℂ → V} (hf : Differentiable ℝ f)
     simp only [circleMap_zero, ofReal_one, one_mul, real_smul, ofReal_neg]
     ring
   simpa only [he, map_smul, Function.comp_def, Pi.sub_apply] using h
-
-
 
 theorem cauchyRiemannDerivative_polar {f : ℂ → V} (hf : Differentiable ℝ f)
     (z : ℂ) {r : ℝ} (hr : r ≠ 0) (θ : ℝ) :

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Compression.Slab
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +35,6 @@ private def ribbonShift
     apply ContDiff.contMDiff
     exact ((EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).contDiff.comp R.symm.contDiff).prodMk
       (((EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff.comp R.symm.contDiff).sub contDiff_const)
-
-
-
 
 theorem exists_supported_ribbon_compression
     (R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -175,9 +170,6 @@ private theorem image_eq_self_of_support_subset
       H '' Sᶜ = id '' Sᶜ := image_congr (fun x hx => hfix x (fun h => hx (hKS h)))
       _ = Sᶜ := image_id _
   exact compl_injective ((image_compl_eq H.bijective).symm.trans hc)
-
-
-
 
 theorem exists_supported_isotopy_fixing_ribbon
     (R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

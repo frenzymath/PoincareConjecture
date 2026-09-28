@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
-
 
 theorem collar_fiber_mem_cut_iff_of_disjoint
     {E : Type*} [TopologicalSpace E] {B T s₀ s₁ : Set E} {upper : E → ℝ}
@@ -51,10 +38,6 @@ theorem collar_fiber_mem_cut_iff_of_disjoint
     let z : I := ⟨0, le_rfl, p.property.2.1.trans p.property.2.2⟩
     exact ⟨z, hbottom (P z) rfl⟩
   exact hpre.mem_closed_cut_iff hs₀ hs₁ (hrange.trans hcover) hcut hmem hx
-
-
-
-
 
 theorem IsFinitePL.restrictSubsets_of_target
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

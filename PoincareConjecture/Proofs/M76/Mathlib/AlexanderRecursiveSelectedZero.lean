@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.selected_zero_section_eq
     {S s b k d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

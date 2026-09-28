@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M38.RefinedPositiveCapReconstruction
 import PoincareConjecture.Proofs.M38.ZeroCapCanonical
 import PoincareConjecture.Proofs.M38.ClassifiedComponents
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_raw_local_surgery_topology_data
     (N : RepairedNeckCapTopologyTheory.{u}) :

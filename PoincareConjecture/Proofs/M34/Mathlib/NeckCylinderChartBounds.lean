@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckSphereChartBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,15 +7,11 @@ open scoped Manifold ContDiff RealInnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem contDiff_stereoInvCylinder_joint {m : ℕ∞ω} :
     ContDiff ℝ m (fun z : E × (E × ℝ) =>
       (stereoInvFunAux z.1 z.2.1, z.2.2)) :=
   ((contDiff_stereoInvFunAux_joint (E := E)).comp
     (contDiff_fst.prodMk contDiff_snd.fst)).prodMk contDiff_snd.snd
-
-
 
 theorem stereoInvCylinder_uniform_spatial_jet_bound [FiniteDimensional ℝ E]
     (R S : ℝ) (m : ℕ) :
@@ -45,9 +31,6 @@ theorem stereoInvCylinder_uniform_spatial_jet_bound [FiniteDimensional ℝ E]
   apply (hC (v, z) ?_).trans (le_max_left _ _)
   exact ⟨by simpa only [mem_closedBall, dist_zero_right] using hv,
     by simpa only [mem_closedBall, dist_zero_right] using hz, hs⟩
-
-
-
 
 theorem sphereCylinder_chart_symm_uniform_jet_bound [FiniteDimensional ℝ E]
     {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)] (R S : ℝ) (m : ℕ) :

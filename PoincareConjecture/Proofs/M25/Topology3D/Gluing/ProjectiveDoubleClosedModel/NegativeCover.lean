@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveDoubleClosedMod
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M} {C1 C2 : ClosedModelCapData g}
   {P2 : PoincareConjecture.StandardPuncturedProjectiveCover M C2.puncture C2.carrier}
-
-
-
 
 theorem NegativeProjectiveSideData.nonempty_smooth_cover
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

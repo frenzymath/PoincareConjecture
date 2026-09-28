@@ -5,9 +5,6 @@ open Set PLAnnularStrip
 
 namespace PoincareConjecture.M76.Dehn
 
-
-
-
 theorem exists_open_marked_annulus_band
     {E : Type*} [TopologicalSpace E] {B T S U : Set E} {L d : ℝ}
     (hd : 0 < d) (c : squareAnnulus L d ≃ₜ T)

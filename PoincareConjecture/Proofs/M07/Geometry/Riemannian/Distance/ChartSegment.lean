@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Manifold

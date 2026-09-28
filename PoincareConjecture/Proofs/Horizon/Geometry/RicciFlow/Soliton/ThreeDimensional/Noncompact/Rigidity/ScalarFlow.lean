@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Generation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Flow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -91,8 +81,6 @@ theorem scalar_monotone_on_gradient_flow
   rw [(S.hasDerivAt_scalar_along_gradient_flow hD hγ t).deriv]
   exact mul_nonneg (by norm_num) (hRic _ _)
 
-
-
 theorem exists_potential_sublevel_on_backward_gradient_curve
     (S : GradientShrinkingSolitonData 3 M) {a : ℝ}
     (ha : ∀ x : M, a ≤ S.potential x → 1 ≤
@@ -124,9 +112,6 @@ theorem exists_potential_sublevel_on_backward_gradient_curve
   dsimp only [Function.comp_def] at hbound
   dsimp [t] at hbound
   linarith [habove t ht]
-
-
-
 
 theorem exists_scalar_positive_global_lower_bound
     (S : GradientShrinkingSolitonData 3 M)

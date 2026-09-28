@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonBrownBallRecognition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -39,9 +29,6 @@ private theorem affine_first_coordinate (ell : V3 →ᴬ[ℝ] ℝ)
 
 variable {X : Type*} [TopologicalSpace X] {ι : Type*}
 
-
-
-
 theorem PLDomain.closure_interior {e : ι → OpenPartialHomeomorph X V3}
     {K : Set X} (hK : PLDomain e K) : closure (interior K) = K := by
   apply Subset.antisymm (closure_minimal interior_subset hK.closed)
@@ -61,10 +48,6 @@ theorem PLDomain.closure_interior {e : ι → OpenPartialHomeomorph X V3}
   exact (hhalf x hxB).mp hx
 
 variable [T2Space X] [CompactSpace X]
-
-
-
-
 
 theorem PLDomain.brown_complement_ball_of_chart
     (brown : HasBrownLocallyFlatSphereBalls) {Y : Set X} (hY : IsOpen Y)

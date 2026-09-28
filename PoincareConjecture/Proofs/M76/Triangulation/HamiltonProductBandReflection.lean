@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductBandSides
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedProductHalves
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -35,9 +26,6 @@ private theorem reflection_closed_image (S : Set V2) (r : ℝ) :
       simp only [neg_neg, Prod.eta]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem prescribed_band_reflection_properties {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b)
@@ -93,11 +81,6 @@ theorem prescribed_band_reflection_properties {R D : Set E} {b : D2 ≃ₜ D}
       simpa only [neg_neg, Prod.eta] using hzF
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem prescribed_band_half_images {R D : Set E} {b : D2 ≃ₜ D}
     (P : HamiltonUnmarkedDiskProduct R b)

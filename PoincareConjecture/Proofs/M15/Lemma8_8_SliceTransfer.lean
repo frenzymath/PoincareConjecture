@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Mathlib.InverseOnRange
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
-
-
-
 
 theorem actualBallCylinder_exists_slice_transfer
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

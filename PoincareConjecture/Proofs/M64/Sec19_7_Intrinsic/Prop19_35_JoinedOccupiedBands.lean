@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThinGraphBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandBoundaryGeometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -58,9 +49,6 @@ private theorem occupied_band
       exact ⟨q.1, hq.1, by rw [← hz]⟩
     exact (hinside q.1 hq.1 q.2
       ⟨hq.2.1, (hq.2.2.trans_lt (hheight q.1 hq.1)).le⟩).2.2 hpos
-
-
-
 
 theorem m64Intrinsic_exists_joined_occupied_bands
     (L R : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.OneBounda
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.CountZeroAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.ComponentEulerSum
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open scoped BigOperators
@@ -17,8 +15,6 @@ local notation "Ann" => squareAnnulus 8 1
 
 open Classical in
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_selected_cut_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

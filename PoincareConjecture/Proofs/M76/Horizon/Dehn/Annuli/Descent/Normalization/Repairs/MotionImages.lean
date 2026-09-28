@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Repairs.BranchMotion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchInnerSupport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -111,8 +102,6 @@ theorem moved_left_image (u : I) :
   · rintro ⟨⟨y, hy, rfl⟩, hyl⟩
     exact ⟨⟨y, hy, N.left_fixed u hyl⟩, hyl⟩
 
-
-
 theorem endpoint_properties (hK : K.faces.Finite) :
     PolyhedralPLInCharts t.charts (N.ambient 1 ∘ D.endpoint) K.space ∧
       IsEmbedding (fun x : K.space ↦ N.ambient 1 (D.endpoint x)) ∧
@@ -137,8 +126,6 @@ theorem endpoint_properties (hK : K.faces.Finite) :
     have hxK := D.subdivision.space_eq.subset
       (SimplicialComplex.space_subset_of_le D.protected_le (D.boundary_protected hx))
     exact (N.frontier_fixed 1 ((hproper x hxK).mpr hx)).trans (D.endpoint_boundary hx)
-
-
 
 theorem compact_change_support :
     ∃ Small : Set t.Carrier, IsCompact Small ∧

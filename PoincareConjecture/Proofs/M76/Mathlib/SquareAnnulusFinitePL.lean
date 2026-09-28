@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusBlocks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
-
 
 theorem finitePiecewiseAffineOn_wrappedStripMap {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) :

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.MetricPairings
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -95,6 +87,5 @@ theorem hasDerivWithinAt_metricGram_along (D : LeviCivitaData g)
     G' v w = mvfderiv (𝓡 n) q (γ t) T :=
       (heval.derivWithin hu).symm.trans (hscalar.derivWithin hu)
     _ = _ := metric_derivative_pairing D (fun _ => T) hY hZ
-
 
 end PoincareConjecture.M04

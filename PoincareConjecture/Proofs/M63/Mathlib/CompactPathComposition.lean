@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M03.Existence.ContinuousPathCompositionNative
 import Mathlib.Analysis.Normed.Operator.LinearIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem contDiff_postcomp_independent_universes
     (K : Type w) [TopologicalSpace K] [CompactSpace K]

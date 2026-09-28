@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarEvolutionConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -27,7 +19,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   {f : E → M} {p : E}
 
 omit [T2Space M] in
-
 
 theorem scalarGradientNorm_eq_pullback_of_scalar_germ
     (hf : ContMDiffAt (𝓡 3) (𝓡 3) ∞ f p)
@@ -49,8 +40,6 @@ theorem scalarGradientNorm_eq_pullback_of_scalar_germ
   exact congrArg Real.sqrt ((hm (D.gradient D.scalarCurvature p)
     (D.gradient D.scalarCurvature p)).trans
       (congrArg₂ (fun u v => h.inner (f p) u v) himage himage))
-
-
 
 theorem ricciNormSq_eq_pullback_euclidean
     (hf : ContMDiffAt (𝓡 3) (𝓡 3) ∞ f p)
@@ -87,8 +76,6 @@ theorem ricciNormSq_eq_pullback_euclidean
       exact congrArg (fun a : ℝ => a ^ 2)
         ((congrArg₂ (D'.ricci (f p)) (he' (b i)) (he' (b j))).trans
           (D.ricci_eq_pullback_euclidean D' hf hi hm (b i) (b j)).symm)
-
-
 
 theorem scalar_evolution_eq_pullback_of_scalar_germ
     (hf : ContMDiffAt (𝓡 3) (𝓡 3) ∞ f p)

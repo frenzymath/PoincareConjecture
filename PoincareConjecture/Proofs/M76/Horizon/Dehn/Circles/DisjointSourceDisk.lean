@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceRegions
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -40,10 +29,6 @@ private theorem source_copy_embedding {A B : Set V2} (H : A ≃ₜ B)
     funext fun x => (hj x).symm
   rw [heq]
   exact Topology.IsEmbedding.subtypeVal.comp H.isEmbedding
-
-
-
-
 
 theorem exists_disjoint_circle_source_disk {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
   (G : AncientCompactTimeConvergence S)
-
-
 
 theorem tendsto_metricDiameter_of_noncompact_limit
     (hcompact : IsCompact (univ : Set M))
@@ -75,7 +62,6 @@ theorem tendsto_metricDiameter_of_noncompact_limit
   have hxq : x = q := congrArg Prod.snd ((G.embedding k).injective_on
     ⟨mem_of_mem_nhds htime, hxk⟩ ⟨mem_of_mem_nhds htime, hqk⟩ hpair)
   exact hq (hxq ▸ subset_closure hx)
-
 
 theorem tendsto_metricDiameter_neg_one_of_noncompact_limit
     (hcompact : IsCompact (univ : Set M))

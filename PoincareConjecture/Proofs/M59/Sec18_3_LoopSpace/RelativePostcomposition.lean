@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.Postcomposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -19,8 +11,6 @@ namespace PoincareConjecture
 variable {M N : Type u}
   [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem m59RelativeLoopCubeAt_postcompose {f : C(M, N)} (L : M59LoopPostcomposition f)
     {x : M} {F : C((Fin 2 → I), C1FreeLoopSpace (M := M))}
@@ -35,8 +25,6 @@ theorem m59RelativeLoopCubeAt_postcompose {f : C(M, N)} (L : M59LoopPostcomposit
     refine ⟨f p, ?_⟩
     change L.map (F z) = _
     rw [hp, L.maps_constant]
-
-
 
 theorem m59_relative_naturality (f : C(M, N)) (L : M59LoopPostcomposition f)
     (x : M) (F G : C((Fin 2 → I), C1FreeLoopSpace (M := M)))

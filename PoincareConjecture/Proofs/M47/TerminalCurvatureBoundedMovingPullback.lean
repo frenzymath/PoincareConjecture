@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureMovingJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped ContDiff Topology BigOperators
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_exists_bounded_pullback_error_constant
     (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :
@@ -40,9 +29,6 @@ theorem terminalCurvature_exists_bounded_pullback_error_constant
     (fun l hl => hBjet l (hl.trans hj))).trans
       (mul_le_mul_of_nonneg_right
         (Finset.single_le_sum (fun l _ => hC l) (Finset.mem_univ i)) hrho)
-
-
-
 
 theorem terminalCurvature_eventually_bounded_moving_pullback
     {ι : Type*} (m : ℕ) {D : ℝ} (hD : 1 ≤ D)

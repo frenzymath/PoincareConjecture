@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

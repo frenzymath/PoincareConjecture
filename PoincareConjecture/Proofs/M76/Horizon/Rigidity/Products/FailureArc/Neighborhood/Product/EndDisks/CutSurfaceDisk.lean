@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.EndDisks.CutSurfaceLinks
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.OneBoundaryDisk
 
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 open PreAbstractSimplicialComplex.ModTwoCochains PoincareConjecture.M76.Dehn
@@ -11,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem closedFaceComplement_isFinitePLBallPair_of_circle_interface
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)

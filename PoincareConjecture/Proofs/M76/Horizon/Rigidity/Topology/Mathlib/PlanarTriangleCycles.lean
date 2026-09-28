@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.PlanarExp
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTetrahedronAdjacency
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains

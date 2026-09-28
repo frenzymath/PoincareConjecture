@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M34.Mathlib.ManifoldOpenMap
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem not_isCompact_univ_of_euclidean_immersion
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

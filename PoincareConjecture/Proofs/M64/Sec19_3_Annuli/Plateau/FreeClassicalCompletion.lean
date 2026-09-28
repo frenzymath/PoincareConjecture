@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ClosedC1Admission
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeRadialCompletion
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -28,9 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem with_map_ae
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k degree)
@@ -53,9 +42,6 @@ theorem with_map_ae
     A.annulus.weightedEnergy_eq_of_map_ae O hOae hcolumn⟩
 
 variable [T2Space M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_classical_completion
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k degree)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalInteriorEdgeDual
 import PoincareConjecture.Proofs.M76.Wall.OriginalArcInteriorEndpoint
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcDualBoundaryAvoidance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -22,11 +11,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem original_arc_dual_geometry
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

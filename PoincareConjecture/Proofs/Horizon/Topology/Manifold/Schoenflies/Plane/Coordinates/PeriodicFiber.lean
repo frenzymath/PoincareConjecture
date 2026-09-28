@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.ParametricInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem surjective_of_add_period {f : ℝ → ℝ} {T : ℝ} (hT : 0 < T)
     (hf : Continuous f) (hper : ∀ t, f (t + T) = f t + T) : Surjective f := by
@@ -37,8 +26,6 @@ theorem surjective_of_add_period {f : ℝ → ℝ} {T : ℝ} (hT : 0 < T)
   exact intermediate_value_univ (-((N : ℝ) * T)) ((N : ℝ) * T) hf
     ⟨by rw [hminus]; linarith [neg_abs_le (y - f 0)],
       by rw [hplus]; linarith [le_abs_self (y - f 0)]⟩
-
-
 
 theorem exists_smooth_inverse_of_add_period
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [CompleteSpace V]

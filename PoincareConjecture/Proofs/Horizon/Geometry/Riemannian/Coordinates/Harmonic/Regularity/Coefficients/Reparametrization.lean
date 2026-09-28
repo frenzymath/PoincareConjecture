@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Inverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem norm_fderiv_symm_and_sub_id_le
     {β : ℝ} (hβ : 0 ≤ β) (hβhalf : β ≤ 1 / 2)
@@ -69,8 +59,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ}
-
-
 
 theorem inverse_pullback_quadratic_error_le
     {α β : ℝ} (hα : 0 ≤ α) (hβ : 0 ≤ β) (hβhalf : β ≤ 1 / 2)
@@ -123,8 +111,6 @@ theorem inverse_pullback_quadratic_error_le
       add_le_add (mul_le_mul_of_nonneg_left hAvsq hα) le_rfl
     _ = (4 * α + 6 * β) * ‖v‖ ^ 2 := by ring
 
-
-
 theorem norm_inverse_pullback_sub_innerSL_le
     {α β : ℝ} (hα : 0 ≤ α) (hβ : 0 ≤ β) (hβhalf : β ≤ 1 / 2)
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -147,8 +133,6 @@ theorem norm_inverse_pullback_sub_innerSL_le
     change |g.pullbackCoefficients F.symm x v v - inner ℝ v v| ≤ _
     rw [real_inner_self_eq_norm_sq]
     exact inverse_pullback_quadratic_error_le hα hβ hβhalf g F hF hx hmetric hclose v
-
-
 
 theorem norm_inverse_pullback_sub_innerSL_le_of_norm
     {α β : ℝ} (hα : 0 ≤ α) (hβ : 0 ≤ β) (hβhalf : β ≤ 1 / 2)

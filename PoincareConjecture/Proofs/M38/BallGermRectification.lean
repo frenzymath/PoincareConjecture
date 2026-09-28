@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.LocalGermExtension
 import PoincareConjecture.Proofs.M38.BallChartGerms
 import PoincareConjecture.Proofs.M38.RecenteredBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Filter
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
 
 theorem exists_centeredBallGermRectification (B C : SurgeryBallEmbedding A)
     (hcenter : B.map 0 = C.map 0) :
@@ -72,9 +61,6 @@ theorem exists_centeredBallGermRectification (B C : SurgeryBallEmbedding A)
   · intro y hy
     change surgeryBallPatch C E y = y
     exact surgeryBallPatch_of_not_mem C E hy
-
-
-
 
 theorem exists_surgeryBallGermRectification (B C : SurgeryBallEmbedding A)
     (hBC : B.map 0 ∈ C.map '' Metric.ball 0 2)

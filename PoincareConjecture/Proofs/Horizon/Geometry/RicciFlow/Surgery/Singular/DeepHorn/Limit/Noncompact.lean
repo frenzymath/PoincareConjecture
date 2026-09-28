@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBou
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,8 +58,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
-
-
 
 theorem not_isCompact_univ_of_source_regions (G : GeneralizedBlowupConvergence S J)
     (U : ∀ k, Set ((S.flow (G.subsequence k)).slice (S.base (G.subsequence k)).1).carrier)
@@ -143,7 +133,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
   {F : ℕ → GeneralizedRicciFlowData.{u}} {T : ℕ → ℝ}
-
 
 theorem terminalBlowupSequence_limit_not_isCompact
     (H : ∀ k, SingularTimeAssumptions (F k) (T k) (M k))

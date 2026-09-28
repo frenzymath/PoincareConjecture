@@ -1,15 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.CurvaturePDE
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TransportedCarrier
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -63,7 +53,6 @@ local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
 
-
 def transportedRicciComplementLaplacian (F : RicciFlow 3 M (Ico a b))
     (hC : RicciFlowCurvatureTheory.{u}) (t : ℝ) (x : M) :
     TensorFiber (TangentSpace (𝓡 3) x) 2 :=
@@ -114,7 +103,6 @@ private theorem tensorReaction_smul (c : ℝ)
   intro v
   simp [operatorTensor, LinearMap.smul_apply, inner_smul_right]
 
-
 theorem hasDerivAt_transportedRicciComplementTensor [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})
     {t : ℝ} (ht : t ∈ Ioo a b) (x : M) :
@@ -152,8 +140,6 @@ theorem hasDerivAt_transportedRicciComplementTensor [T2Space M]
   · funext s
     exact transportedRicciComplementTensor_apply F hC s x _
   · congr 1
-
-
 
 theorem hasDerivAt_scaled_transportedRicciComplementTensor [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})

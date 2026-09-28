@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.M36MetricSurgery
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,20 +10,14 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 structure RepairedSurgeryFlowData (g₀ : StandardInitialMetric) where
   flow : SurgeryFlowData.{u}
   standard_initial_eq : flow.standard_initial = g₀
-
-
 
 structure RepairedSurgeryFlowCompatibilityData (g₀ : StandardInitialMetric)
     extends RepairedSurgeryFlowData.{u} g₀ where
   metric_surgery : RepairedMetricSurgeryData.{u} g₀
   constants_eq : metric_surgery.constants = flow.local_constants
-
 
   event_operation_input :
     ∀ (T : ℝ) (hT : T ∈ flow.surgery_times)

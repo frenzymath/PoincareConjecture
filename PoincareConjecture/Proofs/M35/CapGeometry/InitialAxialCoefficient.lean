@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialAxialDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem initial_axial_patch_coefficient
     (g : RiemannianMetric 3 StandardCapSpace) {length : ℝ} {x : StandardCapSpace}
@@ -56,8 +45,6 @@ theorem initial_axial_patch_coefficient
   simp only [smul_eq_mul]
   dsimp only [roundCylinderTensorCoefficient, roundCylinderPullback, ch, w, d]
   ring
-
-
 
 theorem initial_axial_model_error (Q c u v : ℝ) (hunit : Q * c ^ 2 = 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (i j : Fin 3) :

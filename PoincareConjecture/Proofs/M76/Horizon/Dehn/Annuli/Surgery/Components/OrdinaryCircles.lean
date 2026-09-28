@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.OrdinaryGraph
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.PolygonComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -60,8 +52,6 @@ theorem exists_ordinary_source_circle_components
   exact exists_paired_polygon_components G hG (fun _ hx ↦ (hGs.subset hx).1)
     hcard hdegree partner hp hp2 hvalue hmate
 
-
-
 theorem double_image_interior_of_proper_rim
     {E X : Type*} [TopologicalSpace X] {f : E → X} {S B : Set E} {R : Set X}
     (hR : MapsTo f S R)
@@ -76,4 +66,3 @@ theorem double_image_interior_of_proper_rim
   exact hnot ⟨hcl, hni⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

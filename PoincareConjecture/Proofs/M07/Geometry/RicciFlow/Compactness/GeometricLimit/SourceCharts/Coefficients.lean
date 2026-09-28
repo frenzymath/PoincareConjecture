@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.SourceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 noncomputable section
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
     {g : ℝ → RiemannianMetric n M} {p : M} {T' T A R ρ a b : ℝ} {N : ℕ}
 
 local instance : Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1) := ⟨⟨0, by simp⟩⟩
-
-
 
 theorem unitBallMap_pullbackCoefficients
     (C : NormalChartCover g p T' T A R ρ a b N)
@@ -69,8 +58,6 @@ theorem unitBallMap_pullbackCoefficients
       (mfderiv (𝓡 n) (𝓡 n) (C.chart i) ((ρ / 2) • x) w)
   ring
 
-
-
 theorem unitBallMap_lower_coefficients
     (C : NormalChartCover g p T' T A R ρ a b N)
     (hρ : 0 < ρ) (hρR : ρ / 2 ≤ R) (i : Fin (N + 1))
@@ -101,8 +88,6 @@ local instance (k : ℕ) : IsManifold (𝓡 n) ∞ (S.carrier k).carrier :=
 variable {R ρ a b : ℕ → ℝ} {N : ℕ → ℕ}
     (cover : ∀ k j, j ≤ k → NormalChartCover ((S.flow k).flow.metric)
       (S.flow k).base T' T ((j : ℝ) + 1) (R j) (ρ j) (a j) (b j) (N j))
-
-
 
 theorem diagonalUnitBallMap_eventually_lower_coefficients
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (ha : ∀ j, 0 < a j)

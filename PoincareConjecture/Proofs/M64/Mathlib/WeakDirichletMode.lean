@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M08.WeakVelocity
 import PoincareConjecture.Proofs.M64.Mathlib.DirichletModeUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +11,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64WeakDerivative_continuous_representative
     {a b : ℝ} (hab : a < b) {u q : ℝ → ℝ}
@@ -54,11 +37,6 @@ theorem m64WeakDerivative_continuous_representative
   exact ⟨U, hU, hc, fun x hx =>
     (hd x (Ioo_subset_Icc_self hx)).hasDerivAt (Icc_mem_nhds hx.1 hx.2)⟩
 
-
-
-
-
-
 theorem m64Continuous_weak_derivative
     {a b : ℝ} (hab : a < b) {u q : ℝ → ℝ}
     (hu : ContinuousOn u (Icc a b)) (hq : ContinuousOn q (Icc a b))
@@ -73,10 +51,6 @@ theorem m64Continuous_weak_derivative
   apply (hd x hx).congr_of_eventuallyEq
   filter_upwards [Ioo_mem_nhds hx.1 hx.2] with y hy
   exact hp (Ioo_subset_Icc_self hy)
-
-
-
-
 
 theorem m64WeakDirichlet_coupled_zero
     {a b alpha beta : ℝ} (hab : a < b) (hsign : 0 ≤ alpha * beta)

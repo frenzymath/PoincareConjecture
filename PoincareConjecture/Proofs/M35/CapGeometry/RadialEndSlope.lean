@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M35.TerminalBlowup.AngularCollapse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,7 +17,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
 
 include D hrotation hsec
 
-
 theorem axisWarpingSecond_nonpos {r : ℝ} (hr : 0 < r) :
     axisWarpingSecond g r ≤ 0 := by
   apply div_nonpos_of_nonpos_of_nonneg
@@ -36,8 +24,6 @@ theorem axisWarpingSecond_nonpos {r : ℝ} (hr : 0 < r) :
       (neg_nonpos.mpr (axisWarpingRadius_pos g hr).le)
       (radialMixedCurvatureFactor_nonneg D hrotation hsec hr)
   · exact (axisRadialCoefficient_pos g r).le
-
-
 
 theorem axisWarpingSlope_nonneg (hcomplete : MetricComplete g)
     {r : ℝ} (hr : 0 < r) : 0 ≤ axisWarpingSlope g r :=
@@ -49,8 +35,6 @@ theorem axisWarpingSlope_nonneg (hcomplete : MetricComplete g)
     (fun u _ => axisRadialSpeed_pos g u)
     (radialArclength_tendsto_atTop g hcomplete)
     (fun _ hu => axisWarpingSecond_nonpos D hrotation hsec hu) hr
-
-
 
 theorem axisWarpingSlope_le_one {r : ℝ} (hr : 0 < r) :
     axisWarpingSlope g r ≤ 1 := by
@@ -66,8 +50,6 @@ theorem axisWarpingSlope_le_one {r : ℝ} (hr : 0 < r) :
       (sq_pos_of_pos (axisWarpingRadius_pos g hr)).ne'] using h
   nlinarith
 
-
-
 theorem axisWarpingRadius_monotoneOn (hcomplete : MetricComplete g) :
     MonotoneOn (axisWarpingRadius g) (Ioi 0) :=
   monotoneOn_of_hasDerivWithinAt_nonneg (convex_Ioi 0)
@@ -75,8 +57,6 @@ theorem axisWarpingRadius_monotoneOn (hcomplete : MetricComplete g) :
     (fun _ hu => (axisWarpingRadius_hasDerivAt g (interior_subset hu)).hasDerivWithinAt)
     (fun u hu => mul_nonneg (axisRadialSpeed_pos g u).le
       (axisWarpingSlope_nonneg D hrotation hsec hcomplete (interior_subset hu)))
-
-
 
 theorem scalar_mul_axisWarpingRadius_sq_ge {r : ℝ} (hr : 0 < r) :
     2 * (1 - axisWarpingSlope g r ^ 2) ≤
@@ -98,15 +78,12 @@ theorem scalar_mul_axisWarpingRadius_sq_ge {r : ℝ} (hr : 0 < r) :
       _ = _ := by ring
   exact (div_le_iff₀ (sq_pos_of_pos (axisWarpingRadius_pos g hr))).mp hangular
 
-
 theorem axisWarpingSlope_antitoneOn : AntitoneOn (axisWarpingSlope g) (Ioi 0) :=
   antitoneOn_of_hasDerivWithinAt_nonpos (convex_Ioi 0)
     (fun _ hu => (axisWarpingSlope_hasDerivAt g hu).continuousAt.continuousWithinAt)
     (fun _ hu => (axisWarpingSlope_hasDerivAt g (interior_subset hu)).hasDerivWithinAt)
     (fun u hu => mul_nonpos_of_nonneg_of_nonpos (axisRadialSpeed_pos g u).le
       (axisWarpingSecond_nonpos D hrotation hsec (interior_subset hu)))
-
-
 
 theorem axisWarpingSlope_mul_arclength_le {r : ℝ} (hr : 0 < r) :
     axisWarpingSlope g r * radialArclength g r ≤ axisWarpingRadius g r := by
@@ -135,8 +112,6 @@ theorem axisWarpingSlope_mul_arclength_le {r : ℝ} (hr : 0 < r) :
   dsimp only [F] at h
   simpa only [axisWarpingRadius, zero_mul, radialArclength_zero,
     mul_zero, sub_zero, sub_nonneg] using h
-
-
 
 theorem axisWarpingSlope_le_radius_div_arclength {r : ℝ} (hr : 0 < r) :
     axisWarpingSlope g r ≤ axisWarpingRadius g r / radialArclength g r := by

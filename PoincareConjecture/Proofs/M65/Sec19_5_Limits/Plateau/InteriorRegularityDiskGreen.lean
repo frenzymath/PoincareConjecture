@@ -4,24 +4,12 @@ import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff Pointwise SchwartzMap InnerProductSpace
 
 namespace PoincareConjecture.M65Interior
-
-
 
 theorem integral_disk_affine (f : LoopPlane → ℝ) (x : LoopPlane) {R : ℝ} (hR : 0 < R) :
     (∫ z in loopDiskSet, f (x + R • z)) =
@@ -38,9 +26,6 @@ theorem integral_disk_affine (f : LoopPlane → ℝ) (x : LoopPlane) {R : ℝ} (
     simp only [mem_preimage, mem_closedBall, dist_eq_norm, add_sub_cancel_left, sub_zero]
   rw [hpre] at htrans
   simpa only [finrank_euclideanSpace, Fintype.card_fin, hball, smul_eq_mul, htrans] using hscale
-
-
-
 
 theorem integral_divergence_disk (X : LoopPlane → LoopPlane) (hX : ContDiff ℝ 1 X)
     (x : LoopPlane) {R : ℝ} (hR : 0 < R) :
@@ -73,9 +58,6 @@ theorem integral_divergence_disk (X : LoopPlane → LoopPlane) (hX : ContDiff �
     _ = R * (R * ((R ^ 2)⁻¹ * ∫ z in closedBall x R, D z)) := by
       field_simp
     _ = _ := by rw [hunit]; rfl
-
-
-
 
 theorem smooth_disk_green (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f)
     (test : 𝓢(LoopPlane, ℝ)) (i : Fin 2) (x : LoopPlane) {R : ℝ} (hR : 0 < R) :

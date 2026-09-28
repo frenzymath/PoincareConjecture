@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SpatialPartialDerivative
 import PoincareConjecture.Proofs.M63.Mathlib.RetainedPoolContinuity
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SpectralSequenceC2Limit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -520,10 +510,6 @@ private theorem exists_normalized_local_family
     (evalpath _ hGc.fst.fst).congr (fun z => (hGrep z.1.1 z.2 z.1.2).1),
     (evalpath _ hGc.fst.snd).congr (fun z => (hGrep z.1.1 z.2 z.1.2).2.1),
     (evalpath _ hGc.snd).congr (fun z => (hGrep z.1.1 z.2 z.1.2).2.2)⟩
-
-
-
-
 
 theorem exists_local_metric_c2_curve_family
     (F : RicciFlow n M (Icc a b)) (hab : a < b)

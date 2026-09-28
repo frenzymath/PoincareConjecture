@@ -2,21 +2,13 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.BufferedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.StrainerAnnularComponents
 
-
-
-
-
-
-
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
-
 set_option linter.unusedVariables false in
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_openFiber_component_scalar_bound
     {m k : ℕ} (hm : 2 ≤ m) {M : Type*}

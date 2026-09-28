@@ -4,15 +4,6 @@ import PoincareConjecture.Statements.M35StandardCapUniqueness
 import PoincareConjecture.Statements.M36MetricSurgery
 import PoincareConjecture.Statements.M44Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

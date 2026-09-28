@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PLAtlasTransport
 import PoincareConjecture.Proofs.M76.Mathlib.PLHypersurfaceAtlas
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

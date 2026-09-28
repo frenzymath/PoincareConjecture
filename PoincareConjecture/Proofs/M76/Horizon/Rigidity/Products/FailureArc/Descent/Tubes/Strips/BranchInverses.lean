@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn.Annuli
-
-
-
-
-
 
 theorem exists_original_signed_tube_branch_inverses
     {V E X : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -76,4 +61,3 @@ theorem exists_original_signed_tube_branch_inverses
     (hfx.trans (horiginal i z).symm)
 
 end PoincareConjecture.M76.Dehn.Annuli
-

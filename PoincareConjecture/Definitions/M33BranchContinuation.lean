@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.M32HornSelection
 import PoincareConjecture.Definitions.M33EventPreservation
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,16 +12,11 @@ universe u
 
 namespace PoincareConjecture
 
-
 theorem m33BoxIntervalSubset (G : GeneralizedRicciFlowData.{u}) (b : G.box_index) :
     (G.box b).interval ⊆ G.interval := by
   obtain ⟨U, _, hU⟩ := (G.box b).relatively_open
   rw [hU]
   exact Set.inter_subset_left
-
-
-
-
 
 structure M33RegularHistoryRealization
     (G : GeneralizedRicciFlowData.{u}) (F : SurgeryFlowData.{u}) where
@@ -128,7 +114,6 @@ structure RepairedContinuationInput (F : SurgeryFlowData.{u}) (T : ℝ) where
 
   terminal_delta_bound : F.parameters.delta T ≤ F.local_constants.delta₀
 
-
   terminal_height_bound : F.parameters.h T ≤ F.local_constants.R₀ ^ (-1 / 2 : ℝ)
   terminal_height_rho_delta : F.parameters.h T ≤ rho * F.parameters.delta T
   terminal_height_rho_constant : F.parameters.h T ≤ rho / (2 * F.parameters.C)
@@ -148,7 +133,6 @@ structure RepairedContinuationLimitBridge
   appendixA_accuracy : terminalAccuracyFactor * H.epsilon ≤ appendixA.epsilon₀
   constant_one_le : 1 ≤ H.constant
   history : M33RegularHistoryRealization G F
-
 
   reference_start_lt : I.last_slab.start < H.reference.tMinus
   reference_identify : ∀ t : Set.Ico H.reference.tMinus T,
@@ -204,11 +188,9 @@ structure RepairedContinuationLimitBridge
   parameter_constant_eq : H.constant = F.parameters.C
   parameter_r₀_eq : H.r₀ = I.r₀
 
-
   surgery_operation :
     ∀ J : MetricSurgeryInput F.local_constants (N.limit.extension.extended.metric T),
       Nonempty (MetricSurgeryResult F.standard_initial J)
-
 
   deep_horn_application :
     ∀ (horn : StrongHorn N.limit.extension (terminalAccuracyFactor * H.epsilon)),
@@ -367,7 +349,6 @@ structure RepairedContinuationConclusion
     (I : RepairedContinuationInput F T) where
   extension : SurgeryFlowExtension F
 
-
   old_event_data : M33OldEventDataPreservation extension
   end_time : ℝ≥0∞
   extends_past : ENNReal.ofReal T < end_time
@@ -379,9 +360,6 @@ structure RepairedContinuationConclusion
     Nonempty (extension.extended.slice T).carrier
   terminal_empty_iff : I.controlled_core = ∅ ↔
     IsEmpty (extension.extended.slice T).carrier
-
-
-
 
   terminal_empty_end_time_top : I.controlled_core = ∅ → end_time = ⊤
   post_terminal_interval : ∃ d : ℝ, 0 < d ∧
@@ -395,7 +373,6 @@ structure RepairedContinuationConclusion
     s ≤ t →
     IsEmpty (extension.extended.slice s).carrier →
     IsEmpty (extension.extended.slice t).carrier
-
 
   no_later_surgery : ∀ t ∈ extension.extended.time_domain,
     T < t → t ∉ extension.extended.surgery_times

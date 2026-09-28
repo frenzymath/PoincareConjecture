@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartHessian
 import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedIndexIntegral
 import PoincareConjecture.Proofs.M14.Sec6_5_HorizontalHessianTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
-
 
 theorem positiveStart_laplacian_bound
     (hCoordinates : M12MetricPredecessors.{0} n)

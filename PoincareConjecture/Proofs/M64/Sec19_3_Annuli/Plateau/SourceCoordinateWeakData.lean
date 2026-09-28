@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceAffineGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundedCoordinateWeakChain
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +11,6 @@ open scoped Topology ContDiff
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64SourceCoordinate_weak_data {m n : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}

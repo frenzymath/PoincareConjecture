@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureFieldLinearity
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

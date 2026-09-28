@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.LinearAlgebra.BilinearForm.Trace
 
-
-
-
-
-
-
-
 open scoped BigOperators
 
 namespace Poincare.Geometry.Curvature.Operator
@@ -47,7 +40,6 @@ private theorem elementarySkew_curvature_contract
   simp_rw [elementarySkew_contract]
   rw [hlast a b d c, hfirst b a c d, hfirst b a d c, hlast a b d c]
   ring
-
 
 theorem abs_component_le_of_operator_bound
     (R : I → I → I → I → ℝ) (K : ℝ) (hK : 0 ≤ K)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Cutoff.Profile
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -72,8 +65,6 @@ private lemma scalar_cutoff_radius_exp_bound {D K : ℝ} (hD : 1 ≤ D) (hK : 1 
       rw [← Real.exp_add]
       congr 1
       ring
-
-
 
 theorem exists_local_scalar_curvature_constant_of_finite
     (m : ℕ) (hm : 0 < m) :
@@ -234,8 +225,6 @@ theorem exists_local_scalar_curvature_constant_of_finite
     linarith
   exact hbound.trans (div_le_div_of_nonneg_right
     (scalar_cutoff_radius_exp_bound hD hK) (sq_nonneg ε))
-
-
 
 theorem exists_local_scalar_curvature_constant
     (m : ℕ) (hm : 0 < m) :

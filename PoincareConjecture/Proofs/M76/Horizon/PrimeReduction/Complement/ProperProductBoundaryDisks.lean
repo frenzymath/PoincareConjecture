@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.TwoPortRe
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleCollarRetainedDisks
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -89,8 +82,6 @@ private theorem exists_half_width_product_annulus :
     rwa [heq] at h
   change (d (c p) : V2 × ℝ).2 = _
   rw [hdval, hmv, hheight]
-
-
 
 theorem exists_proper_product_boundary_disks
     (f : V2 × ℝ → V3) (hf : FinitePiecewiseAffineOn f (Disk ×ˢ I))

@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapTransversality
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +29,6 @@ private theorem exists_sign_radius {f : ℝ × ℝ → ℝ}
   exact ⟨δ, hδ, fun r t hr ht => (hsign 0 r t (by simpa using hδ) hr ht).1⟩
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 private theorem exists_affine_sign_radius {g : E → ℝ} {p v d : E}
     (hg : ContDiffAt ℝ 1 g p)
@@ -82,10 +71,6 @@ private theorem exists_affine_sign_radius {g : E → ℝ} {p v d : E}
     filter_upwards [continuousAt_snd.tendsto.eventually hzero] with q hq hq0
     simpa [H, hq0] using hq
   exact exists_sign_radius hcomp hdf hz
-
-
-
-
 
 theorem exists_cap_chord_separation
     (F : OpenPartialHomeomorph (ℝ × ℝ) E)
@@ -157,8 +142,6 @@ theorem exists_cap_chord_separation
   refine ⟨hpos, heq, hnonneg, ?_⟩
   intro hrpos hmem
   exact (not_lt_of_ge (capExcess_nonpos_on_cap F hsource _ hmem)) (hpos.mpr hrpos)
-
-
 
 theorem exists_cap_chord_separator
     (F : OpenPartialHomeomorph (ℝ × ℝ) (EuclideanSpace ℝ (Fin 2)))

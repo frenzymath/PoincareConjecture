@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spec
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.EnergyFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 def EnergyTest.negLaplacianTest (φ : EnergyTest D Ω) : EnergyTest D Ω :=
   φ.oneSubLaplacianTest - φ
@@ -83,7 +71,6 @@ theorem EnergyTest.repr_negLaplacianTest
   simp only [EnergyTest.negLaplacianTest, UniformSpace.Completion.coe_sub,
     map_sub, lp.coeFn_sub, Pi.sub_apply]
   linarith only [h']
-
 
 theorem norm_heatSemigroup_test_sub_le
     (hn : 0 < n) (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))

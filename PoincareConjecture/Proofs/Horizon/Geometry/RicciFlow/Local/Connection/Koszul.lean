@@ -3,27 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -35,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem localTheory_mvfderiv_inner (D : LeviCivitaData g)
     (X Y Z : (x : M) → TangentSpace (𝓡 n) x) {x : M}

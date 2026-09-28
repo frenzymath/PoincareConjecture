@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneComplementFro
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlabComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,7 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V2" => (ℝ × ℝ)
 local notation "W" => (ℝ × V2)
-
 
 def squareInnerAnnulus : Set W := Icc (-1) 1 ×ˢ sphere 0 (3 / 2)
 
@@ -43,8 +32,6 @@ private theorem shell_interior : interior squareShell =
   simp only [mem_inter_iff, mem_compl_iff, mem_ball_zero_iff,
     mem_closedBall_zero_iff, not_le, mem_ofPred_eq]
   exact and_comm
-
-
 
 theorem squareShell_frontier :
     frontier squareShell = squareInnerAnnulus ∪ squareOuterAnnulus := by
@@ -171,9 +158,6 @@ private theorem outer_identity_finitePL :
       exact ⟨hx.2, mem_closedBall_zero_iff.mp
         (((isClosed_Icc.prod isClosed_closedBall : IsClosed squareBlock).frontier_subset hx.1).2)⟩)
   exact ⟨N, hN, hspace, N.affineOnFaces_affine (ContinuousAffineMap.id ℝ W)⟩
-
-
-
 
 theorem exists_marked_shell_frontier_map {T : Set W}
     (tau : squareInnerAnnulus ≃ₜ T) (htau : tau.IsFinitePL)

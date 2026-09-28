@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 import PoincareConjecture.Definitions.M34StandardCapExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem cap_birth_tip_distance_near_one
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
@@ -93,8 +82,6 @@ theorem cap_birth_tip_distance_near_one
   have hqz : q z = initial.chart z := rfl
   rw [hqz] at hd
   simpa only [mul_assoc] using hd
-
-
 
 theorem standard_flow_tip_distance_le_initial
     {g0 : StandardInitialMetric} (E : RepairedStandardCapExistenceData g0)

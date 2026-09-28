@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.FiniteChartBundleEnergy
 import PoincareConjecture.Proofs.M03.FamilyBundleCoordinates
 import PoincareConjecture.Proofs.M03.LocalCoordinateEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 

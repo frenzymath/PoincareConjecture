@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOriginalAtlasGluing
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardBoundaryAtlas
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -56,12 +46,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
 
 local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ (hamiltonLowerPeriodLattice κ)
-
-
-
-
-
-
 
 theorem HamiltonLowerLatticeImmersion.exists_original_PL_domain
     (I : HamiltonLowerLatticeImmersion κ)

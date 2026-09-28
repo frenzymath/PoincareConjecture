@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Coverage
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_partialDiffeomorph_of_injOn_of_nonsingular
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -59,8 +45,6 @@ theorem exists_partialDiffeomorph_of_injOn_of_nonsingular
 
 namespace RiemannianMetric
 
-
-
 theorem image_ball_and_radial_edist_eq_of_injOn
     (g : RiemannianMetric n M) (p : M)
     {e : EuclideanSpace ℝ (Fin n) → M} {R ρ : ℝ} (hρ : 0 < ρ) (hρR : ρ ≤ R)
@@ -86,10 +70,6 @@ theorem image_ball_and_radial_edist_eq_of_injOn
     obtain ⟨w, ⟨hw, hwρ⟩, heq⟩ := hq
     have hwv : w = v := hinj hwρ hv heq
     simpa only [hwv, mem_ofPred_eq] using hw.2
-
-
-
-
 
 theorem exists_ball_partialDiffeomorph_of_precompact_exponential [T2Space M]
     (g : RiemannianMetric n M) (p : M) {R ρ : ℝ} (hR : 0 < R)

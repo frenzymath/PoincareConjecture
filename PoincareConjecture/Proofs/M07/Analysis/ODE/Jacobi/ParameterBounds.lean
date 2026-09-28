@@ -1,5 +1,3 @@
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Linear.JetBounds
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.Basic
 

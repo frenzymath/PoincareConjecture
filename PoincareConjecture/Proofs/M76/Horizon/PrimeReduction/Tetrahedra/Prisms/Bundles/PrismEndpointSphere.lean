@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.FiniteCarrierComponents
 import PoincareConjecture.Proofs.M76.Horizon.Dependencies.Topology.Connected.Subtype
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76.PrismBelt

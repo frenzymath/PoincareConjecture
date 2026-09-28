@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ open scoped ContDiff Topology
 variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {E F G : Type*} [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F] [NormedAddCommGroup G] [NormedSpace 𝕜 G]
-
-
 
 theorem ContDiffOn.fderiv_snd_of_isOpen {f : E × F → G} {S : Set E} {U : Set F}
     (hf : ContDiffOn 𝕜 ∞ f (S ×ˢ U)) (hU : IsOpen U) :
@@ -40,8 +29,6 @@ theorem ContDiffOn.fderiv_snd_of_isOpen {f : E × F → G} {S : Set E} {U : Set 
   apply hd.congr_of_eventuallyEq_of_mem _ hz
   filter_upwards [self_mem_nhdsWithin] with p hp
   exact (fderivWithin_of_isOpen hU hp.2).symm
-
-
 
 theorem ContDiffOn.iteratedFDeriv_snd_of_isOpen {f : E × F → G} {S : Set E} {U : Set F}
     (hf : ContDiffOn 𝕜 ∞ f (S ×ˢ U)) (hU : IsOpen U) (m : ℕ) :

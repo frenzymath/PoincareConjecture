@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPullback
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalPullback
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -56,8 +45,6 @@ private theorem diskRotation_boundary_bound {p : ℂ} (hp : ‖p‖ = 1) :
   · intro z _
     simpa only [inv_inv] using diskRotation_inverse (inv_ne_zero hp0) z
 
-
-
 theorem boundaryCoordinate_diameter (p : ℂ) (t : ℝ) :
     diskBoundaryCoordinate p (t • EuclideanSpace.basisFun (Fin 2) ℝ 0) =
       orthonormalBasisOneI.repr (p * orthonormalBasisOneI.repr.symm
@@ -68,10 +55,6 @@ theorem boundaryCoordinate_diameter (p : ℂ) (t : ℝ) :
   rw [diskBoundaryCoordinate, he, M65StrictTrace.boundaryCoordinate,
     mul_comm I (t : ℂ), exp_ofReal_mul_I]
   congr 2
-
-
-
-
 
 theorem diameter_measure_bound {p : ℂ} (hp : ‖p‖ = 1) {R : ℝ} (hR : R ≤ Real.pi) :
     ∃ C : ℝ≥0∞, C ≠ ⊤ ∧
@@ -91,11 +74,6 @@ theorem diameter_measure_bound {p : ℂ} (hp : ‖p‖ = 1) {R : ℝ} (hR : R �
   rw [heq, ← Measure.map_map (contDiff_diskRotation p).continuous.measurable
     Proofs.M58.contDiff_angularPoint.continuous.measurable]
   exact (Measure.map_mono hdom (contDiff_diskRotation p).continuous.measurable).trans hrot
-
-
-
-
-
 
 theorem diameter_boundary_graph {p : ℂ} (hp : ‖p‖ = 1) {R : ℝ} (hR : R ≤ Real.pi)
     (f : ℕ → LoopPlane → ℝ)

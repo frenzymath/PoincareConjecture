@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.InteriorConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem isConnected_link_of_punctured_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -50,9 +39,6 @@ theorem isConnected_link_of_punctured_neighborhood
       exact ⟨AffineMap.lineMap p y r, (hUB ⟨hrU, hrK⟩).resolve_left hrne, hrR⟩
   rw [← K.faceLink_singleton_eq_link p, ← himage]
   exact hB.image R (hRcont.mono hBdomain)
-
-
-
 
 theorem isConnected_link_of_local_finitePLBallPair
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

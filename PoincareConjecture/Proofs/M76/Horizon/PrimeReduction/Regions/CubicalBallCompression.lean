@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace CubeShell

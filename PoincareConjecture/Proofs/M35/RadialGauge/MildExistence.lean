@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.SlabContraction
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardMildEquation
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
 
 theorem exists_gauge_mild_solution
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {T eta B L C : ℝ}

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RatioRegularity
 import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) (d : ℝ → ℝ → M)
   {phi : ℝ → ℝ} {t : ℝ}
-
-
 
 theorem integral_density_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
@@ -50,8 +38,6 @@ theorem integral_density_comp
     _ = _ := intervalIntegral.integral_comp_mul_deriv
       (fun x _ => (hphi.differentiable (by norm_num) x).hasDerivAt)
       hphi.continuous_deriv_one.continuousOn hA
-
-
 
 theorem periodic_density_integral_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
@@ -75,8 +61,6 @@ theorem periodic_density_integral_comp
     _ = _ := by
       simpa only [zero_add] using hper.integral_deriv_smul_comp_eq hA hphi hshift 0
 
-
-
 theorem arcLength_comp
     (hd : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) (fun y => d y t))
     (hv : Continuous (curveSpeed F d t))
@@ -85,8 +69,6 @@ theorem arcLength_comp
       m63ArcLength F d t (phi alpha) (phi beta) := by
   simpa only [m63ArcLength, one_mul] using
     integral_density_comp F d hd hphi hpos (fun _ => 1) (by simpa using hv) alpha beta
-
-
 
 theorem smooth_length_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)
@@ -99,8 +81,6 @@ theorem smooth_length_comp (hd : M62ShrinkingCurve F d)
   simpa only [m62Length, one_mul] using periodic_density_integral_comp F d
     ((hd.spatial_regular t ht).mdifferentiable (by norm_num)) hphi hpos hshift
     (fun _ => 1) (by simpa using hv) (by simpa using M62.speed_periodic F d hd ht)
-
-
 
 theorem smooth_arcTotalCurvature_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)
@@ -121,8 +101,6 @@ theorem smooth_arcTotalCurvature_comp (hd : M62ShrinkingCurve F d)
   rw [hk]
   exact integral_density_comp F d hdiff hphi hpos _ hcont alpha beta
 
-
-
 theorem smooth_totalCurvature_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)
     (hshift : ∀ x, phi (x + curvePeriod) = phi x + curvePeriod)
@@ -141,8 +119,6 @@ theorem smooth_totalCurvature_comp (hd : M62ShrinkingCurve F d)
   unfold m63ArcTotalCurvature m62TotalCurvature
   rw [hzero]
   simpa only [zero_add] using hper.intervalIntegral_add_eq (phi 0) 0
-
-
 
 theorem smooth_regularizedTotalCurvature_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)
@@ -173,8 +149,6 @@ theorem smooth_regularizedTotalCurvature_comp (hd : M62ShrinkingCurve F d)
   rw [hk]
   exact periodic_density_integral_comp F d hdiff hphi hpos hshift _ hcont hper
 
-
-
 theorem smooth_curvatureEnergy_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)
     (hshift : ∀ x, phi (x + curvePeriod) = phi x + curvePeriod)
@@ -202,8 +176,6 @@ theorem smooth_curvatureEnergy_comp (hd : M62ShrinkingCurve F d)
   rw [hk]
   exact periodic_density_integral_comp F d hdiff hphi hpos hshift _ hcont hper
 
-
-
 theorem tangentRicci_periodic (hd : M62ShrinkingCurve F d) (ht : t ∈ Icc a b) :
     Function.Periodic (m62TangentRicci F d t) curvePeriod := by
   have hvelocity := m63CurveVelocity_periodic
@@ -213,8 +185,6 @@ theorem tangentRicci_periodic (hd : M62ShrinkingCurve F d) (ht : t ∈ Icc a b) 
       curveVelocity (fun y => d y t) x := hvelocity x
   unfold m62TangentRicci spatialUnitTangent
   rw [M62.speed_periodic F d hd ht x, hvel, hd.periodic t ht x]
-
-
 
 theorem smooth_lengthEvolutionIntegral_comp (hd : M62ShrinkingCurve F d)
     (hphi : ContDiff ℝ 1 phi) (hpos : ∀ x, 0 < deriv phi x)

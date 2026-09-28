@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonCornerNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonEmptyTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionAffineImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
-
 
 theorem exists_interior_diagonal {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 4))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

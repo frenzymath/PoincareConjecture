@@ -6,10 +6,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Scalar.St
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.PointwiseFlatness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Ricci.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Sectional.Compact
-
-
-
-
-
-
-

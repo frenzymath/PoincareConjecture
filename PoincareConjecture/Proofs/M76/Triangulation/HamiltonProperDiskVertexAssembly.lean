@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexExten
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexRimCover
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBandGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] (V2 × ℝ)}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 theorem HamiltonProperDiskLowerProducts.exists_vertex_products_of_bands
     (P : HamiltonProperDiskLowerProducts T C)
@@ -134,9 +122,6 @@ theorem HamiltonProperDiskLowerProducts.exists_vertex_products_of_bands
         change T.dualRegion {(p : E), (q : E)} ∩ D = ∅
         rw [hempty p q hs, empty_inter]
       rw [hbaseEmpty, empty_prod, image_empty, hempty p q hs]
-
-
-
 
 theorem HamiltonProperDiskLowerProducts.exists_vertex_products
     (P : HamiltonProperDiskLowerProducts T C)

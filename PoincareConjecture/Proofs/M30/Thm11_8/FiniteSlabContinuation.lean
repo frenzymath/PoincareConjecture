@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M30.Mathlib.GuardedScalarComparison
 import PoincareConjecture.Proofs.M30.Generalized.Restriction
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem eventually_finiteSlab_bounds_of_uniform_prefix_scalar
     (hC : RicciFlowCurvatureTheory.{u})

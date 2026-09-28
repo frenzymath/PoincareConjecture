@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -76,10 +66,6 @@ private theorem convex_section_model
 
 local notation "P2" => (ℝ × ℝ)
 local notation "V" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_convex_vertex_base_models {ι : Type*} [Finite ι]
     {C : Set V} (hC : IsCompact C) (hcv : Convex ℝ C)

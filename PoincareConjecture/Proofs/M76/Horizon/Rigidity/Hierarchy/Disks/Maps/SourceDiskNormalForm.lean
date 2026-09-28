@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CollarCollapsePL
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyParameterPL
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -109,10 +100,6 @@ private theorem exists_bounded_scalar_boundary_extension
     rw [hkeep hz, min_eq_right (hrange z hz).2, max_eq_right (hrange z hz).1]
   · intro z hz
     exact ⟨le_max_left _ _, max_le hab (min_le_left _ _)⟩
-
-
-
-
 
 theorem exists_hamiltonZero_source_disk_rectangular_normal_form
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

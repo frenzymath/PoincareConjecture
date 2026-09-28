@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingJoint
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingStableTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {time : X → ℝ} {I : SpacetimeInterval}
-
-
-
 
 noncomputable def analyticRescalingData
     (hCoordinates : M12MetricPredecessors.{0} n) (hM04 : RicciFlowCurvatureTheory.{0})
@@ -101,10 +88,6 @@ noncomputable def analyticRescalingData
     rescalingJointDomain_iff hCoordinates hM12 hM13 G Q hQ a E
       (rescalingExponentialFamily hM12 hM13 G Q hQ a hM04 E) Z s
   jacobian_data := fun _ _ _ _ H => measureJacobianData H
-
-
-
-
 
 theorem analyticRescalingConclusion
     (hCoordinates : M12MetricPredecessors.{0} n) (hM04 : RicciFlowCurvatureTheory.{0})

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateNormalization
 import PoincareConjecture.Proofs.M34.Standard.ScalarGradientHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem componentAnalyticBounds
     (P : M47Predecessors.{u}) (PA : M47ComponentAnalyticPredecessors.{u})

@@ -1,12 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Canonical
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

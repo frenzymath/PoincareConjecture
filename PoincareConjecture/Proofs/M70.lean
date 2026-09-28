@@ -1,23 +1,10 @@
 import PoincareConjecture.Statements.M70
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m70FiniteExtinctionContradiction : M70FiniteExtinctionStatement.{u} := by
   intro g₀ D W T P K C H B A q hM61 hM64 hM65 X L I HX C69 J

@@ -1,13 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Uniqueness.Open
 
-
-
 open Set
 open scoped ContDiff
 
 namespace Poincare.ODE
-
-
 
 theorem eqOn_Icc_of_hasDerivAt
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

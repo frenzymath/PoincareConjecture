@@ -10,7 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (J : SignedJointCross E)
 
-
 theorem exists_quarter_extension (b c : Bool)
     (e : ∀ j d, signedTubeRadius j d ≃ₜ J.radius j d)
     (he : ∀ j d, (e j d).IsFinitePL)
@@ -90,8 +89,6 @@ theorem exists_quarter_extension (b c : Bool)
     exact (congrArg Subtype.val (hfR ⟨x, Or.inl x.property⟩)).trans (hr0 x)
   · intro x
     exact (congrArg Subtype.val (hfR ⟨x, Or.inr x.property⟩)).trans (hr1 x)
-
-
 
 theorem exists_quarter_maps :
     ∃ (r : ∀ j b, signedTubeRadius j b ≃ₜ J.radius j b)

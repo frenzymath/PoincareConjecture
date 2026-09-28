@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Graph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
 
 theorem straddlesZero_pair_iff (A : E →ᵃ[ℝ] ℝ) (u v : E) :
     A.StraddlesZero ({u, v} : Finset E) ↔
@@ -46,8 +36,6 @@ end AffineMap
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
 
 theorem existsUnique_triangleCrossingEdge_of_fan (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

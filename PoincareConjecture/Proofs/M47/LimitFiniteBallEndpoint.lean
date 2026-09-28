@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteOpenEndpoint
 import PoincareConjecture.Proofs.M47.LimitCapSourceDistance
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSourceCenters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +34,6 @@ private local instance ballEndpointCharts : ChartedSpace
     (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance ballEndpointManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_eventually_preserved_ball_endpoint_search
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

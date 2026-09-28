@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonica
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_stackCanonicalProfile_common_germ
     (P : SurgeryCapProfile) (rFlat rOne v0 v1 : ℝ)
@@ -65,7 +56,6 @@ theorem exists_stackCanonicalProfile_common_germ
   exact exists_stackCapProfilePath_common_ambient_germ P.horizontal a P.vertical b
     delta hdelta W hW hcircle ha0near ha1near hb0near hb1near
 
-
 theorem exists_stackCanonicalProfile_small_scale
     (P : SurgeryCapProfile) (rFlat rOne v0 v1 : ℝ)
     (hrFlat : 0 < rFlat) (hradii : rFlat < rOne) (hrOne : rOne < 1)
@@ -98,7 +88,6 @@ theorem exists_stackCanonicalProfile_small_scale
     dsimp only [lambda]
     nlinarith
   exact ⟨B, lambda, hB, hlambda, hsmall0, hsmall, hbound⟩
-
 
 theorem exists_stackCanonicalProfileEvolution
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

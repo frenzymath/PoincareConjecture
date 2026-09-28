@@ -17,7 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
 theorem localFrame_covariant_divergence_coordinate
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x₀ : M)
     (W : (y : M) → TangentSpace (𝓡 n) y) :
@@ -38,7 +37,6 @@ theorem localFrame_covariant_divergence_coordinate
   apply Finset.sum_congr rfl
   intro i hi
   exact localFrame_covariant_derivative_coordinate D x₀ W hW hx i l
-
 
 theorem curvature_difference_flux_divergence_coordinates
     {g g' : RiemannianMetric n M}
@@ -342,7 +340,6 @@ theorem curvature_difference_flux_divergence_coordinates
   simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib]
   ring
 
-
 theorem curvature_raised_divergence_coordinates
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 : M) :
     let V := EuclideanSpace ℝ (Fin n)
@@ -555,7 +552,6 @@ theorem curvature_raised_divergence_coordinates
   rw [map_add, map_sub, map_sub, map_sub, hout i, hin1 i, hin2 i, hin3 i, hraised i]
   simp only [Finset.sum_add_distrib, Finset.sum_sub_distrib]
   ring
-
 
 theorem curvature_covariant_derivative_coordinates
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (x0 : M) :

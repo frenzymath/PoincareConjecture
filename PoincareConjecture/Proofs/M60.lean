@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M60.AreaCore
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Minimizer
 import PoincareConjecture.Statements.M60Area
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,39 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m60AreaAndFilling
     (P04 : RicciFlowCurvatureTheory.{u})
@@ -72,7 +31,6 @@ theorem m60AreaAndFilling
     exact m60AreaCore_of_leastSphere tensor scalar m60LeastSphere_of_suProducers
   exact { toM60AreaCore := core P04.tensor_calculus P04.scalar_regular
           short_loop := m60ShortLoopAreaClaim_from_M58 P58 }
-
 
 theorem m60AreaAndFilling_from_predecessors : M60AreaTheory.{u} :=
   m60AreaAndFilling ricciFlowCurvatureTheory repairedShortLoopTriviality

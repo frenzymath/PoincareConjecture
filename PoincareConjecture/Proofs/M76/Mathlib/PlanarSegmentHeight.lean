@@ -4,41 +4,22 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
 
 namespace PlanarSegment
 
-
-
-
 noncomputable def height (a b : ℝ × ℝ) (x : ℝ) : ℝ :=
   lineMap a.2 b.2 ((x - a.1) / (b.1 - a.1))
-
-
 
 theorem continuous_height (a b : ℝ × ℝ) : Continuous (height a b) := by
   unfold height
   simp only [lineMap_apply_module', smul_eq_mul]
   fun_prop
 
-
-
 theorem height_left (a b : ℝ × ℝ) : height a b a.1 = a.2 := by
   simp [height]
-
-
 
 theorem height_right {a b : ℝ × ℝ} (hab : a.1 ≠ b.1) :
     height a b b.1 = b.2 := by
@@ -57,16 +38,11 @@ private theorem recover_parameter {a b t : ℝ} (hab : a ≠ b) :
   simp only [smul_eq_mul, add_sub_cancel_right]
   exact mul_div_cancel_right₀ t (sub_ne_zero.mpr hab.symm)
 
-
-
 theorem graph_eq_lineMap {a b : ℝ × ℝ} (hab : a.1 ≠ b.1) (x : ℝ) :
     (x, height a b x) = lineMap a b ((x - a.1) / (b.1 - a.1)) := by
   apply Prod.ext
   · exact (horizontal_parameter hab).symm
   · exact (snd_lineMap _ _ _).symm
-
-
-
 
 theorem mem_segment_iff {a b q : ℝ × ℝ} (hab : a.1 ≠ b.1) :
     q ∈ segment ℝ a b ↔ q.1 ∈ uIcc a.1 b.1 ∧ q.2 = height a b q.1 := by

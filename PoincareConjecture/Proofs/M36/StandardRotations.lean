@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_IndexPair
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexContinuity
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology MeasureTheory
@@ -30,8 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include EZ
 
-
-
 theorem pullbackIndexBoundaryPair_contDiffOn :
     ContDiffOn ℝ ∞ (pullbackIndexBoundaryPair R Q.extension Z)
       (M14SqrtParameterInterval τ₁ τ₂) := by
@@ -45,9 +34,6 @@ theorem pullbackIndexBoundaryPair_contDiffOn :
   rw [Q.derivative_extension.agrees r hr, EZ.agrees r hr]
   rfl
 
-
-
-
 theorem jacobiResidual_contDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     ContDiffOn ℝ ∞ (fun s => M14JacobiResidual G R Q s (Z s))
@@ -60,9 +46,6 @@ theorem jacobiResidual_contDiffOn
     (pullbackExtension_field_contMDiffOn Q.derivative_extension hR)
     (horizontalCovariantDerivative_contMDiffOn R hCoordinates Q.derivative_extension)
     (pullbackExtension_field_contMDiffOn EZ hR)
-
-
-
 
 theorem pullbackIndexBoundaryPair_hasDerivWithinAt {s : ℝ}
     (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
@@ -81,9 +64,6 @@ theorem pullbackIndexBoundaryPair_hasDerivWithinAt {s : ℝ}
   rw [hid]
   exact squareRoot_covariantDerivative_metric_product R Q.derivative_extension EZ hs
 
-
-
-
 theorem pullbackIndexPairDensity_contDiffOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     ContDiffOn ℝ ∞ (pullbackIndexPairDensity R Q.extension EZ)
@@ -95,9 +75,6 @@ theorem pullbackIndexPairDensity_contDiffOn
   intro s hs
   have h := (pullbackIndexBoundaryPair_hasDerivWithinAt R Q EZ hs).derivWithin (hC s hs)
   linarith
-
-
-
 
 theorem integral_pullbackIndexPairDensity
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :

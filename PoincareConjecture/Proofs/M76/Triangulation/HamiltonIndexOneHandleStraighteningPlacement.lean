@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedProductCorrecti
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCutComparison
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskProductConstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -37,8 +27,6 @@ variable {L : Submodule ℤ V2} [DiscreteTopology L] {α : Type*}
   {geometry : HamiltonIndexOneDehnGeometry L e T region} {A : V ≃ₜ V}
 
 omit [DiscreteTopology L] in
-
-
 
 theorem HamiltonIndexOneProtectedImage.exists_cover_placement
     (image : HamiltonIndexOneProtectedImage geometry A)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualPointCoface
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,7 +23,6 @@ noncomputable def dualRegionRim (s : Finset E) : Set E :=
   let : Fintype T.ambient.faces := T.finite.fintype
   (((T.ambient.barycentricDualBlock s).link (s.centroid ℝ id)).space ∩
     (T.marked 0).space) ∪ ((T.ambient.barycentricDualBlock s).space ∩ (T.marked 1).space)
-
 
 noncomputable def surfaceBase (s : Finset E) : Set E :=
   T.dualRegion s ∩ (T.marked 2).space
@@ -80,7 +73,6 @@ theorem surface_dual_inter_boundary (s : Finset E) :
     (T.marked 3) (T.marked_le 3) s
 
 open Classical in
-
 
 theorem dualRegionRim_inter_surface {s : Finset E} (hs : s ∈ (T.marked 2).faces) :
     let : Fintype (T.marked 2).faces := (T.marked_finite 2).fintype
@@ -135,12 +127,10 @@ theorem dualBlock_subset_star (p : (T.marked 2).vertices)
   exact (T.ambient.closedStar p).convexHull_subset_space
     ⟨ht, by simpa only [Finset.insert_eq_of_mem (hst hps)] using ht⟩ hxt
 
-
 theorem dualRegion_subset_star (p : (T.marked 2).vertices)
     {s : Finset E} (hps : (p : E) ∈ s) :
     T.dualRegion s ⊆ (T.ambient.closedStar p).space :=
   fun _ hx => T.dualBlock_subset_star p hps hx.1
-
 
 theorem dualRegion_antitone {s t : Finset E} (hst : s ⊆ t) :
     T.dualRegion t ⊆ T.dualRegion s := by
@@ -148,7 +138,6 @@ theorem dualRegion_antitone {s t : Finset E} (hst : s ⊆ t) :
   let : Fintype T.ambient.faces := T.finite.fintype
   intro x hx
   exact ⟨space_subset_of_le (T.ambient.barycentricDualBlock_antitone hst) hx.1, hx.2⟩
-
 
 theorem dualRegion_inter (s t : Finset E) :
     T.dualRegion s ∩ T.dualRegion t = T.dualRegion (s ∪ t) := by
@@ -158,7 +147,6 @@ theorem dualRegion_inter (s t : Finset E) :
   ext x
   exact ⟨fun hx => ⟨h.subset ⟨hx.1.1, hx.2.1⟩, hx.1.2⟩,
     fun hx => ⟨⟨(h.symm.subset hx.1).1, hx.2⟩, (h.symm.subset hx.1).2, hx.2⟩⟩
-
 
 theorem surfaceBase_inter (s t : Finset E) :
     T.surfaceBase s ∩ T.surfaceBase t = T.surfaceBase (s ∪ t) := by
@@ -171,7 +159,6 @@ theorem surfaceBase_inter (s t : Finset E) :
   simp only [mem_inter_iff]
   tauto
 
-
 theorem dualRegion_eq_empty_of_not_surface_face {s : Finset E}
     (hne : s.Nonempty) (hverts : (s : Set E) ⊆ (T.marked 2).vertices)
     (hs : s ∉ (T.marked 2).faces) : T.dualRegion s = ∅ := by
@@ -181,7 +168,6 @@ theorem dualRegion_eq_empty_of_not_surface_face {s : Finset E}
   change (T.ambient.barycentricDualBlock s).space ∩ (T.marked 0).space = ∅
   rw [T.ambient.barycentricDualBlock_space_eq_empty_of_not_face hne hsA, empty_inter]
 
-
 theorem dualRegionRim_subset (s : Finset E) : T.dualRegionRim s ⊆ T.dualRegion s := by
   classical
   let : Fintype T.ambient.faces := T.finite.fintype
@@ -190,7 +176,6 @@ theorem dualRegionRim_subset (s : Finset E) : T.dualRegionRim s ⊆ T.dualRegion
   rintro x (hx | hx)
   · exact ⟨space_subset_of_le hlink hx.1, hx.2⟩
   · exact ⟨hx.1, T.boundary_subset_region hx.2⟩
-
 
 theorem dualRegion_subset_rim_of_ssubset {s t : Finset E}
     (hs : s ∈ (T.marked 2).faces) (hst : s ⊂ t) :

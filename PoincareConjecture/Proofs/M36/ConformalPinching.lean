@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.CurvaturePinching
 import PoincareConjecture.Proofs.M36.CurvatureTrace
 import Mathlib.Data.Real.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology Pointwise
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M36
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem leastSectionalCurvature_le_sectional_of_orthonormal
     (D : LeviCivitaData g) (x : M) {a b : TangentSpace (𝓡 3) x}
@@ -41,8 +30,6 @@ theorem leastSectionalCurvature_le_sectional_of_orthonormal
   rw [sectional_eq_tensor_of_orthonormal D x hab]
   exact csInf_le hS ⟨a, b, hab, rfl⟩
 
-
-
 theorem neg_negativeCurvaturePart_le_sectional_of_orthonormal
     (D : LeviCivitaData g) (x : M) {a b : TangentSpace (𝓡 3) x}
     (hab : LeviCivitaData.IsOrthonormalPair g x a b) :
@@ -51,8 +38,6 @@ theorem neg_negativeCurvaturePart_le_sectional_of_orthonormal
   have hmax := le_max_left (-D.leastSectionalCurvature x) (0 : ℝ)
   unfold LeviCivitaData.negativeCurvaturePart
   linarith only [hleast, hmax]
-
-
 
 theorem negativeCurvaturePart_le_of_sectional_lower_bound
     (D : LeviCivitaData g) (x : M) {xi : ℝ} (hxi : 0 ≤ xi)
@@ -71,8 +56,6 @@ theorem negativeCurvaturePart_le_of_sectional_lower_bound
     · rw [Set.not_nonempty_iff_eq_empty.mp hS, Real.sInf_empty]
       exact neg_nonpos.mpr hxi
   exact max_le (by linarith only [hleast]) hxi
-
-
 
 theorem positiveScaling_exp_orthonormal_base (g : RiemannianMetric 3 M)
     (F : M → ℝ) (hF : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F) (x : M)
@@ -95,9 +78,6 @@ theorem positiveScaling_exp_orthonormal_base (g : RiemannianMetric 3 M)
     simp only [map_smul, smul_apply, smul_eq_mul]
     rw [← mul_assoc, he]
   exact ⟨(hm a a).trans hab.1, (hm b b).trans hab.2.1, (hm a b).trans hab.2.2⟩
-
-
-
 
 theorem negativeCurvaturePart_positiveScaling_profile_le_of_split
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -131,9 +111,6 @@ theorem negativeCurvaturePart_positiveScaling_profile_le_of_split
     (Real.exp_ne_zero (-F x)) (Real.exp_ne_zero (-F x))] at hnew
   exact hnew
 
-
-
-
 theorem sectionalCurvature_positiveScaling_profile_orthonormal_pos_of_split
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (F : M → ℝ) (hF : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
@@ -166,9 +143,6 @@ theorem sectionalCurvature_positiveScaling_profile_orthonormal_pos_of_split
   rw [sectionalCurvature_smul_pair D' x a b
     (Real.exp_ne_zero (-F x)) (Real.exp_ne_zero (-F x))] at hnew
   exact hnew
-
-
-
 
 theorem sectionalCurvature_positiveScaling_profile_orthonormal_pos_of_gain
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -223,8 +197,6 @@ theorem sectionalCurvature_positiveScaling_profile_orthonormal_pos_of_gain
   rwa [sectionalCurvature_smul_pair D' x a b
     (Real.exp_ne_zero (-F x)) (Real.exp_ne_zero (-F x))] at hpos
 
-
-
 theorem positiveScaling_const_orthonormal_iff (g : RiemannianMetric 3 M)
     {c : ℝ} (hc : 0 < c) (x : M) (a b : TangentSpace (𝓡 3) x) :
     LeviCivitaData.IsOrthonormalPair
@@ -238,8 +210,6 @@ theorem positiveScaling_const_orthonormal_iff (g : RiemannianMetric 3 M)
     rw [← mul_assoc, Real.mul_self_sqrt hc.le]
   unfold LeviCivitaData.IsOrthonormalPair
   rw [hm, hm, hm]
-
-
 
 theorem sectionalCurvature_positiveScaling_const_of_orthonormal
     (D : LeviCivitaData g) {c : ℝ} (hc : 0 < c)
@@ -268,8 +238,6 @@ theorem sectionalCurvature_positiveScaling_const_of_orthonormal
     (Filter.Eventually.of_forall (fun _ => rfl)) a b hab.1 hab.2.1 hab.2.2
   simpa only [deriv_const', deriv_const, he, zero_mul, zero_pow (by decide : 2 ≠ 0),
     add_zero, zero_add, sub_zero] using hK
-
-
 
 theorem leastSectionalCurvature_positiveScaling_const
     (D : LeviCivitaData g) {c : ℝ} (hc : 0 < c)
@@ -314,8 +282,6 @@ theorem leastSectionalCurvature_positiveScaling_const
   rw [hsets]
   exact Real.sInf_smul_of_nonneg (inv_nonneg.mpr hc.le) S
 
-
-
 theorem negativeCurvaturePart_positiveScaling_const
     (D : LeviCivitaData g) {c : ℝ} (hc : 0 < c)
     (D' : LeviCivitaData (positiveScaling g (fun _ => c) contMDiff_const (fun _ => hc)))
@@ -330,9 +296,6 @@ section LocalIsometry
 variable {X : Type v} [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
   {h : RiemannianMetric 3 X}
-
-
-
 
 theorem leastSectionalCurvature_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -365,8 +328,6 @@ theorem leastSectionalCurvature_eq_of_local_isometry
     obtain ⟨b', rfl⟩ := hsurj b
     exact ⟨a', b', (hp a' b').mpr hab, hk.trans (hK a' b').symm⟩
 
-
-
 theorem negativeCurvaturePart_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {f : M → X} {U : Set M} (hU : IsOpen U)
@@ -380,6 +341,5 @@ theorem negativeCurvaturePart_eq_of_local_isometry
   rw [leastSectionalCurvature_eq_of_local_isometry D D' hU hf hmetric hx]
 
 end LocalIsometry
-
 
 end PoincareConjecture.M36

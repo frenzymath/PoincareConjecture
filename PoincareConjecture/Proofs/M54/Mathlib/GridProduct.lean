@@ -1,21 +1,11 @@
 import Mathlib.Algebra.BigOperators.Group.List.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace List
 
 variable {M : Type*} [Monoid M]
-
-
 
 theorem prod_range_pairs (f : ℕ → M) (n : ℕ) :
     ((range (2 * n)).map f).prod =
@@ -26,8 +16,6 @@ theorem prod_range_pairs (f : ℕ → M) (n : ℕ) :
     rw [show 2 * (n + 1) = (2 * n + 1) + 1 by omega,
       prod_range_succ, prod_range_succ, ih, prod_range_succ, mul_assoc]
 
-
-
 theorem prod_range_strip (h v : ℕ → ℕ → M) (n j : ℕ)
     (hc : ∀ i < n, h i j * v (i + 1) j = v i j * h i (j + 1)) :
     ((range n).map (fun i => h i j)).prod * v n j =
@@ -37,8 +25,6 @@ theorem prod_range_strip (h v : ℕ → ℕ → M) (n j : ℕ)
   | succ n ih =>
     rw [prod_range_succ, mul_assoc, hc n (by omega), ← mul_assoc,
       ih (fun i hi => hc i (by omega)), mul_assoc, ← prod_range_succ]
-
-
 
 theorem prod_range_grid (h v : ℕ → ℕ → M) (n m : ℕ)
     (hc : ∀ i < n, ∀ j < m,

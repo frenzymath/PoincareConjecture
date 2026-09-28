@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeRadius
 import PoincareConjecture.Proofs.M34.Standard.CalibratedBishopGromov
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem calibrated_small_ball_volume_lower_of_nonnegative_ricci
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -57,8 +45,6 @@ variable {M : Type*} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 theorem small_core_ball_volume_lower
     (hcomplete : MetricComplete g)
     (hRic : ∀ x, ∀ v : TangentSpace (𝓡 3) x, 0 ≤ N.connection.ricci x v v)
@@ -80,8 +66,6 @@ theorem small_core_ball_volume_lower
     g.calibrated_small_ball_volume_lower_of_nonnegative_ricci N.connection
       (by norm_num) hcomplete hRic y hr hr0 hrr hbase
   rwa [← ENNReal.ofReal_pow hr.le, ← ENNReal.ofReal_mul (inv_nonneg.mpr hCpos.le)] at hsmall
-
-
 
 theorem reference_core_ball_volume_lower
     (hcomplete : MetricComplete g)

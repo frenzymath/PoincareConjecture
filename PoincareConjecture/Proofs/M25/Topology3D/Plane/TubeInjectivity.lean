@@ -3,26 +3,12 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_interval_margin {a b : ℝ} (hab : a ≤ b)
     {U : Set ℝ} (hU : IsOpen U) (hK : Icc a b ⊆ U) :
@@ -43,9 +29,6 @@ theorem exists_interval_margin {a b : ℝ} (hab : a ≤ b)
 
 variable {X : Type*} [TopologicalSpace X] [CompactSpace X]
 
-
-
-
 theorem exists_uniform_zero_section_tube {a b : ℝ} (hab : a ≤ b)
     {U : Set ((ℝ × X) × ℝ)} (hU : IsOpen U)
     (hK : (Icc a b ×ˢ (univ : Set X)) ×ˢ ({0} : Set ℝ) ⊆ U) :
@@ -63,9 +46,6 @@ theorem exists_uniform_zero_section_tube {a b : ℝ} (hab : a ≤ b)
   exact hAB ⟨hCD ⟨hmC hz, hUD trivial⟩, hwB (by simpa using hr)⟩
 
 variable {Y : Type*} [TopologicalSpace Y] [T2Space Y]
-
-
-
 
 theorem exists_uniform_injective_family_tube {a b : ℝ} (hab : a ≤ b)
     (F : (ℝ × X) × ℝ → Y)

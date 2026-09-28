@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W)
 
-
-
 theorem exists_regular_history_slice_between {s a : ℝ}
     (hs : s ∈ H.generalized.interval) (hspos : 0 < s) (has : a < s) :
     ∃ u ∈ H.generalized.interval, a < u ∧ u < s ∧ u ∉ F.surgery_times := by
@@ -37,8 +25,6 @@ theorem exists_regular_history_slice_between {s a : ℝ}
   refine ⟨u, H.interval_eq.symm ▸ huW, (le_max_right 0 a).trans_lt hu.1, hu.2, ?_⟩
   intro hEvent
   exact hnot ⟨hEvent, huW⟩
-
-
 
 theorem regular_history_dense_canonical {epsilon C t : ℝ} (htpos : 0 < t)
     (x : (H.generalized.slice t).carrier)
@@ -63,9 +49,6 @@ theorem regular_history_dense_canonical {epsilon C t : ℝ} (htpos : 0 < t)
   apply regular_history_canonical_control H hu hregular y
   apply hcanonical u (H.interval_eq ▸ hu) hut hregular
   simpa only [GeneralizedRicciFlowData.scalar, H.scalar_pullback u hu] using hy
-
-
-
 
 theorem exists_regular_history_bounded_distance
     (S : RepairedControlledSchedulesData.{u}) (epsilon : ℝ) (hepsilon : 0 < epsilon)

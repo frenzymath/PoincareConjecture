@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import Mathlib.Topology.Order.Compact
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem exists_sublevel_normal_chart (D : LeviCivitaData g) {f : M → ℝ} {p : M}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hgrad : D.gradient f p = 0)
@@ -77,8 +73,6 @@ theorem exists_sublevel_normal_chart (D : LeviCivitaData g) {f : M → ℝ} {p :
 end PoincareConjecture.LeviCivitaData
 
 namespace Poincare.Topology
-
-
 
 theorem eventually_sublevel_subset_of_unique_min
     {X : Type*} [TopologicalSpace X] [CompactSpace X] {f : X → ℝ} (hf : Continuous f)

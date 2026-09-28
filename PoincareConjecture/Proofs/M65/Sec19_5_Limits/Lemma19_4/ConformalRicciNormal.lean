@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalRicci
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussContraction
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m65PlaneRicciTraceDensity_eq_scalar_sub_normal
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)

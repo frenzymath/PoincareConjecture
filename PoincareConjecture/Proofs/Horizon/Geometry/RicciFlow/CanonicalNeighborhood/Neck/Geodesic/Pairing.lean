@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Transport.Charts
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 theorem normalized_pullback_bilinear_error
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -87,7 +79,6 @@ theorem normalized_pullback_bilinear_error
         N.epsilon * Real.sqrt (EvolvingRoundCylinderMetric 0 y v v) *
           Real.sqrt (EvolvingRoundCylinderMetric 0 y w w)) hx) hbound v w
 
-
 theorem scaled_model_length_le_two
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (v : RoundCylinderTangent z)
@@ -106,8 +97,6 @@ theorem scaled_model_length_le_two
     nlinarith [N.epsilon_lt_half]
   nlinarith [mul_nonneg N.scale_pos.le (Real.sqrt_nonneg
     (EvolvingRoundCylinderMetric 0 z v v))]
-
-
 
 theorem pullback_scaled_axial_pairing_error
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -133,8 +122,6 @@ theorem pullback_scaled_axial_pairing_error
   rw [heq] at hscaled
   exact hscaled.trans (by
     nlinarith [N.scaled_model_length_le_two hz v hv, N.epsilon_pos])
-
-
 
 theorem scaled_axial_inner_self_error
     {z : RoundCylinderSpace} (hz : z.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -169,7 +156,6 @@ private theorem coordinate_map_mfderiv_inverse_product {x : M} (hx : x ∈ N.car
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
 
-
 theorem axial_mvfderiv_eq_coordinate_inverse {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) :
     mvfderiv (𝓡 3) (fun y => (N.coordinate_inverse y).2) x v =
@@ -187,8 +173,6 @@ private theorem ambient_inner_self_nonneg {x : M} (v : TangentSpace (𝓡 3) x) 
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
-
 
 theorem axial_pairing_error {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) (hv : g.tangentNorm x v = 1) :
@@ -217,8 +201,6 @@ theorem axial_pairing_error {x : M} (hx : x ∈ N.carrier)
   convert h using 1
   congr 6
 
-
-
 theorem scaled_axial_tangentNorm_sq_error {x : M} (hx : x ∈ N.carrier) :
     |(g.tangentNorm x
         (N.scale⁻¹ • mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
@@ -229,8 +211,6 @@ theorem scaled_axial_tangentNorm_sq_error {x : M} (hx : x ∈ N.carrier) :
   unfold RiemannianMetric.tangentNorm
   rw [Real.sq_sqrt (ambient_inner_self_nonneg _)]
   exact h
-
-
 
 theorem tangentNorm_sub_scaled_axial_le_of_velocity
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x)
@@ -266,8 +246,6 @@ theorem tangentNorm_sub_scaled_axial_le_of_velocity
     rw [g.symm x a v]
     nlinarith
   exact (Real.sqrt_le_iff).mpr ⟨hα, hsq⟩
-
-
 
 theorem tangentNorm_sub_scaled_axial_lt_of_velocity
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x)

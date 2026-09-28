@@ -3,17 +3,6 @@ import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,11 +14,9 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
 noncomputable def overlapBarrierMap (N Q : EpsilonNeck g) :
     {x : M // x ∈ N.carrier ∩ Q.carrier} → RoundCylinderSpace :=
   fun x => ((Q.coordinate_inverse x).1, N.overlapBarrier Q x)
-
 
 theorem overlapBarrierMap_continuous (N Q : EpsilonNeck g) :
     Continuous (N.overlapBarrierMap Q) := by
@@ -38,8 +25,6 @@ theorem overlapBarrierMap_continuous (N Q : EpsilonNeck g) :
     Q.coordinate_inverse_smooth.continuousOn.fst.mono inter_subset_right
   exact (continuousOn_iff_continuous_domRestrict.mp hQ).prodMk
     (continuousOn_iff_continuous_domRestrict.mp (N.overlapBarrier_continuousOn Q))
-
-
 
 theorem isProperMap_overlapBarrierMap [MeasurableSpace M] [BorelSpace M]
     [T2Space M] [T3Space M] (N Q : EpsilonNeck g)

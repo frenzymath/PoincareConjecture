@@ -3,20 +3,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +10,6 @@ open Set TopologicalSpace Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.CylinderGluing
-
-
 
 theorem exists_scalar_collar_extension (h : RoundCylinderSpace → ℝ)
     (hh : ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ) ∞ h)

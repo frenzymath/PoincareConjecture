@@ -1,41 +1,23 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularCapDisks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
-
 def halfBall (h : ℝ) : Set ((ℝ × ℝ) × ℝ) :=
   {p | 0 ≤ h * p.2 ∧ h * p.2 ≤ roof p.1}
-
-
 
 def halfBallForms (h : ℝ) : Fin 4 → ((ℝ × ℝ) × ℝ) →ᵃ[ℝ] ℝ :=
   Fin.cases (-(h • (LinearMap.snd ℝ (ℝ × ℝ) ℝ).toAffineMap)) fun i =>
     h • (LinearMap.snd ℝ (ℝ × ℝ) ℝ).toAffineMap -
       (coordinates i).comp (LinearMap.fst ℝ (ℝ × ℝ) ℝ).toAffineMap
 
-
-
 theorem halfBall_eq_halfspaces (h : ℝ) :
     halfBall h = {p | ∀ i, halfBallForms h i p ≤ 0} := by
   ext p
   simp [halfBall, halfBallForms, roof, coordinates, Fin.forall_fin_succ]
-
-
 
 theorem halfBallForms_linear_ne_zero {h : ℝ} (hh : h ≠ 0) (i : Fin 4) :
     (halfBallForms h i).linear ≠ 0 := by
@@ -45,15 +27,11 @@ theorem halfBallForms_linear_ne_zero {h : ℝ} (hh : h ≠ 0) (i : Fin 4) :
   have hz0 : ((0, 0) : ℝ × ℝ) = 0 := rfl
   cases i using Fin.cases <;> simpa [halfBallForms, hz0] using hz
 
-
-
 theorem isClosed_halfBall (h : ℝ) : IsClosed (halfBall h) := by
   rw [halfBall_eq_halfspaces]
   simp only [ofPred_forall]
   exact isClosed_iInter fun i => isClosed_le (halfBallForms h i).continuous_of_finiteDimensional
     continuous_const
-
-
 
 theorem interior_halfBall {h : ℝ} (hh : h ≠ 0) :
     interior (halfBall h) = {p | 0 < h * p.2 ∧ h * p.2 < roof p.1} := by
@@ -61,8 +39,6 @@ theorem interior_halfBall {h : ℝ} (hh : h ≠ 0) :
     (halfBallForms_linear_ne_zero hh)]
   ext p
   simp [halfBallForms, roof, coordinates, Fin.forall_fin_succ]
-
-
 
 theorem frontier_halfBall {h : ℝ} (hh : h = 1 ∨ h = -1) :
     frontier (halfBall h) = cap h ∪ disk := by
@@ -95,8 +71,6 @@ theorem frontier_halfBall {h : ℝ} (hh : h = 1 ∨ h = -1) :
       · intro hstrict
         simpa [hz] using hstrict.1
 
-
-
 theorem isCompact_halfBall {h : ℝ} (hh : h = 1 ∨ h = -1) : IsCompact (halfBall h) := by
   have hc : IsCompact (Icc (((0, 0), -1) : (ℝ × ℝ) × ℝ) ((1, 1), 1)) := isCompact_Icc
   apply hc.of_isClosed_subset (isClosed_halfBall h)
@@ -116,8 +90,6 @@ theorem isCompact_halfBall {h : ℝ} (hh : h = 1 ∨ h = -1) : IsCompact (halfBa
       constructor <;> linarith [hp.1, hp.2]
   exact ⟨⟨⟨hx, hy⟩, hz.1⟩, ⟨⟨by linarith, by linarith⟩, hz.2⟩⟩
 
-
-
 theorem interior_halfBall_nonempty {h : ℝ} (hh : h = 1 ∨ h = -1) :
     (interior (halfBall h)).Nonempty := by
   have hsq : h * h = 1 := by rcases hh with rfl | rfl <;> norm_num
@@ -127,9 +99,6 @@ theorem interior_halfBall_nonempty {h : ℝ} (hh : h = 1 ∨ h = -1) :
   change 0 < h * (h * (1 / 6)) ∧ h * (h * (1 / 6)) < roof (1 / 3, 1 / 3)
   rw [← mul_assoc, hsq, one_mul]
   norm_num [roof]
-
-
-
 
 theorem isFinitePLBallPair_halfBall {h : ℝ} (hh : h = 1 ∨ h = -1) :
     IsFinitePLBallPair ((ℝ × ℝ) × ℝ) (halfBall h) (cap h ∪ disk) := by

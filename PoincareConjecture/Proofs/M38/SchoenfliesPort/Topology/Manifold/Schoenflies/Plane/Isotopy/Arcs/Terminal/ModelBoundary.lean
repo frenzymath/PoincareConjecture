@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualDecomposition
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCapDisks
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -88,8 +80,6 @@ theorem terminal_modelBand_eq_image_height_band (d : TerminalSaddleGeometry M P 
       refine ⟨?_, rfl⟩
       rw [hcoord]
       exact mem_image_of_mem _ (mem_image_of_mem _ q.property)
-
-
 
 theorem terminal_model_cap_band_boundary
     (d : TerminalSaddleGeometry M P p e) (i : Fin 3)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Basic
 import Mathlib.Geometry.Manifold.ChartedSpace
 
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Gluing
@@ -17,8 +10,6 @@ universe u v
 noncomputable section
 
 variable {I : Type u} {E : Type v} [TopologicalSpace E]
-
-
 
 variable (U : I → Set E) (hU : ∀ i, IsOpen (U i))
 

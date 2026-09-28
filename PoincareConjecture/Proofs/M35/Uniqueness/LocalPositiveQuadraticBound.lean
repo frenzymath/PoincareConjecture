@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.LocalQuadraticBound
 import PoincareConjecture.Proofs.M35.Uniqueness.RawCommonCarrier
 import PoincareConjecture.Proofs.M09.TimeTranslatedFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

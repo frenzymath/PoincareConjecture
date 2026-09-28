@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M27ProductModels
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "Ip" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
 
 theorem twistedProductInvolution_mfderiv_snd
     (hs : ContMDiff Ip Ip ∞ m27TwistedProductInvolution)
@@ -44,13 +35,10 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
 theorem twisted_cover_comp_involution (N : M27TwistedSphereLineFlowCertificate K) :
     N.cover ∘ m27TwistedProductInvolution = N.cover := by
   funext p
   exact ((N.cover_fibers p (m27TwistedProductInvolution p)).mpr (Or.inr rfl)).symm
-
-
 
 theorem twisted_cover_field_equivariant
     (N : M27TwistedSphereLineFlowCertificate K)
@@ -80,8 +68,6 @@ theorem twisted_cover_field_equivariant
   exact (hcomp.symm.trans hd).trans
     (((hi p).self_apply_inverse _).trans
       (hz.symm.trans ((hi (tau p)).self_apply_inverse _).symm))
-
-
 
 theorem twisted_cover_field_axial_odd
     (N : M27TwistedSphereLineFlowCertificate K)

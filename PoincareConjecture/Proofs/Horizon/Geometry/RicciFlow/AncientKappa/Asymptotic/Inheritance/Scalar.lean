@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvolution
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -118,7 +109,6 @@ namespace AncientCompactTimeConvergence
 
 variable {S : AncientRescalingSequence K} (G : AncientCompactTimeConvergence S)
 
-
 theorem tendsto_scalarCurvature (t : ℝ) (ht : t < 0) (x : G.limit.carrier.carrier) :
     Tendsto (fun k ↦ ((S.rescaling (G.subsequence k)).flow.connection t).scalarCurvature
       ((G.embedding k).toFun (t, x)).2) atTop
@@ -169,7 +159,6 @@ theorem tendsto_scalarCurvature (t : ℝ) (ht : t < 0) (x : G.limit.carrier.carr
     (G.exhaustion_open k) x (t, p) hkt ⟨hp, by simpa only [hcx] using hkx⟩
       (gd k).1 (gd k).2 hk
 
-
 theorem scalar_monotone (P : AncientAsymptoticSolitonPredecessors K)
     {s t : ℝ} (hst : s ≤ t) (ht : t < 0) (x : G.limit.carrier.carrier) :
     (G.limit.flow.connection s).scalarCurvature x ≤
@@ -186,7 +175,6 @@ theorem scalar_monotone (P : AncientAsymptoticSolitonPredecessors K)
     (mul_le_mul_of_nonneg_left hst (S.scale_pos _).le)
     (mul_nonpos_of_nonneg_of_nonpos (S.scale_pos _).le ht.le) _)
     (S.scale_pos _).le
-
 
 theorem scalar_derivative_nonnegative (P : AncientAsymptoticSolitonPredecessors K)
     (t : ℝ) (ht : t < 0) (x : G.limit.carrier.carrier) :

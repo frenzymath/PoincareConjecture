@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Orientation
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ open SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem standard_lower_height_level_not_preconnected
     {t : Real} (ht : 0 < t) (htu : t < 1 / 4) :
@@ -77,7 +67,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 theorem terminal_standard_lower_source_level
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.shear)
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -102,8 +91,6 @@ theorem terminal_standard_lower_source_level
     rw [h]
     ring
 
-
-
 theorem terminal_standard_lower_slice_not_preconnected
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.shear)
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -114,8 +101,6 @@ theorem terminal_standard_lower_slice_not_preconnected
   have hs := (model_slice_preconnected_iff d _).mp h
   rw [terminal_standard_lower_source_level d hmodel hform t] at hs
   exact standard_lower_height_level_not_preconnected ht htu hs
-
-
 
 theorem exists_unmatched_standard_slice_of_connected_lower_levels
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)

@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.ZeroSphere
 import Mathlib.Data.List.Chain
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +16,6 @@ universe u
 namespace PoincareConjecture.EpsilonNeck
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem cylinder_extension_over_list_with_tail_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]
@@ -109,8 +95,6 @@ theorem cylinder_extension_over_list_with_tail_of_epsilon_le :
       rw [hNB]
       exact havoidPrefix
     · exact (hexclude hxs).mono_left subset_union_left
-
-
 
 theorem finite_neck_cylinder_with_middle_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

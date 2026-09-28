@@ -1,16 +1,10 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.PrecompactVariation
 
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_radial_closed_interval
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

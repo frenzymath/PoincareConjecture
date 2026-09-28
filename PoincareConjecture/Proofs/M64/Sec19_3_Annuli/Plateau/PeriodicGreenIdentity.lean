@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleGreenIdentity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
-
-
 
 theorem m64Annulus_integral_horizontal_derivative
     {f : LoopPlane → F} (hf : ContDiff ℝ 1 f) :
@@ -55,8 +42,6 @@ theorem m64Annulus_integral_horizontal_derivative
   rw [integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le hp]
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt (fun x _ => hder x)
     (hd.intervalIntegrable 0 curvePeriod)
-
-
 
 theorem m64Annulus_horizontal_green_identity
     {f : LoopPlane → F} {phi : LoopPlane → ℝ}
@@ -92,8 +77,6 @@ theorem m64Annulus_horizontal_green_identity
     _ = ∫ p in interior m64AnnulusDomain, fderiv ℝ (fun q => phi q • f q) p v :=
       integral_congr_ae (Filter.Eventually.of_forall fun p => (hprod p).symm)
     _ = _ := m64Annulus_integral_horizontal_derivative (hphi.smul hf)
-
-
 
 theorem m64Annulus_periodic_green_identity
     {f : LoopPlane → F} {phi : LoopPlane → ℝ}

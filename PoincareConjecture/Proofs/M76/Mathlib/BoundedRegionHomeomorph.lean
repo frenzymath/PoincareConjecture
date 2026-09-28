@@ -2,29 +2,14 @@ import PoincareConjecture.Proofs.M76.Mathlib.UnboundedComplementComponent
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Set
 
-
-
-
 def boundedComplement {X : Type*} [MetricSpace X] (s : Set X) : Set X :=
   {x | x ∈ sᶜ ∧ Bornology.IsBounded (connectedComponentIn sᶜ x)}
-
-
-
 
 theorem isOpen_boundedComplement {X : Type*} [MetricSpace X]
     [LocallyConnectedSpace X] {s : Set X} (hs : IsClosed s) :
@@ -37,10 +22,6 @@ theorem isOpen_boundedComplement {X : Type*} [MetricSpace X]
   refine ⟨connectedComponentIn_subset _ _ hy, ?_⟩
   rw [← connectedComponentIn_eq hy]
   exact hx.2
-
-
-
-
 
 theorem isBounded_boundedComplement {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] {s : Set E} (hs : Bornology.IsBounded s)
@@ -67,10 +48,6 @@ namespace Homeomorph
 variable {X Y : Type*} [MetricSpace X] [ProperSpace X]
   [MetricSpace Y] [ProperSpace Y]
 
-
-
-
-
 theorem isBounded_image_iff_of_proper (e : X ≃ₜ Y) (s : Set X) :
     Bornology.IsBounded (e '' s) ↔ Bornology.IsBounded s := by
   constructor
@@ -80,9 +57,6 @@ theorem isBounded_image_iff_of_proper (e : X ≃ₜ Y) (s : Set X) :
     simpa only [image_image, e.symm_apply_apply, image_id'] using hb
   · intro h
     exact (h.isCompact_closure.image e.continuous).isBounded.subset (image_mono subset_closure)
-
-
-
 
 theorem image_boundedComplement (e : X ≃ₜ Y) (s : Set X) :
     e '' boundedComplement s = boundedComplement (e '' s) := by
@@ -96,16 +70,9 @@ theorem image_boundedComplement (e : X ≃ₜ Y) (s : Set X) :
   · rw [← e.image_connectedComponentIn hx, e.isBounded_image_iff_of_proper]
   · simp only [hx, false_and]
 
-
-
-
-
 theorem image_closure_boundedComplement (e : X ≃ₜ Y) (s : Set X) :
     e '' closure (boundedComplement s) = closure (boundedComplement (e '' s)) := by
   rw [e.image_closure, e.image_boundedComplement]
-
-
-
 
 theorem image_frontier_boundedComplement (e : X ≃ₜ Y) (s : Set X) :
     e '' frontier (boundedComplement s) = frontier (boundedComplement (e '' s)) := by

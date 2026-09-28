@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.Minimizi
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.TangentComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.LowerCurvature
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

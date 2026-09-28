@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeIsometry
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable {M X : Type u} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 X}
-
-
 
 noncomputable def metricIsometry_pullback_round_component
     (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞) (hf : MetricHomothety g h f 1)
@@ -83,8 +72,6 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (hregular : t ∉ F.surgery_times)
 
 include hregular
-
-
 
 theorem regular_history_round_control {epsilon C : ℝ}
     (x : (H.generalized.slice t).carrier) (N : SingularRoundComponent (F.metric t) epsilon)

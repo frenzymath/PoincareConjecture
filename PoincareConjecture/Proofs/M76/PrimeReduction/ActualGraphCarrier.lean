@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PureEdgeComplexPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricPathIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem actual_edgeGraph_segment_intersection (J : SimplicialComplex ℝ E)
     {v w a b : J.vertices}
@@ -34,9 +23,6 @@ theorem actual_edgeGraph_segment_intersection (J : SimplicialComplex ℝ E)
       using hxy
   simpa only [Finset.coe_pair, convexHull_pair] using
     J.inter_subset_convexHull (hedge hvw) (hedge hab)
-
-
-
 
 theorem actual_edgeGraph_segmentCarrier_eq_space (J : SimplicialComplex ℝ E)
     (hdim : ∀ s ∈ J.faces, s.card ≤ 2)

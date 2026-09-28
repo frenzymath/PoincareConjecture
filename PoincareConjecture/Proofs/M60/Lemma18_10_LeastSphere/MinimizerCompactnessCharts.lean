@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessC0
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerRoundFactor
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,9 +12,6 @@ noncomputable section
 universe u
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suRescaledRoundFactor_compact_bounds (a : LoopPlane) (t R : ℝ) :
     ∃ L N : ℝ, 0 ≤ L ∧ 0 ≤ N ∧ ∀ s ∈ Icc (0 : ℝ) 1,
@@ -56,9 +51,6 @@ local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
 open CoordinateExponential ConnectionVariation
 
-
-
-
 theorem suChartReader_energy
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))
     (p : M) (L : EuclideanSpace ℝ (Fin d) →L[ℝ] E)
@@ -76,9 +68,6 @@ theorem suChartReader_energy
     hg.fderiv_eq, hg.self_of_nhds]
   dsimp only [G, Function.comp_apply]
   ring
-
-
-
 
 theorem suChartReader_weightedEuler
     (g : RiemannianMetric n M) {d : ℕ} (e : M → EuclideanSpace ℝ (Fin d))

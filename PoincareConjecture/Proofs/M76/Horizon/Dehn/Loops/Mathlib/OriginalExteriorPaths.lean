@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripExteriorRims
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "P2" => (ℝ × ℝ)
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 structure MarkedPLIntervalPath {E X : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
@@ -35,8 +23,6 @@ structure MarkedPLIntervalPath {E X : Type*}
   path : Path initial terminal
   path_val : ∀ t : I01, (path t : X) = f (chart t)
   path_range : range (fun t : I01 ↦ (path t : X)) = f '' W
-
-
 
 theorem nonempty_markedPLIntervalPath
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -66,9 +52,6 @@ theorem nonempty_markedPLIntervalPath
   · rintro ⟨w, hw, rfl⟩
     obtain ⟨t, ht⟩ := p.surjective ⟨w, hw⟩
     exact ⟨t, congrArg f (congrArg Subtype.val ht)⟩
-
-
-
 
 theorem exists_original_exterior_paths
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

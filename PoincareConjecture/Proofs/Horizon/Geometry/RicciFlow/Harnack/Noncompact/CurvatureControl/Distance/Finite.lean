@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_minimizing_geodesic_of_metricComplete_of_finite
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -42,8 +31,6 @@ theorem exists_minimizing_geodesic_of_metricComplete_of_finite
   exact (ENNReal.ofReal_lt_ofReal_iff hR).mpr (by
     dsimp [R]
     linarith)
-
-
 
 theorem continuousAt_toReal_edist_of_ne_top
     (g : RiemannianMetric n M) (O y : M)

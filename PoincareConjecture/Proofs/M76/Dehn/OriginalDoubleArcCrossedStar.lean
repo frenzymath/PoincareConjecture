@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateFourRegionIncidence
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierMarkedDecomposition
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierCoordinateQuadrants
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -124,13 +112,6 @@ private theorem exists_crossed_convex_frontier
     change (x.val ∈ P.boundary ℝ) ↔
       ((e x).val ∈ frontier C ∧ (e x).val.2 = 0) at h
     simpa only [(e x).property, true_and] using h
-
-
-
-
-
-
-
 
 theorem exists_original_crossed_star
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)

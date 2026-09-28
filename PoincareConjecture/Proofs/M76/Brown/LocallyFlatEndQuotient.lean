@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatCompactifiedBicollar
 import PoincareConjecture.Proofs.M76.Brown.ClosedCylinderQuotientRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "X3" => OnePoint V3
-
-
-
 
 theorem exists_end_quotient {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     ∃ D : Set V3, IsCompact D ∧ frontier D = S ∧ S ⊆ D ∧

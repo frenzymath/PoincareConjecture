@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,14 +30,12 @@ private noncomputable def chartMetric
       (fun hz => hv ((hi x).injective
       (hz.trans (map_zero (mfderiv (𝓡 n) (𝓡 n) f x)).symm))))
 
-
 theorem m27_sphereChart_contMDiff (q : UnitTwoSphere) :
     ContMDiff (𝓡 2) (𝓡 2) ∞ (chartAt E2 q).symm := by
   intro x
   have hx : x ∈ (chartAt E2 q).target := by rw [sphere_chart_target]; trivial
   exact (contMDiffOn_chart_symm (I := 𝓡 2) (n := ∞) x hx).contMDiffAt
     ((chartAt E2 q).open_target.mem_nhds hx)
-
 
 theorem m27_sphereChart_invertible (q : UnitTwoSphere) (x : E2) :
     (mfderiv (𝓡 2) (𝓡 2) (chartAt E2 q).symm x).IsInvertible := by
@@ -55,18 +44,14 @@ theorem m27_sphereChart_invertible (q : UnitTwoSphere) (x : E2) :
   simp only [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at h
   exact h
 
-
 noncomputable def m27SphereChartMetric (F : M27RoundSphereFamily) (t : ℝ)
     (q : UnitTwoSphere) : RiemannianMetric 2 E2 :=
   chartMetric (F.metric t) (chartAt E2 q).symm
     (m27_sphereChart_contMDiff q) (m27_sphereChart_invertible q)
 
-
 noncomputable def m27SphereChartConnection (F : M27RoundSphereFamily) (t : ℝ)
     (q : UnitTwoSphere) : LeviCivitaData (m27SphereChartMetric F t q) :=
   (m27SphereChartMetric F t q).euclideanLeviCivitaData
-
-
 
 theorem m27SphereChartMetric_round (F : M27RoundSphereFamily) (t : ℝ) (ht : t ≤ 0)
     (q : UnitTwoSphere) : ConstantPositiveSectionalCurvature (m27SphereChartMetric F t q)
@@ -97,11 +82,9 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
 theorem twistedProductChart_contMDiff (N : M27TwistedSphereLineFlowCertificate K)
     (q : UnitTwoSphere) : ContMDiff (𝓡 3) (𝓡 3) ∞ (N.cover ∘ cylinderChart q) :=
   N.cover_local_diffeomorph.contMDiff.comp (cylinderChart_contMDiff q)
-
 
 theorem twistedProductChart_invertible (N : M27TwistedSphereLineFlowCertificate K)
     (q : UnitTwoSphere) (x : V) :
@@ -112,18 +95,14 @@ theorem twistedProductChart_invertible (N : M27TwistedSphereLineFlowCertificate 
     ((cylinderChart_contMDiff q).mdifferentiable (by simp) x)]
   exact hc.comp (cylinderChart_mfderiv_invertible q x)
 
-
 noncomputable def twistedProductChartMetric (N : M27TwistedSphereLineFlowCertificate K)
     (t : ℝ) (q : UnitTwoSphere) : RiemannianMetric 3 V :=
   chartMetric (K.flow.metric t) (N.cover ∘ cylinderChart q)
     (twistedProductChart_contMDiff N q) (twistedProductChart_invertible N q)
 
-
 noncomputable def twistedProductChartConnection (N : M27TwistedSphereLineFlowCertificate K)
     (t : ℝ) (q : UnitTwoSphere) : LeviCivitaData (twistedProductChartMetric N t q) :=
   (twistedProductChartMetric N t q).euclideanLeviCivitaData
-
-
 
 theorem twistedProductChartMetric_product
     (N : M27TwistedSphereLineFlowCertificate K) (t : ℝ) (ht : t ≤ 0)

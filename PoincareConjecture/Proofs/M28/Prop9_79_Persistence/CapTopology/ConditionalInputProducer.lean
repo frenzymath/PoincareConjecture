@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.ConditionalAssembly
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutExhaustion
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.RecutVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
-
 
 theorem exists_old_tensor_conditional_input
     (N : CapCertificate g) {eta : ℝ}
@@ -91,7 +80,6 @@ theorem exists_old_tensor_conditional_input
 
 omit [T2Space M] in
 
-
 theorem eventually_exists_old_tensor_conditional_cap_persistence
     (N : CapCertificate g) {eta : ℝ}
     (heta : N.epsilon < eta) (heta_half : eta < 1 / 2)
@@ -106,9 +94,6 @@ theorem eventually_exists_old_tensor_conditional_cap_persistence
     exists_old_tensor_conditional_input N heta heta_half
   have hpack := eventually_exists_conditional_cap_persistence N hdelta hdelta_pos I
   exact ⟨I, hcandidate, hbudget, hpack⟩
-
-
-
 
 theorem eventually_exists_quantitative_cap_recut_of_diameter_and_core_balls
     (N : CapCertificate g) {delta : ℕ → ℝ}
@@ -151,9 +136,6 @@ theorem eventually_exists_quantitative_cap_recut_of_diameter_and_core_balls
     hne hV hdk hbk
 
 omit [T2Space M] in
-
-
-
 
 theorem eventually_exists_old_tensor_conditional_cap_persistence_with_recut_margins
     (N : CapCertificate g) {eta : ℝ}

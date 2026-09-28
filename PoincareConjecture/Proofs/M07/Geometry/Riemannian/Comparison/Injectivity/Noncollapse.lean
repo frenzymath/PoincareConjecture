@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Preco
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem ricci_quadratic_lower_bound_of_curvatureTensorNorm_le
     (D : LeviCivitaData g) (x : M) {K : ℝ}
@@ -41,8 +26,6 @@ end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RiemannianMetric
 
-
-
 def smallerBallVolumeBound (n : ℕ) (K R v s : ℝ) : ℝ :=
   (modelVolume n K s / modelVolume n K R) * v
 
@@ -54,8 +37,6 @@ theorem smallerBallVolumeBound_pos {n : ℕ} {K R v s : ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem smallerBall_volume_lower_bound_of_curvatureTensorNorm_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)

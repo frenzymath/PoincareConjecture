@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.SimultaneousSlabHierarchy
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.TerminalGroups
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

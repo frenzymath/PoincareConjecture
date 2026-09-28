@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Involution.MetricSeparation
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 set_option backward.isDefEq.respectTransparency false

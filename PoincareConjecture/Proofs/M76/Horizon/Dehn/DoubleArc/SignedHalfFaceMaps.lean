@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalEndpointExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

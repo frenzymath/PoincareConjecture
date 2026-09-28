@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M51.GlobalEvents
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F0 k)
 
-
 noncomputable def globalVanishingSource (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)
     [IsEmpty (Q.globalSlice T).carrier] :
     SurgeryVanishingEventData (Q.flow (Q.representativeIndex T)).parameters
@@ -36,7 +25,6 @@ noncomputable def globalVanishingSource (T : ℝ) (hT : T ∈ Q.globalSurgeryTim
   exact (Q.flow (Q.representativeIndex T)).vanishing_event T
     (Q.eventStageSurgery T hT)
 
-
 theorem globalVanishingPreTime (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)
     [IsEmpty (Q.globalSlice T).carrier]
     (t : Set.Ico (Q.globalVanishingSource T hT).tMinus T) :
@@ -45,7 +33,6 @@ theorem globalVanishingPreTime (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)
   exact (Q.flow (Q.representativeIndex T)).vanishingEventPreInterval T
     (Q.eventStageSurgery T hT) t.2
 
-
 noncomputable def globalVanishingPreMap (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)
     [IsEmpty (Q.globalSlice T).carrier]
     (t : Set.Ico (Q.globalVanishingSource T hT).tMinus T) :
@@ -53,7 +40,6 @@ noncomputable def globalVanishingPreMap (T : ℝ) (hT : T ∈ Q.globalSurgeryTim
       ((Q.flow (Q.representativeIndex T)).slice t.1).carrier
       (Q.globalSlice t.1).carrier ∞ :=
   Q.globalIdentify _ t.1 (Q.globalVanishingPreTime T hT t)
-
 
 noncomputable def globalVanishingInitialMap (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes)
     [IsEmpty (Q.globalSlice T).carrier] :
@@ -65,7 +51,6 @@ noncomputable def globalVanishingInitialMap (T : ℝ) (hT : T ∈ Q.globalSurger
     ⟨(Q.globalVanishingSource T hT).tMinus, le_rfl,
       (Q.globalVanishingSource T hT).tMinus_lt⟩
 
-
 noncomputable def globalVanishingPullbackData
     (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes) [IsEmpty (Q.globalSlice T).carrier] :
     SurgeryVanishingEventData.PullbackData (Q.globalVanishingSource T hT)
@@ -75,7 +60,6 @@ noncomputable def globalVanishingPullbackData
   slice_isometry t x v w :=
     Q.globalIdentify_metric _ t.1 (Q.globalVanishingPreTime T hT t) x v w
 
-
 noncomputable def globalVanishingTransport
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes) [IsEmpty (Q.globalSlice T).carrier] :
@@ -83,7 +67,6 @@ noncomputable def globalVanishingTransport
       Q.globalSlice Q.globalMetric T :=
   SurgeryVanishingEventData.PullbackData.toEvent m13
     (Q.globalVanishingSource T hT) (Q.globalVanishingPullbackData T hT)
-
 
 noncomputable def globalVanishingEvent
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -94,21 +77,17 @@ noncomputable def globalVanishingEvent
 variable (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
   (T : ℝ) (hT : T ∈ Q.globalSurgeryTimes) [IsEmpty (Q.globalSlice T).carrier]
 
-
 @[simp] theorem globalVanishingEvent_tMinus :
     (Q.globalVanishingEvent m13 T hT).tMinus =
       (Q.globalVanishingSource T hT).tMinus := rfl
-
 
 @[simp] theorem globalVanishingEvent_disappearing_start :
     (Q.globalVanishingEvent m13 T hT).disappearing_start =
       (Q.globalVanishingSource T hT).disappearing_start := rfl
 
-
 @[simp] theorem globalVanishingEvent_left_limit_volume :
     (Q.globalVanishingEvent m13 T hT).left_limit_volume =
       (Q.globalVanishingSource T hT).left_limit_volume := rfl
-
 
 @[simp] theorem globalVanishingEvent_pre_identify
     (t : Set.Ico (Q.globalVanishingSource T hT).tMinus T)
@@ -118,14 +97,12 @@ variable (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
         ((Q.globalVanishingSource T hT).pre_identify t
           ((Q.globalVanishingInitialMap T hT).symm x)) := rfl
 
-
 theorem globalVanishingEvent_pre_metric_homothety (t : ℝ) :
     MetricHomothety ((Q.globalVanishingEvent m13 T hT).pre_flow.metric t)
       ((Q.globalVanishingSource T hT).pre_flow.metric t)
       (Q.globalVanishingInitialMap T hT).symm 1 :=
   SurgeryVanishingEventData.PullbackData.toEvent_pre_metric_homothety m13
     (Q.globalVanishingSource T hT) (Q.globalVanishingPullbackData T hT) t
-
 
 theorem globalVanishingEvent_policy :
     SurgeryVanishingEventTerminalPolicy (Q.globalVanishingEvent m13 T hT) := by

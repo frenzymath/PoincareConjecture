@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SecantTransversality
 import Mathlib.Analysis.Convex.Star
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Set
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_pos_smul_mem_of_submodule_nhds (L : Submodule ℝ E) {C : Set E}
     (hC : L.subtype ⁻¹' C ∈ 𝓝 (0 : L)) {v : E} (hv : v ∈ L) :
@@ -34,9 +22,6 @@ theorem exists_pos_smul_mem_of_submodule_nhds (L : Submodule ℝ E) {C : Set E}
   refine ⟨r / 2, half_pos hr, hb ?_⟩
   simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs, abs_of_pos (half_pos hr)]
     using half_lt_self hr
-
-
-
 
 theorem exists_pos_secant_of_mem_add_submodule (L : Submodule ℝ E) {C S : Set E}
     (hzero : (0 : E) ∈ C) (hstar : ∀ p ∈ C, StarConvex ℝ p S)
@@ -62,9 +47,6 @@ theorem exists_pos_secant_of_mem_add_submodule (L : Submodule ℝ E) {C S : Set 
   simp only [smul_add, smul_sub]
   abel
 
-
-
-
 theorem injOn_add_submodule_iff (L : Submodule ℝ E) {C S : Set E}
     (hzero : (0 : E) ∈ C) (hstar : ∀ p ∈ C, StarConvex ℝ p S)
     (habsorb : ∀ l ∈ L, ∃ r : ℝ, 0 < r ∧ r • l ∈ C) (Q : E →L[ℝ] F) :
@@ -88,9 +70,6 @@ namespace Submodule
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem isSecantTransverse_add_submodule_iff (K L : Submodule ℝ E) {C S : Set E}
     (hzero : (0 : E) ∈ C) (hstar : ∀ p ∈ C, StarConvex ℝ p S)

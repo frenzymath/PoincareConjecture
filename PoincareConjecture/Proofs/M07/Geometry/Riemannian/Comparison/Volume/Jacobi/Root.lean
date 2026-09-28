@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Scala
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,13 +10,10 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.RiemannianMetric
 
-
 theorem contDiffAt_radialDensityRoot {a : ℝ → ℝ} {t : ℝ} (m : ℕ)
     (ha : ContDiffAt ℝ ∞ a t) (hpos : 0 < a t) :
     ContDiffAt ℝ ∞ (fun s => s * a s ^ (1 / (m : ℝ))) t :=
   contDiffAt_id.mul (ha.rpow_const_of_ne hpos.ne')
-
-
 
 theorem antitoneOn_density_div_modelS_pow
     {m : ℕ} (hm : 0 < m) {κ R : ℝ} (hκ : 0 ≤ κ) (hR : 0 < R)
@@ -63,8 +50,6 @@ theorem antitoneOn_density_div_modelS_pow
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem contDiffAt_pullbackVolumeDensity_radialRoot
     (g : RiemannianMetric n M) (m : ℕ)

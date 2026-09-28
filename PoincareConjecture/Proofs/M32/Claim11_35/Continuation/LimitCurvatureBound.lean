@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.LimitScalarBound
 import PoincareConjecture.Proofs.M04.CurvatureCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
 
 theorem blowup_curvatureTensorNorm_le_of_step_cylinders
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

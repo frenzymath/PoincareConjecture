@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveGradientBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M47Positive
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem ricci_lower_of_unit_lower (D : LeviCivitaData g) (x : M) {c : ℝ}
     (hunit : ∀ v : TangentSpace (𝓡 n) x, g.inner x v v = 1 → c ≤ D.ricci x v v)
@@ -60,9 +48,6 @@ theorem ricci_lower_of_unit_lower (D : LeviCivitaData g) (x : M) {c : ℝ}
   change c * inner ℝ v v ≤ B v v
   rw [real_inner_self_eq_norm_sq]
   nlinarith only [hmul]
-
-
-
 
 theorem scalar_increment_le_of_gradient_energy_bound [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g) {f : M → ℝ}

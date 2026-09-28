@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.PointPicking
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -75,9 +67,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem m23_exists_backward_controlled_point_in_ball
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)

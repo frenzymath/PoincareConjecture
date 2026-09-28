@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionTargetFibers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.RetainedDoubleRelation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +11,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem upper_retained_double_relation
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

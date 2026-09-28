@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRay
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Global
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem squared_distance_sub_sq_concave_of_cross_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -116,10 +104,6 @@ theorem squared_distance_sub_sq_concave_of_cross_segments
       funext fun s => deriv_comp_sub_const H t s
     rw [hfirst, deriv_comp_sub_const, sub_self]
     linarith
-
-
-
-
 
 theorem corresponding_side_lower_of_cross_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

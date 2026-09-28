@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivativeDifference
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem forcing_derivatives_lipschitz_of_second_bound
     {G : V → ℝ → ℝ} {eta M : ℝ}

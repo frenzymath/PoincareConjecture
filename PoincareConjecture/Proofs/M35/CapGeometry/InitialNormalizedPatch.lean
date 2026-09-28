@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.InitialAxialScale
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialClockScalar
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => StandardCapSpace
 
-
-
 def InitialNormalizedPatchComparison {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) (t epsilon : ℝ) (he : 0 < epsilon)
     {d : ℝ} {x : V} (N : StandardCylinderPatch d⁻¹ x) : Prop :=
@@ -32,8 +21,6 @@ def InitialNormalizedPatchComparison {g₀ : StandardInitialMetric}
   ∃ hc : 0 < c, c < 2 ∧ ∃ hcl : c * epsilon⁻¹ ≤ d⁻¹,
     StandardSpacetimeCylinderClose E.atlas E.flow.metric epsilon t Q (Icc (-t * Q) 0)
       (N.axialRescale c epsilon⁻¹ hc (inv_pos.mpr he) hcl)
-
-
 
 theorem exists_initial_normalized_patch_comparison {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) {theta epsilon : ℝ}

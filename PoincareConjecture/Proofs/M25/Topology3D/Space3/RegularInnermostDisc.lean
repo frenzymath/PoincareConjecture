@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem collarHeightLevel_eq_central_height
     (ψ : UnitTwoSphere × ℝ → E3) (u : E3) (t : ℝ) :
@@ -32,9 +18,6 @@ theorem collarHeightLevel_eq_central_height
     exact ⟨⟨q, rfl⟩, hq⟩
   · rintro ⟨⟨q, rfl⟩, hq⟩
     exact ⟨q, hq, rfl⟩
-
-
-
 
 theorem exists_regular_collar_innermost_disc (hP : PlanarSchoenfliesService)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

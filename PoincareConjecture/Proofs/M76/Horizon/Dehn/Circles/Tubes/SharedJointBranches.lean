@@ -27,9 +27,6 @@ theorem ComponentBranchModel.joint_subset_star
     (D.axis_le (D.axis.face_subset_vertices hs hps)) hv
   exact (D.complex.closedStar p).convexHull_subset_space hw (hvw hzv)
 
-
-
-
 theorem ComponentBranchModel.exists_joint_sheet_swap
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

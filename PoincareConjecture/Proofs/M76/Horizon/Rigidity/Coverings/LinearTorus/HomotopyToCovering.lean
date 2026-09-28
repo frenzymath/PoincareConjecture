@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Homo
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.InjectiveFundamentalGroup
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.InducedMaps
 
-
-
 set_option autoImplicit false
 
 open Set Topology CategoryTheory
@@ -27,7 +25,6 @@ theorem isCoveringMap_affineIntegerMatrixMap (p : ℝ)
     (c : AddCircle p × AddCircle p) : IsCoveringMap (affineIntegerMatrixMap p A c) :=
   (isCoveringMap_integerMatrixMap p A hp hA).homeomorph_comp (Homeomorph.addLeft c)
 
-
 theorem exists_homotopy_affine_covering (p : ℝ) (hp : 0 < p)
     (f : C(AddCircle p × AddCircle p, AddCircle p × AddCircle p))
     (hf : Function.Injective (FundamentalGroup.map f 0)) :
@@ -38,7 +35,6 @@ theorem exists_homotopy_affine_covering (p : ℝ) (hp : 0 < p)
   have hinj := injective_fundamentalGroup_map_of_homotopy H.toHomotopy 0 hf
   have hA := det_ne_zero_of_affine_fundamentalGroup_map_injective p A hp (f 0) hinj
   exact ⟨A, hA, isCoveringMap_affineIntegerMatrixMap p A hp hA (f 0), ⟨H⟩⟩
-
 
 theorem exists_homotopy_coveringMap (p : ℝ) (hp : 0 < p)
     (f : C(AddCircle p × AddCircle p, AddCircle p × AddCircle p))

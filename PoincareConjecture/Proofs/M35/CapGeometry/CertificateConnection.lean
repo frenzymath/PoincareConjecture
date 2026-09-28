@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.Ch01.ScalarOperators
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def EpsilonNeck.withConnection (N : EpsilonNeck g)
     (D : LeviCivitaData g) : EpsilonNeck g :=
   { N with
@@ -37,9 +26,6 @@ noncomputable def EpsilonNeck.withConnection (N : EpsilonNeck g)
         (N.connection.scalarCurvature_eq D N.center)) }
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 noncomputable def CapCertificate.withConnection (N : CapCertificate g)
     (D : LeviCivitaData g) : CapCertificate g := by
@@ -77,8 +63,6 @@ noncomputable def CapCertificate.withConnection (N : CapCertificate g)
     intro x hx
     rw [hR, D.laplacian_eq N.connection, D.ricciNormSq_eq N.connection]
     exact hbound x hx
-
-
 
 theorem CapCertificate.exists_of_metric_eq (N : CapCertificate g)
     {h : RiemannianMetric 3 M} (heq : g = h) (D : LeviCivitaData h) :

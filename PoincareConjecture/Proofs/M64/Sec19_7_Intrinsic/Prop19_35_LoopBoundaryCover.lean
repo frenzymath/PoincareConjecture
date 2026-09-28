@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopCornerPatch
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LinearBand
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +10,6 @@ open scoped Topology ContDiff Manifold Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_boundary_patch
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)
@@ -61,10 +44,6 @@ theorem m64Intrinsic_exists_loop_boundary_patch
       hU hV hdisj hfU hfV
   exact ⟨B.lower.carrier ∪ B.upper.carrier, lines, W, hcompact, hsub,
     by simpa only [hfU] using hfront, hlines, hW, hpW, hcover⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_finite_loop_boundary_cover
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

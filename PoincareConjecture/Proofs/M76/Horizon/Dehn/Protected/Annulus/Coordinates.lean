@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology NormedSpace
@@ -25,16 +15,12 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 
-
 def source : Set (V1 × V2) := closedBall (0 : V1) 1 ×ˢ Q2
-
 
 def sourceShell : Set (V1 × V2) :=
   closedBall (0 : V1) 1 ×ˢ {y : V2 | 1 < ‖y‖ ∧ ‖y‖ < 2}
 
-
 def shell (h : OpenPartialHomeomorph (V1 × V2) V3) : Set V3 := h '' sourceShell
-
 
 def endpoint (b : Bool) : V1 := fun _ ↦ if b then 1 else -1
 
@@ -42,7 +28,6 @@ theorem endpoint_mem_sphere (b : Bool) : endpoint b ∈ sphere (0 : V1) 1 := by
   rw [mem_sphere_zero_iff_norm]
   change ‖fun _ : Fin 1 ↦ if b then (1 : ℝ) else -1‖ = 1
   cases b <;> simp
-
 
 noncomputable def coordinates : (V1 × V2) →L[ℝ] (V1 × V2) :=
   (ContinuousLinearMap.fst ℝ V1 V2).prod
@@ -75,8 +60,6 @@ theorem symm_mem_sourceShell {z : V3} (hz : z ∈ shell h) :
   obtain ⟨x, hx, rfl⟩ := hz
   rwa [h.left_inv (sourceShell_subset_source h hsource hx)]
 
-
-
 noncomputable def toShell : C(source, shell h) where
   toFun x := ⟨h (coordinates x),
     ⟨coordinates x, coordinates_mem_sourceShell x.property, rfl⟩⟩
@@ -89,9 +72,7 @@ theorem toShell_apply (x : source) :
     (toShell h hsource x : V3) = h ((x : V1 × V2).1, (3 / 2 : ℝ) • (x : V1 × V2).2) :=
   rfl
 
-
 noncomputable def rimMap (b : Bool) (u : V2) : V3 := h (endpoint b, (3 / 2 : ℝ) • u)
-
 
 noncomputable def rim (b : Bool) : C(Q2, shell h) :=
   (toShell h hsource).comp
@@ -105,8 +86,6 @@ theorem toShell_endpoint (b : Bool) (u : Q2) :
     toShell h hsource
       ⟨(endpoint b, u), sphere_subset_closedBall (endpoint_mem_sphere b), u.property⟩ =
         rim h hsource b u := rfl
-
-
 
 theorem exists_rim_homotopy :
     ∃ H : (rim h hsource false).Homotopy (rim h hsource true),
@@ -149,7 +128,6 @@ private theorem transverse_ne_zero (z : shell h) : (h.symm z).2 ≠ 0 := by
   rw [heq, norm_zero] at hz
   linarith
 
-
 noncomputable def radial : C(shell h, Q2) where
   toFun z := ⟨normalize (h.symm z).2, mem_sphere_zero_iff_norm.mpr
     (norm_normalize (transverse_ne_zero h hsource z))⟩
@@ -179,14 +157,11 @@ theorem radial_rim (b : Bool) (u : Q2) : radial h hsource (rim h hsource b u) = 
   exact radial_toShell h hsource
     ⟨(endpoint b, u), sphere_subset_closedBall (endpoint_mem_sphere b), u.property⟩
 
-
 theorem rim_class_ne_one (b : Bool) :
     FundamentalGroup.fromPath
       (Path.Homotopic.Quotient.mk (squareRimLoop.map (rim h hsource b).continuous)) ≠ 1 :=
   squareRimLoop_map_class_ne_one_of_retraction (rim h hsource b) (radial h hsource)
     (radial_rim h hsource b)
-
-
 
 theorem toShell_isClosedEmbedding : IsClosedEmbedding (toShell h hsource) := by
   let : CompactSpace source := isCompact_iff_compactSpace.mp
@@ -220,8 +195,6 @@ theorem disjoint_rim_ranges : Disjoint (range (rim h hsource false))
   have hh := congrFun (congrArg (fun x : source ↦ (x : V1 × V2).1) hi) 0
   norm_num [endpoint] at hh
 
-
-
 theorem toShell_old_boundary_iff (x : source) :
     h.symm (toShell h hsource x) ∈
         frontier (closedBall (0 : V1) 1 ×ˢ (univ : Set V2)) ↔
@@ -231,8 +204,6 @@ theorem toShell_old_boundary_iff (x : source) :
     (coordinates_mem_sourceShell x.property))]
   simp only [frontier_prod_univ_eq, frontier_closedBall _ one_ne_zero, coordinates_apply,
     mem_prod, mem_univ, and_true]
-
-
 
 theorem rimMap_finitePL {N : Set (V1 × V2)}
     (hboundary : frontier (closedBall (0 : V1) 1 ×ˢ (univ : Set V2)) ⊆ N)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Covering
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M28
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M] [T3Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finset_regularComponent_cover
     (g : RiemannianMetric n M) (p : M) (δ : ℝ) {r v V : ℝ}
@@ -77,9 +64,6 @@ theorem exists_finset_regularComponent_cover
   change g.edist x q < ENNReal.ofReal r at hxq
   simpa only [RiemannianMetric.edist, Manifold.riemannianEDist_comm] using hxq
 
-
-
-
 theorem isCompact_regularComponent_of_volume_bounds
     (g : RiemannianMetric n M) (p : M) {δ r v V : ℝ}
     (hr : 0 < r) (hrδ : r < δ) (hv : 0 < v) (hV : 0 ≤ V)
@@ -96,9 +80,6 @@ theorem isCompact_regularComponent_of_volume_bounds
   intro x hx
   obtain ⟨q, hq, hxq⟩ := mem_iUnion₂.mp (hcover hx)
   exact mem_iUnion₂.mpr ⟨q, hq, subset_closure hxq⟩
-
-
-
 
 theorem exists_regularComponent_cover_of_noncollapse
     (g : RiemannianMetric n M) (p : M) {δ r r₀ κ V : ℝ}

@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.SelfPaired.Step
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Circles.SourceCases
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Circles.NestedSurgery
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 open _root_.Dehn

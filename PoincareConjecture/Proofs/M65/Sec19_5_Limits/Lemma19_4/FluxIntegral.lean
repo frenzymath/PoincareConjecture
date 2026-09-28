@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FluxRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65PlaneFluxVector_divergence (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) {t : ℝ} {z : LoopPlane}
@@ -52,9 +39,6 @@ theorem m65PlaneFluxVector_divergence (g : RiemannianMetric n M)
     rw [EuclideanSpace.inner_basisFun_real]
     fin_cases i <;> rfl
   simpa only [hcoord, inner_zero_right, zero_add, X, v] using hd
-
-
-
 
 theorem m65Integral_motionDensity_eq_boundary
     {a b : ℝ} (F : RicciFlow n M (Icc a b)) (u : ℝ → LoopPlane → M)

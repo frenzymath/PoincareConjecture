@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem RiemannianMetric.integral_image_eq_integral_pullback_density
     (g : RiemannianMetric n M)
@@ -79,7 +70,6 @@ theorem RiemannianMetric.integral_image_eq_integral_pullback_density
   simp [RiemannianMetric.pullbackVolumeDensity, Real.sqrt_nonneg,
     smul_eq_mul, mul_comm]
 
-
 theorem RiemannianMetric.volumeMeasure_image_toReal_eq_integral_pullbackVolumeDensity
     (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -91,8 +81,6 @@ theorem RiemannianMetric.volumeMeasure_image_toReal_eq_integral_pullbackVolumeDe
   simpa [integral_const, Measure.real, smul_eq_mul] using
     g.integral_image_eq_integral_pullback_density e he hei hs hse
       (f := fun _ => 1) continuousOn_const
-
-
 
 theorem RicciFlow.hasDerivAt_volumeMeasure_image_of_subset
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -121,7 +109,6 @@ theorem RicciFlow.hasDerivAt_volumeMeasure_image_of_subset
   rw [(F.metric t).integral_image_eq_integral_pullback_density e he hei
     hK (hKL.trans hLe) hD.contMDiff_scalarCurvature.continuous.continuousOn]
   simp only [neg_mul, integral_neg]
-
 
 theorem RicciFlow.hasDerivAt_volumeMeasure_image
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

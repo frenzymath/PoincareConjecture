@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M04.RicciNullReaction
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.OperatorRicci
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 universe u
-
-
 
 theorem HasDerivWithinAt.nonpos_of_right_endpoint_min
     {f : ℝ → ℝ} {a b d : ℝ} (hab : a < b)
@@ -49,10 +38,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
-
 theorem terminal_null_ricci_laplacian_nonpos
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
     (F : RicciFlow 3 M (Icc a b))
@@ -69,9 +54,6 @@ theorem terminal_null_ricci_laplacian_nonpos
     (F.connection b) x (hRic b hb x) v hnull
   linarith
 
-
-
-
 theorem no_positive_terminal_null_ricci_laplacian
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
     (F : RicciFlow 3 M (Icc a b))
@@ -81,8 +63,6 @@ theorem no_positive_terminal_null_ricci_laplacian
     (hpositive : 0 < (F.connection b).tensorLaplacian
       (F.connection b).ricciEvaluation x ![v, v]) : False :=
   (not_lt_of_ge (terminal_null_ricci_laplacian_nonpos P hab F hRic x v hnull)) hpositive
-
-
 
 theorem no_positive_terminal_null_ricci_laplacian_of_operator
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_4_RegularizedTotal
 import PoincareConjecture.Proofs.M62.Lemma0_4_TotalCurvature
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeIdentities
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem curve_estimates [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -62,8 +51,6 @@ theorem curve_estimates [T2Space M]
       total_curvature_integral := hi
       total_curvature_forward := fun _ ht _ hε =>
         total_curvature_forward_of_integral_bound F c hL hT hi ht hε }
-
-
 
 theorem nonempty_curveTheory [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow n M (Set.Icc a b)) : Nonempty (M62CurveTheory F) := by

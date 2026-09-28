@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceEndAxis
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_inner_reference_profile_scaling
     (P : SurgeryCapProfile) (h m lambda : ℝ)

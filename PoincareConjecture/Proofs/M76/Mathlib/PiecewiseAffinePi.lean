@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocallyPLProduct
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ variable {ι : Type*} [Fintype ι] {E F : ι → Type*}
   [∀ i, NormedAddCommGroup (F i)] [∀ i, NormedSpace ℝ (F i)]
   [∀ i, FiniteDimensional ℝ (F i)]
 
-
-
-
 theorem LocallyPiecewiseAffineOn.piMap {f : ∀ i, E i → F i} {U : ∀ i, Set (E i)}
     (hf : ∀ i, LocallyPiecewiseAffineOn (f i) (U i)) :
     LocallyPiecewiseAffineOn (fun x i => f i (x i)) (Set.pi univ U) := by
@@ -38,10 +25,6 @@ theorem LocallyPiecewiseAffineOn.piMap {f : ∀ i, E i → F i} {U : ∀ i, Set 
     (ContinuousLinearMap.proj i).toContinuousAffineMap
   have hp := locallyPiecewiseAffineOn_affine p isOpen_univ
   exact ((hf i).comp hp).mono hU (fun x hx => ⟨mem_univ x, hx i (mem_univ i)⟩)
-
-
-
-
 
 theorem piecewiseAffineGroupoid_pi
     (e : ∀ i, OpenPartialHomeomorph (E i) (E i))

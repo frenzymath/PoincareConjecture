@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Analysis.Calculus
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_of_locallyEventuallyContDiff
     {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

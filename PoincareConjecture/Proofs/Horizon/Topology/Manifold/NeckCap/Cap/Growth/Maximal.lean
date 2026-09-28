@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.Te
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cover
 import Mathlib.Order.WellFounded
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_maximal_cap_growth_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -58,9 +44,6 @@ theorem exists_maximal_cap_growth_threshold :
 end PoincareConjecture.CapCertificate
 
 namespace PoincareConjecture.ConnectedNeckCapCover
-
-
-
 
 theorem exists_maximal_cap_growth_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

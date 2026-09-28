@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeFaces
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalHalfBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
 
 theorem isFinitePLBallPair_original_endpoint_sector
     {E X κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

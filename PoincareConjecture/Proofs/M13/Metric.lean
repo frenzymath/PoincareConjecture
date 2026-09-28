@@ -3,15 +3,6 @@ import Mathlib.Analysis.LocallyConvex.Bounded
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -29,7 +20,6 @@ variable
   [∀ b, TopologicalSpace (E b)] [∀ b, AddCommGroup (E b)] [∀ b, Module ℝ (E b)]
   [∀ b, ContinuousConstSMul ℝ (E b)]
   [FiberBundle F E] [VectorBundle ℝ F E]
-
 
 noncomputable def scaleSmoothMetric (g : Bundle.ContMDiffRiemannianMetric IB ∞ F E)
     (Q : ℝ) (hQ : 0 < Q) : Bundle.ContMDiffRiemannianMetric IB ∞ F E where
@@ -51,7 +41,6 @@ noncomputable def scaleSmoothMetric (g : Bundle.ContMDiffRiemannianMetric IB ∞
       rw [smul_smul, inv_mul_cancel₀ hc, one_smul]
   contMDiff := g.contMDiff.const_smul_section
 
-
 theorem scaleSmoothMetric_inner (g : Bundle.ContMDiffRiemannianMetric IB ∞ F E)
     (Q : ℝ) (hQ : 0 < Q) (b : B) (v w : E b) :
     (scaleSmoothMetric g Q hQ).inner b v w = Q * g.inner b v w := rfl
@@ -66,7 +55,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
 
-
 theorem homothety_tangentNorm (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
     (hf : MetricHomothety g h f Q) (x : M) (v : TangentSpace (𝓡 n) x) :
@@ -75,14 +63,12 @@ theorem homothety_tangentNorm (g : RiemannianMetric n M) (h : RiemannianMetric n
   unfold RiemannianMetric.tangentNorm
   rw [hf x v v, Real.sqrt_mul hQ.le]
 
-
 theorem homothety_tangentNorm_sq (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
     (hf : MetricHomothety g h f Q) (x : M) (v : TangentSpace (𝓡 n) x) :
     (h.tangentNorm (f x) (mfderiv (𝓡 n) (𝓡 n) f x v)) ^ 2 =
       Q * (g.tangentNorm x v) ^ 2 := by
   rw [homothety_tangentNorm g h f Q hQ hf x v, mul_pow, Real.sq_sqrt hQ.le]
-
 
 theorem scaleSmoothMetric_tangentNorm (g : RiemannianMetric n M)
     (Q : ℝ) (hQ : 0 < Q) (x : M) (v : TangentSpace (𝓡 n) x) :

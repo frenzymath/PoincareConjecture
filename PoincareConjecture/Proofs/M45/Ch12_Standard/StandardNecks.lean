@@ -1,20 +1,10 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
-
 
 def StandardCylinderPatch.neckHomeomorph {epsilon : ℝ} {x : StandardCapSpace}
     (P : StandardCylinderPatch epsilon⁻¹ x) : NeckDomain epsilon ≃ₜ P.carrier where
@@ -42,8 +32,6 @@ def StandardCylinderPatch.neckHomeomorph {epsilon : ℝ} {x : StandardCapSpace}
     have h := P.inverse_smooth.continuousOn.comp_continuous continuous_subtype_val
       (fun y : P.carrier => y.2)
     exact h.fst.prodMk (h.snd.subtype_mk _)
-
-
 
 noncomputable def StandardStaticNeck.toEpsilonNeck
     {atlas : StandardCylinderAtlas} {g : RiemannianMetric 3 StandardCapSpace}
@@ -87,8 +75,6 @@ noncomputable def StandardStaticNeck.toEpsilonNeck
       rw [inv_pow, ← Real.rpow_mul_natCast N.scalar_pos.le (-1 / 2) 2]
       norm_num [Real.rpow_neg_one]
     simpa only [StandardSpatialCylinderClose, hscale] using N.close⟩
-
-
 
 def StandardEvolvingNeck.staticAtZero
     {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}

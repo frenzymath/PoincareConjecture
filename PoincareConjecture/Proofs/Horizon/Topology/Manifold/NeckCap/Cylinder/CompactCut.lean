@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -19,8 +10,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem compact_cut_sides_escape (U V : Opens M) (T : OpenCylinderModel (V : Set M))
     {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U)

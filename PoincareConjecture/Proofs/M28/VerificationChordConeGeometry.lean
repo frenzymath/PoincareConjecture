@@ -1,13 +1,4 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.DistinctEndRays
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.ChordConeAnnulus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-

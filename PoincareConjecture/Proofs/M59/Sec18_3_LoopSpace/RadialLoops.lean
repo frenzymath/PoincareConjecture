@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.RadialDerivative
 import PoincareConjecture.Proofs.M59.Mathlib.VectorBundleScalar
 import PoincareConjecture.Proofs.M58.Sec18_4_ContractionEndpoints
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set
@@ -23,9 +14,6 @@ universe u v
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m59Plane_tangent_projection (z : LoopCircle) (v : LoopPlane) :
     v - ⟪z.val, v⟫ • z.val = ⟪loopCircleTangent z, v⟫ • loopCircleTangent z := by
@@ -43,19 +31,13 @@ theorem m59Plane_tangent_projection (z : LoopCircle) (v : LoopPlane) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def m59RadialLoop (gamma : C1FreeLoopSpace (M := M)) : C1FreeLoopSpace (M := M) :=
   loopOfExtension (gamma.extension ∘ radialNormalization) (contMDiffOn_radial_extension gamma)
-
-
 
 theorem m59RadialLoop_apply (gamma : C1FreeLoopSpace (M := M)) (z : LoopCircle) :
     m59RadialLoop gamma z = gamma z := by
   change gamma.extension (radialNormalization z.val) = gamma z
   rw [radialNormalization_of_norm_eq_one z.property, gamma.boundary]
-
-
 
 theorem m59RadialLoop_tangent (gamma : C1FreeLoopSpace (M := M)) (z : LoopCircle) :
     c1LoopTangent (m59RadialLoop gamma) z = c1LoopTangent gamma z := by
@@ -64,13 +46,9 @@ theorem m59RadialLoop_tangent (gamma : C1FreeLoopSpace (M := M)) (z : LoopCircle
   · apply heq_of_eq
     exact mfderiv_radial_extension gamma z
 
-
-
 theorem m59RadialLoop_constant (x : M) :
     m59RadialLoop (constantC1Loop x) = constantC1Loop x :=
   loop_eq_of_fields rfl rfl
-
-
 
 theorem continuous_of_loop_firstJet_eq {X : Type v} [TopologicalSpace X]
     {f g : X → C1FreeLoopSpace (M := M)} (hg : Continuous g)
@@ -85,12 +63,8 @@ theorem continuous_of_loop_firstJet_eq {X : Type v} [TopologicalSpace X]
     funext fun x => ContinuousMap.ext (htangents x)
   exact ⟨hv ▸ h.1, ht ▸ h.2⟩
 
-
-
 theorem continuous_m59RadialLoop : Continuous (m59RadialLoop (M := M)) :=
   continuous_of_loop_firstJet_eq continuous_id m59RadialLoop_apply m59RadialLoop_tangent
-
-
 
 theorem m59RadialLoop_derivative (gamma : C1FreeLoopSpace (M := M))
     (z : LoopCircle) (i : Fin 2) :
@@ -120,8 +94,6 @@ theorem m59RadialLoop_derivative (gamma : C1FreeLoopSpace (M := M))
     erw [mfderiv_comp_apply _ hF hrad, hD,
       radialNormalization_of_norm_eq_one z.property, map_smul]
     rfl
-
-
 
 theorem continuous_m59RadialLoop_derivative {X : Type v} [TopologicalSpace X]
     (F : X → C1FreeLoopSpace (M := M)) (hF : Continuous F) (i : Fin 2) :

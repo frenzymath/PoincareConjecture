@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.RicciDerivat
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Symmetry
 import Mathlib.Tactic.Ring
-
-
-
-
-
-
-

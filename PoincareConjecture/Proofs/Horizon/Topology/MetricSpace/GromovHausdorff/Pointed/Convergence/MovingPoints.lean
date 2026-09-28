@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +10,6 @@ open Set Filter Topology
 namespace Poincare.GromovHausdorff
 
 universe u
-
 
 def VaryingRealizationSequence.comp
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -39,8 +30,6 @@ theorem VaryingRealizationSequence.PointConverges.comp
     (h : S.PointConverges p q) (φ : ℕ → ℕ) (hφ : Tendsto φ atTop atTop) :
     (S.comp φ hφ).PointConverges (fun j => p (φ j)) q := Filter.Tendsto.comp h hφ
 
-
-
 theorem VaryingRealizationSequence.tendsto_dist_of_pointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
     (S : VaryingRealizationSequence X Y)
@@ -54,8 +43,6 @@ theorem VaryingRealizationSequence.tendsto_dist_of_pointConverges
       simpa only [add_zero] using hp.add hq)
   rw [← (S.left_isometry j).dist_eq, ← (S.right_isometry j).dist_eq]
   exact dist_dist_dist_le _ _ _ _
-
-
 
 theorem exists_approximating_maps_and_subseq_pointConverges
     {X : ℕ → FiniteDiameterBasedMetricSpace.{u}}

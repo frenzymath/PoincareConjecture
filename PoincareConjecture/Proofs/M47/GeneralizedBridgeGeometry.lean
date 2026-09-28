@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M33.HistoryMetric
 import PoincareConjecture.Definitions.M28BoundedDistance
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,11 +15,8 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W)
 
-
 theorem regular_history_interval_nonnegative : H.generalized.interval ⊆ Ici 0 :=
   H.history.time_subset.trans F.time_domain_nonnegative
-
-
 
 noncomputable def regular_history_slice_chart (t : ℝ) (ht : t ∈ H.generalized.interval) :
     PartialDiffeomorph (𝓡 3) (𝓡 3)
@@ -46,8 +34,6 @@ noncomputable def regular_history_slice_chart (t : ℝ) (ht : t ∈ H.generalize
   contMDiffOn_toFun := (H.history.forward_smooth t ht).contMDiffOn
   contMDiffOn_invFun := H.history.inverse_smooth t ht
 
-
-
 noncomputable def regular_history_slice_diffeomorph (t : ℝ)
     (ht : t ∈ H.generalized.interval) (hregular : t ∉ F.surgery_times) :
     Diffeomorph (𝓡 3) (𝓡 3)
@@ -64,8 +50,6 @@ noncomputable def regular_history_slice_diffeomorph (t : ℝ)
     rw [H.regular_range, m33RegularRegion_of_regular F t hregular] at hi
     exact contMDiffOn_univ.mp hi
 
-
-
 theorem regular_history_hamiltonIvey
     (hpinched : ∀ t ∈ W.interval, SurgeryPinchedAt (F.connection t) t) :
     generalizedHamiltonIveyPinched H.generalized := by
@@ -81,8 +65,6 @@ theorem regular_history_hamiltonIvey
     simpa only [GeneralizedRicciFlowData.scalar, H.scalar_pullback t ht,
       H.negative_part_pullback t ht] using h
 
-
-
 theorem regular_history_ball_image (t : ℝ) (ht : t ∈ H.generalized.interval)
     (hregular : t ∉ F.surgery_times) (x : (H.generalized.slice t).carrier) (r : ℝ) :
     H.history.forward t ht '' (H.generalized.metric t).ball x r =
@@ -90,7 +72,6 @@ theorem regular_history_ball_image (t : ℝ) (ht : t ∈ H.generalized.interval)
   apply H.history.ball_image_of_subset t ht x r
   rw [H.regular_range, m33RegularRegion_of_regular F t hregular]
   exact subset_univ _
-
 
 theorem regular_history_ball_volume (t : ℝ) (ht : t ∈ H.generalized.interval)
     (hregular : t ∉ F.surgery_times) (x : (H.generalized.slice t).carrier) (r : ℝ) :

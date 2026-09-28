@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Event.LimitReference
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Event.LimitInverse
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +43,6 @@ theorem reference_surgeryMetricCoefficient (σ t : Ico H.reference.tMinus T)
     (mfderiv (𝓡 3) (𝓡 3) (B.reference_identify σ ∘ (extChartAt (𝓡 3) q).symm) z _) = _
   rw [mfderiv_comp z ((B.reference_identify σ).contMDiff.mdifferentiable (by simp) _) hc]
   exact B.reference_metric_rebase σ t ((extChartAt (𝓡 3) q).symm z) _ _
-
-
 
 theorem reference_surgeryMetricLimitOn (Q : SingularLimitConclusion H)
     [Nonempty (Q.extension.extended.slice T).carrier] (σ : Ico H.reference.tMinus T) :

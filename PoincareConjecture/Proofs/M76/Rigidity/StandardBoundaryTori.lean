@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchySurfaces
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -23,22 +13,16 @@ local notation "L1" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "H1" => LatticeHandle (Fin 1) (Fin 2) L1
 local notation "C1" => AddCircle (4 * (128 : ℝ))
 
-
-
 noncomputable def hamiltonOneTorusSlice (x : D1) : C(C1 × C1, H1) :=
   ⟨fun z => hamiltonOneHierarchyCoordinates.symm ((x, z.1), z.2),
     hamiltonOneHierarchyCoordinates.symm.continuous.comp
       ((continuous_const.prodMk continuous_fst).prodMk continuous_snd)⟩
-
-
 
 noncomputable def hamiltonOneTorusProjection : C(H1, C1 × C1) :=
   ⟨fun y => ((hamiltonOneHierarchyCoordinates y).1.2,
       (hamiltonOneHierarchyCoordinates y).2),
     (continuous_fst.snd.prodMk continuous_snd).comp
       hamiltonOneHierarchyCoordinates.continuous⟩
-
-
 
 theorem hamiltonOneTorusProjection_leftInverse (x : D1) :
     Function.LeftInverse hamiltonOneTorusProjection (hamiltonOneTorusSlice x) := by
@@ -48,8 +32,6 @@ theorem hamiltonOneTorusProjection_leftInverse (x : D1) :
     (hamiltonOneHierarchyCoordinates
       (hamiltonOneHierarchyCoordinates.symm ((x, z.1), z.2))).2) = z
   rw [hamiltonOneHierarchyCoordinates.apply_symm_apply]
-
-
 
 theorem range_hamiltonOneTorusSlice (x : D1) :
     range (hamiltonOneTorusSlice x) = {y | y.1 = x} := by
@@ -71,13 +53,10 @@ theorem range_hamiltonOneTorusSlice (x : D1) :
       · rfl
     · rfl
 
-
-
 theorem isEmbedding_hamiltonOneTorusSlice (x : D1) :
     IsEmbedding (hamiltonOneTorusSlice x) :=
   (hamiltonOneTorusProjection_leftInverse x).isEmbedding
     hamiltonOneTorusProjection.continuous (hamiltonOneTorusSlice x).continuous
-
 
 theorem isCompact_range_hamiltonOneTorusSlice (x : D1) :
     IsCompact (range (hamiltonOneTorusSlice x)) := by
@@ -85,20 +64,15 @@ theorem isCompact_range_hamiltonOneTorusSlice (x : D1) :
   rw [← image_univ]
   exact isCompact_univ.image (hamiltonOneTorusSlice x).continuous
 
-
 theorem isConnected_range_hamiltonOneTorusSlice (x : D1) :
     IsConnected (range (hamiltonOneTorusSlice x)) := by
   rw [← image_univ]
   exact isConnected_univ.image _ (hamiltonOneTorusSlice x).continuous.continuousOn
 
-
-
 theorem hamiltonOneTorusSlice_pi1_injective (x : D1) (z : C1 × C1) :
     Function.Injective (FundamentalGroup.map (hamiltonOneTorusSlice x) z) :=
   FundamentalGroup.map_injective_of_leftInverse _ _
     (hamiltonOneTorusProjection_leftInverse x) z
-
-
 
 theorem nontrivial_pi1_hamiltonOneBoundaryTorus :
     Nontrivial (FundamentalGroup (C1 × C1) (0, 0)) := by
@@ -107,23 +81,17 @@ theorem nontrivial_pi1_hamiltonOneBoundaryTorus :
     AddCircle.nontrivial_fundamentalGroup_zero (4 * (128 : ℝ))
   exact (FundamentalGroup.map_prodMk_left_injective (0 : C1) (0 : C1)).nontrivial
 
-
 def hamiltonOneBoundaryMinus : D1 :=
   ⟨fun _ => -1, by simp⟩
 
-
 def hamiltonOneBoundaryPlus : D1 :=
   ⟨fun _ => 1, by simp⟩
-
-
 
 theorem hamiltonOneBoundaryMinus_ne_plus :
     hamiltonOneBoundaryMinus ≠ hamiltonOneBoundaryPlus := by
   intro h
   have he : (-1 : ℝ) = 1 := congrArg (fun x : D1 => (x : V1) 0) h
   norm_num at he
-
-
 
 theorem hamiltonOne_norm_eq_one_iff (x : D1) :
     ‖(x : V1)‖ = 1 ↔
@@ -153,8 +121,6 @@ theorem hamiltonOne_norm_eq_one_iff (x : D1) :
     · simp [hamiltonOneBoundaryMinus]
     · simp [hamiltonOneBoundaryPlus]
 
-
-
 theorem hamiltonOneBoundary_eq_torusSlices :
     latticeHandleBoundary (Fin 1) (Fin 2) L1 =
       range (hamiltonOneTorusSlice hamiltonOneBoundaryMinus) ∪
@@ -164,8 +130,6 @@ theorem hamiltonOneBoundary_eq_torusSlices :
   change (‖(y.1 : V1)‖ = 1 ∧ True) ↔
     y.1 = hamiltonOneBoundaryMinus ∨ y.1 = hamiltonOneBoundaryPlus
   rw [and_true, hamiltonOne_norm_eq_one_iff]
-
-
 
 theorem disjoint_hamiltonOneBoundaryTori :
     Disjoint (range (hamiltonOneTorusSlice hamiltonOneBoundaryMinus))

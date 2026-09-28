@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Universa
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarSectorArea
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,11 +8,6 @@ open Set MeasureTheory
 open scoped ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_reference_polar_sector_eq
     {R a : ℝ} (hR : 0 < R) (ha : a ∈ Ioo (0 : ℝ) Real.pi) :
@@ -82,10 +64,6 @@ theorem m64Intrinsic_reference_polar_sector_eq
     rw [hnorm'] at hnorm
     nlinarith
 
-
-
-
-
 theorem m64Intrinsic_reference_halfplane_sector_volume
     {R a : ℝ} (hR : 0 < R) (ha : a ∈ Ioo (0 : ℝ) Real.pi) :
     volume {p : ℝ × ℝ | p.1 ^ 2 + p.2 ^ 2 < R ^ 2 ∧ 0 < p.2 ∧
@@ -94,11 +72,6 @@ theorem m64Intrinsic_reference_halfplane_sector_volume
   rw [← m64Intrinsic_reference_polar_sector_eq hR ha]
   simpa only [sub_zero] using
     m64Intrinsic_polar_sector_volume hR (neg_nonpos.mpr Real.pi_pos.le) ha.2.le
-
-
-
-
-
 
 theorem m64Intrinsic_reference_positive_cone_iff
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) Real.pi) (p : ℝ × ℝ) :
@@ -123,10 +96,6 @@ theorem m64Intrinsic_reference_positive_cone_iff
         Real.sin a * s := by ring
     rw [heq]
     exact mul_pos hsin hs
-
-
-
-
 
 theorem m64Intrinsic_reference_positive_cone_volume
     {R a : ℝ} (hR : 0 < R) (ha : a ∈ Ioo (0 : ℝ) Real.pi) :

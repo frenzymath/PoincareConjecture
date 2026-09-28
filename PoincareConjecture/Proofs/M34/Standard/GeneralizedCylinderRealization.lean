@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalPullbackRealization
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderDifferential
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
 
 theorem exists_local_coordinate_realization
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {F : GeneralizedRicciFlowData.{u}}

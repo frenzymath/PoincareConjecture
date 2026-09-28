@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.State
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric Topology PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.ProtectedAnnulus

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionAssemblyMaps
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionSphereGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M74.CollarEndChartData
 
 variable {Y : GeneralizedSliceCarrier.{u}} (D : CollarEndChartData Y)
-
-
 
 theorem assembledMap_contMDiffOn :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ D.assembledMap D.assembledSource := by
@@ -46,9 +35,6 @@ theorem assembledMap_contMDiffOn :
     filter_upwards [D.neck.open_target.mem_nhds ht] with y hy
     have heq := D.assembledMap_neck (D.neck.map_target hy)
     rwa [D.neck.right_inv hy] at heq
-
-
-
 
 theorem assembledInverse_contMDiff (q0 : UnitTwoSphere) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (D.assembledInverse q0) := by
@@ -80,9 +66,6 @@ theorem assembledInverse_contMDiff (q0 : UnitTwoSphere) :
     filter_upwards [hopen.mem_nhds hz] with w hw
     simp only [assembledInverse, if_neg (not_lt_of_ge hw.le), if_pos hw, Function.comp_apply]
 
-
-
-
 noncomputable def assembledChart (q0 : UnitTwoSphere) :
     OpenPartialHomeomorph Y.carrier StandardCapSpace where
   toFun := D.assembledMap
@@ -98,28 +81,17 @@ noncomputable def assembledChart (q0 : UnitTwoSphere) :
   continuousOn_toFun := D.assembledMap_contMDiffOn.continuousOn
   continuousOn_invFun := (D.assembledInverse_contMDiff q0).continuous.continuousOn
 
-
-
 @[simp] theorem assembledChart_source (q0 : UnitTwoSphere) :
     (D.assembledChart q0).source = {D.second.symm 0}ᶜ := rfl
-
-
 
 @[simp] theorem assembledChart_target (q0 : UnitTwoSphere) :
     (D.assembledChart q0).target = univ := rfl
 
-
-
 @[simp] theorem assembledChart_apply (q0 : UnitTwoSphere) (x : Y.carrier) :
     D.assembledChart q0 x = D.assembledMap x := rfl
 
-
-
 @[simp] theorem assembledChart_symm_apply (q0 : UnitTwoSphere) (z : StandardCapSpace) :
     (D.assembledChart q0).symm z = D.assembledInverse q0 z := rfl
-
-
-
 
 noncomputable def sphereDiffeomorph (q0 : UnitTwoSphere) (v : ThreeSphere) :
     Diffeomorph (𝓡 3) (𝓡 3) Y.carrier ThreeSphere ∞ := by

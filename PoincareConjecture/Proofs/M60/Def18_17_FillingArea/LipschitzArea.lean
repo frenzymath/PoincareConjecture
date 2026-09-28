@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.LipschitzDerivative
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AreaMeasurability
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T2Space M]
-
-
-
 
 theorem m60AreaDensity_le_of_metric_lipschitzOn (g : RiemannianMetric n M)
     {f : LoopPlane → M} {S : Set LoopPlane} (hS : IsOpen S)
@@ -58,9 +46,6 @@ theorem m60AreaDensity_le_of_metric_lipschitzOn (g : RiemannianMetric n M)
   unfold m60EnergyDensity
   rw [Matrix.trace_fin_two]
   linarith [hcol 0, hcol 1]
-
-
-
 
 theorem m60AreaIntegral_bound_of_metric_lipschitzOn (g : RiemannianMetric n M)
     {f : LoopPlane → M} {S : Set LoopPlane} (hS : IsOpen S)

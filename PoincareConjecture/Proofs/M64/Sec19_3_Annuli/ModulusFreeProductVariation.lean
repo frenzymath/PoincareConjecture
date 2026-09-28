@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeMovingCurvatureFl
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMovingAnnulusFirstVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ProductOrthogonalSectional
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,11 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
-
 
 theorem m64FreeCircleProductAnnulus_modulus_sharp_variation
     (P : M62.CircleProductData F circumference) (hn : 1 ≤ n) (hcirc : 0 < circumference)

@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open Set Filter Metric
 open scoped ContDiff Topology
 
 namespace Poincare.ODE.LocalFlow
-
-
 
 theorem exists_vertical_field_connector
     {r R h a b : ℝ} (hr : 0 < r) (hrR : r < R) (hh : 0 < h)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedVolumeRatio
 import PoincareConjecture.Proofs.M34.Standard.CalibratedBishopGromov
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,9 +20,6 @@ local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carr
 local instance : MeasurableSpace C.limit.carrier.carrier := C.limit.carrier.measurableSpace
 local instance : BorelSpace C.limit.carrier.carrier := C.limit.carrier.borelSpace
 local instance : T3Space C.limit.carrier.carrier := C.limit.carrier.t3Space
-
-
-
 
 theorem eventually_fixed_ball_volume_lt_of_zero_avr
     (hzero : asymptoticVolumeRatio (C.limit.flow.metric 0) C.limit.base = 0)

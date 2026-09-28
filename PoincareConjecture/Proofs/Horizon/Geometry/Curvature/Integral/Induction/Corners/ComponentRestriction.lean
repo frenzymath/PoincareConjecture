@@ -3,20 +3,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Isometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_openFiber_connectedComponent_restriction
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

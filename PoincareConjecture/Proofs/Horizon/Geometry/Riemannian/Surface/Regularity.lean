@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem ricciEvaluation_isSmooth_manifold (D : LeviCivitaData g) :
     IsSmoothCovariantTensor D.ricciEvaluation := by
   let σ : Equiv.Perm (Fin 4) := Equiv.ofBijective ![2, 0, 3, 1] (by decide)
@@ -28,7 +20,6 @@ theorem ricciEvaluation_isSmooth_manifold (D : LeviCivitaData g) :
   convert h using 1
   funext x v
   rfl
-
 
 theorem contMDiff_scalarCurvature (D : LeviCivitaData g) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ D.scalarCurvature := by
@@ -41,7 +32,6 @@ theorem contMDiff_scalarCurvature (D : LeviCivitaData g) :
   apply Finset.sum_congr rfl
   intro i _
   rfl
-
 
 theorem continuous_scalarCurvature (D : LeviCivitaData g) :
     Continuous D.scalarCurvature :=

@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
@@ -18,8 +10,6 @@ variable {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
 
-
-
 theorem norm_iteratedFDeriv_directional_le {f : E → F} {x : E} (m : ℕ)
     (hf : ContDiffAt 𝕜 (m + 1) f x) (v : E) :
     ‖iteratedFDeriv 𝕜 m (fun y => fderiv 𝕜 f y v) x‖ ≤
@@ -29,8 +19,6 @@ theorem norm_iteratedFDeriv_directional_le {f : E → F} {x : E} (m : ℕ)
     (ContinuousLinearMap.apply 𝕜 F v).norm_iteratedFDeriv_comp_left
       (hf.fderiv_right (m := (m : ℕ∞ω)) (by simp)) (le_refl _)
 
-
-
 theorem norm_iteratedFDeriv_sub_le_of_contDiffAt {f g : E → F} {x : E} (m : ℕ)
     (hf : ContDiffAt 𝕜 m f x) (hg : ContDiffAt 𝕜 m g x) :
     ‖iteratedFDeriv 𝕜 m (fun y => f y - g y) x‖ ≤
@@ -38,8 +26,6 @@ theorem norm_iteratedFDeriv_sub_le_of_contDiffAt {f g : E → F} {x : E} (m : �
   change ‖iteratedFDeriv 𝕜 m (f - g) x‖ ≤ _
   rw [iteratedFDeriv_sub_apply hf hg]
   exact norm_sub_le _ _
-
-
 
 theorem norm_iteratedFDeriv_sum_le_of_contDiffAt {ι : Type*} (s : Finset ι)
     {f : ι → E → F} {x : E} (m : ℕ)

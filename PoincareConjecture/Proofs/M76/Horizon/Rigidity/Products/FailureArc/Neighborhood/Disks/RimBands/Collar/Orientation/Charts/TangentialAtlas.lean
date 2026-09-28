@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Charts.TangentialCharts
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLAtlasTransitionSigns
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +17,6 @@ private theorem inverse_mem_surface (A : BrownCollar.FlatteningAtlas P2 S ι)
     (A.chart i).symm (z, 0) ∈ S := by
   apply (A.pair i _ ((A.chart i).map_target hz)).mpr
   rw [(A.chart i).right_inv hz]
-
-
 
 noncomputable def atlasTangentialChart (A : BrownCollar.FlatteningAtlas P2 S ι)
     (i : ι) : OpenPartialHomeomorph S P2 := by
@@ -137,8 +129,6 @@ theorem atlasTangentialChart_compatible
 theorem atlasTangentialChart_cover (A : BrownCollar.FlatteningAtlas P2 S ι) (x : S) :
     x ∈ (atlasTangentialChart A (A.indexAt x)).source :=
   A.mem_source_at x
-
-
 
 theorem atlasTangentialChart_transitionSign
     (A : BrownCollar.FlatteningAtlas P2 S ι)

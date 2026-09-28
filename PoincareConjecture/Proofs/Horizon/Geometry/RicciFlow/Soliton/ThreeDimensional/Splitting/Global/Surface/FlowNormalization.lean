@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Endpoint
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem roundAncient_scalarCurvature_eq_one_div_one_sub_time
     (F : RicciFlow 2 M (Iic 0))
@@ -81,8 +71,6 @@ theorem roundAncient_scalarCurvature_eq_one_div_one_sub_time
   have he'' := (div_eq_iff (ne_of_gt (hpos t ht))).mp he'
   nlinarith
 
-
-
 theorem roundAncient_inner_eq_one_sub_time_mul
     (F : RicciFlow 2 M (Iic 0))
     (hround : ∀ t ≤ 0, ConstantPositiveSectionalCurvature (F.metric t) (F.connection t))
@@ -135,8 +123,6 @@ theorem roundAncient_inner_eq_one_sub_time_mul
     exact he1'.trans he0'
   have hden : 1 - t ≠ 0 := by linarith
   simpa only [mul_comm] using (div_eq_iff hden).mp he
-
-
 
 theorem compactRoundAncient_inner_eq_one_sub_time_mul_of_soliton
     [CompactSpace M] (F : RicciFlow 2 M (Iic 0))

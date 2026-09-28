@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MovingDensityVariation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaGram_det_comp_eq_zero (g₀ g : RiemannianMetric n M)
     {f : LoopPlane → M} {φ : M → M} {z : LoopPlane}
@@ -42,9 +31,6 @@ theorem m65AreaGram_det_comp_eq_zero (g₀ g : RiemannianMetric n M)
 
 variable {a b : ℝ} (F : RicciFlow n M (Icc a b))
 
-
-
-
 theorem m65AmbientAreaDensity_hasDerivAt_zero
     (φ : ℝ → M → M) {f : LoopPlane → M} {z : LoopPlane} {t : ℝ}
     (hf : MDifferentiableAt (𝓡 2) (𝓡 n) f z)
@@ -56,9 +42,6 @@ theorem m65AmbientAreaDensity_hasDerivAt_zero
   simp only [m60AreaDensity,
     m65AreaGram_det_comp_eq_zero (F.metric t) (F.metric s) hf hs hzero,
     max_self, Real.sqrt_zero]
-
-
-
 
 theorem m65AmbientAreaDensity_hasDerivAt
     (φ : ℝ → M → M) {f : LoopPlane → M} {z : LoopPlane} {t : ℝ}
@@ -88,9 +71,6 @@ theorem m65AmbientAreaDensity_hasDerivAt
       (lt_of_le_of_ne (m65AreaGram_det_nonneg (F.metric t) (φ t ∘ f) z) hne.symm)
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem m65AmbientAreaDensity_hasDerivAt_of_contMDiffAt
     (φ : ℝ → M → M) {f : LoopPlane → M} {z : LoopPlane} {t : ℝ}

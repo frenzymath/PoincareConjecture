@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Cal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.CompactConjugation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.AnnularExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_curveAnnularTube_bump_slide
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

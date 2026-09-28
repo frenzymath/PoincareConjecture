@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -38,9 +30,6 @@ private theorem sup_image_div_close {X Y : Type*} {U : Set X} (hU : U.Nonempty)
     have h := (abs_le.mp (herr y hy)).1
     linarith
   exact abs_le.mpr ⟨by linarith, by linarith⟩
-
-
-
 
 theorem blowupSequence_scalar_sup_tendsto (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

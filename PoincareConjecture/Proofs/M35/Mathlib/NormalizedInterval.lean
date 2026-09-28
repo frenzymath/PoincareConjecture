@@ -2,18 +2,9 @@ import Mathlib.Algebra.Order.Field.Basic
 import Mathlib.Order.Interval.Set.Defs
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem add_div_mem_Ico_of_mem_Icc {𝕜 : Type*} [Field 𝕜] [LinearOrder 𝕜]
     [IsStrictOrderedRing 𝕜] {L a Q T s : 𝕜} (ha : a ∈ Ico 0 L)

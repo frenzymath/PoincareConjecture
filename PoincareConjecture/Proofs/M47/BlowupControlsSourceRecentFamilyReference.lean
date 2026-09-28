@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyRegion
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyModelJets
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyClocks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +22,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 theorem exists_source_recent_reference_tolerance
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]

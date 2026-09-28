@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckScalar
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem scale_sq_mul_scalar_center : N.scale ^ 2 * N.connection.scalarCurvature N.center = 1 := by
   rw [N.scale_eq_scalar, show (-1 / 2 : ℝ) = -(1 / 2 : ℝ) by ring,
@@ -40,9 +27,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
 
 theorem boundary_scale_le_of_scalar_error
     (hR : ∀ x ∈ N.boundary_sphere,
@@ -69,8 +53,6 @@ theorem boundary_scale_le_of_scalar_error
 end PoincareConjecture.CapCertificate
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capPersistence_exists_cap_boundary_accuracy :
     ∃ delta0 : ℝ, 0 < delta0 ∧

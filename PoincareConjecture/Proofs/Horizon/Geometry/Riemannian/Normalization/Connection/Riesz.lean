@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M01.ConnectionRiesz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Connection.KoszulFunctional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
-
-
-
-
-
-
-

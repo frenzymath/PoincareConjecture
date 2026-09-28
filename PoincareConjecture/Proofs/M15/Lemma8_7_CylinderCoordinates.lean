@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M11CompatibleEmbedding
 import PoincareConjecture.Proofs.M15.Lemma8_7_IntervalCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I K0 K : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {D0 : SmoothSpacetimeInterval K0} {D : SmoothSpacetimeInterval K}
   {V : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n))}
-
-
-
 
 theorem cylinder_localInverse_spatial_time_derivative
     (e0 : CompatibleSpacetimeCylinder F D0 V)
@@ -73,9 +61,6 @@ theorem cylinder_localInverse_spatial_time_derivative
   change mfderiv (spacetimeModel n) (𝓡 n) kappa (e0.toSpacetime q)
     (F.timeVector (e0.toSpacetime q)) = 0 at hzero
   rwa [hqp] at hzero
-
-
-
 
 theorem cylinder_localInverse_spatial_constant
     (e0 : CompatibleSpacetimeCylinder F D0 V)

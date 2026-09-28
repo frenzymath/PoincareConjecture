@@ -2,32 +2,15 @@ import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Basic
 import Mathlib.Algebra.BigOperators.Fin
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Smoothing
 
-
-
-
 def shortArcGapSpace (n : ℕ) (theta : ℝ) : Set (Fin (n + 3) → ℝ) :=
   {w | (∀ i, w i ∈ Ioo (0 : ℝ) Real.pi) ∧
     (∑ i, w i) = 2 * Real.pi ∧ w 0 = theta}
-
-
-
 
 theorem convex_shortArcGapSpace (n : ℕ) (theta : ℝ) :
     Convex ℝ (shortArcGapSpace n theta) := by
@@ -38,8 +21,6 @@ theorem convex_shortArcGapSpace (n : ℕ) (theta : ℝ) :
       ← Finset.mul_sum, hx.2.1, hy.2.1, ← add_mul, hab, one_mul]
   · change a * x 0 + b * y 0 = theta
     rw [hx.2.2, hy.2.2, ← add_mul, hab, one_mul]
-
-
 
 theorem nonempty_shortArcGapSpace (n : ℕ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) : (shortArcGapSpace n theta).Nonempty := by
@@ -57,9 +38,6 @@ theorem nonempty_shortArcGapSpace (n : ℕ) {theta : ℝ}
     dsimp only [r]
     field_simp [ne_of_gt hn]
     ring
-
-
-
 
 theorem contractible_shortArcGapSpace (n : ℕ) {theta : ℝ}
     (htheta : theta ∈ Ioo (0 : ℝ) Real.pi) :

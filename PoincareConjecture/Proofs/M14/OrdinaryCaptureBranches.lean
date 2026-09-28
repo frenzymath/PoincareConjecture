@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureInitialPath
 import PoincareConjecture.Proofs.M10.MinimizingLifts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,8 +24,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include hCoordinates
 
-
-
 theorem ordinaryCapture_minimizing_family_lift
     (A : LExponentialFamily F t₀.val τmax c₀) (W : TangentSpace (𝓡 n) c₀)
     {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax)
@@ -56,8 +44,6 @@ theorem ordinaryCapture_minimizing_family_lift
   refine ⟨y, p, (ordinaryCapture_minimizing_transport D hCoordinates hmax.le hx p hc).mpr
     (M10.minimizing_of_eqOn hmin hpq.symm), hc, ?_⟩
   simpa only [q, A.path_eq] using hpq
-
-
 
 theorem ordinaryCapture_minimizer_unique
     {τ : ℝ} {y : G.Point} (A : LExponentialFamily F t₀.val τmax c₀)
@@ -82,9 +68,6 @@ theorem ordinaryCapture_minimizer_unique
     ((q.curve_time s hs).trans (p.curve_time s hs).symm)
   exact (D.path_curve_eq 0 τ _ y q hqc s hs).trans
     ((hqcurve hs).trans ((hcurve hs).symm.trans (D.path_curve_eq 0 τ _ y p hc s hs).symm))
-
-
-
 
 theorem ordinaryCapture_unique_family_transport
     (hPath : M14PathCalculusConclusion G)

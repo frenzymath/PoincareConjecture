@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Regularity.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Commutation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem covariantTensorDerivative_scalar_mul_metric (D : LeviCivitaData g)
     {a : M → ℝ} (ha : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ a)
@@ -54,7 +46,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
 
-
 theorem hessian_eq_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ}
     (hsol : ∀ x, ∀ v w : TangentSpace (𝓡 2) x,
@@ -65,7 +56,6 @@ theorem hessian_eq_of_surface_soliton (D : LeviCivitaData g)
   rw [D.ricci_eq_half_scalarCurvature_mul_inner] at h
   linarith
 
-
 theorem contMDiff_of_C2_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
     (hsol : ∀ x, ∀ v w : TangentSpace (𝓡 2) x,
@@ -75,7 +65,6 @@ theorem contMDiff_of_C2_surface_soliton (D : LeviCivitaData g)
     (a := fun x => lambda - (1 / 2 : ℝ) * D.scalarCurvature x)
   · exact contMDiff_const.sub (contMDiff_const.mul D.contMDiff_scalarCurvature)
   · exact D.hessian_eq_of_surface_soliton hsol
-
 
 theorem mvfderiv_scalarCurvature_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -141,7 +130,6 @@ theorem mvfderiv_scalarCurvature_of_surface_soliton (D : LeviCivitaData g)
     exact hframe
   exact congrArg (fun L => L v) hlinear
 
-
 theorem mvfderiv_hamilton_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
     (hsol : ∀ x, ∀ v w : TangentSpace (𝓡 2) x,
@@ -167,7 +155,6 @@ theorem mvfderiv_hamilton_of_surface_soliton (D : LeviCivitaData g)
     D.mvfderiv_gradient_normSq_of_C2 (hf x), D.hessian_eq_of_surface_soliton hsol,
     g.symm x v, D.inner_gradient]
   ring
-
 
 theorem mvfderiv_weighted_scalar_of_surface_soliton (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)

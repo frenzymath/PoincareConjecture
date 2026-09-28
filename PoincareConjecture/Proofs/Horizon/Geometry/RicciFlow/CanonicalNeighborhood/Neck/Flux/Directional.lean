@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.LowerBound
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.ProfileSupport
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -48,8 +39,6 @@ theorem axial_mvfderiv_coordinate_tangent {z : RoundCylinderSpace}
     (I' := 𝓘(ℝ, ℝ)), mfderiv_snd] at hcomp
   exact (congrArg (fun L => L v) hcomp).symm
 
-
-
 theorem axial_flux_error_of_gradient_distance (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hx : x ∈ N.carrier)
     {a : TangentSpace (𝓡 3) x} {α σ : ℝ}
@@ -67,7 +56,6 @@ theorem axial_flux_error_of_gradient_distance (D : LeviCivitaData g)
     rw [← D.inner_gradient, g.symm, D.inner_gradient]
   rw [map_sub, map_smul, smul_eq_mul, hswap] at h
   exact (le_div_iff₀ hpos).mpr (by simpa only [mul_comm] using h)
-
 
 theorem axialCutoff_flux_lower_of_gradient_distance (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hx : x ∈ N.carrier)
@@ -87,8 +75,6 @@ theorem axialCutoff_flux_lower_of_gradient_distance (D : LeviCivitaData g)
         (D.gradient (fun y => (N.coordinate_inverse y).2) x) := by linarith
   nlinarith [mul_le_mul_of_nonneg_right hlow hφ']
 
-
-
 theorem axialCutoff_flux_lower_of_coordinate_gradient_distance
     (D : LeviCivitaData g) {f : M → ℝ} {z : RoundCylinderSpace}
     (hz : z ∈ N.cylinderDomain) {α c σ : ℝ}
@@ -103,7 +89,6 @@ theorem axialCutoff_flux_lower_of_coordinate_gradient_distance
     (N.coordinate_map_mem hz) hclose (N.axial_mvfderiv_coordinate_tangent hz (0, c)) hφ
   simpa only [N.coordinate_inverse_coordinate_map hz] using
     h (by simpa only [N.coordinate_inverse_coordinate_map hz] using hφ')
-
 
 theorem ae_axialTransitionProfile_flux_lower_of_gradient_distance
     (D : LeviCivitaData g) {f : M → ℝ} {α c σ L : ℝ} (hL : 0 < L)
@@ -125,8 +110,6 @@ theorem ae_axialTransitionProfile_flux_lower_of_gradient_distance
   · rw [N.gradient_axialCutoff D (contDiff_axialTransitionProfile L) hxc,
       deriv_axialTransitionProfile_eq_zero_of_not_mem hL hs]
     simp
-
-
 
 theorem lintegral_axialTransitionProfile_flux_lower_of_gradient_distance
     (D : LeviCivitaData g) {f : M → ℝ} {α c σ L : ℝ}
@@ -150,7 +133,6 @@ theorem lintegral_axialTransitionProfile_flux_lower_of_gradient_distance
     (hφ.continuous_deriv (by simp)).measurable hpoint
   rw [lintegral_ofReal_mul_deriv_axialTransitionProfile_of_le hL hLe hκ] at h
   exact h
-
 
 theorem integral_axialTransitionProfile_flux_lower_of_gradient_distance
     (D : LeviCivitaData g) {f : M → ℝ} {α c σ L : ℝ}

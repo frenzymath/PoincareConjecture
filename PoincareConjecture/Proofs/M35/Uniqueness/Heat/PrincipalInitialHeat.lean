@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalLaplacian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -51,8 +42,6 @@ private theorem principal_initial_variational {K : Set V} (hK : IsClosed K)
     simp only [inner_add_right, inner_sub_right, inner_neg_right]
     ring
 
-
-
 theorem exists_principal_initial_heat {K : Set V} (hK : IsCompact K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ell : ℝ} (hEll : 0 < ell)
     (hA : ∀ i j x, A i j x = A j i x)
@@ -84,8 +73,6 @@ theorem exists_principal_initial_heat {K : Set V} (hK : IsCompact K)
       _ = 0 := by rw [ht, neg_add_cancel]
   · filter_upwards [hgraph] with t ht
     exact principal_initial_variational hK.isClosed A f ht
-
-
 
 theorem principal_generator_weak_heat {K : Set V}
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {U D : dirichletValue K}

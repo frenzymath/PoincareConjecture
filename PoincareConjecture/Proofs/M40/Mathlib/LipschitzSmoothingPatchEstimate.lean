@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingCoordinates
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingBlend
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Metric MeasureTheory
@@ -25,9 +13,6 @@ section SourceTranslation
 variable {X E V : Type*} [PseudoMetricSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
 
 theorem chartTranslation_lipschitzOn
     (e : OpenPartialHomeomorph X E) (A : E ≃L[ℝ] V)
@@ -58,10 +43,6 @@ variable {X N E F V : Type*} [PseudoMetricSpace X] [PseudoMetricSpace N]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
-
 
 theorem chartCoordinates_translated_dist_le
     (e : OpenPartialHomeomorph X E) (h : N → F) (B : F →L[ℝ] V)
@@ -101,10 +82,6 @@ variable {X N E F V : Type*} [PseudoMetricSpace X] [PseudoEMetricSpace N]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [CompleteSpace V]
   {μ : Measure E} [μ.IsAddHaarMeasure]
-
-
-
-
 
 theorem chartConvolutionBlend_lipschitzOn
     (h : OpenPartialHomeomorph N F) (B : F ≃L[ℝ] V)

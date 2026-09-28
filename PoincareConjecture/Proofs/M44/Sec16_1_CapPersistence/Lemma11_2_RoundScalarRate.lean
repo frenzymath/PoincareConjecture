@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScal
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarPullback
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_round_scalar_evolution_bound (P : M44CapPersistencePredecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧ ∀ {X : Type u} [TopologicalSpace X]
@@ -93,8 +81,6 @@ theorem exists_round_scalar_evolution_bound (P : M44CapPersistencePredecessors.{
   have hsq : R.scale ^ 2 ≤ D.scalarCurvature x ^ 2 := by nlinarith [R.scale_pos]
   exact ((div_le_iff₀ (sq_pos_of_pos R.scale_pos)).mp hlocal).trans
     (mul_le_mul_of_nonneg_left hsq hC.le)
-
-
 
 theorem exists_round_scalar_rate_within (P : M44CapPersistencePredecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧ ∀ {X : Type u} [TopologicalSpace X]

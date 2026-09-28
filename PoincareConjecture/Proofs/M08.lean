@@ -18,16 +18,6 @@ import PoincareConjecture.Proofs.M08.ExtensionToZero
 import PoincareConjecture.Proofs.M08.SecondVariation
 import PoincareConjecture.Proofs.M08.JacobiInitialValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -39,24 +29,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem lGeodesicExistenceAndVariation
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]
@@ -98,7 +70,6 @@ theorem lGeodesicExistenceAndVariation
     exact M08.exists_secondVariation hM04 V R
   · intro τ₁ τ₂ _ _ _ p R Z
     exact M08.exists_lJacobi_initialValue F hM04 p R Z
-
 
 theorem lGeodesicExistenceAndVariation_from_M04
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]

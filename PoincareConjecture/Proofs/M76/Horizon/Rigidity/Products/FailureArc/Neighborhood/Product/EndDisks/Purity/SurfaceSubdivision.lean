@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDisk
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDiskConnectedLink
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

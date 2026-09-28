@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCrosscu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityOscillation
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -191,10 +181,6 @@ private theorem m65Logarithmic_radius_choice {ε R η : ℝ}
       η ^ 2 * Real.log (R / ε) := by field_simp
   rw [heq] at hmul
   exact (not_le_of_gt hbudget) hmul
-
-
-
-
 
 theorem m65WeakTrace_courantLebesgue {ι : Type*} [Fintype ι]
     (u : ι → Lp ℝ 2 (volume.restrict loopDiskSet))

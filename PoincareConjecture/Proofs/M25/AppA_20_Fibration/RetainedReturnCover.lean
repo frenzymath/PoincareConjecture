@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialLineContinuation
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.BufferedSliceHeight
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialSignComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_retained_return_cover :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

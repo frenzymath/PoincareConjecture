@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.FamilyPhase
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonSmoothness
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.MinimizingGeodesicSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
 
-
-
 theorem m63FlattenedPolygon_cell_agreement (polygon : M63GeodesicPolygon g D N)
     (hN : 0 < N) (j : Fin N) {s : ℝ} (hs : s ∈ Icc 0 (m63CellLength N)) :
     m63FlattenedPolygon polygon (m63CellLeft N j + s) =
@@ -34,9 +23,6 @@ theorem m63FlattenedPolygon_cell_agreement (polygon : M63GeodesicPolygon g D N)
   have ha := polygon.cell_agreement j _ hy
   change polygon.map (m63Flattening N (m63CellLeft N j + s)) = _
   simpa only [← add_sub_assoc, add_sub_cancel_left] using ha
-
-
-
 
 theorem m63FlattenedPolygon_cell_velocity (polygon : M63GeodesicPolygon g D N)
     (hN : 0 < N) (j : Fin N) {s : ℝ} (hs : s ∈ Icc 0 (m63CellLength N)) :
@@ -85,8 +71,6 @@ theorem m63FlattenedPolygon_cell_velocity (polygon : M63GeodesicPolygon g D N)
     exact M63.curveVelocity_comp hside hpsi
   apply TotalSpace.ext (m63FlattenedPolygon_cell_agreement polygon hN j hs)
   exact heq_of_eq hvelocity
-
-
 
 theorem m63FlattenedPolygon_cell_speed (polygon : M63GeodesicPolygon g D N)
     (hN : 0 < N) (j : Fin N) {s : ℝ} (hs : s ∈ Icc 0 (m63CellLength N)) :

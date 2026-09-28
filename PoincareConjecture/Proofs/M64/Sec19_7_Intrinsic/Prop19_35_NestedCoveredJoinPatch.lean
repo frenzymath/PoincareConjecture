@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJoinedBan
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightJoinBandCoverage
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBandInteriorCoverage
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_nested_covered_join_patch
     {alpha beta : ℝ → AnnulusCoordinates}

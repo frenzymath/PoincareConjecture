@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.FiniteDimensional
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.Distance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Poincare.Analysis.Calculus
-
-
-
 
 theorem terminalGerms_extract_common_charts
     {M : ℕ → Type u} [∀ k, PseudoMetricSpace (M k)]

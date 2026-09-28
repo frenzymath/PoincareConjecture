@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarGluing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -19,10 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 structure M64DiskCollarCertificate
     {gamma0 gamma1 : C1FreeLoopSpace (M := M)}
@@ -46,9 +35,6 @@ structure M64DiskCollarCertificate
     ((closedBall (0 : LoopPlane) radius)ᶜ ∩ loopDiskSet) volume
   area_bound : (∫ z in (closedBall (0 : LoopPlane) radius)ᶜ ∩ loopDiskSet,
       m60AreaDensity g map z) ≤ q + eta
-
-
-
 
 theorem m64DiskWitness_of_collar
     {gamma0 gamma1 : C1FreeLoopSpace (M := M)}

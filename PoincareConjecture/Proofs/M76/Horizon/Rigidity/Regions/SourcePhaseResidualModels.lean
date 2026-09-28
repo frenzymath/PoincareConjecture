@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Loops.OriginalFrontierE
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalSphereSimplyConnected
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
 
 structure FrontierResidualModel {X ι : Type*} [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X V3) (N F : Set X) where
@@ -121,7 +109,6 @@ theorem PLDomain.exists_frontier_residual_models
   · intro i hz
     apply hsphere i
     simpa only [hz, Nat.add_zero] using hr i
-
 
 theorem PLDomain.nonempty_frontier_residual_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

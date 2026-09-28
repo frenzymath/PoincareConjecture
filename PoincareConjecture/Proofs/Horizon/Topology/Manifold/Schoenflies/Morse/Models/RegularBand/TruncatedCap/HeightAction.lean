@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies.TruncatedCap
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 def heightAction {v : E3} (hv : ‖v‖ = 1) (φ : Real ≃ₘ[Real] Real) :
     Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ := by
@@ -46,8 +43,6 @@ theorem heightAction_eq_self {v : E3} (hv : ‖v‖ = 1)
     heightAction hv φ y = y := by
   rw [heightAction_apply, hy]
   exact (heightCoordinates hv).apply_symm_apply y
-
-
 
 theorem image_heightAction_truncated_cap {v : E3} (hv : ‖v‖ = 1)
     {a : Real} (ha : 0 < a) (ha1 : a < 1)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,12 +13,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τ : ℝ} {q : M} {f : M × ℝ → ℝ}
 
-
 theorem reducedLengthGradientNormSq_nonneg :
     0 ≤ reducedLengthGradientNormSq F T f τ q := by
   unfold reducedLengthGradientNormSq
   exact Finset.sum_nonneg fun _ _ ↦ sq_nonneg _
-
 
 theorem reducedLengthGradientNormSq_eq_opNorm_sq :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -50,7 +40,6 @@ theorem abs_mvfderiv_le_gradientNorm_mul (v : TangentSpace (𝓡 n) q) :
   have h := (mvfderiv (𝓡 n) (fun x ↦ f (x, τ)) q).le_opNorm v
   have hvnorm : ‖v‖ = (F.metric (T - τ)).tangentNorm q v := norm_eq_sqrt_real_inner v
   simpa only [Real.norm_eq_abs, hvnorm] using h
-
 
 theorem abs_mvfderiv_le_of_gradientNormSq_le {C : ℝ}
     (hC : reducedLengthGradientNormSq F T f τ q ≤ C)

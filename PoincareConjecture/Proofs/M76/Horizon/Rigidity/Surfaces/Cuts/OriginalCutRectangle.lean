@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutI
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusSquareMap
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.FourArcRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -83,9 +75,6 @@ theorem exists_marked_cut_rectangle :
     (by rw [Set.pair_comm]; exact hL) hR hp hq h₀ h₁ hWZ hLR
     (by simpa only [inter_comm] using hWL) hWR hZL
     (by simpa only [inter_comm] using hZR)
-
-
-
 
 theorem exists_marked_square_filling :
     ∃ F : (ℝ × ℝ) → E,

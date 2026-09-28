@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.SliceGeometry
 import PoincareConjecture.Proofs.M35.Prop12_31.ScalarPositivity
 import PoincareConjecture.Proofs.M13.PinchingIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
-
 
 theorem LeviCivitaData.negativeCurvaturePart_eq_zero_of_nonnegative
     {M : Type*} [TopologicalSpace M]
@@ -33,8 +23,6 @@ theorem LeviCivitaData.negativeCurvaturePart_eq_zero_of_nonnegative
 
 namespace M35.OrdinaryRealization
 
-
-
 theorem negativeCurvaturePart_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
     (x : StandardCapSpace) :
@@ -42,8 +30,6 @@ theorem negativeCurvaturePart_eq (P : M35StandardCapPredecessors)
       (F.connection t).negativeCurvaturePart x :=
   Proofs.M13.negativeCurvaturePart_eq_one (slice_calculus P F ht)
     (slice_homothety F ht) (F.connection t) (connection F t) x
-
-
 
 theorem generalized_nonnegative (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) :

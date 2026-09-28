@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderTailModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderComponentSide
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -35,9 +27,6 @@ private theorem inverse_height_readout (T : OpenCylinderModel (U : Set M)) (x : 
       univ ×ˢ Ioo (0 : ℝ) 1 from ⟨mem_univ _, (T.homeomorph.symm x).2.property⟩)
   rw [hcoord] at hh
   exact (congrArg Prod.snd hh).symm
-
-
-
 
 theorem exists_oriented_model_of_component
     (T : OpenCylinderModel (U : Set M)) {S P : Set M}

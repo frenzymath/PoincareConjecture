@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RawSphereCutRetraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

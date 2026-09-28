@@ -1,17 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Transport
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -29,8 +17,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem ricciComplementTensor_pullback_mem_tensorRegion_iff
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -68,8 +54,6 @@ local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
 
-
-
 def transportedRicciComplementTensor (F : RicciFlow 3 M (Ico a b))
     (hC : RicciFlowCurvatureTheory.{u}) (t : ℝ) (x : M) :
     TensorFiber (TangentSpace (𝓡 3) x) 2 :=
@@ -97,7 +81,6 @@ def transportedRicciComplementTensor (F : RicciFlow 3 M (Ico a b))
   simp only [transportedRicciComplementTensor_apply, canonicalTransport_initial F hab,
     ContinuousLinearMap.id_apply, LeviCivitaData.ricciComplementTensor_apply]
 
-
 theorem transportedRicciComplementTensor_isSmooth
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})
     {t : ℝ} (ht : t ∈ Ico a b) :
@@ -112,8 +95,6 @@ theorem transportedRicciComplementTensor_isSmooth
     simpa only [transportedRicciComplementTensor_apply] using
       hT.2 O hO (fun i y => canonicalTransport F t y (Y i y))
         (fun i => (canonicalTransport_contMDiff_space F ht).contMDiffOn.clm_bundle_apply (hY i))
-
-
 
 theorem transportedRicciComplementTensor_mem_tensorRegion_iff [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})
@@ -131,8 +112,6 @@ theorem transportedRicciComplementTensor_mem_tensorRegion_iff [T2Space M]
     (orthonormalTransport F t x).toLinearEquiv
     (canonicalTransport_pairing F hab ht x) hs
 
-
-
 theorem scaled_transportedRicciComplementTensor_mem_iff [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})
     (ha : 0 ≤ a) (hab : a < b) (x : M)
@@ -148,8 +127,6 @@ theorem scaled_transportedRicciComplementTensor_mem_iff [T2Space M]
   rw [← tensorRegion_scale_iff hn (ha.trans ht.1)]
   exact transportedRicciComplementTensor_mem_tensorRegion_iff F hC hab x hn ht
     (ha.trans ht.1)
-
-
 
 theorem scaled_transportedRicciComplementTensor_initial_mem [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})
@@ -168,8 +145,6 @@ theorem scaled_transportedRicciComplementTensor_initial_mem [T2Space M]
   rw [transportedRicciComplementTensor_initial F hC hab]
   exact (F.connection a).scaled_ricciComplementTensor_mem_tensorRegion_of_pinching
     (hC.tensor_calculus 3 M (F.metric a) (F.connection a)) x hn ha htrace hlog
-
-
 
 theorem logarithmic_pinching_of_scaled_transportedRicciComplementTensor_mem [T2Space M]
     (F : RicciFlow 3 M (Ico a b)) (hC : RicciFlowCurvatureTheory.{u})

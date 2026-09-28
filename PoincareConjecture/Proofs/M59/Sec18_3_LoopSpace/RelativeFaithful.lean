@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RelativeSurjective
 import PoincareConjecture.Proofs.M02.CubeBoundaryAdjustment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -20,8 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 def m59SquareRightEdge : C(I, Fin 2 → I) :=
   ⟨fun t i => if i = 0 then 1 else t, by
     apply continuous_pi
@@ -29,8 +18,6 @@ def m59SquareRightEdge : C(I, Fin 2 → I) :=
     by_cases hi : i = 0 <;> simp only [hi, if_true, if_false]
     · exact continuous_const
     · exact continuous_id⟩
-
-
 
 theorem m59RelativeLoopCubeAt_of_genLoop
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -50,8 +37,6 @@ theorem m59RelativeLoopCubeAt_of_genLoop
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem m59_relative_homotopy_of_based {x : M}
     {gamma delta : GenLoop (Fin 2) (C1FreeLoopSpace (M := M)) (constantC1Loop x)}
     (h : GenLoop.Homotopic gamma delta) :
@@ -61,9 +46,6 @@ theorem m59_relative_homotopy_of_based {x : M}
   intro t
   exact m59RelativeLoopCubeAt_of_genLoop
     ⟨H.toHomotopy.curry t, fun z hz => (H.eq_fst t hz).trans (GenLoop.boundary gamma z hz)⟩
-
-
-
 
 theorem m59_relative_faithful (z0 : LoopCircle) (x : M)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 M x))

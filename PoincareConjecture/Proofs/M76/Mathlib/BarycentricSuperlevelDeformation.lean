@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricMix
 import Mathlib.Topology.UnitInterval
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -22,9 +10,6 @@ open scoped BigOperators
 namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι]
-
-
-
 
 theorem sum_eq_one_of_mem_barycentricFace {s : Finset ι} {q : ι → ℝ}
     (hq : q ∈ barycentricFace s) : ∑ i ∈ s, q i = 1 := by
@@ -39,14 +24,6 @@ namespace PreAbstractSimplicialComplex
 open StdSimplexCore
 
 variable {ι : Type*} [Fintype ι]
-
-
-
-
-
-
-
-
 
 theorem exists_barycentric_superlevel_deformation_preserving_faces_mass
     (A : PreAbstractSimplicialComplex ι) (s : Finset ι)
@@ -132,10 +109,6 @@ theorem exists_barycentric_superlevel_deformation_preserving_faces_mass
     simp only [H, Pi.add_apply, Pi.smul_apply, smul_eq_mul, Finset.sum_add_distrib,
       ← Finset.mul_sum, sum_eq_one_of_mem_barycentricFace (hr q).2, mul_one]
 
-
-
-
-
 theorem exists_barycentric_superlevel_deformation_preserving_faces
     (A : PreAbstractSimplicialComplex ι) (s : Finset ι)
     {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
@@ -153,10 +126,6 @@ theorem exists_barycentric_superlevel_deformation_preserving_faces
   obtain ⟨hN, hDN, U, hU, hDU, hUN, H, hHN, hH0, hH1, hfix, hface, _⟩ :=
     A.exists_barycentric_superlevel_deformation_preserving_faces_mass s hc hc1
   exact ⟨hN, hDN, U, hU, hDU, hUN, H, hHN, hH0, hH1, hfix, hface⟩
-
-
-
-
 
 theorem exists_barycentric_superlevel_deformation
     (A : PreAbstractSimplicialComplex ι) (s : Finset ι)

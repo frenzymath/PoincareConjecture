@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem exists_finitePL_subpolyhedron_extension
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) {S : Set E}
@@ -77,8 +67,6 @@ variable {M E F : Type*} [NormedAddCommGroup M] [NormedSpace ℝ M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem IsFinitePLBallPair.exists_boundary_height_extension
     {s b d : Set E} (hs : IsFinitePLBallPair M s b) (hdb : d ⊆ b)
     {f : E → F} (hf : FinitePiecewiseAffineOn f d) :
@@ -88,8 +76,6 @@ theorem IsFinitePLBallPair.exists_boundary_height_extension
   obtain ⟨g, hg, hgf⟩ := K.exists_finitePL_subpolyhedron_extension hK
     ((hdb.trans hs.1).trans hKs.symm.subset) hf
   exact ⟨g, hKs ▸ hg, hgf⟩
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_graph_lift [FiniteDimensional ℝ F]
     {s b d : Set E} (hs : IsFinitePLBallPair M s b) (hdb : d ⊆ b)

@@ -1,21 +1,11 @@
 import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem sq_bilinear_add_sq_bilinear_le (B : E →L[ℝ] E →L[ℝ] ℝ)
     (hsymm : ∀ u v, B u v = B v u) (hnonneg : ∀ w, 0 ≤ B w w)
@@ -35,9 +25,6 @@ theorem sq_bilinear_add_sq_bilinear_le (B : E →L[ℝ] E →L[ℝ] ℝ)
     ring
   rw [heq] at h
   linarith
-
-
-
 
 theorem conformal_bilinear_hessian_bound (G : E →L[ℝ] E →L[ℝ] ℝ)
     (hsymm : ∀ u v, G u v = G v u) (hnonneg : ∀ w, 0 ≤ G w w)

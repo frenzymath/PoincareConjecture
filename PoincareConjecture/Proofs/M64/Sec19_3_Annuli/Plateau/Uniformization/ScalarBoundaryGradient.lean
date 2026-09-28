@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarHalfSpaceGradient
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,13 +18,6 @@ local notation "Half" => scalarHalfSpace
 open Poincare.Analysis.Sobolev
 open Weak Euclidean
 open BoundaryTangential BoundaryLocalization
-
-
-
-
-
-
-
 
 theorem exists_continuous_halfSpace_gradient_of_local_H3
     {V : Set Plane} (hV : IsOpen V)

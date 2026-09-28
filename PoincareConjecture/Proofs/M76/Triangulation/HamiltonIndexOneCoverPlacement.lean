@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneBlockPlacement
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneProtectedImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +11,6 @@ local notation "V" => ((Fin 1 ⊕ Fin 2) → ℝ)
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "J" => Finset.univ.map (Function.Embedding.inl : Fin 1 ↪ Fin 1 ⊕ Fin 2)
 local notation "D" => coordinateCylinder J
-
-
-
 
 theorem exists_cover_supported_block_placement
     (P : Set V) (A : V ≃ₜ V) (Q : W ≃ₜ W)

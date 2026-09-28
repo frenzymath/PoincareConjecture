@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.L2KernelOperator
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSemigroup
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,8 +11,6 @@ open MeasureTheory Filter
 open scoped InnerProductSpace NNReal
 
 variable {α ι : Type*} [MeasurableSpace α] {μ : Measure α}
-
-
 
 def kernelL2 (b : HilbertBasis ι ℝ (Lp ℝ 2 μ)) (lam : ι → ℝ≥0) (t : ℝ≥0) :
     Lp ℝ 2 (μ.prod μ) :=

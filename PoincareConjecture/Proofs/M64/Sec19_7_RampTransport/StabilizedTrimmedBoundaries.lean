@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StabilizedBoundaryGeo
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.C1LabelGeometry
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StripBoundaryImmersion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -32,10 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {Q : M62.CircleProductData P.flow auxiliary} {time : ℝ}
   {gamma0 gamma1 : ℝ → P.charts.Point}
   {A : M64Annulus (P.flow.metric time) gamma0 gamma1} {r epsilon : ℝ}
-
-
-
-
 
 theorem exists_stabilized_trimmed_boundary_tolerance
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon)

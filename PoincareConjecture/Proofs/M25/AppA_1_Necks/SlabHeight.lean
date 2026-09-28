@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapSlab
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.TransitionHeight
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
-
 
 theorem exists_middle_overlap_slab_height {L κ η : ℝ}
     (hL : 0 ≤ L) (hκ : κ ∈ Ioc 0 1) (hη : 0 < η) :

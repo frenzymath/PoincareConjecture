@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NormalCover
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M28.RegularNormalChartCover
 variable {n : ℕ} {M : Type u} [MetricSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     {g : RiemannianMetric n M} {p : M} {δ R ρ : ℝ} {N : ℕ}
-
-
-
 
 theorem base_distance_le (C : RegularNormalChartCover g p δ R ρ N)
     (hdist : ∀ x y : M, edist x y = g.edist x y)
@@ -84,8 +71,6 @@ theorem base_distance_le (C : RegularNormalChartCover g p δ R ρ N)
   have hcard := Fintype.card_le_of_injective f hinj
   simp only [Fintype.card_fin] at hcard
   omega
-
-
 
 theorem chart_distance_le (C : RegularNormalChartCover g p δ R ρ N)
     (hdist : ∀ x y : M, edist x y = g.edist x y)

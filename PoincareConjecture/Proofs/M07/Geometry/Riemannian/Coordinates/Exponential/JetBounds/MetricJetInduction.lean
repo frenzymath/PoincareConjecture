@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.FrameInduction
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,7 +44,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 theorem euclideanCoefficients_eq_coframe_gram
     (D : LeviCivitaData g)
     (b : OrthonormalBasis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))
@@ -75,8 +63,6 @@ theorem euclideanCoefficients_eq_coframe_gram
   intro a _
   simp only [radialCoframeCoeff, OrthonormalBasis.repr_apply_apply]
   rw [real_inner_comm ((T x).inverse u) (b a)]
-
-
 
 theorem norm_iteratedFDeriv_metric_le_of_coframe
     (D : LeviCivitaData g)
@@ -118,8 +104,6 @@ theorem norm_iteratedFDeriv_metric_le_of_coframe
     funext fun y => (euclideanCoefficients_eq_coframe_gram D b h0 hTi hTv y u v).symm
   rw [he] at hh
   simpa only [Fintype.card_fin, mul_assoc] using hh
-
-
 
 theorem exists_uniform_geodesic_coordinate_metric_jet_bounds
     (n : ℕ) (r : ℝ) (C : ℕ → ℝ) (hC : ∀ l, 0 ≤ C l) :

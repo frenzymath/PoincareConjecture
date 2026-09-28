@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryTriangleFibers
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeDualMarks
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskIntervalHalfProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K L : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype L.faces]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem BoundaryTriangleFibers.exists_edge_product (F : BoundaryTriangleFibers K L)
     (hLK : L ≤ K) (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)

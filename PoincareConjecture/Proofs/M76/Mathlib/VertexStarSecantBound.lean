@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NormalFaceStar
 import PoincareConjecture.Proofs.M76.Mathlib.IndependentSecantBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AbstractSimplicialComplex
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_pos_secant_bound_vertexStar (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) {p : E}

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.NativeLevelGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_nested_reference_inner_connector_incidence
     (e : OpenPartialHomeomorph UnitTwoSphere (ℝ × ℝ))

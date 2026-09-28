@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalRestartSurvival
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ noncomputable local instance restartControlTwoJetNorm :
 
 noncomputable local instance restartControlTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem exists_restarted_outer_control_cutoff
     (P : M44CapPersistencePredecessors.{u})

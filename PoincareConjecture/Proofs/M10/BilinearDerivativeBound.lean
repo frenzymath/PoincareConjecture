@@ -2,14 +2,6 @@ import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 import Mathlib.Analysis.Normed.Operator.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
@@ -23,7 +15,6 @@ local instance correctionBilinearNormedAddCommGroup : NormedAddCommGroup (E →L
 
 local instance correctionBilinearNormedSpace : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
 
 theorem metric_hessian_correction_le
     (B : E →L[ℝ] E →L[ℝ] ℝ) (Q : E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ)

@@ -1,20 +1,8 @@
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,9 +10,6 @@ open Set Metric
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
-
 
 theorem exists_finite_strictMono_projection_subdivision
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)

@@ -1,25 +1,14 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.NumberedTriangleParity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AbstractSimplicialComplex PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace PoincareConjecture.M76.Dehn
 
-
 def orderedCofaceParity {V : Type*} [DecidableEq V]
     (number : V → ℕ) (t : Finset V) (a b : V) : ZMod 2 :=
   boundaryFaceParity number t {a, b} + if number b < number a then 1 else 0
-
 
 theorem orderedCofaceParity_reverse_of_label_ne {V : Type*} [DecidableEq V]
     (number : V → ℕ) (t : Finset V) {a b : V} (hn : number a ≠ number b) :
@@ -36,7 +25,6 @@ theorem orderedCofaceParity_reverse {V : Type*} [DecidableEq V]
     (number : V ↪ ℕ) (t : Finset V) {a b : V} (hab : a ≠ b) :
     orderedCofaceParity number t a b + orderedCofaceParity number t b a = 1 :=
   orderedCofaceParity_reverse_of_label_ne number t (fun h ↦ hab (number.injective h))
-
 
 theorem orderedCofaceParity_triangle_of_label_ne {V : Type*} [DecidableEq V]
     (number : V → ℕ) {v a b : V} (hnva : number v ≠ number a)
@@ -72,8 +60,6 @@ theorem orderedCofaceParity_triangle {V : Type*} [DecidableEq V]
     (fun h ↦ hva (number.injective h)) (fun h ↦ hvb (number.injective h))
     (fun h ↦ hab (number.injective h))
 
-
-
 theorem orderedCofaceParity_cancellation {V : Type*} [DecidableEq V]
     (number : V → ℕ) (t u : Finset V) (a b : V) (st su : ZMod 2)
     (h : (st + boundaryFaceParity number t {a, b}) +
@@ -87,8 +73,6 @@ theorem orderedCofaceParity_cancellation {V : Type*} [DecidableEq V]
         ((if number b < number a then 1 else 0 : ZMod 2) +
           (if number b < number a then 1 else 0 : ZMod 2)) := by ring
     _ = 1 := by rw [h, CharTwo.add_self_eq_zero, add_zero]
-
-
 
 theorem orderedCofaceParity_chain_of_label_ne {V : Type*} [DecidableEq V]
     (number : V → ℕ) (v : V) (p : ℕ → V) (t : ℕ → Finset V)
@@ -163,8 +147,6 @@ theorem orderedCofaceParity_through_vertex_of_label_ne {V : Type*} [DecidableEq 
     (hvertices 0 (Nat.zero_le n)).1
   have hdouble : sigma 0 + sigma 0 = 0 := CharTwo.add_self_eq_zero _
   linear_combination hreverse - hchain + hdouble
-
-
 
 theorem orderedCofaceParity_through_vertex {V : Type*} [DecidableEq V]
     (number : V ↪ ℕ) (v : V) (p : ℕ → V) (t : ℕ → Finset V)

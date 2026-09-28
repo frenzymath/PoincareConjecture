@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +22,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace Plane M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_local_smooth_inverse_surface
     (f : Plane → M) {S : Set Plane} (hS : IsOpen S)

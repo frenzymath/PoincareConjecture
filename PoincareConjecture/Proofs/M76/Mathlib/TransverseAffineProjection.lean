@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -21,13 +11,8 @@ variable {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
 
-
-
-
 noncomputable def transverseCoordinates (b : F →ᴬ[𝕜] E) (Q : E →L[𝕜] F) (x : E) : F :=
   (Q.comp b.contLinear).inverse (Q (x - b 0))
-
-
 
 theorem transverseCoordinates_eq_iff (b : F →ᴬ[𝕜] E) (Q : E →L[𝕜] F)
     (hQ : (Q.comp b.contLinear).IsInvertible) (x : E) (y : F) :
@@ -38,8 +23,6 @@ theorem transverseCoordinates_eq_iff (b : F →ᴬ[𝕜] E) (Q : E →L[𝕜] F)
   simp only [map_sub, sub_left_inj, sub_eq_zero]
   exact eq_comm
 
-
-
 theorem transverseCoordinates_apply_self (b : F →ᴬ[𝕜] E) (Q : E →L[𝕜] F)
     (hQ : (Q.comp b.contLinear).IsInvertible) (y : F) :
     b.transverseCoordinates Q (b y) = y := by
@@ -48,8 +31,6 @@ theorem transverseCoordinates_apply_self (b : F →ᴬ[𝕜] E) (Q : E →L[𝕜
 
 variable [CompleteSpace F] {X : Type*} [NormedAddCommGroup X] [NormedSpace 𝕜 X]
   {r : ℕ∞ω} {P : X → E →L[𝕜] F} {v : X → E} {x : X}
-
-
 
 theorem contDiffAt_transverseCoordinates (b : F →ᴬ[𝕜] E)
     (hP : ContDiffAt 𝕜 r P x) (hv : ContDiffAt 𝕜 r v x)

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Polygons.TriangleFibers
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,4 +32,3 @@ structure SurfaceFaceProduct (T : CoorientedSurfaceStars E)
       T.height p (map x) ≤ 0 ↔ x.2 ≤ 0
 
 end Geometry.SimplicialComplex
-

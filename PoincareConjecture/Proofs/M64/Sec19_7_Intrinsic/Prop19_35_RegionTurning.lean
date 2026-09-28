@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Triangulation
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Incidence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -90,11 +80,6 @@ private theorem sum_eq_unpaired_fibers
 
 open Classical in
 
-
-
-
-
-
 theorem m64Intrinsic_region_turning_eq_unpaired
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)
     (F : I → OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -153,12 +138,6 @@ theorem m64Intrinsic_region_turning_eq_unpaired
   simpa only [Fintype.sum_prod_type, hreindex, slot, term] using h
 
 open Classical in
-
-
-
-
-
-
 
 theorem m64Intrinsic_region_gaussBonnet_unpaired
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

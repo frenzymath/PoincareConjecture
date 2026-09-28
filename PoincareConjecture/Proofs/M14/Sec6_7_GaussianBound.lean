@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_PointwiseMonotonicity
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialJacobian
 import PoincareConjecture.Proofs.M14.Sec6_7_InitialReducedLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
 
 theorem tendsto_exponentialWeightedJacobian_zero
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -46,8 +35,6 @@ theorem tendsto_exponentialWeightedJacobian_zero
   rw [Real.rpow_neg (le_of_lt hs), Real.rpow_natCast]
   ring
 
-
-
 theorem exponentialWeightedJacobian_le_gaussian
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -61,9 +48,6 @@ theorem exponentialWeightedJacobian_le_gaussian
     (exponentialWeightedJacobian_antitoneOn hCoordinates hM04 hM12 E v H hZ)
     (tendsto_exponentialWeightedJacobian_zero hM04 hM12 E v horth (H.survivor Z hZ)
       (Real.sqrt_pos.mpr H.tau_pos)) ⟨Real.sqrt_pos.mpr H.tau_pos, le_rfl⟩
-
-
-
 
 theorem stableDensity_mul_jacobian_le_gaussian
     (hCoordinates : M12MetricPredecessors.{0} n)

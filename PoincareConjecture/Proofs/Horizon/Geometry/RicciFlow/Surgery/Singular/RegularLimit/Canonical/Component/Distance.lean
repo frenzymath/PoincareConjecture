@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.CompactComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +13,6 @@ namespace PoincareConjecture.SingularRegularLimit
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 theorem intrinsicEDist_le_of_tangentNorm_le
     (g h : RiemannianMetric 3 M) {U : Set M} {C : ℝ} (hC : 0 < C)
@@ -41,7 +33,6 @@ theorem intrinsicEDist_le_of_tangentNorm_le
     (g.pathELength_le_of_tangentNorm_le h γ 0 1 C hC.le
       (fun t ht => hbound (γ t) (hU ⟨t, ht, rfl⟩)))
 
-
 theorem intrinsicDiameter_le_of_tangentNorm_le
     (g h : RiemannianMetric 3 M) {U : Set M} {C : ℝ} (hC : 0 < C)
     (hbound : ∀ x ∈ U, ∀ v : TangentSpace (𝓡 3) x,
@@ -52,7 +43,6 @@ theorem intrinsicDiameter_le_of_tangentNorm_le
   exact (intrinsicEDist_le_of_tangentNorm_le g h hC hbound p.1 p.2).trans
     (mul_le_mul_right (show intrinsicEDist g U p.1 p.2 ≤ intrinsicDiameter g U from
       le_sSup ⟨p, rfl⟩) _)
-
 
 theorem intrinsicDiameter_le_of_inner_le
     (g h : RiemannianMetric 3 M) {U : Set M} {C : ℝ} (hC : 0 < C)
@@ -74,8 +64,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem eventually_terminal_intrinsicDiameter_comparison
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

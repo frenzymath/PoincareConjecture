@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ variable (hd : ∀ x ∈ U, ∃ A : E ≃L[ℝ] F, HasFDerivAt f (A : E →L[ℝ
 
 include hU hf hd
 
-
-
 theorem isOpen_image_of_invertible_derivative {T : Set E} (hT : IsOpen T) (hTU : T ⊆ U) :
     IsOpen (f '' T) := by
   apply isOpen_iff_mem_nhds.mpr
@@ -39,7 +28,6 @@ theorem isOpen_image_of_invertible_derivative {T : Set E} (hT : IsOpen T) (hTU :
   exact mem_of_superset (ho.mem_nhds ⟨x, ⟨hxe, hx⟩, rfl⟩)
     (image_mono inter_subset_right)
 
-
 theorem isOpenMap_restrict_of_invertible_derivative : IsOpenMap (U.domRestrict f) := by
   intro T hT
   have hopen : IsOpen (Subtype.val '' T : Set E) :=
@@ -52,26 +40,18 @@ theorem isOpenMap_restrict_of_invertible_derivative : IsOpenMap (U.domRestrict f
 
 variable (hi : InjOn f U)
 
-
-
 noncomputable def smoothOpenChart : OpenPartialHomeomorph E F :=
   OpenPartialHomeomorph.ofContinuousOpenRestrict (hi.toPartialEquiv f U)
     hf.continuousOn (isOpenMap_restrict_of_invertible_derivative f hU hf hd) hU
 
-
 @[simp] theorem smoothOpenChart_apply (x : E) : smoothOpenChart f hU hf hd hi x = f x := rfl
-
 
 @[simp] theorem smoothOpenChart_source : (smoothOpenChart f hU hf hd hi).source = U := rfl
 
-
 @[simp] theorem smoothOpenChart_target : (smoothOpenChart f hU hf hd hi).target = f '' U := rfl
-
 
 theorem smoothOpenChart_contDiffOn :
     ContDiffOn ℝ ∞ (smoothOpenChart f hU hf hd hi) U := hf
-
-
 
 theorem smoothOpenChart_symm_contDiffOn :
     ContDiffOn ℝ ∞ (smoothOpenChart f hU hf hd hi).symm (f '' U) := by

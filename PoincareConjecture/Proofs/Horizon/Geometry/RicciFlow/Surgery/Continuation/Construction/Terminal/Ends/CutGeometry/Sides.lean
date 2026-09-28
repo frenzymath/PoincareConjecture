@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Topology.Components
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.Topology.Escaping
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +27,6 @@ theorem isConnected_boundary_sphere : IsConnected horn.boundary_sphere := by
   have ht0 : t = 0 := ht
   subst t
   exact ⟨mem_univ _, neg_lt_zero.mpr horn.collar_pos, by norm_num⟩
-
-
 
 theorem exists_contained_neck_partition {delta : ℝ} (N : TerminalStrongNeck E delta)
     (hdelta : delta < 1 / 2) (hN : N.carrier ⊆ horn.carrier) :

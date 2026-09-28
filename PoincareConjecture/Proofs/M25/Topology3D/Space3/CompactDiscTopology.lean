@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactChart
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,7 +11,6 @@ variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E
 variable [TopologicalSpace Y] [T2Space Y]
 
 omit [ProperSpace E] [T2Space Y] in
-
 
 theorem compactChart_interior_closedBall (e : OpenPartialHomeomorph E Y) (x : E)
     {r : ℝ} (hr : 0 < r) (hs : closedBall x r ⊆ e.source) :
@@ -42,8 +31,6 @@ theorem compactChart_interior_closedBall (e : OpenPartialHomeomorph E Y) (x : E)
     inter_eq_right.mpr (ball_subset_closedBall.trans hs),
     inter_eq_right.mpr (interior_subset.trans ht)] at h
   exact h.symm
-
-
 
 theorem compactChart_frontier_closedBall (e : OpenPartialHomeomorph E Y) (x : E)
     {r : ℝ} (hr : 0 < r) (hs : closedBall x r ⊆ e.source) :

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalSphereChartCarrier
 import PoincareConjecture.Proofs.M76.PrimeReduction.AffineContactFiniteness
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -22,10 +11,6 @@ open Set Geometry Module
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_line_cover_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -48,9 +33,6 @@ theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_line_cover_in_chart
         ∃ A ∈ L, x ∈ A := by
   exact h.exists_surface_contact_line_cover_in_chart sS.chart_source_cover hgi hSV hpq hwp hwq ht
     hy Q hQ hyQ
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_contact_line_cover_of_affine_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

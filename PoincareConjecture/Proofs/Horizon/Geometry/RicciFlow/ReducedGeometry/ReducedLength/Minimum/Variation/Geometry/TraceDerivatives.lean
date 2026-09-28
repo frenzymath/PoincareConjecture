@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.MetricPair
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.Surface
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -120,8 +109,6 @@ private theorem parametricExtension_metric_self_time {J C : Set ℝ}
     (deriv (fun r => E.extension r y) s)]
   ring
 
-
-
 theorem speed_hasDerivAt {J C : Set ℝ} (F : RicciFlow n M J) (T : ℝ)
     {α : ℝ → M}
     (E : ParametricAlongCurveExtensionOn C α (curveVelocityWithin (n := n) α C))
@@ -177,8 +164,6 @@ theorem speed_hasDerivAt {J C : Set ℝ} (F : RicciFlow n M J) (T : ℝ)
   simp only [pullbackCovariantDerivative, map_add, add_apply, g, D, A]
   ring
 
-
-
 theorem speed_hasDerivAt_of_regularizedEuler {J C : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) {α : ℝ → M}
     (E : ParametricAlongCurveExtensionOn C α (curveVelocityWithin (n := n) α C))
@@ -204,8 +189,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem surface_scaled_index_trace (D : LeviCivitaData g) (x : M)
     (A : TangentSpace (𝓡 2) x) (s : ℝ) {c : ℝ} (hc : c ≠ 0)

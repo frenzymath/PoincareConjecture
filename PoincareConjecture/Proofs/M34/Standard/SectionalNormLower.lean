@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.SectionalTests
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ open M04
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem neg_curvatureTensorNorm_mul_metricGram_le
     (D : LeviCivitaData g) (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -49,8 +38,6 @@ theorem neg_curvatureTensorNorm_mul_metricGram_le
   have hlow := (abs_le.mp (abs_le_of_sq_le_sq hsq (Real.sqrt_nonneg _))).1
   simpa only [LinearMap.id_apply, metricGram, hpp, hqq, hpq', one_mul,
     zero_pow (by norm_num : 2 ≠ 0), sub_zero, mul_one] using hlow
-
-
 
 theorem neg_curvatureTensorNorm_le_sectionalRayleigh
     (D : LeviCivitaData g) (x : M) (u v : TangentSpace (𝓡 n) x)

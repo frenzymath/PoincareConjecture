@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M20ThreeDimensionalClassification
 import PoincareConjecture.Definitions.Ch09.AsymptoticVolume
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 structure AsymptoticVolumeRatioSliceData
     (K : AncientKappaSolution n M) (t : ℝ) where

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularAtlasCapture
 import PoincareConjecture.Proofs.M47.TerminalRegularComponentInverse
 import PoincareConjecture.Proofs.M47.TerminalRegularAtlasInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -84,8 +75,6 @@ variable {X : Type v} [TopologicalSpace X] [ChartedSpace E X]
   [IsManifold (𝓡 3) ∞ X] [T3Space X]
   (nu : ℕ → ℕ) (V : ℕ → Set X) (pX : X)
   (f : ∀ k : ℕ, X → Poincare.connectedComponentOpens E (center (nu k)))
-
-
 
 theorem terminalSource_regular_growing_sources
     (hnu : StrictMono nu) (htau : ∀ j, 0 < tau j)

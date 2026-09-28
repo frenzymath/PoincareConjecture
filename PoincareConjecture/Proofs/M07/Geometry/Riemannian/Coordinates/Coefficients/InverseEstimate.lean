@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 
@@ -16,7 +7,6 @@ namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 lemma norm_inverse_le_of_ellipticity {B : E →L[ℝ] E →L[ℝ] ℝ}
     {a : ℝ} (ha : 0 < a) (hell : ∀ v, a * ‖v‖ ^ 2 ≤ B v v) :
@@ -32,8 +22,6 @@ lemma inverse_sub_inverse_apply {B C : E →L[ℝ] E →L[ℝ] ℝ}
     B.inverse ξ - C.inverse ξ = B.inverse ((C - B) (C.inverse ξ)) := by
   rw [sub_apply, hC.self_apply_inverse, map_sub,
     hB.inverse_apply_self]
-
-
 
 lemma norm_inverse_sub_le_of_ellipticity {B C : E →L[ℝ] E →L[ℝ] ℝ}
     {a : ℝ} (ha : 0 < a)
@@ -55,8 +43,6 @@ lemma norm_inverse_sub_le_of_ellipticity {B C : E →L[ℝ] E →L[ℝ] ℝ}
           (norm_nonneg _)) ha.le
     _ = (‖B - C‖ / a ^ 2) * ‖ξ‖ := by rw [norm_sub_rev]; ring
 
-
-
 lemma norm_inverse_sub_le_of_modulus {B C : E →L[ℝ] E →L[ℝ] ℝ}
     {a H r : ℝ} (ha : 0 < a)
     (hB : ∀ v, a * ‖v‖ ^ 2 ≤ B v v)
@@ -67,7 +53,6 @@ lemma norm_inverse_sub_le_of_modulus {B C : E →L[ℝ] E →L[ℝ] ℝ}
     _ ≤ ‖B - C‖ / a ^ 2 := norm_inverse_sub_le_of_ellipticity ha hB hC
     _ ≤ (H * r) / a ^ 2 := div_le_div_of_nonneg_right hmod (sq_nonneg _)
     _ = _ := by ring
-
 
 lemma inner_inverse_innerSL_le {B : E →L[ℝ] E →L[ℝ] ℝ}
     {a : ℝ} (ha : 0 < a) (hell : ∀ v, a * ‖v‖ ^ 2 ≤ B v v) (v : E) :
@@ -81,8 +66,6 @@ lemma inner_inverse_innerSL_le {B : E →L[ℝ] E →L[ℝ] ℝ}
         (innerSL ℝ v).le_opNorm (B.inverse (innerSL ℝ v))
     _ ≤ ‖v‖ * (‖v‖ / a) := mul_le_mul_of_nonneg_left h (norm_nonneg v)
     _ = _ := by ring
-
-
 
 lemma le_inner_inverse_innerSL {B : E →L[ℝ] E →L[ℝ] ℝ}
     {a b : ℝ} (ha : 0 < a) (hb : 0 < b)

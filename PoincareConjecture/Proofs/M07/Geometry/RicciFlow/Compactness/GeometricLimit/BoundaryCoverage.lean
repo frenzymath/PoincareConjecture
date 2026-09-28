@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.LocalDiffeomorphism
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.SourceBallCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
 
 theorem RiemannianMetric.isPreconnected_ball
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -100,8 +90,6 @@ end SmoothSpacetimeEmbedding
 
 namespace PointedGeometricConvergence
 
-
-
 theorem source_ball_coverage_of_boundary_escape
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -132,7 +120,6 @@ theorem source_ball_coverage_of_boundary_escape
     (G.exhaustion_open k) (G.exhaustion_open j) (G.exhaustion_compactClosure j)
     (hl.trans (G.exhaustion_monotone hlk)) (G.base_in_exhaustion j) hT hA hbound
   simpa only [G.base_preserving k, BasedFlow.zeroBall, BasedFlow.metricAt] using hcover
-
 
 theorem metricComplete_zero_of_boundary_escape
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

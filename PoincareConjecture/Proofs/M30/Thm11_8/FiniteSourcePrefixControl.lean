@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSourcePrefix
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabControlled
 import PoincareConjecture.Proofs.M30.Thm5_33.CurvatureNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem eventually_controlled_prefix_of_finite_scalar_bound
     (hC : RicciFlowCurvatureTheory.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedBall
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem image_ball_subset_of_tangentNorm_bound
     {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -58,8 +47,6 @@ theorem image_ball_subset_of_tangentNorm_bound
   exact ((hdist.trans hpath).trans_lt hstrict).trans_eq (ENNReal.ofReal_mul hC.le).symm
 
 namespace OrdinaryRealization
-
-
 
 theorem blowupSequence_image_ball_bounded
     (P : M35StandardCapPredecessors)

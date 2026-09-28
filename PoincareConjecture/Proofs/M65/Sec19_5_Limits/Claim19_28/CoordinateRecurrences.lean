@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectionRegularity
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ChartPullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,15 +16,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 noncomputable def m65ProjectedCoordinateJet (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (p : M) (i : ℕ) (t x : ℝ) :
     EuclideanSpace ℝ (Fin n) :=
   mfderiv (𝓡 n) (𝓡 n) (chartAt (EuclideanSpace ℝ (Fin n)) p) (c x t).1
     (P.charts.split (c x t) (m65IntrinsicTangentJet P.flow c i t x)).1
-
-
 
 theorem m65ProjectedVelocity_eq_speed_smul (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -54,8 +42,6 @@ theorem m65ProjectedVelocity_eq_speed_smul (P : M62.CircleProductData F circumfe
   simp only [m65IntrinsicTangentJet, spatialUnitTangent, map_smul, Prod.smul_fst,
     smul_smul, mul_inv_cancel₀ (M62.speed_pos P.flow c hc ht x).ne', one_smul]
 
-
-
 theorem m65ProjectedCoordinates_hasDerivAt (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
     (p : M) {t x : ℝ} (ht : t ∈ Icc a b)
@@ -75,8 +61,6 @@ theorem m65ProjectedCoordinates_hasDerivAt (P : M62.CircleProductData F circumfe
     (he.hasMFDerivAt.comp x hgamma.hasMFDerivAt).hasFDerivAt.hasDerivAt
   rw [m65ProjectedVelocity_eq_speed_smul P c hc ht, map_smul] at h
   exact h
-
-
 
 theorem m65ProjectedCoordinateJet_hasDerivAt [T2Space M]
     (P : M62.CircleProductData F circumference)

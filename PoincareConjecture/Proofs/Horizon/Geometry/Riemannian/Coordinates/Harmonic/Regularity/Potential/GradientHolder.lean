@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactPotential
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +14,6 @@ variable {V F : Type*}
   [MeasurableSpace V] [BorelSpace V] [Nontrivial V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem heatD2ConvMap_norm_le_of_bounded {t : ℝ} (ht : 0 < t) (v : V)
     (u : BoundedContinuousFunction V F) (x : V) :
     ‖heatD2ConvMap t v u x‖ ≤ ‖v‖ * t⁻¹ * heatC2 V * ‖u‖ := by
@@ -34,8 +24,6 @@ theorem heatD2ConvMap_norm_le_of_bounded {t : ℝ} (ht : 0 < t) (v : V)
   change ‖heatD2Sup t v w u x‖ ≤ _
   exact (heatD2Sup_norm ht v w u x).trans_eq (by ring)
 
-
-
 theorem heatD1Sup_sub_norm_le_of_bounded {t : ℝ} (ht : 0 < t) (v : V)
     (u : BoundedContinuousFunction V F) (x y : V) :
     ‖heatD1Sup t v u x - heatD1Sup t v u y‖ ≤
@@ -43,8 +31,6 @@ theorem heatD1Sup_sub_norm_le_of_bounded {t : ℝ} (ht : 0 < t) (v : V)
   exact (convex_univ : Convex ℝ (univ : Set V)).norm_image_sub_le_of_norm_hasFDerivWithin_le
     (fun z _ => (heatD1Sup_hasFDerivAt ht v u z).hasFDerivWithinAt)
     (fun z _ => heatD2ConvMap_norm_le_of_bounded ht v u z) (mem_univ y) (mem_univ x)
-
-
 
 theorem heatD1Sup_sub_norm_le_halfHolder {t : ℝ} (ht : 0 < t) (v : V)
     (u : BoundedContinuousFunction V F) (x y : V) :
@@ -93,8 +79,6 @@ theorem heatD1Sup_sub_norm_le_halfHolder {t : ℝ} (ht : 0 < t) (v : V)
     ring
   exact (sq_le_sq₀ (norm_nonneg _)
     (mul_nonneg (mul_nonneg hc hs34) (Real.sqrt_nonneg _))).mp (hprod.trans_eq heq.symm)
-
-
 
 theorem heatD1Duh_sub_norm_le_halfHolder {t : ℝ} (ht : 0 < t) {K : ℝ≥0}
     (f : ℝ → BoundedContinuousFunction V F)
@@ -149,8 +133,6 @@ variable {V F : Type*}
   [MeasurableSpace V] [BorelSpace V] [Nontrivial V]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem aestronglyMeasurable_heatD1Sup_compactSlice {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) (v x : V) :
     AEStronglyMeasurable
@@ -171,8 +153,6 @@ theorem aestronglyMeasurable_heatD1Sup_compactSlice {f : V × ℝ → F}
     (compactSlice f hf.continuous hc s) (du s)
     (fun z => hasFDerivAt_spatialSlice (hf.differentiable (by simp)) z s) x,
     Kernel.heatSupGradient_apply hpos]
-
-
 
 theorem fderiv_heatDuh_compactSlice_apply {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) (x v : V) :
@@ -199,8 +179,6 @@ theorem fderiv_heatDuh_compactSlice_apply {f : V × ℝ → F}
     (fun z => hasFDerivAt_spatialSlice (hf.differentiable (by simp)) z s) x,
     Kernel.heatSupGradient_apply hpos]
 
-
-
 theorem norm_fderiv_heatDuh_compactSlice_sub_le {f : V × ℝ → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {t : ℝ} (ht : 0 < t) {K : ℝ≥0}
     (hbound : ∀ s ∈ Icc (0 : ℝ) t, ∀ x, ‖f (x, s)‖ ≤ K) (x y : V) :
@@ -218,8 +196,6 @@ theorem norm_fderiv_heatDuh_compactSlice_sub_le {f : V × ℝ → F}
   exact (Kernel.heatD1Duh_sub_norm_le_halfHolder ht (compactSlice f hf.continuous hc)
     hnorm v (fun z => aestronglyMeasurable_heatD1Sup_compactSlice hf hc ht v z) x y).trans_eq
       (by ring)
-
-
 
 theorem exists_uniform_heat_potential_gradient_halfHolder {T : ℝ} (_hT : 0 < T) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ {f : V × ℝ → F} (hf : ContDiff ℝ ∞ f)

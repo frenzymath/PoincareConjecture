@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedNonCapFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
@@ -59,8 +52,6 @@ theorem canonical_vertex_fan_at_cap_outer_tip
         (fun s hs => hregion s (hi.symm ▸ hs)) (fun a => hi ▸ hband a) hind
     · exact T.canonical_vertex_fan_at_collinear_second_outer_tip g p R i q hzq hz hi
         (fun s hs => hregion s (hi.symm ▸ hs)) (fun a => hi ▸ hband a) hind
-
-
 
 theorem canonical_vertex_fan (g : RiemannianMetric 2 S) (hr : T.length < 1)
     (q : Euler.CoordinateVertex T.refinement.coordinates T.refinement.basis) :

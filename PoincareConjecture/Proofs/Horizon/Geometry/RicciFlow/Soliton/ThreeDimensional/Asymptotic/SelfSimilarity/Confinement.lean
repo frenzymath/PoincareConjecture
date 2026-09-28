@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.SelfSimilarity.GradientGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Flow.LinearGrowth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteSubcomplexContact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_edge_vertex_outside_of_finite_contact
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

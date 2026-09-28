@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryFaceHeight
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PiecewiseVertexSuperlevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {f : E → ℝ}
-
-
 
 theorem AffineOnFaces.half_le_binaryFaceCenter_iff (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) (A : Set E)
@@ -54,8 +42,6 @@ theorem AffineOnFaces.half_le_binaryFaceCenter_iff (hf : K.AffineOnFaces f)
     · intro h
       exact (hpos h).elim
 
-
-
 theorem AffineOnFaces.binaryFaceCenter_le_half (hf : K.AffineOnFaces f)
     {s : Finset E} (hs : s ∈ K.faces) (A : Set E)
     (hvalues : ∀ v ∈ s, (v ∈ A → f v = 1) ∧ (v ∉ A → f v = 0))
@@ -75,10 +61,6 @@ theorem AffineOnFaces.binaryFaceCenter_le_half (hf : K.AffineOnFaces f)
         (hvalues v hv).2 (fun h => hpos ⟨v, hv, h⟩))
     rw [hzero]
     norm_num
-
-
-
-
 
 theorem AffineOnFaces.binaryDerived_vertex_sides [Fintype K.faces]
     (hf : K.AffineOnFaces f) (A : Set E)
@@ -110,9 +92,6 @@ theorem AffineOnFaces.binaryDerived_vertex_sides [Fintype K.faces]
       exact ⟨v, hv, hnone v (hsu hv)⟩
     · obtain ⟨v, hv⟩ := K.nonempty_of_mem_faces u.property
       exact ⟨v, hus hv, hnone v hv⟩
-
-
-
 
 theorem AffineOnFaces.binaryDerived_superlevel_space [Fintype K.faces]
     (hf : K.AffineOnFaces f) (A : Set E)

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Critical
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +22,6 @@ private theorem swapMorseCoordinates_zero (x : E2) : swapMorseCoordinates x 0 = 
 private theorem swapMorseCoordinates_one (x : E2) : swapMorseCoordinates x 1 = x 0 := rfl
 
 variable {f : S2 → E3} (M : SphereMorseReduction f)
-
-
-
 
 theorem terminal_core_cases
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)

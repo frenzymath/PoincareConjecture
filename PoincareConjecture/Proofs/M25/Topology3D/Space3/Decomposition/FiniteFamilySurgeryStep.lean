@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilySurge
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyInnermostTube
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyLevelDeletion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_finite_family_surgery_step
     (hP : PlanarSchoenfliesService) (P : SurgeryCapProfile)

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Approximation
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Approximation.TangentialExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Approximation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -111,8 +105,6 @@ private theorem weakPartial_diffQuot_halfSpace {u g : E → ℝ}
       filter_upwards [ae_restrict_mem isOpen_halfSpace.measurableSet] with x hx
       rw [diffQuot_indicator_eq u k hk h hx]
     _ = _ := ht φ hφ hc hs
-
-
 
 theorem memW01p_mul_chosenWeakPartial_tangential
     {u χ : E → ℝ} (hu0 : MemW01p 2 u (halfSpace d))

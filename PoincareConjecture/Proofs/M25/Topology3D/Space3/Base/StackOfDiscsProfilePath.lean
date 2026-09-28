@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapCoordinates
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +8,8 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def stackProfileBlend {X : Type*} (f0 f1 : X → ℝ) (t : ℝ) (x : X) : ℝ :=
   (1 - Real.smoothTransition t) * f0 x + Real.smoothTransition t * f1 x
-
 
 theorem stackProfileBlend_contDiff {X : Type*}
     [NormedAddCommGroup X] [NormedSpace ℝ X]
@@ -33,7 +19,6 @@ theorem stackProfileBlend_contDiff {X : Type*}
     (h0.comp contDiff_snd)).add
       ((Real.smoothTransition.contDiff.comp contDiff_fst).mul (h1.comp contDiff_snd))
 
-
 theorem stackProfileBlend_pos {X : Type*} (f0 f1 : X → ℝ) (t : ℝ) (x : X)
     (h0 : 0 < f0 x) (h1 : 0 < f1 x) : 0 < stackProfileBlend f0 f1 t x := by
   by_cases h : Real.smoothTransition t = 1
@@ -42,7 +27,6 @@ theorem stackProfileBlend_pos {X : Type*} (f0 f1 : X → ℝ) (t : ℝ) (x : X)
       lt_of_le_of_ne (Real.smoothTransition.le_one t) h
     exact add_pos_of_pos_of_nonneg (mul_pos (sub_pos.mpr ht) h0)
       (mul_nonneg (Real.smoothTransition.nonneg t) h1.le)
-
 
 theorem stackProfileBlend_le {X : Type*} (f0 f1 : X → ℝ) (t : ℝ) (x : X) (L : ℝ)
     (h0 : f0 x ≤ L) (h1 : f1 x ≤ L) : stackProfileBlend f0 f1 t x ≤ L := by
@@ -54,18 +38,15 @@ theorem stackProfileBlend_le {X : Type*} (f0 f1 : X → ℝ) (t : ℝ) (x : X) (
         (mul_le_mul_of_nonneg_left h1 (Real.smoothTransition.nonneg t))
     _ = L := by ring
 
-
 theorem stackProfileBlend_of_nonpos {X : Type*} (f0 f1 : X → ℝ)
     (t : ℝ) (ht : t ≤ 0) (x : X) : stackProfileBlend f0 f1 t x = f0 x := by
   simp only [stackProfileBlend, Real.smoothTransition.zero_of_nonpos ht,
     sub_zero, one_mul, zero_mul, add_zero]
 
-
 theorem stackProfileBlend_of_one_le {X : Type*} (f0 f1 : X → ℝ)
     (t : ℝ) (ht : 1 ≤ t) (x : X) : stackProfileBlend f0 f1 t x = f1 x := by
   simp only [stackProfileBlend, Real.smoothTransition.one_of_one_le ht,
     sub_self, zero_mul, one_mul, zero_add]
-
 
 theorem stackProfileBlend_eq_of_eq {X : Type*} (f0 f1 : X → ℝ)
     (t : ℝ) (x : X) (h : f0 x = f1 x) : stackProfileBlend f0 f1 t x = f0 x := by
@@ -73,13 +54,10 @@ theorem stackProfileBlend_eq_of_eq {X : Type*} (f0 f1 : X → ℝ)
   rw [← h]
   ring
 
-
 noncomputable def stackCapProfilePath (a0 a1 : ℝ → ℝ) (b0 b1 : E2 → ℝ)
     (t : ℝ) (p : E2 × ℝ) : E2 × ℝ :=
   let x := stackProfileBlend a0 a1 t p.2 • p.1
   (x, stackProfileBlend b0 b1 t x * p.2)
-
-
 
 noncomputable def stackCapProfilePathDiffeomorph
     (a0 a1 : ℝ → ℝ) (b0 b1 : E2 → ℝ)
@@ -143,12 +121,10 @@ variable (hb0 : ContDiff ℝ ∞ b0) (hb1 : ContDiff ℝ ∞ b1)
 variable (hapos0 : ∀ v, 0 < a0 v) (hapos1 : ∀ v, 0 < a1 v)
 variable (hbpos0 : ∀ x, 0 < b0 x) (hbpos1 : ∀ x, 0 < b1 x)
 
-
 @[simp] theorem stackCapProfilePathDiffeomorph_apply (t : ℝ) (p : E2 × ℝ) :
     stackCapProfilePathDiffeomorph a0 a1 b0 b1 ha0 ha1 hb0 hb1
       hapos0 hapos1 hbpos0 hbpos1 (t, p) =
         (t, stackCapProfilePath a0 a1 b0 b1 t p) := rfl
-
 
 @[simp] theorem stackCapProfilePathDiffeomorph_symm_apply (t : ℝ) (p : E2 × ℝ) :
     (stackCapProfilePathDiffeomorph a0 a1 b0 b1 ha0 ha1 hb0 hb1
@@ -156,11 +132,9 @@ variable (hbpos0 : ∀ x, 0 < b0 x) (hbpos1 : ∀ x, 0 < b1 x)
         (t, ((stackProfileBlend a0 a1 t ((stackProfileBlend b0 b1 t p.1)⁻¹ * p.2))⁻¹ •
           p.1, (stackProfileBlend b0 b1 t p.1)⁻¹ * p.2)) := rfl
 
-
 theorem stackCapProfilePathDiffeomorph_time (p : ℝ × (E2 × ℝ)) :
     (stackCapProfilePathDiffeomorph a0 a1 b0 b1 ha0 ha1 hb0 hb1
       hapos0 hapos1 hbpos0 hbpos1 p).1 = p.1 := rfl
-
 
 theorem stackCapProfilePath_eq_flatCapDiffeomorph (t : ℝ) (p : E2 × ℝ) :
     stackCapProfilePath a0 a1 b0 b1 t p =
@@ -273,8 +247,6 @@ theorem exists_stackCapProfilePath_height_bound :
         Real.smoothTransition.one_of_one_le (le_refl (1 : ℝ))] using
           hbound 1 ⟨zero_le_one, le_rfl⟩ q
     · exact hbound t ⟨(lt_of_not_ge ht).le, (lt_of_not_ge ht1).le⟩ q
-
-
 
 theorem exists_stackCapProfilePath_common_ambient_germ
     (delta : ℝ) (hdelta : 0 < delta)

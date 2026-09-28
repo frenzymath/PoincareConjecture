@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Replacement.Lower
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.TerminalFamily
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -19,8 +13,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -38,8 +30,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_supported_complete_lower_cap_alignment_of_same_filling_boundary
     {v : E3} (hv : ‖v‖ = 1)
@@ -83,9 +73,6 @@ theorem exists_supported_complete_lower_cap_alignment_of_same_filling_boundary
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
-
 
 theorem exists_paired_terminal_lower_normalizations_with_common_preparation
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -197,8 +184,6 @@ theorem exists_paired_terminal_lower_normalizations_with_common_preparation
   · rw [hlabel] at hk
     cases hk
 
-
-
 theorem exists_matched_terminal_lower_normalizations_with_common_preparation
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -280,8 +265,6 @@ theorem exists_matched_terminal_lower_normalizations_with_common_preparation
   · change (R ∘ Nm) '' _ = _
     rw [image_comp, hNmimage]
     simpa only [hB] using hRimage
-
-
 
 theorem exists_terminal_lower_family_paired_normalizations
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -365,8 +348,6 @@ theorem exists_terminal_lower_family_paired_normalizations
     (fun z hz => hconstant j z ⟨hz.1, by linarith [hz.2]⟩)
     hr (C j) (hCs j) (hCcyl j) (hCrim j) (hCinside j)
 
-
-
 theorem exists_terminal_lower_family_matched_normalizations
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -446,8 +427,6 @@ theorem exists_terminal_lower_family_matched_normalizations
     (data.labels.symm (.inl j)) j (data.labels.apply_symm_apply _) hδ
     (fun z hz => hconstant j z ⟨hz.1, by linarith [hz.2]⟩)
     hr (C j) (hCs j) (hCcyl j) (hCrim j) (hCinside j)
-
-
 
 theorem exists_terminal_lower_family_matched_normalizations_of_prepared
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

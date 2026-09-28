@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseArcCuts
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -76,9 +64,6 @@ private theorem adjacent_transverse_width
 private theorem dependent_transport {X : Type*} {A : X → Sort*} {Y : Sort*}
     (f : ∀ x, A x → Y) {x y : X} (h : x = y) (p : A y) :
     f x (h.symm ▸ p) = f y p := by cases h; rfl
-
-
-
 
 theorem m64Intrinsic_exists_separated_transverse_arc_strips
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

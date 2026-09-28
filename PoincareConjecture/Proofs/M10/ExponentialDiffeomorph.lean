@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.ExponentialSlice
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def exponentialSliceDiffeomorph (G : LExponentialGeometry F T τmax p) (τ : ℝ)
     (hsource : (exponentialSliceChart G τ).source = univ)

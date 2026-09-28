@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceScalarContinuity
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.StereographicCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem capPersistence_stereographic_scalar_origin
     (D : LeviCivitaData (stereographicCylinderMetric 2 (by norm_num))) :
@@ -60,8 +48,6 @@ theorem capPersistence_stereographic_scalar_origin
   simp only [Matrix.diagonal_apply, ite_mul, zero_mul]
   norm_num [Fin.sum_univ_three,
     show (![1, 1, 0] : Fin 3 → ℝ) 2 = 0 from rfl]
-
-
 
 theorem capPersistence_exists_scalar_one_tolerance {eta : ℝ} (heta : 0 < eta) :
     ∃ zeta : ℝ, 0 < zeta ∧ ∀ (g : RiemannianMetric 3 E₃) (D : LeviCivitaData g),

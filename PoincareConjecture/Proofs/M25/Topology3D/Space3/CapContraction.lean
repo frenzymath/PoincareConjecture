@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology InnerProductSpace RealInnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_capContraction_cutoff (a : ℝ) (ha : 1 / 2 < a) :
     ∃ χ : ℝ → ℝ, ContDiff ℝ ∞ χ ∧ (∀ z, χ z ∈ Icc 0 1) ∧
@@ -37,11 +24,7 @@ theorem exists_capContraction_cutoff (a : ℝ) (ha : 1 / 2 < a) :
   · intro z hz
     exact (eventually_nhdsSet_iff_forall.mp hnear z hz).self_of_nhds
 
-
-
 def capContractionCoefficient (χ : ℝ → ℝ) (z : ℝ) : ℝ := 1 - χ z * (1 - z)
-
-
 
 theorem capContractionCoefficient_bounds (χ : ℝ → ℝ)
     (hχ : ∀ z, χ z ∈ Icc 0 1) (hzero : ∀ z, z ≤ 1 / 2 → χ z = 0)
@@ -60,11 +43,8 @@ theorem capContractionCoefficient_bounds (χ : ℝ → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 noncomputable def capContractionField (χ : ℝ → ℝ) (u x : E) : E :=
   u - capContractionCoefficient χ ⟪u, x⟫_ℝ • x
-
 
 theorem capContractionField_contDiff (χ : ℝ → ℝ) (hχ : ContDiff ℝ ∞ χ) (u : E) :
     ContDiff ℝ ∞ (capContractionField χ u) := by
@@ -72,13 +52,11 @@ theorem capContractionField_contDiff (χ : ℝ → ℝ) (hχ : ContDiff ℝ ∞ 
   exact contDiff_const.sub
     ((contDiff_const.sub ((hχ.comp hz).mul (contDiff_const.sub hz))).smul contDiff_id)
 
-
 theorem capContractionField_radial (χ : ℝ → ℝ) (u x : E) :
     ⟪x, capContractionField χ u x⟫_ℝ =
       ⟪u, x⟫_ℝ - capContractionCoefficient χ ⟪u, x⟫_ℝ * ‖x‖ ^ 2 := by
   simp only [capContractionField, inner_sub_right, real_inner_smul_right,
     real_inner_self_eq_norm_sq, real_inner_comm x u]
-
 
 theorem capContractionField_inward (χ : ℝ → ℝ)
     (hχ : ∀ z, χ z ∈ Icc 0 1) (hzero : ∀ z, z ≤ 1 / 2 → χ z = 0)
@@ -89,14 +67,11 @@ theorem capContractionField_inward (χ : ℝ → ℝ)
   rw [capContractionField_radial, hx, one_pow, mul_one]
   linarith
 
-
 theorem capContractionField_tangent (χ : ℝ → ℝ) (u x : E)
     (hx : ‖x‖ = 1) (hcap : χ ⟪u, x⟫_ℝ = 1) :
     ⟪x, capContractionField χ u x⟫_ℝ = 0 := by
   rw [capContractionField_radial, capContractionCoefficient, hcap, hx]
   ring
-
-
 
 theorem capContractionField_attraction (χ : ℝ → ℝ)
     (hχ : ∀ z, χ z ∈ Icc 0 1) (hzero : ∀ z, z ≤ 1 / 2 → χ z = 0)

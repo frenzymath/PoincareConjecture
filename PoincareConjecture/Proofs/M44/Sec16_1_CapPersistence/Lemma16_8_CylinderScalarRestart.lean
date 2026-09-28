@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_cylinder_scalar_restart_constant
     (P : M44CapPersistencePredecessors.{u}) (K : ℝ) :
@@ -69,9 +57,6 @@ theorem exists_cylinder_scalar_restart_constant
     exact (le_abs_self (d t)).trans (G.scalar_evolution_bound P hU hmap t htI x hphysical)
   exact le_two_mul_of_deriv_le_sq_above hL hM hq hcont hderiv
     (hinitial x) hrate hshort s hs
-
-
-
 
 theorem exists_cylinder_curvature_restart_constant
     (P : M44CapPersistencePredecessors.{u}) (K : ℝ) :

@@ -7,18 +7,6 @@ import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 import PoincareConjecture.Statements.M30Providers
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +21,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_compact_limit_scalar_bound_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

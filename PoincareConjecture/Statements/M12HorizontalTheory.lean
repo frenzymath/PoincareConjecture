@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ t : ℝ, SpacetimeSliceGeometry F t}
-
-
 
 structure SpacetimeHorizontalConnection (D : LeafwiseLeviCivitaFamily F S) where
   connection : CovariantDerivative (spacetimeModel n) (EuclideanSpace ℝ (Fin n))
@@ -55,8 +43,6 @@ structure SpacetimeHorizontalConnection (D : LeafwiseLeviCivitaFamily F S) where
           F.horizontalMetric.inner p (V p) (connection W p Z) =
         (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) F.timeFunction p Z) *
           horizontalMetricLieDerivative F p (V p) (W p)
-
-
 
 structure HorizontalRicciCalculus (D : LeafwiseLeviCivitaFamily F S) : Prop where
   lie_tensor : IsSmoothHorizontalCovariantTensor F (k := 2)

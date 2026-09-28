@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverJacobian
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,12 +27,6 @@ private theorem polar_point_annulus {p : ℝ × ℝ}
   have hnorm : ‖p.1 • angularPoint p.2‖ = p.1 := by
     rw [norm_smul, Real.norm_eq_abs, abs_of_pos hr, norm_angularPoint, mul_one]
   simpa only [scalarAnnulus, mem_ofPred_eq, hnorm, mem_Ioo] using hp.1
-
-
-
-
-
-
 
 theorem scalarAnnulus_integral_polar (F : Plane → ℝ) :
     (∫ x in scalarAnnulus, F x) =
@@ -78,12 +59,6 @@ theorem scalarAnnulus_integral_polar (F : Plane → ℝ) :
       · rw [indicator_of_notMem (mt hmem.mp hpS), indicator_of_notMem hpS, mul_zero]
     _ = _ := by rw [integral_indicator hS, Measure.restrict_restrict hS, hset]
 
-
-
-
-
-
-
 theorem scalarAnnulus_integrable_polar {F : Plane → ℝ}
     (hF : IntegrableOn F scalarAnnulus) :
     IntegrableOn (fun p : ℝ × ℝ => p.1 * F (p.1 • angularPoint p.2))
@@ -103,12 +78,6 @@ theorem scalarAnnulus_integrable_polar {F : Plane → ℝ}
   simp only [Function.comp_def, det_fderivPolarCoordSymm,
     abs_of_pos (lt_trans zero_lt_one hp.1.1), smul_eq_mul,
     loopPlaneEquivProd_symm_polar, indicator_of_mem (polar_point_annulus hp)]
-
-
-
-
-
-
 
 theorem scalarCoverMap_polar_relation (r theta : ℝ) :
     scalarCoverMap (r, theta / (2 * Real.pi)) = r • angularPoint theta := by

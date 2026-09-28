@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorGram
 import PoincareConjecture.Proofs.M40.Mathlib.SmoothChartDistance
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65TangentNorm_mfderiv_le_lipschitz
     (g : RiemannianMetric n M) {f : LoopPlane → M} {s : Set LoopPlane} {z : LoopPlane}
@@ -86,9 +73,6 @@ theorem m65TangentNorm_mfderiv_le_lipschitz
   rw [hnorm, ← hident]
   exact (ContinuousLinearMap.le_opNorm _ _).trans
     (mul_le_mul_of_nonneg_right hD (norm_nonneg v))
-
-
-
 
 theorem m65SpanningDisk_gram_bound {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

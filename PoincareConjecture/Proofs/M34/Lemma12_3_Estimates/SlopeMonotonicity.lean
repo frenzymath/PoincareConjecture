@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.AxisCurvature
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem initialWeightedSlope_deriv_nonpos (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) : deriv (initialWeightedSlope g₀) r ≤ 0 := by
@@ -31,8 +19,6 @@ theorem initialWeightedSlope_deriv_nonpos (g₀ : StandardInitialMetric)
       (sq_pos_of_pos hr)
   nlinarith
 
-
-
 theorem initialWeightedSlope_antitoneOn (g₀ : StandardInitialMetric) :
     AntitoneOn (initialWeightedSlope g₀) (Ioi 0) := by
   apply antitoneOn_of_deriv_nonpos (convex_Ioi 0)
@@ -41,16 +27,12 @@ theorem initialWeightedSlope_antitoneOn (g₀ : StandardInitialMetric) :
   intro r hr
   exact initialWeightedSlope_deriv_nonpos g₀ (by simpa using hr)
 
-
-
 theorem initialRadialLength_strictMono (g₀ : StandardInitialMetric) :
     StrictMono (initialRadialLength g₀) := by
   apply strictMono_of_deriv_pos
   intro r
   rw [(initialRadialLength_hasDerivAt g₀ r).deriv]
   exact initialRadialSpeed_pos g₀ r
-
-
 
 theorem initialWeightedSlope_nonneg (g₀ : StandardInitialMetric)
     {r₀ : ℝ} (hr₀ : 0 < r₀) : 0 ≤ initialWeightedSlope g₀ r₀ := by

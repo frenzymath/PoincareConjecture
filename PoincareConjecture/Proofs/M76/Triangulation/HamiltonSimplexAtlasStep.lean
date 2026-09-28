@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAffineSimplexModel
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonOpenSimplexCylinder
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAtlasHandleStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_simplex_atlas_handle_step
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

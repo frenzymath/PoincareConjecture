@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle
 open scoped ENNReal
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem memℓp_second_weight_circle {L : ℝ} [Fact (0 < L)] (f : C(AddCircle L, ℂ))
     (hf : ContDiff ℝ 2 (fun x : ℝ => f (x : AddCircle L))) :

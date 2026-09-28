@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeGaugeMomentum
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareGaugeEndpoints
 import PoincareConjecture.Proofs.M14.Mathlib.QuadraticShortTimeMinimality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -54,10 +45,6 @@ private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem squarePath_gauge_action_comparison
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.PathComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [T3Space M] [T2Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem ball_subset_image_ball_of_inverse_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -125,7 +115,6 @@ theorem ball_subset_image_ball_of_inverse_tangentNorm_le
   simpa only [hγ1] using hd
 
 omit [T3Space M] [T2Space N] in
-
 
 theorem image_ball_subset_ball_of_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

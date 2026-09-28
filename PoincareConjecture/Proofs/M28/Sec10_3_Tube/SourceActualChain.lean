@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceActualLaterCuts
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceLiteralChainAssembly
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_actual_source_balanced_chain_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

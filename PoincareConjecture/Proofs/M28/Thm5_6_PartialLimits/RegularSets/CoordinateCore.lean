@@ -2,24 +2,12 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology NNReal
 
 namespace PoincareConjecture.M28
-
-
 
 theorem coordinate_core_subset_image_of_fderiv_close
     {n : ℕ} {f : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -54,8 +42,6 @@ theorem coordinate_core_subset_image_of_fderiv_close
     simpa only [mem_closedBall, dist_zero_right] using hy
   rw [mem_closedBall, dist_eq_norm]
   exact (norm_sub_le y (f 0)).trans (by linarith)
-
-
 
 theorem eventually_coordinate_core_subset_image
     {n : ℕ} (f : ℕ → EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n))

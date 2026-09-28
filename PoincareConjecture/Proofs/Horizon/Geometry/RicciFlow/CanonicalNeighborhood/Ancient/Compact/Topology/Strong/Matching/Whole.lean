@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Trun
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Complement
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -91,8 +79,6 @@ private theorem isConnected_truncated_core_compl (C : CapCertificate g)
     exact hxK (Or.inl (C.core_subset_closed_core hx))
   exact Poincare.Topology.isConnected_of_inter_of_frontier_subset
     hK.isClosed.isOpen_compl C.end_neck.carrier_open hinter hfrontN hne
-
-
 
 theorem exists_whole_cover_of_frontier_in_cap_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 1000 ∧

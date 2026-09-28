@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderCu
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_CanonicalScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PinchingBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_cylinder_scalar_doubling_constant
     (P : M44CapPersistencePredecessors.{u}) (K : ℝ) :
@@ -74,10 +61,6 @@ theorem exists_cylinder_scalar_doubling_constant
   have htime : 8 * L * M * (T - 0) ≤ 1 := by simpa only [sub_zero] using hshort
   exact le_two_mul_of_deriv_le_sq_above hL hM hq hcont hderiv
     (hinitial x) hrate htime s hs
-
-
-
-
 
 theorem exists_cylinder_curvature_bound
     (P : M44CapPersistencePredecessors.{u}) (K : ℝ) :

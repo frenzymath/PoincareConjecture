@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Selection
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Rescaling
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +10,6 @@ open Poincare.GromovHausdorff
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture
-
-
 
 theorem exists_subseq_centers_rescaled_unitBall_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type*}
@@ -71,8 +62,6 @@ theorem exists_subseq_centers_rescaled_unitBall_scalar_integral_tendsto_atTop
   exact (hlarge' j).le.trans (le_mul_of_one_le_left
     ((Nat.cast_nonneg j).trans (hlarge' j).le)
     (one_le_pow₀ (Real.one_le_sqrt.mpr (hc j))))
-
-
 
 theorem exists_concentrated_rescaled_pointed_limit_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type}

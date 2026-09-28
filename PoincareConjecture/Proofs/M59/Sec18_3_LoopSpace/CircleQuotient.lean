@@ -2,21 +2,11 @@ import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Proofs.M02.CubeSphere
 import PoincareConjecture.Proofs.M59.Mathlib.CubeBoundaryQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
 
 namespace PoincareConjecture
-
-
 
 theorem m59CircleQuotient_nonempty :
     Nonempty (Proofs.M59.CubeBoundaryQuotient (Fin 1) LoopCircle) := by
@@ -39,8 +29,6 @@ theorem m59CircleQuotient_nonempty :
     exact congrArg e ((hfiber v (fun _ => 0)).mpr (Or.inr ⟨hv, hz⟩))
   · intro v w
     exact e.injective.eq_iff.trans (hfiber v w)
-
-
 
 noncomputable def m59CircleQuotient : Proofs.M59.CubeBoundaryQuotient (Fin 1) LoopCircle :=
   Classical.choice m59CircleQuotient_nonempty

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CutoffDeriv
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Cutoffs
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CoefficientMatrix
 
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -118,7 +112,6 @@ theorem matrixHeatResidual_of_notMem_tsupport (A : Matrix ι ι ℝ)
 
 omit [DecidableEq ι] in
 
-
 theorem spatial_cutoff_commutator_eq_zero
     {χ : EuclideanSpace ℝ ι × ℝ → ℝ} {f : EuclideanSpace ℝ ι × ℝ → F}
     (hχ : ContDiff ℝ ∞ χ) (hf : ContDiff ℝ ∞ f) (p : EuclideanSpace ℝ ι × ℝ)
@@ -139,8 +132,6 @@ theorem spatial_cutoff_commutator_eq_zero
   rw [fderiv_fderiv_spatialSlice hsmooth, fderiv_fderiv_spatialSlice hf,
     fderiv_spatialSlice hχ, fderiv_spatialSlice hf, fderiv_fderiv_spatialSlice hχ] at h
   simpa [h₁, h₂] using h
-
-
 
 theorem norm_matrixHeatResidual_smul_le_centered
     (A : Matrix ι ι ℝ) {L K B G c₁ c₂ Q ρ : ℝ}
@@ -210,8 +201,6 @@ theorem norm_matrixHeatResidual_smul_le_centered
       (fun h => hp (tsupport_smul_subset_left χ f h))]
     rw [norm_zero]
     positivity
-
-
 
 theorem norm_matrixHeatResidual_frozen_le
     {a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι}

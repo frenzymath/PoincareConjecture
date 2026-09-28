@@ -1,22 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 import Mathlib.Topology.DiscreteSubset
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -29,8 +13,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem finite_transverse_coincidences (e f : SmoothEdge M)
     (htrans : ∀ s ∈ Icc (0 : ℝ) 1, ∀ t ∈ Icc (0 : ℝ) 1, e.map s = f.map t →
@@ -63,7 +45,6 @@ theorem finite_transverse_coincidences (e f : SmoothEdge M)
   convert hcompactS.finite hdiscrete using 1
   ext p
   simp only [S, K, mem_ofPred_eq, mem_prod, and_assoc]
-
 
 theorem finite_transverse_edge_intersection (e f : SmoothEdge M)
     (htrans : ∀ s ∈ Icc (0 : ℝ) 1, ∀ t ∈ Icc (0 : ℝ) 1, e.map s = f.map t →

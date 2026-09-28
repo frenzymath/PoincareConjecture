@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalDiskProtectedBallProduct
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -124,8 +118,6 @@ theorem ChartwisePLSphere.no_single_meridian_in_protected_product
   exact s.no_single_plane_chart_lattice_arc_crossing L he hdim hSR gamma hc hzero hone
     (1 / 2) hcontact T hplane (1 / 2) (by norm_num) hball hcross
 
-
-
 theorem no_standard_meridian_compression_disk
     {ι κ α E : Type*} [Fintype ι] [Fintype κ]
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -197,8 +189,6 @@ theorem no_standard_meridian_compression_disk
       exact ⟨Or.inl hx, hmD hx⟩
   exact s.no_single_meridian_in_protected_product L he hdim hSR p hp hpi himage
     hboundary hend hmeet
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_original_meridian_noncompression
     {ι κ α E : Type*} [Fintype ι] [Fintype κ]

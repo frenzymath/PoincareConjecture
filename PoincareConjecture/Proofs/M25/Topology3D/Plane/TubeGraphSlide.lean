@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportedRadialSlide
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CompactConjugation
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AnnularExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_curveAnnularTube_bump_slide
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

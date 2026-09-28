@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -72,13 +61,9 @@ private theorem localDiffeomorph_codRestrict
     (hv.localInverse.open_target.mem_nhds hv.localInverse_mem_target)] with z hz
   exact (hv.localInverse_left_inv hz).symm
 
-
 def antipodalBallComplement (b : OpenPartialHomeomorph E3 UnitThreeSphere) :
     Set UnitThreeSphere :=
   (b '' Metric.ball 0 1 ∪ Neg.neg '' (b '' Metric.ball 0 1))ᶜ
-
-
-
 
 theorem exists_smooth_cover_of_matching_ball
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

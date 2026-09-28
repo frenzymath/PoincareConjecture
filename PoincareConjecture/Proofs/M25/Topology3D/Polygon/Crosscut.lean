@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.CrosscutPolygon
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.LocalRegionComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n m : ℕ} {p : Polygon E n} {q : Polygon E (m + 2)}
-
-
 
 theorem IsSimplePolygon.crosscut_intersects_preconnected
     (hp : IsSimplePolygon p) (hq : IsSimplePolygonalArc q) (hdim : Module.finrank ℝ E = 2)
@@ -93,8 +81,6 @@ theorem IsSimplePolygon.crosscut_intersects_preconnected
   exact hsclosed (closure_mono
     (hS.subset_left_of_subset_union hIP hOP hdis hSregions ⟨x, hxS, hxP⟩) hsS)
 
-
-
 theorem IsSimplePolygon.crosscut_intersects_continuous
     (hp : IsSimplePolygon p) (hq : IsSimplePolygonalArc q) (hdim : Module.finrank ℝ E = 2)
     (a b : Fin n) (hab : b ≠ a) (hfirst : q 0 = p a)
@@ -116,8 +102,6 @@ theorem IsSimplePolygon.crosscut_intersects_continuous
     hfirst hlast hinside (f '' Ioo 0 1)
     (isPreconnected_Ioo.image f (hf.mono Ioo_subset_Icc_self)) hfI r s hr hs hrcl hscl
   exact ⟨t, ht, htx.symm ▸ hx⟩
-
-
 
 theorem IsSimplePolygon.crosscut_intersects_continuous_of_cyclic_order
     (hp : IsSimplePolygon p) (hq : IsSimplePolygonalArc q) (hdim : Module.finrank ℝ E = 2)

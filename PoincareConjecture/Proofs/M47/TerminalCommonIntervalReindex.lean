@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,14 +10,12 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
 def terminalCommonInterval_reindex (V : GeneralizedBlowupSequence.{u})
     (sigma : ℕ → ℕ) (hsigma : StrictMono sigma) : GeneralizedBlowupSequence.{u} where
   flow k := V.flow (sigma k)
   base k := V.base (sigma k)
   base_scalar_pos k := V.base_scalar_pos (sigma k)
   scalar_diverges := V.scalar_diverges.comp hsigma.tendsto_atTop
-
 
 def terminalCommonInterval_reindexCylinder
     {V : GeneralizedBlowupSequence.{u}} {sigma : ℕ → ℕ} (hsigma : StrictMono sigma)
@@ -37,7 +27,6 @@ def terminalCommonInterval_reindexCylinder
   curvature_bound := e.curvature_bound
   negative_curvature_bound := e.negative_curvature_bound
 
-
 def terminalCommonInterval_originalCylinder
     {V : GeneralizedBlowupSequence.{u}} {sigma : ℕ → ℕ} {hsigma : StrictMono sigma}
     {k : ℕ} {A T B eta : ℝ}
@@ -48,7 +37,6 @@ def terminalCommonInterval_originalCylinder
   curvature_bound := e.curvature_bound
   negative_curvature_bound := e.negative_curvature_bound
 
-
 theorem terminalCommonInterval_reindex_cylinder_iff
     {V : GeneralizedBlowupSequence.{u}} {sigma : ℕ → ℕ} {hsigma : StrictMono sigma}
     {k : ℕ} {A T B eta : ℝ} :
@@ -56,7 +44,6 @@ theorem terminalCommonInterval_reindex_cylinder_iff
       k A T B eta) ↔ Nonempty (ControlledBlowupCylinder V (sigma k) A T B eta) :=
   ⟨fun ⟨e⟩ => ⟨terminalCommonInterval_originalCylinder e⟩,
     fun ⟨e⟩ => ⟨terminalCommonInterval_reindexCylinder hsigma e⟩⟩
-
 
 noncomputable def terminalCommonInterval_restrict
     {V : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T B eta A' T' B' eta' : ℝ}
@@ -80,7 +67,6 @@ noncomputable def terminalCommonInterval_restrict
     exact (e.negative_curvature_bound s (htime hs) x (hspace hx)).trans
       (mul_le_mul_of_nonneg_right heta (V.base_scalar_pos k).le)
 
-
 theorem terminalCommonInterval_restrict_pointMap
     {V : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T B eta A' T' B' eta' : ℝ}
     (e : ControlledBlowupCylinder V k A T B eta)
@@ -89,7 +75,6 @@ theorem terminalCommonInterval_restrict_pointMap
     (x : ((V.flow k).slice (V.base k).1).carrier) :
     (terminalCommonInterval_restrict e hA hT hB heta).embedding.pointMap s hs x =
       e.embedding.pointMap s ⟨(neg_le_neg hT).trans hs.1, hs.2⟩ x := rfl
-
 
 def terminalCommonInterval_compSubsequence
     {V : GeneralizedBlowupSequence.{u}} {sigma : ℕ → ℕ}
@@ -104,7 +89,6 @@ def terminalCommonInterval_compSubsequence
   base_preserving := G.base_preserving
   source_balls_in_image := G.source_balls_in_image
   pullback_metric_CInfinity := G.pullback_metric_CInfinity
-
 
 theorem terminalCommonInterval_reindex_compact
     {V : GeneralizedBlowupSequence.{u}} (h : BlowupBaseBallsCompact V)

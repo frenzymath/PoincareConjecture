@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orie
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralManifoldSupport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.ThreeManifoldTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,7 +15,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace Poincare.Topology
-
 
 theorem integralThreeManifoldHomologyTwo_isZero_typeZero
     {X : Type} [TopologicalSpace X] [T2Space X] [CompactSpace X]

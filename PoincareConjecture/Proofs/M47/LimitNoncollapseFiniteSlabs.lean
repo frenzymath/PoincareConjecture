@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseSourceCenters
 import PoincareConjecture.Proofs.M47.LimitNoncollapseWorldlines
 import PoincareConjecture.Statements.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem limitNoncollapse_eventually_source_noncollapsed
     (P : M47Predecessors.{u}) {S : GeneralizedBlowupSequence.{u}} {H : ENNReal}

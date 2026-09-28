@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Sph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem subset_distance_lt_or_gt_of_isPreconnected
     [T3Space M] [PreconnectedSpace M]
@@ -51,8 +39,6 @@ private theorem center_distance : (g.edist p p).toReal = 0 := by
     ⟨g.toRiemannianMetric⟩
   have he : g.edist p p = 0 := Manifold.riemannianEDist_self
   rw [he, ENNReal.toReal_zero]
-
-
 
 theorem distance_preimage_eq_range (H : RadialHomeomorph g p)
     {S : Set ℝ} (hS : S ⊆ Ioi 0) :
@@ -86,14 +72,12 @@ private theorem continuous_radial_restriction (H : RadialHomeomorph g p)
   exact continuous_subtype_val.comp (H.toHomeomorph.continuous.comp
     (continuous_fst.prodMk (continuous_snd.subtype_val.subtype_mk _)))
 
-
 theorem isConnected_distance_preimage (H : RadialHomeomorph g p)
     {S : Set ℝ} (hS : S ⊆ Ioi 0) (hconn : IsConnected S) :
     IsConnected {x | (g.edist p x).toReal ∈ S} := by
   let : ConnectedSpace S := isConnected_iff_connectedSpace.mp hconn
   rw [H.distance_preimage_eq_range hS]
   exact isConnected_range (H.continuous_radial_restriction hS)
-
 
 theorem isCompact_distance_preimage (H : RadialHomeomorph g p)
     {S : Set ℝ} (hS : S ⊆ Ioi 0) (hcomp : IsCompact S) :
@@ -102,32 +86,27 @@ theorem isCompact_distance_preimage (H : RadialHomeomorph g p)
   rw [H.distance_preimage_eq_range hS]
   exact isCompact_range (H.continuous_radial_restriction hS)
 
-
 theorem isConnected_distanceAnnulus (H : RadialHomeomorph g p)
     {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
     IsConnected (distanceAnnulus g p a b) := by
   exact H.isConnected_distance_preimage
     (S := Icc a b) (fun _ hx => ha.trans_le hx.1) (isConnected_Icc hab)
 
-
 theorem isCompact_distanceAnnulus (H : RadialHomeomorph g p)
     {a b : ℝ} (ha : 0 < a) : IsCompact (distanceAnnulus g p a b) := by
   exact H.isCompact_distance_preimage
     (S := Icc a b) (fun _ hx => ha.trans_le hx.1) isCompact_Icc
-
 
 theorem isConnected_distance_exterior (H : RadialHomeomorph g p)
     {r : ℝ} (hr : 0 ≤ r) : IsConnected {x | r < (g.edist p x).toReal} := by
   exact H.isConnected_distance_preimage
     (S := Ioi r) (fun _ hx => hr.trans_lt hx) isConnected_Ioi
 
-
 theorem isConnected_open_distanceAnnulus (H : RadialHomeomorph g p)
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b) :
     IsConnected {x | a < (g.edist p x).toReal ∧ (g.edist p x).toReal < b} := by
   exact H.isConnected_distance_preimage
     (S := Ioo a b) (fun _ hx => ha.trans_lt hx.1) (isConnected_Ioo hab)
-
 
 theorem center_mem_closure_open_distanceAnnulus
     [T3Space M] [PreconnectedSpace M]
@@ -160,7 +139,6 @@ theorem center_mem_closure_open_distanceAnnulus
     rw [hdy]
     exact ⟨hs, hsr⟩
 
-
 theorem isConnected_distance_interior
     [T3Space M] [PreconnectedSpace M]
     (H : RadialHomeomorph g p) {r : ℝ} (hr : 0 < r) :
@@ -178,8 +156,6 @@ theorem isConnected_distance_interior
       congrArg Subtype.val (H.toHomeomorph.apply_symm_apply ⟨x, hxp⟩)
     rw [← hz, H.distance_eq]
     exact z.2.property
-
-
 
 theorem distanceSphere_compl_separation
     [T3Space M] [PreconnectedSpace M]

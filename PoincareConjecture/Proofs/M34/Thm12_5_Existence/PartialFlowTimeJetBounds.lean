@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowSpatialJetBoun
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M34
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem partialFlow_compactPullback_timeDeriv_spatialJet_bound
     (P : RicciFlowCurvatureTheory.{0})

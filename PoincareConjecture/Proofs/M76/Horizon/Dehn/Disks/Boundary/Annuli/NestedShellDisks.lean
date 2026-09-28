@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 structure NestedShellDissection (S T : Set P2) where
   x : P2
   y : P2
@@ -91,8 +89,6 @@ private theorem shell_half_complement {S sq A U W L R : Set P2} {a b : P2}
   ext z
   simp only [mem_union, mem_inter_iff]
   tauto
-
-
 
 theorem exists_nested_shell_dissection {S T : Set P2}
     (hS : IsFinitePLBallPair P2 S (frontier S))

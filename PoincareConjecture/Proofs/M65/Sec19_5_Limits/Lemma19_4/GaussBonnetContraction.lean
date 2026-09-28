@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetConform
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ActualDiskGauss
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryGlobal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -69,10 +57,6 @@ private theorem actual_secondFundamentalForm_symm
     secondFundamentalForm_symm DE Ds hG u v]
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem logarithmicGaussDensity_le_gaussContraction [T2Space M]
     (S : M65MinimalDisk g connection gamma)

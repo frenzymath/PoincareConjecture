@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Profile
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -34,7 +24,6 @@ theorem deriv_axialTransitionProfile_eq_zero_of_not_mem
       rw [axialTransitionProfile_one hL hsL]
       exact (axialTransitionProfile_mem_Icc L t).2
     exact hmax.deriv_eq_zero
-
 
 theorem lintegral_ofReal_mul_deriv_axialTransitionProfile_of_le
     {L R κ : ℝ} (hL : 0 < L) (hLR : L ≤ R) (hκ : 0 ≤ κ) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspaceConnectedLinks
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalFacetIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem isConnected_faceLink_of_original_interior_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -81,9 +69,6 @@ theorem isConnected_faceLink_of_original_interior_chart
     rw [← K.closedFaceStar_singleton_eq_closedStar]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hsourceLink
-
-
-
 
 theorem isConnected_faceLink_of_original_boundary_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -146,10 +131,6 @@ theorem isConnected_faceLink_of_original_boundary_chart
     rw [← K.closedFaceStar_singleton_eq_closedStar]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hsourceLink
-
-
-
-
 
 theorem original_chart_stars_connected_links
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

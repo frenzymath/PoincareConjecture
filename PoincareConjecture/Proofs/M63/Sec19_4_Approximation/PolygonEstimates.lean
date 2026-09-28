@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.PolygonTotalCurvature
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,9 +10,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem m63PolygonEstimates (P : M62.CircleProductData F circumference)
     (t : ℝ) {N : ℕ} (polygon : M63GeodesicPolygon (F.metric t) (F.connection t) N)

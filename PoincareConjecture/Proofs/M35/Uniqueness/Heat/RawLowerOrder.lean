@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawRicciCoefficient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -114,8 +105,6 @@ theorem rawZeroOrderCoefficient_contDiff {g : RiemannianMetric n V}
         contDiff_const)
   · exact (rawRicciLinear_contDiff D).clm_apply contDiff_const
 
-
-
 theorem exists_raw_compact_lower_order_bound {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {K : Set V} (hK : IsCompact K) :
     ∃ C : ℝ, 0 < C ∧ ∀ x ∈ K,
@@ -136,8 +125,6 @@ theorem exists_raw_compact_lower_order_bound {g : RiemannianMetric n V}
     exact ((rawZeroOrderCoefficient D x).le_opNorm z).trans
       (mul_le_mul_of_nonneg_right ((hbB _ ⟨x, hx, rfl⟩).trans (le_max_right _ _))
         (norm_nonneg z))
-
-
 
 theorem raw_vector_heat_full_coordinate_operator {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} (hX : ContDiff ℝ ∞ X) (x : V) :

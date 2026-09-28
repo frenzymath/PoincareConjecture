@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderTransport
 import PoincareConjecture.Proofs.M12.GeneralizedRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +24,6 @@ theorem originalSliceMap_smooth (t : ℝ)
   let := (R.slices t).isManifold
   have h := (R.slices t).inclusion_smooth.comp S.identification.contMDiff
   exact h.congr (fun x => (S.identification_eq x).symm)
-
 
 noncomputable def realizedHorizontalForm (p : R.spacetime.Point)
     (v w : SpacetimeModelVector 3) : ℝ :=

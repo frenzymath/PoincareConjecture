@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.HorizontalTransport
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.CapGerm
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_horizontal_zero_section_chart
     (D : PartialDiffeomorph 𝓘(Real, E2 × Real) (𝓡 3) (E2 × Real) E3 ∞)
@@ -102,8 +98,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
-
 theorem terminal_surface_germ_of_horizontal_collar_matching
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
     (H G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (i : Fin 3)
@@ -166,9 +160,6 @@ theorem terminal_surface_germ_of_horizontal_collar_matching
       · rintro ⟨q, hq, rfl⟩
         exact ⟨⟨q, hq⟩, rfl⟩
     rwa [hsr, htr] at hsurface
-
-
-
 
 theorem exists_relative_horizontal_terminal_surface_germ_within
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

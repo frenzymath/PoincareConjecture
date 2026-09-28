@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.SelectedComponent
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.RawChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -40,8 +32,6 @@ theorem RawSourceCrossing.double_image_axis
       exact disjoint_left.mp C.disjoint ha hb
   rw [hpair, C.left_image z hz, C.right_image z hz]
   tauto
-
-
 
 theorem SourceCircleDecomposition.exists_isolated_component_target
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -82,9 +72,6 @@ theorem SourceCircleDecomposition.exists_isolated_component_target
     · exact (hzO.2 ⟨x, mem_iUnion.mpr ⟨⟨j, hji, hjm⟩, hj⟩, hxz⟩).elim
   · intro z hz
     exact ⟨hAO hz, image_mono (M.piece_subset_double i) hz⟩
-
-
-
 
 theorem SourceCircleDecomposition.exists_component_axis_charts
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

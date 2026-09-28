@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.DiscardedIdentification
 import PoincareConjecture.Proofs.M38.RetentionInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 noncomputable def oneCapConnectedSumData (i : Fin (F.event T hT).cap_count)
     (hall : ∀ j, j = i) :
@@ -96,8 +85,6 @@ noncomputable def oneCapConnectedSumData (i : Fin (F.event T hT).cap_count)
       · exact Or.inl (Or.inl hi)
       · exact Or.inr ⟨hr, hi⟩
     · exact Or.inl (Or.inr hr)
-
-
 
 theorem exists_one_cap_reconstruction (hcount : (F.event T hT).cap_count = 1) :
     ∃ B : GeneralizedSliceCarrier.{u}, IsCompact (Set.univ : Set B.carrier) ∧

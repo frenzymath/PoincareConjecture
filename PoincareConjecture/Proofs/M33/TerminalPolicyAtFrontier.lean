@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

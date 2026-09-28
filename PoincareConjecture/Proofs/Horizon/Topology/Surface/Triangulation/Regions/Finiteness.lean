@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteComplement
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Frontier
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,8 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
-
 
 theorem finite_regions_of_finite_local_complements
     (s : Finset M) (r : M → ℝ) (hpos : ∀ p ∈ s, 0 < r p)

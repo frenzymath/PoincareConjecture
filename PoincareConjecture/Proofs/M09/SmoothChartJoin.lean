@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothJoinCutoff
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology

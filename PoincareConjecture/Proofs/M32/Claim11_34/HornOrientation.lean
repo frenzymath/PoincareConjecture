@@ -6,25 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.Projectiv
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology TopologicalSpace
@@ -33,10 +14,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem no_projective_product_of_orientationCompatibleAtlas
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
@@ -61,9 +38,6 @@ theorem no_projective_product_of_orientationCompatibleAtlas
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
-
-
 theorem horn_interior_homeomorph (horn : StrongHorn E epsilon) :
     Nonempty ((UnitTwoSphere × Ioo (0 : ℝ) 1) ≃ₜ
       ↥(horn.carrier \ horn.boundary_sphere)) := by
@@ -84,9 +58,6 @@ theorem horn_interior_homeomorph (horn : StrongHorn E epsilon) :
       exact ⟨(q, ⟨t, ht⟩), horn.coordinate_eq _⟩
   exact ⟨hf.toHomeomorph.trans (Homeomorph.setCongr hrange)⟩
 
-
-
-
 theorem horn_interior_simplyConnected (horn : StrongHorn E epsilon) :
     SimplyConnectedSpace ↥(horn.carrier \ horn.boundary_sphere) := by
   let : SimplyConnectedSpace UnitTwoSphere :=
@@ -99,10 +70,6 @@ theorem horn_interior_simplyConnected (horn : StrongHorn E epsilon) :
     (e.trans (Homeomorph.prodUnique UnitTwoSphere Unit).toHomotopyEquiv).simplyConnectedSpace
   obtain ⟨h⟩ := horn_interior_homeomorph horn
   exact h.symm.toHomotopyEquiv.simplyConnectedSpace
-
-
-
-
 
 theorem horn_no_projective_product (horn : StrongHorn E epsilon) :
     ¬ ∃ f : RealProjectiveTwo × Ioo (-1 : ℝ) 1 → (E.extended.slice T).carrier,

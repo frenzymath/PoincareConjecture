@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.SourceT
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalSourceBalls
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalBallHomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -24,8 +16,6 @@ local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 def HamiltonZeroTerminalBallReplacement {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
@@ -45,8 +35,6 @@ def HamiltonZeroTerminalBallReplacement {ι κ : Type*}
           ∀ t x, F (t, x) ∈ hamiltonZeroBoxProjection ''
             ((Icc u v ×ˢ Icc a b) ×ˢ Icc alpha beta)
 
-
-
 def HamiltonZeroTerminalBallMapFamily {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
     (phi : C(H0, H0)) (T : Set X0) (u v a b alpha beta : ℝ) : Prop :=
@@ -57,8 +45,6 @@ def HamiltonZeroTerminalBallMapFamily {ι κ : Type*}
       frontier (P i) = P i ∩ frontier T ∧
       (∀ x ∈ P i, connectedComponentIn T x = P i) ∧
       HamiltonZeroTerminalBallReplacement e d phi (P i) u v a b alpha beta
-
-
 
 theorem HamiltonZeroTerminalSphericalCover.exists_ball_map_family
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -120,9 +106,6 @@ theorem HamiltonZeroTerminalSphericalCover.exists_ball_map_family
   exact ⟨hcompact, hPL, ⟨ball⟩, hfront, hcomponent,
     H, f, hf, hformula, hfRange, hinterior,
     fun x hx => (G.fst_eq_snd hx).symm, G, hG⟩
-
-
-
 
 theorem HamiltonZeroSourceBoundaryDiskData.exists_terminal_ball_maps
     {ι κ E : Type*} [TopologicalSpace E]

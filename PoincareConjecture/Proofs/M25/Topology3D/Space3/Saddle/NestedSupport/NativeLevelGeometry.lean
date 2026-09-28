@@ -11,23 +11,12 @@ import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 private theorem saddle_nested_compact_no_bypass
     (Slo Shi Vlo Vhi Clo Chi B R : Set E3)
@@ -93,9 +82,6 @@ private theorem saddle_nested_compact_no_bypass
   intro x hx
   have hp : T x ∈ P := ⟨x, hx, rfl⟩
   exact disjoint_left.mp hPQ hp (hShiQ (hPE hp).1)
-
-
-
 
 theorem saddle_nested_reference_positive_level_connected :
     let U : E2 → ℝ := fun v =>
@@ -239,9 +225,6 @@ theorem saddle_nested_reference_positive_level_connected :
         rw [heightCoordinates.apply_symm_apply, G.apply_symm_apply, hcoord]
   rw [← himage]
   exact hseed.image F hF.continuousOn
-
-
-
 
 theorem saddle_nested_reference_lower_connectors
     (e : OpenPartialHomeomorph UnitTwoSphere (ℝ × ℝ))
@@ -406,9 +389,6 @@ theorem saddle_nested_reference_lower_connectors
     rw [hlopen, image_iUnion] at hh
     simpa only [image_image] using hh
   exact ⟨hgamma, hgdis, hgend, hnegative, hnegativeOpen⟩
-
-
-
 
 theorem saddle_nested_native_no_bypass
     (j : UnitTwoSphere → E3) (hj : Continuous j) (hji : Injective j)

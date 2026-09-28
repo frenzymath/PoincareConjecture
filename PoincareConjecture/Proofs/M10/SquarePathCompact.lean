@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.SquarePathModulus
 import PoincareConjecture.Proofs.M10.ClippedCurves
 import PoincareConjecture.Proofs.M10.ConnectedEMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

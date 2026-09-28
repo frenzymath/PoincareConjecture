@@ -1,18 +1,6 @@
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,8 +11,6 @@ section Topological
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
 
-
-
 theorem compactChart_closure_image (e : OpenPartialHomeomorph X Y) {s : Set X}
     (hc : IsCompact (closure s)) (hs : closure s ⊆ e.source) :
     closure (e '' s) = e '' closure s := by
@@ -32,8 +18,6 @@ theorem compactChart_closure_image (e : OpenPartialHomeomorph X Y) {s : Set X}
   exact subset_antisymm
     (closure_minimal (image_mono subset_closure) (hc.image_of_continuousOn he).isClosed)
     he.image_closure
-
-
 
 theorem compactChart_frontier_image (e : OpenPartialHomeomorph X Y) {s : Set X}
     (ho : IsOpen s) (hc : IsCompact (closure s)) (hs : closure s ⊆ e.source) :
@@ -55,8 +39,6 @@ section Ball
 variable {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
 variable [TopologicalSpace Y] [T2Space Y]
 
-
-
 theorem compactChart_closure_ball (e : OpenPartialHomeomorph E Y) (x : E)
     {r : ℝ} (hr : 0 < r) (hs : closedBall x r ⊆ e.source) :
     closure (e '' ball x r) = e '' closedBall x r := by
@@ -66,8 +48,6 @@ theorem compactChart_closure_ball (e : OpenPartialHomeomorph E Y) (x : E)
   have hsource : closure (ball x r) ⊆ e.source := by
     simpa only [closure_ball x hr.ne'] using hs
   rw [compactChart_closure_image e hc hsource, closure_ball x hr.ne']
-
-
 
 theorem compactChart_frontier_ball (e : OpenPartialHomeomorph E Y) (x : E)
     {r : ℝ} (hr : 0 < r) (hs : closedBall x r ⊆ e.source) :

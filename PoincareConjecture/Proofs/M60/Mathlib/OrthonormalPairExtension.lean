@@ -1,22 +1,12 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_orthonormalBasis_pair (hdim : Module.finrank ℝ E = 3)
     (u v : E) (hu : inner ℝ u u = 1) (hv : inner ℝ v v = 1)

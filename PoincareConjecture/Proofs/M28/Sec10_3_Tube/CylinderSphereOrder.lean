@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -68,10 +59,6 @@ private theorem signedHeight_opposite_order
     exact lt_of_le_of_ne (hclosure (show 0 ≤ cylinderSignedHeight φ₀ x from hx.ge))
       (Ne.symm (hdisj x hx))
 
-
-
-
-
 theorem cylinderSignedHeight_opposite_order
     (phi0 phi1 : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1))
     (hdisj : ∀ x, cylinderSignedHeight phi0 x = 0 → cylinderSignedHeight phi1 x ≠ 0)
@@ -85,19 +72,15 @@ theorem cylinderSignedHeight_opposite_order
 
 variable {M : Type u} [TopologicalSpace M] {U : TopologicalSpace.Opens M}
 
-
-
 noncomputable def ambientCylinderSignedHeight
     (φ : U ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) (x : M) : ℝ := by
   classical
   exact if hx : x ∈ U then cylinderSignedHeight φ ⟨x, hx⟩ else 0
 
-
 theorem ambientCylinderSignedHeight_apply
     (φ : U ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) {x : M} (hx : x ∈ U) :
     ambientCylinderSignedHeight φ x = cylinderSignedHeight φ ⟨x, hx⟩ := by
   simp only [ambientCylinderSignedHeight, dif_pos hx]
-
 
 theorem continuousOn_ambientCylinderSignedHeight
     (φ : U ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
@@ -119,9 +102,6 @@ open M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : TopologicalSpace.Opens M}
-
-
-
 
 theorem exists_ordered_isotopic_sphere_heights
     (T : OpenCylinderModel (U : Set M)) {S₀ S₁ : Set M}

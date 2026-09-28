@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,7 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure SurgeryPreterminalSlab (F : SurgeryFlowData.{u}) (T : ℝ) where
   start : ℝ
@@ -54,8 +44,6 @@ structure SurgeryContinuationInput (F : SurgeryFlowData.{u}) (T : ℝ) where
   pinched : SurgeryFlowPinched F
   canonical : SurgeryCanonicalAssumption F
   noncollapsed : SurgeryNoncollapsed F
-
-
 
 structure SurgeryFlowExtension (F : SurgeryFlowData.{u}) where
   extended : SurgeryFlowData.{u}
@@ -108,10 +96,6 @@ structure SurgeryFlowExtension (F : SurgeryFlowData.{u}) where
     [IsEmpty (extended.slice T).carrier], ∀ hT' : T ∈ extended.surgery_times,
       (extended.vanishing_event T hT').tMinus = (F.vanishing_event T hT).tMinus
 
-
-
-
-
 structure SurgeryTerminalNonemptyOperationCertificate
     {F : SurgeryFlowData.{u}} {T : ℝ}
     (I : SurgeryContinuationInput F T)
@@ -150,8 +134,6 @@ structure SurgeryTerminalNonemptyOperationCertificate
     HEq (E.identify I.last_slab.terminal_event.tMinus source_tMinus_mem ''
         I.last_slab.terminal_event.retained_pre)
       ((E.extended.event T hT).retained_pre)
-
-
 
   cap_count_eq : I.last_slab.terminal_event.cap_count =
     (E.extended.event T hT).cap_count
@@ -193,9 +175,6 @@ structure SurgeryTerminalNonemptyOperationCertificate
     HEq I.last_slab.terminal_event.disappearing_cover
       (E.extended.event T hT).disappearing_cover
 
-
-
-
 structure SurgeryTerminalVanishingOperationCertificate
     {F : SurgeryFlowData.{u}} {T : ℝ}
     (I : SurgeryContinuationInput F T)
@@ -223,8 +202,6 @@ structure SurgeryTerminalVanishingOperationCertificate
   disappearing_cover_transport :
     HEq I.last_slab.terminal_vanishing_event.disappearing_cover
       (E.extended.vanishing_event T hT).disappearing_cover
-
-
 
 structure SurgeryContinuationScales (K : MetricSurgeryConstants) where
   epsilon₀ : ℝ

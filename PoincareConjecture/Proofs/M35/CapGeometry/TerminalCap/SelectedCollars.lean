@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.SelectedCenter
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.TwoCollars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
-
 
 theorem blowupSequence_bounded_tip_radial_collars
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

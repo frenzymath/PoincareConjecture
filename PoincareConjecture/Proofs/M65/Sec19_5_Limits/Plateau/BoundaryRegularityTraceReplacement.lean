@@ -5,17 +5,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Defs
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -65,8 +54,6 @@ private theorem homeomorph_closed_replacement
 
 open Classical in
 
-
-
 def traceInterpolation (A : Set LoopCircle) (q : LoopCircle → ℝ)
     (s : ℝ → LoopCircle) (E : OpenPartialHomeomorph LoopCircle ℝ)
     (f : LoopCircle → LoopCircle) (z : LoopCircle) : LoopCircle :=
@@ -78,10 +65,6 @@ private theorem interpolation_target
     {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) :
     AffineMap.lineMap (E u) (E v) t ∈ E.target :=
   hconv.mapsTo_lineMap (E.map_source hu) (E.map_source hv) ht
-
-
-
-
 
 theorem traceInterpolation_homeomorph
     (A : Set LoopCircle) (hA : IsClosed A)
@@ -159,10 +142,6 @@ theorem traceInterpolation_homeomorph
 
 set_option maxHeartbeats 1200000 in
 
-
-
-
-
 theorem traceInterpolation_joint_continuous
     (A : Set LoopCircle) (hA : IsClosed A)
     (q : LoopCircle → ℝ) (s : ℝ → LoopCircle)
@@ -214,11 +193,6 @@ theorem traceInterpolation_joint_continuous
   exact hh
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem weak_parameter_traceInterpolation
     (A : Set LoopCircle) (hA : IsClosed A)

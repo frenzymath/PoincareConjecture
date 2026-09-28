@@ -1,27 +1,12 @@
 import PoincareConjecture.Proofs.M38.ProjectiveReverse
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Components
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_sphere_collar_sides
     {M : Type*} [TopologicalSpace M] [T2Space M] [SimplyConnectedSpace M]
@@ -48,9 +33,6 @@ theorem exists_sphere_collar_sides
     exact hn ⟨(z.1, ⟨z.2, hz.2.1, hz.2.2.trans hδ⟩), hz.2.2, rfl⟩
   · rintro _ ⟨z, hz, rfl⟩
     exact hp ⟨(z.1, ⟨z.2, (neg_lt_zero.mpr hδ).trans hz.2.1, hz.2.2⟩), hz.2.1, rfl⟩
-
-
-
 
 theorem sphere_collar_positive_closed_side
     {M : Type*} [TopologicalSpace M]

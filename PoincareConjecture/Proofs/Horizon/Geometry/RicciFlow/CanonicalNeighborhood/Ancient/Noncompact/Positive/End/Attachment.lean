@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.LocalRegions.CapChain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.OutgoingChain
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.NoncompactKappa.Positive
-
-
-
 
 theorem exists_coveredCappedTube_of_cap_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 200 ∧
@@ -115,8 +101,6 @@ theorem exists_coveredCappedTube_of_cap_threshold :
           (S.2.unionOpen : Set M)) hchains
   exact ⟨A, hAcap, hAepsilon.trans hcap, hAcarrier.trans hwhole, htube ▸ hdisjoint⟩
 
-
-
 theorem exists_strongCappedTube_preserving_cap_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -154,7 +138,6 @@ theorem exists_strongCappedTube_preserving_cap_threshold :
   by_cases hx : x ∈ cap.core
   · exact Or.inl (hcore ▸ hx)
   · exact Or.inr (hstrong x hx)
-
 
 theorem exists_strongCappedTube_of_cap_threshold :
     ∃ epsilonStar : ℝ, 0 < epsilonStar ∧ epsilonStar ≤ 1 / 200 ∧

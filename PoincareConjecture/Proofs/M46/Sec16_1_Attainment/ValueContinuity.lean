@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ValueLowerContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem cappedSliceAction_upperSemicontinuousOn
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -78,8 +67,6 @@ theorem cappedSliceAction_upperSemicontinuousOn
     filter_upwards [self_mem_nhdsWithin] with s hs
     exact (cappedSliceAction_alternative hM04 hM12 LG E C
       (ha.trans_le hs.1) (hbound s hs)).1.trans_lt (heq ▸ hd)
-
-
 
 theorem cappedSliceAction_continuousOn
     (hM04 : RicciFlowCurvatureTheory.{0})

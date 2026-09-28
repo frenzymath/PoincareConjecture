@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 import Mathlib.MeasureTheory.Measure.OpenPos
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +10,6 @@ open Set Filter MeasureTheory Topology
 open scoped Topology Manifold
 
 namespace PoincareConjecture
-
-
 
 theorem m64ClosedEmbedding_continuous_representative
     {m : ℕ} {M : Type*} [TopologicalSpace M]
@@ -62,9 +49,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem M64ObservedWeakAnnulus.with_map_ae
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

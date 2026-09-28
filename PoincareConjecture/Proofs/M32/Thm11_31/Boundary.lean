@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M32.Thm11_31.Topology
 import PoincareConjecture.Proofs.M32.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -63,8 +49,6 @@ private theorem exists_injOn_nhds
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
 
-
-
 theorem horn_boundary_sphere_subset_carrier (horn : StrongHorn E epsilon) :
     horn.boundary_sphere ⊆ horn.carrier := by
   rw [horn.boundary_sphere_eq]
@@ -73,8 +57,6 @@ theorem horn_boundary_sphere_subset_carrier (horn : StrongHorn E epsilon) :
   subst t
   have hx := (horn.coordinate (q, ⟨0, le_rfl, by norm_num⟩)).property
   rwa [horn.coordinate_eq] at hx
-
-
 
 theorem horn_boundary_sphere_not_mem_interior (horn : StrongHorn E epsilon)
     {x : (E.extended.slice T).carrier} (hx : x ∈ horn.boundary_sphere) :
@@ -150,16 +132,12 @@ theorem horn_boundary_sphere_not_mem_interior (horn : StrongHorn E epsilon)
   have hzero : (0 : ℝ) ∈ interior (Ici (0 : ℝ)) := mem_interior_iff_mem_nhds.mpr hhalf
   simp only [interior_Ici, mem_Ioi, lt_self_iff_false] at hzero
 
-
-
 theorem horn_frontier_carrier_eq_boundary (horn : StrongHorn E epsilon) :
     frontier horn.carrier = horn.boundary_sphere := by
   apply Subset.antisymm (horn_frontier_carrier_subset_boundary horn)
   intro x hx
   exact ⟨subset_closure (horn_boundary_sphere_subset_carrier horn hx),
     horn_boundary_sphere_not_mem_interior horn hx⟩
-
-
 
 theorem horn_boundary_subset_closure_interior_part (horn : StrongHorn E epsilon) :
     horn.boundary_sphere ⊆ closure (horn.carrier \ horn.boundary_sphere) := by
@@ -173,8 +151,6 @@ theorem horn_boundary_subset_closure_interior_part (horn : StrongHorn E epsilon)
         ⟨mem_univ _, neg_lt_zero.mpr horn.collar_pos, by norm_num⟩)).continuousAt
   · rw [closure_prod_eq, closure_univ, closure_Ioo (by norm_num : (0 : ℝ) ≠ 1)]
     exact ⟨mem_univ _, le_rfl, by norm_num⟩
-
-
 
 theorem horn_boundary_neck_isSeparating (horn : StrongHorn E epsilon)
     {delta : ℝ} (N : TerminalStrongNeck E delta) (hdelta : delta < 1 / 2)

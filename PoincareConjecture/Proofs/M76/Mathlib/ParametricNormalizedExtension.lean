@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ParametricCorePasting
 import PoincareConjecture.Proofs.M76.Mathlib.NormalizedFieldExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter ContinuousLinearMap ContinuousMap
@@ -21,10 +11,6 @@ variable {X Y E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem Continuous.exists_frameTransverse_parametric_coreExtension
     {f : X × Y → E →L[ℝ] F} (hf : Continuous f) (J : F →L[ℝ] E)

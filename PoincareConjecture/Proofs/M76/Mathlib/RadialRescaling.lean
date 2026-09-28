@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConvexHull
 import PoincareConjecture.Proofs.M76.Mathlib.RadialStar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem LinearIndependent.image_smul_of_ne_zero {s : Set E}
     (hs : LinearIndependent ℝ ((↑) : s → E)) (r : E → ℝ)
@@ -32,8 +20,6 @@ theorem LinearIndependent.image_smul_of_ne_zero {s : Set E}
 namespace Geometry.SimplicialComplex
 
 variable {K : SimplicialComplex ℝ E}
-
-
 
 theorem face_subset_vertices {s : Finset E} (hs : s ∈ K.faces) :
     (s : Set E) ⊆ K.vertices := by
@@ -75,9 +61,6 @@ private theorem radial_rescale_common_face
 
 variable [DecidableEq E]
 
-
-
-
 def radialRescale (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
@@ -95,8 +78,6 @@ def radialRescale (K : SimplicialComplex ℝ E)
     exact convexHull_mono (Set.image_inter_subset _ _ _)
       (radial_rescale_common_face hlin hinj r hr hs ht hz hzt rfl).2
 
-
-
 theorem radialRescale_faces (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
@@ -104,15 +85,11 @@ theorem radialRescale_faces (K : SimplicialComplex ℝ E)
     (K.radialRescale hlin hinj r hr).faces =
       (fun s : Finset E => s.image (fun x => r x • x)) '' K.faces := rfl
 
-
-
 theorem finite_radialRescale_faces (hK : K.faces.Finite)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
     (r : E → ℝ) (hr : ∀ x ∈ K.vertices, 0 < r x) :
     (K.radialRescale hlin hinj r hr).faces.Finite := hK.image _
-
-
 
 theorem linearIndependent_radialRescale_face
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -125,8 +102,6 @@ theorem linearIndependent_radialRescale_face
     (fun x hx => (hr x (face_subset_vertices ht hx)).ne')
   rwa [← Finset.coe_image] at h
 
-
-
 theorem injOn_normalize_radialRescale
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
@@ -137,8 +112,6 @@ theorem injOn_normalize_radialRescale
   obtain ⟨_, ⟨t, ht, rfl⟩, hwt⟩ := mem_space_iff.mp hw
   simp only [Finset.coe_image] at hzs hwt
   exact (radial_rescale_common_face hlin hinj r hr hs ht hzs hwt hzw).1
-
-
 
 theorem normalize_image_radialRescale_space
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))

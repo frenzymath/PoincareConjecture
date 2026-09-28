@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.StandardPuncturedProjectiveCover
-
-
-
 
 theorem exists_punctured_homeomorph
     {Q : Type u} [TopologicalSpace Q]

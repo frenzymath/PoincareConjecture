@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.CollarGeometry
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.NestedAnnulusSource
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip

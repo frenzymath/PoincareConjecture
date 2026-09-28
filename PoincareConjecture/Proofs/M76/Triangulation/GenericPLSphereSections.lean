@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GenericSurfaceHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.HalfspaceGraphConnectivity
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedLinkSectionNonisolation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,12 +14,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem exists_intermediate_level_polygon_of_preconnected_signed_links
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

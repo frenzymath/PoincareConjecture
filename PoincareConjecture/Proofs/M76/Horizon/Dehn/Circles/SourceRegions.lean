@@ -6,24 +6,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem closed_inside_nested_or_disjoint {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))
@@ -69,9 +56,6 @@ namespace Dehn
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
 theorem polygon_source_region {n : ℕ} (P : Polygon E (n + 3))
     (e : E ≃L[ℝ] (ℝ × ℝ))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -110,10 +94,6 @@ theorem polygon_source_region {n : ℕ} (P : Polygon E (n + 3))
           exact ⟨P i, hPU (P.vertex_mem_boundary i), rfl⟩)
     intro x hx
     exact e.injective.mem_set_image.mp (hcontained (hcl ▸ mem_image_of_mem e hx))
-
-
-
-
 
 theorem interior_polygon_source_regions {m n : ℕ}
     (P : Polygon (Fin 2 → ℝ) (m + 3)) (Q : Polygon (Fin 2 → ℝ) (n + 3))

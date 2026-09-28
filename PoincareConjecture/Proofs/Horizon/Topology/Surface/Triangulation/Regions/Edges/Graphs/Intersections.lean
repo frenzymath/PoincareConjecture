@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Interfaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Widths
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -168,7 +158,6 @@ variable {S : D.OrientedEdgeGraphSubdivision e R C a b}
 
 omit [T2Space M] in
 
-
 theorem adjacent_band_intersection (i j : Fin S.count) (hij : i.succ = j.castSucc)
     (hseparate : ∀ t ∈ Icc (0 : ℝ) 1, ∀ s ∈ Icc (0 : ℝ) 1,
       ∀ z w : ℝ, |z| < δ → |w| < δ →
@@ -193,7 +182,6 @@ theorem adjacent_band_intersection (i j : Fin S.count) (hij : i.succ = j.castSuc
     simp only [Prod.eta, ContinuousLinearEquiv.symm_apply_apply, hij]
 
 omit [T2Space M] in
-
 
 theorem disjoint_band_carriers (i j : Fin S.count)
     (hseparate : Disjoint

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusLowerContinuity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusRadialFlip
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +16,6 @@ local notation "U" => T ⁻¹' O
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
 theorem m64Annulus_upperDomain_coordinates (p : LoopPlane) :
     p ∈ U ↔ 0 < p 0 ∧ p 0 < curvePeriod ∧ 0 < p 1 ∧ p 1 < 2 := by
   change T p ∈ O ↔ _
@@ -37,8 +23,6 @@ theorem m64Annulus_upperDomain_coordinates (p : LoopPlane) :
     PiLp.add_apply, m60PlaneReflection_apply, annulusPoint, Matrix.cons_val_zero,
     Matrix.cons_val_one, ite_true, zero_add, show (1 : Fin 2) ≠ 0 from by decide, ite_false]
   constructor <;> rintro ⟨h0, hP, h1, h2⟩ <;> exact ⟨h0, hP, by linarith, by linarith⟩
-
-
 
 theorem m64Annulus_radialDomains_inter : O ∩ U = S := by
   ext p
@@ -57,8 +41,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem weighted_upper_continuous_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -93,10 +75,6 @@ theorem weighted_upper_continuous_representative
     rw [hp, hmap, Function.comp_apply, m64AnnulusRadialFlip_involutive p]
   · intro x hx
     simpa only [Function.comp_apply, m64AnnulusRadialFlip_point, sub_self] using htrace x hx
-
-
-
-
 
 theorem weighted_radial_continuous_representative
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

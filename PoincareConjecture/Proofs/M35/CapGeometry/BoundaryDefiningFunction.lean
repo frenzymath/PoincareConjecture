@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.CarrierTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem transported_boundary_local_defining_function
     {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]

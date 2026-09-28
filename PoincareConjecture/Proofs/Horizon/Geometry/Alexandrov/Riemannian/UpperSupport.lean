@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Tail
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +30,6 @@ private theorem second_deriv_cosh {r : ℝ → ℝ} {t : ℝ}
     Real.cosh (r t) * deriv r t * deriv r t + Real.sinh (r t) * deriv (deriv r) t at hd
   rw [hfirst.deriv_eq, hd]
   ring
-
-
 
 theorem second_deriv_shifted_cosh_le {r : ℝ → ℝ} {t l C : ℝ}
     (hr : ContDiffAt ℝ 2 r t) (hrpos : 0 < r t) (hl : 0 ≤ l)
@@ -68,8 +58,6 @@ theorem second_deriv_shifted_cosh_le {r : ℝ → ℝ} {t l C : ℝ}
           ((Real.cosh (r t) / Real.sinh (r t)) * (C - deriv r t ^ 2)) :=
       add_le_add hcoeffmul hmul
     _ = _ := by ring
-
-
 
 theorem exists_small_hyperbolic_support_shift {d C ε : ℝ}
     (hd : 0 < d) (hε : 0 < ε) :
@@ -108,8 +96,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_cosh_distance_upper_support_of_shift
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -168,9 +154,6 @@ theorem exists_cosh_distance_upper_support_of_shift
       (by rw [hrt]; exact hbound)
     rw [hnormt, show δ * d + (1 - δ) * d = d by ring] at h
     exact h
-
-
-
 
 theorem exists_cosh_distance_upper_support
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_VariationContact
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem sliceMinimum_variationAction_isLocalMin
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {B : ℝ}
@@ -51,9 +39,6 @@ theorem sliceMinimum_variationAction_isLocalMin
   rw [M14.variationAction_zero, ← hq]
   exact hmin _ q (hq ▸ hbudget)
 
-
-
-
 theorem sliceMinimum_terminal_pair_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {B : ℝ}
@@ -72,9 +57,6 @@ theorem sliceMinimum_terminal_pair_eq_zero
   rw [hright] at hfirst
   exact (sliceMinimum_variationAction_isLocalMin hM12 hB hmin V hfix).hasDerivAt_eq_zero
     hfirst
-
-
-
 
 theorem sliceMinimum_terminal_velocity_eq_zero
     (hCoordinates : M12MetricPredecessors.{0} n)

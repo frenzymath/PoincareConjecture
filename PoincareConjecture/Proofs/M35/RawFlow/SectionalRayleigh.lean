@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.SectionalPlanes
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceExhaustion
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

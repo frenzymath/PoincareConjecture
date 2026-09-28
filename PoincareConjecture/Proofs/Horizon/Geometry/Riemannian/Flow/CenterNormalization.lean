@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Flow.Normalization
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_bounded_positive_rescaling_eq_one_near_compact
     (g : RiemannianMetric n M)
@@ -84,9 +74,6 @@ theorem exists_bounded_positive_rescaling_eq_one_near_compact
       have hbx : b x = s x := by simp only [b, hzero, sub_zero, one_mul, zero_add]
       rw [hbx]
       exact (g.tangentNorm_boundedField_le_one X x).trans (le_max_left _ _)
-
-
-
 
 theorem exists_smooth_globalFlow_of_rescaling_eq_one_near_compact
     (g : RiemannianMetric n M) (hc : MetricComplete g)

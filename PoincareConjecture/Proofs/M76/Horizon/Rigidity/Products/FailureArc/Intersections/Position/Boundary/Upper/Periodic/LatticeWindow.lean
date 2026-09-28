@@ -4,8 +4,6 @@ import Mathlib.Analysis.Normed.Group.Constructions
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -24,9 +22,6 @@ private theorem coe_eq_iff_integer_translate {p x y : ℝ} :
     refine ⟨n, ?_⟩
     rw [zsmul_eq_mul]
     linarith
-
-
-
 
 theorem exists_finite_lattice_window
     {p : ℝ} (hp : 0 < p) {S W : Set (ℝ × ℝ)}

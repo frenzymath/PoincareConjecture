@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Geometry.Manifold.Algebra.SMul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter TopologicalSpace
@@ -18,16 +9,12 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
 
-
-
 noncomputable def spherePolarMap (q₀ : UnitTwoSphere) (x : StandardCapSpace) :
     StandardCylinderSpace :=
   if hx : x = 0 then (q₀, -1) else
     (⟨‖x‖⁻¹ • x, by
       simp only [Metric.mem_sphere, dist_zero_right, norm_smul, Real.norm_eq_abs,
         abs_inv, abs_norm, inv_mul_cancel₀ (norm_ne_zero_iff.mpr hx)]⟩, ‖x‖ - 1)
-
-
 
 theorem spherePolarMap_sphere (q₀ q : UnitTwoSphere) :
     spherePolarMap q₀ q.val = (q, 0) := by
@@ -38,16 +25,12 @@ theorem spherePolarMap_sphere (q₀ q : UnitTwoSphere) :
     simp [spherePolarMap, hq, hnorm]
   · simp [spherePolarMap, hq, hnorm]
 
-
-
 theorem spherePolarMap_neg (q₀ : UnitTwoSphere) {x : StandardCapSpace} (hx : x ≠ 0) :
     spherePolarMap q₀ (-x) = (-(spherePolarMap q₀ x).1, (spherePolarMap q₀ x).2) := by
   apply Prod.ext
   · apply Subtype.ext
     simp [spherePolarMap, hx, neg_ne_zero.mpr hx]
   · simp [spherePolarMap, hx, neg_ne_zero.mpr hx]
-
-
 
 theorem spherePolarMap_contMDiffAt (q₀ : UnitTwoSphere)
     {x : StandardCapSpace} (hx : x ≠ 0) :
@@ -79,8 +62,6 @@ theorem spherePolarMap_contMDiffAt (q₀ : UnitTwoSphere)
       (fun y : U => spherePolarMap q₀ y.val) := heq.symm ▸ hprod
   exact (contMDiffAt_subtype_iff (U := U) (f := spherePolarMap q₀)
     (x := ⟨x, hx⟩)).mp (hp ⟨x, hx⟩)
-
-
 
 theorem spherePolarMap_mfderiv_injective (q₀ : UnitTwoSphere)
     {x : StandardCapSpace} (hx : x ≠ 0) :

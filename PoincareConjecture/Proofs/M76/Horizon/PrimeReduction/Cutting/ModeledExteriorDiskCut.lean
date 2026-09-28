@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.DiskCutBoundaryLabels
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalComponentCutFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

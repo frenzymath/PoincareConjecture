@@ -1,27 +1,7 @@
-
-
-
-
-
 module
 
 public import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.SemilocallySimplyConnected.On
 import Mathlib.Topology.Order
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.Topology
 
@@ -30,11 +10,6 @@ noncomputable section
 open CategoryTheory Filter FundamentalGroupoid Set _root_.Topology Path
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
-
 
 public structure IntervalPartition (n : ℕ) : Type where
 
@@ -50,12 +25,6 @@ namespace IntervalPartition
 
 attribute [simp, grind =] t_zero t_last
 
-
-
-
-
-
-
 public instance : IsEmpty (IntervalPartition 0) where
   false part := by
     have h0 : part.t 0 = 0 := part.t_zero
@@ -63,10 +32,6 @@ public instance : IsEmpty (IntervalPartition 0) where
     exact zero_ne_one (h0.symm.trans h1)
 
 end IntervalPartition
-
-
-
-
 
 public structure TubeData (X : Type*) [TopologicalSpace X] (n : ℕ) : Type _ where
 
@@ -86,15 +51,6 @@ public structure TubeData (X : Type*) [TopologicalSpace X] (n : ℕ) : Type _ wh
 
   V_right_subset : ∀ i : Fin n, V i.succ ⊆ U i
 
-
-
-
-
-
-
-
-
-
 public structure PathInTube {X : Type*} [TopologicalSpace X] {x y : X} {n : ℕ}
     (γ : Path x y) (part : IntervalPartition n) (T : TubeData X n) : Prop where
 
@@ -102,7 +58,6 @@ public structure PathInTube {X : Type*} [TopologicalSpace X] {x y : X} {n : ℕ}
     (part.t i.castSucc : ℝ) ≤ s ∧ s ≤ (part.t i.succ : ℝ) → γ s ∈ T.U i
 
   passes_through_V : ∀ j, γ (part.t j) ∈ T.V j
-
 
 lemma PathInTube.subpath_range_subset {X : Type*} [TopologicalSpace X] {x y : X} {n : ℕ}
     {γ : Path x y} {part : IntervalPartition n} {T : TubeData X n}
@@ -116,7 +71,6 @@ lemma PathInTube.subpath_range_subset {X : Type*} [TopologicalSpace X] {x y : X}
     hγ.stays_in_U i (Set.Icc.convexComb (part.t i.castSucc) (part.t i.succ) t)
       ⟨Set.Icc.le_convexComb h_mono t, Set.Icc.convexComb_le h_mono t⟩
 
-
 def TubeData.toSet {X : Type*} [TopologicalSpace X] {x y : X} {n : ℕ}
     (part : IntervalPartition n) (T : TubeData X n) : Set (Path x y) :=
   {γ | PathInTube γ part T}
@@ -125,8 +79,6 @@ def TubeData.toSet {X : Type*} [TopologicalSpace X] {x y : X} {n : ℕ}
     (part : IntervalPartition n) (T : TubeData X n) (γ : Path x y) :
     γ ∈ T.toSet part ↔ PathInTube γ part T :=
   Iff.rfl
-
-
 
 private theorem _root_.Path.exists_partition_with_property {x y : X} (γ : Path x y) (P : Set X → Prop)
     (h : ∀ z ∈ Set.range γ, ∃ U : Set X, IsOpen U ∧ z ∈ U ∧ P U) :
@@ -150,9 +102,6 @@ private theorem _root_.Path.exists_partition_with_property {x y : X} (γ : Path 
   refine ⟨N, part, fun i ↦ ?_⟩
   obtain ⟨⟨z, hz⟩, h_seg⟩ := ht_cover i
   exact ⟨U z hz, hU_open z hz, hU_P z hz, fun s hs ↦ h_seg ⟨hs.1, hs.2⟩⟩
-
-
-
 
 private theorem _root_.Path.exists_vertexNeighborhood [LocallyPathConnectedSpace X]
     {x y : X} {γ : Path x y} {n : ℕ} {t : Fin (n + 1) → unitInterval} {U : Fin n → Set X}
@@ -189,8 +138,6 @@ private theorem _root_.Path.exists_vertexNeighborhood [LocallyPathConnectedSpace
     · exact pathComponentIn_subset
     · exact Set.iInter_subset_of_subset i <| Set.iInter_subset_of_subset (Or.inr hi) <| subset_rfl
 
-
-
 private theorem _root_.Path.exists_vertexNeighborhood_family [LocallyPathConnectedSpace X]
     {x y : X} {γ : Path x y} {n : ℕ} {t : Fin (n + 1) → unitInterval} {U : Fin n → Set X}
     (h_mono : Monotone t) (hU_open : ∀ i, IsOpen (U i))
@@ -209,11 +156,6 @@ private theorem _root_.Path.exists_vertexNeighborhood_family [LocallyPathConnect
     exact hV_left i.castSucc i rfl
   · intro i
     exact hV_right i.succ i rfl
-
-
-
-
-
 
 public theorem _root_.Path.exists_pathHomotopyTrivial_tube [LocallyPathConnectedSpace X] {x y : X}
     (γ : Path x y) (hslsc : SemilocallySimplyConnectedOn (Set.range γ)) :
@@ -237,9 +179,6 @@ public theorem _root_.Path.exists_pathHomotopyTrivial_tube [LocallyPathConnected
   }
   refine ⟨n, part, T, ?_⟩
   exact { stays_in_U := hU_contains, passes_through_V := hγ_in_V }
-
-
-
 
 private theorem isOpen_setOf_forall_segment_mapsTo {x y : X} {n : ℕ}
     (part : IntervalPartition n) (U : Fin n → Set X) (hU_open : ∀ i, IsOpen (U i)) :
@@ -267,16 +206,11 @@ private theorem isOpen_setOf_forall_segment_mapsTo {x y : X} {n : ℕ}
     · intro h hs; exact h hs
   rw [h_eq]
 
-
-
   have hpre : {γ' : Path x y | Set.MapsTo γ' K_i (U i)} =
       (↑) ⁻¹' {f : C(unitInterval, X) | Set.MapsTo f K_i (U i)} := rfl
   rw [hpre]
   exact (ContinuousMap.isOpen_setOfPred_mapsTo h_compact_K (hU_open i)).preimage
     continuous_induced_dom
-
-
-
 
 private theorem isOpen_setOf_forall_vertex_mem {x y : X} {n : ℕ}
     (part : IntervalPartition n) (V : Fin (n + 1) → Set X) (hV_open : ∀ j, IsOpen (V j)) :
@@ -291,9 +225,6 @@ private theorem isOpen_setOf_forall_vertex_mem {x y : X} {n : ℕ}
   exact (hV_open j).preimage <|
     (continuous_eval_const (part.t j)).comp continuous_induced_dom
 
-
-
-
 theorem isOpen_pathTube {x y : X} {n : ℕ}
     (part : IntervalPartition n) (U : Fin n → Set X) (V : Fin (n + 1) → Set X)
     (hU_open : ∀ i, IsOpen (U i)) (hV_open : ∀ j, IsOpen (V j)) :
@@ -304,7 +235,6 @@ theorem isOpen_pathTube {x y : X} {n : ℕ}
   rw [Set.ofPred_and]
   exact (isOpen_setOf_forall_segment_mapsTo part U hU_open).inter
     (isOpen_setOf_forall_vertex_mem part V hV_open)
-
 
 theorem TubeData.isOpen {x y : X} {n : ℕ} (part : IntervalPartition n) (T : TubeData X n) :
     IsOpen (T.toSet (x := x) (y := y) part) := by
@@ -323,19 +253,12 @@ theorem TubeData.isOpen {x y : X} {n : ℕ} (part : IntervalPartition n) (T : Tu
   rw [this]
   exact isOpen_pathTube part T.U T.V T.U_open T.V_open
 
-
-
-
-
-
-
 theorem _root_.Path.exists_rung_paths {x y y' : X} {n : ℕ} (γ : Path x y) (γ' : Path x y')
     (part : IntervalPartition n) (T : TubeData X n)
     (hγ : PathInTube γ part T) (hγ' : PathInTube γ' part T) :
     ∃ α : (i : Fin (n + 1)) → Path (γ (part.t i)) (γ' (part.t i)),
       (∀ j, Set.range (α j) ⊆ T.V j) ∧
       (∀ (i : Fin n), Set.range (α i.castSucc) ⊆ T.U i ∧ Set.range (α i.succ) ⊆ T.U i) := by
-
 
   have rung_exists : ∀ j, ∃ α_j : Path (γ (part.t j)) (γ' (part.t j)),
       Set.range α_j ⊆ T.V j := fun j ↦
@@ -351,10 +274,6 @@ theorem _root_.Path.exists_rung_paths {x y y' : X} {n : ℕ} (γ : Path x y) (γ
   · calc Set.range (α i.succ) ⊆ T.V i.succ := hα_range i.succ
       _ ⊆ T.U i := T.V_right_subset i
 
-
-
-
-
 theorem _root_.Path.segment_rung_homotopy {a b c d : X} (U : Set X) (hU : IsPathHomotopyTrivial U)
     (γ : Path a b) (γ' : Path c d) (α_start : Path a c) (α_end : Path b d)
     (hγ : Set.range γ ⊆ U) (hγ' : Set.range γ' ⊆ U)
@@ -363,13 +282,6 @@ theorem _root_.Path.segment_rung_homotopy {a b c d : X} (U : Set X) (hU : IsPath
   apply hU.apply
   · rw [Path.trans_range]; exact Set.union_subset hγ hα_end
   · rw [Path.trans_range]; exact Set.union_subset hα_start hγ'
-
-
-
-
-
-
-
 
 theorem _root_.Path.Homotopic.Quotient.cast_mk_subpath_part_endpoints
     {x y : X} (p : Path x y) {n : ℕ} (part : IntervalPartition n)
@@ -382,20 +294,13 @@ theorem _root_.Path.Homotopic.Quotient.cast_mk_subpath_part_endpoints
   · simp [part.t_last]
   · simp
 
-
-
 theorem _root_.Path.source_eq_eval_partition_zero {x y : X} (p : Path x y)
     {n : ℕ} (part : IntervalPartition n) : x = p (part.t 0) := by
   rw [part.t_zero, p.source]
 
-
-
 theorem _root_.Path.target_eq_eval_partition_last {x y : X} (p : Path x y)
     {n : ℕ} (part : IntervalPartition n) : y = p (part.t (Fin.last n)) := by
   rw [part.t_last, p.target]
-
-
-
 
 private def _root_.Path.pasteSegmentAuxPath {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
@@ -405,8 +310,6 @@ private def _root_.Path.pasteSegmentAuxPath {x y y' : X} {n : ℕ}
     (γ'.subpath (part.t i) (part.t (Fin.last n)))).cast
     (by rw [part.t_zero, γ.source])
     (by rw [part.t_last, γ'.target])
-
-
 
 private lemma _root_.Path.pasteSegmentAuxPath_zero_homotopic {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
@@ -419,8 +322,6 @@ private lemma _root_.Path.pasteSegmentAuxPath_zero_homotopic {x y y' : X} {n : �
   rw [Path.Homotopic.Quotient.subpath_self,
       Path.Homotopic.Quotient.cast_mk_subpath_part_endpoints γ' part]
   simp
-
-
 
 private lemma _root_.Path.pasteSegmentAuxPath_last_homotopic {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
@@ -436,7 +337,6 @@ private lemma _root_.Path.pasteSegmentAuxPath_last_homotopic {x y y' : X} {n : �
   simp
 
 open Path.Homotopic.Quotient in
-
 
 private lemma _root_.Path.pasteSegmentAuxPath_succ_homotopic {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
@@ -463,27 +363,10 @@ private lemma _root_.Path.pasteSegmentAuxPath_succ_homotopic {x y y' : X} {n : �
     rw [← Path.Homotopic.Quotient.mk_trans, ← Path.Homotopic.Quotient.mk_trans]
     exact Path.Homotopic.Quotient.eq.mpr h_rectangle
 
-
-
   rw [← Path.Homotopic.Quotient.trans_assoc
         (Path.Homotopic.Quotient.mk (γ.subpath (part.t i.castSucc) (part.t i.succ))),
       h_eq,
       Path.Homotopic.Quotient.trans_assoc (Path.Homotopic.Quotient.mk (α i.castSucc))]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem _root_.Path.paste_segment_homotopies {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
@@ -509,7 +392,6 @@ theorem _root_.Path.paste_segment_homotopies {x y y' : X} {n : ℕ}
 
   exact (Path.pasteSegmentAuxPath_last_homotopic γ γ' part α).symm.trans
     ((h_chain (Fin.last n)).trans (Path.pasteSegmentAuxPath_zero_homotopic γ γ' part α))
-
 
 theorem _root_.Path.nullhomotopic_of_range_subset_pathHomotopyTrivial {x : X} (γ : Path x x)
     (U : Set X) (hU : IsPathHomotopyTrivial U) (hγU : Set.range γ ⊆ U) :
@@ -541,9 +423,6 @@ private theorem _root_.Path.last_rung_nullhomotopic_of_range_subset_pathHomotopy
   apply Path.nullhomotopic_of_range_subset_pathHomotopyTrivial αₙ Uₙ hUₙ
   simpa only [αₙ, Path.cast_coe] using h_αₙ_in_Uₙ
 
-
-
-
 theorem _root_.Path.paste_segment_homotopies_pathHomotopyTrivial_source {x y y' : X} {n : ℕ}
     (γ : Path x y) (γ' : Path x y') (part : IntervalPartition n)
     (α : (i : Fin (n + 1)) → Path (γ (part.t i)) (γ' (part.t i))) (h_rectangles : ∀ (i : Fin n),
@@ -565,12 +444,6 @@ theorem _root_.Path.paste_segment_homotopies_pathHomotopyTrivial_source {x y y' 
       Path.first_rung_nullhomotopic_of_range_subset_pathHomotopyTrivial γ γ' part α
         U₀ hU₀ h_α₀_in_U₀
   exact h_paste.trans <| Path.Homotopic.trans_left_of_nullhomotopic h_α₀_null
-
-
-
-
-
-
 
 public theorem _root_.Path.tube_subset_homotopy_class_source {x y y' : X} {n : ℕ}
     (γ : Path x y) (part : IntervalPartition n) (T : TubeData X n) (hγ : PathInTube γ part T)
@@ -600,7 +473,6 @@ public theorem _root_.Path.tube_subset_homotopy_class_source {x y y' : X} {n : �
           (T.U ⟨0, Nat.succ_pos n'⟩) (T.U_slsc ⟨0, Nat.succ_pos n'⟩)
           (hα_ranges ⟨0, Nat.succ_pos n'⟩).1
 
-
 theorem _root_.Path.paste_segment_homotopies_pathHomotopyTrivial {x y : X} {n : ℕ} (γ γ' : Path x y)
     (part : IntervalPartition n) (α : (i : Fin (n + 1)) → Path (γ (part.t i)) (γ' (part.t i)))
     (h_rectangles : ∀ (i : Fin n),
@@ -623,7 +495,6 @@ theorem _root_.Path.paste_segment_homotopies_pathHomotopyTrivial {x y : X} {n : 
       Path.last_rung_nullhomotopic_of_range_subset_pathHomotopyTrivial γ γ' part α Uₙ hUₙ h_αₙ_in_Uₙ
   exact (Path.Homotopic.trans_right_of_nullhomotopic h_αₙ_null).symm.trans h_source
 
-
 theorem _root_.Path.tube_subset_homotopy_class {x y : X} {n : ℕ}
     (γ : Path x y) (part : IntervalPartition n) (T : TubeData X n) (hγ : PathInTube γ part T)
     (γ' : Path x y) (hγ' : PathInTube γ' part T) :
@@ -639,8 +510,6 @@ theorem _root_.Path.tube_subset_homotopy_class {x y : X} {n : ℕ}
     have hdrop : Path.Homotopic (γ.trans ρ) γ :=
       Path.Homotopic.trans_right_of_nullhomotopic (γ₀ := γ) hρ_null
     exact hρ.symm.trans hdrop
-
-
 
 public theorem _root_.Path.exists_isOpen_mem_subset_setOf_homotopic
     [LocallyPathConnectedSpace X] {x y : X} (p : Path x y)
@@ -660,8 +529,6 @@ public theorem _root_.Path.exists_isOpen_mem_subset_setOf_homotopic
     · exact hp_in_tube
     · exact hp'
 
-
-
 public theorem _root_.Path.isOpen_setOf_homotopic_of_semilocallySimplyConnectedOn
     [LocallyPathConnectedSpace X] {x y : X} (p : Path x y)
     (hslsc : ∀ q : Path x y, Path.Homotopic q p →
@@ -674,15 +541,11 @@ public theorem _root_.Path.isOpen_setOf_homotopic_of_semilocallySimplyConnectedO
   rw [mem_nhds_iff]
   refine ⟨T, fun p' hp' ↦ (hT_subset hp').trans hq, hT_open, hqT⟩
 
-
-
 public theorem _root_.Path.isOpen_setOf_homotopic [SemilocallySimplyConnectedSpace X]
     [LocallyPathConnectedSpace X] {x y : X} (p : Path x y) :
     IsOpen {p' : Path x y | Path.Homotopic p' p} :=
   p.isOpen_setOf_homotopic_of_semilocallySimplyConnectedOn
     fun q _ ↦ SemilocallySimplyConnectedOn.of_semilocallySimplyConnectedSpace (Set.range q)
-
-
 
 public theorem _root_.Path.Homotopic.Quotient.discreteTopology_of_semilocallySimplyConnectedOn
     [LocallyPathConnectedSpace X] {x y : X}
@@ -697,10 +560,6 @@ public theorem _root_.Path.Homotopic.Quotient.discreteTopology_of_semilocallySim
       (fun q _ ↦ hslsc q) using 1
     ext p'
     exact Path.Homotopic.Quotient.eq
-
-
-
-
 
 public instance _root_.Path.Homotopic.Quotient.instDiscreteTopology
     [SemilocallySimplyConnectedSpace X] [LocallyPathConnectedSpace X] {x y : X} :

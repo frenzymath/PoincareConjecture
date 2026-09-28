@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.RimCircleCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.Properness
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

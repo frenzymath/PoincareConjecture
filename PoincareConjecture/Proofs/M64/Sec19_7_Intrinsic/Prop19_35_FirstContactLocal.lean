@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GlobalChart
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +22,6 @@ private theorem negative_derivative_eventually_below
     simp only [zero_add, smul_eq_mul] at ht
     have hlt : f t - f 0 < 0 := by nlinarith [inv_pos.mpr hpos]
     linarith
-
-
-
 
 theorem m64Intrinsic_first_contact_no_common_descent
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u)

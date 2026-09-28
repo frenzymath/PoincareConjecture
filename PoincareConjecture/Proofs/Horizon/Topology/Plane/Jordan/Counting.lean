@@ -1,36 +1,11 @@
-
-
-
-
-
 import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Topology.Connected.Clopen
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.Topology.Plane.Jordan.Counting
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem nat_card_connectedComponents_eq_two
     (a b : X) (hab : ConnectedComponents.mk a ≠ ConnectedComponents.mk b)
@@ -45,11 +20,6 @@ theorem nat_card_connectedComponents_eq_two
   rcases hcover x with h | h
   · exact mem_insert_iff.mpr (Or.inl h)
   · exact mem_insert_iff.mpr (Or.inr (mem_singleton_iff.mpr h))
-
-
-
-
-
 
 theorem connectedComponents_subtype_eq_iff {S : Set X} {x y : X}
     (hx : x ∈ S) (hy : y ∈ S) :

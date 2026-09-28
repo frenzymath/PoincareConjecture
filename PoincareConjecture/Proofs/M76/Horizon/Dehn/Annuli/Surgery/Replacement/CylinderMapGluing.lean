@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.CylinderBands
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

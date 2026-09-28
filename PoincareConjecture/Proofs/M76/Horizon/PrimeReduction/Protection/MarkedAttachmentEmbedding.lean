@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInp
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardSphereLift
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -92,8 +83,6 @@ theorem HamiltonMarkedProtectedBall.markedProjection_injOn_attaching_patch
   have hsnd : (QuotientAddGroup.mk x.2 : (κ → ℝ) ⧸ L.toAddSubgroup) =
       QuotientAddGroup.mk y.2 := congrArg Prod.snd hxy
   exact Prod.ext hfst (b.quotient_injOn_attaching_disk hpos hx.2 hy.2 hsnd)
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_marked_attaching_homeomorph
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

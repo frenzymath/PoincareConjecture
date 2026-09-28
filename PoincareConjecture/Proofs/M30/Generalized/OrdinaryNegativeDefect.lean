@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.M11AdaptedAtlas
 import PoincareConjecture.Proofs.M13.ConnectionScale
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Curvature.Conformal.ConformalPinching
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ namespace PoincareConjecture.M30.Cylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
-
-
-
 
 theorem negativeCurvaturePart_of_ordinaryFlow
     (e : GeneralizedFlowCylinder F C origin scale J.domain U)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Produc
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 local notation "I" => Icc (-1 : ℝ) 1
 
 open Classical in
-
 
 theorem CoorientedSurfaceStars.vertex_bases_cover
     (T : CoorientedSurfaceStars E) :
@@ -38,7 +35,6 @@ theorem CoorientedSurfaceStars.vertex_bases_cover
     exact (T.dualRegion_inter_surface {p}).symm.subset hxp
 
 open Classical in
-
 
 theorem SurfaceVertexProducts.exists_model_product
     {T : CoorientedSurfaceStars E} (P : SurfaceVertexProducts T) :
@@ -128,7 +124,6 @@ theorem SurfaceVertexProducts.exists_model_product
       rw [hvalue q x hq]
       exact P.negative q x hq)
 
-
 theorem CoorientedSurfaceStars.exists_model_product (T : CoorientedSurfaceStars E) :
     ∃ g : E × ℝ → E,
       FinitePiecewiseAffineOn g ((T.marked 2).space ×ˢ I) ∧
@@ -146,4 +141,3 @@ theorem CoorientedSurfaceStars.exists_model_product (T : CoorientedSurfaceStars 
   exact P.exists_model_product
 
 end Geometry.SimplicialComplex
-

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.IntegralGaugeRecovery
 import PoincareConjecture.Proofs.M03.Existence.MetricPerturbationNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +18,6 @@ variable {n : ℕ} {M : Type u}
 
 local notation "Fiber" =>
   fun x : M => TangentSpace (𝓡 n) x → TangentSpace (𝓡 n) x → ℝ
-
-
 
 noncomputable def certificate_of_metric_path
     {g₀ : RiemannianMetric n M} {T : ℝ}

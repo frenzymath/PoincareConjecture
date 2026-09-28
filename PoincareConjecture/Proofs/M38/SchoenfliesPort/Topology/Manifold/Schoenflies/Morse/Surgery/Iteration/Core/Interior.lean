@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Boundary
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -39,8 +31,6 @@ theorem closed_disk_ne_univ (D : SphereSurgeryCoreCap v g B) :
   obtain ⟨x, hx⟩ := (NormedSpace.sphere_nonempty (E := E2)).mpr (show (0 : Real) ≤ 1 by norm_num)
   have : D.chart x ∈ D.chart '' sphere (0 : E2) 1 := mem_image_of_mem _ hx
   simp only [hfront, mem_empty_iff_false] at this
-
-
 
 theorem interior_core_nonempty
     (L : List (SphereSurgeryCoreCap v g B))

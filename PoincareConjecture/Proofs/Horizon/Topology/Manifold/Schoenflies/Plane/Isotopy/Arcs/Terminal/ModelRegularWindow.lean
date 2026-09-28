@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.PhysicalModelChart
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -42,8 +40,6 @@ theorem terminal_raw_model_critical_of_physical
     ((hh q).mdifferentiableAt (by simp)), hq]
   ext x
   simp
-
-
 
 theorem exists_terminal_model_regular_window
     (d : TerminalSaddleGeometry M P p e)

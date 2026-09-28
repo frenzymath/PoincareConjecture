@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRay
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.ChordDefectLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +14,6 @@ namespace PoincareConjecture.M28
 
 variable {X : Type u} [MetricSpace X]
   (E : UniformSpace.Completion X) (alpha : ℝ)
-
-
-
-
-
 
 theorem exists_metricEndRay_chord_pseudometric
     (K : MetricEndRay E alpha → MetricEndRay E alpha → ℝ)

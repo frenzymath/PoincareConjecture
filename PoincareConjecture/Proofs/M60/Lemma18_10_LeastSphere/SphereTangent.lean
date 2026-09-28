@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.M60MinimalSpheres
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,23 +16,15 @@ noncomputable section
 
 namespace PoincareConjecture
 
-
-
 local instance (p : UnitTwoSphere) : NormedAddCommGroup (TangentSpace (𝓡 2) p) :=
   inferInstanceAs (NormedAddCommGroup LoopPlane)
-
-
 
 local instance (p : UnitTwoSphere) : InnerProductSpace ℝ (TangentSpace (𝓡 2) p) :=
   inferInstanceAs (InnerProductSpace ℝ LoopPlane)
 
-
-
 theorem m60RoundSphereInner_eq_inner (p : UnitTwoSphere)
     (v w : TangentSpace (𝓡 2) p) : m60RoundSphereInner p v w = inner ℝ v w :=
   M36.sphere_inclusion_inner p v w
-
-
 
 theorem m60Sphere_continuousRiemannianBundle :
     IsContinuousRiemannianBundle LoopPlane (TangentSpace (𝓡 2) : UnitTwoSphere → Type) := by
@@ -79,8 +62,6 @@ theorem m60Sphere_continuousRiemannianBundle :
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereDifferential_bound (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :

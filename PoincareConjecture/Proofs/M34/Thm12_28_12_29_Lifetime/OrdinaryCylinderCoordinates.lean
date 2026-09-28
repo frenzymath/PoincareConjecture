@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.IncludedMetricCoordinates
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinderPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,8 +20,6 @@ local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
 variable {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
   {origin scale : ℝ} {K : Set ℝ} {U : Set L.sliceCarrier.carrier}
-
-
 
 theorem ordinaryChapter11Cylinder_coefficient_contDiffOn
     (e : GeneralizedFlowCylinder (G) L.sliceCarrier origin scale K U)

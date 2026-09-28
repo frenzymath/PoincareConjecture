@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereTangency
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,14 +12,11 @@ variable {E F G : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [NormedAddCommGroup G] [InnerProductSpace ℝ G]
 
-
 theorem BallNeighborhoodChart.norm_symm_of_mem_boundary (B : BallNeighborhoodChart G F)
     {y : F} (hy : y ∈ B.boundary) : ‖B.chart.symm y‖ = 1 := by
   obtain ⟨x, hx, rfl⟩ := hy
   rw [B.chart.left_inv (B.closedBall_subset_source (sphere_subset_closedBall hx))]
   exact mem_sphere_zero_iff_norm.mp hx
-
-
 
 theorem chartTransition_tangent (A : BallNeighborhoodChart E F)
     (B : BallNeighborhoodChart G F) (x v : E) (hx : ‖x‖ = 1)

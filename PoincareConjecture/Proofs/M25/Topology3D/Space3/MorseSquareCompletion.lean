@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalSmoothInverse
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,18 +8,13 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def morseSquareMap (a b c : ℝ × ℝ → ℝ) (σ τ : ℝ) (p : ℝ × ℝ) : ℝ × ℝ :=
   (Real.sqrt (σ * a p) * (p.1 + b p / a p * p.2),
     Real.sqrt (τ * (c p - b p ^ 2 / a p)) * p.2)
 
-
 @[simp] theorem morseSquareMap_zero (a b c : ℝ × ℝ → ℝ) (σ τ : ℝ) :
     morseSquareMap a b c σ τ 0 = 0 := by
   simp [morseSquareMap]
-
-
 
 theorem morseSquareMap_identity (a b c : ℝ × ℝ → ℝ) (σ τ : ℝ)
     (hσ : σ * σ = 1) (hτ : τ * τ = 1) (p : ℝ × ℝ)
@@ -45,8 +30,6 @@ theorem morseSquareMap_identity (a b c : ℝ × ℝ → ℝ) (σ τ : ℝ)
   rw [← mul_assoc σ, hσa, ← mul_assoc τ, hτd]
   field_simp
   ring
-
-
 
 theorem exists_morse_square_chart (a b c : ℝ × ℝ → ℝ)
     (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b) (hc : ContDiff ℝ ∞ c)

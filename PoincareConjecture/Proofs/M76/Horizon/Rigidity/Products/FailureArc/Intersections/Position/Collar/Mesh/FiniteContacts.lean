@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.RegularLevel
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.GeneralPosition.FiniteNormalParameters
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

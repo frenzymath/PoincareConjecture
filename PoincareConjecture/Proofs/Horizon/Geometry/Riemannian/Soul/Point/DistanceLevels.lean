@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +27,6 @@ private theorem ne_center_of_positive_distance {x : M}
     ⟨g.toRiemannianMetric⟩
   simp only [RiemannianMetric.edist, Manifold.riemannianEDist_self,
     ENNReal.toReal_zero, lt_self_iff_false] at hx
-
 
 def distanceRestriction (H : RadialHomeomorph g p) (I : Set ℝ)
     (hI : ∀ r ∈ I, 0 < r) :
@@ -78,7 +68,6 @@ def distanceRestriction (H : RadialHomeomorph g p) (I : Set ℝ)
     ((H.distanceRestriction I hI z : {x : M // (g.edist p x).toReal ∈ I}) : M) =
       H.toHomeomorph (z.1, ⟨z.2, hI z.2 z.2.property⟩) := rfl
 
-
 def sphere (H : RadialHomeomorph g p) (r : ℝ) (hr : 0 < r) :
     UnitTwoSphere ≃ₜ distanceSphere g p r :=
   (Homeomorph.prodUnique UnitTwoSphere {s : ℝ // s = r}).symm.trans
@@ -89,7 +78,6 @@ def sphere (H : RadialHomeomorph g p) (r : ℝ) (hr : 0 < r) :
     ((H.sphere r hr θ : distanceSphere g p r) : M) =
       H.toHomeomorph (θ, ⟨r, hr⟩) := rfl
 
-
 def annulus (H : RadialHomeomorph g p) (a b : ℝ) (ha : 0 < a) :
     (UnitTwoSphere × Icc a b) ≃ₜ distanceAnnulus g p a b :=
   H.distanceRestriction (Icc a b) (fun _ hr => ha.trans_le hr.1)
@@ -98,7 +86,6 @@ def annulus (H : RadialHomeomorph g p) (a b : ℝ) (ha : 0 < a) :
     (z : UnitTwoSphere × Icc a b) :
     ((H.annulus a b ha z : distanceAnnulus g p a b) : M) =
       H.toHomeomorph (z.1, ⟨z.2, ha.trans_le z.2.property.1⟩) := rfl
-
 
 theorem annulus_eq_sphere (H : RadialHomeomorph g p) (a b r : ℝ)
     (ha : 0 < a) (hr : r ∈ Icc a b) (θ : UnitTwoSphere) :

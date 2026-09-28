@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.BoundaryContact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem localRefinementMesh_halfspace_iff_parent
     (M : TriangleMesh) (f l : Plane →ᵃ[ℝ] ℝ)
@@ -71,8 +62,6 @@ theorem lineRefinementTriangleEquiv_halfspace_iff_parent
   rw [hc]
   exact localRefinementMesh_halfspace_iff_parent M f l hl hmono t s
 
-
-
 theorem localRefinementBoundaryCuts_restrictTriangles_toFinset
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (f : Plane →ᵃ[ℝ] ℝ)
     (t : (M.restrictTriangles P).Triangle) :
@@ -82,7 +71,6 @@ theorem localRefinementBoundaryCuts_restrictTriangles_toFinset
   simp only [List.mem_toFinset, mem_localRefinementBoundaryCuts_iff_crossed_edge]
   rfl
 
-
 theorem halfspace_restriction_support_subset (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ) :
     (M.restrictTriangles (fun t => M.triangleCarrier t ⊆ {z | 0 ≤ l z})).toPlaneComplex.support ⊆
       {z | 0 ≤ l z} := by
@@ -90,8 +78,6 @@ theorem halfspace_restriction_support_subset (M : TriangleMesh) (l : Plane →�
   rw [TriangleMesh.toPlaneComplex_support] at hz
   obtain ⟨t, ht, hzt⟩ := mem_iUnion₂.mp hz
   exact ((M.mem_restrictTriangles_triangles _).mp ht).2 hzt
-
-
 
 theorem mem_halfspace_restriction_of_mem_interior
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ)
@@ -116,8 +102,6 @@ theorem mem_halfspace_restriction_of_mem_interior
   exact (closure_minimal hpos N.toPlaneComplex.isCompact_support.isClosed)
     (isOpen_interior.inter_closure ⟨hq, hqcl⟩)
 
-
-
 theorem halfspace_restriction_support_eventuallyEq
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ)
     (hl : Function.Surjective l) (hmono : M.IsMonochromatic l)
@@ -127,8 +111,6 @@ theorem halfspace_restriction_support_eventuallyEq
   filter_upwards [isOpen_interior.mem_nhds hq] with z hz
   exact propext ⟨fun h => halfspace_restriction_support_subset M l h,
     fun h => mem_halfspace_restriction_of_mem_interior M l hl hmono hz h⟩
-
-
 
 theorem not_mem_interior_halfspace_restriction_of_zero
     (M : TriangleMesh) (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l)
@@ -144,8 +126,6 @@ theorem not_mem_interior_halfspace_restriction_of_zero
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem meshVertexAngleContribution_lineRefinementMesh_halfspace
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -169,9 +149,6 @@ theorem meshVertexAngleContribution_lineRefinementMesh_halfspace
       (range_meshTriangleBasis_lineRefinementTriangleEquiv M f t s) x
   · simp only [ht, if_false, Finset.sum_const_zero]
 
-
-
-
 theorem lineRefinementMesh_halfspace_vertex_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (f l : Plane →ᵃ[ℝ] ℝ)
@@ -193,9 +170,6 @@ theorem lineRefinementMesh_halfspace_vertex_contribution
   apply Finset.sum_congr rfl
   intro t _
   split_ifs <;> simp only [add_zero]
-
-
-
 
 theorem meshVertexAngleContribution_halfspace_refine_commute
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -221,8 +195,6 @@ theorem meshVertexAngleContribution_halfspace_refine_commute
     (by simp) (fun t : M.Triangle =>
       ∑ q ∈ (localRefinementBoundaryCuts M f t).toFinset,
         if F q = x then Real.pi else 0))
-
-
 
 theorem lineRefinementMesh_halfspace_new_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -252,8 +224,6 @@ theorem lineRefinementMesh_halfspace_new_vertex_fan
   exact lineRefinementMesh_new_boundary_vertex_fan g F N f U hqU
     (not_mem_interior_halfspace_restriction_of_zero M l hl hql) hF hFi
     ((restrictTriangles_support_subset M P).trans hM)
-
-
 
 theorem lineRefinementMesh_halfspace_old_vertex_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

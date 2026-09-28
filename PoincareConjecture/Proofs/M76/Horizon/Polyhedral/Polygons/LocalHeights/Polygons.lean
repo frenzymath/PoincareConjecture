@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Ca
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Intersections
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricCyclePolygons
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_triangleSlice_polygons_of_marked_fans (K : SimplicialComplex ℝ E)
     {A : Finset E → E →ᵃ[ℝ] ℝ} (hA : K.CompatibleTriangleZeroSets A)

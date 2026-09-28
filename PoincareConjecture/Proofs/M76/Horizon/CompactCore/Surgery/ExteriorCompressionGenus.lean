@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ConnectedExteri
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ExteriorCompressionLocalFrontier
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.RetainedCompressionGenera
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains

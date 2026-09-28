@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SphereUnionInvariant
 import PoincareConjecture.Statements.M74ConnectedSumReduction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -19,9 +9,6 @@ universe u
 
 namespace PoincareConjecture
 namespace M74
-
-
-
 
 theorem SphereUnion.of_reflTransGen
     (hstep : ∀ A C : GeneralizedSliceCarrier.{u},
@@ -33,9 +20,6 @@ theorem SphereUnion.of_reflTransGen
   | refl => exact hA
   | tail _ hnext ih => exact hstep _ _ hnext ih
 
-
-
-
 theorem SphereUnion.of_assembly
     (hstep : ∀ A C : GeneralizedSliceCarrier.{u},
       SmoothConnectedSumStep A C → SphereUnion A → SphereUnion C)
@@ -45,10 +29,6 @@ theorem SphereUnion.of_assembly
       Nonempty (Diffeomorph (𝓡 3) (𝓡 3) (pieces i).carrier ThreeSphere ∞)) :
     SphereUnion C :=
   SphereUnion.of_reflTransGen hstep A.operations (SphereUnion.initial A hpieces)
-
-
-
-
 
 theorem connectedSumReduction_of_preserves_sphereUnion
     (hstep : ∀ A C : GeneralizedSliceCarrier.{u},

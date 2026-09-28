@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_DigonRegularFans
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,9 +9,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_coordinate_vertex_angle_nonneg
     {I : Type*} [Fintype I] (g : RiemannianMetric 2 AnnulusCoordinates)
@@ -31,9 +25,6 @@ theorem m64Intrinsic_coordinate_vertex_angle_nonneg
   · exact le_rfl
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_digon_fan_defects
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.NearbyCurveTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothTransportTimes
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_supported_curve_family_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CrossCofactor
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.LinearAlgebra.Matrix.ToLin
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Matrix
@@ -23,12 +10,10 @@ open scoped ContDiff InnerProductSpace Matrix.Norms.Elementwise
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def cofactorNormalMatrix (A : E3 →L[ℝ] E3) :
     Matrix (Fin 3) (Fin 3) ℝ :=
   LinearMap.toMatrix (PiLp.basisFun 2 ℝ (Fin 3))
     (PiLp.basisFun 2 ℝ (Fin 3)) A.toLinearMap
-
 
 noncomputable def cofactorNormal (A : E3 →L[ℝ] E3) (p : E3) : E3 :=
   (EuclideanSpace.equiv (Fin 3) ℝ).symm
@@ -41,11 +26,9 @@ private theorem cofactorNormalMatrix_mulVec (A : E3 →L[ℝ] E3) (v : E3) :
   exact A.toLinearMap.toMatrix_mulVec_repr
     (PiLp.basisFun 2 ℝ (Fin 3)) (PiLp.basisFun 2 ℝ (Fin 3)) v
 
-
 theorem cofactorNormal_smul (A : E3 →L[ℝ] E3) (r : ℝ) (p : E3) :
     cofactorNormal A (r • p) = r • cofactorNormal A p := by
   simp only [cofactorNormal, map_smul, Matrix.mulVec_smul]
-
 
 theorem contDiff_cofactorNormal :
     ContDiff ℝ ∞ (fun z : (E3 →L[ℝ] E3) × E3 => cofactorNormal z.1 z.2) := by
@@ -128,8 +111,6 @@ private theorem plane_basis_pair_independent
   convert! hi using 1
   ext i
   fin_cases i <;> rfl
-
-
 
 theorem cofactorNormal_nonzero_orthogonal (A : E3 →L[ℝ] E3) (p : E3)
     (hp : ‖p‖ = 1) (hAp : A p = 0)

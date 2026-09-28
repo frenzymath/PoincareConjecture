@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceHorizontalWeak
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +13,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem m64HorizontalSource_boundary_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -46,8 +38,6 @@ theorem m64HorizontalSource_boundary_integral
     rw [← mul_assoc, m64HorizontalSource_inverse_deriv ht hi, one_mul]
   simp only [smul_sub, hpoint, ← mul_smul, hmul]
 
-
-
 theorem m64HorizontalSource_preserves_boundary
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     {tau : ℝ ≃ₜ ℝ} (ht : ContDiff ℝ ∞ tau) (hi : ContDiff ℝ ∞ tau.symm)
@@ -68,8 +58,6 @@ theorem m64HorizontalSource_preserves_boundary
     hboundary _ (m64HorizontalSourceRadialTest_contDiff hi hp (by simp)),
     m64HorizontalSource_boundary_integral (ht.differentiable (by simp))
       (hi.differentiable (by simp)) hmono h0 hP]
-
-
 
 theorem m64HorizontalSource_preserves_seam
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

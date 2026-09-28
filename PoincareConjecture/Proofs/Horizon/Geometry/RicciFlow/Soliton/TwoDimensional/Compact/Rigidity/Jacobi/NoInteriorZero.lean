@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.NoConjugate
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,8 +31,6 @@ private theorem exists_normal_ne_zero (v : EuclideanSpace ℝ (Fin 2)) (hv : v �
     apply hu
     exact Subtype.ext h
   · exact Submodule.mem_orthogonal_singleton_iff_inner_right.mp u.property
-
-
 
 theorem scalar_jacobi_ne_zero_of_minimizing (D : LeviCivitaData g)
     {γ : ℝ → M} {ε C c : ℝ} (hε : 0 < ε) (hC : 0 < C)

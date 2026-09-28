@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +10,6 @@ variable {X : Type*} [TopologicalSpace X] {U : Set X} [Nonempty U]
   {ι : Type*}
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem ChartwisePLSphere.exists_open_inclusion
     (hU : IsOpen U) {e : ι → OpenPartialHomeomorph U V3} {S : Set U}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLoss
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcTurning
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.IntegratedLocalizedTurning
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -26,8 +17,6 @@ open M62
 variable {n : Nat} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
 
 theorem m63SmallSubarcs_transport_of_curvature_bound
     (F : RicciFlow n M (Icc a b)) (c : Real → Real → M)

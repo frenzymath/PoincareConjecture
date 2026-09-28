@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.HolderMoment
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.HigherDerivatives
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +12,6 @@ namespace Poincare.Parabolic.Interior.Kernel
 variable {V : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [FiniteDimensional ℝ V]
   [MeasurableSpace V] [BorelSpace V] [Nontrivial V]
-
 
 def baseD3Half (x : V) : ℝ := Real.sqrt ‖x‖ * baseD3Maj x
 
@@ -64,14 +56,12 @@ theorem baseD3Half_int : Integrable (baseD3Half : V → ℝ) := by
     exact ⟨by positivity, by nlinarith [norm_nonneg x]⟩
   exact mul_le_mul_of_nonneg_right hroot (baseD3Maj_nonneg x)
 
-
 def heatC3Half (V : Type*) [NormedAddCommGroup V] [InnerProductSpace ℝ V]
     [FiniteDimensional ℝ V] [MeasurableSpace V] [BorelSpace V] : ℝ :=
   ∫ x : V, baseD3Half x
 
 omit [Nontrivial V] in
 theorem heatC3Half_nonneg : 0 ≤ heatC3Half V := integral_nonneg baseD3Half_nonneg
-
 
 def heatD3Half (t : ℝ) (x : V) : ℝ :=
   ((heatScale t) ^ Module.finrank ℝ V)⁻¹ * t⁻¹ * (heatScale t)⁻¹ *
@@ -139,7 +129,6 @@ theorem integral_heatD3Half {t : ℝ} (ht : 0 < t) :
     simp only [smul_eq_mul]
     field_simp [hr.ne']
   rw [hscaled, third_half_scale ht]
-
 
 theorem integrable_half_weight_heatD3Maj {t : ℝ} (ht : 0 < t) :
     Integrable (fun x : V => ‖x‖ ^ (1 / 2 : ℝ) * heatD3Maj t x) := by
@@ -241,10 +230,8 @@ private theorem half_holder_centered_bound {K : ℝ≥0} {f : V → F}
   simpa only [NNReal.coe_div, NNReal.coe_one, NNReal.coe_ofNat,
     Real.sqrt_eq_rpow] using h
 
-
 def heatD3Cancel (t : ℝ) (u v w : V) (f : V → F) (x : V) : F :=
   ∫ y, heatD3 t u v w y • (f (x - y) - f x)
-
 
 def heatD3Conv (t : ℝ) (u v w : V) (f : V → F) (x : V) : F :=
   ∫ y, heatD3 t u v w y • f (x - y)
@@ -290,7 +277,6 @@ theorem heatD3Cancel_norm_of_half_holder {K : ℝ≥0} {t : ℝ} (ht : 0 < t)
       ‖u‖ * ‖v‖ * ‖w‖ * (K : ℝ) * t ^ (-(5 : ℝ) / 4) * heatC3Half V :=
   norm_integral_heatD3_smul_le_of_centered_half_bound K.coe_nonneg ht
     (half_holder_centered_bound hf x) u v w
-
 
 theorem exists_uniform_heatD3_half_holder_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (K : ℝ≥0) (f : V → F), HolderWith K (1 / 2) f →

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle L, W)
 local notation "XR" => C(AddCircle L, ℝ)
 local notation "Y" => C(AddCircle curvePeriod, W)
-
-
-
 
 theorem exists_closed_normal_value_unitTangent_limits
     [Fact (0 < L)]

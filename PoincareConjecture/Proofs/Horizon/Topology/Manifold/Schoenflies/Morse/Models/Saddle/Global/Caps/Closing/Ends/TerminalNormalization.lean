@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.LowerNormalization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,8 +50,6 @@ private theorem chart_of_local_diffeomorph_on_open
     rw [← hxy]
     exact hlocal.localInverse_contMDiffAt
   exact (hs.congr_of_eventuallyEq heq).contMDiffWithinAt
-
-
 
 theorem exists_lower_terminal_end_normalization
     {v : E3} {g : S2 → E3} {B : Set Real}

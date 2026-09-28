@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.PeriodicLoop
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.RestartedProfile
 import PoincareConjecture.Definitions.M62Curve
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,10 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
 
-
-
-
-
 structure M65SmoothFilledLoopFamily (J : Set ℝ) where
   loops : ℝ → C1FreeLoopSpace (M := M)
   joint_smooth : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 3) ∞
@@ -37,10 +22,6 @@ structure M65SmoothFilledLoopFamily (J : Set ℝ) where
   immersed : ∀ t ∈ J, ∀ x : ℝ,
     curveVelocity (n := 3) (periodicFreeLoop (loops t)) x ≠ 0
   filled : ∀ t ∈ J, Nonempty (LipschitzSpanningDisk (F.metric t) (loops t))
-
-
-
-
 
 def M65EmbeddedFillingAreaInequality : Prop :=
   ∀ (J : Set ℝ), IsOpen J → J ⊆ Ioo a b →
@@ -56,10 +37,6 @@ def M65EmbeddedFillingAreaInequality : Prop :=
         -2 * Real.pi - flowScalarCurvatureInfimum F q *
           fillingArea (F.metric q) (C.loops q) / 2 +
           epsilon * freeLoopLength (F.metric q) (C.loops q) + delta
-
-
-
-
 
 def M65ImmersedFillingAreaComparison : Prop :=
   ∀ (J : Set ℝ), IsOpen J → J ⊆ Ioo a b →

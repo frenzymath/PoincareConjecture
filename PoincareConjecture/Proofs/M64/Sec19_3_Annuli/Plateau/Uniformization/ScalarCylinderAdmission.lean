@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicRectangleAdmission
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +13,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem scalarCylinderFundamental_ae_eq_domain :
     scalarCylinderFundamental =ᵐ[volume] m64AnnulusDomain := by
@@ -47,8 +32,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
 
 omit [TopologicalSpace M] [T2Space M] in
 
-
-
 theorem scalarCircleComposition_periodic (f : Plane → M) (r : ℝ) :
     Function.Periodic (fun x => f (scalarCoverMap (r, x / curvePeriod))) curvePeriod := by
   have hp : curvePeriod ≠ 0 := by unfold curvePeriod; positivity
@@ -59,10 +42,6 @@ theorem scalarCircleComposition_periodic (f : Plane → M) (r : ℝ) :
   rw [hx]
   simpa only [Prod.mk_add_mk, add_zero] using
     congrArg f (scalarCoverMap_periodic (r, x / curvePeriod))
-
-
-
-
 
 theorem scalarSmoothComposition_metric_lipschitz
     (g : RiemannianMetric n M) (f : Plane → M)
@@ -87,10 +66,6 @@ theorem scalarSmoothComposition_metric_lipschitz
       mul_le_mul_right hdist _
     _ = ((C * K : ℝ≥0) : ℝ≥0∞) * ENNReal.ofReal ‖y - z‖ := by
       rw [ENNReal.coe_mul, mul_assoc]
-
-
-
-
 
 theorem scalarClosedCylinder_admit
     (g : RiemannianMetric n M) (f : Plane → M)

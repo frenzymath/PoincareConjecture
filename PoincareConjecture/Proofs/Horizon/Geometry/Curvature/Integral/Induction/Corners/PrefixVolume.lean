@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Leve
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.IteratedFiber
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Equivalence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
@@ -111,7 +104,6 @@ private theorem pullback_inner_openFiberEquivOfEq
   rfl
 
 end PoincareConjecture.RiemannianMetric
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_prefix_fiber_volume_identity
     {d k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

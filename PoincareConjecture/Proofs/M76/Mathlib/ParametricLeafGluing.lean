@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ParametricSmoothCore
 import PoincareConjecture.Proofs.M76.Mathlib.NormalizedFieldGerms
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLeafGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter ContinuousLinearMap
@@ -23,10 +14,6 @@ variable {X Y E F : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ Y] [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_smooth_parametric_leafAttachment (a : F →ᴬ[ℝ] E)
     (b : (X × Y) ≃L[ℝ] F) (Q0 : E →L[ℝ] F)

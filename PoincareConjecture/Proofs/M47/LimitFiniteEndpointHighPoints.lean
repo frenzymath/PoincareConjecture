@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureSurgeryCases
 import PoincareConjecture.Proofs.M47.TerminalCurvatureFiniteGermsBound
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem limitFinite_endpoint_high_points
     {ι : Type*} (sched : RepairedControlledSchedulesData.{u})
@@ -76,8 +65,6 @@ theorem limitFinite_endpoint_high_points
     U hU hmono hcover hcompact p hp psi hsource c hcoverC hjet x hxpos hballs
     sched.setup.epsilon_pos hsmall hround sched.setup.C_pos
     (hcanonical.mono fun _ hk => hk.2)
-
-
 
 theorem limitFinite_endpoint_global_bound
     {ι : Type*} (sched : RepairedControlledSchedulesData.{u})

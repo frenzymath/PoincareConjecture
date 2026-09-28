@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCylinderSource
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem exists_seedCylinder_recenter
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)

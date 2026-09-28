@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedFinitePLExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLipschitz
 import Mathlib.Algebra.Order.Group.MinMax
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,10 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_transverse_lipschitz [FiniteDimensional ℝ E]
     {Z : E → ℝ} {T : Set E} (hZ : FinitePiecewiseAffineOn Z T) :
@@ -44,13 +24,8 @@ theorem exists_transverse_lipschitz [FiniteDimensional ℝ E]
   have h := hL.dist_le_mul x (interior_subset (hTK hx)) y (interior_subset (hTK hy))
   simpa only [heq hx, heq hy, Real.dist_eq, dist_eq_norm, Real.norm_eq_abs] using h
 
-
-
-
 noncomputable def slowTimeCutoff (R epsilon t z : ℝ) : ℝ :=
   min t ((epsilon / R) * (R - |z|))
-
-
 
 theorem slowTimeCutoff_mem {R epsilon t z : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (ht : t ∈ Icc 0 epsilon) (hz : z ∈ Icc (-R) R) :
@@ -59,20 +34,14 @@ theorem slowTimeCutoff_mem {R epsilon t z : ℝ} (hR : 0 < R)
     (sub_nonneg.mpr (abs_le.mpr hz))), ?_⟩
   exact (min_le_left _ _).trans ht.2
 
-
-
 theorem slowTimeCutoff_zero {R epsilon t : ℝ} (hR : 0 < R) (ht : t ≤ epsilon) :
     slowTimeCutoff R epsilon t 0 = t := by
   simp only [slowTimeCutoff, abs_zero, sub_zero, div_mul_cancel₀ _ hR.ne']
   exact min_eq_left ht
 
-
-
 theorem slowTimeCutoff_rim {R epsilon t z : ℝ} (ht : 0 ≤ t) (hz : |z| = R) :
     slowTimeCutoff R epsilon t z = 0 := by
   simp only [slowTimeCutoff, hz, sub_self, mul_zero, min_eq_right ht]
-
-
 
 theorem slowTimeCutoff_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
     (hepsilon : 0 ≤ epsilon) (t z w : ℝ) :
@@ -89,12 +58,6 @@ theorem slowTimeCutoff_abs_sub_le {R epsilon : ℝ} (hR : 0 < R)
   rw [heq, abs_mul, abs_of_nonneg hratio] at hm
   exact hm.trans (mul_le_mul_of_nonneg_left
     (by simpa only [abs_sub_comm w z] using abs_abs_sub_abs_le_abs_sub w z) hratio)
-
-
-
-
-
-
 
 theorem injOn_transverse_cutoff {Q : Type*} (F : Q × (ℝ × ℝ) → E)
     (B : Set Q) (I J : Set ℝ) (v : E) (g : ℝ → ℝ)

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Circle
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +22,6 @@ private abbrev S1 := Metric.sphere (0 : EuclideanSpace Real (Fin 2)) 1
 private abbrev S2 := Metric.sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 2)) = 1 + 1) :=
   ⟨by simp⟩
-
-
 
 theorem regularLevel_projection_geometry
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -55,9 +51,6 @@ theorem regularLevel_projection_geometry
   exact ⟨(Real ∙ v)ᗮ.orthogonalProjectionOnto.contMDiff.comp hg,
     injective_projection_of_height_eq hv hgc hginj,
     injective_mfderiv_projection_of_height_eq hv hg hgc hgder⟩
-
-
-
 
 theorem exists_smoothEmbedding_unitCircle_projection_regularLevelComponent
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

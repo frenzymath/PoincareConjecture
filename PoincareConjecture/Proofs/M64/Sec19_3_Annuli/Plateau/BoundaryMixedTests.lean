@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryDifferenceQuotient
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPotentialBound
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +10,6 @@ open scoped Topology ContDiff ENNReal
 open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64NaturalGrowth_mixed_boundary_test
     (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)
@@ -53,9 +37,6 @@ theorem m64NaturalGrowth_mixed_boundary_test
       hO hF hb hu hc hs hup hdu hw
     intro phi hp hpc hps
     exact heq phi hp hpc hps (fun h => (hD h).elim)
-
-
-
 
 theorem m64NaturalGrowth_mixed_cutoff_test
     (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)
@@ -85,10 +66,6 @@ theorem m64NaturalGrowth_mixed_cutoff_test
       hO hF hb hu hdu hw hxi hc hs
     intro phi hp hpc hps
     exact heq phi hp hpc hps (fun h => (hD h).elim)
-
-
-
-
 
 theorem m64NaturalGrowth_mixed_nirenberg_identity
     (dirichlet : Prop) {O : Set LoopPlane} (hO : IsOpen O)

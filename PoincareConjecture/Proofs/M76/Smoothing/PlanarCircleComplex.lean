@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 import PoincareConjecture.Proofs.M76.Mathlib.RadialEmbeddingNormalization
 import PoincareConjecture.Proofs.M76.Smoothing.PlanarCircleEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace
@@ -18,8 +9,6 @@ open Set Geometry NormedSpace
 namespace PoincareConjecture.M76.Smoothing
 
 variable {n : ℕ} {theta : ℝ}
-
-
 
 noncomputable def planarGapEdgeVertices (w : shortArcGapSpace n theta)
     (i : Fin (n + 3)) : Finset ℂ := by
@@ -44,13 +33,9 @@ private theorem planar_generators_inter (w : shortArcGapSpace n theta) :
   simpa only [planarGapEdgeVertices, Finset.coe_pair, convexHull_pair, planarGapEdge] using
     planarGapEdge_inter_subset w i j
 
-
-
 noncomputable def planarCircleComplex (w : shortArcGapSpace n theta) : SimplicialComplex ℝ ℂ :=
   SimplicialComplex.ofGenerators (range (planarGapEdgeVertices w))
     (planar_generators_independent w) (planar_generators_inter w)
-
-
 
 theorem mem_planarCircleComplex_faces (w : shortArcGapSpace n theta) (s : Finset ℂ) :
     s ∈ (planarCircleComplex w).faces ↔ s.Nonempty ∧ ∃ i, s ⊆ planarGapEdgeVertices w i := by
@@ -61,13 +46,9 @@ theorem mem_planarCircleComplex_faces (w : shortArcGapSpace n theta) (s : Finset
   · rintro ⟨hs, i, hsi⟩
     exact ⟨hs, _, mem_range_self i, hsi⟩
 
-
-
 theorem finite_planarCircleComplex_faces (w : shortArcGapSpace n theta) :
     (planarCircleComplex w).faces.Finite :=
   SimplicialComplex.finite_ofGenerators_faces (finite_range _) _ _
-
-
 
 theorem planarCircleComplex_space (w : shortArcGapSpace n theta) :
     (planarCircleComplex w).space = ⋃ i, planarGapEdge w i := by
@@ -84,8 +65,6 @@ theorem planarCircleComplex_space (w : shortArcGapSpace n theta) :
     refine mem_iUnion₂.mpr ⟨_, mem_range_self i, ?_⟩
     simpa only [planarGapEdgeVertices, Finset.coe_pair, convexHull_pair, planarGapEdge] using hxi
 
-
-
 theorem linearIndependent_planarCircleComplex_face (w : shortArcGapSpace n theta)
     {s : Finset ℂ} (hs : s ∈ (planarCircleComplex w).faces) :
     LinearIndependent ℝ ((↑) : s → ℂ) := by
@@ -98,21 +77,15 @@ theorem linearIndependent_planarCircleComplex_face (w : shortArcGapSpace n theta
   change (s : Set ℂ) ⊆ (planarGapEdgeVertices w i : Set ℂ) at hsi
   simpa only [planarGapEdgeVertices, Finset.coe_pair] using hsi
 
-
-
 theorem injOn_normalize_planarCircleComplex (w : shortArcGapSpace n theta) :
     InjOn (NormedSpace.normalize : ℂ → ℂ) (planarCircleComplex w).space := by
   rw [planarCircleComplex_space]
   exact injOn_normalize_iUnion_planarGapEdge w
 
-
-
 theorem normalize_image_planarCircleComplex (w : shortArcGapSpace n theta) :
     NormedSpace.normalize '' (planarCircleComplex w).space = Metric.sphere (0 : ℂ) 1 := by
   rw [planarCircleComplex_space]
   exact normalize_image_iUnion_planarGapEdge w
-
-
 
 def cyclicEdgeComplex (n : ℕ) : AbstractSimplicialComplex (Fin (n + 3)) where
   faces := {s | s.Nonempty ∧ ∃ i, s ⊆ {i, i + 1}}
@@ -120,9 +93,6 @@ def cyclicEdgeComplex (n : ℕ) : AbstractSimplicialComplex (Fin (n + 3)) where
     rintro s ⟨hs, i, hsi⟩
     exact ⟨hs, fun t hts ht => ⟨ht, i, hts.trans hsi⟩⟩
   singleton_mem i := ⟨Finset.singleton_nonempty i, i, by simp⟩
-
-
-
 
 theorem planarCircleComplex_faces_image (w : shortArcGapSpace n theta) :
     (planarCircleComplex w).faces =
@@ -145,22 +115,15 @@ theorem planarCircleComplex_faces_image (w : shortArcGapSpace n theta) :
     simpa only [Finset.image_insert, Finset.image_singleton, planarGapEdgeVertices] using
       Finset.image_subset_image (f := planarGapVertices w) hsi
 
-
-
 theorem isRadialEmbedding_planarGapVertices (w : shortArcGapSpace n theta) :
     (cyclicEdgeComplex n).IsRadialEmbedding (planarGapVertices w) :=
   ⟨injective_planarGapVertices w, planarCircleComplex w, planarCircleComplex_faces_image w,
     fun _ hs => linearIndependent_planarCircleComplex_face w hs,
     injOn_normalize_planarCircleComplex w⟩
 
-
-
-
 noncomputable def planarGapEmbedding (w : shortArcGapSpace n theta) :
     (cyclicEdgeComplex n).UnitRadialEmbedding ℂ :=
   ⟨⟨planarGapVertices w, isRadialEmbedding_planarGapVertices w⟩, norm_planarGapVertices w⟩
-
-
 
 theorem continuous_planarGapEmbedding :
     Continuous (planarGapEmbedding : shortArcGapSpace n theta →

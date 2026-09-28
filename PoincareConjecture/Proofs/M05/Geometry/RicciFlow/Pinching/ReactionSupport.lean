@@ -1,16 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Parabolic
 import PoincareConjecture.Proofs.M05.Analysis.ODE.ParameterExistence
 import Mathlib.Algebra.Star.Module
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -75,7 +65,6 @@ private theorem exists_symmetric_reaction_curve
   · intro t ht
     convert! ι.hasFDerivAt.comp_hasDerivWithinAt t (hd t ht) using 1
     exact (hforget _).symm
-
 
 theorem scaled_reaction_support_nonpos
     (hn : Module.finrank ℝ E = 3) {t : ℝ} (ht : 0 ≤ t)

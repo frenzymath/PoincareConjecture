@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -24,24 +14,20 @@ attribute [local instance] monodromyChartedSpace monodromy_isManifold
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
 noncomputable def monodromyLocalCoordinates (b0 : UnitCircle)
     (q : MonodromyQuotient phi) : UnitTwoSphere × UnitCircle :=
   (capUnitDirection (monodromyNormalize phi
     (circleAngleLift b0 (monodromyProjection phi q)) q).val, monodromyProjection phi q)
 
-
 noncomputable def monodromyLocalInverse (b0 : UnitCircle)
     (p : UnitTwoSphere × UnitCircle) : MonodromyQuotient phi :=
   mq (monodromyPolarPoint (p.1, circleAngleLift b0 p.2))
-
 
 theorem monodromyLocalInverse_projection (b0 : UnitCircle)
     (p : UnitTwoSphere × UnitCircle) :
     monodromyProjection phi (monodromyLocalInverse phi b0 p) = p.2 := by
   rw [monodromyLocalInverse, monodromyProjection_mk, monodromyPolarPoint_logRadius]
   exact circleAngleLift_spec b0 p.2
-
 
 theorem monodromyLocalCoordinates_left_inv (b0 : UnitCircle)
     (q : MonodromyQuotient phi) :
@@ -53,7 +39,6 @@ theorem monodromyLocalCoordinates_left_inv (b0 : UnitCircle)
   change mq (monodromyPolarPoint (capUnitDirection x.val, s)) = q
   rw [← hx, monodromyPolarPoint_reconstruct]
   exact monodromyNormalize_quotient phi s q
-
 
 theorem monodromyLocalCoordinates_right_inv (b0 : UnitCircle)
     (p : UnitTwoSphere × UnitCircle) :
@@ -70,7 +55,6 @@ theorem monodromyLocalCoordinates_right_inv (b0 : UnitCircle)
     rw [hx, monodromyPolarPoint_direction]
   · exact monodromyLocalInverse_projection phi b0 p
 
-
 theorem monodromyLocalCoordinates_image (b0 : UnitCircle) :
     monodromyLocalCoordinates phi b0 ''
       (monodromyProjection phi ⁻¹' circleLiftArc b0) = Set.univ ×ˢ circleLiftArc b0 := by
@@ -84,7 +68,6 @@ theorem monodromyLocalCoordinates_image (b0 : UnitCircle) :
     change monodromyProjection phi (monodromyLocalInverse phi b0 p) ∈ circleLiftArc b0
     rw [monodromyLocalInverse_projection]
     exact hp.2
-
 
 theorem monodromyLocalCoordinates_smooth (b0 : UnitCircle) :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod (𝓡 1)) ∞ (monodromyLocalCoordinates phi b0)
@@ -102,7 +85,6 @@ theorem monodromyLocalCoordinates_smooth (b0 : UnitCircle) :
     capUnitDirection_smooth.comp_contMDiff contMDiff_subtype_val (fun x => x.property)
   exact (hd.comp_contMDiffOn hn).prodMk (monodromyProjection_smooth phi).contMDiffOn
 
-
 theorem monodromyLocalInverse_smooth (b0 : UnitCircle) :
     ContMDiffOn ((𝓡 2).prod (𝓡 1)) (𝓡 3) ∞ (monodromyLocalInverse phi b0)
       (Set.univ ×ˢ circleLiftArc b0) := by
@@ -112,8 +94,6 @@ theorem monodromyLocalInverse_smooth (b0 : UnitCircle) :
     (circleAngleLift_smooth b0).comp contMDiff_snd.contMDiffOn (fun _ hp => hp.2)
   exact (monodromy_quotient_contMDiff phi).comp_contMDiffOn
     (monodromyPolarPoint_smooth.comp_contMDiffOn (contMDiff_fst.contMDiffOn.prodMk hs))
-
-
 
 theorem monodromy_local_trivialization (b : UnitCircle) :
     ∃ U : Set UnitCircle, IsOpen U ∧ b ∈ U ∧

@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.AncientCylinder
 import PoincareConjecture.Proofs.M32.Claim11_35.AncientRoundFactor
 import PoincareConjecture.Proofs.M32.Claim11_34.ProjectiveExclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -36,10 +22,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
   {F : ℕ → GeneralizedRicciFlowData.{u}} {T : ℕ → ℝ}
-
-
-
-
 
 theorem terminalLongBlowupConclusion_exists_normalized_evolvingCylinder
     (P : RepairedHornSelectionPredecessors.{u})

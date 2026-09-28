@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEnergy
 import PoincareConjecture.Proofs.M08.ActionBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
 theorem horizontalScalarCurvature_abs_le_tensorNorm (q : G.Point) :
     |horizontalScalarCurvature G.leafwise q| ≤
       (n : ℝ) ^ 2 * horizontalCurvatureNorm G.leafwise q := by
@@ -36,19 +25,12 @@ theorem horizontalScalarCurvature_abs_le_tensorNorm (q : G.Point) :
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
 
-
-
 noncomputable def pathSquareKinetic (s : ℝ) : ℝ :=
   G.spacetime.horizontalMetric.inner (p.curve (s ^ 2))
     ((2 * s) • p.horizontal_velocity (s ^ 2)) ((2 * s) • p.horizontal_velocity (s ^ 2))
 
-
-
 noncomputable def pathSquarePotential (s : ℝ) : ℝ :=
   2 * s ^ 2 * horizontalScalarCurvature G.leafwise (p.curve (s ^ 2))
-
-
-
 
 theorem backwardPath_squareAction_eq :
     M14BackwardLAction G p = ∫ s in Real.sqrt τ₁..Real.sqrt τ₂,
@@ -60,9 +42,6 @@ theorem backwardPath_squareAction_eq :
   simp only [pathSquarePotential, pathSquareKinetic, M14BackwardLIntegrand,
     M14RawLIntegrand, Real.sqrt_sq hsnonneg, map_smul, smul_apply, smul_eq_mul]
   ring
-
-
-
 
 theorem squarePath_kinetic_energy_le_action
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {C : ℝ} (hC : 0 ≤ C)
@@ -96,9 +75,6 @@ theorem squarePath_kinetic_energy_le_action
   rw [intervalIntegral.integral_add hp (hk.const_mul (1 / 2)),
     intervalIntegral.integral_const_mul] at ha
   linarith
-
-
-
 
 theorem squarePath_kinetic_energy_le_of_curvature_bound
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {δ C : ℝ}

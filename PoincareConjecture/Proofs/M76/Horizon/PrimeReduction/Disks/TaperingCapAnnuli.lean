@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondSquareCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -96,8 +87,6 @@ private theorem taperingCapStrip_fibers
       (β / 32 * p.1 = 0 ∧ β / 32 * q.1 = β) ∨
       (β / 32 * p.1 = β ∧ β / 32 * q.1 = 0)) ↔ _
   rw [ht, hzero, hend, hend, hzero]
-
-
 
 theorem exists_tapering_cap_annuli
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -207,8 +196,6 @@ theorem exists_tapering_cap_annuli
       rw [hpv, hinner] at hpy
       exact hpy
     · exact subset_inter (hqB true) (hqB false)
-
-
 
 theorem cap_circle_period_rescaling {X : Type*} {β : ℝ} (hβ : 0 < β)
     (τ : C3 → X) (v : P2) :

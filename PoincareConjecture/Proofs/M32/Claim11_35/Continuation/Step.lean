@@ -1,22 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Gluing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem controlledCylinder_backward_step_of_strongNecks
     (hM04 : RicciFlowCurvatureTheory.{u}) :

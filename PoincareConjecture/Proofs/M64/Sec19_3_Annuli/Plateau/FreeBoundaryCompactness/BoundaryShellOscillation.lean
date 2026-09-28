@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.BoundarySemicircleFTC
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LogarithmicEnergyDrop
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M64
 open Proofs.M58
 
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem monotone_boundary_oscillation_sq_mono
     (L : LoopPlane → ℝ)
@@ -40,9 +30,6 @@ theorem monotone_boundary_oscillation_sq_mono
     apply hmono <;> (try constructor) <;> linarith
   apply (sq_le_sq₀ hmnonneg (by linarith)).mpr
   linarith
-
-
-
 
 theorem boundary_shell_oscillation
     (L : LoopPlane → ℝ) (hLc : Continuous L) (hL : ContDiffOn ℝ 1 L S)

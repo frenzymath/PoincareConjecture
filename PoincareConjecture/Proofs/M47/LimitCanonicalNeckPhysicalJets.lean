@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalNeckMetricJets
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalCoefficientJets
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ open M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem limitCanonical_neck_physical_pullback
     {H : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
@@ -64,9 +52,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
 
 theorem limitCanonical_eventually_physical_neck_metric_jets
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcFanDefe
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundaryEuler
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionDiskEulerActual
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +16,6 @@ namespace PoincareConjecture
 set_option maxHeartbeats 800000 in
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_three_arc_region_curvature_turning_ge_pi_div_two
     (N : IntrinsicAnnulus) {U V : Set AnnulusCoordinates}

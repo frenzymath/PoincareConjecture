@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Patches.Signed
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Patches.Pasting
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -53,7 +51,6 @@ theorem exists_rimCylinder_correction_of_partial_patches
   · exact h
   · rw [hvalue i side p hp]
     cases side <;> simp [halfArmChart, sign]
-
 
 theorem exists_rimCylinder_correction_with_signed_formula
     (a b w : Bool → ℝ) (ha : ∀ i, -(1 / 2 : ℝ) < a i)

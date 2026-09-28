@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabFinitePL
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSliceElimination
 import PoincareConjecture.Proofs.M76.Mathlib.AllNonzeroCappedLevels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,11 +15,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_family_with_signs
     {S s s' b d U : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -141,9 +127,6 @@ theorem AlexanderCollarSlab.exists_pointed_capped_family_with_signs
         (F.trans (Homeomorph.setCongr htarget.symm))
       refine ⟨F', hF.setCongr hsource htarget.symm, fun x => ?_⟩
       exact ⟨⟨x, x.property.1.2, x.property.2⟩, rfl, hFR x⟩
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_family
     {S s s' b d U : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

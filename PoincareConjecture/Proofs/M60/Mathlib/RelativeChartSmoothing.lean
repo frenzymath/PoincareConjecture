@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.ChartApproximation
 import PoincareConjecture.Proofs.M40.Mathlib.SupportedChartSmoothing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ variable {E F N : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [MetricSpace N] [ChartedSpace F N]
-
-
-
 
 theorem exists_relative_chart_smoothing
     (h : OpenPartialHomeomorph N F)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbation
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +9,6 @@ open scoped ContDiff Topology NNReal
 namespace PoincareConjecture.M28
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem eventually_exists_smooth_homeomorph_of_compact_displacement
     {D : ℝ × E → E} (hD : ContDiff ℝ ∞ D)

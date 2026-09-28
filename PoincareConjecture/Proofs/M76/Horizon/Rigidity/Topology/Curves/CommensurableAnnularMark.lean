@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.Com
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.MarkedSlope
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 

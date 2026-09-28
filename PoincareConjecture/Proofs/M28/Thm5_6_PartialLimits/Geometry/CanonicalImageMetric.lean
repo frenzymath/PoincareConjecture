@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.EuclideanImageDistance
 import PoincareConjecture.Proofs.M28.Mathlib.CanonicalDomainInclusion
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M28
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {N : Type*} [TopologicalSpace N] [ChartedSpace E N] [IsManifold (𝓡 3) ∞ N]
-
-
-
 
 def canonicalImageMetric
     (g : RiemannianMetric 3 N)
@@ -43,9 +30,6 @@ def canonicalImageMetric
   let D := e.diffeomorphOnCanonicalSource V W hsource rfl
   exact g.pullbackOfLocalDiffeomorph ((Subtype.val : W → N) ∘ D)
     (diffeomorph_openImageMap_isLocalDiffeomorph W D)
-
-
-
 
 theorem canonicalImageMetric_inner
     (g : RiemannianMetric 3 N)
@@ -79,10 +63,6 @@ theorem canonicalImageMetric_inner
       g.inner (e (x : E)) (mfderiv (𝓡 3) (𝓡 3) e (x : E) v)
         (mfderiv (𝓡 3) (𝓡 3) e (x : E) w)
   rw [hderiv v, hderiv w]
-
-
-
-
 
 theorem canonicalImageMetric_originalOpen_edist
     [T2Space N] (g : RiemannianMetric 3 N)

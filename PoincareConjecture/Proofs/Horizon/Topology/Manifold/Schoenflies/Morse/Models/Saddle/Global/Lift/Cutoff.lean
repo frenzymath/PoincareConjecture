@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.FilledModel
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.Coordinates.FinSucc
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -71,8 +64,6 @@ private theorem coordinateEquiv_apply (y : E3) :
 private theorem coordinateEquiv_symm_apply (z : P2) :
     coordinateEquiv.symm z = toE3 z.2 z.1 := by
   rfl
-
-
 
 theorem exists_height_lift
     (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -139,7 +130,6 @@ theorem exists_height_lift
         rw [hxy, ← hyc]
         exact toE3_toE2 y
 
-
 theorem exists_height_cutoff_lift
     (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (h0 : ∀ x, Φ 0 x = x)
@@ -161,7 +151,6 @@ theorem exists_height_cutoff_lift
   intro y hy
   rw [hH, hsupp _ _ hy]
   exact toE3_toE2 y
-
 
 theorem exists_height_cutoff_lift_product
     (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

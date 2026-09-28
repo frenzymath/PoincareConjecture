@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ChartBounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +16,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
-
-
-
 
 theorem exists_finite_stage_chart_cover (G : RegularPointedMetricConvergence g p)
     (j : ℕ) :
@@ -48,9 +35,6 @@ theorem exists_finite_stage_chart_cover (G : RegularPointedMetricConvergence g p
     (G.exhaustion_open (j + 1)) (G.exhaustion_step j)
 
 variable {ι : Type*} [Finite ι]
-
-
-
 
 theorem exists_eventual_finite_chart_bounds (G : RegularPointedMetricConvergence g p) :
     letI := G.limitCarrier.topologicalSpace
@@ -114,10 +98,6 @@ theorem exists_eventual_finite_chart_bounds (G : RegularPointedMetricConvergence
   · intro r hr
     let j : ι × Fin (m + 1) := (i, ⟨r, Nat.lt_succ_of_le hr⟩)
     exact (hkj j x hx).trans (hc_le j)
-
-
-
-
 
 theorem eventually_finite_chart_jet_error (G : RegularPointedMetricConvergence g p) :
     letI := G.limitCarrier.topologicalSpace

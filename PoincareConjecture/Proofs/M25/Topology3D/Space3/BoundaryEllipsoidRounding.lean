@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactTrackExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.EllipsoidRounding
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_compact_ellipsoid_rounding_field (A : E ≃L[ℝ] E)
     {S : Set E} (hS : IsCompact S) (hS0 : ∀ y ∈ S, y ≠ 0) :
@@ -41,8 +29,6 @@ theorem exists_compact_ellipsoid_rounding_field (A : E ≃L[ℝ] E)
   refine ⟨W, hW, hWc, k, l, hk, hl, ?_⟩
   intro y hy t ht
   simpa only [ellipsoidRoundingTrack_zero] using htrack y hy t ht
-
-
 
 theorem exists_boundary_ellipsoid_rounding (v : E) (hv : ‖v‖ = 1)
     (A : (ℝ ∙ v)ᗮ ≃L[ℝ] (ℝ ∙ v)ᗮ)

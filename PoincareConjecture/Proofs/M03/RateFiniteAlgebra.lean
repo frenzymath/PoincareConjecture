@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.ScalarEnergyComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

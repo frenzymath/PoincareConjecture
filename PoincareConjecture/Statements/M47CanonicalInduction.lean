@@ -7,34 +7,6 @@ import PoincareConjecture.Statements.M47ScalarPersistence
 import PoincareConjecture.Statements.M47ComponentAnalytics
 import PoincareConjecture.Statements.M47PositiveComponent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -42,9 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure M47Predecessors : Prop where
   m04 : RicciFlowCurvatureTheory.{u}
@@ -64,10 +33,8 @@ structure RepairedCanonicalInductionTheory : Prop where
   local_scalar_persistence : M47ScalarPersistencePredecessors.{u} →
     M47LocalScalarPersistenceStatement.{u}
 
-
   component_analytics : M47ComponentAnalyticPredecessors.{u} →
     ∀ C : ℝ, 1 ≤ C → Nonempty (M47ComponentAnalyticBounds.{u} C)
-
 
   positive_component_blowup : M47PositiveComponentBlowupStatement.{u}
   induction : ∀ S : RepairedControlledSchedulesData.{u},

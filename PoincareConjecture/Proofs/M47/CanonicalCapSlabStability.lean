@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeIsometry
 import PoincareConjecture.Proofs.M34.Standard.CapIsometry
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {a b : ℝ}
-
-
 
 theorem eventually_regularSlab_cap_control
     (hC : RicciFlowCurvatureTheory.{u}) (S : SurgeryRegularSlab F.slice F.metric a b)
@@ -48,8 +37,6 @@ theorem eventually_regularSlab_cap_control
     (hHC.le.trans (hPC.le.trans hconstant)) hHconnection
   rw [hHcore, hPcore]
   exact mem_image_of_mem _ hx
-
-
 
 theorem regularSlab_limit_not_cap
     (hC : RicciFlowCurvatureTheory.{u}) (S : SurgeryRegularSlab F.slice F.metric a b)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.EdgeReconstruction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.SingleTriangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
 
 def retainedSide (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))
     (s : Triangle K) (e : Finset E) : Prop :=
@@ -38,7 +29,6 @@ def retainedSide (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))
     · rintro ⟨u, hu, hsu, _⟩
       have hus := Finset.mem_singleton.mp hu
       exact hsu.ne hus.symm
-
 
 theorem triangleRim_eq_original_edge_hulls (s : Triangle K) (p : Fin 3 → E)
     (hp : Function.Injective p) (hrange : range p = (s.val : Set E)) :
@@ -87,7 +77,6 @@ theorem triangleRim_eq_original_edge_hulls (s : Triangle K) (p : Fin 3 → E)
     apply hsegment i j (fun h ↦ hab (congrArg p h))
     simpa only [Finset.coe_pair, convexHull_pair] using hxe
 
-
 theorem shared_edge_unique {s t : Triangle K} (hne : s ≠ t)
     {e f : Finset E} (he : e.card = 2) (hf : f.card = 2)
     (hes : e ⊆ s.val) (het : e ⊆ t.val) (hfs : f ⊆ s.val) (hft : f ⊆ t.val) :
@@ -105,7 +94,6 @@ theorem shared_edge_unique {s t : Triangle K} (hne : s ≠ t)
   have heq : e = s.val ∩ t.val := Finset.eq_of_subset_of_card_le hei (by omega)
   have hfq : f = s.val ∩ t.val := Finset.eq_of_subset_of_card_le hfi (by omega)
   exact heq.trans hfq.symm
-
 
 theorem retainedSide_insert_old_iff
     (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))
@@ -133,7 +121,6 @@ theorem retainedSide_insert_old_iff
       exact hnot ⟨hsn, heq⟩
     · exact hret ⟨t, ht, hst, het⟩
 
-
 theorem retainedSide_insert_leaf_iff
     (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))
     {leaf neighbor : Triangle K} (hl : leaf ∉ T) (hn : neighbor ∈ T)
@@ -156,7 +143,6 @@ theorem retainedSide_insert_leaf_iff
     · exact hlt.ne rfl
     · have htn : t = neighbor := hunique t ht hlt
       exact hne (shared_edge_unique K hlne he he₀ hel (htn ▸ het) he₀l he₀n)
-
 
 theorem retainedSide_insert_iff
     (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))
@@ -181,7 +167,6 @@ theorem retainedSide_insert_iff
         he₀ he₀l he₀n hret.1.1).mpr hret
     · exact (retainedSide_insert_leaf_iff K G T hl hn hln hunique
         he₀ he₀l he₀n).mpr hret
-
 
 theorem retainedSide_attaching_edge
     (G : SimpleGraph (Triangle K)) (T : Finset (Triangle K))

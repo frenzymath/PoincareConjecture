@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Uniqueness
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g h : RiemannianMetric n M}
-
-
 
 private theorem inner_connection_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -75,7 +69,6 @@ private theorem inner_connection_eq_of_inner_eq_nhds
   rw [← hda, ← hdb, ← hdc] at h₂
   linarith [h₁, h₂]
 
-
 theorem connection_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -90,7 +83,6 @@ theorem connection_eq_of_inner_eq_nhds
   apply ext_inner_right ℝ
   intro w
   exact D.inner_connection_eq_of_inner_eq_nhds D' hY hgh v w
-
 
 theorem connection_covariantDerivativeOnFields_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -114,7 +106,6 @@ theorem connection_covariantDerivativeOnFields_eq_of_inner_eq_nhds
   exact (congrArg (fun L ↦ L v) hconn).trans
     (D.connection_eq_of_inner_eq_nhds D' (hD'.mdifferentiableAt (by simp)) hgh v)
 
-
 theorem curvatureOnFields_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {X Y Z : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -132,7 +123,6 @@ theorem curvatureOnFields_eq_of_inner_eq_nhds
     D.connection_eq_of_inner_eq_nhds D' (hZ.mdifferentiableAt (by simp)) hgh]
   rfl
 
-
 theorem curvature_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {x : M}
     (hgh : ∀ᶠ y in 𝓝 x, ∀ a b : TangentSpace (𝓡 n) y,
@@ -143,7 +133,6 @@ theorem curvature_eq_of_inner_eq_nhds
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) u)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) v)
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) w) hgh
-
 
 theorem curvatureTensor_eq_of_inner_eq_nhds
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {x : M}

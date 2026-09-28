@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.MonodromyTrivialization
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M38
 variable (phi : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
 
 attribute [local instance] monodromyChartedSpace monodromy_isManifold
-
 
 @[instance_reducible]
 noncomputable def monodromyLiftChartedSpace :
@@ -39,7 +29,6 @@ noncomputable def monodromyLiftChartedSpace :
     change p.down ∈ (chartAt StandardCapSpace p.down).source
     exact mem_chart_source _ p.down
   chart_mem_atlas p := ⟨p.down, rfl⟩
-
 
 theorem monodromy_lift_isManifold :
     letI := monodromyLiftChartedSpace.{u} phi
@@ -58,7 +47,6 @@ theorem monodromy_lift_isManifold :
 
 attribute [local instance] monodromyLiftChartedSpace monodromy_lift_isManifold
 
-
 theorem monodromy_down_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞
       (ULift.down : ULift.{u} (MonodromyQuotient phi) → MonodromyQuotient phi) := by
@@ -66,7 +54,6 @@ theorem monodromy_down_contMDiff :
   apply contMDiffAt_iff_target.mpr
   refine ⟨continuous_uliftDown.continuousAt, ?_⟩
   exact contMDiffAt_extChartAt (I := 𝓡 3) (x := p)
-
 
 theorem monodromy_up_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞
@@ -76,13 +63,11 @@ theorem monodromy_up_contMDiff :
   refine ⟨continuous_uliftUp.continuousAt, ?_⟩
   exact contMDiffAt_extChartAt (I := 𝓡 3) (x := p)
 
-
 noncomputable def monodromyLiftDiffeomorph :
     (ULift.{u} (MonodromyQuotient phi)) ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ MonodromyQuotient phi where
   toEquiv := Equiv.ulift
   contMDiff_toFun := monodromy_down_contMDiff phi
   contMDiff_invFun := monodromy_up_contMDiff phi
-
 
 noncomputable def monodromyCarrier : GeneralizedSliceCarrier.{u} := by
   letI : MeasurableSpace (ULift.{u} (MonodromyQuotient phi)) :=
@@ -98,7 +83,6 @@ noncomputable def monodromyCarrier : GeneralizedSliceCarrier.{u} := by
     t3Space := inferInstance
     secondCountable := Homeomorph.ulift.secondCountableTopology }
 
-
 theorem monodromyCarrier_compact :
     IsCompact (Set.univ : Set (monodromyCarrier.{u} phi).carrier) := by
   let : CompactSpace (ULift.{u} (MonodromyQuotient phi)) :=
@@ -106,15 +90,12 @@ theorem monodromyCarrier_compact :
   change IsCompact (Set.univ : Set (ULift.{u} (MonodromyQuotient phi)))
   exact isCompact_univ
 
-
 theorem monodromyCarrier_connected :
     IsConnected (Set.univ : Set (monodromyCarrier.{u} phi).carrier) := by
   let : ConnectedSpace (ULift.{u} (MonodromyQuotient phi)) :=
     Homeomorph.ulift.symm.surjective.connectedSpace Homeomorph.ulift.symm.continuous
   change IsConnected (Set.univ : Set (ULift.{u} (MonodromyQuotient phi)))
   exact isConnected_univ
-
-
 
 noncomputable def monodromySphereBundle : SurgerySphereBundle (monodromyCarrier.{u} phi) where
   projection q := monodromyProjection phi q.down

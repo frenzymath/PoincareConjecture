@@ -2,28 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Energy.Comparison.ScalarCommutator
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Curvature.Calculus.CurvatureTensoriality
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

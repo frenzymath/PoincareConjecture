@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.SubdivisionSta
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +14,6 @@ local notation "Q2" => sphere (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_refinement_with_embedded_rim
     (K A : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hAK : A ≤ K)

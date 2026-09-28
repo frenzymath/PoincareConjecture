@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M19TwoDimensionalClassification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,7 +12,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 inductive ThreeDimensionalSolitonModel
     (S : GradientShrinkingSolitonData 3 M)
@@ -42,9 +31,6 @@ structure ThreeDimensionalSolitonConclusion
 structure ThreeDimensionalClassificationData
     (S : GradientShrinkingSolitonData 3 M) where
   conclusion : ThreeDimensionalSolitonConclusion S
-
-
-
 
 structure ThreeDimensionalAsymptoticClassificationCertificate
     {K : AncientKappaSolution 3 M} (S : AncientRescalingSequence K)

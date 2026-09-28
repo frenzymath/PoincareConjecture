@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.BoundaryDisks.JordanFillingCoverage
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereDiskExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Metric Geometry

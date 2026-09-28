@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CenteredChartOperators
 import PoincareConjecture.Proofs.M09.ConnectionFrame
 import PoincareConjecture.Proofs.M09.ManifoldTraceDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

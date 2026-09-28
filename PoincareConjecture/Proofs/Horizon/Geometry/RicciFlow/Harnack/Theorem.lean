@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Assembly
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem horizon_differentialHarnackAncientTheory
     (hM04 : RicciFlowCurvatureTheory.{u}) : HarnackAncientTheory.{u} := by

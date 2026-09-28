@@ -1,13 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

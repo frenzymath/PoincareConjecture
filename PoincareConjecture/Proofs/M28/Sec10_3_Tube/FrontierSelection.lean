@@ -2,16 +2,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Data.List.Chain
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open Set
 namespace PoincareConjecture.M28
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem exists_finite_frontier_selection
     (γ : ℝ → X) (V : ℝ → Set X) {a b d : ℝ}
@@ -105,7 +91,6 @@ theorem exists_finite_frontier_selection
   exact hbounded n a (left_mem_Icc.mpr hab) ((div_lt_iff₀ hd).mp hn)
 
 omit [TopologicalSpace X] in
-
 
 theorem mapsTo_finite_frontier_selection
     {γ : ℝ → X} {V : ℝ → Set X} {a b : ℝ} {l : List ℝ}

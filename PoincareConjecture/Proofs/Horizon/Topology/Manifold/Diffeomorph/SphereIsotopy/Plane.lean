@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.Flo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.SectionMap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.TailCorrection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open scoped Manifold ContDiff
@@ -25,8 +15,6 @@ open Poincare.Manifold.PlaneDiffeomorph
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "v₀" => (!₂[(1 : ℝ), 0] : E₂)
-
-
 
 theorem exists_compactly_supported_plane_isotopy
     (g : Diffeomorph (𝓡 2) (𝓡 2)

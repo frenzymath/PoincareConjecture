@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedBallChain
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,15 +10,10 @@ universe u
 
 namespace PoincareConjecture.Proofs.M47
 
-
-
 noncomputable def seedChainSteps (L r : ℝ) : ℕ := Nat.ceil (L / r) + 1
-
 
 theorem seedChainSteps_pos (L r : ℝ) : 0 < seedChainSteps L r :=
   Nat.succ_pos _
-
-
 
 theorem seedChainSteps_size {L r : ℝ} (hr : 0 < r) :
     L / (seedChainSteps L r : ℝ) < r := by
@@ -44,8 +30,6 @@ theorem seedChainSteps_size {L r : ℝ} (hr : 0 < r) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem exists_seed_path_of_distance [T2Space M] [CompactSpace M]
     (g : RiemannianMetric 3 M) (x y : M) {L : ℝ} (hL : 0 < L)
     (hxy : g.edist x y < ENNReal.ofReal L) :
@@ -61,8 +45,6 @@ theorem exists_seed_path_of_distance [T2Space M] [CompactSpace M]
   intro s hs t ht
   rw [hdist s hs t ht, mul_comm L, ENNReal.ofReal_mul (abs_nonneg _)]
   exact mul_le_mul' le_rfl hxy.le
-
-
 
 theorem seed_path_volume_transport [T3Space M] [SecondCountableTopology M]
     [MeasurableSpace M] [BorelSpace M]

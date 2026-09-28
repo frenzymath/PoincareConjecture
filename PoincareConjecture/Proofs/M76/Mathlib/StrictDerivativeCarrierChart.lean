@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ProjectionPerturbation
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.FDeriv
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +13,6 @@ namespace HasStrictFDerivAt
 variable {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F] [CompleteSpace F]
-
-
-
-
 
 theorem exists_carrier_openPartialHomeomorph {C : Set E} {a : C}
     {f : E → F} {Q : E →L[𝕜] F} (hf : HasStrictFDerivAt f Q (a : E))

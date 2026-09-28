@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCoherentBridgeReversal
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical AbstractSimplicialComplex
@@ -25,8 +23,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (A : OriginalPrimalCutDiskData K P D hD hcofaces hP labels)
 
 local notation "sm" => A.sourceMap K P D hD hcofaces hP labels
-
-
 
 theorem source_bridge_reversal_of_original_coherent_signs
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T b : ℝ} {x y : G.Point}
 
-
-
 theorem minimizing_action_le_exponentialAction (E : M14ExponentialFamily G T x)
     (p : M14BackwardPath G T 0 b x y) (hp : M14IsMinimizing p)
     {Z : G.Horizontal x} {s : ℝ} (hD : (Z, s) ∈ E.domain) (hs : 0 < s)
@@ -33,9 +22,6 @@ theorem minimizing_action_le_exponentialAction (E : M14ExponentialFamily G T x)
   subst b
   rw [E.action_eq Z s hD hs]
   exact hp (E.path Z s hD hs)
-
-
-
 
 theorem action_eq_exponentialAction_of_curve_eqOn (E : M14ExponentialFamily G T x)
     (p : M14BackwardPath G T 0 b x y)
@@ -51,8 +37,6 @@ theorem action_eq_exponentialAction_of_curve_eqOn (E : M14ExponentialFamily G T 
   intro t ht
   exact (hcurve (Ioo_subset_Icc_self ht)).trans (E.path_coherent Z s hD hs t
     (Ioo_subset_Icc_self ht)).symm
-
-
 
 theorem reducedLengthAt_exponential_of_minimizing (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hD : (Z, s) ∈ E.domain) (hs : 0 < s)

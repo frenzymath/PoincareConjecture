@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
 
 theorem mfderiv_eq_zero_iff_fderiv_sphere_coordinates_eq_zero
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -54,8 +43,6 @@ theorem mfderiv_eq_zero_iff_fderiv_sphere_coordinates_eq_zero
     obtain ⟨w, rfl⟩ := hesurj u
     exact congrArg (fun L : E2 →L[Real] Real => L w) (hchain.symm.trans hzero)
 
-
-
 theorem mfderiv_eq_zero_iff_fderiv_of_sphere_coordinates_eventuallyEq
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     (e : OpenPartialHomeomorph E2 S2)
@@ -66,8 +53,6 @@ theorem mfderiv_eq_zero_iff_fderiv_of_sphere_coordinates_eventuallyEq
     mfderiv (𝓡 2) 𝓘(Real, Real) h (e x) = 0 ↔ fderiv Real g x = 0 := by
   rw [mfderiv_eq_zero_iff_fderiv_sphere_coordinates_eq_zero hh e he hei hx,
     hg.fderiv_eq]
-
-
 
 theorem mfderiv_eq_zero_iff_fderiv_of_sphere_coordinates_eqOn
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

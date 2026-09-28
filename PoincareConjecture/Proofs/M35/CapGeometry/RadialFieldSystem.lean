@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialFieldJetSystem
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialRicciCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M35
 open Uniqueness
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem radial_shape_contDiffAt (g : RiemannianMetric 3 V)
     {x : V} (hx : x ≠ 0) :
@@ -36,8 +27,6 @@ theorem radial_shape_contDiffAt (g : RiemannianMetric 3 V)
     (axisRadialSpeed_pos g ‖x‖).ne').div (hr.mul ha)
       (axisWarpingRadius_pos g (norm_pos_iff.mpr hx)).ne'
 
-
-
 theorem euclidean_radial_pullback_contDiffAt
     (G : RiemannianMetric 3 V) {f : V → V} {x : V}
     (hf : ContDiffAt ℝ ∞ f x) (hinv : (fderiv ℝ f x).IsInvertible)
@@ -47,15 +36,11 @@ theorem euclidean_radial_pullback_contDiffAt
   have hi := hinv.contDiffAt_map_inverse.comp x hd
   exact hi.clm_apply ((radialUnitField_contDiffAt G hzero).comp x hf)
 
-
-
 noncomputable def radialFieldCoefficients {g : RiemannianMetric 3 V}
     (D : LeviCivitaData g) (x : V) :=
   (g.euclideanCoefficients x,
     (CoordinateExponential.christoffelBilinear g.euclideanCoefficients x,
       radialRicciCoefficients D x))
-
-
 
 theorem radial_pullback_ricci
     {g G : RiemannianMetric 3 V} (D : LeviCivitaData g) (DG : LeviCivitaData G)
@@ -89,8 +74,6 @@ theorem radial_pullback_ricci
     _ = (2 * radialMixedCurvatureFactor G ‖f x‖ / axisRadialCoefficient G ‖f x‖) / 2 := by
       simpa only [radialRicciCoefficients_apply] using! hdiv
     _ = _ := by ring
-
-
 
 theorem radial_field_shape_hasFDerivAt
     {g G : RiemannianMetric 3 V} (D : LeviCivitaData g) (DG : LeviCivitaData G)

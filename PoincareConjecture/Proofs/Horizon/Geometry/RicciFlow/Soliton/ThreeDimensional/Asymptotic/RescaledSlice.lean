@@ -9,13 +9,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,7 +44,6 @@ private theorem tensorNormFromComponents_rescale_four
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem rescaledMetric_curvatureTensorNorm_exact
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (c : ℝ) (hc : 0 < c) (x : M) :
@@ -82,7 +74,6 @@ theorem rescaledMetric_curvatureTensorNorm_exact
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem MetricKappaNoncollapsed.rescaledMetric
     {g : RiemannianMetric n M} {D : LeviCivitaData g} {κ : ℝ}
@@ -170,8 +161,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
-
-
 
 noncomputable def normalizedShrinkingSolitonData
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

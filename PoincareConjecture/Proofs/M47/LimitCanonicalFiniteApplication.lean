@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalChart
 import PoincareConjecture.Proofs.M47.LimitNoncollapsePhysicalTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_finite_left_horizon_application
     {H : ℝ≥0∞} {V : GeneralizedBlowupSequence.{u}}

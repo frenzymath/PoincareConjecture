@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawEllipticity
 import Mathlib.LinearAlgebra.BilinearMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M35.Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 theorem vector_bilinear_trace_inverse_gram (g : RiemannianMetric n V) (x : V)
     (B : V →ₗ[ℝ] V →ₗ[ℝ] V) :
@@ -54,7 +44,6 @@ theorem vector_bilinear_trace_inverse_gram (g : RiemannianMetric n V) (x : V)
       B (EuclideanSpace.single i 1) (EuclideanSpace.single j 1))
   simpa only [map_sum, map_smul, smul_eq_mul] using h
 
-
 def rawHessianBilinear {g : RiemannianMetric n V} (D : LeviCivitaData g)
     (X : V → V) (x : V) : V →ₗ[ℝ] V →ₗ[ℝ] V :=
   LinearMap.mk₂ ℝ (fun u v =>
@@ -74,9 +63,6 @@ theorem fieldHessian_eq_rawHessianBilinear {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} (hX : ContDiff ℝ ∞ X) (x u v : V) :
     fieldHessian D X x u v = rawHessianBilinear D X x u v :=
   fieldHessian_coordinate_expansion D hX x u v
-
-
-
 
 theorem raw_vector_heat_inverse_gram {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {X : V → V} (hX : ContDiff ℝ ∞ X) (x : V) :

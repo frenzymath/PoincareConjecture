@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch06.LGeometry
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M08
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 theorem reducedLength_eq_of_minimizing {J : Set ℝ} {F : RicciFlow n M J}
     {T τ : ℝ} {p q : M} (path : BackwardTimePath F T 0 τ)
@@ -39,7 +30,6 @@ theorem reducedLength_eq_of_minimizing {J : Set ℝ} {F : RicciFlow n M J}
     exact hmin other (hleft.trans hp.symm) (hright.trans hq.symm)
   simp only [reducedLength, dif_pos path.ordered, hleast.csInf_eq]
 
-
 theorem reducedLength_attained_of_exists_minimizing {J : Set ℝ} {F : RicciFlow n M J}
     {T τ : ℝ} {p q : M}
     (h : ∃ path : BackwardTimePath F T 0 τ,
@@ -52,7 +42,6 @@ theorem reducedLength_attained_of_exists_minimizing {J : Set ℝ} {F : RicciFlow
           backwardLLength F T 0 τ path.curve / (2 * Real.sqrt τ) := by
   obtain ⟨path, hp, hq, hmin⟩ := h
   exact ⟨path, hp, hq, hmin, reducedLength_eq_of_minimizing path hp hq hmin⟩
-
 
 def variationSqrtRegularPath {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -70,12 +59,10 @@ def variationSqrtRegularPath {J : Set ℝ} {F : RicciFlow n M J}
     exact (V.square_agrees s hs 0
       ⟨neg_neg_of_pos V.radius_pos, V.radius_pos⟩).trans (V.at_zero (s ^ 2))
 
-
 theorem backwardTime_mem_window {T τmax τ₁ τ₂ τ : ℝ}
     (hτ₁ : 0 ≤ τ₁) (hτ₂ : τ₂ ≤ τmax) (hτ : τ ∈ Set.Icc τ₁ τ₂) :
     T - τ ∈ Set.Icc (T - τmax) T :=
   ⟨sub_le_sub_left (hτ.2.trans hτ₂) T, sub_le_self T (hτ₁.trans hτ.1)⟩
-
 
 theorem backwardPath_metric_comparison {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax τ₁ τ₂ K : ℝ} (hM04 : RicciFlowCurvatureTheory.{u})

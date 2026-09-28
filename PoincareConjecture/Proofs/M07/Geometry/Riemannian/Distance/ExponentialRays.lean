@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem geodesic_of_coordinate_exponential
     (g : RiemannianMetric n M) (p : M)
@@ -52,7 +41,6 @@ theorem geodesic_of_coordinate_exponential
       simpa only [coordinateGeodesicField, h0] using hd
     exact hd'.congr_of_eventuallyEq heq
 
-
 theorem IsGeodesicOn.comp_add {g : RiemannianMetric n M}
     {γ : ℝ → M} {s : Set ℝ} (hγ : g.IsGeodesicOn γ s) (a : ℝ) :
     g.IsGeodesicOn (fun t => γ (t + a)) ((fun t => t + a) ⁻¹' s) := by
@@ -67,13 +55,10 @@ theorem IsGeodesicOn.comp_add {g : RiemannianMetric n M}
   · simpa only [Function.comp_def, one_smul, id_eq] using!
       hu.2.2.2.scomp u ((hasDerivAt_id u).add_const a)
 
-
 theorem IsGeodesicOn.comp_affine {g : RiemannianMetric n M}
     {γ : ℝ → M} {s : Set ℝ} (hγ : g.IsGeodesicOn γ s) (a b : ℝ) :
     g.IsGeodesicOn (fun t => γ (a * t + b)) ((fun t => a * t + b) ⁻¹' s) :=
   (hγ.comp_add b).comp_mul a
-
-
 
 theorem exponential_eq_geodesic_of_unit_initial_data [T2Space M]
     {g : RiemannianMetric n M} (p : M)

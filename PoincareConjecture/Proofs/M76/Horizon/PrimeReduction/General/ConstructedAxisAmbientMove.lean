@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.SupportedFullEdgeMove
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.ProperArcPairConfinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -18,9 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
 
 theorem exists_original_constructed_axis_ambient_move
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]

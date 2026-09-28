@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamRectangleFlux
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,14 +13,10 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
 
-
-
 def m64AnnulusSeamPatch {E : Type*} (K : Set LoopPlane)
     (f g : LoopPlane → E) (p : LoopPlane) : E := by
   classical
   exact if p ∈ K then f p else if p - v ∈ K then f (p - v) else g p
-
-
 
 theorem m64AnnulusSeamPatch_comp {E F : Type*} (K : Set LoopPlane)
     (f g : LoopPlane → E) (h : E → F) :
@@ -39,8 +24,6 @@ theorem m64AnnulusSeamPatch_comp {E F : Type*} (K : Set LoopPlane)
   funext p
   simp only [m64AnnulusSeamPatch, Function.comp_def]
   split_ifs <;> rfl
-
-
 
 theorem m64AnnulusSeamPatch_eq_add
     {E : Type*} [AddCommGroup E] {K : Set LoopPlane}
@@ -62,8 +45,6 @@ theorem m64AnnulusSeamPatch_eq_add
     · simp only [m64AnnulusSeamPatch, if_neg hpK, if_neg hqK, indicator_of_notMem hpK,
         indicator_of_notMem hqK, add_zero]
 
-
-
 theorem m64AnnulusSeamPatch_memLp
     {E : Type*} [NormedAddCommGroup E] {q : ENNReal} {K : Set LoopPlane}
     (hK : MeasurableSet K) (hKO : K ⊆ O)
@@ -82,8 +63,6 @@ theorem m64AnnulusSeamPatch_memLp
     (hdshift.mono_measure Measure.restrict_le_self)).ae_eq
   filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hp
   exact (m64AnnulusSeamPatch_eq_add hsep f g hp).symm
-
-
 
 theorem m64AnnulusSeam_disjoint_of_angular_width {K : Set LoopPlane}
     (hK : ∀ p ∈ K, -curvePeriod / 2 < p 0 ∧ p 0 < curvePeriod / 2) :

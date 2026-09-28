@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Contacts.Coordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex Topology unitInterval PLAnnularStrip
 

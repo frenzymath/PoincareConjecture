@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -142,7 +135,6 @@ theorem exists_hessian_bilinear_of_contMDiffOn [T2Space M] (D : LeviCivitaData g
   obtain ⟨A, hA⟩ := (isSmoothCovariantTensor_hessian D hq0).1 x
   exact ⟨A, fun v ↦ (hessian_congr_germ D heq.symm (v 0) (v 1)).trans (hA v)⟩
 
-
 theorem hessianOnFields_eq_hessian_of_contMDiff (D : LeviCivitaData g)
     {q : M → ℝ} (hq : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ q)
     {U : Set M} {X Y : (y : M) → TangentSpace (𝓡 n) y}
@@ -154,4 +146,3 @@ theorem hessianOnFields_eq_hessian_of_contMDiff (D : LeviCivitaData g)
   hessianOnFields_eq_hessian_global D hq hU hX hY hx
 
 end PoincareConjecture.M04
-

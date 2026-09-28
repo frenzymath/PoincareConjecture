@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Interfaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Attachments
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -105,8 +95,6 @@ theorem frontier_fittedRegionCollar_subset_chords (hr : r ≤ 1) (R : D.regions)
   · exact Or.inl (D.frontier_vertexCapsInRegion_subset caps region hcaps R hcap.1)
   · exact D.frontier_graphBandsInRegion_subset chart cut S region caps L T K B
       hr hseparate R hband.2
-
-
 
 theorem frontier_fittedRegionCollar_subset
     (havoid : ∀ p i, ∀ t ∈ Ioo (0 : ℝ) 1, ∀ z : ℝ, |z| < δ →

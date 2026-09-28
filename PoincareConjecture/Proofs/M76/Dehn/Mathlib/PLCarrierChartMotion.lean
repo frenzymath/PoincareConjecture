@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.PLCarrierMotion
-
-
-
 
 theorem exists_chart_motion {E X : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

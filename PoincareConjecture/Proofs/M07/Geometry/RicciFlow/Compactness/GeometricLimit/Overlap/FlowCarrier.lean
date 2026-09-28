@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Manifold.Gluing.Smooth
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Carrier
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Separation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -27,7 +19,6 @@ variable {n : ℕ} {ι : Type u} [Countable ι]
     (hclosed : ∀ i j, IsClosed {q : Piece U i × Piece U j |
       O.Rel ⟨i, q.1⟩ ⟨j, q.2⟩})
     [ConnectedSpace (Quotient O.setoid)]
-
 
 @[implicit_reducible]
 noncomputable def flowCarrier : PoincareConjecture.FlowCarrier.{u} n := by

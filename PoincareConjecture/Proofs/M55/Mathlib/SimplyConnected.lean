@@ -1,18 +1,8 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
-
-
-
 
 theorem simplyConnected_of_pathConnected_of_fundamentalGroup_subsingleton
     (X : Type u) [TopologicalSpace X] [PathConnectedSpace X]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.DeTurckDifference
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open DeTurckNative
 variable {n : ℕ}
 
 def flatMetricJet : MetricJet2 (n := n) := ⟨1, 0, 0⟩
-
-
 
 def normalCovariantSecondJet (b q : MetricJet2 (n := n)) : MetricSecondJet n :=
   fun a c i j => q.second a c i j -
@@ -122,8 +110,6 @@ private theorem normal_connection_cancellation (b q : MetricJet2 (n := n))
   rw [normal_christoffelSecond_symm b hb hs a k c i,
     normal_christoffelSecond_symm b hb hs a k c j]
   ring
-
-
 
 theorem native_source_normal_covariant (b q : MetricJet2 (n := n))
     (hb : b.first = 0)

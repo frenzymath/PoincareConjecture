@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.MollifierJets
 import PoincareConjecture.Proofs.M10.MollifierLocality
 import PoincareConjecture.Proofs.M10.LocalSmoothExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter ContinuousLinearMap
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [Measure.IsAddHaarMeasure μ]
-
 
 theorem normed_convolution_local_jets_tendsto {κ : ℕ → ContDiffBump (0 : E)}
     (hκ : Tendsto (fun j ↦ (κ j).rOut) atTop (𝓝 0)) {f : E → ℝ} {x : E}

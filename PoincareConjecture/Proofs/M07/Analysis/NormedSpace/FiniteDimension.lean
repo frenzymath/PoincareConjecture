@@ -1,14 +1,10 @@
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
 set_option autoImplicit false
 open Filter
 open scoped Topology
 
 namespace Poincare.Analysis
-
-
 
 theorem tendsto_continuousLinearMap_of_basis
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

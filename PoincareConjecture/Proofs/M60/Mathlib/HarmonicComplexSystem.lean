@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.ComplexGradient
 import PoincareConjecture.Proofs.M60.Mathlib.ComplexEuclideanOperator
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex
@@ -22,14 +13,10 @@ variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
 noncomputable def complexConnectionOperator (B : E →L[ℝ] E →L[ℝ] E) (a b : E) :
     (Fin n → ℂ) →L[ℂ] (Fin n → ℂ) :=
   -(1 / 2 : ℝ) • (complexifyEuclideanOperator n (B a) +
     I • complexifyEuclideanOperator n (B b))
-
-
 
 theorem complexConnectionOperator_apply (B : E →L[ℝ] E →L[ℝ] E) (a b : E)
     (hsym : B a b = B b a) :
@@ -44,15 +31,9 @@ theorem complexConnectionOperator_apply (B : E →L[ℝ] E →L[ℝ] E) (a b : E
   congr 1
   abel
 
-
-
-
 noncomputable def harmonicComplexOperator (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (u : ℂ → E) (z : ℂ) : (Fin n → ℂ) →L[ℂ] (Fin n → ℂ) :=
   complexConnectionOperator (Γ (u z)) (fderiv ℝ u z 1) (fderiv ℝ u z I)
-
-
-
 
 theorem contDiffAt_harmonicComplexOperator
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : ℂ → E} {z : ℂ}
@@ -63,9 +44,6 @@ theorem contDiffAt_harmonicComplexOperator
   have hc (d : ℂ) := (complexifyEuclideanOperator n).contDiff.contDiffAt.comp z
     (hG.clm_apply (hdu.clm_apply (contDiffAt_const (c := d))))
   exact ((hc 1).add ((hc I).const_smul I)).const_smul (-(1 / 2 : ℝ))
-
-
-
 
 theorem complexGradient_equation_of_covDeriv
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : ℂ → E} {z : ℂ}

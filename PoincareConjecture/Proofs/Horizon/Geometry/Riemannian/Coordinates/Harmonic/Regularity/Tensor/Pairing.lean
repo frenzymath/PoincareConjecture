@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Trace.Double
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.HilbertFiber
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,12 +20,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace RiemannianMetric
 
-
 def tensorPairingTwo (g : RiemannianMetric n M)
     (S T : CovariantTensorEvaluation n M 2) (x : M) : ℝ :=
   ∑ i, ∑ j, S x ![g.orthonormalBasis x i, g.orthonormalBasis x j] *
     T x ![g.orthonormalBasis x i, g.orthonormalBasis x j]
-
 
 def tensorPairingCovector (g : RiemannianMetric n M)
     (F : CovariantTensorEvaluation n M 3) (Z : CovariantTensorEvaluation n M 2) :
@@ -40,7 +31,6 @@ def tensorPairingCovector (g : RiemannianMetric n M)
   fun x v => ∑ i, ∑ j,
     F x ![v 0, g.orthonormalBasis x i, g.orthonormalBasis x j] *
       Z x ![g.orthonormalBasis x i, g.orthonormalBasis x j]
-
 
 def tensorPairingThree (g : RiemannianMetric n M)
     (F G : CovariantTensorEvaluation n M 3) (x : M) : ℝ :=
@@ -52,7 +42,6 @@ theorem tensorPairingTwo_self_nonneg
     (g : RiemannianMetric n M) (T : CovariantTensorEvaluation n M 2) (x : M) :
     0 ≤ g.tensorPairingTwo T T x :=
   Finset.sum_nonneg fun _ _ => Finset.sum_nonneg fun _ _ => mul_self_nonneg _
-
 
 theorem tensorPairingTwo_self_eq_tensorNorm_sq
     (g : RiemannianMetric n M) (T : CovariantTensorEvaluation n M 2) (x : M) :
@@ -123,7 +112,6 @@ private theorem tensorPairingCovector_eq_trace
 
 namespace LeviCivitaData
 
-
 theorem contMDiff_tensorPairingTwo (_D : LeviCivitaData g)
     {S T : CovariantTensorEvaluation n M 2}
     (hS : IsSmoothCovariantTensor S) (hT : IsSmoothCovariantTensor T) :
@@ -134,7 +122,6 @@ theorem contMDiff_tensorPairingTwo (_D : LeviCivitaData g)
   exact contMDiffOn_univ.mp
     (htrace.2 Set.univ isOpen_univ (fun i => Fin.elim0 i) (fun i => Fin.elim0 i))
 
-
 theorem isSmoothCovariantTensor_tensorPairingCovector (_D : LeviCivitaData g)
     {F : CovariantTensorEvaluation n M 3} {Z : CovariantTensorEvaluation n M 2}
     (hF : IsSmoothCovariantTensor F) (hZ : IsSmoothCovariantTensor Z) :
@@ -142,7 +129,6 @@ theorem isSmoothCovariantTensor_tensorPairingCovector (_D : LeviCivitaData g)
   rw [tensorPairingCovector_eq_trace F Z]
   exact (((isSmoothCovariantTensor_tensorProduct hF hZ).perm
     pairingCovectorPermutation).tensorTrace (g := g)).tensorTrace
-
 
 theorem mvfderiv_tensorPairingTwo (D : LeviCivitaData g)
     {S T : CovariantTensorEvaluation n M 2}
@@ -219,7 +205,6 @@ theorem mvfderiv_tensorPairingTwo (D : LeviCivitaData g)
   intro j _
   exact mul_comm _ _
 
-
 theorem covariantTensorDerivative_tensorPairingCovector (D : LeviCivitaData g)
     {F : CovariantTensorEvaluation n M 3} {Z : CovariantTensorEvaluation n M 2}
     (hF : IsSmoothCovariantTensor F) (hZ : IsSmoothCovariantTensor Z)
@@ -276,7 +261,6 @@ theorem covariantTensorDerivative_tensorPairingCovector (D : LeviCivitaData g)
     · congr 1
       ext k
       fin_cases k <;> rfl
-
 
 theorem tensorTrace_derivative_tensorPairingCovector (D : LeviCivitaData g)
     {F : CovariantTensorEvaluation n M 3} {Z : CovariantTensorEvaluation n M 2}

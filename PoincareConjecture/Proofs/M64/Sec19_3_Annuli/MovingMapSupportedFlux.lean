@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapMinimalBoundary
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByParts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,10 +69,6 @@ private theorem supported_pairing_integral_eq_derivative
   apply integral_congr_ae
   exact Eventually.of_forall fun p =>
     (supported_metric_pairing_fderiv hO hG hV hW hVO hcompat p d).symm
-
-
-
-
 
 theorem m64Annulus_covariant_boundary_flux_supported
     (hO : IsOpen O) (hC : ContDiffOn ℝ ∞ C O) (hG : ContDiffOn ℝ ∞ G O)

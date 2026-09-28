@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M33RegularHistory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -63,7 +56,6 @@ theorem RepairedPreterminalSlab.initial_events_finite
   by_contra h
   exact Set.disjoint_left.mp P.surgery_free ht.1 ⟨lt_of_not_ge h, ht.2.2⟩
 
-
 def RepairedPreterminalSlab.regularHistoryWindow
     {F : SurgeryFlowData.{u}} {T : ℝ} (P : RepairedPreterminalSlab F T) :
     M33RegularHistoryWindow F where
@@ -79,7 +71,6 @@ def RepairedPreterminalSlab.regularHistoryWindow
   time_subset := P.initial_interval_subset
   slice_nonempty := P.initial_slices_nonempty
   events_finite := P.initial_events_finite
-
 
 def SurgeryFlowData.closedRegularHistoryWindow (F : SurgeryFlowData.{u})
     (H : ℝ) (hH : 0 < H) (hHmem : H ∈ F.time_domain)

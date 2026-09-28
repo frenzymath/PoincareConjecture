@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceRim
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.General.LatticeHandleBoundaryGroups
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,8 +15,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem sourceRim_ambient_pi1_injective (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Affine.Translation
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,8 +79,6 @@ theorem tensorWeight_le_one {a : ℝ} (ha : 0 ≤ a) (haone : a ≤ 1)
   · intro k _
     simp only [axisWeight]
     split <;> linarith
-
-
 
 theorem tensorNorm_contraction {a u : ℝ} (ha : 0 ≤ a) (haone : a ≤ 1) (hu : u < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) {r : ℕ}
@@ -169,8 +165,6 @@ noncomputable def tensorPullback (a s : ℝ) {r : ℕ}
     (A : RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ) :
     RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ :=
   fun p i => tensorWeight a i * A (coordinates a s p) i
-
-
 
 theorem derivative_tensorPullback (a s : ℝ) (ha : a ≠ 0) {u : ℝ} (hu : u ≠ 1)
     (q : UnitTwoSphere) {r : ℕ}

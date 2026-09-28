@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -22,8 +13,6 @@ open PoincareConjecture.Proofs.M02.Topology
 noncomputable section
 
 variable {X : Type u} [TopologicalSpace X] {I : Type v}
-
-
 
 theorem exists_integral_small_homology_representative
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

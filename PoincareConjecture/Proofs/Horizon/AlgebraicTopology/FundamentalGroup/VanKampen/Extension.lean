@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenRetraction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -101,7 +91,6 @@ private theorem combinedHom_second (a : FundamentalGroup V (secondBase V b hb)) 
     rfl
 
 include hUV hb hU hV hcover in
-
 
 theorem exists_hom_range_contains :
     ∃ φ : FundamentalGroup X b.1 →* G,

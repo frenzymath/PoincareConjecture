@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.NonsphericalBoundary
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardDeckRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

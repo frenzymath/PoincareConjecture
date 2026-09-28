@@ -2,20 +2,9 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Sign
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Topology
-
-
 
 theorem exists_collar_complementary_regions
     {Y X : Type*} [TopologicalSpace Y] [CompactSpace Y] [ConnectedSpace Y]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceBarrier
 import PoincareConjecture.Proofs.M04.ShiCappedDistance
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem continuousOn_raw_distance
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -68,8 +57,6 @@ theorem continuousOn_raw_distance
   change Tendsto _ _ (𝓝 (((G.flow.metric z.1).edist p z.2).toReal))
   rw [← hvalue]
   exact hlim.congr' hagree.symm
-
-
 
 theorem continuousOn_rawDistanceSquare
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

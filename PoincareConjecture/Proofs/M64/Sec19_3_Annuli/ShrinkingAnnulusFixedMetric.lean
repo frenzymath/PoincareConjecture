@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusCurvatureMotion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ShrinkingCurveBoundaryMotion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusBoundaryImmersion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
-
 
 theorem m64Annulus_exists_fixed_metric_forward_of_shrinking_curves
     (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}

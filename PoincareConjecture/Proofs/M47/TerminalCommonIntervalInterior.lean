@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ private theorem history_heq_of_forward_heq
     HEq x y := by
   cases hst
   exact heq_of_eq ((H.history.forward_openEmbedding s hs).injective (eq_of_heq hxy))
-
-
 
 theorem terminalCommonInterval_history_interior
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
@@ -84,8 +73,6 @@ theorem terminalCommonInterval_history_interior
         (d'.forward s hs x)| ≤ B * Q ∧ _
     rw [← hn, ← hnegative]
     exact ⟨hcurv _ _ _ hx, hneg _ _ _ hx⟩
-
-
 
 theorem terminalCommonInterval_ball_preimage
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

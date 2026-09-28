@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem disjoint_intrinsicInterior_face_prefix
     {K : SimplicialComplex ℝ E} {n : ℕ} (order : Fin n → K.faces)
@@ -47,10 +34,6 @@ theorem disjoint_intrinsicInterior_face_prefix
     exact (Nat.lt_irrefl i.val) (hik.symm ▸ hk)
   have hik := hbefore k i (Finset.ssubset_iff_subset_ne.mpr ⟨hsub, hne⟩)
   exact (not_lt_of_ge hik.le) hk
-
-
-
-
 
 theorem exists_ordered_faces_of_double_pair
     {K : SimplicialComplex ℝ E} (hK : K.faces.Finite)

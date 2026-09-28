@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -52,10 +42,6 @@ private theorem cutoff_graph {N : ℕ} {U : Set LoopPlane}
   rwa [hleft, hright] at h
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 def compact_variation {N : ℕ} {U : Set LoopPlane}
     (X Y : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) U)
@@ -113,10 +99,6 @@ def compact_variation {N : ℕ} {U : Set LoopPlane}
     -(∫ z in U, fderiv ℝ φ z b * (X.value z + t • W z) j)
   rw [hleft, hright, X.weak_derivative φ hφ hφU i j, hprod]
   ring
-
-
-
-
 
 theorem compact_variation_off_tsupport {N : ℕ} {U : Set LoopPlane}
     (X Y : M65LocalWeakMap (fun y : EuclideanSpace ℝ (Fin N) => y) U)

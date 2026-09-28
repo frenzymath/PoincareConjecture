@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Li
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Transitions
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Extraction.Radial
 
-
-
-
-
-
-
-
-
 open Set Metric Filter Topology
 
 noncomputable section
@@ -129,9 +121,6 @@ private theorem compact_stage_exact_split
 
 namespace CompatiblePointedCompactSystem
 
-
-
-
 theorem completedLimit_exact_split_of_approximate_splits
     (X : ℕ → BasedMetricSpaceBundle.{u}) [∀ j, CompleteSpace (X j).carrier]
     (hpack : ∀ δ R, 0 < δ → ∃ N : ℕ, ∀ j m,
@@ -173,9 +162,6 @@ theorem completedLimit_exact_split_of_approximate_splits
       dist (S.stageEmbedding n z) y = dist z b := by
         rw [← hb, (S.stageEmbedding_isometry n).dist_eq]
       _ = dist x y - r := by rw [hzb, hd]
-
-
-
 
 theorem pointedGHConvergesUnbounded_of_approximate_splits
     (X : ℕ → BasedMetricSpaceBundle.{u}) [∀ j, CompleteSpace (X j).carrier]
@@ -316,9 +302,6 @@ theorem pointedGHConvergesUnbounded_of_approximate_splits
         linarith
     exact ((pointedGHDistance_le_realization Q₀).trans hbound).trans_lt (by dsimp [δ]; linarith)
 
-
-
-
 theorem completedLimit_exact_split_of_stage_exact_split
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ R : ℝ, ∃ n : ℕ,
@@ -372,11 +355,6 @@ theorem completedLimit_exact_split_of_stage_exact_split
       _ = dist (S.stageEmbedding n xn) (S.stageEmbedding n yn) - r := by
         rw [(S.stageEmbedding_isometry n).dist_eq]
 
-
-
-
-
-
 theorem exists_completedLimit_metric_segment_of_exact_splitting
     (S : CompatiblePointedCompactSystem.{u})
     [ProperSpace S.completedLimit.carrier]
@@ -389,8 +367,6 @@ theorem exists_completedLimit_metric_segment_of_exact_splitting
       ∀ s ∈ Icc (0 : ℝ) 1, ∀ t ∈ Icc (0 : ℝ) 1,
         dist (γ s) (γ t) = |s - t| * dist x y := by
   exact Poincare.MetricCurves.exists_metric_segment_of_splitting hsplit x y
-
-
 
 theorem completedLimit_is_geodesic_of_exact_splitting
     (S : CompatiblePointedCompactSystem.{u})
@@ -411,4 +387,3 @@ end CompatiblePointedCompactSystem
 end Poincare.GromovHausdorff
 
 end
-

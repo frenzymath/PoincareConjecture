@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.UpperLevel.Circle
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Nested
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -68,7 +60,6 @@ theorem upperProjection_image :
     rwa [upperProjection_sphereMap hx]
   · intro q hq
     exact ⟨q, hq, upperProjection_sphereMap hq⟩
-
 
 theorem exists_smooth_circle_upper_level :
     ∃ γ : S1 → E2,

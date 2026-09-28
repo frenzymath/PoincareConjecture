@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.QuadraticScaling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Relative.HalfSpace
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,8 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,9 +28,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_buffered_relative_component_minimum_disk_normalization
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -183,7 +172,6 @@ theorem exists_buffered_relative_component_minimum_disk_normalization
     exists_supported_agreement_of_fixed_halfspace (innerSL Real v) v hunit (b - w) H hHfix hcompact
   exact ⟨l, -(r ^ 2), neg_neg_of_pos hr2, hrb, B, K, hK, N, hBcircle,
     hsupport, ⟨w, hw, hfixed⟩, (image_congr hagree).trans hHimage⟩
-
 
 theorem exists_relative_component_minimum_disk_normalization
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

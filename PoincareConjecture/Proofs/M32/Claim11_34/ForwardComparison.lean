@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.InverseConfinement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +12,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
 
 theorem blowup_eventually_zeroSliceEmbedding_image_ball
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

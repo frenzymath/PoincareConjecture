@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,7 +11,6 @@ open scoped Topology ContinuousMap unitInterval
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 def puncturedSpaceSphereHomotopyEquiv
     (E : Type u) [NormedAddCommGroup E] [NormedSpace Real E] :
@@ -64,7 +56,6 @@ def puncturedSpaceSphereHomotopyEquiv
     simp [mem_sphere_zero_iff_norm.mp x.property]
   rw [hqj]
 
-
 theorem exists_sphere_puncture_homeomorph
     {E : Type u} [NormedAddCommGroup E] [InnerProductSpace Real E]
     [FiniteDimensional Real E] (n : Nat) [Fact (Module.finrank Real E = n + 1)]
@@ -79,7 +70,6 @@ theorem exists_sphere_puncture_homeomorph
   refine ⟨h, ?_⟩
   change stereographic' n v (-v) = 0
   simp [stereographic']
-
 
 theorem exists_sphere_contractible_open_cover (n : Nat) :
     ∃ A B : Set (sphere (0 : EuclideanSpace Real (Fin (n + 2))) 1),

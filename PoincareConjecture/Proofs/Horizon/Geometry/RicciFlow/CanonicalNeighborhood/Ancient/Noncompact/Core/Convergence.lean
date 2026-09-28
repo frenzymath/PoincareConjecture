@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Stability
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.LimitEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 local instance coreCarrierConnected (C : FlowCarrier.{0} 3) :
     ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
-
-
 
 theorem M23TerminalExtension.not_isCompact_of_noncompact_sources
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
@@ -44,9 +33,6 @@ theorem M23TerminalExtension.not_isCompact_of_noncompact_sources
   have hsource := hcompact.image hf
   rw [image_univ, range_eq_univ.mpr hsurj] at hsource
   exact hnoncompact (G.subsequence k) hsource
-
-
-
 
 theorem M23TerminalExtension.not_strongEvolvingNeck_at_soul_limit
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

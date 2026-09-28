@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.TensorFirstOrderGraphNative
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -67,7 +58,6 @@ theorem contDiffOn_scalar_chartInverse (p : M) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
     ContDiffOn ℝ ∞ (f ∘ (chartAt ModelE p).symm) (chartAt ModelE p).target :=
   (hf.comp_contMDiffOn (contMDiffOn_chart_symm (I := 𝓡 n) (x := p))).contDiffOn
-
 
 theorem directional_eq_chart_firstOrder (p : M) (V : SmoothField (n := n) (M := M))
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

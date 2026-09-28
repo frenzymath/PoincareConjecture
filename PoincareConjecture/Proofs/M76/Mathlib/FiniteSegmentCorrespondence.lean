@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F ι V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [Finite ι]
   [DecidableEq E] [DecidableEq F]
-
-
-
-
 
 theorem exists_finite_segment_complex (a b : ι → E) (hne : ∀ i, a i ≠ b i)
     (hinter : ∀ i j, segment ℝ (a i) (b i) ∩ segment ℝ (a j) (b j) ⊆
@@ -100,9 +87,6 @@ private theorem preserves_edge_label_faces (K : SimplicialComplex ℝ E)
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] [Nonempty V]
 
 omit [DecidableEq E] [DecidableEq F] in
-
-
-
 
 theorem exists_finitePL_segment_correspondence (a b : ι → V)
     (hne : ∀ i, a i ≠ b i) (hcover : ∀ v, ∃ i, v = a i ∨ v = b i)

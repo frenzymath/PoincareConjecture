@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem exists_short_neck_derivative_bounds (P : RicciFlowCurvatureTheory.{0}) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ k : ℕ, ∃ C : ℝ, 0 < C ∧
@@ -64,9 +52,6 @@ theorem exists_short_neck_derivative_bounds (P : RicciFlowCurvatureTheory.{0}) :
   apply h.trans
   exact div_le_div_of_nonneg_left hC.le hpower
     (Real.rpow_le_rpow (by norm_num) hTlower (by positivity))
-
-
-
 
 theorem exists_unit_neck_derivative_bounds (P : RicciFlowCurvatureTheory.{0}) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ k : ℕ, ∃ C : ℝ, 0 < C ∧

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalRims
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedRimRefinement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn
@@ -25,7 +17,6 @@ variable {M ι : Type} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {g : (V1 × V2) → M}
   {r : M → ℝ} {C R : Set M} {st : Stage e S g r C}
-
 
 structure MarkedBoundaryPair (st : Stage e S g r C) (R : Set M) (F : Bool → Set M) where
   model : MarkedTerminalRegion st R

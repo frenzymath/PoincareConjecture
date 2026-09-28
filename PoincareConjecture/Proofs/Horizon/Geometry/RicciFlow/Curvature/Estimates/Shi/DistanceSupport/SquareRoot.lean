@@ -2,17 +2,6 @@ import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.RicciFlowAnalysis

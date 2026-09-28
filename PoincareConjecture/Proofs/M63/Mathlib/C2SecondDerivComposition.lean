@@ -2,15 +2,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {W : Type v} [NormedAddCommGroup W] [NormedSpace ℝ W]
-
-
-
 
 theorem secondDeriv_comp_of_contDiffAt_two (f : E → W) (y : ℝ → E) (s : ℝ)
     (hf : ContDiffAt ℝ 2 f (y s)) (hy : ContDiffAt ℝ 2 y s) :

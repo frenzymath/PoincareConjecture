@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPLLocalInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {S : Set E} {T : Set F} {e : S ≃ₜ T}
-
-
-
-
 
 theorem IsFinitePL.mem_interior (he : e.IsFinitePL)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ F)
@@ -48,10 +33,6 @@ theorem IsFinitePL.mem_interior (he : e.IsFinitePL)
       rw [← hef, e.apply_symm_apply]
   have h := hf.mem_interior_image hdim hinj hx
   rwa [himage, ← hef x] at h
-
-
-
-
 
 theorem IsFinitePL.mem_interior_iff (he : e.IsFinitePL)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ F) (x : S) :

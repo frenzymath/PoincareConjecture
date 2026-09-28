@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Atlas.TimeWindows
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +21,6 @@ def slab : SurgeryRegularSlab F.slice F.metric A.lower A.upper :=
   F.regular_slabs A.lower A.upper A.ordered (A.slab_subset.trans W.time_subset)
     (A.surgery_free.mono_right Ioc_subset_Icc_self)
 
-
 def flow : RicciFlow 3 (F.slice A.lower).carrier A.interval where
   metric := A.slab.flow.metric
   connection := A.slab.flow.connection
@@ -40,7 +29,6 @@ def flow : RicciFlow 3 (F.slice A.lower).carrier A.interval where
   smooth := A.slab.flow.smooth.mono (prod_mono A.interval_subset subset_rfl)
   equation t ht x v w :=
     (A.slab.flow.equation t (A.interval_subset ht) x v w).mono A.interval_subset
-
 
 def identify (t : ℝ) (ht : t ∈ A.interval) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice A.lower).carrier (slice W t).carrier ∞ where
@@ -92,7 +80,6 @@ def box : GeneralizedRicciFlowBox (slice W) (metric W) W.interval where
 theorem box_forward_surjective (t : ℝ) (ht : t ∈ A.box.interval) :
     Function.Surjective (A.box.forward t ht) := (A.identify t ht).surjective
 
-
 theorem slab_compatibility (a b : ℝ) (hab : a < b)
     (hJ : Icc a b ⊆ F.time_domain) (hfree : Disjoint F.surgery_times (Ioc a b))
     (s t : ℝ) (hs : s ∈ Icc a b) (ht : t ∈ Icc a b)
@@ -113,7 +100,6 @@ theorem slab_compatibility (a b : ℝ) (hab : a < b)
 
 end OrdinaryTimeWindow
 
-
 theorem ordinary_boxes_vertical_compatibility (A B : OrdinaryTimeWindow W)
     (t : ℝ) (htA : t ∈ A.box.interval) (htB : t ∈ B.box.interval)
     (x : A.box.carrier.carrier) (y : B.box.carrier.carrier)
@@ -131,7 +117,6 @@ theorem ordinary_boxes_vertical_compatibility (A B : OrdinaryTimeWindow W)
   change A.slab.identify ⟨s, A.interval_subset hsA⟩ x =
     forward W s (B.box.forward s hsB y)
   simpa only [SurgeryRegularSlab.transport, Diffeomorph.symm_apply_apply] using h
-
 
 theorem ordinary_boxes_cover {t : ℝ} (ht : t ∈ W.interval)
     (hT : t ∉ F.surgery_times) (x : (slice W t).carrier) :

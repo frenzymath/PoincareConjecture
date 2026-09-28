@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardTopology
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapDefiningFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem cap_outward_tail_relative_frontier {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
@@ -59,8 +48,6 @@ theorem cap_outward_tail_relative_frontier {b : ℝ}
     rw [N.end_neck.coordinate_inverse_coordinate_map_of_axial_mem hzN, hzB] at hlt
     exact (lt_irrefl b) hlt
 
-
-
 theorem cap_outward_core_iff_axial_le {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹)
     {x : M} (hx : x ∈ N.end_neck.carrier) :
@@ -73,8 +60,6 @@ theorem cap_outward_core_iff_axial_le {b : ℝ}
     exact le_of_not_gt (fun hlt => h.2 ⟨hx, hlt, hz.2⟩)
   · intro hle
     exact ⟨N.end_neck_subset hx, fun htail => (not_lt_of_ge hle) htail.2.1⟩
-
-
 
 theorem cap_outward_boundary_local_defining_function {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹)

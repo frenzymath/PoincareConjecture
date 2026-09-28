@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -32,8 +24,6 @@ theorem iteratedFDeriv_comp_continuousLinearMap_of_contDiffAt
     hvo.uniqueDiffOn hpre.uniqueDiffOn hxv (le_refl (m : ℕ∞ω))
   simpa only [iteratedFDerivWithin_of_isOpen _ hpre hxv,
     iteratedFDerivWithin_of_isOpen _ hvo hxv] using h
-
-
 
 theorem locallyEventuallyBoundedDerivatives_comp_continuousLinearMap
     {d : ℕ} (L : EuclideanSpace ℝ (Fin d) →L[ℝ] E)

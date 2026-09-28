@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.FullSourceContinuity
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,11 +14,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 noncomputable def regularWeightedJacobian (G : LExponentialGeometry F T τmax p)
     (τ : ℝ) (x : EuclideanSpace ℝ (Fin n)) : ℝ :=
   (exponentialSliceChart G τ).source.indicator (weightedExponentialJacobian G τ) x
-
 
 theorem regularWeightedJacobian_nonneg (G : LExponentialGeometry F T τmax p)
     {τ : ℝ} (hτ : 0 < τ) (x : EuclideanSpace ℝ (Fin n)) :
@@ -37,12 +27,10 @@ theorem regularWeightedJacobian_nonneg (G : LExponentialGeometry F T τmax p)
       weightedExponentialJacobian_nonneg G hτ x
   · simp only [regularWeightedJacobian, indicator_of_notMem hx, le_refl]
 
-
 theorem weightedExponentialJacobian_continuousOn
     (G : LExponentialGeometry F T τmax p) {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :
     ContinuousOn (weightedExponentialJacobian G τ) (exponentialSliceChart G τ).source :=
   (weightedExponentialJacobian_continuous G hτ hmax).continuousOn
-
 
 theorem regularWeightedJacobian_measurable
     (G : LExponentialGeometry F T τmax p) {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :
@@ -50,7 +38,6 @@ theorem regularWeightedJacobian_measurable
   classical
   exact (weightedExponentialJacobian_continuousOn G hτ hmax).measurable_piecewise
     continuousOn_const (exponentialSliceChart G τ).open_source.measurableSet
-
 
 theorem eventually_mem_exponentialSlice_source
     (G : LExponentialGeometry F T τmax p) (x : EuclideanSpace ℝ (Fin n)) :
@@ -61,7 +48,6 @@ theorem eventually_mem_exponentialSlice_source
   exact hcover (metricCoordinates (F.metric T) p x)
     (by rw [metricCoordinates_tangentNorm]) τ hτ.1 hτ.2
 
-
 theorem regularWeightedJacobian_eventually_eq
     (G : LExponentialGeometry F T τmax p) (x : EuclideanSpace ℝ (Fin n)) :
     (fun τ ↦ regularWeightedJacobian G τ x) =ᶠ[𝓝[>] (0 : ℝ)]
@@ -70,7 +56,6 @@ theorem regularWeightedJacobian_eventually_eq
   exact indicator_of_mem hτ _
 
 variable [ConnectedSpace M]
-
 
 theorem regularWeightedJacobian_antitoneOn
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)

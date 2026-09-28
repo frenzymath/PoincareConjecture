@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.NormalTransitionSigns
 import PoincareConjecture.Proofs.M76.Brown.NormalChartTransitions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -16,9 +8,6 @@ open Set SignType
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 structure FlatteningAtlas (P : Type*) [TopologicalSpace P] (S : Set X) (ι : Type*) where
   chart : ι → OpenPartialHomeomorph X (P × ℝ)
@@ -80,8 +69,6 @@ theorem transition_base (i j : ι) (x : S)
   rw [A.base_coordinate i x hx.1, (A.chart i).left_inv hx.1]
   exact (A.base_coordinate j x hx.2).symm
 
-
-
 noncomputable def transitionSign (i j : ι) (x : S) : SignType := by
   classical
   exact if h : x ∈ A.baseSet i ∩ A.baseSet j then
@@ -119,9 +106,6 @@ theorem transitionSign_cocycle (i j k : ι) (x : S)
     (A.transitionSign_spec i j x hx.1)
     (A.transitionSign_spec j k x ⟨hx.1.2, hx.2⟩)
     (A.transitionSign_spec i k x ⟨hx.1.1, hx.2⟩)
-
-
-
 
 theorem continuousOn_transitionSign (i j : ι) :
     ContinuousOn (A.transitionSign i j) (A.baseSet i ∩ A.baseSet j) := by

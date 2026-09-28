@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Density
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem pullbackVolumeDensity_zero_eq_one
     (g : RiemannianMetric n M) (e : EuclideanSpace ℝ (Fin n) → M)
     (hmetric : ∀ u v : EuclideanSpace ℝ (Fin n),
@@ -42,7 +30,6 @@ theorem pullbackVolumeDensity_zero_eq_one
     exact (EuclideanSpace.basisFun (Fin n) ℝ).inner_eq_ite i j
   simp only [pullbackVolumeDensity, hgram, Matrix.det_one, Real.sqrt_one]
 
-
 theorem contDiffAt_signed_polarDensityRoot
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
     (θ : EuclideanSpace ℝ (Fin n)) (m : ℕ) {t : ℝ}
@@ -54,7 +41,6 @@ theorem contDiffAt_signed_polarDensityRoot
   have hline : ContDiffAt ℝ ∞ (fun s : ℝ => s • θ) t := by fun_prop
   exact contDiffAt_id.mul
     ((hρ.comp (f := fun s : ℝ => s • θ) t hline).rpow_const_of_ne hp.ne')
-
 
 theorem hasDerivAt_signed_polarDensityRoot_zero
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
@@ -80,7 +66,6 @@ theorem hasDerivAt_signed_polarDensityRoot_zero
   have hr := hρ0.rpow_const_of_ne (p := 1 / (m : ℝ)) (by simpa using hp.ne')
   simpa [g.pullbackVolumeDensity_zero_eq_one e hmetric] using!
     (hasDerivAt_id (0 : ℝ)).mul (hr.differentiableAt (by simp)).hasDerivAt
-
 
 theorem signed_polarDensityRoot_pow
     (g : RiemannianMetric n M) (e : EuclideanSpace ℝ (Fin n) → M)

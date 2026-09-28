@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -31,8 +20,6 @@ abbrev RoundCylinderTangent (z : RoundCylinderSpace) :=
 abbrev RoundCylinderTwoTensor :=
   (z : RoundCylinderSpace) → RoundCylinderTangent z → RoundCylinderTangent z → ℝ
 
-
-
 noncomputable def EvolvingRoundCylinderMetric (u : ℝ) : RoundCylinderTwoTensor :=
   fun z v w ↦
     2 * (1 - u) * inner ℝ
@@ -40,14 +27,12 @@ noncomputable def EvolvingRoundCylinderMetric (u : ℝ) : RoundCylinderTwoTensor
       (mfderiv (𝓡 2) (𝓡 3) (fun x : UnitTwoSphere ↦ x.1) z.1 w.1) +
       v.2 * w.2
 
-
 noncomputable def RoundCylinderMetric : RoundCylinderTwoTensor :=
   EvolvingRoundCylinderMetric 0
 
 noncomputable def roundCylinderCoordinateBasis : Fin 3 → RoundCylinderCoordinates :=
   ![(EuclideanSpace.basisFun (Fin 2) ℝ 0, 0),
     (EuclideanSpace.basisFun (Fin 2) ℝ 1, 0), (0, 1)]
-
 
 noncomputable def roundCylinderPullback
     {M : Type u} [TopologicalSpace M]
@@ -72,8 +57,6 @@ noncomputable def roundCylinderGram (u : ℝ)
     (p : RoundCylinderCoordinates) : Matrix (Fin 3) (Fin 3) ℝ :=
   roundCylinderTensorCoefficient (EvolvingRoundCylinderMetric u) c p
 
-
-
 noncomputable def roundCylinderChristoffel (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
     (p : RoundCylinderCoordinates) (a b d : Fin 3) : ℝ :=
@@ -84,8 +67,6 @@ noncomputable def roundCylinderChristoffel (u : ℝ)
         (roundCylinderCoordinateBasis d) -
       fderiv ℝ (fun q ↦ roundCylinderGram u c q b d) p
         (roundCylinderCoordinateBasis j))
-
-
 
 noncomputable def roundCylinderTensorDerivative (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -106,15 +87,11 @@ noncomputable def roundCylinderIteratedDerivative (u : ℝ)
       roundCylinderGram u c p (a 0) (a 1)
   | k + 1 => roundCylinderTensorDerivative u c (roundCylinderIteratedDerivative u c B k)
 
-
-
 noncomputable def roundCylinderTensorNormSquared (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
     (p : RoundCylinderCoordinates) {r : ℕ} (T : (Fin r → Fin 3) → ℝ) : ℝ :=
   ∑ a : Fin r → Fin 3, ∑ b : Fin r → Fin 3,
     (∏ i : Fin r, (roundCylinderGram u c p)⁻¹ (a i) (b i)) * T a * T b
-
-
 
 noncomputable def roundCylinderJetErrorSquared (u : ℝ) (B : RoundCylinderTwoTensor)
     (order : ℕ) (z : RoundCylinderSpace) : ℝ :=
@@ -122,8 +99,6 @@ noncomputable def roundCylinderJetErrorSquared (u : ℝ) (B : RoundCylinderTwoTe
   let p : RoundCylinderCoordinates := (c z.1, z.2)
   ∑ k ∈ Finset.range (order + 1),
     roundCylinderTensorNormSquared u c p (roundCylinderIteratedDerivative u c B k p)
-
-
 
 def RoundCylinderTensorSmoothOn (epsilon : ℝ) (B : RoundCylinderTwoTensor) : Prop :=
   ∀ (q : UnitTwoSphere) (a b : Fin 3),
@@ -139,8 +114,6 @@ def RoundCylinderClose (epsilon u : ℝ) (B : RoundCylinderTwoTensor) : Prop :=
     ∃ bound : ℝ, bound < epsilon ^ 2 ∧
       ∀ z : RoundCylinderSpace, z.2 ∈ Set.Ioo (-epsilon⁻¹) epsilon⁻¹ →
         roundCylinderJetErrorSquared u B ⌊epsilon⁻¹⌋₊ z ≤ bound
-
-
 
 def RoundCylinderFamilyClose (epsilon : ℝ) (I : Set ℝ)
     (B : ℝ → RoundCylinderTwoTensor) : Prop :=

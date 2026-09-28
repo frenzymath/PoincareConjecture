@@ -5,16 +5,6 @@ import Mathlib.Analysis.InnerProductSpace.ProdL2
 import Mathlib.Analysis.Normed.Lp.ProdLp
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +20,6 @@ variable {n : ℕ}
 local notation "V" => EuclideanSpace ℝ (Fin n)
 local notation "L2" => Lp ℝ 2 (volume : Measure V)
 
-
-
 def supportedTests (K : Set V) : Submodule ℝ (𝓢(V, ℝ)) where
   carrier := {f | ∀ x ∉ K, f x = 0}
   zero_mem' := by simp
@@ -44,11 +32,9 @@ def supportedTests (K : Set V) : Submodule ℝ (𝓢(V, ℝ)) where
     change c • f x = 0
     rw [hf x hx, smul_zero]
 
-
 def testValue (K : Set V) : supportedTests K →ₗ[ℝ] L2 :=
   (SchwartzMap.toLpCLM ℝ ℝ 2 (volume : Measure V)).toLinearMap.comp
     (supportedTests K).subtype
-
 
 def dirichletValue (K : Set V) : Submodule ℝ L2 := (testValue K).range.topologicalClosure
 
@@ -71,7 +57,6 @@ theorem intoDirichletValue_denseRange (K : Set V) : DenseRange (intoDirichletVal
 abbrev DirichletGradient (n : ℕ) :=
   PiLp 2 (fun _ : Fin n => Lp ℝ 2 (volume : Measure (EuclideanSpace ℝ (Fin n))))
 
-
 def testGradient (K : Set V) : supportedTests K →ₗ[ℝ] DirichletGradient n :=
   (WithLp.linearEquiv 2 ℝ (Fin n → L2)).symm.toLinearMap.comp
     (LinearMap.pi (fun i => (SchwartzMap.toLpCLM ℝ ℝ 2 (volume : Measure V)).toLinearMap.comp
@@ -86,7 +71,6 @@ abbrev DirichletAmbient (K : Set V) := WithLp 2 (dirichletValue K × DirichletGr
 def dirichletImage (K : Set V) : supportedTests K →ₗ[ℝ] DirichletAmbient K :=
   (WithLp.linearEquiv 2 ℝ (dirichletValue K × DirichletGradient n)).symm.toLinearMap.comp
     ((intoDirichletValue K).prod (testGradient K))
-
 
 def dirichletForm (K : Set V) : Submodule ℝ (DirichletAmbient K) :=
   (dirichletImage K).range.topologicalClosure
@@ -127,8 +111,6 @@ theorem dirichletInclusion_denseRange (K : Set V) : DenseRange (dirichletInclusi
   apply (intoDirichletValue_denseRange K).mono
   rintro _ ⟨f, rfl⟩
   exact ⟨intoDirichletForm K f, rfl⟩
-
-
 
 theorem dirichletInclusion_eq_zero_iff (K : Set V) (v : dirichletForm K) :
     dirichletInclusion K v = 0 ↔ v = 0 := by
@@ -173,8 +155,6 @@ theorem dirichletInclusion_injective (K : Set V) :
   apply sub_eq_zero.mp
   apply (dirichletInclusion_eq_zero_iff K (v - w)).mp
   rw [map_sub, he, sub_self]
-
-
 
 theorem testGradient_norm_sq (K : Set V) (f : supportedTests K) :
     ‖testGradient K f‖ ^ 2 = EuclideanMollificationNative.gradientEnergy (f : V → ℝ) := by

@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace Convex
 
 variable {E : Type*} [AddCommGroup E] [TopologicalSpace E]
   [IsTopologicalAddGroup E] [Module ℝ E] [ContinuousSMul ℝ E]
-
-
-
 
 theorem closure_inter_affine_neg {C : Set E} (hcv : Convex ℝ C) (hC : IsClosed C)
     (A : E →ᵃ[ℝ] ℝ) (hA : ∀ x ∈ C, A x ≤ 0)

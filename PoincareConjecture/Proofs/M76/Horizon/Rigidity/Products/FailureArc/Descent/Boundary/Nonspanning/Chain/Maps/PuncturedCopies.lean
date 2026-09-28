@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrescribedIntervalDiskMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Nonspanning.HoleTransport
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.NestedPolygonAnnulus
 
-
-
 set_option autoImplicit false
 open Set Geometry TriangleDiskModel
 

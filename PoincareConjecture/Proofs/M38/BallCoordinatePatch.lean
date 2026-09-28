@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,33 +12,27 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 theorem surgeryBall_image_open : IsOpen (B.map '' Metric.ball 0 2) := by
   convert B.open_embedding.isOpen_range using 1
   ext y
   simp only [Set.mem_image, Set.mem_range, Subtype.exists]
   constructor <;> rintro ⟨z, hz, he⟩ <;> exact ⟨z, hz, he⟩
 
-
 theorem surgeryBall_inverse_mem {x : A.carrier} (hx : x ∈ B.map '' Metric.ball 0 2) :
     B.inverse x ∈ Metric.ball 0 2 := by
   obtain ⟨z, hz, rfl⟩ := hx
   rwa [B.left_inverse hz]
-
 
 theorem surgeryBall_closedImage_compact (r : ℝ) (hr : r < 2) :
     IsCompact (B.map '' Metric.closedBall 0 r) :=
   (isCompact_closedBall (0 : StandardCapSpace) r).image_of_continuousOn
     (B.map_smooth.continuousOn.mono (Metric.closedBall_subset_ball hr))
 
-
 theorem surgeryBall_center_mem : B.map 0 ∈ B.closedBall := by
   exact Set.mem_image_of_mem B.map (by simp)
 
-
 theorem surgeryBall_closedBall_subset_image : B.closedBall ⊆ B.map '' Metric.ball 0 2 :=
   Set.image_mono (Metric.closedBall_subset_ball (by norm_num))
-
 
 theorem surgeryBall_mem_closedBall_iff {x : A.carrier}
     (hx : x ∈ B.map '' Metric.ball 0 2) :
@@ -61,12 +47,10 @@ theorem surgeryBall_mem_closedBall_iff {x : A.carrier}
     exact ⟨B.inverse x, by simpa only [Metric.mem_closedBall, dist_zero_right] using h,
       B.right_inverse hx⟩
 
-
 noncomputable def surgeryBallPatch (f : StandardCapSpace → StandardCapSpace) :
     A.carrier → A.carrier := by
   classical
   exact fun x => if x ∈ B.map '' Metric.ball 0 2 then B.map (f (B.inverse x)) else x
-
 
 theorem surgeryBallPatch_of_mem (f : StandardCapSpace → StandardCapSpace)
     {x : A.carrier} (hx : x ∈ B.map '' Metric.ball 0 2) :
@@ -74,13 +58,11 @@ theorem surgeryBallPatch_of_mem (f : StandardCapSpace → StandardCapSpace)
   classical
   simp only [surgeryBallPatch, if_pos hx]
 
-
 theorem surgeryBallPatch_of_not_mem (f : StandardCapSpace → StandardCapSpace)
     {x : A.carrier} (hx : x ∉ B.map '' Metric.ball 0 2) :
     surgeryBallPatch B f x = x := by
   classical
   simp only [surgeryBallPatch, if_neg hx]
-
 
 theorem surgeryBallPatch_eq_self_off_compact (f : StandardCapSpace → StandardCapSpace)
     (hf : ∀ z, 3 / 2 ≤ ‖z‖ → f z = z)
@@ -93,8 +75,6 @@ theorem surgeryBallPatch_eq_self_off_compact (f : StandardCapSpace → StandardC
         by simpa only [Metric.mem_closedBall, dist_zero_right] using hn, B.right_inverse hu⟩
     rw [surgeryBallPatch_of_mem B f hu, hf _ hnorm.le, B.right_inverse hu]
   · exact surgeryBallPatch_of_not_mem B f hu
-
-
 
 theorem surgeryBallPatch_smooth (f : StandardCapSpace → StandardCapSpace)
     {S : Set StandardCapSpace} (hS : IsOpen S) (hf : ContDiffOn ℝ ∞ f S)

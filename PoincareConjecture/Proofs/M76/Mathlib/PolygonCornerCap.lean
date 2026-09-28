@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentCap
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +16,6 @@ private theorem eq_endpoint_of_mem_two_edges {n : ℕ} (P : Polygon (ℝ × ℝ)
   · obtain ⟨k, rfl⟩ := hv
     exact Or.imp (congrArg P) (congrArg P) ((P.vertex_mem_edgeSet_iff hP hinj k i).mp hqi)
   · exact (hne (P.eq_of_mem_edgeSets_of_not_vertex hP hinj hv hqj hqi)).elim
-
-
-
-
 
 theorem disjoint_boundary_corner_cap {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 3))

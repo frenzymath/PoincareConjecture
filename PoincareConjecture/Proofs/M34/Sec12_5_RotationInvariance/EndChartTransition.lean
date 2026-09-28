@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.OpenDomainMap
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndTranslationCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,12 +11,8 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
 
-
-
 def endReferenceOverlap (r : ℝ) : Set (endReferenceRegion e) :=
   {x | endAxialTranslation e r x ∈ endReferenceRegion e}
-
-
 
 theorem endReferenceOverlap_isOpen (r : ℝ) (hr : -3 < r) :
     IsOpen (endReferenceOverlap e r) := by
@@ -33,22 +20,16 @@ theorem endReferenceOverlap_isOpen (r : ℝ) (hr : -3 < r) :
   exact (endReferenceRegion_isOpen e).preimage
     (endReferenceTranslation_isLocalDiffeomorph e hr).contMDiff.continuous
 
-
-
 noncomputable def endReferenceTransition (p : endReferenceRegion e) (r : ℝ) :
     endReferenceRegion e → endReferenceRegion e :=
   letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
   fun x => (extChartAt (𝓡 3) p).symm (endAxialTranslation e r x)
-
-
 
 theorem endReferenceTransition_coe (p : endReferenceRegion e) (r : ℝ)
     {x : endReferenceRegion e} (hx : x ∈ endReferenceOverlap e r) :
     (endReferenceTransition e p r x : StandardCapSpace) = endAxialTranslation e r x :=
   canonicalOpen_map_coe (𝕜 := ℝ) (endReferenceRegion_isOpen e)
     (endAxialTranslation e r) p x hx
-
-
 
 theorem endReferenceTransition_contMDiffOn (p : endReferenceRegion e)
     (r : ℝ) (hr : -3 < r) :
@@ -64,8 +45,6 @@ theorem endReferenceTransition_contMDiffOn (p : endReferenceRegion e)
     ((endReferenceRegion_isOpen e).mem_nhds x.property)
   exact (canonicalOpen_map_contMDiffAt (endReferenceRegion_isOpen e)
     (endReferenceRegion_isOpen e) hf hx p).contMDiffWithinAt
-
-
 
 theorem endReferenceTransition_mfderiv (p : endReferenceRegion e)
     (r : ℝ) (hr : -3 < r) :
@@ -83,8 +62,6 @@ theorem endReferenceTransition_mfderiv (p : endReferenceRegion e)
     ((endReferenceRegion_isOpen e).mem_nhds x.property)).mdifferentiableAt (by simp)
   exact canonicalOpen_map_mfderiv (endReferenceRegion_isOpen e)
     (endReferenceRegion_isOpen e) hf hx p
-
-
 
 theorem endReferenceTransition_metric {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (p : endReferenceRegion e) (r : ℝ) (hr : -3 < r) (s : ℝ) (hs : -3 < s)

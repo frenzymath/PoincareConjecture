@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Convex.Segment
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Function.Injective
 
 variable {E F : Type*} [AddCommGroup E] [Module ℝ E] [AddCommGroup F] [Module ℝ F]
   {s : Set E} {f : s → F} {a b : E} {c d : F}
-
-
-
 
 theorem segment_mem_iff_of_lineMap (hf : Function.Injective f) (hs : segment ℝ a b ⊆ s)
     (hparam : ∀ (t : ℝ) (_ht : t ∈ Icc (0 : ℝ) 1)
@@ -38,9 +26,6 @@ theorem segment_mem_iff_of_lineMap (hf : Function.Injective f) (hs : segment ℝ
     have hx := hs (lineMap_mem_segment ℝ a b ht)
     have he := hf ((hparam t ht hx).trans htx)
     exact ⟨t, ht, congrArg (fun z : s => (z : E)) he⟩
-
-
-
 
 theorem openSegment_mem_iff_of_lineMap (hf : Function.Injective f) (hs : segment ℝ a b ⊆ s)
     (hparam : ∀ (t : ℝ) (_ht : t ∈ Icc (0 : ℝ) 1)

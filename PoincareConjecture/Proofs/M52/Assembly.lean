@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Definitions.M37SurgeryFlow
 import PoincareConjecture.Proofs.M52.Volume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def m52CoreFlowData
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -39,7 +29,6 @@ theorem m52CoreFlowData_flow
     {N : NormalizedInitialMetric (M := M)}
     (G : RepairedGlobalFlowData N) :
     (m52CoreFlowData G).flow = G.certificate.flow := rfl
-
 
 theorem RepairedGlobalFlowData.terminalPolicy
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -65,9 +54,6 @@ private theorem noSurgeryAfterEmpty (F : SurgeryFlowData.{u})
   let : IsEmpty (F.slice a).carrier := F.extinction_permanent s a hs ha hsa hempty
   obtain ⟨x⟩ := E.pre_nonempty
   exact isEmptyElim (E.pre_identify ⟨a, le_max_right _ _, hat⟩ x)
-
-
-
 
 theorem m52GlobalFlowDataFromSchedule
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PlaneReflection
 import PoincareConjecture.Proofs.M60.Mathlib.ManifoldDerivativeEquiv
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60AreaDensity_comp_reflection (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) :
@@ -49,8 +38,6 @@ theorem m60AreaDensity_comp_reflection (g : RiemannianMetric n M)
   simp only [m60AreaDensity, Matrix.det_fin_two, m60AreaGram, h0, h1, map_neg,
     neg_apply, neg_neg, neg_mul_neg]
 
-
-
 theorem m60AreaDensity_integrableOn_comp_reflection (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : IntegrableOn (m60AreaDensity g f) loopDiskSet volume) :
     IntegrableOn (m60AreaDensity g (fun w => f (m60PlaneReflection w))) loopDiskSet volume := by
@@ -61,8 +48,6 @@ theorem m60AreaDensity_integrableOn_comp_reflection (g : RiemannianMetric n M)
     loopDiskSet volume
   simp_rw [m60AreaDensity_comp_reflection]
   exact hi
-
-
 
 theorem m60AreaIntegral_comp_reflection (g : RiemannianMetric n M) (f : LoopPlane → M) :
     (∫ z in loopDiskSet, m60AreaDensity g (fun w => f (m60PlaneReflection w)) z) =

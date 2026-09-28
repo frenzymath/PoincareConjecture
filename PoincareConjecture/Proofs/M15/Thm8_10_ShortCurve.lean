@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_smooth_short_curve
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

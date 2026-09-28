@@ -3,14 +3,6 @@ import Mathlib.Analysis.Normed.Operator.Compact.Basic
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -83,7 +75,6 @@ theorem equicontinuous_kernel_unitBall (k : C(X, H)) :
     (by simpa only [mul_one] using
       mul_le_mul_of_nonneg_left hun (norm_nonneg (k x - k y)))).trans_lt hy
 
-
 theorem isCompact_closure_kernel_unitBall (k : C(X, H)) :
     IsCompact (closure (kernelFunction k '' Metric.closedBall (0 : H) 1)) := by
   apply BoundedContinuousFunction.arzela_ascoli (Metric.closedBall (0 : ℝ) ‖k‖)
@@ -100,7 +91,6 @@ theorem isCompact_closure_kernel_unitBall (k : C(X, H)) :
     _ ≤ ‖k‖ := by
       simpa only [mul_one] using mul_le_mul_of_nonneg_left hun (norm_nonneg k)
 
-
 theorem isCompactOperator_kernelOperator (k : C(X, H)) :
     IsCompactOperator (kernelOperator k) := by
   apply (isCompactOperator_iff_exists_mem_nhds_isCompact_closure_image
@@ -109,7 +99,6 @@ theorem isCompactOperator_kernelOperator (k : C(X, H)) :
     isCompact_closure_kernel_unitBall k⟩
 
 variable [MeasurableSpace X] [BorelSpace X] (μ : Measure X) [IsFiniteMeasure μ]
-
 
 def kernelLpOperator (k : C(X, H)) : H →L[ℝ] Lp ℝ 2 μ :=
   (BoundedContinuousFunction.toLp 2 μ ℝ).comp (kernelOperator k)

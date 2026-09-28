@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import PoincareConjecture.Proofs.M76.Brown.SpindleHeight
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
 noncomputable section
 
 open Set BrownCollar
@@ -12,7 +9,6 @@ open Set BrownCollar
 namespace PoincareConjecture.M76
 
 variable {X Y B : Type*} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace B]
-
 
 def initialRimHomotopyEquiv (X : Type*) [TopologicalSpace X] :
     ContinuousMap.HomotopyEquiv X (X × Icc (0 : ℝ) 1) where
@@ -39,7 +35,6 @@ def initialRimHomotopyEquiv (X : Type*) [TopologicalSpace X] :
       · rfl
       · exact Subtype.ext (one_mul _)
 
-
 theorem marked_cylinder_rim_generates (H : (X × Icc (0 : ℝ) 1) ≃ₜ Y)
     (e : X ≃ₜ B) (i : C(B, Y))
     (hmark : ∀ x, H (x, ⟨0, by norm_num⟩) = i (e x)) (b : B) :
@@ -51,8 +46,6 @@ theorem marked_cylinder_rim_generates (H : (X × Icc (0 : ℝ) 1) ≃ₜ Y)
     exact (hmark (e.symm x)).trans (congrArg i (e.apply_symm_apply x))
   subst i
   exact (FundamentalGroup.map_bijective_of_homotopyEquiv E b).2
-
-
 
 theorem exists_marked_cylinder_rim_collar (H : (X × Icc (0 : ℝ) 1) ≃ₜ Y)
     (e : X ≃ₜ B) (i : B → Y)

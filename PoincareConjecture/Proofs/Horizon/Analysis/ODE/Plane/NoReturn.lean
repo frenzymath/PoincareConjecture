@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.FlowBox.FirstRet
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.FlowBox.SupportedChange
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Plane.NoPeriodicOrbit
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ open scoped ContDiff Topology
 namespace Poincare.ODE.Plane
 
 open Poincare.ODE.LocalFlow
-
-
 
 theorem not_isBounded_global_integralCurve
     {V : EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)}

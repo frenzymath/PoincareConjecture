@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Model
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -64,7 +56,6 @@ lemma modelVolume_le_exp_mul_zero {n : ℕ} {κ R : ℝ} (hκ : 0 ≤ κ) (hR : 
   have h := mul_le_mul_of_nonneg_left hi
     (mul_nonneg (Nat.cast_nonneg n) (euclideanUnitBallVolume_nonneg n))
   simpa only [modelVolume, modelS_zero_curvature, mul_assoc, E] using h
-
 
 lemma modelVolume_div_le {n : ℕ} (hn : 1 ≤ n) {κ r R : ℝ}
     (hκ : 0 ≤ κ) (hr : 0 < r) (hR : 0 ≤ R) :

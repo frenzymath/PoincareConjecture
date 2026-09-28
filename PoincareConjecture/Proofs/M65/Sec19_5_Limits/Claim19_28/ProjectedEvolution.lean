@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.CoordinateRecurrences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65ProjectedTimeVelocity_eq_curvature (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -47,8 +37,6 @@ theorem m65ProjectedTimeVelocity_eq_curvature (P : M62.CircleProductData F circu
     (P.charts.split (c x t) (curveVelocity (n := n + 1) (fun r => c x r) t)).1 at h
   rw [hc.equation t ht x] at h
   exact h
-
-
 
 theorem m65ProjectedChart_time_deriv (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

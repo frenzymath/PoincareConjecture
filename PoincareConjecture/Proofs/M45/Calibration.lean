@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.M45ControlledSchedules
 import PoincareConjecture.Proofs.M45.KappaConstants
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,9 +11,6 @@ universe u
 namespace PoincareConjecture.RepairedControlledSchedulesData
 
 variable (S : RepairedControlledSchedulesData.{u})
-
-
-
 
 theorem appendixA_accuracy {epsilon : ℝ}
     (he : epsilon ≤ S.calibration.common_epsilon) :
@@ -32,8 +22,6 @@ theorem setup_appendixA_accuracy :
     terminalAccuracyFactor * S.setup.epsilon ≤ S.calibration.appendixA.epsilon₀ := by
   apply S.appendixA_accuracy
   linarith [S.calibration.two_epsilon_le_common, S.setup.epsilon_pos]
-
-
 
 theorem boundedDistanceDoubled (a : ℝ) (ha : 0 ≤ a) :
     ∃ D₀ D : ℝ, 0 < D₀ ∧ 0 < D ∧
@@ -48,8 +36,6 @@ theorem boundedDistanceDoubled (a : ℝ) (ha : 0 ≤ a) :
     (mul_pos (by norm_num) S.setup.epsilon_pos)
     S.calibration.two_epsilon_le_bounded_distance (2 * S.setup.C)
     (mul_pos (by norm_num) S.setup.C_pos) a ha
-
-
 
 theorem boundedDistanceDoubledDense (a : ℝ) (ha : 0 ≤ a) :
     ∃ D₀ D : ℝ, 0 < D₀ ∧ 0 < D ∧
@@ -76,7 +62,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem kappaCanonical (K : AncientKappaSolution 3 M)
     (hK : ¬ Nonempty (M27ProjectivePlaneLineFlowCertificate K))
     (eta : ℝ) (heta : eta = S.setup.epsilon ∨ eta = 2 * S.setup.epsilon)
@@ -86,7 +71,6 @@ theorem kappaCanonical (K : AncientKappaSolution 3 M)
   rw [S.calibration.setup_C_eq]
   exact le_max_left _ _
 
-
 theorem kappaDerivatives (K : AncientKappaSolution 3 M) :
     M27ScalarDerivativeBounds K S.setup.C := by
   apply (S.calibration.kappa_derivatives K).mono_constant
@@ -95,13 +79,11 @@ theorem kappaDerivatives (K : AncientKappaSolution 3 M) :
 
 end Ancient
 
-
 theorem selector_deep_horn (rho delta : ℝ) (hr : 0 < rho) (hd : 0 < delta) :
     S.setup.selector.h rho delta ≤ min (rho * delta) (rho / (2 * S.setup.C)) := by
   rw [S.calibration.selector_eq]
   exact le_min (S.calibration.horn_selector.h_le rho delta hr hd)
     (S.calibration.horn_selector.h_upper rho delta hr hd)
-
 
 theorem standard_canonical_source : ∃ beta Cstd : ℝ,
     0 < beta ∧ beta < 1 / 2 ∧ 0 < Cstd ∧ Cstd ≤ S.setup.C ∧
@@ -116,7 +98,6 @@ theorem standard_canonical_source : ∃ beta Cstd : ℝ,
   rw [S.calibration.setup_C_eq]
   exact (le_add_of_nonneg_right (show (0 : ℝ) ≤ 1 from zero_le_one)).trans
     (le_max_right _ _)
-
 
 theorem standardCanonical (t : ℝ)
     (ht : t ∈ Set.Ico 0 S.cap_persistence.standard_cap.flow.base.lifetime)

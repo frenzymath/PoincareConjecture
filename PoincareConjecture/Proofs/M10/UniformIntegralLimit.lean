@@ -1,19 +1,11 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem tendsto_integral_mul_of_uniform_error {X : Type*} [MeasurableSpace X]
     {μ : Measure X} {f : ℕ → X → ℝ} {u v : X → ℝ} {ε : ℕ → ℝ}

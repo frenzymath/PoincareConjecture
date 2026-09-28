@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.CellularShrinking
 import PoincareConjecture.Proofs.M76.Brown.SupportedCellShrinking
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -20,10 +11,6 @@ namespace Homeomorph
 
 variable {X E : Type*} [MetricSpace X] [CompactSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
-
 
 theorem exists_collapse_of_nested_ballPairs
     (K : ℕ → Set X) (hK : ∀ n, IsCompact (K n))

@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Theory
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M]
-
-
 
 def ConnectedNeckCapCover.neckOnlyCover_of_no_cap_core
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
@@ -50,9 +33,6 @@ def ConnectedNeckCapCover.neckOnlyCover_of_no_cap_core
     · exact hneck
     · exact False.elim (Set.disjoint_left.mp (hno C hC) hx hxC)
   neck_epsilon := H.neck_epsilon
-
-
-
 
 theorem ConnectedNeckCapCover.exists_maximal_cap_or_neck_cover_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -80,8 +60,6 @@ theorem ConnectedNeckCapCover.exists_maximal_cap_or_neck_cover_threshold :
 
 omit [T2Space M] in
 
-
-
 theorem ConnectedNeckCapCover.frontier_cover_of_maximal_cap
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g) (C : CapCertificate g)
     (hmax : ∀ D ∈ H.caps, C.carrier ⊆ D.carrier →
@@ -96,8 +74,6 @@ theorem ConnectedNeckCapCover.frontier_cover_of_maximal_cap
     exact Set.disjoint_left.mp (hmax D hD hCD) hfront (D.core_subset_closed_core hxD)
 
 omit [T2Space M] in
-
-
 
 theorem ConnectedNeckCapCover.boundary_meets_of_maximal_frontier_core_contact
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g) (C D : CapCertificate g)
@@ -114,9 +90,6 @@ theorem ConnectedNeckCapCover.boundary_meets_of_maximal_frontier_core_contact
   obtain ⟨x, hx, hxD⟩ := hcontact
   exact Set.disjoint_left.mp (hmax D hD (hcore.trans D.core_subset_carrier)) hx
     (D.core_subset_closed_core hxD)
-
-
-
 
 theorem ConnectedNeckCapCover.exists_maximal_cap_frontier_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -147,9 +120,6 @@ theorem ConnectedNeckCapCover.exists_maximal_cap_frontier_closing_threshold :
   obtain ⟨p, hpX, hpC⟩ := hmeet
   rw [connectedComponent_eq (C.carrier_subset_boundary_component hpC)]
   exact H.connected_X.isPreconnected.subset_connectedComponent hpX
-
-
-
 
 theorem ConnectedNeckCapCover.exists_cap_frontier_or_neck_cover_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -205,7 +175,6 @@ theorem EpsilonTubeCertificate.epsilon_eq_of_source_subset
     tube.epsilon = H.epsilon :=
   tube.chain.epsilon_eq_of_source_subset H hsource
 
-
 def RepairedNeckCapTopologyData.of_single_cap
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
     (C : CapCertificate g) (hC : C ∈ H.caps)
@@ -232,8 +201,6 @@ theorem CapCertificate.contains_of_disjoint_frontier
     exact mem_univ _
   exact hmem
 
-
-
 def RepairedNeckCapTopologyData.of_cap_frontier_disjoint
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
     (C : CapCertificate g) (hC : C ∈ H.caps)
@@ -243,7 +210,6 @@ def RepairedNeckCapTopologyData.of_cap_frontier_disjoint
   .of_single_cap H C hC
     (C.contains_of_disjoint_frontier H.connected_X hmeet hfront)
 
-
 def RepairedNeckCapTopologyData.of_tube
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
     (tube : EpsilonTubeCertificate g H.X)
@@ -252,7 +218,6 @@ def RepairedNeckCapTopologyData.of_tube
   exact
     { region := .tube tube
       compatible := tube.epsilon_eq_of_source_subset H hsource }
-
 
 def RepairedNeckCapTopologyData.of_capped_tube
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
@@ -269,7 +234,6 @@ def RepairedNeckCapTopologyData.of_capped_tube
       certificate.tube.epsilon_eq_of_source_subset H hsource,
       H.cap_constant_bound certificate.cap hcap,
       ⟨certificate.attachment⟩⟩
-
 
 def RepairedNeckCapTopologyData.of_double_capped_tube
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)
@@ -290,7 +254,6 @@ def RepairedNeckCapTopologyData.of_double_capped_tube
       certificate.tube.epsilon_eq_of_source_subset H hsource,
       H.cap_constant_bound certificate.cap₁ hcap₁,
       H.cap_constant_bound certificate.cap₂ hcap₂⟩
-
 
 def RepairedNeckCapTopologyData.of_two_caps
     {g : RiemannianMetric 3 M} (H : ConnectedNeckCapCover g)

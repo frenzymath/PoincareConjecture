@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.ModelIntegral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.IntegralRatio
-
-
-
-
-
-
-

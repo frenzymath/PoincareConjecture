@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPowerDecay
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -18,10 +8,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65LocalWeakMap
 
 open M65Interior
-
-
-
-
 
 theorem local_derivative_energy_decay
     {M : Type*} [TopologicalSpace M]

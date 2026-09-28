@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Annulus.CapFiber
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Annulus.ConnectedExterior
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,17 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -63,7 +46,6 @@ theorem prepared_tube_upper_cut_mem_child (q : S1) :
     (S.annulus_height_mem_tube ⟨by linarith [S.a_pos], le_rfl⟩)).mpr
     ⟨by linarith [S.s_pos], le_rfl⟩
 
-
 theorem prepared_tube_not_mem_childMinus (q : S1) {t : Real}
     (hl : -S.a + S.s < t) (hu : t ≤ S.a) :
     S.D (f (S.T (q, t))) ∉ range S.fMinus := by
@@ -80,7 +62,6 @@ theorem prepared_tube_not_mem_childMinus (q : S1) {t : Real}
     exact S.tube_not_mem_retainedMinus q
       ⟨by linarith [S.s_pos], lt_of_le_of_ne hu he⟩ (heq' ▸ hp)
 
-
 theorem prepared_tube_not_mem_childPlus (q : S1) {t : Real}
     (hl : -S.a ≤ t) (hu : t < S.a - S.s) :
     S.D (f (S.T (q, t))) ∉ range S.fPlus := by
@@ -96,8 +77,6 @@ theorem prepared_tube_not_mem_childPlus (q : S1) {t : Real}
   · have heq' := S.prepared_embedding.isEmbedding.injective heq
     exact S.tube_not_mem_retainedPlus q
       ⟨lt_of_le_of_ne hl (Ne.symm he), by linarith [S.s_pos]⟩ (heq' ▸ hp)
-
-
 
 theorem prepared_tube_not_mem_filledMinus
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -127,8 +106,6 @@ theorem prepared_tube_not_mem_filledMinus
   have hpt := hout (mem_image_of_mem p (show t ∈ Icc t S.a from ⟨le_rfl, hu⟩))
   rwa [hpr t ⟨le_rfl, hu⟩] at hpt
 
-
-
 theorem prepared_tube_not_mem_filledPlus
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hB : B '' sphere (0 : E3) 1 = range S.fPlus)
@@ -157,8 +134,6 @@ theorem prepared_tube_not_mem_filledPlus
   have hpt := hout (mem_image_of_mem p (show t ∈ Icc (-S.a) t from ⟨hl, le_rfl⟩))
   rwa [hpr t ⟨hl, le_rfl⟩] at hpt
 
-
-
 theorem filledMinus_inter_annulus_subset_cap
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hB : B '' sphere (0 : E3) 1 = range S.fMinus)
@@ -172,8 +147,6 @@ theorem filledMinus_inter_annulus_subset_cap
       ⟨ht.1, htop⟩
   · exact False.elim (S.prepared_tube_not_mem_filledMinus B hB havoid q
       (lt_of_not_ge htop) ht.2 hball)
-
-
 
 theorem filledPlus_inter_annulus_subset_cap
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

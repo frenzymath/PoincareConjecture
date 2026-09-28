@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M18AsymptoticSoliton
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Limits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,43 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem ancientAsymptoticSolitonLimits
     (n : ℕ)
@@ -65,9 +20,6 @@ theorem ancientAsymptoticSolitonLimits
     AncientAsymptoticSolitonConclusion S := by
   exact horizon_ancientAsymptoticSolitonLimits n M K S P
 
-
-
-
 theorem ancientAsymptoticSolitonLimits_of_setup
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -78,9 +30,6 @@ theorem ancientAsymptoticSolitonLimits_of_setup
     (P : AncientAsymptoticSolitonPredecessors K) :
     AncientAsymptoticSolitonConclusion S.sequence :=
   ancientAsymptoticSolitonLimits n M K S.sequence P
-
-
-
 
 theorem ancientAsymptoticSolitonTheory_from_predecessors (n : ℕ)
     (hP : ∀ (M : Type u) [TopologicalSpace M]

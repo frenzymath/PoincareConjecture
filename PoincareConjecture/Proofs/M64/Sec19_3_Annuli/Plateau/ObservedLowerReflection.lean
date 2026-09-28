@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialIntegra
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTests
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -35,19 +26,12 @@ local notation "T" => m64AnnulusRadialFlip
 local notation "v" => m64AnnulusRadialTranslation
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
 
-
-
-
 def lowerReflectedValue (A : M64ObservedWeakAnnulus (n := n) e c0 c1) : LoopPlane → E :=
   m64AnnulusLowerExtend ((e ∘ A.map) ∘ T) (e ∘ A.map)
-
-
 
 def lowerReflectedColumn (A : M64ObservedWeakAnnulus (n := n) e c0 c1) (i : Fin 2) :
     LoopPlane → E := m64AnnulusLowerExtend
   (fun p => (if i = 0 then (1 : ℝ) else -1) • A.column i (T p)) (A.column i)
-
-
 
 theorem lower_reflected_memLp (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :
     MemLp A.lowerReflectedValue 2 (volume.restrict O) ∧
@@ -75,9 +59,6 @@ private theorem observed_lower_green
   fin_cases i
   · exact A.seam phi hp (fun s _ => by rw [hl, hr])
   · simpa [ht, integral_neg] using A.boundary phi hp
-
-
-
 
 theorem lower_reflected_green (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     {phi : LoopPlane → ℝ} (hp : ContDiff ℝ 1 phi)
@@ -135,8 +116,6 @@ theorem lower_reflected_green (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
         ((∫ p in S, psi p • ((if i = 0 then (1 : ℝ) else -1) • A.column i (T p))) +
           ∫ p in S, dphi (p - v) • e (A.map (T p))) := by abel
     _ = 0 := by rw [habove, hbelow]; split_ifs <;> abel
-
-
 
 theorem lower_reflected_weak (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (i : Fin 2) (b : Fin m) :

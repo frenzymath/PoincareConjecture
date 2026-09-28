@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.VertexLinkArcPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.GeometricCofaceSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex AbstractSimplicialComplex
 
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem vertex_rim_arc_coface_sign_eq
     (A : SimplicialComplex ℝ E) [Fintype A.faces]

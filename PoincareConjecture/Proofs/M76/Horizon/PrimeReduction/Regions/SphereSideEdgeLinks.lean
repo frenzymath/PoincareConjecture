@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSpher
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FlatSphereSideInteriorFacets
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.FullSubcomplexStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem isFinitePLBallPair_sphere_side_edge_link
     (K N P M : SimplicialComplex ℝ E) (hK : K.faces.Finite)

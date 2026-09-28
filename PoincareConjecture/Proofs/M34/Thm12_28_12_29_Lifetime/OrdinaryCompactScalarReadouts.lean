@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderCurvature
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCoordinateSmooth
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.LocalRealization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,7 +49,6 @@ private local instance : TopologicalSpace L.carrier.carrier := L.carrier.topolog
 private local instance : ChartedSpace E₃ L.carrier.carrier := L.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
 
-
 theorem limitCoordinateBilinear_scalarAnalyticJet
     (q : L.sliceCarrier.carrier) (s : ℝ) (y : E₃)
     (hy : y ∈ (extChartAt (𝓡 3) q).target) :
@@ -93,7 +83,6 @@ theorem limitCoordinateBilinear_scalarAnalyticJet
         (L.flow.connection s) q s y hy g D hg))
 
 end Limit
-
 
 theorem blowupCoordinateBilinear_scalarAnalyticJet
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {G : GeneralizedRicciFlowData.{u}}

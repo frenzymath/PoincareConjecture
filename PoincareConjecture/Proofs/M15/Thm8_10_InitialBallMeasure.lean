@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M15.Thm8_10_EarlyVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_compact_initial_ball_volume_bound
     (n : ℕ) (hn : 0 < n) (omega : ℝ) (homega : 0 < omega) :

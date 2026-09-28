@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M11.HorizontalLinear
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

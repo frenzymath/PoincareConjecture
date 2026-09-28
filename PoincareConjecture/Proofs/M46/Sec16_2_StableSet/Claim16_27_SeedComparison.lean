@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_PrefixAction
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_TailAction
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCornerComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
 
 theorem admissible_seed_comparison_of_square_tail
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (LG : GeneralizedLGeometryConclusion G)

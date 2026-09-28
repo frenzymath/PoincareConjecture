@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundComparison
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 noncomputable def limitCanonical_round_image
     {C D : GeneralizedSliceCarrier.{u}} [ConnectedSpace C.carrier]

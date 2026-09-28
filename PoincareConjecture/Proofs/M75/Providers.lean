@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M71.TerminalEvent
 import PoincareConjecture.Proofs.M72.Providers
 import PoincareConjecture.Proofs.M74.Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -32,9 +23,6 @@ theorem m75EndpointInputFromExtinction
     ∃ I : M75EndpointInput N, I.global = G := by
   let I := m72ReconstructionInputFromRaw G L E isConnected_univ
   exact ⟨{ global := G, reduction := m74Reduction_from_M72_M73 I }, rfl⟩
-
-
-
 
 theorem m75EndpointInputFromEmpty
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

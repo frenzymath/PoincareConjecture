@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.SmoothSphereLift
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M38
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem exists_equivariant_sphere_lifts
     {G : Type*} [Group G] [MulAction G UnitThreeSphere]

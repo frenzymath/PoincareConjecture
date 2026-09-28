@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianCutBall
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutPrismExtension
 import PoincareConjecture.Proofs.M76.Rigidity.SourceComplementCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,9 +23,6 @@ local notation "B0" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem exists_source_meridian_complementary_prism
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

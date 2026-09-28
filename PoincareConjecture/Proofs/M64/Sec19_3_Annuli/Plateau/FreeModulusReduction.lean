@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusAnnul
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedAnnulusEnergyIdentity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,15 +16,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => m64AnnulusDomain
 
-
-
 noncomputable def m64ClassicalWeightedGramEnergy
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) (r : ℝ) : ℝ :=
   ∫ p in S, (r * m60AreaGram g A.map p 0 0 +
     r⁻¹ * m60AreaGram g A.map p 1 1) / 2
-
-
 
 def m64ClassicalWeightedGramEnergyRange
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Set ℝ :=
@@ -45,10 +28,6 @@ def m64ClassicalWeightedGramEnergyRange
     IntegrableOn (fun p => (r * m60AreaGram g A.map p 0 0 +
       r⁻¹ * m60AreaGram g A.map p 1 1) / 2) S volume ∧
       x = m64ClassicalWeightedGramEnergy g A r}
-
-
-
-
 
 def M64ConformalModulusApproximation
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Prop :=
@@ -58,10 +37,6 @@ def M64ConformalModulusApproximation
         r⁻¹ * m60AreaGram g A'.map p 1 1) / 2) S volume ∧
       m64ClassicalWeightedGramEnergy g A' r ≤ A.area + ε
 
-
-
-
-
 def M64WeightedModulusConfinement
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) (lo hi : ℝ) : Prop :=
   ∀ r : ℝ, 0 < r → ∀ A : M64Annulus g c0 c1,
@@ -69,8 +44,6 @@ def M64WeightedModulusConfinement
       r⁻¹ * m60AreaGram g A.map p 1 1) / 2) S volume →
     m64ClassicalWeightedGramEnergy g A r < m64LeastAnnulusArea g c0 c1 + 1 →
     r ∈ Icc lo hi
-
-
 
 theorem m64LeastAnnulusArea_eq_classicalWeightedGramEnergy_sInf
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
@@ -109,10 +82,6 @@ theorem m64LeastAnnulusArea_eq_classicalWeightedGramEnergy_sInf
     exact (hle.trans_lt hlt).le
 
 variable [CompactSpace M] [T2Space M]
-
-
-
-
 
 theorem m64LeastAnnulusArea_attained_of_freeModulus_certificates
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A0 : M64Annulus g c0 c1)
@@ -167,10 +136,6 @@ theorem m64LeastAnnulusArea_attained_of_freeModulus_certificates
   have hLeq : L.weightedEnergy B r = m64LeastAnnulusArea g c0 c1 :=
     le_antisymm hLupper hLlower
   exact ⟨Astar, hAstar.trans hLeq⟩
-
-
-
-
 
 theorem exists_m64MinimalAnnulus_of_freeModulus_certificates
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A0 : M64Annulus g c0 c1)

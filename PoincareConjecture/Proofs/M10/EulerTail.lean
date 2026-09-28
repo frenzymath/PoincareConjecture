@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.Ch06.LGeometry
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T a b τmax : ℝ}
-
 
 noncomputable def backwardPathTail (p : BackwardTimePath F T 0 b)
     (ha : 0 < a) (hab : a < b) : BackwardTimePath F T a b where
@@ -42,7 +33,6 @@ theorem curveVelocityWithin_Ioo_eq {γ : ℝ → M} {c d s : ℝ} (hs : s ∈ Io
     curveVelocityWithin (n := n) γ (Ioo c d) s = curveVelocity γ s := by
   unfold curveVelocityWithin curveVelocity
   rw [mfderivWithin_of_mem_nhds (isOpen_Ioo.mem_nhds hs)]
-
 
 theorem isBackwardLGeodesic_tail {p : BackwardTimePath F T 0 b}
     (hp : IsBackwardLGeodesic F T 0 b p) (ha : 0 < a) (hab : a < b) :
@@ -70,7 +60,6 @@ theorem isBackwardLGeodesic_tail {p : BackwardTimePath F T 0 b}
   exact he
 
 variable [ConnectedSpace M]
-
 
 theorem eulerPaths_eqOn_of_eventuallyEq (hL : LGeodesicTheory F T τmax)
     {p q : BackwardTimePath F T 0 b} (hmax : b ≤ τmax)

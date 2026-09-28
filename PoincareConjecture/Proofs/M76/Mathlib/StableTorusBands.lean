@@ -1,46 +1,25 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLBandCutoff
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartFamilies
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableTorus
 
-
-
 abbrev Circle := AddCircle (4 * (16 : ℝ))
 
-
-
 def arc (r : ℝ) : Set Circle := ((↑) : ℝ → Circle) '' Ioo (-r) r
-
-
 
 def twoBands (r : ℝ) : Set (Circle × Circle) :=
   (arc r ×ˢ univ) ∪ (univ ×ˢ arc r)
 
-
-
 def threeBands (r : ℝ) : Set ((Circle × Circle) × Circle) :=
   (twoBands r ×ˢ univ) ∪ (univ ×ˢ arc r)
-
-
 
 theorem arc_mono {r R : ℝ} (hrR : r ≤ R) : arc r ⊆ arc R := by
   rintro z ⟨s, hs, rfl⟩
   exact ⟨s, ⟨by linarith [hs.1], by linarith [hs.2]⟩, rfl⟩
-
-
 
 theorem isOpen_arc {r : ℝ} (hr : r < 32) : IsOpen (arc r) := by
   let : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
@@ -48,24 +27,17 @@ theorem isOpen_arc {r : ℝ} (hr : r < 32) : IsOpen (arc r) := by
     (AddCircle.shortArcQuotient_target (4 * (16 : ℝ)) (by norm_num; exact hr)).symm]
   exact (AddCircle.shortArcQuotient (4 * (16 : ℝ)) r).open_target
 
-
 theorem isOpen_twoBands {r : ℝ} (hr : r < 32) : IsOpen (twoBands r) :=
   ((isOpen_arc hr).prod isOpen_univ).union (isOpen_univ.prod (isOpen_arc hr))
 
-
 theorem isOpen_threeBands {r : ℝ} (hr : r < 32) : IsOpen (threeBands r) :=
   ((isOpen_twoBands hr).prod isOpen_univ).union (isOpen_univ.prod (isOpen_arc hr))
-
-
 
 theorem twoBands_mono {r R : ℝ} (hrR : r ≤ R) : twoBands r ⊆ twoBands R := by
   intro z hz
   rcases hz with hx | hy
   · exact Or.inl ⟨arc_mono hrR hx.1, mem_univ _⟩
   · exact Or.inr ⟨mem_univ _, arc_mono hrR hy.2⟩
-
-
-
 
 theorem exists_arc_cutoff {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR : R < 32) :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
@@ -80,8 +52,6 @@ theorem exists_arc_cutoff {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR : R < 32) :
   rintro z ⟨s, hs, rfl⟩
   exact hcore s (abs_lt.mpr hs).le
 
-
-
 theorem exists_twoBand_cutoff {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR : R < 32) :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
     let Q := AddCircle.quotientCharts (4 * (16 : ℝ))
@@ -95,8 +65,6 @@ theorem exists_twoBand_cutoff {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR : R < 3
   refine ⟨PLBandCutoff.unionWidth v v, hcw, hw, hwo, hwc, ?_⟩
   intro a
   exact PLBandCutoff.locallyPiecewiseAffineOn_unionWidth v v _ _ (hPL a.1) (hPL a.2)
-
-
 
 theorem exists_threeBand_cutoff {r R : ℝ} (hr : 0 < r) (hrR : r < R) (hR : R < 32) :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

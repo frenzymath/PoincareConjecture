@@ -1,17 +1,8 @@
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_region_budget
     {K delta : ℝ} (_hdelta : 0 < delta)

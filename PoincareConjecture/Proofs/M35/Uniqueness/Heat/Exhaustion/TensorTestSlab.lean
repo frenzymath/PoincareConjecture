@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.TensorTestBound
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricSlabBounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

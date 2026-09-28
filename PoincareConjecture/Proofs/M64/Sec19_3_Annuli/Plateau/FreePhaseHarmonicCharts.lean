@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseInteriorSmooth
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitStrongEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +20,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "E" => EuclideanSpace ℝ (Fin ((n + 1) + 1))
-
-
-
 
 theorem auxiliaryCircle_free_phase_rescaled_harmonic_chart
     (P : M62.CircleProductData F circumference)

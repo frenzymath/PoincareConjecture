@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M12MovingGauge
 import Mathlib.Topology.VectorBundle.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -83,7 +74,6 @@ theorem spatialDifferential_injective (e : MovingSpacetimeGauge F T C)
   rw [e.spatialDifferential_val, e.spatialDifferential_val,
     e.spatial_mfderiv_eq, e.spatial_mfderiv_eq] at h
   exact congrArg Prod.snd (e.differential_injective (t, x) h)
-
 
 def spatialTangentEquiv (e : MovingSpacetimeGauge F T C) (t : T.Point) (x : C) :
     TangentSpace (𝓡 n) x ≃L[ℝ] F.Horizontal (e.toSpacetime (t, x)) := by

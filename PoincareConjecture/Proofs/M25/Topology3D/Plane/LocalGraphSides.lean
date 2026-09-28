@@ -7,23 +7,11 @@ import Mathlib.Topology.Order.DenselyOrdered
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 def graphFlatteningHomeomorph {T G : Type*} [TopologicalSpace T]
     [AddGroup G] [TopologicalSpace G] [IsTopologicalAddGroup G]
@@ -36,8 +24,6 @@ def graphFlatteningHomeomorph {T G : Type*} [TopologicalSpace T]
   continuous_invFun := continuous_fst.prodMk (continuous_snd.fun_add (hg.comp continuous_fst))
 
 variable {X : Type*} [TopologicalSpace X] {C : Set X}
-
-
 
 theorem hasLocalTwoSides_of_local_straightening
     (hchart : ∀ q ∈ C, ∃ e : X ≃ₜ (ℝ × ℝ), ∃ U : Set X,
@@ -97,8 +83,6 @@ theorem hasLocalTwoSides_of_local_straightening
     exact ⟨⟨hzR.1.1.le, hzR.1.2.le⟩, by
       rw [(heC z (hWU hzR)).mp hzC]
       exact ⟨le_rfl, hr.le⟩⟩
-
-
 
 theorem hasLocalTwoSides_of_local_graph
     (hchart : ∀ q ∈ C, ∃ e : X ≃ₜ (ℝ × ℝ), ∃ g : ℝ → ℝ, Continuous g ∧

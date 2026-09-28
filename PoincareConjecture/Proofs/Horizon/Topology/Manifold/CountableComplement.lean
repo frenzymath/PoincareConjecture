@@ -6,25 +6,6 @@ import Mathlib.Topology.Algebra.Module.Cardinality
 import Mathlib.Topology.Compactness.Lindelof
 import Mathlib.Topology.DiscreteSubset
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Filter
@@ -81,7 +62,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [hM : ChartedSpace (E n) M]
 
 include hM
 
-
 theorem dense_compl_countable {C : Set M} (hC : C.Countable) : Dense Cᶜ := by
   apply dense_iff_inter_open.mpr
   intro U hU ⟨p, hp⟩
@@ -95,7 +75,6 @@ theorem dense_compl_countable {C : Set M} (hC : C.Countable) : Dense Cᶜ := by
   refine ⟨c.symm z, hzO.2, ?_⟩
   intro hz
   exact hzC ⟨c.symm z, hz, c.right_inv hzO.1⟩
-
 
 theorem isPathConnected_chart_ball_sdiff_countable (p : M) {r : ℝ} (hr : 0 < r)
     (htarget : ball (chartAt (E n) p p) r ⊆ (chartAt (E n) p).target)
@@ -133,7 +112,6 @@ theorem isPathConnected_chart_ball_sdiff_countable (p : M) {r : ℝ} (hr : 0 < r
       · simp only [g, Function.comp_apply, hw]
   rwa [himage] at hconn
 
-
 theorem isPreconnected_compl_countable [PreconnectedSpace M]
     {C : Set M} (hC : C.Countable) : IsPreconnected Cᶜ := by
   apply isPreconnected_of_dense_local (dense_compl_countable (n := n) hC)
@@ -145,12 +123,9 @@ theorem isPreconnected_compl_countable [PreconnectedSpace M]
     ⟨c p, mem_ball_self hr, c.left_inv (mem_chart_source _ p)⟩, ?_⟩
   exact (isPathConnected_chart_ball_sdiff_countable p hr htarget hC).isConnected.isPreconnected
 
-
 theorem isConnected_compl_countable [ConnectedSpace M]
     {C : Set M} (hC : C.Countable) : IsConnected Cᶜ :=
   ⟨(dense_compl_countable (n := n) hC).nonempty, isPreconnected_compl_countable (n := n) hC⟩
-
-
 
 theorem locallyPathConnectedSpace_compl_countable
     {C : Set M} (hC : C.Countable) : LocallyPathConnectedSpace ↥(Cᶜ) := by
@@ -184,15 +159,12 @@ theorem locallyPathConnectedSpace_compl_countable
   · intro y hy
     exact hUt (hVU (hBV hy))
 
-
-
 theorem isPathConnected_compl_countable [ConnectedSpace M]
     {C : Set M} (hC : C.Countable) : IsPathConnected Cᶜ := by
   let : ConnectedSpace ↥(Cᶜ) := isConnected_iff_connectedSpace.mp (isConnected_compl_countable (n := n) hC)
   let : LocallyPathConnectedSpace ↥(Cᶜ) := locallyPathConnectedSpace_compl_countable (n := n) hC
   exact isPathConnected_iff_pathConnectedSpace.mpr
     PathConnectedSpace.of_locallyPathConnectedSpace
-
 
 theorem isPreconnected_sdiff_countable_of_isOpen
     {U C : Set M} (hU : IsOpen U) (hconn : IsPreconnected U) (hC : C.Countable) :
@@ -207,7 +179,6 @@ theorem isPreconnected_sdiff_countable_of_isOpen
     simp [O, and_comm]
   rwa [he] at hp
 
-
 theorem isConnected_sdiff_countable_of_isOpen
     {U C : Set M} (hU : IsOpen U) (hconn : IsConnected U) (hC : C.Countable) :
     IsConnected (U \ C) := by
@@ -215,7 +186,6 @@ theorem isConnected_sdiff_countable_of_isOpen
   obtain ⟨x, hxU, hxC⟩ :=
     (dense_compl_countable (n := n) hC).inter_open_nonempty U hU hconn.nonempty
   exact ⟨x, hxU, hxC⟩
-
 
 theorem isPathConnected_sdiff_countable_of_isOpen
     {U C : Set M} (hU : IsOpen U) (hconn : IsConnected U) (hC : C.Countable) :
@@ -244,8 +214,6 @@ theorem isDiscrete_of_eventually_eq {C : Set M}
   · rintro rfl
     exact ⟨hxU, hx⟩
 
-
-
 theorem isPathConnected_sdiff_of_isOpen_of_isolated
     [SecondCountableTopology M] {U C : Set M}
     (hU : IsOpen U) (hconn : IsConnected U)
@@ -254,8 +222,6 @@ theorem isPathConnected_sdiff_of_isOpen_of_isolated
   exact isPathConnected_sdiff_countable_of_isOpen (n := n) hU hconn
     ((HereditarilyLindelofSpace.isLindelof C).countable_of_isDiscrete
       (isDiscrete_of_eventually_eq hiso))
-
-
 
 theorem isPathConnected_sdiff_compact_of_isOpen_of_isolated
     {U C : Set M} (hU : IsOpen U) (hconn : IsConnected U)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularCountableAtlas
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableChartFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -58,8 +49,6 @@ local notation "flow" => (fun (j : ℕ) (a : {k : ℕ // j ≤ k}) =>
 local notation "chart" => (fun (j : ℕ) (a : {k : ℕ // j ≤ k}) =>
   TerminalSourceIndexedChartCover.chart
     (TerminalRegularStageData.cover (data (Subtype.val a) j (Subtype.property a))))
-
-
 
 theorem terminalSource_regular_chart_flows
     (P : M46Predecessors.{u}) (htau : ∀ j, 0 < tau j)

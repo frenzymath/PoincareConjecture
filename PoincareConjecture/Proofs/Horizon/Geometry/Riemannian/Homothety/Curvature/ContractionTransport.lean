@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.TangentIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -22,7 +13,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T2Space M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
-
 
 theorem homothety_ricci_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -51,7 +41,6 @@ theorem homothety_ricci_eq
   rw [homothety_curvatureTensor_eq g h f Q hf D D']
   simp only [← mul_assoc, inv_sqrt_mul_inv_sqrt Q hQ.le, inv_mul_cancel₀ hQ.ne', one_mul]
 
-
 theorem homothety_scalarCurvature_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
@@ -74,7 +63,6 @@ theorem homothety_scalarCurvature_eq
   simp only [map_smul, LinearMap.smul_apply, smul_eq_mul, ricciLinear_apply]
   rw [homothety_ricci_eq g h f Q hQ hf D D', ← mul_assoc,
     inv_sqrt_mul_inv_sqrt Q hQ.le, div_eq_mul_inv, mul_comm]
-
 
 theorem homothety_curvatureTensor_normalized
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -101,7 +89,6 @@ theorem homothety_curvatureTensor_normalized
       rw [inv_sqrt_mul_inv_sqrt Q hQ.le, mul_assoc Q⁻¹ Q⁻¹ Q]
     _ = D.curvatureTensor x u v w z / Q := by
       rw [inv_mul_cancel₀ hQ.ne', mul_one, div_eq_mul_inv, mul_comm]
-
 
 theorem homothety_curvatureTensorNorm_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

@@ -1,16 +1,9 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Distance
 open Set Metric
 
 namespace Poincare.GromovHausdorff
 
 universe u
-
 
 def closedBallModel (X : BasedMetricSpaceBundle.{u}) (r : ℝ) (hr : 0 ≤ r) :
     FiniteDiameterBasedMetricSpace.{u} :=
@@ -28,8 +21,6 @@ def closedBallModel (X : BasedMetricSpaceBundle.{u}) (r : ℝ) (hr : 0 ≤ r) :
           dist_triangle _ _ _
         _ ≤ r + r := add_le_add hp (by simpa [dist_comm] using hq)
         _ = 2 * r := by ring }
-
-
 
 def closedBallModelInclusion
     (X : BasedMetricSpaceBundle.{u}) (r s : ℝ)

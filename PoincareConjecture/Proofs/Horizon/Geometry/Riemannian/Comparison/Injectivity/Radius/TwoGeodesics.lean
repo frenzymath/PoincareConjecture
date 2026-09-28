@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.NoBranching
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.ReturnedLoop
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem edist_globalExponential_eq_tangentNorm_of_lt_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C : ℝ}
@@ -66,8 +54,6 @@ private theorem tangentNorm_smul (g : RiemannianMetric n M) (p : M)
   simp only [tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg t), Real.sqrt_sq_eq_abs]
 
-
-
 theorem globalExponential_smul_eq_globalGeodesic
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M)
     (v : EuclideanSpace ℝ (Fin n)) (t : ℝ) :
@@ -83,7 +69,6 @@ theorem globalExponential_smul_eq_globalGeodesic
       hd'.scomp 0 ((hasDerivAt_id (0 : ℝ)).const_mul t)
   simpa only [mul_one] using g.globalExponential_eq_endpoint hc p (t • v)
     hscale (by simpa using hp) hds
-
 
 theorem edist_globalGeodesic_le_tangentNorm
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M)
@@ -158,8 +143,6 @@ private theorem truncatedInjectivityRadius_le_average_of_shorter_collision
     (ENNReal.ofReal_le_ofReal_iff (by linarith)).mp htriangle
   linarith
 
-
-
 theorem truncatedInjectivityRadius_le_average_of_collision
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C : ℝ}
     (hC : 0 ≤ C) (p : M) {v w : EuclideanSpace ℝ (Fin n)}
@@ -172,8 +155,6 @@ theorem truncatedInjectivityRadius_le_average_of_collision
     rw [he, max_self] at h
     linarith
   · exact g.truncatedInjectivityRadius_le_average_of_shorter_collision hc hC p heq hgt
-
-
 
 theorem truncatedInjectivityRadius_le_average_of_radial_collision
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C R : ℝ}

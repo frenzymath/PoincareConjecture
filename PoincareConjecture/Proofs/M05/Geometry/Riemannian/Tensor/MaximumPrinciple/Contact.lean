@@ -1,15 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma secondCovariantTensorDerivative_on_fields
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
@@ -101,9 +89,6 @@ lemma secondCovariantTensorDerivative_on_fields
   simp only [hessian, hessianOnFields, FiberBundle.extend_apply_self, Y]
   ring
 
-
-
-
 lemma secondCovariantTensorDerivative_eq_hessian_of_zero_jets
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T)
@@ -166,8 +151,6 @@ lemma secondCovariantTensorDerivative_eq_hessian_of_zero_jets
   rw [hsum]
   simp only [hfirst, hA, A.map_update_zero, Finset.sum_const_zero, sub_zero, add_zero,
     Fin.cons_update, hB, B.map_update_zero]
-
-
 
 lemma tensorLaplacian_eq_laplacian_of_zero_jets
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}

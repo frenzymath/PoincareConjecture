@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcStripSeparation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +15,6 @@ private theorem dependent_value_transport {X : Type*} {A : X → Sort*} {Y : Sor
     f x (h.symm ▸ p) = f y p := by
   cases h
   rfl
-
-
-
 
 theorem m64Intrinsic_exists_separated_arc_strips
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

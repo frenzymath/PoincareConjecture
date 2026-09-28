@@ -4,22 +4,11 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ThreePieceCollars
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.M25
-
-
 
 theorem exists_compatible_product_clocks
     {M : Type u} [TopologicalSpace M]

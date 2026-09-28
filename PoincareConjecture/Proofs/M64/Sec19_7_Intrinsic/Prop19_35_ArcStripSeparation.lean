@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcNormalCuts
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.DisjointStrips
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,9 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_graph_strip_axis_image
     {gamma : ℝ → AnnulusCoordinates}
@@ -52,9 +37,6 @@ theorem m64Intrinsic_graph_strip_axis_image
     _ = (fun t => L.symm (G t, f (G t))) '' Icc a b := by
       rw [hparam, ← himage, image_image]
     _ = _ := image_congr (fun t ht => by rw [← hgraph t (hI ht), L.symm_apply_apply])
-
-
-
 
 theorem m64Intrinsic_adjacent_normal_strip_width
     {gamma : ℝ → AnnulusCoordinates} {a b c : ℝ}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.Plus
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.Minus
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -38,8 +29,6 @@ private theorem ambient_ball_of_matching_prepared_range
       rw [hB, ← hmatch]
     _ = range f := by
       simp only [Diffeomorph.symm_apply_apply, ← range_comp, Function.comp_def]
-
-
 
 theorem SphereSurgeryStep.exists_ambient_ball_of_children
     {f : sphere (0 : EuclideanSpace Real (Fin 3)) 1 →

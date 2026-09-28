@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.CompactLimit
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,9 +9,6 @@ open scoped Topology
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {A B ι : Type*} [MetricSpace A] [MetricSpace B]
-
-
-
 
 theorem ball_subset_range_of_uniform_relation_approximation [CompactSpace A]
     (X : ι → Type*) [∀ k, MetricSpace (X k)]

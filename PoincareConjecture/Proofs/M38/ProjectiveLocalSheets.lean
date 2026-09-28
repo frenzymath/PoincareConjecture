@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M38
 
 private instance sphereDimension :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 4)) = 3 + 1) := ⟨by simp⟩
-
-
 
 theorem projective_quotient_localHomeomorph :
     IsLocalHomeomorph (Quotient.mk' : UnitThreeSphere → RealProjectiveThree) := by
@@ -46,8 +36,6 @@ theorem projective_quotient_localHomeomorph :
     rw [inner_neg_right] at hx
     linarith
 
-
-
 theorem projectiveLift_eventually_id_or_neg {g : UnitThreeSphere → UnitThreeSphere}
     {W : Set UnitThreeSphere} (hW : IsOpen W) (hg : ContinuousOn g W)
     (hfiber : ∀ x ∈ W, (Quotient.mk' (g x) : RealProjectiveThree) = Quotient.mk' x)
@@ -70,8 +58,6 @@ theorem projectiveLift_eventually_id_or_neg {g : UnitThreeSphere → UnitThreeSp
       (hcont.ne_iff_eventually_ne continuous_id.continuousAt).mp hn] with y hy hne
     exact (Quotient.exact (hfiber y hy) : g y = y ∨ g y = -y).resolve_left hne
 
-
-
 theorem projectiveLift_contMDiffOn {g : UnitThreeSphere → UnitThreeSphere}
     {W : Set UnitThreeSphere} (hW : IsOpen W) (hg : ContinuousOn g W)
     (hfiber : ∀ x ∈ W, (Quotient.mk' (g x) : RealProjectiveThree) = Quotient.mk' x) :
@@ -80,8 +66,6 @@ theorem projectiveLift_contMDiffOn {g : UnitThreeSphere → UnitThreeSphere}
   rcases projectiveLift_eventually_id_or_neg hW hg hfiber hx with h | h
   · exact (contMDiffAt_id.congr_of_eventuallyEq h).contMDiffWithinAt
   · exact ((contMDiff_neg_sphere (n := 3) (m := ∞) x).congr_of_eventuallyEq h).contMDiffWithinAt
-
-
 
 theorem projective_sheet_transition_smooth (a : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞

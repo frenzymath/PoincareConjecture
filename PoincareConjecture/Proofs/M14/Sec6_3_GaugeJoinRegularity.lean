@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeJoin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b)
   (α β : ℝ → G.Point)
-
-
-
 
 theorem oneSidedGaugeJoin_contMDiffOn {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

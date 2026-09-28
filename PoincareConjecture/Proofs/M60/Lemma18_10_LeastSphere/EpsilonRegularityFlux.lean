@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.MapMetricBochner
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Euclidean
 import Mathlib.Algebra.QuadraticDiscriminant
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

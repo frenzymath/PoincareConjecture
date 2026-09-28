@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.NormalArcCuts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem exists_unique_disk_owner_away_from_cuts
     {E κ : Type*} [TopologicalSpace E] [Finite κ] {S T W : Set E}
@@ -48,9 +38,6 @@ theorem exists_unique_disk_owner_away_from_cuts
   intro l hl
   by_contra hlk
   exact disjoint_left.mp hWT hxW (hinter hlk ⟨hl hxW, hsub hxW⟩)
-
-
-
 
 theorem exists_proper_arc_disk_partition_refinement
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

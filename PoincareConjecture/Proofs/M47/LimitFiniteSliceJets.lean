@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalCoefficientJets
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierCapture
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Metric.Construction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +24,6 @@ private local instance sliceJetsCharts : ChartedSpace E G.limit.carrier.carrier 
   G.limit.carrier.chartedSpace
 private local instance sliceJetsManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_physical_slice_coefficient_jets
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

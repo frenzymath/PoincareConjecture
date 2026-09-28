@@ -2,26 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -43,7 +23,6 @@ variable {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 theorem carrier_subset_connectedComponent : N.carrier ⊆ connectedComponent N.center :=
   N.isConnected_carrier.subset_connectedComponent
     (N.central_sphere_subset N.center_on_central_sphere)
-
 
 theorem component_diff_central_sphere_nonempty :
     (connectedComponent N.center \ N.central_sphere).Nonempty := by

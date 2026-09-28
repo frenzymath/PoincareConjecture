@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapVariation
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.ChartEnergyFirstVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusChartEnergyVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +17,6 @@ open CoordinateExponential ConnectionVariation ConjugateVariation
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64AnnulusEnergyDensity_hasDerivAt_of_affine_chart
     (g : RiemannianMetric n M) (b : M) (v : ℝ × LoopPlane → M)
@@ -85,11 +69,6 @@ theorem m64AnnulusEnergyDensity_hasDerivAt_of_affine_chart
   rw [heq.fderiv_eq, hd.fderiv, (hcoord s hs p hp).2, Finset.mul_sum]
   rfl
 
-
-
-
-
-
 theorem m64AnnulusEnergy_hasDerivAt_of_affine_chart
     (g : RiemannianMetric n M) (b : M) (v : ℝ × LoopPlane → M)
     (hv : ContMDiff 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) ∞ v)
@@ -132,10 +111,6 @@ theorem m64AnnulusEnergy_hasDerivAt_of_affine_chart
     (∫ p in m64AnnulusDomain, fderiv ℝ E (0, p) (1, 0)) 0 at hd
   rw [heq] at hd
   exact hd
-
-
-
-
 
 theorem m64AnnulusEnergy_hasDerivAt_of_affine_chart_on
     (g : RiemannianMetric n M) (b : M) (f : LoopPlane → M)

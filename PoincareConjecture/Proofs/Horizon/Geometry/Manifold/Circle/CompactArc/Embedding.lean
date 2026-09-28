@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Circle.CompactArc
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Geometry.Manifold.Circle
 
 private abbrev S1 := sphere (0 : EuclideanSpace Real (Fin 2)) 1
-
-
-
 
 theorem exists_interval_parametrization_in_circle_of_injective_mfderiv
     {E H M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
@@ -74,7 +69,6 @@ theorem exists_interval_parametrization_in_circle_of_injective_mfderiv
         rw [het]
         exact fun h => hz (congrArg f h)
       exact ⟨e.symm z, congrArg f (e.right_inv hzt)⟩
-
 
 theorem exists_interval_parametrization_in_embedded_circle
     {E H M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

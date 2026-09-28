@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Termi
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.SimultaneousTerminalGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalPhaseSelectionPL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -167,8 +159,6 @@ theorem HamiltonZeroInstalledTerminalDiskFamily.congr_target
     exact ⟨hj, hji, hjR, hrim, hcompact, hconn, by simpa only [hthird] using hcomp,
       hfirst, hsecond, hrange, hq, hcoords, hqrim,
       fun z => (heq (hjR z.property)).trans (hvalue z)⟩
-
-
 
 def HamiltonZeroInstalledSecondSlabDisks {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)

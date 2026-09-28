@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.GaugeCoefficientRegularity
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 3
@@ -28,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {a b : ℝ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
 
 theorem gauge_coefficients_uniform_bounds (F : RicciFlow n M (Icc a b)) (p : M)
     {K : Set (E × E)} (hK : IsCompact K) (hconv : Convex ℝ K)
@@ -90,10 +76,6 @@ theorem gauge_coefficients_uniform_bounds (F : RicciFlow n M (Icc a b)) (p : M)
     intro z hz w hw
     simpa only [hdist] using
       hLR.dist_le_mul (t, z) ⟨ht, hz⟩ (t, w) ⟨ht, hw⟩
-
-
-
-
 
 theorem gauge_rhs_difference_bound (F : RicciFlow n M (Icc a b)) (p : M)
     {K : Set (E × E)} (hK : IsCompact K) (hconv : Convex ℝ K)

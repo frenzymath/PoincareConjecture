@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialOlderCarrier
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineComparison
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineFields
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem exists_source_initial_static_recentered_neck
     {F : SurgeryFlowData.{u}} {t : ℝ} (hT : t ∈ F.surgery_times)

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,14 +54,12 @@ theorem heatKernelContinuous_add_eq_inner (s t : ℝ) (hs : 0 < s) (ht : 0 < t)
   exact heq.trans ((inner_evaluationRow (heatPowerContinuous D S 0 t ht) y
     (evaluationRow (heatPowerContinuous D S 0 s hs) x)).symm.trans (real_inner_comm _ _))
 
-
 theorem heatKernelContinuous_add_eq_heatPowerContinuous
     (s t : ℝ) (hs : 0 < s) (ht : 0 < t) (x y : M) :
     heatKernelContinuous D S (s + t) (add_pos hs ht) x y =
       heatPowerContinuous D S 0 s hs
         (evaluationRow (heatPowerContinuous D S 0 t ht) y) x :=
   (heatKernelContinuous_add_eq_inner D S s t hs ht x y).trans (inner_evaluationRow _ _ _)
-
 
 theorem heatKernelContinuous_semigroup (s t : ℝ) (hs : 0 < s) (ht : 0 < t) (x y : M) :
     Integrable (fun z => heatKernelContinuous D S s hs x z * heatKernelContinuous D S t ht z y)

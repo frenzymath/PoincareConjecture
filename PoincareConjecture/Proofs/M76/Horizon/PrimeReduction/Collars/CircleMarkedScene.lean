@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.Selected
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicModelOrder
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SimplicialComplex
 
@@ -29,8 +21,6 @@ theorem circle_coordinate_identity_pl
     exact z.property
   · exact fun _ _ => mem_univ _
   · exact (K.affineOnFaces_affine (ContinuousAffineMap.id ℝ V3)).finitePiecewiseAffineOn hK
-
-
 
 theorem exists_circle_marked_scene
     (P : Fin 3 → SimplicialComplex ℝ V3) (hP : ∀ i, (P i).faces.Finite)

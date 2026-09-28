@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceNeck
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureReadout
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +23,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
   (H : RescaledRawCylinderData (C := F.slice t)
     (U := strongNeckOpen S) (J := strongNeckBackwardInterval)
     (strongNeckCylinder S) (GeneralizedStrongNeck.physical_interval_subset S))
-
-
 
 theorem GeneralizedStrongNeck.rescaled_metric_at_time
     (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0) (x : strongNeckOpen S)
@@ -72,8 +61,6 @@ theorem GeneralizedStrongNeck.rescaled_metric_at_time
         (mfderiv (𝓡 3) (𝓡 3) f x.val
           (mfderiv (𝓡 3) (𝓡 3)
             (Subtype.val : strongNeckOpen S → (F.slice t).carrier) x w))) hforward)
-
-
 
 theorem strongNeckSource_tensor_eq_on_strip_at_time
     (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0)
@@ -142,8 +129,6 @@ theorem strongNeckSource_tensor_eq_on_strip_at_time
     _ = generalizedCylinderPullback S.time_cylinder S.coordinate_map s z v w := by
       simp only [generalizedCylinderPullback, dif_pos hs]
 
-
-
 theorem GeneralizedStrongNeck.rescaled_source_comparison
     (s : ℝ) (hs : s ∈ Ioc (-1 : ℝ) 0) :
     RoundCylinderClose epsilon s
@@ -153,14 +138,10 @@ theorem GeneralizedStrongNeck.rescaled_source_comparison
   intro z hz v w
   exact (strongNeckSource_tensor_eq_on_strip_at_time S H s hs z hz v w).symm
 
-
-
 def strongNeckCurvatureCoefficients (hepsilon : epsilon < 1 / 2)
     (s : ℝ) (q : UnitTwoSphere) (a : ℝ) : CE → MetricCoefficient 3 :=
   (H.rescaling.flow.metric s).pullbackCoefficients
     (cylinderNeckChart (GeneralizedStrongNeck.rescaled_source_neck S hepsilon H) q a)
-
-
 
 theorem strongNeckCurvatureCoefficients_contDiffAt (hepsilon : epsilon < 1 / 2)
     (s : ℝ) (q : UnitTwoSphere) {a : ℝ} (ha : a ∈ Ioo (-epsilon⁻¹) epsilon⁻¹) :
@@ -170,8 +151,6 @@ theorem strongNeckCurvatureCoefficients_contDiffAt (hepsilon : epsilon < 1 / 2)
     ((contMDiffOn_cylinderNeckChart N q a).contMDiffAt
       ((isOpen_cylinderNeckChartDomain N q a).mem_nhds
         (zero_mem_cylinderNeckChartDomain N q ha)))
-
-
 
 theorem strongNeckCurvatureCoefficients_frozen_germ (hepsilon : epsilon < 1 / 2)
     (s : ℝ) (q : UnitTwoSphere) {a : ℝ} (ha : a ∈ Ioo (-epsilon⁻¹) epsilon⁻¹)
@@ -194,8 +173,6 @@ theorem strongNeckCurvatureCoefficients_frozen_germ (hepsilon : epsilon < 1 / 2)
     cylinderNeckChart_mfderiv_apply N q a hx,
     cylinderScalarCoordinateEquiv_basis, cylinderScalarCoordinateEquiv_basis]
   rfl
-
-
 
 theorem strongNeckCurvatureCoefficients_norm_zero (hepsilon : epsilon < 1 / 2)
     (s : ℝ) (q : UnitTwoSphere) {a : ℝ} (ha : a ∈ Ioo (-epsilon⁻¹) epsilon⁻¹) :

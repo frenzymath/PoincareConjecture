@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.HandleLoopObstruction
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.PuncturedSphereCircleExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +15,6 @@ local notation "Circle" => AddCircle (1 : ℝ)
 
 variable {E Y ι : Type*} [TopologicalSpace E] [TopologicalSpace Y]
   [Nonempty Y] [Finite ι]
-
-
-
-
 
 theorem not_nonempty_homeomorph_punctured_sphere_of_product_handle
     {P H : Set E} (hP : IsClosed P) (hH : IsClosed H) (hPc : IsPathConnected P)

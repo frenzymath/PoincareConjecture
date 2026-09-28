@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.L
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Compact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Localized
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
 
 theorem exists_linearization_neighborhood
     (f : E -> E) (hf : ContDiff Real ∞ f)
@@ -123,8 +113,6 @@ theorem exists_linearization_neighborhood
     have hxU : (s, x) ∈ U := hSV ⟨hS hs, hrV hx⟩
     exact ContinuousLinearMap.isUnit_iff_bijective.mp hxU.2
 
-
-
 theorem exists_uniform_linearization_radius
     (f : E -> E) (hf : ContDiff Real ∞ f)
     (hbij : Function.Bijective (fderiv Real f 0)) :
@@ -136,8 +124,6 @@ theorem exists_uniform_linearization_radius
           (fun y => (1 - s) • (f y - f 0) + s • fderiv Real f 0 y) x := by
   obtain ⟨r, hr, _, _, _, _, h⟩ := exists_linearization_neighborhood f hf hbij
   exact ⟨r, hr, h⟩
-
-
 
 theorem exists_supported_linearization_isotopy
     (f : E -> E) (hf : ContDiff Real ∞ f)
@@ -161,8 +147,6 @@ theorem exists_supported_linearization_isotopy
   refine ⟨r, hr, Φ, hi, hsmooth, hfix, ?_⟩
   intro s hs x hx
   simpa only [F, A, sub_zero, one_smul, zero_smul, add_zero] using hmotion s hs x hx
-
-
 
 theorem exists_supported_linearization_isotopy_within
     (f : E -> E) (hf : ContDiff Real ∞ f)

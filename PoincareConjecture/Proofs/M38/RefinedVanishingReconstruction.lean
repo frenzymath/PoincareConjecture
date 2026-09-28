@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.LateReconstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 noncomputable def noSurvivorAssemblyConclusion
     {A B : GeneralizedSliceCarrier.{u}} [IsEmpty B.carrier] {n : ℕ}
@@ -56,9 +44,6 @@ noncomputable def noSurvivorAssemblyConclusion
         simp [kind, hb] at hi
       exact (hDstandard i).resolve_left hb
     reconstruction := S }
-
-
-
 
 noncomputable def vanishingWitnessOfClassifiedAssembly
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

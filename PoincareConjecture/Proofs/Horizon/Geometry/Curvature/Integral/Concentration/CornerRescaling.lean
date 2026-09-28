@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.CornerModels
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedFiberGeometry
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +20,6 @@ private theorem rescaled_edist_le_iff
   rw [mul_comm (ENNReal.ofReal (Real.sqrt a)) (g.edist p x),
     mul_comm (ENNReal.ofReal (Real.sqrt a)) (ENNReal.ofReal r)]
   exact ENNReal.mul_le_mul_iff_left (by positivity) ENNReal.ofReal_ne_top
-
-
-
 
 theorem exists_rescaled_pointedCornerModel
     {m k : ℕ} {δ H : ℝ} (hm : 2 ≤ m) (hH : 0 ≤ H)
@@ -154,6 +144,5 @@ theorem exists_rescaled_pointedCornerModel
     simpa only [mul_div_cancel₀ _ hs.ne'] using
       hratio (openFiberIncl (fun x i => A.f i x) A.domain A.value q)
         (1 / Real.sqrt a) (2 / Real.sqrt a)
-
 
 end PoincareConjecture

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.DomainIdentification
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem disjoint_closure_involutive_side (τ : X ≃ₜ X) (hτ : Function.Involutive τ)
     {A B S : Set X} (hA : IsOpen A) (hB : IsOpen B) (hcA : IsConnected A)
@@ -49,8 +39,6 @@ theorem disjoint_closure_involutive_side (τ : X ≃ₜ X) (hτ : Function.Invol
     exact (hτ z).symm.trans (heq.symm.trans (hτ w))
   have hzA : z ∈ A := hzw ▸ hw
   exact (hA.frontier_eq ▸ (hfront.symm ▸ hz)).2 hzA
-
-
 
 theorem exists_disjoint_involutive_side (τ : X ≃ₜ X) (hτ : Function.Involutive τ)
     {A B S : Set X} (hA : IsOpen A) (hB : IsOpen B)

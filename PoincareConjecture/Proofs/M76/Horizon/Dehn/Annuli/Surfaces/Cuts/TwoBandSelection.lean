@@ -2,22 +2,12 @@ import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped BigOperators
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 variable {C : Type*}
-
 
 def twoBandGraph (r : Bool → Bool → C) : SimpleGraph C where
   Adj c d := c ≠ d ∧ ∃ b s, r b s = c ∧ r b (!s) = d
@@ -51,9 +41,6 @@ theorem exists_shared_component_of_twoBandGraph_connected
 open Classical in
 noncomputable def componentRims (r : Bool → Bool → C) (c : C) : Finset (Bool × Bool) :=
   Finset.univ.filter (fun z ↦ r z.1 z.2 = c)
-
-
-
 
 theorem exists_two_rim_count_zero_component [Fintype C]
     (r : Bool → Bool → C) (hconn : (twoBandGraph r).Connected)

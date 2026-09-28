@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Level.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.LevelEvolution
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,8 +45,6 @@ private theorem local_flow_cancel
     ((horbit _ htx).2.mono inter_subset_left)
     (by simpa only [zero_add] using (hinit _ htx).symm)
   simpa only [neg_add_cancel, hinit x hx] using (heq hneg).symm
-
-
 
 theorem exists_collar_of_compact_regular_level
     (D : LeviCivitaData g) {f : M → ℝ}

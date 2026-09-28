@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckOpenSource
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 import PoincareConjecture.Proofs.M34.Standard.NeckRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ namespace PoincareConjecture.M47
 open Proofs.M47
 
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem source_long_recent_family_canonical
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -116,8 +106,6 @@ theorem source_long_recent_family_canonical
     exact SurgeryCanonicalControl.neck neck hcenter
   exact (congrArg (fun p : Σ t, (F.slice t).carrier =>
     SurgeryCanonicalControl F p.1 p.2 epsilon Cc) hpoint).mp hcanonical
-
-
 
 theorem source_long_recent_canonical
     {F : SurgeryFlowData.{u}} {T q Q s epsilon eta Cc : ℝ}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.WeightedOperatorFormula
 import PoincareConjecture.Proofs.M10.NormalizedFrameBound
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff BigOperators
@@ -24,7 +16,6 @@ noncomputable local instance operatorBoundBilinearNormedAddCommGroup :
 
 noncomputable local instance operatorBoundBilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
 
 theorem trace_weightedMetricDual_le {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) {B : E → E →L[ℝ] E →L[ℝ] ℝ} {ρ f : E → ℝ} {x : E}

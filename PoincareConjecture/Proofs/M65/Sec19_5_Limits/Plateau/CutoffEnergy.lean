@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanMollificationNative
 import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,10 +9,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 open EuclideanMollificationNative
-
-
-
-
 
 theorem m65C1_cutoff_gradientEnergy_le {d : ℕ}
     {S : Set (EuclideanSpace ℝ (Fin d))} (hS : MeasurableSet S)

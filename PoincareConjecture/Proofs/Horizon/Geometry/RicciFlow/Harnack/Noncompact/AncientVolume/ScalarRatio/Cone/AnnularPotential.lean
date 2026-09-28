@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.AncientLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Distance
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -143,9 +131,6 @@ private theorem radial_square_lipschitz_of_normal_chart_upper
     rw [abs_of_nonneg (by positivity)]
     exact div_le_div_of_nonneg_right (pow_le_pow_left₀ dist_nonneg (hrad x hx) 2) (by norm_num)
 
-
-
-
 theorem exists_radial_square_limit_of_normal_chart_coefficients
     (g : ℕ → RiemannianMetric n M) (p : M) (q : ℕ → M)
     (Φ : ℕ → PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
@@ -238,10 +223,6 @@ theorem exists_radial_square_limit_of_normal_chart_coefficients
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.RicciFlow
-
-
-
-
 
 theorem exists_radial_square_potential_of_normalized_annular_limit
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

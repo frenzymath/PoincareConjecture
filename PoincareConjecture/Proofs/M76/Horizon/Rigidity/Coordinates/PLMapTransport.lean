@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.PLAtlasTransport
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 variable {X Y X' Y' α β : Type*}
   [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace X'] [TopologicalSpace Y']
-
-
-
 
 theorem ChartwisePLMap.preimage_homeomorph
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}
@@ -55,8 +43,6 @@ theorem ChartwisePLMap.preimage_homeomorph
     rw [hmap]
     exact ⟨hyj, hFy⟩
 
-
-
 theorem ChartwisePLHomeomorph.preimage_homeomorph
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}
     {d : β → OpenPartialHomeomorph Y (Fin 3 → ℝ)} {R : Set X} {T : Set Y}
@@ -77,8 +63,6 @@ theorem ChartwisePLHomeomorph.preimage_homeomorph
     f.injective (heq.trans (f.apply_symm_apply _).symm)
   exact congrArg Subtype.val hx
 
-
-
 theorem ChartwisePLMap.transport_homeomorph
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}
     {d : β → OpenPartialHomeomorph Y (Fin 3 → ℝ)}
@@ -93,8 +77,6 @@ theorem ChartwisePLMap.transport_homeomorph
   subst R'
   subst T'
   exact hf.preimage_homeomorph h k f' hmap
-
-
 
 theorem ChartwisePLHomeomorph.transport_homeomorph
     {e : α → OpenPartialHomeomorph X (Fin 3 → ℝ)}

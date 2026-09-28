@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.SignedPrismPasting
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -31,8 +21,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {T : CoorientedSurfaceStars E} {P : SurfaceLowerProducts T} {p : (T.marked 2).vertices}
 
 open Classical in
-
-
 
 theorem SurfaceVertexBand.exists_product (F : SurfaceVertexBand P p) :
     ∃ H : (T.surfaceBase {(p : E)} ×ˢ I :

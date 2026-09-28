@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ArcJunctionStraightening
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_relative_polygonalArc_finite_junctions
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

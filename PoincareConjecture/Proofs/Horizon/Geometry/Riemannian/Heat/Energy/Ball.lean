@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Cutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.SpaceTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -28,8 +20,6 @@ private lemma integral_le_of_support_bound {f : M → ℝ} {S : Set M}
     (∫ x, f x ∂g.volumeMeasure) ≤ B * (g.volumeMeasure S).toReal := by
   rw [← setIntegral_eq_integral_of_forall_compl_eq_zero hout]
   exact (le_abs_self _).trans (norm_setIntegral_le_of_norm_le_const hS hB)
-
-
 
 theorem integrated_heat_energy_cutoff_bound (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}
@@ -94,8 +84,6 @@ theorem integrated_heat_energy_cutoff_bound (D : LeviCivitaData g)
         4 * (b * ((B ^ 2 * L) * (g.volumeMeasure S).toReal)) := by linarith
     _ = _ := by ring
 
-
-
 theorem exists_cutoff_with_heat_energy_bound (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M)
     {F : ℝ × M → ℝ}
@@ -132,8 +120,6 @@ theorem exists_cutoff_with_heat_energy_bound (D : LeviCivitaData g)
   change (g.edist O x).toReal ≤ 5 * R at hx
   linarith
 
-
-
 theorem integrable_heat_energy_on_ball (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M)
     {F : ℝ × M → ℝ}
@@ -154,8 +140,6 @@ theorem integrable_heat_energy_on_ball (D : LeviCivitaData g)
   apply (D.integrable_heat_energy_cutoff_from_zero hF hFc hheat hη hc hb).restrict.congr
   filter_upwards [ae_restrict_mem hs] with p hp
   simp [hone p.2 (le_of_lt hp)]
-
-
 
 theorem integral_heat_energy_on_ball_le (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (O : M)

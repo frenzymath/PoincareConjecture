@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.EvolvingBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Comparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -138,8 +127,6 @@ theorem cylinderDifference_jetError_weighted_le
   rw [hadd] at h
   exact h
 
-
-
 theorem exists_evolvingCylinder_comparison_tolerance
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε) :
     ∃ η : ℝ, 0 < η ∧ ∀ (B₀ B₁ : ℝ → RoundCylinderTwoTensor),
@@ -200,8 +187,6 @@ theorem exists_evolvingCylinder_comparison_tolerance
   apply (mul_le_mul_iff_right₀ hθ).mp
   have hηnonneg : 0 ≤ η ^ 2 := sq_nonneg _
   nlinarith
-
-
 
 theorem eventually_roundCylinderFamilyClose_of_coefficientJets
     {δ ε : ℝ} (hδ : 0 < δ) (hδε : δ < ε)

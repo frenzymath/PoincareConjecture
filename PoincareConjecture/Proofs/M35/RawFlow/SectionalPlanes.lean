@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -119,8 +109,6 @@ theorem modelPair_linearIndependent {p : V × V} (hp : p ∈ modelOrthonormalPai
 theorem metricGram_pos_of_modelPair (g : RiemannianMetric n V) (x : V)
     {p : V × V} (hp : p ∈ modelOrthonormalPairs n) : 0 < metricGram g x p.1 p.2 :=
   metricGram_pos_of_linearIndependent g x p.1 p.2 (modelPair_linearIndependent hp)
-
-
 
 theorem sectional_lower_of_modelPairs {g : RiemannianMetric n V} (D : LeviCivitaData g)
     (x : V) (m : ℝ)

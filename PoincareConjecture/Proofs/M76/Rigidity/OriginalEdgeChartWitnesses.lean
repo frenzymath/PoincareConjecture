@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedStarCofaces
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetChartSigns
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,9 +18,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
-
 
 theorem exists_edge_chart_sign_witnesses
     (p : (T.marked 2).vertices) {s t : Finset (T.index → ℝ × V3)}

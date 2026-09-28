@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.QuadraticHeat
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Spacetime.M
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -27,8 +18,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 lemma differentiableAt_hamiltonM
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)
     (T₀ : ℝ) {t : ℝ} (ht : t ∈ interior J) (hτ : t - T₀ ≠ 0)
@@ -43,7 +32,6 @@ lemma differentiableAt_hamiltonM
   have hd := ((h.comp t hp).contDiffAt.differentiableAt (by simp))
   simpa only [Function.comp_def, X, FiberBundle.extend_apply_self, Matrix.cons_val_zero,
     Matrix.cons_val_one] using hd
-
 
 lemma hamilton_ricci_action_zero_at_null
     {T₀ T₁ : ℝ} (F : RicciFlow n M (Set.Ioo T₀ T₁)) (t τ : ℝ) (x : M)
@@ -82,8 +70,6 @@ lemma hamilton_ricci_action_zero_at_null
     LeviCivitaData.riemannEvaluation]
   simp only [Finset.sum_add_distrib] at h
   exact h
-
-
 
 theorem hamilton_time_quadratic_nonneg_at_null [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
@@ -129,8 +115,6 @@ theorem hamilton_time_quadratic_nonneg_at_null [T2Space M]
     add_mul, sub_mul, Finset.sum_add_distrib, Finset.sum_sub_distrib,
     mul_assoc] at hheat hspace haction ⊢
   linarith only [hheat, hspace, haction]
-
-
 
 theorem deriv_hamilton_quadratic_nonneg_at_null [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

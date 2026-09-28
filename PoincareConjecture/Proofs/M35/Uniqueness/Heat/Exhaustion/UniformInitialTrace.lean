@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.AdjointCarrier
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.TestPair
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Exhaustion.TestedIntegral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

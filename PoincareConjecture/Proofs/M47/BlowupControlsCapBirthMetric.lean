@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ noncomputable local instance capBirthTwoJetNorm : NormedAddCommGroup (MetricTwoJ
 
 noncomputable local instance capBirthTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
 
 theorem exists_actualCap_birth_metric_bound {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A : ℝ}

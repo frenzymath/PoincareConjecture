@@ -1,17 +1,5 @@
 import PoincareConjecture.Definitions.Ch05.Compactness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,12 +8,9 @@ universe u
 
 namespace PoincareConjecture
 
-
 structure PointedFlowSequence (n : ℕ) (T' T : ℝ) where
   carrier : ℕ → FlowCarrier n
   flow : ∀ k, BasedFlow n T' T (carrier k)
-
-
 
 noncomputable def pullbackInnerValue {n : ℕ} {T' T : ℝ}
     {L C : FlowCarrier n} (F : BasedFlow n T' T L) (G : BasedFlow n T' T C)
@@ -42,7 +27,6 @@ noncomputable def pullbackInnerValue {n : ℕ} {T' T : ℝ}
   (G.flow.metric t).inner (ψ x)
     (mfderiv (𝓡 n) (𝓡 n) ψ x v)
     (mfderiv (𝓡 n) (𝓡 n) ψ x w)
-
 
 structure PointedGeometricConvergence {n : ℕ} {T' T : ℝ}
     (S : PointedFlowSequence n T' T) where
@@ -80,9 +64,6 @@ structure PointedGeometricConvergence {n : ℕ} {T' T : ℝ}
             |pullbackInnerValue limitFlow (S.flow (subsequence k)) (embedding k) t x v w -
               limitCarrier.metricInner (limitFlow.metricAt t) x v w| < ε
 
-
-
-
   pullback_metric_CInfinity :
     letI : TopologicalSpace limitCarrier.carrier := limitCarrier.topologicalSpace
     letI : ChartedSpace (EuclideanSpace ℝ (Fin n)) limitCarrier.carrier :=
@@ -104,7 +85,6 @@ structure PointedGeometricConvergence {n : ℕ} {T' T : ℝ}
                 (fun t x v w ↦ limitCarrier.metricInner (limitFlow.metricAt t) x v w)
                 a b) K p‖ < ε
 
-
 structure PointedRicciFlowCompactnessHypotheses (n : ℕ) (T' T : ℝ) where
   time_bounds : T' < 0 ∧ 0 < T
   sequence : PointedFlowSequence n T' T
@@ -123,7 +103,6 @@ structure PointedRicciFlowCompactnessHypotheses (n : ℕ) (T' T : ℝ) where
           (∀ x ∈ (sequence.flow k).zeroBall A, (e.toFun (0, x)).2 = x) ∧
           CurvatureBoundOn (sequence.flow k) (sequence.flow k) A I e K
 
-
   all_time_curvature_control :
     ∀ A : ℝ, 0 < A → ∃ K : ℝ, 0 ≤ K ∧
       ∀ᶠ k : ℕ in Filter.atTop,
@@ -138,8 +117,6 @@ structure PointedRicciFlowCompactnessHypotheses (n : ℕ) (T' T : ℝ) where
   noncollapsing : ∃ r₀ κ : ℝ, 0 < r₀ ∧ 0 < κ ∧
     ∀ᶠ k : ℕ in Filter.atTop,
       ENNReal.ofReal (κ * r₀ ^ n) ≤ (sequence.flow k).zeroBallVolume r₀
-
-
 
 structure PointedRicciFlowCompactnessConclusion
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T) where

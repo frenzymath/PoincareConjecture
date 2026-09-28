@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapClock
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_initial_cap_anchor_comparison
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

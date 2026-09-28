@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construc
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.Descent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_terminal_extension_of_covering_chart_flows
     {n : ℕ} {ι : Type*} [Nonempty ι] {U : ι → Type*} {M : Type*}

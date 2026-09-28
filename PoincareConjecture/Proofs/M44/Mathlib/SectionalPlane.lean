@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SectionalNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M44
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem gram_linearCombination (u v : E) (a b c d : ℝ) :
     inner ℝ (a • u + b • v) (a • u + b • v) *
@@ -27,9 +14,6 @@ theorem gram_linearCombination (u v : E) (a b c d : ℝ) :
   simp only [inner_add_left, inner_add_right, real_inner_smul_left,
     real_inner_smul_right, real_inner_comm v u]
   ring
-
-
-
 
 theorem curvature_linearCombination
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)
@@ -46,9 +30,6 @@ theorem curvature_linearCombination
   simp only [map_add, map_smul, LinearMap.add_apply, LinearMap.smul_apply,
     smul_eq_mul, hzero1, hzero2, hvu, huv, hvu']
   ring
-
-
-
 
 theorem sectional_lower_of_mem_span_pair
     (R : E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] E →ₗ[ℝ] ℝ)

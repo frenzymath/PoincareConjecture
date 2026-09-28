@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorEndpointB
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledPolygonSpeed
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
 
 theorem m64_interpolator_horizontal_column_eq
     {gamma beta : ℝ → M} {H : ℝ × (M × M) → M} (x : LoopPlane)
@@ -98,9 +85,6 @@ theorem m64_interpolator_horizontal_column_eq
   have hc := mfderiv_comp_apply x hH hinput b
   rw [hbinput] at hc
   simpa only [Function.comp_def, input, b] using hc
-
-
-
 
 theorem m64_translated_side_speed
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

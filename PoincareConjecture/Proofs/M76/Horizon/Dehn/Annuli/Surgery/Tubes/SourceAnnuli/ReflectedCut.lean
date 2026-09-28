@@ -1,15 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.ReflectedSourceAnnulus
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip Dehn
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
-
-
-
 
 theorem exists_reflected_source_annulus_of_cut_strips
     {X E : Type*} (f : P2 → X) (inverse : E → X) (sigma : P2 × ℝ → E)

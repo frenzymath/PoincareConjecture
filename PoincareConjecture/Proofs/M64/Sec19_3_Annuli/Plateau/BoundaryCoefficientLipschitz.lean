@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateCoefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +18,6 @@ local instance m64CoefficientLipschitz_secondSpace
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] F) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem m64SmoothCoefficient_compact_bounds
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
@@ -77,10 +62,6 @@ local instance m64CoefficientLipschitz_bilinearGroup :
     NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
 local instance m64CoefficientLipschitz_bilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem m64ChartCoefficient_lipschitz_bounds (g : RiemannianMetric n M) (b : M)
     {a : E} {R : ℝ} (hK : closedBall a R ⊆ (extChartAt (𝓡 n) b).target) :

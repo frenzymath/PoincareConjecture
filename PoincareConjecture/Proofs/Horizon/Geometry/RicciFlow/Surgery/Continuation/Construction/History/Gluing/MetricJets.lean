@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
 
 theorem SurgeryMetricLimitOn.tendstoUniformlyOn
     {A B : GeneralizedSliceCarrier.{u}}
@@ -39,7 +29,6 @@ theorem SurgeryMetricLimitOn.tendstoUniformlyOn
   intro p hp
   simpa only [dist_eq_norm, norm_sub_rev] using hbound t ht.1 ht.2 p hp
 
-
 theorem SurgeryMetricLimitOn.translateTime
     {A B : GeneralizedSliceCarrier.{u}}
     {g : ℝ → RiemannianMetric 3 A.carrier} {gT : RiemannianMetric 3 B.carrier}
@@ -58,8 +47,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
   {S : ℝ → GeneralizedSliceCarrier.{u}}
   {g : ∀ t, RiemannianMetric 3 (S t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P S g T)
-
-
 
 theorem retained_metric_coefficient
     (q : (S E.tMinus).carrier) (a b : Fin 3)
@@ -86,7 +73,6 @@ theorem retained_metric_coefficient
     mfderiv_comp z (hlimit.mdifferentiableAt (by simp)) hchart]
   exact E.retained_metric _ (interior_subset hret) _ _
 
-
 theorem retained_metric_jets
     (q : (S E.tMinus).carrier) (k : ℕ) (a b : Fin 3)
     {z : EuclideanSpace ℝ (Fin 3)} (hz : z ∈ (extChartAt (𝓡 3) q).target)
@@ -107,8 +93,6 @@ theorem retained_metric_jets
     exact E.retained_metric_coefficient q a b hw hwr
   exact (hnear.iteratedFDeriv ℝ k).self_of_nhds
 
-
-
 theorem tendstoUniformlyOn_retained_metric_jets
     (q : (S E.tMinus).carrier) (hq : q ∈ interior E.retained_pre)
     (C : Set (EuclideanSpace ℝ (Fin 3))) (hC : IsCompact C)
@@ -125,8 +109,6 @@ theorem tendstoUniformlyOn_retained_metric_jets
   apply h.congr_right
   intro z hz
   exact (E.retained_metric_jets q k a b (hCt hz) (hCr (mem_image_of_mem _ hz))).symm
-
-
 
 theorem retained_metric_limit :
     SurgeryMetricLimitOn (S E.tMinus) (S T) E.pre_flow.metric (g T)

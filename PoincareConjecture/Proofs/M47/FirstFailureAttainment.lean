@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.FirstFailureCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,8 +8,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem firstFailure_attained_of_closed_failure
     (hC : RicciFlowCurvatureTheory.{u})

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedSpaceSimplyConnected
 import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem isSimplyConnected_image_of_subset_source
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -26,8 +13,6 @@ theorem isSimplyConnected_image_of_subset_source
     (hs : IsSimplyConnected s) : IsSimplyConnected (e '' s) := by
   let : SimplyConnectedSpace s := hs
   exact (e.homeomorphOfImageSubsetSource hsub rfl).symm.toHomotopyEquiv.simplyConnectedSpace
-
-
 
 theorem image_sdiff_singleton_of_subset_source
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -46,10 +31,6 @@ theorem image_sdiff_singleton_of_subset_source
     exact hne (congrArg e hzx)
 
 end OpenPartialHomeomorph
-
-
-
-
 
 theorem isSimplyConnected_ball_sdiff_center_of_two_lt_finrank
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

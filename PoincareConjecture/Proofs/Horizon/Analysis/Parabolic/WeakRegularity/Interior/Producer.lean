@@ -1,24 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.AdjointIdentity
 import PoincareConjecture.Proofs.Horizon.Analysis.Convolution.ConvolutionCommutator
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set
 open scoped ContDiff Topology NNReal Convolution
@@ -33,17 +14,6 @@ local instance : (volume : Measure (Spacetime n)).IsAddHaarMeasure := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
 
-
-
-
-
-
-
-
-
-
-
-
 def lebesgueConvolution (η u : Spacetime n → ℝ) (z : Spacetime n) : ℝ :=
   ∫ y, η (z - y) * u y
 
@@ -53,13 +23,8 @@ theorem lebesgueConvolution_eq_convolution (η u : Spacetime n → ℝ) :
   rw [convolution_lsmul_swap]
   rfl
 
-
 def translatedKernel (η : Spacetime n → ℝ) (z : Spacetime n) : Spacetime n → ℝ :=
   fun y => η (z - y)
-
-
-
-
 
 theorem lebesgueConvolution_coefficient_commutator_eq
     {q f η : Spacetime n → ℝ} (hq : Continuous q) (hf : Continuous f)
@@ -110,10 +75,6 @@ theorem WeakSolutionOn.translatedKernel_pairing_zero
     (hηc z hz)
     (hηU z hz)
 
-
-
-
-
 theorem WeakSolutionOn.translatedKernel_adjoint_expanded_zero
     {C : Coefficients n} {u : Spacetime n → ℝ}
     (hu : WeakSolutionOn C u U) {η : Spacetime n → ℝ}
@@ -137,9 +98,6 @@ theorem WeakSolutionOn.translatedKernel_adjoint_expanded_zero
     (z : Spacetime n) :
     lebesgueConvolution η u z = ∫ y, η (z - y) * u y := rfl
 
-
-
-
 theorem WeakSolutionOn.restrict (hV : IsOpen V) (hVU : V ⊆ U)
     {C : Coefficients n} {u : Spacetime n → ℝ}
     (hu : WeakSolutionOn C u U) : WeakSolutionOn C u V := by
@@ -148,19 +106,11 @@ theorem WeakSolutionOn.restrict (hV : IsOpen V) (hVU : V ⊆ U)
   · intro φ hφ hφc hφV
     exact hu.2 φ hφ hφc (hφV.trans hVU)
 
-
-
-
-
 theorem contDiffOn_of_all_finite_orders
     {u : Spacetime n → ℝ}
     (hregular : ∀ m : ℕ, ContDiffOn ℝ m u U) :
     ContDiffOn ℝ ∞ u U := by
   exact contDiffOn_infty.mpr hregular
-
-
-
-
 
 theorem operator_eq_zero_of_weakSolutionOn
     (hU : IsOpen U) (C : Coefficients n) (hC : C.IsSmoothOn U)
@@ -168,8 +118,6 @@ theorem operator_eq_zero_of_weakSolutionOn
     (hweak : WeakSolutionOn C u U) :
     ∀ z ∈ U, C.operator u z = 0 := by
   exact (weakSolutionOn_iff_operator_eq_zero hU C hC hu).mp hweak
-
-
 
 theorem weakSolutionOn_of_operator_eq_zero
     (hU : IsOpen U) (C : Coefficients n) (hC : C.IsSmoothOn U)

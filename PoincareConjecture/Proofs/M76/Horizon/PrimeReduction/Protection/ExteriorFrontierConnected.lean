@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.Attaching
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalLateralAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.AnnulusConnected
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

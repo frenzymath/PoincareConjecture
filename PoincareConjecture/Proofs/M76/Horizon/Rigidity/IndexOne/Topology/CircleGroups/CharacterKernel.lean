@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.CocycleCharacters
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore
@@ -36,8 +26,6 @@ theorem pathValue_eq_of_loopCharacter_eq_one (c : A.ModTwoEdgeCocycle)
   rw [c.quotientValue_trans, c.quotientValue_symm] at h
   simp only [quotientValue_mk, ← sub_eq_add_neg] at h
   exact sub_eq_zero.mp h
-
-
 
 theorem isCoboundary_of_loopCharacter_eq_one
     [PathConnectedSpace A.barycentricSpace] (c : A.ModTwoEdgeCocycle)

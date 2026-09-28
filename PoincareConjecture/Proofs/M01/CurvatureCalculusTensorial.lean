@@ -6,15 +6,6 @@ import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
 open Bundle Module
@@ -266,7 +257,6 @@ theorem curvatureOnFields_third_eq_of_eq_at
     D.curvatureOnFields X Y Z x = D.curvatureOnFields X Y Z' x :=
   SmoothTensorialOn.pointwise (tensorial_third D hU hx hX hY) hU hx hZ hZ' hZZ'
 
-
 theorem curvatureOnFields_eq_of_eq_at
     (D : LeviCivitaData g) {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U)
     (X X' Y Y' Z Z' : Vec n M)
@@ -282,10 +272,6 @@ theorem curvatureOnFields_eq_of_eq_at
       D.curvatureOnFields_second_eq_of_eq_at hU hx X' Y Y' Z hX' hY hY' hZ hYY'
     _ = D.curvatureOnFields X' Y' Z' x :=
       D.curvatureOnFields_third_eq_of_eq_at hU hx X' Y' Z Z' hX' hY' hZ hZ' hZZ'
-
-
-
-
 
 theorem contMDiffOn_extend_baseSet (x : M) (v : TangentSpace (𝓡 n) x) :
     VecSmooth (trivializationAt (EuclideanSpace ℝ (Fin n))
@@ -304,7 +290,6 @@ theorem contMDiffOn_extend_baseSet (x : M) (v : TangentSpace (𝓡 n) x) :
   exact hw.congr (fun y hy ↦ by
     simpa [FiberBundle.extend, e, w] using
       (e.continuousLinearEquivAt ℝ y hy).apply_symm_apply ((e ⟨x, v⟩).2))
-
 
 theorem curvatureOnFields_eq_curvature
     (D : LeviCivitaData g) {U : Set M} (hU : IsOpen U)
@@ -326,7 +311,6 @@ theorem curvatureOnFields_eq_curvature
     (hZ.mono Set.inter_subset_left)
     ((contMDiffOn_extend_baseSet x (Z x)).mono Set.inter_subset_right)
     (by simp) (by simp) (by simp)
-
 
 theorem curvatureTensor_multilinear (D : LeviCivitaData g) (x : M) :
     ∃ A : MultilinearMap ℝ (fun _ : Fin 4 ↦ TangentSpace (𝓡 n) x) ℝ,
@@ -420,7 +404,6 @@ theorem curvatureTensor_multilinear (D : LeviCivitaData g) (x : M) :
   refine ⟨A, ?_⟩
   intro v
   rfl
-
 
 theorem riemannEvaluation_smooth (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)

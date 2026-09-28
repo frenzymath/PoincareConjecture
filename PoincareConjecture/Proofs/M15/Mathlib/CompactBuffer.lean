@@ -1,24 +1,12 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ENNReal NNReal Topology
 
 namespace Metric
-
-
-
 
 theorem isCompact_closure_eball_of_isEmbedding
     {C N : Type*} [PseudoEMetricSpace C] [PseudoEMetricSpace N]

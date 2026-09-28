@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.InnerAttac
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -25,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem compact_closure_recut (N : CapCertificate g) {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :

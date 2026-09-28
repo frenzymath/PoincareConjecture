@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeCharts
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,20 +18,16 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 namespace SpacetimeCharts
 
-
 theorem contMDiff_space (C : SpacetimeCharts n M a b) :
     ContMDiff (𝓡 (n + 1)) (𝓡 n) ∞ (fun q : C.Point => q.1) := by
   let := C.chartedSpace
   exact contMDiff_fst.comp C.to_product_smooth
-
 
 theorem contMDiff_clock (C : SpacetimeCharts n M a b) :
     ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞
       (fun q : C.Point => (q.2 : ℝ)) := by
   let := C.chartedSpace
   exact (contMDiff_subtype_val.comp contMDiff_snd).comp C.to_product_smooth
-
-
 
 theorem split_mfderiv_from_product (C : SpacetimeCharts n M a b)
     (q : C.Point) (V : TangentSpace ((𝓡 n).prod 𝓘(ℝ, ℝ)) q) :
@@ -70,8 +57,6 @@ theorem split_mfderiv_from_product (C : SpacetimeCharts n M a b)
       mdifferentiableAt_snd V
     rw [PoincareConjecture.Proofs.M11.mfderiv_openSubtype_val, mfderiv_snd] at ht
     exact h.symm.trans ht
-
-
 
 theorem timeVector_smooth (C : SpacetimeCharts n M a b) :
     C.IsSmoothField C.timeVector := by
@@ -114,8 +99,6 @@ theorem timeVector_smooth (C : SpacetimeCharts n M a b) :
   apply (C.split q).injective
   erw [C.split_mfderiv_from_product]
   exact (C.split q).apply_symm_apply (0, 1)
-
-
 
 theorem liftSpatialField_smooth_iff (C : SpacetimeCharts n M a b)
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p) :
@@ -160,8 +143,6 @@ theorem liftSpatialField_smooth_iff (C : SpacetimeCharts n M a b)
     erw [C.split_mfderiv_from_product]
     exact (C.split q).apply_symm_apply (B q.2 q.1, 0)
 
-
-
 theorem horizontal_time_decomposition (C : SpacetimeCharts n M a b)
     (q : C.Point) (V : TangentSpace (𝓡 (n + 1)) q) :
     C.horizontal q (C.split q V).1 + (C.split q V).2 • C.timeVector q = V := by
@@ -172,7 +153,6 @@ end SpacetimeCharts
 
 namespace SpacetimeData
 
-
 theorem inner_horizontal {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)
     (V W : TangentSpace (𝓡 n) q.1) :
@@ -180,14 +160,11 @@ theorem inner_horizontal {F : RicciFlow n M (Set.Icc a b)}
       (F.metric q.2).inner q.1 V W := by
   simp [G.metric_eq, SpacetimeCharts.horizontal]
 
-
-
 theorem inner_time {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)
     (V : TangentSpace (𝓡 (n + 1)) q) :
     G.metric.inner q V (G.charts.timeVector q) = (G.charts.split q V).2 := by
   simp [G.metric_eq, SpacetimeCharts.timeVector]
-
 
 theorem time_unit {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point) :

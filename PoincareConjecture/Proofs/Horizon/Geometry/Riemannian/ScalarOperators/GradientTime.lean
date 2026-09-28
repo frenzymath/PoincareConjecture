@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.TimeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,7 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem sum_mvfderiv_mul_eq_inner_gradient (D : LeviCivitaData g)
     (f h : M → ℝ) (x : M) :
@@ -39,14 +29,11 @@ theorem sum_mvfderiv_mul_eq_inner_gradient (D : LeviCivitaData g)
     inner ℝ (D.gradient h x) (g.orthonormalBasis x i) = _
   rw [real_inner_comm (D.gradient h x)]
 
-
 theorem gradient_normSq_eq_sum_mvfderiv_sq (D : LeviCivitaData g)
     (f : M → ℝ) (x : M) :
     g.inner x (D.gradient f x) (D.gradient f x) =
       ∑ i, (mvfderiv (𝓡 n) f x (g.orthonormalBasis x i)) ^ 2 := by
   simpa only [pow_two] using (D.sum_mvfderiv_mul_eq_inner_gradient f f x).symm
-
-
 
 theorem hasDerivAt_gradient_normSq_of_time_derivative (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {dF : M → ℝ} {t : ℝ} {x : M}
@@ -72,7 +59,6 @@ theorem hasDerivAt_gradient_normSq_of_time_derivative (D : LeviCivitaData g)
   rw [← Finset.mul_sum]
   have hp := D.sum_mvfderiv_mul_eq_inner_gradient (fun y => F (t, y)) dF x
   rw [hp, g.symm, D.inner_gradient]
-
 
 theorem hasDerivAt_gradient_normSq (D : LeviCivitaData g)
     {F : ℝ × M → ℝ}

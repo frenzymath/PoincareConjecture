@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.TerminalMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +15,6 @@ variable {m : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
-
 
 theorem ancient_ball_volume_lower_bound_of_terminal_asymptoticVolumeRatio
     (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -49,8 +36,6 @@ theorem ancient_ball_volume_lower_bound_of_terminal_asymptoticVolumeRatio
     p x ((F.metric t).edist_ne_top p x) hvolume.le hr
   exact F.antitoneOn_asymptoticVolumeRatio_of_bounded_ancient hC hm
     hcomplete hoperator hK hbound p ht (by simp) ht
-
-
 
 theorem ancient_parabolic_noncollapse_of_terminal_asymptoticVolumeRatio
     (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

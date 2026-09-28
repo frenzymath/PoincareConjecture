@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.AuxiliaryContradiction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 local instance finiteRadiusCarrierConnected (C : FlowCarrier.{0} 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
-
-
-
 
 theorem m23_exists_curvature_bound_of_volume_lower_bound
     (P : M23NormalizedKappaCompactnessPredecessors)

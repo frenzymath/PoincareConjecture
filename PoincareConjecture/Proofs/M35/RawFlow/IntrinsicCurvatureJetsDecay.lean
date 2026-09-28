@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsBounds
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicPolynomialDecay
 import PoincareConjecture.Proofs.M35.RadialGauge.PolynomialJetDecay
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +18,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = (G.flow.metric t).inner x u v)
 
 include H
-
-
 
 theorem raw_intrinsic_slope_jets_polynomial_decay {T : ℝ} (hT : 0 < T)
     (hTlt : T < G.lifetime) :
@@ -60,8 +48,6 @@ theorem raw_intrinsic_slope_jets_polynomial_decay {T : ℝ} (hT : 0 < T)
   refine ⟨C + 1, by positivity, ?_⟩
   intro t ht r hr
   exact (hCb ⟨t, ht⟩ r hr).trans (by linarith)
-
-
 
 theorem raw_intrinsic_warping_jets_polynomial_decay {T : ℝ} (hT : 0 < T)
     (hTlt : T < G.lifetime) :

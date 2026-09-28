@@ -1,15 +1,6 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,9 +13,6 @@ namespace intervalIntegral
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {μ : Measure ℝ} [NullSingletonClass μ]
   {a b : ℝ} {fn : ℕ → ℝ → E} {f : ℝ → E} {bound : ℝ → ℝ}
-
-
-
 
 theorem tendstoUniformlyOn_primitive_of_dominated
     [CompleteSpace E]

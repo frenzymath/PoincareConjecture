@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalIntervals
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_OpenRegularCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem cylinder_preterminal_coordinates_eq
     (e : SurgeryFlowCylinder F C origin scale I U)
@@ -68,9 +56,6 @@ theorem cylinder_preterminal_coordinates_eq
   rw [hslab] at hpre
   simpa only [event, Diffeomorph.symm_apply_apply] using
     (congrArg (event.pre_identify ⟨origin + t / scale, ht'⟩).symm hpre).symm
-
-
-
 
 theorem cylinder_preterminal_coordinates_eq_of_pinched
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

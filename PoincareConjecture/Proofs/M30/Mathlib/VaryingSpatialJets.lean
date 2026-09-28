@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem TendstoUniformlyOn.iteratedFDeriv_spatial_slice_varying_domain
     {𝕜 T E F ι : Type*} [NontriviallyNormedField 𝕜]

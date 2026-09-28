@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.RadialGauss
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Metric
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +29,6 @@ private theorem deriv2_norm_sq
   rw [hfirst.deriv_eq, hsecond.deriv]
   ring
 
-
-
 theorem radial_hessian_pairing_of_gauss
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
     (hB : DifferentiableAt ℝ B x) (hinv : (B x).IsInvertible)
@@ -65,8 +54,6 @@ theorem radial_hessian_pairing_of_gauss
   simp only [map_add, add_apply]
   linarith
 
-
-
 theorem deriv2_norm_sq_eq_radial_pairing
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {u : ℝ → E} {t : ℝ}
     (hB : DifferentiableAt ℝ B (u t)) (hinv : (B (u t)).IsInvertible)
@@ -83,8 +70,6 @@ theorem deriv2_norm_sq_eq_radial_pairing
   have hp := radial_hessian_pairing_of_gauss hB hinv hsymm hgauss (deriv u t)
   linarith
 
-
-
 theorem radial_covDerivAt_one
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (x w : E) :
     covDerivAlong (christoffelBilinear B)
@@ -94,8 +79,6 @@ theorem radial_covDerivAt_one
     simpa only [id_eq, one_smul] using (hasDerivAt_id (1 : ℝ)).smul_const v
   simp only [covDerivAlong, fderiv_eq_smul_deriv, one_smul,
     (hline w).deriv, (hline x).deriv, christoffelBilinear_apply]
-
-
 
 theorem deriv2_norm_sq_eq_radial_covDeriv_pairing
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {u : ℝ → E} {t : ℝ}
@@ -123,8 +106,6 @@ end PoincareConjecture.CoordinateExponential
 namespace PoincareConjecture.RiemannianMetric
 
 open CoordinateExponential
-
-
 
 theorem IsGeodesicOn.deriv2_norm_sq_eq_radial_pairing
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -156,8 +137,6 @@ theorem IsGeodesicOn.deriv2_norm_sq_eq_radial_pairing
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem deriv2_norm_sq_eq_precompact_radial_pairing
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

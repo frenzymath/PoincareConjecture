@@ -1,11 +1,5 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,9 +18,6 @@ structure M45StandardCapRefinement {A : StandardCylinderAtlas}
   closed_core_eq : cap.closed_core = N.closed_core
   model_eq : cap.model_kind = .euclidean
   contains : x ∈ cap.core
-
-
-
 
 inductive M45StandardCanonicalAlternative (A : StandardCylinderAtlas)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)

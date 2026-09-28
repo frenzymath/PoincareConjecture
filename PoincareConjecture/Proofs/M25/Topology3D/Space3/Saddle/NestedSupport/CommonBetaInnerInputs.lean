@@ -7,19 +7,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.PlanarCurveNormalC
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -38,13 +25,6 @@ private def innerPort (J2 : E2 ≃L[ℝ] (ℝ × ℝ)) (i e : Fin 2) : E2 :=
 set_option maxHeartbeats 1500000 in
 
 set_option linter.unusedVariables false in
-
-
-
-
-
-
-
 
 theorem exists_saddle_common_beta_inner_inputs
     (hP : PlanarSchoenfliesService)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M01.NormalizationCharts
 import PoincareConjecture.Proofs.M01.NormalizationLocalDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Metric Set Filter
@@ -26,7 +18,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [∀ z : E, NormedAddCommGroup (TangentSpace 𝓘(ℝ, E) z)]
   [∀ z : E, NormedSpace ℝ (TangentSpace 𝓘(ℝ, E) z)]
   [IsRiemannianManifold 𝓘(ℝ, E) M]
-
 
 theorem m01_exists_bilipschitz_chart (x : M) (C : ℝ≥0) (hC : 1 < C) :
     ∃ e : OpenPartialHomeomorph M (TangentSpace 𝓘(ℝ, E) x),

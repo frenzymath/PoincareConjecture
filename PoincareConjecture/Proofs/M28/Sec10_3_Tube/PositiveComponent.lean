@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.Scalar.Trace
 import PoincareConjecture.Proofs.M28.Generalized.ShortPaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem LeviCivitaData.six_mul_le_scalar_of_orthonormal_sectional_lower
     (D : LeviCivitaData g) (x : M) {a : ℝ}
@@ -65,9 +52,6 @@ theorem LeviCivitaData.six_mul_le_scalar_of_orthonormal_sectional_lower
       Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm i j
     _ = D.scalarCurvature x := (D.scalarCurvature_eq_sum_orthonormalBasis x b).symm
 
-
-
-
 theorem SingularCComponent.six_mul_scalar_le
     {D : LeviCivitaData g} {C : ℝ} (N : SingularCComponent g D C)
     (hR : ContinuousOn D.scalarCurvature N.carrier)
@@ -90,9 +74,6 @@ theorem SingularCComponent.six_mul_scalar_le
     _ ≤ D.scalarCurvature x * C := mul_le_mul_of_nonneg_right htrace N.constant_pos.le
     _ = C * D.scalarCurvature x := mul_comm _ _
 
-
-
-
 theorem SingularCComponent.preconnected_subset
     {D : LeviCivitaData g} {C : ℝ} (N : SingularCComponent g D C)
     {S : Set M} (hS : IsPreconnected S) (hSN : (S ∩ N.carrier).Nonempty) :
@@ -101,9 +82,6 @@ theorem SingularCComponent.preconnected_subset
   rw [N.component_eq] at hzN ⊢
   rw [connectedComponent_eq hzN]
   exact hS.subset_connectedComponent hzS
-
-
-
 
 theorem GeneralizedRicciFlowData.not_singularCComponent_on_path
     (F : GeneralizedRicciFlowData.{u}) (P : RicciFlowCurvatureTheory.{u})

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.SelectedTipBallCont
 import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.TwoCollars
 import PoincareConjecture.Proofs.M35.RawFlow.BlowupTimes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 open Uniqueness
-
-
-
 
 theorem blowupSequence_caps_of_radial_collars
     (P : M35StandardCapPredecessors)

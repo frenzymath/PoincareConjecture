@@ -4,23 +4,12 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Matrix Topology
 
 namespace PoincareConjecture.M25.Topology3D.SaddleOrientation
-
-
 
 theorem triple_ne_zero_of_transverse
     (n u v : Fin 3 → ℝ)
@@ -50,8 +39,6 @@ theorem triple_ne_zero_of_transverse
       using h.symm
   exact (mul_ne_zero hTT hvv) hmul
 
-
-
 theorem dot_self_pos_of_ne_zero
     (v : Fin 3 → ℝ) (hv : v ≠ 0) : 0 < v ⬝ᵥ v := by
   have hnonneg : 0 ≤ v ⬝ᵥ v := by
@@ -59,8 +46,6 @@ theorem dot_self_pos_of_ne_zero
   apply lt_of_le_of_ne hnonneg
   intro h
   exact hv (dotProduct_self_eq_zero.mp h.symm)
-
-
 
 theorem saddle_endpoint_gram_identity
     (n u e1 e2 : Fin 3 → ℝ) (x y lambda : ℝ)
@@ -107,8 +92,6 @@ theorem saddle_endpoint_gram_identity
       rw [hscaled]
       ring
 
-
-
 theorem mul_pos_of_connected_nonzero
     {X : Type*} [TopologicalSpace X] {S : Set X} {f : X → ℝ}
     (hS : IsPreconnected S) (hf : ContinuousOn f S)
@@ -118,8 +101,6 @@ theorem mul_pos_of_connected_nonzero
   rcases hS.mapsTo_Ioi_or_Iio hf hne with hpos | hneg
   · exact mul_pos (hpos hx) (hpos hy)
   · exact mul_pos_of_neg_of_neg (hneg hx) (hneg hy)
-
-
 
 theorem endpoint_lambdas_same_sign
     (L0 L1 B0 B1 J0 J1 C0 C1 lambda0 lambda1 : ℝ)
@@ -145,8 +126,6 @@ theorem endpoint_lambdas_same_sign
     (le_of_not_gt h) hfactor.le
   exact (not_lt_of_ge hnonpos) hprod
 
-
-
 theorem deriv_pos_of_right_increase
     {g : ℝ → ℝ} {a d : ℝ} (hd : HasDerivAt g d a)
     (hne : d ≠ 0)
@@ -160,8 +139,6 @@ theorem deriv_pos_of_right_increase
       (sub_nonneg.mpr ht)
   exact lt_of_le_of_ne hnonneg (Ne.symm hne)
 
-
-
 theorem deriv_neg_of_right_decrease
     {g : ℝ → ℝ} {a d : ℝ} (hd : HasDerivAt g d a)
     (hne : d ≠ 0)
@@ -174,8 +151,6 @@ theorem deriv_neg_of_right_decrease
     exact mul_nonpos_of_nonneg_of_nonpos
       (inv_nonneg.mpr (le_of_lt htpos)) (sub_nonpos.mpr ht)
   exact lt_of_le_of_ne hnonpos hne
-
-
 
 theorem endpoint_port_products_opposite
     (lambda0 lambda1 x0 y0 x1 y1 : ℝ)

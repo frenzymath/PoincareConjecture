@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spec
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralBasis
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -41,9 +30,7 @@ theorem isCompactOperator_toDomainL2 : IsCompactOperator (toDomainL2 D Ω) :=
 theorem isCompactOperator_domainL2Resolvent : IsCompactOperator (domainL2Resolvent D Ω) :=
   (isCompactOperator_toDomainL2 D Ω hn hΩ hc).comp_clm (domainResolvent D Ω)
 
-
 abbrev EigenIndex := Poincare.Analysis.Dirichlet.CompactSpectral.BasisIndex (domainL2Resolvent D Ω)
-
 
 def eigenbasis : HilbertBasis (EigenIndex D Ω) ℝ (Lp ℝ 2 (g.volumeMeasure.restrict Ω)) :=
   Poincare.Analysis.Dirichlet.CompactSpectral.hilbertBasis (domainL2Resolvent D Ω)
@@ -63,7 +50,6 @@ theorem domainL2Resolvent_repr (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω))
     ← domainL2Resolvent_isSelfAdjoint.isSymmetric.apply_clm,
     domainL2Resolvent_eigenbasis, real_inner_smul_left]
 
-
 def eigenvalue (i : EigenIndex D Ω) : ℝ := (1 - i.1.1) / i.1.1
 
 omit hn hΩ hc in
@@ -78,7 +64,6 @@ theorem eigenvalue_nonneg (i : EigenIndex D Ω) : 0 ≤ eigenvalue D Ω i := by
   have he := domainL2Resolvent_eigenbasis D Ω hn hΩ hc i
   exact div_nonneg (sub_nonneg.mpr (domainResolvent_eigenvalue_le_one hne he))
     (domainResolvent_eigenvalue_pos hΩ hc hne he).le
-
 
 def energyEigenfunction (i : EigenIndex D Ω) : H1Zero D Ω :=
   (i.1.1)⁻¹ • domainResolvent D Ω (eigenbasis D Ω hn hΩ hc i)

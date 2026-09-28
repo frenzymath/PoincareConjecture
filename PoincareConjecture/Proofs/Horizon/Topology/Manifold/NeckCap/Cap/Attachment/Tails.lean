@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.FrontierNeck
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Singleton
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem openCylinderModel_tail_false_eq_region (N : EpsilonNeck g)
     {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
@@ -58,7 +44,6 @@ theorem openCylinderModel_tail_false_eq_region (N : EpsilonNeck g)
       ring
     rw [hnorm, Prod.eta, N.coordinate_map_coordinate_inverse hx.1]
 
-
 theorem openCylinderModel_tail_one_quarter (N : EpsilonNeck g) :
     N.openCylinderModel.tail false (1 / 4) = N.region (-N.epsilon⁻¹) (-N.epsilon⁻¹ / 2) := by
   rw [N.openCylinderModel_tail_false_eq_region (by norm_num : (1 / 4 : ℝ) ∈ Ioo 0 1)]
@@ -68,9 +53,6 @@ theorem openCylinderModel_tail_one_quarter (N : EpsilonNeck g) :
 end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem exists_frontier_neck_tail_inclusions_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

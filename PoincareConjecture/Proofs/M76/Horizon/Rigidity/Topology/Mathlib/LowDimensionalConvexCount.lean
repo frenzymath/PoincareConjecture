@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import Mathlib.LinearAlgebra.Projection
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -64,8 +56,6 @@ theorem surfaceEulerCount_eq_one_of_convex_low_dimension
   rw [← hfaces.surfaceEulerCount_embeddedImage hinj]
   exact J.surfaceEulerCount_eq_one_of_planar_contractible (by simp)
     (hfaces.embeddedImage_finite hinj hK)
-
-
 
 theorem surfaceEulerCount_eq_one_of_small_convexHull
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

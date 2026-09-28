@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalIncidentEdgeLink
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,8 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem mem_boundary_vertex_base_endpoints_iff (p : (T.marked 2).vertices)
     (hpfront : (p : T.index → ℝ × V3) ∈ (T.marked 1).space)

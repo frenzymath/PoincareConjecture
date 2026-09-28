@@ -24,7 +24,6 @@ theorem polyhedralPLInCharts_neighborhood_inclusion
   refine ⟨k.1, K, U, hK, hKS, hU, hxU, hUK, (hsource k).comp hmaps, ?_⟩
   simpa only [hval, Function.comp_assoc] using hcoords
 
-
 noncomputable def neighborhoodSubsetHomeomorph
     {X : Type*} [TopologicalSpace X] {N A : Set X} (hAN : A ⊆ N) :
     ((Subtype.val : N → X) ⁻¹' A) ≃ₜ A where
@@ -61,7 +60,6 @@ theorem connectedComponentIn_neighborhood_preimage
     exact hp.subset_connectedComponentIn (mem_connectedComponentIn hx)
       (preimage_mono (connectedComponentIn_subset A (x : X)))
 
-
 theorem whole_frontier_component_in_neighborhood
     {X : Type*} [TopologicalSpace X] {N R F : Set X}
     (hN : IsOpen N) (hRN : R ⊆ N) (hR : IsClosed R)
@@ -74,7 +72,6 @@ theorem whole_frontier_component_in_neighborhood
       (Subtype.val : N → X) ⁻¹' F := by
   rw [hfront, connectedComponentIn_neighborhood_preimage hN
     (hR.frontier_subset.trans hRN) _ (hF x.property), hcomponent]
-
 
 theorem IsPLIrreducible.neighborhood_restriction
     {X : Type} {ι : Type*} [TopologicalSpace X]

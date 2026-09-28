@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderConnectionPara
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open Poincare.Analysis.Calculus
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderIteratedDerivative_contDiffAt {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) {B : RoundCylinderTwoTensor} {x : RoundCylinderCoordinates}
@@ -139,9 +127,6 @@ private theorem norm_covariant_jet_le_of_total_order
       _ = (V + (2 + N : ℕ) * 3 * (2 : ℝ) ^ N * D) * (L ^ k * A) := by ring
       _ ≤ L * (L ^ k * A) := mul_le_mul_of_nonneg_right hL (by positivity)
       _ = L ^ (k + 1) * A := by rw [pow_succ]; ring
-
-
-
 
 theorem exists_roundCylinder_covariant_component_bound
     {T : ℝ} (hT : T < 1) {K : Set RoundCylinderCoordinates} (hK : IsCompact K) (N : ℕ) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Hessian.Seed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.MetricDerivative
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open Set MeasureTheory Filter
 open scoped Manifold ContDiff Topology Bundle BigOperators
 
 namespace PoincareConjecture.HarmonicCoordinates
-
-
 
 theorem exists_uniform_hessian_bound {n : ℕ} (hn : 2 ≤ n)
     {R a b K G : ℝ} (hR : 0 < R) (hR1 : R ≤ 1)
@@ -109,8 +99,6 @@ theorem exists_uniform_hessian_bound {n : ℕ} (hn : 2 ≤ n)
     rw [Real.sq_sqrt hC, ← g.tensorPairingTwo_self_eq_tensorNorm_sq]
     exact hQC
   exact hnorm.trans (le_add_of_nonneg_right zero_le_one)
-
-
 
 theorem exists_uniform_harmonic_metric_derivative_bound {n : ℕ} (hn : 2 ≤ n)
     {R a b K : ℝ} (hR : 0 < R) (hR1 : R ≤ 1)

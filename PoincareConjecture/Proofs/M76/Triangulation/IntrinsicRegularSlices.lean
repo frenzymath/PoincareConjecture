@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 import PoincareConjecture.Proofs.M76.Triangulation.RegularSliceCircles
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem hasDisjointPolygonPresentation_regular_level
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

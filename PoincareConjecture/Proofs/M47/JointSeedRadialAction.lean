@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.JointSeedRadialClock
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_radial_square_action_le
     (hM04 : RicciFlowCurvatureTheory.{u})

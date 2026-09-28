@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_StageFamily
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_MaximalAlternative
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_ObservationModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem prepared_counterexamples_contradiction
     (P : M44CapPersistencePredecessors.{u})

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.OrdinaryProductLift
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M]
   {I : SpacetimeInterval} (F : RicciFlow n M I.domain)
   (P : OrdinaryProductRicciGeometry F.metric I)
-
 
 noncomputable def ordinaryCapture
     (h : IntrinsicGeneralizedRicciEquation P.leafwiseConnection)

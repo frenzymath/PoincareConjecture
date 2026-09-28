@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_HalfSpaceExpansion
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {E : Type u} [NormedAddCommGroup E]
-
-
 
 theorem planeExterior_subset_twoPuncture
     (K : Set (E × ℝ)) (c : ℝ) (hc : 0 < c)
@@ -45,8 +31,6 @@ theorem planeExterior_subset_twoPuncture
     · exact (neg_ne_zero.mpr hc.ne') hz
     · exact hy hm
 
-
-
 def planeExteriorPunctureInclusion
     (K : Set (E × ℝ)) (c : ℝ) (hc : 0 < c)
     (hp : ((0 : E), c) ∈ K) (hm : ((0 : E), -c) ∈ K) :
@@ -56,9 +40,6 @@ def planeExteriorPunctureInclusion
     continuous_subtype_val.subtype_mk _⟩
 
 variable [NormedSpace ℝ E]
-
-
-
 
 def planeExteriorPunctureHomotopyEquiv
     (K : Set (E × ℝ)) (hK : IsCompact K) (hconv : Convex ℝ K)
@@ -165,8 +146,6 @@ def planeExteriorPunctureHomotopyEquiv
       map_zero_left _ := rfl
       map_one_left y := Subtype.ext (hH1 y) }
   exact ⟨i, j, ⟨HA⟩, ⟨HQ⟩⟩
-
-
 
 theorem planeExteriorPunctureHomotopyEquiv_toFun
     (K : Set (E × ℝ)) (hK : IsCompact K) (hconv : Convex ℝ K)

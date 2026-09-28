@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureAction
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (e : CompatibleSpacetimeCylinder G.spacetime (G.timeIntervals.interval K) C)
   (g : SpacetimeCylinderMetric e)
 
-
-
 theorem ordinaryCapture_projectedDifferential
     (t : (G.timeIntervals.interval K).Point) (c : C)
     (v : TangentSpace (spacetimeModel n) (t, c)) :
@@ -49,9 +38,6 @@ theorem ordinaryCapture_projectedDifferential
     (mfderiv (spacetimeModel n) (spacetimeModel n) e.toSpacetime (t, c) (v.1, v.2)) = _
   rw [ht, hd, map_add, map_smul, horizontalProjection_timeVector_eq_zero,
     smul_zero, zero_add, G.spacetime.horizontalProjection_identity]
-
-
-
 
 theorem ordinaryCapture_cylinderVelocityWithin
     (θ : ℝ → (G.timeIntervals.interval K).Point) (q : ℝ → C)

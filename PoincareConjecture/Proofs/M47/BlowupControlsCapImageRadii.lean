@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapImageBalls
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoreVolume
 import PoincareConjecture.Proofs.M47.CanonicalNormalizedBallExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem exists_cap_image_core_radii
     {X : Type v} [TopologicalSpace X]
@@ -61,9 +50,6 @@ theorem exists_cap_image_core_radii
     · exact ⟨1, fun hmem => (hy hmem).elim⟩
   choose r hr using hradii
   exact ⟨r, hr⟩
-
-
-
 
 theorem exists_cap_image_core_data_tolerance
     [SecondCountableTopology M] [ConnectedSpace M]

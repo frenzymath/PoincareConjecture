@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.OpenFrontierCollapse
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +24,6 @@ private theorem injection_of_square {A B C D : Type*}
     FundamentalGroup.map k x a = FundamentalGroup.map k x b) hcomm) h
   simpa only [FundamentalGroup.map_comp_apply] using h'
 
-
-
 theorem motion_endpoint_injective (D : C(unitInterval × X, X))
     (hzero : ∀ x, D (0, x) = x) {S : Set X}
     (hS : ∀ t, MapsTo (fun x => D (t, x)) S S) (x : S) :
@@ -50,8 +46,6 @@ namespace OpenFrontierCollapse
 
 variable {R : Set X} (C : OpenFrontierCollapse R)
 
-
-
 theorem overlap_collapse_injective (x : C.overlap) :
     Function.Injective (FundamentalGroup.map
       (⟨fun y : C.overlap => ⟨C.motion (1, y), C.endpoint_overlap y.property⟩,
@@ -68,8 +62,6 @@ theorem overlap_collapse_injective (x : C.overlap) :
   have h := congrArg (FundamentalGroup.map (ContinuousMap.inclusion C.frontier_subset) (r x)) hab
   rw [← FundamentalGroup.map_comp_apply, ← FundamentalGroup.map_comp_apply] at h
   exact h
-
-
 
 theorem overlap_inclusion_injective {T U : Set X}
     (hU : U = T ∪ C.overlap) (hST : frontier R ⊆ T)
@@ -96,8 +88,6 @@ theorem overlap_inclusion_injective {T U : Set X}
         (continuous_const.prodMk continuous_subtype_val)).subtype_mk _⟩
   exact injection_of_square f g r (ContinuousMap.inclusion hST) rfl x
     (C.overlap_collapse_injective x) (hpi (r x))
-
-
 
 theorem side_inclusion_injective {T U : Set X}
     (hU : U = T ∪ C.overlap) (hST : frontier R ⊆ T)

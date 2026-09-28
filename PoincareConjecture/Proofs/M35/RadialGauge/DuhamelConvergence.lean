@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.SlabSourceExtension
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem heatDuhamel_tendsto {f : ℕ → ℝ → V → F} {g : ℝ → V → F} {C t : ℝ}
     (ht : 0 ≤ t) (hfm : ∀ k, StronglyMeasurable (Function.uncurry (f k)))
@@ -53,8 +43,6 @@ theorem heatDuhamel_tendsto {f : ℕ → ℝ → V → F} {g : ℝ → V → F} 
         (x + Real.sqrt (2 * (t - s)) • z)))
   · filter_upwards [ae_restrict_mem measurableSet_Ioc] with s hs
     exact hinner s ⟨hs.1.le, hs.2⟩
-
-
 
 theorem heatDuhamel_tendsto_on_slab {f : ℕ → ℝ → V → F} {g : ℝ → V → F}
     {C T t : ℝ} (ht : t ∈ Icc 0 T)

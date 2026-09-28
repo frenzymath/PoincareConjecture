@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Level.Components
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

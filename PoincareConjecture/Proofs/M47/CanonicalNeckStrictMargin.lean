@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckPerturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +20,6 @@ private theorem weighted_square_le {theta : ℝ} (htheta : 0 < theta) (T S : ℝ
   have h := nonneg_of_mul_nonneg_right hnonneg htheta
   linarith
 
-
-
 theorem diagonal_tensor_contraction_weighted_le
     {iota kappa : Type*} [Fintype iota] [Fintype kappa]
     [DecidableEq iota] [DecidableEq kappa]
@@ -48,8 +37,6 @@ theorem diagonal_tensor_contraction_weighted_le
   have hw : 0 ≤ ∏ i, d (a i) := Finset.prod_nonneg fun i _ => hd (a i)
   have h := mul_le_mul_of_nonneg_left (weighted_square_le htheta (T a) (S a)) hw
   nlinarith
-
-
 
 theorem cylinder_tensor_norm_weighted_le
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (z : ℝ) {r : ℕ}
@@ -70,8 +57,6 @@ theorem cylinder_tensor_norm_weighted_le
   · exact inv_nonneg.mpr (mul_nonneg (by norm_num) (sub_nonneg.mpr hu.le))
   · exact inv_nonneg.mpr (mul_nonneg (by norm_num) (sub_nonneg.mpr hu.le))
   · norm_num
-
-
 
 theorem cylinder_jet_error_weighted_le
     {u : ℝ} (hu : u ≤ 0) (B D : RoundCylinderTwoTensor) (m : ℕ)
@@ -117,9 +102,6 @@ theorem cylinder_jet_error_weighted_le
   apply hfirst.trans
   simpa only [mul_assoc] using add_le_add le_rfl
     (mul_le_mul_of_nonneg_left hsum (by positivity : 0 ≤ 1 + theta⁻¹))
-
-
-
 
 theorem exists_same_epsilon_neck_perturbation_tolerance
     {epsilon : ℝ} (_hepsilon : 0 < epsilon) (D : RoundCylinderTwoTensor)

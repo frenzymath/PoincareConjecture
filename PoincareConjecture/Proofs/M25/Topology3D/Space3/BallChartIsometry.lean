@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 noncomputable def BallNeighborhoodChart.isometryConjugate
     (B : BallNeighborhoodChart E E) (U : F ≃ₗᵢ[ℝ] E) : BallNeighborhoodChart F F where
@@ -33,7 +23,6 @@ noncomputable def BallNeighborhoodChart.isometryConjugate
     (B.smooth.comp U.contDiff.contDiffOn (fun _ hx => hx.1.2))
   smooth_symm := U.symm.contDiff.comp_contDiffOn
     (B.smooth_symm.comp U.contDiff.contDiffOn (fun _ hy => hy.2.1))
-
 
 @[simp] theorem BallNeighborhoodChart.isometryConjugate_apply
     (B : BallNeighborhoodChart E E) (U : F ≃ₗᵢ[ℝ] E) (x : F) :

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.ConnectorActionBound
 import PoincareConjecture.Proofs.M09.FamilyEndpointEquation
 import PoincareConjecture.Statements.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -26,9 +16,6 @@ open Proofs.M09
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M]
-
-
-
 
 theorem reducedLength_le_of_smooth_connector {J : Set ℝ} (F : RicciFlow n M J)
     (P : RicciFlowCurvatureTheory.{u}) (T taumax : ℝ) (hmax : 0 < taumax)

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompatibleChartPLMaps
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +12,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_chart_on_open_model_image
     {X Y V : Type*} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace V]
@@ -104,9 +93,6 @@ theorem exists_chart_on_open_model_image
     rw [hjv]
     exact congrArg f (B.subtypeRestr_symm_apply hUn hyBr)
 
-
-
-
 theorem exists_retained_original_chart
     {X E ι : Type*} [TopologicalSpace X]
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -136,8 +122,6 @@ theorem exists_retained_original_chart
     e he.cover hf B hB
   apply (hlocal.mono q.open_target (hqt.subset.trans inter_subset_left)).congr
   exact fun y hy => (hqg y hy).symm
-
-
 
 theorem retained_chart_capped_halfspace_eq
     {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]
@@ -169,9 +153,6 @@ theorem retained_chart_capped_halfspace_eq
       exact ⟨x, hxD, hfx⟩
   rw [mem_union, or_iff_left hzC, hmem, hregion x ⟨hxU, hxB⟩]
   rw [show B x = q z from B.right_inv hy.1]
-
-
-
 
 theorem exists_retained_boundary_halfspace_chart
     {X E ι : Type*} [TopologicalSpace X]
@@ -206,8 +187,6 @@ theorem exists_retained_boundary_halfspace_chart
     rw [hqs] at hz
     exact image_mono inter_subset_left hz
 
-
-
 theorem exists_open_carrier_halfspace_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {T W D : Set E} (hWT : W ⊆ T)
@@ -240,9 +219,6 @@ namespace OpenPartialHomeomorph
 variable {E V : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
-
 
 theorem mem_piecewiseAffineGroupoid_transition_of_locallyPL_inverse
     {W : Set E} (Q Q' : OpenPartialHomeomorph W V)

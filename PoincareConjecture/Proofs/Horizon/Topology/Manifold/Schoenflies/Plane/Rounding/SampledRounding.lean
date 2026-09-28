@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.InscribedPolygon
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.RoundedPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function
@@ -18,8 +9,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} [NeZero n]
-
-
 
 theorem roundedPolygonParameter_inscribed_uniform (ρ : ℝ → ℝ) (γ : ℝ → E)
     (h : ℝ) (hγ : Periodic γ (h * (n : ℝ))) :
@@ -44,8 +33,6 @@ theorem roundedPolygonParameter_inscribed_uniform (ρ : ℝ → ℝ) (γ : ℝ �
     ring
   rw [heq]
   exact ((hγ.int_mul (j / (n : ℤ))) _).symm
-
-
 
 theorem periodic_rounded_uniform_sampling (ρ : ℝ → ℝ) (γ : ℝ → E)
     {h : ℝ} (hh : h ≠ 0) (hγ : Periodic γ (h * (n : ℝ))) :

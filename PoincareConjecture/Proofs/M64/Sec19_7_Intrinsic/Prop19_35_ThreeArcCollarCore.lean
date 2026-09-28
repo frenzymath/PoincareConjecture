@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCollarB
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerFrontierLines
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.PolygonalCores
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +14,6 @@ open ChartCircleArrangementVertexPatch
 namespace PoincareConjecture
 
 namespace M64IntrinsicThreeArcCaps
-
-
-
 
 theorem axes_subset_frontier
     {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusCoordinates}
@@ -48,15 +41,9 @@ variable {gamma : Bool → ℝ → AnnulusCoordinates} {sigma : ℝ → AnnulusC
   {C : M64IntrinsicThreeArcCaps gamma sigma T S U}
   (D : M64IntrinsicThreeArcCollar C b)
 
-
-
-
 def piece : Bool ⊕ D.BandIndex → Set AnnulusCoordinates
   | .inl e => C.carrier e
   | .inr i => (D.bandData i).band.carrier
-
-
-
 
 theorem piece_union : (⋃ i, D.piece i) = D.carrier := by
   have h : (⋃ i, D.piece i) =
@@ -66,24 +53,15 @@ theorem piece_union : (⋃ i, D.piece i) = D.carrier := by
   rw [h, D.band_union]
   exact (union_assoc _ _ _).symm
 
-
-
-
 theorem piece_compact (i : Bool ⊕ D.BandIndex) : IsCompact (D.piece i) := by
   cases i with
   | inl e => exact C.compact e
   | inr i => exact isCompact_iUnion fun j => ((D.bandData i).band.face j).isCompact_carrier_image
 
-
-
-
 theorem piece_occupied (i : Bool ⊕ D.BandIndex) : D.piece i ⊆ closure U := by
   cases i with
   | inl e => exact C.occupied e
   | inr i => exact (D.band_subset i).trans D.occupied
-
-
-
 
 theorem piece_regular (i : Bool ⊕ D.BandIndex) :
     closure (interior (D.piece i)) = D.piece i := by
@@ -94,10 +72,6 @@ theorem piece_regular (i : Bool ⊕ D.BandIndex) :
       (C.cap_first e) (C.cap_second e) (C.cap_chord e) (C.cap_sector e)
       (C.axes_subset_frontier e)).2.1
   | inr i => exact (D.bandData i).band.closure_interior_carrier
-
-
-
-
 
 theorem piece_frontier_lines
     (hfront : frontier U = gamma false '' Icc 0 (T false) ∪
@@ -131,9 +105,6 @@ theorem piece_frontier_lines
   · exact Or.inr (hsub (mem_iUnion.mpr ⟨i, hp, h⟩))
 
 open Classical in
-
-
-
 
 theorem exists_core (hU : IsOpen U) (hcompact : IsCompact (closure U))
     (hfront : frontier U = gamma false '' Icc 0 (T false) ∪

@@ -1,3 +1,1 @@
 import PoincareConjecture.Statements.M22UniversalNoncollapsing
-
-

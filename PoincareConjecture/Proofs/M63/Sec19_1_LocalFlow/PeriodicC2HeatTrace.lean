@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianSpectral
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianC2
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicInitialCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative Filter
@@ -19,10 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem exists_initialHeat_c2_jets (f : C(AddCircle L, ℝ))
     (hf : ContDiff ℝ 2 (fun x : ℝ => f (x : AddCircle L)))

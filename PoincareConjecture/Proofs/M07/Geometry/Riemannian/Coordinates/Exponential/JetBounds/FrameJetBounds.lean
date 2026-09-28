@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialConnectionBounds
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,10 +13,8 @@ open scoped ContDiff Topology BigOperators Manifold
 
 namespace PoincareConjecture.CoordinateExponential
 
-
 def scalarJetProductBound (q : ℕ) (A D : ℕ → ℝ) : ℝ :=
   ∑ i ∈ Finset.range (q + 1), (q.choose i : ℝ) * |A i| * |D (q - i)|
-
 
 def curvatureComponentSuccJetBound (n l q : ℕ) (A B C D : ℕ → ℝ) : ℝ :=
   n * scalarJetProductBound q A D + n * (4 + l) * scalarJetProductBound q B C
@@ -126,14 +108,12 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
 def radialCoframeCoeff
     (b : OrthonormalBasis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))
     (T : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n))
     (a : Fin n) (x u : EuclideanSpace ℝ (Fin n)) : ℝ :=
   b.repr ((T x).inverse u) a
-
 
 def radialConnectionCoeff
     (b : OrthonormalBasis (Fin n) ℝ (EuclideanSpace ℝ (Fin n)))
@@ -173,9 +153,6 @@ theorem contDiff_radialConnectionCoeff
     (contDiff_id.prodMk ((contDiff_const (c := u)).prodMk (contDiff_const (c := b j))))
   simpa only [radialConnectionCoeff, OrthonormalBasis.repr_apply_apply,
     innerSL_apply_apply, Function.comp_def, id_eq] using (innerSL ℝ (b a)).contDiff.comp h
-
-
-
 
 theorem norm_iteratedFDeriv_radialCurvatureComponent_succ_le
     (D : LeviCivitaData g)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.HalfspaceStarBall
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +13,6 @@ variable {E F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [DecidableEq E]
   {ι : Type*} [Finite ι] [Nonempty ι]
-
-
 
 theorem AffineOnFaces.exists_halfspace_star_ball
     {K : SimplicialComplex ℝ E} (hK : K.faces.Finite)

@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Calculus.FDeriv.Extend
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem hasFDerivWithinAt_Icc_prod_of_continuousOn
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -41,8 +29,6 @@ theorem hasFDerivWithinAt_Icc_prod_of_continuousOn
   intro q hq
   rw [hclosure] at hq
   exact (hf q hq).mono hsub
-
-
 
 theorem hasFDerivAt_prod_of_continuousOn_off_time
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

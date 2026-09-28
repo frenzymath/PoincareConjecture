@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.CyclicS
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondSquareCoordinates
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -78,8 +71,6 @@ private theorem stripAnnulusCoordinates_finitePL (n : ℕ) :
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ := hrect
   exact ⟨K, hK, hKs, K.affineOnFaces_affine
     (stripAnnulusCoordinates n).toContinuousAffineMap⟩
-
-
 
 theorem exists_annulus_of_cyclic_strip
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

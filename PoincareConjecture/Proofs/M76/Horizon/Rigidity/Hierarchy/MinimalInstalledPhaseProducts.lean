@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.MinimalPhaseSqua
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.SquareMapRigidityAlternative
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 open Set Geometry Topology

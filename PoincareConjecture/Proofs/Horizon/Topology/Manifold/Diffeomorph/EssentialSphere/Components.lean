@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,7 +7,6 @@ open Set Topology
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
-
 
 theorem isConnected_inter_of_frontier_subset
     {U A V : Set X} (hU : IsOpen U) (hcU : IsConnected U)
@@ -51,8 +40,6 @@ theorem isConnected_inter_of_frontier_subset
       exact ⟨⟨x, hxU⟩, hxA, rfl⟩
   rw [← heq]
   exact h.image _ continuous_subtype_val.continuousOn
-
-
 
 theorem connected_components_of_closed_cut
     {U K V : Set X} (hU : IsOpen U) (hcU : IsConnected U)

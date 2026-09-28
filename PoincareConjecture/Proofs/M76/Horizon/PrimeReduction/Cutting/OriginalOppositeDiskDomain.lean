@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.OriginalProp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.ClosedCollarIntervalGeometry
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphereCutPLDomain
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.EndCount
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +18,6 @@ private abbrev S2 := sphere (0 : E3) 1
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem terminal_cut_indices_nonempty (data : TerminalSaddleData M P p e) :
     Nonempty data.ends.LowerCutIndex ∧ Nonempty data.ends.UpperCutIndex := by
@@ -61,9 +57,6 @@ theorem terminal_cut_indices_nonempty (data : TerminalSaddleData M P p e) :
     rw [← data.ends.iUnion_range_upperCutCircle] at hcut
     obtain ⟨i, _⟩ := mem_iUnion.mp hcut
     exact ⟨i⟩
-
-
-
 
 theorem terminal_cap_label_counts (data : TerminalSaddleData M P p e) :
     (Nat.card data.ends.LowerCutIndex = 1 ∧ Nat.card data.ends.UpperCutIndex = 2) ∨

@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Event.LimitReference
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 

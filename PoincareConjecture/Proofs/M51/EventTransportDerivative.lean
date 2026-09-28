@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M35.Mathlib.DiffeomorphDerivative
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -22,8 +18,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M₂ : Type*} [TopologicalSpace M₂] [ChartedSpace H₂ M₂]
   {M₃ : Type*} [TopologicalSpace M₃] [ChartedSpace H₃ M₃]
   {n : ℕ∞ω}
-
-
 
 theorem mfderiv_precomp (e : Diffeomorph I₁ I₂ M₁ M₂ n) (hn : n ≠ 0)
     (f : M₂ → M₃) (x : M₁) :

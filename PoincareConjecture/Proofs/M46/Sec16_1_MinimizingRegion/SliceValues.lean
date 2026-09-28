@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.RelativeOpenness
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.CappedSliceValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem confinementRegion_value_ge_capped
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -41,8 +31,6 @@ theorem confinementRegion_value_ge_capped
   obtain ⟨p, hp⟩ := actionConfinement_attained hM12 C (sq_pos_of_pos hb) hbStart p0 hp0
   rw [← M14.action_eq_actionValue_of_minimizing p hp]
   exact (cappedSliceAction_alternative hM04 hM12 LG E C hb hbStart).2.1 y p
-
-
 
 theorem confinementRegion_exists_slice_minimum
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -70,9 +58,6 @@ theorem confinementRegion_exists_slice_minimum
   intro z hz hzt
   rw [heq]
   exact confinementRegion_value_ge_capped hM04 hM12 LG E C hb hbStart hz hzt
-
-
-
 
 theorem confinementRegion_minimum_iff
     (hM04 : RicciFlowCurvatureTheory.{0})

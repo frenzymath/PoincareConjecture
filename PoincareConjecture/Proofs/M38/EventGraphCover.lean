@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventGraphLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,14 +22,12 @@ local instance : LocallyConnectedSpace (eventRetainedInteriorOpen F T hT) :=
 local instance : LocallyConnectedSpace (eventDiscardedOpen F T hT) :=
   (eventDiscardedOpen F T hT).isOpen.locallyConnectedSpace
 
-
 noncomputable def retainedGraphLabel :
     C(eventRetainedInteriorOpen F T hT, EventGraphComponent F T hT P) :=
   ⟨fun x => eventGraphVertexClass F T hT P (Sum.inl (ConnectedComponents.mk x)),
     (continuous_of_discreteTopology : Continuous
       (fun c : ConnectedComponents (eventRetainedInteriorOpen F T hT) =>
         eventGraphVertexClass F T hT P (Sum.inl c))).comp ConnectedComponents.continuous_coe⟩
-
 
 noncomputable def discardedGraphLabel :
     C(eventDiscardedOpen F T hT, EventGraphComponent F T hT P) :=
@@ -46,14 +36,12 @@ noncomputable def discardedGraphLabel :
       (fun c : ConnectedComponents (eventDiscardedOpen F T hT) =>
         eventGraphVertexClass F T hT P (Sum.inr c))).comp ConnectedComponents.continuous_coe⟩
 
-
 def eventPrePatch : Bool ⊕ Fin (F.event T hT).cap_count →
     TopologicalSpace.Opens (F.slice (F.event T hT).tMinus).carrier
   | Sum.inl false => eventRetainedInteriorOpen F T hT
   | Sum.inl true => eventDiscardedOpen F T hT
   | Sum.inr i => ⟨(P i).collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1),
       (P i).collarChart.open_target⟩
-
 
 noncomputable def eventPrePatchLabel (j : Bool ⊕ Fin (F.event T hT).cap_count) :
     C(eventPrePatch F T hT P j, EventGraphComponent F T hT P) :=
@@ -62,7 +50,6 @@ noncomputable def eventPrePatchLabel (j : Bool ⊕ Fin (F.event T hT).cap_count)
   | Sum.inl true => discardedGraphLabel F T hT P
   | Sum.inr i => ContinuousMap.const _ (eventGraphVertexClass F T hT P
       (Sum.inl (ConnectedComponents.mk (P i).retainedAttachmentPoint)))
-
 
 theorem eventPrePatchLabel_on_retained (j : Bool ⊕ Fin (F.event T hT).cap_count)
     (x : (F.slice (F.event T hT).tMinus).carrier) (hxj : x ∈ eventPrePatch F T hT P j)
@@ -80,7 +67,6 @@ theorem eventPrePatchLabel_on_retained (j : Bool ⊕ Fin (F.event T hT).cap_coun
       exact congrArg (fun c => eventGraphVertexClass F T hT P (Sum.inl c))
         ((P i).negative_retained_component_eq ⟨x, hx⟩ hneg).symm
 
-
 theorem eventPrePatchLabel_on_discarded (j : Bool ⊕ Fin (F.event T hT).cap_count)
     (x : (F.slice (F.event T hT).tMinus).carrier) (hxj : x ∈ eventPrePatch F T hT P j)
     (hx : x ∈ eventDiscardedOpen F T hT) :
@@ -97,7 +83,6 @@ theorem eventPrePatchLabel_on_discarded (j : Bool ⊕ Fin (F.event T hT).cap_cou
       exact (eventGraphVertexClass_edge F T hT P i).trans
         (congrArg (fun c => eventGraphVertexClass F T hT P (Sum.inr c))
           ((P i).positive_discarded_component_eq ⟨x, hx⟩ hpos).symm)
-
 
 theorem eventPrePatchLabel_agree (j k : Bool ⊕ Fin (F.event T hT).cap_count)
     (x : (F.slice (F.event T hT).tMinus).carrier)
@@ -121,8 +106,6 @@ theorem eventPrePatchLabel_agree (j k : Bool ⊕ Fin (F.event T hT).cap_count)
             rfl
           · exact (Set.disjoint_left.mp ((P i).collars_disjoint (P j) hij) hxj hxk).elim
 
-
-
 theorem eventPrePatch_cover (x : (F.slice (F.event T hT).tMinus).carrier) :
     ∃ j, (eventPrePatch F T hT P j : Set (F.slice (F.event T hT).tMinus).carrier) ∈ 𝓝 x := by
   by_cases hr : x ∈ eventRetainedInteriorOpen F T hT
@@ -145,13 +128,11 @@ theorem eventPrePatch_cover (x : (F.slice (F.event T hT).tMinus).carrier) :
   subst s
   exact ⟨hz, by norm_num⟩
 
-
 noncomputable def preEventGraphLabel :
     C((F.slice (F.event T hT).tMinus).carrier, EventGraphComponent F T hT P) :=
   ContinuousMap.liftCover (fun j => eventPrePatch F T hT P j)
     (eventPrePatchLabel F T hT P) (eventPrePatchLabel_agree F T hT P)
     (eventPrePatch_cover F T hT P)
-
 
 theorem preEventGraphLabel_patch (j : Bool ⊕ Fin (F.event T hT).cap_count)
     (x : eventPrePatch F T hT P j) :
@@ -162,18 +143,15 @@ theorem preEventGraphLabel_patch (j : Bool ⊕ Fin (F.event T hT).cap_count)
     (φ := eventPrePatchLabel F T hT P) (hφ := eventPrePatchLabel_agree F T hT P)
     (hS := eventPrePatch_cover F T hT P) (i := j) x
 
-
 theorem preEventGraphLabel_retained (x : eventRetainedInteriorOpen F T hT) :
     preEventGraphLabel F T hT P x.val =
       eventGraphVertexClass F T hT P (Sum.inl (ConnectedComponents.mk x)) :=
   preEventGraphLabel_patch F T hT P (Sum.inl false) x
 
-
 theorem preEventGraphLabel_discarded (x : eventDiscardedOpen F T hT) :
     preEventGraphLabel F T hT P x.val =
       eventGraphVertexClass F T hT P (Sum.inr (ConnectedComponents.mk x)) :=
   preEventGraphLabel_patch F T hT P (Sum.inl true) x
-
 
 theorem preEventGraphLabel_collar (i : Fin (F.event T hT).cap_count)
     (x : (F.slice (F.event T hT).tMinus).carrier)

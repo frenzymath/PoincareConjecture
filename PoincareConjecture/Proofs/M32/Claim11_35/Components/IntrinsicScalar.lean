@@ -2,22 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.MetricJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedSpatialContact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -250,10 +234,6 @@ private theorem intrinsic_tendsto_scalar_of_jets
   simp_rw [hid] at he
   simpa only [sub_add_cancel, zero_add] using he.add_const
     (iteratedFDeriv ℝ r (fun y => g.inner y (b a) (b c)) x)
-
-
-
-
 
 theorem exists_scalar_control_of_covariant_metric_twoJet
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))}

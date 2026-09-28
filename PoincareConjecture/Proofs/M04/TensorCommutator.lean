@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import PoincareConjecture.Proofs.M04.CurvaturePointwise
 import PoincareConjecture.Proofs.M04.ScalarBracket
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -290,4 +283,3 @@ theorem covariantTensorDerivative_commutator (D : LeviCivitaData g) {k : ℕ}
     LeviCivitaData.iteratedCovariantTensorDerivative] using he
 
 end PoincareConjecture.M04
-

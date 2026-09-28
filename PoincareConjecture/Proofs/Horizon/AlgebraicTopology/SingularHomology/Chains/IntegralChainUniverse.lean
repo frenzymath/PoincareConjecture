@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralMayerVietoris
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

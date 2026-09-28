@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalCurvatureNorms
 import PoincareConjecture.Proofs.M34.Standard.CurvatureReactionEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_uniform_canonicalDomain_curvatureReaction_bound
     {n dH dS : ℕ}

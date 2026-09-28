@@ -1,14 +1,5 @@
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,8 +7,6 @@ open Set Topology
 namespace PoincareConjecture.M38
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
-
-
 
 theorem exists_open_disjoint_image_of_compact {K : Set X}
     (hK : IsCompact K) (f : X → X) (hf : Continuous f)
@@ -31,9 +20,6 @@ theorem exists_open_disjoint_image_of_compact {K : Set X}
   · apply Set.disjoint_left.mpr
     rintro _ hx ⟨y, hy, rfl⟩
     exact Set.disjoint_left.mp hUV hx.1 hy.2
-
-
-
 
 theorem exists_open_disjoint_finite_images_of_compact
     {I : Type*} [Finite I] {K : Set X} (hK : IsCompact K)

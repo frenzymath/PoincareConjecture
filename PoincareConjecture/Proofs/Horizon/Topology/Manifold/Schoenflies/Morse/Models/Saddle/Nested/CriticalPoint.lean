@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Level.Regularity
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 def criticalPolynomial (z : Real) : Real :=
   (1 - z^2) * (2*z - 1)^2 - (9 / 100) * z^2
-
-
 
 theorem exists_critical_latitude :
     ∃ z : Real, (3 / 5 : Real) < z ∧ z < 5 / 8 ∧
@@ -52,8 +48,6 @@ private theorem upperRoot_gt_five_eighths : (5 / 8 : Real) < upperRoot := by
   have hbound : (17 / 4 : Real) < Real.sqrt 19 := by nlinarith
   dsimp [upperRoot]
   linarith
-
-
 
 theorem exists_critical_point_above_nested_cut :
     ∃ p : S2,

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Nonconjugacy
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem isCompact_closure_ball_of_metricComplete (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (R : ℝ) :
@@ -31,8 +24,6 @@ theorem isCompact_closure_ball_of_metricComplete (g : RiemannianMetric n M)
   apply (g.isCompact_closedBall_of_metricComplete hc p R).of_isClosed_subset isClosed_closure
   apply closure_minimal (fun q h => (show g.edist p q < ENNReal.ofReal R from h).le)
   exact isClosed_le (continuous_const.edist continuous_id) continuous_const
-
-
 
 theorem injective_mfderiv_globalExponential_of_tangentNorm_lt
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)

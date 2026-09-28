@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Mathlib.CompactBallChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,10 +7,6 @@ open Set Metric
 universe u v
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_buffered_ball_cover_of_compact_union
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]

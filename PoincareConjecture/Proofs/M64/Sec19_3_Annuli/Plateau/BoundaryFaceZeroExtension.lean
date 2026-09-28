@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthTest
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNormalZeroExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,10 +11,6 @@ open scoped Topology ContDiff ENNReal
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
-
-
 
 theorem m64NaturalGrowth_face_zero_extension_test
     {O : Set LoopPlane} (hO : IsOpen O)

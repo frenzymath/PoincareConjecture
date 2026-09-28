@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_CapVolume
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_TestScalar
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,17 +13,13 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
 noncomputable def canonicalVolumeConstant {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) : ℝ :=
   min canonicalNeckVolumeFloor (canonicalCapVolumeFloor (max 1 p.setup.C))
 
-
 theorem canonicalVolumeConstant_pos {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) : 0 < canonicalVolumeConstant p :=
   lt_min canonicalNeckVolumeFloor_pos (canonicalCapVolumeFloor_pos (le_max_left _ _))
-
-
 
 theorem canonical_test_volume (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

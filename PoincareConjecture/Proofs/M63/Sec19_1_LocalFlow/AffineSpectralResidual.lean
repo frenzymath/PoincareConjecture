@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialSpectralTrace
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.TimeDependentSpectralResidual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,9 +14,6 @@ variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
   {lambda : iota → NNReal} {T : ℝ}
   (N : TimeDependentSpectralResidual lambda T) (w : State iota)
-
-
-
 
 theorem memLp_initial_response_source (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     MemLp (fun t => N.toFun t
@@ -70,23 +58,15 @@ theorem memLp_initial_response_source (hT : 0 ≤ T) (F : ForcingSpace iota T) :
   exact add_le_add (add_le_add le_rfl
     (mul_le_mul_of_nonneg_left htrace N.principalConstant.coe_nonneg)) le_rfl
 
-
-
-
 noncomputable def initialForcingResidual (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     ForcingSpace iota T :=
   (N.memLp_initial_response_source w hT F).toLp (fun t => N.toFun t
     (initialHeatHigh lambda w t + shiftedHighOperator hT lambda F t))
 
-
-
 theorem initialForcingResidual_coe (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     N.initialForcingResidual w hT F =ᵐ[timeMeasure T] fun t => N.toFun t
       (initialHeatHigh lambda w t + shiftedHighOperator hT lambda F t) :=
   (N.memLp_initial_response_source w hT F).coeFn_toLp
-
-
-
 
 theorem initialForcingResidual_zero (hT : 0 ≤ T) :
     ∃ h : MemLp (fun t => N.toFun t (initialHeatHigh lambda w t)) 2 (timeMeasure T),
@@ -101,9 +81,6 @@ theorem initialForcingResidual_zero (hT : 0 ≤ T) :
   have hm := (memLp_congr_ae heq).mp (N.memLp_initial_response_source w hT 0)
   refine ⟨hm, Lp.ext ?_⟩
   exact (N.initialForcingResidual_coe w hT 0).trans (heq.trans hm.coeFn_toLp.symm)
-
-
-
 
 theorem norm_initialForcingResidual_sub_le (hT : 0 ≤ T) (hT1 : T ≤ 1)
     {r : ℝ} (hr : 0 ≤ r) (F G : ForcingSpace iota T)
@@ -178,9 +155,6 @@ theorem norm_initialForcingResidual_sub_le (hT : 0 ≤ T) (hT1 : T ≤ 1)
         (mul_le_mul_of_nonneg_left (norm_intermediate_high_le hT hT1 lambda (F - G))
           N.lowerConstant.coe_nonneg)
     _ = _ := by ring
-
-
-
 
 theorem norm_initialForcingResidual_zero_le (hT : 0 ≤ T) :
     let P := (initialHeatHigh_memLp_energy lambda w hT).1.toLp (initialHeatHigh lambda w)

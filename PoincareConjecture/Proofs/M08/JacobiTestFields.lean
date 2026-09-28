@@ -113,5 +113,3 @@ theorem jacobiPairResidual_zero_right {J : Set ℝ} (F : RicciFlow n M J)
     jacobiPairResidual_smul_right F hM04 T hab htime α hs hα Y P DP 0 0
 
 end PoincareConjecture.M08
-
-

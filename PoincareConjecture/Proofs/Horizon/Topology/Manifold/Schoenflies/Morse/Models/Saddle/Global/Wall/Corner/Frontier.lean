@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Corner.Coordinates
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -76,8 +69,6 @@ theorem frontier_rightBody :
     · exact Or.inl ⟨hx, by linarith⟩
     · exact Or.inr ⟨hx, by linarith⟩
 
-
-
 theorem wall_above_graph_mem_frontiers_and_interior {p : E3}
     (hx : p 0 = 0) (hz : (p 1)^2 < p 2) :
     p ∈ frontier leftBody ∩ frontier rightBody ∧
@@ -87,8 +78,6 @@ theorem wall_above_graph_mem_frontiers_and_interior {p : E3}
     exact Or.inl ⟨hx, by simpa [hx] using hz.le⟩
   · rw [frontier_rightBody]
     exact Or.inl ⟨hx, by simpa [hx] using hz.le⟩
-
-
 
 theorem frontier_union_eq_side_frontiers_diff_wall :
     frontier (leftBody ∪ rightBody) =
@@ -115,8 +104,6 @@ theorem frontier_union_eq_side_frontiers_diff_wall :
       rw [hx] at hz ⊢
       nlinarith
     · exact hz
-
-
 
 theorem side_frontier_not_subset_union_frontier :
     ¬ frontier leftBody ⊆ frontier (leftBody ∪ rightBody) := by

@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapChordHalfspaces
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshSubfamilyContribution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +53,6 @@ private theorem cap_chord_avoidance_germ
     exact (T.bands a.1 a.2).faces.isClosed_carrier.isOpen_compl.mem_nhds (hband a)
   exact hc.and hb
 
-
-
 theorem exists_core_at_open_cap_chord
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -103,7 +94,6 @@ theorem exists_core_at_open_cap_chord
   exact (((T.caps p).face s).boundary_image_subset_frontier 0
     ⟨t, Ioo_subset_Icc_self ht, rfl⟩).2 (mem_interior_iff_mem_nhds.mpr hint)
 
-
 theorem open_cap_chord_mem_region_of_not_mem_bands
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -119,7 +109,6 @@ theorem open_cap_chord_mem_region_of_not_mem_bands
     by_contra hne
     exact disjoint_left.mp (T.decomposition.region_disjoint_closure hne) hreg hcap
   exact he ▸ hreg
-
 
 theorem collar_germ_at_open_cap_chord
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
@@ -142,7 +131,6 @@ theorem collar_germ_at_open_cap_chord
   · intro h
     exact Or.inl (mem_iUnion.mpr ⟨⟨(p, s), rfl⟩, h⟩)
 
-
 theorem cap_core_union_mem_nhds
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -162,7 +150,6 @@ theorem cap_core_union_mem_nhds
   rcases hc with h | h
   · exact Or.inl ((propext_iff.mp hzc).mp h)
   · exact Or.inr h
-
 
 def capChordPoint (p : T.decomposition.vertices) (s : Bool × Bool) (t : ℝ) : Plane :=
   (1 - t) • (T.caps p).planarCoordinates s ((T.caps p).scale, 0) +
@@ -186,9 +173,6 @@ theorem capChordPoint_map (p : T.decomposition.vertices) (s : Bool × Bool) (t :
   rw [capChordPoint, (T.caps p).planar_first s _ ⟨(T.caps p).scale_pos.le, le_rfl⟩,
     (T.caps p).planar_second s _ ⟨(T.caps p).scale_pos.le, le_rfl⟩]
   exact ((T.caps p).chord_map s t).symm
-
-
-
 
 theorem exists_collar_halfspace_at_open_cap_chord
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
@@ -252,8 +236,6 @@ theorem exists_collar_halfspace_at_open_cap_chord
       change z ∈ chartAt Plane (T.chart (T.region p s) : S) '' (B.face s).carrier ↔ -f z ≤ 0
       simpa only [ite_true, neg_nonpos] using hbz
 
-
-
 theorem exists_core_halfspace_at_open_cap_chord
     (p : T.decomposition.vertices) (s : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -282,7 +264,6 @@ theorem exists_core_halfspace_at_open_cap_chord
   exact he.trans not_lt
 
 set_option maxHeartbeats 800000 in
-
 
 theorem vertex_contribution_eq_cap_add_core
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)
@@ -319,8 +300,6 @@ theorem vertex_contribution_eq_cap_add_core
       convexHull ℝ (range (rightTriangleBasis (T.caps p).scale_pos))) ∪ _)
     rwa [← (T.caps p).carrier_eq s]
 
-
-
 theorem cap_contribution_at_open_chord_canonical_vertex
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -346,8 +325,6 @@ theorem cap_contribution_at_open_chord_canonical_vertex
       exact ⟨u, v, hv, he.trans hq.symm⟩)
   simpa only [← heq, hq] using hfan
 
-
-
 theorem core_contribution_at_open_cap_chord_canonical_vertex
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -366,8 +343,6 @@ theorem core_contribution_at_open_cap_chord_canonical_vertex
     rw [hz]
   exact T.core_contribution_at_straight_canonical_vertex g (T.region p s) q
     ((T.capChordPoint_map p s t).trans hq) hmem l hl hlines hz hlocal
-
-
 
 theorem canonical_vertex_fan_on_open_cap_chord_of_not_mem_bands
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (s : Bool × Bool)

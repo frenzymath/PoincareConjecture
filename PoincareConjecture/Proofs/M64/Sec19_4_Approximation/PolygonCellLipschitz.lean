@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.CellLipschitzAssembly
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellCompact
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Bundle
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_polygon_cell_lipschitz_of_extension
     (g : RiemannianMetric n M) {f F : LoopPlane → M}

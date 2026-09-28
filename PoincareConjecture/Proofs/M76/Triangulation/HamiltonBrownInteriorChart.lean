@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedBrownCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +11,6 @@ local notation "B" => (closedBall (0 : V3) 1)
 local notation "S0" => (sphere (0 : V3) 1)
 
 variable {X : Type*} [TopologicalSpace X] {D S : Set X}
-
-
-
-
 
 theorem exists_marked_brown_interior_chart
     (phi : B ≃ₜ D) (hfront : frontier D = S)

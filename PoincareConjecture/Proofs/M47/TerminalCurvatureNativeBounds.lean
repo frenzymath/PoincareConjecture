@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNativeJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem terminalCurvature_native_metric_difference_bound
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (B : RoundCylinderTwoTensor)
@@ -64,8 +54,6 @@ theorem terminalCurvature_native_metric_difference_bound
       (D0.iteratedCovariantTensorDerivative H k)
       (M35.cylinderCoordinateEquiv.symm (0, s)) := Real.sqrt_nonneg _
   exact (sq_le_sq₀ hn hepsilon.le).mp hsq
-
-
 
 theorem terminalCurvature_native_two_derivative_bounds
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 2)

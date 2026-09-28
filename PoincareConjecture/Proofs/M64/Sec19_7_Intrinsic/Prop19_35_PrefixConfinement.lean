@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalSignedCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactNormalInverse
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ open scoped Topology ContDiff Manifold Matrix
 namespace PoincareConjecture
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64Intrinsic_exists_annular_prefix_neighborhood
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)
@@ -58,10 +50,6 @@ theorem m64Intrinsic_exists_annular_prefix_neighborhood
       ⟨hp.2, hTJ ⟨hde.trans (le_of_not_ge hte), ht.2⟩⟩
     change (p, t) ∈ V
     exact hWJ hpJ
-
-
-
-
 
 theorem m64Intrinsic_exists_stable_annular_prefix
     {e : AnnulusCoordinates → AnnulusCoordinates} (he : ContDiff ℝ ∞ e)

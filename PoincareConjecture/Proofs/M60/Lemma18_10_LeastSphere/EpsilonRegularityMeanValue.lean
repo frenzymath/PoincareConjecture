@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityFlux
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

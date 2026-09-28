@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Circ
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLCompatibleChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
-
-
 
 theorem ChartwisePLSphere.exists_cap_on_retained_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -71,9 +61,6 @@ theorem ChartwisePLSphere.exists_cap_on_retained_disk
     rw [hx,Q.left_inv (hrQ x.property)]
   exact exists_raw_member_cap s he Q hQ hcover hd hb hc hunion hinter hcQ hcap
     er' her' hermap
-
-
-
 
 theorem exists_separated_circle_spheres
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]
@@ -164,9 +151,6 @@ theorem exists_separated_circle_spheres
     · exact Set.disjoint_left.mp (hdis hji.symm) (hretS b hxd) hxj
     · have hr := (hcap b).subset ⟨hxc,(subset_iUnion S j) hxj⟩
       exact Set.disjoint_left.mp (hdis hji.symm) (hrS b hr) hxj
-
-
-
 
 theorem exists_separated_circle_spheres_of_collar
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]

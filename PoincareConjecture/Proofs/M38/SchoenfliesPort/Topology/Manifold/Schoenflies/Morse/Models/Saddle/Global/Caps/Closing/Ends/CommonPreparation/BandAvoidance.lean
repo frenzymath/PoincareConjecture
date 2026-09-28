@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.BandCoverage
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CommonPreparation.UpperBandCoverage
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -45,8 +37,6 @@ private theorem sphere_image_not_mem_ball_image
   subst b
   exact (ne_of_lt (mem_ball.mp ha)) (mem_sphere.mp hb)
 
-
-
 theorem planar_rim_family_avoids_innermost_filling
     {ι V : Type*} [NormedAddCommGroup V]
     (A : ι → V → V) (hA : ∀ j, Injective (A j)) (i : ι)
@@ -70,8 +60,6 @@ theorem planar_rim_family_avoids_innermost_filling
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem exists_terminal_lower_band_avoidance
     (data : TerminalSaddleData M P p e)
@@ -142,9 +130,6 @@ theorem exists_terminal_lower_band_avoidance
   exact (congrArg Prod.snd ((heightCoordinates (norm_eq_of_mem_sphere M.v)).symm_apply_apply
     (data.ends.lowerCut + z, (Hemisphere.Plane (M.v : E3)).orthogonalProjectionOnto
       (data.toTerminalSaddleGeometry.filledModel (C j (q, 0)))))).symm
-
-
-
 
 theorem exists_terminal_upper_band_avoidance
     (data : TerminalSaddleData M P p e)
@@ -220,8 +205,6 @@ theorem exists_terminal_upper_band_avoidance
   exact (congrArg Prod.snd ((heightCoordinates (by simpa only [norm_neg] using norm_eq_of_mem_sphere M.v)).symm_apply_apply
     (-data.ends.upperCut + z, (Hemisphere.Plane (-(M.v : E3))).orthogonalProjectionOnto
       (data.toTerminalSaddleGeometry.filledModel (C j (q, 0)))))).symm
-
-
 
 end Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 

@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.ProjectedDoubleLocus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.ProjectedRawChart
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn PoincareConjecture.M76.Dehn.Annuli

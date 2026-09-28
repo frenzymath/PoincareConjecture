@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacob
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import Mathlib.Analysis.InnerProductSpace.NormDet
-
-
-
-
-
-
-

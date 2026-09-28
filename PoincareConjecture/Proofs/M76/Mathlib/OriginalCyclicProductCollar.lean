@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CyclicBoxCoreAgreement
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -22,11 +11,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_original_cyclic_product_collar
     (P : Polygon E (n + 3)) (t : Fin (n + 3) → ℝ)

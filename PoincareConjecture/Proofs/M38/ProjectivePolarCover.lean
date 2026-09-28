@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveAffineChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -25,11 +15,9 @@ attribute [local instance] projectiveLiftChartedSpace projective_lift_isManifold
 
 variable (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
 
-
 noncomputable def projectivePolarMap (p : RoundCylinderSpace) :
     projectiveCarrier.{u}.carrier :=
   liftedProjectiveCover.cover (sphereOrthogonalDiffeomorph R (spherePolarMap p))
-
 
 theorem projectiveOrthogonal_fibers (x y : UnitThreeSphere) :
     liftedProjectiveCover.{u}.cover (sphereOrthogonalDiffeomorph R x) =
@@ -40,7 +28,6 @@ theorem projectiveOrthogonal_fibers (x y : UnitThreeSphere) :
   rw [liftedProjectiveCover.fibers, ← sphereOrthogonalDiffeomorph_neg,
     hinj.eq_iff, hinj.eq_iff]
 
-
 theorem projectiveOrthogonal_center_fiber (x : UnitThreeSphere) :
     liftedProjectiveCover.{u}.cover (sphereOrthogonalDiffeomorph R x) =
         projectiveAffineMap R 0 ↔
@@ -48,7 +35,6 @@ theorem projectiveOrthogonal_center_fiber (x : UnitThreeSphere) :
   change _ = liftedProjectiveCover.cover
     (sphereOrthogonalDiffeomorph R (sphereAffineMap 0)) ↔ _
   rw [sphereAffineMap_zero, projectiveOrthogonal_fibers]
-
 
 theorem projectivePolar_fibers (x y : RoundCylinderSpace) :
     projectivePolarMap.{u} R x = projectivePolarMap R y ↔
@@ -59,11 +45,9 @@ theorem projectivePolar_fibers (x y : RoundCylinderSpace) :
   change liftedProjectiveCover.cover _ = liftedProjectiveCover.cover _ ↔ _
   rw [projectiveOrthogonal_fibers, ← spherePolarMap_neg, hinj.eq_iff, hinj.eq_iff]
 
-
 theorem projectivePolar_reflection (x : RoundCylinderSpace) :
     projectivePolarMap.{u} R (-x.1, -x.2) = projectivePolarMap R x :=
   (projectivePolar_fibers R _ _).mpr (Or.inr rfl)
-
 
 theorem projectivePolar_ne_center (x : RoundCylinderSpace) :
     projectivePolarMap.{u} R x ≠ projectiveAffineMap R 0 := by
@@ -72,7 +56,6 @@ theorem projectivePolar_ne_center (x : RoundCylinderSpace) :
   have hn := spherePolarMap_mem x
   change spherePolarTail (spherePolarMap x) ≠ 0 at hn
   exact hn ((spherePolarTail_eq_zero_iff _).mpr hp)
-
 
 theorem projectivePolar_range : range (projectivePolarMap.{u} R) =
     {projectiveAffineMap R 0}ᶜ := by
@@ -97,7 +80,6 @@ theorem projectivePolar_range : range (projectivePolarMap.{u} R) =
     exact ((congrArg liftedProjectiveCover.cover
       ((sphereOrthogonalDiffeomorph R).apply_symm_apply a)).trans ha)
 
-
 theorem projectivePolar_localDiffeomorph :
     IsLocalDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (projectivePolarMap.{u} R) := by
   intro x
@@ -105,7 +87,6 @@ theorem projectivePolar_localDiffeomorph :
     ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (mem_univ x)).comp
       (𝓡 3) UnitThreeSphere ((sphereOrthogonalDiffeomorph R).isLocalDiffeomorph _)).comp
         (𝓡 3) projectiveCarrier.carrier (liftedProjectiveCover.local_diffeomorph _)
-
 
 theorem projectivePolar_affine (z : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
     projectivePolarMap.{u} R (z, t) = projectiveAffineMap R (t⁻¹ • z.val) := by

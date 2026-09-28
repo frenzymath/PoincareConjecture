@@ -1,14 +1,6 @@
 import Mathlib.Topology.MetricSpace.Cauchy
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 namespace Poincare
 
 open Filter Set
@@ -18,8 +10,6 @@ universe u
 
 variable {X : Type u}
 
-
-
 theorem edist_ne_top_of_preconnected [PseudoEMetricSpace X] [PreconnectedSpace X]
     (x y : X) : edist x y ≠ ∞ := by
   have hclopen : IsClopen (Metric.eball y ∞) :=
@@ -28,9 +18,6 @@ theorem edist_ne_top_of_preconnected [PseudoEMetricSpace X] [PreconnectedSpace X
     hclopen.eq_univ ⟨y, Metric.mem_eball_self ENNReal.coe_lt_top⟩
   have hx : x ∈ Metric.eball y ∞ := by rw [huniv]; trivial
   exact hx.ne
-
-
-
 
 theorem completeSpace_of_local_metric_comparison
     (d₀ d₁ : PseudoMetricSpace X) (x₀ : X)
@@ -74,9 +61,6 @@ theorem completeSpace_of_local_metric_comparison
     (le_max_right _ _)).1)
   simpa [mul_comm] using (lt_div_iff₀ hC).mp (hN n hn)
 
-
-
-
 theorem completeSpace_of_local_emetric_comparison
     (d₀ d₁ : PseudoEMetricSpace X)
     (hcomplete : @CompleteSpace X d₀.toUniformSpace)
@@ -119,8 +103,6 @@ theorem completeSpace_of_local_emetric_comparison
     (by simp [d₀.edist_self])).1)
   exact ENNReal.mul_lt_of_lt_div' (hN n ((le_max_right _ _).trans hn))
 
-
-
 theorem completeSpace_of_local_emetric_comparison_at_basepoint
     (d₀ d₁ : PseudoEMetricSpace X) (x₀ : X)
     (hcomplete : @CompleteSpace X d₀.toUniformSpace)
@@ -155,8 +137,6 @@ theorem completeSpace_of_local_emetric_comparison_at_basepoint
     · simpa only [ENNReal.coe_add, ENNReal.coe_toNNReal (hfinite₀ y)] using
         (d₀.edist_triangle z y x₀).trans (add_le_add hz le_rfl)
 
-
-
 theorem completeSpace_of_preconnected_local_emetric_comparison
     (d₀ d₁ : PseudoEMetricSpace X) (x₀ : X)
     (hcomplete : @CompleteSpace X d₀.toUniformSpace)
@@ -173,16 +153,6 @@ theorem completeSpace_of_preconnected_local_emetric_comparison
   let : PreconnectedSpace X := hconnected
   exact fun x => edist_ne_top_of_preconnected x x₀
 
-
-
-
-
-
-
-
-
-
-
 theorem completeSpace_family_of_preconnected_local_emetric_comparison
     {ι : Type*} (d₀ : PseudoEMetricSpace X) (d₁ : ι → PseudoEMetricSpace X)
     (x₀ : X) (hcomplete : @CompleteSpace X d₀.toUniformSpace)
@@ -198,9 +168,6 @@ theorem completeSpace_family_of_preconnected_local_emetric_comparison
   intro i
   exact completeSpace_of_preconnected_local_emetric_comparison d₀ (d₁ i) x₀
     hcomplete (hconnected i) (hbounded i) (hcompare i)
-
-
-
 
 theorem completeSpace_of_continuous_local_edist_bound
     (d₀ d₁ : PseudoEMetricSpace X) (p : X)

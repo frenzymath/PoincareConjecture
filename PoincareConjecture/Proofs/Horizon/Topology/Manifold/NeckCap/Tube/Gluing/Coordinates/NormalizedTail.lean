@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.SliceShift
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [T2Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
 omit [T2Space M] in
-
 
 theorem strictMono_height_of_affine_neck_coordinates
     (T : Diffeomorph CylModel (𝓡 3) RoundCylinderSpace N.carrierOpen ∞)
@@ -55,8 +45,6 @@ theorem strictMono_height_of_affine_neck_coordinates
     dsimp only at h
     rw [hzero, hhalf] at h
     linarith
-
-
 
 theorem exists_normalized_retained_neck_tail (U : Opens M) (hNU : N.carrier ⊆ U)
     (D : Diffeomorph CylModel (𝓡 3) RoundCylinderSpace U ∞)

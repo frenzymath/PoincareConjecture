@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.CylinderInterior
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.SeparatedClosures
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -63,10 +61,6 @@ private theorem closing_cap_rim_subset
   have heq' : N (Q.symm z) = z := by
     rw [hN (by change b ≤ inner Real v (Q.symm z); exact hh.ge), Q.apply_symm_apply]
   exact (N.injective (heq.trans heq'.symm)) ▸ hx
-
-
-
-
 
 theorem exists_strictly_nested_curved_closing_balls
     {v : E3} (hv : ‖v‖ = 1)

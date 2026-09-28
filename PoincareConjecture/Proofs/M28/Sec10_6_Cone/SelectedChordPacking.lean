@@ -8,17 +8,6 @@ import PoincareConjecture.Proofs.M28.Sec10_5_Angles.ChordDefectLimits
 import Mathlib.Topology.Order.LeftRightNhds
 import Mathlib.Order.Filter.Finite
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,11 +22,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
-
 
 theorem totallyBounded_selected_end_ray_chord
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

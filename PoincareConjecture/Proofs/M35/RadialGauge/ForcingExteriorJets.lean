@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.RadialExteriorJets
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarWeightedProducts
 import Mathlib.Analysis.Normed.Operator.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,9 +32,6 @@ private theorem exterior_joint_profile_jets {f : A → ℝ → ℝ} {N : ℕ}
   have h := norm_jet_comp_linear_le (ContinuousLinearMap.fst ℝ E ℝ)
     (ContinuousLinearMap.norm_fst_le ℝ E ℝ) hV (hs a) hx j
   exact (mul_le_mul_of_nonneg_left h (by positivity)).trans (hCb a p.1 hp)
-
-
-
 
 theorem exterior_forcing_formula_jets
     {c invf : A → ℝ → ℝ} {target : E × ℝ → ℝ} {eta : ℝ}

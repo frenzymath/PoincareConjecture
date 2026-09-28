@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacob
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacobi.Determinant
 import Mathlib.Analysis.Matrix.Hermitian
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {ι E : Type*} [Fintype ι] [DecidableEq ι]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem toMatrix_operator_inverse (b : Module.Basis ι ℝ E)
     {A : E →L[ℝ] E} (hA : A.IsInvertible) :
@@ -32,7 +24,6 @@ theorem toMatrix_operator_inverse (b : Module.Basis ι ℝ E)
     exact hA.inverse_apply_self x
   rw [heq, LinearMap.toMatrix_id]
 
-
 theorem hasDerivAt_toMatrix_operator (b : OrthonormalBasis ι ℝ E)
     {A : ℝ → E →L[ℝ] E} {A' : E →L[ℝ] E} {t : ℝ}
     (hA : HasDerivAt A A' t) (i j : ι) :
@@ -43,7 +34,6 @@ theorem hasDerivAt_toMatrix_operator (b : OrthonormalBasis ι ℝ E)
   simpa only [LinearMap.toMatrix_apply, b.coe_toBasis, b.coe_toBasis_repr_apply,
     b.repr_apply_apply, inner_zero_left, add_zero] using!
     (hasDerivAt_const t (b i)).inner ℝ hv
-
 
 theorem hasDerivAt_jacobi_matrix_logarithmicDerivative
     [CompleteSpace E]
@@ -74,8 +64,6 @@ theorem hasDerivAt_jacobi_matrix_logarithmicDerivative
     map_sub, map_neg, ContinuousLinearMap.toLinearMap_comp,
     LinearMap.toMatrix_comp b.toBasis b.toBasis b.toBasis, toMatrix_operator_inverse _ ht]
 
-
-
 theorem isSymm_jacobi_matrix_logarithmicDerivative
     [CompleteSpace E]
     (b : OrthonormalBasis ι ℝ E)
@@ -92,8 +80,6 @@ theorem isSymm_jacobi_matrix_logarithmicDerivative
     LinearMap.toMatrix_comp b.toBasis b.toBasis b.toBasis,
     toMatrix_operator_inverse _ hinv] at hm
   exact hm
-
-
 
 theorem deriv2_determinantRoot_le_of_jacobi
     [CompleteSpace E] (b : OrthonormalBasis ι ℝ E)

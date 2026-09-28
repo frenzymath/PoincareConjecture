@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def transportConnectedSum {A B C D : GeneralizedSliceCarrier.{u}}
     (S : SmoothConnectedSumData A B C)
@@ -63,16 +52,12 @@ noncomputable def transportConnectedSum {A B C D : GeneralizedSliceCarrier.{u}}
     rw [Set.image_comp, ← Set.image_union, ← Set.image_union, S.cover]
     exact Set.image_univ_of_surjective e.surjective
 
-
-
 theorem transportConnectedSumStep {A B C : GeneralizedSliceCarrier.{u}}
     (h : SmoothConnectedSumStep A B)
     (e : Diffeomorph (𝓡 3) (𝓡 3) B.carrier C.carrier ∞) :
     SmoothConnectedSumStep A C := by
   obtain ⟨D, E, hU, ⟨S⟩⟩ := h
   exact ⟨D, E, hU, ⟨transportConnectedSum S e⟩⟩
-
-
 
 theorem exists_transportAssembly {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {A B : GeneralizedSliceCarrier.{u}}
@@ -84,9 +69,6 @@ theorem exists_transportAssembly {n : ℕ} {pieces : Fin n → GeneralizedSliceC
   · subst A
     exact ⟨⟨B, transportUnion U e, Relation.ReflTransGen.refl⟩⟩
   · exact ⟨⟨I, U, hprefix.tail (transportConnectedSumStep hlast e)⟩⟩
-
-
-
 
 noncomputable def transportConclusion {A A' B : GeneralizedSliceCarrier.{u}}
     (C : SurgeryTopologyConclusion A B)

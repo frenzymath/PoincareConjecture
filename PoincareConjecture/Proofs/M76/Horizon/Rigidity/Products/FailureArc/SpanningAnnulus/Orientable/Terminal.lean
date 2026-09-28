@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Origin
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.TerminalEmbeddedRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.Orientable.StageAnnulus
 
-
-
 set_option autoImplicit false
 open Set Metric Topology Geometry
 open Geometry.OriginalPLTower

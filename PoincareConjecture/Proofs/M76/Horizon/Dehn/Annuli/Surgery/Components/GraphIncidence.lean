@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology Filter

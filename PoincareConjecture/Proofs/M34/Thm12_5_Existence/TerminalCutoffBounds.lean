@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M34.Standard.PullbackCurvatureJetBound
 import PoincareConjecture.Proofs.M34.Mathlib.SmoothTransitionJetBounds
 import PoincareConjecture.Proofs.M34.Mathlib.LocalJetProductBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +20,6 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S) (hSF : S ≤ F.lifetime) (hB : 0 < B)
   (hfull : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
-
-
-
 
 theorem cutoffMetric_compactPullback_ellipticity
     {K : Set StandardCapSpace} (hK : IsCompact K) :
@@ -70,9 +56,6 @@ theorem cutoffMetric_compactPullback_ellipticity
   nlinarith only [hsum]
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem cutoffMetric_compactPullback_spatialJet_bounds
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :
@@ -149,9 +132,6 @@ theorem cutoffMetric_compactPullback_spatialJet_bounds
     funext (cutoffMetric_pullbackCoefficients g0.cylindrical_end h R f)
   rw [heq]
   exact hbound.trans (hH j hj)
-
-
-
 
 theorem cutoffMetric_curvatureDerivative_bound (m : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ R : ℝ,

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ConnectionKernel
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem radialCurvatureComponent_eq_sum_basis
     (D : LeviCivitaData g)
@@ -49,8 +39,6 @@ theorem radialCurvatureComponent_eq_sum_basis
   congr 2
   funext j
   by_cases hj : j = i <;> simp [hj]
-
-
 
 theorem radialCurvatureComponent_four_eq_sum_two
     (D : LeviCivitaData g)
@@ -77,7 +65,6 @@ theorem radialCurvatureComponent_four_eq_sum_two
   rw [radialCurvatureComponent_eq_sum_basis D b hTv 0 ![b a, v, w, z] x 1]
   simp only [Matrix.cons_val_one, hsecond, Finset.mul_sum]
   rfl
-
 
 theorem radialCurvatureComponent_four_eq_sum_velocity
     (D : LeviCivitaData g)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionOldC
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapComponents
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.UnaffectedFrontierComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M76.OriginalDiskProduct
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
-
-
-
 
 theorem exists_unaffected_component_correspondence
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

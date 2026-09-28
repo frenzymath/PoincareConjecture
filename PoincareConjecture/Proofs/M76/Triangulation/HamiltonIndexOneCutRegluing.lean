@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneCutSphere
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDiskProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,10 +9,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "V" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_marked_shell_regluing {B C0 K0 C1 K1 : Set W}
     (hK0 : IsFinitePLBallPair V K0 (frontier K0))

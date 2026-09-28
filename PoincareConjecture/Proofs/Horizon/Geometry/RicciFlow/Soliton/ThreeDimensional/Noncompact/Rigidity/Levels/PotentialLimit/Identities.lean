@@ -3,7 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.SpaceTime
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +19,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_normSq_in_parametrization (D : LeviCivitaData g)
     {e : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
@@ -123,8 +120,6 @@ theorem normalizedPotential_limit_base : b L.base = 0 := by
     G.normalizedPotentialPullback_base] at hh
   exact tendsto_nhds_unique hh tendsto_const_nhds
 
-
-
 theorem normalizedPotential_limit_coordinate_hessian
     (hσ : StrictMono σ) (hD : S.connection.CurvatureTensorCalculus) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -190,7 +185,6 @@ theorem normalizedPotential_limit_coordinate_hessian
   rw [G.normalizedPotentialSpacetimeCoefficients_deriv_time L z (σ k) x hx
     (hk x (mem_singleton x))] at hh
   exact hh.symm
-
 
 theorem normalizedPotential_limit_hasZeroHessian
     (hσ : StrictMono σ) (hD : S.connection.CurvatureTensorCalculus) (p : M)
@@ -270,7 +264,6 @@ private theorem normalizedPotential_source_chart_energy (z : L.limitCarrier.carr
   rw [hmetric] at hh
   exact hh
 
-
 theorem normalizedPotential_limit_unit_at_base
     (hσ : StrictMono σ) (hD : S.connection.CurvatureTensorCalculus) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -324,8 +317,6 @@ theorem normalizedPotential_limit_unit_at_base
   rw [hlimit]
   exact tendsto_nhds_unique henergy (tendsto_const_nhds.congr' (hone.mono fun _ h => h.symm))
 
-
-
 theorem normalizedPotential_limit_hasUnitGradient
     (hσ : StrictMono σ) (hD : S.connection.CurvatureTensorCalculus) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -349,8 +340,6 @@ theorem normalizedPotential_limit_hasUnitGradient
       intro y v
       rw [D.mvfderiv_gradient_normSq (hb y), hz y v, mul_zero]
     _ = 1 := G.normalizedPotential_limit_unit_at_base L hjets hσ hD p hescape hb
-
-
 
 theorem normalizedPotential_limit_identities
     (hσ : StrictMono σ) (hD : S.connection.CurvatureTensorCalculus) (p : M)

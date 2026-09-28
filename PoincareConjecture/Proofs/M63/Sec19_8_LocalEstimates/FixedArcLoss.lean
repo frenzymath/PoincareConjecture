@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -24,9 +13,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
-
 
 theorem m63ArcLength_abs_deriv_le (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -89,9 +75,6 @@ theorem m63ArcLength_abs_deriv_le (hc : M62ShrinkingCurve F c)
       rw [intervalIntegral.integral_add (hVint.const_mul K2) (hKv.const_mul B),
         intervalIntegral.integral_const_mul, intervalIntegral.integral_const_mul]
       rfl
-
-
-
 
 theorem m63ArcLength_backward_loss (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)

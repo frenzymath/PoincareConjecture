@@ -1,15 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorBundle.CovariantDerivative.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Set Filter
@@ -30,8 +20,6 @@ namespace Bundle.Trivialization
 variable (e : Trivialization F (TotalSpace.proj : TotalSpace F V → M))
   [MemTrivializationAtlas e]
 
-
-
 theorem mdifferentiableAt_continuousLinearMapAt_section
     {σ : ∀ x, V x} {x : M} (hx : x ∈ e.baseSet)
     (hσ : MDifferentiableAt I (I.prod 𝓘(𝕜, F)) (T% σ) x) :
@@ -42,16 +30,12 @@ theorem mdifferentiableAt_continuousLinearMapAt_section
   filter_upwards [e.open_baseSet.mem_nhds hx] with p hp
   exact e.continuousLinearMapAt_apply_of_mem 𝕜 hp (σ p)
 
-
-
 noncomputable def flatCovariantDerivative (σ : ∀ x, V x) (x : M) :
     TangentSpace I x →L[𝕜] V x :=
   (e.symmL 𝕜 x).comp
     (mvfderiv I (fun p => e.continuousLinearMapAt 𝕜 p (σ p)) x)
 
 variable [∀ x, IsTopologicalAddGroup (V x)] [∀ x, ContinuousSMul 𝕜 (V x)]
-
-
 
 theorem isCovariantDerivativeOn_flatCovariantDerivative :
     IsCovariantDerivativeOn F (e.flatCovariantDerivative (I := I)) e.baseSet where
@@ -71,9 +55,6 @@ theorem isCovariantDerivativeOn_flatCovariantDerivative :
     rw [e.symmL_continuousLinearMapAt hx]
 
 variable [CompleteSpace 𝕜] [FiniteDimensional 𝕜 F]
-
-
-
 
 theorem covariantDerivative_eq_flat_add_difference
     {cov : (∀ x, V x) → ∀ x, TangentSpace I x →L[𝕜] V x}

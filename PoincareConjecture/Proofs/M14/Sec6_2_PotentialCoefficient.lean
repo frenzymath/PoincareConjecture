@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SpatialMetricCoefficients
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeCurve
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,21 +19,15 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (θ : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
   (x : G.gaugeCover.spatial b)
 
-
-
 noncomputable def backwardPotentialCoefficient (z : ℝ × EuclideanSpace ℝ (Fin n)) : ℝ :=
   Real.sqrt z.1 * horizontalScalarCurvature G.leafwise
     ((G.gaugeCover.cylinder b).toSpacetime
       (θ z.1, (chartAt (EuclideanSpace ℝ (Fin n)) x).symm z.2))
 
-
-
 theorem backwardPotentialCoefficient_apply (t : ℝ) (y : G.gaugeCover.spatial b) :
     backwardPotentialCoefficient b θ x (t, y.val) = Real.sqrt t *
       horizontalScalarCurvature G.leafwise ((G.gaugeCover.cylinder b).toSpacetime (θ t, y)) := by
   simp only [backwardPotentialCoefficient, (G.gaugeCover.spatial b).chartAt_symm_apply_val]
-
-
 
 theorem backwardPotentialCoefficient_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {J : Set ℝ}
@@ -71,8 +57,6 @@ theorem backwardPotentialCoefficient_contDiffOn
   have hscalar := (H.scalar_smooth.comp (G.gaugeCover.cylinder b).smooth).comp_contMDiffOn
     (ht.prodMk hs)
   exact (contDiffOn_fst.sqrt (fun z hz => (hpos z.1 hz.1).ne')).mul hscalar.contDiffOn
-
-
 
 theorem gaugeCurve_quadraticDensity (u : ℝ → G.gaugeCover.spatial b) {T s : ℝ}
     (hθ : MDifferentiableAt (𝓘(ℝ, ℝ)) (𝓡∂ 1) θ s)

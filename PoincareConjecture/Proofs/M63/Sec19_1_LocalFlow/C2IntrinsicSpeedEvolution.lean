@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 import PoincareConjecture.Proofs.M62.Sec19_1_MetricVariation
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +18,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem c2ShrinkingCurve_speed_hasDerivAt_of_curvature_c1
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M} {J : Set ℝ}

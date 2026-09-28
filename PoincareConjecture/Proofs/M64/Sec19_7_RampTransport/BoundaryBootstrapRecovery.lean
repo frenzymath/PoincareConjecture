@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapNeumann
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +15,6 @@ open Poincare.Analysis.Sobolev
 open Weak Euclidean BoundaryTangential NirenbergEuclidean
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 def flatBoundaryForm : SmoothEllipticBilinearForm 2 univ where
   a := fun _ => 1
@@ -47,11 +33,6 @@ def flatBoundaryForm : SmoothEllipticBilinearForm 2 univ where
       intro i
       simp [matMulE]
     rw [hm, real_inner_self_eq_norm_sq, one_mul]
-
-
-
-
-
 
 theorem planar_memWkp_add_two_of_normalDerivative
     (k : ℕ) {O : Set Plane} (hO : IsOpen O)
@@ -121,11 +102,6 @@ theorem planar_memWkp_add_two_of_normalDerivative
   fin_cases i
   · exact hn
   · exact hp1
-
-
-
-
-
 
 theorem local_neumann_memWkp_three
     {W V : Set Plane} (hW : IsOpen W) (hWc : IsCompact (closure W))

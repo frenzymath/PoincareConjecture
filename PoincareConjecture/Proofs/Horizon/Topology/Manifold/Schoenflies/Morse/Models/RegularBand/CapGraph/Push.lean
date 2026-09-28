@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,9 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
-
 
 theorem exists_supported_transport_between_graphs
     (α b : E → Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b)
@@ -86,8 +81,6 @@ theorem exists_supported_transport_between_graphs
       exact (hd t).hasDerivWithinAt)
     (by simp only [hi, zero_mul, add_zero])
   simpa only [one_mul] using he (show (1 : Real) ∈ Icc 0 1 by simp)
-
-
 
 theorem exists_positive_graph_transport
     (α b : E → Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b)

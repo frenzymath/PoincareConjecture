@@ -8,14 +8,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartIsotopyExtension
 import Mathlib.Topology.Connected.TotallyDisconnected
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SupportedSliceGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,8 +16,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem BalancedNeckChain.exists_cylinder_chart_at_contained_slice :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

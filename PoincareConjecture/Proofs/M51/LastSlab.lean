@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M51.HalfOpenSlab
 import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.SurgeryFlowData
-
-
 
 theorem lastStartOfFinite (F : SurgeryFlowData.{u}) {H : ℝ}
     (hD : F.time_domain = Ico 0 H) (hfinite : F.surgery_times.Finite) :
@@ -44,8 +33,6 @@ theorem lastStartOfFinite (F : SurgeryFlowData.{u}) {H : ℝ}
     intro t hts ht
     have hmem : t ∈ s := Finset.mem_insert_of_mem (hfinite.mem_toFinset.mpr hts)
     exact (Finset.le_max' _ _ hmem).not_gt ht.1
-
-
 
 noncomputable def preterminalSlab (F : SurgeryFlowData.{u})
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3) {a H : ℝ}
@@ -79,9 +66,6 @@ noncomputable def preterminalSlab (F : SurgeryFlowData.{u})
       (F.connection t) (e.symm x)
     rw [e.apply_symm_apply, div_one] at hnorm
     exact ⟨t, ht, e.symm x, hx.trans_eq hnorm⟩
-
-
-
 
 theorem lastSlabAlternative (F : SurgeryFlowData.{u})
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3) {H : ℝ}

@@ -3,21 +3,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Bases
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set
 
 universe u
@@ -30,8 +15,6 @@ universe v
 
 variable {I : Type u} {P : I → Type v}
     [∀ i, TopologicalSpace (P i)]
-
-
 
 theorem OverlapSystem.quotient_mk_isOpenMap
     (D : OverlapSystem P) :
@@ -53,14 +36,11 @@ theorem OverlapSystem.quotient_mk_isOpenMap
   apply D.include_isOpenMap
   exact (isOpen_sigma_iff.mp hs i)
 
-
 theorem OverlapSystem.quotient_secondCountableTopology
     [Countable I] [∀ i, SecondCountableTopology (P i)]
     (D : OverlapSystem P) :
     SecondCountableTopology (Quotient D.setoid) :=
   TopologicalSpace.Quotient.secondCountableTopology D.quotient_mk_isOpenMap
-
-
 
 private noncomputable def sigmaProdSigmaHomeomorph :
     (Sigma P × Sigma P) ≃ₜ Sigma (fun i => Sigma (fun j => P i × P j)) := by
@@ -77,8 +57,6 @@ private noncomputable def sigmaProdSigmaHomeomorph :
     (IsHomeomorph.sigmaMap (f := id) Function.bijective_id
       (fun i => (fibre i).isHomeomorph)).homeomorph _
   exact h₀.trans h₁
-
-
 
 theorem isClosed_sigma_prod_relation
     (r : Setoid (Sigma P))
@@ -100,13 +78,6 @@ theorem isClosed_sigma_prod_relation
   rw [heq]
   exact sigmaProdSigmaHomeomorph.isClosed_preimage.mpr hR
 
-
-
-
-
-
-
-
 theorem quotient_t2_of_isOpenMap_of_isClosed_rel
     (r : Setoid S)
     (hopen : IsOpenMap (Quotient.mk r : S → Quotient r))
@@ -122,7 +93,6 @@ theorem quotient_t2_of_isOpenMap_of_isClosed_rel
   rw [hrel]
   exact hclosed
 
-
 theorem quotient_t2_of_isOpenMap_of_isClosed_components
     (r : Setoid (Sigma P))
     (hopen : IsOpenMap (Quotient.mk r : Sigma P → Quotient r))
@@ -131,8 +101,6 @@ theorem quotient_t2_of_isOpenMap_of_isClosed_components
   quotient_t2_of_isOpenMap_of_isClosed_rel r hopen
     (isClosed_sigma_prod_relation r hcomp)
 
-
-
 theorem OverlapSystem.quotient_t2Space
     (D : OverlapSystem P)
     (hclosed : ∀ i j, IsClosed {q : P i × P j |
@@ -140,6 +108,5 @@ theorem OverlapSystem.quotient_t2Space
     T2Space (Quotient D.setoid) :=
   quotient_t2_of_isOpenMap_of_isClosed_components D.setoid
     D.quotient_mk_isOpenMap hclosed
-
 
 end Poincare.Gluing

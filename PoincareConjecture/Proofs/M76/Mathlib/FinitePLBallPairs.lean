@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFinitePLBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialGenerators
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,17 +10,12 @@ namespace Set
 variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
   {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
 
-
-
-
 def IsFinitePLBallPair (s b : Set X) : Prop :=
   b ⊆ s ∧ ∃ c : Set E, IsCompact c ∧ Convex ℝ c ∧ (interior c).Nonempty ∧
     ∃ e : s ≃ₜ c, e.IsFinitePL ∧
       ∀ x : s, (x : X) ∈ b ↔ (e x : E) ∈ frontier c
 
 variable {E}
-
-
 
 theorem IsFinitePLBallPair.of_homeomorph {Y : Type*}
     [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
@@ -38,17 +25,12 @@ theorem IsFinitePLBallPair.of_homeomorph {Y : Type*}
   obtain ⟨_, C, hC, hcv, hne, e, he, heb⟩ := ht
   exact ⟨hb, C, hC, hcv, hne, H.trans e, hH.trans he, fun x => (hmem x).trans (heb (H x))⟩
 
-
-
 theorem isFinitePLBallPair_of_compact_convex {s : Set E}
     (hs : IsCompact s) (hcv : Convex ℝ s) (hne : (interior s).Nonempty)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hspace : K.space = s) :
     IsFinitePLBallPair E s (frontier s) := by
   refine ⟨hs.isClosed.frontier_subset, s, hs, hcv, hne, Homeomorph.refl s, ?_, fun _ => Iff.rfl⟩
   exact ⟨id, ⟨K, hK, hspace, K.affineOnFaces_affine (ContinuousAffineMap.id ℝ E)⟩, fun _ => rfl⟩
-
-
-
 
 theorem isFinitePLBallPair_convexHull_finset (s : Finset E)
     (hind : AffineIndependent ℝ ((↑) : s → E))
@@ -66,9 +48,6 @@ theorem isFinitePLBallPair_convexHull_finset (s : Finset E)
     (convex_convexHull ℝ _) hne (SimplicialComplex.ofGenerators {s} hi hx)
     (SimplicialComplex.finite_ofGenerators_faces (finite_singleton s) hi hx)
     (by rw [SimplicialComplex.space_ofGenerators]; simp)
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension [FiniteDimensional ℝ E] [FiniteDimensional ℝ X]
     {F Y : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

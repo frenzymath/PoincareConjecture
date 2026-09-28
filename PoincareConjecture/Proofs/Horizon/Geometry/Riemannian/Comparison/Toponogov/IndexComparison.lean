@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Index.Basic
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,7 +9,6 @@ open scoped RealInnerProductSpace
 namespace Poincare.ODE.Jacobi
 
 variable {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
-
 
 theorem IsJacobiSolOn.inner_endpoint_le_of_index_sub_nonneg
     {R : ℝ → F →L[ℝ] F} {y v : ℝ → F}

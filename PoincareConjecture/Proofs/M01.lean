@@ -9,15 +9,6 @@ import PoincareConjecture.Proofs.M01.NormalizationSmallBalls
 import PoincareConjecture.Proofs.M01.NormalizationVolumeScaleChoice
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -29,15 +20,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M]
-
-
-
-
-
-
-
-
-
 
 theorem existsNormalizedInitialMetric
     [T2Space M] [SecondCountableTopology M] [CompactSpace M] :

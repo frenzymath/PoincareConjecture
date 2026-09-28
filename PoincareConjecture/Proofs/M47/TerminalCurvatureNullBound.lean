@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCalibratedBound
 import PoincareConjecture.Proofs.M47.TerminalCurvatureStaticGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open RicciFlow.Splitting
-
-
 
 theorem terminalCurvature_null_bound_of_neck_readout
     {epsilon A H : ℝ} (hsmall : epsilon ≤ 1 / 200)

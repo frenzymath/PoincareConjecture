@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.SingleNewPor
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.MaximalSphereCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.SeparatedCollarPorts
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 open Set Metric Geometry Geometry.SeparatedSphereCaps

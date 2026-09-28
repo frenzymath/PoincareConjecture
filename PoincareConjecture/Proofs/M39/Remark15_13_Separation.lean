@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M39.Prop15_12_MapConstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P slice metric T)
 
-
-
 theorem cap_subset_child_of_inter_nonempty (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T))
     (hi : ((E.caps i).carrier ∩ range C.inclusion).Nonempty) :
@@ -37,8 +26,6 @@ theorem cap_subset_child_of_inter_nonempty (i : Fin E.cap_count)
   rw [← E.local_cap_image i] at hy
   obtain ⟨z, _, rfl⟩ := hy
   exact ⟨z, hC⟩
-
-
 
 theorem retained_cap_attachment_isPreconnected (i : Fin E.cap_count)
     (C : SurgerySelectedComponent (slice T)) :
@@ -56,9 +43,6 @@ theorem retained_cap_attachment_isPreconnected (i : Fin E.cap_count)
     exact (cap_frontier_isConnected E i).isPreconnected
   · rw [Set.not_nonempty_iff_eq_empty.mp hi, inter_empty]
     exact isPreconnected_empty
-
-
-
 
 theorem retainedPost_in_child_isPreconnected
     (C : SurgerySelectedComponent (slice T)) :
@@ -144,8 +128,6 @@ theorem retainedPost_in_child_isPreconnected
   · exact Or.inl (fun x hx => hLA ⟨hx, hleft hx.2⟩)
   · exact Or.inr (fun x hx => hRA ⟨hx, hright hx.2⟩)
 
-
-
 theorem retainedPost_in_child_isConnected
     (C : SurgerySelectedComponent (slice T)) :
     IsConnected (E.retained_post ∩ range C.inclusion) := by
@@ -162,13 +144,9 @@ theorem retainedPost_in_child_isConnected
     rw [← E.cap_boundary i] at hx
     exact ⟨x, hx.1, hsub hx.2⟩
 
-
-
 def retainedPreRoot (C : SurgerySelectedComponent (slice T)) :
     Set (slice E.tMinus).carrier :=
   E.retention.inverse '' (E.retained_post ∩ range C.inclusion)
-
-
 
 theorem mem_retainedPreRoot_iff (C : SurgerySelectedComponent (slice T))
     (x : (slice E.tMinus).carrier) :
@@ -183,14 +161,10 @@ theorem mem_retainedPreRoot_iff (C : SurgerySelectedComponent (slice T))
     refine ⟨E.retention.map x, ⟨?_, hC⟩, E.retention.left_inverse hx⟩
     exact retention_map_mem_post E hx
 
-
-
 theorem retainedPreRoot_isConnected (C : SurgerySelectedComponent (slice T)) :
     IsConnected (retainedPreRoot E C) := by
   exact (retainedPost_in_child_isConnected E C).image E.retention.inverse
     (E.retention.inverse_smooth.continuousOn.mono inter_subset_left)
-
-
 
 theorem retainedPreRoot_isCompact (C : SurgerySelectedComponent (slice T)) :
     IsCompact (retainedPreRoot E C) := by
@@ -209,8 +183,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   [Nonempty (D.flow.slice T).carrier]
   (I : RepairedComparisonMapInput D T hT)
 
-
-
 theorem retainedPreRoot_subset_parent :
     retainedPreRoot (D.flow.event T hT) I.child ⊆ range I.parent.inclusion := by
   obtain ⟨x, hx⟩ := I.inherited
@@ -226,30 +198,20 @@ theorem retainedPreRoot_subset_parent :
   rw [I.parent.range_eq_component, connectedComponent_eq hparent]
   exact hsub
 
-
-
 def retainedRoot : Set I.parent.carrier.carrier :=
   I.parent.inclusion ⁻¹' retainedPreRoot (D.flow.event T hT) I.child
-
-
 
 theorem retainedRoot_isConnected : IsConnected (retainedRoot I) := by
   exact (retainedPreRoot_isConnected (D.flow.event T hT) I.child).preimage_of_isOpenMap
     I.parent.inclusion_openEmbedding.injective
       I.parent.inclusion_openEmbedding.isOpenMap (retainedPreRoot_subset_parent I)
 
-
-
 theorem retainedRoot_isClosed : IsClosed (retainedRoot I) :=
   (retainedPreRoot_isCompact (D.flow.event T hT) I.child).isClosed.preimage
     I.parent.inclusion_openEmbedding.continuous
 
-
-
 theorem retainedRoot_isCompact : IsCompact (retainedRoot I) :=
   I.parent.compact.of_isClosed_subset (retainedRoot_isClosed I) (subset_univ _)
-
-
 
 theorem retained_eq_interior_root : I.retained = interior (retainedRoot I) := by
   have hsub : I.retained ⊆ retainedRoot I := by
@@ -270,19 +232,13 @@ theorem retained_eq_interior_root : I.retained = interior (retainedRoot I) := by
   rw [I.retained_eq]
   exact ⟨interior_maximal himage hopen ⟨x, hx, rfl⟩, hxroot.2⟩
 
-
-
 def parentSphere (i : Fin (D.flow.event T hT).cap_count) :
     Set I.parent.carrier.carrier :=
   I.parent.inclusion ⁻¹' ((D.flow.event T hT).limit_identify.inverse ''
     ((D.flow.event T hT).necks i).neck.central_sphere)
 
-
-
 def rootCaps : Set (Fin (D.flow.event T hT).cap_count) :=
   {i | (((D.flow.event T hT).caps i).carrier ∩ range I.child.inclusion).Nonempty}
-
-
 
 theorem rootCap_local_output_in_child (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) :
@@ -292,8 +248,6 @@ theorem rootCap_local_output_in_child (i : Fin (D.flow.event T hT).cap_count)
   rw [← (D.flow.event T hT).local_cap_image i] at hy
   obtain ⟨z, _, rfl⟩ := hy
   exact ⟨z, hchild⟩
-
-
 
 theorem rootCap_negative_subset_root (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) :
@@ -311,9 +265,6 @@ theorem rootCap_negative_subset_root (i : Fin (D.flow.event T hT).cap_count)
   · rw [← (D.flow.event T hT).local_retention i z hz]
     exact rootCap_local_output_in_child I i hi (mem_range_self _)
 
-
-
-
 theorem positive_neck_disjoint_root (i : Fin (D.flow.event T hT).cap_count) :
     Disjoint ((D.flow.event T hT).limit_identify.inverse ''
       ((D.flow.event T hT).necks i).neck.region 0
@@ -324,8 +275,6 @@ theorem positive_neck_disjoint_root (i : Fin (D.flow.event T hT).cap_count) :
   have hpre := ((mem_retainedPreRoot_iff _ _ _).mp hx).1
   apply Set.disjoint_left.mp ((D.flow.event T hT).neck_positive_discarded i) hz
   exact ⟨_, hpre, (D.flow.event T hT).limit_identify.right_inverse (mem_univ z)⟩
-
-
 
 theorem rootCap_preSphere_subset (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) :
@@ -338,8 +287,6 @@ theorem rootCap_preSphere_subset (i : Fin (D.flow.event T hT).cap_count)
   exact ⟨hpre, cap_subset_child_of_inter_nonempty (D.flow.event T hT) i I.child hi
     ((retention_mem_cap_iff (D.flow.event T hT) i hpre).mpr hx)⟩
 
-
-
 theorem rootCap_parentSphere_nonempty (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) : (parentSphere I i).Nonempty := by
   obtain ⟨x, hx⟩ := (preSphere_isConnected (D.flow.event T hT) i).nonempty
@@ -349,13 +296,9 @@ theorem rootCap_parentSphere_nonempty (i : Fin (D.flow.event T hT).cap_count)
     ((D.flow.event T hT).necks i).neck.central_sphere
   exact hy.symm ▸ hx
 
-
-
 theorem rootCap_parentSphere_separating (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) : SeparatingSphere (parentSphere I i) :=
   I.separating i (rootCap_parentSphere_nonempty I i hi)
-
-
 
 theorem rootCap_parentSphere_subset_frontier (i : Fin (D.flow.event T hT).cap_count)
     (hi : i ∈ rootCaps I) : parentSphere I i ⊆ frontier (retainedRoot I) := by
@@ -369,8 +312,6 @@ theorem rootCap_parentSphere_subset_frontier (i : Fin (D.flow.event T hT).cap_co
     exact mem_iUnion.mpr ⟨i, hx⟩
   exact (mem_frontier_iff_notMem_interior
     (interior_subset (I.retained_subset x hret))).mp hboundary (I.retained_subset x hret)
-
-
 
 theorem frontier_retainedRoot :
     frontier (retainedRoot I) = ⋃ i ∈ rootCaps I, parentSphere I i := by
@@ -399,8 +340,6 @@ theorem frontier_retainedRoot :
     obtain ⟨i, hi⟩ := mem_iUnion.mp hx
     obtain ⟨hi, hx⟩ := mem_iUnion.mp hi
     exact rootCap_parentSphere_subset_frontier I i hi hx
-
-
 
 theorem parentSphere_disjoint (i j : Fin (D.flow.event T hT).cap_count)
     (hij : i ≠ j) : Disjoint (parentSphere I i) (parentSphere I j) := by

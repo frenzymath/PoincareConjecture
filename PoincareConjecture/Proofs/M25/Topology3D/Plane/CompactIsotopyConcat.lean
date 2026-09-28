@@ -1,22 +1,12 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_concat_compact_isotopy
     (h g : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

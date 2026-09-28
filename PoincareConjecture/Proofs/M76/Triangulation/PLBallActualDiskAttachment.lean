@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.union_of_actual_disk_contact
     {B U S T d q : Set X}

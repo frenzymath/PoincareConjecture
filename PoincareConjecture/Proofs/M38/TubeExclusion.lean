@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.CanonicalRegions
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M38
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
 
-
 theorem cylinder_connected {U : Set M} (C : OpenCylinderModel U) :
     IsConnected U := by
   let : ConnectedSpace UnitTwoSphere :=
@@ -31,8 +22,6 @@ theorem cylinder_connected {U : Set M} (C : OpenCylinderModel U) :
     isConnected_iff_connectedSpace.mp (isConnected_Ioo zero_lt_one)
   let : ConnectedSpace U := C.homeomorph.connectedSpace_iff.mp inferInstance
   exact isConnected_iff_connectedSpace.mpr inferInstance
-
-
 
 theorem cylinder_not_compact {U : Set M} (C : OpenCylinderModel U) :
     ¬ IsCompact U := by
@@ -50,8 +39,6 @@ theorem cylinder_not_compact {U : Set M} (C : OpenCylinderModel U) :
   have hinterval : IsCompact (Set.Ioo (0 : ℝ) 1) :=
     isCompact_iff_compactSpace.mpr inferInstance
   exact (not_le_of_gt zero_lt_one) (isCompact_Ioo_iff.mp hinterval)
-
-
 
 theorem no_tube_containing_compact_component
     [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]

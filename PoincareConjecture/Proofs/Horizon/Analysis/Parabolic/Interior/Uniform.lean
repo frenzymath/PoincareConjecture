@@ -5,13 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.GlobalEstimate
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.SolutionReduction
 
-
-
-
-
-
-
-
 open Set
 open scoped ContDiff RealInnerProductSpace BigOperators
 

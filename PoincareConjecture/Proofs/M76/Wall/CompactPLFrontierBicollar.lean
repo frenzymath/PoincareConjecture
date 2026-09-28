@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.PLDomainSideCollars
 import PoincareConjecture.Proofs.M76.Wall.SideCollarSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set BrownCollar
@@ -16,10 +8,6 @@ open Set BrownCollar
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_compact_frontier_bicollar
     {X ι : Type*} [MetricSpace X]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Boundary
 import Mathlib.Topology.Algebra.Module.Cardinality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

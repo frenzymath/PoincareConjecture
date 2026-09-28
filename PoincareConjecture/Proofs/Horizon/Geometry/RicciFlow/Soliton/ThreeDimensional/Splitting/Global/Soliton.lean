@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.PotentialRegularity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -71,8 +62,6 @@ theorem exists_complete_nullCover_coordinate
     (by norm_num : (-1 : ℝ) < 0) G hsec hdim f hsmooth hsol
   exact ⟨unitRicciKernelMetric_complete (F.connection 0) hc hcard hcomplete,
     hr, hu, hz, unitRicciKernelCoordinate_reverse (F.connection 0) f⟩
-
-
 
 theorem exists_nullCover_component_product
     {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

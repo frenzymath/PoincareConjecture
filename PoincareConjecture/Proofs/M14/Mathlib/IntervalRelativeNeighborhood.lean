@@ -2,25 +2,12 @@ import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
-
 
 theorem ordConnected_mem_nhdsWithin_of_directions {C D : Set ℝ} {t : ℝ}
     (hC : OrdConnected C) (ht : t ∈ C)

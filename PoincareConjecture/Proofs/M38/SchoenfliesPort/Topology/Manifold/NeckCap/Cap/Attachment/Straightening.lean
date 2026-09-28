@@ -4,28 +4,11 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Diffeomor
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Sides
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Diffeomorph
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -35,8 +18,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapTubeAttachment
-
-
 
 theorem exists_collar_straightening_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

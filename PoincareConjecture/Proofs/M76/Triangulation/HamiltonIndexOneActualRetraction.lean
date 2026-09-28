@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMiddleBall
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneRetraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,14 +13,7 @@ local notation "J" => Icc (-1 : ℝ) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "M" => (J × closedBall (0 : V2) (3 / 2))
 
-
 def coreExterior (K : Set W) : Set W := closure (squareBlock \ K)
-
-
-
-
-
-
 
 theorem exists_actual_complement_retraction {B T K : Set W}
     (hB : IsFinitePLBallPair W B (T ∪ squareAttachingDisks))

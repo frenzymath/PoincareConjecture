@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteNerveChains
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexStars
 import Mathlib.AlgebraicTopology.SimplicialSet.TopAdj
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +16,6 @@ namespace PoincareConjecture.Proofs.M59
 open M02.Topology
 
 variable {J : Type u} [PartialOrder J] [Fintype J]
-
-
 
 theorem orderComplex_simplex_mem {n : ℕ} (s : (nerve J) _⦋n⦌)
     (t : stdSimplex ℝ (Fin (n + 1))) :
@@ -49,8 +38,6 @@ theorem orderComplex_simplex_mem {n : ℕ} (s : (nerve J) _⦋n⦌)
   obtain ⟨b, rfl⟩ := hrange j hj
   exact (le_total a b).imp (fun h => s.monotone h) (fun h => s.monotone h)
 
-
-
 def orderComplexSimplex {n : ℕ} (s : (nerve J) _⦋n⦌) :
     C(stdSimplex ℝ (Fin (n + 1)), (finiteOrderComplex J).space) where
   toFun t := ⟨(stdSimplex.map s.obj t).val, orderComplex_simplex_mem s t⟩
@@ -59,16 +46,12 @@ def orderComplexSimplex {n : ℕ} (s : (nerve J) _⦋n⦌) :
 
 open scoped Classical in
 
-
 theorem orderComplexSimplex_vertex {n : ℕ} (s : (nerve J) _⦋n⦌)
     (i : Fin (n + 1)) :
     (orderComplexSimplex s (stdSimplex.vertex i)).val = Pi.single (s.obj i) 1 := by
   classical
   change (stdSimplex.map s.obj (stdSimplex.vertex i)).val = _
   rw [stdSimplex.map_vertex]
-
-
-
 
 theorem orderComplexSimplex_comp {n m : SimplexCategory} (f : n ⟶ m)
     (s : (nerve J).obj (Opposite.op m)) :
@@ -79,9 +62,6 @@ theorem orderComplexSimplex_comp {n m : SimplexCategory} (f : n ⟶ m)
   change (stdSimplex.map s.obj (stdSimplex.map f t)).val = _
   rw [stdSimplex.map_comp_apply]
   rfl
-
-
-
 
 def singularMapOfContinuousSimplices (A : SSet.{u}) (X : TopCat.{u})
     (F : ∀ n : SimplexCategory, A.obj (Opposite.op n) →
@@ -97,9 +77,6 @@ def singularMapOfContinuousSimplices (A : SSet.{u}) (X : TopCat.{u})
       (TopCat.toSSet.obj X).map f ((X.toSSetObjEquiv n).symm (F n.unop s))
     exact (congrArg (X.toSSetObjEquiv m).symm (hF f.unop s).symm).trans
       (TopCat.toSSetObjEquiv_symm_naturality f.unop (F n.unop s)).symm
-
-
-
 
 def orderComplexSingular (J : Type u) [PartialOrder J] [Fintype J] :
     nerve J ⟶ TopCat.toSSet.obj (TopCat.of (finiteOrderComplex J).space) :=

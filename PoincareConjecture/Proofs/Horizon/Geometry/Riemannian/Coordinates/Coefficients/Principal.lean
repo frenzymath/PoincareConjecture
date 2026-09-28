@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Holder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
-
-
 
 noncomputable def principalOperator (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
@@ -88,8 +79,6 @@ lemma norm_principalOperator_sub_le_rpow {a R H : ℝ} (ha : 0 < a) (hH : 0 ≤ 
       div_le_div_of_nonneg_right (g.norm_coefficients_sub_le_sqrt hH hderiv hx hy)
         (sq_nonneg _)
     _ = _ := by simp only [Real.sqrt_eq_rpow]; ring
-
-
 
 lemma inner_basis_principalOperator_basis (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) :
     inner ℝ (EuclideanSpace.basisFun (Fin n) ℝ i)

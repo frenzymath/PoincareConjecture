@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.RegularSet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_scalar_sublevel_tail (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (B : ℝ) :
@@ -55,15 +44,12 @@ theorem exists_scalar_sublevel_tail (H : SingularTimeAssumptions F T M)
     (fun w hw => H.reference_scalar_derivative_bound x w ⟨htre.trans hw.1, hw.2⟩)
     hshort z hz).le
 
-
 theorem scalar_diverges_uniformly_off_regularLimitSet (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (B : ℝ) :
     ∃ s : ℝ, H.reference.tMinus < s ∧ s < T ∧ ∀ t ∈ Ico s T,
       ∀ x ∉ H.reference.regularLimitSet, B < H.reference.scalar t x := by
   obtain ⟨s, hs, hsT, hsub⟩ := H.exists_scalar_sublevel_tail P04 B
   exact ⟨s, hs, hsT, fun t ht x hx => lt_of_not_ge (fun h => hx (hsub t ht h))⟩
-
-
 
 theorem exists_compact_scalar_sublevel_tail (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (B : ℝ) :
@@ -75,8 +61,6 @@ theorem exists_compact_scalar_sublevel_tail (H : SingularTimeAssumptions F T M)
   refine ⟨s, hs, hsT, fun t ht => ⟨?_, hsub t ht⟩⟩
   exact (isClosed_le
     (H.reference_scalar_continuous P04 t ⟨hs.le.trans ht.1, ht.2⟩) continuous_const).isCompact
-
-
 
 theorem exists_compact_containing_liminf_sublevel (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (B : ℝ) :

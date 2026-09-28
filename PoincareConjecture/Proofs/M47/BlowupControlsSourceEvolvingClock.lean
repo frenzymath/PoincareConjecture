@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalCapNearbyErrors
 import PoincareConjecture.Proofs.M47.CanonicalNeckClockBuffer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem standard_evolving_neck_birth_gap
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
@@ -41,8 +30,6 @@ theorem standard_evolving_neck_birth_gap
   change 0 < v - q⁻¹
   rw [heq]
   exact add_pos_of_nonneg_of_pos htime hmargin
-
-
 
 theorem exists_source_evolving_clock_tolerance
     {v q nu : ℝ} (hq : 0 < q) (hgap : 0 < v - q⁻¹) (hnu : 0 < nu) :
@@ -66,9 +53,6 @@ theorem exists_source_evolving_clock_tolerance
   obtain ⟨hwindow, hclose⟩ := htimes u hu
   refine ⟨⟨hwindow.1, ?_⟩, hclose⟩
   exact add_le_of_nonpos_right (div_nonpos_of_nonpos_of_nonneg hu.2 hpositive.le)
-
-
-
 
 theorem exists_actualCap_evolving_clock_tolerance
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CappedSlabLevelCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Set
 
 variable {E : Type*}
-
-
-
 
 theorem cut_slab_band_eq {S s T R : Set E} {A : E → ℝ} {β a b : ℝ}
     (hs : s ⊆ S) (hslab : T ∪ R = S ∩ {x | A x ∈ Icc 0 β})
@@ -32,10 +20,6 @@ theorem cut_slab_band_eq {S s T R : Set E} {A : E → ℝ} {β a b : ℝ}
     have h := (cut_slab_level_eq hs hslab
       ⟨ha.trans hx.2.1, hx.2.2.trans hb⟩).symm.subset ⟨hx.1, rfl⟩
     exact ⟨h.1, hx.2⟩
-
-
-
-
 
 theorem image_capped_slab_band_eq_of_cap_below
     {S s d T R : Set E} {A : E → ℝ} {β a b : ℝ}

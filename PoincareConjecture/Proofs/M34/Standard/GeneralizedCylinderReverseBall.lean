@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.M34.Standard.QuadraticTangentComparison
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckSpatialMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
-
 
 theorem reverse_ball_zero_of_pullback_inner_lower
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

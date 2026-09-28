@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.FlowContr
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -146,8 +140,6 @@ private theorem inverseChart_fderiv
     (I := 𝓡 n) (mem_extChartAt_source (I := 𝓡 n) (F x))
   simp only [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at hinv
   exact congrArg (fun L => L (mfderiv (𝓡 n) (𝓡 n) F x v)) hinv
-
-
 
 theorem hasDerivAt_manifoldFlow_squared_length
     (D : LeviCivitaData g)

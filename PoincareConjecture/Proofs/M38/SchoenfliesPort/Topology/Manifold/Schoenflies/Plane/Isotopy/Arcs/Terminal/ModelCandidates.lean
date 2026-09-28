@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualStripData
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.FlattenedStrips
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,8 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -43,9 +35,6 @@ private theorem minThree_le (v : Fin 3 → Real) (i : Fin 3) : minThree v ≤ v 
   · exact min_le_left _ _
   · exact (min_le_right _ _).trans (min_le_left _ _)
   · exact (min_le_right _ _).trans (min_le_right _ _)
-
-
-
 
 theorem exists_terminal_model_candidates_with_actual_strips
     {f : S2 → E3} (M : SphereMorseReduction f)
@@ -332,8 +321,6 @@ theorem exists_terminal_model_candidates_with_actual_strips
     intro i
     exact ⟨hDzero, hrmatch i, A i, ε i, hA i, hε i, hrchart i, hAS i,
       Q i, hQ i, hQlevel i⟩
-
-
 
 theorem exists_terminal_model_candidates
     {f : S2 → E3} (M : SphereMorseReduction f)

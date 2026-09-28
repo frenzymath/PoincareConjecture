@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.EndpointCoordinates
 import PoincareConjecture.Proofs.M10.InitialDifferentialCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 noncomputable def squareCoordinates (G : LExponentialGeometry F T τmax p)
     (z : TangentSpace (𝓡 n) p × ℝ) : EuclideanSpace ℝ (Fin n) :=
@@ -42,11 +33,9 @@ theorem squareCoordinates_contDiffAt (G : LExponentialGeometry F T τmax p)
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at he
   exact he.contDiffAt
 
-
 theorem squareDomain_at_zero (G : LExponentialGeometry F T τmax p)
     (hmax : 0 < τmax) (Z : TangentSpace (𝓡 n) p) : (Z, 0) ∈ G.squareDomain :=
   G.square_contains ⟨mem_univ _, le_rfl, Real.sqrt_pos.2 hmax⟩
-
 
 theorem squareCoordinates_at_zero (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) : squareCoordinates G (Z, 0) = extChartAt (𝓡 n) p p := by

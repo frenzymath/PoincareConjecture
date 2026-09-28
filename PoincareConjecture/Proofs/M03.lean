@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M03.CurvatureRateAlgebra
 import PoincareConjecture.Proofs.M03.MetricDifferenceEnergyRate
 import PoincareConjecture.Proofs.M03.ConnectionRateRicciSmoothness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -29,7 +17,6 @@ variable {n : ℕ} {M : Type u}
   [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
-
 
 theorem ricciFlowContinuation : RicciFlowContinuation n M := by
   intro T hT F hbound
@@ -47,19 +34,6 @@ theorem ricciFlowContinuation : RicciFlowContinuation n M := by
       rw [hGT]
       exact (hjets (T / 2) (by linarith) (by linarith) x0 q K hK hKU).2 i j)
   exact ⟨T + δ, by linarith, H, hHF⟩
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem ricciFlowLocalTheory : RicciFlowLocalTheory n M := by
   exact ⟨shortTimeRicciFlowExistence, ricciFlowUniqueness, ricciFlowContinuation⟩

@@ -2,19 +2,6 @@ import PoincareConjecture.Statements.M64Comparison
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_Assembly
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GlobalAssembly
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,11 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
-
-
-
 
 structure M64RampIntrinsicTransportWitness
     {circumference : ℝ} (G : M63AmbientGeometry F)
@@ -57,9 +39,6 @@ structure M64RampIntrinsicTransportWitness
   small_turning : intrinsic.SmallBoundaryTurning (1 / 200 : ℝ) (r / 2)
   area_le_source : intrinsicAnnulusArea intrinsic.metric ≤ A.area
 
-
-
-
 theorem M64RampIntrinsicTransportWitness.gaussian_bound
     {circumference : ℝ} {G : M63AmbientGeometry F}
     {P : M62.CircleProductData F circumference} {t : ℝ}
@@ -69,10 +48,6 @@ theorem M64RampIntrinsicTransportWitness.gaussian_bound
     W.intrinsic.GaussianCurvatureBound G.K0 := by
   intro p hp
   exact (W.gauss_equation p hp).trans (W.ambient_sectional_bound p hp)
-
-
-
-
 
 def M64RampIntrinsicTransport (G : M63AmbientGeometry F) : Prop :=
   ∀ r : ℝ, 0 < r → ∀ mu : ℝ, 0 < mu →
@@ -92,10 +67,6 @@ def M64RampIntrinsicTransport (G : M63AmbientGeometry F) : Prop :=
                 (1 / 200 : ℝ)) →
           ∀ A : M64Annulus (P.flow.metric t) gamma0 gamma1, A.area < muRamp →
             Nonempty (M64RampIntrinsicTransportWitness G P t gamma0 gamma1 A r mu)
-
-
-
-
 
 theorem m64RampSmallAnnulusComparison_of_intrinsic_transport
     {G : M63AmbientGeometry F}
@@ -124,10 +95,6 @@ theorem m64RampSmallAnnulusComparison_of_intrinsic_transport
     W.first_length_strict W.small_turning harea
   rw [W.first_length_eq, W.second_length_eq] at hbound
   exact hbound
-
-
-
-
 
 theorem m64RampSmallAnnulusComparison_of_global_strip_transport
     {G : M63AmbientGeometry F}

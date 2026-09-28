@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryStableVolume
 import PoincareConjecture.Proofs.M34.Standard.OrdinarySliceMetric
 import PoincareConjecture.Definitions.M15Noncollapsing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem ordinaryProduct_configuration
     {n : ℕ} {M : Type u} [TopologicalSpace M]

@@ -6,19 +6,6 @@ import PoincareConjecture.Proofs.M30.Generalized.WorldlineUniqueness
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 import Mathlib.Order.Filter.Finite
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_growing_time_ordinary_source_family
     (S : GeneralizedBlowupSequence.{u}) (rho v : ℝ) (T B : ℕ → ℝ)

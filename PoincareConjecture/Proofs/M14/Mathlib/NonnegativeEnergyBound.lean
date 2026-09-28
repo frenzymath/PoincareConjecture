@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M09.EnergyBound
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology intervalIntegral
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem nonnegativeEnergy_pair_bound_within (e e' : ℝ → ℝ) {H A : ℝ}
     (hA : 0 ≤ A) (hc : ContinuousOn e (Icc 0 H))
@@ -73,8 +60,6 @@ theorem nonnegativeEnergy_pair_bound_within (e e' : ℝ → ℝ) {H A : ℝ}
     abs_of_nonneg (show 0 ≤ e r + 1 by linarith [he r hr]), gronwallBound_ε0,
     sub_zero, mul_one] using hg
 
-
-
 theorem nonnegativeEnergy_integral_bound_within (e e' : ℝ → ℝ) {H A : ℝ}
     (hH : 0 ≤ H) (hA : 0 ≤ A) (hc : ContinuousOn e (Icc 0 H))
     (he : ∀ s ∈ Icc 0 H, 0 ≤ e s)
@@ -91,9 +76,6 @@ theorem nonnegativeEnergy_integral_bound_within (e e' : ℝ → ℝ) {H A : ℝ}
         nonnegativeEnergy_pair_bound_within e e' hA hc he hd hbound hr ht)
   simpa only [intervalIntegral.integral_const, sub_zero, smul_eq_mul,
     intervalIntegral.integral_const_mul] using hm
-
-
-
 
 theorem nonnegativeEnergy_action_bound_within (e e' R : ℝ → ℝ) {H A C : ℝ}
     (hH : 0 ≤ H) (hA : 0 ≤ A) (hC : 0 ≤ C)

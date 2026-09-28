@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -37,11 +24,6 @@ variable (hc0 : Continuous c0) (hp0 : Function.Periodic c0 curvePeriod)
 
 include hc0 hp0 hL0 hc1 hp1 hL1
 
-
-
-
-
-
 theorem annulus_exists_relabel_boundaries (A : M64Annulus g c0 c1) :
     ∃ B : M64Annulus g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map), B.area = A.area := by
   obtain ⟨C0, _hmap0, harea0⟩ := m64_zero_area_boundary_collar g c0 sigma0.map
@@ -54,11 +36,6 @@ theorem annulus_exists_relabel_boundaries (A : M64Annulus g c0 c1) :
   obtain ⟨B, _hmapB, hareaB⟩ := m64Annulus_join_with_area D C1
   refine ⟨B, ?_⟩
   rw [hareaB, hareaD, m64Annulus_reverse_area, harea0, harea1, zero_add, add_zero]
-
-
-
-
-
 
 theorem annulusAreaRange_comp_lifts :
     m64AnnulusAreaRange g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map) =
@@ -74,18 +51,11 @@ theorem annulusAreaRange_comp_lifts :
       hc0 hp0 hL0 hc1 hp1 hL1 sigma0 sigma1 A
     exact ⟨B, hB⟩
 
-
-
-
 theorem leastAnnulusArea_comp_lifts :
     m64LeastAnnulusArea g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map) =
       m64LeastAnnulusArea g c0 c1 := by
   unfold m64LeastAnnulusArea
   rw [annulusAreaRange_comp_lifts hc0 hp0 hL0 hc1 hp1 hL1 sigma0 sigma1]
-
-
-
-
 
 theorem nonempty_annulus_comp_lifts_iff :
     Nonempty (M64Annulus g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map)) ↔
@@ -99,10 +69,6 @@ theorem nonempty_annulus_comp_lifts_iff :
     obtain ⟨B, _hB⟩ := annulus_exists_relabel_boundaries
       hc0 hp0 hL0 hc1 hp1 hL1 sigma0 sigma1 A
     exact ⟨B⟩
-
-
-
-
 
 theorem exists_minimum_comp_lifts_iff :
     (∃ A : M64Annulus g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map),
@@ -121,11 +87,6 @@ theorem exists_minimum_comp_lifts_iff :
 
 end Lipschitz
 
-
-
-
-
-
 theorem annulusAreaRange_comp_lifts_of_C1
     (hc0 : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 c0)
     (hp0 : Function.Periodic c0 curvePeriod)
@@ -137,10 +98,6 @@ theorem annulusAreaRange_comp_lifts_of_C1
   annulusAreaRange_comp_lifts hc0.continuous hp0
     (m64PeriodicC1Curve_metric_lipschitz g hc0 hp0) hc1.continuous hp1
     (m64PeriodicC1Curve_metric_lipschitz g hc1 hp1) sigma0 sigma1
-
-
-
-
 
 theorem leastAnnulusArea_comp_lifts_of_C1
     (hc0 : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 c0)

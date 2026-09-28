@@ -4,15 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.LinearAlgebra.Determinant
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -52,9 +43,6 @@ private theorem gramSchmidt_diagonal_pos (v : Basis (Fin 3) ℝ E3) (i : Fin 3) 
   rw [gramSchmidtOrthonormalBasis_apply (by simp) hn, gramSchmidtNormed,
     real_inner_smul_left, hdiag]
   exact mul_pos (inv_pos.mpr hw) (sq_pos_of_pos hw)
-
-
-
 
 theorem exists_orthogonal_linear_path (L : E3 ≃L[ℝ] E3) :
     ∃ A : E3 ≃ₗᵢ[ℝ] E3, ∃ H : ℝ → E3 ≃L[ℝ] E3,

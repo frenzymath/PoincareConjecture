@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.CoveringDeformation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,12 +14,8 @@ variable {E : Type u} {X : Type v} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (hp : IsCoveringMap p) (H : C(I × X, X))
   (hzero : ∀ x, H (0, x) = x) (x₀ : X) (hone : ∀ x, H (1, x) = x₀)
 
-
-
 def coveringFiberRetraction : C(E, p ⁻¹' {x₀}) :=
   coveringDeformationRetraction p hp H hzero {x₀} hone
-
-
 
 def coveringReverseDeformation : C(I × (X × p ⁻¹' {x₀}), E) := by
   refine hp.liftHomotopy
@@ -43,20 +28,14 @@ def coveringReverseDeformation : C(I × (X × p ⁻¹' {x₀}), E) := by
   rw [unitInterval.symm_zero, hone]
   exact q.2.property.symm
 
-
-
 theorem coveringReverseDeformation_projection (t : I) (q : X × p ⁻¹' {x₀}) :
     p (coveringReverseDeformation p hp H x₀ hone (t, q)) =
       H (unitInterval.symm t, q.1) :=
   congrFun (hp.liftHomotopy_lifts _ _ _) (t, q)
 
-
-
 theorem coveringReverseDeformation_zero (q : X × p ⁻¹' {x₀}) :
     coveringReverseDeformation p hp H x₀ hone (0, q) = q.2.val :=
   hp.liftHomotopy_zero _ _ _ q
-
-
 
 def coveringFiberSection : C(X × p ⁻¹' {x₀}, E) :=
   ⟨fun q => coveringReverseDeformation p hp H x₀ hone (1, q),
@@ -65,13 +44,10 @@ def coveringFiberSection : C(X × p ⁻¹' {x₀}, E) :=
 
 include hzero in
 
-
 theorem coveringFiberSection_projection (q : X × p ⁻¹' {x₀}) :
     p (coveringFiberSection p hp H x₀ hone q) = q.1 := by
   change p (coveringReverseDeformation p hp H x₀ hone (1, q)) = _
   rw [coveringReverseDeformation_projection, unitInterval.symm_one, hzero]
-
-
 
 theorem coveringFiberRetraction_section (q : X × p ⁻¹' {x₀}) :
     coveringFiberRetraction p hp H hzero x₀ hone
@@ -99,9 +75,6 @@ theorem coveringFiberRetraction_section (q : X × p ⁻¹' {x₀}) :
   rw [unitInterval.symm_one, coveringReverseDeformation_zero] at h₁
   exact h₁
 
-
-
-
 theorem coveringFiberRetraction_injective_on_fiber {e e' : E}
     (he : p e = p e')
     (hr : coveringFiberRetraction p hp H hzero x₀ hone e =
@@ -117,8 +90,6 @@ theorem coveringFiberRetraction_injective_on_fiber {e e' : E}
       rw [coveringLiftedDeformation_projection, coveringLiftedDeformation_projection, he])
     1 (congrArg Subtype.val hr)
   simpa only [Function.comp_apply, id_eq, coveringLiftedDeformation_zero] using congrFun h 0
-
-
 
 def contractibleCoveringHomeomorph : E ≃ₜ X × p ⁻¹' {x₀} where
   toFun e := (p e, coveringFiberRetraction p hp H hzero x₀ hone e)

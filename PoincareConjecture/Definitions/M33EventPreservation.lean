@@ -1,21 +1,10 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M33NonemptyEventDataPreservation
     {g₀ g₁ : StandardInitialMetric} {K₀ K₁ : MetricSurgeryConstants}
@@ -33,8 +22,6 @@ structure M33NonemptyEventDataPreservation
   retained_image_heq : HEq (B.limit_identify.map '' B.retained_pre)
     (A.limit_identify.map '' A.retained_pre)
 
-
-
 structure M33VanishingEventDataPreservation
     {P₀ P₁ : SurgeryParameters} {slice₀ slice₁ : ℝ → GeneralizedSliceCarrier.{u}}
     {metric₀ : ∀ t, RiemannianMetric 3 (slice₀ t).carrier}
@@ -44,8 +31,6 @@ structure M33VanishingEventDataPreservation
   reference_eq : B.tMinus = A.tMinus
   pre_carrier_eq : slice₁ B.tMinus = slice₀ A.tMinus
   pre_flow_heq : HEq B.pre_flow A.pre_flow
-
-
 
 structure M33OldEventDataPreservation
     {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F) : Prop where

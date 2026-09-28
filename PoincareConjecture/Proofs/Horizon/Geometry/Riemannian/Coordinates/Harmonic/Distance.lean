@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 lemma tangentNorm_mfderiv_le_of_pullback_upper (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M} {x : EuclideanSpace ℝ (Fin n)}
     {C : ℝ} (hC : 0 ≤ C)
@@ -37,7 +27,6 @@ lemma tangentNorm_mfderiv_le_of_pullback_upper (g : RiemannianMetric n M)
     _ = Real.sqrt C * ‖v‖ := by rw [Real.sqrt_mul hC, Real.sqrt_sq (norm_nonneg v)]
 
 set_option maxHeartbeats 600000 in
-
 
 lemma edist_le_of_pullback_upper (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -85,7 +74,6 @@ lemma edist_le_of_pullback_upper (g : RiemannianMetric n M)
     ⟨g.toRiemannianMetric⟩
   exact (riemannianEDist_le_pathELength hsmooth
     (by simp [q]) (by simp [q]) zero_le_one).trans hlength
-
 
 lemma edist_center_le_of_pullback_upper (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M} {p : M} {R C : ℝ} (hR : 0 < R)

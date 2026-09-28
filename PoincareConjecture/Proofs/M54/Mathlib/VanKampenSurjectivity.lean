@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenRetraction
 import PoincareConjecture.Proofs.M54.Mathlib.PathMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,20 +10,16 @@ namespace VanKampen
 
 variable {X : Type*} [TopologicalSpace X] (U V : Set X)
 
-
-
 noncomputable def anchor (b : U) (x : X) : U := by
   classical
   exact if hx : x ∈ U then ⟨x, hx⟩ else b
 
 omit [TopologicalSpace X] in
 
-
 theorem anchor_of_mem (b : U) (x : X) (hx : x ∈ U) : anchor U b x = ⟨x, hx⟩ := by
   simp only [anchor, dif_pos hx]
 
 omit [TopologicalSpace X] in
-
 
 theorem anchor_mem_right (b : U) (hb : b.1 ∈ V) (x : X) (hx : x ∈ V) :
     (anchor U b x).1 ∈ V := by
@@ -46,8 +32,6 @@ omit [TopologicalSpace X] in
 private theorem right_of_not_left (hcover : U ∪ V = univ) (x : X) (hx : x ∉ U) :
     x ∈ V := (show x ∈ U ∪ V from hcover.symm ▸ mem_univ x).resolve_left hx
 
-
-
 noncomputable def connector (hcover : U ∪ V = univ) (hV : IsSimplyConnected V)
     (b : U) (hb : b.1 ∈ V) (x : X) : Path (anchor U b x).1 x := by
   classical
@@ -59,14 +43,10 @@ noncomputable def connector (hcover : U ∪ V = univ) (hV : IsSimplyConnected V)
       ⟨x, right_of_not_left U V hcover x hx⟩).map continuous_subtype_val).cast
         (by simp only [anchor, dif_neg hx]) rfl
 
-
-
 theorem connector_apply_of_mem (hcover : U ∪ V = univ) (hV : IsSimplyConnected V)
     (b : U) (hb : b.1 ∈ V) (x : X) (hx : x ∈ U) (t : unitInterval) :
     connector U V hcover hV b hb x t = x := by
   simp only [connector, dif_pos hx, Path.cast_coe, Path.refl_apply]
-
-
 
 theorem connector_mem_right (hcover : U ∪ V = univ) (hV : IsSimplyConnected V)
     (b : U) (hb : b.1 ∈ V) (x : X) (hx : x ∈ V) (t : unitInterval) :
@@ -78,8 +58,6 @@ theorem connector_mem_right (hcover : U ∪ V = univ) (hV : IsSimplyConnected V)
     exact Subtype.prop _
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem pathClass_surjective (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hVs : IsSimplyConnected V) (hW : IsSimplyConnected (U ∩ V))
@@ -152,16 +130,11 @@ theorem pathClass_surjective (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V =
     (connector_apply_of_mem U V hcover hVs b hb y.1 y.2) (fun _ => rfl)
   exact (hr.trans (Path.Homotopic.Quotient.eq.mpr h)).symm
 
-
-
-
 theorem inclusion_surjective (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hVs : IsSimplyConnected V) (hW : IsSimplyConnected (U ∩ V))
     (b : U) (hb : b.1 ∈ V) :
     Function.Surjective (FundamentalGroup.map (inclusion U) b) :=
   fun q => pathClass_surjective U V hU hV hcover hVs hW b hb b b q
-
-
 
 noncomputable def inclusionMulEquiv (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
     (hVs : IsSimplyConnected V) (hW : IsSimplyConnected (U ∩ V))

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.ModuleExactDiagram
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M47.SeedM15ComponentCapture
 import PoincareConjecture.Proofs.M47.SeedM15BoxImage
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
-
 
 theorem seedM15_birth_cap_path_nonpositive
     (hC : RicciFlowCurvatureTheory.{u})

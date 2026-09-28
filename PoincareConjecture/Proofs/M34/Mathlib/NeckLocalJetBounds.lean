@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 import PoincareConjecture.Proofs.M34.Mathlib.NeckCylinderChartBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -33,8 +24,6 @@ private theorem smooth_germ_iteratedFDeriv {f : E → F} {x : E}
     let e := (continuousMultilinearCurryLeftEquiv 𝕜 (fun _ : Fin (m + 1) => E) F).symm
     convert! e.toContinuousLinearEquiv.toContinuousLinearMap.contDiff.contDiffAt.comp x
       (ih.fderiv_right (m := ∞) (by simp)) using 1
-
-
 
 theorem ContDiffAt.exists_eventually_finite_jet_bound {f : E → F} {x : E}
     (hf : ContDiffAt 𝕜 ∞ f x) (N : ℕ) :
@@ -67,8 +56,6 @@ variable {E F G : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-
-
 theorem exists_composition_finite_jet_bound (N : ℕ) {A B : ℝ}
     (hA : 1 ≤ A) (hB : 1 ≤ B) :
     ∃ C : ℝ, 1 ≤ C ∧ ∀ (f : E → F) (g : F → G) (x : E),
@@ -90,8 +77,6 @@ theorem exists_composition_finite_jet_bound (N : ℕ) {A B : ℝ}
     (pow_le_pow_right₀ hB hj) (pow_nonneg (zero_le_one.trans hB) _) (by positivity)
 
 end Composition
-
-
 
 theorem contDiff_included_sphereCylinder_chart
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

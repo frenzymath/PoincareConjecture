@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckBufferedJets
 import PoincareConjecture.Proofs.M47.CanonicalNeckFamilyMargin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ local notation "V" => RoundCylinderCoordinates
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M]
-
-
 
 theorem eventually_buffered_neck_family_of_compressed_comparison
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -91,8 +80,6 @@ theorem eventually_buffered_neck_family_of_compressed_comparison
     (fun j hj i l => (hp.2.2 u (Ioc_subset_Icc_self hu)).2 z.1 z.2
       ⟨hz.1.le, hz.2.le⟩ j hj i l |>.le) k hk v
   simpa only [sphere_chart_center_zero] using h.trans hsmall
-
-
 
 theorem exists_eventually_buffered_normalized_neck_family
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

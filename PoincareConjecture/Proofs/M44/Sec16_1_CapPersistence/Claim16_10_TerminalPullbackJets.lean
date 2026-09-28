@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_GeodesicTr
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothLocalFactorization
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +34,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
-
 theorem compactSmooth_preterminal_in_chart
     (event : SurgeryEventData g0 K P slice metric T)
     (q : (slice event.tMinus).carrier) (hq : q ∈ event.regular_limit)
@@ -76,9 +64,6 @@ theorem compactSmooth_preterminal_in_chart
     filter_upwards [htseq.eventually (Ioo_mem_nhdsLT (by linarith : T - d < T))]
       with n hn x hx
     simpa only [dist_eq_norm, norm_sub_rev] using hbound (tseq n) hn.1 hn.2 x hx
-
-
-
 
 theorem tendsto_preterminal_pullback_jet
     (event : SurgeryEventData g0 K P slice metric T)
@@ -124,9 +109,6 @@ theorem tendsto_preterminal_pullback_jet
         ((hk.contDiffAt (hW.mem_nhds hy)).differentiableAt (by simp)) hgerm v w
   exact (hactual.jets j {x} isCompact_singleton (singleton_subset_iff.mpr hxW)).tendsto_at
     (mem_singleton x)
-
-
-
 
 theorem tendsto_preterminal_pullback_twoJet
     (event : SurgeryEventData g0 K P slice metric T)

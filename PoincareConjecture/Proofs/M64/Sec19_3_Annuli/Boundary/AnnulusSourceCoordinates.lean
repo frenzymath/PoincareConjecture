@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ModulusComplexEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SupportedRectangleAdmission
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -15,10 +10,6 @@ open Set Complex Metric
 open scoped ContDiff
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 def annulusBoundaryLinear (r : ℝ) (hr : r ≠ 0) (upper : Bool) : ℂ ≃L[ℝ] LoopPlane where
   toFun z := annulusPoint (r * z.re) (if upper then -z.im else z.im)
@@ -37,18 +28,10 @@ def annulusBoundaryLinear (r : ℝ) (hr : r ≠ 0) (upper : Bool) : ℂ ≃L[ℝ
   continuous_invFun := by
     cases upper <;> simp only [Bool.false_eq_true, if_false, if_true] <;> fun_prop
 
-
-
-
-
 theorem annulusBoundaryLinear_one (r : ℝ) (hr : r ≠ 0) (upper : Bool) :
     annulusBoundaryLinear r hr upper 1 = r • EuclideanSpace.basisFun (Fin 2) ℝ 0 := by
   cases upper <;> ext i <;> fin_cases i <;>
     simp [annulusBoundaryLinear, annulusPoint, EuclideanSpace.basisFun_apply]
-
-
-
-
 
 theorem annulusBoundaryLinear_I (r : ℝ) (hr : r ≠ 0) (upper : Bool) :
     annulusBoundaryLinear r hr upper I = if upper then
@@ -56,16 +39,8 @@ theorem annulusBoundaryLinear_I (r : ℝ) (hr : r ≠ 0) (upper : Bool) :
   cases upper <;> ext i <;> fin_cases i <;>
     simp [annulusBoundaryLinear, annulusPoint, EuclideanSpace.basisFun_apply]
 
-
-
-
-
 def annulusBoundarySource (r : ℝ) (hr : r ≠ 0) (upper : Bool) (x : ℝ) (z : ℂ) : LoopPlane :=
   annulusPoint x (if upper then 1 else 0) + annulusBoundaryLinear r hr upper z
-
-
-
-
 
 theorem annulusBoundarySource_apply (r : ℝ) (hr : r ≠ 0) (upper : Bool) (x : ℝ) (z : ℂ) :
     annulusBoundarySource r hr upper x z =
@@ -73,19 +48,11 @@ theorem annulusBoundarySource_apply (r : ℝ) (hr : r ≠ 0) (upper : Bool) (x :
   cases upper <;> ext i <;> fin_cases i <;>
     simp [annulusBoundarySource, annulusBoundaryLinear, annulusPoint, sub_eq_add_neg]
 
-
-
-
-
 theorem annulusBoundarySource_real (r : ℝ) (hr : r ≠ 0) (upper : Bool) (x t : ℝ) :
     annulusBoundarySource r hr upper x (t : ℂ) =
       annulusPoint (x + r * t) (if upper then 1 else 0) := by
   rw [annulusBoundarySource_apply]
   cases upper <;> simp
-
-
-
-
 
 theorem annulusBoundarySource_mapsTo_closed {r R x : ℝ} (hr : 0 < r)
     (hR : R < 1) (hx : r * R < x) (hP : x + r * R < curvePeriod) (upper : Bool) :
@@ -102,10 +69,6 @@ theorem annulusBoundarySource_mapsTo_closed {r R x : ℝ} (hr : 0 < r)
   cases upper
   · exact ⟨hlo, hhi, hy, him.trans hR.le⟩
   · exact ⟨hlo, hhi, (show 0 ≤ 1 - z.im by linarith), (show 1 - z.im ≤ 1 by linarith)⟩
-
-
-
-
 
 theorem annulusBoundarySource_mapsTo_open {r R x : ℝ} (hr : 0 < r)
     (hR : R < 1) (hx : r * R < x) (hP : x + r * R < curvePeriod) (upper : Bool) :

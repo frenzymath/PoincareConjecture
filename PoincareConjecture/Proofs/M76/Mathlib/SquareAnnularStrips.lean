@@ -1,42 +1,22 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLAnnularStrip
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
 
-
-
 def rightStrip (L d : ℝ) : Set (ℝ × ℝ) :=
   {p | L - p.1 ∈ Icc (-d) d ∧ p.2 ∈ Icc (L - p.1) p.1}
-
-
 
 def topStrip (L d : ℝ) : Set (ℝ × ℝ) :=
   {p | L - p.2 ∈ Icc (-d) d ∧ p.1 ∈ Icc (L - p.2) p.2}
 
-
-
 def leftStrip (L d : ℝ) : Set (ℝ × ℝ) :=
   {p | p.1 ∈ Icc (-d) d ∧ p.2 ∈ Icc p.1 (L - p.1)}
 
-
-
 def squareAnnulus (L d : ℝ) : Set (ℝ × ℝ) :=
   (Icc (-d) (L + d) ×ˢ Icc (-d) (L + d)) \ (Ioo d (L - d) ×ˢ Ioo d (L - d))
-
-
 
 theorem trapezoid_inter_rightStrip {L d : ℝ} (hwidth : 2 * d < L) :
     trapezoid L d ∩ rightStrip L d =
@@ -55,8 +35,6 @@ theorem trapezoid_inter_rightStrip {L d : ℝ} (hwidth : 2 * d < L) :
       · simpa only [sub_sub_cancel] using ht
       · constructor <;> linarith [ht.2]
 
-
-
 theorem topStrip_inter_rightStrip {L d : ℝ} (hwidth : 2 * d < L) :
     topStrip L d ∩ rightStrip L d =
       (fun t : ℝ => (L - t, L - t)) '' Icc (-d) d := by
@@ -73,8 +51,6 @@ theorem topStrip_inter_rightStrip {L d : ℝ} (hwidth : 2 * d < L) :
       · simpa only [sub_sub_cancel] using ht
       · constructor <;> linarith [ht.2]
     exact ⟨h, h⟩
-
-
 
 theorem topStrip_inter_leftStrip {L d : ℝ} (hwidth : 2 * d < L) :
     topStrip L d ∩ leftStrip L d =
@@ -93,8 +69,6 @@ theorem topStrip_inter_leftStrip {L d : ℝ} (hwidth : 2 * d < L) :
       · constructor <;> linarith [ht.2]
     · exact ⟨ht, by constructor <;> linarith [ht.2]⟩
 
-
-
 theorem trapezoid_inter_leftStrip {L d : ℝ} (hwidth : 2 * d < L) :
     trapezoid L d ∩ leftStrip L d =
       (fun t : ℝ => (t, t)) '' Icc (-d) d := by
@@ -110,24 +84,17 @@ theorem trapezoid_inter_leftStrip {L d : ℝ} (hwidth : 2 * d < L) :
       ⟨ht, by constructor <;> linarith [ht.2]⟩
     exact ⟨h, h⟩
 
-
-
 theorem disjoint_trapezoid_topStrip {L d : ℝ} (hwidth : 2 * d < L) :
     Disjoint (trapezoid L d) (topStrip L d) := by
   apply disjoint_left.mpr
   intro p hp hq
   linarith [hp.1.2, hq.1.2]
 
-
-
 theorem disjoint_rightStrip_leftStrip {L d : ℝ} (hwidth : 2 * d < L) :
     Disjoint (rightStrip L d) (leftStrip L d) := by
   apply disjoint_left.mpr
   intro p hp hq
   linarith [hp.1.2, hq.1.2]
-
-
-
 
 theorem union_four_strips {L d : ℝ} (hd : 0 ≤ d) (hwidth : 2 * d < L) :
     ((trapezoid L d ∪ rightStrip L d) ∪ topStrip L d) ∪ leftStrip L d =

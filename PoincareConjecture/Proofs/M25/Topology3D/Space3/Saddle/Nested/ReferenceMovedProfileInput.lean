@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTranspor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem reference_moved_profile_input
     (P : SurgeryCapProfile)

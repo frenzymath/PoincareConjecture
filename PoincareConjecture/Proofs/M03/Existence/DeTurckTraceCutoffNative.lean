@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.QuasilinearDeTurckNative
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 
@@ -132,7 +122,6 @@ theorem norm_traceCutoff_sub_le (lambda : iota → NNReal) {r : ℝ} (hr : 0 < r
     ((mul_le_mul_of_nonneg_right (traceScale_le_one lambda hr x)
       (norm_nonneg (x - y))).trans_eq (one_mul _)) le_rfl
 
-
 theorem norm_trace_traceCutoff_sub_le (lambda : iota → NNReal) {r : ℝ}
     (hr : 0 < r) (x y : State iota) :
     ‖shiftedBaseMultiplier lambda (traceCutoff lambda r x - traceCutoff lambda r y)‖ ≤
@@ -153,7 +142,6 @@ theorem norm_trace_traceCutoff_sub_le (lambda : iota → NNReal) {r : ℝ}
   have hx := mul_le_mul_of_nonneg_right (traceScale_le_one lambda hr x)
     (norm_nonneg (shiftedBaseMultiplier lambda (x - y)))
   nlinarith
-
 
 theorem weighted_norm_traceCutoff_sub_le (lambda : iota → NNReal) {r : ℝ}
     (hr : 0 < r) (x y : State iota) :
@@ -182,7 +170,6 @@ theorem weighted_norm_traceCutoff_sub_le (lambda : iota → NNReal) {r : ℝ}
     _ ≤ _ := add_le_add (mul_le_mul_of_nonneg_right hmo (norm_nonneg _))
       (mul_le_mul_of_nonneg_right hm (norm_nonneg _))
 
-
 def LocalMixedBound (lambda : iota → NNReal) (r : ℝ) (C L : NNReal)
     (N : State iota → State iota) : Prop :=
   ∀ x y, ‖shiftedBaseMultiplier lambda x‖ ≤ r →
@@ -191,7 +178,6 @@ def LocalMixedBound (lambda : iota → NNReal) (r : ℝ) (C L : NNReal)
       (max ‖shiftedBaseMultiplier lambda x‖ ‖shiftedBaseMultiplier lambda y‖ * ‖x - y‖ +
         ‖shiftedBaseMultiplier lambda (x - y)‖ * ‖y‖) +
       (L : ℝ) * ‖shiftedBaseMultiplier lambda (x - y)‖
-
 
 theorem LocalMixedBound.of_lipschitzOn (lambda : iota → NNReal) {r : ℝ}
     (hr : 0 ≤ r) (A : State iota → State iota →L[ℝ] State iota)
@@ -254,7 +240,6 @@ theorem LocalMixedBound.of_lipschitzOn (lambda : iota → NNReal) {r : ℝ}
         (L : ℝ) * ‖shiftedBaseMultiplier lambda (x - y)‖ :=
       add_le_add (add_le_add hfirst hsecond) hlower
     _ = _ := by ring
-
 
 theorem exists_localMixedBound_of_contDiffAt (lambda : iota → NNReal)
     (A : State iota → State iota →L[ℝ] State iota) (b : State iota → State iota)
@@ -320,7 +305,6 @@ theorem LocalMixedBound.cutoff_bound {lambda : iota → NNReal} {r : ℝ}
       (norm_nonneg _))
   nlinarith
 
-
 def cutoffSpatialResidual (lambda : iota → NNReal) {r : ℝ} (hr : 0 < r)
     (N : State iota → State iota) (C L : NNReal)
     (hN : LocalMixedBound lambda r C L N) : SpatialResidual lambda where
@@ -348,7 +332,6 @@ theorem cutoffSpatialResidual_apply_of_small (lambda : iota → NNReal) {r : ℝ
   change N (traceCutoff lambda r x) = N x
   rw [traceCutoff_eq_self lambda hr hx]
 
-
 theorem cutoffSpatialResidual_forcingRadius (lambda : iota → NNReal) {r : ℝ}
     (hr : 0 < r) (N : State iota → State iota) (C L : NNReal)
     (hN : LocalMixedBound lambda r C L N) :
@@ -365,7 +348,6 @@ theorem cutoffSpatialResidual_forcingRadius (lambda : iota → NNReal) {r : ℝ}
   rw [mul_one_div, div_lt_iff₀ (by positivity : 0 < 64 * (P + 1))]
   nlinarith
 
-
 theorem cutoffSpatialResidual_response_eq {T : ℝ} (hT : 0 ≤ T) (hT1 : T ≤ 1)
     (lambda : iota → NNReal) {r : ℝ} (hr : 0 < r)
     (N : State iota → State iota) (C L : NNReal)
@@ -378,8 +360,6 @@ theorem cutoffSpatialResidual_response_eq {T : ℝ} (hT : 0 ≤ T) (hT1 : T ≤ 
   apply cutoffSpatialResidual_apply_of_small lambda hr N C L hN
   exact ht.trans ((mul_le_mul_of_nonneg_left hF (by norm_num)).trans
     (cutoffSpatialResidual_forcingRadius lambda hr N C L hN).le)
-
-
 
 theorem exists_spatialResidual_of_dense_core (lambda : iota → NNReal)
     (s : Set (State iota)) (hs : Dense s) (f : s → State iota) (C L : NNReal)
@@ -470,8 +450,6 @@ theorem exists_spatialResidual_of_dense_core (lambda : iota → NNReal)
   have hz : ‖N x - f x‖ ≤ 0 := by simpa only [bound, sub_self, map_zero,
     norm_zero, mul_zero, zero_mul, add_zero] using h
   exact sub_eq_zero.mp (norm_eq_zero.mp (le_antisymm hz (norm_nonneg _)))
-
-
 
 theorem exists_spatialResidual_of_dense_local_core (lambda : iota → NNReal)
     (S : Submodule ℝ (State iota)) (hS : Dense (S : Set (State iota)))

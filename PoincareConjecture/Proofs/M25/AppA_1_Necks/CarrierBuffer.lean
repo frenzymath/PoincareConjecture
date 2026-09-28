@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Depth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.DepthProfile
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff ENNReal NNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem exists_centered_depth_profile (s0 : ℝ) {δ : ℝ} (hδ : 0 < δ) :
     ∃ φ : ℝ → ℝ, ContDiff ℝ ∞ φ ∧
@@ -61,9 +47,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem edist_lower_of_not_mem_carrier (N : EpsilonNeck g)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∉ N.carrier) :
@@ -114,8 +97,6 @@ theorem edist_lower_of_not_mem_carrier (N : EpsilonNeck g)
       mul_le_mul' le_rfl hone
     _ = g.edist x y := by
       rw [← mul_assoc, ← ENNReal.ofReal_mul hr.le, hrk, ENNReal.ofReal_one, one_mul]
-
-
 
 theorem mem_carrier_of_edist_lt_buffer (N : EpsilonNeck g)
     {x y : M} (hx : x ∈ N.carrier)

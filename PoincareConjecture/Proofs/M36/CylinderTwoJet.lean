@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M36.CylinderModelField
 import PoincareConjecture.Proofs.M36.JetCurvatureBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

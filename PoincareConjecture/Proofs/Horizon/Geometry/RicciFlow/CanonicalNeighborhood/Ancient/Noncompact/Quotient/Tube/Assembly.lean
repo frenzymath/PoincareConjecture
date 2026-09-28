@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 def positiveEndTubeOfChain (C : M27TwistedSphereLineFlowCertificate K)
     {g : RiemannianMetric 3 M} {epsilon r : ℝ} (hr : 0 ≤ r)
@@ -78,8 +65,6 @@ theorem capCarrier_union_positiveEnd (C : M27TwistedSphereLineFlowCertificate K)
   · exact Or.inl (C.slabCore_subset_capCarrier hL hx)
   · exact Or.inr hx
 
-
-
 theorem positiveEndCylinder_cap_tail (C : M27TwistedSphereLineFlowCertificate K)
     {L : ℝ} (hL : 0 < L) :
     ∃ a ∈ Ioo (0 : ℝ) 1, (C.positiveEndCylinder hL.le).tail false a ⊆
@@ -114,7 +99,6 @@ variable (C : M27TwistedSphereLineFlowCertificate K)
   (hcap : cap.carrier = interior (C.slabCore (3 * L)))
   (hend : cap.end_neck.carrier = C.cover '' (univ ×ˢ Ioo L (3 * L)))
 
-
 def positiveEndCapAttachment :
     CapTubeAttachment cap
       (C.positiveEndTubeOfChain hL.le hε hsmall chain hunion hspheres) false where
@@ -135,8 +119,6 @@ def positiveEndCapAttachment :
     change C.cover p ∉ C.slabCore L
     rw [C.cover_mem_slabCore_iff]
     exact not_le.mpr ((C.cover_mem_positiveSlab_iff hL.le p).mp hendx).1
-
-
 
 def cappedTubeOfPositiveEndChain : CappedTubeCertificate g where
   carrier := univ
@@ -187,8 +169,6 @@ private theorem balancedEndChain_slices :
     · rintro ⟨z, rfl⟩
       exact ⟨(z, _), ⟨mem_univ _, rfl⟩, rfl⟩
 
-
-
 def positiveEndTube : EpsilonTubeCertificate (K.flow.metric t) ∅ :=
   C.positiveEndTubeOfChain (C.neckSpacing_pos ht hε q).le hε hsmall
     (C.balancedEndChain ht hε (by linarith) q a ha)
@@ -208,7 +188,6 @@ variable (cap : CapCertificate (K.flow.metric t))
   (hend : cap.end_neck.carrier = C.cover '' (univ ×ˢ Ioo
     (C.neckSpacing (t := t) (epsilon := epsilon) q)
     (3 * C.neckSpacing (t := t) (epsilon := epsilon) q)))
-
 
 def cappedTubeOfSlabCap : CappedTubeCertificate (K.flow.metric t) :=
   C.cappedTubeOfPositiveEndChain (C.neckSpacing_pos ht hε q) hε hsmall

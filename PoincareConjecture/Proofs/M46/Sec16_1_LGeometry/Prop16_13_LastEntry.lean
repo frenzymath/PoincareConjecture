@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousFirstExit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_last_entry_of_continuousOn {X : Type*} [TopologicalSpace X]
     {gamma : ℝ → X} {a b : ℝ} (hab : a < b)

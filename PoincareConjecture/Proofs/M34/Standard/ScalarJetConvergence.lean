@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetOperator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.LeviCivitaData
 
 open M34 SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
 
 theorem tendsto_iteratedFDeriv_scalarCurvature_of_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}

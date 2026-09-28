@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,10 +8,6 @@ open scoped Topology
 namespace NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem normalize_sub_ne_of_segment_inter {p u v : E}
     (hu : u ≠ p) (hv : v ≠ p)
@@ -37,10 +23,6 @@ theorem normalize_sub_ne_of_segment_inter {p u v : E}
     simpa only [add_zero, hvadd] using (mem_segment_translate ℝ p).mpr hx.2
   have hpx : p + x = p := hinter ⟨hxu, hxv⟩
   exact add_left_cancel (hpx.trans (add_zero p).symm)
-
-
-
-
 
 theorem normalize_sub_mem_pair_of_segment_local
     {S : Set E} {p u a b : E} (hu : u ≠ p)
@@ -78,11 +60,6 @@ theorem normalize_sub_mem_pair_of_segment_local
   rcases hNr (hsegment hxu) with hxa | hxb
   · exact Or.inl (hdir a hxa)
   · exact Or.inr (hdir b hxb)
-
-
-
-
-
 
 theorem not_three_segments_in_two_segment_germ
     {S : Set E} {p u v w a b : E}

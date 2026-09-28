@@ -3,21 +3,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.Mul
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Interval Topology ContDiff Manifold
 
 namespace PoincareConjecture.Surface
-
 
 theorem isCompact_standardTriangle :
     IsCompact {p : ℝ × ℝ | 0 ≤ p.1 ∧ 0 ≤ p.2 ∧ p.1 + p.2 ≤ 1} := by
@@ -28,8 +19,6 @@ theorem isCompact_standardTriangle :
   apply (isCompact_Icc (a := ((0, 0) : ℝ × ℝ)) (b := (1, 1))).of_isClosed_subset hc
   intro p hp
   exact ⟨⟨hp.1, hp.2.1⟩, ⟨by linarith [hp.2.2, hp.2.1], by linarith [hp.2.2, hp.1]⟩⟩
-
-
 
 theorem integral_standardTriangle_eq_iterated
     (F : ℝ × ℝ → ℝ)
@@ -105,8 +94,6 @@ private theorem curl_triangle_pullback
   simp only [map_add, map_smul, smul_eq_mul]
   ring
 
-
-
 theorem integral_curl_triangle
     (P Q : ℝ × ℝ → ℝ) (hP : ContDiff ℝ 1 P) (hQ : ContDiff ℝ 1 Q) :
     (∫ x in (0 : ℝ)..1, ∫ y in (0 : ℝ)..(1 - x),
@@ -158,8 +145,6 @@ private theorem exists_contDiff_extension_near_closed
   · intro x hx
     filter_upwards [hone.filter_mono (nhds_le_nhdsSet hx)] with y hy
     simp [hy]
-
-
 
 theorem integral_curl_triangle_of_contDiffOn
     (P Q : ℝ × ℝ → ℝ) {U : Set (ℝ × ℝ)} (hU : IsOpen U)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Plane.Nontrapping
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ namespace Poincare.ODE.Plane
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "v₀" => (!₂[(1 : ℝ), 0] : E₂)
-
-
 
 theorem eq_horizontal_forward_ray
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) {γ : ℝ → E₂}
@@ -42,8 +29,6 @@ theorem eq_horizontal_forward_ray
     simpa using ((hasDerivAt_id s).smul_const v₀).const_add (γ a)
   have heq := Poincare.ODE.eqOn_Icc_of_hasDerivAt (hV.of_le (by simp)) hα hβ (by simp)
   exact heq ⟨ht, le_rfl⟩
-
-
 
 theorem eq_horizontal_backward_ray
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) {γ : ℝ → E₂}
@@ -77,9 +62,6 @@ private theorem eq_horizontal_line_of_height
     (fun t _ => ⟨mem_univ _, hγ t⟩) (fun t _ => ⟨mem_univ _, hβ t⟩)
     (mem_univ a) (by simp)
   exact fun t => heq (mem_univ t)
-
-
-
 
 theorem exists_horizontal_right_exit
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)
@@ -175,8 +157,6 @@ theorem exists_horizontal_right_exit
       simp only [add_sub_cancel, PiLp.add_apply, PiLp.smul_apply, smul_eq_mul,
         Matrix.cons_val_zero, mul_one, hτR, htr] at hx
       linarith
-
-
 
 theorem existsUnique_horizontal_section_hit
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)
@@ -276,7 +256,6 @@ theorem existsUnique_horizontal_section_hit
       (show L ∈ Icc (γ (-t) 0) (γ 0 0) from ⟨hfar.le, hstartL.le⟩)
     exact ⟨a, ha⟩
 
-
 theorem existsUnique_horizontal_right_section_hit
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)
     {L R B T : ℝ}
@@ -308,8 +287,6 @@ theorem existsUnique_horizontal_right_section_hit
   have hb' : β (-b) 0 = -R := by simp [β, hb]
   have := huniq (-b) hb'
   linarith
-
-
 
 theorem existsUnique_exterior_horizontal_section_hit
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)

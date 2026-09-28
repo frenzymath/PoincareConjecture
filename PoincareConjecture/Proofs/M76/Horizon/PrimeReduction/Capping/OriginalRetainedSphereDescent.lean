@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.SphereModelC
 import PoincareConjecture.Proofs.M76.Wall.OriginalFinitePLSphereImage
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

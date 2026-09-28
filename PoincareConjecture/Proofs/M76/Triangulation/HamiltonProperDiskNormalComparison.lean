@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskConvexSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -44,14 +35,8 @@ private def tangentNormalMap (P : E →ᵃ[ℝ] (E × ℝ)) (v : E × ℝ) :
     (E × ℝ) →ₗ[ℝ] (E × ℝ) :=
   P.linear.comp (LinearMap.fst ℝ E ℝ) + (LinearMap.snd ℝ E ℝ).smulRight v
 
-
-
 noncomputable def affineDiskNormal (P : E →ᵃ[ℝ] (E × ℝ)) (w : E × ℝ) : ℝ :=
   LinearMap.det (tangentNormalMap P (w - P 0))
-
-
-
-
 
 theorem affineDiskNormal_eq_of_plane_formula
     (P : E →ᵃ[ℝ] (E × ℝ)) (A : (E × ℝ) ≃ᵃ[ℝ] (E × ℝ)) (B : E ≃ᵃ[ℝ] E)
@@ -105,8 +90,6 @@ theorem affineDiskNormal_eq_of_plane_formula
   rw [affineDiskNormal, hfactor, LinearMap.det_comp,
     det_eq_tangent_mul_normal C (B.linear.symm : E →ₗ[ℝ] E) hCplane, hCnormal]
 
-
-
 theorem affineDiskNormal_mul_tangent_det
     (P : E →ᵃ[ℝ] (E × ℝ)) (A : (E × ℝ) ≃ᵃ[ℝ] (E × ℝ)) (B : E ≃ᵃ[ℝ] E)
     (hplane : ∀ x : E, A (x, 0) = P (B x)) (p : E × ℝ) :
@@ -118,9 +101,6 @@ theorem affineDiskNormal_mul_tangent_det
         ((LinearMap.det (B.linear.symm : E →ₗ[ℝ] E) *
           LinearMap.det (B.linear : E →ₗ[ℝ] E)) * p.2) := by ring
     _ = _ := by rw [B.linear.det_symm_mul_det, one_mul]
-
-
-
 
 theorem affineDiskNormal_mul_pos_of_piece_signs
     (P Q : E →ᵃ[ℝ] (E × ℝ))

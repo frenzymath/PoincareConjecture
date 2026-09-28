@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Family
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem M33OldEventDataPreservation.of_rebuildPast
     {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)

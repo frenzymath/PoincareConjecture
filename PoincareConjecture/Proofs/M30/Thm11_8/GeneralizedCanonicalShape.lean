@@ -8,16 +8,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,9 +43,6 @@ private theorem shape_uniform_at_moving_time
 set_option maxHeartbeats 1200000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_generalized_canonical_slice_shape_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

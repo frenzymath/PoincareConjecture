@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M13TimeRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -17,7 +7,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure ParabolicAtlasRescaling {n : ℕ} {X : Type u} [TopologicalSpace X]
     (A : AdaptedMetricAtlas n X) (Q : ℝ) (hQ : 0 < Q) (a : ℝ) where

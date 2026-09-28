@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthMetric
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ section CoordinateNorm
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem standard_initial_neck_axial_derivative_sharp
     {y : StandardCapSpace} (hy : y ∈ N.patch.carrier)
@@ -86,8 +75,6 @@ theorem standard_initial_neck_axial_derivative_sharp
   rwa [hchart] at hbound
 
 end CoordinateNorm
-
-
 
 theorem standard_initial_neck_axial_path_length_sharp
     (p : ℝ → StandardCapSpace)

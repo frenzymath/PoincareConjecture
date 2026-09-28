@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Window
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SpacetimeEmbedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.AncientPointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
 
 def ofSubsequence {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -45,8 +37,6 @@ def ofSubsequence {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
   base_preserving := G.base_preserving
   pullback_metric_converges := G.pullback_metric_converges
   pullback_metric_CInfinity := G.pullback_metric_CInfinity
-
-
 
 noncomputable def window {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     {J : ℕ → Set ℝ} (F : ∀ k, RicciFlow n (C k).carrier (J k))

@@ -1,21 +1,11 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E X : Type*} [TopologicalSpace X]
-
-
 
 theorem isOpen_positive_collar {B : Set E} {K : Set X} (c : E × ℝ → X)
     (hinside : MapsTo c (B ×ˢ Icc 0 1) K)

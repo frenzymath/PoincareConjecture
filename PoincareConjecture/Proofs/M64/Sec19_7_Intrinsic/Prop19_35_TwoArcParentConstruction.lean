@@ -5,20 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoBandChainCom
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MatchedRegionParentsRetained
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapCompatibility
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,9 +38,6 @@ private theorem two_arc_band_lower_subset
     have hhi' : t ≤ T - r false := by simpa using hhi
     change T - t ∈ Icc (r false) (T - r true)
     constructor <;> linarith
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_region_coordinate_parents
     {alpha beta : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha)

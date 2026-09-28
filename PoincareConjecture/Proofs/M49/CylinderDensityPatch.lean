@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M49.CylinderDensity
 import PoincareConjecture.Proofs.M49.Mathlib.GramDensity
 import Mathlib.Analysis.Matrix.PosDef
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff BigOperators
 
 namespace PoincareConjecture.M49
-
-
-
 
 theorem exists_cylinder_density_patch (q : UnitTwoSphere) :
     ∃ r d a : ℝ, 0 < r ∧ 0 < d ∧ 0 < a ∧

@@ -1,15 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -25,14 +16,10 @@ local notation "E" => EuclideanSpace ℝ ι
 
 open Classical in
 
-
 def m64TransverseProjection (j : ι) : E →L[ℝ] E :=
   ContinuousLinearMap.id ℝ E - (EuclideanSpace.proj j).smulRight (EuclideanSpace.single j 1)
 
 open Classical in
-
-
-
 
 theorem m64TransverseProjection_apply (j : ι) (v : E) (i : ι) :
     m64TransverseProjection j v i = if i = j then 0 else v i := by
@@ -42,10 +29,6 @@ theorem m64TransverseProjection_apply (j : ι) (v : E) (i : ι) :
   · subst i
     simp only [PiLp.single_apply, ite_true, mul_one, sub_self]
   · simp only [PiLp.single_apply, hij, ite_false, mul_zero, sub_zero]
-
-
-
-
 
 theorem m64TransverseProjection_norm (j : ι) (v : E) : ‖m64TransverseProjection j v‖ ≤ ‖v‖ := by
   classical
@@ -60,7 +43,6 @@ theorem m64TransverseProjection_norm (j : ι) (v : E) : ‖m64TransverseProjecti
 
 open Classical in
 
-
 theorem m64TransverseProjection_energy {κ : Type*} [Fintype κ] (j : ι) (V : κ → E) :
     (∑ i : κ, ‖m64TransverseProjection j (V i)‖ ^ 2) =
       ∑ a : ι, if a = j then 0 else ∑ i : κ, (V i a) ^ 2 := by
@@ -73,20 +55,12 @@ theorem m64TransverseProjection_energy {κ : Type*} [Fintype κ] (j : ι) (V : �
   · simp only [if_pos haj, zero_pow two_ne_zero, Finset.sum_const_zero]
   · simp only [if_neg haj]
 
-
-
-
-
 theorem m64TransverseProjection_fderiv
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
     (j : ι) {f : X → E} {x : X} (hf : DifferentiableAt ℝ f x) :
     fderiv ℝ (m64TransverseProjection j ∘ f) x =
       (m64TransverseProjection j).comp (fderiv ℝ f x) :=
   ((m64TransverseProjection j).hasFDerivAt.comp x hf.hasFDerivAt).fderiv
-
-
-
-
 
 theorem m64TransverseProjection_hessian
     {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusEnergyIdentity
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +12,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
-
-
-
 
 theorem m64WeakPartial_eq_fderiv_of_contDiffOn {O : Set LoopPlane} (hO : IsOpen O)
     {u W : LoopPlane → ℝ} {i : Fin 2} (hu : ContDiffOn ℝ 1 u O)
@@ -71,9 +56,6 @@ theorem m64WeakPartial_eq_fderiv_of_contDiffOn {O : Set LoopPlane} (hO : IsOpen 
     -(∫ p in O, fderiv ℝ phi p (EuclideanSpace.single i 1) * u p) at hclass
   linarith
 
-
-
-
 theorem m64WeakColumns_eq_fderiv_of_contDiffOn {m : ℕ} {O : Set LoopPlane}
     (hO : IsOpen O) {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {W : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -104,8 +86,6 @@ local notation "S" => interior m64AnnulusDomain
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
 theorem M64ObservedWeakAnnulus.classical_columns_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) (hA : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map S) :
@@ -117,9 +97,6 @@ theorem M64ObservedWeakAnnulus.classical_columns_of_contMDiffOn
       (hA.contMDiffAt (isOpen_interior.mem_nhds hp)))).contDiffWithinAt
   exact m64WeakColumns_eq_fderiv_of_contDiffOn isOpen_interior hu
     (fun i => Lp.memLp (A.column i)) A.weak_partial
-
-
-
 
 theorem M64ObservedWeakAnnulus.energyDensity_eq_ae_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -141,9 +118,6 @@ theorem M64ObservedWeakAnnulus.energyDensity_eq_ae_of_contMDiffOn
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he Q hdiag hd 1]
   simp only [m60EnergyDensity, Matrix.trace_fin_two]
   ring
-
-
-
 
 theorem M64ObservedWeakAnnulus.energy_eq_integral_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

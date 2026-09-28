@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Measure
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Volume
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -28,8 +20,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem rescaledMetric_integral_scalarCurvature
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (c : ℝ) (hc : 0 < c) (s : Set M) :
@@ -42,7 +32,6 @@ theorem rescaledMetric_integral_scalarCurvature
   rw [div_eq_mul_inv]
   ring
 
-
 theorem rescaledMetric_integral_scalarCurvature_ball
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (c : ℝ) (hc : 0 < c) (p : M) (r : ℝ) :
@@ -53,7 +42,6 @@ theorem rescaledMetric_integral_scalarCurvature_ball
         ∫ x in g.ball p (r / Real.sqrt c), D.scalarCurvature x ∂g.volumeMeasure := by
   rw [rescaledMetric_integral_scalarCurvature, rescaledMetric_ball]
 
-
 theorem rescaledMetric_integral_scalarCurvature_unitBall
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (c : ℝ) (hc : 0 < c) (p : M) :
@@ -63,7 +51,6 @@ theorem rescaledMetric_integral_scalarCurvature_unitBall
       (Real.sqrt c) ^ n / c *
         ∫ x in g.ball p (Real.sqrt c)⁻¹, D.scalarCurvature x ∂g.volumeMeasure := by
   simpa only [one_div] using rescaledMetric_integral_scalarCurvature_ball g D c hc p 1
-
 
 theorem rescaledMetric_integral_scalarCurvature_ball_mul
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -80,9 +67,6 @@ theorem rescaledMetric_integral_scalarCurvature_ball_mul
     div_eq_mul_inv]
 
 end ScalarIntegrals
-
-
-
 
 theorem exists_subseq_proper_geodesic_pointed_limit_of_metric_rescaling
     {n : ℕ} {M : ℕ → Type}
@@ -119,9 +103,6 @@ theorem exists_subseq_proper_geodesic_pointed_limit_of_metric_rescaling
   exact RiemannianMetric.exists_subseq_proper_geodesic_pointed_limit_of_ricci_lower_bound
     G p hn 1 (by norm_num) hcomplete' DS (fun j x v =>
       (DS j).ricci_quadratic_lower_bound_of_sectionalCurvature_lower_bound x 1 (hsec' j x) v)
-
-
-
 
 theorem exists_subseq_rescaled_pointed_limit_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type}

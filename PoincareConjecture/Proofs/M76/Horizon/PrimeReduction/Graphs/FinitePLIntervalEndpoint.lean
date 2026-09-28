@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalGerm
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem ncard_neighborSet_eq_one_of_local_segment_at
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -66,8 +55,6 @@ theorem ncard_neighborSet_eq_one_of_local_segment_at
   rw [K.ncard_edgeGraph_neighborSet]
   exact hlink.symm.trans hcount
 
-
-
 theorem exists_segment_germ_of_link_vertices_ncard_one
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -106,8 +93,6 @@ end Geometry.SimplicialComplex
 namespace Set
 
 open Geometry
-
-
 
 theorem IsFinitePLBallPair.exists_segment_germ_of_mem_boundary
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

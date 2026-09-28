@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.TruncatedLogCurvature
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -13,10 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem annulus_slice_log_shift_tendsto {a : LoopPlane → ℝ}
     (ha : ContDiffOn ℝ ∞ a m64AnnulusOpenStrip) {s : ℝ} (hs : s ∈ Ioo (0 : ℝ) 1)
@@ -50,10 +42,6 @@ theorem annulus_slice_log_shift_tendsto {a : LoopPlane → ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem annulus_truncated_log_curvature_le
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

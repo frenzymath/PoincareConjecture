@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.M53SphereSeparation
 import PoincareConjecture.Proofs.M53.Mathlib.NullHomotopicHomology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory AlgebraicTopology
@@ -24,24 +13,16 @@ namespace PoincareConjecture.Proofs.M53
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 def sphereContinuousMap (S : SmoothEmbeddedNullHomotopicSphere (M := M)) :
     C(ULift.{u} UnitTwoSphere, M) :=
   ⟨fun x => S.sphere x.down,
     S.smooth_embedding.isEmbedding.continuous.comp continuous_uliftDown⟩
-
-
 
 theorem sphereContinuousMap_nullHomotopic
     (S : SmoothEmbeddedNullHomotopicSphere (M := M)) :
     ∃ y : M, (sphereContinuousMap S).Homotopic (ContinuousMap.const _ y) := by
   obtain ⟨hcontinuous, y, ⟨H⟩⟩ := S.null_homotopic
   exact ⟨y, ⟨H.compContinuousMap ⟨ULift.down, continuous_uliftDown⟩⟩⟩
-
-
-
 
 theorem sphereContinuousMap_homologyMap_eq_zero
     {C : Type v} [Category.{w} C] [Preadditive C] [Limits.HasCoproducts.{u} C]
@@ -52,10 +33,6 @@ theorem sphereContinuousMap_homologyMap_eq_zero
   obtain ⟨y, ⟨H⟩⟩ := sphereContinuousMap_nullHomotopic S
   exact TopCat.Homotopy.singularHomologyMap_eq_zero_of_const
     (f := TopCat.ofHom (sphereContinuousMap S)) (y := y) H R n hn
-
-
-
-
 
 theorem sphereRangeInclusion_nullHomotopic
     (S : SmoothEmbeddedNullHomotopicSphere (M := M)) :
@@ -75,9 +52,6 @@ theorem sphereRangeInclusion_nullHomotopic
   rw [← hcomp]
   exact ⟨H.compContinuousMap r⟩
 
-
-
-
 theorem sphereRangeInclusion_homologyMap_eq_zero
     {C : Type v} [Category.{w} C] [Preadditive C] [Limits.HasCoproducts.{u} C]
     [CategoryWithHomology C] (R : C)
@@ -90,16 +64,11 @@ theorem sphereRangeInclusion_homologyMap_eq_zero
     (f := TopCat.ofHom (⟨Subtype.val, continuous_subtype_val⟩ : C(Set.range S.sphere, M)))
     (y := y) H R n hn
 
-
-
-
 theorem sphere_isClosedEmbedding [T2Space M]
     (S : SmoothEmbeddedNullHomotopicSphere (M := M)) :
     Topology.IsClosedEmbedding S.sphere :=
   S.smooth_embedding.isEmbedding.continuous.isClosedEmbedding
     S.smooth_embedding.isEmbedding.injective
-
-
 
 theorem sphere_isOpen_compl [T2Space M]
     (S : SmoothEmbeddedNullHomotopicSphere (M := M)) :

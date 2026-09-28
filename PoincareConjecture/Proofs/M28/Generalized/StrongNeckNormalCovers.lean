@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckHalfFlow
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceMetricSpace
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.UniformNormalCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_strongNeck_source_normal_covers_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

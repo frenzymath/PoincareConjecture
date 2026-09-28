@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M02.SimplicialCW
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -17,8 +7,6 @@ open Set Metric Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem exists_simplex_face_intrinsicInterior
     {F : Type u} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -49,8 +37,6 @@ theorem exists_simplex_face_intrinsicInterior
         obtain ⟨t, ht, htne, htx⟩ := ih (s.erase (i : F)) hne'
           (Finset.erase_ssubset i.property) hi' hxi
         exact ⟨t, ht.trans (Finset.erase_subset _ _), htne, htx⟩
-
-
 
 noncomputable abbrev exists_cwComplex_of_finite_section
     {F : Type u} [NormedAddCommGroup F] [NormedSpace ℝ F]

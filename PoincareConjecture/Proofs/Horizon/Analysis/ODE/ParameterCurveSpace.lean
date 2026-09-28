@@ -9,10 +9,3 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.ImplicitFunction.ProdDomain
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.Analysis.SpecificLimits.Normed
-
-
-
-
-
-
-

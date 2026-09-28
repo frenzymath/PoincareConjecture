@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.RestartedProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -19,8 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Set.Icc a b))
-
-
 
 theorem m65RestartedAreaProfile_weighted_comparison
     (s t A fs ft error : ℝ) (h : ft ≤ m65RestartedAreaProfile F s fs t + error) :

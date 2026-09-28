@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 structure IsHorizontalUnitAdaptedFieldOn (a b : ℝ)
     (P : ∀ s, G.Horizontal (R.curve s)) : Prop where
@@ -41,8 +29,6 @@ structure IsHorizontalUnitAdaptedFieldOn (a b : ℝ)
 
 variable {R} {a b : ℝ} {P Q : ∀ s, G.Horizontal (R.curve s)}
 
-
-
 theorem IsHorizontalUnitAdaptedFieldOn.congr (h : IsHorizontalUnitAdaptedFieldOn R a b P)
     (heq : ∀ s ∈ Icc a b, P s = Q s) : IsHorizontalUnitAdaptedFieldOn R a b Q := by
   obtain ⟨E, hE⟩ := h.equation
@@ -55,8 +41,6 @@ theorem IsHorizontalUnitAdaptedFieldOn.congr (h : IsHorizontalUnitAdaptedFieldOn
         -(2 * s) * horizontalRicci G.leafwise (R.curve s) (Q s) W
     rw [← heq s hs]
     exact hE s hs W
-
-
 
 theorem IsHorizontalUnitAdaptedFieldOn.equation_for_extension
     (h : IsHorizontalUnitAdaptedFieldOn R a b P)
@@ -71,8 +55,6 @@ theorem IsHorizontalUnitAdaptedFieldOn.equation_for_extension
   rw [← horizontalCovariantDerivative_extension_independent E₀ E hs
     (uniqueDiffOn_Icc h.ordered s hs) ((hR s hs).mdifferentiableWithinAt (by simp))]
   exact hE₀ s hs W
-
-
 
 theorem IsHorizontalUnitAdaptedFieldOn.restrict
     (h : IsHorizontalUnitAdaptedFieldOn R a b P)

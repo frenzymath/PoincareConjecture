@@ -1,23 +1,12 @@
 import Mathlib.Analysis.Convex.Between
 import Mathlib.Order.Interval.Set.UnorderedInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
 
 variable {R E : Type*} [Field R] [LinearOrder R] [IsStrictOrderedRing R]
   [AddCommGroup E] [Module R E]
-
-
 
 theorem Wbtw.segment_union {a b c : E} (h : Wbtw R a b c) :
     segment R a b ∪ segment R b c = segment R a c := by
@@ -31,9 +20,6 @@ theorem Wbtw.segment_union {a b c : E} (h : Wbtw R a b c) :
       rw [image_union, image_segment, image_segment]
       simp
     _ = segment R a c := by rw [hsplit, segment_eq_image_lineMap]
-
-
-
 
 theorem Collinear.sbtw_of_segment_inter_subset {a b c : E}
     (h : Collinear R ({a, b, c} : Set E)) (hab : a ≠ b) (hcb : c ≠ b)

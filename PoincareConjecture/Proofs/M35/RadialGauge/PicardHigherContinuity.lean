@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelThirdJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 

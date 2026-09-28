@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem neg_two_mvfderiv_cutoff_le (D : LeviCivitaData g)
     (η f : M → ℝ) (x : M) {A δ : ℝ} (hA : 0 ≤ A) (hδ : 0 < δ)
@@ -52,8 +44,6 @@ theorem neg_two_mvfderiv_cutoff_le (D : LeviCivitaData g)
   have hs : (-2 * d) ^ 2 ≤ (a + b) ^ 2 := by nlinarith [sq_nonneg (a - b)]
   change -2 * d ≤ a + b
   nlinarith [sq_nonneg (-2 * d - (a + b))]
-
-
 
 theorem cutoff_laplacian_drift_le_of_isLocalMax (D : LeviCivitaData g)
     {η q f : M → ℝ} (hηs : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)
@@ -89,8 +79,6 @@ theorem cutoff_laplacian_drift_le_of_isLocalMax (D : LeviCivitaData g)
   have hdf := hv (D.gradient f x)
   have hdf' := congrArg (fun z : ℝ => η x * z) hdf
   nlinarith
-
-
 
 theorem liYau_cutoff_deriv_le_of_isLocalMax (D : LeviCivitaData g)
     (hn : 0 < n) {η q f : M → ℝ}

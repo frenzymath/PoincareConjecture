@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StrictDerivativeCarrierChart
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem ContDiffAt.hasStrictFDerivAt_variable_projection
     {Q : E → E →L[ℝ] F} {a : E} (hQ : ContDiffAt ℝ ∞ Q a) :

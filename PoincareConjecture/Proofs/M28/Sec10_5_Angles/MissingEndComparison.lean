@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedSphereRadiusBarrier
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.CrossSegmentComparison
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,10 +31,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem corresponding_side_lower_at_selected_end
     (T : EpsilonTubeCertificate g X) (C : OpenCylinderModel T.carrier)

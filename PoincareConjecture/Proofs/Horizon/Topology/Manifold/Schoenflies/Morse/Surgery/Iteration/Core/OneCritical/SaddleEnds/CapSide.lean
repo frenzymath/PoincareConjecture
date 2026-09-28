@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.CapHeight
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.DomainIdentification
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +20,6 @@ private instance : ConnectedSpace S1 :=
     (isConnected_sphere (by simp [← Module.finrank_eq_rank, E2]) (0 : E2) zero_le_one)
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
-
 
 theorem upper_annular_strip_subset_open_disk_of_scale_pos
     (D : SphereSurgeryCoreCap v g B) (hs : 0 < D.scale)
@@ -80,7 +75,6 @@ theorem upper_annular_strip_subset_open_disk_of_scale_pos
   exact Poincare.Topology.subset_of_isPreconnected_of_disjoint_frontier
     (D.chart.isOpen_image_of_subset_source isOpen_ball
       (ball_subset_closedBall.trans D.source)) hV hfront ⟨z, hzV, hzD⟩
-
 
 theorem lower_annular_strip_subset_open_disk_of_scale_neg
     (D : SphereSurgeryCoreCap v g B) (hs : D.scale < 0)

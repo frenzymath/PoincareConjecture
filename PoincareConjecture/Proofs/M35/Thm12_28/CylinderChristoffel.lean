@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem roundCylinderChristoffel_eq {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) (a b d : Fin 3) :
@@ -37,8 +26,6 @@ theorem roundCylinderChristoffel_eq {u : ℝ} (hu : u < 1) (q : UnitTwoSphere)
     simp [Matrix.diagonal, roundCylinderCoordinateBasis,
       EuclideanSpace.inner_single_left, EuclideanSpace.inner_single_right] <;>
     field_simp <;> ring
-
-
 
 theorem fderiv_roundCylinderChristoffel_center {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) (v : RoundCylinderCoordinates) (a b d : Fin 3) :
@@ -76,8 +63,6 @@ theorem fderiv_roundCylinderChristoffel_center {u : ℝ} (hu : u < 1)
   rw [hfun]
   convert! congrArg (fun A : RoundCylinderCoordinates →L[ℝ] ℝ => A v) hd.fderiv using 1
   norm_num [L, ev, real_inner_comm]
-
-
 
 theorem contDiff_roundCylinderChristoffel {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (a b d : Fin 3) :

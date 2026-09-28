@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TangentCylinderSpace
 import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,17 +9,11 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 def twoRayStar (u v : E) : Set E := segment ℝ 0 u ∪ segment ℝ 0 v
 
 private theorem segment_zero_eq_image (u : E) :
     segment ℝ 0 u = (fun a : ℝ => a • u) '' Icc (0 : ℝ) 1 := by
   simpa only [smul_zero, zero_add] using segment_eq_image ℝ (0 : E) u
-
-
-
-
 
 theorem injOn_twoRayStar_iff (u v : E) (hv : LinearIndependent ℝ ![u, v])
     (Q : E →L[ℝ] ℝ) (hu : Q u = 1) : InjOn Q (twoRayStar u v) ↔ Q v < 0 := by

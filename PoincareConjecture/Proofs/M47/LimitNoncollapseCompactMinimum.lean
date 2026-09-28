@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteHarnackDomain
 import PoincareConjecture.Proofs.M04.CompactSlabParabolic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_compact_scalar_lower_preserved
     {M : Type u} [TopologicalSpace M]
@@ -65,8 +54,6 @@ private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     IsManifold (𝓡 3) ∞ L.carrier.carrier := L.carrier.isManifold
 private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     T2Space L.carrier.carrier := L.carrier.t2Space
-
-
 
 theorem limitNoncollapse_compact_exists_low_point
     (h04 : RicciFlowCurvatureTheory.{u}) {H : ℝ≥0∞}

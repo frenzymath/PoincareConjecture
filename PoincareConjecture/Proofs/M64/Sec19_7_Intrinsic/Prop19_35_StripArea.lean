@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaDensity
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Measure.Prod
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal Manifold ContDiff Bundle Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_parameter_strip_integral
     {S : Set ℝ} (hS : MeasurableSet S) {height speed : ℝ → ℝ}
@@ -59,9 +44,6 @@ theorem m64Intrinsic_parameter_strip_integral
       funext t
       simp [D, hsS]
     simp [heq, hsS]
-
-
-
 
 theorem m64Intrinsic_embedded_strip_area_bound
     (G : RiemannianMetric 2 AnnulusCoordinates)

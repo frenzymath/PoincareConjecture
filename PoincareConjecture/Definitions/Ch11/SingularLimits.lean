@@ -5,16 +5,6 @@ import PoincareConjecture.Definitions.Ch01.TensorOperators
 import Mathlib.Topology.Compactness.SigmaCompact
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
@@ -28,27 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 def terminalAccuracyFactor : ℝ := 100000000000000
 
 theorem terminalAccuracyFactor_pos : 0 < terminalAccuracyFactor := by
@@ -56,8 +25,6 @@ theorem terminalAccuracyFactor_pos : 0 < terminalAccuracyFactor := by
 
 theorem two_le_terminalAccuracyFactor : 2 ≤ terminalAccuracyFactor := by
   unfold terminalAccuracyFactor; norm_num
-
-
 
 structure SingularTimeReference (F : GeneralizedRicciFlowData.{u}) (T : ℝ)
     (M : Type u) [TopologicalSpace M]
@@ -104,9 +71,6 @@ noncomputable def SingularTimeReference.scalar
     (R : SingularTimeReference F T M) (t : ℝ) (x : M) : ℝ :=
   (R.flow.connection t).scalarCurvature x
 
-
-
-
 def SingularTimeReference.regularLimitSet
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     {M : Type u} [TopologicalSpace M]
@@ -115,8 +79,6 @@ def SingularTimeReference.regularLimitSet
     (R : SingularTimeReference F T M) : Set M :=
   {x | ∃ B : ℝ, ∀ t₀ : ℝ, t₀ < T →
     ∃ t : ℝ, t₀ < t ∧ t ∈ Set.Ico R.tMinus T ∧ R.scalar t x ≤ B}
-
-
 
 noncomputable def singularMetricPullback
     {X : Type u} [TopologicalSpace X]
@@ -142,8 +104,6 @@ noncomputable def singularMetricCoefficient
     (p : EuclideanSpace ℝ (Fin 3)) : ℝ :=
   singularTensorCoefficient (fun x v ↦ g.inner x (v 0) (v 1)) q a b p
 
-
-
 def CompactSingularMetricLimit
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     {M X : Type u} [TopologicalSpace M]
@@ -162,8 +122,6 @@ def CompactSingularMetricLimit
                 q a b) p -
             iteratedFDeriv ℝ r (singularMetricCoefficient gT q a b) p‖ < ε
 
-
-
 noncomputable def singularMetricJetErrorSquared
     {X : Type u} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -172,10 +130,6 @@ noncomputable def singularMetricJetErrorSquared
   ∑ j ∈ Finset.range (k + 1),
     (g₀.tensorNorm (D₀.iteratedCovariantTensorDerivative
       (fun y v ↦ B y v - g₀.inner y (v 0) (v 1)) j) x) ^ 2
-
-
-
-
 
 noncomputable def generalizedCylinderPullback
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -188,8 +142,6 @@ noncomputable def generalizedCylinderPullback
       (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) coordinate z v)
       (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) coordinate z w)
     else EvolvingRoundCylinderMetric s
-
-
 
 structure GeneralizedStrongNeck (F : GeneralizedRicciFlowData.{u})
     (t epsilon : ℝ) where
@@ -229,7 +181,6 @@ structure GeneralizedStrongNeck (F : GeneralizedRicciFlowData.{u})
   metric_comparison : RoundCylinderFamilyClose epsilon (Set.Ioc (-1 : ℝ) 0)
     (generalizedCylinderPullback time_cylinder coordinate_map)
 
-
 structure SingularCComponent (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (C : ℝ) where
   constant_pos : 0 < C
@@ -250,8 +201,6 @@ structure SingularCComponent (g : RiemannianMetric 3 M)
       intrinsicDiameter g carrier
   diameter_upper : intrinsicDiameter g carrier < ENNReal.ofReal
     (C * sInf (Set.range (fun x : carrier ↦ D.scalarCurvature x.1 ^ (-1 / 2 : ℝ))))
-
-
 
 structure SingularRoundComponent (g : RiemannianMetric 3 M)
     (epsilon : ℝ) where
@@ -283,8 +232,6 @@ structure SingularRoundComponent (g : RiemannianMetric 3 M)
     ∀ x : model.carrier, singularMetricJetErrorSquared model_metric model_connection
       (fun y v ↦ scale * singularMetricPullback g forward y v) ⌊epsilon⁻¹⌋₊ x ≤ bound
 
-
-
 inductive GeneralizedCanonicalControl
     {F : GeneralizedRicciFlowData.{u}} (t : ℝ) (x : (F.slice t).carrier)
     (epsilon C : ℝ) : Prop
@@ -295,10 +242,6 @@ inductive GeneralizedCanonicalControl
   | component (N : SingularCComponent (F.metric t) (F.connection t) C)
       (contains : x ∈ N.carrier)
   | round (N : SingularRoundComponent (F.metric t) epsilon) (contains : x ∈ N.carrier)
-
-
-
-
 
 structure SingularTimeAssumptions
     (F : GeneralizedRicciFlowData.{u}) (T : ℝ)
@@ -331,13 +274,9 @@ structure SingularTimeAssumptions
   epsilon_pos : 0 < epsilon
   epsilon_lt_quarter : epsilon < 1 / 4
 
-
-
-
   terminal_epsilon_le_threshold : terminalAccuracyFactor * epsilon ≤ 1 / 200
   constant : ℝ
   constant_pos : 0 < constant
-
 
   analytic_constant : ℝ
   analytic_constant_pos : 0 < analytic_constant
@@ -356,11 +295,6 @@ structure SingularTimeAssumptions
   canonical_control : ∀ t ∈ F.interval, (t = 0 ∨ t ∉ singularTimes) →
     ∀ x : (F.slice t).carrier,
       r₀⁻¹ ^ 2 ≤ F.scalar ⟨t, x⟩ → GeneralizedCanonicalControl t x epsilon constant
-
-
-
-
-
 
 structure GeneralizedFlowExtension
     (F : GeneralizedRicciFlowData.{u}) (T : ℝ) where
@@ -400,8 +334,6 @@ abbrev TerminalStrongNeck
     (E : GeneralizedFlowExtension F T) (epsilon : ℝ) :=
   GeneralizedStrongNeck E.extended T epsilon
 
-
-
 structure StrongHorn
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     (E : GeneralizedFlowExtension F T) (epsilon : ℝ) where
@@ -427,7 +359,6 @@ structure StrongHorn
   every_point_neck : ∀ x ∈ carrier,
     ∃ N : TerminalStrongNeck E epsilon, N.center = x
 
-
 structure StrongDoubleHorn
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     (E : GeneralizedFlowExtension F T) (epsilon : ℝ) where
@@ -442,7 +373,6 @@ structure StrongDoubleHorn
     Function.Bijective (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) parameterization z)
   every_point_neck : ∀ x ∈ carrier,
     ∃ N : TerminalStrongNeck E epsilon, N.center = x
-
 
 structure CappedHorn
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
@@ -468,8 +398,6 @@ structure TerminalComponentPath
   path_to : ∀ x ∈ component,
     ∃ γ : Path basepoint x, Set.range γ ⊆ component
 
-
-
 structure TerminalEnd
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     {E : GeneralizedFlowExtension F T} (K : TerminalComponentPath E) where
@@ -485,11 +413,6 @@ abbrev TerminalCanonicalNeighborhood
     (E : GeneralizedFlowExtension F T)
     (x : (E.extended.slice T).carrier) (epsilon C : ℝ) :=
   GeneralizedCanonicalControl (F := E.extended) T x epsilon C
-
-
-
-
-
 
 structure SingularLimitConclusion
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
@@ -545,13 +468,10 @@ structure SingularLimitConclusion
       TerminalCanonicalNeighborhood extension x (terminalAccuracyFactor * H.epsilon)
         (2 * H.constant)
 
-
 def HornBoundaryBelow
     {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
     {E : GeneralizedFlowExtension F T} (H : StrongHorn E epsilon) (rho : ℝ) : Prop :=
   ∀ x ∈ H.boundary_sphere, (E.extended.connection T).scalarCurvature x ≤ rho⁻¹ ^ 2
-
-
 
 structure HornEndCut
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta : ℝ}

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M01.NormalizationMetric
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

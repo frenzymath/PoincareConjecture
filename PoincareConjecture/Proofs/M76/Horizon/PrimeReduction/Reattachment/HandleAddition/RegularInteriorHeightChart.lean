@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNonvertexHeightChart
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLevelSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace Geometry.SimplicialComplex
@@ -146,4 +137,3 @@ theorem exists_regular_height_charts_preserving_plane
       B hBL hyB (fun z hz => (hBs.subset hz).2)
 
 end Geometry.SimplicialComplex
-

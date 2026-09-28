@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceChartsBuffers
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalSourceJets_curvature (P : RicciFlowCurvatureTheory.{u})
     {τ R H ρ : ℝ} (hτ : 0 < τ) (hH : 0 < H) (hρ : 0 < ρ) (hρR : 2 * ρ < R)

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Spacetime
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Connection.Variation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Jets
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -331,8 +325,6 @@ private theorem exists_normal_field {g : RiemannianMetric n M}
   refine ⟨LeviCivitaData.fieldFromCenteredCoordinates x Y, hYx, ?_, hn⟩
   intro y hy
   exact (LeviCivitaData.contMDiffAt_fieldFromCenteredCoordinates x hY.contDiffAt hy).contMDiffWithinAt
-
-
 
 theorem hasDerivAt_curvatureTensor_connectionVariation
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

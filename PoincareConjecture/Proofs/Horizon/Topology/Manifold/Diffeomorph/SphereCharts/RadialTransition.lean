@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,12 +50,9 @@ private theorem threeSphereStereographic_neg_symm (v : UnitThreeSphere)
 private noncomputable def halfScale : E3 ≃ₜ E3 :=
   Homeomorph.smulOfNeZero (1 / 2 : ℝ) (by norm_num)
 
-
-
 noncomputable def radialSphereChart (v : UnitThreeSphere) :
     OpenPartialHomeomorph UnitThreeSphere E3 :=
   (threeSphereStereographic v).trans halfScale.toOpenPartialHomeomorph
-
 
 noncomputable def oppositeRadialSphereChart (v : UnitThreeSphere) :
     OpenPartialHomeomorph UnitThreeSphere E3 :=
@@ -97,11 +86,9 @@ noncomputable def oppositeRadialSphereChart (v : UnitThreeSphere) :
     (oppositeRadialSphereChart v).target = univ := by
   simp [oppositeRadialSphereChart]
 
-
 theorem radialSphereChart_source_union (v : UnitThreeSphere) :
     (radialSphereChart v).source ∪ (oppositeRadialSphereChart v).source = univ := by
   simpa using threeSphereStereographic_source_union_antipode v
-
 
 theorem radialSphereChart_transition (v : UnitThreeSphere) (x : E3) (hx : x ≠ 0) :
     oppositeRadialSphereChart v ((radialSphereChart v).symm x) =
@@ -113,8 +100,6 @@ theorem radialSphereChart_transition (v : UnitThreeSphere) (x : E3) (hx : x ≠ 
   match_scalars
   field_simp
   ring
-
-
 
 theorem radialSphereChart_transition_exp (v : UnitThreeSphere)
     (q : UnitTwoSphere) (t : ℝ) :
@@ -128,7 +113,6 @@ theorem radialSphereChart_transition_exp (v : UnitThreeSphere)
   congr 1
   field_simp
 
-
 theorem radialSphereChart_transition_norm (v : UnitThreeSphere)
     (x : E3) (hx : x ≠ 0) :
     ‖oppositeRadialSphereChart v ((radialSphereChart v).symm x)‖ = ‖x‖⁻¹ := by
@@ -138,7 +122,6 @@ theorem radialSphereChart_transition_norm (v : UnitThreeSphere)
 
 @[simp] theorem radialSphereChart_symm_zero (v : UnitThreeSphere) :
     (radialSphereChart v).symm 0 = -v := by simp
-
 
 theorem radialSphereChart_transition_source (v : UnitThreeSphere) :
     ((radialSphereChart v).symm.trans (oppositeRadialSphereChart v)).source =
@@ -156,7 +139,6 @@ theorem radialSphereChart_transition_source (v : UnitThreeSphere) :
     rw [(radialSphereChart v).right_inv (by simp)] at h
     simpa using h
 
-
 theorem contMDiffOn_radialSphereChart (v : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (radialSphereChart v)
       (radialSphereChart v).source := by
@@ -169,7 +151,6 @@ theorem contMDiffOn_radialSphereChart (v : UnitThreeSphere) :
     radialSphereChart_source]
   simpa only [Function.comp_def, threeSphereStereographic_source] using
     hs.comp_contMDiffOn h
-
 
 theorem contMDiffOn_radialSphereChart_symm (v : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (radialSphereChart v).symm
@@ -185,7 +166,6 @@ theorem contMDiffOn_radialSphereChart_symm (v : UnitThreeSphere) :
     contMDiffOn_univ]
   exact h.comp hs
 
-
 theorem contMDiffOn_oppositeRadialSphereChart (v : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (oppositeRadialSphereChart v)
       (oppositeRadialSphereChart v).source := by
@@ -198,7 +178,6 @@ theorem contMDiffOn_oppositeRadialSphereChart (v : UnitThreeSphere) :
     simpa [neg_eq_iff_eq_neg] using hx
   exact (contDiff_neg.contMDiff.comp_contMDiffOn
     ((contMDiffOn_radialSphereChart v).comp hn.contMDiffOn hm))
-
 
 theorem contMDiffOn_oppositeRadialSphereChart_symm (v : UnitThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (oppositeRadialSphereChart v).symm
@@ -219,12 +198,9 @@ private theorem trans_ofSet_symm_apply {X Y : Type*} [TopologicalSpace X]
     [TopologicalSpace Y] (e : OpenPartialHomeomorph X Y) (s : Set Y) (hs : IsOpen s)
     (x : Y) : (e.trans (OpenPartialHomeomorph.ofSet s hs)).symm x = e.symm x := rfl
 
-
-
 noncomputable def radialSphereBallChart (v : UnitThreeSphere) (r : ℝ) :
     OpenPartialHomeomorph UnitThreeSphere E3 :=
   (radialSphereChart v).trans (OpenPartialHomeomorph.ofSet (ball 0 (Real.exp r)) isOpen_ball)
-
 
 noncomputable def oppositeRadialSphereBallChart (v : UnitThreeSphere) (r : ℝ) :
     OpenPartialHomeomorph UnitThreeSphere E3 :=
@@ -267,8 +243,6 @@ noncomputable def oppositeRadialSphereBallChart (v : UnitThreeSphere) (r : ℝ) 
       (oppositeRadialSphereChart v).symm x :=
   trans_ofSet_symm_apply _ _ _ x
 
-
-
 theorem radialSphereBallChart_source_union (v : UnitThreeSphere) (r : ℝ) (hr : 0 < r) :
     (radialSphereBallChart v r).source ∪
       (oppositeRadialSphereBallChart v r).source = univ := by
@@ -307,8 +281,6 @@ theorem radialSphereBallChart_source_union (v : UnitThreeSphere) (r : ℝ) (hr :
   have hyle : 1 ≤ ‖radialSphereChart v p‖ := hR.le.trans hyn
   exact ((inv_le_one₀ ((Real.exp_pos r).trans_le hyn)).mpr hyle).trans_lt hR
 
-
-
 theorem radialSphereBallChart_transition_source (v : UnitThreeSphere) (r : ℝ) :
     ((radialSphereBallChart v r).symm.trans
       (oppositeRadialSphereBallChart v r)).source =
@@ -337,14 +309,12 @@ theorem radialSphereBallChart_transition_source (v : UnitThreeSphere) (r : ℝ) 
     exact (inv_lt_comm₀ (norm_pos_iff.mpr hx0) (Real.exp_pos r)).mpr
       (by simpa only [Real.exp_neg] using hxr)
 
-
 theorem radialSphereBallChart_transition (v : UnitThreeSphere) (r : ℝ)
     (x : E3) (hx : x ≠ 0) :
     oppositeRadialSphereBallChart v r ((radialSphereBallChart v r).symm x) =
       (‖x‖ ^ 2)⁻¹ • x :=
   by simpa only [oppositeRadialSphereBallChart_apply, radialSphereBallChart_symm_apply]
     using radialSphereChart_transition v x hx
-
 
 theorem radialSphereBallChart_contMDiff (v : UnitThreeSphere) (r : ℝ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (radialSphereBallChart v r)
@@ -358,7 +328,6 @@ theorem radialSphereBallChart_contMDiff (v : UnitThreeSphere) (r : ℝ) :
   · rw [show ⇑(radialSphereBallChart v r).symm = (radialSphereChart v).symm from
       funext (radialSphereBallChart_symm_apply v r)]
     exact (contMDiffOn_radialSphereChart_symm v).mono (by simp)
-
 
 theorem oppositeRadialSphereBallChart_contMDiff (v : UnitThreeSphere) (r : ℝ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (oppositeRadialSphereBallChart v r)
@@ -374,8 +343,6 @@ theorem oppositeRadialSphereBallChart_contMDiff (v : UnitThreeSphere) (r : ℝ) 
       (oppositeRadialSphereChart v).symm from
         funext (oppositeRadialSphereBallChart_symm_apply v r)]
     exact (contMDiffOn_oppositeRadialSphereChart_symm v).mono (by simp)
-
-
 
 theorem exists_diffeomorph_unitThreeSphere_of_radial_balls
     {Y : Type*} [TopologicalSpace Y] [ChartedSpace E3 Y]

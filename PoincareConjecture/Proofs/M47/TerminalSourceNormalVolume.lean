@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceNormalCharts
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalTransfer
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem terminalSourceNormal_center_volume
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (p0 p : M)

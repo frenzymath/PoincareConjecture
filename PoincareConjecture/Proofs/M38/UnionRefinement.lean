@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.OneCapAssembly
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 def restrictRegions {A B : GeneralizedSliceCarrier.{u}}
     {U : Set A.carrier} {V : Set B.carrier}
@@ -34,8 +25,6 @@ def restrictRegions {A B : GeneralizedSliceCarrier.{u}}
   map_smooth := e.map_smooth.mono hW
   inverse_smooth := e.inverse_smooth.mono
     (fun _ hy => e.map_image.subset (Set.image_mono hW hy))
-
-
 
 noncomputable def sumRefinement {m n : ℕ}
     {piecesB : Fin m → GeneralizedSliceCarrier.{u}}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.BoundaryBasics
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +10,6 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
 
-
 structure IsSimplePolygon (p : Polygon E n) : Prop where
 
   three_le : 3 ≤ n
@@ -29,7 +18,6 @@ structure IsSimplePolygon (p : Polygon E n) : Prop where
 
   edges_inter : ∀ i j, i ≠ j → p.edgeSet ℝ i ∩ p.edgeSet ℝ j ⊆
     {p i, p (finRotate n i)} ∩ {p j, p (finRotate n j)}
-
 
 theorem IsSimplePolygon.hasNondegenerateEdges {p : Polygon E n} (hp : IsSimplePolygon p) :
     p.HasNondegenerateEdges := by
@@ -52,11 +40,9 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
 theorem IsSimplePolygon.edgePath_injective {p : Polygon E n} (hp : IsSimplePolygon p)
     (i : Fin n) : Function.Injective (p.edgePath ℝ i) :=
   AffineMap.lineMap_injective ℝ (hp.hasNondegenerateEdges i)
-
 
 theorem IsSimplePolygon.edge_inter_eq {p : Polygon E n} (hp : IsSimplePolygon p)
     {i j : Fin n} (hij : i ≠ j) :
@@ -72,7 +58,6 @@ theorem IsSimplePolygon.edge_inter_eq {p : Polygon E n} (hp : IsSimplePolygon p)
     · exact polygon_left_mem_edgeSet p j
     · exact hx ▸ polygon_right_mem_edgeSet p j
 
-
 theorem IsSimplePolygon.vertex_mem_edgeSet_iff {p : Polygon E n} (hp : IsSimplePolygon p)
     (k i : Fin n) : p k ∈ p.edgeSet ℝ i ↔ k = i ∨ k = finRotate n i := by
   constructor
@@ -86,7 +71,6 @@ theorem IsSimplePolygon.vertex_mem_edgeSet_iff {p : Polygon E n} (hp : IsSimpleP
   · rintro (rfl | rfl)
     · exact polygon_left_mem_edgeSet p _
     · exact polygon_right_mem_edgeSet p i
-
 
 theorem IsSimplePolygon.edgePath_notMem_other_edge {p : Polygon E n}
     (hp : IsSimplePolygon p) {i j : Fin n} (hij : i ≠ j) {t : ℝ} (ht : t ∈ Ioo 0 1) :

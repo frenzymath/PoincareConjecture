@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphSect
 import Mathlib.Topology.CompactOpen
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set StdSimplexCore
 
@@ -89,8 +81,6 @@ theorem edgePath_extend_bridge_coordinate (ends : I → Bool → V) (i : I)
       (faceCoordinate (J := Coordinate V I) _ (Sum.inr (i, true)) x : ℝ) / 4) : Ambient V I) = x := by
   rw [edgePath_extend_bridge]
   exact face_lineMap_coordinate (by simp) x
-
-
 
 theorem homotopic_id_of_collapsed_segments (ends : I → Bool → V)
     (g : C(carrier ends, carrier ends))

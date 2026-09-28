@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialTransversality
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SphereProjection
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem coordinate_map_mfderiv_injective (N : EpsilonNeck g)
     {z : RoundCylinderSpace} (hz : z ∈ N.cylinderDomain) :
     Function.Injective
@@ -41,8 +29,6 @@ theorem coordinate_map_mfderiv_injective (N : EpsilonNeck g)
     contMDiffOn_invFun := N.coordinate_inverse_smooth }
   have hΦ := Φ.isLocalDiffeomorphAt ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ hz
   exact (hΦ.mfderivToContinuousLinearEquiv (by simp)).injective
-
-
 
 theorem coordinate_product_mfderiv_right_inverse (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x) :
@@ -59,9 +45,6 @@ theorem coordinate_product_mfderiv_right_inverse (N : EpsilonNeck g)
   have hcomp := mfderiv_comp x hm hi
   rw [heq.mfderiv_eq, mfderiv_id] at hcomp
   exact (congrArg (fun L => L v) hcomp).symm
-
-
-
 
 theorem slice_projection_isLocalDiffeomorph_of_transverse
     (N N' : EpsilonNeck g) {t : ℝ} (ht : t ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹)
@@ -130,9 +113,6 @@ theorem slice_projection_isLocalDiffeomorph_of_transverse
     exact congrArg Prod.fst hv0
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := D.toLinearMap)).mp hinj⟩
 
-
-
-
 theorem exists_contained_slice_graph :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -156,9 +136,6 @@ theorem exists_contained_slice_graph :
       (N'.coordinate_map_mem ⟨mem_univ q, ht⟩)).1)
   exact ⟨N.exists_coordinate_graph_of_slice_projection_localDiffeomorph N' ht hsub hlocal,
     N.slice_isotopic_of_projection_localDiffeomorph N' ht hsub hlocal⟩
-
-
-
 
 theorem exists_contained_sphere_isotopy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

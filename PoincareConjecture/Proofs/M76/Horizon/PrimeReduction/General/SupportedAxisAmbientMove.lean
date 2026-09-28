@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedArcMove
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.SupportedMoveContactSet
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalSupportedNormalExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_original_supported_axis_ambient_move_with_support_coordinates
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -125,8 +110,6 @@ theorem exists_original_supported_axis_ambient_move_with_support_coordinates
   refine ⟨F, (B.symm ∘ T) '' (D ×ˢ Icc (-r) r), hcompact, hCU, ⟨r, hr, rfl, hTS⟩, hFC, hFU,
     hFPL, hFinv, hFimage, havoidX, ?_⟩
   simpa only [j] using hdrop
-
-
 
 theorem exists_original_supported_axis_ambient_move
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

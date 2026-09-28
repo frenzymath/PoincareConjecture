@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CapTubeOverlapChart
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CapStandardEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capTubeAttachment_exists_standardOverlapEnd_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

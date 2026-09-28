@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.Degenerate
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Geodesic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +40,6 @@ theorem hasDerivAt_deriv_potential_geodesic (D : LeviCivitaData g)
   rw [hnorm] at hs
   convert hs using 1
   ring
-
-
 
 theorem hasDerivAt_second_deriv_potential_geodesic (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)

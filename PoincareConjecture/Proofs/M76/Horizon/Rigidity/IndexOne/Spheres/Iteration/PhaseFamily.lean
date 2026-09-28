@@ -3,25 +3,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Topology.
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Components.Classification
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.Geometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
-
 
 theorem exists_phase_family_after_closed_excision
     {X ι : Type*} [TopologicalSpace X]
@@ -119,8 +104,6 @@ theorem exists_phase_family_after_closed_excision
   · intro x hx
     exact hpoint hx
 
-
-
 theorem exists_finite_connected_cover_decrease
     {X : Type*} [TopologicalSpace X] {P K : Set X} {n : ℕ}
     (T : Fin n → Set X) (hcover : (⋃ i, T i) = P)
@@ -157,8 +140,6 @@ theorem exists_finite_connected_cover_decrease
     rw [equiv.apply_symm_apply]
     exact hxi
 
-
-
 theorem exists_finite_connected_cover_union
     {X : Type*} [TopologicalSpace X] {P Q : Set X} {n m : ℕ}
     (T : Fin n → Set X) (U : Fin m → Set X)
@@ -174,9 +155,6 @@ theorem exists_finite_connected_cover_union
     rcases h : equiv i with j | j
     · simpa only [V, h, Sum.elim_inl] using hT j
     · simpa only [V, h, Sum.elim_inr] using hU j
-
-
-
 
 theorem exists_finite_connected_cover_union_of_models
     {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -204,8 +182,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
-
 
 theorem PairedSourceGeometry.exists_finite_connected_phase_cover
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

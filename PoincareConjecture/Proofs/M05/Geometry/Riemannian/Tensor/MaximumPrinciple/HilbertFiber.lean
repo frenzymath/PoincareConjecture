@@ -1,18 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Norm
 import Mathlib.LinearAlgebra.Multilinear.Basis
 import Mathlib.Analysis.InnerProductSpace.PiL2
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +8,6 @@ set_option backward.isDefEq.respectTransparency false
 open scoped BigOperators InnerProductSpace
 
 namespace PoincareConjecture
-
 
 def TensorFiber (E : Type*) [AddCommGroup E] [Module ℝ E] (k : ℕ) :=
   MultilinearMap ℝ (fun _ : Fin k => E) ℝ
@@ -34,7 +21,6 @@ instance : AddCommGroup (TensorFiber E k) :=
 
 instance : Module ℝ (TensorFiber E k) :=
   inferInstanceAs (Module ℝ (MultilinearMap ℝ (fun _ : Fin k => E) ℝ))
-
 
 def toMultilinear : TensorFiber E k ≃ₗ[ℝ] MultilinearMap ℝ (fun _ : Fin k => E) ℝ :=
   LinearEquiv.refl ℝ _
@@ -58,7 +44,6 @@ section Hilbert
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 noncomputable def components (k : ℕ) : TensorFiber E k →ₗ[ℝ]
     EuclideanSpace ℝ (Fin k → Fin (Module.finrank ℝ E)) where
@@ -84,7 +69,6 @@ instance : FiniteDimensional ℝ (TensorFiber E k) :=
 
 instance : CompleteSpace (TensorFiber E k) := FiniteDimensional.complete ℝ _
 
-
 theorem inner_eq_sum {ι : Type*} [Fintype ι] (b : OrthonormalBasis ι ℝ E)
     (T S : TensorFiber E k) :
     ⟪T, S⟫_ℝ = ∑ a : Fin k → ι, T (fun i => b (a i)) * S (fun i => b (a i)) := by
@@ -94,7 +78,6 @@ theorem inner_eq_sum {ι : Type*} [Fintype ι] (b : OrthonormalBasis ι ℝ E)
     RCLike.inner_apply, conj_trivial]
   simpa only [mul_comm] using multilinear_sum_mul_orthonormalBasis_eq
     (toMultilinear T) (toMultilinear S) (stdOrthonormalBasis ℝ E) b
-
 
 theorem norm_eq_sqrt_sum {ι : Type*} [Fintype ι] (b : OrthonormalBasis ι ℝ E)
     (T : TensorFiber E k) :
@@ -109,7 +92,6 @@ section Transport
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
 
 noncomputable def transportLinear (e : E ≃ₗᵢ[ℝ] F) (k : ℕ) :
     TensorFiber E k ≃ₗ[ℝ] TensorFiber F k :=
@@ -126,15 +108,12 @@ lemma transportLinear_inner (e : E ≃ₗᵢ[ℝ] F) (T S : TensorFiber E k) :
     inner_eq_sum (stdOrthonormalBasis ℝ E)]
   simp only [transportLinear_apply, OrthonormalBasis.map_apply, e.symm_apply_apply]
 
-
 noncomputable def transport (e : E ≃ₗᵢ[ℝ] F) (k : ℕ) :
     TensorFiber E k ≃ₗᵢ[ℝ] TensorFiber F k :=
   LinearEquiv.isometryOfInner (transportLinear e k) (transportLinear_inner e)
 
 @[simp] lemma transport_apply (e : E ≃ₗᵢ[ℝ] F) (T : TensorFiber E k)
     (v : Fin k → F) : transport e k T v = T (fun i => e.symm (v i)) := rfl
-
-
 
 theorem inner_transport_eq_sum {ι : Type*} [Fintype ι]
     (b : OrthonormalBasis ι ℝ E) (e : E ≃ₗᵢ[ℝ] F)

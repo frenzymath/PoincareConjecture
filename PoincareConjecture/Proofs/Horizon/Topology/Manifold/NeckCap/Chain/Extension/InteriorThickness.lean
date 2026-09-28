@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.CompactScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem edist_lower_of_axis_le_of_not_mem_carrier {p x : M} {r : ℝ}
     (hp : p ∈ N.carrier) (hr : 0 ≤ r) (hrL : r < N.epsilon⁻¹)
@@ -80,8 +69,6 @@ theorem edist_lower_of_axis_le_of_not_mem_carrier {p x : M} {r : ℝ}
   rw [closure_Ioo hrL.ne] at hclosure
   exact hclosure ⟨hrL.le, le_rfl⟩
 
-
-
 theorem quarter_width_le_edist_of_mem_middle_half {p x : M}
     (hp : p ∈ N.region (-N.epsilon⁻¹ / 2) (N.epsilon⁻¹ / 2))
     (hx : x ∉ N.carrier) :
@@ -97,8 +84,6 @@ theorem quarter_width_le_edist_of_mem_middle_half {p x : M}
       (by linarith) haxis hx)
   have h := mul_le_mul_of_nonneg_left hroot (mul_nonneg N.scale_pos.le hi.le)
   nlinarith
-
-
 
 theorem closure_iUnion_region_subset {ι : Type*}
     (N : ι → EpsilonNeck g) {epsilon : ℝ} (hε : ∀ i, (N i).epsilon = epsilon)
@@ -145,8 +130,6 @@ theorem closure_iUnion_region_subset {ι : Type*}
       exact mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_right hscale hroot.le)
         (sub_nonneg.mpr hrL.le)
     exact (not_lt_of_ge hle) hpball.1
-
-
 
 theorem closure_iUnion_middle_half_subset {ι : Type*}
     (N : ι → EpsilonNeck g) {epsilon : ℝ} (hε : ∀ i, (N i).epsilon = epsilon) :

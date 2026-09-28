@@ -1,24 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Noncollapse
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Gluing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,11 +28,6 @@ private theorem attached_native_time_mem_half
     div_nonpos_of_nonpos_of_nonneg
       (mul_nonpos_of_nonpos_of_nonneg (sub_nonpos.mpr hs.2) hR.le) hq.le⟩
   nlinarith [hslope.trans hhalf]
-
-
-
-
-
 
 theorem exists_noncollapsed_cylinder_backward_extension_of_strongNecks
     (hM04 : RicciFlowCurvatureTheory.{u}) :

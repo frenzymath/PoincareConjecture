@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedBirthCapHeight
 import PoincareConjecture.Proofs.M47.SeedNonnegativeVolume
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 noncomputable def birthCapSeedDensity (g0 : StandardInitialMetric) : ℝ :=
   (M46.canonicalSphereVolumeFloor / 512) / (6 * (g0.cylindrical_end.radius + 5) + 3) ^ 3
@@ -34,9 +23,6 @@ theorem birthCapSeedDensity_pos (g0 : StandardInitialMetric) : 0 < birthCapSeedD
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
-
 
 theorem seed_birth_cap_volume [CompactSpace (slice T).carrier]
     (E : SurgeryEventData g0 K P slice metric T) (D : LeviCivitaData (metric T))

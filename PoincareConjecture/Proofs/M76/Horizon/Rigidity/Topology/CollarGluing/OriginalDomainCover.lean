@@ -2,15 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.Coll
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.CollapseInjection
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBoundaryProduct
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem PLDomain.nonempty_openFrontierCollapse
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

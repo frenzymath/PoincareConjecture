@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardContraction
 import PoincareConjecture.Proofs.M35.RadialGauge.SlabSourceExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem heatDuhamel_c1_difference_bound_on_slab {F : Type*}
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -51,8 +40,6 @@ theorem heatDuhamel_c1_difference_bound_on_slab {F : Type*}
     (fun s hs y => by rw [slabSourceExtension_of_mem (hsub hs),
       slabSourceExtension_of_mem (hsub hs)]; exact hfg s hs y) x
   simpa only [heatDuhamel_slabSourceExtension ht] using h
-
-
 
 theorem gaugeDuhamel_c1_difference_bound_on_slab
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u v : ℝ → V → ℝ}
@@ -103,8 +90,6 @@ theorem gaugeDuhamel_c1_difference_bound_on_slab
     nlinarith [h, h1, h2]
   exact heatDuhamel_c1_difference_bound_on_slab hS hS (by positivity) ht
     hmu hmv hru hrv hbu hbv hfu hfv hdiff x
-
-
 
 theorem gaugePicard_slab_geometric
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {eta B L C T : ℝ}

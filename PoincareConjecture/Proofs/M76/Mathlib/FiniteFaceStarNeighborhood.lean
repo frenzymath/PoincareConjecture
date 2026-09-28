@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_minimal_faceStar_neighborhood_of_finite (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (x : K.space) :
@@ -71,9 +58,6 @@ theorem exists_minimal_faceStar_neighborhood_of_finite (K : SimplicialComplex �
   exact convexHull_subset_space
     (show t ∈ (K.closedFaceStar s).faces from
       ⟨ht, by simpa only [Finset.union_eq_right.mpr hst] using ht⟩) hyt
-
-
-
 
 theorem exists_faceStar_neighborhood_of_finite (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (x : K.space) :

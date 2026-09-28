@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.NestedDiskAnnulus
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLSphereDiskComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

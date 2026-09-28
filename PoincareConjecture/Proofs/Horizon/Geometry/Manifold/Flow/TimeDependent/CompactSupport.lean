@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Pr
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +26,6 @@ private theorem isProperMap_euclidean_norm_sq :
   have hsq : ‖x‖ ^ 2 ≤ R := by
     simpa only [Real.norm_eq_abs, abs_of_nonneg (sq_nonneg (‖x‖))] using hR _ hx
   nlinarith [norm_nonneg x, abs_nonneg R, le_abs_self R]
-
-
 
 theorem exists_smooth_global_timeDependentFlow_of_compact_spatial_support
     {J : Set ℝ} (hJ : IsOpen J) (hcJ : Convex ℝ J)

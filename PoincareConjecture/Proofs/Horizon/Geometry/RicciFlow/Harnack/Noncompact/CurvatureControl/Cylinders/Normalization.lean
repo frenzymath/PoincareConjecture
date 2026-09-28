@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.TimeBuffer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Cylinders
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem curvatureTensorNorm_le_on_two_time_ball_of_terminal_cylinder
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -46,8 +35,6 @@ theorem curvatureTensorNorm_le_on_two_time_ball_of_terminal_cylinder
   exact ((F.connection t).curvatureTensorNorm_le_scalarCurvature
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) x (hoperator t ht x)).trans
       (mul_le_mul_of_nonneg_left (hscalar t ht x hxL) (sq_nonneg _))
-
-
 
 theorem exists_terminal_scalar_positive_scale_buffer
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m) :

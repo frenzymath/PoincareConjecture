@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalization
 import PoincareConjecture.Proofs.M63.Adapters
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.DistLEIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -27,9 +18,6 @@ open M62
 variable {n : Nat} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
-
 
 theorem m63CurvatureSquared_closed_oscillation_of_inverse_age
     (F : RicciFlow n M (Icc a b)) (c : Real → Real → M)

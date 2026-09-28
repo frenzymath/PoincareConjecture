@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_CenteredInverse
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_RecentNeck
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Normalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,24 +19,15 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 
 variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
 
-
-
 noncomputable def recentCenteredMap (z : RoundCylinderSpace) : E → I.recent_carrier.carrier :=
   I.recent_patch.coordinate ∘ centeredCylinderLift z.1 z.2
-
-
 
 noncomputable def olderCenteredCoordinate (z : RoundCylinderSpace) : RoundCylinderSpace :=
   I.older_neck.neck.coordinate_inverse (I.identify (I.recent_patch.coordinate z))
 
-
-
 noncomputable def olderCenteredMap (z : RoundCylinderSpace) : E → I.older_carrier.carrier :=
   centeredNeckLift I.older_neck.neck
     (I.olderCenteredCoordinate z).1 (I.olderCenteredCoordinate z).2
-
-
-
 
 theorem exists_joining_centered_transition
     (hpos : 0 < beta * epsilon) (hsmall : beta * epsilon < 1 / 2)

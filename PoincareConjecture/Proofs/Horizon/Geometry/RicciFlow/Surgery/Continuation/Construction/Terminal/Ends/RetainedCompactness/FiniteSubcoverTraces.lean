@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.RetainedCompactness.FiniteComponents
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,8 +35,6 @@ theorem exists_component_trace_without_finite_cover (K : CompactExhaustion X)
     · obtain ⟨i, hi, hxi⟩ := mem_iUnion₂.mp hxV
       exact Or.inr (mem_iUnion₂.mpr ⟨i,
         Finset.mem_biUnion.mpr ⟨⟨p, hp⟩, Finset.mem_univ _, hi⟩, hxi⟩)
-
-
 
 theorem exists_nested_component_traces_without_finite_cover
     (K : CompactExhaustion X) (V : ι → Set X) {A : Set X}

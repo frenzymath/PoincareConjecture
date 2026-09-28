@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.CompactTwoFiberCell
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.NestedFiberBallPairs
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.SpherePunctureCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +10,6 @@ namespace ContinuousMap
 
 variable {X Y : Type*} [MetricSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y] [RegularSpace Y]
-
-
-
-
 
 theorem exists_sphere_two_fiber_cellular_sequences (q : C(X, Y))
     (hq : Function.Surjective q) (a b : Y) (hab : a ≠ b)

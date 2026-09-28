@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteFrontierComponents
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_original_frontier_components
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

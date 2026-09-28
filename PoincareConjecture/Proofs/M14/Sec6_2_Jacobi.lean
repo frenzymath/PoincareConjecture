@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGlobalPair
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPackaging
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem exists_jacobiField_unique
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -55,17 +43,12 @@ theorem exists_jacobiField_unique
     (Prod.ext (hY'.trans hY₀.symm) (hP'.trans hP₀.symm)) s hs
   exact congrArg Prod.fst heq
 
-
-
 theorem jacobiStatement
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     M14JacobiStatement G := by
   intro T τ₁ τ₂ x y p R W E₀ heuler
   obtain ⟨Q, hzero, hW, hres, _⟩ := exists_jacobiField_unique R hM04 hM12 0 W
   exact ⟨Q, hzero, hW, hres⟩
-
-
-
 
 theorem initialJacobiStatement
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n) :

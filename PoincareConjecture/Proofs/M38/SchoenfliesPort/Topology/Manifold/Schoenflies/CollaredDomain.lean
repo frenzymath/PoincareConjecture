@@ -8,12 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Eucl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Models
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Connected
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -21,17 +15,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -81,8 +64,6 @@ private theorem halfspace_chart_of_collar
   · intro y hy
     change 0 ≤ (c.symm y).2 ↔ y ∈ K
     exact (hK y hy.1.1).symm
-
-
 
 theorem ball_neighborhood_of_compact_collar_side
     {K : Set E3} (hK : IsCompact K) (hregular : closure (interior K) = K)

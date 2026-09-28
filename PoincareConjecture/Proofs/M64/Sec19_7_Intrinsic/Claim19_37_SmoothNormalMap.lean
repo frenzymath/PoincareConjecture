@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_SmoothEndpoint
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +11,6 @@ open scoped Topology Manifold ContDiff Bundle
 namespace PoincareConjecture
 
 open RiemannianMetric
-
-
-
 
 theorem m64Intrinsic_normal_endpoint_eq_geodesic
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -68,9 +52,6 @@ theorem m64Intrinsic_normal_endpoint_eq_geodesic
     (t₀ := 0) (by simp) (intrinsicAnnulusBoundary 1 a)
     (by simp) (by simpa only [mul_zero, hinit] using heta0.symm) hvel
   simpa only [mul_one, heta1] using (heq 1 (by simp)).self_of_nhds.symm
-
-
-
 
 theorem m64Intrinsic_exists_smooth_extended_normal_map (N : IntrinsicAnnulus) :
     ∃ (G : RiemannianMetric 2 AnnulusCoordinates)

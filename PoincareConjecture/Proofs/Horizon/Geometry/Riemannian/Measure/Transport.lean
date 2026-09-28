@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -23,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M]
   [IsManifold (𝓡 1) ∞ M]
-
-
 
 theorem measurePreserving_volumeMeasure_real (g : RiemannianMetric 1 M)
     (e : M ≃ ℝ) (he : ∀ x y, EDist.edist (e x) (e y) = g.edist x y) :

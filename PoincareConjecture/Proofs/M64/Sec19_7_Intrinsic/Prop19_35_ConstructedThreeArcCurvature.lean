@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_UnorientedThreeArcTriangulation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcCurvatureLowerBound
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,12 +9,6 @@ open Set MeasureTheory
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_constructed_three_arc_region_curvature_lower_bound
     (N : IntrinsicAnnulus)

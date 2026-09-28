@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartPermutations
 import PoincareConjecture.Proofs.M76.Mathlib.StableCylinderConjugation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +12,6 @@ variable {E F D X Y C ι κ nu : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup D] [NormedSpace ℝ D] [FiniteDimensional ℝ D]
   [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace C]
-
-
 
 theorem plInCharts_overBase
     {Q : ι → OpenPartialHomeomorph E X} {S : nu → OpenPartialHomeomorph D C}
@@ -42,9 +31,6 @@ theorem plInCharts_overBase
     hcover (fun _ _ => mem_univ _)
   exact (plInCharts_prodAssoc_symm hQ hS hreal).comp_mapsTo hfirst
     hcover (fun _ _ => mem_univ _)
-
-
-
 
 theorem plInCharts_middleMap
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}
@@ -72,10 +58,6 @@ theorem plInCharts_middleMap
     hfirst (prodCharts_cover (prodCharts R (realCharts ℝ)) S
       (prodCharts_cover R (realCharts ℝ) hRc (realCharts_cover ℝ)) hSc)
     (fun _ _ => mem_univ _)
-
-
-
-
 
 theorem plInCharts_conjugation
     {Q : ι → OpenPartialHomeomorph E X} {R : κ → OpenPartialHomeomorph F Y}

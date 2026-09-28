@@ -3,26 +3,12 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.MinimizingRegion
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CommonCapSources
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_RegularSource
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
 
 theorem induction_of_actionBarrierProducer
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

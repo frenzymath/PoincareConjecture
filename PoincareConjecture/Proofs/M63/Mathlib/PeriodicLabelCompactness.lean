@@ -6,26 +6,12 @@ import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.Sequences
 import Mathlib.Analysis.Complex.OperatorNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory AddCircle
 open scoped Topology ContDiff NNReal
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_uniform_periodicLabel_subsequence
     {P a b : ℝ} [Fact (0 < P)] (hab : a < b)

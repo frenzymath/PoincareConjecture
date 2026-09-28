@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.WeakCoordinates
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem LeviCivitaData.gradient_norm_sq_eq_inverse_pairing
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -57,8 +49,6 @@ theorem LeviCivitaData.gradient_norm_sq_eq_inverse_pairing
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem AncientAsymptoticSolitonPredecessors.reducedLengthGradientNormSq_coordinates_ae
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RadialIdentification
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +7,6 @@ open Set Filter
 open scoped Topology NNReal
 
 namespace Poincare.AncientVolume.ScalarRatio
-
-
 
 private theorem exists_strictMono_uniform_subsequence
     {A : ℕ → Type*} {B : Type*} [MetricSpace B]
@@ -45,8 +34,6 @@ private theorem exists_strictMono_uniform_subsequence
   rw [Metric.tendstoUniformly_iff]
   intro ε hε
   exact hμ.tendsto_atTop.eventually (Metric.tendstoUniformly_iff.mp (hνlim j) ε hε)
-
-
 
 theorem exists_strictMono_normalized_radius_limits_of_annulusConeRelation
     {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p)

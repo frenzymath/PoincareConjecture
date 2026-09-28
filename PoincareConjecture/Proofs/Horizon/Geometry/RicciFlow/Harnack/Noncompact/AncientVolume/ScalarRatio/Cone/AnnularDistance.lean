@@ -4,21 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Euclidea
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactEnergy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -162,10 +147,6 @@ theorem normal_chart_edist_bounds
     have hxback : Φ.symm (Φ x) = x := Φ.left_inv (hsmall x hx.1).1
     have hyback : Φ.symm (Φ y) = y := Φ.left_inv (hsmall y hy.1).1
     rwa [hxback, hyback] at hh
-
-
-
-
 
 theorem exists_uniform_distance_limit_of_normal_chart_coefficients
     (g : ℕ → RiemannianMetric n M)

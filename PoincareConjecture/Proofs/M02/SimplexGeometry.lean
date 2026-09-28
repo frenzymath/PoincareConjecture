@@ -3,14 +3,6 @@ import Mathlib.Analysis.Convex.Intrinsic
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 import Mathlib.Logic.Equiv.PartialEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -19,8 +11,6 @@ open scoped BigOperators
 universe u
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem exists_simplexCharacteristicMap {E : Type u} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [FiniteDimensional ℝ E] (s : Finset E) (hne : s.Nonempty)
@@ -104,7 +94,6 @@ theorem exists_simplexCharacteristicMap {E : Type u} [NormedAddCommGroup E]
     rw [image_comp, hsphere', hfBody]
 
 open scoped Classical in
-
 
 theorem simplex_intrinsicFrontier {E : Type u} [NormedAddCommGroup E]
     [NormedSpace ℝ E] (s : Finset E) (hne : s.Nonempty)
@@ -228,7 +217,6 @@ theorem simplex_intrinsicFrontier {E : Type u} [NormedAddCommGroup E]
   · intro hx
     obtain ⟨hxi, hxs⟩ := Finset.mem_erase.mp hx
     exact ⟨⟨x, hxs⟩, fun h => hxi (congrArg Subtype.val h), hvertex ⟨x, hxs⟩⟩
-
 
 theorem simplex_intrinsicInterior_disjoint_face {E : Type u}
     [NormedAddCommGroup E] [NormedSpace ℝ E] (s t : Finset E)

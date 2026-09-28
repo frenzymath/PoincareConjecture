@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.ParameterSmooth
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Function Metric

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ScalarEvolution
 import PoincareConjecture.Proofs.M04.ShiParallelFrames
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,19 +16,13 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b))
 
-
-
 noncomputable def m65FlowChartMetric (p : M) (z : ℝ × EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
   M04.shiChartMetric (F.metric z.1) (chartAt (EuclideanSpace ℝ (Fin n)) p) z.2
 
-
-
 noncomputable def m65FlowChartRicci (p : M) (z : ℝ × EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
   (-1 / 2 : ℝ) • fderiv ℝ (m65FlowChartMetric F p) z (1, 0)
-
-
 
 theorem m65FlowChartMetric_contDiffOn (p : M) :
     ContDiffOn ℝ ∞ (m65FlowChartMetric F p)
@@ -75,8 +61,6 @@ theorem m65FlowChartMetric_contDiffOn (p : M) :
     M04.shiChartField_at_inverse he hi hy.2]
   rfl
 
-
-
 theorem m65FlowChartRicci_contDiffOn (p : M) :
     ContDiffOn ℝ ∞ (m65FlowChartRicci F p)
       (Ioo a b ×ˢ (chartAt (EuclideanSpace ℝ (Fin n)) p).target) := by
@@ -86,8 +70,6 @@ theorem m65FlowChartRicci_contDiffOn (p : M) :
       (isOpen_Ioo.prod (chartAt (EuclideanSpace ℝ (Fin n)) p).open_target) (by simp)
   exact (contDiffOn_const (c := (-1 / 2 : ℝ))).smul
     (hdiff.clm_apply (contDiffOn_const (c := (1, (0 : EuclideanSpace ℝ (Fin n))))))
-
-
 
 theorem m65FlowChartMetric_at_source (p : M) (t : ℝ) {q : M}
     (hq : q ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).source)
@@ -104,8 +86,6 @@ theorem m65FlowChartMetric_at_source (p : M) (t : ℝ) {q : M}
   exact congrArg₂ (fun V W => (F.metric t).inner q V W)
     (Proofs.M09.chartVectorField_differential p q V hq)
     (Proofs.M09.chartVectorField_differential p q W hq)
-
-
 
 theorem m65FlowChartRicci_at_source (p : M) {t : ℝ} (ht : t ∈ Ioo a b) {q : M}
     (hq : q ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).source)

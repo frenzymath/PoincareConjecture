@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.CompactPathReturn
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ComplementaryPath
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.RetainedReturnCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem NeckOnlyCover.exists_compact_whole_union_of_nonseparating :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

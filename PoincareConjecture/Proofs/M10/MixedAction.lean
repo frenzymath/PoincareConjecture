@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem momentum_time_derivative_of_action
     {E : X × ℝ → Y} {A : X × ℝ → ℝ} {P : X × ℝ → Y →L[ℝ] ℝ}

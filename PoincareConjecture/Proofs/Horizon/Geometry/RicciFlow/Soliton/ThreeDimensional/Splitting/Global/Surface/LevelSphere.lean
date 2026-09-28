@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.LevelInvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.SphereDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ open RiemannianMetric
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ConnectedSpace M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem CanonicalAncientRoundProduct.exists_sphere_coordinates_of_reversal
     {F : RicciFlow 3 M (Iic 0)} {r φ : M → ℝ} {κ : ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.AmbientCompression
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,15 +14,9 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
 
-
 def recutTarget (N : CapCertificate g) (delta : ℕ → ℝ) (k : ℕ) : Set M :=
   N.closed_core ∪ N.end_neck.region (-N.epsilon⁻¹)
     (N.epsilon⁻¹ - delta k)
-
-
-
-
-
 
 structure QuantitativeCapRecutMargins (N : CapCertificate g) (V : Set M) where
   cap_constant : ℝ
@@ -69,14 +54,6 @@ structure QuantitativeCapRecutMargins (N : CapCertificate g) (V : Set M) where
       bound * (N.connection.scalarCurvature x) ^ 2
 
 omit [T2Space M] in
-
-
-
-
-
-
-
-
 
 theorem exists_quantitative_cap_recut_margins_of_old_cap
     (N : CapCertificate g) {V : Set M}
@@ -128,11 +105,6 @@ theorem exists_quantitative_cap_recut_margins_of_old_cap
   intro x hx y hy
   exact hratio x (hV hx) y (hV hy)
 
-
-
-
-
-
 structure QuantitativeCapRecutPacket (N : CapCertificate g)
     (delta : ℕ → ℝ) (k : ℕ)
     (Q : QuantitativeCapRecutMargins N (recutTarget N delta k)) where
@@ -170,11 +142,6 @@ structure QuantitativeCapRecutPacket (N : CapCertificate g)
     Q.cap_constant - N.cap_constant
   cap_constant_slack_pos : 0 < cap_constant_slack
   margins : QuantitativeCapRecutMargins N (recutTarget N delta k)
-
-
-
-
-
 
 theorem eventually_exists_quantitative_cap_recut
     (N : CapCertificate g) {delta : ℕ → ℝ}

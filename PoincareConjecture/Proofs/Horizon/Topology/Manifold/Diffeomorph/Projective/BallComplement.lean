@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImage
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -57,7 +47,6 @@ theorem antipodalBallComplement_avoids_puncture
   rcases Quotient.exact (hxp.trans ha.symm) with h | h
   · exact ((mem_antipodalBallComplement b x).mp hx).1 (h.symm ▸ haA)
   · exact ((mem_antipodalBallComplement b x).mp hx).2 (by simpa only [h, neg_neg] using haA)
-
 
 theorem antipodalBallComplement_topology
     (b : OpenPartialHomeomorph E3 UnitThreeSphere)
@@ -125,8 +114,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]
   {p : RealProjectiveThree} {U : Set M}
   (S : StandardPuncturedProjectiveCover M p U)
 
-
-
 theorem image_topology_of_compact_antipodal
     {K : Set UnitThreeSphere} (hK : IsCompact K)
     (hp : ∀ x ∈ K, Quotient.mk' x ≠ p)
@@ -190,8 +177,6 @@ theorem image_topology_of_compact_antipodal
         (⟨x, hp x (hK.isClosed.frontier_subset hx)⟩ : PuncturedProjectiveSphere p)).mpr hx
   exact ⟨hTc, hiimage, hTregular, hfront, hmem, hi⟩
 
-
-
 theorem projectiveBallComplement_topology
     (a : UnitThreeSphere) (ha : Quotient.mk' a = p)
     (b : OpenPartialHomeomorph E3 UnitThreeSphere)
@@ -235,8 +220,6 @@ theorem projectiveBallComplement_topology
   · intro x hxp
     rw [← hiK]
     exact hi x hxp
-
-
 
 theorem exists_projectiveBallComplement_collar
     (a : UnitThreeSphere) (ha : Quotient.mk' a = p)

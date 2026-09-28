@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M13.HorizontalBundle
 import PoincareConjecture.Proofs.M13.SpacetimeClock
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

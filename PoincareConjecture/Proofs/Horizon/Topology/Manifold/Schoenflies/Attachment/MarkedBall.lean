@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemispher
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.LinearBall
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Radial
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +16,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_marked_ball_normalization
     (v : EuclideanSpace Real (Fin 3)) (hv : ‖v‖ = 1)
@@ -98,8 +85,6 @@ theorem exists_marked_ball_normalization
       (Hemisphere.extendLinear_center L.symm) (Hemisphere.extendLinear_plane L.symm),
       L.symm_apply_apply]
     rfl
-
-
 
 theorem exists_marked_disk_round_coordinates
     {r : Real} (hr : 0 < r)

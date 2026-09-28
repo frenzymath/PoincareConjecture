@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.PrescribedIntervalSourceFibers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -19,8 +11,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
-
-
 
 theorem exists_prescribed_interval_image_chart
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -54,8 +44,6 @@ theorem exists_prescribed_interval_image_chart
   refine ⟨p.trans j', hp.trans hj', ?_⟩
   intro t
   exact (hjval (p t)).trans (hval ⟨p t, hWS (p t).property⟩).symm
-
-
 
 theorem prescribed_attachment_complement_inter
     {E0 E1 : Type*} [TopologicalSpace E0] [TopologicalSpace E1]

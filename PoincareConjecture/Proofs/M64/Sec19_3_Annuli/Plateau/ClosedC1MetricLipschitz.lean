@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,9 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_lipschitzOn_nhdsWithin_of_contMDiffWithinAt
     (g : RiemannianMetric n M) {f : LoopPlane → M} {S : Set LoopPlane}
@@ -68,9 +61,6 @@ theorem m64_lipschitzOn_nhdsWithin_of_contMDiffWithinAt
   change g.edist (chi.symm (chi (f y))) (chi.symm (chi (f z))) ≤
     ((2 * K : ℝ≥0) : ℝ≥0∞) * edist y z at hc
   simpa only [heqy, heqz, edist_dist, dist_eq_norm] using hc
-
-
-
 
 theorem m64Annulus_hLip_of_contMDiffOn
     (g : RiemannianMetric n M) {f : LoopPlane → M}

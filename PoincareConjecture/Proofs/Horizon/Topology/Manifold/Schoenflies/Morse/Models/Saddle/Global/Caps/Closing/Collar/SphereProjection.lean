@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.AnnulusDerivative
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
 
 def sphereProjection (x : E3) : S2 := by
   classical
@@ -51,8 +48,6 @@ theorem contMDiffAt_sphereProjection {x : E3} (hx : x ≠ 0) :
     exact Subtype.ext (sphereProjection_coe y.property)
   exact (contMDiffAt_subtype_iff (x := (⟨x, hx⟩ : U))).mp (hd ⟨x, hx⟩)
 
-
-
 theorem fderiv_sphereProjection_comp_eq
     {F : E2 → E3} {r : Real} (hr : 1 < r)
     (houter : MapsTo F (closedBall (0 : E2) r \ ball 0 1) (sphere (0 : E3) 1))
@@ -71,8 +66,6 @@ theorem fderiv_sphereProjection_comp_eq
     intro x hx
     exact congrArg Subtype.val (sphereProjection_sphere ⟨F x, houter hx⟩)
   exact fderiv_eq_of_eqOn_outer_annulus hr heq hq hdiff hF
-
-
 
 theorem injective_mfderiv_sphereProjection_comp
     {F : E2 → E3} {r : Real} (hr : 1 < r)

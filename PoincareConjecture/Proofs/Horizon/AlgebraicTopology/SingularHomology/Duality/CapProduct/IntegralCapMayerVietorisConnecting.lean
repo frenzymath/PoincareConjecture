@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Maye
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Relative.IntegralSmallRelativeRepresentative
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.Support.IntegralSupportCohomologyLiftCorrection
 
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OrthogonalKernelProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearMap
@@ -16,8 +7,6 @@ namespace ContinuousLinearMap
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
 
 theorem isInvertible_adjoint_comp_self_of_injective (J : F →L[ℝ] E)
     (hJ : Function.Injective J) : ((adjoint J).comp J).IsInvertible := by
@@ -29,21 +18,14 @@ theorem isInvertible_adjoint_comp_self_of_injective (J : F →L[ℝ] E)
   exact ⟨ContinuousLinearEquiv.ofBijective ((adjoint J).comp J) hker
     (LinearMap.range_eq_top.mpr hsurj), rfl⟩
 
-
-
 def perpendicularFrame (J : F →L[ℝ] E) (P : E →L[ℝ] E) : F →L[ℝ] E :=
   (ContinuousLinearMap.id ℝ E - P).comp J
-
-
-
 
 noncomputable def frameProjectionFormula (J : F →L[ℝ] E) (P : E →L[ℝ] E) : E →L[ℝ] F :=
   (((adjoint (perpendicularFrame J P)).comp (perpendicularFrame J P)).inverse.comp
     (adjoint (perpendicularFrame J P))).comp (ContinuousLinearMap.id ℝ E - P)
 
 omit [FiniteDimensional ℝ F] in
-
-
 
 theorem injective_perpendicularFrame_of_rightInverse (Q : E →L[ℝ] F) (J : F →L[ℝ] E)
     (hJ : Function.RightInverse J Q) :
@@ -57,9 +39,6 @@ theorem injective_perpendicularFrame_of_rightInverse (Q : E →L[ℝ] F) (J : F 
     exact Q.ker.starProjection_apply_mem _
   have he : Q (J x) = 0 := hmem
   simpa only [hJ x] using he
-
-
-
 
 theorem frameProjectionFormula_ker (Q : E →L[ℝ] F) (J : F →L[ℝ] E)
     (hJ : Function.RightInverse J Q) :
@@ -82,8 +61,6 @@ theorem frameProjectionFormula_ker (Q : E →L[ℝ] F) (J : F →L[ℝ] E)
   change ((adjoint A).comp A).inverse ((adjoint A) ((ContinuousLinearMap.id ℝ E - P) x)) = Q x
   rw [he]
   exact hG.inverse_apply_self (Q x)
-
-
 
 theorem continuousAt_frameProjectionFormula (J : F →L[ℝ] E) (P : E →L[ℝ] E)
     (hP : Function.Injective (perpendicularFrame J P)) :

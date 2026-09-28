@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicModelOrder
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.DualStrictCoface
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -48,8 +40,6 @@ private theorem cyclic_edge_subset_index
     have := cyclic_rotate_values j
     omega
   · exact False.elim ((cyclic_rotate_ne i) (h0.trans h1.symm))
-
-
 
 theorem full_cyclic_dual_contacts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -142,8 +132,6 @@ theorem full_cyclic_dual_contacts
     · intro hx
       obtain ⟨v, ⟨i, rfl⟩, hxi⟩ := mem_iUnion₂.mp hx
       exact mem_iUnion.mpr ⟨i, hxi⟩
-
-
 
 theorem full_cyclic_dual_contacts_linear
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

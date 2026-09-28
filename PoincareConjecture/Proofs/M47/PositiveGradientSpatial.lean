@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveGradientMetric
 import PoincareConjecture.Proofs.M47.PositiveGradientMyers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem half_scalar_lower_of_small_gradient (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hc : MetricComplete g) (p : M)
@@ -77,10 +64,6 @@ theorem half_scalar_lower_of_small_gradient (D : LeviCivitaData g)
     rw [hid] at hmyers
     norm_num at hmyers
   exact fun x => hlocal x (hball x).le
-
-
-
-
 
 theorem exists_scalar_maximum_uniformization_threshold
     [CompactSpace M] [SecondCountableTopology M]

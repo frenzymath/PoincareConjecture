@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.CornerCollar
 import PoincareConjecture.Proofs.M76.Wall.PLDomainSideCollars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_phase_union_local_collars
     {X ι : Type*} [TopologicalSpace X]

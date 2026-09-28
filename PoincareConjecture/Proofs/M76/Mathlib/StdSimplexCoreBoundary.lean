@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StdSimplexCore
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {ι : Type*} [Fintype ι]
-
-
 
 theorem sum_eq_one_of_mem_affineSpan_stdSimplexCore {η : ℝ} {q : ι → ℝ}
     (hq : q ∈ affineSpan ℝ (stdSimplexCore ι η)) : ∑ i, q i = 1 := by
@@ -27,9 +15,6 @@ theorem sum_eq_one_of_mem_affineSpan_stdSimplexCore {η : ℝ} {q : ι → ℝ}
     hu, hv, hw, sub_self, mul_zero, zero_add]
 
 variable [Nonempty ι]
-
-
-
 
 theorem mem_intrinsicInterior_stdSimplexCore_iff {η : ℝ}
     (hbound : (Fintype.card ι : ℝ) * η < 1) {q : ι → ℝ} :
@@ -72,9 +57,6 @@ theorem mem_intrinsicInterior_stdSimplexCore_iff {η : ℝ}
     apply Filter.mem_of_superset (ho.mem_nhds hmem)
     intro r hr
     exact ⟨fun i => (hr i).le, sum_eq_one_of_mem_affineSpan_stdSimplexCore r.property⟩
-
-
-
 
 theorem mem_intrinsicFrontier_stdSimplexCore_iff {η : ℝ}
     (hbound : (Fintype.card ι : ℝ) * η < 1) {q : ι → ℝ} :

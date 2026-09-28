@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Restriction
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
 def pullbackOpen (H : Diffeomorph I I M M ∞) (C : Opens M) : Opens M :=
   ⟨H ⁻¹' C, C.isOpen.preimage H.continuous⟩
 
-
 def pullbackDiffeomorph (H : Diffeomorph I I M M ∞) (C : Opens M) :
     Diffeomorph I I (pullbackOpen H C) C ∞ :=
   H.restrictOpens (pullbackOpen H C) C (fun _ => Iff.rfl)
@@ -29,7 +26,6 @@ def pullbackDiffeomorph (H : Diffeomorph I I M M ∞) (C : Opens M) :
 @[simp] theorem pullbackDiffeomorph_symm_apply
     (H : Diffeomorph I I M M ∞) (C : Opens M) (x : C) :
     ((pullbackDiffeomorph H C).symm x : M) = H.symm x := rfl
-
 
 theorem pullback_image_inter
     (H : Diffeomorph I I M M ∞) (C : Opens M)

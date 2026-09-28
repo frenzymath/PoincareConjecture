@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.L
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +15,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem localDiffeomorphAt_projection_chart_on_rim
     {F : E2 → E3} {V : Set E2} (hV : IsOpen V)

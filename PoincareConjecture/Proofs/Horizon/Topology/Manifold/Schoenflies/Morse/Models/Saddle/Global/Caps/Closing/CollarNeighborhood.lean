@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.TerminalAnnuli
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_surface_neighborhood_in_chart
     {s : S2 → E3} (hs : Topology.IsEmbedding s)
@@ -33,8 +29,6 @@ theorem exists_surface_neighborhood_in_chart
     have hqm : q ∈ m '' V := by rw [← heq]; exact hq
     obtain ⟨x, hx, rfl⟩ := hqm
     exact mem_image_of_mem (s ∘ m) hx
-
-
 
 theorem exists_common_surface_neighborhood_of_eqOn_charts
     {s t : S2 → E3} (hs : Topology.IsEmbedding s) (ht : Topology.IsEmbedding t)
@@ -55,9 +49,6 @@ theorem exists_common_surface_neighborhood_of_eqOn_charts
   · rintro ⟨hy, hU⟩
     obtain ⟨x, hx, hxy⟩ := himage.symm ▸ hcoverB ⟨hy, hU.2⟩
     exact ⟨⟨m x, hxy⟩, hU⟩
-
-
-
 
 theorem exists_band_neighborhood_in_outer_annulus
     {s : S2 → E3} (hs : Topology.IsEmbedding s)

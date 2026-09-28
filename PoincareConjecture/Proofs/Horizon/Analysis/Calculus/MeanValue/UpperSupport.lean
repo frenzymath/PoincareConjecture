@@ -1,17 +1,10 @@
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 namespace Poincare.Analysis
-
 
 theorem sub_le_mul_sub_of_hasDerivAt_upper_support
     {f : ℝ → ℝ} {a b C : ℝ} (hab : a ≤ b)
@@ -35,7 +28,6 @@ theorem sub_le_mul_sub_of_hasDerivAt_upper_support
       exact ((hg.hasDerivWithinAt.liminf_right_slope_le (hd.trans_lt hr)).and_eventually
         hslopes).mono (fun y hy => hy.2.trans_lt hy.1)
   linarith
-
 
 theorem increment_le_of_fderiv_upper_support
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -64,7 +56,6 @@ theorem increment_le_of_fderiv_upper_support
       simpa only [id_eq, one_smul] using ((hasDerivAt_id q).smul_const v).const_add y
     exact hg.hasFDerivAt.comp_hasDerivAt q hline
   · exact (show ContinuousAt (fun q : ℝ => y + q • v) q by fun_prop).tendsto.eventually hmajor
-
 
 theorem increment_bounds_of_fderiv_upper_support
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

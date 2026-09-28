@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Region
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Corner.Local
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,7 +20,6 @@ theorem monotone_profileX {ρ : Real → Real} (hρ : LipschitzWith 1 ρ) :
   have hle := (le_abs_self (ρ t - ρ s)).trans h
   dsimp [profileX]
   linarith
-
 
 def edgeNeighborhood (δ : Real) : Set E3 :=
   {p | -δ < p 0 ∧ p 2 - (p 1)^2 < δ}
@@ -58,8 +51,6 @@ theorem roundedRegion_subset_leftBody
   refine ⟨hp.trans hx, ?_⟩
   dsimp [profileHeight] at hh
   nlinarith [sq_nonneg (p 0 - profileX ρ s)]
-
-
 
 theorem roundedRegion_sdiff_edgeNeighborhood
     (H : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Real ∞)
@@ -106,8 +97,6 @@ theorem roundedRegion_sdiff_edgeNeighborhood
       have hρs : ρ s = s := by
         rw [htail _ (by rwa [abs_of_nonneg hs0]), abs_of_nonneg hs0]
       simpa [profileX, hρs] using hp.1
-
-
 
 theorem exists_rounded_left_side {δ : Real} (hδ : 0 < δ) :
     ∃ (φ : Real → Real) (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞),

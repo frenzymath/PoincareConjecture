@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M47.ScalarPersistenceProof
 import PoincareConjecture.Proofs.M47.PositiveGradientTerminal
 import PoincareConjecture.Proofs.M47.ComponentEstimateProof
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem canonicalOn_of_firstFailure
     (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) (T0 r : ℝ)
@@ -39,9 +27,6 @@ theorem canonicalOn_of_firstFailure
   by_contra hfail
   obtain ⟨t, ht, hearlier, x, hscalar, hbad⟩ := first_failure hfail
   exact hbad (canonical_at_first_failure t ht hearlier x hscalar)
-
-
-
 
 theorem canonicalInduction_of_uniform_extension
     (uniform_extension :
@@ -79,9 +64,6 @@ theorem canonicalInduction_of_uniform_extension
     delta_le_cutoff := hcutoff
     canonical := hcanonical }⟩
 
-
-
-
 theorem canonicalInductionTheory_of_producers
     (scalar_persistence : M47ScalarPersistencePredecessors.{u} →
       M47LocalScalarPersistenceStatement.{u})
@@ -97,9 +79,6 @@ theorem canonicalInductionTheory_of_producers
     positive_component_blowup := positive_blowup
     induction := canonical_induction }
 
-
-
-
 theorem canonicalInductionTheory_of_remaining_producers
     (component_estimate : M47ComponentAnalyticPredecessors.{u} →
       ∀ C : ℝ, 1 ≤ C → Nonempty (M47ComponentAnalyticBounds.{u} C))
@@ -111,9 +90,6 @@ theorem canonicalInductionTheory_of_remaining_producers
   canonicalInductionTheory_of_producers PoincareConjecture.M47.localScalarPersistence
     component_estimate positive_blowup canonical_induction
 
-
-
-
 theorem canonicalInductionTheory_of_analytic_and_induction
     (hC : RicciFlowCurvatureTheory.{u})
     (component_estimate : M47ComponentAnalyticPredecessors.{u} →
@@ -124,9 +100,6 @@ theorem canonicalInductionTheory_of_analytic_and_induction
     RepairedCanonicalInductionTheory.{u} :=
   canonicalInductionTheory_of_remaining_producers component_estimate
     (PoincareConjecture.M47Positive.positive_component_blowup hC) canonical_induction
-
-
-
 
 theorem canonicalInductionTheory_of_induction
     (P : M47Predecessors.{u})

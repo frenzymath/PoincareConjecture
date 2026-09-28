@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SquareActionComparison
 import PoincareConjecture.Proofs.M09.SmoothSquareFirstVariation
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

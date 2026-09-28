@@ -4,13 +4,6 @@ import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic.Abel
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -19,7 +12,6 @@ open scoped BigOperators
 universe u v
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem singular_one_cocycle_is_coboundary
     (X : TopCat.{u}) [SimplyConnectedSpace X]

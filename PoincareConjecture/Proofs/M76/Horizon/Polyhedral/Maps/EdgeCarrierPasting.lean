@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Maps.FiniteSubcomplexHom
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.CommonSubcomplexUnion
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.EdgeIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval

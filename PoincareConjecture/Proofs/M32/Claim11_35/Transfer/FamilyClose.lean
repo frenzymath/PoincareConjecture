@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Transfer.UniformJets
 import PoincareConjecture.Proofs.M32.Claim11_35.Transfer.BackwardFiniteJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.CylinderRegularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,10 +13,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
-
 
 theorem blowup_eventually_roundCylinderFamilyClose
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

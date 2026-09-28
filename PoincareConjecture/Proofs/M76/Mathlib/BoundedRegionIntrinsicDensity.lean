@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem Convex.subset_closure_intrinsicInterior {s : Set E} (hs : Convex ℝ s) :
     s ⊆ closure (intrinsicInterior ℝ s) := by
@@ -48,9 +35,6 @@ theorem Convex.subset_closure_intrinsicInterior {s : Set E} (hs : Convex ℝ s) 
   apply image_closure_subset_closure_image
     (continuous_subtype_val.comp e.continuous)
   exact ⟨e.symm p, hcl, congrArg Subtype.val (e.apply_symm_apply p)⟩
-
-
-
 
 theorem Convex.intrinsicInterior_inter_open_nonempty {s U : Set E}
     (hs : Convex ℝ s) (hU : IsOpen U) (hne : (s ∩ U).Nonempty) :

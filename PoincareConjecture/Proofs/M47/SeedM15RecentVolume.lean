@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedM15OldSeed
 import PoincareConjecture.Proofs.M47.SeedM15SeedVolume
 import PoincareConjecture.Proofs.M47.SeedM15Attainment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
-
 
 theorem seedM15_recent_volume_of_confinement
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

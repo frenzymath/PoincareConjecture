@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.SurgeryFlowExtension
 
 variable {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
   {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinder_slab_compatibility (d : SurgeryFlowCylinder F C a q J U)
     (l r : ℝ) (hlr : l < r) (hJ : Icc l r ⊆ E.extended.time_domain)

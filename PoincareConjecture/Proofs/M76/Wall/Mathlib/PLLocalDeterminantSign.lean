@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLTransitionSignComparison
 import Mathlib.Data.Sign.Basic
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,18 +11,12 @@ namespace Geometry
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
 def IsPLAffineWitness (h : OpenPartialHomeomorph E E) (x : E) (A : E →ᴬ[ℝ] E) : Prop :=
   ∃ K : SimplicialComplex ℝ E,
     K.faces.Finite ∧ x ∈ interior K.space ∧ K.space ⊆ h.source ∧
     K.AffineOnFaces h ∧ ∃ t ∈ K.faces,
       t.card = Module.finrank ℝ E + 1 ∧ x ∈ convexHull ℝ (t : Set E) ∧
         EqOn h A (convexHull ℝ (t : Set E))
-
-
-
 
 theorem exists_plAffineWitness (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) {x : E} (hx : x ∈ h.source) :
@@ -43,9 +26,6 @@ theorem exists_plAffineWitness (h : OpenPartialHomeomorph E E)
   obtain ⟨t, ht, htc, hxt⟩ := K.exists_full_face_of_mem_interior hK hxK
   obtain ⟨A, hA⟩ := hf t ht
   exact ⟨A, K, hK, hxK, hsource, hf, t, ht, htc, hxt, hA⟩
-
-
-
 
 theorem IsPLAffineWitness.det_mul_pos_of_eqOn
     {h g : OpenPartialHomeomorph E E} {x : E} {A B : E →ᴬ[ℝ] E}
@@ -73,16 +53,10 @@ private theorem sign_eq_of_mul_pos {a b : ℝ} (h : 0 < a * b) :
   · rw [sign_pos ha, sign_pos hb]
   · rw [sign_neg ha, sign_neg hb]
 
-
-
-
 noncomputable def plLocalSign (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) (x : h.source) : SignType :=
   SignType.sign (LinearMap.det
     (Classical.choose (exists_plAffineWitness h hh x.property)).toAffineMap.linear)
-
-
-
 
 theorem plLocalSign_eq_of_witness (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) (x : h.source) {A : E →ᴬ[ℝ] E}
@@ -92,17 +66,12 @@ theorem plLocalSign_eq_of_witness (h : OpenPartialHomeomorph E E)
   have hp := hc.det_mul_pos_of_eqOn hA isOpen_univ (mem_univ _) (fun _ _ => rfl)
   exact sign_eq_of_mul_pos hp.2.2
 
-
-
 theorem plLocalSign_ne_zero (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) (x : h.source) :
     plLocalSign h hh x ≠ 0 := by
   have hc := Classical.choose_spec (exists_plAffineWitness h hh x.property)
   have hp := hc.det_mul_pos_of_eqOn hc isOpen_univ (mem_univ _) (fun _ _ => rfl)
   exact sign_ne_zero.mpr hp.1
-
-
-
 
 theorem plLocalSign_eq_of_eqOn
     (h g : OpenPartialHomeomorph E E) (hh : h ∈ piecewiseAffineGroupoid E)
@@ -114,9 +83,6 @@ theorem plLocalSign_eq_of_eqOn
   obtain ⟨B, hB⟩ := exists_plAffineWitness g hg hxg
   rw [plLocalSign_eq_of_witness h hh _ hA, plLocalSign_eq_of_witness g hg _ hB]
   exact sign_eq_of_mul_pos (hA.det_mul_pos_of_eqOn hB hU hxU heq).2.2
-
-
-
 
 theorem plLocalSign_eq_of_active_face
     (h : OpenPartialHomeomorph E E) (hh : h ∈ piecewiseAffineGroupoid E)
@@ -137,9 +103,6 @@ theorem plLocalSign_eq_of_active_face
     (hf.det_mul_pos_on_convex_open (h.injOn.mono hKs) hK hU hcv ⟨x, hxU⟩ hUK
       ⟨u, hu, huc, x, hxu, hxU⟩ t B A hB hA).2.2
 
-
-
-
 theorem isLocallyConstant_plLocalSign (h : OpenPartialHomeomorph E E)
     (hh : h ∈ piecewiseAffineGroupoid E) : IsLocallyConstant (plLocalSign h hh) := by
   rw [IsLocallyConstant.iff_exists_open]
@@ -156,8 +119,6 @@ theorem isLocallyConstant_plLocalSign (h : OpenPartialHomeomorph E E)
     (convex_ball (x : E) r) hball y hy v A hA).trans
       (plLocalSign_eq_of_active_face h hh K hK hKs hf isOpen_ball
         (convex_ball (x : E) r) hball x (mem_ball_self hr) v A hA).symm
-
-
 
 theorem plLocalSign_refl (x : (OpenPartialHomeomorph.refl E).source) :
     plLocalSign (OpenPartialHomeomorph.refl E) (piecewiseAffineGroupoid E).id_mem x = 1 := by

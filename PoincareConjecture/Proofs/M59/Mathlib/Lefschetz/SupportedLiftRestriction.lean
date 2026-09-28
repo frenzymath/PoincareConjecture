@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,14 +17,10 @@ variable {J : Type u} [PartialOrder J] [Fintype J]
   {E : Type u} [TopologicalSpace E]
   (p : C(E, (finiteOrderComplex J).space)) (s : Finset J)
 
-
-
 def liftedCoordinateProjection :
     C(liftedCoordinateNeighborhood p s, orderComplexNeighborhood s) :=
   ⟨(orderComplexNeighborhood s).restrictPreimage p,
     (p.continuous.comp continuous_subtype_val).subtype_mk _⟩
-
-
 
 def orderComplexSupportedSingular : (supportedNerve s).toSSet ⟶
     TopCat.toSSet.obj (TopCat.of (orderComplexNeighborhood s)) :=
@@ -48,9 +34,6 @@ def orderComplexSupportedSingular : (supportedNerve s).toSSet ⟶
     exact congrArg (fun g => g t) (orderComplexSimplex_comp f z.val))
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 def supportedLiftRestrictionIso :
     (supportedSingularLift p (orderComplexSingular J) s).toSSet ≅
@@ -107,8 +90,6 @@ def supportedLiftRestrictionIso :
     apply Prod.ext rfl
     apply ((TopCat.of (liftedCoordinateNeighborhood p s)).toSSetObjEquiv n).injective
     rfl
-
-
 
 theorem supportedLiftRestrictionIso_projection :
     (supportedLiftRestrictionIso p s).hom ≫

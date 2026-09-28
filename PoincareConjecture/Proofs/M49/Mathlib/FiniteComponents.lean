@@ -3,16 +3,6 @@ import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.SetTheory.Cardinal.Finite
 import Mathlib.Data.Finite.Sum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ variable {X : Type u} [TopologicalSpace X]
 section LocallyConnected
 
 variable [LocallyConnectedSpace X]
-
-
-
 
 theorem IsClosed.connectedComponentIn_eq_of_disjoint_frontier
     {R : Set X} (hR : IsClosed R) {x : X} (hx : x ∈ R)
@@ -49,10 +36,6 @@ theorem IsClosed.connectedComponentIn_eq_of_disjoint_frontier
   exact (isPreconnected_connectedComponentIn.subset_connectedComponent
     (mem_connectedComponentIn hx)).antisymm
       (hclopen.connectedComponent_subset (mem_connectedComponentIn hx))
-
-
-
-
 
 noncomputable def IsClosed.connectedComponentsEmbeddingOfFrontierCover
     {ι : Type v} {R : Set X} (hR : IsClosed R) (B : ι → Set X)
@@ -104,9 +87,6 @@ noncomputable def IsClosed.connectedComponentsEmbeddingOfFrontierCover
       rw [hwhole hc, hwhole hd]
       exact ConnectedComponents.coe_eq_coe.mp hxy
 
-
-
-
 theorem IsClosed.finite_connectedComponents_of_frontier_cover
     {ι : Type v} [Finite (ConnectedComponents X)] [Finite ι]
     {R : Set X} (hR : IsClosed R) (B : ι → Set X)
@@ -114,9 +94,6 @@ theorem IsClosed.finite_connectedComponents_of_frontier_cover
     (hfrontier : frontier R ⊆ ⋃ i, B i) : Finite (ConnectedComponents R) := by
   let e := hR.connectedComponentsEmbeddingOfFrontierCover B hB hBR hfrontier
   exact Finite.of_injective e e.injective
-
-
-
 
 theorem IsClosed.card_connectedComponents_le_of_frontier_cover
     {ι : Type v} [Finite (ConnectedComponents X)] [Finite ι]
@@ -128,9 +105,6 @@ theorem IsClosed.card_connectedComponents_le_of_frontier_cover
   simpa only [Nat.card_sum] using Nat.card_le_card_of_injective e e.injective
 
 end LocallyConnected
-
-
-
 
 theorem IsClopen.connectedComponentsMap_injective {R : Set X} (hR : IsClopen R) :
     Function.Injective
@@ -144,10 +118,6 @@ theorem IsClopen.connectedComponentsMap_injective {R : Set X} (hR : IsClopen R) 
   rw [← connectedComponentIn_eq_image p.property, ← connectedComponentIn_eq_image q.property,
     hR.connectedComponentIn_eq p.property, hR.connectedComponentIn_eq q.property]
   exact ConnectedComponents.coe_eq_coe.mp hcd
-
-
-
-
 
 theorem IsClopen.card_connectedComponents_lt_of_component_omitted
     [Finite (ConnectedComponents X)] {R : Set X} (hR : IsClopen R) (x : X)

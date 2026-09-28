@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Mass.Limit
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

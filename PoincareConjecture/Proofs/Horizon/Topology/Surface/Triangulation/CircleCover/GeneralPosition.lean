@@ -1,19 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartLevel.Transverse
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -27,17 +13,13 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
 def chartCircle (x : M) (r : ℝ) : Set M :=
   (chartAt (EuclideanSpace ℝ (Fin 2)) x).symm ''
     sphere (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r
 
-
 noncomputable def chartCircleSemicircle (x : M) (r : ℝ) (i : Fin 2) : ℝ → M :=
   (chartAt (EuclideanSpace ℝ (Fin 2)) x).symm ∘
     coordinateCircleArc (chartAt (EuclideanSpace ℝ (Fin 2)) x x) r ((i : ℝ) * Real.pi)
-
-
 
 def ChartCircleRegularAlong (x : M) (rx : ℝ) (y : M) (ry : ℝ) : Prop :=
   ∀ i : Fin 2,
@@ -48,8 +30,6 @@ def ChartCircleRegularAlong (x : M) (rx : ℝ) (y : M) (ry : ℝ) : Prop :=
         (chartCircleSemicircle y ry i u) - chartAt (EuclideanSpace ℝ (Fin 2)) x x‖ ^ 2) t ≠ 0
 
 variable [T2Space M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_chart_circle_radii_general_position
     (s : Finset M) (R : M → ℝ) (hpos : ∀ x, 0 < R x)
@@ -142,9 +122,6 @@ theorem exists_chart_circle_radii_general_position
           · exact Or.inr (by simpa [hyx] using hnewregular ⟨y, hys⟩)
           · have hzx : z ≠ x := fun h => hx (h ▸ hzs)
             simpa [hyx, hzx] using hregular y hys z hzs hyz
-
-
-
 
 theorem exists_finite_chart_ball_cover_general_position [CompactSpace M] :
     ∃ (s : Finset M) (r : M → ℝ),

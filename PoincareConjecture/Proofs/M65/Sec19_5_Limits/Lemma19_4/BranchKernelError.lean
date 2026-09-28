@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchRegularizedKernel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
 open scoped Topology
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem kernelError_integrable_bound {δ : ℝ} (hδ : 0 < δ) (z : ℂ) :
     Integrable (fun w : ℂ => (z - w)⁻¹ - regularizedCauchyKernel δ (z - w)) ∧

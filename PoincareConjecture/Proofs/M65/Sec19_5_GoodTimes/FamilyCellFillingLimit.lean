@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.FillingLimit
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.Relabeling
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FillingWitnesses
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -29,11 +19,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology 
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65FamilyCell_exists_filled_limit (hM64 : M64ComparisonTheory.{u})
     (compact : IsCompact (univ : Set M)) (V : M64ThreeDimensionalFlowConclusion F)

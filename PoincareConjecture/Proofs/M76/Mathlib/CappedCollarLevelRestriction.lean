@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.RadialCutSide
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_capped_collar_cut_restriction
     {T R d s : Set E} {A : E → ℝ} (H : E ≃ₜ E)

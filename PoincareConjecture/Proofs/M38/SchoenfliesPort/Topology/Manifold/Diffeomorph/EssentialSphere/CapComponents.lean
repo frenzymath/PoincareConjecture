@@ -1,28 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Components
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Attachment.ClosingSlice
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.PoincareConjecture
 open _root_.PoincareConjecture.CapCertificate
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -37,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem truncated_sides_components (D : CapCertificate g)
     {U K : Set M} (hU : IsOpen U) (hcU : IsConnected U) (hK : IsClosed K)
@@ -117,8 +99,6 @@ theorem truncated_sides_components (D : CapCertificate g)
     · rw [D.end_neck_epsilon]; linarith
     · rw [D.end_neck_epsilon]; exact hhi.le
     · linarith
-
-
 
 theorem exists_second_cap_essential_components_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

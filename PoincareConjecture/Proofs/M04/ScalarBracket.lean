@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M04.ConnectionScalar
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -125,4 +121,3 @@ theorem mvfderiv_mlieBracket {U : Set M} (hU : IsOpen U) {f : M → ℝ}
   exact h
 
 end PoincareConjecture.M04
-

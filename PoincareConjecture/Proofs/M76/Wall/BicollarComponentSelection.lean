@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.BicollarBaseRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.LocalComplementarySides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X] {A C K : Set X}
-
-
-
-
 
 theorem exists_bicollar_exterior_component
     (H : (A × Ioo (-1 : ℝ) 1) ≃ₜ C) (hC : IsOpen C)

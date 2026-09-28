@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Ch01.Koszul
 import PoincareConjecture.Proofs.M03.CurvatureExtension
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -152,7 +143,6 @@ theorem connection_pullField
     g.inner (Φ x) (D.connection Y (Φ x) (X (Φ x))) z
   linarith only [hp, hg]
 
-
 theorem pullField_connection
     (hPull : ContMDiff (𝓡 n)
       ((𝓡 n).prod 𝓘(ℝ, Vec →L[ℝ] Vec →L[ℝ] ℝ)) ∞
@@ -170,7 +160,6 @@ theorem pullField_connection
     mfderiv (𝓡 n) (𝓡 n) Φ x (P.connection (pullField Φ Y) x (pullField Φ X x))
   rw [mfderiv_pullField]
   exact (connection_pullField g Φ hPull D P X Y hX hY).symm
-
 
 theorem connection_pullField_apply
     (hPull : ContMDiff (𝓡 n)
@@ -192,7 +181,6 @@ theorem connection_pullField_apply
     apply (Φ.mfderivToContinuousLinearEquiv (by simp) x).injective
     exact (mfderiv_pullField Φ X x).trans hXx
   simpa only [hpX, hXx] using connection_pullField g Φ hPull D P X Y hX hY
-
 
 theorem curvatureOnFields_pullField
     (hPull : ContMDiff (𝓡 n)
@@ -246,7 +234,6 @@ theorem curvatureOnFields_pullField
   unfold LeviCivitaData.curvatureOnFields
   rw [map_sub, map_sub, hsecond X Y hX hY, hsecond Y X hY hX,
     connection_pullField_apply g Φ hPull D P Z (hmd Z hZ hx), hbracket]
-
 
 theorem curvature_pullback
     (hPull : ContMDiff (𝓡 n)

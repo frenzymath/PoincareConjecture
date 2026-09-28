@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +36,6 @@ private theorem image_le_add_of_upper_supports
     exact div_le_div_of_nonneg_right (sub_le_sub_right (hupper s) _) hts.le
   exact hsl.trans_lt hs.1
 
-
-
 theorem backward_image_le_add_of_upper_supports
     {f : ℝ → ℝ} {a b C : ℝ} (hab : a ≤ b)
     (hf : ContinuousOn f (Icc a b))
@@ -79,9 +63,6 @@ namespace PoincareConjecture.RicciFlow
 variable {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
   {J : Set ℝ}
-
-
-
 
 theorem toReal_edist_le_add_of_ricci_upper_on_balls
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow (m + 1) M J) (hm : 0 < m)
@@ -111,9 +92,6 @@ theorem toReal_edist_le_add_of_ricci_upper_on_balls
       (hcomplete t (Ioc_subset_Icc_self ht)) (hRic t (Ioc_subset_Icc_self ht))
       hΛ hscale p x hx hpx hupper
   exact ⟨fun s => rho s x, heq, fun s => habove s x hxU, hd, hder⟩
-
-
-
 
 theorem toReal_edist_le_add_of_ricci_upper_on_terminal_ball
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow (m + 1) M J) (hm : 0 < m)

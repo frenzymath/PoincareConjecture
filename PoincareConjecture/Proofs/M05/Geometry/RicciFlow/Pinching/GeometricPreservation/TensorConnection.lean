@@ -1,16 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Connection
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -28,11 +17,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 def transportPullbackTensor (F : RicciFlow n M (Ico a b)) (t : ℝ)
     {k : ℕ} (T : CovariantTensorEvaluation n M k) : CovariantTensorEvaluation n M k :=
   fun x v => T x (fun i => canonicalTransport F t x (v i))
-
 
 def transportedTensorDerivative (F : RicciFlow n M (Ico a b)) {t : ℝ}
     (ht : t ∈ Ico a b) {k : ℕ} (T : CovariantTensorEvaluation n M k) :
@@ -59,8 +46,6 @@ theorem transportPullbackTensor_isSmooth
     apply hT.2 O hO (fun i y => canonicalTransport F t y (Y i y))
     intro i
     exact (canonicalTransport_contMDiff_space F ht).contMDiffOn.clm_bundle_apply (hY i)
-
-
 
 theorem transportedTensorDerivative_pullback
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b)
@@ -93,7 +78,6 @@ theorem transportedTensorDerivative_pullback
     exact ContinuousLinearEquiv.apply_symm_apply _ _
   · simp only [Function.update_of_ne hji]
 
-
 theorem transportedTensorDerivative_on_fields
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b)
     {k : ℕ} {T : CovariantTensorEvaluation n M k}
@@ -124,8 +108,6 @@ theorem transportedTensorDerivative_on_fields
     exact (ContinuousLinearEquiv.apply_symm_apply _ _).symm
   · simp only [Function.update_of_ne hji]
 
-
-
 def mixedTensorDerivative (F : RicciFlow n M (Ico a b)) {t : ℝ}
     (ht : t ∈ Ico a b) {k : ℕ} (S : CovariantTensorEvaluation n M (k + 1)) :
     CovariantTensorEvaluation n M (k + 2) :=
@@ -136,8 +118,6 @@ def mixedTensorDerivative (F : RicciFlow n M (Ico a b)) {t : ℝ}
       S x (Fin.cons ((F.connection t).connection X x (v 0)) (fun i => v i.succ.succ)) -
       ∑ i, S x (Fin.cons (v 1) (Function.update (fun j => v j.succ.succ) i
         (transportedConnection F ht (Y i) x (v 0))))
-
-
 
 theorem mixedTensorDerivative_pullback
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b)
@@ -188,16 +168,12 @@ theorem mixedTensorDerivative_pullback
     exact ContinuousLinearEquiv.apply_symm_apply _ _
   · simp only [Function.update_of_ne hji]
 
-
-
 def transportedTensorLaplacian (F : RicciFlow n M (Ico a b)) {t : ℝ}
     (ht : t ∈ Ico a b) {k : ℕ} (T : CovariantTensorEvaluation n M k) :
     CovariantTensorEvaluation n M k :=
   fun x v => ∑ i, mixedTensorDerivative F ht (transportedTensorDerivative F ht T) x
     (Fin.cons ((F.metric t).orthonormalBasis x i)
       (Fin.cons ((F.metric t).orthonormalBasis x i) v))
-
-
 
 theorem transportedTensorLaplacian_pullback
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b)
@@ -211,10 +187,6 @@ theorem transportedTensorLaplacian_pullback
   apply Finset.sum_congr rfl
   intro i _
   exact mixedTensorDerivative_pullback F ht hT x _ _ v
-
-
-
-
 
 theorem canonicalTransport_curvature_pde_on_initial_tensor
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Ico a b))

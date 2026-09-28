@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Sobolev.Euclidean.Translation
 import PoincareConjecture.Proofs.M07.Analysis.Sobolev.Euclidean.L2
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Heat.Dirichlet.Compactness.ChartEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff ENNReal
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ} [NeZero n]
-
-
 
 lemma eLpNorm_le_of_support_ball {R : ℝ} (hR : 0 < R)
     {p : ℝ≥0∞} (hp : 1 ≤ p) (hptop : p ≠ ⊤)
@@ -55,7 +45,6 @@ lemma eLpNorm_le_of_support_ball {R : ℝ} (hR : 0 < R)
         hp hptop (hf.of_le (by simp)) a
     _ = _ := by rw [ha]
 
-
 lemma integral_sq_le_fderiv_sq_of_support_ball {R : ℝ} (hR : 0 < R)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
     (hc : HasCompactSupport f) (hs : Function.support f ⊆ Metric.ball 0 R) :
@@ -75,8 +64,6 @@ lemma integral_sq_le_fderiv_sq_of_support_ball {R : ℝ} (hR : 0 < R)
     Poincare.Analysis.Sobolev.eLpNorm_toReal_sq_eq_integral hdl] using hsquare
 
 open LeviCivitaData.Dirichlet
-
-
 
 lemma exists_metric_poincare_on_ball
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) (D : LeviCivitaData g)

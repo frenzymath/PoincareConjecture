@@ -1,19 +1,5 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set TopologicalSpace Topology
 open scoped ContDiff Manifold
 
@@ -26,9 +12,6 @@ variable {E E' H H' X Y : Type*}
   {I : ModelWithCorners ℝ E H} {I' : ModelWithCorners ℝ E' H'}
   [TopologicalSpace X] [ChartedSpace H X]
   [TopologicalSpace Y] [ChartedSpace H' Y]
-
-
-
 
 theorem exists_diffeomorph_of_monotone_open_cover
     (U : ℕ → Opens X) (V : ℕ → Opens Y)

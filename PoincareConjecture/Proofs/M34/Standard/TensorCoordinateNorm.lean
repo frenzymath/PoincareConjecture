@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.Norm
 import PoincareConjecture.Definitions.Ch01.TensorOperators
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open scoped Manifold ContDiff BigOperators Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem tensorNormFromComponents_eq_tensorNorm
     {n k : ℕ} {M : Type*} [TopologicalSpace M]

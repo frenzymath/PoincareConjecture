@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.AlongCurve.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Variation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -20,8 +13,6 @@ namespace PoincareConjecture
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem fderiv_flow_metric_pairing_eq_zero
     {q : P → E} {G : E → E} {B : E → E →L[ℝ] E →L[ℝ] ℝ} {p : P}
@@ -55,8 +46,6 @@ theorem fderiv_flow_metric_pairing_eq_zero
     add_apply, hlin, htime.self_of_nhds, Function.comp_def]
   have h := hmetric (fderiv ℝ q p v) (fderiv ℝ q p w)
   linarith
-
-
 
 theorem hasDerivAt_flow_metric_pairing_eq_zero
     {q : ℝ × E → E} {G : E → E} {B : E → E →L[ℝ] E →L[ℝ] ℝ}

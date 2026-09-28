@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import PoincareConjecture.Proofs.M28.Mathlib.LastLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_signed_level_before_neck_exit (N : EpsilonNeck g)
     {γ : ℝ → M} {s c b : ℝ} (hsc : s < c)

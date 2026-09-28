@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointChartCover
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +32,6 @@ private local instance finiteEndpointCoverCharts :
     ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance finiteEndpointCoverManifold :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitFinite_original_endpoint_chart_cover (P : M47Predecessors.{u})
     (d K : ℕ → ℝ) (hd : ∀ j, 0 < d j) (hK : ∀ j, 0 < K j)
@@ -119,8 +109,6 @@ theorem limitFinite_original_endpoint_chart_cover (P : M47Predecessors.{u})
     exact (hdata i).2.2.2.2.1
   · intro i
     exact (hdata i).2.2.2.2.2
-
-
 
 theorem limitFinite_endpoint_countable_chart_cover
     (j N : ℕ → ℕ) (ρ : ∀ m, Fin (N m + 1) → ℝ)

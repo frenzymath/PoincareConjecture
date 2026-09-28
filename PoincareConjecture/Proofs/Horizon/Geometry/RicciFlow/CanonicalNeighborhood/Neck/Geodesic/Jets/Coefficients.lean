@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Centered
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.Model
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -147,8 +146,6 @@ theorem normalizedCenteredCoefficients_basis_eventuallyEq
     ((N.coordinate_map_smooth.contMDiffAt
       ((isOpen_univ.prod isOpen_Ioo).mem_nhds hp')).mdifferentiableAt (by simp))]
   rfl
-
-
 
 theorem norm_fderiv_normalizedCenteredCoefficients_le
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}

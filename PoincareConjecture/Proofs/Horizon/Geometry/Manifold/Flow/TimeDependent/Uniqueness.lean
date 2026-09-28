@@ -2,12 +2,6 @@ import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem timeDependent_integralCurve_eventuallyEq
     {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
@@ -57,8 +50,6 @@ theorem timeDependent_integralCurve_eventuallyEq
   have h := isMIntegralCurveAt_eventuallyEq_of_contMDiffAt_boundaryless
     hY (hcurve hγ) (hcurve hη) (Prod.ext rfl he)
   exact h.mono (fun t ht => congrArg Prod.snd ht)
-
-
 
 theorem timeDependent_integralCurve_eqOn [T2Space M]
     {I : Set ℝ} (hI : IsOpen I) (hcI : IsPreconnected I)

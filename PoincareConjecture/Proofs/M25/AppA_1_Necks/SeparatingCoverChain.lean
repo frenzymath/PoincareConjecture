@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.FairFiniteExhaustion
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.CoherentChainLimit
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.MiddleFrontier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.NeckOnlyCover
-
-
-
 
 theorem exists_covering_balanced_chain_of_separating :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

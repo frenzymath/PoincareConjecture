@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Nonconjugacy
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_hasDerivWithinAt_lift
     {f : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -82,8 +67,6 @@ theorem exists_hasDerivWithinAt_lift
   rw [fderiv_eq_smul_deriv, one_smul, hkt] at hd1
   exact hd1.symm
 
-
-
 theorem norm_sub_le_of_continuous_lift
     (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -115,8 +98,6 @@ theorem norm_sub_le_of_continuous_lift
   rw [hvalue] at h
   linarith [hspeed t ht']
 
-
-
 theorem isLocalHomeomorph_domRestrict_of_nonsingular
     {f : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
@@ -137,7 +118,6 @@ theorem isLocalHomeomorph_domRestrict_of_nonsingular
   refine ⟨e'.subtypeRestr (s := ⟨U, hU⟩) ⟨x⟩, ?_, rfl⟩
   simpa only [OpenPartialHomeomorph.subtypeRestr_source, mem_preimage] using hx
 
-
 theorem isCompact_norm_sublevel_in_ball
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {r R : ℝ} (hrR : r < R) :
@@ -154,9 +134,6 @@ theorem isCompact_norm_sublevel_in_ball
       exact ⟨⟨x, by simpa using hxr.trans_lt hrR⟩, hxr, rfl⟩
   rw [heq]
   exact isCompact_closedBall _ _
-
-
-
 
 theorem exists_bounded_lift_of_lower_differential [T2Space M]
     (g : RiemannianMetric n M)

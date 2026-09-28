@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Coordinates
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 lemma mvfderiv_eq_chart_fderiv {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     (p : M) {f : M → F} {x : M} (hx : x ∈ (extChartAt (𝓡 n) p).source)
@@ -52,8 +41,6 @@ lemma mvfderiv_eq_chart_fderiv {F : Type*} [NormedAddCommGroup F] [NormedSpace �
   rw [TangentBundle.continuousLinearMapAt_trivializationAt hxc]
   simp only [mvfderiv, mfderiv_eq_fderiv, e] at hc
   convert hc using 1 <;> rfl
-
-
 
 lemma coordinateRepresentative_mvfderiv_eq_fderiv
     (p : M) {Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}

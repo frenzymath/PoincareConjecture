@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.MaximalDepth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,7 +62,6 @@ end PoincareConjecture.RiemannianMetric
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.Riemannian.Soul
-
 
 theorem exists_compact_totallyConvex_set_empty_interior
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

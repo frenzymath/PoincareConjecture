@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.ComponentLoopReflection
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.WhiskeredLoopSplit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Path

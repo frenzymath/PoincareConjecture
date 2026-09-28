@@ -1,12 +1,5 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Topology
 open scoped Manifold ContDiff

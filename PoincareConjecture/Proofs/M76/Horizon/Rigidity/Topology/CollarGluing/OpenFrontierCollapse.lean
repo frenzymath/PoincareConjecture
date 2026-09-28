@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -9,8 +7,6 @@ open Set
 namespace PoincareConjecture.M76
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 structure OpenFrontierCollapse (R : Set X) where
   overlap : Set X

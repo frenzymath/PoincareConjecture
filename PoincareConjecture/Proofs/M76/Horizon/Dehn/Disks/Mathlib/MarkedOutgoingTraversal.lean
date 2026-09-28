@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MarkedIntervalDiskAttachment
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MarkedAttachmentTraversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -24,9 +15,6 @@ local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
-
-
-
 
 theorem exists_marked_outgoing_traversal_with_sources
     {E0 E1 F X ι : Type*}
@@ -170,9 +158,6 @@ theorem exists_marked_outgoing_traversal_with_sources
     · rintro ⟨r, hr, _⟩
       exact (prescribed_interval_source_eq_iff (hW0Q.trans hS0.1) (hW1Q.trans hS1.1)
         n0 n1 p0 p1 p hn0p hn1p x y).mpr ⟨r, hr⟩
-
-
-
 
 theorem exists_marked_outgoing_traversal
     {E0 E1 F X ι : Type*}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M52GlobalFlow
 import Mathlib.Algebra.Order.Floor.Semiring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def m52ComparisonControl {K : MetricSurgeryConstants}
     (S : GlobalSurgerySchedule K) (t : ℝ) : ℝ :=
@@ -36,7 +25,6 @@ theorem m52ComparisonControl_antitone {K : MetricSurgeryConstants}
   exact min_le_min
     (div_le_div_of_nonneg_right
       (S.Delta_antitone (Nat.ceil_mono (by linarith))) (by norm_num)) le_rfl
-
 
 theorem m52ComparisonControl_le_epoch {K : MetricSurgeryConstants}
     (S : GlobalSurgerySchedule K) (j : ℕ) {t : ℝ}
@@ -57,8 +45,6 @@ theorem m52ComparisonControl_le_epoch {K : MetricSurgeryConstants}
   exact (min_le_left _ _).trans
     ((div_le_self (S.Delta_pos _).le (by norm_num)).trans (S.Delta_antitone hindex))
 
-
-
 theorem m52ComparisonControl_lt_initial {K : MetricSurgeryConstants}
     (S : GlobalSurgerySchedule K) (t : ℝ) : m52ComparisonControl S t < S.Delta 0 := by
   have hhalf : m52ComparisonControl S t ≤ S.Delta 0 / 2 :=
@@ -75,9 +61,6 @@ theorem m52ComparisonControl_bounds {K : MetricSurgeryConstants}
       (div_le_div_of_nonneg_right (S.Delta_le _) (by norm_num)),
     (min_le_right _ _).trans (min_le_left _ _),
     (min_le_right _ _).trans (min_le_right _ _)⟩
-
-
-
 
 theorem m52StrictComparisonBounds
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

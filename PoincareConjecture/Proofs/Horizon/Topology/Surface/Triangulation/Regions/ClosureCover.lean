@@ -1,21 +1,10 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.LocalFiniteness
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.ClosureCover
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 open Set Metric
 open scoped Manifold ContDiff Topology
-
 
 namespace PoincareConjecture.Topology.Surface
 
@@ -23,7 +12,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
-
 
 theorem dense_compl_chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ)
     (htarget : ∀ x ∈ s,
@@ -36,8 +24,6 @@ theorem dense_compl_chartDiskBoundaryUnion (s : Finset M) (r : M → ℝ)
     (fun x hx => (isCompact_chart_closedBall x (htarget x hx)).isClosed)
 
 variable [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_finite_region_closure_cover_of_chart_circle_general_position
     (s : Finset M) (r : M → ℝ) (hpos : ∀ x ∈ s, 0 < r x)

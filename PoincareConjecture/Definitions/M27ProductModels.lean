@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,7 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure M27RoundSphereFamily where
   metric : ℝ → RiemannianMetric 2 UnitTwoSphere
@@ -28,7 +19,6 @@ structure M27RoundSphereFamily where
         (mfderiv (𝓡 2) (𝓡 2) (fun y : UnitTwoSphere => -y) x w) =
         (metric t).inner x v w
 
-
 noncomputable def M27RoundSphereFamily.productInner (F : M27RoundSphereFamily)
     (t : ℝ) (p : UnitTwoSphere × ℝ)
     (v w : TangentSpace ((𝓡 2).prod 𝓘(ℝ, ℝ)) p) : ℝ :=
@@ -38,7 +28,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 structure M27SphereLineFlowCertificate (K : AncientKappaSolution 3 M) where
   sphere : M27RoundSphereFamily
@@ -50,8 +39,6 @@ structure M27SphereLineFlowCertificate (K : AncientKappaSolution 3 M) where
         (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) identification p v)
         (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) identification p w) =
         sphere.productInner t p v w
-
-
 
 structure M27ProjectivePlaneLineFlowCertificate (K : AncientKappaSolution 3 M) where
   sphere : M27RoundSphereFamily
@@ -68,12 +55,8 @@ structure M27ProjectivePlaneLineFlowCertificate (K : AncientKappaSolution 3 M) w
         (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) cover p w) =
         sphere.productInner t p v w
 
-
-
 noncomputable def m27TwistedProductInvolution (p : UnitTwoSphere × ℝ) : UnitTwoSphere × ℝ :=
   (-p.1, -p.2)
-
-
 
 structure M27TwistedSphereLineFlowCertificate (K : AncientKappaSolution 3 M) where
   sphere : M27RoundSphereFamily
@@ -101,8 +84,6 @@ structure M27TwistedSphereLineFlowCertificate (K : AncientKappaSolution 3 M) whe
   puncture : RealProjectiveThree
   projective_topology : M ≃ₜ PuncturedRealProjectiveThree puncture
   projective_smooth_cover : StandardPuncturedProjectiveCover M puncture Set.univ
-
-
 
 structure M27SphericalSpaceFormFlowCertificate (K : AncientKappaSolution 3 M) where
   group : Type u

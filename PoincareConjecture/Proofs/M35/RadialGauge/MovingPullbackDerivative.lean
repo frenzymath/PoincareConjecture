@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.InverseMixedDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.NativeLieCoordinates
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.GaugePullbackMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -44,8 +34,6 @@ private theorem bilinear_time_partial
     simpa only [Function.comp_def, Function.uncurry_def, id_eq,
       map_zero, add_zero] using! h
   exact hd.unique (hsource c d)
-
-
 
 theorem inverse_pullback_metric_pair_hasDerivAt
     {g : ℝ → RiemannianMetric n V}

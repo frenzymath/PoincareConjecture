@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Submersion
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +26,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 
 include g hf w hδ hδhalf hsmall hh hopposite hcross in
 
-
 theorem strainer_openFiber_regular (x : M) (hx : x ∈ U) :
     Surjective (mfderiv (𝓡 (m + k)) 𝓘(ℝ, Fin k → ℝ) (fun y i => f i y) x) := by
   have hsurj := (g.strainer_gradients_regular f x (w x) hδ hδhalf
@@ -46,17 +37,12 @@ theorem strainer_openFiber_regular (x : M) (hx : x ∈ U) :
   rw [Poincare.Geometry.Manifold.mfderiv_pi_apply f hf x v i]
   exact congrFun hv i
 
-
-
 @[reducible] def strainerOpenFiberChartedSpace (c : Fin k → ℝ) :
     ChartedSpace (EuclideanSpace ℝ (Fin m)) (openFiber (fun y i => f i y) U c) := by
   let : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
     ⟨finrank_euclideanSpace_fin⟩
   exact openFiberChartedSpace (m := m) (contMDiff_pi_space.mpr hf) U
     (g.strainer_openFiber_regular f hf U w hδ hδhalf hsmall hh hopposite hcross) c
-
-
-
 
 theorem strainerOpenFiber_geometry (c : Fin k → ℝ) :
     let := g.strainerOpenFiberChartedSpace f hf U w hδ hδhalf hsmall hh hopposite hcross c

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicDistanceEnergy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicDistanceTerminalChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Chart
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,9 +40,6 @@ private theorem deriv_chart_curve
   rw [heq] at h
   change (fderiv ℝ (fun s => extChartAt (𝓡 3) p (β s)) t) 1 = _
   convert! h using 1
-
-
-
 
 theorem exists_intrinsic_distance_upper_support_of_unit_geodesic
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

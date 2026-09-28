@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarJet
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,16 +13,11 @@ open PoincareConjecture.SpacetimeBounds
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 
-
-
-
 noncomputable def jetRicciBilinear {n : ℕ} (J : MetricTwoJet n) : MetricCoefficient n :=
   ∑ i, ∑ j, jetRicci J (EuclideanSpace.basisFun (Fin n) ℝ i)
     (EuclideanSpace.basisFun (Fin n) ℝ j) •
       (innerSL ℝ (EuclideanSpace.basisFun (Fin n) ℝ i)).smulRight
         (innerSL ℝ (EuclideanSpace.basisFun (Fin n) ℝ j))
-
-
 
 theorem jetRicciBilinear_metricTwoJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) :
@@ -43,8 +28,6 @@ theorem jetRicciBilinear_metricTwoJet {n : ℕ}
   exact (bilinear_eq_sum_dual (EuclideanSpace.basisFun (Fin n) ℝ)
     (show E n →ₗ[ℝ] E n →ₗ[ℝ] ℝ from M13.ricciLinear D x).toContinuousBilinearMap).symm
 
-
-
 theorem contDiffAt_jetRicciBilinear {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) : ContDiffAt ℝ ∞ (@jetRicciBilinear n) J := by
   apply ContDiffAt.sum
@@ -52,9 +35,6 @@ theorem contDiffAt_jetRicciBilinear {n : ℕ} {J : MetricTwoJet n}
   apply ContDiffAt.sum
   intro j _
   exact (contDiffAt_jetRicci hJ _ _).smul contDiffAt_const
-
-
-
 
 theorem bilinear_metric_norm_sq_le {n : ℕ} (g : RiemannianMetric n (E n))
     (x : E n) (B : MetricCoefficient n) {a : ℝ} (ha : 0 < a)
@@ -97,9 +77,6 @@ theorem bilinear_metric_norm_sq_le {n : ℕ} (g : RiemannianMetric n (E n))
         ∑ _j : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)), (‖B‖ / a) ^ 2 :=
       Finset.sum_le_sum fun i _ => Finset.sum_le_sum fun j _ => hterm i j
     _ = _ := by simp [hdim]; ring
-
-
-
 
 theorem ricciNormSq_le_jetRicciBilinear {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n)

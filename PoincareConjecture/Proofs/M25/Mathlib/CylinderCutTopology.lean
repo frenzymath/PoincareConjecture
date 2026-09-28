@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M25.Mathlib.CofinalCylinderEscape
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem cylinderCut_topology_of_not_isCompact
     {K W : Type*} [TopologicalSpace K] [TopologicalSpace W]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingError
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceRecentFamilyRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,7 +33,6 @@ variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
   (s H c : ℝ)
   (hclock : MapsTo (fun u : ℝ => s + u / H) (Icc (-H * s) 0) J)
 
-
 noncomputable def sourceRecentCapTensor : ℝ → RoundCylinderTwoTensor :=
   fun u => if hu : u ∈ Icc (-H * s) 0 then
     let phi := actualCapSliceChart e initial comparison (s + u / H) (hclock hu)
@@ -51,7 +42,6 @@ noncomputable def sourceRecentCapTensor : ℝ → RoundCylinderTwoTensor :=
     fun z v w => H * neckAxialTensorPullback 1 c
       (roundCylinderPullback g' (phi ∘ N.coordinate_map)) z v w
   else fun _ _ _ => 0
-
 
 theorem sourceRecentCapTensor_smooth {epsilon : ℝ}
     (hsource : N.carrier ⊆ F.standard_initial.metric.ball 0 A)
@@ -80,7 +70,6 @@ theorem sourceRecentCapTensor_smooth {epsilon : ℝ}
   simp only [sourceRecentCapTensor, dif_pos hu]
   change RoundCylinderTensorSmoothOn epsilon (neckAxialTensorPullback 1 c (fun z v w => B z v w))
   exact source_recent_translation_smooth hdom B hB
-
 
 theorem sourceRecentCapTensor_coefficient_error_le {epsilon K : ℝ}
     (hsource : N.carrier ⊆ F.standard_initial.metric.ball 0 A)

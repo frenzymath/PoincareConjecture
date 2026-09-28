@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -60,8 +52,6 @@ private theorem embedding_in_sphere_chart
       rfl
   · intro q w hqw
     exact hF.isEmbedding.injective (p.injOn (hFs q) (hFs w) hqw)
-
-
 
 theorem exists_embeddedSphere_collar_avoiding_point
     (F : UnitTwoSphere → UnitThreeSphere)

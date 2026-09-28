@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteBoundaryMotion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteC2BoundaryReference
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,11 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64C2Annulus_exists_finite_energy_motion
     (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.FixedChartIndexDensity
 import PoincareConjecture.Proofs.M09.AdaptedFieldCoordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

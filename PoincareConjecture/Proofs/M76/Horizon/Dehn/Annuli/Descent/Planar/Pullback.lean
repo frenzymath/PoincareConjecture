@@ -7,7 +7,6 @@ open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
 theorem exists_ordinary_finitePL_pullback
     {E Y X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

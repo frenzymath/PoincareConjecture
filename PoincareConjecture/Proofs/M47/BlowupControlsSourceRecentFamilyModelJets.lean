@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckSpatialBounds
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeComparison
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +18,6 @@ open Proofs.M47 M34 M36 M44
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => RoundCylinderCoordinates
-
 
 theorem exists_source_recent_model_coefficient_time_bound (m : ℕ) :
     ∃ Z : ℝ, 0 ≤ Z ∧ ∀ (u v : ℝ) (q : UnitTwoSphere) (r : ℝ),
@@ -74,7 +64,6 @@ theorem exists_source_recent_model_coefficient_time_bound (m : ℕ) :
     ((hf a b).contDiffAt.of_le (by exact_mod_cast le_top)), norm_smul,
     Real.norm_eq_abs, abs_sub_comm v u, hshift]
   simpa only [mul_comm] using mul_le_mul_of_nonneg_left hbound (abs_nonneg (u - v))
-
 
 theorem exists_source_recent_normalized_coefficient_tolerance
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]

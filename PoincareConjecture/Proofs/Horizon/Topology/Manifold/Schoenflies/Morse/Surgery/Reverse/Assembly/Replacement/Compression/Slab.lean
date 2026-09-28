@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Compression.Slab
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Push
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   {H A M : Type*} [NormedAddCommGroup A] [NormedSpace Real A]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners Real A H}
-
-
 
 theorem exists_slab_compression_away_disk_with_graph
     (C : Opens M) (e : Diffeomorph I 𝓘(Real, E × Real) C (E × Real) ∞)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelChristoffel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundSecondJetConversion
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.TensorLaplacianCoordinates
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,12 +24,9 @@ variable {M : Type u} [TopologicalSpace M]
 abbrev ModelE := EuclideanSpace ℝ (Fin 3)
 abbrev ModelTensor2 := PoincareConjecture.TensorFiber ModelE 2
 
-
-
 noncomputable def modelTensorSlotActionLift (L : ModelE →L[ℝ] ModelE) :
     ModelTensor2 →L[ℝ] ModelTensor2 :=
   PoincareConjecture.TensorFiber.negativeSlotAction L
-
 
 noncomputable def modelTensorConnectionLift
     (Γ : ModelE →L[ℝ] ModelE →L[ℝ] ModelE) :
@@ -207,10 +195,6 @@ theorem round_model_tensor_connection_zero
   intro a
   simp [modelTensorSlotActionLift,
     PoincareConjecture.TensorFiber.negativeSlotAction_apply]
-
-
-
-
 
 theorem norm_round_model_second_fderiv_le
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

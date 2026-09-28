@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineCornerStraightening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -15,8 +7,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_signed_coordinate_corner (ε : ℝ) (hε : ε = 1 ∨ ε = -1) :
     ∃ F : C3 ≃ₜ C3,

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Evolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -26,8 +16,6 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)] (A : MetricFlowApproximation ginit Mfamily)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem eventually_compact_spacetimeJet_bound (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

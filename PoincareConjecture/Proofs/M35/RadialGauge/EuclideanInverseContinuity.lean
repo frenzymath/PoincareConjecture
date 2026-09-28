@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothEuclideanGauge
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem radial_diffeomorph_symm_apply
     (Φ : Diffeomorph (𝓡 n) (𝓡 n) V V ∞) {w q : ℝ → ℝ}
@@ -49,8 +37,6 @@ theorem radial_diffeomorph_symm_apply
   rw [Φ.apply_symm_apply, hΦ, hynorm]
   change x = Real.exp (w (q ‖x‖)) • (Real.exp (-w (q ‖x‖)) • x)
   rw [smul_smul, mul_comm, he, one_smul]
-
-
 
 theorem radial_diffeomorph_symm_continuousOn
     {Φ : ℝ → Diffeomorph (𝓡 n) (𝓡 n) V V ∞} {w : ℝ → ℝ → ℝ} {J : Set ℝ}

@@ -1,16 +1,6 @@
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Geometry.Manifold.IsManifold.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology OpenPartialHomeomorph
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 universe u v w
 
 namespace IsCoveringMap
-
-
-
 
 theorem t2Space {E : Type u} {X : Type v} [TopologicalSpace E]
     [TopologicalSpace X] [T2Space X] {p : E → X} (hp : IsCoveringMap p) : T2Space E where
@@ -40,21 +27,15 @@ variable {E : Type u} {M : Type v} {H : Type w}
   [TopologicalSpace E] [TopologicalSpace M] [TopologicalSpace H]
   [ChartedSpace H M] {p : E → M}
 
-
-
 noncomputable def pullbackChart (hp : IsLocalHomeomorph p) (a : E) :
     OpenPartialHomeomorph E H :=
   (hp.localInverseAt a).symm.trans (chartAt H (p a))
-
-
 
 theorem mem_pullbackChart_source (hp : IsLocalHomeomorph p) (a : E) :
     a ∈ (hp.pullbackChart (H := H) a).source := by
   change a ∈ (hp.localInverseAt a).target ∧
     (hp.localInverseAt a).symm a ∈ (chartAt H (p a)).source
   simp
-
-
 
 @[instance_reducible] noncomputable def pullbackChartedSpace (hp : IsLocalHomeomorph p) :
     ChartedSpace H E where
@@ -88,8 +69,6 @@ private theorem pullback_transition
         ((hp.localInverseAt a) ((chartAt H (p a)).symm z)))
     rw [hp.localInverseAt_symm, h z hz]
 
-
-
 theorem pullback_hasGroupoid (hp : IsLocalHomeomorph p)
     (G : StructureGroupoid H) [HasGroupoid M G] [ClosedUnderRestriction G] :
     @HasGroupoid H _ E _ (hp.pullbackChartedSpace (H := H)) G := by
@@ -104,8 +83,6 @@ theorem pullback_hasGroupoid (hp : IsLocalHomeomorph p)
   change T.restr T.source ∈ G at ht
   rw [OpenPartialHomeomorph.restr_eq_of_source_subset (subset_refl T.source)] at ht
   exact ht
-
-
 
 theorem pullback_isManifold
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

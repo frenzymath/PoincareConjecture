@@ -1,24 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidence
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
@@ -26,32 +8,19 @@ namespace PoincareConjecture
 open Matrix
 open PoincareConjecture.Surface.Combinatorial.Incidence
 
-
-
-
-
 noncomputable def m64BinarySingle {I : Type*} (i : I) : I → ZMod 2 := by
   classical
   exact fun j => if j = i then 1 else 0
-
-
 
 @[simp]
 theorem m64BinarySingle_apply_self {I : Type*} (i : I) :
     m64BinarySingle i i = 1 := by
   simp [m64BinarySingle]
 
-
-
 @[simp]
 theorem m64BinarySingle_apply_of_ne {I : Type*} {i j : I} (h : j ≠ i) :
     m64BinarySingle i j = 0 := by
   simp [m64BinarySingle, h]
-
-
-
-
-
 
 def m64SelectedEdgeDeletionGraph {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E) : SimpleGraph V where
@@ -65,9 +34,6 @@ def m64SelectedEdgeDeletionGraph {V E : Type*}
     intro a
     rintro ⟨haa, -⟩
     exact haa rfl⟩
-
-
-
 
 theorem m64Intrinsic_selected_edge_endpoints_reachable_without
     {V E : Type*} [Finite V] [Fintype E]
@@ -127,18 +93,10 @@ theorem m64Intrinsic_selected_edge_endpoints_reachable_without
     · simp
   exact hx0 (hsum_single.symm.trans hsum)
 
-
-
-
-
-
 noncomputable def m64SelectedEdgeOfDart {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
     (d : (m64SelectedEdgeDeletionGraph ends x e0).Dart) : E :=
   Classical.choose d.adj.2
-
-
-
 
 theorem m64SelectedEdgeOfDart_spec {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -151,23 +109,17 @@ theorem m64SelectedEdgeOfDart_spec {V E : Type*}
           (ends (m64SelectedEdgeOfDart ends x e0 d)).2 = d.fst)) := by
   exact Classical.choose_spec d.adj.2
 
-
-
 theorem m64SelectedEdgeOfDart_ne {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
     (d : (m64SelectedEdgeDeletionGraph ends x e0).Dart) :
     m64SelectedEdgeOfDart ends x e0 d ≠ e0 :=
   (m64SelectedEdgeOfDart_spec ends x e0 d).1
 
-
-
 theorem m64SelectedEdgeOfDart_nonzero {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
     (d : (m64SelectedEdgeDeletionGraph ends x e0).Dart) :
     x (m64SelectedEdgeOfDart ends x e0 d) ≠ 0 :=
   (m64SelectedEdgeOfDart_spec ends x e0 d).2.1
-
-
 
 theorem m64SelectedEdgeOfDart_ends {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -178,9 +130,6 @@ theorem m64SelectedEdgeOfDart_ends {V E : Type*}
         (ends (m64SelectedEdgeOfDart ends x e0 d)).2 = d.fst)) :=
   (m64SelectedEdgeOfDart_spec ends x e0 d).2.2
 
-
-
-
 noncomputable def m64WalkEdgeChain {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
     {a b : V}
@@ -189,8 +138,6 @@ noncomputable def m64WalkEdgeChain {V E : Type*}
   exact (p.darts.map fun d =>
     m64BinarySingle (m64SelectedEdgeOfDart ends x e0 d)).sum
 
-
-
 @[simp]
 theorem m64WalkEdgeChain_nil {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E) (a : V) :
@@ -198,8 +145,6 @@ theorem m64WalkEdgeChain_nil {V E : Type*}
       (SimpleGraph.Walk.nil :
         (m64SelectedEdgeDeletionGraph ends x e0).Walk a a) = 0 := by
   simp [m64WalkEdgeChain]
-
-
 
 @[simp]
 theorem m64WalkEdgeChain_cons {V E : Type*}
@@ -226,9 +171,6 @@ private theorem m64_incidence_transpose_mulVec_single
   ext w
   simp [incidenceMatrix, m64BinarySingle, eq_comm]
 
-
-
-
 theorem m64SelectedEdgeOfDart_boundary
     {V E : Type*} [Fintype E]
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -240,9 +182,6 @@ theorem m64SelectedEdgeOfDart_boundary
   rcases m64SelectedEdgeOfDart_ends ends x e0 d with h | h
   · rw [h.1, h.2]
   · rw [h.1, h.2, add_comm]
-
-
-
 
 theorem m64WalkEdgeChain_boundary
     {V E : Type*} [Fintype E]
@@ -273,8 +212,6 @@ theorem m64WalkEdgeChain_boundary
           rw [CharTwo.add_self_eq_zero]
           simp
 
-
-
 theorem m64WalkEdgeChain_apply_eq_zero_of_x_eq_zero
     {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -296,8 +233,6 @@ theorem m64WalkEdgeChain_apply_eq_zero_of_x_eq_zero
       rw [m64BinarySingle_apply_of_ne hchosen.symm, ih]
       simp
 
-
-
 theorem m64WalkEdgeChain_apply_e0
     {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -312,8 +247,6 @@ theorem m64WalkEdgeChain_apply_e0
       have hchosen := m64SelectedEdgeOfDart_ne ends x e0 ⟨(a, b), h⟩
       rw [Pi.add_apply, m64BinarySingle_apply_of_ne (Ne.symm hchosen), ih]
       simp
-
-
 
 theorem m64WalkEdgeChain_support_subset_chosen
     {V E : Type*}
@@ -338,16 +271,12 @@ theorem m64WalkEdgeChain_support_subset_chosen
         obtain ⟨d, hd, hde⟩ := ih htail
         exact ⟨d, by simp [hd], hde⟩
 
-
-
 noncomputable def m64SelectedWalkCycleVector {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
     (p : (m64SelectedEdgeDeletionGraph ends x e0).Walk
       (ends e0).1 (ends e0).2) : E → ZMod 2 := by
   classical
   exact m64WalkEdgeChain ends x e0 p + m64BinarySingle e0
-
-
 
 theorem m64SelectedWalkCycleVector_kernel
     {V E : Type*} [Fintype E]
@@ -371,8 +300,6 @@ theorem m64SelectedWalkCycleVector_kernel
             ring
     _ = 0 := by simp [CharTwo.add_self_eq_zero]
 
-
-
 theorem m64SelectedWalkCycleVector_ne_zero
     {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -385,8 +312,6 @@ theorem m64SelectedWalkCycleVector_ne_zero
   simp only [m64SelectedWalkCycleVector, Pi.add_apply, Pi.zero_apply] at he0
   rw [m64WalkEdgeChain_apply_e0] at he0
   simp at he0
-
-
 
 theorem m64SelectedWalkCycleVector_support_subset
     {V E : Type*}
@@ -409,8 +334,6 @@ theorem m64SelectedWalkCycleVector_support_subset
     m64WalkEdgeChain_apply_eq_zero_of_x_eq_zero ends x e0 p hxe_zero,
     he0]
 
-
-
 theorem m64SelectedWalkCycleVector_support_subset_chosen
     {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -429,8 +352,6 @@ theorem m64SelectedWalkCycleVector_support_subset_chosen
     apply hecycle
     simp [m64SelectedWalkCycleVector, hchain, he0]
 
-
-
 theorem m64SelectedWalkChosenEdges_subset_support
     {V E : Type*}
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -447,9 +368,6 @@ theorem m64SelectedWalkChosenEdges_subset_support
     simpa only [heq] using hx0
   · rw [← hde]
     exact m64SelectedEdgeOfDart_nonzero ends x e0 d
-
-
-
 
 theorem m64SelectedWalkCycleVector_support_eq_of_minimal
     {V E : Type*} [Fintype E]
@@ -468,9 +386,6 @@ theorem m64SelectedWalkCycleVector_support_eq_of_minimal
   · exact hminimal _ (m64SelectedWalkCycleVector_kernel ends x e0 p)
       (m64SelectedWalkCycleVector_ne_zero ends x e0 p)
       (m64SelectedWalkCycleVector_support_subset ends x e0 hx0 p)
-
-
-
 
 theorem m64SelectedWalkCycleVector_exact_support_of_minimal
     {V E : Type*} [Fintype E]
@@ -506,10 +421,6 @@ theorem m64SelectedWalkCycleVector_exact_support_of_minimal
     Set.Subset.antisymm hchosen_x hx_chosen
   exact ⟨hcycle_eq.trans hchosen_eq.symm, hchosen_eq⟩
 
-
-
-
-
 theorem m64Intrinsic_exists_path_with_cycle_support
     {V E : Type*} [Finite V] [Fintype E]
     (ends : E → V × V) (x : E → ZMod 2) (e0 : E)
@@ -530,9 +441,6 @@ theorem m64Intrinsic_exists_path_with_cycle_support
   obtain ⟨p, hp⟩ := hreachable.exists_isPath
   exact ⟨p, hp, SimpleGraph.Walk.not_nil_of_ne hendpoints,
     m64SelectedWalkCycleVector_support_eq_of_minimal ends x e0 hx0 p hminimal⟩
-
-
-
 
 theorem m64Intrinsic_exists_path_with_exact_cycle_support
     {V E : Type*} [Finite V] [Fintype E]
@@ -561,10 +469,6 @@ theorem m64Intrinsic_exists_path_with_exact_cycle_support
       ends x e0 hx0 p hminimal
   exact ⟨p, hp, SimpleGraph.Walk.not_nil_of_ne hendpoints,
     hcycle_chosen, hchosen_x⟩
-
-
-
-
 
 theorem m64Intrinsic_minimal_cycle_eq_edge_union_path
     {V E : Type*} [Finite V] [Fintype E]

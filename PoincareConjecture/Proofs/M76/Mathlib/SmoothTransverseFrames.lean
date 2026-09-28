@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricFrameField
 import PoincareConjecture.Proofs.M76.Mathlib.TransversePlaneDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,10 +11,6 @@ namespace Geometry.EuclideanSubspace
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_transverse_frame_neighborhood
     {P : E → EuclideanSubspace E} {U S : Set E} (hP : IsSmoothLeafFieldOn P U)

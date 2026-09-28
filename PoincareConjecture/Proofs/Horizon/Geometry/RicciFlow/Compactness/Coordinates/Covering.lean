@@ -2,10 +2,3 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.Ellipticity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Covering
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.DistanceLower
-
-
-
-
-
-
-

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U V : Set M}
-
-
 
 theorem exists_model_of_interval_reparametrization
     (T : OpenCylinderModel U) {J : Set ℝ} (hJ : J ⊆ Ioo (0 : ℝ) 1)

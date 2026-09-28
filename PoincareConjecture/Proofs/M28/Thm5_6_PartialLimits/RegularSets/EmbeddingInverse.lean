@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.MetricConv
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : ℕ → Type u}
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k}
-
-
-
 
 noncomputable def stageDiffeomorph (G : RegularPointedMetricConvergence g p) (j : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -88,19 +76,13 @@ noncomputable def stageDiffeomorph (G : RegularPointedMetricConvergence g p) (j 
   · intro x hx
     exact (G.embedding_smooth j ⟨x, hx⟩).contMDiffAt.contMDiffWithinAt
 
-
-
 @[simp] theorem stageDiffeomorph_source
     (G : RegularPointedMetricConvergence g p) (j : ℕ) :
     (G.stageDiffeomorph j).source = G.exhaustion j := rfl
 
-
-
 @[simp] theorem stageDiffeomorph_target
     (G : RegularPointedMetricConvergence g p) (j : ℕ) :
     (G.stageDiffeomorph j).target = G.embedding j '' G.exhaustion j := rfl
-
-
 
 @[simp] theorem stageDiffeomorph_apply
     (G : RegularPointedMetricConvergence g p) (j : ℕ) (x : G.limitCarrier.carrier) :

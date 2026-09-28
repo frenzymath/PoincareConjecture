@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.CompactFieldVariation
 import PoincareConjecture.Proofs.M09.AdaptedOrthonormalFrame
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

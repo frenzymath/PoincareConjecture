@@ -4,9 +4,6 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Basic
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentFiniteModel
 
-
-
-
 noncomputable section
 open Set Geometry Metric
 
@@ -28,8 +25,6 @@ theorem hull_subset_of_closed_partition
       ((SimplicialComplex.convexHull_subset_space hs).trans hcover) hmeet ⟨x, hx, hxC⟩
   exact disjoint_left.mp hdis hyD hyC
 
-
-
 theorem closed_piece_vertexSubcomplex_space
     (K : SimplicialComplex ℝ E) {D C : Set E}
     (hD : IsClosed D) (hC : IsClosed C) (hdis : Disjoint D C)
@@ -47,7 +42,6 @@ theorem closed_piece_vertexSubcomplex_space
     have hall := hull_subset_of_closed_partition K hD hC hdis hcover.subset hs ⟨x, hxs, hx⟩
     exact SimplicialComplex.mem_space_iff.mpr
       ⟨s, ⟨hs, fun v hv => hall (subset_convexHull ℝ (s : Set E) hv)⟩, hxs⟩
-
 
 theorem closed_piece_vertexSubcomplex_coface
     (K : SimplicialComplex ℝ E) {D C : Set E}
@@ -80,8 +74,6 @@ theorem closed_piece_vertexSubcomplex_link
       (Finset.singleton_subset_iff.mpr (Finset.mem_insert_self _ _))
     exact ⟨(K.vertexSubcomplex D).down_closed hbig (Finset.subset_insert _ _)
       (K.nonempty_of_mem_faces h.1), h.2.1, hbig⟩
-
-
 
 def markedDiskSignCoordinates {ι : Type*} [Fintype ι] [Unique ι] :
     Bool ≃ₜ sphere (0 : ι → ℝ) 1 := by
@@ -128,8 +120,6 @@ def markedDiskProductCoordinates {ι κ Y : Type*}
     (Bool × closedBall (0 : κ → ℝ) (3 / 2)) ≃ₜ Y :=
   (markedDiskSignCoordinates.prodCongr (Homeomorph.refl _)).trans
     ((Homeomorph.Set.prod _ _).symm.trans P)
-
-
 
 theorem exists_marked_two_component_models
     [DecidableEq E] {A : Type*} [TopologicalSpace A] [CompactSpace A]
@@ -190,8 +180,6 @@ theorem exists_marked_two_component_models
   · intro side v hv
     exact closed_piece_vertexSubcomplex_link K (hD side) (hD (!side)) (hdisSide side)
       (hcoverSide side).subset hv
-
-
 
 theorem exists_marked_disk_component_models
     [DecidableEq E] {ι κ : Type*} [Fintype ι] [Unique ι] [Fintype κ]

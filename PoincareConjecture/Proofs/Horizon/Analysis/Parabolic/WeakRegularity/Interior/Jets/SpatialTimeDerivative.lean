@@ -1,19 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJetAlgebra
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakDivergence
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.DerivedCu
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.BoundaryCircleAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Circles.StandardCircleOrder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry AbstractSimplicialComplex
 
@@ -71,8 +62,6 @@ theorem PairedMarkedBoundary.derived_collars_disjoint (P : PairedMarkedBoundary 
     (fun v hvs ↦ P.mark_vertices.symm.subset (hv v hvs))
   exact P.mark_faces.subset hm
 
-
-
 theorem PairedMarkedBoundary.exists_derived_circle_blocks
     (P : PairedMarkedBoundary L retained d) :
     letI : Fintype P.model.boundary.faces := (P.model.finite.subset P.model.boundary_le).fintype
@@ -108,8 +97,6 @@ theorem PairedMarkedBoundary.exists_derived_circle_blocks
     simpa only [hsc] using hcofaces' s hs hsc
   · intro v hv
     simpa only [SimplicialComplex.faceLink_singleton_eq_link] using hlinks v (P.rim_le b hv)
-
-
 
 theorem PairedMarkedBoundary.exists_derived_annuli (P : PairedMarkedBoundary L retained d) :
     letI : Fintype P.model.boundary.faces := (P.model.finite.subset P.model.boundary_le).fintype

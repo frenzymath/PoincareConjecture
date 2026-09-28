@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.CompactTimeDependentFlowNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Manifold

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.PlanarSurfaceCarrierInterior
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeChartRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Geometry Topology Metric
 namespace PoincareConjecture.M76

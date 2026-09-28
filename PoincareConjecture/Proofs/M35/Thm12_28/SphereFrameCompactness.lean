@@ -5,15 +5,6 @@ import Mathlib.Topology.UniformSpace.UniformConvergence
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,19 +17,15 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
 local instance : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
 
-
-
 noncomputable def sphereChartFrame (q : UnitTwoSphere) : E2 →L[ℝ] E3 :=
   (ℝ ∙ (-q : E3))ᗮ.subtypeL.comp
     (OrthonormalBasis.fromOrthogonalSpanSingleton (𝕜 := ℝ)
       2 (ne_zero_of_mem_unit_sphere (-q))).repr.symm.toContinuousLinearEquiv.toContinuousLinearMap
 
-
 theorem sphereChartFrame_norm (q : UnitTwoSphere) (p : E2) :
     ‖sphereChartFrame q p‖ = ‖p‖ :=
   (OrthonormalBasis.fromOrthogonalSpanSingleton (𝕜 := ℝ)
     2 (ne_zero_of_mem_unit_sphere (-q))).repr.symm.norm_map p
-
 
 theorem sphereChartFrame_orthogonal (q : UnitTwoSphere) (p : E2) :
     inner ℝ (q : E3) (sphereChartFrame q p) = 0 := by
@@ -47,7 +34,6 @@ theorem sphereChartFrame_orthogonal (q : UnitTwoSphere) (p : E2) :
       2 (ne_zero_of_mem_unit_sphere (-q))).repr.symm p).property
   change inner ℝ (-q : E3) (sphereChartFrame q p) = 0 at h
   simpa only [inner_neg_left, neg_eq_zero] using h
-
 
 theorem sphere_chart_inverse_eq_frame (q : UnitTwoSphere) (p : E2) :
     ((chartAt E2 q).symm p).val = stereoInvFunAux (-q : E3) (sphereChartFrame q p) := rfl
@@ -105,9 +91,6 @@ private theorem contDiff_frame_inverse :
     (((contDiff_const (c := (4 : ℝ))).smul hw).add
       ((hn.sub (contDiff_const (c := (4 : ℝ)))).smul contDiff_fst.fst.neg))
 
-
-
-
 theorem sphere_chart_inverse_subsequence (q : ℕ → UnitTwoSphere) :
     ∃ q₀ : UnitTwoSphere, ∃ L : E2 →L[ℝ] E3, ∃ phi : ℕ → ℕ,
       StrictMono phi ∧ Tendsto (q ∘ phi) atTop (𝓝 q₀) ∧
@@ -146,8 +129,6 @@ theorem sphere_chart_inverse_subsequence (q : ℕ → UnitTwoSphere) :
     have hjet := spatial_jets_tendsto_uniformly contDiff_frame_inverse hparam r hK
     simpa only [sphere_chart_inverse_eq_frame] using hjet
 
-
-
 theorem sphere_cylinder_inverse_jet_tendsto
     (q : ℕ → UnitTwoSphere) (q₀ : UnitTwoSphere) (L : E2 →L[ℝ] E3)
     (hq : Tendsto q atTop (𝓝 q₀))
@@ -166,8 +147,6 @@ theorem sphere_cylinder_inverse_jet_tendsto
     ((hqa.prodMk_nhds hL).prodMk_nhds (tendsto_const_nhds.prodMk_nhds hs))
   simpa only [Function.comp_def, sphere_chart_inverse_eq_frame] using h
 
-
-
 theorem sphere_cylinder_radial_extension_contDiffAt
     (q₀ q : UnitTwoSphere) (s : ℝ) (H : RoundCylinderSpace → E3)
     (hH : ContMDiffAt ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ H (q, s)) :
@@ -184,9 +163,6 @@ theorem sphere_cylinder_radial_extension_contDiffAt
       ((spherePolarMap q₀ q.val).1, s) := by
     simpa only [spherePolarMap_sphere] using hH
   exact (hH'.comp (q.val, s) hrad).contDiffAt
-
-
-
 
 theorem sphere_cylinder_composed_jets_tendsto
     (q : ℕ → UnitTwoSphere) (q₀ : UnitTwoSphere) (L : E2 →L[ℝ] E3)

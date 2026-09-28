@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceDifferential
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,18 +13,12 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 noncomputable def m64MovingAnnulusCurrent (g : RiemannianMetric n M)
     (v : ℝ × LoopPlane → M) (i : Fin 2) (q : ℝ × LoopPlane) : ℝ :=
   g.inner (v q)
     (mfderiv 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) v q (1, 0))
     (mfderiv 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) v q
       (0, EuclideanSpace.basisFun (Fin 2) ℝ i))
-
-
-
 
 theorem m64MovingAnnulusCurrent_contDiffAt
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M} {q : ℝ × LoopPlane}
@@ -59,8 +42,6 @@ theorem m64MovingAnnulusCurrent_contDiffAt
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
 theorem m64MovingAnnulus_time_velocity
     {v : ℝ × LoopPlane → M} {t : ℝ} {p : LoopPlane}
     (hv : MDifferentiableAt 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) v (t, p)) :
@@ -79,9 +60,6 @@ theorem m64MovingAnnulus_time_velocity
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
-
 theorem m64MovingAnnulus_spatial_differential
     {v : ℝ × LoopPlane → M} {t : ℝ} {p : LoopPlane}
     (hv : MDifferentiableAt 𝓘(ℝ, ℝ × LoopPlane) (𝓡 n) v (t, p)) (d : LoopPlane) :
@@ -97,10 +75,6 @@ theorem m64MovingAnnulus_spatial_differential
   have hchain := mfderiv_comp_apply p hv hmd d
   rw [hd] at hchain
   exact hchain
-
-
-
-
 
 theorem m64MovingAnnulusCurrent_eq_pairing
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M} {t : ℝ} {p : LoopPlane}

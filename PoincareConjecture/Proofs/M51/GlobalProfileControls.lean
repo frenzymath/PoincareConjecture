@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.CompletedStageChain
 import PoincareConjecture.Proofs.M48.ExtensionNoncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +18,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F₀ : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F₀ k)
 
-
 theorem exists_observed_entry (t : ℝ) (ht : 0 ≤ t) :
     ∃ n, ∃ j : Fin ((prefixAt S N C (k + n)).i + 1),
       t ∈ surgeryObservationInterval (Q.observation n) ∩ surgeryEpochEntry j.val := by
@@ -36,7 +26,6 @@ theorem exists_observed_entry (t : ℝ) (ht : 0 ≤ t) :
     rw [prefix_index]
     omega
   exact ⟨n, ⟨epochIndex t, hj⟩, ⟨ht, hH⟩, mem_epochEntry_index ht⟩
-
 
 theorem canonical_of_extensions
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -56,7 +45,6 @@ theorem canonical_of_extensions
   rw [hr] at hx
   exact hcanonical t hentry ht x hx
 
-
 theorem noncollapsed_of_extensions
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (G : SurgeryFlowData.{u})
@@ -75,7 +63,6 @@ theorem noncollapsed_of_extensions
     exact (Q.old_controls n).kappa_schedule j hj t hentry
   rw [hkappa]
   exact hnoncollapsed t hentry ht x hpositive r hr hrepsilon cylinder hterminal hcurvature
-
 
 theorem profile_controls_of_extensions
     (H13 : GeneralizedParabolicRescalingTheory.{u} 3)

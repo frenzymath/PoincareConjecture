@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.LocallyFlatSeparation
 import PoincareConjecture.Proofs.M76.Brown.ComplementaryRegionClosures
 import PoincareConjecture.Proofs.M76.Mathlib.UnboundedComplementComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,10 +9,6 @@ open Set Metric
 namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_bounded_complement_components {S : Set V3}
     (hS : LocallyFlatTopologicalSphere S) :

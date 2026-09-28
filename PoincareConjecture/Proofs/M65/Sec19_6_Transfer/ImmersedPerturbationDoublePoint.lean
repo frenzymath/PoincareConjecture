@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationBlock
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
   {J : Set ℝ} {n : ℕ}
 
-
-
-
 def doublePointEquation (C : M65SmoothFilledLoopFamily F J)
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (L : List (Fin n)) (q : M)
     (w : (Fin n → ℝ) × LoopAmbient) : LoopAmbient :=
@@ -37,9 +24,6 @@ def doublePointEquation (C : M65SmoothFilledLoopFamily F J)
     (periodicFreeLoop (C.loops (w.2 2)) (w.2 0))) -
   (chartAt LoopAmbient q) (foldControls Phi beta L w.1 (w.2 1)
     (periodicFreeLoop (C.loops (w.2 2)) (w.2 1)))
-
-
-
 
 theorem doublePointEquation_contDiffAt (C : M65SmoothFilledLoopFamily F J) (hJ : IsOpen J)
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)
@@ -75,9 +59,6 @@ theorem doublePointEquation_contDiffAt (C : M65SmoothFilledLoopFamily F J) (hJ :
       exact contMDiffAt_of_mem_maximalAtlas (IsManifold.chart_mem_maximalAtlas q) hi
     exact (he.comp (0, z) hfold).contDiffAt
   exact (hpart 0 hx).sub (hpart 1 hy)
-
-
-
 
 theorem doublePointEquation_fderiv_single (C : M65SmoothFilledLoopFamily F J)
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)
@@ -125,10 +106,6 @@ theorem doublePointEquation_fderiv_single (C : M65SmoothFilledLoopFamily F J)
 variable [T2Space M] [CompactSpace M]
 
 set_option maxHeartbeats 700000 in
-
-
-
-
 
 theorem exists_doublePoint_regular_controls (C : M65SmoothFilledLoopFamily F J)
     (z : LoopAmbient)

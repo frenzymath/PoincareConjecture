@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.InverseRadius
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem hasFDerivAt_endpoint_chart
     {e : EuclideanSpace ℝ (Fin n) → M} {v : EuclideanSpace ℝ (Fin n)}
@@ -43,8 +30,6 @@ theorem hasFDerivAt_endpoint_chart
   have hid := congrArg (fun A => A (mfderiv (𝓡 n) (𝓡 n) e v a))
     (mfderiv_extChartAt_self (I := 𝓡 n) (x := e v))
   exact h.trans hid
-
-
 
 theorem exponential_double_eq_zero_of_opposite_radial_velocities [T2Space M]
     (g : RiemannianMetric n M)

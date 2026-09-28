@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.PolarCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ private theorem polar_positive_smul (q₀ q : UnitTwoSphere) {r : ℝ} (hr : 0 <
     simp only [spherePolarMap, dif_neg hne, hnorm, smul_smul,
       inv_mul_cancel₀ hr.ne', one_smul]
   · simp only [spherePolarMap, dif_neg hne, hnorm]
-
-
 
 noncomputable def radialAnnulusPatch (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length) :
@@ -106,7 +94,6 @@ noncomputable def radialAnnulusPatch (q₀ : UnitTwoSphere) (a b length : ℝ)
         (fun y : StandardCapSpace => (‖y‖ - a) / b) x :=
       (((contDiffAt_norm ℝ hne).sub contDiffAt_const).div_const b).contMDiffAt
     exact (hdir.prodMk haxis).contMDiffWithinAt
-
 
 theorem radialAnnulusPatch_centralSphere (q₀ : UnitTwoSphere) (a b length : ℝ)
     (hb : 0 < b) (hl : 0 < length) (hinner : 0 < a - b * length) :

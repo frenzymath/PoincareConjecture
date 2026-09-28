@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJordanRegions
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParameters
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 private theorem m64Intrinsic_exists_fixed_crossing_ray_region
     {alpha beta base : ℝ → AnnulusCoordinates} {A B s t : ℝ}
@@ -108,10 +94,6 @@ private theorem m64Intrinsic_exists_fixed_crossing_ray_region
       (hstart.trans hq0'.symm) (hend.trans hq1'.symm) hbaseq
   rw [hqimage, hfimage, hgimage] at hcover hfU hfV
   exact ⟨U, V, hU, hV, hpU, hpV, hbU, hbV, hdisj, hcover, hfU, hfV, hcompact⟩
-
-
-
-
 
 theorem m64Intrinsic_exists_prescribed_collision_disk
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,7 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 theorem source_interior_empty : interior source = ∅ := by
   change interior (closedBall (0 : V1) 1 ×ˢ sphere (0 : V2) 1) = ∅
   rw [interior_prod_eq, interior_sphere _ one_ne_zero, prod_empty]
-
 
 theorem source_face_card_le (K : SimplicialComplex ℝ (V1 × V2))
     (hK : K.space = source) {a : Finset (V1 × V2)} (ha : a ∈ K.faces) : a.card ≤ 3 := by

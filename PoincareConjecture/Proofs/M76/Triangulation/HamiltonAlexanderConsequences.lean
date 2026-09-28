@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeRegionBalls
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTheoremOne
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,10 +10,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.hasAlexanderRegionBalls
     {S : Set E} {D : Set F} {e : S ≃ₜ frontier D} (he : e.IsFinitePL)
@@ -42,10 +29,6 @@ namespace PoincareConjecture.M76
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_indexThree
     (hdim : Module.finrank ℝ E = 3) :
@@ -73,9 +56,6 @@ theorem hasHamiltonChartHandleStraightening_indexThree
   rcases hx with hx | hx
   · exact (not_le.mp (by simpa only [mem_compl_iff, mem_closedBall_zero_iff] using hx)).le
   · exact le_of_eq (mem_sphere_zero_iff_norm.mp hx).symm
-
-
-
 
 theorem hasHamiltonChartHandleStraightening_of_lower_indices
     (hdim : Module.finrank ℝ E = 3)

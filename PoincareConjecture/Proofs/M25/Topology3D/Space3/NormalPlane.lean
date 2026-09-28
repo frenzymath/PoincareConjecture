@@ -1,15 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
 variable [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem range_eq_normal_perp (A : V →L[ℝ] E) (hA : Function.Injective A)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ V + 1)
     (n : E) (hn : n ≠ 0) (hnA : ∀ v, ⟪n, A v⟫_ℝ = 0) :
@@ -33,8 +21,6 @@ theorem range_eq_normal_perp (A : V →L[ℝ] E) (hA : Function.Injective A)
     exact Submodule.mem_orthogonal_singleton_iff_inner_right.mpr (hnA v)
   · rw [LinearMap.finrank_range_of_inj hA,
       Submodule.finrank_orthogonal_span_singleton (n := Module.finrank ℝ V) hn]
-
-
 
 theorem height_annihilates_iff_normal_sign (A : V →L[ℝ] E) (hA : Function.Injective A)
     (hdim : Module.finrank ℝ E = Module.finrank ℝ V + 1)

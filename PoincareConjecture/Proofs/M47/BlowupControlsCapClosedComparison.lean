@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapEnergyAt
 import PoincareConjecture.Proofs.M47.BlowupControlsCapCoefficients
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ noncomputable local instance capClosedCoefficientNorm : NormedAddCommGroup Bilin
 
 noncomputable local instance capClosedCoefficientSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_closed_cap_comparison_of_continuation
     (P : M44CapPersistencePredecessors.{u})

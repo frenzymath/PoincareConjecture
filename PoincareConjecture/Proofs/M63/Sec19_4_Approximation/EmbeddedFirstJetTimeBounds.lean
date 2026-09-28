@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessEmbeddedCurve
 import PoincareConjecture.Proofs.M63.Adapters
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_uniform_embedded_firstJet_time_lipschitz [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

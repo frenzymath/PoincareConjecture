@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialLocalScalar
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialIntervals
 import PoincareConjecture.Proofs.M35.CapGeometry.GuardedScalarFloor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single 2 1
-
-
-
 
 theorem axisWarpingRadius_mul_sqrt_scalar_le
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -81,8 +69,6 @@ end PoincareConjecture.M35.Uniqueness
 namespace PoincareConjecture.RepairedStandardCapExistenceData
 
 open M35.Uniqueness
-
-
 
 theorem exists_normalized_orbit_radius_bound (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀) :

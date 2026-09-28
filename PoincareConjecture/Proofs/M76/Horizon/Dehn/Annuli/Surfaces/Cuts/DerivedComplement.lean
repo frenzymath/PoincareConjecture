@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedCom
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSurfaceIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -18,7 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
 
 theorem barycentricNeighborhood_face_iff_vertex_star
     (L : SimplicialComplex ℝ E) (hLK : L ≤ K) {t : Finset E} :
@@ -52,7 +42,6 @@ theorem barycentricNeighborhood_face_iff_vertex_star
     obtain ⟨s, hs, hvs, hsy⟩ := ht.2 y hy
     exact ⟨s, hs, ⟨v, hvs (Finset.mem_singleton_self _), hvL⟩, hsy⟩
 
-
 theorem barycentricNeighborhood_pure_triangles
     (L : SimplicialComplex ℝ E) (hLK : L ≤ K)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t) :
@@ -72,7 +61,6 @@ theorem barycentricNeighborhood_pure_triangles
 
 omit [DecidableEq E] in
 
-
 theorem original_vertex_mem_barycentricNeighborhood_iff
     (L : SimplicialComplex ℝ E) {v : E} (hv : v ∈ K.vertices) :
     v ∈ (K.barycentricNeighborhood L).vertices ↔ v ∈ L.vertices := by
@@ -91,8 +79,6 @@ theorem original_vertex_mem_barycentricNeighborhood_iff
     exact ⟨{v}, hv, ⟨v, Finset.mem_singleton_self _, hvL⟩,
       (Finset.centroid_singleton ℝ id v).trans hyv.symm⟩
 
-
-
 theorem unmarked_vertex_star_le_closedFaceComplement
     (L : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -110,8 +96,6 @@ theorem unmarked_vertex_star_le_closedFaceComplement
       (Finset.singleton_nonempty v)
     exact hvL ((K.original_vertex_mem_barycentricNeighborhood_iff L hv).mp hvN)
   exact ⟨hs.1, t, ht, htN, (Finset.subset_insert _ _).trans hvst⟩
-
-
 
 theorem closedFaceComplement_derived_face_iff
     (L : SimplicialComplex ℝ E)

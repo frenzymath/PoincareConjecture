@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteC2BoundaryReference
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,11 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64C2ShrinkingCurve_exists_regular_trace_with_curvature
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}
@@ -81,10 +71,6 @@ theorem m64C2ShrinkingCurve_exists_regular_trace_with_curvature
     change m62CurvatureVector F d t (H.map (sigma.map x)) = _
     rw [hH]
     exact hcurv (sigma.map x)
-
-
-
-
 
 theorem m64C2ShrinkingCurve_exists_regular_trace
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

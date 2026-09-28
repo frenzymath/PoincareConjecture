@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +25,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_map_mfderiv_inverse_prod {x : M} (hx : x ∈ N.carrier)
     (v : TangentSpace (𝓡 3) x) :
     mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) N.coordinate_map (N.coordinate_inverse x)
@@ -53,15 +41,12 @@ theorem coordinate_map_mfderiv_inverse_prod {x : M} (hx : x ∈ N.carrier)
   rw [heq.mfderiv_eq, mfderiv_id] at hh
   exact (congrArg (fun L => L v) hh).symm
 
-
 theorem sphereSlice_contMDiff {a : ℝ} (ha : a ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     ContMDiff (𝓡 2) (𝓡 3) ∞ (fun p : UnitTwoSphere => N.coordinate_map (p, a)) := by
   intro p
   exact (N.coordinate_map_smooth.contMDiffAt
     (N.cylinderDomain_open.mem_nhds ⟨mem_univ _, ha⟩)).comp p
       (contMDiffAt_id.prodMk contMDiffAt_const)
-
-
 
 theorem sphereSlice_mfderiv {a : ℝ} (ha : a ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (q : UnitTwoSphere) (v : TangentSpace (𝓡 2) q) :
@@ -82,14 +67,11 @@ theorem sphereSlice_mfderiv {a : ℝ} (ha : a ∈ Ioo (-N.epsilon⁻¹) N.epsilo
   rw [hd]
   rfl
 
-
 theorem centralSphere_mfderiv (q : UnitTwoSphere) (v : TangentSpace (𝓡 2) q) :
     mfderiv (𝓡 2) (𝓡 3) (fun p : UnitTwoSphere => N.coordinate_map (p, 0)) q v =
       mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) N.coordinate_map (q, 0) (v, 0) :=
   N.sphereSlice_mfderiv
     (by constructor <;> linarith [inv_pos.mpr N.epsilon_pos]) q v
-
-
 
 theorem sphereSlice_projection_mfderiv (N' : EpsilonNeck g) {a : ℝ}
     (ha : a ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹) (q : UnitTwoSphere)
@@ -110,7 +92,6 @@ theorem sphereSlice_projection_mfderiv (N' : EpsilonNeck g) {a : ℝ}
     (mfderiv (𝓡 2) (𝓡 3) (fun p : UnitTwoSphere => N'.coordinate_map (p, a)) q v)).1 = _
   rw [N'.sphereSlice_mfderiv ha]
 
-
 theorem centralSphere_projection_mfderiv (N' : EpsilonNeck g) (q : UnitTwoSphere)
     (hx : N'.coordinate_map (q, 0) ∈ N.carrier) (v : TangentSpace (𝓡 2) q) :
     mfderiv (𝓡 2) (𝓡 2)
@@ -122,8 +103,6 @@ theorem centralSphere_projection_mfderiv (N' : EpsilonNeck g) (q : UnitTwoSphere
     (by constructor <;> linarith [inv_pos.mpr N'.epsilon_pos]) q hx v
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
 
 theorem sphereSlice_projection_mfderiv_bijective_of_ricci_error
     (D : LeviCivitaData g) (N' : EpsilonNeck g) {a : ℝ}
@@ -221,7 +200,6 @@ theorem sphereSlice_projection_mfderiv_bijective_of_ricci_error
     unfold TangentSpace
     infer_instance
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := A.toLinearMap)).mp hinj⟩
-
 
 theorem centralSphere_projection_mfderiv_bijective_of_ricci_error
     (D : LeviCivitaData g) (N' : EpsilonNeck g) (q : UnitTwoSphere)

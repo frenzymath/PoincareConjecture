@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TimeDependentOperator
 import Mathlib.Topology.ContinuousMap.Bounded.Normed
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

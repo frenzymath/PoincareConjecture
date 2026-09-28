@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Diffeomorphism.Pertur
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Operations
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 import Mathlib.Geometry.Manifold.PartitionOfUnity
-
-
-
-
-
-
-

@@ -6,14 +6,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxSize 2048

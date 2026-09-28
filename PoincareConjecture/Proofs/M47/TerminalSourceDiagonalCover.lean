@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 import PoincareConjecture.Proofs.M47.TerminalSourceIndexedCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalSource_exists_strict_diagonal_chart_covers
     (Data : ℕ → ℕ → Type v)

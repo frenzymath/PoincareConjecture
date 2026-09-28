@@ -1,26 +1,12 @@
 import PoincareConjecture.Proofs.M25.Mathlib.PositiveRadialExtension
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace Real
-
-
-
 
 theorem exists_smooth_interval_reparametrization
     {a r b c : ℝ} (har : a < r) (hrb : r < b) (hrc : r < c) :

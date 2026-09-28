@@ -3,20 +3,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionS
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.AlternateResolutionSources
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem joinSourceCopies_continuous
     {E Y : Type*} [TopologicalSpace E] [TopologicalSpace Y] {A B : Set E}
@@ -49,7 +40,6 @@ theorem joinSourceCopies_continuous
   rw [hcover] at hc
   exact continuousOn_univ.mp hc
 
-
 theorem UpperResolutionSources.retainedCopy_continuous
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {A QA C QC : Set E} {Sstrip : Set (ℝ × ℝ)}
@@ -60,7 +50,6 @@ theorem UpperResolutionSources.retainedCopy_continuous
     (hAC : Disjoint A C) : Continuous (joinSourceCopies hAC s.jA s.jC) :=
   joinSourceCopies_continuous hAC hA.isCompact.isClosed hC.isCompact.isClosed
     s.embeddings.1.continuous s.embeddings.2.2.continuous
-
 
 theorem AlternateResolutionSources.retainedCopy_continuous
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

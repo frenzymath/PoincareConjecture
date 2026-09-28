@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Covering
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.HornNecks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ open BalancedNeckChain
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_maximal_selected_chain_extending (H : NeckOnlyCover g)
     (C₀ : BalancedNeckChain g H.epsilon) (hC₀ : C₀.IsSelectedFrom H)
@@ -60,8 +49,6 @@ theorem exists_maximal_selected_chain_extending (H : NeckOnlyCover g)
   refine ⟨C.1, C.2.1, C.2.2.1, C.2.2.2, ?_⟩
   intro D hDs hDc hCD
   exact hC ⟨D, hDs, hDc, C.2.2.2.trans hCD⟩ hCD
-
-
 
 theorem exists_covering_balanced_chain_extending :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -101,8 +88,6 @@ theorem exists_covering_balanced_chain_extending :
 end PoincareConjecture.NeckOnlyCover
 
 namespace PoincareConjecture.StrongHorn
-
-
 
 theorem exists_anchored_covering_chain :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

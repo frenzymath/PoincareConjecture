@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.RegularMeasure
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TimeCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
-
 theorem regular_reducedLength_deriv_lower {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
     (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
@@ -42,8 +32,6 @@ theorem regular_reducedLength_deriv_lower {K : AncientKappaSolution n M}
   obtain ⟨d, hd⟩ := r.representative_time_derivative
   rw [(hd.congr_of_eventuallyEq heq).deriv, ← hd.deriv]
   exact P.regular_reducedLength_time_lower r
-
-
 
 theorem reducedLength_absolutelyContinuous {K : AncientKappaSolution n M}
     {R : ℝ} {p : M} (D : ReducedLengthMeasureData K.flow 0 R p)
@@ -75,8 +63,6 @@ theorem reducedLength_absolutelyContinuous {K : AncientKappaSolution n M}
   exact (show LipschitzOnWith L (fun τ => reducedLength K.flow 0 p q τ) (uIcc a b) by
     simpa only [uIcc_of_le hab] using hL).absolutelyContinuousOnInterval
 
-
-
 theorem reducedLength_weighted_time_le {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (p q : M)
     {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
@@ -104,7 +90,6 @@ theorem reducedLength_weighted_time_le {K : AncientKappaSolution n M}
   exact hclosed.closure_subset_iff.mpr (fun _ h => h)
     ((calibratedMetricVolume (K.flow.metric 0)).dense_of_ae hae q)
 
-
 theorem reducedLength_time_le {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) (p q : M)
     {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
@@ -116,8 +101,6 @@ theorem reducedLength_time_le {K : AncientKappaSolution n M}
 end AncientAsymptoticSolitonPredecessors
 
 namespace AncientRescalingSequence
-
-
 
 theorem scalar_at_base_time_le {K : AncientKappaSolution n M}
     (S : AncientRescalingSequence K) (P : AncientAsymptoticSolitonPredecessors K)

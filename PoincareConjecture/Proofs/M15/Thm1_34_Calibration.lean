@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import Mathlib.Geometry.Euclidean.Volume.Measure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
 
 theorem euclideanVolumeCalibration_eq_addHaarScalarFactor (n : ℕ) :
     euclideanVolumeCalibration n =
@@ -40,9 +29,6 @@ theorem euclideanVolumeCalibration_eq_addHaarScalarFactor (n : ℕ) :
   change (volume : Measure (EuclideanSpace ℝ (Fin n))) (Metric.ball 0 1) /
     μ (Metric.ball 0 1) = _
   rw [hvalue, div_eq_mul_inv, ENNReal.mul_inv_cancel_right hμpos.ne' hμfinite]
-
-
-
 
 theorem calibratedMetricVolume_eq_euclideanHausdorff
     {n : ℕ} {M : Type u} [TopologicalSpace M]

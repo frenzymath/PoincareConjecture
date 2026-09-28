@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StripJetConvergence
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.CurveJetStability
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ClosedStripDifferential
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -31,8 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
 
-
-
 theorem strip_coordinates_contMDiff :
     ContMDiff 𝓘(ℝ, ℝ × ℝ) (𝓡 2) ∞ (fun p : ℝ × ℝ => annulusPoint p.1 p.2) := by
   apply contMDiff_iff_contDiff.mpr
@@ -44,7 +30,6 @@ theorem strip_coordinates_contMDiff :
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem annulus_slice_contMDiff {f : LoopPlane → M} {V : Set ℝ} {k : ℕ∞ω}
     (hk : k ≤ ∞) (hf : ContMDiffOn (𝓡 2) (𝓡 n) k f {p | p 1 ∈ V})
     {s : ℝ} (hs : s ∈ V) :
@@ -53,10 +38,6 @@ theorem annulus_slice_contMDiff {f : LoopPlane → M} {V : Set ℝ} {k : ℕ∞�
     (strip_coordinates_contMDiff.contDiff.comp
       (contDiff_id.prodMk contDiff_const)).contMDiff
   exact hf.comp_contMDiff (hline.of_le hk) (fun _ => hs)
-
-
-
-
 
 theorem exists_annulus_slice_subarc_tolerance_of_retraction
     (F : RicciFlow n M (Icc a b))

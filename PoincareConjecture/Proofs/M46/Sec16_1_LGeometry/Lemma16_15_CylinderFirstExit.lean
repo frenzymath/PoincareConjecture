@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderRelativeImage
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousFirstExit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u v
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
 
 theorem rawCylinder_preimage_isOpen
     {F : GeneralizedRicciFlowData.{u}}
@@ -47,9 +35,6 @@ theorem rawCylinder_preimage_isOpen
     exact tendsto_nhdsWithin_iff.mpr
       ⟨hgamma.continuousAt, Eventually.of_forall hclock⟩
   exact htend hnear
-
-
-
 
 theorem exists_first_exit_of_relative_preimage
     {X : Type v} [TopologicalSpace X] {gamma : ℝ → X} {a b : ℝ}

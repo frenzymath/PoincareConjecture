@@ -1,8 +1,3 @@
-
-
-
-
-
 module
 
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.InducedMaps
@@ -10,58 +5,7 @@ public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 public import Mathlib.Topology.Homotopy.LocallyContractible
 public import Mathlib.Topology.Homotopy.Product
 
-
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.PathHomotopy
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public section
 
@@ -70,9 +14,6 @@ open Topology
 namespace Poincare.Topology
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 class SemilocallySimplyConnectedSpace (X : Type*) [TopologicalSpace X] : Prop where
 
@@ -83,15 +24,11 @@ namespace SemilocallySimplyConnectedSpace
 
 variable [SemilocallySimplyConnectedSpace X]
 
-
-
 theorem exists_mem_nhds_subset_loops_nullhomotopic (x : X) {V : Set X} (hV : V ∈ 𝓝 x) :
     ∃ U ∈ 𝓝 x, U ⊆ V ∧ ∀ γ : Path x x, (∀ t, γ t ∈ U) → γ.Homotopic (Path.refl x) := by
   obtain ⟨U, hU, hloop⟩ := exists_mem_nhds_loops_nullhomotopic (X := X) x
   refine ⟨U ∩ V, Filter.inter_mem hU hV, Set.inter_subset_right, fun γ hγ => ?_⟩
   exact hloop γ fun t => (hγ t).1
-
-
 
 theorem exists_isOpen_mem_nhds_subset_loops_nullhomotopic (x : X) {V : Set X} (hV : V ∈ 𝓝 x) :
     ∃ U, IsOpen U ∧ x ∈ U ∧ U ⊆ V ∧
@@ -99,8 +36,6 @@ theorem exists_isOpen_mem_nhds_subset_loops_nullhomotopic (x : X) {V : Set X} (h
   obtain ⟨U, hU, hUV, hloop⟩ := exists_mem_nhds_subset_loops_nullhomotopic x hV
   obtain ⟨W, hWU, hWopen, hxW⟩ := mem_nhds_iff.mp hU
   exact ⟨W, hWopen, hxW, hWU.trans hUV, fun γ hγ => hloop γ fun t => hWU (hγ t)⟩
-
-
 
 theorem exists_isOpen_mem_nhds_loops_nullhomotopic (x : X) :
     ∃ U, IsOpen U ∧ x ∈ U ∧ ∀ γ : Path x x, (∀ t, γ t ∈ U) → γ.Homotopic (Path.refl x) := by
@@ -110,8 +45,6 @@ theorem exists_isOpen_mem_nhds_loops_nullhomotopic (x : X) :
 
 end SemilocallySimplyConnectedSpace
 
-
-
 theorem SemilocallySimplyConnectedSpace.of_forall_exists_mem_nhds_isSimplyConnected
     (h : ∀ x : X, ∃ U ∈ 𝓝 x, IsSimplyConnected U) : SemilocallySimplyConnectedSpace X where
   exists_mem_nhds_loops_nullhomotopic x := by
@@ -120,10 +53,6 @@ theorem SemilocallySimplyConnectedSpace.of_forall_exists_mem_nhds_isSimplyConnec
     obtain ⟨F, -⟩ :=
       (isSimplyConnected_iff_exists_homotopy_refl_forall_mem.mp hsc).2 x γ hγ
     exact ⟨F⟩
-
-
-
-
 
 theorem SemilocallySimplyConnectedSpace.of_locallyContractibleSpace
     (h : LocallyContractibleSpace X) : SemilocallySimplyConnectedSpace X where
@@ -136,21 +65,14 @@ theorem SemilocallySimplyConnectedSpace.of_locallyContractibleSpace
     refine ⟨V, hV, fun γ hγ => ?_⟩
     exact Path.Homotopic.refl_of_forall_mem_of_nullhomotopic hnj γ hγ
 
-
-
 instance (priority := 100) [SimplyConnectedSpace X] : SemilocallySimplyConnectedSpace X where
   exists_mem_nhds_loops_nullhomotopic x :=
     ⟨Set.univ, Filter.univ_mem,
       fun γ _ => (simply_connected_iff_loops_nullhomotopic.mp ‹_›).2 x γ⟩
 
-
-
-
 instance (priority := 100) [StronglyLocallyContractibleSpace X] :
     SemilocallySimplyConnectedSpace X :=
   .of_locallyContractibleSpace StronglyLocallyContractibleSpace.locallyContractible
-
-
 
 instance (priority := 100) [DiscreteTopology X] : SemilocallySimplyConnectedSpace X where
   exists_mem_nhds_loops_nullhomotopic x := by
@@ -159,9 +81,6 @@ instance (priority := 100) [DiscreteTopology X] : SemilocallySimplyConnectedSpac
       ext t
       simpa using hγ t
     rw [hγx]
-
-
-
 
 instance [SemilocallySimplyConnectedSpace X] [SemilocallySimplyConnectedSpace Y] :
     SemilocallySimplyConnectedSpace (X × Y) where

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalTwoSphereArcAttachment
 import PoincareConjecture.Proofs.M76.Wall.SphericalFrontierFilling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,9 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem ChartwisePLSphere.exists_mem_ne
     {X ι : Type*} [TopologicalSpace X]
@@ -43,11 +30,6 @@ theorem ChartwisePLSphere.exists_mem_ne
   · exact ⟨s.parametrization v, (s.parametrization v).property,
       fun hv => hdiff (hu.trans hv.symm)⟩
   · exact ⟨s.parametrization u, (s.parametrization u).property, hu⟩
-
-
-
-
-
 
 theorem PLDomain.exists_protected_two_sphere_attachment
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

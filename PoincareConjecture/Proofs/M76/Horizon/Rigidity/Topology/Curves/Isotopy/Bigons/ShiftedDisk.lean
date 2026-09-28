@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Polygons.FinitePLReturningBigon
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

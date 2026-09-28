@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcFrontierGerm
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,9 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_loop_injOn_Ioc
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ} (hT : 0 < T)
@@ -40,10 +25,6 @@ theorem m64Intrinsic_loop_injOn_Ioc
       exact False.elim (hx.1.ne' heq)
     · exact hinj ⟨hx.1.le, lt_of_le_of_ne hx.2 hxT⟩
         ⟨hy.1.le, lt_of_le_of_ne hy.2 hyT⟩ hxy
-
-
-
-
 
 theorem m64Intrinsic_loop_corner_decomposition
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {T : ℝ} (hT : 0 < T)

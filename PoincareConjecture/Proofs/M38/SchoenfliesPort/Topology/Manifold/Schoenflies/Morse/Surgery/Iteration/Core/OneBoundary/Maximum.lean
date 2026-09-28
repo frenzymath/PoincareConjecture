@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Minimum
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneBoundary.Reflection
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -31,8 +23,6 @@ open Poincare.Geometry.Euclidean
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_filling_of_negative_cap_complement
     {v : E3} {g : S2 → E3}
@@ -85,8 +75,6 @@ namespace SphereMorseReduction
 
 variable {f : S2 → E3} (M : SphereMorseReduction f)
 
-
-
 theorem exists_filling_of_one_negative_cap {g : S2 → E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)
     (hP : P.Protects ((fun p => inner Real (M.v : E3) (M.D (f p))) ''
@@ -104,8 +92,6 @@ theorem exists_filling_of_one_negative_cap {g : S2 → E3} (hg : g ∈ M.tree.le
     χ hχ0 hχp hχ hχi _ hχform
   intro q hq
   simpa only [hcore] using interior_subset (hχtarget hq)
-
-
 
 theorem exists_filling_of_one_cap {g : S2 → E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiniteCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem integrableOn_ball_of_continuous
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
     {h : M → ℝ} (hh : Continuous h) (p : M) (r : ℝ) :
@@ -33,7 +22,6 @@ theorem integrableOn_ball_of_continuous
   exact (hh.continuousOn.integrableOn_compact
     (g.isCompact_closedBall_of_metricComplete hcomplete p r)).mono_set
       (fun _ hx => (show g.edist p _ < ENNReal.ofReal r from hx).le)
-
 
 theorem unitBall_cover_card_bound_pos (n : ℕ) (hn : 1 ≤ n)
     {r : ℝ} (hr : 0 < r) :
@@ -43,8 +31,6 @@ theorem unitBall_cover_card_bound_pos (n : ℕ) (hn : 1 ≤ n)
     (modelVolume_pos hn (by norm_num) (by positivity))
 
 variable [PreconnectedSpace M]
-
-
 
 theorem exists_finset_unitBall_cover
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n)
@@ -71,8 +57,6 @@ theorem exists_finset_unitBall_cover
   obtain ⟨q, hq, _⟩ := mem_iUnion₂.mp (hcover hp)
   refine ⟨S, ⟨q, hq⟩, hS, ?_, hcover⟩
   simpa only [mul_one] using hcard
-
-
 
 theorem exists_unitBall_integral_concentration
     (g : RiemannianMetric n M) (p : M) (hn : 1 ≤ n)

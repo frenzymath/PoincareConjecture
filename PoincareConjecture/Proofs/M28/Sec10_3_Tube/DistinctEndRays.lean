@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SmallNormalSphere
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMetricRayRegularity
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedCylinderMetricRays
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,9 +47,6 @@ private theorem continuousOn_of_unit_metric
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_point_off_intrinsic_metric_end_ray
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -109,10 +94,6 @@ theorem exists_point_off_intrinsic_metric_end_ray
   obtain ⟨hlo, hhi⟩ := abs_le.mp hradial
   exact ⟨z i, by linarith only [hlo, hdeltaSmall],
     by linarith only [hhi, hdeltaSmall], hoff⟩
-
-
-
-
 
 theorem intrinsic_metric_rays_differ_near_end
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -179,9 +160,6 @@ theorem intrinsic_metric_rays_differ_near_end
   change gamma (a - b) = mu (b - b) at hend
   rw [sub_self] at hend
   exact hoff ⟨a - b, ⟨(sub_pos.mpr hba).le, sub_lt_self a hb⟩, hend⟩
-
-
-
 
 theorem exists_two_distinct_selected_metric_end_rays
     {g : RiemannianMetric 3 M} {X : Set M}

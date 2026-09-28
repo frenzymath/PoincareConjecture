@@ -1,20 +1,11 @@
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem exists_finite_radial_annulus_cover
     {X : Type*} [MetricSpace X] {K : Set X} (hK : IsCompact K) (p : X)

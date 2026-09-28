@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangulationGluing
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorDiagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
-
 
 theorem exists_triangulation {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

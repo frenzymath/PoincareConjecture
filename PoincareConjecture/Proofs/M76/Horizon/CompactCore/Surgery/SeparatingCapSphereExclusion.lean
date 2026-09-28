@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapR
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.ChartwiseSphereDiskComplement
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

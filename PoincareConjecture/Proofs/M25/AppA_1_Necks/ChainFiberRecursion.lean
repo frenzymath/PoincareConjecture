@@ -3,25 +3,12 @@ import Mathlib.Data.Int.Init
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem exists_integer_cylinder_cocycle
     {L : ℝ} (hL : 0 < L)

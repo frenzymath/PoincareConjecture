@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_endpoint_scalar_separation_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -115,10 +101,6 @@ theorem exists_endpoint_scalar_separation_accuracy :
       have hcap := K.scalar_lt_mul D (C := B) hK hxK hwK
       have hmul := mul_le_mul_of_nonneg_left hl hBpos.le
       nlinarith only [hh, hcap, hmul, hhigh]
-
-
-
-
 
 theorem exists_cap_disjoint_one_of_endpoint_necks_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

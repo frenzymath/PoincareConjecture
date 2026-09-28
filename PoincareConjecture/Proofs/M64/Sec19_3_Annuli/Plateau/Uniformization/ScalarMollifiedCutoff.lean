@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarLipschitzDerivativeApproximation
 import PoincareConjecture.Proofs.M40.Mathlib.LipschitzSmoothingBlend
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ open Poincare.Analysis.Sobolev
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
-
 
 theorem scalarCutoffBlend_fderiv_apply {rho : Plane → ℝ} {u v : Plane → E}
     {x : Plane} (hrho : DifferentiableAt ℝ rho x)
@@ -51,10 +34,6 @@ theorem scalarCutoffBlend_fderiv_apply {rho : Plane → ℝ} {u v : Plane → E}
   simp only [add_apply, sub_apply, smul_apply, smulRight_apply, Pi.sub_apply]
   module
 
-
-
-
-
 theorem scalarMollifiedCutoff_lipschitz
     {u : Plane → E} {L A : ℝ≥0} (hu : LipschitzWith L u)
     {rho : Plane → ℝ} (hrho : LipschitzWith A rho) (hrange : ∀ x, rho x ∈ Icc 0 1)
@@ -69,9 +48,6 @@ theorem scalarMollifiedCutoff_lipschitz
   exact (scalarVector_mollifier_error hu hr x).trans
     (mul_le_of_le_one_right L.coe_nonneg hr1)
 
-
-
-
 theorem scalarMollifiedCutoff_uniform
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)
     {rho : Plane → ℝ} (hrange : ∀ x, rho x ∈ Icc 0 1)
@@ -85,10 +61,6 @@ theorem scalarMollifiedCutoff_uniform
   filter_upwards [hbound.eventually (gt_mem_nhds heps)] with j hj x
   rw [dist_comm]
   exact (M40.cutoffBlend_dist_le (hrange x) (scalarVector_mollifier_error hu (hr j) x)).trans_lt hj
-
-
-
-
 
 theorem scalarMollifiedCutoff_columns_tendsto_ae
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)
@@ -110,9 +82,6 @@ theorem scalarMollifiedCutoff_columns_tendsto_ae
   simpa only [sub_self, smul_zero, add_zero] using
     (tendsto_const_nhds.add hterm0).add hterm1
 
-
-
-
 theorem scalarMollifiedCutoff_preserves_C1
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)
     {rho : Plane → ℝ} (hrho : ContDiff ℝ ∞ rho)
@@ -123,9 +92,6 @@ theorem scalarMollifiedCutoff_preserves_C1
     ((scalarVector_mollifier_smooth hu hr).contDiffAt.of_le (by simp))).add
     ((contDiffAt_const.sub (hrho.contDiffAt.of_le (by simp))).smul hx)
 
-
-
-
 theorem scalarMollifiedCutoff_smooth_on_plateau
     {u : Plane → E} {L : ℝ≥0} (hu : LipschitzWith L u)
     {rho : Plane → ℝ} {r : ℝ} (hr : 0 < r) {x : Plane}
@@ -135,10 +101,6 @@ theorem scalarMollifiedCutoff_smooth_on_plateau
   apply (scalarVector_mollifier_smooth hu hr).contDiffAt.congr_of_eventuallyEq
   filter_upwards [hx] with y hy
   exact M40.cutoffBlend_eq_right hy
-
-
-
-
 
 theorem scalarMollifiedCutoff_eq_outside
     (u : Plane → E) (rho : Plane → ℝ) {r : ℝ} (hr : 0 < r) {x : Plane}

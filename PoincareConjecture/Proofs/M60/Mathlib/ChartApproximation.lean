@@ -4,25 +4,12 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.UniformSpace.HeineCantor
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem exists_contDiff_approx_on_isClosed
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -40,9 +27,6 @@ theorem exists_contDiff_approx_on_isClosed
   intro x hx
   have heq : a x = f x := ContinuousMap.congr_fun ha ⟨x, hx⟩
   simpa only [heq] using hclose x
-
-
-
 
 theorem exists_pos_inverse_chart_control
     {F N : Type*} [PseudoMetricSpace F] [PseudoMetricSpace N]

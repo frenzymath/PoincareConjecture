@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.NormalizedTransverseTarget
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkDimension
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFaceTransversality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -20,9 +12,6 @@ namespace Geometry.EuclideanSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem IsSmoothLeafFieldOn.exists_simplicialFaceAttachment
     {P : E → EuclideanSubspace E} {U B : Set E} (hP : IsSmoothLeafFieldOn P U)

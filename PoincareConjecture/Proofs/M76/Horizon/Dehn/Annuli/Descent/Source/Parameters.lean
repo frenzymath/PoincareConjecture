@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Source.InteriorCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76.Dehn.ProtectedAnnulus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V" => (V1 × V2)
-
-
 
 theorem exists_interior_source_parameters (x : source)
     (hxr : (x : V).1 ∉ sphere (0 : V1) 1) :

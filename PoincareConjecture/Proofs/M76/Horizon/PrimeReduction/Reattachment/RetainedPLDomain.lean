@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.Connect
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.LatticeSphereDomain
 import PoincareConjecture.Proofs.M76.Wall.SphericalFrontierFilling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

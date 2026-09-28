@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.MaximalRegularizedCurve
 import Mathlib.Data.Set.Piecewise
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

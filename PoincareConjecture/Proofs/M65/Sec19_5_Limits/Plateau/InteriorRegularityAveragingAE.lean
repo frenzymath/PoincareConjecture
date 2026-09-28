@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAv
 import Mathlib.MeasureTheory.Covering.DensityTheorem
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M65Interior
-
-
-
-
 
 theorem averagingValue_tendsto_ae {u : LoopPlane → ℝ}
     (hu : LocallyIntegrable u volume) :
@@ -57,9 +43,6 @@ theorem averagingValue_tendsto_ae {u : LoopPlane → ℝ}
     (Eventually.of_forall (fun r => hu.integrableOn_isCompact (isCompact_closedBall x r)))
     hmass hsupp hbound
   simpa only [averagingValue, smul_eq_mul, mul_comm] using h
-
-
-
 
 theorem averagingValue_limit_ae {u v : LoopPlane → ℝ}
     (hu : LocallyIntegrable u volume) {S : Set LoopPlane} (hS : MeasurableSet S)

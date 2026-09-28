@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCollarCore
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCoreMatching
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +12,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 namespace PoincareConjecture.M64IntrinsicTriangleCollar
 
 open Classical in
-
-
-
 
 theorem exists_matched_core
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}

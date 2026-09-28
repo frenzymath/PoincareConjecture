@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M04.TensorEvolutionRHS
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -22,11 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
-
-
-
 theorem curvatureTensor_second_derivative_commutator_eq_sub_insertion
     (D : LeviCivitaData g) (x : M)
     (a b c d e f : TangentSpace (𝓡 n) x) :
@@ -39,12 +25,6 @@ theorem curvatureTensor_second_derivative_commutator_eq_sub_insertion
             (D.curvature x a b (![c, d, e, f] i)))) := by
   have h := curvatureTensor_second_derivative_commutator D x a b c d e f
   linarith
-
-
-
-
-
-
 
 theorem curvature_frozen_rhs_eq_firstVariation
     (D : LeviCivitaData g) (x : M)

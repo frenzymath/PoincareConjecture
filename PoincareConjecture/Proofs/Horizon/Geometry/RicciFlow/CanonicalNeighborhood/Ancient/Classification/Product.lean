@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Services
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGradient.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_ancient_product_of_fixed_parallel_coordinate
     (K : AncientKappaSolution 3 M) {r : M → ℝ}
@@ -104,8 +92,6 @@ theorem exists_ancient_product_of_fixed_parallel_coordinate
     exact congrFun hsame y.2
   rw [hde] at hmetric
   exact hmetric z a b
-
-
 
 theorem exists_compact_round_product_of_terminal_null [SimplyConnectedSpace M]
     (P : AncientKappaClassificationServices.{u})

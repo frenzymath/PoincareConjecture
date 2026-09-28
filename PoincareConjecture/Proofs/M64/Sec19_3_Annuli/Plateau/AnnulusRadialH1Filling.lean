@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialObserve
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialWeakLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakFilling
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,9 +26,6 @@ local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem m64ChartReadable_local_radial_H1_filling
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.DualStrictCoface
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeDualDisk
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.MaximalFaceDual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,14 +13,12 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 
 omit [Fintype L.faces] in
 
-
 theorem m76_prime_barycentricDualBlock_le_link_of_ssubset
     {s t : Finset E} (hs : s ∈ K.faces) (hst : s ⊂ t) :
     K.barycentricDualBlock t ≤ (K.barycentricDualBlock s).link (s.centroid ℝ id) := by
   exact K.barycentricDualBlock_le_link_of_ssubset hs hst
 
 omit [DecidableEq E] [Fintype L.faces] in
-
 
 theorem boundary_triangle_dual_contact [Finite L.faces]
     (hLK : L ≤ K) (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)
@@ -44,8 +34,6 @@ theorem boundary_triangle_dual_contact [Finite L.faces]
     exact hLcard t ht)).symm
 
 omit [DecidableEq E] [Fintype L.faces] in
-
-
 
 theorem disjoint_boundary_triangle_duals
     (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)
@@ -67,9 +55,6 @@ theorem disjoint_boundary_triangle_duals
   rw [K.barycentricDualBlock_space_inter]
   exact K.barycentricDualBlock_space_eq_empty_of_not_face
     ((L.nonempty_of_mem_faces ht).mono Finset.subset_union_left) hnot
-
-
-
 
 theorem exists_boundary_edge_dual_marks [FiniteDimensional ℝ E]
     (hLK : L ≤ K) (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveAtlas
 import PoincareConjecture.Proofs.M38.ProjectiveCoverTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,7 +13,6 @@ private instance sphereDimension :
 
 attribute [local instance] projectiveChartedSpace projective_isManifold projective_t2
 
-
 def projectivePunctureOpen (p : RealProjectiveThree) :
     TopologicalSpace.Opens RealProjectiveThree :=
   ⟨{q | q ≠ p}, isOpen_ne_fun continuous_id continuous_const⟩
@@ -29,8 +20,6 @@ def projectivePunctureOpen (p : RealProjectiveThree) :
 variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
-
-
 
 theorem puncturedProjectiveCover_isOpen (C : StandardPuncturedProjectiveCover Q p U) :
     IsOpen U := by
@@ -44,11 +33,8 @@ theorem puncturedProjectiveCover_isOpen (C : StandardPuncturedProjectiveCover Q 
   intro z hz
   exact C.image_eq.subset (Set.mem_image_of_mem C.cover hz)
 
-
 def puncturedProjectiveCoverOpen (C : StandardPuncturedProjectiveCover Q p U) :
     TopologicalSpace.Opens Q := ⟨U, puncturedProjectiveCover_isOpen C⟩
-
-
 
 theorem puncturedProjectiveCoverHomeomorph_contMDiff
     (C : StandardPuncturedProjectiveCover Q p U) :
@@ -82,8 +68,6 @@ theorem puncturedProjectiveCoverHomeomorph_contMDiff
     Subtype.ext hq
   exact (congrArg (fun q => (puncturedProjectiveCoverHomeomorph C q).val) he).symm.trans
     (puncturedProjectiveCoverHomeomorph_apply C (s w.val) hn)
-
-
 
 theorem puncturedProjectiveCoverHomeomorph_symm_contMDiff
     (C : StandardPuncturedProjectiveCover Q p U) :
@@ -119,15 +103,12 @@ theorem puncturedProjectiveCoverHomeomorph_symm_contMDiff
   rw [Homeomorph.symm_apply_apply] at hi
   exact (congrArg Subtype.val hi).symm
 
-
 noncomputable def puncturedProjectiveCoverDiffeomorph
     (C : StandardPuncturedProjectiveCover Q p U) :
     (projectivePunctureOpen p) ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ (puncturedProjectiveCoverOpen C) where
   toEquiv := (puncturedProjectiveCoverHomeomorph C).toEquiv
   contMDiff_toFun := puncturedProjectiveCoverHomeomorph_contMDiff C
   contMDiff_invFun := puncturedProjectiveCoverHomeomorph_symm_contMDiff C
-
-
 
 theorem puncturedProjectiveCoverDiffeomorph_apply
     (C : StandardPuncturedProjectiveCover Q p U)

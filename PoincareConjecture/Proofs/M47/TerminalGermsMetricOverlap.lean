@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsOverlapLimits
 import PoincareConjecture.Proofs.M47.TerminalGermsMetricRealization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M47
 
 open ChartDistance
-
-
 
 theorem terminalGerms_metric_pair_compatibility
     {ι : Type*} {n : ℕ}

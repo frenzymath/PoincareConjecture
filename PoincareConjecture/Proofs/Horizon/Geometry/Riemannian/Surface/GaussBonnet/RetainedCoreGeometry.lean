@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.RestrictionAncestry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Monochromatic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +19,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
 
-
-
 theorem core_complement_germ_of_mem_region (R : T.decomposition.regions) (q : Plane)
     (hqs : q ∈ (chartAt Plane (T.chart R : S)).target)
     (hq : (chartAt Plane (T.chart R : S)).symm q ∈ connectedComponentIn
@@ -43,8 +34,6 @@ theorem core_complement_germ_of_mem_region (R : T.decomposition.regions) (q : Pl
     (T.refined.cover R) (T.refined_core_frontier R)
     hqs hq
 
-
-
 theorem core_complement_germ (R : T.decomposition.regions) (q : Plane)
     (hq : q ∈ (T.refined.mesh R).toPlaneComplex.support) :
     (T.refined.mesh R).toPlaneComplex.support =ᶠ[𝓝 q]
@@ -55,8 +44,6 @@ theorem core_complement_germ (R : T.decomposition.regions) (q : Plane)
     (T.refined.in_region R (mem_image_of_mem _ hq))
 
 omit [T2Space S] in
-
-
 
 theorem core_mesh_straight_boundary_fan_of_scaled_contact (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (l : Plane →ᵃ[ℝ] ℝ)
@@ -100,7 +87,6 @@ theorem core_mesh_straight_boundary_fan_of_scaled_contact (g : RiemannianMetric 
   simpa only [TriangleMesh.refineByLines_support] using hlocal
 
 omit [T2Space S] in
-
 
 theorem core_mesh_straight_boundary_fan (g : RiemannianMetric 2 S)
     (R : T.decomposition.regions) (l : Plane →ᵃ[ℝ] ℝ)

@@ -9,13 +9,4 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceRawStageMetricPairing
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckInverseCenterScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFinalChartCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.Selection.CommonCutCollars
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.FourCollarRims
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -21,8 +19,6 @@ variable {L : Submodule ℤ V2} {α : Type*}
 
 open Classical in
 set_option maxHeartbeats 1200000 in
-
-
 
 theorem PairedMarkedBoundary.exists_common_component_cut_rims
     (P : PairedMarkedBoundary L retained d) :

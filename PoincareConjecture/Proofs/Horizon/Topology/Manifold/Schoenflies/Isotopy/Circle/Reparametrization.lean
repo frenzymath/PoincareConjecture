@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Reparametrization.Increasing
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,8 +66,6 @@ private theorem exists_ambient_circle_reparametrization
     obtain ⟨s, rfl⟩ := unitCircleExp_surjective p
     change G (circlePlaneReflection (unitCircleExp s)) = _
     rw [circlePlaneReflection_unitCircleExp, hG, hL', neg_neg, hL]
-
-
 
 theorem exists_ambient_diffeomorph_of_circle_diffeomorph
     (q : Diffeomorph (𝓡 1) (𝓡 1)

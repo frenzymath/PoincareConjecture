@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Finite.Certificate
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Infinite.BiInfinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -57,6 +48,5 @@ theorem cylinder_with_middle_of_epsilon_le :
     obtain ⟨D, hDzero⟩ := biInfinite_cylinder_of_epsilon_le C hε hsep hshape 0
     exact ⟨D, 0, by trivial, 0, hzero,
       hDzero.trans (C.neck 0).centralSphere_range.symm⟩
-
 
 end PoincareConjecture.BalancedNeckChain

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateTip
 import PoincareConjecture.Proofs.M47.ComponentEstimateCap
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem localResult_scalar_eq
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
@@ -34,9 +22,6 @@ theorem localResult_scalar_eq
   (E.local_result i).connection.scalarCurvature_eq_of_local_isometry D isOpen_univ
     (E.local_embed_smooth i).contMDiffOn
     (fun z _ v w => (E.local_metric i z v w).symm) (mem_univ y)
-
-
-
 
 theorem exists_component_cap_exclusion_cutoff
     (g₀ : StandardInitialMetric) (K : MetricSurgeryConstants) (Db : ℝ) (hDb : 0 < Db) :

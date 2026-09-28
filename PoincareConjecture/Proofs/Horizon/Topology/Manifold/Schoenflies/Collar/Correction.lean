@@ -1,14 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [NormedAddCommGroup F] [NormedSpace Real F]
-
 
 def correctNormal (G N : E -> F) (x : E) : F :=
   G x + ((‖x‖ ^ 2 - 1) / 2) • (N x - fderiv Real G x x)
@@ -35,8 +25,6 @@ theorem contDiff_correctNormal {G N : E -> F}
     (hG.fderiv_right (by simp)).clm_apply contDiff_id
   exact hG.add (((((contDiff_id (𝕜 := Real) (E := E)).norm_sq (𝕜 := Real)).sub
     contDiff_const).div_const 2).smul (hN.sub hd))
-
-
 
 theorem fderiv_correctNormal {G N : E -> F}
     (hG : ContDiff Real ∞ G) (hN : ContDiff Real ∞ N)

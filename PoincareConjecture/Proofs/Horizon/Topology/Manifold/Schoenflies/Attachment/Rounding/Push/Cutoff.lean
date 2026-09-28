@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric TopologicalSpace
@@ -17,8 +9,6 @@ namespace Poincare.Manifold.Schoenflies.Rounding
 
 variable {E M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E] [TopologicalSpace M]
-
-
 
 theorem exists_slab_cutoff
     (C : Opens M) (e : C ≃ₜ E × Real) {B U : Set M}

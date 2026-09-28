@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Growth.BoundaryDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.Control
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
 
 theorem core_radius_lt_two_mul_of_scalar_in_ball (N : CapCertificate g)
     {p z : M} (hp : p ∈ N.core) {s : ℝ} (hs : 0 < s)
@@ -52,8 +41,6 @@ theorem core_radius_lt_two_mul_of_scalar_in_ball (N : CapCertificate g)
     field_simp
   rw [hcancel] at hmul'
   nlinarith
-
-
 
 theorem core_ball_clearance_of_boundary_scalar (N : CapCertificate g)
     (hscalar : ∀ z ∈ N.boundary_sphere,
@@ -107,8 +94,6 @@ theorem core_ball_clearance_of_boundary_scalar (N : CapCertificate g)
     rw [← ENNReal.ofReal_add hr.le (by positivity)] at htotal
     exact (not_lt_of_ge htotal) hlength
 
-
-
 theorem exists_core_ball_clearance_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -134,7 +119,6 @@ theorem exists_core_ball_clearance_threshold :
   have hb := (hcontrol N.boundary_neck N.connection
     (N.boundary_neck_epsilon.trans_le hε) w.1 hwdom).1
   linarith [(abs_lt.mp hb).1]
-
 
 noncomputable def coreBallClearanceThreshold : ℝ :=
   Classical.choose exists_core_ball_clearance_threshold.{u}

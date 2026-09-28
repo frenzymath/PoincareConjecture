@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_DoublingTime
 import PoincareConjecture.Proofs.M15.Prop8_2_CurvatureContractions
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_compact_late_reducedLength_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNeckComparison
 import PoincareConjecture.Proofs.M34.Standard.CapNeckImageIdentities
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_cap_neck_image_of_normalized_comparison
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
@@ -85,9 +74,6 @@ theorem exists_cap_neck_image_of_normalized_comparison
       hsource' D q hr hR' hr' hclose' a b ha hb using 1
     simp only [add_zero]
     rfl
-
-
-
 
 theorem exists_actualCap_image_neck_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A s : ℝ}

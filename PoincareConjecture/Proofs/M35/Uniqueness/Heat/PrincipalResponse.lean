@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalEnergy
 import Mathlib.Analysis.LocallyConvex.Bounded
 import Mathlib.Topology.UniformSpace.Equiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +15,6 @@ namespace PoincareConjecture.M35.Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
 
 def WeightedForm (K : Set V) : Type := dirichletForm K
 
@@ -108,9 +97,6 @@ theorem weightedCore_bounded {K : Set V} (hK : IsClosed K)
     have hn : ‖u‖ ≤ c⁻¹ + 1 := by nlinarith [sq_nonneg (‖u‖ - 1)]
     simpa only [Metric.mem_closedBall, dist_zero_right] using hn
   exact NormedSpace.isVonNBounded_of_isBounded ℝ hb
-
-
-
 
 theorem exists_principal_dirichlet_response {K : Set V} (hK : IsCompact K)
     (A : Fin n → Fin n → 𝓢(V, ℝ)) {ell : ℝ} (hEll : 0 < ell)

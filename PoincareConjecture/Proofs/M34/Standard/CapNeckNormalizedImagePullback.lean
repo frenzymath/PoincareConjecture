@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapNeckImageIdentities
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalization
 import PoincareConjecture.Proofs.M34.Standard.CapIsometryPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
-
 
 theorem shifted_image_pullback_eq (h : RiemannianMetric 3 X)
     (e : OpenPartialHomeomorph M X)
@@ -55,9 +43,6 @@ theorem shifted_image_pullback_eq (h : RiemannianMetric 3 X)
   rw [hchain]
   simp only [ContinuousLinearMap.comp_apply, M34.cylinderAxialTranslation_mfderiv]
   rfl
-
-
-
 
 theorem normalized_shifted_image_tensor_eq (h : RiemannianMetric 3 X)
     (e : OpenPartialHomeomorph M X)

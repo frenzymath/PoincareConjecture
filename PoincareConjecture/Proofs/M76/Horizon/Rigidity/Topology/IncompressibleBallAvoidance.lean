@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -30,9 +19,6 @@ theorem contractibleSpace (b : ChartwisePLBall e D S) : ContractibleSpace D := b
     (convex_closedBall (0 : Fin 3 → ℝ) 1).contractibleSpace
       ⟨0, mem_closedBall_self (by norm_num)⟩
   exact b.parametrization.symm.contractibleSpace
-
-
-
 
 theorem disjoint_of_pi1_injective (b : ChartwisePLBall e D S)
     (hDR : D ⊆ R) (hMR : M ⊆ R) (hM : IsPreconnected M)

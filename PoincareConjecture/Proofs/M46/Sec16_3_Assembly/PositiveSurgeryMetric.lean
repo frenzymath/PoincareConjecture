@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveLocalIsometry
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SurgeryComponentLabels
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
 
 theorem positive_sectional_on_surgery_cap
     (event : SurgeryEventData g0 K P slice metric T)
@@ -46,8 +36,6 @@ theorem positive_sectional_on_surgery_cap
     isOpen_univ (event.local_embed_smooth i).contMDiffOn
     (fun z _ u v => (event.local_metric i z u v).symm) (mem_univ x)).mp (hlocal x)
 
-
-
 theorem retained_interior_of_not_in_caps
     (event : SurgeryEventData g0 K P slice metric T)
     {x : (slice event.tMinus).carrier} (hx : x ∈ event.retained_pre)
@@ -62,8 +50,6 @@ theorem retained_interior_of_not_in_caps
   have hfront : event.retention.map x ∈ frontier (event.caps i).carrier :=
     event.boundary_correspondence i ▸ mem_image_of_mem event.retention.map hi
   exact hcap i ((event.caps i).carrier_compact.isClosed.frontier_subset hfront)
-
-
 
 theorem retained_terminal_metric_identification
     (event : SurgeryEventData g0 K P slice metric T) :
@@ -116,7 +102,6 @@ theorem retained_terminal_metric_identification
   rw [event.retained_metric _ (interior_subset hiy)]
   exact hpull.symm
 
-
 theorem positive_sectional_on_retained_interior
     (event : SurgeryEventData g0 K P slice metric T)
     (D : LeviCivitaData (metric T))
@@ -138,8 +123,6 @@ theorem positive_sectional_on_retained_interior
   have h := (sectional_positive_iff_of_local_isometry event.limit_connection D
     hU hf hm hy).mp hpos
   exact congrArg event.retention.map hleft ▸ h
-
-
 
 theorem positive_sectional_on_postLabel
     (event : SurgeryEventData g0 K P slice metric T)
@@ -184,8 +167,6 @@ theorem positive_sectional_on_postLabel
         (hterminal x hx.2 (event.retained_pre_subset hx.1))
     · obtain ⟨⟨i, _⟩, hi⟩ := mem_iUnion.mp hy
       exact False.elim (hcap ⟨i, hi⟩)
-
-
 
 theorem positive_sectional_child_component
     (event : SurgeryEventData g0 K P slice metric T)

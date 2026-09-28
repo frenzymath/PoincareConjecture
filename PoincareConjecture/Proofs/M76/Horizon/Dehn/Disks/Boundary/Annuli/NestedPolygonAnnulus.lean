@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem exists_square_annulus_nested_disks {S T : Set P2} {L d : ℝ}
     (hS : IsFinitePLBallPair P2 S (frontier S))
     (hT : IsFinitePLBallPair P2 T (frontier T)) (hST : S ⊆ interior T)
@@ -38,9 +36,6 @@ theorem exists_square_annulus_nested_disks {S T : Set P2} {L d : ℝ}
     exact (Dehn.mem_frontier_annulusSquare_iff L (-d) z).symm.trans (ho ⟨z, heq.symm ▸ z.property⟩)
   · intro z
     exact (Dehn.mem_frontier_annulusSquare_iff L d z).symm.trans (hi ⟨z, heq.symm ▸ z.property⟩)
-
-
-
 
 theorem exists_square_annulus_nested_polygons {m n : ℕ}
     (P : Polygon P2 (m + 3)) (Q : Polygon P2 (n + 3))

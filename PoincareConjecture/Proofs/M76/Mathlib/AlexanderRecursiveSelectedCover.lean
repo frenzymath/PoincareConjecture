@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.restricted_collar_zero_subset
     {S TY b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -34,10 +21,6 @@ theorem AlexanderCollarSlab.restricted_collar_zero_subset
   have hz : (p : E × ℝ).2 = 0 := (M.height p).symm.trans ((congrArg A hp).trans hx.2)
   have hpx : (p : E × ℝ).1 = x := (M.bottom p hz).symm.trans hp
   exact hpx ▸ hY p (hp.symm ▸ hx.1)
-
-
-
-
 
 theorem AlexanderCollarSlab.selected_image_closed_slab_eq
     {S s d TX TY : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -84,10 +67,6 @@ theorem AlexanderCollarSlab.selected_image_closed_slab_eq
         · exact Or.inr (Or.inr ⟨x, Or.inl hxY, rfl⟩)
       · exact Or.inr (Or.inl ((hR x hxR).symm ▸ And.intro hxR hx))
     · exact Or.inr (Or.inr ⟨x, Or.inr hx, rfl⟩)
-
-
-
-
 
 theorem AlexanderCollarSlab.selected_residual_zero_subset
     {S s d TY : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

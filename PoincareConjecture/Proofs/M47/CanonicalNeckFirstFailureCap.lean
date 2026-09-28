@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapCutoff
 import PoincareConjecture.Proofs.M47.FirstFailureWindow
 import PoincareConjecture.Proofs.M47.CanonicalNeckOrdinaryBridge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_firstFailure_included_cap_comparison_capture_cutoff_above
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -189,8 +178,6 @@ theorem exists_firstFailure_included_cap_comparison_capture_cutoff_above
   exact scalarBound F hinitial short hmodel t hSurgery hn i J V f initial
     (capFamilyComparison_mono_tolerance heta hetaR' comparison) hh s hs hst z hz
 
-
-
 theorem exists_firstFailure_included_cap_comparison_capture_cutoff
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
     (p : SurgeryParameterPrefix S.constants) (hp : S.SeedCompatible p) :
@@ -248,8 +235,6 @@ theorem exists_firstFailure_included_cap_comparison_capture_cutoff
     exists_firstFailure_included_cap_comparison_capture_cutoff_above P S p hp
   obtain ⟨A, eta0, _hApos, hA, heta0, hetaHalf, produce⟩ := radii 0
   exact ⟨theta1, theta2, A, eta0, ht1, ht12, ht2, hA, heta0, hetaHalf, produce⟩
-
-
 
 theorem exists_firstFailure_included_cap_comparison_cutoff
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

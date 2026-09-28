@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.ConeTriangleC
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem base_face_card_le_two_of_planar_cone (K L : SimplicialComplex ℝ E)
     (hplanar : Module.finrank ℝ E = 2) {c : E} (hc : c ∉ K.vertices)
@@ -35,8 +25,6 @@ theorem base_face_card_le_two_of_planar_cone (K L : SimplicialComplex ℝ E)
     simpa only [Fintype.card_coe] using hcard
   rw [Finset.card_insert_of_notMem hcs, hplanar] at hle
   omega
-
-
 
 theorem ncard_boundary_edges_of_planar_cone (K L : SimplicialComplex ℝ E)
     (hplanar : Module.finrank ℝ E = 2) (hL : L.faces.Finite)
@@ -57,8 +45,6 @@ theorem ncard_boundary_edges_of_planar_cone (K L : SimplicialComplex ℝ E)
   rw [L.ncard_faceLink_vertices_eq_cofaces, Finset.card_pair hcq] at hcount
   exact (K.ncard_cone_radial_triangle_cofaces L hcK hq hfaces
     (K.base_face_card_le_two_of_planar_cone L hplanar hcK hfaces)).symm.trans hcount
-
-
 
 theorem exists_planar_cone_vertex_fan (K L : SimplicialComplex ℝ E)
     (hplanar : Module.finrank ℝ E = 2) (hL : L.faces.Finite)

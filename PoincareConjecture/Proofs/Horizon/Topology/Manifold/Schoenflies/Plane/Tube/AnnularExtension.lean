@@ -3,16 +3,6 @@ import Mathlib.LinearAlgebra.LinearIndependent.Lemmas
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Tube.CurveNormal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Calculus.RadialCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -25,20 +15,14 @@ variable [Fact (Module.finrank ℝ E = 2)]
 variable (o : Orientation ℝ E (Fin 2)) (q0 : sphere (0 : E) 1)
 variable (c : ℝ → sphere (0 : E) 1 → E)
 
-
-
 noncomputable def curveAnnularExtension (p : ℝ × E) : E :=
   radialFamilyExtension q0 c p + (‖p.2‖ - 1) •
     curveFamilyNormal o (radialFamilyExtension q0 c)
       (p.1, (unitRadialProjection q0 p.2 : E))
 
-
-
 @[simp] theorem curveAnnularExtension_apply_sphere (z : ℝ) (q : sphere (0 : E) 1) :
     curveAnnularExtension o q0 c (z, (q : E)) = c z q := by
   simp [curveAnnularExtension, norm_eq_of_mem_sphere q]
-
-
 
 theorem curveAnnularExtension_apply_radial (z : ℝ) (q : sphere (0 : E) 1)
     {r : ℝ} (hr : -1 < r) :
@@ -53,8 +37,6 @@ variable (hc : ContMDiff (𝓘(ℝ, ℝ).prod (𝓡 1)) 𝓘(ℝ, E) ∞
   (fun p : ℝ × sphere (0 : E) 1 => c p.1 p.2))
 
 include hc
-
-
 
 theorem contDiffAt_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c) (z, (q : E)) ≠ 0) :
@@ -84,9 +66,6 @@ theorem contDiffAt_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
   exact hC.add ((((contDiffAt_norm ℝ hq).comp (z, (q : E)) contDiffAt_snd).sub
     contDiffAt_const).smul hNR)
 
-
-
-
 theorem hasFDerivAt_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c) (z, (q : E)) ≠ 0) :
     HasFDerivAt (fun x => curveAnnularExtension o q0 c (z, x))
@@ -109,8 +88,6 @@ theorem hasFDerivAt_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
   simpa only [Function.comp_def, Pi.add_def, Pi.smul_def', curveAnnularExtension,
     norm_eq_of_mem_sphere q, sub_self, zero_smul, zero_add,
     unitRadialProjection_apply_coe] using h
-
-
 
 theorem fderiv_curveAnnularExtension_directions (z : ℝ) (q : sphere (0 : E) 1)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c) (z, (q : E)) ≠ 0) :
@@ -139,8 +116,6 @@ theorem fderiv_curveAnnularExtension_directions (z : ℝ) (q : sphere (0 : E) 1)
     rw [real_inner_comm (o.rightAngleRotation (q : E)) (q : E),
       o.inner_rightAngleRotation_self, zero_smul, add_zero]
     rfl
-
-
 
 theorem bijective_fderiv_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c) (z, (q : E)) ≠ 0) :
@@ -181,9 +156,6 @@ theorem bijective_fderiv_curveAnnularExtension (z : ℝ) (q : sphere (0 : E) 1)
   have hinj : Injective D.toLinearMap :=
     LinearMap.injective_of_linearIndependent b.span_eq (himage.symm ▸ hlin)
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
-
-
-
 
 theorem exists_curveAnnularTrack_localInverse (z : ℝ) (q : sphere (0 : E) 1)
     (hv : curveFamilyVelocity o (radialFamilyExtension q0 c) (z, (q : E)) ≠ 0) :

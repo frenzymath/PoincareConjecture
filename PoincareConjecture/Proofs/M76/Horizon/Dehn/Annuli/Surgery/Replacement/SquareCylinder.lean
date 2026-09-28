@@ -11,8 +11,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Cyl" => Set.prod (sphere (0 : V2) 1) (Icc (-1 : ℝ) 1)
 
-
-
 theorem exists_square_annulus_cylinder_chart {L d : ℝ}
     (hd : 0 < d) (hwidth : 2 * d < L) :
     ∃ H : Cyl ≃ₜ squareAnnulus L d, H.IsFinitePL ∧

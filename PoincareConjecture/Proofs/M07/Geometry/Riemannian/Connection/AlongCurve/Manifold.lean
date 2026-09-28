@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.T
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -58,7 +46,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def chartField (q : ℝ → M) (a : M)
     (V : (t : ℝ) → TangentSpace (𝓡 n) (q t)) : ℝ → EuclideanSpace ℝ (Fin n) :=
   fun t => mfderiv (𝓡 n) (𝓡 n) (extChartAt (𝓡 n) a) (q t) (V t)
@@ -96,8 +83,6 @@ theorem contDiffAt_chartField_change {q : ℝ → M}
     (contDiffAt_chart_curve hq ha)).clm_apply hV
   exact hs.congr_of_eventuallyEq hrep
 
-
-
 theorem contDiffAt_chartField_covDeriv (g : RiemannianMetric n M)
     {q : ℝ → M} {V : (t : ℝ) → TangentSpace (𝓡 n) (q t)} {I : Set ℝ}
     (hI : IsOpen I) (hq : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ q I)
@@ -125,8 +110,6 @@ theorem contDiffAt_chartField_covDeriv (g : RiemannianMetric n M)
     hΓ (contDiffAt_chart_curve hqt ha)
     (contDiffAt_chartField_change hqt (mem_extChartAt_source _) ha (hV t ht)) (1 : ℝ)
   exact hd.congr_of_eventuallyEq heq
-
-
 
 theorem hasDerivAt_chartField (g : RiemannianMetric n M)
     {q : ℝ → M} {V : (t : ℝ) → TangentSpace (𝓡 n) (q t)} {t : ℝ} {a : M}
@@ -522,8 +505,6 @@ private theorem exists_parallel_operators (g : RiemannianMetric n M)
     ⟨hinj, (LinearMap.injective_iff_surjective (f := (P t).toLinearMap)).mp hinj⟩
   exact ⟨f.toContinuousLinearEquiv, rfl⟩
 
-
-
 theorem exists_manifold_parallel_transport
     (g : RiemannianMetric n M)
     {q : ℝ → M} {I : Set ℝ} {a b : ℝ} (hab : a < b)
@@ -543,8 +524,6 @@ theorem exists_manifold_parallel_transport
   have hqt := hq.contMDiffAt (hI.mem_nhds (hsub ht))
   exact ⟨((hP t ht u).in_chart hqt (mem_extChartAt_source _)).1,
     (hP t ht u).covDeriv_eq_zero hqt⟩
-
-
 
 theorem inverse_manifold_parallel_hasDerivAt (g : RiemannianMetric n M)
     {q : ℝ → M} {a b t : ℝ} (hab : a < b) (ht : t ∈ Icc a b)

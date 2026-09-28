@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialReflection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "R" => m60PlaneReflection
 
-
-
 theorem m64RadialCorrect_fderiv_lower
     (f h : LoopPlane → E) {p : LoopPlane} (hp : p 1 < 0) :
     fderiv ℝ (m64RadialCorrect f h) p = fderiv ℝ h p := by
@@ -35,9 +22,6 @@ theorem m64RadialCorrect_fderiv_lower
       continuous_const).mem_nhds hp] with q hq
     exact m64RadialCorrect_lower f h hq.le
   exact heq.fderiv_eq
-
-
-
 
 theorem m64RadialCorrect_fderiv_upper
     {f h : LoopPlane → E} (hf : Differentiable ℝ f) (hh : Differentiable ℝ h)
@@ -54,8 +38,6 @@ theorem m64RadialCorrect_fderiv_upper
   rw [heq.fderiv_eq]
   simpa +instances only [Pi.add_apply, Pi.sub_apply, Function.comp_def, add_apply, sub_apply,
     ContinuousLinearMap.comp_apply] using! congrArg (fun D => D v) hd.fderiv
-
-
 
 theorem m64RadialCorrect_differentiable_ae
     {f h : LoopPlane → E} (hf : Differentiable ℝ f) (hh : Differentiable ℝ h) :
@@ -75,8 +57,6 @@ theorem m64RadialCorrect_differentiable_ae
       (EuclideanSpace.proj (𝕜 := ℝ) (1 : Fin 2)).continuous).mem_nhds hr] with q hq
     exact m64RadialCorrect_upper f h hq.le
 
-
-
 theorem m64_norm_sub_add_sq_le (u v w : E) :
     ‖u - v + w‖ ^ 2 ≤ 3 * (‖u‖ ^ 2 + ‖v‖ ^ 2 + ‖w‖ ^ 2) := by
   have ht : ‖u - v + w‖ ≤ ‖u‖ + ‖v‖ + ‖w‖ := by
@@ -88,8 +68,6 @@ theorem m64_norm_sub_add_sq_le (u v w : E) :
       (sq_le_sq₀ (norm_nonneg _) (by positivity)).mpr ht
     _ ≤ _ := by
       nlinarith [sq_nonneg (‖u‖ - ‖v‖), sq_nonneg (‖u‖ - ‖w‖), sq_nonneg (‖v‖ - ‖w‖)]
-
-
 
 theorem m64PlaneReflection_column_norm (D : LoopPlane →L[ℝ] E) (i : Fin 2) :
     ‖D (R (EuclideanSpace.single i 1))‖ = ‖D (EuclideanSpace.single i 1)‖ := by
@@ -104,8 +82,6 @@ theorem m64PlaneReflection_column_norm (D : LoopPlane →L[ℝ] E) (i : Fin 2) :
   · change ‖D (R (EuclideanSpace.single (1 : Fin 2) 1))‖ =
       ‖D (EuclideanSpace.single (1 : Fin 2) 1)‖
     rw [h1, map_neg, norm_neg]
-
-
 
 theorem m64RadialCorrect_column_bound_ae
     {f h : LoopPlane → E} (hf : Differentiable ℝ f) (hh : Differentiable ℝ h) (i : Fin 2) :

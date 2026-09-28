@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M38.EventBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,13 +12,11 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
 theorem neck_coordinate_mem (N : EpsilonNeck g) {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     N.coordinate_map z ∈ N.carrier := by
   have h := (N.coordinate (z.1, ⟨z.2, hz.2⟩)).property
   rwa [N.coordinate_map_eq] at h
-
 
 theorem neck_coordinate_inverse_map (N : EpsilonNeck g) {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -33,12 +24,10 @@ theorem neck_coordinate_inverse_map (N : EpsilonNeck g) {z : RoundCylinderSpace}
   have h := N.coordinate_inverse_left (z.1, ⟨z.2, hz.2⟩)
   simpa only [N.coordinate_map_eq] using h
 
-
 theorem neck_coordinate_map_inverse (N : EpsilonNeck g) {x : M}
     (hx : x ∈ N.carrier) : N.coordinate_map (N.coordinate_inverse x) = x := by
   have h := congrArg Subtype.val (N.coordinate_inverse_right x hx)
   simpa only [N.coordinate_map_eq] using h
-
 
 theorem neck_unit_domain (N : EpsilonNeck g) :
     (Set.univ : Set UnitTwoSphere) ×ˢ Set.Ioo (-1 : ℝ) 1 ⊆
@@ -47,8 +36,6 @@ theorem neck_unit_domain (N : EpsilonNeck g) :
     linarith [N.epsilon_lt_half])
   intro z hz
   exact ⟨Set.mem_univ _, (neg_lt_neg hwidth).trans hz.2.1, hz.2.2.trans hwidth⟩
-
-
 
 theorem neck_coordinate_image_open (N : EpsilonNeck g)
     {U : Set RoundCylinderSpace} (hU : IsOpen U)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Inclusion
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +10,8 @@ open scoped Manifold ContDiff Topology
 
 namespace Poincare.Geometry.Manifold.RegularFiber
 
-
 abbrev openFiber {M F : Type*} [TopologicalSpace M] (f : M → F) (U : Opens M) (c : F) :=
   ((fun x : U => f (x : M)) ⁻¹' {c} : Set U)
-
 
 def openFiberIncl {M F : Type*} [TopologicalSpace M] (f : M → F) (U : Opens M) (c : F)
     (z : openFiber f U c) : M := ((z : U) : M)
@@ -54,7 +45,6 @@ theorem openFiberRestrict_regular (x : U) :
     Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, Fin k → ℝ) (fun y : U => f (y : M)) x) := by
   rw [RegularLevel.mfderiv_opens_restrict U f ((hf (x : M)).mdifferentiableAt (by simp))]
   exact hreg x x.2
-
 
 @[reducible] def openFiberChartedSpace :
     ChartedSpace (EuclideanSpace ℝ (Fin m)) (openFiber f U c) :=

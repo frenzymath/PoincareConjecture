@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalTimeRegularity
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TimeRestriction
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.UniformStep
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

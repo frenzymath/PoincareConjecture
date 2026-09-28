@@ -1,18 +1,6 @@
 import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +10,6 @@ open scoped ENNReal
 namespace Poincare.MeasureTheory
 
 variable {X : Type*} [MeasurableSpace X] {μ : Measure X} [SFinite μ]
-
-
 
 theorem lintegral_cost_convolution_le
     {d K L : X → X → ℝ≥0∞}
@@ -75,8 +61,6 @@ theorem lintegral_cost_convolution_le
     _ ≤ A + B := by
       simpa only [one_mul] using add_le_add (hA x) (mul_le_mul_left (hmK x) B)
 
-
-
 theorem lintegral_cost_semigroup_le_nat_mul
     {d : X → X → ℝ≥0∞} {K : ℝ → X → X → ℝ≥0∞}
     (hd : Measurable (Function.uncurry d))
@@ -108,9 +92,6 @@ theorem lintegral_cost_semigroup_le_nat_mul
         (fun z => ih hs hsN z) (hsmall 1 zero_lt_one le_rfl) x
       simpa only [Nat.cast_add, Nat.cast_one, add_mul, one_mul,
         Function.comp_apply, Function.uncurry_apply_pair] using h
-
-
-
 
 theorem integrable_cost_semigroup_of_small_time
     {d : X → X → ℝ} {K : ℝ → X → X → ℝ}

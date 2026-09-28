@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Homothety
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.RicciNormEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Norm
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -120,7 +114,6 @@ theorem HomotheticMetricSlice.ricciNormSq (hC : RicciFlowCurvatureTheory.{u})
     isOpen_univ E.map.contMDiff.contMDiffOn
     (fun y _ u v => E.inner_eq y u v) (Set.mem_univ x)
 
-
 theorem HomotheticMetricSlice.normalizedRicciNormSq (hC : RicciFlowCurvatureTheory.{u})
     (E : HomotheticMetricSlice g h c) (hc : 0 < c)
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) :
@@ -164,8 +157,6 @@ theorem ShrinkingSolitonFlow.scalarCurvature_pos_at_time
   obtain ⟨E⟩ := G.self_similar t ht
   rw [E.scalarCurvature (abs_pos.mpr ht.ne) S.connection (G.flow.connection t)]
   exact mul_pos (inv_pos.mpr (abs_pos.mpr ht.ne)) (hR _)
-
-
 
 theorem ShrinkingSolitonFlow.exists_stationary_normalizedRicciNormSq_max
     [CompactSpace M] (hC : RicciFlowCurvatureTheory.{u}) (G : ShrinkingSolitonFlow S)

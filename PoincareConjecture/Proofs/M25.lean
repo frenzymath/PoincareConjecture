@@ -12,15 +12,6 @@ import PoincareConjecture.Proofs.M25.AppA_25_Global
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.Service
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.HorizonSchoenfliesService
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,39 +20,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m25NeckCapTopology_of_case_reductions
     (hF : M25.CompactNonseparatingFibrationInput.{u})
@@ -160,15 +118,12 @@ theorem m25NeckCapTopology_of_case_reductions
     intro M _ _ _ _ _ _ _ g H he hwhole
     exact (Classical.choice (ha21 g H he)).globalConclusion hwhole
 
-
-
 theorem m25NeckCapTopology : Nonempty RepairedNeckCapTopologyTheory := by
   exact m25NeckCapTopology_of_case_reductions
     M25.compactNonseparatingFibrationInput
     M25.nonseparatingLocalInput_of_local_producers
     (M25.finiteCappedLocalInput_of_services
       M25.Topology3D.schoenfliesService_from_main M25.Topology3D.diffSphereIsotopyService)
-
 
 theorem m25NeckCapTopologyTheory : Nonempty RepairedNeckCapTopologyTheory :=
   m25NeckCapTopology

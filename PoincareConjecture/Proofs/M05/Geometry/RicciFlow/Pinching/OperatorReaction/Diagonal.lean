@@ -1,15 +1,5 @@
-
 import Mathlib
 import PoincareConjecture.Proofs.M05.Analysis.ODE.Endpoint
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -22,7 +12,6 @@ abbrev ThreeMatrix := Matrix (Fin 3) (Fin 3) ℝ
 
 local instance : NormedAddCommGroup ThreeMatrix := Matrix.normedAddCommGroup
 local instance : NormedSpace ℝ ThreeMatrix := Matrix.normedSpace
-
 
 def operatorReaction (A : ThreeMatrix) : ThreeMatrix :=
   2 • (A * A + Matrix.adjugate A)
@@ -76,7 +65,6 @@ private theorem reflect_deriv (k : Fin 3) {A : ℝ → ThreeMatrix} {D : ThreeMa
   apply hasDerivAt_pi.mpr
   intro j
   exact ((hasDerivAt_pi.mp (hasDerivAt_pi.mp hA i) j).const_mul _).mul_const _
-
 
 theorem operator_reaction_stays_diagonal
     {a b : ℝ} {A : ℝ → ThreeMatrix}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerSlicing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -34,9 +24,6 @@ private theorem intervalMean_tendsto {a b : ℝ} (hab : a ≤ b)
         (𝓝 ⟪indicatorConstLp 2 measurableSet_Ioc hfin (1 : ℝ), u0⟫_ℝ) :=
     tendsto_const_nhds.inner hu
   simpa only [hpair] using hconv
-
-
-
 
 theorem sliceMean_zero_of_tendsto
     {X : Type*} [MeasurableSpace X] {mu : Measure X} [SFinite mu]

@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseCuts
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +10,6 @@ namespace Poincare.Topology.Plane.Curves.TransverseGraphCuts
 variable {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
   (P : TransverseGraphCuts lo a b ua wa ub wb)
   {r : ℝ} (hr : 0 < r) (hrP : r ≤ P.radius)
-
 
 def restrictRadius : TransverseGraphCuts lo a b ua wa ub wb where
   left := P.left

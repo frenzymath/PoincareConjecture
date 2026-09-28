@@ -2,15 +2,6 @@ import Mathlib.Analysis.Normed.Lp.lpHolder
 import Mathlib.Analysis.Normed.Operator.ContinuousLinearMap
 import Mathlib.Topology.Algebra.InfiniteSum.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -18,9 +9,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {α ι E : Type*} [NormedAddCommGroup E]
-
-
-
 
 theorem memℓp_prod_finite_iff [Finite ι] (f : α × ι → E) :
     Memℓp f 2 ↔ ∀ i, Memℓp (fun a => f (a, i)) 2 := by
@@ -37,9 +25,6 @@ theorem memℓp_prod_finite_iff [Finite ι] (f : α × ι → E) :
     exact hs.prod_symm
 
 variable [Fintype ι] (𝕜 : Type*) [NontriviallyNormedField 𝕜] [NormedSpace 𝕜 E]
-
-
-
 
 noncomputable def lpFinitePiEquiv :
     lp (fun _ : α × ι => E) 2 ≃L[𝕜] (ι → lp (fun _ : α => E) 2) := by
@@ -89,9 +74,6 @@ noncomputable def lpFinitePiEquiv :
         mul_nonneg hN (sq_nonneg ‖v‖)]
     exact (sq_le_sq₀ (norm_nonneg _) (by positivity)).mp (he.trans_le (hs.trans hmul))
 
-
-
-
 theorem lpFinitePiEquiv_norm_sq (u : lp (fun _ : α × ι => E) 2) :
     ‖u‖ ^ 2 = ∑ i, ‖lpFinitePiEquiv 𝕜 u i‖ ^ 2 := by
   have hu := lp.norm_rpow_eq_tsum (by norm_num : 0 < (2 : ENNReal).toReal) u
@@ -104,9 +86,6 @@ theorem lpFinitePiEquiv_norm_sq (u : lp (fun _ : α × ι => E) 2) :
   rw [hs.prod_symm.tsum_prod, tsum_fintype]
   exact Finset.sum_congr rfl (fun i _ => (hi i).symm)
 
-
-
-
 theorem norm_lpFinitePiEquiv_le (u : lp (fun _ : α × ι => E) 2) :
     ‖lpFinitePiEquiv 𝕜 u‖ ≤ ‖u‖ := by
   rw [pi_norm_le_iff_of_nonneg (norm_nonneg u)]
@@ -115,9 +94,6 @@ theorem norm_lpFinitePiEquiv_le (u : lp (fun _ : α × ι => E) 2) :
     Finset.single_le_sum (fun j _ => sq_nonneg ‖lpFinitePiEquiv 𝕜 u j‖) (Finset.mem_univ i)
   rw [← lpFinitePiEquiv_norm_sq] at hi
   nlinarith [norm_nonneg (lpFinitePiEquiv 𝕜 u i), norm_nonneg u]
-
-
-
 
 theorem norm_lpFinitePiEquiv_symm_le (v : ι → lp (fun _ : α => E) 2) :
     ‖(lpFinitePiEquiv 𝕜).symm v‖ ≤ (1 + (Fintype.card ι : ℝ)) * ‖v‖ := by

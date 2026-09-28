@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskNormalForm
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.FoldedFailureArc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -210,8 +202,6 @@ theorem exists_hamiltonZero_rectangular_path_contraction
       (by linarith [s.property.2]) s.property.1 (by ring)
   · exact (convex_Icc a b) (hm t) (hm 0)
       (by linarith [s.property.2]) s.property.1 (by ring)
-
-
 
 theorem exists_hamiltonZero_source_disk_failure_arc
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

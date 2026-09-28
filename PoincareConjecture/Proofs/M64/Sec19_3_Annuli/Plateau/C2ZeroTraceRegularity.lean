@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.C2WeakLaplacian
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -96,9 +85,6 @@ private theorem odd_energy_decay {N : ℕ} {R beta Lambda : ℝ} (hR : 0 < R)
       add_le_add (hdecay x hxc r hr (by linarith))
         (hdecay _ hxr r hr (by linarith))
     _ = _ := by ring
-
-
-
 
 theorem m64C2_zero_trace_quadratic_contDiffOn {N : ℕ} {R C H beta Lambda : ℝ} (hR : 0 < R)
     (X : M65LocalWeakMap (id : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin N))

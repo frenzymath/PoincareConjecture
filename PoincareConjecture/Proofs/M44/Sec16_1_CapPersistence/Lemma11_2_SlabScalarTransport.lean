@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarPull
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScaling
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem scalar_evolution_eq_of_metric_isometry
     {n : ℕ} {M N : Type*} [TopologicalSpace M]
@@ -48,16 +36,11 @@ theorem scalar_evolution_eq_of_metric_isometry
     (Eventually.of_forall fun y v w => by simpa only [one_mul] using (hf y v w).symm)
     (hscalar (f x)), hR]
 
-
-
-
 theorem regularSlab_metricHomothety (F : SurgeryFlowData.{u})
     {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b) (t : Icc a b) :
     MetricHomothety (S.flow.metric t.1) (F.metric t.1) (S.identify t) 1 := by
   intro x v w
   simpa only [one_mul] using S.metric_pullback t x v w
-
-
 
 theorem regularSlab_scalar_eq (F : SurgeryFlowData.{u})
     {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b)
@@ -67,9 +50,6 @@ theorem regularSlab_scalar_eq (F : SurgeryFlowData.{u})
   simpa only [div_one] using M13.homothety_scalarCurvature_eq
     (S.flow.metric t.1) (F.metric t.1) (S.identify t) 1 zero_lt_one
     (regularSlab_metricHomothety F S t) (S.flow.connection t.1) (F.connection t.1) x
-
-
-
 
 theorem regularSlab_scalar_evolution_eq (P : M44CapPersistencePredecessors.{u})
     (F : SurgeryFlowData.{u}) {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b)

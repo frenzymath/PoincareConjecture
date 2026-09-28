@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Gradien
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Calculus
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def differentialEvaluation (f : M → ℝ) : CovariantTensorEvaluation n M 1 :=
   fun x v ↦ mvfderiv (𝓡 n) f x (v 0)
@@ -45,13 +36,11 @@ namespace LeviCivitaData
 
 variable {g : RiemannianMetric n M}
 
-
 lemma hessian_eq_covariantTensorDerivative
     (D : LeviCivitaData g) (f : M → ℝ) (x : M)
     (u v : TangentSpace (𝓡 n) x) :
     D.hessian f x u v = D.covariantTensorDerivative (differentialEvaluation f) x ![u, v] := by
   simp [hessian, hessianOnFields, covariantTensorDerivative, differentialEvaluation]
-
 
 lemma hessian_isSmoothCovariantTensor
     (D : LeviCivitaData g)

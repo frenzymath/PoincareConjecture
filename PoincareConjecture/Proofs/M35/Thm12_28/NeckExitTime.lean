@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckSlabs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
-
 
 theorem exists_first_axial_exit {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) {a : ℝ} (ha : 0 < a) (hal : a < length)

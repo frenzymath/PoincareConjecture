@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 import Mathlib.Data.Countable.Defs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,10 +9,6 @@ open scoped Manifold Topology
 variable {𝕜 E H M : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M]
-
-
-
-
 
 theorem IsCompact.exists_finite_buffered_extChart_ball_cover
     {K W : Set M} (hK : IsCompact K)
@@ -63,10 +49,6 @@ theorem IsCompact.exists_finite_buffered_extChart_ball_cover
   obtain ⟨s, hsK, hcover⟩ := hK.elim_nhds_subcover U
     (fun q _ => (hopen q).mem_nhds (hmem q))
   exact ⟨s, r, fun q hq => ⟨hsK q hq, hr q, hinside q (hsK q hq)⟩, hcover⟩
-
-
-
-
 
 theorem IsCompact.exists_nat_buffered_extChart_ball_cover
     {K W : Set M} (hK : IsCompact K) (hne : K.Nonempty)

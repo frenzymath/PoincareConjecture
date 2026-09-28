@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NormalCircleCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.SeparatedTubeCaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
@@ -196,4 +188,3 @@ theorem exists_positioned_sphere_system_separated_caps
     exact disjoint_left.mp hdisCaps hx (hzx ▸ hz)
 
 end PoincareConjecture.M76
-

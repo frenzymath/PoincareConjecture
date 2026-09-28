@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularLengthMap
 import PoincareConjecture.Proofs.M60.Mathlib.CompactExtendedLipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology NNReal ENNReal
 
 namespace PoincareConjecture
-
-
 
 theorem m60AnnularLengthMap_lipschitz
     {E : Type*} [PseudoEMetricSpace E] {beta : ℝ → E} {a b : ℝ → ℝ}

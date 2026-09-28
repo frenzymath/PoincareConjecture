@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarAnnularEnergy
 import Mathlib.MeasureTheory.Integral.Average
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem m64_exists_small_energy_drop (E : ℕ → ℝ) {N : ℕ} (hN : 0 < N)
     (hEN : 0 ≤ E N) :
@@ -39,9 +27,6 @@ theorem m64_exists_small_energy_drop (E : ℕ → ℝ) {N : ℕ} (hN : 0 < N)
   obtain ⟨j, hj, hjE⟩ := Finset.exists_le_of_sum_le
     (Finset.nonempty_range_iff.mpr hN.ne') hsum
   exact ⟨j, Finset.mem_range.mp hj, hjE⟩
-
-
-
 
 theorem m64UnitInterval_exists_le_integral_of_ae
     (f : ℝ → ℝ) (hf : IntegrableOn f (Icc (0 : ℝ) 1))

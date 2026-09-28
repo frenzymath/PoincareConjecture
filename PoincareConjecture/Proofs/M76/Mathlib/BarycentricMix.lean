@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSplit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open scoped BigOperators
 namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
-
-
 
 theorem projectToFace_zero_mix_compl {s : Finset ι} {u v : ι → ℝ}
     (hu : u ∈ barycentricFace s) (hv : v ∈ barycentricFace sᶜ)
@@ -30,20 +19,14 @@ theorem projectToFace_zero_mix_compl {s : Finset ι} {u v : ι → ℝ}
 
 omit [DecidableEq ι] in
 
-
 theorem convex_barycentricFace (s : Finset ι) : Convex ℝ (barycentricFace s) := by
   intro u hu v hv a b ha hb hab
   refine ⟨convex_stdSimplex ℝ ι hu.1 hv.1 ha hb hab, ?_⟩
   intro i hi
   simp only [Pi.add_apply, Pi.smul_apply, hu.2 i hi, hv.2 i hi, smul_zero, add_zero]
 
-
-
-
 noncomputable def splitMix (s : Finset ι) (t : ℝ) (q : ι → ℝ) : ι → ℝ :=
   (1 - t) • projectToFace s 0 q + t • projectToFace sᶜ 0 q
-
-
 
 theorem splitMix_mem_barycentricFace {s r : Finset ι} {q : ι → ℝ}
     (hq : q ∈ barycentricFace r) (hm : 0 < ∑ i ∈ s, q i)
@@ -52,8 +35,6 @@ theorem splitMix_mem_barycentricFace {s r : Finset ι} {q : ι → ℝ}
   convex_barycentricFace r (projectToFace_zero_mem_of_mem hq hm)
     (projectToFace_zero_mem_of_mem hq hn) (sub_nonneg.mpr ht.2) ht.1 (by ring)
 
-
-
 theorem projectToFace_splitMix {s : Finset ι} {q : ι → ℝ}
     (hq : ∀ i, 0 ≤ q i) (hm : 0 < ∑ i ∈ s, q i) (hn : 0 < ∑ i ∈ sᶜ, q i)
     {t : ℝ} (ht : t ≠ 1) :
@@ -61,16 +42,12 @@ theorem projectToFace_splitMix {s : Finset ι} {q : ι → ℝ}
   projectToFace_zero_mix (projectToFace_zero_mem s hq hm)
     (projectToFace_zero_mem sᶜ hq hn) ht
 
-
-
 theorem projectToFace_compl_splitMix {s : Finset ι} {q : ι → ℝ}
     (hq : ∀ i, 0 ≤ q i) (hm : 0 < ∑ i ∈ s, q i) (hn : 0 < ∑ i ∈ sᶜ, q i)
     {t : ℝ} (ht : t ≠ 0) :
     projectToFace sᶜ 0 (splitMix s t q) = projectToFace sᶜ 0 q :=
   projectToFace_zero_mix_compl (projectToFace_zero_mem s hq hm)
     (projectToFace_zero_mem sᶜ hq hn) ht
-
-
 
 theorem splitMix_splitMix {s : Finset ι} {q : ι → ℝ}
     (hq : ∀ i, 0 ≤ q i) (hm : 0 < ∑ i ∈ s, q i) (hn : 0 < ∑ i ∈ sᶜ, q i)
@@ -81,15 +58,10 @@ theorem splitMix_splitMix {s : Finset ι} {q : ι → ℝ}
   rw [projectToFace_splitMix hq hm hn ht1, projectToFace_compl_splitMix hq hm hn ht0]
   rfl
 
-
-
 theorem splitMix_current {s : Finset ι} {q : ι → ℝ}
     (hq : q ∈ stdSimplex ℝ ι) (hm : 0 < ∑ i ∈ s, q i) (hn : 0 < ∑ i ∈ sᶜ, q i) :
     splitMix s (∑ i ∈ sᶜ, q i) q = q :=
   mix_projectToFace_zero hq hm.ne' hn.ne'
-
-
-
 
 theorem continuousOn_splitMix (s : Finset ι) :
     ContinuousOn (fun p : ℝ × (ι → ℝ) => splitMix s p.1 p.2)

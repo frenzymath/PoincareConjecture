@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M38LocalTopology
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,21 +9,15 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
-
 theorem epsilon_le_threshold (N : RepairedNeckCapTopologyTheory.{u})
     (F : SurgeryFlowData.{u}) (h : 2 * F.parameters.epsilon ≤ N.epsilon₀) :
     F.parameters.epsilon ≤ N.epsilon₀ := by
   linarith [F.parameters.epsilon_pos]
 
-
 theorem mem_time_domain_before_surgery
     (F : SurgeryFlowData.{u}) {T t : ℝ} (hT : T ∈ F.surgery_times)
     (ht : 0 ≤ t) (htT : t ≤ T) : t ∈ F.time_domain :=
   F.time_domain_interval.out F.zero_mem (F.surgery_times_subset hT) ⟨ht, htT⟩
-
-
-
 
 theorem exists_nonempty_late_slice
     (F : SurgeryFlowData.{u}) (hF : SurgeryFlowAdmissible F)
@@ -51,8 +37,6 @@ theorem exists_nonempty_late_slice
     ((F.event T hT).tMinus_nonnegative.trans htpre) htT.le
   refine ⟨⟨t, htpre, htT⟩, ht, htdomain, F.slices_compact t htdomain, ?_⟩
   exact hF.strong_disappearing T hT ⟨t, htpre, htT⟩ ht.le
-
-
 
 theorem exists_vanishing_late_slice
     (F : SurgeryFlowData.{u}) (hF : SurgeryFlowAdmissible F)

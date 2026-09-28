@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
 
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
-
 
 noncomputable def zeroSourceMetric (G : GeneralizedBlowupConvergence S J) (k : ℕ) :
     RiemannianMetric 3
@@ -49,8 +41,6 @@ theorem zeroPullbackForm_eq_sourceMetric (G : GeneralizedBlowupConvergence S J)
   exact (G.embedding k).zeroSliceHomeomorph_pullbackInner
     (G.exhaustion.space_open k) (G.zero_mem_cylinder k) x v w
 
-
-
 theorem eventually_zero_tangentNorm_bounds (G : GeneralizedBlowupConvergence S J)
     {K : Set G.limit.carrier.carrier} (hK : IsCompact K) {C : ℝ} (hC : 1 < C) :
     ∀ᶠ k in atTop, ∀ x ∈ K, ∀ v : TangentSpace (𝓡 3) x,
@@ -68,8 +58,6 @@ theorem eventually_zero_tangentNorm_bounds (G : GeneralizedBlowupConvergence S J
   have hwu : (G.limit.flow.metric 0).inner x w w ≤ 1 := Real.sqrt_le_one.mp hw
   rw [← G.zeroPullbackForm_eq_sourceMetric]
   exact (hk x hx w w hwu hwu).le
-
-
 
 theorem eventually_baseBall_subset_zeroSliceEmbedding_image_ball
     (G : GeneralizedBlowupConvergence S J) {r C : ℝ} (hr : 0 < r) (hC : 1 < C) :

@@ -5,22 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ScalarHeightFlow
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem exists_radial_filling
     (rho : ℝ → ℝ)

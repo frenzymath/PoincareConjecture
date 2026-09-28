@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -49,10 +34,6 @@ private theorem exists_strictMono_eventually_mem_nested_tails
     ((le_max_left i N).trans hj).trans (Nat.le_succ j)
   obtain ⟨k, hjk, hk⟩ := hrows i (j + 1) hij j
   exact ⟨k, ((le_max_right i N).trans hj).trans hjk, hk⟩
-
-
-
-
 
 theorem exists_common_smoothSubsequenceExtraction
     {d : ℕ → ℕ} {E : ℕ → Type*}

@@ -1,8 +1,3 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
 open MeasureTheory Set
 open scoped ContDiff Topology

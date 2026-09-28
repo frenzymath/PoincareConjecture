@@ -3,15 +3,6 @@ import Mathlib.MeasureTheory.Integral.Prod
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
 import Mathlib.MeasureTheory.Function.AbsolutelyContinuous
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +11,6 @@ open Set MeasureTheory Filter
 open scoped Topology ENNReal
 
 namespace PoincareConjecture.M65Interior
-
-
 
 theorem polar_integrable_weighted {f : LoopPlane → ℝ} (hf : Integrable f)
     (x : LoopPlane) :
@@ -40,9 +29,6 @@ private theorem integral_centered_polar {f : LoopPlane → ℝ} (x : LoopPlane) 
   rw [h]
   exact (measurePreserving_add_left volume x).integral_comp
     (Homeomorph.addLeft x).measurableEmbedding f
-
-
-
 
 theorem disk_integral_polar (f : LoopPlane → ℝ) (x : LoopPlane) (R : ℝ) :
     (∫ z in Metric.closedBall x R, f z) =
@@ -75,8 +61,6 @@ theorem disk_integral_polar (f : LoopPlane → ℝ) (x : LoopPlane) (R : ℝ) :
       · erw [indicator_of_mem (hm.mpr h), indicator_of_mem h]
       · erw [indicator_of_notMem (mt hm.mp h), indicator_of_notMem h, mul_zero]
     _ = _ := by rw [integral_indicator hS, Measure.restrict_restrict hS, hset]
-
-
 
 theorem disk_integral_radial {f : LoopPlane → ℝ} (hf : Integrable f)
     (x : LoopPlane) {R : ℝ} (hR : 0 ≤ R) :
@@ -115,9 +99,6 @@ private theorem absolutelyContinuous_congr {f g : ℝ → ℝ} {a b : ℝ}
   rw [← hsum]
   exact hbound E hE hlen
 
-
-
-
 theorem disk_integral_absolutelyContinuous {f : LoopPlane → ℝ} (hf : Integrable f)
     (x : LoopPlane) {R : ℝ} (hR : 0 ≤ R) :
     AbsolutelyContinuousOnInterval (fun s => ∫ z in Metric.closedBall x s, f z) 0 R := by
@@ -127,9 +108,6 @@ theorem disk_integral_absolutelyContinuous {f : LoopPlane → ℝ} (hf : Integra
   intro s hs
   have hs' : 0 ≤ s := (uIcc_of_le hR ▸ hs).1
   exact (disk_integral_radial hf x hs').2.symm
-
-
-
 
 theorem disk_integral_ae_hasDerivAt {f : LoopPlane → ℝ} (hf : Integrable f)
     (x : LoopPlane) {R : ℝ} (hR : 0 < R) :
@@ -145,10 +123,6 @@ theorem disk_integral_ae_hasDerivAt {f : LoopPlane → ℝ} (hf : Integrable f)
   apply hd.congr_of_eventuallyEq
   filter_upwards [Ioi_mem_nhds hrmem.1] with s hs
   exact (disk_integral_radial hf x hs.le).2
-
-
-
-
 
 theorem local_disk_radial {f : LoopPlane → ℝ} {x : LoopPlane} {R : ℝ}
     (hR : 0 < R) (hf : IntegrableOn f (Metric.closedBall x R)) :

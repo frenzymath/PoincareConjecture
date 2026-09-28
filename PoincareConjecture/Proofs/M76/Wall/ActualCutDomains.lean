@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OppositePLDomain
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspaceBoundaryPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_original_PL_cut_domains
     {X ι : Type*} [TopologicalSpace X]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.EuclideanCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Ellipticity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -27,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem m25_normalizedEuclideanCoefficients_symm (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (x v w : EuclideanSpace ℝ (Fin 3)) :
     N.m25_normalizedEuclideanCoefficients q s x v w =
@@ -39,9 +27,6 @@ theorem m25_normalizedEuclideanCoefficients_symm (N : EpsilonNeck g)
   rw [g.symm]
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem m25_exists_normalizedEuclideanCoefficients_realization (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -101,8 +86,6 @@ theorem m25_exists_normalizedEuclideanCoefficients_realization (N : EpsilonNeck 
         (show (phi x).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ from (hU hx).1)).contDiffWithinAt)
       (fun x _ v w => N.m25_normalizedEuclideanCoefficients_symm q s x v w) hpos
   exact ⟨h, D, V, hVopen, h0V, fun x hx => (hU (hVU hx)).1, hVeq⟩
-
-
 
 theorem exists_normalizedEuclideanMetric_scalar_twoJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

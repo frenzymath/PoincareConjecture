@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.OriginalBallNeighb
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalFillingCutSide
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -31,7 +19,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
-
 theorem OriginalDiskProduct.isPLIrreducible_cut
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (hI : IsPLIrreducible e R)
     (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip)) :
@@ -40,8 +27,6 @@ theorem OriginalDiskProduct.isPLIrreducible_cut
   intro S hSK hs
   obtain ⟨B, hBR, ⟨b⟩⟩ := hI.2 S (hSK.trans (interior_mono sdiff_subset)) hs
   exact ⟨B, P.ball_subset_cut b hBR hSK, ⟨b⟩⟩
-
-
 
 theorem exists_original_compression_neighborhood [CompactSpace X]
     (hR : IsCompact R) (he : PLDomain e R)

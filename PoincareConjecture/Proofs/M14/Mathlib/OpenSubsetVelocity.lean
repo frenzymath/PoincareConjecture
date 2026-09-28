@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M11.SpatialCalculus
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 namespace TopologicalSpace.Opens
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem mfderiv_curve_eq_deriv_val (U : Opens E) {f : ℝ → U} {s : ℝ}
     (hf : MDifferentiableAt (𝓘(ℝ, ℝ)) (𝓘(ℝ, E)) f s) :
@@ -31,9 +21,6 @@ theorem mfderiv_curve_eq_deriv_val (U : Opens E) {f : ℝ → U} {s : ℝ}
   change fderiv ℝ (fun t => (f t).val) s (1 : ℝ) =
     mfderiv (𝓘(ℝ, ℝ)) (𝓘(ℝ, E)) f s (1 : ℝ) at hd
   exact hd.symm
-
-
-
 
 theorem mfderivWithin_curve_eq_derivWithin_val (U : Opens E)
     {f : ℝ → U} {J : Set ℝ} {s : ℝ}

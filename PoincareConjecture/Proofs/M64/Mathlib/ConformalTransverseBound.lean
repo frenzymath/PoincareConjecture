@@ -1,15 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -18,8 +8,6 @@ noncomputable section
 namespace PoincareConjecture
 
 open Classical in
-
-
 
 theorem m64Conformal_transverse_bound {ι : Type*} [Fintype ι]
     (G : EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι →L[ℝ] ℝ)

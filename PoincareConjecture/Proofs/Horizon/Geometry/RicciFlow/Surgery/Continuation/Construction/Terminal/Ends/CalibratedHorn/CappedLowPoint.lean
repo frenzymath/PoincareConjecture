@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.Boundary
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
-
-
 
 theorem cappedTube_low_point_or_low_neck (Q : SingularLimitConclusion H)
     (Y : CappedTubeCertificate (Q.extension.extended.metric T))
@@ -54,8 +51,6 @@ theorem cappedTube_low_point_or_low_neck (Q : SingularLimitConclusion H)
       ((Y.tube.chain.epsilon_eq i.val i.property).trans_le Y.tube.epsilon_le_threshold) hy hpi
     rw [← Q.terminal_scalar_eq] at hratio
     linarith
-
-
 
 theorem cappedTube_low_point_dichotomy (Q : SingularLimitConclusion H)
     (Y : CappedTubeCertificate (Q.extension.extended.metric T))
@@ -96,8 +91,6 @@ theorem cappedTube_low_point_dichotomy (Q : SingularLimitConclusion H)
     · exact Or.inr ⟨i.val, i.property, hneck, hdis⟩
     · obtain ⟨z, hzcap, hzneck⟩ := Set.not_disjoint_iff.mp hdis
       exact Or.inl (hbound z hzcap (hneck z hzneck).le)
-
-
 
 theorem subset_tube_of_cappedTube_scalar_bound (Q : SingularLimitConclusion H)
     (Y : CappedTubeCertificate (Q.extension.extended.metric T))

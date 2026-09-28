@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.RadialSymmetry
 import Mathlib.Analysis.Calculus.LineDeriv.Basic
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +22,6 @@ private theorem linearMap_eq_coordinate_sum
   apply (EuclideanSpace.basisFun (Fin n) ℝ).toBasis.ext
   intro i
   simp [OrthonormalBasis.coe_toBasis, EuclideanSpace.basisFun_apply]
-
-
 
 theorem spatial_fderiv_apply_stronglyMeasurable
     {A F : Type*} [MeasurableSpace A] [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -57,8 +45,6 @@ theorem spatial_fderiv_apply_stronglyMeasurable
     intro p
     exact ((hdiff p.1 p.2).hasFDerivAt.hasLineDerivAt v).tendsto_slope_zero.comp hstep
 
-
-
 theorem spatial_fderiv_stronglyMeasurable
     {A F : Type*} [MeasurableSpace A] [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : A → V → F} (hf : StronglyMeasurable (Function.uncurry f))
@@ -76,9 +62,6 @@ theorem spatial_fderiv_stronglyMeasurable
   funext p
   exact linearMap_eq_coordinate_sum _
 
-
-
-
 theorem spatial_iteratedFDeriv_stronglyMeasurable
     {A F : Type*} [MeasurableSpace A] [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : A → V → F} (hf : StronglyMeasurable (Function.uncurry f))
@@ -95,9 +78,6 @@ theorem spatial_iteratedFDeriv_stronglyMeasurable
       have h := (continuousMultilinearCurryLeftEquiv ℝ
         (fun _ : Fin (k + 1) => V) F).symm.continuous.comp_stronglyMeasurable hd
       simpa only [iteratedFDeriv_succ_eq_comp_left, Function.comp_apply] using h
-
-
-
 
 theorem gaugeSource_stronglyMeasurable
     {A : Type*} [MeasurableSpace A]

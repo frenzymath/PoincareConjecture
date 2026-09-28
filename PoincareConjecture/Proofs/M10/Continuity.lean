@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.MinimizingLifts
 import PoincareConjecture.Proofs.M10.CompactMinimum
 import PoincareConjecture.Proofs.M10.UpperSemicontinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem reducedLength_lowerSemicontinuousAt
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)
@@ -82,7 +72,6 @@ theorem reducedLength_lowerSemicontinuousAt
       G.toLExponentialFamily.action w.1 w.2 / (2 * Real.sqrt w.2)
     rw [hfirst, hsecond] at hbound
     simpa only [hsecond] using hbound
-
 
 theorem reducedLength_continuousOn
     (hL : LGeodesicTheory F T τmax)

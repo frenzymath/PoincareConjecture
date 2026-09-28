@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem height_above_disk_of_cap_range {v : E3} (hv : ‖v‖ = 1)
     {f : S2 → E3} (hf : Injective f) (K : Set S2) (b : Real) {s : Real} (hs : 0 < s)

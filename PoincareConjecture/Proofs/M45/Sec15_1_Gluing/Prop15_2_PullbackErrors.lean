@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_VanishingJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -25,8 +16,6 @@ namespace PointJetsVanish
 
 variable {l : Filter ι} {x : ι → E} {f g : ι → E → F}
 
-
-
 theorem congr (hf : PointJetsVanish f x l)
     (heq : ∀ i, f i =ᶠ[𝓝 (x i)] g i) : PointJetsVanish g x l := by
   intro m
@@ -36,8 +25,6 @@ theorem congr (hf : PointJetsVanish f x l)
     exact ((heq i).iteratedFDeriv (𝕜 := ℝ) m).self_of_nhds
   rw [← h]
   exact hf m
-
-
 
 theorem add (hf : PointJetsVanish f x l) (hg : PointJetsVanish g x l)
     (hfs : ∀ i, ContDiffAt ℝ ∞ (f i) (x i))
@@ -49,8 +36,6 @@ theorem add (hf : PointJetsVanish f x l) (hg : PointJetsVanish g x l)
     ((hgs _).of_le (by exact_mod_cast le_top)), add_zero]
     using (hf m).add (hg m)
 
-
-
 theorem sub (hf : PointJetsVanish f x l) (hg : PointJetsVanish g x l)
     (hfs : ∀ i, ContDiffAt ℝ ∞ (f i) (x i))
     (hgs : ∀ i, ContDiffAt ℝ ∞ (g i) (x i)) :
@@ -60,8 +45,6 @@ theorem sub (hf : PointJetsVanish f x l) (hg : PointJetsVanish g x l)
     ((hfs _).of_le (by exact_mod_cast le_top))
     ((hgs _).of_le (by exact_mod_cast le_top)), sub_self]
     using (hf m).sub (hg m)
-
-
 
 theorem smul (hf : PointJetsVanish f x l) {c : ι → ℝ}
     (hc : l.IsBoundedUnder (· ≤ ·) (fun i => ‖c i‖))
@@ -78,8 +61,6 @@ theorem smul (hf : PointJetsVanish f x l) {c : ι → ℝ}
     norm_smul, Real.norm_eq_abs, abs_abs, mul_comm] using hz.zero_mul_isBoundedUnder_le hb
 
 end PointJetsVanish
-
-
 
 theorem PointJetsConverge.sub_vanish {l : Filter ι} {x : ι → E}
     {f g : ι → E → F} {f0 : E → F} {x0 : E}

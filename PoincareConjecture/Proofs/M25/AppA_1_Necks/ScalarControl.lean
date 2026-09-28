@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AmbientScalar
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.ModelScalar
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RealizedCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_normalized_scalar_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -43,8 +30,6 @@ theorem exists_normalized_scalar_control {α : ℝ} (hα : 0 < α) :
   rw [N.realization_scalar_eq q s h D hV h0 hstrip heq,
     roundCylinderEuclideanModelConnection_scalar_one] at hscalar
   exact hscalar
-
-
 
 theorem exists_normalized_scalar_control_on_carrier {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

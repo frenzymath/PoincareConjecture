@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiBallRetention
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

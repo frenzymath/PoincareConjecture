@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.CurrentMollification
 import PoincareConjecture.Proofs.M60.Mathlib.UniformizationPrimitives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,23 +14,15 @@ namespace PoincareConjecture.M64
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
 
-
-
 def coordinateCurrentForm (J : Fin 2 → Plane → ℝ) (p : Plane) : Plane →L[ℝ] ℝ :=
   J 0 p • EuclideanSpace.proj 0 + J 1 p • EuclideanSpace.proj 1
-
-
 
 theorem coordinateCurrentForm_apply (J : Fin 2 → Plane → ℝ) (p v : Plane) :
     coordinateCurrentForm J p v = J 0 p * v 0 + J 1 p * v 1 := rfl
 
-
-
 theorem coordinateCurrentForm_contDiff (J : Fin 2 → Plane → ℝ)
     (hJ : ∀ i, ContDiff ℝ ∞ (J i)) : ContDiff ℝ ∞ (coordinateCurrentForm J) :=
   ((hJ 0).smul contDiff_const).add ((hJ 1).smul contDiff_const)
-
-
 
 theorem coordinateCurrentForm_closed (J : Fin 2 → Plane → ℝ)
     (hJ : ∀ i, ContDiff ℝ ∞ (J i)) {p : Plane}
@@ -63,9 +47,6 @@ theorem coordinateCurrentForm_closed (J : Fin 2 → Plane → ℝ)
     simp only [map_add, map_smul, smul_eq_mul]
   rw [hd, hd, hlin 0 v, hlin 1 v, hlin 0 w, hlin 1 w, hcurl]
   ring
-
-
-
 
 theorem smooth_closed_current_exists_local_potential
     (J : Fin 2 → Plane → ℝ) (hJ : ∀ i, ContDiff ℝ ∞ (J i))
@@ -102,9 +83,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
-
-
-
 
 theorem observedWeakAnnulus_smoothed_circle_current_potential
     (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

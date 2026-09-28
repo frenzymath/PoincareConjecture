@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.PrescribedIntervalSourceFibers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoIntervalDiskNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -25,8 +16,6 @@ local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
 
-
-
 theorem exists_normalization_homeomorph_of_map
     {d : V2 → P2} (hd : FinitePiecewiseAffineOn d D)
     (hemb : Topology.IsEmbedding (fun x : D ↦ d x)) (him : d '' D = T) :
@@ -38,8 +27,6 @@ theorem exists_normalization_homeomorph_of_map
   obtain ⟨H, hH, hval⟩ := hd.exists_homeomorph_image hinj
   let H' := H.trans (Homeomorph.setCongr him)
   exact ⟨H', ⟨d, hd, hval⟩, hval⟩
-
-
 
 theorem normalized_attachment_source_properties
     {E0 E1 X : Type*} [TopologicalSpace E0] [TopologicalSpace E1]

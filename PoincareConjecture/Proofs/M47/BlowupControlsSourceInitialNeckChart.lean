@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxChart
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxMeasure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +53,6 @@ private noncomputable def initialNeckRestrict
     open_target := e.open_target
     contMDiffOn_toFun := Phi.contMDiffOn.mono inter_subset_left
     contMDiffOn_invFun := Phi.symm.contMDiffOn.mono inter_subset_left }
-
-
 
 theorem exists_source_initial_neck_chart
     {C : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 C.carrier}
@@ -125,8 +114,6 @@ theorem exists_source_initial_neck_chart
     exact i.right_inv hy
   refine ⟨Phi, hsource, hmap, ?_⟩
   rw [hmap 0 (Metric.mem_ball_self (by norm_num)), centeredNeckLift_zero]
-
-
 
 theorem source_initial_neck_chart_differential
     {C : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 C.carrier}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.LoopTopology
 import Mathlib.Geometry.Manifold.MFDeriv.Tangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -29,10 +20,6 @@ private theorem tangentChart_eq (p : M) (q : TangentBundle (𝓡 3) M)
   have h := tangentMap_chart (I := 𝓡 3)
     (p := (⟨p, 0⟩ : TangentBundle (𝓡 3) M)) (q := q) hq
   exact (congrArg (TotalSpace.toProd LoopAmbient LoopAmbient) h).symm
-
-
-
-
 
 theorem m65TangentBundle_tendsto_of_chart {ι : Type*} {l : Filter ι}
     (q : ι → TangentBundle (𝓡 3) M) (q0 : TangentBundle (𝓡 3) M) (p : M)
@@ -66,10 +53,6 @@ private theorem chart_curveVelocity (c : ℝ → M)
     (hc.contMDiffAt.mdifferentiableAt one_ne_zero) (1 : ℝ)
   simpa +instances only [mfderiv_eq_fderiv, fderiv_apply_one_eq_deriv, Function.comp_def,
     curveVelocity] using! h.symm
-
-
-
-
 
 theorem m65CurveTangent_tendsto_of_chart {ι : Type*} {l : Filter ι}
     (c : ι → ℝ → M) (c0 : ℝ → M)

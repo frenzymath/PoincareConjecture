@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.HessianTransport
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalConnectionTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,15 +13,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {h : RiemannianMetric 2 LoopPlane}
 
-
-
 noncomputable def m65PlaneSecondFundamentalForm (D : LeviCivitaData g)
     (Ds : LeviCivitaData h) (f : LoopPlane → M) (x u v : LoopPlane) :
     TangentSpace (𝓡 n) (f x) :=
   m65PlaneHessian D f x u v -
     mfderiv (𝓡 2) (𝓡 n) f x (M65Gauss.connectionCoefficient Ds x u v)
-
-
 
 theorem m65PlaneSecondFundamentalForm_chart
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)
@@ -66,9 +53,6 @@ theorem m65PlaneSecondFundamentalForm_chart
     ((mfderiv (𝓡 n) (𝓡 n) c.symm (c (f x))).map_sub
       (M65Gauss.covariantHessianMap DE (c ∘ f) x u v)
       (fderiv ℝ (c ∘ f) x (M65Gauss.connectionCoefficient Ds x u v))).symm
-
-
-
 
 theorem m65PlaneSecondFundamentalForm_euclideanTrace
     (D : LeviCivitaData g) (Ds : LeviCivitaData h)

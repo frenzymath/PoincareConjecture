@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.PairedMarkedModel
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteMarkedPolygonSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -24,8 +15,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 theorem OrdinaryIntervalMarkedModel.selected_graph_finitePL
     (D : OrdinaryIntervalMarkedModel old i) :
     FinitePiecewiseAffineOn (D.graph ∘ f) (old.pieces i) ∧
@@ -38,7 +27,6 @@ theorem OrdinaryIntervalMarkedModel.selected_graph_finitePL
       (D.graph_separates (f x) (interior_subset (D.core_neighborhood ⟨x, hx, rfl⟩))
         (f y) hxy)
   · simpa only [D.selected_clip] using (D.clips_data 2).2.2.2
-
 
 theorem OrdinaryIntervalMarkedModel.exists_model_circle_parameter [T2Space X]
     (D : OrdinaryIntervalMarkedModel old i) (a : Q2 ≃ₜ old.pieces i) (ha : a.IsFinitePL) :
@@ -91,8 +79,6 @@ theorem OrdinaryIntervalMarkedModel.exists_model_circle_parameter [T2Space X]
     refine ⟨b u, (b u).property, ?_⟩
     exact (hgb u).trans (congrArg f (congrArg Subtype.val (a.apply_symm_apply ⟨x, hx⟩)))
 
-
-
 theorem OrdinaryIntervalMarkedModel.exists_model_circle_polygon
     (D : OrdinaryIntervalMarkedModel old i) {n : ℕ} (P : Polygon V2 (n + 3))
     (hP : P.HasSimplicialEdges) (hPi : Function.Injective P)
@@ -103,8 +89,6 @@ theorem OrdinaryIntervalMarkedModel.exists_model_circle_polygon
   obtain ⟨m, Q, hQi, hQ, hQs⟩ := P.exists_polygon_finitePL_image hP hPi hPL hPs.subset
     (hinj.mono hPs.subset)
   exact ⟨m, Q, hQi, hQ, hQs.trans (by rw [hPs, himage])⟩
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_model_circle_polygon_with_vertices
     (D : OrdinaryIntervalMarkedModel old i) {n : ℕ} (P : Polygon V2 (n + 3))

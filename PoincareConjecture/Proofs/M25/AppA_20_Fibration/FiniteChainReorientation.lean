@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicCuts
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SharpDepth
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 open scoped Manifold ContDiff Bundle ENNReal
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem BalancedNeckChain.exists_reflected_finite_chain_of_frontier_incidence :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

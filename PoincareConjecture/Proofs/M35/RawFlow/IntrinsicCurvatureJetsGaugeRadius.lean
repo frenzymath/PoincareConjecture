@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.GaugeRestriction
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseTime
 import PoincareConjecture.Proofs.M35.RadialGauge.RestrictedMapJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 open RadialGauge
-
-
 
 theorem exists_raw_intrinsic_corrected_radial_gauge
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

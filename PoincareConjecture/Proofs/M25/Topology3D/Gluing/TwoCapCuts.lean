@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_exists_buffered_cut_cover
     {M : Type u} [TopologicalSpace M]

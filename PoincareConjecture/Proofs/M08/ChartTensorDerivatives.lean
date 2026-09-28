@@ -439,4 +439,3 @@ theorem ricciDerivativePairing_chart {J C : Set ℝ} (F : RicciFlow n M J)
   ring
 
 end PoincareConjecture.M08
-

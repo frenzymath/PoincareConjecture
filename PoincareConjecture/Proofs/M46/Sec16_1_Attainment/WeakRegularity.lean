@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.WeakStationarity
 import PoincareConjecture.Proofs.M08.WeakVelocity
 import PoincareConjecture.Proofs.M08.ChartRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxSize 2048
@@ -34,9 +26,6 @@ private noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[�
   ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem weak_quadratic_minimum_contDiffOn {a b : ℝ} (hab : a < b)
     {S : Set E} (hS : IsOpen S)

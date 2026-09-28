@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem continuous_contraction_time_input :
     Continuous (fun v : ℝ × (M × M) =>
@@ -38,8 +27,6 @@ theorem continuous_contraction_time_input :
   exact (contMDiff_equivTangentBundleProd_symm (I := 𝓘(ℝ, ℝ))
     (I' := (𝓡 3).prod (𝓡 3)) (M := ℝ) (M' := M × M) (n := 0)).continuous.comp
       (ht.prodMk hp)
-
-
 
 theorem exists_contraction_derivative_bounds [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M))
@@ -105,8 +92,6 @@ theorem exists_contraction_derivative_bounds [T2Space M]
       erw [heq] at hb
       erw [map_smul, norm_smul, Real.norm_of_nonneg (inv_nonneg.mpr (norm_nonneg v))] at hb
       exact (div_le_iff₀ (norm_pos_iff.mpr hv)).mp (by simpa [div_eq_mul_inv, mul_comm] using hb)
-
-
 
 theorem exists_bounded_local_contraction [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M)) :

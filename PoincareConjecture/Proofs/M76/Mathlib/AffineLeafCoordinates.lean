@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmoothLocalInverse
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 import Mathlib.Analysis.Calculus.FDeriv.Affine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,20 +12,13 @@ namespace ContinuousAffineMap
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
-
 def affineLeafMap (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F) (x0 : F)
     (z : F × (Q x0).ker) : E :=
   a z.1 + (z.2 : E) - a.contLinear (Q z.1 z.2)
 
-
-
 theorem affineLeafMap_zero (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 x : F) : a.affineLeafMap Q x0 (x, 0) = a x := by
   simp [affineLeafMap]
-
-
 
 theorem affineLeafMap_sub_mem_ker (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F)
     (x0 : F) (hQ : ∀ x, Function.RightInverse a.contLinear (Q x))
@@ -44,8 +27,6 @@ theorem affineLeafMap_sub_mem_ker (a : F →ᴬ[ℝ] E) (Q : F → E →L[ℝ] F
   rw [map_sub, map_sub, map_add, hQ]
   abel
 
-
-
 theorem contDiff_affineLeafMap (a : F →ᴬ[ℝ] E) {Q : F → E →L[ℝ] F}
     {n : ℕ∞ω} (hQ : ContDiff ℝ n Q) (x0 : F) :
     ContDiff ℝ n (a.affineLeafMap Q x0) := by
@@ -53,8 +34,6 @@ theorem contDiff_affineLeafMap (a : F →ᴬ[ℝ] E) {Q : F → E →L[ℝ] F}
     (Q x0).ker.subtypeL.contDiff.comp contDiff_snd
   exact ((a.contDiff.comp contDiff_fst).add hz).sub
     (a.contLinear.contDiff.comp ((hQ.comp contDiff_fst).clm_apply hz))
-
-
 
 theorem hasFDerivAt_affineLeafMap_zero (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} {x0 : F} (hQ : DifferentiableAt ℝ Q x0) :
@@ -80,9 +59,6 @@ theorem hasFDerivAt_affineLeafMap_zero (a : F →ᴬ[ℝ] E)
   simp [ContinuousLinearMap.coprod_apply, hz0]
 
 variable [CompleteSpace E] [CompleteSpace F]
-
-
-
 
 theorem exists_smooth_affineLeaf_chart (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} (hQ : ContDiff ℝ ∞ Q) (x0 : F)

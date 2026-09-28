@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RoundCurvature
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RadialDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,7 +8,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capNonnegativeSectionalCurvature {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (D : LeviCivitaData (capRiemannianMetric a ha hapi)) :
@@ -45,8 +34,6 @@ theorem capNonnegativeSectionalCurvature {a : ℝ} (ha : 0 < a)
         (Poincare.radial_gram_nonneg hx u v))
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem capTipSectionalCurvature {a : ℝ} (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (D : LeviCivitaData (capRiemannianMetric a ha hapi)) :

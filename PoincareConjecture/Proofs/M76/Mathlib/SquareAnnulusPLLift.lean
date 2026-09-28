@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusFinitePL
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
 
 theorem finitePiecewiseAffineOn_annulusMap_period {L d c : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L)
@@ -52,9 +39,6 @@ theorem finitePiecewiseAffineOn_annulusMap_period {L d c : ℝ}
     (lt_of_le_of_lt (mul_le_mul_of_nonneg_left (abs_le.mpr hp.2)
       (by norm_num)) hwidth) hp.1).symm
 
-
-
-
 theorem finitePiecewiseAffineOn_annulusMap_twoPeriods {L d c : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L)
     (hc : (c : AddCircle (4 * L)) = 0) :
@@ -69,10 +53,6 @@ theorem finitePiecewiseAffineOn_annulusMap_twoPeriods {L d c : ℝ}
   have h := finitePiecewiseAffineOn_union hleft hright
   rw [← union_prod, Icc_union_Icc_eq_Icc (by linarith) (by linarith)] at h
   exact h
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_annulusMap_lift {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :

@@ -3,23 +3,10 @@ import Mathlib.Analysis.Calculus.ContDiff.CPolynomial
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Normed.Module.Multilinear.Curry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
-
-
-
-
 
 theorem contDiffOn_iteratedDeriv_comp_of_spatial_jets
     {Z E F : Type*}

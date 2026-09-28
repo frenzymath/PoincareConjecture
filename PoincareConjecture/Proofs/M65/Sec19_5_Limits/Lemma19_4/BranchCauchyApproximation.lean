@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchMollificatio
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyConvergence
 import Mathlib.Analysis.Distribution.SchwartzSpace.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +9,6 @@ open Set Metric Filter MeasureTheory
 open scoped Topology ContDiff SchwartzMap
 
 namespace PoincareConjecture.M65Branch
-
-
-
-
 
 theorem exists_cauchy_schwartz_approximation {h : ℂ → ℂ} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : MemLp h 2 volume)

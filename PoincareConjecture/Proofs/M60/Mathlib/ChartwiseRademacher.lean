@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M40.Mathlib.LocalSmoothLipschitz
 import Mathlib.Analysis.Calculus.Rademacher
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Bundle
 open scoped Topology Manifold ContDiff NNReal
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem ae_mdifferentiableAt_of_lipschitzOn
     {E F H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

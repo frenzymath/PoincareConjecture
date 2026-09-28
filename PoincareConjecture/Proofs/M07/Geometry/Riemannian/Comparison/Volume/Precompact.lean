@@ -16,20 +16,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.OneDi
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.CutoffComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.Assembly
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -46,8 +32,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem volumeMeasure_ball_lt_top_of_precompact
     (g : RiemannianMetric n M) (p : M) {R r : ℝ}
     (hr : 0 ≤ r) (hrR : r < R)
@@ -63,11 +47,6 @@ theorem volumeMeasure_ball_lt_top_of_precompact
       exact le_of_lt hq
     _ < ⊤ := g.volumeMeasure_lt_top_of_isCompact
       (g.isCompact_closedBall_of_precompact_ball p hR hrR hcompact)
-
-
-
-
-
 
 theorem relativeVolumeComparison_of_precompact_ball
     [SecondCountableTopology M]
@@ -129,7 +108,6 @@ theorem relativeVolumeComparison_of_precompact_ball
   dsimp only
   rw [hvolume r hr.1 hr.2.le, hvolume s hs.1 hs.2.le]
   exact hm hr hs hrs
-
 
 theorem smallBall_volume_lower_bound_of_precompact_ball
     [SecondCountableTopology M]

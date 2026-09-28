@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.TensorMetricTrace
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -304,4 +297,3 @@ theorem second_covariantTensorDerivative_tensorPairTrace (D : LeviCivitaData g)
     (pairedDiagonal (fun i => g.orthonormalBasis x (a i))) (by omega)
 
 end PoincareConjecture.M04
-

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_CylinderPair
 import PoincareConjecture.Proofs.M02.Topology.IntegralChartSupport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,19 +14,12 @@ namespace PoincareConjecture.Proofs.M53
 
 variable {E : Type u} [TopologicalSpace E] (D : Set E) (t : ℝ)
 
-
-
 def cylinderSliceExterior : Set (E × ℝ) :=
   {p | p.2 = 0} ∪ (D ×ˢ Set.Icc (-t) t)ᶜ
-
-
 
 def cylinderSurfaceMap : C(E, cylinderSliceExterior D t) :=
   ⟨fun u => ⟨(u, 0), Or.inl rfl⟩,
     (continuous_id.prodMk continuous_const).subtype_mk _⟩
-
-
-
 
 theorem cylinderSurfaceMap_relative_homology_isIso
     (hD : IsClosed D) (ht : 0 < t) (n : Nat) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Mathlib.HarmonicComplexSystem
 import PoincareConjecture.Proofs.M60.Mathlib.HolomorphicFrameLocal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex Set Filter Metric
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M60
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem complexGradient_eq_zero_iff {u : ℂ → E} {z : ℂ} :
     complexGradient (complexCoordinates n) u z = 0 ↔ fderiv ℝ u z = 0 := by
@@ -35,10 +24,6 @@ theorem complexGradient_eq_zero_iff {u : ℂ → E} {z : ℂ} :
     simp
   · intro h
     simp [h]
-
-
-
-
 
 theorem harmonic_differential_eventually_zero_or_isolated
     {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : ℂ → E} {O : Set ℂ}

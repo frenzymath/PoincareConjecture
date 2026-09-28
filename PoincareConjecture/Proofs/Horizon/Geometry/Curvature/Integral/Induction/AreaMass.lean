@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Area
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   (g : RiemannianMetric (n + 1) M)
   {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)
-
-
 
 theorem integral_regularLevelArea_eq_integral_gradient_norm
     {a b : ℝ} (hab : a ≤ b) (hcompact : IsCompact (f ⁻¹' Icc a b))
@@ -59,9 +48,6 @@ theorem integral_regularLevelArea_eq_integral_gradient_norm
         ∂g.regularLevelVolume hf U (g.regularDomain_regular hf) t := by
       simp only [integral_const, regularLevelArea, U, smul_eq_mul, mul_one]
     _ = _ := hinner.symm
-
-
-
 
 theorem integral_regularLevelArea_le_modelVolume [PreconnectedSpace M]
     (D : LeviCivitaData g) (hcomplete : MetricComplete g)

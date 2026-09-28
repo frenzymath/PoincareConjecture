@@ -8,37 +8,11 @@ import PoincareConjecture.Proofs.M04.MetricComparison
 import PoincareConjecture.Proofs.M04.CurvaturePositivity
 import PoincareConjecture.Proofs.Ch04.ScalarBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem ricciFlowCurvatureTheory : RicciFlowCurvatureTheory.{u} := by
   exact {

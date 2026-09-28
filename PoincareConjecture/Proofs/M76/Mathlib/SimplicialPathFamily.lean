@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteSegmentCorrespondence
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Polygon
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   [Finite ι]
-
-
-
-
-
 
 theorem exists_common_simplicial_path_complex
     (n : ι → ℕ) (p : (a : ι) → Fin (n a + 2) → E)

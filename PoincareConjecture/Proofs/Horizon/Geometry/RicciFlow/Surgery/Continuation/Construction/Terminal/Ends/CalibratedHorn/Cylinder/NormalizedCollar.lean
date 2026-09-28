@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.AngularCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Vertical
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +35,6 @@ private theorem coordinate_map_mfderiv_injective
     (congrArg (fun L => L v) hh).symm
   intro v w hvw
   rw [← hleft v, ← hleft w, hvw]
-
-
 
 theorem normalized_collar_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalCoreLateralRetraction
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedLatticeCrossingArc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.NeckCoverCompactness
 import PoincareConjecture.Proofs.M28.Mathlib.CompactHeightTail
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem scalar_diverges_on_proper_neck_cover_end
     (K : NeckOnlyCover g) (D : LeviCivitaData g)

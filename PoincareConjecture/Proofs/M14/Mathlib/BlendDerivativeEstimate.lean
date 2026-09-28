@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M09.SmoothJoinCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,17 +11,11 @@ open Proofs.M09
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 theorem smoothJoinBlend_contDiffOn_one (f g : ℝ → E) (c d : ℝ) (U : Set ℝ)
     (hf : ContDiffOn ℝ 1 f U) (hg : ContDiffOn ℝ 1 g U) :
     ContDiffOn ℝ 1 (smoothJoinBlend f g c d) U := by
   exact hf.add (((smoothJoinCutoff_contDiff.of_le (by simp : (1 : ℕ∞ω) ≤ ∞)).comp
     ((contDiff_id.sub contDiff_const).div_const d)).contDiffOn.smul (hg.sub hf))
-
-
-
 
 theorem smoothJoinBlend_deriv_sq_le (f g : ℝ → E) {c d s K : ℝ}
     (hd : 0 < d) (hK : 0 ≤ K)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialWeakExtension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,8 +20,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "v" => m64AnnulusRadialTranslation
 
-
-
 theorem m64Observed_classical_column_tangent
     (he : ContMDiff (𝓡 n) (𝓡 m) 1 e) {F : LoopPlane → M}
     (hF : ContMDiff (𝓡 2) (𝓡 n) 1 F) (p : LoopPlane) (i : Fin 2) :
@@ -43,8 +30,6 @@ theorem m64Observed_classical_column_tangent
   have hd := congrArg (fun L => L (EuclideanSpace.single i 1)) hc
   rw [mfderiv_eq_fderiv] at hd
   exact hd.symm
-
-
 
 theorem M64ObservedWeakAnnulus.lower_extension_tangent
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -74,8 +59,6 @@ theorem M64ObservedWeakAnnulus.lower_extension_tangent
       m64AnnulusLowerExtend_left _ _ hpL
     rw [hcol]
     exact ht (v + p)
-
-
 
 theorem M64ObservedWeakAnnulus.lower_extension_data
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

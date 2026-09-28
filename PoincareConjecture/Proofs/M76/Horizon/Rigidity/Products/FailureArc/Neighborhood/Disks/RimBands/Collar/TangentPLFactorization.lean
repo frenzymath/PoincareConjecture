@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.NormalFactorization
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry SignType
@@ -66,8 +60,6 @@ private theorem exists_open_affine_patch
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 theorem plLocalSign_eq_tangentialPL_mul_normalTransitionSign
     (h : OpenPartialHomeomorph C3 C3)

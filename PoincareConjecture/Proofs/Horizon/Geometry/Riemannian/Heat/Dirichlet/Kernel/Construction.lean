@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kern
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.StrictPositivity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.DomainMonotonicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,7 +16,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 structure IsDirichletHeatKernel (D : LeviCivitaData g) (Ω : Set M)
     (K : ℝ → M → M → ℝ) : Prop where
@@ -49,7 +38,6 @@ structure IsDirichletHeatKernel (D : LeviCivitaData g) (Ω : Set M)
   initial : ∀ φ : M → ℝ, ContinuousOn φ (closure Ω) → ∀ x ∈ Ω,
     Tendsto (fun t => ∫ y in Ω, K t x y * φ y ∂g.volumeMeasure)
       (𝓝[Ioi 0] (0 : ℝ)) (𝓝 (φ x))
-
 
 theorem heatKernelContinuousTime_isDirichletHeatKernel (D : LeviCivitaData g)
     {Ω : Set M} (S : Poincare.Manifold.SmoothDomain n Ω) :
@@ -91,7 +79,6 @@ theorem heatKernelContinuousTime_isDirichletHeatKernel (D : LeviCivitaData g)
     exact ⟨integrable_heatKernelContinuous D S t ht x,
       heatKernelContinuous_mass_le_one D S t ht x⟩
   initial := fun _ hφ x hx => tendsto_integral_heatKernelContinuousTime D S hφ x hx
-
 
 theorem exists_dirichletHeatKernels (D : LeviCivitaData g) :
     ∃ K : (Ω : Set M) → Poincare.Manifold.SmoothDomain n Ω → ℝ → M → M → ℝ,

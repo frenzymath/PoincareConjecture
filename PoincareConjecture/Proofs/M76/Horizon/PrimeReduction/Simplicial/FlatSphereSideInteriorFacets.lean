@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryMarks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem faceLink_ncard_eq_two_of_flat_side_off_vertex
     (K N P : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -99,9 +88,6 @@ theorem faceLink_ncard_eq_two_of_flat_side_off_vertex
     rw [← P.closedFaceStar_singleton_eq_closedStar]
     exact P.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hSl] at hcount
-
-
-
 
 theorem faceLink_ncard_eq_two_of_flat_side_unmarked
     (K N P : SimplicialComplex ℝ E) (hK : K.faces.Finite)

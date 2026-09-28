@@ -5,8 +5,6 @@ open Set Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem exists_retained_open_source_copy
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y] [T2Space Y]
     {f : E → X} {g : Y → X} {K S B : Set E} {T C : Set Y}

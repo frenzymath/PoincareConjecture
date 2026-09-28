@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M04.ShiQuadraticMaximum
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 import PoincareConjecture.Proofs.M04.ShiCutoffMaximum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -374,4 +367,3 @@ theorem shi_cutoff_bound
   exact sub_nonneg.mp (hresult t ht x hx)
 
 end PoincareConjecture.M04
-

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSmoothingCo
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerEnergyContinuity
 import PoincareConjecture.Proofs.M60.Mathlib.NonNullSmoothingChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,17 +16,12 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ}
 
-
-
-
 def suBlendJet (rho : LoopPlane → ℝ) (u : LoopPlane → EuclideanSpace ℝ (Fin n))
     (z : LoopPlane) (a : EuclideanSpace ℝ (Fin n))
     (L : LoopPlane →L[ℝ] EuclideanSpace ℝ (Fin n)) :
     LoopPlane →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   (1 - rho z) • fderiv ℝ u z + rho z • L +
     (fderiv ℝ rho z).smulRight (a - u z)
-
-
 
 theorem suBlendJet_fderiv
     {rho : LoopPlane → ℝ} {u v : LoopPlane → EuclideanSpace ℝ (Fin n)}
@@ -59,8 +46,6 @@ theorem suBlendJet_fderiv
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def suBlendEnergyObservable (g : RiemannianMetric n M) (b : M)
     (rho : LoopPlane → ℝ) (u : LoopPlane → EuclideanSpace ℝ (Fin n))
     (q : LoopPlane × (EuclideanSpace ℝ (Fin n) ×
@@ -71,9 +56,6 @@ def suBlendEnergyObservable (g : RiemannianMetric n M) (b : M)
       (suBlendJet rho u q.1 q.2.1 q.2.2 (EuclideanSpace.basisFun (Fin 2) ℝ i))
       (suBlendJet rho u q.1 q.2.1 q.2.2 (EuclideanSpace.basisFun (Fin 2) ℝ i))) /
         (16 / (‖q.1‖ ^ 2 + 4) ^ 2)
-
-
-
 
 theorem suBlendEnergyObservable_self (g : RiemannianMetric n M) (b : M)
     (rho : LoopPlane → ℝ) (u : LoopPlane → EuclideanSpace ℝ (Fin n)) (z : LoopPlane) :
@@ -89,9 +71,6 @@ theorem suBlendEnergyObservable_self (g : RiemannianMetric n M) (b : M)
     simp only [sub_self, smulRight_zero, add_zero]
     module
   simp only [suBlendEnergyObservable, hv, hd]
-
-
-
 
 theorem suBlendEnergyObservable_continuousAt
     (g : RiemannianMetric n M) (b : M)

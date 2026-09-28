@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelBounds
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option maxSynthPendingDepth 8
@@ -22,9 +13,6 @@ namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_inverse_metric_germ_jet_bound
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -71,9 +59,6 @@ private noncomputable def germChristoffelContraction :
       (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] E →L[ℝ] E →L[ℝ] E :=
   (ContinuousLinearMap.compL ℝ E (E →L[ℝ] E →L[ℝ] ℝ) (E →L[ℝ] E)).comp
     (ContinuousLinearMap.compL ℝ E (E →L[ℝ] ℝ) E)
-
-
-
 
 theorem exists_christoffel_germ_jet_bound (n : ℕ) {a K : ℝ}
     (ha : 0 < a) (hK : 1 ≤ K) :

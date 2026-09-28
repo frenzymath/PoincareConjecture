@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.CoordinateRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem contDiffWithinAt_family_pullback_inner (F : RicciFlow n M J)
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -42,8 +30,6 @@ theorem contDiffWithinAt_family_pullback_inner (F : RicciFlow n M J)
   simp only [Bundle.Trivial.fiberBundle_trivializationAt',
     Bundle.Trivial.trivialization_apply] at hh
   convert! contMDiffWithinAt_iff_contDiffWithinAt.mp hh using 1
-
-
 
 theorem contDiffOn_clock_spatialPullback_inner (F : RicciFlow n M J)
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -68,8 +54,6 @@ theorem contDiffOn_clock_spatialPullback_inner (F : RicciFlow n M J)
   have ha := RiemannianMetric.mfderiv_slice_apply ((hf hz).mdifferentiableAt (by simp)) v
   have hb := RiemannianMetric.mfderiv_slice_apply ((hf hz).mdifferentiableAt (by simp)) w
   rw [← ha, ← hb]
-
-
 
 theorem contDiffOn_chartMetric (F : RicciFlow n M J) (q : M) (a b : Fin n) :
     ContDiffOn ℝ ∞ (fun z : ℝ × EuclideanSpace ℝ (Fin n) =>

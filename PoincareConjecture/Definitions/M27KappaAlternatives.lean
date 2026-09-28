@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M27CanonicalGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,8 +12,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 structure M27CompactPositiveGeometry (K : AncientKappaSolution 3 M) (C : ℝ) where
   compact : IsCompact (Set.univ : Set M)
@@ -50,8 +40,6 @@ structure M27CompactPositiveGeometry (K : AncientKappaSolution 3 M) (C : ℝ) wh
       (K.flow.connection 0).sectionalCurvature y a b <
         C * (K.flow.connection 0).scalarCurvature x
 
-
-
 def M27ScalarDerivativeBounds (K : AncientKappaSolution 3 M) (C : ℝ) : Prop :=
   ∃ B : ℝ, 0 ≤ B ∧ B < C ∧ ∀ t, t ≤ 0 → ∀ x : M,
     0 < (K.flow.connection t).scalarCurvature x ∧
@@ -60,8 +48,6 @@ def M27ScalarDerivativeBounds (K : AncientKappaSolution 3 M) (C : ℝ) : Prop :=
     ∃ d : ℝ,
       HasDerivWithinAt (fun s => (K.flow.connection s).scalarCurvature x) d (Set.Iic 0) t ∧
       |d| ≤ B * (K.flow.connection t).scalarCurvature x ^ 2
-
-
 
 inductive M27KappaNine93Conclusion (K : AncientKappaSolution 3 M)
     (epsilon C : ℝ) : Prop where
@@ -87,8 +73,6 @@ inductive M27KappaNine93Conclusion (K : AncientKappaSolution 3 M)
   | sphereLine (model : M27SphereLineFlowCertificate K)
       (tube : M26StrongTube K 0 epsilon)
   | projectivePlaneLine (model : M27ProjectivePlaneLineFlowCertificate K)
-
-
 
 structure RepairedKappaAlternativeCertificate
     (K : AncientKappaSolution 3 M) (epsilon C : ℝ) : Prop where

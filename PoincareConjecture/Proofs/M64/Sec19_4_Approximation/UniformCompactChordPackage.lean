@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformCompactChordLength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem m64_uniform_compact_chord_of_compact
     (hcompact : IsCompact (univ : Set M))

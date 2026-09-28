@@ -54,8 +54,6 @@ set_option synthInstance.maxHeartbeats 200000
 open scoped BigOperators
 open Bundle Manifold Filter
 
-
-
 theorem exists_ricciFlow_gluing_of_uniform_metric_jets
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -520,7 +518,6 @@ theorem exists_ricciFlow_gluing_of_uniform_metric_jets
     exact (hgl t ht.2).symm
   · intro t ht
     exact (hgr t ht.1).symm
-
 
 theorem exists_ricciFlow_time_translate
     {n : ℕ} {M : Type u} [TopologicalSpace M]

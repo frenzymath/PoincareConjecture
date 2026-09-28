@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SphereEmbeddingRetraction
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CompactDisplacement
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -49,9 +38,6 @@ private theorem contDiff_sphere_displacement_term
     filter_upwards [hz] with y hy
     change ρ y.2 = 0 at hy
     simp only [hy, zero_smul]
-
-
-
 
 theorem exists_compact_sphere_displacement
     {F : ℝ × UnitTwoSphere → E₃}

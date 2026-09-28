@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.Caccioppoli
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Operators.Basic
 
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -58,7 +52,6 @@ theorem integral_drift_cutoff_eq {V : Set E} (hV : IsOpen V)
     simp only [pow_two, ψ]
   rw [hleft] at hweak
   linarith
-
 
 theorem exists_gradient_integral_le_with_drift
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)

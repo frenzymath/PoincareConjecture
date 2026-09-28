@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineBasisEquivalence
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentHeight
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +16,6 @@ private theorem independent_reference_corner :
   · simp [S]
   · simp [S]
 
-
-
-
 theorem AffineIndependent.exists_planar_corner_coordinates {a b c : ℝ × ℝ}
     (h : AffineIndependent ℝ ![a, b, c]) :
     ∃ e : (ℝ × ℝ) ≃ᴬ[ℝ] (ℝ × ℝ), e a = (-1, 1) ∧ e b = (0, 0) ∧ e c = (1, 1) := by
@@ -38,9 +27,6 @@ theorem AffineIndependent.exists_planar_corner_coordinates {a b c : ℝ × ℝ}
         (by simp [Module.finrank_prod])⟩
   obtain ⟨e, he⟩ := B.exists_affineEquiv_map C 1
   exact ⟨e.toContinuousAffineEquiv, he 0, he 1, he 2⟩
-
-
-
 
 theorem mem_reference_corner_iff {q : ℝ × ℝ} (hq : |q.1| < 1) :
     q ∈ segment ℝ (-1, 1) (0, 0) ∪ segment ℝ (0, 0) (1, 1) ↔ q.2 = |q.1| := by

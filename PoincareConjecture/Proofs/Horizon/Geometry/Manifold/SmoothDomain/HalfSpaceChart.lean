@@ -4,15 +4,10 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 open Set Function
 open scoped Topology ContDiff Manifold
 
-
-
-
-
 namespace Poincare.Manifold
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem exists_kernel_coordinate_equiv {n : ℕ} (hn : Module.finrank ℝ E = n + 1)
     (L : E →L[ℝ] ℝ) (hL : Surjective L) :
@@ -32,10 +27,8 @@ theorem exists_kernel_coordinate_equiv {n : ℕ} (hn : Module.finrank ℝ E = n 
   intro z
   rfl
 
-
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold 𝓘(ℝ, E) ∞ M]
-
 
 theorem exists_normalized_regular_point_chart {n : ℕ}
     (hn : Module.finrank ℝ E = n + 1) {f : M → ℝ}
@@ -72,8 +65,6 @@ theorem exists_normalized_regular_point_chart {n : ℕ}
     change 0 ≤ e x 0 ↔ c ≤ f x
     rw [hfirst x hx]
     exact sub_nonneg
-
-
 
 theorem exists_interior_superlevel_halfspace_chart {n : ℕ}
     (hn : Module.finrank ℝ E = n + 1) {f : M → ℝ}
@@ -119,7 +110,6 @@ theorem exists_interior_superlevel_halfspace_chart {n : ℕ}
   change 0 ≤ e x 0 ↔ c ≤ f x
   exact iff_of_true (le_of_lt hx.2.2.2) (le_of_lt hx.2.1)
 
-
 theorem exists_regular_superlevel_halfspace_chart {n : ℕ}
     (hn : Module.finrank ℝ E = n + 1) {f : M → ℝ}
     (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (c : ℝ)
@@ -135,6 +125,5 @@ theorem exists_regular_superlevel_halfspace_chart {n : ℕ}
       exists_normalized_regular_point_chart hn hf a c (hc a h.symm)
     exact ⟨e, he, hes, hei, helevel⟩
   · exact exists_interior_superlevel_halfspace_chart hn hf.continuous c a h
-
 
 end Poincare.Manifold

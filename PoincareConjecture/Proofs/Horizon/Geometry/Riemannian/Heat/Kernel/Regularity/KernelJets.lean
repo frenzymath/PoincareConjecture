@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regular
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +15,6 @@ open Set MeasureTheory Filter
 open scoped Manifold ContDiff Topology InnerProductSpace BoundedContinuousFunction
 
 namespace Poincare.Analysis.Calculus
-
 
 theorem norm_iteratedFDeriv_bilinear_le_of_contDiffAt
     {E F G H : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -110,7 +101,6 @@ theorem iteratedDeriv_heatSpectralPower_operator
       convert! hd using 1
       simp only [P, pow_succ, Nat.add_assoc, mul_smul, neg_smul, one_smul, smul_neg]
 
-
 theorem norm_iteratedFDeriv_heatSpectralPower_operator_le
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (j k : ℕ) {a t : ℝ} (ha : 0 < a) (hat : a ≤ t) :
@@ -123,8 +113,6 @@ theorem norm_iteratedFDeriv_heatSpectralPower_operator_le
     S.isOpen S.isCompact_closure (k + j) (ha.trans_le hat)).trans
     (div_le_div_of_nonneg_left (Nat.cast_nonneg _) (pow_pos ha _)
       (pow_le_pow_left₀ ha.le hat _))
-
-
 
 theorem inner_iteratedFDeriv_evaluationRow_coordinate
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
@@ -159,8 +147,6 @@ theorem inner_iteratedFDeriv_evaluationRow_coordinate
   rw [real_inner_comm] at hh
   exact hh
 
-
-
 theorem norm_iteratedFDeriv_evaluationRow_coordinate_le
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -188,8 +174,6 @@ theorem norm_iteratedFDeriv_evaluationRow_coordinate_le
   · have hzpos := lt_of_le_of_ne (norm_nonneg z) (Ne.symm hz)
     nlinarith
 
-
-
 theorem evaluationRow_heatPowerContinuous_add_eq_spectral
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (k : ℕ) (s t : ℝ) (hs : 0 < s) (ht : 0 < t) (x : M) :
@@ -205,8 +189,6 @@ theorem evaluationRow_heatPowerContinuous_add_eq_spectral
   rw [(heatSemigroup_isSelfAdjoint D Ω (Nat.pos_of_ne_zero (NeZero.ne n))
     S.isOpen S.isCompact_closure t.toNNReal).isSymmetric.apply_clm]
   exact (inner_evaluationRow (heatPowerContinuous D S k s hs) x _).symm
-
-
 
 theorem heatKernelContinuousTime_eq_fixed_spectral_rows
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
@@ -228,7 +210,6 @@ theorem heatKernelContinuousTime_eq_fixed_spectral_rows
   simp only [har] at hr
   simpa only [← hsplit, hr] using hk
 
-
 theorem hasDerivAt_evaluationRow_heatPowerContinuousTime
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (k : ℕ) {t : ℝ} (ht : 0 < t) (x : M) :
@@ -244,7 +225,6 @@ theorem hasDerivAt_evaluationRow_heatPowerContinuousTime
     ev.hasFDerivAt (Boundary.hasDerivAt_heatPowerContinuousTime D S k ht)
   convert! h using 1
   exact (map_neg ev _).symm
-
 
 theorem iteratedDeriv_evaluationRow_heatPowerContinuousTime
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
@@ -309,7 +289,6 @@ theorem hasDerivAt_heatKernelContinuousTime_fixed_row
     exact heatKernelContinuousTime_eq_fixed_row D S ha hs x y
   exact hshift.congr_of_eventuallyEq heq
 
-
 theorem iteratedDeriv_heatPowerContinuousTime_fixed_row
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (j k : ℕ) {t : ℝ} (ht : 0 < t)
@@ -330,7 +309,6 @@ theorem iteratedDeriv_heatPowerContinuousTime_fixed_row
       simp only [pow_succ, Nat.add_assoc]
       ring
 
-
 theorem iteratedDeriv_heatKernelContinuousTime_fixed_row
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)
     (j : ℕ) {a t : ℝ} (ha : 0 < a) (hat : a < t) (x y : M) :
@@ -349,7 +327,6 @@ theorem iteratedDeriv_heatKernelContinuousTime_fixed_row
   rw [hshift]
   simpa only [zero_add, sub_eq_add_neg] using
     iteratedDeriv_heatPowerContinuousTime_fixed_row D S j 0 (sub_pos.mpr hat) f x
-
 
 theorem iteratedDeriv_heatKernelContinuousTime_eq_iterate_laplacian
     (D : LeviCivitaData g) (S : Poincare.Manifold.SmoothDomain n Ω)

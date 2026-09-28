@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicGreenIdentity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,16 +14,10 @@ local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "v" => m64AnnulusRadialTranslation
 
-
-
-
 theorem m64AnnulusPoint_sub_radialTranslation (x s : ℝ) :
     annulusPoint x s - v = annulusPoint x (s - 1) := by
   ext i
   fin_cases i <;> simp [m64AnnulusRadialTranslation, annulusPoint]
-
-
-
 
 theorem m64FDeriv_sub_translation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -46,9 +29,6 @@ theorem m64FDeriv_sub_translation
   simpa only [Function.comp_def, id_eq, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.id_apply] using h
 
-
-
-
 theorem m64LowerTest_boundary_zero {phi : LoopPlane → ℝ} (hs : tsupport phi ⊆ O) :
     (∀ x : ℝ, phi (annulusPoint x 1) = 0) ∧
     (∀ x : ℝ, phi (annulusPoint x (-1)) = 0) ∧
@@ -59,16 +39,10 @@ theorem m64LowerTest_boundary_zero {phi : LoopPlane → ℝ} (hs : tsupport phi 
   refine ⟨fun x => hz ?_, fun x => hz ?_, fun s => hz ?_, fun s => hz ?_⟩ <;>
     simp [m64AnnulusLowerDomain, annulusPoint]
 
-
-
-
 theorem m64BoundaryCurvePlane_contDiff
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {c : ℝ → E} (hc : ContDiff ℝ 1 c) : ContDiff ℝ 1 (fun p : LoopPlane => c (p 0)) :=
   hc.comp (EuclideanSpace.proj (𝕜 := ℝ) (0 : Fin 2)).contDiff
-
-
-
 
 theorem m64Annulus_lower_boundaryCurve_green
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedLocalFlow
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.FiniteChartDescent
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +16,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_finite_terminal_extension_on_retained_carrier
     (hFlow : WithinBilinearFlowService.{0})

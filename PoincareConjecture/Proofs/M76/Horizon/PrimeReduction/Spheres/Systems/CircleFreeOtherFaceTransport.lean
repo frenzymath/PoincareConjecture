@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CircleSurgeryCrossings
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NonreturningTriangleGraphPosition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -29,7 +20,6 @@ theorem face_inter_eq_of_equal_off_support
         Set.ext_iff.mp houtside x
     simpa only [mem_inter_iff, hxt, and_true] using hmem
   · simp only [mem_inter_iff, hxt, and_false]
-
 
 theorem triangle_graph_crossings_of_equal_off_closed
     {X : Type*} [TopologicalSpace X]

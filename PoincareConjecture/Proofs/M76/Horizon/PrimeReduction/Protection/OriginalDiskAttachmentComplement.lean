@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.TwoDiskSphereComplement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentSurfaceModel
 
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry PLAnnularStrip
@@ -128,9 +125,6 @@ theorem HamiltonMarkedProtectedBall.exists_original_disk_attachment_complement
     hrcover, hH.setCongr rfl heq, hzero, hone,
     hC, hCi, hCin, hCbase, hCfront, ?_, hCopen⟩
   simpa only [← hcover.trans hJmark] using hCmeet
-
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_original_disk_complement_model
     {ι κ α : Type*} [Fintype ι] [Unique ι] [Fintype κ]

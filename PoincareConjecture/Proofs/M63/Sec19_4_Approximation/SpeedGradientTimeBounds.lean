@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.NonconstantSpeedGradient
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem curveSpeed_spatial_derivative_time_lipschitz [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

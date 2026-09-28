@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierHeightCorrection
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,12 +10,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_height_plane_cone_chart_relative
     {S P : Set E} {D : Set F} {H : frontier S ≃ₜ frontier D} (hH : H.IsFinitePL)

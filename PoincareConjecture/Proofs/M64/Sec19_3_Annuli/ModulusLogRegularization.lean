@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLogRegularization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +22,6 @@ private theorem modulus_second_fderiv_log_add
     ((ha.differentiableAt (by norm_num)).hasFDerivAt.add_const ε).fderiv
   rw [M60.second_fderiv_log (ha.add contDiffAt_const) hpos v,
     hfirst.fderiv_eq, hfirstp]
-
-
-
-
 
 theorem m64Modulus_log_add_directional_lower_bound
     {a : LoopPlane → ℝ} {O : Set LoopPlane} {p : LoopPlane} {K ε : ℝ}
@@ -91,10 +75,6 @@ theorem m64Modulus_log_add_directional_lower_bound
       rw [M60.fderiv_column (hlog.of_le (WithTop.coe_le_coe.mpr le_top)) v v]
       exact h
     simpa only [hz, mul_zero] using add_nonneg (hdir d) (hdir e)
-
-
-
-
 
 theorem m64SecondDirectional_smul
     {f : LoopPlane → ℝ} {p : LoopPlane} (hf : ContDiffAt ℝ 2 f p)

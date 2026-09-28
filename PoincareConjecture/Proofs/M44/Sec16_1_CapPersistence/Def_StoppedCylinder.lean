@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_InitialCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_MaximalCylinderStopping
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_stopped_based_cylinder
     (P : M44CapPersistencePredecessors.{u}) (F : SurgeryFlowData.{u})

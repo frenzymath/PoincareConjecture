@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.Parameters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +20,6 @@ theorem epochEntry_nonnegative {j : ℕ} {t : ℝ}
 
 variable (S : RepairedControlledSchedulesData.{u})
   (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)
-
-
 
 theorem stepProfiles (n : ℕ) (F : SurgeryFlowData.{u}) (delta : ℝ → ℝ)
     (hdelta : ∀ t, 0 ≤ t → F.parameters.delta t = delta t)

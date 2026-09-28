@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M15.Lemma8_7_CylinderRange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem compatibleCylinder_exists_local_spatial_inverse
     {n : ℕ} {X : Type u} [TopologicalSpace X]

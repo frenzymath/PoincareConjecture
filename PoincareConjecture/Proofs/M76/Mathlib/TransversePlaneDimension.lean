@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BasisTransversePlanes
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,15 +10,9 @@ namespace Geometry
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
-
 abbrev SecantTransversePlaneSpace (d : ℕ) (S : Set E) :=
   {K : EuclideanSubspace E // Module.finrank ℝ K.subspace + d = Module.finrank ℝ E ∧
     K.subspace.IsSecantTransverse S}
-
-
-
 
 noncomputable def transverseComplementHomeomorph (d : ℕ) (S : Set E)
     (U : Submodule ℝ E) (hU : Module.finrank ℝ U = d)
@@ -51,9 +35,6 @@ namespace AbstractSimplicialComplex
 
 variable {ι E : Type*} [Finite ι]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem disjoint_faceSpan_of_isSecantTransverse (A : AbstractSimplicialComplex ι)
     (b : Module.Basis ι ℝ E) {s : Finset ι} (hs : s ∈ A.faces)

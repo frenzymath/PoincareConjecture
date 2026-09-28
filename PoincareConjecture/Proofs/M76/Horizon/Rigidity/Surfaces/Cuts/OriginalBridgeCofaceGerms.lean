@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutF
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutArcPairing
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalRefinementOwnerGerms
 
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical Topology
@@ -58,8 +56,6 @@ theorem primalCarrier_isClosed : IsClosed Primal := by
   exact (((A.sectors.sector_ball 0).isCompact.union
     (A.sectors.sector_ball 1).isCompact).union ((A.sectors.sector_ball 2).isCompact.union
     (A.sectors.sector_ball 3).isCompact)).isClosed
-
-
 
 theorem exists_original_coface_neighborhood_of_bridge
     (s : ResidualComplementaryEdge K P D) (j : Fin 2) {x : E}
@@ -129,8 +125,6 @@ theorem exists_original_coface_neighborhood_of_boundaryBridge
   obtain ⟨q, ⟨x, hx, rfl⟩, rfl⟩ := hp
   exact A.exists_original_coface_neighborhood_of_bridge hpure
     (A.bridgeLabelling i).1 (A.bridgeLabelling i).2 hx hnp
-
-
 
 theorem refined_owner_at_boundaryBridge
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (f : (ℝ × ℝ) → CutSpace)

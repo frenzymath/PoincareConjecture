@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFullChartStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {ι κ : Type*} [Finite ι] [Finite κ]
-
-
-
 
 theorem exists_full_subcomplex_faceAffine_relative_chart_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceEnergy
 import PoincareConjecture.Proofs.M34.Standard.ActualDifferenceEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_canonicalDifferenceEnergy_rate_bound
     {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]

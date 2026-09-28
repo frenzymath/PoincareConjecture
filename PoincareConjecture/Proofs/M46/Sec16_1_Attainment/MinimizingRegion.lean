@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.SliceBound
 import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.Producer
 import PoincareConjecture.Proofs.M12
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem actualHistory_minimizingRegion
     (P : M46Predecessors.{u}) {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -49,8 +38,6 @@ theorem actualHistory_minimizingRegion
   · intro b hb hbStart
     exact cappedSliceAction_le_three_mul (m12MetricPredecessors.{0} 3)
       ricciFlowCurvatureTheory.{0} P.m12 LG E C hstrip hb hbStart
-
-
 
 theorem minimizingRegionProducer (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

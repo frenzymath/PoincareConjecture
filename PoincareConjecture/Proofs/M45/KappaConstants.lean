@@ -1,11 +1,5 @@
 import PoincareConjecture.Definitions.M27KappaAlternatives
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,12 +14,10 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {t : ℝ} {x : M} {epsilon C C' : ℝ}
 
-
 def M27CanonicalCap.mono_constant
     (N : M27CanonicalCap K t x epsilon C) (hCC' : C ≤ C') :
     M27CanonicalCap K t x epsilon C' :=
   { N with constant_le := N.constant_le.trans hCC' }
-
 
 theorem M27CanonicalComponent.mono_constant
     (N : M27CanonicalComponent K t C) (hCC' : C ≤ C') :
@@ -54,7 +46,6 @@ theorem M27CanonicalComponent.mono_constant
         (lt_of_not_ge hsup)).trans_le hdiam
   · exact N.diameter_upper.trans_le (mul_le_mul_of_nonneg_right hCC' hinf.le)
 
-
 theorem M27StrongCanonicalNeighborhood.mono_constant
     (h : M27StrongCanonicalNeighborhood K t x epsilon C) (hCC' : C ≤ C') :
     M27StrongCanonicalNeighborhood K t x epsilon C' := by
@@ -63,7 +54,6 @@ theorem M27StrongCanonicalNeighborhood.mono_constant
   | cap N => exact .cap (N.mono_constant hCC')
   | component N => exact .component (N.mono_constant hCC')
   | round N => exact .round N
-
 
 theorem M27ScalarDerivativeBounds.mono_constant
     (h : M27ScalarDerivativeBounds K C) (hCC' : C ≤ C') :

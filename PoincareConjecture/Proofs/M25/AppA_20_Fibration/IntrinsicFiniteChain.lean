@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.FiniteChainFrontier
 import Mathlib.Topology.Connected.PathConnected
 import Mathlib.Topology.Order.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -24,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Classical in
-
-
 
 theorem BalancedNeckChain.continuousOn_initial_height_of_finite
     {M : Type u} [TopologicalSpace M]
@@ -162,9 +148,6 @@ theorem BalancedNeckChain.continuousOn_initial_height_of_finite
       refine ⟨mem_iUnion₂.mpr ⟨a, ha, hxN⟩, ?_⟩
       change F (N.coordinate_map (q, t)) = t
       rw [hFin _ hxN, N.coordinate_inverse_map (q, t) htN]
-
-
-
 
 theorem NeckOnlyCover.exists_positive_frontier_center_on_complementary_path
     {M : Type u} [TopologicalSpace M]

@@ -1,24 +1,6 @@
 import PoincareConjecture.Proofs.M10.NormedSegmentDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set

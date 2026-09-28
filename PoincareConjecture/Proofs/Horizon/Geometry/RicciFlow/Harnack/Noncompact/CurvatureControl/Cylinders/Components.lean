@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.PointedLimit
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 noncomputable abbrev componentFlowCarrier
     {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -35,15 +26,12 @@ noncomputable abbrev componentFlowCarrier
   secondCountable := inferInstance
   connected := isConnected_univ
 
-
 abbrev componentFlowBase
     {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [T3Space M] [SecondCountableTopology M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     (p : M) : (componentFlowCarrier (n := n) p).carrier :=
   ⟨p, mem_connectedComponent⟩
-
-
 
 theorem exists_pointedCompactnessHypotheses_of_terminal_cylinders_components
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)
@@ -87,8 +75,6 @@ theorem exists_pointedCompactnessHypotheses_of_terminal_cylinders_components
   · exact hν
   · filter_upwards [hvolume] with k hk
     rwa [(F k).restrictComponent_volumeMeasure_ball]
-
-
 
 theorem exists_nonflat_pointed_limit_of_terminal_cylinders_components
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{0}) (hm : 0 < m)

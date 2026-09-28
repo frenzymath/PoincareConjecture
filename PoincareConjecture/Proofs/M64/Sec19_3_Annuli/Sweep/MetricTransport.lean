@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapt
 import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M15.Prop8_2_CylinderDistance
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
-
 theorem m64_compact_flow_curvature_bound
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M)) :
     ∃ K : ℝ, 0 ≤ K ∧ ∀ t ∈ Icc a b, ∀ x : M,
@@ -43,9 +29,6 @@ theorem m64_compact_flow_curvature_bound
   exact (m64Curvature_le_supremum
     (m64CurvatureRange_bddAbove_of_compact hcompact ht) x).trans
       ((hK ⟨t, ht, rfl⟩).trans (le_max_left _ _))
-
-
-
 
 theorem m64_flow_tangentNorm_time_comparison
     (F : RicciFlow n M (Icc a b)) {K : ℝ} (hK : 0 ≤ K)
@@ -70,9 +53,6 @@ theorem m64_flow_tangentNorm_time_comparison
     rw [← mul_assoc, he, one_mul] at hmul
     simpa only [abs_of_nonpos (sub_nonpos.mpr hts), neg_sub] using hmul
 
-
-
-
 theorem m64_flow_edist_time_comparison
     (F : RicciFlow n M (Icc a b)) {K : ℝ} (hK : 0 ≤ K)
     (hcurv : ∀ t ∈ Icc a b, ∀ x : M, (F.connection t).curvatureTensorNorm x ≤ K)
@@ -84,8 +64,6 @@ theorem m64_flow_edist_time_comparison
   intro q v
   simpa only [id_eq, mfderiv_id, ContinuousLinearMap.id_apply] using
     m64_flow_tangentNorm_time_comparison F hK hcurv hs ht q v
-
-
 
 theorem m64Annulus_transport_metric [T2Space M]
     (g h : RiemannianMetric n M) {c0 c1 : ℝ → M}
@@ -110,9 +88,6 @@ theorem m64Annulus_transport_metric [T2Space M]
     (mul_nonneg hC A.lipschitz_nonnegative) hLip hfinite
     (show m64AnnulusArea h A.map < m64AnnulusArea h A.map + 1 by linarith)
   exact ⟨B, hmap⟩
-
-
-
 
 theorem m64Annulus_transport_time [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

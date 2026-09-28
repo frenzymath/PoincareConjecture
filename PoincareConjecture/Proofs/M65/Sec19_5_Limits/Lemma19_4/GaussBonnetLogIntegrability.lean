@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetAmbientBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -34,11 +24,6 @@ private theorem abs_metric_pair_le_half (x u v : EuclideanSpace ℝ (Fin n)) :
   have hs : g.euclideanCoefficients x v u = g.euclideanCoefficients x u v := g.symm x v u
   rw [hs] at hp hm
   exact abs_le.mpr ⟨by linarith, by linarith⟩
-
-
-
-
-
 
 theorem logarithmicDensity_integrableOn (D : LeviCivitaData g)
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {K U : Set LoopPlane}

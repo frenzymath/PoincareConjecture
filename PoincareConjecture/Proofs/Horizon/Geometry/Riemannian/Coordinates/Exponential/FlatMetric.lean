@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.FirstJet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.RadialConvexity
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem pullbackCoefficients_eq_innerSL_of_flat_radial
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -54,9 +45,6 @@ theorem pullbackCoefficients_eq_innerSL_of_flat_radial
   rw [real_inner_comm u w] at hp
   change g.pullbackCoefficients e v u w = inner ℝ u w
   linarith
-
-
-
 
 theorem euclideanCoefficients_eq_innerSL_of_flat_gauss
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

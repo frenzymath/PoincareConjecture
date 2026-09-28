@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Product
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Existence
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Exclusion
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,7 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 theorem M27TwistedSphereLineFlowCertificate.not_compact_product_homeomorph
     (C : M27TwistedSphereLineFlowCertificate K)
@@ -87,7 +75,6 @@ theorem M27TwistedSphereLineFlowCertificate.not_compact_product_homeomorph
       simp [f, ha.le])
   exact hx (hzero x hfx)
 
-
 theorem M27SphereLineFlowCertificate.not_projective_product_homeomorph
     (C : M27SphereLineFlowCertificate K) (e : M ≃ₜ (RealProjectiveTwo × ℝ)) : False := by
   let : SimplyConnectedSpace UnitTwoSphere := Poincare.Topology.standardSphereSimplyConnected 0
@@ -97,8 +84,6 @@ theorem M27SphereLineFlowCertificate.not_projective_product_homeomorph
   obtain ⟨O⟩ := Poincare.Topology.nonempty_orientationCompatibleAtlas (M := M)
   have hno : NoEmbeddedTrivialNormalProjectivePlane K := m83OrientationExclusion M O
   exact hno.not_product_homeomorph e
-
-
 
 theorem projectivePlaneLine_of_product_homeomorph
     (P : AncientKappaClassificationServices.{u})
@@ -114,8 +99,6 @@ theorem projectivePlaneLine_of_product_homeomorph
   · exact hprojective
   · obtain ⟨C⟩ := hmodel
     exact (C.not_compact_product_homeomorph e).elim
-
-
 
 theorem AncientKappaNormalization.projectivePlaneLine_of_target
     (P : AncientKappaClassificationServices.{u})

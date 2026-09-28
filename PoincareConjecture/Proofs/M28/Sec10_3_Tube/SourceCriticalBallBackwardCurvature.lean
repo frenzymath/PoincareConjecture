@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardLimit
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateCurvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,8 +23,6 @@ variable {epsilon C A : ℝ}
   {q : G.limitCarrier.carrier} {a : ℝ}
   (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 
-
-
 theorem limitParametrization_smooth (k : ℕ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (D.limitParametrization k) D.limitDomain := by
   let := D.limitDomain_open.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -41,8 +30,6 @@ theorem limitParametrization_smooth (k : ℕ) :
     (fun _ => D.limitDomain_open) (D.limitNeckMap_localDiffeomorph k).contMDiff
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem limitParametrization_invertible (k : ℕ) {x : EuclideanSpace ℝ (Fin 3)}
     (hx : x ∈ D.limitDomain) :
@@ -57,8 +44,6 @@ variable {D}
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
-
-
 
 theorem BackwardChartLimit.spatial_twoJets (L : BackwardChartLimit D)
     (t : ℝ) (ht : t ∈ Icc (-(a / 8)) 0) {x : EuclideanSpace ℝ (Fin 3)}
@@ -90,8 +75,6 @@ theorem BackwardChartLimit.spatial_twoJets (L : BackwardChartLimit D)
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
 
 theorem BackwardChartLimit.curvatureTensor_tendsto (L : BackwardChartLimit D) :
     letI := D.limitDomain_open.isOpenEmbedding_subtypeVal.singletonChartedSpace

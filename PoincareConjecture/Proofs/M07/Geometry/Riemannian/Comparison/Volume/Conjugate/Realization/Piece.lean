@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Junction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Neighborhood
 
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold Topology ContDiff
 

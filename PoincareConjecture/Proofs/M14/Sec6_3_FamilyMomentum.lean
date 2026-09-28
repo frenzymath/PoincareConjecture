@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyTimeDerivative
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerMomentum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 include hU hC htime hq hmap
 
-
-
-
-
 theorem closedChartFamily_phase_contDiffOn :
     ContDiffOn ℝ ∞ (fun z => (q z,
       M08.chartMomentumVector (M08.chartActionMetric F T x₀ (z.2, q z))
@@ -43,9 +30,6 @@ theorem closedChartFamily_phase_contDiffOn :
     (contDiffOn_snd.prodMk hq) (fun z hz => ⟨hz.2, hmap hz⟩)
   let L := (InnerProductSpace.toDual ℝ (EuclideanSpace ℝ (Fin n))).symm.toContinuousLinearEquiv
   exact hq.prodMk (L.contDiff.comp_contDiffOn (hB.clm_apply hv))
-
-
-
 
 theorem closedChartFamily_initialPhase_contDiffOn {r : ℝ} (hr : r ∈ C) :
     ContDiffOn ℝ ∞ (fun z => (q (z, r),

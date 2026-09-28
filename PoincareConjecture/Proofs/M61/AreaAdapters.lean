@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M60Area
 import PoincareConjecture.Statements.M61Width
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m61SphereWidth_from_M60
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -35,8 +24,6 @@ theorem m61SphereWidth_from_M60
   refine ⟨?_, ?_, f, hminimal, hnonnull, harea.trans hwidth.symm⟩
   · simpa only [hwidth] using he₀
   · simpa only [hwidth] using hleast
-
-
 
 theorem m61ShortFamilyWidth_from_M60
     (core : M61RawWidthCore.{u}) (shortLoop : M60ShortLoopAreaClaim.{u}) :

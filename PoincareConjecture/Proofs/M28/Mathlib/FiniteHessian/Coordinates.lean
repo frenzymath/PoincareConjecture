@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ variable {ι β E F G : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem HasUniformJetBoundsAt.add {n : ℕ} {f g : ι → E → F} {x : ι → E}
     (hf : HasUniformJetBoundsAt n f x) (hg : HasUniformJetBoundsAt n g x)
@@ -39,8 +28,6 @@ theorem HasUniformJetBoundsAt.add {n : ℕ} {f g : ι → E → F} {x : ι → E
     ((hcg i).of_le (by exact_mod_cast le_top))]
   exact (norm_add_le _ _).trans (add_le_add (hC i) (hD i))
 
-
-
 theorem HasUniformJetBoundsAt.sum [Fintype β]
     {n : ℕ} {f : β → ι → E → F} {x : ι → E}
     (hf : ∀ b, HasUniformJetBoundsAt n (f b) x)
@@ -53,9 +40,6 @@ theorem HasUniformJetBoundsAt.sum [Fintype β]
   rw [iteratedFDeriv_fun_sum_apply (fun b _ =>
     (hc i b).of_le (by exact_mod_cast le_top))]
   exact (norm_sum_le _ _).trans (Finset.sum_le_sum (fun b _ => hC b i))
-
-
-
 
 theorem HasUniformJetBoundsAt.of_basis [Finite β] [FiniteDimensional ℝ F]
     (b : Module.Basis β ℝ F) {n : ℕ} {f : ι → E → F →L[ℝ] G} {x : ι → E}

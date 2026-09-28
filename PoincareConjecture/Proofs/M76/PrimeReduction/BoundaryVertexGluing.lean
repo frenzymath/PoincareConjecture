@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexOverlap
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {P : BoundaryEdgeFamily T}
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem BoundaryVertexFamily.exists_whole_product (F : BoundaryVertexFamily P)
     (hfull : ∀ u ∈ K.faces, (∀ p ∈ u, p ∈ L.vertices) → u ∈ L.faces) :

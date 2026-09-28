@@ -1,19 +1,10 @@
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 theorem contractibleSpace_of_retract [ContractibleSpace X]
     (r : C(X, Y)) (s : C(Y, X)) (h : Function.LeftInverse r s) :

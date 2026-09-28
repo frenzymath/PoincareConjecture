@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CircleNormal
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.PlaneHeight
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTriangleMixedSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Module
 open scoped Topology

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem exists_endFixed_derivative_inverse_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

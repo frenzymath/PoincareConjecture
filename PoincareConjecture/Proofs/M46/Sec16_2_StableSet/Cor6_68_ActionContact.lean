@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_SurvivalSlice
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +16,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
 
 theorem actionValue_le_survival_action
     (E : M14ExponentialFamily G T x) (htau : 0 < tau)
@@ -49,8 +35,6 @@ theorem actionValue_le_survival_action
     Real.sq_sqrt htau.le, ← survivalSliceMap_val E htau.le q0 hZ] at h
   exact h
 
-
-
 theorem minimizing_survival_action_eq
     (E : M14ExponentialFamily G T x) (htau : 0 < tau)
     (q0 : (G.slices (T - tau)).Point)
@@ -60,10 +44,6 @@ theorem minimizing_survival_action_eq
       M14ActionValue G T 0 tau x (survivalSliceMap E tau htau.le q0 Z).val := by
   have h := E.action_global_eq Z (Real.sqrt tau) hZ (Real.sqrt_pos.mpr htau) hmin
   rwa [Real.sq_sqrt htau.le, ← survivalSliceMap_val E htau.le q0 hZ] at h
-
-
-
-
 
 theorem minimizing_action_contact_differential
     (LG : GeneralizedLGeometryConclusion G)

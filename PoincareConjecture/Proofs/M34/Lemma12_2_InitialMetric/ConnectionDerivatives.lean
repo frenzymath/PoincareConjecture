@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.CoefficientCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capChristoffelA_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :
@@ -39,8 +27,6 @@ theorem capChristoffelA_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0)
   field_simp
   ring
 
-
-
 theorem capChristoffelB_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     HasDerivAt (capChristoffelB a)
       (-(2 + capSlope a r ^ 2 + capProfile a r * deriv (capSlope a) r) / r ^ 3 +
@@ -57,8 +43,6 @@ theorem capChristoffelB_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
   simp only [Pi.mul_apply, Pi.pow_apply, id_eq]
   field_simp
   ring
-
-
 
 theorem capChristoffelC_differentiableAt (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) : DifferentiableAt ℝ (capChristoffelC a) r := by

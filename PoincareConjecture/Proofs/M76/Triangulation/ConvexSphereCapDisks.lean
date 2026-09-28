@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralCapFlattening
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSectionBallPair
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem isFinitePLBallPair_convex_frontier_cap (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

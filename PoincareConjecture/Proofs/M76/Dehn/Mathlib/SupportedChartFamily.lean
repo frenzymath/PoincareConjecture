@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_supported_chart_family {T E X : Type*}
     [TopologicalSpace T] [TopologicalSpace E] [TopologicalSpace X] [T2Space X]

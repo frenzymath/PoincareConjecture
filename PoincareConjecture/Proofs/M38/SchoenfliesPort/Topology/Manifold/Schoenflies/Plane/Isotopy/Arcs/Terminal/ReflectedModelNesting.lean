@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.PrescribedModelChart
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.NestedModelNesting
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,13 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -179,8 +166,6 @@ private theorem modelTransition_patch
   rw [Diffeomorph.symm_apply_apply]
   exact congrArg d₂.flatten hm₂
 
-
-
 theorem exists_reflected_nested_model_planar_transition
     (d₁ d₂ : TerminalSaddleGeometry M P p e)
     (hmodel₁ : d₁.model = Saddle.Nested.shear (3 / 10))
@@ -261,8 +246,6 @@ private theorem nestedPair_of_image_eq
   · change range D₀ ⊆ (R ∘ A) '' ball (0 : E2) 1
     rw [image_comp, ← h₀]
     exact image_mono hin
-
-
 
 theorem exists_oppositely_nested_model_circle_pairs
     (d₁ d₂ : TerminalSaddleGeometry M P p e)

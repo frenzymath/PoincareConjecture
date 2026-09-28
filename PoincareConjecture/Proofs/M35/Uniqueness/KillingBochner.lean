@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialKilling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanFields
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 local notation:max "V" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 noncomputable def fieldHessian {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (x u v : V n) : V n :=
@@ -36,7 +25,6 @@ private theorem field_contMDiff {n : ℕ} {X : V n → V n}
   exact ⟨contMDiffAt_id, by simpa using hX.contMDiff.contMDiffAt⟩
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem fieldHessian_pair_skew_of_killing {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
@@ -83,7 +71,6 @@ theorem fieldHessian_pair_skew_of_killing {n : ℕ}
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem fieldHessian_commutator {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)
     (X : V n → V n) (hX : ContDiff ℝ ∞ X) (x u v : V n) :
@@ -106,8 +93,6 @@ theorem fieldHessian_commutator {n : ℕ}
   simp only [fieldHessian, heq]
   rw [← hR]
   abel
-
-
 
 theorem killing_hessian_trace_pair {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)

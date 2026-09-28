@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarCircleSideLabels
 import PoincareConjecture.Proofs.M76.Mathlib.SourcePoleRegionAttachments
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_common_source_pole_equator_labels
     {F S g d : Set E} (A : E →ₗ[ℝ] ℝ) (hA : A ≠ 0)

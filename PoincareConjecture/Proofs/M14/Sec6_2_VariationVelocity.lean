@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootVelocityExtension
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,15 +17,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 noncomputable def variationSquareVelocity (V : M14LVariationData G p R) (s u : ℝ) :
     G.Horizontal (V.squareFamily s u) :=
   G.spacetime.horizontalProjection (V.squareFamily s u)
     (mfderivWithin (𝓘(ℝ, ℝ)) (spacetimeModel n) (fun r => V.squareFamily r u)
       (M14SqrtParameterInterval τ₁ τ₂) s (1 : ℝ))
-
-
 
 theorem variationSquareVelocity_smooth (V : M14LVariationData G p R) :
     ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ)))
@@ -54,9 +40,6 @@ theorem variationSquareVelocity_smooth (V : M14LVariationData G p R) :
           (E := G.Horizontal) v.proj (G.spacetime.horizontalProjection v.proj v.2)) :=
     G.spacetime.horizontalProjection_smooth
   exact hproj.comp_contMDiffOn htan
-
-
-
 
 theorem variation_family_mdifferentiableAt (V : M14LVariationData G p R)
     {u τ : ℝ} (hu : u ∈ V.parameterDomain) (hτ : τ ∈ Set.Ioo τ₁ τ₂) :
@@ -115,9 +98,6 @@ private theorem horizontal_transport_val {q r : G.Point} (h : q = r)
     (v : G.Horizontal r) : (h.symm ▸ v : G.Horizontal q).val = v.val := by
   cases h
   rfl
-
-
-
 
 theorem variationSquareVelocity_eq_rescaled (V : M14LVariationData G p R)
     {s u : ℝ} (hs : s ∈ Set.Ioo (Real.sqrt τ₁) (Real.sqrt τ₂))

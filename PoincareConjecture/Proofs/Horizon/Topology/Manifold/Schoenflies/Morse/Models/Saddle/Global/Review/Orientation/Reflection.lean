@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function
@@ -37,8 +35,6 @@ def Rz : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
 @[simp] theorem Rz_involutive (y : E3) : Rz (Rz y) = y := Rz.symm_apply_apply y
 
 theorem Rz_height (y : E3) : (Rz y) 2 = -y 2 := by simp
-
-
 
 theorem reflected_transport_height
     (T S : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (q : E3) (c s : Real)

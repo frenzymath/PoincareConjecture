@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanSobolevRegularityNative
 import Mathlib.Analysis.Distribution.FourierMultiplier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +32,6 @@ def weightedFourier (s : ℝ) : 𝓢(E, ℂ) →L[ℂ] 𝓢(E, ℂ) :=
     weightedFourier s f x = growthWeight s x * 𝓕 f x :=
   SchwartzMap.smulLeftCLM_apply_apply (growthWeight_hasTemperateGrowth s) (𝓕 f) x
 
-
 def frequencyCoordinates (s : ℝ) : 𝓢(E, ℂ) →L[ℂ] FrequencyL2 n :=
   (SchwartzMap.toLpCLM ℂ ℂ 2 volume).comp (weightedFourier s)
 
@@ -56,7 +46,6 @@ theorem decayWeight_mul_growthWeight (s : ℝ) (x : E) :
   rw [← Complex.ofReal_mul, ← Real.rpow_add (by positivity : (0 : ℝ) < 1 + ‖x‖ ^ 2)]
   simp only [show -s / 2 + s / 2 = 0 by ring, Real.rpow_zero, Complex.ofReal_one]
 
-
 theorem sobolevRealization_frequencyCoordinates {s : ℝ} (hs : (n : ℝ) < 2 * s)
     (f : 𝓢(E, ℂ)) :
     (sobolevRealization hs (frequencyCoordinates s f) : E → ℂ) = f := by
@@ -70,7 +59,6 @@ theorem sobolevRealization_frequencyCoordinates {s : ℝ} (hs : (n : ℝ) < 2 * 
 @[simp] theorem weightedFourier_zero (f : 𝓢(E, ℂ)) : weightedFourier 0 f = 𝓕 f := by
   ext x
   simp [growthWeight]
-
 
 theorem norm_frequencyCoordinates_zero (f : 𝓢(E, ℂ)) :
     ‖frequencyCoordinates 0 f‖ = ‖f.toLp 2‖ := by
@@ -125,7 +113,6 @@ theorem sum_coordinateSecond (f : 𝓢(E, ℂ)) :
   simpa only [coordinateSecond, EuclideanSpace.basisFun_apply] using
     (SchwartzMap.laplacian_eq_sum (EuclideanSpace.basisFun (Fin n) ℝ) f).symm
 
-
 theorem frequencyCoordinates_add_two (s : ℝ) (f : 𝓢(E, ℂ)) :
     frequencyCoordinates (s + 2) f = frequencyCoordinates s f -
       (laplacianFactor : ℂ) • ∑ i : Fin n, frequencyCoordinates s (coordinateSecond i f) := by
@@ -139,7 +126,6 @@ theorem frequencyCoordinates_add_two (s : ℝ) (f : 𝓢(E, ℂ)) :
   rw [← sum_coordinateSecond, map_sum] at h
   exact h
 
-
 def derivativeBudget : ℕ → 𝓢(E, ℂ) → ℝ
   | 0, f => ‖f.toLp 2‖
   | m + 1, f => derivativeBudget m f +
@@ -151,7 +137,6 @@ theorem derivativeBudget_nonneg (m : ℕ) (f : 𝓢(E, ℂ)) : 0 ≤ derivativeB
   | succ m ih =>
       exact add_nonneg (ih f) (mul_nonneg laplacianFactor_nonneg
         (Finset.sum_nonneg (fun i _ => ih (coordinateSecond i f))))
-
 
 theorem norm_frequencyCoordinates_even_le (m : ℕ) (f : 𝓢(E, ℂ)) :
     ‖frequencyCoordinates (2 * (m : ℝ)) f‖ ≤ derivativeBudget m f := by
@@ -187,7 +172,6 @@ theorem norm_schwartz_sup_le_derivativeBudget (m : ℕ) (hm : (n : ℝ) < 2 * (2
   exact (norm_sobolevRealization_le hm _).trans
     (mul_le_mul_of_nonneg_left (norm_frequencyCoordinates_even_le m f) (norm_nonneg _))
 
-
 theorem norm_iteratedFDeriv_schwartz_le_derivativeBudget (m k : ℕ)
     (hm : (n : ℝ) < 2 * (2 * (m : ℝ) - k)) (f : 𝓢(E, ℂ)) (x : E) :
     ‖iteratedFDeriv ℝ k (f : E → ℂ) x‖ ≤
@@ -201,7 +185,6 @@ theorem norm_iteratedFDeriv_schwartz_le_derivativeBudget (m k : ℕ)
   rw [sobolevRealization_frequencyCoordinates hs f] at hbound
   exact hbound.trans (mul_le_mul_of_nonneg_left (norm_frequencyCoordinates_even_le m f)
     (by positivity))
-
 
 theorem realSobolevRealization_frequencyCoordinates {s : ℝ} (hs : (n : ℝ) < 2 * s)
     (f : 𝓢(E, ℝ)) :

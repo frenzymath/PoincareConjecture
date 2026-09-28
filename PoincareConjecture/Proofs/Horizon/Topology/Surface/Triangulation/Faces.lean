@@ -1,19 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartTriangles
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Planar
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -33,8 +20,6 @@ private theorem affineChartSegment_image (a b : EuclideanSpace ℝ (Fin 2)) :
   congr 1
   funext t
   simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]
-
-
 
 theorem exists_smoothFace_of_chart_triangle (x : M)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -92,9 +77,6 @@ theorem exists_smoothFace_of_chart_triangle (x : M)
       rfl }
   exact ⟨f, rfl, rfl, rfl,
     (chartAt (EuclideanSpace ℝ (Fin 2)) x).symm.injOn.mono hsub⟩
-
-
-
 
 theorem exists_finite_smoothFace_cover [CompactSpace M] :
     ∃ (s : Finset M) (face : M → SmoothFace M),

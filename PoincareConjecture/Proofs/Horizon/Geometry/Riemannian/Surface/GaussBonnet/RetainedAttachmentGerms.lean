@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapEdgeFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCollarGerms
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +22,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   {a b ua wa ub wb ra rb : ℝ} (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
 omit [T2Space S] in
-
 
 theorem leftCut_disjoint_rightCut : Disjoint B.leftCut B.rightCut := by
   rw [← B.left_height_image, ← B.right_height_image]
@@ -81,7 +74,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem attachment_mem_chart_target {r : ℝ} (hr : r ∈ Icc (0 : ℝ) 1) :
     chartAt Plane (chart R) (D.edgeFromEndpoint e terminal trim) + r • E.direction ∈
       (chartAt Plane (chart R)).target := by
@@ -99,7 +91,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (T : RetainedCoordinateTriangulation (M := S))
 
 omit [T2Space S] in
-
 
 theorem band_unique_of_endpoint_incidence
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -151,8 +142,6 @@ theorem band_unique_of_endpoint_incidence
   · exact False.elim ((Set.disjoint_left.mp (T.bands_disjoint_of_separated
       a ⟨p, i⟩ (Or.inl he))) ha hq)
 
-
-
 theorem cap_unique_at_open_chord (p : T.decomposition.vertices) (s : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
     (v : T.decomposition.vertices) (j : Bool × Bool)
@@ -165,8 +154,6 @@ theorem cap_unique_at_open_chord (p : T.decomposition.vertices) (s : Bool × Boo
     exact (disjoint_left.mp (T.caps_disjoint_of_vertices_ne v p hne j s)) hq hp
   subst v
   exact ⟨rfl, ((T.caps p).open_chord_mem_carrier_iff s j ht).mp hq⟩
-
-
 
 theorem collar_germ_of_unique_cap_band
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -216,8 +203,6 @@ theorem collar_germ_of_unique_cap_band
       exact mem_iUnion.mpr ⟨⟨⟨p, i⟩, rfl⟩, h⟩
   exact or_congr hc hb'
 
-
-
 theorem collar_germ_at_first_upper_attachment
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
     let q := (chartAt Plane (T.chart p.1.1 : S)).symm
@@ -249,8 +234,6 @@ theorem collar_germ_at_first_upper_attachment
     intro _ hright
     exact (disjoint_left.mp (T.bands p (T.graphs p).firstPiece).faces.leftCut_disjoint_rightCut)
       hl hright
-
-
 
 theorem collar_germ_at_last_upper_attachment
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
@@ -304,8 +287,6 @@ private theorem preimage_membership_iff_image
   · rintro ⟨x, hx, rfl⟩
     rwa [F.left_inv (hK hx)]
 
-
-
 theorem coordinate_collar_first_upper_attachment_reflex_germ
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
     let B := T.bands p (T.graphs p).firstPiece
@@ -328,8 +309,6 @@ theorem coordinate_collar_first_upper_attachment_reflex_germ
     (chartAt Plane (T.chart p.1.1 : S)).open_target.mem_nhds hqs] with z hz hf hzs
   exact (Iff.of_eq hz).trans ((preimage_membership_iff_image
     (chartAt Plane (T.chart p.1.1 : S)) hs hzs).trans hf)
-
-
 
 theorem coordinate_collar_last_upper_attachment_reflex_germ
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :

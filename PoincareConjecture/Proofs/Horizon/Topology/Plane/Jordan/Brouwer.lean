@@ -1,8 +1,3 @@
-
-
-
-
-
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Geometry.Euclidean.Sphere.Basic
 import Mathlib.Geometry.Manifold.Instances.Real
@@ -12,49 +7,23 @@ import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.UnitInterval
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Arcs
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.Topology.Plane.Jordan.Brouwer
 
 open Metric Set Function unitInterval _root_.Topology
 open scoped RealInnerProductSpace
 
-
 abbrev Plane := EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem cover : IsCoveringMap ((↑) : ℝ → AddCircle (1 : ℝ)) :=
   AddCircle.isCoveringMap_coe 1
 
-
 noncomputable def acLoop : C(I, AddCircle (1 : ℝ)) :=
   ⟨fun t => ((t : ℝ) : AddCircle (1 : ℝ)), cover.continuous.comp continuous_subtype_val⟩
-
 
 noncomputable def idLift : C(I, ℝ) := ⟨fun t => (t : ℝ), continuous_subtype_val⟩
 
 @[simp] lemma acLoop_apply (t : I) : acLoop t = ((t : ℝ) : AddCircle (1 : ℝ)) := rfl
 @[simp] lemma idLift_apply (t : I) : idLift t = (t : ℝ) := rfl
-
-
 
 theorem acLoop_not_homotopic :
     ¬ acLoop.HomotopicRel (ContinuousMap.const I (0 : AddCircle (1 : ℝ))) {0, 1} := by
@@ -73,15 +42,10 @@ theorem acLoop_not_homotopic :
   rw [e1, e2] at key
   simp at key
 
-
-
-
 noncomputable def acToSphere : AddCircle (1 : ℝ) ≃ₜ sphere (0 : Plane) 1 :=
   (AddCircle.homeomorphCircle (one_ne_zero)).trans Arcs.circleHomeoSphere
 
-
 noncomputable def sBase : sphere (0 : Plane) 1 := acToSphere 0
-
 
 noncomputable def sLoop : C(I, sphere (0 : Plane) 1) :=
   (⟨acToSphere, acToSphere.continuous⟩ : C(AddCircle (1 : ℝ), sphere (0 : Plane) 1)).comp acLoop
@@ -89,8 +53,6 @@ noncomputable def sLoop : C(I, sphere (0 : Plane) 1) :=
 @[simp] lemma sLoop_apply (t : I) : sLoop t = acToSphere (acLoop t) := rfl
 
 lemma sLoop_zero : sLoop 0 = sBase := by simp [sBase]
-
-
 
 theorem sLoop_not_homotopic :
     ¬ sLoop.HomotopicRel (ContinuousMap.const I sBase) {0, 1} := by
@@ -114,9 +76,6 @@ lemma sLoop_one : sLoop 1 = sBase := by
     rw [this]; exact AddCircle.coe_period 1
   simp [sBase, this]
 
-
-
-
 noncomputable def diskPt (t s : I) : Plane :=
   (1 - (t : ℝ)) • (sLoop s : Plane) + (t : ℝ) • (sBase : Plane)
 
@@ -131,12 +90,9 @@ lemma continuous_diskPt : Continuous (fun p : I × I => diskPt p.1 p.2) := by
   unfold diskPt
   fun_prop
 
-
 noncomputable def diskMap : C(I × I, closedBall (0 : Plane) 1) :=
   ⟨fun p => ⟨diskPt p.1 p.2, diskPt_mem p.1 p.2⟩,
     (continuous_diskPt).subtype_mk _⟩
-
-
 
 theorem no_retraction (ρ : C(closedBall (0 : Plane) 1, closedBall (0 : Plane) 1))
     (hrange : ∀ x, (ρ x : Plane) ∈ sphere (0 : Plane) 1)
@@ -194,19 +150,11 @@ theorem no_retraction (ρ : C(closedBall (0 : Plane) 1, closedBall (0 : Plane) 1
     show diskPt t s = (sBase : Plane)
     simp only [diskPt, hs', ← add_smul, sub_add_cancel, one_smul]
 
-
-
-
-
-
-
 section Disk
 
 variable (f : C(closedBall (0 : Plane) 1, closedBall (0 : Plane) 1))
 
-
 noncomputable def dvec (x : closedBall (0 : Plane) 1) : Plane := (x : Plane) - (f x : Plane)
-
 
 noncomputable def Acoef (x : closedBall (0 : Plane) 1) : ℝ := ⟪dvec f x, dvec f x⟫
 
@@ -245,7 +193,6 @@ lemma discr_nonneg (x) : 0 ≤ discr f x := by
   have : 0 ≤ Acoef f x * (- Ccoef f x) := mul_nonneg hA (by linarith)
   rw [discr]; nlinarith [sq_nonneg (Bcoef f x)]
 
-
 lemma norm_rhoPt (x) : ‖rhoPt f x‖ = 1 := by
   have hA := Acoef_pos f hf x
   have hsq : (Real.sqrt (discr f x)) ^ 2 = discr f x :=
@@ -266,7 +213,6 @@ lemma norm_rhoPt (x) : ‖rhoPt f x‖ = 1 := by
     nlinarith [hsq, hA]
   have := norm_nonneg (rhoPt f x)
   nlinarith [hnormsq, this]
-
 
 lemma rhoPt_of_mem_sphere (x : closedBall (0 : Plane) 1)
     (hx : (x : Plane) ∈ sphere (0 : Plane) 1) :
@@ -306,8 +252,6 @@ lemma rhoPt_of_mem_sphere (x : closedBall (0 : Plane) 1)
     rw [tparam, hsqrt, hnum, div_self hA.ne']
   rw [rhoPt, ht1, one_smul, dvec]; abel
 
-
-
 omit hf in
 lemma continuous_fval : Continuous fun x : closedBall (0 : Plane) 1 => (f x : Plane) :=
   continuous_subtype_val.comp (map_continuous f)
@@ -341,7 +285,6 @@ lemma continuous_rhoPt : Continuous (rhoPt f) :=
 
 end Disk
 
-
 theorem brouwer_disk (f : C(closedBall (0 : Plane) 1, closedBall (0 : Plane) 1)) :
     ∃ x, f x = x := by
   by_contra hcon
@@ -356,9 +299,6 @@ theorem brouwer_disk (f : C(closedBall (0 : Plane) 1, closedBall (0 : Plane) 1))
   · show rhoPt f x = (x : Plane)
     exact rhoPt_of_mem_sphere f hf x hx
 
-
-
-
 theorem fixedPoint_transfer {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (φ : X ≃ₜ Y) (hY : ∀ g : C(Y, Y), ∃ y, g y = y) (f : C(X, X)) : ∃ x, f x = x := by
   obtain ⟨y, hy⟩ := hY ((⟨φ, φ.continuous⟩ : C(X, Y)).comp
@@ -367,9 +307,6 @@ theorem fixedPoint_transfer {X Y : Type*} [TopologicalSpace X] [TopologicalSpace
   have hfy : φ (f (φ.symm y)) = y := hy
   calc f (φ.symm y) = φ.symm (φ (f (φ.symm y))) := (φ.symm_apply_apply _).symm
     _ = φ.symm y := by rw [hfy]
-
-
-
 
 noncomputable def ballScale (R : ℝ) (hR : 0 < R) :
     closedBall (0 : Plane) R ≃ₜ closedBall (0 : Plane) 1 where
@@ -390,22 +327,13 @@ noncomputable def ballScale (R : ℝ) (hR : 0 < R) :
     apply Continuous.subtype_mk
     fun_prop
 
-
 theorem brouwer_ball (R : ℝ) (hR : 0 < R)
     (f : C(closedBall (0 : Plane) R, closedBall (0 : Plane) R)) : ∃ x, f x = x :=
   fixedPoint_transfer (ballScale R hR) (fun g => brouwer_disk g) f
 
-
-
-
-
-
-
-
 section Projection
 
 variable {s : Set Plane} (hconv : Convex ℝ s) (hcomp : IsCompact s) (hne : s.Nonempty)
-
 
 noncomputable def projFun (u : Plane) : Plane :=
   (exists_norm_eq_iInf_of_complete_convex hne hcomp.isComplete hconv u).choose
@@ -413,12 +341,10 @@ noncomputable def projFun (u : Plane) : Plane :=
 lemma projFun_mem (u : Plane) : projFun hconv hcomp hne u ∈ s :=
   (exists_norm_eq_iInf_of_complete_convex hne hcomp.isComplete hconv u).choose_spec.1
 
-
 lemma projFun_inner_le (u : Plane) {w : Plane} (hw : w ∈ s) :
     ⟪u - projFun hconv hcomp hne u, w - projFun hconv hcomp hne u⟫ ≤ 0 :=
   (norm_eq_iInf_iff_real_inner_le_zero hconv (projFun_mem hconv hcomp hne u)).mp
     (exists_norm_eq_iInf_of_complete_convex hne hcomp.isComplete hconv u).choose_spec.2 w hw
-
 
 lemma projFun_eq_self {u : Plane} (hu : u ∈ s) : projFun hconv hcomp hne u = u := by
   have h := projFun_inner_le hconv hcomp hne u hu
@@ -428,7 +354,6 @@ lemma projFun_eq_self {u : Plane} (hu : u ∈ s) : projFun hconv hcomp hne u = u
     have : ‖u - projFun hconv hcomp hne u‖ = 0 := by nlinarith
     rwa [norm_eq_zero] at this
   rw [sub_eq_zero] at hz; exact hz.symm
-
 
 lemma projFun_dist_le (u₁ u₂ : Plane) :
     ‖projFun hconv hcomp hne u₁ - projFun hconv hcomp hne u₂‖ ≤ ‖u₁ - u₂‖ := by
@@ -458,14 +383,6 @@ lemma continuous_projFun : Continuous (projFun hconv hcomp hne) :=
     rw [dist_eq_norm, dist_eq_norm]; exact projFun_dist_le hconv hcomp hne u₁ u₂)).continuous
 
 end Projection
-
-
-
-
-
-
-
-
 
 theorem brouwerFPT : ∀ s : Set Plane, Convex ℝ s → IsCompact s → s.Nonempty →
     ∀ f : C(s, s), ∃ x, f x = x := by

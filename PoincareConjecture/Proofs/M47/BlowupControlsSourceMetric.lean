@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.SeedImageBalls
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem normalized_search_metric_comparison
     (P : M44CapPersistencePredecessors.{u}) {F : SurgeryFlowData.{u}}
@@ -98,8 +87,6 @@ theorem normalized_search_metric_comparison
   rw [hread _ hsQ, hcancel] at hmetric
   simpa only [value, dif_pos hs, SurgeryFlowCylinder.pullbackInner,
     ← mul_assoc, inv_mul_cancel₀ hQ.ne', one_mul] using hmetric
-
-
 
 theorem normalized_search_image_ball_subset
     {F : SurgeryFlowData.{u}} {base Q a radius : ℝ} (p : (F.slice base).carrier)

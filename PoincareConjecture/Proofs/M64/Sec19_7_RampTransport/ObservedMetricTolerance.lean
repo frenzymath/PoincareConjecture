@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.CompactRetractionMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -20,9 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M64.RampTransport
-
-
-
 
 theorem exists_observed_metric_tolerance
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]

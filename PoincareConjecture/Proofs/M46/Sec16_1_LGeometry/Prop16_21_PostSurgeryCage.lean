@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_CapOrdinaryCoor
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_CompactRetainedSlice
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
-
-
 
 theorem exists_compact_postSurgery_cage
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

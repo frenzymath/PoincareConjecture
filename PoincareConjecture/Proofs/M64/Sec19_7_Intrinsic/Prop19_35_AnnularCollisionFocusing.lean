@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_WideCollisionFocusing
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LongTwoSideRegion
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,11 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_normal_collision_annular_focusing
     (N : IntrinsicAnnulus) {gamma₁ gamma₂ : ℝ → AnnulusCoordinates}

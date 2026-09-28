@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.TensorNorm
 import PoincareConjecture.Proofs.M45.Ch9_Models.LocalScalar
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ private theorem tangentNorm_orthonormal
   change Real.sqrt (inner ℝ (g.orthonormalBasis x i) (g.orthonormalBasis x i)) = 1
   rw [real_inner_self_eq_norm_sq, (g.orthonormalBasis x).norm_eq_one]
   norm_num
-
-
 
 theorem component_ricciNormSq_le_curvatureTensorNorm
     {M : Type u} [TopologicalSpace M]
@@ -63,9 +52,6 @@ theorem component_ricciNormSq_le_curvatureTensorNorm
     _ = _ := by
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
       ring
-
-
-
 
 theorem exists_component_normalized_endpoint_constant
     (hC : RicciFlowCurvatureTheory.{u}) (PA : M47ComponentAnalyticPredecessors.{u})

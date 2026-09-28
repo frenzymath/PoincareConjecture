@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import Mathlib.Data.Set.UnionLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_finitePL_affineLevel_pasting (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) (c : ℝ)

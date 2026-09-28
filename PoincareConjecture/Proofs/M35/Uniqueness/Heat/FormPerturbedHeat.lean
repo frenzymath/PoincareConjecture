@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormWeakHeat
 import Mathlib.Topology.MetricSpace.Contracting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {V H : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [CompleteSpace V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
   [SeparableSpace H]
-
-
 
 theorem exists_form_heat_of_contractive_response (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)
@@ -64,8 +53,6 @@ theorem exists_form_heat_of_contractive_response (J : V →L[ℝ] H) (hc : IsCom
   · change ∀ᵐ t ∂timeMeasure T, D t + S (R v + F) t - P t = (R v + F) t at heq
     rw [hv] at heq
     exact heq
-
-
 
 theorem exists_perturbed_form_heat (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

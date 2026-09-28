@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.ProductDerivatives
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -36,7 +28,6 @@ theorem coordinateBackwardMetric_at_center (q : M) (τ : ℝ)
     mfderiv_extChartAt_self] at hc
   simpa only [coordinateBackwardMetric, extChartAt_to_inv,
     ContinuousLinearMap.id_apply] using! hc
-
 
 theorem backward_metric_inner_hasDerivAt
     (hwindow : Icc (T - τmax) T ⊆ J) {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax)

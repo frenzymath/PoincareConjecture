@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTriangleCofaceSigns
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualPointCoface
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry SignType
@@ -24,7 +15,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
 
 theorem sign_eq_on_triangle_dualBlock
     (p q : (T.marked 2).vertices) {s : Finset (T.index → ℝ × V3)}
@@ -60,8 +50,6 @@ theorem sign_eq_on_triangle_dualBlock
         ((T.ambient.closedStar q).convexHull_subset_space htq hxt) hxR).mpr hxD]
 
 open Classical in
-
-
 
 theorem triangle_dualBlock_halves_eq
     (p q : (T.marked 2).vertices) {s : Finset (T.index → ℝ × V3)}

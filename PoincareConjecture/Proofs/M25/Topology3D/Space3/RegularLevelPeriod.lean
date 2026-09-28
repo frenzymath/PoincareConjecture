@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarLevelCurveChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularCurveFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactFlowPeriod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_regular_collar_component_period
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (t : ℝ)

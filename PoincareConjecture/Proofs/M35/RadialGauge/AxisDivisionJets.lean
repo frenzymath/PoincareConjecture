@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Mathlib.SmoothAxisDivision
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +10,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 open SmoothRadial CoordinateExponential
-
 
 theorem radialWeightedIntegral_hasDerivAt_scalar {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (k : ℕ) (r : ℝ) :
@@ -41,8 +30,6 @@ theorem radialWeightedIntegral_hasDerivAt_scalar {f : ℝ → ℝ}
       smul_apply, smul_eq_mul, fderiv_apply_one_eq_deriv] using heval.symm
   exact hd.hasDerivAt.congr_deriv hid
 
-
-
 theorem iteratedDeriv_radialWeightedIntegral_scalar {f : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (j k : ℕ) (r : ℝ) :
     iteratedDeriv j (radialWeightedIntegral k f) r =
@@ -56,8 +43,6 @@ theorem iteratedDeriv_radialWeightedIntegral_scalar {f : ℝ → ℝ}
       rw [iteratedDeriv_succ', hd, ih (contDiff_infty_iff_deriv.mp hf).2]
       simp only [iteratedDeriv_succ', Nat.add_assoc, Nat.add_comm 1 j]
 
-
-
 theorem iteratedDeriv_axisDivision {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
     (j : ℕ) (r : ℝ) :
     iteratedDeriv j (axisDivision f) r =
@@ -66,8 +51,6 @@ theorem iteratedDeriv_axisDivision {f : ℝ → ℝ} (hf : ContDiff ℝ ∞ f)
   rw [iteratedDeriv_radialWeightedIntegral_scalar
     (contDiff_infty_iff_deriv.mp hf).2]
   simp only [zero_add, iteratedDeriv_succ']
-
-
 
 theorem axisDivision_jet_continuous {A : Type*} [TopologicalSpace A]
     {f : A → ℝ → ℝ} (hf : ∀ a, ContDiff ℝ ∞ (f a)) (j : ℕ)

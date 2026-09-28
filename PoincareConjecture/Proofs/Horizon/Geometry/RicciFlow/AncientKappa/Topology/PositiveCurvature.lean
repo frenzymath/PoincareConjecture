@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.PositiveCurvature
 import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -15,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.AncientKappaSolution
-
-
-
 
 theorem noEmbeddedTrivialNormalProjectivePlane_of_compact_positive_sectional
     {M : Type u} [TopologicalSpace M]

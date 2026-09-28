@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finite_subdivision_with_vertices (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (P : Finset E) (hP : (P : Set E) ⊆ K.space) :

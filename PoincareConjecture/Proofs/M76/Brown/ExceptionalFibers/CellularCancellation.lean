@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.CellularShrinkingConstruction
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.QuotientFibersHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Homeomorph
 variable {X Y E : Type*} [MetricSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
 
 theorem exists_of_cellular_fiber
     (K : ℕ → Set X) (hK : ∀ n, IsCompact (K n))
@@ -45,9 +33,6 @@ end Homeomorph
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem mem_set_iff_of_surjective_agreement (H : X ≃ₜ Y) {f : X → Y}
     (hf : Function.Surjective f) {P : Set X} {B : Set Y}

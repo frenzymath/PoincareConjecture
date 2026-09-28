@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetMinimal
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetResidualPlane
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaBoundaryLength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -124,11 +112,6 @@ private theorem halfDisk_residual_real_ne_zero {n : ℕ}
   rw [hzero, map_zero] at hp
   exact (lt_irrefl 0) hp
 
-
-
-
-
-
 theorem halfDisk_monotone_boundary_factor_even {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {Q : ℂ → Fin n → ℂ}
@@ -191,11 +174,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
 
 theorem boundary_differential_order_even (S : M65MinimalDisk g connection gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))
@@ -286,11 +264,6 @@ theorem boundary_differential_order_even (S : M65MinimalDisk g connection gamma)
   change q (S.disk.map (P (t : ℂ))) = q (periodicFreeLoop gamma (h (t + a)))
   rw [hP t, hlift]
 
-
-
-
-
-
 theorem boundary_branch_residual_even_holder (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (gamma ∘ m65LoopAngular))
@@ -355,9 +328,6 @@ theorem boundary_branch_residual_even_holder (S : M65MinimalDisk g connection ga
     (hperiodic ▸ hregular) hx gE hr m Q hH hQ (hQne 0 h0) hfactor hconf
   exact ⟨gE, DE, r, m, Q, hr, heven, hmap, hsource, hH, hHi, hmetric,
     hnorm, heq, hQ, hQ1, hQne, hfactor, hDQ1, hDQI, hholder⟩
-
-
-
 
 theorem boundary_branch_residual_even (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBaseSets
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBaseCharts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexBaseModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,8 +18,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem vertex_base_certificates (p : (T.marked 2).vertices) :
     IsFinitePLBallPair P2 (T.diskDualBase {(p : T.index → ℝ × V3)})
@@ -158,14 +147,12 @@ theorem vertex_base_certificates (p : (T.marked 2).vertices) :
 
 open Classical in
 
-
 theorem vertex_base_ballPair (p : (T.marked 2).vertices) :
     IsFinitePLBallPair P2 (T.diskDualBase {(p : T.index → ℝ × V3)})
       (T.dualRegionRim {(p : T.index → ℝ × V3)} ∩ (T.marked 2).space) :=
   (T.vertex_base_certificates p).1
 
 open Classical in
-
 
 theorem exists_boundary_vertex_base_intervals (p : (T.marked 2).vertices)
     (hpfront : (p : T.index → ℝ × V3) ∈ (T.marked 1).space) :

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.KoszulPairing
 import PoincareConjecture.Proofs.M04.TensorDerivativeFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -92,4 +85,3 @@ theorem connection_difference_pairing
   ring
 
 end PoincareConjecture.M04
-

@@ -4,18 +4,6 @@ import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +13,6 @@ open scoped ENNReal
 namespace PoincareConjecture.ReducedLengthMinimum.Variational
 
 variable {A E : Type*} [MeasurableSpace A] [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 noncomputable def integratedFormMap (μ : Measure A)
     (B : Lp (E →L[ℝ] E →L[ℝ] ℝ) ∞ μ) :
@@ -48,8 +34,6 @@ theorem integratedFormMap_apply {μ : Measure A}
     (ContinuousLinearMap.id ℝ (E →L[ℝ] E →L[ℝ] ℝ)) B v]
     with t ht
   exact congrArg (fun l : E →L[ℝ] ℝ => l (w t)) ht
-
-
 
 theorem integratedFormMap_toLp {μ : Measure A}
     {B : A → E →L[ℝ] E →L[ℝ] ℝ} (hB : MemLp B ∞ μ) (v w : Lp E 2 μ) :
@@ -105,8 +89,6 @@ theorem lpTop_norm_le_of_bound {F : Type*} [NormedAddCommGroup F] {μ : Measure 
   exact (ENNReal.toReal_mono ENNReal.ofReal_ne_top
     (eLpNormEssSup_le_of_ae_bound hbound)).trans_eq (ENNReal.toReal_ofReal hC)
 
-
-
 theorem integratedForm_nonneg {μ : Measure A}
     {B : A → E →L[ℝ] E →L[ℝ] ℝ} (hB : MemLp B ∞ μ)
     (hpos : ∀ᵐ t ∂μ, ∀ z, 0 ≤ B t z z) (v : Lp E 2 μ) :
@@ -116,7 +98,6 @@ theorem integratedForm_nonneg {μ : Measure A}
   filter_upwards [MemLp.coeFn_toLp (E := E →L[ℝ] E →L[ℝ] ℝ) hB, hpos] with t hrep ht
   rw [hrep]
   exact ht (v t)
-
 
 theorem integratedForm_sub_norm_le {μ : Measure A}
     {B D : A → E →L[ℝ] E →L[ℝ] ℝ} (hB : MemLp B ∞ μ) (hD : MemLp D ∞ μ)
@@ -136,8 +117,6 @@ theorem continuousOn_memLp_top_Icc {V : Type*} [NormedAddCommGroup V]
   apply memLp_top_of_bound (hf.aestronglyMeasurable measurableSet_Icc) C
   filter_upwards [ae_restrict_mem measurableSet_Icc] with s hs
   exact hC s hs
-
-
 
 theorem integratedForm_tendsto_of_uniform {a b : ℝ}
     (B : ℕ → ℝ → E →L[ℝ] E →L[ℝ] ℝ) (D : ℝ → E →L[ℝ] E →L[ℝ] ℝ)
@@ -178,10 +157,6 @@ theorem integratedForm_tendsto_of_uniform {a b : ℝ}
   simpa only [Real.dist_eq, sub_zero,
     abs_of_nonneg (ContinuousLinearMap.opNorm_nonneg _)] using
     (lt_of_le_of_lt hnorm (half_lt_self hε))
-
-
-
-
 
 theorem finite_integral_action_le_of_weak_limit
     {ι : Type*} [Fintype ι] {V : ι → Type*}

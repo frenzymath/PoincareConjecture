@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace OpenPartialHomeomorph
 variable {M E G ι : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
-
 
 theorem exists_compact_finitePL_image_neighborhood
     (e : ι → OpenPartialHomeomorph M E) (F : M → G) (hF : Continuous F)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalPuncturedCapFilling
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedSphereCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.AuxiliaryHeight
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Critical
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +17,6 @@ private abbrev S2 := sphere (0 : E3) 1
 namespace SphereMorseReduction
 
 variable {f : S2 → E3} (M : SphereMorseReduction f)
-
-
-
 
 theorem exists_auxiliary_height_with_unique_critical_point
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -80,8 +69,6 @@ theorem exists_auxiliary_height_with_unique_critical_point
   rw [(hactual (e x) (interior_subset (het (e.map_source hx)))).eq_of_nhds,
     (hactual p hp).eq_of_nhds]
   exact hform x hx
-
-
 
 theorem exists_auxiliary_height_of_critical_core
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)

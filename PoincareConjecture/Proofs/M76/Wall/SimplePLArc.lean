@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_simple_polyhedralPL_arc_in_image
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,18 +1,9 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalSpherePatchReplacement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ChartwisePLBall.patch_pair_charts_off_ball
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

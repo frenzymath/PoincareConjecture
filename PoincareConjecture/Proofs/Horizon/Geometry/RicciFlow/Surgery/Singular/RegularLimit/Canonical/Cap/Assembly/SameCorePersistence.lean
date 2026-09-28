@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Static.Recenter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Static.RestrictionTransfer
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -18,7 +16,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 theorem exists_terminal_same_core_cap_persistence_threshold_of_budget
     (P04 : RicciFlowCurvatureTheory.{u}) {κ : ℝ} (hκ : 4 < κ)
@@ -159,8 +156,6 @@ theorem exists_terminal_same_core_cap_persistence_threshold_of_budget
     (by rw [hBU]; exact preimage_mono hBsub)
     (by rw [hBsphere, ← C.boundary_eq_neck_sphere]) topology quantitative
   exact ⟨K, hKe, hKC.le, hKD, hKcore.symm ▸ hxcore⟩
-
-
 
 theorem exists_terminal_same_core_cap_persistence_threshold
     (P04 : RicciFlowCurvatureTheory.{u}) :

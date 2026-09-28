@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarRadialArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 namespace Complex
-
-
-
 
 theorem lt_of_no_radial_backtracking {a b c : ℝ} (hab : a < b)
     (hba : b - a < Real.pi) (hbc : b - c < Real.pi)
@@ -39,22 +27,14 @@ end Complex
 
 namespace Circle
 
-
-
 noncomputable def shortIncrement (x y : Circle) : ℝ := Complex.arg (y / x : Circle)
-
-
 
 theorem mul_exp_shortIncrement (x y : Circle) : x * Circle.exp (shortIncrement x y) = y := by
   rw [shortIncrement, Circle.exp_arg]
   exact mul_div_cancel _ _
 
-
-
 theorem neg_pi_lt_shortIncrement (x y : Circle) : -Real.pi < shortIncrement x y :=
   Complex.neg_pi_lt_arg _
-
-
 
 theorem shortIncrement_lt_pi {x y : Circle}
     (hlin : LinearIndependent ℝ ((↑) : ↥({(x : ℂ), (y : ℂ)} : Set ℂ) → ℂ)) :
@@ -70,8 +50,6 @@ theorem shortIncrement_lt_pi {x y : Circle}
   rw [convexHull_pair]
   refine ⟨(1 / 2 : ℝ), (1 / 2 : ℝ), by norm_num, by norm_num, by norm_num, ?_⟩
   rw [hy, smul_neg, add_neg_cancel]
-
-
 
 theorem shortIncrement_ne_zero {x y : Circle} (hxy : x ≠ y) : shortIncrement x y ≠ 0 := by
   intro hzero

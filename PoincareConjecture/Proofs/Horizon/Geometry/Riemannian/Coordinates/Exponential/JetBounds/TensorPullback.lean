@@ -5,21 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Variatio
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.EuclideanNorm
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -44,8 +29,6 @@ open ConnectionVariation
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem horizon_curvatureDerivativeNorm_zero (D : LeviCivitaData g) (x : M) :
     D.curvatureDerivativeNorm 0 x = D.curvatureTensorNorm x := by

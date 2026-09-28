@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Coordinates.Rim
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Patches.Pasting
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,8 +30,6 @@ theorem rimCylinderReparam_finitePL {H : Rim ≃ₜ Rim} (hH : H.IsFinitePL) :
   have hid : (Homeomorph.refl Half).IsFinitePL :=
     ⟨id, ⟨K, hK, hKs, K.affineOnFaces_affine (ContinuousAffineMap.id ℝ ℝ)⟩, fun _ => rfl⟩
   exact hH.prod hid
-
-
 
 theorem exists_conjugate_rimCylinder_correction
     (H : Rim ≃ₜ Rim) (hH : H.IsFinitePL)

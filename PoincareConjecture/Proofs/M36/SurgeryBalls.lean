@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M36.GlobalMetricBounds
 import PoincareConjecture.Proofs.M36.BallDistanceComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

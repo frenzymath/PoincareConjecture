@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialEvolvingNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialRadialCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem initial_slab_canonical
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

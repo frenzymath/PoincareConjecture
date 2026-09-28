@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric Function

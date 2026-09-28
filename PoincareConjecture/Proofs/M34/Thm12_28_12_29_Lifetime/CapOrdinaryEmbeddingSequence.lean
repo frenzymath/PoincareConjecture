@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapOrdinaryEmbeddingMetric
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCompactScalarLimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,14 +40,11 @@ private theorem embedding_zero_mem (k : ℕ) :
 
 local notation "hz" => embedding_zero_mem R p hp hd C
 
-
-
 noncomputable def capOrdinaryEmbedding (k : ℕ) :
     OpenPartialHomeomorph C.limit.sliceCarrier.carrier M :=
   ordinaryChapter11CylinderOpenPartialHomeomorph R (C.embedding k)
     (C.exhaustion.space_open k) 0 (hz k)
     (ordinaryChapter11Point_time_mem R ((C.embedding k).pointMap 0 (hz k) C.limit.base))
-
 
 theorem capOrdinaryEmbedding_apply (k : ℕ) (x : C.limit.sliceCarrier.carrier) :
     capOrdinaryEmbedding R p hp hd C k x =
@@ -63,10 +52,8 @@ theorem capOrdinaryEmbedding_apply (k : ℕ) (x : C.limit.sliceCarrier.carrier) 
   ordinaryChapter11CylinderOpenPartialHomeomorph_apply R (C.embedding k)
     (C.exhaustion.space_open k) 0 (hz k) _ x
 
-
 theorem capOrdinaryEmbedding_source (k : ℕ) :
     (capOrdinaryEmbedding R p hp hd C k).source = C.exhaustion.space k := rfl
-
 
 theorem capOrdinaryEmbedding_smooth (k : ℕ) :
     let e := capOrdinaryEmbedding R p hp hd C k
@@ -75,14 +62,11 @@ theorem capOrdinaryEmbedding_smooth (k : ℕ) :
   ordinaryChapter11CylinderOpenPartialHomeomorph_smooth R (C.embedding k)
     (C.exhaustion.space_open k) 0 (hz k) _
 
-
 theorem capOrdinaryEmbedding_base (k : ℕ) :
     capOrdinaryEmbedding R p hp hd C k C.limit.base =
       ordinaryChapter11Projection R (p (C.subsequence k)) := by
   rw [capOrdinaryEmbedding_apply, C.base_preserving k (hz k)]
   rfl
-
-
 
 theorem capOrdinaryEmbedding_metric (k : ℕ) {x : C.limit.sliceCarrier.carrier}
     (hx : x ∈ C.exhaustion.space k) (v w : TangentSpace (𝓡 3) x) :

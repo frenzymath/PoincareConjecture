@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAffineHeightStep
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinderHalfspace
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 local notation "W" => (ℝ × (ℝ × ℝ))
 local notation "V" => ((ℝ × ℝ) × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 def squareShell : Set W :=
   Icc (-1) 1 ×ˢ ((norm : (ℝ × ℝ) → ℝ) ⁻¹' Icc (3 / 2) 2)
@@ -60,9 +48,6 @@ private noncomputable def shellCoordinateLinear : W ≃ₗ[ℝ] V3 where
     · rfl
     · change 4 * (a * p.2.2) = a * (4 * p.2.2)
       ring
-
-
-
 
 theorem exists_square_shell_frontier_disk_patch {x : W}
     (hx : x ∈ frontier squareShell) :

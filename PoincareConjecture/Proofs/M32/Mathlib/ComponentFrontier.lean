@@ -2,24 +2,11 @@ import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem frontier_connectedComponentIn_subset_of_isOpen
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
@@ -42,10 +29,6 @@ theorem frontier_connectedComponentIn_subset_of_isOpen
     exact ⟨⟨y, hyA⟩, hyrel, rfl⟩
   · rw [connectedComponentIn_eq_empty hx]
     simp only [frontier_empty, empty_subset]
-
-
-
-
 
 theorem exists_connectedComponentIn_mem_not_mem_of_no_filling
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X] [T2Space X]

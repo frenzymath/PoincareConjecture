@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.InductionCounterexamples
 import PoincareConjecture.Proofs.M47.FirstFailureActualLimit
 import PoincareConjecture.Proofs.M47.SeedClosedHorizonVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_seed_firstFailure_counterexample_sequence
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

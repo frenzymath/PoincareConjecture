@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +14,6 @@ variable {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 m) ∞ N]
-
 
 theorem pathELength_map_of_metric_pullback
     (gM : RiemannianMetric n M) (gN : RiemannianMetric m N) {F : M → N}
@@ -46,7 +39,6 @@ theorem pathELength_map_of_metric_pullback
   rw [norm_eq_sqrt_real_inner, norm_eq_sqrt_real_inner]
   exact congrArg Real.sqrt (hinner (γ t) _ _)
 
-
 theorem edist_map_le_of_metric_pullback
     (gM : RiemannianMetric n M) (gN : RiemannianMetric m N) {F : M → N}
     (hF : ContMDiff (𝓡 n) (𝓡 m) ∞ F)
@@ -66,8 +58,6 @@ theorem edist_map_le_of_metric_pullback
       (congrArg F h0) (congrArg F h1) zero_le_one
   rw [← pathELength_map_of_metric_pullback gM gN hF hinner γ hγ] at hle
   exact hle.trans_lt hlen
-
-
 
 theorem metricComplete_of_isClosedEmbedding [T3Space M] [T3Space N]
     (gM : RiemannianMetric n M) (gN : RiemannianMetric m N) {F : M → N}

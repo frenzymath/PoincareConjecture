@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianCutFrontierMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,8 +18,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 variable {ι : Type*} {e : ι → OpenPartialHomeomorph X V3} {j : V2 → X}
-
-
 
 theorem meridianCutFrontierMap_frontier_iff (P : OriginalDiskProduct e R j)
     {a : ℝ} (hgap : a / 2 < p - a / 2)
@@ -89,8 +79,6 @@ private theorem injective_on_caps (P : OriginalDiskProduct e R j)
     have hpairs := P.injective hzminus hwminus heq
     have hfirst := congrArg Prod.fst hpairs
     exact Prod.ext hfirst (hzt.trans hwt.symm)
-
-
 
 theorem injective_meridianCutFrontierMap (P : OriginalDiskProduct e R j)
     {a : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)

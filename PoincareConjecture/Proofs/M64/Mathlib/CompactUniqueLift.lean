@@ -1,14 +1,6 @@
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,10 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_continuous_lift_of_compact_unique_fibers
     {X Y Z : Type*} [TopologicalSpace X] [T2Space X]

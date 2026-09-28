@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelParallel
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Comparison
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +67,6 @@ theorem cylinderParallelCoefficient_norm {u : ℝ} (hu : u ≠ 1)
   field_simp
   ring
 
-
-
 theorem cylinder_scaled_model_jetError {u : ℝ} (hu : u ≠ 1)
     (v c : ℝ) (order : ℕ) (z : RoundCylinderSpace) :
     roundCylinderJetErrorSquared u
@@ -119,8 +115,6 @@ theorem scaled_cylinder_model_smooth (ε v c : ℝ) :
   intro q i j
   exact (contDiff_const.mul (contDiff_roundCylinderGram v q i j)).contDiffOn
 
-
-
 theorem cylinder_covariant_scaled_error {ε u v : ℝ} (hu : u < 1) (hv : v < 1)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn ε B)
     (c : ℝ) (q : UnitTwoSphere) (k : ℕ) (p : RoundCylinderCoordinates)
@@ -166,9 +160,6 @@ theorem cylinder_covariant_scaled_error {ε u v : ℝ} (hu : u < 1) (hv : v < 1)
       simp only [Finset.mul_sum, mul_assoc]
       ring!
 
-
-
-
 theorem cylinder_scaled_jetError_le {ε u v : ℝ} (huv : u ≤ v) (hv : v < 1)
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn ε B)
     (c : ℝ) (order : ℕ) (z : RoundCylinderSpace)
@@ -211,9 +202,6 @@ theorem cylinder_scaled_jetError_le_explicit {ε u v : ℝ} (huv : u ≤ v) (hv 
   rw [cylinder_scaled_model_jetError (huv.trans_lt hv).ne] at h
   convert h using 1
   ring
-
-
-
 
 theorem roundCylinderFamilyClose_retained_clock {ε c d : ℝ}
     (hε : 0 < ε) (hc : 1 ≤ c) (hcmax : c ≤ 6 / 5)

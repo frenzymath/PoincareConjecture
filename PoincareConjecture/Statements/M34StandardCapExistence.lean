@@ -6,26 +6,11 @@ import PoincareConjecture.Statements.M15Noncollapsing
 import PoincareConjecture.Statements.M27KappaAlternatives
 import PoincareConjecture.Statements.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
 
 structure M34StandardCapPredecessors : Prop where
   local_flow :

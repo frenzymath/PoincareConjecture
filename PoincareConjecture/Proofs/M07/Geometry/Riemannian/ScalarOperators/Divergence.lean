@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Matrix.Determinant
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -27,7 +16,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem laplacian_eq_trace_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
@@ -42,7 +30,6 @@ theorem laplacian_eq_trace_connection_gradient (D : LeviCivitaData g)
   apply Finset.sum_congr rfl
   intro i _
   exact g.symm x _ _
-
 
 theorem laplacian_eq_sum_basis_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
@@ -147,8 +134,6 @@ private theorem density_eq_sqrt_det
   funext x
   simp [RiemannianMetric.pullbackVolumeDensity, metricMatrix, mfderiv_id]
 
-
-
 theorem fderiv_density_eq_connection_trace (D : LeviCivitaData g)
     (x v : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ (g.pullbackVolumeDensity id) x v =
@@ -162,17 +147,12 @@ theorem fderiv_density_eq_connection_trace (D : LeviCivitaData g)
     D.trace_inv_mul_fderiv_metricMatrix]
   ring
 
-
-
 theorem contDiffAt_gradient_euclidean (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContDiffAt ℝ ∞ f x) : ContDiffAt ℝ ∞ (D.gradient f) x := by
   have h := (Bundle.contMDiffAt_totalSpace.mp
     (D.contMDiffAt_gradient (contMDiffAt_iff_contDiffAt.mpr hf))).2
   exact contMDiffAt_iff_contDiffAt.mp (by simpa using h)
-
-
-
 
 theorem laplacian_eq_sum_fderiv_gradient_add (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
@@ -204,7 +184,6 @@ private theorem apply_eq_sum_coordinates
   simpa only [map_sum, map_smul, smul_eq_mul, OrthonormalBasis.coe_toBasis,
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
-
 
 theorem density_mul_laplacian_eq_divergence
     (D : LeviCivitaData g)

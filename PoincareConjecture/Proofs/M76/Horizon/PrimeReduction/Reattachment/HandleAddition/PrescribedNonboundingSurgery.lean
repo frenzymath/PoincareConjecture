@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PrescribedProductOnOppositeDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PrescribedWholeProductCollar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

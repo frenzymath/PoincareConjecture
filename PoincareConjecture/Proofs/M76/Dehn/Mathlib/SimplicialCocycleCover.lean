@@ -3,24 +3,11 @@ import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Instances.ZMod
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace FiberBundleCore
-
-
-
-
 
 theorem t2SpaceTotal {ι B F : Type*} [TopologicalSpace B] [TopologicalSpace F]
     [T2Space B] [T2Space F] (Z : FiberBundleCore ι B F) : T2Space Z.TotalSpace := by
@@ -51,9 +38,6 @@ namespace PreAbstractSimplicialComplex
 
 variable {ι : Type*} [Fintype ι]
 
-
-
-
 structure ModTwoEdgeCocycle (A : PreAbstractSimplicialComplex ι) where
   value : ι → ι → ZMod 2
   diagonal : ∀ i, value i i = 0
@@ -64,15 +48,9 @@ namespace ModTwoEdgeCocycle
 
 variable {A : PreAbstractSimplicialComplex ι}
 
-
-
 def IsCoboundary (c : A.ModTwoEdgeCocycle) : Prop :=
   ∃ a : ι → ZMod 2, ∀ s ∈ A.faces, ∀ i ∈ s, ∀ j ∈ s,
     c.value i j = a i + a j
-
-
-
-
 
 noncomputable def bundle (c : A.ModTwoEdgeCocycle) :
     FiberBundleCore ι A.barycentricSpace (ZMod 2) where
@@ -91,17 +69,11 @@ noncomputable def bundle (c : A.ModTwoEdgeCocycle) :
       k (hvertices k hq.2)
     exact (add_assoc b (c.value i j) (c.value j k)).trans (congrArg (b + ·) hc)
 
-
-
 theorem isCoveringMap (c : A.ModTwoEdgeCocycle) : IsCoveringMap c.bundle.proj :=
   FiberBundle.isCoveringMap (F := ZMod 2) (E := c.bundle.Fiber)
 
-
-
 instance totalSpaceT2 (c : A.ModTwoEdgeCocycle) : T2Space c.bundle.TotalSpace :=
   c.bundle.t2SpaceTotal
-
-
 
 theorem fiber_ncard (c : A.ModTwoEdgeCocycle) (q : A.barycentricSpace) :
     (c.bundle.proj ⁻¹' {q}).ncard = 2 := by
@@ -109,8 +81,6 @@ theorem fiber_ncard (c : A.ModTwoEdgeCocycle) (q : A.barycentricSpace) :
     (c.bundle.mem_baseSet_at q)
   change Nat.card (c.bundle.proj ⁻¹' {q}) = 2
   rw [Nat.card_congr H.toEquiv, Nat.card_eq_fintype_card, ZMod.card]
-
-
 
 theorem trivialization_change (c : A.ModTwoEdgeCocycle) {i j : ι}
     {q : A.barycentricSpace} (hi : q ∈ A.openVertexStar i)

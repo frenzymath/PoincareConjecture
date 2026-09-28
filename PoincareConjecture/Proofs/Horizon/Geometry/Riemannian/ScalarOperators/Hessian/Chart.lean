@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem hessian_in_locally_invertible_coordinates (D : LeviCivitaData g)
     {e : EuclideanSpace ℝ (Fin n) → M} {U : Set (EuclideanSpace ℝ (Fin n))}
@@ -63,8 +54,6 @@ theorem hessian_in_locally_invertible_coordinates (D : LeviCivitaData g)
   rw [← DE.hessian_comp_of_metric_pullback D (he x hx) hinv hmetric hf,
     DE.hessian_eq_fderiv_sub_christoffel
       (contMDiffAt_iff_contDiffAt.mp (hf.comp x (he x hx))), hΓ]
-
-
 
 theorem hessian_in_chart (D : LeviCivitaData g) {f : M → ℝ} (a : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) a).target)

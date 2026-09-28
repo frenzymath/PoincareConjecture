@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.AreaEstimates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -69,8 +61,6 @@ lemma neg_integral_deriv_mul_reciprocal_le_pow
     _ ≤ α ^ 2 * a ^ (m - 1) := area_mul_reciprocal_le_pow ha hm hα hleft
     _ ≤ α ^ 2 * b ^ (m - 1) :=
       mul_le_mul_of_nonneg_left (pow_le_pow_left₀ ha.le hab _) (sq_nonneg α)
-
-
 
 lemma area_error_le_mul_pow
     {A : ℝ → ℝ} {a b α : ℝ} {m : ℕ} (ha : 0 < a) (hab : a ≤ b)

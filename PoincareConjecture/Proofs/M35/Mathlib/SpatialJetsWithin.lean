@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.ContDiff.FTaylorSeries
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ open scoped ContDiff Topology Pointwise
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem iteratedFDeriv_zero_slice_of_contDiffOn
     {J : Set ℝ} {U : Set E} {f : ℝ × E → F}
@@ -38,9 +27,6 @@ theorem iteratedFDeriv_zero_slice_of_contDiffOn
     hpre_unique ⟨hzero, hx⟩ (i := r) (by exact_mod_cast le_top (a := (r : ℕ∞)))
   rw [hpre, iteratedFDerivWithin_of_isOpen (𝕜 := ℝ) r hU hx] at hcomp
   exact hcomp
-
-
-
 
 theorem iteratedFDeriv_time_slice_of_contDiffOn
     {J : Set ℝ} {U : Set E} {f : ℝ × E → F}
@@ -73,9 +59,6 @@ theorem iteratedFDeriv_time_slice_of_contDiffOn
   rw [iteratedFDerivWithin_comp_add_left, hshift] at hslice
   simpa only [Function.comp_def, Prod.mk_add_mk, add_zero, zero_add] using hslice
 
-
-
-
 theorem continuousOn_spatial_jet_of_contDiffOn
     {J : Set ℝ} {U : Set E} {f : ℝ × E → F}
     (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U)
@@ -90,8 +73,6 @@ theorem continuousOn_spatial_jet_of_contDiffOn
   apply (hlinear.comp_continuousOn hc).congr
   intro p hp
   exact iteratedFDeriv_time_slice_of_contDiffOn hJ hp.1 hU hf hp.2 r
-
-
 
 theorem norm_spatial_jet_sub_le_spacetime_jet_sub
     {J K : Set ℝ} {U : Set E} {f g : ℝ × E → F}

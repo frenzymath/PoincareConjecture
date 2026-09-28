@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.EnergyBounds
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -24,8 +15,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 open LeviCivitaData.Dirichlet
 
 variable {n : ℕ}
-
-
 
 theorem exists_coordinate_cutoffs_energy {R : ℝ} (hR : 0 < R) :
     ∃ q : Fin n → EuclideanSpace ℝ (Fin n) → ℝ, ∃ E : ℝ, 0 ≤ E ∧
@@ -60,8 +49,6 @@ theorem exists_coordinate_cutoffs_energy {R : ℝ} (hR : 0 < R) :
     have hχ : χ x = 1 := χ.one_of_mem_closedBall (Metric.ball_subset_closedBall hx)
     simp only [q, hχ, one_mul]
   · exact Finset.single_le_sum (fun j _ => hEn j) (Finset.mem_univ i)
-
-
 
 theorem exists_uniform_weakHarmonicCoordinate_energy [NeZero n]
     {R a b : ℝ} (hR : 0 < R) (ha : 0 < a) (hb : 0 ≤ b) :

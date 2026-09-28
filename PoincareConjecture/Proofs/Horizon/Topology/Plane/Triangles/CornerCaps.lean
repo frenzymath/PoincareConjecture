@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.ImplicitFunction.Quadrants
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CurvedCap
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric Filter
@@ -42,10 +32,6 @@ private theorem coordinate_derivative_equiv
     (hdH'.comp (H 0) hdI).unique ((hasFDerivAt_id (H 0)).congr_of_eventuallyEq
       (H.eventually_right_inverse (H.map_source h0)))
   exact ⟨ContinuousLinearEquiv.equivOfInverse' A B hAB hBA, hdH, hdI⟩
-
-
-
-
 
 theorem exists_smooth_coordinate_corner_caps
     (H : OpenPartialHomeomorph (ℝ × ℝ) (EuclideanSpace ℝ (Fin 2)))

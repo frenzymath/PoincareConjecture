@@ -1,18 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +11,6 @@ namespace PoincareConjecture.M32
 
 variable {F : GeneralizedRicciFlowData.{u}}
   {C C' : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
-
-
-
 
 noncomputable def rebasePartialCylinderSource
     (d : GeneralizedFlowCylinder F C a q J U)
@@ -62,8 +46,6 @@ noncomputable def rebasePartialCylinderSource
     obtain ⟨x, hx, rfl⟩ := hy
     dsimp only [Function.comp_apply]
     rw [d.left_inverse s hs (hmaps hx), e.left_inv hx]
-
-
 
 theorem rebasePartialCylinderSource_pullbackInner
     (d : GeneralizedFlowCylinder F C a q J U)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerSmoothG
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryMeasure
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerTraceBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -105,10 +95,6 @@ private theorem m65Smooth_boundary_cauchy
   have h0 := (sq_lt_sq₀ dist_nonneg heps3.le).mpr (hN0 n hn0 m hm0)
   have h1 := (sq_lt_sq₀ dist_nonneg heps3.le).mpr (hN1 n hn1 m hm1)
   nlinarith [hbound n m, dist_nonneg (x := C n) (y := C m)]
-
-
-
-
 
 theorem m65WeakTrace_exists_smooth_boundary_graph
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

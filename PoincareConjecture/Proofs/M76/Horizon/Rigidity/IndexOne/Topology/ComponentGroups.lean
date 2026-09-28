@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.Injection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace FundamentalGroup
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {S F : Set X}
-
-
 
 theorem inclusion_surjective_of_whole_component (hSF : S ⊆ F)
     (hcomponent : ∀ x ∈ S, connectedComponentIn F x = S) (x : S) :
@@ -42,15 +31,11 @@ theorem inclusion_surjective_of_whole_component (hSF : S ⊆ F)
     Path.Homotopic.Quotient.mk p
   congr 1
 
-
-
 theorem inclusion_bijective_of_whole_component (hSF : S ⊆ F)
     (hcomponent : ∀ x ∈ S, connectedComponentIn F x = S) (x : S) :
     Function.Bijective (map (ContinuousMap.inclusion hSF) x) :=
   ⟨inclusion_injective_of_whole_component hSF hcomponent x,
     inclusion_surjective_of_whole_component hSF hcomponent x⟩
-
-
 
 theorem map_surjective_of_factor_through_whole_component (hSF : S ⊆ F)
     (hcomponent : ∀ x ∈ S, connectedComponentIn F x = S)
@@ -64,8 +49,6 @@ theorem map_surjective_of_factor_through_whole_component (hSF : S ⊆ F)
   refine ⟨a, inclusion_injective_of_whole_component hSF hcomponent (fS c) ?_⟩
   rw [map_comp, MonoidHom.comp_apply] at ha
   exact ha
-
-
 
 theorem map_bijective_of_factor_through_whole_component (hSF : S ⊆ F)
     (hcomponent : ∀ x ∈ S, connectedComponentIn F x = S)

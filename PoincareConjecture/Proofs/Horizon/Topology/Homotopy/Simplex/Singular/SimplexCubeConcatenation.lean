@@ -1,17 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.FoldCubeCoordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace Poincare.Topology
-
 
 theorem stdSimplex_central_face_homotopicRel_transAt {X : Type u} [TopologicalSpace X]
     (n : Nat)

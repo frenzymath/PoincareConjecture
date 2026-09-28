@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.Evolution
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,17 +17,12 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, TopologicalSpace (Mfamily k)] [∀ k, ChartedSpace StandardCapSpace (Mfamily k)]
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)] (A : MetricFlowApproximation ginit Mfamily)
 
-
-
 theorem contDiffOn_coefficients_slice (k : ℕ) (t : ℝ) :
     ContDiffOn ℝ ∞ (A.coefficients k t) (A.source k) := by
   intro x hx
   exact (((A.flow k).metric t).contDiffAt_pullbackCoefficients
     ((A.chart_smooth k).contMDiffAt
       ((A.source_isOpen k).mem_nhds hx))).contDiffWithinAt
-
-
-
 
 theorem exists_metric_twoJet_realization (k : ℕ) {t : ℝ} (ht : t ∈ Icc 0 A.time)
     {x : StandardCapSpace} (hx : x ∈ A.source k) :

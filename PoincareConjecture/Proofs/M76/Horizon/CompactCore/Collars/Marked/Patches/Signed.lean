@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Patches.
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.Patches.Orientation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Patches.SignedPatches
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

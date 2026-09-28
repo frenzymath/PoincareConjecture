@@ -1,13 +1,5 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Topology.IsEmbedding
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [Zero E]
-
-
-
 
 theorem exists_inverse_on_image {f : E → X} {S : Set E}
     (hf : IsEmbedding (fun z : S => f z)) :

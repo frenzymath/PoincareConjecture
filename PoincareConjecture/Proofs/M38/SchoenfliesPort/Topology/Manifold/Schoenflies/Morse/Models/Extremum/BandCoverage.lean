@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.DiskSublevels
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.ComponentBand
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,8 +28,6 @@ local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 
 private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
   prodChartedSpace E1 S1 Real Real
-
-
 
 theorem isConnected_regular_band_of_connected_bottom
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -82,10 +72,6 @@ theorem isConnected_regular_band_of_connected_bottom
       rfl
   rw [← himage]
   exact hBconn.image Φ (hΦ.continuousOn.mono hBsub)
-
-
-
-
 
 theorem exists_morse_disk_and_annulus_cover
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

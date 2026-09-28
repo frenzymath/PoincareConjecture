@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.VertexContributions
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Count
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -86,8 +79,6 @@ variable {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
 
 include hF hFi hsource hcarrier hboundary hinj hinter hfront hcover
 
-
-
 theorem sum_coordinateCover_turningIntegral_eq_zero
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
     (Q : ∀ i, RiemannianMetric.AlignedChartFrame g (coordinateTriangleChart (F i) (b i))) :
@@ -125,9 +116,6 @@ theorem sum_coordinateCover_turningIntegral_eq_zero
     Equiv.sum_comp (Equiv.addRight (1 : Fin 3))
       (fun k => coordinateTriangleTurningIntegral D (F i) (b i) (Q i) k (k + 1))
   simpa only [hreindex] using h
-
-
-
 
 theorem integral_scalarCurvature_eq_coordinateVertex_sum [CompactSpace S]
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g) :
@@ -170,8 +158,6 @@ theorem integral_scalarCurvature_eq_coordinateVertex_sum [CompactSpace S]
   rw [sum_coordinateVertexAngleContribution, Nat.card_eq_fintype_card]
   linarith
 
-
-
 theorem integral_scalarCurvature_eq_euler_add_vertex_excess [CompactSpace S]
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g) :
     letI := Fintype.ofFinite (Euler.CoordinateVertex F b)
@@ -189,9 +175,6 @@ theorem integral_scalarCurvature_eq_euler_add_vertex_excess [CompactSpace S]
   rw [hi, Finset.sum_sub_distrib]
   simp only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, ← Nat.card_eq_fintype_card]
   nlinarith [congrArg (fun x : ℝ => Real.pi * x) hc]
-
-
-
 
 theorem integral_scalarCurvature_le_eight_pi_add_vertex_excess
     [CompactSpace S] [ConnectedSpace S]

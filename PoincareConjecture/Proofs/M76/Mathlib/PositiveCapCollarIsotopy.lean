@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PrescribedCapCollarIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveDiskCapHeight
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveCapLevelImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_positive_cap_collar_isotopy
     {B T d b U : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

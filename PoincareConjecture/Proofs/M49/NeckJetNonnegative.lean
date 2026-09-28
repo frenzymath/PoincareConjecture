@@ -1,22 +1,11 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 import PoincareConjecture.Proofs.M49.Mathlib.TensorContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators
 
 namespace PoincareConjecture.M49
-
-
 
 theorem roundCylinderTensorNormSquared_nonneg (u : ℝ)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
@@ -25,8 +14,6 @@ theorem roundCylinderTensorNormSquared_nonneg (u : ℝ)
     0 ≤ roundCylinderTensorNormSquared u c p T := by
   simpa only [roundCylinderTensorNormSquared] using!
     Matrix.tensor_contraction_nonneg hG T
-
-
 
 theorem roundCylinder_zeroth_le_jetErrorSquared (u : ℝ)
     (B : RoundCylinderTwoTensor) (k : ℕ) (z : RoundCylinderSpace)

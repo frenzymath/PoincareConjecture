@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.Volume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Noncollapse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem noncompactSpace_of_ball_volume_lower_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -41,8 +31,6 @@ theorem noncompactSpace_of_ball_volume_lower_bound
     ((hvolume r hr).trans (measure_mono (subset_univ _)))
   rw [ENNReal.toReal_ofReal (mul_nonneg hκ.le (pow_nonneg hr.le n))] at hsmall
   exact (not_le_of_gt hlarge) hsmall
-
-
 
 theorem noncompact_parallelGradient_factor_of_asymptoticVolumeRatio
     {n : ℕ} (hn : 0 < n) {M : Type*}

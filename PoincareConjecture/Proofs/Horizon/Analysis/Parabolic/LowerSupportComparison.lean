@@ -4,18 +4,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FunProp
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -32,9 +20,6 @@ private lemma nonneg_deriv_of_local_max_on_past {f : ℝ → ℝ} {d a t : ℝ}
   have h := hmax.hasFDerivWithinAt_nonpos hd.hasDerivWithinAt.hasFDerivWithinAt hcone
   change (a - t) * d ≤ 0 at h
   nlinarith
-
-
-
 
 theorem le_exp_of_lower_support_deriv_le
     {A : Type*} [TopologicalSpace A] [CompactSpace A]

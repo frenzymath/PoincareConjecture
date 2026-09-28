@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M51.EventTransportMetricPullback
 import PoincareConjecture.Proofs.M51.LimitPullback
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +21,6 @@ local instance : NormedAddCommGroup (V3 →L[ℝ] ℝ) :=
 local instance : NormedSpace ℝ (V3 →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 local instance : NormedAddCommGroup (Bil3) := ContinuousLinearMap.toNormedAddCommGroup
 local instance : NormedSpace ℝ (Bil3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem metricLimit_pullback_scalar_seq
     {A B : GeneralizedSliceCarrier.{u}}
@@ -83,8 +70,6 @@ private theorem uniform_left_norm_sub
   have ht' : t ∈ Ioo s T := ⟨by linarith, hT⟩
   simpa only [dist_eq_norm, norm_sub_rev] using hsbound ht' x hx
 
-
-
 theorem surgeryMetricLimitOn_pullback_source
     {A B C : GeneralizedSliceCarrier.{u}}
     {g : ℝ → RiemannianMetric 3 A.carrier}
@@ -124,8 +109,6 @@ theorem surgeryMetricLimitOn_pullback_source
       exact (M51.singularMetricCoefficient_pullback (g (t i)) e q a b hy.1).symm
     exact eqOn_iteratedFDeriv_of_isOpen hW heq m (hKW hx)
   exact uniform_left_norm_sub hconv heta
-
-
 
 theorem MetricLimitTransportData.of_source
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}

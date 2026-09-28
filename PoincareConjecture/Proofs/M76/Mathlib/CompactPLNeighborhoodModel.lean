@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreGraph
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLImageNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,12 +10,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_compact_PL_neighborhood_model
     (e : ι → OpenPartialHomeomorph M E)

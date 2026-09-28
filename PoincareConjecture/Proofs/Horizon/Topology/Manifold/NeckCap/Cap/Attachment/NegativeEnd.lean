@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
 
 theorem exists_disjoint_closed_core_of_negative_end_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -62,8 +49,6 @@ theorem exists_disjoint_closed_core_of_negative_end_threshold :
   have hsub := Poincare.Topology.preconnected_subset_interior_of_disjoint_frontier
     hU havoid ⟨x, hxU, hx⟩
   exact disjoint_left.mpr fun y hyU hycore => interior_subset (hsub hyU) (Or.inl hycore)
-
-
 
 theorem exists_chain_later_disjoint_closed_core_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

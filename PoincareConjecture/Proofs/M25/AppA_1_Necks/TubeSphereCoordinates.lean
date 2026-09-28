@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SliceProjectionDifferential
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.CollarAbsorption
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PoincareConjecture.M25.Topology3D
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_positive_quarter_sphere_coordinate_adjustment :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

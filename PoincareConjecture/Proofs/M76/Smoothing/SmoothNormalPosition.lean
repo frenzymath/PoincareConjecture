@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteSmoothLeafField
 import PoincareConjecture.Proofs.M76.Smoothing.PositiveFacePlanes
 import PoincareConjecture.Proofs.M76.Mathlib.BrouwerStarProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_smooth_transverse_leafField (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) (hfinite : K.faces.Finite)
@@ -43,9 +30,6 @@ theorem exists_smooth_transverse_leafField (K : SimplicialComplex ℝ E)
   exact K.exists_smoothLeafField_near_space hfinite 3 hpure hvertices
     (fun _ hs hpos => contractible_positiveFaceStarPlanes K hK hfinite hbound
       hedges htriangles hs hpos)
-
-
-
 
 theorem exists_smooth_transverse_leafField_of_brouwerStars (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) (hfinite : K.faces.Finite)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 namespace LeviCivitaData
-
 
 theorem ricci_eq_half_scalarCurvature_mul_inner {g : RiemannianMetric 2 M}
     (D : LeviCivitaData g) (x : M) (u v : TangentSpace (𝓡 2) x) :
@@ -50,7 +41,6 @@ namespace GradientShrinkingSolitonData
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem hessian_potential_eq_scalar (S : GradientShrinkingSolitonData 2 M)
     (x : M) (u v : TangentSpace (𝓡 2) x) :
     S.connection.hessian S.potential x u v =
@@ -58,7 +48,6 @@ theorem hessian_potential_eq_scalar (S : GradientShrinkingSolitonData 2 M)
   have h := S.soliton_equation x u v
   rw [S.connection.ricci_eq_half_scalarCurvature_mul_inner] at h
   linarith
-
 
 theorem scalarCurvature_add_laplacian_potential (S : GradientShrinkingSolitonData 2 M)
     (x : M) : S.connection.scalarCurvature x + S.connection.laplacian S.potential x = 1 := by

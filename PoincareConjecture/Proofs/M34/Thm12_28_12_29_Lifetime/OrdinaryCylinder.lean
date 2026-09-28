@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 noncomputable def ordinaryChapter11Cylinder
     (p : (ordinaryChapter11Flow R).point) (scale : ℝ) (hscale : 0 < scale)
@@ -82,8 +70,6 @@ noncomputable def ordinaryChapter11Cylinder
     refine ⟨⟨()⟩, phi0.symm x, 1, zero_lt_one, ?_⟩
     intro s' hs' _
     exact ⟨hK s' hs', rfl⟩
-
-
 
 theorem ordinaryChapter11Cylinder_zero_identity
     (p : (ordinaryChapter11Flow R).point) (scale : ℝ) (hscale : 0 < scale)

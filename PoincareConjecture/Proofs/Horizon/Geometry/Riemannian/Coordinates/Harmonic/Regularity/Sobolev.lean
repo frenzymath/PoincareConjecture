@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Caccioppoli
 import Mathlib.Analysis.FunctionalSpaces.SobolevInequality
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +11,6 @@ open scoped ContDiff ENNReal NNReal Manifold
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem exists_euclidean_ball_sobolev (hn : 2 ≤ n) (R : ℝ) :
     ∃ q : ℝ≥0, 2 < q ∧ ∃ C : ℝ≥0,
@@ -80,8 +70,6 @@ theorem exists_euclidean_ball_sobolev (hn : 2 ≤ n) (R : ℝ) :
     _ ≤ G * (eLpNorm (fderiv ℝ f) 2 volume * V) := by gcongr
     _ = _ := by rw [ENNReal.coe_mul]; ac_rfl
 
-
-
 theorem exists_uniform_coordinate_sobolev (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :
     ∃ q : ℝ≥0, 2 < q ∧ ∃ C : ℝ, 0 ≤ C ∧
@@ -112,8 +100,6 @@ theorem exists_uniform_coordinate_sobolev (hn : 2 ≤ n)
       mul_le_mul_of_nonneg_left
         (integral_fderiv_sq_le_of_ellipticity D ha hb hell hf hfc hfs) (sq_nonneg _)
     _ = _ := by ring
-
-
 
 theorem exists_uniform_cutoff_sobolev (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :

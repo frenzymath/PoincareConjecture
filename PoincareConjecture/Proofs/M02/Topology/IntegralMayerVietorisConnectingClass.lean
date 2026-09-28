@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyMV
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexConnecting
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskIntervalHalfProduct
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSignedDiskCut
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "I-" => Icc (-1 : ℝ) 0
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_signed_interval_product {N Q B : Set E} (a : Bool → E)
     (hN : IsFinitePLBallPair (ℝ × ℝ) N Q)

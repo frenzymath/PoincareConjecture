@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimit
 import Mathlib.Topology.Maps.Basic
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem SaddleLowerLevelData.exists_source_level_band
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -128,9 +115,6 @@ theorem SaddleLowerLevelData.exists_source_level_band
   · intro hq
     obtain ⟨i, theta, rfl⟩ := mem_iUnion.mp hq
     exact W.leg_height i (theta, z) (hsourceBand i ⟨mem_univ _, hz⟩)
-
-
-
 
 theorem SaddleLowerLevelData.exists_physical_level_band
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

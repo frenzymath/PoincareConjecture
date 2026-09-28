@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.Model
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -96,8 +90,6 @@ theorem exists_eventual_cylinder_parametrized_jet_bound
         ‖iteratedFDeriv ℝ m A₀ x‖ := norm_le_norm_sub_add _ _
     _ ≤ 1 + rmin⁻¹ * Z := add_le_add herror.le hlim
     _ = _ := by ring
-
-
 
 theorem exists_eventual_cylinder_parametrized_jet_bounds
     {K : Set RoundCylinderCoordinates} (hK : IsCompact K)
@@ -190,9 +182,6 @@ theorem eventually_cylinder_parametrized_center_ellipticity
   have hθhi := mul_le_mul_of_nonneg_right (min_le_right (rmax⁻¹ / 2) 1) (sq_nonneg ‖v‖)
   change (rmax⁻¹ / 2) * ‖v‖ ^ 2 ≤ A v v ∧ A v v ≤ _
   constructor <;> dsimp only [θ] at he <;> nlinarith [he.1, he.2]
-
-
-
 
 theorem eventually_cylinder_parametrized_model_error_jets
     {a b : ℝ} {S : PointedFlowSequence 3 a b}

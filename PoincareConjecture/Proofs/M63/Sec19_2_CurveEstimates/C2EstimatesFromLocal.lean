@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2IntegratedEstimates
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [SecondCountableTopology M] {a b T : ℝ}
-
-
-
 
 theorem c2_estimates_of_local (hM62 : M62CurveEvolutionTheory.{u})
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

@@ -2,20 +2,9 @@ import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem radial_open_region_eq_ball {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [Nontrivial E] {U : Set E}

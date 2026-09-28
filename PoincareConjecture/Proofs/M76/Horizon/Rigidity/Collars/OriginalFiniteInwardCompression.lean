@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalFiniteCollarModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -30,8 +21,6 @@ theorem collarHomeomorph_isFinitePL (M : OriginalFiniteCollarModel e R) :
   exact ⟨fun x => M.collar (x, 0),
     M.collar_pl.comp hz (fun _ hx => ⟨hx, le_rfl, zero_le_one⟩),
     fun x => (M.collar_zero x).symm⟩
-
-
 
 theorem exists_inward_compression (M : OriginalFiniteCollarModel e R) :
     ∃ (D : Set (M.vertices → ℝ × V3)) (H : M.complex.space ≃ₜ D),

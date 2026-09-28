@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialBallDiameter
 import PoincareConjecture.Proofs.M10.Calibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ variable (g : RiemannianMetric 3 V) (D : LeviCivitaData g)
   (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
 
 include D hsec hrotation hcomplete
-
-
 
 theorem radial_ball_volume_le (P : M35StandardCapPredecessors) (R : ℝ) :
     calibratedMetricVolume g (g.ball 0 R) ≤ volume (Metric.ball (0 : V) R) := by

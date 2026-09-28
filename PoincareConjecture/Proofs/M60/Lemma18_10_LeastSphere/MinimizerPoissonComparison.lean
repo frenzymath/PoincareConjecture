@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.En
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Euclidean
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPoissonCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "gEucl" => RiemannianMetric.euclideanMetric 2
 
-
-
-
 theorem suPlane_test_poincare (D : LeviCivitaData gEucl) {R : ℝ} (hR : 0 < R) :
     HasTestPoincare D (Metric.ball (0 : Plane) R) (4 * R ^ 2) := by
   have h := HarmonicCoordinates.metric_poincare_of_ellipticity D hR
@@ -41,9 +28,6 @@ theorem suPlane_test_poincare (D : LeviCivitaData gEucl) {R : ℝ} (hR : 0 < R) 
   convert! h using 1
   norm_num
   ring
-
-
-
 
 theorem suPlane_poisson_weak (D : LeviCivitaData gEucl) {R : ℝ} (hR : 0 < R)
     (F : Lp ℝ 2 (gEucl).volumeMeasure) :

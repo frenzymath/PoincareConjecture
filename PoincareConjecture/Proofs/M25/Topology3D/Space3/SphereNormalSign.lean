@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereFixedDerivative
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem fixedHyperplane_normal_ne_zero (A : E →L[ℝ] E) (x : E) (hx : ‖x‖ = 1)
     (hA : ∀ v, ⟪x, v⟫_ℝ = 0 → A v = v) (hi : Function.Injective A) :
     ⟪x, A x⟫_ℝ ≠ 0 := by
@@ -29,8 +17,6 @@ theorem fixedHyperplane_normal_ne_zero (A : E →L[ℝ] E) (x : E) (hx : ‖x‖
   have hAx : A x = x := hi (hA (A x) hz)
   rw [hAx, real_inner_self_eq_norm_sq, hx, one_pow] at hz
   exact one_ne_zero hz
-
-
 
 theorem fderiv_normal_pos_of_local_exterior (f : E → E) {x : E} (hx : ‖x‖ = 1)
     (hf : DifferentiableAt ℝ f x)

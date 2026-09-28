@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.InvertibleBilinearGram
 import PoincareConjecture.Proofs.M34.Standard.CurvatureJetRealization
 import PoincareConjecture.Proofs.M34.Standard.TensorCoordinateNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def curvatureJetNorm (n m : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + m)) : ℝ :=
   tensorNormFromComponents
@@ -34,8 +22,6 @@ noncomputable def curvatureJetNorm (n m : ℕ)
     (curvatureJetComponents n m J)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem continuousOn_curvatureJetNorm (n m : ℕ) :
     ContinuousOn (curvatureJetNorm n m) (curvatureJetDomain n m) := by
@@ -54,8 +40,6 @@ theorem continuousOn_curvatureJetNorm (n m : ℕ) :
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem curvatureJetNorm_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
     (m : ℕ) (x : EuclideanSpace ℝ (Fin n)) :
@@ -69,8 +53,6 @@ theorem curvatureJetNorm_spatialJet {n : ℕ}
     (EuclideanSpace.basisFun (Fin n) ℝ).toBasis
     ((D.iteratedCovariantTensorDerivative_isSmooth D.riemannEvaluation_isSmooth_model m).1 x)
 
-
-
 theorem curvatureJetNorm_bound (n m : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) (2 + m),
       ‖J‖ ≤ H →
@@ -82,9 +64,6 @@ theorem curvatureJetNorm_bound (n m : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :
     ((continuousOn_curvatureJetNorm n m).mono hKU)
   refine ⟨max C 0, le_max_right _ _, fun J hJ hell => ?_⟩
   exact (le_abs_self _).trans ((hC J (hbox J hJ hell)).trans (le_max_left _ _))
-
-
-
 
 theorem curvatureDerivativeNorm_bound_of_coefficient_jets
     (n m : ℕ) {a : ℝ} (ha : 0 < a) (H : ℝ) :

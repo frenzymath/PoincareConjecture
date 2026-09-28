@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateRicci
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
 open Filter
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem equation_of_coordinate_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

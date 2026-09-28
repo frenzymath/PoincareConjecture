@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeGreenDisk
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem coneCartesianField_clm {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -31,9 +18,6 @@ theorem coneCartesianField_clm {E G : Type*}
       L (coneCartesianField g r v0 v d s θ i) := by
   have h := L.hasFDerivAt.comp (coneCoordinates r v0 v s θ) hg.hasFDerivAt
   simp only [coneCartesianField, h.fderiv, ContinuousLinearMap.comp_apply, map_smul, map_add]
-
-
-
 
 theorem coneDisk_green_clm {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (L : E →L[ℝ] ℝ) {g : EuclideanSpace ℝ (Fin 3) → E}

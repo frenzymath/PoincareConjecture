@@ -4,29 +4,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcNeighborhoodBoundaryContact
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcDualBoundaryAvoidance
 import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem isFinitePLBallPair_arc_dual_chain
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

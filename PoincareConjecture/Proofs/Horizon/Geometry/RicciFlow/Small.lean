@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +27,6 @@ local instance smallIsManifold : IsManifold (𝓡 n) ∞ (Shrink.{0} M) :=
 
 local instance smallT3Space : T3Space (Shrink.{0} M) :=
   (Poincare.Topology.SecondCountable.homeomorphShrink M).t3Space
-
 
 noncomputable def shrink (F : RicciFlow n M J) : RicciFlow n (Shrink.{0} M) J :=
   F.pullbackDiffeomorph (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm
@@ -100,8 +91,6 @@ theorem shrink_scalarCurvature_mvfderiv (hC : RicciFlowCurvatureTheory.{u})
         (mfderiv (𝓡 n) (𝓡 n)
           (Poincare.Manifold.shrinkDiffeomorph (𝓡 n) M).symm x w) :=
   F.pullbackDiffeomorph_scalarCurvature_mvfderiv hC _ t x w
-
-
 
 theorem finite_harnack_shrink (hC : RicciFlowCurvatureTheory.{u})
     (F : RicciFlow n M J) (t T₀ dR : ℝ) (x : Shrink.{0} M)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.NonlinearJets
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.LpNormBounds
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DirichletForm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,7 +54,6 @@ private theorem schwartz_partial_sub {F : Type*} [NormedAddCommGroup F] [NormedS
   change ((LineDeriv.lineDerivOpCLM ℝ 𝓢(V, F) v) (X - Y)) x = _
   rw [map_sub, sub_apply]
   rfl
-
 
 theorem nonlinearTestSchwartz_partial_norm_le
     (T : V × Z → ℝ) (hT : ContDiff ℝ ∞ T) (hT0 : ∀ x, T (x, 0) = 0)

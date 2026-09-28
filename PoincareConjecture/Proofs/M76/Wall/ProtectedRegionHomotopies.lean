@@ -1,22 +1,10 @@
 import Mathlib.Topology.Homotopy.Path
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_frontier_loop_homotopy_in_protected_region
     {X : Type*} [TopologicalSpace X] {R C F : Set X}

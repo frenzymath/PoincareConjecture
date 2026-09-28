@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RefinedCapBandContact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -58,11 +44,6 @@ private theorem edge_parameter_continuousOn
   apply F.continuousOn.comp (by unfold affineChartSegment; fun_prop)
   exact fun t ht => edge_parameter_source F b hsource i ht
 
-
-
-
-
-
 theorem m64Intrinsic_common_coordinate_edge_inter_preconnected
     (F : OpenPartialHomeomorph Plane AnnulusCoordinates)
     (b : AffineBasis (Fin 3) ℝ Plane)
@@ -89,11 +70,6 @@ theorem m64Intrinsic_common_coordinate_edge_inter_preconnected
       exact isPreconnected_empty
   · rw [not_nonempty_iff_eq_empty.mp hA, empty_inter]
     exact isPreconnected_empty
-
-
-
-
-
 
 theorem m64Intrinsic_child_parent_subsegment_preconnected
     (F : OpenPartialHomeomorph Plane AnnulusCoordinates)

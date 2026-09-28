@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Polyhe
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped unitInterval

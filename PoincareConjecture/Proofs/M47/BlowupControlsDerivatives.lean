@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 import PoincareConjecture.Proofs.M47.PositiveHistoryAnalytics
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem regular_history_pointwise_analytic_estimate
     (h04 : RicciFlowCurvatureTheory.{u})
@@ -41,8 +30,6 @@ theorem regular_history_pointwise_analytic_estimate
     (h04.tensor_calculus 3 (F.slice t).carrier (F.metric t) (F.connection t)) hf
     (fun y v w => (H.history.metric_pullback t ht y v w).symm) h
 
-
-
 noncomputable def generalized_box_slice_chart (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) (t : ℝ) (ht : t ∈ (G.box b).interval) :
     PartialDiffeomorph (𝓡 3) (𝓡 3)
@@ -60,8 +47,6 @@ noncomputable def generalized_box_slice_chart (G : GeneralizedRicciFlowData.{u})
   contMDiffOn_toFun := ((G.box b).forward_smooth t ht).contMDiffOn
   contMDiffOn_invFun := (G.box b).inverse_smooth t ht
 
-
-
 theorem generalized_box_scalar_eq (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) (t : ℝ) (ht : t ∈ (G.box b).interval)
     (x : (G.box b).carrier.carrier) :
@@ -70,8 +55,6 @@ theorem generalized_box_scalar_eq (G : GeneralizedRicciFlowData.{u})
   exact ((G.box b).flow.connection t).scalarCurvature_eq_of_local_isometry
     (G.connection t) isOpen_univ ((G.box b).forward_smooth t ht).contMDiffOn
     (fun y _hy v w => ((G.box b).metric_pullback t ht y v w).symm) (mem_univ x)
-
-
 
 theorem generalized_box_pointwise_analytic_estimate
     (h04 : RicciFlowCurvatureTheory.{u}) (G : GeneralizedRicciFlowData.{u})
@@ -90,8 +73,6 @@ theorem generalized_box_pointwise_analytic_estimate
     (h04.tensor_calculus 3 (G.slice t).carrier (G.metric t) (G.connection t)) hf
     (fun y v w => ((G.box b).metric_pullback t ht y v w).symm) h
 
-
-
 theorem generalized_box_scalar_time_bound
     (h04 : RicciFlowCurvatureTheory.{u}) (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) (t : ℝ) (ht : t ∈ (G.box b).interval)
@@ -105,8 +86,6 @@ theorem generalized_box_scalar_time_bound
   have hbox := generalized_box_pointwise_analytic_estimate h04 G b t ht h
   exact ⟨_, h04.scalar_evolution 3 (G.box b).carrier.carrier (G.box b).interval
     (G.box b).flow t ht x, hbox.2.2⟩
-
-
 
 theorem generalized_scalar_directional_bound (G : GeneralizedRicciFlowData.{u})
     (t : ℝ) {x : (G.slice t).carrier} {A : ℝ}

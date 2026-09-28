@@ -2,26 +2,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff Interval
 
 namespace Real
-
-
-
-
 
 theorem exists_smooth_clipped_identity {L delta : ℝ}
     (hL : 0 < L) (hdelta : 0 < delta) :

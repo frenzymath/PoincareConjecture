@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConcreteChainEndpoints
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedPatchContacts
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,10 +10,6 @@ open scoped Topology
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_chain_nested_patch_contacts
     {gamma : ℝ → AnnulusCoordinates} {a b : ℝ} {U C Z Z' : Set AnnulusCoordinates}

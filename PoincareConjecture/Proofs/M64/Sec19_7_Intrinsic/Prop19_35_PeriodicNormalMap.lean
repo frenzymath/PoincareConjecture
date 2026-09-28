@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactFirstContact
 import Mathlib.Topology.Algebra.Group.Quotient
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +9,6 @@ open Set Filter Topology
 open scoped ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_periodic_normal_map_on_cylinder
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u) {P : ℝ}

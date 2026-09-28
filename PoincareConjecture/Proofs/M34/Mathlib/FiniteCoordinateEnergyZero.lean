@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M03.LocalCoordinateEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Topology BigOperators
 
 namespace PoincareConjecture.M34
-
-
 
 theorem finite_coordinate_energy_eq_zero_iff
     {n : ℕ} {ι : Type*} [Fintype ι]

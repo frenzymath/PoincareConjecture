@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressedFront
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.CompressionGenusDecrease
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.RetainedFrontierGenera
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains

@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLRelativeRegularLevels
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem relative_superlevel_frontier_charts
     {M E ι : Type*} [TopologicalSpace M]

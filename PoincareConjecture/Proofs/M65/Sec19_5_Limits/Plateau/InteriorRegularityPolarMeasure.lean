@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,13 +11,8 @@ open scoped Topology ENNReal
 
 namespace PoincareConjecture.M65Interior
 
-
-
 def polarMeasure : Measure (ℝ × ℝ) :=
   (volume.restrict polarCoord.target).withDensity (fun p => ENNReal.ofReal p.1)
-
-
-
 
 theorem polar_measurePreserving :
     MeasurePreserving polarCoord.symm polarMeasure volume := by
@@ -43,9 +28,6 @@ theorem polar_measurePreserving :
   rw [hweight, polarCoord.symm_image_target_eq_source,
     Measure.restrict_congr_set polarCoord_source_ae_eq_univ, Measure.restrict_univ] at hmap
   exact hmap
-
-
-
 
 theorem polar_strip_measure_le {ε R : ℝ} (hε : 0 < ε) :
     (volume.restrict (Icc ε R)).prod (volume.restrict (Icc (-Real.pi) Real.pi)) ≤
@@ -75,12 +57,8 @@ theorem polar_strip_measure_le {ε R : ℝ} (hε : 0 < ε) :
         inter_eq_left.mpr hKU]
     _ ≤ polarMeasure := Measure.restrict_le_self
 
-
-
 def polarPlane (x : LoopPlane) (p : ℝ × ℝ) : LoopPlane :=
   x + p.1 • Proofs.M58.angularPoint p.2
-
-
 
 theorem polarPlane_measurePreserving (x : LoopPlane) :
     MeasurePreserving (polarPlane x) polarMeasure volume := by
@@ -89,9 +67,6 @@ theorem polarPlane_measurePreserving (x : LoopPlane) :
   have h := (measurePreserving_add_left volume x).comp
     (Proofs.M58.measurePreserving_loopPlaneEquivProd.symm.comp polar_measurePreserving)
   simpa only [Function.comp_def, Proofs.M58.loopPlaneEquivProd_symm_polar] using h
-
-
-
 
 theorem polarPlane_map_strip_le (x : LoopPlane) {ε R : ℝ} (hε : 0 < ε) :
     Measure.map (polarPlane x)

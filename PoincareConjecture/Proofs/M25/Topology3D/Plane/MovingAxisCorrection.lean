@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcAffineTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RoundedOpenLineTube
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PositiveOpenLineTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_axis_preserving_correction_of_slide
     (F : ℝ → (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

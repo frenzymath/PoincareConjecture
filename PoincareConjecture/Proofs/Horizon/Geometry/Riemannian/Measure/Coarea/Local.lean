@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.LevelVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Integrability
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory TopologicalSpace
@@ -58,7 +52,6 @@ theorem integrableOn_levelCoordinateDensity :
 
 include heU hef he hei hh hc hs in
 
-
 theorem integrable_regularLevelIntegral_of_chart_support :
     Integrable (fun c : ℝ => ∫ z, h (openLevelIncl f U c z)
       ∂g.regularLevelVolume hf U hreg c) := by
@@ -70,7 +63,6 @@ theorem integrable_regularLevelIntegral_of_chart_support :
     hh.continuousOn ((subset_tsupport h).trans hs)).symm
 
 include heU hef he hei hh hc hs in
-
 
 theorem integral_coarea_of_chart_support :
     (∫ x, h x * g.tangentNorm x (g.gradient f x) ∂g.volumeMeasure) =

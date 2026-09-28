@@ -1,15 +1,6 @@
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Logic.Equiv.Fin.Rotate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,15 +9,11 @@ namespace Fin
 
 variable {E G : Type*} [AddCommMonoid G] {m n : ℕ}
 
-
-
 def cyclicEdgeSum (w : E → E → G) (v : Fin n → E) : G :=
   ∑ i, w (v i) (v (finRotate n i))
 
 private theorem rotate_castSucc {n : ℕ} (i : Fin n) :
     finRotate (n + 1) i.castSucc = i.succ := finRotate_of_lt i.isLt
-
-
 
 theorem cyclicEdgeSum_snoc (w : E → E → G) (u : Fin (n + 1) → E) (z : E) :
     cyclicEdgeSum w (snoc u z) =
@@ -34,9 +21,6 @@ theorem cyclicEdgeSum_snoc (w : E → E → G) (u : Fin (n + 1) → E) (z : E) :
   unfold cyclicEdgeSum
   rw [sum_univ_castSucc]
   simp only [rotate_castSucc, snoc_castSucc, finRotate_last, snoc_last, snoc_apply_zero]
-
-
-
 
 theorem append_finRotate_castAdd (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (i : Fin (m + 1)) :
@@ -55,9 +39,6 @@ theorem append_finRotate_castAdd (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     change append u v (j.succ.castAdd (n + 1)) =
       snoc (α := fun _ => E) u (v 0) j.succ.castSucc
     rw [append_left, snoc_castSucc]
-
-
-
 
 theorem append_finRotate_natAdd (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (i : Fin (n + 1)) :
@@ -79,9 +60,6 @@ theorem append_finRotate_natAdd (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
       snoc (α := fun _ => E) v (u 0) j.succ.castSucc
     rw [append_right, snoc_castSucc]
 
-
-
-
 theorem cyclicEdgeSum_append (w : E → E → G)
     (u : Fin (m + 1) → E) (v : Fin (n + 1) → E) :
     cyclicEdgeSum w (append u v) =
@@ -90,9 +68,6 @@ theorem cyclicEdgeSum_append (w : E → E → G)
   unfold cyclicEdgeSum
   rw [sum_univ_add]
   simp only [append_left, append_right, append_finRotate_castAdd, append_finRotate_natAdd]
-
-
-
 
 theorem cyclicEdgeSum_append_split (w : E → E → G)
     (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)

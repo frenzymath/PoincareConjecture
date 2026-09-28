@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceSearch
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeDense
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem search_terminal_scalar_of_bounded_distance
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
@@ -57,8 +46,6 @@ theorem search_terminal_scalar_of_bounded_distance
   have h := hestimate z (by simpa only [hscale, hradius] using hz)
   rw [hscale] at h
   exact h
-
-
 
 theorem exists_search_terminal_scalar_bound
     (S : RepairedControlledSchedulesData.{u}) {epsilon C A : ℝ}

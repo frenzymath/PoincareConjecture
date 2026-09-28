@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,10 +22,7 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type w'} [TopologicalSpace M] [ChartedSpace H' M]
   [IsManifold J ∞ M]
 
-
 set_option linter.unusedSectionVars false in
-
-
 
 theorem exists_normalized_graph_strip_chart
     (e : OpenPartialHomeomorph (K × ℝ) M) (f g : K → ℝ)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverProper
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,22 +14,12 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
 def scalarPotentialStrip : Set Cover := {z | z.1 ∈ Ioo (0 : ℝ) 1}
-
-
-
 
 def scalarNormalizedCover (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ)
     (hrange : ∀ x ∈ scalarAnnulus, H x ∈ Ioo (0 : ℝ) 1) :
     scalarCoverStrip → scalarPotentialStrip :=
   fun z => ⟨scalarNormalizedCoverMap H V P z, hrange _ (scalarCoverMap_mem z.property)⟩
-
-
-
-
 
 theorem scalarNormalizedCoverMap_deck {H : Plane → ℝ} {V : Cover → ℝ}
     {P : ℝ} (hP : P ≠ 0)
@@ -50,9 +29,6 @@ theorem scalarNormalizedCoverMap_deck {H : Plane → ℝ} {V : Cover → ℝ}
       scalarNormalizedCoverMap H V P z + (0, 1) := by
   simp only [scalarNormalizedCoverMap, scalarCoverMap_periodic, hdeck z hz,
     Prod.mk_add_mk, add_zero, add_div, div_self hP]
-
-
-
 
 theorem scalarNormalizedCover_isProperMap {H : Plane → ℝ}
     (hHc : Continuous H)
@@ -88,11 +64,6 @@ theorem scalarNormalizedCover_isProperMap {H : Plane → ℝ}
       exact hyEq ▸ hy
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
 
 theorem exists_proper_annular_cover_conjugate :
     ∃ (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ),

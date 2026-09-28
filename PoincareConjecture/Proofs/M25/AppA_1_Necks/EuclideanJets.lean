@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.DomainC
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.EuclideanModel
 import Mathlib.Logic.Equiv.Fin.Rotate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,13 +12,9 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def m25_roundCylinderEuclideanBasis :
     Module.Basis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 3)) :=
   (EuclideanSpace.basisFun (Fin 3) ℝ).toBasis.reindex (finRotate 3).symm
-
-
 
 theorem m25_lineModelEquiv_symm_roundCylinderEuclideanBasis (i : Fin 3) :
     (RiemannianMetric.lineModelEquiv 2).symm (m25_roundCylinderEuclideanBasis i) =
@@ -44,8 +30,6 @@ theorem m25_lineModelEquiv_symm_roundCylinderEuclideanBasis (i : Fin 3) :
   · fin_cases i <;>
       simp [m25_roundCylinderEuclideanBasis, Module.Basis.reindex_apply, finRotate_apply,
         EuclideanSpace.basisFun_apply, roundCylinderCoordinateBasis]
-
-
 
 theorem EpsilonNeck.exists_normalized_pullback_euclidean_scalar_twoJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

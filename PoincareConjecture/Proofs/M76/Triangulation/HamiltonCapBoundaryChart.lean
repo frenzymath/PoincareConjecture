@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonRelativeHalfChart
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedBrownCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,11 +17,6 @@ private def capNegativeInterval (r : ℝ) :
   right_inv x := Subtype.ext (neg_neg (x : ℝ))
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
-
-
-
-
-
 
 theorem exists_marked_cap_boundary_chart
     {K D S : Set X} (hK : IsClosed K) (hD : IsClosed D)

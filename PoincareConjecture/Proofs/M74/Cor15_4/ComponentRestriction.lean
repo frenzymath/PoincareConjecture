@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.ComponentSourceRestriction
 import PoincareConjecture.Proofs.M74.Cor15_4.ComponentTargetRegion
 import PoincareConjecture.Proofs.M74.Cor15_4.RegionTargetRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +13,6 @@ namespace PoincareConjecture.SmoothConnectedSumData
 
 variable {A B C P Q : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C)
   {U : Set A.carrier} {V : Set B.carrier}
-
-
 
 noncomputable def selectedFirstEquivalence
     (EA : SurgeryRegionEquivalence P A univ U) (hU : IsOpen U)
@@ -42,8 +31,6 @@ noncomputable def selectedFirstEquivalence
     right_inverse := by rw [← himage]; exact E.right_inverse
     inverse_smooth := by rw [← himage]; exact E.inverse_smooth }
 
-
-
 noncomputable def selectedSecondEquivalence
     (EB : SurgeryRegionEquivalence Q B univ V) (hV : IsOpen V)
     (hsecond : S.second_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ V) :
@@ -61,21 +48,15 @@ noncomputable def selectedSecondEquivalence
     right_inverse := by rw [← himage]; exact E.right_inverse
     inverse_smooth := by rw [← himage]; exact E.inverse_smooth }
 
-
-
 theorem selectedFirstEquivalence_map
     (EA : SurgeryRegionEquivalence P A univ U) (hU : IsOpen U)
     (hfirst : S.first_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ U) (x : P.carrier) :
     (S.selectedFirstEquivalence EA hU hfirst).map x = S.first_identify.map (EA.map x) := rfl
 
-
-
 theorem selectedSecondEquivalence_map
     (EB : SurgeryRegionEquivalence Q B univ V) (hV : IsOpen V)
     (hsecond : S.second_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ V) (x : Q.carrier) :
     (S.selectedSecondEquivalence EB hV hsecond).map x = S.second_identify.map (EB.map x) := rfl
-
-
 
 def selectedComponentOpens (hU : IsClopen U) (hV : IsClopen V)
     (hfirst : S.first_ball.map '' ball (0 : StandardCapSpace) 2 ⊆ U)
@@ -83,9 +64,6 @@ def selectedComponentOpens (hU : IsClopen U) (hV : IsClopen V)
     TopologicalSpace.Opens C.carrier :=
   ⟨S.selectedComponentRegion U V,
     (S.selectedComponentRegion_isClopen hU hV hfirst hsecond).isOpen⟩
-
-
-
 
 noncomputable def restrictComponents
     (EA : SurgeryRegionEquivalence P A univ U)

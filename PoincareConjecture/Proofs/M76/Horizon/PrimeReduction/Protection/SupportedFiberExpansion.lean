@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 
-
-
-
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Geometry

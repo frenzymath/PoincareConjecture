@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_BufferedEstimates
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CoordinateBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_buffered_coordinate_modulus (P : M44CapPersistencePredecessors.{u})
     (n m : ℕ) {K H r a b Z : ℝ} (hK : 0 < K) (hH : 0 < H) (hr : 0 < r)

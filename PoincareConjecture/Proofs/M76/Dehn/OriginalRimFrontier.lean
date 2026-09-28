@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPLStage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ variable {U E M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem Stage.source_mem_frontier_of_original_rim (st : Stage e S f r C)
     {R : Set M} {N : Set st.Carrier} (hN : IsClosed N)

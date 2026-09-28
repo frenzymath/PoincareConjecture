@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TwoSidedColl
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -49,9 +39,6 @@ private theorem isOpen_collar_subinterval
     exact image_mono (prod_mono subset_rfl hab)
   · rintro _ ⟨z, hz, rfl⟩
     exact ⟨⟨z, ⟨hz.1, hfull hz.2⟩⟩, rfl⟩
-
-
-
 
 theorem exists_sphere_cut_boundary_collars
     {X E ι : Type*} [TopologicalSpace X] [T2Space X]

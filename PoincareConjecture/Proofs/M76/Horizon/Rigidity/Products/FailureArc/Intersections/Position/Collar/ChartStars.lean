@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

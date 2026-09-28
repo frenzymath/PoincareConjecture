@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapScalarBand
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem EpsilonNeck.isPreconnected_carrier (N : EpsilonNeck g) :
     IsPreconnected N.carrier := by
@@ -42,13 +30,9 @@ variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
 namespace ConnectedNeckCapCover
 
-
-
 def canonicalCarrierUnion (H : ConnectedNeckCapCover g) : Set M :=
   {x | (∃ N ∈ H.necks, N.center ∈ H.X ∧ x ∈ N.carrier) ∨
     ∃ K ∈ H.caps, (K.core ∩ H.X).Nonempty ∧ x ∈ K.carrier}
-
-
 
 theorem subset_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
     H.X ⊆ H.canonicalCarrierUnion := by
@@ -57,8 +41,6 @@ theorem subset_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
   · exact Or.inl ⟨N, hN, hcenter ▸ hx, hcenter ▸
       N.central_sphere_subset N.center_on_central_sphere⟩
   · exact Or.inr ⟨K, hK, ⟨x, hcore, hx⟩, K.core_subset_carrier_m28 hcore⟩
-
-
 
 theorem isOpen_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
     IsOpen H.canonicalCarrierUnion := by
@@ -69,8 +51,6 @@ theorem isOpen_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
       (fun y hy => Or.inl ⟨N, hN, hcenter, hy⟩)
   · exact Filter.mem_of_superset (K.carrier_open.mem_nhds hxK)
       (fun y hy => Or.inr ⟨K, hK, hcore, hy⟩)
-
-
 
 theorem isConnected_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
     IsConnected H.canonicalCarrierUnion := by
@@ -96,9 +76,6 @@ theorem isConnected_canonicalCarrierUnion (H : ConnectedNeckCapCover g) :
 end ConnectedNeckCapCover
 
 namespace M28
-
-
-
 
 theorem exists_canonicalCarrierUnion_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

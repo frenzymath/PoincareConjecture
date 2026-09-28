@@ -9,14 +9,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.UniformDerivativeEst
 import PoincareConjecture.Proofs.M58
 import PoincareConjecture.Proofs.M62
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -25,66 +17,8 @@ universe u
 
 namespace PoincareConjecture
 
-
 theorem m63SmallLoopFillingService_from_M58 : M63SmallLoopFillingService.{u} :=
   repairedShortLoopTriviality.short_loop.small_loop_filling
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m63RampEstimates (hM58 : M63SmallLoopFillingService.{u})
     (hM62 : M62CurveEvolutionTheory.{u}) : M63RampEstimatesTheory.{u} := by
@@ -120,7 +54,6 @@ theorem m63RampEstimates (hM58 : M63SmallLoopFillingService.{u})
         (fun circumference hcirc => Classical.choice
           (m63ProductSolutionFamily_nonempty F hcompact h62 G A circumference hcirc))
   exact construction hM58 hM62
-
 
 theorem m63RampEstimates_from_predecessors : M63RampEstimatesTheory.{u} :=
   m63RampEstimates m63SmallLoopFillingService_from_M58

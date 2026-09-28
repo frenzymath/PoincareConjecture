@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableMaps
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +13,8 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
 def terminalSourceCountableCore (rho : ℝ) : Set (terminalSourceCountableDomain rho) :=
   (Subtype.val : terminalSourceCountableDomain rho → E) ⁻¹' closedBall 0 (rho / 4)
-
 
 theorem terminalSourceCountableCore_compact {rho : ℝ} (hrho : 0 < rho) :
     IsCompact (terminalSourceCountableCore rho) := by
@@ -34,8 +23,6 @@ theorem terminalSourceCountableCore_compact {rho : ℝ} (hrho : 0 < rho) :
   have he := (terminalSourceCountableDomain rho).isOpen.isOpenEmbedding_subtypeVal.isEmbedding
   exact he.isInducing.isCompact_preimage' (isCompact_closedBall (0 : E) (rho / 4))
       (fun x hx => ⟨⟨x, hsub hx⟩, rfl⟩)
-
-
 
 theorem terminalSourceCountable_core_covers
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

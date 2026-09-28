@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.AdaptedIndexTrace
 import PoincareConjecture.Proofs.M09.HarnackIntegral
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

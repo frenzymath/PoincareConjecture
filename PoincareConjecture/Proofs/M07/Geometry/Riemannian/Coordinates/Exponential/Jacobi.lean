@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Equation
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.MixedDerivatives
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +13,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem geodesicVariation_jacobi_retained
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -41,7 +32,6 @@ theorem geodesicVariation_jacobi_retained
     (fun x _ => g.inner_isInvertible x) (fun x _ u v => g.symm x u v)
     hS hI h0 Γ (fun _ _ _ _ => mem_univ _)
 
-
 theorem geodesicVariation_jacobi_curvature
     {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     (D : LeviCivitaData g) {S I : Set ℝ}
@@ -59,7 +49,6 @@ theorem geodesicVariation_jacobi_curvature
   intro t ht
   rw [← coordinateCurvature_eq_retained D]
   exact eq_neg_of_add_eq_zero_left (geodesicVariation_jacobi_retained D hS hI h0 Γ t ht)
-
 
 def radialVariation {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {x : E}
     (D : LocalFlowData B U x) (v w : E) : ℝ × ℝ → E :=
@@ -124,8 +113,6 @@ theorem radialVariation_endpoint
     (_hdom : ∀ s ∈ Set.Ioo (-1 : ℝ) 1, v + s • w ∈ D.domain) :
     (fun s => radialVariation D v w (s, 1)) 0 = D.exponential v := by
   simpa [radialVariation] using D.trajectory_endpoint v
-
-
 
 theorem radialVariation_endpoint_deriv
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {x : E}

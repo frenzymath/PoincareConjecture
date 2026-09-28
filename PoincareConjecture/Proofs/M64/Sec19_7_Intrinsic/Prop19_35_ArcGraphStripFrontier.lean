@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphStripFrontier
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_arc_graph_neighborhood_of_interval
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {A B a b : ℝ}
@@ -73,10 +57,6 @@ theorem m64Intrinsic_arc_graph_neighborhood_of_interval
       exact Prod.ext rfl heq.symm
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem m64Intrinsic_exists_arc_graph_strip_frontier_chart
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {A B a b : ℝ}

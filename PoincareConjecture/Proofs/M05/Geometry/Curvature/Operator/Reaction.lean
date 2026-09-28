@@ -1,13 +1,4 @@
-
 import Mathlib
-
-
-
-
-
-
-
-
 
 open Matrix
 open scoped BigOperators ContDiff NNReal
@@ -21,14 +12,11 @@ local instance : NormedSpace ℝ (Matrix (Fin 3) (Fin 3) ℝ) :=
 
 namespace Poincare.Geometry.Curvature.Operator
 
-
 def curvatureOperatorCongr {ι : Type*} [Fintype ι]
     (U A : Matrix ι ι ℝ) : Matrix ι ι ℝ := Uᴴ * A * U
 
-
 def curvatureReaction (A : Matrix (Fin 3) (Fin 3) ℝ) : Matrix (Fin 3) (Fin 3) ℝ :=
   (2 : ℝ) • (A * A + Matrix.adjugate A)
-
 
 theorem adjugate_fin3_eq_trace_polynomial
     {A : Matrix (Fin 3) (Fin 3) ℝ} (hA : A.IsSymm) :
@@ -44,7 +32,6 @@ theorem adjugate_fin3_eq_trace_polynomial
       Fin.sum_univ_succ, h10, h20, h21]
   all_goals ring
 
-
 theorem curvatureReaction_eq_trace_polynomial
     {A : Matrix (Fin 3) (Fin 3) ℝ} (hA : A.IsSymm) :
     curvatureReaction A =
@@ -55,7 +42,6 @@ theorem curvatureReaction_eq_trace_polynomial
   simp only [Matrix.smul_apply, Matrix.sub_apply, Matrix.add_apply, Matrix.one_apply,
     Matrix.mul_apply]
   ring
-
 
 theorem curvatureReaction_diagonal (lam mu nu : ℝ) :
     curvatureReaction (Matrix.diagonal ![lam, mu, nu]) =
@@ -101,7 +87,6 @@ private theorem trace_curvatureOperatorCongr
     (curvatureOperatorCongr (U : Matrix ι ι ℝ) A).trace = A.trace := by
   have hU : (U : Matrix ι ι ℝ) * (U : Matrix ι ι ℝ)ᴴ = 1 := U.property.2
   rw [curvatureOperatorCongr, Matrix.trace_mul_cycle, hU, one_mul]
-
 
 theorem curvatureReaction_congr
     (U : Matrix.unitaryGroup (Fin 3) ℝ)
@@ -165,7 +150,6 @@ private theorem contDiff_reaction_entry (a b : Fin 3) :
     (contDiff_matrix_entry a c).mul (contDiff_matrix_entry c b))).add
   exact contDiff_matrix_det_update a b
 
-
 theorem contDiff_curvatureReaction :
     ContDiff ℝ ∞ (fun A : Matrix (Fin 3) (Fin 3) ℝ => curvatureReaction A) := by
   let f : Matrix (Fin 3) (Fin 3) ℝ → Matrix (Fin 3) (Fin 3) ℝ := curvatureReaction
@@ -189,7 +173,6 @@ theorem contDiff_curvatureReaction :
   change ContDiff ℝ ∞ (fun A => f A)
   rw [heq]
   exact hsum
-
 
 theorem exists_lipschitzOnWith_curvatureReaction
     (K : Set (Matrix (Fin 3) (Fin 3) ℝ)) (hK : IsCompact K)

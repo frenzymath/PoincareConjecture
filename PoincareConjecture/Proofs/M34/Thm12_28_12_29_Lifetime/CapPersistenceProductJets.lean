@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceEuclideanJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,7 +9,6 @@ namespace PoincareConjecture.M34
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
 noncomputable def capPersistenceEuclideanCoordinates : RoundCylinderCoordinates →L[ℝ] E₃ :=
   ((EuclideanSpace.proj 0).comp (ContinuousLinearMap.fst ℝ E₂ ℝ)).smulRight
       (EuclideanSpace.single 0 1) +
@@ -26,12 +16,10 @@ noncomputable def capPersistenceEuclideanCoordinates : RoundCylinderCoordinates 
       (EuclideanSpace.single 1 1) +
     (ContinuousLinearMap.snd ℝ E₂ ℝ).smulRight (EuclideanSpace.single 2 1)
 
-
 theorem capPersistenceEuclideanCoordinates_apply (p : RoundCylinderCoordinates) :
     capPersistenceEuclideanCoordinates p = WithLp.toLp 2 ![p.1 0, p.1 1, p.2] := by
   ext i
   fin_cases i <;> simp [capPersistenceEuclideanCoordinates]
-
 
 theorem capPersistenceProductCoordinates_inverse (p : RoundCylinderCoordinates) :
     capPersistenceProductCoordinates (capPersistenceEuclideanCoordinates p) = p := by
@@ -40,9 +28,6 @@ theorem capPersistenceProductCoordinates_inverse (p : RoundCylinderCoordinates) 
     fin_cases i <;> simp [capPersistenceProductCoordinates,
       cylinderHorizontal_apply, capPersistenceEuclideanCoordinates_apply]
   · simp [capPersistenceProductCoordinates, capPersistenceEuclideanCoordinates_apply]
-
-
-
 
 theorem capPersistence_product_jet_le_euclidean
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

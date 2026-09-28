@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedPathFrames
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapThreeArrays
 import PoincareConjecture.Proofs.M47.BlowupControlsCapConnectionCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,8 +56,6 @@ private theorem operator_apply_sum (L : V →L[ℝ] V) (v : V) (k : I) :
   have h := congrArg (fun w : V => inner ℝ (b k) (L w)) (b.sum_repr v)
   simpa only [map_sum, map_smul, inner_sum, inner_smul_right, b,
     EuclideanSpace.basisFun_inner, EuclideanSpace.basisFun_repr, mul_comm] using h.symm
-
-
 
 theorem cap_connectionDifference_components_norm_le
     {g0 g1 : RiemannianMetric 3 V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionOuterChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric EuclideanGeometry
@@ -19,11 +11,7 @@ namespace PoincareConjecture.M74.CollarEndChartData
 
 variable {Y : GeneralizedSliceCarrier.{u}} (D : CollarEndChartData Y)
 
-
-
 def assembledSource : Set Y.carrier := {D.second.symm 0}ᶜ
-
-
 
 noncomputable def assembledMap (x : Y.carrier) : StandardCapSpace := by
   classical
@@ -31,28 +19,20 @@ noncomputable def assembledMap (x : Y.carrier) : StandardCapSpace := by
     else if x ∈ D.second.source then collarOuterMap (D.second x)
     else collarRadialMap (D.neck.symm x)
 
-
-
 noncomputable def assembledInverse (q0 : UnitTwoSphere) (z : StandardCapSpace) : Y.carrier := by
   classical
   exact if ‖z‖ < 2 then D.first.symm (collarBallInverse z)
     else if 2 < ‖z‖ then D.second.symm (collarOuterInverse z)
     else D.neck (collarRadialInverse q0 z)
 
-
-
 theorem assembledMap_first {x : Y.carrier} (hx : x ∈ D.first.source) :
     D.assembledMap x = collarBallMap (D.first x) := by
   simp only [assembledMap, if_pos hx]
-
-
 
 theorem assembledMap_second {x : Y.carrier} (hx : x ∈ D.second.source) :
     D.assembledMap x = collarOuterMap (D.second x) := by
   have hn : x ∉ D.first.source := fun h => disjoint_left.mp D.disjoint h hx
   simp only [assembledMap, if_neg hn, if_pos hx]
-
-
 
 theorem assembledMap_central (q : UnitTwoSphere) :
     D.assembledMap (D.neck (q, 0)) = collarRadialMap (q, 0) := by
@@ -61,8 +41,6 @@ theorem assembledMap_central (q : UnitTwoSphere) :
   have hn₂ : D.neck (q, 0) ∉ D.second.source :=
     fun h => D.central_disjoint q (Or.inr h)
   rw [assembledMap, if_neg hn₁, if_neg hn₂, D.neck.left_inv (D.central_mem_source q)]
-
-
 
 theorem assembledMap_neck {p : RoundCylinderSpace} (hp : p ∈ D.neck.source) :
     D.assembledMap (D.neck p) = collarRadialMap p := by
@@ -77,13 +55,9 @@ theorem assembledMap_neck {p : RoundCylinderSpace} (hp : p ∈ D.neck.source) :
       D.positive_eq q s ⟨hs, hp.2.2⟩]
     exact collarBallMap_positive_end q hs
 
-
-
 theorem assembledMap_secondCenter : D.assembledMap (D.second.symm 0) = 0 := by
   rw [D.assembledMap_second (D.second.map_target (D.mem_second_target 0)),
     D.second.right_inv (D.mem_second_target 0), collarOuterMap_zero]
-
-
 
 theorem neck_mem_assembledSource {p : RoundCylinderSpace} (hp : p ∈ D.neck.source) :
     D.neck p ∈ D.assembledSource := by
@@ -91,15 +65,11 @@ theorem neck_mem_assembledSource {p : RoundCylinderSpace} (hp : p ∈ D.neck.sou
   apply collarRadialMap_ne_zero p
   rw [← D.assembledMap_neck hp, heq, D.assembledMap_secondCenter]
 
-
-
 theorem first_mem_assembledSource {x : Y.carrier} (hx : x ∈ D.first.source) :
     x ∈ D.assembledSource := by
   intro heq
   rw [heq] at hx
   exact disjoint_left.mp D.disjoint hx (D.second.map_target (D.mem_second_target 0))
-
-
 
 theorem second_eq_zero_iff {x : Y.carrier} (hx : x ∈ D.second.source) :
     D.second x = 0 ↔ x = D.second.symm 0 := by
@@ -110,8 +80,6 @@ theorem second_eq_zero_iff {x : Y.carrier} (hx : x ∈ D.second.source) :
     exact heq.symm
   · rintro rfl
     exact D.second.right_inv (D.mem_second_target 0)
-
-
 
 theorem assembledInverse_map (q0 : UnitTwoSphere) {x : Y.carrier}
     (hx : x ∈ D.assembledSource) : D.assembledInverse q0 (D.assembledMap x) = x := by
@@ -125,8 +93,6 @@ theorem assembledInverse_map (q0 : UnitTwoSphere) {x : Y.carrier}
       if_pos hn, collarOuterInverse_map, D.second.left_inv hx₂]
   · rw [D.assembledMap_central, assembledInverse, collarRadialMap_norm, collarRadius_zero,
       if_neg (lt_irrefl 2), if_neg (lt_irrefl 2), collarRadialInverse_map]
-
-
 
 theorem assembledInverse_spec (q0 : UnitTwoSphere) (z : StandardCapSpace) :
     D.assembledInverse q0 z ∈ D.assembledSource ∧
@@ -154,15 +120,11 @@ theorem assembledInverse_spec (q0 : UnitTwoSphere) (z : StandardCapSpace) :
     · rw [D.assembledMap_second hx, D.second.right_inv (D.mem_second_target _)]
       exact collarOuterMap_inverse hz
 
-
-
 theorem assembledInverse_neck (q0 : UnitTwoSphere) {p : RoundCylinderSpace}
     (hp : p ∈ D.neck.source) :
     D.assembledInverse q0 (collarRadialMap p) = D.neck p := by
   rw [← D.assembledMap_neck hp]
   exact D.assembledInverse_map q0 (D.neck_mem_assembledSource hp)
-
-
 
 theorem assembledInverse_eq_neck (q0 : UnitTwoSphere) {z : StandardCapSpace}
     (hz : z ≠ 0) (hp : collarRadialInverse q0 z ∈ D.neck.source) :
@@ -170,13 +132,9 @@ theorem assembledInverse_eq_neck (q0 : UnitTwoSphere) {z : StandardCapSpace}
   have h := D.assembledInverse_neck q0 hp
   rwa [collarRadialMap_inverse q0 hz] at h
 
-
-
 theorem assembledInverse_zero (q0 : UnitTwoSphere) :
     D.assembledInverse q0 0 = D.first.symm 0 := by
   simp [assembledInverse]
-
-
 
 theorem assembledMap_eq_zero_iff (q0 : UnitTwoSphere) {x : Y.carrier}
     (hx : x ∈ D.assembledSource) : D.assembledMap x = 0 ↔ x = D.first.symm 0 := by
@@ -188,8 +146,6 @@ theorem assembledMap_eq_zero_iff (q0 : UnitTwoSphere) {x : Y.carrier}
   · rintro rfl
     rw [D.assembledMap_first (D.first.map_target (D.mem_first_target 0)),
       D.first.right_inv (D.mem_first_target 0), collarBallMap_zero]
-
-
 
 theorem assembledMap_swap (x : Y.carrier) :
     D.swap.assembledMap x = inversion 0 2 (D.assembledMap x) := by

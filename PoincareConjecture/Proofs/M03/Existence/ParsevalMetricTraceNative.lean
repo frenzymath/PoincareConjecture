@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.FrameCoordinateJetNative
 import PoincareConjecture.Proofs.M03.Existence.MatrixMetricTraceNative
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2000000
 set_option backward.isDefEq.respectTransparency false
@@ -39,7 +30,6 @@ theorem span_eq_top_of_parseval (F : iota → V)
   rw [← hF v]
   exact Submodule.sum_mem _ (fun a _ =>
     Submodule.smul_mem _ _ (Submodule.subset_span ⟨a, rfl⟩))
-
 
 theorem parseval_trace_eq_orthonormal_trace (F : iota → V)
     (hF : ∀ v : V, (∑ a, inner ℝ (F a) v • F a) = v)
@@ -70,7 +60,6 @@ theorem parseval_trace_eq_inverse_gram [DecidableEq kappa] [DecidableEq jota]
   (parseval_trace_eq_orthonormal_trace F hF e A).trans
     (DeTurckNative.orthonormal_trace_eq_inverse_gram e b A)
 
-
 theorem parseval_coordinates_eq_inverse_gram [DecidableEq kappa] [DecidableEq jota]
     (F : iota → V) (hF : ∀ v : V, (∑ a, inner ℝ (F a) v • F a) = v)
     (e : OrthonormalBasis kappa ℝ V) (b : Module.Basis jota ℝ V) (i j : jota) :
@@ -82,7 +71,6 @@ theorem parseval_coordinates_eq_inverse_gram [DecidableEq kappa] [DecidableEq jo
   change (∑ a, b.repr (F a) i * b.repr (F a) j) =
     ∑ r, b.repr (e r) i * b.repr (e r) j at h
   exact h.trans (DeTurckNative.sum_orthonormal_coordinates_eq_inverse_gram e b i j)
-
 
 theorem parseval_tensor_pairing (F : iota → V)
     (hF : ∀ v : V, (∑ a, inner ℝ (F a) v • F a) = v)
@@ -114,7 +102,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {iota : Type v} [Fintype iota]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def metricTensorPairing (g : RiemannianMetric n M)
     (h k : TensorProbeNative.SmoothTensor (n := n) (M := M)) (x : M) : ℝ :=
@@ -156,7 +143,6 @@ theorem probes_norm_sq_eq_metricTensorPairing (g : RiemannianMetric n M)
     ‖TensorProbeNative.probes F h x‖ ^ 2 = metricTensorPairing g h h x := by
   rw [← real_inner_self_eq_norm_sq]
   exact probes_inner_eq_metricTensorPairing g F hF h h x
-
 
 theorem chart_parseval_coordinates_eq_inverse_metric (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M))

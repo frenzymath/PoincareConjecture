@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Bounds.VolumeScaling
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Main
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -54,8 +42,6 @@ theorem SoulNeckRegion.scalarSup_pos_le
   rintro _ ⟨x, rfl⟩
   exact hbound x x.property
 
-
-
 theorem uniform_terminal_derivative_fields_of_services
     (P : NoncompactKappaServices.{u}) :
     ∃ C : ℝ, 0 < C ∧
@@ -83,8 +69,6 @@ theorem uniform_terminal_derivative_fields_of_services
     (P.scalar_evolution M (Iic 0) K.flow 0 (by simp) x)
   rwa [heq] at htime
 
-
-
 theorem uniform_terminal_derivative_fields
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧
@@ -101,8 +85,6 @@ theorem uniform_terminal_derivative_fields
               2 * (K.flow.connection 0).ricciNormSq x| ≤
             B * (K.flow.connection 0).scalarCurvature x ^ 2 := by
   exact uniform_terminal_derivative_fields_of_services P.noncompactServices
-
-
 
 theorem uniform_region_core_radius_fields_of_services
     (P : NoncompactKappaServices.{u}) :
@@ -145,8 +127,6 @@ theorem uniform_region_core_radius_fields_of_services
   exact ⟨(hspec p).1, (hspec p).2, hsubset, hcompact,
     hvolume K hnoncompact 0 le_rfl p (radius p) (hspec p).1 (hspec p).2⟩
 
-
-
 theorem uniform_region_core_radius_fields
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
     ∃ epsilon₀ C kappa : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -168,8 +148,6 @@ theorem uniform_region_core_radius_fields
           ENNReal.ofReal (kappa * radius p ^ 3) ≤
             calibratedMetricVolume (K.flow.metric 0) ((K.flow.metric 0).ball p (radius p)) := by
   exact uniform_region_core_radius_fields_of_services P.noncompactServices
-
-
 
 theorem uniform_region_scalar_ratio_of_services
     (P : NoncompactKappaServices.{u}) {R : ℝ} (hR : 0 < R) :
@@ -201,8 +179,6 @@ theorem uniform_region_scalar_ratio_of_services
   have hm := mul_lt_mul_of_pos_left hreverse hApos
   nlinarith
 
-
-
 theorem uniform_region_scalar_ratio
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {R : ℝ} (hR : 0 < R) :
     ∃ C : ℝ, 0 < C ∧
@@ -219,8 +195,6 @@ theorem uniform_region_scalar_ratio
             (K.flow.connection 0).scalarCurvature y ≤
               B * (K.flow.connection 0).scalarCurvature x := by
   exact uniform_region_scalar_ratio_of_services P.noncompactServices hR
-
-
 
 theorem uniform_region_volume_bound_of_services
     (P : NoncompactKappaServices.{u}) {R : ℝ} (hR : 1 < R) :
@@ -265,8 +239,6 @@ theorem uniform_region_volume_bound_of_services
   apply ((MeasureTheory.measure_mono G.carrier_subset_ball).trans_lt hvol).trans_le
   rw [← ENNReal.ofReal_mul (mul_pos hV (Real.rpow_pos_of_pos hApos _)).le]
   exact ENNReal.ofReal_le_ofReal hcomparison
-
-
 
 theorem uniform_region_volume_bound
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {R : ℝ} (hR : 1 < R) :

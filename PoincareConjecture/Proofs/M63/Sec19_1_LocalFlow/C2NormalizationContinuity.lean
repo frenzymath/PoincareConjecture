@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M04.RicciRayleigh
 import PoincareConjecture.Proofs.M62.Lemma0_1_Speed
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +15,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem continuousOn_flow_ricciRayleigh
     (F : RicciFlow n M (Icc a b))
@@ -86,10 +72,6 @@ theorem continuousOn_flow_ricciRayleigh
     filter_upwards [self_mem_nhdsWithin (s := A) (a := z0), hpre] with z hz hqz
     exact ⟨hz, hqz⟩
   exact hlocal.mono_of_mem_nhdsWithin hnear
-
-
-
-
 
 theorem c2ShrinkingCurve_speed_normalization_continuousOn
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M} {J : Set ℝ}

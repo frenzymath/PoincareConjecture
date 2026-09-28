@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTriangleEdges
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace AbstractSimplicialComplex
-
-
-
 
 theorem exists_primal_dual_trees_with_residual_edges
     {ι : Type*} [Fintype ι] [DecidableEq ι] (A : AbstractSimplicialComplex ι)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureLimit
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem cylinder_scalarCurvature_tendsto_of_time_tendsto
     (g : ℕ → RiemannianMetric 3 V) (D : ∀ n, LeviCivitaData (g n))

@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceOu
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalTubeChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_outer_reference_canonical_ball
     (rho : ℝ × ℝ → ℝ)

@@ -2,13 +2,6 @@ import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

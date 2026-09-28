@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryOrdinary
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_buffered_cylinder_ordinary
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

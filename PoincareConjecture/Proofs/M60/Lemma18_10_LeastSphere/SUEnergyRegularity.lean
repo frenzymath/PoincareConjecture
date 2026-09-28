@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUBochnerEnergy
 import PoincareConjecture.Proofs.M60.Mathlib.SUHeinzScaling
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] [SecondCountableTopology M] [CompactSpace M]
-
-
-
 
 theorem m60HarmonicSphere_energy_regularity (g : RiemannianMetric n M) :
     ∃ ε : ℝ, 0 < ε ∧ ∃ C : ℝ, 0 < C ∧ ∀ (f : UnitTwoSphere → M),
@@ -58,9 +46,6 @@ theorem m60HarmonicSphere_energy_regularity (g : RiemannianMetric n M) :
   have h := hheinz K R hK.le hR v hv hv0 hlap hsm
   rw [hint] at h
   simpa only [v, add_zero] using h
-
-
-
 
 theorem m60HarmonicSphere_small_energy_density_zero (g : RiemannianMetric n M) :
     ∃ ε : ℝ, 0 < ε ∧ ∀ (f : UnitTwoSphere → M),

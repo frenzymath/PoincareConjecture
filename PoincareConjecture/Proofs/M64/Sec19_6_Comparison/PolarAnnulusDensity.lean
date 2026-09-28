@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PolarForwardMap
 import PoincareConjecture.Proofs.M58.Mathlib.TwoVectorArea
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
-
 
 theorem m64PolarAnnulusMap_density_le
     {n : ℕ} {M : Type u} [TopologicalSpace M]

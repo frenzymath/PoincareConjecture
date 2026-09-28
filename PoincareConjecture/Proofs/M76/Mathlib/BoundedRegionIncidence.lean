@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem IsPreconnected.subset_or_subset_compl_closure {X : Type*}
     [TopologicalSpace X] {S U : Set X} (hS : IsPreconnected S)
@@ -33,10 +21,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.isConnected_sdiff {d q : Set X}
     (hd : IsFinitePLBallPair E d q) : IsConnected (d \ q) := by
@@ -70,8 +54,6 @@ theorem IsFinitePLBallPair.isConnected_sdiff {d q : Set X}
   rw [← hgI]
   exact (show IsConnected I from ⟨hIne, hIpre⟩).image g hg.continuousOn
 
-
-
 theorem closure_inter_eq_frontier_inter_of_disjoint_open {Y : Type*}
     [TopologicalSpace Y] {U V : Set Y} (hU : IsOpen U) (hV : IsOpen V)
     (hdis : Disjoint U V) : closure U ∩ closure V = frontier U ∩ frontier V := by
@@ -100,12 +82,6 @@ private theorem disjoint_capped_frontier_of_outside
     · exact hnotfront (hd (hq hxq))
     · exact hc ⟨hxc, hxq⟩ (subset_closure hxU)
   · exact hnotfront (hd hxd)
-
-
-
-
-
-
 
 theorem alexander_bounded_region_incidence_open [FiniteDimensional ℝ X]
     {b c d q U V : Set X}
@@ -208,9 +184,6 @@ theorem alexander_bounded_region_incidence_open [FiniteDimensional ℝ X]
         · exact hxd
       · intro x hx
         exact ⟨Or.inr hx, Or.inr hx⟩
-
-
-
 
 theorem alexander_bounded_region_incidence [FiniteDimensional ℝ X]
     {b c d q U V : Set X}

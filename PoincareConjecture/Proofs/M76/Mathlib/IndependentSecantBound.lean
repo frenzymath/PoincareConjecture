@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UniformSecantProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 variable {ι E F : Type*} [Finite ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem LinearIndependent.exists_pos_secant_bound_of_injOn {v : ι → E}
     (hv : LinearIndependent ℝ v) (faces : Set (Finset ι)) (Q : E →L[ℝ] F)
@@ -52,9 +39,6 @@ theorem LinearIndependent.exists_pos_secant_bound_of_injOn {v : ι → E}
   exact hbound x hx y hy
 
 namespace AbstractSimplicialComplex
-
-
-
 
 theorem RadialEmbedding.exists_pos_secant_bound_of_linearIndependent
     {A : AbstractSimplicialComplex ι} (v : A.RadialEmbedding E)

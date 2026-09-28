@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.Basic
 import Mathlib.Order.Lattice.Nat
 import Mathlib.Data.Fin.SuccPred
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Alexandrov
-
-
 
 def HasSmallAngleConfiguration {X : Type*} [MetricSpace X]
     (θ : ℝ) (p : X) (k : ℕ) : Prop :=
@@ -27,11 +15,8 @@ def HasSmallAngleConfiguration {X : Type*} [MetricSpace X]
       ∀ i l : Fin k, i ≠ l →
         θ < comparisonAngle (dist p (q i)) (dist p (q l)) (dist (q i) (q l))
 
-
-
 noncomputable def localAnglePackingRank {X : Type*} [MetricSpace X]
     (θ : ℝ) (p : X) : ℕ := sSup {k | HasSmallAngleConfiguration θ p k}
-
 
 noncomputable def minLocalAnglePackingRank (X : Type*) [MetricSpace X]
     (θ : ℝ) : ℕ := sInf (Set.range (localAnglePackingRank (X := X) θ))
@@ -65,8 +50,6 @@ theorem HasSmallAngleConfiguration.le_packingBound
   rw [heq, dist_self] at hz
   exact (ne_of_gt hR) hz.symm
 
-
-
 theorem localAnglePackingRank_spec
     {X : Type*} [MetricSpace X] {θ : ℝ} {N : ℕ}
     (hpack : ComparisonAnglePackingBound X θ N) (p : X) :
@@ -82,8 +65,6 @@ theorem localAnglePackingRank_spec
   refine ⟨hattain, hattain.le_packingBound hpack, ?_⟩
   intro k
   exact ⟨fun hk => le_csSup hbounded hk, fun hk => hattain.mono hk⟩
-
-
 
 theorem minLocalAnglePackingRank_spec
     {X : Type*} [MetricSpace X] [Nonempty X] {θ : ℝ} {N : ℕ}
@@ -114,8 +95,6 @@ private theorem exists_nonincreasing_step_of_bounded
   have hlast := hinc (N + 1) le_rfl
   have hupper := hbound (N + 1)
   omega
-
-
 
 theorem exists_nonincreasing_minLocalAnglePackingRank_step
     {X : ℕ → Type*} [∀ j, MetricSpace (X j)] [∀ j, Nonempty (X j)]

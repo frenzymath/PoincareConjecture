@@ -2,21 +2,10 @@ import PoincareConjecture.Proofs.M76.Wall.PLDomainSideCollars
 import PoincareConjecture.Proofs.M76.Wall.SideCollarSigns
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.OriginalDomainInjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem frontier_eq_of_signed_rim_charts
     {X : Type*} [TopologicalSpace X] {S O : Set X}
@@ -57,8 +46,6 @@ theorem frontier_eq_of_signed_rim_charts
   · intro hx
     by_contra hxO
     exact hx (interior_mono hcomp (hO.isOpen_compl.interior_eq.symm ▸ hxO))
-
-
 
 theorem exists_side_collars_of_signed_rim_charts
     {X : Type*} [MetricSpace X] {S O : Set X}
@@ -123,8 +110,6 @@ theorem exists_side_collars_of_signed_rim_charts
       negative_base := fun s => congrArg (Subtype.val : O → X) (hcm s) }
   exact ⟨hfront, hother, C, rfl, rfl⟩
 
-
-
 theorem exists_bicollar_of_signed_rim_charts
     {X : Type*} [MetricSpace X] {S O : Set X}
     (hS : IsClosed S) (hO : IsClosed O) (hcover : S ∪ O = univ)
@@ -149,8 +134,6 @@ theorem exists_bicollar_of_signed_rim_charts
     simpa only [hpos] using C.bicollar_mem_positive_iff z
   · intro z
     simpa only [hneg] using C.bicollar_mem_negative_iff z
-
-
 
 theorem nonempty_openFrontierCollapse_of_open_bicollar
     {X : Type*} [TopologicalSpace X] [T2Space X] {S U : Set X}
@@ -247,8 +230,6 @@ theorem nonempty_openFrontierCollapse_of_open_bicollar
     · constructor <;> intro h <;> linarith
     · constructor <;> constructor <;> intro h <;> linarith
 
-
-
 theorem nonempty_openFrontierCollapse_of_signed_rim_charts
     {X : Type*} [MetricSpace X] {S O : Set X}
     (hS : IsClosed S) (hO : IsClosed O) (hcover : S ∪ O = univ)
@@ -263,8 +244,6 @@ theorem nonempty_openFrontierCollapse_of_signed_rim_charts
   refine ⟨hfront, hother, nonempty_openFrontierCollapse_of_open_bicollar hS
     (hfront.symm ▸ hcompact) (hfront.symm ▸ hne) hU H hbase hpos ?_ hzero⟩
   simpa only [hother] using hneg
-
-
 
 theorem sides_pi1_injective_of_signed_rim_charts
     {X : Type*} [MetricSpace X] {S O : Set X}

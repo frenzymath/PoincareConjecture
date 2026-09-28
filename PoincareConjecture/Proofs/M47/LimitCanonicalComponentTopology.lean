@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeTopology
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M X : Type u} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   (f : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (hsource : f.source = univ)
-
-
 
 noncomputable def limitCanonical_image_smooth_closed_model
     {kind : ClosedComponentKind} (N : SmoothClosedComponentModel kind (univ : Set M)) :
@@ -61,8 +50,6 @@ noncomputable def limitCanonical_image_smooth_closed_model
     dsimp only [Function.comp_apply]
     change N.inverse (f.toPartialEquiv.symm (f.toPartialEquiv (N.forward y))) = y
     rw [f.toPartialEquiv.left_inv (hall (N.forward y)), N.right_inverse y]
-
-
 
 noncomputable def limitCanonical_image_closed_certificate
     {kind : ClosedComponentKind} (N : ClosedComponentCertificate kind (univ : Set M))

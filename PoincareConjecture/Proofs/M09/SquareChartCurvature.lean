@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.CenteredVectorDerivative
 import PoincareConjecture.Proofs.M09.SquareChartConnection
 import PoincareConjecture.Proofs.M09.CoordinateConnectionBilinear
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

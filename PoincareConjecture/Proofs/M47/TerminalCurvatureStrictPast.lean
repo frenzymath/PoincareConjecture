@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSurgeryCases
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem terminalCurvature_readout_of_strict_past
     {ι : Type*} (F : ℕ → SurgeryFlowData.{u}) (t u Q r : ℕ → ℝ)

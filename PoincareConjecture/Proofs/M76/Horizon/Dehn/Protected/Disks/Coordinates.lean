@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInp
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -23,10 +13,8 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 
-
 def transverse (b : Bool) : Set V1 :=
   {y | if b then y 0 ∈ Ioo 1 2 else y 0 ∈ Ioo (-2) (-1)}
-
 
 noncomputable def height (b : Bool) : V1 := fun _ => if b then (3 / 2 : ℝ) else -(3 / 2 : ℝ)
 
@@ -55,13 +43,10 @@ theorem transverse_disjoint : Disjoint (transverse false) (transverse true) := b
   change 1 < y 0 ∧ y 0 < 2 at hz
   linarith
 
-
 def sourceSlab (b : Bool) : Set (V2 × V1) := D2 ×ˢ transverse b
-
 
 def slab (h : OpenPartialHomeomorph (V2 × V1) V3) (b : Bool) : Set V3 :=
   h '' sourceSlab b
-
 
 noncomputable def diskMap (h : OpenPartialHomeomorph (V2 × V1) V3) (b : Bool) (x : V2) : V3 :=
   h (x, height b)
@@ -93,7 +78,6 @@ theorem slab_disjoint : Disjoint (slab h false) (slab h true) := by
   exact disjoint_left.mp transverse_disjoint
     (symm_mem_sourceSlab h hsource hm).2 (symm_mem_sourceSlab h hsource hp).2
 
-
 noncomputable def filling (b : Bool) : C(D2, slab h b) where
   toFun x := ⟨diskMap h b x, ⟨(x, height b), ⟨x.property, height_mem_transverse b⟩, rfl⟩⟩
   continuous_toFun := (h.continuousOn.comp_continuous
@@ -107,7 +91,6 @@ theorem diskMap_injOn (b : Bool) : InjOn (diskMap h b) D2 := by
   intro x hx y hy heq
   exact congrArg Prod.fst (h.injOn (hsource ⟨hx, mem_univ _⟩)
     (hsource ⟨hy, mem_univ _⟩) heq)
-
 
 noncomputable def rim (b : Bool) : Q2 ≃ₜ (diskMap h b '' Q2) := by
   let f : Q2 → V3 := fun x => diskMap h b x
@@ -132,7 +115,6 @@ theorem rim_apply (b : Bool) (x : Q2) : (rim h hsource b x : V3) = diskMap h b x
 theorem filling_rim (b : Bool) (x : Q2) :
     (filling h hsource b ⟨x, sphere_subset_closedBall x.property⟩ : V3) =
       (rim h hsource b x : V3) := rfl
-
 
 theorem diskMap_finitePL_rim {N : Set (V2 × V1)}
     (hboundary : frontier (D2 ×ˢ (univ : Set V1)) ⊆ N)

@@ -3,15 +3,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry NormedSpace unitInterval
@@ -22,9 +13,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [Nontrivial E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem AffineOnFaces.exists_convex_boundary_cone_homotopy
     {K : SimplicialComplex ℝ E} {b : E → F} (hb : K.AffineOnFaces b)

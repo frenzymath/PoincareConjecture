@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Affine.Jets
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,7 +42,6 @@ theorem derivative_const_mul (c u : ℝ) (q : UnitTwoSphere) {r : ℕ}
   intro j _
   ring
 
-
 theorem iteratedDerivative_errorPullback (c a s : ℝ) (ha : a ≠ 0)
     (B : RoundCylinderTwoTensor)
     (hB : ∀ (z : RoundCylinderSpace) (c d : ℝ) (v w : RoundCylinderTangent z),
@@ -76,8 +73,6 @@ theorem iteratedDerivative_errorPullback (c a s : ℝ) (ha : a ≠ 0)
     rw [derivative_const_mul,
       derivative_tensorPullback a s ha (by norm_num : (0 : ℝ) ≠ 1)]
     rfl
-
-
 
 theorem errorPullback_jetError_le (c a s : ℝ) (ha : 0 < a) (haone : a ≤ 1)
     (B : RoundCylinderTwoTensor)

@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Continuation
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependence
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedRelabelingAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +20,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem localCurveTheory_of_compact
     [T2Space M] (F : RicciFlow n M (Icc a b))

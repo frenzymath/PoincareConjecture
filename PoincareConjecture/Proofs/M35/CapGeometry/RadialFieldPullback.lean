@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitFieldBound
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialShapeDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
 theorem radialUnitField_contMDiffAt
     (g : RiemannianMetric 3 StandardCapSpace) {x : StandardCapSpace} (hx : x ≠ 0) :
     ContMDiffAt (𝓡 3) ((𝓡 3).prod (𝓡 3)) ∞
@@ -27,8 +17,6 @@ theorem radialUnitField_contMDiffAt
         (E := TangentSpace (𝓡 3)) (radialUnitField g y)) x := by
   rw [Bundle.contMDiffAt_totalSpace]
   exact ⟨contMDiffAt_id, by simpa using (radialUnitField_contDiffAt g hx).contMDiffAt⟩
-
-
 
 theorem radialUnitField_pullback
     {M : Type*} [TopologicalSpace M]
@@ -70,8 +58,6 @@ theorem radialUnitField_pullback
     simp only [hi.self_apply_inverse]
     exact hbound (mfderiv (𝓡 3) (𝓡 3) f x w)
 
-
-
 theorem radialUnitField_pullback_connection
     {g G : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
     (DG : LeviCivitaData G)
@@ -105,8 +91,6 @@ theorem radialUnitField_pullback_connection
       hi.self_apply_inverse, hi.inverse_apply_self]
     rfl
   simpa only [Z, mpullback_eq_pullback, VectorField.pullback] using! he
-
-
 
 theorem radial_shape_pullback_hasFDerivAt
     {g G : RiemannianMetric 3 StandardCapSpace}

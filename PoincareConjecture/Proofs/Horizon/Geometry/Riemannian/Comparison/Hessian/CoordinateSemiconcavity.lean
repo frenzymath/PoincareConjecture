@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients.Distance
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.EuclideanUpperSupport
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +12,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology Bundle NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_distance_coordinate_semiconcave_ball
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

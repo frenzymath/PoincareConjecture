@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +18,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem exists_halfPlane_star_of_quadrant_ambient_star
     (K N : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hNK : N ≤ K)
@@ -78,8 +67,6 @@ theorem exists_halfPlane_star_of_quadrant_ambient_star
     refine ⟨x, hstar.symm.subset ⟨hx, hxN⟩, ?_⟩
     exact congrArg Prod.fst hfx
 
-
-
 theorem face_card_le_three_of_planar_star
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)
     {p : E} (hps : p ∈ s) (a : E → P2)
@@ -88,8 +75,6 @@ theorem face_card_le_three_of_planar_star
   have hsS : s ∈ (K.closedStar p).faces :=
     ⟨hs, by simpa [Finset.insert_eq_of_mem hps] using hs⟩
   simpa using ha.face_card_le_of_injOn hai hsS
-
-
 
 theorem face_card_le_two_of_planar_line_star
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)
@@ -105,8 +90,6 @@ theorem face_card_le_two_of_planar_line_star
     ⟨hs, by simpa [Finset.insert_eq_of_mem hps] using hs⟩
   simpa using hb.face_card_le_of_injOn hbi hsS
 
-
-
 theorem mem_closure_interior_of_halfPlane_germ {S U : Set P2}
     (hU : IsOpen U) (hUS : U ∩ {z | 0 ≤ z.1} ⊆ S)
     {x : P2} (hxU : x ∈ U) (hx : 0 ≤ x.1) : x ∈ closure (interior S) := by
@@ -117,8 +100,6 @@ theorem mem_closure_interior_of_halfPlane_germ {S U : Set P2}
   apply closure_mono (s := U ∩ {z : P2 | 0 < z.1}) ?_ (hU.inter_closure ⟨hxU, hxcl⟩)
   exact interior_maximal (fun z hz => hUS ⟨hz.1, (show 0 < z.1 from hz.2).le⟩)
     (hU.inter (isOpen_lt continuous_const continuous_fst))
-
-
 
 theorem exists_triangle_coface_of_halfPlane_germ
     (K : SimplicialComplex ℝ P2) (hK : K.faces.Finite)
@@ -134,8 +115,6 @@ theorem exists_triangle_coface_of_halfPlane_germ
     (mem_closure_interior_of_halfPlane_germ hU hUS hxU hxhalf)
   refine ⟨t, ht, K.subset_of_mem_intrinsicInterior_face hs ht hxs hxt, ?_⟩
   simpa using htc
-
-
 
 theorem exists_triangle_coface_of_halfPlane_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -164,8 +143,6 @@ theorem exists_triangle_coface_of_halfPlane_star
     obtain ⟨y, hyt, hyx⟩ := Finset.mem_image.mp (hst (Finset.mem_image.mpr ⟨x, hxs, rfl⟩))
     exact hai (S.subset_space ht hyt) (S.subset_space hsS hxs) hyx ▸ hyt
   · exact (Finset.card_image_iff.mpr (hai.mono (S.subset_space ht))).symm.trans htc
-
-
 
 theorem faceLink_ncard_eq_one_of_halfPlane_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -211,8 +188,6 @@ theorem faceLink_ncard_eq_one_of_halfPlane_star
     rw [show S = K.closedFaceStar {p} from (K.closedFaceStar_singleton_eq_closedStar p).symm]
     exact K.closedFaceStar_faceLink_of_subset (Finset.singleton_subset_iff.mpr hps)
   rwa [hlink] at hc
-
-
 
 theorem faceLink_ncard_eq_two_of_halfPlane_star
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

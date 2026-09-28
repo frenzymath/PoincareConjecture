@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalStripPuncturedModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 open Set Metric Geometry

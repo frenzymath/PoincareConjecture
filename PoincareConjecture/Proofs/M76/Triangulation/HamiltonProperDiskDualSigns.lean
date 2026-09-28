@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskNormalLabels
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +12,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : Cube ≃ₜ D}
-
-
 
 noncomputable def HamiltonProperDiskTriangulation.dualRegion
     (T : HamiltonProperDiskTriangulation R D b) (s : Finset E) : Set E :=
@@ -52,10 +42,6 @@ private theorem dual_point_in_original_coface
   exact convexHull_mono (him i hi)
     (i.val.centroid_mem_convexHull (K.nonempty_of_mem_faces i.property))
 
-
-
-
-
 theorem HamiltonProperDiskTriangulation.exists_full_coface_of_dualRegion
     [FiniteDimensional ℝ E] (T : HamiltonProperDiskTriangulation R D b)
     (p : T.disk.vertices) (c : E ≃ᴬ[ℝ] V) {s : Finset E} (hps : (p : E) ∈ s)
@@ -80,8 +66,6 @@ theorem HamiltonProperDiskTriangulation.exists_full_coface_of_dualRegion
     simpa [Module.finrank_prod] using c.toAffineEquiv.linear.finrank_eq
   exact ⟨u, hu, hst.trans htu, by simpa [hdim] using huc, convexHull_mono htu hxt⟩
 
-
-
 theorem HamiltonProperDiskTriangulation.dualRegion_subset_chart_source
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)
     {s : Finset E} (hps : (p : E) ∈ s) :
@@ -93,9 +77,6 @@ theorem HamiltonProperDiskTriangulation.dualRegion_subset_chart_source
   have hpt := hst hps
   exact T.star_source p ((T.ambient.closedStar p).convexHull_subset_space
     ⟨ht, by simpa only [Finset.insert_eq_of_mem hpt] using ht⟩ hxt)
-
-
-
 
 theorem HamiltonProperDiskNormalLabels.half_eq_on_triangle_dual
     [FiniteDimensional ℝ E] {T : HamiltonProperDiskTriangulation R D b}

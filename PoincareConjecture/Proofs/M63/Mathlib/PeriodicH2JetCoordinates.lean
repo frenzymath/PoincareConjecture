@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSobolevJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
 
 variable {L : ℝ}
-
-
-
 
 theorem periodicH2JetMultiplier_bound {j : ℕ} (hj : j ≤ 1) (n : ℤ) :
     ‖periodicSobolevMoment L 0 j n‖ ≤ 1 := by
@@ -35,9 +24,6 @@ theorem periodicH2JetMultiplier_bound {j : ℕ} (hj : j ≤ 1) (n : ℤ) :
     one_mul, Complex.norm_real, Real.norm_eq_abs, abs_of_nonneg hρ0]
   exact (div_le_one hρpos).mpr hpow
 
-
-
-
 noncomputable def periodicH2JetCoordinates (j : ℕ) (hj : j ≤ 1) :
     lp (fun _ : ℤ => ℂ) 2 →L[ℂ] lp (fun _ : ℤ => ℂ) 2 :=
   lp.mapCLM 2 (fun n : ℤ => ContinuousLinearMap.mul ℂ ℂ
@@ -49,9 +35,6 @@ noncomputable def periodicH2JetCoordinates (j : ℕ) (hj : j ≤ 1) :
       exact mul_le_mul_of_nonneg_right (periodicH2JetMultiplier_bound hj n) (norm_nonneg z))
 
 variable [Fact (0 < L)]
-
-
-
 
 theorem periodicH2JetCoordinates_spec (j : ℕ) (hj : j ≤ 1)
     (u : lp (fun _ : ℤ => ℂ) 2) :

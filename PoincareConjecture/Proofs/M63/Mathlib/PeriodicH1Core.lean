@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Set
@@ -17,9 +8,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 noncomputable def periodicC1Core : Submodule ℂ (lp (fun _ : ℤ => ℂ) 2) where
   carrier := {u | ∃ g : C(AddCircle L, ℂ), ∀ x : ℝ, HasDerivAt
@@ -36,9 +24,6 @@ noncomputable def periodicC1Core : Submodule ℂ (lp (fun _ : ℤ => ℂ) 2) whe
     rintro c u ⟨g, hg⟩
     refine ⟨c • g, fun x => ?_⟩
     simpa only [map_smul, ContinuousMap.smul_apply] using (hg x).fun_const_smul c
-
-
-
 
 theorem periodicH1Decoder_single (n : ℤ) (c : ℂ) :
     periodicSobolevJet (L := L) 0 0 (by omega) (lp.single 2 n c) =
@@ -78,9 +63,6 @@ theorem periodicH1Decoder_single (n : ℤ) (c : ℂ) :
   simp only [smul_eq_mul]
   push_cast
   ring
-
-
-
 
 theorem dense_periodicC1Core :
     Dense (periodicC1Core (L := L) : Set (lp (fun _ : ℤ => ℂ) 2)) := by

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem surjective_of_complete_pullback_eq
     {n : ℕ} {M : Type u} {N : Type v}

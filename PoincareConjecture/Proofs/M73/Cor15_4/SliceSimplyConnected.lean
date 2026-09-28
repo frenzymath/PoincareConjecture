@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.M72FiniteReconstruction
 import PoincareConjecture.Proofs.M55.Mathlib.SimplyConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -20,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m73_sliceZero_simplyConnected
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

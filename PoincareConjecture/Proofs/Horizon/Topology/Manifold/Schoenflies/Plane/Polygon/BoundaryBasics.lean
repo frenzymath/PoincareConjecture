@@ -5,16 +5,6 @@ import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Algebra.Affine
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,57 +13,46 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
 theorem polygon_edgeSet_eq_segment (p : Polygon E n) (i : Fin n) :
     p.edgeSet ℝ i = segment ℝ (p i) (p (finRotate n i)) :=
   affineSegment_eq_segment ℝ _ _
-
 
 theorem polygon_left_mem_edgeSet (p : Polygon E n) (i : Fin n) :
     p i ∈ p.edgeSet ℝ i := by
   rw [polygon_edgeSet_eq_segment]
   exact left_mem_segment ℝ _ _
 
-
 theorem polygon_right_mem_edgeSet (p : Polygon E n) (i : Fin n) :
     p (finRotate n i) ∈ p.edgeSet ℝ i := by
   rw [polygon_edgeSet_eq_segment]
   exact right_mem_segment ℝ _ _
 
-
 theorem polygon_edgeSet_subset_boundary (p : Polygon E n) (i : Fin n) :
     p.edgeSet ℝ i ⊆ p.boundary ℝ :=
   subset_iUnion (fun j => p.edgeSet ℝ j) i
-
 
 theorem polygon_vertex_mem_boundary (p : Polygon E n) (i : Fin n) :
     p i ∈ p.boundary ℝ :=
   polygon_edgeSet_subset_boundary p i (polygon_left_mem_edgeSet p i)
 
-
 theorem polygon_mem_boundary_iff (p : Polygon E n) (x : E) :
     x ∈ p.boundary ℝ ↔ ∃ i, x ∈ p.edgeSet ℝ i :=
   mem_iUnion
-
 
 theorem polygon_edgeSet_isCompact (p : Polygon E n) (i : Fin n) :
     IsCompact (p.edgeSet ℝ i) := by
   rw [Polygon.edgeSet_eq_image_edgePath]
   exact isCompact_Icc.image AffineMap.lineMap_continuous
 
-
 theorem polygon_boundary_isCompact (p : Polygon E n) : IsCompact (p.boundary ℝ) :=
   isCompact_iUnion (polygon_edgeSet_isCompact p)
-
 
 theorem polygon_boundary_isClosed (p : Polygon E n) : IsClosed (p.boundary ℝ) :=
   (polygon_boundary_isCompact p).isClosed
 
-
 theorem polygon_boundary_isBounded (p : Polygon E n) :
     Bornology.IsBounded (p.boundary ℝ) :=
   (polygon_boundary_isCompact p).isBounded
-
 
 theorem polygon_boundary_subset_convexHull (p : Polygon E n) :
     p.boundary ℝ ⊆ convexHull ℝ (range p) := by
@@ -82,7 +61,6 @@ theorem polygon_boundary_subset_convexHull (p : Polygon E n) :
   rw [polygon_edgeSet_eq_segment] at hi
   exact segment_subset_convexHull (mem_range_self i) (mem_range_self _) hi
 
-
 theorem polygon_convexHull_boundary (p : Polygon E n) :
     convexHull ℝ (p.boundary ℝ) = convexHull ℝ (range p) := by
   apply subset_antisymm
@@ -90,7 +68,6 @@ theorem polygon_convexHull_boundary (p : Polygon E n) :
   · apply convexHull_mono
     rintro _ ⟨i, rfl⟩
     exact polygon_vertex_mem_boundary p i
-
 
 theorem polygon_boundary_isPathConnected (p : Polygon E n) (hn : 0 < n) :
     IsPathConnected (p.boundary ℝ) := by
@@ -115,11 +92,9 @@ theorem polygon_boundary_isPathConnected (p : Polygon E n) (hn : 0 < n) :
   rw [polygon_edgeSet_eq_segment] at hi ⊢
   exact (convex_segment _ _).segment_subset (left_mem_segment ℝ _ _) hi
 
-
 theorem polygon_boundary_isConnected (p : Polygon E n) (hn : 0 < n) :
     IsConnected (p.boundary ℝ) :=
   (polygon_boundary_isPathConnected p hn).isConnected
-
 
 theorem polygon_boundary_isPreconnected (p : Polygon E n) :
     IsPreconnected (p.boundary ℝ) := by

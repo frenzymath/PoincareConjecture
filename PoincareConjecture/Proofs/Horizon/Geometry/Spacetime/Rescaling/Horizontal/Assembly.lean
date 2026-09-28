@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Horizontal
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Backward.Calculus
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Gauge.Geometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

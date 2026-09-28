@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateBackward
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 import PoincareConjecture.Proofs.M47.ComponentHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
-
 
 theorem exists_component_birth_cylinder
     (F : SurgeryFlowData.{u}) {origin a : ℝ} (ha : a ≤ 0)

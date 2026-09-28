@@ -1,18 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Domains
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +8,6 @@ open Set Function Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_jordan_region
     {γ : ℝ → AnnulusCoordinates} {T : ℝ} (hT : 0 < T)

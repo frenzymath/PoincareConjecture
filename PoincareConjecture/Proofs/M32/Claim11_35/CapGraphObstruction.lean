@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M32.Mathlib.CompactPartialInverse
 import PoincareConjecture.Proofs.M32.Mathlib.ProductGraphBoundary
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +10,6 @@ open scoped Manifold ContDiff
 universe u v w
 
 namespace PoincareConjecture.M32
-
-
 
 theorem cap_not_in_partial_product_with_graph_boundary
     {M : Type u} {L : Type v} {X : Type w}

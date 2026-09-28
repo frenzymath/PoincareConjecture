@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.FiniteOrderCompactExtension
 import PoincareConjecture.Proofs.M63.Mathlib.C2SecondDerivComposition
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_smooth_fixed_C2_approximation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

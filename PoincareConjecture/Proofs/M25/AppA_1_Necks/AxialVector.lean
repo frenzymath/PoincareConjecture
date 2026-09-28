@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxisControl
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,13 +14,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def normalizedAxialVector (N : EpsilonNeck g) (x : M) : TangentSpace (𝓡 3) x :=
   N.scale⁻¹ • mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
     N.coordinate_map (N.coordinate_inverse x) (0, 1)
-
-
 
 theorem normalizedEuclideanFrame_axial (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -44,9 +30,6 @@ theorem normalizedEuclideanFrame_axial (N : EpsilonNeck g)
   rw [N.coordinate_inverse_coordinate_map ⟨mem_univ _, hs⟩]
   exact congrArg (fun v : EuclideanSpace ℝ (Fin 3) => N.scale⁻¹ • v)
     (N.euclideanParametrization_mfderiv_axial q hs)
-
-
-
 
 theorem exists_intersecting_axial_control {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

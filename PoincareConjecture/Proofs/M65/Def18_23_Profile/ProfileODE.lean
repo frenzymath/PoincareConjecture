@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.ScalarInfimum
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {t₀ t₁ : ℝ} (F : RicciFlow 3 M (Set.Icc t₀ t₁))
 
-
-
 theorem areaComparisonPrimitive_continuousOn
     (compact : IsCompact (Set.univ : Set M)) :
     ContinuousOn (fun t => ∫ s in t₀..t, flowScalarCurvatureInfimum F s / 2)
@@ -37,7 +27,6 @@ theorem areaComparisonPrimitive_continuousOn
     (show t₁ ∈ Set.Icc t₀ t₁ from ⟨horder, le_rfl⟩)
   simpa only [Set.uIcc_of_le horder] using
     intervalIntegral.continuousOn_primitive_interval' hint Set.left_mem_uIcc
-
 
 theorem areaComparisonProfile_continuousOn
     (compact : IsCompact (Set.univ : Set M)) (a : ℝ) :
@@ -55,9 +44,6 @@ theorem areaComparisonProfile_continuousOn
       intervalIntegral.continuousOn_primitive_interval' hint Set.left_mem_uIcc
   exact hprim.neg.rexp.mul
     (continuousOn_const.sub (continuousOn_const.mul hexpprim))
-
-
-
 
 theorem areaComparisonProfile_hasDerivWithinAt
     (compact : IsCompact (Set.univ : Set M)) (a : ℝ)

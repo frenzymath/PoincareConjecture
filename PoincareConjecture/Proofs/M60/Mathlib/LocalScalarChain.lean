@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarChainRule
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M60
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem laplacian_comp_of_contDiffOn (D : LeviCivitaData g)
     {q : M → ℝ} {φ : ℝ → ℝ} {V : Set ℝ} {x : M}

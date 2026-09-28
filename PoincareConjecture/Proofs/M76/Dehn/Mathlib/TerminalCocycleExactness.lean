@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleConnected
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CompactTerminalCover
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteBarycentricCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -24,11 +12,6 @@ namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
   {ι : Type v} [Fintype ι] {A : PreAbstractSimplicialComplex ι}
-
-
-
-
-
 
 theorem isCoboundary_of_terminal_common_deformation
     (c : A.ModTwoEdgeCocycle) (hvertex : ∀ i : ι, {i} ∈ A.faces)
@@ -89,10 +72,6 @@ namespace Geometry.SimplicialComplex
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
   {G : Type v} [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
-
-
-
-
 
 theorem edgeCocycle_isCoboundary_of_terminal_common_deformation
     (L : SimplicialComplex ℝ G) [Finite L.vertices]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexHalfBall
 import PoincareConjecture.Proofs.M76.PrimeReduction.ConvexHalfBodyDisks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {K L : SimplicialComplex ℝ E} [Fintype K.faces] [Fintype L.faces] {p : E}
-
-
 
 theorem BoundaryVertexHalfBall.boundary_disks (H : BoundaryVertexHalfBall K L p) :
     IsFinitePLBallPair (ℝ × ℝ) ((K.barycentricDualBlock {p}).link p).space

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.
 import PoincareConjecture.Definitions.Ch19.AnnulusComparison
 import Mathlib.Analysis.Calculus.TangentCone.Real
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +15,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_compact_geodesic_right_extension
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}
@@ -53,11 +39,6 @@ theorem m64Intrinsic_compact_geodesic_right_extension
   simpa only [extChartAt_model_space_eq_id, PartialEquiv.refl_symm,
     PartialEquiv.refl_coe, id_eq] using!
     G.isGeodesicOn_chart_curve p isOpen_Ioo hflow
-
-
-
-
-
 
 theorem m64Intrinsic_compact_geodesic_left_extension
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}
@@ -96,11 +77,6 @@ theorem m64Intrinsic_compact_geodesic_left_extension
   · have hh := heq (show -t ∈ Ioo (-b) (-a) from ⟨by linarith [ht.2], by linarith⟩)
     simpa only [zeta, neg_neg] using hh
 
-
-
-
-
-
 theorem m64Intrinsic_compact_geodesic_has_right_derivative
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}
     (hK : IsCompact K) {a b : ℝ} (hab : a < b) {q : ℝ → AnnulusCoordinates}
@@ -117,11 +93,6 @@ theorem m64Intrinsic_compact_geodesic_has_right_derivative
   · filter_upwards [Ioo_mem_nhdsGT hab] with t ht
     exact (heq ⟨ht.1.le, ht.2⟩).symm
   · exact (heq ⟨le_rfl, hab⟩).symm
-
-
-
-
-
 
 theorem m64Intrinsic_compact_geodesic_right_derivative_ne_zero
     (G : RiemannianMetric 2 AnnulusCoordinates) {K : Set AnnulusCoordinates}

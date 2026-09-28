@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.NestedCylin
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Interpolation
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.TimeTranslation
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false

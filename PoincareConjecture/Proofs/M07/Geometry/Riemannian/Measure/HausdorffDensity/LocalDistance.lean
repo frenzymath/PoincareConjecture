@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ChartSegment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Manifold Filter
@@ -69,7 +61,6 @@ theorem edist_le_mul_pathELength_of_mfderiv_le
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem edist_le_mul_riemannianEDist_of_mfderiv_le_on_ball
     {f : M → F} {p : M} {r K : ℝ≥0} (hK : 0 < K)
     (hf : ∀ z, riemannianEDist I p z < 3 * (r : ℝ≥0∞) →
@@ -117,7 +108,6 @@ variable [IsManifold I 1 M] [RegularSpace M]
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type _)]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_nhds_edist_le_mul_riemannianEDist_of_mfderiv_le
     {f : M → F} {s : Set M} {p : M} (hs : s ∈ 𝓝 p)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.InitialFlowExistence
 import PoincareConjecture.Proofs.M45.Sec15_2_Constants.ProducerEndpoints
 import PoincareConjecture.Proofs.M15.Thm8_10_EarlyVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem normalized_initial_ball_lower_bound
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -41,8 +30,6 @@ theorem normalized_initial_ball_lower_bound
   have hvolume : calibratedMetricVolume N.metric = normalizedMetricVolume N.metric := rfl
   rw [hvolume, ← N.volume_is_normalized_metric]
   exact N.small_ball_lower_bound x r hr hr1
-
-
 
 theorem initialFlowProducer
     (h03 : ∀ (M : Type u) [TopologicalSpace M] [T2Space M]

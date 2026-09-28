@@ -3,15 +3,6 @@ import PoincareConjecture.Statements.M12GeneralizedEquation
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {U : Set ℝ}
-
-
 
 theorem projectedCurveVelocity_contMDiffOn_zero (hU : IsOpen U)
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) 1 γ U) :
@@ -47,9 +36,6 @@ theorem projectedCurveVelocity_contMDiffOn_zero (hU : IsOpen U)
   simp only [Function.comp_apply, projectedCurveVelocity,
     mfderivWithin_of_mem_nhds (hU.mem_nhds hs)]
 
-
-
-
 theorem rawLIntegrand_projectedVelocity_continuousOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hU : IsOpen U)
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) 1 γ U) :
@@ -68,9 +54,6 @@ theorem rawLIntegrand_projectedVelocity_continuousOn
     G.timeIntervals G.gaugeCover).2 G.leafwise
   exact Real.continuous_sqrt.continuousOn.mul
     ((H.scalar_smooth.continuous.comp_continuousOn hγ.continuousOn).add hkinetic.continuousOn)
-
-
-
 
 theorem backwardPath_velocity_eq_projected {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T τ₁ τ₂ x y) {s : ℝ} (hs : s ∈ Ioo τ₁ τ₂) :

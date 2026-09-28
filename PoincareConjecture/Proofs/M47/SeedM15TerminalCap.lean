@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedM15CapBox
 import PoincareConjecture.Proofs.M47.SeedM15PathBox
 import PoincareConjecture.Proofs.M47.SeedM15PathPositivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
-
 
 theorem seedM15_terminal_cap_path_nonpositive
     (hC : RicciFlowCurvatureTheory.{u})

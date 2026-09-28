@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Slab
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBoundaryProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -77,4 +69,3 @@ theorem exists_hamiltonZero_slab_product {ι κ : Type*}
     (hfront.subset.trans hSU)
 
 end PoincareConjecture.M76.PrescribedSlab
-

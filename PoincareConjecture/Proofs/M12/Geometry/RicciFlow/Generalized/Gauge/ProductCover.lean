@@ -11,9 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable section
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -202,7 +199,6 @@ theorem OrdinaryProductSpacetimeConclusion.chartCylinder_localDiffeomorph
   intro p
   exact (ordinaryProductSourceMap_localDiffeomorph (n := n) _ x p).comp _ _
     (P.productIdentification.isLocalDiffeomorph _)
-
 
 def OrdinaryProductSpacetimeConclusion.gaugeCover
     {g : ℝ → RiemannianMetric n M} {I : SpacetimeInterval}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M56.FiniteTrace
 import PoincareConjecture.Proofs.M56.TracePath
 import PoincareConjecture.Proofs.M56.GroupInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m56FinitePathCover {F : SurgeryFlowData.{u}} {W : RepairedEventChildWitness F}
     (T : ℝ) (hT : T ∈ F.time_domain)
@@ -44,8 +34,6 @@ theorem m56FinitePathCover {F : SurgeryFlowData.{u}} {W : RepairedEventChildWitn
   refine ⟨s.equivFin ⟨y, hy⟩, ?_⟩
   change x ∈ U (s.equivFin.symm (s.equivFin ⟨y, hy⟩)).1
   simpa only [Equiv.symm_apply_apply] using hxy
-
-
 
 theorem m56FiniteAncestry (G54 : RepairedGroupEffectsTheory.{u})
     {F : SurgeryFlowData.{u}} (W : RepairedEventChildWitness F)

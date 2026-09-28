@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14Exponential
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,19 +13,13 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport n X time I) (T : ℝ)
 
-
-
 noncomputable def backwardSquareClock (q : G.Point) : ℝ :=
   Real.sqrt (T - G.spacetime.timeFunction q)
-
-
 
 theorem backwardSquareClock_continuous : Continuous (backwardSquareClock G T) := by
   have ht : ContMDiff (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞ G.spacetime.timeFunction :=
     G.spacetime.time_smooth
   exact Real.continuous_sqrt.comp (continuous_const.sub ht.continuous)
-
-
 
 theorem backwardSquareClock_contMDiffOn :
     ContMDiffOn (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞ (backwardSquareClock G T)
@@ -44,8 +29,6 @@ theorem backwardSquareClock_contMDiffOn :
     G.spacetime.time_smooth
   exact ((Real.contDiffAt_sqrt (ne_of_gt (sub_pos.mpr hq))).contMDiffAt.comp q
     ((contMDiff_const.sub ht).contMDiffAt)).contMDiffWithinAt
-
-
 
 theorem backwardSquareClock_admissible {q : G.Point}
     (hq : G.spacetime.timeFunction q ≤ T) :
@@ -58,16 +41,11 @@ theorem backwardSquareClock_admissible {q : G.Point}
   rw [heq, ← G.spacetime.time_range]
   exact ⟨q, rfl⟩
 
-
-
 theorem backwardSquareClock_exponential {x : G.Point}
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}
     (hs : (Z, s) ∈ E.domain) : backwardSquareClock G T (E.gamma Z s) = s := by
   rw [backwardSquareClock, E.clock Z s hs, sub_sub_cancel,
     Real.sqrt_sq (E.domain_admissible hs).1]
-
-
-
 
 theorem exists_backwardSquareClock_neighborhood {x : G.Point}
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}

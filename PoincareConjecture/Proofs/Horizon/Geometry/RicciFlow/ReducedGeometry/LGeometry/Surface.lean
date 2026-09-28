@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Differential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,8 +66,6 @@ theorem sum_ricciDerivativePairing_surface_trace (D : LeviCivitaData g)
   simp
   ring
 
-
-
 theorem sum_ricciDerivativePairing_surface_index_cancel (D : LeviCivitaData g)
     (x : M) (v : TangentSpace (𝓡 2) x) (s f : ℝ)
     (e : letI : Bundle.RiemannianBundle (TangentSpace (𝓡 2) : M → Type _) :=
@@ -99,8 +88,6 @@ theorem sum_ricciDerivativePairing_surface_index_cancel (D : LeviCivitaData g)
   rw [D.sum_ricciDerivativePairing_surface_divergence,
     D.sum_ricciDerivativePairing_surface_trace]
   ring
-
-
 
 theorem sum_surface_indexDensity (D : LeviCivitaData g)
     (x : M) (A : TangentSpace (𝓡 2) x) (s f fp : ℝ)

@@ -6,31 +6,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Deriv
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.TimeCorrection
 import Mathlib.Algebra.Order.BigOperators.Ring.Finset
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped Manifold ContDiff Bundle BigOperators
 open PoincareConjecture
 
 namespace Poincare.RicciFlow.Harnack
 
 variable {I : Type*} [Fintype I]
-
-
-
 
 lemma traceHarnackExpression_eq (Rm : I → I → I → I → ℝ)
     (Ric LapRic HessR : I → I → ℝ) (A : I → I → I → ℝ)
@@ -52,8 +33,6 @@ lemma traceHarnackExpression_eq (Rm : I → I → I → I → ℝ)
   simp_rw [hRic]
   ring
 
-
-
 lemma harnackReaction_trace_nonneg (Rm : I → I → I → I → ℝ)
     (Ric : I → I → ℝ)
     (hRic : ∀ k l, ∑ i, Rm k i l i = Ric k l)
@@ -63,8 +42,6 @@ lemma harnackReaction_trace_nonneg (Rm : I → I → I → I → ℝ)
   rw [harnackReaction_trace Rm Ric hRic hsymm]
   exact Finset.sum_nonneg fun i hi ↦
     Finset.sum_nonneg fun k hk ↦ sq_nonneg (Ric i k)
-
-
 
 lemma frameRicci_contraction_and_symmetry
     {n : ℕ} {M : Type*} [TopologicalSpace M]

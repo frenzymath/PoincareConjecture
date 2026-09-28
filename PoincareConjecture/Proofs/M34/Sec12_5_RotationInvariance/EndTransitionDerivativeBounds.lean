@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndTranslationCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem exists_endTransition_derivative_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

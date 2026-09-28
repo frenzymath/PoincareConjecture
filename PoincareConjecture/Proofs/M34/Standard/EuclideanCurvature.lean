@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem continuous_euclideanCurvatureTensor {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

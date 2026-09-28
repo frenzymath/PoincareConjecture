@@ -1,19 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace Poincare.EuclideanSpace
-
 
 def euclideanCons {n : ℕ} (t : ℝ) (y : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin (n + 1)) :=
@@ -26,7 +18,6 @@ lemma euclideanCons_zero {n : ℕ} (t : ℝ) (y : EuclideanSpace ℝ (Fin n)) :
 @[simp]
 lemma euclideanCons_succ {n : ℕ} (t : ℝ) (y : EuclideanSpace ℝ (Fin n)) (i : Fin n) :
     euclideanCons t y i.succ = y i := rfl
-
 
 def euclideanTail {n : ℕ} (x : EuclideanSpace ℝ (Fin (n + 1))) :
     EuclideanSpace ℝ (Fin n) :=
@@ -47,7 +38,6 @@ lemma euclideanCons_tail {n : ℕ} (x : EuclideanSpace ℝ (Fin (n + 1))) :
     euclideanCons (x 0) (euclideanTail x) = x := by
   ext i
   cases i using Fin.cases <;> rfl
-
 
 noncomputable def euclideanConsCLE (n : ℕ) :
     (ℝ × EuclideanSpace ℝ (Fin n)) ≃L[ℝ] EuclideanSpace ℝ (Fin (n + 1)) :=
@@ -73,7 +63,6 @@ lemma euclideanConsCLE_apply {n : ℕ} (p : ℝ × EuclideanSpace ℝ (Fin n)) :
 lemma euclideanConsCLE_symm_apply {n : ℕ} (x : EuclideanSpace ℝ (Fin (n + 1))) :
     (euclideanConsCLE n).symm x = (x 0, euclideanTail x) := rfl
 
-
 noncomputable def euclideanTailProjectionCLM (n : ℕ) :
     EuclideanSpace ℝ (Fin (n + 1)) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   LinearMap.toContinuousLinearMap
@@ -90,7 +79,6 @@ lemma contDiff_euclideanTail (n : ℕ) : ContDiff ℝ ∞ (euclideanTail (n := n
 
 lemma continuous_euclideanTail (n : ℕ) : Continuous (euclideanTail (n := n)) :=
   (euclideanTailProjectionCLM n).continuous
-
 
 noncomputable def euclideanTailCLM (n : ℕ) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin (n + 1)) :=

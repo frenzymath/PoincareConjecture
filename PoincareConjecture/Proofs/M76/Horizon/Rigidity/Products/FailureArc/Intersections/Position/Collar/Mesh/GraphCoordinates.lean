@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Collar.Mesh.EdgeMotion
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -52,8 +50,6 @@ theorem normalGraphCoordinates_surface {H : E ≃ₜ E} {r c : ℝ}
   change p.2 = c * normalMargin r (p.1, 0) ↔ p.2 - c * normalMargin r (p.1, 0) = 0
   exact sub_eq_zero.symm
 
-
-
 theorem exists_normal_graph_affine_subdivision
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (r : ℝ) :
     ∃ J : SimplicialComplex ℝ E, J.faces.Finite ∧ J.IsSubdivision K ∧
@@ -72,9 +68,6 @@ theorem exists_normal_graph_affine_subdivision
   change (p.1, p.2 - c * normalMargin r (p.1, 0)) = (p.1, p.2 - c * A p)
   have hAp : normalMargin r (p.1, 0) = A p := hA hp
   rw [hAp]
-
-
-
 
 theorem exists_normal_motion_with_affine_cofaces
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (r : ℝ)

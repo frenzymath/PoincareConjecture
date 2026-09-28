@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContractionChart
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -27,20 +18,15 @@ variable {E H X F K M : Type*}
   (J : ModelWithCorners ℝ F K)
   [TopologicalSpace M] [ChartedSpace K M]
 
-
-
 def chartPatch (c : M) (b : X → ℝ) (v : X → F) (f : X → M) (x : X) : M :=
   if b x = 0 then f x else
     (extChartAt J c).symm ((1 - b x) • extChartAt J c (f x) + b x • v x)
 
 omit [TopologicalSpace X] in
 
-
 theorem chartPatch_of_weight_zero (c : M) (b : X → ℝ) (v : X → F) (f : X → M)
     {x : X} (hx : b x = 0) : chartPatch J c b v f x = f x := by
   simp only [chartPatch, hx, if_true]
-
-
 
 theorem chartPatch_eventually_of_not_mem_tsupport
     (c : M) (b : X → ℝ) (v : X → F) (f : X → M) {x : X} (hx : x ∉ tsupport b) :
@@ -48,8 +34,6 @@ theorem chartPatch_eventually_of_not_mem_tsupport
   filter_upwards [(isClosed_tsupport b).isOpen_compl.mem_nhds hx] with y hy
   apply chartPatch_of_weight_zero
   exact notMem_support.mp (fun h => hy (subset_closure h))
-
-
 
 theorem chartPatch_eventually_formula
     (c : M) (b : X → ℝ) (v : X → F) (f : X → M) {x : X}
@@ -64,8 +48,6 @@ theorem chartPatch_eventually_formula
   · rfl
 
 variable [J.Boundaryless] [IsManifold J ∞ M]
-
-
 
 theorem continuous_chartPatch (c : M) (b : X → ℝ) (v : X → F) (f : X → M)
     (hb : Continuous b) (hv : Continuous v) (hf : Continuous f)
@@ -92,8 +74,6 @@ theorem continuous_chartPatch (c : M) (b : X → ℝ) (v : X → F) (f : X → M
   · exact hf.continuousAt.congr_of_eventuallyEq
       (chartPatch_eventually_of_not_mem_tsupport J c b v f hx)
 
-
-
 theorem contMDiffAt_chartPatch_of_contMDiffAt
     (c : M) (b : X → ℝ) (v : X → F) (f : X → M)
     (hb : ContMDiff I 𝓘(ℝ, ℝ) ∞ b) (hv : ContMDiff I 𝓘(ℝ, F) ∞ v)
@@ -112,8 +92,6 @@ theorem contMDiffAt_chartPatch_of_contMDiffAt
       ((isOpen_extChartAt_target c).mem_nhds (htarget x hx))).comp x hi).congr_of_eventuallyEq
     exact chartPatch_eventually_formula J c b v f hf.continuousAt (hsource x hx)
   · exact hf.congr_of_eventuallyEq (chartPatch_eventually_of_not_mem_tsupport J c b v f hx)
-
-
 
 theorem contMDiffAt_chartPatch_of_plateau
     (c : M) (b : X → ℝ) (v : X → F) (f : X → M)
@@ -137,7 +115,6 @@ theorem contMDiffAt_chartPatch_of_plateau
     Function.comp_apply] using hy
 
 omit [J.Boundaryless] [IsManifold J ∞ M] in
-
 
 theorem chartPatch_preserves_value
     (c : M) (b : X → ℝ) (v : X → F) (f : X → M)

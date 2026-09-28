@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoordinateFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +22,6 @@ noncomputable local instance rescaledLimitFlowCoefficientSpace :
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
-
 theorem exists_metric_of_standard_coefficients
     (B : E → MetricCoefficient 3) (hsmooth : ContDiff ℝ ∞ B)
     (hsymm : ∀ x v w, B x v w = B x w v)
@@ -53,9 +37,6 @@ theorem exists_metric_of_standard_coefficients
   refine ⟨g, ?_⟩
   funext x
   exact ContinuousLinearMap.ext fun v => ContinuousLinearMap.ext fun w => hg x v w
-
-
-
 
 theorem ricciFlowOperator_standard_coefficients
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x v w : E) :
@@ -75,11 +56,6 @@ theorem ricciFlowOperator_standard_coefficients
     rfl
   rw [hop]
   rfl
-
-
-
-
-
 
 theorem exists_rescaled_limit_flow_of_coefficients
     (g0 : StandardInitialMetric) {lifetime : ℝ} (hlife : 0 < lifetime)
@@ -141,11 +117,6 @@ theorem exists_rescaled_limit_flow_of_coefficients
   apply hd.congr_of_mem _ ht
   intro s hs
   exact congrArg (fun C => C x v w) (hcoeff s hs)
-
-
-
-
-
 
 theorem exists_rescaled_partial_flow_of_coefficients
     (g0 : StandardInitialMetric) {lifetime : ℝ} (hlife : 0 < lifetime)

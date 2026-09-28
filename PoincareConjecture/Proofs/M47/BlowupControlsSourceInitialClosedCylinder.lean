@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCylinderJoin
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialTop
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_closed_cylinder
     {F : SurgeryFlowData.{u}} {T left : ℝ} (hT : T ∈ F.surgery_times)

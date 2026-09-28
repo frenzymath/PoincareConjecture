@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Kato
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +32,6 @@ theorem ricciNormSq_pos_of_scalarCurvature_pos (D : LeviCivitaData g)
       (Finset.single_le_sum (fun j _ => Finset.sum_nonneg fun k _ =>
         sq_nonneg (D.ricci x (b j) (b k))) (Finset.mem_univ i))
   exact (sq_pos_of_pos hi).trans_le hs
-
-
 
 theorem normalizedRicciNormSq_gradient_bound (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hR : ∀ y : M, 0 < D.scalarCurvature y)
@@ -91,8 +82,6 @@ theorem normalizedRicciNormSq_gradient_bound (D : LeviCivitaData g)
 end LeviCivitaData
 
 namespace RicciFlow
-
-
 
 theorem normalizedRicciNormSq_deriv_le_at_localMax
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)

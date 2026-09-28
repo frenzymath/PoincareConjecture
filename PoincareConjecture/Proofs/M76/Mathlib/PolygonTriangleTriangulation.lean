@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangulationData
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleRegion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
 
 theorem exists_triangle_triangulation (P : Polygon (ℝ × ℝ) 3)
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :

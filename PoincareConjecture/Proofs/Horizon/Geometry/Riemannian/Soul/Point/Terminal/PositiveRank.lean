@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.NormalModel
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_nonzero_centered_geodesic_of_two_points
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}
@@ -73,8 +57,6 @@ theorem exists_nonzero_centered_geodesic_of_two_points
       simpa only [hright] using (heq (1 / 2) (by norm_num)).self_of_nhds
     exact hxy (hxq.trans hyq.symm)
   exact ⟨q, hmem hzero, γ, v, hγ, rfl, hd, hv, hmem⟩
-
-
 
 theorem exists_positive_normal_line_disk_of_two_points
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}

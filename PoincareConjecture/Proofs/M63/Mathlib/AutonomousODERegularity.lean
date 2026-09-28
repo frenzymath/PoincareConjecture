@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem contDiffAt_infty_of_hasDerivAt_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

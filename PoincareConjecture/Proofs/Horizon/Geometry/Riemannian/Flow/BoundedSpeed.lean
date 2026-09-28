@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Gl
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CurvePasting
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_smooth_globalFlow_of_bounded_speed
     (g : RiemannianMetric n M) (hc : MetricComplete g)

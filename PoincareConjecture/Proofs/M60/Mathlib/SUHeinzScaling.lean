@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.SUNonnegativeHeinz
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +9,6 @@ open Set MeasureTheory
 open scoped ContDiff Pointwise
 
 namespace PoincareConjecture.M60
-
 
 theorem fderiv_comp_homothety {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -30,7 +21,6 @@ theorem fderiv_comp_homothety {E F : Type*}
   ext w
   simp only [ContinuousLinearMap.comp_apply, smul_apply, ContinuousLinearMap.id_apply,
     map_smul]
-
 
 theorem suPlaneLaplacian_rescale {u : EuclideanSpace ℝ (Fin 2) → ℝ}
     (hu : ContDiff ℝ ∞ u) (R : ℝ) (x : EuclideanSpace ℝ (Fin 2)) :
@@ -53,7 +43,6 @@ theorem suPlaneLaplacian_rescale {u : EuclideanSpace ℝ (Fin 2) → ℝ}
   simp only [smul_apply, smul_eq_mul, ← Finset.mul_sum]
   congr 1
 
-
 theorem suIntegral_rescale (u : EuclideanSpace ℝ (Fin 2) → ℝ) {R : ℝ} (hR : 0 < R) :
     (∫ x in Metric.closedBall 0 1, R ^ 2 * u (R • x)) =
       ∫ x in Metric.closedBall 0 R, u x := by
@@ -63,8 +52,6 @@ theorem suIntegral_rescale (u : EuclideanSpace ℝ (Fin 2) → ℝ) {R : ℝ} (h
   rw [integral_const_mul, Measure.setIntegral_comp_smul_of_pos volume u _ hR,
     finrank_euclideanSpace_fin, hball, smul_eq_mul]
   field_simp
-
-
 
 theorem exists_heinz_estimate_all_radii :
     ∃ A : ℝ, 0 < A ∧ ∀ (K R : ℝ), 0 ≤ K → 0 < R →

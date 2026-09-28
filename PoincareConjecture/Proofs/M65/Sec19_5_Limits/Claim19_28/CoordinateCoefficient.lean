@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ChartCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem m65NormalizationCoefficient_coordinateJets
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -56,8 +45,6 @@ theorem m65NormalizationCoefficient_coordinateJets
     m65FlowChartMetric_at_source F p t hx]
   exact m65NormalizationCoefficient_product_split P c t x
 
-
-
 theorem m65ProjectedCoordinateJet_zero_eq
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) (p : M) {t x : ℝ} (ht : t ∈ Icc a b)
@@ -66,8 +53,6 @@ theorem m65ProjectedCoordinateJet_zero_eq
       deriv (fun y => (chartAt (EuclideanSpace ℝ (Fin n)) p) (c y t).1) x := by
   rw [(m65ProjectedCoordinates_hasDerivAt P c hc p ht hx).deriv, smul_smul,
     inv_mul_cancel₀ (M62.speed_pos P.flow c hc ht x).ne', one_smul]
-
-
 
 theorem m65ProjectedCoordinateJet_one_eq [T2Space M]
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

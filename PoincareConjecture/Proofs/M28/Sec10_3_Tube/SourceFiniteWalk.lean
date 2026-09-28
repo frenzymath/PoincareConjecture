@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckPathConnector
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeScaleBudget
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +14,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
 
 structure SourceFiniteWalk
     (H : CounterexampleNeckFamily E)
@@ -79,9 +66,6 @@ structure SourceFiniteWalk
             ENNReal.ofReal (((T k).chain.neck i).scale *
               Real.sqrt (1 + epsilon) * Real.sqrt 2 * (Real.pi + 1))
 
-
-
-
 theorem exists_source_finite_walk_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧
       ∀ {epsilon C A : ℝ}
@@ -108,8 +92,6 @@ theorem exists_source_finite_walk_accuracy :
     exact H.tube_prefix_scale_cost_le T k n hn
   · intro i hi x hx
     exact hconnector (H.segment k) (H.base_scalar_pos k) hsmall (T k) i hi x hx
-
-
 
 theorem exists_source_finite_walk_family_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

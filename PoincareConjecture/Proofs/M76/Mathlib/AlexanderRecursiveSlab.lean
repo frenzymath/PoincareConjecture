@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,11 +7,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 structure AlexanderHalfSlab (S : Set E) (A : E →ᵃ[ℝ] ℝ) (q : E) (β : ℝ) where
 
@@ -80,10 +66,6 @@ structure AlexanderHalfSlab (S : Set E) (A : E →ᵃ[ℝ] ℝ) (q : E) (β : �
     (p : E × ℝ).2 = 0 → (chart p : E) = (p : E × ℝ).1
 
   bottom_covered : S ∩ {x | A x = 0} ⊆ collar
-
-
-
-
 
 theorem AlexanderHalfSlab.nonempty_of_slab_eq {S S' : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderHalfSlab S A q β)

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLAtlasNeighborhood
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

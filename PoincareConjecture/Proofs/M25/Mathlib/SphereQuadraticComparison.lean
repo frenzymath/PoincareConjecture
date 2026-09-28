@@ -5,25 +5,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Real
-
-
-
 
 theorem exists_quadratic_component_tolerance {K : ℝ} (hK : 1 < K) :
     ∃ d : ℝ, d ∈ Ioo 0 (1 / 2) ∧
@@ -53,9 +40,6 @@ theorem exists_quadratic_component_tolerance {K : ℝ} (hK : 1 < K) :
     exact ⟨hd, hhalf', hlow, hup⟩
   obtain ⟨d, hd, hhalf', hlo, hup⟩ := he.exists
   exact ⟨d, ⟨hd, hhalf'⟩, hlo, hup⟩
-
-
-
 
 theorem quadratic_component_sq_bounds
     {d e e' r V W t a b : ℝ} (hd : d ∈ Ioo 0 (1 / 2))
@@ -107,9 +91,6 @@ theorem quadratic_component_sq_bounds
   apply (le_div_iff₀ hdm).mpr
   have h := hbL.trans hbrU
   nlinarith [mul_nonneg hdm.le (sq_nonneg t)]
-
-
-
 
 theorem quadratic_component_norm_bounds
     {K d e e' r V W t a b : ℝ} (hK : 1 < K) (hd : d ∈ Ioo 0 (1 / 2))

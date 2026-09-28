@@ -1,24 +1,12 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.MetricSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_uniform_open_parameter_radius
     {X K Y : Type*} [MetricSpace X] [TopologicalSpace K] [CompactSpace K]

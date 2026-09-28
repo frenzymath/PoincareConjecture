@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexHalfBlocks
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBase
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem vertex_half_ballPair_and_outside (p : (T.marked 2).vertices)
     (w : ℝ) (hw : w ≠ 0) :

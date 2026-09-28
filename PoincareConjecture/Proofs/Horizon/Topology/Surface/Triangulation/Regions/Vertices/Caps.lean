@@ -1,16 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Sectors
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.EdgeIntersections
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -26,7 +15,6 @@ variable (D : FiniteChartRegionDecomposition (M := M))
 
 omit [T2Space M] in
 
-
 theorem vertex_cap_interior_subset_sector
     {p : M} {P : ChartCircleArrangementVertexPatch D.radius p}
     {x : Bool × Bool → M} (B : ChartCircleArrangementVertexPatch.VertexCapFaces P x)
@@ -41,8 +29,6 @@ theorem vertex_cap_interior_subset_sector
       exact (B.face i).boundary_image_subset_frontier 2 hfirst
     · rw [← B.second_image i] at hsecond
       exact (B.face i).boundary_image_subset_frontier 1 hsecond
-
-
 
 theorem exists_region_vertex_caps :
     ∃ (chart : D.regions → D.centers)
@@ -126,8 +112,6 @@ theorem exists_region_vertex_caps :
     · intro q hq
       obtain ⟨p, hp⟩ := mem_iUnion.mp hq
       exact mem_iUnion.mpr ⟨p, (B p).neighborhood_subset_carriers hp⟩
-
-
 
 theorem vertex_caps_intersection
     {P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M)}

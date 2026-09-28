@@ -3,22 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
 
 theorem weighted_time_le_of_deriv_lower {f : ℝ → ℝ} {a b : ℝ}
     (ha : 0 < a) (hab : a ≤ b) (hf : AbsolutelyContinuousOnInterval f a b)

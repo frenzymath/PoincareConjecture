@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.OpenDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -18,14 +9,11 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
 
-
 def sliceDomain (J : Set ℝ) (t : ℝ) : Opens StandardCapSpace :=
   ⟨{_x : StandardCapSpace | t ∈ J}, by
     by_cases ht : t ∈ J
     · simpa only [ht, ofPred_true] using isOpen_univ (X := StandardCapSpace)
     · simpa only [ht, ofPred_false] using isOpen_empty (X := StandardCapSpace)⟩
-
-
 
 noncomputable def slice (J : Set ℝ) (t : ℝ) : GeneralizedSliceCarrier where
   carrier := sliceDomain J t
@@ -38,8 +26,6 @@ noncomputable def slice (J : Set ℝ) (t : ℝ) : GeneralizedSliceCarrier where
   t3Space := inferInstance
   secondCountable := inferInstance
 
-
-
 def sliceDiffeomorph {J : Set ℝ} {t : ℝ} (ht : t ∈ J) :
     Diffeomorph (𝓡 3) (𝓡 3) (slice J t).carrier StandardCapSpace ∞ where
   toFun := Subtype.val
@@ -50,28 +36,19 @@ def sliceDiffeomorph {J : Set ℝ} {t : ℝ} (ht : t ∈ J) :
   contMDiff_invFun :=
     (ContMDiff.subtypeVal_comp_iff (sliceDomain J t) (fun x => ⟨x, ht⟩)).mp contMDiff_id
 
-
-
 theorem slice_val_localDiffeomorph (J : Set ℝ) (t : ℝ) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞
       (Subtype.val : (slice J t).carrier → StandardCapSpace) := by
   intro x
   exact (sliceDiffeomorph x.property).isLocalDiffeomorph x
 
-
-
 noncomputable def metric {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (t : ℝ) :
     RiemannianMetric 3 (slice J t).carrier :=
   (F.metric t).pullbackOfLocalDiffeomorph Subtype.val (slice_val_localDiffeomorph J t)
 
-
-
-
 noncomputable def connection {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) (t : ℝ) :
     LeviCivitaData (metric F t) :=
   (metric F t).openEuclideanLeviCivitaData (sliceDomain J t)
-
-
 
 theorem slice_nonempty_iff (J : Set ℝ) (t : ℝ) :
     Nonempty (slice J t).carrier ↔ t ∈ J := by
@@ -80,8 +57,6 @@ theorem slice_nonempty_iff (J : Set ℝ) (t : ℝ) :
     exact x.property
   · intro ht
     exact ⟨⟨0, ht⟩⟩
-
-
 
 theorem metric_pullback {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {t : ℝ} (ht : t ∈ J) (x : StandardCapSpace) (u v : TangentSpace (𝓡 3) x) :

@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 import Mathlib.Analysis.Calculus.Deriv.Support
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open M62
-
-
 
 theorem exists_m63ArcCutoff_profile :
     ∃ psi : ℝ → ℝ, ∃ P1 P2 : ℝ,
@@ -67,8 +55,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
-
 theorem m63ArcCutoff_contDiff_two (hc : M62ShrinkingCurve F c)
     {t : ℝ} (ht : t ∈ Set.Icc a b) (x0 r : ℝ)
     (psi : ℝ → ℝ) (hpsi : ContDiff ℝ 2 psi) :
@@ -85,9 +71,6 @@ theorem m63ArcCutoff_contDiff_two (hc : M62ShrinkingCurve F c)
     rw [heq]
     exact hv
   exact hpsi.comp (hsmooth.div_const r)
-
-
-
 
 theorem m63ArcCutoff_boundary_zero (hc : M62ShrinkingCurve F c)
     {t r : ℝ} (ht : t ∈ Set.Icc a b) (hr : 0 < r) (alpha beta x0 : ℝ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -41,9 +32,6 @@ private lemma mfderiv_eq_zero_at_local_min {f : M → ℝ} {x : M}
     simpa only [extChartAt_to_inv] using htend.eventually hmin
   rw [hf.mfderiv]
   simpa [writtenInExtChartAt, chartAt_self_eq] using hchart.fderiv_eq_zero
-
-
-
 
 theorem closed_core_eq_closure_core (N : CapCertificate g) :
     N.closed_core = closure N.core := by

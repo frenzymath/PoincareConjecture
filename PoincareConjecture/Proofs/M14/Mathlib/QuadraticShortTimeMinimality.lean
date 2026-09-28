@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyStationarity
 import PoincareConjecture.Proofs.M14.Mathlib.FiniteEnergyActionComparison
 import PoincareConjecture.Proofs.M08.ChartEulerRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -43,10 +33,6 @@ private noncomputable local instance trilinearNormedGroup :
 
 private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem quadratic_short_time_minimality {a b m M : ℝ} (hab : a ≤ b) (hm : 0 < m)
     {S : Set E} (hS : Convex ℝ S) (K : ℝ≥0)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateComposition
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,29 +21,21 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
   {h : RiemannianMetric 3 X}
 
-
-
 def capturedCylinderMap (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)
     (N : EpsilonNeck h) (q : UnitTwoSphere) (s : ℝ) :
     EuclideanSpace ℝ (Fin 3) → M :=
   e.symm ∘ cylinderNeckChart N q s
-
-
 
 def capturedCylinderCoordinates (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)
     (N : EpsilonNeck h) (q : UnitTwoSphere) (s : ℝ) (p : M) :
     EuclideanSpace ℝ (Fin 3) → EuclideanSpace ℝ (Fin 3) :=
   (extChartAt (𝓡 3) p) ∘ capturedCylinderMap e N q s
 
-
-
 def capturedCylinderChartDomain (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)
     (N : EpsilonNeck h) (q : UnitTwoSphere) (s : ℝ) (p : M) :
     Set (EuclideanSpace ℝ (Fin 3)) :=
   cylinderNeckChartDomain N q s ∩
     (capturedCylinderMap e N q s) ⁻¹' (extChartAt (𝓡 3) p).source
-
-
 
 theorem cylinderNeckChart_mem_carrier (N : EpsilonNeck h)
     (q : UnitTwoSphere) (s : ℝ) {x : EuclideanSpace ℝ (Fin 3)}
@@ -63,7 +45,6 @@ theorem cylinderNeckChart_mem_carrier (N : EpsilonNeck h)
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem capturedCylinderMap_mem_source
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
     (hcapture : N.carrier ⊆ e.target) (q : UnitTwoSphere) (s : ℝ)
@@ -72,7 +53,6 @@ theorem capturedCylinderMap_mem_source
   e.map_target (hcapture (cylinderNeckChart_mem_carrier N q s hx))
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem contMDiffOn_capturedCylinderMap
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
@@ -84,7 +64,6 @@ theorem contMDiffOn_capturedCylinderMap
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem isOpen_capturedCylinderChartDomain
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
     (hcapture : N.carrier ⊆ e.target) (q : UnitTwoSphere) (s : ℝ) (p : M) :
@@ -93,7 +72,6 @@ theorem isOpen_capturedCylinderChartDomain
     (isOpen_cylinderNeckChartDomain N q s) (isOpen_extChartAt_source p)
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem zero_mem_capturedCylinderChartDomain
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
@@ -104,8 +82,6 @@ theorem zero_mem_capturedCylinderChartDomain
   change e.symm (cylinderNeckChart N q s 0) ∈ (extChartAt (𝓡 3) p).source
   rw [cylinderNeckChart_zero]
   exact hp
-
-
 
 theorem contDiffOn_capturedCylinderCoordinates
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞) (N : EpsilonNeck h)
@@ -119,9 +95,6 @@ theorem contDiffOn_capturedCylinderCoordinates
       (capturedCylinderMap e N q s x) :=
     contMDiffAt_extChartAt' (by simpa only [extChartAt_source, mem_preimage] using hx.2)
   exact ((hc.comp x hw).contDiffAt).contDiffWithinAt
-
-
-
 
 theorem capturedCylinderCoordinates_source_coefficients
     (gX : RiemannianMetric 3 X)
@@ -159,8 +132,6 @@ theorem capturedCylinderCoordinates_source_coefficients
     _ = _ := gX.pullbackCoefficients_comp
       ((he.comp (psi x) hcinv).mdifferentiableAt (by simp))
       (hpsi.differentiableAt (by simp))
-
-
 
 theorem capturedCylinderCoordinates_limit_coefficients
     (g : RiemannianMetric 3 M)

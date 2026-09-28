@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ChartCompactRanges
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m65IntrinsicChartField_compact_finiteRange {κ : Type*}
     {circumference : κ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))
@@ -68,8 +58,6 @@ theorem m65IntrinsicChartField_compact_finiteRange {κ : Type*}
     rw [Metric.mem_closedBall, dist_zero_right]
     exact hb l k t x ht hx
   · exact ⟨(t, e (c k x t).1), ⟨ht, ⟨_, hx, rfl⟩⟩, rfl⟩
-
-
 
 theorem m65IntrinsicSpatialOperator_compact_range {κ : Type*}
     {circumference : κ → ℝ} (P : ∀ k, M62.CircleProductData F (circumference k))

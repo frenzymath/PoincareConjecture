@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryTangentSectors
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SectorFan
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -55,11 +43,6 @@ private theorem corner_ray_sign
       (mul_pos_iff_of_pos_left (inv_pos.mpr hrpos')).mp hr
     exact ⟨iff_of_true hp.le hpos,
       iff_of_false (not_le_of_gt hp) (not_lt_of_ge hpos.le)⟩
-
-
-
-
-
 
 theorem m64Intrinsic_corner_tangent_partition_ae
     {I : Type*} [Finite I]

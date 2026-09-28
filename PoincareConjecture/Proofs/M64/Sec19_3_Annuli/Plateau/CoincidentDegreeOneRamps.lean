@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +15,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem degreeOneRamp_eq_of_circle_eq
     (P : M62.CircleProductData F circumference) {gamma : ℝ → P.charts.Point}
@@ -77,8 +63,6 @@ private theorem degreeOneRamp_phase_homeomorph
       (fun x => mul_pos hk (L.derivative_positive x)) hP hshift
   exact ⟨phi, fun x => congrFun hphi x, hm, hmi, hc, hci, hp, hpi, K, J, hK, hJ⟩
 
-
-
 theorem coincident_degreeOneRamps_reparametrize
     (P : M62.CircleProductData F circumference) {gamma0 gamma1 : ℝ → P.charts.Point}
     (hp0 : Function.Periodic gamma0 curvePeriod)
@@ -118,8 +102,6 @@ theorem coincident_degreeOneRamps_reparametrize
   have hcircle : (gamma0 (sigma.map x)).2 = (gamma0 y).2 := by
     rw [← L0.quotient_eq, hphase, L1.quotient_eq, hy]
   exact (degreeOneRamp_eq_of_circle_eq P hp0 L0 hd0 hcircle).trans hy
-
-
 
 theorem coincident_degreeOneRamps_zero_annulus [T2Space M]
     (P : M62.CircleProductData F circumference) (t : ℝ)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.ScalarAnnuli
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -13,8 +7,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem integral_scalarCurvature_posPart_outside_iUnion_ball_le_of_scale_annuli
     {n : ℕ} {M : Type*} [TopologicalSpace M]

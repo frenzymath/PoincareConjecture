@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def UnitRicciKernel (D : LeviCivitaData g) :=
   {p : TangentBundle (𝓡 n) M |
     g.inner p.proj p.snd p.snd = 1 ∧ ∀ w, D.ricci p.proj p.snd w = 0}
@@ -38,14 +26,12 @@ instance (D : LeviCivitaData g) : TopologicalSpace (UnitRicciKernel D) :=
   inferInstanceAs (TopologicalSpace {p : TangentBundle (𝓡 n) M |
     g.inner p.proj p.snd p.snd = 1 ∧ ∀ w, D.ricci p.proj p.snd w = 0})
 
-
 def unitRicciKernelProjection (D : LeviCivitaData g) (p : UnitRicciKernel D) : M := p.1.proj
 
 theorem continuous_unitRicciKernelProjection (D : LeviCivitaData g) :
     Continuous (unitRicciKernelProjection D) :=
   (FiberBundle.continuous_proj (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n))).comp
     continuous_subtype_val
-
 
 theorem unit_ricci_null_eq_or_eq_neg (D : LeviCivitaData g) (x : M)
     (hdim : ricciNullity D x = 1) (v w : TangentSpace (𝓡 n) x)
@@ -73,14 +59,11 @@ theorem unit_ricci_null_eq_or_eq_neg (D : LeviCivitaData g) (x : M)
   · exact Or.inl (by simpa only [one_smul] using hc'.symm)
   · exact Or.inr (by simpa only [neg_one_smul] using hc'.symm)
 
-
 abbrev LineSign := ({1, -1} : Set ℝ)
 
 instance : Fintype LineSign := ((Set.finite_singleton (-1 : ℝ)).insert 1).fintype
 
 instance : DiscreteTopology LineSign := inferInstance
-
-
 
 def unitRicciKernelLocalHomeomorph
     (D : LeviCivitaData g) {U : Set M}
@@ -150,8 +133,6 @@ def unitRicciKernelLocalHomeomorph
     intro s
     exact (hV.const_smul_section (a := s.1)).continuousOn.domRestrict
 
-
-
 theorem unitRicciKernel_evenlyCovered_of_terminal_nullity_one
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -165,8 +146,6 @@ theorem unitRicciKernel_evenlyCovered_of_terminal_nullity_one
     unitRicciKernelLocalHomeomorph (F.connection b) V hV (fun y _ => hdim y)
       (fun y hy => (hn y hy).1) (fun y hy => (hn y hy).2.1), fun _ => rfl⟩
 
-
-
 theorem unitRicciKernel_isCoveringMap_of_terminal_nullity_one
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b))
@@ -175,7 +154,6 @@ theorem unitRicciKernel_isCoveringMap_of_terminal_nullity_one
     IsCoveringMap (unitRicciKernelProjection (F.connection b)) :=
   fun x => (unitRicciKernel_evenlyCovered_of_terminal_nullity_one
     hC hab F hsec hdim x).to_isEvenlyCovered_preimage
-
 
 theorem unitRicciKernel_fiber_card_of_terminal_nullity_one
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
@@ -186,7 +164,6 @@ theorem unitRicciKernel_fiber_card_of_terminal_nullity_one
   rw [← Nat.card_congr (unitRicciKernel_evenlyCovered_of_terminal_nullity_one
     hC hab F hsec hdim x).fiberHomeomorph.toEquiv]
   exact Set.ncard_pair (by norm_num : (1 : ℝ) ≠ -1)
-
 
 def unitRicciKernelReverse (D : LeviCivitaData g) (p : UnitRicciKernel D) : UnitRicciKernel D :=
   ⟨⟨p.1.proj, -p.1.snd⟩, by
@@ -222,7 +199,6 @@ theorem unitRicciKernelReverse_involutive (D : LeviCivitaData g) :
   apply Subtype.ext
   simp only [unitRicciKernelReverse, neg_neg]
 
-
 def unitRicciKernelDeckHomeomorph (D : LeviCivitaData g) : UnitRicciKernel D ≃ₜ UnitRicciKernel D where
   toFun := unitRicciKernelReverse D
   invFun := unitRicciKernelReverse D
@@ -230,7 +206,6 @@ def unitRicciKernelDeckHomeomorph (D : LeviCivitaData g) : UnitRicciKernel D ≃
   right_inv := unitRicciKernelReverse_involutive D
   continuous_toFun := continuous_unitRicciKernelReverse D
   continuous_invFun := continuous_unitRicciKernelReverse D
-
 
 theorem unitRicciKernelReverse_fixedPointFree (D : LeviCivitaData g)
     (p : UnitRicciKernel D) : unitRicciKernelReverse D p ≠ p := by
@@ -253,9 +228,6 @@ theorem unitRicciKernelReverse_fixedPointFree (D : LeviCivitaData g)
 end PoincareConjecture.RicciFlow.Splitting
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem unitRicciKernel_doubleCover_of_terminal_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]

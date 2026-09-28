@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimit
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackCommonDiscBuffers
     (U V : Fin 2 -> OpenPartialHomeomorph (E2 × ℝ) E3)

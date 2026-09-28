@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,7 +29,6 @@ private theorem covector_eq_sum_proj (F : EuclideanSpace ℝ (Fin n) →L[ℝ] �
     smul_apply, PiLp.proj_apply, mul_comm] using h.symm
 
 omit [T3Space M] [MeasurableSpace M] [BorelSpace M] in
-
 
 theorem coordinateGradientFlux_eq_divergenceCoefficients
     (D : LeviCivitaData g)
@@ -77,8 +66,6 @@ theorem coordinateGradientFlux_eq_divergenceCoefficients
   apply Finset.sum_congr rfl
   intro j _
   ring
-
-
 
 theorem integral_coordinate_divergence_eq_zero_of_weak_harmonic
     (D : LeviCivitaData g) {f : M → ℝ} (hf : Continuous f)
@@ -119,8 +106,6 @@ theorem integral_coordinate_divergence_eq_zero_of_weak_harmonic
       rw [D.laplacian_eq_zero_of_notMem_tsupport (fun h => hy (hψs h)), mul_zero]
     _ = 0 := hweak ψ hψ hψc
 
-
-
 theorem integral_coefficient_divergence_eq_zero_of_weak_harmonic
     (D : LeviCivitaData g) {f : M → ℝ} (hf : Continuous f)
     (hweak : ∀ ψ : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ψ →
@@ -156,8 +141,6 @@ theorem integral_coefficient_divergence_eq_zero_of_weak_harmonic
   simpa only [EuclideanSpace.basisFun_apply] using
     congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ =>
       L (EuclideanSpace.single i 1)) heq.fderiv_eq.symm
-
-
 
 theorem integral_coefficient_divergence_eq_zero_of_weak_harmonic_on
     (D : LeviCivitaData g) {f : M → ℝ} (hf : Continuous f)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryCaptureData
 import PoincareConjecture.Proofs.M10.MinimizingLifts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,8 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 include hT out
 
-
-
 theorem ordinaryProduct_minimizing_of_eqOn {a b : ℝ}
     {x y x' y' : (ordinaryProductLGeometry R hRicci).Point}
     (p : M14BackwardPath (ordinaryProductLGeometry R hRicci) T a b x y)
@@ -53,8 +42,6 @@ theorem ordinaryProduct_minimizing_of_eqOn {a b : ℝ}
   apply M10.minimizing_of_eqOn ((out.minimizing_transport a b x y hb hx p hpc).mp hp)
   intro s hs
   exact congrArg (ordinaryProductProjection R.product) (hpq hs)
-
-
 
 theorem ordinaryProduct_stable_reduced_length {tau : ℝ}
     {x : (ordinaryProductLGeometry R hRicci).Point}

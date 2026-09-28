@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaCoordinateCompactness
 import PoincareConjecture.Proofs.M40.Mathlib.SupportedChartSmoothing
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 namespace M60
-
-
-
 
 theorem suAlpha_supported_competitor
     (g : RiemannianMetric n M) (alpha : ℝ) (p : UnitTwoSphere) (b : M)
@@ -86,8 +81,6 @@ theorem suAlpha_supported_competitor
     exact ⟨heq ▸ c.map_target hmem, by rw [heq, c.right_inv hmem]⟩
   · exact fun x hx => M40.supportedChartSmoothing_eventuallyEq s c U rho f G hfU hx
 
-
-
 theorem suAlpha_supported_energy_difference
     (g : RiemannianMetric n M) {alpha : ℝ} (ha : 0 ≤ alpha) (p : UnitTwoSphere)
     (f F : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -112,7 +105,6 @@ theorem suAlpha_supported_energy_difference
 set_option maxHeartbeats 1600000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
 
 theorem suAlpha_local_pair_integral
     (g : RiemannianMetric n M) {alpha R a C D L d s delta : ℝ}
@@ -383,9 +375,6 @@ theorem suAlpha_local_pair_integral
   dsimp only [Q, err, gap, eta, u₁, u₂, O, T, S, cs] at hi
   simp only [Function.comp_apply, Measure.real] at hi
   nlinarith only [hi, hmin₁, hmin₂]
-
-
-
 
 theorem suAlpha_local_affine_comparison
     (g : RiemannianMetric n M) {alpha R : ℝ} (ha : 0 ≤ alpha)

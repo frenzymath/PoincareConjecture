@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticTolerance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_cap_scalar_ratio_margin {m b C : ℝ}
     (hm : 0 < m) (hb : 1 ≤ b) (hbC : b < C) :
@@ -39,8 +30,6 @@ theorem exists_cap_scalar_ratio_margin {m b C : ℝ}
   have hgain := mul_le_mul_of_nonneg_left hfloor hgap.le
   have hmove := mul_le_mul_of_nonneg_left hRlow hbpos.le
   exact ⟨(half_pos hm).trans_le hfloor, by nlinarith⟩
-
-
 
 theorem exists_cap_power_margin {m M b C p : ℝ}
     (hm : 0 < m) (hb : 0 ≤ b) (hbC : b < C) (hp : 0 ≤ p) :

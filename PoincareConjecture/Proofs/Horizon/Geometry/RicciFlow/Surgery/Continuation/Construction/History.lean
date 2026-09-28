@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Cylinders.FromSurgery
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Cylinders.ToSurgery
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.Surgery.RegularHistory
 variable {F : SurgeryFlowData.{u}} (W : M33RegularHistoryWindow F)
   (L : ∀ t, t ∈ F.surgery_times → t ∈ W.interval →
     RicciFlowLocalTheory 3 (F.slice t).carrier)
-
 
 def data : M33RegularHistoryData W where
   generalized := generalized W L

@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousCompMeasurePreserving
 import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -88,7 +79,6 @@ def mollify (hε : 0 < ε) (F : ScalarL2 n) (x : E) : ℝ :=
 theorem continuous_mollify (hε : 0 < ε) (F : ScalarL2 n) : Continuous (mollify hε F) :=
   (continuous_mollifierKernel hε).inner continuous_const
 
-
 theorem mollify_toLp_eq_integral (hε : 0 < ε) {f : E → ℝ}
     (hf : MemLp f 2 volume) (x : E) :
     mollify hε (hf.toLp f) x = ∫ h, mollifier hε h * f (x - h) := by
@@ -114,7 +104,6 @@ theorem mollify_toLp_eq_integral (hε : 0 < ε) {f : E → ℝ}
       have heq : (x - h) - x = -h := by abel
       change mollifier hε ((x - h) - x) * f (x - h) = mollifier hε h * f (x - h)
       rw [heq, mollifier_even]
-
 
 theorem weighted_integral_sq_le {α : Type*} [MeasurableSpace α] {μ : Measure α}
     {w q : α → ℝ} (hw : Integrable w μ) (hwq : Integrable (fun x => w x * q x) μ)
@@ -245,7 +234,6 @@ theorem integrable_mollify_error_sq (hε : 0 < ε) {f : E → ℝ}
     ∫ h, mollifier hε h * (f (x - h) - f x) ^ 2
   rw [Real.norm_eq_abs, abs_pow, sq_abs]
   exact mollify_error_sq_le hε hf.continuous hfL2 x
-
 
 theorem integral_mollify_error_sq_le (hε : 0 < ε) {f : E → ℝ}
     (hf : ContDiff ℝ 1 f) (hfL2 : MemLp f 2 volume)

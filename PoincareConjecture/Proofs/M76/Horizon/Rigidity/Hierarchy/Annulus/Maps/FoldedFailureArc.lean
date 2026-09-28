@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Coverings.ThirdPhasePLArcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -37,8 +28,6 @@ private theorem covering_endpoints_eq_of_comp_contractible
   have he := hg.liftPath_apply_one_eq_of_homotopicRel ⟨F⟩ (b 0) h0 h1
   rw [← hb, hg.liftPath_const h1] at he
   exact he.symm
-
-
 
 theorem hamiltonZero_failure_arc_not_boundary_homotopic
     (psi : C(H0, H0)) {R : Set X0}

@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeL2
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem coneRadialFlux_deriv_continuous {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
@@ -66,9 +52,6 @@ theorem coneRadialFlux_deriv_continuous {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     ((hg.contDiffAt (isOpen_ball.mem_nhds hm)).differentiableAt one_ne_zero)
     (ht.differentiable one_ne_zero _)).deriv
 
-
-
-
 theorem coneGreen_integrable {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
     {r ρ a b K : ℝ} (hr : 0 < r) (hρ : 0 < ρ) (hK : 0 ≤ K)
@@ -100,10 +83,6 @@ theorem coneGreen_integrable {g : EuclideanSpace ℝ (Fin 3) → ℝ}
   exact IntegrableOn.continuousOn_mul continuous_fst.continuousOn
     ((hfield.mul_continuousOn hψ.continuousOn hS).add
       ((hQ.mul hψD.continuousOn).integrableOn_compact hS)) hS
-
-
-
-
 
 theorem coneAngularFlux_deriv_integrable {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2RatioRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,17 +11,11 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem ramp_immersed (P : M62.CircleProductData F circumference)
     {gamma : ℝ → P.charts.Point} {t : ℝ} (hramp : M63IsRampAt P gamma t) :
     ∀ x, curveVelocity (n := n + 1) gamma x ≠ 0 := by
   intro x hx
   simpa [m62Slope, spatialUnitTangent, hx] using hramp x
-
-
-
-
 
 theorem c2_initial_ramp_bounds (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)

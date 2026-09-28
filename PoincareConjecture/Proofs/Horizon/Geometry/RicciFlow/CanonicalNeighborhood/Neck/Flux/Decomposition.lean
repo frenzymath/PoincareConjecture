@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.WeakComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,9 +14,6 @@ variable {M : Type*} [MetricSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem integral_busemann_transition_difference_eq_restricted
     (D : LeviCivitaData g)
@@ -118,9 +102,6 @@ theorem integral_busemann_transition_difference_eq_restricted
         (∫ x in N₂.carrier, F₂ x ∂g.volumeMeasure) := by
       rw [integral_indicator N₁.carrier_open.measurableSet,
         integral_indicator N₂.carrier_open.measurableSet]
-
-
-
 
 theorem integrable_busemann_axialTransition_flux
     [ConnectedSpace M] (D : LeviCivitaData g) (hc : MetricComplete g)

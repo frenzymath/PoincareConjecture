@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
@@ -17,9 +7,6 @@ open Set AffineMap
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
 
 noncomputable def midpointSubdivision (P : Polygon E n) : Polygon E (n * 2) :=
   P.subdivide (fun j : Fin 3 => (j.val : ℝ) / 2)
@@ -30,15 +17,11 @@ private theorem midpointParameters_strictMono :
   apply (div_lt_div_iff_of_pos_right (by norm_num : (0 : ℝ) < 2)).mpr
   exact_mod_cast hij
 
-
-
 theorem midpointSubdivision_apply_zero (P : Polygon E n) (i : Fin n) :
     P.midpointSubdivision (finProdFinEquiv (i, (0 : Fin 2))) = P i := by
   change P.subdivide _ _ = _
   rw [P.subdivide_apply]
   norm_num
-
-
 
 theorem midpointSubdivision_apply_one (P : Polygon E n) (i : Fin n) :
     P.midpointSubdivision (finProdFinEquiv (i, (1 : Fin 2))) =
@@ -47,28 +30,19 @@ theorem midpointSubdivision_apply_one (P : Polygon E n) (i : Fin n) :
   rw [P.subdivide_apply]
   norm_num
 
-
-
 theorem midpoint_rotate_zero (i : Fin n) :
     finRotate (n * 2) (finProdFinEquiv (i, (0 : Fin 2))) =
       finProdFinEquiv (i, (1 : Fin 2)) := by
   simpa using finRotate_finProdFinEquiv_castSucc i (0 : Fin 1)
-
-
 
 theorem midpoint_rotate_one (i : Fin n) :
     finRotate (n * 2) (finProdFinEquiv (i, (1 : Fin 2))) =
       finProdFinEquiv (finRotate n i, (0 : Fin 2)) := by
   simpa using finRotate_finProdFinEquiv_last (m := 1) i
 
-
-
 theorem midpointSubdivision_boundary (P : Polygon E n) :
     P.midpointSubdivision.boundary ℝ = P.boundary ℝ := by
   exact P.subdivide_boundary _ midpointParameters_strictMono (by norm_num) (by norm_num)
-
-
-
 
 theorem midpointSubdivision_simple (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
@@ -78,25 +52,17 @@ theorem midpointSubdivision_simple (P : Polygon E (n + 3))
     (by norm_num) (by norm_num),
     P.injective_subdivide hP hinj _ midpointParameters_strictMono (by norm_num) (by norm_num)⟩
 
-
-
 def midpointCutParameters (α β : Fin n → ℝ) : Fin (n * 2) → ℝ := fun k =>
   let ij := finProdFinEquiv.symm k
   if ij.2 = 0 then 2 * α ij.1 else 2 * β ij.1 - 1
-
-
 
 theorem midpointCutParameters_zero (α β : Fin n → ℝ) (i : Fin n) :
     midpointCutParameters α β (finProdFinEquiv (i, (0 : Fin 2))) = 2 * α i := by
   simp [midpointCutParameters]
 
-
-
 theorem midpointCutParameters_one (α β : Fin n → ℝ) (i : Fin n) :
     midpointCutParameters α β (finProdFinEquiv (i, (1 : Fin 2))) = 2 * β i - 1 := by
   simp [midpointCutParameters]
-
-
 
 theorem midpointCutParameters_mem (α β : Fin n → ℝ)
     (hα : ∀ i, α i ∈ Ioo (0 : ℝ) (1 / 2))
@@ -112,8 +78,6 @@ theorem midpointCutParameters_mem (α β : Fin n → ℝ)
       (show 2 * β i - 1 ∈ Ioo (0 : ℝ) 1 from
         ⟨by linarith [(hβ i).1], by linarith [(hβ i).2]⟩)
 
-
-
 theorem midpointSubdivision_edgeCut_zero (P : Polygon E n)
     (α β : Fin n → ℝ) (i : Fin n) :
     P.midpointSubdivision.edgeCut (midpointCutParameters α β)
@@ -123,8 +87,6 @@ theorem midpointSubdivision_edgeCut_zero (P : Polygon E n)
     midpointSubdivision_apply_one, midpointCutParameters_zero, lineMap_lineMap_right]
   congr 1
   ring
-
-
 
 theorem midpointSubdivision_edgeCut_one (P : Polygon E n)
     (α β : Fin n → ℝ) (i : Fin n) :
@@ -139,9 +101,6 @@ theorem midpointSubdivision_edgeCut_one (P : Polygon E n)
 private theorem original_segment_image (a b : E) {u v : ℝ} (huv : u ≤ v) :
     segment ℝ (lineMap a b u) (lineMap a b v) = lineMap a b '' Icc u v := by
   rw [← image_segment ℝ, segment_eq_Icc huv]
-
-
-
 
 theorem midpointSubdivision_cutArc_zero (P : Polygon E n)
     (α β : Fin n → ℝ) (hα : ∀ i, α i ∈ Ioo (0 : ℝ) (1 / 2))
@@ -162,9 +121,6 @@ theorem midpointSubdivision_cutArc_zero (P : Polygon E n)
     original_segment_image _ _ (hβ i).1.le,
     original_segment_image _ _ ((hα i).2.trans (hβ i).1).le,
     ← image_union, Icc_union_Icc_eq_Icc (hα i).2.le (hβ i).1.le]
-
-
-
 
 theorem midpointSubdivision_cutArc_one (P : Polygon E n)
     (α β : Fin n → ℝ) (hα : ∀ i, α i ∈ Ioo (0 : ℝ) (1 / 2))

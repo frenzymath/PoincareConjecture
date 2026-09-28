@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskDensity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeCircleEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ open Proofs.M58
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64LocalConeDiskMap_energy_le (g : RiemannianMetric n M)
     (H : ℝ × (M × M) → M) (gamma : ℝ → M)
@@ -117,8 +104,6 @@ theorem m64LocalConeDiskMap_energy_le (g : RiemannianMetric n M)
       ring
 
 variable [T2Space M]
-
-
 
 theorem m64_exists_local_cone_disks
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M)) :

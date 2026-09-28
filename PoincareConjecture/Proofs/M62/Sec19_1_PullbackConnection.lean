@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M09.FrameForms
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -29,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem hasDerivAt_metric_pairing {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M}

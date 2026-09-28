@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Cuts.Re
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.StandardPL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundary.OriginalPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -29,8 +20,6 @@ local notation "Ann" => squareAnnulus 8 1
 variable {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
   {d : β → OpenPartialHomeomorph X V3} {phi : C(H, H)}
   {M : PairedMeridianHierarchy e d phi} {uv : ℝ × ℝ} (m : ExactSlabMeridian M uv)
-
-
 
 theorem retainedCylinderParameter_polyhedral_on_interval
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d)
@@ -79,8 +68,6 @@ theorem retainedCylinderParameter_polyhedral_on_interval
       ⟨z.1, (hKS.subset hz).1⟩ z.2)
   exact hKS ▸ hgq
 
-
-
 theorem retainedCylinderParameter_polyhedral
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d)
     (huv : uv ∈ ({(M.a, M.b), (M.b, M.a + p)} : Set (ℝ × ℝ))) :
@@ -89,8 +76,6 @@ theorem retainedCylinderParameter_polyhedral
   m.retainedCylinderParameter_polyhedral_on_interval hd huv _ _ (by
     norm_num
     linarith [m.width_small])
-
-
 
 theorem exists_retainedCylinder_homeomorph
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundar
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.MeasureTheory.Function.L2Space
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -44,11 +33,6 @@ private theorem m65CircleMaps_compact_closure (f : ℕ → C(LoopCircle, LoopCir
     exact heq.equicontinuousOn K
   · intro K _hK x _hx
     exact ⟨univ, isCompact_univ, fun _ _ => mem_univ _⟩
-
-
-
-
-
 
 theorem m65NormalizedWeakDisks_boundary_subsequence
     {M : Type u} [TopologicalSpace M] {N : ℕ}
@@ -87,11 +71,6 @@ theorem m65NormalizedWeakDisks_boundary_subsequence
           ((isClosed_eq (continuous_eval_const ip) continuous_const).union
             (isClosed_eq (continuous_eval_const im) continuous_const)))
     exact hclosed.mem_of_tendsto hlim (Eventually.of_forall fun k => hpin (σ k))
-
-
-
-
-
 
 theorem m65AngularTrace_tendsto_of_continuous
     (f : ℕ → C(LoopCircle, ℝ)) (f0 : C(LoopCircle, ℝ))

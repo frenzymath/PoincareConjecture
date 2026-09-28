@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.AmbientSideCollars
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatNormalAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ open Set Metric
 namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_ambient_side_collars {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     Nonempty (BrownCollar.AmbientSideCollars S) := by

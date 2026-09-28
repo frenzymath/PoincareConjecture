@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.RescalingTopology
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 noncomputable def rescaledFlowBox (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) (b : F.box_index) :
@@ -56,9 +45,6 @@ noncomputable def rescaledFlowBox (F : GeneralizedRicciFlowData.{u})
       exact congrArg (fun z : ℝ ↦ Q * z)
         ((F.box b).metric_pullback (parabolicTimeInv Q a s) (oldTimeMem s hs) x v w) }
 
-
-
-
 noncomputable def rescale (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) : GeneralizedRicciFlowData.{u} where
   slice s := F.slice (parabolicTimeInv Q a s)
@@ -87,15 +73,11 @@ noncomputable def rescale (F : GeneralizedRicciFlowData.{u})
     exact F.vertical_compatibility b c (parabolicTimeInv Q a s) _ _ x y hxy
       (parabolicTimeInv Q a v) _ _
 
-
-
 @[simp]
 theorem mem_rescale_interval (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a s : ℝ) :
     s ∈ (rescale F Q hQ a).interval ↔ parabolicTimeInv Q a s ∈ F.interval :=
   mem_parabolicInterval_iff Q hQ a (Proofs.M12.flowInterval F) s
-
-
 
 theorem rescale_scalar (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a s : ℝ) (x : (rescale F Q hQ a).slice s |>.carrier) :
@@ -106,9 +88,6 @@ theorem rescale_scalar (F : GeneralizedRicciFlowData.{u})
     (Diffeomorph.refl (𝓡 3) (F.slice (parabolicTimeInv Q a s)).carrier ∞) Q hQ
     (M13.identity_metricHomothety _ Q hQ)
     (F.connection (parabolicTimeInv Q a s)) ((rescale F Q hQ a).connection s) x
-
-
-
 
 theorem rescale_edist (F : GeneralizedRicciFlowData.{u})
     (Q : ℝ) (hQ : 0 < Q) (a s : ℝ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.OldCapContactVolume
 import PoincareConjecture.Proofs.M47.SeedNearbyVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_old_cap_inner_volume (P : M47Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})

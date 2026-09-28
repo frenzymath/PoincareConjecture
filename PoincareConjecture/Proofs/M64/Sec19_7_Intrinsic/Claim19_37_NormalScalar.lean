@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_IntrinsicJacobi
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,16 +14,11 @@ open ConnectionAlongCurve ConnectionVariation
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_chartField_eq
     (q V : ℝ → AnnulusCoordinates) (p : AnnulusCoordinates) :
     chartField q p V = V := by
   funext t
   simp [chartField]
-
-
-
 
 theorem m64Intrinsic_exists_normal_scalar_jacobi
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)

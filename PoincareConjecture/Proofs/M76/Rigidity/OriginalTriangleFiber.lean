@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDualSideRestrictions
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PairedSignedFiber
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetChartSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -30,7 +21,6 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
 
-
 theorem triangle_dualBlock_inter_boundary {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 3) :
     let : Fintype T.ambient.faces := T.finite.fintype
@@ -44,8 +34,6 @@ theorem triangle_dualBlock_inter_boundary {s : Finset (T.index → ℝ × V3)}
   exact (T.marked 1).barycentricDualBlock_space_eq_empty_of_not_face
     ((T.marked 2).nonempty_of_mem_faces hs) (T.disk_triangle_not_boundary hs hcard)
 
-
-
 theorem triangle_dualRegion_inter_boundary {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) (hcard : s.card = 3) :
     T.dualRegion s ∩ (T.marked 1).space = ∅ := by
@@ -54,9 +42,6 @@ theorem triangle_dualRegion_inter_boundary {s : Finset (T.index → ℝ × V3)}
   apply eq_empty_iff_forall_notMem.mpr
   intro x hx
   exact (T.triangle_dualBlock_inter_boundary hs hcard).subset ⟨hx.1.1, hx.2⟩
-
-
-
 
 theorem exists_triangle_fiber [T2Space X]
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

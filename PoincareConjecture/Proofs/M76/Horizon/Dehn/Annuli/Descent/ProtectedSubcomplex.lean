@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology Metric
 open PoincareConjecture.M76.Dehn
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_full_relative_neighborhood
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
@@ -51,8 +40,6 @@ variable {U E V M ι : Type*}
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
 
 theorem Step.exists_protected_source_subcomplex (step : Step s t)
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.SpatialBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Terminal.SpatialJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -21,9 +11,6 @@ open Set Filter Bundle
 open scoped Manifold ContDiff Topology ENNReal
 
 namespace PoincareConjecture.SpacetimeBounds
-
-
-
 
 theorem exists_closed_ancient_spatialJet_time_constant
     (n d : ℕ) (K Z : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)
@@ -98,9 +85,6 @@ local instance terminalJetsCarrierConnected (D : FlowCarrier 3) : ConnectedSpace
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
 
-
-
-
 theorem exists_eventually_terminal_ball_curvatureDerivativeNorm_le
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hc : ∀ k t, t ≤ 0 → MetricComplete ((F k).metric t))
@@ -154,9 +138,6 @@ theorem exists_eventually_terminal_ball_curvatureDerivativeNorm_le
     D / (1 : ℝ) ^ ((m : ℝ) / 2) at hder
   rw [show 1 + (t - 1) = t by ring, Real.one_rpow, div_one] at hder
   exact hder
-
-
-
 
 theorem exists_eventually_terminal_spatialJet_time_constant
     (P : M23NormalizedKappaCompactnessPredecessors)

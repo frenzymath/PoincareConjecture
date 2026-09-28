@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.CorrectedParameterProduct
 import PoincareConjecture.Proofs.M76.Rigidity.ParameterBandNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +13,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 local notation "J" => Icc (-(1 / 4 : ℝ)) (1 / 4)
-
-
-
 
 theorem exists_normalized_corrected_parameter_product {a : ℝ} (ha : 0 < a) (q : E → E)
     (hq : FinitePiecewiseAffineOn q (Q ×ˢ Icc (-a) a))

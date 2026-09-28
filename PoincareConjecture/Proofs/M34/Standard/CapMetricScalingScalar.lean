@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.ScalarGradientHomothety
 import PoincareConjecture.Proofs.M34.Standard.ScalarEvolutionHomothety
 import Mathlib.Data.Real.Pointwise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [T2Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem scaleSmoothMetric_scalarCurvatureSupOn (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (X : Set M) :
     scalarCurvatureSupOn (scaleSmoothMetric g Q hQ) (scaleLeviCivitaData D Q hQ) X =
@@ -38,8 +26,6 @@ theorem scaleSmoothMetric_scalarCurvatureSupOn (D : LeviCivitaData g)
     (Real.smul_iSup_of_nonneg (inv_nonneg.mpr hQ.le)
       (fun z : X => D.scalarCurvature z.1)).symm
 
-
-
 theorem scaleSmoothMetric_scalarCurvatureSupOn_rpow (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (X : Set M)
     (hS : 0 ≤ scalarCurvatureSupOn g D X) (p : ℝ) :
@@ -47,8 +33,6 @@ theorem scaleSmoothMetric_scalarCurvatureSupOn_rpow (D : LeviCivitaData g)
       Q ^ (-p) * scalarCurvatureSupOn g D X ^ p := by
   rw [scaleSmoothMetric_scalarCurvatureSupOn D Q hQ X,
     Real.div_rpow hS hQ.le, Real.rpow_neg hQ.le, div_eq_mul_inv, mul_comm]
-
-
 
 theorem scaleSmoothMetric_scalarGradientNorm (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : M) :
@@ -67,8 +51,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {g : RiemannianMetric n M}
-
-
 
 theorem scaleLeviCivitaData_scalarEvolution (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : M) :
@@ -92,7 +74,6 @@ variable {M : Type*} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem scalar_range_bddAbove_on_subset {X : Set M} (hX : X ⊆ N.carrier) :
     BddAbove (range (fun z : X => N.connection.scalarCurvature z.1)) := by
   obtain ⟨o, ho⟩ := N.core_nonempty
@@ -107,7 +88,6 @@ theorem scalar_range_bddAbove_on_subset {X : Set M} (hX : X ⊆ N.carrier) :
   exact hb o hoc z.1 (hX z.2)
 
 omit [T2Space M] in
-
 
 theorem scalarSup_pos_on_subset {X : Set M} (hX : X ⊆ N.carrier) (hne : X.Nonempty) :
     0 < scalarCurvatureSupOn g N.connection X := by

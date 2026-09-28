@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M10.MetricTrace
 import Mathlib.Analysis.Calculus.LHopital
 import Mathlib.Analysis.Asymptotics.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -82,7 +73,6 @@ theorem squareAction_quotient_tendsto (G : LExponentialGeometry F T τmax p)
       nhdsWithin_le_nhds).const_mul 2
   exact HasDerivAt.lhopital_zero_nhdsGT hH hg (Filter.Eventually.of_forall (by norm_num))
     ((action_tendsto_zero G hmax Z).comp hsqpos) hgzero hratio
-
 
 theorem normalized_action_tendsto_initial (G : LExponentialGeometry F T τmax p)
     (hmax : 0 < τmax) (hT : T ∈ J) (hwindow : Icc (T - τmax) T ⊆ J)

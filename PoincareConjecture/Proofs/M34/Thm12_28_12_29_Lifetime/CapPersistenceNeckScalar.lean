@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceScala
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControl
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ universe u
 namespace PoincareConjecture.M34
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem capPersistence_exists_neck_scalar_accuracy {eta : ℝ} (heta : 0 < eta) :
     ∃ delta0 : ℝ, 0 < delta0 ∧

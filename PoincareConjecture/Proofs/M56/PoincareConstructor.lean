@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M56.FiniteAncestry
 import PoincareConjecture.Proofs.M56.EventWitness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m56PoincareConstructor (G54 : RepairedGroupEffectsTheory.{u})
     (G55 : RepairedChildComponentsTheory.{u})

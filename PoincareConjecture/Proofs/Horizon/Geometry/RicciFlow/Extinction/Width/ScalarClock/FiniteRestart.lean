@@ -7,13 +7,6 @@ open scoped Topology
 
 namespace PoincareConjecture
 
-
-
-
-
-
-
-
 theorem m68_event_restart_bound
     {a s : ℝ} {f G : ℝ → ℝ}
     (has : a < s)

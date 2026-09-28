@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,8 +10,6 @@ namespace MeasureTheory
 variable {X E : Type*} [MeasurableSpace X] {mu : Measure X}
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem MemLp.smul_cutoff {u : X → E} (hu : MemLp u 2 mu)
     {theta : X → ℝ} (htheta : AEStronglyMeasurable theta mu)
     (hbound : ∀ᵐ x ∂mu, |theta x| ≤ 1) : MemLp (fun x => theta x • u x) 2 mu := by
@@ -28,9 +17,6 @@ theorem MemLp.smul_cutoff {u : X → E} (hu : MemLp u 2 mu)
   filter_upwards [hbound] with x hx
   rw [norm_smul, Real.norm_eq_abs]
   exact mul_le_of_le_one_left (norm_nonneg _) hx
-
-
-
 
 theorem Lp.norm_sub_cutoff_sq_le [IsFiniteMeasure mu] (u : Lp E 2 mu)
     {theta : X → ℝ} (htheta : AEStronglyMeasurable theta mu)

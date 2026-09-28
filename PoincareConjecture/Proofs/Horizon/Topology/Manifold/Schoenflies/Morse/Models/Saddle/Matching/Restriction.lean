@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Matching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Coordinates
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem matching_on_closedSquare_after_ambient_map
     {f : S2 → E3} {e d : OpenPartialHomeomorph E2 S2}

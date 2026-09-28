@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_PolarInverse
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.Right
 import Mathlib.Analysis.Calculus.FDeriv.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_corner_chart
     {α β : ℝ → AnnulusCoordinates} {Jα Jβ : Set ℝ}

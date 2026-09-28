@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem IsSmoothCovariantTensor.mul_smoothScalar {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
@@ -34,8 +23,6 @@ theorem IsSmoothCovariantTensor.mul_smoothScalar {k : ℕ}
   · intro U hU X hX
     exact hf.contMDiffOn.mul (hT.2 U hU X hX)
 
-
-
 theorem IsSmoothCovariantTensor.sub_tensor {k : ℕ}
     {S T : CovariantTensorEvaluation n M k} (hS : IsSmoothCovariantTensor S)
     (hT : IsSmoothCovariantTensor T) :
@@ -47,8 +34,6 @@ theorem IsSmoothCovariantTensor.sub_tensor {k : ℕ}
     exact ⟨A - B, fun v => by simp only [hA, hB, sub_apply]⟩
   · intro U hU X hX
     exact (hS.2 U hU X hX).sub (hT.2 U hU X hX)
-
-
 
 theorem IsSmoothCovariantTensor.contMDiffAt_canonicalExtensions {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
@@ -64,8 +49,6 @@ namespace LeviCivitaData
 
 variable {g : RiemannianMetric n M}
 
-
-
 theorem covariantTensorDerivative_smoothScalar_mul {k : ℕ}
     (D : LeviCivitaData g) {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T) {f : M → ℝ}
@@ -79,8 +62,6 @@ theorem covariantTensorDerivative_smoothScalar_mul {k : ℕ}
   simp only [covariantTensorDerivative, hprod, add_apply, smul_apply, smul_eq_mul,
     FiberBundle.extend_apply_self, ← Finset.mul_sum]
   ring
-
-
 
 theorem tensorLaplacian_sub_tensor {k : ℕ} (D : LeviCivitaData g)
     {S T : CovariantTensorEvaluation n M k} (hS : IsSmoothCovariantTensor S)

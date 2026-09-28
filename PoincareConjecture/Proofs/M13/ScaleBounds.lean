@@ -1,13 +1,6 @@
 import PoincareConjecture.Statements.M13ScaleBounds
 import PoincareConjecture.Proofs.M13.Time
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal

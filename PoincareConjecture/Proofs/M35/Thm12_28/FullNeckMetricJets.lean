@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.NeckFiniteMetricJets
 import PoincareConjecture.Proofs.M35.Mathlib.PointJetBounds
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricConnectionJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem metric_jetsAt_of_component_jets {ι : Type*} {n : ℕ}
     (g : ι → RiemannianMetric 3 V) (p : ι → V)
@@ -87,8 +76,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem full_normalized_realization_jets (N : EpsilonNeck g) {ι : Type*}
     (q : ι → UnitTwoSphere) (s : ι → ℝ)

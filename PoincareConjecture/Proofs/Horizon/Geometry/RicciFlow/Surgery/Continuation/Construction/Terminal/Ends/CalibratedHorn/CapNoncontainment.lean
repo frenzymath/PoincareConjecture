@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.NonFilling
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Separation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem tube_noncontainment_of_epsilon_le :
     ∀ {M : Type u} [TopologicalSpace M]

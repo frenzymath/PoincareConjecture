@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnularStripCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusDepth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -31,8 +22,6 @@ private noncomputable def annulusHeightEquiv : J ≃ₜ I where
   right_inv := by intro t; apply Subtype.ext; dsimp; ring
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
-
-
 
 theorem exists_finitePL_square_annulus_cylinder :
     ∃ C : Ann ≃ₜ (Q ×ˢ I), C.IsFinitePL ∧

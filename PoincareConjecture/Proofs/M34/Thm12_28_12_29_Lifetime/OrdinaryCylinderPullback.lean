@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,14 +20,10 @@ local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 variable {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {K : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def ordinaryChapter11CylinderSpatialMap
     (e : GeneralizedFlowCylinder (G) C origin scale K U)
     (s0 : ℝ) (hs0 : s0 ∈ K) (x : C.carrier) : M :=
   ordinaryChapter11Projection (I := I) (F := F) R (e.pointMap s0 hs0 x)
-
-
 
 theorem ordinaryChapter11CylinderSpatialMap_contMDiffOn
     (e : GeneralizedFlowCylinder (G) C origin scale K U) {s0 : ℝ} (hs0 : s0 ∈ K) :
@@ -54,9 +40,6 @@ theorem ordinaryChapter11CylinderSpatialMap_contMDiffOn
   exact ((R.product.sliceIdentification t).symm.contMDiff.comp_contMDiffOn
     (e.forward_smooth s0 hs0)) x hx
 
-
-
-
 theorem ordinaryChapter11Cylinder_forward_eq
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hK : IsPreconnected K)
     {s0 s : ℝ} (hs0 : s0 ∈ K) (hs : s ∈ K)
@@ -71,8 +54,6 @@ theorem ordinaryChapter11Cylinder_forward_eq
       (congrArg (R.product.sliceIdentification ⟨origin + s / scale, ht⟩) hp)
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinaryChapter11Cylinder_pullbackInner_eq
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hU : IsOpen U) (hK : IsPreconnected K)

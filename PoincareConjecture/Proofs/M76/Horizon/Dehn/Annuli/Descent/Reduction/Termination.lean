@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Reduction.StageStep
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -25,8 +23,6 @@ variable (L : Submodule ℤ V2) {α : Type*}
   (s : Geometry.OriginalPLTower.Stage (fun _ : Unit ↦
     TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe
       (chartShell L retained) (chartShell_nonempty L retained)) S f r C)
-
-
 
 theorem exists_embedded_planar_stage_annulus
     (hS : S.space = source)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.BlowupNullPlane
 import PoincareConjecture.Proofs.M35.Thm12_28.LimitAlternatives
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +25,6 @@ private theorem null_plane_of_metric_eq
   cases heq
   obtain ⟨u, v, hu, hv, huv, hR⟩ := hnull
   exact ⟨u, v, hu, hv, huv, (D'.curvatureTensor_eq D x u v u v).trans hR⟩
-
-
-
 
 theorem blowupSequence_far_tip_product_models
     (P : M35StandardCapPredecessors)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapLocalization
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJets
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -51,8 +42,6 @@ private theorem cap_bilinear_family_evaluation {J : Set ℝ}
     contMDiffOn_fst.prodMk_space contMDiffOn_snd
   exact hscalar.contMDiffOn.comp hid (fun _ hp => hp)
 
-
-
 theorem continuousOn_cap_global_comparison_energy {J : Set ℝ}
     (F : RicciFlow 3 E J) (A : ℝ × E → Bilin)
     (hA : ∀ t, ContDiff ℝ ∞ (fun y => A (t, y)))
@@ -88,8 +77,6 @@ theorem continuousOn_cap_global_comparison_energy {J : Set ℝ}
     (fun s => hsmooth j s)
     (fun U hU X hX => M04.contMDiffOn_flow_iteratedCovariantTensorDerivative F
       hT hTime j hU hX)).continuousOn
-
-
 
 theorem continuousOn_cap_local_comparison_energy {J : Set ℝ}
     (F : RicciFlow 3 E J) {U : Set E} (hU : IsOpen U) (A : ℝ × E → Bilin)

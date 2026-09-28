@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldOpenChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarParameter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 variable [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
 variable [Nonempty M]
-
-
 
 theorem exists_smooth_product_chart (ψ : M × ℝ → F) {U : Set (M × ℝ)} (hU : IsOpen U)
     (hψ : ContMDiffOn (𝓘(ℝ, E).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, F) ∞ ψ U)
@@ -54,9 +42,6 @@ theorem exists_smooth_product_chart (ψ : M × ℝ → F) {U : Set (M × ℝ)} (
   refine ⟨e, rfl, rfl, rfl, ?_⟩
   have he := manifoldOpenChart_symm_contMDiffOn ψ hU hf hb hi
   rwa [modelWithCornersSelf_prod] at he
-
-
-
 
 theorem exists_collar_defining_function (ψ : M × ℝ → F) {U : Set (M × ℝ)}
     (hU : IsOpen U)

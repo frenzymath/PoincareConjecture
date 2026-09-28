@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.NativeJetConvergence
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_BilinearPullback
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderScalar
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,13 +17,9 @@ open M36 M44 SpacetimeBounds
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "Z" => cylinderHeightCovector.smulRight cylinderHeightCovector
 
-
-
 def neckCoefficientPullback (phi : E → E) (A : E → MetricCoefficient 3) :
     E → MetricCoefficient 3 := fun x =>
   (A (phi x)).bilinearComp (fderiv ℝ phi x) (fderiv ℝ phi x)
-
-
 
 theorem contDiffAt_neckCoefficientPullback {phi : E → E} {A : E → MetricCoefficient 3}
     {x : E} (hA : ContDiffAt ℝ ∞ A (phi x)) (hphi : ContDiffAt ℝ ∞ phi x) :
@@ -43,8 +31,6 @@ theorem contDiffAt_neckCoefficientPullback {phi : E → E} {A : E → MetricCoef
   unfold neckCoefficientPullback ContinuousLinearMap.bilinearComp
   exact hf.contDiffAt.comp x
     ((hf.contDiffAt.comp x (hc.clm_comp hd)).clm_comp hd)
-
-
 
 theorem PointJetsConverge.ricci_cylinder_error {ι : Type*} {l : Filter ι}
     {A : ι → E → MetricCoefficient 3} {s0 : ℝ} (hs0 : s0 < 1)
@@ -65,8 +51,6 @@ theorem PointJetsConverge.ricci_cylinder_error {ι : Type*} {l : Filter ι}
     (fun _ => hR.contDiffAt)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem affine_neck_gluing_error_vanish {ι : Type*} {l : Filter ι}
     {A C D : ι → E → MetricCoefficient 3} {phi : ι → E → E}

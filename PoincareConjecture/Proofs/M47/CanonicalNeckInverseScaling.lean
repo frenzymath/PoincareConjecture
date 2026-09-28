@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

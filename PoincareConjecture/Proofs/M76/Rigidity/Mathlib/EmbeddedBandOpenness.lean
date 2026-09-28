@@ -2,14 +2,6 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 namespace Set.InjOn
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] [T2Space X]
-
-
 
 theorem isOpen_smaller_band_image {A : Set E} (hA : IsCompact A)
     {F : E × ℝ → X} (hFi : InjOn F (A ×ˢ Icc (-1 : ℝ) 1))

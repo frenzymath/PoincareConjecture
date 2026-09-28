@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.MetricChartGerms
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M51
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem curvatureNorm_limit_of_chart_jets
     {α : Type*} {l : Filter α} (g : α → RiemannianMetric 3 M)

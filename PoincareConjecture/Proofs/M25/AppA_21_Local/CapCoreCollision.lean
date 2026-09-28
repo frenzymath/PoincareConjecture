@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCoreContact
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapEndSeparation
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem CapCertificate.exists_two_cap_component_or_disjoint_cores :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

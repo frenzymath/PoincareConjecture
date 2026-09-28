@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.RelativeApproximation.Mathlib.CompactRelati
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeManifoldPLApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M76
 variable {X E ι κ : Type*} [TopologicalSpace X] [T2Space X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {R C : Set X} {U : Set R}
-
-
-
-
 
 theorem exists_retained_model_approximation
     (e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ))

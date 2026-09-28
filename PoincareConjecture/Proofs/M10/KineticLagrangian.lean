@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -16,7 +8,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M10
 
 variable {Y : Type*} [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem hasFDerivAt_quadratic_of_symmetric (B : Y →L[ℝ] Y →L[ℝ] ℝ)
     (hsym : ∀ v w : Y, B v w = B w v) (v : Y) :
@@ -31,11 +22,9 @@ theorem hasFDerivAt_quadratic_of_symmetric (B : Y →L[ℝ] Y →L[ℝ] ℝ)
     ring
   rwa [heq] at hd
 
-
 noncomputable def kineticLagrangian (B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ)
     (R : Y × ℝ → ℝ) (a : ℝ × Y × Y) : ℝ :=
   Real.sqrt a.1 * (R (a.2.1, a.1) + B (a.2.1, a.1) a.2.2 a.2.2)
-
 
 theorem kineticLagrangian_contDiffAt {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ}
     {R : Y × ℝ → ℝ} {a : ℝ × Y × Y} {k : ℕ∞ω}
@@ -46,7 +35,6 @@ theorem kineticLagrangian_contDiffAt {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] �
     contDiffAt_snd.fst.prodMk contDiffAt_fst
   exact (contDiffAt_fst.sqrt ht.ne').mul ((hR.comp a hcoords).add
     (((hB.comp a hcoords).clm_apply contDiffAt_snd.snd).clm_apply contDiffAt_snd.snd))
-
 
 theorem kineticLagrangian_velocity_derivative {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ}
     {R : Y × ℝ → ℝ} {a : ℝ × Y × Y}

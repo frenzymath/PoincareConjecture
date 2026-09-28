@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,19 +11,12 @@ namespace Geometry
 
 variable {E F X : Type*}
 
-
-
-
 noncomputable def matchedCollarMap (Q : E → F) (c : E × ℝ → X) (d : F × ℝ → X) :
     E × ℝ → X := fun z => if 0 ≤ z.2 then c z else d (Q z.1, -z.2)
-
-
 
 theorem matchedCollarMap_nonneg (Q : E → F) (c : E × ℝ → X) (d : F × ℝ → X)
     {z : E × ℝ} (ht : 0 ≤ z.2) : matchedCollarMap Q c d z = c z := by
   simp only [matchedCollarMap, if_pos ht]
-
-
 
 theorem matchedCollarMap_nonpos (Q : E → F) (c : E × ℝ → X) (d : F × ℝ → X)
     {L : Set E} (hzero : ∀ x ∈ L, c (x, 0) = d (Q x, 0))
@@ -48,9 +33,6 @@ variable {ι : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}
-
-
-
 
 theorem PolyhedralPLInCharts.comp_negative_base_product
     {L : Set E} {K : Set F} {Q : E → F} {d : F × ℝ → X}
@@ -70,9 +52,6 @@ theorem PolyhedralPLInCharts.comp_negative_base_product
     exact ⟨hQmap h.1, by dsimp; linarith [h.2.2], by dsimp; linarith [h.2.1]⟩
   have h := hd.comp_finitePiecewiseAffineOn P hP ⟨P, hP, rfl, hPa⟩ hmap
   exact hPs ▸ h
-
-
-
 
 theorem polyhedral_matchedCollarMap
     (hcover : ∀ x : X, ∃ i, x ∈ (e i).source)

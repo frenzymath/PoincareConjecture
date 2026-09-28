@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Orie
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.RadialNeighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.SupportedCollar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace E3 M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
-
-
-
 
 theorem exists_euclidean_core_collar_filling (hkind : C.model_kind = .euclidean) :
     ∃ b : OpenPartialHomeomorph E3 M,

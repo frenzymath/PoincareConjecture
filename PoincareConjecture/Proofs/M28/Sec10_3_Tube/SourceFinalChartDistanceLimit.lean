@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.CanonicalFlowRestriction
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.FixedCoordinateTerminalCoefficients
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CanonicalImageDistanceLimit
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,11 +23,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
-
 
 theorem exists_source_final_chart_distance_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

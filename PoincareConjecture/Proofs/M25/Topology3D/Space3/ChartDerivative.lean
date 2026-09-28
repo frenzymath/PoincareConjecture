@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Comp
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem smoothChart_symm_fderiv_comp (e : OpenPartialHomeomorph E F)
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)
@@ -36,8 +24,6 @@ theorem smoothChart_symm_fderiv_comp (e : OpenPartialHomeomorph E F)
   have heq : (fun y => e.symm (e y)) =ᶠ[𝓝 x] (fun y => y) :=
     e.eventually_left_inverse hx
   exact (hcomp.congr_of_eventuallyEq heq.symm).unique (hasFDerivAt_id x)
-
-
 
 theorem exists_smoothChart_derivative (e : OpenPartialHomeomorph E F)
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target)

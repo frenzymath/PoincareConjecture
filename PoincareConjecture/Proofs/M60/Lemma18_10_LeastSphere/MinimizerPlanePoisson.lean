@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerPoissonComp
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakHessian
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Euclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ open Poincare.Analysis.Sobolev.NirenbergEuclidean
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "gEucl" => RiemannianMetric.euclideanMetric 2
 
-
-
 def suPlaneLaplaceForm : SmoothEllipticBilinearForm 2 (univ : Set Plane) where
   a := fun _ => 1
   c := fun _ => 0
@@ -44,8 +33,6 @@ def suPlaneLaplaceForm : SmoothEllipticBilinearForm 2 (univ : Set Plane) where
     intro x _ v
     simp [matMulE]
 
-
-
 theorem suPlane_volumeDensity (x : Plane) :
     (gEucl).pullbackVolumeDensity (OpenPartialHomeomorph.refl Plane) x = 1 := by
   have h := (gEucl).pullbackVolumeDensity_id_bounds x
@@ -57,8 +44,6 @@ theorem suPlane_volumeDensity (x : Plane) :
   have he : (gEucl).pullbackVolumeDensity id x = 1 :=
     le_antisymm (by simpa using h.2) (by simpa using h.1)
   exact he
-
-
 
 theorem suPlane_divergenceCoefficients (x : Plane) (i j : Fin 2) :
     divergenceCoefficients gEucl (OpenPartialHomeomorph.refl Plane) x i j =
@@ -76,8 +61,6 @@ theorem suPlane_divergenceCoefficients (x : Plane) (i j : Fin 2) :
   rw [divergenceCoefficients, suPlane_volumeDensity, one_mul, hb, hp,
     hi.inverse_apply_self]
   simp [Matrix.one_apply]
-
-
 
 theorem suPlane_poisson_equation
     (D : LeviCivitaData gEucl) {Ω K O : Set Plane} (hK : IsCompact K)
@@ -116,8 +99,6 @@ theorem suPlane_poisson_equation
   apply integral_congr_ae
   filter_upwards [hae] with x hx
   simp only [hx]
-
-
 
 theorem suPlane_coordinate_weak
     (D : LeviCivitaData gEucl) {Ω K O : Set Plane} (hK : IsCompact K)

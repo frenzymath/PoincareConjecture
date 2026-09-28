@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.CoordinateField
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.MetricVariation
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -73,8 +72,6 @@ private theorem metric_pullback_in_charts
   rw [hderiv]
   exact chartCoefficients_apply_chartDifferential g a ha _ _
 
-
-
 theorem hasDerivAt_gradientFlow_metric_pairing_eq_zero
     {D : LeviCivitaData g} {f : M → ℝ} {Φ : ℝ → M → M}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hzero : HasZeroHessian D f)
@@ -143,8 +140,6 @@ theorem hasDerivAt_gradientFlow_metric_pairing_eq_zero
       (mem_extChartAt_source _))] with s hsx
   simpa +instances only [q, B, c, d, Function.comp_def, extChartAt_to_inv] using
     (metric_pullback_in_charts (g := g) (hF s x) (Φ t x) hsx v w).symm
-
-
 
 theorem gradientFlow_preserves_metric
     {D : LeviCivitaData g} {f : M → ℝ} {Φ : ℝ → M → M}

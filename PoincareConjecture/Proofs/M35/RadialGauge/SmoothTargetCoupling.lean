@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicTip
 import PoincareConjecture.Proofs.M35.RadialGauge.FullForcingDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.EvenQuadraticRemainder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -18,7 +9,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M35.RadialGauge
 
 open SmoothRadial
-
 
 noncomputable def smoothTargetCoupling (f₀ : ℝ → ℝ) : ℝ → ℝ :=
   axisDivision (fun r => f₀ r * deriv f₀ r)
@@ -35,8 +25,6 @@ theorem smoothTargetCoupling_even {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f�
   change f₀ (-r) * deriv f₀ (-r) = -(f₀ r * deriv f₀ r)
   rw [ho, hdf, neg_mul]
 
-
-
 theorem smoothTargetCoupling_zero {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f₀)
     (hf0 : f₀ 0 = 0) (hdf0 : deriv f₀ 0 = 1) :
     smoothTargetCoupling f₀ 0 = 1 := by
@@ -47,8 +35,6 @@ theorem smoothTargetCoupling_zero {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f�
     ((hdf.differentiable (by simp) 0).hasDerivAt)).deriv]
   simp only [hf0, hdf0, one_mul, zero_mul, add_zero]
 
-
-
 theorem smoothTargetCoupling_eq_exterior {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f₀)
     (hf0 : f₀ 0 = 0) {r : ℝ} (hr : r ≠ 0) :
     smoothTargetCoupling f₀ r = radialTargetCoupling f₀ r := by
@@ -57,15 +43,11 @@ theorem smoothTargetCoupling_eq_exterior {f₀ : ℝ → ℝ} (hf : ContDiff ℝ
   change r * smoothTargetCoupling f₀ r = f₀ r * deriv f₀ r at h
   exact (eq_div_iff hr).mpr (by simpa only [mul_comm] using h)
 
-
-
 theorem smoothTargetCoupling_contDiff_norm
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
     {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f₀) (ho : Function.Odd f₀) :
     ContDiff ℝ ∞ (fun x : E => smoothTargetCoupling f₀ ‖x‖) :=
   contDiff_even_norm (smoothTargetCoupling_contDiff hf) (smoothTargetCoupling_even hf ho)
-
-
 
 noncomputable def targetQuadraticRemainder (f₀ : ℝ → ℝ) : ℝ → ℝ :=
   smoothEvenQuadratic (smoothTargetCoupling f₀)
@@ -77,8 +59,6 @@ theorem targetQuadraticRemainder_contDiff {f₀ : ℝ → ℝ} (hf : ContDiff �
 theorem targetQuadraticRemainder_even {f₀ : ℝ → ℝ} (hf : ContDiff ℝ ∞ f₀)
     (ho : Function.Odd f₀) : Function.Even (targetQuadraticRemainder f₀) :=
   smoothEvenQuadratic_even (smoothTargetCoupling_contDiff hf) (smoothTargetCoupling_even hf ho)
-
-
 
 theorem targetQuadraticRemainder_identity {f₀ : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f₀) (ho : Function.Odd f₀)

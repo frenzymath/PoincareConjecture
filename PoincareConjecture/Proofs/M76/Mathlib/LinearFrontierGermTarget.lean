@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OppositePolyhedralFrontierGerms
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +8,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem linear_halfspace_bounds_and_active_of_mem_frontier
     (H : Finset (E →ₗ[ℝ] ℝ)) {p : E}
@@ -53,11 +37,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_convex_target_of_negatively_collinear_frontier_germs
     {C : Set E} (H : Finset (E →ₗ[ℝ] ℝ))
@@ -132,12 +111,6 @@ theorem exists_convex_target_of_negatively_collinear_frontier_germs
     exact hfrontV
   exact ⟨K, U, V, hK, hcompact, hconvex, hzero, hU, hpU, hV, hpV,
     hdis, hbodyU', hbodyV', hfrontU', hfrontV', hpK, hnK⟩
-
-
-
-
-
-
 
 theorem exists_convex_target_of_linear_frontier_germs
     {C : Set E} (H : Finset (E →ₗ[ℝ] ℝ))

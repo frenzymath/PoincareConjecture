@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedProductCylinder
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.CircleCoordinates.SquareCircle
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

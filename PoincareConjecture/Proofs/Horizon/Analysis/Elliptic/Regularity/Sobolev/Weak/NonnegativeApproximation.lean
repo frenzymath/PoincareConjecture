@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.DifferenceQuotient.MollificationL2
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set
@@ -18,7 +10,6 @@ namespace Poincare.Analysis.Sobolev.DifferenceQuotient
 variable {d : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem mollifyEps_nonneg {ε : ℝ} (hε : 0 < ε) {u : E → ℝ}
     (hu : ∀ x, 0 ≤ u x) (x : E) : 0 ≤ mollifyEps hε u x := by
@@ -32,7 +23,6 @@ private theorem mollifyEps_eq_right {ε : ℝ} (hε : 0 < ε) (u : E → ℝ) :
   exact integral_congr_ae <| Filter.Eventually.of_forall fun y => by
     simp only [smul_eq_mul, mul_comm]
 
-
 theorem tendsto_eLpNorm_mollifyEps_sub {ι : Type*} {l : Filter ι}
     {ε : ι → ℝ} (hε : ∀ i, 0 < ε i) (hεlim : Tendsto ε l (𝓝 0))
     {p : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ∞) {u : E → ℝ}
@@ -45,7 +35,6 @@ theorem tendsto_eLpNorm_mollifyEps_sub {ι : Type*} {l : Filter ι}
     Euclidean.exists_eLpNorm_convolution_mollifierEps_sub_le hp hpfin hu hη
   filter_upwards [hεlim.eventually (gt_mem_nhds hδ)] with i hi
   simpa only [mollifyEps_eq_right] using hbound (ε i) (hε i) hi.le
-
 
 theorem tendsto_eLpNorm_mollifyEps_partial_sub {ι : Type*} {l : Filter ι}
     {ε : ι → ℝ} (hε : ∀ i, 0 < ε i) (hεlim : Tendsto ε l (𝓝 0))
@@ -67,8 +56,6 @@ open DifferenceQuotient
 variable {d : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem exists_nonneg_smooth_compactSupport_approx
     {p : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ∞)

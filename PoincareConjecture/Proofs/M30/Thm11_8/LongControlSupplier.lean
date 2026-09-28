@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.LongSlabServiceFromConvergence
 import PoincareConjecture.Proofs.M30.Thm11_8.LongLimitStatementAssembly
 import PoincareConjecture.Proofs.M30.Thm11_1.ShortControlSupplier
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +13,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_raw_long_convergence_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :
@@ -56,8 +41,6 @@ theorem exists_raw_long_convergence_threshold
         (hfinite S' epsilon C kappa r0 mu
           (hepsilon.trans (min_le_left _ _)) T0 H' T hT hTT0 G))
   exact ⟨convergenceOfReindexed G⟩
-
-
 
 theorem longContractService (P : M30ControlledBlowupPredecessors.{u}) :
     M30LongContractService.{u} := by

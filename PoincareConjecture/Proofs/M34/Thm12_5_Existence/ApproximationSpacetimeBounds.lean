@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ApproximationEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -24,8 +14,6 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 variable {g0 : StandardInitialMetric} (A : CompactCapApproximation g0)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem eventually_compact_spacetimeJet_bound (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :

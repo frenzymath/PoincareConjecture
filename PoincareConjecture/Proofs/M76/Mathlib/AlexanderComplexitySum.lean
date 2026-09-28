@@ -4,16 +4,6 @@ import Mathlib.Data.Fintype.Sigma
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 import Mathlib.Algebra.Order.BigOperators.Group.Finset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +11,6 @@ open Set
 namespace Nat
 
 variable {L : Type*} [Fintype L]
-
-
-
-
 
 theorem sum_pair_decrease_of_strict_at_one
     (n n₀ n₁ : L → ℕ) (j : L)
@@ -35,10 +21,6 @@ theorem sum_pair_decrease_of_strict_at_one
     Finset.sum_lt_sum (fun i _ => h i) ⟨j, Finset.mem_univ j, hj⟩
   rw [Finset.sum_add_distrib] at hsum
   exact ⟨hsum, by omega, by omega⟩
-
-
-
-
 
 theorem sum_pair_decrease_of_one_deleted
     (n n₀ n₁ : L → ℕ) (j : L)
@@ -61,11 +43,6 @@ theorem sum_pair_decrease_of_one_deleted
       _ = ∑ i, n i := Finset.sum_congr rfl (fun i _ => hlocal i)
   exact ⟨hsum, by omega, by omega⟩
 
-
-
-
-
-
 theorem card_curve_partition_after_one_deletion
     (C : L → Type*) [∀ l, Finite (C l)] (p : Sigma C)
     (I : Set {x : Sigma C // x ≠ p}) :
@@ -86,10 +63,6 @@ theorem card_curve_partition_after_one_deletion
   have hpos : 0 < Nat.card (Sigma C) := Nat.card_pos_iff.mpr ⟨⟨p⟩, inferInstance⟩
   rw [Nat.card_sigma] at hdelete hpos
   exact ⟨by omega, by omega, by omega⟩
-
-
-
-
 
 theorem finite_support_pair_decrease {X : Type*}
     (n n₀ n₁ : X → ℕ) (hn : (Function.support n).Finite)

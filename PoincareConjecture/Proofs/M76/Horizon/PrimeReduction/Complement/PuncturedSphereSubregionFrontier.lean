@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.RelativeFilledFrontier
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -17,8 +8,6 @@ namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {R D : Set X} {Q : Set Y}
-
-
 
 theorem mem_interior_image_subdomain_iff (C : R ≃ₜ Q)
     (hmark : ∀ x : R, (x : X) ∈ frontier R ↔ (C x : Y) ∈ frontier Q)
@@ -51,8 +40,6 @@ theorem mem_interior_image_subdomain_iff (C : R ≃ₜ Q)
     exact (mem_interior_subtype_preimage_iff_of_mem_interior (C x) (hparent.mpr hxR)).mp
       (hrel.mpr (preimage_interior_subset_interior_preimage continuous_subtype_val hx))
 
-
-
 theorem interior_image_subdomain (C : R ≃ₜ Q)
     (hmark : ∀ x : R, (x : X) ∈ frontier R ↔ (C x : Y) ∈ frontier Q)
     (hDR : D ⊆ R) :
@@ -66,8 +53,6 @@ theorem interior_image_subdomain (C : R ≃ₜ Q)
   · rintro ⟨_, ⟨x, hx, rfl⟩, rfl⟩
     exact (C.mem_interior_image_subdomain_iff hmark hDR x).mpr hx
 
-
-
 theorem closure_image_subdomain (C : R ≃ₜ Q) (hQ : IsClosed Q)
     (hDR : closure D ⊆ R) :
     closure ((Subtype.val : Q → Y) '' (C '' ((Subtype.val : R → X) ⁻¹' D))) =
@@ -75,8 +60,6 @@ theorem closure_image_subdomain (C : R ≃ₜ Q) (hQ : IsClosed Q)
   rw [hQ.isClosedMap_subtype_val.closure_image_eq_of_continuous continuous_subtype_val,
     ← C.image_closure, Topology.IsEmbedding.subtypeVal.closure_eq_preimage_closure_image,
     image_preimage_eq_of_subset (by simpa using subset_closure.trans hDR)]
-
-
 
 theorem frontier_image_subdomain (C : R ≃ₜ Q) (hQ : IsClosed Q) (hD : IsClosed D)
     (hmark : ∀ x : R, (x : X) ∈ frontier R ↔ (C x : Y) ∈ frontier Q)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.LowerBound
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.ODE.Jacobi
-
-
 
 def comparisonRadius (K : ℝ) : ℝ :=
   (2 + max K 0 * Real.exp (max K 0 + 1))⁻¹
@@ -46,8 +35,6 @@ theorem curvature_mul_sq_le_one_of_le_comparisonRadius {K c : ℝ} (hK : 0 ≤ K
   have hKr : K * comparisonRadius K ≤ 1 := by
     nlinarith [mul_le_mul_of_nonneg_left hexp hr]
   exact (mul_le_mul_of_nonneg_left hcsq hK).trans hKr
-
-
 
 theorem comparisonRadius_smallness {K c t : ℝ} (hK : 0 ≤ K)
     (hc : 0 ≤ c) (hcr : c ≤ comparisonRadius K) (ht : t ∈ Icc (0 : ℝ) 1) :
@@ -80,8 +67,6 @@ theorem comparisonRadius_smallness {K c t : ℝ} (hK : 0 ≤ K)
   have hnonneg : 0 ≤ K * c ^ 2 * Real.exp (max 1 (K * c ^ 2)) := by positivity
   exact (mul_le_of_le_one_right hnonneg htsq).trans (hct.trans (by norm_num))
 
-
-
 theorem half_norm_lower_bound_of_speed_le_comparisonRadius
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     {R : ℝ → E →L[ℝ] E} {y v : ℝ → E} {K c : ℝ}
@@ -92,8 +77,6 @@ theorem half_norm_lower_bound_of_speed_le_comparisonRadius
     t * ‖v 0‖ / 2 ≤ ‖y t‖ := by
   apply half_norm_lower_bound h hR hbound hy0 ht
   simpa only [mul_one] using comparisonRadius_smallness hK hc hcr ht
-
-
 
 theorem norm_bounds_of_speed_le_comparisonRadius
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

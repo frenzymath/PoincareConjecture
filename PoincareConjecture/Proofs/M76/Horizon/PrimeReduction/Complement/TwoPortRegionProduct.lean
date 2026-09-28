@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -101,8 +93,6 @@ private theorem squareBandPeriod_image :
       simpa only [← hp0] using hval
     · rfl
 
-
-
 theorem exists_square_product_band_annulus :
     ∃ c : squareAnnulus 8 1 ≃ₜ
         (frontier (_root_.Dehn.annulusSquare 8 0) ×ˢ Icc (-1 : ℝ) 1 : Set C3),
@@ -142,8 +132,6 @@ private theorem periodic_annulus_rim_mem_iff
     refine ⟨s, hs, ?_⟩
     exact (hperiod s hs ⟨u, hu⟩).symm.trans
       (congrArg (fun z : squareAnnulus 8 1 => (c z : E)) (Subtype.ext hsp.symm))
-
-
 
 theorem exists_circle_band_product_comparison
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -237,8 +225,6 @@ private theorem extend_two_disjoint_caps
     (subset_union_left.trans subset_union_right) hkeeptrue
   exact ⟨H, hH, fun b => by cases b; exact hHfalse; exact hHtrue⟩
 
-
-
 theorem exists_circle_two_port_boundary_comparison
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {β : ℝ} (hβ : 0 < β) (τ : C3 → E)
@@ -314,8 +300,6 @@ theorem exists_circle_two_port_boundary_comparison
   exact ⟨(Homeomorph.setCongr hsrc.symm).trans (H.trans (Homeomorph.setCongr htgt)),
     hH.setCongr hsrc htgt, fun b x => hHcaps b ⟨x, hsrc.symm.subset x.property⟩⟩
 
-
-
 theorem exists_circle_two_port_region_comparison
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {β : ℝ} (hβ : 0 < β) (τ : C3 → E)
@@ -369,8 +353,6 @@ theorem exists_circle_two_port_region_comparison
   let ec := eb.restrictSubsets hcb hCQ (hebcaps b)
   exact H.mem_subset_iff_of_extension ec (hcb.trans hR.1) (hCQ.trans hP.1)
     (fun x => hkeep ⟨x, hcb x.property⟩)
-
-
 
 theorem exists_circle_two_port_product_handle
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

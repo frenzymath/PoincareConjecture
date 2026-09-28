@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_GlobalStan
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_InitialExactCutoff
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_SmallHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture.M44
 open SpacetimeBounds
 
 local notation "E" => StandardCapSpace
-
-
-
-
 
 theorem exists_initial_cylinder_cutoff (P : M44CapPersistencePredecessors.{u})
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

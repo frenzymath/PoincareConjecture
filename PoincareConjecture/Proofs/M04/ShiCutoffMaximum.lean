@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarEstimates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M04
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem laplacian_nonpos_of_isLocalMax (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) (hmax : IsLocalMax f x) :
@@ -169,7 +160,6 @@ private theorem hessian_nonneg_of_isLocalMin_two (D : LeviCivitaData g)
     mvfderiv (𝓡 n) f x (D.connection X x (X x))
   rwa [hcorrection, sub_zero, ← hsecond]
 
-
 theorem laplacian_nonpos_of_isLocalMax_of_two (D : LeviCivitaData g)
     {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) 2 f x) (hmax : IsLocalMax f x) :
@@ -189,6 +179,5 @@ theorem laplacian_nonpos_of_isLocalMax_of_two (D : LeviCivitaData g)
     simp only [LeviCivitaData.laplacian, hh, Finset.sum_neg_distrib]
   rw [hlap] at hnonneg
   linarith
-
 
 end PoincareConjecture.M04

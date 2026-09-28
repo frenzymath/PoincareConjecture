@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.HilbertSubsequence
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2ClosedTarget
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -58,11 +47,6 @@ private theorem m65DiskCoordinate_norm_sum {N : ℕ}
   rw [← integral_finsetSum _ fun j _ => hi j, Lp.norm_sq_eq_integral_norm_sq]
   apply integral_congr_ae
   exact ae_of_all _ fun z => (EuclideanSpace.real_norm_sq_eq (u z)).symm
-
-
-
-
-
 
 theorem m65WeakDisks_value_subsequence {M : Type u} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
@@ -114,12 +98,6 @@ theorem m65WeakDisks_value_subsequence {M : Type u} {N : ℕ}
   simp only [m65DiskCoordinate_norm_sum, Finset.sum_const_zero] at hsum
   refine ⟨σ, u0, hσ, tendsto_iff_norm_sub_tendsto_zero.mpr ?_⟩
   simpa only [Real.sqrt_sq_eq_abs, abs_norm, Real.sqrt_zero] using hsum.sqrt
-
-
-
-
-
-
 
 theorem m65NormalizedWeakDisks_subsequence
     {M : Type u} [TopologicalSpace M] {N : ℕ}

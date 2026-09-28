@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.Comparison
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,8 +15,6 @@ open Proofs.M28.NeckAnalysis
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 noncomputable def restrictCoordinate (N : EpsilonNeck g) {eta : ℝ}
     (h : N.epsilon ≤ eta) :
@@ -54,8 +44,6 @@ noncomputable def restrictCoordinate (N : EpsilonNeck g) {eta : ℝ}
       N.coordinate_inverse_smooth.continuousOn.comp_continuous continuous_subtype_val
         (fun x => x.2.1)
     exact hi.fst.prodMk (hi.snd.subtype_mk _)
-
-
 
 noncomputable def restrict_m28 (N : EpsilonNeck g) (eta : ℝ)
     (h : N.epsilon ≤ eta) (heta : eta < 1 / 2) : EpsilonNeck g where

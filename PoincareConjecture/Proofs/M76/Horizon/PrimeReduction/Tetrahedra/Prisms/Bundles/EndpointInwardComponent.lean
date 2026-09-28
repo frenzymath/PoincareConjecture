@@ -3,8 +3,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeSharpScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeTerminalScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallCompactScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +14,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
-
 
 theorem exists_retained_fresh_slab_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.RetainedVolume
 import PoincareConjecture.Proofs.M49.EventCapVolume
 import PoincareConjecture.Proofs.M49.Lemma17_12_NeckVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem event_total_volume_add_cap_losses_le
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
@@ -80,8 +69,6 @@ theorem event_total_volume_add_cap_losses_le
         ∑ i, calibratedMetricVolume E.limit_metric (A i) :=
       add_le_add le_rfl (Finset.sum_le_sum (fun i _ => hloss i))
     _ ≤ _ := hterminal
-
-
 
 theorem exists_uniform_event_volume_loss (g₀ : StandardInitialMetric) :
     ∃ c : ℝ, 0 < c ∧ ∀ K : MetricSurgeryConstants,

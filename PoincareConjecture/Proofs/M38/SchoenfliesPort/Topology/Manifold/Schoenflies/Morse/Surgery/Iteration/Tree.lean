@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Step
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -26,8 +18,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 inductive SphereSurgeryTree (v : E3) (A : Finset Real) : (S2 -> E3) -> Type
   | leaf {f : S2 -> E3}
@@ -47,7 +37,6 @@ variable {v : E3} {A : Finset Real} {f : S2 -> E3}
 def leaves : {g : S2 -> E3} -> SphereSurgeryTree v A g -> List (S2 -> E3)
   | _, .leaf (f := g) _ _ => [g]
   | _, .branch _ _ _ minus plus => minus.leaves ++ plus.leaves
-
 
 def Protects (B : Set Real) : {g : S2 -> E3} -> SphereSurgeryTree v A g -> Prop
   | _, .leaf _ _ => True
@@ -86,9 +75,6 @@ theorem avoids_of_mem_leaves (tree : SphereSurgeryTree v A f)
     rcases List.mem_append.mp hg with hm | hp
     · exact ihM hm
     · exact ihP hp
-
-
-
 
 theorem induction_on_leaves (tree : SphereSurgeryTree v A f)
     (P : (S2 -> E3) -> Prop)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finite_triangulation_iUnion_convexHull {ι : Type*} [Finite ι]
     (T : ι → Finset E) (hT : ∀ i, AffineIndependent ℝ ((↑) : T i → E)) :
@@ -74,9 +62,6 @@ theorem exists_finite_triangulation_iUnion_convexHull {ι : Type*} [Finite ι]
     exact mem_space_iff.mpr ⟨s,
       ⟨hs, i, convexHull_min hsT (convex_convexHull ℝ _)⟩, hxs⟩
 
-
-
-
 theorem exists_finite_triangulation_iUnion {ι : Type*} [Finite ι]
     (K : ι → SimplicialComplex ℝ E) (hK : ∀ i, (K i).faces.Finite) :
     ∃ L : SimplicialComplex ℝ E, L.faces.Finite ∧ L.space = ⋃ i, (K i).space ∧
@@ -100,9 +85,6 @@ theorem exists_finite_triangulation_iUnion {ι : Type*} [Finite ι]
   · intro s hs
     obtain ⟨p, hp⟩ := hfaces s hs
     exact ⟨p.1, p.2.val, p.2.property, hp⟩
-
-
-
 
 theorem exists_finite_triangulation_union (K J : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hJ : J.faces.Finite) :

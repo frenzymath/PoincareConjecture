@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.LimitRankGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.LowerCurvature
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +37,6 @@ private theorem exists_metric_segment_of_complete
   intro s hs t ht
   change (g.edist (γ s) (γ t)).toReal = |s - t| * (g.edist x y).toReal
   rw [hmin s hs t ht, ENNReal.toReal_mul, ENNReal.toReal_ofReal (abs_nonneg _)]
-
-
 
 theorem tendsto_radius_and_dist_zero_of_selected_centers_at_scaled_spire
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
@@ -134,8 +125,6 @@ theorem tendsto_radius_and_dist_zero_of_selected_centers_at_scaled_spire
   have hpq : Tendsto (fun j => dist (p j) (q j)) atTop (𝓝 0) :=
     hpq₀.congr' (by filter_upwards [hq₀eq] with j hj; rw [hj])
   exact ⟨hqzero, hpq⟩
-
-
 
 theorem rank_growth_of_mul_near_min_badAscentRadius_at_scaled_spire
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
@@ -311,7 +300,6 @@ theorem rank_growth_of_mul_near_min_badAscentRadius_at_scaled_spire
     have hlt := (hgrowth _ hold y).lt_localAnglePackingRank_of_succ hpackY
     rwa [hy] at hlt
 
-
 theorem rank_growth_of_near_min_badAscentRadius_at_scaled_spire
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
     [∀ j, T3Space (M j)] [∀ j, PreconnectedSpace (M j)]
@@ -364,7 +352,6 @@ theorem rank_growth_of_near_min_badAscentRadius_at_scaled_spire
     (fun j => by simpa only [one_mul] using htactual j)
     F hFcenter hscale hnewconv).2.2
 
-
 theorem tendsto_radius_and_dist_zero_of_selected_centers
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
     [∀ j, T3Space (M j)] [∀ j, PreconnectedSpace (M j)]
@@ -399,7 +386,6 @@ theorem tendsto_radius_and_dist_zero_of_selected_centers
     (σ := 1) g D hcomplete hsec p q holdconv zero_lt_one hc hminus hplus
     hρ (by simpa only [one_mul] using hρb) hbcap hascent B hmax
     (fun y hy => by simpa only [one_mul] using hspire y hy) hqball hqref
-
 
 theorem rank_growth_of_mul_near_min_badAscentRadius
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
@@ -453,7 +439,6 @@ theorem rank_growth_of_mul_near_min_badAscentRadius
     hρ (by simpa only [one_mul] using hρb) hbcap hascent B hmax
     (fun y hy => by simpa only [one_mul] using hspire y hy)
     hqball hqref hqmin κ hκ t ht htactual F hFcenter hscale hnewconv
-
 
 theorem rank_growth_of_near_min_badAscentRadius
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

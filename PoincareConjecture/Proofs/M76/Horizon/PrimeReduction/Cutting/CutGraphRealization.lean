@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricRealization
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry StdSimplexCore
@@ -100,8 +92,6 @@ theorem bridge_inter_bridge {i j : I} (hij : i ≠ j) :
   rw [bridge, bridge, face_inter]
   simp [hij, face_empty]
 
-
-
 theorem mem_edge_inter_iff (ends : I → Bool → V) {i j : I} (hij : i ≠ j)
     (x : Ambient V I) :
     x ∈ edge ends i ∩ edge ends j ↔
@@ -129,7 +119,6 @@ theorem mem_edge_inter_iff (ends : I → Bool → V) {i j : I} (hij : i ≠ j)
   · rintro ⟨a, b, h, rfl⟩
     exact ⟨endpoint_mem_edge ends i a, h ▸ endpoint_mem_edge ends j b⟩
 
-
 theorem disjoint_edge_interiors (ends : I → Bool → V) {i j : I} (hij : i ≠ j) :
     Disjoint (edge ends i \ Set.range vertex) (edge ends j \ Set.range vertex) := by
   rw [Set.disjoint_left]
@@ -148,8 +137,6 @@ theorem privateVertex_mem_edge (ends : I → Bool → V) (i : I) (b : Bool) :
   cases b
   · exact Or.inl (Or.inl ((arm_eq_segment ends i false).symm ▸ right_mem_segment _ _ _))
   · exact Or.inr ((arm_eq_segment ends i true).symm ▸ right_mem_segment _ _ _)
-
-
 
 noncomputable def edgePath (ends : I → Bool → V) (i : I) :
     Path (⟨vertex (ends i false), vertex_mem_carrier ends _⟩ : carrier ends)
@@ -190,7 +177,6 @@ private theorem image_range_segmentIn {E : Type*} [NormedAddCommGroup E]
   rw [← Set.range_comp]
   exact Path.range_segment _ _
 
-
 theorem range_edgePath (ends : I → Bool → V) (i : I) :
     Set.range (fun t => (edgePath ends i t : Ambient V I)) = edge ends i := by
   change Set.range (Subtype.val ∘ edgePath ends i) = _
@@ -200,8 +186,6 @@ theorem range_edgePath (ends : I → Bool → V) (i : I) :
   rw [segment_symm ℝ (privateVertex i true) (vertex (ends i true))]
   rw [← arm_eq_segment, ← arm_eq_segment, ← bridge_eq_segment]
   rfl
-
-
 
 theorem exists_finite_triangulation (ends : I → Bool → V) :
     ∃ K : SimplicialComplex ℝ (Ambient V I), K.faces.Finite ∧ K.space = carrier ends := by

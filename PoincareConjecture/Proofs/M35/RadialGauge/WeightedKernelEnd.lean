@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatWeight
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -22,8 +13,6 @@ variable {n : ℕ} {A F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
 omit [NormedSpace ℝ F] in
-
-
 
 theorem weighted_gaussian_moment_vanishes_uniformly
     {f : A → V → F} {C S : ℝ} (hS : 0 ≤ S)

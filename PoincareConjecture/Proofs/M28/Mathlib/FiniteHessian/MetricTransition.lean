@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.MetricJets
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.Estimate
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ namespace PoincareConjecture.Proofs.M28.FiniteHessian
 
 variable {ι E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem hasUniformJetBoundsAt_fderiv_of_metric_pullback
     (n : ℕ) {f : ι → E → E} {x : ι → E} {U : ι → Set E}

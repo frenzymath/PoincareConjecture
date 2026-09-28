@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -79,8 +70,6 @@ private lemma inner_euclideanConnection (D : LeviCivitaData g)
   change 2 * g.inner x (D.euclideanConnection u v x) w = _ at h
   linarith
 
-
-
 lemma inner_fderiv_euclideanConnection (D : LeviCivitaData g)
     (x a u v w : EuclideanSpace ℝ (Fin n)) :
     g.inner x (fderiv ℝ (D.euclideanConnection u v) x a) w =
@@ -113,8 +102,6 @@ lemma inner_fderiv_euclideanConnection (D : LeviCivitaData g)
   change g.inner x (fderiv ℝ (D.euclideanConnection u v) x a) w +
     fderiv ℝ g.euclideanCoefficients x a (D.euclideanConnection u v x) w = _ at heq
   linarith
-
-
 
 lemma curvatureTensor_eq_metric_second_deriv (D : LeviCivitaData g)
     (x u b v c : EuclideanSpace ℝ (Fin n)) :
@@ -154,8 +141,6 @@ private lemma inverseCoefficients_eq_sum_orthonormal (x : EuclideanSpace ℝ (Fi
     rfl
   simpa only [OrthonormalBasis.repr_apply_apply, hp, map_sum, map_smul,
     smul_eq_mul, RiemannianMetric.inverseCoefficients] using h.symm
-
-
 
 lemma ricci_eq_sum_inverseCoefficients_curvatureTensor (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
@@ -244,8 +229,6 @@ private lemma harmonic_metric_gauge (D : LeviCivitaData g)
         fderiv ℝ g.euclideanCoefficients x v (b i) (b j))) = 0
   linarith
 
-
-
 lemma sum_metric_second_deriv_gauge_of_harmonic (D : LeviCivitaData g)
     {x : EuclideanSpace ℝ (Fin n)}
     (hharm : ∀ᶠ y in 𝓝 x, ∀ i : Fin n,
@@ -302,8 +285,6 @@ lemma sum_metric_second_deriv_gauge_of_harmonic (D : LeviCivitaData g)
   dsimp [F, b] at hzero
   simpa only [mul_comm] using eq_neg_of_add_eq_zero_left hzero
 
-
-
 noncomputable def harmonicRicciQuadratic (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) : ℝ :=
   let b := EuclideanSpace.basisFun (Fin n) ℝ
@@ -317,8 +298,6 @@ noncomputable def harmonicRicciQuadratic (D : LeviCivitaData g)
       g.inner x (D.euclideanConnection (b i) (b j) x) v +
     fderiv ℝ (fun y ↦ g.inverseCoefficients y i j) x v *
       g.inner x (D.euclideanConnection (b i) (b j) x) u))
-
-
 
 theorem ricci_eq_principal_add_harmonicRicciQuadratic (D : LeviCivitaData g)
     {x : EuclideanSpace ℝ (Fin n)}
@@ -428,8 +407,6 @@ theorem ricci_eq_principal_add_harmonicRicciQuadratic (D : LeviCivitaData g)
   rw [hU] at hv
   change _ = -(2⁻¹ : ℝ) * _ + (_ - (2⁻¹ * J u v + 2⁻¹ * J v u))
   linarith
-
-
 
 theorem laplacian_metric_eq_ricci_of_harmonic (D : LeviCivitaData g)
     {x : EuclideanSpace ℝ (Fin n)}

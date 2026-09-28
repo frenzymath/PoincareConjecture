@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Mathlib.OpenDomainCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +13,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
 
 omit [NormedAddCommGroup E] [NormedSpace 𝕜 E] [Nonempty U] in
 
-
 theorem canonicalOpen_map_coe (f : E → F) :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
     ∀ (p : V) (x : U), f x ∈ V →
@@ -32,8 +21,6 @@ theorem canonicalOpen_map_coe (f : E → F) :
   intro p x hx
   simpa only [extChartAt_coe_symm, modelWithCornersSelf_coe_symm,
     Function.comp_apply, id_eq] using canonicalOpen_chart_coe_symm hV p (f x) hx
-
-
 
 theorem canonicalOpen_map_contMDiffAt {f : E → F} {x : U}
     (hf : ContMDiffAt 𝓘(𝕜, E) 𝓘(𝕜, F) ∞ f (x : E)) (hx : f x ∈ V) :
@@ -52,8 +39,6 @@ theorem canonicalOpen_map_contMDiffAt {f : E → F} {x : U}
     (contMDiff_isOpenEmbedding (I := 𝓘(𝕜, E)) (n := ∞)
       hU.isOpenEmbedding_subtypeVal).contMDiffAt
   exact (canonicalOpen_contMDiffAt_symm hV p (f x) hx).comp x (hf.comp x hi)
-
-
 
 theorem canonicalOpen_map_mfderiv {f : E → F} {x : U}
     (hf : MDifferentiableAt 𝓘(𝕜, E) 𝓘(𝕜, F) f (x : E)) (hx : f x ∈ V) :

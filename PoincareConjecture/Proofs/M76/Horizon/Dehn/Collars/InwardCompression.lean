@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Collars.StripResidual
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -21,8 +11,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ F]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_inward_collar_compression
     (K : SimplicialComplex ℝ F) (L : SimplicialComplex ℝ E)

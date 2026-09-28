@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.Deriva
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamWeakExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.LipschitzDerivatives
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +14,6 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
 
-
-
 theorem m64L2_pairing_tendsto_of_eLpNorm
     {X : Type*} [MeasurableSpace X] {mu : Measure X}
     {f : ℕ → X → ℝ} {u v : X → ℝ}
@@ -37,8 +23,6 @@ theorem m64L2_pairing_tendsto_of_eLpNorm
   have hL := (Lp.tendsto_Lp_iff_tendsto_eLpNorm'' f hf u hu).mpr hlim
   have h := ((testIntegral v hv).continuous.tendsto (hu.toLp u)).comp hL
   simpa only [Function.comp_def, testIntegral_toLp, smul_eq_mul] using h
-
-
 
 theorem m64WeakPartial_compact_sobolev_test
     {u W psi : LoopPlane → ℝ} {i : Fin 2}
@@ -72,8 +56,6 @@ theorem m64WeakPartial_compact_sobolev_test
   filter_upwards [] with j
   simpa only [Measure.restrict_univ] using (hw (f j) (hf j) (hfc j) (subset_univ _)).symm
 
-
-
 theorem m64CompactLipschitz_fderiv_memLp
     {psi : LoopPlane → ℝ} {K : ℝ≥0}
     (hpsi : LipschitzWith K psi) (hc : HasCompactSupport psi) (j : Fin 2) :
@@ -99,9 +81,6 @@ theorem m64CompactLipschitz_fderiv_memLp
   rw [← heq]
   exact (memLp_indicator_iff_restrict (isClosed_tsupport psi).measurableSet).mpr hlocal
 
-
-
-
 theorem m64WeakPartial_compact_lipschitz_test
     {u W psi : LoopPlane → ℝ} {i : Fin 2} {K : ℝ≥0}
     (hu : MemLp u 2 volume) (hW : MemLp W 2 volume)
@@ -123,8 +102,6 @@ theorem m64WeakPartial_compact_lipschitz_test
     weakGrad_component_memLp := fun j => by simpa only [Measure.restrict_univ] using hD j
     isWeakGrad := hweak }
   exact m64WeakPartial_compact_sobolev_test hu hW hw H hc
-
-
 
 theorem m64WeakColumns_compact_lipschitz_test
     {m : ℕ} {u W : LoopPlane → EuclideanSpace ℝ (Fin m)}

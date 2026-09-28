@@ -3,15 +3,6 @@ import Mathlib.Analysis.Complex.SqrtDeriv
 import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.ExtendFrom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -180,10 +171,6 @@ private theorem recovery_completed_square
   change (w + b / a) ^ 2 = (b / a) ^ 2 - c / a
   field_simp
   linear_combination a * hpoly
-
-
-
-
 
 theorem exists_continuous_full_differential {R : ℝ} (hR : 0 < R)
     (X : LoopPlane → LoopAmbient)

@@ -5,25 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_lower_level_transport
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyInverse
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +9,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
-
-
-
 
 theorem norm_fderiv_cauchyOperator_le {h : ℂ → E} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : ContDiff ℝ 1 h)

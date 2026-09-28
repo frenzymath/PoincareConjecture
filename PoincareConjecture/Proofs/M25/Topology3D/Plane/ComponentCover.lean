@@ -1,21 +1,10 @@
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem connectedComponentIn_eq_of_open_disjoint_cover {X : Type*}
     [TopologicalSpace X] {U V W : Set X} (hU : IsOpen U) (hV : IsOpen V)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiParallelFrames
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -176,4 +168,3 @@ theorem exists_shi_segmented_parallel_frames [T2Space M]
     fun j => hPend j (Nat.zero_le _), fun j => hPpair j (Nat.zero_le _)⟩
 
 end PoincareConjecture.M04
-

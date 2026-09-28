@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryThinStrip
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +12,6 @@ open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
 
-
-
 theorem m64NormalCutoff_fderiv_eq_zero_of_lt_one (n : ℕ) (p : LoopPlane)
     (hp : ((n : ℝ) + 1) * p 0 < 1) :
     fderiv ℝ (normalCutoff n) p = 0 := by
@@ -35,8 +22,6 @@ theorem m64NormalCutoff_fderiv_eq_zero_of_lt_one (n : ℕ) (p : LoopPlane)
     filter_upwards [ho.mem_nhds hp] with q hq
     exact Real.smoothTransition.zero_of_nonpos (by linarith)
   simpa using he.fderiv_eq
-
-
 
 theorem m64NormalCutoff_uniform_derivative_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (n : ℕ) (p : LoopPlane),
@@ -53,8 +38,6 @@ theorem m64NormalCutoff_uniform_derivative_bound :
     nlinarith
   · rw [m64NormalCutoff_fderiv_eq_zero_of_lt_one n p (lt_of_not_ge hp)]
     simpa using mul_nonneg hC hn.le
-
-
 
 theorem m64NormalCutoff_zeroTrace_support {u : LoopPlane → ℝ} {R : ℝ}
     (hs : tsupport u ⊆ ball 0 R) (n : ℕ) :
@@ -78,9 +61,6 @@ theorem m64NormalCutoff_zeroTrace_support {u : LoopPlane → ℝ} {R : ℝ}
   refine ⟨⟨by nlinarith, ?_⟩, ?_⟩
   · exact (le_div_iff₀ hn).mpr (by linarith)
   · exact ⟨(abs_lt.mp hcoord).1.le, (abs_lt.mp hcoord).2.le⟩
-
-
-
 
 theorem m64NormalCutoff_zeroTrace_error_tendsto {u : LoopPlane → ℝ}
     (hu : Continuous u) (hc : HasCompactSupport u)

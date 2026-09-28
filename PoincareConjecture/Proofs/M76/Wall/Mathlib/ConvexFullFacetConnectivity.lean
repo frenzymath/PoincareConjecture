@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FullSimplexBasis
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexRelativeInteriorCoordinates
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,13 +14,9 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 abbrev FullFaceIn (K : SimplicialComplex ℝ E) (U : Set E) :=
   {t : Finset E // t ∈ K.faces ∧ t.card = Module.finrank ℝ E + 1 ∧
     (convexHull ℝ (t : Set E) ∩ U).Nonempty}
-
-
 
 def fullFacetGraph (K : SimplicialComplex ℝ E) (U : Set E) :
     SimpleGraph (K.FullFaceIn U) where
@@ -59,9 +46,6 @@ private theorem full_face_meets_avoiding_open
     (U ∩ interior (convexHull ℝ (t.val : Set E))) (hU.inter isOpen_interior)
     ⟨x, hxU, hxint⟩
   exact ⟨y, ⟨hy.1, hyA⟩, interior_subset hy.2⟩
-
-
-
 
 theorem fullFacetGraph_connected (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {U : Set E} (hU : IsOpen U) (hcv : Convex ℝ U)

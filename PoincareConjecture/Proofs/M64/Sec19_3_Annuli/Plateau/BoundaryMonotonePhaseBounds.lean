@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakSeamContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,10 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64MonotoneAffinePhase_bound_on_period
     (b : ℝ → ℝ) (hb : Monotone b) {D B : ℝ}
@@ -34,10 +20,6 @@ theorem m64MonotoneAffinePhase_bound_on_period
   rw [abs_le]
   rw [heq] at hu
   constructor <;> linarith [abs_nonneg D, le_abs_self D]
-
-
-
-
 
 theorem m64MonotoneAffinePhase_locally_bounded
     {I : Type*} (b : I → ℝ → ℝ) (hb : ∀ j, Monotone (b j)) {D B : ℝ}

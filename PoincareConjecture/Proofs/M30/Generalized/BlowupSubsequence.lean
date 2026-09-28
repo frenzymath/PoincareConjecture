@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,15 +9,12 @@ universe u
 
 namespace PoincareConjecture.M30
 
-
 def reindexedBlowupSequence (S : GeneralizedBlowupSequence.{u})
     (phi : ℕ → ℕ) (hphi : StrictMono phi) : GeneralizedBlowupSequence.{u} where
   flow := fun k => S.flow (phi k)
   base := fun k => S.base (phi k)
   base_scalar_pos := fun k => S.base_scalar_pos (phi k)
   scalar_diverges := S.scalar_diverges.comp hphi.tendsto_atTop
-
-
 
 def reindexedCommonBlowupControls {S : GeneralizedBlowupSequence.{u}}
     {epsilon C kappa r₀ mu : ℝ}
@@ -51,8 +39,6 @@ def reindexedCommonBlowupControls {S : GeneralizedBlowupSequence.{u}}
   maximal_worldlines := fun A hA =>
     hphi.tendsto_atTop.eventually (H.maximal_worldlines A hA)
 
-
-
 def reindexedLongBlowupControls {S : GeneralizedBlowupSequence.{u}}
     {epsilon C kappa r₀ mu : ℝ} {T₀ : ℝ≥0∞}
     (H : M30LongBlowupControls S epsilon C kappa r₀ mu T₀)
@@ -70,8 +56,6 @@ def reindexedLongBlowupControls {S : GeneralizedBlowupSequence.{u}}
       zero_identity := E.zero_identity
       noncollapsed := E.noncollapsed }⟩
 
-
-
 theorem reindexed_boundedDistance {S : GeneralizedBlowupSequence.{u}}
     (hbound : GeneralizedBlowupBoundedDistance S)
     (phi : ℕ → ℕ) (hphi : StrictMono phi) :
@@ -79,8 +63,6 @@ theorem reindexed_boundedDistance {S : GeneralizedBlowupSequence.{u}}
   intro A hA
   obtain ⟨D, hD, hevent⟩ := hbound A hA
   exact ⟨D, hD, hphi.tendsto_atTop.eventually hevent⟩
-
-
 
 def convergenceOfReindexed {S : GeneralizedBlowupSequence.{u}}
     {phi : ℕ → ℕ} {hphi : StrictMono phi} {J : Set ℝ}
@@ -95,8 +77,6 @@ def convergenceOfReindexed {S : GeneralizedBlowupSequence.{u}}
   source_balls_in_image := G.source_balls_in_image
   pullback_metric_CInfinity := G.pullback_metric_CInfinity
 
-
-
 theorem shortConclusion_of_reindexed {S : GeneralizedBlowupSequence.{u}}
     {phi : ℕ → ℕ} {hphi : StrictMono phi}
     (h : Nonempty (RepairedShortControlledBlowupConclusion
@@ -108,8 +88,6 @@ theorem shortConclusion_of_reindexed {S : GeneralizedBlowupSequence.{u}}
     backward_time := H.backward_time
     backward_time_pos := H.backward_time_pos
     convergence := ⟨convergenceOfReindexed G⟩ }⟩
-
-
 
 def longConclusionOfReindexed {S : GeneralizedBlowupSequence.{u}}
     {phi : ℕ → ℕ} {hphi : StrictMono phi} {kappa r₀ : ℝ} {T₀ : ℝ≥0∞}

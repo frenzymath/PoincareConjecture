@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.NormalizedOrbitRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 noncomputable def standardRotationDiffeomorph
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) :
@@ -31,8 +20,6 @@ noncomputable def standardRotationDiffeomorph
     (Matrix.toEuclideanLin A.1).toContinuousLinearMap.contDiff
   contMDiff_invFun := contMDiff_iff_contDiff.mpr
     (Matrix.toEuclideanLin (A⁻¹).1).toContinuousLinearMap.contDiff
-
-
 
 theorem rotational_scalar_edist_eq_axis (P : M35StandardCapPredecessors)
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -68,8 +55,6 @@ end PoincareConjecture.M35.Uniqueness
 namespace PoincareConjecture.RepairedStandardCapExistenceData
 
 open M35.Uniqueness
-
-
 
 theorem exists_normalized_orbit_radius_bound_all_points (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀) :

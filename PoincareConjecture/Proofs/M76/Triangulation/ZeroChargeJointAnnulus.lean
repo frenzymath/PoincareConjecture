@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,11 +11,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem image_eq_of_boundary_fixed_finitePL_homotopy
     {N : Set E} (hN : IsCompact N) (hconn : IsConnected (interior N))
@@ -92,10 +71,6 @@ theorem image_eq_of_boundary_fixed_finitePL_homotopy
     · exact ⟨y, hy, hfix t ht ⟨subset_closure hy, hyint⟩⟩
 
 omit [FiniteDimensional ℝ E] in
-
-
-
-
 
 theorem exists_plane_homeomorph_of_annulus_image
     {N : Set E} {f : E → E} (hf : FinitePiecewiseAffineOn f N)

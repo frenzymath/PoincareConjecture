@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_OpenCoordi
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.OpenDomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem exists_metric_of_open_coefficients {n : ℕ} (U : Opens (E n))
     (B : E n → SpacetimeBounds.MetricCoefficient n)
@@ -44,9 +31,6 @@ theorem exists_metric_of_open_coefficients {n : ℕ} (U : Opens (E n))
     (fun y hy => hpos y ((singleton_subset_iff.mpr hx) hy))
   exact ⟨c, hc, Eventually.of_forall (fun _ => hbound x (mem_singleton x))⟩
 
-
-
-
 theorem open_metric_family_smooth {n : ℕ} (U : Opens (E n))
     (g : ℝ → RiemannianMetric n U) {J : Set ℝ}
     (B : ℝ × E n → SpacetimeBounds.MetricCoefficient n)
@@ -60,9 +44,6 @@ theorem open_metric_family_smooth {n : ℕ} (U : Opens (E n))
       (fun p : ℝ × U => (p.1, (p.2 : E n))) :=
     contMDiff_fst.prodMk_space (contMDiff_subtype_val.comp contMDiff_snd)
   exact hB.contMDiffOn.comp hmap.contMDiffOn (fun p hp => ⟨hp.1, p.2.property⟩)
-
-
-
 
 theorem exists_ricciFlow_of_open_coefficients {n : ℕ} (U : Opens (E n))
     {J : Set ℝ} (hJ : J.OrdConnected) (hne : J.Nontrivial)

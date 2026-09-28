@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_BufferBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M44
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem closure_ball_subset_preimage_of_open_metric
     (U : Opens M) (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 U)
@@ -34,9 +22,6 @@ theorem closure_ball_subset_preimage_of_open_metric
   intro x hx
   exact subset_closure ((h.edist_comp_le_of_pullback_bound g contMDiff_subtype_val
     hmetric p x).trans_lt hx)
-
-
-
 
 theorem isCompact_closure_ball_of_open_metric
     (U : Opens M) (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 U)

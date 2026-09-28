@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanConstruction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture
 
 namespace RiemannianMetric
-
 
 noncomputable def euclideanMetric (n : ℕ) :
     RiemannianMetric n (EuclideanSpace ℝ (Fin n)) :=
@@ -51,8 +41,6 @@ namespace LeviCivitaData
 
 variable {n : ℕ} (D : LeviCivitaData (RiemannianMetric.euclideanMetric n))
 
-
-
 lemma hessian_euclideanMetric
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hf : ContDiffAt ℝ ∞ f x) (v w : EuclideanSpace ℝ (Fin n)) :
@@ -60,8 +48,6 @@ lemma hessian_euclideanMetric
   rw [D.hessian_eq_fderiv_sub_christoffel hf,
     RiemannianMetric.euclideanMetric_christoffel]
   simp
-
-
 
 lemma laplacian_euclideanMetric
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}

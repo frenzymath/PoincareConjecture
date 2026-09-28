@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +67,6 @@ private theorem contMDiffAt_of_metricDual
       ((e.continuousLinearEquivAt ℝ p.2 hp) (Z p.1 p.2)))) = _
   rw [ContinuousLinearEquiv.symm_apply_apply]
   rfl
-
-
 
 theorem contMDiffAt_gradient
     {f : ℝ × M → ℝ} {t : ℝ} {x : M} (ht : t ∈ interior J)

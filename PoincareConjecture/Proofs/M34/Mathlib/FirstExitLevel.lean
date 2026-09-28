@@ -1,21 +1,9 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem ContinuousOn.exists_first_eq_of_le
     {α β : Type*} [ConditionallyCompleteLinearOrder α] [DenselyOrdered α]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TwoSidedColl
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

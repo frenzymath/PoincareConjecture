@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.DomainIdentification
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,9 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem open_cylinder_subset_of_frontier
     {V : Type*} [NormedAddCommGroup V] [NormedSpace Real V] [Nontrivial V]
@@ -68,8 +63,6 @@ theorem open_cylinder_subset_of_frontier
     exact (mem_ball_zero_iff.mp hz.2).ne ((hfront z.1 hz.1 z.2).mp hf)
   · exact ⟨y, ⟨hyW.1, hyball⟩, hyΩ⟩
 
-
-
 theorem open_cylinder_subset_ball_image_of_boundary
     {V : Type*} [NormedAddCommGroup V] [NormedSpace Real V] [Nontrivial V]
     (H : (Real × V) ≃ₜ E3) (F : E3 ≃ₜ E3) {a b : Real} (hab : a < b)
@@ -100,9 +93,6 @@ theorem open_cylinder_subset_ball_image_of_boundary
   obtain ⟨y, hy, heq⟩ := hsub hz
   rw [← heq, H.apply_symm_apply]
   exact hy
-
-
-
 
 theorem mem_capped_cylinder_ball_of_upper_collar
     {v : E3} (hv : ‖v‖ = 1) {a b u w : Real} (hab : a ≤ b)

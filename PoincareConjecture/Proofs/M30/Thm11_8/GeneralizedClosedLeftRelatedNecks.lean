@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.ClosedLeftRelatedNecks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option maxHeartbeats 800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem exists_generalized_closed_left_related_neck_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

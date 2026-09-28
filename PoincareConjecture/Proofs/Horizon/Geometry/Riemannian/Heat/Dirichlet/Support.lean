@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Resolvent
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -46,14 +37,12 @@ theorem restrict_compl_toL2_eq_zero (hΩ : MeasurableSet Ω) (u : H1Zero D Ω) :
       continuous_const
   | ih φ => simpa using restrict_compl_testToL2_eq_zero hΩ φ
 
-
 theorem toL2_ae_zero_outside (hΩ : MeasurableSet Ω) (u : H1Zero D Ω) :
     ∀ᵐ x ∂g.volumeMeasure, x ∉ Ω → toL2 D Ω u x = 0 := by
   have h := (Lp.eq_zero_iff_ae_eq_zero.mp (restrict_compl_toL2_eq_zero hΩ u))
   have hres := LpToLpRestrictCLM_coeFn ℝ Ωᶜ (toL2 D Ω u)
   have hz : (toL2 D Ω u : M → ℝ) =ᵐ[g.volumeMeasure.restrict Ωᶜ] 0 := hres.symm.trans h
   exact (ae_restrict_iff' hΩ.compl).mp hz
-
 
 def toDomainL2 (D : LeviCivitaData g) (Ω : Set M) :
     H1Zero D Ω →L[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOrdinaryBirthVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ}
-
-
 
 theorem seed_ordinary_ball_subset_image
     (U : TopologicalSpace.Opens C.carrier) [CompactSpace U]
@@ -56,8 +46,6 @@ theorem seed_ordinary_ball_subset_image
     hlower q hR isClosed_closure.isCompact (by rw [hsource]; exact subset_univ _)
   simpa only [hmap] using hcover
 
-
-
 theorem seed_ordinary_scalar_ball_bound
     (U : TopologicalSpace.Opens C.carrier) [CompactSpace U]
     (e : SurgeryFlowCylinder F C origin scale I U) (s : ℝ) (hs : s ∈ I)
@@ -76,8 +64,6 @@ theorem seed_ordinary_scalar_ball_bound
   obtain ⟨z, hz, rfl⟩ := seed_ordinary_ball_subset_image U e s hs g hmetric q hR hy
   rw [← hread]
   exact hscalar z hz
-
-
 
 theorem seed_ordinary_component_ricci_nonnegative
     (U : TopologicalSpace.Opens C.carrier)

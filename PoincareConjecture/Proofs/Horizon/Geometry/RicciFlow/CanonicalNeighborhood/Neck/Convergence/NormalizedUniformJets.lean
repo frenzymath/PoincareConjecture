@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.UniformJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Scalar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.PointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
 
 private theorem constant_jets_tendsto
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -95,8 +87,6 @@ private theorem smooth_zero_convergence_scalar_errors
         ((hig x hx).of_le (by exact_mod_cast le_top))).symm
     · intro x hx
       simp
-
-
 
 theorem smooth_zero_convergence_normalized_changing_cylinder_coefficients
     {a b : ℝ} {S : PointedFlowSequence 3 a b}
@@ -177,8 +167,6 @@ theorem smooth_zero_convergence_normalized_changing_cylinder_coefficients
     exact (h.2 m K hK hKU).congr (Eventually.of_forall fun i x _ =>
       congrArg (fun f => iteratedFDeriv ℝ m f x) (heq i))
 
-
-
 theorem tendstoUniformlyOn_normalized_cylinder_jet_error
     {a b : ℝ} {S : PointedFlowSequence 3 a b}
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)
@@ -226,9 +214,6 @@ private theorem scalar_neck_scale_inverse_sq {R : ℝ} (hR : 0 < R) :
   rw [neg_div, Real.rpow_neg hR.le, inv_inv, ← Real.rpow_natCast,
     ← Real.rpow_mul hR.le]
   norm_num
-
-
-
 
 theorem tendstoUniformlyOn_scalarNormalized_cylinder_jet_error
     {a b : ℝ} {S : PointedFlowSequence 3 a b}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,8 +12,6 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem abs_scalarCurvature_le_curvatureTensorNorm
     (D : LeviCivitaData g) (x : M) :
@@ -47,8 +36,6 @@ theorem abs_scalarCurvature_le_curvatureTensorNorm
       intro i _
       simpa only [hb, mul_one] using M04.abs_ricci_le_curvatureTensorNorm D x (b i)
     _ = _ := by simp [hdim, pow_two, mul_assoc]
-
-
 
 theorem abs_scalarCurvature_derivative_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (x : M) (v : TangentSpace (𝓡 n) x) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimFinitePL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,16 +11,13 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
 
-
 noncomputable def squareRimHalfTime (second : Bool) (t : unitInterval) : unitInterval :=
   ⟨if second then 1 - (t : ℝ) / 2 else (t : ℝ) / 2, by
     cases second <;> simp only [Bool.false_eq_true, if_false, if_true] <;>
       constructor <;> linarith [t.property.1, t.property.2]⟩
 
-
 noncomputable def squareRimHalf (second : Bool) (t : unitInterval) : V2 :=
   squareRimLoop (squareRimHalfTime second t)
-
 
 def squareRimHalfCarrier (second : Bool) : Set V2 := range (squareRimHalf second)
 
@@ -76,7 +65,6 @@ theorem continuous_squareRimHalf (second : Bool) : Continuous (squareRimHalf sec
   · exact continuous_subtype_val.div_const 2
   · exact continuous_const.sub (continuous_subtype_val.div_const 2)
 
-
 noncomputable def squareRimHalfChart (second : Bool) :
     I01 ≃ₜ squareRimHalfCarrier second :=
   ((continuous_squareRimHalf second).isClosedEmbedding
@@ -114,7 +102,6 @@ theorem squareRimHalfCarrier_subset (second : Bool) : squareRimHalfCarrier secon
   rintro x ⟨t, rfl⟩
   exact (squareRimLoop (squareRimHalfTime second t)).property
 
-
 theorem squareRimHalfCarrier_union :
     squareRimHalfCarrier false ∪ squareRimHalfCarrier true = Q := by
   apply Subset.antisymm
@@ -149,7 +136,6 @@ theorem squareRimHalfCarrier_union :
     · exact Or.inl ⟨t, hf (Or.inr h)⟩
     · exact Or.inr ⟨t, ht (Or.inl h)⟩
     · exact Or.inr ⟨t, ht (Or.inr h)⟩
-
 
 theorem squareRimHalfCarrier_inter :
     squareRimHalfCarrier false ∩ squareRimHalfCarrier true =

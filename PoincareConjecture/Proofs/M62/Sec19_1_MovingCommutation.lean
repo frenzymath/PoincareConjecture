@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {J : Set ℝ}
 
 set_option maxHeartbeats 5000000 in
-
-
 
 theorem flow_pullback_curvature_pair [T2Space M]
     (F : RicciFlow n M J) (c : ℝ → ℝ → M)

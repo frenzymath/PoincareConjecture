@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Ring.Units
 
-
-
-
-
-
-
-
-
 open Set Filter Function
 open scoped Topology ContDiff
 
@@ -18,9 +10,6 @@ namespace Poincare.Geometry.Manifold.RegularLevel
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 private def straighteningMap (f : E → ℝ) (u₀ : E) (ℓ : E →L[ℝ] ℝ) (e : E) :
     E → E :=
   fun u => u + (f u - f u₀ - ℓ (u - u₀)) • e
@@ -28,8 +17,6 @@ private def straighteningMap (f : E → ℝ) (u₀ : E) (ℓ : E →L[ℝ] ℝ) 
 private theorem straighteningMap_apply_self (f : E → ℝ) (u₀ : E)
     (ℓ : E →L[ℝ] ℝ) (e : E) : straighteningMap f u₀ ℓ e u₀ = u₀ := by
   simp [straighteningMap]
-
-
 
 private theorem hasFDerivAt_straighteningCoef {f : E → ℝ} {u₀ : E}
     {ℓ : E →L[ℝ] ℝ} (hf' : HasFDerivAt f ℓ u₀) :
@@ -43,8 +30,6 @@ private theorem hasFDerivAt_straighteningCoef {f : E → ℝ} {u₀ : E}
     rfl
   rw [hfun] at h
   exact h.congr_fderiv (sub_self ℓ)
-
-
 
 private theorem hasFDerivAt_straighteningMap {f : E → ℝ} {u₀ : E}
     {ℓ : E →L[ℝ] ℝ} (hf' : HasFDerivAt f ℓ u₀) (e : E) :
@@ -65,21 +50,6 @@ private theorem contDiffOn_straighteningMap {f : E → ℝ} {s : Set E}
   exact contDiffOn_id.add (((hf.sub contDiffOn_const).sub
     ((ℓ.contDiff.comp (contDiff_id.sub contDiff_const)).contDiffOn)).smul
       contDiffOn_const)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_openPartialHomeomorph_comp_symm_eq_affine [CompleteSpace E]
     {f : E → ℝ} {s : Set E} (hs : IsOpen s) (hf : ContDiffOn ℝ ∞ f s)

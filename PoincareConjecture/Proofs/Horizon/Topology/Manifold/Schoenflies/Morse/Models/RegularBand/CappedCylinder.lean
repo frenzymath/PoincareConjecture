@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapAlignment
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +16,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
 
 theorem exists_smooth_circle_parametrization_of_plane_filling
     {v : E3} (hv : ‖v‖ = 1)
@@ -55,8 +52,6 @@ theorem exists_smooth_circle_parametrization_of_plane_filling
     refine ⟨J.symm p, ?_, rfl⟩
     rw [mem_sphere_zero_iff_norm, J.symm.norm_map]
     exact mem_sphere_zero_iff_norm.mp p.property
-
-
 
 theorem exists_ambient_capped_cylinder_of_two_fillings
     {v : E3} (hv : ‖v‖ = 1) (a b : Real) (hab : a < b)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.CapEstimates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Volume.Convergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +21,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
 
-
-
 theorem eventually_volume_image_le_eight_of_isCompact_closure
     (hconv : M23TerminalMetricConvergence G e)
     {U : Set G.limit.carrier.carrier} (hU : IsOpen U)
@@ -46,8 +33,6 @@ theorem eventually_volume_image_le_eight_of_isCompact_closure
     (by norm_num : (1 : ℝ) < 2)] with k hk
   simpa only [ENNReal.ofReal_ofNat, show (2 : ℝ≥0∞) ^ 3 = 8 by norm_num] using hk.1
 
-
-
 theorem eventually_cap_volume_image_le_eight
     (hconv : M23TerminalMetricConvergence G e)
     (A : CapCertificate (G.limit.flow.flow.metric 0)) :
@@ -57,8 +42,6 @@ theorem eventually_cap_volume_image_le_eight
         8 * calibratedMetricVolume (G.limit.flow.flow.metric 0) A.carrier :=
   hconv.eventually_volume_image_le_eight_of_isCompact_closure A.carrier_open
     (A.isCompact_closure_carrier (G.limit.flow.complete 0 le_rfl))
-
-
 
 theorem eventually_cap_volume_bound_original_constant
     (hconv : M23TerminalMetricConvergence G e)
@@ -79,8 +62,6 @@ theorem eventually_cap_volume_bound_original_constant
     (ENNReal.continuous_ofReal.continuousAt.tendsto.comp hscale)
     (Or.inr (ENNReal.ofReal_ne_top (r := A.cap_constant)))
   exact (hconv.tendsto_cap_volume_image A).eventually_lt hright A.volume_bound
-
-
 
 theorem eventually_cap_volume_bound
     (hconv : M23TerminalMetricConvergence G e)

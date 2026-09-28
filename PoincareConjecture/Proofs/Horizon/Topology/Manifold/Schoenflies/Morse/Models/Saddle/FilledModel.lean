@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.UpperCap
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,11 +12,7 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
-
 def band : Set E3 := {p | polynomial p = 1 ∧ p 2 ∈ Icc (-9/8) (1/2)}
-
-
-
 
 theorem shear_image_sphere_eq_band_union_caps :
     shear '' sphere (0 : E3) 1 =
@@ -40,8 +34,6 @@ theorem shear_image_sphere_eq_band_union_caps :
           le_of_lt (lt_of_not_ge hu)⟩))
   · rintro (((hp | hp) | hp) | hp) <;> exact hp.1
 
-
-
 theorem band_inter_lowerCap {σ : Real} (hσ : σ^2 = 1) :
     band ∩ (lowerCap σ '' closedBall (0 : E2) (Real.sqrt (1/8))) =
       lowerCap σ '' sphere (0 : E2) (Real.sqrt (1/8)) := by
@@ -60,8 +52,6 @@ theorem band_inter_lowerCap {σ : Real} (hσ : σ^2 = 1) :
       mem_image_of_mem (lowerCap σ) (sphere_subset_closedBall hq)⟩
     rw [lowerCap_boundary_height σ hq]
     norm_num
-
-
 
 theorem band_inter_upperCap :
     band ∩ (upperCap '' closedBall (0 : E2) (Real.sqrt (3/4))) =
@@ -107,8 +97,6 @@ private theorem image_openBall_eq_sdiff_boundary
     intro heq
     exact hnot (mem_image_of_mem g (mem_sphere_zero_iff_norm.mpr heq))
 
-
-
 theorem band_eq_sphere_minus_open_caps :
     band = (shear '' sphere (0 : E3) 1) \
       ((lowerCap 1 '' ball (0 : E2) (Real.sqrt (1/8))) ∪
@@ -125,8 +113,6 @@ theorem band_eq_sphere_minus_open_caps :
   ext p
   simp only [mem_sdiff, mem_union, mem_inter_iff]
   tauto
-
-
 
 theorem exists_ambient_filled_three_cap_model :
     ∃ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,

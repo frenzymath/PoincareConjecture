@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarIntegration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarTraceEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,12 +23,6 @@ private theorem polar_mem_annulus {p : ℝ × ℝ} (hp : p.1 ∈ Ioo (1 : ℝ) 2
       norm_angularPoint, mul_one]
   simpa only [scalarAnnulus, mem_ofPred_eq, hnorm, mem_Ioo] using hp
 
-
-
-
-
-
-
 theorem scalarPolar_radial_continuousOn {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus) :
     ContinuousOn (fun p : ℝ × ℝ =>
@@ -52,12 +34,6 @@ theorem scalarPolar_radial_continuousOn {H : Plane → ℝ}
     continuous_fst.smul (contDiff_angularPoint.continuous.comp continuous_snd)
   exact (hdf.comp hp.continuousOn (fun p hp => polar_mem_annulus hp.1)).clm_apply
     (contDiff_angularPoint.continuous.comp continuous_snd).continuousOn
-
-
-
-
-
-
 
 theorem scalarPolar_radial_energy_integrable {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -75,12 +51,6 @@ theorem scalarPolar_radial_energy_integrable {H : Plane → ℝ}
       ‖fderiv ℝ H (p.1 • angularPoint p.2)‖ ^ 2 := by
     simpa only [sq_abs] using (sq_le_sq₀ (abs_nonneg _) (norm_nonneg _)).mpr hnorm
   exact hsquare.trans (le_mul_of_one_le_left (sq_nonneg _) hp.1.1.le)
-
-
-
-
-
-
 
 theorem scalarPolar_radial_memLp_ae {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -103,12 +73,6 @@ theorem scalarPolar_radial_memLp_ae {H : Plane → ℝ}
     (hc.aestronglyMeasurable measurableSet_Ioo)).mpr htheta
   rwa [← Measure.restrict_congr_set (Ioo_ae_eq_Ioc (μ := (volume : Measure ℝ)))]
 
-
-
-
-
-
-
 theorem scalarPolar_radial_hasDerivAt {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     {r : ℝ} (hr : r ∈ Ioo (1 : ℝ) 2) (theta : ℝ) :
@@ -121,13 +85,6 @@ theorem scalarPolar_radial_hasDerivAt {H : Plane → ℝ}
   have h := hdx.hasFDerivAt.comp_hasDerivAt r
     ((hasDerivAt_id r).smul_const (angularPoint theta))
   simpa only [Function.comp_def, one_smul, id_eq] using! h
-
-
-
-
-
-
-
 
 theorem scalarPolar_boundary_trace_energy_ae {H : Plane → ℝ}
     (hHc : Continuous H)

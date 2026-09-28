@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

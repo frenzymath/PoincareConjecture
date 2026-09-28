@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.CylinderGluingTopology
 import PoincareConjecture.Proofs.M11.CylinderGluingDifferential
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

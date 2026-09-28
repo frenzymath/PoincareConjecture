@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsBounds
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ noncomputable local instance familyComparisonCoefficientNorm : NormedAddCommGrou
 
 noncomputable local instance familyComparisonCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem eventually_standard_family_metricJetError_le_of_metric_eq
     {g0 : StandardInitialMetric} (S : MaximalStandardCapFlow g0)
@@ -86,9 +74,6 @@ theorem eventually_standard_family_metricJetError_le_of_metric_eq
   exact (hbound t (hkJ ht) (G k t) (hkmodel t ht) (D k t) (U k) (hU k)
     (fun y => f k (t, y)) (hkS t ht) x hx (hkU hx) rho hrho.le hdiff').trans_eq hrho_sq
 
-
-
-
 theorem eventually_standard_family_metricJetError_le
     {g0 : StandardInitialMetric} (S : MaximalStandardCapFlow g0)
     {H : ℝ} (hH : H < S.base.lifetime) {K : Set E} (hK : IsCompact K)
@@ -110,9 +95,6 @@ theorem eventually_standard_family_metricJetError_le
     (fun _ => S.metric) (fun _ => S.connection) (Eventually.of_forall (fun _ _ _ => rfl))
     m hU hKU hJ hsmooth hjets hepsilon
 
-
-
-
 theorem singularMetricJetErrorSquared_congr_germ
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g)
     {B C : CovariantTensorEvaluation 3 E 2} {x : E}
@@ -131,9 +113,6 @@ theorem singularMetricJetErrorSquared_congr_germ
     (comparison_iteratedCovariantTensorDerivative_eventuallyEq D hdiff j).self_of_nhds
   unfold RiemannianMetric.tensorNorm
   rw [hderiv]
-
-
-
 
 theorem surgeryCapFamilyComparison_of_coefficient_error
     {F : SurgeryFlowData.{u}} (S : MaximalStandardCapFlow F.standard_initial)

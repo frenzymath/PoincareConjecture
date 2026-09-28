@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Bi
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.GeneralPosition.ConvexSegmentNeighborhood
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcNesting
 
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

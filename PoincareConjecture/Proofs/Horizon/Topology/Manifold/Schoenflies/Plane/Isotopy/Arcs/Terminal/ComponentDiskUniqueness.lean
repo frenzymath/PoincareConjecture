@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelCapDisks
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
 private instance : LocallyConnectedSpace S2 := ChartedSpace.locallyConnectedSpace E2 S2
-
-
 
 theorem closed_regions_eq_of_common_circle_and_exterior
     {C : S1 → S2} (hC : ContMDiff (𝓡 1) (𝓡 2) ∞ C)
@@ -68,9 +64,6 @@ theorem closed_regions_eq_of_common_circle_and_exterior
   exact (subset_union_left.trans (hfull L hL subset_union_right hfrontL hneL)).antisymm
     (subset_union_right.trans (hfull K hK subset_union_left hfrontK hneK))
 
-
-
-
 theorem sublevel_components_eq_of_common_circle_frontier
     {h : S2 → Real} (hh : Continuous h) {b : Real}
     {C : S1 → S2} (hC : ContMDiff (𝓡 1) (𝓡 2) ∞ C)
@@ -110,8 +103,6 @@ theorem sublevel_components_eq_of_common_circle_frontier
     exact (ne_of_lt hp) heqb
   exact ⟨(connectedComponentIn_eq hpq).symm, heq⟩
 
-
-
 theorem disjoint_closures_of_disjoint_open_and_frontiers
     {X : Type*} [TopologicalSpace X] {U V : Set X}
     (hU : IsOpen U) (hV : IsOpen V) (hUV : Disjoint U V)
@@ -128,8 +119,6 @@ theorem disjoint_closures_of_disjoint_open_and_frontiers
       fun hxi => disjoint_left.mp hUi hxi hxV⟩
   · exact ⟨by simpa only [closure_closure] using hxV,
       fun hxi => disjoint_left.mp hVi hxi hxU⟩
-
-
 
 theorem component_closures_disjoint_of_frontiers_disjoint
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]

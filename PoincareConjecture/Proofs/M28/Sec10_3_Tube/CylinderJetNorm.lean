@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,9 +40,6 @@ private theorem norm_le_basisJetBound {F : Type*}
     simpa [nsmul_eq_mul] using h
   apply h'.trans
   exact mul_le_mul_of_nonneg_right (by dsimp [basisJetBound]; linarith) hA
-
-
-
 
 theorem exists_metricTwoJet_coefficient_bound :
     ∃ K : ℝ, 0 < K ∧ ∀ (J : MetricTwoJet 3) (A : ℝ), 0 ≤ A →

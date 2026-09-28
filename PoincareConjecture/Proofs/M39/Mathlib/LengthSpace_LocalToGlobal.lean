@@ -2,15 +2,6 @@ import Mathlib.Geometry.Manifold.Riemannian.PathELength
 import Mathlib.Topology.UnitInterval
 import Mathlib.Topology.EMetricSpace.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M]
   [∀ x : M, ENorm (TangentSpace I x)]
   {Y : Type*} [PseudoEMetricSpace Y]
-
-
-
 
 theorem edist_le_mul_pathELength_of_open_cover
     {ι : Sort*} (U : ι → Set M) (hU : ∀ i, IsOpen (U i))
@@ -69,9 +57,6 @@ theorem edist_le_mul_pathELength_of_open_cover
         _ = C * pathELength I γ 0 (t (k + 1)) := by
           rw [← mul_add, pathELength_add (t k).property.1 hstep]
   simpa [hn n le_rfl] using hbound n
-
-
-
 
 theorem edist_le_mul_riemannianEDist_of_open_cover
     {ι : Sort*} (U : ι → Set M) (hU : ∀ i, IsOpen (U i))

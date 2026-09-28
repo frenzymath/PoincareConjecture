@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSlabs
 import PoincareConjecture.Statements.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,17 +10,14 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
 noncomputable def terminalCommonIntervalHorizon (V : GeneralizedBlowupSequence.{u}) :
     ℝ≥0∞ := sSup (TerminalCommonIntervalHorizons V)
-
 
 theorem terminalCommonInterval_horizon_mem (V : GeneralizedBlowupSequence.{u}) :
     terminalCommonIntervalHorizon V ∈ TerminalCommonIntervalHorizons V := by
   intro T hT hTH
   obtain ⟨H, hH, hTH'⟩ := lt_sSup_iff.mp hTH
   exact hH T hT hTH'
-
 
 theorem terminalCommonInterval_horizon_pos
     {V : GeneralizedBlowupSequence.{u}} {delta : ℝ} (hdelta : 0 < delta)
@@ -40,7 +29,6 @@ theorem terminalCommonInterval_horizon_pos
       ((ENNReal.ofReal_lt_ofReal_iff hdelta).mp hTd).le
   exact (ENNReal.ofReal_pos.mpr hdelta).trans_le (le_sSup hmem)
 
-
 theorem terminalCommonInterval_horizon_reindex
     {V : GeneralizedBlowupSequence.{u}} (hdec : TerminalCommonIntervalDecided V)
     {sigma : ℕ → ℕ} (hsigma : StrictMono sigma) :
@@ -48,7 +36,6 @@ theorem terminalCommonInterval_horizon_reindex
       terminalCommonIntervalHorizon V := by
   unfold terminalCommonIntervalHorizon
   rw [terminalCommonInterval_horizons_reindex hdec hsigma]
-
 
 theorem terminalCommonInterval_maximalControls
     (V : GeneralizedBlowupSequence.{u}) {delta : ℝ} (hdelta : 0 < delta)
@@ -63,7 +50,6 @@ theorem terminalCommonInterval_maximalControls
   terminal_volume := hvolume
   cylinders := terminalCommonInterval_horizon_mem V }
 
-
 theorem terminalCommonInterval_reindexControls
     {V : GeneralizedBlowupSequence.{u}} {H : ℝ≥0∞}
     (C : M30GeometricLongControls V H)
@@ -77,7 +63,6 @@ theorem terminalCommonInterval_reindexControls
   cylinders := fun T hT hTH =>
     terminalCommonInterval_slab_reindex (C.cylinders T hT hTH) hsigma }
 
-
 theorem terminalCommonInterval_maximal
     {V : GeneralizedBlowupSequence.{u}} (hdec : TerminalCommonIntervalDecided V)
     {sigma : ℕ → ℕ} (hsigma : StrictMono sigma) {H : ℝ≥0∞}
@@ -87,8 +72,6 @@ theorem terminalCommonInterval_maximal
       (terminalCommonInterval_reindex V sigma hsigma) := C.cylinders
   rw [terminalCommonInterval_horizons_reindex hdec hsigma] at hmem
   exact le_sSup hmem
-
-
 
 theorem terminalCommonInterval_extract
     (P : M47Predecessors.{u}) (V : GeneralizedBlowupSequence.{u})
@@ -106,8 +89,6 @@ theorem terminalCommonInterval_extract
   let C := terminalCommonInterval_maximalControls D hdelta hslab hcompact hvolume
   obtain ⟨G⟩ := P.geometric_limits D (terminalCommonIntervalHorizon D) C
   exact ⟨terminalCommonInterval_compSubsequence hsigma G⟩
-
-
 
 theorem terminalCommonInterval_select_and_extract
     (P : M47Predecessors.{u}) (V : GeneralizedBlowupSequence.{u})

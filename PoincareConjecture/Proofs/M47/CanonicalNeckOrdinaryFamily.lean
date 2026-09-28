@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckBufferedFamily
 import PoincareConjecture.Proofs.M47.CanonicalNeckCompressedCertificate
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem compressed_neck_metric_pullback
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) (h : RiemannianMetric 3 M)
@@ -43,8 +33,6 @@ theorem compressed_neck_metric_pullback
   have hchain := mfderiv_comp z hNd hAd
   simp only [neckAxialTensorPullback, roundCylinderPullback, Function.comp_apply,
     hchain, ContinuousLinearMap.comp_apply, neckAxialSpaceMap_mfderiv]
-
-
 
 theorem exists_eventually_buffered_ordinary_necks [T3Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

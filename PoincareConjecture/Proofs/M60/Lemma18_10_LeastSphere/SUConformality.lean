@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUHopfVanishing
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUConformalPole
 import PoincareConjecture.Proofs.M60.Mathlib.SUGramConformal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60WeaklyConformal_of_chartHarmonic (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

@@ -10,7 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
 noncomputable def m67InitialWidthSlice
     (S : M59IdentificationSystem.{u})
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A)
@@ -18,7 +17,6 @@ noncomputable def m67InitialWidthSlice
     (initial : M67InitialClassData S C g) : M67WidthSlice S.quotient C :=
   m67WidthSliceOfClass S C g initial.metric initial.metric.leviCivitaData
     initial.metric_pullback initial.pi_two_trivial initial.alpha initial.nonzero
-
 
 noncomputable def m67ActualWidthSlice
     (S : M59IdentificationSystem.{u})

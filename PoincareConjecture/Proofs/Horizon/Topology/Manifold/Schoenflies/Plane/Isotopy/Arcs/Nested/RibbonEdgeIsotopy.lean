@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonCharts
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Isotopy
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -109,8 +107,6 @@ private def horizontalScale (a : Real) (ha : a ≠ 0) :
     fin_cases i
     · exact (EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).contDiff.div_const a
     · exact (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
-
-
 
 theorem exists_supported_disk_isotopy_of_shared_ribbon_edge
     (A B R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) (c : Real)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Convolution
 import Mathlib.Analysis.Convex.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory ContinuousLinearMap
@@ -17,7 +10,6 @@ namespace Poincare
 
 private noncomputable def absoluteValueBump (δ : ℝ) (hδ : 0 < δ) : ContDiffBump (0 : ℝ) :=
   ⟨δ / 2, δ, half_pos hδ, half_lt_self hδ⟩
-
 
 noncomputable def regularizedAbs (δ : ℝ) (hδ : 0 < δ) : ℝ → ℝ :=
   (absoluteValueBump δ hδ).normed volume ⋆[lsmul ℝ ℝ, volume] (fun t : ℝ => |t|)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CollarOverla
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalSphereSimplyConnected
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Product
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -77,7 +69,6 @@ theorem overlap_h1_isZero
     rw [E.surjective.iUnion_comp]
   rw [houter, hinner] at hh
   exact hh
-
 
 theorem marked_sphere_overlap_h1_isZero
     {X : Type u} {κ : Type v} {ι : Type w} [TopologicalSpace X] [T2Space X] [Finite κ]

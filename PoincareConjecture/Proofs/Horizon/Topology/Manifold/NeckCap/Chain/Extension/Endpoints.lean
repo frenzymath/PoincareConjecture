@@ -1,8 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain
 
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Polygo
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.BoundaryEdgeFiber
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.EdgeGeometry
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -14,8 +12,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {T : CoorientedSurfaceStars E}
-
-
 
 structure SurfaceEdgeEndpoints (F : SurfaceTriangleFibers T)
     (s : Finset E) where
@@ -56,8 +52,6 @@ private theorem edge_base_of_two_rim_marks
     · exact pair_comm _ _
     · exact False.elim (hxy rfl)
   exact ⟨he.symm ▸ hB, hQ.trans he.symm⟩
-
-
 
 theorem SurfaceTriangleFibers.exists_edge_endpoints
     (F : SurfaceTriangleFibers T)

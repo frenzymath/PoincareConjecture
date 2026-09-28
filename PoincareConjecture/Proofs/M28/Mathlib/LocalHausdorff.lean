@@ -2,15 +2,6 @@ import Mathlib.MeasureTheory.Measure.Comap
 import Mathlib.MeasureTheory.Measure.Hausdorff
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped ENNReal
 universe u v
 
 namespace MeasureTheory.Measure
-
-
-
 
 theorem comap_hausdorffMeasure_of_locally_isometry
     {X : Type u} {Y : Type v} [EMetricSpace X] [EMetricSpace Y]

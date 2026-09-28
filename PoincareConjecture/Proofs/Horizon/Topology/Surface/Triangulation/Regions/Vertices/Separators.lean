@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Trimming
 import Mathlib.Analysis.Calculus.Deriv.Shift
 import Mathlib.Analysis.Calculus.Deriv.Slope
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -63,7 +52,6 @@ theorem edgeFromEndpoint_contMDiff (a : D.EdgeIndex) (terminal : Bool) :
 
 omit [T2Space M] in
 
-
 theorem edgeFromEndpoint_coordinate_deriv (a : D.EdgeIndex) (terminal : Bool)
     (x : M) (t : ℝ) :
     deriv (chartAt (EuclideanSpace ℝ (Fin 2)) x ∘ D.edgeFromEndpoint a terminal) t =
@@ -75,9 +63,6 @@ theorem edgeFromEndpoint_coordinate_deriv (a : D.EdgeIndex) (terminal : Bool)
   · exact deriv_comp_const_sub
       (f := fun u => chartAt (EuclideanSpace ℝ (Fin 2)) x ((D.edge a.1 a.2).map u))
       (a := 1) (x := t)
-
-
-
 
 theorem exists_edge_cap_separator
     {p : M} {P : ChartCircleArrangementVertexPatch D.radius p}
@@ -181,9 +166,6 @@ theorem exists_edge_cap_separator
     rw [hc, ← hbase']
     change c (c.symm z) ∈ W at hqW
     exact hcap z ⟨by simpa only [hc] using hqW, hz⟩
-
-
-
 
 theorem exists_vertex_caps_with_edge_separators
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

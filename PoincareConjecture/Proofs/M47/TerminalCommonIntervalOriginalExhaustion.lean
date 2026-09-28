@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalOriginalGermGlobalization
 import PoincareConjecture.Proofs.M47.TerminalGermsExhaustionFlows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,9 +35,6 @@ private local instance originalExhaustionCharts : ChartedSpace E G.limit.carrier
   G.limit.carrier.chartedSpace
 private local instance originalExhaustionManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
-
 
 theorem terminalCommonInterval_original_exhaustion_identification
     (P : M47Predecessors.{u}) (rho : ℕ → ℕ) (hrho : StrictMono rho)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AmbientCompactExtension
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CompactTameH1Coefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PoincareConjecture.SpectralHeatNative
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
 
 theorem exists_ambientCurveH1_coefficients (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

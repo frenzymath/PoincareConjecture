@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicVelocityBounds
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem raw_intrinsic_radial_velocity_bounded
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

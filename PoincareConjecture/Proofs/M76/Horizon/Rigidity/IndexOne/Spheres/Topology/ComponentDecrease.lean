@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FiniteComponentExcision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem sdiff_interior_eq_sdiff_of_disjoint_frontier {P D : Set X}
     (hD : IsClosed D) (hfront : Disjoint P (frontier D)) :
@@ -30,8 +18,6 @@ theorem sdiff_interior_eq_sdiff_of_disjoint_frontier {P D : Set X}
     rw [hD.frontier_eq]
     exact ⟨hxD, hxint⟩
   · exact fun hx => ⟨hx.1, fun hi => hx.2 (interior_subset hi)⟩
-
-
 
 theorem connectedComponentIn_sdiff_of_disjoint_frontier {P D : Set X}
     (hD : IsClosed D) (hfront : Disjoint P (frontier D))
@@ -47,8 +33,6 @@ theorem connectedComponentIn_sdiff_of_disjoint_frontier {P D : Set X}
   apply Subset.antisymm (connectedComponentIn_mono x sdiff_subset)
   apply isPreconnected_connectedComponentIn.subset_connectedComponentIn hxcomp
   exact fun y hy => ⟨hsub hy, fun hyD => disjoint_left.mp hout hy hyD⟩
-
-
 
 theorem exists_finite_component_decrease_of_sdiff
     {σ : Type*} [Fintype σ] (M : σ → Set X) {D : Set X}
@@ -75,9 +59,6 @@ theorem exists_finite_component_decrease_of_sdiff
   rw [heq] at hcover hwhole
   exact ⟨J, hcard, hmem, hcover, hwhole,
     fun _ hx => connectedComponentIn_sdiff_of_disjoint_frontier hD hfrontUnion hx⟩
-
-
-
 
 theorem exists_marked_component_decrease_of_subset_interior
     {σ : Type*} [Fintype σ] [DecidableEq σ] (M : σ → Set X) {D : Set X}

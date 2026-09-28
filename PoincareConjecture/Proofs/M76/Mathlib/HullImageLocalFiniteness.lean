@@ -3,16 +3,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem local_faces_hullImage (K : SimplicialComplex ℝ E)
     (e : OpenPartialHomeomorph E F) (hsource : K.space ⊆ e.source)

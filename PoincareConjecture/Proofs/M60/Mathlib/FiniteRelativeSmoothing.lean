@@ -2,15 +2,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Defs
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {E H F K M N : Type*}
   [TopologicalSpace M] [ChartedSpace H M]
   [PseudoMetricSpace N] [ChartedSpace K N]
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
-
-
-
 
 theorem exists_c1_of_finite_relative_smoothing
     {ι : Type*} [Finite ι] (W : ι → Set M) (S : Set M) (f₀ : C(M, N))

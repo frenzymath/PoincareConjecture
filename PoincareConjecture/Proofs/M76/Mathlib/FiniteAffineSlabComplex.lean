@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_finite_affineSlab_complex (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) (a b : ℝ) :

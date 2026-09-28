@@ -3,10 +3,3 @@ import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Geometry.Manifold.Notation
 import Mathlib.Geometry.Manifold.Instances.Real
-
-
-
-
-
-
-

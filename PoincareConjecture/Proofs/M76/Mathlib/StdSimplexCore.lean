@@ -1,29 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleIntrinsicExtension
 import Mathlib.Analysis.Convex.StdSimplex
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable (ι : Type*) [Fintype ι]
 
-
-
 def stdSimplexCore (η : ℝ) : Set (ι → ℝ) :=
   {q | (∀ i, η ≤ q i) ∧ ∑ i, q i = 1}
-
-
 
 theorem isClosed_stdSimplexCore (η : ℝ) : IsClosed (stdSimplexCore ι η) := by
   have he : stdSimplexCore ι η =
@@ -33,8 +18,6 @@ theorem isClosed_stdSimplexCore (η : ℝ) : IsClosed (stdSimplexCore ι η) := 
   rw [he]
   exact (isClosed_iInter (fun i => isClosed_le continuous_const (continuous_apply i))).inter
     (isClosed_eq (continuous_finsetSum _ (fun i _ => continuous_apply i)) continuous_const)
-
-
 
 theorem convex_stdSimplexCore (η : ℝ) : Convex ℝ (stdSimplexCore ι η) := by
   intro q hq r hr a b ha hb hab
@@ -47,13 +30,9 @@ theorem convex_stdSimplexCore (η : ℝ) : Convex ℝ (stdSimplexCore ι η) := 
   · simp only [Pi.add_apply, Pi.smul_apply, smul_eq_mul, Finset.sum_add_distrib,
       ← Finset.mul_sum, hq.2, hr.2, mul_one, hab]
 
-
-
 theorem stdSimplexCore_subset_stdSimplex {η : ℝ} (hη : 0 ≤ η) :
     stdSimplexCore ι η ⊆ stdSimplex ℝ ι :=
   fun _ hq => ⟨fun i => hη.trans (hq.1 i), hq.2⟩
-
-
 
 theorem isCompact_stdSimplexCore {η : ℝ} (hη : 0 ≤ η) :
     IsCompact (stdSimplexCore ι η) :=
@@ -61,8 +40,6 @@ theorem isCompact_stdSimplexCore {η : ℝ} (hη : 0 ≤ η) :
     (stdSimplexCore_subset_stdSimplex ι hη)
 
 variable [Nonempty ι]
-
-
 
 theorem nonempty_stdSimplexCore {η : ℝ} (hη : (Fintype.card ι : ℝ) * η < 1) :
     (stdSimplexCore ι η).Nonempty := by
@@ -75,10 +52,6 @@ theorem nonempty_stdSimplexCore {η : ℝ} (hη : (Fintype.card ι : ℝ) * η <
 namespace ContinuousMap
 
 variable {Y : Type*} [TopologicalSpace Y] [ContractibleSpace Y]
-
-
-
-
 
 theorem exists_stdSimplexCore_extension {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1)

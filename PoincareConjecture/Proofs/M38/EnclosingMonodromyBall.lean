@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.EnclosingBallSubregions
 import PoincareConjecture.Proofs.M38.ReciprocalSphereBall
 import PoincareConjecture.Proofs.M38.SphereMonodromyComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency true
 
@@ -30,11 +21,9 @@ variable {A : GeneralizedSliceCarrier.{u}} (C : SurgeryBallEmbedding A)
 local notation "D₀" => enclosingSphereBall B₀ C p ha ha8 hB₀
 local notation "D₁" => enclosingSphereBall B₁ C p ha ha8 hB₁
 
-
 theorem enclosingSphereTwoBallComplement_open : IsOpen ((D₀).closedBall ∪ (D₁).closedBall)ᶜ :=
   ((surgeryBall_closedImage_compact D₀ 1 (by norm_num)).isClosed.union
     (surgeryBall_closedImage_compact D₁ 1 (by norm_num)).isClosed).isOpen_compl
-
 
 theorem reciprocalSphereBall_subset_twoBallComplement :
     (reciprocalSphereBall p ha ha8).map '' Metric.ball 0 2 ⊆
@@ -47,7 +36,6 @@ theorem reciprocalSphereBall_subset_twoBallComplement :
   · exact hdis (enclosingSphereBall_inside_unit B₁ C p ha ha8 hB₁
       (surgeryBall_closedBall_subset_image D₁ hbad))
 
-
 variable
   (H : @OpenCylinderModel (sphereCarrier.{u}).carrier
     (sphereCarrier.{u}).topologicalSpace (sphereCarrier.{u}).chartedSpace
@@ -55,13 +43,11 @@ variable
         (enclosingSphereBall B₁ C p ha ha8 hB₁).closedBall)ᶜ)
   (beta : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
 
-
 theorem monodromyLiftedZeroFiber_complement_open :
     IsOpen ((monodromyLiftedZeroFiber.{u} beta)ᶜ) := by
   rw [← monodromyLiftedCollar_central beta (1 / 4) (by norm_num)]
   exact (comparisonCentral_isClosed (monodromyLiftedCollar beta (1 / 4) (by norm_num))
     (by norm_num : (0 : ℝ) < 1 / 4) rfl).isOpen_compl
-
 
 noncomputable def enclosingMonodromyBall : SurgeryBallEmbedding (monodromyCarrier.{u} beta) :=
   transportSurgeryBallRegion
@@ -74,19 +60,16 @@ noncomputable def enclosingMonodromyBall : SurgeryBallEmbedding (monodromyCarrie
     (monodromyLiftedZeroFiber_complement_open beta)
     (reciprocalSphereBall_subset_twoBallComplement C p ha ha8 B₀ B₁ hB₀ hB₁)
 
-
 theorem enclosingMonodromyBall_map (x : StandardCapSpace) :
     (enclosingMonodromyBall C p ha ha8 B₀ B₁ hB₀ hB₁ H beta).map x =
       (sphereTwoBallMonodromyComparison.{u} D₀ D₁ H beta).map
         ((reciprocalSphereBall p ha ha8).map x) := rfl
-
 
 theorem enclosingMonodromyBall_closedBall :
     (enclosingMonodromyBall C p ha ha8 B₀ B₁ hB₀ hB₁ H beta).closedBall =
       (sphereTwoBallMonodromyComparison.{u} D₀ D₁ H beta).map ''
         (reciprocalSphereBall p ha ha8).closedBall :=
   transportSurgeryBallRegion_closedBall _ _ _ _ _
-
 
 theorem enclosingMonodromyBall_avoids_zero :
     (enclosingMonodromyBall C p ha ha8 B₀ B₁ hB₀ hB₁ H beta).closedBall ⊆
@@ -97,7 +80,6 @@ theorem enclosingMonodromyBall_avoids_zero :
     reciprocalSphereBall_subset_twoBallComplement C p ha ha8 B₀ B₁ hB₀ hB₁
       (surgeryBall_closedBall_subset_image (reciprocalSphereBall p ha ha8) hx), rfl⟩
 
-
 theorem enclosingSphere_innerTwoHole_eq :
     ((D₀).closedBall ∪ (D₁).closedBall)ᶜ \ (reciprocalSphereBall p ha ha8).closedBall =
       enclosingSphereInnerTwoHoleRegion C p ha ha8 B₀ B₁ hB₀ hB₁ := by
@@ -105,7 +87,6 @@ theorem enclosingSphere_innerTwoHole_eq :
     ((spherePoleReferenceBall p).map '' Metric.ball 0 (3 / 2)) ∩
       ((D₀).closedBall ∪ (D₁).closedBall)ᶜ
   rw [reciprocalSphereBall_complement, Set.inter_comm]
-
 
 theorem enclosingMonodromyBall_complement :
     (enclosingMonodromyBall C p ha ha8 B₀ B₁ hB₀ hB₁ H beta).closedBallᶜ =

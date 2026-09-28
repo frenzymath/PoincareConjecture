@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TangentContactsNull
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,11 +7,6 @@ open Set MeasureTheory
 open scoped Topology ContDiff Manifold Matrix ENNReal
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_transverse_retained_bases
     (e : AnnulusCoordinates → AnnulusCoordinates) (he : ContDiff ℝ ∞ e)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace

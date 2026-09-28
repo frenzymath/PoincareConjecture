@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Ener
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.SpectralSmoothing
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,7 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 variable (D : LeviCivitaData g) (Ω : Set M) (hn : 0 < n)
   (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
 
-
 def heatSpectralPower (k : ℕ) (t : ℝ) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=
   Poincare.Analysis.Dirichlet.Spectral.heatPower (eigenbasis D Ω hn hΩ hc)
@@ -48,7 +37,6 @@ theorem heatSpectralPower_repr (k : ℕ) {t : ℝ} (ht : 0 < t)
 theorem heatSpectralPower_zero_eq_heatSemigroup {t : ℝ} (ht : 0 < t) :
     heatSpectralPower D Ω hn hΩ hc 0 t = heatSemigroup D Ω hn hΩ hc t.toNNReal :=
   Poincare.Analysis.Dirichlet.Spectral.heatPower_zero_eq_heat _ _ ht
-
 
 def energyHeatSpectralPower (k : ℕ) (t : ℝ) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] H1Zero D Ω :=
@@ -142,8 +130,6 @@ theorem hasDerivAt_heatSemigroup_pairing {t : ℝ} (ht : 0 < t)
   rw [heatSpectralPower_zero_eq_heatSemigroup D Ω hn hΩ hc ht] at he
   simp only [Nat.zero_add] at he
   linarith
-
-
 
 theorem hasDerivAt_heatSemigroup_integral_test {t : ℝ} (ht : 0 < t)
     (f : Lp ℝ 2 (g.volumeMeasure.restrict Ω)) (φ : EnergyTest D Ω) :

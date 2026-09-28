@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Hessian
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.Existence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_uniform_smoothDistanceLike_of_heat_estimates
     (n : ℕ) {k A : ℝ} (hA : 0 ≤ A) :
@@ -53,9 +43,6 @@ theorem exists_uniform_smoothDistanceLike_of_heat_estimates
     (D.hessian_quadratic_le_of_abs_le
       (hessian g D hc F u hu hsec hvalue hgradient)), rfl⟩
 
-
-
-
 theorem exists_uniform_smoothDistanceLike_of_heat_gradient_estimates
     (n : ℕ) {k A : ℝ} (hA : 0 ≤ A) :
     ∃ C : ℝ, 0 < C ∧
@@ -81,8 +68,6 @@ theorem exists_uniform_smoothDistanceLike_of_heat_gradient_estimates
   intro t ht ht1 x v
   exact (D.gradient_norm_le_iff (fun y ↦ F.toFun y t) x hA).mp
     (hgradient t ht ht1 x) v
-
-
 
 theorem exists_uniform_smoothDistanceLike_dim_one {k : ℝ} :
     ∃ C : ℝ, 0 < C ∧
@@ -113,9 +98,6 @@ theorem exists_uniform_smoothDistanceLike_dim_one {k : ℝ} :
     (fun t ht ht1 x ↦
       (D.gradient_norm_le_iff (fun y ↦ F (t, y)) x hA).mp
         (hbound t ⟨ht, ht1⟩ x).2)
-
-
-
 
 theorem exists_uniform_smoothDistanceLike (n : ℕ) {k : ℝ} (hk : 0 ≤ k) :
     ∃ C : ℝ, 0 < C ∧

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusParametrization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,9 +55,6 @@ private theorem wrappedStripMap_left {L s t : ℝ}
     have h₃ : ¬ s + 3 * L ≤ 3 * L := by linarith
     simp only [wrappedStripMap, h₁, h₂, h₃, if_false, add_sub_cancel_right]
 
-
-
-
 theorem wrappedStripMap_block {L s t : ℝ}
     (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) (i : Fin 4) :
     wrappedStripMap L (s + (i.val : ℝ) * L, t) =
@@ -77,9 +64,6 @@ theorem wrappedStripMap_block {L s t : ℝ}
   · simpa [stripRotation, stripMap] using wrappedStripMap_right ht hs
   · simpa [stripRotation, stripMap] using wrappedStripMap_top ht hs
   · simpa [stripRotation, stripMap] using wrappedStripMap_left ht hs
-
-
-
 
 theorem exists_period_block {L s : ℝ} (hs : s ∈ Icc 0 (4 * L)) :
     ∃ i : Fin 4, ∃ r ∈ Icc 0 L, s = r + (i.val : ℝ) * L := by

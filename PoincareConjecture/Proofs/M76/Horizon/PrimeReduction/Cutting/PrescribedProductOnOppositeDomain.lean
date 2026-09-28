@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PrescribedPr
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.WholeDiskProductOnOppositeDomain
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductOpenSubsets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

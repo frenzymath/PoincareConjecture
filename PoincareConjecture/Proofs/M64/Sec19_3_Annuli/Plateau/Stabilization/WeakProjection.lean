@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.RetainedObservation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCharts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +19,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "H" => EuclideanSpace ℝ (Fin k)
-
-
 
 theorem auxiliaryCircle_retained_observation_mfderiv
     (P : M62.CircleProductData F circumference)
@@ -58,8 +45,6 @@ theorem auxiliaryCircle_retained_observation_mfderiv
   have hmaps : L ∘ o = e ∘ (Prod.fst : P.charts.Point → M) := funext hL
   rw [hmaps] at hleft
   exact hright.symm.trans hleft
-
-
 
 theorem auxiliaryCircle_projected_weak_annulus
     (P : M62.CircleProductData F circumference)

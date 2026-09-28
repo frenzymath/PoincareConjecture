@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseCircleTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +19,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem local_circle_phase
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D) (he : Continuous e)

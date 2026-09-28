@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Metric
@@ -16,8 +8,6 @@ open Set Metric
 namespace Poincare.Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem isPreconnected_norm_ge (hdim : 1 < Module.rank ℝ E) {r : ℝ}
     (hr : 0 < r) : IsPreconnected {x : E | r ≤ ‖x‖} := by
@@ -35,8 +25,6 @@ theorem isPreconnected_norm_ge (hdim : 1 < Module.rank ℝ E) {r : ℝ}
       · simp [smul_smul, mul_inv_cancel₀ hx0]
   rw [← himage]
   exact (isPreconnected_Ici.prod (isPreconnected_sphere hdim 0 1)).image _ (by fun_prop)
-
-
 
 theorem bounded_side_of_compact_complement_partition [Nontrivial E]
     (hdim : 1 < Module.rank ℝ E) {S A B : Set E} (hS : IsCompact S)
@@ -70,8 +58,6 @@ theorem bounded_side_of_compact_complement_partition [Nontrivial E]
       by_contra hxr
       exact Set.disjoint_left.mp hdisj hxA (hCB (le_of_not_gt hxr))
     exact Or.inl ⟨hAb, fun hBb => hnotboth ⟨hAb, hBb⟩⟩
-
-
 
 theorem bounded_side_of_compact_complement_partition_euclidean_three
     {S A B : Set (EuclideanSpace ℝ (Fin 3))} (hS : IsCompact S)

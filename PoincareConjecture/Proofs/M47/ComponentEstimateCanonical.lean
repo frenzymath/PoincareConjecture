@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import PoincareConjecture.Proofs.M45.Ch9_Models.ModelAnalyticBounds
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_component_crossing_analytic_bound (C : ℝ) :
     ∃ B : ℝ, 0 < B ∧

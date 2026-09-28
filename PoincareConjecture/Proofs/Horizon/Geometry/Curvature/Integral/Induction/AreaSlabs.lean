@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.LimitSlabs
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.AreaGrowth
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

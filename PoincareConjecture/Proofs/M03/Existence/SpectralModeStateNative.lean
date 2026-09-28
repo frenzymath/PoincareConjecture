@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralModeL2Native
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -15,7 +7,6 @@ open MeasureTheory Set
 noncomputable section
 
 namespace PoincareConjecture
-
 
 theorem spectralMode_eq_initial_add_integral_defect
     {lambda c T t : ℝ} {f : ℝ → ℝ}
@@ -39,7 +30,6 @@ theorem spectralMode_eq_initial_add_integral_defect
       _ = _ := by rw [spectralMode_zero]
   linarith
 
-
 theorem spectralMode_eq_of_ae_eq
     {lambda c T t : ℝ} {f g : ℝ → ℝ}
     (hfg : f =ᵐ[volume.restrict (uIoc (0 : ℝ) T)] g)
@@ -53,7 +43,6 @@ theorem spectralMode_eq_of_ae_eq
   apply intervalIntegral.integral_congr_ae_restrict
   filter_upwards [hfg'] with s hs
   rw [hs]
-
 
 theorem spectralMode_trace_energy_le_of_integrable
     {lambda c T t : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda)
@@ -75,7 +64,6 @@ theorem spectralMode_trace_energy_le_of_integrable
       (lambda * spectralMode lambda c f s) ^ 2 :=
     intervalIntegral.integral_nonneg_of_forall ht.1 (fun _ => sq_nonneg _)
   linarith
-
 
 theorem spectralMode_trace_energy_le_of_memLp
     {lambda c T t : ℝ} {f : ℝ → ℝ} (hlambda : 0 ≤ lambda)

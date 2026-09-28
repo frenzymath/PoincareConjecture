@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +10,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
 
 theorem exists_slice_collar_in_open (B : EpsilonNeck g) {s : ℝ}
     (hs : s ∈ Ioo (-B.epsilon⁻¹) B.epsilon⁻¹)
@@ -48,8 +37,6 @@ theorem exists_slice_collar_in_open (B : EpsilonNeck g) {s : ℝ}
   have hqt := huv (show (q, t) ∈ u ×ˢ v from
     ⟨hu (mem_univ q), hrv (by simpa [Metric.mem_ball, Real.dist_eq] using ht)⟩)
   exact ⟨hqt.1.2, hqt.2⟩
-
-
 
 theorem exists_contained_slice_collar (A B : EpsilonNeck g) {s : ℝ}
     (hs : s ∈ Ioo (-B.epsilon⁻¹) B.epsilon⁻¹)

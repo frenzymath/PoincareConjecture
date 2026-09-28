@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidenc
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Interior
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,21 +1,10 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem bilinear_eq_inner_of_conformal_gram (B : E →L[ℝ] E →L[ℝ] ℝ)
     (hB : ∀ v w, B v w = B w v)

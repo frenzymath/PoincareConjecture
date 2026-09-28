@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Logarithmic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.OperatorReaction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Persistence
-
-
-
-
-
-
-

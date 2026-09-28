@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

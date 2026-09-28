@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalVertexLinkModels
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CocycleExactnessOfContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
-
 
 theorem original_chart_stars_vertex_link_edge_exact
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (A : SimplicialComplex ℝ E)

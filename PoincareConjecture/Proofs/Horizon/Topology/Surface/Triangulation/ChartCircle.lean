@@ -1,19 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
 import Mathlib.MeasureTheory.Integral.CircleIntegral
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,7 +7,6 @@ open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.Topology.Surface
-
 
 noncomputable def coordinateCircleArc (c : EuclideanSpace ℝ (Fin 2)) (r a : ℝ) :
     ℝ → EuclideanSpace ℝ (Fin 2) :=
@@ -51,7 +36,6 @@ theorem coordinateCircleArc_injOn (c : EuclideanSpace ℝ (Fin 2))
     (Complex.orthonormalBasisOneI.repr.injective heq)
   nlinarith [Real.pi_pos]
 
-
 theorem coordinateCircleArc_inter_subset_endpoints
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (a : ℝ) :
     coordinateCircleArc c r a '' Icc (0 : ℝ) 1 ∩
@@ -75,8 +59,6 @@ theorem coordinateCircleArc_inter_subset_endpoints
     nlinarith [mul_nonneg hu.1 Real.pi_pos.le]
   exact Or.inr (congrArg (coordinateCircleArc c r a) htone)
 
-
-
 theorem finite_inter_coordinateCircleArc_images
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r)
     {i j : Fin 2} (hij : i ≠ j) :
@@ -93,12 +75,10 @@ theorem finite_inter_coordinateCircleArc_images
   · simpa [inter_comm] using hfinite
   · exact (hij rfl).elim
 
-
 theorem coordinateCircleArc_contDiff (c : EuclideanSpace ℝ (Fin 2)) (r a : ℝ) :
     ContDiff ℝ ∞ (coordinateCircleArc c r a) :=
   Complex.orthonormalBasisOneI.repr.toContinuousLinearEquiv.contDiff.comp
     ((contDiff_circleMap _ _).comp (contDiff_const.add (contDiff_id.mul contDiff_const)))
-
 
 theorem coordinateCircleArc_fderiv_injective
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (a t : ℝ) :
@@ -116,7 +96,6 @@ theorem coordinateCircleArc_fderiv_injective
   rw [hd.hasFDerivAt.fderiv]
   exact smul_left_injective ℝ hEv
 
-
 theorem coordinateCircleArc_deriv_ne_zero
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (a t : ℝ) :
     deriv (coordinateCircleArc c r a) t ≠ 0 := by
@@ -125,14 +104,11 @@ theorem coordinateCircleArc_deriv_ne_zero
   apply coordinateCircleArc_fderiv_injective c hr a t
   simpa only [fderiv_apply_one_eq_deriv, map_zero] using h
 
-
 theorem coordinateCircleArc_affine_contDiff
     (c : EuclideanSpace ℝ (Fin 2)) (r θ a b : ℝ) :
     ContDiff ℝ ∞ (fun t : ℝ => coordinateCircleArc c r θ (a + t * (b - a))) :=
   (coordinateCircleArc_contDiff c r θ).comp
     (contDiff_const.add (contDiff_id.mul contDiff_const))
-
-
 
 theorem coordinateCircleArc_affine_deriv_ne_zero
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (θ : ℝ)
@@ -146,8 +122,6 @@ theorem coordinateCircleArc_affine_deriv_ne_zero
   rw [(houter.scomp t hinner).deriv]
   exact smul_ne_zero (sub_ne_zero.mpr hab.ne')
     (coordinateCircleArc_deriv_ne_zero c hr θ _)
-
-
 
 theorem coordinateCircleArc_affine_injOn
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (θ : ℝ)
@@ -198,8 +172,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
 
-
-
 theorem finite_inter_chartCircleArc_images (p : M)
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r)
     (hcircle : sphere c r ⊆ (chartAt (EuclideanSpace ℝ (Fin 2)) p).target)
@@ -217,8 +189,6 @@ theorem finite_inter_chartCircleArc_images (p : M)
   exact (finite_inter_coordinateCircleArc_images c hr hij).image _
 
 variable [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_smoothEdge_of_coordinateCircleArc (p : M)
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r) (a : ℝ)
@@ -243,8 +213,6 @@ theorem exists_smoothEdge_of_coordinateCircleArc (p : M)
   intro s hs t ht heq
   exact coordinateCircleArc_injOn c hr a hs ht
     ((chartAt (EuclideanSpace ℝ (Fin 2)) p).symm.injOn (htarget s) (htarget t) heq)
-
-
 
 theorem exists_smoothEdges_of_chartCircle (p : M)
     (c : EuclideanSpace ℝ (Fin 2)) {r : ℝ} (hr : 0 < r)

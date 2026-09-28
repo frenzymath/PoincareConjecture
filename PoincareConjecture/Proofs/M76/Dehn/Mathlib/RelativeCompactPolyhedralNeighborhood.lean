@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_relative_compact_polyhedral_neighborhood
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

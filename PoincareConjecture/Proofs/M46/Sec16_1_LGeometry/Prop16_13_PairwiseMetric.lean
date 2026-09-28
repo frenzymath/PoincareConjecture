@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_IntrinsicCompari
 import PoincareConjecture.Definitions.M44CapPersistence
 import PoincareConjecture.Proofs.M35.TerminalBlowup.MetricContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,11 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
-
-
 
 theorem capComparison_metric_later_le_three_earlier
     {g0 : StandardInitialMetric} (P : RepairedCapPersistenceData.{u} g0)

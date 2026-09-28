@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartMaps
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLFiberCompression
-
-
-
 
 theorem plInCharts_homeomorph
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

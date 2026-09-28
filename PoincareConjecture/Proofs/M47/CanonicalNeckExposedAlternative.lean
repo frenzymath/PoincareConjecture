@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalBuffer
 import PoincareConjecture.Proofs.M47.CanonicalNeckSlabLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem regularSlab_limit_strongNeck_exposed_bottom
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {T c l H : ℝ}

@@ -1,25 +1,10 @@
 import Mathlib.Order.Filter.AtTopBot.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem eventually_atTop_of_forall_subseq {P : ℕ → Prop}
     (h : ∀ phi : ℕ → ℕ, StrictMono phi →

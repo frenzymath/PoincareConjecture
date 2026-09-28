@@ -1,18 +1,7 @@
 import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-
-
-
 
 theorem ContinuousLinearMap.relative_quadratic_bounds_of_norm_sub_le
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conju
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,20 +16,16 @@ open ConjugateVariation
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 def position (q v : ℝ → E) (a b : ℝ) (p : ℝ × ℝ) : E :=
   q p.2 + ((p.2 - a) / (b - a)) • v p.1
 
-
 def velocity (w v : ℝ → E) (a b : ℝ) (p : ℝ × ℝ) : E :=
   w p.2 + (b - a)⁻¹ • v p.1
-
 
 def density (G : E → E →L[ℝ] E →L[ℝ] ℝ)
     (q w v : ℝ → E) (a b : ℝ) (p : ℝ × ℝ) : ℝ :=
   (1 / 2 : ℝ) * G (position q v a b p)
     (velocity w v a b p) (velocity w v a b p)
-
 
 theorem hasDerivAt_position_time {q w v : ℝ → E} {a b s t : ℝ}
     (hq : HasDerivAt q (w t) t) :
@@ -54,14 +41,12 @@ theorem hasDerivAt_position_time {q w v : ℝ → E} {a b s t : ℝ}
   rw [heq] at h
   simpa only [velocity, one_div] using h
 
-
 theorem contDiffOn_position {q v : ℝ → E} {a b : ℝ} {I J : Set ℝ}
     (hq : ContDiffOn ℝ 1 q J) (hv : ContDiffOn ℝ 1 v I) :
     ContDiffOn ℝ 1 (position q v a b) (I ×ˢ J) := by
   exact (hq.comp contDiffOn_snd (fun _ h => h.2)).add
     (((contDiffOn_snd.sub contDiffOn_const).div_const (b - a)).smul
       (hv.comp contDiffOn_fst (fun _ h => h.1)))
-
 
 theorem contDiffOn_velocity {w v : ℝ → E} {a b : ℝ} {I J : Set ℝ}
     (hw : ContDiffOn ℝ 1 w J) (hv : ContDiffOn ℝ 1 v I) :
@@ -136,9 +121,6 @@ private theorem hasDerivAt_pairing_geodesic
   simp only [_root_.add_apply, map_neg, map_add]
   rw [hcompat (w t) (Y t) (w t)]
   ring
-
-
-
 
 theorem hasDerivAt_integral_density
     {G : E → E →L[ℝ] E →L[ℝ] ℝ}

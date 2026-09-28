@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.Gradient.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] {g : RiemannianMetric n M}
-
-
 
 theorem gradient_norm_ge_of_totallyConvex_gap
     (D : LeviCivitaData g) (hc : MetricComplete g) {C : Set M}
@@ -69,9 +60,6 @@ theorem gradient_norm_ge_of_totallyConvex_gap
   change g.tangentNorm x (D.gradient f x) * (g.edist p x).toReal ≤
     g.tangentNorm x (D.gradient f x) * R at hlength
   nlinarith
-
-
-
 
 theorem exists_uniform_gradient_bound_of_compact_totallyConvex
     (D : LeviCivitaData g) (hc : MetricComplete g) {C : Set M}

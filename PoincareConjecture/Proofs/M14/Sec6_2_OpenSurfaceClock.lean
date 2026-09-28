@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenSurfaceFields
 import Mathlib.Analysis.Calculus.Deriv.Add
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {α : ℝ × ℝ → G.Point} {J P : Set ℝ} {T s v : ℝ}
-
-
 
 theorem surface_time_clock (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))
@@ -45,8 +35,6 @@ theorem surface_time_clock (hJ : IsOpen J) (hP : IsOpen P)
     exact hclock (r, v) ⟨hr, hv⟩
   exact hd.unique hc
 
-
-
 theorem surface_parameter_clock (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))
     (hclock : ∀ z ∈ J ×ˢ P, G.spacetime.timeFunction (α z) = T - z.1)
@@ -64,8 +52,6 @@ theorem surface_parameter_clock (hJ : IsOpen J) (hP : IsOpen P)
     filter_upwards [hP.mem_nhds hv] with u hu
     exact hclock (s, u) ⟨hs, hu⟩
   exact hd.unique hc
-
-
 
 theorem surfaceHorizontalSnd_val (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))

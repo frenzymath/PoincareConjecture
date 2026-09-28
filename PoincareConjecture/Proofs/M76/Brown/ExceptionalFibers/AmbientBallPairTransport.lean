@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace OpenPartialHomeomorph
 
 variable {E X Y : Type*} [NormedAddCommGroup E]
   [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
-
-
-
 
 theorem image_compact_ballPair (e : OpenPartialHomeomorph X Y)
     {Q : Set X} (hQ : IsCompact Q) (hQs : Q ⊆ e.source)

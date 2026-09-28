@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +13,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem tendstoUniformlyOn_distance_of_normal_chart_uniform_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -124,8 +111,6 @@ end PoincareConjecture.RiemannianMetric
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_common_flat_annular_metrics_with_source_distances_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

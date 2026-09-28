@@ -5,23 +5,11 @@ import Mathlib.Algebra.Module.ZLattice.Basic
 import Mathlib.LinearAlgebra.Basis.SMul
 import Mathlib.LinearAlgebra.Quotient.Pi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 namespace PoincareConjecture.M76
-
-
-
 
 def hamiltonZeroPeriodLattice : Submodule ℤ (Fin 3 → ℝ) :=
   Submodule.pi univ fun _ =>
@@ -58,13 +46,9 @@ private theorem zeroPeriodLattice_eq_span :
     rw [zsmul_eq_mul]
     nlinarith
 
-
-
 instance : DiscreteTopology hamiltonZeroPeriodLattice := by
   rw [zeroPeriodLattice_eq_span]
   infer_instance
-
-
 
 instance : IsZLattice ℝ hamiltonZeroPeriodLattice := by
   refine ⟨?_⟩
@@ -120,22 +104,15 @@ private def zeroCircleProductEquiv :
     · exact continuous_fst.snd
     · exact continuous_snd
 
-
-
-
 noncomputable def hamiltonZeroLatticeProductEquiv :
     ((Fin 3 → ℝ) ⧸ hamiltonZeroPeriodLattice.toAddSubgroup) ≃ₜ
       ((StableTorus.Circle × StableTorus.Circle) × StableTorus.Circle) :=
   zeroLatticePiEquiv.trans zeroCircleProductEquiv
 
-
-
 theorem hamiltonZeroLatticeProductEquiv_mk (x : Fin 3 → ℝ) :
     hamiltonZeroLatticeProductEquiv (QuotientAddGroup.mk x) =
       (((x 0 : StableTorus.Circle), (x 1 : StableTorus.Circle)),
         (x 2 : StableTorus.Circle)) := rfl
-
-
 
 theorem hamiltonZeroLatticeProductEquiv_puncture :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

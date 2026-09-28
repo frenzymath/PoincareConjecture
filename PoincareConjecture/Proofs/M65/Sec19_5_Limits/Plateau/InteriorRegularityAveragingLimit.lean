@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAv
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityRadiusLimit
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory
 open scoped Topology ContDiff Convolution SchwartzMap InnerProductSpace
 
 namespace PoincareConjecture.M65Interior
-
-
-
-
 
 theorem averagingValue_exists_uniform_limit
     (u : Lp ℝ 2 (volume : Measure LoopPlane))

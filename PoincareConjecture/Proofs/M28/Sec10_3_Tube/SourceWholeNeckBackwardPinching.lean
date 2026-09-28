@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceWholeNeckBackwardBounds
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckBufferedPinching
 import PoincareConjecture.Proofs.M28.Mathlib.LogPinching
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,19 +28,13 @@ variable {epsilon C A : ℝ}
 
 variable (D : WholeNeckBackwardData H W G sigma V)
 
-
-
 theorem sourceIndex_strictMono (hsigma : StrictMono sigma) : StrictMono D.sourceIndex :=
   W.high_index_strictMono.comp (G.subsequence_strictMono.comp
     (hsigma.comp (fun _ _ h => Nat.add_lt_add_right h D.offset)))
 
-
-
 theorem normalization_tendsto_atTop (hsigma : StrictMono sigma) :
     Tendsto D.normalization atTop atTop :=
   H.base_scalar_tendsto_atTop.comp (D.sourceIndex_strictMono hsigma).tendsto_atTop
-
-
 
 def originalPoint (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -64,8 +49,6 @@ def originalPoint (k : ℕ) :
   exact GeneralizedStrongNeck.buffered_global_original_point (D.neck k)
     (D.normalization k) (D.normalization_pos k)
     (V.scale ^ 2 / 2) (D.half_window k) s hs x
-
-
 
 def pinchingError (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -82,9 +65,6 @@ def pinchingError (k : ℕ) :
     (D.originalPoint k s hs x).2 / D.normalization k
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem pinchingError_tendsto_zero (P : RicciFlowCurvatureTheory.{u})
     (hsigma : StrictMono sigma) :
@@ -119,8 +99,6 @@ theorem pinchingError_tendsto_zero (P : RicciFlowCurvatureTheory.{u})
     exact ((E (D.sourceIndex k + H.shift)).pinched _ htime
       (D.originalPoint k s hs (x k)).2).2
 
-
-
 theorem sourceFlow_plane_lower (P : RicciFlowCurvatureTheory.{u}) (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -137,8 +115,6 @@ theorem sourceFlow_plane_lower (P : RicciFlowCurvatureTheory.{u}) (k : ℕ) :
     (D.normalization k) (D.normalization_pos k) P
     (V.scale ^ 2 / 2) (half_pos (sq_pos_of_pos V.scale_pos))
     (D.half_window k) s hs x v w
-
-
 
 theorem fixedFlow_plane_lower (P : RicciFlowCurvatureTheory.{u}) (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace

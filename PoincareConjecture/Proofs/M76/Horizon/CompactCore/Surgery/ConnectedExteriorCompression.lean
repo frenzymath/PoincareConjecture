@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedExteri
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ConnectedProtectedCompressionComponent
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedCompressionLoops
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

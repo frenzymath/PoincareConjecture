@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.NormalCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.InteriorDerivativeControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -127,7 +118,6 @@ theorem eventually_normalChartCover_spatial_bounds_on_interval_of_local_derivati
         · linarith [(hJ ht).2, le_abs_self T, abs_nonneg T']
       · exact (hk cover i t ht x hx j (by omega)).trans (le_max_left B E)
 
-
 theorem eventually_normalChartCover_spatial_bounds_on_interval
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)
     (hM04 : RicciFlowCurvatureTheory.{0})
@@ -145,8 +135,6 @@ theorem eventually_normalChartCover_spatial_bounds_on_interval
           ‖iteratedFDeriv ℝ j ((F.metricAt t).pullbackCoefficients (cover.chart i)) x‖ ≤ B :=
   H.eventually_normalChartCover_spatial_bounds_on_interval_of_local_derivative_estimates
     hM04.local_derivative_estimates h0 hJ hA hρ hρR ha hb m
-
-
 
 theorem eventually_normalChartCover_spatial_jet_bound
     {n : ℕ} {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses n T' T)

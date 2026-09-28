@@ -1,15 +1,6 @@
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Data.Fintype.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace Poincare.Topology
 
 variable {X σ : Type*} [TopologicalSpace X] [Fintype σ]
-
-
 
 theorem subset_interior_or_disjoint_of_disjoint_frontier {M D : Set X}
     (hM : IsPreconnected M) (hD : IsClosed D)
@@ -37,9 +26,6 @@ theorem subset_interior_or_disjoint_of_disjoint_frontier {M D : Set X}
       exact hinside ⟨hx.2, (closure_mono interior_subset).trans_eq hD.closure_eq hx.1⟩
   · right
     exact Set.disjoint_left.mpr (fun _ hx hy => hmeet ⟨_, hx, hy⟩)
-
-
-
 
 theorem exists_finite_component_excision (M : σ → Set X) {D : Set X}
     (hD : IsClosed D) (hconn : ∀ i, IsPreconnected (M i))

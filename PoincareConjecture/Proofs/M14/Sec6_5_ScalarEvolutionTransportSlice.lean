@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_OrdinaryGauge
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.CurvatureTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +25,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include H
 
-
-
 theorem movingGauge_ricciNormSq (t : T.Point) (x : C) :
     (c t.val).ricciNormSq x =
       (G.leafwise.sliceConnection t.val).ricciNormSq
@@ -42,8 +32,6 @@ theorem movingGauge_ricciNormSq (t : T.Point) (x : C) :
   ricciNormSq_eq_of_local_isometry (c t.val) (G.leafwise.sliceConnection t.val)
     isOpen_univ (H.slice_localDiffeomorph t).contMDiff.contMDiffOn
     (fun y _ a b => (H.slice_metric_eq t y a b).symm) (mem_univ x)
-
-
 
 theorem movingGauge_scalarLaplacian
     (hscalar : ContMDiff (spacetimeModel n) 𝓘(ℝ) ∞

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.NormalizedBoundary
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_band_and_halfspace_avoidance
     {v : E3} {b c : Real} (hbc : b < c)
@@ -36,8 +32,6 @@ theorem exists_band_and_halfspace_avoidance
   rcases hy with hy | hy
   · exact havoid y hy (by linarith)
   · exact (hwc.not_ge (hy.trans hh)).elim
-
-
 
 theorem disjoint_projected_cylindrical_rims
     {ι κ : Type*} {v : E3} {b : Real}

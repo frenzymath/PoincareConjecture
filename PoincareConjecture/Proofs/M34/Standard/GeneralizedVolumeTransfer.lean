@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderVolume
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedReverseBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,9 +20,6 @@ local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carr
 local instance : MeasurableSpace C.limit.carrier.carrier := C.limit.carrier.measurableSpace
 local instance : BorelSpace C.limit.carrier.carrier := C.limit.carrier.borelSpace
 local instance : T3Space C.limit.carrier.carrier := C.limit.carrier.t3Space
-
-
-
 
 theorem eventually_source_ball_volume_le_zero (a : ℝ) (ha : 0 < a) :
     ∀ᶠ k : ℕ in atTop,

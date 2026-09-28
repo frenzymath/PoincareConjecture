@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Deck.Factorization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.IsometryLift
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,8 +54,6 @@ private theorem real_isometry_eq_affine {b : ℝ → ℝ} (hb : Isometry b) :
     nlinarith [hs z 0, hs z 1]
   · refine ⟨-1, Or.inr rfl, b 0, fun z => ?_⟩
     nlinarith [hs z 0, hs z 1]
-
-
 
 theorem exists_orthogonal_affine_factors (F : M27RoundSphereFamily) {c : ℝ}
     (hscale : ∀ t ≤ 0, ∀ x (v w : TangentSpace (𝓡 2) x),

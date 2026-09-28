@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedM15Radius
 import PoincareConjecture.Proofs.M47.SeedM15Cylinder
 import PoincareConjecture.Proofs.M47.SeedM15Subtype
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem seedM15_physical_volume
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

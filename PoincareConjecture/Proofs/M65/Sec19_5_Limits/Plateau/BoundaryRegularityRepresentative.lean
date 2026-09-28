@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityContinuity
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.AttainmentIdentities
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,10 +9,6 @@ open Set Filter Metric MeasureTheory
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M65Boundary
-
-
-
-
 
 theorem boundary_pullback_interior_ae {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
@@ -41,12 +27,6 @@ theorem boundary_pullback_interior_ae {M : Type*} {N : ℕ}
     exact heq hz
   exact ⟨R, hR, ae_of_ae_map (contDiff_diskBoundaryCoordinate p).continuous.measurable.aemeasurable
     (ae_mono hdom (Measure.ae_smul_measure hclosed C))⟩
-
-
-
-
-
-
 
 theorem weakDisk_boundary_representative_matches_interior
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

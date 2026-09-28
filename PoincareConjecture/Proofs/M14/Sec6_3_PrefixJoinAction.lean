@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinPath
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
-
-
-
 
 theorem action_prefixJoinPath_eq_blend (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T τ₁ τ₂ x y)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapEdgeFans
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexFrontier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +13,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
-
-
 
 theorem union_eventuallyEq_cap_at_open_chord (i : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :
@@ -46,8 +37,6 @@ theorem union_eventuallyEq_cap_at_open_chord (i : Bool × Bool) {t : ℝ}
     · exact False.elim (hz j he hj)
   · exact fun hi => mem_iUnion.mpr ⟨i, hi⟩
 
-
-
 theorem open_chord_mem_frontier_union (i : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :
     (((B.face i).boundary 0).map t) ∈ frontier (⋃ j, (B.face j).carrier) := by
@@ -61,7 +50,6 @@ theorem open_chord_mem_frontier_union (i : Bool × Bool) {t : ℝ}
     B.union_eventuallyEq_cap_at_open_chord i ht] with z hz he
   exact (propext_iff.mp he).mp hz
 
-
 theorem chord_subset_frontier_union (i : Bool × Bool) :
     (((B.face i).boundary 0).map '' Icc (0 : ℝ) 1) ⊆
       frontier (⋃ j, (B.face j).carrier) := by
@@ -74,8 +62,6 @@ theorem chord_subset_frontier_union (i : Bool × Bool) :
   have h := hmap.closure_of_continuousOn hc
   rw [closure_Ioo (zero_ne_one : (0 : ℝ) ≠ 1), isClosed_frontier.closure_eq] at h
   exact h.image_subset
-
-
 
 theorem frontier_union_eq_chords : frontier (⋃ i, (B.face i).carrier) =
     ⋃ i, (((B.face i).boundary 0).map '' Icc (0 : ℝ) 1) := by

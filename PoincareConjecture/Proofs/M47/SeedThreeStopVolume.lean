@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M47.SeedInitialVolume
 import PoincareConjecture.Proofs.M47.SeedBirthCapVolume
 import PoincareConjecture.Proofs.M47.OldCapInnerVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_three_stop_birth_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import Mathlib.Topology.Path
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -30,7 +22,6 @@ private theorem interval_carrier {u v : ℝ} (huv : u < v) :
 
 omit [FiniteDimensional ℝ F] in
 
-
 theorem polyhedralPL_extend_symm (p : Path a b)
     (hp : PolyhedralPLInCharts e p.extend (Icc (0 : ℝ) 1)) :
     PolyhedralPLInCharts e p.symm.extend (Icc (0 : ℝ) 1) := by
@@ -48,9 +39,6 @@ theorem polyhedralPL_extend_symm (p : Path a b)
   intro t _
   change p.extend (1 - t) = p.symm.extend t
   exact (p.extend_symm_apply t).symm
-
-
-
 
 theorem polyhedralPL_extend_trans
     (hcover : ∀ x : X, ∃ i, x ∈ (e i).source)

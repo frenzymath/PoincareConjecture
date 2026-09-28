@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.HomotopyGroupHomeomorph
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,9 +16,6 @@ universe u v w
 namespace PoincareConjecture.Proofs.M40.Topology
 
 open M02 M02.Topology
-
-
-
 
 theorem exists_cube_boundary_sphere_quotient_at (n : Nat)
     (s : sphere (0 : EuclideanSpace Real (Fin (n + 2))) 1) :
@@ -63,9 +48,6 @@ theorem exists_cube_boundary_sphere_quotient_at (n : Nat)
   refine ⟨q', hq', ?_, heb⟩
   intro a b
   exact (e.injective.eq_iff).trans (hfiber a b)
-
-
-
 
 theorem exists_homotopyEquiv_threeSphere_of_homology_bijective
     {S : Type u} [TopologicalSpace S] [T2Space S]
@@ -114,9 +96,6 @@ theorem exists_homotopyEquiv_threeSphere_of_homology_bijective
     (TopCat.of S) (TopCat.of S) 1 (TopCat.ofHom f) (qX (fun _ => 0))
     (hlow _) (hlow _) hbij
 
-
-
-
 theorem homologyMap_bijective_conjugate
     {X Y S : Type u} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace S]
     (eX : X ≃ₕ S) (eY : Y ≃ₕ S) (f : C(X, Y))
@@ -145,9 +124,6 @@ theorem homologyMap_bijective_conjugate
       SSet.homologyMap_comp]
     infer_instance
   exact ConcreteCategory.bijective_of_isIso _
-
-
-
 
 theorem exists_homotopyEquiv_of_conjugate
     {X : Type u} [TopologicalSpace X] {Y : Type v} [TopologicalSpace Y]

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.CoordinateMap
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.RadialFrameBounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +29,6 @@ private theorem laplacian_sub_const_euclidean {n : ℕ}
     exact congrArg (fun A => A v) (fderiv_sub_const (𝕜 := ℝ) (f := f) (x := y) c)
   simp only [LeviCivitaData.laplacian, LeviCivitaData.hessian,
     LeviCivitaData.hessianOnFields, hd]
-
-
 
 theorem exists_uniform_weakHarmonicCoordinate_inverse_metric_close
     {n : ℕ} (hn : 2 ≤ n) {R K ε : ℝ} (hR : 0 < R) (hK : 0 ≤ K) (hε : 0 < ε) :

@@ -1,30 +1,15 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 theorem heightPlaneCoordinates_neg_snd (u : UnitTwoSphere) (p : E2 × ℝ) :
     (heightPlaneCoordinates (-u) ((heightPlaneCoordinates u).symm p)).2 = -p.2 := by
   rw [heightPlaneCoordinates_snd, coe_neg_sphere, inner_neg_left,
     ← heightPlaneCoordinates_snd u, ContinuousLinearEquiv.apply_symm_apply]
-
-
-
 
 noncomputable def heightReversalPlaneDiffeomorph (u : UnitTwoSphere) (l : ℝ) :
     Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞ := by
@@ -56,13 +41,9 @@ noncomputable def heightReversalPlaneDiffeomorph (u : UnitTwoSphere) (l : ℝ) :
     contMDiff_toFun := hJ.contMDiff
     contMDiff_invFun := hK.contMDiff }
 
-
-
 theorem heightReversalPlaneDiffeomorph_apply (u : UnitTwoSphere) (l : ℝ) (x : E2) :
     heightReversalPlaneDiffeomorph u l x =
       (heightPlaneCoordinates (-u) ((heightPlaneCoordinates u).symm (x, l))).1 := rfl
-
-
 
 theorem heightReversalPlaneDiffeomorph_symm_apply (u : UnitTwoSphere) (l : ℝ) (x : E2) :
     (heightReversalPlaneDiffeomorph u l).symm x =

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralParabolicNative
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,7 +11,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.SpectralHeatNative
 
 variable {iota : Type*}
-
 
 def responseState (lambda : iota → NNReal) (F : ℝ → State iota) (t : ℝ) : State iota :=
   ∫ s in (0 : ℝ)..t, derivativeState lambda F s
@@ -58,7 +47,6 @@ theorem ae_derivativeState_apply [Countable iota] {T : ℝ} (hT : 0 ≤ T)
   filter_upwards [hm] with t ht
   intro i
   exact stateOfCoeffs_apply ht i
-
 
 theorem responseState_apply [Countable iota] {T t : ℝ}
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))
@@ -101,7 +89,6 @@ theorem ae_hasDerivAt_responseState [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     with t ht hmem
   exact ht (by simpa only [uIcc_of_le hT] using Ioc_subset_Icc_self hmem) 0 left_mem_uIcc
 
-
 theorem ae_generatorState_apply [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))
     (lambda : iota → NNReal) :
@@ -116,7 +103,6 @@ theorem ae_generatorState_apply [Countable iota] {T : ℝ} (hT : 0 ≤ T)
   rw [stateOfCoeffs_apply ht, responseState_apply hF lambda (Ioc_subset_Icc_self hmem)]
   rfl
 
-
 theorem ae_responseState_equation [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     {F : ℝ → State iota} (hF : ContinuousOn F (Icc (0 : ℝ) T))
     (lambda : iota → NNReal) :
@@ -125,7 +111,6 @@ theorem ae_responseState_equation [Countable iota] {T : ℝ} (hT : 0 ≤ T)
   filter_upwards [ae_hasDerivAt_responseState hT hF lambda,
     derivativeState_add_generatorState hT hF lambda] with t ht heq
   exact ht.congr_deriv (eq_sub_iff_add_eq.mpr heq)
-
 
 theorem exists_spectralHeat_response [Countable iota] {T : ℝ} (hT : 0 ≤ T)
     (lambda : iota → NNReal) {F : ℝ → State iota}

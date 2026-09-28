@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,15 +12,11 @@ open M36 M44
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
 
-
-
 def cylinderAxialReflection (z : RoundCylinderSpace) : RoundCylinderSpace :=
   (z.1, -z.2)
 
-
 noncomputable def cylinderCoordinateReflection : V ≃L[ℝ] V :=
   (ContinuousLinearEquiv.refl ℝ E₂).prodCongr (ContinuousLinearEquiv.neg ℝ)
-
 
 def cylinderReflectionSign : Fin 3 → ℝ := ![1, 1, -1]
 
@@ -43,7 +31,6 @@ theorem cylinderCoordinateReflection_basis (a : Fin 3) :
     cylinderCoordinateReflection (roundCylinderCoordinateBasis a) =
       cylinderReflectionSign a • roundCylinderCoordinateBasis a := by
   fin_cases a <;> simp [roundCylinderCoordinateBasis, cylinderReflectionSign]
-
 
 noncomputable def cylinderReflectedTensor (B : RoundCylinderTwoTensor) :
     RoundCylinderTwoTensor :=

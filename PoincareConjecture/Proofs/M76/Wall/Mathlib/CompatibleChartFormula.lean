@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_compatible_chart
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

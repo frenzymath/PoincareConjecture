@@ -1,26 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCrossingBandImmersion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_supported_chart_homeomorph {E X : Type*}
     [TopologicalSpace E] [TopologicalSpace X] [T2Space X]

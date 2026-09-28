@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15CompactPath
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +26,6 @@ private theorem history_forward_heq {F : SurgeryFlowData.{u}}
     HEq (H.forward p.1 hp p.2) (H.forward q.1 hq q.2) := by
   cases h
   rfl
-
-
-
 
 theorem seedM15_component_path_capture
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.TensorNullMinimum
 import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -125,4 +118,3 @@ theorem ricci_tensorLaplacian_nonneg_at_rayleigh_min
   exact sub_eq_zero.mpr hnull
 
 end PoincareConjecture.M04
-

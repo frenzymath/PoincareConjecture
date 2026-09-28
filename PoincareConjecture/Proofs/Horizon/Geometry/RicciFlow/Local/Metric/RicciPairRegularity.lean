@@ -4,25 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Metric.MetricP
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Metric.MetricInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Metric.MetricDifferenceEvolution
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -440,7 +421,6 @@ open scoped BigOperators
 
 set_option maxHeartbeats 4000000
 set_option synthInstance.maxHeartbeats 200000
-
 
 theorem contDiffOn_ricci_coordinate_jets_of_metric_coordinate_jets
     {n : ℕ} {M : Type u} [TopologicalSpace M]

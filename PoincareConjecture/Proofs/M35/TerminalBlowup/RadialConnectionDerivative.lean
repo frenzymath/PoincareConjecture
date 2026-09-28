@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.RadialConnection
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem radialConnection_contDiffAt
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 < r) :
@@ -59,8 +48,6 @@ private theorem norm_hasFDerivAt {x : StandardCapSpace} (hx : x ≠ 0) :
   ext w
   simp [smul_eq_mul]
   ring
-
-
 
 theorem rotational_connection_first_derivative
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

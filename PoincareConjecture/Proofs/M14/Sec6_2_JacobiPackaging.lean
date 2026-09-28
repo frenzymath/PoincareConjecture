@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPair
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J : Set ℝ} {Y P : ∀ s, G.Horizontal (γ s)}
 
-
-
-
 def jacobiFieldOfPair (EY : M14PullbackExtension G γ J Y)
     (EP : M14PullbackExtension G γ J P)
     (hP : ∀ s ∈ J, M14HorizontalCovariantDerivative G γ J Y EY s = P s) :
@@ -32,15 +21,11 @@ def jacobiFieldOfPair (EY : M14PullbackExtension G γ J Y)
   derivative_extension := { EP with
     agrees := fun s hs => (EP.agrees s hs).trans (hP s hs).symm }
 
-
-
 theorem jacobiFieldOfPair_firstDerivative (EY : M14PullbackExtension G γ J Y)
     (EP : M14PullbackExtension G γ J P)
     (hP : ∀ s ∈ J, M14HorizontalCovariantDerivative G γ J Y EY s = P s)
     {s : ℝ} (hs : s ∈ J) : M14JacobiFirstDerivative (jacobiFieldOfPair EY EP hP) s = P s :=
   hP s hs
-
-
 
 theorem jacobiFieldOfPair_secondDerivative (EY : M14PullbackExtension G γ J Y)
     (EP : M14PullbackExtension G γ J P)
@@ -50,9 +35,6 @@ theorem jacobiFieldOfPair_secondDerivative (EY : M14PullbackExtension G γ J Y)
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem jacobiField_isHorizontalJacobiPair
     (Q : M14JacobiFieldData G R.curve (M14SqrtParameterInterval τ₁ τ₂))
@@ -66,9 +48,6 @@ theorem jacobiField_isHorizontalJacobiPair
     pullbackExtension_field_contMDiffOn Q.derivative_extension hR,
     Q.extension, Q.derivative_extension, fun _ _ => rfl, ?_⟩
   exact hQ
-
-
-
 
 theorem IsHorizontalJacobiPairOn.exists_jacobiField
     {z : ∀ s, G.Horizontal (R.curve s) × G.Horizontal (R.curve s)}

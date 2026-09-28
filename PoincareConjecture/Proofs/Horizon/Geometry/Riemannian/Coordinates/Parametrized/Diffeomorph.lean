@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.ParametrizedCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +19,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {E : Type w} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem parametrizedCoefficients_diffeomorph
     (gM : RiemannianMetric n M) (gN : RiemannianMetric n N)
@@ -55,8 +46,6 @@ theorem parametrizedCoefficients_diffeomorph
     change gM.inner (f x) 0 0 = gN.inner (d (f x)) 0 0
     simp
 
-
-
 theorem parametrizedCoefficients_pullbackOfDiffeomorph
     (g : RiemannianMetric n N) (d : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ N) (f : E → M) :
     (g.pullbackOfLocalDiffeomorph d d.isLocalDiffeomorph).parametrizedCoefficients f =
@@ -72,8 +61,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   {E : Type w} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem isInvertible_mfderiv_comp (d : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ N)
     {f : E → M} {x : E} (hf : MDifferentiableAt 𝓘(ℝ, E) (𝓡 n) f x)

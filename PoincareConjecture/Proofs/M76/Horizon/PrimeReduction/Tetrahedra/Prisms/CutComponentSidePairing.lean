@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.CutComponentRectangleNeighbors
 import Mathlib.Dynamics.PeriodicPts.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -111,8 +103,6 @@ theorem exists_cut_component_side_pairing
     intro z
     exact (hu (p z) z ⟨(hp z).1.symm,(hp z).2.symm⟩).symm
   exact ⟨hinv.toPerm p,hinv,fun z => (hp z).1,fun z => (hp z).2⟩
-
-
 
 theorem exists_cut_component_rectangle_successor
     (hK : K.faces.Finite) (hgi : InjOn g K.space) (ht : t ∈ K.faces) (ht4 : t.card = 4)

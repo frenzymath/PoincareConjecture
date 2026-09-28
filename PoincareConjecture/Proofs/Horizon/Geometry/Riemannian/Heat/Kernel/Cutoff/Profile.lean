@@ -4,22 +4,12 @@ import Mathlib.Analysis.Calculus.Deriv.Support
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace Poincare.Analysis
-
-
 
 theorem exists_radial_cutoff_profile :
     ∃ (χ : ℝ → ℝ) (A B C : ℝ), 0 < A ∧ 0 < B ∧ 0 < C ∧

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.ContractionAnnulus
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.AngularTangent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -22,8 +14,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m65ContractionAnnulusMap_mfderiv (C : ℝ × (M × M) → M)
     (gamma eta : C1FreeLoopSpace (M := M)) (p v : LoopPlane)

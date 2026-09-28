@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinGauge
 import PoincareConjecture.Proofs.M14.Sec6_2_ContinuousPotential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -44,9 +36,6 @@ private noncomputable local instance bilinearNormedSpace :
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem clock_contMDiffOn_one :
     ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡∂ 1) 1 (fun s => (D.lift (q.curve s)).1)
       (Icc (c - D.radius) (c + D.radius)) := by
@@ -55,9 +44,6 @@ theorem clock_contMDiffOn_one :
   have hL := (D.lift_smooth.of_le (by simp : (1 : ℕ∞ω) ≤ ∞)).comp
     (q.curve_regular.mono hsub) D.continuation_in_image
   exact fun s hs => (hL s hs).fst
-
-
-
 
 theorem exists_coefficient_bound (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     let x₀ := (D.lift (q.curve c)).2

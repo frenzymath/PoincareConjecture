@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.RicciContract
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.LaplacianTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +26,6 @@ private lemma tangentNorm_basis (x : M)
   rw [real_inner_self_eq_norm_sq, (g.orthonormalBasis x).norm_eq_one]
   norm_num
 
-
 lemma abs_curvatureTensor_le_curvatureDerivativeNorm_zero
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (a b c d : TangentSpace (𝓡 n) x) :
@@ -46,7 +36,6 @@ lemma abs_curvatureTensor_le_curvatureDerivativeNorm_zero
   simpa [curvatureDerivativeNorm, iteratedCovariantTensorDerivative,
     riemannEvaluation, Fin.prod_univ_succ, mul_assoc] using
     abs_tensor_evaluation_le_tensorNorm g D.riemannEvaluation x A hA ![a, b, c, d]
-
 
 lemma abs_ricci_le_curvatureDerivativeNorm_zero
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -68,8 +57,6 @@ lemma abs_ricci_le_curvatureDerivativeNorm_zero
         D.abs_curvatureTensor_le_curvatureDerivativeNorm_zero hD x u
           (g.orthonormalBasis x i) v (g.orthonormalBasis x i)
     _ = _ := by simp [hdim, mul_assoc]
-
-
 
 lemma abs_secondCovariantTensorDerivative_ricci_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -100,8 +87,6 @@ lemma abs_secondCovariantTensorDerivative_ricci_le_curvatureDerivativeNorm
         Fin.prod_univ_zero, tangentNorm_basis, mul_one, one_mul, mul_assoc] using h
     _ = _ := by simp [hdim, mul_assoc]
 
-
-
 lemma abs_tensorLaplacian_ricci_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u v : TangentSpace (𝓡 n) x) :
@@ -125,8 +110,6 @@ lemma abs_tensorLaplacian_ricci_le_curvatureDerivativeNorm
         D.abs_secondCovariantTensorDerivative_ricci_le_curvatureDerivativeNorm hD x
           (g.orthonormalBasis x i) (g.orthonormalBasis x i) u v
     _ = _ := by simp [hdim]; ring
-
-
 
 lemma abs_hessian_scalar_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -157,8 +140,6 @@ lemma abs_hessian_scalar_le_curvatureDerivativeNorm
           u v (g.orthonormalBasis x i) (g.orthonormalBasis x i)
     _ = _ := by simp [hdim]; ring
 
-
-
 lemma abs_laplacian_scalar_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
     |D.laplacian D.scalarCurvature x| ≤
@@ -179,8 +160,6 @@ lemma abs_laplacian_scalar_le_curvatureDerivativeNorm
         D.abs_hessian_scalar_le_curvatureDerivativeNorm hD x
           (g.orthonormalBasis x i) (g.orthonormalBasis x i)
     _ = _ := by simp [hdim]; ring
-
-
 
 lemma abs_covariantTensorDerivative_ricci_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -228,8 +207,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 lemma abs_hamiltonP_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (x : M) (u v w : TangentSpace (𝓡 n) x) :
@@ -244,8 +221,6 @@ lemma abs_hamiltonP_le_curvatureDerivativeNorm
   have h := hsub.trans (add_le_add hu hv)
   unfold hamiltonP
   nlinarith only [h]
-
-
 
 lemma abs_hamiltonM_sub_ricci_le_curvatureDerivativeNorm
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -326,8 +301,6 @@ lemma abs_hamiltonM_sub_ricci_le_curvatureDerivativeNorm
     D.ricci x (b i) (b j)) - ∑ i, D.ricci x u (b i) * D.ricci x (b i) v)| ≤ _
   dsimp only [K] at hRmRic hRicSq
   nlinarith only [htriangle, hdiff, halg, hL, hH, hRmRic, hRicSq, hC₂]
-
-
 
 lemma hamiltonM_lower_bound_of_nonnegative_ricci
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch13.MetricSurgery
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem tensorNorm_sq_le_singularMetricJetErrorSquared
     {X : Type u} [TopologicalSpace X]
@@ -35,8 +24,6 @@ theorem tensorNorm_sq_le_singularMetricJetErrorSquared
     (fun _ _ => sq_nonneg _) (Finset.mem_range.mpr (Nat.zero_lt_succ k))
   exact h
 
-
-
 theorem tensorNorm_lt_of_singularMetricJetErrorSquared_lt
     {X : Type u} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -51,9 +38,7 @@ theorem tensorNorm_lt_of_singularMetricJetErrorSquared_lt
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {h eta : ℝ}
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem surgeryCapClose_bilinear_error_le (C : SurgeryCapClose g₀ S g tip h eta)
     {p : StandardCapSpace} (hp : p ∈ g₀.metric.ball 0 eta⁻¹)
@@ -91,9 +76,7 @@ theorem surgeryCapClose_bilinear_error_le (C : SurgeryCapClose g₀ S g tip h et
         Matrix.cons_val_zero, Matrix.cons_val_one, Matrix.head_cons] using heval
     _ ≤ _ := by nlinarith [mul_le_mul_of_nonneg_right hnorm.le (mul_nonneg hv hw)]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem surgeryCapClose_quadratic_bounds (C : SurgeryCapClose g₀ S g tip h eta)
     {p : StandardCapSpace} (hp : p ∈ g₀.metric.ball 0 eta⁻¹)
@@ -116,9 +99,7 @@ theorem surgeryCapClose_quadratic_bounds (C : SurgeryCapClose g₀ S g tip h eta
   have he' := abs_le.mp he
   constructor <;> nlinarith
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem surgeryCapClose_mfderiv_injective (C : SurgeryCapClose g₀ S g tip h eta)
     (heta : eta < 1) {p : StandardCapSpace} (hp : p ∈ g₀.metric.ball 0 eta⁻¹) :

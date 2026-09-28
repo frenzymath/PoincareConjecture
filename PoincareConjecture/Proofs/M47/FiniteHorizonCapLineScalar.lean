@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteForwardScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +25,6 @@ private theorem capLineScalar_readout_eq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   rfl
-
-
 
 theorem finiteHorizon_cap_cylinder_scalar_bound
     (S : RepairedControlledSchedulesData.{u})

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter AffineMap
@@ -19,10 +9,6 @@ open scoped Topology
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
 
 theorem eventually_cutArcs_at_edgeCut
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

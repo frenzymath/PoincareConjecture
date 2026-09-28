@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.VariableHeightBand
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_fiber_strict_height_bound
     {S b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -73,10 +59,6 @@ theorem AlexanderCollarSlab.exists_selected_fiber_strict_height_bound
     change 0 + t * (g ∘ f) ((p : E × ℝ).1, 0) <
       (p : E × ℝ).2 + t * (g ∘ f) (p : E × ℝ) at h
     rwa [hbottom, mul_one, zero_add, Function.comp_apply, ← hval p] at h
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_selected_fiber_height_bound
     {S b : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

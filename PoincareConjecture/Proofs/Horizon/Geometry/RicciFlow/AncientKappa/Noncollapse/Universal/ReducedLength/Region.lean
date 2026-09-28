@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.ReducedLength.ShortPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)
   [SecondCountableTopology M] [ConnectedSpace M]
 
 include H
-
-
 
 theorem reducedLength_two_le_on_ball (K : AncientKappaSolution 3 M) (p z : M)
     (hseed : reducedLength K.flow 0 p z 1 ≤ 3)

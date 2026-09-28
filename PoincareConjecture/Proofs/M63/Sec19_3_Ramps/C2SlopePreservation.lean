@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2SlopeSpatial
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ}
-
-
-
 
 theorem c2_reactionBounds_of_local (F : RicciFlow n M (Icc a b))
     (hlocal : M63LocalCurveTheory F) (c : ℝ → ℝ → M)
@@ -54,9 +41,6 @@ theorem c2_reactionBounds_of_local (F : RicciFlow n M (Icc a b))
     exact hQ ⟨(y, t), ⟨Ico_subset_Icc_self hy, ht'⟩, rfl⟩
   have hnonneg := M62.curvatureSquared_nonneg F c t x
   constructor <;> linarith
-
-
-
 
 theorem c2_slope_lower {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (hlocal : M63LocalCurveTheory P.flow)
@@ -90,9 +74,6 @@ theorem c2_slope_lower {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
       simp only [m62ArcSecondDerivative, m62ArcDerivative, zero_mul, add_zero]
       exact le_rfl) hinit
   exact fun t ht x => h x t ht
-
-
-
 
 theorem c2_ramp_preserved {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (hlocal : M63LocalCurveTheory P.flow)

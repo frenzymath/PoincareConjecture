@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContractionChart
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -21,16 +12,11 @@ variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   [TopologicalSpace M] [ChartedSpace H M]
 
-
-
-
 noncomputable def weightedChartContraction (c : M) (b : M → ℝ)
     (v : ℝ × (M × M)) : M := by
   classical
   exact if v.2.1 ∈ (extChartAt I c).source ∧ v.2.2 ∈ (extChartAt I c).source then
     chartContraction I c (v.1 * b v.2.1, v.2.1, v.2.2) else v.2.2
-
-
 
 theorem weightedChartContraction_of_weight_zero (c : M) (b : M → ℝ)
     (t : ℝ) (p q : M) (hb : b p = 0) :
@@ -41,8 +27,6 @@ theorem weightedChartContraction_of_weight_zero (c : M) (b : M → ℝ)
   · simpa only [hb, mul_zero] using chartContraction_zero I c p q h.2
   · rfl
 
-
-
 theorem weightedChartContraction_zero (c : M) (b : M → ℝ) (p q : M) :
     weightedChartContraction I c b (0, p, q) = q := by
   classical
@@ -50,8 +34,6 @@ theorem weightedChartContraction_zero (c : M) (b : M → ℝ) (p q : M) :
   split_ifs with h
   · simpa only [zero_mul] using chartContraction_zero I c p q h.2
   · rfl
-
-
 
 theorem weightedChartContraction_diagonal (c : M) (b : M → ℝ) (t : ℝ) (p : M) :
     weightedChartContraction I c b (t, p, p) = p := by
@@ -61,8 +43,6 @@ theorem weightedChartContraction_diagonal (c : M) (b : M → ℝ) (t : ℝ) (p :
   · exact chartContraction_diagonal I c p h.1 _
   · rfl
 
-
-
 theorem weightedChartContraction_one (c : M) (b : M → ℝ) (p q : M)
     (hp : p ∈ (extChartAt I c).source) (hq : q ∈ (extChartAt I c).source)
     (hb : b p = 1) : weightedChartContraction I c b (1, p, q) = p := by
@@ -71,9 +51,6 @@ theorem weightedChartContraction_one (c : M) (b : M → ℝ) (p q : M)
   exact chartContraction_one I c p q hp
 
 variable [I.Boundaryless] [IsManifold I ∞ M]
-
-
-
 
 theorem contMDiffAt_weightedChartContraction_diagonal (c : M) (b : M → ℝ)
     (hb : ContMDiff I 𝓘(ℝ, ℝ) ∞ b)

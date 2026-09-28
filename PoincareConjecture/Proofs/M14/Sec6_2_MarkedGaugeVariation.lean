@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedGaugeVariation
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedGaugeField
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem exists_markedGauge_variation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (R : M14SquareRootPath G p) (j : G.gaugeCover.index)

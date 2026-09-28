@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Algebra.Indicator
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,12 +12,6 @@ variable {M E G F ι : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
-
 
 theorem exists_compactly_supported_PL_pullback
     (e : ι → OpenPartialHomeomorph M E)

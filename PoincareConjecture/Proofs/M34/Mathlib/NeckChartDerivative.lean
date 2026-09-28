@@ -1,21 +1,11 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
-
-
 
 theorem mfderiv_inverse_chart_comp_fderiv_coordinates
     {F M : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace M]

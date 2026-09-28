@@ -2,15 +2,6 @@ import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Subpath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,33 +11,23 @@ namespace Path
 
 variable {X : Type*} [TopologicalSpace X] {x y : X}
 
-
-
 def parameterSegment (a b : unitInterval) : Path a b where
   toFun := Icc.convexComb a b
   continuous_toFun := Icc.continuous_convexComb a b
   source' := Icc.convexComb_zero a b
   target' := Icc.convexComb_one a b
 
-
-
 @[simp] theorem subpath_apply (p : Path x y) (a b t : unitInterval) :
     p.subpath a b t = p (Icc.convexComb a b t) := rfl
-
-
 
 theorem subpath_mem (p : Path x y) {a b : unitInterval} (hab : a ≤ b)
     {s : Set X} (h : MapsTo p (Icc a b) s) (t : unitInterval) :
     p.subpath a b t ∈ s :=
   h ⟨Icc.le_convexComb hab t, Icc.convexComb_le hab t⟩
 
-
-
 theorem subpath_trans (p : Path x y) (a b c : unitInterval) :
     ((p.subpath a b).trans (p.subpath b c)).Homotopic (p.subpath a c) :=
   ⟨Path.Homotopy.subpathTransSubpath p a b c⟩
-
-
 
 theorem homotopicQuotient_induction_of_open_cover
     {ι : Type*} (U : ι → Set X) (hU : ∀ i, IsOpen (U i))

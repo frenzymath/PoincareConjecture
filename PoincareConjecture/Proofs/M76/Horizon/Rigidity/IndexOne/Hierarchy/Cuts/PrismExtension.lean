@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Cuts.Ball
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallBoundaryExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "W" => (V2 × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_marked_cut_prism_extension
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]

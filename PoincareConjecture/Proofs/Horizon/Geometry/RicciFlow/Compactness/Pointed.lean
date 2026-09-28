@@ -1,4 +1,2 @@
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Proofs.Horizon.Compat.Contracts
-
-

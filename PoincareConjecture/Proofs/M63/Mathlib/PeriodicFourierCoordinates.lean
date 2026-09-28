@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
@@ -17,9 +8,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem fourierCoeff_weightedFourier (w u : lp (fun _ : ℤ => ℂ) 2) (n : ℤ) :
     fourierCoeff (weightedFourier (L := L) w u) n = w n * u n := by
@@ -43,9 +31,6 @@ theorem fourierCoeff_weightedFourier (w u : lp (fun _ : ℤ => ℂ) 2) (n : ℤ)
   simp_rw [hmode, hA] at hs
   exact hs.unique (hasSum_ite_eq n (w n * u n))
 
-
-
-
 theorem periodicH1Decoder_injective :
     Function.Injective (periodicSobolevJet (L := L) 0 0 (by omega)) := by
   intro u v huv
@@ -60,9 +45,6 @@ theorem periodicH1Decoder_injective :
         0 < 1 + (2 * Real.pi * (n : ℝ) / L) ^ 2))
     simpa only [periodicSobolevMoment, pow_zero, zero_add, pow_one] using one_div_ne_zero hr
   exact mul_left_cancel₀ hw h
-
-
-
 
 theorem periodicH1Decoder_norm_sq (u : lp (fun _ : ℤ => ℂ) 2) (g : C(AddCircle L, ℂ))
     (hu : ∀ x : ℝ, HasDerivAt

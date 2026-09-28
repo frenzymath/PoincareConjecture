@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.C1Regularity.FrechetDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.C1Regularity.VariationalSolutionOperator
 import Mathlib.Analysis.Calculus.MeanValue
-
-
-
-
-
-
-

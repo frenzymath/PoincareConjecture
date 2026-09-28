@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -26,7 +17,6 @@ variable {n : ℕ} {M : Type u}
   [IsManifold (𝓡 n) ∞ M]
 
 local notation "I" => 𝓡 n
-
 
 def diffeomorphOfSmoothInverse
     {f g : M → M}
@@ -64,7 +54,6 @@ private theorem smooth_slice
     contMDiffAt_const.prodMk contMDiffAt_id
   have hcomp := (hF (t, x)).comp x hpair
   simpa only [Function.comp_def] using hcomp
-
 
 def diffeomorphFamily
     {Φ Ψ : ℝ → M → M}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroApexPositivePart
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricResidualTriangle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exceptional_triangle_slab_partition (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) (hu : A u < 0) {β : ℝ} (hβ : 0 < β) (hβv : β < A v)

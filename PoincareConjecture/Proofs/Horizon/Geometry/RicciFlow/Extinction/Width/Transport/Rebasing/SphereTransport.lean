@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.Rebasing.HomotopyNaturality
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeHomotopyExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -54,8 +45,6 @@ theorem m67_descend_cube_homotopy
     rw [heq]
     exact F.continuous)
   exact ⟨⟨G, hcont⟩, hG⟩
-
-
 
 theorem m67_sphere_free_transport
     (B : M59HigherBasepointTransportService.{u})

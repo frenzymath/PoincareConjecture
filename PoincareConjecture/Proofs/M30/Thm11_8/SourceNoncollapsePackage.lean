@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.SourceVolumeAtPoint
 import PoincareConjecture.Proofs.M30.Universe.OutputFiniteNoncollapse
 import PoincareConjecture.Proofs.M30.Generalized.Noncollapse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,10 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 structure GeneralizedBlowupConvergenceWithSourceNoncollapse
     (S : GeneralizedBlowupSequence.{u}) (kappa r₀ : ℝ) (T₀ : ℝ≥0∞) where
@@ -38,8 +23,6 @@ structure GeneralizedBlowupConvergenceWithSourceNoncollapse
           ENNReal.ofReal Tplus < T₀ ∧
           Nonempty (NoncollapsedControlledBlowupCylinder S k A T B eta kappa r₀)
 
-
-
 def generalizedConvergenceWithSourceNoncollapse_of_slabService
     {S : GeneralizedBlowupSequence.{u}} {kappa r₀ : ℝ} {T₀ : ℝ≥0∞}
     (H : M30LongSlabControlService S kappa r₀ T₀)
@@ -48,9 +31,6 @@ def generalizedConvergenceWithSourceNoncollapse_of_slabService
   exact {
     convergence := L
     source := fun T hT hTT => H.noncollapsedBounds T hT hTT }
-
-
-
 
 theorem source_noncollapse_eventually_on_subsequence
     {S : GeneralizedBlowupSequence.{u}} {kappa r₀ : ℝ} {T₀ : ℝ≥0∞}
@@ -67,9 +47,6 @@ theorem source_noncollapse_eventually_on_subsequence
   refine ⟨B, hB, ?_⟩
   exact L.convergence.subsequence_strictMono.tendsto_atTop.eventually
     (hfamily A hA eta heta)
-
-
-
 
 theorem source_noncollapse_eventually_on_subsequence_mono
     {S : GeneralizedBlowupSequence.{u}} {kappa r₀ kappa' r₀' : ℝ}

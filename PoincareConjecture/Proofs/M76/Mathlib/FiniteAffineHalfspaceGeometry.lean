@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem AffineMap.interior_nonpos (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0) :
     interior {x | A x ≤ 0} = {x | A x < 0} := by
@@ -30,17 +18,11 @@ theorem AffineMap.interior_nonpos (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0) 
     (hopen.preimage_interior_eq_interior_preimage A.continuous_of_finiteDimensional
       (Iic (0 : ℝ))).symm
 
-
-
-
 theorem interior_finite_affine_halfspaces {ι : Type*} [Finite ι]
     (A : ι → E →ᵃ[ℝ] ℝ) (hA : ∀ i, (A i).linear ≠ 0) :
     interior {x | ∀ i, A i x ≤ 0} = {x | ∀ i, A i x < 0} := by
   simp only [ofPred_forall, interior_iInter_of_finite]
   exact iInter_congr fun i => (A i).interior_nonpos (hA i)
-
-
-
 
 theorem frontier_finite_affine_halfspaces {ι : Type*} [Finite ι]
     (A : ι → E →ᵃ[ℝ] ℝ) (hA : ∀ i, (A i).linear ≠ 0) :
@@ -67,10 +49,6 @@ theorem frontier_finite_affine_halfspaces {ι : Type*} [Finite ι]
 
 namespace Set
 
-
-
-
-
 theorem IsCompact.exists_finite_triangulation_of_halfspaces {s : Set E}
     (hs : IsCompact s) (H : Finset (E →ᵃ[ℝ] ℝ))
     (hrep : s = {x | ∀ A ∈ H, A x ≤ 0}) :
@@ -80,9 +58,6 @@ theorem IsCompact.exists_finite_triangulation_of_halfspaces {s : Set E}
   obtain ⟨L, hL, hspace⟩ := K.exists_finite_triangulation_inter_halfspaces hK H
   rw [← hrep] at hspace
   exact ⟨L, hL, hspace.trans (inter_eq_right.mpr (fun _ hx => interior_subset (hSK hx)))⟩
-
-
-
 
 theorem isFinitePLBallPair_of_affine_halfspaces {s : Set E}
     (hs : IsCompact s) (H : Finset (E →ᵃ[ℝ] ℝ))

@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Limit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 def FlowCarrier.ofConnectedManifold (n : ℕ) (M : Type u)
     [TopologicalSpace M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
@@ -48,8 +33,6 @@ namespace RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 def interiorAncientRescaleAt (F : RicciFlow n M (Iic 0))
     (Q : ℝ) (hQ : 0 < Q) (t₀ : ℝ) : RicciFlow n M (Iio (-t₀ * Q)) :=
   F.parabolicRescale Q hQ t₀
@@ -58,8 +41,6 @@ def interiorAncientRescaleAt (F : RicciFlow n M (Iic 0))
       change t₀ + s / Q ≤ 0
       linarith)
     ordConnected_Iio ⟨-t₀ * Q - 2, by simp, -t₀ * Q - 1, by simp, by linarith⟩
-
-
 
 theorem rescaled_ball_volume_lower_bound_of_backward_curvature_bound
     [T3Space M] [MeasurableSpace M] [BorelSpace M]
@@ -109,9 +90,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_nonflat_ancient_rescaled_limit_of_unbounded_scalar_ratio
     {m : ℕ} (hm : 0 < m) {M : Type}

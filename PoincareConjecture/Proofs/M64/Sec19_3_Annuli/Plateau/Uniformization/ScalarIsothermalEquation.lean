@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarProperPotential
 import Mathlib.Analysis.InnerProductSpace.Harmonic.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {g : RiemannianMetric 2 Plane}
-
-
-
 
 theorem scalar_isothermal_density {e : Plane → Plane} {lambda : Plane → ℝ}
     {x : Plane} (hlambda : 0 < lambda x)
@@ -52,10 +37,6 @@ theorem scalar_isothermal_density {e : Plane → Plane} {lambda : Plane → ℝ}
       ((EuclideanSpace.basisFun (Fin 2) ℝ).inner_eq_ite i j)
   rw [hM]
   simpa using Real.sqrt_sq hlambda.le
-
-
-
-
 
 theorem scalar_isothermal_flux (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph Plane Plane)
@@ -91,10 +72,6 @@ theorem scalar_isothermal_flux (D : LeviCivitaData g)
     hgrad
   rw [hmetric, EuclideanSpace.inner_basisFun_real] at hi
   exact hi
-
-
-
-
 
 theorem scalar_harmonic_in_isothermal_chart (D : LeviCivitaData g)
     (e : OpenPartialHomeomorph Plane Plane)

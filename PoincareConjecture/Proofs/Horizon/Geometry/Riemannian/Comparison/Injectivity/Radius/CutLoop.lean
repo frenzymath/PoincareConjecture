@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.Exponential
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.FirstCollision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_collision_at_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) {R C : ℝ}
@@ -107,8 +95,6 @@ theorem exists_collision_at_truncatedInjectivityRadius
   exact ⟨v, w, le_antisymm hnormle hρle,
     hnorm.symm.trans (le_antisymm hnormle hρle), hne, heq,
     (hevd v).symm.trans (hreturn.trans (congrArg Neg.neg (hewd w)))⟩
-
-
 
 theorem exists_inverse_branches_at_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) {R C : ℝ}

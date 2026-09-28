@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseBoundaryZer
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryOddReflection
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateSwap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,9 +40,6 @@ private theorem m64FreePhase_residual_face_zero
     simp only [PiLp.norm_single, norm_one, mul_one, Real.norm_eq_abs,
       abs_of_pos (half_pos hε)]
     linarith
-
-
-
 
 theorem m64FreePhase_boundary_reflected_residual_weak
     {u C : LoopPlane → E} {W : Fin 2 → LoopPlane → E}

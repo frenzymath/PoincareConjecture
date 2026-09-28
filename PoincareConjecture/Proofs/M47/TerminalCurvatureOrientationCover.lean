@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ open RicciFlow.Splitting
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem terminalCurvature_orientation_cover
     (D : LeviCivitaData g) (hrank : ∀ y, ricciNullity D y = 1)
@@ -53,8 +42,6 @@ theorem terminalCurvature_orientation_cover
     deck_projection := fun p => unitRicciKernelProjection_reverse D p
     deck_free := unitRicciKernelReverse_fixedPointFree D
   }⟩
-
-
 
 theorem terminalCurvature_orientation_cover_geometry [T3Space M]
     (D : LeviCivitaData g) (C : NullOrientationCover D) (hcomplete : MetricComplete g) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_BirthMetric
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Def16_12_CapScalarRate
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_EpochWindow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 noncomputable def positiveActionBudget {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) : ℝ :=
@@ -35,9 +24,6 @@ theorem positiveActionBudget_pos {K : MetricSurgeryConstants}
     (by norm_num : (0 : ℝ) < 1 / 32).trans_le (epochStart_ge_initial _)
   unfold positiveActionBudget actionBudget
   positivity
-
-
-
 
 structure ActionBarrierParameters (S : RepairedControlledSchedulesData.{u})
     (p : SurgeryParameterPrefix S.constants) (rho : ℝ) where
@@ -86,9 +72,6 @@ structure ActionBarrierParameters (S : RepairedControlledSchedulesData.{u})
       c / (2 * (1 - s) * (F.parameters.h t) ^ 2) ≤
         (F.connection (t + s / ((F.parameters.h t)⁻¹ ^ 2))).scalarCurvature
           (e.forward s hs (initial.chart x))
-
-
-
 
 theorem exists_actionBarrierParameters (S : RepairedControlledSchedulesData.{u})
     (p : SurgeryParameterPrefix S.constants) {rho : ℝ} (hrho : 0 < rho) :

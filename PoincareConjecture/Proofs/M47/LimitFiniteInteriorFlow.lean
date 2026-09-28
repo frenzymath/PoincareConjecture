@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteRetainedInterior
 import PoincareConjecture.Proofs.M47.TerminalSourceRealizationHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_preserved_interior_flow
     (P : M47Predecessors.{u})

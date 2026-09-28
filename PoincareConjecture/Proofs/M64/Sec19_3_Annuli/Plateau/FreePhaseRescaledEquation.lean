@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseInteriorEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeightedInteriorSmooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +21,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "E" => EuclideanSpace ℝ (Fin ((n + 1) + 1))
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem auxiliaryCircle_free_phase_rescaled_critical
     (P : M62.CircleProductData F circumference)

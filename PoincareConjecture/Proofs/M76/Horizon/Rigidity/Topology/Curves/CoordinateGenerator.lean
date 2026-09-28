@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGr
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.PrimitiveTorusBand
 import Mathlib.GroupTheory.OrderOfElement
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -35,7 +33,6 @@ namespace PoincareConjecture.M76
 
 variable {X : Type*} [TopologicalSpace X] {p : ℝ} [Fact (0 < p)]
 
-
 theorem coordinate_periodLoop_not_isOfFinOrder
     (f : C(AddCircle p, X)) (r : C(X, AddCircle p))
     (h : Function.LeftInverse r f) :
@@ -54,7 +51,6 @@ theorem coordinate_periodLoop_not_homotopic_refl
       ((AddCircle.periodLoop p).map f.continuous) = (1 : FundamentalGroup X (f 0)) :=
     Path.Homotopic.Quotient.eq.mpr hc
   exact coordinate_periodLoop_not_isOfFinOrder f r h (heq.symm ▸ IsOfFinOrder.one)
-
 
 theorem band_center_periodLoop_not_isOfFinOrder {r : ℝ} (hr : 0 ≤ r)
     (b : C(AddCircle p × Icc (-r) r, X)) (retract : C(X, AddCircle p))

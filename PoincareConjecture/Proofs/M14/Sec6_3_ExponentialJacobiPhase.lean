@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_GaugeFamilyNeighborhood
 import PoincareConjecture.Proofs.M14.Sec6_3_JacobiGaugeSecond
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedParameterDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +23,6 @@ private theorem horizontal_zero_of_heq {q r : G.Point} (h : q = r)
     {v : G.Horizontal q} (hv : HEq v (0 : G.Horizontal r)) : v = 0 := by
   cases h
   exact eq_of_heq hv
-
-
-
 
 theorem exponentialJacobiField_zero_of_coordinate_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

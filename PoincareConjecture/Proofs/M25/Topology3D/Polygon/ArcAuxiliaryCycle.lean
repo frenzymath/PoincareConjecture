@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.SimplePolygon
 import Mathlib.Data.Fintype.Pigeonhole
 import Mathlib.Data.Nat.Find
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_first_orbit_exit_or_repeat {V : Type*} [Finite V]
     (f : V → V) (A : Set V) (x0 : V) (hx0 : x0 ∈ A) :
@@ -67,9 +55,6 @@ theorem exists_first_orbit_exit_or_repeat {V : Type*} [Finite V]
       · exact (hout (hiN ▸ heq.symm ▸ hact j.val hj)).elim
       · omega
   · exact Or.inr ⟨⟨j, hj⟩, heq⟩
-
-
-
 
 theorem exists_simplePolygon_of_first_orbit_repeat {V E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

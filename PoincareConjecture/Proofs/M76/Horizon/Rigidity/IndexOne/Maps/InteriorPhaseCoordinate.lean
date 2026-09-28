@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.SourcePhaseCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

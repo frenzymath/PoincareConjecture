@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open Proofs.M47 M36
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
 
-
-
 theorem source_initial_translated_coefficient (k c : ℝ) (B : RoundCylinderTwoTensor)
     (theta : UnitTwoSphere) (a b : Fin 3) (p : V) :
     roundCylinderTensorCoefficient
@@ -32,8 +22,6 @@ theorem source_initial_translated_coefficient (k c : ℝ) (B : RoundCylinderTwoT
   simp only [roundCylinderTensorCoefficient, neckAxialTensorPullback,
     neckAxialSpaceMap, neckAxialLinearMap]
   congr 2 <;> simp
-
-
 
 theorem source_initial_translated_tensor_smooth
     {epsilon R c : ℝ} (k : ℝ) (B : RoundCylinderTwoTensor)

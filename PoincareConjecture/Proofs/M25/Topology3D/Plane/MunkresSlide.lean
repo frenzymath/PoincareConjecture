@@ -3,24 +3,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_translation_conjugate_family
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -72,9 +60,6 @@ theorem exists_translation_conjugate_family
   intro z
   exact ⟨HasCompactSupport.intro hQ (fun x hx => sub_eq_zero.mpr (hfixed z x hx).1),
     HasCompactSupport.intro hQ (fun x hx => sub_eq_zero.mpr (hfixed z x hx).2)⟩
-
-
-
 
 theorem exists_munkres_slide (h : (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))
     {K : Set (ℝ × ℝ)} (hK : IsCompact K) (hfix : ∀ x, x ∉ K → h x = x)

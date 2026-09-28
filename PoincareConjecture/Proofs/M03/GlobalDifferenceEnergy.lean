@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M03.ScalarEnergyComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.Proofs.M03
-
 
 theorem energy_rate_le_of_coupled_component_rates
     {rH rA rS CH CA CS E D : ℝ}
@@ -22,12 +13,6 @@ theorem energy_rate_le_of_coupled_component_rates
     (hS : rS ≤ CS * E - D) :
     rH + rA + rS ≤ (CH + CA + CS) * E - (1 / 2 : ℝ) * D := by
   linarith
-
-
-
-
-
-
 
 theorem energy_eq_zero_on_common_interval_of_interior_slabs
     {E : ℝ → ℝ} {J K : Set ℝ}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.Differential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Germ.Stationary
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.PlaneArcs.BoundaryGerm
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
-
 
 theorem exists_supported_extension_of_inward_circle_patch
     {D : E2 -> E2} (hD : ContDiff Real ∞ D)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargePairedCapContinuati
 import PoincareConjecture.Proofs.M76.Triangulation.TerminalHeightCapExterior
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarPLDiskUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +11,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem regionBalls_of_paired_steps_and_unique_extrema
     {S : Set E} {T : Set F} {e : S ≃ₜ frontier T} (he : e.IsFinitePL)

@@ -2,10 +2,6 @@ import PoincareConjecture.Definitions.Ch01.Curvature
 import PoincareConjecture.Proofs.M04.ConnectionScalar
 import PoincareConjecture.Proofs.M04.MetricPairings
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

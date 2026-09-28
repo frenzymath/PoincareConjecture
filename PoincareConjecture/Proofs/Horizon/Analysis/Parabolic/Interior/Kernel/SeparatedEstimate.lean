@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.CenteredEstimate
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -37,7 +30,6 @@ theorem centered_bound_of_vanishes_on_ball
       _ = (Q / r ^ α) * r ^ α := (div_mul_cancel₀ Q hp.ne').symm
       _ ≤ _ := mul_le_mul_of_nonneg_left hm (div_nonneg hQ hp.le)
 
-
 theorem norm_integral_heatD2_smul_le_of_bound
     {Q t : ℝ} (hQ : 0 ≤ Q) (ht : 0 < t) {f : V → F}
     (hf : ∀ y, ‖f y‖ ≤ Q) (v w : V) :
@@ -52,7 +44,6 @@ theorem norm_integral_heatD2_smul_le_of_bound
     _ ≤ (‖v‖ * ‖w‖ * t⁻¹ * heatC2 V) * Q :=
       mul_le_mul_of_nonneg_right (integral_norm_D2 ht v w) hQ
     _ = _ := by ring
-
 
 theorem norm_hessian_potential_le_of_time_gap
     {Q δ t : ℝ} (hQ : 0 ≤ Q) (hδ : 0 < δ) (ht : 0 < t)
@@ -84,8 +75,6 @@ theorem norm_hessian_potential_le_of_time_gap
       exact hb s ⟨hs.1, lt_of_le_of_ne hs.2 hst⟩
     _ = _ := by rw [intervalIntegral.integral_const]; simp [smul_eq_mul, mul_comm]
 
-
-
 theorem norm_integral_heatD2_smul_le_of_centered_add_bound
     {α : ℝ≥0} (hα : α ≤ 1) {K Q t : ℝ} (hK : 0 ≤ K) (hQ : 0 ≤ Q)
     (ht : 0 < t) {f : V → F}
@@ -116,8 +105,6 @@ theorem norm_integral_heatD2_smul_le_of_centered_add_bound
       rw [integral_heatD2Holder α ht, holderHeatScale_eq α ht]
       have := mul_le_mul_of_nonneg_right (integral_norm_D2 ht v w) hQ
       nlinarith
-
-
 
 theorem norm_hessian_potential_le_of_centered_add_time_gap
     {α : ℝ≥0} (hα0 : 0 < α) (hα1 : α ≤ 1) {K Q δ t : ℝ}

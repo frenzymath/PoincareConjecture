@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Gradien
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.ChristoffelEstimate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 lemma hessian_eq_fderiv_sub_christoffel (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
@@ -50,8 +39,6 @@ lemma hessian_eq_fderiv_sub_christoffel (D : LeviCivitaData g)
   rw [heval.fderiv]
   simp only [add_apply, ContinuousLinearMap.comp_apply, zero_apply, map_zero, zero_add]
   rfl
-
-
 
 lemma abs_hessian_le_of_coordinate_bounds (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
@@ -82,8 +69,6 @@ lemma abs_hessian_le_of_coordinate_bounds (D : LeviCivitaData g)
       abs_sub _ _
     _ ≤ B₂ * ‖v‖ * ‖w‖ + B₁ * (G * ‖v‖ * ‖w‖) := add_le_add hsecond' hfirst'
     _ = _ := by ring
-
-
 
 lemma abs_hessian_le_of_elliptic_coordinate_bounds (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
@@ -123,9 +108,6 @@ lemma abs_hessian_le_of_elliptic_coordinate_bounds (D : LeviCivitaData g)
       field_simp
       rw [Real.sq_sqrt ha.le]
       ring
-
-
-
 
 lemma abs_hessian_le_of_elliptic_coordinate_lift (D : LeviCivitaData g)
     {M : Type*} [TopologicalSpace M]

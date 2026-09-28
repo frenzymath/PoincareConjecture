@@ -3,26 +3,12 @@ import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_planar_family_closedRegion_disjoint
     {c0 c1 : ℝ → UnitCircle → E2} {a b : ℝ}

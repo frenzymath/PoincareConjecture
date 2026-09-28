@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCochains
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.ModuleComplexHomologyClass
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

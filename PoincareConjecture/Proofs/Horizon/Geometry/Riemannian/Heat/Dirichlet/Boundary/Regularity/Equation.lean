@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.H3
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +18,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 theorem weakSolution_chosen_divergence
     (e : OpenPartialHomeomorph E M)

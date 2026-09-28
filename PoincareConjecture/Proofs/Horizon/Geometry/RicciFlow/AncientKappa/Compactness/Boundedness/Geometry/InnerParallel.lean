@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeomet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem le_frontier_dist_iff_le_compl_dist
     (g : RiemannianMetric n M) (hc : MetricComplete g)
@@ -55,8 +43,6 @@ theorem le_frontier_dist_iff_le_compl_dist
       rw [closure_compl]
       exact hy.2
     exact (closure_minimal hsub hclosed) hycompl
-
-
 
 theorem exists_compact_convex_exhaustion_with_innerParallel
     [NoncompactSpace M]

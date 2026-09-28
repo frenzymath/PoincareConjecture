@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.RelativeDen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexHalfG
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskPrismPasting
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -29,10 +20,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] (V2 × ℝ)}
   {C : HamiltonProperDiskCoherentSides T c}
   {P : HamiltonProperDiskLowerProducts T C} {p : T.disk.vertices}
-
-
-
-
 
 theorem HamiltonProperDiskVertexBand.exists_product
     (F : HamiltonProperDiskVertexBand P p) :

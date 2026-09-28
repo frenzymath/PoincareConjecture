@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MiddleStripDiskComplement
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.ShellSquareCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

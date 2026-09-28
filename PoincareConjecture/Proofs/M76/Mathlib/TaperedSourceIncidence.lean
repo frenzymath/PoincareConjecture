@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TaperedSegmentDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
@@ -16,9 +7,6 @@ open Set Geometry AffineMap
 namespace TaperedStrip
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem mem_segmentDomain_iff {q w : E} {β : ℝ} (hβ : 0 < β) {p : E × ℝ} :
     p ∈ segmentDomain q w β ↔ ∃ s ∈ Icc (0 : ℝ) 1,
@@ -34,9 +22,6 @@ theorem mem_segmentDomain_iff {q w : E} {β : ℝ} (hβ : 0 < β) {p : E × ℝ}
     simp only [sub_zero, one_mul, zero_add]
     exact Prod.ext hbase.symm rfl
 
-
-
-
 theorem segmentDomain_subset_product {q w : E} {β : ℝ} (hβ : 0 < β) :
     segmentDomain q w β ⊆ segment ℝ q w ×ˢ Icc 0 β := by
   intro p hp
@@ -45,8 +30,6 @@ theorem segmentDomain_subset_product {q w : E} {β : ℝ} (hβ : 0 < β) :
   · rw [hbase]
     exact lineMap_mem_segment ℝ q w hs
   · exact mul_le_of_le_one_right hβ.le hs.2
-
-
 
 theorem mk_zero_mem_segmentDomain_iff {q w x : E} {β : ℝ} (hβ : 0 < β) :
     (x, 0) ∈ segmentDomain q w β ↔ x ∈ segment ℝ q w := by
@@ -57,8 +40,6 @@ theorem mk_zero_mem_segmentDomain_iff {q w x : E} {β : ℝ} (hβ : 0 < β) :
     obtain ⟨s, hs, hline⟩ := hx
     exact (mem_segmentDomain_iff hβ).mpr
       ⟨s, hs, hline.symm, le_rfl, mul_nonneg hβ.le hs.1⟩
-
-
 
 theorem mk_left_mem_segmentDomain_iff {q w : E} (hqw : q ≠ w)
     {β t : ℝ} (hβ : 0 < β) : (q, t) ∈ segmentDomain q w β ↔ t = 0 := by
@@ -71,8 +52,6 @@ theorem mk_left_mem_segmentDomain_iff {q w : E} (hqw : q ≠ w)
   · rintro rfl
     exact (mk_zero_mem_segmentDomain_iff hβ).mpr (left_mem_segment ℝ q w)
 
-
-
 theorem mk_right_mem_segmentDomain_iff {q w : E}
     {β t : ℝ} (hβ : 0 < β) : (w, t) ∈ segmentDomain q w β ↔ t ∈ Icc 0 β := by
   constructor
@@ -81,9 +60,6 @@ theorem mk_right_mem_segmentDomain_iff {q w : E}
   · intro ht
     apply (mem_segmentDomain_iff hβ).mpr
     exact ⟨1, ⟨zero_le_one, le_rfl⟩, (lineMap_apply_one q w).symm, by simpa using ht⟩
-
-
-
 
 theorem segmentDomain_inter_of_common_left {q w z : E} (hqw : q ≠ w)
     {β γ : ℝ} (hβ : 0 < β) (hγ : 0 < γ)
@@ -104,9 +80,6 @@ theorem segmentDomain_inter_of_common_left {q w z : E} (hqw : q ≠ w)
   · rintro rfl
     exact ⟨(mk_zero_mem_segmentDomain_iff hβ).mpr (left_mem_segment ℝ q w),
       (mk_zero_mem_segmentDomain_iff hγ).mpr (left_mem_segment ℝ q z)⟩
-
-
-
 
 theorem segmentDomain_inter_product {q w : E} {B : Set E}
     {β : ℝ} (hβ : 0 < β) (hinter : segment ℝ q w ∩ B = {w}) :

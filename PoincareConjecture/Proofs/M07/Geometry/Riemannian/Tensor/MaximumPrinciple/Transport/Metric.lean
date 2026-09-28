@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Radial
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +23,6 @@ lemma metric_fderiv_apply {G : E → F →L[ℝ] F →L[ℝ] ℝ} {x : E}
   simpa using hh
 
 omit [CompleteSpace F] in
-
 
 lemma metric_pairing_hasDerivAt_zero
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
@@ -61,7 +47,6 @@ lemma metric_pairing_hasDerivAt_zero
   convert h using 1 <;> first | rfl | (simp only [add_apply, map_neg, neg_apply, hc]; ring)
 
 omit [CompleteSpace F] in
-
 
 theorem metric_pairing_eq_on_segment
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
@@ -88,7 +73,6 @@ theorem metric_pairing_eq_on_segment
 
 omit [CompleteSpace F] in
 
-
 theorem fields_metric_eq_of_radial_parallel
     {Γ : E → E →L[ℝ] F →L[ℝ] F}
     {G : E → F →L[ℝ] F →L[ℝ] ℝ} {U : Set E} (hU : IsOpen U)
@@ -105,7 +89,6 @@ theorem fields_metric_eq_of_radial_parallel
     metric_pairing_eq_on_segment hU hG hcompat x hx
       (fun r => Y (r • x)) (fun r => Z (r • x)) hY hZ (t := 1) (by norm_num)
 
-
 lemma solution_metric_hasDerivAt_zero
     {Γ : E → E →L[ℝ] F →L[ℝ] F} (hΓ : ContDiff ℝ ∞ Γ)
     {G : E → F →L[ℝ] F →L[ℝ] ℝ} (x : E) (v w : F)
@@ -116,7 +99,6 @@ lemma solution_metric_hasDerivAt_zero
     HasDerivAt (fun r => G (r • x) (solution Γ v x r) (solution Γ w x r)) 0 t :=
   metric_pairing_hasDerivAt_zero x hG hcompat
     (solution_hasDerivAt hΓ v x ht) (solution_hasDerivAt hΓ w x ht)
-
 
 theorem solution_metric_eq_on_segment
     {Γ : E → E →L[ℝ] F →L[ℝ] F} (hΓ : ContDiff ℝ ∞ Γ)
@@ -133,7 +115,6 @@ theorem solution_metric_eq_on_segment
     metric_pairing_eq_on_segment hU hG hcompat x hx (solution Γ v x) (solution Γ w x)
       (fun _ hr => solution_hasDerivAt hΓ v x (htime hr))
       (fun _ hr => solution_hasDerivAt hΓ w x (htime hr)) ht
-
 
 theorem field_metric_eq
     {Γ : E → E →L[ℝ] F →L[ℝ] F} (hΓ : ContDiff ℝ ∞ Γ)

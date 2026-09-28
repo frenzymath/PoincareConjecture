@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Evolution.LogIntegral
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [CompactSpace M] [PreconnectedSpace M] [Nonempty M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_scalarEntropy_surface (F : RicciFlow 2 M J)
     (hpos : ∀ s ∈ interior J, ∀ x, 0 < (F.connection s).scalarCurvature x)
@@ -57,7 +48,6 @@ theorem deriv_scalarEntropy_surface_nonpos (F : RicciFlow 2 M J)
   rw [(F.hasDerivAt_scalarEntropy_surface hpos ht).deriv]
   exact sub_nonpos.mpr ((F.connection t).integral_scalar_variance_le_fisher (hpos t ht)
     (SurfaceEntropy.integral_scalarCurvature_eq_meanScalar_mul_volume (F.connection t)))
-
 
 theorem antitoneOn_scalarEntropy_surface (F : RicciFlow 2 M J)
     (hJ : Convex ℝ J)

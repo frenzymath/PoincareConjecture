@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.DomainChange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ noncomputable local instance : NormedAddCommGroup (E →L[ℝ] E →L[ℝ] ℝ) 
 noncomputable local instance : NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem locally_eventually_smooth
     {ι : Type*} {l : Filter ι} {fseq : ι → E → F} {f : E → F} {U : Set E}
     (h : CompactSmoothConvergenceOn fseq f l U) {x : E} (hx : x ∈ U) :
@@ -38,8 +27,6 @@ theorem locally_eventually_smooth
   refine ⟨interior K, isOpen_interior, hxK (mem_singleton x), ?_⟩
   filter_upwards [h.eventually_smooth K hK hKU] with i hi
   exact fun y hy => (hi y (interior_subset hy)).contDiffWithinAt
-
-
 
 theorem comp [FiniteDimensional ℝ F]
     {fseq : ℕ → E → F} {f : E → F} {gseq : ℕ → E → E} {g : E → E} {U V : Set E}
@@ -55,8 +42,6 @@ theorem comp [FiniteDimensional ℝ F]
   intro K hK hKV
   exact Poincare.Analysis.Calculus.eventually_contDiffAt_on_compact hK hKV
     (fun x hx => let ⟨W, hW, hxW, _, hs⟩ := hlocal x hx; ⟨W, hW, hxW, hs⟩)
-
-
 
 theorem pullback_bilinear
     {Bseq : ℕ → E → E →L[ℝ] E →L[ℝ] ℝ} {B : E → E →L[ℝ] E →L[ℝ] ℝ}

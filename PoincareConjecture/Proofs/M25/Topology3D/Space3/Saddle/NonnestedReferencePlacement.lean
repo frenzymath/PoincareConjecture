@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,9 +13,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_saddle_nonnested_reference_placement
     (kappa : OpenPartialHomeomorph E2 E2)

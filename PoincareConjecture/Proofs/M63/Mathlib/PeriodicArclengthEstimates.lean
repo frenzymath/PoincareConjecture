@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicArclength
 import Mathlib.Algebra.Order.ToIntervalMod
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_smooth_periodic_arclength_homeomorph_estimates {L : ℝ}
     (hL : 0 < L) {v : ℝ → ℝ} (hv : ContDiff ℝ ∞ v)

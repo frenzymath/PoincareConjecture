@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Transp
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Transport.Neighborhood
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Transport.ProductHomeomorph
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,8 +23,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   (K : Set X) (s : Finset (D ∪ K : Set X))
 
 local notation "E" => (s → ℝ × V3)
-
-
 
 structure RelativeFrontierDiskProduct where
   agreement : Set X
@@ -108,7 +104,6 @@ structure RelativeFrontierDiskProduct where
     productInverse (graph (map z)) = (graph (j z.1), delta * z.2)
 
 omit K s in
-
 
 theorem exists_confined_relative_frontier_disk_collar_with_product
     [T2Space X]

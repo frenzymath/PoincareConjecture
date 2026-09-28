@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Normalization.Carrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Rescaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ variable {M : Type u} {N : Type v}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
-
-
 
 def EpsilonNeck.mapIsometry (A : EpsilonNeck g)
     (e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞) (he : MetricHomothety g h e 1)
@@ -60,8 +50,6 @@ variable {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {q : M}
 
-
-
 theorem metric_zero_eq_rescaled (A : AncientKappaNormalization K q 0) :
     A.target.flow.metric 0 = rescaledMetric (K.flow.metric 0) A.scale A.scale_pos := by
   have hi : (A.target.flow.metric 0).inner =
@@ -78,8 +66,6 @@ theorem metric_zero_eq_rescaled (A : AncientKappaNormalization K q 0) :
   cases h
   cases hi
   rfl
-
-
 
 theorem exists_epsilonNeck (A : AncientKappaNormalization K q 0)
     (N : EpsilonNeck (K.flow.metric 0)) :
@@ -110,7 +96,6 @@ variable {M : Type u} [TopologicalSpace M]
   (K : AncientKappaSolution 3 M) (q : M) {kappa : ℝ}
   (hkappa : 0 < kappa) (hnoncollapsed : AncientKappaNoncollapsed K.flow kappa)
   (hnormalized : (K.flow.connection 0).scalarCurvature q = 1)
-
 
 def epsilonNeckToSmallBased (N : EpsilonNeck (K.flow.metric 0)) :
     EpsilonNeck ((K.toSmallBased q hkappa hnoncollapsed hnormalized).flow.flow.metric 0) :=

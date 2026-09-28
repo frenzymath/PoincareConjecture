@@ -1,22 +1,12 @@
 import Mathlib.Analysis.Complex.Liouville
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bornology
 open scoped Topology
 
 namespace PoincareConjecture.M60
-
-
 
 theorem complex_eq_zero_of_quartic_decay {f : ℂ → ℂ}
     (hf : Differentiable ℂ f) {C : ℝ} (hC : 0 ≤ C)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeSkeleton
 import PoincareConjecture.Proofs.M02.Topology.LocalGraphIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

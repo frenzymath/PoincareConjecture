@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.Transport.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.Expansion
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +9,6 @@ open Set Filter Bundle
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
 
 def normalizedGradientDenominator (q : ℝ) : ℝ :=
   Real.smoothTransition (2 * q - 1) * q + (1 - Real.smoothTransition (2 * q - 1))
@@ -53,7 +45,6 @@ theorem normalizedGradientDenominator_contDiff : ContDiff ℝ ∞ normalizedGrad
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 def boundedNormalizedGradient (D : LeviCivitaData g) (f : M → ℝ) (x : M) :
     TangentSpace (𝓡 n) x :=
@@ -102,7 +93,6 @@ theorem boundedNormalizedGradient_norm_le (D : LeviCivitaData g) (f : M → ℝ)
     exact norm_eq_sqrt_real_inner (D.gradient f x)
   rw [hn, ← div_eq_inv_mul]
   exact (div_le_iff₀ hd).mpr hnum
-
 
 theorem exists_complete_boundedNormalizedGradient_flow [T3Space M]
     (D : LeviCivitaData g) (hc : MetricComplete g) {f : M → ℝ}

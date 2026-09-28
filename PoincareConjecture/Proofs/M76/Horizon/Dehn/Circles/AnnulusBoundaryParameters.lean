@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SquareAnnulusBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
-
-
 
 theorem exists_period_parameter_of_depth {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) (p : squareAnnulus L d) :

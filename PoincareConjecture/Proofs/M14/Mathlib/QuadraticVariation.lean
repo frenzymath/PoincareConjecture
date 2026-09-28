@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousParameterIntegral
 import PoincareConjecture.Proofs.M08.ChartStationarity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option synthInstance.maxSize 2048
@@ -34,9 +26,6 @@ private noncomputable local instance bilinearNormedSpace :
 
 private noncomputable local instance trilinearNormedGroup :
     NormedAddCommGroup (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
-
-
-
 
 theorem hasDerivAt_quadratic_variation {a b : ℝ} (hab : a ≤ b)
     {Ω : Set (ℝ × E)} {P : Set ℝ} (hP : IsOpen P) (hzero : (0 : ℝ) ∈ P)

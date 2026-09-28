@@ -1,14 +1,6 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_compact_of_local_time_cages
     {X : Type u} [TopologicalSpace X] {clock : X → ℝ} {Z : Set X}

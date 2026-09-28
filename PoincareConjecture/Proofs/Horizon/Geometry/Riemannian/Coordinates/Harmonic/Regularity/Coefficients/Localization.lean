@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Potential.Stationary
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
-
 
 theorem coordinateErrorFlux_eq_of_eqOn
     {E F : EuclideanSpace ℝ (Fin n) →
@@ -42,8 +32,6 @@ end PoincareConjecture.HarmonicCoordinates
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem stationaryEllipticResidual_coordinateErrorFlux_eq_density_mul_laplacian
     (D : LeviCivitaData g) {u : EuclideanSpace ℝ (Fin n) → ℝ}
@@ -67,7 +55,6 @@ theorem stationaryEllipticResidual_coordinateErrorFlux_eq_density_mul_laplacian
   rw [D.lapEval_fderiv_eq_metric_add_divergence hu]
   ring
 
-
 theorem stationaryEllipticResidual_coordinateErrorFlux_eq_zero_of_notMem_tsupport
     (D : LeviCivitaData g) {u : EuclideanSpace ℝ (Fin n) → ℝ}
     {E : EuclideanSpace ℝ (Fin n) →
@@ -81,8 +68,6 @@ theorem stationaryEllipticResidual_coordinateErrorFlux_eq_zero_of_notMem_tsuppor
       (HarmonicCoordinates.coordinateErrorFlux E u) (EuclideanSpace.basisFun (Fin n) ℝ) x = 0 := by
   rw [D.stationaryEllipticResidual_coordinateErrorFlux_eq_density_mul_laplacian hu hsupp hE,
     D.laplacian_eq_zero_of_notMem_tsupport hx, mul_zero]
-
-
 
 theorem norm_stationaryEllipticResidual_coordinateErrorFlux_le
     (D : LeviCivitaData g) {u : EuclideanSpace ℝ (Fin n) → ℝ}

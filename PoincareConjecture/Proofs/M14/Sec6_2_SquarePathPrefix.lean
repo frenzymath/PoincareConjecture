@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_PathPrefix
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b c : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
 
 def prefixSquarePath (R : M14SquareRootPath G p) (hac : a < c) (hcb : c ≤ b) :
     M14SquareRootPath G (prefixPath p c hac hcb) := by
@@ -45,8 +35,6 @@ def prefixSquarePath (R : M14SquareRootPath G p) (hac : a < c) (hcb : c ≤ b) :
   rw [mfderivWithin_subset hsub (hC s hs).uniqueMDiffWithinAt
     ((R.smooth.mono R.interval_subset s (hsub hs)).mdifferentiableWithinAt (by simp))]
   exact R.derivative_eq s (hsub hs)
-
-
 
 theorem prefixSquarePath_euler (R : M14SquareRootPath G p) (hac : a < c) (hcb : c ≤ b)
     (E : M14PullbackExtension G R.curve (M14SqrtParameterInterval a b) R.horizontal_velocity)

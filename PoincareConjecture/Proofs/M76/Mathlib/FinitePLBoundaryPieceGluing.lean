@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +12,6 @@ variable {V X Y : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_union_homeomorph_of_boundary_piece
     {b d q : Set X} {B D Q : Set Y}

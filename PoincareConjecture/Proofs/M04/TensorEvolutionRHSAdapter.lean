@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M04.TensorEvolutionRHS
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M04
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_curvatureTensor_frozen_rhs_adapter
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M)

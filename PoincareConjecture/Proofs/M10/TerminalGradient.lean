@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.MinimizingLifts
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem reducedLength_eq_normalized_action_of_minimizing
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)
@@ -98,7 +89,6 @@ theorem reducedLength_differential_on_slice_range
   dsimp only [c]
   have hden : 2 * Real.sqrt τ ≠ 0 := by positivity
   field_simp
-
 
 theorem reducedLength_differential_eq_terminal_pairing
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

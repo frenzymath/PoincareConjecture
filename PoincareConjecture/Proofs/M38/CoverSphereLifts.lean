@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SmoothSphereLift
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +12,6 @@ variable {E M : Type*} [TopologicalSpace E] [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) E]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ E]
-
-
 
 theorem isImmersion_sphere_lift_through_localDiffeomorph
     (q : E → M) (hq : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ q)
@@ -66,8 +55,6 @@ theorem isImmersion_sphere_lift_through_localDiffeomorph
   apply h.writtenInCharts
   simpa using hv'.1
 
-
-
 theorem exists_smooth_sphere_lift_through_cover [T2Space E]
     (q : E → M) (hq : IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ q)
     (hcover : IsCoveringMap q)
@@ -89,8 +76,6 @@ theorem exists_smooth_sphere_lift_through_cover [T2Space E]
     exact hf.isEmbedding.injective
       ((hlift x).symm.trans ((congrArg q hxy).trans (hlift y)))
   exact ⟨F, ⟨hi, (F.continuous.isClosedEmbedding hinj).isEmbedding⟩, hF₀, hlift⟩
-
-
 
 theorem exists_equivariant_sphere_lifts_through_cover [T2Space E]
     {G : Type*} [Group G] [MulAction G E]

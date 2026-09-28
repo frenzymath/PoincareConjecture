@@ -2,18 +2,6 @@ import PoincareConjecture.Statements.Ch01.CurvatureCalculus
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
 
 structure M47ScalarPersistencePredecessors : Prop where
   tensor_calculus :
@@ -41,9 +28,6 @@ structure M47ScalarPersistencePredecessors : Prop where
       HasDerivWithinAt (fun s ↦ (F.connection s).scalarCurvature x)
         ((F.connection t).laplacian (F.connection t).scalarCurvature x +
           2 * (F.connection t).ricciNormSq x) J t
-
-
-
 
 def M47LocalScalarPersistenceStatement : Prop :=
   ∀ K a : ℝ, 0 < K → 0 < a →

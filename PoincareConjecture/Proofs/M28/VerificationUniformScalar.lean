@@ -1,17 +1,8 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.UniformCompactScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallCompactScalar
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.M28.CounterexampleNeckFamily
 
-
 open PoincareConjecture.M28.RegularPointedMetricConvergence
-

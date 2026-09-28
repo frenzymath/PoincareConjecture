@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ variable {𝕜 E F G U V : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup G] [NormedSpace 𝕜 G]
   [NormedAddCommGroup U] [NormedSpace 𝕜 U]
   [NormedAddCommGroup V] [NormedSpace 𝕜 V]
-
-
-
 
 theorem ContinuousLinearEquiv.norm_iteratedFDeriv_affine_le
     (L : E ≃L[𝕜] F) (f : F → G) (a x : E) (m : ℕ) :
@@ -37,9 +25,6 @@ theorem ContinuousLinearEquiv.norm_iteratedFDeriv_affine_le
     (iteratedFDeriv 𝕜 m f (L (x - a))).norm_compContinuousLinearMap_le
       (fun _ : Fin m => L.toContinuousLinearMap)
 
-
-
-
 theorem norm_iteratedFDeriv_bilinear_apply_const
     {f : E → U →L[𝕜] V →L[𝕜] G} {x : E} {N : ℕ∞ω}
     (hf : ContDiffAt 𝕜 N f x) {m : ℕ} (hm : m ≤ N) (u : U) (v : V) :
@@ -51,9 +36,6 @@ theorem norm_iteratedFDeriv_bilinear_apply_const
     _ ≤ ‖v‖ * (‖u‖ * ‖iteratedFDeriv 𝕜 m f x‖) :=
       mul_le_mul_of_nonneg_left (norm_iteratedFDeriv_clm_apply_const hf hm) (norm_nonneg v)
     _ = _ := by ring
-
-
-
 
 theorem ContinuousLinearEquiv.norm_iteratedFDeriv_affine_bilinear_smul_le
     (L : E ≃L[𝕜] F) {f : F → U →L[𝕜] V →L[𝕜] G} (a x : E) (m : ℕ)

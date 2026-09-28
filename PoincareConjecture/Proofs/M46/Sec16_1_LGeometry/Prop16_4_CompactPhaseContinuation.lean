@@ -3,16 +3,6 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponential_survival_of_confined_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -88,9 +75,6 @@ theorem exponential_survival_of_confined_phase
     ⟨⟨0, le_rfl, hb.le⟩, E.domain_zero Z⟩
   exact (Set.ext_iff.mp hSuniv ⟨b, hb.le, le_rfl⟩).mpr (mem_univ _)
 
-
-
-
 theorem exponentialPhase_eq_squarePath_of_le (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {b s : ℝ} (hZ : (Z, b) ∈ E.domain) (hb : 0 < b)
     (hs : 0 < s) (hsb : s ≤ b) :
@@ -111,10 +95,6 @@ theorem exponentialPhase_eq_squarePath_of_le (E : M14ExponentialFamily G T x)
   rw [M14.squareRoot_projectedVelocityWithin_subset R hsub hsC
     (uniqueDiffOn_Icc hs s hsC)] at hvel
   exact TotalSpace.ext (hpoint hsC) hvel
-
-
-
-
 
 theorem exponential_survival_of_uniform_phase_limit
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

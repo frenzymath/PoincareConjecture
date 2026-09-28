@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcBandChain
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanLineGerm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -51,9 +38,6 @@ private theorem regular_arc_buffer
   by_cases hbt : b < t
   · exact (hright ⟨hsu.1.trans hbt, by dsimp [u'] at ht; linarith [ht.2, hsu.2]⟩).2
   exact hregular t ⟨le_of_not_gt hta, le_of_not_gt hbt⟩
-
-
-
 
 theorem m64Intrinsic_exists_loop_normal_neighborhood
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T a b : ℝ}

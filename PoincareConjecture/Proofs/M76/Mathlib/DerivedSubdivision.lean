@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedLinearImage
 import PoincareConjecture.Proofs.M02.Topology.GeometricFlags
 import PoincareConjecture.Proofs.M02.Topology.GeometricAffineFlags
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,13 +28,9 @@ private theorem faceCenterMap_injOn :
   have he : e ⟨x, hx⟩ = e ⟨y, hy⟩ := Subtype.ext hxy
   exact congrArg Subtype.val (e.injective he)
 
-
-
 noncomputable def derivedSubdivision : SimplicialComplex ℝ E :=
   (finiteOrderComplex K.faces).embeddedLinearImage
     (Fintype.linearCombination ℝ c).toContinuousLinearMap (K.faceCenterMap_injOn c hc)
-
-
 
 theorem derivedSubdivision_faces [DecidableEq E] (t : Finset E) :
     t ∈ (K.derivedSubdivision c hc).faces ↔
@@ -72,14 +60,10 @@ theorem derivedSubdivision_faces [DecidableEq E] (t : Finset E) :
       simp only [Function.comp_apply, LinearMap.coe_toContinuousLinearMap',
         Fintype.linearCombination_apply_single, one_smul]
 
-
-
 theorem derivedSubdivision_finite : (K.derivedSubdivision c hc).faces.Finite := by
   classical
   rw [derivedSubdivision, embeddedLinearImage_faces]
   exact (finiteOrderComplex_finite K.faces).image _
-
-
 
 theorem derivedSubdivision_space : (K.derivedSubdivision c hc).space = K.space := by
   classical
@@ -109,8 +93,6 @@ theorem derivedSubdivision_space : (K.derivedSubdivision c hc).space = K.space :
     obtain ⟨s, hs, hxs⟩ := mem_space_iff.mp hx
     exact ⟨⟨s, hs⟩, hxs, rfl⟩
 
-
-
 theorem derivedSubdivision_isSubdivision : (K.derivedSubdivision c hc).IsSubdivision K := by
   classical
   refine ⟨K.derivedSubdivision_space c hc, ?_⟩
@@ -127,8 +109,6 @@ theorem derivedSubdivision_isSubdivision : (K.derivedSubdivision c hc).IsSubdivi
   obtain ⟨w, hw, hsum, hval⟩ := hc i
   exact convexHull_mono his
     (Finset.mem_convexHull'.mpr ⟨w, fun v hv => (hw v hv).le, hsum, hval⟩)
-
-
 
 theorem derivedSubdivision_card_le {N : ℕ}
     (hN : ∀ s ∈ K.faces, s.card ≤ N + 1) :

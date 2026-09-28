@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.PhysicalModelChart
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -49,7 +41,6 @@ private theorem model_lift_smooth (z : Real) :
   · exact (EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).contDiff
   · exact (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).contDiff
   · exact contDiff_const
-
 
 theorem exists_source_circle_of_planar_model_circle
     (G : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (z : Real)
@@ -217,8 +208,6 @@ private theorem nested_lower_signed_points {p : S2}
     have hne : z₁ ≠ (p : E3) 2 := by intro he; rw [he, hcenter] at he₁; linarith
     exact sub_pos.mpr (lt_of_le_of_ne hz₁.1 hne.symm)
 
-
-
 theorem exists_model_lower_level_separator
     (d : TerminalSaddleGeometry M P p e)
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -290,8 +279,6 @@ theorem exists_model_lower_level_separator
         field_simp [d.scale_pos.ne']
         ring
       exact ⟨⟨q₀, heq q₀ hq₀, hs₀⟩, ⟨q₁, heq q₁ hq₁, hs₁⟩⟩
-
-
 
 theorem exists_model_lower_source_circle_pair
     (d : TerminalSaddleGeometry M P p e)
@@ -369,8 +356,6 @@ private theorem circle_separator_sign (C : S1 → S2) (hC : Continuous C)
   rcases hparts with hneg | hpos
   · exact Or.inl (fun q => lt_of_le_of_ne (hneg (mem_range_self q)) (hne q))
   · exact Or.inr (fun q => lt_of_le_of_ne (hpos (mem_range_self q)) (hne q).symm)
-
-
 
 theorem exists_model_lower_separated_source_circle_pair
     (d : TerminalSaddleGeometry M P p e)

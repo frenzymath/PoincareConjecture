@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareFamilyAction
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,14 +19,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point ×
     G.gaugeCover.spatial j} {U : Set G.Point}
 
-
-
 noncomputable def EndpointDisplacementFamily.cost
     (D : EndpointDisplacementFamily gamma T b c j lift U)
     (z : EuclideanSpace ℝ (Fin n) × ℝ) : ℝ :=
   ∫ s in 0..z.2, M14.squareCurveDensity G (fun r => D.family (r, z.1)) (Icc 0 b) s
-
-
 
 theorem EndpointDisplacementFamily.cost_contDiffOn
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -43,8 +31,6 @@ theorem EndpointDisplacementFamily.cost_contDiffOn
   exact M14.closedFamilyPrimitive_contDiffOn hb D.parameters_open _
     (M14.squareFamilyDensity_contDiffOn hM12 (uniqueDiffOn_Icc hb)
       D.parameters_open D.smooth)
-
-
 
 theorem EndpointDisplacementFamily.exists_path
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -73,9 +59,6 @@ theorem EndpointDisplacementFamily.exists_path
   have h := M14.integral_squareCurveDensity_eq_action_between hM12
     (by norm_num : (0 : ℝ) ≤ 0) htau alpha halpha hsub hclock hstart hy
   simpa only [p, EndpointDisplacementFamily.cost, alpha, Real.sqrt_zero] using h.symm
-
-
-
 
 theorem EndpointDisplacementFamily.cost_zero
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

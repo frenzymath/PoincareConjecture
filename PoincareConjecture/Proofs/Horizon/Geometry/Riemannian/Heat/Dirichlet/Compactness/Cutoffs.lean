@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,7 +13,6 @@ universe u
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem exists_finite_chart_cutoffs {K : Set M} (hK : IsCompact K) :
     ∃ (s : Finset M) (χ : M → M → ℝ),
@@ -43,7 +33,6 @@ theorem exists_finite_chart_cutoffs {K : Set M} (hK : IsCompact K) :
   intro x hx
   obtain ⟨i, hi, hix⟩ := mem_iUnion₂.mp (hs hx)
   exact ⟨i, hi, hix⟩
-
 
 theorem exists_finite_chart_partition {K : Set M} (hK : IsCompact K) :
     ∃ (s : Finset M) (ρ : SmoothPartitionOfUnity s (𝓡 n) M K),

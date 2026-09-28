@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenMayerVietoris
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallHomology
 import PoincareConjecture.Proofs.M02.Topology.IntegralChainSupport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -281,11 +274,6 @@ theorem integralHomology_homologyπ_eq_zero_iff
       simpa only [← ConcreteCategory.comp_apply, HomologicalComplex.toCycles_i] using hb
     rw [← hb']
     exact congrArg (fun q => q b) (K.toCycles_comp_homologyπ (n + 1) n)
-
-
-
-
-
 
 theorem exists_integralHomology_ambient_directed_union_stage
     {I : Type v} [Nonempty I] (U : I → Set X)

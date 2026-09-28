@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.SameSpaceIrr
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.AtlasRange
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.ProtectedResidualExterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Geometry.SeparatedSphereCaps
 namespace PoincareConjecture.M76

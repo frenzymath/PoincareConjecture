@@ -2,20 +2,11 @@ import PoincareConjecture.Proofs.M02.Topology.SimplexHornFilling
 import Mathlib.Topology.Homotopy.Affine
 import Mathlib.Topology.Order.Lattice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem exists_stdSimplex_three_face_fold (n : Nat) :
     Exists fun w : C(stdSimplex Real (Fin (n + 2)), stdSimplex Real (Fin (n + 3))) =>
@@ -56,8 +47,6 @@ theorem exists_stdSimplex_three_face_fold (n : Nat) :
     · exact hc j.succ.succ
   exact ⟨⟨fun z => ⟨a z, ha z⟩, hca.subtype_mk ha⟩,
     fun _ => rfl, fun _ => rfl, fun _ => rfl, fun _ _ => rfl⟩
-
-
 
 theorem stdSimplex_three_face_fold_homotopicRel {X : Type u} [TopologicalSpace X]
     (n : Nat)

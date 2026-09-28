@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.ShortControlSupplier
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardGeneralizedConvergence
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardInterval
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_seed_finite_long_convergence_of_short_controls
     (P : M30ControlledBlowupPredecessors.{u})
@@ -77,9 +61,6 @@ theorem exists_seed_finite_long_convergence_of_short_controls
     withinBilinearFlowService.{0} spatialSliceJetConvergenceService.{0, 0, 0, 0, 0}
     S (ENNReal.ofReal_pos.mpr hT) hrho hv Hshort.balls_compact hcyl hvolume
   exact ⟨T, hT, hTT0, ⟨blowupBackwardInterval_ofReal hT ▸ G⟩⟩
-
-
-
 
 theorem exists_seed_finite_long_convergence_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.InverseChartVector
 import PoincareConjecture.Proofs.M09.SquareTimeDerivative
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 

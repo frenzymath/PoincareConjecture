@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteBaseIntervalProducts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -28,10 +18,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "R0" => latticeHandleDomain (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
-
-
-
-
 
 theorem ChartwisePLMap.polyhedralPL_hamiltonZeroAmbientMap_comp
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -55,10 +41,6 @@ theorem ChartwisePLMap.polyhedralPL_hamiltonZeroAmbientMap_comp
   rfl
 
 open Classical in
-
-
-
-
 
 theorem polyhedralPL_hamiltonZero_collar_endpoint
     {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingCurveEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusIntrinsicTension
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,10 +37,6 @@ private theorem vertical_family_embedding_contMDiff (x : ℝ) :
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
-
 
 theorem m64MovingAnnulus_energyDensity_hasDerivAt
     (D : LeviCivitaData g) {v : ℝ × LoopPlane → M}
@@ -95,10 +81,6 @@ theorem m64MovingAnnulus_energyDensity_hasDerivAt
   rw [m64Annulus_horizontal_velocity hmd, m64Annulus_vertical_velocity hmd]
   simp only [m60EnergyDensity, Matrix.trace_fin_two, m60AreaGram, EuclideanSpace.basisFun_apply]
   ring
-
-
-
-
 
 theorem m64MovingAnnulus_energyDensity_derivative_eq_divergence
     (D : LeviCivitaData g) {v : ℝ × LoopPlane → M}
@@ -148,11 +130,6 @@ theorem m64MovingAnnulus_energyDensity_derivative_eq_divergence
       ring
 
 variable [T2Space M] [CompactSpace M] {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64MovingAnnulus_energyDensity_divergence_of_conformal_minimum
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1)

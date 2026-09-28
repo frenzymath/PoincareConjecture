@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Inte
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.Interval
 import Mathlib.Topology.UrysohnsLemma
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory TopologicalSpace
@@ -28,8 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {f : M → ℝ} (hf : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ f)
   (U : Opens M)
   (hreg : ∀ x ∈ U, mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
-
-
 
 theorem integral_slab_eq_level_sub_of_cutoff
     {a b : ℝ} (hab : a < b)

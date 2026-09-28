@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch19.CurveEvolution
 import PoincareConjecture.Definitions.Ch19.RampEstimates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,14 +13,12 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
 noncomputable def m62SpatialDerivative (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t : ℝ)
     (Y : ∀ x, TangentSpace (𝓡 n) (c x t)) (x : ℝ) :
     TangentSpace (𝓡 n) (c x t) :=
   (curveSpeed F c t x)⁻¹ •
     rampHorizontalCovariantDerivative (F.connection t) (fun y ↦ c y t) Y x
-
 
 noncomputable def m62CurvatureVector (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t x : ℝ) : TangentSpace (𝓡 n) (c x t) :=
@@ -45,7 +33,6 @@ noncomputable def m62Curvature (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t x : ℝ) : ℝ :=
   Real.sqrt (m62CurvatureSquared F c t x)
 
-
 noncomputable def m62SpatialNormalDerivative (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t x : ℝ) : TangentSpace (𝓡 n) (c x t) :=
   let A := m62SpatialDerivative F c t (m62CurvatureVector F c t) x
@@ -55,7 +42,6 @@ noncomputable def m62SpatialNormalDerivative (F : RicciFlow n M (Set.Icc a b))
 noncomputable def m62ArcDerivative (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t : ℝ) (f : ℝ → ℝ) (x : ℝ) : ℝ :=
   (curveSpeed F c t x)⁻¹ * deriv f x
-
 
 noncomputable def m62ArcSecondDerivative (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t : ℝ) (f : ℝ → ℝ) (x : ℝ) : ℝ :=
@@ -78,13 +64,10 @@ noncomputable def m62RegularizedTotalCurvature (F : RicciFlow n M (Set.Icc a b))
   ∫ x in (0 : ℝ)..curvePeriod,
     m62RegularizedCurvature F c ε t x * curveSpeed F c t x
 
-
 noncomputable def m62TangentRicci (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (t x : ℝ) : ℝ :=
   (F.connection t).ricci (c x t) (spatialUnitTangent F c t x)
     (spatialUnitTangent F c t x)
-
-
 
 structure M62ShrinkingCurve (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) : Prop where
@@ -106,7 +89,6 @@ structure M62ShrinkingCurve (F : RicciFlow n M (Set.Icc a b))
       TangentBundle (𝓡 n) M)) (Set.univ ×ˢ Set.Icc a b)
   equation : ∀ t ∈ Set.Ioo a b, ∀ x,
     curveVelocity (n := n) (fun s ↦ c x s) t = m62CurvatureVector F c t x
-
 
 def m62C0 (K0 K1 K2 : ℝ) : ℝ :=
   2 * K0 + 6 * K2 + 2 * K2 ^ 2 + 6 * K1

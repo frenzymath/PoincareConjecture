@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.FullNeckMetricRealization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_normalized_chart_realization
     {M : Type u} [TopologicalSpace M]

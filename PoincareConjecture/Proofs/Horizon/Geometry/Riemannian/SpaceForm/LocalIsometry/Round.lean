@@ -1,15 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereCurvature
 
-
 noncomputable section
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
 
 namespace Poincare.Geometry.Riemannian.SpaceForm
 open PoincareConjecture
-
-
 
 theorem exists_local_isometry_unitSphere
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]

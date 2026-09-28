@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Evolution
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Real

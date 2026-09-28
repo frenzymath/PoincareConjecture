@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.RelativeCocycl
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.RestrictionRanks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCocycleOfClosed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w
@@ -22,10 +14,8 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ]
   (A : PreAbstractSimplicialComplex ι) (B : PreAbstractSimplicialComplex κ)
   (f : κ ↪ ι) (hf : ∀ s ∈ B.faces, s.map f ∈ A.faces)
 
-
 def includedEdge (e : Edge B) : Edge A :=
   ⟨e.val.map f, hf e.val e.property.1, (Finset.card_map _).trans e.property.2⟩
-
 
 def edgeRestriction : (Edge A → ZMod 2) →ₗ[ZMod 2] (Edge B → ZMod 2) where
   toFun z e := z (includedEdge A B f hf e)
@@ -33,7 +23,6 @@ def edgeRestriction : (Edge A → ZMod 2) →ₗ[ZMod 2] (Edge B → ZMod 2) whe
   map_smul' _ _ := rfl
 
 omit [Fintype ι] [Fintype κ] in
-
 
 theorem edgeValue_eq_of_restriction_potential (z : Edge A → ZMod 2)
     (a : κ → ZMod 2) (ha : vertexCoboundary B a = edgeRestriction A B f hf z)
@@ -66,7 +55,6 @@ variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
   {Z : Type w} [TopologicalSpace Z]
 
 omit [Fintype κ] in
-
 
 theorem restricted_closed_mem_range_of_marked_terminal
     (A : PreAbstractSimplicialComplex ι) (B : PreAbstractSimplicialComplex κ)
@@ -101,8 +89,6 @@ theorem restricted_closed_mem_range_of_marked_terminal
   change edgeValue A z (f i') (f j') = a' (f i') + a' (f j')
   rw [ha', ha']
   exact edgeValue_eq_of_restriction_potential A B f hf z a ha ht hi' hj'
-
-
 
 theorem finrank_closed_le_coboundaries_add_one_of_marked_terminal
     [DecidableEq κ]

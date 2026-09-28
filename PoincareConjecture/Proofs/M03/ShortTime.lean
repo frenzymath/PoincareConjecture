@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M03.UniquenessClosure
 import PoincareConjecture.Proofs.M03.Existence.FamilyEquation
 import PoincareConjecture.Proofs.M03.Existence.DeTurckResponseMetricNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -30,7 +19,6 @@ variable {n : ℕ} {M : Type u}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [CompactSpace M]
 
-
 theorem exists_ricciFlow_metricFamily (g0 : RiemannianMetric n M) :
     ∃ T : ℝ, 0 < T ∧ ∃ g : ℝ → RiemannianMetric n M,
       g 0 = g0 ∧ RiemannianMetric.IsSmoothFamilyOn g (Set.Ico 0 T) ∧
@@ -39,7 +27,6 @@ theorem exists_ricciFlow_metricFamily (g0 : RiemannianMetric n M) :
         HasDerivWithinAt (fun s ↦ (g s).inner x u v)
           (-2 * D.ricci x u v) (Set.Ico 0 T) t := by
   exact DeTurckResponseMetricNative.exists_metricFamily g0
-
 
 theorem shortTimeRicciFlowExistence : ShortTimeRicciFlowExistence n M := by
   intro g0
@@ -55,7 +42,6 @@ theorem shortTimeRicciFlowExistence : ShortTimeRicciFlowExistence n M := by
     smooth := hsm
     equation := fun t ht x u v ↦ heq t ht (D t) x u v
   }, hg0⟩
-
 
 theorem ricciFlowUniqueness : RicciFlowUniqueness n M := by
   exact Proofs.M03.ricciFlowUniqueness_of_difference_energy

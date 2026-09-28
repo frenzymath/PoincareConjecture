@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_EmbeddedCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalReturnRegion
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ReturnSide
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,19 +11,11 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture
 
-
-
-
 theorem m64Intrinsic_inner_boundary_norm (x : ℝ) :
     ‖intrinsicAnnulusBoundary 1 x‖ = 1 := by
   have h := m64Intrinsic_boundary_self_inner 1 x
   rw [real_inner_self_eq_norm_sq] at h
   nlinarith [norm_nonneg (intrinsicAnnulusBoundary 1 x)]
-
-
-
-
-
 
 theorem m64Intrinsic_inward_crossing_region
     {alpha beta : ℝ → AnnulusCoordinates} {a b A B : ℝ}
@@ -104,12 +83,6 @@ theorem m64Intrinsic_inward_crossing_region
   rw [hcimage] at hcover hfU hfV
   exact ⟨s, t, hs, hsA, ht, htB, hst, U, V, hU, hV, hpU, hpV, hbU, hbV,
     hdisj, hcover, hfU, hfV, hcompact⟩
-
-
-
-
-
-
 
 theorem m64Intrinsic_regular_inward_collision_jordan
     {alpha beta : ℝ → AnnulusCoordinates} {a b A B : ℝ}
@@ -189,11 +162,6 @@ theorem m64Intrinsic_regular_inward_collision_jordan
     apply finish _ U V hU hV hdisj hcover hfU hfV hcompact
     exact (image_mono (Icc_subset_Icc hs htA)).trans
       (subset_union_of_subset_right (subset_union_left) _)
-
-
-
-
-
 
 theorem m64Intrinsic_normal_interior_collision_jordan
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u)

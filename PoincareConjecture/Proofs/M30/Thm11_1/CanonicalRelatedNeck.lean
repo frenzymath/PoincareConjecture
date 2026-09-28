@@ -11,16 +11,6 @@ import PoincareConjecture.Proofs.M13.Metric
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,13 +21,11 @@ universe u v w
 
 namespace PoincareConjecture.M30
 
-
 private theorem canonical_rescaledMetric_eq
     {X : Type u} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
     (g : RiemannianMetric 3 X) (Q : ℝ) (hQ : 0 < Q) :
     rescaledMetric g Q hQ = M13.scaleSmoothMetric g Q hQ := rfl
-
 
 private theorem canonical_scaled_scalar
     {X : Type u} [TopologicalSpace X]
@@ -49,14 +37,12 @@ private theorem canonical_scaled_scalar
     rescaledMetric_scalarCurvature]
   ring
 
-
 private theorem canonical_inverse_half_lt {R : ℝ} (hR : 4 < R) :
     R ^ (-1 / 2 : ℝ) < 1 / 2 := by
   calc
     _ < (4 : ℝ) ^ (-1 / 2 : ℝ) :=
       Real.rpow_lt_rpow_of_neg (by norm_num) hR (by norm_num)
     _ = _ := by norm_num [neg_div, Real.rpow_neg, ← Real.sqrt_eq_rpow]
-
 
 private theorem canonical_scaled_ball
     {X : Type u} [TopologicalSpace X]
@@ -85,7 +71,6 @@ private theorem canonical_scaled_ball
     _ < ENNReal.ofReal rho := (ENNReal.ofReal_lt_ofReal_iff hpos).mpr
       ((mul_lt_mul_of_pos_left (canonical_inverse_half_lt hR) hC).trans
         (by linarith))
-
 
 private theorem canonical_cap_bounds
     {X : Type u} [TopologicalSpace X]
@@ -123,7 +108,6 @@ private theorem canonical_cap_bounds
         range (fun p : A.carrier × A.carrier => intrinsicEDist g A.carrier p.1 p.2) from
           ⟨(⟨x, hx⟩, ⟨z, hz⟩), rfl⟩))).trans_lt hdiam
 
-
 private theorem canonical_component_distance
     {X : Type u} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -148,7 +132,6 @@ private theorem canonical_component_distance
       range (fun p : A.carrier × A.carrier => intrinsicEDist g A.carrier p.1 p.2) from
         ⟨(⟨x, hx⟩, ⟨z, hz⟩), rfl⟩))).trans_lt hdiam
 
-
 private theorem canonical_compact_target
     {M : Type v} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
@@ -168,10 +151,6 @@ private theorem canonical_compact_target
 set_option maxHeartbeats 800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
-
 
 theorem exists_canonical_slice_related_neck_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalProtectedSphereAttachment
 import PoincareConjecture.Proofs.M76.Wall.SelectedEndArc
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ProtectedRelativeFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +9,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem PLDomain.exists_filled_two_sphere_attachment
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

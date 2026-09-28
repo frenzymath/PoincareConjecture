@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimLoop
 import PoincareConjecture.Proofs.M76.Mathlib.UniformPolygonSimplicity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
-
-
 
 def squareRimPolygon : Polygon V2 4 :=
   ⟨fun i => (squareRimVertex i : V2)⟩
@@ -47,8 +36,6 @@ private theorem mem_squareRim_iff (x : V2) :
     · have hn := norm_le_pi_norm x i
       rcases hi with hi | hi <;> simpa only [hi, norm_neg, norm_one] using hn
 
-
-
 theorem injective_squareRimPolygon : Function.Injective squareRimPolygon := by
   intro i j hij
   have hzero := congrFun hij 0
@@ -63,8 +50,6 @@ theorem injective_squareRimPolygon : Function.Injective squareRimPolygon := by
       | exact (show (1 : ℝ) ≠ -1 by norm_num) hzero
       | exact (show (-1 : ℝ) ≠ 1 by norm_num) hone
       | exact (show (1 : ℝ) ≠ -1 by norm_num) hone
-
-
 
 theorem hasSimplicialEdges_squareRimPolygon : squareRimPolygon.HasSimplicialEdges := by
   intro i j x hx
@@ -99,8 +84,6 @@ theorem hasSimplicialEdges_squareRimPolygon : squareRimPolygon.HasSimplicialEdge
         fin_cases k <;>
           norm_num [squareRimPolygon, squareRimVertex, finRotate_apply, Fin.add_def,
             AffineMap.lineMap_apply_module] <;> linarith
-
-
 
 theorem boundary_squareRimPolygon : squareRimPolygon.boundary ℝ = Q := by
   ext x

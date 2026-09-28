@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.CompatibleFaithfulActions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.IncompressibleGluing
@@ -17,7 +8,6 @@ universe u
 
 variable {I K : Type u} (G : I → Type u) (J : K → Type u)
   [∀ i, Group (G i)] [∀ k, Group (J k)]
-
 
 def coordinateRegularAction [DecidableEq I] (i : I) :
     G i →* Equiv.Perm (∀ j, G j) where
@@ -51,15 +41,11 @@ def coordinateRegularAction [DecidableEq I] (i : I) :
     · subst j; simp [mul_assoc]
     · simp [Function.update_of_ne hj]
 
-
 theorem coordinateRegularAction_injective [DecidableEq I] (i : I) :
     Function.Injective (coordinateRegularAction G i) := by
   intro g h heq
   have := congrArg (fun e : Equiv.Perm (∀ j, G j) => e (fun _ => 1) i) heq
   simpa [coordinateRegularAction] using this
-
-
-
 
 theorem exists_family_regular_action_exchange [DecidableEq I] [DecidableEq K]
     {H : Type u} [Group H] (i : I) (k : K)

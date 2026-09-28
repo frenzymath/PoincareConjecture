@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchMollificatio
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
-
 
 theorem memLp_of_bound_support {h : ℂ → E} {R B : ℝ}
     (hh : AEStronglyMeasurable h volume)
@@ -38,9 +24,6 @@ theorem memLp_of_bound_support {h : ℂ → E} {R B : ℝ}
     indicator_eq_self.mpr hs
   rw [← heq]
   exact (memLp_indicator_iff_restrict measurableSet_closedBall).mpr hk
-
-
-
 
 theorem integral_norm_sub_pow_tendsto_of_ae
     {f : ℕ → ℂ → E} {g : ℂ → E} {R B : ℝ}
@@ -77,9 +60,6 @@ theorem integral_norm_sub_pow_tendsto_of_ae
     (fun n => ((hf n).sub hg).norm.pow p) hi hdom hlim
 
 variable [InnerProductSpace ℝ E]
-
-
-
 
 theorem tendsto_toLp_two_of_bound_support
     {f : ℕ → ℂ → E} {g : ℂ → E} {R B : ℝ}

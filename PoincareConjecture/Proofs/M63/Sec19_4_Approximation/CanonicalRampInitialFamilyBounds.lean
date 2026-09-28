@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RampInitialBounds
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ universe u
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
-
 
 theorem exists_canonicalRamp_initial_family_bounds
     {M : Type u} [TopologicalSpace M] [T2Space M]

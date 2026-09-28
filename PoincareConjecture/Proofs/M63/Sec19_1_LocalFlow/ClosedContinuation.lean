@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2Locality
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SliceCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +11,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
-
-
 
 theorem c2_exists_closed_of_uniform_curvature (hlocal : M63LocalCurveTheory F)
     (gamma : ℝ → M) (hper : Function.Periodic gamma curvePeriod)

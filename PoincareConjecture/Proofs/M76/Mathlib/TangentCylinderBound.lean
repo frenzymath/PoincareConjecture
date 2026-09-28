@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TangentCylinderProjection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace ContinuousLinearMap
 
 variable {E F T : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [NormedAddCommGroup T] [NormedSpace ℝ T]
-
-
-
 
 theorem exists_pos_secant_bound_tangentCylinderProjection
     (B : E →L[ℝ] F) (A : E →L[ℝ] T) {S : Set E} {c : ℝ} (hc : 0 < c)

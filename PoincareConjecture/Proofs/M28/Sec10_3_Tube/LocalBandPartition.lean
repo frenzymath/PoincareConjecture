@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalBandExtension
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalBandNoncrossing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalBandCollar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarCarrierNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem face_mem_subcomplex_of_intrinsicInterior (R Q : SimplicialComplex ℝ E)
     (hQR : Q ≤ R) {s : Finset E} (hs : s ∈ R.faces) {x : E}
@@ -31,8 +19,6 @@ theorem face_mem_subcomplex_of_intrinsicInterior (R Q : SimplicialComplex ℝ E)
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem le_of_common_subcomplex_space_subset (R B Q : SimplicialComplex ℝ E)
     (hBR : B ≤ R) (hQR : Q ≤ R) (hspace : B.space ⊆ Q.space) : B ≤ Q := by
   intro s hs
@@ -42,8 +28,6 @@ theorem le_of_common_subcomplex_space_subset (R B Q : SimplicialComplex ℝ E)
     (hspace (convexHull_subset_space hs (intrinsicInterior_subset hx)))
 
 variable [DecidableEq E]
-
-
 
 theorem face_mem_retained_edge_of_incident (J R B Q : SimplicialComplex ℝ E)
     (hJ : J.faces.Finite) (hdim : ∀ t ∈ J.faces, t.card ≤ 2)
@@ -76,8 +60,6 @@ theorem face_mem_retained_edge_of_incident (J R B Q : SimplicialComplex ℝ E)
   rw [hQ, het']
   exact hxt
 
-
-
 theorem retained_edge_star_eq (J R B Q : SimplicialComplex ℝ E)
     (hJ : J.faces.Finite) (hdim : ∀ t ∈ J.faces, t.card ≤ 2)
     (hBR : B ≤ R) (hQR : Q ≤ R) (hB : B.space = J.space)
@@ -93,8 +75,6 @@ theorem retained_edge_star_eq (J R B Q : SimplicialComplex ℝ E)
   exact ⟨fun hs => ⟨J.face_mem_retained_edge_of_incident R B Q hJ hdim hBR hQR
     hB.subset he hecard hQ hq hs.1 hs.2, hs.2⟩,
     fun hs => ⟨hQB hs.1, hs.2⟩⟩
-
-
 
 theorem retained_edge_edgeStar_eq (J R B Q : SimplicialComplex ℝ E)
     (hJ : J.faces.Finite) (hdim : ∀ t ∈ J.faces, t.card ≤ 2)

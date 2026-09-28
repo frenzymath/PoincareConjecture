@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_inverse_capture_distance
     {N : Type u} {X : Type v} [TopologicalSpace N] [TopologicalSpace X]

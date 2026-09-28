@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Anchor.Source
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Components
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,9 +24,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_negative_anchor_with_contact_label
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
@@ -80,8 +69,6 @@ theorem exists_negative_anchor_with_contact_label
   obtain ⟨hs, hi, hd⟩ := A.lowerCutCircle_geometry (I i)
   exact ⟨A.lowerCutCircle (I i), hs, hi, hd,
     fun q => (A.lowerCutCircle_height (I i) q).trans hcut, by simpa [hlabel] using hI i⟩
-
-
 
 theorem exists_negative_anchor_of_recut_strips
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralManifoldOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupport
 
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.TerminalGraph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.RadialTransport
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +18,6 @@ open SaddleLevel
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
-
 
 theorem exists_relative_terminal_collar_transport_within
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -129,7 +124,6 @@ theorem exists_relative_terminal_collar_transport_within
     rw [← (hgraph y (hVT (hOVbase hy))).2] at h
     have hh := congrArg A h
     exact hh
-
 
 theorem exists_relative_terminal_collar_transport
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

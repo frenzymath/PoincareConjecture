@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableFiniteGerms
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierReadout
 import PoincareConjecture.Proofs.M47.TerminalCurvatureFiniteGermsFloor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +38,6 @@ local notation "gPhysical" => (fun k : ℕ =>
 local notation "gSource" => (fun k : ℕ =>
   RiemannianMetric.connectedComponentMetric (gPhysical k) (center k))
 local notation "point" => (fun k : ℕ => (Subtype.mk (center k) mem_connectedComponent : M k))
-
-
 
 theorem terminalSource_regular_terminal_curvature_bound
     (P : M46Predecessors.{u})

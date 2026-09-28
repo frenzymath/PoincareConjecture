@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSliceDifferential
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.HorizontalLift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64CircleProduct_pairing_circleUnit_hasDerivAt
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -48,19 +32,12 @@ theorem m64CircleProduct_pairing_circleUnit_hasDerivAt
   have h := M62.hasDerivAt_metric_pairing (P.flow.connection t) hgamma hY hZ
   simpa only [M63.circleUnit_pullback_zero P t hgamma, map_zero, add_zero] using h
 
-
-
-
 noncomputable def m64AnnulusCircleCurrent
     (P : M62.CircleProductData F circumference) (t : ℝ)
     (f : LoopPlane → P.charts.Point) (i : Fin 2) (p : LoopPlane) : ℝ :=
   (P.flow.metric t).inner (f p)
     (mfderiv (𝓡 2) (𝓡 (n + 1)) f p (EuclideanSpace.single i 1))
     (P.charts.circleUnit (f p))
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_contDiffAt
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -72,10 +49,6 @@ theorem m64AnnulusCircleCurrent_contDiffAt
   have h := (((P.flow.metric t).contMDiff (f p)).comp p hf).clm_bundle_apply₂
     (F₃ := ℝ) (E₃ := Bundle.Trivial P.charts.Point ℝ) hpush hcircle
   exact contMDiffAt_iff_contDiffAt.mp (Bundle.contMDiffAt_totalSpace.mp h).2
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_horizontal_derivative
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -102,9 +75,6 @@ theorem m64AnnulusCircleCurrent_horizontal_derivative
   have hscalar := ((m64AnnulusCircleCurrent_contDiffAt P t hf i).differentiableAt
     (by simp)).hasFDerivAt.comp_hasDerivAt x (m64AnnulusPoint_horizontal_hasDerivAt s x)
   exact hscalar.unique hpair
-
-
-
 
 theorem m64AnnulusCircleCurrent_vertical_derivative
     (P : M62.CircleProductData F circumference) (t : ℝ)

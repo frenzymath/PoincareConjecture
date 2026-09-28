@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteOldSlabBound
 import PoincareConjecture.Proofs.M47.LimitFiniteUniformSearch
 import PoincareConjecture.Proofs.M47.LimitFiniteUniformCapExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,9 +46,6 @@ local notation "Q" => (fun k => GeneralizedBlowupSequence.scale
   (G.subsequence (sigma (etaIndex k))))
 local notation "c" => (-H.toReal)
 local notation "g" => (G.limit.flow.metric 0)
-
-
-
 
 theorem limitFinite_eventually_uniform_endpoint_extension
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

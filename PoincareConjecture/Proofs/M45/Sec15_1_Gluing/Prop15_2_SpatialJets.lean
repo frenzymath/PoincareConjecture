@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M44.Mathlib.SpatialJetsWithin
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem continuousOn_timeJoin {V W : Type*} [TopologicalSpace V] [TopologicalSpace W]
     {a T b : ℝ} {U : Set V}
@@ -43,8 +32,6 @@ theorem continuousOn_timeJoin {V W : Type*} [TopologicalSpace V] [TopologicalSpa
 variable {V W : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup W] [NormedSpace ℝ W]
 
-
-
 theorem timeJoin_spatialJets {a T b : ℝ} (hTb : T < b) {U : Set V}
     (hU : IsOpen U) {f g : ℝ × V → W}
     (hf : ContDiffOn ℝ ∞ f (Ioc a T ×ˢ U))
@@ -66,9 +53,6 @@ theorem timeJoin_spatialJets {a T b : ℝ} (hTb : T < b) {U : Set V}
   apply h.congr
   intro p _
   by_cases ht : p.1 < T <;> simp [ht]
-
-
-
 
 theorem timeJoin_smooth_finalEndpoint {a T b : ℝ} (hTb : T < b)
     {U : Set V} (hU : IsOpen U) {f g : ℝ × V → W}

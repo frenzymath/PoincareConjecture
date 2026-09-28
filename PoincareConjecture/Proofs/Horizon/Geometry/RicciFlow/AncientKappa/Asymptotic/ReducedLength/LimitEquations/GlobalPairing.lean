@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.Coordinates.GlobalPairing
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ConjugateHeat.PairingIntegrability
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -92,8 +91,6 @@ theorem limitReducedLength_weakPairing_nonneg_of_chart_support
     contMDiffOn_chart_symm contMDiffOn_chart
     (G.reducedLengthPullback_limitDensity_continuousOn P hσ l hlim) hφ hφc hφs hi]
   exact neg_nonneg.mpr hw
-
-
 
 theorem limitReducedLength_weakPairing_nonneg
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

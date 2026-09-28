@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.NormalCornerAdjacency
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBoundaryCollarTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
 
 namespace PoincareConjecture.M76.TriangleCorner
-
-
-
 
 theorem exists_next_corner_component_rectangle
     {ι : Type*} [Finite ι] (D : ι → Set (ℝ × ℝ)) (p q : ι → ℝ × ℝ)

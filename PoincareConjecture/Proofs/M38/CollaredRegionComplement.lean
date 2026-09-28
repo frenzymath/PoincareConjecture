@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.LinearCollarBall
 import PoincareConjecture.Proofs.M38.SurgeryBallTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_collared_region_complement
     {Q : GeneralizedSliceCarrier.{u}} {ι : Type*} {U : Set Q.carrier}

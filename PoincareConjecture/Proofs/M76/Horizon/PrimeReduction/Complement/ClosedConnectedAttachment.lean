@@ -1,14 +1,5 @@
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_components_homeomorph_closed_attachment {P D : Set X}
     (hP : IsClosed P) (hD : IsClosed D) (hDc : IsConnected D)

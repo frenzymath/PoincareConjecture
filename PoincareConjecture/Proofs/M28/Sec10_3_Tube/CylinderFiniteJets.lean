@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderScalarReadout
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.OrdinaryCoefficientJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,10 +43,6 @@ private theorem hasUniformJetBoundsAt_cylinder_affine
   · simpa only [cylinderScalarCoordinates_zero] using hf
   · exact fun i => (contDiff_cylinderScalarCoordinates (s i)).contDiffAt
   · simpa only [cylinderScalarCoordinates_zero] using hc
-
-
-
-
 
 theorem hasUniformJetBoundsAt_cylinderNeckCoefficients
     {ι : Type*} {M : ι → Type u} [∀ i, TopologicalSpace (M i)]

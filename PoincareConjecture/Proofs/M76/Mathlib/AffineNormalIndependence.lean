@@ -1,15 +1,6 @@
 import Mathlib.LinearAlgebra.AffineSpace.Independent
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ section Algebraic
 
 variable {𝕜 ι E F : Type*} [DivisionRing 𝕜] [AddCommGroup E] [Module 𝕜 E]
   [AddCommGroup F] [Module 𝕜 F]
-
-
-
-
 
 theorem AffineIndependent.linearIndependent_collapse_direction {v : ι → E}
     (hv : AffineIndependent 𝕜 v) {s : Set ι} (hs : s.Nonempty) {p : E}
@@ -77,9 +64,6 @@ section Orthogonal
 
 variable {ι E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem AffineIndependent.linearIndependent_orthogonal_normal {v : ι → E}
     (hv : AffineIndependent ℝ v) {s : Set ι} (hs : s.Nonempty) {p : E}

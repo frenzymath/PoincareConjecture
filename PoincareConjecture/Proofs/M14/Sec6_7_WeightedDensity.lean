@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGramPath
 import PoincareConjecture.Proofs.M14.Sec6_7_TangentialDerivative
 import PoincareConjecture.Proofs.M14.Sec6_7_StableDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,21 +14,15 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 noncomputable def exponentialWeightedJacobian (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) (s : ℝ) : ℝ :=
   Real.rpow s (-(n : ℝ)) * Real.exp (-E.reduced_length Z s) * exponentialJacobian E v Z s
-
-
 
 theorem exponentialWeightedJacobian_nonneg (E : M14ExponentialFamily G T x)
     (v : Fin n → G.Horizontal x) (Z : G.Horizontal x) {s : ℝ} (hs : 0 ≤ s) :
     0 ≤ exponentialWeightedJacobian E v Z s :=
   mul_nonneg (mul_nonneg (Real.rpow_nonneg hs _) (Real.exp_pos _).le)
     (exponentialJacobian_nonneg E v Z s)
-
-
 
 theorem exponential_reducedLength_continuousOn_prefix
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
@@ -48,9 +33,6 @@ theorem exponential_reducedLength_continuousOn_prefix
   intro s hs
   exact (exponential_reducedLength_hasDerivWithinAt hM12 E (hsub hs) hs.1).continuousWithinAt.mono
     hsub
-
-
-
 
 theorem exponentialWeightedJacobian_continuousOn
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -63,9 +45,6 @@ theorem exponentialWeightedJacobian_continuousOn
   exact (hp.mul (Real.continuous_exp.comp_continuousOn
     (exponential_reducedLength_continuousOn_prefix hM12 E hb).neg)).mul
       ((exponentialJacobian_continuousOn hM04 hM12 E v hb hpos).mono Ioc_subset_Icc_self)
-
-
-
 
 theorem stableDensity_mul_jacobian_eq_weighted {τ : ℝ}
     (E : M14ExponentialFamily G T x) (H : M14StableSet G T τ x E)

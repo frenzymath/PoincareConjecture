@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 import PoincareConjecture.Proofs.M76.Dehn.OriginalPairedRegionCharts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -33,8 +24,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {s t : Stage e S f r C} {step : Step s t}
 
 variable {K : SimplicialComplex ℝ A} {j : A → t.Carrier} {R : Set M}
-
-
 
 theorem Step.exists_planar_surface_branch_chart
     (step : Step s t) (hK : K.faces.Finite)

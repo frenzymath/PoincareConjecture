@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedYoungBirthScales
 import PoincareConjecture.Proofs.M47.SeedOrdinaryGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
 
 theorem exists_seed_young_ordinary_birth_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

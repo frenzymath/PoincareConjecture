@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.FirstFailure
 import PoincareConjecture.Proofs.M35.Thm12_28.BlowupSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem exists_strong_first_failure_sequence (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

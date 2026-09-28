@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M10.ChartMetricBounds
 import PoincareConjecture.Proofs.M10.ChartDensitySmooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -1,16 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Paths
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace SimpleGraph.Walk
@@ -18,13 +8,9 @@ namespace SimpleGraph.Walk
 variable {V X : Type*} [TopologicalSpace X] {G : SimpleGraph V}
   (a : V → X) (edge : ∀ {u v : V}, G.Adj u v → _root_.Path (a u) (a v))
 
-
-
 noncomputable def realizePath : {u v : V} → G.Walk u v → _root_.Path (a u) (a v)
   | _, _, .nil => Path.refl _
   | _, _, .cons h p => (edge h).trans (realizePath p)
-
-
 
 theorem realizePath_append {u v w : V} (p : G.Walk u v) (q : G.Walk v w) :
     Path.Homotopic.Quotient.mk (realizePath a edge (p.append q)) =
@@ -41,9 +27,6 @@ theorem realizePath_append {u v w : V} (p : G.Walk u v) (q : G.Walk v w) :
         (Path.Homotopic.Quotient.mk (realizePath a edge p))).trans
         (Path.Homotopic.Quotient.mk (realizePath a edge q))
     rw [ih, Path.Homotopic.Quotient.trans_assoc]
-
-
-
 
 theorem realizePath_short_closed
     (hreverse : ∀ {u v : V} (h : G.Adj u v), (edge h.symm).Homotopic (edge h).symm)

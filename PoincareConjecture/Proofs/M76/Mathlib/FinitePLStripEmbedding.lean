@@ -4,27 +4,13 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLStrip
 
-
-
 def square : Set (ℝ × ℝ) := Icc (0 : ℝ) 1 ×ˢ Icc (0 : ℝ) 1
-
-
 
 theorem exists_finite_triangulation_square :
     ∃ K : SimplicialComplex ℝ (ℝ × ℝ), K.faces.Finite ∧ K.space = square := by
@@ -44,17 +30,12 @@ theorem exists_finite_triangulation_square :
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem strip_width_pos {a b t : ℝ} (ha : 0 < a) (hb : 0 < b) (ht : t ∈ Icc 0 1) :
     0 < a * t + b * (1 - t) := by
   by_cases ht0 : t = 0
   · simpa [ht0] using hb
   · exact add_pos_of_pos_of_nonneg (mul_pos ha (lt_of_le_of_ne ht.1 (Ne.symm ht0)))
       (mul_nonneg hb.le (sub_nonneg.mpr ht.2))
-
-
-
 
 theorem affine_strip_image {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     (Q : (ℝ × ℝ) →ᴬ[ℝ] E) :
@@ -84,9 +65,6 @@ theorem affine_strip_image {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     obtain ⟨q, hq, rfl⟩ := hx
     rw [hseg t ht] at hq
     exact ⟨q, ⟨hq.2.2.symm ▸ ht, hq.1, hq.2.2.symm ▸ hq.2.1⟩, rfl⟩
-
-
-
 
 theorem exists_affine_strip_homeomorph {a b : ℝ} (ha : 0 < a) (hb : 0 < b)
     (Q : (ℝ × ℝ) →ᴬ[ℝ] E) (hQ : Function.Injective Q) :

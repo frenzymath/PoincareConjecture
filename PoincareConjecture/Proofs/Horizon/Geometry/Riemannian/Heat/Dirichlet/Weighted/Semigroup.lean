@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Weig
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.EnergyFlow
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -119,7 +107,6 @@ private theorem norm_domainMulL2_heatSemigroup_le
       ring
     simpa only [mul_pow, he₂] using hm
   exact (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (Real.exp_nonneg _) (norm_nonneg _))).mp hsquare
-
 
 theorem weighted_heatSemigroup_norm_le
     (ψ : M → ℝ) (hψ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ψ)

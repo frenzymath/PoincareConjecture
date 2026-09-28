@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.ReciprocalBallAnnuli
 import PoincareConjecture.Proofs.M38.SphereExteriorBall
 import PoincareConjecture.Proofs.M38.LinearSphereDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,11 +19,9 @@ private instance sphereDimension :
 
 variable (p : sphereCarrier.{u}.carrier)
 
-
 noncomputable def reciprocalSphereDirection :
     Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞ :=
   linearSphereDiffeomorph (threeSphereStereoOppositeIsometry (-p.down)).toContinuousLinearEquiv
-
 
 theorem reciprocalSphereDirection_coe (z : UnitTwoSphere) :
     (reciprocalSphereDirection p z).val =
@@ -43,7 +32,6 @@ theorem reciprocalSphereDirection_coe (z : UnitTwoSphere) :
   rw [(threeSphereStereoOppositeIsometry (-p.down)).norm_map,
     show ‖z.val‖ = 1 by simp, inv_one, one_smul]
 
-
 theorem reciprocalSphereDirection_symm_coe (z : UnitTwoSphere) :
     ((reciprocalSphereDirection p).symm z).val =
       (threeSphereStereoOppositeIsometry (-p.down)).symm z.val := by
@@ -52,7 +40,6 @@ theorem reciprocalSphereDirection_symm_coe (z : UnitTwoSphere) :
     (threeSphereStereoOppositeIsometry (-p.down)).symm z.val = _
   rw [(threeSphereStereoOppositeIsometry (-p.down)).symm.norm_map,
     show ‖z.val‖ = 1 by simp, inv_one, one_smul]
-
 
 theorem spherePoleReference_opposite_ray (z : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     spherePunctureInverse p (ULift.up (r • z.val)) =
@@ -81,7 +68,6 @@ theorem spherePoleReference_opposite_ray (z : UnitTwoSphere) {r : ℝ} (hr : 0 <
   exact hleft.symm
 
 variable {a : ℝ} (ha : 0 < a) (ha8 : a ≤ 1 / 8)
-
 
 noncomputable def reciprocalSphereBall : SurgeryBallEmbedding sphereCarrier.{u} := by
   let e := reciprocalOuterBallDiffeomorph ha ha8
@@ -117,16 +103,13 @@ noncomputable def reciprocalSphereBall : SurgeryBallEmbedding sphereCarrier.{u} 
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball
       hf.contMDiffOn hg hleft }
 
-
 theorem reciprocalSphereBall_map (x : StandardCapSpace) :
     (reciprocalSphereBall p ha ha8).map x =
       spherePunctureInverse p (ULift.up (reciprocalOuterBallDiffeomorph ha ha8 x)) := rfl
 
-
 theorem reciprocalSphereBall_inverse (y : sphereCarrier.{u}.carrier) :
     (reciprocalSphereBall p ha ha8).inverse y =
       (reciprocalOuterBallDiffeomorph ha ha8).symm (spherePunctureMap p y).down := rfl
-
 
 theorem reciprocalSphereBall_center :
     (reciprocalSphereBall p ha ha8).map 0 = ULift.up (-p.down) := by
@@ -135,7 +118,6 @@ theorem reciprocalSphereBall_center :
     rw [reciprocalOuterBallDiffeomorph_norm]
     simp
   rw [reciprocalSphereBall_map, hezero, spherePunctureInverse_zero]
-
 
 theorem reciprocalSphereBall_closedBall :
     (reciprocalSphereBall p ha ha8).closedBall =
@@ -158,13 +140,11 @@ theorem reciprocalSphereBall_closedBall :
     refine ⟨(spherePunctureMap p y).down, ?_, spherePuncture_left_inverse p hy⟩
     simpa only [Metric.mem_closedBall, dist_zero_right] using hnorm
 
-
 theorem reciprocalSphereBall_complement :
     (reciprocalSphereBall p ha ha8).closedBallᶜ =
       (spherePoleReferenceBall p).map '' Metric.ball 0 (3 / 2) := by
   rw [reciprocalSphereBall_closedBall, sphereScaledPoleBall_complement]
   norm_num <;> rfl
-
 
 theorem reciprocalSphereBall_full_inside :
     (reciprocalSphereBall p ha ha8).map '' Metric.ball 0 2 ⊆
@@ -178,7 +158,6 @@ theorem reciprocalSphereBall_full_inside :
   change ‖reciprocalOuterBallDiffeomorph ha ha8 x‖ ≤ 3
   linarith
 
-
 theorem reciprocalSphereBall_full_disjoint :
     Disjoint ((reciprocalSphereBall p ha ha8).map '' Metric.ball 0 2)
       ((spherePoleReferenceBall p).map '' Metric.ball 0 1) := by
@@ -191,8 +170,6 @@ theorem reciprocalSphereBall_full_disjoint :
     exact ⟨x, Metric.ball_subset_ball (by norm_num) hx, rfl⟩
   exact Set.disjoint_left.mpr (fun _ hy hz =>
     hinner hz (reciprocalSphereBall_full_inside p ha ha8 hy))
-
-
 
 theorem reciprocalSphereBall_positive (z : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Set.Ioo (0 : ℝ) 1) :

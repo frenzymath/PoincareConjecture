@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalSmallDiskProduct
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductSlices
 import PoincareConjecture.Proofs.Horizon.Topology.Covering.Universal.PathHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -125,4 +115,3 @@ theorem HamiltonMarkedProtectedBall.exists_replacement_exterior_essential_disk_p
     (P.essential_rimSlice hesszero t).2⟩
 
 end PoincareConjecture.M76
-

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedG
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Interval.RealTime
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -142,7 +135,6 @@ theorem backwardLIntegrand_pointMap
   erw [P.pointMap_path_velocity h p hs, ← ht,
     P.pointMap_horizontal_metric, ← P.horizontalScalarCurvature_eq F.connection]
   rfl
-
 
 noncomputable def projectBackwardPath
     (F : RicciFlow n M I.domain) (P : OrdinaryProductRicciGeometry F.metric I)

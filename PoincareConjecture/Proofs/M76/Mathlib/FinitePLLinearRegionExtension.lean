@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRelativeRegionGluing
 import PoincareConjecture.Proofs.M76.Mathlib.LinearPatchHomeomorphisms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem proper_attachment_of_graph_contact {X : Type*}
     {S R d u w v g : Set X} (hS : S ∩ g = R) (hds : d ⊆ S)
@@ -38,11 +24,6 @@ theorem proper_attachment_of_graph_contact {X : Type*}
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_finitePL_linear_region_gluing {ι : Type*} [Finite ι]
     (S R : ι → Set E) (T Q : ι → Set F)

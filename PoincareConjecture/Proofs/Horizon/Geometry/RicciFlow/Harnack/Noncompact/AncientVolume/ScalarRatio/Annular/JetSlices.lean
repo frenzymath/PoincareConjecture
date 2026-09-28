@@ -5,18 +5,6 @@ import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -32,8 +20,6 @@ private theorem uniqueDiffOn_spatial_closedBall {ρ : ℝ} (hρ : 0 < ρ) :
   apply uniqueDiffOn_convex (convex_closedBall 0 ρ)
   rw [interior_closedBall (0 : E) hρ.ne']
   exact ⟨0, by simpa using hρ⟩
-
-
 
 theorem iteratedFDeriv_spatial_slice_of_halfCylinder
     {ρ : ℝ} (hρ : 0 < ρ) (f : ℝ × E → F)
@@ -79,8 +65,6 @@ theorem iteratedFDeriv_spatial_slice_of_halfCylinder
     iteratedFDerivWithin_eq_iteratedFDeriv hball (hsliceAt.of_le hr)
       (ball_subset_closedBall hx)] using hcomp
 
-
-
 theorem derivWithin_time_slice_of_halfCylinder
     {ρ : ℝ} (hρ : 0 < ρ) (f : ℝ × E → F)
     (hf : ContDiffOn ℝ ∞ f (Iic 0 ×ˢ closedBall 0 ρ))
@@ -97,8 +81,6 @@ theorem derivWithin_time_slice_of_halfCylinder
   have hc := hd.hasFDerivWithinAt.comp_hasDerivWithinAt t hs hmap
   simpa only [Function.comp_def, iteratedFDerivWithin_one_apply (hu (t, x) ⟨ht, hx⟩)]
     using hc.derivWithin (uniqueDiffOn_Iic 0 t ht)
-
-
 
 theorem tendsto_spatial_slice_jet_of_halfCylinder
     {α : Type*} {l : Filter α} {ρ : ℝ} (hρ : 0 < ρ)
@@ -118,8 +100,6 @@ theorem tendsto_spatial_slice_jet_of_halfCylinder
     P, ContinuousMultilinearMap.compContinuousLinearMapL_apply]
     using P.continuous.continuousAt.tendsto.comp h
 
-
-
 theorem tendsto_derivWithin_time_slice_of_halfCylinder
     {α : Type*} {l : Filter α} {ρ : ℝ} (hρ : 0 < ρ)
     (fseq : α → ℝ × E → F) (f : ℝ × E → F)
@@ -134,8 +114,6 @@ theorem tendsto_derivWithin_time_slice_of_halfCylinder
   simpa only [derivWithin_time_slice_of_halfCylinder hρ _ hf ht hx,
     derivWithin_time_slice_of_halfCylinder hρ _ (hseq _) ht hx, Function.comp_def]
     using (continuous_eval_const (fun _ : Fin 1 => (1, (0 : E)))).continuousAt.tendsto.comp h
-
-
 
 theorem spatial_and_time_jets_of_halfCylinder_compact_uniform
     {α : Type*} {l : Filter α} {ρ : ℝ} (hρ : 0 < ρ)

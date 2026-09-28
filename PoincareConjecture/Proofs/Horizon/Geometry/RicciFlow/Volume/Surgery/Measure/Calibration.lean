@@ -2,32 +2,12 @@ import PoincareConjecture.Proofs.M10.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedVolume.Basic
 import Mathlib.MeasureTheory.Measure.Haar.Unique
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped ENNReal
 
 namespace PoincareConjecture.SurgeryVolume.Measure
-
 
 theorem euclideanHausdorff_isAddHaarMeasure (n : ℕ) :
     Measure.IsAddHaarMeasure
@@ -36,13 +16,11 @@ theorem euclideanHausdorff_isAddHaarMeasure (n : ℕ) :
     (Measure.hausdorffMeasure (Module.finrank ℝ (EuclideanSpace ℝ (Fin n)) : ℝ) :
       Measure (EuclideanSpace ℝ (Fin n))))
 
-
 theorem euclideanHausdorff_unitBall_pos (n : ℕ) :
     0 < Measure.hausdorffMeasure (n : ℝ)
       (Metric.ball (0 : EuclideanSpace ℝ (Fin n)) 1) := by
   let := euclideanHausdorff_isAddHaarMeasure n
   exact Metric.measure_ball_pos _ _ zero_lt_one
-
 
 theorem euclideanHausdorff_unitBall_lt_top (n : ℕ) :
     Measure.hausdorffMeasure (n : ℝ)
@@ -50,15 +28,12 @@ theorem euclideanHausdorff_unitBall_lt_top (n : ℕ) :
   let := euclideanHausdorff_isAddHaarMeasure n
   exact measure_ball_lt_top
 
-
 theorem euclideanVolumeCalibration_pos (n : ℕ) : 0 < euclideanVolumeCalibration n :=
   ENNReal.div_pos (Metric.measure_ball_pos volume _ zero_lt_one).ne'
     (euclideanHausdorff_unitBall_lt_top n).ne
 
-
 theorem euclideanVolumeCalibration_lt_top (n : ℕ) : euclideanVolumeCalibration n < ∞ :=
   ENNReal.div_lt_top measure_ball_lt_top.ne (euclideanHausdorff_unitBall_pos n).ne'
-
 
 theorem euclideanVolumeCalibration_smul_hausdorff (n : ℕ) :
     euclideanVolumeCalibration n •

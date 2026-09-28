@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteOrderComplexPivots
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

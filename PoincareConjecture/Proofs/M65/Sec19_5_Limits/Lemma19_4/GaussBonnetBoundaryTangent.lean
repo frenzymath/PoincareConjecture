@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryFrame
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +25,6 @@ private theorem metric_normalize_smul {E : Type*} [NormedAddCommGroup E]
   simp only [mul_inv_rev, div_eq_mul_inv]
   ring
 
-
-
-
 theorem regular_curve_unit_tangent_contDiffAt {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     {c : ℝ → EuclideanSpace ℝ (Fin n)} {f : ℝ → ℝ} {t : ℝ}
@@ -57,10 +43,6 @@ theorem regular_curve_unit_tangent_contDiffAt {n : ℕ}
     g.pos _ _ hv
   exact ((((hG.clm_apply hV).clm_apply hV).sqrt hpos.ne').inv
     (Real.sqrt_pos.mpr hpos).ne').smul hV
-
-
-
-
 
 theorem halfDisk_boundary_tangent {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -190,11 +172,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
 
 theorem boundary_normalized_tangent_contDiffAt (S : M65MinimalDisk g connection gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))

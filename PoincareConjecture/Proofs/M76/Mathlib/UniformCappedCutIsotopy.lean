@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.UniformPointedArcIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.PointedCappedCutLevel
 import PoincareConjecture.Proofs.M76.Mathlib.TerminalCappedCutLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,15 +10,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_uniform_capped_cut_isotopy_with_global_finitePL_and_signs
     {B T d b k U R s₀ s₁ : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
@@ -159,9 +140,6 @@ theorem IsFinitePL.exists_uniform_capped_cut_isotopy_with_global_finitePL_and_si
         obtain ⟨p, hbase, hval, _, htop⟩ := hLp x
         exact ⟨p, hbase, hval, htop⟩)
 
-
-
-
 theorem IsFinitePL.exists_uniform_capped_cut_isotopy_with_global_finitePL
     {B T d b k U R s₀ s₁ : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)
     (hupperPL : FinitePiecewiseAffineOn upper B)
@@ -212,9 +190,6 @@ theorem IsFinitePL.exists_uniform_capped_cut_isotopy_with_global_finitePL
       A hheight hbottom hd hdplane q hqB hqzero hpos hcap hs₀ hs₁ hcover hinter
       hselected v hv Q hQ hQd K hK hKk hB htouch J hJ hJR hRzero hresidual hU hdU
   exact ⟨g, hgT, hgn, hmin, hrest⟩
-
-
-
 
 theorem IsFinitePL.exists_uniform_capped_cut_isotopy
     {B T d b k U R s₀ s₁ : Set E} {upper : E → ℝ} (hupper : ∀ x ∈ B, 0 ≤ upper x)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_StableOpenness
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 theorem jointDomain_stableSet (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hz : (Z, s) ∈ M14JointDomain G E) :
     ∃ H : M14StableSet G T (s ^ 2) x E, Z ∈ H.carrier := by
@@ -35,9 +23,6 @@ theorem jointDomain_stableSet (E : M14ExponentialFamily G T x)
   have heq : τ = s ^ 2 := by rw [hs, Real.sq_sqrt hτ.le]
   subst τ
   exact ⟨H, hZ⟩
-
-
-
 
 theorem jointDomain_action_branch (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hz : (Z, s) ∈ M14JointDomain G E) :

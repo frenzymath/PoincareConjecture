@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n k : ℕ} {ι : Type*} {l : Filter ι}
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem tendsto_multilinear_zero_of_apply
     {A : ι → ContinuousMultilinearMap ℝ
@@ -44,7 +36,6 @@ theorem tendsto_multilinear_zero_of_apply
     simp only [zero_pow (by decide : 2 ≠ 0), Finset.sum_const_zero] at hsum
     simpa only [Function.comp_def, Real.sqrt_zero] using
       (Real.continuous_sqrt.tendsto 0).comp hsum
-
 
 theorem tendsto_tensor_apply_zero
     {T : ι → CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) k}
@@ -74,8 +65,6 @@ private theorem contDiffAt_tensor_apply_model
     LeviCivitaData.tensorCoordinateEvaluation_model,
     extChartAt_model_space_eq_id, PartialEquiv.refl_symm,
     PartialEquiv.refl_coe, id_eq] using h
-
-
 
 theorem tendsto_fderiv_tensor_apply_zero
     (D : LeviCivitaData g)
@@ -124,8 +113,6 @@ private theorem differentiableAt_tensor_apply_model
   simpa only [Function.comp_apply, TensorFiber.continuousMultilinear_apply, S,
     LeviCivitaData.tensorCoordinateSection_apply,
     LeviCivitaData.tensorCoordinateEvaluation_model] using h
-
-
 
 theorem tendsto_iteratedFDeriv_tensor_apply_zero
     (D : LeviCivitaData g)

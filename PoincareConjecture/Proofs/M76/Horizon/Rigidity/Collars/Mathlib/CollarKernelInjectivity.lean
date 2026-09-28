@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarInteriorLoops
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

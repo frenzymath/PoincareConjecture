@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.ComponentCollar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.InducedOpenImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

@@ -4,16 +4,6 @@ import Mathlib.Algebra.Field.ZMod
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 import Mathlib.LinearAlgebra.Dimension.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +15,6 @@ variable {ι : Type*} [DecidableEq ι] (A : AbstractSimplicialComplex ι)
 
 omit [DecidableEq ι] in
 
-
 theorem vertexCoboundary_const (c : ZMod 2) :
     vertexCoboundary A.toPreAbstractSimplicialComplex (fun _ => c) = 0 := by
   classical
@@ -34,8 +23,6 @@ theorem vertexCoboundary_const (c : ZMod 2) :
   obtain ⟨i, j, hij, he⟩ := Finset.card_eq_two.mp e.property.2
   rw [he, Finset.sum_pair hij]
   exact CharTwo.add_self_eq_zero c
-
-
 
 theorem eq_of_mem_vertexCoboundary_ker (hconn : A.edgeGraph.Preconnected)
     {a : ι → ZMod 2}
@@ -55,8 +42,6 @@ theorem eq_of_mem_vertexCoboundary_ker (hconn : A.edgeGraph.Preconnected)
   | nil => rfl
   | cons h _ ih => exact (hedge h).trans ih
 
-
-
 noncomputable def vertexCoboundaryKerEquiv (hconn : A.edgeGraph.Preconnected) (v0 : ι) :
     LinearMap.ker (vertexCoboundary A.toPreAbstractSimplicialComplex) ≃ₗ[ZMod 2] ZMod 2 where
   toFun a := a.val v0
@@ -69,8 +54,6 @@ noncomputable def vertexCoboundaryKerEquiv (hconn : A.edgeGraph.Preconnected) (v
   map_add' _ _ := rfl
   map_smul' _ _ := rfl
 
-
-
 theorem finrank_ker_vertexCoboundary (hconn : A.edgeGraph.Connected) :
     Module.finrank (ZMod 2)
       (LinearMap.ker (vertexCoboundary A.toPreAbstractSimplicialComplex)) = 1 := by
@@ -78,9 +61,6 @@ theorem finrank_ker_vertexCoboundary (hconn : A.edgeGraph.Connected) :
   simpa using (A.vertexCoboundaryKerEquiv hconn.preconnected v0).finrank_eq
 
 variable [Fintype ι]
-
-
-
 
 theorem edge_incidence_rank_of_exact (hconn : A.edgeGraph.Connected)
     (hexact : LinearMap.ker (edgeCoboundary A.toPreAbstractSimplicialComplex) =

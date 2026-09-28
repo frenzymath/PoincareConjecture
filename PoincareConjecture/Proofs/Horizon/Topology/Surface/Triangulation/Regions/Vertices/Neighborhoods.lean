@@ -1,14 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.IncidentCaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Intersections
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set

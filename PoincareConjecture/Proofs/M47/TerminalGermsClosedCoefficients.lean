@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M47.TerminalGermsJointEndpoint
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Topology NNReal
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem terminalGerms_closed_coefficient_gluing
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.Pullback.Metric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.Extension.Section
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem curveVelocityWithin_congr {γ δ : ℝ → M} {I : Set ℝ}
     (h : Set.EqOn γ δ I) {s : ℝ} (hs : s ∈ I) :
@@ -114,6 +106,5 @@ theorem pullbackCovariantDerivative_restrict_congr {J C D : Set ℝ}
   rw [pullbackCovariantDerivative_restrict F time hDC EC hC hD hα]
   exact pullbackCovariantDerivative_extension_independent F time
     (restrictParametricSectionExtension hDC EC) ED hs hD hα
-
 
 end PoincareConjecture.ReducedLengthMinimum.Variation.Geometry

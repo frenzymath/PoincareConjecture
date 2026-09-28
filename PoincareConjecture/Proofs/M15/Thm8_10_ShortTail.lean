@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M15.Thm8_10_ShortCurve
 import PoincareConjecture.Proofs.M09.SmoothSquarePath
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -21,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M15
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem exists_backwardPath_short_tail
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

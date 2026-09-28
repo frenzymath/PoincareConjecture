@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedStarCofaces
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompleteCofaceDualBlock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,9 +16,6 @@ local notation "P2" => (ℝ × ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
 
 theorem exists_frontier_edge_triangle_cofaces
     {s : Finset (T.index → ℝ × V3)} (hsD : s ∈ (T.marked 2).faces)
@@ -48,9 +36,6 @@ theorem exists_frontier_edge_triangle_cofaces
       hsB hcard hps f hf hi hint
 
 open Classical in
-
-
-
 
 theorem exists_frontier_edge_dual_interval
     {s : Finset (T.index → ℝ × V3)} (hsD : s ∈ (T.marked 2).faces)

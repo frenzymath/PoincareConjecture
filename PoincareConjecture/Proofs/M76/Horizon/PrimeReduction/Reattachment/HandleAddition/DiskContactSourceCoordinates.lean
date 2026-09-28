@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.EssentialDiskMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 namespace PoincareConjecture.M76
@@ -35,4 +27,3 @@ theorem contact_component_card_source_homeomorph
   exact (Nat.card_congr C.toEquiv).symm
 
 end PoincareConjecture.M76
-

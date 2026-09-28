@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FreeRampBoundaryCurrent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCirclePositivity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,11 +51,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
-
-
-
 theorem m64FreeRampConformalMinimum_circleCurrent_pos
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)
     {c0 c1 : ℝ → P.charts.Point}
@@ -93,11 +75,6 @@ theorem m64FreeRampConformalMinimum_circleCurrent_pos
     hminimum hconformal hA hlower.1 hupper.1
   obtain ⟨x, hx, hpos⟩ := hlower.2
   exact ⟨annulusPoint x 0, ⟨hx.1.le, hx.2.le, le_rfl, zero_le_one⟩, hpos.ne'⟩
-
-
-
-
-
 
 theorem m64FreeRampConformalMinimum_mfderiv_injective
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

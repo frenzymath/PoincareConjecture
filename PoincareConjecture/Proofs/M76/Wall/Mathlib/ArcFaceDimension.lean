@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
-
 
 theorem AffineOnFaces.face_card_le_two_of_line
     (hf : K.AffineOnFaces f) (hinj : InjOn f K.space)

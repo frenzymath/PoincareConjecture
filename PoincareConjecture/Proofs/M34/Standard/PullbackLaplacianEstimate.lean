@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem abs_laplacian_le_of_hessian_bound (D : LeviCivitaData g)
     (f : M → ℝ) (x : M) {C : ℝ}
@@ -43,9 +32,6 @@ theorem abs_laplacian_le_of_hessian_bound (D : LeviCivitaData g)
   simp only [hnorm, mul_one] at hsum
   have h := (Finset.abs_sum_le_sum_abs _ _).trans hsum
   simpa [laplacian, TangentSpace] using h
-
-
-
 
 theorem abs_laplacian_le_of_pullback_bounds (D : LeviCivitaData g)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

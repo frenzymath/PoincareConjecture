@@ -5,23 +5,10 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem exists_pointwise_metric_limit_of_eventually_compact
     {A X : Type*} [MetricSpace X]
@@ -55,9 +42,6 @@ theorem exists_pointwise_metric_limit_of_eventually_compact
   intro x hx y hy
   exact tendsto_nhds_unique ((hg x hx).dist (hg y hy))
     ((hdist x hx y hy).mono_left Nat.hyperfilter_le_atTop)
-
-
-
 
 theorem exists_isometric_finite_ray_of_compact_prefixes
     {X : Type*} [MetricSpace X] {p : X} {a : ℝ}
@@ -105,9 +89,6 @@ theorem exists_isometric_finite_ray_of_compact_prefixes
     intro s t
     change dist (gamma s.1) (gamma t.1) = dist s.1 t.1
     simpa only [Real.dist_eq] using hmetric s.1 s.2 t.1 t.2
-
-
-
 
 theorem finite_ray_radius_eq_of_source_bounds
     {X : Type*} [MetricSpace X] {a : ℝ}

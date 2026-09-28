@@ -1,22 +1,10 @@
 import Mathlib.Topology.Homotopy.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open unitInterval
 
 namespace ContinuousMap
-
-
-
 
 theorem contractibleSpace_of_target (B Y : Type*) [TopologicalSpace B]
     [LocallyCompactSpace B] [TopologicalSpace Y] [ContractibleSpace Y] :

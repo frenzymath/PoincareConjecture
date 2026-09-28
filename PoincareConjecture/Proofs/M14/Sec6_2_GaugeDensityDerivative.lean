@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeAction
 import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -55,8 +46,6 @@ private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ]
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem hasDerivAt_supportedBackwardGauge_density (x₀ : G.gaugeCover.spatial b)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {U : Set G.Point} (hU : IsOpen U)

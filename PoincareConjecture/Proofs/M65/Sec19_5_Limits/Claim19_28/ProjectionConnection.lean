@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.ProjectedSpeed
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem m65ProductChartField_connection (P : M62.CircleProductData F circumference)
     (t : ℝ) (p : M) (w : EuclideanSpace ℝ (Fin n)) (q : P.charts.Point)
     (hq : q.1 ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).source)
@@ -39,8 +29,6 @@ theorem m65ProductChartField_connection (P : M62.CircleProductData F circumferen
   exact M62.circleProduct_chart_connection (F.metric t) (F.connection t)
     P.circle P.charts (P.flow.metric t) (P.flow.connection t) (P.metric_eq t)
     p v w r 0 q hq
-
-
 
 theorem m65Projection_field_mdiff (P : M62.CircleProductData F circumference)
     {gamma : ℝ → P.charts.Point}
@@ -59,8 +47,6 @@ theorem m65Projection_field_mdiff (P : M62.CircleProductData F circumference)
   filter_upwards [] with y
   dsimp only [Function.comp_apply, tangentMap]
   rw [TotalSpace.mk_inj, ← P.charts.split_space]
-
-
 
 theorem m65Projection_pullback (P : M62.CircleProductData F circumference)
     (t : ℝ) {gamma : ℝ → P.charts.Point}

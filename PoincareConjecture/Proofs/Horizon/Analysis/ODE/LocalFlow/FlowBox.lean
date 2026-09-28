@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE.LocalFlow
@@ -143,9 +134,6 @@ private theorem exists_planar_transverse_equiv
   refine ⟨A, ?_⟩
   change L (0, 1) = v
   simp [L]
-
-
-
 
 theorem exists_smooth_planar_flowBox
     {U : Set (EuclideanSpace ℝ (Fin 2))} (hU : IsOpen U)

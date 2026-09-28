@@ -2,15 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 open Module
 
 namespace PoincareConjecture.Synge
@@ -23,7 +14,6 @@ private theorem det_adjoint (f : E →ₗ[ℝ] E) : f.adjoint.det = f.det := by
   rw [← LinearMap.det_toMatrix b.toBasis, LinearMap.toMatrix_adjoint b b,
     Matrix.det_conjTranspose]
   simp [LinearMap.det_toMatrix]
-
 
 theorem exists_ne_zero_fixed_of_even_det_neg_one (f : E ≃ₗᵢ[ℝ] E)
     (hdim : Even (finrank ℝ E)) (hdet : f.toLinearMap.det = -1) :
@@ -50,14 +40,10 @@ theorem exists_ne_zero_fixed_of_even_det_neg_one (f : E ≃ₗᵢ[ℝ] E)
   simpa only [LinearMap.mem_ker, LinearMap.sub_apply, LinearMap.id_apply,
     sub_eq_zero] using hv
 
-
 theorem exists_ne_zero_fixed_of_finrank_two_det_neg_one (f : E ≃ₗᵢ[ℝ] E)
     (hdim : finrank ℝ E = 2) (hdet : f.toLinearMap.det = -1) :
     ∃ v : E, v ≠ 0 ∧ f v = v :=
   exists_ne_zero_fixed_of_even_det_neg_one f (hdim ▸ by decide) hdet
-
-
-
 
 theorem exists_ne_zero_orthogonal_fixed_of_finrank_three_det_neg_one
     (f : E ≃ₗᵢ[ℝ] E) (hdim : finrank ℝ E = 3)

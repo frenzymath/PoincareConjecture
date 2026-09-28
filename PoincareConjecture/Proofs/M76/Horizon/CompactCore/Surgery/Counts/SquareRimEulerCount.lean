@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.CompressionCylinderRectangles
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.FourConvexPiecesEulerCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -38,8 +30,6 @@ private theorem iUnion_rimSide : (⋃ i, rimSide i) = Q := by
     have h : (z, (0 : ℝ)) ∈ carrier := ⟨hz, by norm_num⟩
     obtain ⟨i, hi⟩ := mem_iUnion.mp (iUnion_side.symm.subset h)
     exact mem_iUnion.mpr ⟨i, (mem_rimSide i z).mpr hi⟩
-
-
 
 theorem square_rim_surfaceEulerCount (K : SimplicialComplex ℝ V2)
     (hK : K.faces.Finite) (hspace : K.space = Q) : K.surfaceEulerCount = 0 := by

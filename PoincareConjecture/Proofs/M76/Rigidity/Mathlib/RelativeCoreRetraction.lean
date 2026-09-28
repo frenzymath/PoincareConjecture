@@ -1,21 +1,11 @@
 import Mathlib.Topology.Piecewise
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem exists_relative_core_retraction {K N U S : Set X}
     (hN : IsClosed N) (hNK : N ⊆ K) (hUN : U ⊆ N)

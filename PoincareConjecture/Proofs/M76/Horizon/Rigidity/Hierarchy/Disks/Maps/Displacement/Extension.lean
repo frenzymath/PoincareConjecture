@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Affine.Mathlib.ContinuousAffineSelection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
-
-
-
 
 theorem exists_original_marked_disk_displacement_extension_within
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
@@ -179,7 +167,6 @@ theorem exists_original_marked_disk_displacement_extension_within
     ext k
     fin_cases k <;> rfl
 
-
 theorem exists_original_marked_disk_displacement_extension
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
     (e : ι → OpenPartialHomeomorph X V3)
@@ -212,9 +199,6 @@ private theorem locallyPiecewiseAffineOn_selection_zero
   obtain ⟨J, hJ, hJK, hgJ⟩ := (hfK.finitePiecewiseAffineOn hK).continuous_selection_pi
     hzero (hg.mono hKU) (fun y hy => hselect y (hKU hy))
   exact ⟨J, hJ, hJK.symm ▸ hxK, hJK ▸ hKU, hgJ⟩
-
-
-
 
 theorem exists_original_retained_disk_displacement_extension_within
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
@@ -261,7 +245,6 @@ theorem exists_original_retained_disk_displacement_extension_within
     exact piecewise_eq_of_notMem R W (fun _ => 0) hx
   · intro x hx
     exact (hVselect x).elim (fun h => h.trans (hWoffU x hx)) id
-
 
 theorem exists_original_retained_disk_displacement_extension
     {X ι : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Limit
 import Mathlib.Topology.UniformSpace.Dini
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

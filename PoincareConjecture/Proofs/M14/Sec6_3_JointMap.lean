@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_MetricBases
 import PoincareConjecture.Proofs.M14.Mathlib.BasisCoordinateVolume
 import PoincareConjecture.Statements.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,9 +21,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 noncomputable def jointMapData (E : M14ExponentialFamily G T x) : M14JointMapData G T x E := by
   let metric := G.spacetime.horizontalMetric.toRiemannianMetric
@@ -71,8 +59,6 @@ noncomputable def jointMapData (E : M14ExponentialFamily G T x) : M14JointMapDat
   · intro z
     obtain ⟨H, hZ⟩ := jointDomain_stableSet E z.property
     exact ⟨H, hZ, H.endpoint_differential_bijective z.1.1 hZ⟩
-
-
 
 theorem jointMapData_nonempty (E : M14ExponentialFamily G T x) :
     Nonempty (M14JointMapData G T x E) := ⟨jointMapData E⟩

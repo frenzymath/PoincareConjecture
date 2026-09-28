@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.Sublevel
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,16 +12,12 @@ namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
 def HasConnectedLowerSide (f : X → ℝ) (O : Set X) (a : ℝ) (x : X) : Prop :=
   ∃ V : Set X, IsOpen V ∧ x ∈ V ∧ V ⊆ O ∧
     IsPreconnected (V ∩ f ⁻¹' Iio a) ∧
     V ∩ f ⁻¹' Iic a ⊆ closure (V ∩ f ⁻¹' Iio a)
 
 variable [LocallyConnectedSpace X]
-
-
 
 theorem connectedComponentIn_strict_sublevel_eq_iUnion
     {f : X → ℝ} {O : Set X} (hO : IsOpen O) (hf : ContinuousOn f O)
@@ -87,9 +74,6 @@ theorem connectedComponentIn_strict_sublevel_eq_iUnion
     exact connectedComponentIn_mono p
       (show O ∩ f ⁻¹' Iic b ⊆ O ∩ f ⁻¹' Iio a from
         fun y hy => ⟨hy.1, hy.2.trans_lt hb⟩) hxb
-
-
-
 
 theorem connectedComponentIn_sublevel_eq_closure_strict_sublevel
     {f : X → ℝ} {O : Set X} (hO : IsOpen O) (hf : ContinuousOn f O)
@@ -159,8 +143,6 @@ theorem connectedComponentIn_sublevel_eq_closure_strict_sublevel
   · exact isPreconnected_connectedComponentIn.closure.subset_connectedComponentIn
       (subset_closure hpC) hCS
 
-
-
 theorem connectedComponentIn_sublevel_eq_closure_iUnion
     {f : X → ℝ} {O : Set X} (hO : IsOpen O) (hf : ContinuousOn f O)
     {p : X} {a : ℝ} (hp : p ∈ O) (hpa : f p < a)
@@ -171,9 +153,6 @@ theorem connectedComponentIn_sublevel_eq_closure_iUnion
       closure (⋃ b < a, connectedComponentIn (O ∩ f ⁻¹' Iic b) p) := by
   rw [← connectedComponentIn_strict_sublevel_eq_iUnion hO hf hp hpa] at hclosure ⊢
   exact connectedComponentIn_sublevel_eq_closure_strict_sublevel hO hf hp hpa hclosure hlocal
-
-
-
 
 theorem isCompact_connectedComponentIn_sublevel_of_relativelyCompact_lower_components
     {f : X → ℝ} {O : Set X} (hO : IsOpen O) (hf : ContinuousOn f O)

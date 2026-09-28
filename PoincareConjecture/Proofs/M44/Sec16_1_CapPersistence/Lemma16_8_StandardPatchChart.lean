@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open M36
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 noncomputable def centeredCylinderChart (theta : UnitTwoSphere) (s : ℝ) :
     PartialDiffeomorph (𝓡 3) IC E RoundCylinderSpace ∞ where
@@ -68,8 +56,6 @@ noncomputable def centeredCylinderChart (theta : UnitTwoSphere) (s : ℝ) :
     exact (cylinderEuclideanEquiv.symm.contDiff.contMDiff.contMDiffAt.comp z
       ((contMDiffAt_prod_module_iff _).mpr ⟨hfirst, hsecond⟩)).contMDiffWithinAt
 
-
-
 noncomputable def standardPatchDiffeomorph {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) :
     PartialDiffeomorph IC (𝓡 3) StandardCylinderSpace StandardCapSpace ∞ where
@@ -86,14 +72,10 @@ noncomputable def standardPatchDiffeomorph {length : ℝ} {center : StandardCapS
   contMDiffOn_toFun := N.coordinate_smooth
   contMDiffOn_invFun := N.inverse_smooth
 
-
-
 noncomputable def centeredStandardPatchChart {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (theta : UnitTwoSphere) (s : ℝ) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) E StandardCapSpace ∞ :=
   (centeredCylinderChart theta s).trans (standardPatchDiffeomorph N)
-
-
 
 theorem mem_centeredStandardPatchChart_source {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (theta : UnitTwoSphere) (s : ℝ) (p : E) :
@@ -102,16 +84,11 @@ theorem mem_centeredStandardPatchChart_source {length : ℝ} {center : StandardC
   change (p ∈ univ ∧ centeredCylinderLift theta s p ∈ univ ×ˢ Ioo (-length) length) ↔ _
   simp only [mem_univ, mem_prod, true_and, centeredCylinderLift]
 
-
-
 theorem centeredStandardPatchChart_zero {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (theta : UnitTwoSphere) (s : ℝ) :
     centeredStandardPatchChart N theta s 0 = N.coordinate (theta, s) := by
   change N.coordinate (centeredCylinderLift theta s 0) = _
   rw [centeredCylinderLift_zero]
-
-
-
 
 theorem centeredStandardPatchChart_pullback {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (theta : UnitTwoSphere) (s : ℝ)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem height_directional_displacement (A : E →ᵃ[ℝ] ℝ)
     {v : E} (hv : A.linear v = 1) (t a : ℝ) (x : E) :
@@ -27,8 +16,6 @@ theorem height_directional_displacement (A : E →ᵃ[ℝ] ℝ)
   rw [A.map_vadd, map_smul, hv]
   change t * a * 1 + A x = t * a + A x
   rw [mul_one]
-
-
 
 theorem directional_scalar_eq_zero_of_fixed (A : E →ᵃ[ℝ] ℝ)
     {v x : E} (hv : A.linear v = 1) {t a : ℝ} (ht : t ≠ 0)
@@ -44,9 +31,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.directional_scalar
     {f : E → E} {g : E → ℝ} {s : Set E}

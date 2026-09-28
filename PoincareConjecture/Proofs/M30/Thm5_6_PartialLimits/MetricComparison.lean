@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.VectorField.Derivation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,12 +18,9 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k} {A : ℝ}
   (G : PartialPointedMetricConvergence g p A)
 
-
 theorem exhaustion_monotone : Monotone G.exhaustion := by
   let : TopologicalSpace G.limitCarrier.carrier := G.limitCarrier.topologicalSpace
   exact monotone_nat_of_le_succ (fun j => subset_closure.trans (G.exhaustion_step j))
-
-
 
 theorem exists_exhaustion_superset {K : Set G.limitCarrier.carrier}
     (hK : @IsCompact G.limitCarrier.carrier G.limitCarrier.topologicalSpace K) :
@@ -147,9 +134,6 @@ private theorem eventually_inner_le_near_chart (q : G.limitCarrier.carrier) :
       2 * G.limitMetric.inner z v v) (c.left_inv hx.1)
   apply htransport.mp
   simpa only [w, hxi.self_apply_inverse] using hbound
-
-
-
 
 theorem eventually_pullback_inner_le_twice {K : Set G.limitCarrier.carrier}
     (hK : @IsCompact G.limitCarrier.carrier G.limitCarrier.topologicalSpace K) :

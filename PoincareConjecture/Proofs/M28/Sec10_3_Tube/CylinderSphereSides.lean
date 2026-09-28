@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereCoordinates
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,18 +12,14 @@ namespace PoincareConjecture.M28
 
 variable {X : Type u} [TopologicalSpace X]
 
-
 noncomputable def cylinderSignedHeight
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) (x : X) : ℝ :=
   ((φ x).2 : ℝ) - 1 / 2
-
 
 theorem continuous_cylinderSignedHeight
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
     Continuous (cylinderSignedHeight φ) :=
   (continuous_subtype_val.comp (continuous_snd.comp φ.continuous)).sub continuous_const
-
-
 
 theorem isOpenMap_cylinderSignedHeight
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
@@ -68,7 +55,6 @@ private theorem upper_interval_preconnected :
   ext s
   exact ⟨fun hs => ⟨hs, s.property.2⟩, fun hs => hs.1⟩
 
-
 theorem isPreconnected_cylinderSignedHeight_negative
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
     IsPreconnected {x | cylinderSignedHeight φ x < 0} := by
@@ -78,7 +64,6 @@ theorem isPreconnected_cylinderSignedHeight_negative
   ext x
   simp [cylinderSignedHeight]
 
-
 theorem isPreconnected_cylinderSignedHeight_positive
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
     IsPreconnected {x | 0 < cylinderSignedHeight φ x} := by
@@ -87,8 +72,6 @@ theorem isPreconnected_cylinderSignedHeight_positive
   convert hh using 1
   ext x
   simp [cylinderSignedHeight]
-
-
 
 theorem isPreconnected_cylinderSignedHeight_zero
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
@@ -101,8 +84,6 @@ theorem isPreconnected_cylinderSignedHeight_zero
   ext x
   simp [cylinderSignedHeight, c, Subtype.ext_iff, sub_eq_zero]
 
-
-
 theorem closure_cylinderSignedHeight_negative
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :
     closure {x | cylinderSignedHeight φ x < 0} =
@@ -111,8 +92,6 @@ theorem closure_cylinderSignedHeight_negative
     (continuous_cylinderSignedHeight φ) (Iio (0 : ℝ))
   rw [closure_Iio] at hh
   exact hh.symm
-
-
 
 theorem closure_cylinderSignedHeight_positive
     (φ : X ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) :

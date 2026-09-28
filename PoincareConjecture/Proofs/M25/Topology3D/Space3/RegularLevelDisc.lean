@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelCircle
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_regular_collar_component_disc (hP : PlanarSchoenfliesService)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

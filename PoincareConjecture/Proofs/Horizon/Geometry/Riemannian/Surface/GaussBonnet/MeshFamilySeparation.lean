@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilyIncidence
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Interior
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 theorem coordinate_mesh_family_support_eq_iUnion {I : Type*}
     (M : I → TriangleMesh) (F : I → OpenPartialHomeomorph Plane S)
     (face : ((i : I) × (M i).Triangle) → SmoothFace S)
@@ -30,8 +22,6 @@ theorem coordinate_mesh_family_support_eq_iUnion {I : Type*}
   simp only [hcarrier, ← image_iUnion, meshTriangleBasis_sources_cover]
 
 variable [T2Space S]
-
-
 
 theorem coordinate_mesh_family_not_mem_of_interior_subfamily {I J : Type*}
     (M : I → TriangleMesh) (F : I → OpenPartialHomeomorph Plane S)

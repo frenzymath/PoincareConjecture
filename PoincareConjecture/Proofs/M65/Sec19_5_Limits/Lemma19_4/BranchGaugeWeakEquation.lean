@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchMeasurableGauge
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyWeakInverse
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +8,6 @@ open Set Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem map_cauchyOperator_of_bound {E G : Type*}
     [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]
@@ -34,9 +20,6 @@ theorem map_cauchyOperator_of_bound {E G : Type*}
   rw [cauchyOperator, cauchyOperator, map_smul,
     ← L.integral_comp_comm (integrable_cauchyOperator_of_bound hh hs hb z)]
   simp only [map_smul]
-
-
-
 
 theorem integral_dbar_eq_zero {φ : ℂ → ℂ} (hφ : ContDiff ℝ 1 φ)
     (hs : HasCompactSupport φ) : (∫ z, dbar φ z) = 0 := by
@@ -59,10 +42,6 @@ theorem integral_dbar_eq_zero {φ : ℂ → ℂ} (hφ : ContDiff ℝ 1 φ)
   rw [integral_const_mul, integral_add (hdi 1) ((hdi I).const_mul I),
     integral_const_mul, hz 1, hz I]
   ring
-
-
-
-
 
 theorem cauchyGauge_weak_dbar_projection {B : Type*} [NormedRing B]
     [NormedAlgebra ℂ B] [CompleteSpace B] [NormOneClass B]

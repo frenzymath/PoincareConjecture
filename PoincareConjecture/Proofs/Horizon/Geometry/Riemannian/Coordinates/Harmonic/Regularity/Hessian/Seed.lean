@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.HessianEnergy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.RicciContraction
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,7 +14,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 open LeviCivitaData.Dirichlet
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem setIntegral_nonneg_lower_of_ellipticity
     {S : Set (EuclideanSpace ℝ (Fin n))} (hS : IsCompact S)
@@ -63,8 +54,6 @@ private theorem hessian_seed_metric_nonneg
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos x v hv).le
-
-
 
 theorem exists_uniform_hessian_energy_seed {a b : ℝ} (ha : 0 < a) (_hb : 0 ≤ b) :
     ∃ A : ℝ, 0 ≤ A ∧ ∀ r : ℝ, 0 < r → ∀ K : ℝ, 0 ≤ K →

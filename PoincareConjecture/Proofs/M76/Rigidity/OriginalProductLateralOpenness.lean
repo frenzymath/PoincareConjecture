@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +13,6 @@ local notation "Q" => sphere (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem OriginalDiskProduct.isOpen_lateral_image (P : OriginalDiskProduct e R j)
     (hR : IsClosed R) {ε : ℝ} (hε : ε ≤ 1)

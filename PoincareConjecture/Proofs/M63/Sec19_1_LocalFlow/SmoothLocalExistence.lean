@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicLabelFlow
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +23,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_smooth_local_curve_of_retraction (F : RicciFlow n M (Icc a b))
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -167,9 +154,6 @@ theorem exists_smooth_local_curve_of_retraction (F : RicciFlow n M (Icc a b))
     rw [hρe, σ.symm_apply_apply]
   · exact intrinsic_regularity_on_shorter_smooth_slab F c
       (by linarith) (by linarith) (by linarith) hc
-
-
-
 
 theorem exists_smooth_local_curve [CompactSpace M] (F : RicciFlow n M (Icc a b))
     (gamma : ℝ → M) (hperiod : Function.Periodic gamma curvePeriod)

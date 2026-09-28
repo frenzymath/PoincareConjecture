@@ -1,17 +1,6 @@
 import PoincareConjecture.Statements.M47CanonicalInduction
 import PoincareConjecture.Proofs.M33.RegularHistory
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

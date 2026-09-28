@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductCharts
 import PoincareConjecture.Proofs.M09.ChartVectorField
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,23 +17,17 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {circumference : ℝ} {C : CircleGeometry circumference}
 
-
-
 def productChartField (P : CircleProductCharts C n M)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ)
     (q : P.Point) : TangentSpace (𝓡 (n + 1)) q :=
   (P.split q).symm
     (PoincareConjecture.Proofs.M09.chartVectorField p v q.1, r • C.frame q.2)
 
-
-
 theorem productChartField_split (P : CircleProductCharts C n M)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ) (q : P.Point) :
     P.split q (P.productChartField p v r q) =
       (PoincareConjecture.Proofs.M09.chartVectorField p v q.1, r • C.frame q.2) :=
   (P.split q).apply_symm_apply _
-
-
 
 theorem productChartField_contMDiffOn (P : CircleProductCharts C n M)
     (p : M) (v : EuclideanSpace ℝ (Fin n)) (r : ℝ) :
@@ -97,8 +82,6 @@ theorem productChartField_contMDiffOn (P : CircleProductCharts C n M)
   apply (P.split z).injective
   erw [hsplit]
   exact P.productChartField_split p v r z
-
-
 
 theorem productChartField_exists (P : CircleProductCharts C n M)
     (p : M) (q : P.Point)

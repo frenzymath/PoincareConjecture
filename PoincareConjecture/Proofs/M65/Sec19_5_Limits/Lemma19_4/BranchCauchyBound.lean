@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyOperator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
 open scoped Topology
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem integral_norm_inv_closedBall_le_global {R : ℝ} (hR : 0 < R) (z : ℂ) :
     (∫ w in closedBall (0 : ℂ) R, ‖z - w‖⁻¹) ≤ 8 * Real.pi * R := by
@@ -58,9 +45,6 @@ theorem integral_norm_inv_closedBall_le_global {R : ℝ} (hR : 0 < R) (z : ℂ) 
       _ ≤ _ := by nlinarith [Real.pi_pos]
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem norm_cauchyOperator_le [CompleteSpace E] {h : ℂ → E} {R B : ℝ}
     (hR : 0 < R) (hB : 0 ≤ B) (hh : Continuous h)

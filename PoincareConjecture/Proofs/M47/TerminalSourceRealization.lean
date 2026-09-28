@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +59,6 @@ private theorem exists_closed_normalization
   · simpa only [parabolicTimeInv, Diffeomorph.coe_refl, id_eq] using
       M13.homothety_curvatureTensorNorm_eq _ _ (Diffeomorph.refl (𝓡 3) M ∞)
         Q hQ (R.metric_homothety s) (G.connection _) (R.flow.connection s) x
-
-
 
 theorem terminalSourceRealization_surgery
     (P : M47Predecessors.{u}) {S : SurgeryFlowData.{u}}
@@ -159,8 +147,6 @@ theorem terminalSourceRealization_surgery
     have hread := (congrArg (fun t => (G.connection t).curvatureTensorNorm x) htime).symm.trans
       hphysical
     exact ((hF s hs x).2.2).trans (congrArg (fun z : ℝ => z / Q) hread)
-
-
 
 theorem terminalSourceRealization_generalized
     (P : M47Predecessors.{u}) {G : GeneralizedRicciFlowData.{u}}

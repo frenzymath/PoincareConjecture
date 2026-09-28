@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem volumeMeasure_image_eq_zero_of_volume_eq_zero
     (g : RiemannianMetric n M)
@@ -42,7 +25,6 @@ theorem volumeMeasure_image_eq_zero_of_volume_eq_zero
   rw [g.volumeMeasure_image_eq_lintegral_pullbackVolumeDensity e he hei
     (ht.inter e.open_source.measurableSet) inter_subset_right]
   exact setLIntegral_measure_zero _ _ (measure_mono_null inter_subset_left ht0)
-
 
 theorem volumeMeasure_image_eq_zero_of_mdifferentiableAt
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}

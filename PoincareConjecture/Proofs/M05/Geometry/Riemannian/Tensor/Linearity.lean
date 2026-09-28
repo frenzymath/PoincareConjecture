@@ -1,13 +1,4 @@
-
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 

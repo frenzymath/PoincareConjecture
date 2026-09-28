@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEndpoin
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -144,10 +133,6 @@ private theorem halfDisk_polar_map_le {ε R H : ℝ} (hε : 0 < ε) (hRH : R ≤
     _ ≤ ((ENNReal.ofReal ε)⁻¹ • (volume : Measure LoopPlane)).restrict K :=
       Measure.restrict_mono Subset.rfl hbound
     _ = _ := Measure.restrict_smul _ _ _
-
-
-
-
 
 theorem halfDisk_graph_green {ε R H : ℝ} (hε : 0 < ε) (hRH : R ≤ H)
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ n, ContDiff ℝ 1 (f n))
@@ -392,11 +377,6 @@ private theorem smooth_semicircle_derivative (f : LoopPlane → ℝ) (hf : ContD
     (fderiv ℝ f (r • Proofs.M58.angularPoint θ) (r • Proofs.M58.angularVector θ)) θ at hd
   rw [hd.deriv, hv, map_add, map_smul, map_smul]
   rfl
-
-
-
-
-
 
 theorem halfDisk_graph_AC {ε R H : ℝ} (hε : 0 < ε) (hRH : R ≤ H)
     (f : ℕ → LoopPlane → ℝ) (hf : ∀ n, ContDiff ℝ 1 (f n))

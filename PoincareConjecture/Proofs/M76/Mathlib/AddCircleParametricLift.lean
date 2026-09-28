@@ -1,16 +1,6 @@
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,9 +8,6 @@ open Set Topology
 namespace AddCircle
 
 variable {p : ℝ} [Fact (0 < p)]
-
-
-
 
 theorem liftIco_zero_coe_apply_Icc {Z : Type*} {f : ℝ → Z}
     (hf : f 0 = f p) {x : ℝ} (hx : x ∈ Icc 0 p) :
@@ -34,9 +21,6 @@ theorem liftIco_zero_coe_apply_Icc {Z : Type*} {f : ℝ → Z}
     have hz : liftIco p 0 f (0 : AddCircle p) = f 0 := by
       simpa only [coe_zero] using hzero
     exact hz.trans hf
-
-
-
 
 theorem isQuotientMap_coe_Icc :
     IsQuotientMap (fun x : Icc (0 : ℝ) p => ((x : ℝ) : AddCircle p)) := by
@@ -55,10 +39,6 @@ theorem isQuotientMap_coe_Icc :
 
 variable {Y Z : Type*} [TopologicalSpace Y] [TopologicalSpace Z]
   [LocallyCompactSpace Y]
-
-
-
-
 
 theorem continuous_parametric_liftIco (f : ℝ × Y → Z)
     (hf : Continuous (fun q : Icc (0 : ℝ) p × Y => f (q.1, q.2)))

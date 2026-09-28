@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseRescaledEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +18,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "E" => EuclideanSpace ℝ (Fin ((n + 1) + 1))
-
-
-
 
 theorem auxiliaryCircle_free_phase_coordinates_contDiffAt
     (P : M62.CircleProductData F circumference)
@@ -67,8 +57,6 @@ theorem auxiliaryCircle_free_phase_coordinates_contDiffAt
   have hcomp : (u ∘ D) ∘ D.symm = u := by funext p; simp
   have hsm' := hsm.comp p0 D.symm.contDiff.contDiffAt
   rwa [hcomp] at hsm'
-
-
 
 theorem auxiliaryCircle_free_phase_contMDiffOn
     (P : M62.CircleProductData F circumference)

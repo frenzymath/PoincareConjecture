@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Embedded.EmbeddedThreeChord
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

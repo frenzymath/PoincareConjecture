@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.ScalarComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.CutTime
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,7 +8,6 @@ open Set
 open scoped ENNReal
 
 namespace Poincare.VolumeComparison
-
 
 theorem smul_mem_sdiff_terminalRadialPoints
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -45,8 +34,6 @@ theorem smul_mem_sdiff_terminalRadialPoints
   have hqav : (q : ℝ) • (a • v) ∈ S := by
     simpa only [smul_smul, mul_comm] using hstar _ hqS a ha0.le ha1
   exact (mem_iInter.mp hterm.2.2 q) ⟨hq, hqa, hqav⟩
-
-
 
 theorem indicator_cross_le {F G : ℝ → ℝ≥0∞} {S : Set ℝ} {R : ℝ}
     (hdown : ∀ t ∈ Ioo (0 : ℝ) R, ∀ s ∈ Ioo (0 : ℝ) R,

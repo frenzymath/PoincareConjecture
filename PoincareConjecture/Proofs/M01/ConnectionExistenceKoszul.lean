@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M01.Koszul
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +10,6 @@ namespace PoincareConjecture.ConnectionExistence
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def koszulRHS (g : RiemannianMetric n M)
     (X Y Z : (x : M) → TangentSpace (𝓡 n) x) (x : M) : ℝ :=
@@ -35,7 +23,6 @@ noncomputable def koszulRHS (g : RiemannianMetric n M)
 variable (g : RiemannianMetric n M)
   {X X' Y Y' Z Z' : (x : M) → TangentSpace (𝓡 n) x} {x : M}
 
-
 theorem mdifferentiableAt_pair
     (hY : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% Y) x)
     (hZ : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% Z) x) :
@@ -43,7 +30,6 @@ theorem mdifferentiableAt_pair
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact hY.inner_bundle hZ
-
 
 theorem koszulRHS_add_test
     (hX : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% X) x)
@@ -56,7 +42,6 @@ theorem koszulRHS_add_test
     mvfderiv_fun_add (mdifferentiableAt_pair g hZ hX) (mdifferentiableAt_pair g hZ' hX),
     VectorField.mlieBracket_add_right hZ hZ']
   ring
-
 
 theorem koszulRHS_smul_test {f : M → ℝ}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
@@ -72,7 +57,6 @@ theorem koszulRHS_smul_test {f : M → ℝ}
   simp only [g.symm x]
   ring
 
-
 theorem koszulRHS_add_direction
     (hX : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% X) x)
     (hX' : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% X') x)
@@ -84,7 +68,6 @@ theorem koszulRHS_add_direction
     mvfderiv_fun_add (mdifferentiableAt_pair g hX hY) (mdifferentiableAt_pair g hX' hY),
     VectorField.mlieBracket_add_left hX hX']
   ring
-
 
 theorem koszulRHS_smul_direction {f : M → ℝ}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
@@ -100,7 +83,6 @@ theorem koszulRHS_smul_direction {f : M → ℝ}
   simp only [g.symm x]
   ring
 
-
 theorem koszulRHS_add_field
     (hX : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% X) x)
     (hY : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% Y) x)
@@ -112,7 +94,6 @@ theorem koszulRHS_add_field
     mvfderiv_fun_add (mdifferentiableAt_pair g hX hY) (mdifferentiableAt_pair g hX hY'),
     VectorField.mlieBracket_add_right hY hY', VectorField.mlieBracket_add_left hY hY']
   ring
-
 
 theorem koszulRHS_smul_field {f : M → ℝ}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
@@ -128,7 +109,6 @@ theorem koszulRHS_smul_field {f : M → ℝ}
     mvfderiv_fun_mul hf (mdifferentiableAt_pair g hX hY)]
   simp only [g.symm x]
   ring
-
 
 theorem koszulRHS_swap_diff
     (_hX : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% X) x)

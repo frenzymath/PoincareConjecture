@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 theorem edist_center_le_model_bound_of_mem_carrier {x : M} (hx : x ∈ N.carrier) :
     g.edist N.center x ≤ ENNReal.ofReal
@@ -61,7 +51,6 @@ theorem edist_center_le_model_bound_of_mem_carrier {x : M} (hx : x ∈ N.carrier
       congr 1
       ring
 
-
 theorem edist_center_le_model_bound_of_mem_closure {x : M} (hx : x ∈ closure N.carrier) :
     g.edist N.center x ≤ ENNReal.ofReal
       ((2 * Real.pi + Real.sqrt (1 + N.epsilon) * N.epsilon⁻¹) * N.scale) := by
@@ -73,8 +62,6 @@ theorem edist_center_le_model_bound_of_mem_closure {x : M} (hx : x ∈ closure N
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 3) M
   exact closure_minimal (fun y hy => N.edist_center_le_model_bound_of_mem_carrier hy)
     (isClosed_le (continuous_const.edist continuous_id) continuous_const) hx
-
-
 
 theorem edist_center_le_balanced_upper_of_mem_closure
     (hε : N.epsilon ≤ 1 / 1000) {x : M} (hx : x ∈ closure N.carrier) :

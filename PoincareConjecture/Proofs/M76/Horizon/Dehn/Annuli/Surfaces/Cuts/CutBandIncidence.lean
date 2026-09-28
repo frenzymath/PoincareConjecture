@@ -2,16 +2,12 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RimCompon
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.TwoBandConnected
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 open Classical in
-
-
 
 theorem exists_connected_cut_band_assignment
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

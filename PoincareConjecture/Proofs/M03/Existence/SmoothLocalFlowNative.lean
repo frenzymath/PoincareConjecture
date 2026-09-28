@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.ImplicitLocalFlowNative
 import PoincareConjecture.Proofs.M03.Existence.CompactIntegralCurveNative
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory

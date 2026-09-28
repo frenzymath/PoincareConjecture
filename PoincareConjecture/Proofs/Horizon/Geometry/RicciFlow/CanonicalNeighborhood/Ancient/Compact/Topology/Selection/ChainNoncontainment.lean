@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -104,8 +94,6 @@ private theorem central_sphere_subset_of_inner_slab_contact
     nlinarith
   exact (not_lt_of_ge (hlower.trans hupper))
     ((ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr hnum)
-
-
 
 theorem exists_contained_sphere_in_selected_neck_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -215,8 +203,6 @@ private theorem transport_symm {U A B : Set M} (e : M ≃ₜ M)
       _ = U := e.toEquiv.symm_image_image U
   · rw [← he]
     exact e.toEquiv.symm_image_image A
-
-
 
 theorem exists_selected_sphere_transport_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -343,8 +329,6 @@ private theorem not_isCompact_of_frontier_eq_cylinder_middle
     exact disjoint_left.mp hpositive hy
       (hsub ((W.mem_tail_iff true hhalf).mpr ⟨hy'.1, by dsimp; linarith [hr.2]⟩))
 
-
-
 theorem exists_selected_sphere_compact_filling_obstruction_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -394,8 +378,6 @@ theorem exists_selected_sphere_compact_filling_obstruction_threshold :
   · rw [← k.image_interior]
     exact hint.image k
   · exact hK.image k.continuous
-
-
 
 theorem exists_closed_core_chain_noncontainment_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

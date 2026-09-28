@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.Components
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
 
 include hcount
 
-
 theorem zero_cap_retained_clopen : IsClopen (F.event T hT).retained_pre := by
   let : IsEmpty (Fin (F.event T hT).cap_count) := by
     rw [hcount]
@@ -33,13 +23,11 @@ theorem zero_cap_retained_clopen : IsClopen (F.event T hT).retained_pre := by
   apply isClopen_iff_frontier_eq_empty.mpr
   simpa using (F.event T hT).pre_boundary
 
-
 theorem zero_cap_retained_post : (F.event T hT).retained_post = Set.univ := by
   let : IsEmpty (Fin (F.event T hT).cap_count) := by
     rw [hcount]
     infer_instance
   simpa using (F.event T hT).post_cover
-
 
 theorem zero_cap_component_retained
     {x : (F.slice (F.event T hT).tMinus).carrier}
@@ -47,14 +35,11 @@ theorem zero_cap_component_retained
     connectedComponent x ⊆ (F.event T hT).retained_pre :=
   (zero_cap_retained_clopen F T hT hcount).connectedComponent_subset hx
 
-
 theorem zero_cap_component_discarded
     {x : (F.slice (F.event T hT).tMinus).carrier}
     (hx : x ∉ (F.event T hT).retained_pre) :
     connectedComponent x ⊆ (F.event T hT).retained_preᶜ :=
   (zero_cap_retained_clopen F T hT hcount).compl.connectedComponent_subset hx
-
-
 
 theorem zero_cap_component_image
     {x : (F.slice (F.event T hT).tMinus).carrier}
@@ -83,7 +68,6 @@ theorem zero_cap_component_image
     exact ⟨(F.event T hT).retention.inverse y,
       hback (Set.mem_image_of_mem _ hy), (F.event T hT).retention.right_inverse (hpost y)⟩
 
-
 noncomputable def zeroCapComponentRetention
     (x : (F.slice (F.event T hT).tMinus).carrier)
     (hx : x ∈ (F.event T hT).retained_pre) :
@@ -109,8 +93,6 @@ noncomputable def zeroCapComponentRetention
     intro y _
     rw [zero_cap_retained_post F T hT hcount]
     exact Set.mem_univ y)
-
-
 
 noncomputable def zeroCapSurvivorEquivalence
     (x : (F.slice (F.event T hT).tMinus).carrier)

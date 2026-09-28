@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.ExpandingSubsetRankGrowth
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.RiemannianLimit
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,7 +33,6 @@ private theorem cornerModel_geodesic
   intro s hs t ht
   change (A.metric.edist (γ s) (γ t)).toReal = |s-t| * (A.metric.edist x y).toReal
   rw [hmin s hs t ht, ENNReal.toReal_mul, ENNReal.toReal_ofReal (abs_nonneg _)]
-
 
 private theorem exists_small_rescaled_cornerModel
     {m k : ℕ} {δ H : ℝ} (hm : 2 ≤ m) (hH : 0 ≤ H)
@@ -122,8 +113,6 @@ private theorem exists_small_rescaled_cornerModel
     change dist A.ambientPoint (openFiberIncl A.joint A.domain A.value v) ≤ 3/2
     nlinarith
   · simpa only [h1,h2] using hratio
-
-
 
 theorem exists_corner_limit_with_strictly_larger_rank
     {m k : ℕ} {δ H : ℝ} (hm : 2 ≤ m) (hH : 0 ≤ H)
@@ -235,6 +224,5 @@ theorem exists_corner_limit_with_strictly_larger_rank
     (((B (φ j)).boundedFiberSection_dist_le x.val x.property).trans_lt (hs j))⟩,
       hsection (φ j) x.val x.property, ?_⟩
   exact hx
-
 
 end PoincareConjecture

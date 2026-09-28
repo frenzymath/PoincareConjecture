@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Compa
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.NoncompactEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -40,8 +30,6 @@ private lemma contMDiff_square_slice
     (hF : ∀ x, ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x)) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun y => F (t, y) ^ 2) := by
   exact (contMDiff_slice_of_time_germ hF).pow 2
-
-
 
 theorem weighted_heat_energy_identity
     (D : LeviCivitaData g)
@@ -133,9 +121,6 @@ private lemma inner_gradient_sq_sq (D : LeviCivitaData g)
     ContinuousLinearMap.smul_apply, smul_eq_mul]
   ring
 
-
-
-
 theorem heat_energy_cutoff_estimate (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {t : ℝ}
     (hF : ∀ x, ContMDiffAt (𝓘(ℝ, ℝ).prod (𝓡 n)) 𝓘(ℝ, ℝ) ∞ F (t, x))
@@ -189,9 +174,6 @@ theorem heat_energy_cutoff_estimate (D : LeviCivitaData g)
   dsimp only [f] at hi ⊢
   linarith
 
-
-
-
 theorem global_heat_energy_of_smooth_cutoff_bounds
     {q : M → ℝ} (hq : 0 ≤ᵐ[g.volumeMeasure] q)
     (hqmeas : AEMeasurable q g.volumeMeasure)
@@ -214,8 +196,6 @@ theorem global_heat_energy_of_smooth_cutoff_bounds
   exact Poincare.Parabolic.integrable_of_cutoff_integral_bound
     hq hqmeas η hηmeas
     (fun j ↦ Filter.Eventually.of_forall (hηnonneg j)) hηlim' hC hbound
-
-
 
 theorem global_heat_energy_of_exhaustion_cutoff_bounds
     {q : M → ℝ} (hq : 0 ≤ᵐ[g.volumeMeasure] q)
@@ -247,6 +227,5 @@ theorem global_heat_energy_of_exhaustion_cutoff_bounds
   apply global_heat_energy_of_smooth_cutoff_bounds hq hqmeas
     hηsmooth hηcompact (fun j x ↦ (hηrange j x).1) hηlim hC
   simpa only [η, hcut] using hbound
-
 
 end PoincareConjecture.LeviCivitaData

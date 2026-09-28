@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalSubdiskUniqueness
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -111,4 +109,3 @@ theorem exists_original_disk_boundary_arc_split
       (hFA.symm.trans ((congrArg j hh).trans hFB)))
 
 end PoincareConjecture.M76
-

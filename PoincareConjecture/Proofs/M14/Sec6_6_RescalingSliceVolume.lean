@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingGeometry
 import PoincareConjecture.Definitions.M14MeasureTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,15 +18,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 noncomputable def rescalingSliceAt (t t' : ℝ) (ht : t' = parabolicTime Q a t) :
     Diffeomorph (𝓡 n) (𝓡 n) (G.slices t).Point
       ((rescalingTransport hM12 hM13 G Q hQ a).slices t').Point ∞ := by
   subst t'
   exact M13.parabolicSliceIdentification G.spacetime G.slices Q hQ a t
-
-
 
 theorem rescalingSliceAt_val (t t' : ℝ) (ht : t' = parabolicTime Q a t)
     (p : (G.slices t).Point) :
@@ -43,16 +30,12 @@ theorem rescalingSliceAt_val (t t' : ℝ) (ht : t' = parabolicTime Q a t)
   subst t'
   exact M13.parabolicSliceIdentification_val G.spacetime G.slices Q hQ a t p
 
-
-
 theorem rescalingSliceAt_metric (t t' : ℝ) (ht : t' = parabolicTime Q a t) :
     MetricHomothety (G.slices t).metricOnPoints
       ((rescalingTransport hM12 hM13 G Q hQ a).slices t').metricOnPoints
       (rescalingSliceAt hM12 hM13 G Q hQ a t t' ht) Q := by
   subst t'
   exact M13.parabolicSliceIdentification_metric G.spacetime G.slices Q hQ a t
-
-
 
 theorem rescalingSliceAt_volume_map (t t' : ℝ) (ht : t' = parabolicTime Q a t) :
     calibratedMetricVolume ((rescalingTransport hM12 hM13 G Q hQ a).slices t').metricOnPoints =
@@ -65,9 +48,6 @@ theorem rescalingSliceAt_volume_map (t t' : ℝ) (ht : t' = parabolicTime Q a t)
     ((rescalingTransport hM12 hM13 G Q hQ a).slices t').metricOnPoints
     (rescalingSliceAt hM12 hM13 G Q hQ a t t' ht) Q hQ
     (rescalingSliceAt_metric hM12 hM13 G Q hQ a t t' ht)).volume_map
-
-
-
 
 theorem rescalingSliceAt_setIntegral (t t' : ℝ) (ht : t' = parabolicTime Q a t)
     (S : Set (G.slices t).Point)

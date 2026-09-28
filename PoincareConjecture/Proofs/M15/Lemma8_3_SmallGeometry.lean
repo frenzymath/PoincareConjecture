@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Lemma8_7_ExponentialConfinement
 import PoincareConjecture.Proofs.M15.Lemma8_8_SliceVolume
 import PoincareConjecture.Proofs.M15.Prop8_2_CurvatureContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -29,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
 
-
-
 theorem actualBallCylinder_abs_scalar_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (B : M15ActualBallCylinder G T x r K C)
@@ -44,9 +33,6 @@ theorem actualBallCylinder_abs_scalar_le
   exact mul_le_mul_of_nonneg_left (B.curvature_bound t c) (sq_nonneg (n : ℝ))
 
 end Scalar
-
-
-
 
 theorem exists_actualBallCylinder_small_part_geometry
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

@@ -5,13 +5,6 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

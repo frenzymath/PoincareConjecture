@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.GaugePullbackMetric
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

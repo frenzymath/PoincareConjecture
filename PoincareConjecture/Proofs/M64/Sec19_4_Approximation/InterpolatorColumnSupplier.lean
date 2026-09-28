@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorVerticalColumn
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 3) ∞ M]
 
 omit [T2Space M] in
-
-
 
 theorem m64_cell_side_short_of_polygon_short
     {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
@@ -54,8 +40,6 @@ theorem m64_cell_side_short_of_polygon_short
   exact hshort (z 0)
 
 omit [T2Space M] in
-
-
 
 theorem m64_interpolator_vertical_column_of_global_short
     {g : RiemannianMetric 3 M} {D : LeviCivitaData g}

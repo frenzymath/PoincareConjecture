@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.FiniteChartSurfaceImage
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteClippedChartInverse
 
-
-
 set_option autoImplicit false
 open Set Geometry Module
 

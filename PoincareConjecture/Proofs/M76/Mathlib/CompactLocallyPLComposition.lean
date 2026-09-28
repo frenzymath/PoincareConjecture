@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
-
-
 
 theorem LocallyPiecewiseAffineOn.exists_compact_affine_neighborhood
     {f : E → F} {U A : Set E} (hf : LocallyPiecewiseAffineOn f U)
@@ -53,9 +39,6 @@ theorem LocallyPiecewiseAffineOn.exists_compact_affine_neighborhood
     obtain ⟨b, hb⟩ := hfL a r hr
     exact ⟨b, hb.mono hsr⟩
 
-
-
-
 theorem LocallyPiecewiseAffineOn.finitePiecewiseAffineOn
     {f : E → F} {U : Set E} (hf : LocallyPiecewiseAffineOn f U)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hKU : K.space ⊆ U) :
@@ -64,10 +47,6 @@ theorem LocallyPiecewiseAffineOn.finitePiecewiseAffineOn
     hf.exists_compact_affine_neighborhood (K.isCompact_space_of_finite hK) hKU
   exact (hfJ.finitePiecewiseAffineOn hJ).restrict K hK
     (fun x hx => interior_subset (hKJ hx))
-
-
-
-
 
 theorem LocallyPiecewiseAffineOn.comp_finitePiecewiseAffineOn
     {f : F → E} {g : E → G} {S : Set F} {U : Set E}

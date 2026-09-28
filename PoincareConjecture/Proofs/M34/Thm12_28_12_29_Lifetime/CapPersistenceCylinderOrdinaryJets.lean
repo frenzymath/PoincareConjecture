@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderComponents
 import PoincareConjecture.Proofs.M34.Mathlib.CapPersistenceInverseCovariantJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff BigOperators Topology
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem capPersistence_iterated_contDiffAt {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) {B : RoundCylinderTwoTensor} {x : RoundCylinderCoordinates}
@@ -39,9 +28,6 @@ theorem capPersistence_iterated_contDiffAt {u : ℝ} (hu : u < 1)
       (ContDiffAt.sum fun i _ => ContDiffAt.sum fun j _ =>
         (capPersistence_modelChristoffel_contDiff hu q j (a 0) (a i.succ)).contDiffAt.mul
           (ih (Function.update (fun l => a l.succ) i j)))
-
-
-
 
 theorem capPersistence_exists_coordinate_error_jet_bound
     (N : ℕ) :

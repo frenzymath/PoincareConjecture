@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathPrimitive
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PoincareConjecture.M63
@@ -23,10 +14,6 @@ universe u
 
 variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {tau s : ℝ}
-
-
-
-
 
 theorem exists_contDiff_pathFamily_of_normalized_spatial_recurrences
     (hts : tau < s) {U : Set E} (hU : IsOpen U)

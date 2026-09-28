@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.IsManifold.ExtChartAt
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,10 +10,6 @@ variable {𝕜 E H M : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M]
   [LocallyCompactSpace M]
-
-
-
-
 
 theorem IsCompact.exists_finite_extChart_cover {K W : Set M} (hK : IsCompact K)
     (I : ModelWithCorners 𝕜 E H) (hW : IsOpen W) (hKW : K ⊆ W) :

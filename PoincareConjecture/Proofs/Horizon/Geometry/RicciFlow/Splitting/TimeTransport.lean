@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Frame.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Frame.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.MetricDuality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -153,8 +142,6 @@ private theorem continuousOn_ricciEndomorphism (hC : RicciFlowCurvatureTheory.{u
   exact ((((F.metric t).inner_isInvertible x).contDiffAt_map_inverse
     (n := ∞)).continuousAt.comp_continuousWithinAt
       (f := fun s => (F.metric s).inner x) (hg t ht)).clm_comp (hr t ht)
-
-
 
 theorem exists_terminal_ricci_transport
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)

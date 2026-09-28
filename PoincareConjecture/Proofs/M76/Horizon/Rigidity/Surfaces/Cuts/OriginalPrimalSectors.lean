@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalConeSectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -49,8 +41,6 @@ private theorem capSector_inter_rim {A q : Set E} (hAq : A ⊆ q) :
     exact (boundaryCircleCap_plane true A).subset ⟨hz.1, trivial, hz.2.2⟩
   · intro z hz
     exact ⟨((boundaryCircleCap_plane true A).symm.subset hz).1, hAq hz.1, hz.2⟩
-
-
 
 theorem exists_original_primal_sector_decomposition
     {d q : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

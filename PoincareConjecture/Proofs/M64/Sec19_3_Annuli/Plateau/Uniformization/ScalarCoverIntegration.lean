@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPolarEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,22 +55,11 @@ private theorem angleScale_image : angleScale '' Band = PolarBand := by
     · rw [angleScale_apply]
       simp only [mul_div_cancel₀ _ hp.ne']
 
-
-
-
-
-
 theorem scalarCoverMap_eq_polar (z : Cover) :
     scalarCoverMap z = z.1 • angularPoint (2 * Real.pi * z.2) := by
   have h := scalarCoverMap_polar_relation z.1 (2 * Real.pi * z.2)
   have ht : 2 * Real.pi * z.2 / (2 * Real.pi) = z.2 := by field_simp
   simpa only [ht, Prod.mk.eta] using h
-
-
-
-
-
-
 
 theorem scalarAnnulus_integral_cover (F : Plane → ℝ) :
     (∫ x in scalarAnnulus, F x) =
@@ -107,11 +82,6 @@ theorem scalarAnnulus_integral_cover (F : Plane → ℝ) :
         angleScale_apply, scalarCoverMap_eq_polar]
       simp only [smul_eq_mul]
       ring
-
-
-
-
-
 
 theorem scalarAnnulus_integrable_cover {F : Plane → ℝ}
     (hF : IntegrableOn F scalarAnnulus) :

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeightedPotential
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Complex Filter
@@ -32,9 +21,6 @@ private theorem inverse_le_weight {a r δ : ℝ} (ha : 1 < a)
       rw [← Real.rpow_add hr, show a - 1 + -a = -1 by ring, Real.rpow_neg_one]
     _ ≤ _ := mul_le_mul_of_nonneg_right
       (Real.rpow_le_rpow hr.le hrδ (by linarith)) (Real.rpow_nonneg hr.le _)
-
-
-
 
 theorem integrable_cauchy_of_weight {a : ℝ} (ha : 1 < a) {h : ℂ → ℂ}
     (hh : Integrable h) (x : ℂ)
@@ -87,9 +73,6 @@ private theorem regularized_continuous_L1 {δ : ℝ} (hδ : 0 < δ)
   simpa +instances only [regularizedCauchyOperator, smul_eq_mul] using!
     hi.const_mul (Real.pi : ℂ)⁻¹
 
-
-
-
 theorem cauchy_regularization_weighted_error {a δ B : ℝ}
     (ha : 1 < a) (hδ : 0 < δ) {h : ℂ → ℂ} (hh : Integrable h) (x : ℂ)
     (hw : Integrable (fun w => ‖h w‖ * ‖x - w‖ ^ (-a)))
@@ -133,10 +116,6 @@ theorem cauchy_regularization_weighted_error {a δ B : ℝ}
     _ ≤ Real.pi⁻¹ * ((2 * δ ^ (a - 1)) * B) :=
       mul_le_mul_of_nonneg_left hbound (by positivity)
     _ = _ := by ring
-
-
-
-
 
 theorem continuousOn_cauchy_of_uniform_weight {a B : ℝ} (ha : 1 < a)
     {h : ℂ → ℂ} (hh : Integrable h) {U : Set ℂ}

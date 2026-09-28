@@ -2,20 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Topology.Mathlib.FiniteClosedC
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem retained_component_preimage
     {E : Type*} [TopologicalSpace E] {K U : Set E} (hUK : U ⊆ K)
@@ -28,8 +19,6 @@ theorem retained_component_preimage
   refine ⟨?_, IsInducing.subtypeVal.isPreconnected_image.mp (hr.symm ▸ hn.isPreconnected)⟩
   obtain ⟨x, hx⟩ := hn.nonempty
   exact ⟨⟨x, hUK hx⟩, hx⟩
-
-
 
 theorem retained_component_image_properties
     {E Y I : Type*} [TopologicalSpace E] [TopologicalSpace Y]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalTreeNeighborhood
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTriangleOwnerIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -124,7 +116,6 @@ theorem treeCotree_centroid_partition
     complementaryCentroid_range_eq_compl_primal K P hP hbound hcofaces]
   exact Set.union_compl_self _
 
-
 theorem treeCotree_block_cover [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices) (hP : P ≤ K.vertexAbstractComplex.edgeGraph)
     (D : SimpleGraph (PreAbstractSimplicialComplex.ModTwoCochains.Triangle
@@ -141,7 +132,6 @@ theorem treeCotree_block_cover [Fintype K.barycentricSubdivision.faces]
     treeCotree_centroid_partition K P hP D hD hbound hcofaces,
     K.barycentricSubdivision.vertexDualUnion_univ, K.barycentricSubdivision_isSubdivision.space_eq]
 
-
 theorem centroidBlock_inter_union [Fintype K.barycentricSubdivision.faces]
     (S : Set K.barycentricSubdivision.vertices) (p : K.barycentricSubdivision.vertices) :
     (K.barycentricSubdivision.barycentricDualBlock {p.val}).space ∩
@@ -155,8 +145,6 @@ theorem centroidBlock_inter_union [Fintype K.barycentricSubdivision.faces]
   · rintro ⟨q, hq, hx⟩
     have hh := (K.barycentricSubdivision.vertex_dualBlocks_space_inter p.val q.val).symm.subset hx
     exact ⟨hh.1, q, hq, hh.2⟩
-
-
 
 theorem residualCentroidBlock_isFinitePLBallPair [Fintype K.barycentricSubdivision.faces]
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
@@ -196,8 +184,6 @@ theorem centroidBlocks_adj_of_mem [Fintype K.barycentricSubdivision.faces]
   change (({p, q} : Finset K.barycentricSubdivision.vertices).map
     (Function.Embedding.subtype _)) ∈ K.barycentricSubdivision.faces
   simpa only [Finset.map_insert, Finset.map_singleton, Function.Embedding.coe_subtype] using hface
-
-
 
 theorem edgeCentroidBlock_inter_primal [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices) (hP : P ≤ K.vertexAbstractComplex.edgeGraph)
@@ -282,8 +268,6 @@ theorem selectedDualCentroid_isFinitePLBallPair [Fintype K.barycentricSubdivisio
     S htree
   rwa [hS] at hball
 
-
-
 theorem residualCentroidBlock_inter_selectedDual [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices)
     (D : SimpleGraph (PreAbstractSimplicialComplex.ModTwoCochains.Triangle
@@ -343,9 +327,6 @@ theorem selectedDual_disjoint_residual_centroids
         (Sum.inr.inj hh)
     exact hs (hh' ▸ f.property)
 
-
-
-
 theorem distinctComplementaryCentroidBlocks_disjoint [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices)
     (hcofaces : ∀ e ∈ K.faces, e.card = 2 →
@@ -381,7 +362,6 @@ theorem treeCotree_exterior_eq_complementary_union [Fintype K.barycentricSubdivi
     ← complementaryCentroid_range_eq_selected_union_residual K P D hD hcofaces,
     complementaryCentroid_range_eq_compl_primal K P hP hbound hcofaces]
 
-
 theorem treeCotree_exterior_inter_primal [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices) (hP : P ≤ K.vertexAbstractComplex.edgeGraph)
     (D : SimpleGraph (PreAbstractSimplicialComplex.ModTwoCochains.Triangle
@@ -396,7 +376,6 @@ theorem treeCotree_exterior_inter_primal [Fintype K.barycentricSubdivision.faces
       K.barycentricSubdivision.vertexDualRim (primalCentroidSet K P hP) := by
   rw [treeCotree_exterior_eq_complementary_union K P hP D hD hbound hcofaces]
   rfl
-
 
 theorem exists_finite_triangulation_centroidUnion [Fintype K.barycentricSubdivision.faces]
     (S : Set K.barycentricSubdivision.vertices) :

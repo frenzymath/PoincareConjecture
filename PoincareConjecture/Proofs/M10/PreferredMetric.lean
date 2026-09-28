@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.SmoothMetric
 import PoincareConjecture.Proofs.M10.ProductDerivatives
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

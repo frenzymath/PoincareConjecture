@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_CompactSurvival
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exists_smallTimeCandidate_tube (E : M14ExponentialFamily G T x)
     {B : Set (G.Horizontal x)} (hB : IsCompact B) {O : Set G.Point}

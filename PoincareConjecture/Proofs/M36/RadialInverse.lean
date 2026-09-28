@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M36.RotationTransitivity
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

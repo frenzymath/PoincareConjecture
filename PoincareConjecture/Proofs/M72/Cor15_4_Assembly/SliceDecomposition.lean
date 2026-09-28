@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Carriers.Sum
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.DisjointUnionIdentification
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.Reindex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -24,13 +15,9 @@ namespace SmoothDisjointUnionData
 variable {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
   {A : GeneralizedSliceCarrier.{u}}
 
-
-
 def selectedOpen (D : SmoothDisjointUnionData pieces A) (q : Fin n → Prop) :
     TopologicalSpace.Opens A.carrier :=
   ⟨⋃ i : {i // q i}, D.region i.val, isOpen_iUnion (fun i => D.region_open i.val)⟩
-
-
 
 noncomputable def selectedAssembly (D : SmoothDisjointUnionData pieces A)
     (q : Fin n → Prop) :
@@ -65,22 +52,16 @@ namespace SurgeryTopologyConclusion
 
 variable {A B : GeneralizedSliceCarrier.{u}}
 
-
-
 noncomputable abbrev discardedCarrier (S : SurgeryTopologyConclusion A B) :
     GeneralizedSliceCarrier.{u} :=
   S.reconstruction.initial.opens
     (S.reconstruction.disjoint_union.selectedOpen (fun i => S.kind i ≠ .survivor))
-
-
 
 noncomputable def discardedAssembly (S : SurgeryTopologyConclusion A B) :
     M72IndexedAssembly
       (fun i : {i : Fin S.piece_count // S.kind i ≠ .survivor} => S.piece i.val)
       S.discardedCarrier :=
   S.reconstruction.disjoint_union.selectedAssembly (fun i => S.kind i ≠ .survivor)
-
-
 
 theorem survivor_region_open (S : SurgeryTopologyConclusion A B)
     (i : Fin S.piece_count) (hi : S.kind i = .survivor) :
@@ -89,16 +70,12 @@ theorem survivor_region_open (S : SurgeryTopologyConclusion A B)
   rw [hx]
   exact isOpen_connectedComponent
 
-
-
 theorem survivor_region_closed (S : SurgeryTopologyConclusion A B)
     (i : Fin S.piece_count) (hi : S.kind i = .survivor) :
     IsClosed (S.survivor_region i) := by
   obtain ⟨x, hx⟩ := S.survivor_component i hi
   rw [hx]
   exact isClosed_connectedComponent
-
-
 
 noncomputable def splitDisjointUnion (S : SurgeryTopologyConclusion A B) :
     SmoothDisjointUnionData S.piece (B.sum S.discardedCarrier) := by
@@ -159,8 +136,6 @@ noncomputable def splitDisjointUnion (S : SurgeryTopologyConclusion A B) :
         refine ⟨i.val, ?_⟩
         simp only [region, if_neg i.property]
         exact Set.mem_image_of_mem _ hi
-
-
 
 noncomputable def splitDiffeomorph (S : SurgeryTopologyConclusion A B) :
     Diffeomorph (𝓡 3) (𝓡 3) (B.sum S.discardedCarrier).carrier

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.RefinedFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.EndpointRays
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +19,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem coordinateTriangleVelocity_pos_smul_of_chart_segment
     (F C : OpenPartialHomeomorph Plane S) (b : AffineBasis (Fin 3) ℝ Plane)
@@ -158,8 +151,6 @@ theorem affineBasis_direction_expansion (c : AffineBasis (Fin 3) ℝ Plane) (v :
   rw [← hc]
   module
 
-
-
 theorem cornerAngle_split_of_positive_sector_coordinates
     (g : RiemannianMetric 2 S) (x : S) (c : AffineBasis (Fin 3) ℝ Plane)
     (L : Plane →L[ℝ] TangentSpace (𝓡 2) x) (v : Plane)
@@ -180,8 +171,6 @@ namespace ObliqueBandFaces
 
 variable {F : OpenPartialHomeomorph Plane S} {lo : ℝ → ℝ}
   {a b ua wa ub wb ra rb : ℝ} (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
-
-
 
 theorem topLineFunctional_cut_fderiv_pos (i : Fin B.interface.count) {t : ℝ}
     (ht : t ∈ Icc (B.cut i.castSucc) (B.cut i.succ)) :
@@ -325,7 +314,6 @@ theorem vertex_top_eq_chartTopVertex (i : Fin B.faces.interface.count)
   simp only [ObliqueBandFaces.vertex, if_true, B.faces.coordinates_pair_apply,
     linearGraphCoordinates_apply, collarParameterEquiv.apply_symm_apply,
     B.cut_top_eq_chartTopVertex i k hk]
-
 
 noncomputable def ambientOutwardDirection (k : Fin (B.faces.interface.count + 1)) : Plane :=
   G.frame.symm (fderiv ℝ (B.faces.cuts.coordinates B.faces.open_domain B.faces.smooth_lower)
@@ -571,8 +559,6 @@ theorem internal_top_chord_angles_eq_sector_angles
   · rw [hr, g.cornerAngle_smul_pos_right _ _ _ (mul_pos hs' hs)]
     rfl
 
-
-
 theorem internal_top_reflex_complement_angle
     (g : RiemannianMetric 2 S)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -616,8 +602,6 @@ theorem internal_top_reflex_complement_angle
     g.cornerAngle_smul_pos_left _ _ _ (B.faces.interface.vertex_height_bounds i.succ).1,
     g.cornerAngle_smul_pos_left _ _ _ (B.faces.interface.vertex_height_bounds i.succ).1]
   exact (add_comm _ _).trans hsplit.symm
-
-
 
 theorem internal_top_convex_complement_angle
     (g : RiemannianMetric 2 S)
@@ -672,8 +656,6 @@ theorem internal_top_convex_complement_angle
       2 * Real.pi - g.cornerAngle _ (L (c 1 - c 0)) (L (c 2 - c 0))
   linarith
 
-
-
 theorem internal_top_refined_vertex_fan_eq_convex_sector
     (g : RiemannianMetric 2 S)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -711,8 +693,6 @@ theorem internal_top_refined_vertex_fan_eq_convex_sector
     congrArg (fun z : Plane => (mfderiv (𝓡 2) (𝓡 2) C z (c k - c 0) : Plane)) hc0.symm
   rw [hv, hd 1, hd 2] at hres
   exact hres
-
-
 
 theorem internal_top_refined_vertex_fan_eq_reflex_sector
     (g : RiemannianMetric 2 S)
@@ -773,8 +753,6 @@ theorem chartTopChord_direction (i : Fin B.faces.interface.count) :
     simp only [Prod.snd_sub]
     linarith
 
-
-
 theorem internal_top_straight_complement_angle
     (g : RiemannianMetric 2 S)
     (hC : ContMDiffOn (𝓡 2) (𝓡 2) ∞ C C.source)
@@ -815,8 +793,6 @@ theorem internal_top_straight_complement_angle
   rw [hl, hray, g.cornerAngle_smul_pos_right _ _ _ (mul_pos hr hdi),
     g.cornerAngle_smul_pos_right _ _ _ (mul_pos hs hdj), g.cornerAngle_neg_right]
   ring
-
-
 
 theorem internal_top_refined_vertex_fan_eq_pi_of_slope_eq
     (g : RiemannianMetric 2 S)

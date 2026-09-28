@@ -6,14 +6,6 @@ import Mathlib.Topology.Maps.Proper.Basic
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -60,8 +52,6 @@ private theorem tangentNorm_gradient_const_mul (D : LeviCivitaData g)
   rw [gradient_const_mul]
   change ‖c • D.gradient f x‖ = c * ‖D.gradient f x‖
   rw [norm_smul, Real.norm_eq_abs, abs_of_nonneg hc]
-
-
 
 theorem normalized_wide_regular_slab (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

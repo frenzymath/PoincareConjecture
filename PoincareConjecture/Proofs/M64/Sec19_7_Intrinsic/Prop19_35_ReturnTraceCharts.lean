@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryArcTopology
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,10 +7,6 @@ open Set Function
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_return_trace_homeomorph
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ} (hT : 0 < T)
@@ -55,11 +40,6 @@ theorem m64Intrinsic_return_trace_homeomorph
   let e := (hfc.isClosedEmbedding hfi).isEmbedding.toHomeomorph.trans
     (Homeomorph.setCongr hrange)
   exact ⟨e, fun t ht => AddCircle.liftIco_zero_coe_apply ht⟩
-
-
-
-
-
 
 theorem m64Intrinsic_return_trace_real_charts
     {gamma : ℝ → AnnulusCoordinates} {T : ℝ} (hT : 0 < T)

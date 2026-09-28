@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Product.AnnularParameter.PairCylinder
 import PoincareConjecture.Proofs.M76.Rigidity.InwardCollarCoordinates
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -15,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "Disk" => closedBall (0 : P2) 1
 local notation "Rim" => sphere (0 : P2) 1
-
-
 
 theorem exists_final_ball_product_of_end_disk_images
     {E₀ E₁ X ι : Type*}

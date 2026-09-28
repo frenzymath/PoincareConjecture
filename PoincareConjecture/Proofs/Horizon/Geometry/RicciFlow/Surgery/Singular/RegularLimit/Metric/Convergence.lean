@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.CompactConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Terminal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -38,7 +30,6 @@ theorem regularRegion_chart_target_regular
   change (extChartAt (𝓡 3) (q : M)).symm z ∈ H.reference.regularLimitSet
   rw [H.regularRegion_chart_inverse P04 q hz]
   exact ((extChartAt (𝓡 3) q).symm z).property
-
 
 theorem tendstoUniformlyOn_terminalMetric_jets
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -82,8 +73,6 @@ private theorem source_scalar_chart_coefficient
         (EuclideanSpace.basisFun (Fin 3) ℝ b))
   rw [H.regularRegion_chart_inverse P04 q hz, H.regularRegion_chart_mfderiv P04 q hz]
   rfl
-
-
 
 theorem compactSingularMetricLimit_terminalMetric
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u}) :

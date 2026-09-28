@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +10,6 @@ namespace Set
 variable {X Y : Type*}
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension_of_disjoint_end_intervals
     {s : Set X} {t : Set Y} (d : Bool → Set X) (D : Bool → Set Y)

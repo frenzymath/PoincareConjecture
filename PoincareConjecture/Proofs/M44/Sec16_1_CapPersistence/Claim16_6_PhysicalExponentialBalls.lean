@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ExponentialFrames
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ExponentialBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,16 +17,12 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
 
-
-
 theorem frame_tangentNorm (D : NormalizedCapExponential Q R) (v : E) :
     Q.normalizedMetric.tangentNorm tip (D.frame v) = ‖v‖ := by
   have hframe := D.frame_inner v v
   rw [Q.normalizedMetric.chartCoefficients_self] at hframe
   rw [RiemannianMetric.tangentNorm, hframe, real_inner_self_eq_norm_sq,
     Real.sqrt_sq (norm_nonneg v)]
-
-
 
 theorem radial_initial_derivative (D : NormalizedCapExponential Q R) (v : E) :
     HasDerivAt (fun t : ℝ => extChartAt (𝓡 3) tip (D.map (t • v))) (D.frame v) 0 := by
@@ -45,17 +32,12 @@ theorem radial_initial_derivative (D : NormalizedCapExponential Q R) (v : E) :
   have hd := hd0.comp_hasDerivAt 0 ((hasDerivAt_id (0 : ℝ)).smul_const v)
   simpa only [Function.comp_def, id_eq, one_smul, ContinuousLinearEquiv.coe_coe] using hd
 
-
-
 private theorem radial_mem_unit_interval
     {v : E} (hv : v ∈ Metric.ball 0 R) {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) :
     t • v ∈ Metric.ball 0 R := by
   have hvR : ‖v‖ < R := by simpa only [Metric.mem_ball, dist_zero_right] using hv
   rw [Metric.mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs, abs_of_nonneg ht.1]
   exact (mul_le_mul_of_nonneg_right ht.2 (norm_nonneg v)).trans_lt (by simpa using hvR)
-
-
-
 
 theorem exists_minimizing_parameter (D : NormalizedCapExponential Q R)
     (hcompact : IsCompact (closure (Q.normalizedMetric.ball tip R)))
@@ -93,9 +75,6 @@ theorem exists_minimizing_parameter (D : NormalizedCapExponential Q R)
   refine ⟨v, hv, ?_, hnormv⟩
   simpa only [one_smul] using hend.symm.trans hγ1
 
-
-
-
 theorem image_ball (D : NormalizedCapExponential Q R)
     (hcompact : IsCompact (closure (Q.normalizedMetric.ball tip R)))
     {r : ℝ} (hr : 0 < r) (hrR : r ≤ R) :
@@ -116,9 +95,6 @@ theorem image_ball (D : NormalizedCapExponential Q R)
     apply (ENNReal.ofReal_lt_ofReal_iff hr).mp
     rw [hnorm]
     exact hq
-
-
-
 
 theorem radial_edist_of_injOn (D : NormalizedCapExponential Q R)
     (hcompact : IsCompact (closure (Q.normalizedMetric.ball tip R)))

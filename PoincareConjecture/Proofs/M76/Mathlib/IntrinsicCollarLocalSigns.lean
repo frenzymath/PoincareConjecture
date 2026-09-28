@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarSlab
 import PoincareConjecture.Proofs.M76.Mathlib.CollarBottomClosure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.mem_closure_positive_of_ne_apex
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}
@@ -31,10 +18,6 @@ theorem AlexanderCollarSlab.mem_closure_positive_of_ne_apex
     (M.upper_pos x hx hxq)
   intro p _ _
   exact (M.cover.subset (Or.inl (M.chart p).property)).1
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_both_signs_in_open
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

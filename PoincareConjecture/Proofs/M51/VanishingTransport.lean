@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M48.StaticNeck
 import PoincareConjecture.Proofs.M48.StaticCap
 import PoincareConjecture.Proofs.M48.StaticComponents
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,12 +25,6 @@ variable {P₀ P₁ : SurgeryParameters}
     {metric₁ : ∀ t, RiemannianMetric 3 (slice₁ t).carrier}
     {T : ℝ}
 
-
-
-
-
-
-
 structure PullbackData (A : SurgeryVanishingEventData P₀ slice₀ metric₀ T)
     (slice₁ : ℝ → GeneralizedSliceCarrier.{u})
     (metric₁ : ∀ t, RiemannianMetric 3 (slice₁ t).carrier)
@@ -57,9 +41,6 @@ structure PullbackData (A : SurgeryVanishingEventData P₀ slice₀ metric₀ T)
           (mfderiv (𝓡 3) (𝓡 3) (sliceMap t) y v)
           (mfderiv (𝓡 3) (𝓡 3) (sliceMap t) y w) =
         (metric₀ t.1).inner y v w
-
-
-
 
 noncomputable def PullbackData.toEvent
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -209,8 +190,6 @@ noncomputable def PullbackData.toEvent
               simpa only [e, H.sectional_eq (F.connection t)
                 (A.pre_flow.connection t), div_one] using hbound
 
-
-
 @[simp] theorem PullbackData.toEvent_tMinus
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (A : SurgeryVanishingEventData P₀ slice₀ metric₀ T)
@@ -218,8 +197,6 @@ noncomputable def PullbackData.toEvent
       (slice₁ A.tMinus).carrier (slice₀ A.tMinus).carrier ∞}
     (D : PullbackData A slice₁ metric₁ initial) :
     (PullbackData.toEvent m13 A D).tMinus = A.tMinus := rfl
-
-
 
 @[simp] theorem PullbackData.toEvent_disappearing_start
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -229,8 +206,6 @@ noncomputable def PullbackData.toEvent
     (D : PullbackData A slice₁ metric₁ initial) :
     (PullbackData.toEvent m13 A D).disappearing_start = A.disappearing_start := rfl
 
-
-
 @[simp] theorem PullbackData.toEvent_left_limit_volume
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (A : SurgeryVanishingEventData P₀ slice₀ metric₀ T)
@@ -238,8 +213,6 @@ noncomputable def PullbackData.toEvent
       (slice₁ A.tMinus).carrier (slice₀ A.tMinus).carrier ∞}
     (D : PullbackData A slice₁ metric₁ initial) :
     (PullbackData.toEvent m13 A D).left_limit_volume = A.left_limit_volume := rfl
-
-
 
 theorem PullbackData.toEvent_pre_identify
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -250,8 +223,6 @@ theorem PullbackData.toEvent_pre_identify
     (t : Set.Ico A.tMinus T) (x : (slice₁ A.tMinus).carrier) :
     (PullbackData.toEvent m13 A D).pre_identify t x =
       D.sliceMap t (A.pre_identify t (initial x)) := rfl
-
-
 
 theorem PullbackData.toEvent_pre_metric_homothety
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -265,8 +236,6 @@ theorem PullbackData.toEvent_pre_metric_homothety
   simp only [one_mul]
   rfl
 
-
-
 theorem PullbackData.toEvent_terminalPolicy
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (A : SurgeryVanishingEventData P₀ slice₀ metric₀ T)
@@ -277,8 +246,6 @@ theorem PullbackData.toEvent_terminalPolicy
     SurgeryVanishingEventTerminalPolicy (PullbackData.toEvent m13 A D) := by
   exact transportTerminalPolicy m13 A (PullbackData.toEvent m13 A D)
     rfl rfl initial (fun t _ => D.toEvent_pre_metric_homothety m13 A t) policy
-
-
 
 theorem volume_univ_eq_of_isometry
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -300,8 +267,6 @@ theorem volume_univ_eq_of_isometry
     ENNReal.ofReal_one, one_mul] at hv
   exact hv.symm
 
-
-
 theorem volume_function_eq_on
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (B : SurgeryVanishingEventData P₁ slice₁ metric₁ T)
@@ -317,12 +282,6 @@ theorem volume_function_eq_on
   intro t ht
   exact volume_univ_eq_of_isometry m13 t (metric₁ t) (metric₀ t)
     (q t ht) (hq t ht)
-
-
-
-
-
-
 
 theorem left_limit_volume_eq
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
@@ -343,9 +302,6 @@ theorem left_limit_volume_eq
       (nhdsWithin T (Set.Iio T)) (𝓝 A.left_limit_volume) :=
     A.left_limit_volume_tendsto.congr' hev.symm
   exact (tendsto_nhds_unique hB B.left_limit_volume_tendsto).symm
-
-
-
 
 theorem transport
     (m13 : GeneralizedParabolicRescalingTheory.{u} 3)

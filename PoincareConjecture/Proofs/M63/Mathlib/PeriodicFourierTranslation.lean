@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem fourierCoeff_sub_const {L : ℝ} [Fact (0 < L)]
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E] [CompleteSpace E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryDefiningCut
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainExterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
-
-
-
 
 theorem PLDomain.exists_signed_defining_function (he : PLDomain e R)
     (hR : IsCompact R) (hExt : IsCompact (interior R)ᶜ) :

@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +11,8 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def capRadialProfile (r c t : ℝ) : ℝ :=
   c * t + (r - c) * Real.smoothTransition (4 * t - 1)
-
 
 theorem capRadialProfile_smooth (r c : ℝ) : ContDiff ℝ ∞ (capRadialProfile r c) := by
   unfold capRadialProfile
@@ -31,27 +20,22 @@ theorem capRadialProfile_smooth (r c : ℝ) : ContDiff ℝ ∞ (capRadialProfile
     (contDiff_const.mul (Real.smoothTransition.contDiff.comp
       ((contDiff_const.mul contDiff_id).sub contDiff_const)))
 
-
 theorem capRadialProfile_linear (r c t : ℝ) (ht : t ≤ 1 / 4) :
     capRadialProfile r c t = c * t := by
   simp [capRadialProfile, Real.smoothTransition.zero_of_nonpos (by linarith :
     4 * t - 1 ≤ 0)]
-
 
 theorem capRadialProfile_affine (r c t : ℝ) (ht : 1 / 2 ≤ t) :
     capRadialProfile r c t = r + c * (t - 1) := by
   rw [capRadialProfile, Real.smoothTransition.one_of_one_le (by linarith)]
   ring
 
-
 @[simp] theorem capRadialProfile_zero (r c : ℝ) : capRadialProfile r c 0 = 0 := by
   rw [capRadialProfile_linear r c 0 (by norm_num), mul_zero]
-
 
 @[simp] theorem capRadialProfile_one (r c : ℝ) : capRadialProfile r c 1 = r := by
   rw [capRadialProfile_affine r c 1 (by norm_num)]
   ring
-
 
 theorem capRadialProfile_strictMono {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     StrictMono (capRadialProfile r c) := by
@@ -59,7 +43,6 @@ theorem capRadialProfile_strictMono {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
   exact add_lt_add_of_lt_of_le (mul_lt_mul_of_pos_left hab hc)
     (mul_le_mul_of_nonneg_left (Real.smoothTransition.monotone (by linarith))
       (sub_nonneg.mpr hcr.le))
-
 
 theorem capRadialProfile_deriv_pos {r c : ℝ} (hc : 0 < c) (hcr : c < r) (t : ℝ) :
     0 < deriv (capRadialProfile r c) t := by
@@ -74,7 +57,6 @@ theorem capRadialProfile_deriv_pos {r c : ℝ} (hc : 0 < c) (hcr : c < r) (t : �
   rw [hderiv]
   exact add_pos_of_pos_of_nonneg hc
     (mul_nonneg (sub_nonneg.mpr hcr.le) hmono.deriv_nonneg)
-
 
 theorem capRadialProfile_surjective {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     Function.Surjective (capRadialProfile r c) := by
@@ -98,15 +80,12 @@ theorem capRadialProfile_surjective {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     (capRadialProfile_smooth r c).continuous.continuousOn ⟨hlo, hhi⟩
   exact ⟨t, ht⟩
 
-
 noncomputable def capRadialOrderIso (r c : ℝ) (hc : 0 < c) (hcr : c < r) : ℝ ≃o ℝ :=
   (capRadialProfile_strictMono hc hcr).orderIsoOfSurjective _
     (capRadialProfile_surjective hc hcr)
 
-
 @[simp] theorem capRadialOrderIso_apply (r c : ℝ) (hc : 0 < c) (hcr : c < r) (t : ℝ) :
     capRadialOrderIso r c hc hcr t = capRadialProfile r c t := rfl
-
 
 theorem capRadialOrderIso_symm_smooth {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     ContDiff ℝ ∞ (capRadialOrderIso r c hc hcr).symm := by
@@ -114,7 +93,6 @@ theorem capRadialOrderIso_symm_smooth {r c : ℝ} (hc : 0 < c) (hcr : c < r) :
     (fun t => (capRadialProfile_deriv_pos hc hcr t).ne')
     (fun t => ((capRadialProfile_smooth r c).differentiable (by simp) t).hasDerivAt)
     (capRadialProfile_smooth r c)
-
 
 theorem capRadialOrderIso_symm_linear {r c : ℝ} (hc : 0 < c) (hcr : c < r)
     (t : ℝ) (ht : t ≤ c / 4) :

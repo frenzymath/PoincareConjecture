@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardTopology
 import PoincareConjecture.Proofs.M47.CanonicalCoreBallContainment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem cap_outward_path_length_lower {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hmargin : b + 8 < N.epsilon⁻¹)
@@ -75,8 +65,6 @@ theorem cap_outward_path_length_lower {b : ℝ}
         field_simp [N.end_neck.scale_pos.ne']]
   exact hlength.trans (M36.metric_pathELength_mono g gamma ha.1 le_rfl)
 
-
-
 theorem cap_outward_small_ball_subset_recut {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hmargin : b + 8 < N.epsilon⁻¹)
     {y : M} (hy : y ∈ N.recutCarrier b) {r : ℝ} (hr : 0 < r)
@@ -102,8 +90,6 @@ theorem cap_outward_small_ball_subset_recut {b : ℝ}
   have hradius : ENNReal.ofReal r ≤ ENNReal.ofReal (7 * N.end_neck.scale / 2) :=
     ENNReal.ofReal_le_ofReal (by linarith [N.end_neck.scale_pos])
   exact not_lt_of_ge (hradius.trans htotal) hlength
-
-
 
 theorem cap_outward_small_ball_captured {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hmargin : b + 8 < N.epsilon⁻¹)

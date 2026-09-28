@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u v
 
 namespace PoincareConjecture
-
-
 
 def MetricHomothety {n : ℕ} {M : Type u} {N : Type v}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

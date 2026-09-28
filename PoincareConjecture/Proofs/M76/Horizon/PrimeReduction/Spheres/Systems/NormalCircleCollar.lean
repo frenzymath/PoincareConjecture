@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PositionedCircleCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.OriginalCircleNormalNeighborhood
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
@@ -139,4 +131,3 @@ theorem exists_positioned_sphere_system_normal_circle_collar
       H hH hSigmaZero hAxisInt
 
 end PoincareConjecture.M76
-

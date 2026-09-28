@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatEnergy
 import PoincareConjecture.Proofs.M35.Uniqueness.CompleteScalarMaximum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem bounded_vector_heat_normSq_le
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -74,8 +62,6 @@ theorem bounded_vector_heat_normSq_le
     change -1 * (G.flow.connection t).laplacian (Q t) x + 0 * (C - Q t x) ≤ -a
     change a ≤ (G.flow.connection t).laplacian (Q t) x at hL
     linarith
-
-
 
 theorem bounded_vector_heat_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

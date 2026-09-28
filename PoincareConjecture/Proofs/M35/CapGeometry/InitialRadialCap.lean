@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.InitialCompactOperators
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialCoreVolume
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCapNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 local notation "V" => StandardCapSpace
-
-
-
 
 theorem exists_initial_radial_caps
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

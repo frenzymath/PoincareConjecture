@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.PicardHessian
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceDerivativeEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelJetEnd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

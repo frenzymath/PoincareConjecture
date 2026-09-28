@@ -1,15 +1,11 @@
 import Mathlib.Topology.Separation.Regular
 
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem connectedComponentIn_inter_frontier_nonempty
     {X : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
@@ -67,8 +63,6 @@ theorem connectedComponentIn_inter_frontier_nonempty
   apply eq_univ_of_univ_subset
   rw [← hall]
   exact hVint.trans interior_subset
-
-
 
 theorem connectedComponentIn_diff_inter_frontier_nonempty
     {X : Type*} [TopologicalSpace X] [T2Space X]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SuppliedCanonicalBoun
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SliceCongruence
 import PoincareConjecture.Proofs.M63.Adapters
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))} {zeta : ℝ}
-
-
-
-
 
 theorem m63FamilyConclusion_of_solutions (G : M63AmbientGeometry F)
     (Q : M63AnalyticConclusion F G) (A : M63RawApproximation F Gamma zeta)

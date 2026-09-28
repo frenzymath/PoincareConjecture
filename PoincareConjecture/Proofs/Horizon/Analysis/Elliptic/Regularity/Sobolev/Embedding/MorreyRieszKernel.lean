@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.BallRepresentation
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Approximation
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function
@@ -20,7 +13,6 @@ namespace EuclideanMorrey
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 def meanLebesgueOnBall (B : Set E) (u : E → ℝ) : ℝ :=
   ⨍ z in B, u z ∂(volume : Measure E)

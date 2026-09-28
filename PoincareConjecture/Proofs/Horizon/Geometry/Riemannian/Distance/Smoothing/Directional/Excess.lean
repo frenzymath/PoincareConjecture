@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity.Derivative
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,9 +40,6 @@ private theorem distance_increment_on_minimizing_segment
       ENNReal.toReal_ofReal (sub_nonneg.mpr hTq)] at heq
     have htriangle := g.toReal_edist_triangle p (γ T) q
     linarith
-
-
-
 
 theorem exists_opposite_witness_of_distance_approx
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
@@ -116,8 +103,6 @@ theorem exists_opposite_witness_of_distance_approx
     dsimp only [E] at hlower
     linarith
 
-
-
 theorem gradient_norm_lower_bound_of_distance_approx
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)
     (p x q : M) {T ε H : ℝ} (hT : 0 < T) (hTq : T ≤ (g.edist x q).toReal)
@@ -134,8 +119,6 @@ theorem gradient_norm_lower_bound_of_distance_approx
   rw [← D.inner_gradient, hw, mul_one] at hcs
   have habs := neg_le_abs (g.inner x (D.gradient u x) w)
   linarith
-
-
 
 theorem mfderiv_ne_zero_of_distance_approx
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (hc : MetricComplete g)

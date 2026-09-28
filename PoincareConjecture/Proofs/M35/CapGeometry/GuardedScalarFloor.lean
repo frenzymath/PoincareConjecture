@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.UnitTimeScalarEstimates
 import PoincareConjecture.Proofs.M35.TerminalBlowup.ScalarNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M35
-
-
 
 theorem scalar_floor_on_ball_of_guarded_gradient
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)
@@ -61,8 +50,6 @@ theorem scalar_floor_on_ball_of_guarded_gradient
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
 
 theorem exists_high_scalar_ball_floor (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀) :

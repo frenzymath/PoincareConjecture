@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.CalibratedPushforward
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem integrableOn_calibrated_iff_pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -43,7 +34,6 @@ theorem integrableOn_calibrated_iff_pullback (g : RiemannianMetric n M)
     (Filter.Eventually.of_forall (fun _ ↦ ENNReal.ofReal_lt_top))]
   simp only [Function.comp_apply, ENNReal.toReal_ofReal (pullbackJacobian_nonneg g e _),
     smul_eq_mul, IntegrableOn]
-
 
 theorem integralOn_calibrated_eq_pullback (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

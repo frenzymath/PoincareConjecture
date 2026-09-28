@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetWeak
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalFluxExtension
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalWeakEquation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +16,6 @@ namespace PoincareConjecture.M60
 
 attribute [local instance] affineJetPrincipalNormedGroup affineJetPrincipalNormedSpace
   affineJetSourceNormedGroup affineJetSourceNormedSpace
-
-
 
 theorem suAffineCoefficient_supported_extension {p q : ℕ}
     {O K : Set (EuclideanSpace ℝ (Fin p))} (hO : IsOpen O) (hK : IsCompact K) (hKO : K ⊆ O)
@@ -58,8 +42,6 @@ theorem suAffineCoefficient_supported_extension {p q : ℕ}
     dsimp only [N]
     simp only [map_smul, smul_eq_mul, Real.rpow_neg_one]
     field_simp
-
-
 
 theorem suJetCoefficient_derivative_memLp {m : ℕ}
     {u V : LoopPlane → EuclideanSpace ℝ (Fin m)} {a : LoopPlane} {R : ℝ} {p : ℝ≥0∞}
@@ -96,8 +78,6 @@ theorem suJetCoefficient_derivative_memLp {m : ℕ}
       mul_le_mul_of_nonneg_right ((hC x (ball_subset_closedBall hx)).trans
         (le_max_left C 0)) (norm_nonneg _)
     _ = _ := by rw [Real.norm_eq_abs, abs_of_nonneg (by positivity)]
-
-
 
 theorem suWeakPartial_jet_coefficient_mul {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -139,12 +119,9 @@ theorem suWeakPartial_jet_coefficient_mul {m : ℕ}
     (fun j => (hDg j).mono_measure (Measure.restrict_mono hsub le_rfl))
     hchain (fun j => (hwg j).restrict isOpen_ball hsub) i
 
-
 def suAffineJetFlux {m : ℕ} (C : SUAffineJetCoefficients m) (a : Fin m) (i : Fin 2)
     (z : EuclideanSpace ℝ (Fin ((2 + m) + (m + m)))) : ℝ :=
   C.flux (suAlphaJetEquiv z).1 (suAlphaJetEquiv z).2 (suColumnBasis a i)
-
-
 
 theorem suAffineJetFlux_extension {m : ℕ} (C : SUAffineJetCoefficients m)
     {O K : Set (LoopPlane × EuclideanSpace ℝ (Fin m))}
@@ -193,8 +170,6 @@ theorem suAffineJetFlux_extension {m : ℕ} (C : SUAffineJetCoefficients m)
   rw [hz]
   rfl
 
-
-
 theorem SUInitialGain.affine_flux_weak_derivative {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin m)} {center : LoopPlane} {R : ℝ}
@@ -239,8 +214,6 @@ theorem SUInitialGain.affine_flux_weak_derivative {m : ℕ}
   have ht := (heq x (ball_subset_closedBall (hsub hx))).self_of_nhds.symm
   simpa only [suAffineJetFlux, suWeakAlphaJet, suAlphaJetEquiv.apply_symm_apply] using ht
 
-
-
 theorem suAffineJetFlux_fderiv {m : ℕ} (C : SUAffineJetCoefficients m)
     (z : LoopPlane × EuclideanSpace ℝ (Fin m))
     (q : EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m))
@@ -268,9 +241,6 @@ theorem suAffineJetFlux_fderiv {m : ℕ} (C : SUAffineJetCoefficients m)
   change (fderiv ℝ (fun p => C.flux p.1 p.2) (z, q) (v, H)) (suColumnBasis a i) = _
   rw [C.flux_fderiv z q hA hc v H]
   rfl
-
-
-
 
 theorem suAffineWeakEquation_trace {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -355,6 +325,5 @@ theorem suAffineWeakEquation_trace {m : ℕ}
           (V 0 x, V 1 x) + fderiv ℝ C.fluxOffset (x, u x)
             (EuclideanSpace.single i 1, V i x)) (suColumnBasis a i)) = 0
   linarith only [he]
-
 
 end PoincareConjecture.M60

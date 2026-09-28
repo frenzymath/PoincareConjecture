@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.UpperArcFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshSubfamilyContribution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -27,8 +20,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
 
 theorem band_core_union_mem_nhds
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -78,8 +69,6 @@ theorem vertex_contribution_eq_band_add_core
     cases h
   · rwa [T.band_parent_support_union p i, T.core_parent_support_union p.1.1]
 
-
-
 theorem collar_halfspace_at_open_band_top
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
     (j : Fin (T.bands p i).faces.interface.count) {t : ℝ}
@@ -116,8 +105,6 @@ theorem collar_halfspace_at_open_band_top
       have hys := T.chart_source p.1.1 (T.band_regions p i hy)
       simpa only [C.right_inv hys] using hy
   exact hlocal.trans (himage.trans (B.ambient_carrier_open_top_halfspace j ht))
-
-
 
 theorem core_halfspace_at_open_band_top
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)

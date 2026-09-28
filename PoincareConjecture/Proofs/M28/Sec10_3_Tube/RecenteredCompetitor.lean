@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.EndpointRecentering
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_recentered_competitor_of_connectors
     (g : RiemannianMetric 3 M) {U : Set M} {epsilon C A Q : ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.TranslatedEndCharts
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 theorem endAxialTranslation_isLocalDiffeomorphAt (e : StandardCylindricalEnd g)
     (s : ℝ) {z : StandardCylinderSpace} (hz : 0 < z.2) (hsz : 0 < z.2 + s) :
@@ -77,14 +66,10 @@ theorem endAxialTranslation_isLocalDiffeomorphAt (e : StandardCylindricalEnd g)
   refine ⟨D, ⟨z, ⟨mem_univ _, max_lt_iff.mpr ⟨hz, by linarith⟩⟩, rfl⟩, ?_⟩
   exact fun _ _ => rfl
 
-
-
 instance endReferenceRegion_nonempty (e : StandardCylindricalEnd g) :
     Nonempty (endReferenceRegion e) := by
   let u : UnitTwoSphere := ⟨EuclideanSpace.single 0 1, by simp⟩
   exact ⟨⟨e.coordinate (u, 4), ⟨(u, 4), ⟨mem_univ _, by norm_num⟩, rfl⟩⟩⟩
-
-
 
 theorem endReferenceTranslation_isLocalDiffeomorph (e : StandardCylindricalEnd g)
     {s : ℝ} (hs : -3 < s) :

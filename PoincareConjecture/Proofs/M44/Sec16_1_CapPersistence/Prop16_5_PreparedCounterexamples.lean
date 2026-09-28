@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_Counterexam
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_MaximalSamples
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_InitialExactCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,13 +19,9 @@ namespace CapPersistenceCounterexample
 variable {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}
   {start rNext A eta theta cutoff : ℝ}
 
-
-
 noncomputable def assignedDuration
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff) : ℝ :=
   surgeryCapDuration X.time X.observation.H (X.flow.parameters.h X.time) theta
-
-
 
 theorem assignedDuration_pos
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff)
@@ -42,14 +29,10 @@ theorem assignedDuration_pos
   surgeryCapDuration_pos X.observation_time.2
     (X.flow.parameters.h_pos X.time X.observation_time.1) htheta
 
-
-
 theorem assignedDuration_le
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff) :
     X.assignedDuration ≤ theta :=
   surgeryCapDuration_le (X.flow.parameters.h_pos X.time X.observation_time.1)
-
-
 
 theorem assigned_time_mem
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff)
@@ -62,9 +45,6 @@ theorem assigned_time_mem
     X.after_start.trans ht.1⟩
 
 end CapPersistenceCounterexample
-
-
-
 
 structure PreparedCapCounterexample {constants : MetricSurgeryConstants}
     (setup : SurgeryControlSetup constants) (start rNext A eta theta cutoff R : ℝ) where
@@ -79,9 +59,6 @@ structure PreparedCapCounterexample {constants : MetricSurgeryConstants}
   comparison_neck : ((@SurgeryFlowData.event data.flow data.time data.is_surgery
     data.birth_nonempty).necks data.cap).neck.epsilon ≤
       data.flow.local_constants.comparison_delta sample.eta
-
-
-
 
 theorem exists_prepared_cap_counterexamples
     (P : M44CapPersistencePredecessors.{u})
@@ -146,9 +123,6 @@ theorem exists_prepared_cap_counterexamples
   choose Y hY using hprepared
   refine ⟨cutoffs, hcutoffs, hcutlim, Y, ?_⟩
   simpa only [hY] using haccuracy_lim
-
-
-
 
 theorem prepared_counterexample_duration_subsequence
     {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}

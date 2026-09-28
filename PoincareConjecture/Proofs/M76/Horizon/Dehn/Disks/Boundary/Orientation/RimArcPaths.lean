@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexIntrinsicInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -20,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
-
 
 theorem exists_subcomplex_of_closed_vertex_partition
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -73,8 +64,6 @@ theorem exists_subcomplex_of_closed_vertex_partition
       (closure_minimal hinside hU)
   exact SimplicialComplex.mem_space_iff.mpr ⟨s, ⟨hs, hface⟩, intrinsicInterior_subset hxs⟩
 
-
-
 theorem exists_edge_path_in_closed_vertex_partition
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (U V : Set E) (hU : IsClosed U) (hV : IsClosed V)
@@ -114,8 +103,6 @@ theorem exists_edge_path_in_closed_vertex_partition
     refine ⟨hLK hadj, ?_⟩
     intro x hx
     exact hLU ▸ L.convexHull_subset_space hadj (by simpa only [Finset.coe_pair] using hx)
-
-
 
 theorem exists_edge_path_in_homeomorphic_rim_arc
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) {W : Set E}

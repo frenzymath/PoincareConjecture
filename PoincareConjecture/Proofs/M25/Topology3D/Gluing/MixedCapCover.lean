@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCapCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_exists_projective_smooth_cover_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

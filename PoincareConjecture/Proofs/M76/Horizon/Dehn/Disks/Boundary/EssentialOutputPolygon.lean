@@ -16,9 +16,6 @@ local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 1 (1 / 8 : ℝ)
 
-
-
-
 theorem exists_essential_output_polygon
     {T : Set V3} (c : Ann ≃ₜ T) (hc : c.IsFinitePL)
     (j : V2 → V3) (hj : FinitePiecewiseAffineOn j D2) (hi : InjOn j D2)

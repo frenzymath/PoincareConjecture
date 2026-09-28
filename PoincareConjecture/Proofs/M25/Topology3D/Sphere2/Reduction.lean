@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.Normalization
 import PoincareConjecture.Proofs.M25.Topology3D.Sphere2.CompactPlaneTransfer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M25.Topology3D
 
 private instance sphereDimensionFact : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
-
-
-
 
 theorem diffSphereIsotopyService_of_compactPlanarIsotopyProperty
     (hPlane : CompactPlanarIsotopyProperty) : DiffSphereIsotopyService := by

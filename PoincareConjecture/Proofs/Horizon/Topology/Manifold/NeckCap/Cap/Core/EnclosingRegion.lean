@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Noncompac
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.ProjectiveEnclosure
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_enclosing_region_euclidean (C : CapCertificate g)
     (hkind : C.model_kind = .euclidean) {S : Set M}
@@ -70,8 +59,6 @@ theorem exists_enclosing_region_euclidean (C : CapCertificate g)
     rw [← Module.finrank_eq_rank]
     norm_num
 
-
-
 theorem exists_enclosing_region (C : CapCertificate g)
     {S : Set M} (hS : IsCompact S) (hSC : S ⊆ C.carrier) :
     ∃ U : Set M, IsOpen U ∧ IsCompact (closure U) ∧
@@ -91,8 +78,6 @@ private theorem subset_open_of_disjoint_frontier {A U : Set M}
   have heq := hopen.eq_univ ⟨⟨x, hx⟩, hxU⟩
   intro y hy
   exact (show (⟨y, hy⟩ : A) ∈ Subtype.val ⁻¹' U from heq ▸ mem_univ _)
-
-
 
 theorem closed_side_subset_of_boundary_subset (C D : CapCertificate g)
     (hboundary : D.boundary_sphere ⊆ C.carrier) :
@@ -127,8 +112,6 @@ theorem closed_side_subset_of_boundary_subset (C D : CapCertificate g)
     rw [← D.closure_core_eq_closed_core]
     exact (closure_mono hsub).trans hUC
 
-
-
 theorem closed_core_subset_of_nested_boundary_subset (C D : CapCertificate g)
     (hCD : C.carrier ⊆ D.carrier)
     (hboundary : D.boundary_sphere ⊆ C.carrier) : D.closed_core ⊆ C.carrier := by
@@ -142,8 +125,6 @@ theorem closed_core_subset_of_nested_boundary_subset (C D : CapCertificate g)
       rw [← D.closed_core_union_closure_exterior]
       exact union_subset D.closed_core_subset_carrier (h.2.trans hCD)
     exact False.elim (D.not_isCompact_carrier (hfull ▸ hcompact))
-
-
 
 theorem not_boundary_subset_of_nested_frontier_contact (C D : CapCertificate g)
     (hCD : C.carrier ⊆ D.carrier)

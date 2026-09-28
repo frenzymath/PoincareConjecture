@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarAnnulusCollars
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +13,6 @@ open scoped Topology Manifold ContDiff ENNReal NNReal Bundle
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Cover" => ℝ × ℝ
-
-
-
-
 
 def scalarAnnulusClamp (z : Cover) : LoopPlane :=
   annulusPoint (curvePeriod * z.1) (projIcc 0 1 (by norm_num) z.2)
@@ -42,10 +27,6 @@ private theorem angularScale_apply (z : Cover) :
   ext i
   fin_cases i <;> simp [angularScale, annulusPoint, EuclideanSpace.basisFun_apply, mul_comm]
 
-
-
-
-
 theorem scalarAnnulusClamp_lipschitz :
     ∃ L : ℝ≥0, LipschitzWith L scalarAnnulusClamp := by
   have hclamp : LipschitzWith 1
@@ -59,10 +40,6 @@ theorem scalarAnnulusClamp_lipschitz :
   simpa only [mul_one, Function.comp_def, angularScale_apply, scalarAnnulusClamp] using!
     angularScale.lipschitz.comp hclamp
 
-
-
-
-
 theorem scalarAnnulusClamp_mem {z : Cover} (hz : z.1 ∈ Icc (0 : ℝ) 1) :
     scalarAnnulusClamp z ∈ m64AnnulusDomain := by
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
@@ -73,10 +50,6 @@ theorem scalarAnnulusClamp_mem {z : Cover} (hz : z.1 ∈ Icc (0 : ℝ) 1) :
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarAnnulus_clamped_lift
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M} (A : M64Annulus g c0 c1) :

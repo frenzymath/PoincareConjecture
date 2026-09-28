@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Cor0_3_AmbientBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m63Exists_firstJet_ambient_bounds
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M)) :

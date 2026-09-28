@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLift
 import Mathlib.AlgebraicTopology.SimplicialSet.SubcomplexColimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,13 +14,9 @@ namespace PoincareConjecture.Proofs.M59
 
 variable {J : Type u} [PartialOrder J]
 
-
-
 def supportedNerve (s : Finset J) : (nerve J).Subcomplex where
   obj _ := {z | ∀ i, z.obj i ∈ s}
   map f _ hz i := hz (f.unop i)
-
-
 
 theorem supportedNerve_mono {s t : Finset J} (h : s ⊆ t) :
     supportedNerve s ≤ supportedNerve t :=
@@ -38,14 +24,11 @@ theorem supportedNerve_mono {s t : Finset J} (h : s ⊆ t) :
 
 open scoped Classical in
 
-
 theorem supportedNerve_inter (s t : Finset J) :
     supportedNerve (s ∩ t) = supportedNerve s ⊓ supportedNerve t := by
   ext n z
   change (∀ i, z.obj i ∈ s ∩ t) ↔ (∀ i, z.obj i ∈ s) ∧ ∀ i, z.obj i ∈ t
   simp only [Finset.mem_inter, forall_and]
-
-
 
 theorem supportedNerve_univ [Fintype J] :
     supportedNerve (Finset.univ : Finset J) = ⊤ := by
@@ -54,7 +37,6 @@ theorem supportedNerve_univ [Fintype J] :
   simp only [Finset.mem_univ, implies_true]
 
 open scoped Classical in
-
 
 theorem supportedNerve_minimal_union (s : Finset J) (v : J)
     (hminimal : ∀ j ∈ s, j ≤ v → j = v) :
@@ -78,7 +60,6 @@ theorem supportedNerve_minimal_union (s : Finset J) (v : J)
 
 open scoped Classical in
 
-
 theorem supportedNerve_minimal_inter (s : Finset J) (v : J) :
     supportedNerve (s.erase v) ⊓ supportedNerve (s.filter (v ≤ ·)) =
       supportedNerve (s.filter (v < ·)) := by
@@ -95,13 +76,10 @@ theorem supportedNerve_minimal_inter (s : Finset J) (v : J) :
 variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (χ : nerve J ⟶ TopCat.toSSet.obj (TopCat.of X))
 
-
-
 def supportedSingularLift (s : Finset J) : (singularLiftSSet p (nerve J) χ).Subcomplex :=
   (supportedNerve s).preimage (singularLiftBase p (nerve J) χ)
 
 open scoped Classical in
-
 
 theorem supportedSingularLift_minimal_union (s : Finset J) (v : J)
     (hminimal : ∀ j ∈ s, j ≤ v → j = v) :

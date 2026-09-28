@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.ExceptionalValues
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleInteriorCrossingChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -30,8 +20,6 @@ variable {U V M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
 namespace OriginalRelativeNormalization
 
 variable (D : OriginalRelativeNormalization step K j R boundary)
-
-
 
 theorem exists_triangle_comparison_chart
     (hcard : ∀ a ∈ K.faces, a.card ≤ 3)

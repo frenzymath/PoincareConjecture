@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.Ch01.TensorOperators
 import Mathlib.Data.Fintype.BigOperators
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,7 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem curvatureDerivativeNorm_zero {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (x : M) :

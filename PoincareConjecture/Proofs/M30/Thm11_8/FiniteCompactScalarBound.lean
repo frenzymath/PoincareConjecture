@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.CompactTimeScalarBound
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
   FlowCarrier.measurableSpace FlowCarrier.borelSpace FlowCarrier.secondCountable
-
-
 
 theorem exists_finite_limit_compact_scalar_bound_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

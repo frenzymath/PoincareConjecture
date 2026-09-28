@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M01.NormalizationCurvatureBound
 import PoincareConjecture.Proofs.M01.NormalizationCurvature
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

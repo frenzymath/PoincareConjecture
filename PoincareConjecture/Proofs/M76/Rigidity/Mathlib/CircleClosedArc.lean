@@ -1,33 +1,18 @@
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AddCircle
 
-
-
 def closedIntervalArc (p a b : ℝ) : Set (AddCircle p) :=
   (fun t : ℝ => (t : AddCircle p)) '' Icc a b
-
-
 
 theorem isCompact_closedIntervalArc (p a b : ℝ) :
     IsCompact (closedIntervalArc p a b) :=
   isCompact_Icc.image (AddCircle.continuous_mk' p)
-
-
 
 theorem coe_mem_closedIntervalArc_iff (p : ℝ) [Fact (0 < p)]
     {a b z : ℝ} (ha : 0 ≤ a) (hb : b < p) (hz : z ∈ Ico 0 p) :
@@ -41,8 +26,6 @@ theorem coe_mem_closedIntervalArc_iff (p : ℝ) [Fact (0 < p)]
     exact htz' ▸ ht
   · exact fun h => ⟨z, h, rfl⟩
 
-
-
 theorem isImage_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {a b : ℝ} (ha : 0 ≤ a) (hb : b < p) :
     (openPartialHomeomorphCoe p 0).IsImage (Icc a b) (closedIntervalArc p a b) := by
@@ -51,8 +34,6 @@ theorem isImage_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     change z ∈ Ioo 0 (0 + p) at hz
     exact ⟨hz.1.le, by simpa only [zero_add] using hz.2⟩
   exact coe_mem_closedIntervalArc_iff p ha hb hzI
-
-
 
 theorem interior_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {a b : ℝ} (ha : 0 < a) (hb : b < p) :
@@ -73,8 +54,6 @@ theorem interior_closedIntervalArc (p : ℝ) [Fact (0 < p)]
   · rintro ⟨t, ht, rfl⟩
     apply (hJ.interior.apply_mem_iff (hsource ⟨ht.1.le, ht.2.le⟩)).mpr
     simpa only [interior_Icc] using ht
-
-
 
 theorem frontier_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) (hb : b < p) :
@@ -104,8 +83,6 @@ theorem frontier_closedIntervalArc (p : ℝ) [Fact (0 < p)]
       rw [frontier_Icc hab]
       exact Or.inr rfl
 
-
-
 theorem zero_notMem_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {a b : ℝ} (ha : 0 < a) (hb : b < p) :
     (0 : AddCircle p) ∉ closedIntervalArc p a b := by
@@ -114,8 +91,6 @@ theorem zero_notMem_closedIntervalArc (p : ℝ) [Fact (0 < p)]
   intro hz
   have hza : a ≤ 0 := (h.mp hz).1
   exact (not_le_of_gt ha) hza
-
-
 
 theorem bounded_add_phase_eq (p : ℝ) [Fact (0 < p)]
     {rm rp u : ℝ} (hm : 0 < rm) (hp : 0 < rp)
@@ -131,13 +106,11 @@ theorem bounded_add_phase_eq (p : ℝ) [Fact (0 < p)]
   · rintro rfl
     simp
 
-
 theorem bounded_sub_phase_eq (p : ℝ) [Fact (0 < p)]
     {rm rp u : ℝ} (hm : 0 < rm) (hp : 0 < rp)
     (hsum : rm + rp < p) (hu : -rm ≤ u ∧ u ≤ rp) (b : ℝ) :
     (b : AddCircle p) - (u : AddCircle p) = b ↔ u = 0 := by
   simpa using bounded_add_phase_eq p hm hp hsum hu 0
-
 
 theorem bounded_add_mem_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {rm rp u a b : ℝ} (hm : 0 < rm) (hu : -rm ≤ u ∧ u ≤ rp)
@@ -154,7 +127,6 @@ theorem bounded_add_mem_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     linarith [ht.1]
   · intro h
     exact ⟨a + u, ⟨by linarith, by linarith [hu.2]⟩, coe_add _ _ _⟩
-
 
 theorem bounded_sub_mem_closedIntervalArc (p : ℝ) [Fact (0 < p)]
     {rm rp u a b : ℝ} (hm : 0 < rm) (hu : -rm ≤ u ∧ u ≤ rp)

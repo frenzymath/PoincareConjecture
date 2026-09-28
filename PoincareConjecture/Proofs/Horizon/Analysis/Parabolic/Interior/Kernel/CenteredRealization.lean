@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.CenteredEstimate
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.PotentialRealization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -33,8 +26,6 @@ theorem norm_heatD2Duh_le_of_centered_bound
   apply norm_hessian_potential_le_of_centered_bound hα0 hα1 ht
   intro s hs y
   simpa only [sub_sub_cancel_left, norm_neg] using hf s hs (x - y)
-
-
 
 theorem norm_fderiv_fderiv_heatDuh_le_of_centered_bound
     {α L B : ℝ≥0} (hα0 : 0 < α) (hα1 : α ≤ 1) {K t : ℝ}

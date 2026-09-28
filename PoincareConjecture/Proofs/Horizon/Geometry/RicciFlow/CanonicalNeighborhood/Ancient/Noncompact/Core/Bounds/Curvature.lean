@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.RelativeScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem nonround_uniform_core_scalar_upper_of_services
     (P : NoncompactKappaServices.{u}) {D : ℝ} (hD : 0 < D) :
@@ -95,8 +84,6 @@ theorem nonround_uniform_core_scalar_upper
             C * (K.flow.connection 0).scalarCurvature p := by
   exact nonround_uniform_core_scalar_upper_of_services P.noncompactServices hD
 
-
-
 theorem nonround_uniform_core_curvature_upper_of_services
     (P : NoncompactKappaServices.{u}) {D : ℝ} (hD : 0 < D) :
     ∃ C : ℝ, 1 < C ∧
@@ -130,8 +117,6 @@ theorem nonround_uniform_core_curvature_upper
           (K.flow.connection 0).curvatureTensorNorm x <
             C * (K.flow.connection 0).scalarCurvature p := by
   exact nonround_uniform_core_curvature_upper_of_services P.noncompactServices hD
-
-
 
 theorem nonround_uniform_core_sectional_upper_of_services
     (P : NoncompactKappaServices.{u}) {D : ℝ} (hD : 0 < D) :

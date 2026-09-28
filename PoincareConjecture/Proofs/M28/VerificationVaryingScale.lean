@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFreshCoefficients
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshGeometry
 
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.Proofs.M28.FiniteHessian PoincareConjecture.M28.CounterexampleNeckFamily
-

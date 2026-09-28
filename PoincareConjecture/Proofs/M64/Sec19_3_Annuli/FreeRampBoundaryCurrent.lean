@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CirclePhaseDerivative
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryModulus
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,11 +24,6 @@ private theorem lift_continuous (sigma : M64PeriodicDegreeOneLift) : Continuous 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_sign_of_free_positive_degree_boundary
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -82,10 +63,6 @@ theorem m64AnnulusCircleCurrent_sign_of_free_positive_degree_boundary
   refine ⟨x, hx, ?_⟩
   rw [hderiv x (Ioo_subset_Icc_self hx), hmean, hincrement, sub_zero]
   exact div_pos (mul_pos (by exact_mod_cast lift.degree_positive) P.circle.positive) hP
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_sign_of_free_ramp_boundary
     (P : M62.CircleProductData F circumference) (t : ℝ)

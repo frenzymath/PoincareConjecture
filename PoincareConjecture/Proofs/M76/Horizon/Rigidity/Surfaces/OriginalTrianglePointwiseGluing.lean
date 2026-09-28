@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTriangleSideGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,7 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 variable [FiniteDimensional ℝ E]
 
-
 def pointwiseGlueGenerator (label : Triangle K → ℝ)
     (contact : Triangle K → Triangle K → Prop)
     (x y : carrier K label) : Prop :=
@@ -30,12 +18,10 @@ def pointwiseGlueGenerator (label : Triangle K → ℝ)
     x.1 ∈ copy K label s ∧ y.1 ∈ copy K label t ∧
       contact s t ∧ x.1.1 = y.1.1
 
-
 def pointwiseGlueRelation (label : Triangle K → ℝ)
     (contact : Triangle K → Triangle K → Prop) :
     carrier K label → carrier K label → Prop :=
   Relation.EqvGen (pointwiseGlueGenerator K label contact)
-
 
 def pointwiseGlueSetoid (label : Triangle K → ℝ)
     (contact : Triangle K → Triangle K → Prop) : Setoid (carrier K label) :=

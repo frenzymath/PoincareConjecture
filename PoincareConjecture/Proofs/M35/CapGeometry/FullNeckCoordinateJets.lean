@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.PointIsometryJets
 import PoincareConjecture.Proofs.M35.Thm12_28.MetricChartCancellation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -29,9 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem full_coordinate_jets_of_target_realization (N : EpsilonNeck g)
     (he : N.epsilon ≤ 1 / 24) {ι : Type*}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalReindex
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +9,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalCommonInterval_decide_countable (Ptest : ℕ → ℕ → Prop) :
     ∃ sigma : ℕ → ℕ, StrictMono sigma ∧ ∀ j,
@@ -45,7 +36,6 @@ theorem terminalCommonInterval_decide_countable (Ptest : ℕ → ℕ → Prop) :
     filter_upwards [heq] with k hk
     exact of_decide_eq_true (by simpa only [value, ha] using hk)
 
-
 theorem terminalCommonInterval_decide_encodable
     {ι : Type*} [Encodable ι] (Ptest : ι → ℕ → Prop) :
     ∃ sigma : ℕ → ℕ, StrictMono sigma ∧ ∀ j,
@@ -58,14 +48,12 @@ theorem terminalCommonInterval_decide_encodable
   refine ⟨sigma, hsigma, fun j => ?_⟩
   simpa only [Q, Encodable.encodek] using h (Encodable.encode j)
 
-
 def TerminalCommonIntervalDecided (V : GeneralizedBlowupSequence.{u}) : Prop :=
   ∀ (q : ℚ) (b a m : ℕ),
     (∀ᶠ k in atTop, Nonempty
       (ControlledBlowupCylinder V k (a + 1) q b (1 / (m + 1)))) ∨
     (∀ᶠ k in atTop, ¬ Nonempty
       (ControlledBlowupCylinder V k (a + 1) q b (1 / (m + 1))))
-
 
 theorem terminalCommonInterval_exists_decided (V : GeneralizedBlowupSequence.{u}) :
     ∃ sigma : ℕ → ℕ, ∃ hsigma : StrictMono sigma,

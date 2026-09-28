@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.PositiveHistory
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveHistoryPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem seedM15_cap_child_box_nonpositive
     (hC : RicciFlowCurvatureTheory.{u})
@@ -51,8 +41,6 @@ theorem seedM15_cap_child_box_nonpositive
   have hnot := M47Positive.pre_component_nonpositive_of_retained_child_meets_cap
     hC F hpolicy hTJ hT v pre hretained hchildContact
   simpa only [pre, E, Diffeomorph.apply_symm_apply] using hnot
-
-
 
 theorem seedM15_cap_birth_box_nonpositive
     (hC : RicciFlowCurvatureTheory.{u})

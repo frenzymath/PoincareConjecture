@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroChargeLocalSection
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,10 +9,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem link_zero_eq_empty_of_isolated_section
     (K : SimplicialComplex ℝ E) (L : E →ₗ[ℝ] ℝ)
@@ -42,10 +28,6 @@ theorem link_zero_eq_empty_of_isolated_section
     change L (r • y) = 0
     rw [map_smul, hy.2, smul_zero]⟩)
 
-
-
-
-
 theorem ncard_link_zero_eq_two_of_zero_charge_nonisolated
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hzero : (0 : E) ∈ K.vertices) (L : E →ₗ[ℝ] ℝ)
@@ -56,10 +38,6 @@ theorem ncard_link_zero_eq_two_of_zero_charge_nonisolated
     ⟨K.vertices_subset_space hzero, L.map_zero⟩
   obtain ⟨u, v, hu, hv, hinter, _, hlocal⟩ := h.exists_local_segments_of_nonisolated hq hacc
   exact K.ncard_link_zero_of_local_segments hK hzero L hu hv hinter.subset hlocal
-
-
-
-
 
 theorem ncard_link_zero_eq_zero_or_two_of_zero_charge
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

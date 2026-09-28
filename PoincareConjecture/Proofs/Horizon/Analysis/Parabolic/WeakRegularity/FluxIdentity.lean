@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Canon
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.LipschitzGreen
 import Mathlib.MeasureTheory.Group.Prod
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter MeasureTheory
@@ -30,8 +23,6 @@ private theorem smooth_of_supported (hU : IsOpen U) {f : Spacetime n → ℝ}
   · exact (hf z (hs hz)).contDiffAt (hU.mem_nhds (hs hz))
   · exact contDiffAt_const.congr_of_eventuallyEq
       (notMem_tsupport_iff_eventuallyEq.mp hz)
-
-
 
 theorem integral_density_flux_eq_neg
     (hU : IsOpen U) {u w : Spacetime n → ℝ} {Cu Cw : ℝ≥0}

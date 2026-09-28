@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CompatibleSquareCurve
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryLiftedPath
 import PoincareConjecture.Proofs.M08.RegularizedAction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval} {F : RicciFlow n M I.domain}
 
-
-
 theorem ordinarySquarePath_clockMem {T tau : ℝ} (q : BackwardTimePath F T 0 tau)
     {s : ℝ} (hs : s ∈ sqrtParameterInterval 0 tau) : T - s ^ 2 ∈ I.domain := by
   have hs0 : 0 ≤ s := by simpa only [sqrtParameterInterval, Real.sqrt_zero] using hs.1
@@ -35,8 +23,6 @@ theorem ordinarySquarePath_clockMem {T tau : ℝ} (q : BackwardTimePath F T 0 ta
   exact q.time_mem (s ^ 2) ⟨sq_nonneg s, hsq⟩
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 noncomputable def ordinarySquarePath
     (R : OrdinaryProductRicciGeometry F.metric I)

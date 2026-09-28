@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallMatching.OpenRegion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallExterior
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_matching_outside_ball {n : Nat}
     (hdim : 1 < Module.rank Real (EuclideanSpace Real (Fin n)))
@@ -37,8 +33,6 @@ theorem exists_supported_matching_outside_ball {n : Nat}
       (fun x hx hCx => disjoint_left.mp hA hx hCx)
       (fun x hx hCx => disjoint_left.mp hB hx hCx)
   exact ⟨K, hK, hKO, D, hfix, hD, fun x hx => hfix x (fun h => hKO h hx)⟩
-
-
 
 theorem exists_matching_of_disjoint_balls {n : Nat}
     (hdim : 1 < Module.rank Real (EuclideanSpace Real (Fin n)))

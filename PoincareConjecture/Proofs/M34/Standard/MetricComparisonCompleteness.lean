@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch04.Harnack
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T3Space M]
 
-
-
 @[instance_reducible] noncomputable def comparisonPseudoEMetric (g : RiemannianMetric n M) :
     PseudoEMetricSpace M :=
   letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -32,23 +21,15 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
     ⟨⟨g.inner, g.toContinuousRiemannianMetric.continuous, fun _ _ _ => rfl⟩⟩
   (EMetricSpace.ofRiemannianMetric (𝓡 n) M).toPseudoEMetricSpace
 
-
-
 theorem comparisonPseudoEMetric_topology (g : RiemannianMetric n M) :
     g.comparisonPseudoEMetric.toUniformSpace.toTopologicalSpace =
       (inferInstance : TopologicalSpace M) := rfl
 
-
-
 theorem comparisonPseudoEMetric_edist (g : RiemannianMetric n M) (x y : M) :
     g.comparisonPseudoEMetric.edist x y = g.edist x y := rfl
 
-
-
 theorem metricComplete_iff_comparisonPseudoEMetric (g : RiemannianMetric n M) :
     MetricComplete g ↔ @CompleteSpace M g.comparisonPseudoEMetric.toUniformSpace := Iff.rfl
-
-
 
 theorem metricComplete_of_tangentNorm_comparison
     [PreconnectedSpace M] (g h : RiemannianMetric n M) (p : M)

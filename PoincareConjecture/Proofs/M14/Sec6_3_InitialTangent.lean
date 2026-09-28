@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -25,9 +16,6 @@ private theorem transport_horizontal_tangent {x y : G.Point} (h : x = y)
     (h ▸ v.val : TangentSpace (spacetimeModel n) y) = (h ▸ v : G.Horizontal y).val := by
   cases h
   rfl
-
-
-
 
 theorem initialValuePath_initial_derivative {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}
     (P : M14SquareRootInitialValuePath G T τ x y Z) :

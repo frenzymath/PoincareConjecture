@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Quotient.Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +29,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
 def M27ProjectivePlaneLineFlowCertificate.ofCover
     (F : M27RoundSphereFamily) (q : UnitTwoSphere × ℝ → M)
     (hq : Function.Surjective q)
@@ -60,7 +52,6 @@ def M27ProjectivePlaneLineFlowCertificate.ofCover
       product_homeomorph := e
       product_coordinates := he
       metric_transport := hmetric }
-
 
 def M27TwistedSphereLineFlowCertificate.ofCover
     (F : M27RoundSphereFamily) (q : UnitTwoSphere × ℝ → M)

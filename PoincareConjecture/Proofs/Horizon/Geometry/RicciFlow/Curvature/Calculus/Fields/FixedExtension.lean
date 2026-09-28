@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

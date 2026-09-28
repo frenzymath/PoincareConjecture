@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCoefficientBounds
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +38,6 @@ private theorem exists_old_normalized_coefficient_bound {epsilon : ℝ}
     (hsD.of_le (by exact_mod_cast le_top)) (hsG.of_le (by exact_mod_cast le_top))] at h
   exact ((norm_le_norm_sub_add _ _).trans (add_le_add h (hGram q z j hj a b))).trans
     (le_max_right _ _)
-
-
-
 
 theorem exists_cap_neck_normalization_tolerance {epsilon : ℝ} (hepsilon : 0 < epsilon)
     (D : RoundCylinderTwoTensor) (hD : RoundCylinderClose epsilon 0 D) :

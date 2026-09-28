@@ -1,15 +1,5 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ variable {E F H M : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace H]
 variable {I : ModelWithCorners ℝ F H} [TopologicalSpace M] [ChartedSpace H M]
 variable [IsManifold I ∞ M] {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
-
-
 
 theorem contMDiffOn_sphere_of_coe {U : Set M} (hU : IsOpen U)
     (f : M → sphere (0 : E) 1)

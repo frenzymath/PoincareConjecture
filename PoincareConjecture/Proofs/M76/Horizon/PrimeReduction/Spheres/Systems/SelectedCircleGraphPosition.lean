@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.NonreturningS
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.CircleFreeSubcomplex
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.TriangleArcGraphPosition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

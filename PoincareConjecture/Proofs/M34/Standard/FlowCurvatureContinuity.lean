@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M04.FlowCurvatureEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem continuousOn_curvatureDerivativeNorm
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,7 +31,6 @@ private theorem scalarDerivatives_round_contractions
   · convert D.ricci_of_constant_sectional x r (hsec x) v w using 1
     norm_num
 
-
 theorem round_scalarGradientNorm_eq_zero
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (hround : IsRoundMetricSlice D) (x : M) : scalarGradientNorm g D x = 0 := by
@@ -55,8 +43,6 @@ theorem round_scalarGradientNorm_eq_zero
   · rw [Set.range_eq_empty_iff.mpr h]
     exact Real.sSup_empty
   · simp
-
-
 
 theorem round_scalarEvolution_bound
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -84,8 +70,6 @@ theorem round_scalarEvolution_bound
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem round_scalarDerivWithin_bound
     (S : ScalarDerivativeServices.{u}) (K : AncientKappaSolution 3 M)

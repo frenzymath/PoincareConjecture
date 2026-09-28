@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderSecondJet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.RoundCylinderClose
-
-
 
 theorem contDiffAt_coefficient {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (q : UnitTwoSphere)
@@ -28,8 +18,6 @@ theorem contDiffAt_coefficient {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
   refine ⟨?_, hp⟩
   rw [M35.sphere_chart_target]
   trivial
-
-
 
 theorem first_component_sq_lt {epsilon u : ℝ} {B : RoundCylinderTwoTensor}
     (h : RoundCylinderClose epsilon u B) (hu : u < 1)

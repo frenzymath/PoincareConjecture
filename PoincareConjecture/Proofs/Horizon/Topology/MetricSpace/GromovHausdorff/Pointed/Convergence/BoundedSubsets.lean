@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.MovingPoints
 import Mathlib.Topology.MetricSpace.Closeds
 
-
-
 open Set Filter Topology
 open TopologicalSpace
 open Poincare.GromovHausdorff
@@ -167,8 +165,6 @@ theorem mem_of_pointConverges_of_subsets_approximation
         rw [dist_comm (S.right j (q j)) (S.left j (x j))]
         exact add_le_add (hxq j).le le_rfl
   exact hK.mem_of_tendsto hqconv (Eventually.of_forall hq)
-
-
 
 theorem eventually_subsets_subset_iUnion_of_pointConverges
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem BalancedNeckChain.closure_region_inter_later_carrier_subset
     {ε : ℝ} (C : BalancedNeckChain g ε) {i j : ℤ}
@@ -55,8 +43,6 @@ theorem BalancedNeckChain.closure_region_inter_later_carrier_subset
       ((C.neck j).carrier_open.sdiff hK.isClosed) ⟨hx.2, hxnot⟩
     exact hyO.2 (hinter ⟨hyW, hyO.1⟩)
   exact (C.neck i).coordinate_slab_subset_carrier_m28 hcN hsN hxK
-
-
 
 theorem EpsilonTubeCertificate.frontier_first_region {X : Set M}
     (T : EpsilonTubeCertificate g X) {i : ℤ} (hi : IsLeast T.chain.shape.active i)

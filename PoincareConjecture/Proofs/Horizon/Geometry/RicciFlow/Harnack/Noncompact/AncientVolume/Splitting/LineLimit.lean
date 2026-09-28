@@ -4,25 +4,6 @@ import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Tactic.Choose
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Metric Set
@@ -31,9 +12,6 @@ open scoped Topology
 namespace Poincare.AncientVolume.Splitting
 
 variable {M : Type*} [MetricSpace M] [ProperSpace M]
-
-
-
 
 theorem exists_isometric_line_of_dist_tendsto
     {p : M} {arc : ℕ → ℝ → M}
@@ -73,8 +51,6 @@ theorem exists_isometric_line_of_dist_tendsto
           (hyperfilter ℕ : Filter ℕ) (𝓝 p))
     exact tendsto_nhds_unique (hgamma 0) hconst
 
-
-
 theorem exists_isometric_line_of_expanding_windows
     {p : M} {arc : ℕ → ℝ → M} {radius error : ℕ → ℝ}
     (hbase : ∀ i, arc i 0 = p)
@@ -92,8 +68,6 @@ theorem exists_isometric_line_of_expanding_windows
   filter_upwards [hradius.eventually_ge_atTop |s|, hradius.eventually_ge_atTop |t|]
     with i hs ht
   simpa only [Real.dist_eq] using hdist i s t hs ht
-
-
 
 theorem exists_isometric_line_of_minimizing_windows
     {p : M} {arc : ℕ → ℝ → M} {radius : ℕ → ℝ}

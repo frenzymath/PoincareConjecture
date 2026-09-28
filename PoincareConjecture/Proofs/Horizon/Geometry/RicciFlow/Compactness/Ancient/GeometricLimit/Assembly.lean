@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.GeometricLimit.Convergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Pointed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -31,9 +19,6 @@ local instance ancientAssembly_sourceCharts (k : ℕ) :
   (D k).chartedSpace
 local instance ancientAssembly_sourceManifold (k : ℕ) :
     IsManifold (𝓡 n) ∞ (D k).carrier := (D k).isManifold
-
-
-
 
 noncomputable def completeAncientConvergence
     {ι : Type} [Countable ι]

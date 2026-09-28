@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval
@@ -67,8 +57,6 @@ private theorem exists_nonzero_depth_extension
     change j (R _) = r u
     rw [hR]
     rfl
-
-
 
 theorem PLDomain.exists_collared_null_loop_filling
     {X : Type*} [TopologicalSpace X] {F U : Set X}

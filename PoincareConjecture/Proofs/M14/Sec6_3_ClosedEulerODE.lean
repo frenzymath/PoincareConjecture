@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODEUniqueness
 import PoincareConjecture.Proofs.M08.ClosedChartCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem closedChartEulerPhase_unique {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) (x₀ : M)

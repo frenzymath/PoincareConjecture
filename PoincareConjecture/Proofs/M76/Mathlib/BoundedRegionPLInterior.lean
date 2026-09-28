@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexFacets
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem AffineOnFaces.mem_interior_image_of_convex_space
     {K : SimplicialComplex ℝ E} {f : E → F} (hf : K.AffineOnFaces f)
@@ -87,10 +72,6 @@ namespace Set
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.sdiff_subset_interior_of_finrank_eq
     {s b : Set X} (hs : IsFinitePLBallPair E s b)

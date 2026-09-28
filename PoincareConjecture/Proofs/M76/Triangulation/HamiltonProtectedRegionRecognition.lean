@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexThreeRegionBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -17,9 +7,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem hasAlexanderRegionBalls_identifies_closed_region {S C D : Set E}
     (hregions : HasAlexanderRegionBalls S C)

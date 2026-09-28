@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoStandardPrism
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryPieceGluing
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.DiskPortPuncturedBallSum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.CubicalThreeSphere
@@ -23,7 +15,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
 
 open PoincareConjecture.M76.HamiltonIndexTwoStandard
-
 
 theorem extend_actual_disk_port
     {V W E F : Type*}
@@ -80,9 +71,6 @@ theorem extend_actual_disk_port
       (congrArg (fun y : ((R \ (D \ Q)) ∪ D : Set F) => (y : F)) (hkeep x))
   exact ⟨H, hH, fun x => congrArg Subtype.val (hHd x), hHS,
     H.mem_subset_iff_of_extension e (hds.trans hB.1) (hDR.trans hT.1) hHd⟩
-
-
-
 
 theorem exists_selected_hole_disk_port_normalization {ι : Type*}
     (a r : ι → Set V4) (ha : ∀ i, IsFinitePLBallPair V3 (a i) (r i))
@@ -180,9 +168,6 @@ theorem exists_selected_hole_disk_port_normalization {ι : Type*}
       refine mem_iUnion.mpr ⟨j, ⟨x, hja, hxy⟩, ?_⟩
       rintro ⟨z, hz, hzy⟩
       exact hjr (hfi (hrB j hz) x.property (hzy.trans hxy.symm) ▸ hz)
-
-
-
 
 theorem exists_paired_selected_hole_disk_port_normalization {ι : Type*}
     (a r : Bool → ι → Set V4)
@@ -303,9 +288,6 @@ theorem exists_paired_selected_hole_disk_port_normalization {ι : Type*}
     intro x hx hz
     have hport := hinter.subset ⟨((hholes false j).2 hx).1, ((hholes true k).2 hz).1⟩
     exact ((hholes false j).2 hx).2 (Or.inr hport)
-
-
-
 
 theorem exists_selected_hole_disk_port_sum {ι : Type*} [Finite ι]
     (a r : Bool → ι → Set V4)

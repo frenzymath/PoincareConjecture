@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.IndexedCovering
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 def UniformNormalCoverService : Prop :=
   ∀ (n : ℕ) {K δ v V : ℝ}, 1 ≤ n → 0 ≤ K → 0 < δ → 0 < v → 0 ≤ V →

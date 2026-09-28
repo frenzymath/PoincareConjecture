@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.Sou
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.FiniteClosedPartition
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -29,8 +21,6 @@ private theorem range_subset_finite_arc_part
     (fun i => range (arc i)) (fun i => (isCompact_range (arc i).continuous).isClosed) hdis i
   rintro _ ⟨t, rfl⟩
   exact hclopen.map_mem f'.continuous s hs t
-
-
 
 theorem exists_fiber_parameter_homeomorph
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -111,8 +101,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_finitePL_marked_arc_tail
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
@@ -217,9 +205,6 @@ theorem exists_finitePL_marked_arc_tail
       have ht := (mul_eq_zero.mp hz).resolve_left (sub_ne_zero.mpr hs.symm)
       linarith
 
-
-
-
 theorem HamiltonZeroInstalledAnnulusPLArcFibers.exists_pointed_tail_family
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
     {j : ℝ × ℝ → X0} {chi : C(H0, H0)} {c : C(Ann, unitInterval × C0)}
@@ -288,8 +273,6 @@ theorem HamiltonZeroInstalledAnnulusPLArcFibers.exists_pointed_tail_family
       exact congrArg Prod.fst hsame)
     exact hne (congrArg (arc i) hst)
 
-
-
 structure HamiltonZeroPointedInteriorFiberTail
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
     (j : ℝ × ℝ → X0) (c : C(Ann, unitInterval × C0)) (x : Ann) (side : Bool)
@@ -302,9 +285,6 @@ structure HamiltonZeroPointedInteriorFiberTail
   embedding : IsEmbedding tail
   phase : ∀ t, (c (tail t)).2 = (c x).2
   proper : ∀ t, j (tail t) ∈ frontier R ↔ t = 1
-
-
-
 
 theorem HamiltonZeroInstalledAnnulusPLArcFibers.exists_pointed_interior_tails
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}

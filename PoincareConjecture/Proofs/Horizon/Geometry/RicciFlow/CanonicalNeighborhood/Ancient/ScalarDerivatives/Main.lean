@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Normalization
 import PoincareConjecture.Statements.M27Providers
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -56,7 +44,6 @@ theorem uniformKappaScalarDerivativeBounds_of_services
   obtain ⟨hgrad, htime⟩ := hbound N.target x N.normalized_scalar
   refine ⟨N.scale_eq ▸ N.scale_pos, N.scalarGradientNorm_le hB.le hgrad, ?_⟩
   exact N.scalarDerivWithin_bound S ht htime
-
 
 theorem uniformKappaScalarDerivativeBounds
     (P : M27KappaAlternativePredecessors.{u}) :

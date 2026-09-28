@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalDomainCharts
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -28,10 +19,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3}
 
 open Classical in
-
-
-
-
 
 theorem PLDomain.exists_original_frontier_surface_model
     {N : Set X} (he : PLDomain e N) (hN : IsCompact N) (hNne : N.Nonempty) :

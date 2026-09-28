@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegion
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Differential
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,7 +22,6 @@ open PoincareConjecture.SpacetimeBounds PoincareConjecture.Proofs.M28.NeckAnalys
 private abbrev CylinderReadoutE := EuclideanSpace ℝ (Fin 3)
 private abbrev SphereReadoutE := EuclideanSpace ℝ (Fin 2)
 private abbrev CylI := (𝓡 2).prod 𝓘(ℝ, ℝ)
-
 
 def cylinderSphereParametrization (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) : RoundCylinderSpace :=
@@ -78,8 +66,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
-
 theorem contMDiffAt_cylinderMap {epsilon : ℝ} {f : RoundCylinderSpace → M}
     (hf : ContMDiffOn CylI (𝓡 3) ∞ f (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹))
     (q : UnitTwoSphere) (s : ℝ) {x : CylinderReadoutE}
@@ -98,8 +84,6 @@ theorem contMDiffAt_cylinderMap {epsilon : ℝ} {f : RoundCylinderSpace → M}
   exact hmap.comp x (hsphere.comp x hcoords)
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem cylinderMap_mfderiv_apply {epsilon : ℝ} {f : RoundCylinderSpace → M}
     (hf : ContMDiffOn CylI (𝓡 3) ∞ f (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹))
@@ -133,9 +117,6 @@ theorem cylinderMap_mfderiv_apply {epsilon : ℝ} {f : RoundCylinderSpace → M}
     hcoordsDer, cylinderSphereParametrization_mfderiv q hx.1]
   rfl
 
-
-
-
 theorem cylinderMapCoefficients_eq_frozen {epsilon : ℝ}
     {f : RoundCylinderSpace → M}
     (hf : ContMDiffOn CylI (𝓡 3) ∞ f (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹))
@@ -162,9 +143,6 @@ theorem cylinderMapCoefficients_eq_frozen {epsilon : ℝ}
     cylinderScalarCoordinateEquiv_basis, cylinderScalarCoordinateEquiv_basis]
   rfl
 
-
-
-
 theorem cylinderMapCoefficients_frozen_germ {epsilon : ℝ}
     {f : RoundCylinderSpace → M}
     (hf : ContMDiffOn CylI (𝓡 3) ∞ f (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹))
@@ -189,9 +167,6 @@ theorem cylinderMapCoefficients_frozen_germ {epsilon : ℝ}
     exact (chartAt SphereReadoutE q).map_source (mem_chart_source _ q)
   filter_upwards [hopen.mem_nhds hzero] with x hx
   exact cylinderMapCoefficients_eq_frozen hf Q q s hx a b
-
-
-
 
 theorem cylinderMapCoefficients_inverse_frozen_germ {epsilon : ℝ}
     {f : RoundCylinderSpace → M}
@@ -218,29 +193,23 @@ theorem cylinderMapCoefficients_inverse_frozen_germ {epsilon : ℝ}
     ContinuousLinearEquiv.apply_symm_apply, sub_add_cancel,
     smul_apply, smul_eq_mul] using hp.symm
 
-
-
 def cylinderNeckChart (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ)
     (x : CylinderReadoutE) : M :=
   N.coordinate_map (cylinderSphereParametrization q (cylinderScalarCoordinates s x))
-
 
 def cylinderNeckChartDomain (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     Set CylinderReadoutE :=
   (cylinderScalarCoordinates s) ⁻¹'
     ((chartAt SphereReadoutE q).target ×ˢ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
 
-
 def cylinderNeckCoefficients (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     CylinderReadoutE → MetricCoefficient 3 :=
   fun x => N.scale⁻¹ ^ 2 • g.pullbackCoefficients (cylinderNeckChart N q s) x
-
 
 theorem isOpen_cylinderNeckChartDomain (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) : IsOpen (cylinderNeckChartDomain N q s) :=
   ((chartAt SphereReadoutE q).open_target.prod isOpen_Ioo).preimage
     (contDiff_cylinderScalarCoordinates s).continuous
-
 
 theorem zero_mem_cylinderNeckChartDomain (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -251,7 +220,6 @@ theorem zero_mem_cylinderNeckChartDomain (N : EpsilonNeck g)
   refine ⟨?_, hs⟩
   rw [← sphere_chart_center q]
   exact (chartAt SphereReadoutE q).map_source (mem_chart_source _ q)
-
 
 theorem cylinderNeckChart_zero (N : EpsilonNeck g) (q : UnitTwoSphere) (s : ℝ) :
     cylinderNeckChart N q s 0 = N.coordinate_map (q, s) := by
@@ -284,7 +252,6 @@ private theorem neck_coordinate_mfderiv_injective (N : EpsilonNeck g)
   exact hv.trans ((congrArg
     (mfderiv (𝓡 3) CylI N.coordinate_inverse (N.coordinate_map z)) hvw).trans hw.symm)
 
-
 theorem contMDiffOn_cylinderNeckChart (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (cylinderNeckChart N q s)
@@ -301,8 +268,6 @@ theorem contMDiffOn_cylinderNeckChart (N : EpsilonNeck g)
       (show cylinderSphereParametrization q (cylinderScalarCoordinates s x) ∈
         univ ×ˢ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹ from ⟨mem_univ _, hp.2⟩))
   exact (hmap.comp x (hsphere.comp x hcoords)).contMDiffWithinAt
-
-
 
 theorem cylinderNeckChart_mfderiv_apply (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : CylinderReadoutE}
@@ -336,8 +301,6 @@ theorem cylinderNeckChart_mfderiv_apply (N : EpsilonNeck g)
     hcoordsDer, cylinderSphereParametrization_mfderiv q hp.1]
   rfl
 
-
-
 theorem cylinderNeckChart_mfderiv_isInvertible (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : CylinderReadoutE}
     (hx : x ∈ cylinderNeckChartDomain N q s) :
@@ -358,8 +321,6 @@ theorem cylinderNeckChart_mfderiv_isInvertible (N : EpsilonNeck g)
   · exact hc (congrArg Prod.fst hpair)
   · simpa only using congrArg Prod.snd hpair
 
-
-
 theorem contDiffOn_cylinderNeckCoefficients (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) :
     ContDiffOn ℝ ∞ (cylinderNeckCoefficients N q s)
@@ -369,8 +330,6 @@ theorem contDiffOn_cylinderNeckCoefficients (N : EpsilonNeck g)
     ((isOpen_cylinderNeckChartDomain N q s).mem_nhds hx)
   exact ((g.contDiffAt_pullbackCoefficients hchart).const_smul
     (N.scale⁻¹ ^ 2)).contDiffWithinAt
-
-
 
 theorem cylinderNeckCoefficients_eq_frozen (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : CylinderReadoutE}
@@ -391,8 +350,6 @@ theorem cylinderNeckCoefficients_eq_frozen (N : EpsilonNeck g)
     cylinderScalarCoordinateEquiv_basis, cylinderScalarCoordinateEquiv_basis]
   rfl
 
-
-
 theorem cylinderNeckCoefficients_frozen_germ (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (a b : Fin 3) :
@@ -405,8 +362,6 @@ theorem cylinderNeckCoefficients_frozen_germ (N : EpsilonNeck g)
   filter_upwards [(isOpen_cylinderNeckChartDomain N q s).mem_nhds
     (zero_mem_cylinderNeckChartDomain N q hs)] with x hx
   exact cylinderNeckCoefficients_eq_frozen N q s hx a b
-
-
 
 theorem cylinderNeckCoefficients_scalar_eq [T2Space M]
     (N : EpsilonNeck g) (D : LeviCivitaData g)
@@ -433,8 +388,6 @@ theorem cylinderNeckCoefficients_scalar_eq [T2Space M]
   simp only [Diffeomorph.coe_refl, id_eq] at hscale
   rw [hscale]
   simp only [Q, div_eq_mul_inv, inv_pow, inv_inv, mul_comm]
-
-
 
 theorem cylinderNeckCoefficients_scalar_zero [T2Space M]
     (N : EpsilonNeck g) (D : LeviCivitaData g)

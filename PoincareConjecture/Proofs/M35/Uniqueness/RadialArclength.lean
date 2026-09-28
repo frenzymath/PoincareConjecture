@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import PoincareConjecture.Proofs.M09.RiemannianProper
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single 2 1
 
-
-
 theorem axisRadialCoefficient_contDiff (g : RiemannianMetric 3 StandardCapSpace) :
     ContDiff ℝ ∞ (axisRadialCoefficient g) := by
   apply contDiff_iff_contDiffAt.mpr
@@ -32,8 +20,6 @@ theorem axisRadialCoefficient_contDiff (g : RiemannianMetric 3 StandardCapSpace)
   exact (((g.contDiffAt_euclideanCoefficients (r • e2)).comp r
     (contDiffAt_id.smul contDiffAt_const)).clm_apply contDiffAt_const).clm_apply
       contDiffAt_const
-
-
 
 theorem axisAngularCoefficient_contDiff (g : RiemannianMetric 3 StandardCapSpace) :
     ContDiff ℝ ∞ (axisAngularCoefficient g) := by
@@ -43,7 +29,6 @@ theorem axisAngularCoefficient_contDiff (g : RiemannianMetric 3 StandardCapSpace
     (contDiffAt_id.smul contDiffAt_const)).clm_apply contDiffAt_const).clm_apply
       contDiffAt_const
 
-
 noncomputable def radialArclength
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   ∫ s in (0 : ℝ)..r, Real.sqrt (axisRadialCoefficient g s)
@@ -52,8 +37,6 @@ private theorem radialSpeed_continuous (g : RiemannianMetric 3 StandardCapSpace)
     Continuous (fun r => Real.sqrt (axisRadialCoefficient g r)) :=
   (axisRadialCoefficient_contDiff g).continuous.sqrt
 
-
-
 theorem radialArclength_hasDerivAt (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) :
     HasDerivAt (radialArclength g) (Real.sqrt (axisRadialCoefficient g r)) r :=
   intervalIntegral.integral_hasDerivAt_right
@@ -61,18 +44,13 @@ theorem radialArclength_hasDerivAt (g : RiemannianMetric 3 StandardCapSpace) (r 
     (radialSpeed_continuous g).aestronglyMeasurable.stronglyMeasurableAtFilter
     (radialSpeed_continuous g).continuousAt
 
-
-
 theorem radialArclength_strictMono (g : RiemannianMetric 3 StandardCapSpace) :
     StrictMono (radialArclength g) :=
   strictMono_of_hasDerivAt_pos (radialArclength_hasDerivAt g)
     (fun r => Real.sqrt_pos.mpr (axisRadialCoefficient_pos g r))
 
-
 theorem radialArclength_zero (g : RiemannianMetric 3 StandardCapSpace) :
     radialArclength g 0 = 0 := by simp [radialArclength]
-
-
 
 theorem pathELength_axis_eq_radialArclength
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 ≤ r) :
@@ -95,8 +73,6 @@ theorem pathELength_axis_eq_radialArclength
   rw [radialArclength, intervalIntegral.integral_of_le hr,
     integral_Icc_eq_integral_Ioc]
 
-
-
 theorem edist_axis_le_radialArclength
     (g : RiemannianMetric 3 StandardCapSpace) {r : ℝ} (hr : 0 ≤ r) :
     g.edist 0 (r • e2) ≤ ENNReal.ofReal (radialArclength g r) := by
@@ -106,8 +82,6 @@ theorem edist_axis_le_radialArclength
   have hsm : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) 1 (fun s : ℝ => s • e2) :=
     contMDiff_iff_contDiff.mpr (contDiff_id.smul contDiff_const)
   exact Manifold.riemannianEDist_le_pathELength hsm.contMDiffOn (by simp) rfl hr
-
-
 
 theorem radialArclength_unbounded
     (g : RiemannianMetric 3 StandardCapSpace) (hcomplete : MetricComplete g) (R : ℝ) :
@@ -126,8 +100,6 @@ theorem radialArclength_unbounded
     simp [e2, norm_smul, Real.norm_eq_abs, abs_of_nonneg (by linarith : 0 ≤ B + 1)]
   rw [hnorm] at hh
   linarith
-
-
 
 theorem exists_radialArclength_eq
     (g : RiemannianMetric 3 StandardCapSpace) (hcomplete : MetricComplete g)

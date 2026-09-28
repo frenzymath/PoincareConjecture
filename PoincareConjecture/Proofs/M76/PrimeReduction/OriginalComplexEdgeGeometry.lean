@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedDomainChartStars
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -51,8 +43,6 @@ private theorem open_edge_mem_intrinsicInterior
   exact heq ▸ hxa
 
 omit [T2Space X] in
-
-
 
 theorem exists_original_edge_coordinates
     (K : SimplicialComplex ℝ E) (g : E → X) (hg : InjOn g K.space)
@@ -109,10 +99,6 @@ theorem exists_original_edge_coordinates
   refine ⟨B, hB, hsource, hne, hparameter, ?_⟩
   rw [segment_eq_image_lineMap, segment_eq_image_lineMap, image_image, image_image]
   exact image_congr (fun t ht => (hparameter t ht).2)
-
-
-
-
 
 theorem exists_original_edge_open_protection
     (K M : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hMK : M ≤ K)

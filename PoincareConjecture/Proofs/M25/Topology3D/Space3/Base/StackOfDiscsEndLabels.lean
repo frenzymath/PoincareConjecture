@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapEnd
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.CircleBoundaryAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -20,7 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
 local notation "CircleDiff" => Diffeomorph (𝓡 1) (𝓡 1) UnitCircle UnitCircle ∞
-
 
 theorem exists_stackClippedCircleLabels
     (phi : ℝ → CircleDiff) (jL A B jR : ℝ)
@@ -251,7 +241,6 @@ theorem exists_stackClippedCircleLabels
     change F z (sphereCircleParameter e t) = _
     rw [hFrep]
     simp only [D, hzero z hz, sub_zero, one_mul, zero_mul, add_zero]
-
 
 theorem exists_stackCapEndLabels
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

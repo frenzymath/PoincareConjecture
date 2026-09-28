@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Compression.Original
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductLateralOpenness
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalShiftedSlabPhaseCoordinate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -31,9 +20,6 @@ local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_wide_lower_slab_compression {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

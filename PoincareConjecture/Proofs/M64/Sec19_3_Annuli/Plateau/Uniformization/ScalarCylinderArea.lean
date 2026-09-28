@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarOpenCylinder
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularCap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,15 +15,8 @@ namespace PoincareConjecture.M64Uniformization
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
 def scalarCylinderFundamental : Set Plane :=
   {p | p 1 ∈ Ioo (0 : ℝ) 1 ∧ p 0 ∈ Ico (0 : ℝ) curvePeriod}
-
-
-
 
 def scalarInverseCylinderMap (e : OpenPartialHomeomorph Cover Cover) : Plane → Plane :=
   scalarInverseCoverMap e ∘ scalarCylinderCoordinate
@@ -43,15 +25,9 @@ private theorem period_pos : 0 < curvePeriod := by
   unfold curvePeriod
   positivity
 
-
-
-
 theorem scalarCylinderFundamental_measurable : MeasurableSet scalarCylinderFundamental :=
   (measurableSet_Ioo.preimage (EuclideanSpace.proj 1).continuous.measurable).inter
     (measurableSet_Ico.preimage (EuclideanSpace.proj 0).continuous.measurable)
-
-
-
 
 theorem scalarCylinderCoordinate_mem_fundamental {p : Plane}
     (hp : p ∈ scalarCylinderFundamental) :
@@ -62,10 +38,6 @@ theorem scalarCylinderCoordinate_mem_fundamental {p : Plane}
     rw [← inv_mul_cancel₀ period_pos.ne']
     exact mul_lt_mul_of_pos_left hp.2.2 (inv_pos.mpr period_pos)
 
-
-
-
-
 theorem scalarInverseCylinderMap_smooth (e : OpenPartialHomeomorph Cover Cover)
     (htarget : e.target = scalarPotentialStrip)
     (hei : ContDiffOn ℝ ∞ e.symm e.target) :
@@ -75,9 +47,6 @@ theorem scalarInverseCylinderMap_smooth (e : OpenPartialHomeomorph Cover Cover)
   exact (((scalarInverseCoverMap_smooth e hei).contDiffAt
     (e.open_target.mem_nhds hp')).comp p
     scalarCylinderCoordinate.contDiff.contDiffAt).contDiffWithinAt
-
-
-
 
 theorem scalarInverseCylinderMap_injOn_fundamental
     (e : OpenPartialHomeomorph Cover Cover)
@@ -92,9 +61,6 @@ theorem scalarInverseCylinderMap_injOn_fundamental
   · simpa only [htarget, zero_add] using scalarCylinderCoordinate_mem_fundamental hp
   · simpa only [htarget, zero_add] using scalarCylinderCoordinate_mem_fundamental hq
   · exact hpq
-
-
-
 
 theorem scalarInverseCylinderMap_image_fundamental
     (e : OpenPartialHomeomorph Cover Cover)
@@ -123,10 +89,6 @@ section Area
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem scalarInverseCylinderMap_area (g : RiemannianMetric n M)
     {f : Plane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f scalarAnnulus)
@@ -158,10 +120,6 @@ theorem scalarInverseCylinderMap_area (g : RiemannianMetric n M)
   exact M60.suAreaDensity_comp_plane g
     ((hf.contMDiffAt (scalarAnnulus_isOpen.mem_nhds hFp)).mdifferentiableAt (by simp))
     (hFd hp)
-
-
-
-
 
 theorem scalarInverseCylinderMap_area_integrable (g : RiemannianMetric n M)
     {f : Plane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f scalarAnnulus)

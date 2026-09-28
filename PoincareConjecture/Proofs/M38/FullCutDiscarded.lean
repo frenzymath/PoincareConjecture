@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.FullCutSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
 noncomputable def fullCutDiscardedPatch (j : EventCappingIndex F T hT) :
     eventCappingDomain F T hT j → PartialCappedSpace F T hT P Set.univ :=
   match j with
@@ -29,7 +20,6 @@ noncomputable def fullCutDiscardedPatch (j : EventCappingIndex F T hT) :
       fullCutDiscarded F T hT P ∘ eventCappingMap F T hT P (.inl y)
   | .inr i => partialCappingInclude F T hT P Set.univ
       (.inr (⟨i, Set.mem_univ i⟩, true))
-
 
 theorem fullCutDiscardedPatch_openEmbedding (j : EventCappingIndex F T hT) :
     IsOpenEmbedding (fullCutDiscardedPatch F T hT P j) := by
@@ -39,7 +29,6 @@ theorem fullCutDiscardedPatch_openEmbedding (j : EventCappingIndex F T hT) :
         ((fullCutDiscarded_openEmbedding F T hT P).comp
           (eventCappingMap_old_openEmbedding F T hT P y))
   | inr i => exact partialCappingInclude_openEmbedding F T hT P Set.univ _
-
 
 theorem fullCutDiscarded_old_cap_iff (y : eventDiscardedOpen F T hT)
     (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
@@ -51,7 +40,6 @@ theorem fullCutDiscarded_old_cap_iff (y : eventDiscardedOpen F T hT)
   intro hx
   rw [fullCut_positive_attachment F T hT P i x hx]
   exact (fullCutDiscarded_openEmbedding F T hT P).injective.eq_iff
-
 
 theorem fullCutDiscardedPatch_eq_iff (j k : EventCappingIndex F T hT)
     (x : eventCappingDomain F T hT j) (y : eventCappingDomain F T hT k) :
@@ -97,7 +85,6 @@ theorem fullCutDiscardedPatch_eq_iff (j k : EventCappingIndex F T hT)
               exact Set.disjoint_left.mp (cappedCapPatch_disjoint F T hT P a b hab)
                 (Set.mem_range_self x) (h.symm ▸ Set.mem_range_self y)
 
-
 theorem fullCutDiscardedPatch_cover :
     (⋃ j, Set.range (eventCappingInclude F T hT P j)) = Set.univ := by
   apply Set.eq_univ_of_forall
@@ -106,7 +93,6 @@ theorem fullCutDiscardedPatch_cover :
   | h a =>
       rcases a with ⟨j, x⟩
       exact Set.mem_iUnion.mpr ⟨j, x, rfl⟩
-
 
 theorem exists_fullCutDiscardedInclusion :
     ∃ f : CappedDiscardedSpace F T hT P → PartialCappedSpace F T hT P Set.univ,
@@ -128,23 +114,19 @@ theorem exists_fullCutDiscardedInclusion :
   rw [Function.comp_apply, hH]
   exact hGq j x
 
-
 noncomputable def fullCutDiscardedInclusion :
     CappedDiscardedSpace F T hT P → PartialCappedSpace F T hT P Set.univ :=
   Classical.choose (exists_fullCutDiscardedInclusion F T hT P)
 
-
 theorem fullCutDiscardedInclusion_openEmbedding :
     IsOpenEmbedding (fullCutDiscardedInclusion F T hT P) :=
   (Classical.choose_spec (exists_fullCutDiscardedInclusion F T hT P)).1
-
 
 theorem fullCutDiscardedInclusion_patch (j : EventCappingIndex F T hT)
     (x : eventCappingDomain F T hT j) :
     fullCutDiscardedInclusion F T hT P (eventCappingInclude F T hT P j x) =
       fullCutDiscardedPatch F T hT P j x :=
   (Classical.choose_spec (exists_fullCutDiscardedInclusion F T hT P)).2 j x
-
 
 theorem fullCutDiscardedInclusion_old (y : eventDiscardedOpen F T hT) :
     fullCutDiscardedInclusion F T hT P (cappedOldInclusion F T hT P y) =
@@ -159,7 +141,6 @@ theorem fullCutDiscardedInclusion_old (y : eventDiscardedOpen F T hT) :
       partialOldInclusion F T hT P Set.univ
         (fullCutDiscarded F T hT P (eventCappingMap F T hT P (.inl y) z)) at h
   rwa [eventCappingMap_old_center] at h
-
 
 theorem fullCutDiscardedInclusion_cap (i : Fin (F.event T hT).cap_count) (x : capDoubleBall) :
     fullCutDiscardedInclusion F T hT P (eventCappingInclude F T hT P (.inr i) x) =

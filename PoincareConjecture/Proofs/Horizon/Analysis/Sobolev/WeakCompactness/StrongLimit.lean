@@ -1,20 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import Mathlib.Topology.UniformSpace.UniformConvergence
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -22,8 +7,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal
 
 namespace Poincare.Analysis.Sobolev.WeakCompactness
-
-
 
 theorem tendsto_toLp_of_uniformlyOn
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
@@ -52,8 +35,6 @@ theorem tendsto_toLp_of_uniformlyOn
     _ < eps := by
       rw [← mul_div_assoc, div_lt_iff₀ (by linarith : 0 < a + 1)]
       nlinarith
-
-
 
 theorem eq_of_strong_and_weak_limit
     {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]

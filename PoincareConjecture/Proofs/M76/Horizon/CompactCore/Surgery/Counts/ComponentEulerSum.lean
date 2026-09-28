@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponent
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceCountInclusionExclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
 
 theorem iUnion_edgeComponentComplex_faces :
     (⋃ C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent,
@@ -38,7 +28,6 @@ theorem iUnion_edgeComponentComplex_faces :
     exact mem_iUnion.mpr ⟨C, K.edgeComponentComplex_coface C hvC hs
       (Finset.singleton_subset_iff.mpr hvs)⟩
 
-
 theorem pairwise_disjoint_edgeComponentComplex_faces :
     Pairwise fun C D : K.vertexAbstractComplex.edgeGraph.ConnectedComponent =>
       Disjoint (K.edgeComponentComplex C).faces (K.edgeComponentComplex D).faces := by
@@ -53,8 +42,6 @@ theorem pairwise_disjoint_edgeComponentComplex_faces :
     (K.vertexAbstractComplex.edgeGraph.pairwise_disjoint_supp_connectedComponent hCD)
     hp (hpq.symm ▸ hq)
 
-
-
 def selectedEdgeComponents
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     SimplicialComplex ℝ E :=
@@ -63,8 +50,6 @@ def selectedEdgeComponents
 theorem selectedEdgeComponents_le
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     K.selectedEdgeComponents A ≤ K := K.vertexSubcomplex_le _
-
-
 
 theorem selectedEdgeComponents_faces
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
@@ -85,8 +70,6 @@ theorem selectedEdgeComponents_faces
     refine ⟨hsC.1, ?_⟩
     intro v hv
     exact mem_iUnion.mpr ⟨C, mem_iUnion.mpr ⟨hCA, hsC.2 v hv⟩⟩
-
-
 
 theorem selectedEdgeComponents_space
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
@@ -109,8 +92,6 @@ theorem selectedEdgeComponents_space
     refine ⟨s, ?_, hxs⟩
     rw [K.selectedEdgeComponents_faces]
     exact mem_iUnion.mpr ⟨C, mem_iUnion.mpr ⟨hCA, hs⟩⟩
-
-
 
 theorem selectedEdgeComponents_card_faceOfCard (hK : K.faces.Finite)
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) (n : ℕ) :
@@ -140,16 +121,12 @@ theorem selectedEdgeComponents_card_faceOfCard (hK : K.faces.Finite)
   intro C _
   exact (hcard _ (hC C)).symm
 
-
-
 theorem selectedEdgeComponents_surfaceEulerCount (hK : K.faces.Finite)
     (A : Finset K.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     (K.selectedEdgeComponents A).surfaceEulerCount =
       ∑ C ∈ A, (K.edgeComponentComplex C).surfaceEulerCount := by
   simp only [surfaceEulerCount, K.selectedEdgeComponents_card_faceOfCard hK A,
     Nat.cast_sum, Finset.sum_add_distrib, Finset.sum_sub_distrib]
-
-
 
 theorem selectedEdgeComponents_surfaceEulerCount_indexed (hK : K.faces.Finite)
     {ι : Type*} [Fintype ι]
@@ -158,16 +135,12 @@ theorem selectedEdgeComponents_surfaceEulerCount_indexed (hK : K.faces.Finite)
       ∑ i, (K.edgeComponentComplex (pick i)).surfaceEulerCount := by
   rw [K.selectedEdgeComponents_surfaceEulerCount hK, Finset.sum_map]
 
-
 theorem selectedEdgeComponents_univ
     [Fintype K.vertexAbstractComplex.edgeGraph.ConnectedComponent] :
     K.selectedEdgeComponents Finset.univ = K := by
   apply SimplicialComplex.ext
   rw [K.selectedEdgeComponents_faces]
   simpa only [Finset.mem_univ, iUnion_true] using K.iUnion_edgeComponentComplex_faces
-
-
-
 
 theorem surfaceEulerCount_eq_sum_edgeComponents (hK : K.faces.Finite) :
     letI : Finite K.vertices := (K.finite_vertices_of_finite_faces hK).to_subtype

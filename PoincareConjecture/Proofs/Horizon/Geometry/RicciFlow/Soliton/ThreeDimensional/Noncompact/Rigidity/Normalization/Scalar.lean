@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Homothety
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +13,6 @@ namespace PoincareConjecture.RicciFlow
 
 variable {N : Type*} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N] [IsManifold (𝓡 2) ∞ N]
-
-
 
 theorem hasDerivAt_scalarCurvature_round_surface
     {J : Set ℝ} (H : RicciFlow 2 N J) {t : ℝ} (ht : t ∈ interior J)
@@ -39,8 +28,6 @@ theorem hasDerivAt_scalarCurvature_round_surface
       LeviCivitaData.hessianOnFields, mvfderiv_const,
       zero_apply, sub_self, Finset.sum_const_zero]
   simpa only [hlap, zero_add] using H.hasDerivAt_scalarCurvature_surface ht x
-
-
 
 theorem eq_inverse_one_sub_of_riccati_lower_bound
     {R : ℝ → ℝ} (hpositive : ∀ t < 1, 0 < R t)
@@ -94,9 +81,6 @@ theorem eq_inverse_one_sub_of_riccati_lower_bound
   have hi := congrArg Inv.inv h
   simpa only [inv_inv, one_div] using hi
 
-
-
-
 theorem scalarCurvature_eq_one_div_one_sub_of_round_lower_bound
     (H : RicciFlow 2 N (Iio 1))
     (hround : ∀ t < 1,
@@ -119,8 +103,6 @@ section Ambient
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem hasDerivAt_scalarCurvature_of_spatially_constant
     {J : Set ℝ} (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (hconst : ∀ x y : M,
@@ -141,8 +123,6 @@ theorem hasDerivAt_scalarCurvature_of_spatially_constant
   rw [hlap, hnorm x] at h
   convert! h using 1
   ring
-
-
 
 theorem scalarCurvature_eq_one_div_one_sub_of_spatially_constant_lower_bound
     (F : RicciFlow n M (Iio 1))

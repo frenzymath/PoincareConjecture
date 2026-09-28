@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Uniqueness
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,7 +13,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
-
 
 structure SmoothTimeDependentIntegralFamily
     (X : ℝ → (x : M) → TangentSpace (𝓡 n) x)
@@ -42,8 +34,6 @@ theorem SmoothTimeDependentIntegralFamily.smooth_orbit
     (h : SmoothTimeDependentIntegralFamily X V I Φ) {y : M} (hy : y ∈ V) :
     ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) ∞ (fun t => Φ (t, y)) I :=
   h.smooth.comp (contMDiff_id.prodMk contMDiff_const).contMDiffOn (fun _ ht => ⟨ht, hy⟩)
-
-
 
 theorem SmoothTimeDependentIntegralFamily.glue [T2Space M]
     {J I L : Set ℝ}

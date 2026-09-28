@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +28,6 @@ private theorem bilinear_eq_of_basis {n : ℕ}
   exact h a
 
 namespace LeviCivitaData
-
-
 
 theorem nonnegativeCurvatureOperator_of_scalar_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α} [l.NeBot]
@@ -83,8 +70,6 @@ end LeviCivitaData
 
 namespace FlowCarrier
 
-
-
 theorem nonnegativeCurvatureOperator_iff_of_coordinate_germ
     {n : ℕ} (C : FlowCarrier n) (gM : C.metric)
     (DM : @LeviCivitaData n C.carrier C.topologicalSpace C.chartedSpace C.isManifold gM)
@@ -122,8 +107,6 @@ theorem nonnegativeCurvatureOperator_iff_of_coordinate_germ
 end FlowCarrier
 
 namespace SmoothSpacetimeEmbedding
-
-
 
 theorem nonnegativeCurvatureOperator_iff_of_coordinate_germ
     {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
@@ -198,8 +181,6 @@ end SmoothSpacetimeEmbedding
 
 namespace PointedGeometricConvergence
 
-
-
 theorem nonnegativeCurvatureOperator_of_eventually_at_embedding
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     (G : PointedGeometricConvergence S) (t : ℝ) (ht : t ∈ Ioo T' T)
@@ -268,8 +249,6 @@ theorem nonnegativeCurvatureOperator_of_eventually_at_embedding
     (G.limitCarrier.nonnegativeCurvatureOperator_iff_of_coordinate_germ
       (G.limitFlow.metricAt t) (G.limitFlow.flow.connection t) x t p hp g D hg).1 hlim
 
-
-
 theorem nonnegativeCurvatureOperator_of_eventually
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
     (G : PointedGeometricConvergence S) (t : ℝ) (ht : t ∈ Ioo T' T)
@@ -289,8 +268,6 @@ theorem nonnegativeCurvatureOperator_of_eventually
   apply G.nonnegativeCurvatureOperator_of_eventually_at_embedding t ht x
   filter_upwards [G.subsequence_strictMono.tendsto_atTop.eventually hpos] with k hk
   exact hk _
-
-
 
 theorem nonnegativeCurvatureOperator_of_eventually_on_balls
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -335,8 +312,6 @@ namespace RicciFlow
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem nonnegativeCurvatureOperator_of_bufferedCylinderSequence
     {n : ℕ} (C : ℕ → FlowCarrier.{0} n) (J : ℕ → Set ℝ)

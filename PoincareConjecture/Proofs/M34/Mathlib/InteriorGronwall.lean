@@ -1,22 +1,9 @@
 import Mathlib.Analysis.ODE.Gronwall
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem le_gronwallBound_of_interior_deriv_le
     {f : ℝ → ℝ} {a b C ε δ : ℝ} (hf : ContinuousOn f (Icc a b))

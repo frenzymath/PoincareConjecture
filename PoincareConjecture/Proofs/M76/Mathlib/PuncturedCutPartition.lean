@@ -1,14 +1,5 @@
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Set
 
 variable {X ι : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem exists_punctured_cut_partition {s₀ s₁ : Set X}
     (hs₀ : IsClosed s₀) (hs₁ : IsClosed s₁) (q : X) (hq : q ∈ s₀ ∩ s₁)

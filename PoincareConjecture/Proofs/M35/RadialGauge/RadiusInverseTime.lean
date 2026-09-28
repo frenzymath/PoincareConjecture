@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem mapRadiusInverse_hasDerivAt_time
     {w : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)
@@ -73,8 +61,6 @@ theorem mapRadiusInverse_hasDerivAt_time
     apply (eq_div_iff hdpos.ne').mpr
     linarith only [heq]
   simpa only [hdq] using hq.hasDerivAt
-
-
 
 theorem mapRadiusInverse_hasDerivAt_time_of_logarithm
     {w : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ConnectedPhaseDifference
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeMidpoint
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,14 +14,8 @@ open Proofs.M58
 
 variable {C : Type*} [NormedAddCommGroup C] [NormedSpace ℝ C]
 
-
-
-
 def normalizedPhase (beta : C → ℝ) (v : ℝ → C) (L : ℝ → ℝ) : C → ℝ :=
   fun y => beta y + (L 0 - beta (v 0))
-
-
-
 
 theorem normalizedPhase_properties {beta : C → ℝ} {v : ℝ → C} {L : ℝ → ℝ}
     {U : Set C} {k : ℝ} (hk : k ≠ 0) (hbeta : ContDiffOn ℝ 1 beta U)
@@ -53,9 +34,6 @@ theorem normalizedPhase_properties {beta : C → ℝ} {v : ℝ → C} {L : ℝ �
       (show (0 : ℝ) ∈ Icc (0 : ℝ) Real.pi from ⟨le_rfl, Real.pi_pos.le⟩)
       theta htheta).symm
   · exact fun y => m64AngularPoint_phase_shift (hobs 0 ⟨le_rfl, Real.pi_pos.le⟩) (beta y)
-
-
-
 
 theorem normalizedPhase_diameter {beta : C → ℝ} {v : ℝ → C} {L : ℝ → ℝ}
     {r : ℝ} {axis : ℝ → C} {a b c : ℝ} (hr : 0 < r) (hba : b ≤ a)

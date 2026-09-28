@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +19,6 @@ local notation "T" => (norm : V3 → ℝ) ⁻¹' Icc (7 / 8) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {C N S K Bdy : Set X}
-
-
-
 
 theorem exists_chartwisePLBall_of_marked_cube_shell
     (hcover_e : ∀ x : X, ∃ i, x ∈ (e i).source)
@@ -144,9 +133,6 @@ theorem exists_chartwisePLBall_of_marked_cube_shell
     piecewiseAffine := hf
     boundary_eq := hboundary
   }⟩
-
-
-
 
 theorem exists_chartwisePLBall_of_cube_shell
     (hcover_e : ∀ x : X, ∃ i, x ∈ (e i).source)

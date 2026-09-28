@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M02.Topology.FinitePolyhedralNeighborhood
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_finite_neighborhood_subset {N : ℕ}
     {S U : Set (EuclideanSpace ℝ (Fin N))} (hS : IsCompact S)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BasisSecantCones
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ namespace Module.Basis
 
 variable {ι E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem secantCone_self_eq_span (b : Basis ι ℝ E) (s : Set ι) :
     b.secantCone s s = (Submodule.span ℝ (b '' s) : Set E) := by
@@ -36,8 +25,6 @@ theorem secantCone_self_eq_span (b : Basis ι ℝ E) (s : Set ι) :
       exact Finsupp.notMem_support_iff.mp (fun h => hi (hs h))
     exact ⟨fun i hi => (hz i hi).ge, fun i hi => (hz i hi).le⟩
 
-
-
 theorem injOn_span_of_injOn_simplex [Finite ι] (b : Basis ι ℝ E) {s : Set ι}
     (Q : E →L[ℝ] F) (hQ : InjOn Q (convexHull ℝ (insert 0 (b '' s)))) :
     InjOn Q (Submodule.span ℝ (b '' s)) := by
@@ -48,8 +35,6 @@ theorem injOn_span_of_injOn_simplex [Finite ι] (b : Basis ι ℝ E) {s : Set ι
   · rw [b.secantCone_self_eq_span]
     exact (Submodule.span ℝ (b '' s)).sub_mem hx hy
   · rw [map_sub, he, sub_self]
-
-
 
 theorem linearIndepOn_of_injOn_simplex [Finite ι] (b : Basis ι ℝ E) {s : Set ι}
     (Q : E →L[ℝ] F) (hQ : InjOn Q (convexHull ℝ (insert 0 (b '' s)))) :

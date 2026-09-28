@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.SectorGerms
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorCoordinates
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,13 +20,10 @@ variable {M : Type*} [TopologicalSpace M]
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
-
 theorem topLineFunctional_horizontal (i : Fin B.interface.count) :
     (B.topLineFunctional i).linear (collarParameterEquiv.symm (1, 0)) =
       -(B.interface.piece i).linear 1 := by
   simp [topLineFunctional]
-
 
 theorem topLineFunctional_pair_independent
     (i j : Fin B.interface.count)
@@ -51,7 +42,6 @@ theorem topLineFunctional_pair_independent
     LinearMap.smul_apply, topLineFunctional_horizontal, smul_eq_mul, hv, one_mul] at hh
   exact hne (neg_injective hh).symm
 
-
 theorem topLineFunctional_eq_of_adjacent_slope_eq
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc)
     (he : (B.interface.piece i).linear 1 = (B.interface.piece j).linear 1) :
@@ -64,7 +54,6 @@ theorem topLineFunctional_eq_of_adjacent_slope_eq
       B.interface.piece j (B.interface.cut i.succ) from by
       rw [(B.interface.piece_endpoints i).2, hij, (B.interface.piece_endpoints j).1])
   simp only [topLineFunctional, hpiece]
-
 
 theorem exists_internal_top_sector_coordinates
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc)
@@ -79,8 +68,6 @@ theorem exists_internal_top_sector_coordinates
     exact B.topLineFunctional_left_vertex j
   · exact B.topLineFunctional_pair_independent i j hne
 
-
-
 theorem planar_carrier_internal_top_halfspace_of_slope_eq
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc)
     (he : (B.interface.piece i).linear 1 = (B.interface.piece j).linear 1) :
@@ -91,8 +78,6 @@ theorem planar_carrier_internal_top_halfspace_of_slope_eq
   apply propext
   change z ∈ F.symm '' B.carrier ↔ B.topLineFunctional i z ≤ 0
   simpa only [he, le_refl, if_true, ← topLineFunctional_apply, hfun, or_self] using hz
-
-
 
 theorem exists_internal_top_convex_sector_coordinates
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc)
@@ -123,8 +108,6 @@ theorem exists_internal_top_convex_sector_coordinates
   change z ∈ F.symm '' B.carrier ↔ 0 ≤ -(B.topLineFunctional i z) ∧
     0 ≤ -(B.topLineFunctional j z)
   simpa only [not_le.mpr hslope, if_false, neg_nonneg, topLineFunctional_apply] using hz
-
-
 
 theorem exists_internal_top_reflex_sector_coordinates
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.GeometricChartEquation
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

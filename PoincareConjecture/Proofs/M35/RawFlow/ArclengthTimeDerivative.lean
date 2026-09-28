@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.ArclengthTimeIntegral
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitRicci
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 variable {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
-
-
 
 theorem rawAxisSpeedTimeDerivative_eq_intrinsic {t : ℝ}
     (hrotation : ∀ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ,
@@ -49,8 +38,6 @@ theorem rawAxisSpeedTimeDerivative_eq_intrinsic {t : ℝ}
   field_simp [(axisRadialCoefficient_pos g r).ne',
     (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g r)).ne']
   rw [Real.sq_sqrt (axisRadialCoefficient_pos g r).le]
-
-
 
 theorem raw_radialArclength_hasDerivAt_velocity {t : ℝ}
     (ht : t ∈ Ioo 0 G.lifetime)

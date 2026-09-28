@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationSard
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,15 +12,10 @@ namespace PoincareConjecture.M65Perturbation
 variable {E P : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup P] [NormedSpace ℝ P]
 
-
-
 def augmentedDerivative (A : ((E × P) × E) →L[ℝ] E) :
     ((E × P) × E) →L[ℝ] E × (P × E) :=
   A.prod (((ContinuousLinearMap.snd ℝ E P).comp
     (ContinuousLinearMap.fst ℝ (E × P) E)).prod (ContinuousLinearMap.snd ℝ (E × P) E))
-
-
-
 
 theorem augmentedDerivative_bijective (A : ((E × P) × E) →L[ℝ] E)
     (hA : Function.Bijective (fun u : E => A ((u, 0), 0))) :
@@ -59,10 +44,6 @@ theorem augmentedDerivative_bijective (A : ((E × P) × E) →L[ℝ] E)
     rw [hsplit, hu, sub_add_cancel]
 
 variable [CompleteSpace E] [CompleteSpace P]
-
-
-
-
 
 theorem exists_augmented_inverse (Q : ((E × P) × E) → E) (w : (E × P) × E)
     (hQ : ContDiffAt ℝ 1 Q w)

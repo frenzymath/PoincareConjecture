@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.FiniteVertexSignBudget
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval Topology
@@ -36,8 +28,6 @@ private theorem closed_protection_avoids_free_closure
   have hxU : x ∈ U := (Set.ext_iff.mp hUN ⟨x, hxP⟩).mpr hxN
   obtain ⟨y, hyU, hyP, hyP₀⟩ := mem_closure_iff.mp hxcl U hU hxU
   exact hyP₀ (hNP₀ ((Set.ext_iff.mp hUN ⟨y, hyP⟩).mp hyU))
-
-
 
 theorem exists_ambient_protection_of_relative_neighborhood
     (J P P₀ : SimplicialComplex ℝ E)
@@ -87,8 +77,6 @@ theorem exists_ambient_protection_of_relative_neighborhood
     rcases hxU with hxB | hxJ'
     · exact Or.inl (Or.inr ⟨interior_subset hxB, hxJ⟩)
     · exact False.elim (hxJ' hxJ)
-
-
 
 theorem exists_closed_set_protected_finite_polyhedron_position_with_height
     {ι : Type*} [Finite ι]
@@ -207,8 +195,6 @@ theorem exists_closed_set_protected_finite_polyhedron_position_with_height
     rw [hKaff.embeddedImage_space hinj, hKs]
   · intro τ v hv
     exact hsign v hv (H.map τ v) ((H.small τ v).trans_le (min_le_right _ _))
-
-
 
 theorem exists_closed_set_protected_finite_polyhedron_position
     {ι : Type*} [Finite ι]

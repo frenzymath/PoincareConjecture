@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CoveringPullback
 import PoincareConjecture.Proofs.M76.Mathlib.CoveringDeformationRetraction
 import Mathlib.Topology.Homotopy.Path
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace ContinuousMap.Homotopy
-
-
-
 
 theorem connectedSpace_of_range {X : Type*} [TopologicalSpace X]
     {f : C(X, X)} (H : (ContinuousMap.id X).Homotopy f)
@@ -40,11 +26,6 @@ end ContinuousMap.Homotopy
 namespace IsCoveringMap
 
 variable {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]
-
-
-
-
-
 
 theorem connectedSpace_pullback_of_common_deformation
     {N A : Set X} (hAN : A ⊆ N)
@@ -88,11 +69,6 @@ theorem connectedSpace_pullback_of_common_deformation
   have hqA : IsConnected (q ⁻¹' A) := hjrange ▸ isConnected_range hj
   obtain ⟨g, L, _, hg⟩ := hq.exists_relative_deformation_lift H hr
   exact L.toHomotopy.connectedSpace_of_range (hg.symm ▸ hqA)
-
-
-
-
-
 
 theorem exists_two_sheet_pullback_of_common_deformation
     {N A : Set X} (hAN : A ⊆ N)

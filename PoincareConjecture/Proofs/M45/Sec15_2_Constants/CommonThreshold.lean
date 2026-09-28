@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M32.Calibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,8 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem commonThresholdServices
     (h31 : RepairedSingularRegularLimitTheory.{u})

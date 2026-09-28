@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.PairedS
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.LocalRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SimultaneousTerminalDiskInstallation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

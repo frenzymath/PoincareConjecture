@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CirclePhaseDifferential
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteConformality
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem m64Annulus_affine_phase_within_current
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -65,10 +57,6 @@ theorem m64Annulus_affine_phase_within_current
     simpa only [m64AnnulusCircleCurrent, EuclideanSpace.basisFun_apply] using h.symm
   exact heq.of_subset_closure hc continuousOn_const hsub
     (by rw [m64AnnulusInterior_closure])
-
-
-
-
 
 theorem m64Annulus_affine_phase_radial_ne_zero
     (P : M62.CircleProductData F circumference) (t : ℝ)

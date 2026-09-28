@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M47.SeedVolume
 import PoincareConjecture.Proofs.M47.ComponentEstimateProof
 import PoincareConjecture.Proofs.M47.BlowupControlsFirstFailure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_seed_low_center_test
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

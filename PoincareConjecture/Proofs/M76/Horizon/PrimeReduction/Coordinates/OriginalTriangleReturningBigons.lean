@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.ReturningComponentBigons
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_original_triangle_returning_bigons
     {E V X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

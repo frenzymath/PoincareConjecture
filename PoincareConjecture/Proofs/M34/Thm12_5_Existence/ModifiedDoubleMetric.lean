@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.DoubleCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def modifiedEndDoublePieceMetric (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R) :
     let := endDoublePieceChartedSpace e hR
@@ -31,8 +19,6 @@ noncomputable def modifiedEndDoublePieceMetric (e : StandardCylindricalEnd g)
   let := endDoublePiece_isManifold e hR
   exact h.pullbackOfLocalDiffeomorph Subtype.val
     (endDoublePiece_subtypeVal_isLocalDiffeomorph e hR)
-
-
 
 theorem modifiedEndDoublePieceMetric_inner (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R) :
@@ -47,8 +33,6 @@ theorem modifiedEndDoublePieceMetric_inner (e : StandardCylindricalEnd g)
   dsimp only
   intro x u v
   rfl
-
-
 
 theorem modifiedEndDoubleMetrics_compatible (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R)
@@ -88,8 +72,6 @@ theorem modifiedEndDoubleMetrics_compatible (e : StandardCylindricalEnd g)
     rw [heq x hxval, heq _ hyval]
     exact endDoubleTransition_metric e hR x hx u v
 
-
-
 noncomputable def modifiedEndDoubleMetric (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R)
     (hagrees : EqOn h.euclideanCoefficients g.euclideanCoefficients (endDoubleCollar e R)) :
@@ -100,8 +82,6 @@ noncomputable def modifiedEndDoubleMetric (e : StandardCylindricalEnd g)
     (endDoubleOverlap e hR) (endDoubleOverlap_smooth e hR)
     (fun _ => modifiedEndDoublePieceMetric e h hR)
     (modifiedEndDoubleMetrics_compatible e h hR hagrees)
-
-
 
 theorem modifiedEndDoubleMetric_preserves (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R)
@@ -125,9 +105,6 @@ theorem modifiedEndDoubleMetric_preserves (e : StandardCylindricalEnd g)
     (fun _ => modifiedEndDoublePieceMetric e h hR)
     (modifiedEndDoubleMetrics_compatible e h hR hagrees) i x u v
 
-
-
-
 theorem modifiedEndDoubleParametrization_metric (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {R : ℝ} (hR : 1 < R)
     (hagrees : EqOn h.euclideanCoefficients g.euclideanCoefficients (endDoubleCollar e R))
@@ -148,9 +125,6 @@ theorem modifiedEndDoubleParametrization_metric (e : StandardCylindricalEnd g)
   rw [show x = (p : StandardCapSpace) from rfl,
     endDoubleParametrization_apply, endDoubleParametrization_mfderiv]
   exact hp
-
-
-
 
 theorem modifiedEndDouble_curvatureDerivative_le (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData h)

@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Paths.Tuples
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Coordinates.UniformJoinedAtlas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -89,7 +77,6 @@ private theorem shiNative_bilinear_deriv
   rw [hfun, heq] at hneg
   exact hneg
 
-
 theorem shi_partition_integral_eq
     (N : ℕ) (τ : ℕ → ℝ) (f : ℝ → ℝ)
     (hN : 0 < N)
@@ -148,10 +135,6 @@ theorem shi_segment_energy_partition
       exact hspeed.pow 2
     _ = pathEnergy g γ₀ := (pathEnergy_eq_integral_pathSpeed_sq g γ₀).symm
 
-
-
-
-
 theorem shi_mesh_actual_density_zero_energy
     (g : RiemannianMetric n M) (N : ℕ) (τ : ℕ → ℝ)
     (γ : ℝ → M) (e : ℕ → ℝ → ℝ)
@@ -181,9 +164,6 @@ theorem shi_mesh_actual_density_zero_energy
         hN hstep hzero hone hτ
       exact hspeed.pow 2
     _ = pathEnergy g γ := (pathEnergy_eq_integral_pathSpeed_sq g γ).symm
-
-
-
 
 set_option backward.isDefEq.respectTransparency false in
 theorem shi_segmentPathEnergy_eq_chartMetric_integral
@@ -257,14 +237,6 @@ theorem shiActualJoinedDensity_integral_eq_segmentPathEnergy
   have h := shi_segmentPathEnergy_eq_chartMetric_integral g hc hi hab F z hF hFtarget
   simpa only [shiActualJoinedDensity, F] using h.symm
 
-
-
-
-
-
-
-
-
 theorem shiPath_density_eq_actual_of_position_velocity
     {m N : ℕ} (D : LeviCivitaData g)
     (c : Fin m → OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin n)))
@@ -323,9 +295,6 @@ theorem shiPath_density_eq_actual_of_position_velocity
       (derivWithin (fun s => shiPathJoinedVariation D c cstar label γ P j s z)
         (Icc (shiPathTime N j.val) (shiPathTime N (j.val + 1))) t)
   rw [hpos, hvel]
-
-
-
 
 set_option maxHeartbeats 1800000 in
 
@@ -476,9 +445,6 @@ theorem shiPathTuple_density_eq_actual
   exact shiPath_density_eq_actual_of_position_velocity D c cstar label γ P j t z
     hpos hvel
 
-
-
-
 theorem shiActualJoinedDensity_zero_eq_chart_metric_deriv
     (D : LeviCivitaData g) {c : OpenPartialHomeomorph M V}
     {a b : ℝ} (hab : a < b) (x : ℝ → V)
@@ -501,8 +467,6 @@ theorem shiActualJoinedDensity_zero_eq_chart_metric_deriv
     (derivWithin (fun s => F s 0) (Icc a b) t)
     (derivWithin (fun s => F s 0) (Icc a b) t) = _
   rw [hF t, hW]
-
-
 
 theorem shiActualJoinedDensity_zero_eq_pathSpeed_sq
     (D : LeviCivitaData g) {c : OpenPartialHomeomorph M V}
@@ -535,8 +499,6 @@ theorem shiActualJoinedDensity_zero_eq_pathSpeed_sq
       (Real.sq_sqrt hnonneg).symm
     _ = (pathSpeed g γ t) ^ 2 := by
       simpa only [Function.comp_apply] using congrArg (fun r : ℝ => r ^ 2) hmetric.2
-
-
 
 theorem shi_pullback_energy_support
     [T2Space M] (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -614,9 +576,6 @@ theorem shi_pullback_energy_support
         (n : ℝ) * K * (g.edist p q).toReal + ε := by
     simpa only [u, hop.2] using htrace
   exact ⟨U, u, hU, hqU, hu, huq, hdist, hgrad', htrace'⟩
-
-
-
 
 theorem exists_shi_polynomial_distance_support
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

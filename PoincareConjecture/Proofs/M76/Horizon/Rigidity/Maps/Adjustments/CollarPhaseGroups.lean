@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.PhaseMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.OriginalPhaseMapGroups
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

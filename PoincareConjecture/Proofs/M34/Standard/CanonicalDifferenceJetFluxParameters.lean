@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceEnergyBackground
 import PoincareConjecture.Proofs.M34.Standard.DifferenceJetFluxParameters
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
 
-
-
 noncomputable def canonicalDomain_curvatureArray :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -35,8 +23,6 @@ noncomputable def canonicalDomain_curvatureArray :
   let := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
   intro g D p x
   exact (canonicalDomain_differenceEnergyBackground U hU g D p x).2.1
-
-
 
 noncomputable def canonicalDomain_covariantCurvatureArray :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -50,8 +36,6 @@ noncomputable def canonicalDomain_covariantCurvatureArray :
       curvatureAction (canonicalDomain_differenceEnergyBackground U hU g D p x).1.2 d
         (canonicalDomain_curvatureArray U hU g D p x) l j k m
 
-
-
 noncomputable def canonicalDomain_raisedCurvatureFlux :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -62,8 +46,6 @@ noncomputable def canonicalDomain_raisedCurvatureFlux :
   exact ∑ d : Fin n, EuclideanSpace.proj i
     ((g.pullbackCoefficients (extChartAt (𝓡 n) p).symm x).inverse (EuclideanSpace.proj d)) *
       canonicalDomain_covariantCurvatureArray U hU g D p x d l j k m
-
-
 
 theorem canonicalDomain_differentiableAt_curvatureArray :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -81,8 +63,6 @@ theorem canonicalDomain_differentiableAt_curvatureArray :
   change EuclideanSpace.proj l (D.curvature ((extChartAt (𝓡 n) p).symm y)
     (EuclideanSpace.single j 1) (EuclideanSpace.single k 1) (EuclideanSpace.single m 1)) = _
   rw [hcurv y hy]
-
-
 
 theorem canonicalDomain_fderiv_curvature_component :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -104,8 +84,6 @@ theorem canonicalDomain_fderiv_curvature_component :
     (canonicalDomain_differentiableAt_curvatureArray U hU g D p x hx).hasFDerivAt
   exact congrArg (fun A => A v) hd.fderiv
 
-
-
 theorem canonicalDomain_inverseMetricThreeJet :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -118,8 +96,6 @@ theorem canonicalDomain_inverseMetricThreeJet :
   intro g p x
   simp only [inverseMetricThreeJet, truncate_spatialJet, twoJetProjection_spatialJet]
   rfl
-
-
 
 theorem canonicalDomain_connectionThreeJet :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -134,8 +110,6 @@ theorem canonicalDomain_connectionThreeJet :
   exact congrArg (fun B => B.1.2)
     (canonicalDomain_differenceEnergyJetBackground U hU g D p x hx)
 
-
-
 theorem canonicalDomain_curvatureThreeJet :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -148,8 +122,6 @@ theorem canonicalDomain_curvatureThreeJet :
   intro g D p x hx
   exact congrArg (fun B => B.2.1)
     (canonicalDomain_differenceEnergyJetBackground U hU g D p x hx)
-
-
 
 theorem canonicalDomain_covariantCurvatureThreeJet :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -175,8 +147,6 @@ theorem canonicalDomain_covariantCurvatureThreeJet :
   dsimp only [differenceEnergyJetBackground] at hg hR
   rw [hg, hR]
   rfl
-
-
 
 theorem canonicalDomain_raisedCurvatureFluxThreeJet :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

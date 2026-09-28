@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M28.Mathlib.WithinSmoothCompactness
 import Mathlib.Topology.UniformSpace.UniformConvergenceTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem tendstoUniformlyOn_iteratedFDerivWithin_of_eventually_smooth
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

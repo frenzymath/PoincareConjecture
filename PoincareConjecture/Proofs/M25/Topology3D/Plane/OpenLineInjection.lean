@@ -3,25 +3,11 @@ import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_fixedTail_openLine_separation {Z : Type*}
     [TopologicalSpace Z] {K : Set Z} (hK : IsCompact K)
@@ -92,10 +78,6 @@ theorem exists_fixedTail_openLine_separation {Z : Type*}
         (by simpa only [abs_sub_comm] using hst)
       exact (min_le_right η r).trans (by simpa only [dist_comm] using hsep)
   · exact (min_le_right η r).trans (hfar z hz s t (lt_of_not_ge hs) hst)
-
-
-
-
 
 theorem exists_fixedTail_openLine_injection_tolerance {Z : Type*}
     [TopologicalSpace Z] {K : Set Z} (hK : IsCompact K)

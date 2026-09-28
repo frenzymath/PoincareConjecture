@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.MonotoneHelly
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,9 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
 
 theorem equicontinuousAt_of_monotone_logarithmic_gap
     {I : Type*} (f : I → ℝ → ℝ)
@@ -60,8 +49,6 @@ theorem equicontinuousAt_of_monotone_logarithmic_gap
     nlinarith
   rw [Real.dist_eq, abs_lt]
   constructor <;> linarith
-
-
 
 theorem continuousAt_liminf_of_equicontinuousAt
     (f : ℕ → ℝ → ℝ)

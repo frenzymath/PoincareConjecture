@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 import PoincareConjecture.Proofs.M35.Mathlib.DiffeomorphDerivative
 import PoincareConjecture.Definitions.M13MetricHomothety
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
 
 theorem metricHomothety_one_symm
     {n : ℕ} {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
@@ -47,8 +37,6 @@ theorem metricHomothety_one_symm
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {t : ℝ} (ht : t ∈ H.generalized.interval)
   (hregular : t ∉ F.surgery_times)
-
-
 
 theorem regular_history_inverse_homothety :
     MetricHomothety (F.metric t) (H.generalized.metric t)

@@ -2,33 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.EndpointSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology Manifold ContDiff Bundle ENNReal
 
 namespace Poincare.AncientVolume.Splitting
-
-
 
 theorem normalized_endpoint_lengths_tendsto_atTop
     {X : Type*} [MetricSpace X] (p : X) (q y : ℕ → X) (r : ℕ → ℝ)
@@ -54,8 +33,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem rescaledMetric_edist_toReal_of_inverse_square
     (g : RiemannianMetric n M) (r : ℝ) (hr : 0 < r) (x y : M) :
     ((rescaledMetric g ((r ^ 2)⁻¹) (by positivity)).edist x y).toReal =
@@ -63,8 +40,6 @@ theorem rescaledMetric_edist_toReal_of_inverse_square
   rw [rescaledMetric_edist, ENNReal.toReal_mul,
     ENNReal.toReal_ofReal (Real.sqrt_nonneg _), Real.sqrt_inv, Real.sqrt_sq hr.le]
   ring
-
-
 
 theorem endpoint_comparison_cosine_rescaledMetric
     (g : RiemannianMetric n M) (c : ℝ) (hc : 0 < c) (p q y : M) :
@@ -81,8 +56,6 @@ theorem endpoint_comparison_cosine_rescaledMetric
   by_cases hright : (g.edist q y).toReal = 0
   · simp [hright]
   field_simp
-
-
 
 theorem exists_unit_speed_minimizing_segment_of_metricComplete
     [T3Space M] [PreconnectedSpace M]
@@ -104,8 +77,6 @@ theorem exists_unit_speed_minimizing_segment_of_metricComplete
       ⟨div_nonneg ht.1 hd.le, (div_le_one hd).mpr ht.2⟩,
       ENNReal.toReal_mul, ENNReal.toReal_ofReal (abs_nonneg _),
       ← sub_div, abs_div, abs_of_pos hd, div_mul_cancel₀ _ hd.ne']
-
-
 
 theorem exists_normalized_source_segments
     [T3Space M] [PreconnectedSpace M]

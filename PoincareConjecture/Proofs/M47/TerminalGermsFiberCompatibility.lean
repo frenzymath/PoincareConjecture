@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.Compatibility
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +7,6 @@ open Set Filter Poincare.Gluing
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_metric_fibre_compatibility
     {n : ℕ} {ι : Type*} {P : ι → Type*}

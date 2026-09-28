@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.ModelDomain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.Actual.TerminalNormalization
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -100,8 +98,6 @@ private theorem terminal_cap_band_domain (data : TerminalSaddleData M P p e) (i 
       rw [data.ends.upperCutCircle_height]
       exact ⟨data.ends.cuts_lt.le, le_rfl⟩
 
-
-
 theorem terminal_actual_cutCircle_band_range (data : TerminalSaddleData M P p e) (i : Fin 3) :
     range (fun q : S1 => data.toTerminalSaddleGeometry.flatten
       (g (terminalActualCutCircle data i q))) =
@@ -132,8 +128,6 @@ variable (data : TerminalSaddleData M P p e)
 
 include hH hχ hplanar hlabels
 
-
-
 theorem terminal_labeled_cutCircle_range (i : Fin 3) :
     range (fun q : S1 => H (data.toTerminalSaddleGeometry.flatten
       (g (terminalActualCutCircle data i q)))) =
@@ -154,8 +148,6 @@ theorem terminal_labeled_cutCircle_range (i : Fin 3) :
   · rintro ⟨q, rfl⟩
     exact ⟨q, q.property, rfl⟩
 
-
-
 theorem terminal_labeled_physical_cutCircle_range (i : Fin 3) :
     range (fun q : S1 => data.toTerminalSaddleGeometry.flatten.symm
       (H (data.toTerminalSaddleGeometry.flatten (g (terminalActualCutCircle data i q))))) =
@@ -163,7 +155,6 @@ theorem terminal_labeled_physical_cutCircle_range (i : Fin 3) :
   have h := congrArg (fun s : Set E3 => data.toTerminalSaddleGeometry.flatten.symm '' s)
     (terminal_labeled_cutCircle_range data Φ χ H hH hχ hplanar hlabels i)
   simpa only [← range_comp, Function.comp_def, Diffeomorph.symm_apply_apply] using h
-
 
 theorem terminal_labeled_model_rim_height (i : Fin 3) (x : E2)
     (hx : x ∈ sphere (0 : E2) 1) :
@@ -191,8 +182,6 @@ theorem terminal_labeled_model_rim_height (i : Fin 3) (x : E2)
   · simpa only [terminalActualCutCircle, hlabel] using data.ends.lowerCutCircle_height j q
   · simpa only [terminalActualCutCircle, hlabel] using data.ends.upperCutCircle_height j q
 
-
-
 theorem terminal_labeled_model_lower_boundary (i : Fin 3) (j : data.ends.LowerCutIndex)
     (hlabel : data.labels i = Sum.inl j) :
     inner Real (M.v : E3) (data.toTerminalSaddleGeometry.filledModel (data.modelSeed i)) <
@@ -211,8 +200,6 @@ theorem terminal_labeled_model_lower_boundary (i : Fin 3) (j : data.ends.LowerCu
       (show (0 : Real) ≤ 1 by norm_num)
     have hne := data.ends.cuts_lt.ne
     exact False.elim (hne ((hrim x hx).symm.trans (hu.2 x hx)))
-
-
 
 theorem terminal_labeled_model_upper_boundary (i : Fin 3) (j : data.ends.UpperCutIndex)
     (hlabel : data.labels i = Sum.inr j) :

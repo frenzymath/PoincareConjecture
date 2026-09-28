@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RawAnnulusFiberTrace
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +21,6 @@ local instance : IsFiniteMeasure mu := isFiniteMeasure_restrict.mpr
   ((measure_mono interior_subset).trans_lt m64AnnulusDomain_isCompact.measure_lt_top).ne
 
 variable {m : ℕ}
-
-
 
 theorem interiorCurve_vertical_trace_pointwise_vector
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -148,9 +132,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 open Poincare.Analysis.Sobolev.Weak
 
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_pointwise
     (L : M64FreeWeakPhaseAnnulus (n := n) e R
       c0 c1 H0 H1 k D)
@@ -178,10 +159,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_pointwise
   exact interiorCurve_vertical_trace_pointwise_vector hf hd2 hfs hdeq
     (havg.mono fun x hx => by simpa only [Function.comp_def] using hx.1)
     (havg.mono fun x hx => by simpa only [Function.comp_def] using hx.2)
-
-
-
-
 
 theorem interiorCurve_vertical_trace_l2_control
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -425,9 +402,6 @@ theorem interiorCurve_vertical_trace_l2_control
       _ = (1 - s) * ∫ p in S, ‖d p‖ ^ 2 := by
         rw [m64AnnulusInteriorIntegral_eq_iterated_integrable _ hdnormsq]
 
-
-
-
 theorem interiorCurve_vertical_trace_l2_bounds
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
     {b0 b1 : ℝ → EuclideanSpace ℝ (Fin m)}
@@ -443,9 +417,6 @@ theorem interiorCurve_vertical_trace_l2_bounds
   intro s hs
   have h := interiorCurve_vertical_trace_l2_control hd2 hpoint s hs
   exact ⟨h.1.2, h.2.2⟩
-
-
-
 
 theorem interiorCurve_vertical_trace_memLp
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -471,9 +442,6 @@ private theorem trace_eLpNorm_eq_sqrt {v : ℝ → EuclideanSpace ℝ (Fin m)}
     simp only [hx, real_inner_self_eq_norm_sq]
   rw [← hsq, Real.sqrt_sq_eq_abs, abs_of_nonneg ENNReal.toReal_nonneg,
     ENNReal.ofReal_toReal hv.eLpNorm_lt_top.ne]
-
-
-
 
 theorem interiorCurve_vertical_trace_square_tendsto
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -507,9 +475,6 @@ theorem interiorCurve_vertical_trace_square_tendsto
       (fun _ => sq_nonneg _))) ?_ hlim
     filter_upwards [Ioo_mem_nhdsLT (show (0 : ℝ) < 1 from zero_lt_one)] with s hs
     exact (hbound s hs).2
-
-
-
 
 theorem interiorCurve_vertical_trace_eLpNorm_tendsto
     {f d : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -547,10 +512,6 @@ private theorem observed_monotone_trace_memLp
   filter_upwards [ae_restrict_mem measurableSet_Icc] with x hx
   exact hC _ (mem_image_of_mem b ⟨hsigma hx.1, hsigma hx.2⟩)
 
-
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_l2_control
     (L : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)
     (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -575,9 +536,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_l2_control
     (Lp.memLp (L.annulus.column 1))
     (L.raw_vertical_trace_pointwise he hA h0 h1)
 
-
-
-
 theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_square_tendsto
     (L : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)
     (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -596,9 +554,6 @@ theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_square_tendsto
     (b0 := fun x => e (c0 (L.label0 x))) (b1 := fun x => e (c1 (L.label1 x)))
     (Lp.memLp (L.annulus.column 1))
     (L.raw_vertical_trace_pointwise he hA h0 h1)
-
-
-
 
 theorem M64FreeWeakPhaseAnnulus.raw_vertical_trace_strong
     (L : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakSeamOscillation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakPhaseContinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem m64WeakPhase_monotone_trace_equicontinuousAt_seam
     {I : Type*} (u : I → LoopPlane → ℝ) (V : I → Fin 2 → LoopPlane → ℝ)
@@ -86,8 +73,6 @@ theorem m64WeakPhase_monotone_trace_equicontinuousAt_seam
   rw [Real.dist_eq, abs_lt]
   constructor <;> linarith
 
-
-
 theorem m64Continuous_of_affine_period_of_continuousAt_zero
     (b : ℝ → ℝ) {T D : ℝ} (hT : 0 < T)
     (hp : ∀ x, b (x + T) = b x + D)
@@ -128,8 +113,6 @@ theorem m64Continuous_of_affine_period_of_continuousAt_zero
   have heq : b = fun x => f x + D / T * x := by ext x; dsimp only [f]; ring
   rw [heq]
   exact hfc.add (continuous_const.mul continuous_id)
-
-
 
 theorem m64WeakPhase_monotone_affine_trace_continuous
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b : ℝ → ℝ) (D : ℝ)

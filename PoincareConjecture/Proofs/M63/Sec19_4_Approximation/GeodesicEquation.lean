@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicSmoothness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 3
@@ -28,8 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {gamma : ℝ → M} {S : Set ℝ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem IsGeodesicOn.pullback_velocity_eq_zero (hgamma : g.IsGeodesicOn gamma S)
     (D : LeviCivitaData g) {t : ℝ} (ht : t ∈ S) :

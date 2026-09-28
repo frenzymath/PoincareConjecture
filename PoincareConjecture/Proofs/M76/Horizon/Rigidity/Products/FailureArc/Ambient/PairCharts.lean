@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem OriginalSurfacePairChart.exists_neighborhood_restriction
     {X ι : Type*} [TopologicalSpace X] {N S T : Set X}
     {e : ι → OpenPartialHomeomorph X V3}

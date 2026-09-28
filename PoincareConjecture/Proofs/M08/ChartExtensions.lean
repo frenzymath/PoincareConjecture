@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,7 +11,6 @@ namespace PoincareConjecture.M08
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def parametricExtensionInChart
     {I U : Set ℝ} {γ : ℝ → M}

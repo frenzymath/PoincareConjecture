@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalStaticLimit
 import PoincareConjecture.Proofs.M30.Thm11_1.ShortLimitStatementAssembly
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.AnalyticSuppliers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem shortControlService (hC : RicciFlowCurvatureTheory.{u}) :
     M30ShortControlService.{u} := by
@@ -42,8 +30,6 @@ theorem shortControlService (hC : RicciFlowCurvatureTheory.{u}) :
     hterminalBound hC H hepsilon hbound G hcomplete D
   exact ⟨G.subsequence, G.subsequence_strictMono,
     shortControls_of_static_terminal_limit_bound hC H G D hcoverage (B := B) hscalar⟩
-
-
 
 theorem exists_shortLimitStatement
     (P : M30ControlledBlowupPredecessors.{u}) :

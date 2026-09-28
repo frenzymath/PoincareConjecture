@@ -4,21 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsFamily
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_cap_source_annulus
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)
@@ -126,9 +117,7 @@ theorem exists_saddle_cap_source_annulus
       SurgeryCapProfile.capMap_apply, hmodel, hsign]
     simp only [mul_zero, add_zero, one_mul, ell]
 
-
 set_option linter.unusedVariables false in
-
 
 theorem exists_saddle_lower_end_family
     (hP : PlanarSchoenfliesService)

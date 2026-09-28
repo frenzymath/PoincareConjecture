@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialNormJets
 import Mathlib.Analysis.Calculus.IteratedDeriv.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ section General
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem iteratedFDeriv_comp_nonzero_smul (f : E → F) {R : ℝ} (hR : R ≠ 0)
     (j : ℕ) (x : E) :
@@ -48,8 +36,6 @@ section Inner
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem norm_exterior_jet_bounds (k : ℕ) :
     ∃ D : ℝ, 1 ≤ D ∧ ∀ i, 1 ≤ i → i ≤ k → ∀ x : E, 1 ≤ ‖x‖ →
@@ -84,8 +70,6 @@ theorem norm_exterior_jet_bounds (k : ℕ) :
     rw [← hn]
     exact mul_le_mul_of_nonneg_left (hDb i hik z hz) hR.le
   exact (mul_le_mul_iff_right₀ hR).mp hl
-
-
 
 theorem radial_exterior_weighted_jets {A : Type*} {f : A → ℝ → ℝ} {N : ℕ}
     (hf : ∀ a, ContDiffOn ℝ ∞ (f a) (Ioi 0))

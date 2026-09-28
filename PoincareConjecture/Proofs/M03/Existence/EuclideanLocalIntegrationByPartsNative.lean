@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanCutoffNative
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -33,7 +25,6 @@ theorem hasCompactSupport_schwartzLineDeriv (η : 𝓢(E, ℝ)) (hη : HasCompac
     HasCompactSupport (∂_{v} η : 𝓢(E, ℝ)) :=
   hη.of_isClosed_subset (isClosed_tsupport _) (SchwartzMap.tsupport_lineDerivOp_subset v η)
 
-
 theorem local_integral_mul_fderiv (η : 𝓢(E, ℝ)) (hη : HasCompactSupport η)
     {U : Set E} (hU : IsOpen U) (hηU : tsupport η ⊆ U)
     {f : E → ℝ} (hf : ContDiffOn ℝ ∞ f U) (v : E) :
@@ -49,7 +40,6 @@ theorem local_integral_mul_fderiv (η : 𝓢(E, ℝ)) (hη : HasCompactSupport �
     (integrable_local_mul_schwartz η hη hU hηU hf)
     (fun x hx => (hf.contDiffAt (hU.mem_nhds (hηU hx))).differentiableAt (by simp))
     (fun _ _ => η.differentiableAt)
-
 
 theorem local_integral_mul_fderiv_cutoff (η : 𝓢(E, ℝ)) (hη : HasCompactSupport η)
     {U : Set E} (hU : IsOpen U) (hηU : tsupport η ⊆ U)

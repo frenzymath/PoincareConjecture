@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Cap
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.StructuralData
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,7 +37,6 @@ theorem inverseNormalizedMetric_eq (A : AncientKappaNormalization K p b) :
     cases he
     rfl
   exact hext _ _ hinner
-
 
 def capFromNormalization (A : AncientKappaNormalization K p b)
     (cap : CapCertificate (A.target.flow.metric 0)) : CapCertificate (K.flow.metric b) :=
@@ -122,7 +113,6 @@ def capFromNormalization (A : AncientKappaNormalization K p b)
 @[simp] theorem capFromNormalization_connection (A : AncientKappaNormalization K p b)
     (cap : CapCertificate (A.target.flow.metric 0)) :
     (A.capFromNormalization cap).connection = K.flow.connection b := rfl
-
 
 def strongCapFromNormalization (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
     (cap : StrongCapCertificate A.target 0 epsilon C) : StrongCapCertificate K b epsilon C :=

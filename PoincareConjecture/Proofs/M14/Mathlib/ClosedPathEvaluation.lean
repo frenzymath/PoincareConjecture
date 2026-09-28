@@ -4,15 +4,6 @@ import Mathlib.Topology.ContinuousMap.Compact
 import Mathlib.Topology.ContinuousMap.Algebra
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Asymptotics
@@ -23,14 +14,10 @@ namespace PoincareConjecture.M14
 variable {P F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup F] [NormedSpace ℝ F] {a b : ℝ}
 
-
-
-
 noncomputable def closedPathEvaluation (hab : a ≤ b) (Φ : P → C(Icc a b, F)) (z : P × ℝ) : F :=
   Φ z.1 (projIcc a b hab z.2)
 
 omit [NormedSpace ℝ P] [NormedSpace ℝ F] in
-
 
 theorem continuousOn_closedPathEvaluation (hab : a ≤ b) {U : Set P}
     {Φ : P → C(Icc a b, F)} (hΦ : ContinuousOn Φ U) :
@@ -41,9 +28,6 @@ theorem continuousOn_closedPathEvaluation (hab : a ≤ b) {U : Set P}
       (hπ.comp continuous_snd).continuousOn)
 
 variable [FiniteDimensional ℝ P]
-
-
-
 
 theorem hasFDerivWithinAt_closedPathEvaluation (hab : a ≤ b)
     {Φ : P → C(Icc a b, F)} {x : P} {A : P →L[ℝ] C(Icc a b, F)}

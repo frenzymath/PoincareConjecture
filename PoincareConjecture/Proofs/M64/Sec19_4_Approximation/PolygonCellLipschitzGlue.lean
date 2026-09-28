@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellLipschitz
 import PoincareConjecture.Proofs.M60.Mathlib.LipschitzGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal NNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_lipschitzOn_annulus_of_polygon_cells
     {Y : Type*} [PseudoEMetricSpace Y] {f : LoopPlane → Y}
@@ -108,9 +92,6 @@ theorem m64_lipschitzOn_annulus_of_polygon_cells
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64Annulus_hLip_of_polygon_cells
     (g : RiemannianMetric n M) {f : LoopPlane → M}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.WeightBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
-
-
 
 theorem m65WeightedArea_uniformGapBound (compact : IsCompact (univ : Set M))
     {A L : ℝ} (hA : 0 ≤ A) (hL : 0 ≤ L) :

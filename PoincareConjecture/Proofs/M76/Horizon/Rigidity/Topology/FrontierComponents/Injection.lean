@@ -2,16 +2,12 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.ComponentLoopR
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.PathMaps
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace FundamentalGroup
 
 variable {X : Type*} [TopologicalSpace X] {S F T A B : Set X}
-
 
 theorem inclusion_injective_of_whole_component (hSF : S ⊆ F)
     (hcomponent : ∀ x ∈ S, connectedComponentIn F x = S) (x : S) :
@@ -24,7 +20,6 @@ theorem inclusion_injective_of_whole_component (hSF : S ⊆ F)
       exact Path.Homotopic.Quotient.eq.mpr
         (Path.Homotopic.of_map_whole_component hSF hcomponent
           (Path.Homotopic.Quotient.eq.mp hpq))
-
 
 theorem inclusion_injective_of_isClopen (hSF : S ⊆ F)
     (hS : IsClopen ((Subtype.val : F → X) ⁻¹' S)) (x : S) :
@@ -66,7 +61,6 @@ theorem inclusion_injective_of_closed_partition
   exact ⟨hA.preimage continuous_subtype_val,
     isClosed_compl_iff.mp (hcompl ▸ hB.preimage continuous_subtype_val)⟩
 
-
 theorem inclusion_injective_comp (hSF : S ⊆ F) (hFT : F ⊆ T) (x : S)
     (h₁ : Function.Injective (map (ContinuousMap.inclusion hSF) x))
     (h₂ : Function.Injective (map (ContinuousMap.inclusion hFT)
@@ -76,8 +70,6 @@ theorem inclusion_injective_comp (hSF : S ⊆ F) (hFT : F ⊆ T) (x : S)
       (ContinuousMap.inclusion hFT).comp (ContinuousMap.inclusion hSF) := rfl
   rw [heq, map_comp]
   exact h₂.comp h₁
-
-
 
 theorem whole_phase_component_ambient_injective
     (hA : IsClosed A) (hB : IsClosed B) (hAB : Disjoint A B)

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverDifferentialEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +15,6 @@ open Proofs.M58
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
-
-
 theorem scalarCoverMap_radial_norm (z : Cover) :
     ‖fderiv ℝ scalarCoverMap z (1, 0)‖ = 1 := by
   have heq : fderiv ℝ scalarCoverMap z (1, 0) = angularPoint (2 * Real.pi * z.2) := by
@@ -39,11 +22,6 @@ theorem scalarCoverMap_radial_norm (z : Cover) :
     ext i
     fin_cases i <;> simp [angularPoint]
   rw [heq, norm_angularPoint]
-
-
-
-
-
 
 theorem scalarCover_radial_derivative_le {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -56,11 +34,6 @@ theorem scalarCover_radial_derivative_le {H : Plane → ℝ}
   change |fderiv ℝ H (scalarCoverMap z) (fderiv ℝ scalarCoverMap z (1, 0))| ≤ _
   simpa only [scalarCoverMap_radial_norm, mul_one, Real.norm_eq_abs] using
     (fderiv ℝ H (scalarCoverMap z)).le_opNorm (fderiv ℝ scalarCoverMap z (1, 0))
-
-
-
-
-
 
 theorem scalarCover_radial_energy_integrable {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -80,12 +53,6 @@ theorem scalarCover_radial_energy_integrable {H : Plane → ℝ}
   simpa only [sq_abs] using
     (sq_le_sq₀ (abs_nonneg _) (norm_nonneg _)).mpr (scalarCover_radial_derivative_le hHs hz.1)
 
-
-
-
-
-
-
 theorem scalarCover_radial_memLp_ae {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hE : IntegrableOn (fun x => ‖fderiv ℝ H x‖ ^ 2) scalarAnnulus) :
@@ -103,12 +70,6 @@ theorem scalarCover_radial_memLp_ae {H : Plane → ℝ}
   have hLp := (memLp_two_iff_integrable_sq
     (hc.aestronglyMeasurable measurableSet_Ioo)).mpr ht
   rwa [← Measure.restrict_congr_set (Ioo_ae_eq_Ioc (μ := (volume : Measure ℝ)))]
-
-
-
-
-
-
 
 theorem scalarCover_boundary_trace_energy_ae {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

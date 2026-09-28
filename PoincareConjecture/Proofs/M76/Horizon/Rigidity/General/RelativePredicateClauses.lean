@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.LatticeRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.General.IndexTwoRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.General.IndexZeroRigidity
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -31,8 +29,6 @@ theorem hasHamiltonRelativeTorusRigidity_of_card_two_one
   obtain ⟨F⟩ := hhom
   exact exists_indexTwo_lattice_rigidity Λ e d hι hκ hd hI hJ phi hphi hproper F
 
-
-
 theorem hasHamiltonRelativeTorusRigidity
     {ι κ α β : Type*} [Fintype ι] [Fintype κ]
     (Λ : Submodule ℤ (κ → ℝ)) [DiscreteTopology Λ] [IsZLattice ℝ Λ]
@@ -49,10 +45,6 @@ theorem hasHamiltonRelativeTorusRigidity
       (by omega) e d hcard hlower
   · exact hasHamiltonRelativeTorusRigidity_of_card_two_one Λ htwo
       (by omega) e d hcard hlower
-
-
-
-
 
 theorem lowerRigidityFamily_of_index_zero
     (hzero :
@@ -117,8 +109,6 @@ theorem lowerRigidityFamily_of_index_zero
       (fun c : charts => (c : OpenPartialHomeomorph
         (LatticeHandleAmbient (Fin 2) (Fin 1)
           (hamiltonLowerPeriodLattice (Fin 1))) (Fin 3 → ℝ))) d
-
-
 
 theorem lowerRigidityFamily_of_constructed_index_zero :
     (∀ (charts : Set (OpenPartialHomeomorph

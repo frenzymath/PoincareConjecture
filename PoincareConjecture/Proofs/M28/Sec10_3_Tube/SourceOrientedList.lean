@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceOrientationCompatibility
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizerEdgePacket
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFrontierSelection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M28
 
 open PoincareConjecture.EpsilonNeck
-
-
 
 structure SourceOrientedList {epsilon C A D₀ D : ℝ}
     {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
@@ -42,8 +31,6 @@ structure SourceOrientedList {epsilon C A D₀ D : ℝ}
       SourceEdgePacket p.2 q.2 epsilon)
   covers : MapsTo S.path (Icc S.lower S.upper)
     {x | ∃ p ∈ nodes, x ∈ p.2.carrier}
-
-
 
 theorem exists_source_oriented_list_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

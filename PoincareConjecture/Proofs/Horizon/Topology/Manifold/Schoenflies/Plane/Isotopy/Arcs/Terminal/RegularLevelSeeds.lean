@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sublevel.Minimum
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := Metric.sphere (0 : E3) 1
-
-
 
 theorem exists_points_below_and_above_regular_level
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -38,8 +34,6 @@ theorem exists_points_below_and_above_regular_level
     rw [mfderiv_neg] at hn
     exact neg_eq_zero.mp hn
 
-
-
 theorem exists_regular_level_seeds_with_negative_separator
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     {q : S2} (hregular : mfderiv (𝓡 2) 𝓘(Real, Real) h q ≠ 0)
@@ -49,8 +43,6 @@ theorem exists_regular_level_seeds_with_negative_separator
   obtain ⟨⟨x, hx, hxb⟩, ⟨y, hy, hby⟩⟩ := exists_points_below_and_above_regular_level
     hh hregular hqb (hU.inter (isOpen_lt hl continuous_const)) ⟨hqU, hlq⟩
   exact ⟨⟨x, hx.1, hxb, hx.2⟩, ⟨y, hy.1, hby, hy.2⟩⟩
-
-
 
 theorem exists_regular_level_seeds_with_positive_separator
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

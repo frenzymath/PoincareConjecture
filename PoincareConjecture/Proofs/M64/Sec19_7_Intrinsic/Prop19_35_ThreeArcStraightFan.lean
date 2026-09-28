@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcTriangulation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightJoinFan
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +13,6 @@ namespace PoincareConjecture
 
 namespace M64IntrinsicCoordinateTriangulation
 
-
-
-
 theorem boundary_injective {K : Set AnnulusCoordinates}
     (R : M64IntrinsicCoordinateTriangulation K) (i : Fin R.count) (k : Fin 3) :
     InjOn ((R.face i).boundary k).map (Icc (0 : ℝ) 1) :=
@@ -27,10 +20,6 @@ theorem boundary_injective {K : Set AnnulusCoordinates}
     R.source R.boundary i k
 
 end M64IntrinsicCoordinateTriangulation
-
-
-
-
 
 theorem m64Intrinsic_exists_three_arc_triangulation_with_straight_fan
     (gamma : Bool → ℝ → AnnulusCoordinates) (sigma : ℝ → AnnulusCoordinates)

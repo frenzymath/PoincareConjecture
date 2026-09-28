@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CofactorNormal
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,21 +9,17 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def immersedSphereRadialExtension (j : UnitTwoSphere → E3) : E3 → E3 :=
   j ∘ sphereDirection
-
 
 theorem immersedSphereRadialExtension_contDiffOn (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j) :
     ContDiffOn ℝ ∞ (immersedSphereRadialExtension j) ({0}ᶜ : Set E3) :=
   (hj.comp_contMDiffOn sphereDirection_contMDiffOn).contDiffOn
 
-
 theorem immersedSphereRadialExtension_smul (j : UnitTwoSphere → E3) (p : UnitTwoSphere)
     {r : ℝ} (hr : 0 < r) : immersedSphereRadialExtension j (r • (p : E3)) = j p := by
   simp only [immersedSphereRadialExtension, Function.comp_apply, sphereDirection_smul p hr]
-
 
 theorem immersedSphereRadialExtension_coe (j : UnitTwoSphere → E3) (p : UnitTwoSphere) :
     immersedSphereRadialExtension j (p : E3) = j p := by
@@ -48,7 +31,6 @@ private theorem immersedSphereRadialExtension_differentiableAt (j : UnitTwoSpher
   have hU : IsOpen ({0}ᶜ : Set E3) := isClosed_singleton.isOpen_compl
   exact ((immersedSphereRadialExtension_contDiffOn j hj).contDiffAt
     (hU.mem_nhds (ne_zero_of_mem_unit_sphere p))).differentiableAt (by simp)
-
 
 theorem immersedSphereRadialExtension_fderiv_radial (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j) (p : UnitTwoSphere) :
@@ -66,8 +48,6 @@ theorem immersedSphereRadialExtension_fderiv_radial (j : UnitTwoSphere → E3)
       with r hr
     exact immersedSphereRadialExtension_smul j p hr
   exact hd.unique ((hasDerivAt_const (1 : ℝ) (j p)).congr_of_eventuallyEq heq)
-
-
 
 theorem immersedSphereRadialExtension_fderiv_comp (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j) (p : UnitTwoSphere) :
@@ -90,8 +70,6 @@ theorem immersedSphereRadialExtension_fderiv_comp (j : UnitTwoSphere → E3)
     mfderiv (𝓡 2) 𝓘(ℝ, E3) j p v
   exact congrArg (fun A => A v) hh.symm
 
-
-
 theorem immersedSphereRadialExtension_fderiv_injOn (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 2) 𝓘(ℝ, E3) j p))
@@ -111,8 +89,6 @@ theorem immersedSphereRadialExtension_fderiv_injOn (j : UnitTwoSphere → E3)
   rw [← immersedSphereRadialExtension_fderiv_comp j hj p]
   exact hxy
 
-
-
 theorem immersedSphereRadialExtension_fderiv_contMDiff (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j) :
     ContMDiff (𝓡 2) 𝓘(ℝ, E3 →L[ℝ] E3) ∞
@@ -126,11 +102,9 @@ theorem immersedSphereRadialExtension_fderiv_contMDiff (j : UnitTwoSphere → E3
       (fun p : UnitTwoSphere => (p : E3)) := contMDiff_coe_sphere
   exact hder.contMDiffOn.comp_contMDiff hi ne_zero_of_mem_unit_sphere
 
-
 noncomputable def immersedSphereRawNormal (j : UnitTwoSphere → E3)
     (p : UnitTwoSphere) : E3 :=
   cofactorNormal (fderiv ℝ (immersedSphereRadialExtension j) (p : E3)) (p : E3)
-
 
 theorem immersedSphereRawNormal_contMDiff (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j) :
@@ -148,7 +122,6 @@ theorem immersedSphereRawNormal_contMDiff (j : UnitTwoSphere → E3)
       (fun p : UnitTwoSphere => (p : E3)) := contMDiff_coe_sphere
   exact hraw.contMDiffOn.comp_contMDiff hi ne_zero_of_mem_unit_sphere
 
-
 theorem immersedSphereRawNormal_nonzero_orthogonal (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 2) 𝓘(ℝ, E3) j p))
@@ -165,8 +138,6 @@ theorem immersedSphereRawNormal_nonzero_orthogonal (j : UnitTwoSphere → E3)
   change ⟪immersedSphereRawNormal j p, mvfderiv (𝓡 2) j p v⟫_ℝ = 0
   rw [← immersedSphereRadialExtension_fderiv_comp j hj p]
   exact horth _
-
-
 
 theorem exists_immersed_sphere_unit_normal (j : UnitTwoSphere → E3)
     (hj : ContMDiff (𝓡 2) 𝓘(ℝ, E3) ∞ j)

@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Complement.TransverseCorners
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.Mathlib.ShiftedCircleClosedArc
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem plDomain_relative_preimage_of_eq_off_closed
     {X Y ι : Type*} [TopologicalSpace X] [T2Space X] [TopologicalSpace Y]
@@ -74,8 +62,6 @@ local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
 
-
-
 theorem plDomain_sourceSlab_of_supported_phase_avoidance
     {ι : Type*} {e : ι → OpenPartialHomeomorph X V3}
     (phi psi : C(H, H)) {c a b : ℝ} (ha : c < a) (hab : a ≤ b) (hb : b < c + p)
@@ -123,8 +109,6 @@ theorem plDomain_sourceSlab_of_supported_phase_avoidance
   rw [hphases] at hf
   exact ⟨hPL, hf⟩
 
-
-
 theorem plDomains_complementary_sourceSlabs_of_supported_phase_avoidance
     {ι : Type*} {e : ι → OpenPartialHomeomorph X V3}
     (phi psi : C(H, H)) {c a b : ℝ} (ha : c < a) (hab : a < b) (hb : b < c + p)
@@ -165,8 +149,6 @@ theorem plDomains_complementary_sourceSlabs_of_supported_phase_avoidance
   rw [AddCircle.coe_add_period, union_comm (sourceSurface psi (b : C))] at hnewfront'
   exact ⟨hPL, hf, hPL', hnewfront'⟩
 
-
-
 theorem sourceSurface_eq_sdiff_of_supported_avoidance
     (phi psi : C(H, H)) {D : Set X} (theta : C)
     (hfixed : ∀ x : H,
@@ -185,8 +167,6 @@ theorem sourceSurface_eq_sdiff_of_supported_avoidance
   · rintro ⟨hx, hxI⟩
     exact (sourceSurface_agrees_off_support phi psi hfixed theta x hxI).mpr hx
 
-
-
 theorem sourceSlab_eq_sdiff_of_supported_avoidance
     (phi psi : C(H, H)) {D : Set X} (a b : ℝ)
     (hfixed : ∀ x : H,
@@ -201,8 +181,6 @@ theorem sourceSlab_eq_sdiff_of_supported_avoidance
   · rintro ⟨hx, hxI⟩
     exact (sourceSlab_agrees_off_support phi psi hfixed a b x hxI).mpr hx
 
-
-
 theorem sourceSlab_eq_union_of_supported_containment
     (phi psi : C(H, H)) {D : Set X} (a b : ℝ)
     (hfixed : ∀ x : H,
@@ -215,8 +193,6 @@ theorem sourceSlab_eq_union_of_supported_containment
   · have hxI : x ∉ interior D := fun h => hxD (interior_subset h)
     simpa only [mem_union, hxD, or_false] using
       sourceSlab_agrees_off_support phi psi hfixed a b x hxI
-
-
 
 theorem frontier_sourceSlab_eq_sdiff_of_supported_avoidance
     (phi psi : C(H, H)) {D : Set X} (a b : ℝ) (hDR : D ⊆ interior R)
@@ -245,8 +221,6 @@ theorem frontier_sourceSlab_eq_sdiff_of_supported_avoidance
       (fun x hx => (havoid x hx).1),
     sourceSurface_eq_sdiff_of_supported_avoidance phi psi (b : C) hfixed
       (fun x hx => (havoid x hx).2), union_sdiff_distrib, union_sdiff_distrib]
-
-
 
 theorem frontier_sourceSlab_disjoint_frontier_support
     (phi psi : C(H, H)) {D : Set X} (a b : ℝ)

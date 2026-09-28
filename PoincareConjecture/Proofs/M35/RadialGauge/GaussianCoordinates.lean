@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaussianIntegration
 import Mathlib.MeasureTheory.Integral.Pi
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,7 +21,6 @@ private theorem continuous_insert_coordinate (i : Fin (n + 1)) (z : Fin n → �
     simp
   · simpa using (continuous_const : Continuous (fun _ : ℝ => z k))
 
-
 theorem integral_pi_gaussian_slices (i : Fin (n + 1))
     {f : (Fin (n + 1) → ℝ) → F}
     (hf : Integrable f (Measure.pi fun _ => gaussianReal 0 1)) :
@@ -48,8 +39,6 @@ theorem integral_pi_gaussian_slices (i : Fin (n + 1))
     _ = _ := by
       simpa only [e, MeasurableEquiv.piFinSuccAbove_symm_apply,
         Fin.insertNthEquiv, Equiv.coe_fn_mk] using integral_prod_symm _ hi
-
-
 
 theorem integral_pi_gaussian_coordinate_derivative (i : Fin (n + 1))
     {f g : (Fin (n + 1) → ℝ) → F} (hf : Continuous f) (hg : Continuous g)

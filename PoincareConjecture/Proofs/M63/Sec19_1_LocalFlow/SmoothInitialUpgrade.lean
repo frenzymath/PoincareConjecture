@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothLocalExistence
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessFields
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedRelabelingAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem c2ShrinkingCurve_smooth_of_smooth_initial [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

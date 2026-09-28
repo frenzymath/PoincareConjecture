@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.GroupTheory.SpecificGroups.Dihedral
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +11,6 @@ open Set Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
 
 theorem PuncturedProjectiveSphere.pathConnectedSpace (p : RealProjectiveThree) :
     PathConnectedSpace (PuncturedProjectiveSphere p) := by
@@ -79,8 +70,6 @@ namespace StandardPuncturedProjectiveCover
 variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   {p : RealProjectiveThree} {U : Set Q}
-
-
 
 theorem exists_dihedral_reflection_monodromy
     (S : StandardPuncturedProjectiveCover Q p U) (b : U) (k : ZMod 0) :

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ManifoldCurvatureSmooth
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Linearity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

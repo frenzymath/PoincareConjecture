@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology intervalIntegral
@@ -33,8 +25,6 @@ private theorem inner_transport_forward {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem horizontal_velocity_val (p : M14BackwardPath G T τ₁ τ₂ x y)
     {t : ℝ} (ht : t ∈ Set.Ioo τ₁ τ₂) :
     (p.horizontal_velocity t).val =
@@ -42,8 +32,6 @@ theorem horizontal_velocity_val (p : M14BackwardPath G T τ₁ τ₂ x y)
         G.spacetime.timeVector (p.curve t) := by
   rw [p.derivative_eq t ht]
   simp [add_comm]
-
-
 
 theorem backwardLIntegrand_eqOn_of_curve_eqOn
     (p q : M14BackwardPath G T τ₁ τ₂ x y)
@@ -68,15 +56,11 @@ theorem backwardLIntegrand_eqOn_of_curve_eqOn
   unfold M14BackwardLIntegrand M14RawLIntegrand
   rw [← hmetric, hpoint]
 
-
-
 theorem action_eq_of_curve_eqOn (p q : M14BackwardPath G T τ₁ τ₂ x y)
     (h : Set.EqOn p.curve q.curve (Set.Ioo τ₁ τ₂)) :
     M14BackwardLAction G p = M14BackwardLAction G q :=
   intervalIntegral.integral_congr_Ioo_of_le p.tau_lt.le
     (backwardLIntegrand_eqOn_of_curve_eqOn p q h)
-
-
 
 theorem isMinimizing_iff_of_curve_eqOn (p q : M14BackwardPath G T τ₁ τ₂ x y)
     (h : Set.EqOn p.curve q.curve (Set.Ioo τ₁ τ₂)) :

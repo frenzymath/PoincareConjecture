@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M09.StrictPrefixUniqueness
 import PoincareConjecture.Proofs.M09.StrictPrefixNonconjugacy
 
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

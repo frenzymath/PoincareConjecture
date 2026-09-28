@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCompatibleUnion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem mem_subcomplex_vertices_of_mem_space
     {J K : SimplicialComplex ℝ E} (hKJ : K ≤ J) {v : E}
     (hv : v ∈ J.vertices) (hvK : v ∈ K.space) : v ∈ K.vertices := by
@@ -28,9 +17,6 @@ theorem mem_subcomplex_vertices_of_mem_space
   exact K.down_closed hs
     (Finset.singleton_subset_iff.mpr ((J.vertex_mem_convexHull_iff hv (hKJ hs)).mp hvs))
     (Finset.singleton_nonempty v)
-
-
-
 
 theorem exists_finite_convex_frontier_triangulation
     (J : SimplicialComplex ℝ E) (hJ : J.faces.Finite) (hcv : Convex ℝ J.space) :
@@ -43,9 +29,6 @@ theorem exists_finite_convex_frontier_triangulation
     have hf : frontier J.space = J.space := by
       rw [frontier, hclosed.closure_eq, hempty, sdiff_empty]
     exact ⟨J, hJ, hf.symm⟩
-
-
-
 
 theorem exists_protected_carrier_refinement [FiniteDimensional ℝ E]
     (J P P₀ : SimplicialComplex ℝ E)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.HalfCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
 
 open Classical in
-
-
 
 theorem vertex_half_ball_pairs (p : (T.marked 2).vertices) (w : ℝ) (hw : w ≠ 0) :
     let N := T.vertexBlock p

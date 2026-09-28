@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FiniteComponentExcision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem disjoint_of_meets_old_frontier
     {X : Type*} [TopologicalSpace X] {A D R : Set X}
@@ -35,17 +24,12 @@ namespace PoincareConjecture.M76.ChartwisePLBall
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)} {D S A R P : Set X}
 
-
-
 theorem disjoint_of_meets_old_frontier (b : ChartwisePLBall e D S)
     (hDR : D ⊆ interior R) (hA : IsPreconnected A) (hAS : Disjoint A S)
     (hmeet : (A ∩ frontier R).Nonempty) : Disjoint D A := by
   apply Poincare.Topology.disjoint_of_meets_old_frontier b.isCompact.isClosed hDR hA
     _ hmeet
   rwa [b.frontier_eq]
-
-
-
 
 theorem disjoint_of_distinct_component_meets_old_frontier
     (b : ChartwisePLBall e D S) (hDR : D ⊆ interior R)

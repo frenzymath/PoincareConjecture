@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def referenceCapSphereChart
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
@@ -44,7 +34,6 @@ noncomputable def referenceCapSphereChart
   continuousOn_invFun :=
     (continuousOn_const (c := referenceCapScale a)).smul
       northSphereCoordinate_contMDiffOn.continuousOn
-
 
 theorem referenceCapSphereChart_spec
     (a : ℝ) (ha : a ∈ Ioo (1 / 2 : ℝ) 1) :
@@ -100,7 +89,6 @@ theorem referenceCapSphereChart_spec
     obtain ⟨X, hX, heq⟩ := himage
     exact ⟨X, hX, Subtype.ext ((hpoint X).trans heq)⟩
 
-
 noncomputable def nativeCapSourceChart
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
     (tag : SurgeryCapTag ψ u)
@@ -109,7 +97,6 @@ noncomputable def nativeCapSourceChart
     OpenPartialHomeomorph E2 UnitTwoSphere :=
   ((referenceCapSphereChart a ha).trans
     g.symm.toHomeomorph.toOpenPartialHomeomorph).trans tag.sourceChart.symm
-
 
 theorem nativeCapSourceChart_spec
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

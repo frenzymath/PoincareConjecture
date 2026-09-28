@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.SourceAnnularMark
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.IteratedCoreDegree
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -23,17 +15,12 @@ local notation "Q2" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 
-
-
 noncomputable def originalAnnularMarkedCircle
     {X : Type*} [TopologicalSpace X] {B S : Set X}
     (A : Ann ≃ₜ B) (hBS : B ⊆ S)
     (gamma : C(Q2, originalAnnulusOpenMark A)) : C(Circle, S) :=
   (ContinuousMap.inclusion ((originalAnnulusOpenMark_subset A).trans hBS)).comp
     (gamma.comp ⟨annulusSquareRimParameter, annulusSquareRimParameter.continuous⟩)
-
-
-
 
 theorem exists_original_annular_projection_homeomorph_homotopy
     {X V ι : Type*} [TopologicalSpace X]
@@ -78,10 +65,6 @@ theorem exists_original_annular_projection_homeomorph_homotopy
     rw [H.apply_one]
     exact hcore (q (annulusSquareRimParameter z))
 
-
-
-
-
 theorem original_annular_positive_degree_eq_one
     {X V ι : Type*} [TopologicalSpace X]
     [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
@@ -118,8 +101,6 @@ theorem original_annular_positive_degree_eq_one
   exact AddCircle.nat_eq_one_of_homotopic_homeomorph
     (c.comp (originalAnnularMarkedCircle A hBS gamma)) q Hq n hn Hp
 
-
-
 theorem squareRimLoop_class_ne_one_of_not_nullhomotopic
     {Y : Type*} [TopologicalSpace Y] (gamma : C(Q2, Y))
     (hgamma : ¬ gamma.Nullhomotopic) :
@@ -127,9 +108,6 @@ theorem squareRimLoop_class_ne_one_of_not_nullhomotopic
       (Path.Homotopic.Quotient.mk (squareRimLoop.map gamma.continuous)) ≠ 1 := by
   intro hn
   exact hgamma (nullhomotopic_of_squareRimLoop gamma (Path.Homotopic.Quotient.eq.mp hn))
-
-
-
 
 theorem original_annular_positive_degree_eq_one_of_not_nullhomotopic
     {X V ι : Type*} [TopologicalSpace X]
@@ -167,10 +145,6 @@ private theorem boundaryLoopIterate_retract_apply
     split_ifs
     · exact h _
     · exact ih _
-
-
-
-
 
 theorem original_annular_iterated_core_degree_eq_one
     {X V ι : Type*} [TopologicalSpace X]

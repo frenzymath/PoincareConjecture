@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Branches.EmbeddedNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem SourceDoubleComponents.exists_paired_source_neighborhoods
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

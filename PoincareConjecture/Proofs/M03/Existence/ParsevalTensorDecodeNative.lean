@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ParsevalMetricTraceNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2000000
 set_option synthInstance.maxHeartbeats 400000
@@ -57,7 +48,6 @@ theorem decode_apply (F : iota → V) (C : Coefficients iota) (v w : V) :
     C ab • (innerSL ℝ (F ab.1)).smulRight (innerSL ℝ (F ab.2))) v w = _
   simp only [ContinuousLinearMap.sum_apply, ContinuousLinearMap.smul_apply,
     ContinuousLinearMap.smulRight_apply, innerSL_apply_apply, smul_eq_mul, mul_assoc]
-
 
 theorem decode_encode (F : iota → V)
     (hF : ∀ v : V, (∑ a, inner ℝ (F a) v • F a) = v)
@@ -109,7 +99,6 @@ theorem coefficient_inner (C D : Coefficients iota) :
   intro ab _
   change D ab * C ab = C ab * D ab
   exact mul_comm _ _
-
 
 theorem projection_selfadjoint (F : iota → V) (C D : Coefficients iota) :
     inner ℝ (projection F C) D = inner ℝ C (projection F D) := by
@@ -168,7 +157,6 @@ end LinearAlgebra
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {iota : Type v} [Fintype iota]
-
 
 def nativeDecode (g : RiemannianMetric n M)
     (F : iota → TensorProbeNative.SmoothField (n := n) (M := M)) (x : M)

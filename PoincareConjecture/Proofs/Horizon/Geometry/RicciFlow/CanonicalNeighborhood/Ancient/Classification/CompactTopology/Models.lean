@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +18,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
 
 theorem GlobalNeckCapConclusion.sphere_or_projective_of_compact_positive_sectional
     [CompactSpace M] [ConnectedSpace M]
@@ -51,8 +38,6 @@ theorem GlobalNeckCapConclusion.sphere_or_projective_of_compact_positive_section
   · exact (B.not_whole_of_compact_positive_sectional D hc hsec hB).elim
 
 variable [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem AncientKappaNormalization.isRoundMetricSlice_of_constant_positive
     {K : AncientKappaSolution 3 M} {p : M} {b : ℝ}
@@ -86,9 +71,6 @@ theorem AncientKappaNormalization.isRoundMetricSlice_of_constant_positive
           (K.flow.metric b).inner x w w - (K.flow.metric b).inner x v w ^ 2)) := by
       rw [hinner, hinner, hinner]
       ring
-
-
-
 
 theorem M27KappaAlternativePredecessors.compact_nonround_normalized_alternatives
     (P : M27KappaAlternativePredecessors.{u}) :

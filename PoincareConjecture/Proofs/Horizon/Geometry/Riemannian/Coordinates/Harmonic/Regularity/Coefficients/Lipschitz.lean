@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Hessian.Bounds
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -19,10 +11,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.HarmonicCoordinates
-
-
-
-
 
 theorem exists_uniform_divergence_operator_lipschitz {n : ℕ} (hn : 2 ≤ n)
     {ε : ℝ} (hε : 0 < ε) :

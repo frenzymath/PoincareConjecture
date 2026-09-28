@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_DisjointImages
 import PoincareConjecture.Proofs.M14.Mathlib.IntegralLowerBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
 
 theorem terminal_density_lower_bound (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
@@ -36,8 +26,6 @@ theorem terminal_density_lower_bound (H : M14StableSet G T τ x E)
   apply neg_le_neg
   rw [H.endpoint_slice_map_val Z (hW hZ)]
   exact hl Z hZ
-
-
 
 theorem terminal_reducedVolume_lower_bound (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
@@ -54,9 +42,6 @@ theorem terminal_reducedVolume_lower_bound (H : M14StableSet G T τ x E)
     (A.density_integrable.mono_set (Set.image_mono hW)) hV
   apply (MeasureTheory.ae_restrict_iff' (stable_slice_image_measurable H hW hm)).mpr
   exact Filter.Eventually.of_forall (fun _ hq => terminal_density_lower_bound H A hW hl hq)
-
-
-
 
 theorem terminal_lower_bound_and_earlier (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)

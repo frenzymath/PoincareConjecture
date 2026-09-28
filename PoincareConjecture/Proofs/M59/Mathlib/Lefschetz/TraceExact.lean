@@ -4,16 +4,6 @@ import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 import Mathlib.Algebra.Category.ModuleCat.Projective
 import Mathlib.LinearAlgebra.FreeModule.PID
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +15,6 @@ universe u v
 namespace CategoryTheory.ShortComplex
 
 variable {K : Type u} [CommRing K] {S : ShortComplex (ModuleCat.{v} K)}
-
-
 
 theorem trace_of_splitting
     [Module.Free K S.X₁] [Module.Finite K S.X₁]
@@ -52,8 +40,6 @@ theorem trace_of_splitting
     change LinearMap.trace K S.X₃ (s.s ≫ f.τ₂ ≫ S.g).hom = _
     rw [hright]
 
-
-
 theorem trace_of_shortExact
     [Module.Free K S.X₁] [Module.Finite K S.X₁]
     [Module.Free K S.X₂] [Module.Finite K S.X₂]
@@ -70,8 +56,6 @@ variable {K : Type u} [CommRing K] [IsDomain K] [IsPrincipalIdealRing K]
   {A B C D : Type v} [AddCommGroup A] [AddCommGroup B]
   [AddCommGroup C] [AddCommGroup D]
   [Module K A] [Module K B] [Module K C] [Module K D]
-
-
 
 theorem trace_exact_four
     [Module.Free K A] [Module.Finite K A]
@@ -145,8 +129,6 @@ end LinearMap
 namespace ModuleCat
 
 variable {K : Type u} [CommRing K] {A B : ModuleCat.{v} K}
-
-
 
 theorem trace_eq_of_iso [Module.Free K A] [Module.Finite K A]
     [Module.Free K B] [Module.Finite K B]

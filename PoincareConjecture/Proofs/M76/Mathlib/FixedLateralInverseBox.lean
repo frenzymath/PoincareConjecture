@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedLateralInversePrism
 import PoincareConjecture.Proofs.M76.Mathlib.LongitudinalPrismCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,12 +9,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem IsFinitePL.exists_fixed_lateral_inverse_box
     {S surface : Set E} {T : Set ((ℝ × ℝ) × ℝ)} {e : S ≃ₜ T}

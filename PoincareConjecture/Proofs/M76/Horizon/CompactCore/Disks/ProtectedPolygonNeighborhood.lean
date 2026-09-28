@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.InnermostFrontierPolygon
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

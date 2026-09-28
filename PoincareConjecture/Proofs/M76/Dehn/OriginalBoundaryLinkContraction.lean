@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalChartConnectedLinks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspaceContractibleLinks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineLinkHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem contractibleSpace_faceLink_of_original_boundary_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

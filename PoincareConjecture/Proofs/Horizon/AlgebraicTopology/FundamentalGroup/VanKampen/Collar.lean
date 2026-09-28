@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenGeneral
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +10,6 @@ open Set
 namespace VanKampen
 
 variable {X G : Type*} [TopologicalSpace X] [Group G]
-
-
 
 theorem exists_hom_mem_range_of_union
     (U C : Set X) (hU : IsOpen U) (hC : IsOpen C)

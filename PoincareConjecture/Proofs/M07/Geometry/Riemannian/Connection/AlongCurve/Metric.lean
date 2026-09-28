@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,7 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem fderiv_metric_eq_christoffel
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
@@ -48,8 +39,6 @@ theorem fderiv_metric_eq_christoffel
   rw [hsymm.self_of_nhds a (coordinateChristoffel B x c b),
     hK c a b, hK c b a, hsymm' c b a, hsymm' a b c, hsymm' b a c]
   ring
-
-
 
 theorem hasDerivWithinAt_metric_parallel
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {q V W : ℝ → E} {S : Set ℝ} {t : ℝ}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.Cr
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

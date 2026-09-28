@@ -1,20 +1,9 @@
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem m64ContinuousOn_exists_last_closed_contact
     {X : Type*} [TopologicalSpace X] {gamma : ℝ → X} {L : ℝ} {C : Set X}

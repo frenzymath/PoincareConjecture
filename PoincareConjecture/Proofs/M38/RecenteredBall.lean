@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallCoordinatePatch
 import PoincareConjecture.Proofs.M38.SmoothChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,7 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 theorem exists_surgeryBallAffineSubchart {A : GeneralizedSliceCarrier.{u}}
     (C : SurgeryBallEmbedding A) (p : A.carrier)

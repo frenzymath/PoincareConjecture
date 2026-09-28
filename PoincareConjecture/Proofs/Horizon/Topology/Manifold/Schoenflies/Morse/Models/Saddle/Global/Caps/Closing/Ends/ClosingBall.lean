@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.AxisReversal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.RadialBody
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +29,6 @@ private theorem terminalCylinder_image_circle {v : E3}
     exact ⟨(t, q), ⟨ht, hq⟩, rfl⟩
   · rintro ⟨⟨t, q⟩, ⟨ht, hq⟩, rfl⟩
     exact ⟨(t, A q), ⟨ht, mem_image_of_mem A hq⟩, rfl⟩
-
-
-
 
 theorem exists_curved_closing_ball_of_lower_cap_normalization
     {v : E3} (hv : ‖v‖ = 1)
@@ -76,9 +71,6 @@ theorem exists_curved_closing_ball_of_lower_cap_normalization
   rw [image_comp, hboundary, image_union, image_image]
   simp only [N.symm_apply_apply, image_id']
   rw [image_congr hinv]
-
-
-
 
 theorem exists_common_curved_closing_balls_of_lower_cap_normalizations
     {v : E3} (hv : ‖v‖ = 1)
@@ -127,8 +119,6 @@ theorem exists_common_curved_closing_balls_of_lower_cap_normalizations
     (N₂.trans D) Q hQ hN₂' hM'
   exact ⟨B₁, B₂, hB₁, hB₂⟩
 
-
-
 theorem image_closing_ball_of_cap_image
     (F B L : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     {E M Δ : Set E3}
@@ -151,9 +141,6 @@ theorem image_closing_ball_of_cap_image
   change (F ∘ B) '' ball (0 : E3) 1 = L '' ball (0 : E3) 1 at hopen
   rw [image_comp] at hclosed hopen
   exact ⟨hclosed, hopen⟩
-
-
-
 
 theorem transported_inner_closing_ball_subset
     (F B L J : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

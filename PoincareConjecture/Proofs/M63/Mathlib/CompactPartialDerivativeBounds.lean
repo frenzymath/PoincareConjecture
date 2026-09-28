@@ -2,22 +2,9 @@ import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Normed.Operator.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_uniform_partial_derivative_bounds
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

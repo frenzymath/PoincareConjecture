@@ -4,23 +4,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ContinuousLinearMap
 open scoped ContDiff Convolution Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem Function.Periodic.deriv_of_differentiable
     {f : ℝ → E} {P : ℝ} (hp : Function.Periodic f P)
@@ -31,9 +20,6 @@ theorem Function.Periodic.deriv_of_differentiable
       (hf (x + P)).hasDerivAt.scomp x ((hasDerivAt_id x).add_const P)
   rw [show (fun y => f (y + P)) = f from funext hp] at hd
   exact hd.unique (hf x).hasDerivAt
-
-
-
 
 theorem ContDiffBump.hasDerivAt_normed_convolution [CompleteSpace E]
     (φ : ContDiffBump (0 : ℝ)) {f g : ℝ → E}
@@ -69,9 +55,6 @@ theorem ContDiffBump.hasDerivAt_normed_convolution [CompleteSpace E]
     (φ.integrable_normed.mul_const C) hdiff).2
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_periodic_smooth_C2_approximation [CompleteSpace E]
     {P : ℝ} (hP : 0 < P) {c : ℝ → E}

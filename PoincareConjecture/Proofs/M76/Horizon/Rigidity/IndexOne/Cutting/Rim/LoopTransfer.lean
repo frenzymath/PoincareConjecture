@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.CollapseInjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set CategoryTheory
 

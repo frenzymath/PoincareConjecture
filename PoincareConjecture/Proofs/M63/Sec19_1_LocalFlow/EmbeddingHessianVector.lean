@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PullbackMetricHessian
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,16 +20,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "W" => EuclideanSpace ℝ ι
 
-
-
-
 noncomputable def coordinateHessian {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (e : M → W) (p : M)
     (v w : TangentSpace (𝓡 n) p) : W :=
   WithLp.toLp 2 (fun i => D.hessian (fun q => e q i) p v w)
-
-
-
 
 theorem coordinateHessian_eq_chart {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -79,9 +64,6 @@ theorem coordinateHessian_eq_chart {g : RiemannianMetric n M}
         (coordinateChristoffel (g.pullbackCoefficients c.symm) (c q) u v) at hh
   rw [hD _ hy, hDD] at hh
   exact hh
-
-
-
 
 theorem flow_coordinateHessian_pullback_contDiffOn {a b : ℝ}
     (F : RicciFlow n M (Icc a b)) {e : M → W}

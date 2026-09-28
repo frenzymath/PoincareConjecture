@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2Continuity
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 include hc
 
-
-
 theorem c2_speed_periodic {t : ℝ} (ht : t ∈ Icc a T) :
     Function.Periodic (curveSpeed F c t) curvePeriod := by
   have hv := m63CurveVelocity_periodic
@@ -42,9 +30,6 @@ theorem c2_speed_periodic {t : ℝ} (ht : t ∈ Icc a T) :
       (curveVelocity (fun y => c y t) (x + curvePeriod)) =
     (F.metric t).tangentNorm (c x t) (curveVelocity (fun y => c y t) x)
   erw [hvx, hcx]
-
-
-
 
 theorem c2_scalar_contDiff_of_local (hlocal : M63LocalCurveTheory F)
     {t : ℝ} (ht : t ∈ Ioo a T) :
@@ -67,8 +52,6 @@ theorem c2_scalar_contDiff_of_local (hlocal : M63LocalCurveTheory F)
     curvatureSquared_contDiff_of_relabeling Fs hdM hphi hpos ⟨htaut, hts⟩ (hcd t ht'),
     fun _ hepsilon => regularized_contDiff_of_relabeling Fs hdM hphi hpos
       ⟨htaut, hts⟩ (hcd t ht') hepsilon⟩
-
-
 
 theorem c2_curvatureSquared_periodic (hlocal : M63LocalCurveTheory F)
     (hT : a < T) {t : ℝ} (ht : t ∈ Icc a T) :
@@ -100,8 +83,6 @@ theorem c2_curvatureSquared_periodic (hlocal : M63LocalCurveTheory F)
     fun s hs => hinterior s hs x
   exact heq.of_subset_closure (hcont (x + curvePeriod)) (hcont x)
     Ioo_subset_Icc_self (by rw [closure_Ioo hT.ne]) ht
-
-
 
 theorem c2_regularized_periodic (hlocal : M63LocalCurveTheory F)
     (hT : a < T) (epsilon : ℝ) {t : ℝ} (ht : t ∈ Icc a T) :

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Hype
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Localization
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -72,7 +65,6 @@ private theorem inner_gradient_div_sqrt (D : LeviCivitaData g)
     simp
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem integral_unitNormal_green (D : LeviCivitaData g)
     {φ f : M → ℝ} (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ)

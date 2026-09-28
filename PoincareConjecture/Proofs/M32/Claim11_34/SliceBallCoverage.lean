@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.SliceCurvatureComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +24,6 @@ private theorem sqrt_le_twice_of_half_error {a b : ℝ}
   refine ⟨by positivity, ?_⟩
   rw [mul_pow, Real.sq_sqrt hb]
   nlinarith [(abs_le.mp h).1]
-
-
-
 
 theorem blowup_eventually_slice_inverse_balls
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

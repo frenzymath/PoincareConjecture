@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormPerturbedHeat
 import Mathlib.MeasureTheory.Function.StronglyMeasurable.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,7 +64,6 @@ def timeDependentLpLinearMap (hA : AEStronglyMeasurable A μ)
     filter_upwards [timeDependentLp_coe hA hC (c • u), timeDependentLp_coe hA hC u,
       Lp.coeFn_smul c u, Lp.coeFn_smul c (timeDependentLp hA hC u)] with t hcu hu hs ht
     simp only [RingHom.id_apply, hcu, ht, hs, Pi.smul_apply, hu, map_smul]
-
 
 def timeDependentLpOperator (hA : AEStronglyMeasurable A μ)
     (hC : ∀ᵐ t ∂μ, ‖A t‖ ≤ C) : Lp E 2 μ →L[ℝ] Lp F 2 μ :=

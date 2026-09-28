@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M08.SquareEnergy
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
-
 noncomputable def squareCurveDensity (G : GeneralizedLGeometryTransport n X time I)
     (α : ℝ → G.Point) (J : Set ℝ) (s : ℝ) : ℝ :=
   2 * s ^ 2 * horizontalScalarCurvature G.leafwise (α s) +
@@ -35,8 +24,6 @@ noncomputable def squareCurveDensity (G : GeneralizedLGeometryTransport n X time
       (projectedCurveVelocityWithin G α J s) (projectedCurveVelocityWithin G α J s)
 
 variable {G : GeneralizedLGeometryTransport n X time I} {α : ℝ → G.Point} {J : Set ℝ}
-
-
 
 theorem squareCurveDensity_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hJ : UniqueDiffOn ℝ J) (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ α J) :
@@ -56,8 +43,6 @@ theorem squareCurveDensity_contDiffOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   exact ((contDiffOn_const.mul (contDiffOn_id.pow 2)).mul hscalar).add
     (contDiffOn_const.mul hg.contDiffOn)
 
-
-
 theorem sqrtPullback_contMDiffOn {a b : ℝ} (ha : 0 ≤ a)
     (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ α (M14SqrtParameterInterval a b)) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ (fun τ => α (Real.sqrt τ)) (Ioo a b) := by
@@ -67,8 +52,6 @@ theorem sqrtPullback_contMDiffOn {a b : ℝ} (ha : 0 ≤ a)
     ⟨Real.sqrt_lt_sqrt ha hτ.1, Real.sqrt_lt_sqrt hτ0.le hτ.2⟩
   have hα' := (hα _ (Ioo_subset_Icc_self hs)).contMDiffAt (Icc_mem_nhds hs.1 hs.2)
   exact (hα'.comp τ (Real.contDiffAt_sqrt (ne_of_gt hτ0)).contMDiffAt).contMDiffWithinAt
-
-
 
 theorem projectedVelocity_sqrtPullback {a b s : ℝ} (ha : 0 ≤ a)
     (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ α (M14SqrtParameterInterval a b))
@@ -127,8 +110,6 @@ private theorem inner_smul_of_val_eq {q r : G.Point} (h : q = r)
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
 
-
-
 theorem squareCurveDensity_eq_transformed {a b s : ℝ} (ha : 0 ≤ a)
     (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ α (M14SqrtParameterInterval a b))
     (hs : s ∈ Ioo (Real.sqrt a) (Real.sqrt b)) :
@@ -155,8 +136,6 @@ theorem squareCurveDensity_eq_transformed {a b s : ℝ} (ha : 0 ≤ a)
     Real.sqrt (s ^ 2) * (pot + kin) * (2 * s)
   rw [Real.sqrt_sq hs0.le]
   ring
-
-
 
 theorem sqrtPullback_action_integrable (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)

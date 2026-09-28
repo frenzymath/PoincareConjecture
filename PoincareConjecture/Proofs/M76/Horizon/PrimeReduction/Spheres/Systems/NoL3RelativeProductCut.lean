@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3SelectedCapProductGeometry
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3RelativeEndpointCenteredCut
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry TriangularRoofModel
 

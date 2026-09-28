@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 import PoincareConjecture.Proofs.M76.Mathlib.ComplexCycleLabels
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSubtypePaths
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
 
 noncomputable def geometricEdgePath {u v : K.vertices}
     (h : K.vertexAbstractComplex.edgeGraph.Adj u v) :
@@ -38,8 +26,6 @@ noncomputable def geometricEdgePath {u v : K.vertices}
     simpa only [Finset.coe_insert, Finset.coe_singleton, convexHull_pair] using
       K.convexHull_subset_space he)
 
-
-
 theorem geometricEdgePath_symm {u v : K.vertices}
     (h : K.vertexAbstractComplex.edgeGraph.Adj u v) :
     K.geometricEdgePath h.symm = (K.geometricEdgePath h).symm := by
@@ -48,19 +34,12 @@ theorem geometricEdgePath_symm {u v : K.vertices}
   exact congrArg (fun p : Path (v : E) (u : E) => p t)
     (Path.segment_symm (u : E) (v : E)).symm
 
-
-
-
 noncomputable def geometricWalkPath {u v : K.vertices}
     (w : K.vertexAbstractComplex.edgeGraph.Walk u v) :
     Path (⟨u, K.vertices_subset_space u.property⟩ : K.space)
       ⟨v, K.vertices_subset_space v.property⟩ :=
   w.realizePath (fun x : K.vertices => (⟨x, K.vertices_subset_space x.property⟩ : K.space))
     (fun h => K.geometricEdgePath h)
-
-
-
-
 
 theorem exists_excluded_geometric_cycle {b : K.space}
     (J : Subgroup (FundamentalGroup K.space b)) {v : K.vertices}

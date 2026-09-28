@@ -1,15 +1,5 @@
 import PoincareConjecture.Statements.M12MovingGaugeTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -21,8 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {F : GeneralizedFlowSpacetime n X time I}
   {S : ∀ t : ℝ, SpacetimeSliceGeometry F t}
-
-
 
 structure SpacetimeGaugeTheory (D : LeafwiseLeviCivitaFamily F S)
     (T : SpacetimeIntervalSystem) : Prop where

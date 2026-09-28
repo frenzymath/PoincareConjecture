@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.CylinderEndReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M38
 variable (A : UnitTwoSphere → ℝ) (hA : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ A)
 
 include hA
-
 
 theorem exists_cylinderEndScale (hpos : ∀ z : UnitTwoSphere, 0 < A z) :
     ∃ k : ℝ, 0 < k ∧ k ≤ 1 / 2 ∧ ∀ z : UnitTwoSphere, k < A z := by
@@ -37,8 +28,6 @@ variable (k : ℝ) (hk : 0 < k) (hk2 : k ≤ 1 / 2)
   (hAk : ∀ z : UnitTwoSphere, k < A z)
 
 include hk hk2 hAk
-
-
 
 theorem exists_uniformCylinderEndRange :
     ∃ η : ℝ, 0 < η ∧ η ≤ 1 / 8 ∧
@@ -74,7 +63,6 @@ theorem exists_uniformCylinderEndRange :
     nlinarith
   · nlinarith
 
-
 theorem cylinderEndDiffeomorph_uniform_formulas :
     ∃ η : ℝ, 0 < η ∧ η ≤ 1 / 8 ∧
       (∀ z : UnitTwoSphere, ∀ s : ℝ, 0 < s → s < η →
@@ -91,7 +79,6 @@ theorem cylinderEndDiffeomorph_uniform_formulas :
       (hsmall z s hs hsη).1 (hsmall z s hs hsη).2
 
 omit k hk hk2 hAk in
-
 
 theorem exists_cylinderEndReparametrization (hpos : ∀ z : UnitTwoSphere, 0 < A z) :
     ∃ G : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))

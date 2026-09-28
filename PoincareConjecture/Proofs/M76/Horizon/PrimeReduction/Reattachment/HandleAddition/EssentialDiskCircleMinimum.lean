@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.DiskContactSourceCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.BoundaryPairChartAgreement
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 namespace PoincareConjecture.M76
@@ -285,4 +273,3 @@ theorem HamiltonMarkedProtectedBall.exists_minimal_essential_disk_without_null_c
   exact hmin k ⟨hk,hki,hkR,hkproper,hkno,hkb,hki'⟩
 
 end PoincareConjecture.M76
-

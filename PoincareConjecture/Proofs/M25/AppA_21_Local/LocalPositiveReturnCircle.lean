@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.FiniteChainReorientation
 import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalNegativeReturnCircle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_circle_certificate_of_local_positive_return :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

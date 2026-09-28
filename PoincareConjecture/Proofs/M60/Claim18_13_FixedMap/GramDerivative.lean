@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.GramRank
 import PoincareConjecture.Proofs.M60.Mathlib.GramDeterminantDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereDensity_variation {J : Set ℝ} (F : RicciFlow n M J)
     (f : UnitTwoSphere → M) (z : LoopPlane) {t : ℝ} (ht : t ∈ J) :

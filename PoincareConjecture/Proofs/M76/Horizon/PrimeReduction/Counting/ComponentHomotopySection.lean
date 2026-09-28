@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.RawCutComponentHomotopy
 
-
-
 set_option autoImplicit false
 open Set
 open scoped Topology

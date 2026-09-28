@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M64Comparison
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   {G : M63AmbientGeometry F}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {mu : ℝ}
-
-
 
 theorem m65CommonCircumference (net : M64FamilyAnnulusNet G Gamma mu)
     (cutoff : LoopTwoSphere → ℝ) (hcutoff : ∀ i, 0 < cutoff (net.nodes i)) :

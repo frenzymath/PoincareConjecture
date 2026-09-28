@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.ChordDefectLimits
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_positive_rectangle_of_joint_limit
     {f : ℝ → ℝ → ℝ} {K kappa : ℝ}
@@ -36,9 +24,6 @@ theorem exists_positive_rectangle_of_joint_limit
   exact ⟨a, ha, b, hb, fun s hs t ht =>
     hAB (show (s, t) ∈ A ×ˢ B from ⟨hasub hs, hbsub ht⟩)⟩
 
-
-
-
 theorem half_mul_radius_sq_le_of_chord_lower
     {s t d kappa : ℝ} (hkappa : 0 ≤ kappa) (hkappa1 : kappa ≤ 1)
     (hchord : (s - t) ^ 2 + kappa * s * t ≤ d ^ 2) :
@@ -48,9 +33,6 @@ theorem half_mul_radius_sq_le_of_chord_lower
   have hsecond := mul_nonneg (div_nonneg hkappa (by norm_num : (0 : ℝ) ≤ 2))
     (sq_nonneg t)
   nlinarith only [hchord, hfirst, hsecond]
-
-
-
 
 theorem scalar_radius_ratio_le_of_chord_lower
     {s t d kappa C sigma Q : ℝ}

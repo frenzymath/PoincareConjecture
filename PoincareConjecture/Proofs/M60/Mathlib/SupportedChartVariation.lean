@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.ChartPerturbation
 import Mathlib.Geometry.Manifold.Algebra.SMul
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -21,13 +12,9 @@ namespace PoincareConjecture.M60
 variable {F M N : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
   [TopologicalSpace M] [TopologicalSpace N]
 
-
-
 noncomputable def supportedChartVariation (e : OpenPartialHomeomorph N F)
     (U : Set M) (f : M → N) (V : M → F) : ℝ × M → N :=
   M40.chartPerturb e (Prod.snd ⁻¹' U) (f ∘ Prod.snd) (fun p => p.1 • V p.2)
-
-
 
 theorem supportedChartVariation_zero (e : OpenPartialHomeomorph N F)
     (U : Set M) (f : M → N) (V : M → F) (hfU : MapsTo f U e.source) (p : M) :
@@ -35,14 +22,10 @@ theorem supportedChartVariation_zero (e : OpenPartialHomeomorph N F)
   M40.chartPerturb_eq_of_zero e (Prod.snd ⁻¹' U) (f ∘ Prod.snd)
     (fun q : ℝ × M => q.1 • V q.2) (fun _ hp => hfU hp) (by simp)
 
-
-
 theorem supportedChartVariation_of_mem (e : OpenPartialHomeomorph N F)
     (U : Set M) (f : M → N) (V : M → F) (s : ℝ) {p : M} (hp : p ∈ U) :
     supportedChartVariation e U f V (s, p) = e.symm (e (f p) + s • V p) :=
   M40.chartPerturb_of_mem e _ _ _ hp
-
-
 
 theorem exists_supportedChartVariation_interval (e : OpenPartialHomeomorph N F)
     {U : Set M} (hU : IsOpen U) {f : M → N} {V : M → F}
@@ -73,9 +56,6 @@ theorem exists_supportedChartVariation_interval (e : OpenPartialHomeomorph N F)
 variable {E H K : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] [TopologicalSpace K] [ChartedSpace H M] [ChartedSpace K N]
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
-
-
-
 
 theorem contMDiffOn_supportedChartVariation (e : OpenPartialHomeomorph N F)
     {U : Set M} (hU : IsOpen U) {f : M → N} {V : M → F}

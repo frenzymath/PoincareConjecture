@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.Compact
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -64,8 +56,6 @@ theorem sphereCutComplexity_pos_of_nonempty_level
 namespace SphereSurgeryStep
 
 variable {f : S2 -> E3} {v : E3} {c R : Real}
-
-
 
 theorem complexity_drop (S : SphereSurgeryStep f v c R) (A : Finset Real)
     (hcA : c ∈ A) (hsep : ∀ k ∈ A, k ≠ c -> R < |k - c|)

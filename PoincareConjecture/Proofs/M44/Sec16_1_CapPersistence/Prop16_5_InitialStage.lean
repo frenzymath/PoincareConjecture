@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_ControlledS
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialSampleBound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalInitialSurvival
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +22,6 @@ noncomputable local instance initialStageCoefficientNorm :
 noncomputable local instance initialStageCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem CapPersistenceCounterexample.fixed_scales_of_cutoff_le
     {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}
     {start rNext A eta theta cutoff delta : ℝ}
@@ -43,11 +29,6 @@ theorem CapPersistenceCounterexample.fixed_scales_of_cutoff_le
     (h : cutoff ≤ delta) :
     SurgeryFixedScalesOn setup X.flow X.observation start rNext delta :=
   { X.fixed_scales with delta_le := fun t ht => (X.fixed_scales.delta_le t ht).trans h }
-
-
-
-
-
 
 theorem exists_initial_cap_sequence_stage
     (P : M44CapPersistencePredecessors.{u})

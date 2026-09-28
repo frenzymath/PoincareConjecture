@@ -8,13 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.ExpandingSubsetSpireCenters
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberCompact
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,8 +40,6 @@ private theorem corner_boundedFiberSection_isCompact
     · exact ENNReal.toReal_le_of_le_ofReal (by norm_num)
   rw [PointedCornerModel.boundedFiberSection,he]
   exact hcompact.image (isEmbedding_openFiberIncl A.joint A.domain A.value).continuous
-
-
 
 theorem PoincareConjecture.exists_corner_spire_centers_of_expanding_limit
     {m k : ℕ} {δ H : ℝ} (A : ℕ → PoincareConjecture.PointedCornerModel m k δ H)
@@ -295,8 +286,6 @@ theorem PoincareConjecture.exists_corner_spire_centers_of_expanding_limit
   · intro i
     refine ⟨hrefBad i,?_,hqdist i,hqconv i⟩
     simpa only [← hqeq,incl] using hqzero i
-
-
 
 theorem PoincareConjecture.eventually_boundedFiberSection_subset_ball_cover_of_same_realizations
     {m k : ℕ} {δ H : ℝ} (A : ℕ → PointedCornerModel m k δ H)

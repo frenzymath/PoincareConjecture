@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M10.WeightedJacobian
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem squareWeightedJacobian_hasDerivAt {n : ℕ} {a J : ℝ → ℝ}
     {K R L s : ℝ} (hs : 0 < s) (ha : HasDerivAt a (-K / s ^ 2) s)
@@ -40,9 +27,6 @@ theorem squareWeightedJacobian_hasDerivAt {n : ℕ} {a J : ℝ → ℝ}
   push_cast
   ring
 
-
-
-
 theorem squareWeightedJacobian_deriv_nonpos {n : ℕ} {a J : ℝ → ℝ}
     {K R L s : ℝ} (hs : 0 < s) (ha : HasDerivAt a (-K / s ^ 2) s)
     (hJ : HasDerivAt J (2 * s * J s * (R + L)) s) (hJnonneg : 0 ≤ J s)
@@ -57,9 +41,6 @@ theorem squareWeightedJacobian_deriv_nonpos {n : ℕ} {a J : ℝ → ℝ}
       ring
     rw [heq]
     exact mul_nonpos_of_nonneg_of_nonpos (mul_pos zero_lt_two hs).le (sub_nonpos.mpr hL)
-
-
-
 
 theorem squareWeightedJacobian_antitoneOn {n : ℕ} {a J K R L : ℝ → ℝ} {b : ℝ}
     (ha : ContinuousOn a (Ioc 0 b)) (hJ : ContinuousOn J (Ioc 0 b))
@@ -82,9 +63,6 @@ theorem squareWeightedJacobian_antitoneOn {n : ℕ} {a J K R L : ℝ → ℝ} {b
     rw [interior_Ioc] at hs
     exact squareWeightedJacobian_deriv_nonpos hs.1 (ha' s hs) (hJ' s hs)
       (hJnonneg s hs) (hL s hs)
-
-
-
 
 theorem positivePrefix_le_initial_limit {f : ℝ → ℝ} {b c s : ℝ}
     (hanti : AntitoneOn f (Ioc 0 b)) (hlim : Tendsto f (𝓝[>] (0 : ℝ)) (𝓝 c))

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.SymmetricTensorHilbertNative
 import PoincareConjecture.Proofs.M03.Existence.ParsevalTensorL2Native
 import PoincareConjecture.Proofs.M03.Existence.LpFiniteCoordinatesNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -91,7 +83,6 @@ theorem sumTerms_order {α : Type*} [Fintype α]
   obtain ⟨a, _, ha⟩ := List.mem_flatMap.mp ht
   exact h a t ha
 
-
 def laplacianTerms (F : iota → SmoothField (n := n) (M := M))
     (charts : FiniteChartData (n := n) (M := M))
     (terms : List (DirectionalTerm (n := n) (M := M) (iota := iota))) :
@@ -150,7 +141,6 @@ theorem laplacianTerms_order
 variable {g0 : RiemannianMetric n M} (d : TensorHilbertNative.Data g0)
   [MeasurableSpace M] [BorelSpace M]
 
-
 def shiftedPowerTerms : ℕ → d.ProbeIndex → d.ProbeIndex →
     List (DirectionalTerm (n := n) (M := M) (iota := Fin d.fieldCount))
   | 0, a, b => if a = b then [⟨fun _ => 1, contMDiff_const, []⟩] else []
@@ -196,7 +186,6 @@ theorem scalarProbe_shiftedSmoothTensor
   intro c _
   exact mul_comm _ _
 
-
 theorem scalarProbe_shiftedSmoothPower (r : ℕ)
     (h : SmoothTensor (n := n) (M := M)) (a : d.ProbeIndex) (x : M) :
     scalarProbe d.fields (d.shiftedSmoothPower r h) a x =
@@ -237,7 +226,6 @@ theorem scalarProbe_shiftedSmoothPower (r : ℕ)
 abbrev ProbeTuples (k : ℕ) :=
   d.ProbeIndex → WordIndex (Fin d.fieldCount) k → Lp ℝ 2 d.charts.measure
 
-
 def powerProbeL2 (r : ℕ) (a : d.ProbeIndex) :
     ProbeTuples d (2 * r) →L[ℝ] Lp ℝ 2 d.charts.measure :=
   ∑ b : d.ProbeIndex,
@@ -266,7 +254,6 @@ theorem powerProbeL2_ae_eq (r : ℕ) (a : d.ProbeIndex)
   rw [hsum]
   simp only [hterms]
   exact (scalarProbe_shiftedSmoothPower d r h a x).symm
-
 
 def powerTensorL2 (r : ℕ) :
     ProbeTuples d (2 * r) →L[ℝ] Lp (Coefficients (Fin d.fieldCount)) 2 d.charts.measure :=
@@ -307,7 +294,6 @@ def projectedValue :
     projectedValue d (v : Lp (Coefficients (Fin d.fieldCount)) 2 d.charts.measure) = v :=
   (tensorL2 d.fields d.charts.measure).orthogonalProjectionOnto_mem_subspace_eq_self v
 
-
 theorem projectedValue_eq_of_projection
     (f : Lp (Coefficients (Fin d.fieldCount)) 2 d.charts.measure) (v : d.Value)
     (hf : projectionL2 g0 d.fields d.parseval d.charts.measure f =
@@ -321,7 +307,6 @@ theorem projectedValue_eq_of_projection
   rw [inner_sub_left, ← hf, projectionL2_selfadjoint,
     projectionL2_eq_self_of_mem_tensorL2 g0 d.fields d.parseval d.charts.measure hw,
     sub_self]
-
 
 def evenOutput (r : ℕ) :
     ProbeTuples d (2 * r) →L[ℝ] SpectralHeatNative.State d.SymmetricIndex :=

@@ -5,25 +5,12 @@ import Mathlib.Topology.MetricSpace.Pseudo.Constructions
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
-
 
 theorem Homeomorph.exists_local_complementary_sides
     {A : Set X} {a : X} (e : X ≃ₜ (ℝ × ℝ)) (ha : (e a).2 = 0)
@@ -82,9 +69,6 @@ theorem Homeomorph.exists_local_complementary_sides
     change e x ∈ closure (J ×ˢ Ioo 0 δ)
     rw [closure_prod_eq, closure_Ioo hδ.ne]
     exact ⟨subset_closure hx.2.1, by rw [heq]; exact ⟨le_rfl, hδ.le⟩⟩
-
-
-
 
 theorem Set.hasLocalComplementarySides_of_local_line_models {A : Set X}
     (h : ∀ a ∈ A, ∃ e : X ≃ₜ (ℝ × ℝ), (e a).2 = 0 ∧

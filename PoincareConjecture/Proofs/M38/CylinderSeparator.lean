@@ -4,22 +4,11 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Algebra.Order.Archimedean.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace PoincareConjecture.M38
-
-
 
 theorem cylinder_separator_height_upper_bound
     {S A : Type*} [TopologicalSpace S] [ConnectedSpace S] [TopologicalSpace A]
@@ -107,9 +96,6 @@ theorem cylinder_separator_height_upper_bound
     have hh := hm (mem_image_of_mem u (hout x hx))
     rw [hux] at hh
     linarith [min_le_left m 0]
-
-
-
 
 theorem cylindrical_translates_complement_precompact
     {S A : Type*} [TopologicalSpace S] [ConnectedSpace S] [CompactSpace S]

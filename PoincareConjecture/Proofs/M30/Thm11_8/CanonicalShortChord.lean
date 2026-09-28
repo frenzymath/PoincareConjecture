@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ray
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -141,8 +129,6 @@ private theorem relative_neck_chord_bound
     _ ≤ (4 * Real.pi) * (ell * (2 * neckDepthConstant * N.epsilon)) :=
       mul_le_mul_of_nonneg_left hscale (by positivity)
     _ = _ := by ring
-
-
 
 theorem exists_equal_radius_short_chord_of_neck_side
     (g : RiemannianMetric 3 M) (N : EpsilonNeck g)
@@ -302,8 +288,6 @@ private theorem cap_frontier_time_depth
       abs_neg, abs_of_pos hv.1]
   rw [hradial] at hdepth
   exact ⟨s, hs, hsCentral, hdepth.trans hv.2⟩
-
-
 
 theorem exists_equal_radius_short_chord_of_cap_side
     (g : RiemannianMetric 3 M) (N : EpsilonNeck g)

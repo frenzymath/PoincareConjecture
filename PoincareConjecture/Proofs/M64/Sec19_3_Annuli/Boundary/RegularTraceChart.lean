@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FiniteTargetChart
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,11 +13,6 @@ namespace PoincareConjecture.M64
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem regular_trace_in_chart {c : ℝ → M}
     (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) ∞ c) (p : M) {s : ℝ}

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.ConnectedFrontierBarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +18,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_source_final_chart_capture_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 200 : ℝ) ∧

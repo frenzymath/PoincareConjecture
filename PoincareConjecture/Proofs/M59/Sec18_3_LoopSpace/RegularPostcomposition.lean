@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.Postcomposition
 import PoincareConjecture.Definitions.Ch15.SurgeryComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {M N : Type u}
   [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
-
-
 
 def m59PostcomposeFamily (f : C(M, N)) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
     (L : M59LoopPostcomposition f) (Gamma : FreeTwoSphereFamily (M := M)) :
@@ -70,8 +60,6 @@ def m59PostcomposeFamily (f : C(M, N)) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
         (m59LoopPostcomposition_apply L (Gamma.family c) z).symm
     · intro c
       exact (hf.of_le (by simp)).comp_contMDiffOn (hregular c)
-
-
 
 theorem m59_regular_postcomposition (f : C(M, N)) (hf : ContMDiff (𝓡 3) (𝓡 3) ∞ f)
     (L : M59LoopPostcomposition f) (Gamma : FreeTwoSphereFamily (M := M)) :

@@ -1,14 +1,5 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,9 +7,6 @@ open Set Filter MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_setIntegral_inter_Icc_lower_bound
     {mu : Measure ℝ} [NullSingletonClass mu] {f : ℝ → ℝ}

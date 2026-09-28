@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiAnyTime
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPackaging
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackZeroField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +21,6 @@ private theorem horizontal_transport_zero {q r : G.Point} (h : q = r) :
   cases h
   rfl
 
-
-
 theorem initialValuePath_differential_zero_direction
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (P : M14SquareRootInitialValuePath G T τ x y Z) (s : ℝ) :
@@ -42,8 +31,6 @@ theorem initialValuePath_differential_zero_direction
   · rw [map_zero]
     exact horizontal_transport_zero _
   · rfl
-
-
 
 theorem initialValuePath_differential_zero_direction_derivative
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -56,9 +43,6 @@ theorem initialValuePath_differential_zero_direction_derivative
     (uniqueDiffOn_Icc (Real.sqrt_lt_sqrt P.path.tau_nonneg P.path.tau_lt) s hs)
     (((P.square_path.smooth.mono P.square_path.interval_subset) s hs).mdifferentiableWithinAt
       (by simp))
-
-
-
 
 theorem initialValuePath_direction_eq_zero_of_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.InnerProduct
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RoundTipSeries
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capAngularCoefficient_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) :
     capAngularCoefficient a r = roundTipAngular (r ^ 2) := by
@@ -33,8 +21,6 @@ theorem capAngularCoefficient_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a)
     field_simp
     nlinarith
 
-
-
 theorem capRadialCoefficient_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) :
     capRadialCoefficient a r = roundTipRadial (r ^ 2) := by
   by_cases h : r = 0
@@ -43,15 +29,11 @@ theorem capRadialCoefficient_eq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) 
   · rw [capRadialCoefficient, if_neg h, capAngularCoefficient_eq_round ha hr,
       roundTipRadial_sq h]
 
-
-
 theorem capAngularCoefficient_contDiffAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     ContDiffAt ℝ ∞ (capAngularCoefficient a) r := by
   apply (((capProfile_contDiff a).contDiffAt.div contDiffAt_id hr).pow 2).congr_of_eventuallyEq
   filter_upwards [eventually_ne_nhds hr] with s hs
   exact if_neg hs
-
-
 
 theorem capRadialCoefficient_contDiffAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     ContDiffAt ℝ ∞ (capRadialCoefficient a) r := by
@@ -59,8 +41,6 @@ theorem capRadialCoefficient_contDiffAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     (contDiffAt_id.pow 2) (pow_ne_zero 2 hr)).congr_of_eventuallyEq
   filter_upwards [eventually_ne_nhds hr] with s hs
   exact if_neg hs
-
-
 
 theorem capAngularCoefficient_norm_contDiff {a : ℝ} (ha : 0 < a) :
     ContDiff ℝ ∞ (fun x : StandardCapSpace => capAngularCoefficient a ‖x‖) := by
@@ -78,9 +58,6 @@ theorem capAngularCoefficient_norm_contDiff {a : ℝ} (ha : 0 < a) :
   · exact (capAngularCoefficient_contDiffAt a (norm_ne_zero_iff.mpr hx)).comp x
       (contDiffAt_norm ℝ hx)
 
-
-
-
 theorem capRadialCoefficient_norm_contDiff {a : ℝ} (ha : 0 < a) :
     ContDiff ℝ ∞ (fun x : StandardCapSpace => capRadialCoefficient a ‖x‖) := by
   rw [contDiff_iff_contDiffAt]
@@ -96,8 +73,6 @@ theorem capRadialCoefficient_norm_contDiff {a : ℝ} (ha : 0 < a) :
       (le_of_lt (by simpa only [Metric.mem_ball, dist_zero_right] using hy))
   · exact (capRadialCoefficient_contDiffAt a (norm_ne_zero_iff.mpr hx)).comp x
       (contDiffAt_norm ℝ hx)
-
-
 
 theorem capMetricInner_contDiff {a : ℝ} (ha : 0 < a) :
     ContDiff ℝ ∞ (capMetricInner a) := by

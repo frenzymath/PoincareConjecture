@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,10 +12,7 @@ universe u
 
 namespace PoincareConjecture.M28
 
-
-
 def neckShorteningEpsilon : ℝ := 1 / (32 * standardSpherePathCeiling + 1)
-
 
 theorem neckShorteningEpsilon_pos : 0 < neckShorteningEpsilon := by
   have hL := standardSpherePathCeiling_pos
@@ -36,14 +23,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 theorem neck_shortening_saving_pos (N : EpsilonNeck g) :
     0 < N.scale * N.epsilon⁻¹ / 8 := by
   exact div_pos (mul_pos N.scale_pos (inv_pos.mpr N.epsilon_pos)) (by norm_num)
-
-
-
 
 theorem exists_neck_excursion_shortcut (N : EpsilonNeck g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)
@@ -93,9 +75,6 @@ theorem exists_neck_excursion_shortcut (N : EpsilonNeck g)
     _ ≤ ENNReal.ofReal ((N.scale / 2) * (N.epsilon⁻¹ / 2)) :=
       ENNReal.ofReal_le_ofReal hbudget
     _ ≤ g.pathELength γ a b := hcost
-
-
-
 
 theorem exists_neck_excursion_replacement (N : EpsilonNeck g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)

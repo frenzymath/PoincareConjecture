@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedVolumeTransport
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_ordinary_slice_chart
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -46,8 +36,6 @@ theorem exists_seed_ordinary_slice_chart
   ext y
   change (y ∈ (univ : Set U) ∧ y.val ∈ U) ↔ y ∈ (univ : Set U)
   simp only [mem_univ, y.property, and_self]
-
-
 
 theorem seed_ordinary_birth_volume
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

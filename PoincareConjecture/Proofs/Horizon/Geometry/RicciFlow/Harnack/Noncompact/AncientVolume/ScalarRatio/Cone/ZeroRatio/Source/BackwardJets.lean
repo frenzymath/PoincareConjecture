@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.MetricConvergence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +36,6 @@ private theorem tendstoUniformlyOn_prod_of_parameter_sequences
   exact hfail (hk y hy)
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem pullbackCoefficients_tendsto_jets_uniform_parameter_of_corrected_charts
     {n : ℕ} {T : Type*} {M : ℕ → Type*} [∀ k, TopologicalSpace (M k)]
@@ -87,9 +77,6 @@ theorem pullbackCoefficients_tendsto_jets_uniform_parameter_of_corrected_charts
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem HasLocalSourceModels.exists_local_pullbackCoefficients_tendsto_jets_uniform_parameter
     {ι : Type*} {n : ℕ} {T : Type*}
@@ -138,8 +125,6 @@ theorem HasLocalSourceModels.exists_local_pullbackCoefficients_tendsto_jets_unif
 end PoincareConjecture.ChartDistance
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_local_source_metric_convergence_uniform_parameter_of_normal_charts
     {ι : Type*} {n : ℕ} {T : Type*}

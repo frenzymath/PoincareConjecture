@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactCoverage.Twisted.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

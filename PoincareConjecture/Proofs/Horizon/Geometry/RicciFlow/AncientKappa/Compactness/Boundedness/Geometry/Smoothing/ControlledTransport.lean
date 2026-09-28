@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.Radial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.LevelTransport
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +17,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 omit [T2Space M] [MeasurableSpace M] [BorelSpace M] in
-
 
 theorem exists_smooth_exhaustion_level_transport
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

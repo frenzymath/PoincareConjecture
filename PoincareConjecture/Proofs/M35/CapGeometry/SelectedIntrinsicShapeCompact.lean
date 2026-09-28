@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedIntrinsicShapeJets
 import PoincareConjecture.Proofs.M35.CapGeometry.SphereLineChartTime
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ variable (P : M35StandardCapPredecessors)
   (L : GeneralizedBlowupConvergence (blowupSequence P E t x ht hR)
     (blowupBackwardInterval ⊤))
 
-
-
 noncomputable def selectedIntrinsicShapeDerivative (k m : ℕ)
     (z : L.limit.sliceCarrier.carrier) : ℝ :=
   let Q := (blowupSequence P E t x ht hR).scale (L.subsequence k)
@@ -46,8 +35,6 @@ noncomputable def selectedIntrinsicShapeDerivative (k m : ℕ)
   let y := ((L.embedding k).forward 0
     ⟨neg_nonpos.mpr (L.exhaustion.time_pos k).le, le_rfl⟩ z).val
   iteratedDeriv m (intrinsicRadialShape G hrot hc) (radialArclength G ‖y‖)
-
-
 
 theorem blowupSequence_intrinsic_shape_moving_tendsto_zero
     (hd : Tendsto (fun k => ((E.flow.metric (t k)).edist 0 (x k)).toReal *
@@ -130,8 +117,6 @@ theorem blowupSequence_intrinsic_shape_moving_tendsto_zero
   change selectedIntrinsicShapeDerivative P E t x ht hR L (idx k) m
     (coordinate (p k)) = _
   rw [hmap]
-
-
 
 theorem blowupSequence_intrinsic_shape_uniform_compact
     (hd : Tendsto (fun k => ((E.flow.metric (t k)).edist 0 (x k)).toReal *

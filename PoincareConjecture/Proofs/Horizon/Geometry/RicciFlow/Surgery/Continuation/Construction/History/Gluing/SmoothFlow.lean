@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Continuation.Gluing
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Gluing.MetricJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -24,8 +13,6 @@ namespace PoincareConjecture
 namespace Surgery.RegularHistory.Gluing
 
 variable {S : GeneralizedSliceCarrier.{u}}
-
-
 
 theorem singularMetricCoefficient_eq_localFrame
     (g : RiemannianMetric 3 S.carrier) (x0 : S.carrier) (a b : Fin 3)
@@ -70,7 +57,6 @@ theorem singularMetricCoefficient_eq_localFrame
   rw [hframe a, hframe b, he]
   rfl
 
-
 theorem singularMetricCoefficient_jets_eq_localFrame
     (g : RiemannianMetric 3 S.carrier) (x0 : S.carrier) (k : ℕ) (a b : Fin 3)
     {z : EuclideanSpace ℝ (Fin 3)}
@@ -93,8 +79,6 @@ theorem singularMetricCoefficient_jets_eq_localFrame
   exact (hnear.iteratedFDeriv ℝ k).self_of_nhds
 
 end Surgery.RegularHistory.Gluing
-
-
 
 theorem SurgeryMetricLimitOn.exists_zero_start_gluing
     {S : GeneralizedSliceCarrier.{u}} {T δ : ℝ}

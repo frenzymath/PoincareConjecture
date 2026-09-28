@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SpatialPath
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_RealizedSeed
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_OldSeedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ open PoincareConjecture.Proofs.M12
 
 variable {F : SurgeryFlowData.{u}} {window : M33RegularHistoryWindow F}
 
-
-
 theorem history_point_eq_of_physical_heq (R : M46RegularSpacetimeData window)
     {s t : ℝ} (hs : s ∈ R.history.generalized.interval)
     (ht : t ∈ R.history.generalized.interval)
@@ -40,8 +28,6 @@ theorem history_point_eq_of_physical_heq (R : M46RegularSpacetimeData window)
   subst t
   have hz := (R.history.history.forward_openEmbedding s hs).injective (eq_of_heq himage)
   rw [hz]
-
-
 
 theorem realized_seed_point_eq (R : M46RegularSpacetimeData window)
     {t : ℝ} (ht : t ∈ R.history.generalized.interval)
@@ -60,8 +46,6 @@ theorem realized_seed_point_eq (R : M46RegularSpacetimeData window)
     (R.geometry.sliceIdentification t).identification_eq _
   exact hpoint.symm.trans (congrArg Subtype.val
     ((R.geometry.sliceIdentification t).identification.apply_symm_apply q))
-
-
 
 theorem seed_image_comparisons
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

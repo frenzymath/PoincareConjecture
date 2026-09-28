@@ -1,29 +1,15 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSectorTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
 
-
-
 noncomputable def rotation : Fin 4 → (ℝ × ℝ) →ᴬ[ℝ] (ℝ × ℝ) :=
   let x := (ContinuousLinearMap.fst ℝ ℝ ℝ).toContinuousAffineMap
   let y := (ContinuousLinearMap.snd ℝ ℝ ℝ).toContinuousAffineMap
   ![x.prod y, (-y).prod x, (-x).prod (-y), y.prod (-x)]
-
-
 
 def rotatedSector (a b : ℝ) : Fin 4 → Set (ℝ × ℝ) :=
   ![sector a b,
@@ -31,11 +17,7 @@ def rotatedSector (a b : ℝ) : Fin 4 → Set (ℝ × ℝ) :=
     {p | -p.2 ∈ Icc a b ∧ p.1 ∈ Icc p.2 (-p.2)},
     {p | p.1 ∈ Icc a b ∧ p.2 ∈ Icc (-p.1) p.1}]
 
-
-
 def shell (a b : ℝ) : Set (ℝ × ℝ) := {p | ‖p‖ ∈ Icc a b}
-
-
 
 theorem rotation_injective (i : Fin 4) : Function.Injective (rotation i) := by
   fin_cases i <;> intro p q he
@@ -45,26 +27,18 @@ theorem rotation_injective (i : Fin 4) : Function.Injective (rotation i) := by
     dsimp [rotation] at hx hy
     exact Prod.ext (by linarith) (by linarith)
 
-
-
 theorem rotation_smul (i : Fin 4) (r : ℝ) (p : ℝ × ℝ) :
     rotation i (r • p) = r • rotation i p := by
   fin_cases i <;> apply Prod.ext <;> dsimp [rotation] <;> ring
 
-
-
 theorem norm_rotation (i : Fin 4) (p : ℝ × ℝ) : ‖rotation i p‖ = ‖p‖ := by
   fin_cases i <;> simp [rotation, Prod.norm_def, Real.norm_eq_abs, max_comm]
-
-
 
 theorem norm_of_mem_sector {a b : ℝ} {p : ℝ × ℝ} (hp : p ∈ sector a b) :
     ‖p‖ = p.2 := by
   have hy : 0 ≤ p.2 := by linarith [hp.2.1, hp.2.2]
   rw [Prod.norm_def, Real.norm_eq_abs, Real.norm_eq_abs,
     abs_of_nonneg hy, max_eq_right (abs_le.mpr hp.2)]
-
-
 
 theorem rotation_image (a b : ℝ) (i : Fin 4) :
     rotation i '' sector a b = rotatedSector a b i := by
@@ -100,8 +74,6 @@ theorem rotation_image (a b : ℝ) (i : Fin 4) :
       exact ⟨(-p.2, p.1), ⟨hr, by constructor <;> linarith [hx.1, hx.2]⟩,
         Prod.ext rfl (neg_neg _)⟩
 
-
-
 theorem rotatedSector_subset_shell (a b : ℝ) (i : Fin 4) :
     rotatedSector a b i ⊆ shell a b := by
   rw [← rotation_image]
@@ -109,9 +81,6 @@ theorem rotatedSector_subset_shell (a b : ℝ) (i : Fin 4) :
   change ‖rotation i p‖ ∈ Icc a b
   rw [norm_rotation, norm_of_mem_sector hp]
   exact hp.1
-
-
-
 
 theorem iUnion_rotatedSector (a b : ℝ) : (⋃ i, rotatedSector a b i) = shell a b := by
   apply Subset.antisymm

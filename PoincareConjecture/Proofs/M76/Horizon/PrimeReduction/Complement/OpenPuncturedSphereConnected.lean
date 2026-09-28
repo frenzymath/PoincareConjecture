@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SphereBal
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalPuncturedSphereDiskCut
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.IntervalNeighborhoods
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,8 +9,6 @@ namespace Geometry.CubicalThreeSphere
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
-
-
 
 theorem exists_connected_punctured_sphere_around_compact
     {κ : Type*} [Finite κ] (A r : κ → Set V4)
@@ -77,8 +65,6 @@ theorem exists_connected_punctured_sphere_around_compact
     obtain ⟨i, hxi⟩ := mem_iUnion.mp hxa
     exact hxb (mem_iUnion.mpr ⟨i, hAB i hxi⟩)
 
-
-
 theorem isPreconnected_open_punctured_sphere
     {κ : Type*} [Finite κ] (A r : κ → Set V4)
     (hA : ∀ i, IsFinitePLBallPair V3 (A i) (r i))
@@ -97,8 +83,6 @@ theorem isPreconnected_open_punctured_sphere
         · exact hy)
   exact ⟨sphere \ ⋃ i, B i \ t i, hsub, hpoints (by simp), hpoints (by simp),
     hconn.isPreconnected⟩
-
-
 
 theorem isConnected_open_punctured_sphere
     {κ : Type*} [Finite κ] (A r : κ → Set V4)

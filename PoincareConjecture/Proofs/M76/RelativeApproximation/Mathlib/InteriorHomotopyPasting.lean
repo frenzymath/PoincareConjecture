@@ -1,15 +1,6 @@
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -17,9 +8,6 @@ open Set unitInterval
 namespace PoincareConjecture.M76
 
 variable {X : Type*} [TopologicalSpace X] {R C : Set X} {V : Set C}
-
-
-
 
 theorem exists_interior_homotopy_pasting
     (hC : IsClosed C) (hCR : C ⊆ interior R)

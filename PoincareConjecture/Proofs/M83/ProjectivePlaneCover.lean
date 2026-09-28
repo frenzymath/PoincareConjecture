@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 import PoincareConjecture.Proofs.M83.Mathlib.InvolutionQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,15 +10,10 @@ open scoped Topology
 
 namespace PoincareConjecture.Proofs.M83
 
-
 abbrev NormalInterval := Set.Ioo (-1 : Real) 1
-
-
 
 def sphereAntipodeHomeomorph : UnitTwoSphere ≃ₜ UnitTwoSphere :=
   Homeomorph.neg _
-
-
 
 theorem projectivePlaneProjection_isLocalHomeomorph :
     IsLocalHomeomorph (Quotient.mk realProjectiveTwoSetoid) := by
@@ -38,14 +24,10 @@ theorem projectivePlaneProjection_isLocalHomeomorph :
   · intro x y
     rfl
 
-
-
 def projectivePlaneCover : C(UnitTwoSphere × NormalInterval,
     RealProjectiveTwo × NormalInterval) :=
   ⟨fun z => (Quotient.mk realProjectiveTwoSetoid z.1, z.2),
     (continuous_quotient_mk'.comp continuous_fst).prodMk continuous_snd⟩
-
-
 
 theorem projectivePlaneCover_isLocalHomeomorph : IsLocalHomeomorph projectivePlaneCover := by
   intro z
@@ -53,8 +35,6 @@ theorem projectivePlaneCover_isLocalHomeomorph : IsLocalHomeomorph projectivePla
   refine ⟨e.prod (OpenPartialHomeomorph.refl NormalInterval), ⟨he, trivial⟩, ?_⟩
   funext p
   exact Prod.ext (congrFun hq p.1) rfl
-
-
 
 theorem projectivePlaneCover_antipodal (x : UnitTwoSphere) (t : NormalInterval) :
     projectivePlaneCover (-x, t) = projectivePlaneCover (x, t) := by

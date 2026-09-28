@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTangentFrame
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,9 +11,6 @@ open Set Filter
 open scoped Topology ContDiff InnerProductSpace
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_exists_C1_curve_straightening {n : ℕ}
     {c : ℝ → EuclideanSpace ℝ (Fin (n + 1))}

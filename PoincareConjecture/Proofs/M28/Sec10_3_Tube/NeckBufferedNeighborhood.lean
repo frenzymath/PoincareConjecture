@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.NeckRestriction
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapSlab
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem restrict_compactClosure (N : EpsilonNeck g) {eta : ℝ}
     (h : N.epsilon < eta) (heta : eta < 1 / 2) :
@@ -41,9 +29,6 @@ theorem restrict_compactClosure (N : EpsilonNeck g) {eta : ℝ}
   have hclosure := closure_minimal hsub hK.isClosed
   exact ⟨hK.of_isClosed_subset isClosed_closure hclosure,
     hclosure.trans (N.coordinate_slab_subset_carrier_m28 (neg_lt_neg hgap) hgap)⟩
-
-
-
 
 theorem buffered_intrinsicEDist_lt [T3Space M]
     (N : EpsilonNeck g) {epsilon : ℝ} (hepsilon : 0 < epsilon)

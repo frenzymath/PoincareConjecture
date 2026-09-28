@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.TerminalComponentGeometry
 import PoincareConjecture.Proofs.M30.Thm1_34.LocalVolume
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ open RiemannianMetric
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem exists_terminalComponent_local_geometry
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

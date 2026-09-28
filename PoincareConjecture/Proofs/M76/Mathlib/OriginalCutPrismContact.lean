@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FixedLateralInversePrism
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
@@ -18,11 +7,6 @@ open Set CoordinateHalfBoxes
 namespace OpenPartialHomeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem inverse_original_cut_coordinates
     (H : OpenPartialHomeomorph E ((ℝ × ℝ) × ℝ))
@@ -61,11 +45,6 @@ theorem inverse_original_cut_coordinates
       linarith
     · intro h
       exact nonpos_of_mul_nonpos_right (by linarith) hk
-
-
-
-
-
 
 theorem inverse_prisms_inter_eq_original_cut
     (H₀ H₁ : OpenPartialHomeomorph E ((ℝ × ℝ) × ℝ))

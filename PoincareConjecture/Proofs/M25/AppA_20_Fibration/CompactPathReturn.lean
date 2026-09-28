@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.FiniteExtensionReturn
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.ExteriorCenterCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem NeckOnlyCover.exists_finite_deep_return_on_complementary_path :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

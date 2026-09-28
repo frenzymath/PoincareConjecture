@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.GlobalExtrema
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.PoleInequality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,8 +39,6 @@ theorem twice_scale_lt_scalar_at_max_of_not_round (D : LeviCivitaData g)
   exact hnot (D.round_of_degenerate_critical_point hlambda hf hsol
     (D.gradient_eq_zero_of_potential_max hfs hp) heq.symm)
 
-
-
 theorem gradient_ne_zero_at_intermediate_value (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)
     (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -60,8 +50,6 @@ theorem gradient_ne_zero_at_intermediate_value (D : LeviCivitaData g)
   rcases D.isMinOn_or_isMaxOn_of_critical_point hlambda hf hsol hx hR with hmin | hmax
   · exact (not_lt_of_ge (hmin (mem_univ p))) hpx
   · exact (not_lt_of_ge (hmax (mem_univ q))) hxq
-
-
 
 theorem exists_strict_extrema_of_compact_not_round [CompactSpace M] [Nonempty M]
     (D : LeviCivitaData g) {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.EuclideanGauge
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem exists_euclideanGauge_diffeomorph {u : V → ℝ} (hu : ContDiff ℝ ∞ u)
     (hv : ∀ x, (1 + ‖x‖) * |u x| ≤ 1 / 8)
@@ -45,11 +34,8 @@ theorem exists_euclideanGauge_diffeomorph {u : V → ℝ} (hu : ContDiff ℝ ∞
            contMDiff_toFun := hes.contMDiff
            contMDiff_invFun := hei.contMDiff }, he⟩
 
-
 theorem euclideanGauge_zero (u : V → ℝ) : euclideanGauge u 0 = 0 := by
   simp only [euclideanGauge, smul_zero]
-
-
 
 theorem euclideanGauge_equivariant (L : V ≃ₗᵢ[ℝ] V) {u : V → ℝ}
     (hu : ∀ x, u (L x) = u x) (x : V) :

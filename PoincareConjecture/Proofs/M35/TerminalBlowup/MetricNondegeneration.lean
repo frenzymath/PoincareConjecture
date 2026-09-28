@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M35.Prop12_31.ScalarPositivity
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem metric_lower_at_of_nonnegative_sectional_and_scalar_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -75,8 +62,6 @@ end PoincareConjecture.RicciFlow
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
 
-
-
 theorem exists_final_scalar_bound_of_not_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) (x : StandardCapSpace)
@@ -105,8 +90,6 @@ theorem exists_final_scalar_bound_of_not_tendsto
       (E.flow.connection t).scalarCurvature x :=
     mul_le_of_le_one_right htpos.le ht.le
   linarith [le_max_left B 0]
-
-
 
 theorem exists_metric_lower_of_not_scalar_tendsto
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -137,8 +120,6 @@ theorem exists_metric_lower_of_not_scalar_tendsto
     · simp [hv]
     · exact ((E.flow.metric (1 / 2)).pos x v hv).le
   exact (mul_le_mul_of_nonneg_right hexp hv).trans h
-
-
 
 theorem scalar_tendsto_of_tangent_metric_tendsto_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

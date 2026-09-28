@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlBarrier
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitOpen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem boundary_neck_region_subset_recutCarrier
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (hdelta : N.epsilon < epsilon)

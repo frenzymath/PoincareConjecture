@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeLocalFlags
 import PoincareConjecture.Proofs.M02.Topology.GeometricFlags
 import PoincareConjecture.Proofs.M02.Topology.GeometricAffineFlags
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportMayerVietoris
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

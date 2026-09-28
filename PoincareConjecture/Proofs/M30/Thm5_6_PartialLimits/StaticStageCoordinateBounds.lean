@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.BackwardMetricComparison
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.MixedBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,10 +26,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem exists_static_stage_coordinate_bounds
     (G : PartialPointedMetricConvergence g p A) (j N : ℕ)

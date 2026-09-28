@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalTubeSourceStrips
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Resolution.OrdinaryArcStep
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

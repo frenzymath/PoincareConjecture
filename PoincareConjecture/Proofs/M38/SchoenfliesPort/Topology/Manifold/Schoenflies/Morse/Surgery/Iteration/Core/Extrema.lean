@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Interior
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.CriticalSet.Extrema
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 -> E3} (M : SphereMorseReduction f)
 
-
-
 theorem core_ne_univ {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g) : P.core ≠ univ := by
   let : Nontrivial S2 := ⟨⟨M.v, -M.v, ne_neg_of_mem_unit_sphere Real M.v⟩⟩
@@ -43,7 +33,6 @@ theorem core_ne_univ {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
     ((innerSL Real (M.v : E3)).contMDiff.comp (M.tree.embedding_of_mem_leaves hg).contMDiff)
   exact hpq (M.subsingleton_critical_core hg P
     ⟨by rw [hcore]; trivial, hp⟩ ⟨by rw [hcore]; trivial, hq⟩)
-
 
 theorem model_cap_list_ne_nil {g : S2 -> E3} (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun p => M.D (f p)) g)
@@ -59,8 +48,6 @@ namespace Poincare.Manifold.Schoenflies.SphereSurgeryPath
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_cap_height_bounds_of_regular
     {v : E3} {f g : S2 -> E3} (P : SphereSurgeryPath v f g)

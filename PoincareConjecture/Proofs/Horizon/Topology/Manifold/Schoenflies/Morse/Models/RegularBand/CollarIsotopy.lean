@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.CollarExtension
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.CollarMatching.Normal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +34,6 @@ private theorem radial_annulus_subset_cthickening
       _ = ‖(‖x‖ - 1) • (p : E2)‖ := by rw [sub_smul, one_smul]
       _ = |‖x‖ - 1| := by simp [norm_smul, Real.norm_eq_abs]
   exact mem_cthickening_of_dist_le x p δ _ p.property (hdist ▸ hx.le.trans hεδ)
-
-
-
 
 theorem exists_circle_fixing_collar_isotopy
     {e : E2 → E2} (he : ContDiff Real ∞ e)
@@ -104,8 +99,6 @@ theorem exists_circle_fixing_collar_isotopy
     have hxK := radial_annulus_subset_cthickening (min_le_left δ _) hεone hx
     simpa only [H, sub_zero, one_smul, zero_smul, add_zero, sub_self, zero_add] using
       hmotion 1 ⟨by norm_num, le_rfl⟩ x hxK
-
-
 
 theorem exists_circle_fixing_collar_isotopy_of_diffeomorph
     (P : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

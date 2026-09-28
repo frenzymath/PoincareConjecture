@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LiftNormalization
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,26 +13,14 @@ namespace PoincareConjecture
 local notation "P" => curvePeriod
 local notation "a" => curvePeriod / 2
 
-
-
-
 def m64FreePhaseHalfTurnFloor (f : ℝ → ℝ) : ℤ :=
   ⌊f a / P⌋
-
-
-
 
 def m64FreePhaseHalfTurnLabel (f : ℝ → ℝ) (x : ℝ) : ℝ :=
   f (x + a) - (m64FreePhaseHalfTurnFloor f : ℝ) * P
 
-
-
-
 def m64FreePhaseHalfTurnOrderIso (H : ℝ ≃o ℝ) (f : ℝ → ℝ) : ℝ ≃o ℝ :=
   (OrderIso.addRight ((m64FreePhaseHalfTurnFloor f : ℝ) * P)).trans H
-
-
-
 
 theorem m64FreePhaseHalfTurnLabel_monotone
     {f : ℝ → ℝ} (hf : Monotone f) :
@@ -47,9 +29,6 @@ theorem m64FreePhaseHalfTurnLabel_monotone
   simpa only [m64FreePhaseHalfTurnLabel, add_comm x a, add_comm y a] using
     sub_le_sub_right (hf (add_le_add_right hxy a)) _
 
-
-
-
 theorem m64FreePhaseHalfTurnLabel_period
     {f : ℝ → ℝ} (hf : ∀ x, f (x + P) = f x + P) (x : ℝ) :
     m64FreePhaseHalfTurnLabel f (x + P) =
@@ -57,9 +36,6 @@ theorem m64FreePhaseHalfTurnLabel_period
   dsimp [m64FreePhaseHalfTurnLabel]
   rw [show x + P + a = (x + a) + P by ring, hf]
   ring
-
-
-
 
 theorem m64FreePhaseHalfTurnLabel_normalized
     {f : ℝ → ℝ} :
@@ -80,18 +56,12 @@ theorem m64FreePhaseHalfTurnLabel_normalized
     convert h using 1
     ring
 
-
-
-
 theorem m64FreePhaseHalfTurnLabel_trace
     {X : Type*} {c : ℝ → X} (hc : Function.Periodic c P)
     {f : ℝ → ℝ} (x : ℝ) :
     c (m64FreePhaseHalfTurnLabel f x) = c (f (x + a)) := by
   dsimp [m64FreePhaseHalfTurnLabel]
   exact hc.sub_int_mul_eq (m64FreePhaseHalfTurnFloor f)
-
-
-
 
 theorem m64FreePhaseHalfTurnOrderIso_apply
     (H : ℝ ≃o ℝ) (f : ℝ → ℝ) (x : ℝ) :
@@ -104,9 +74,6 @@ theorem m64FreePhaseHalfTurnOrderIso_apply
   congr 1
   dsimp [m64FreePhaseHalfTurnLabel]
   ring
-
-
-
 
 theorem m64FreePhaseHalfTurnOrderIso_period
     {H : ℝ ≃o ℝ} {f : ℝ → ℝ}

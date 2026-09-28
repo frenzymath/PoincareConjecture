@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.PositionData
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteAmbientFamilies
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 

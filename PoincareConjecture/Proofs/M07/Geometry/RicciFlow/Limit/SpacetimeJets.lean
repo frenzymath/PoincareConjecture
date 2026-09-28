@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateTime
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SpatialJets
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +34,6 @@ private theorem contDiffAt_family_pullback_inner
   have hh := (Bundle.contMDiffAt_totalSpace.mp h).2
   simp at hh
   convert! contMDiffAt_iff_contDiffAt.mp hh using 1
-
-
 
 theorem IsSmoothFamilyOn.contDiffAt_spacetime_chart_coefficient
     {J : Set ℝ} {g : ℝ → RiemannianMetric n M}
@@ -104,8 +92,6 @@ private theorem deriv_time_slice_eq
   simpa only [Function.comp_def, iteratedFDeriv_one_apply] using
     ((hf.differentiableAt (by simp)).hasFDerivAt.comp_hasDerivAt t hs).deriv
 
-
-
 theorem spatial_and_time_jets_of_spacetime_jets
     {α : Type*} {l : Filter α} {J : Set ℝ}
     (gseq : α → ℝ → RiemannianMetric n M) (g : ℝ → RiemannianMetric n M)
@@ -153,8 +139,6 @@ theorem spatial_and_time_jets_of_spacetime_jets
       (1, (0 : EuclideanSpace ℝ (Fin n))))).continuousAt.tendsto.comp (h 1 (by omega) a b)
     simpa only [Function.comp_def, ← deriv_time_slice_eq (hreg g hg a b),
       ← deriv_time_slice_eq (hreg (gseq _) (hseq _) a b)] using h'
-
-
 
 theorem tendsto_spacetime_jet_of_compact_uniform
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

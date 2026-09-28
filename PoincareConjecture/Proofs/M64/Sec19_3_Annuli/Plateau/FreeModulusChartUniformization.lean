@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusChartDisjointAnnulus
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFreeModulusApproximation
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +12,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal NNReal
 namespace PoincareConjecture.M64
 
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
-
-
 
 theorem exists_disjoint_chart_free_uniformization
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -84,12 +69,6 @@ theorem exists_disjoint_chart_free_uniformization
     M64Uniformization.exists_free_annulus_energy_lt_area A hDMD hcv heps
   refine ⟨v, hv, hvtarget, hvperiod, hcv, hvdisjoint, A, r, hr, sigma0, sigma1,
     hs0, hs1, hm0, hm1, hd0, hd1, B, hB, hBI, hE⟩
-
-
-
-
-
-
 
 theorem exists_disjoint_chart_free_modulus_supplier
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicLocalPaths
 import PoincareConjecture.Proofs.M28.Mathlib.LocalHausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
-
-
 
 theorem intrinsicOpenMetric_calibratedVolume (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) :
@@ -64,8 +52,6 @@ theorem intrinsicOpenMetric_calibratedVolume (g : RiemannianMetric 3 M)
       euclideanVolumeCalibration 3 • (Measure.hausdorffMeasure 3 : Measure U)
   rw [Measure.comap_smul]
   exact congrArg (fun μ : Measure U => euclideanVolumeCalibration 3 • μ) hH
-
-
 
 theorem intrinsicOpenMetric_calibratedVolume_apply (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {S : Set U} (hS : MeasurableSet S) :

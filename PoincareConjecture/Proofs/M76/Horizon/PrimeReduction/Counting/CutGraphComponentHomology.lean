@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CutGraphHomologyBound
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CutInclusionHomology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set CategoryTheory Limits HomologicalComplex AlgebraicTopology

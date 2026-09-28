@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialPowerGrowth
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MorreyGrowthForcedUniform
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
-
-
 
 theorem lower_column_disk_energy_le
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -58,8 +45,6 @@ theorem lower_column_disk_energy_le
   fin_cases i <;> simp only [Fin.zero_eta, Fin.mk_one] at hc ⊢ <;> nlinarith
 
 variable [IsManifold (𝓡 n) ∞ M] [CompactSpace M] [T2Space M]
-
-
 
 theorem lower_uniform_energy_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -97,8 +82,6 @@ theorem lower_uniform_energy_power_growth
   · exact A.lowerDiskEnergy_le_total hce Q hQ hei.isEmbedding hb hpos a R (hball R le_rfl)
   · intro r hr
     exact hcontract a ha r hr.1 (hr.2.trans hR.2) ((closedBall_subset_closedBall hr.2).trans hKO)
-
-
 
 theorem lower_uniform_column_power_growth
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

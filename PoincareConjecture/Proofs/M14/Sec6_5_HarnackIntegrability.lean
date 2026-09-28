@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_SquareScalarEnergy
 import PoincareConjecture.Proofs.M14.Sec6_2_SquarePullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,9 +30,6 @@ private theorem ricci_transport_smul (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   ring
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
-
-
-
 
 theorem squareRoot_weightedHarnack_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)
@@ -79,8 +68,6 @@ theorem squareRoot_weightedHarnack_eq
   have hs0 : s ≠ 0 := ((Real.sqrt_nonneg τ₁).trans_lt hs.1).ne'
   field_simp [hs0]
   ring
-
-
 
 theorem squareRoot_weightedHarnack_intervalIntegrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (R : M14SquareRootPath G p)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TaperedAffineRoof
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,10 +8,6 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_singleVertex_source_roof (A : E →ᵃ[ℝ] ℝ)
     {s : Finset E} {q : E} {β : ℝ} (hβ : 0 < β) {S : Set (E × ℝ)}

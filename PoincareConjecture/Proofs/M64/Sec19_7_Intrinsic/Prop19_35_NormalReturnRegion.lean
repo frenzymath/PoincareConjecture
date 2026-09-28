@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularLoop
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MeasurableNormalStrip
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,10 +8,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_regular_selfintersection_region
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {a b : ℝ}
@@ -64,10 +47,6 @@ theorem m64Intrinsic_regular_selfintersection_region
   exact ⟨s, t, has, hst, htb, heq, hinj, U, V, hU, hV, hpU, hpV,
     hbU, hbV, hdisj, hunion, hfU, hfV, hcompact⟩
 
-
-
-
-
 theorem m64Intrinsic_normal_ray_deriv
     {u : ℝ × ℝ → AnnulusCoordinates} {a t : ℝ}
     (hu : DifferentiableAt ℝ u (a, t)) :
@@ -75,11 +54,6 @@ theorem m64Intrinsic_normal_ray_deriv
   have hline : HasDerivAt (fun s : ℝ => (a, s)) (0, 1) t :=
     (hasDerivAt_const t a).prodMk (hasDerivAt_id t)
   exact (hu.hasFDerivAt.comp_hasDerivAt t hline).deriv
-
-
-
-
-
 
 theorem m64Intrinsic_normal_selfintersection_region
     {u : ℝ × ℝ → AnnulusCoordinates} (hu : ContDiff ℝ ∞ u) {a b : ℝ}

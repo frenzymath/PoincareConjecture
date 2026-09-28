@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.FrechetKolmo
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.L2
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Translation
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Set
@@ -21,8 +14,6 @@ open Poincare.Analysis.Sobolev
 variable {d : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem eLpNorm_mollifierEps_convolution_sub_le
     {p : ℝ≥0∞} (hp_one : 1 ≤ p) (hp_top : p ≠ ∞)
@@ -51,7 +42,6 @@ theorem eLpNorm_mollifierEps_convolution_sub_le
     _ ≤ ENNReal.ofReal ε * eLpNorm (fun x => ‖fderiv ℝ u x‖) p volume := by
       gcongr
 
-
 theorem integral_mollifierEps_convolution_sub_sq_le
     {ε : ℝ} (hε : 0 < ε) {u : E → ℝ}
     (hu : ContDiff ℝ (⊤ : ℕ∞) u) (hu_compact : HasCompactSupport u) :
@@ -79,13 +69,10 @@ theorem integral_mollifierEps_convolution_sub_sq_le
   rwa [mul_pow, eLpNorm_toReal_sq_eq_integral he,
     eLpNorm_toReal_sq_eq_integral hd] at hs
 
-
 theorem mollifierEps_le_inv_volume_innerBall {ε : ℝ} (hε : 0 < ε) (x : E) :
     mollifierEps hε x ≤
       1 / (volume : Measure E).real (closedBall (0 : E) (ε / 2)) := by
   exact (mollifierBumpEps (d := d) hε).normed_le_div_measure_closedBall_rIn volume x
-
-
 
 theorem integral_mollifierEps_sq_le_inv_volume_innerBall
     {ε : ℝ} (hε : 0 < ε) :
@@ -112,7 +99,6 @@ theorem integral_mollifierEps_sq_le_inv_volume_innerBall
     _ = 1 / (volume : Measure E).real (closedBall (0 : E) (ε / 2)) := by
       rw [integral_mul_const, mollifierEps_integral_eq_one hε, one_mul]
 
-
 theorem integral_mollifierEps_sq_le
     {ε : ℝ} (hε : 0 < ε) :
     (∫ x : E, (mollifierEps hε x) ^ 2) ≤
@@ -123,13 +109,11 @@ theorem integral_mollifierEps_sq_le
   simp only [finrank_euclideanSpace, Fintype.card_fin, div_pow]
   field_simp
 
-
 theorem mollifierEps_sq_bound_constant_pos :
     0 < (2 : ℝ) ^ d / (volume : Measure E).real (closedBall (0 : E) 1) := by
   apply div_pos (by positivity)
   exact ENNReal.toReal_pos (measure_closedBall_pos volume (0 : E) zero_lt_one).ne'
     measure_closedBall_lt_top.ne
-
 
 theorem integral_mollifierEps_sub_sq_le
     {ε : ℝ} (hε : 0 < ε) (y : E) :
@@ -138,7 +122,6 @@ theorem integral_mollifierEps_sub_sq_le
         ε ^ d := by
   rw [integral_sub_left_eq_self (fun x : E => (mollifierEps hε x) ^ 2) volume y]
   exact integral_mollifierEps_sq_le hε
-
 
 theorem tsupport_mollifierEps_convolution_subset_cthickening
     {ε R : ℝ} (hε : 0 < ε) (hεR : ε ≤ R) {u : E → ℝ} {K : Set E}
@@ -153,7 +136,6 @@ theorem tsupport_mollifierEps_convolution_subset_cthickening
     simpa using mollifierEps_support_subset_closedBall_eps hε hz
   apply mem_cthickening_of_dist_le (y + z) y R K (hu (subset_tsupport u hy))
   simpa [dist_eq_norm] using hzε.trans hεR
-
 
 theorem indicator_cthickening_mollifierEps_convolution
     {ε R : ℝ} (hε : 0 < ε) (hεR : ε ≤ R) {u : E → ℝ} {K : Set E}

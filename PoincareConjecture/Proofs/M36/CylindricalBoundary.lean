@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.StandardBalls
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ENNReal Topology

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Tenso
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ContractedBianchi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Derivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Topology
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def hamiltonPPreAntisym (D : LeviCivitaData g) (x : M)
     (u v w : TangentSpace (𝓡 n) x) : ℝ :=
   let b := g.orthonormalBasis x
@@ -38,8 +28,6 @@ noncomputable def hamiltonPPreAntisym (D : LeviCivitaData g) (x : M)
           D.covariantTensorDerivative D.ricciEvaluation x ![b d, b e, w] +
         D.curvatureTensor x u (b d) w (b e) *
           D.covariantTensorDerivative D.ricciEvaluation x ![b d, v, b e])
-
-
 
 lemma hamiltonPPreAntisym_sub_swap
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

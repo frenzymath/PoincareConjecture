@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Boundary.Orientable.OrientationTransport
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Finite.AllEdgeSigns
 
-
-
 set_option autoImplicit false
 open Set Geometry AbstractSimplicialComplex
 open PreAbstractSimplicialComplex.ModTwoCochains

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SphereContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem abs_transition_slice_sub_le_of_scale_le_two (N N' : EpsilonNeck g)
     {a : ℝ} (ha : a ∈ Ioo (-N'.epsilon⁻¹) N'.epsilon⁻¹)
@@ -116,8 +104,6 @@ theorem abs_transition_slice_sub_le_of_scale_le_two (N N' : EpsilonNeck g)
       (Real.arccos_nonneg _)]
     exact Real.arccos_le_pi _
   exact hdist.trans (by simpa using mul_le_mul_of_nonneg_left hpi (by norm_num : (0 : ℝ) ≤ 5))
-
-
 
 theorem exists_transition_slice_oscillation :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

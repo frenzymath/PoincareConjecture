@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.GluingTopology
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.TerminalGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
-
 
 def terminalGluingMap :
     Ioc H.reference.tMinus T × (H.extendedSliceGeometry P04 T).slice.carrier →
@@ -72,7 +63,6 @@ theorem terminalGluingMap_range :
     change H.regularSpacetimeForward P04
       (p.1, H.terminalSliceHomeomorph P04 ((H.terminalSliceHomeomorph P04).symm p.2)) = _
     rw [Homeomorph.apply_symm_apply]
-
 
 theorem terminalGluingMap_cover :
     range (H.oldSpacetimeForward P04) ∪ range (H.terminalGluingMap P04) = univ := by

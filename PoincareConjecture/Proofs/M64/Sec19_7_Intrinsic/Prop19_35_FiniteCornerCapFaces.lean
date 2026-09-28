@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCap
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChosenCapGeometry
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapCompatibility
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,9 +11,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
 
 structure M64IntrinsicFiniteCornerCapFaces
     {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}
@@ -43,10 +37,6 @@ namespace M64IntrinsicFiniteCornerCaps
 variable {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J → ℝ}
   {U : Set AnnulusCoordinates} (C : M64IntrinsicFiniteCornerCaps alpha beta A B U)
 
-
-
-
-
 theorem axes_subset_frontier (j : J) :
     (fun t : ℝ => C.chart j (0, t * C.radius j)) '' Icc 0 1 ∪
       (fun t : ℝ => C.chart j (t * C.radius j, 0)) '' Icc 0 1 ⊆ frontier U := by
@@ -65,9 +55,6 @@ theorem axes_subset_frontier (j : J) :
       rw [C.frontier_contact]
       exact Or.inl ⟨t * C.radius j, hparam t ht, rfl⟩
     exact h.2
-
-
-
 
 theorem exists_faces : Nonempty (M64IntrinsicFiniteCornerCapFaces C) := by
   classical
@@ -96,25 +83,16 @@ variable {J : Type*} {alpha beta : J → ℝ → AnnulusCoordinates} {A B : J �
   {U : Set AnnulusCoordinates} {C : M64IntrinsicFiniteCornerCaps alpha beta A B U}
   (F : M64IntrinsicFiniteCornerCapFaces C)
 
-
-
-
 theorem occupied_union (j : J) :
     (⋃ i, ⋃ (_ : if C.positive j then i = (true, true) else i ≠ (true, true)),
       (F.face j i).carrier) = C.carrier j := by
   simp only [F.original_carrier]
-
-
-
 
 theorem sector (j : J) (i : Bool × Bool) :
     (F.face j i).carrier ⊆ C.chart j '' ((C.chart j).source ∩
       (sectorParameterEquiv 0 i) '' {q : ℝ × ℝ | 0 ≤ q.1 ∧ 0 ≤ q.2}) := by
   rw [F.original_carrier]
   exact C.cap_sector j i
-
-
-
 
 theorem second (j : J) (i : Bool × Bool) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1) :
     ((F.face j i).boundary 1).map t =
@@ -123,9 +101,6 @@ theorem second (j : J) (i : Bool × Bool) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1)
   exact C.cap_second j i _ ⟨mul_nonneg ht.1 (C.radius_pos j).le,
     mul_le_of_le_one_left (C.radius_pos j).le ht.2⟩
 
-
-
-
 theorem first (j : J) (i : Bool × Bool) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1) :
     ((F.face j i).boundary 2).map t =
       C.chart j (sectorParameterEquiv 0 i (t * C.radius j, 0)) := by
@@ -133,19 +108,12 @@ theorem first (j : J) (i : Bool × Bool) (t : ℝ) (ht : t ∈ Icc (0 : ℝ) 1) 
   exact C.cap_first j i _ ⟨mul_nonneg ht.1 (C.radius_pos j).le,
     mul_le_of_le_one_left (C.radius_pos j).le ht.2⟩
 
-
-
-
 theorem chord (j : J) (i : Bool × Bool) (t : ℝ) : ((F.face j i).boundary 0).map t =
     (1 - t) • C.chart j (sectorParameterEquiv 0 i (C.radius j, 0)) +
       t • C.chart j (sectorParameterEquiv 0 i (0, C.radius j)) := by
   rw [F.original_zero, C.cap_chord,
     C.cap_first j i (C.radius j) ⟨(C.radius_pos j).le, le_rfl⟩,
     C.cap_second j i (C.radius j) ⟨(C.radius_pos j).le, le_rfl⟩]
-
-
-
-
 
 theorem canonical (e : J) (i j : Bool × Bool) (hij : i ≠ j) :
     CoordinateTriangleBoundaryIntersection (F.coordinates e i) (F.coordinates e j)

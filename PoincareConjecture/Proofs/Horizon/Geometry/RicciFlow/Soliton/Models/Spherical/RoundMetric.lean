@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Spher
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.SphereCurvature
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -39,7 +33,6 @@ variable {M : Type*} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} {G : ShrinkingSolitonFlow S}
 
-
 def unitMetric (_C : CompactRoundShrinkingModel G) : RiemannianMetric 3 M :=
   rescaledMetric S.metric (1 / 4) (by norm_num)
 
@@ -57,7 +50,6 @@ theorem unitMetric_sectionalCurvature (C : CompactRoundShrinkingModel G)
   rw [heq, rescaledMetric_sectionalCurvature, C.soliton_sectionalCurvature x u v
     (gram_ne_zero_of_rescaled S.metric (1 / 4) (by norm_num) x u v hgram)]
   norm_num
-
 
 theorem inner_pullback_eq_round_scale (C : CompactRoundShrinkingModel G)
     (q : UnitSphere 3 → M)
@@ -77,7 +69,6 @@ theorem inner_pullback_eq_round_scale (C : CompactRoundShrinkingModel G)
 end CompactRoundShrinkingModel
 
 namespace SphericalShrinkingMetric
-
 
 def scale (t : ℝ) : ℝ := if t < 0 then -4 * t else 1
 

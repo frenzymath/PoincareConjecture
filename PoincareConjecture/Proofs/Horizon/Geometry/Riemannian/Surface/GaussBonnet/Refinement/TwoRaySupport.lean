@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.ConnectedSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorConnectivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology
@@ -16,7 +9,6 @@ open Poincare.Topology.Plane.Meshes
 namespace PoincareConjecture.Topology.Surface
 
 variable {X : Type*} [TopologicalSpace X]
-
 
 theorem support_eventuallyEq_closure {A B : Set X} {q : X}
     (h : A =ᶠ[𝓝 q] B) : closure A =ᶠ[𝓝 q] closure B := by
@@ -33,8 +25,6 @@ theorem support_eventuallyEq_closure {A B : Set X} {q : X}
       (propext_iff.mp (hU hx.1)).mpr hx.2)
     exact hUo.inter_closure ⟨hz, hb⟩
 
-
-
 theorem closed_support_germ_eq_closure_region {K A U : Set X}
     (hK : IsClosed K) (hregular : closure (interior K) = K)
     (hU : IsOpen U) (hA : A ⊆ K) (hinterior : U ∩ interior K ⊆ A)
@@ -46,8 +36,6 @@ theorem closed_support_germ_eq_closure_region {K A U : Set X}
     apply closure_mono hinterior
     exact hU.inter_closure ⟨hz, hregular.symm ▸ hk⟩
   · exact fun hz => closure_minimal hA hK hz
-
-
 
 theorem closed_regular_support_germ_of_two_regions {K U A B : Set X}
     (hK : IsClosed K) (hregular : closure (interior K) = K)
@@ -95,8 +83,6 @@ theorem closed_regular_support_germ_of_two_regions {K U A B : Set X}
         closure_mono hempty (hU.inter_closure ⟨hqU, hregular.symm ▸ hqK⟩)
       simp only [closure_empty, mem_empty_iff_false] at hqcl
 
-
-
 theorem closed_regular_support_germ_of_two_rays
     (c : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}
     (hK : IsClosed K) (hregular : closure (interior K) = K)
@@ -141,8 +127,6 @@ theorem closed_regular_support_germ_of_two_rays
     hboundary (vertex_mem_coordinateBox c hr) hq with h | h
   · exact Or.inl (h.trans hA)
   · exact Or.inr (h.trans hB)
-
-
 
 theorem closed_regular_support_germ_of_line
     (c : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}

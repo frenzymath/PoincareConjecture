@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,7 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 theorem nonneg_of_integral_mul_test_nonneg
     (hΩ : IsOpen Ω) {F : M → ℝ} (hF : Continuous F)
@@ -55,7 +48,6 @@ theorem nonneg_of_integral_mul_test_nonneg
   have hp' := hpos φ (fun _ => b.nonneg)
   rw [heq] at hp'
   linarith
-
 
 theorem integral_heatKernelContinuous_test [NeZero n] (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (t : ℝ) (ht : 0 < t)

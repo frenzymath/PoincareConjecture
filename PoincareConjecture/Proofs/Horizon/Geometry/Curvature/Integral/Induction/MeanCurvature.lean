@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Area
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +20,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   (hreg : ∀ x, f x ∈ I → mfderiv (𝓡 (n + 1)) 𝓘(ℝ, ℝ) f x ≠ 0)
 
 include hI hproper hreg in
-
 
 theorem integrable_regularLevelVolume_of_isProperMap
     {t : ℝ} (ht : t ∈ I) {h : M → ℝ}
@@ -110,7 +102,6 @@ private theorem neg_part_le_scaled_upper_sub_div
     linarith
 
 include hI hproper hreg in
-
 
 theorem integral_neg_levelMeanCurvature_le_sub_deriv
     {t α β : ℝ} (ht : t ∈ I) (hα : 0 < α) (hβ : 0 ≤ β)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Truncation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -42,9 +32,6 @@ private theorem mem_closure_region_iff (N : EpsilonNeck g) {a b : ℝ}
     x ∈ closure (N.region a b) at h
   simpa only [closure_prod_eq, closure_univ, closure_Ioo hab.ne,
     mem_prod, mem_univ, true_and, mem_Icc] using h.symm
-
-
-
 
 theorem exists_finite_chain_enclosing_region_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

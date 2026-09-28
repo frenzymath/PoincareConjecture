@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncollapse.Volume.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Blowup.Controlled.Data
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -70,8 +61,6 @@ theorem central_unit_slab_subset_ball :
   unfold DeepHorn.neckVolumeRadius
   linarith
 
-
-
 theorem volume_center_ball_lower :
     ENNReal.ofReal (DeepHorn.neckVolumeConstant * N.scale ^ 3) ≤
       g.volumeMeasure (g.ball N.center (DeepHorn.neckVolumeRadius * N.scale)) := by
@@ -116,8 +105,6 @@ theorem scale_eq_inv_sqrt_scalar (N : GeneralizedStrongNeck F t epsilon) :
   rw [N.scale_scalar, neg_div, Real.rpow_neg N.scalar_center_pos.le, Real.sqrt_eq_rpow]
   rfl
 
-
-
 theorem calibratedVolume_center_ball_lower (N : GeneralizedStrongNeck F t epsilon)
     (hepsilon : epsilon < 1 / 2) :
     ENNReal.ofReal (DeepHorn.neckVolumeConstant /
@@ -137,8 +124,6 @@ theorem calibratedVolume_center_ball_lower (N : GeneralizedStrongNeck F t epsilo
 end GeneralizedStrongNeck
 
 namespace GeneralizedBlowupSequence
-
-
 
 theorem terminal_volume_of_strongNecks (S : GeneralizedBlowupSequence.{u})
     (hneck : ∀ᶠ k : ℕ in Filter.atTop,

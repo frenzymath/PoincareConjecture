@@ -1,9 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -12,10 +8,6 @@ open Filter
 open scoped Topology
 
 namespace PoincareConjecture.M64
-
-
-
-
 
 theorem log_scaled_affine_derivative {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

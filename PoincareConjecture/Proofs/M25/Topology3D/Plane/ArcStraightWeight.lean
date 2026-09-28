@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.FamilyPersistence
 import Mathlib.LinearAlgebra.Dimension.Free
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

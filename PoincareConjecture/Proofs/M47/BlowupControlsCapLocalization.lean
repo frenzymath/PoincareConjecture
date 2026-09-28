@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ noncomputable local instance capLocalCoefficientNorm : NormedAddCommGroup Bilin 
 
 noncomputable local instance capLocalCoefficientSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_cap_coefficient_family_germ {J : Set ℝ} {U : Set E}
     (hU : IsOpen U) (A : ℝ × E → Bilin)

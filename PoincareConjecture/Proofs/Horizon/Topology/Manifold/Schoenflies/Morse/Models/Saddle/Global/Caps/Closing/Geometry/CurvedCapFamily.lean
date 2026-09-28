@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Geometry.CurvedCapSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Nesting
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -55,9 +53,6 @@ private theorem exists_separated_positive_scales
     have hpos : 0 < c * 3 ^ n i := mul_pos hc (by positivity)
     have hm := mul_le_mul_of_nonneg_left hp hc.le
     nlinarith
-
-
-
 
 theorem exists_disjoint_curved_closing_cap_family
     {ι : Type*} [Finite ι] {v : E3} (hv : ‖v‖ = 1) (b : Real)

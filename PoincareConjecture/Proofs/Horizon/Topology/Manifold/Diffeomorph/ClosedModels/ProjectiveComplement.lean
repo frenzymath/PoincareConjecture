@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCha
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.ComplementaryDomain
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Affine
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace Topology
@@ -28,8 +18,6 @@ local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   [T2Space M]
-
-
 
 theorem exists_projective_complementary_collar
     (U V : Opens M) {p : RealProjectiveThree}

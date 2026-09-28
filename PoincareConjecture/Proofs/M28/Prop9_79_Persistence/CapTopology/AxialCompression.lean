@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbati
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Analysis.Calculus
@@ -20,15 +9,11 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.CapRecut
 
-
-
 noncomputable def axialCutoff (A : ℝ) (hA : 0 < A) : ContDiffBump A where
   rIn := A / 8
   rOut := A / 4
   rIn_pos := by positivity
   rIn_lt_rOut := by linarith
-
-
 
 theorem axialCutoff_eq_zero {A : ℝ} (hA : 0 < A) {x : ℝ} (hx : x ≤ A / 2) :
     axialCutoff A hA x = 0 := by
@@ -37,15 +22,10 @@ theorem axialCutoff_eq_zero {A : ℝ} (hA : 0 < A) {x : ℝ} (hx : x ≤ A / 2) 
   rw [Real.dist_eq, abs_of_nonpos (by linarith : x - A ≤ 0)]
   linarith
 
-
 theorem axialCutoff_at_endpoint {A : ℝ} (hA : 0 < A) :
     axialCutoff A hA A = 1 :=
   (axialCutoff A hA).one_of_mem_closedBall
     (mem_closedBall_self (axialCutoff A hA).rIn_pos.le)
-
-
-
-
 
 theorem eventually_exists_axial_compression {A : ℝ} (hA : 0 < A)
     {δ : ℕ → ℝ} (hδ : Tendsto δ atTop (𝓝 0)) (hδpos : ∀ᶠ k in atTop, 0 < δ k) :
@@ -89,9 +69,6 @@ theorem eventually_exists_axial_compression {A : ℝ} (hA : 0 < A)
   refine ⟨by linarith, by linarith, e, hes, hei, hmono, hformula, hfix, ?_⟩
   rw [e.continuous.image_Ioo_of_strictMono hmono, hfix _ (by linarith),
     hformula, axialCutoff_at_endpoint hA, mul_one]
-
-
-
 
 theorem axial_perturbation_jets_tendsto {A : ℝ} (hA : 0 < A)
     {δ : ℕ → ℝ} (hδ : Tendsto δ atTop (𝓝 0)) (m : ℕ) :

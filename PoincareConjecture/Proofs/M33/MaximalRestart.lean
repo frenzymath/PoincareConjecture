@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M33BranchContinuation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.RepairedContinuationConclusion
-
-
 
 theorem frontier_before
     {F : SurgeryFlowData.{u}} {T : ℝ} {I : RepairedContinuationInput F T}

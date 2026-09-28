@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.ClosedCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -18,8 +10,6 @@ namespace Poincare.AncientVolume
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X] [NormedAddCommGroup Y] [NormedSpace ℝ Y]
   [FiniteDimensional ℝ Y]
-
-
 
 theorem exists_smooth_subsequence_on_ancient_halfCylinder
     {ρ R : ℝ} (hρ : 0 < ρ) (hρR : ρ < R) (f : ℕ → ℝ × X → Y)

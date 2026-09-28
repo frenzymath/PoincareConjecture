@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegularProfileSectio
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderCollarWidthRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,11 +11,6 @@ namespace Geometry.AlexanderSectionProfile
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_regular_section_window
     (W : AlexanderSectionProfile E) {D : Set F}
@@ -71,11 +56,6 @@ theorem exists_regular_section_window
     exact h
   · intro x hx hxA hx0
     exact hsigns x hx (fun hc => havoid _ hxA hx0 (Or.inl hc))
-
-
-
-
-
 
 theorem exists_regular_collared_section_window
     (W : AlexanderSectionProfile E) {D : Set F}

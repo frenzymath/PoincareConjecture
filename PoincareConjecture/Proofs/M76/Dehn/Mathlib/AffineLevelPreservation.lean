@@ -2,23 +2,11 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace AffineMap
-
-
-
 
 theorem exists_zero_level_affineSubspace
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -36,8 +24,6 @@ end AffineMap
 
 namespace Homeomorph
 
-
-
 theorem affine_height_eq_of_displacement_mem_ker
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (H : E ≃ₜ E) (ell : E →ᵃ[ℝ] ℝ)
@@ -47,9 +33,6 @@ theorem affine_height_eq_of_displacement_mem_ker
   have heq : ell.linear (H x - x) = ell (H x) - ell x :=
     ell.linearMap_vsub (H x) x
   exact sub_eq_zero.mp (heq.symm.trans hz)
-
-
-
 
 theorem affine_height_preimages_of_displacement_mem_ker
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

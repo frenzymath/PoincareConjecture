@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Stokes.Triangle
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +21,6 @@ private theorem contMDiffAt_planar_const (v : ℝ × ℝ) (p : ℝ × ℝ) :
   rw [contMDiffAt_totalSpace]
   exact ⟨contMDiffAt_id, by simpa using
     (contMDiffAt_const (I := 𝓘(ℝ, ℝ × ℝ)) (I' := 𝓘(ℝ, ℝ × ℝ)) (c := v))⟩
-
 
 theorem contMDiffAt_chartField
     (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -67,8 +59,6 @@ private theorem mlieBracket_chartField
   rw [hzero]
   simp [mpullback]
 
-
-
 theorem exists_aligned_positive_chart_frame
     (g : RiemannianMetric 2 S) (e : OpenPartialHomeomorph S (ℝ × ℝ))
     (he : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ × ℝ) ∞ e e.source)
@@ -99,8 +89,6 @@ theorem exists_aligned_positive_chart_frame
   simp only [mpullback, map_add, map_smul, map_zero, hinv.self_apply_inverse] at h
   change a • ((1, 0) : ℝ × ℝ) + b • ((0, 1) : ℝ × ℝ) = 0 at h
   exact ⟨by simpa using congrArg Prod.fst h, by simpa using congrArg Prod.snd h⟩
-
-
 
 theorem exists_positive_chart_frame
     (g : RiemannianMetric 2 S) (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -154,8 +142,6 @@ private theorem fderiv_chart_scalar
     ((hei.contMDiffAt (e.open_target.mem_nhds hp)).mdifferentiableAt (by simp)))
   simp only [mvfderiv, mfderiv_eq_fderiv, ContinuousLinearMap.comp_apply] at h
   exact h
-
-
 
 theorem scalarCurvature_frameDet_eq_chart_curl
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -215,8 +201,6 @@ private theorem contDiffOn_chartConnectionForm
     (hω.comp p (hei.contMDiffAt (e.open_target.mem_nhds hp)))
   exact h.contDiffWithinAt
 
-
-
 theorem integral_scalarCurvature_frameDet_triangle
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))
     (he : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ × ℝ) ∞ e e.source)
@@ -272,9 +256,6 @@ theorem integral_scalarCurvature_frameDet_triangle
   rw [hstokes]
 
 variable [MeasurableSpace S] [BorelSpace S] [T3Space S]
-
-
-
 
 theorem integral_scalarCurvature_chartTriangle
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -341,8 +322,6 @@ theorem integral_scalarCurvature_chartTriangle
         (hdensity (u, v) (htriangle ⟨hu.1, hv.1, by linarith [hv.2]⟩))
     _ = _ := D.integral_scalarCurvature_frameDet_triangle e he hei he₁ he₂
       hunit₁ hunit₂ horth htriangle
-
-
 
 theorem exists_frame_integral_scalarCurvature_chartTriangle
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))

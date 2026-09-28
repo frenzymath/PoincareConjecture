@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.ScaledNeckComparison
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
-
 
 theorem blowupSequence_boundary_neck_patch (P : M35StandardCapPredecessors)
     (atlas : StandardCylinderAtlas) {g₀ : StandardInitialMetric}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexKernelInterior
 import PoincareConjecture.Proofs.M14.Mathlib.SectionThroughVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem jacobiResidual_eq_zero_of_index_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -62,9 +49,6 @@ theorem jacobiResidual_eq_zero_of_index_zero
       exact Subset.rfl)
   simpa only [hZs] using hclosed hs
 
-
-
-
 theorem variationJacobiCondition_of_index_zero
     (hCoordinates : M12MetricPredecessors.{0} n)
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -77,10 +61,6 @@ theorem variationJacobiCondition_of_index_zero
   obtain ⟨hleft, hright⟩ := variationField_fixed_endpoints_eq_zero V hfix
   exact ⟨Q, rfl, HEq.rfl, hleft, hright, fun _ hs W =>
     jacobiResidual_eq_zero_of_index_zero hCoordinates hM04 hM12 V D hmin hfix hzero hs W⟩
-
-
-
-
 
 theorem fixedEndpointIndexKernelStatement
     (hCoordinates : M12MetricPredecessors.{0} n)

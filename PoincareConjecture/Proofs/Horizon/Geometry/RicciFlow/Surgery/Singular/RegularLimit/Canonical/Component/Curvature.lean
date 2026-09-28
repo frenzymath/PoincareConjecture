@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.UniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.StrictCurvature.LowerBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ namespace SingularCComponent
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {C : ℝ}
-
-
 
 theorem curvatureTensor_lower_bound_by_scalar (N : SingularCComponent g D C)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier)
@@ -56,8 +45,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem terminal_curvatureTensor_lower_bound_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -92,8 +79,6 @@ theorem terminal_curvatureTensor_lower_bound_of_frequently_cComponent
     exact continuous_subtype_val.image_connectedComponent_subset x ⟨z, hz, rfl⟩
   exact N'.curvatureTensor_lower_bound_by_scalar hzm hym v w
 
-
-
 theorem terminal_sectional_lower_bound_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (x : H.regularRegion P04)
@@ -108,9 +93,6 @@ theorem terminal_sectional_lower_bound_of_frequently_cComponent
   have h := H.terminal_curvatureTensor_lower_bound_of_frequently_cComponent P04 x hfreq hy hz v w
   simpa only [LeviCivitaData.sectionalCurvature, hvw.1, hvw.2.1, hvw.2.2,
     mul_one, zero_pow (by decide : (2 : ℕ) ≠ 0), sub_zero, div_one] using h
-
-
-
 
 theorem terminal_strict_sectional_bounds_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -147,8 +129,6 @@ theorem terminal_strict_sectional_bounds_of_frequently_cComponent
     field_simp [H.constant_pos.ne']
   rw [heq] at hscaled
   exact ⟨hsec_pos, hscaled.trans_lt (by linarith)⟩
-
-
 
 theorem terminal_scalar_lower_bound_of_frequently_cComponent
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

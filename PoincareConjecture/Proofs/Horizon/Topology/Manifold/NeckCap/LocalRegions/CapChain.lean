@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Ext
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Frontier
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.ConnectedNeckCapCover
-
-
 
 theorem exists_outgoing_chain_with_cap_frontier_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -62,8 +50,6 @@ theorem exists_outgoing_chain_with_cap_frontier_threshold :
       (by rw [hcenter]; exact fun h => hout (Or.inr h))
     exact False.elim (hnext ((hmax S hS hext).1 hnew))
   · exact hcap
-
-
 
 theorem exists_outgoing_chain_cover_or_cap_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

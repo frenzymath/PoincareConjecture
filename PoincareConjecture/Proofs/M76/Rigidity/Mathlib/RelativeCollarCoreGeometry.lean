@@ -2,21 +2,11 @@ import Mathlib.Topology.Constructions
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
-
-
 
 theorem relative_collar_core_geometry {K N U S : Set X}
     (hK : IsCompact K) (hNK : N ⊆ K) (hUN : U ⊆ N)

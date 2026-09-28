@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M38.CompactCoverSheet
 import PoincareConjecture.Proofs.M38.SphericalModelRegions
 import PoincareConjecture.Proofs.M38.CylinderSphereFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M38
 
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
-
-
 
 theorem exists_spherical_chart_of_global_cylinder
     (A : GeneralizedSliceCarrier.{u})
@@ -44,8 +33,6 @@ theorem exists_spherical_chart_of_global_cylinder
     (partialHomeomorphRegions j.toOpenPartialHomeomorph
       j.contMDiffOn_toFun j.contMDiffOn_invFun) j.open_source j.open_target
   exact ⟨e, he.trans hjs, hs, hi⟩
-
-
 
 theorem sphereBundle_cut_connected_spherical_chart
     (Q : GeneralizedSliceCarrier.{u}) [CompactSpace Q.carrier] (B : SurgerySphereBundle Q)

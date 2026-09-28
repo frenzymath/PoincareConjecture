@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalComponentSectionalStability
 import PoincareConjecture.Proofs.M47.CanonicalComponentDiameterStability
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [CompactSpace M]
-
-
 
 theorem eventually_same_C_component
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

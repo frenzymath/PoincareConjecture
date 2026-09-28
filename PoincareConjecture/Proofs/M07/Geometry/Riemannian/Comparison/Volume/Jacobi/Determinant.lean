@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Matrix.Determinant
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Riccati
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +11,6 @@ open scoped Topology BigOperators
 namespace PoincareConjecture.RiemannianMetric
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
-
 
 theorem hasDerivAt_determinantRoot
     {J : ℝ → Matrix ι ι ℝ} {V : Matrix ι ι ℝ} {m t : ℝ}
@@ -37,7 +26,6 @@ theorem hasDerivAt_determinantRoot
     rw [Matrix.trace_mul_comm, Real.rpow_sub hpos, Real.rpow_one]
     field_simp
   exact heq ▸ hd.rpow_const (Or.inl hpos.ne')
-
 
 theorem hasDerivAt_deriv_determinantRoot
     {J V : ℝ → Matrix ι ι ℝ} {m t h' : ℝ}
@@ -58,8 +46,6 @@ theorem hasDerivAt_deriv_determinantRoot
   have he := ((hh.div_const m).mul hd).congr_of_eventuallyEq heq
   convert! he using 1
   ring
-
-
 
 theorem deriv2_determinantRoot_le_of_riccati
     {J V : ℝ → Matrix ι ι ℝ} {K : Matrix ι ι ℝ} {κ t : ℝ}

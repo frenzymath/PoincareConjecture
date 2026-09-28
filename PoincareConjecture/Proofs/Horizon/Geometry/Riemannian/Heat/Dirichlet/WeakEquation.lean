@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Resolvent
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,18 +16,15 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
 
-
 theorem inner_test_eq_inner_oneSubLaplacian (u : H1Zero D Ω) (φ : EnergyTest D Ω) :
     ⟪u, (φ : H1Zero D Ω)⟫_ℝ = ⟪toL2 D Ω u, φ.oneSubLaplacian⟫_ℝ := by
   rw [← resolvent_oneSubLaplacian φ]
   exact (toL2 D Ω).adjoint_inner_right u φ.oneSubLaplacian
 
-
 theorem resolvent_distribution (f : Lp ℝ 2 g.volumeMeasure) (φ : EnergyTest D Ω) :
     ⟪l2Resolvent D Ω f, φ.oneSubLaplacian⟫_ℝ = ⟪f, testToL2 D Ω φ⟫_ℝ := by
   change ⟪toL2 D Ω (resolvent D Ω f), φ.oneSubLaplacian⟫_ℝ = _
   rw [← inner_test_eq_inner_oneSubLaplacian, resolvent_inner, toL2_coe]
-
 
 def EnergyTest.laplacianLp (φ : EnergyTest D Ω) : Lp ℝ 2 g.volumeMeasure :=
   testToL2 D Ω φ - φ.oneSubLaplacian
@@ -53,7 +42,6 @@ theorem EnergyTest.laplacianLp_ae (φ : EnergyTest D Ω) :
   rw [hφ, hΔ]
   ring
 
-
 theorem weak_eigenfunction_distribution (u : H1Zero D Ω) {lam : ℝ}
     (hu : ∀ v : H1Zero D Ω, ⟪u, v⟫_ℝ =
       (1 + lam) * ⟪toL2 D Ω u, toL2 D Ω v⟫_ℝ) (φ : EnergyTest D Ω) :
@@ -62,7 +50,6 @@ theorem weak_eigenfunction_distribution (u : H1Zero D Ω) {lam : ℝ}
   rw [inner_test_eq_inner_oneSubLaplacian, toL2_coe] at h
   rw [EnergyTest.laplacianLp, inner_sub_right, h]
   ring
-
 
 theorem weak_eigenvalue_nonneg {u : H1Zero D Ω} (hne : u ≠ 0) {lam : ℝ}
     (hu : ∀ v : H1Zero D Ω, ⟪u, v⟫_ℝ =

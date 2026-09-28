@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOrdinaryGeometry
 import PoincareConjecture.Proofs.M47.SeedThreeStopScales
 import PoincareConjecture.Proofs.M47.SeedMidpointVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_uniform_ordinary_birth_volume
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -88,8 +77,6 @@ theorem exists_uniform_ordinary_birth_volume
   apply hphysical.trans (measure_mono ?_)
   intro y hy
   exact hy.trans_le (ENNReal.ofReal_le_ofReal (by linarith : R / 8 ≤ (R / 2) / 2))
-
-
 
 theorem seed_midpoint_volume_of_birth_floor
     {M : Type u} [TopologicalSpace M] [T3Space M]

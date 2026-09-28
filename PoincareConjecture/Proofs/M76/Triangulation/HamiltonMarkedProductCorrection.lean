@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPrescribedMeridianBan
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProductBandReflection
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDiskProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -56,10 +47,6 @@ private theorem joined_map_of_oriented_band {E : Type*}
   rw [P.reflected_positive_image] at hnm
   exact exists_joined_marked_product_map P F fp fn hw hpp hnp hpi hni hpm hnm
     hpc hncenter hpb hnb hpl hnl
-
-
-
-
 
 theorem exists_marked_disk_product_of_unmarked
     {B D : Set W} {b : D2 ≃ₜ D}

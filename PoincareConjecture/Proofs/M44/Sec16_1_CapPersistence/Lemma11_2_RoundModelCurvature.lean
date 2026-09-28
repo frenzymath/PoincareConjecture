@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 import PoincareConjecture.Proofs.M04.TensorNorm
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M44
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem curvatureTensor_eq_metricGram_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
@@ -76,8 +63,6 @@ theorem curvatureTensor_eq_metricGram_of_sectional_one (D : LeviCivitaData g)
     norm_num
   exact sub_eq_zero.mp (curvatureForm_zero_of_orthonormal T hfirst hpair hcyclic hunit a b c d)
 
-
-
 theorem riemannEvaluation_eq_metricGram_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
       D.sectionalCurvature x v w = 1) :
@@ -88,18 +73,12 @@ theorem riemannEvaluation_eq_metricGram_of_sectional_one (D : LeviCivitaData g)
   dsimp [M04.metricGramEvaluation]
   ring
 
-
-
-
 theorem covariant_curvature_zero_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
       D.sectionalCurvature x v w = 1) :
     D.covariantTensorDerivative D.riemannEvaluation = 0 := by
   rw [riemannEvaluation_eq_metricGram_of_sectional_one D hsec]
   exact M04.covariantTensorDerivative_metricGramEvaluation D
-
-
-
 
 theorem iterated_curvature_zero_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →
@@ -111,8 +90,6 @@ theorem iterated_curvature_zero_of_sectional_one (D : LeviCivitaData g)
     rw [LeviCivitaData.iteratedCovariantTensorDerivative, ih]
     funext x v
     simp [LeviCivitaData.covariantTensorDerivative, mvfderiv_const]
-
-
 
 theorem curvatureDerivativeNorm_succ_zero_of_sectional_one (D : LeviCivitaData g)
     (hsec : ∀ x v w, LeviCivitaData.IsOrthonormalPair g x v w →

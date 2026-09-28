@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonLocalJord
 import PoincareConjecture.Proofs.M76.Brown.HalfspaceLocalCollars
 import PoincareConjecture.Proofs.M76.Brown.CompactCollaring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set BrownCollar

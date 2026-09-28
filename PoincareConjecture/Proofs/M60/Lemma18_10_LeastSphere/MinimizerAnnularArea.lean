@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 import Mathlib.Analysis.Calculus.FDeriv.Norm
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -113,8 +104,6 @@ private theorem annular_area_frame (g : RiemannianMetric n M)
   exact hframe ▸ twoVectorArea_le (D (angularPoint t)) (D (angularVector t))
 
 open scoped Bundle in
-
-
 
 theorem suAnnularBlend_density_bound (g : RiemannianMetric n M) :
     ∃ H : ℝ, 0 ≤ H ∧ ∀ (C : ℝ × (M × M) → M) (U : Set (M × M)),
@@ -225,9 +214,6 @@ private theorem annular_volume {R d : ℝ} (hd : 0 < d) (hRd : d < R) :
     ENNReal.toReal_ofReal pi_pos.le]
   ring
 
-
-
-
 theorem suAnnular_area_estimate (g : RiemannianMetric n M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 n) 1 F)
     {R d H A B L : ℝ} (hd : 0 < d) (hRd : d < R)
@@ -253,8 +239,6 @@ theorem suAnnular_area_estimate (g : RiemannianMetric n M)
       rw [setIntegral_const, smul_eq_mul, annular_volume hd hRd]
       field_simp
 
-
-
 theorem suSphereArea_rescaled (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
     (c : UnitTwoSphere) {s : ℝ} (hs : 0 < s) :
@@ -273,9 +257,6 @@ theorem suSphereArea_rescaled (g : RiemannianMetric n M)
   have ha := m60AreaIntegral_comp_smul g (f ∘ (chartAt LoopPlane c).symm) hs univ
   rw [hset, setIntegral_univ, setIntegral_univ] at ha
   exact ⟨by simpa only [integrableOn_univ, Function.comp_apply] using h, ha.trans harea⟩
-
-
-
 
 theorem suAnnularBlend_area_bookkeeping (g : RiemannianMetric n M)
     (C : ℝ × (M × M) → M) (f a : LoopPlane → M) {R d E : ℝ}

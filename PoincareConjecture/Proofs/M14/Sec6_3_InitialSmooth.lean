@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialFamily
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +18,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
 
 theorem initialValueCurve_smooth_initial_tube
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -49,9 +38,6 @@ theorem initialValueCurve_smooth_initial_tube
     initialValueCurve_smooth_initial_tube_in_gauge hM04 hM12 b W t₀ x₀ Z hsmax htime
   exact ⟨d, hd, U, hU, hZU, ht₀ ▸ htube, ht₀ ▸ hsm⟩
 
-
-
-
 theorem initialValueCurve_smooth_of_no_earlier_time
     (hbase : G.spacetime.timeFunction x = T) (hprev : ¬ ∃ a ∈ I.domain, a < T) :
     M14HorizontalFamilySmooth G (initialValueCurve G T x) (initialValueDomain G T x) := by
@@ -69,9 +55,6 @@ theorem initialValueCurve_smooth_of_no_earlier_time
   have hle : T ≤ T - z.2 ^ 2 := le_of_not_gt (fun hlt => hprev ⟨_, ha.2, hlt⟩)
   have hs : z.2 = 0 := sq_eq_zero_iff.mp (le_antisymm (by linarith) (sq_nonneg z.2))
   rw [hs, initialValueCurve_zero]
-
-
-
 
 theorem initialValueCurve_contMDiffWithinAt_zero
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

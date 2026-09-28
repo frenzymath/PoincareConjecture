@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRegularity
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzArea
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -29,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 noncomputable def m64HeinzHildebrandtCertificate_of_global_C1
     (L : M64FiniteEnergyContinuousLimit (g := g))
@@ -105,10 +88,6 @@ noncomputable def m64HeinzHildebrandtCertificate_of_global_C1
     ae_manifold_differentiable := hdiff
     area_integrable := hint
     piecewise_c1_on_limit := hpiece }
-
-
-
-
 
 theorem m64Annulus_of_global_C1_limit
     (L : M64FiniteEnergyContinuousLimit (g := g))

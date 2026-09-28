@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Geometry.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.TangentIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Horizontal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -18,7 +18,6 @@ private theorem inner_self_nonnegative (g : RiemannianMetric 3 M) (x : M)
   · simp [hv]
   · exact (g.pos x v hv).le
 
-
 theorem m67_gram_det_le_of_differential_le
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
     (f : M → N) {c : ℝ} (hc : 0 ≤ c)
@@ -66,7 +65,6 @@ theorem m67_gram_det_le_of_differential_le
       mul_le_mul (hbound x u) (hbound x w) (inner_self_nonnegative h (f x) (L w))
         (mul_nonneg hc hgu.le)
     _ = _ := by ring
-
 
 theorem m67_area_density_comp_le [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

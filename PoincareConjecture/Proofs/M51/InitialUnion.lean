@@ -2,17 +2,6 @@ import PoincareConjecture.Statements.Ch04.Continuation
 import Mathlib.Geometry.Manifold.ContMDiff.Defs
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -164,7 +153,6 @@ theorem initialUnion_equation (h03 : RicciFlowLocalTheory n M)
   apply (he.mono_of_mem_nhdsWithin hlocal).congr_of_eventuallyEq_of_mem ?_ ht
   filter_upwards [hlocal] with s hs
   rw [initialUnionMetric_eq_candidate h03 g0 C hs]
-
 
 noncomputable def initialUnion (h03 : RicciFlowLocalTheory n M)
     (g0 : RiemannianMetric n M) : RicciFlow n M (initialDomain g0) where

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Real
@@ -18,24 +9,16 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.Proofs.M58
 
-
-
 noncomputable def loopPlaneEquivProd : LoopPlane ≃ᵐ ℝ × ℝ :=
   (MeasurableEquiv.toLp 2 (Fin 2 → ℝ)).symm.trans MeasurableEquiv.finTwoArrow
 
-
-
 theorem measurePreserving_loopPlaneEquivProd : MeasurePreserving loopPlaneEquivProd :=
   (volume_preserving_finTwoArrow ℝ).comp (PiLp.volume_preserving_ofLp (Fin 2))
-
-
 
 theorem loopPlaneEquivProd_symm_polar (p : ℝ × ℝ) :
     loopPlaneEquivProd.symm (polarCoord.symm p) = p.1 • angularPoint p.2 := by
   ext i
   fin_cases i <;> rfl
-
-
 
 theorem integral_polar_loopPlane (f : LoopPlane → ℝ) :
     (∫ p in polarCoord.target, p.1 * f (p.1 • angularPoint p.2)) = ∫ z, f z := by
@@ -45,8 +28,6 @@ theorem integral_polar_loopPlane (f : LoopPlane → ℝ) :
     _ = ∫ p : ℝ × ℝ, f (loopPlaneEquivProd.symm p) :=
       integral_comp_polarCoord_symm (fun p => f (loopPlaneEquivProd.symm p))
     _ = ∫ z, f z := measurePreserving_loopPlaneEquivProd.symm.integral_comp' f
-
-
 
 theorem integral_loopDisk_polar (f : LoopPlane → ℝ) :
     (∫ z in loopDiskSet, f z) =

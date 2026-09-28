@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.MovingBadAscentGrowth
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +9,6 @@ open Set Filter Topology Poincare.GromovHausdorff
 universe u
 
 namespace Poincare.Alexandrov
-
-
 
 theorem hasSmallAngleConfiguration_succ_of_old_limit
     {X Z : ℕ → BasedMetricSpaceBundle.{u}}
@@ -117,8 +107,6 @@ theorem hasSmallAngleConfiguration_succ_of_old_limit
     (fun _ => hr) hqb hqd hθ hθpi hc hcθ hε ?_ y hy0 hyfar hybad
   intro i l hil
   simpa only [hw i, hw l] using hwangle i l hil
-
-
 
 theorem HasSmallAngleConfiguration.lt_localAnglePackingRank_of_succ
     {Y : Type*} [MetricSpace Y] {θ : ℝ} {p : Y} {k N : ℕ}

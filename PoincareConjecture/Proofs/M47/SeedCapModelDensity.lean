@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeReference
 import PoincareConjecture.Proofs.M36.MetricComparison
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_cap_model_density (g0 : StandardInitialMetric)
     {A0 Rmax : ℝ} (hA0 : 0 < A0) (hRmax : 0 < Rmax) :

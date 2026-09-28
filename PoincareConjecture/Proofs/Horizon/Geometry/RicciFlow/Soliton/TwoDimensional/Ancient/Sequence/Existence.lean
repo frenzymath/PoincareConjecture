@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Attainment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Surface
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_ancientRescalingSequence_of_spatial_minimum_bound
     (K : AncientKappaSolution 2 M) (reference : M)
@@ -68,8 +60,6 @@ theorem exists_ancientRescalingSequence_of_spatial_minimum_bound
     base_reduced_length_bound := by
       intro k
       simpa using hbase_bound k }⟩
-
-
 
 theorem exists_ancientRescalingSequence (K : AncientKappaSolution 2 M) :
     Nonempty (AncientRescalingSequence K) := by

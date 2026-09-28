@@ -3,14 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ set_option backward.isDefEq.respectTransparency false
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem exists_flow_time_of_positive_radius
     {M : Type*} [TopologicalSpace M] {p : M} {f : M → ℝ}

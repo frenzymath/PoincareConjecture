@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.ChartCurveExtension
 import PoincareConjecture.Proofs.M09.PullbackExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

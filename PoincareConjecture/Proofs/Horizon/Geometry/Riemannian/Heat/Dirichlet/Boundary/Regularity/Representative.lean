@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateRepresentative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.Continuous
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -74,8 +68,6 @@ private theorem exists_zero_extended_representative_of_local
     exact indicator_of_mem hx U
   · filter_upwards [ae_restrict_mem hΩ.measurableSet, hUae] with x hx hxeq
     exact (indicator_of_mem hx U).trans hxeq
-
-
 
 theorem exists_heatPower_continuous_representative (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (k : ℕ) (t : ℝ) (ht : 0 < t)

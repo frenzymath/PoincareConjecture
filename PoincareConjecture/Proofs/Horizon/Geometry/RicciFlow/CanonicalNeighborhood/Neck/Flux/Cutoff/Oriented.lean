@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Flux.Cutoff.Transition
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +12,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem axialTransition_one_sub_profile
     {A B : Set M} (hdisj : Disjoint A B)
@@ -42,8 +31,6 @@ theorem axialTransition_one_sub_profile
     · have hxA : x ∉ A := fun h => Set.disjoint_left.mp hdisj h hxB
       simp [axialTransition, hx, hxA, hxB]
 
-
-
 theorem contMDiff_axialTransition_one_sub_profile
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -57,8 +44,6 @@ theorem contMDiff_axialTransition_one_sub_profile
   exact contMDiff_const.sub (N.contMDiff_axialTransition hB hA hdisj.symm
     ((union_comm B A).trans hcover) hneg hpos hL hLe hφ hzero hone)
 
-
-
 theorem hasCompactSupport_one_sub_axialTransition_one_sub_profile
     {A B : Set M} (hAc : IsCompact (closure A))
     (hdisj : Disjoint A B) (hcover : A ∪ B = N.central_sphereᶜ)
@@ -70,7 +55,6 @@ theorem hasCompactSupport_one_sub_axialTransition_one_sub_profile
   simp only [sub_sub_cancel]
   exact N.hasCompactSupport_axialTransition hAc hdisj.symm
     ((union_comm B A).trans hcover) hpos hL hLe hzero
-
 
 theorem axialTransition_one_sub_profile_eventually_constant_of_not_mem
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)
@@ -87,8 +71,6 @@ theorem axialTransition_one_sub_profile_eventually_constant_of_not_mem
   rw [N.axialTransition_one_sub_profile hdisj hcover]
   filter_upwards [he] with y hy
   rw [hy]
-
-
 
 theorem exists_outward_axialTransition
     {A B : Set M} (hA : IsOpen A) (hB : IsOpen B)

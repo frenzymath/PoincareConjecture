@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.ServiceMirror
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -16,15 +7,9 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M74
 
-
-
 noncomputable def shiftCollarParam (s : ℝ) : ℝ := (1 + 2 * s) / (2 + s)
 
-
-
 noncomputable def unshiftCollarParam (t : ℝ) : ℝ := (2 * t - 1) / (2 - t)
-
-
 
 theorem shiftCollarParam_mem {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
     shiftCollarParam s ∈ Ioo (-1 : ℝ) 1 := by
@@ -32,15 +17,11 @@ theorem shiftCollarParam_mem {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
   exact ⟨(lt_div_iff₀ hden).mpr (by linarith [hs.1]),
     (div_lt_iff₀ hden).mpr (by linarith [hs.2])⟩
 
-
-
 theorem unshiftCollarParam_mem {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
     unshiftCollarParam s ∈ Ioo (-1 : ℝ) 1 := by
   have hden : 0 < 2 - s := by linarith [hs.2]
   exact ⟨(lt_div_iff₀ hden).mpr (by linarith [hs.1]),
     (div_lt_iff₀ hden).mpr (by linarith [hs.2])⟩
-
-
 
 theorem unshift_shiftCollarParam {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
     unshiftCollarParam (shiftCollarParam s) = s := by
@@ -49,8 +30,6 @@ theorem unshift_shiftCollarParam {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
   field_simp
   ring
 
-
-
 theorem shift_unshiftCollarParam {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
     shiftCollarParam (unshiftCollarParam s) = s := by
   have hden : 2 - s ≠ 0 := by linarith [hs.2]
@@ -58,21 +37,15 @@ theorem shift_unshiftCollarParam {s : ℝ} (hs : s ∈ Ioo (-1 : ℝ) 1) :
   field_simp
   ring
 
-
-
 theorem shiftCollarParam_contDiffOn :
     ContDiffOn ℝ ∞ shiftCollarParam (Ioo (-1 : ℝ) 1) := by
   exact (contDiff_const.add (contDiff_const.mul contDiff_id)).contDiffOn.div
     (contDiff_const.add contDiff_id).contDiffOn (fun s hs => by linarith [hs.1])
 
-
-
 theorem unshiftCollarParam_contDiffOn :
     ContDiffOn ℝ ∞ unshiftCollarParam (Ioo (-1 : ℝ) 1) := by
   exact ((contDiff_const.mul contDiff_id).sub contDiff_const).contDiffOn.div
     (contDiff_const.sub contDiff_id).contDiffOn (fun s hs => by linarith [hs.2])
-
-
 
 noncomputable def shiftCollar (p : RoundCylinderSpace) : RoundCylinderSpace :=
   (p.1, shiftCollarParam p.2)
@@ -81,15 +54,11 @@ private theorem shiftCollar_mem {p : RoundCylinderSpace}
     (hp : p ∈ univ ×ˢ Ioo (-1 : ℝ) 1) : shiftCollar p ∈ univ ×ˢ Ioo (-1 : ℝ) 1 :=
   ⟨mem_univ _, shiftCollarParam_mem hp.2⟩
 
-
-
 theorem shiftCollar_contMDiffOn :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ shiftCollar
       (univ ×ˢ Ioo (-1) 1) :=
   contMDiff_fst.contMDiffOn.prodMk
     (shiftCollarParam_contDiffOn.contMDiffOn.comp contMDiff_snd.contMDiffOn (fun _ hp => hp.2))
-
-
 
 theorem shiftCollar_mfderiv_injective {p : RoundCylinderSpace}
     (hp : p ∈ univ ×ˢ Ioo (-1 : ℝ) 1) :
@@ -118,8 +87,6 @@ theorem shiftCollar_mfderiv_injective {p : RoundCylinderSpace}
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ)) shiftCollar p)) w at h
   rw [← hd] at h
   exact h
-
-
 
 theorem isCollarEmbedding_comp_shift {ψ : RoundCylinderSpace → M25.Topology3D.E3}
     (hψ : M25.Topology3D.IsCollarEmbedding ψ) :

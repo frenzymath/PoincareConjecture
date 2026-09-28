@@ -2,13 +2,6 @@ import Mathlib.LinearAlgebra.Finsupp.LSum
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M49.Mathlib.GramScaling
 import PoincareConjecture.Proofs.M10.PullbackJacobian
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +17,7 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem epsilonNeckEuclideanChart_pullback_coefficient
     (N : EpsilonNeck g) (q : UnitTwoSphere) (x : EuclideanSpace ℝ (Fin 3))
@@ -96,9 +84,6 @@ theorem epsilonNeckEuclideanChart_pullback_coefficient
   erw [hDeval i, hDeval j]
   rfl
 
-
-
-
 theorem epsilonNeck_coefficient_error_le (N : EpsilonNeck g)
     (c : OpenPartialHomeomorph UnitTwoSphere (EuclideanSpace ℝ (Fin 2)))
     (p : RoundCylinderCoordinates) (hp : p.2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -112,9 +97,6 @@ theorem epsilonNeck_coefficient_error_le (N : EpsilonNeck g)
       (roundCylinderCoordinateBasis i).2)
     (mfderiv (𝓡 2) (𝓡 2) c.symm p.1 (roundCylinderCoordinateBasis j).1,
       (roundCylinderCoordinateBasis j).2)
-
-
-
 
 theorem epsilonNeckEuclideanChart_jacobian_eq
     (N : EpsilonNeck g) (q : UnitTwoSphere) (x : EuclideanSpace ℝ (Fin 3))

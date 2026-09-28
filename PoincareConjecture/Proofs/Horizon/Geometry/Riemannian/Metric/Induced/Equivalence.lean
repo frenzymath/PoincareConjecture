@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function
@@ -41,7 +35,6 @@ theorem inner_symm_of_diffeomorph_metric_pullback
     (mfderiv (𝓡 m) (𝓡 n) e.symm y w) at hw
   rw [← hv, ← hw, e.apply_symm_apply] at hh
   exact hh.symm
-
 
 theorem edist_eq_of_diffeomorph_metric_pullback
     (gM : RiemannianMetric n M) (gN : RiemannianMetric m N)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M48AnalyticCalibration
 import PoincareConjecture.Proofs.M45.ModelAnalytics
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
 
 noncomputable def SingularCComponent.mono_constant {C C' : ℝ}
     (N : SingularCComponent g D C) (hCC' : C ≤ C') :

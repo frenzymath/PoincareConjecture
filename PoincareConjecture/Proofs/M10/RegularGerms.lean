@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.Ch06.ReducedLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -27,7 +18,6 @@ theorem mvfderiv_eq_of_eventuallyEq {f g : M → ℝ} {q : M}
   unfold mvfderiv
   rw [h.eq_of_nhds, h.mfderiv_eq (I := 𝓡 n) (I' := 𝓘(ℝ, ℝ))]
 
-
 theorem hessianOnFields_eq_of_eventuallyEq {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {f h : M → ℝ} {q : M}
     (heq : f =ᶠ[𝓝 q] h)
@@ -40,13 +30,11 @@ theorem hessianOnFields_eq_of_eventuallyEq {g : RiemannianMetric n M}
   unfold LeviCivitaData.hessianOnFields
   rw [mvfderiv_eq_of_eventuallyEq hfield, mvfderiv_eq_of_eventuallyEq heq]
 
-
 theorem hessian_eq_of_eventuallyEq {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {f h : M → ℝ} {q : M}
     (heq : f =ᶠ[𝓝 q] h) (v w : TangentSpace (𝓡 n) q) :
     D.hessian f q v w = D.hessian h q v w :=
   hessianOnFields_eq_of_eventuallyEq D heq _ _
-
 
 theorem laplacian_eq_of_eventuallyEq {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {f h : M → ℝ} {q : M}
@@ -56,14 +44,12 @@ theorem laplacian_eq_of_eventuallyEq {g : RiemannianMetric n M}
 
 variable {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p q : M} {τ : ℝ}
 
-
 theorem regular_representative_eventuallyEq
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
     r.representative =ᶠ[𝓝 (q, τ)]
       (fun z : M × ℝ ↦ reducedLength F T p z.1 z.2) :=
   Filter.eventuallyEq_of_mem (r.neighborhood_open.mem_nhds r.center_mem)
     r.representative_eq
-
 
 theorem regular_time_eventuallyEq
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
@@ -72,14 +58,12 @@ theorem regular_time_eventuallyEq
   (regular_representative_eventuallyEq r).comp_tendsto
     (continuous_const.prodMk continuous_id).continuousAt
 
-
 theorem regular_space_eventuallyEq
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
     (fun x ↦ r.representative (x, τ)) =ᶠ[𝓝 q]
       (fun x ↦ reducedLength F T p x τ) :=
   (regular_representative_eventuallyEq r).comp_tendsto
     (continuous_id.prodMk continuous_const).continuousAt
-
 
 theorem reducedLength_contMDiffAt
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
@@ -88,13 +72,11 @@ theorem reducedLength_contMDiffAt
   r.representative_spacetime_smooth.congr_of_eventuallyEq
     (regular_representative_eventuallyEq r).symm
 
-
 theorem reducedLength_space_contMDiffAt
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
     ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) ∞ (fun x ↦ reducedLength F T p x τ) q :=
   r.representative_space_smooth.congr_of_eventuallyEq
     (regular_space_eventuallyEq r).symm
-
 
 theorem reducedLength_hasDerivAt
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
@@ -104,7 +86,6 @@ theorem reducedLength_hasDerivAt
   have h := hd.congr_of_eventuallyEq (regular_time_eventuallyEq r).symm
   exact h.differentiableAt.hasDerivAt
 
-
 theorem regular_gradientNormSq_eq
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
     reducedLengthGradientNormSq F T r.representative τ q =
@@ -113,17 +94,12 @@ theorem regular_gradientNormSq_eq
   unfold reducedLengthGradientNormSq
   rw [mvfderiv_eq_of_eventuallyEq (regular_space_eventuallyEq r)]
 
-
 theorem regular_laplacian_eq
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
     reducedLengthLaplacian F T r.representative τ q =
       reducedLengthLaplacian F T
         (fun z ↦ reducedLength F T p z.1 z.2) τ q :=
   laplacian_eq_of_eventuallyEq _ (regular_space_eventuallyEq r)
-
-
-
-
 
 theorem reducedLength_regular_inequalities [ConnectedSpace M]
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)

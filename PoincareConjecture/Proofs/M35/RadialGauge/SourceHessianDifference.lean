@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceHessian
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceSmoothness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -26,8 +17,6 @@ noncomputable local instance m35SourceHessianDifferenceLocal1 :
     NormedAddCommGroup D := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35SourceHessianDifferenceLocal2 :
     NormedSpace ℝ D := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem gaugeSource_hessian_difference_norm_le
     {b : V → V} {G : V → ℝ → ℝ} {u v : V → ℝ}

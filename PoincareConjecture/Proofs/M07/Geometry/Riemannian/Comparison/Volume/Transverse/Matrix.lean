@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Jacobi.Matrix
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +8,6 @@ open scoped BigOperators
 namespace PoincareConjecture.RiemannianMetric
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem exists_orthonormalBasis_radial
     (θ : EuclideanSpace ℝ (Fin (m + 1))) (hθ : ‖θ‖ = 1) :
@@ -30,7 +18,6 @@ theorem exists_orthonormalBasis_radial
     exact hθ
   obtain ⟨b, hb⟩ := ho.exists_orthonormalBasis_extension_of_card_eq (by simp)
   exact ⟨b, hb 0 (by simp)⟩
-
 
 theorem det_eq_radial_mul_transverse
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[ℝ] E) (t : ℝ)
@@ -45,8 +32,6 @@ theorem det_eq_radial_mul_transverse
   rw [Matrix.det_succ_column_zero, Fin.sum_univ_succ]
   simp [hcol]
 
-
-
 theorem trace_transverse_eq
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[ℝ] E)
     (hrad : A (b 0) = 0) :
@@ -55,7 +40,6 @@ theorem trace_transverse_eq
       (LinearMap.toMatrix b.toBasis b.toBasis A.toLinearMap).trace := by
   simp only [Matrix.trace, Matrix.diag, Matrix.submatrix_apply, Fin.sum_univ_succ]
   simp [LinearMap.toMatrix_apply, hrad]
-
 
 theorem isSymm_transverse
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[ℝ] E)

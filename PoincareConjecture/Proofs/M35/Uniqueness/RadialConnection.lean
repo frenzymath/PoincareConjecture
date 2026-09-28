@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialMetricDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,25 +7,20 @@ open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.Uniqueness
 
-
 noncomputable def radialConnectionAlpha
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   deriv (axisAngularCoefficient g) r / (2 * axisAngularCoefficient g r * r)
-
 
 noncomputable def radialConnectionBeta
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   (axisCorrectionCoefficient g r - deriv (axisAngularCoefficient g) r / (2 * r)) /
     axisRadialCoefficient g r
 
-
 noncomputable def radialConnectionGamma
     (g : RiemannianMetric 3 StandardCapSpace) (r : ℝ) : ℝ :=
   (deriv (axisCorrectionCoefficient g) r / (2 * r) -
     2 * axisCorrectionCoefficient g r * radialConnectionAlpha g r) /
       axisRadialCoefficient g r
-
-
 
 theorem rotational_connection_const
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

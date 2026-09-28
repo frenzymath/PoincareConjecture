@@ -1,14 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M38
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
 
-
-
 theorem partialHomeomorph_image_closure (e : OpenPartialHomeomorph X Y)
     {U : Set X} (hcompact : IsCompact (closure U)) (hsource : closure U ⊆ e.source) :
     e '' closure U = closure (e '' U) := by
@@ -26,8 +16,6 @@ theorem partialHomeomorph_image_closure (e : OpenPartialHomeomorph X Y)
   · exact (e.continuousOn.mono hsource).image_closure
   · exact closure_minimal (image_mono subset_closure)
       (hcompact.image_of_continuousOn (e.continuousOn.mono hsource)).isClosed
-
-
 
 theorem partialHomeomorph_image_frontier (e : OpenPartialHomeomorph X Y)
     {U : Set X} (hcompact : IsCompact (closure U)) (hsource : closure U ⊆ e.source) :

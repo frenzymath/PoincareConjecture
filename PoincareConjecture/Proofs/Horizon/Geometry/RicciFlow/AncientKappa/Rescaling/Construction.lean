@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Rescaling.SetupTheory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -73,8 +61,6 @@ private noncomputable def ancientRescalingOfTheory
       intro s _ x
       simpa only [Diffeomorph.coe_refl, id_eq, one_div, div_inv_eq_mul, mul_comm]
         using (hcal s).curvature_norm_eq (K.flow.connection (tau * s)) (G.connection s) x }
-
-
 
 theorem horizon_ancientBlowupSequenceSetup (n : ℕ)
     (M : Type u) [TopologicalSpace M]

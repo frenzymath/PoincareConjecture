@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Generalized.OrdinaryNeckVolumeGeometry
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeLower
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,9 +31,6 @@ private theorem ordinary_neck_center_domain (N : EpsilonNeck g)
   exact normalized_neck_unit_ball_subset_domain N hsmall
     (show (1 : ℝ) ≤ N.epsilon⁻¹ / 16 by linarith) q (by norm_num)
 
-
-
-
 theorem ordinary_neck_center_chart_edist_le (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ (1 / 200 : ℝ)) (q : UnitTwoSphere) {x y : E}
     (hx : x ∈ Metric.closedBall 0 1) (hy : y ∈ Metric.closedBall 0 1) :
@@ -66,10 +54,6 @@ theorem ordinary_neck_center_chart_edist_le (N : EpsilonNeck g)
     (convex_closedBall (0 : E) 1) hsmooth hbound hx hy
   rw [← ENNReal.ofReal_coe_nnreal] at h
   exact h
-
-
-
-
 
 theorem ordinary_neck_center_ball_volume_lower
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

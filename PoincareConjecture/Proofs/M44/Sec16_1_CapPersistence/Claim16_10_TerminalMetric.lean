@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +27,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
-
 theorem tendsto_preterminal_twoJet
     (event : SurgeryEventData g0 K P slice metric T)
     {q : (slice event.tMinus).carrier} (hq : q ∈ event.regular_limit) :
@@ -63,9 +51,6 @@ theorem tendsto_preterminal_twoJet
     rwa [c.left_inv (mem_extChartAt_source q)]⟩
   exact tendsto_twoJet_of_surgeryMetricLimitOn event.metric_converges q hq
     hU hchart hregular hf hx
-
-
-
 
 theorem tendsto_preterminal_metric_inner
     (event : SurgeryEventData g0 K P slice metric T)
@@ -121,9 +106,6 @@ theorem tendsto_preterminal_metric_inner
       (event.limit_identify.map ∘ c.symm) p a b)) at heval
   simpa only [hread, hreadT] using heval
 
-
-
-
 theorem tendsto_preterminal_pullback_inner
     (event : SurgeryEventData g0 K P slice metric T)
     {f : E → (slice event.tMinus).carrier} {x : E}
@@ -142,9 +124,6 @@ theorem tendsto_preterminal_pullback_inner
         (mfderiv (𝓡 3) (𝓡 3) (event.limit_identify.map ∘ f) x w)))
   rw [hd]
   exact h
-
-
-
 
 theorem terminal_pullback_quadratic_le
     (event : SurgeryEventData g0 K P slice metric T)

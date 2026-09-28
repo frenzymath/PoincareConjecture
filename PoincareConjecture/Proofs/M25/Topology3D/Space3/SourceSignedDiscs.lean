@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceDiscSides
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleChart
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem source_sphere_signed_discs_of_planar (hP : PlanarSchoenfliesService)
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)
@@ -58,8 +45,6 @@ theorem source_sphere_signed_discs_of_planar (hP : PlanarSchoenfliesService)
     · simpa only [union_comm] using hcover
   · exact ⟨e, f, hes, hfs, hem, hei, hfm, hfi, heb, hfb, hu, hi, hdis, hcover,
       hs.2, hs.1⟩
-
-
 
 theorem source_disc_nonpositive_exterior
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

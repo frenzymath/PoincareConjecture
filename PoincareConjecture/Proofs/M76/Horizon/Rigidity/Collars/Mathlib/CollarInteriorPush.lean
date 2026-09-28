@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedInverse
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

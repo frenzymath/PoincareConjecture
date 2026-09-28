@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.T
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.OppositeLevel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Variation.Proper
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -49,8 +40,6 @@ private theorem distance_pair_slab_parameters {r τ ε : ℝ}
       nlinarith only [ha.1, hhi, herror, hτr]
     · apply (mul_lt_mul_iff_right₀ hτ).mp
       nlinarith only [ha.2, hlo, herror, hτr]
-
-
 
 theorem exists_compact_regular_slab_with_near_opposite_pair
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -169,6 +158,5 @@ theorem exists_compact_regular_slab_with_near_opposite_pair
     g.exists_near_opposite_smoothing_of_upper_level D hc hsec hf hT
       hs hs1 hδ hδ16 (by positivity) hHs hgap hbuffer
   exact ⟨f, rho, hf, hrho, hproper, hreg, hrange, hcore', hT, hpair⟩
-
 
 end PoincareConjecture.RiemannianMetric

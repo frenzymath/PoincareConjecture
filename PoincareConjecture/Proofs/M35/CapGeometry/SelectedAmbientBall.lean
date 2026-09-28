@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedCapBall
 import PoincareConjecture.Proofs.M35.CapGeometry.CurvatureRadius
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem blowupSequence_normalized_ball_retained
     (P : M35StandardCapPredecessors)

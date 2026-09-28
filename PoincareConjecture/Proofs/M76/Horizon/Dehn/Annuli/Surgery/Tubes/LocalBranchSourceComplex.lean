@@ -1,15 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.ComponentBranchModel
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalBranchSourceComplex
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem RawSourceCrossing.face_in_one_branch
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -37,8 +33,6 @@ theorem RawSourceCrossing.face_in_one_branch
   rcases hconn.subset_or_subset C.left_open C.right_open hdis hcover with hL | hR
   · exact Or.inl (fun z hz => hL (a := ⟨z, hAD hz⟩) hz)
   · exact Or.inr (fun z hz => hR (a := ⟨z, hAD hz⟩) hz)
-
-
 
 theorem RawSourceCrossing.vertexSubcomplex_space
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -70,4 +64,3 @@ theorem RawSourceCrossing.vertexSubcomplex_space
     hside C.right C.left C.disjoint.symm (fun s hs => (C.face_in_one_branch K hKD hKC s hs).symm)⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

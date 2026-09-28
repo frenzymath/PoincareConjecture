@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Cutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem inner_gradient_sq_le (D : LeviCivitaData g) {χ : M → ℝ} {A : ℝ}
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ)
@@ -41,8 +28,6 @@ theorem inner_gradient_sq_le (D : LeviCivitaData g) {χ : M → ℝ} {A : ℝ}
   simp only [map_smul, smul_apply, smul_eq_mul]
   nlinarith [mul_le_mul_of_nonneg_left (hA x) (sq_nonneg (2 * χ x))]
 
-
-
 theorem exists_abs_laplacian_bound (D : LeviCivitaData g) {η : M → ℝ}
     (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) (hc : HasCompactSupport η) :
     ∃ B : ℝ, 0 < B ∧ ∀ x, |D.laplacian η x| ≤ B := by
@@ -50,8 +35,6 @@ theorem exists_abs_laplacian_bound (D : LeviCivitaData g) {η : M → ℝ}
     (D.continuous_laplacian hη)
   exact ⟨max 1 B, lt_of_lt_of_le zero_lt_one (le_max_left _ _),
     fun x => (hB x).trans (le_max_right _ _)⟩
-
-
 
 theorem exists_intrinsic_ball_cutoff_laplacian_bound [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g) (hcomplete : MetricComplete g) (O : M)

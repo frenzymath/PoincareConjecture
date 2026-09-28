@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conju
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ContDiff
 
@@ -29,56 +16,25 @@ open PoincareConjecture.ConnectionVariation
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
-
-
-
-
 theorem hasDerivAt_slice_fst {f : ℝ × ℝ → ℝ} {s t : ℝ} (hf : DifferentiableAt ℝ f (s, t)) :
     HasDerivAt (fun σ => f (σ, t)) (fderiv ℝ f (s, t) ((1 : ℝ), (0 : ℝ))) s :=
   hf.hasFDerivAt.comp_hasDerivAt s ((hasDerivAt_id s).prodMk (hasDerivAt_const s t))
-
 
 theorem deriv_slice_fst {f : ℝ × ℝ → ℝ} {s t : ℝ} (hf : DifferentiableAt ℝ f (s, t)) :
     deriv (fun σ => f (σ, t)) s = fderiv ℝ f (s, t) ((1 : ℝ), (0 : ℝ)) :=
   (hasDerivAt_slice_fst hf).deriv
 
-
-
 theorem hasDerivAt_slice_snd {f : ℝ × ℝ → ℝ} {s t : ℝ} (hf : DifferentiableAt ℝ f (s, t)) :
     HasDerivAt (fun τ => f (s, τ)) (fderiv ℝ f (s, t) ((0 : ℝ), (1 : ℝ))) t :=
   hf.hasFDerivAt.comp_hasDerivAt t ((hasDerivAt_const t s).prodMk (hasDerivAt_id t))
-
 
 theorem deriv_slice_snd {f : ℝ × ℝ → ℝ} {s t : ℝ} (hf : DifferentiableAt ℝ f (s, t)) :
     deriv (fun τ => f (s, τ)) t = fderiv ℝ f (s, t) ((0 : ℝ), (1 : ℝ)) :=
   (hasDerivAt_slice_snd hf).deriv
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 section Regularity
 
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
-
-
-
 
 theorem contDiffOn_covDerivAlong {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P → E}
     {U : Set E} {s : Set P} (hΓ : ContDiffOn ℝ 1 Γ U) (hu : ContDiff ℝ 2 u)
@@ -96,8 +52,6 @@ theorem contDiffOn_covDerivAlong {Γ : E → E →L[ℝ] E →L[ℝ] E} {u V : P
   rw [h]
   exact h1.contDiffOn.add ((h2.clm_apply h3.contDiffOn).clm_apply h4.contDiffOn)
 
-
-
 theorem contDiffOn_energyDensity {G : E → E →L[ℝ] E →L[ℝ] ℝ} {u : P → E}
     {U : Set E} {s : Set P} (hG : ContDiffOn ℝ 2 G U) (hu : ContDiff ℝ 3 u)
     (hmaps : Set.MapsTo u s U) (dt : P) :
@@ -113,10 +67,6 @@ theorem contDiffOn_energyDensity {G : E → E →L[ℝ] E →L[ℝ] ℝ} {u : P 
 
 end Regularity
 
-
-
-
-
 def chartIndexIntegrand (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (u : ℝ × ℝ → E) (t : ℝ) : ℝ :=
   G (u (0, t))
@@ -127,7 +77,6 @@ def chartIndexIntegrand (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → E �
           (fderiv ℝ u (0, t) (0, 1)) (fderiv ℝ u (0, t) (0, 1)))
         (fderiv ℝ u (0, t) (1, 0))
 
-
 def secondVariationBoundary (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (u : ℝ × ℝ → E) (t : ℝ) : ℝ :=
   G (u (0, t))
@@ -137,8 +86,6 @@ def secondVariationBoundary (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → 
 section Piece
 
 variable {G : E → E →L[ℝ] E →L[ℝ] ℝ} {Γ : E → E →L[ℝ] E →L[ℝ] E} {u : ℝ × ℝ → E}
-
-
 
 private def boundaryFun (G : E → E →L[ℝ] E →L[ℝ] ℝ) (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (u : ℝ × ℝ → E) : ℝ × ℝ → ℝ :=
@@ -159,8 +106,6 @@ private theorem contDiffOn_boundaryFun {U : Set E} {s : Set (ℝ × ℝ)}
     (hG.of_le (by norm_num)).comp (hu.of_le (by norm_num)).contDiffOn hmaps
   exact (hGu.clm_apply hcov).clm_apply hX1.contDiffOn
 
-
-
 theorem contDiffOn_secondVariationBoundary {U : Set E} {J : Set ℝ}
     (hG : ContDiffOn ℝ 2 G U) (hΓ : ContDiffOn ℝ 1 Γ U) (hu : ContDiff ℝ 3 u)
     (hJ : ∀ t ∈ J, u ((0 : ℝ), t) ∈ U) :
@@ -169,8 +114,6 @@ theorem contDiffOn_secondVariationBoundary {U : Set E} {J : Set ℝ}
     contDiffOn_boundaryFun hG hΓ hu (fun q hq => hq)
   have hline : ContDiff ℝ 1 (fun t : ℝ => ((0 : ℝ), t)) := contDiff_const.prodMk contDiff_id
   exact hb.comp hline.contDiffOn (fun t ht => hJ t ht)
-
-
 
 theorem continuousOn_chartIndexIntegrand {U : Set E} {J : Set ℝ} (hU : IsOpen U)
     (hG : ContDiffOn ℝ 2 G U) (hΓ : ContDiffOn ℝ 1 Γ U) (hu : ContDiff ℝ 3 u)
@@ -206,11 +149,6 @@ theorem continuousOn_chartIndexIntegrand {U : Set E} {J : Set ℝ} (hU : IsOpen 
       |>.add ((hΓc.clm_apply hX).clm_apply ((hΓc.clm_apply hT).clm_apply hT)))
       |>.sub ((hΓc.clm_apply hT).clm_apply ((hΓc.clm_apply hX).clm_apply hT))
   exact ((hGc.clm_apply hD).clm_apply hD).sub ((hGc.clm_apply hR).clm_apply hX)
-
-
-
-
-
 
 theorem deriv_deriv_slice_energyDensity {t : ℝ} {U : Set E} (hU : IsOpen U)
     (hGsymm : ∀ x X Y, G x X Y = G x Y X)
@@ -271,19 +209,6 @@ theorem deriv_deriv_slice_energyDensity {t : ℝ} {U : Set E} (hU : IsOpen U)
   rw [hbdry, chartIndexIntegrand]
   ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 theorem deriv_deriv_pieceEnergy_eq_boundary_add_integral {τ₀ τ₁ r : ℝ} {U : Set E}
     (hτ : τ₀ ≤ τ₁) (hr : 0 < r) (hU : IsOpen U)
     (hGsymm : ∀ x X Y, G x X Y = G x Y X)
@@ -337,8 +262,6 @@ theorem deriv_deriv_pieceEnergy_eq_boundary_add_integral {τ₀ τ₁ r : ℝ} {
   rw [intervalIntegral.integral_add ((hcΦ.mono hsub).intervalIntegrable)
     ((hcI.mono hsub).intervalIntegrable)]
 
-
-
   have hftc : (∫ t in τ₀..τ₁, deriv (secondVariationBoundary G Γ u) t)
       = secondVariationBoundary G Γ u τ₁ - secondVariationBoundary G Γ u τ₀ :=
     intervalIntegral.integral_deriv_eq_sub' _ rfl
@@ -346,18 +269,6 @@ theorem deriv_deriv_pieceEnergy_eq_boundary_add_integral {τ₀ τ₁ r : ℝ} {
         (hΦ1.contDiffAt (isOpen_Ioo.mem_nhds (hsub hx))).differentiableAt (by norm_num))
       (hcΦ.mono hsub)
   rw [hftc]
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem deriv_deriv_pieceEnergy_eq_integral_chartIndexIntegrand {τ₀ τ₁ r : ℝ} {U : Set E}
     (hτ : τ₀ ≤ τ₁) (hr : 0 < r) (hU : IsOpen U)

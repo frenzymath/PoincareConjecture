@@ -1,15 +1,6 @@
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Data.Finite.Sum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -19,8 +10,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : Type u} [TopologicalSpace A] [LocallyConnectedSpace A]
-
-
 
 theorem componentIn_eq_of_disjoint_frontier
     {K : Set A} (hK : IsClosed K) {x : A} (hx : x ∈ K)
@@ -46,8 +35,6 @@ theorem componentIn_eq_of_disjoint_frontier
     (isPreconnected_connectedComponentIn.subset_connectedComponent (mem_connectedComponentIn hx))
     ((show IsClopen (connectedComponentIn K x) from ⟨hclosed, hopen⟩).connectedComponent_subset
       (mem_connectedComponentIn hx))
-
-
 
 theorem finite_components_of_frontier_cover [CompactSpace A]
     {K : Set A} (hK : IsClosed K) {n : ℕ} (sphere : Fin n → Set A)

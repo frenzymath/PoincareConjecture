@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteActualCandidates
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointCompatibility
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointOldMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -99,7 +91,6 @@ variable (d K : ℕ → ℝ)
 
 include hactual hc in
 
-
 theorem limitFinite_actual_endpoint_pairing
     (σ : ℕ → ℕ) (hσ : StrictMono σ) (j l : ℕ) {t : ℝ}
     (htj : t ∈ Icc (-(H.toReal + d j / 2)) 0)
@@ -160,7 +151,6 @@ theorem limitFinite_actual_endpoint_pairing
     ((hconv2 v2 u2).congr' (hpair.mono fun _ hk => hk.symm))
 
 include hactual in
-
 
 theorem limitFinite_actual_endpoint_old_metric
     (σ : ℕ → ℕ) (hσ : StrictMono σ) (j : ℕ) {t : ℝ}

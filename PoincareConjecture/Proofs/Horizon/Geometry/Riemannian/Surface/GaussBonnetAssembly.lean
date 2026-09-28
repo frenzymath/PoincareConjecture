@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Integrabili
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area.Triangulation
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -25,8 +16,6 @@ variable {S : Type u} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
   [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S} (D : LeviCivitaData g)
 
-
-
 theorem integral_scalarCurvature_le_eight_pi_of_gaussBonnet
     (χ : ℤ)
     (hGB : (∫ x, D.scalarCurvature x ∂g.volumeMeasure) = 4 * Real.pi * χ)
@@ -39,8 +28,6 @@ theorem integral_scalarCurvature_le_eight_pi_of_gaussBonnet
     exact mul_le_mul_of_nonneg_left (by exact_mod_cast hχ) (by positivity)
   nlinarith
 
-
-
 theorem integral_scalarCurvature_le_eight_pi_of_cell_count
     (V E F : ℕ)
     (hGB : (∫ x, D.scalarCurvature x ∂g.volumeMeasure) =
@@ -52,9 +39,6 @@ theorem integral_scalarCurvature_le_eight_pi_of_cell_count
     simpa only [Int.cast_sub, Int.cast_add, Int.cast_natCast] using hGB
   exact D.integral_scalarCurvature_le_eight_pi_of_gaussBonnet
     ((V : ℤ) - E + F) hGB' hχ
-
-
-
 
 theorem integral_scalarCurvature_le_eight_pi_of_incidence
     {V E F : Type*} [Fintype V] [Fintype E] [Fintype F]
@@ -77,15 +61,6 @@ theorem integral_scalarCurvature_le_eight_pi_of_incidence
     simpa only [Int.cast_sub, Int.cast_add, Int.cast_natCast] using hGB
   exact D.integral_scalarCurvature_le_eight_pi_of_gaussBonnet
     ((Fintype.card V : ℤ) - Fintype.card E + Fintype.card F) hGB' hχ
-
-
-
-
-
-
-
-
-
 
 theorem edge_slot_sum_eq_zero_of_pairing
     {F E : Type*} [Fintype F] [Fintype E]

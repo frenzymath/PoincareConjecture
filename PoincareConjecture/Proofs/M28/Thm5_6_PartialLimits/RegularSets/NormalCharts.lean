@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_uniform_regular_normal_charts
     (n : ℕ) {K δ r₀ κ : ℝ} (hn : 1 ≤ n) (hK : 0 ≤ K)

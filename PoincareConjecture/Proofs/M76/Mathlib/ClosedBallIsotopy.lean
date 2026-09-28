@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedAlexanderIsotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,16 +10,11 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] {R : ℝ}
 
-
-
-
 noncomputable def closedBallExtension
     (e : closedBall (0 : E) R ≃ₜ closedBall (0 : E) R)
     (he : ∀ x : closedBall (0 : E) R, ‖(x : E)‖ = R → e x = x) : E ≃ₜ E :=
   e.closedExtension isClosed_closedBall fun x hx =>
     he x (by simpa only [mem_sphere, dist_zero_right] using frontier_closedBall_subset_sphere hx)
-
-
 
 theorem closedBallExtension_apply_mem
     (e : closedBall (0 : E) R ≃ₜ closedBall (0 : E) R)
@@ -36,8 +22,6 @@ theorem closedBallExtension_apply_mem
     {x : E} (hx : x ∈ closedBall (0 : E) R) :
     e.closedBallExtension he x = (e ⟨x, hx⟩ : E) :=
   e.closedExtension_apply_mem _ _ hx
-
-
 
 theorem closedBallExtension_fixed_outside
     (e : closedBall (0 : E) R ≃ₜ closedBall (0 : E) R)
@@ -51,10 +35,6 @@ theorem closedBallExtension_fixed_outside
   · exact e.closedExtension_apply_notMem _ _ hxB
 
 variable [NormedSpace ℝ E]
-
-
-
-
 
 noncomputable def closedBallAlexanderHomotopy
     (e : closedBall (0 : E) R ≃ₜ closedBall (0 : E) R) (hR : 0 ≤ R)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Hessian.Divergence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Cauchy
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 theorem hessianCurvatureFlux_energy_le (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n))
@@ -37,7 +29,6 @@ theorem hessianCurvatureFlux_energy_le (D : LeviCivitaData g)
     _ ≤ (n : ℝ) ^ 3 * ((n : ℝ) + 1) ^ 2 * D.curvatureTensorNorm x ^ 2 *
         g.tangentNorm x (D.gradient f x) ^ 2 := hraw
     _ ≤ _ := by gcongr <;> exact Real.sqrt_nonneg _
-
 
 theorem twoTensorCurvatureTrace_pairing_lower (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}
@@ -83,7 +74,6 @@ theorem twoTensorCurvatureTrace_pairing_lower (D : LeviCivitaData g)
   rw [hmul] at habs
   simpa only [A, κ, Q, neg_mul] using (abs_le.mp habs).1
 
-
 theorem twoTensorCurvatureTrace_regularized_lower (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}
     (hT : IsSmoothCovariantTensor T) (x : EuclideanSpace ℝ (Fin n)) {K ε : ℝ}
@@ -93,8 +83,6 @@ theorem twoTensorCurvatureTrace_regularized_lower (D : LeviCivitaData g)
   have hK : 0 ≤ K := (Real.sqrt_nonneg _).trans hcurv
   have h := D.twoTensorCurvatureTrace_pairing_lower hT x hcurv
   nlinarith only [h, mul_nonneg (show 0 ≤ 2 * (n : ℝ) ^ 2 * K by positivity) hε]
-
-
 
 theorem hessianCurvatureFlux_regularized_energy_le (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n))

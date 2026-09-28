@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.TwoCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,7 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
 
 theorem one_le_boundedCylinderRadius (v : E3) (hv : ‖v‖ = 1) (p : S2) :
     1 ≤ boundedCylinderRadius v p := by
@@ -66,8 +63,6 @@ theorem norm_boundedCylinder_projection_eq_one_of_source_belt
     boundedCylinderRadius_of_abs_height_le v p hp, hn]
   exact inv_mul_cancel₀ (Real.sqrt_pos.mpr hpos).ne'
 
-
-
 theorem norm_boundedCylinder_projection_eq_one_of_height_belt
     (v : E3) (hv : ‖v‖ = 1) (p : S2)
     (hp : |inner Real v (boundedCylinderRadius v p • (p : E3))| ≤ 1 / 4) :
@@ -77,8 +72,6 @@ theorem norm_boundedCylinder_projection_eq_one_of_height_belt
   rw [inner_smul_right, abs_mul, abs_of_pos (boundedCylinderRadius_pos v p)] at hp
   nlinarith [one_le_boundedCylinderRadius v hv p,
     abs_nonneg (inner Real v (p : E3))]
-
-
 
 theorem mem_boundedCylinder_sphere_iff_of_height_belt
     (v : E3) (hv : ‖v‖ = 1) (y : E3)
@@ -113,7 +106,6 @@ theorem mem_boundedCylinder_sphere_iff_of_height_belt
     refine ⟨p, ?_⟩
     change boundedCylinderRadius v p • (‖y‖⁻¹ • y) = y
     rw [smul_smul, heq, one_smul]
-
 
 theorem reflection_mem_boundedCylinder_sphere_iff (v : E3) (y : E3) :
     (Hemisphere.Plane v).reflection y ∈

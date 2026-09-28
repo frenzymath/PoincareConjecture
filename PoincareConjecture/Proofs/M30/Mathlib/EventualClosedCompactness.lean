@@ -1,30 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.ClosedCompactness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff BigOperators
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_smooth_subsequence_on_closed_convex_of_eventually
     {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

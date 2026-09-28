@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Curvature.Estimates.Local
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_uniform_curvatureDerivativeNorm_bound_on_buffered_cylinders
     (hShi : LocalCurvatureDerivativeEstimates.{u}) (n m : ℕ) (B T r δ : ℝ)

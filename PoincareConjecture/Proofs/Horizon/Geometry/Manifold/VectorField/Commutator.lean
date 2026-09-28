@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.VectorField.Commutator
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.VectorField.Derivation
-
-
-
-
-
-
-

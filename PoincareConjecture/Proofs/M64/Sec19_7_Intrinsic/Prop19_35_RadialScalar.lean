@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ScalarJacobi
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.RadialSystem
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Center
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_radialCurvature_transverse_pairing
     (N : IntrinsicAnnulus) (p : AnnulusCoordinates)
@@ -51,9 +36,6 @@ theorem m64Intrinsic_radialCurvature_transverse_pairing
       simp only [hP, htheta, horth, mul_one, mul_zero, sub_zero]
       rw [real_inner_comm w nu]
 
-
-
-
 theorem m64Intrinsic_hasDerivAt_transverse_jacobi
     (N : IntrinsicAnnulus) (p : AnnulusCoordinates)
     (P : AnnulusCoordinates →L[ℝ] AnnulusCoordinates) (hi : P.IsInvertible)
@@ -76,10 +58,6 @@ theorem m64Intrinsic_hasDerivAt_transverse_jacobi
     m64Intrinsic_radialCurvature_transverse_pairing N p P hi hP theta nu _ htheta horth,
     ← neg_mul] at h
   exact h
-
-
-
-
 
 theorem m64Intrinsic_exists_radial_scalar_jacobi
     (N : IntrinsicAnnulus)
@@ -135,9 +113,6 @@ theorem m64Intrinsic_exists_radial_scalar_jacobi
     simpa only [Matrix.det_fin_one, Matrix.submatrix_apply, LinearMap.toMatrix_apply,
       basis.coe_toBasis, basis.coe_toBasis_repr_apply, basis.repr_apply_apply,
       Fin.succ_zero_eq_one, pow_one, j, A] using! hd
-
-
-
 
 theorem m64Intrinsic_polarDensity_jacobi
     (N : IntrinsicAnnulus)
@@ -195,10 +170,6 @@ theorem m64Intrinsic_polarDensity_jacobi
     have hyval := heq.self_of_nhds
     rw [← hd, hj2, ← hyval]
     ring
-
-
-
-
 
 theorem m64Intrinsic_polarDensity_log_derivative_ge_sqrt_max_cot
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)

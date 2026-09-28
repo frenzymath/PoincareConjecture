@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -18,8 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.CompactKappaCoreRadius
 
 variable {X : Type*} [MetricSpace X]
-
-
 
 theorem closure_ball_eq_of_approximate_split
     (hsplit : ∀ x y : X, ∀ r ε : ℝ, 0 < r → 0 < ε → r < dist x y →
@@ -48,8 +37,6 @@ theorem closure_ball_eq_of_approximate_split
     linarith
 
 variable [ProperSpace X]
-
-
 
 theorem exists_scale_ball
     (hclosure : ∀ p : X, ∀ r : ℝ, 0 < r → closure (ball p r) = closedBall p r)
@@ -83,12 +70,9 @@ theorem exists_scale_ball
   rw [hclosure p r hr] at hcl
   exact ⟨r, hr, hball, x, hxball, le_antisymm (le_max_right _ _) (hcl hxball)⟩
 
-
 theorem scalar_image_ball_bddAbove {f : X → ℝ} (hf : Continuous f) (p : X) (r : ℝ) :
     BddAbove (f '' ball p r) :=
   ((isCompact_closedBall p r).image hf).bddAbove.mono (image_mono ball_subset_closedBall)
-
-
 
 theorem exists_sup_ball_inv_sq_witness
     (hclosure : ∀ p : X, ∀ r : ℝ, 0 < r → closure (ball p r) = closedBall p r)
@@ -123,8 +107,6 @@ theorem exists_sup_ball_inv_sq_witness
   have heq : sSup (f '' ball p r) = r⁻¹ ^ 2 :=
     le_antisymm hsuple (hxval ▸ hcl hx)
   exact ⟨r, hr, heq, x, hx, hxr⟩
-
-
 
 theorem exists_unique_sup_ball_inv_sq
     (hclosure : ∀ p : X, ∀ r : ℝ, 0 < r → closure (ball p r) = closedBall p r)

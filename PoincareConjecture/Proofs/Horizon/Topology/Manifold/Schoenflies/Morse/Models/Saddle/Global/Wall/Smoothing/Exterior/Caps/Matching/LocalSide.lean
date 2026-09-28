@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Side.Filled
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.RegionSide
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +21,6 @@ private def transverseCoordinates : (Real × Real) ≃ₜ E2 where
     (continuous_fst.smul continuous_const)
   continuous_invFun := (EuclideanSpace.proj (𝕜 := Real) (1 : Fin 2)).continuous.prodMk
     (EuclideanSpace.proj (𝕜 := Real) (0 : Fin 2)).continuous.neg
-
-
 
 theorem eventually_filled_disk_iff_wall_nonpos
     (A D : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -78,8 +74,6 @@ theorem eventually_filled_disk_iff_wall_nonpos
     (show ((D p) 1, (0 : Real)) ∈ e.source from mem_univ _) hC
     (Eventually.of_forall htime) hf (Eventually.of_forall hinside) hacc
   rwa [he] at h
-
-
 
 theorem exists_common_filled_side_neighborhood
     (A B D : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

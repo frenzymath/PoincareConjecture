@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseMetric
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +61,6 @@ theorem cap_scalar_frameInverseGram
       intro j _
       congr 1
       exact M04.frameInverseGram_eq_coordinate_sum g x e i j
-
-
 
 theorem cap_scalar_difference_frame
     {g0 g1 : RiemannianMetric n M} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

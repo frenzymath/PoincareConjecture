@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.RegularChart
 import PoincareConjecture.Proofs.M09.RegularRepresentative
 import PoincareConjecture.Proofs.M09.HarnackIntegrability
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

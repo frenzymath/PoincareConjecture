@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalVertexLinkExactness
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleIncidenceRanks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -23,8 +15,6 @@ variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
 
 open Classical in
-
-
 
 theorem original_chart_stars_vertex_link_counts
     (K A : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hAK : A ≤ K)

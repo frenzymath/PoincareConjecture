@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
 
 include D
 
-
-
 theorem ordinaryCapture_point_reconstruct {q : G.Point}
     (hq : q ∈ range e.toSpacetime) (t : (G.timeIntervals.interval K).Point)
     (ht : G.spacetime.timeFunction q = t.val) :
@@ -39,8 +28,6 @@ theorem ordinaryCapture_point_reconstruct {q : G.Point}
   rcases hq with ⟨⟨s, c⟩, rfl⟩
   have hst : s = t := Subtype.ext ((e.time_eq (s, c)).symm.trans ht)
   rw [D.point_map_on_cylinder, hst]
-
-
 
 theorem ordinaryCapture_point_injective {q r : G.Point}
     (hq : q ∈ range e.toSpacetime) (hr : r ∈ range e.toSpacetime)
@@ -50,8 +37,6 @@ theorem ordinaryCapture_point_injective {q r : G.Point}
   have hq' := ordinaryCapture_point_reconstruct D hq t (ht.trans (e.time_eq (t, c)))
   rw [hpoint, D.point_map_on_cylinder] at hq'
   exact hq'.symm
-
-
 
 theorem ordinaryCapture_lift_with_endpoints {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hx : x ∈ range e.toSpacetime) (hy : y ∈ range e.toSpacetime)
@@ -73,8 +58,6 @@ theorem ordinaryCapture_lift_with_endpoints {τ₁ τ₂ : ℝ} {x y : G.Point}
   cases hend
   exact D.path_lift τ₁ τ₂ q
 
-
-
 theorem ordinaryCapture_exists_mapped_lift {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hx : x ∈ range e.toSpacetime) (hy : y ∈ range e.toSpacetime)
     (htx : G.spacetime.timeFunction x = T - τ₁)
@@ -92,8 +75,6 @@ theorem ordinaryCapture_exists_mapped_lift {τ₁ τ₂ : ℝ} {x y : G.Point}
   rw [← D.path_curve_eq τ₁ τ₂ x y p hc s hs, ← hp s hs,
     D.point_map_on_cylinder]
 
-
-
 theorem ordinaryCapture_actionSet_eq {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hmax : τ₂ ≤ τmax) (hx : x ∈ range e.toSpacetime) :
     M14ActionSet G T τ₁ τ₂ x y =
@@ -107,8 +88,6 @@ theorem ordinaryCapture_actionSet_eq {τ₁ τ₂ : ℝ} {x y : G.Point}
   · rintro ⟨p, _, hp⟩
     exact ⟨p, hp⟩
 
-
-
 theorem ordinaryCapture_actionValue_eq {τ₁ τ₂ : ℝ} {x y : G.Point}
     (hmax : τ₂ ≤ τmax) (hx : x ∈ range e.toSpacetime) :
     M14ActionValue G T τ₁ τ₂ x y =
@@ -117,8 +96,6 @@ theorem ordinaryCapture_actionValue_eq {τ₁ τ₂ : ℝ} {x y : G.Point}
         M14BackwardLAction G p = a} := by
   unfold M14ActionValue
   rw [ordinaryCapture_actionSet_eq D hmax hx]
-
-
 
 theorem ordinaryCapture_endpoint_image {τ : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} (H : M14StableSet G T τ x E)

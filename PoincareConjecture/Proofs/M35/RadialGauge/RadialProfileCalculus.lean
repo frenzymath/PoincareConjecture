@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.GaugeRestriction
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatEquation
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +18,6 @@ noncomputable local instance m35RadialProfileCalculusLocal1 :
     NormedAddCommGroup (V →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35RadialProfileCalculusLocal2 :
     NormedSpace ℝ (V →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
 
 theorem orthogonal_invariant_radial_trace {u : V → ℝ}
     (hu : ∀ (L : V ≃ₗᵢ[ℝ] V) x, u (L x) = u x)
@@ -53,7 +42,6 @@ private theorem norm_hasFDerivAt {x : V} (hx : x ≠ 0) :
   rw [hcoeff] at h
   exact h
 
-
 theorem radialProfile_hasFDerivAt {w : ℝ → ℝ} {x : V}
     (hw : DifferentiableAt ℝ w ‖x‖) (hx : x ≠ 0) :
     HasFDerivAt (fun y : V => w ‖y‖)
@@ -66,7 +54,6 @@ theorem radialProfile_fderiv_norm {w : ℝ → ℝ} {x : V}
     ‖fderiv ℝ (fun y : V => w ‖y‖) x‖ = |deriv w ‖x‖| := by
   rw [(radialProfile_hasFDerivAt hw hx).fderiv, norm_smul, innerSL_apply_norm,
     Real.norm_eq_abs, abs_div, abs_norm, div_mul_cancel₀ _ (norm_ne_zero_iff.mpr hx)]
-
 
 theorem radialProfile_hessian_apply {w : ℝ → ℝ} (hw : ContDiff ℝ ∞ w)
     {x : V} (hx : x ≠ 0) (a b : V) :
@@ -91,8 +78,6 @@ theorem radialProfile_hessian_apply {w : ℝ → ℝ} (hw : ContDiff ℝ ∞ w)
     ((deriv (deriv w) ‖x‖ * ‖x‖ - deriv w ‖x‖) / ‖x‖ ^ 2) *
       (‖x‖⁻¹ * ⟪x, a⟫) * ⟪x, b⟫ = _
   field_simp
-
-
 
 theorem radialProfile_euclideanLaplacian {w : ℝ → ℝ} (hw : ContDiff ℝ ∞ w)
     {x : V} (hx : x ≠ 0) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.ConeTriangleFaces
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
 
 theorem cone_radial_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q : E}
     (hc : c ∉ K.vertices) (hq : q ∈ K.vertices)
@@ -36,7 +26,6 @@ theorem cone_radial_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q : E}
     have ht := (K.cone_triangle_iff L hc hfaces hdim (insert c e)).mpr ⟨e, he, hec, rfl⟩
     exact ⟨ht.1, ht.2, by simp [Finset.insert_subset_iff, hqe]⟩
 
-
 theorem cone_vertex_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q : E}
     (hc : c ∉ K.vertices) (hq : q ∈ K.vertices)
     (hfaces : ∀ s, s ∈ L.faces ↔ s.Nonempty ∧ (s.erase c = ∅ ∨ s.erase c ∈ K.faces))
@@ -52,8 +41,6 @@ theorem cone_vertex_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q : E}
   · rintro ⟨ht, htc, hsub⟩
     exact ⟨ht, htc, hsub (by simp)⟩
 
-
-
 theorem ncard_cone_radial_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q : E}
     (hc : c ∉ K.vertices) (hq : q ∈ K.vertices)
     (hfaces : ∀ s, s ∈ L.faces ↔ s.Nonempty ∧ (s.erase c = ∅ ∨ s.erase c ∈ K.faces))
@@ -66,8 +53,6 @@ theorem ncard_cone_radial_triangle_cofaces (K L : SimplicialComplex ℝ E) {c q 
   have heq := congrArg (fun s : Finset E => s.erase c) h
   simpa only [Finset.erase_insert (K.apex_notMem_base_face hc he.1),
     Finset.erase_insert (K.apex_notMem_base_face hc hf.1)] using heq
-
-
 
 theorem cone_boundary_triangle_cofaces (K L : SimplicialComplex ℝ E) {c : E}
     (hc : c ∉ K.vertices)
@@ -89,8 +74,6 @@ theorem cone_boundary_triangle_cofaces (K L : SimplicialComplex ℝ E) {c : E}
     have ht := (K.cone_triangle_iff L hc hfaces hdim (insert c e)).mpr ⟨e, he, hec, rfl⟩
     exact ⟨ht.1, ht.2, Finset.subset_insert _ _⟩
 
-
-
 theorem cone_vertex_triangle_cofaces_eq_pair (K L : SimplicialComplex ℝ E)
     {c q u v : E} (hc : c ∉ K.vertices) (hq : q ∈ K.vertices)
     (hfaces : ∀ s, s ∈ L.faces ↔ s.Nonempty ∧ (s.erase c = ∅ ∨ s.erase c ∈ K.faces))
@@ -101,8 +84,6 @@ theorem cone_vertex_triangle_cofaces_eq_pair (K L : SimplicialComplex ℝ E)
       {({q, c, u} : Finset E), {q, c, v}} := by
   rw [K.cone_vertex_triangle_cofaces L hc hq hfaces hdim, hedges]
   simp only [Set.image_pair, Finset.insert_comm c q]
-
-
 
 theorem exists_cone_vertex_fan_of_two_boundary_edges (K L : SimplicialComplex ℝ E)
     {c q : E} (hc : c ∉ K.vertices) (hq : q ∈ K.vertices)

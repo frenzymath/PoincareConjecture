@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.CoordinateConnection
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.LinearAlgebra.BilinearMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff

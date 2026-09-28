@@ -1,22 +1,11 @@
 import Mathlib.Data.Finset.Max
 import Mathlib.Order.Interval.Set.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare
-
-
 
 theorem finite_event_induction {α : Type*} [LinearOrder α]
     (S : Finset α) {a b : α} (hS : (S : Set α) ⊆ Ioc a b)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundUniformEnergy
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundError
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -32,10 +22,6 @@ private local instance (G : GeneralizedBlowupConvergence V J) :
     ChartedSpace E3 G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance (G : GeneralizedBlowupConvergence V J) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
-
 
 theorem limitCanonical_round_comparison_bound
     (P : M47Predecessors.{u}) (G : GeneralizedBlowupConvergence V J)

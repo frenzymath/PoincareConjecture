@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture
 
 namespace RicciFlow
-
-
 
 theorem scalar_monotone_terminal_of_interior
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -47,8 +35,6 @@ theorem scalar_monotone_terminal_of_interior
       (eventually_gt_nhds hs).filter_mono nhdsWithin_le_nhds] with u hu hsu
     exact hmono s u hsu.le hu x
   · exact le_rfl
-
-
 
 theorem past_curvatureTensorNorm_le_scalar_of_nonnegative_operator
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -89,8 +75,6 @@ private theorem closedMonotone_scalarCurvature_eq_of_metric_eq
   subst h
   exact D.scalarCurvature_eq E x
 
-
-
 theorem closedLimit_scalar_monotone
     (P : M23NormalizedKappaCompactnessPredecessors)
     (F : RicciFlow 3 G.limitCarrier.carrier (Iic 0))
@@ -104,8 +88,6 @@ theorem closedLimit_scalar_monotone
     closedMonotone_scalarCurvature_eq_of_metric_eq
       (F.connection t) (G.limitFlow.connection (t + 1)) (hmetric t ht) x]
   exact S.interiorLimit_scalar_monotone G P (by linarith) (by linarith) x
-
-
 
 theorem closedLimit_past_norm_le_scalar
     (P : M23NormalizedKappaCompactnessPredecessors)

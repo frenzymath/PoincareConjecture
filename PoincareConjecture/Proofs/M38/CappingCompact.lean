@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappingInclusions
 import PoincareConjecture.Proofs.M38.CappingRemainder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem capInnerBall_compact :
     IsCompact {x : capDoubleBall | ‖x.val‖ ≤ (3 / 2 : ℝ)} := by
@@ -40,8 +31,6 @@ theorem capInnerBall_compact :
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
-
 theorem cappedOldInclusion_cap (i : Fin (F.event T hT).cap_count) (x : capDoubleBall)
     (hx : 1 < ‖x.val‖) :
     cappedOldInclusion F T hT P ((P i).attachmentChart x) =
@@ -60,7 +49,6 @@ theorem cappedOldInclusion_cap (i : Fin (F.event T hT).cap_count) (x : capDouble
     (by change x ∈ (P i).attachmentChart.source; rwa [(P i).attachmentChart_source])).mpr
   exact eventCappingMap_old_center F T hT P y
 
-
 theorem cappingOldRemainder_compact :
     IsCompact ((Subtype.val : eventDiscardedOpen F T hT →
       (F.slice (F.event T hT).tMinus).carrier) ⁻¹' eventCappingRemainder F T hT P) := by
@@ -68,8 +56,6 @@ theorem cappingOldRemainder_compact :
     (eventCappingRemainder_compact F T hT P)
   intro x hx
   exact ⟨⟨x, eventCappingRemainder_discarded F T hT P hx⟩, rfl⟩
-
-
 
 theorem cappedOldInclusion_compact_cover (y : eventDiscardedOpen F T hT) :
     cappedOldInclusion F T hT P y ∈
@@ -101,8 +87,6 @@ theorem cappedOldInclusion_compact_cover (y : eventDiscardedOpen F T hT) :
     linarith [hs.2]
   · rw [← cappedOldInclusion_cap F T hT P i x hx, hattach]
 
-
-
 theorem cappedDiscardedSpace_compact_cover :
     cappedOldInclusion F T hT P '' (Subtype.val ⁻¹' eventCappingRemainder F T hT P) ∪
         (⋃ i, eventCappingInclude F T hT P (.inr i) ''
@@ -125,8 +109,6 @@ theorem cappedDiscardedSpace_compact_cover :
             have h := cappedOldInclusion_compact_cover F T hT P ((P i).attachmentChart x)
             rw [cappedOldInclusion_cap F T hT P i x hpos] at h
             exact h
-
-
 
 theorem cappedDiscardedSpace_compact : CompactSpace (CappedDiscardedSpace F T hT P) := by
   apply isCompact_univ_iff.mp

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.ParameterPrismDomain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +11,6 @@ local notation "E" => (V2 × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
-
-
 
 theorem isOpen_parameterPrism_frontier_of_lateral {A : Set E}
     (hA : A ⊆ Q ×ˢ Ioo (-1 : ℝ) 1)

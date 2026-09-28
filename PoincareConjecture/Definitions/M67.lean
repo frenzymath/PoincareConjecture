@@ -3,22 +3,6 @@ import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Definitions.M61Width
 import PoincareConjecture.Definitions.M66
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,20 +11,14 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 def M67EventComparisonBounds (F : SurgeryFlowData.{u}) (J : Set ℝ) : Prop :=
   ∀ t ∈ J, t ∈ F.surgery_times →
     F.parameters.delta t < repairedComparisonDeltaBound F.local_constants ∧
       F.parameters.h t < repairedComparisonHeightBound F.local_constants
 
-
-
 def M67ScalarLowerBound (F : SurgeryFlowData.{u}) (J : Set ℝ) : Prop :=
   ∀ t ∈ J, t ∈ F.time_domain → ∀ x : (F.slice t).carrier,
     -6 / (1 + 4 * t) ≤ (F.connection t).scalarCurvature x
-
-
 
 def M67AlphaTransport {M N : Type u}
     [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -60,7 +38,6 @@ def M67AlphaTransport {M N : Type u}
         M59HigherBasepointTransport.map (B.transport 2) lp.loop
           (surgeryHomotopyMap (n := 2) L.map
             (L.map_based (rfl : f x = f x)) alpha) = beta
-
 
 structure M67WidthSlice (q : M59SphereQuotient)
     {A : GeneralizedSliceCarrier.{u}}
@@ -86,14 +63,12 @@ structure M67WidthSlice (q : M59SphereQuotient)
         HomotopyGroup.Pi 3 C.carrier.carrier C.basepoint
   class_nonzero : loop_pi_three alpha ≠ 1
 
-
 structure M67FiniteChronology (events : Set ℝ) (a b : ℝ) where
   count : ℕ
   time : Fin count → ℝ
   strict_mono : StrictMono time
   in_interval : ∀ i, time i ∈ Set.Ioo a b
   complete : Set.range time = events ∩ Set.Ioo a b
-
 
 structure M67EventTransport
     {g₀ : StandardInitialMetric}
@@ -115,7 +90,6 @@ structure M67EventTransport
     (hh : D.flow.parameters.h S.1 <
       repairedComparisonHeightBound D.flow.local_constants)
     (eta : ℝ) (heta : 0 < eta) where
-
 
   pre : M67WidthSlice q (P.component s)
   post : M67WidthSlice q (H.event_input S hS hpost).child
@@ -172,8 +146,6 @@ structure M67EventTransport
   null_transport : ∀ γ, IsNullHomotopicLoop γ →
     IsNullHomotopicLoop (loop.map γ)
 
-
-
   comparison_homotopy :
     ContinuousMap.Homotopic f
       ((A.event_output S hS hpost hdelta hh).comparison.map.comp
@@ -184,17 +156,9 @@ structure M67EventTransport
     post.metric.edist (f x) (f y) ≤
       ENNReal.ofReal (1 + eta) * pre.metric.edist x y
 
-
   filling_transport : ∀ γ (Dγ : LipschitzSpanningDisk pre.metric γ),
     ∃ Eγ : LipschitzSpanningDisk post.metric (loop.map γ),
       Eγ.area ≤ (1 + eta) ^ 2 * Dγ.area
-
-
-
-
-
-
-
 
   represents_transport : ∀ F : ContinuousMap LoopTwoSphere
       (C1FreeLoopSpace (M := (P.component s).carrier.carrier)),

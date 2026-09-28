@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundParameterJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +26,6 @@ noncomputable local instance roundSourceBilinearSpace : NormedSpace ℝ Bilin :=
 variable {X : Type v} [TopologicalSpace X] [ChartedSpace E3 X]
   [IsManifold (𝓡 3) ∞ X]
 
-
-
-
 noncomputable def limitCanonicalRoundSourceTensor
     {H : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
     {origin Q : ℝ} {J : Set ℝ} {W : Set C.carrier}
@@ -49,7 +36,6 @@ noncomputable def limitCanonicalRoundSourceTensor
     (mfderiv (𝓡 3) (𝓡 3) i x (v 0)) (mfderiv (𝓡 3) (𝓡 3) i x (v 1))
 
 omit [IsManifold (𝓡 3) ∞ X] in
-
 
 theorem limitCanonical_round_source_tensor_eq
     {H : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -71,9 +57,6 @@ theorem limitCanonical_round_source_tensor_eq
   rw [mul_assoc]
   rfl
 
-
-
-
 theorem limitCanonical_round_source_tensor_smooth
     {H : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
     {origin Q : ℝ} {J : Set ℝ} {W : Set C.carrier}
@@ -88,7 +71,6 @@ theorem limitCanonical_round_source_tensor_smooth
     (H.metric (origin + s / Q)) (he.comp hi)).const_mul (c * Q)
 
 omit [IsManifold (𝓡 3) ∞ X] in
-
 
 theorem limitCanonical_round_source_parameter_readout
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}
@@ -105,8 +87,6 @@ theorem limitCanonical_round_source_parameter_readout
   rw [limitCanonical_round_parameter_readout e q s c hs (hi.comp x hf) hq]
   rw [mfderiv_comp x hi hf]
   rfl
-
-
 
 theorem limitCanonical_round_parameter_smooth
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}

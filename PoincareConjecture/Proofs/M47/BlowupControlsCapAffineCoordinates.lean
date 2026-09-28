@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCompressedCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ private theorem affine_inverse_mem {lambda c e s : ℝ} (hlambda : 0 < lambda) :
     constructor <;> nlinarith [h.1, h.2]
   · intro h
     constructor <;> nlinarith [h.1, h.2]
-
-
 
 noncomputable def capAffineNeckCoordinate (N : EpsilonNeck g)
     {epsilon lambda c : ℝ} (hlambda : 0 < lambda)
@@ -94,8 +83,6 @@ noncomputable def capAffineNeckCoordinate (N : EpsilonNeck g)
     rw [N.coordinate_map_eq] at h
     exact h
 
-
-
 theorem capAffineNeckCoordinate_map_eq (N : EpsilonNeck g)
     {epsilon lambda c : ℝ} (hlambda : 0 < lambda)
     (hdomain : ∀ s ∈ Ioo (-epsilon⁻¹) epsilon⁻¹,
@@ -104,8 +91,6 @@ theorem capAffineNeckCoordinate_map_eq (N : EpsilonNeck g)
     (capAffineNeckCoordinate N hlambda hdomain z : M) =
       N.coordinate_map (neckAxialSpaceMap lambda c (z.1, (z.2 : ℝ))) :=
   N.coordinate_map_eq _
-
-
 
 theorem capAffineNeckCoordinate_inverse_left (N : EpsilonNeck g)
     {epsilon lambda c : ℝ} (hlambda : 0 < lambda)
@@ -119,16 +104,12 @@ theorem capAffineNeckCoordinate_inverse_left (N : EpsilonNeck g)
     N.coordinate_inverse_coordinate_map_of_axial_mem (hdomain z.2 z.2.property)]
   exact neckAxialInverse_left hlambda.ne' c _
 
-
-
 theorem capAffineNeckCoordinate_inverse_mem (N : EpsilonNeck g)
     {epsilon lambda c : ℝ} (hlambda : 0 < lambda) {x : M}
     (hx : x ∈ N.region (c - lambda * epsilon⁻¹) (c + lambda * epsilon⁻¹)) :
     neckAxialInverse lambda c (N.coordinate_inverse x) ∈
       univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹ :=
   ⟨mem_univ _, (affine_inverse_mem hlambda).mpr hx.2⟩
-
-
 
 theorem capAffineNeckCoordinate_map_smooth (N : EpsilonNeck g)
     {epsilon lambda c : ℝ}
@@ -139,7 +120,6 @@ theorem capAffineNeckCoordinate_map_smooth (N : EpsilonNeck g)
       (univ ×ˢ Ioo (-epsilon⁻¹) epsilon⁻¹) := by
   apply N.coordinate_map_smooth.comp (neckAxialSpaceMap_contMDiff lambda c).contMDiffOn
   exact fun z hz => ⟨mem_univ _, hdomain z.2 hz.2⟩
-
 
 theorem capAffineNeckCoordinate_inverse_smooth (N : EpsilonNeck g)
     (epsilon lambda c : ℝ) :

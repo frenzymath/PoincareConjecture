@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M04.ShiBallRetention
 import PoincareConjecture.Proofs.M04.LocalScalarBarrier
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -131,9 +121,6 @@ private theorem scalar_cutoff_comparison
   have h := hresult t ht x hx
   dsimp only [f] at h
   linarith
-
-
-
 
 theorem localScalarPersistence (P : M47ScalarPersistencePredecessors.{u}) :
     M47LocalScalarPersistenceStatement.{u} := by

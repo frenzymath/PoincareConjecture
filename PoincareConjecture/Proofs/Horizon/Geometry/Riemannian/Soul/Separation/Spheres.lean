@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +19,6 @@ private instance : ConnectedSpace UnitTwoSphere := by
   apply isConnected_iff_connectedSpace.mp
   exact isConnected_sphere
     (by rw [← Module.finrank_eq_rank]; norm_num) 0 (by norm_num)
-
-
 
 theorem distanceSphere_eq_range (H : RadialHomeomorph g p) {r : ℝ} (hr : 0 < r) :
     distanceSphere g p r =
@@ -69,14 +56,12 @@ theorem distanceSphere_eq_range (H : RadialHomeomorph g p) {r : ℝ} (hr : 0 < r
   · rintro ⟨q, rfl⟩
     exact H.distance_eq (q, ⟨r, hr⟩)
 
-
 theorem isConnected_distanceSphere (H : RadialHomeomorph g p) {r : ℝ} (hr : 0 < r) :
     IsConnected (distanceSphere g p r) := by
   rw [H.distanceSphere_eq_range hr]
   exact isConnected_range
     (continuous_subtype_val.comp (H.toHomeomorph.continuous.comp
       (continuous_id.prodMk continuous_const)))
-
 
 theorem isCompact_distanceSphere (H : RadialHomeomorph g p) {r : ℝ} (hr : 0 < r) :
     IsCompact (distanceSphere g p r) := by

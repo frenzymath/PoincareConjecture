@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -105,8 +97,6 @@ private theorem irreducible_sourceSlab_of_whole_annuli
             (ContinuousMap.inclusion hMR) := rfl
       rw [heq, FundamentalGroup.map_comp] at hinj
       exact Function.Injective.of_comp hinj
-
-
 
 theorem PairedSourceGeometry.irreducible_slabs
     {α : Type*} {e : α → OpenPartialHomeomorph X V3}

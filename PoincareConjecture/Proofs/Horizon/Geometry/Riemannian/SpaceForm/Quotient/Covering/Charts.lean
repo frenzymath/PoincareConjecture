@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Round
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.SphereMotions
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
 
 theorem inverse_local_isometry_inner
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -43,7 +41,6 @@ theorem inverse_local_isometry_inner
   erw [F.right_inv hy] at hi
   exact (hi.trans (congrArg₂ (fun (a b : TangentSpace (𝓡 n) y) => h.inner y a b)
     (hid v) (hid w))).symm
-
 
 theorem exists_uniform_round_chart_radius [T2Space M] [CompactSpace M]
     (g : RiemannianMetric n M)

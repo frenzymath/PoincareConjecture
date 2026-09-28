@@ -13,7 +13,6 @@ local notation "Q2" => sphere (0 : V2) 1
 
 open Classical in
 
-
 theorem exists_standard_boundary_circle_surface
     {R S : Set V3} (hR : IsCompact R)
     (he : PLDomain (fun _ : Unit => (Homeomorph.refl V3).toOpenPartialHomeomorph) R)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Lin
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.DomainChange
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.ParametrizedCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -49,8 +41,6 @@ private theorem spatial_jet_convergence
     intro v
     exact (Poincare.Analysis.iteratedFDeriv_spatial_slice _ (hreg₀ x hx) r v).symm
 
-
-
 theorem tendstoUniformlyOn_parametrized_spatial_jets
     {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}
     (G : PointedGeometricConvergence S) (hzero : a < 0 ∧ 0 < b)
@@ -80,8 +70,6 @@ theorem tendstoUniformlyOn_parametrized_spatial_jets
   · intro x hx
     exact G.limitFlow.flow.smooth.contDiffAt_spacetime_pullbackCoefficients
       isOpen_Ioo (hf.contMDiffAt (hU.mem_nhds (hKU hx))) ht
-
-
 
 theorem locally_eventually_smooth_parametrized_coefficients
     {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}
@@ -134,8 +122,6 @@ namespace PointedGeometricConvergence
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
 
 theorem smooth_convergence_parametrized_inner
     {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}
@@ -210,8 +196,6 @@ theorem smooth_convergence_parametrized_inner
   have hVback : e ⁻¹' V = U := by ext x; simp [V]
   rw [hVback] at hloc' hjet'
   exact ⟨hloc', hjet'⟩
-
-
 
 theorem smooth_convergence_parametrized_coefficients
     {n : ℕ} {a b : ℝ} {S : PointedFlowSequence n a b}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Model
 import Mathlib.Analysis.Normed.Module.Normalize
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxHeartbeats 800000
@@ -42,8 +31,6 @@ private theorem dist_smul_sphere
       abs_of_nonneg s.coe_nonneg, real_inner_smul_left, real_inner_smul_right, hu, hv]
     ring
   rw [← hsquare, Real.sqrt_sq dist_nonneg]
-
-
 
 def asymptoticConeEuclideanMap (hcomparison : RayComparison p)
     (e : AsymptoticLink p hcomparison ≃ᵢ Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :
@@ -100,8 +87,6 @@ theorem surjective_asymptoticConeEuclideanMap (hcomparison : RayComparison p)
     rw [asymptoticConeEuclideanMap_projection, e.apply_symm_apply]
     exact NormedSpace.norm_smul_normalize x
 
-
-
 def asymptoticConeEuclideanIsometry (hcomparison : RayComparison p) (hn : 1 ≤ n)
     (e : AsymptoticLink p hcomparison ≃ᵢ Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1) :
     AsymptoticCone p hcomparison ≃ᵢ EuclideanSpace ℝ (Fin n) where
@@ -116,7 +101,6 @@ def asymptoticConeEuclideanIsometry (hcomparison : RayComparison p) (hn : 1 ≤ 
     (z : AsymptoticCone p hcomparison) :
     asymptoticConeEuclideanIsometry hcomparison hn e z =
       asymptoticConeEuclideanMap hcomparison e z := rfl
-
 
 theorem image_asymptoticCone_radial_ball (hcomparison : RayComparison p) (hn : 1 ≤ n)
     (e : AsymptoticLink p hcomparison ≃ᵢ Metric.sphere (0 : EuclideanSpace ℝ (Fin n)) 1)
@@ -134,8 +118,6 @@ theorem image_asymptoticCone_radial_ball (hcomparison : RayComparison p) (hn : 1
     refine ⟨z, ?_, rfl⟩
     simpa only [mem_ofPred_eq, Metric.mem_ball, dist_zero_right, asymptoticConeEuclideanIsometry_apply,
       norm_asymptoticConeEuclideanMap] using hx
-
-
 
 theorem asymptoticCone_radial_unit_ball_volume_of_chordal_isometry
     (hcomparison : RayComparison p) (hn : 1 ≤ n)

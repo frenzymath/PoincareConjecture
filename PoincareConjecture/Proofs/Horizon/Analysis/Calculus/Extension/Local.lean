@@ -1,14 +1,4 @@
-
-
-
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric Filter
@@ -17,8 +7,6 @@ open scoped ContDiff Topology
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_global_contDiff_germ {f : ℝ → E} {U : Set ℝ} {a : ℝ}
     (hU : IsOpen U) (hf : ContDiffOn ℝ ∞ f U) (ha : a ∈ U) :

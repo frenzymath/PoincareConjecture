@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15CompactPath
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ private theorem history_spatial_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
 
 theorem seedRetained_compact_path_trace
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

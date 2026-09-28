@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CapBallVolume
 import PoincareConjecture.Proofs.M34.Standard.CapQuantitativeBounds
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlCapBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +17,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [T3Space M] [T3Space X] [SecondCountableTopology M] [SecondCountableTopology X]
   [ConnectedSpace M] [ConnectedSpace X]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
 
 theorem exists_image_recut_core_radii
     {C : ℝ} (hC1 : 1 ≤ C) (hC : N.cap_constant ≤ C)

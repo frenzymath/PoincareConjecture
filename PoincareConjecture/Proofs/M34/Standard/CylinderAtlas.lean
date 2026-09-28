@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem nonempty_standardCylinderAtlas : Nonempty StandardCylinderAtlas := by
   classical

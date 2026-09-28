@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCornerDiagonal
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarUnitBase
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,9 +37,6 @@ private theorem neighbors_not_edge {n : ℕ} (i j : Fin (n + 4)) :
       Nat.cast_ofNat] using heq
   · apply prev_ne_add i 1 (by omega)
     simpa only [finRotate_symm_apply, finRotate_apply, Nat.cast_one] using hp.trans hn.symm
-
-
-
 
 theorem disjoint_boundary_empty_triangle_base {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 4))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 4))
@@ -89,9 +77,6 @@ theorem disjoint_boundary_empty_triangle_base {n : ℕ} (P : Polygon (ℝ × ℝ
     ⟨(P.vertex_mem_edgeSet_iff hP hinj _ j).mp hpa,
       (P.vertex_mem_edgeSet_iff hP hinj _ j).mp hpc⟩
 
-
-
-
 theorem empty_triangle_base_subset_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 4))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 4))
     (hprev : P ((finRotate (n + 4)).symm i) = (1, 0)) (hcenter : P i = (0, 0))
@@ -112,8 +97,6 @@ theorem empty_triangle_base_subset_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n
   rw [closure_eq_self_union_frontier, P.frontier_inside hP hinj] at hqcl
   exact hqcl.resolve_right (Set.disjoint_left.mp hbase hq)
 
-
-
 theorem opposite_edge_subset_inside_of_empty_triangle {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 4)) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (i : Fin (n + 4))
@@ -129,10 +112,6 @@ theorem opposite_edge_subset_inside_of_empty_triangle {n : ℕ}
   change 0 < a * 1 + b * 0 ∧ 0 < a * 0 + b * 1 ∧
     (a * 1 + b * 0) + (a * 0 + b * 1) = 1
   simpa only [mul_one, mul_zero, add_zero, zero_add] using And.intro ha (And.intro hb hab)
-
-
-
-
 
 theorem exists_diagonal_of_normalized_corner {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 4))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) (i : Fin (n + 4))

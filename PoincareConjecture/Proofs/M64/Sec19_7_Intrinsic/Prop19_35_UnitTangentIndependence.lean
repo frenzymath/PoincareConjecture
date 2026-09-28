@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CrossRayTangents
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.FanAngles
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,9 +8,6 @@ set_option backward.isDefEq.respectTransparency false
 open scoped Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_unit_tangents_independent
     (G : RiemannianMetric 2 AnnulusCoordinates) (p v w : AnnulusCoordinates)
@@ -36,9 +30,6 @@ theorem m64Intrinsic_unit_tangents_independent
       (show c ^ 2 = (1 : ℝ) ^ 2 by simpa only [one_pow] using hsq) with rfl | rfl
   · exact hne (by simpa only [one_smul] using hc.symm)
   · exact hopp (by simpa only [neg_one_smul] using hc.symm)
-
-
-
 
 theorem m64Intrinsic_unit_tangent_angle_bounds
     (G : RiemannianMetric 2 AnnulusCoordinates) (p v w : AnnulusCoordinates)

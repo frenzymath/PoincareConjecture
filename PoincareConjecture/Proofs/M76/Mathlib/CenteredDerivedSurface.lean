@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PositiveFaceCenterAtPoint
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexFrontierConnected
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +16,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem connected_derived_faceCenter_link_of_pure_triangles
     (K : SimplicialComplex ℝ E) [Fintype K.faces] (c : K.faces → E)
@@ -87,11 +72,6 @@ theorem connected_derived_faceCenter_link_of_pure_triangles
     rw [K.derived_link_faceCenter_space_of_maximal c hc s hmax]
     exact (K.indep s.property).isConnected_intrinsicFrontier_convexHull_finset htriangle.ge
 
-
-
-
-
-
 theorem exists_centered_derived_surface_at_face_point
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -130,10 +110,6 @@ theorem exists_centered_derived_surface_at_face_point
   rw [← hcs]
   exact ⟨K.derived_closedStar_faceCenter_space_of_maximal c hc s hmax,
     K.derived_link_faceCenter_space_of_maximal c hc s hmax⟩
-
-
-
-
 
 theorem exists_centered_derived_surface_at_carrier_point
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

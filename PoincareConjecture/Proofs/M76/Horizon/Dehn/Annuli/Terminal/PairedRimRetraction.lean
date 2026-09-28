@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedMarkedModel
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Mathlib.FiniteJetComposition
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M35
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem tendsto_iteratedFDeriv_smooth_comp_of_jets
     {fseq : ℕ → E → F} {f : E → F} {phi : F → G}
@@ -43,7 +33,6 @@ theorem tendsto_iteratedFDeriv_smooth_comp_of_jets
   exact (hphi.continuousAt_iteratedFDeriv (by
     exact_mod_cast le_top (a := (m : ℕ∞)))).tendsto.comp hval
 
-
 theorem tendsto_iteratedFDeriv_clm_comp_of_jet
     {f : ℕ → E → F} {f₀ : E → F} {p : ℕ → E} {p₀ : E} (r : ℕ) (L : F →L[ℝ] G)
     (hf₀ : ContDiffAt ℝ ∞ f₀ p₀)
@@ -57,7 +46,6 @@ theorem tendsto_iteratedFDeriv_clm_comp_of_jet
   have h := ((ContinuousLinearMap.compContinuousMultilinearMapL ℝ
     (fun _ : Fin r => E) F G L).continuous.tendsto _).comp hjet
   exact h.congr' (hf.mono fun k hk => (L.iteratedFDeriv_comp_left hk hr).symm)
-
 
 theorem tendsto_iteratedFDeriv_prodMk_of_jets
     {f : ℕ → E → F} {g : ℕ → E → G} {f₀ : E → F} {g₀ : E → G}
@@ -79,7 +67,6 @@ theorem tendsto_iteratedFDeriv_prodMk_of_jets
   apply h.congr'
   filter_upwards [hf, hg] with k hfk hgk
   exact (iteratedFDeriv_prodMk hfk hgk hr).symm
-
 
 theorem tendsto_iteratedFDeriv_mul_of_jets
     {f g : ℕ → E → ℝ} {f₀ g₀ : E → ℝ} {p : ℕ → E} {p₀ : E} (r : ℕ)
@@ -107,7 +94,6 @@ theorem tendsto_iteratedFDeriv_mul_of_jets
   intro m _
   exact (hmul.contDiffAt.continuousAt_iteratedFDeriv (by
     exact_mod_cast le_top (a := (m : ℕ∞)))).tendsto.comp hval
-
 
 theorem tendsto_iteratedFDeriv_fderiv_apply_of_jet
     {f : ℕ → E → F} {f₀ : E → F} {p : ℕ → E} {p₀ : E} (r : ℕ) (v : E)

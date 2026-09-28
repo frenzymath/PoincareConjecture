@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M01.ConnectionRiesz
 import PoincareConjecture.Proofs.M01.ConnectionExistenceRegularity
 import Mathlib.Geometry.Manifold.VectorBundle.Tensoriality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -84,7 +73,6 @@ theorem leviCivitaCov_inner (g : RiemannianMetric n M)
   rw [TensorialAt.mkHom₂_apply _ _ hX hZ]
 
 end ConnectionExistence
-
 
 theorem m01_exists_leviCivitaData {n : ℕ} {M : Type u}
     [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

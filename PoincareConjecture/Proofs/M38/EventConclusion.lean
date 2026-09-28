@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.CapCorrespondence
 import PoincareConjecture.Proofs.M38.CappingCarrier
 import PoincareConjecture.Proofs.M38.MonodromyModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,11 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
-
-
 
 noncomputable def eventAssemblyConclusion
     {A B : GeneralizedSliceCarrier.{u}} {m n k : ℕ}
@@ -164,11 +149,6 @@ noncomputable def eventAssemblyConclusion
     · intro j hj
       simp only [kind, Fin.append_right] at hj
       cases hj
-
-
-
-
-
 
 noncomputable def eventAssemblyWitness
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

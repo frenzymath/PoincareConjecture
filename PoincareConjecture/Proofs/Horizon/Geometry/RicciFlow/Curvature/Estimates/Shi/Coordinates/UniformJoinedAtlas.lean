@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Paths.JoinedDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

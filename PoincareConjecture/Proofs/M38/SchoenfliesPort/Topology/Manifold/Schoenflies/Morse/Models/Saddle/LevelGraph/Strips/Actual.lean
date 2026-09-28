@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Strips.Regular
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Intervals.Contacts
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.SaddleLevel
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -60,9 +52,6 @@ private theorem exists_rectangle_around_closed_interval
       · exact hIU ⟨le_of_not_gt hsa, le_of_not_gt hbs⟩
   · apply hδV
     simpa only [mem_ball, Real.dist_eq, sub_zero, abs_lt, mem_Ioo] using ht
-
-
-
 
 theorem exists_physical_height_interval_strip
     {H h : S2 -> Real} (hH : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ H)
@@ -108,9 +97,6 @@ theorem exists_physical_height_interval_strip
   change h (F z) = c + z.2
   rw [← heq]
   exact hheight z.1 z.2 ((hFs ▸ hzW.1).2)
-
-
-
 
 theorem exists_actual_exterior_interval_strips
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreen
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +11,6 @@ open scoped Topology ContDiff Pointwise
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m64Affine_image_unitDisk (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     (fun z : LoopPlane => a + r • z) '' loopDiskSet = Metric.closedBall a r := by
@@ -48,7 +36,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E
 
 omit [CompleteSpace E] in
 
-
 theorem m64Affine_integral_vector (F : LoopPlane → E) (a : LoopPlane)
     {r : ℝ} (hr : 0 < r) (S : Set LoopPlane) :
     (∫ z in S, r ^ 2 • F (a + r • z)) =
@@ -69,8 +56,6 @@ theorem m64Affine_integral_vector (F : LoopPlane → E) (a : LoopPlane)
     · rintro ⟨w, hw, rfl⟩
       exact ⟨r • w, ⟨w, hw, rfl⟩, rfl⟩
   rw [← ht, hset]
-
-
 
 theorem m64Disk_integral_partial_rescaled {f : LoopPlane → E} (hf : ContDiff ℝ 1 f)
     (a : LoopPlane) {r : ℝ} (hr : 0 < r) (i : Fin 2) :
@@ -100,8 +85,6 @@ theorem m64Disk_integral_partial_rescaled {f : LoopPlane → E} (hf : ContDiff �
       filter_upwards [] with z
       rw [hD, smul_smul, pow_two]
     _ = _ := by rw [m64Disk_integral_partial (hf.comp hA) i]; rfl
-
-
 
 theorem m64Disk_green_identity_rescaled {f : LoopPlane → E} {phi : LoopPlane → ℝ}
     (hf : ContDiff ℝ 1 f) (hphi : ContDiff ℝ 1 phi)

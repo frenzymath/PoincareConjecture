@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ variable {m n : ℕ} {M N : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 m) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
 
 theorem edist_le_of_tangentNorm_mfderiv_le
     (g : RiemannianMetric m M) (h : RiemannianMetric n N)
@@ -91,7 +82,6 @@ private theorem productIsometry_inner_symm (x : M)
   convert hh using 1
   rw [e.apply_symm_apply]
 
-
 theorem productIsometry_fst_tangentNorm_le (x : M)
     (v : TangentSpace (𝓡 (n + 1)) x) :
     h.tangentNorm (e.symm x).1
@@ -110,13 +100,11 @@ theorem productIsometry_fst_tangentNorm_le (x : M)
   change _ ≤ _ + _
   exact le_add_of_nonneg_right (mul_self_nonneg _)
 
-
 theorem productIsometry_fst_edist_le (x y : M) :
     h.edist (e.symm x).1 (e.symm y).1 ≤ g.edist x y := by
   apply edist_le_of_tangentNorm_mfderiv_le g h
     ((contMDiff_fst.comp e.symm.contMDiff).of_le (by simp))
   exact productIsometry_fst_tangentNorm_le g h e hinner
-
 
 theorem productIsometry_snd_tangentNorm_le (x : M)
     (v : TangentSpace (𝓡 (n + 1)) x) :
@@ -141,7 +129,6 @@ theorem productIsometry_snd_tangentNorm_le (x : M)
     simp
   · exact (h.pos _ _ hv).le
 
-
 theorem productIsometry_snd_edist_le (x y : M) :
     EDist.edist (e.symm x).2 (e.symm y).2 ≤ g.edist x y := by
   have he := g.edist_le_mul_edist_of_derivative_bound
@@ -151,8 +138,6 @@ theorem productIsometry_snd_edist_le (x y : M) :
     (by simpa only [NNReal.coe_one, one_mul] using
       productIsometry_snd_tangentNorm_le g h e hinner) x y
   simpa only [ENNReal.coe_one, one_mul, Function.comp_apply] using he
-
-
 
 theorem productIsometry_preimage_ball_subset (y : N) (r : ℝ) (hr : 0 < r) :
     e ⁻¹' g.ball (e (y, 0)) r ⊆ h.ball y r ×ˢ Ioo (-r) r := by

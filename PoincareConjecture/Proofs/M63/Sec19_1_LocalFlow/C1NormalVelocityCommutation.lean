@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.C1MixedDerivative
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C1ChartPullback
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem pullback_velocity_commute_of_time_velocity_c1
     {g : RiemannianMetric n M} (D : LeviCivitaData g) (c : ℝ → ℝ → M)

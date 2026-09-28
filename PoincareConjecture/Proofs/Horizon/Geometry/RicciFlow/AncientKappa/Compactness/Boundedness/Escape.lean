@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +21,6 @@ variable {M : Type} [TopologicalSpace M] [T2Space M] [T3Space M]
 
 omit [T2Space M] [SecondCountableTopology M] in
 
-
 theorem centers_exhaustion_tendsto_atTop
     (hc : MetricComplete (F.metric b))
     (hsec : (F.connection b).NonnegativeSectionalCurvature) :
@@ -48,8 +38,6 @@ theorem centers_exhaustion_tendsto_atTop
   have hx : S.center i ∈ horoballIntersection p (max r 0) :=
     (busemannExhaustion_le_iff (le_max_right r 0)).mp (hlow.le.trans (le_max_left r 0))
   exact (not_le_of_gt hi) (hB (mem_image_of_mem (fun x => dist p x) hx))
-
-
 
 theorem eventually_outside_spherical_half_necks
     {σ : ℕ → ℕ} (hσ : StrictMono σ) {ε : ℝ} (hε : 0 < ε) :
@@ -82,8 +70,6 @@ theorem eventually_outside_spherical_half_necks
   change dist (S.center (σ i)) p ≤ _ at hreal
   rw [dist_comm] at hreal
   exact (not_lt_of_ge hreal) (hi.trans hd)
-
-
 
 theorem eventually_outside_projective_half_slabs
     {σ : ℕ → ℕ} (hσ : StrictMono σ) {ε : ℝ} (hε : 0 < ε)

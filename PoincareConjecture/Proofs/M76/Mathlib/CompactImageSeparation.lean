@@ -1,15 +1,6 @@
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Set
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
-
-
-
 
 theorem IsCompact.image_eq_of_dense_sdiff {a b : Set X} {c d : Set Y} {f : X → Y}
     (ha : IsCompact a) (hf : ContinuousOn f a)

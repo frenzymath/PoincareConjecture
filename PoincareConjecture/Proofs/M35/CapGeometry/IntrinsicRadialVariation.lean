@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +49,6 @@ theorem intrinsicWarpingRadius_ratio_antitoneOn :
   intro s hs
   exact div_nonpos_of_nonpos_of_nonneg (sub_nonpos.mpr (hmean s (interior_subset hs)))
     (sq_nonneg s)
-
-
 
 theorem intrinsicWarpingRadius_anchored_variation {a b : ℝ}
     (ha : 0 < a) (hb : 0 < b) :

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryInteriorWeightedVariation
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +13,7 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
 
-
-
 def m64SourceScaleFactor (s : ℝ) (i : Fin 2) : ℝ := if i = 0 then s else s⁻¹
-
-
 
 def m64SourceScale (s : ℝ) (hs : s ≠ 0) : LoopPlane ≃L[ℝ] LoopPlane :=
   LinearEquiv.toContinuousLinearEquiv {
@@ -51,18 +36,11 @@ def m64SourceScale (s : ℝ) (hs : s ≠ 0) : LoopPlane ≃L[ℝ] LoopPlane :=
       simp only [m64SourceScaleFactor]
       split_ifs <;> simp [hs] }
 
-
-
 theorem m64SourceScale_apply (s : ℝ) (hs : s ≠ 0) (p : LoopPlane) (i : Fin 2) :
     m64SourceScale s hs p i = m64SourceScaleFactor s i * p i := rfl
 
-
-
 theorem m64SourceScale_symm_apply (s : ℝ) (hs : s ≠ 0) (p : LoopPlane) (i : Fin 2) :
     (m64SourceScale s hs).symm p i = (m64SourceScaleFactor s i)⁻¹ * p i := rfl
-
-
-
 
 theorem m64SourceScale_basis (s : ℝ) (hs : s ≠ 0) (i : Fin 2) :
     m64SourceScale s hs (EuclideanSpace.single i 1) =
@@ -72,16 +50,12 @@ theorem m64SourceScale_basis (s : ℝ) (hs : s ≠ 0) (i : Fin 2) :
   · subst j; simp [m64SourceScale_apply]
   · simp [m64SourceScale_apply, Ne.symm hij]
 
-
-
 theorem m64SourceScale_det (s : ℝ) (hs : s ≠ 0) :
     LinearMap.det (m64SourceScale s hs).toLinearMap = 1 := by
   rw [← LinearMap.det_toMatrix (EuclideanSpace.basisFun (Fin 2) ℝ).toBasis]
   rw [Matrix.det_fin_two]
   simp [LinearMap.toMatrix_apply, EuclideanSpace.basisFun_repr,
     EuclideanSpace.basisFun_apply, m64SourceScale_apply, m64SourceScaleFactor, hs]
-
-
 
 theorem m64SourceScale_measurePreserving (s : ℝ) (hs : s ≠ 0) :
     MeasurePreserving (m64SourceScale s hs) volume volume := by
@@ -92,8 +66,6 @@ theorem m64SourceScale_measurePreserving (s : ℝ) (hs : s ≠ 0) :
   simp only [m64SourceScale_det, inv_one, abs_one, ENNReal.ofReal_one, one_smul] at h
   exact h
 
-
-
 theorem m64SourceScale_restrict_measurePreserving (s : ℝ) (hs : s ≠ 0)
     (O : Set LoopPlane) :
     MeasurePreserving (m64SourceScale s hs)
@@ -101,17 +73,12 @@ theorem m64SourceScale_restrict_measurePreserving (s : ℝ) (hs : s ≠ 0)
   (m64SourceScale_measurePreserving s hs).restrict_preimage_emb
     (m64SourceScale s hs).toHomeomorph.measurableEmbedding O
 
-
-
 theorem m64SourceScale_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (s : ℝ) (hs : s ≠ 0) (O : Set LoopPlane) (f : LoopPlane → E) :
     (∫ p in (m64SourceScale s hs) ⁻¹' O, f (m64SourceScale s hs p)) = ∫ p in O, f p :=
   (m64SourceScale_restrict_measurePreserving s hs O).integral_comp
     (m64SourceScale s hs).toHomeomorph.measurableEmbedding f
-
-
-
 
 theorem m64SourceScale_fderiv_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -125,8 +92,6 @@ theorem m64SourceScale_fderiv_comp
   change fderiv ℝ f (m64SourceScale s hs p)
     (m64SourceScale s hs (EuclideanSpace.single i 1)) = _
   rw [m64SourceScale_basis, map_smul]
-
-
 
 theorem m64SourceScale_weakPartial {O : Set LoopPlane} {u V : LoopPlane → ℝ}
     {i : Fin 2} (hw : HasWeakPartialDeriv i V u O) (s : ℝ) (hs : s ≠ 0) :

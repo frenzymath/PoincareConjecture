@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.FullDomainComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000
@@ -20,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.TerminalNeck
-
-
 
 theorem exists_fullDomainCylinderFamily_coefficient_tolerance
     {ε : ℝ} (hε : 0 < ε) {B₀ : ℝ → RoundCylinderTwoTensor}
@@ -87,8 +74,6 @@ theorem exists_fullDomainCylinderFamily_coefficient_tolerance
 
 open MetricSurgery
 
-
-
 theorem exists_fullDomainCylinderFamily_comparison_tolerance
     {ε : ℝ} (hε : 0 < ε) {B₀ : ℝ → RoundCylinderTwoTensor}
     (hclose : RoundCylinderFamilyClose ε (Ioc (-1 : ℝ) 0) B₀) :
@@ -122,8 +107,6 @@ theorem exists_fullDomainCylinderFamily_comparison_tolerance
     _ ≤ η * C ^ ⌊ε⁻¹⌋₊ := mul_le_mul (hjet u hu z hz j hj) hpower
       (pow_nonneg (norm_nonneg _) _) hη.le
     _ = η₀ := div_mul_cancel₀ _ (ne_of_gt (pow_pos hCpos _))
-
-
 
 theorem eventually_roundCylinderFamilyClose_of_centeredDifferenceJets_fullDomain
     {ι : Type*} {l : Filter ι} {ε : ℝ} (hε : 0 < ε)

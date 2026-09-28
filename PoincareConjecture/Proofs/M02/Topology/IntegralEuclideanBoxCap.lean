@@ -7,8 +7,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenHomeomorphData
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactOrientationEmbedding
 
-
-
 set_option autoImplicit false
 
 noncomputable section

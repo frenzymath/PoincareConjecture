@@ -6,22 +6,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +16,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 private theorem trace_isClosedEmbedding
     {P Y : Type*} [TopologicalSpace P] [CompactSpace P]
@@ -63,9 +44,6 @@ private theorem trace_isClosedEmbedding
         exact ⟨((t, F (t, q)), q), ⟨hq, rfl⟩, rfl⟩
     rw [← himage]
     exact isClosedMap_fst_of_compactSpace D hD
-
-
-
 
 private theorem exists_smooth_euclidean_localInverse
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -101,9 +79,6 @@ private theorem exists_smooth_euclidean_localInverse
     have hDF : HasFDerivAt Q B.toContinuousLinearMap (Q.symm y) :=
       (hF.differentiableAt (by simp)).hasFDerivAt
     exact (Q.contDiffAt_symm hy hDF hF).contDiffWithinAt
-
-
-
 
 private theorem exists_smooth_euclidean_parameterInverse
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -147,10 +122,6 @@ private theorem exists_smooth_euclidean_parameterInverse
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
-
-
 
 theorem exists_smooth_local_sphere_parameter
     {F : ℝ × UnitTwoSphere → M}

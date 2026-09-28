@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Cover
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Diameter
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +28,6 @@ namespace SelectedAncientRescalings
 
 variable {b κ : ℝ} {F : RicciFlow 3 M (Iic b)} {p : M}
   (S : SelectedAncientRescalings F κ p)
-
-
-
 
 theorem exists_terminal_round_or_projective_necks
     (P : M23NormalizedKappaCompactnessPredecessors) (hκ : 0 < κ)

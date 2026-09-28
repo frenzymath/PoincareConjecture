@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Homeomorph
-
-
-
 
 theorem closedExtension_apply_notMem_interior
     {X : Type*} [TopologicalSpace X] {C : Set X} (e : C ≃ₜ C)
@@ -33,12 +19,6 @@ theorem closedExtension_apply_notMem_interior
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem IsFinitePL.closedExtension_finitePiecewiseAffineOn
     {C : Set E} {e : C ≃ₜ C} (he : e.IsFinitePL) (hC : IsClosed C)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SumConnectedSum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 def singletonDisjointUnion (A : GeneralizedSliceCarrier.{u}) :
     SmoothDisjointUnionData (fun _ : Fin 1 => A) A where
@@ -37,7 +28,6 @@ def singletonDisjointUnion (A : GeneralizedSliceCarrier.{u}) :
   cover := Set.eq_univ_of_forall
     (fun x => Set.mem_iUnion.mpr ⟨0, Set.mem_univ x⟩)
 
-
 theorem connectedSumChain_source_nonempty {A C : GeneralizedSliceCarrier.{u}}
     (h : Relation.ReflTransGen SmoothConnectedSumStep A C) (hC : Nonempty C.carrier) :
     Nonempty A.carrier := by
@@ -45,7 +35,6 @@ theorem connectedSumChain_source_nonempty {A C : GeneralizedSliceCarrier.{u}}
   · exact heq.symm ▸ hC
   · obtain ⟨D, E, ⟨U⟩, ⟨S⟩⟩ := hstep
     exact ⟨(U.identify 0).map (S.first_ball.map 0)⟩
-
 
 noncomputable def sumAssembly {n : ℕ} {pieces : Fin n → GeneralizedSliceCarrier.{u}}
     {A : GeneralizedSliceCarrier.{u}} (S : SmoothFiniteConnectedSumAssembly pieces A)
@@ -57,14 +46,12 @@ noncomputable def sumAssembly {n : ℕ} {pieces : Fin n → GeneralizedSliceCarr
     (connectedSumChain_source_nonempty S.operations hA) hD
   operations := sumConnectedSumChain S.operations D
 
-
 noncomputable def appendConnectedSumAssembly {n : ℕ}
     {pieces : Fin n → GeneralizedSliceCarrier.{u}} {A B C : GeneralizedSliceCarrier.{u}}
     (S : SmoothFiniteConnectedSumAssembly pieces A) (K : SmoothConnectedSumData A B C) :
     SmoothFiniteConnectedSumAssembly (Fin.append pieces (fun _ : Fin 1 => B)) C :=
   (sumAssembly S B ⟨K.first_ball.map 0⟩ ⟨K.second_ball.map 0⟩).tail
     ⟨A, B, ⟨oneCapDisjointUnion A B ⟨K.first_ball.map 0⟩ ⟨K.second_ball.map 0⟩⟩, ⟨K⟩⟩
-
 
 def reassociateAssembly {m n k : ℕ}
     {p : Fin m → GeneralizedSliceCarrier.{u}}

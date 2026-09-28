@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,15 +13,9 @@ namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
 
 variable {ψ : UnitTwoSphere × ℝ → E3} {δ : ℝ} (S : SchoenfliesData ψ δ)
 
-
-
-
 theorem isOpen_chart_image : IsOpen (S.chart '' ball 0 S.radius) := by
   obtain ⟨Ψ, hΨ, hleft⟩ := S.chart_inverse
   exact S.chart_smooth.isOpen_image_of_leftInvOn hΨ isOpen_ball hleft (by simp) rfl
-
-
-
 
 theorem exists_chart_openPartialHomeomorph :
     ∃ e : OpenPartialHomeomorph E3 E3,
@@ -44,8 +28,6 @@ theorem exists_chart_openPartialHomeomorph :
       (by simp) rfl
   exact ⟨e, hs, ht, he, hf, hi⟩
 
-
-
 private theorem side_mul_mem_Ioo (hδ : 0 ≤ δ) {s : ℝ} (hs : s ∈ Ioo δ 1) :
     S.side * s ∈ Ioo (-1 : ℝ) 1 := by
   have hpos : 0 < s := hδ.trans_lt hs.1
@@ -54,9 +36,6 @@ private theorem side_mul_mem_Ioo (hδ : 0 ≤ δ) {s : ℝ} (hs : s ∈ Ioo δ 1
     exact ⟨by linarith, hs.2⟩
   · simp only [hside, neg_one_mul, mem_Ioo]
     constructor <;> linarith [hs.2]
-
-
-
 
 theorem contDiffOn_radial (hψ : IsCollarEmbedding ψ) (hδ : 0 ≤ δ) :
     ContDiffOn ℝ ∞ S.radial (Ioo δ 1) := by
@@ -98,9 +77,6 @@ theorem contDiffOn_radial (hψ : IsCollarEmbedding ψ) (hδ : 0 ≤ δ) :
     hinv.norm ℝ (fun t ht => norm_ne_zero_iff.mp ((hnorm t ht).trans_ne
       (S.radial_pos t ⟨ht.1.le, ht.2⟩).ne'))
   exact hn.congr fun t ht => (hnorm t ht).symm
-
-
-
 
 theorem deriv_radial_ne_zero (hψ : IsCollarEmbedding ψ) (hδ : 0 ≤ δ)
     {s : ℝ} (hs : s ∈ Ioo δ 1) : deriv S.radial s ≠ 0 := by
@@ -158,9 +134,6 @@ theorem deriv_radial_ne_zero (hψ : IsCollarEmbedding ψ) (hδ : 0 ≤ δ)
   have hside : S.side = 0 := congrArg Prod.snd hvector
   have := S.side_sq
   simp [hside] at this
-
-
-
 
 theorem deriv_radial_pos (hψ : IsCollarEmbedding ψ) (hδ : 0 ≤ δ)
     {s : ℝ} (hs : s ∈ Ioo δ 1) : 0 < deriv S.radial s := by

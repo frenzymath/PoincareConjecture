@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Assembly
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.LimitCarrier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {T' T : ℝ}
 
 namespace PointedGeometricConvergenceCore
-
-
 
 def boundaryEscape
     {S : PointedFlowSequence n T' T}
@@ -40,7 +24,6 @@ def boundaryEscape
           ((S.flow (φ k)).metricAt 0)).edist
             (S.flow (φ k)).base
             ((C.embedding k).toFun (0, x)).2
-
 
 theorem metricComplete_zero_of_boundary_escape
     {S : PointedFlowSequence n T' T}
@@ -56,8 +39,6 @@ theorem metricComplete_zero_of_boundary_escape
 
 end PointedGeometricConvergenceCore
 
-
-
 theorem pointedRicciFlowCompactness_of_boundary_escape
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
     (G : PointedGeometricConvergence H.sequence)
@@ -72,10 +53,6 @@ theorem pointedRicciFlowCompactness_of_boundary_escape
     Nonempty (PointedRicciFlowCompactnessConclusion H) := by
   exact pointedRicciFlowCompactness_of_geometric_limit G
     (G.metricComplete_zero_of_boundary_escape H.time_bounds hescape)
-
-
-
-
 
 theorem pointedRicciFlowCompactness_of_boundary_escape_of_subsequence
     {H : PointedRicciFlowCompactnessHypotheses n T' T}
@@ -93,8 +70,6 @@ theorem pointedRicciFlowCompactness_of_boundary_escape_of_subsequence
   obtain ⟨C⟩ := pointedRicciFlowCompactness_of_boundary_escape
     (H := H.subsequence φ hφ) G hescape
   exact ⟨C.ofSubsequence⟩
-
-
 
 theorem pointedRicciFlowCompactness_of_core_boundary_escape
     {H : PointedRicciFlowCompactnessHypotheses n T' T}

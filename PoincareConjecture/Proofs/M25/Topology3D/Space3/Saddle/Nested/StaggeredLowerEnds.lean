@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.EndTranspor
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.LowerTubeBall
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +11,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_saddle_nested_staggered_lower_ends
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

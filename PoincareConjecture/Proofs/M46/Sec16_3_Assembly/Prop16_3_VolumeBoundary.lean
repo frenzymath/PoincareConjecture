@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Precompact
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ENNReal Manifold ContDiff Topology
 
 namespace PoincareConjecture.Proofs.M46
-
 
 theorem canonical_modelVolume_mono {n : ℕ} {K r s : ℝ}
     (hK : 0 ≤ K) (hr : 0 ≤ r) (hrs : r ≤ s) :
@@ -28,8 +18,6 @@ theorem canonical_modelVolume_mono {n : ℕ} {K r s : ℝ}
     ((ae_restrict_mem measurableSet_Ioc).mono fun t ht =>
       pow_nonneg (RiemannianMetric.modelS_nonneg hK ht.1.le) _)
     (RiemannianMetric.intervalIntegrable_modelS_pow n K 0 s)
-
-
 
 theorem canonical_smallBall_volume_at_boundary
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

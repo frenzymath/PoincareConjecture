@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredAnnulusMap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
 
 theorem exists_centeredAnnulus_openPartialHomeomorph {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :
@@ -44,9 +31,6 @@ theorem exists_centeredAnnulus_openPartialHomeomorph {L d : ℝ}
         (annulusMap L hL ((((L / 2 : ℝ) : AddCircle (4 * L)) + p.1), p.2)).1,
         0 + (annulusMap L hL ((((L / 2 : ℝ) : AddCircle (4 * L)) + p.1), p.2)).2) = _
     simp only [centeredAnnulusMap, zero_add, sub_eq_add_neg, add_comm]
-
-
-
 
 theorem exists_centeredAnnulus_PL_openPartialHomeomorph {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hwidth : 4 * d < L) :

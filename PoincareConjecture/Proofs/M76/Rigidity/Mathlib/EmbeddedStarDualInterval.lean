@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedFaceDimension
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedStarCofaces
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompleteCofaceDualBlock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_dual_interval_of_embedded_star
     (K : SimplicialComplex ℝ E) [Fintype K.faces]

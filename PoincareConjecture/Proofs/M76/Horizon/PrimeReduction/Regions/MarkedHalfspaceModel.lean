@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

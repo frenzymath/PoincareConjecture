@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialJacobianTrace
 import PoincareConjecture.Proofs.M10.JacobianEvolution
 import PoincareConjecture.Proofs.M04
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponentialJacobian_hasDerivAt
     (hCoordinates : M12MetricPredecessors.{0} n)

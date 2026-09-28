@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderRe
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedPullbackRicci
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedSlab
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 theorem regularSlab_initial_metric (F : SurgeryFlowData.{u})
     {a b : ℝ} (S : SurgeryRegularSlab F.slice F.metric a b) :
     S.flow.metric a = F.metric a := by
@@ -40,9 +30,6 @@ theorem regularSlab_initial_metric (F : SurgeryFlowData.{u})
   cases h2 : F.metric a
   rw [h1, h2] at h
   congr
-
-
-
 
 theorem cylinderTimeCoefficients_eq_event
     (e : SurgeryFlowCylinder F C origin scale I U)
@@ -83,9 +70,6 @@ theorem cylinderTimeCoefficients_eq_event
       if_neg hbefore, cylinder_clock_parameter e] using
         cylinderPhysicalCoefficients_eq_retained e hV hf hmap c hc hT r hr hr'
           hTb hJ hNo _ ht htafter hx
-
-
-
 
 theorem cylinderTimeCoefficients_event_smooth_ricci
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)

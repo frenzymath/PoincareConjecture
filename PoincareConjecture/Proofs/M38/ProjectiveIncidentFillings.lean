@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.IncidentFilledComparison
 import PoincareConjecture.Proofs.M38.WholeComponentAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem projectiveDouble_incident_assembly_of_fillings
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

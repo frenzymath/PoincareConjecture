@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -20,8 +10,6 @@ open scoped ContDiff Topology
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F] {S : Set E}
-
-
 
 theorem norm_iteratedFDerivWithin_le_on_compact
     (hS : UniqueDiffOn ℝ S) (f : ℕ → E → F)
@@ -49,9 +37,6 @@ theorem norm_iteratedFDerivWithin_le_on_compact
         (Finset.mem_range.mpr (Nat.lt_of_not_ge hj))
     exact (hb j x hx).trans ((le_max_left _ _).trans
       (hbj.trans (le_add_of_nonneg_left (le_max_right _ _))))
-
-
-
 
 theorem equicontinuous_iteratedFDerivWithin [LocallyCompactSpace S]
     (hconv : Convex ℝ S) (hS : UniqueDiffOn ℝ S) (f : ℕ → E → F)

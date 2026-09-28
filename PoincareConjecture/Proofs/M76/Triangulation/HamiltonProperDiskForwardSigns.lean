@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskChartSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem affineDiskNormal_mul_ambient_det
     (P : E →ᵃ[ℝ] (E × ℝ)) (A : (E × ℝ) ≃ᵃ[ℝ] (E × ℝ)) (B : E ≃ᵃ[ℝ] E)
@@ -42,9 +30,6 @@ theorem affineDiskNormal_mul_ambient_det
         LinearMap.det (A.linear : (E × ℝ) →ₗ[ℝ] (E × ℝ))) *
         (LinearMap.det (B.linear : E →ₗ[ℝ] E) * (A w).2) := by rw [hnormal']; ring
     _ = _ := by rw [A.linear.det_symm_mul_det, one_mul]
-
-
-
 
 theorem affineDiskNormal_mul_pos_of_forward_piece_signs
     (P Q : E →ᵃ[ℝ] (E × ℝ))

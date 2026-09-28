@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.SquareAnnulusC
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianRim
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.StandardProperDisk
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn

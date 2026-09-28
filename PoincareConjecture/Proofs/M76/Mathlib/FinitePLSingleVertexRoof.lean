@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLAffineLevelPasting
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexRoofOverlap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_finitePL_singleVertex_source_roof_with_pieces (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) {q : E}
@@ -81,10 +67,6 @@ theorem exists_finitePL_singleVertex_source_roof_with_pieces (K : SimplicialComp
       refine ⟨i, ?_⟩
       rw [haband i]
       exact ⟨hi, (hval i hi) ▸ hp.2⟩
-
-
-
-
 
 theorem exists_finitePL_singleVertex_source_roof (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) {q : E}

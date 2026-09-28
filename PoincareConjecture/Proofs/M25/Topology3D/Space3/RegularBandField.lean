@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightBandField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelField
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem tangentHeightVector_ne_zero_of_heightCross (n u : E3)
     (hcross : heightCrossMap u n ≠ 0) : tangentHeightVector n u ≠ 0 := by
@@ -30,10 +17,6 @@ theorem tangentHeightVector_ne_zero_of_heightCross (n u : E3)
   apply (EuclideanSpace.equiv (Fin 3) ℝ).injective
   change WithLp.ofLp n ⨯₃ ((⟪n, u⟫_ℝ / ⟪n, n⟫_ℝ) • WithLp.ofLp n) = 0
   rw [map_smul, cross_self, smul_zero]
-
-
-
-
 
 theorem exists_regular_collar_band_field
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3) (a b : ℝ)

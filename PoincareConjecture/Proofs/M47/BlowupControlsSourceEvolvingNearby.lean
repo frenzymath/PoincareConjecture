@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingNeck
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingCoordinate
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAffineComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem exists_actualCap_nearby_evolving_neck
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

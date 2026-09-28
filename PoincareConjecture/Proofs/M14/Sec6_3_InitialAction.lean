@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalCoherence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 
-
-
 noncomputable def initialValueAction (G : GeneralizedLGeometryTransport n X time I)
     (T : ℝ) (x : G.Point) (Z : G.Horizontal x) (s : ℝ) : ℝ := by
   classical
@@ -35,14 +23,9 @@ noncomputable def initialValueAction (G : GeneralizedLGeometryTransport n X time
 variable {G : GeneralizedLGeometryTransport n X time I} {T τ : ℝ}
   {x y y' : G.Point} {Z : G.Horizontal x}
 
-
-
 theorem initialValueAction_zero (Z : G.Horizontal x) : initialValueAction G T x Z 0 = 0 := by
   unfold initialValueAction
   rw [dif_neg (show ¬ initialValueSurvives G T x Z 0 from fun h => (lt_irrefl 0) h.1)]
-
-
-
 
 theorem initialValuePath_action_eq
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -56,9 +39,6 @@ theorem initialValuePath_action_eq
   apply initialValuePath_curve_eqOn hM04 hM12 P Q
   simpa only [min_self] using Ioo_subset_Icc_self hr
 
-
-
-
 theorem initialValueAction_eq_of_path
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     {s : ℝ} (hs : 0 < s) (P : M14SquareRootInitialValuePath G T (s ^ 2) x y Z) :
@@ -67,9 +47,6 @@ theorem initialValueAction_eq_of_path
   unfold initialValueAction
   rw [dif_pos hsurv]
   exact initialValuePath_action_eq hM04 hM12 (selectedInitialValuePath hsurv) P
-
-
-
 
 theorem initialValueAction_eq_integral_prefix
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

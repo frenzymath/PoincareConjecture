@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.UniformConeDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.MeasureComparison
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,11 +17,8 @@ instance asymptoticCone_measurableSpace (hcomparison : RayComparison p) :
 instance asymptoticCone_borelSpace (hcomparison : RayComparison p) :
     BorelSpace (AsymptoticCone p hcomparison) := ⟨rfl⟩
 
-
 def rescaledRayRange (p : X) (L : ℝ) : Set X :=
   Set.range (fun a : ℝ≥0 × basedMinimizingRays p => rayExtension a.2 (a.1 * L))
-
-
 
 theorem exists_lipschitzOn_source_ray_projection
     (hcomparison : RayComparison p) [Nonempty (basedMinimizingRays p)]
@@ -62,8 +49,6 @@ theorem exists_lipschitzOn_source_ray_projection
   simpa only [inv_mul_eq_div] using
     cone_distance_le_rescaled_ray_distance hcomparison a.2 b.2 a.1 b.1 hL
 
-
-
 theorem image_source_ray_ball_eq_cone_radial_ball
     (hcomparison : RayComparison p) {L : ℝ} (hL : 0 < L)
     (π : X → AsymptoticCone p hcomparison)
@@ -93,8 +78,6 @@ theorem image_source_ray_ball_eq_cone_radial_ball
       nlinarith
     · rw [hπ (a.1, γ)]
       simp only [asymptoticConeRayProjection, hγ, Prod.mk.eta]
-
-
 
 theorem cone_radial_ball_volume_le_source_ball
     [MeasurableSpace X] [BorelSpace X]

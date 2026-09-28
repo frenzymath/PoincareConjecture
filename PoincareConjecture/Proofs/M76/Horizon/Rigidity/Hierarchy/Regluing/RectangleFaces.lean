@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Covering
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ThirdCoordinateLifts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Coverings.PointedFiberTails
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -77,8 +68,6 @@ theorem exists_finite_lifted_compact_family
     obtain ⟨z, hz⟩ := mem_iUnion.mp hx
     exact mem_iUnion.mpr ⟨e z, by simpa only [e.symm_apply_apply] using hz⟩
 
-
-
 theorem exists_finite_rectangle_family
     {X : Type*} [TopologicalSpace X] [T2Space X] [CompactSpace X]
     {p : ℝ} [Fact (0 < p)] {c : C(X, unitInterval × AddCircle p)}
@@ -131,8 +120,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 theorem HamiltonZeroInstalledAnnulusPLArcFibers.mem_frontier_iff_cover_boundary
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 V3} {R : Set X0}
@@ -219,8 +206,6 @@ private theorem polyhedralPL_hamiltonZero_target_rectangle
   change (((((z.2 + 0 : ℝ) : C0), ((0 + thetaReal : ℝ) : C0)),
     (((delta1 - delta0) * z.1 + delta0 : ℝ) : C0))) = _
   simp only [add_zero, zero_add, htheta]
-
-
 
 theorem exists_hamiltonZero_original_annulus_rectangle_faces
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}

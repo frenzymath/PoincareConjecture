@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundCertificate
 import PoincareConjecture.Proofs.M47.LimitCanonicalAlternative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +23,6 @@ private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterv
     ChartedSpace E3 G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance (G : GeneralizedBlowupConvergence V (blowupBackwardInterval ⊤)) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
-
 
 theorem limitCanonical_eventually_round_control
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Caps.Critical
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.NestedSlab
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,13 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -83,7 +70,6 @@ private theorem exists_localExtremum_in_nested_cap (i : Fin 3) :
       refine ⟨q, hq, Or.inr ?_⟩
       simpa only [Pi.neg_apply, neg_neg] using hmin.neg
 
-
 theorem nested_critical_outside_retainedBand_isLocalExtremum
     {q : S2} (hq : q ∉ Saddle.Nested.retainedBand)
     (hc : mfderiv (𝓡 2) 𝓘(Real, Real) Saddle.Nested.height q = 0) :
@@ -107,7 +93,6 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 theorem terminal_nested_model_chart_in_retainedBand
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.Nested.shear (3 / 10))
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -123,8 +108,6 @@ theorem terminal_nested_model_chart_in_retainedBand
   by_contra hout
   exact (nested_critical_outside_retainedBand_isLocalExtremum hout hc).elim hnmin hnmax
 
-
-
 theorem terminal_nested_model_chart_latitude
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.Nested.shear (3 / 10))
     (hform : ∀ x ∈ e.source, inner Real (M.v : E3) (g (e x)) =
@@ -134,8 +117,6 @@ theorem terminal_nested_model_chart_latitude
   rw [hmodel] at hc
   exact Saddle.Nested.critical_latitude_in_saddle_interval_of_height_band hc
     (terminal_nested_model_chart_in_retainedBand d hmodel hform)
-
-
 
 theorem terminal_nested_model_chart_center
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.Nested.shear (3 / 10))
@@ -156,9 +137,6 @@ private def shiftHeight (c : Real) : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ whe
   right_inv y := by simp
   contMDiff_toFun := (contDiff_id.sub contDiff_const).contMDiff
   contMDiff_invFun := (contDiff_id.add contDiff_const).contMDiff
-
-
-
 
 theorem exists_terminal_nested_lower_slices_not_preconnected
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.Nested.shear (3 / 10))

@@ -1,20 +1,12 @@
 import Mathlib.Topology.Order.Monotone
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_first_exit_closed
     {X : Type*} [TopologicalSpace X] {q : ℝ → X} {A : ℝ} (hA : 0 < A)

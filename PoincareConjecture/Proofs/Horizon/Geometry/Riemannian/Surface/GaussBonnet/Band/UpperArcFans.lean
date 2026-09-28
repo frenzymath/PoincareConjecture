@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.RefinedFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.BoundaryFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +34,6 @@ private theorem upper_graph_mem_source {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1) :
   rw [B.band_eq_subgraph]
   simpa only [mem_ofPred_eq, collarParameterEquiv.apply_symm_apply, Prod.fst, Prod.snd] using
     And.intro ht (And.intro (B.height_pos ht).le (le_refl (B.height t)))
-
-
 
 theorem face_preimage_upper_graph (p : Fin B.interface.count × Bool) {t : ℝ}
     (ht : t ∈ Icc (0 : ℝ) 1) {w : Plane}
@@ -96,8 +87,6 @@ private theorem cell_eq_of_open_interval {i j : Fin B.interface.count} {t : ℝ}
   · have hle : i.succ ≤ j.castSucc := hij
     exact False.elim (not_lt_of_ge ((B.cut_strictMono.monotone hle).trans hj.1) hi.2)
 
-
-
 theorem upper_graph_mem_face_carrier_iff (i : Fin B.interface.count) {t : ℝ}
     (ht : t ∈ Icc (0 : ℝ) 1)
     (hi : t ∈ Ioo (B.cut i.castSucc) (B.cut i.succ))
@@ -129,8 +118,6 @@ theorem upper_graph_mem_face_carrier_iff (i : Fin B.interface.count) {t : ℝ}
     rw [B.face_carrier_eq_coordinates]
     exact ⟨collarParameterEquiv.symm (t, 1), B.upper_axis_mem_hull i ⟨hi.1.le, hi.2.le⟩,
       B.face_upper_graph_map i ⟨hi.1.le, hi.2.le⟩⟩
-
-
 
 theorem upper_axis_mem_open_edge (i : Fin B.interface.count) {t : ℝ}
     (hi : t ∈ Ioo (B.cut i.castSucc) (B.cut i.succ)) :
@@ -165,8 +152,6 @@ private theorem refined_vertex_mem_face_hull (p : Fin B.interface.count × Bool)
     exact ⟨x, hx, rfl⟩
   have hs := meshTriangleBasis_subset_support M u (subset_convexHull ℝ _ hr)
   simpa only [M, TriangleMesh.refineByLines_support, TriangleMesh.single_support] using hs
-
-
 
 theorem upper_graph_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -210,8 +195,6 @@ theorem upper_graph_refined_vertex_fan (g : RiemannianMetric 2 S)
       · simp
     _ = Real.pi := hfan
 
-
-
 theorem polygonal_top_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
     (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target)
@@ -247,8 +230,6 @@ theorem polygonal_top_refined_vertex_fan (g : RiemannianMetric 2 S)
     ⟨lt_of_le_of_ne hi.1 hleft, lt_of_le_of_ne hi.2 hright⟩
   rw [← hpoint] at hused ⊢
   exact B.upper_graph_refined_vertex_fan g hF hFi lines i ht hio hused
-
-
 
 theorem upper_graph_actual_mesh_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialMetric
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialScalar
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ variable {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
   (hshort : v * (G.connection v).scalarCurvature z < 1 + gamma)
 
 include hsmall hdisjoint hshort
-
-
 
 theorem standard_initial_neck_axial_derivative
     {y : StandardCapSpace} (hy : y ∈ N.patch.carrier)
@@ -72,8 +61,6 @@ theorem standard_initial_neck_axial_derivative
   refine hb.trans ?_
   have hnorm : 0 ≤ g0.metric.tangentNorm y w := Real.sqrt_nonneg _
   nlinarith [mul_le_mul_of_nonneg_right hsqrt hnorm]
-
-
 
 theorem standard_initial_neck_axial_edist_le_pathELength
     (p : ℝ → StandardCapSpace)

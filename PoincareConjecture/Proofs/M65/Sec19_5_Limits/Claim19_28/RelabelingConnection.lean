@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SpeedRelabeling
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackAlgebra
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem m65CurveVelocity_comp {gamma : ℝ → M} {phi : ℝ → ℝ} {x d : ℝ}
     (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma (phi x))
@@ -41,8 +33,6 @@ theorem m65CurveVelocity_comp {gamma : ℝ → M} {phi : ℝ → ℝ} {x d : ℝ
     mfderiv 𝓘(ℝ, ℝ) (𝓡 n) gamma (phi x)
   change L d = d • L 1
   simpa only [smul_eq_mul, mul_one] using L.map_smul d (1 : ℝ)
-
-
 
 theorem m65Pullback_fixed_relabeling {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {gamma : ℝ → M}

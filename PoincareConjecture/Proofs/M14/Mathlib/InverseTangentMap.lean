@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorField.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +18,6 @@ variable {𝕜 E H M E' H' N EP HP P : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace HP] {L : ModelWithCorners 𝕜 EP HP}
   [TopologicalSpace P] [ChartedSpace HP P]
   {m n : ℕ∞ω} {f : M → N} {x : M}
-
-
-
 
 theorem ContMDiffAt.inverse_mfderiv_const
     (hf : ContMDiffAt I J n f x) (hinv : (mfderiv I J f x).IsInvertible)
@@ -62,9 +50,6 @@ theorem ContMDiffAt.inverse_mfderiv_const
   rw [inCoordinates_eq hfy hy, inCoordinates_eq hy hfy]
   simp only [inverse_equiv_comp, inverse_comp_equiv, ContinuousLinearEquiv.symm_symm]
   rfl
-
-
-
 
 theorem ContMDiffWithinAt.inverse_mfderiv_apply
     {b : P → M} {Y : ∀ z, TangentSpace J (f (b z))} {S : Set P} {z : P}

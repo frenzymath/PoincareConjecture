@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.Ascent
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +17,6 @@ private theorem slab_hessian_mul_radius_le {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1
     ring
   rw [heq]
   nlinarith
-
-
 
 theorem exists_proper_regular_slab_with_scale_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

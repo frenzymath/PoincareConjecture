@@ -7,14 +7,6 @@ import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.FieldSimp
 
-
-
-
-
-
-
-
-
 open Set Filter Metric
 open scoped Topology
 
@@ -77,8 +69,6 @@ private theorem exists_equal_step_chain
     · have hi' : i = n + 1 := le_antisymm hi (Nat.succ_le_of_lt (Nat.lt_of_not_ge hin))
       have hj' : j = n + 1 := le_antisymm hj (Nat.succ_le_of_lt (Nat.lt_of_not_ge hjn))
       simp [hi', hj']
-
-
 
 theorem exists_metric_segment_of_splitting [ProperSpace X]
     (hsplit : ∀ x y : X, ∀ r : ℝ, 0 ≤ r → r ≤ dist x y →

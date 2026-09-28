@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_MinimizerEuler
 import PoincareConjecture.Proofs.M14.Sec6_2_Jacobi
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexKernel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -20,10 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem pathCalculusConclusion
     (hCoordinates : M12MetricPredecessors.{0} n)

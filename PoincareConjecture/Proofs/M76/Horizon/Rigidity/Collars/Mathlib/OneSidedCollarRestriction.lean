@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.InducedOpenImage
 import Mathlib.Topology.UnitInterval
 import Mathlib.Tactic.Linarith
 
-
-
 set_option autoImplicit false
 open Set
 

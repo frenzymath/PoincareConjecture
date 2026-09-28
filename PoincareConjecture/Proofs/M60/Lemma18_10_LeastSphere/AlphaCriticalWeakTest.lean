@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterfa
 import Mathlib.MeasureTheory.Function.Holder
 import Mathlib.Analysis.InnerProductSpace.Dual
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,9 +79,6 @@ private theorem compact_mollification
       (hvc.isCompact.cthickening (r := δ)).of_isClosed_subset (isClosed_tsupport _) hs,
       hs.trans hδO⟩
 
-
-
-
 theorem suNaturalGrowth_weak_test
     {p q : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) (hq : 1 ≤ q)
     [ENNReal.HolderConjugate q p]
@@ -147,8 +136,6 @@ theorem suNaturalGrowth_weak_test
     (memLp_one_iff_integrable.mpr hb) hvtop hφtop htop
   exact tendsto_nhds_unique hsum (by
     simpa only [heq _ (hφ _) (hφc _) (hprops _).2.2] using hright)
-
-
 
 theorem suNaturalGrowth_cutoff_test
     {p q : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) (hq : 1 ≤ q)
@@ -234,9 +221,6 @@ private theorem naturalGrowth_diffQuot_pairing
     ring
   rw [hL, hR, integral_div, integral_div, integral_sub htv hfv,
     integral_sub hft hfv, ht, div_neg, neg_neg]
-
-
-
 
 theorem suNaturalGrowth_nirenberg_identity
     {p q : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤) (hq : 1 ≤ q)
@@ -330,9 +314,6 @@ private theorem weighted_square_tendsto
   have ht := (Lp.tendsto_Lp_iff_tendsto_eLpNorm'' f hf v hv).mpr hlim
   simpa only [Function.comp_def, heq] using hc.tendsto (hv.toLp v) |>.comp ht
 
-
-
-
 theorem suWeightedPotential_weak_bound
     {p r t : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤)
     [Fact (1 ≤ r)] [Fact (1 ≤ t)]
@@ -384,9 +365,6 @@ theorem suWeightedPotential_weak_bound
     (fun j => (hφ j).continuous.memLp_of_hasCompactSupport (hφc j)) htop
   exact le_of_tendsto_of_tendsto hleft (hsum.const_mul c)
     (Eventually.of_forall fun j => hbound (φ j) (hφ j) (hφc j) (hprops j).2.2)
-
-
-
 
 theorem suWeakMap_diffQuot_bounded
     {p : ℝ≥0∞} (hp : 1 ≤ p) (hpfin : p ≠ ⊤)
@@ -464,8 +442,6 @@ theorem suWeakMap_diffQuot_bounded
     simp only [diffQuot_apply_of_ne k hh]
     exact ((ht _).sub (ht _)).div_const h
 
-
-
 theorem suWeakMap_compact_cutoff
     {O : Set Plane} (hO : IsOpen O) {p : ℝ} (hp : 1 < p)
     {u ξ : Plane → ℝ} {du : Fin 2 → Plane → ℝ}
@@ -526,8 +502,6 @@ theorem suWeakMap_compact_cutoff
   · simpa only [hext, zeroExtendMemW1pWitnessP, PiLp.toLp_apply, hw,
       hdvind, hvind] using hext.isWeakGrad i
 
-
-
 theorem suWeakMap_sub_const {O : Set Plane} (hO : IsOpen O)
     {u v : Plane → ℝ} {i : Fin 2}
     (hu : LocallyIntegrable u (volume.restrict O))
@@ -552,7 +526,6 @@ theorem suWeakMap_sub_const {O : Set Plane} (hO : IsOpen O)
   simp_rw [sub_mul]
   rw [integral_sub hui hci, hconst, sub_zero]
   exact hweak phi hphi hc hsupport
-
 
 def suColumnBasis {m : ℕ} (a : Fin m) (i : Fin 2) :
     EuclideanSpace ℝ (Fin m) × EuclideanSpace ℝ (Fin m) :=
@@ -602,8 +575,6 @@ theorem base_mem (S : SUQuadraticWeakSystem u V center R)
       Metric.closedBall (u center) S.targetRadius := by
   exact ⟨hx, (Metric.closedBall_subset_closedBall (by linarith [S.targetRadius_pos]))
     (Metric.ball_subset_closedBall (S.coordinate_range hx))⟩
-
-
 
 theorem operator_memLp (S : SUQuadraticWeakSystem u V center R) :
     let mu := volume.restrict (Metric.ball center R)
@@ -694,8 +665,6 @@ theorem scalar_equation (S : SUQuadraticWeakSystem u V center R) (a : Fin m)
     ((tsupport_smul_subset_left _ _).trans hs)
   simpa only [hp, map_add, map_smul, smul_eq_mul, eta, componentFlux, componentSource,
     Fin.sum_univ_two, mul_comm] using heq
-
-
 
 theorem indicator_equation (S : SUQuadraticWeakSystem u V center R)
     {r : ℝ} (hrR : r ≤ R) (a : Fin m)

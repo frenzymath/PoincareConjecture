@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.ResidualComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.CollarPhaseGroups
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -21,12 +13,9 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
 noncomputable def hamiltonZeroRetainedTangentialMap (phi : C(H0, H0)) (S : Set X0) :
     C(S, C0 × C0) :=
   ⟨fun z => (Q0 (hamiltonZeroAmbientMap phi z)).1, by fun_prop⟩
-
-
 
 theorem FrontierResidualModel.isCoveringMap_installed_component
     {E ι : Type*} [TopologicalSpace E]
@@ -45,10 +34,6 @@ theorem FrontierResidualModel.isCoveringMap_installed_component
     rw [heq]
     exact hg.comp_homeomorph H.symm
   exact M.isCoveringMap_component (hamiltonZeroRetainedTangentialMap phi S) hwhole i
-
-
-
-
 
 theorem FrontierResidualModel.installed_boundary_component
     {E ι : Type*} [TopologicalSpace E]
@@ -125,9 +110,6 @@ theorem FrontierResidualModel.installed_boundary_component
   exact ⟨hBc, hBn, hBF, hclopen, gB,
     (M.isCoveringMap_installed_component phi H g hg hinstalled i).comp_homeomorph J.symm,
     fun _ => rfl⟩
-
-
-
 
 theorem FrontierResidualModel.installed_boundary_component_of_collar
     {E ι : Type*} [TopologicalSpace E]

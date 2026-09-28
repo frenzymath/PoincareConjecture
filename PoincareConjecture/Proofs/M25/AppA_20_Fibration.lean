@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.NonseparatingCompactUnion
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.CertificateAssembly
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.FiniteBackwardExtensionReturn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture
 
 namespace M25
-
-
 
 def CompactNonseparatingFibrationInput : Prop :=
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -37,8 +27,6 @@ def CompactNonseparatingFibrationInput : Prop :=
         F.carrier = Set.univ ∧ F.epsilon = H.epsilon
 
 end M25
-
-
 
 theorem a20_fibration_of_nonseparating
     (hF : M25.CompactNonseparatingFibrationInput.{u}) :

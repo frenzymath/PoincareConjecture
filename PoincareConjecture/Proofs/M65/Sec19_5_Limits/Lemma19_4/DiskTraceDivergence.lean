@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskDivergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Real
 open scoped ContDiff Topology intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65Integral_divergence_loopDisk_of_trace
     (X : LoopPlane → LoopPlane) (d : LoopPlane → ℝ)

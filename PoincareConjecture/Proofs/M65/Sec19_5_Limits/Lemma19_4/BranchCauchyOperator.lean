@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyKernel
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,22 +12,13 @@ namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
-
 def cauchyOperator (h : ℂ → E) (z : ℂ) : E :=
   (Real.pi : ℂ)⁻¹ • ∫ w : ℂ, (z - w)⁻¹ • h w
-
-
-
 
 theorem integrable_cauchyOperator {h : ℂ → E}
     (hh : Continuous h) (hs : HasCompactSupport h) (z : ℂ) :
     Integrable (fun w : ℂ => (z - w)⁻¹ • h w) :=
   (locallyIntegrable_cauchyKernel_sub z).integrable_smul_right_of_hasCompactSupport hh hs
-
-
-
 
 theorem cauchyOperator_eq_convolution (h : ℂ → E) :
     cauchyOperator h = fun z => (Real.pi : ℂ)⁻¹ •
@@ -46,17 +27,11 @@ theorem cauchyOperator_eq_convolution (h : ℂ → E) :
   rw [convolution_eq_swap]
   rfl
 
-
-
-
 theorem continuous_cauchyOperator {h : ℂ → E}
     (hh : Continuous h) (hs : HasCompactSupport h) : Continuous (cauchyOperator h) := by
   rw [cauchyOperator_eq_convolution]
   exact (hs.continuous_convolution_right (ContinuousLinearMap.lsmul ℝ ℂ)
     locallyIntegrable_cauchyKernel hh).const_smul _
-
-
-
 
 theorem contDiff_cauchyOperator {h : ℂ → E} {n : ℕ∞}
     (hh : ContDiff ℝ n h) (hs : HasCompactSupport h) :
@@ -64,9 +39,6 @@ theorem contDiff_cauchyOperator {h : ℂ → E} {n : ℕ∞}
   rw [cauchyOperator_eq_convolution]
   exact (hs.contDiff_convolution_right (ContinuousLinearMap.lsmul ℝ ℂ)
     locallyIntegrable_cauchyKernel hh).const_smul _
-
-
-
 
 theorem fderiv_cauchyOperator_apply {h : ℂ → E}
     (hh : ContDiff ℝ 1 h) (hs : HasCompactSupport h) (z v : ℂ) :

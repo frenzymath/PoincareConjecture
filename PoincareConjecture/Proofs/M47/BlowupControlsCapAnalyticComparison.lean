@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticTolerance
 import PoincareConjecture.Proofs.M47.BlowupControlsCapPhysicalAnalytics
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRecordedJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -30,8 +22,6 @@ noncomputable local instance capAnalyticComparisonCoefficientNorm :
 
 noncomputable local instance capAnalyticComparisonCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_actualCap_analytic_comparison_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A nu : ℝ}

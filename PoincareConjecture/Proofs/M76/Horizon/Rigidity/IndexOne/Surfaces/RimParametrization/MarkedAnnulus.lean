@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.RimParam
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourceAnnulusMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.PrescribedRimChart
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -17,8 +15,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "C32" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_annulus_chart_prescribed_source_rims
     {α β E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

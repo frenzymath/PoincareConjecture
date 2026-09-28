@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.Affine
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.PeriodicDescent
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -32,7 +30,6 @@ theorem exists_integerMatrix_decomposition
     rw [he₂]
     abel
 
-
 def homotopyToAffineOfRealError
     (f : C(AddCircle p × AddCircle p, AddCircle p × AddCircle p))
     (A : Matrix (Fin 2) (Fin 2) ℤ) (E : C(AddCircle p × AddCircle p, ℝ × ℝ))
@@ -55,7 +52,6 @@ def homotopyToAffineOfRealError
     (t : unitInterval) (x : AddCircle p × AddCircle p) :
     homotopyToAffineOfRealError p f A E h (t, x) =
       quotientMap p (E x + (t : ℝ) • (E 0 - E x)) + integerMatrixMap p A x := rfl
-
 
 theorem exists_homotopy_affineIntegerMatrixMap
     (f : C(AddCircle p × AddCircle p, AddCircle p × AddCircle p)) :

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteMotionTangent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteParameterVelocity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,19 +14,11 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
-
 def m64FiniteAnnulusCurrent (g : RiemannianMetric n M)
     (v : ℝ → LoopPlane → M) (i : Fin 2) (p : LoopPlane) : ℝ :=
   g.inner (v 0 p) (curveVelocity (fun s => v s p) 0)
     (mfderivWithin (𝓡 2) (𝓡 n) (v 0) m64AnnulusDomain p
       (EuclideanSpace.basisFun (Fin 2) ℝ i))
-
-
-
-
 
 theorem m64FiniteAnnulusCurrent_continuousOn
     (g : RiemannianMetric n M) {v : ℝ → LoopPlane → M}
@@ -43,10 +31,6 @@ theorem m64FiniteAnnulusCurrent_continuousOn
     ⟨g.toRiemannianMetric⟩
   exact hV.inner_bundle (m64AnnulusWithinColumn_continuousOn hbase i)
 
-
-
-
-
 theorem m64FiniteAnnulusCurrent_eq_pairing
     (g : RiemannianMetric n M) (v : ℝ → LoopPlane → M) (i : Fin 2)
     {p : LoopPlane} (hp : p ∈ interior m64AnnulusDomain) :
@@ -54,10 +38,6 @@ theorem m64FiniteAnnulusCurrent_eq_pairing
       g.inner (v 0 p) (curveVelocity (fun s => v s p) 0)
         (mfderiv (𝓡 2) (𝓡 n) (v 0) p (EuclideanSpace.basisFun (Fin 2) ℝ i)) := by
   rw [m64FiniteAnnulusCurrent, mfderivWithin_of_mem_nhds (mem_interior_iff_mem_nhds.mp hp)]
-
-
-
-
 
 theorem m64FiniteAnnulusCurrent_differentiableAt
     (g : RiemannianMetric n M) {v : ℝ → LoopPlane → M} {p : LoopPlane}
@@ -84,10 +64,6 @@ theorem m64FiniteAnnulusCurrent_differentiableAt
   exact m64FiniteAnnulusCurrent_eq_pairing g v i hq
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem m64ParameterAnnulus_timeVelocity_contMDiffOn
     {Phi : ℝ × E → M} {T : Set ℝ} {O : Set E}

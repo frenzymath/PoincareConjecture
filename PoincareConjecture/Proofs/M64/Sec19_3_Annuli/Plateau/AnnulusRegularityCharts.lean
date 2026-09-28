@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,8 +10,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem m64WeakPartial_comp_linear {m k : ℕ} {O : Set LoopPlane}
     {u W : LoopPlane → EuclideanSpace ℝ (Fin m)} {i : Fin 2}
@@ -63,7 +49,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "S" => interior m64AnnulusDomain
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem M64ObservedWeakAnnulus.exists_local_chart_columns
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

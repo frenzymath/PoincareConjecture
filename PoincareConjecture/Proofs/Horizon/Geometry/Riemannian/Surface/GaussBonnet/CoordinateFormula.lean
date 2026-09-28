@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MetricCorners
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Frame.Chart
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   [MeasurableSpace S] [BorelSpace S] [T3Space S]
   {g : RiemannianMetric 2 S}
-
-
 
 theorem gaussBonnet_coordinateTriangle_of_frame
     (D : LeviCivitaData g)
@@ -102,8 +93,6 @@ theorem gaussBonnet_coordinateTriangle_of_frame
   have hv2 : e.symm (0, 1) = C := hv 2
   rw [hv0, hv1, hv2] at hgb
   exact hgb
-
-
 
 theorem exists_gaussBonnet_coordinateTriangle
     (D : LeviCivitaData g)

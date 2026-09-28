@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.FamilySquareRegularization
 import PoincareConjecture.Proofs.M09.InitialVectorVariation
 import PoincareConjecture.Proofs.M09.SquareChartAtFlow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

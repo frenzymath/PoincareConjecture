@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.CompactSupport
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ variable {E A H M : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [NormedAddCommGroup A] [NormedSpace Real A]
   [TopologicalSpace H] [TopologicalSpace M] [ChartedSpace H M] [T2Space M]
   {I : ModelWithCorners Real A H}
-
-
 
 theorem exists_supported_chart_isotopy
     (e : OpenPartialHomeomorph E M)

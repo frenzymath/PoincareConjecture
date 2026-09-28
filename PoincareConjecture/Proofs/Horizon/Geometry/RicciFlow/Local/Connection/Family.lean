@@ -5,28 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Reg
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -441,9 +419,6 @@ theorem contMDiffOn_connection_family
   have htotal := (contMDiffWithinAt_hom_bundle F
     (s := J ×ˢ U) (x₀ := p)).mpr ⟨contMDiffWithinAt_snd, hB⟩
   exact htotal
-
-
-
 
 theorem contMDiffOn_connection_family_apply
     {g : ℝ → RiemannianMetric n M} {J : Set ℝ}

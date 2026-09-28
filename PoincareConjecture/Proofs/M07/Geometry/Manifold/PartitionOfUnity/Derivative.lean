@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Geometry.Manifold.Notation
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators Topology
@@ -21,7 +12,6 @@ namespace Poincare
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {ι : Type*}
-
 
 theorem mvfderiv_finset_sum (s : Finset ι) (f : ι → M → ℝ) (x : M)
     (v : TangentSpace (𝓡 n) x)
@@ -42,13 +32,11 @@ theorem mvfderiv_finset_sum (s : Finset ι) (f : ι → M → ℝ) (x : M)
     rw [mvfderiv_fun_add hfi hs]
     simp only [add_apply, hsum]
 
-
 theorem mvfderiv_eq_of_eventuallyEq {f h : M → ℝ} {x : M}
     (heq : f =ᶠ[𝓝 x] h) : mvfderiv (𝓡 n) f x = mvfderiv (𝓡 n) h x := by
   unfold mvfderiv
   rw [heq.mfderiv_eq]
   rw [heq.eq_of_nhds]
-
 
 theorem sum_mvfderiv_partition_eq_zero (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
     (x : M) (v : TangentSpace (𝓡 n) x) :
@@ -59,8 +47,6 @@ theorem sum_mvfderiv_partition_eq_zero (ρ : SmoothPartitionOfUnity ι (𝓡 n) 
     exact ρ.sum_finsupport' y (Set.mem_univ y) hy
   rw [mvfderiv_eq_of_eventuallyEq heq, mvfderiv_const]
   rfl
-
-
 
 theorem mvfderiv_partition_mul_eq (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
     (f : ι → M → ℝ) (x : M) (v : TangentSpace (𝓡 n) x) (a : ℝ)
@@ -94,8 +80,6 @@ theorem mvfderiv_partition_mul_eq (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
   simp only [sub_mul, Finset.sum_add_distrib, Finset.sum_sub_distrib,
     ← Finset.mul_sum, hzero, mul_zero, sub_zero]
 
-
-
 theorem abs_partition_mul_sub_le (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
     (f : ι → M → ℝ) (x : M) (a ε : ℝ)
     (hf : ∀ i, x ∈ tsupport (ρ i) → |f i x - a| ≤ ε) :
@@ -106,8 +90,6 @@ theorem abs_partition_mul_sub_le (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
         simpa only [Metric.mem_closedBall, Real.dist_eq] using
           hf i (subset_closure hi)) (convex_closedBall a ε)
   simpa only [smul_eq_mul, Metric.mem_closedBall, Real.dist_eq] using hmem
-
-
 
 theorem abs_mvfderiv_partition_mul_le (ρ : SmoothPartitionOfUnity ι (𝓡 n) M)
     (f : ι → M → ℝ) (x : M) (v : TangentSpace (𝓡 n) x) (a L N : ℝ)

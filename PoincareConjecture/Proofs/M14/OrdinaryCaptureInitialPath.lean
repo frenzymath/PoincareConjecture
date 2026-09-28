@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureInitialVelocity
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureValues
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +28,6 @@ private theorem capture_initial_path_cast {T a b : ℝ} {x y : G.Point}
     (h ▸ P : M14SquareRootInitialValuePath G T b x y Z).path.curve = P.path.curve := by
   cases h
   rfl
-
-
 
 theorem ordinaryCapture_square_initial_velocity
     {τ : ℝ} {y : G.Point} (A : LExponentialFamily F t₀.val τmax c₀)
@@ -83,9 +71,6 @@ theorem ordinaryCapture_square_initial_velocity
       (D.path_capture_eq 0 τ _ y p hc _ (hsq hs)).symm
     _ = e.toSpacetime (θ s, A.squareFamily W s) := by
       rw [hclock, hcurve (hsq hs), A.square_agrees W s ⟨hs0, hsmax⟩]
-
-
-
 
 theorem ordinaryCapture_minimizing_branch_identification
     (hPath : M14PathCalculusConclusion G)

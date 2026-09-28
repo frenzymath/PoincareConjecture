@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M49VolumeLoss
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

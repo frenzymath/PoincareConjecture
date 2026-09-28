@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinarySquareExtension
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryScalarDifferential
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +14,6 @@ variable {n : ℕ} {I : SpacetimeInterval}
   {F : RicciFlow n (EuclideanSpace ℝ (Fin n)) I.domain}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem ordinarySquarePath_euler
     (R : OrdinaryProductRicciGeometry F.metric I)

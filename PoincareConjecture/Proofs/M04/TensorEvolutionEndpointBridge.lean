@@ -14,12 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
-
-
-
-
 theorem hasDerivWithinAt_curvatureTensor_frozen_rhs
     (F : RicciFlow n M J) (t : ℝ) (ht : t ∈ J) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :

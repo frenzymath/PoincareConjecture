@@ -3,16 +3,6 @@ import PoincareConjecture.Statements.M27KappaAlternatives
 import PoincareConjecture.Statements.M28BoundedDistance
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
 
 theorem boundedDistanceServices (h28 : RepairedBoundedDistanceTheory.{u}) :
     ∃ epsilon₁₀ : ℝ, 0 < epsilon₁₀ ∧ epsilon₁₀ ≤ 1 / 200 ∧
@@ -43,8 +31,6 @@ theorem boundedDistanceServices (h28 : RepairedBoundedDistanceTheory.{u}) :
   intro F _hinterval hpinched t ht x hx hcanonical
   exact estimate F hpinched.weak t ht x hx (hcanonical t ht le_rfl)
 
-
-
 theorem kappaDerivativeConstant (h27 : RepairedKappaAlternativeTheory.{u}) :
     ∃ C : ℝ, 0 < C ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -56,9 +42,6 @@ theorem kappaDerivativeConstant (h27 : RepairedKappaAlternativeTheory.{u}) :
   obtain ⟨C, hC, hcertificate⟩ := htheorem (epsilonBar / 2)
     (half_pos hpos) (half_lt_self hpos)
   exact ⟨C, hC, fun K => (hcertificate K).derivatives⟩
-
-
-
 
 theorem kappaServices (h27 : RepairedKappaAlternativeTheory.{u}) :
     ∃ epsilonPrime : ℝ, 0 < epsilonPrime ∧

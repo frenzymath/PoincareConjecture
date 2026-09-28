@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PhysicalBuffer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
-
 noncomputable def coordinateFlowToTarget
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
     (F : RicciFlow n (⟨e.source, e.open_source⟩ : Opens (EuclideanSpace ℝ (Fin n))) J) :
@@ -36,9 +23,6 @@ noncomputable def coordinateFlowToTarget
       (sourceTargetDiffeomorph e)
       ((F.metric t).pullbackOfLocalDiffeomorph (sourceTargetDiffeomorph e).symm
         (sourceTargetDiffeomorph e).symm.isLocalDiffeomorph))
-
-
-
 
 theorem coordinateFlowToTarget_metric
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients.InverseBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {ι E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem HasUniformJetBoundsAt.fderiv {n : ℕ} {f : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt (n + 1) f x) :
     HasUniformJetBoundsAt n (fun i => fderiv ℝ (f i)) x := by
@@ -40,9 +29,6 @@ end Derivative
 
 variable {ι E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem HasUniformJetBoundsAt.inverse_metric {n : ℕ}
     {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {x : ι → E}
@@ -62,9 +48,6 @@ theorem HasUniformJetBoundsAt.inverse_metric {n : ℕ}
     simpa only [norm_iteratedFDeriv_zero] using hC i
   exact hjets.fderiv.comp_of_fderiv houter hA (fun i =>
     (CoordinateTransition.isInvertible_of_uniformEllipticity ha (hell i)).contDiffAt_map_inverse)
-
-
-
 
 theorem hasUniformJetBoundsAt_christoffelBilinear {n : ℕ}
     {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ} {x : ι → E}

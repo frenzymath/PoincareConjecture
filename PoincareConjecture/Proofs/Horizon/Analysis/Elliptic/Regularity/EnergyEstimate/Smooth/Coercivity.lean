@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Substitution.Smooth
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -614,7 +606,6 @@ private theorem principal_pointwise_bound
   · have hη_zero : η x = 0 := image_eq_zero_of_notMem_tsupport hx
     rw [hη_zero]
     simp
-
 
 theorem principal_term_ge_lambda_norm_sq
     {Ω : Set E} (B : SmoothEllipticBilinearForm d Ω)

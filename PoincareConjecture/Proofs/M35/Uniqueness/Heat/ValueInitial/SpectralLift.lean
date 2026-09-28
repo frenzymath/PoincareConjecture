@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.ScalarEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -66,7 +58,6 @@ theorem initialFormState_coeff [Countable ι] (lambda : ι → NNReal) (x : Stat
     (initialForm_energy_lt_top lambda x hT)] with t ht
   intro i
   exact stateOfCoeffs_apply ht i
-
 
 def initialValueState (lambda : ι → NNReal) (x : State ι) (t : ℝ) : State ι :=
   heat lambda (Real.toNNReal t) x

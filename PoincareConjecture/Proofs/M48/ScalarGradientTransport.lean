@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M33RegularHistory
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import PoincareConjecture.Proofs.M04.TensorMetricTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,7 +59,6 @@ namespace M33RegularHistoryData
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W)
 
-
 theorem scalar_gradient {J : Set ℝ} {r C : ℝ}
     (hJ : H.generalized.interval ⊆ J)
     (analytic : SurgeryHighCurvatureAnalyticOn F J r C)
@@ -96,7 +85,6 @@ theorem scalar_gradient {J : Set ℝ} {r C : ℝ}
     simpa only [f, H.scalar_pullback] using hQ
   simpa only [f, H.scalar_pullback] using
     (analytic t (hJ ht) (W.time_subset (H.interval_eq ▸ ht)) (f x) hactual).1
-
 
 theorem pinched_at (t : ℝ) (ht : t ∈ H.generalized.interval)
     (h : SurgeryPinchedAt (F.connection t) t) :

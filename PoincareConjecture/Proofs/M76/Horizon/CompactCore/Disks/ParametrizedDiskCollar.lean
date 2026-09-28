@@ -2,14 +2,6 @@ import Mathlib.Analysis.Normed.Group.Constructions
 import Mathlib.Topology.UnitInterval
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval

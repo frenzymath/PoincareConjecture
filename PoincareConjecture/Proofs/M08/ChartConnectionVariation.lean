@@ -74,4 +74,3 @@ theorem mem_closure_interior_Icc_prod {a b s : ℝ} (hab : a < b)
 end MixedDerivative
 
 end PoincareConjecture.M08
-

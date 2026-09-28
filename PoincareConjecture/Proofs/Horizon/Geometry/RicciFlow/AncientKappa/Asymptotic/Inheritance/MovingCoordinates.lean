@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Coordinates
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

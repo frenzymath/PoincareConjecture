@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.Smoothing.Exhaustion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.GradientGap
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +15,6 @@ open Poincare.Riemannian.Soul
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [NoncompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_smooth_exhaustion_approx_with_regular_band_controls
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -123,7 +113,6 @@ theorem exists_smooth_exhaustion_approx_with_regular_band_controls
     exact (mul_le_mul_of_nonneg_right (neg_le_neg hHη) hi).trans (hhess x hx v)
   · rw [hbandset]
     exact hC.inter_right (isClosed_Icc.preimage hu.continuous)
-
 
 theorem exists_smooth_exhaustion_approx_with_regular_band
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Models
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace
@@ -19,14 +8,11 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.OpenCylinderModel
 
-
 abbrev domain : Opens RoundCylinderSpace :=
   ⟨univ ×ˢ Ioo (0 : ℝ) 1, isOpen_univ.prod isOpen_Ioo⟩
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 noncomputable def ofDiffeomorph (U : Opens M)
     (e : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) domain U ∞)
@@ -88,7 +74,6 @@ noncomputable def ofDiffeomorph (U : Opens M)
     (ofDiffeomorph U e q₀).inverse x = e.symm x := by
   simp only [ofDiffeomorph, Subtype.val_injective.extend_apply]
 
-
 theorem ofDiffeomorph_middleSphere (U : Opens M)
     (e : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) domain U ∞)
     (q₀ : UnitTwoSphere) :
@@ -104,8 +89,6 @@ theorem ofDiffeomorph_middleSphere (U : Opens M)
   · rintro ⟨q, rfl⟩
     exact ⟨(q, 1 / 2), ⟨mem_univ _, rfl⟩,
       ofDiffeomorph_coordinate U e q₀ ⟨(q, 1 / 2), mem_univ _, by norm_num⟩⟩
-
-
 
 theorem exists_of_monotone_open_cover
     (A : ℕ → Opens domain) (V : ℕ → Opens M)

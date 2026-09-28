@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.Variational
 import Mathlib.Analysis.Normed.Operator.Compact.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,7 +11,6 @@ namespace Poincare.Analysis.Dirichlet
 
 variable {V H : Type*} [SeminormedAddCommGroup V] [InnerProductSpace ℝ V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
-
 
 theorem isCompactOperator_completionMap (j : V →L[ℝ] H)
     (hj : IsCompactOperator j) : IsCompactOperator (completionMap j) := by

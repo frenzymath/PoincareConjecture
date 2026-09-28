@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FiniteLabelHomeomorph
 import Mathlib.Topology.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

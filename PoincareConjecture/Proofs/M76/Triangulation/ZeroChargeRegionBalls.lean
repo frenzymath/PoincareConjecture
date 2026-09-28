@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargePairedCapEndpoints
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereGenericSweep
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexThreeRegionSupplier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M76
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem hasZeroChargeAlexanderRegionBalls (hdim : Module.finrank ℝ E = 3) :
     HasZeroChargeAlexanderRegionBalls E := by

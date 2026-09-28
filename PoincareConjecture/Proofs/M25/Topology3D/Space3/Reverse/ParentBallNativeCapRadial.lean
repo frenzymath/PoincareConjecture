@@ -2,21 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarRadialCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def nativeCapAmbientDiffeomorph
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
@@ -33,7 +24,6 @@ noncomputable def nativeCapAmbientDiffeomorph
       rw [hz, abs_zero] at habs
       exact zero_ne_one habs)
     tag.scale_pos.ne'
-
 
 theorem nativeCapAmbientDiffeomorph_spec
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
@@ -84,7 +74,6 @@ theorem nativeCapAmbientDiffeomorph_spec
     rw [hcoords]
     simp only [smul_zero, hbzero, one_mul, mul_neg, sub_eq_add_neg]
 
-
 noncomputable def nativeCapRadialChart
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
     (tag : SurgeryCapTag ψ u)
@@ -96,7 +85,6 @@ noncomputable def nativeCapRadialChart
   let R := (Q.prod (OpenPartialHomeomorph.refl ℝ)).trans r.symm
   (R.trans (nativeCapAmbientDiffeomorph ψ u tag).toHomeomorph.toOpenPartialHomeomorph).trans
     tag.tube
-
 
 theorem nativeCapRadialChart_spec
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

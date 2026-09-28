@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.MorreyRieszKernel
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function
@@ -19,7 +12,6 @@ namespace EuclideanMorrey
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 omit [NeZero d] in
 private lemma continuous_norm_fderiv {u : E → ℝ} (hu : ContDiff ℝ (⊤ : ℕ∞) u) :

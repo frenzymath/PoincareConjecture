@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPolarPullback
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.StrongSquareOperations
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,21 +17,12 @@ local notation "S" => interior m64AnnulusDomain
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 def boundaryAngularColumn (x r : ℝ) (V : Fin 2 → LoopPlane → E) (theta : ℝ) : E :=
   (-r * Real.sin theta) • V 0 (r • angularPoint theta + annulusPoint x 0) +
     (r * Real.cos theta) • V 1 (r • angularPoint theta + annulusPoint x 0)
 
-
-
-
 def boundaryPolarColumn (x rho : ℝ) (V : Fin 2 → LoopPlane → E) (p : LoopPlane) : E :=
   boundaryAngularColumn x (rho * Real.exp (-p 1)) V (p 0 / 2)
-
-
-
 
 theorem boundaryPolarColumn_eq (x rho : ℝ) (V : Fin 2 → LoopPlane → E) (p : LoopPlane) :
     boundaryPolarColumn x rho V p =
@@ -53,9 +36,6 @@ private theorem continuous_memLp_top (f : LoopPlane → ℝ) (hf : Continuous f)
   apply memLp_top_of_bound hf.aestronglyMeasurable C
   filter_upwards [ae_restrict_mem isOpen_interior.measurableSet] with p hp
   exact hC p (interior_subset hp)
-
-
-
 
 theorem boundaryPolarColumn_memLp (x : ℝ) {rho : ℝ} (hrho : 0 < rho)
     (V : Fin 2 → LoopPlane → E)
@@ -71,9 +51,6 @@ theorem boundaryPolarColumn_memLp (x : ℝ) {rho : ℝ} (hrho : 0 < rho)
     funext (boundaryPolarColumn_eq x rho V)]
   exact (MemLp.smul (boundaryPolarStrip_memLp_two x hrho (hV 0)) h0).add
       (MemLp.smul (boundaryPolarStrip_memLp_two x hrho (hV 1)) h1)
-
-
-
 
 theorem boundaryPolarColumn_norm_sq_le (x rho : ℝ) (V : Fin 2 → LoopPlane → E)
     (p : LoopPlane) :
@@ -104,9 +81,6 @@ theorem boundaryPolarColumn_norm_sq_le (x rho : ℝ) (V : Fin 2 → LoopPlane �
   rw [boundaryPolarColumn_eq, neg_mul]
   change ‖u + v‖ ^ 2 ≤ 2 * r ^ 2 * (‖W 0‖ ^ 2 + ‖W 1‖ ^ 2)
   nlinarith [sq_nonneg (‖u‖ - ‖v‖)]
-
-
-
 
 theorem boundaryPolarColumn_integral (x rho s : ℝ) (V : Fin 2 → LoopPlane → E) :
     (∫ t in Icc (0 : ℝ) curvePeriod,

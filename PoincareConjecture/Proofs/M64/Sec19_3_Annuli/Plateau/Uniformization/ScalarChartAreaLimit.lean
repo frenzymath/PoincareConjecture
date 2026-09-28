@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AreaMeasurability
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +21,6 @@ variable {m n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
-
-
 
 theorem scalarC1_composed_gram_tendsto
     (g : RiemannianMetric n M) {f : E → M} {U : Set E} (hU : IsOpen U)
@@ -79,9 +63,6 @@ theorem scalarC1_composed_gram_tendsto
     funext fun j => heq (v j) (hv j) (hvU j)
   rw [heqv, heq u hu huU]
   exact hlim
-
-
-
 
 theorem scalarC1_composed_area_tendsto
     (g : RiemannianMetric n M) {f : E → M} {U : Set E} (hU : IsOpen U)

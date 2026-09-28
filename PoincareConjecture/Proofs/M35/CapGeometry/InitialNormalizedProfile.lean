@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialProfileJets
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCylinderJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem initial_normalized_radial_jetError_tendsto_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

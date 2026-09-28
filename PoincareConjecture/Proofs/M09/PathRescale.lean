@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.PathPrimitive
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology intervalIntegral

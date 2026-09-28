@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TaperedSourceIncidence
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry AffineMap
@@ -19,10 +10,6 @@ namespace TaperedStrip
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_affine_segmentDomain_roof {q w : E} (hqw : q ≠ w)
     {β : ℝ} (hβ : 0 < β) :

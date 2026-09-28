@@ -2,20 +2,9 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
-
 
 theorem m71ProfileAlgebra_neg (w0 : ℝ) (hw : 0 ≤ w0) :
     let c : ℝ := 2 + w0 / (2 * Real.pi)

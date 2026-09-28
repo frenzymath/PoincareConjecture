@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CappedCylinder.HeightStretch
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +35,6 @@ private theorem deriv_ramp_nonneg (t : Real) : 0 ≤ deriv ramp t := by
   rw [hd.deriv]
   exact add_nonneg (mul_nonneg zero_le_one (Real.smoothTransition.nonneg _))
     (mul_nonneg (le_of_not_gt ht) hkm.deriv_nonneg)
-
-
 
 def unequalHeight (a b u w t : Real) : Real :=
   min u w * t + a + (b - a) * Real.smoothTransition (2 * t + 1 / 2) -

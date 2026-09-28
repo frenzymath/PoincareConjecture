@@ -1,20 +1,10 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidence
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 namespace PoincareConjecture.Topology.Surface.Euler
 
 open PoincareConjecture.Surface.Combinatorial.Incidence
-
 
 theorem incidenceMatrix_eq_of_pair_eq {V E : Type*} [DecidableEq V] (ends : E → V × V)
     (e : E) (a b : V) (h : ({(ends e).1, (ends e).2} : Set V) = {a, b})
@@ -24,7 +14,6 @@ theorem incidenceMatrix_eq_of_pair_eq {V E : Type*} [DecidableEq V] (ends : E �
   rcases Set.pair_eq_pair_iff.mp h with ⟨h₁, h₂⟩ | ⟨h₁, h₂⟩
   · simp only [incidenceMatrix, h₁, h₂]
   · simp only [incidenceMatrix, h₁, h₂, add_comm]
-
 
 theorem incidenceMatrix_eq_sum_faceEdge {E F : Type*} [DecidableEq E]
     (faceEdge : F → Fin 3 → E) (adjacent : E → F × F)
@@ -59,7 +48,6 @@ theorem incidenceMatrix_eq_sum_faceEdge {E F : Type*} [DecidableEq E]
     intro k _
     exact if_neg (fun hk => he ⟨k, hk⟩)
 
-
 theorem boundary_comp_eq_zero {V E F : Type*} [Fintype E]
     (faceEdge : F → Fin 3 → E) (corner : F → Fin 3 → V)
     (ends : E → V × V) (adjacent : E → F × F)
@@ -93,14 +81,12 @@ theorem boundary_comp_eq_zero {V E F : Type*} [Fintype E]
     _ = (a + a) + (b + b) + (c + c) := by ring
     _ = 0 := by simp only [CharTwo.add_self_eq_zero]
 
-
 theorem eqvGen_endpoints_of_pair_eq {V E : Type*} (ends : E → V × V)
     (e : E) (a b : V) (h : ({(ends e).1, (ends e).2} : Set V) = {a, b}) :
     Relation.EqvGen (fun x y => ∃ e, ends e = (x, y)) a b := by
   rcases Set.pair_eq_pair_iff.mp h with ⟨h₁, h₂⟩ | ⟨h₁, h₂⟩
   · exact .rel _ _ ⟨e, Prod.ext h₁ h₂⟩
   · exact .symm _ _ (.rel _ _ ⟨e, Prod.ext h₁ h₂⟩)
-
 
 theorem eqvGen_triangle_corners {V E F : Type*}
     (faceEdge : F → Fin 3 → E) (corner : F → Fin 3 → V) (ends : E → V × V)
@@ -121,7 +107,6 @@ theorem eqvGen_triangle_corners {V E F : Type*}
     · exact h₁
     · exact h₂
   exact .trans _ _ _ (.symm _ _ (hbase i)) (hbase j)
-
 
 theorem endpointConnected_of_dual {V E F : Type*}
     (faceEdge : F → Fin 3 → E) (corner : F → Fin 3 → V)

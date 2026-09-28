@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedCylinderChart
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.MetricTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem capturedCylinderCoordinates_atlas_regular
     {X : Type v} [TopologicalSpace X]
@@ -65,10 +51,6 @@ theorem capturedCylinderCoordinates_atlas_regular
   have hi := isInvertible_mfderivWithin_extChartAt_symm (I := 𝓡 3) hy
   rw [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at hi
   exact heinj.comp hi.injective
-
-
-
-
 
 theorem hasUniformJetBoundsAt_capturedCylinderCoordinates_fderiv
     {ι : Type*} {X : ι → Type v} [∀ i, TopologicalSpace (X i)]

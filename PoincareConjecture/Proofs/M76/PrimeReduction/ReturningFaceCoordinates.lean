@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -21,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 open Classical in
-
-
 
 theorem exists_returning_face_coordinates
     {K : SimplicialComplex ℝ E} {v0 v1 v2 : E}

@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Re
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +22,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {J : Set ℝ}
-
-
 
 noncomputable def pullbackDiffeomorph (F : RicciFlow n N J)
     (e : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ N) : RicciFlow n M J :=
@@ -127,8 +118,6 @@ theorem pullbackDiffeomorph_scalarCurvature_mvfderiv
     ((hC.tensor_calculus n N (F.metric t) (F.connection t)).contMDiff_scalarCurvature
       |>.mdifferentiable (by simp) (e x))
     (e.contMDiff.mdifferentiable (by simp) x) w
-
-
 
 theorem finite_harnack_pullbackDiffeomorph
     (hC : RicciFlowCurvatureTheory.{v}) (F : RicciFlow n N J)

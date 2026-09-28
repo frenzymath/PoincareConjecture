@@ -3,14 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.MeasureTheory.Function.AEEqOfIntegral
 import Mathlib.MeasureTheory.Function.LpSeminorm.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -64,7 +56,6 @@ private def kernelDualOperator (K : Lp ℝ 2 (μ.prod ν)) :
         change ⟪K, tensorL2 h (c • f)⟫_ℝ = c * ⟪K, tensorL2 h f⟫_ℝ
         rw [tensorL2_smul_right, inner_smul_right] }
     ‖K‖ (norm_kernelFunctional_le K)
-
 
 def kernelOperator (K : Lp ℝ 2 (μ.prod ν)) : Lp ℝ 2 ν →L[ℝ] Lp ℝ 2 μ :=
   (InnerProductSpace.toDual ℝ (Lp ℝ 2 μ)).symm.toContinuousLinearEquiv.toContinuousLinearMap.comp
@@ -127,7 +118,6 @@ private theorem setIntegral_kernelOperator (K : Lp ℝ 2 (μ.prod ν)) (f : Lp �
       apply integral_congr_ae
       filter_upwards with x
       by_cases hxs : x ∈ s <;> simp [Set.indicator, hxs, W]
-
 
 theorem kernelOperator_ae (K : Lp ℝ 2 (μ.prod ν)) (f : Lp ℝ 2 ν) :
     (kernelOperator K f : α → ℝ) =ᵐ[μ] fun x => ∫ y, K (x, y) * f y ∂ν := by

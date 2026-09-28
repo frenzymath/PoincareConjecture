@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.HessianTensorial
 import Mathlib.Geometry.Manifold.Algebra.Monoid
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -46,20 +38,17 @@ theorem hessian_add_scalar (D : LeviCivitaData g) {f h : M → ℝ}
   simp only [_root_.add_apply]
   ring
 
-
 theorem laplacian_add_scalar (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) 2 f) (hh : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) 2 h)
     (q : M) :
     D.laplacian (fun x ↦ f x + h x) q = D.laplacian f q + D.laplacian h q := by
   simp only [LeviCivitaData.laplacian, hessian_add_scalar D hf hh, Finset.sum_add_distrib]
 
-
 theorem laplacian_const_scalar (D : LeviCivitaData g) (c : ℝ) (q : M) :
     D.laplacian (fun _ ↦ c) q = 0 := by
   simp only [LeviCivitaData.laplacian, LeviCivitaData.hessian,
     LeviCivitaData.hessianOnFields, mvfderiv_const, zero_apply,
     sub_zero, Finset.sum_const_zero]
-
 
 theorem laplacian_finsetSum_scalar {ι : Type*} (D : LeviCivitaData g) (s : Finset ι)
     (f : ι → M → ℝ) (hf : ∀ i ∈ s, ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) 2 (f i)) (q : M) :

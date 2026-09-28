@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCompatibleUnion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {K E ι : Type*} [Field K] [LinearOrder K] [IsStrictOrderedRing K]
   [AddCommGroup E] [Module K E]
-
-
 
 theorem cross_inter_subset_of_common_subcomplex (C D J : SimplicialComplex K E)
     (hJC : J ≤ C) (hJD : J ≤ D) (hinter : C.space ∩ D.space ⊆ J.space)
@@ -42,8 +31,6 @@ theorem cross_inter_subset_of_common_subcomplex (C D J : SimplicialComplex K E)
   exact convexHull_mono hsub hx
 
 omit [IsStrictOrderedRing K]
-
-
 
 def iUnionOfCompatible (C : ι → SimplicialComplex K E)
     (hcross : ∀ i j, ∀ s ∈ (C i).faces, ∀ t ∈ (C j).faces,
@@ -70,15 +57,12 @@ variable (C : ι → SimplicialComplex K E)
     convexHull K (s : Set E) ∩ convexHull K (t : Set E) ⊆
       convexHull K ((s : Set E) ∩ t))
 
-
 theorem faces_iUnionOfCompatible :
     (iUnionOfCompatible C hcross).faces = ⋃ i, (C i).faces := rfl
-
 
 theorem le_iUnionOfCompatible (i : ι) : C i ≤ iUnionOfCompatible C hcross := by
   intro s hs
   exact mem_iUnion.mpr ⟨i, hs⟩
-
 
 theorem space_iUnionOfCompatible :
     (iUnionOfCompatible C hcross).space = ⋃ i, (C i).space := by
@@ -93,14 +77,12 @@ theorem space_iUnionOfCompatible :
     obtain ⟨s, hs, hxs⟩ := mem_space_iff.mp hi
     exact mem_space_iff.mpr ⟨s, mem_iUnion.mpr ⟨i, hs⟩, hxs⟩
 
-
 theorem vertices_iUnionOfCompatible :
     (iUnionOfCompatible C hcross).vertices = ⋃ i, (C i).vertices := by
   ext x
   change ({x} ∈ ⋃ i, (C i).faces) ↔ x ∈ ⋃ i, (C i).vertices
   simp only [mem_iUnion]
   rfl
-
 
 theorem finite_faces_iUnionOfCompatible [Finite ι] (hC : ∀ i, (C i).faces.Finite) :
     (iUnionOfCompatible C hcross).faces.Finite := finite_iUnion hC

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -18,28 +10,20 @@ namespace PoincareConjecture.M76.HamiltonIndexTwoStandard
 
 local notation "P" => ((ℝ × ℝ) × ℝ)
 
-
 def prism (a b : ℝ) : Set P := base 1 ×ˢ Icc a b
-
 
 def band (a b : ℝ) : Set P := baseBoundary 1 ×ˢ Icc a b
 
-
 def endDisk (a : ℝ) : Set P := base 1 ×ˢ {a}
-
 
 def endRim (a : ℝ) : Set P := baseBoundary 1 ×ˢ {a}
 
-
 def lowerOuter (a b : ℝ) : Set P := band a b ∪ endDisk a
-
 
 def upperOuter (a b : ℝ) : Set P := band a b ∪ endDisk b
 
 private theorem base_boundary_subset : baseBoundary 1 ⊆ base 1 :=
   (base_ballPair (by norm_num : (0 : ℝ) < 1)).1
-
-
 
 theorem prism_ballPair {a b : ℝ} (hab : a < b) :
     IsFinitePLBallPair P (prism a b) ((band a b ∪ endDisk a) ∪ endDisk b) := by
@@ -52,13 +36,9 @@ theorem prism_ballPair {a b : ℝ} (hab : a < b) :
     tauto
   rwa [heq] at h
 
-
-
 theorem endDisk_ballPair (a : ℝ) :
     IsFinitePLBallPair (ℝ × ℝ) (endDisk a) (endRim a) :=
   (base_ballPair (by norm_num : (0 : ℝ) < 1)).prod_singleton a
-
-
 
 theorem lowerOuter_ballPair {a b : ℝ} (hab : a < b) :
     IsFinitePLBallPair (ℝ × ℝ) (lowerOuter a b) (endRim b) := by
@@ -95,8 +75,6 @@ theorem lowerOuter_ballPair {a b : ℝ} (hab : a < b) :
         intro h
         exact hab.ne (hx.2.symm.trans h.1.2)
   rwa [heq] at h
-
-
 
 theorem upperOuter_ballPair {a b : ℝ} (hab : a < b) :
     IsFinitePLBallPair (ℝ × ℝ) (upperOuter a b) (endRim a) := by
@@ -141,8 +119,6 @@ private theorem finitePL_identity_of_ball {E V : Type*}
     FinitePiecewiseAffineOn (id : E → E) s := by
   obtain ⟨_, _, _, _, _, _, ⟨_, ⟨K, hK, hKs, _⟩, _⟩, _⟩ := h
   exact ⟨K, hK, hKs, K.affineOnFaces_affine (ContinuousAffineMap.id ℝ E)⟩
-
-
 
 theorem band_identity_finitePL {a b : ℝ} (hab : a < b) :
     FinitePiecewiseAffineOn (id : P → P) (band a b) := by

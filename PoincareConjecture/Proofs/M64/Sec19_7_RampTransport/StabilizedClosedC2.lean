@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapAnnu
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapStripC2
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StabilizedComparisonError
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   {Q : M62.CircleProductData P.flow auxiliary} {time : ℝ}
   {gamma0 gamma1 : ℝ → P.charts.Point}
   {A : M64Annulus (P.flow.metric time) gamma0 gamma1} {r epsilon : ℝ}
-
-
-
 
 theorem stabilized_minimum_closed_c2
     (S : StabilizedSmoothRampApproximation P Q time gamma0 gamma1 A r epsilon) :

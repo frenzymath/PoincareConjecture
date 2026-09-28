@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_SphereGenerator
 import PoincareConjecture.Proofs.M53.Prop15_12_RestrictionNaturality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,9 +16,6 @@ namespace PoincareConjecture.Proofs.M53
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   (S : SmoothEmbeddedNullHomotopicSphere (M := M))
-
-
-
 
 theorem sphereFundamentalClass_relative_not_even
     (L : Set M) (x : Set.range S.sphere) (hx : x.val ∉ L) :
@@ -51,10 +38,6 @@ theorem sphereFundamentalClass_relative_not_even
     homologyMap (integralRelativeRestriction hB) 2) (sphereFundamentalClass S)) at he
   rw [hπ] at he
   exact sphereFundamentalClass_local_not_even S x he
-
-
-
-
 
 theorem sphere_tripleBoundary_restriction_not_even
     {A L : Set M} (hSA : Set.range S.sphere ⊆ A) (hLA : L ⊆ A)

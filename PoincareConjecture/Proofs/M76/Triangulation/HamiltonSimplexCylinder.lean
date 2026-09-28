@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 import PoincareConjecture.Proofs.M76.Triangulation.PLCubeCompression
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonHandleBoundaryGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +14,6 @@ variable {T N E : Type*}
   [NormedAddCommGroup T] [NormedSpace ℝ T] [FiniteDimensional ℝ T]
   [NormedAddCommGroup N] [NormedSpace ℝ N]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_cubical_collar_width
     {D : Set T} (h : closedBall (0 : T) 1 ≃ₜ D) (hh : h.IsFinitePL)

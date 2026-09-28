@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Endpoints
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Reversal
 
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiEnergy
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,9 +78,6 @@ private theorem energyWeight_bound (C : ℝ) {δ : ℝ} (hδ : 0 < δ) :
   exact ⟨B, fun G H hG hGC hHC => hB (G, H)
     ⟨⟨hG, hGC⟩, mem_closedBall_zero_iff.mpr hHC⟩⟩
 
-
-
-
 theorem isothermalEnergyWeight_integrable
     {α : Type*} [MeasurableSpace α] (μ : Measure α) [IsFiniteMeasure μ]
     (G H : α → Matrix (Fin 2) (Fin 2) ℝ)
@@ -107,8 +94,6 @@ theorem isothermalEnergyWeight_integrable
   filter_upwards [hGb, hHb] with z hz hHz
   exact hB (G z) (H z) hz.1 hz.2 hHz
 
-
-
 theorem regularizedGramArea_integrable
     {α : Type*} [MeasurableSpace α] (μ : Measure α) [IsFiniteMeasure μ]
     (H : α → Matrix (Fin 2) (Fin 2) ℝ) (hH : AEStronglyMeasurable H μ) {C : ℝ}
@@ -121,10 +106,6 @@ theorem regularizedGramArea_integrable
   apply (integrable_const B).mono' (hc.comp_aestronglyMeasurable hH)
   filter_upwards [hHb] with z hz
   exact hB (H z) (mem_closedBall_zero_iff.mpr hz)
-
-
-
-
 
 theorem isothermalEnergyWeight_integral_tendsto
     {α : Type*} [MeasurableSpace α] (μ : Measure α) [IsFiniteMeasure μ]
@@ -155,10 +136,6 @@ theorem isothermalEnergyWeight_integral_tendsto
       (positive_regularized_gram (H z) hHz.1 hδ).det_pos.ne').tendsto.comp
         (f := fun n => (G n z + δ • (1 : Matrix (Fin 2) (Fin 2) ℝ), H z))
         ((hz.add tendsto_const_nhds).prodMk_nhds tendsto_const_nhds)
-
-
-
-
 
 theorem regularizedGramArea_integral_tendsto
     {α : Type*} [MeasurableSpace α] (μ : Measure α) [IsFiniteMeasure μ]

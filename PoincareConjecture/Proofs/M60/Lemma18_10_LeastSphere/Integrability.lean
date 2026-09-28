@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.StereographicConform
 import Mathlib.Analysis.SpecialFunctions.JapaneseBracket
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60AreaGram_continuous (g : RiemannianMetric n M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 n) 1 F) :
@@ -45,14 +33,10 @@ theorem m60AreaGram_continuous (g : RiemannianMetric n M)
   exact continuous_pi fun i => continuous_pi fun j =>
     (hcolumn i).inner_bundle (hcolumn j)
 
-
-
 theorem m60AreaDensity_continuous (g : RiemannianMetric n M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 n) 1 F) :
     Continuous (m60AreaDensity g F) :=
   (continuous_const.max (m60AreaGram_continuous g hF).matrix_det).sqrt
-
-
 
 theorem m60EnergyDensity_continuous (g : RiemannianMetric n M)
     {F : LoopPlane → M} (hF : ContMDiff (𝓡 2) (𝓡 n) 1 F) :
@@ -63,8 +47,6 @@ theorem m60EnergyDensity_continuous (g : RiemannianMetric n M)
   have hentry (i j : Fin 2) : Continuous (fun z => m60AreaGram g F z i j) :=
     (continuous_apply j).comp ((continuous_apply i).comp hG)
   exact continuous_const.mul ((hentry 0 0).add (hentry 1 1))
-
-
 
 theorem m60SphereEnergyDensity_bound (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
@@ -88,8 +70,6 @@ theorem m60SphereEnergyDensity_bound (g : RiemannianMetric n M)
   rw [Matrix.trace_fin_two]
   linarith [hcolumn 0, hcolumn 1]
 
-
-
 theorem m60SphereParameter_factor_integrable :
     Integrable (fun z : LoopPlane => 16 / (‖z‖ ^ 2 + 4) ^ 2) volume := by
   have hbase : Integrable (fun z : LoopPlane => ((1 : ℝ) + ‖z‖ ^ 2)⁻¹ ^ 2) volume := by
@@ -109,8 +89,6 @@ theorem m60SphereParameter_factor_integrable :
       inv_anti₀ (by positivity) (by linarith)
     simpa only [inv_pow] using pow_le_pow_left₀ (by positivity) hinv 2
 
-
-
 theorem m60SphereEnergyDensity_integrable (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
     Integrable (m60SphereEnergyDensity g f) volume := by
@@ -121,8 +99,6 @@ theorem m60SphereEnergyDensity_integrable (g : RiemannianMetric n M)
   filter_upwards [] with z
   rw [Real.norm_of_nonneg (m60EnergyDensity_nonneg g (f ∘ m60SphereParameter) z)]
   exact hbound z
-
-
 
 theorem m60SphereAreaDensity_integrable (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :

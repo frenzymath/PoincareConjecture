@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +10,6 @@ namespace Set
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
-
 
 theorem exists_finitePL_marked_graph_of_maps {ι : Type*} [Finite ι]
     (S : ι → Set E) (T : ι → Set F) {a b : E} {c d : F}
@@ -87,11 +72,6 @@ theorem exists_finitePL_marked_graph_of_maps {ι : Type*} [Finite ι]
     obtain ⟨i, hi⟩ := mem_iUnion.mp x.property
     rw [hkeep i ⟨x, hi⟩]
     exact hbe i ⟨x, hi⟩
-
-
-
-
-
 
 theorem exists_finitePL_region_gluing_of_graph {ι : Type*} [Finite ι]
     (S B : ι → Set E) (T C : ι → Set F) {g : Set E} {h : Set F}

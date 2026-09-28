@@ -3,16 +3,12 @@ import Mathlib.Topology.Order.Basic
 import Mathlib.Order.Interval.Set.Infinite
 import Mathlib.Data.Set.Finite.Basic
 
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Analysis.Calculus.Morse
-
-
 
 theorem exists_finite_cuts_between {C : Set Real} (hC : C.Finite) :
     ∃ A : Set Real, A.Finite ∧ Disjoint A C ∧
@@ -31,8 +27,6 @@ theorem exists_finite_cuts_between {C : Set Real} (hC : C.Finite) :
   · intro a ha b hb hab
     let p : J := ⟨(⟨a, ha⟩, ⟨b, hb⟩), hab⟩
     exact ⟨t p, ⟨p, rfl⟩, (ht p).1⟩
-
-
 
 theorem eq_of_same_connected_component_of_cuts
     {C A : Set Real}

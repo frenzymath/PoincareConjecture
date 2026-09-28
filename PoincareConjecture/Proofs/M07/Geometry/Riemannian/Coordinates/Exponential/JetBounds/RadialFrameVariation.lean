@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TransportVariation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Radial
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -35,7 +24,6 @@ private theorem fderiv_radial_map (x : E) (t : ℝ) (v : E) (s : ℝ) :
   rw [hasFDerivAt_fst.fderiv, hasFDerivAt_snd.fderiv]
   rfl
 
-
 theorem covDerivAlong_radial_field_time
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
     (v x : E) (t : ℝ) :
@@ -48,7 +36,6 @@ theorem covDerivAlong_radial_field_time
     one_smul, zero_add]
   exact covariantDerivative_field_radial_all hΓ v x t
 
-
 theorem covDerivAlong_radial_field_space
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
     (v x w : E) (t : ℝ) :
@@ -60,8 +47,6 @@ theorem covDerivAlong_radial_field_space
   rw [covDerivAlong, fderiv_fun_comp (x, t) hY.differentiableAt hq]
   simp only [ContinuousLinearMap.comp_apply, fderiv_radial_map, zero_smul,
     add_zero, map_smul, smul_apply, covariantDerivative, smul_add]
-
-
 
 theorem covDerivAlong_variation_radial_field
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -79,8 +64,6 @@ theorem covDerivAlong_variation_radial_field
     (Filter.Eventually.of_forall fun z => covDerivAlong_radial_field_time hΓ v z.1 z.2)
   simpa only [fderiv_radial_map, smul_zero, one_smul, zero_add, zero_smul,
     add_zero, Function.comp_def] using h
-
-
 
 theorem exists_radial_transport_operator
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ) :

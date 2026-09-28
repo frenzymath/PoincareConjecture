@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationTorsion
 import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
 
 theorem hasDerivAt_variationActionDensity
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)
@@ -87,8 +77,6 @@ private theorem horizontal_transport_heq {q r : G.Point} (h : q = r)
     (v : G.Horizontal q) : HEq (h.symm ▸ v : G.Horizontal r) v := by
   cases h
   rfl
-
-
 
 theorem hasDerivAt_variationActionDensity_zero
     (hCoordinates : M12MetricPredecessors.{0} n)

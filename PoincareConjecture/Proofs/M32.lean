@@ -2,18 +2,6 @@ import PoincareConjecture.Statements.M32HornSelection
 import PoincareConjecture.Proofs.M32.Thm11_31.UniformHeight
 import PoincareConjecture.Proofs.M32.Cor11_36.Downward
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,49 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m32HornSelection
     (P : RepairedHornSelectionPredecessors.{u}) :

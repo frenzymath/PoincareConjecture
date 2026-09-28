@@ -43,5 +43,3 @@ theorem exists_backward_geodesic_extension {J : Set ℝ} {F : RicciFlow n M J}
     hτ₁ p.ordered hτ₂ q' q hq' hq (fun τ hτ ↦ (hq'p τ hτ).trans (hqp τ hτ).symm)
 
 end PoincareConjecture.M08
-
-

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmallConvexHalfspaceNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexCone
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,11 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {ι : Type*} [Finite ι]
-
-
-
-
-
 
 theorem exists_small_closedStar_halfspace_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

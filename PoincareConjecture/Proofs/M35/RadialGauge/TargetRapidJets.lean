@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothTargetCoupling
 import PoincareConjecture.Proofs.M35.RadialGauge.ScalarRapidProducts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem smoothTargetCoupling_rapid_jets {A : Type*} {f : A → ℝ → ℝ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (hf0 : ∀ a, f a 0 = 0)

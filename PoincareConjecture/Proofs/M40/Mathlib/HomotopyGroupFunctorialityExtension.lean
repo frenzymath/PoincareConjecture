@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.DiskHomotopyExtension
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,7 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M40.Topology
 
 noncomputable section
-
 
 theorem isClosed_cube_boundary (n : ℕ) : IsClosed (Cube.boundary (Fin n)) := by
   have h : Cube.boundary (Fin n) =
@@ -33,8 +23,6 @@ theorem isClosed_cube_boundary (n : ℕ) : IsClosed (Cube.boundary (Fin n)) := b
   exact (isClosed_eq (continuous_apply i) continuous_const).union
     (isClosed_eq (continuous_apply i) continuous_const)
 
-
-
 theorem continuous_cube_cons (n : ℕ) :
     Continuous (fun p : unitInterval × (Fin n → unitInterval) =>
       (Fin.cons p.1 p.2 : Fin (n + 1) → unitInterval)) := by
@@ -43,9 +31,6 @@ theorem continuous_cube_cons (n : ℕ) :
   refine Fin.cases ?_ (fun j => ?_) i
   · exact continuous_fst
   · exact (continuous_apply j).comp continuous_snd
-
-
-
 
 theorem exists_cube_boundary_homotopy_extension
     {Y : Type u} [TopologicalSpace Y] (n : ℕ)
@@ -74,9 +59,6 @@ theorem exists_cube_boundary_homotopy_extension
       ⟨(e z.val).val, mem_sphere_zero_iff_norm.mpr ((he z.val).mp z.property)⟩
     have hb : b s = z := Subtype.ext (e.symm_apply_apply z.val)
     exact (hFs t s).trans (congrArg H (Prod.ext rfl hb))
-
-
-
 
 theorem homotopicRel_of_nullhomotopic_boundary_trace
     {Y : Type u} [TopologicalSpace Y] {n : ℕ} {y : Y}
@@ -172,8 +154,6 @@ theorem homotopicRel_of_nullhomotopic_boundary_trace
     · rfl
     · exact (b.property z hz).trans (a.property z hz).symm
     · exact (J.apply_one t).trans (a.property z hz).symm
-
-
 
 theorem homotopicRel_of_uniform_boundary_trace
     {Y : Type u} [TopologicalSpace Y] [SimplyConnectedSpace Y]

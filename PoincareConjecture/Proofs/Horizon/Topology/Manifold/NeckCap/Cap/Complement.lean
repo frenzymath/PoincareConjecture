@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.CoreConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.RampLabelOscillation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.LogarithmicContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M64
-
-
 
 theorem normalizedDegreeOneLift_equicontinuousAt
     (sigma : ℕ → M64PeriodicDegreeOneLift) {x : ℝ}
@@ -40,8 +29,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
 local notation "S" => interior m64AnnulusDomain
-
-
 
 theorem free_ramp_lower_labels_locally_equicontinuous
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)
@@ -72,9 +59,6 @@ theorem free_ramp_lower_labels_locally_equicontinuous
     x rho hrho hxl (by linarith) hradius N hN).trans
     (div_le_div_of_nonneg_right (mul_le_mul_of_nonneg_left (hK j) hC.le)
       (by positivity : (0 : ℝ) ≤ N))
-
-
-
 
 theorem free_ramp_lower_labels_continuous_local_limit
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)

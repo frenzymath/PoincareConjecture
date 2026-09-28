@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialAxisMetric
 import PoincareConjecture.Proofs.M35.Uniqueness.AxisRotations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ private theorem euclidean_inner_coordinates (u v : StandardCapSpace) :
     inner ℝ u v = u 0 * v 0 + u 1 * v 1 + u 2 * v 2 := by
   simp [EuclideanSpace.inner_eq_star_dotProduct, dotProduct, Fin.sum_univ_succ]
   ring
-
-
 
 theorem rotational_metric_form
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -69,8 +58,6 @@ theorem rotational_metric_form
   rw [← huv]
   rw [mul_div_assoc, ← hprod]
   ring
-
-
 
 theorem rotational_metric_angular
     (g : RiemannianMetric 3 StandardCapSpace)

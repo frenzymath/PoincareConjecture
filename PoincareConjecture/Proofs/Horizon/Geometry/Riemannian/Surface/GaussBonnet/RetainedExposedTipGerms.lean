@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedCapClassification
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -25,9 +17,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
-
 
 theorem collar_germ_eq_cap_union_of_not_mem_bands
     (p : T.decomposition.vertices) (R : T.decomposition.regions) {q : S}
@@ -75,8 +64,6 @@ theorem collar_germ_eq_cap_union_of_not_mem_bands
       by_contra (fun hn => hzc (p, s) hn hs)
     exact Or.inl (mem_iUnion.mpr ⟨⟨(p, s), hregion s hqs⟩, hs⟩)
 
-
-
 theorem cap_union_core_union_mem_nhds
     (p : T.decomposition.vertices) (R : T.decomposition.regions) {q : S}
     (hq : ∃ s, q ∈ ((T.caps p).face s).carrier)
@@ -97,8 +84,6 @@ theorem cap_union_core_union_mem_nhds
   rcases hcover with h | h
   · exact Or.inl ((propext_iff.mp hzc).mp h)
   · exact Or.inr h
-
-
 
 theorem vertex_contribution_eq_cap_union_add_core
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) (R : T.decomposition.regions)
@@ -123,8 +108,6 @@ theorem vertex_contribution_eq_cap_union_add_core
   · intro a b h
     cases h
   · rwa [T.cap_parent_support_union p, T.core_parent_support_union R]
-
-
 
 theorem core_complement_cap_union_germ
     (p : T.decomposition.vertices) (R : T.decomposition.regions) {z : Plane}
@@ -151,9 +134,6 @@ theorem core_complement_cap_union_germ
   change _ ↔ ¬ interior _ w at h ⊢
   rwa [hiw] at h
 
-
-
-
 theorem core_frontier_cap_union_germ
     (p : T.decomposition.vertices) (R : T.decomposition.regions) {z : Plane}
     (hz : z ∈ (T.refined.mesh R).toPlaneComplex.support)
@@ -171,8 +151,6 @@ theorem core_frontier_cap_union_germ
         (chartAt Plane (T.chart R : S)).symm _
         (isClosed_iUnion_of_finite (fun s => ((T.caps p).face s).isClosed_carrier))
         ((T.caps p).closure_interior_union) (T.refined.source R hz))
-
-
 
 theorem core_frontier_first_outer_rays
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}
@@ -197,8 +175,6 @@ theorem core_frontier_first_outer_rays
   have hp : chartAt Plane (T.chart R : S) ((T.caps p).firstOuterTip i) = z := by
     rw [← hq, (chartAt Plane (T.chart R : S)).right_inv (T.refined.source R hz)]
   exact hc.trans (by simpa only [hp] using hr)
-
-
 
 theorem core_frontier_second_outer_rays
     (p : T.decomposition.vertices) (R : T.decomposition.regions) (i : Bool) {z : Plane}

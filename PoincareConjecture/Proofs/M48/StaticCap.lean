@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M48.StaticNeck
 import PoincareConjecture.Proofs.M48.StaticTopology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +18,6 @@ variable {M N : Type u}
   [IsManifold (𝓡 3) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
   {g : RiemannianMetric 3 M} {h : RiemannianMetric 3 N}
   {e : Diffeomorph (𝓡 3) (𝓡 3) M N ∞}
-
 
 noncomputable def CapCertificate.m48_pullback (K : CapCertificate h)
     (he : MetricHomothety g h e 1) (H : MetricHomothetyCalculus g h e 1)

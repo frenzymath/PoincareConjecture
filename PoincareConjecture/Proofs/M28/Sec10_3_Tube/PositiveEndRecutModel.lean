@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalPairIsotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Isotopy.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {U : TopologicalSpace.Opens M}
-
-
-
 
 theorem exists_positive_recut_model
     (N : EpsilonNeck g) (T : OpenCylinderModel (U : Set M))

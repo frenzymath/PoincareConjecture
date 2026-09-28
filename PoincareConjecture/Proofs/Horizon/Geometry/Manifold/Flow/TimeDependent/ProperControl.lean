@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +15,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
-
 theorem hasDerivAt_control_along_timeDependent_integralCurve
     {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
     {f : M → ℝ} {γ : ℝ → M} {t : ℝ}
@@ -36,8 +26,6 @@ theorem hasDerivAt_control_along_timeDependent_integralCurve
   change HasDerivAt (fun r => f (γ r))
     (mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f (γ t) ((1 : ℝ) • X t (γ t))) t at hd
   simpa [mvfderiv, NormedSpace.fromTangentSpace] using hd
-
-
 
 theorem abs_control_sub_le_of_timeDependent_derivative_bound
     {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
@@ -53,8 +41,6 @@ theorem abs_control_sub_le_of_timeDependent_derivative_bound
     (fun r hr => by simpa only [Real.norm_eq_abs] using hbound r hr)
     left_mem_uIcc right_mem_uIcc
   simpa only [Real.norm_eq_abs] using h
-
-
 
 theorem exists_compact_confinement_of_proper_control
     {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
@@ -83,8 +69,6 @@ theorem exists_compact_confinement_of_proper_control
 
 variable [IsManifold (𝓡 n) ∞ M] [T2Space M]
 
-
-
 theorem exists_smooth_global_timeDependentFlow_of_proper_control
     {J : Set ℝ} (hJ : IsOpen J) (hcJ : Convex ℝ J)
     {X : ℝ → (x : M) → TangentSpace (𝓡 n) x}
@@ -107,8 +91,6 @@ theorem exists_smooth_global_timeDependentFlow_of_proper_control
   intro s _ x a b hs hab
   obtain ⟨A, hA, hAcontrol⟩ := hbound a b (hs.1.trans hs.2) hab
   exact exists_compact_confinement_of_proper_control hf hproper x hs hA hAcontrol
-
-
 
 theorem exists_smooth_globalFlow_of_proper_clock
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hproper : IsProperMap f)

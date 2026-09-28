@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Collapse.PolarInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Profile.SmoothProfile
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

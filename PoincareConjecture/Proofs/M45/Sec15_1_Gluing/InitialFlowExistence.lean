@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.InitialCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Uniqueness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,23 +15,16 @@ namespace PoincareConjecture.M45
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 theorem curvatureNorm_eq_of_metric_eq {g h : RiemannianMetric n M}
     (D : LeviCivitaData g) (E : LeviCivitaData h) (hgh : g = h) (x : M) :
     D.curvatureTensorNorm x = E.curvatureTensorNorm x := by
   subst h
   exact D.curvatureTensorNorm_eq E x
 
-
-
 theorem ricci_eq_of_same_metric {g : RiemannianMetric n M}
     (D E : LeviCivitaData g) (x : M) (v w : TangentSpace (𝓡 n) x) :
     D.ricci x v w = E.ricci x v w := by
   simp only [LeviCivitaData.ricci, D.curvatureTensor_eq E]
-
-
 
 theorem compact_curvature_le_two_Ico [CompactSpace M]
     {T : ℝ} (hT : 0 < T) (hTle : T ≤ 1 / 16)
@@ -57,8 +41,6 @@ theorem compact_curvature_le_two_Ico [CompactSpace M]
   exact compact_curvature_le_two_of_initial_bound hb G hinit t
     ⟨ht.1, le_min (by dsimp [b]; linarith [ht.2]) (ht.2.le.trans hTle)⟩ x
 
-
-
 noncomputable def withInitialConnection {J : Set ℝ} (F : RicciFlow n M J)
     (D₀ : LeviCivitaData (F.metric 0)) : RicciFlow n M J := by
   classical
@@ -74,8 +56,6 @@ noncomputable def withInitialConnection {J : Set ℝ} (F : RicciFlow n M J)
         intro t ht x v w
         rw [ricci_eq_of_same_metric (D t) (F.connection t)]
         exact F.equation t ht x v w }
-
-
 
 theorem exists_initial_flow_with_curvature [CompactSpace M]
     (hlocal : RicciFlowLocalTheory n M)

@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCoordin
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCollarConstruction
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_MarkedRegionTriangulation
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,10 +13,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 namespace M64IntrinsicTriangleCollar
-
-
-
-
 
 theorem exists_triangulation
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}
@@ -53,12 +45,6 @@ theorem exists_triangulation
   exact ⟨R, v0, v1, vT, hv0, hv1, hvT⟩
 
 end M64IntrinsicTriangleCollar
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_triangle_region_triangulation
     {base alpha beta : ℝ → AnnulusCoordinates}

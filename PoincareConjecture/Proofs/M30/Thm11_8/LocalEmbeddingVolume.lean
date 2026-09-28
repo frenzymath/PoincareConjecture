@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem volumeMeasure_ball_le_of_local_tangent_comparison
     {n : ℕ} {M : Type u} {N : Type v}
@@ -64,9 +53,6 @@ theorem volumeMeasure_ball_le_of_local_tangent_comparison
     (fun x hx => (he x hx).contMDiffWithinAt) hC
     (fun x hx v => (hbound x (subset_closure hx) v).1)
     (hball (C * r)).measurableSet hsmall
-
-
-
 
 theorem ball_volume_lower_bound_of_local_tangent_comparisons
     {n : ℕ} {M : Type u} {N : ℕ → Type v}

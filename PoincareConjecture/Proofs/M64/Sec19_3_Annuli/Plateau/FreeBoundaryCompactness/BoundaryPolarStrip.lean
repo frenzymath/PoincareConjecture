@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarStrip
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,13 +14,8 @@ open Proofs.M58
 
 local notation "S" => interior m64AnnulusDomain
 
-
-
-
 def boundaryPolarStrip (x rho : ℝ) (p : LoopPlane) : LoopPlane :=
   annulusPoint x 0 + (rho * Real.exp (-p 1)) • angularPoint (p 0 / 2)
-
-
 
 theorem boundaryPolarStrip_contDiff (x rho : ℝ) :
     ContDiff ℝ ∞ (boundaryPolarStrip x rho) := by
@@ -36,9 +23,6 @@ theorem boundaryPolarStrip_contDiff (x rho : ℝ) :
   have h1 : ContDiff ℝ ∞ (fun p : LoopPlane => p 1) := by fun_prop
   exact contDiff_const.add ((contDiff_const.mul h1.neg.exp).smul
     (contDiff_angularPoint.comp (h0.div_const 2)))
-
-
-
 
 theorem boundaryPolarStrip_fderiv (x rho : ℝ) (p v : LoopPlane) :
     fderiv ℝ (boundaryPolarStrip x rho) p v =
@@ -59,8 +43,6 @@ theorem boundaryPolarStrip_fderiv (x rho : ℝ) (p v : LoopPlane) :
     EuclideanSpace.coe_proj, Function.comp_apply, Pi.neg_apply, smul_smul, zero_add]
   module
 
-
-
 theorem boundaryPolarStrip_det (x rho : ℝ) (p : LoopPlane) :
     (fderiv ℝ (boundaryPolarStrip x rho) p).det = (rho * Real.exp (-p 1)) ^ 2 / 2 := by
   change LinearMap.det (fderiv ℝ (boundaryPolarStrip x rho) p).toLinearMap = _
@@ -76,8 +58,6 @@ theorem boundaryPolarStrip_det (x rho : ℝ) (p : LoopPlane) :
   simp [EuclideanSpace.basisFun_apply, angularPoint, angularVector]
   nlinarith [congrArg (fun t : ℝ => (rho * Real.exp (-p 1)) ^ 2 * t)
     (Real.sin_sq_add_cos_sq (p 0 / 2))]
-
-
 
 theorem boundaryPolarStrip_injOn (x : ℝ) {rho : ℝ} (hrho : 0 < rho) :
     InjOn (boundaryPolarStrip x rho) S := by
@@ -108,19 +88,13 @@ theorem boundaryPolarStrip_injOn (x : ℝ) {rho : ℝ} (hrho : 0 < rho) :
     linarith
   · exact hheight
 
-
-
 def upperBoundaryShell (x rho : ℝ) : Set LoopPlane :=
   (Metric.closedBall (annulusPoint x 0) rho \
     Metric.closedBall (annulusPoint x 0) (rho * Real.exp (-1))) ∩ {p | 0 < p 1}
 
-
-
 theorem upperBoundaryShell_measurable (x rho : ℝ) : MeasurableSet (upperBoundaryShell x rho) := by
   exact (measurableSet_closedBall.diff measurableSet_closedBall).inter
     (measurableSet_lt measurable_const (by fun_prop))
-
-
 
 theorem boundaryPolarStrip_mapsTo_shell (x : ℝ) {rho : ℝ} (hrho : 0 < rho) :
     MapsTo (boundaryPolarStrip x rho) S (upperBoundaryShell x rho) := by
@@ -144,8 +118,6 @@ theorem boundaryPolarStrip_mapsTo_shell (x : ℝ) {rho : ℝ} (hrho : 0 < rho) :
       constructor <;> linarith
     simpa only [zero_add] using mul_pos (by positivity : 0 < rho * Real.exp (-p 1))
       (Real.sin_pos_of_pos_of_lt_pi hangle.1 hangle.2)
-
-
 
 theorem upperBoundaryShell_subset_interior {x rho : ℝ}
     (hx : rho < x) (hP : x + rho < curvePeriod) (hr : rho < 1) :

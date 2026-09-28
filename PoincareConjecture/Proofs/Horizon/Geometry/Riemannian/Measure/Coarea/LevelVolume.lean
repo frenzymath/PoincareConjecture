@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Regu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.SliceDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChangeOfVariables
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -34,8 +27,6 @@ local instance coarea_finrank :
 
 variable (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin (n + 1))) M)
   (heU : e.target ⊆ U) (hef : ∀ y ∈ e.source, f (e y) = y 0)
-
-
 
 theorem pullbackVolumeDensity_regularLevel_sliceChart
     (z₀ : openLevelSet f U c)
@@ -66,14 +57,12 @@ theorem pullbackVolumeDensity_regularLevel_sliceChart
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
 noncomputable def regularLevelVolume : Measure (openLevelSet f U c) := by
   letI := openLevelSetChartedSpace hf U hreg n c
   letI := isManifold_openLevelSet hf U hreg n c
   exact (regularLevelMetric hf U hreg c g).volumeMeasure
 
 include heU hef in
-
 
 theorem integral_regularLevel_sliceChart
     (z₀ : openLevelSet f U c)
@@ -127,7 +116,6 @@ theorem integral_regularLevel_chart
     exact g.integral_regularLevel_sliceChart hf U hreg c e heU hef z₀ he hei hh
 
 include heU hef in
-
 
 theorem integral_regularLevel_of_support_subset
     (he : ContMDiffOn (𝓡 (n + 1)) (𝓡 (n + 1)) ∞ e e.source)

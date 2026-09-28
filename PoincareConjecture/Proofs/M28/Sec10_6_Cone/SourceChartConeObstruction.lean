@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedEndChordData
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedCurvatureAnnularEmbedding
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.LocalConeObstruction
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
 
 set_option maxHeartbeats 12800000 in
-
 
 def SelectedEndSourceChartObstructionStatement
     (P0 : RicciFlowCurvatureTheory.{0})
@@ -67,11 +56,6 @@ def SelectedEndSourceChartObstructionStatement
             Real.sqrt (R i) * dist (x i z) (q i) ≤ 3 * a / 64) → False
 
 set_option maxHeartbeats 12800000 in
-
-
-
-
-
 
 theorem no_selected_end_source_chart_limit
     (P0 : RicciFlowCurvatureTheory.{0})

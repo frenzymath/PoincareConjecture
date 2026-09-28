@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialKilling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem hessian_centered_metric_quadratic
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -71,8 +59,6 @@ theorem hessian_centered_metric_quadratic
   change D.hessian f p v w = _
   rw [D.hessian_eq_fderiv_sub_christoffel hf, hfirst, zero_apply, sub_zero, hsecond]
   rfl
-
-
 
 theorem laplacian_centered_metric_quadratic
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

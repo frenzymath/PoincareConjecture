@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialCompletion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceAffineBoundaryInverse
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -21,10 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
-
-
-
 
 theorem m64AnnulusRadialCompletion_lower_contMDiffWithinAt
     (f : LoopPlane → M) (c0 c1 : ℝ → M) (x : ℝ) {s r : ℝ}
@@ -71,9 +59,6 @@ theorem m64AnnulusRadialCompletion_lower_contMDiffWithinAt
     (m64AnnulusSourceAffine_symm_halfPlane x hs)
     (m64SourceAffine_symm_center (annulusPoint x 0) s hs.ne')
   simpa only [Function.comp_def, Homeomorph.apply_symm_apply] using hh
-
-
-
 
 theorem m64AnnulusRadialCompletion_upper_contMDiffWithinAt
     (f : LoopPlane → M) (c0 c1 : ℝ → M) (x : ℝ) {s r : ℝ}

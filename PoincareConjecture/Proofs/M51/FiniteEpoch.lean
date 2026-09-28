@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EpochEventCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ universe u
 namespace PoincareConjecture.M51
 
 open M51Numerical
-
-
-
 
 theorem EpochStage.reachBoundary
     {S : RepairedControlledSchedulesData.{u}}

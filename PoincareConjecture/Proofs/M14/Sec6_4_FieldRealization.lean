@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_WeightedFieldCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_4_FixedEndpointBoundary
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
 
 theorem exists_constant_squareVariation (R : M14SquareRootPath G p)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
@@ -44,10 +33,6 @@ theorem exists_constant_squareVariation (R : M14SquareRootPath G p)
   exact (hV s hs v).trans (hV s hs 0).symm
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_variation_of_smooth_horizontalField (R : M14SquareRootPath G p)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (Y : ∀ s, G.Horizontal (R.curve s))
@@ -107,8 +92,6 @@ theorem exists_variation_of_smooth_horizontalField (R : M14SquareRootPath G p)
     simpa only [finsum_eq_sum_of_fintype] using ρ.sum_eq_one hs
   rw [hfield s hs, ← Finset.sum_smul, hsum, one_smul]
 
-
-
 theorem variation_family_fixed_of_square {R : M14SquareRootPath G p}
     (V : M14LVariationData G p R) {t : ℝ} (ht : t ∈ Icc a b)
     (hfix : ∀ v, V.squareFamily (Real.sqrt t) v = R.curve (Real.sqrt t)) :
@@ -119,9 +102,6 @@ theorem variation_family_fixed_of_square {R : M14SquareRootPath G p}
   have heq := V.square_agrees _ hs v hv
   rw [Real.sq_sqrt (p.tau_nonneg.trans ht.1)] at heq
   rw [← heq, hfix v, R.agrees _ hs, Real.sq_sqrt (p.tau_nonneg.trans ht.1)]
-
-
-
 
 theorem exists_initialFixed_variation_of_smooth_horizontalField
     (R : M14SquareRootPath G p) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphRealization
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ namespace PoincareConjecture.M76.CutGraph
 
 variable {X V I : Type*} [TopologicalSpace X]
   [Fintype V] [Fintype I] [DecidableEq V] [DecidableEq I]
-
-
 
 theorem collar_port_iff_height {S : Type*} [TopologicalSpace S]
     {C : Set X} (B : Bool → Set X) (H : ∀ b, S ≃ₜ B b)
@@ -48,9 +38,6 @@ theorem collar_port_iff_height {S : Type*} [TopologicalSpace S]
       rw [← hval, he, W.apply_symm_apply]
     rw [hx]
     exact (H b (W.symm x).1).property
-
-
-
 
 theorem exists_closed_cut_graph_collapse
     (R : Set X) (D : V → Set X) (C : I → Set X)

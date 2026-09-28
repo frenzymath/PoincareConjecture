@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.CutoffComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Nonterminal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Topology Bundle
 
 namespace Poincare.VolumeComparison
-
-
 
 theorem integral_ray_indicator
     {E : Type*} {S : Set E} {θ : E} [SMul ℝ E] {c r : ℝ}
@@ -53,8 +42,6 @@ open Poincare.VolumeComparison Poincare.Analysis.RadialIntegration
 variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
-
-
 
 theorem radial_integral_laplacian_comparison
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g) (hm : 0 < m)

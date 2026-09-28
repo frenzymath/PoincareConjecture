@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.InteriorThickness
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -56,9 +43,6 @@ variable {M : Type*} [TopologicalSpace M]
 local notation "slab(" N ")" => EpsilonNeck.coordinate_map N ''
   (Set.prod univ (Icc (-(3 / 4 : ℝ) * (EpsilonNeck.epsilon N)⁻¹)
     ((3 / 4 : ℝ) * (EpsilonNeck.epsilon N)⁻¹)))
-
-
-
 
 theorem frontier_subset_iUnion_closure_of_quarter_capture
     (hcapture : ∀ i ∈ C.shape.active, i + 1 ∈ C.shape.active →
@@ -109,8 +93,6 @@ theorem frontier_subset_iUnion_closure_of_quarter_capture
   · exact (hout (hcore hc)).elim
   · obtain ⟨i, hi, hxi⟩ := mem_iUnion₂.mp hc
     exact mem_iUnion.mpr ⟨⟨i, hi.1⟩, hxi⟩
-
-
 
 theorem frontier_subset_outer_ends_of_quarter_capture
     (hcapture : ∀ i ∈ C.shape.active, i + 1 ∈ C.shape.active →

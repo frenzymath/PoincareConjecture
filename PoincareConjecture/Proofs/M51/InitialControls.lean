@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M51.Parameters
 import PoincareConjecture.Proofs.M45.InitialGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +18,6 @@ variable (S : RepairedControlledSchedulesData.{u})
     delta t ≤ (M51Numerical.schedule S N C).Delta j)
 
 include hcut in
-
 
 theorem prefix_controls (F : SurgeryFlowData.{u})
     (hP : F.parameters = (M51Numerical.schedule S N C).parameters delta hmono hpos)

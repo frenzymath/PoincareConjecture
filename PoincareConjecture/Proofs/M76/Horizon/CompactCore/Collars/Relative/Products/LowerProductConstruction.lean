@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.LowerProducts
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.EdgeProducts
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -133,6 +131,4 @@ theorem exists_lower_products : Nonempty (SurfaceLowerProducts T) := by
     rw [hval ⟨s, hs, hsc⟩]
     exact hfront ⟨s, hs, hsc⟩ hc hsB
 
-
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

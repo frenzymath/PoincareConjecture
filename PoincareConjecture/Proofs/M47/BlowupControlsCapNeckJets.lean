@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTenso
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,9 +24,6 @@ private noncomputable def capNeckEvaluation (i l : Fin 3) :
     (E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] ℝ :=
   (ContinuousLinearMap.apply ℝ ℝ (EuclideanSpace.basisFun (Fin 3) ℝ l)).comp
     (ContinuousLinearMap.apply ℝ (E →L[ℝ] ℝ) (EuclideanSpace.basisFun (Fin 3) ℝ i))
-
-
-
 
 theorem exists_cap_neck_bilinear_error_jet_bound {g : RiemannianMetric 3 E}
     (N : EpsilonNeck g) (m : ℕ) (hm : m ≤ Nat.floor N.epsilon⁻¹)

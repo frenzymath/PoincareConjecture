@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Local
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
-
 
 theorem localMeshTriangles_parent_unique (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t u : M.Triangle)
@@ -74,7 +63,6 @@ private def localMeshTriangleIdentification (M : TriangleMesh) (f : Plane →ᵃ
   unfold TriangleMesh.localRefinementMesh TriangleMesh.localMeshTriangles
   split_ifs <;> exact ⟨Equiv.refl _, fun s => range_meshTriangleBasis _ s⟩
 
-
 def localMeshTriangleEquiv (M : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ)
     (t : M.Triangle) :
     (M.localRefinementMesh f t).Triangle ≃
@@ -88,8 +76,6 @@ theorem range_meshTriangleBasis_localMeshTriangleEquiv (M : TriangleMesh)
       ((↑) : M.RefinedVertex f → Plane) ''
         ((localMeshTriangleEquiv M f t s).1 : Set (M.RefinedVertex f)) :=
   (localMeshTriangleIdentification M f t).2 s
-
-
 
 def lineRefinementTriangleEquiv (M : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ) :
     (Σ t : M.Triangle, (M.localRefinementMesh f t).Triangle) ≃
@@ -129,8 +115,6 @@ theorem range_meshTriangleBasis_lineRefinementTriangleEquiv (M : TriangleMesh)
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem meshVertexAngleContribution_lineRefinementMesh
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ) (x : S) :
@@ -145,10 +129,6 @@ theorem meshVertexAngleContribution_lineRefinementMesh
   intro s _
   exact coordinateTriangle_vertex_contribution_eq_of_range_eq g F _ _
     (range_meshTriangleBasis_lineRefinementTriangleEquiv M f t s) x
-
-
-
-
 
 theorem lineRefinementMesh_vertex_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSobolevJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory
@@ -16,9 +8,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem fourierCoeff_circle_derivative (f f1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x)
@@ -35,9 +24,6 @@ theorem fourierCoeff_circle_derivative (f f1 : C(AddCircle L, ℂ))
   have h := fourierCoeffOn_derivative (Fact.out : 0 < L) hf
     (f1.continuous.comp (AddCircle.continuous_mk' L)) hb n
   simpa only [hcoeff, sub_zero] using h
-
-
-
 
 theorem hasSum_periodicH1_weight (f f1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x) :
@@ -65,9 +51,6 @@ theorem hasSum_periodicH1_weight (f f1 : C(AddCircle L, ℂ))
     ring
   simpa only [hterm] using (hs f).add (hs f1)
 
-
-
-
 noncomputable def periodicH1Coordinates (f f1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x) :
     lp (fun _ : ℤ => ℂ) 2 :=
@@ -76,9 +59,6 @@ noncomputable def periodicH1Coordinates (f f1 : C(AddCircle L, ℂ))
       (Real.sqrt (1 + (2 * Real.pi * (n : ℝ) / L) ^ 2) : ℂ) * fourierCoeff f n) 2
     rw [memℓp_gen_iff (by norm_num : 0 < (2 : ENNReal).toReal)]
     simpa using (hasSum_periodicH1_weight f f1 hf).summable⟩
-
-
-
 
 theorem periodicH1Coordinates_norm_sq (f f1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x) :
@@ -90,9 +70,6 @@ theorem periodicH1Coordinates_norm_sq (f f1 : C(AddCircle L, ℂ))
     simpa using lp.hasSum_norm (by norm_num : 0 < (2 : ENNReal).toReal)
       (periodicH1Coordinates f f1 hf)
   exact hs.unique (hasSum_periodicH1_weight f f1 hf)
-
-
-
 
 theorem periodicH1Coordinates_reconstruct (f f1 : C(AddCircle L, ℂ))
     (hf : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (f1 (x : AddCircle L)) x) :

@@ -3,15 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Normed.Operator.Banach
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace ContinuousLinearMap
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup F] [InnerProductSpace ℝ F]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
-
-
-
 
 theorem isInvertible_self_comp_adjoint_of_surjective (Q : E →L[ℝ] F)
     (hQ : Function.Surjective Q) : (Q.comp (adjoint Q)).IsInvertible := by
@@ -36,13 +24,8 @@ theorem isInvertible_self_comp_adjoint_of_surjective (Q : E →L[ℝ] F)
   exact ⟨ContinuousLinearEquiv.ofBijective (Q.comp (adjoint Q)) hker
     (LinearMap.range_eq_top.mpr hsurj), rfl⟩
 
-
-
-
 noncomputable def kernelProjectionFormula (Q : E →L[ℝ] F) : E →L[ℝ] E :=
   ContinuousLinearMap.id ℝ E - ((adjoint Q).comp (Q.comp (adjoint Q)).inverse).comp Q
-
-
 
 theorem starProjection_ker_eq_formula (Q : E →L[ℝ] F) (hQ : Function.Surjective Q) :
     Q.ker.starProjection = Q.kernelProjectionFormula := by
@@ -58,9 +41,6 @@ theorem starProjection_ker_eq_formula (Q : E →L[ℝ] F) (hQ : Function.Surject
     have hw' : Q w = 0 := hw
     rw [sub_sub_cancel, adjoint_inner_left, hw', inner_zero_right]
 
-
-
-
 theorem continuousAt_kernelProjectionFormula (Q : E →L[ℝ] F) (hQ : Function.Surjective Q) :
     ContinuousAt (kernelProjectionFormula : (E →L[ℝ] F) → E →L[ℝ] E) Q := by
   have hadj : ContinuousAt (adjoint : (E →L[ℝ] F) → F →L[ℝ] E) Q :=
@@ -74,9 +54,6 @@ theorem continuousAt_kernelProjectionFormula (Q : E →L[ℝ] F) (hQ : Function.
   have hi : ContinuousAt (fun R : E →L[ℝ] F => (R.comp (adjoint R)).inverse) Q :=
     hinverse.comp (f := fun R : E →L[ℝ] F => R.comp (adjoint R)) hS
   exact continuousAt_const.sub ((hadj.clm_comp hi).clm_comp continuousAt_id)
-
-
-
 
 theorem continuous_kernel_starProjection :
     Continuous (fun Q : {Q : E →L[ℝ] F // Function.Surjective Q} => Q.val.ker.starProjection) := by

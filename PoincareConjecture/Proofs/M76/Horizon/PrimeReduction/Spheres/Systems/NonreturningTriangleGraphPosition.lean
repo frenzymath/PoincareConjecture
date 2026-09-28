@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.TriangleGraphPosition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -42,7 +35,6 @@ def InNonreturningTriangleGraphPosition
           (G.vertexAbstractComplex.edgeGraph.neighborSet v).ncard = 1} ⊆
             convexHull ℝ (A '' (a : Set E))
 
-
 theorem InNonreturningTriangleGraphPosition.image_of_fixed
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     {Q : OpenPartialHomeomorph X V3} {S : Set X} {g : E → X}
@@ -57,4 +49,3 @@ theorem InNonreturningTriangleGraphPosition.image_of_fixed
   exact ⟨G, hG, hGT, hGc, hp, hi, he, hf, hc, hreturn⟩
 
 end PoincareConjecture.M76
-

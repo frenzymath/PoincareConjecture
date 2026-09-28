@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Restriction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Regions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,9 +51,6 @@ theorem isConnected_positive_image {U : Opens M}
 
 variable [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem two_sided_partition (N : EpsilonNeck g) (hN : N.IsSeparating)
     (U V : Opens M) (hNU : N.carrier ⊆ U) (hNV : N.carrier ⊆ V)
@@ -159,8 +146,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} {ε : ℝ}
-
-
 
 theorem two_sided_halfchain_partition
     (C : BalancedNeckChain g ε) (hbi : C.shape = .biInfinite) (a : ℤ)

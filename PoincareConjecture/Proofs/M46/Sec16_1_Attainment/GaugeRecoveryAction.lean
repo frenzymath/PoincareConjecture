@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecovery
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeActionLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 noncomputable def gaugeCylinderAction (j : G.gaugeCover.index) {a b : ℝ}
     (theta : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval j)).Point)
     (alpha : ℝ → G.gaugeCover.spatial j)
@@ -33,8 +22,6 @@ noncomputable def gaugeCylinderAction (j : G.gaugeCover.index) {a b : ℝ}
     ((G.gaugeCover.metric j).metric (theta s).val).inner (alpha s) (v s) (v s)) +
   ∫ s in a..b, 2 * s ^ 2 * horizontalScalarCurvature G.leafwise
     ((G.gaugeCover.cylinder j).toSpacetime (theta s, alpha s))
-
-
 
 theorem gaugeCylinderAction_eq (e : AttainmentGauge G) {a b : ℝ}
     (gamma : ℝ → G.Point) (hsrc : MapsTo gamma (Icc a b) e.source) (hab : a ≤ b)
@@ -55,9 +42,6 @@ theorem gaugeCylinderAction_eq (e : AttainmentGauge G) {a b : ℝ}
     rw [e.right_inv (gamma s) (hsrc hs)]
 
 set_option synthInstance.maxHeartbeats 200000 in
-
-
-
 
 theorem gauge_cylinder_action_tendsto (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     (j : G.gaugeCover.index) (x0 : G.gaugeCover.spatial j) {a b : ℝ} (hab : a ≤ b)

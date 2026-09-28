@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Derivatives
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -34,30 +19,15 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {c0 c1 : ℝ → M}
 
-
-
-
-
-
 def M64AnnulusUniformlyOn (f : ℕ → LoopPlane → M) (limit : LoopPlane → M) : Prop :=
   ∀ ε : ℝ, 0 < ε →
     ∀ᶠ k in atTop, ∀ p ∈ m64AnnulusDomain,
       g.edist (f k p) (limit p) < ENNReal.ofReal ε
 
-
-
-
-
-
 def M64AnnulusCommonCircleModulus (f : ℕ → LoopPlane → M) : Prop :=
   ∀ ε : ℝ, 0 < ε → ∃ δ : ℝ, 0 < δ ∧
     ∀ k : ℕ, ∀ s ∈ Icc (0 : ℝ) 1, ∀ x y : ℝ, |x - y| < δ →
       g.edist (f k (annulusPoint x s)) (f k (annulusPoint y s)) < ENNReal.ofReal ε
-
-
-
-
-
 
 def M64AnnulusGramNearlyConformal (f : LoopPlane → M) (epsilon : ℝ) : Prop :=
   0 ≤ epsilon ∧
@@ -68,10 +38,6 @@ def M64AnnulusGramNearlyConformal (f : LoopPlane → M) (epsilon : ℝ) : Prop :
             (mfderiv (𝓡 2) (𝓡 n) f p (EuclideanSpace.basisFun (Fin 2) ℝ j)) -
           scale * (if i = j then (1 : ℝ) else 0)| ≤ epsilon
 
-
-
-
-
 structure M64AnnulusMinimizingSequenceCertificate where
   seed : M64Annulus g c0 c1
   sequence : ℕ → M64Annulus g c0 c1
@@ -79,10 +45,6 @@ structure M64AnnulusMinimizingSequenceCertificate where
   area_tendsto_infimum :
     Tendsto (fun k => (sequence k).area) atTop
       (𝓝 (m64LeastAnnulusArea g c0 c1))
-
-
-
-
 
 noncomputable def m64AnnulusMinimizingSequence_of_seed
     (seed : M64Annulus g c0 c1) :
@@ -93,10 +55,6 @@ noncomputable def m64AnnulusMinimizingSequence_of_seed
     sequence := witness
     sequence_antitone := properties.1
     area_tendsto_infimum := properties.2 }
-
-
-
-
 
 structure M64AnnulusNearlyConformalSequenceCertificate
     (S : M64AnnulusMinimizingSequenceCertificate
@@ -111,11 +69,6 @@ structure M64AnnulusNearlyConformalSequenceCertificate
   conformality_error_tendsto : Tendsto conformality_error atTop (𝓝 0)
   nearly_conformal : ∀ k, M64AnnulusGramNearlyConformal (g := g)
     (S.sequence k).map (conformality_error k)
-
-
-
-
-
 
 structure M64AnnulusWeakGradient (g : RiemannianMetric n M)
     (f : LoopPlane → M) where
@@ -132,20 +85,12 @@ structure M64AnnulusWeakGradient (g : RiemannianMetric n M)
     HasWeakPartialDeriv i (fun z => column i z a)
       (fun z => coordinate z a) (interior m64AnnulusDomain)
 
-
-
-
-
 noncomputable def m64AnnulusWeakEnergyDensity
     (g : RiemannianMetric n M) {f : LoopPlane → M}
     (V : M64AnnulusWeakGradient g f) (p : LoopPlane) : ℝ :=
   (1 / 2 : ℝ) * ∑ i : Fin 2,
     g.pullbackCoefficients (extChartAt (𝓡 n) V.chart_center).symm
       (V.coordinate p) (V.column i p) (V.column i p)
-
-
-
-
 
 structure M64FiniteEnergyContinuousLimit where
   map : LoopPlane → M
@@ -163,10 +108,6 @@ structure M64FiniteEnergyContinuousLimit where
         (gradient.coordinate p) (gradient.column i p) (gradient.column j p) =
         scale * (if i = j then (1 : ℝ) else 0)
 
-
-
-
-
 structure M64CourantLebesgueArzelaCertificate
     (S : M64AnnulusMinimizingSequenceCertificate
       (g := g) (c0 := c0) (c1 := c1)) where
@@ -182,10 +123,6 @@ structure M64CourantLebesgueArzelaCertificate
     (fun k => (S.sequence (subsequence k)).map) limit.map
   common_circle_modulus : M64AnnulusCommonCircleModulus (g := g)
     (fun k => (S.sequence (subsequence k)).map)
-
-
-
-
 
 structure M64HeinzHildebrandtBoundaryCertificate
     (L : M64FiniteEnergyContinuousLimit
@@ -210,11 +147,6 @@ structure M64HeinzHildebrandtBoundaryCertificate
         {p : LoopPlane | cut j.castSucc ≤ p 0 ∧ p 0 ≤ cut j.succ ∧
           0 ≤ p 1 ∧ p 1 ≤ 1}
 
-
-
-
-
-
 def m64Annulus_of_heinzHildebrandt
     (L : M64FiniteEnergyContinuousLimit
       (g := g))
@@ -232,9 +164,6 @@ def m64Annulus_of_heinzHildebrandt
     ae_manifold_differentiable := H.ae_manifold_differentiable
     area_integrable := H.area_integrable }
 
-
-
-
 theorem m64Annulus_of_heinzHildebrandt_piecewise_c1
     (L : M64FiniteEnergyContinuousLimit
       (g := g))
@@ -244,10 +173,6 @@ theorem m64Annulus_of_heinzHildebrandt_piecewise_c1
       (m64Annulus_of_heinzHildebrandt (c0 := c0) (c1 := c1) L H) := by
   exact H.piecewise_c1_on_limit
 
-
-
-
-
 structure M64MorreyLowerSemicontinuityCertificate
     (S : M64AnnulusMinimizingSequenceCertificate
       (g := g) (c0 := c0) (c1 := c1))
@@ -256,10 +181,6 @@ structure M64MorreyLowerSemicontinuityCertificate
   map_eq_limit : A.map = C.limit.map
   area_le_liminf : A.area ≤
     liminf (fun k => (S.sequence (C.subsequence k)).area) atTop
-
-
-
-
 
 theorem M64MorreyLowerSemicontinuityCertificate.area_le_infimum
     (S : M64AnnulusMinimizingSequenceCertificate
@@ -273,25 +194,9 @@ theorem M64MorreyLowerSemicontinuityCertificate.area_le_infimum
     S.area_tendsto_infimum.comp C.subsequence_strictMono.tendsto_atTop
   exact L.area_le_liminf.trans_eq hsub.liminf_eq
 
-
-
-
-
 structure M64FixedBoundaryH0StationarityCertificate
     (A : M64Annulus g c0 c1) : Prop where
   stationarity : M64AnnulusAreaStationary A
-
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable def m64DouglasMorreyAttainmentCertificate_of_pipeline
     [T3Space M] [PreconnectedSpace M]
@@ -343,12 +248,6 @@ noncomputable def m64DouglasMorreyAttainmentCertificate_of_pipeline
         atTop (𝓝 (m64LeastAnnulusArea g c0 c1)) :=
       S.area_tendsto_infimum.comp C.subsequence_strictMono.tendsto_atTop
     exact (L.area_le_liminf.trans_eq hsub.liminf_eq)
-
-
-
-
-
-
 
 def M64AnnulusMovingBoundaryCompetitor
     (variation : ℝ × LoopPlane → M) : Prop :=

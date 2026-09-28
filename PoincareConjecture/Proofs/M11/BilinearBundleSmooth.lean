@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.FiniteDimensionalSmooth
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

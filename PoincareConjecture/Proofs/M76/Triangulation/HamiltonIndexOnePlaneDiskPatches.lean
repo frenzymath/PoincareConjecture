@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoordinateHalfBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,10 +10,6 @@ open Set Geometry CoordinateHalfBoxes
 namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V" => ((ℝ × ℝ) × ℝ)
-
-
-
-
 
 theorem exists_disk_patch_of_plane_chart {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLChartMaps
 import PoincareConjecture.Proofs.M76.Mathlib.StableCylinderSpatialProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableCylinder
-
-
-
-
-
 
 theorem plInCharts_spatial_product
     {E F X Y ι κ : Type*}

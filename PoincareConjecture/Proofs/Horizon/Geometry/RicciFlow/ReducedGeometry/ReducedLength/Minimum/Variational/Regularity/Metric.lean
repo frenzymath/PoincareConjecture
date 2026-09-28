@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,8 +80,6 @@ theorem metricInChart_joint_contMDiffOn {J : Set ℝ} (F : RicciFlow n M J) (x :
       (subset_univ (chartAt (EuclideanSpace ℝ (Fin n)) x).source))
   simpa only [metricInChart, e] using
     ((Bundle.Trivialization.contMDiffOn_iff (e := e) he).mp hsmooth).2
-
-
 
 def chartActionDomain {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (x : M) :
     Set (ℝ × EuclideanSpace ℝ (Fin n)) :=

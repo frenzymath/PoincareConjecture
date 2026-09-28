@@ -161,4 +161,3 @@ theorem closedChartChristoffel_connection {J C : Set ℝ} (F : RicciFlow n M J)
   exact (ne_of_gt (g.pos y (a - b) (sub_ne_zero.mpr hne))) hz
 
 end PoincareConjecture.M08
-

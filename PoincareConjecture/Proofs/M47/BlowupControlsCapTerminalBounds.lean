@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRetained
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -35,8 +26,6 @@ noncomputable local instance capTerminalTwoJetNorm : NormedAddCommGroup (MetricT
 
 noncomputable local instance capTerminalTwoJetSpace : NormedSpace ℝ (MetricTwoJet 3) :=
   Prod.normedSpace
-
-
 
 theorem cap_preterminal_retained_of_comparison_estimates
     (P : M44CapPersistencePredecessors.{u})

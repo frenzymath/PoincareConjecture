@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRetainedTensor
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialStaticRecenter
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -25,9 +15,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
-
 
 theorem exists_source_initial_older_family
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

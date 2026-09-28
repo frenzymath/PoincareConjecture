@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalScalarStability
 import PoincareConjecture.Proofs.M47.CanonicalMetricStability
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem scalarCurvatureSupOn_eq_closure [CompactSpace M]
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -41,8 +30,6 @@ theorem scalarCurvatureSupOn_eq_closure [CompactSpace M]
     simpa only [scalarCurvatureSupOn, ← image_eq_range] using heq.symm
   · have hAempty : A = ∅ := not_nonempty_iff_eq_empty.mp hA
     simp only [hAempty, closure_empty]
-
-
 
 theorem continuous_scalarSup_on_set [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow 3 M J)
@@ -75,8 +62,6 @@ private theorem cap_scalarSup_pos {g : RiemannianMetric 3 M} (N : CapCertificate
     rintro _ ⟨y, rfl⟩
     exact hratio x hxcarrier y.val y.property
   exact (N.scalar_pos x hxcarrier).trans_le (le_csSup hb ⟨⟨x, hxcarrier⟩, rfl⟩)
-
-
 
 theorem cap_intrinsic_diameter_bound_persists [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
@@ -126,8 +111,6 @@ theorem cap_intrinsic_diameter_bound_persists [CompactSpace M]
   have hof := (ENNReal.ofReal_lt_ofReal_iff hpositive).mpr hs
   rw [ENNReal.ofReal_mul (Real.exp_pos _).le, ENNReal.ofReal_toReal hDfinite] at hof
   exact hof
-
-
 
 theorem cap_volume_bound_persists [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

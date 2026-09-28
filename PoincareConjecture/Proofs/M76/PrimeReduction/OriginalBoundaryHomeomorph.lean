@@ -1,21 +1,10 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_original_boundary_homeomorph
     {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]

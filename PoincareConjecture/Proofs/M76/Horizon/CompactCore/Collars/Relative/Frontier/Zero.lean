@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Frontier.Vertex
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.Base
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (T : CoorientedSurfaceStars E)
 
 open Classical in
-
-
 
 theorem frontier_vertex_zero_data (p : (T.marked 2).vertices)
     (hpfront : (p : E) ∈ (T.marked 1).space) :
@@ -68,4 +64,3 @@ theorem frontier_vertex_zero_data (p : (T.marked 2).vertices)
     hAzero, hQzero⟩
 
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

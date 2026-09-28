@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Subd
 import Mathlib.Algebra.Category.ModuleCat.Abelian
 import Mathlib.Algebra.Category.ModuleCat.Colimits
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -96,7 +88,6 @@ theorem singularEdgeChain_cycle (ends : I → Bool → V) (a : V → X)
     singularEdgeChain A X ends a p c ≫ ((TopCat.toSSet.obj X).chainComplex A).d 1 0 = 0 := by
   rw [singularEdgeChain_boundary, c.property, map_zero]
 
-
 noncomputable def singularCycleLift (ends : I → Bool → V) (a : V → X)
     (p : ∀ i, Path (a (ends i false)) (a (ends i true))) :
     LinearMap.ker (incidenceBoundary (K := K) ends) →ₗ[K]
@@ -112,8 +103,6 @@ noncomputable def singularCycleLift (ends : I → Bool → V) (a : V → X)
     apply (cancel_mono (((TopCat.toSSet.obj X).chainComplex A).iCycles 1)).mp
     simp only [Linear.smul_comp, HomologicalComplex.liftCycles_i,
       Submodule.coe_smul, map_smul, RingHom.id_apply]
-
-
 
 noncomputable def singularCycleClass (ends : I → Bool → V) (a : V → X)
     (p : ∀ i, Path (a (ends i false)) (a (ends i true))) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapThreeArrays
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseCoefficients
 import PoincareConjecture.Proofs.M47.BlowupControlsCapMetricSymmetry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +39,6 @@ theorem cap_gramDerivative_components_normal
     (fun y => M04.frameGramOperator g1 y e.toContinuousLinearMap) x (e (b i))) (b k)) = _
   rw [real_inner_comm, cap_frameGram_fderiv_normal D0 e x hzero]
   exact cap_metricDifference_derivative_symm D0 x (e (b i)) (e (b k)) (e (b j))
-
-
 
 theorem cap_inverseDerivative_tensor_norm_le
     {g0 g1 : RiemannianMetric 3 V} (D0 : LeviCivitaData g0)

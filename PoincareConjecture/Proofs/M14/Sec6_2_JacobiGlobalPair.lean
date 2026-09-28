@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCover
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGluing
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,9 +23,6 @@ private noncomputable def horizontalPhaseEncoding (s : ℝ) :
   let e := (VectorBundle.continuousLinearEquivAt ℝ (EuclideanSpace ℝ (Fin n))
     G.Horizontal (R.curve s)).symm.toEquiv
   e.prodCongr e
-
-
-
 
 theorem exists_horizontalJacobiPair
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -65,9 +53,6 @@ theorem exists_horizontalJacobiPair
     exact gaugeHorizontalJacobiPair_unique (b i) hCoordinates hscalar (W i) hM04 (β i s).2
       (hβ.mono hsub) (fun v hv => hrec v (hsub hv)) (fun v hv => hclock v (hsub hv))
       hf hg hs hinit
-
-
-
 
 theorem horizontalJacobiPair_unique
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

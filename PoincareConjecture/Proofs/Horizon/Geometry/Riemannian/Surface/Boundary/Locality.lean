@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.FrameChange
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
-
 
 theorem connection_eq_of_eventuallyEq_along_curve
     (D : LeviCivitaData g) {γ : ℝ → S} {t : ℝ}
@@ -70,8 +61,6 @@ theorem connection_eq_of_eventuallyEq_along_curve
     (D.connection W (γ t) v)]
   rw [hcoord e₁ ((he₁.contMDiffAt (hU.mem_nhds ht)).mdifferentiableAt (by simp)),
     hcoord e₂ ((he₂.contMDiffAt (hU.mem_nhds ht)).mdifferentiableAt (by simp))]
-
-
 
 theorem surfaceTurningForm_eq_of_eventuallyEq_along_curve
     (D : LeviCivitaData g) {γ : ℝ → S} {t : ℝ}

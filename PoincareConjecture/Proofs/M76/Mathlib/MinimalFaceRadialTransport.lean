@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_open_face_hulls_contain_point
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (q : E) :
@@ -44,11 +29,6 @@ theorem exists_open_face_hulls_contain_point
   obtain ⟨p, hpt, hpD⟩ := hmeet
   exact hpD (mem_iUnion₂.mpr ⟨t, ⟨ht, hqt⟩, hpt⟩)
 
-
-
-
-
-
 theorem mem_intrinsicInterior_of_segment_face_incidence
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     {s : Finset E} (hs : s ∈ K.faces)
@@ -66,11 +46,6 @@ theorem mem_intrinsicInterior_of_segment_face_incidence
     (convex_convexHull ℝ _).segment_subset hqt (intrinsicInterior_subset hpt) hsegment
   have hts : t = s := hmax t ht (K.subset_of_mem_intrinsicInterior_face hs ht ha hat)
   exact hts ▸ ⟨hqt, hpt⟩
-
-
-
-
-
 
 theorem mem_triangle_interior_of_radial_face_neighborhood
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

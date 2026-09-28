@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Reaction
 import Mathlib.LinearAlgebra.SesquilinearForm.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric n M}
 
 omit [T2Space M] in
-
 
 theorem curvatureTensor_radial_eq_zero_of_null_plane
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -49,7 +36,6 @@ theorem curvatureTensor_radial_eq_zero_of_null_plane
   rwa [(hD.2.2.2.1 x v w z w).2.1] at h
 
 omit [T2Space M] in
-
 
 theorem curvatureReaction_null_plane_eq_curvatureB
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -72,8 +58,6 @@ theorem curvatureReaction_null_plane_eq_curvatureB
     rw [(hD.2.2.2.1 x v w v z).2.1, hsecond]
   have h := D.movingInput_curvatureB_reaction hD x v w v w
   simpa only [hfirst, hsecond, hthird, hlast, add_zero] using h
-
-
 
 theorem tensorLaplacian_nonneg_on_null_plane
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -120,8 +104,6 @@ theorem tensorLaplacian_nonneg_on_null_plane
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem curvatureReaction_nonpos_on_terminal_null_plane
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]

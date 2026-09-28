@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.ComponentEstimateCylinder
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveLocalIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
-
 
 theorem component_cylinder_positive_iff
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.UnitNeighborhood
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem coneRadius_bounds_of_isometric_coordinateBall
     (hc : RayComparison p) (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -75,8 +65,6 @@ theorem coneRadius_pos_uniformBallRestriction
     0 < asymptoticConeRadius hc (g.uniformBallRestriction hr e x) :=
   coneRadius_pos_of_isometric_coordinateBall hc g hr hrsmall hbound η e he hcenter _
 
-
-
 theorem coneRadius_pos_of_quotient_coordinateRealization
     (hc : RayComparison p) (g : ℕ → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     {r : ℝ} (hr : 0 < r) (hrsmall : r < 1 / 8)
@@ -107,7 +95,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p)
   {Q : Type*} (f : Q → AsymptoticCone p hc)
   (hpos : ∀ q, 0 < asymptoticConeRadius hc (f q))
-
 
 def positiveConeRealization : Q → AsymptoticConePositive p hc :=
   fun q => ⟨f q, hpos q⟩
@@ -143,8 +130,6 @@ theorem unitSlice_subset_range_positiveConeRealization
       {z : AsymptoticConePositive p hc | asymptoticConeRadius hc z.val = 1} =
       f ⁻¹' {z : AsymptoticCone p hc | asymptoticConeRadius hc z = 1} := rfl
 
-
-
 theorem positiveConeRealization_metric_edist
     {n : ℕ} [ChartedSpace (EuclideanSpace ℝ (Fin n)) (AsymptoticConePositive p hc)]
     [IsManifold (𝓡 n) ∞ (AsymptoticConePositive p hc)]
@@ -160,8 +145,6 @@ end Poincare.AncientVolume.ScalarRatio
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem exists_positive_quotient_realization
     (hc : RayComparison p) (g : ℕ → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -191,8 +174,6 @@ theorem exists_positive_quotient_realization
     range_positiveConeRealization hc f hpos,
     unitSlice_subset_range_positiveConeRealization hc f hpos hunit, rfl⟩
 
-
-
 theorem positive_quotient_realization_chart_dist
     (hc : RayComparison p) (g : ℕ → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
     {r : ℝ} (hr : 0 < r)
@@ -206,8 +187,6 @@ theorem positive_quotient_realization_chart_dist
   change dist (fP (O.include j x)).val (fP (O.include j y)).val = _
   rw [hinclude, hinclude]
   exact (g j).uniformBallRestriction_dist hr (e j) (he j) x y
-
-
 
 theorem positive_quotient_realization_chart_edist
     (hc : RayComparison p) (g : ℕ → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

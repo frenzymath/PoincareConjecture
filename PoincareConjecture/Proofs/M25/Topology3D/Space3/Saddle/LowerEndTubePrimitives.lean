@@ -6,22 +6,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_end_height_clamp (a b d : ℝ)
     (hab : a < b) (hd : 0 < d) :
@@ -63,8 +53,6 @@ theorem exists_saddle_end_height_clamp (a b d : ℝ)
     rw [chi.one_of_mem_closedBall hball, mul_one]
     ring
 
-
-
 theorem exists_saddle_end_circle_buffer
     (U : Set (UnitCircle × ℝ)) (hU : IsOpen U)
     (a b : ℝ) (hab : a ≤ b)
@@ -88,8 +76,6 @@ theorem exists_saddle_end_circle_buffer
     · exact ⟨(q, z), ⟨mem_univ _, le_of_not_gt hza, le_of_not_gt hbz⟩,
         by simpa only [dist_self] using hd⟩
 
-
-
 theorem exists_saddle_end_disc_buffer (K : Set ℝ) (hK : IsCompact K)
     (U : Set (E2 × ℝ)) (hU : IsOpen U)
     (hsub : closedBall (0 : E2) 1 ×ˢ K ⊆ U) :
@@ -100,9 +86,6 @@ theorem exists_saddle_end_disc_buffer (K : Set ℝ) (hK : IsCompact K)
     (isCompact_closedBall (0 : E2) 1).exists_thickening_subset_open hV hball
   rw [thickening_closedBall hd zero_le_one] at hdV
   exact ⟨d + 1, by linarith, (prod_mono hdV hKJ).trans hVJ⟩
-
-
-
 
 theorem exists_saddle_end_chart_reparam
     (e : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))
@@ -175,8 +158,6 @@ theorem exists_saddle_end_chart_reparam
     continuousOn_invFun := hg.continuousOn }
   exact ⟨f, fun _ => rfl, fun _ => rfl, rfl, rfl, hf, hg, fun _ => rfl⟩
 
-
-
 theorem exists_saddle_end_fiber_chart
     (e : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))
     (he : ContDiffOn ℝ ∞ e e.source)
@@ -238,8 +219,6 @@ theorem exists_saddle_end_fiber_chart
     continuousOn_toFun := hf.continuousOn
     continuousOn_invFun := hg.continuousOn }
   exact ⟨⟨chart, hdisc, hf, hg⟩, fun _ => rfl, fun _ => rfl, rfl, rfl⟩
-
-
 
 theorem exists_saddle_end_common_circles
     (Q R : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

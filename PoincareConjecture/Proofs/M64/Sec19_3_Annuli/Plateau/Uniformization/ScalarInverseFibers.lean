@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarInverseConformal
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Angle
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
-
-
-
 
 theorem scalarCoverMap_fiber {z w : Cover}
     (hz : z ∈ scalarCoverStrip) (hw : w ∈ scalarCoverStrip)
@@ -52,10 +38,6 @@ theorem scalarCoverMap_fiber {z w : Cover}
   change z.2 = w.2 + (k : ℝ)
   apply mul_left_cancel₀ (mul_ne_zero (by norm_num : (2 : ℝ) ≠ 0) Real.pi_ne_zero)
   linear_combination hk
-
-
-
-
 
 theorem scalarCoverChart_int_deck (e : OpenPartialHomeomorph Cover Cover)
     (hsource : e.source = scalarCoverStrip)
@@ -89,9 +71,6 @@ theorem scalarCoverChart_int_deck (e : OpenPartialHomeomorph Cover Cover)
     change (e (z.1, z.2 + (k : ℝ))).2 = (e (z.1, z.2)).2 + (k : ℝ)
     linarith
 
-
-
-
 theorem scalarInverseCoverMap_fiber (e : OpenPartialHomeomorph Cover Cover)
     (hsource : e.source = scalarCoverStrip)
     (hdeck : ∀ z ∈ e.source, e (z + (0, 1)) = e z + (0, 1))
@@ -107,9 +86,6 @@ theorem scalarInverseCoverMap_fiber (e : OpenPartialHomeomorph Cover Cover)
     e.right_inv hz] at h
   exact h
 
-
-
-
 theorem scalarInverseCoverMap_injOn_fundamental (e : OpenPartialHomeomorph Cover Cover)
     (hsource : e.source = scalarCoverStrip)
     (hdeck : ∀ z ∈ e.source, e (z + (0, 1)) = e z + (0, 1)) (a : ℝ) :
@@ -123,10 +99,6 @@ theorem scalarInverseCoverMap_injOn_fundamental (e : OpenPartialHomeomorph Cover
   have hhi' : k < 1 := by exact_mod_cast hhi
   have hk0 : k = 0 := by omega
   simpa only [hk0, Int.cast_zero, Prod.mk_zero_zero, add_zero] using hk
-
-
-
-
 
 theorem scalarInverseCoverMap_image_fundamental (e : OpenPartialHomeomorph Cover Cover)
     (hsource : e.source = scalarCoverStrip)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,16 +13,10 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {gamma : ContinuousMap LoopCircle M}
 
-
-
-
 theorem m64RawDiskAreaRange_nonempty
     (D : M64RawSpanningDisk g gamma) :
     (m64RawDiskAreaRange g gamma).Nonempty :=
   ⟨D.area, ⟨D, rfl⟩⟩
-
-
-
 
 theorem m64RawDiskAreaRange_bddBelow
     (_D : M64RawSpanningDisk g gamma) :
@@ -42,9 +25,6 @@ theorem m64RawDiskAreaRange_bddBelow
   rintro _ ⟨E, rfl⟩
   exact E.area_nonnegative
 
-
-
-
 theorem m64RawFillingArea_nonnegative
     (_D : M64RawSpanningDisk g gamma) :
     0 ≤ m64RawFillingArea g gamma := by
@@ -52,9 +32,6 @@ theorem m64RawFillingArea_nonnegative
   apply Real.sInf_nonneg
   rintro _ ⟨E, rfl⟩
   exact E.area_nonnegative
-
-
-
 
 theorem m64RawDiskArea_guards
     (D : M64RawSpanningDisk g gamma) :

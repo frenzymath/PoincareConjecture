@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaVariationalComparison
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -163,8 +161,6 @@ def suSphereChartAlphaDensity
   (1 + 2 * m60EnergyDensity g (f ∘ (chartAt LoopPlane p).symm) z /
     (16 / (‖z‖ ^ 2 + 4) ^ 2)) ^ alpha * (16 / (‖z‖ ^ 2 + 4) ^ 2)
 
-
-
 theorem suSphereChartAlphaDensity_eq_coefficients
     (g : RiemannianMetric n M) (alpha : ℝ) (p : UnitTwoSphere) (b : M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) (z : LoopPlane)
@@ -182,7 +178,6 @@ theorem suSphereChartAlphaDensity_eq_coefficients
   simp only [Function.comp_apply]
   congr 2
   ring
-
 
 theorem suSphereChartAlphaDensity_eq_regularized
     (g : RiemannianMetric n M) (alpha : ℝ) (p : UnitTwoSphere) (b : M)
@@ -212,8 +207,6 @@ theorem suSphereChartAlphaDensity_eq_regularized
     Real.rpow_sub hl, Real.rpow_one]
   ring
 
-
-
 theorem suSphereChartAlphaDensity_integral
     (g : RiemannianMetric n M) {alpha : ℝ} (ha : 0 ≤ alpha) (p : UnitTwoSphere)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) :
@@ -232,8 +225,6 @@ theorem suSphereChartAlphaDensity_integral
     field_simp
   rw [heq]
   exact ⟨suSphereChart_integrable p P hP, suSphereChart_integral p P hP⟩
-
-
 
 theorem suSphereChart_observedLp_bound
     [CompactSpace M] {F : Type*} [NormedAddCommGroup F] [InnerProductSpace ℝ F]
@@ -306,8 +297,6 @@ theorem suSphereChart_observedLp_bound
       Real.rpow_nonneg (norm_nonneg _) _) _)]
   exact Real.rpow_le_rpow (integral_nonneg fun z =>
     Real.rpow_nonneg (norm_nonneg _) _) hi (inv_nonneg.mpr hap.le)
-
-
 
 theorem suAlpha_observed_equicontinuous
     [CompactSpace M] (g : RiemannianMetric n M) (e : M → ℝ)

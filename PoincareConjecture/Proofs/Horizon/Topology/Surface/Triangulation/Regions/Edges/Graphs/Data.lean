@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.OrientedSubdivision
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.MiddleArcs
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -22,7 +12,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
 
 structure OrientedGraphPiece (e : D.EdgeIndex) (R : D.regions)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M) (a b : ℝ) where
@@ -61,7 +50,6 @@ structure OrientedGraphPiece (e : D.EdgeIndex) (R : D.regions)
       (chartDiskBoundaryUnion D.centers D.radius)ᶜ R ↔ 0 < z) ∧
     (0 ≤ z → C (frame.symm (x, lower x + z)) ∈ closure (connectedComponentIn
       (chartDiskBoundaryUnion D.centers D.radius)ᶜ R))
-
 
 structure OrientedEdgeGraphSubdivision (e : D.EdgeIndex) (R : D.regions)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M) (a b : ℝ) where
@@ -125,7 +113,6 @@ theorem piece_interval_unit (i : Fin S.count) :
 
 end OrientedEdgeGraphSubdivision
 
-
 theorem exists_orientedEdgeGraphSubdivision (e : D.EdgeIndex) (R : D.regions)
     (hR : R = D.regionLeft e ∨ R = D.regionRight e)
     (C : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -143,11 +130,8 @@ theorem exists_orientedEdgeGraphSubdivision (e : D.EdgeIndex) (R : D.regions)
   exact ⟨⟨A, G, h, l, r, α, β, δ, hl, hr, hGs, hGC, hmono, hG, hGinv, hh,
     hsource, hcoordinates, hmap, hpositive, himage, htarget, hα, hβ, hδ, htube⟩⟩
 
-
 abbrev IncidentEdgeIndex :=
   {p : D.regions × D.EdgeIndex // p.1 = D.regionLeft p.2 ∨ p.1 = D.regionRight p.2}
-
-
 
 theorem exists_incident_middleArc_graph_family
     (chart : D.regions → D.centers)

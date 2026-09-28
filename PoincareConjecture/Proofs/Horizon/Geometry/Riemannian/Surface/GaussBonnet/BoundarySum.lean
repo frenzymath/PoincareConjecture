@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnetAssembly
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area.FaceInteriors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff Bundle Interval
 namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
-
-
 
 theorem coordinateTriangle_cyclic_boundary_image
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -39,8 +30,6 @@ theorem coordinateTriangle_cyclic_boundary_image
 
 variable [MeasurableSpace S] [BorelSpace S] [T3Space S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem FiniteSmoothTriangulation.sum_coordinateTurningIntegral_eq_zero
     (T : FiniteSmoothTriangulation (M := S))

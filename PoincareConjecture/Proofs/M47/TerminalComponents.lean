@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M33.TerminalPolicy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,8 +12,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
   {E : SurgeryEventData g₀ K P slice metric T}
-
-
 
 theorem SurgeryEventData.limit_inverse_image_component
     (E : SurgeryEventData g₀ K P slice metric T)
@@ -56,8 +45,6 @@ theorem SurgeryEventData.limit_inverse_image_component
   exact Set.Subset.antisymm (hconnected.subset_connectedComponent hx)
     ((show IsClopen _ from ⟨hcompact.isClosed, hopen⟩).connectedComponent_subset hx)
 
-
-
 theorem SurgeryEventTerminalPolicy.compact_pre_component_subset_interior
     (policy : SurgeryEventTerminalPolicy E)
     {x : E.terminal.carrier} (hC : IsCompact (connectedComponent x))
@@ -72,8 +59,6 @@ theorem SurgeryEventTerminalPolicy.compact_pre_component_subset_interior
   obtain ⟨w, hw, hwy⟩ := policy.compact_component_retained hC hlow hy
   rw [← hwy, E.limit_identify.left_inverse (E.retained_pre_subset hw)]
   exact hw
-
-
 
 theorem SurgeryEventTerminalPolicy.compact_retention_image_disjoint_cap
     (policy : SurgeryEventTerminalPolicy E)
@@ -104,8 +89,6 @@ theorem SurgeryEventTerminalPolicy.compact_retention_image_disjoint_cap
     simpa only [E.retention.left_inverse hwret, E.retention.left_inverse hyret] using this
   subst w
   exact (mem_frontier_iff_notMem_interior hyret).1 hwfront (hD hy)
-
-
 
 theorem SurgeryEventTerminalPolicy.compact_retention_image_component
     (policy : SurgeryEventTerminalPolicy E)
@@ -158,8 +141,6 @@ theorem SurgeryEventTerminalPolicy.compact_retention_image_component
   exact Set.Subset.antisymm (hconnected.subset_connectedComponent hx)
     ((show IsClopen _ from ⟨hcompact.isClosed, hopen⟩).connectedComponent_subset hx)
 
-
-
 theorem SurgeryEventTerminalPolicy.compact_post_component_subset_interior
     (policy : SurgeryEventTerminalPolicy E)
     {x : E.terminal.carrier} (hC : IsCompact (connectedComponent x))
@@ -174,8 +155,6 @@ theorem SurgeryEventTerminalPolicy.compact_post_component_subset_interior
   rintro z ⟨y, hy, rfl⟩
   exact E.retention.map_image.subset ⟨y,
     interior_subset (policy.compact_pre_component_subset_interior hC hlow hy), rfl⟩
-
-
 
 def SurgeryEventTerminalPolicy.compactComponentEquivalence
     (policy : SurgeryEventTerminalPolicy E)
@@ -236,8 +215,6 @@ def SurgeryEventTerminalPolicy.compactComponentEquivalence
       (E.retention.inverse_smooth.mono
         ((policy.compact_post_component_subset_interior hC hlow).trans interior_subset))
       (fun _ hz => E.retained_pre_subset (hD (hB hz)))
-
-
 
 theorem SurgeryEventTerminalPolicy.compact_component_metric
     (policy : SurgeryEventTerminalPolicy E)

@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryPathLength
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -65,10 +60,6 @@ private theorem boundary_side_competitor
   · rw [htvar]
     have hlength := m64Intrinsic_boundaryLength_nonneg N 1 (min p q) (max p q) min_le_max
     exact (add_le_add hfvar hgvar).trans_eq (ENNReal.ofReal_add hlength hA).symm
-
-
-
-
 
 theorem m64Intrinsic_exists_short_collision_competitor
     (N : IntrinsicAnnulus) {K : Set AnnulusCoordinates}

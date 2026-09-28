@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.ClosingBall
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem normalized_curved_closing_boundary_projection
     {v : E3} (hv : ‖v‖ = 1)
@@ -54,8 +50,6 @@ theorem normalized_curved_closing_boundary_projection
       linarith
     rw [hN hheight, Q.apply_symm_apply]
     exact (Reverse.transported_cap_bounds hv b w hw.ne' A hu).2.1
-
-
 
 theorem normalized_cap_terminal_slice_subset_closing_disk
     {v : E3} (hv : ‖v‖ = 1)
@@ -97,8 +91,6 @@ theorem normalized_cap_terminal_slice_subset_closing_disk
   simp only [mul_zero, add_zero] at hslice
   rw [← hslice] at hrim
   exact ⟨N y, hrim.1, by rw [hNy, Q.symm_apply_apply]⟩
-
-
 
 theorem normalized_curved_closing_ball_inter_band
     {v : E3} (hv : ‖v‖ = 1)

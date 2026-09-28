@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.SpecialFunctions.Complex.Arg
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,23 +12,16 @@ universe u
 
 namespace PoincareConjecture.Proofs.M58
 
-
-
 noncomputable def angularPoint (t : ℝ) : LoopPlane := !₂[Real.cos t, Real.sin t]
-
-
 
 theorem norm_angularPoint (t : ℝ) : ‖angularPoint t‖ = 1 := by
   simp [angularPoint, EuclideanSpace.norm_eq, Fin.sum_univ_two,
     Real.cos_sq_add_sin_sq]
 
-
-
 theorem angularPoint_mem_annulus (t : ℝ) : angularPoint t ∈ loopAnnulus := by
   change 1 / 2 < ‖angularPoint t‖ ∧ ‖angularPoint t‖ < 2
   rw [norm_angularPoint]
   norm_num
-
 
 theorem contDiff_angularPoint : ContDiff ℝ ∞ angularPoint := by
   apply contDiff_euclidean.mpr
@@ -45,12 +30,8 @@ theorem contDiff_angularPoint : ContDiff ℝ ∞ angularPoint := by
   · exact Real.contDiff_cos
   · exact Real.contDiff_sin
 
-
-
 noncomputable def loopCircleBasepoint : LoopCircle :=
   ⟨angularPoint 0, norm_angularPoint 0⟩
-
-
 
 theorem exists_angularPoint (z : LoopCircle) :
     ∃ t ∈ Icc 0 rampPeriod, angularPoint t = z.val := by
@@ -87,14 +68,10 @@ theorem exists_angularPoint (z : LoopCircle) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem contMDiff_periodicFreeLoop (γ : C1FreeLoopSpace (M := M)) :
     ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 (periodicFreeLoop γ) :=
   γ.regularity.comp_contMDiff (contDiff_angularPoint.of_le (by simp)).contMDiff
     angularPoint_mem_annulus
-
-
 
 theorem continuous_freeLoopSpeed (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) :
@@ -102,22 +79,16 @@ theorem continuous_freeLoopSpeed (g : RiemannianMetric 3 M)
       (curveVelocity (periodicFreeLoop γ) t)) :=
   M04.continuous_pathSpeed g (contMDiff_periodicFreeLoop γ)
 
-
-
 theorem pathELength_periodicFreeLoop (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) :
     g.pathELength (periodicFreeLoop γ) 0 rampPeriod = ENNReal.ofReal (freeLoopLength g γ) :=
   M04.pathELength_eq_ofReal_integral_pathSpeed g (contMDiff_periodicFreeLoop γ)
     (by dsimp [rampPeriod]; positivity)
 
-
-
 theorem freeLoopLength_nonneg (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) : 0 ≤ freeLoopLength g γ :=
   intervalIntegral.integral_nonneg (by dsimp [rampPeriod]; positivity)
     (fun _ _ => Real.sqrt_nonneg _)
-
-
 
 theorem edist_periodicFreeLoop_le_length (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) {t : ℝ} (ht : t ∈ Icc 0 rampPeriod) :
@@ -134,8 +105,6 @@ theorem edist_periodicFreeLoop_le_length (g : RiemannianMetric 3 M)
     Manifold.pathELength_mono le_rfl ht.2
   exact (hprefix.trans hmono).trans_eq (pathELength_periodicFreeLoop g γ)
 
-
-
 theorem edist_loop_le_length (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (z : LoopCircle) :
     g.edist (γ loopCircleBasepoint) (γ z) ≤ ENNReal.ofReal (freeLoopLength g γ) := by
@@ -147,8 +116,6 @@ theorem edist_loop_le_length (g : RiemannianMetric 3 M)
     rw [htz]
     exact γ.boundary z
   simpa only [h0, hz] using edist_periodicFreeLoop_le_length g γ ht
-
-
 
 theorem loop_mem_ball_of_length_lt (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) {ζ : ℝ} (hζ : 0 < ζ)

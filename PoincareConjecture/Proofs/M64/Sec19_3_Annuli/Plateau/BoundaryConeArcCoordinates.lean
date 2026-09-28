@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeReconstruction
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,9 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64BoundaryCone
 
 open M65Interior
-
-
-
 
 theorem semicircle_coordinates {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [CompleteSpace E] {N : ℕ} (H : E → EuclideanSpace ℝ (Fin N))

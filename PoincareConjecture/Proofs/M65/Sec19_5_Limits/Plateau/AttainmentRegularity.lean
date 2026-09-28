@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.AffineMap
 import Mathlib.Analysis.Calculus.AddTorsor.AffineMap
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter Bundle Metric
@@ -25,8 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m65Attainment_continuousWithin_column {f : LoopPlane → M}
     (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet) (v : LoopPlane) :
     ContinuousOn (fun z => (⟨f z,
@@ -35,8 +24,6 @@ theorem m65Attainment_continuousWithin_column {f : LoopPlane → M}
   (hf.continuousOn_tangentMapWithin le_rfl m65LoopDisk_uniqueMDiffOn).comp
     (((tangentBundleModelSpaceHomeomorph (𝓡 2)).symm.continuous.comp
       (continuous_id.prodMk continuous_const)).continuousOn) (fun _ hz => hz)
-
-
 
 theorem m65Attainment_exists_within_derivative_bound (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet) :
@@ -87,9 +74,6 @@ theorem m65Attainment_exists_within_derivative_bound (g : RiemannianMetric n M)
     _ ≤ ‖v‖ * max B 0 := mul_le_mul_of_nonneg_left hsum (norm_nonneg v)
     _ = max B 0 * ‖v‖ := mul_comm _ _
 
-
-
-
 theorem m65Attainment_exists_lipschitz_bound (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet) :
     ∃ K : ℝ, 0 ≤ K ∧ ∀ x y : LoopDisk,
@@ -136,9 +120,6 @@ theorem m65Attainment_exists_lipschitz_bound (g : RiemannianMetric n M)
     _ ≤ ENNReal.ofReal (K * ‖(y : LoopPlane) - (x : LoopPlane)‖) := hdist.trans hlength
     _ = _ := by rw [ENNReal.ofReal_mul' (norm_nonneg _), norm_sub_rev]
 
-
-
-
 theorem m65Attainment_area_integrable (g : RiemannianMetric n M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 n) 1 f loopDiskSet) :
     IntegrableOn (m60AreaDensity g f) loopDiskSet volume := by
@@ -162,9 +143,6 @@ theorem m65Attainment_area_integrable (g : RiemannianMetric n M)
   have hnhds : loopDiskSet ∈ 𝓝 z :=
     mem_of_superset (Metric.isOpen_ball.mem_nhds hz) Metric.ball_subset_closedBall
   simp only [G, m60AreaDensity, m60AreaGram, mfderivWithin_of_mem_nhds hnhds]
-
-
-
 
 noncomputable def m65Attainment_spanningDisk {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Gluing.Subsegments
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,8 +11,6 @@ universe u v
 
 variable {X : Type u} [TopologicalSpace X] {I : Type v} [Finite I]
 
-
-
 theorem frontier_iUnion_subset_iUnion_frontier_of_isClosed
     (A : I → Set X) (hclosed : ∀ i, IsClosed (A i)) :
     frontier (⋃ i, A i) ⊆ ⋃ i, frontier (A i) := by
@@ -31,7 +19,6 @@ theorem frontier_iUnion_subset_iUnion_frontier_of_isClosed
   refine mem_iUnion.mpr ⟨i, subset_closure hpi, ?_⟩
   intro hpint
   exact hp.2 (interior_mono (subset_iUnion A i) hpint)
-
 
 theorem closure_interior_iUnion_of_regular_closed
     (A : I → Set X) (hclosed : ∀ i, IsClosed (A i))
@@ -51,7 +38,6 @@ universe u v w
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 theorem closure_interior_iUnion_coordinate_triangle_carriers
     {I : Type v} [Finite I] (face : I → SmoothFace M)
@@ -88,8 +74,6 @@ variable {I : Type v} [Finite I] {J : Type w}
 
 include hsource hcarrier hboundary hinj hbounds hinter hshared in
 
-
-
 theorem iUnion_coordinate_triangles_shared_subsegments
     : closure (interior (⋃ i, (face i).carrier)) = (⋃ i, (face i).carrier) ∧
       (⋃ j, (((face (left j)).boundary (leftEdge j)).map '' Ioo (a j) (b j)) ∩
@@ -122,7 +106,6 @@ theorem iUnion_coordinate_triangles_shared_subsegments
     fun hps => hp.2 (hglued hps)⟩
 
 include hsource hcarrier hboundary hinj hbounds hinter hshared in
-
 
 theorem frontier_iUnion_coordinate_triangles_subset_of_shared_subsegments
     (remaining : Set M)

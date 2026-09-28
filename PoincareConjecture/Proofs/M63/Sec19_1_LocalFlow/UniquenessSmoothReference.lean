@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_periodic_smooth_normalGraph_reference
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]

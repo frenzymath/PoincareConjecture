@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.SelectedChartStars
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 structure SourceIntervalMarkedModel {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] {sourceSet rimSet : Set E}
@@ -97,7 +86,6 @@ structure SourceIntervalMarkedModel {E X ι : Type*} [NormedAddCommGroup E] [Nor
     ∃ y : f '' old.pieces i,
       MapsTo (fun z ↦ (inverse z : X)) (complex.closedStar p).space (charts y).source ∧
       (complex.closedStar p).AffineOnFaces (charts y ∘ (fun z ↦ (inverse z : X)))
-
 
 theorem SourceDoubleComponents.nonempty_interval_marked_model
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

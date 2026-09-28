@@ -2,33 +2,12 @@ import PoincareConjecture.Proofs.M10.BarrierLipschitz
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology NNReal
 
 namespace PoincareConjecture.SurgeryVolume.Measure
-
 
 theorem frequently_slope_lt_of_upper_support {f g : ℝ → ℝ} {x d r : ℝ}
     (hg : HasDerivAt g d x) (heq : g x = f x)
@@ -65,7 +44,6 @@ theorem sub_le_mul_of_upper_supports {f : ℝ → ℝ} {a b C : ℝ}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 theorem sub_le_norm_of_upper_supports {S : Set E} (hS : Convex ℝ S)
     {f : E → ℝ} (hf : ContinuousOn f S) {C : ℝ}
     (hsupport : ∀ z ∈ S, ∃ g : E → ℝ, ∃ L : E →L[ℝ] ℝ,
@@ -86,7 +64,6 @@ theorem sub_le_norm_of_upper_supports {S : Set E} (hS : Convex ℝ S)
     hc.continuousAt hdom, ?_⟩
   exact (le_abs_self _).trans ((L.le_opNorm _).trans
     (mul_le_mul_of_nonneg_right hbound (norm_nonneg _)))
-
 
 theorem lipschitzOnWith_of_upper_supports {S : Set E} (hS : Convex ℝ S)
     {f : E → ℝ} (hf : ContinuousOn f S) {C : ℝ≥0}

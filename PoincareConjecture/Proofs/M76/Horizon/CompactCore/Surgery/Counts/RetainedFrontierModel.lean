@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.RefinementEdg
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.SharedBoundaryConeUnion
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCompatibleUnion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

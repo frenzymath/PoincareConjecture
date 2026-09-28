@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,19 +13,14 @@ universe u
 variable {E F : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 noncomputable def radialDerivativeAverage (f : E → F) (x : E) : E →L[ℝ] F :=
   ∫ t in (0 : ℝ)..1, fderiv ℝ f (t • x)
-
 
 @[simp] theorem radialDerivativeAverage_zero [CompleteSpace F] (f : E → F) :
     radialDerivativeAverage f 0 = fderiv ℝ f 0 := by
   simp [radialDerivativeAverage]
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem radialDerivativeAverage_contDiff (f : E → F) (hf : ContDiff ℝ ∞ f) :
     ContDiff ℝ ∞ (radialDerivativeAverage f) := by
@@ -47,7 +31,6 @@ theorem radialDerivativeAverage_contDiff (f : E → F) (hf : ContDiff ℝ ∞ f)
 variable [CompleteSpace F]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem radialDerivativeAverage_apply (f : E → F) (hf : ContDiff ℝ ∞ f) (x : E) :
     radialDerivativeAverage f x x = f x - f 0 := by
@@ -64,8 +47,6 @@ theorem radialDerivativeAverage_apply (f : E → F) (hf : ContDiff ℝ ∞ f) (x
   simpa only [one_smul, zero_smul] using
     intervalIntegral.integral_eq_sub_of_hasDerivAt (fun t _ => hderiv t)
       ((hc.clm_apply continuous_const).intervalIntegrable 0 1)
-
-
 
 theorem fderiv_radialDerivativeAverage_zero (f : E → F) (hf : ContDiff ℝ ∞ f) :
     fderiv ℝ (radialDerivativeAverage f) 0 =
@@ -92,8 +73,6 @@ theorem fderiv_radialDerivativeAverage_zero (f : E → F) (hf : ContDiff ℝ ∞
   simp_rw [hmap]
   rw [intervalIntegral.integral_smul_const, integral_id]
   norm_num [D]
-
-
 
 theorem exists_smooth_quadratic_factor (f : E → F) (hf : ContDiff ℝ ∞ f)
     (hzero : fderiv ℝ f 0 = 0) :

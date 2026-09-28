@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import PoincareConjecture.Statements.M63RampEstimates
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open Proofs.M58
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m63AngularFirstJet_eq_c1LoopTangent (gamma : C1FreeLoopSpace (M := M)) (x : ℝ) :
     m63AngularFirstJet (periodicFreeLoop gamma) x =
@@ -46,9 +33,6 @@ theorem m63AngularFirstJet_eq_c1LoopTangent (gamma : C1FreeLoopSpace (M := M)) (
   apply TotalSpace.ext (gamma.boundary z)
   exact heq_of_eq hv
 
-
-
-
 theorem m63AngularFirstJet_continuous :
     Continuous (fun p : C1FreeLoopSpace (M := M) × ℝ =>
       m63AngularFirstJet (n := 3) (periodicFreeLoop p.1) p.2) := by
@@ -60,8 +44,6 @@ theorem m63AngularFirstJet_continuous :
   convert h using 1
   funext p
   exact m63AngularFirstJet_eq_c1LoopTangent p.1 p.2
-
-
 
 theorem m63FreeLoopLength_continuous (g : RiemannianMetric 3 M) :
     Continuous (freeLoopLength g) := by
@@ -76,8 +58,6 @@ theorem m63FreeLoopLength_continuous (g : RiemannianMetric 3 M) :
       g.tangentNorm (periodicFreeLoop p.1 p.2)
         (curveVelocity (periodicFreeLoop p.1) p.2)) := (hv.inner_bundle hv).sqrt
   exact intervalIntegral.continuous_parametric_intervalIntegral_of_continuous' hs 0 rampPeriod
-
-
 
 theorem m63FamilyLengthSup_properties (g : RiemannianMetric 3 M)
     (Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))) :

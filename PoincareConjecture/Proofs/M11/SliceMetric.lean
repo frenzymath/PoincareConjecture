@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.SliceHorizontalMap
 import PoincareConjecture.Proofs.M11.BilinearBundleSmooth
 import PoincareConjecture.Proofs.M11.SpacetimeGeometry
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTa
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHalfConeEnergy
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityACComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ universe u
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior M65StrictTrace
-
-
-
 
 theorem punctured_curve_regular {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -73,10 +61,6 @@ theorem punctured_curve_regular {M : Type u} [TopologicalSpace M]
   rw [fderiv_apply_one_eq_deriv, hder, zero_add] at hchain
   rw [hchain]
   exact hreg a
-
-
-
-
 
 theorem exists_captured_boundary_target_chart {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -196,11 +180,6 @@ private theorem boundaryCirclePoint_joint_continuous :
   fun_prop
 
 set_option maxHeartbeats 2000000 in
-
-
-
-
-
 
 theorem boundary_small_semicircle_comparison_uniform {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}
@@ -411,8 +390,6 @@ theorem boundary_small_semicircle_comparison_uniform {M : Type u} [TopologicalSp
       mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_left
         (mul_le_mul_of_nonneg_left hde (by positivity)) (by positivity)) (by positivity)
     _ = _ := by dsimp only [B]; ring
-
-
 
 theorem boundary_small_semicircle_comparison {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] {N : ℕ}

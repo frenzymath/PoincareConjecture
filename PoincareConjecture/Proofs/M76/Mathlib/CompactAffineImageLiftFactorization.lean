@@ -3,28 +3,11 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Affine.ContinuousAffineMap
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace IsLocallyInjective
-
-
-
-
-
 
 theorem exists_compact_affine_image_factorization
     {U V E : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]

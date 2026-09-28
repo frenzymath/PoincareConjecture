@@ -3,25 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.ContinuousGraphShear
 import PoincareConjecture.Proofs.M76.Mathlib.OppositePolyhedralFrontierGerms
 import Mathlib.Topology.Order.Lattice
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
 
 theorem frontier_hypograph_eq_graph {X : Type*} [TopologicalSpace X]
     (f : X → ℝ) (hf : Continuous f) :
@@ -43,11 +29,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_active_halfspace_frontier_graph
     (H : Finset ((E × ℝ) →ₗ[ℝ] ℝ)) (hH : H.Nonempty)
@@ -102,11 +83,6 @@ theorem exists_active_halfspace_frontier_graph
     · intro j
       change H.inf' hH (fun A => 1 - A (x, 0)) ≤ 1 - j.val (x, 0)
       exact Finset.inf'_le _ j.property
-
-
-
-
-
 
 theorem exists_halfspace_frontier_graph_germ
     (H : Finset ((E × ℝ) →ₗ[ℝ] ℝ))

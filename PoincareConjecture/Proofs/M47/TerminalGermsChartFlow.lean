@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsInteriorFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.LocalFlows
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set Filter Poincare.Gluing
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_exists_closed_chart_flow
     {ι : Type*} {n : ℕ}

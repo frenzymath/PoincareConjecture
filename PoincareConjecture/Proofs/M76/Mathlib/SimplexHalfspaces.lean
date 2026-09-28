@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineInterpolation
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexFaceCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Finset
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_affine_halfspaces_convexHull (s : Finset E)
     (hs : AffineIndependent ℝ ((↑) : s → E)) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.EnergyGoodTimes
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.SubarcEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta : ℝ}
 
-
-
 theorem m65FamilyInitialTotalCurvature (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (z : LoopTwoSphere) :
     m62TotalCurvature (G.product circumference h).flow
@@ -38,8 +27,6 @@ theorem m65FamilyInitialTotalCurvature (C : M63FamilyConclusion G Gamma zeta)
     (fun gamma : ℝ → (G.product circumference h).charts.Point =>
       m62TotalCurvature (G.product circumference h).flow (fun x _ => gamma x) a)
     (funext ((C.solutions circumference h).initial_eq z))
-
-
 
 theorem m65FamilyJets_of_energy_le (C : M63FamilyConclusion G Gamma zeta)
     (circumference : ℝ) (h : 0 < circumference) (hlt : circumference < 1)

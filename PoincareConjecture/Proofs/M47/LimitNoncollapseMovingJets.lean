@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseIncludedJets
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.top
 local instance : ChartedSpace E C.limit.carrier.carrier := C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
 
-
-
 theorem limitNoncollapse_limit_spatialJet_continuousOn
     (q : C.limit.sliceCarrier.carrier) (r : ℕ) (a b : Fin 3) :
     ContinuousOn (fun z : ℝ × E => iteratedFDeriv ℝ r
@@ -48,9 +37,6 @@ theorem limitNoncollapse_limit_spatialJet_continuousOn
   intro z hz
   exact iteratedFDeriv_prod_slice_eq_within (C.limit.flow.contDiffOn_chartMetric q a b)
     hJ (isOpen_extChartAt_target q) hz.1 hz.2 (WithTop.coe_le_coe.mpr le_top)
-
-
-
 
 theorem limitNoncollapse_tendsto_moving_spatial_jets
     (P : M47Predecessors.{u}) (q : C.limit.sliceCarrier.carrier)

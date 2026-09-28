@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.TubeNeckConfinement
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,11 +12,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
-
-
 
 theorem exists_interior_endpoint_neck_confinement
     (g : RiemannianMetric 3 M) (V U : TopologicalSpace.Opens M)

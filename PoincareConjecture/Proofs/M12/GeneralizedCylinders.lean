@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.GeneralizedAtlas
 import PoincareConjecture.Proofs.M11.OrdinaryChartHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

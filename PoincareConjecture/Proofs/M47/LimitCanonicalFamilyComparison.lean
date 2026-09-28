@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckFamilyMargin
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckPullbackSmooth
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCovariantDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +25,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
   G.limit.carrier.topologicalSpace
 private local instance : ChartedSpace E₃ G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_eventually_neck_family_comparison
     (P : M47Predecessors.{u}) (hJI : Icc (-1 : ℝ) 0 ⊆ J)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.Canonical
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.CommonRegularTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
-
 
 theorem extension_canonical_control_of_regular_preterminal
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)

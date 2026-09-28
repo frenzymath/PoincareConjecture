@@ -1,19 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.MollifiedForcingBounds
-
-
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory ContinuousLinearMap
 open Poincare.Analysis.Convolution
@@ -26,8 +11,6 @@ namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 local instance {n : ℕ} : (volume : Measure (Spacetime n)).IsAddHaarMeasure := by
   change ((volume : Measure (Euclid n)).prod (volume : Measure ℝ)).IsAddHaarMeasure
   infer_instance
-
-
 
 theorem tendstoUniformly_mollifiedValue
     {n : ℕ} {u ρ : Spacetime n → ℝ}

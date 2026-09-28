@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusIntrinsicTension
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.CircleCurrentLaplacian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_divergence_zero_of_modulus_minimum
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)
@@ -75,10 +61,6 @@ theorem m64AnnulusCircleCurrent_divergence_zero_of_modulus_minimum
     (P.charts.circleUnit (A.map (annulusPoint x s)))) hzero
   simpa only [map_add, add_apply, map_smul, smul_apply, smul_eq_mul, map_zero, zero_apply]
     using hscalar
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_horizontal_equation_of_modulus_minimum
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

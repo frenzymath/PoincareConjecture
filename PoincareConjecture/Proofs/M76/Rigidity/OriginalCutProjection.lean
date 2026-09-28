@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianParameter
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +16,6 @@ local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
 
 theorem exists_hamiltonMeridianCutProjection (v : E → X)
     (hv : ContinuousOn v (D ×ˢ Icc 0 p))

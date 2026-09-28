@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedImageReparameterization
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityOrdinaryDiskBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
@@ -60,13 +49,6 @@ private theorem exists_link_polygon_of_affine_parameter
   refine ⟨m, Q, hQi, hQ, ?_⟩
   rw [hQb, hPb, hlink]
   exact hi.invFunOn_image hlinksub
-
-
-
-
-
-
-
 
 theorem exists_parameterized_protected_branch_repair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

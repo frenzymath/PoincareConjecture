@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M04.SpacetimeScalarCoefficients
 import PoincareConjecture.Proofs.M04.RicciCommutator
 import Mathlib.LinearAlgebra.Multilinear.Curry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -171,4 +163,3 @@ theorem continuousOn_ricciEvolutionRHS_timeSlice (F : RicciFlow n M J)
         (F.connection s).ricciReaction y a b) X Y hjoint x hx u v hXu hYv
 
 end PoincareConjecture.M04
-

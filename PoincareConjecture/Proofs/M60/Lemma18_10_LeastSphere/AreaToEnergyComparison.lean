@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyLimit
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60EnergyDensity_comp_le_of_differential_le (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
@@ -43,8 +33,6 @@ theorem m60EnergyDensity_comp_le_of_differential_le (g : RiemannianMetric n M)
     (1 / 2 : ℝ) * (q.inner (F z) _ _ + q.inner (F z) _ _)
   exact mul_le_mul_of_nonneg_left (add_le_add (h 0) (h 1)) (by norm_num)
 
-
-
 theorem m60SphereEnergy_comp_le_of_differential_le (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f)
     (q : RiemannianMetric 2 UnitTwoSphere) (phi : UnitTwoSphere → UnitTwoSphere)
@@ -59,9 +47,6 @@ theorem m60SphereEnergy_comp_le_of_differential_le (g : RiemannianMetric n M)
   exact m60EnergyDensity_comp_le_of_differential_le g f hf q
     (phi ∘ m60SphereParameter) (hphi.comp (m60SphereParameter_contMDiff.of_le (by simp)))
     hbound z
-
-
-
 
 theorem m60SphereRegularizedMetric_energy_comp_le_area (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -80,8 +65,6 @@ theorem m60SphereRegularizedMetric_energy_comp_le_area (g : RiemannianMetric n M
         (phi.contMDiff.of_le (by simp)) hphi).symm
     _ = _ := m60SphereMetric_area_diffeomorph_eq q phi
 
-
-
 theorem m60IsNullHomotopicSphere_comp_homeomorph (f : UnitTwoSphere → M)
     (phi : UnitTwoSphere ≃ₜ UnitTwoSphere) :
     IsNullHomotopicSphere (f ∘ phi) ↔ IsNullHomotopicSphere f := by
@@ -97,9 +80,6 @@ theorem m60IsNullHomotopicSphere_comp_homeomorph (f : UnitTwoSphere → M)
     refine ⟨hf.comp phi.continuous, p, ?_⟩
     exact hp.comp (ContinuousMap.Homotopic.refl
       (⟨phi, phi.continuous⟩ : ContinuousMap UnitTwoSphere UnitTwoSphere))
-
-
-
 
 theorem m60SmoothSphereAreaToEnergy_of_uniformization
     (huniform : ∀ q : RiemannianMetric 2 UnitTwoSphere,

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.S
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.Pullback
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -30,7 +22,6 @@ private instance : T2Space X := ((Homeomorph.refl (Fin 1 → ℝ)).prodCongr
   (hamiltonLowerLatticePiEquiv (Fin 2))).isEmbedding.t2Space
 private instance : CompactSpace (Q ×ˢ I) :=
   isCompact_iff_compactSpace.mp ((isCompact_sphere (0 : V2) 1).prod isCompact_Icc)
-
 
 noncomputable def standardMeridianBandParameter (a b : ℝ) (z : V2 × ℝ) : X :=
   ((fun _ => z.1 0), QuotientAddGroup.mk ![z.2, (b - a) * (z.1 1 + 1) / 2 + a])
@@ -78,7 +69,6 @@ def standardMeridianBand (a b : ℝ) : Set X :=
 def standardMeridianOpenBand (a b : ℝ) : Set X :=
   standardMeridianBandParameter a b '' (Q ×ˢ Ioo (-1 : ℝ) 1)
 
-
 noncomputable def standardMeridianBandCoordinates (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) : (Q ×ˢ I) ≃ₜ standardMeridianBand a b :=
   Continuous.homeoOfEquivCompactToT2
@@ -96,7 +86,6 @@ theorem standardMeridianBand_subset_frontier (a b : ℝ) (hab : a < b)
     standardMeridianBand a b ⊆ frontier (sourceSlab (ContinuousMap.id H) a b) := by
   rintro _ ⟨z, hz, rfl⟩
   exact mapsTo_standardMeridianBandParameter_frontier a b hab hshort ⟨hz.1, mem_univ _⟩
-
 
 theorem isOpen_standardMeridianOpenBand (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) :
@@ -136,7 +125,6 @@ theorem standardMeridianBand_interior_eq (a b : ℝ) (hab : a < b)
   · rintro ⟨z, hz, rfl⟩
     exact ⟨⟨z, hz.1, le_of_lt hz.2.1, le_of_lt hz.2.2⟩, hz.2, rfl⟩
 
-
 noncomputable def standardMeridianBandFilling (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) : C(D, sourceSlab (ContinuousMap.id H) a b) :=
   ⟨fun x => standardSlabMeridianCoordinates a b hab hshort (x, 0),
@@ -152,7 +140,6 @@ theorem standardMeridianBandFilling_boundary (a b : ℝ) (hab : a < b)
     (⟨x, sphere_subset_closedBall x.property⟩, (0 : C)) : X) = _
   rw [← AddCircle.coe_zero, standardSlabMeridianCoordinates_coe]
   rfl
-
 
 noncomputable def standardMeridianBandProjection (a b : ℝ) (hab : a < b)
     (hshort : b < a + p) : C(frontier (sourceSlab (ContinuousMap.id H) a b), Q) :=

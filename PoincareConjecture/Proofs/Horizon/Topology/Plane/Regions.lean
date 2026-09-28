@@ -1,23 +1,11 @@
-
-
-
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Module.Connected
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 open Set Bornology
 
 namespace Poincare.Topology.Plane
-
 
 theorem infinite_frontier_of_bounded_nonempty_interior
     {U : Set (EuclideanSpace ℝ (Fin 2))} (hbounded : IsBounded U)
@@ -42,13 +30,10 @@ theorem infinite_frontier_of_bounded_nonempty_interior
       exact Or.inl hx
     exact (interior_subset (houtside hxfront)) (interior_subset hx)
 
-
 theorem infinite_frontier_of_isOpen
     {U : Set (EuclideanSpace ℝ (Fin 2))} (hU : IsOpen U)
     (hbounded : IsBounded U) (hne : U.Nonempty) : (frontier U).Infinite :=
   infinite_frontier_of_bounded_nonempty_interior hbounded (hU.interior_eq.symm ▸ hne)
-
-
 
 theorem exists_frontier_not_mem_finite
     {U : Set (EuclideanSpace ℝ (Fin 2))} (hbounded : IsBounded U)

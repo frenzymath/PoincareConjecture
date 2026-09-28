@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.FiniteComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.ParametrizedSurface
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Topology
 
@@ -49,8 +41,6 @@ theorem restrict_fundamentalGroup_injective {Y : Type*} [TopologicalSpace Y]
   rw [FundamentalGroup.map_comp]
   exact (hf x).comp
     ((isClopen_member S hclosed hdisjoint hcover i).fundamentalGroupMulEquiv x).injective
-
-
 
 theorem exists_coveringMap_of_recognized_components [CompactSpace F] [T2Space F]
     (p : ℝ) (hp : 0 < p) (f : C(F, AddCircle p × AddCircle p))

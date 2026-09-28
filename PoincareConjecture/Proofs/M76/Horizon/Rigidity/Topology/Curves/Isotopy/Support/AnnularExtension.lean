@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Original.AnnularExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Support.Tracks
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip Topology unitInterval
 

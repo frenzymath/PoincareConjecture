@@ -6,26 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 import PoincareConjecture.Proofs.M15.Thm1_34_Calibration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -393,9 +373,6 @@ private theorem backwardNeck_volume_image_lower {A : Set RoundCylinderSpace}
         mul_inv_cancel₀ hpos.ne', ENNReal.ofReal_one, one_pow, one_mul]
 
 include hepsilon hhalf in
-
-
-
 
 theorem strongNeck_backward_center_ball_volume {r : ℝ} (hr : 0 < r)
     (hrscale : r ≤ 4 * N.scale) :

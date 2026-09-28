@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnularStrips
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
 
 noncomputable def stripRotation (L : ℝ) : Fin 4 → (ℝ × ℝ) →ᴬ[ℝ] (ℝ × ℝ) :=
   let x := (ContinuousLinearMap.fst ℝ ℝ ℝ).toContinuousAffineMap
@@ -24,12 +12,8 @@ noncomputable def stripRotation (L : ℝ) : Fin 4 → (ℝ × ℝ) →ᴬ[ℝ] (
   let c := ContinuousAffineMap.const ℝ (ℝ × ℝ) L
   ![x.prod y, (c - y).prod x, (c - x).prod (c - y), y.prod (c - x)]
 
-
-
 def stripRegion (L d : ℝ) : Fin 4 → Set (ℝ × ℝ) :=
   ![trapezoid L d, rightStrip L d, topStrip L d, leftStrip L d]
-
-
 
 theorem stripRotation_injective (L : ℝ) (i : Fin 4) :
     Function.Injective (stripRotation L i) := by
@@ -39,9 +23,6 @@ theorem stripRotation_injective (L : ℝ) (i : Fin 4) :
     have h₂ := congrArg Prod.snd hpq
     dsimp [stripRotation] at h₁ h₂
     exact Prod.ext (by linarith) (by linarith)
-
-
-
 
 theorem stripRotation_image (L d : ℝ) (i : Fin 4) :
     stripRotation L i '' trapezoid L d = stripRegion L d i := by
@@ -87,10 +68,6 @@ theorem stripRotation_image (L d : ℝ) (i : Fin 4) :
       · change L - p.2 ∈ Icc p.1 (L - p.1)
         constructor <;> linarith [hx.1, hx.2]
       · ring
-
-
-
-
 
 theorem exists_rotated_strip_charts {L d : ℝ}
     (hd : 0 < d) (hwidth : 4 * d < L) :

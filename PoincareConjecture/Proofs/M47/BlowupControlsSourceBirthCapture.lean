@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceBirthScalar
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceFrontier
 import PoincareConjecture.Proofs.M47.CanonicalNeckCapCapture
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_birth_cap_capture_radius
     (g0 : StandardInitialMetric) {A c D : ℝ} (hA : 0 ≤ A) (hc : 0 < c) (hD : 0 < D) :
@@ -94,9 +82,6 @@ theorem exists_birth_cap_capture_radius
     _ = ENNReal.ofReal (Acap * h + 2 * A / Real.sqrt Q) :=
       (ENNReal.ofReal_add (by positivity) (by positivity)).symm
     _ < _ := (ENNReal.ofReal_lt_ofReal_iff (by positivity : 0 < Acapture * h)).mpr hstrict
-
-
-
 
 theorem exists_zero_age_search_cap_capture_cutoff
     (S : RepairedControlledSchedulesData.{u}) {A : ℝ} (hA : 0 ≤ A) :

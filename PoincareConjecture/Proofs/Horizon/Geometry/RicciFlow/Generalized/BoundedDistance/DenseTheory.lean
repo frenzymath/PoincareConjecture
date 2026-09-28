@@ -2,29 +2,6 @@ import PoincareConjecture.Statements.M28BoundedDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.BoundedDistance.Dense
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -50,7 +27,6 @@ theorem dense_constants (P : DenseBoundedDistanceTheory.{u}) :
       M28DenseTimeEstimateStatement.{u} epsilon₀ := by
   obtain ⟨epsilon₀, hpos, hsmall, _, hdense⟩ := P.bounds
   exact ⟨epsilon₀, hpos, hsmall, hdense⟩
-
 
 theorem constants (P : DenseBoundedDistanceTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

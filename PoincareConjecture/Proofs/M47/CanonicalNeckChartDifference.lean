@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckMetricJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -42,8 +33,6 @@ private theorem neckChartCoefficientEvaluation_norm_le (i l : Fin 3) :
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem exists_neck_chart_coefficient_difference_bound
     {g0 : RiemannianMetric 3 M} (N : EpsilonNeck g0)

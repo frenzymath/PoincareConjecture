@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SmoothFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ variable (v : ℝ → ℝ) {K L : ℝ≥0}
 variable (hK : LipschitzWith K v) (hL : ∀ z, ‖v z‖ ≤ L)
 variable (hv : ContDiff ℝ ∞ v) (hs : HasCompactSupport v)
 variable (χ : E → ℝ) (hχ : ContDiff ℝ ∞ χ)
-
-
-
 
 noncomputable def horizontalTimeFlowDiffeomorph (t : ℝ) :
     Diffeomorph 𝓘(ℝ, E × ℝ) 𝓘(ℝ, E × ℝ) (E × ℝ) (E × ℝ) ∞ := by
@@ -50,27 +37,18 @@ noncomputable def horizontalTimeFlowDiffeomorph (t : ℝ) :
     contMDiff_toFun := (hF t).contMDiff
     contMDiff_invFun := (hF (-t)).contMDiff }
 
-
-
 theorem horizontalTimeFlowDiffeomorph_apply (t : ℝ) (p : E × ℝ) :
     horizontalTimeFlowDiffeomorph v hK hL hv hs χ hχ t p =
       (p.1, boundedFlow v hK hL p.2 (χ p.1 * t)) := rfl
-
-
 
 theorem horizontalTimeFlowDiffeomorph_symm_apply (t : ℝ) (p : E × ℝ) :
     (horizontalTimeFlowDiffeomorph v hK hL hv hs χ hχ t).symm p =
       (p.1, boundedFlow v hK hL p.2 (χ p.1 * (-t))) := rfl
 
-
-
 theorem horizontalTimeFlowDiffeomorph_contDiff : ContDiff ℝ ∞
     (fun p : ℝ × (E × ℝ) => horizontalTimeFlowDiffeomorph v hK hL hv hs χ hχ p.1 p.2) :=
   contDiff_snd.fst.prodMk ((boundedFlow_contDiff v hK hL hv hs).comp
     (contDiff_snd.snd.prodMk ((hχ.comp contDiff_snd.fst).mul contDiff_fst)))
-
-
-
 
 theorem horizontalTimeFlowDiffeomorph_tsupport_subset (t : ℝ) :
     tsupport (fun p => horizontalTimeFlowDiffeomorph v hK hL hv hs χ hχ t p - p) ⊆

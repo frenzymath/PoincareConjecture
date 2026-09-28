@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 theorem exists_neck_overlap_scale_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -141,9 +129,6 @@ private theorem sphereSlice_subset_buffer_of_scale_le
       (hlength.trans_le (ENNReal.ofReal_le_ofReal hbudget))
   have hcoords := (N.mem_coordinate_slab_iff hlo hhi).mp hcapture
   exact ⟨hcoords.1, by linarith [hcoords.2.1], by linarith [hcoords.2.2]⟩
-
-
-
 
 theorem exists_buffered_neck_sphere_capture_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

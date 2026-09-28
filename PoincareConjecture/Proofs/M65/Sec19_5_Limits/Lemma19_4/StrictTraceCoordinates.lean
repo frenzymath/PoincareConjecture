@@ -1,14 +1,5 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,21 +10,13 @@ open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65StrictTrace
 
-
-
 def boundaryCoordinate (p z : ℂ) : ℂ := p * exp (I * z)
 
-
-
 def boundaryInverse (p w : ℂ) : ℂ := -I * log (w / p)
-
-
 
 theorem contDiff_boundaryCoordinate (p : ℂ) :
     ContDiff ℂ ∞ (boundaryCoordinate p) :=
   contDiff_const.mul (contDiff_exp.comp (contDiff_const.mul contDiff_id))
-
-
 
 theorem hasDerivAt_boundaryCoordinate (p z : ℂ) :
     HasDerivAt (boundaryCoordinate p) (I * boundaryCoordinate p z) z := by
@@ -47,34 +30,24 @@ theorem hasDerivAt_boundaryCoordinate (p z : ℂ) :
   rw [hder]
   exact h
 
-
-
 theorem norm_boundaryCoordinate {p : ℂ} (hp : ‖p‖ = 1) (z : ℂ) :
     ‖boundaryCoordinate p z‖ = Real.exp (-z.im) := by
   simp [boundaryCoordinate, hp, norm_exp, mul_re]
-
-
 
 theorem deriv_boundaryCoordinate_ne_zero {p : ℂ} (hp : p ≠ 0) (z : ℂ) :
     deriv (boundaryCoordinate p) z ≠ 0 := by
   rw [(hasDerivAt_boundaryCoordinate p z).deriv]
   exact mul_ne_zero I_ne_zero (mul_ne_zero hp (exp_ne_zero _))
 
-
-
 theorem boundaryCoordinate_disk_iff {p : ℂ} (hp : ‖p‖ = 1) (z : ℂ) :
     ‖boundaryCoordinate p z‖ ≤ 1 ↔ 0 ≤ z.im := by
   rw [norm_boundaryCoordinate hp, Real.exp_le_one_iff]
   exact neg_nonpos
 
-
-
 theorem boundaryCoordinate_interior_iff {p : ℂ} (hp : ‖p‖ = 1) (z : ℂ) :
     ‖boundaryCoordinate p z‖ < 1 ↔ 0 < z.im := by
   rw [norm_boundaryCoordinate hp, Real.exp_lt_one_iff]
   exact neg_neg_iff_pos
-
-
 
 theorem contDiffAt_boundaryInverse {p : ℂ} (hp : p ≠ 0) :
     ContDiffAt ℂ ∞ (boundaryInverse p) p := by
@@ -83,16 +56,12 @@ theorem contDiffAt_boundaryInverse {p : ℂ} (hp : p ≠ 0) :
   have hdiv : ContDiffAt ℂ ∞ (fun w : ℂ => w / p) p := contDiffAt_id.div_const p
   exact contDiffAt_const.mul (hlog.comp (f := fun w : ℂ => w / p) p hdiv)
 
-
-
 theorem boundaryCoordinate_inverse {p w : ℂ} (hp : p ≠ 0) (hw : w ≠ 0) :
     boundaryCoordinate p (boundaryInverse p w) = w := by
   have hI (z : ℂ) : I * (-I * z) = z := by
     rw [← mul_assoc, mul_neg, I_mul_I, neg_neg, one_mul]
   rw [boundaryCoordinate, boundaryInverse, hI, exp_log (div_ne_zero hw hp)]
   exact mul_div_cancel₀ w hp
-
-
 
 theorem boundaryInverse_coordinate_eventually {p : ℂ} (hp : p ≠ 0) :
     ∀ᶠ z in 𝓝 (0 : ℂ), boundaryInverse p (boundaryCoordinate p z) = z := by
@@ -105,16 +74,11 @@ theorem boundaryInverse_coordinate_eventually {p : ℂ} (hp : p ≠ 0) :
     log_exp (by simpa using hz.1) (by simpa using hz.2.le)]
   simp [← mul_assoc]
 
-
-
 theorem boundaryInverse_im_nonneg {p w : ℂ} (hp : ‖p‖ = 1) (hw : ‖w‖ ≤ 1) :
     0 ≤ (boundaryInverse p w).im := by
   simp only [boundaryInverse, mul_im, neg_re, I_re, neg_zero, zero_mul,
     neg_im, I_im, neg_one_mul, zero_add, log_re, norm_div, hp, div_one]
   exact neg_nonneg.mpr (Real.log_nonpos (norm_nonneg _) hw)
-
-
-
 
 theorem boundaryInverse_tendstoWithin {p : ℂ} (hp : ‖p‖ = 1) :
     Tendsto (boundaryInverse p) (𝓝[closedBall (0 : ℂ) 1] p)

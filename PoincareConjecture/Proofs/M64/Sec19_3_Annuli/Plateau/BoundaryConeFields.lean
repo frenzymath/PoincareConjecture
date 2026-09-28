@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConeReconstruction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -31,9 +18,6 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def coneCartesianField (g : C → E)
     (r : ℝ) (v0 : C)
     (v d : ℝ → C) (s θ : ℝ) (i : Fin 2) : E :=
@@ -41,9 +25,6 @@ noncomputable def coneCartesianField (g : C → E)
       fderiv ℝ g (coneCoordinates r v0 v s θ) (v θ - v0) +
     Proofs.M58.angularVector θ i •
       fderiv ℝ g (coneCoordinates r v0 v s θ) (d θ))
-
-
-
 
 theorem cone_reconstruction_radial {g : C → E}
     (r : ℝ) (v0 : C) (v : ℝ → C)
@@ -56,9 +37,6 @@ theorem cone_reconstruction_radial {g : C → E}
 end Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem coneCartesianField_norm_sq (g : C → E)
     (r : ℝ) (v0 : C)
@@ -76,10 +54,6 @@ theorem coneCartesianField_norm_sq (g : C → E)
         (‖fderiv ℝ g (coneCoordinates r v0 v s θ) (v θ - v0)‖ ^ 2 +
           ‖fderiv ℝ g (coneCoordinates r v0 v s θ) (d θ)‖ ^ 2) := by ring
     _ = _ := by rw [Real.cos_sq_add_sin_sq, mul_one]
-
-
-
-
 
 theorem coneCartesianField_norm_sq_le (g : C → E)
     (r : ℝ) (v0 : C)

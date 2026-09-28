@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Connected.FourContacts.Resolut
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.RegularCocoreSection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

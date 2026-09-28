@@ -16,8 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 structure ComponentCircleBlockData (D : ComponentBranchModel old i)
     [Fintype D.complex.faces] {n : ℕ} (p : Fin (n + 3) → D.sample → ℝ × V3) where
   x : Fin (n + 3) → V2
@@ -55,7 +53,6 @@ structure ComponentCircleBlockData (D : ComponentBranchModel old i)
     (z : P2 × ℝ).1 = (0, 0) ↔ (map j z : D.sample → ℝ × V3) ∈ D.axis.space
 
 open Classical in
-
 
 theorem ComponentBranchModel.exists_component_circle_blocks
     (D : ComponentBranchModel old i) (hcore : D.core ⊆ interior R)
@@ -150,8 +147,6 @@ theorem ComponentBranchModel.exists_component_circle_blocks
     upper := fun j z => hend j true z
     sheets := hmaps
     axis := hmapa }⟩
-
-
 
 theorem ComponentBranchModel.exists_selfpaired_circle_blocks [T2Space X]
     (D : ComponentBranchModel old i) (hcore : D.core ⊆ interior R)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.ProductIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Components
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,23 +17,11 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
-
-
-
 structure GlobalParallelPotential (D : LeviCivitaData g) where
   coordinate : M → ℝ
   coordinate_smooth : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ coordinate
   coordinate_unit : RiemannianMetric.HasUnitGradient D coordinate
   coordinate_zero_hessian : RiemannianMetric.HasZeroHessian D coordinate
-
-
-
-
-
-
-
 
 theorem global_parallel_product_isometry
     {D : LeviCivitaData g} (P : GlobalParallelPotential D)
@@ -85,8 +61,6 @@ end PoincareConjecture.RicciFlow.Splitting
 namespace PoincareConjecture.RicciFlow.Splitting
 
 open RiemannianMetric
-
-
 
 theorem exists_connectedComponent_productIsometry
     {M : Type u} [TopologicalSpace M] [T3Space M]

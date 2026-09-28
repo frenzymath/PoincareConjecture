@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CounterexampleSourceNecks
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 structure CounterexampleNeckSegment {epsilon C A D₀ D : ℝ}
     (E : SameTimeCounterexample.{u} epsilon C A D₀ D) where
@@ -53,8 +41,6 @@ structure CounterexampleNeckSegment {epsilon C A D₀ D : ℝ}
       N = strongNeck_top J epsilon_lt_half ∧ J.center ∈ cover.X
   neckAt : ∀ v, v ∈ Icc lower upper → GeneralizedStrongNeck E.flow E.time epsilon
   neckAt_center : ∀ v (hv : v ∈ Icc lower upper), (neckAt v hv).center = path v
-
-
 
 theorem exists_counterexample_neck_segment_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :
@@ -94,15 +80,11 @@ theorem exists_counterexample_neck_segment_accuracy
     neckAt := fun v hv => Classical.choose (hcenters v hv)
     neckAt_center := fun v hv => Classical.choose_spec (hcenters v hv) }⟩
 
-
-
 structure CounterexampleNeckFamily {epsilon C A : ℝ}
     (E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
       ((n : ℝ) + 1) ((n : ℝ) + 1)) where
   shift : ℕ
   segment : ∀ k : ℕ, CounterexampleNeckSegment (E (k + shift))
-
-
 
 theorem exists_counterexample_neck_family_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :
@@ -130,11 +112,7 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 def sourceIndex (H : CounterexampleNeckFamily E) (k : ℕ) : ℕ := k + H.shift
-
-
 
 theorem sourceIndex_strictMono (H : CounterexampleNeckFamily E) :
     StrictMono H.sourceIndex := by

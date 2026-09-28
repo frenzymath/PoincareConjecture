@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCompatibili
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChildCompatibility
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreIntersections
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,11 +11,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_band_chain_faces_canonical
     {n : ℕ} (F : Fin n → OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -70,11 +52,6 @@ theorem m64Intrinsic_band_chain_faces_canonical
   · rcases lt_or_gt_of_ne hij with hlt | hgt
     · exact hordered i j hlt p q
     · exact (hordered j i hgt q p).symm
-
-
-
-
-
 
 theorem m64Intrinsic_coordinate_mesh_family_canonical
     {I : Type*} (F : I → OpenPartialHomeomorph Plane AnnulusCoordinates)

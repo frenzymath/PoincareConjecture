@@ -1,23 +1,12 @@
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Topology.MetricSpace.ProperSpace.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_injective_product_neighborhood
     {X P Y : Type*} [TopologicalSpace X] [CompactSpace X] [TopologicalSpace P]
@@ -37,8 +26,6 @@ theorem exists_injective_product_neighborhood
     generalized_tube_lemma isCompact_univ isCompact_singleton hW hsliceW
   exact ⟨B, hB, hp (mem_singleton p),
     hinjW.mono (fun q hq => hAB ⟨hA hq.1, hq.2⟩)⟩
-
-
 
 theorem exists_injective_uniform_tube
     {X Y : Type*} [TopologicalSpace X] [CompactSpace X]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceTangentExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +9,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Boundary
-
-
-
-
 
 theorem exists_boundary_arc_straightening {c : ℝ → LoopAmbient} {I : Set ℝ} {s : ℝ}
     (hI : IsOpen I) (hs : s ∈ I) (hc : ContDiffOn ℝ ∞ c I) (hder : deriv c s ≠ 0) :

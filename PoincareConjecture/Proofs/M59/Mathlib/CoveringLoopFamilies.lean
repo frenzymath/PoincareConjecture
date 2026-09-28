@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CoveringHomotopyGroups
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalMapNaturality
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -25,8 +15,6 @@ variable {E X S N : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [Finite N] [Nontrivial N] {p : E → X}
 
 omit [Finite N] in
-
-
 
 theorem exists_circle_family_lift (hp : IsCoveringMap p)
     (q : CubeBoundaryQuotient (Fin 1) S) (c : E)
@@ -97,9 +85,6 @@ theorem exists_circle_family_lift (hp : IsCoveringMap p)
   exact (congrArg p (hG v t)).trans (hproj v t)
 
 omit [Nontrivial N] [T2Space S] [Finite N] in
-
-
-
 
 theorem exists_circle_homotopyAlong_lift [Nonempty N] (hp : IsCoveringMap p)
     (q : CubeBoundaryQuotient (Fin 1) S) (c : E)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Components
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,7 +11,6 @@ open scoped Topology
 namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 def stripSlice {M : Type*} [TopologicalSpace M]
     (F : Fin 2 → OpenPartialHomeomorph (Real × Real) M)
@@ -36,7 +33,6 @@ theorem stripSlice_geometry {M : Type*} [TopologicalSpace M]
   · intro i j hij
     exact (hdisjoint hij).mono ((F i).mapsTo.mono_left (hsource i)).image_subset
       ((F j).mapsTo.mono_left (hsource j)).image_subset
-
 
 theorem contact_mem_stripSlice_iff {M : Type*} [TopologicalSpace M]
     (F : Fin 2 → OpenPartialHomeomorph (Real × Real) M)
@@ -61,8 +57,6 @@ theorem contact_mem_stripSlice_iff {M : Type*} [TopologicalSpace M]
   · intro heq
     exact heq ▸ hj
 
-
-
 theorem strip_label_eq_iff_component {M : Type*} [TopologicalSpace M] [T2Space M]
     (F : Fin 2 → OpenPartialHomeomorph (Real × Real) M)
     (a b : Fin 2 → Real) (hab : ∀ i, a i ≤ b i)
@@ -79,9 +73,6 @@ theorem strip_label_eq_iff_component {M : Type*} [TopologicalSpace M] [T2Space M
     (stripSlice F a b 0) (fun i => (hg.1 i).1.isClosed)
     (fun i => (hg.1 i).2.isPreconnected) hg.2 hcover q (fun j => (L.symm j).1)
     (fun j => (contact_mem_stripSlice_iff F a b 0 hab hsource hdisjoint L q hends j _).mpr rfl) i j
-
-
-
 
 theorem exists_resolved_level_components {M : Type*} [TopologicalSpace M] [T2Space M]
     {h : M → Real} {c r η : Real}

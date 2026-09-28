@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Nonempty
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Vanishing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -23,7 +16,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     (E : SurgeryEventData g₀ K P slice₀ metric₀ T)
     (hSlice : ∀ t ∈ Set.Icc 0 T, slice₀ t = slice₁ t)
     (hMetric : ∀ t ∈ Set.Icc 0 T, HEq (metric₀ t) (metric₁ t))
-
 
 noncomputable def rebuildPast : SurgeryEventData g₀ K P slice₁ metric₁ T :=
   E.copyPast (past := fun t => ⟨slice₀ t, metric₀ t⟩)
@@ -66,7 +58,6 @@ theorem rebuildPast_retained_image :
       E.limit_identify.map '' E.retained_pre :=
   eq_of_heq (E.rebuildPast_preservation hSlice hMetric).retained_image_heq
 
-
 theorem rebuildPast_preservation_of_heq
     {g₁ : StandardInitialMetric} {K₁ : MetricSurgeryConstants} {P₁ : SurgeryParameters}
     (B : SurgeryEventData g₁ K₁ P₁ slice₁ metric₁ T)
@@ -88,7 +79,6 @@ variable {P : SurgeryParameters} {slice₀ slice₁ : ℝ → GeneralizedSliceCa
     (E : SurgeryVanishingEventData P slice₀ metric₀ T)
     (hSlice : ∀ t ∈ Set.Icc 0 T, slice₀ t = slice₁ t)
     (hMetric : ∀ t ∈ Set.Icc 0 T, HEq (metric₀ t) (metric₁ t))
-
 
 noncomputable def rebuildPast : SurgeryVanishingEventData P slice₁ metric₁ T :=
   E.copyPast (past := fun t => ⟨slice₀ t, metric₀ t⟩)

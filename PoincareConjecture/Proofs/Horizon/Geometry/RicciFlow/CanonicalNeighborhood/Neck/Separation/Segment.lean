@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Uniqueness
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -76,8 +66,6 @@ theorem mem_coordinate_slab_iff {a b : ℝ}
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, haxis⟩,
       N.coordinate_map_coordinate_inverse hx⟩
 
-
-
 theorem exists_initial_segment_to_slab_boundary {γ : ℝ → M} {L a b : ℝ}
     (hL : 0 ≤ L) (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹)
     (hγ : ContinuousOn γ (Icc 0 L)) (hstart : γ 0 ∈ N.region a b)
@@ -101,9 +89,6 @@ theorem exists_initial_segment_to_slab_boundary {γ : ℝ → M} {L a b : ℝ}
     push Not at hne
     exact htU ⟨htcoord.1, lt_of_le_of_ne htcoord.2.1 hne.1.symm,
       lt_of_le_of_ne htcoord.2.2 hne.2⟩
-
-
-
 
 theorem exists_initial_segment_to_half_neck {γ : ℝ → M} {L : ℝ}
     (hL : 0 ≤ L) (hε : N.epsilon ≤ 1 / 4)
@@ -132,7 +117,6 @@ theorem exists_initial_segment_to_half_neck {γ : ℝ → M} {L : ℝ}
   · rw [hboundary, abs_of_pos (by positivity)]
 
 omit [T2Space M] in
-
 
 theorem axial_displacement_le_of_unit_speed {γ : ℝ → M} {L : ℝ}
     (hL : 0 ≤ L) (hγ : g.IsGeodesicOn γ (Icc 0 L))
@@ -166,7 +150,6 @@ theorem axial_displacement_le_of_unit_speed {γ : ℝ → M} {L : ℝ}
   simpa only [Real.norm_eq_abs, sub_zero] using h
 
 omit [T2Space M] in
-
 
 theorem half_neck_time_gt_of_unit_speed {γ : ℝ → M} {L : ℝ}
     (hL : 0 ≤ L) (hε : N.epsilon ≤ 1 / 4)
@@ -206,8 +189,6 @@ theorem half_neck_time_gt_of_unit_speed {γ : ℝ → M} {L : ℝ}
     exact hm.trans hscaled
   apply lt_of_lt_of_le _ hlow
   exact div_lt_div_of_pos_left hr (by positivity) (by linarith)
-
-
 
 theorem exists_long_initial_segment_to_half_neck {γ : ℝ → M} {L : ℝ}
     (hL : 0 ≤ L) (hε : N.epsilon ≤ 1 / 4)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M04.CompactParabolic
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_earlier_scalar_le
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -98,8 +87,6 @@ theorem exists_earlier_scalar_le
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem exists_compact_limit_scalar_anchor
     (hC : RicciFlowCurvatureTheory.{u})

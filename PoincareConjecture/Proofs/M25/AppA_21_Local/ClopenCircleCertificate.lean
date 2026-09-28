@@ -3,15 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M25
 
 attribute [local instance] SphereBundleCircleModel.carrier_topology
   SphereBundleCircleModel.carrier_charted SphereBundleCircleModel.carrier_manifold
-
-
-
 
 theorem exists_circle_certificate_on_compact_open_component
     {M : Type u} [TopologicalSpace M]

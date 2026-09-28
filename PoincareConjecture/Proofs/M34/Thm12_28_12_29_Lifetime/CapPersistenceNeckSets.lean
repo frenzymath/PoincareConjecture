@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestricti
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,21 +13,15 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem coordinate_map_coordinate_inverse {x : M} (hx : x ∈ N.carrier) :
     N.coordinate_map (N.coordinate_inverse x) = x := by
   have h := congrArg Subtype.val (N.coordinate_inverse_right x hx)
   rw [N.coordinate_map_eq] at h
   exact h
 
-
-
 theorem region_isOpen (a b : ℝ) : IsOpen (N.region a b) :=
   N.coordinate_inverse_smooth.continuousOn.snd.isOpen_inter_preimage
     N.carrier_open isOpen_Ioo
-
-
 
 theorem region_eq_image {a b : ℝ} (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) :
     N.region a b = N.coordinate_map '' (univ ×ˢ Ioo a b) := by
@@ -52,8 +37,6 @@ theorem region_eq_image {a b : ℝ} (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.e
     rw [N.coordinate_inverse_coordinate_map_of_axial_mem hzN]
     exact hz.2
 
-
-
 theorem region_isPreconnected {a b : ℝ}
     (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹) : IsPreconnected (N.region a b) := by
   have hrank : 1 < Module.rank ℝ (EuclideanSpace ℝ (Fin 3)) := by
@@ -66,8 +49,6 @@ theorem region_isPreconnected {a b : ℝ}
   apply N.coordinate_map_smooth.continuousOn.mono
   intro z hz
   exact ⟨mem_univ _, ha.trans_lt hz.2.1, hz.2.2.trans_le hb⟩
-
-
 
 theorem mem_central_sphere_iff_of_mem {x : M} (hx : x ∈ N.carrier) :
     x ∈ N.central_sphere ↔ (N.coordinate_inverse x).2 = 0 := by
@@ -82,8 +63,6 @@ theorem mem_central_sphere_iff_of_mem {x : M} (hx : x ∈ N.carrier) :
   · intro hz
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, hz⟩,
       N.coordinate_map_coordinate_inverse hx⟩
-
-
 
 theorem exists_centered_region_subset_open {O : Set M} (hO : IsOpen O)
     (hSO : N.central_sphere ⊆ O) :
@@ -114,8 +93,6 @@ theorem exists_centered_region_subset_open {O : Set M} (hO : IsOpen O)
   change N.coordinate_map (N.coordinate_inverse x) ∈ O at hxO
   rwa [N.coordinate_map_coordinate_inverse hx.1] at hxO
 
-
-
 theorem isCompact_image_closed_axial_interval {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :
     IsCompact (N.coordinate_map '' (univ ×ˢ Icc a b)) := by
@@ -123,8 +100,6 @@ theorem isCompact_image_closed_axial_interval {a b : ℝ}
   apply N.coordinate_map_smooth.continuousOn.mono
   intro z hz
   exact ⟨mem_univ _, ha.trans_le hz.2.1, hz.2.2.trans_lt hb⟩
-
-
 
 theorem image_closed_axial_interval_subset_carrier {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹) :
@@ -141,12 +116,9 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
 theorem boundary_subset_closed_core : N.boundary_sphere ⊆ N.closed_core := by
   rw [← N.core_frontier_eq_boundary]
   exact frontier_subset_closure.trans N.closed_core_compact.isClosed.closure_subset
-
-
 
 theorem core_disjoint_end_neck : Disjoint N.core N.end_neck.carrier := by
   apply Set.disjoint_left.mpr
@@ -154,8 +126,6 @@ theorem core_disjoint_end_neck : Disjoint N.core N.end_neck.carrier := by
   have hy : x ∈ N.closed_core := interior_subset (N.core_eq_interior_closed_core ▸ hx)
   rw [N.closed_core_eq_complement_end] at hy
   exact hy.2 he
-
-
 
 theorem boundary_subset_inner_end_closure {b : ℝ} (hb : -N.epsilon⁻¹ < b) :
     N.boundary_sphere ⊆ closure (N.end_neck.region (-N.epsilon⁻¹) b) := by

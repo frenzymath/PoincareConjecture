@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.ResolutionEndHomotopies
 import Mathlib.Topology.Connected.Clopen
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

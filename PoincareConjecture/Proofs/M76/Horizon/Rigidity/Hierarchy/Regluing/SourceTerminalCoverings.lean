@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Termina
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalBoundaryCovering
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.TerminalSphericalFrontier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -26,8 +19,6 @@ local notation "C0" => AddCircle p
 local notation "Ann" => PLAnnularStrip.squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 def HamiltonZeroTerminalSphericalCover {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (phi : C(H0, H0))
     (T : Set X0) (u v a b alpha beta : ℝ) : Prop :=
@@ -40,8 +31,6 @@ def HamiltonZeroTerminalSphericalCover {ι : Type*}
       ∀ i, IsCompact (S i) ∧ (S i).Nonempty ∧
         Nonempty (ChartwisePLSphere e (S i)) ∧
         ∀ x ∈ S i, connectedComponentIn (frontier T) x = S i
-
-
 
 theorem exists_hamiltonZero_terminal_spherical_coverings
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 V3}
@@ -102,9 +91,6 @@ theorem exists_hamiltonZero_terminal_spherical_coverings
   exact ⟨hPL, hcompact, hne, hI, boundaryMap, hvalue, hc,
     exists_hamiltonZero_terminal_spherical_frontier hd hpsi hPL hcompact hne
       hpos hab halpha hgap hsecondWidth hfirstWidth boundaryMap hvalue hc⟩
-
-
-
 
 theorem HamiltonZeroSourceBoundaryDiskData.exists_terminal_spherical_coverings
     {ι κ E : Type*} [TopologicalSpace E]

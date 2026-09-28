@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalRegularFiniteCapBudget
 import PoincareConjecture.Proofs.M47.TerminalRegularRetainedCeiling
 import PoincareConjecture.Proofs.M47.TerminalRegularCommonApplication
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_maximal_regular_counterexample
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

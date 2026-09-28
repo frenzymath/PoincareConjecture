@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FramePlaneCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.TransversePlaneDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace ContinuousLinearMap
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 noncomputable def frameTransversePlaneHomeomorph (J : F →L[ℝ] E)
     (hJ : Function.Injective J) (A : Set E) :
@@ -38,9 +26,6 @@ noncomputable def frameTransversePlaneHomeomorph (J : F →L[ℝ] E)
   refine ((J.frameComplementPlaneHomeomorph hJ).subtype ?_).trans e
   intro P
   rw [J.ker_frameComplementPlaneHomeomorph hJ]
-
-
-
 
 theorem contractible_frameTransverseSpace_of_planes (J : F →L[ℝ] E)
     (hJ : Function.Injective J) (A : Set E)

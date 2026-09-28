@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedCompressionLoops
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.OriginalNewFrontierGenera
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains

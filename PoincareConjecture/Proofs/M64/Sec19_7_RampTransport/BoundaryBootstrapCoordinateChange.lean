@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapClassicalJets
 import Mathlib.MeasureTheory.Function.Holder
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -40,11 +30,6 @@ local instance coordinateChangeBilinearNorm :
 local instance coordinateChangeBilinearSpace :
     NormedSpace ℝ (Source →L[ℝ] Source →L[ℝ] Target) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
-
 
 theorem coordinate_change_memWkp_two
     {O : Set Plane} {T : Set Source} (hO : IsOpen O) (hfinite : volume O < ⊤)

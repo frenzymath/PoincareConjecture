@@ -1,12 +1,5 @@
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
@@ -15,7 +8,6 @@ namespace Topology.IsQuotientMap
 
 variable {X Y Z : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace Z] {f : C(X, Y)} {g : C(X, Z)}
-
 
 noncomputable def homeomorphOfFibers (hf : IsQuotientMap f) (hg : IsQuotientMap g)
     (h : ∀ x x', f x = f x' ↔ g x = g x') : Y ≃ₜ Z where
@@ -55,7 +47,6 @@ namespace IsOpenQuotientMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] {f : X → Y}
 
-
 theorem restrictPreimage_of_isOpen_preimage (hf : IsOpenQuotientMap f) (s : Set Y)
     (hs : IsOpen (f ⁻¹' s)) : IsOpenQuotientMap (s.restrictPreimage f) :=
   ⟨hf.surjective.restrictPreimage s, hf.continuous.restrictPreimage,
@@ -66,7 +57,6 @@ end IsOpenQuotientMap
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
 
 theorem isOpenQuotientMap_of_pair_fibers (r : Setoid X) (τ : X → X)
     (hτ : Continuous τ) (hr : ∀ x y, r x y ↔ x = y ∨ x = τ y) :

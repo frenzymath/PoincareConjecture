@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.CapBallEmbedding
 import PoincareConjecture.Proofs.M38.LocalCapCollar
 import PoincareConjecture.Proofs.M38.EventCollars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_local_cap_collar_width
     {M : Type u} [TopologicalSpace M]
@@ -51,11 +41,9 @@ theorem exists_local_cap_collar_width
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (i : Fin (F.event T hT).cap_count)
 
-
 noncomputable def eventCapCollar (r c : ℝ) :
     RoundCylinderSpace → (F.slice (F.event T hT).tMinus).carrier :=
   (F.event T hT).limit_identify.inverse ∘ localCapCollar ((F.event T hT).local_result i) r c
-
 
 noncomputable def eventCapCollarInverse (r c : ℝ) :
     (F.slice (F.event T hT).tMinus).carrier → RoundCylinderSpace :=
@@ -71,13 +59,11 @@ variable {r c : ℝ} (hc : 0 < c) (hcr : c < r)
 
 include hc hcr hdom
 
-
 theorem event_cap_collar_smooth :
     ContMDiffOn ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (eventCapCollar F T hT i r c)
       (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :=
   (contMDiffOn_univ.mp (F.event T hT).limit_identify.inverse_smooth).comp_contMDiffOn
     (local_cap_collar_smooth _ hc hcr hdom)
-
 
 theorem event_cap_collar_left_inverse :
     Set.LeftInvOn (eventCapCollarInverse F T hT i r c) (eventCapCollar F T hT i r c)
@@ -88,14 +74,12 @@ theorem event_cap_collar_left_inverse :
   rw [(F.event T hT).limit_identify.right_inverse (Set.mem_univ _)]
   exact local_cap_collar_left_inverse _ hc hcr hdom hz
 
-
 theorem event_cap_collar_right_inverse :
     Set.LeftInvOn (eventCapCollar F T hT i r c) (eventCapCollarInverse F T hT i r c)
       (eventCapCollar F T hT i r c '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   rintro x ⟨z, hz, rfl⟩
   exact congrArg (eventCapCollar F T hT i r c)
     (event_cap_collar_left_inverse F T hT i hc hcr hdom hz)
-
 
 theorem event_cap_collar_inverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (eventCapCollarInverse F T hT i r c)
@@ -109,7 +93,6 @@ theorem event_cap_collar_inverse_smooth :
   rintro x ⟨z, hz, rfl⟩
   exact ⟨z, hz, ((F.event T hT).limit_identify.right_inverse (Set.mem_univ _)).symm⟩
 
-
 theorem event_cap_collar_open :
     IsOpen (eventCapCollar F T hT i r c '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) := by
   change IsOpen (((F.event T hT).limit_identify.inverse ∘
@@ -117,7 +100,6 @@ theorem event_cap_collar_open :
   rw [Set.image_comp]
   exact (limit_inverse_openEmbedding F T hT).isOpenMap _
     (local_cap_collar_open _ hc hcr hdom)
-
 
 theorem event_cap_collar_negative_retained {z : UnitTwoSphere} {s : ℝ}
     (hs : s ∈ Set.Ioo (-1 : ℝ) 0)
@@ -132,8 +114,6 @@ theorem event_cap_collar_negative_retained {z : UnitTwoSphere} {s : ℝ}
   rw [← heq, (F.event T hT).limit_identify.left_inverse
     ((F.event T hT).retained_pre_subset hx)]
   exact hx
-
-
 
 theorem event_cap_collar_negative_gluing
     (hball : F.standard_initial.metric.ball 0

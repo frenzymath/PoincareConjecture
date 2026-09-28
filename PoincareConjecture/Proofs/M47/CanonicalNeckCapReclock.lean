@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapClock
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_based_cap_birth_cylinder
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -55,8 +44,6 @@ theorem exists_based_cap_birth_cylinder
     exact hbased hs x hx
   exact (Sigma.mk.inj (hpoint d htop x hx)).2.trans
     (hterminal _ (hmem htop) hparameter)
-
-
 
 theorem capPersistence_persists_to_horizon
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

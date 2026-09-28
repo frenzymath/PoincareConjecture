@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.SlabCoherence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -72,7 +64,6 @@ theorem metric_pullback (t : Set.Ico a H) (x : (F.slice a).carrier)
       (mfderiv (𝓡 3) (𝓡 3) (identify F haH hI hS t) x w) =
         (metric F haH hI hS t).inner x v w :=
   (slabAt F haH hI hS t).metric_pullback ⟨t.1, t.2.1, (lt_cutoff t.2).le⟩ x v w
-
 
 theorem transport_compatibility (b c : ℝ) (hbc : b < c)
     (hJ : Set.Icc b c ⊆ F.time_domain)

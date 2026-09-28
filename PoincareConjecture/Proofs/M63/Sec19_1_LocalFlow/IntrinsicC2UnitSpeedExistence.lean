@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ClosedCurvatureJetIdentif
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.IntrinsicRegularityFromSpatialLimits
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.UniformUpperCutoffJetBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "YR" => C(AddCircle curvePeriod, ℝ)
-
-
-
 
 theorem exists_intrinsic_c2_local_curve_of_unit_initial
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

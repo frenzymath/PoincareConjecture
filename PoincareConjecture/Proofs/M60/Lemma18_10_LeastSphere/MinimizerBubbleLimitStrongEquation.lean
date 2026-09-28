@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimit
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByPartsTests
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -94,9 +92,6 @@ private theorem classical_columns
   exact PiLp.ext fun a => hz a
 
 set_option maxHeartbeats 2200000 in
-
-
-
 
 theorem suWeakAlphaCoordinate_harmonic_of_smooth
     {g : RiemannianMetric n M} {p : M} {u : LoopPlane → E}

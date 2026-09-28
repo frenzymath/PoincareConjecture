@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curva
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,7 +67,6 @@ theorem ricci_symmetric (D : LeviCivitaData g)
     (x : M) (u v : TangentSpace (𝓡 n) x) : D.ricci x u v = D.ricci x v u := by
   unfold ricci
   exact Finset.sum_congr rfl fun i _ => D.curvatureTensor_pair_swap x u _ v _
-
 
 theorem intrinsicCurvatureTensorCalculus (D : LeviCivitaData g) :
     D.CurvatureTensorCalculus := by

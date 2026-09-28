@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.WeakEndNoncompact
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ConnectedComponentFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M76
 
 variable {Y : Type*} [TopologicalSpace Y] [T2Space Y]
   [LocallyConnectedSpace Y] [PreconnectedSpace Y]
-
-
-
 
 theorem HasOneSimplyConnectedEnd.exists_compact_connected_filling
     (hend : HasOneSimplyConnectedEnd Y) {K : Set Y}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Gaussia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Gaussian.Normalization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.VolumeGrowth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_gaussian_bound_of_double_ball_estimates
     (n : ℕ) (κ C : ℝ) (hn : 0 < n) (hκ : 0 ≤ κ) (hC : 0 ≤ C) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Cover
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +21,6 @@ def anchorStripParameter (F : OpenPartialHomeomorph (Real × Real) S2)
     (R : Real → Real ≃ₘ[Real] Real) (t₀ : Real) (α : S1 → S2) (q : S1) : Real :=
   (R t₀).symm (F.symm (α q)).1
 
-
 def pastedRoundedAnchor {v : E3} (g : S2 → E3)
     (e : OpenPartialHomeomorph E2 S2)
     (F : OpenPartialHomeomorph (Real × Real) S2)
@@ -42,8 +33,6 @@ def pastedRoundedAnchor {v : E3} (g : S2 → E3)
   exact if α z.2 ∈ U then
     roundedPatch D J c H x (θ z.1, e.symm (α z.2) 1)
   else g (F (R (θ z.1) (anchorStripParameter F R t₀ α z.2), θ z.1))
-
-
 
 theorem roundedPatch_eq_strip_of_tail_transport
     {g : S2 → E3} (e : OpenPartialHomeomorph E2 S2)
@@ -68,8 +57,6 @@ theorem roundedPatch_eq_strip_of_tail_transport
   change roundedPatch D J c H (profileX ρ) (t, tailCoordinate e F s) =
     g (rawTailPoint e F (t, s)) at h
   simpa only [hy, hmotion] using h
-
-
 
 theorem contMDiff_pastedRoundedAnchor
     {v : E3} {g : S2 → E3} (hg : ContMDiff (𝓡 2) (𝓡 3) ∞ g)

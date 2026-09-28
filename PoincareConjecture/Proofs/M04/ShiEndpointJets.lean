@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -224,4 +216,3 @@ theorem shiEndpoint_transition_jets [T2Space M] (D : LeviCivitaData g)
     hFirst.trans hnJets.2.2.1.symm, hSecond.trans hnJets.2.2.2.symm⟩
 
 end PoincareConjecture.M04
-

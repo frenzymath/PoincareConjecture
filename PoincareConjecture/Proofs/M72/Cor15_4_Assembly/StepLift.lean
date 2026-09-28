@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M72.Cor15_4_Assembly.DisjointUnionSum
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -19,8 +12,6 @@ namespace PoincareConjecture
 namespace SurgeryBallEmbedding
 
 variable {A : GeneralizedSliceCarrier.{u}}
-
-
 
 noncomputable def sumInl (B : SurgeryBallEmbedding A) (Z : GeneralizedSliceCarrier.{u}) :
     SurgeryBallEmbedding (A.sum Z) where
@@ -38,14 +29,10 @@ noncomputable def sumInl (B : SurgeryBallEmbedding A) (Z : GeneralizedSliceCarri
     exact congrArg Sum.inl (B.right_inverse (Set.mem_image_of_mem _ hx))
   open_embedding := IsOpenEmbedding.inl.comp B.open_embedding
 
-
-
 @[simp] theorem sumInl_closedBall (B : SurgeryBallEmbedding A)
     (Z : GeneralizedSliceCarrier.{u}) :
     (B.sumInl Z).closedBall = Sum.inl '' B.closedBall := by
   exact Set.image_comp Sum.inl B.map (Metric.closedBall 0 1)
-
-
 
 theorem m72_closedBall_closed (B : SurgeryBallEmbedding A) : IsClosed B.closedBall :=
   ((isCompact_closedBall (0 : StandardCapSpace) 1).image_of_continuousOn
@@ -53,15 +40,11 @@ theorem m72_closedBall_closed (B : SurgeryBallEmbedding A) : IsClosed B.closedBa
 
 end SurgeryBallEmbedding
 
-
-
 theorem m72SumInl_compl {A Z : GeneralizedSliceCarrier.{u}} (U : Set A.carrier) :
     (Sum.inl '' U : Set (A.sum Z).carrier)ᶜ =
       (Sum.inl '' Uᶜ) ∪ Set.range Sum.inr := by
   ext x
   cases x <;> simp
-
-
 
 noncomputable def SmoothConnectedSumData.sumRight
     {A B C : GeneralizedSliceCarrier.{u}}
@@ -151,16 +134,12 @@ noncomputable def SmoothConnectedSumData.sumRight
           exact Or.inr (Set.mem_image_of_mem _ hy)
     | inr x => exact Or.inl (Or.inr (Or.inr ⟨x, rfl⟩))
 
-
-
 theorem SmoothConnectedSumStep.sumRight
     {X Y : GeneralizedSliceCarrier.{u}} (Z : GeneralizedSliceCarrier.{u})
     (h : SmoothConnectedSumStep X Y) :
     SmoothConnectedSumStep (X.sum Z) (Y.sum Z) := by
   rcases h with ⟨A, B, ⟨D⟩, ⟨S⟩⟩
   exact ⟨A, B.sum Z, ⟨D.sumRight Z (S.first_ball.map 0)⟩, ⟨S.sumRight Z⟩⟩
-
-
 
 theorem SmoothConnectedSumStep.reflTransGen_sumRight
     {X Y : GeneralizedSliceCarrier.{u}} (Z : GeneralizedSliceCarrier.{u})

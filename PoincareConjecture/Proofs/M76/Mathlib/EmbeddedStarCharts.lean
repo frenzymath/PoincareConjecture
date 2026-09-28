@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
   [DecidableEq E] [DecidableEq F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
 
 theorem AffineOnFaces.exists_embeddedImage_closedFaceStar_chart
     (hf : K.AffineOnFaces f) (hinj : InjOn f K.space)

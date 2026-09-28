@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Coordinates.Centered
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,8 +15,6 @@ namespace OpenCylinderModel
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 def toDiffeomorph (U : Opens M) (T : OpenCylinderModel (U : Set M)) :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) domain U ∞ where
@@ -54,8 +44,6 @@ namespace EpsilonNeck
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_unit_to_real_cylinder (N : EpsilonNeck g) :
     ∃ E : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))

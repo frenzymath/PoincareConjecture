@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapDerivativeJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ noncomputable local instance capRecordedCoefficientNorm :
 
 noncomputable local instance capRecordedCoefficientSpace : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_actualCap_coordinate_derivative_bound {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A : ℝ}

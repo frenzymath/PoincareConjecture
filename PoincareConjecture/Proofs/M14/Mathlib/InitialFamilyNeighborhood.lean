@@ -1,23 +1,12 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem exists_open_initial_family_neighborhood {E : Type*} [TopologicalSpace E]
     {U : Set E} (hU : IsOpen U) {x : E} (hx : x ∈ U)

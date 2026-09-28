@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.M59BasepointTransport
 import PoincareConjecture.Proofs.M02
 import PoincareConjecture.Proofs.M58
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal unitInterval
@@ -59,11 +50,6 @@ theorem m59BasepointTransport_from_M59
     Nonempty M59HigherBasepointTransportService.{u} := by
   obtain ⟨_S, _representative, _short_loop, basepoint_service⟩ := hM59
   exact basepoint_service
-
-
-
-
-
 
 theorem m59BasepointTransport_bijective
     {X : Type u} [TopologicalSpace X] {n : ℕ}

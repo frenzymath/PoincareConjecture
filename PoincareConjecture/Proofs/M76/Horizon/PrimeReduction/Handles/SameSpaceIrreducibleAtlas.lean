@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.OpenRet
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.OpenSubcarrierHomeomorph
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.PartialIrreducibilityTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

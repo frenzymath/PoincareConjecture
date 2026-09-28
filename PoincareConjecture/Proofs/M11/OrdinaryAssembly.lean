@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.OrdinarySlices
 import PoincareConjecture.Proofs.M11.CompatibleTheory
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

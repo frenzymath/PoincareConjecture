@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.IntrinsicTensionTrace
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.RadialMapAxis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +60,6 @@ private theorem mapHessian_radial_axis :
   simp only [Pi.smul_apply]
   rw [intrinsicSpatialMetric_connection_axis b hb hc₀ B hρ]
   simp only [smul_zero, add_zero, map_zero, sub_zero]
-
-
 
 theorem mapTension_radialScale_axis :
     mapTension D B (radialScaleMap h) (r • e 2) =

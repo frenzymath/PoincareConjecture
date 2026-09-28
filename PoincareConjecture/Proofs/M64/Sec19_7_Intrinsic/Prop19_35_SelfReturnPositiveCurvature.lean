@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicReturnTriangulation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicRegionPositiveCurvature
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +9,6 @@ open Set MeasureTheory
 open scoped Topology ContDiff Manifold Bundle
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_geodesic_selfintersection_positive_curvature
     {G : RiemannianMetric 2 AnnulusCoordinates} (D : LeviCivitaData G)

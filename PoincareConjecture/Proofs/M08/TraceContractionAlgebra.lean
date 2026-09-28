@@ -13,7 +13,6 @@ namespace PoincareConjecture.M08
 variable {V ι κ : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
   [Fintype ι] [Fintype κ]
 
-
 theorem orthonormal_repr_sum_mul (e : Module.Basis ι ℝ V)
     (b : OrthonormalBasis κ ℝ V) (i j : ι) :
     ∑ a, e.repr (b a) i * e.repr (b a) j = (Matrix.gram ℝ e)⁻¹ i j := by
@@ -39,7 +38,6 @@ theorem orthonormal_repr_sum_mul (e : Module.Basis ι ℝ V)
       _ = 1 := by rw [hBA, Matrix.transpose_one, Matrix.mul_one, hAB]
   rw [hInv]
   rfl
-
 
 theorem bilinear_trace_eq_inverseGram (e : Module.Basis ι ℝ V)
     (b : OrthonormalBasis κ ℝ V) (L : V →ₗ[ℝ] V →ₗ[ℝ] ℝ) :
@@ -101,7 +99,6 @@ private def tensorPair13 (A : MultilinearMap ℝ (fun _ : Fin 4 ↦ V) ℝ) (u w
     (fun a v z ↦ by
       simpa only [MultilinearMap.curryLeft_apply, Matrix.vecCons] using
         (((A.curryLeft u).curryLeft v).curryLeft w).cons_smul ![] a z)
-
 
 theorem fourTensor_trace_eq_inverseGram (e : Module.Basis ι ℝ V)
     (b : OrthonormalBasis κ ℝ V) (A : MultilinearMap ℝ (fun _ : Fin 4 ↦ V) ℝ) :

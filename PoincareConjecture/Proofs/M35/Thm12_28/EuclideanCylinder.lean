@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SphereCoordinates
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,26 +8,19 @@ open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
 
-
-
 noncomputable def cylinderCoordinateEquiv :
     EuclideanSpace ℝ (Fin 3) ≃L[ℝ] RoundCylinderCoordinates :=
   (EuclideanSpace.finAddEquivProd (𝕜 := ℝ) (n := 2) (m := 1)).trans
     (ContinuousLinearEquiv.prodCongr (ContinuousLinearEquiv.refl ℝ _)
       (PiLp.equivOfUnique 2 ℝ (fun _ : Fin 1 => ℝ)))
 
-
-
 theorem cylinderCoordinateEquiv_fst (p : EuclideanSpace ℝ (Fin 3)) (i : Fin 2) :
     (cylinderCoordinateEquiv p).1 i = p (Fin.castAdd 1 i) := by
   rfl
 
-
 theorem cylinderCoordinateEquiv_snd (p : EuclideanSpace ℝ (Fin 3)) :
     (cylinderCoordinateEquiv p).2 = p 2 := by
   rfl
-
-
 
 theorem cylinderCoordinateEquiv_basis (i : Fin 3) :
     cylinderCoordinateEquiv (EuclideanSpace.basisFun (Fin 3) ℝ i) =
@@ -61,15 +45,11 @@ private noncomputable def axialPairing :
     cylinderCoordinateEquiv.toContinuousLinearMap
   (ContinuousLinearMap.mul ℝ ℝ).bilinearComp A A
 
-
-
 noncomputable def cylinderEuclideanCoefficients (u : ℝ)
     (p : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   (32 * (1 - u) / (‖(cylinderCoordinateEquiv p).1‖ ^ 2 + 4) ^ 2) •
       spherePairing + axialPairing
-
-
 
 theorem cylinderEuclideanCoefficients_apply (u : ℝ)
     (p v w : EuclideanSpace ℝ (Fin 3)) :
@@ -122,21 +102,15 @@ private theorem cylinder_coefficients_pos {u : ℝ} (hu : u < 1)
   · exact add_pos_of_pos_of_nonneg (mul_pos hf (real_inner_self_pos.mpr hfirst))
       (mul_self_nonneg _)
 
-
-
 noncomputable def cylinderEuclideanMetric (u : ℝ) (hu : u < 1) :
     RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)) :=
   RiemannianMetric.ofEuclideanCoefficients (cylinderEuclideanCoefficients u)
     (cylinder_coefficients_smooth u) (cylinder_coefficients_symm u)
     (cylinder_coefficients_pos hu)
 
-
-
 noncomputable def cylinderEuclideanConnection (u : ℝ) (hu : u < 1) :
     LeviCivitaData (cylinderEuclideanMetric u hu) :=
   (cylinderEuclideanMetric u hu).euclideanLeviCivitaData
-
-
 
 theorem cylinderEuclideanMetric_basis (u : ℝ) (hu : u < 1) (q : UnitTwoSphere)
     (p : EuclideanSpace ℝ (Fin 3)) (a b : Fin 3) :

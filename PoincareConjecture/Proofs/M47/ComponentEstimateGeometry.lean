@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
-
 
 theorem six_mul_lt_scalar_of_sectional_lower (D : LeviCivitaData g)
     (x : M) (k : ℝ)
@@ -74,14 +62,10 @@ theorem six_mul_lt_scalar_of_sectional_lower (D : LeviCivitaData g)
     ⟨i, Finset.mem_univ i, Finset.sum_lt_sum (fun c _ => hle i c)
       ⟨j, Finset.mem_univ j, by simpa only [if_neg hij] using hstrict i j hij⟩⟩
 
-
-
 theorem component_scalar_pos {C : ℝ} (N : SingularCComponent g D C)
     {x : M} (hx : x ∈ N.carrier) : 0 < D.scalarCurvature x := by
   simpa only [mul_zero] using
     six_mul_lt_scalar_of_sectional_lower D x 0 (N.positive_sectional x hx)
-
-
 
 theorem component_scalar_le_sup {C : ℝ} (N : SingularCComponent g D C)
     {x : M} (hx : x ∈ N.carrier) :
@@ -92,8 +76,6 @@ theorem component_scalar_le_sup {C : ℝ} (N : SingularCComponent g D C)
     rintro _ ⟨y, rfl⟩
     exact mem_image_of_mem _ y.2
   exact le_csSup hb (mem_range.mpr ⟨⟨x, hx⟩, rfl⟩)
-
-
 
 theorem component_scalar_ratio {C : ℝ} (N : SingularCComponent g D C)
     {x y : M} (hx : x ∈ N.carrier) (hy : y ∈ N.carrier) :
@@ -108,8 +90,6 @@ theorem component_scalar_ratio {C : ℝ} (N : SingularCComponent g D C)
   have hybound := component_scalar_le_sup N hy
   nlinarith
 
-
-
 theorem twoComponent_scalar_bound {C Q : ℝ}
     (N : SingularCComponent g D (2 * C)) {x : M}
     (hx : x ∈ N.carrier) (hQ : D.scalarCurvature x = Q)
@@ -118,8 +98,6 @@ theorem twoComponent_scalar_bound {C Q : ℝ}
   rw [hQ] at h
   convert h using 1
   ring
-
-
 
 theorem component_diameter_lt {C : ℝ} (N : SingularCComponent g D C)
     {x : M} (hx : x ∈ N.carrier) :
@@ -133,8 +111,6 @@ theorem component_diameter_lt {C : ℝ} (N : SingularCComponent g D C)
   have hi := csInf_le hb (mem_range.mpr ⟨⟨x, hx⟩, rfl⟩)
   exact N.diameter_upper.trans_le (ENNReal.ofReal_le_ofReal
     (mul_le_mul_of_nonneg_left hi N.constant_pos.le))
-
-
 
 theorem component_subset_ball {C : ℝ} (N : SingularCComponent g D C)
     {x : M} (hx : x ∈ N.carrier) :

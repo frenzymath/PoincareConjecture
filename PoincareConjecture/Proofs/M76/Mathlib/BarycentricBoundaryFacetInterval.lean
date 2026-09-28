@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem barycentricDualBlock_of_single_coface
     {n : ℕ} (hcard : ∀ v ∈ K.faces, v.card ≤ n + 1)

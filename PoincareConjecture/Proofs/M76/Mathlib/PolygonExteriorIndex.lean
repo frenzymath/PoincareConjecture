@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonBoundedRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric PlanarSegment
@@ -16,8 +8,6 @@ open scoped BigOperators
 namespace Polygon
 
 variable {n : ℕ} (P : Polygon (ℝ × ℝ) n)
-
-
 
 theorem crossingIndex_eq_on_preconnected (hnv : P.HasNonverticalEdges)
     {S : Set (ℝ × ℝ)} (hS : IsPreconnected S) (hsub : S ⊆ (P.boundary ℝ)ᶜ)
@@ -29,8 +19,6 @@ theorem crossingIndex_eq_on_preconnected (hnv : P.HasNonverticalEdges)
   exact ((P.isLocallyConstant_crossingIndex hnv).comp_continuous hf).apply_eq_of_preconnectedSpace
     ⟨x, hx⟩ ⟨y, hy⟩
 
-
-
 theorem crossingIndex_eq_zero_of_left {q : ℝ × ℝ}
     (hq : ∀ i, q.1 < (P i).1) : P.crossingIndex q = 0 := by
   unfold crossingIndex
@@ -38,9 +26,6 @@ theorem crossingIndex_eq_zero_of_left {q : ℝ × ℝ}
   intro i _
   simp only [crossingContribution, horizontalStep, if_neg (not_le_of_gt (hq i)),
     if_neg (not_le_of_gt (hq (finRotate n i))), sub_self, zero_mul]
-
-
-
 
 theorem crossingIndex_eq_zero_of_unbounded_component (hnv : P.HasNonverticalEdges)
     {x : ℝ × ℝ} (hx : x ∈ (P.boundary ℝ)ᶜ)

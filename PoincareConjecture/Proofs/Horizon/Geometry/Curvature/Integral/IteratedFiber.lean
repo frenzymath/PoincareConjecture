@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Iter
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Isometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace MeasureTheory
@@ -16,7 +9,6 @@ open Poincare.Geometry.Manifold.RegularFiber Poincare.Geometry.Manifold.RegularL
 open scoped Manifold ContDiff Topology
 
 set_option maxHeartbeats 400000 in
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_iterated_openFiber_scalar_integral_equivalence
     {m k : ℕ} {M : Type*} [TopologicalSpace M]

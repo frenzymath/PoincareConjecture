@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M13.CurvatureExtensions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -17,7 +9,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {g : RiemannianMetric n M}
-
 
 noncomputable def curvatureDirectionsBilin (D : LeviCivitaData g) (x : M)
     (w : TangentSpace (𝓡 n) x) :
@@ -64,7 +55,6 @@ theorem curvature_smul_second (D : LeviCivitaData g) (x : M)
     D.curvature x u (c • v) w = c • D.curvature x u v w := by
   exact (curvatureDirectionsBilin D x w u).map_smul c v
 
-
 theorem curvature_bianchi (D : LeviCivitaData g) (x : M)
     (u v w : TangentSpace (𝓡 n) x) :
     D.curvature x u v w + D.curvature x v w u + D.curvature x w u v = 0 := by
@@ -88,7 +78,6 @@ theorem curvature_smul_third (D : LeviCivitaData g) (x : M)
     D.curvature x u v (c • w) = c • D.curvature x u v w := by
   rw [curvature_eq_neg_cyclic D x u v (c • w), curvature_smul_second, curvature_smul_first,
     curvature_eq_neg_cyclic D x u v w, smul_neg, smul_add]
-
 
 noncomputable def curvatureTensorLinear (D : LeviCivitaData g) (x : M) :
     TangentSpace (𝓡 n) x →ₗ[ℝ] TangentSpace (𝓡 n) x →ₗ[ℝ]

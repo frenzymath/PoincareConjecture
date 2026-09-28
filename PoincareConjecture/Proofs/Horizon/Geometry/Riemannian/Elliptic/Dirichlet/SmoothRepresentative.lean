@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.ClassicalEquation
 import Mathlib.Topology.Metrizable.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -80,8 +72,6 @@ private theorem isSeparable_support_L2 (f : Lp ℝ 2 g.volumeMeasure) :
   intro x hx
   obtain ⟨k, hk⟩ := exists_nat_one_div_lt (sq_pos_of_ne_zero hx)
   exact mem_iUnion.mpr ⟨k, hk.le⟩
-
-
 
 theorem exists_smooth_representative_of_local (hΩ : IsOpen Ω)
     (f : Lp ℝ 2 g.volumeMeasure)

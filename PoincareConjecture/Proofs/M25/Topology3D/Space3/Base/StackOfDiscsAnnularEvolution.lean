@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartTimeField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.LocalFieldIsotopy
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FixedSphereBallPreservation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -22,7 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
 local notation "SP" => (ℝ × (ℝ × E2))
-
 
 theorem exists_stackAnnularCutoff
     (g : P → E2) (A a b B δ : ℝ)
@@ -116,7 +105,6 @@ theorem exists_stackAnnularCutoff
   · intro p hp
     exact hcoords p (hρs hp)
 
-
 def stackPassiveHeightFiber
     (F : P ≃ₜ P) (hF : ∀ p : P, (F p).1 = p.1) (z : ℝ) : E2 ≃ₜ E2 where
   toFun := fun x => (F (z, x)).2
@@ -139,7 +127,6 @@ def stackPassiveHeightFiber
     exact congrArg Prod.snd (F.apply_symm_apply (z, y))
   continuous_toFun := (F.continuous.comp (continuous_const.prodMk continuous_id)).snd
   continuous_invFun := (F.symm.continuous.comp (continuous_const.prodMk continuous_id)).snd
-
 
 theorem exists_stackAnnularEvolution
     (g : P → E2) (A a b B δ : ℝ)

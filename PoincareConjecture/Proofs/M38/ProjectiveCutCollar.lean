@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveCutDomain
 import PoincareConjecture.Proofs.M38.ProjectiveReverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_projectiveDouble_first_cut_collar
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier)

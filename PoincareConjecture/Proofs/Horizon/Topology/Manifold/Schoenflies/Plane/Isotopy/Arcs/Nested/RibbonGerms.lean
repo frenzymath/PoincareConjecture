@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.Ribbon.ExteriorEdge
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.MarkingExtraction
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +35,6 @@ private theorem common_image_neighborhood
     subst z
     exact ⟨mem_image_of_mem _ hx, x, hz, rfl⟩
 
-
-
 theorem exists_common_filled_side_of_inward_ribbon
     (A B R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     {w : Real} (hw : 0 < w)
@@ -72,9 +62,6 @@ theorem exists_common_filled_side_of_inward_ribbon
   refine ⟨U, hU, hp ▸ hpU, ?_, ?_⟩
   · simpa only [hFc, hGc] using hUS (closedBall (0 : E2) 1)
   · simpa only [hFo, hGo] using hUS (ball (0 : E2) 1)
-
-
-
 
 theorem exists_common_marks_of_inward_ribbon
     (A B R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -116,9 +103,6 @@ theorem exists_common_marks_of_inward_ribbon
   have hflat : upperBoundaryFlattening (upperPoint : E2) = 0 := by
     simpa only [add_zero, one_smul, hzero] using upperBoundaryFlattening_radial 0
   simpa only [hflat] using hF.eq_of_nhds
-
-
-
 
 theorem exists_common_filled_sides_of_annular_ribbon
     (A B R : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

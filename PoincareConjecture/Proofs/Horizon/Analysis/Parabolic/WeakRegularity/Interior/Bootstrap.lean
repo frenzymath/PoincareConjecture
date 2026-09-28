@@ -1,16 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Mollification
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergyIdentity
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff Topology
@@ -20,11 +9,6 @@ noncomputable section
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 variable {n : ℕ} {U : Set (Spacetime n)}
-
-
-
-
-
 
 theorem spatialDeriv_lebesgueConvolution_on
     {u η : Spacetime n → ℝ} {V K : Set (Spacetime n)}
@@ -46,9 +30,6 @@ theorem timeDeriv_lebesgueConvolution_on
     timeDeriv (lebesgueConvolution η u) z =
       lebesgueConvolution (fun y => fderiv ℝ η y (0, 1)) u z := by
   exact fderiv_lebesgueConvolution_on hV hK hu hη hηc hs hz (0, 1)
-
-
-
 
 theorem frozen_principal_hessian_bound
     {C : Coefficients n} {z : Spacetime n} {κ : ℝ}
@@ -76,15 +57,9 @@ theorem frozen_principal_l2_coercivity
     (integral_timeDeriv_mul_constantPrincipal_eq_zero hv hvc hsymm)
     (frozen_principal_hessian_bound hκ hEll hv hvc)
 
-
 theorem continuousOn_contDiffOn_zero {u : Spacetime n → ℝ}
     (hu : ContinuousOn u U) : ContDiffOn ℝ 0 u U := by
   exact contDiffOn_zero.mpr hu
-
-
-
-
-
 
 theorem variable_principal_energy_absorption
     {κ ε H R V : ℝ}
@@ -96,9 +71,6 @@ theorem variable_principal_energy_absorption
     nlinarith
   apply (le_div_iff₀ hden).2
   nlinarith [hfrozen, hperturb]
-
-
-
 
 theorem young_flux_absorption
     {f g : Spacetime n → ℝ} {δ : ℝ}

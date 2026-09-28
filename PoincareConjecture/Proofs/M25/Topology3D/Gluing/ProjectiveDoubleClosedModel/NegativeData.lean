@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesRadial
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 structure NegativeProjectiveSideData
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

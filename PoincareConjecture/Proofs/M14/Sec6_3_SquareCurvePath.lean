@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareCurve
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareRootConstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 noncomputable def backwardPathOfSquareCurve
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {T a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
@@ -61,9 +49,6 @@ noncomputable def backwardPathOfSquareCurve
   filter_upwards [isOpen_Ioo.mem_nhds hτ] with t ht
   exact hγclock t (Ioo_subset_Icc_self ht)
 
-
-
-
 noncomputable def squareRootPathOfSmoothSquare
     {T a b : ℝ} {x y : G.Point} (p : M14BackwardPath G T a b x y)
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ (fun s => p.curve (s ^ 2))
@@ -91,16 +76,11 @@ variable (hM12 : GeneralizedRicciGaugeTheory.{u} n) {T a b : ℝ} (ha : 0 ≤ a)
   (hclock : ∀ s ∈ M14SqrtParameterInterval a b,
     G.spacetime.timeFunction (α s) = T - s ^ 2)
 
-
-
 noncomputable def squareRootPathOfSquareCurve :
     M14SquareRootPath G (backwardPathOfSquareCurve hM12 ha hab α hα hclock) :=
   squareRootPathOfSmoothSquare _ (hα.congr (fun s hs => by
     change α (Real.sqrt (s ^ 2)) = α s
     rw [Real.sqrt_sq ((Real.sqrt_nonneg a).trans hs.1)]))
-
-
-
 
 theorem squareRootPathOfSquareCurve_curve {s : ℝ} (hs : s ∈ M14SqrtParameterInterval a b) :
     (squareRootPathOfSquareCurve hM12 ha hab α hα hclock).curve s = α s := by

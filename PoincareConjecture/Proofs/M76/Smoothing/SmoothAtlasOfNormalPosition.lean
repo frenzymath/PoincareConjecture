@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmoothLeafFieldChart
 import PoincareConjecture.Proofs.M76.Smoothing.LeafProjectionAtlas
 import PoincareConjecture.Proofs.M76.Smoothing.SmoothNormalPosition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_smooth_atlas_of_smoothLeafField (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)
@@ -56,10 +43,6 @@ theorem exists_smooth_atlas_of_smoothLeafField (K : SimplicialComplex ℝ E)
   exact exists_smooth_atlas_of_leaf_coordinates c (fun a => ⟨a, hc a⟩)
     Subtype.val (fun y => (P y).subspace) b Q hQ hspec
 
-
-
-
-
 theorem exists_smooth_atlas_of_vertexStarPlanes (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) (hfinite : K.faces.Finite)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 4)
@@ -72,10 +55,6 @@ theorem exists_smooth_atlas_of_vertexStarPlanes (K : SimplicialComplex ℝ E)
   obtain ⟨U, hU, hKU, P, hP, hdim, htrans⟩ :=
     exists_smooth_transverse_leafField K hK hfinite hpure hedges htriangles hvertices
   exact exists_smooth_atlas_of_smoothLeafField K hfinite hpure htriangles hP hU hKU hdim htrans
-
-
-
-
 
 theorem exists_smooth_atlas_of_brouwerStars (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E)) (hfinite : K.faces.Finite)

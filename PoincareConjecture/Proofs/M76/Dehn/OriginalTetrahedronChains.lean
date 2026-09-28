@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTetrahedronAdjacency
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.RelativeTetrahedronChains
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryLinks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -41,8 +32,6 @@ include hK hLK hfull hN J F g hJF hg hLs hpure hstars
 
 omit [Fintype K.vertices] in
 
-
-
 theorem original_chart_stars_tetrahedron_connected (hconn : IsConnected K.space) :
     (tetrahedronGraph K.vertexAbstractComplex.toPreAbstractSimplicialComplex).Connected := by
   have hboundary (z : G) (hz : z ∈ K.space) :
@@ -56,8 +45,6 @@ theorem original_chart_stars_tetrahedron_connected (hconn : IsConnected K.space)
     (K.tetrahedronGraph_connected_of_isConnected hK hpure hconn hlinks)
 
 open Classical in
-
-
 
 theorem original_chart_stars_relative_top_chain (hconn : IsConnected K.space)
     (c : Module.Dual (ZMod 2)
@@ -86,8 +73,6 @@ theorem original_chart_stars_relative_top_chain (hconn : IsConnected K.space)
         · simp [hq])
 
 open Classical in
-
-
 
 theorem original_chart_stars_boundary3_injective (hconn : IsConnected K.space)
     (hfront : (frontier N).Nonempty) :

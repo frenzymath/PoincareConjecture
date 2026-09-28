@@ -6,23 +6,11 @@ import Mathlib.LinearAlgebra.Matrix.Adjugate
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture.M60
-
-
 
 theorem inverse_contraction_fin_two (G H : Matrix (Fin 2) (Fin 2) ℝ) :
     (∑ i : Fin 2, ∑ j : Fin 2, (G⁻¹) i j * H j i) =
@@ -32,8 +20,6 @@ theorem inverse_contraction_fin_two (G H : Matrix (Fin 2) (Fin 2) ℝ) :
   simp only [Fin.sum_univ_two, Matrix.smul_apply, smul_eq_mul, Ring.inverse_eq_inv,
     Matrix.of_apply, Matrix.cons_val_zero, Matrix.cons_val_one]
   ring
-
-
 
 theorem hasDerivWithinAt_sqrt_det_fin_two {G : ℝ → Matrix (Fin 2) (Fin 2) ℝ}
     {H : Matrix (Fin 2) (Fin 2) ℝ} {J : Set ℝ} {t : ℝ}

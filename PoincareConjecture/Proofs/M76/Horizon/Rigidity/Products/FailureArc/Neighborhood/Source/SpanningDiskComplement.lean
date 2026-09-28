@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBoundaryAttachedDisk
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

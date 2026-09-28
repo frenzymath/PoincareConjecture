@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.SourceNeckPullback
 import PoincareConjecture.Proofs.M28.Generalized.QuantitativeBackwardWindow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 

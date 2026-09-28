@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m60PeriodicLoop_velocity (γ : C1FreeLoopSpace (M := M)) (t : ℝ) :
     curveVelocity (periodicFreeLoop γ) t =
@@ -44,8 +33,6 @@ theorem m60PeriodicLoop_velocity (γ : C1FreeLoopSpace (M := M)) (t : ℝ) :
   erw [hv] at hd
   exact hd
 
-
-
 theorem m60_continuous_loop_tangentNorm (g : RiemannianMetric 3 M) :
     Continuous (fun p : C1FreeLoopSpace (M := M) × LoopCircle =>
       g.tangentNorm (p.1 p.2) (c1LoopTangent p.1 p.2).2) := by
@@ -54,8 +41,6 @@ theorem m60_continuous_loop_tangentNorm (g : RiemannianMetric 3 M) :
   let : IsContinuousRiemannianBundle LoopAmbient (TangentSpace (𝓡 3) : M → Type _) :=
     ⟨⟨g.inner, g.contMDiff.continuous, fun _ _ _ => rfl⟩⟩
   exact continuous_bundle_norm.comp continuous_loop_tangent_eval
-
-
 
 theorem m60_exists_loop_length_neighborhood (g : RiemannianMetric 3 M)
     (γ₀ : C1FreeLoopSpace (M := M)) :
@@ -99,8 +84,6 @@ theorem m60_exists_loop_length_neighborhood (g : RiemannianMetric 3 M)
       (continuous_const.intervalIntegrable 0 rampPeriod) hs
     simpa +instances only [freeLoopLength, intervalIntegral.integral_const, sub_zero,
       smul_eq_mul] using! hi
-
-
 
 theorem m60_exists_loop_close_neighborhood [T2Space M] (g : RiemannianMetric 3 M)
     (γ₀ : C1FreeLoopSpace (M := M)) {delta : ℝ} (hdelta : 0 < delta) :

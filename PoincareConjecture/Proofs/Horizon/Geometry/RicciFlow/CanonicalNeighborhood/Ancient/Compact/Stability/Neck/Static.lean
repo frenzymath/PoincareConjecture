@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Terminal
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +24,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   (e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j))
 
-
-
 theorem terminalNeck_scalar_comparison
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) :
     RoundCylinderClose N.epsilon 0 (fun z v w =>
@@ -46,8 +36,6 @@ theorem terminalNeck_scalar_comparison
       ← Real.rpow_mul N.scalar_center_pos.le]
     norm_num
   simpa only [hpow] using h
-
-
 
 def terminalStaticNeck (N : EpsilonNeck (G.limit.flow.flow.metric 0))
     {ε : ℝ} (hεpos : 0 < ε) (hεhalf : ε < 1 / 2) (k : ℕ)
@@ -151,8 +139,6 @@ theorem terminalStaticNeck_carrier_of_epsilon_eq (hε : N.epsilon = ε)
   subst ε
   exact G.terminalNeckEmbedding_full_target e N k hN
 
-
-
 theorem terminalStaticNeck_region_of_epsilon_eq (hε : N.epsilon = ε)
     (hN : N.carrier ⊆ G.exhaustion k) (a b : ℝ) :
     (G.terminalStaticNeck e N hεpos hεhalf k hsource hR hclose).region a b =
@@ -183,8 +169,6 @@ theorem eventually_terminalNeck_center_scalar_pos
   have hc := (hconv.tendsto_terminal_scalarCurvature_prod hfixed N.center).comp
     (tendsto_id.prodMk tendsto_const_nhds)
   exact hc.eventually (lt_mem_nhds hR)
-
-
 
 theorem eventually_terminalStaticNeck
     (hconv : M23TerminalMetricConvergence G e)

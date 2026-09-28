@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,14 +11,8 @@ variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   {s : Set E} {t : Set F} {u : Set G}
 
-
-
-
-
 def IsFinitePL (e : s ≃ₜ t) : Prop :=
   ∃ f : E → F, FinitePiecewiseAffineOn f s ∧ ∀ x : s, (e x : F) = f x
-
-
 
 theorem IsFinitePL.symm [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
     {e : s ≃ₜ t} (he : e.IsFinitePL) : e.symm.IsFinitePL := by
@@ -51,9 +36,6 @@ theorem IsFinitePL.symm [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
   rw [← himage]
   exact hf.inverse hleft
 
-
-
-
 theorem IsFinitePL.trans [FiniteDimensional ℝ F]
     {e : s ≃ₜ t} {d : t ≃ₜ u} (he : e.IsFinitePL) (hd : d.IsFinitePL) :
     (e.trans d).IsFinitePL := by
@@ -67,8 +49,6 @@ theorem IsFinitePL.trans [FiniteDimensional ℝ F]
   intro x
   change (d (e x) : G) = g (f x)
   rw [hd, he]
-
-
 
 theorem isFinitePL_setCongr {s t : Set E} (h : s = t)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hs : K.space = s) :

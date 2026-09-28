@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronNeighborhoodRetract
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeFinitePLApproximation
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -22,11 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
-
 
 theorem exists_relative_finitePL_map_to_polyhedron
     (K : SimplicialComplex ℝ E) (J : SimplicialComplex ℝ F)

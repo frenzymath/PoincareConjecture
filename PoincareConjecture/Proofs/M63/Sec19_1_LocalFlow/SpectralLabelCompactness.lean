@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceLabelVelocityLp
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicLabelCompactness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory AddCircle PoincareConjecture.SpectralHeatNative
@@ -25,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "H" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_compact_spectral_label_displacements
     (F : RicciFlow n M (Icc a b)) {U : Set W} (hU : IsOpen U) {ρ : W → M}

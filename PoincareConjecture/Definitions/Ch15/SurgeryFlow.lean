@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch13.MetricSurgery
 import PoincareConjecture.Definitions.Ch01.Normalization
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def SurgeryNoTwoSidedProjectivePlane (S : GeneralizedSliceCarrier.{u}) : Prop :=
   ¬ ∃ f : RealProjectiveTwo × Set.Ioo (-1 : ℝ) 1 → S.carrier,
@@ -46,7 +34,6 @@ structure SurgeryParameters where
   kappa_antitone : AntitoneOn kappa (Set.Ici 0)
   r_le_epsilon : ∀ t, 0 ≤ t → r t ≤ epsilon
   h_le : ∀ t, 0 ≤ t → h t ≤ delta t ^ 2 * r t
-
 
 structure SurgeryRegionEquivalence (A B : GeneralizedSliceCarrier.{u})
     (U : Set A.carrier) (V : Set B.carrier) where
@@ -83,8 +70,6 @@ structure SurgeryCapChart (g₀ : StandardInitialMetric)
   outer_ball : carrier ⊆ {x | g.edist tip x ≤
     ENNReal.ofReal (h * (g₀.cylindrical_end.radius + 5))}
 
-
-
 structure SurgeryRegularSlab (slice : ℝ → GeneralizedSliceCarrier.{u})
     (metric : ∀ t, RiemannianMetric 3 (slice t).carrier) (a b : ℝ) where
   ordered : a < b
@@ -103,8 +88,6 @@ noncomputable def SurgeryRegularSlab.transport
     (S : SurgeryRegularSlab slice metric a b) (s t : Set.Icc a b) :
     (slice s.1).carrier → (slice t.1).carrier :=
   fun x => S.identify t ((S.identify s).symm x)
-
-
 
 structure SurgeryOrdinaryStrongNeck (S : GeneralizedSliceCarrier.{u})
     {J : Set ℝ} (F : RicciFlow 3 S.carrier J) (t epsilon : ℝ) where
@@ -128,8 +111,6 @@ inductive SurgeryOrdinaryCanonicalControl (S : GeneralizedSliceCarrier.{u})
       (contains : x ∈ N.carrier)
   | round (N : SingularRoundComponent (F.metric t) epsilon) (contains : x ∈ N.carrier)
 
-
-
 def SurgeryMetricLimitOn (A B : GeneralizedSliceCarrier.{u})
     (g : ℝ → RiemannianMetric 3 A.carrier)
     (gT : RiemannianMetric 3 B.carrier) (f : A.carrier → B.carrier)
@@ -142,9 +123,6 @@ def SurgeryMetricLimitOn (A B : GeneralizedSliceCarrier.{u})
         ‖iteratedFDeriv ℝ k (singularMetricCoefficient (g t) q a b) p -
           iteratedFDeriv ℝ k (surgeryMetricCoefficient gT
             (fun z => f ((extChartAt (𝓡 3) q).symm z)) a b) p‖ < eta
-
-
-
 
 structure SurgeryEventData (g₀ : StandardInitialMetric)
     (K : MetricSurgeryConstants) (P : SurgeryParameters)
@@ -251,8 +229,6 @@ structure SurgeryEventData (g₀ : StandardInitialMetric)
           LeviCivitaData.IsOrthonormalPair (pre_flow.metric t) y v w →
             0 < (pre_flow.connection t).sectionalCurvature y v w)
 
-
-
 structure SurgeryVanishingEventData (P : SurgeryParameters)
     (slice : ℝ → GeneralizedSliceCarrier.{u})
     (metric : ∀ t, RiemannianMetric 3 (slice t).carrier) (T : ℝ) where
@@ -269,8 +245,6 @@ structure SurgeryVanishingEventData (P : SurgeryParameters)
       (mfderiv (𝓡 3) (𝓡 3) (pre_identify t) x v)
       (mfderiv (𝓡 3) (𝓡 3) (pre_identify t) x w) =
         (pre_flow.metric t.1).inner x v w
-
-
 
   left_limit_volume : ℝ≥0∞
   left_limit_volume_tendsto :
@@ -352,9 +326,6 @@ structure SurgeryFlowData where
       ∃ x : (slice t).carrier, L < (connection t).curvatureTensorNorm x
   extinction_permanent : ∀ s t : ℝ, s ∈ time_domain → t ∈ time_domain → s ≤ t →
     IsEmpty (slice s).carrier → IsEmpty (slice t).carrier
-
-
-
 
 structure SurgeryFlowCylinder (F : SurgeryFlowData.{u})
     (C : GeneralizedSliceCarrier.{u}) (origin scale : ℝ)
@@ -453,8 +424,6 @@ def SurgeryPositiveComponentAt (F : SurgeryFlowData.{u})
     LeviCivitaData.IsOrthonormalPair (F.metric t) y v w →
       0 < (F.connection t).sectionalCurvature y v w
 
-
-
 def SurgeryNoncollapsed (F : SurgeryFlowData.{u}) : Prop :=
   ∀ t ∈ F.time_domain, ∀ x : (F.slice t).carrier,
     ¬ SurgeryPositiveComponentAt F t x →
@@ -469,8 +438,6 @@ def SurgeryNoncollapsed (F : SurgeryFlowData.{u}) : Prop :=
 
 def SurgeryFlowPinched (F : SurgeryFlowData.{u}) : Prop :=
   ∀ t ∈ F.time_domain, SurgeryPinchedAt (F.connection t) t
-
-
 
 structure SurgeryTerminalStrongNeck (F : SurgeryFlowData.{u})
     (T : ℝ) (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]
@@ -494,8 +461,6 @@ structure SurgeryTerminalStrongNeck (F : SurgeryFlowData.{u})
           ((F.event T hT).necks i).neck.coordinate_map z v w
       else surgeryCylinderPullback cylinder
         ((F.event T hT).necks i).neck.coordinate_map s)
-
-
 
 structure SurgeryFlowAdmissible (F : SurgeryFlowData.{u}) : Prop where
   strong_boundaries : ∀ T hT [Nonempty (F.slice T).carrier] i,

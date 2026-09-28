@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open Set
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem compact_min_velocity_lower_bound
     {M : Type u} [TopologicalSpace M] [CompactSpace M]

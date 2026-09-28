@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Singul
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +12,6 @@ open Dehn Dehn.ProtectedAnnulus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_square_cylinder_of_closed_curves
     {X : Type*} [TopologicalSpace X]
@@ -44,8 +33,6 @@ theorem exists_square_cylinder_of_closed_curves
   change g (squareRimLoop s) t = H (t, s)
   rw [hg]
   rfl
-
-
 
 theorem exists_polyhedral_source_singular_annulus
     {E₀ E₁ X : Type*}

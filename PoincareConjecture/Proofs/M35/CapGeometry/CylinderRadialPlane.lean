@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCurvatureDerivativeRealization
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialSectionalPlane
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_cylinder_radial_plane_realization {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)

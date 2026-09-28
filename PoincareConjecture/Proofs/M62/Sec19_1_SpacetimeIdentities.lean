@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_TimeSpatialPairing
 import PoincareConjecture.Proofs.M62.Sec19_1_Gauss
 import PoincareConjecture.Proofs.M62.Sec19_1_Codazzi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem SpacetimeData.identities {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) : SpacetimeIdentities G where
@@ -37,8 +26,6 @@ theorem SpacetimeData.identities {F : RicciFlow n M (Set.Icc a b)}
   time_spatial_pairing := G.time_spatial_pairing
   gauss := G.gauss
   codazzi := G.codazzi
-
-
 
 theorem exists_spacetimeData [T2Space M] [SecondCountableTopology M]
     (F : RicciFlow n M (Set.Icc a b)) :

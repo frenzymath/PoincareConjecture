@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Cutoff
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Restriction
 import PoincareConjecture.Proofs.M03.Existence.EuclideanRellichNative
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Metric
@@ -25,10 +13,6 @@ open scoped Topology
 namespace PoincareConjecture
 
 open EuclideanTranslationNative EuclideanMollificationNative EuclideanRellichNative
-
-
-
-
 
 theorem m65C1_disk_totallyBounded {d : ℕ} {I : Type*}
     (f : I → EuclideanSpace ℝ (Fin d) → ℝ) (hf : ∀ n, ContDiff ℝ 1 (f n))

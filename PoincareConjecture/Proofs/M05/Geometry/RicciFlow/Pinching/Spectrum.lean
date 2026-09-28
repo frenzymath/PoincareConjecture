@@ -1,28 +1,14 @@
-
 import Mathlib
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare
 
 abbrev ThreeVector := Fin 3 → ℝ
 
-
 def diagonalSpectrum (k₁ k₂ k₃ : ℝ) : Matrix (Fin 3) (Fin 3) ℝ :=
   Matrix.diagonal ![k₁, k₂, k₃]
 
-
 def rayleighValue (A : Matrix (Fin 3) (Fin 3) ℝ) (v : ThreeVector) : ℝ :=
   dotProduct v (Matrix.mulVec A v)
-
 
 def frobeniusSq (A : Matrix (Fin 3) (Fin 3) ℝ) : ℝ :=
   ∑ i, ∑ j, A i j ^ 2
@@ -75,8 +61,6 @@ theorem diagonalSpectrum_rayleigh_attains_least {k₁ k₂ k₃ : ℝ} :
   · simp [dotProduct, Fin.sum_univ_succ]
   · simp [rayleighValue, diagonalSpectrum, Matrix.mulVec, dotProduct,
       Fin.sum_univ_succ]
-
-
 
 theorem diagonalSpectrum_isLeastRayleigh
     {k₁ k₂ k₃ : ℝ} (h₁₂ : k₂ ≤ k₁) (h₂₃ : k₃ ≤ k₂) :

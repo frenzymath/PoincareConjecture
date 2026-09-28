@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Trimming
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Metric
@@ -22,7 +12,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
 
 noncomputable def edgeCurve (a : D.EdgeIndex) (t : ℝ) : EuclideanSpace ℝ (Fin 2) :=
   coordinateCircleArc
@@ -72,8 +61,6 @@ theorem chartArcCarrier_edgeCurve (a : D.EdgeIndex) (l r : ℝ) :
   congr 1
   funext t
   exact (D.edge_map_eq a t).symm
-
-
 
 theorem exists_trimmed_collars (U V : D.EdgeIndex → Set M)
     (hU : ∀ a, U a ∈ 𝓝 ((D.edge a.1 a.2).map 0))

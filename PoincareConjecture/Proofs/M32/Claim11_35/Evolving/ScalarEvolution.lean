@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.ScalarLaplacianControl
 import PoincareConjecture.Proofs.M32.Claim11_35.WorldlineMonotonicity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.EuclideanModel
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 16
@@ -71,9 +54,6 @@ private theorem evolving_model_scalar_laplacian
   rw [heq]
   simp [LeviCivitaData.laplacian, LeviCivitaData.hessian,
     LeviCivitaData.hessianOnFields, mvfderiv_const]
-
-
-
 
 theorem exists_strongNeck_backward_scalarLaplacian_control :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -145,10 +125,6 @@ theorem exists_strongNeck_backward_scalarLaplacian_control :
     rw [hlapabs, hscalarSq] at hLsmall
     exact (mul_le_mul_iff_right₀ (div_pos (pow_pos ha 2) (pow_pos hQ 2))).mp hLsmall
   exact ⟨hR, hrho.symm ▸ hSlower, hrho.symm ▸ hSupper, hlap⟩
-
-
-
-
 
 theorem exists_strongNeck_backward_scalarDerivative_comparison
     (hM04 : RicciFlowCurvatureTheory.{u}) :

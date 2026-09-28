@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.HarmonicTension
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawPrincipalExtension
 import Mathlib.Topology.ClusterPt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -27,8 +17,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem mapCovariantHessian_contDiff_apply
     {g b : RiemannianMetric n V} (D : LeviCivitaData g) (B : LeviCivitaData b)
     {F : V → V} (hF : ContDiff ℝ ∞ F) (u v : V) :
@@ -43,8 +31,6 @@ theorem mapCovariantHessian_contDiff_apply
     (((rawConnectionCoefficient_contDiff D).clm_apply (contDiff_const (c := u))).clm_apply
       (contDiff_const (c := v)))
   exact (h1.add h2).sub h3
-
-
 
 theorem mapTension_contDiff
     {g b : RiemannianMetric n V} (D : LeviCivitaData g) (B : LeviCivitaData b)
@@ -69,8 +55,6 @@ theorem mapTension_contDiff
   intro j _
   exact (raw_inverseGram_entry_contDiff g i j).smul
     (mapCovariantHessian_contDiff_apply D B hF (e i) (e j))
-
-
 
 theorem mapTension_eq_of_punctured
     {g b : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g) (B : LeviCivitaData b)

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffinePi
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -148,10 +140,6 @@ private theorem exists_scalar_core_stretch {r : ℝ} (hr : 1 < r) (hr2 : r < 2) 
       field_simp
     rw [← heq, q.symm_apply_apply]
     exact hdiv
-
-
-
-
 
 theorem exists_protected_core_stretch (ι : Type*) [Fintype ι]
     (J : Finset ι) {r : ℝ} (hr : 1 < r) (hr2 : r < 2) :

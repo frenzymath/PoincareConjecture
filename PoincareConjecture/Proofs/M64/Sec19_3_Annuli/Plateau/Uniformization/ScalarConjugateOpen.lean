@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarComplexOpen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCriticalDiscrete
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,18 +14,11 @@ namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
-
 def scalarConjugatePair (H V : Plane → ℝ) (x : Plane) : Plane :=
   H x • EuclideanSpace.basisFun (Fin 2) ℝ 0 +
     V x • EuclideanSpace.basisFun (Fin 2) ℝ 1
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarConjugatePair_open_and_discrete {H V : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -138,9 +119,6 @@ theorem scalarConjugatePair_open_and_discrete {H V : Plane → ℝ} (hHc : Conti
     C.symm (scalarConjugatePair H V (q z))
   rw [hright, hpair]
 
-
-
-
 theorem scalarConjugatePair_nhds_le_map {H V : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hlap : ∀ x ∈ scalarAnnulus, D.laplacian H x = 0)
@@ -150,10 +128,6 @@ theorem scalarConjugatePair_nhds_le_map {H V : Plane → ℝ} (hHc : Continuous 
     (hform : ∀ᶠ x in 𝓝 p, HasFDerivAt V (scalarConjugateForm D H x) x) :
     𝓝 (scalarConjugatePair H V p) ≤ map (scalarConjugatePair H V) (𝓝 p) :=
   (scalarConjugatePair_open_and_discrete D hHc hHs hlap hinner houter hVs hp hform).1
-
-
-
-
 
 theorem exists_open_local_annular_conjugate {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

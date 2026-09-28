@@ -7,10 +7,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Chang
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.ChartSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Local
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
-
-
-
-
-
-
-

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.MetricDifferenceEnergy
 import PoincareConjecture.Proofs.M03.ConnectionDifference
 import PoincareConjecture.Proofs.M03.CurvatureHom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option synthInstance.maxHeartbeats 200000

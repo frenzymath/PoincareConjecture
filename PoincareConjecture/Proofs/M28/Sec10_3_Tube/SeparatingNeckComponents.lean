@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.CollarComplementComponents
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalGraphRegions
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {M : Type*} [TopologicalSpace M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem complement_components_of_isSeparating (N : EpsilonNeck g) (hsep : N.IsSeparating)
     {x₀ x₁ : M} (hx₀ : x₀ ∈ N.belowGraph_m28 (fun _ => 0))

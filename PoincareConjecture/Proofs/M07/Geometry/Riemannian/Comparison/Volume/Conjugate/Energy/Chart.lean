@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Length
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem tangentNorm_comp_eq_sqrt_pullback
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -42,7 +31,6 @@ theorem tangentNorm_comp_eq_sqrt_pullback
   rw [hd1]
   rfl
 
-
 theorem tangentNorm_comp_sq_eq_pullback
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
     {u : ℝ → EuclideanSpace ℝ (Fin n)} {t : ℝ}
@@ -56,7 +44,6 @@ theorem tangentNorm_comp_sq_eq_pullback
   by_cases hv : mfderiv (𝓡 n) (𝓡 n) f (u t) (deriv u t) = 0
   · simp [hv]
   · exact (g.pos _ _ hv).le
-
 
 theorem continuousOn_speed_chart_comp
     (g : RiemannianMetric n M) (p : M)

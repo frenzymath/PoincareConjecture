@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.ChartVariation
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology
 
@@ -33,11 +21,6 @@ theorem exists_forall_mem_of_isCompact_of_continuous {E : Type*} [NormedAddCommG
   refine hkey ?_ t ht
   rw [Real.dist_eq, sub_zero, abs_lt]
   exact ⟨hs.1, hs.2⟩
-
-
-
-
-
 
 theorem exists_Icc_enlarged_subset {V : Set ℝ} {c d : ℝ} (hV : IsOpen V) (hcd : c ≤ d)
     (hsub : Set.Icc c d ⊆ V) :
@@ -62,6 +45,5 @@ theorem exists_Icc_enlarged_subset {V : Set ℝ} {c d : ℝ} (hV : IsOpen V) (hc
       have hmax : max c d = d := max_eq_right hcd
       rw [hmin, hmax, Real.dist_eq, abs_of_pos (by linarith : x - d > 0)]
       linarith
-
 
 end PoincareConjecture.Conjugate.Realization

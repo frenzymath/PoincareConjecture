@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Planar.FrontierEdgeDeterminants
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.OrderedTriangleBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

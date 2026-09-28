@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluing.PairedHomeomorph
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluing.PeriodPL
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -16,9 +14,6 @@ local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
-
 
 theorem polyhedralPL_comp_of_slab_restriction
     {V α β : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]

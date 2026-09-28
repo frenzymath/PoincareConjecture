@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.ScalarTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,8 +89,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem normalized_realization_scalar_laplacian
     (N : EpsilonNeck g) (D' : LeviCivitaData g) (q : UnitTwoSphere) {s : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -129,8 +118,6 @@ theorem normalized_realization_scalar_laplacian
   have htransport := DeepHorn.scalar_laplacian_eq_of_local_isometry D DN hVo hF hmetric h0V
   simpa only [DN, DeepHorn.rescaledMetric_scalar_laplacian, inv_pow, inv_inv,
     ← pow_mul, F, centeredEuclideanParametrization_zero] using htransport
-
-
 
 theorem scalar_evolution_margin_of_normalized_laplacian
     (N : EpsilonNeck g) (D' : LeviCivitaData g) (q : UnitTwoSphere)
@@ -163,8 +150,6 @@ namespace RicciFlow
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem scalar_time_derivative_margin_of_normalized_laplacian
     (hM04 : RicciFlowCurvatureTheory.{u}) {J : Set ℝ}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.MovingEndpoint
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ConfinedAttainment
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_InteriorSurvival
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,15 +16,10 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
 
-
-
 def confinementRegion (C : ActionConfinement G T start x) : Set G.Point :=
   {y | G.spacetime.timeFunction y ∈ Ico start T ∧
     ∃ p : M14BackwardPath G T 0 (T - G.spacetime.timeFunction y) x y,
       M14BackwardLAction G p < C.barrier}
-
-
-
 
 theorem confinementRegion_local
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
@@ -91,9 +78,6 @@ theorem confinementRegion_local
     refine ⟨V ∩ W, hV.inter hW, ⟨hyV, hstrict⟩, ?_⟩
     intro z hz
     exact ⟨hz.2, hrecover z hz.1.1 (sub_pos.mpr hz.2.2) hz.1.2.le⟩
-
-
-
 
 theorem confinementRegion_relatively_open
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3)

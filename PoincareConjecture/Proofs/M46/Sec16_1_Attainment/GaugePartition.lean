@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M08.ChartCover
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
 
 structure AttainmentGauge (G : GeneralizedLGeometryTransport 3 X time I) where
   index : G.gaugeCover.index
@@ -39,15 +29,10 @@ structure AttainmentGauge (G : GeneralizedLGeometryTransport 3 X time I) where
 
 variable {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 theorem exists_attainmentGauge (q : G.Point) :
     ∃ e : AttainmentGauge G, q ∈ e.source := by
   obtain ⟨j, U, lift, hU, hq, hlift, hright, hclock⟩ := M14.exists_smooth_gauge_lift G q
   exact ⟨⟨j, U, lift, (lift q).2, hU, hlift, hright, hclock⟩, hq⟩
-
-
-
 
 theorem exists_compact_gauge_partition {a b : ℝ} (hab : a ≤ b)
     (gamma : ℝ → G.Point) (hgamma : Continuous gamma) (paths : ℕ → ℝ → G.Point)
@@ -73,9 +58,6 @@ theorem exists_compact_gauge_partition {a b : ℝ} (hab : a ≤ b)
   exact M08.exists_compact_partition_of_uniform_limit
     (fun e : AttainmentGauge G => e.source) (fun e => e.source_open)
     exists_attainmentGauge hab gamma hgamma paths hlim'
-
-
-
 
 theorem clamp_uniform_limit {a b : ℝ} (hab : a ≤ b)
     (alpha : C(Icc a b, G.Point)) (paths : ℕ → ℝ → G.Point)

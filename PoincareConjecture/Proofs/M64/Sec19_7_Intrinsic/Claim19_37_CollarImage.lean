@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_FullCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MetricGerm
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -101,9 +88,6 @@ private theorem short_normal_strip_properties
   change ‖u (a, 0)‖ ^ 2 < ‖u (a, t)‖ ^ 2 at h
   rw [hnorm] at h
   exact ⟨by nlinarith [norm_nonneg (u (a, t))], hhere.2⟩
-
-
-
 
 theorem m64Intrinsic_exists_embedded_normal_collar (N : IntrinsicAnnulus) :
     ∃ (normal : ℝ → AnnulusCoordinates) (u : ℝ × ℝ → AnnulusCoordinates) (r : ℝ),

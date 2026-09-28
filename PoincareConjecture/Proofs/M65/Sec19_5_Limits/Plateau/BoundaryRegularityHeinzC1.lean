@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTransverseC1
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityDifferentialExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -116,10 +107,6 @@ private theorem heinz_halfDisk_unique {r : ℝ} (hr : 0 < r) :
       simpa [z, EuclideanSpace.single] using half_pos hr
   exact ⟨z, mem_interior_iff_mem_nhds.mpr
     (mem_of_superset (hU.mem_nhds hz) hUK)⟩
-
-
-
-
 
 theorem heinz_quadratic_contDiffOn {R C H beta Λ : ℝ} (hR : 0 < R)
     (X : M65LocalWeakMap (id : LoopAmbient → LoopAmbient) (ball (0 : LoopPlane) R))

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.LinearIndependentFaceRefinement
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineMinimum
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -22,10 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_finitePL_radial_frontier_section
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

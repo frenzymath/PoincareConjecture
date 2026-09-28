@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.ChartLipschitz
 import PoincareConjecture.Proofs.M10.NullTransport
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter

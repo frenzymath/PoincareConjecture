@@ -1,17 +1,6 @@
-
-
-
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Prod
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -28,8 +17,6 @@ private theorem signs_of_strictMonoOn {δ x : ℝ} {f : ℝ → ℝ}
   exact ⟨by simpa [hf0] using hf.lt_iff_lt h0 hx,
     by simpa [hf0] using hf.eq_iff_eq hx h0,
     by simpa [hf0] using hf.le_iff_le h0 hx⟩
-
-
 
 theorem exists_first_coordinate_sign_radius {f : ℝ × ℝ → ℝ}
     (hf : ContDiffAt ℝ 1 f 0)
@@ -68,9 +55,6 @@ theorem exists_first_coordinate_sign_radius {f : ℝ × ℝ → ℝ}
       exact (hlocal (abs_lt.mpr hu') ht).2.1
   exact signs_of_strictMonoOn hδ hmono
     ((hlocal (r := 0) (by simpa using hδ) ht).2.2 rfl) (abs_lt.mp hr)
-
-
-
 
 theorem exists_quadrant_preserving_radius {K : ℝ × (ℝ × ℝ) → ℝ × ℝ}
     (hK : ContDiffAt ℝ 1 K (0, (0, 0)))

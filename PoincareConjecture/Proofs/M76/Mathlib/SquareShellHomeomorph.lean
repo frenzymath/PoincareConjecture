@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareShellIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace SquareShell
-
-
-
 
 theorem exists_rotation_homeomorph {a b : ℝ} (ha : 0 < a) (hab : a < b)
     (i : Fin 4) : ∃ A : sector a b ≃ₜ rotatedSector a b i,
@@ -31,12 +18,6 @@ theorem exists_rotation_homeomorph {a b : ℝ} (ha : 0 < a) (hab : a < b)
   have hex := hPL.exists_homeomorph_image (rotation_injective i).injOn
   rw [rotation_image] at hex
   exact hex
-
-
-
-
-
-
 
 theorem exists_radius_homeomorph {a b c d : ℝ}
     (ha : 0 < a) (hab : a < b) (hc : 0 < c) (hcd : c < d) :

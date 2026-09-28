@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.SmallLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Components
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +13,6 @@ namespace PoincareConjecture.RicciFlow
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
 
 theorem exists_nonflat_ancient_limit_of_small_expanding_cylinders_components
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -78,6 +69,5 @@ theorem exists_nonflat_ancient_limit_of_small_expanding_cylinders_components
   · exact hν
   · filter_upwards [hvolume] with k hk
     rwa [(F k).restrictComponent_volumeMeasure_ball]
-
 
 end PoincareConjecture.RicciFlow

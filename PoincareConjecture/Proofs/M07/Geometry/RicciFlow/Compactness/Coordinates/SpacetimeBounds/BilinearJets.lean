@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.OperatorComponentJets
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +30,6 @@ theorem bilinear_eq_sum_dual {n : ℕ} (b : OrthonormalBasis (Fin n) ℝ E)
   apply Finset.sum_congr rfl
   intro j _
   ring
-
-
 
 theorem norm_iteratedFDeriv_bilinear_le_of_components {n : ℕ}
     (b : OrthonormalBasis (Fin n) ℝ E) {F : P → E →L[ℝ] E →L[ℝ] ℝ} {x : P}

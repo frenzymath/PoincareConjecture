@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniquen
 import Mathlib.Topology.UniformSpace.UniformApproximation
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Poincare.Analysis.Calculus

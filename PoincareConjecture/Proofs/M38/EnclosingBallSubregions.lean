@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.EnclosingBallSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} (C : SurgeryBallEmbedding A)
   (p : sphereCarrier.{u}.carrier)
-
 
 theorem enclosingBallSphereCoordinates_inner_image :
     (enclosingBallSphereCoordinates C p).map '' (C.map '' Metric.ball 0 (3 / 2)) =
@@ -39,16 +30,13 @@ variable {a : ℝ} (ha : 0 < a) (ha8 : a ≤ 1 / 8)
   (hB₀ : B₀.map '' Metric.closedBall 0 (5 / 4) ⊆ C.map '' Metric.ball 0 1)
   (hB₁ : B₁.map '' Metric.closedBall 0 (5 / 4) ⊆ C.map '' Metric.ball 0 1)
 
-
 def enclosingInnerTwoHoleRegion : Set A.carrier :=
   (C.map '' Metric.ball 0 (3 / 2)) \ (B₀.closedBall ∪ B₁.closedBall)
-
 
 def enclosingSphereInnerTwoHoleRegion : Set sphereCarrier.{u}.carrier :=
   ((spherePoleReferenceBall p).map '' Metric.ball 0 (3 / 2)) \
     ((enclosingSphereBall B₀ C p ha ha8 hB₀).closedBall ∪
       (enclosingSphereBall B₁ C p ha ha8 hB₁).closedBall)
-
 
 theorem enclosingSphere_innerTwoHole_image :
     (enclosingBallSphereCoordinates C p).map '' enclosingInnerTwoHoleRegion C B₀ B₁ =
@@ -73,12 +61,10 @@ theorem enclosingSphere_innerTwoHole_image :
     intro hxb
     exact hy.2 ⟨x, hxb, hxy⟩
 
-
 theorem enclosingInnerTwoHoleRegion_open : IsOpen (enclosingInnerTwoHoleRegion C B₀ B₁) :=
   (surgeryBall_image_ball_open C (3 / 2) (by norm_num)).sdiff
     ((surgeryBall_closedImage_compact B₀ 1 (by norm_num)).isClosed.union
       (surgeryBall_closedImage_compact B₁ 1 (by norm_num)).isClosed)
-
 
 theorem enclosingSphereInnerTwoHoleRegion_open :
     IsOpen (enclosingSphereInnerTwoHoleRegion C p ha ha8 B₀ B₁ hB₀ hB₁) :=
@@ -87,7 +73,6 @@ theorem enclosingSphereInnerTwoHoleRegion_open :
       1 (by norm_num)).isClosed.union
       (surgeryBall_closedImage_compact (enclosingSphereBall B₁ C p ha ha8 hB₁)
         1 (by norm_num)).isClosed)
-
 
 noncomputable def enclosingSphereInnerTwoHoleEquivalence :
     SurgeryRegionEquivalence A sphereCarrier.{u} (enclosingInnerTwoHoleRegion C B₀ B₁)
@@ -110,11 +95,9 @@ noncomputable def enclosingSphereInnerTwoHoleEquivalence :
     map_smooth := E.map_smooth.mono hsource
     inverse_smooth := E.inverse_smooth.mono htarget }
 
-
 theorem enclosingSphereInnerTwoHoleEquivalence_map (x : A.carrier) :
     (enclosingSphereInnerTwoHoleEquivalence C p ha ha8 B₀ B₁ hB₀ hB₁).map x =
       (enclosingBallSphereCoordinates C p).map x := rfl
-
 
 theorem enclosingSphereInnerTwoHoleEquivalence_inverse (y : sphereCarrier.{u}.carrier) :
     (enclosingSphereInnerTwoHoleEquivalence C p ha ha8 B₀ B₁ hB₀ hB₁).inverse y =

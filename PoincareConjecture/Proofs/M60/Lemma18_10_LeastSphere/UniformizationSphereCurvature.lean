@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedTotalCurvature
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,12 +17,8 @@ namespace PoincareConjecture.M60
 
 open Poincare.Geometry.Riemannian.SpaceForm
 
-
-
 theorem roundSphereMetric_eq_induced : m60RoundSphereMetric = roundSphereMetric 2 := by
   rfl
-
-
 
 theorem scalarCurvature_roundSphere (D : LeviCivitaData m60RoundSphereMetric)
     (x : UnitTwoSphere) : D.scalarCurvature x = 2 := by
@@ -48,8 +33,6 @@ theorem scalarCurvature_roundSphere (D : LeviCivitaData m60RoundSphereMetric)
   have hb (i j : Fin 2) : (roundSphereMetric 2).inner x (b i) (b j) =
       if i = j then 1 else 0 := b.inner_eq_ite i j
   norm_num [hb]
-
-
 
 theorem integral_scalarCurvature_sphere (g : RiemannianMetric 2 UnitTwoSphere)
     (D : LeviCivitaData g) :

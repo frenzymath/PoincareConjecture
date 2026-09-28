@@ -4,22 +4,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcRegionCrossing
 import Mathlib.Data.Finset.Sort
 import Mathlib.Algebra.Group.Nat.Even
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 def polygonArcContactGap {n m : ℕ} (c : Fin m ↪ Fin (n + 2))
     (σ : Fin m ≃ Fin m) (j : Fin (m + 1)) : Set ℝ :=
@@ -210,8 +199,6 @@ private theorem contact_parameter_neighbors {n : ℕ} (p : Polygon E (n + 2))
     ring
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem IsSimplePolygonalArc.exists_alternating_contact_gaps {n m : ℕ}
     {p : Polygon E (n + 2)} {r : Polygon E m}

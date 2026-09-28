@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ScalarJets
 import PoincareConjecture.Proofs.M35.Prop12_31.CurvatureOperator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_operator_of_euclidean_jets
     {α : Type*} {l : Filter α} [l.NeBot]
@@ -68,8 +57,6 @@ theorem terminalCurvature_operator_of_euclidean_jets
   exact D.nonnegativeCurvatureOperator_of_nonnegative_sectional_three
     D.intrinsicCurvatureTensorCalculus x
     (D.curvatureTensor_diagonal_nonneg_of_orthonormal x horth)
-
-
 
 theorem terminalCurvature_operator_of_coordinate_jets
     {α : Type*} {l : Filter α} [l.NeBot]

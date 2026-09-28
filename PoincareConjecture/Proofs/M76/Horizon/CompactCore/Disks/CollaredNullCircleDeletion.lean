@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.CollaredNullLoo
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.CollarEnlargedFilling
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Disks.FrontierAvoidingReplacement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_collared_null_circle_deletion
     {X : Type*} [TopologicalSpace X] {Y U F : Set X}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ExponentialSublevel
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ConfinedAttainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem actionConfinement_exponential_mem (C : ActionConfinement G T start x)
     (E : M14ExponentialFamily G T x) {b : ℝ} (hb : 0 < b)
@@ -39,10 +28,6 @@ theorem actionConfinement_exponential_mem (C : ActionConfinement G T start x)
   rw [Real.sqrt_sq hs.1] at heq
   rw [← heq]
   exact htrace hsq
-
-
-
-
 
 theorem exists_confined_slice_minimum
     (hM04 : RicciFlowCurvatureTheory.{0})

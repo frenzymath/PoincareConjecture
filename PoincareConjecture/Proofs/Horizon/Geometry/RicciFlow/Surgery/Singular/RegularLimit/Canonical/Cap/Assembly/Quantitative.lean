@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Gradient.Persistence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.ScalarEvolution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M]
-
 
 structure CapQuantitativeData (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (C : ℝ) (carrier core : Set M) where
@@ -44,8 +36,6 @@ structure CapQuantitativeData (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     scalarGradientNorm g D x ≤ b * (D.scalarCurvature x) ^ (3 / 2 : ℝ)
   laplacian_bound : ∃ b : ℝ, b < C ∧ ∀ x ∈ carrier,
     |D.laplacian D.scalarCurvature x + 2 * D.ricciNormSq x| ≤ b * (D.scalarCurvature x) ^ 2
-
-
 
 theorem CapQuantitativeData.nonempty_of_pointwise_radius
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (C : ℝ)

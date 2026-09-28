@@ -1,16 +1,6 @@
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -20,8 +10,6 @@ namespace PoincareConjecture
 
 variable {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]
   [NormedSpace ℝ E] {mu : Measure X}
-
-
 
 theorem m64StrongSquare_smul
     (f : ℕ → X → E) (hf : ∀ j, MemLp (f j) 2 mu)
@@ -47,7 +35,6 @@ theorem m64StrongSquare_smul
   exact squeeze_zero (fun j => integral_nonneg (fun x => sq_nonneg _)) bound hl
 
 omit [NormedSpace ℝ E] in
-
 
 theorem m64StrongSquare_add
     (f g : ℕ → X → E) (hf : ∀ j, MemLp (f j) 2 mu) (hg : ∀ j, MemLp (g j) 2 mu)

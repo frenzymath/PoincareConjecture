@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticReadout
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsBounds
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -29,8 +21,6 @@ noncomputable local instance capToleranceCoefficientNorm :
 
 noncomputable local instance capToleranceCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_uniform_cap_analyticJet_tolerance {K : Set J4} (hK : IsCompact K)
     (hinv : K ⊆ M34.curvatureJetDomain 3 2) {nu : ℝ} (hnu : 0 < nu) :
@@ -68,8 +58,6 @@ theorem exists_uniform_cap_analyticJet_tolerance {K : Set J4} (hK : IsCompact K)
     Metric.mem_cthickening_of_dist_le J J radius K hJ (by simpa only [dist_self] using hradius.le)
   refine ⟨hinside hJ', ?_⟩
   simpa only [dist_eq_norm] using hclose J' hJ' J hJK (hdist.trans (min_le_right _ _))
-
-
 
 theorem exists_standardCap_analyticJet_tolerance {g0 : StandardInitialMetric}
     (S : MaximalStandardCapFlow g0) {theta : ℝ} (htheta : theta < S.base.lifetime)

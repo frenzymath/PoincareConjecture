@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Cofaces
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.RepairPairs
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -30,8 +28,6 @@ theorem MarkedSurfacePositionData.boundary_pair_mem_repairPairs
   exact disjoint_left.mp disjoint_interior_frontier
     (D.double_point_interior_of_not_exceptional hx hy hne hxy hn)
     ((D.projected_proper x hx).mpr hxRim)
-
-
 
 theorem MarkedSurfacePositionData.protected_annulus_boundary_vertices_nonzero
     (D : MarkedSurfacePositionData step K₀ A₀ j R Fmark)
@@ -87,8 +83,6 @@ theorem MarkedSurfacePositionData.protected_annulus_boundary_vertices_nonzero
     ⟨(ur, ul), hpair, hrvalue⟩
   have hycenter : y = D.projected a := hseparate ⟨(A.chart_inside hyQ).1, hybad⟩
   exact hv0 (hQy.symm.trans ((congrArg A.chart hycenter).trans A.centered))
-
-
 
 theorem MarkedSurfacePositionData.moved_annulus_boundary_vertices_nonzero
     (D : MarkedSurfacePositionData step K₀ A₀ j R Fmark)

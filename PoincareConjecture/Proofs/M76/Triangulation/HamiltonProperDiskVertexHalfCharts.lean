@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexIncid
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierStars
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalBlockExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,8 +18,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {R D : Set E} {b : Cube ≃ₜ D}
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_vertex_half_chart
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

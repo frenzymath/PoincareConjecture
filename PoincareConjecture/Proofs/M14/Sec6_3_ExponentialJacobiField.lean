@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSlices
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialJacobiData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -35,9 +26,6 @@ private theorem horizontal_heq_of_val_eq {q r : G.Point} (h : q = r)
   cases h
   exact heq_of_eq (Subtype.ext hv)
 
-
-
-
 theorem exponential_differential_heq_initialValue
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14ExponentialFamily G T x) {Z : G.Horizontal x} {s : ℝ}
@@ -59,9 +47,6 @@ theorem exponential_differential_heq_initialValue
   exact (E.differential_pointwise_mfderiv Z s hs W).trans (hd.trans
     (initialValueDifferential_val hM04 hM12 E.base_time
       (exponentialFamily_domain_eq E ▸ hs) W).symm)
-
-
-
 
 theorem exponentialJacobiField_heq_differential
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

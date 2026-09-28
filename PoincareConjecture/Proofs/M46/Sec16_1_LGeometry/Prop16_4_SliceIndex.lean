@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedIndexIntegral
 import PoincareConjecture.Proofs.M14.Sec6_5_HarnackIntegral
 import PoincareConjecture.Proofs.M09.LocalMinimumHessian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem sliceMinimum_pullback_index_nonneg
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -61,9 +49,6 @@ theorem sliceMinimum_pullback_index_nonneg
     map_zero, zero_apply, zero_add,
     M14.secondVariationIndexForm_eq_of_field V D EY hfield] at hnonneg
   exact hnonneg
-
-
-
 
 theorem sliceMinimum_scalar_reducedLength_le_dimension
     (hCoordinates : M12MetricPredecessors.{0} n)

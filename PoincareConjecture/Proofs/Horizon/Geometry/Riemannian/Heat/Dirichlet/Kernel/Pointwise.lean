@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ContinuousOperator
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Dirichlet.Kernel.ContinuousRows
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +37,6 @@ private theorem evaluationRow_add (s t : ℝ) (hs : 0 < s) (ht : 0 < t) (x : M) 
   rw [(heatSemigroup_isSelfAdjoint D Ω (Nat.pos_of_ne_zero (NeZero.ne n))
     S.isOpen S.isCompact_closure t.toNNReal).isSymmetric.apply_clm]
   exact (inner_evaluationRow (heatPowerContinuous D S 0 s hs) x _).symm
-
 
 def heatKernelContinuous (t : ℝ) (ht : 0 < t) (x y : M) : ℝ :=
   inner ℝ (evaluationRow (heatPowerContinuous D S 0 (t / 2) (half_pos ht)) x)
@@ -116,7 +109,6 @@ theorem integral_heatKernelContinuous_mul (t : ℝ) (ht : 0 < t)
   apply integral_congr_ae
   filter_upwards [heatKernelContinuous_row_ae D S t ht x] with y hy
   simp [hy, mul_comm]
-
 
 theorem heatKernelContinuous_spec (t : ℝ) (ht : 0 < t) :
     Continuous (fun p : M × M => heatKernelContinuous D S t ht p.1 p.2) ∧

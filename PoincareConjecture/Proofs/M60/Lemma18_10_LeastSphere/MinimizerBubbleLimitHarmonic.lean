@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimit
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimitEquation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,15 +22,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
-
 def SUPlaneHarmonic (g : RiemannianMetric n M) (f : LoopPlane → M) : Prop :=
   ∀ p z, f z ∈ (extChartAt (𝓡 n) p).source →
     let u := extChartAt (𝓡 n) p ∘ f
     let Gamma := christoffelBilinear (g.pullbackCoefficients (extChartAt (𝓡 n) p).symm)
     ∑ i : Fin 2, covDerivAlong Gamma u (fun y => fderiv ℝ u y (b i)) (b i) z = 0
-
-
-
 
 theorem suHarmonic_change_target (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -98,8 +92,6 @@ theorem suHarmonic_change_target (g : RiemannianMetric n M)
   have hzero' : (∑ i : Fin 2, covDerivAlong Gp u
       (fun y => fderiv ℝ u y (b i)) (b i) z) = 0 := hzero
   rw [← map_sum, hzero', map_zero]
-
-
 
 theorem suHarmonic_inversion (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f) (hh : SUPlaneHarmonic g f)

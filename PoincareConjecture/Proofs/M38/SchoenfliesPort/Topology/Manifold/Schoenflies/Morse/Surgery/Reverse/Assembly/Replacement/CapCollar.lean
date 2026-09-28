@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.ParametrizedCap
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.CapTruncation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.Reverse
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -36,8 +28,6 @@ private abbrev S2 := sphere (0 : E3) 1
 open Poincare.Geometry.Euclidean
 
 namespace Reverse
-
-
 
 theorem exists_parametrized_cap_collar_in_surface
     {v : E3} (hv : ‖v‖ = 1) (b s : Real) (hs : s ≠ 0)
@@ -93,8 +83,6 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
-
 theorem exists_capMinus_collar_in_child :
     ∃ (g : E2 → E3) (r η : Real),
       ContDiff Real ∞ g ∧ Injective g ∧
@@ -121,7 +109,6 @@ theorem exists_capMinus_collar_in_child :
       S.cylinder q _ ⟨hlow, by linarith [S.a_pos, S.ε_pos]⟩]
     congr 2
     ring
-
 
 theorem exists_capPlus_collar_in_child :
     ∃ (g : E2 → E3) (r η : Real),

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.InitialCurvatureCap
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle L, W)
 local notation "J" => ((X × X) × X) × ℝ
-
-
-
 
 theorem exists_compact_pool_initial_curvature_bound
     (F : RicciFlow n M (Icc a b)) {tau : ℝ} (htau : tau ∈ Icc a b)

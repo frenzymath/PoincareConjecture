@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenTubeTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportedRadialSlide
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_nearby_fixedTail_openLine_transport
     (C : ((ℝ × ℝ) × ℝ) → (ℝ × ℝ))

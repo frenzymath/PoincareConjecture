@@ -5,15 +5,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,8 +22,6 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {I : ModelWithCorners ℝ E H} [I.Boundaryless]
   {K : Type w} [TopologicalSpace K] [ChartedSpace H K]
   [IsManifold I ∞ K]
-
-
 
 theorem exists_fiberwise_of_deriv_pos
     (A : Diffeomorph I I K K ∞) (F : K × ℝ → ℝ)

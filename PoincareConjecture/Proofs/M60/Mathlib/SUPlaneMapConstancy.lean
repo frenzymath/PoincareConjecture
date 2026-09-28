@@ -4,14 +4,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped Manifold Topology
 universe u
 
 namespace PoincareConjecture.M60
-
-
 
 theorem plane_map_eq_of_mfderiv_zero {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]

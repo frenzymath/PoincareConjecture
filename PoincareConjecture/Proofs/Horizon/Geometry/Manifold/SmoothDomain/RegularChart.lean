@@ -8,16 +8,11 @@ set_option backward.isDefEq.respectTransparency false
 open Poincare.Analysis Set Function
 open scoped Topology ContDiff Manifold
 
-
-
-
-
 namespace Poincare.Manifold
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold 𝓘(ℝ, E) ∞ M]
-
 
 theorem exists_manifold_superlevel_chart {f : M → ℝ}
     (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (a : M)
@@ -68,8 +63,6 @@ theorem exists_manifold_superlevel_chart {f : M → ℝ}
       rw [← hefirst _ (e.map_target hy), e.right_inv hy]
       exact hcy
 
-
-
 theorem frontier_superlevel_eq_regular_level {f : M → ℝ}
     (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (c : ℝ)
     (hc : ∀ x, f x = c → Surjective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, ℝ) f x)) :
@@ -88,6 +81,5 @@ theorem frontier_superlevel_eq_regular_level {f : M → ℝ}
       simp
     rw [hhalf, frontier_prod_univ_eq, frontier_Ici]
     exact ⟨by simpa [hea] using hx, mem_univ _⟩
-
 
 end Poincare.Manifold

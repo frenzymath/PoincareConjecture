@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarBottomClosure
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarCapHeightSide
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ namespace Set
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup X] [NormedSpace ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.cap_negative_side_of_positive_collar
     {s b d R B T : Set X} (hs : IsFinitePLBallPair E s b)

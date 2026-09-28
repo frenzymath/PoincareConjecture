@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity.Derivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,9 +55,6 @@ private theorem quadratic_upper_bound_on_geodesic
   simpa only [F, Function.comp_apply, one_mul, one_pow, mul_one] using
     Poincare.Analysis.quadratic_upper_bound_of_hasDerivAt2_le
       (by norm_num : (0 : ℝ) ≤ 1) hfirst hsecond hA
-
-
-
 
 theorem gradient_norm_le_of_lower_oscillation_hessian
     (D : LeviCivitaData g) (hc : MetricComplete g) (x : M)

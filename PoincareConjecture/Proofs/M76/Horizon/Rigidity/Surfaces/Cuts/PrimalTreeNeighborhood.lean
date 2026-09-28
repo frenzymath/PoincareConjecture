@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusLeaf
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryFaceColors
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SurfaceDualEdgeGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -76,8 +67,6 @@ theorem originalVertexCentroid_adj_edgeCentroid
     rw [Finset.card_singleton, e.property.2]
     omega
 
-
-
 theorem primalTreeNeighborhood_isFinitePLBallPair [Fintype K.vertices]
     [Fintype K.barycentricSubdivision.faces]
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
@@ -138,8 +127,6 @@ theorem primalEdgeContact_subset_rim [Fintype K.barycentricSubdivision.faces]
   congr 2
   ext x
   simp only [Finset.mem_insert, Finset.mem_singleton]
-
-
 
 theorem primalEdgeContact_isFinitePLInterval [Fintype K.vertices]
     [Fintype K.barycentricSubdivision.faces]
@@ -204,8 +191,6 @@ theorem sameCard_centroid_dualBlocks_disjoint [Fintype K.barycentricSubdivision.
     (Finset.insert_nonempty _ _) hnot] at hxy
   exact hxy
 
-
-
 theorem primalEdgeContact_disjoint [Fintype K.barycentricSubdivision.faces]
     (e f : Edge K.vertexAbstractComplex.toPreAbstractSimplicialComplex)
     (v w : K.vertices) (hne : e ≠ f ∨ v ≠ w) :
@@ -263,8 +248,6 @@ theorem primalEdgeMark_ne [Fintype K.barycentricSubdivision.faces]
   exact Set.disjoint_left.mp (primalEdgeContact_disjoint K e f v w hne)
     (primalEdgeMark_mem_contact K e v hv) (h ▸ primalEdgeMark_mem_contact K f w hw)
 
-
-
 theorem four_primalEdgeMarks_injective [Fintype K.barycentricSubdivision.faces]
     (edges : Fin 2 → Edge K.vertexAbstractComplex.toPreAbstractSimplicialComplex)
     (hedges : Function.Injective edges) (ends : Fin 2 → Fin 2 → K.vertices)
@@ -283,8 +266,6 @@ theorem four_primalEdgeMarks_injective [Fintype K.barycentricSubdivision.faces]
       (hmem i j) (hmem i l) (Or.inr (fun he ↦ hne (hends i he))) h
   subst l
   rfl
-
-
 
 theorem exists_four_primal_rim_marks [Fintype K.barycentricSubdivision.faces]
     (P : SimpleGraph K.vertices) (hP : P ≤ K.vertexAbstractComplex.edgeGraph)

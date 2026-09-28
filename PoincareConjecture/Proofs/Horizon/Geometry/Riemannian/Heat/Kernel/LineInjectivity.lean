@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LineGeodesic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ExponentialRays
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -56,8 +46,6 @@ theorem line_geodesic_chart_speed (g : RiemannianMetric 1 M)
   have hchart := congrArg (fun L => L (mfderiv (𝓘(ℝ, ℝ)) (𝓡 1) γ t 1))
     (mfderiv_extChartAt_self (I := 𝓡 1) (x := γ t))
   exact congrArg (g.tangentNorm (γ t)) (heq.trans hchart)
-
-
 
 theorem injective_global_line_geodesic [PreconnectedSpace M] [NoncompactSpace M]
     (g : RiemannianMetric 1 M) (hc : MetricComplete g)
@@ -157,8 +145,6 @@ theorem injective_global_line_geodesic [PreconnectedSpace M] [NoncompactSpace M]
         _ = 0 := neg_add_cancel w
     have htwo : (2 : ℝ) • w = 0 := by simpa only [two_smul] using hzero'
     exact hne s ((smul_eq_zero.mp htwo).resolve_left (by norm_num))
-
-
 
 theorem exists_smooth_bijective_line_geodesic [PreconnectedSpace M] [NoncompactSpace M]
     (g : RiemannianMetric 1 M) (hc : MetricComplete g)

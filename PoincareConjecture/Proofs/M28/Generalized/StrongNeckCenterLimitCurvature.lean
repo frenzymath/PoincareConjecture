@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckEighthPinching
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching.OperatorPositivity
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +27,6 @@ variable {epsilon : ℝ}
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem strongNeck_fixedCoordinate_limit_nonnegativeCurvatureOperator
     (P : RicciFlowCurvatureTheory.{u}) (V : Set E) (hV : IsOpen V) [Nonempty V]
@@ -107,10 +93,6 @@ theorem strongNeck_fixedCoordinate_limit_nonnegativeCurvatureOperator
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem strongNeck_center_limit_readouts
     (P : RicciFlowCurvatureTheory.{u}) {R rho : ℝ} (hrho : 0 < rho) (hrhoR : 2 * rho < R)

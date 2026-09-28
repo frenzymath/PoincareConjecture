@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Convex.Semiconcavity.Increment
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.MinimizingSegments
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Semiconcavity
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -13,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_arbitrarily_close_distance_ascent_of_increment
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

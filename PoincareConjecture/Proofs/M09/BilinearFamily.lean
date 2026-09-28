@@ -5,12 +5,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Tactic.FinCases
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

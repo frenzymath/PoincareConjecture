@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedIncidenceRanks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronIncidence
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,9 +13,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ] [DecidableEq ι]
 
 local notation "KA" => K.toPreAbstractSimplicialComplex
 local notation "AA" => A.toPreAbstractSimplicialComplex
-
-
-
 
 theorem boundary_incidence_exact_of_counts
     (hconn : K.edgeGraph.Connected)
@@ -57,8 +45,6 @@ theorem boundary_incidence_exact_of_counts
     simp only [Nat.card_eq_fintype_card] at hK hcount hbound
     omega
   exact (Submodule.eq_of_le_of_finrank_eq hle heq).symm
-
-
 
 theorem boundary_chain_exact_of_incidence
     (hexact : LinearMap.ker (edgeCoboundary AA) = LinearMap.range (vertexCoboundary AA)) :

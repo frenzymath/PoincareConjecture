@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)
 
 include hψ
-
-
 
 theorem exists_collar_chart :
     ∃ e : OpenPartialHomeomorph (UnitTwoSphere × ℝ) E3,
@@ -35,14 +24,10 @@ theorem exists_collar_chart :
     ψ (isOpen_univ.prod isOpen_Ioo)
     hψ.1 hψ.2.1 hψ.2.2 (by simp [Module.finrank_prod])
 
-
-
 theorem collar_image_open : IsOpen (ψ '' (univ ×ˢ Ioo (-1) 1)) := by
   obtain ⟨e, _, _, htarget, _⟩ := exists_collar_chart ψ hψ
   rw [← htarget]
   exact e.open_target
-
-
 
 theorem exists_sphere_collar_defining_function :
     ∃ ρ : E3 → ℝ, ContDiffOn ℝ ∞ ρ (ψ '' (univ ×ˢ Ioo (-1) 1)) ∧
@@ -53,8 +38,6 @@ theorem exists_sphere_collar_defining_function :
   exact exists_collar_defining_function (E := EuclideanSpace ℝ (Fin 2))
     ψ (isOpen_univ.prod isOpen_Ioo)
     hψ.1 hψ.2.1 hψ.2.2 (by simp [Module.finrank_prod])
-
-
 
 theorem collar_closedBand_compact {a b : ℝ} (ha : -1 < a) (hb : b < 1) :
     IsCompact (ψ '' (univ ×ˢ Icc a b)) := by

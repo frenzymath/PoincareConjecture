@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_ClosedAffineVariation
 import PoincareConjecture.Proofs.M14.Sec6_4_SupportedAffineField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -33,9 +24,6 @@ variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ
   {R : M14SquareRootPath G p} (V W : M14LVariationData G p R) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n)) (c : ℝ)
-
-
-
 
 theorem variationField_supportedAffineGauge_val_closed
     (hW : ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂, ∀ v,
@@ -121,8 +109,6 @@ theorem variationField_supportedAffineGauge_val_closed
     rfl
 
 omit W in
-
-
 
 theorem supportedAffineGaugeFamily_fixed_of_zero {s : ℝ}
     (hηzero : η s = 0) (hfix : ∀ v, V.squareFamily s v = R.curve s)

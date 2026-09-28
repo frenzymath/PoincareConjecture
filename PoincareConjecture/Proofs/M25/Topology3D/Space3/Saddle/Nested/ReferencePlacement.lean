@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_reference_placement
     (w : ℝ) (hw_lower : 1 / 2 < w) (hw_upper : w < 3 / 4)

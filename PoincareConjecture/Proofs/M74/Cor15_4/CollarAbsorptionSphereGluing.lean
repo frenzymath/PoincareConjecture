@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.CollarAbsorptionSphereCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -82,9 +73,6 @@ private theorem sphereChartGlueInverse_second (v : ThreeSphere)
     rw [heq] at hleft
     exact hleft.symm
   · simp only [sphereChartGlueInverse, if_neg hx0]
-
-
-
 
 noncomputable def diffeomorphOfSphereCharts (Y : GeneralizedSliceCarrier.{u})
     (v : ThreeSphere) (e0 e1 : OpenPartialHomeomorph Y.carrier StandardCapSpace)

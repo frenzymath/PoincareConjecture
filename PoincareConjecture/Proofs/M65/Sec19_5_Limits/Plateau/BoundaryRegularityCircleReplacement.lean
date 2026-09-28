@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTraceReplacement
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceCircleArc
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +19,6 @@ private theorem weakCircleArg_self (p : LoopCircle) : m65WeakCircleArg p p = Rea
     rw [LinearIsometryEquiv.norm_map, p.property]
     norm_num
   simp only [m65WeakCircleArg, neg_div, div_self hp, Complex.arg_neg_one]
-
-
-
 
 def circleArgChart (p : LoopCircle) : OpenPartialHomeomorph LoopCircle ℝ where
   toPartialEquiv := {
@@ -80,10 +66,6 @@ private theorem closed_arc_frontier (p : LoopCircle) {r : ℝ}
     exact ⟨E w, ⟨hw.2.1.le, hw.2.2.le⟩, E.left_inv hw.1⟩
   have hmemi : puncturedArc p t ∈ interior V := by rwa [hV.interior_eq]
   exact hz.2 (interior_mono hsub hmemi)
-
-
-
-
 
 theorem weak_parameter_closed_arc_replacement
     (p : LoopCircle) {r : ℝ} (hr : 0 < r) (hrπ : r < Real.pi)
@@ -153,10 +135,6 @@ theorem weak_parameter_closed_arc_replacement
   · intro z hz
     rw [hval]
     exact if_neg hz
-
-
-
-
 
 theorem weak_parameter_short_arc_replacement
     (p : LoopCircle) (E : OpenPartialHomeomorph LoopCircle ℝ)

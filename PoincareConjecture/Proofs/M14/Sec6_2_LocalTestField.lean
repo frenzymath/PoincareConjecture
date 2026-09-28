@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_LocalTestVariation
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationClock
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,9 +19,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (R : M14SquareRootPath G p) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
-
-
-
 
 theorem gaugeShiftFamily_parameter_mfderiv (s : ℝ) :
     mfderiv (𝓘(ℝ, ℝ)) (spacetimeModel n)
@@ -51,9 +39,6 @@ theorem gaugeShiftFamily_parameter_mfderiv (s : ℝ) :
   simpa only [f, c, t, Function.comp_def, gaugeShiftFamily, zero_smul,
     TopologicalSpace.Opens.affineShift_zero,
     (G.gaugeCover.metric b).spatialTangentEquiv_eq] using hd
-
-
-
 
 theorem supportedGaugeFamily_parameter_mfderiv
     (hright : ∀ s ∈ tsupport η,
@@ -79,8 +64,6 @@ private theorem horizontal_transport_val {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem variationField_supportedGauge_val (V : M14LVariationData G p R)
     (hV : ∀ s v, V.squareFamily s v = supportedGaugeFamily R b lift η (s, v))
     (hright : ∀ s ∈ tsupport η,
@@ -101,8 +84,6 @@ theorem variationField_supportedGauge_val (V : M14LVariationData G p R)
   exact supportedGaugeFamily_parameter_mfderiv R b lift η hright s
 
 omit b lift η in
-
-
 
 theorem exists_supportedGaugeTest_at {s : ℝ}
     (hs : s ∈ Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) (W : G.Horizontal (R.curve s)) :

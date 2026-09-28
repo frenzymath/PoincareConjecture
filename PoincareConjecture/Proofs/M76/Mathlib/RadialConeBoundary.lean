@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalAffineExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem mem_base_union_convexJoin_iff_of_radial
     {s b : Set E} (hb : b ⊆ s) (hbne : b.Nonempty)
@@ -58,9 +46,6 @@ namespace Geometry.SimplicialComplex
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
   [DecidableEq E] {K : SimplicialComplex ℝ E} {f g : E → F}
-
-
-
 
 theorem AffineOnFaces.cone_extension_smul
     {hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E)}

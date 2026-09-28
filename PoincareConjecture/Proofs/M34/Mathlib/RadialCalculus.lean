@@ -1,22 +1,11 @@
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem hasFDerivAt_radius {x : E} (hx : x ≠ 0) :
     HasFDerivAt (fun y : E => ‖y‖) (‖x‖⁻¹ • innerSL ℝ x) x := by
@@ -30,9 +19,6 @@ theorem hasFDerivAt_radius {x : E} (hx : x ≠ 0) :
   field_simp
   ring
 
-
-
-
 theorem hasFDerivAt_radial {f : ℝ → ℝ} {f' : ℝ} {x : E} (hx : x ≠ 0)
     (hf : HasDerivAt f f' ‖x‖) :
     HasFDerivAt (fun y : E => f ‖y‖) ((f' / ‖x‖) • innerSL ℝ x) x := by
@@ -40,8 +26,6 @@ theorem hasFDerivAt_radial {f : ℝ → ℝ} {f' : ℝ} {x : E} (hx : x ≠ 0)
   ext v
   simp only [smul_apply, smul_eq_mul, innerSL_apply_apply]
   ring
-
-
 
 theorem fderiv_radial_pairing {c b : ℝ → ℝ} {c' b' : ℝ} {x : E}
     (hx : x ≠ 0) (hc : HasDerivAt c c' ‖x‖) (hb : HasDerivAt b b' ‖x‖)

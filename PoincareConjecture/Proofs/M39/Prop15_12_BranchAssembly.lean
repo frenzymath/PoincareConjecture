@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M39.Prop15_12_BranchData
 import PoincareConjecture.Proofs.M39.Mathlib.CollaredSeparation
 import PoincareConjecture.Proofs.M39.Mathlib.RootedSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +18,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   (I : RepairedComparisonMapInput D T hT)
 
 local notation "E" => D.flow.event T hT
-
-
-
 
 theorem comparisonBranches_nonempty : Nonempty (ComparisonBranches I) := by
   classical

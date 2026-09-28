@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.WholeCircleAdjustments
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric PLAnnularStrip
 
@@ -32,8 +24,6 @@ private theorem zero_annulus_eq_frontier :
   rw [mem_squareAnnulus_iff_depth, _root_.Dehn.mem_frontier_annulusSquare_iff]
   simp only [neg_zero, mem_Icc]
   exact ⟨fun h ↦ le_antisymm h.2 h.1, fun h ↦ ⟨h.ge, h.le⟩⟩
-
-
 
 theorem exists_square_circle_coordinates :
     ∃ (j : Circle ≃ₜ Q2) (f : P2 → V2),

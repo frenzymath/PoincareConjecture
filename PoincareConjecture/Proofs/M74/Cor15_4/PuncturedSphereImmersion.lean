@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 import PoincareConjecture.Proofs.M74.ServiceMirror
 import PoincareConjecture.Proofs.M74.Mathlib.SphereNormalize
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -48,8 +39,6 @@ private theorem collar_inverse_coordinate {p : RoundCylinderSpace}
   rw [punctureCollar, (B.punctureChart d).left_inv
     ((B.map_mem_punctureChart_source_iff d (collar_radial_ball hp)).mpr
       (collar_radial_nonzero hp)), B.left_inverse (collar_radial_ball hp)]
-
-
 
 theorem punctureCollar_mfderiv_injective {p : RoundCylinderSpace}
     (hp : p ∈ univ ×ˢ Ioo (-1 : ℝ) 1) :
@@ -93,8 +82,6 @@ theorem punctureCollar_mfderiv_injective {p : RoundCylinderSpace}
     (mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) (B.punctureCollar d) p)) w at h
   rw [← hderiv] at h
   exact h
-
-
 
 theorem punctureCollar_isCollarEmbedding :
     M25.Topology3D.IsCollarEmbedding (B.punctureCollar d) :=

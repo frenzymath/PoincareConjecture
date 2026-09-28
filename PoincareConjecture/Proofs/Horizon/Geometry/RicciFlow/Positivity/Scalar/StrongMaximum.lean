@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Scalar.Ch
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Scalar.LocalBarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Scalar.ConnectedPropagation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

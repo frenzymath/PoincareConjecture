@@ -1,19 +1,10 @@
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
 
 theorem m65AnnulusDomain_isCompact : IsCompact m64AnnulusDomain := by
   have hmap : Continuous (fun p : ℝ × ℝ => annulusPoint p.1 p.2) := by
@@ -31,8 +22,6 @@ theorem m65AnnulusDomain_isCompact : IsCompact m64AnnulusDomain := by
       exact ⟨hp.1.1, hp.1.2, hp.2.1, hp.2.2⟩
   rw [heq]
   exact (isCompact_Icc.prod isCompact_Icc).image hmap
-
-
 
 theorem m65AnnulusDomain_convex : Convex ℝ m64AnnulusDomain := by
   intro x hx y hy u v hu hv huv

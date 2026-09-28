@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.SmallNecks
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Scale
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +40,6 @@ theorem bddAbove_scalarCurvature
   obtain ⟨N, hepsilon, hsmall⟩ :=
     L.exists_small_neck_of_unbounded_scalarCurvature P ht hunbounded hε hεhalf hρ
   exact (not_lt_of_ge (hlower N hepsilon)) hsmall
-
-
 
 theorem bounded_curvature_threeDimensional
     (P : ThreeDimensionalClassificationPredecessors.{u})

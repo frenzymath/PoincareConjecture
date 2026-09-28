@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundarySubdivision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
 
 theorem boundary_curvature_flux_continuous (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))
@@ -101,9 +86,6 @@ theorem boundary_curvature_flux_continuous (S : M65MinimalDisk g connection gamm
 
 omit [T2Space M] in
 
-
-
-
 theorem exists_regular_annulus (S : M65MinimalDisk g connection gamma) :
     ∃ R0 : ℝ, 0 < R0 ∧ R0 < 1 ∧
       ∀ z : LoopPlane, R0 < ‖z‖ → ‖z‖ < 1 → 0 < S.conformalFactor z := by
@@ -126,10 +108,6 @@ theorem exists_regular_annulus (S : M65MinimalDisk g connection gamma) :
   linarith
 
 omit [T2Space M] in
-
-
-
-
 
 theorem radial_log_flux_continuous (S : M65MinimalDisk g connection gamma)
     {R : ℝ} (hR : 0 < R) (hR1 : R < 1)

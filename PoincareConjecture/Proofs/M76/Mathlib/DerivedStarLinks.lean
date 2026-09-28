@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedStarIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open scoped BigOperators
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem closedStars_inter_subset_links (K : SimplicialComplex ℝ E)
     {p q : E} (hno : {p, q} ∉ K.faces) :
@@ -52,9 +39,6 @@ variable (K : SimplicialComplex ℝ E) [Fintype K.faces]
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
 
-
-
-
 theorem pair_not_mem_derivedSubdivision_faces {p q : E}
     (hp : {p} ∈ K.faces) (hq : {q} ∈ K.faces) (hpq : p ≠ q) :
     {p, q} ∉ (K.derivedSubdivision c hc).faces := by
@@ -77,9 +61,6 @@ theorem pair_not_mem_derivedSubdivision_faces {p q : E}
   rcases hchain p₀ hp₀ q₀ hq₀ with h | h
   · exact hpq (Finset.mem_singleton.mp (h (Finset.mem_singleton_self p)))
   · exact hpq (Finset.mem_singleton.mp (h (Finset.mem_singleton_self q))).symm
-
-
-
 
 theorem derived_closedStars_inter_subset_links {p q : E}
     (hp : {p} ∈ K.faces) (hq : {q} ∈ K.faces) (hpq : p ≠ q) :

@@ -3,17 +3,6 @@ import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -30,8 +19,6 @@ abbrev SpacetimeCarrier (M : Type u) (a b : ℝ) := M × OpenTime a b
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 structure SpacetimeCharts (n : ℕ) (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -81,7 +68,6 @@ def IsSmoothField (C : SpacetimeCharts n M a b)
 
 end SpacetimeCharts
 
-
 structure SpacetimeData (F : RicciFlow n M (Set.Icc a b)) where
   charts : SpacetimeCharts n M a b
   metric : RiemannianMetric (n + 1) charts.Point
@@ -90,8 +76,6 @@ structure SpacetimeData (F : RicciFlow n M (Set.Icc a b)) where
     metric.inner q V W =
       (F.metric q.2).inner q.1 (charts.split q V).1 (charts.split q W).1 +
         (charts.split q V).2 * (charts.split q W).2
-
-
 
 noncomputable def fixedPointTimeDerivative
     (B : ℝ → (p : M) → TangentSpace (𝓡 n) p) (p : M) (t : ℝ) :
@@ -104,17 +88,14 @@ namespace SpacetimeData
 
 variable {F : RicciFlow n M (Set.Icc a b)}
 
-
 noncomputable def covariantAlong (G : SpacetimeData F)
     (gamma : ℝ → G.charts.Point)
     (Y : (s : ℝ) → TangentSpace (𝓡 (n + 1)) (gamma s)) (s : ℝ) :
     TangentSpace (𝓡 (n + 1)) (gamma s) :=
   rampHorizontalCovariantDerivative G.connection gamma Y s
 
-
 def liftCurve (G : SpacetimeData F) (c : ℝ → ℝ → M) :
     ℝ × OpenTime a b → G.charts.Point := fun z => (c z.1 z.2, z.2)
-
 
 noncomputable def liftedTimeVelocity (G : SpacetimeData F)
     (c : ℝ → ℝ → M) (z : ℝ × OpenTime a b) :
@@ -123,8 +104,6 @@ noncomputable def liftedTimeVelocity (G : SpacetimeData F)
     (G.liftCurve c) z (0, 1)
 
 end SpacetimeData
-
-
 
 structure CircleGeometry (circumference : ℝ) where
   positive : 0 < circumference
@@ -165,7 +144,6 @@ abbrev connectionOnPoints (C : CircleGeometry circumference) : LeviCivitaData C.
 
 end CircleGeometry
 
-
 structure CircleProductCharts {circumference : ℝ} (C : CircleGeometry circumference)
     (n : ℕ) (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] where
@@ -193,12 +171,10 @@ instance (P : CircleProductCharts C n M) :
 
 instance (P : CircleProductCharts C n M) : IsManifold (𝓡 (n + 1)) ∞ P.Point := P.isManifold
 
-
 noncomputable def circleUnit (P : CircleProductCharts C n M) (q : P.Point) :
     TangentSpace (𝓡 (n + 1)) q := (P.split q).symm (0, C.frame q.2)
 
 end CircleProductCharts
-
 
 structure CircleProductData (F : RicciFlow n M (Set.Icc a b)) (circumference : ℝ) where
   circle : CircleGeometry circumference

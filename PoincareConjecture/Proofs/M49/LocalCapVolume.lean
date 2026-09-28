@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.CapComparisonVolume
 import PoincareConjecture.Proofs.M49.CompleteBallVolume
 import PoincareConjecture.Proofs.M49.Mathlib.GramDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem metricSurgeryResult_cap_volume_le
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
@@ -48,9 +37,7 @@ theorem metricSurgeryResult_cap_volume_le
     (surgeryCapClose_volume_image_le C heta₁ hmat
       (isOpen_metric_ball g₀.metric 0 eta⁻¹).measurableSet subset_rfl)
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_uniform_local_cap_volume_bound (g₀ : StandardInitialMetric) :
     ∃ Ccap : ℝ, 0 < Ccap ∧ ∀ K : MetricSurgeryConstants,

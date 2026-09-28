@@ -3,15 +3,6 @@ import PoincareConjecture.Definitions.M27ProductModels
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +22,6 @@ private theorem ancient_zero_derivative_constant {f : ℝ → ℝ}
   have h := (convex_Iic (0 : ℝ)).norm_image_sub_le_of_norm_hasFDerivWithin_le
     hd (fun _ _ => norm_zero.le) (show (0 : ℝ) ∈ Iic 0 by norm_num) ht
   simpa only [zero_mul, norm_le_zero_iff, sub_eq_zero] using h
-
-
 
 theorem round_factor_metric_time_affine
     (g : ℝ → RiemannianMetric 2 E2) (D : ∀ t, LeviCivitaData (g t))

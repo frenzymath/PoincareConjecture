@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarAreaOverlap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +11,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Cover" => ℝ × ℝ
-
-
-
-
 
 theorem scalar_area_ge_one_of_integer_cover {E : Set Cover} (hE : MeasurableSet E)
     (hcover : ∀ᵐ z : Cover ∂volume,

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Prop12_31.ScalarFloor
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarConvergence
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.ThreeDimensional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem curvatureTensorNorm_le_scalar_of_nonnegative_sectional_three
     {M : Type u} [TopologicalSpace M]
@@ -45,10 +34,6 @@ theorem curvatureTensorNorm_le_scalar_of_nonnegative_sectional_three
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData
-
-
-
-
 
 theorem scalar_curvature_ball_volume_lower (P : RicciFlowCurvatureTheory.{0})
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

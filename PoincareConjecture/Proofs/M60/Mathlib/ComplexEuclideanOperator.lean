@@ -2,34 +2,18 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Complex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture.M60
 
-
-
 noncomputable def complexCoordinates (n : ℕ) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] (Fin n → ℂ) :=
   ContinuousLinearMap.pi fun i => Complex.ofRealCLM.comp (EuclideanSpace.proj i)
 
-
-
 theorem complexCoordinates_apply {n : ℕ} (v : EuclideanSpace ℝ (Fin n)) (i : Fin n) :
     complexCoordinates n v i = (v i : ℂ) := rfl
-
-
-
 
 noncomputable def complexifyEuclideanOperator (n : ℕ) :
     (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)) →L[ℝ]
@@ -47,16 +31,12 @@ noncomputable def complexifyEuclideanOperator (n : ℕ) :
         ext v i
         simp [Complex.real_smul, Finset.mul_sum, mul_assoc] }
 
-
-
 theorem complexifyEuclideanOperator_apply {n : ℕ}
     (L : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
     (v : Fin n → ℂ) (i : Fin n) :
     complexifyEuclideanOperator n L v i =
       ∑ j : Fin n, (L (EuclideanSpace.basisFun (Fin n) ℝ j) i : ℂ) * v j := by
   simp [complexifyEuclideanOperator]
-
-
 
 theorem complexifyEuclideanOperator_real {n : ℕ}
     (L : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -78,9 +58,6 @@ theorem complexifyEuclideanOperator_real {n : ℕ}
       simp only [map_sum, map_smul, WithLp.ofLp_sum, Finset.sum_apply,
         PiLp.smul_apply, smul_eq_mul]
     _ = _ := by rw [hb]
-
-
-
 
 theorem complexCoordinates_sub_I_smul_eq_zero_iff {n : ℕ}
     (a b : EuclideanSpace ℝ (Fin n)) :

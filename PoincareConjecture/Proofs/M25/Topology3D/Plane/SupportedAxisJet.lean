@@ -6,23 +6,12 @@ import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Topology.Algebra.Module.Equiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_supported_normal_scaling_family (c : ℝ × ℝ → ℝ)
     (hc : ContDiff ℝ ∞ c) (hcompact : HasCompactSupport (fun p => c p - 1))
@@ -79,8 +68,6 @@ theorem exists_supported_normal_scaling_family (c : ℝ × ℝ → ℝ)
     rw [hV, hDnear (z, x) hx]
   · intro z x hx
     rw [hV, hDunit (z, x) hx]
-
-
 
 theorem exists_supported_axis_shear (a : ℝ × ℝ → ℝ)
     (ha : ContDiff ℝ ∞ a) (hcompact : HasCompactSupport a) :
@@ -213,9 +200,6 @@ private theorem axis_product_hasFDerivAt (b : ℝ → ℝ) (hb : ContDiff ℝ �
     ((hb.comp contDiff_fst).differentiable (by simp) (u, (0 : ℝ))).hasFDerivAt
   simpa only [zero_smul, add_zero] using hdb.fun_mul (hasFDerivAt_snd :
     HasFDerivAt (Prod.snd : ℝ × ℝ → ℝ) (ContinuousLinearMap.snd ℝ ℝ ℝ) (u, 0))
-
-
-
 
 theorem exists_supported_axis_jet (a c : ℝ × ℝ → ℝ)
     (ha : ContDiff ℝ ∞ a) (hc : ContDiff ℝ ∞ c) (haK : HasCompactSupport a)

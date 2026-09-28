@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallScalarLimit
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.UniformCompactScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +16,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem exists_eventual_compact_normalized_raw_scalar_bound
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))

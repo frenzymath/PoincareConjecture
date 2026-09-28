@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.TerminalEstimates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Blowup.Controlled.BoundsTheory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -34,8 +26,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
 
-
-
 theorem terminalBlowupSequence_boundedDistance_hypotheses
     (hM04 : RicciFlowCurvatureCalculus.{u}) {epsilon C : ℝ}
     (hepsilon : ∀ k, (H k).epsilon = epsilon) (hC : ∀ k, (H k).constant = C)
@@ -52,8 +42,6 @@ theorem terminalBlowupSequence_boundedDistance_hypotheses
       (Q k).extension.earlier_dense_canonical_of_singularTimeAssumptions
         (H k) le_rfl (x k) (hcutoff k)
 
-
-
 theorem terminalBlowupSequence_boundedDistance_and_compact
     (hM04 : RicciFlowCurvatureCalculus.{u}) (hM29 : DenseGeneralizedBoundedDistanceTheory.{u})
     {epsilon C : ℝ} (hepsilon_pos : 0 < epsilon)
@@ -68,8 +56,6 @@ theorem terminalBlowupSequence_boundedDistance_and_compact
     (terminalBlowupSequence_boundedDistance_hypotheses H Q x hpos hdiv
       hM04 hepsilon hC hcutoff)
   exact ⟨hb, terminalBlowupSequence_balls_compact H Q x hpos hdiv hb⟩
-
-
 
 theorem terminalBlowupSequence_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureCalculus.{u}) {B : ℝ}
@@ -86,8 +72,6 @@ theorem terminalBlowupSequence_scalar_gradient_bound
       B * ((Q k).extension.extended.connection t).scalarCurvature y ^ (3 / 2 : ℝ) := by
   simpa only [hB k] using extension_scalar_gradient_bound_of_strict
     hM04 (H k) (Q k).extension t ht y ((hcutoff k).trans_le hy) v hv
-
-
 
 theorem terminalBlowupSequence_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureCalculus.{u}) {B : ℝ}

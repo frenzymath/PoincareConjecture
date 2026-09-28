@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualFaceGraph
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalFaceLabels
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.EdgeSubdivisionTree
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 500000
 
@@ -135,9 +125,6 @@ theorem exists_original_torus_leaf_cut_disk
       (fun q hq => by simpa only [K.faceLink_singleton_eq_link] using hlinks q hq) hp)
     S htree
   exact ⟨S, htree, hball⟩
-
-
-
 
 theorem exists_original_torus_leaf_cut_disk_with_dual_embedding
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

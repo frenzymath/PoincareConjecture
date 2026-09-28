@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.CorrectedEquation
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem mapRadius_third_deriv {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (r : ℝ) :
     deriv (deriv (deriv (mapRadius u))) r =
@@ -41,8 +29,6 @@ theorem mapRadius_third_deriv {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (r : �
     Pi.pow_apply, Pi.add_apply, Pi.mul_apply]
   ring
 
-
-
 theorem mapRadius_ratio_tendsto
     {A : Type*} {l : Filter A} {r : A → ℝ} {u : A → ℝ → ℝ}
     (hr : ∀ᶠ a in l, r a ≠ 0)
@@ -53,8 +39,6 @@ theorem mapRadius_ratio_tendsto
   apply h.congr'
   filter_upwards [hr] with a ha
   simp [mapRadius, ha]
-
-
 
 theorem mapRadius_deriv_tendsto
     {A : Type*} {l : Filter A} {r : A → ℝ} {u : A → ℝ → ℝ}
@@ -69,9 +53,6 @@ theorem mapRadius_deriv_tendsto
   simpa only [Function.comp_apply, Real.exp_zero, add_zero, mul_one] using
     ((Real.continuous_exp.tendsto 0).comp hu).mul
       ((tendsto_const_nhds (x := (1 : ℝ))).add hdu)
-
-
-
 
 theorem mapRadius_second_deriv_tendsto
     {A : Type*} {l : Filter A} {r : A → ℝ} {u : A → ℝ → ℝ}

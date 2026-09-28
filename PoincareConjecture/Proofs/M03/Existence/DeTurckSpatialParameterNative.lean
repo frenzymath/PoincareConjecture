@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckCompatibleJetNative
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Data.List.FinRange
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option backward.isDefEq.respectTransparency false
@@ -107,7 +100,6 @@ section FiniteComposition
 
 variable {iota : Type*} [Fintype iota]
 
-
 def composeFamily (Phi : iota → ℝ → Diffeomorph I I M M ∞) :
     List iota → (iota → ℝ) → Diffeomorph I I M M ∞
   | [], _ => Diffeomorph.refl I M ∞
@@ -202,7 +194,6 @@ theorem family_parameter_contMDiffOn
 
 end FiniteComposition
 
-
 theorem exists_spatial_parameter_family (k : ℕ)
     (V : Fin k → (x : M) → TangentSpace I x)
     (hV : ∀ i, ContMDiff I ((𝓡 n).prod 𝓘(ℝ, E)) ∞
@@ -279,7 +270,6 @@ theorem hasMFDerivAt_of_axes {k : ℕ} (f : (Fin k → ℝ) → M)
   rw [← heq]
   exact hf.hasMFDerivAt
 
-
 theorem exists_coordinate_parameter_family (x : M) :
     ∃ U : Set (Fin n → ℝ), IsOpen U ∧ 0 ∈ U ∧
       ∃ Phi : (Fin n → ℝ) → Diffeomorph I I M M ∞,
@@ -321,7 +311,6 @@ theorem exists_coordinate_parameter_family (x : M) :
   convert! haxis i x using 1
   congr 1
   exact hb.trans (hfield i).symm
-
 
 theorem exists_coordinate_parameter_inverse (x : M) :
     ∃ U : Set (Fin n → ℝ), IsOpen U ∧ 0 ∈ U ∧

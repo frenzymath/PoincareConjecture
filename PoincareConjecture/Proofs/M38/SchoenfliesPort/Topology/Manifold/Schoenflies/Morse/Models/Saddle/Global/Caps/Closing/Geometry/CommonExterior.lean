@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Replacement
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.ClosingBall
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -31,9 +23,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
-
 
 theorem exists_common_exterior_of_fixed_neighborhood_matching
     (B L H : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -55,9 +44,6 @@ theorem exists_common_exterior_of_fixed_neighborhood_matching
     obtain ⟨x, hx, he⟩ := hyL
     have hxy : x = y := H.injective (he.trans (hfix hyU).symm)
     exact hyB (hxy ▸ hx)
-
-
-
 
 theorem exists_supported_boundary_replacement_of_fixed_neighborhood_matching
     (B L H : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

@@ -1,18 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJets
 import Mathlib.MeasureTheory.Function.LpSeminorm.Indicator
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Metric
 open scoped ContDiff Topology
@@ -56,6 +43,5 @@ theorem exists_global_l2_spatial_weak_derivatives
       filter_upwards [ae_restrict_mem measurableSet_ball] with y hy
       rw [show g i y = V i y from indicator_of_mem hy _]
     _ = _ := hweak i φ hφ hφc hφs
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

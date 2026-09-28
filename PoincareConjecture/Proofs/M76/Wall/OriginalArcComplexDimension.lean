@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalArcChartStars
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcFaceDimension
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
 
 theorem PLDomain.exists_original_arc_complex_dimension
     {X E ι κ : Type*} [TopologicalSpace X] [T2Space X]

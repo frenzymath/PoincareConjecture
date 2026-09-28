@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Bounda
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComplementUnion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Boundary.WholeCollarRims
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -16,7 +14,6 @@ namespace Geometry.OriginalPLTower
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
 
 variable {X ι : Type} [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {g : (V1 × V2) → X}
@@ -36,8 +33,6 @@ theorem MarkedBoundaryPair.derived_collar_union_faces_generic (P : MarkedBoundar
     (fun v hvs ↦ P.mark_vertices_generic.symm.subset (hv v hvs)))
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem MarkedBoundaryPair.exists_derived_annuli_with_cut_rims_of_localOrientation
     (P : MarkedBoundaryPair st R F) (O : LocalOrientation st.Carrier) :
@@ -87,4 +82,3 @@ theorem MarkedBoundaryPair.exists_derived_annuli_with_cut_rims_of_localOrientati
     rw [P.derived_collar_union_faces_generic, union_comm]
 
 end Geometry.OriginalPLTower
-

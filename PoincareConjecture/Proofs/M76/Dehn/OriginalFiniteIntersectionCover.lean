@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Intersections.FreeFaces
 import PoincareConjecture.Proofs.M76.Dehn.OriginalIntersectionRankBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,12 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ V2}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
-
-
-
-
-
-
 
 theorem FaceMotionData.exists_finite_intersection_cover
     {s t : Stage e S f r C} {step : Step s t}

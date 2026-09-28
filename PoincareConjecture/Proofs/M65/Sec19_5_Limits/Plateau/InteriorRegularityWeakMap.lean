@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -23,10 +13,6 @@ universe u
 namespace PoincareConjecture
 
 variable {M : Type u} {N : ℕ}
-
-
-
-
 
 structure M65LocalWeakMap (e : M → EuclideanSpace ℝ (Fin N)) (U : Set LoopPlane) where
   value : LoopPlane → M
@@ -45,9 +31,6 @@ namespace M65LocalWeakMap
 
 variable {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}
 
-
-
-
 theorem test_derivative_integrable (F : M65LocalWeakMap e U) (test : 𝓢(LoopPlane, ℝ))
     (hc : HasCompactSupport test) (hs : tsupport test ⊆ U) (i : Fin 2) (j : Fin N) :
     IntegrableOn (fun z => test z * F.derivative i z j) U := by
@@ -60,9 +43,6 @@ theorem test_derivative_integrable (F : M65LocalWeakMap e U) (test : 𝓢(LoopPl
     exact (mul_ne_zero_iff.mp hz).1
   exact ((integrableOn_iff_integrable_of_support_subset hsupport).mp
     (ht.integrable_mul hi)).integrableOn
-
-
-
 
 theorem test_value_integrable (F : M65LocalWeakMap e U) (test : 𝓢(LoopPlane, ℝ))
     (hc : HasCompactSupport test) (hs : tsupport test ⊆ U) (i : Fin 2) (j : Fin N) :
@@ -82,8 +62,6 @@ theorem test_value_integrable (F : M65LocalWeakMap e U) (test : 𝓢(LoopPlane, 
 variable [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
 theorem energy_integrable (F : M65LocalWeakMap e U) (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 3) (𝓡 N) e p))
@@ -97,10 +75,6 @@ end M65LocalWeakMap
 
 variable [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 def M65LocallyMinimizesEnergy {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}
     (g : RiemannianMetric 3 M) (F : M65LocalWeakMap e U) : Prop :=

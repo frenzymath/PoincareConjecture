@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.TangentBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ namespace M23TerminalExtension
 
 variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
-
-
 
 theorem eventually_metricDiameter_le_of_compact
     (T : M23TerminalExtension G)
@@ -73,8 +63,6 @@ theorem eventually_metricDiameter_le_of_compact
   exact (hdist a b).trans (mul_le_mul_of_nonneg_left
     (compact_toReal_edist_le_metricDiameter g hcompact a b) (by norm_num))
 
-
-
 theorem not_isCompact_of_metricDiameter_tendsto
     (T : M23TerminalExtension G)
     (hdiam : Tendsto (fun k ↦ metricDiameter ((S.term k).flow.flow.metric 0) univ)
@@ -90,8 +78,6 @@ theorem not_isCompact_of_metricDiameter_tendsto
 end M23TerminalExtension
 
 namespace RedesignNormalizedKappaCompactnessConclusion
-
-
 
 theorem not_isCompact_of_metricDiameter_tendsto
     {N : NormalizedKappaCompactnessData}

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityInverseChart
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +12,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak
-
-
 
 theorem m64WeakColumns_ae_eq {m : ℕ} {O : Set LoopPlane} (hO : IsOpen O)
     {u v : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -51,9 +37,6 @@ theorem m64WeakColumns_ae_eq {m : ℕ} {O : Set LoopPlane} (hO : IsOpen O)
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64InverseChart_observed_metric
     (g : RiemannianMetric n M) (e : M → EuclideanSpace ℝ (Fin m))

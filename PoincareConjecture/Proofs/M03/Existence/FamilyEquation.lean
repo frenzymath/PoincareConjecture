@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

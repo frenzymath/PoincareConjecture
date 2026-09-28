@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeFrame
 import PoincareConjecture.Proofs.M04.ScalarBracket
 import PoincareConjecture.Proofs.M04.FixedExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem time_covariant_vertical {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)
@@ -41,8 +30,6 @@ theorem time_covariant_vertical {F : RicciFlow n M (Set.Icc a b)}
     (G.connection.connection G.charts.timeVector q V)] at h
   simp only [G.inner_time] at h
   linarith
-
-
 
 theorem time_parallel_time {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point) :
@@ -102,8 +89,6 @@ theorem time_parallel_time {F : RicciFlow n M (Set.Icc a b)}
     linarith
   by_contra hne
   exact (ne_of_gt (G.metric.pos q Z hne)) hzero
-
-
 
 theorem time_spatial_vertical {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalSphereCutGraphCollapse
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedCutGraphHomotopyRetract
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_original_sphere_cut_graph_homotopy_retract
     {X ι κ : Type*} [MetricSpace X] [Fintype κ] [DecidableEq κ]

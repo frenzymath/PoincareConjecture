@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Spheres.Iteration.Geometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.MarkedCoverInjection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 
@@ -22,9 +14,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
-
-
 
 theorem PairedSourceGeometry.slab_pi1_injective
     {α : Type*} {e : α → OpenPartialHomeomorph X V3}
@@ -138,8 +127,6 @@ theorem PairedSourceGeometry.slab_pi1_injective
   rcases huv with rfl | rfl
   · exact hN
   · exact hM
-
-
 
 theorem PairedSourceGeometry.slab_ambient_pi1_injective
     {α : Type*} {e : α → OpenPartialHomeomorph X V3}

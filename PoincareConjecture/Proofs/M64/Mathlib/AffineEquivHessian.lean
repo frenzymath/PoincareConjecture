@@ -1,10 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,9 +11,6 @@ namespace PoincareConjecture.M64
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
-
 
 theorem fderiv2_comp_affine_equiv (f : F → G) (e : E ≃L[ℝ] F)
     (a : F) (x v w : E) :

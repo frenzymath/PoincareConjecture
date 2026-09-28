@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckClockBuffer
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoefficientBounds
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialCompression
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ private theorem norm_iteratedFDeriv_sub_triangle
     iteratedFDeriv_sub_apply (hk.of_le (by exact_mod_cast le_top))
       (hg.of_le (by exact_mod_cast le_top))]
   exact norm_sub_le_norm_sub_add_norm_sub _ _ _
-
-
 
 theorem eventually_buffered_normalized_neck_jets
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]

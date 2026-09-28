@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeChartRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.LocalRegionSideIncidence
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem halfspace_of_convex_subtype_frontier_chart
     {X : Type*} [TopologicalSpace X] {D : Set X}
@@ -111,9 +100,6 @@ theorem halfspace_of_convex_subtype_frontier_chart
       rcases eq_or_lt_of_le ht with heq | hlt
       · exact hzero x hx heq
       · exact interior_subset (h.1 ((hNmem x hx).mpr hlt))
-
-
-
 
 theorem relative_halfspace_of_convex_frontier_chart
     {X : Type*} [TopologicalSpace X] {R K : Set X} (hKR : K ⊆ R)

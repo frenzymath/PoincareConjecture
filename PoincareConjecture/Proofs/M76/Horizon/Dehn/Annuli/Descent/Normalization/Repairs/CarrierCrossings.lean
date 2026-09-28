@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.MovedEdgeCross
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.InteriorContactFaces
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval

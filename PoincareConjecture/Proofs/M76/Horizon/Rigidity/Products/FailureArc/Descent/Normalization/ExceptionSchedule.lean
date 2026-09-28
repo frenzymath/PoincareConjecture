@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.FiniteExceptio
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TwoBranchWindows
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M62Geometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 structure SpacetimeIdentities {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) : Prop where
@@ -82,8 +71,6 @@ structure CircleIdentities {circumference : ℝ} (C : CircleGeometry circumferen
   circumference_eq :
     C.metricOnPoints.pathELength C.quotient 0 circumference = ENNReal.ofReal circumference
 
-
-
 structure CircleProductIdentities {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : CircleProductData F circumference) : Prop where
   circle_identities : CircleIdentities P.circle
@@ -111,7 +98,6 @@ structure CircleProductIdentities {F : RicciFlow n M (Set.Icc a b)}
       q ![A, V, W] =
     (F.connection t).covariantTensorDerivative (F.connection t).ricciEvaluation
       q.1 ![(P.charts.split q A).1, (P.charts.split q V).1, (P.charts.split q W).1]
-
 
 def CircleUnitSpacetimeParallel {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : CircleProductData F circumference)

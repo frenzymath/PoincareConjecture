@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.PLDomainMarkedApproximation
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.AnnulusProjection
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -21,8 +13,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_marked_PL_annulus_pair_of_disjoint_open
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -2,10 +2,6 @@ import Mathlib.Geometry.Manifold.MFDeriv.Basic
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

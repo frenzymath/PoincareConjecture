@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.ConeFaces
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ConeSurfaceCount
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.EmbeddedSurfaceCount
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -22,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 open Classical in
-
 
 theorem exists_boundaryCircleCap_complex_with_faces (positive : Bool)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hne : K.space.Nonempty)
@@ -155,7 +144,6 @@ theorem exists_boundaryCircleCap_complex_with_faces (positive : Bool)
         · simp only [Finset.image_insert, hzero, hbase]
 
 open Classical in
-
 
 theorem exists_boundaryCircleCap_complex (positive : Bool)
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hne : K.space.Nonempty)

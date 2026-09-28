@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ReflectionTubeDoubling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 open PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 namespace Dehn
-
-
 
 theorem exists_single_period_reflection_resolving_annulus
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

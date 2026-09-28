@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M08.PathBasics
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -21,7 +13,6 @@ namespace PoincareConjecture.M08
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 def variationPath {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
@@ -58,7 +49,6 @@ def variationPath {J : Set ℝ} {F : RicciFlow n M J}
       (hsqrt.prodMk contMDiffOn_const) (hmaps.mono_left Set.Ioo_subset_Icc_self)).congr
         (fun τ hτ ↦ (hagrees τ (Set.Ioo_subset_Icc_self hτ)).symm)
 
-
 theorem isLocalMin_variationLLength {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (hmin : IsMinimizingBackwardLPath F T τ₁ τ₂ p)
@@ -75,14 +65,12 @@ theorem isLocalMin_variationLLength {J : Set ℝ} {F : RicciFlow n M J}
   rw [hzero]
   exact hmin (variationPath V.toLVariation hu) (V.fixed_left u hu) (V.fixed_right u hu)
 
-
 theorem hasDerivAt_variationLLength_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}
     (hmin : IsMinimizingBackwardLPath F T τ₁ τ₂ p)
     (V : FixedEndpointLVariation F T τ₁ τ₂ p) {d : ℝ}
     (hd : HasDerivAt (variationLLength V.toLVariation) d 0) : d = 0 :=
   (isLocalMin_variationLLength hmin V).hasDerivAt_eq_zero hd
-
 
 theorem deriv_variationLLength_eq_zero {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} {p : BackwardTimePath F T τ₁ τ₂}

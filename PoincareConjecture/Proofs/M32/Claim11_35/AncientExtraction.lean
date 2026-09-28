@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.TerminalAnnuli
 import PoincareConjecture.Proofs.M32.Claim11_34.LimitLine
 import PoincareConjecture.Proofs.M32.Claim11_35.TerminalAncientCylinder
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +18,6 @@ namespace PoincareConjecture.M32
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
-
 
 theorem terminalBlowupSequence_exists_normalized_ancientCylinder
     (P : RepairedHornSelectionPredecessors.{u}) :

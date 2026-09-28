@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteParameterVelocity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,11 +13,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
-
 
 theorem m64ParameterMotion_half_energy_hasDerivAt
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -88,11 +79,6 @@ theorem m64ParameterMotion_half_energy_hasDerivAt
     Prod.ext (congrArg (fun q => Phi (t, q)) hHx) (Prod.ext hjet.symm (hvel t hp))
   exact congrArg (fun q : M × EuclideanSpace ℝ (Fin n) × EuclideanSpace ℝ (Fin n) =>
     g.inner q.1 q.2.1 q.2.2) hdata
-
-
-
-
-
 
 theorem m64ParameterMotion_energy_derivative_eq_divergence
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

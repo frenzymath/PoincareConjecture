@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.LimitEquations.Exponential.Flux
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.LimitEquations.Exponential.Lipschitz
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +24,6 @@ local instance : (volume : Measure (Spacetime n)).IsAddHaarMeasure := by
   infer_instance
 
 include he hei
-
-
 
 theorem normalized_exp_neg_heat_pairing_nonpos
     {O : Set (EuclideanSpace ℝ (Fin n))} (hO : IsOpen O)

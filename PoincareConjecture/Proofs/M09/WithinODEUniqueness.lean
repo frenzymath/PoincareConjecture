@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.OpenODEUniqueness
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology

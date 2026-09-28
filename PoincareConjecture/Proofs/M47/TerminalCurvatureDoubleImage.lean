@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureDoubleNormalization
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCenteredImage
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistencePullbackSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M47
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem terminalCurvature_exists_double_image_tolerance_uniform
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : 2 * epsilon < 1 / 2) :
@@ -94,7 +84,6 @@ theorem terminalCurvature_exists_double_image_tolerance_uniform
   obtain ⟨E, hE⟩ := terminalCurvature_exists_centered_double_neck N D phi
     (by simpa only [hN] using hsmall) (fun _ hx => hsource hx.1) hR hnormalized
   exact ⟨E, by simpa only [hN] using hE⟩
-
 
 theorem terminalCurvature_exists_double_image_tolerance
     {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]

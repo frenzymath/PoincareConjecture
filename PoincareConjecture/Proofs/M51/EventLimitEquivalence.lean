@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,7 +11,6 @@ namespace PoincareConjecture.SurgeryEventData
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
 
 def limitDiffeomorph (E : SurgeryEventData g₀ K P slice metric T)
     (hfull : E.regular_limit = Set.univ) :

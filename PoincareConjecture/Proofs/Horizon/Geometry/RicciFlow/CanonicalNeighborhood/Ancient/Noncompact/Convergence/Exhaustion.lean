@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.M23NormalizedKappaCompactness
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

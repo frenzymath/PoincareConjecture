@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComparison.Component
 
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,7 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {epsilon : ℝ}
 
-
 theorem forward_mfderiv_invertible (N : SingularRoundComponent g epsilon)
     (x : N.model.carrier) : (mfderiv (𝓡 3) (𝓡 3) N.forward x).IsInvertible := by
   let L : E →L[ℝ] E := mfderiv (𝓡 3) (𝓡 3) N.forward x
@@ -28,8 +25,6 @@ theorem forward_mfderiv_invertible (N : SingularRoundComponent g epsilon)
     (f := L.toLinearMap) hi
   exact ⟨ContinuousLinearEquiv.ofBijective L (LinearMap.ker_eq_bot.mpr hi)
     (LinearMap.range_eq_top.mpr hs), rfl⟩
-
-
 
 theorem forward_comp_mfderiv_invertible (N : SingularRoundComponent g epsilon)
     {f : E → N.model.carrier} {U : Set E} (hU : IsOpen U)
@@ -40,8 +35,6 @@ theorem forward_comp_mfderiv_invertible (N : SingularRoundComponent g epsilon)
   rw [mfderiv_comp x ((N.forward_smooth (f x)).mdifferentiableAt (by simp))
     ((hf.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp))]
   exact (N.forward_mfderiv_invertible (f x)).comp (hi x hx)
-
-
 
 theorem normalizedMetric_pullbackCoefficients_eq
     (N : SingularRoundComponent g epsilon)
@@ -59,7 +52,6 @@ theorem normalizedMetric_pullbackCoefficients_eq
   rw [mfderiv_comp x ((N.forward_smooth (f x)).mdifferentiableAt (by simp))
     ((hf.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp))]
   rfl
-
 
 theorem normalizedMetric_pullback_jet_eq (N : SingularRoundComponent g epsilon)
     {f : E → N.model.carrier} {U : Set E} (hU : IsOpen U)

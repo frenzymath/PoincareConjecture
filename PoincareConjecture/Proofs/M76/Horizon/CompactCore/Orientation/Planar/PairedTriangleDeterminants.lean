@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Planar.PairedTriangleSigns
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

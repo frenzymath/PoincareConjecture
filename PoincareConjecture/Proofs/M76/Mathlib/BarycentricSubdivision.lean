@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.CentroidMesh
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -33,29 +24,19 @@ private theorem centroid_positive_weights (s : K.faces) :
   · rw [Finset.centroid_eq_inv_card_smul_sum _ hs]
     simp only [Finset.centroidWeights_apply, Finset.smul_sum, id_eq]
 
-
-
 noncomputable def barycentricSubdivision : SimplicialComplex ℝ E :=
   K.derivedSubdivision (fun s => s.val.centroid ℝ id) K.centroid_positive_weights
-
-
 
 theorem barycentricSubdivision_finite : K.barycentricSubdivision.faces.Finite :=
   K.derivedSubdivision_finite _ _
 
-
-
 theorem barycentricSubdivision_isSubdivision : K.barycentricSubdivision.IsSubdivision K :=
   K.derivedSubdivision_isSubdivision _ _
-
-
 
 theorem barycentricSubdivision_card_le {N : ℕ}
     (hN : ∀ s ∈ K.faces, s.card ≤ N + 1) :
     ∀ s ∈ K.barycentricSubdivision.faces, s.card ≤ N + 1 :=
   K.derivedSubdivision_card_le _ _ hN
-
-
 
 theorem barycentricSubdivision_diam_le {N : ℕ}
     (hN : ∀ s ∈ K.faces, s.card ≤ N + 1) {D : ℝ} (hD : 0 ≤ D)

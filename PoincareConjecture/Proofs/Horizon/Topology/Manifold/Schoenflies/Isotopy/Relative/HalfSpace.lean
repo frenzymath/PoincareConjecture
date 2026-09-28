@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Relative.Localization
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_agreement_of_fixed_halfspace_preserving_linear
     (l : E →L[Real] Real) (v : E) (hlv : l v = 1) (c : Real)
@@ -70,8 +66,6 @@ theorem exists_supported_agreement_of_fixed_halfspace_preserving_linear
   have hh := hagree hx
   simpa only [hΦ, σ, sub_self, zero_pow (by norm_num : 2 ≠ 0), mul_zero,
     zero_smul, add_zero, sub_zero] using hh
-
-
 
 theorem exists_supported_agreement_of_fixed_halfspace
     (l : E →L[Real] Real) (v : E) (hlv : l v = 1) (c : Real)

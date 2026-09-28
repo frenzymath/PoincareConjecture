@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_ScalarCompar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedData
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +36,6 @@ variable {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a : ℝ}
   {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
   {i : Fin (F.event a ha).cap_count}
 
-
-
-
 theorem scalar_eq_jetScalarCurvature (D : CylinderCompactnessSample g0 F a ha i)
     (t : ℝ) {x : E} (hx : x ∈ D.chart.source) :
     (D.ordinary.flow.connection t).scalarCurvature (targetChart D.chart D.target_point x) =
@@ -58,9 +45,6 @@ theorem scalar_eq_jetScalarCurvature (D : CylinderCompactnessSample g0 F a ha i)
     (D.ordinary.flow.metric t) (D.ordinary.flow.connection t) D.chart.open_source
     (contMDiffOn_targetChart D.chart D.target_point)
     (fun _ hy => D.target_derivative_invertible hy) hx
-
-
-
 
 theorem scalar_le_of_source_twoJet_bound (D : CylinderCompactnessSample g0 F a ha i)
     (t : ℝ) {M : ℝ}
@@ -84,10 +68,6 @@ variable {g0 : StandardInitialMetric} {F : ℕ → SurgeryFlowData.{u}}
   [∀ k, Nonempty ((F k).slice (a k)).carrier]
   {i : ∀ k, Fin ((F k).event (a k) (ha k)).cap_count}
 
-
-
-
-
 theorem eventually_cylinder_twoJet_comparison
     (S : RepairedStandardCapExistenceData g0)
     (D : ∀ k, CylinderCompactnessSample g0 (F k) (a k) (ha k) (i k))
@@ -109,9 +89,6 @@ theorem eventually_cylinder_twoJet_comparison
   · exact (h0 t ht x hx).le
   · exact (h1 t ht x hx).le
   · exact (h2 t ht x hx).le
-
-
-
 
 theorem eventually_cylinder_scalar_on_compact
     (S : RepairedStandardCapExistenceData g0)
@@ -138,11 +115,6 @@ theorem eventually_cylinder_scalar_on_compact
   intro t ht x hx hsource
   rw [(D k).scalar_eq_jetScalarCurvature t hsource]
   exact (hmargin t (hJ k ht) x hx _ (hk t ht x ⟨hx, hsource⟩)).le
-
-
-
-
-
 
 theorem eventually_cylinder_whole_target_scalar_bound
     (S : RepairedStandardCapExistenceData g0)

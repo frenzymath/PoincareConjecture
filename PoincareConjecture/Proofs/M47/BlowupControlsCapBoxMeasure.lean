@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Euclidean
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
 def capHalfBox (a : ℝ) : Set E :=
   {p | p 0 ∈ Ioo (-a) a ∧ p 1 ∈ Ioo (-a) a ∧ p 2 ∈ Ioo 0 a}
 
@@ -32,8 +23,6 @@ theorem capHalfBox_isOpen (a : ℝ) : IsOpen (capHalfBox a) := by
   exact ((isOpen_Ioo.preimage (by fun_prop)).inter
     ((isOpen_Ioo.preimage (by fun_prop)).inter
       (isOpen_Ioo.preimage (by fun_prop))))
-
-
 
 theorem capHalfBox_volume {a : ℝ} (ha : 0 ≤ a) :
     calibratedMetricVolume (RiemannianMetric.euclideanMetric 3) (capHalfBox a) =
@@ -64,8 +53,6 @@ theorem capHalfBox_volume {a : ℝ} (ha : 0 ≤ a) :
   congr 1
   ring
 
-
-
 theorem capHalfBox_norm_le {a : ℝ} (ha : 0 ≤ a) {p : E} (hp : p ∈ capHalfBox a) :
     ‖p‖ ≤ 2 * a := by
   have h0 : |p 0| ≤ a := (abs_lt.mpr hp.1).le
@@ -80,8 +67,6 @@ theorem capHalfBox_norm_le {a : ℝ} (ha : 0 ≤ a) {p : E} (hp : p ∈ capHalfB
   simp only [sq_abs] at hs0 hs1 hs2
   nlinarith [norm_nonneg p]
 
-
-
 theorem cap_box_horizontal_norm_le (p : E) : ‖cylinderHorizontalProjection p‖ ≤ ‖p‖ := by
   have hsplit := congrArg (fun A : E →L[ℝ] E →L[ℝ] ℝ => A p p)
     cylinderHorizontalForm_add_vertical
@@ -90,8 +75,6 @@ theorem cap_box_horizontal_norm_le (p : E) : ‖cylinderHorizontalProjection p�
   rw [real_inner_self_eq_norm_sq, real_inner_self_eq_norm_sq] at hsplit
   nlinarith [norm_nonneg p, norm_nonneg (cylinderHorizontalProjection p),
     mul_self_nonneg (cylinderHeightCovector p)]
-
-
 
 theorem capHalfBox_segment_domain {M : Type*} [TopologicalSpace M]
     [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}

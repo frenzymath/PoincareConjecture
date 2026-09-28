@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EnergyCutoffs
 import Mathlib.Algebra.Order.Floor.Semiring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,23 +10,17 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
 noncomputable def translatedEnergyCutoff (e : StandardCylindricalEnd g) (j : ℕ) :
     StandardCapSpace → ℝ := endEnergyProfile ∘ fun x => endExhaustion e x - (j : ℝ)
-
 
 theorem translatedEnergyCutoff_contDiff (e : StandardCylindricalEnd g) (j : ℕ) :
     ContDiff ℝ ∞ (translatedEnergyCutoff e j) :=
   endEnergyProfile.contDiff.comp
     ((contMDiff_iff_contDiff.mp (endExhaustion_contMDiff e)).sub contDiff_const)
 
-
-
 theorem translatedEnergyCutoff_mem_Icc (e : StandardCylindricalEnd g) (j : ℕ)
     (x : StandardCapSpace) : translatedEnergyCutoff e j x ∈ Icc (0 : ℝ) 1 :=
   ⟨endEnergyProfile.nonneg, endEnergyProfile.le_one⟩
-
-
 
 theorem translatedEnergyCutoff_eq_one (e : StandardCylindricalEnd g) (j : ℕ)
     {x : StandardCapSpace} (hx : endExhaustion e x - (j : ℝ) ∈ Icc (22 / 5 : ℝ) (28 / 5)) :
@@ -46,8 +30,6 @@ theorem translatedEnergyCutoff_eq_one (e : StandardCylindricalEnd g) (j : ℕ)
   change |endExhaustion e x - (j : ℝ) - 5| ≤ 3 / 5
   rw [abs_le]
   constructor <;> linarith [hx.1, hx.2]
-
-
 
 theorem translatedEnergyCutoff_tsupport (e : StandardCylindricalEnd g) (j : ℕ) :
     tsupport (translatedEnergyCutoff e j) ⊆
@@ -61,14 +43,10 @@ theorem translatedEnergyCutoff_tsupport (e : StandardCylindricalEnd g) (j : ℕ)
   obtain ⟨hl, hu⟩ := abs_le.mp hh
   constructor <;> linarith
 
-
-
 theorem translatedEnergyCutoff_hasCompactSupport (e : StandardCylindricalEnd g) (j : ℕ) :
     HasCompactSupport (translatedEnergyCutoff e j) :=
   (endExhaustion_sublevel_isCompact e ((j : ℝ) + 59 / 10)).of_isClosed_subset
     (isClosed_tsupport _) (fun _ hx => (translatedEnergyCutoff_tsupport e j hx).2)
-
-
 
 theorem translatedEnergyCutoff_chart (e : StandardCylindricalEnd g) (j : ℕ)
     {x : StandardCapSpace} (hx : x ∈ endReferenceRegion e) :
@@ -78,8 +56,6 @@ theorem translatedEnergyCutoff_chart (e : StandardCylindricalEnd g) (j : ℕ)
   have hj : (j : ℝ) + 4 - 4 = j := by ring
   rw [hj] at hh
   exact congrArg endEnergyProfile hh
-
-
 
 theorem translatedEnergyCutoff_localization (e : StandardCylindricalEnd g) (j : ℕ)
     {x : StandardCapSpace} (hx : x ∈ tsupport (translatedEnergyCutoff e j)) :
@@ -99,8 +75,6 @@ theorem translatedEnergyCutoff_localization (e : StandardCylindricalEnd g) (j : 
   refine ⟨e.coordinate w, hy, heq, ?_⟩
   rw [← heq, translatedEnergyCutoff_chart e j hy]
 
-
-
 theorem energyCutoffs_plateau_cover (e : StandardCylindricalEnd g) (x : StandardCapSpace) :
     coreEnergyCutoff e x = 1 ∨ ∃ j : ℕ, translatedEnergyCutoff e j x = 1 := by
   by_cases hx : endExhaustion e x ≤ 5
@@ -112,8 +86,6 @@ theorem energyCutoffs_plateau_cover (e : StandardCylindricalEnd g) (x : Standard
     refine ⟨j, translatedEnergyCutoff_eq_one e j ?_⟩
     constructor <;> linarith
 
-
-
 theorem translatedEnergyCutoff_neighbors (e : StandardCylindricalEnd g) {j k : ℕ}
     {x : StandardCapSpace} (hj : x ∈ tsupport (translatedEnergyCutoff e j))
     (hk : x ∈ tsupport (translatedEnergyCutoff e k)) : j ≤ k + 1 ∧ k ≤ j + 1 := by
@@ -124,8 +96,6 @@ theorem translatedEnergyCutoff_neighbors (e : StandardCylindricalEnd g) {j k : �
   have hjkn : j < k + 2 := by exact_mod_cast hjk
   have hkjn : k < j + 2 := by exact_mod_cast hkj
   omega
-
-
 
 theorem translatedEnergyCutoff_core_neighbors (e : StandardCylindricalEnd g) {j : ℕ}
     {x : StandardCapSpace} (hj : x ∈ tsupport (translatedEnergyCutoff e j))

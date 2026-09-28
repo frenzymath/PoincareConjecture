@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M76
 
 variable {ι M : Type*} [TopologicalSpace M]
-
-
-
 
 theorem exists_smooth_atlas_of_coordinates
     (c : ι → OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
@@ -31,8 +18,6 @@ theorem exists_smooth_atlas_of_coordinates
       letI := a; IsManifold (𝓡 3) ∞ M :=
   ⟨ChartedSpace.ofChartCover c hcover,
     ChartedSpace.isManifold_ofChartCover_of_contDiffOn c hcover ∞ hcompat⟩
-
-
 
 theorem exists_smooth_atlas_of_analytic_coordinates
     (c : ι → OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))

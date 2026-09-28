@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSourcePrefix
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabContinuation
 import PoincareConjecture.Proofs.M30.Thm11_8.FiniteSlabControlled
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,11 +16,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
-
-
 
 theorem exists_radius_dependent_left_cylinders_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

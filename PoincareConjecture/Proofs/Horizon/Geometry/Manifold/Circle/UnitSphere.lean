@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Mathlib.FlatCircleCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Quotient.Circle
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +14,6 @@ namespace AddCircle
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev S1 := Metric.sphere (0 : EuclideanSpace Real (Fin 2)) 1
 
-
 def unitSphereHomeomorph {T : Real} (hT : 0 < T) : AddCircle T ≃ₜ S1 :=
   (homeomorphCircle hT.ne').trans PoincareConjecture.complexCircleDiffeomorph.toHomeomorph
 
@@ -35,8 +25,6 @@ theorem unitSphereHomeomorph_apply_coe {T : Real} (hT : 0 < T) (t : Real) :
   unfold PoincareConjecture.unitCircleExp
   congr 2
   ring
-
-
 
 theorem isLocalDiffeomorph_unitSphereHomeomorph
     {T : Real} (hT : 0 < T) [ChartedSpace E1 (AddCircle T)]
@@ -59,8 +47,6 @@ theorem isLocalDiffeomorph_unitSphereHomeomorph
     rfl
   rw [heq]
   exact h
-
-
 
 def unitSphereDiffeomorph
     {T : Real} (hT : 0 < T) [ChartedSpace E1 (AddCircle T)]

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapAttachedEnd
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereOrder
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapScalarBand
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,9 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_preconnected_compact_cap_side (T : CappedTubeCertificate g) {S : Set M}
     (hS : SmoothSphereIsotopicIn T.tube.carrier S T.tube.cylinder.middleSphere)
@@ -288,9 +275,6 @@ theorem exists_preconnected_compact_cap_side (T : CappedTubeCertificate g) {S : 
         have hp : 0 < h y := hyP.2
         exact (not_lt_of_ge hn.le) hp
       exact False.elim (hxnot (interior_maximal hVC hV ⟨hxT, hlt⟩))
-
-
-
 
 theorem exists_compact_cap_side (T : CappedTubeCertificate g) {S : Set M}
     (hS : SmoothSphereIsotopicIn T.tube.carrier S T.tube.cylinder.middleSphere)

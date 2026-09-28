@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarPolarDerivatives
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m60Contraction_spatial_bound (g : RiemannianMetric 3 M)
     (C : ℝ × (M × M) → M) (x : ℝ × (M × M)) (B : ℝ)
@@ -53,9 +42,6 @@ theorem m60Contraction_spatial_bound (g : RiemannianMetric 3 M)
   apply (norm_add_le _ _).trans
   rw [mul_add]
   exact add_le_add (hp v) (hq w)
-
-
-
 
 theorem m60LoopCollar_polar_density_le (g : RiemannianMetric 3 M)
     (C : ℝ × (M × M) → M) (γ₀ γ₁ : C1FreeLoopSpace (M := M))

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,26 +11,14 @@ namespace PoincareConjecture
 
 local notation "S" => interior m64AnnulusDomain
 
-
-
-
 def m64AnnulusRadialTranslation : LoopPlane := annulusPoint 0 1
 
 local notation "v" => m64AnnulusRadialTranslation
 
-
-
-
 def m64AnnulusLowerDomain : Set LoopPlane :=
   {p | 0 < p 0 ∧ p 0 < curvePeriod ∧ -1 < p 1 ∧ p 1 < 1}
 
-
-
-
 def m64AnnulusLowerStrip : Set LoopPlane := (fun p => v + p) ⁻¹' S
-
-
-
 
 theorem m64AnnulusLowerDomain_isOpen : IsOpen m64AnnulusLowerDomain := by
   have h0 : Continuous (fun p : LoopPlane => p 0) :=
@@ -52,13 +29,8 @@ theorem m64AnnulusLowerDomain_isOpen : IsOpen m64AnnulusLowerDomain := by
     ((isOpen_lt h0 continuous_const).inter
       ((isOpen_lt continuous_const h1).inter (isOpen_lt h1 continuous_const)))
 
-
-
 theorem m64AnnulusLowerStrip_isOpen : IsOpen m64AnnulusLowerStrip :=
   isOpen_interior.preimage (continuous_const.add continuous_id)
-
-
-
 
 theorem m64AnnulusLowerStrip_coordinates (p : LoopPlane) :
     p ∈ m64AnnulusLowerStrip ↔
@@ -73,33 +45,21 @@ theorem m64AnnulusLowerStrip_coordinates (p : LoopPlane) :
   · rintro ⟨h0, hP, hlow, hhigh⟩
     exact ⟨h0, hP, by linarith, by linarith⟩
 
-
-
-
 theorem m64AnnulusLower_rect_subset : S ⊆ m64AnnulusLowerDomain := by
   intro p hp
   obtain ⟨h0, hP, hlow, hhigh⟩ := (m64AnnulusInterior_coordinates p).mp hp
   exact ⟨h0, hP, by linarith, hhigh⟩
-
-
-
 
 theorem m64AnnulusLower_strip_subset : m64AnnulusLowerStrip ⊆ m64AnnulusLowerDomain := by
   intro p hp
   obtain ⟨h0, hP, hlow, hhigh⟩ := (m64AnnulusLowerStrip_coordinates p).mp hp
   exact ⟨h0, hP, hlow, by linarith⟩
 
-
-
-
 theorem m64AnnulusLower_disjoint : Disjoint S m64AnnulusLowerStrip := by
   apply disjoint_left.mpr
   intro p hp hq
   exact lt_asymm ((m64AnnulusInterior_coordinates p).mp hp).2.2.1
     ((m64AnnulusLowerStrip_coordinates p).mp hq).2.2.2
-
-
-
 
 theorem m64_radial_line_null (c : ℝ) : volume {p : LoopPlane | p 1 = c} = 0 := by
   let e : LoopPlane → (Fin 2 → ℝ) := @WithLp.ofLp 2 (Fin 2 → ℝ)
@@ -118,9 +78,6 @@ theorem m64_radial_line_null (c : ℝ) : volume {p : LoopPlane | p 1 = c} = 0 :=
     simp [q, e, K, MeasurableEquiv.finTwoArrow_apply]
   rw [← heq, hpre, hzero]
 
-
-
-
 theorem m64AnnulusLowerDomain_ae_union :
     m64AnnulusLowerDomain =ᵐ[volume] (S ∪ m64AnnulusLowerStrip : Set LoopPlane) := by
   have hn : ∀ᵐ p : LoopPlane ∂volume, p 1 ≠ 0 := by
@@ -137,17 +94,11 @@ theorem m64AnnulusLowerDomain_ae_union :
     · exact m64AnnulusLower_rect_subset h
     · exact m64AnnulusLower_strip_subset h
 
-
-
-
 theorem m64AnnulusLower_translation_measurePreserving :
     MeasurePreserving (fun p : LoopPlane => v + p)
       (volume.restrict m64AnnulusLowerStrip) (volume.restrict S) :=
   (measurePreserving_add_left (volume : Measure LoopPlane) v).restrict_preimage_emb
     (MeasurableEquiv.addLeft v).measurableEmbedding S
-
-
-
 
 theorem m64AnnulusLower_negative_translation_measurePreserving :
     MeasurePreserving (fun p : LoopPlane => p - v)
@@ -162,29 +113,17 @@ theorem m64AnnulusLower_negative_translation_measurePreserving :
   funext p
   abel
 
-
-
-
 def m64AnnulusLowerExtend {E : Type*} (f g : LoopPlane → E) (p : LoopPlane) : E :=
   if p 1 < 0 then f (v + p) else g p
-
-
-
 
 theorem m64AnnulusLowerExtend_right {E : Type*} (f g : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusLowerExtend f g p = g p := by
   simp only [m64AnnulusLowerExtend, not_lt.mpr ((m64AnnulusInterior_coordinates p).mp hp).2.2.1.le,
     ↓reduceIte]
 
-
-
-
 theorem m64AnnulusLowerExtend_left {E : Type*} (f g : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ m64AnnulusLowerStrip) : m64AnnulusLowerExtend f g p = f (v + p) := by
   simp only [m64AnnulusLowerExtend, ((m64AnnulusLowerStrip_coordinates p).mp hp).2.2.2, ↓reduceIte]
-
-
-
 
 theorem m64AnnulusLowerExtend_sub {E : Type*} (f g : LoopPlane → E)
     {p : LoopPlane} (hp : p ∈ S) : m64AnnulusLowerExtend f g (p - v) = f p := by
@@ -193,9 +132,6 @@ theorem m64AnnulusLowerExtend_sub {E : Type*} (f g : LoopPlane → E)
     change v + (p - v) ∈ S
     simpa only [heq] using hp
   rw [m64AnnulusLowerExtend_left f g hm, heq]
-
-
-
 
 theorem m64AnnulusLowerExtend_comp {E F : Type*} (f g : LoopPlane → E) (h : E → F) :
     h ∘ m64AnnulusLowerExtend f g = m64AnnulusLowerExtend (h ∘ f) (h ∘ g) := by

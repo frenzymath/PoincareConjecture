@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.SpatialSupports
 import PoincareConjecture.Proofs.M10.TimeLipschitz
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

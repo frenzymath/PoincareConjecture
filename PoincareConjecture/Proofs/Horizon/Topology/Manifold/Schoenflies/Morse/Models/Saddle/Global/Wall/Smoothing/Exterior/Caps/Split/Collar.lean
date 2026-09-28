@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Body
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +32,6 @@ private theorem exists_norm_smul_unit (y : E3) : ∃ p : S2, y = ‖y‖ • (p 
   · refine ⟨((homeomorphUnitSphereProd E3) ⟨y, hy⟩).1, ?_⟩
     rw [homeomorphUnitSphereProd_apply_fst_coe, smul_smul,
       mul_inv_cancel₀ (norm_ne_zero_iff.mpr hy), one_smul]
-
-
 
 theorem mem_capBody_iff_of_height_lt_one {v y : E3} (hv : ‖v‖ = 1)
     (hy : inner Real v y < 1) :
@@ -78,8 +74,6 @@ theorem mem_capBody_iff_of_height_lt_one {v y : E3} (hv : ‖v‖ = 1)
       nlinarith [norm_nonneg ((Hemisphere.Plane v).orthogonalProjectionOnto (p : E3))]
     nlinarith [mul_pos (sub_pos.mpr hlt) hpn]
 
-
-
 theorem capBody_slice_eq_disk {v : E3} (hv : ‖v‖ = 1)
     {t : Real} (ht : t ∈ Ico (0 : Real) 1) :
     capBody v ∩ {y | inner Real v y = t} =
@@ -100,8 +94,6 @@ theorem capBody_slice_eq_disk {v : E3} (hv : ‖v‖ = 1)
     refine ⟨(mem_capBody_iff_of_height_lt_one hv (by rw [hh]; exact ht.2)).mpr ?_, hh⟩
     exact ⟨by rw [hh]; exact ht.1, by rw [hp]; exact mem_closedBall_zero_iff.mp hx⟩
 
-
-
 theorem capSide_slice_eq_halfDisk {v w : E3} (hv : ‖v‖ = 1)
     (hw : inner Real w v = 0) {t : Real} (ht : t ∈ Ico (0 : Real) 1) :
     capSide v w ∩ {y | inner Real v y = t} =
@@ -119,7 +111,6 @@ theorem capSide_slice_eq_halfDisk {v w : E3} (hv : ‖v‖ = 1)
     obtain ⟨hy, hty⟩ := (Set.ext_iff.mp (capBody_slice_eq_disk hv ht)
       (t • v + (x : E3))).mpr ⟨x, hx, rfl⟩
     exact ⟨⟨hy, by simpa only [mem_ofPred_eq, hh] using hwx⟩, hty⟩
-
 
 theorem wallSection_slice_eq_diameter {v w : E3} (hv : ‖v‖ = 1)
     (hw : inner Real w v = 0) {t : Real} (ht : t ∈ Ico (0 : Real) 1) :

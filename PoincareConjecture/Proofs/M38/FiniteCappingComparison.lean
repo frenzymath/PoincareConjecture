@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallRegionTransport
 import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,13 +16,11 @@ variable {A D : GeneralizedSliceCarrier.{u}} {ι : Type v}
   (E : SurgeryRegionEquivalence A D (⋃ i, (B i).closedBall)ᶜ
     (⋃ i, (C i).closedBall)ᶜ)
 
-
 noncomputable def finiteBallComparisonMap (x : A.carrier) : D.carrier := by
   classical
   exact if h : ∃ i, x ∈ (B i).closedBall then
     (C (Classical.choose h)).map ((B (Classical.choose h)).inverse x)
   else E.map x
-
 
 theorem finiteBallComparisonMap_complement {x : A.carrier}
     (hx : x ∈ (⋃ i, (B i).closedBall)ᶜ) :
@@ -50,7 +38,6 @@ variable
 
 include hB in
 
-
 theorem finiteCapping_mem_closedBall_iff {i : ι} {x : A.carrier}
     (hx : x ∈ (B i).map '' Metric.ball 0 2) :
     x ∈ ⋃ j, (B j).closedBall ↔ x ∈ (B i).closedBall := by
@@ -67,7 +54,6 @@ variable [Finite ι]
 
 omit [Finite ι] in
 include hB hmatch in
-
 
 theorem finiteBallComparisonMap_chart (i : ι) {x : A.carrier}
     (hx : x ∈ (B i).map '' Metric.ball 0 2) :
@@ -155,8 +141,6 @@ theorem finiteBallComparisonMap_left_inverse :
       finiteBallComparisonMap_complement C B (reverseRegions E) hy]
     exact E.left_inverse hx
 
-
-
 noncomputable def finiteCappingDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞ where
   toEquiv := {
@@ -169,12 +153,10 @@ noncomputable def finiteCappingDiffeomorph :
   contMDiff_invFun := finiteBallComparisonMap_smooth C B (reverseRegions E) hC
     (finiteCapping_inverse_annulus B C E hB hmatch)
 
-
 theorem finiteCappingDiffeomorph_complement {x : A.carrier}
     (hx : x ∈ (⋃ i, (B i).closedBall)ᶜ) :
     finiteCappingDiffeomorph B C E hB hC hmatch x = E.map x :=
   finiteBallComparisonMap_complement B C E hx
-
 
 theorem finiteCappingDiffeomorph_ball (i : ι) (z : StandardCapSpace)
     (hz : z ∈ Metric.ball 0 2) :

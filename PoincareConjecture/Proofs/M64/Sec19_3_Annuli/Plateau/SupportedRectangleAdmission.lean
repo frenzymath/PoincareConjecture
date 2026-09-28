@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicRectangleAdmission
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,14 +11,10 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem mem_m64AnnulusInterior_iff (p : LoopPlane) :
     p ∈ m64AnnulusInterior ↔
       0 < p 0 ∧ p 0 < curvePeriod ∧ 0 < p 1 ∧ p 1 < 1 := by
   simp [m64AnnulusInterior, Set.mem_pi, Fin.forall_fin_two, and_assoc]
-
-
 
 theorem m64AnnulusInterior_subset_domain : m64AnnulusInterior ⊆ m64AnnulusDomain := by
   intro p hp
@@ -41,9 +25,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
 
 theorem m64Annulus_exists_eqOn_of_supported_smooth_modification
     (A : M64Annulus g c0 c1) {f : LoopPlane → M} {U K : Set LoopPlane}

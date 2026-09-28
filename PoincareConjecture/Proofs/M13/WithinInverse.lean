@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.OfCompLeft
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedFiniteCover
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem normalized_integral_scalarCurvature_posPart_le_add_of_subset
     {n : ℕ} {M : Type*} [TopologicalSpace M]

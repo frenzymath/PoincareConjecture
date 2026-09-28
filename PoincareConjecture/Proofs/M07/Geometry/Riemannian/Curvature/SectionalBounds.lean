@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Manifold.PartitionOfUnity.Derivati
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators
@@ -250,8 +240,6 @@ private lemma abs_component_le_sqrt_sum_sq {I : Type*} [Fintype I]
   rw [sq_abs, Real.sq_sqrt hnonneg]
   exact hsq
 
-
-
 theorem abs_curvatureTensor_orthonormal_component_le_norm
     (D : LeviCivitaData g) (x : M)
     (i j k l : Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x))) :
@@ -267,8 +255,6 @@ theorem abs_curvatureTensor_orthonormal_component_le_norm
   change |f i j k l| ≤ Real.sqrt (∑ a, ∑ b, ∑ c, ∑ d, (f a b c d) ^ 2)
   exact abs_component_le_sqrt_sum_sq f i j k l
 
-
-
 theorem abs_curvatureTensor_orthonormal_component_le_max_one
     (D : LeviCivitaData g) (x : M) (k : ℝ)
     (hk : D.curvatureTensorNorm x ≤ k)
@@ -278,7 +264,6 @@ theorem abs_curvatureTensor_orthonormal_component_le_max_one
       (g.orthonormalBasis x q)| ≤ max 1 k := by
   exact (abs_curvatureTensor_orthonormal_component_le_norm D x i j p q).trans
     (hk.trans (le_max_right 1 k))
-
 
 theorem abs_sectionalCurvature_orthonormalBasis_pair_le_norm
     (D : LeviCivitaData g) (x : M)
@@ -304,7 +289,6 @@ theorem abs_sectionalCurvature_orthonormalBasis_pair_le_norm
     unfold curvatureTensorNorm
     positivity
   · simpa using abs_curvatureTensor_orthonormal_component_le_norm D x i j i j
-
 
 theorem sectionalCurvature_eq_zero_of_gramDet_eq_zero
     (D : LeviCivitaData g) (x : M)
@@ -456,8 +440,6 @@ private theorem exists_multilinear_curvatureTensor_local
         · simpa [Function.update, Fin.ext_iff] using
             D.curvatureTensor_smul_last x c (v 0) (v 1) (v 2) a }
   exact ⟨A, by intro v; rfl⟩
-
-
 
 theorem abs_sectionalCurvature_le_curvatureTensorNorm
     (D : LeviCivitaData g) (x : M)

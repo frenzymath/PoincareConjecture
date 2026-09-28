@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M09.CurvatureWindow
 import PoincareConjecture.Proofs.M09.EnergyBound
 import PoincareConjecture.Proofs.M09.CoordinateEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_CompactTimeCove
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_21_OrdinaryNeighborhoods
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,18 +15,12 @@ namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
 
-
-
 def actionSublevelTrace {X : Type u} [TopologicalSpace X] {time : X → ℝ}
     {I : SpacetimeInterval} (G : GeneralizedLGeometryTransport 3 X time I)
     (T start : ℝ) (x : G.Point) (B : ℝ) : Set G.Point :=
   {v | ∃ tau, 0 < tau ∧ tau ≤ T - start ∧ ∃ y,
     ∃ p : M14BackwardPath G T 0 tau x y, M14BackwardLAction G p < B ∧
       ∃ s ∈ Icc 0 tau, p.curve s = v}
-
-
-
-
 
 theorem actionConfinement_of_local_surgery_cages
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

@@ -3,14 +3,6 @@ import PoincareConjecture.Definitions.M53SphereSeparation
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ContinuousMap
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff ContinuousMap
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m57FreeSphereNullHomotopy
     (P02 : RepairedClosedTopologyProvider.{u})

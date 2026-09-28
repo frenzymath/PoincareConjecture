@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveGradientQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ section GeneralDimension
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem scalar_ricci_gradient_pairing_le (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
@@ -77,9 +65,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
 
-
-
-
 theorem ricci_norm_bounds_of_nonneg (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M)
     (hRic : ∀ v : TangentSpace (𝓡 3) x, g.inner x v v = 1 → 0 ≤ D.ricci x v v) :
@@ -94,10 +79,6 @@ theorem ricci_norm_bounds_of_nonneg (D : LeviCivitaData g)
   constructor
   · exact sub_nonneg.mp (Poincare.ThreeDimensionalRicciPinching.traceFreeNormSq_nonneg a b c)
   · nlinarith only [mul_nonneg ha0 hb0, mul_nonneg ha0 hc0, mul_nonneg hb0 hc0]
-
-
-
-
 
 theorem ricci_defect_reaction_le (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) (hR : 0 < D.scalarCurvature x)

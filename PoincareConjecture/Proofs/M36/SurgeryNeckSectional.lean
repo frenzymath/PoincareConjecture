@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.ConformalPinching
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -21,11 +13,6 @@ namespace PoincareConjecture.M36
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
-
 
 theorem surgeryMetric_sectional_neck_profile (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -200,9 +187,6 @@ theorem surgeryMetric_sectional_neck_profile (g₀ : StandardInitialMetric)
     hHess a a, hHess b b, hd a, hd b, hgrad] at hprofile
   exact hprofile
 
-
-
-
 theorem surgeryMetric_orthonormal_neck_profile (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
     (hlambda : 0 < N.connection.scalarCurvature N.center) (heta : 0 < eta) (hr : 0 < r)
@@ -250,10 +234,6 @@ theorem surgeryMetric_orthonormal_neck_profile (g₀ : StandardInitialMetric)
       _ = (lambda * (c * c)) * g.inner (T y) (L v) (L w) := by ring
       _ = _ := by rw [he]
   exact ⟨(hm a a).trans hab.1, (hm b b).trans hab.2.1, (hm a b).trans hab.2.2⟩
-
-
-
-
 
 theorem surgeryMetric_negativeCurvaturePart_neck_le (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -351,9 +331,6 @@ theorem surgeryMetric_negativeCurvaturePart_neck_le (g₀ : StandardInitialMetri
     _ ≤ lambda * (Real.exp (2 * f s) * Q) := mul_le_mul_of_nonneg_left hbound hlambda.le
     _ = _ := by ring
 
-
-
-
 theorem surgeryMetric_sectional_neck_pos (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
     (hlambda : 0 < N.connection.scalarCurvature N.center) (heta : 0 < eta) (hr : 0 < r)
@@ -435,6 +412,5 @@ theorem surgeryMetric_sectional_neck_pos (g₀ : StandardInitialMetric)
       nlinarith only [hbasegap, hsmall, hL, mul_nonneg ht hA0]
   rw [hformula]
   exact mul_pos (mul_pos hlambda (Real.exp_pos _)) hQ
-
 
 end PoincareConjecture.M36

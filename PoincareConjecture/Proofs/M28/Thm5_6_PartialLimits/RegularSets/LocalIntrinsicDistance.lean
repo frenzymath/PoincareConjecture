@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.OpenCaptur
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem intrinsicOpenMetric_edist_eq_of_ambient_ball_subset
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p q : U)
@@ -48,8 +36,6 @@ theorem intrinsicOpenMetric_edist_eq_of_ambient_ball_subset
 
 variable [T2Space M]
 
-
-
 theorem intrinsicOpenMetric_edist_eq_of_intrinsic_regular
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) (p q : U)
     {r : ℝ} (hp : p ∈ regularPoints (intrinsicOpenMetric g U) r)
@@ -59,9 +45,6 @@ theorem intrinsicOpenMetric_edist_eq_of_intrinsic_regular
     (ambient_ball_subset_open_of_intrinsic_regular g U p hp)
   rw [intrinsicOpenMetric_edist] at hq
   exact (g.edist_le_intrinsicEDist _ _ _).trans_lt hq
-
-
-
 
 theorem intrinsicOpenMetric_edist_eq_on_nested_regular_image
     (g : RiemannianMetric 3 M) (U W : TopologicalSpace.Opens M)

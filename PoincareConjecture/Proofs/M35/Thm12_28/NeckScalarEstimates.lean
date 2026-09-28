@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckDerivativeEstimates
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Matrix.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ private theorem tangentNorm_orthonormal (g : RiemannianMetric 3 StandardCapSpace
   change Real.sqrt (inner ℝ (g.orthonormalBasis x i) (g.orthonormalBasis x i)) = 1
   rw [real_inner_self_eq_norm_sq, (g.orthonormalBasis x).norm_eq_one]
   norm_num
-
-
 
 theorem abs_scalar_derivative_le_curvature_derivative
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -48,8 +37,6 @@ theorem abs_scalar_derivative_le_curvature_derivative
           (g.orthonormalBasis x i) (g.orthonormalBasis x i)
     _ = _ := by simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin,
         hdim, nsmul_eq_mul]; ring
-
-
 
 theorem ricciNormSq_le_curvature_derivative_zero
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -73,9 +60,6 @@ theorem ricciNormSq_le_curvature_derivative_zero
       Finset.sum_le_sum (fun i _ => Finset.sum_le_sum (fun j _ => hb i j))
     _ = _ := by simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin,
         hdim, nsmul_eq_mul]; ring
-
-
-
 
 theorem exists_short_neck_scalar_bounds (P : RicciFlowCurvatureTheory.{0}) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧
@@ -117,9 +101,6 @@ theorem exists_short_neck_scalar_bounds (P : RicciFlowCurvatureTheory.{0}) :
     rw [abs_of_nonneg (mul_nonneg (by norm_num) hr0)] at hsum
     norm_num only [Nat.cast_ofNat, pow_succ, pow_zero] at h
     nlinarith
-
-
-
 
 theorem exists_unit_neck_scalar_bounds (P : RicciFlowCurvatureTheory.{0}) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
   {epsilon K : ℝ} {U : Set M} {x : M}
 
-
-
-
 noncomputable def NormalizedBackwardWindow.halfFlow
     {N : QuantitativeBackwardNeck g D epsilon K U x}
     (W : NormalizedBackwardWindow N) :
@@ -45,8 +31,6 @@ noncomputable def NormalizedBackwardWindow.halfFlow
     ordConnected_Icc
     ⟨-(1 / 2 : ℝ), by norm_num, 0, by norm_num, by norm_num⟩
 
-
-
 @[simp] theorem NormalizedBackwardWindow.halfFlow_metric
     {N : QuantitativeBackwardNeck g D epsilon K U x}
     (W : NormalizedBackwardWindow N) (t : ℝ) :
@@ -54,9 +38,6 @@ noncomputable def NormalizedBackwardWindow.halfFlow
     letI := N.model.carrier.chartedSpace
     letI := N.model.carrier.isManifold
     W.halfFlow.metric t = W.flow.flow.metric t := rfl
-
-
-
 
 theorem normalized_window_metric_comparison
     (N : QuantitativeBackwardNeck g D epsilon K U x)
@@ -108,9 +89,6 @@ theorem normalized_window_metric_comparison
     apply mul_le_mul_of_nonneg_right _ h0
     apply Real.exp_le_exp.mpr
     nlinarith [mul_nonneg hK (show 0 ≤ t + 1 / 2 by linarith [ht.1])]
-
-
-
 
 theorem normalized_window_pullback_ellipticity
     (N : QuantitativeBackwardNeck g D epsilon K U x)

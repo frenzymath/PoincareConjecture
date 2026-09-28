@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.AdaptedIndexTrace
 import PoincareConjecture.Proofs.M09.FamilySlices
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

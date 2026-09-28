@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Bounded
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 theorem coordinate_central_range :
     range (fun y : UnitTwoSphere => (N.coordinate
@@ -57,7 +45,6 @@ private theorem mem_coordinate_image_iff (P : ℝ → Prop) (x : M) :
       ⟨(N.coordinate_inverse x).2, (N.coordinate_inverse_mem x hx).2⟩), hP, ?_⟩
     exact congrArg Subtype.val (N.coordinate_inverse_right x hx)
 
-
 theorem coordinate_negative_image :
     (fun z : NeckDomain N.epsilon => (N.coordinate z : M)) ''
       {z | (z.2 : ℝ) < 0} = N.region (-N.epsilon⁻¹) 0 := by
@@ -68,7 +55,6 @@ theorem coordinate_negative_image :
     exact ⟨hx, (N.coordinate_inverse_mem x hx).2.1, hn⟩
   · intro hx
     exact ⟨hx.1, hx.2.2⟩
-
 
 theorem coordinate_positive_image :
     (fun z : NeckDomain N.epsilon => (N.coordinate z : M)) ''
@@ -82,8 +68,6 @@ theorem coordinate_positive_image :
     exact ⟨hx.1, hx.2.1⟩
 
 end CoordinateIdentities
-
-
 
 theorem exists_ambient_complementary_regions
     {M : Type*} [TopologicalSpace M]
@@ -117,7 +101,6 @@ theorem exists_ambient_complementary_regions
     (N.isCompact_central_sphere.image h.continuous) (h.isOpenMap _ hA) (h.isOpenMap _ hB)
     (Set.disjoint_image_of_injective h.injective hdisj)
   rw [← image_union, hcover, h.image_compl]
-
 
 theorem compact_closure_of_bounded_image
     {M : Type*} [TopologicalSpace M] (h : M ≃ₜ EuclideanSpace ℝ (Fin 3))

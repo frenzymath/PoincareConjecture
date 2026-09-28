@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.RefinementData
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.FamilyWidths
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Classical
@@ -24,8 +15,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace Plane M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 structure RetainedCoordinateTriangulation where
   decomposition : FiniteChartRegionDecomposition (M := M)

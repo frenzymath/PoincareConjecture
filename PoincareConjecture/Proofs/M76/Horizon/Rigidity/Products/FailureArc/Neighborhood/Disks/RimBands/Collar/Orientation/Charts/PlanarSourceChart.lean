@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

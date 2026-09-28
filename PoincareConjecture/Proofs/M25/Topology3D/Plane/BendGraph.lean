@@ -2,34 +2,18 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.LineLevel
 import Mathlib.Topology.Order.OrderClosed
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def bendGraph (u v : ℝ × ℝ) (t : ℝ) : ℝ :=
   if t ≤ 0 then (u.2 / u.1) * t else (v.2 / v.1) * t
-
-
 
 theorem continuous_bendGraph (u v : ℝ × ℝ) : Continuous (bendGraph u v) := by
   exact (continuous_const.mul continuous_id).if_le (continuous_const.mul continuous_id)
     continuous_id continuous_const (fun t ht => by simp [ht])
-
-
 
 theorem lineLevelPoint_fst_zero {v : ℝ × ℝ} (hv : v.1 ≠ 0) (t : ℝ) :
     lineLevelPoint (LinearMap.fst ℝ ℝ ℝ) 0 v t = (t, (v.2 / v.1) * t) := by
@@ -39,8 +23,6 @@ theorem lineLevelPoint_fst_zero {v : ℝ × ℝ} (hv : v.1 ≠ 0) (t : ℝ) :
   · exact div_mul_cancel₀ t hv
   · change t / v.1 * v.2 = v.2 / v.1 * t
     ring
-
-
 
 theorem mem_segment_zero_iff_graph {v z : ℝ × ℝ} (hv : v.1 ≠ 0) :
     z ∈ segment ℝ 0 v ↔ z.1 ∈ uIcc 0 v.1 ∧ z.2 = (v.2 / v.1) * z.1 := by
@@ -59,8 +41,6 @@ theorem mem_segment_zero_iff_graph {v z : ℝ × ℝ} (hv : v.1 ≠ 0) :
       exact Prod.ext rfl hy.symm
     rw [← he]
     exact hlevel.mpr hz
-
-
 
 theorem mem_two_segments_zero_iff_graph {u v z : ℝ × ℝ} (hu : u.1 < 0) (hv : 0 < v.1) :
     z ∈ segment ℝ 0 u ∪ segment ℝ 0 v ↔
@@ -83,8 +63,6 @@ theorem mem_two_segments_zero_iff_graph {u v z : ℝ × ℝ} (hu : u.1 < 0) (hv 
       · exact ⟨hu.le.trans hzv.1, hzv.2, hy⟩
     · rintro ⟨_, hzv, hy⟩
       exact Or.inr ⟨⟨(lt_of_not_ge hz).le, hzv⟩, hy⟩
-
-
 
 theorem exists_open_two_segments_graph {u v : ℝ × ℝ} (hu : u.1 < 0) (hv : 0 < v.1) :
     ∃ U : Set (ℝ × ℝ), IsOpen U ∧ (0 : ℝ × ℝ) ∈ U ∧

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionIndex
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem region_partition_of_index_sum {n m k : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (Q : Polygon (ℝ × ℝ) (m + 3))

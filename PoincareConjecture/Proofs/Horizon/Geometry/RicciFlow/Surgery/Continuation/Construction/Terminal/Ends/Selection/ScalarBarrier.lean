@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckCurvature.Ambient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CutGeometry.Sides
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -47,8 +40,6 @@ namespace PoincareConjecture.StrongHorn
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T} (horn : StrongHorn E epsilon)
-
-
 
 theorem neck_carrier_subset_of_overlap_of_linear_boundary
     {delta rho C h : ℝ} (N : TerminalStrongNeck E delta)

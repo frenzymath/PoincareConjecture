@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.HalfPlaneIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +11,6 @@ variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 structure CoorientedSurfaceStars where
   ambient : SimplicialComplex ℝ E

@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.M74.Cor15_4.ComponentUntouched
 import PoincareConjecture.Proofs.M74.Cor15_4.FiniteComponentFamily
 import PoincareConjecture.Proofs.M74.Cor15_4.FiniteInduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -37,10 +24,6 @@ private theorem isConnected_of_nonempty_diffeomorph_threeSphere
       (0 : EuclideanSpace ℝ (Fin 4)) (by norm_num))
   let : ConnectedSpace P.carrier := d.toHomeomorph.connectedSpace_iff.mpr inferInstance
   exact isConnected_univ
-
-
-
-
 
 theorem SphereUnion.of_connectedSumStep
     (hbinary : ∀ B0 B1 C : GeneralizedSliceCarrier.{u},
@@ -226,9 +209,6 @@ theorem SphereUnion.of_connectedSumStep
     cases i with
     | none => exact hcore
     | some i => exact hpieces i.1
-
-
-
 
 theorem connectedSumReduction_of_binary_sphere_identity
     (hbinary : ∀ B0 B1 C : GeneralizedSliceCarrier.{u},

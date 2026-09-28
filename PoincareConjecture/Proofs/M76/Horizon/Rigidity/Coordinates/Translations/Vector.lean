@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetTranslationPL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -20,7 +12,6 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 local notation "pi" => latticeCoordinateProjection (Fin 0) (Fin 3) L0
-
 
 noncomputable def hamiltonZeroTargetVectorTranslation : C(V3 × X0, X0) :=
   ⟨fun z => (z.2.1, z.2.2 + QuotientAddGroup.mk z.1),
@@ -51,8 +42,6 @@ theorem hamiltonZeroTargetVectorTranslation_coordinates (w : V3) (y : X0) :
       ((v 2 + w 2 : ℝ) : C0)) = _
     simp only [AddCircle.coe_add]
     rfl
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroTargetVectorTranslation
     {E κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

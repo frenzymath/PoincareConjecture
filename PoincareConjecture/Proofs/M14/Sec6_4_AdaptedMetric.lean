@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_MovingMetric
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {R : M14SquareRootPath G p} {a b : ℝ} {P Q : ∀ s, G.Horizontal (R.curve s)}
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem horizontalUnitAdapted_pair_hasDerivWithinAt
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -55,8 +45,6 @@ theorem horizontalUnitAdapted_pair_hasDerivWithinAt
   convert hd using 1
   ring
 
-
-
 theorem horizontalUnitAdapted_pair_eq (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hP : IsHorizontalUnitAdaptedFieldOn R a b P)
     (hQ : IsHorizontalUnitAdaptedFieldOn R a b Q)
@@ -67,8 +55,6 @@ theorem horizontalUnitAdapted_pair_eq (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (fun r hr => horizontalUnitAdapted_pair_hasDerivWithinAt hM12 hP hQ hr)
     (C := 0) (fun _ _ => by simp) hs ht
   simpa only [zero_mul, norm_le_zero_iff, sub_eq_zero] using h
-
-
 
 theorem horizontalUnitAdapted_unique (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hP : IsHorizontalUnitAdaptedFieldOn R a b P)

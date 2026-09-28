@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointCollarPathSides
 
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Topology

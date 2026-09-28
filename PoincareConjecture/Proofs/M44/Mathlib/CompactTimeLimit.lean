@@ -4,16 +4,6 @@ import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Topology.Order.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,9 +12,6 @@ open scoped Topology
 namespace Poincare
 
 variable {X Y : Type*} [MetricSpace X] [PseudoMetricSpace Y]
-
-
-
 
 theorem continuousWithinAt_time_left_of_compact_uniform
     [ProperSpace X]
@@ -67,9 +54,6 @@ theorem continuousWithinAt_time_left_of_compact_uniform
         congrArg (fun z => dist (f z) (f (T, x))) (Prod.ext heq rfl)
       _ < eta := hgp.trans (half_lt_self heta)
 
-
-
-
 theorem continuousAt_of_time_sides
     {f : ℝ × X → Y} {U : Set X} {T : ℝ} {x : X}
     (hU : IsOpen U) (hx : x ∈ U)
@@ -79,9 +63,6 @@ theorem continuousAt_of_time_sides
   have h := hleft.union hright
   rw [← union_prod, Iic_union_Ici] at h
   exact h.continuousAt ((isOpen_univ.prod hU).mem_nhds ⟨mem_univ _, hx⟩)
-
-
-
 
 theorem continuousOn_time_of_compact_uniform
     [ProperSpace X] {f : ℝ × X → Y} {U : Set X} {a T b : ℝ}

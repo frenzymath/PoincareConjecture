@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckOverlapCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPrecompactBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -56,8 +45,6 @@ private theorem neck_slice_edist_le (N : EpsilonNeck g)
     congr 1
     ring
   exact (hdist.trans hbound.le).trans_eq hrhs
-
-
 
 theorem neck_edist_le_axial_gap_add_sphere (N : EpsilonNeck g) {x y : M}
     (hx : x ∈ N.carrier) (hy : y ∈ N.carrier) :
@@ -119,8 +106,6 @@ private theorem narrow_region_edist_le (N : EpsilonNeck g) {a b : ℝ}
   apply mul_le_mul_of_nonneg_right _ N.scale_pos.le
   linarith
 
-
-
 theorem neck_narrow_region_edist_center_le (N : EpsilonNeck g) {a b : ℝ}
     (hwidth : b - a ≤ N.epsilon⁻¹ / 128) {p : M}
     (hp : p ∈ closure (N.region a b)) {x : M} (hx : x ∈ N.region a b) :
@@ -142,10 +127,6 @@ theorem neck_narrow_region_edist_center_le (N : EpsilonNeck g) {a b : ℝ}
   change g.edist x p ≤ ENNReal.ofReal
     ((N.epsilon⁻¹ / 64 + 4 * standardSpherePathCeiling) * N.scale) at h
   simpa only [RiemannianMetric.edist, Manifold.riemannianEDist_comm] using h
-
-
-
-
 
 theorem exists_neck_narrow_region_capture_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

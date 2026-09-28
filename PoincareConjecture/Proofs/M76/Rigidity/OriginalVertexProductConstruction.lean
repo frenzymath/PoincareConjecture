@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexExtension
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBandGluing
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalLowerProductConstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +16,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   {T : OriginalProperDiskTriangulation e R j}
-
-
 
 theorem OriginalLowerProducts.exists_vertex_products_of_bands
     (P : OriginalLowerProducts T)
@@ -140,15 +130,11 @@ theorem OriginalLowerProducts.exists_vertex_products_of_bands
         rw [hempty p q hs, empty_inter]
       rw [hbaseEmpty, empty_prod, image_empty, hempty p q hs]
 
-
-
 theorem OriginalLowerProducts.exists_vertex_products (P : OriginalLowerProducts T) :
     Nonempty (OriginalVertexProducts T) := by
   classical
   exact P.exists_vertex_products_of_bands
     (fun p => Classical.choice (P.exists_vertex_band p))
-
-
 
 theorem OriginalProperDiskTriangulation.exists_vertex_products
     (T : OriginalProperDiskTriangulation e R j) : Nonempty (OriginalVertexProducts T) := by

@@ -1,40 +1,21 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CubeShellGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.SquareShellSectorTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace CubeShell
 
-
-
 def coordinatePair (i : Fin 3) (x : Ambient) : ℝ × ℝ := (coordinate i x, ‖x‖)
-
-
 
 def lift (f : (ℝ × ℝ) → ℝ × ℝ) (x : Ambient) : Ambient :=
   vector (fun i => (f (coordinatePair i x)).1)
-
-
 
 theorem coordinatePair_mem_sector {a b : ℝ} {x : Ambient}
     (hx : x ∈ shell a b) (i : Fin 3) :
     coordinatePair i x ∈ SquareShell.sector a b :=
   ⟨hx, abs_le.mp (abs_coordinate_le_norm x i)⟩
-
-
-
 
 theorem norm_lift {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R : ℝ → ℝ}
     (hmap : MapsTo f (SquareShell.sector a b) (SquareShell.sector c d))
@@ -63,10 +44,6 @@ theorem norm_lift {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R : ℝ →
       _ = |coordinate i (lift f x)| := congrArg abs hcoord.symm
       _ ≤ ‖lift f x‖ := abs_coordinate_le_norm _ i
 
-
-
-
-
 theorem coordinatePair_lift {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R : ℝ → ℝ}
     (hmap : MapsTo f (SquareShell.sector a b) (SquareShell.sector c d))
     (hrad : ∀ p ∈ SquareShell.sector a b, (f p).2 = R p.2)
@@ -79,8 +56,6 @@ theorem coordinatePair_lift {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R
   · exact (norm_lift hmap hrad hedge hx).trans
       (hrad _ (coordinatePair_mem_sector hx i)).symm
 
-
-
 theorem lift_mem_shell {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R : ℝ → ℝ}
     (hmap : MapsTo f (SquareShell.sector a b) (SquareShell.sector c d))
     (hrad : ∀ p ∈ SquareShell.sector a b, (f p).2 = R p.2)
@@ -91,9 +66,6 @@ theorem lift_mem_shell {a b c d : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ} {R : �
   change ‖lift f x‖ ∈ Icc c d
   rw [norm_lift hmap hrad hedge hx]
   exact (hrad _ (coordinatePair_mem_sector hx 0)) ▸ hi
-
-
-
 
 theorem lift_leftInvOn {a b c d : ℝ} {f g : (ℝ × ℝ) → ℝ × ℝ} {R : ℝ → ℝ}
     (hmap : MapsTo f (SquareShell.sector a b) (SquareShell.sector c d))
@@ -110,10 +82,6 @@ theorem lift_leftInvOn {a b c d : ℝ} {f g : (ℝ × ℝ) → ℝ × ℝ} {R : 
     exact congrArg Prod.fst (hleft (coordinatePair_mem_sector hx i))
   change vector (fun i => (g (coordinatePair i (lift f x))).1) = x
   rw [hv, vector_coordinate]
-
-
-
-
 
 theorem finitePiecewiseAffineOn_lift {a b : ℝ} {f : (ℝ × ℝ) → ℝ × ℝ}
     (hf : FinitePiecewiseAffineOn f (SquareShell.sector a b))

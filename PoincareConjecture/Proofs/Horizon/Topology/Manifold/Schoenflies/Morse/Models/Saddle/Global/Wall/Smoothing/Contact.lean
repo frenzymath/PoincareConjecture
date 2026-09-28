@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Localization
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +8,6 @@ open Set Function Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies.Saddle.Wall.Smoothing
-
 
 theorem rounding_zero_pos {ρ : Real → Real} (hρ : ContDiff Real ∞ ρ)
     (hbound : ∀ s, |s| ≤ ρ s) : 0 < ρ 0 := by
@@ -46,8 +37,6 @@ theorem profileHeight_eq_self_of_profileX_eq_zero {ρ : Real → Real}
     linarith
   rw [profileHeight, hX, profileW, heq]
   ring
-
-
 
 theorem exists_profile_contact_threshold {ρ : Real → Real}
     (hρ : ContDiff Real ∞ ρ) (hbound : ∀ s, |s| ≤ ρ s)
@@ -82,8 +71,6 @@ theorem exists_profile_contact_threshold {ρ : Real → Real}
     have hmono := monotone_profileX hLip has
     have hazero : profileX ρ a = 0 := ha.2
     simpa only [hazero] using hmono
-
-
 
 theorem exists_physical_contact_threshold (H : Real ≃ₘ[Real] Real)
     {ρ : Real → Real} (hρ : ContDiff Real ∞ ρ)

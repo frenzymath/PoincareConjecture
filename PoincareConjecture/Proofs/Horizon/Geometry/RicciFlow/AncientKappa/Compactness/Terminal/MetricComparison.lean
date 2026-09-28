@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.PartialCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.TerminalConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 1000000
@@ -120,8 +110,6 @@ private theorem eventually_pullback_inner_le_near_chart
       (mfderiv (𝓡 n) (𝓡 n) c.symm (c x) w) at hbound
   simpa only [w, hxi.self_apply_inverse] using hbound
 
-
-
 theorem eventually_pullback_tangentNorm_le_twice_of_chart_convergence
     (g : RiemannianMetric n M) (h : ∀ k, RiemannianMetric n (N k))
     (e : ∀ k, M → N k) {K : Set M} (hK : IsCompact K)
@@ -176,8 +164,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
 theorem eventually_embedding_contMDiffAt_on_compact
     {K : Set G.limitCarrier.carrier} (hK : IsCompact K) :
     ∀ᶠ k in atTop, ∀ x ∈ K, ContMDiffAt (𝓡 3) (𝓡 3) ∞ (G.embedding k) x := by
@@ -185,8 +171,6 @@ theorem eventually_embedding_contMDiffAt_on_compact
   have hmono : Monotone G.exhaustion := monotone_nat_of_le_succ G.exhaustion_increasing
   filter_upwards [eventually_ge_atTop j] with k hk x hx
   exact (G.embedding_smooth k ⟨x, hmono hk (hj hx)⟩).contMDiffAt
-
-
 
 theorem eventually_terminal_pullback_tangentNorm_le_twice
     (F : RicciFlow 3 G.limitCarrier.carrier (Iic 0))

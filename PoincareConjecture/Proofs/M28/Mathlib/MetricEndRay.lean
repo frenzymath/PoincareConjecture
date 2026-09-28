@@ -3,16 +3,6 @@ import Mathlib.Topology.MetricSpace.Isometry
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,10 +12,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 structure MetricEndRay {X : Type u} [MetricSpace X]
     (E : UniformSpace.Completion X) (alpha : ℝ) where
@@ -49,12 +35,8 @@ namespace MetricEndRay
 variable {X : Type u} [MetricSpace X]
   {E : UniformSpace.Completion X} {alpha : ℝ}
 
-
-
 def inward (P : MetricEndRay E alpha) (t : ℝ) : X :=
   P.point (P.length - t)
-
-
 
 theorem inward_metric (P : MetricEndRay E alpha)
     (s : ℝ) (hs : s ∈ Ico (0 : ℝ) P.length)
@@ -65,14 +47,10 @@ theorem inward_metric (P : MetricEndRay E alpha)
     _ ⟨by linarith [ht.2], by linarith [ht.1]⟩,
     show P.length - s - (P.length - t) = -(s - t) by ring, abs_neg]
 
-
-
 theorem inward_radius (P : MetricEndRay E alpha)
     (s : ℝ) (hs : s ∈ Ico (0 : ℝ) P.length) :
     dist (P.inward s : UniformSpace.Completion X) E = P.length - s :=
   P.radius _ ⟨by linarith [hs.2], by linarith [hs.1]⟩
-
-
 
 theorem continuousOn_point (P : MetricEndRay E alpha) :
     ContinuousOn P.point (Ioc (0 : ℝ) P.length) := by
@@ -82,8 +60,6 @@ theorem continuousOn_point (P : MetricEndRay E alpha) :
     intro s t
     simpa only [Subtype.dist_eq, Real.dist_eq] using P.metric s.1 s.2 t.1 t.2
   exact hi.continuous
-
-
 
 theorem completion_triangle (P Q : MetricEndRay E alpha)
     (s : ℝ) (hs : s ∈ Ioc (0 : ℝ) P.length)
@@ -97,9 +73,6 @@ theorem completion_triangle (P Q : MetricEndRay E alpha)
   · simpa only [UniformSpace.Completion.dist_eq, P.radius s hs, Q.radius t ht] using
       dist_triangle_right (P.point s : UniformSpace.Completion X)
         (Q.point t : UniformSpace.Completion X) E
-
-
-
 
 def ofInward {a : ℝ} (ha : 0 < a) (hsmall : a < alpha / 4)
     (gamma : ℝ → X)
@@ -122,8 +95,6 @@ def ofInward {a : ℝ} (ha : 0 < a) (hsmall : a < alpha / 4)
     rw [hradius _ ⟨by linarith [hs.2], by linarith [hs.1]⟩]
     ring
 
-
-
 theorem ofInward_endpoint {a : ℝ} (ha : 0 < a) (hsmall : a < alpha / 4)
     (gamma : ℝ → X)
     (hmetric : ∀ s ∈ Ico (0 : ℝ) a, ∀ t ∈ Ico (0 : ℝ) a,
@@ -132,9 +103,6 @@ theorem ofInward_endpoint {a : ℝ} (ha : 0 < a) (hsmall : a < alpha / 4)
       dist (gamma s : UniformSpace.Completion X) E = a - s) :
     (ofInward ha hsmall gamma hmetric hradius).point a = gamma 0 := by
   simp only [ofInward, sub_self]
-
-
-
 
 def SameEndGerm (P Q : MetricEndRay E alpha) : Prop :=
   ∃ c : ℝ, 0 < c ∧ c ≤ P.length ∧ c ≤ Q.length ∧

@@ -3,14 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,7 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M10
 
 variable {X ι : Type*} [MetricSpace X]
-
 
 theorem equicontinuous_clipped_curves {γ : ι → ℝ → X} {S : ι → ℝ} {B K : ℝ}
     (hS : ∀ i, 0 ≤ S i) (hK : 0 ≤ K)
@@ -45,7 +36,6 @@ theorem equicontinuous_clipped_curves {γ : ι → ℝ → X} {S : ι → ℝ} {
   rcases le_total (s : ℝ) (t : ℝ) with hst | hts
   · exact hordered s t hst
   · simpa only [dist_comm] using hordered t s hts
-
 
 theorem exists_compact_clipped_range [CompleteSpace X] [LocallyCompactSpace X]
     {γ : ι → ℝ → X} {S : ι → ℝ} {B K : ℝ} (hB : 0 ≤ B)

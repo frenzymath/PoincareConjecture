@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimLoop
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -24,9 +15,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
 variable {X : Type u} [TopologicalSpace X] {ι : Type v}
-
-
-
 
 structure MarkedBoundaryPLLoopDisk
     (e : ι → OpenPartialHomeomorph X V3) (R F : Set X)

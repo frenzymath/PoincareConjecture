@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularHalfBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
 def wholeBall : Set ((ℝ × ℝ) × ℝ) := {p | |p.2| ≤ roof p.1}
-
-
 
 def wholeBallForms : (Bool × Fin 3) → ((ℝ × ℝ) × ℝ) →ᵃ[ℝ] ℝ := fun i =>
   (if i.1 then (LinearMap.snd ℝ (ℝ × ℝ) ℝ).toAffineMap
@@ -34,8 +21,6 @@ private theorem lt_roof_iff (p : ℝ × ℝ) (r : ℝ) :
     r < roof p ↔ ∀ i, r < coordinates i p := by
   simp [roof, coordinates, Fin.forall_fin_succ]
 
-
-
 theorem wholeBall_eq_halfspaces : wholeBall = {p | ∀ i, wholeBallForms i p ≤ 0} := by
   ext p
   change |p.2| ≤ roof p.1 ↔ ∀ i, wholeBallForms i p ≤ 0
@@ -45,8 +30,6 @@ theorem wholeBall_eq_halfspaces : wholeBall = {p | ∀ i, wholeBallForms i p ≤
   simp only [sub_nonpos, ← le_roof_iff, abs_le]
   constructor <;> rintro ⟨hm, hp⟩ <;> exact ⟨by linarith, hp⟩
 
-
-
 theorem wholeBallForms_linear_ne_zero (i : Bool × Fin 3) :
     (wholeBallForms i).linear ≠ 0 := by
   intro hz
@@ -54,8 +37,6 @@ theorem wholeBallForms_linear_ne_zero (i : Bool × Fin 3) :
   rcases i with ⟨b, i⟩
   have hz0 : ((0, 0) : ℝ × ℝ) = 0 := rfl
   cases b <;> simp [wholeBallForms, hz0] at hv
-
-
 
 theorem interior_wholeBall : interior wholeBall = {p | |p.2| < roof p.1} := by
   rw [wholeBall_eq_halfspaces, interior_finite_affine_halfspaces _ wholeBallForms_linear_ne_zero]
@@ -66,8 +47,6 @@ theorem interior_wholeBall : interior wholeBall = {p | |p.2| < roof p.1} := by
     |p.2| < roof p.1
   simp only [sub_lt_zero, ← lt_roof_iff, abs_lt]
   constructor <;> rintro ⟨hm, hp⟩ <;> exact ⟨by linarith, hp⟩
-
-
 
 theorem wholeBall_eq_union : wholeBall = halfBall 1 ∪ halfBall (-1) := by
   ext p
@@ -84,8 +63,6 @@ theorem wholeBall_eq_union : wholeBall = halfBall 1 ∪ halfBall (-1) := by
     · rwa [abs_of_nonneg hz]
     · rwa [abs_of_nonpos (neg_nonneg.mp hz)]
 
-
-
 theorem halfBall_inter : halfBall 1 ∩ halfBall (-1) = disk := by
   ext p
   rw [mem_inter_iff, mem_disk]
@@ -99,14 +76,9 @@ theorem halfBall_inter : halfBall 1 ∩ halfBall (-1) = disk := by
     have hr := (roof_nonneg_iff p.1).mpr hb
     simpa [hz] using And.intro hr hr
 
-
-
 theorem isCompact_wholeBall : IsCompact wholeBall := by
   rw [wholeBall_eq_union]
   exact (isCompact_halfBall (Or.inl rfl)).union (isCompact_halfBall (Or.inr rfl))
-
-
-
 
 theorem frontier_wholeBall : frontier wholeBall = cap 1 ∪ cap (-1) := by
   rw [frontier, isCompact_wholeBall.isClosed.closure_eq, interior_wholeBall]
@@ -132,15 +104,10 @@ theorem frontier_wholeBall : frontier wholeBall = cap 1 ∪ cap (-1) := by
         rw [hz, abs_neg, abs_of_nonneg ((roof_nonneg_iff p.1).mpr hb)]
       exact ⟨heq.le, not_lt.mpr heq.ge⟩
 
-
-
 theorem interior_wholeBall_nonempty : (interior wholeBall).Nonempty := by
   refine ⟨((1 / 3, 1 / 3), 0), ?_⟩
   rw [interior_wholeBall]
   norm_num [roof]
-
-
-
 
 theorem isFinitePLBallPair_wholeBall :
     IsFinitePLBallPair ((ℝ × ℝ) × ℝ) wholeBall (cap 1 ∪ cap (-1)) := by

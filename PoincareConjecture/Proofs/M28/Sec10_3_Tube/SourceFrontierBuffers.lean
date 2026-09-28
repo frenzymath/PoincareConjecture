@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFrontierNecks
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -55,10 +45,6 @@ private theorem exists_first_frontier_before_endpoint
     apply hb
     simpa only [heq] using hclosed (right_mem_Icc.mpr hac.le)
   exact ⟨c, ⟨hac, hcb⟩, hfront, hprefix⟩
-
-
-
-
 
 theorem exists_source_frontier_buffers_accuracy (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

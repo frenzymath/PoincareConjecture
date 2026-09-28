@@ -9,20 +9,11 @@ import PoincareConjecture.Proofs.M20.Providers
 import PoincareConjecture.Proofs.M21
 import PoincareConjecture.Proofs.M22.Providers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
 
 theorem m23PredecessorsFromMilestones : M23NormalizedKappaCompactnessPredecessors := by
   let D16 : AncientKappaStructuralTheory.{0} 3 := Classical.choice
@@ -67,7 +58,6 @@ theorem m23PredecessorsFromMilestones : M23NormalizedKappaCompactnessPredecessor
     exact V.ratio_antitone
   · intro M _ _ _ _ _ _ _ _ _ K
     exact C22.asymptotic_volume_ratio_zero K
-
 
 theorem m23NormalizedKappaCompactnessFromMilestones (N : NormalizedKappaCompactnessData) :
     Nonempty (RedesignNormalizedKappaCompactnessConclusion N) :=

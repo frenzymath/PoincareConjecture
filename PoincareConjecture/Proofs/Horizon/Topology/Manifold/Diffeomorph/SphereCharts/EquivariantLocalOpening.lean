@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Puncture.
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,8 +13,6 @@ namespace Poincare
 open PoincareConjecture
 
 local notation "S3" => UnitThreeSphere
-
-
 
 theorem exists_equivariant_diffeomorph_of_local_opening
     (O : Opens S3) (a : S3) (ha : a ∈ O)

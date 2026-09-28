@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
@@ -18,10 +8,6 @@ open Set AffineMap
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
 
 theorem adjacent_cut_segments_inter
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
@@ -55,10 +41,6 @@ theorem adjacent_cut_segments_inter
   · exact (inter_subset_inter hleft hright).trans (P.adjacent_edgeSet_inter hP hinj i).subset
   · rintro x rfl
     exact ⟨left_mem_segment ℝ _ _, left_mem_segment ℝ _ _⟩
-
-
-
-
 
 theorem normalize_adjacent_cut_ne
     (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)

@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.CornerConcentration
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Slab.AnnularBound
 
-
-
-
-
-
-
 open Set Filter Topology MeasureTheory Function
 open PoincareConjecture Poincare.GromovHausdorff Poincare.CurvatureIntegral Poincare.Alexandrov
 open Poincare.Geometry.Manifold.RegularFiber

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_FamilyDensity
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareRootComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,15 +18,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
 noncomputable def exponentialPhase (E : M14ExponentialFamily G T x)
     (Z : G.Horizontal x) (s : ℝ) : TotalSpace (EuclideanSpace ℝ (Fin n)) G.Horizontal :=
   TotalSpace.mk' (EuclideanSpace ℝ (Fin n)) (E := G.Horizontal)
     (E.gamma Z s) (M14.projectedCurveVelocityWithin G (E.gamma Z) (Icc 0 s) s)
-
-
-
 
 theorem exponentialPhase_eq_squarePath (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hZ : (Z, s) ∈ E.domain) (hs : 0 < s) :
@@ -53,9 +39,6 @@ theorem exponentialPhase_eq_squarePath (E : M14ExponentialFamily G T x)
   rw [M14.squareRoot_projectedVelocityWithin_subset R (by rw [hC]) hsC
     (uniqueDiffOn_Icc hs s hsC)] at hvel
   exact TotalSpace.ext (hpoint hsC) hvel
-
-
-
 
 theorem exponentialPhase_continuousOn (E : M14ExponentialFamily G T x)
     {s : ℝ} (hs : 0 < s) :
@@ -90,9 +73,6 @@ theorem exponentialPhase_continuousOn (E : M14ExponentialFamily G T x)
     hphase.continuousOn.comp (continuous_const.prodMk continuous_id).continuousOn
       (fun _ hW => ⟨⟨hs.le, le_rfl⟩, hW⟩)
   exact (hfixed.continuousAt (hU.mem_nhds hZU)).continuousWithinAt
-
-
-
 
 theorem exponentialPhase_mem_compactDisk_of_tendsto
     (E : M14ExponentialFamily G T x) {K : Set G.Point} (hK : IsCompact K)

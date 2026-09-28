@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.PolarCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,10 +8,8 @@ open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def roundExteriorCoordinate (r : ℝ) (z : RoundCylinderSpace) : StandardCapSpace :=
   (r / (1 - z.2)) • z.1.val
-
 
 noncomputable def roundExteriorInverse (r : ℝ) (x : StandardCapSpace) : RoundCylinderSpace :=
   (capUnitDirection x, 1 - r / ‖x‖)
@@ -28,12 +18,10 @@ variable {r : ℝ} (hr : 0 < r)
 
 include hr
 
-
 theorem roundExterior_radius_gt {s : ℝ} (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
     r < r / (1 - s) := by
   apply (lt_div_iff₀ (sub_pos.mpr hs.2)).mpr
   nlinarith [mul_pos hr hs.1]
-
 
 theorem roundExteriorCoordinate_norm {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
@@ -42,13 +30,11 @@ theorem roundExteriorCoordinate_norm {z : RoundCylinderSpace}
     abs_of_pos (hr.trans (roundExterior_radius_gt hr hz.2)),
     show ‖z.1.val‖ = 1 by simp, mul_one]
 
-
 theorem roundExteriorCoordinate_mem {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
     r < ‖roundExteriorCoordinate r z‖ := by
   rw [roundExteriorCoordinate_norm hr hz]
   exact roundExterior_radius_gt hr hz.2
-
 
 theorem roundExteriorInverse_mem {x : StandardCapSpace} (hx : r < ‖x‖) :
     roundExteriorInverse r x ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 := by
@@ -58,7 +44,6 @@ theorem roundExteriorInverse_mem {x : StandardCapSpace} (hx : r < ‖x‖) :
     exact sub_pos.mpr ((div_lt_one hnorm).mpr hx)
   · change 1 - r / ‖x‖ < 1
     linarith [div_pos hr hnorm]
-
 
 theorem roundExterior_left_inverse :
     Set.LeftInvOn (roundExteriorInverse r) (roundExteriorCoordinate r)
@@ -70,7 +55,6 @@ theorem roundExterior_left_inverse :
     rw [roundExteriorCoordinate_norm hr hz]
     field_simp [hr.ne', (sub_pos.mpr hz.2.2).ne'] <;> ring
 
-
 theorem roundExterior_right_inverse :
     Set.LeftInvOn (roundExteriorCoordinate r) (roundExteriorInverse r) {x | r < ‖x‖} := by
   intro x hx
@@ -79,7 +63,6 @@ theorem roundExterior_right_inverse :
   rw [sub_sub_cancel]
   have heq : r / (r / ‖x‖) = ‖x‖ := by field_simp [hr.ne', hnorm.ne']
   rw [heq, capUnitDirection_radial]
-
 
 theorem roundExteriorCoordinate_image :
     roundExteriorCoordinate r '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) = {x | r < ‖x‖} := by
@@ -105,7 +88,6 @@ theorem roundExteriorCoordinate_smooth :
     hrad.contMDiffOn.comp contMDiff_snd.contMDiffOn (fun _ hz => hz.2)
   exact hrad'.smul (contMDiff_coe_sphere.comp contMDiff_fst).contMDiffOn
 
-
 theorem roundExteriorInverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (roundExteriorInverse r) {x | r < ‖x‖} := by
   apply (capUnitDirection_smooth.mono (fun x hx => norm_pos_iff.mp (hr.trans hx))).prodMk
@@ -115,7 +97,6 @@ theorem roundExteriorInverse_smooth :
     contDiffAt_const.sub (contDiffAt_const.div
       (contDiffAt_norm ℝ (norm_pos_iff.mp hnorm)) hnorm.ne')
   exact hs.contMDiffAt.contMDiffWithinAt
-
 
 noncomputable def roundExteriorHomeomorph :
     (UnitTwoSphere × Set.Ioo (0 : ℝ) 1) ≃ₜ {x : StandardCapSpace | r < ‖x‖} where
@@ -140,7 +121,6 @@ noncomputable def roundExteriorHomeomorph :
     have h := (roundExteriorInverse_smooth hr).continuousOn.domRestrict
     exact h.fst.prodMk (h.snd.subtype_mk _)
 
-
 noncomputable def roundExteriorCylinder : OpenCylinderModel {x : StandardCapSpace | r < ‖x‖} where
   homeomorph := roundExteriorHomeomorph hr
   coordinate := roundExteriorCoordinate r
@@ -152,7 +132,6 @@ noncomputable def roundExteriorCylinder : OpenCylinderModel {x : StandardCapSpac
   right_inverse := roundExterior_right_inverse hr
   inverse_smooth := roundExteriorInverse_smooth hr
 
-
 theorem roundExteriorCylinder_radial_coordinate (z : UnitTwoSphere) {R : ℝ} (hR : r < R) :
     (roundExteriorCylinder hr).coordinate (z, 1 - r / R) = R • z.val := by
   have hR0 : 0 < R := hr.trans hR
@@ -160,7 +139,6 @@ theorem roundExteriorCylinder_radial_coordinate (z : UnitTwoSphere) {R : ℝ} (h
   rw [sub_sub_cancel]
   congr 1
   field_simp [hr.ne', hR0.ne']
-
 
 theorem roundExteriorCylinder_radial_inverse (z : UnitTwoSphere) {R : ℝ} (hR : r < R) :
     (roundExteriorCylinder hr).inverse (R • z.val) = (z, 1 - r / R) := by

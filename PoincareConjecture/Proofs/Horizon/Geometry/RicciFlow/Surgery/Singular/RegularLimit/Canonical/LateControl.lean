@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Extension.Canonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_late_reference_canonical_control
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -51,8 +39,6 @@ theorem exists_late_reference_canonical_control
   rw [H.reference.scalar_pullback t ht x]
   exact hscalar_t.le
 
-
-
 theorem exists_late_extended_canonical_control
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (hΩ : H.reference.regularLimitSet.Nonempty) (x : H.regularRegion P04)
@@ -69,8 +55,6 @@ theorem exists_late_extended_canonical_control
   obtain ⟨hregular, hscalar, hcanonical⟩ := hcontrol t ht hst
   exact ⟨hregular, hscalar, (H.nonemptyExtension P04 hΩ).canonical_control t
     (H.reference.window_subset ht) (H.reference.forward t ht x) H.epsilon H.constant hcanonical⟩
-
-
 
 theorem eventually_extended_canonical_control
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

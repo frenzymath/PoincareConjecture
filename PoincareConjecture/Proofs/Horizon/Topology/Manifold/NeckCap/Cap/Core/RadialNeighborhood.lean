@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.Standardization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,8 +32,6 @@ private theorem radial_coordinates_of_one_lt_norm {x : E3} (hx : 1 < ‖x‖)
   · apply Real.exp_lt_exp.mp
     simpa only [Real.exp_zero, hnorm] using hx
   · exact Real.exp_lt_exp.mp (hnorm.symm ▸ hr)
-
-
 
 theorem ball_image_eq_closed_core_union_collar
     (b : OpenPartialHomeomorph E3 M)

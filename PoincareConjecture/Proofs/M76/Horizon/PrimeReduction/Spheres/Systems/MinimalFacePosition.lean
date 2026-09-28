@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Nonr
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.ReturningFaceMove
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.MinimumContactMove
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

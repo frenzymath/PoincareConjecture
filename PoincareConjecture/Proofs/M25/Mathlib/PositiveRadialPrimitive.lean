@@ -3,18 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.ContDiff
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,36 +11,21 @@ open PoincareConjecture.M25.Topology3D
 
 namespace Real
 
-
-
-
 noncomputable def positiveRadialDerivative (f : ℝ → ℝ) (m u b s : ℝ) : ℝ :=
   (1 - collarCutoff m u s) * deriv f s + collarCutoff m u s * ((b - s)⁻¹) ^ 2
-
-
-
 
 noncomputable def positiveRadialPrimitive (f : ℝ → ℝ) (l m u b s : ℝ) : ℝ :=
   f l + ∫ t in l..s, positiveRadialDerivative f m u b t
 
 variable {f : ℝ → ℝ} {L l m u U b s : ℝ}
 
-
-
 theorem positiveRadialDerivative_eq_deriv (hmu : m < u) (hs : s ≤ m) :
     positiveRadialDerivative f m u b s = deriv f s := by
   simp [positiveRadialDerivative, collarCutoff_eq_zero hmu hs]
 
-
-
-
 theorem positiveRadialDerivative_eq_inv_sq (hmu : m < u) (hs : u ≤ s) :
     positiveRadialDerivative f m u b s = ((b - s)⁻¹) ^ 2 := by
   simp [positiveRadialDerivative, collarCutoff_eq_one hmu hs]
-
-
-
-
 
 theorem contDiffOn_positiveRadialDerivative (hmu : m < u) (huU : u < U)
     (hf : ContDiffOn ℝ ∞ f (Ioo L U)) :
@@ -71,9 +44,6 @@ theorem contDiffOn_positiveRadialDerivative (hmu : m < u) (huU : u < U)
     filter_upwards [Ioi_mem_nhds (lt_of_not_ge hsu)] with t ht
     exact positiveRadialDerivative_eq_inv_sq hmu ht.le
 
-
-
-
 theorem positiveRadialDerivative_pos (hmu : m < u)
     (hfderiv : ∀ s ∈ Icc l u, 0 < deriv f s) (hs : s ∈ Ico l b) :
     0 < positiveRadialDerivative f m u b s := by
@@ -88,17 +58,11 @@ theorem positiveRadialDerivative_pos (hmu : m < u)
   · rw [positiveRadialDerivative_eq_inv_sq hmu (lt_of_not_ge hsu).le]
     exact hB
 
-
-
-
 theorem intervalIntegrable_positiveRadialDerivative (hmu : m < u) (huU : u < U)
     (hf : ContDiffOn ℝ ∞ f (Ioo L U)) (hl : l ∈ Ioo L b) (hs : s ∈ Ioo L b) :
     IntervalIntegrable (positiveRadialDerivative f m u b) volume l s :=
   ((contDiffOn_positiveRadialDerivative hmu huU hf).continuousOn.mono
     (ordConnected_Ioo.uIcc_subset hl hs)).intervalIntegrable
-
-
-
 
 theorem hasDerivAt_positiveRadialPrimitive (hmu : m < u) (huU : u < U)
     (hf : ContDiffOn ℝ ∞ f (Ioo L U)) (hl : l ∈ Ioo L b) (hs : s ∈ Ioo L b) :
@@ -109,9 +73,6 @@ theorem hasDerivAt_positiveRadialPrimitive (hmu : m < u) (huU : u < U)
     (intervalIntegrable_positiveRadialDerivative hmu huU hf hl hs)
     (ContinuousOn.stronglyMeasurableAtFilter isOpen_Ioo hH s hs)
     (hH.continuousAt (isOpen_Ioo.mem_nhds hs))).const_add (f l)
-
-
-
 
 theorem contDiffOn_positiveRadialPrimitive (hmu : m < u) (huU : u < U)
     (hf : ContDiffOn ℝ ∞ f (Ioo L U)) (hl : l ∈ Ioo L b) :
@@ -124,15 +85,9 @@ theorem contDiffOn_positiveRadialPrimitive (hmu : m < u) (huU : u < U)
   intro s hs
   exact (hasDerivAt_positiveRadialPrimitive hmu huU hf hl hs).deriv
 
-
-
-
 @[simp] theorem positiveRadialPrimitive_apply_anchor (f : ℝ → ℝ) (l m u b : ℝ) :
     positiveRadialPrimitive f l m u b l = f l := by
   simp [positiveRadialPrimitive]
-
-
-
 
 theorem positiveRadialPrimitive_eqOn (hLl : L < l) (hmu : m < u) (huU : u < U)
     (hf : ContDiffOn ℝ ∞ f (Ioo L U)) :
@@ -149,9 +104,6 @@ theorem positiveRadialPrimitive_eqOn (hLl : L < l) (hmu : m < u) (huU : u < U)
     intervalIntegral.integral_deriv_of_contDiffOn_Icc ((hf.mono hsub).of_le (by simp)) hs.1]
   ring
 
-
-
-
 theorem strictMonoOn_positiveRadialPrimitive (hLl : L < l) (hmu : m < u)
     (huU : u < U) (hlb : l < b) (hf : ContDiffOn ℝ ∞ f (Ioo L U))
     (hfderiv : ∀ s ∈ Icc l u, 0 < deriv f s) :
@@ -164,9 +116,6 @@ theorem strictMonoOn_positiveRadialPrimitive (hLl : L < l) (hmu : m < u)
   rw [(hasDerivAt_positiveRadialPrimitive hmu huU hf ⟨hLl, hlb⟩ (hsub hs')).deriv]
   exact positiveRadialDerivative_pos hmu hfderiv hs'
 
-
-
-
 theorem deriv_positiveRadialPrimitive_pos (hLl : L < l) (hmu : m < u)
     (huU : u < U) (hlb : l < b) (hf : ContDiffOn ℝ ∞ f (Ioo L U))
     (hfderiv : ∀ s ∈ Icc l u, 0 < deriv f s) (hs : s ∈ Ico l b) :
@@ -174,8 +123,6 @@ theorem deriv_positiveRadialPrimitive_pos (hLl : L < l) (hmu : m < u)
   rw [(hasDerivAt_positiveRadialPrimitive hmu huU hf ⟨hLl, hlb⟩
     ⟨hLl.trans_le hs.1, hs.2⟩).deriv]
   exact positiveRadialDerivative_pos hmu hfderiv hs
-
-
 
 theorem positiveRadialPrimitive_pos (hLl : L < l) (hmu : m < u)
     (huU : u < U) (hlb : l < b) (hf : ContDiffOn ℝ ∞ f (Ioo L U))
@@ -185,9 +132,6 @@ theorem positiveRadialPrimitive_pos (hLl : L < l) (hmu : m < u)
   have hle := hmono (show l ∈ Ico l b from ⟨le_rfl, hlb⟩) hs hs.1
   rw [positiveRadialPrimitive_apply_anchor] at hle
   exact hfpos.trans_le hle
-
-
-
 
 theorem positiveRadialPrimitive_upper_formula (hLl : L < l) (hlm : l < m)
     (hmu : m < u) (huU : u < U) (hub : u < b)

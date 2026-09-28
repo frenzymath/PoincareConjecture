@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.AreaObstruction
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {N : Type*} [TopologicalSpace N] [MeasurableSpace N] [BorelSpace N]
   [T3Space N] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N]
   [IsManifold (𝓡 2) ∞ N] [CompactSpace N] [Nonempty N]
-
-
 
 theorem false_of_subunit_scalar_nondecreasing_area_limit
     (g : RiemannianMetric 2 N) (h : ℕ → RiemannianMetric 2 N)

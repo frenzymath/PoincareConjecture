@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskWeakGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarStrongApproximation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.H1SliceTrace
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture
 
 open Proofs.M58 Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
-
-
-
 
 theorem m64CircleIntegral_shift
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (F : ℝ → E) :
@@ -38,9 +24,6 @@ theorem m64CircleIntegral_shift
   simpa only [zero_sub, heq, intervalIntegral.integral_of_le hT,
     intervalIntegral.integral_of_le (neg_le_self Real.pi_pos.le),
     ← integral_Icc_eq_integral_Ioc] using h.symm
-
-
-
 
 theorem m64WeakMap_local_circle_green
     {m : ℕ} {O : Set LoopPlane} (hO : IsOpen O)

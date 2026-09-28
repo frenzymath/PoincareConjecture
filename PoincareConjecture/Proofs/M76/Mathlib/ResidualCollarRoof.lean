@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricResidualTriangle
 import PoincareConjecture.Proofs.M76.Mathlib.TaperedSourceIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TaperedStrip
-
-
-
 
 theorem mem_residualDomain_iff_of_mem_domain {β γ : ℝ}
     (hβ : 0 ≤ β) (hβγ : β ≤ γ) {p : ℝ × ℝ} (hp : p ∈ domain β) :
@@ -38,9 +26,6 @@ namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 theorem zeroApexCoordinates_mem_residual_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0)
     {β : ℝ} (hβ : 0 < β) (hβv : β < A v)
@@ -56,9 +41,6 @@ theorem zeroApexCoordinates_mem_residual_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     exact (TaperedStrip.mem_residualDomain_iff_of_mem_domain hβ.le hβv.le hp).mp (hzp ▸ hz)
   · intro ht
     exact ⟨p, (TaperedStrip.mem_residualDomain_iff_of_mem_domain hβ.le hβv.le hp).mpr ht, rfl⟩
-
-
-
 
 theorem geometric_collar_mem_residual_iff (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hqw : q ≠ w) (hq : A q = 0) (hw : A w = 0)

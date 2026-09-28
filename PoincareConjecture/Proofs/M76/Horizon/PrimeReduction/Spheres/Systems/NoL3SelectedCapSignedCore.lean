@@ -4,8 +4,6 @@ import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
 set_option autoImplicit false
 open Set
 

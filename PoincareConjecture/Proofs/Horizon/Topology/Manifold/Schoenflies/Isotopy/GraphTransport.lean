@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Flow
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,9 +9,6 @@ open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
-
-
 
 theorem exists_supported_graph_transport_within_preserving_base
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
@@ -87,7 +82,6 @@ theorem exists_supported_graph_transport_within_preserving_base
     (by simp [hi, q])
   simpa [q] using heq (show (1 : Real) ∈ Icc 0 1 by simp)
 
-
 theorem exists_supported_graph_transport_within
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
     [FiniteDimensional Real E]
@@ -103,8 +97,6 @@ theorem exists_supported_graph_transport_within
   obtain ⟨S, hS, hSU, F, hfix, _, hzero, hmap⟩ :=
     exists_supported_graph_transport_within_preserving_base a h ha hh hK hU htrace
   exact ⟨S, hS, hSU, F, hfix, hzero, hmap⟩
-
-
 
 theorem exists_supported_local_graph_flattening_preserving_base
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
@@ -139,7 +131,6 @@ theorem exists_supported_local_graph_flattening_preserving_base
     exact hzero x z (by simp [b, hx])
   · intro x hx
     simpa only [hbK x hx, add_neg_cancel] using hmap x hx
-
 
 theorem exists_supported_local_graph_flattening
     {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

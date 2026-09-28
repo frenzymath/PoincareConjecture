@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphStripSide
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +32,6 @@ private theorem joined_axis_contacts
     have h := hsep t ht s hs 0 w hz hwr
     obtain ⟨rfl, rfl⟩ := h.2.2 hts
     exact congrArg Prod.snd (T.injOn h.2.1 hbase.2.1 (hts.symm.trans hcommon))
-
-
-
 
 theorem m64Intrinsic_exists_joined_strip_frontier_width
     {alpha beta : ℝ → AnnulusCoordinates} (ha : Continuous alpha) (hb : Continuous beta)

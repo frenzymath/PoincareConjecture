@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventSu
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventCapGerm
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallCommonCap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem RegularSurgeryEvent.exists_supported_child_compression
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

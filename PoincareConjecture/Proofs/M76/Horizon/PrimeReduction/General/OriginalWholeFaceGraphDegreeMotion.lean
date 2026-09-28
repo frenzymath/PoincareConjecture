@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.RegularProtectedFaceGraphPosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfaceMotion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -21,10 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Filter
 open scoped Topology
-
-
-
-
 
 theorem exists_original_whole_face_graph_motion_with_signed_degree
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -157,7 +143,6 @@ theorem exists_original_whole_face_graph_motion_with_signed_degree
       exact ⟨hyx' ▸ hy, hxW⟩
     · rintro ⟨hx, hxW⟩
       exact ⟨⟨x, hx, hPhiW hxW⟩, hxW⟩
-
 
 theorem exists_original_whole_face_graph_motion_with_degree
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

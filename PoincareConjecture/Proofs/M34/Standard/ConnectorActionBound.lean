@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CoordinateConnector
 import PoincareConjecture.Proofs.M09.SquareActionComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem squareCurveActionDensity_le_of_tangentNorm_le {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (beta : ℝ → M) (s : ℝ) {L R v : ℝ}
@@ -52,8 +41,6 @@ theorem squareCurveActionDensity_le_of_tangentNorm_le {J : Set ℝ}
   dsimp only [squareCurveActionDensity]
   linarith
 
-
-
 theorem coordinateConnector_squareActionDensity_le {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (f : E → M)
     {a b delta c C L R : ℝ} (hab : a < b) (hc : 0 ≤ c) (hC : 0 ≤ C)
@@ -69,8 +56,6 @@ theorem coordinateConnector_squareActionDensity_le {J : Set ℝ}
       2 * L * R + (c * (C / (b - a)) * delta) ^ 2 / 2 :=
   squareCurveActionDensity_le_of_tangentNorm_le F T _ s hR hs (hscalar _)
     (coordinateConnector_tangentNorm_le _ f hab hc hC htransition hz hf hbound s)
-
-
 
 theorem squareCurveActionIntegral_le {J : Set ℝ} (F : RicciFlow n M J)
     (P : RicciFlowCurvatureTheory.{u}) (T taumax : ℝ) (hmax : 0 < taumax)

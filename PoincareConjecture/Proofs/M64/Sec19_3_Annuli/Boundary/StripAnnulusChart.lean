@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ClosedStripDifferen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.AnnulusStripHarmonic
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FiniteChartDifferential
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,11 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem annulus_strip_boundary_coordinate_data (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (x : ℝ) (upper : Bool)

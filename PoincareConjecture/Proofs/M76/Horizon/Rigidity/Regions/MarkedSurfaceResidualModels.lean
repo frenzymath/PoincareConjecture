@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLCubeSphereModel
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteFrontierComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.MarkedFiniteModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

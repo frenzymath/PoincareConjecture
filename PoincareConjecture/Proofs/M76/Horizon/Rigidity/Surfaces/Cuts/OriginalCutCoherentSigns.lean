@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PlanarBounda
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningFaceCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Orientation.GeometricCofaceSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -20,8 +11,6 @@ open AbstractSimplicialComplex PreAbstractSimplicialComplex.ModTwoCochains
 namespace PoincareConjecture.M76.OriginalTriangleCopies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem affine_triangle_height_sign (ell : E →ᵃ[ℝ] ℝ) (a b c x : E)
     (ha : ell a = 0) (hb : ell b = 0)
@@ -42,16 +31,12 @@ theorem affine_triangle_height_sign (ell : E →ᵃ[ℝ] ℝ) (a b c x : E)
   · have hxle : 0 ≤ ell x := by simpa [min_eq_left hpos.le] using hbound.1
     rw [sign_pos (lt_of_le_of_ne hxle (Ne.symm hne)), sign_pos hpos]
 
-
-
 theorem affine_chart_edge_displacement (R : E →ᴬ[ℝ] (ℝ × ℝ))
     (a b x : E) (t : ℝ) (hx : x - a = t • (b - a)) :
     R x - R a = t • (R b - R a) := by
   have h := congrArg R.contLinear hx
   rw [map_smul] at h
   simpa only [← vsub_eq_sub, R.contLinear_map_vsub] using h
-
-
 
 theorem refined_original_edge_cross_sign (R : E →ᴬ[ℝ] (ℝ × ℝ))
     (a b c x y z : E) (t u : ℝ)
@@ -167,8 +152,6 @@ private theorem mapped_numbered_boundary_cross_parity_reverse [DecidableEq E]
   linear_combination (norm := ring_nf) hrev
   simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, sub_zero]
 
-
-
 theorem mapped_numbered_edge_apex_parity [DecidableEq E]
     (number : E → ℕ) (p : Fin 3 → E)
     (hp : Function.Injective p) (hnumber : StrictMono (number ∘ p))
@@ -195,9 +178,6 @@ theorem mapped_numbered_edge_apex_parity [DecidableEq E]
     | exact mapped_numbered_boundary_cross_parity_reverse number p hp hnumber f hd 0
     | exact mapped_numbered_boundary_cross_parity_reverse number p hp hnumber f hd 1
     | exact mapped_numbered_boundary_cross_parity_reverse number p hp hnumber f hd 2
-
-
-
 
 theorem exists_original_triangle_orientation_chart [FiniteDimensional ℝ E] [DecidableEq E]
     (K : SimplicialComplex ℝ E) (number : E → ℕ) (hnumber : InjOn number K.vertices)
@@ -258,8 +238,6 @@ theorem exists_original_triangle_orientation_chart [FiniteDimensional ℝ E] [De
   rw [hpt, hdet] at hpar
   simpa [orientationSignParity] using hpar
 
-
-
 theorem exists_original_edge_parameters (a b x y : E)
     (hx : x ∈ segment ℝ a b) (hy : y ∈ segment ℝ a b) :
     ∃ t u : ℝ, x - a = t • (b - a) ∧ y - a = u • (b - a) := by
@@ -268,8 +246,6 @@ theorem exists_original_edge_parameters (a b x y : E)
   obtain ⟨u, _, rfl⟩ := hy
   exact ⟨t, u, by simp [AffineMap.lineMap_apply_module'],
     by simp [AffineMap.lineMap_apply_module']⟩
-
-
 
 theorem refined_original_cofaces_cancel [DecidableEq E]
     (number : E → ℕ) (T U : Finset E) (st su : ZMod 2)
@@ -304,8 +280,6 @@ theorem refined_original_cofaces_cancel [DecidableEq E]
   have hc := Dehn.orderedCofaceParity_cancellation number T U a b st su hcancel
   linear_combination (norm := ring_nf) hc
   simp only [show (2 : ZMod 2) = 0 from rfl, mul_zero, sub_zero]
-
-
 
 theorem mapped_paired_edge_cross_product
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (f : (ℝ × ℝ) → ℝ × ℝ)

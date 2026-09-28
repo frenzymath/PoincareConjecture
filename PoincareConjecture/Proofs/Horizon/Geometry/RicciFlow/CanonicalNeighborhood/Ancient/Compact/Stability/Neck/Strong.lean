@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.EscapeCarrier
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -33,8 +23,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   (G : M23InteriorConvergence S)
   (e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j))
-
-
 
 theorem exists_terminalStrongNeck_of_fullFamily
     (N : EpsilonNeck (G.limit.flow.flow.metric 0)) (hcenter : N.center = G.limit.base)
@@ -89,8 +77,6 @@ theorem exists_terminalStrongNeck_of_fullFamily
   rw [hnormimage, Real.one_rpow]
 
 end M23InteriorConvergence
-
-
 
 theorem M23TerminalExtension.eventually_strongEvolvingNeck_full_domain
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

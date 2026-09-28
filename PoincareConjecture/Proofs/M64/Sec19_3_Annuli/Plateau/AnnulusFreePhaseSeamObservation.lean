@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseSeamWeak
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.PlanarCircleObservation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture
 
 open Proofs.M58
-
-
 
 theorem m64AngularPoint_sub_phase_period {k D : ℝ}
     (hperiod : angularPoint (k * D) = angularPoint 0) (u : ℝ) :
@@ -35,8 +26,6 @@ theorem m64AngularPoint_sub_phase_period {k D : ℝ}
   fin_cases i <;> simp [angularPoint, mul_sub, Real.cos_sub, Real.sin_sub, hc, hs]
 
 namespace M64
-
-
 
 theorem circle_phase_period_of_periodic_lift {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (gamma : ℝ → C.Point)
@@ -64,8 +53,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)}
   {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {c0 c1 : ℝ → M}
   {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
-
-
 
 theorem phase_seam_extension_observation
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

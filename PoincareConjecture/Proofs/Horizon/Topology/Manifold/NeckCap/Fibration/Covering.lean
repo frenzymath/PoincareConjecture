@@ -1,24 +1,11 @@
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
-
 open Function Set Topology
 
 namespace Poincare.Topology
 
 variable {A E X : Type*} [TopologicalSpace A] [TopologicalSpace E]
   [TopologicalSpace X] {p : E → X}
-
-
 
 theorem exists_openEmbedding_lift [SimplyConnectedSpace A] [LocallyPathConnectedSpace A]
     (hp : IsCoveringMap p) {f : A → X} (hf : IsOpenEmbedding f)
@@ -27,8 +14,6 @@ theorem exists_openEmbedding_lift [SimplyConnectedSpace A] [LocallyPathConnected
   obtain ⟨F, ⟨hFa, hF⟩, _⟩ := hp.existsUnique_continuousMap_lifts ⟨f, hf.continuous⟩ a e he
   refine ⟨F, hFa, hF, hp.isLocalHomeomorph.isOpenEmbedding_of_comp ?_ F.continuous⟩
   rwa [hF]
-
-
 
 theorem disjoint_ranges_of_distinct_lifts [PreconnectedSpace A]
     (hp : IsCoveringMap p) {f : A → X} (hf : Injective f)
@@ -44,8 +29,6 @@ theorem disjoint_ranges_of_distinct_lifts [PreconnectedSpace A]
   exact DFunLike.ext' (hp.eq_of_comp_eq F.continuous G.continuous
     (hF.trans hG.symm) a hb.symm)
 
-
-
 theorem covering_transformation_eq_refl_of_fixedPoint [PreconnectedSpace E]
     (hp : IsCoveringMap p) (d : E ≃ₜ E) (hd : p ∘ d = p)
     {e : E} (he : d e = e) : d = Homeomorph.refl E := by
@@ -53,7 +36,6 @@ theorem covering_transformation_eq_refl_of_fixedPoint [PreconnectedSpace E]
   exact congr_fun (hp.eq_of_comp_eq d.continuous continuous_id hd e he)
 
 omit [TopologicalSpace A] in
-
 
 theorem disjoint_covering_translate [PreconnectedSpace E]
     (hp : IsCoveringMap p) {f : A → X} (hf : Injective f)

@@ -4,27 +4,12 @@ import Mathlib.Topology.Order.Real
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
 open scoped Topology
 
 namespace PoincareConjecture
-
 
 theorem exists_extend_lift_of_localHomeomorph
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -73,9 +58,6 @@ theorem exists_extend_lift_of_localHomeomorph
     · simp only [comp_apply, piecewise_eq_of_notMem _ _ _ htT, l₂]
       rw [he]
       exact e.right_inv (hmaps ⟨(lt_of_not_ge htT).le, ht'.2⟩)
-
-
-
 
 theorem exists_lift_of_compact_prefixes
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]

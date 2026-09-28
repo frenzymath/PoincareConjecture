@@ -4,14 +4,6 @@ import Mathlib.Topology.MetricSpace.Equicontinuity
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open scoped Topology NNReal
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_isCompact_lipschitz_maps
     {A : Type u} {B : Type v} [MetricSpace A] [MetricSpace B] [CompactSpace B]
@@ -46,8 +36,6 @@ theorem terminalCommonInterval_isCompact_lipschitz_maps
           simp [mul_zero])
       (fun f : S => (f.val : A → B)) (fun x y f => f.property.dist_le_mul x y)).equicontinuous
 
-
-
 theorem terminalCommonInterval_compact_row_subsequence
     {A : ℕ → Type u} {B : ℕ → Type v}
     [∀ j, MetricSpace (A j)] [∀ j, MetricSpace (B j)]
@@ -60,8 +48,6 @@ theorem terminalCommonInterval_compact_row_subsequence
   exact Poincare.exists_strictMono_tendsto_of_eventually_mem_isCompact F
     (fun j => {f : C(A j, B j) | LipschitzWith L f})
     (fun _ => terminalCommonInterval_isCompact_lipschitz_maps L) hF
-
-
 
 theorem terminalCommonInterval_paired_row_subsequence
     {A D : ℕ → Type u} {B E : ℕ → Type v}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,22 +17,16 @@ variable {n : ℕ} {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
 
 include hf
 
-
-
 theorem metricIsometry_pathELength (γ : ℝ → M) (a b : ℝ)
     (hγ : ContMDiffOn 𝓘(ℝ) (𝓡 n) 1 γ (Icc a b)) :
     h.pathELength (f ∘ γ) a b = g.pathELength γ a b := by
   simpa only [Real.sqrt_one, ENNReal.ofReal_one, one_mul] using
     M13.homothety_pathELength g h f 1 (by norm_num) hf γ a b hγ
 
-
-
 theorem metricIsometry_ball (x : M) (r : ℝ) :
     f '' g.ball x r = h.ball (f x) r := by
   simpa only [Real.sqrt_one, one_mul] using
     M13.homothety_ball_image g h f 1 (by norm_num) hf x r
-
-
 
 theorem metricIsometry_volume
     [MeasurableSpace M] [MeasurableSpace X] [BorelSpace M] [BorelSpace X]
@@ -62,8 +47,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   (f : Diffeomorph (𝓡 3) (𝓡 3) M X ∞) (hf : MetricHomothety g h f 1)
 
 include hf
-
-
 
 theorem metricIsometry_intrinsicEDist (U : Set M) (x y : M) :
     intrinsicEDist h (f '' U) (f x) (f y) = intrinsicEDist g U x y := by
@@ -89,8 +72,6 @@ theorem metricIsometry_intrinsicEDist (U : Set M) (x y : M) :
     rw [hlength]
     exact sInf_le ⟨f.symm ∘ η, hη', by simp [Function.comp_apply, hη0],
       by simp [Function.comp_apply, hη1], himage, rfl⟩
-
-
 
 theorem metricIsometry_intrinsicDiameter (U : Set M) :
     intrinsicDiameter h (f '' U) = intrinsicDiameter g U := by

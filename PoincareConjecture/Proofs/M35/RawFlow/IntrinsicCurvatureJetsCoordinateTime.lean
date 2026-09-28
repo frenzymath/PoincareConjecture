@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.ArclengthTimeDerivative
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialCoordinate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M35.Uniqueness
 
 open SmoothRadial
 
-
-
 theorem intrinsicSpatialCoordinate_eq_quotient
     (g : RiemannianMetric 3 StandardCapSpace) {x : StandardCapSpace} (hx : x ≠ 0) :
     intrinsicSpatialCoordinate g x = (radialArclength g ‖x‖ / ‖x‖) • x := by
@@ -29,8 +18,6 @@ theorem intrinsicSpatialCoordinate_eq_quotient
   apply (eq_div_iff (norm_ne_zero_iff.mpr hx)).mpr
   rw [mul_comm, mul_axisDivision (radialArclength_contDiff g),
     radialArclength_zero, sub_zero]
-
-
 
 theorem intrinsicSpatialVelocity_contDiff
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -46,8 +33,6 @@ theorem intrinsicSpatialVelocity_contDiff
   ((intrinsicRadialVelocity_quotient_contDiff_norm g hrotation hcomplete).comp
     (intrinsicSpatialCoordinate_contDiff g hrotation)).smul
       (intrinsicSpatialCoordinate_contDiff g hrotation)
-
-
 
 theorem raw_intrinsicSpatialCoordinate_hasDerivAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀) {t : ℝ}

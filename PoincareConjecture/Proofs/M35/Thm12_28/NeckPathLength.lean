@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.NeckAxialDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal NNReal
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 theorem axial_edist_le_pathELength {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)

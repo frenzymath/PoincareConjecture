@@ -1,8 +1,6 @@
 import Mathlib.Analysis.Convex.Deriv
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -11,8 +9,6 @@ open scoped Topology ContDiff
 namespace Poincare.Analysis
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem fderiv_fderiv_le_of_concaveOn_sub_norm_sq
     {f : E → ℝ} {U : Set E} {C : ℝ} (hU : IsOpen U)

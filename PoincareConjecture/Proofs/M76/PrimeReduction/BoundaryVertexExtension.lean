@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexBand
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexDisks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskPrismExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,9 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 local notation "I" => Icc (0 : ℝ) 1
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem BoundaryEdgeFamily.exists_vertex_extension (P : BoundaryEdgeFamily T)
     (hLK : L ≤ K) (hLcard : ∀ u ∈ L.faces, u.card ≤ 3)

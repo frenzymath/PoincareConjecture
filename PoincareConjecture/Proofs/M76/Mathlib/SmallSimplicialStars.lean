@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkProjection
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ open Set Metric
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem closedFaceStar_subset_closedBall_of_diam_le (K : SimplicialComplex ℝ E)
     {δ : ℝ} (hdiam : ∀ s ∈ K.faces, diam (convexHull ℝ (s : Set E)) ≤ δ) (p : E) :
@@ -37,10 +25,6 @@ theorem closedFaceStar_subset_closedBall_of_diam_le (K : SimplicialComplex ℝ E
   exact (dist_le_diam_of_mem
     ((insert p s).finite_toSet.isCompact_convexHull ℝ).isBounded hxt hpt).trans
     (hdiam _ ht)
-
-
-
-
 
 theorem exists_mesh_for_subdivision_stars (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) {ι : Type*} (U : ι → Set K.space)

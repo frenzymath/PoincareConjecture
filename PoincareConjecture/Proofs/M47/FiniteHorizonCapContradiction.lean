@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalHorizon
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +8,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_slab_fails_above_horizon
     {V : GeneralizedBlowupSequence.{u}} {T : ℝ} (hT : 0 < T)
@@ -32,10 +19,6 @@ theorem terminalCommonInterval_slab_fails_above_horizon
     exact terminalCommonInterval_slab_mono hslab
       ((ENNReal.ofReal_lt_ofReal_iff hT).mp hUT).le
   exact (not_lt_of_ge (le_sSup hmem)) habove
-
-
-
-
 
 theorem finiteHorizon_neighborhood_fails
     {V : GeneralizedBlowupSequence.{u}} (Nbhd : ℕ → ℝ → ℝ → Prop)
@@ -68,10 +51,6 @@ theorem finiteHorizon_neighborhood_fails
   exact terminalCommonInterval_slab_fails_above_horizon hTpos habove
     (thm11_8 t ht hall T hTpos hTlt)
 
-
-
-
-
 theorem finiteHorizon_cap_contact_of_failed_neighborhood
     {Nbhd Contact : ℕ → ℝ → ℝ → Prop} {t : ℝ}
     (failure : ∃ A : ℝ, 0 < A ∧ ∃ᶠ k in atTop, ¬ Nbhd k A t)
@@ -82,9 +61,6 @@ theorem finiteHorizon_cap_contact_of_failed_neighborhood
   refine ⟨A, hA, ?_⟩
   exact (hfail.and_eventually (cap_contact A hA)).mono
     (fun k hk => hk.2 hk.1)
-
-
-
 
 theorem finiteHorizon_cap_persistence_contradiction
     {Contact LineBound Canonical : ℕ → ℝ → Prop}

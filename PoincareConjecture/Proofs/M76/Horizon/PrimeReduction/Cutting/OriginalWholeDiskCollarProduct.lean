@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalOppo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.WholeDiskProductOnOppositeDomain
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.OriginalUnitDiskParameter
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

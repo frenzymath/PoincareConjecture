@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.LimitCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Curvature.Conformal.ConformalPinching
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +17,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem scalar_and_nonnegativeCurvatureOperator_of_pullback_metric_jets
     {alpha : Type v} {l : Filter alpha} [l.NeBot]

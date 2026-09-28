@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Product.RoundMetric
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,8 +69,6 @@ theorem RoundCylinderSurface.inner_eq_neg_time_mul
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem product_pullback_inner_of_transverse_scale
     (F : ℝ → RiemannianMetric 3 M) (g : RiemannianMetric 3 C)

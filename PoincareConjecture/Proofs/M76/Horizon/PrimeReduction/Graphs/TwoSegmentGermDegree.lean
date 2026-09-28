@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.SegmentGermDegree
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedManifoldConditions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem ncard_neighborSet_eq_two_of_local_segments_zero
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
@@ -49,8 +38,6 @@ theorem ncard_neighborSet_eq_two_of_local_segments_zero
     · exact (K.link 0).vertices_subset_space
   rw [K.ncard_edgeGraph_neighborSet, K.faceLink_singleton_eq_link, ← hvertices]
   exact hcard
-
-
 
 theorem ncard_neighborSet_eq_two_of_local_segments
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

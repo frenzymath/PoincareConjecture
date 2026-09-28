@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Limit.DerivativeBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
 
 open Set
-
-
 
 theorem eventually_compact_curvatureDerivativeNorm_le_of_local_derivative_estimates
     {n : ℕ} {T' T : ℝ}
@@ -66,7 +56,6 @@ theorem eventually_compact_curvatureDerivativeNorm_le_of_local_derivative_estima
   intro t ht x hx
   exact hk 0 ⟨H.time_bounds.1, H.time_bounds.2⟩ t
     (hIcc ht) x hx
-
 
 theorem eventually_compact_curvatureDerivativeNorm_le
     {n : ℕ} {T' T : ℝ}

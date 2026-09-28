@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Long
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Pairing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +9,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
 
 theorem scaled_long_neck_window_identity {r ε K C : ℝ} (hr : 0 < r) (hε : 0 < ε) :
     r * ((r * Real.sqrt (1 + ε))⁻¹ - C / (r / (200 * Real.sqrt ε)) -
@@ -29,8 +20,6 @@ theorem scaled_long_neck_window_identity {r ε K C : ℝ} (hr : 0 < r) (hε : 0 
   have heq := Real.sq_sqrt hε.le
   field_simp [hr.ne', hs, hs₁]
   linear_combination (Real.sqrt (1 + ε) * K) * heq
-
-
 
 theorem exists_long_neck_window_threshold (K C : ℝ) {β : ℝ} (hβ : 0 < β) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ < 1 / 2 ∧
@@ -78,8 +67,6 @@ theorem exists_long_neck_window_threshold (K C : ℝ) {β : ℝ} (hβ : 0 < β) 
     exact pos_of_mul_pos_right hmul hr.le
   · rwa [heq]
 
-
-
 theorem exists_axial_alignment_window_threshold (K C : ℝ) {α : ℝ} (hα : 0 < α) :
     ∃ β ε₀ : ℝ, 0 < β ∧ 0 < ε₀ ∧ ε₀ < 1 / 2 ∧
       ∀ ε : ℝ, 0 < ε → ε ≤ ε₀ → ∀ r : ℝ, 0 < r →
@@ -100,10 +87,6 @@ theorem exists_axial_alignment_window_threshold (K C : ℝ) {α : ℝ} (hα : 0 
   have hβbound : β ≤ α ^ 2 / 8 := min_le_left _ _
   have hεbound := hε₀.trans (min_le_right _ _)
   nlinarith [sq_pos_of_pos hα]
-
-
-
-
 
 theorem exists_intrinsic_neck_alignment_threshold
     (K C : ℝ) (hC : 0 ≤ C) {α : ℝ} (hα : 0 < α) :

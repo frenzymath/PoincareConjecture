@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SlabSourceExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory ProbabilityTheory
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem heatDuhamel_stronglyMeasurable {f : ℝ → V → F}
     (hf : StronglyMeasurable (Function.uncurry f)) :

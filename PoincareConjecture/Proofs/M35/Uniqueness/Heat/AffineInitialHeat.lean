@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.WeakValuePathEquation
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.SmoothAffineInverse
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.FormPrimitive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

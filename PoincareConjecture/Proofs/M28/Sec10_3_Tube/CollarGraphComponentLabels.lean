@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.ComponentLabels
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalGraphRegions
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckGraphSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +16,6 @@ variable {X : Type u} [TopologicalSpace X]
   {Y : Type v} [TopologicalSpace Y]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Y] [IsManifold (𝓡 3) ∞ Y]
   {g : RiemannianMetric 3 X} {h : RiemannianMetric 3 Y}
-
-
-
-
 
 theorem neck_collar_opposite_graph_component_labels
     (L : EpsilonNeck g) (N : EpsilonNeck h) (e : OpenPartialHomeomorph X Y)

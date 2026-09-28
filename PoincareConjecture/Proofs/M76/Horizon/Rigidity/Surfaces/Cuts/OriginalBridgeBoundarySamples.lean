@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarBoundar
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -40,8 +32,6 @@ theorem sourceBridge_infinite (hbound : ∀ s ∈ K.faces, s.card ≤ 3) (i : Fi
     A.exists_ordered_longArc_bridge_chart hbound i
   rw [← him]
   exact (Icc_infinite hαβ).image hi
-
-
 
 theorem exists_paired_bridge_sample (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
     (i : Fin 4) {bad : Set E} (hbad : bad.Finite) :
@@ -73,8 +63,6 @@ theorem exists_paired_bridge_sample (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
     exact hqends (Or.inl (hqx.symm.trans (congrArg sm h)))
   · intro h
     exact hqends (Or.inr (hqx.symm.trans (congrArg sm h)))
-
-
 
 theorem exists_paired_nonvertex_square_samples
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3)
@@ -175,8 +163,6 @@ private theorem edge_hull_subset_frontier_of_openSegment
   refine ⟨subset_closure hyspace, ?_⟩
   intro hyi
   exact (ne_of_lt (hell y hyi)) hye
-
-
 
 theorem square_nonvertex_boundary_edge_coface
     (L : SimplicialComplex ℝ (ℝ × ℝ)) (hL : L.faces.Finite)

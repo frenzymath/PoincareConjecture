@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetric
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetricLimit
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin c : ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinderQuadratic_exp_bounds
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -112,8 +101,6 @@ theorem cylinderQuadratic_exp_bounds
       filter_upwards [Ico_mem_nhdsLT ht.2.1] with s hs
       exact (hbefore s hs).2
 
-
-
 theorem cylinderQuadratic_half_le_and_le_double
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
     (e : SurgeryFlowCylinder F C origin 1 (Icc c 0) U) (hU : IsOpen U)
@@ -151,8 +138,6 @@ theorem cylinderQuadratic_half_le_and_le_double
   · have h := hbounds.2.trans (mul_le_mul_of_nonneg_right hexp (hn s hs))
     linarith
   · exact hback.trans (mul_le_mul_of_nonneg_right hexp (hn 0 hzero))
-
-
 
 theorem based_cylinder_metric_comparison_two
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

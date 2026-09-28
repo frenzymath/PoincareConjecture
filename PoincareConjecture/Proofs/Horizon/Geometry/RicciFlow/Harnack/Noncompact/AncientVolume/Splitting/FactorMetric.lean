@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricFamily.Descent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevel
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -120,8 +109,6 @@ private theorem pullbackForm_family_contMDiffWithinAt
     ← htT, ← hsT, hkey]
   rfl
 
-
-
 theorem IsSmoothFamilyOn.pullbackImmersion
     {m n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin m)) M]
@@ -136,8 +123,6 @@ theorem IsSmoothFamilyOn.pullbackImmersion
   exact pullbackForm_family_contMDiffWithinAt hg (hf x) ht
 
 open Poincare.Geometry.Manifold.RegularLevel
-
-
 
 theorem IsSmoothFamilyOn.regularLevelMetric
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -166,7 +151,6 @@ end PoincareConjecture.RiemannianMetric
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.Geometry.Manifold.RegularLevel
-
 
 theorem regularLevelMetric_equation
     {n : ℕ} {M : Type*} [TopologicalSpace M]

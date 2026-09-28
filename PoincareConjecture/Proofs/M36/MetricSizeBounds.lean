@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M36.CollapseMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M36

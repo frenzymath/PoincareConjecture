@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalInterior
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSearch
 import PoincareConjecture.Proofs.M04.ShiCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (W : ∀ k, M33RegularHistoryWindow (
 
 local notation "V" => regularHistoryBlowupSequence F W H t ht x hPositive hDiverges
 
-
-
 theorem terminalCommonInterval_physical_scalar
     (k : ℕ) {A K : ℝ}
     (himage : ((F k).metric (t k)).ball ((H k).history.forward (t k) (ht k) (x k))
@@ -47,8 +37,6 @@ theorem terminalCommonInterval_physical_scalar
     (A / Real.sqrt ((V).scale k)) himage).symm ▸ hy
   rw [(H k).scalar_pullback]
   exact hscalar z hz
-
-
 
 theorem terminalCommonInterval_controlled_of_long_search
     (k : ℕ) {A a tau B eta : ℝ} (hA : 0 < A) (htau : 0 < tau) (ha : a < -tau)
@@ -99,8 +87,6 @@ theorem terminalCommonInterval_controlled_of_long_search
            zero_identity := hd0
            curvature_bound := fun s hs y hy => (hdb s hs y hy).1
            negative_curvature_bound := fun s hs y hy => (hdb s hs y hy).2 }⟩
-
-
 
 theorem terminalCommonInterval_controlled_or_cap
     (S : RepairedControlledSchedulesData.{u})

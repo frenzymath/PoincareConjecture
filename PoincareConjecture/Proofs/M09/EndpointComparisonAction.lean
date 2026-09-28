@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.UnitIntervalAction
 import PoincareConjecture.Proofs.M09.ActionCongruence
 import PoincareConjecture.Statements.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

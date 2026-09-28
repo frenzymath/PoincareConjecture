@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Shrink
 import Mathlib.Data.Real.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -25,8 +16,6 @@ variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
-
-
 
 theorem Homothety.metricDiameter_univ
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -63,7 +52,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {p : M}
 
-
 theorem AncientKappaNormalization.metricDiameter_zero
     (A : AncientKappaNormalization K p 0) :
     metricDiameter (A.target.flow.metric 0) Set.univ =
@@ -82,7 +70,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [SecondCountableTopology M]
   {J : Set ℝ}
-
 
 @[simp] theorem metricDiameter_shrink (F : RicciFlow 3 M J) (t : ℝ) :
     metricDiameter (F.shrink.metric t) Set.univ =

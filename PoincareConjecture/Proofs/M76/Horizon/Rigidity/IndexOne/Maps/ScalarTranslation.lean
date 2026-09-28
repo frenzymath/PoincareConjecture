@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedPLDiagram
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ChartwiseRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -25,7 +16,6 @@ local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
-
 
 noncomputable def translatedMap (phi : C(H, H)) (w : C(X, ℝ)) : C(H, H) where
   toFun x := handleTranslation
@@ -84,8 +74,6 @@ theorem exists_relative_source_parameter
     intro u hu
     exact (hqval u hu).symm
   exact ⟨K, q, z, hK, hq, hiq, hqz, Filter.mem_of_superset (hV.mem_nhds hxV) hVrange, hqPL⟩
-
-
 
 theorem chartwisePL_translatedMap
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

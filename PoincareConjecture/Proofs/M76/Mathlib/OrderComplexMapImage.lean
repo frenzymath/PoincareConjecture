@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
 
 include hc in
-
-
 
 theorem range_faceOrderComplexMap :
     range (finiteOrderComplexMap K.faces c) = K.space := by
@@ -45,8 +34,6 @@ theorem range_faceOrderComplexMap :
     exact ⟨a, ha, hchain, hxs⟩
 
 include c hc in
-
-
 
 theorem isConnected_faceOrderComplex (hconn : IsConnected K.space) :
     IsConnected (finiteOrderComplex K.faces).space := by

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionConstructor
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionIntegrability
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal
@@ -15,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64ProjectedAnnulus_of_annulus
     {n : ℕ} {M : Type u} [TopologicalSpace M]

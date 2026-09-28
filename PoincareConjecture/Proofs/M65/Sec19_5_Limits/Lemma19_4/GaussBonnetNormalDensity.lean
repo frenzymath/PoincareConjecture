@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetHessian
 import PoincareConjecture.Proofs.M03.MetricCompactBounds
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -25,17 +15,11 @@ open M65Branch
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
-
 def normalHessian (D : LeviCivitaData g)
     (F : LoopPlane → EuclideanSpace ℝ (Fin n)) (x u v : LoopPlane) :
     EuclideanSpace ℝ (Fin n) :=
   covariantHessianMap D F x u v -
     conformalTangentProjection g F x (covariantHessianMap D F x u v)
-
-
-
 
 theorem normalHessian_eq_projection_derivative (D : LeviCivitaData g)
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {x : LoopPlane}
@@ -65,9 +49,6 @@ theorem normalHessian_eq_projection_derivative (D : LeviCivitaData g)
   rw [normalHessian, covariantHessianMap, map_add, ← hn]
   abel
 
-
-
-
 theorem norm_normalHessian_le_projection_derivative (D : LeviCivitaData g)
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {x : LoopPlane}
     (hF : ContDiffAt ℝ ∞ F x)
@@ -95,9 +76,6 @@ theorem norm_normalHessian_le_projection_derivative (D : LeviCivitaData g)
       · exact (P.le_opNorm _).trans
           (mul_le_mul_of_nonneg_left (C.le_opNorm₂ a b) (norm_nonneg _))
     _ = _ := by ring
-
-
-
 
 theorem normalHessian_density_le (D : LeviCivitaData g)
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {x : LoopPlane}
@@ -157,10 +135,6 @@ theorem normalHessian_density_le (D : LeviCivitaData g)
     _ = _ := by
       dsimp only [q, k, e]
       field_simp [hc.ne', hlam.ne']
-
-
-
-
 
 theorem normalHessian_density_integrableOn (D : LeviCivitaData g)
     {F : LoopPlane → EuclideanSpace ℝ (Fin n)} {K U : Set LoopPlane}

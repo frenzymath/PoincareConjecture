@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeLabelRegularity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeBoundaryTransport
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusBoundaryRegularity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,10 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m64CurvatureVector_comp_of_deriv_pos_at
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -61,11 +44,6 @@ theorem m64CurvatureVector_comp_of_deriv_pos_at
     ((hsigma.differentiable one_ne_zero) x).hasDerivAt hpos
 
 variable [T2Space M] [CompactSpace M]
-
-
-
-
-
 
 theorem m64FreeAnnulus_modulus_boundary_conormal_factor
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}

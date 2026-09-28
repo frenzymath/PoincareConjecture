@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.InteriorRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Spectrum.Compactness
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,7 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 theorem eigenbasis_ae_const_of_eigenvalue_eq_zero (D : LeviCivitaData g)
     (i : EigenIndex D univ) (hi : eigenvalue D univ i = 0) :
@@ -37,7 +35,6 @@ theorem eigenbasis_ae_const_of_eigenvalue_eq_zero (D : LeviCivitaData g)
   rw [toDomainL2_energyEigenfunction] at hdom
   filter_upwards [hdom, hUae] with x hx hy
   exact hx.trans (hy.symm.trans (hc x))
-
 
 theorem eigenbasis_repr_eq_zero_of_eigenvalue_eq_zero (D : LeviCivitaData g)
     (F : Lp ℝ 2 (g.volumeMeasure.restrict univ))

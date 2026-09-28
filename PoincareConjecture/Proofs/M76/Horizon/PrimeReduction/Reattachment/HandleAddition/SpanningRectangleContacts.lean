@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningBandContactGraph
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 open Set Geometry
@@ -131,4 +129,3 @@ theorem exists_spanning_rectangle_contact_graph
     (r '' e0) (r '' e1) (r '' e2) (r '' e3) hU hV hW hZ hleft hright hWO hZO hWZ
 
 end PoincareConjecture.M76
-

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.AxialContraction
 import Mathlib.Analysis.Calculus.FDeriv.Add
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +29,6 @@ theorem coefficient_pullback (s : ℝ) (B : RoundCylinderTwoTensor)
     (p : RoundCylinderCoordinates) (a b : Fin 3) :
     roundCylinderTensorCoefficient (pullback s B) c p a b =
       roundCylinderTensorCoefficient B c (coordinates s p) a b := rfl
-
 
 theorem fderiv_translate (s : ℝ) (f : RoundCylinderCoordinates → ℝ)
     (p : RoundCylinderCoordinates) :
@@ -82,8 +79,6 @@ theorem iteratedDerivative_pullback (s u : ℝ) (B : RoundCylinderTwoTensor)
     funext p a
     exact derivative_translate s u c (roundCylinderIteratedDerivative u c B k) p a
 
-
-
 theorem jetErrorSquared_pullback (s u : ℝ) (B : RoundCylinderTwoTensor)
     (order : ℕ) (z : RoundCylinderSpace) :
     roundCylinderJetErrorSquared u (pullback s B) order z =
@@ -105,7 +100,6 @@ theorem smoothOn_pullback {ε δ : ℝ} (s : ℝ) {B : RoundCylinderTwoTensor}
   apply (hB q a b).comp ?_ (fun p hp => ⟨hp.1, hsub hp.2⟩)
   exact (contDiff_fst.prodMk (contDiff_snd.add contDiff_const)).contDiffOn
 
-
 theorem close_pullback {ε δ u : ℝ} (s : ℝ) {B : RoundCylinderTwoTensor}
     (hε : 0 < ε) (hεδ : ε ≤ δ) (hu : u < 1) (hB : RoundCylinderClose ε u B)
     (hsub : MapsTo (fun t : ℝ => t + s) (Ioo (-δ⁻¹) δ⁻¹) (Ioo (-ε⁻¹) ε⁻¹)) :
@@ -119,7 +113,6 @@ theorem close_pullback {ε δ u : ℝ} (s : ℝ) {B : RoundCylinderTwoTensor}
     Nat.floor_mono ((inv_le_inv₀ (hε.trans_le hεδ) hε).2 hεδ)
   exact (DeepHorn.evolvingCylinderJetErrorSquared_mono hu B (space s z) horder).trans
     (hjet (space s z) (hsub hz))
-
 
 theorem metric_pullback_translate
     {M : Type*} [TopologicalSpace M]
@@ -162,8 +155,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem translated_metric_comparison (N : EpsilonNeck g) {δ : ℝ}
     (hεδ : N.epsilon ≤ δ) (s : ℝ)
     (hsub : MapsTo (fun t : ℝ => t + s) (Ioo (-δ⁻¹) δ⁻¹)
@@ -181,8 +172,6 @@ theorem translated_metric_comparison (N : EpsilonNeck g) {δ : ℝ}
     ((isOpen_univ.prod isOpen_Ioo).mem_nhds hdom)).mdifferentiableAt (by simp)
   rw [RoundCylinderTranslation.metric_pullback_translate g N.coordinate_map s z hf]
   rfl
-
-
 
 theorem negative_half_metric_comparison (N : EpsilonNeck g) :
     RoundCylinderClose (2 * N.epsilon) 0 (fun z v w => N.scale⁻¹ ^ 2 *

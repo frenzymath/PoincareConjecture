@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.AnnulusJoinArea
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.MetricAreaComparison
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +34,6 @@ private theorem leastArea_affine_comparison
     nlinarith
   have hle := (div_le_iff₀ hk).mp h
   nlinarith
-
-
-
 
 theorem m64LeastAnnulusArea_two_sided_local
     {a b : ℝ} {F : RicciFlow n M (Icc a b)}

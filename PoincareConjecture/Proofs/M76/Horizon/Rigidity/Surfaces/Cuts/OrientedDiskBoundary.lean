@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Planar.Pair
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.NumberedTriangleParity
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Simplicial.SignParity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M76.OriginalTriangleCopies
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem planar_ordered_edge_determinants
     (K : SimplicialComplex ℝ E) (f : E → F)
@@ -75,8 +64,6 @@ theorem planar_ordered_edge_determinants
   have hcombined := congrArg₂ (fun a b : ℝ ↦ a * b) hpdet hrDet
   apply lt_of_eq_of_lt hcombined.symm
   simpa [p', perm, hvj, h0, h1] using hdet
-
-
 
 theorem exists_planar_all_edge_signs_for_numbering
     (K : SimplicialComplex ℝ E) (number : K.vertices ↪ ℕ)
@@ -162,8 +149,6 @@ theorem exists_planar_all_edge_signs_for_numbering
   simpa only [one_mul] using orientationSignParity_of_common_label
     (det t) (det u) 1 (by decide) i j hdet
 
-
-
 theorem exists_planar_all_edge_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (f : E → F) (hf : K.AffineOnFaces f) (hi : InjOn f K.space)
@@ -187,8 +172,6 @@ theorem exists_planar_all_edge_signs
   obtain ⟨sigma, hsigma⟩ := exists_planar_all_edge_signs_for_numbering K number f hf hi
     basis ell n hn hplane
   exact ⟨number, sigma, hsigma⟩
-
-
 
 theorem coherent_triangle_signs_global_difference
     {V : Type*} [DecidableEq V] (A : PreAbstractSimplicialComplex V)

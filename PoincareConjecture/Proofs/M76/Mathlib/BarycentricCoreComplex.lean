@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoreProjectionCoordinates
 import Mathlib.AlgebraicTopology.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,14 +9,11 @@ namespace StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
 
-
-
 noncomputable def faceInclusion (s : Finset ι) : (s → ℝ) →L[ℝ] (ι → ℝ) :=
   ContinuousLinearMap.pi (fun i => if hi : i ∈ s then
     ContinuousLinearMap.proj ⟨i, hi⟩ else 0)
 
 omit [Fintype ι] in
-
 
 theorem faceInclusion_apply_mem (s : Finset ι) (q : s → ℝ) {i : ι} (hi : i ∈ s) :
     faceInclusion s q i = q ⟨i, hi⟩ := by
@@ -34,13 +22,10 @@ theorem faceInclusion_apply_mem (s : Finset ι) (q : s → ℝ) {i : ι} (hi : i
 
 omit [Fintype ι] in
 
-
 theorem faceInclusion_apply_notMem (s : Finset ι) (q : s → ℝ) {i : ι} (hi : i ∉ s) :
     faceInclusion s q i = 0 := by
   simp only [faceInclusion, ContinuousLinearMap.pi_apply, dif_neg hi,
     zero_apply]
-
-
 
 theorem sum_faceInclusion (s : Finset ι) (q : s → ℝ) :
     ∑ i, faceInclusion s q i = ∑ i, q i := by
@@ -53,13 +38,10 @@ theorem sum_faceInclusion (s : Finset ι) (q : s → ℝ) :
   rw [he, ← Finset.sum_coe_sort]
   exact Finset.sum_congr rfl (fun i _ => faceInclusion_apply_mem s q i.property)
 
-
-
 def barycentricFace (s : Finset ι) : Set (ι → ℝ) :=
   {q | q ∈ stdSimplex ℝ ι ∧ ∀ i ∉ s, q i = 0}
 
 omit [DecidableEq ι] in
-
 
 theorem isClosed_barycentricFace (s : Finset ι) : IsClosed (barycentricFace s) := by
   have he : barycentricFace s = stdSimplex ℝ ι ∩
@@ -72,11 +54,8 @@ theorem isClosed_barycentricFace (s : Finset ι) : IsClosed (barycentricFace s) 
 
 omit [DecidableEq ι] in
 
-
 theorem isCompact_barycentricFace (s : Finset ι) : IsCompact (barycentricFace s) :=
   (isCompact_stdSimplex ℝ ι).of_isClosed_subset (isClosed_barycentricFace s) (fun _ h => h.1)
-
-
 
 theorem faceInclusion_mem_barycentricFace (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     {q : s → ℝ} (hq : q ∈ stdSimplexCore s η) : faceInclusion s q ∈ barycentricFace s := by
@@ -87,8 +66,6 @@ theorem faceInclusion_mem_barycentricFace (s : Finset ι) {η : ℝ} (hη : 0 �
     exact hη.trans (hq.1 ⟨i, hi⟩)
   · rw [faceInclusion_apply_notMem s q hi]
 
-
-
 theorem faceInclusion_mem_faceRegion (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     {q : s → ℝ} (hq : q ∈ stdSimplexCore s η) : faceInclusion s q ∈ faceRegion s η := by
   refine ⟨(faceInclusion_mem_barycentricFace s hη hq).1, ?_, ?_⟩
@@ -97,8 +74,6 @@ theorem faceInclusion_mem_faceRegion (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     exact hq.1 ⟨i, hi⟩
   · intro i hi
     simpa only [faceInclusion_apply_notMem s q hi] using hη
-
-
 
 theorem projectToFace_mem_barycentricFace (s : Finset ι) {η : ℝ} (hη : 0 ≤ η)
     (hbound : (Fintype.card ι : ℝ) * η < 1) {q : ι → ℝ}
@@ -109,7 +84,6 @@ theorem projectToFace_mem_barycentricFace (s : Finset ι) {η : ℝ} (hη : 0 �
 
 omit [Fintype ι] in
 
-
 theorem faceInclusion_projectToFace (s : Finset ι) (η : ℝ) (q : ι → ℝ) :
     faceInclusion s (fun i : s => projectToFace s η q i) = projectToFace s η q := by
   ext i
@@ -118,7 +92,6 @@ theorem faceInclusion_projectToFace (s : Finset ι) (η : ℝ) (q : ι → ℝ) 
   · simp only [faceInclusion_apply_notMem s _ hi, projectToFace, if_neg hi]
 
 omit [DecidableEq ι] in
-
 
 theorem subset_of_mem_barycentricFace_faceRegion {s t : Finset ι} {η : ℝ} (hη : 0 < η)
     {q : ι → ℝ} (hqt : q ∈ barycentricFace t) (hqs : q ∈ faceRegion s η) : s ⊆ t := by
@@ -136,13 +109,10 @@ open StdSimplexCore
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
 
-
-
 def barycentricSpace (A : PreAbstractSimplicialComplex ι) : Set (ι → ℝ) :=
   ⋃ s ∈ A.faces, barycentricFace s
 
 omit [DecidableEq ι] in
-
 
 theorem isCompact_barycentricSpace (A : PreAbstractSimplicialComplex ι) :
     IsCompact A.barycentricSpace :=
@@ -150,24 +120,18 @@ theorem isCompact_barycentricSpace (A : PreAbstractSimplicialComplex ι) :
 
 omit [DecidableEq ι] in
 
-
 theorem barycentricFace_subset_barycentricSpace (A : PreAbstractSimplicialComplex ι)
     {s : Finset ι} (hs : s ∈ A.faces) : barycentricFace s ⊆ A.barycentricSpace :=
   subset_iUnion₂_of_subset s hs Subset.rfl
-
-
 
 def coreRegion (A : PreAbstractSimplicialComplex ι) (s : Finset ι) (η : ℝ) : Set (ι → ℝ) :=
   A.barycentricSpace ∩ faceRegion s η
 
 omit [DecidableEq ι] in
 
-
 theorem isCompact_coreRegion (A : PreAbstractSimplicialComplex ι) (s : Finset ι) (η : ℝ) :
     IsCompact (A.coreRegion s η) :=
   A.isCompact_barycentricSpace.inter_right (isClosed_faceRegion s η)
-
-
 
 theorem projectToFace_mem_coreRegion (A : PreAbstractSimplicialComplex ι)
     {s : Finset ι} (hs : s ∈ A.faces) {η : ℝ} (hη : 0 ≤ η)
@@ -179,7 +143,6 @@ theorem projectToFace_mem_coreRegion (A : PreAbstractSimplicialComplex ι)
   exact faceInclusion_mem_faceRegion s hη (projectToFace_mem_core s hη hbound ⟨q, hq⟩)
 
 omit [DecidableEq ι] in
-
 
 theorem exists_mem_coreRegion (A : PreAbstractSimplicialComplex ι)
     {η : ℝ} (hη : 0 < η) (hbound : (Fintype.card ι : ℝ) * η < 1)

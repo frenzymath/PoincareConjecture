@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedCylinderJets
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.PullbackTails
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ open PoincareConjecture.M28.tube FiniteHessian
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem capturedCylinderCoordinates_error_germ
     {X : Type v} [TopologicalSpace X]
@@ -51,10 +38,6 @@ theorem capturedCylinderCoordinates_error_germ
     capturedCylinderCoordinates_source_coefficients gX e N hcapture q s p hx]
   ext v w
   rfl
-
-
-
-
 
 theorem exists_capturedCylinder_metric_error_tail
     {ι : Type*} {X : ι → Type v} [∀ i, TopologicalSpace (X i)]

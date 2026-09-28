@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.TubeExterior.CornerBands.Panels
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

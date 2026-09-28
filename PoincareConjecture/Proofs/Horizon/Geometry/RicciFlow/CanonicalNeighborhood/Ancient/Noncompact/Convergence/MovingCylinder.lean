@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.ChangingCylinder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 500000
@@ -44,7 +33,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   (τ : ℕ → ℝ) (hτ : ∀ k, τ k ∈ J)
 
 include hconv hfixed hJ hJzero hτ
-
 
 theorem smooth_zero_convergence_movingTime_changing_parametrized
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -125,7 +113,6 @@ theorem smooth_zero_convergence_movingTime_changing_parametrized
     apply (hDjet m K hK hKV).congr
     filter_upwards [heq] with k hk x hx
     exact (eqOn_iteratedFDeriv_of_isOpen hW hk m) (hKW hx)
-
 
 theorem smooth_zero_convergence_movingTime_cylinder_parametrizations
     {δ : ℝ} {Φ : RoundCylinderSpace → G.limit.carrier.carrier}
@@ -217,8 +204,6 @@ theorem smooth_zero_convergence_movingTime_cylinder_parametrizations
   · intro m K hK hKV
     exact (hDjet m K hK hKV).congr (Eventually.of_forall fun i x hx =>
       (eqOn_iteratedFDeriv_of_isOpen hV (heq i) m) (hKV hx))
-
-
 
 theorem smooth_zero_convergence_movingTime_cylinder_coefficients
     {δ : ℝ} {Φ : RoundCylinderSpace → G.limit.carrier.carrier}

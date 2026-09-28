@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleIncidenceRanks
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Caps.CountTwoSphere
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteCarrierLocalPathConnected
 
-
-
 set_option autoImplicit false
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
 

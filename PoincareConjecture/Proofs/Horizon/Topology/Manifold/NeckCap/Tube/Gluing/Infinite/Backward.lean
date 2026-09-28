@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_backward_cylinder_with_affine_tail_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -163,8 +151,6 @@ theorem exists_backward_cylinder_with_affine_tail_threshold :
   have hcarrier : (N 0).carrierOpen = (C.neck b).carrierOpen := by rw [hN0]; rfl
   rw [hcarrier] at hout
   exact hUnion ▸ hout
-
-
 
 theorem exists_backward_cylinder_with_tail_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

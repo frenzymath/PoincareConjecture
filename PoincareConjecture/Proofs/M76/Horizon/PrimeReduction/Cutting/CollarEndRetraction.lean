@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedCollarOpenCoordinates
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

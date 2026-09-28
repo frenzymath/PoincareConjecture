@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.HarmonicMinimum
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -19,9 +10,6 @@ open Set Filter InnerProductSpace
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 def m64ModulusSourceDilation (r : ℝ) (hr : r ≠ 0) : LoopPlane ≃L[ℝ] LoopPlane where
   toFun p := annulusPoint (r * p 0) (p 1)
@@ -41,9 +29,6 @@ def m64ModulusSourceDilation (r : ℝ) (hr : r ≠ 0) : LoopPlane ≃L[ℝ] Loop
   continuous_toFun := by unfold annulusPoint; fun_prop
   continuous_invFun := by unfold annulusPoint; fun_prop
 
-
-
-
 theorem m64ModulusSourceDilation_hessian (r : ℝ) (hr : r ≠ 0)
     (f : LoopPlane → ℝ) (p v w : LoopPlane) :
     fderiv ℝ (fderiv ℝ (f ∘ m64ModulusSourceDilation r hr)) p v w =
@@ -58,10 +43,6 @@ theorem m64ModulusSourceDilation_hessian (r : ℝ) (hr : r ≠ 0)
   simpa only [ContinuousMultilinearMap.compContinuousLinearMap_apply,
     iteratedFDeriv_two_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.cons_val_fin_one, ContinuousLinearEquiv.coe_coe] using hv
-
-
-
-
 
 theorem m64ModulusSourceDilation_laplacian (r : ℝ) (hr : r ≠ 0)
     (f : LoopPlane → ℝ) (p : LoopPlane) :
@@ -92,10 +73,6 @@ theorem m64ModulusSourceDilation_laplacian (r : ℝ) (hr : r ≠ 0)
   field_simp
   ring
 
-
-
-
-
 theorem m64ModulusHarmonicAt_eventually_eq_of_isLocalMin
     {r : ℝ} (hr : 0 < r) {f : LoopPlane → ℝ} {p : LoopPlane}
     (hf : ContDiffAt ℝ 2 f p)
@@ -121,10 +98,6 @@ theorem m64ModulusHarmonicAt_eventually_eq_of_isLocalMin
   have hback := L.symm.continuous.continuousAt.tendsto.eventually hlocal
   change ∀ᶠ x in 𝓝 p, f x = f p
   simpa only [Function.comp_apply, hLp, L.apply_symm_apply] using hback
-
-
-
-
 
 theorem m64ModulusHarmonic_eqOn_of_minimum
     {r : ℝ} (hr : 0 < r) {f : LoopPlane → ℝ} {U : Set LoopPlane}

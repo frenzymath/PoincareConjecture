@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopInwardCollar
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +25,6 @@ private theorem interval_buffer {X : Set ℝ} (hX : IsOpen X)
   · exact hright ⟨hsu.1.trans hbt, ht.2⟩
   exact hI ⟨le_of_not_gt hta, le_of_not_gt hbt⟩
 
-
-
-
 theorem m64Intrinsic_loop_graph_neighborhood_of_interval
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {T a b : ℝ}
     (hend : gamma 0 = gamma T) (hinj : InjOn gamma (Ico 0 T))
@@ -60,9 +44,6 @@ theorem m64Intrinsic_loop_graph_neighborhood_of_interval
   exact ⟨W, hW, hcover, fun z hz => (hlocal z hz).2⟩
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem m64Intrinsic_exists_graph_strip_frontier_chart
     {gamma : ℝ → AnnulusCoordinates} (hg : Continuous gamma) {T a b : ℝ}

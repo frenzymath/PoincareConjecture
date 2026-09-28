@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sublevel.Minimum
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,7 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 theorem morse_signs_eq_one_of_isLocalMin
     {M : Type*} [TopologicalSpace M] {h : M -> Real}
@@ -47,8 +34,6 @@ theorem morse_signs_eq_one_of_isLocalMin
     change h (e 0) ≤ h (e (EuclideanSpace.single i (r / 2))) at hxle
     nlinarith [sq_pos_of_pos (half_pos hr)]
   · exact hi
-
-
 
 theorem exists_minimum_cap_radius
     {M : Type*} [TopologicalSpace M] {h : M -> Real}
@@ -117,7 +102,6 @@ theorem exists_minimum_cap_radius
         rw [← e.right_inv hp, hnorm _ hx] at hh
         simpa only [mem_sphere, dist_zero_right, add_right_inj, heq] using hh
 
-
 theorem exists_maximum_cap_radius
     {M : Type*} [TopologicalSpace M] {h : M -> Real}
     (e : OpenPartialHomeomorph E2 M) (he0 : 0 ∈ e.source)
@@ -142,8 +126,6 @@ theorem exists_maximum_cap_radius
   obtain ⟨hc, ho, hs⟩ := hcap r hr
   refine ⟨hc.trans ?_, ho.trans ?_, hs.trans ?_⟩ <;> congr 1 <;> ext p <;>
     simp only [mem_ofPred_eq] <;> constructor <;> intro hp <;> linarith
-
-
 
 theorem exists_minimum_cap_of_morse_coordinates
     {M : Type*} [TopologicalSpace M] [ChartedSpace E2 M]

@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Complete.Continuation
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +12,6 @@ namespace Poincare.Manifold
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {X : (x : M) → TangentSpace (𝓡 n) x}
-
-
 
 theorem exists_smooth_localFlow_on_arbitrary_interval
     (hX : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% X))
@@ -110,8 +107,6 @@ theorem exists_smooth_localFlow_on_arbitrary_interval
   obtain ⟨_, V, Φ, hV, hxV, hΦ, hi⟩ := haS
   exact ⟨V, Φ, hV, hxV, hΦ.mono subset_rfl
     (Ioo_subset_Ioo (neg_le_neg hAa.le) hAa.le), hi⟩
-
-
 
 theorem exists_smooth_globalFlow_of_compact_confinement
     (hX : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% X))

@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Radial.Regularity
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem isInvertible_mfderiv_of_injective
     {e : EuclideanSpace ℝ (Fin n) → M} {v : EuclideanSpace ℝ (Fin n)}
     (h : Function.Injective (mfderiv (𝓡 n) (𝓡 n) e v)) :
@@ -31,8 +26,6 @@ theorem isInvertible_mfderiv_of_injective
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank rfl).mp hi
   exact ⟨ContinuousLinearEquiv.ofBijective A (LinearMap.ker_eq_bot.mpr hi)
     (LinearMap.range_eq_top.mpr hs), rfl⟩
-
-
 
 theorem isInvertible_mfderiv_zero_of_chart_derivative
     {e : EuclideanSpace ℝ (Fin n) → M} {p : M}

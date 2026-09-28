@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.DisjointRetainedFibers
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceDiskBoundary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedSourceGerms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

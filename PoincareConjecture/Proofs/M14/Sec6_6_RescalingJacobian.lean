@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingStable
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingMeasureBasis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -50,8 +41,6 @@ private theorem rescaled_pair_of_values (S : GeneralizedFlowSpacetime n X time I
   rw [hv', hw']
   exact M13.parabolicSpacetime_metric S Q hQ a p v w
 
-
-
 theorem rescalingEndpointTangent_pair {T τ : ℝ} {x : G.Point}
     {E : M14ExponentialFamily G T x} (H : M14StableSet G T τ x E)
     (Z : G.Horizontal x) (hZ : Z ∈ H.carrier) (v w : G.Horizontal x) :
@@ -70,7 +59,6 @@ theorem rescalingEndpointTangent_pair {T τ : ℝ} {x : G.Point}
   exact h.symm
 
 include hCoordinates in
-
 
 theorem rescalingDifferential_pair {T : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -94,8 +82,6 @@ theorem rescalingDifferential_pair {T : ℝ} {x : G.Point}
     (rescalingDifferential_val hCoordinates hM12 hM13 G Q hQ a E E' Z w s hs hs')
 
 include hCoordinates in
-
-
 
 theorem rescalingStableTangent_pair {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -124,7 +110,6 @@ theorem rescalingStableTangent_pair {T τ : ℝ} {x : G.Point}
         (H.survivor Z hZ) (H'.survivor _ hZ')).trans (congrArg (Q * ·) hsource.symm))
 
 include hCoordinates in
-
 
 theorem rescalingJacobian_scale {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

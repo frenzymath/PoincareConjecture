@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderFiniteHeightSignEvents
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarDiskConvexContainment
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,12 +15,6 @@ namespace Geometry.AlexanderSectionProfile
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem exists_recursive_sphere_split_in_convex_open_at_zero
     (W : AlexanderSectionProfile E) (hdim : Module.finrank ℝ E = 3)

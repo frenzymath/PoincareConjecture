@@ -1,9 +1,5 @@
 import PoincareConjecture.Definitions.M54GroupEffects
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -11,35 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedGroupEffectsTheory : Prop where
   effects : ∀ {A B : GeneralizedSliceCarrier.{u}}

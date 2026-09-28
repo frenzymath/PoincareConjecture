@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_PullbackAlgebra
 import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M08.SecondVariationCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullback_chart_field {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) {γ : ℝ → M} {x : ℝ}
@@ -53,8 +42,6 @@ theorem pullback_chart_field {g : RiemannianMetric n M}
       (((hv x hx).contDiffAt (hU.mem_nhds hx)).differentiableAt (by simp)).hasDerivAt
   have heq := (hasDerivAt_fixedPointTimeDerivative W (γ x) x hW).unique htime
   rw [pullback_parametric_field D hγ W hW, heq]
-
-
 
 theorem pullback_velocity_commute {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (c : ℝ → ℝ → M)

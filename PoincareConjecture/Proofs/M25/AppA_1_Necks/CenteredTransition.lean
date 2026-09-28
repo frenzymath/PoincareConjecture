@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.Overlap_A11
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Composition
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.Hessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,16 +19,12 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def centeredEuclideanTransition (N N' : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (q' : UnitTwoSphere) (s' : ℝ)
     (x : EuclideanSpace ℝ (Fin 3)) : EuclideanSpace ℝ (Fin 3) :=
   let z := N'.coordinate_inverse (N.euclideanParametrization q s x)
   (RiemannianMetric.lineModelEquiv 2)
     (chartAt (EuclideanSpace ℝ (Fin 2)) q' z.1, z.2 - s')
-
-
 
 theorem centeredEuclideanTransition_zero (N N' : EpsilonNeck g)
     (q q' : UnitTwoSphere) {s s' : ℝ}
@@ -50,8 +36,6 @@ theorem centeredEuclideanTransition_zero (N N' : EpsilonNeck g)
       ⟨mem_univ _, hs'⟩),
     Poincare.Geometry.Riemannian.SpaceForm.sphere_chart_center, sub_self]
   exact (RiemannianMetric.lineModelEquiv 2).map_zero
-
-
 
 theorem centeredEuclideanTransition_germ (N N' : EpsilonNeck g)
     (q q' : UnitTwoSphere) {s s' : ℝ}
@@ -134,8 +118,6 @@ theorem centeredEuclideanTransition_germ (N N' : EpsilonNeck g)
       rw [c.left_inv hxU.2.2.1]
       exact N'.coordinate_map_coordinate_inverse hxU.2.1
 
-
-
 theorem normalizedEuclideanCoefficients_transition_eventuallyEq (N N' : EpsilonNeck g)
     (q q' : UnitTwoSphere) {s s' : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -171,8 +153,6 @@ theorem normalizedEuclideanCoefficients_transition_eventuallyEq (N N' : EpsilonN
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem norm_fderiv_centeredEuclideanTransition_le (N N' : EpsilonNeck g)
     (q q' : UnitTwoSphere) {s s' : ℝ}
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -205,8 +185,6 @@ theorem norm_fderiv_centeredEuclideanTransition_le (N N' : EpsilonNeck g)
         (N.normalizedEuclideanCoefficients_upper q hs v) (sq_nonneg ρ)
   apply (sq_le_sq₀ (norm_nonneg _) (by positivity : 0 ≤ 3 * ρ * ‖v‖)).mp
   nlinarith [sq_nonneg (ρ * ‖v‖)]
-
-
 
 theorem exists_centeredEuclideanTransition_hessian_scaled_bound :
     ∃ K : ℝ, 0 < K ∧ ∀ {M : Type u} [TopologicalSpace M]
@@ -318,8 +296,6 @@ theorem exists_centeredEuclideanTransition_hessian_scaled_bound :
     _ ≤ (27 * C) * (ρ * N.epsilon + ρ ^ 2 * N'.epsilon) * ‖v‖ * ‖w‖ := by
       have he : 0 ≤ C * ρ * N.epsilon := by positivity
       nlinarith [mul_nonneg he (mul_nonneg (norm_nonneg v) (norm_nonneg w))]
-
-
 
 theorem exists_intersecting_centeredEuclideanTransition_jet_bounds :
     ∃ K : ℝ, 0 < K ∧ ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

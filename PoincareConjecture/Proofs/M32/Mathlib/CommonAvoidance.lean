@@ -1,14 +1,5 @@
 import Mathlib.Topology.Algebra.Module.Cardinality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_between_avoiding_countable_preimages
     {I : Type u} [Countable I] {Y : I → Type v}

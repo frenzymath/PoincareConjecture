@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Germ.BallEquivalence
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Localization
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_supported_nested_ball_equivalence
     (B D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -49,7 +44,6 @@ theorem exists_supported_nested_ball_equivalence
         exact fun y hy => hBO ⟨hnest hy.1, hy.2⟩)
   refine ⟨K, hK, hKO, hmrange ▸ hKD, F, hFfix, ?_⟩
   exact (image_congr hFon).trans hEB
-
 
 theorem exists_nested_ball_equivalence_fixing_obstacle
     (B D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

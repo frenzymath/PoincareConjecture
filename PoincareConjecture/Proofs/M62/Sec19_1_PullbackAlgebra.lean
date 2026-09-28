@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackConnection
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullback_congr {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M}
@@ -43,8 +32,6 @@ theorem pullback_congr {g : RiemannianMetric n M}
         (γ x) (curveVelocity γ x) = _
   rw [heq.deriv_eq, hx]
   rfl
-
-
 
 theorem pullback_smul {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M}

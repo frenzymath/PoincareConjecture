@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryProduct
 import PoincareConjecture.Proofs.M76.PrimeReduction.DerivedBoundaryCollar
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
 
 theorem exists_protected_small_boundary_collar
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

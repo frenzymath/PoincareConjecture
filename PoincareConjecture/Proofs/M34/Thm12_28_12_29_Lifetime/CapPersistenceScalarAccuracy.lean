@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceScalarModel
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceEuclideanJets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +10,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem capPersistence_exists_scalar_accuracy {eta : ℝ} (heta : 0 < eta) :
     ∃ delta0 : ℝ, 0 < delta0 ∧ ∀ (delta : ℝ), 0 < delta → delta < delta0 →

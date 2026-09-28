@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Primitive
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,7 +61,6 @@ private theorem chart_constant_fields_commute
   rw [hzero]
   simp [mpullback]
 
-
 def chartMetricDual (g : RiemannianMetric n M)
     (V : (x : M) → TangentSpace (𝓡 n) x)
     (e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin n)))
@@ -84,7 +75,6 @@ private theorem chartMetricDual_apply
     chartMetricDual g V e z v =
       g.inner (e.symm z) (V (e.symm z))
         (mpullback (𝓡 n) (𝓡 n) e (fun _ => v) (e.symm z)) := rfl
-
 
 theorem contDiffOn_chartMetricDual
     (g : RiemannianMetric n M) {V : (x : M) → TangentSpace (𝓡 n) x}
@@ -127,8 +117,6 @@ private theorem fderiv_chart_composition
   simp only [mvfderiv, mfderiv_eq_fderiv, ContinuousLinearMap.comp_apply] at h
   exact h
 
-
-
 theorem fderiv_chartMetricDual_symmetric (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% V))
@@ -168,9 +156,6 @@ theorem fderiv_chartMetricDual_symmetric (D : LeviCivitaData g)
   have ht := D.connection.torsion_eq_zero_iff.mp D.torsion_eq_zero (hX u) (hX v)
   rw [chart_constant_fields_commute e he (e.map_target hz) u v] at ht
   exact congrArg (g.inner (e.symm z) (V (e.symm z))) (sub_eq_zero.mp ht)
-
-
-
 
 theorem exists_local_potential_of_parallel (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.Curvature.RoundBlowup
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.LimitScalar
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -41,7 +32,6 @@ variable {M : Type u} [TopologicalSpace M]
   {K : AncientKappaSolution 3 M} {S : AncientRescalingSequence K}
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_scalar_normalized_round_surface_blowup_limit_of_unbounded_scalarCurvature
     (P : ThreeDimensionalClassificationPredecessors.{u}) (L : AncientAsymptoticSolitonLimitData S)

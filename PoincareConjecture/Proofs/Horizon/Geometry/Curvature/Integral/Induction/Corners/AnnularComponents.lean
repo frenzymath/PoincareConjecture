@@ -8,15 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Volume
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -257,8 +248,6 @@ private theorem transfer_rescaled_level_geometry
   convert hb using 1 <;> congr 1 <;> ring
 end PoincareConjecture.RiemannianMetric
 
-
-
 theorem PoincareConjecture.RiemannianMetric.regularLevel_geometry_of_annular_opposite_partner
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [MeasurableSpace M] [BorelSpace M] [T3Space M] [PreconnectedSpace M]
@@ -327,8 +316,6 @@ theorem PoincareConjecture.RiemannianMetric.regularLevel_geometry_of_annular_opp
       exact mul_left_cancel₀ (Real.sqrt_pos.mpr hc').ne' hx.2
   exact g.transfer_rescaled_level_geometry hc hF hv U hreg hr hc' hsqrt hregF he
     _ hfinite hcard hdiam
-
-
 
 theorem PoincareConjecture.RiemannianMetric.exists_annular_slab_with_controlled_level_geometry
     {n : ℕ} {M : Type*} [TopologicalSpace M]

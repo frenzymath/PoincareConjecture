@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCapReclock
 import PoincareConjecture.Proofs.M47.BlowupControlsCapIncluded
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CapBirth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_strongNeck_included_cap_comparison_capture_cutoff_above
     (P : M47Predecessors.{u}) {g0 : StandardInitialMetric}
@@ -158,8 +147,6 @@ theorem exists_strongNeck_included_cap_comparison_capture_cutoff_above
     exact eq_of_heq ((basedClosed _ _ hxW).trans (basedF _ _ hxV).symm)
   exact (heq_of_eq heq).trans (terminalF htop x hx)
 
-
-
 theorem exists_strongNeck_included_cap_comparison_capture_cutoff
     (P : M47Predecessors.{u}) {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {epsilon c : ℝ}
@@ -221,8 +208,6 @@ theorem exists_strongNeck_included_cap_comparison_capture_cutoff
   obtain ⟨A, eta0, delta0, _hApos, hA, heta0, hetaHalf, hdelta0, produce⟩ := radii 0
   exact ⟨theta1, theta2, A, eta0, delta0, ht1, ht12, ht2, hA,
     heta0, hetaHalf, hdelta0, produce⟩
-
-
 
 theorem exists_strongNeck_included_cap_comparison_cutoff
     (P : M47Predecessors.{u}) {g0 : StandardInitialMetric}

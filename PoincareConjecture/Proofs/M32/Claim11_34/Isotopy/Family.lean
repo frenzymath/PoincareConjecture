@@ -2,19 +2,6 @@ import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +13,6 @@ namespace PoincareConjecture.M32
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
-
 
 theorem exists_stationary_smooth_sphere_isotopy {U S₀ S₁ : Set M}
     (h : SmoothSphereIsotopicIn U S₀ S₁) :

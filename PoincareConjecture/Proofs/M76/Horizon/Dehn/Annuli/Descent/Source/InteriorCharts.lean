@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M76.Dehn.ProtectedAnnulus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V" => (V1 × V2)
-
-
-
 
 theorem exists_interior_source_chart {x : V} (hx : x ∈ source)
     (hxr : x.1 ∉ sphere (0 : V1) 1) :

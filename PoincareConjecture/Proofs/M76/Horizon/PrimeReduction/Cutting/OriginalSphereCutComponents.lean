@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedCompon
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSphereTopology
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.FiniteCollarProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

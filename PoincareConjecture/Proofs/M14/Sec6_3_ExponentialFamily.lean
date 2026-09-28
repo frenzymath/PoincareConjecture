@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialActionTime
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialTangent
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareEulerReverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
-
 
 noncomputable def exponentialFamily
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

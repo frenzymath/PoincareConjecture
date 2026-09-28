@@ -1,18 +1,8 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallTestScale
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_seed_low_scalar_scale (C threshold : ℝ) {rNext : ℝ}
     (hrNext : 0 < rNext) :

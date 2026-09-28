@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.GrowingRegularity.TimeDerivatives.Equation
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.RescaledEstimate
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +9,6 @@ open Set Filter
 open scoped ContDiff Topology RealInnerProductSpace BigOperators
 
 namespace Poincare.Parabolic.Interior
-
-
 
 theorem exists_uniform_static_heat_timeDerivative_bound
     (n : ℕ) (hn : 1 ≤ n) {r δ lam Λ H : ℝ}
@@ -134,8 +129,6 @@ theorem exists_uniform_static_heat_timeDerivative_bound
               (mul_nonneg (sq_nonneg (n : ℝ)) (hlam.le.trans hlamΛ))
     _ = ((n : ℝ) ^ 2 * Λ * C) * B := by ring
 
-
-
 theorem exists_uniform_iterate_timeDerivative_bound
     (n : ℕ) (hn : 1 ≤ n) {lam Λ H : ℝ}
     (hlam : 0 < lam) (hlamΛ : lam ≤ Λ) (hH : 0 ≤ H) (k : ℕ) :
@@ -212,9 +205,6 @@ theorem exists_uniform_iterate_timeDerivative_bound
       (fun y hy s hs => hheatk y (hlarge hy) s (hlarget hs))
       (fun y hy s hs => hvaluek y (hsmall hy) s (hsmallt hs))
     simpa only [Function.iterate_succ_apply', mul_assoc] using hbound
-
-
-
 
 theorem exists_uniform_iterate_timeDerivative_bound_on
     (n : ℕ) (hn : 1 ≤ n) {lam Λ H : ℝ}

@@ -1,15 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.GeometricPreservation.Transport
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.SecondBianchi
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -35,7 +25,6 @@ private theorem mdifferentiableAt_transport_section
       (T% (fun y => canonicalTransport F t y (Y y))) x := by
   exact ((canonicalTransport_contMDiff_space F ht x).mdifferentiableAt
     (by simp)).clm_bundle_apply hY
-
 
 def transportedConnection (F : RicciFlow n M (Ico a b)) {t : ℝ}
     (ht : t ∈ Ico a b) :
@@ -83,7 +72,6 @@ def transportedConnection (F : RicciFlow n M (Ico a b)) {t : ℝ}
       ((F.connection t).connection (fun y => canonicalTransport F t y (Y y)) x v) :=
   rfl
 
-
 theorem transportedConnection_metricCompatible
     (F : RicciFlow n M (Ico a b)) (hab : a < b)
     {t : ℝ} (ht : t ∈ Ico a b) :
@@ -114,7 +102,6 @@ theorem transportedConnection_metricCompatible
     (F.metric t).inner x (canonicalTransport F t x (Y x))
       (orthonormalTransport F t x ((orthonormalTransport F t x).symm _))
   simp only [ContinuousLinearEquiv.apply_symm_apply]
-
 
 theorem contMDiffAt_inverseTransport_section
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b)
@@ -155,7 +142,6 @@ theorem contMDiffAt_inverseTransport_section
       ((e.continuousLinearEquivAt ℝ y hy) ((orthonormalTransport F t y).symm (Y y))))) = _
   simp only [ContinuousLinearEquiv.symm_apply_apply, ContinuousLinearEquiv.apply_symm_apply]
   rfl
-
 
 theorem transportedConnection_smooth
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b) :

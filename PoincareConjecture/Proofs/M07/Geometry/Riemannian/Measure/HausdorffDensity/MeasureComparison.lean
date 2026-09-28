@@ -2,14 +2,6 @@ import Mathlib.Geometry.Euclidean.Volume.Measure
 import Mathlib.MeasureTheory.Measure.WithDensity
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

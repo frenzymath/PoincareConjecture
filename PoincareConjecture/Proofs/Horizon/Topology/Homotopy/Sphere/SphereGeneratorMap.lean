@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeHomotopyLifting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval

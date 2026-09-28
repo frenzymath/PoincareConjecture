@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -17,8 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 structure Chapter11GoodPoint (G : GeneralizedRicciFlowData.{u})
     (epsilon C A : ℝ) (p : G.point) : Prop where
@@ -31,8 +19,6 @@ structure Chapter11GoodPoint (G : GeneralizedRicciFlowData.{u})
       ∃ d : ℝ, HasDerivWithinAt (fun s => ((G.box b).flow.connection s).scalarCurvature x)
         d (G.box b).interval p.1 ∧
           |d| ≤ A * (((G.box b).flow.connection p.1).scalarCurvature x) ^ 2
-
-
 
 theorem chapter11GoodPoint_earlier_canonical
     {G : GeneralizedRicciFlowData.{u}} {epsilon C A : ℝ} (p : G.point)

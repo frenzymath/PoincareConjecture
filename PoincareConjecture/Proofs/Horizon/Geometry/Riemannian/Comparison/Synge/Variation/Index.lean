@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.PieceDeriv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.MinimalVariation
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,20 +22,16 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {γ η₀ η₁ : ℝ → M}
   {V : ℝ → EuclideanSpace ℝ (Fin n)} {a b : ℝ}
 
-
 theorem GeodesicVariation.source (R : GeodesicVariation g γ V a b η₀ η₁)
     {i : ℕ} (hi : i < R.N) {t : ℝ} (ht : t ∈ Icc (R.τ i) (R.τ (i + 1))) :
     γ t ∈ (extChartAt (𝓡 n) (R.β i)).source :=
   R.base_source i hi t ⟨by linarith [ht.1, R.ρ_pos], by linarith [ht.2, R.ρ_pos]⟩
-
 
 theorem GeodesicVariation.time_subset (R : GeodesicVariation g γ V a b η₀ η₁)
     {i : ℕ} (hi : i < R.N) : Icc (R.τ i) (R.τ (i + 1)) ⊆ Icc a b := by
   intro t ht
   exact ⟨(R.time_mem i (by omega)).1.trans ht.1,
     ht.2.trans (R.time_mem (i + 1) (by omega)).2⟩
-
-
 
 theorem GeodesicVariation.sum_index_nonneg [T2Space M]
     (R : GeodesicVariation g γ V a b η₀ η₁) (D : LeviCivitaData g)
@@ -160,8 +147,6 @@ theorem GeodesicVariation.sum_index_nonneg [T2Space M]
     (hVa.differentiableAt (by simp))
     (((R.smooth i hi').of_le (by norm_num)).contDiffAt)
     (R.base i hi' t ht') (R.field i hi' t ht')).symm
-
-
 
 theorem GeodesicVariation.index_integrable [T2Space M]
     (R : GeodesicVariation g γ V a b η₀ η₁) (D : LeviCivitaData g)

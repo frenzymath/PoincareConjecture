@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedODELocalExistence
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedStateExtension
 import PoincareConjecture.Proofs.M14.Mathlib.ContinuousPathFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,10 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem closedODE_exists_smooth_path_family {a b : ℝ} (hab : a < b) (t₀ : Icc a b)
     {U : Set E} (hU : IsOpen U) (f : ℝ × E → E)

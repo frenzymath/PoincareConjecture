@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bu
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.EndpointMidpointFibers
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.TwistedInvolutionInterval
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Geometry

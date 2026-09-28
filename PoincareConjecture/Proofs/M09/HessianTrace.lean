@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.BasisContractions
 import PoincareConjecture.Proofs.M09.TensorTrace
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

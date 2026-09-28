@@ -1,19 +1,7 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
 open Set Function Filter
 open scoped Manifold Topology ContDiff
-
-
-
-
 
 namespace Poincare.Manifold
 
@@ -21,8 +9,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {H : Type*} [TopologicalSpace H]
   (I : ModelWithCorners ℝ E H) {M : Type*} [TopologicalSpace M]
   [ChartedSpace H M] [IsManifold I ∞ M] [T2Space M] [SecondCountableTopology M]
-
-
 
 theorem exists_compact_smooth_cutoff {C U : Set M} (hC : IsCompact C)
     (hU : IsOpen U) (hCU : C ⊆ U) :
@@ -59,6 +45,5 @@ theorem exists_compact_smooth_cutoff {C U : Set M} (hC : IsCompact C)
     exact hy.le
   · intro x hx
     exact (frontier_le_subset_eq continuous_const f.contMDiff.continuous hx).symm
-
 
 end Poincare.Manifold

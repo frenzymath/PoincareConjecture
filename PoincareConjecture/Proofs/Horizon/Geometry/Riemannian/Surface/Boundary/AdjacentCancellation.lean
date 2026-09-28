@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.AdjacentParameters
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Cancellation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +32,6 @@ theorem chartTriangle_vertical_velocity
   dsimp only [TangentSpace] at h ⊢
   rw [hcurve, hpoint] at h
   exact h
-
-
 
 theorem integral_chartTriangle_shared_side_pair_eq_zero
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

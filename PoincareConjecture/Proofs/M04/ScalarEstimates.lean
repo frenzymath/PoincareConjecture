@@ -3,15 +3,6 @@ import Mathlib.Algebra.Order.Chebyshev
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Analysis.Calculus.DerivativeTest
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -104,7 +95,6 @@ private theorem contMDiffAt_mvfderiv_extend {f : M → ℝ} {x : M}
   have hsnd := contMDiff_snd_tangentBundle_modelSpace (n := 1) ℝ 𝓘(ℝ, ℝ)
   exact (hsnd _).comp x happ
 
-
 theorem hessian_nonneg_of_isLocalMin (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) (hmin : IsLocalMin f x)
     (v : TangentSpace (𝓡 n) x) : 0 ≤ D.hessian f x v v := by
@@ -156,12 +146,10 @@ theorem hessian_nonneg_of_isLocalMin (D : LeviCivitaData g) {f : M → ℝ} {x :
     mvfderiv (𝓡 n) f x (D.connection X x (X x))
   rwa [hcorrection, sub_zero, ← hsecond]
 
-
 theorem laplacian_nonneg_of_isLocalMin (D : LeviCivitaData g) {f : M → ℝ} {x : M}
     (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x) (hmin : IsLocalMin f x) :
     0 ≤ D.laplacian f x := by
   exact Finset.sum_nonneg fun _ _ ↦ D.hessian_nonneg_of_isLocalMin hf hmin _
-
 
 theorem scalarCurvature_sq_le (D : LeviCivitaData g) (x : M) :
     (D.scalarCurvature x) ^ 2 ≤ (n : ℝ) * D.ricciNormSq x := by

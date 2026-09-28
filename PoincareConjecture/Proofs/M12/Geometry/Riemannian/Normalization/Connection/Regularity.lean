@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Connectio
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Connection.Smoothness
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem normalization_contMDiffOn_connection (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)
@@ -50,7 +41,6 @@ theorem normalization_contMDiffOn_connection (D : LeviCivitaData g)
     linarith
   exact ConnectionExistence.koszul_operator_contMDiffOn g
     (fun Y x ↦ D.connection Y x) hA hU Y hY
-
 
 theorem normalization_contMDiffOn_connection_apply (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U)

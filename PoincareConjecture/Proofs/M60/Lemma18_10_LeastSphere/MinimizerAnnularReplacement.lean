@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnular
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerAnnularHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 set_option maxHeartbeats 1200000 in
-
-
-
 
 theorem m60Sphere_annular_replacement (g : RiemannianMetric n M) :
     M60SphereAnnularReplacement g := by

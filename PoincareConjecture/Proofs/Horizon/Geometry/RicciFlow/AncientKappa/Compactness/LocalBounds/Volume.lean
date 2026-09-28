@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.Selection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem m23_recentered_volume_lower_bound
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)
@@ -66,9 +56,6 @@ theorem m23_recentered_volume_lower_bound
   rw [ENNReal.ofReal_mul (div_nonneg hν (by norm_num : (0 : ℝ) ≤ 27)),
     ENNReal.ofReal_pow ha.le]
   exact h
-
-
-
 
 theorem m23_exists_backward_controlled_point_with_volume
     (P : M23NormalizedKappaCompactnessPredecessors) (K : AncientKappaSolution 3 M)

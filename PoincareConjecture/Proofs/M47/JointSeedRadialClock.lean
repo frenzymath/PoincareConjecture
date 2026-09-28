@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M47.JointSeedSquarePath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M47
-
-
 
 theorem jointSeed_radial_parameter_bounds {d v s : ℝ}
     (hv : 0 < v) (hvd : v < d)
@@ -39,8 +28,6 @@ theorem jointSeed_radial_parameter_bounds {d v s : ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
-
-
 theorem jointSeed_radial_square_curve_smooth (gamma : ℝ → M)
     (hgamma : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 n) ∞ gamma) (d v : ℝ) :
     ContMDiff (𝓘(ℝ, ℝ)) (𝓡 n) ∞ (fun s => gamma (2 * (s ^ 2 - (d - v)) / v)) :=
@@ -48,7 +35,6 @@ theorem jointSeed_radial_square_curve_smooth (gamma : ℝ → M)
     (((contDiff_const.mul ((contDiff_id.pow 2).sub contDiff_const)).div_const v).contMDiff)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem jointSeed_radial_square_velocity (gamma : ℝ → M)
     (hgamma : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 n) ∞ gamma) (d v s : ℝ) :
@@ -69,8 +55,6 @@ theorem jointSeed_radial_square_velocity (gamma : ℝ → M)
   exact hchain
 
 variable [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem jointSeed_radial_square_reference_energy
     (g : RiemannianMetric n M) (gamma : ℝ → M)

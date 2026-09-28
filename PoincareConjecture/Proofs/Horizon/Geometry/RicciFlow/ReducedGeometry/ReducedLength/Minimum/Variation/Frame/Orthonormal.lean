@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.Continuation.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -108,8 +101,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Frame
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_smooth_adapted_orthonormal_frame_surface
     (F : RicciFlow 2 M (Iic 0)) (γ : ℝ → M) (U : Set ℝ) (hU : IsOpen U)

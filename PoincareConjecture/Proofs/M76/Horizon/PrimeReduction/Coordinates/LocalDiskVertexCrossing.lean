@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcCrossedStar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInteriorChart
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Geometry
@@ -20,8 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 theorem exists_vertex_crossing_chart_of_local_disk
     (K L : SimplicialComplex ℝ C3) (hK : K.faces.Finite) (hLK : L ≤ K)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralImageOpenDeformation
 import PoincareConjecture.Proofs.M76.Mathlib.OpenSubtypePLAtlas
 import PoincareConjecture.Proofs.M76.Mathlib.HomotopyConnectedRange
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z
@@ -25,10 +15,6 @@ variable {U : Type u} {E : Type v} {M : Type w} {ι : Type z}
   [NormedAddCommGroup U] [NormedSpace ℝ U]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [TopologicalSpace M]
-
-
-
-
 
 structure Stage (e : ι → OpenPartialHomeomorph M E)
     (S : SimplicialComplex ℝ U) (f : U → M) (r : M → ℝ) (C : Set M) where
@@ -65,16 +51,12 @@ attribute [instance] Stage.topology Stage.t2 Stage.locallyCompact Stage.pathConn
 variable {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
 
-
-
 def Stage.source (s : Stage e S f r C) : C(S.space, s.Carrier) :=
   ⟨fun x => s.sourceMap x, s.sourcePL.continuousOn.domRestrict⟩
 
 theorem Stage.range_source (s : Stage e S f r C) :
     range s.source = s.sourceMap '' S.space :=
   range_domRestrict s.sourceMap S.space
-
-
 
 theorem Stage.chart_source (s : Stage e S f r C) (k : s.Index) :
     MapsTo s.projection (s.charts k).source (e (s.chartIndex k)).source := by
@@ -87,8 +69,6 @@ theorem Stage.chart_source (s : Stage e S f r C) (k : s.Index) :
   rw [(s.charts k).left_inv hx] at hi
   exact hi.symm ▸ he
 
-
-
 theorem Stage.cutPL (s : Stage e S f r C)
     (hrPL : ∀ i, LocallyPiecewiseAffineOn (r ∘ (e i).symm) (e i).target) :
     ∀ k, LocallyPiecewiseAffineOn
@@ -99,9 +79,6 @@ theorem Stage.cutPL (s : Stage e S f r C)
   intro y hy
   exact congrArg r (s.chart_inverse k hy).symm
 
-
-
-
 theorem Stage.graph_local (s : Stage e S f r C) {G : Type*}
     (q : M → G) (hq : InjOn q C) : IsLocallyInjective (q ∘ s.projection) := by
   intro x
@@ -110,14 +87,10 @@ theorem Stage.graph_local (s : Stage e S f r C) {G : Type*}
   intro y hy z hz he
   exact hinj hy hz (hq (s.projection_mem y) (s.projection_mem z) he)
 
-
-
 theorem Stage.frontier_region (s : Stage e S f r C) (R : Set M) :
     frontier (s.projection ⁻¹' R) = s.projection ⁻¹' frontier R :=
   (s.projectionLocal.isOpenMap.preimage_frontier_eq_frontier_preimage
     s.projection.continuous R).symm
-
-
 
 theorem Stage.halfspace_boundary (s : Stage e S f r C) {R : Set M}
     (hboundary : ∀ x ∈ frontier R,
@@ -132,9 +105,6 @@ theorem Stage.halfspace_boundary (s : Stage e S f r C) {R : Set M}
         ∀ y ∈ B.source, y ∈ s.projection ⁻¹' R ↔ 0 ≤ ell (B y) :=
   s.projectionLocal.halfspace_boundary_preimage e s.charts s.chartIndex
     s.chart_target s.chart_inverse hboundary
-
-
-
 
 theorem exists_initial_stage [T2Space M] [LocallyCompactSpace M]
     [FiniteDimensional ℝ U] [PathConnectedSpace S.space]

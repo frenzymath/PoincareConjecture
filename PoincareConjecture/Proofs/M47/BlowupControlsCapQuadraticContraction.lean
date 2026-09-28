@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapThreeArrays
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -16,9 +8,6 @@ namespace PoincareConjecture.M47
 
 local notation "I" => Fin 3
 local notation "Tensor" => I → I → I → ℝ
-
-
-
 
 theorem cap_quadratic_scalar_contraction_le
     (A : I → I → ℝ) (U S B : Tensor) {a y : ℝ} (ha : 0 ≤ a) (hy : 0 ≤ y)

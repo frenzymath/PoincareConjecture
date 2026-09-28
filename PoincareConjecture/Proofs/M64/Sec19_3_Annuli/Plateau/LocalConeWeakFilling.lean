@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeApproximati
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakDisk
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreenWeakLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ open scoped Topology Manifold ContDiff
 namespace PoincareConjecture
 
 open Proofs.M58 Poincare.Analysis.Sobolev.Weak Poincare.Analysis.Sobolev.WeakCompactness
-
-
 
 theorem m64Periodic_tendstoUniformly
     {Y : Type*} [UniformSpace Y] {f : ℕ → ℝ → Y} {u : ℝ → Y}
@@ -55,9 +43,6 @@ local notation "S" => ball (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
 
-
-
-
 structure M64ObservedConeDisk (e : M → E) (gamma : ℝ → M) where
   map : LoopPlane → M
   continuous : Continuous map
@@ -86,13 +71,9 @@ namespace M64ObservedConeDisk
 
 variable {e : M → EuclideanSpace ℝ (Fin m)} {gamma : ℝ → M}
 
-
-
 def energy (B : M → E →L[ℝ] E →L[ℝ] ℝ) (A : M64ObservedConeDisk (n := n) e gamma) : ℝ :=
   ∫ p in S, (B (A.map p) (A.column 0 p) (A.column 0 p) +
     B (A.map p) (A.column 1 p) (A.column 1 p)) / 2
-
-
 
 theorem column_energy_integrable
     (A : M64ObservedConeDisk (n := n) e gamma)
@@ -111,8 +92,6 @@ theorem column_energy_integrable
   have hop := (B (A.map p)).le_opNorm₂ (A.column i p) (A.column i p)
   have hmul := mul_le_mul_of_nonneg_right (hb (A.map p)) (sq_nonneg ‖A.column i p‖)
   nlinarith
-
-
 
 theorem energy_le_column_bound
     (A : M64ObservedConeDisk (n := n) e gamma)
@@ -143,8 +122,6 @@ theorem energy_le_column_bound
 end M64ObservedConeDisk
 
 variable [IsManifold (𝓡 n) ∞ M] [CompactSpace M] [T2Space M]
-
-
 
 theorem m64ChartReadable_local_H1_cone
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

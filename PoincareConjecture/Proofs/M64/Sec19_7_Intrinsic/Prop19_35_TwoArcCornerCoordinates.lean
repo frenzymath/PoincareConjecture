@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcFrontierGerm
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +10,6 @@ open scoped Topology ContDiff Manifold Bundle Matrix
 open Poincare.Topology.Plane.Triangles PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_two_arc_corner_coordinates
     {alpha beta : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha)

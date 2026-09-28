@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.TerminalCylinder
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,8 +37,6 @@ variable (hΩ : H.reference.regularLimitSet.Nonempty)
   (hR : (F.connection t).scalarCurvature N.center <
     (H.terminalConnection P04).scalarCurvature x₀)
   {δ : ℝ} (hεδ : H.epsilon ≤ δ)
-
-
 
 def regularNeckWeakenedTerminalCylinder :
     GeneralizedFlowCylinder (H.nonemptyExtension P04 hΩ).extended

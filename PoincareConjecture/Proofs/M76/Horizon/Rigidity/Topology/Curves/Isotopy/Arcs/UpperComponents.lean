@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.CompleteExcursionFamily
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

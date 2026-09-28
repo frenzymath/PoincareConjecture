@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Algebra
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma tensor_curvature_slot_eq_sum (D : LeviCivitaData g)
     {k : ℕ} {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T)
@@ -79,7 +69,6 @@ private lemma curvature_action_left_trace (D : LeviCivitaData g)
   congr 1
   ext j
   fin_cases j <;> rfl
-
 
 lemma covariantTensorDerivative_curvature_action_left
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -143,7 +132,6 @@ private lemma curvature_action_right_perm (D : LeviCivitaData g)
   ext i
   fin_cases i <;> simp [Equiv.swap_apply_def]
 
-
 lemma covariantTensorDerivative_curvature_action_right
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)
@@ -186,8 +174,6 @@ lemma covariantTensorDerivative_curvature_action_right
   change _ * U x ![g.orthonormalBasis x i, c] +
     _ * D.covariantTensorDerivative U x ![p, g.orthonormalBasis x i, c] = _
   rw [hU, hDU]
-
-
 
 lemma covariantTensorDerivative_curvature_action_two
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

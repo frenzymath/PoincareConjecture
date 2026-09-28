@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.Divergence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -21,12 +13,10 @@ namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
 
-
 theorem norm_euclidean_gradient_eq (f : EuclideanSpace ℝ (Fin n) → ℝ)
     (x : EuclideanSpace ℝ (Fin n)) :
     ‖_root_.gradient f x‖ = ‖fderiv ℝ f x‖ := by
   exact (InnerProductSpace.toDual ℝ (EuclideanSpace ℝ (Fin n))).symm.norm_map _
-
 
 theorem norm_fderiv_euclidean_gradient_le {f : EuclideanSpace ℝ (Fin n) → ℝ}
     (hf : ContDiff ℝ ∞ f) (x : EuclideanSpace ℝ (Fin n)) :
@@ -43,8 +33,6 @@ theorem norm_fderiv_euclidean_gradient_le {f : EuclideanSpace ℝ (Fin n) → �
   change ‖J (fderiv ℝ (fderiv ℝ f) x v)‖ ≤ _
   rw [J.norm_map]
   exact (fderiv ℝ (fderiv ℝ f) x).le_opNorm v
-
-
 
 theorem norm_fderiv_clm_gradient_le
     {A : EuclideanSpace ℝ (Fin n) →
@@ -71,8 +59,6 @@ theorem norm_fderiv_clm_gradient_le
         (mul_le_mul_of_nonneg_left (norm_fderiv_euclidean_gradient_le hf x)
           (norm_nonneg (A x))) le_rfl
     _ = _ := by ring
-
-
 
 theorem abs_divergence_le_mul_norm_fderiv
     {V : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
@@ -106,8 +92,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem abs_density_mul_laplacian_le (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -123,8 +107,6 @@ theorem abs_density_mul_laplacian_le (D : LeviCivitaData g)
       (HarmonicCoordinates.norm_fderiv_clm_gradient_le
         g.contDiff_euclideanDivergenceOperator hf x) (Nat.cast_nonneg _))
 
-
-
 theorem density_mul_inner_gradient_eq_fderiv_divergenceOperator (D : LeviCivitaData g)
     (f u : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n)) :
     g.pullbackVolumeDensity id x * g.inner x (D.gradient f x) (D.gradient u x) =
@@ -135,8 +117,6 @@ theorem density_mul_inner_gradient_eq_fderiv_divergenceOperator (D : LeviCivitaD
     rfl
   rw [D.divergenceOperator_gradient, map_smul, smul_eq_mul, D.inner_gradient, hm]
   rfl
-
-
 
 theorem abs_density_mul_inner_gradient_le (D : LeviCivitaData g)
     (f u : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n)) :
@@ -152,8 +132,6 @@ theorem abs_density_mul_inner_gradient_le (D : LeviCivitaData g)
       mul_le_mul_of_nonneg_left ((g.euclideanDivergenceOperator x).le_opNorm _)
         (norm_nonneg _)
     _ = _ := by rw [HarmonicCoordinates.norm_euclidean_gradient_eq]; ring
-
-
 
 theorem abs_density_mul_laplacian_mul_le (D : LeviCivitaData g)
     {χ u : EuclideanSpace ℝ (Fin n) → ℝ} (hχ : ContDiff ℝ ∞ χ)

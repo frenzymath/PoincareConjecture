@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.AnnulusG
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -18,14 +16,12 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "D" => closedBall (0 : Fin 1 → ℝ) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
 
-
 noncomputable def sourceAnnulusMap (phi : C(H, H)) (theta : C) :
     C(sourceSurface phi theta, D × C) where
   toFun x := (hamiltonOneHierarchyCoordinates
     (phi (latticeHandleDomainEquiv (Fin 1) (Fin 2) L
       ⟨x.val, sourceSurface_subset phi theta x.property⟩))).1
   continuous_toFun := by fun_prop
-
 
 theorem sourceAnnulusMap_on_rim (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B)
@@ -81,8 +77,6 @@ theorem sourceAnnulusMap_pi1_injective (phi : C(H, H)) (theta : C)
         (((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).fundamentalGroupMulEquiv _).injective.comp hinc))
   rw [← hfactor, FundamentalGroup.map_comp] at hfull
   exact Function.Injective.of_comp hfull
-
-
 
 theorem sourceBoundaryCircle_pi1_bijective_of_ambient_injective
     (phi : C(H, H)) (theta : C) (F : (ContinuousMap.id H).HomotopyRel phi B)

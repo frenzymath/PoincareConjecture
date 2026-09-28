@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureScaledGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +7,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_scalar_ratio_of_errors {C H r s a b : ℝ}
     (hs : 0 < s) (hcompare : r ≤ C * s) (hfloor : H ≤ r)
@@ -44,8 +34,6 @@ theorem terminalCurvature_scalar_ratio_of_errors {C H r s a b : ℝ}
   have hscaled := mul_le_mul_of_nonneg_left htarget (by positivity : 0 ≤ 4 * A)
   change a ≤ (4 * A) * b
   nlinarith only [hsource, hAs, hscaled, hs.le]
-
-
 
 theorem terminalCurvature_scaled_cap_scalar_bounds
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

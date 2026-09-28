@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFamilySelection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,13 +12,9 @@ namespace PoincareConjecture.M28.CounterexampleNeckSegment
 variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
 
-
-
 def neckCarrierUnion (S : CounterexampleNeckSegment E) :
     Set (E.flow.slice E.time).carrier :=
   {x | ∃ N ∈ S.cover.necks, x ∈ N.carrier}
-
-
 
 theorem center_mem_cover (S : CounterexampleNeckSegment E)
     (N : EpsilonNeck (E.flow.metric E.time)) (hN : N ∈ S.cover.necks) :
@@ -36,13 +22,11 @@ theorem center_mem_cover (S : CounterexampleNeckSegment E)
   obtain ⟨J, rfl, hcenter⟩ := S.provenance N hN
   exact hcenter
 
-
 theorem cover_subset_neckCarrierUnion (S : CounterexampleNeckSegment E) :
     S.cover.X ⊆ S.neckCarrierUnion := by
   intro x hx
   obtain ⟨N, hN, hcenter⟩ := S.cover.pointwise_center_cover x hx
   exact ⟨N, hN, hcenter ▸ N.central_sphere_subset N.center_on_central_sphere⟩
-
 
 theorem neckCarrierUnion_open (S : CounterexampleNeckSegment E) :
     IsOpen S.neckCarrierUnion := by
@@ -50,8 +34,6 @@ theorem neckCarrierUnion_open (S : CounterexampleNeckSegment E) :
   rintro x ⟨N, hN, hx⟩
   exact Filter.mem_of_superset (N.carrier_open.mem_nhds hx)
     (fun y hy => ⟨N, hN, hy⟩)
-
-
 
 theorem neckCarrierUnion_connected (S : CounterexampleNeckSegment E) :
     IsConnected S.neckCarrierUnion := by
@@ -66,9 +48,6 @@ theorem neckCarrierUnion_connected (S : CounterexampleNeckSegment E) :
     (N.central_sphere_subset N.center_on_central_sphere) N.isPreconnected_carrier
 
 end CounterexampleNeckSegment
-
-
-
 
 theorem exists_source_neck_region_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -127,9 +106,6 @@ theorem exists_source_neck_region_accuracy :
   refine ⟨hsubset, hsubset.trans S.source_region.cover_subset, ?_⟩
   rintro x ⟨N, hN, hx⟩
   exact hbounds N hN x hx
-
-
-
 
 theorem exists_source_neck_endpoint_exclusion_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

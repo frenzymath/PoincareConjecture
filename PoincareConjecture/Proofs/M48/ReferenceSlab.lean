@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M48.RegularGuards
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +20,6 @@ include ha in
 theorem reference_regular (t : ℝ) (ht : t ∈ Ico a T) : t ∉ F.surgery_times :=
   fun hevent => disjoint_left.mp L.surgery_free hevent ⟨ha.trans_le ht.1, ht.2⟩
 
-
 def referenceFlow : RicciFlow 3 (F.slice L.start).carrier (Ico a T) where
   metric := L.flow.metric
   connection := L.flow.connection
@@ -40,7 +31,6 @@ def referenceFlow : RicciFlow 3 (F.slice L.start).carrier (Ico a T) where
   equation t ht x v w :=
     (L.flow.equation t (L.reference_window_subset ha ht) x v w).mono
       (L.reference_window_subset ha)
-
 
 noncomputable def referenceCylinder :
     SurgeryFlowCylinder F (F.slice L.start) 0 1 (Ico a T) univ where

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ScalarOperatorPullback
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.M35
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem scale_inverse_metric (g : RiemannianMetric 3 E) (Q : ℝ) (hQ : 0 < Q)
     (x : E) (w : E →L[ℝ] ℝ) :
@@ -34,15 +25,12 @@ theorem scale_inverse_metric (g : RiemannianMetric 3 E) (Q : ℝ) (hQ : 0 < Q)
   change w v = Q * (Q⁻¹ * w v)
   rw [← mul_assoc, mul_inv_cancel₀ hQ.ne', one_mul]
 
-
-
 theorem scale_gradient {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (f : E → ℝ) (x : E) :
     (M13.scaleLeviCivitaData D Q hQ).gradient f x = Q⁻¹ • D.gradient f x :=
   scale_inverse_metric g Q hQ x (mvfderiv (𝓡 3) f x)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem scale_scalarGradientNorm {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : E) :
@@ -79,7 +67,6 @@ theorem scale_scalarGradientNorm {g : RiemannianMetric 3 E} (D : LeviCivitaData 
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem scale_laplacian {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) {f : E → ℝ} {x : E} (hf : ContDiffAt ℝ ∞ f x) :
     (M13.scaleLeviCivitaData D Q hQ).laplacian f x = Q⁻¹ * D.laplacian f x := by
@@ -105,8 +92,6 @@ theorem scale_laplacian {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     _ = Q⁻¹ * D.hessian f x u v :=
       congrArg (fun a : ℝ => Q⁻¹ * a) (D.hessian_eq_fderiv_sub_christoffel hf u v).symm
 
-
-
 theorem scale_scalar_laplacian {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : E) :
     (M13.scaleLeviCivitaData D Q hQ).laplacian
@@ -123,8 +108,6 @@ theorem scale_scalar_laplacian {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
   rw [hscalar, DG.laplacian_const_mul,
     scale_laplacian D Q hQ (scalarCurvature_contDiffAt_euclidean D x)]
   ring
-
-
 
 theorem homothety_ricciNormSq {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace E M] [ChartedSpace E N] [IsManifold (𝓡 3) ∞ M]
@@ -157,15 +140,11 @@ theorem homothety_ricciNormSq {M N : Type*} [TopologicalSpace M] [TopologicalSpa
   rw [hnorm]
   simp only [hnormalized, div_pow, LeviCivitaData.ricciNormSq, Finset.sum_div, b]
 
-
-
 theorem scale_ricciNormSq {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : E) :
     (M13.scaleLeviCivitaData D Q hQ).ricciNormSq x = D.ricciNormSq x / Q ^ 2 :=
   homothety_ricciNormSq g (M13.scaleSmoothMetric g Q hQ) (Diffeomorph.refl (𝓡 3) E ∞)
     Q hQ (M13.identity_metricHomothety g Q hQ) D (M13.scaleLeviCivitaData D Q hQ) x
-
-
 
 theorem scale_scalar_evolution {g : RiemannianMetric 3 E} (D : LeviCivitaData g)
     (Q : ℝ) (hQ : 0 < Q) (x : E) :

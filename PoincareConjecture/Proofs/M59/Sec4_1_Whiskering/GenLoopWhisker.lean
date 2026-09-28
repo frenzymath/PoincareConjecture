@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M59BasepointTransport
 import PoincareConjecture.Proofs.M59.Mathlib.CubeTransportMultiplication
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -20,22 +11,15 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 def m59GenLoopWhisker (X : Type u) [TopologicalSpace X] (n : ℕ) :
     M59GenLoopWhisker X n where
   whisker := GenLoop.boundaryTransport
   respects_homotopy := GenLoop.boundaryTransport_homotopic
 
-
-
 theorem m59GenLoopWhisker_map_mk {X : Type u} [TopologicalSpace X] {n : ℕ}
     {x y : X} (p : Path x y) (a : GenLoop (Fin n) X x) :
     M59GenLoopWhisker.map (m59GenLoopWhisker X n) p ⟦a⟧ =
       ⟦GenLoop.boundaryTransport p a⟧ := rfl
-
-
-
 
 def m59HigherBasepointTransport (X : Type u) [TopologicalSpace X] (n : ℕ) :
     M59HigherBasepointTransport X n where
@@ -56,8 +40,6 @@ def m59HigherBasepointTransport (X : Type u) [TopologicalSpace X] (n : ℕ) :
         ((Quotient.sound (GenLoop.boundaryTransport_transAt i p b a)).trans
           (HomotopyGroup.mul_spec (i := i)
             (p := GenLoop.boundaryTransport p a) (q := GenLoop.boundaryTransport p b)).symm)
-
-
 
 theorem m59HigherBasepointTransport_path_homotopic
     {X : Type u} [TopologicalSpace X] {n : ℕ} {x y : X} {p q : Path x y}

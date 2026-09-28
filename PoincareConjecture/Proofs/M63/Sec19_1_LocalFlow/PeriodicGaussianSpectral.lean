@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianFourier
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealPeriodicJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -18,10 +9,6 @@ open scoped ENNReal
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem realPeriodicJet_heat (k j : ℕ) (hj : j ≤ k) (t : NNReal)
     (u : State (ℤ × Fin 2)) :

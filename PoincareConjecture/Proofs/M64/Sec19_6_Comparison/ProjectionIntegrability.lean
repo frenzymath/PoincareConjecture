@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AreaMeasurability
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.ProjectionPointwise
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -17,9 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64AnnulusDomain_ae_eq_boxInterior :
     m64AnnulusDomain =ᵐ[volume]
@@ -59,9 +49,6 @@ theorem m64AnnulusDomain_ae_eq_boxInterior :
       simpa [lo, hi] using ⟨h0.1, h0.2, h1.1, h1.2⟩
   rw [hdom]
   simpa only [e, lo, hi] using hpre.symm
-
-
-
 
 theorem m64ProjectedDensity_integrable
     {n : ℕ} {M : Type u} [TopologicalSpace M]

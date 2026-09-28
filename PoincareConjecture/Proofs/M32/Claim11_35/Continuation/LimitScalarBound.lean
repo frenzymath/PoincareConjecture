@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.SliceCurvatureComparison
 import PoincareConjecture.Proofs.M32.Claim11_35.Continuation.Uniqueness
 import Mathlib.Algebra.Order.Archimedean.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +16,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t3Space
-
-
-
 
 theorem blowup_scalar_le_of_step_cylinders
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RotationCutoffs
 import PoincareConjecture.Proofs.M35.RawFlow.SectionalPreservation
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

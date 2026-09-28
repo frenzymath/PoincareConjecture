@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.ChartVelocity
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

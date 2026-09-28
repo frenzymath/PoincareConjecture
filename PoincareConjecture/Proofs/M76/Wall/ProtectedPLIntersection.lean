@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ProtectedFrontier
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem piecewiseAffine_compatible_restrOpen_right
     {X E : Type*} [TopologicalSpace X]
@@ -42,10 +29,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {P R : Set X}
-
-
-
-
 
 theorem PLDomain.inter_of_frontier_subset_interior
     (hP : PLDomain e P) (hR : PLDomain e R)

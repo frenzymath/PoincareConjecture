@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.FiniteCover
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter MeasureTheory
 namespace Poincare.CurvatureIntegral
@@ -40,8 +33,6 @@ theorem exists_subseq_fixed_member_integral_ratio_tendsto_atTop
   exact div_le_div_of_nonneg_left (integral_nonneg (fun x => hhn (phi j) x))
     (hw (phi j) i) (hwd (phi j) i)
 
-
-
 theorem exists_subseq_fixed_member_weighted_integral_tendsto_atTop
     {X : ℕ → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*} [Fintype ι]
     (μ : ∀ j, Measure (X j)) (U W : ∀ j, Set (X j)) (V : ∀ j, ι → Set (X j))
@@ -73,9 +64,6 @@ theorem exists_subseq_fixed_member_weighted_integral_tendsto_atTop
   apply add_le_add_right
   exact setIntegral_mono_set (hKi j) (Filter.Eventually.of_forall (hKn j))
     (Filter.Eventually.of_forall (fun _ hx => hVW j i hx))
-
-
-
 
 theorem exists_subseq_nonempty_fixed_member_weighted_integral_tendsto_atTop
     {X : ℕ → Type*} [∀ j, MeasurableSpace (X j)] {ι : Type*} [Fintype ι]

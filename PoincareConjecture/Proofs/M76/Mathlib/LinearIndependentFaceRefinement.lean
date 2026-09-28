@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSubdivision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AffineIndependent.linearIndependent_of_convexHull_subset
     {s t : Finset E} (hs : AffineIndependent ℝ ((↑) : s → E))
@@ -31,9 +18,6 @@ theorem AffineIndependent.linearIndependent_of_convexHull_subset
 
 namespace Geometry.SimplicialComplex
 
-
-
-
 theorem linearIndependent_faces_of_face_containment
     (J K : SimplicialComplex ℝ E)
     (hK : ∀ t ∈ K.faces, LinearIndependent ℝ ((↑) : t → E))
@@ -43,8 +27,6 @@ theorem linearIndependent_faces_of_face_containment
   intro s hs
   obtain ⟨t, ht, hst⟩ := hfaces s hs
   exact (J.indep hs).linearIndependent_of_convexHull_subset (hK t ht) hst
-
-
 
 theorem IsSubdivision.linearIndependent_faces
     {J K : SimplicialComplex ℝ E} (hJK : J.IsSubdivision K)

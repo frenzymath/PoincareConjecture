@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEulerValuation
 import Mathlib.Combinatorics.Enumerative.InclusionExclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

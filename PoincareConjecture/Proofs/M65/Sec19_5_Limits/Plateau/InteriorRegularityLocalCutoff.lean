@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLo
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped Topology SchwartzMap ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem exists_disk_cutoff {U : Set LoopPlane} (hU : IsOpen U)
     (x : LoopPlane) {R : ℝ} (hR : 0 ≤ R) (hRU : closedBall x R ⊆ U) :

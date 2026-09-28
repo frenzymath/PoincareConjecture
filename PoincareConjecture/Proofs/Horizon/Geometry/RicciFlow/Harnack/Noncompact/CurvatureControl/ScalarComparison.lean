@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.FiniteContinuity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Bounds
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem distance_cutoff_mul_scalarCurvature_le_exp_of_finite
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -170,8 +160,6 @@ theorem distance_cutoff_mul_scalarCurvature_le_exp_of_finite
     have hexp : 1 ≤ Real.exp (2 * Q * (t - a)) :=
       Real.one_le_exp_iff.mpr (mul_nonneg (by positivity) (sub_nonneg.mpr ht.1))
     nlinarith [mul_nonneg (sub_nonneg.mpr hexp) (show 0 ≤ U0 + H / 2 by positivity)]
-
-
 
 theorem distance_cutoff_mul_scalarCurvature_le_exp
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

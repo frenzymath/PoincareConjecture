@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.Metric
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ namespace Poincare.AncientVolume.ScalarRatio.UnitSliceRadialChartData
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
 
-
-
 theorem continuous_polarConeImage (d : UnitSliceRadialChartData hcomparison n) (c : ℝ) :
     Continuous (fun q : ℝ × d.Level => asymptoticConeDilation hcomparison
       (Real.toNNReal (q.1 / c)) (d.ambientChart (openLevelIncl d.potential d.source (1 / 2) q.2))) := by
@@ -34,9 +24,6 @@ theorem continuous_polarConeImage (d : UnitSliceRadialChartData hcomparison n) (
   exact (continuous_asymptoticConeDilation hcomparison).comp
     ((continuous_real_toNNReal.comp (continuous_fst.div_const c)).prodMk
       (hlevel.comp continuous_snd))
-
-
-
 
 theorem exists_polar_openPartialHomeomorph
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c) (z : d.Level) :
@@ -164,8 +151,6 @@ theorem exists_polar_openPartialHomeomorph
       (Real.toNNReal_pos.mpr (div_pos hq.2.1 hc')).ne'
     rw [inv_mul_cancel₀ hnonzero, asymptoticConeDilation_one]
 
-
-
 theorem exists_polar_local_inverse_at
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c)
     (q : ℝ × d.Level) (hq : 0 < q.1)
@@ -229,8 +214,6 @@ theorem exists_polar_local_inverse_at
       exact hPinverse
     exact hPi.comp (R q) (hTinv.contMDiffAt (T.open_target.mem_nhds (T.map_source hqR.2)))
   exact ⟨R, hqR, hRf, hRsmooth, hRinverse⟩
-
-
 
 theorem exists_smooth_polar_openPartialHomeomorph
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c) (z : d.Level) :

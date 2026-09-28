@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.NestedCapFro
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.RetainedBoundaryCharts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.NestedCollarCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

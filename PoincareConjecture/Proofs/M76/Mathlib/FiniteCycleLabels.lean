@@ -1,16 +1,6 @@
 import Mathlib.Combinatorics.SimpleGraph.Matching
 import Mathlib.Data.Fin.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +8,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*} [Finite V]
-
-
-
-
 
 theorem exists_cyclic_labels_of_two_neighbors (G : SimpleGraph V) (hc : G.Connected)
     (hdegree : ∀ v, (G.neighborSet v).ncard = 2) :

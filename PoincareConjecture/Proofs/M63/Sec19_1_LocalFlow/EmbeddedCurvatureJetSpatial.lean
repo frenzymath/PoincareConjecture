@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceEmbeddedCalculus
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.SmoothRelabeling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem hasDerivAt_embeddedCurvatureJet_spatial
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -90,9 +78,6 @@ theorem hasDerivAt_embeddedCurvatureJet_spatial
   ext k
   simp only [PiLp.add_apply, PiLp.smul_apply, smul_eq_mul]
   ring
-
-
-
 
 theorem embeddedCurvatureJet_second_spatial_derivative_bound
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

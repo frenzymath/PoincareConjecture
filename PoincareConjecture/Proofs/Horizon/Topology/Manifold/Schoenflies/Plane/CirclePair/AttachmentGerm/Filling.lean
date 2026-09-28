@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Extension
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Disk
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.CircleAttachmentGerm
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_filling_with_boundary_germ
     (A : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -64,8 +60,6 @@ theorem exists_filling_with_boundary_germ
     change A (G x) = P x
     rw [hx]
     exact A.apply_symm_apply (P x)
-
-
 
 theorem exists_smooth_circle_filling_realizing_boundary_germs
     (f : S1 → E2) (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ f) :

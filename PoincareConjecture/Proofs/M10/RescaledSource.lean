@@ -2,18 +2,9 @@ import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
-
 
 theorem inverse_double_sqrt_hasDerivAt {t : ℝ} (ht : 0 < t) :
     HasDerivAt (fun s : ℝ ↦ (2 * Real.sqrt s)⁻¹)
@@ -23,7 +14,6 @@ theorem inverse_double_sqrt_hasDerivAt {t : ℝ} (ht : 0 < t) :
     (mul_ne_zero (by norm_num) hs)).congr_deriv
   field_simp [ht.ne', hs]
   nlinarith [Real.sq_sqrt ht.le]
-
 
 theorem inverse_double_sqrt_smul_hasDerivAt {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] (y : E) {t : ℝ} (ht : 0 < t) :

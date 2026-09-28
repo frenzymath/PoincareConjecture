@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +8,6 @@ namespace PreAbstractSimplicialComplex.ModTwoEdgeCocycle
 
 variable {ι Z : Type*} [Fintype ι] [TopologicalSpace Z]
   {A : PreAbstractSimplicialComplex ι}
-
-
 
 theorem exists_lift_of_star_potential (c : A.ModTwoEdgeCocycle)
     (γ : C(Z, A.barycentricSpace)) (a : ι → ZMod 2)

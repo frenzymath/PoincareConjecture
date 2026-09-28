@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Eventual
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -80,8 +70,6 @@ private theorem eventually_lower_bound_of_positive_limit
           mul_le_mul_of_nonneg_right hd (mul_nonneg (norm_nonneg v) (norm_nonneg v))
   have hh := (abs_le.mp herr).1
   linarith [hlower x hx v]
-
-
 
 theorem locallyEventuallyBoundedDerivatives_of_metric_convergence
     {d : ℕ} {U V : Set (EuclideanSpace ℝ (Fin d))}
@@ -185,10 +173,6 @@ theorem locallyEventuallyBoundedDerivatives_of_metric_convergence
     simpa only [Nat.sub_add_cancel hk] using hC (k - N) x (hKW hx)
   exact hbound
 
-
-
-
-
 theorem exists_smooth_isometry_limit_of_metric_convergence
     {d : ℕ} {U V : Set (EuclideanSpace ℝ (Fin d))}
     (hU : IsOpen U) (hV : IsOpen V)
@@ -243,8 +227,6 @@ theorem exists_smooth_isometry_limit_of_metric_convergence
   exact (hσ.tendsto_atTop.eventually
     (hmetric {x} isCompact_singleton (singleton_subset_iff.mpr hx))).mono
     (fun k hk => hk x (mem_singleton x))
-
-
 
 theorem exists_common_smooth_isometry_limit_of_metric_convergence
     {d : ℕ} {U V : ℕ → Set (EuclideanSpace ℝ (Fin d))}

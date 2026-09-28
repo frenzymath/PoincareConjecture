@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderScalarBound
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StoppedCollar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,10 +26,6 @@ noncomputable local instance stoppedCylinderTwoJetNorm :
 
 noncomputable local instance stoppedCylinderTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_stopped_cylinder_bound (P : M44CapPersistencePredecessors.{u})
     (K : ℝ) (u v : E) {model : Set (MetricTwoJet 3)} (hmodel : IsCompact model)

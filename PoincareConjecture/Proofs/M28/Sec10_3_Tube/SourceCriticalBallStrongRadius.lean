@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshRadius
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallNeckScales
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawStage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +13,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_retained_strong_neck_radial_margin_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.FiniteOrderComplex
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators

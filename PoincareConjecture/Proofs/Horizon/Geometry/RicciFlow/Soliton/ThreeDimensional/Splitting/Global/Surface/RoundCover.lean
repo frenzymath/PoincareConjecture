@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.Cover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [T2Space M] [T3Space M] [ConnectedSpace M] [CompactSpace M]
-
-
 
 theorem exists_unitSphere_two_covering_of_round_soliton
     {g : RiemannianMetric 2 M} (D : LeviCivitaData g) {φ : M → ℝ}
@@ -66,8 +54,6 @@ theorem exists_unitSphere_two_covering_of_round_soliton
   change (1 / 2 : ℝ) * g.inner (q x) (mfderiv (𝓡 2) (𝓡 2) q x u)
     (mfderiv (𝓡 2) (𝓡 2) q x v) = (roundSphereMetric 2).inner x u v at heq
   linarith
-
-
 
 theorem exists_unitSphere_two_covering_of_round_soliton_family
     (h : ℝ → RiemannianMetric 2 M) (D : LeviCivitaData (h 0)) {φ : M → ℝ}

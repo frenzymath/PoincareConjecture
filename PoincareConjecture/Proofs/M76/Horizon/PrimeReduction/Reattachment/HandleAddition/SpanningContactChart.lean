@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLCompatibleChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option quotPrecheck false
@@ -224,4 +222,3 @@ theorem exists_spanning_contact_graph_in_original_chart
   exact ⟨G',hG',himage.symm,hpres,hfaces,hdegree,hcount',by omega⟩
 
 end PoincareConjecture.M76
-

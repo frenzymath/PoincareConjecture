@@ -6,16 +6,6 @@ import Mathlib.Analysis.Calculus.LocalExtr.Basic
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Measure.Lebesgue.EqHaar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -128,10 +118,6 @@ private theorem m65Hopf_pair_integrable (g : RiemannianMetric 3 M)
 
 set_option maxHeartbeats 1600000 in
 
-
-
-
-
 theorem m65WeakDisk_hopf_test (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 3) (𝓡 N) e p))
@@ -221,11 +207,6 @@ theorem m65WeakDisk_hopf_test (g : RiemannianMetric 3 M)
   have hz := hlocal.hasDerivAt_eq_zero hderiv
   exact neg_eq_zero.mp hz
 
-
-
-
-
-
 theorem m65WeakDisk_conformal_of_minimum (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)
     (hinj : ∀ p, Function.Injective (mfderiv (𝓡 3) (𝓡 N) e p))
@@ -283,12 +264,6 @@ theorem m65WeakDisk_conformal_of_minimum (g : RiemannianMetric 3 M)
     exact lt_of_le_of_ne hle hne
   change a z = c z ∧ b z = 0
   exact ⟨sub_eq_zero.mp (hdiag hin), by linarith [hmixed hin]⟩
-
-
-
-
-
-
 
 theorem m65WeakDisk_conformal_of_normalized_minimum (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

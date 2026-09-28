@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.EssentialDiskCircleMinimum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 namespace PoincareConjecture.M76
@@ -136,4 +127,3 @@ theorem exists_actual_disk_at_innermost_compression_circle
       exact (himage.subset hh.2.2).1
 
 end PoincareConjecture.M76
-

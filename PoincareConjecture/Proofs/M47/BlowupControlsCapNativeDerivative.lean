@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapMetricError
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLeviCivita
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,9 +44,6 @@ private theorem native_tensor_update_sum {r : ℕ}
   funext j
   by_cases hji : j = i <;> simp [hji, b]
 
-
-
-
 theorem cap_covariantTensorDerivative_coordinates
     {g : RiemannianMetric 3 E₃} (D : LeviCivitaData g) {r : ℕ}
     (T : CovariantTensorEvaluation 3 E₃ r) (hT : IsSmoothCovariantTensor T)
@@ -81,8 +69,6 @@ theorem cap_covariantTensorDerivative_coordinates
   intro i _
   exact native_tensor_update_sum T hT x (fun j => a j.succ) i _
 
-
-
 theorem cap_model_covariantTensorDerivative_coordinates
     (u : ℝ) (hu : u < 1) (D : LeviCivitaData (M35.cylinderEuclideanMetric u hu))
     (q : UnitTwoSphere) {r : ℕ}
@@ -98,9 +84,6 @@ theorem cap_model_covariantTensorDerivative_coordinates
           (Function.update (fun l => a l.succ) i k j)) := by
   rw [cap_covariantTensorDerivative_coordinates D T hT]
   simp only [M35.cylinder_connection_component u hu D q]
-
-
-
 
 theorem cap_model_covariantTensorDerivative_native
     (u : ℝ) (hu : u < 1) (D : LeviCivitaData (M35.cylinderEuclideanMetric u hu))

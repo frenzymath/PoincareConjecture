@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CornerPartitio
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeRecoveryDensity
 import PoincareConjecture.Proofs.M08.PathGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 theorem oneCorner_contMDiffAt {a c b s : ℝ} {gamma : ℝ → G.Point}
     (hleft : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel 3) 1 gamma (Icc a c))
     (hright : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel 3) 1 gamma (Icc c b))
@@ -36,8 +25,6 @@ theorem oneCorner_contMDiffAt {a c b s : ℝ} {gamma : ℝ → G.Point}
   · exact (hright s ⟨hcs.le, hs.2.le⟩).contMDiffAt (Icc_mem_nhds hcs hs.2)
 
 set_option synthInstance.maxHeartbeats 200000 in
-
-
 
 theorem oneCorner_gauge_action_eq (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {a c b : ℝ} (gamma : ℝ → G.Point) (hgamma : Continuous gamma)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEn
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 import Mathlib.Analysis.Complex.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,32 +14,19 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 def M65WeakCircleParameter (β : C(LoopCircle, LoopCircle)) : Prop :=
   β ∈ closure (range (fun h : LoopCircle ≃ₜ LoopCircle =>
     (⟨h, h.continuous⟩ : C(LoopCircle, LoopCircle))))
-
-
-
 
 def m65DiskCoordinateL2 {N : ℕ}
     (u : Lp (EuclideanSpace ℝ (Fin N)) 2 (volume.restrict loopDiskSet))
     (j : Fin N) : Lp ℝ 2 (volume.restrict loopDiskSet) :=
   ((Lp.memLp u).eval_piLp j).toLp (fun z => u z j)
 
-
-
 theorem m65DiskCoordinateL2_coe {N : ℕ}
     (u : Lp (EuclideanSpace ℝ (Fin N)) 2 (volume.restrict loopDiskSet))
     (j : Fin N) : m65DiskCoordinateL2 u j =ᵐ[volume.restrict loopDiskSet]
       fun z => u z j := ((Lp.memLp u).eval_piLp j).coeFn_toLp
-
-
-
-
-
 
 structure M65WeakDisk {M : Type u} {N : ℕ}
     (e : M → EuclideanSpace ℝ (Fin N)) (γ : LoopCircle → M) where
@@ -71,9 +47,6 @@ namespace M65WeakDisk
 
 variable {M : Type u} {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}
 
-
-
-
 def Normalized (F : M65WeakDisk e γ) (a b c : LoopCircle) : Prop :=
   let p : LoopCircle := ⟨orthonormalBasisOneI.repr 1, by simp⟩
   let n : LoopCircle := ⟨orthonormalBasisOneI.repr (-1), by simp⟩
@@ -83,28 +56,15 @@ def Normalized (F : M65WeakDisk e γ) (a b c : LoopCircle) : Prop :=
 
 variable [TopologicalSpace M] [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 def energy (F : M65WeakDisk e γ) (g : RiemannianMetric 3 M) : ℝ :=
   ∫ z in loopDiskSet, m65EmbeddedEnergyDensity g e F.value (fun i z => F.derivative i z) z
-
-
-
 
 def MinimizesNormalizedEnergy (F : M65WeakDisk e γ) (g : RiemannianMetric 3 M)
     (a b c : LoopCircle) : Prop :=
   F.Normalized a b c ∧ ∀ G : M65WeakDisk e γ, G.Normalized a b c → F.energy g ≤ G.energy g
 
-
-
-
 def MinimizesEnergy (F : M65WeakDisk e γ) (g : RiemannianMetric 3 M) : Prop :=
   ∀ G : M65WeakDisk e γ, F.energy g ≤ G.energy g
-
-
-
-
 
 theorem energy_integrable (F : M65WeakDisk e γ) (g : RiemannianMetric 3 M)
     (he : ContMDiff (𝓡 3) (𝓡 N) ∞ e)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMiddleModel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderEndRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture.OpenCylinderModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
-
-
-
 
 theorem exists_high_midlevel_model (T : OpenCylinderModel U)
     (R : M → ℝ) (hR : ContinuousOn R U)

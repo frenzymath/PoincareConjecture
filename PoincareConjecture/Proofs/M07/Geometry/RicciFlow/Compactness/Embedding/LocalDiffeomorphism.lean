@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.SpatialRegularity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

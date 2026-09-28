@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularitySc
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalDecay
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -20,10 +10,6 @@ open scoped Topology ContDiff Manifold SchwartzMap InnerProductSpace
 namespace PoincareConjecture.M65LocalWeakMap
 
 open M65Interior
-
-
-
-
 
 theorem local_holder_of_energy_decay {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}
@@ -115,10 +101,6 @@ theorem local_holder_of_energy_decay {M : Type*} {N : ℕ}
       _ = (∑ j, H j) * dist y x ^ β := (Finset.sum_mul _ _ _).symm
       _ ≤ (1 + ∑ j, H j) * dist y x ^ β :=
         mul_le_mul_of_nonneg_right (by linarith) (Real.rpow_nonneg dist_nonneg _)
-
-
-
-
 
 theorem local_holder_of_minimum
     {M : Type*} [TopologicalSpace M]

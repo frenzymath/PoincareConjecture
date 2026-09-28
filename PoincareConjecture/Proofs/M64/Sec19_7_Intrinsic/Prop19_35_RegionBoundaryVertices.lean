@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionEuler
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,12 +27,6 @@ variable {I : Type*} [Finite I] (face : I → SmoothFace AnnulusCoordinates)
 
 include hsource hboundary hinter
 
-
-
-
-
-
-
 theorem m64Intrinsic_one_face_edge_endpoints_frontier
     (e : FaceBoundaryEdge face)
     (he : Nat.card {p : I × Fin 3 // faceBoundaryIndex face p.1 p.2 = e} = 1) :
@@ -67,12 +48,6 @@ theorem m64Intrinsic_one_face_edge_endpoints_frontier
   · have hone := h (mem_image_of_mem _ (by simp : (1 : ℝ) ∈ Icc 0 1))
     simpa [Euler.coordinateEdgeEnds, Euler.coordinateCorner, hboundary,
       Function.comp_apply, affineChartSegment] using hone
-
-
-
-
-
-
 
 theorem m64Intrinsic_interior_vertex_boundary_degree_zero
     (v : Euler.CoordinateVertex F b)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedBall
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,9 +20,6 @@ private def restrictCoordinates {M N : Type*}
   open_target := (phi.toOpenPartialHomeomorph.restrOpen V hV).open_target
   contMDiffOn_toFun := phi.contMDiffOn_toFun.mono inter_subset_left
   contMDiffOn_invFun := phi.contMDiffOn_invFun.mono inter_subset_left
-
-
-
 
 theorem blowupSequence_ball_retention (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)
@@ -96,9 +85,6 @@ theorem blowupSequence_ball_retention (P : M35StandardCapPredecessors)
       apply (le_div_iff₀ he).mpr
       nlinarith
     exact (Real.sqrt_le_sqrt hquad).trans_eq (Real.sqrt_mul (div_nonneg hQ.le he.le) _)
-
-
-
 
 theorem blowupSequence_cap_core_ball_retention (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

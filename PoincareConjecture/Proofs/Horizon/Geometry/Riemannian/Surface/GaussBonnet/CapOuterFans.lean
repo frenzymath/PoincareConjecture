@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterCorners
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +50,6 @@ theorem secondOuterTip_mem_secondSide (i j : Bool) :
     simpa [affineChartSegment] using h
   exact ⟨B.scale, ⟨B.scale_pos.le, le_rfl⟩, heq.symm⟩
 
-
-
 theorem firstOuterTip_mem_carrier_iff (i : Bool) (j : Bool × Bool) :
     B.firstOuterTip i ∈ (B.face j).carrier ↔ j.1 = i := by
   constructor
@@ -77,8 +67,6 @@ theorem firstOuterTip_mem_carrier_iff (i : Bool) (j : Bool × Bool) :
     exact ⟨rightTriangleBasis B.scale_pos 1,
       subset_convexHull ℝ _ (mem_range_self 1), B.coordinate_first_outer_tip i k⟩
 
-
-
 theorem secondOuterTip_mem_carrier_iff (i : Bool) (j : Bool × Bool) :
     B.secondOuterTip i ∈ (B.face j).carrier ↔ j.2 = i := by
   constructor
@@ -95,8 +83,6 @@ theorem secondOuterTip_mem_carrier_iff (i : Bool) (j : Bool × Bool) :
     rw [B.carrier_eq]
     exact ⟨rightTriangleBasis B.scale_pos 2,
       subset_convexHull ℝ _ (mem_range_self 2), B.coordinate_second_outer_tip i j⟩
-
-
 
 theorem refined_contribution_eq_zero_of_not_mem_carrier
     (g : RiemannianMetric 2 S) (i : Bool × Bool)
@@ -123,8 +109,6 @@ theorem refined_contribution_eq_zero_of_not_mem_carrier
     simpa only [M, TriangleMesh.refineByLines_support, TriangleMesh.single_support] using hm
   simp only [if_neg hne]
 
-
-
 theorem sum_refined_first_outer_contributions (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :
     (∑ j : Bool, ∑ k : Bool,
@@ -144,8 +128,6 @@ theorem sum_refined_first_outer_contributions (g : RiemannianMetric 2 S) (i : Bo
     exact B.refined_contribution_eq_zero_of_not_mem_carrier g (j, k) _
       ((B.firstOuterTip_mem_carrier_iff i (j, k)).not.mpr hji)
   · simp
-
-
 
 theorem sum_refined_second_outer_contributions (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :
@@ -168,8 +150,6 @@ theorem sum_refined_second_outer_contributions (g : RiemannianMetric 2 S) (i : B
       ((B.secondOuterTip_mem_carrier_iff i (k, j)).not.mpr hji)
   · simp
 
-
-
 theorem sum_refined_first_outer_fan (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :
     (∑ j : Bool, ∑ k : Bool,
@@ -181,8 +161,6 @@ theorem sum_refined_first_outer_fan (g : RiemannianMetric 2 S) (i : Bool)
       (B.firstOuterSpoke i) (B.firstOuterChord i j)) = 2 * Real.pi := by
   rw [B.sum_refined_first_outer_contributions]
   exact B.first_outer_refined_corner_pair g i (fun j => lines (i, j))
-
-
 
 theorem sum_refined_second_outer_fan (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) :

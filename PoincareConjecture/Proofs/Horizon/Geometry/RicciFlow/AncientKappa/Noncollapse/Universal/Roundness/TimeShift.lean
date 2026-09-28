@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Myers.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Sectional
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +32,6 @@ private theorem round_slice_contractions
   · convert D.scalarCurvature_of_constant_sectional x r (hsec x) using 1 <;> norm_num
   · convert D.ricci_of_constant_sectional x r (hsec x) v w using 1 <;> norm_num
 
-
-
 theorem ricciComplement_mem_of_isRoundMetricSlice
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (hround : IsRoundMetricSlice D)
@@ -65,7 +54,6 @@ theorem ricciComplement_mem_of_isRoundMetricSlice
     rw [heval v hv, heval w hw]
     nlinarith
 
-
 theorem compactSpace_of_isRoundMetricSlice [T3Space M] [PreconnectedSpace M]
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (hround : IsRoundMetricSlice D) : CompactSpace M := by
@@ -82,8 +70,6 @@ private theorem isRoundMetricSlice_of_metric_eq
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem isRoundAncientKappaSolution_of_closedTimeShift
     {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)

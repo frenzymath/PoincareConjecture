@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerArcCapContacts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCapFaces
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +13,6 @@ namespace PoincareConjecture.M64IntrinsicTriangleCollar
 
 variable {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ} {U : Set AnnulusCoordinates}
   {C : M64IntrinsicTriangleCaps base alpha beta D A B U} (P : M64IntrinsicTriangleCollar C)
-
-
-
 
 theorem cap_band_outer (j : Fin 3) (i : P.BandIndex) :
     C.carrier j ∩ (P.bandData i).band.carrier ⊆
@@ -39,9 +33,6 @@ theorem cap_band_outer (j : Fin 3) (i : P.BandIndex) :
       exact (disjoint_left.mp P.second_opposite (mem_iUnion.mpr ⟨i, hp.2⟩) hp.1).elim
     · exact P.secondSide.cap_band_outer 1 (Or.inl rfl) i
     · exact P.secondSide.cap_band_outer 2 (Or.inr rfl) i
-
-
-
 
 theorem cap_band_lower_tips (j : Fin 3) (i : P.BandIndex) :
     C.carrier j ∩ (P.bandData i).band.lowerArc ⊆
@@ -108,19 +99,12 @@ theorem cap_band_lower_tips (j : Fin 3) (i : P.BandIndex) :
     · exact hbeta' 1 (Or.inl rfl) i
     · exact hbeta' 2 (Or.inr rfl) i
 
-
-
-
 theorem band_off_lower (i : P.BandIndex) :
     (P.bandData i).band.carrier \ (P.bandData i).band.lowerArc ⊆ U := by
   rcases i with i | (i | i)
   · exact P.baseArc.chain.off_lower i
   · exact P.firstSide.chain.off_lower i
   · exact P.secondSide.chain.off_lower i
-
-
-
-
 
 theorem cap_face_band_chord (hU : IsOpen U) (F : M64IntrinsicFiniteCornerCapFaces C)
     (e : Fin 3) (j : Bool × Bool)

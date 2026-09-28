@@ -2,17 +2,6 @@ import Mathlib.Topology.MetricSpace.Isometry
 import Mathlib.Topology.MetricSpace.Pseudo.Basic
 import Mathlib.Topology.Compactness.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +11,6 @@ open scoped Topology
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {A B ι : Type*} [MetricSpace A] [MetricSpace B]
-
-
 
 theorem tendstoUniformly_of_distortion_and_pointwise [CompactSpace A]
     {l : Filter ι} {f : ι → A → B} {e : A → B} (he : Isometry e)
@@ -53,8 +40,6 @@ theorem tendstoUniformly_of_distortion_and_pointwise [CompactSpace A]
         dist (f k z) (f k x) := dist_triangle4 _ _ _ _
     _ < ε := by rw [he.dist_eq, dist_comm z x] at *; linarith [hk z hz]
 
-
-
 theorem exists_isometric_ultrafilter_limit [CompactSpace B]
     (f : ℕ → A → B)
     (hdist : ∀ x y, Tendsto (fun k => dist (f k x) (f k y)) atTop (𝓝 (dist x y))) :
@@ -69,8 +54,6 @@ theorem exists_isometric_ultrafilter_limit [CompactSpace B]
   refine ⟨U, hU, e, Isometry.of_dist_eq ?_, hpoint⟩
   intro x y
   exact tendsto_nhds_unique ((hpoint x).dist (hpoint y)) ((hdist x y).mono_left hU)
-
-
 
 theorem mem_range_of_uniform_limit_and_approximation [CompactSpace A]
     {l : Filter ι} [l.NeBot] {f : ι → A → B} {e : A → B}
@@ -89,8 +72,6 @@ theorem mem_range_of_uniform_limit_and_approximation [CompactSpace A]
     dist y (e x) ≤ dist y (f k x) + dist (f k x) (e x) := dist_triangle _ _ _
     _ = dist (f k x) y + dist (e x) (f k x) := by congr 1 <;> exact dist_comm _ _
     _ < ε := by linarith [hk x]
-
-
 
 theorem exists_isometric_limit_covering_approximated_points [CompactSpace A] [CompactSpace B]
     (f : ℕ → A → B)

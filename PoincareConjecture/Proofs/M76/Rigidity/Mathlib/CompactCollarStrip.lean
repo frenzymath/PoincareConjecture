@@ -2,22 +2,12 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E X : Type*} [TopologicalSpace E] [T2Space E]
   [TopologicalSpace X] [T2Space X]
-
-
 
 theorem compact_collar_strip_geometry {B : Set E} {K : Set X}
     (hB : IsCompact B) (HB : B ≃ₜ frontier K) (c : E × ℝ → X)

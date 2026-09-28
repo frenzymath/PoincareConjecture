@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundPullback
 import PoincareConjecture.Proofs.M36.RetainedDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem round_forward_mfderiv_isInvertible {X : Type*} [TopologicalSpace X]
     [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]
@@ -38,9 +26,6 @@ theorem round_forward_mfderiv_isInvertible {X : Type*} [TopologicalSpace X]
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank (f := L.toLinearMap) rfl).mp hinj⟩
   exact ⟨ContinuousLinearEquiv.ofBijective L (LinearMap.ker_eq_bot.mpr hbij.1)
     (LinearMap.range_eq_top.mpr hbij.2), rfl⟩
-
-
-
 
 theorem round_composition_mfderiv_isInvertible {X : Type*} [TopologicalSpace X]
     [ChartedSpace E X] [IsManifold (𝓡 3) ∞ X]

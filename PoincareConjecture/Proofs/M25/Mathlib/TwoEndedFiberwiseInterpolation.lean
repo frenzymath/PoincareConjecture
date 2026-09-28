@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.RelativeFiberwiseExtension
 import PoincareConjecture.Proofs.M25.Mathlib.SmoothRetainedClamp
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
@@ -22,9 +12,6 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {I : ModelWithCorners ℝ E H} [I.Boundaryless]
   {K : Type w} [TopologicalSpace K] [ChartedSpace H K]
   [IsManifold I ∞ K] [CompactSpace K]
-
-
-
 
 theorem exists_two_ended_fiberwise_interpolation
     (g0 g1 : K × ℝ → ℝ) {r : ℝ} (hr : 0 < r)

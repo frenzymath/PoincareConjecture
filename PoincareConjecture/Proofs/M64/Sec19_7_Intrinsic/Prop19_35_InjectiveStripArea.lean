@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaDensity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StripArea
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.ChangeOfVariables
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal Manifold ContDiff Bundle Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_volume_image_of_injective
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -45,9 +29,6 @@ theorem m64Intrinsic_volume_image_of_injective
       ∫⁻ x in e '' S, ENNReal.ofReal (G.pullbackVolumeDensity id x) := by
     simpa using hid
   exact hid'.trans (by simpa using hchange)
-
-
-
 
 theorem m64Intrinsic_injective_strip_area_lower
     (G : RiemannianMetric 2 AnnulusCoordinates)
@@ -71,9 +52,6 @@ theorem m64Intrinsic_injective_strip_area_lower
     _ ≤ ENNReal.ofReal (intrinsicAnnulusArea G) := by
       rw [← ENNReal.ofReal_toReal harea.1.ne]
       exact ENNReal.ofReal_le_ofReal harea.2
-
-
-
 
 theorem m64Intrinsic_injective_strip_height_integral_le
     (G : RiemannianMetric 2 AnnulusCoordinates)

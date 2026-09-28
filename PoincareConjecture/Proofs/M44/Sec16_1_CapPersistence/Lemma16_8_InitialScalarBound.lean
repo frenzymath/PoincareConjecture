@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialCur
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_LocalScalarTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ noncomputable local instance initialScalarCoefficientNormedGroup :
 
 noncomputable local instance initialScalarCoefficientNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem scalar_bound_of_normalized_comparison
     {g0 : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
@@ -97,9 +85,6 @@ theorem scalar_bound_of_normalized_comparison
   rw [hscalar]
   exact abs_scalarCurvature_le_of_metric_error g0.connection DE x Q.eta_pos.le
     hsmall hK (hcurv x) herror
-
-
-
 
 theorem exists_global_initial_chart_scalar_bound
     {g0 : StandardInitialMetric} (estimate : StandardCapEstimate g0) :

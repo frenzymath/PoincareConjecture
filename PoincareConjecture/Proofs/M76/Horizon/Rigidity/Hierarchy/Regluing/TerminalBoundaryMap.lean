@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.Mathlib.ClosedArcCoor
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Boundary.RetainedRectangleEdges
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Spheres.MinimalRemoval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -124,8 +116,6 @@ theorem HamiltonZeroThirdPhaseGeometry.frontier_box_faces
     have h : hamiltonZeroThirdCircleMap phi x = (v : C0) := hx.2
     cases side <;> simp [h]
 
-
-
 theorem exists_hamiltonZero_terminal_boundary_map
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}
     {N : Set X0} {phi : C(H0, H0)} {u v a b alpha beta : ℝ}
@@ -166,8 +156,6 @@ theorem exists_hamiltonZero_terminal_boundary_map
     (lift.continuous.comp inc.continuous).subtype_mk _⟩, ?_⟩
   intro x
   exact hvalue (inc x)
-
-
 
 theorem exists_hamiltonZero_second_slab_terminal_boundary_map
     {ι : Type*} {e : ι → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}

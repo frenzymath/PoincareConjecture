@@ -2,22 +2,11 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Add
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff RealInnerProductSpace
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem secondDeriv_normal_constraint
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

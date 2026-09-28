@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularEdgeCrossing
 import PoincareConjecture.Proofs.M76.Mathlib.BichromaticTriangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem straddlesZero_neg_iff (A : E →ᵃ[ℝ] ℝ) (e : Finset E) :
     (-A).StraddlesZero e ↔ A.StraddlesZero e := by
@@ -30,9 +19,6 @@ theorem straddlesZero_neg_iff (A : E →ᵃ[ℝ] ℝ) (e : Finset E) :
   · rintro ⟨u, v, hu, hv, he⟩
     exact ⟨v, u, neg_neg_of_pos hv, neg_pos.mpr hu, he.trans (Set.pair_comm _ _)⟩
 
-
-
-
 theorem straddlingPoint_eq_zeroCrossing (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     (he : A.StraddlesZero e) {u v : E} (hu : A u < 0) (hv : 0 < A v)
     (heq : (e : Set E) = {u, v}) : A.straddlingPoint e he = A.zeroCrossing u v := by
@@ -43,8 +29,6 @@ theorem straddlingPoint_eq_zeroCrossing (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     exact hp.1
   · exact hp.2
 
-
-
 theorem straddlingPoint_neg (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     (he : A.StraddlesZero e) (hne : (-A).StraddlesZero e) :
     (-A).straddlingPoint e hne = A.straddlingPoint e he := by
@@ -54,9 +38,6 @@ theorem straddlingPoint_neg (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
   · exact A.straddlingPoint_mem e he
 
 variable [DecidableEq E]
-
-
-
 
 theorem straddlesZero_iff_bichromatic (A : E →ᵃ[ℝ] ℝ) (e : Finset E)
     (hreg : ∀ u ∈ e, A u ≠ 0) :

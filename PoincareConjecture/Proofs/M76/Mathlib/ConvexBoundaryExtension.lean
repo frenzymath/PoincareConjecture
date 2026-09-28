@@ -2,21 +2,9 @@ import PoincareConjecture.Proofs.M76.Mathlib.BallModelBoundaryExtension
 import Mathlib.Analysis.Convex.GaugeRescale
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
-
-
-
 
 theorem IsCompact.exists_compatible_unitBall_models {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] {s : Set E}
@@ -33,9 +21,6 @@ theorem IsCompact.exists_compatible_unitBall_models {E : Type*}
   intro x
   apply Subtype.ext
   rfl
-
-
-
 
 theorem Homeomorph.exists_convex_body_extension {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E] [Nontrivial E]

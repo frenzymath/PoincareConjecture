@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Reaction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_null_evolution_nonpos
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -47,8 +35,6 @@ theorem terminalCurvature_null_evolution_nonpos
   change 0 ≤ (a - b) * (_ + _) at h
   nlinarith
 
-
-
 theorem terminalCurvature_null_reaction_nonpos
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -63,8 +49,6 @@ theorem terminalCurvature_null_reaction_nonpos
     (hC.tensor_calculus n M (F.metric b) (F.connection b))
     (hsec b (right_mem_Icc.mpr hab.le)) x v w hzero
   linarith
-
-
 
 theorem terminalCurvature_exists_ricci_null_vector
     {M : Type u} [TopologicalSpace M] [T2Space M]

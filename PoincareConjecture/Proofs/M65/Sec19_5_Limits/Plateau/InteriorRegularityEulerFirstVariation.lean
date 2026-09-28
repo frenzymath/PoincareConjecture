@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerIntegral
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open Set Metric Filter MeasureTheory
 open scoped Topology ContDiff Manifold SchwartzMap
 
 namespace PoincareConjecture.M65Euler
-
-
 
 def firstVariationDensity {N : ℕ} (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))
     (X : LoopPlane → EuclideanSpace ℝ (Fin N))
@@ -59,10 +47,6 @@ private theorem metric_quadratic_integrable {N : ℕ} {μ : Measure LoopPlane}
     _ = _ := by ring
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem variation_energy_hasDerivAt {N : ℕ}
     (g : RiemannianMetric N (EuclideanSpace ℝ (Fin N)))

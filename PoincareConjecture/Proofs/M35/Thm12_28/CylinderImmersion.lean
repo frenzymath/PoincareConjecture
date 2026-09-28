@@ -1,23 +1,12 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.GeneralizedFlowCylinder
-
-
 
 theorem mfderiv_injective {F : GeneralizedRicciFlowData}
     {C : GeneralizedSliceCarrier} {a Q : ℝ} {I : Set ℝ} {U : Set C.carrier}

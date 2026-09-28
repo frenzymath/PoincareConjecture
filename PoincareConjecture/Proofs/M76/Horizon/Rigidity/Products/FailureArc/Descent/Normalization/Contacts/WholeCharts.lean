@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Contacts.Endpoint
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ProjectedCrossingCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -30,9 +21,6 @@ variable {U V M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
 namespace MarkedSurfacePositionData
 
 variable (D : MarkedSurfacePositionData step K₀ A₀ j R Fmark)
-
-
-
 
 theorem exists_whole_projected_crossing
     {x y : V} (hx : x ∈ D.K.space) (hy : y ∈ D.K.space) (hne : x ≠ y)

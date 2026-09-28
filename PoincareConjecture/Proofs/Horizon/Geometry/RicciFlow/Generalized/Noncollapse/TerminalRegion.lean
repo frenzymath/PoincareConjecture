@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncolla
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.OrdinaryProductCapture
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.PathCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -65,8 +57,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 include out
 
-
-
 theorem action_eq_of_curve_eqOn
     {a b : ℝ} {x y : (P.toLGeometry h).Point}
     (p q : M14BackwardPath (P.toLGeometry h) T a b x y)
@@ -80,8 +70,6 @@ theorem action_eq_of_curve_eqOn
   intro s hs
   change P.pointMap (p.curve s) = P.pointMap (q.curve s)
   exact congrArg P.pointMap (hpq hs)
-
-
 
 theorem stable_reducedLength_eq
     {τ : ℝ} {x : (P.toLGeometry h).Point}
@@ -126,7 +114,6 @@ theorem stable_reducedLength_eq
   change reducedLength F T (P.pointMap x) (P.pointMap (H.endpoint_map Z)) τ = _
   rw [H.endpoint_slice_map_val Z hZ]
 
-
 theorem terminalPreimage_measure
     {τ : ℝ} {x : (P.toLGeometry h).Point}
     {E : M14ExponentialFamily (P.toLGeometry h) T x}
@@ -145,8 +132,6 @@ theorem terminalPreimage_measure
     simpa only [P.productCylinder_range, mem_univ, ofPred_true, compl_eq_univ_sdiff] using hnull
   rw [H.image_terminalPreimage U]
   exact measure_inter_conull hnull'
-
-
 
 noncomputable def terminalRegionConfiguration
     {τ taubar l₀ V r : ℝ} {K : SpacetimeInterval}

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import Mathlib.Topology.Separation.Hausdorff
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -22,8 +13,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem exists_saddle_nonnested_lower_end_geometry
     (hP : PlanarSchoenfliesService)

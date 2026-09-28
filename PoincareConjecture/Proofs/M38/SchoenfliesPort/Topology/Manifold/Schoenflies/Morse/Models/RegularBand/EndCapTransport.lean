@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.BandEndpoints
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapCollar
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -29,8 +21,6 @@ namespace Poincare.Manifold.Schoenflies
 open Poincare.Geometry.Euclidean
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem image_upper_cap_of_constant_plane_action
     {v : E3} (hv : ‖v‖ = 1) {b c s : Real} (hbc : b ≤ c) (hs : 0 < s)
@@ -50,7 +40,6 @@ theorem image_upper_cap_of_constant_plane_action
     hD _ _ (hbc.trans (le_add_of_nonneg_right
       (mul_nonneg hs.le (height_nonneg_of_mem_boundedCylinderNorthernCap hy))))]
   rfl
-
 
 theorem image_lower_cap_of_fixed_lower_halfSpace
     {v : E3} (hv : ‖v‖ = 1) {a c s : Real} (hca : c ≤ a) (hs : 0 < s)

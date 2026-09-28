@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Tube
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -70,9 +62,6 @@ private theorem exists_strip_chart_of_injective_bijective_derivative
     (hG.contMDiffAt (hs.mem_nhds hx)) (hbij _ hx) hleft
   rw [show G (e.symm y) = y from e.right_inv hy] at hInv
   exact hInv.contMDiffWithinAt
-
-
-
 
 theorem exists_regular_level_interval_strip
     {H : S2 -> Real} (hH : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ H)

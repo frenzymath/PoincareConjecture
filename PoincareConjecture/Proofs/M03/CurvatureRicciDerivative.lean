@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M03.CurvatureJoint
 import PoincareConjecture.Proofs.M03.MetricInverse
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 
@@ -288,7 +277,6 @@ theorem ricci_covariant_derivative_eq_sum_basis
     simpa only [FiberBundle.extend_apply_self, hbx] using
       hθrepr (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) v) i he
   simpa only [hθx, E, K, H, N, R] using htraceK A B C hAV hBV hCV
-
 
 theorem lower_covariant_derivative_iterated_inner
     {g : RiemannianMetric n M} (D : LeviCivitaData g)

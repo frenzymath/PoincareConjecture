@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.OriginalBallPhaseH
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedProductPasting
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalPhaseSelectionPL
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,9 +17,6 @@ local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_supported_ball_phase_homotopy {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

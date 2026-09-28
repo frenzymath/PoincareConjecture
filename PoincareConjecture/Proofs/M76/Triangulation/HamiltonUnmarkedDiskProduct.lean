@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,10 +12,6 @@ local notation "Q2" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 structure HamiltonUnmarkedDiskProduct (R : Set E) {D : Set E} (b : D2 ≃ₜ D) where
 

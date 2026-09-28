@@ -5,19 +5,6 @@ import Mathlib.Tactic.Abel
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Filter Metric
@@ -27,44 +14,30 @@ namespace PoincareConjecture.M40
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 def cutoffTranslation (β : E → ℝ) (v : E) (x : E) : E :=
   x + β x • v
-
-
 
 theorem cutoffTranslation_eq_self {β : E → ℝ} (v : E) {x : E}
     (hx : β x = 0) : cutoffTranslation β v x = x := by
   simp [cutoffTranslation, hx]
-
-
 
 theorem cutoffTranslation_eventuallyEq {β : E → ℝ} (v : E) {x : E}
     (hx : x ∉ tsupport β) : cutoffTranslation β v =ᶠ[𝓝 x] id := by
   filter_upwards [(isClosed_tsupport β).isOpen_compl.mem_nhds hx] with y hy
   exact cutoffTranslation_eq_self v (image_eq_zero_of_notMem_tsupport hy)
 
-
-
 theorem cutoffTranslation_eq_target {β : E → ℝ} {a b : E}
     (ha : β a = 1) : cutoffTranslation β (b - a) a = b := by
   simp only [cutoffTranslation, ha, one_smul]
   abel
 
-
-
 theorem continuous_cutoffTranslation {β : E → ℝ} (hβ : Continuous β) :
     Continuous (fun p : E × E => cutoffTranslation β p.1 p.2) :=
   continuous_snd.add ((hβ.comp continuous_snd).smul continuous_fst)
 
-
-
 theorem contDiff_cutoffTranslation {β : E → ℝ} {n : ℕ∞}
     (hβ : ContDiff ℝ n β) (v : E) : ContDiff ℝ n (cutoffTranslation β v) :=
   contDiff_id.add (hβ.smul contDiff_const)
-
-
 
 theorem dist_cutoffTranslation_self_le {β : E → ℝ} (v x : E)
     (hβ0 : 0 ≤ β x) (hβ1 : β x ≤ 1) :
@@ -73,15 +46,11 @@ theorem dist_cutoffTranslation_self_le {β : E → ℝ} (v x : E)
     norm_smul, Real.norm_of_nonneg hβ0]
   exact mul_le_of_le_one_left (norm_nonneg v) hβ1
 
-
-
 theorem hasCompactSupport_cutoffTranslation_sub_id {β : E → ℝ}
     (hβ : HasCompactSupport β) (v : E) :
     HasCompactSupport (fun x => cutoffTranslation β v x - x) := by
   simpa only [Pi.smul_def', cutoffTranslation, add_sub_cancel_left] using
     (hβ.smul_right (f' := fun _ => v))
-
-
 
 theorem lipschitzWith_cutoff_displacement {β : E → ℝ} {L : ℝ≥0}
     (hβ : LipschitzWith L β) (v : E) :
@@ -97,8 +66,6 @@ theorem lipschitzWith_cutoff_displacement {β : E → ℝ} {L : ℝ≥0}
     _ = ((L * ‖v‖₊ : ℝ≥0) : ℝ) * dist x y := by
       simp only [NNReal.coe_mul, coe_nnnorm]
       ring
-
-
 
 theorem lipschitzWith_cutoffTranslation {β : E → ℝ} {L : ℝ≥0}
     (hβ : LipschitzWith L β) (v : E) :
@@ -120,15 +87,11 @@ theorem lipschitzWith_cutoffTranslation {β : E → ℝ} {L : ℝ≥0}
       simp only [NNReal.coe_add, NNReal.coe_one]
       ring
 
-
-
 theorem fderiv_cutoffTranslation {β : E → ℝ} {x : E}
     (hβ : DifferentiableAt ℝ β x) (v : E) :
     fderiv ℝ (cutoffTranslation β v) x =
       ContinuousLinearMap.id ℝ E + (fderiv ℝ β x).smulRight v := by
   exact ((hasFDerivAt_id x).add (hβ.hasFDerivAt.smul_const v)).fderiv
-
-
 
 theorem norm_fderiv_cutoffTranslation_sub_id_le {β : E → ℝ} {L : ℝ≥0}
     (hL : LipschitzWith L β) {x : E} (hβ : DifferentiableAt ℝ β x) (v : E) :
@@ -138,8 +101,6 @@ theorem norm_fderiv_cutoffTranslation_sub_id_le {β : E → ℝ} {L : ℝ≥0}
     (hβ.hasFDerivAt.smul_const v).fderiv
   rw [fderiv_cutoffTranslation hβ, add_sub_cancel_left, ← hsmul]
   exact norm_fderiv_le_of_lipschitz ℝ (lipschitzWith_cutoff_displacement hL v)
-
-
 
 theorem cutoffTranslation_mapsTo_ball {β : E → ℝ} {c v : E} {r R : ℝ}
     (hβ0 : ∀ x, 0 ≤ β x) (hβ1 : ∀ x, β x ≤ 1)
@@ -152,8 +113,6 @@ theorem cutoffTranslation_mapsTo_ball {β : E → ℝ} {c v : E} {r R : ℝ}
     change dist (cutoffTranslation β v x) c < R
     linarith
   · simpa only [cutoffTranslation_eq_self v (hzero x (le_of_not_gt hxr))] using hx
-
-
 
 def cutoffTranslationHomotopy {β : E → ℝ} (hβ : Continuous β) (v : E) :
     (ContinuousMap.id E).Homotopy
@@ -170,11 +129,6 @@ def cutoffTranslationHomotopy {β : E → ℝ} (hβ : Continuous β) (v : E) :
 section MetricBound
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_metric_bound_of_continuous_family
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)
@@ -247,10 +201,6 @@ theorem exists_metric_bound_of_continuous_family
             congr 1
             simpa only [abs_of_pos hn, hscale] using (hNsmul x (hKU hx) ‖w‖ z).symm
 
-
-
-
-
 theorem exists_cutoffTranslation_metric_bound
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)
     (N : E × E → ℝ) (hN : ContinuousOn N (U ×ˢ univ))
@@ -274,10 +224,6 @@ theorem exists_cutoffTranslation_metric_bound
     (continuous_cutoffTranslation hβ.continuous) hA
     (fun x _ => by simp [cutoffTranslation])
     (fun x _ => by ext w; simp [A]) hη
-
-
-
-
 
 theorem exists_cutoffTranslation_metric_bound_on
     {U : Set E} (hU : IsOpen U)
@@ -308,11 +254,6 @@ theorem exists_cutoffTranslation_metric_bound_on
         simp only [hw, hz, le_refl]
       · exact (hNpos x hx w hw).le
     nlinarith
-
-
-
-
-
 
 theorem exists_contDiff_pointCorrection_metric
     {U : Set E} (hU : IsOpen U) {b : E} (hb : b ∈ U)
@@ -366,9 +307,6 @@ theorem exists_contDiff_pointCorrection_metric
   · intro t x hx
     exact cutoffTranslation_eq_self _ (image_eq_zero_of_notMem_tsupport hx)
 
-
-
-
 theorem exists_contDiff_pointCorrection_inner
     {U : Set E} (hU : IsOpen U) {b : E} (hb : b ∈ U)
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (hB : ContinuousOn B U)
@@ -412,6 +350,5 @@ theorem exists_contDiff_pointCorrection_inner
     Real.sq_sqrt (hBnonneg x hx w)] using hsq
 
 end MetricBound
-
 
 end PoincareConjecture.M40

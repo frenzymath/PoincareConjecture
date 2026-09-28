@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.CompactTime
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE
@@ -17,8 +9,6 @@ open scoped ContDiff
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_solution_of_compact_confinement
     {U K : Set E} (hU : IsOpen U) (hK : IsCompact K) (hKU : K ⊆ U)

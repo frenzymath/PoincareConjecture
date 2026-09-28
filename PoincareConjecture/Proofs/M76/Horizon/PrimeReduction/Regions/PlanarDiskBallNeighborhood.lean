@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Disks.PlanarCircleOuterDisk
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompactFaceNormalBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -17,8 +8,6 @@ open PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_normal_ball_of_planar_disk_interior
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -58,8 +47,6 @@ theorem exists_normal_ball_of_planar_disk_interior
   · rintro _ ⟨z, hz, rfl⟩
     exact hproduct hz
 
-
-
 theorem exists_planar_circle_disk_ball_neighborhood
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (h3 : Module.finrank ℝ E = 3)
@@ -83,8 +70,6 @@ theorem exists_planar_circle_disk_ball_neighborhood
     exists_outer_disk_of_planar_circle_strip P hP hPi hD hβ f hf hfib haxis haxisImage
   exact exists_normal_ball_of_planar_disk_interior h3 hDout hDint F hFi hO
     ((image_mono hDsub).trans hFO)
-
-
 
 theorem exists_ball_neighborhood_of_identity_circle_tube
     {n : ℕ} (L : Polygon V3 (n + 3)) (hL : L.HasSimplicialEdges)

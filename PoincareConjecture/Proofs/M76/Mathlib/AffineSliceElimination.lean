@@ -2,15 +2,6 @@ import Mathlib.LinearAlgebra.AffineSpace.AffineMap
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,10 +9,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem image_zeroLevel_of_nonnegative_displacement (A : E →ᵃ[ℝ] ℝ)
     {S d : Set E} (hdS : d ⊆ S) (hdplane : d ⊆ {x | A x = 0})

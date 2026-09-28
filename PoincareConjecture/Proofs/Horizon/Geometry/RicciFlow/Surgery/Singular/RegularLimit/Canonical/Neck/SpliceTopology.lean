@@ -1,8 +1,6 @@
 import Mathlib.Topology.LocalAtTarget
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set Topology TopologicalSpace
@@ -10,8 +8,6 @@ open Set Topology TopologicalSpace
 universe u v
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
 
 theorem isEmbedding_of_time_regions
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

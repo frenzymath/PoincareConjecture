@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.AffineIntersectionRanks
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Projection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
@@ -18,8 +10,6 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem exists_centered_plane_line_coordinates
     (P Q : AffineSubspace ℝ E) (hdim : finrank ℝ E = 3)

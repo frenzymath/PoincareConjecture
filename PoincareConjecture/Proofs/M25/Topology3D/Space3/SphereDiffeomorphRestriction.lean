@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereRegionChart
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E] {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
-
-
 
 noncomputable def normPreservingSphereDiffeomorph
     (F : Diffeomorph 𝓘(ℝ, E) 𝓘(ℝ, E) E E ∞) (hF : ∀ y, ‖F y‖ = ‖y‖) :

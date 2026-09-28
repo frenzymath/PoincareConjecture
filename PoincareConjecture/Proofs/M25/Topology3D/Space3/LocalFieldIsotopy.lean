@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockSmoothFlow
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ClockTracks
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 theorem clockEvolution_preserves_linear [CompleteSpace E]
     (V : ℝ × E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K (clockField V)) (hL : ∀ p, ‖clockField V p‖ ≤ L)
@@ -33,9 +19,6 @@ theorem clockEvolution_preserves_linear [CompleteSpace E]
     A (clockEvolution V hK hL s t x) = A x :=
   boundedFlow_preserves_linear (clockField V) hK hL
     (A.comp (ContinuousLinearMap.snd ℝ ℝ E)) hA (s, x) (t - s)
-
-
-
 
 theorem exists_ambient_isotopy_of_localField [FiniteDimensional ℝ E]
     {Q : Type*} {K U : Set (ℝ × E)} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

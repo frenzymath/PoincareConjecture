@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.ReferenceCompatibility
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Cylinder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +16,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [IsManifold (𝓡 3) ∞ M]
   {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {I : Set ℝ} {U : Set C.carrier}
-
-
 
 theorem forward_eq_cylinder_of_eq (R : SingularTimeReference F T M)
     (e : GeneralizedFlowCylinder F C origin scale I U) (hI : OrdConnected I)

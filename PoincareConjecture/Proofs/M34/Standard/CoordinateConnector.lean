@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.SmoothTransitionSegment
 import PoincareConjecture.Proofs.M34.Standard.CoordinateMetricBounds
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,12 +14,8 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
 noncomputable def coordinateConnector (f : E → M) (a b : ℝ) (z : E) : ℝ → M :=
   fun s => f (Real.smoothSegment a b z s)
-
-
 
 theorem coordinateConnector_parameter_mem (a b : ℝ) {delta : ℝ} {z : E}
     (hz : z ∈ Metric.ball 0 delta) (s : ℝ) :
@@ -38,13 +25,11 @@ theorem coordinateConnector_parameter_mem (a b : ℝ) {delta : ℝ} {z : E}
 
 omit [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem coordinateConnector_endpoints (f : E → M) {a b : ℝ} (hab : a < b) (z : E) :
     coordinateConnector f a b z a = f 0 ∧ coordinateConnector f a b z b = f z := by
   simp [coordinateConnector, Real.smoothSegment_left, Real.smoothSegment_right hab.ne]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem coordinateConnector_contMDiff (f : E → M) (a b : ℝ) {delta : ℝ} {z : E}
     (hz : z ∈ Metric.ball 0 delta)
@@ -57,7 +42,6 @@ theorem coordinateConnector_contMDiff (f : E → M) (a b : ℝ) {delta : ℝ} {z
 
 set_option backward.isDefEq.respectTransparency false in
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem coordinateConnector_velocity (f : E → M) (a b : ℝ) {delta : ℝ} {z : E}
     (hz : z ∈ Metric.ball 0 delta)
@@ -79,8 +63,6 @@ theorem coordinateConnector_velocity (f : E → M) (a b : ℝ) {delta : ℝ} {z 
       hd.hasFDerivAt.hasMFDerivAt.mdifferentiableAt)
   exact hcomp.trans (congrArg
     (fun v : E => mfderiv (𝓡 n) (𝓡 n) f (Real.smoothSegment a b z s) v) hvalue)
-
-
 
 theorem coordinateConnector_tangentNorm_le (g : RiemannianMetric n M) (f : E → M)
     {a b delta c C : ℝ} (hab : a < b) (hc : 0 ≤ c) (hC : 0 ≤ C)

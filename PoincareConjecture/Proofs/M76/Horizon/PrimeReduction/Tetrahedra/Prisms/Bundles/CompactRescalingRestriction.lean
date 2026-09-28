@@ -1,8 +1,6 @@
 import Mathlib.Topology.LocalAtTarget
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76.PrismBelt

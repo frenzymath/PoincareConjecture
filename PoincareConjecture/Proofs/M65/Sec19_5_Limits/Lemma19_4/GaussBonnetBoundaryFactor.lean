@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetHalfDiskResidual
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.HartmanWintner
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -18,11 +9,6 @@ open Set Filter Metric MeasureTheory Complex
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
-
-
 
 theorem halfDisk_differential_factor_holder
     {n : ℕ} [Nonempty (Fin n)]
@@ -126,9 +112,6 @@ theorem halfDisk_differential_factor_holder
     change (Ring.inverse (L z) * L z) (M65StrictTrace.halfDiskGradient H r z) = _ at hh
     rw [Ring.inverse_mul_cancel _ (hunit z hzK), map_smul] at hh
     exact hh
-
-
-
 
 theorem halfDisk_differential_factor_memLp
     {n : ℕ} [Nonempty (Fin n)]

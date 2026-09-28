@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerInteriorHessian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -62,10 +54,6 @@ private theorem fixed_cutoff :
         fun l _ => abs_nonneg (B k l)) (Finset.mem_univ i)
     exact (hB i j x).trans ((le_abs_self _).trans
       ((hj.trans hi).trans (le_add_of_nonneg_left hsumA)))
-
-
-
-
 
 theorem suNearLaplacian_inner_hessian_bound :
     ∃ δ C : ℝ, 0 < δ ∧ 0 < C ∧ ∀ (m : ℕ)

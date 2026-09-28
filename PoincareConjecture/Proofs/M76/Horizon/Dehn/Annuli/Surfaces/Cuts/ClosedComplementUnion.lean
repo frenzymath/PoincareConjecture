@@ -1,15 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComplement
 
-
-
 set_option autoImplicit false
 open Set
 
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem mem_closedFaceComplement_union_iff
     (K N N₀ N₁ : SimplicialComplex ℝ E)

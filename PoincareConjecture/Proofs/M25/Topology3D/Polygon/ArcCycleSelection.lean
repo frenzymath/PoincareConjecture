@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcInsideMatching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,8 +28,6 @@ private theorem vertex_mem_closed_parameter_subarc_iff {n : ℕ}
   · intro hw
     refine ⟨w.val, ?_, polygonLinearParameter_natVertex p w⟩
     exact ⟨by exact_mod_cast hw.1, by exact_mod_cast hw.2⟩
-
-
 
 theorem IsSimplePolygonalArc.exists_cycle_good_subarc [FiniteDimensional ℝ E]
     {n m : ℕ} {p : Polygon E (n + 2)} {r : Polygon E m}

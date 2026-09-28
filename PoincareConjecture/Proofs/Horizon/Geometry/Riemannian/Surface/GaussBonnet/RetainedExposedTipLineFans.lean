@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedExposedTipLines
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterMetricFans
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -24,8 +17,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
 
 theorem canonical_vertex_fan_at_collinear_first_outer_tip
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)
@@ -71,8 +62,6 @@ theorem canonical_vertex_fan_at_collinear_first_outer_tip
   rw [T.vertex_contribution_eq_cap_union_add_core g p R hint, hc,
     T.core_contribution_at_collinear_first_outer_tip g p R i q hzq hz htip hregion hband hind]
   ring
-
-
 
 theorem canonical_vertex_fan_at_collinear_second_outer_tip
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)

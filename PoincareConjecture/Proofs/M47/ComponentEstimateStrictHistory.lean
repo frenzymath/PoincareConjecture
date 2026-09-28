@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M33.GuardedCylinders
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_component_strict_ordinary_history
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

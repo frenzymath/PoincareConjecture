@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedImageBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +16,6 @@ variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   [IsManifold (𝓡 3) ∞ X] [IsManifold (𝓡 3) ∞ Y]
   [T3Space X] [T3Space Y] [SecondCountableTopology X]
   [MeasurableSpace X] [MeasurableSpace Y] [BorelSpace X] [BorelSpace Y]
-
-
-
 
 theorem seed_target_ball_volume_le_source
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
@@ -61,9 +50,6 @@ theorem seed_target_ball_volume_le_source
   have h := (measure_mono hcover).trans hvol
   norm_num at h ⊢
   exact h
-
-
-
 
 theorem seed_volume_density_transfer
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)

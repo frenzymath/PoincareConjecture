@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Bernstein.UniformGradient
 import PoincareConjecture.Proofs.M35.Uniqueness.LocalLichnerowiczSmall
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingPreservation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

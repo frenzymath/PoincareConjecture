@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +9,6 @@ variable {𝕜 E F G : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   [NormedAddCommGroup G] [NormedSpace 𝕜 G]
-
-
 
 theorem ContinuousLinearMap.norm_iteratedFDeriv_comp_right_of_contDiffAt
     (L : E →L[𝕜] F) {f : F → G} {x : E} {m : ℕ}

@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.PotentialLevels
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Regularity.Potential
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem normalizedGradient_curve_centers_escape
     (S : GradientShrinkingSolitonData 3 M) {a : ℝ}
@@ -63,8 +60,6 @@ theorem potential_normalizedGradient_flow_nat
     (show a < S.potential (Φ 0 x) + (k : ℝ) from
       hstart.trans_le (le_add_of_nonneg_right (Nat.cast_nonneg k)))
   simpa only [h0] using heq
-
-
 
 theorem normalizedGradient_flow_between_centers
     (S : GradientShrinkingSolitonData 3 M) {a : ℝ}

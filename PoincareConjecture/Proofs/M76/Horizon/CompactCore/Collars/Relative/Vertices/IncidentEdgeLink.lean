@@ -13,8 +13,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 open Classical in
 
-
-
 theorem edge_dual_subset_vertex_link (p : (T.marked 2).vertices)
     {s : Finset E} (hs : s ∈ (T.marked 2).faces)
     (hcard : s.card = 2) (hps : (p : E) ∈ s) :
@@ -45,6 +43,4 @@ theorem edge_dual_subset_vertex_link (p : (T.marked 2).vertices)
   have hfst : f ∈ (N.closedStar p).faces := hstar.symm ▸ hfN
   exact (N.link p).convexHull_subset_space ⟨hfN, hpnot, hfst.2⟩ hxf
 
-
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

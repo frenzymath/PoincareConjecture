@@ -2,20 +2,9 @@ import Mathlib.LinearAlgebra.Matrix.BilinearForm
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace LinearMap.BilinForm
-
-
-
 
 theorem sqrt_max_det_comp_eq_abs_det_toMatrix
     {ι : Type*} [Fintype ι] [DecidableEq ι]

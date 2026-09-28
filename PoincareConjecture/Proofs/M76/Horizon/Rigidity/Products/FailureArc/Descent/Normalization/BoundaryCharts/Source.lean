@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 import PoincareConjecture.Proofs.M76.Mathlib.TorusPLCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

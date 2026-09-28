@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionThinCollar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,12 +10,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_protected_boundary_collar
     {B b d q : Set X} (hB : IsFinitePLBallPair ((ℝ × ℝ) × ℝ) B (b ∪ d))

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_StraightBoundaryContact
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandBoundaryContact
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,13 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_refined_band_child_chord_contact
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
@@ -136,12 +117,6 @@ theorem m64Intrinsic_refined_band_child_chord_contact
         exact mem_singleton_iff.mpr (hpoint hy hx)
     · exact CoordinateTriangleBoundaryIntersection.disjoint
         (disjoint_iff_inter_eq_empty.mpr (not_nonempty_iff_eq_empty.mp hne))
-
-
-
-
-
-
 
 theorem m64Intrinsic_refine_band_faces_to_chord_family
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}

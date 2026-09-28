@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Puncture.
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.AntipodalNeighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.EquivariantLocalOpening
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +16,6 @@ open PoincareConjecture
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S3" => UnitThreeSphere
 local notation "S2" => Metric.sphere (0 : E3) 1
-
-
-
 
 theorem exists_diffeomorph_antipodal_ball_complement
     (b : OpenPartialHomeomorph E3 S3)

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ArcNormalNeighborhood
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InwardRaySign
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,10 +37,6 @@ private theorem arc_positive_normal_germ
       exact (show 0 < r from hrpos).not_ge (hrside.mp hcl)
     obtain ⟨_, h⟩ := hfalse.exists
     exact False.elim h
-
-
-
-
 
 theorem m64Intrinsic_arc_inward_ray_transverse_pos
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B p : ℝ}
@@ -119,10 +103,6 @@ theorem m64Intrinsic_arc_inward_ray_transverse_pos
     rw [heq]
     exact mul_nonneg hnonneg real_inner_self_nonneg
   exact lt_of_le_of_ne hnonneg' (Ne.symm hw)
-
-
-
-
 
 theorem m64Intrinsic_arc_transverse_ray_enters_region
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {A B p : ℝ}

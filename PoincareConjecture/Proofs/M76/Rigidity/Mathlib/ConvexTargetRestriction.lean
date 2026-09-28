@@ -2,14 +2,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Composition
 import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +10,6 @@ namespace OpenPartialHomeomorph
 
 variable {X E : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_convex_target_avoiding (H : OpenPartialHomeomorph X E)
     {p : X} (hp : p ∈ H.source) (hzero : H p = 0)

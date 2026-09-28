@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.TerminalBlowup.AngularCollapse
 import PoincareConjecture.Proofs.M35.Uniqueness.CoordinateRotations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
-
 
 theorem initial_linear_rotation_normSq_le
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
@@ -45,8 +33,6 @@ theorem initial_linear_rotation_normSq_le
     nlinarith only [hs]
   exact h.trans (mul_le_mul_of_nonneg_left hratio (by norm_num))
 
-
-
 theorem coordinateRotationGenerator_inner_zero (x : StandardCapSpace) :
     inner ℝ x (coordinateRotationGenerator x) = 0 := by
   have he : coordinateRotationGenerator x =
@@ -59,8 +45,6 @@ theorem coordinateRotationGenerator_inner_zero (x : StandardCapSpace) :
   simp only [inner_add_right, inner_smul_right, EuclideanSpace.inner_single_right,
     one_mul, starRingEnd_apply, star_trivial]
   ring
-
-
 
 theorem initial_coordinateRotationGenerator_normSq_le
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

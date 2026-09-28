@@ -1,20 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverJacobian
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,12 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
-
-
 
 theorem scalar_interval_integral_sq_le {d : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hd : MemLp d 2 (volume.restrict (Ioc a b))) :
@@ -61,12 +40,6 @@ theorem scalar_interval_integral_sq_le {d : ℝ → ℝ} {a b : ℝ} (hab : a < 
   rw [intervalIntegral.integral_of_le hab.le, intervalIntegral.integral_of_le hab.le]
   exact sub_nonneg.mp hbound
 
-
-
-
-
-
-
 theorem scalar_boundary_trace_energy {f d : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hc : ContinuousOn f (Icc a b))
     (hd : ∀ t ∈ Ioo a b, HasDerivAt f (d t) t)
@@ -77,12 +50,6 @@ theorem scalar_boundary_trace_energy {f d : ℝ → ℝ} {a b : ℝ} (hab : a < 
     (intervalIntegrable_iff_integrableOn_Ioc_of_le hab.le).mpr (hLp.integrable (by norm_num))
   rw [← intervalIntegral.integral_eq_sub_of_hasDerivAt_of_le hab.le hc hd hi]
   exact scalar_interval_integral_sq_le hab hLp
-
-
-
-
-
-
 
 theorem scalarCover_inner_trace_energy {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -108,12 +75,6 @@ theorem scalarCover_inner_trace_energy {H : Plane → ℝ} (hHc : Continuous H)
     change ‖scalarCirclePoint 1 t‖ = 1
     rw [scalarCirclePoint_norm, abs_one])
   simpa only [hzero, sub_zero] using h
-
-
-
-
-
-
 
 theorem scalarCover_outer_trace_energy {H : Plane → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

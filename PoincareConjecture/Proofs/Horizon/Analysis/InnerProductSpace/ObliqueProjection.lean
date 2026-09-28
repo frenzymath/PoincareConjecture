@@ -3,13 +3,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped InnerProductSpace
@@ -41,7 +34,6 @@ theorem norm_sub_normal_component_le (x v : E) :
   have hnonneg : 0 ≤ ⟪x, v⟫_ℝ ^ 2 / ‖x‖ ^ 2 := div_nonneg (sq_nonneg _) hn.le
   nlinarith [norm_nonneg (v - (⟪x, v⟫_ℝ / ‖x‖ ^ 2) • x), norm_nonneg v]
 
-
 theorem norm_sub_functional_component_le (ell : F →L[ℝ] ℝ) (u v : F) :
     ‖v - (ell v / ell u) • u‖ ≤
       (1 + ‖ell‖ * ‖u‖ / |ell u|) * ‖v‖ := by
@@ -52,7 +44,6 @@ theorem norm_sub_functional_component_le (ell : F →L[ℝ] ℝ) (u v : F) :
     _ ≤ ‖v‖ + (‖ell‖ * ‖v‖) / |ell u| * ‖u‖ := by
       gcongr
     _ = (1 + ‖ell‖ * ‖u‖ / |ell u|) * ‖v‖ := by ring
-
 
 theorem norm_project_after_linearMap_le (L : E →L[ℝ] F)
     (ell : F →L[ℝ] ℝ) (x : E) (u : F) {a A : ℝ}
@@ -80,7 +71,6 @@ theorem norm_project_after_linearMap_le (L : E →L[ℝ] F)
       mul_le_mul_of_nonneg_left ((hL w hw).trans (mul_le_mul_of_nonneg_left hn hA)) hfactor
     _ = _ := by ring
 
-
 theorem norm_project_after_linearMap_le_of_angle (L : E →L[ℝ] F)
     (x : E) (u vnormal : F) {a A c : ℝ}
     (hLu : L x = a • u) (hc : 0 < c) (hpair : ⟪vnormal, u⟫_ℝ ≤ -c)
@@ -106,7 +96,6 @@ theorem norm_project_after_linearMap_le_of_angle (L : E →L[ℝ] F)
   exact (norm_project_after_linearMap_le L ell x u hLu hell hA hL w).trans
     (mul_le_mul_of_nonneg_right
       (mul_le_mul_of_nonneg_right (add_le_add le_rfl hcoef) hA) (norm_nonneg _))
-
 
 theorem inner_le_neg_eighth_of_small_sum (u v : F) {δ : ℝ}
     (hu : 1 / 2 ≤ ‖u‖) (hv : 1 / 2 ≤ ‖v‖)

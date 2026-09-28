@@ -1,53 +1,12 @@
-
-
-
-
-
 module
 
 public import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 public section
 
 open CategoryTheory
 
 namespace FundamentalGroupoid
-
-
 
 theorem nonempty_hom {Y : Type*} [TopologicalSpace Y]
     [PathConnectedSpace Y] (x y : FundamentalGroupoid Y) : Nonempty (x ⟶ y) :=
@@ -60,15 +19,11 @@ namespace Poincare.Topology
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X]
 variable {A : Type*} [TopologicalSpace A]
 
-
 theorem FundamentalGroup.map_fromPath {Y : Type*} [TopologicalSpace Y] (f : C(X, Y)) (base : X)
     (q : Path base base) :
     _root_.FundamentalGroup.map f base (_root_.FundamentalGroup.fromPath ⟦q⟧) =
       _root_.FundamentalGroup.fromPath ⟦q.map f.continuous⟧ := by
   rfl
-
-
-
 
 theorem FundamentalGroup.map_range_eq_bot_iff {Y : Type*} [TopologicalSpace Y] (f : C(X, Y))
     (base : X) :
@@ -92,8 +47,6 @@ theorem FundamentalGroup.map_range_eq_bot_iff {Y : Type*} [TopologicalSpace Y] (
     rw [FundamentalGroup.map_fromPath f base γ, hnull]
     exact (FundamentalGroupoid.id_eq_path_refl (FundamentalGroupoid.mk (f base))).symm
 
-
-
 @[simp]
 theorem FundamentalGroup.map_range_eq_bot_of_subsingleton
     {a₀ : A} [Subsingleton (_root_.FundamentalGroup A a₀)] (f : C(A, X)) :
@@ -102,12 +55,9 @@ theorem FundamentalGroup.map_range_eq_bot_of_subsingleton
     (Set.subsingleton_coe _).mpr ((_root_.FundamentalGroup.map f a₀).subsingleton_coe_range)
   exact Subgroup.eq_bot_of_subsingleton _
 
-
 theorem FundamentalGroup.map_range_eq_bot_of_simplyConnectedSpace [SimplyConnectedSpace A]
     (f : C(A, X)) (a₀ : A) : (_root_.FundamentalGroup.map f a₀).range = ⊥ :=
   FundamentalGroup.map_range_eq_bot_of_subsingleton f
-
-
 
 theorem FundamentalGroup.map_range_le_of_subsingleton
     {a₀ : A} [Subsingleton (_root_.FundamentalGroup A a₀)] (f : C(A, X))
@@ -116,8 +66,6 @@ theorem FundamentalGroup.map_range_le_of_subsingleton
   rw [FundamentalGroup.map_range_eq_bot_of_subsingleton f]
   exact bot_le
 
-
-
 @[simp]
 theorem FundamentalGroup.mapOfEq_range_eq_bot_of_subsingleton
     {a₀ : A} [Subsingleton (_root_.FundamentalGroup A a₀)] (f : C(A, X)) {x : X} (h : f a₀ = x) :
@@ -125,8 +73,6 @@ theorem FundamentalGroup.mapOfEq_range_eq_bot_of_subsingleton
   have : Subsingleton ((_root_.FundamentalGroup.mapOfEq f h).range) :=
     (Set.subsingleton_coe _).mpr ((_root_.FundamentalGroup.mapOfEq f h).subsingleton_coe_range)
   exact Subgroup.eq_bot_of_subsingleton _
-
-
 
 theorem FundamentalGroup.map_range_le_of_simplyConnectedSpace [SimplyConnectedSpace A]
     (f : C(A, X)) (a₀ : A) (H : Subgroup (_root_.FundamentalGroup X (f a₀))) :

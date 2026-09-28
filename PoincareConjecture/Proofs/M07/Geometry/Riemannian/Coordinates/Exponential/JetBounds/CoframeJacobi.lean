@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.ConnectionKernel
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.MatrixParameterBounds
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,16 +34,13 @@ private theorem fderiv_time_radial_parameter (z d : ℝ × E) :
   rw [hasFDerivAt_fst.fderiv, hasFDerivAt_snd.fderiv]
   rfl
 
-
 def radialCoframeJacobi (T : E → E →L[ℝ] E) (z : ℝ × E) : E →L[ℝ] E :=
   z.1 • (T (z.1 • z.2)).inverse
-
 
 def radialCoframeJacobiVelocity (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (T : E → E →L[ℝ] E) (z : ℝ × E) : E →L[ℝ] E :=
   (T (z.1 • z.2)).inverse.comp
     (ContinuousLinearMap.id ℝ E + z.1 • Γ (z.1 • z.2) z.2)
-
 
 def radialJacobiCoefficient (Γ : E → E →L[ℝ] E →L[ℝ] E)
     (T : E → E →L[ℝ] E) (z : ℝ × E) : E →L[ℝ] E :=
@@ -118,8 +104,6 @@ theorem contDiff_radialJacobiCoefficient
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem radialJacobiCoefficient_eq_kernel
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
     (hgeo : ∀ x : E, ∀ t : ℝ, Γ (t • x) x x = 0)
@@ -129,8 +113,6 @@ theorem radialJacobiCoefficient_eq_kernel
       radialCurvatureKernel Γ T (z.1 • z.2) w z.2 z.2 := by
   simp only [radialJacobiCoefficient_apply, radialCurvatureKernel_apply,
     radial_transport_ray_velocity hΓ hgeo hTv]
-
-
 
 theorem radialCoframeJacobi_equations
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)
@@ -251,9 +233,6 @@ theorem radialCoframeJacobiVelocity_zero
     ext v
     simpa only [ContinuousLinearMap.id_apply, field_zero hΓ] using hTv 0 v
   simp [radialCoframeJacobiVelocity, hT0]
-
-
-
 
 theorem norm_iteratedFDeriv_radial_coframe_le
     {Γ : E → E →L[ℝ] E →L[ℝ] E} (hΓ : ContDiff ℝ ∞ Γ)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RaisingCutHeightSigns
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
 
 theorem mem_both_height_closures_of_fixed_negative_cut
     {S s s' d : Set E} (H : E ≃ₜ E) (A : E → ℝ) (hA : Continuous A)

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Replacement.Transition
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ open Split
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_upper_halfspace_graft
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -78,7 +74,6 @@ theorem exists_upper_halfspace_graft
   · intro p hp
     exact if_pos hp
 
-
 def horizontalScaleLift (r : Real → Real) (hr : ContDiff Real ∞ r)
     (hpos : ∀ t, 0 < r t) : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞ where
   toFun p := vector (r (p 2) * p 0) (r (p 2) * p 1) (p 2)
@@ -123,8 +118,6 @@ def horizontalScaleLift (r : Real → Real) (hr : ContDiff Real ∞ r)
 
 @[simp] theorem horizontalScaleLift_height (r : Real → Real) (hr : ContDiff Real ∞ r)
     (hpos : ∀ t, 0 < r t) (p : E3) : horizontalScaleLift r hr hpos p 2 = p 2 := rfl
-
-
 
 theorem exists_relative_cylindrical_cap_graft
     (A : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.M63Ramp
 import PoincareConjecture.Proofs.M65.Mathlib.WeightedCauchySchwarz
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -25,8 +16,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem m65SubarcCurvature_sq_le (hc : M62ShrinkingCurve F c)
     {t alpha beta : ℝ} (ht : t ∈ Set.Icc a b) (hab : alpha ≤ beta) :
@@ -45,8 +34,6 @@ theorem m65SubarcCurvature_sq_le (hc : M62ShrinkingCurve F c)
     (intervalIntegral.integral_mul_weight_sq_le hab (M62.speed_nonneg F c t)
       (hv.intervalIntegrable alpha beta) ((hk.mul hv).intervalIntegrable alpha beta)
       (((hk.pow 2).mul hv).intervalIntegrable alpha beta))
-
-
 
 theorem m65SubarcEnergy_le (hc : M62ShrinkingCurve F c)
     {t alpha beta : ℝ} (ht : t ∈ Set.Ioo a b)
@@ -70,8 +57,6 @@ theorem m65SubarcEnergy_le (hc : M62ShrinkingCurve F c)
           mul_nonneg (M62.curvatureSquared_nonneg F c t x) (M62.speed_nonneg F c t x))
         (hcont.intervalIntegrable _ _)
     _ = _ := by simpa only [zero_add, Pi.mul_apply] using hper.intervalIntegral_add_eq alpha 0
-
-
 
 theorem m65SmallSubarcs_of_energy_le (hc : M62ShrinkingCurve F c)
     {t r delta B : ℝ} (ht : t ∈ Set.Ioo a b) (hr : 0 ≤ r) (hdelta : 0 ≤ delta)

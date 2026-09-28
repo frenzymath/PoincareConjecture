@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.InteriorBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -94,8 +85,6 @@ theorem exists_two_branch_chart_of_local_carrier_chart
     rw [hright, hvalue]
     exact hTK (Q y) hy.2.1
 
-
-
 theorem exists_swapped_carrier_chart
     (K : Set V3) (ell : V3 → ℝ) (T : OpenPartialHomeomorph V3 C3)
     (hTPL : LocallyPiecewiseAffineOn T T.source)
@@ -130,4 +119,3 @@ theorem exists_swapped_carrier_chart
     exact hTK x (hBs.subset hx)
 
 end PoincareConjecture.M76.Dehn
-

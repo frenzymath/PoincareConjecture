@@ -80,14 +80,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatBernstein
 import PoincareConjecture.Proofs.M35.Uniqueness.RotationIntegration
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialRotationBounds
 
-
-
-
-
 set_option autoImplicit false
 
 set_option linter.hashCommand false
-
-
-
-

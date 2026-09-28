@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalRepresentatives
 import PoincareConjecture.Proofs.M51.EventIntervals
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {C : RepairedCanonicalInductionData S N}
   {F0 : SurgeryFlowData.{u}} {k : ℕ}
   (Q : CompletedStageChain S N C F0 k)
-
 
 theorem stageEvent_reference (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)
@@ -45,7 +34,6 @@ theorem stageEvent_reference (n m : ℕ) (T : ℝ)
       (ComposedExtension.oldEventReferenceTo (Q.extensionBetween n q hnq)
         (Q.extensionBetween_eq n q hnq) T hTn hTq)
 
-
 theorem stageVanishing_reference (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)
     [IsEmpty ((Q.flow n).slice T).carrier] [IsEmpty ((Q.flow m).slice T).carrier] :
@@ -63,7 +51,6 @@ theorem stageVanishing_reference (n m : ℕ) (T : ℝ)
     (Q.extensionBetween_eq m q hmq) T hTm hTq).symm.trans
       (ComposedExtension.oldVanishingReferenceTo (Q.extensionBetween n q hnq)
         (Q.extensionBetween_eq n q hnq) T hTn hTq)
-
 
 theorem stageEvent_retained_post (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)
@@ -96,7 +83,6 @@ theorem stageEvent_retained_post (n m : ℕ) (T : ℝ)
     _ = ((Q.flow q).event T hTq).retained_post := hn
     _ = _ := hm.symm
 
-
 noncomputable def stageEventPreCompare (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)
     [Nonempty ((Q.flow n).slice T).carrier] [Nonempty ((Q.flow m).slice T).carrier]
@@ -108,8 +94,6 @@ noncomputable def stageEventPreCompare (n m : ℕ) (T : ℝ)
   (((Q.flow n).event T hTn).pre_identify t).trans
     ((Q.compare n m t.1 ht ((Q.flow m).nonemptyEventPreInterval T hTm ht')).trans
       (((Q.flow m).event T hTm).pre_identify ⟨t.1, ht'⟩).symm)
-
-
 
 theorem stageEvent_retained_pre (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)
@@ -162,7 +146,6 @@ theorem stageEvent_retained_pre (n m : ℕ) (T : ℝ)
       exact hcomp x
     _ = ((Q.flow q).event T hTq).retained_pre := hg
     _ = _ := hf.symm
-
 
 theorem stageEvent_retention (n m : ℕ) (T : ℝ)
     (hTn : T ∈ (Q.flow n).surgery_times) (hTm : T ∈ (Q.flow m).surgery_times)

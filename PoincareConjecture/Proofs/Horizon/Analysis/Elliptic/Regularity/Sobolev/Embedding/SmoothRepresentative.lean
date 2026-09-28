@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.It
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.ExponentIteration
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Representative
 
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function
@@ -329,7 +322,6 @@ theorem contDiffOn_of_forall_memWkp_two
   exact ⟨Metric.ball x r, Metric.isOpen_ball, Metric.mem_ball_self hr,
     hball, f, hf, hfu.symm⟩
 
-
 theorem exists_smooth_representative_of_local_memWkp
     {u : EuN → ℝ} {Ω : Set EuN}
     (hu : ∀ x ∈ Ω, ∃ V : Set EuN,
@@ -340,7 +332,6 @@ theorem exists_smooth_representative_of_local_memWkp
   obtain ⟨V, hV, hxV, hVΩ, huV⟩ := hu x hx
   obtain ⟨f, hf, hfu⟩ := contDiffOn_of_forall_memWkp_two hV huV
   exact ⟨V, hV, hxV, hVΩ, f, hf, hfu.symm⟩
-
 
 theorem exists_smooth_representative_of_memWkp_locally
     {u : EuN → ℝ} {Ω : Set EuN}

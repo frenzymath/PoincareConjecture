@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.CubeApproximation
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.UniformLoopHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [MetricSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m59_c1_homotopy_of_value_homotopy
     (hcompact : IsCompact (univ : Set M)) (n : Nat) (p : M)
@@ -80,8 +68,6 @@ theorem m59_c1_homotopy_of_value_homotopy
     split_ifs
     · exact hAC _
     · exact hk1 _
-
-
 
 theorem m59_genLoop_homotopic_of_value_homotopy
     (hcompact : IsCompact (univ : Set M)) (n : Nat) (p : M)

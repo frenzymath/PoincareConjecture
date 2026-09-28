@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry
 
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_finite_halfspace_preimage
     {f : E → F} {S : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -77,9 +63,6 @@ theorem FinitePiecewiseAffineOn.exists_finite_halfspace_preimage
     rw [hLs]
     exact ⟨hxs, hconstraints⟩
 
-
-
-
 theorem FinitePiecewiseAffineOn.exists_finite_fiber_complex
     [FiniteDimensional ℝ F] {f : E → F} {S : Set E}
     (hf : FinitePiecewiseAffineOn f S) (c : F) :
@@ -95,10 +78,6 @@ theorem FinitePiecewiseAffineOn.exists_finite_fiber_complex
   obtain ⟨L, hL, hLs⟩ := hf.exists_finite_halfspace_preimage H
   exact ⟨L, hL, hLs.trans (by ext x; simp only [mem_inter_iff,
     mem_ofPred_eq, hconstraints])⟩
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_finite_product_equalizer
     [FiniteDimensional ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]

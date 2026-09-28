@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackZero
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -38,8 +29,6 @@ private theorem horizontal_transport_zero {q r : G.Point} (h : q = r) :
   cases h
   rfl
 
-
-
 theorem endpointVariationField_eq_zero_of_constant (V : M14LVariationData G p R)
     {s : ℝ}
     (hfix : Set.EqOn (V.squareFamily s) (fun _ => V.squareFamily s 0) V.parameterDomain)
@@ -55,8 +44,6 @@ theorem endpointVariationField_eq_zero_of_constant (V : M14LVariationData G p R)
   simp only [M14EndpointVariationField, hv, map_zero]
   rfl
 
-
-
 theorem variationField_eq_zero_of_constant (V : M14LVariationData G p R)
     {s : ℝ}
     (hfix : Set.EqOn (V.squareFamily s) (fun _ => V.squareFamily s 0) V.parameterDomain) :
@@ -64,8 +51,6 @@ theorem variationField_eq_zero_of_constant (V : M14LVariationData G p R)
   change (V.square_base s).symm ▸ M14EndpointVariationField V s 0 = 0
   rw [endpointVariationField_eq_zero_of_constant V hfix (zero_mem_parameterDomain V)]
   exact horizontal_transport_zero (V.square_base s)
-
-
 
 theorem variationEndpointAcceleration_eq_zero_of_constant (V : M14LVariationData G p R)
     (D : M14VariationDerivativeData V) {s : ℝ}
@@ -104,23 +89,17 @@ private theorem fixed_square_endpoints (V : M14LVariationData G p R)
     square_fixed_of_endpoint V (p.tau_nonneg.trans p.tau_lt.le) ⟨hle, le_rfl⟩
       (V.right_endpoint_fixed_spec.mp hfix.2)⟩
 
-
-
 theorem firstVariationBoundaryTerm_eq_zero (V : M14LVariationData G p R)
     (hfix : M14BothEndpointsFixed V) : M14FirstVariationBoundaryTerm V = 0 := by
   obtain ⟨hl, hr⟩ := fixed_square_endpoints V hfix
   simp only [M14FirstVariationBoundaryTerm, variationField_eq_zero_of_constant V hl,
     variationField_eq_zero_of_constant V hr, map_zero, sub_self]
 
-
-
 theorem variationField_fixed_endpoints_eq_zero (V : M14LVariationData G p R)
     (hfix : M14BothEndpointsFixed V) :
     M14VariationField V (Real.sqrt τ₁) = 0 ∧ M14VariationField V (Real.sqrt τ₂) = 0 := by
   obtain ⟨hl, hr⟩ := fixed_square_endpoints V hfix
   exact ⟨variationField_eq_zero_of_constant V hl, variationField_eq_zero_of_constant V hr⟩
-
-
 
 theorem secondVariationBoundaryTerm_eq_zero (V : M14LVariationData G p R)
     (D : M14VariationDerivativeData V) (hfix : M14BothEndpointsFixed V) :

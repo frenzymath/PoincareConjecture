@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatBicollar
 import PoincareConjecture.Proofs.M76.Brown.BicollarSeparation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ open Set Metric
 namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_complement_components {S : Set V3} (hS : LocallyFlatTopologicalSphere S) :
     ∃ U V : Set V3, IsOpen U ∧ IsOpen V ∧ IsConnected U ∧ IsConnected V ∧

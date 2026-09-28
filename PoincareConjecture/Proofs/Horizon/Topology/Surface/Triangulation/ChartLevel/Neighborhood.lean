@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.TransverseLevels
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.Topology.Surface
 universe u
 
 variable {M : Type u} [TopologicalSpace M]
-
-
 
 theorem finite_complement_chart_image
     (c : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 2)))
@@ -49,8 +37,6 @@ theorem finite_complement_chart_image
     exact Poincare.Topology.finite_connectedComponents_image_of_continuousOn
       (c.continuousOn_symm.mono (sdiff_subset.trans htarget))
 
-
-
 theorem exists_finite_complement_chart_regular_level
     (c : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 2)))
     {p : M} (hp : p ∈ c.source)
@@ -73,8 +59,6 @@ theorem exists_finite_complement_chart_regular_level
     (fun z hz => (hsub hz).2.1) ?_ (fun z hz => (hsub hz).2.2) hfinite⟩
   intro z hz
   exact hlocal z (hsub hz).1
-
-
 
 theorem exists_finite_complement_chart_transverse_levels
     (c : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 2)))

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M57.Sec15_Prop15_12.ComponentGeometry
 import PoincareConjecture.Proofs.M57.Sec15_Prop15_12.NeckSphereEmbedding
 import PoincareConjecture.Proofs.M57.Sec15_Prop15_12.RetainedRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 noncomputable def m57EventInput
     (P02 : RepairedClosedTopologyProvider.{u}) (G53 : RepairedSphereSeparationTheory.{u})

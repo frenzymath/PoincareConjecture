@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InteriorPotential
 import PoincareConjecture.Proofs.M09.CoordinateEulerLinearization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (x : M)
-
-
-
 
 theorem closedChartEulerPair_velocityPhase
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ}
@@ -64,9 +52,6 @@ theorem closedChartEulerPair_velocityPhase
     a = M08.chartMetricDualInverse F T x (s, q) (B (s, q) a) :=
       (M08.chartMetricDualInverse_left F T x hq a).symm
     _ = alpha := by rw [hp, M08.chartMetricDualInverse_left F T x hq]
-
-
-
 
 theorem closedChartEulerCurve_velocityPhase
     (hM04 : RicciFlowCurvatureTheory.{u}) {C : Set ℝ}

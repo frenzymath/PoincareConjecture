@@ -1,7 +1,5 @@
 import Mathlib.Topology.Clopen
 
-
-
 set_option autoImplicit false
 
 open Set

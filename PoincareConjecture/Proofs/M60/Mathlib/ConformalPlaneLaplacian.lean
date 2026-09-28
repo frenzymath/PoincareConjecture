@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.ConformalTrace
 import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,9 +11,6 @@ open scoped Topology ContDiff BigOperators
 namespace PoincareConjecture.M60
 
 local notation "E" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem laplacian_eq_zero_of_conformal_plane
     {φ : E → E} {z : E} (hφ : ContDiffAt ℝ 2 φ z)
@@ -91,10 +79,6 @@ theorem laplacian_eq_zero_of_conformal_plane
       real_inner_smul_right, real_inner_smul_right, hLY, hLZ]
         simp
   exact (inner_self_eq_zero.mp hLL : L = 0)
-
-
-
-
 
 theorem covariant_laplacian_comp_eq_zero {n : ℕ}
     {u : E → EuclideanSpace ℝ (Fin n)} {φ : E → E} {z : E}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecutCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem boundary_eq_recut_end_frontier {b : ℝ} (hb : -N.epsilon⁻¹ < b) :
     N.boundary_sphere = N.recutCarrier b ∩
@@ -43,9 +32,6 @@ theorem boundary_eq_recut_end_frontier {b : ℝ} (hb : -N.epsilon⁻¹ < b) :
     rw [N.boundary_eq_end_frontier]
     refine ⟨hy.1, closure_mono (fun _ h => h.1) hxf.1, ?_⟩
     simpa only [N.end_neck.carrier_open.interior_eq] using hy.2
-
-
-
 
 theorem recutCarrier_frontier_subset_axial_sphere {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :
@@ -75,8 +61,6 @@ theorem recutCarrier_frontier_subset_axial_sphere {b : ℝ}
     · exact (not_lt_of_ge hyE.2.2.le) hyO.2.1
   exact ⟨N.end_neck.coordinate_inverse x, ⟨mem_univ _, le_antisymm hupp hlow⟩,
     N.end_neck.coordinate_map_coordinate_inverse he⟩
-
-
 
 theorem recutCarrier_frontier_eq_axial_sphere {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) :

@@ -1,20 +1,8 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.ConnectionDerivatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capCurvature_coefficient_F (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :
@@ -24,8 +12,6 @@ theorem capCurvature_coefficient_F (a : ℝ) {r : ℝ} (hr : r ≠ 0)
   rw [capChristoffelA_eq a hr hf, capChristoffelB_eq a hr]
   field_simp
   ring
-
-
 
 theorem capCurvature_coefficient_G (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :
@@ -37,8 +23,6 @@ theorem capCurvature_coefficient_G (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     capChristoffelA_eq a hr hf, capChristoffelB_eq a hr]
   field_simp
   ring
-
-
 
 theorem capCurvature_coefficient_H (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :

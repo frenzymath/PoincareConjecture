@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugate
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,20 +14,9 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 def scalarConjugateLinear (H : Plane → ℝ) (x : Plane) : Plane →L[ℝ] Plane :=
   (fderiv ℝ H x).smulRight (EuclideanSpace.basisFun (Fin 2) ℝ 0) +
     (scalarConjugateForm D H x).smulRight (EuclideanSpace.basisFun (Fin 2) ℝ 1)
-
-
-
-
-
-
 
 theorem scalar_gradient_energy_coordinates (H : Plane → ℝ) (x : Plane) :
     g.inner x (D.gradient H x) (D.gradient H x) =
@@ -52,13 +29,6 @@ theorem scalar_gradient_energy_coordinates (H : Plane → ℝ) (x : Plane) :
     rfl
   rw [D.inner_gradient, heq]
   exact M60.plane_form_apply (fderiv ℝ H x) (D.gradient H x)
-
-
-
-
-
-
-
 
 theorem scalarConjugateLinear_invertible (H : Plane → ℝ) {x : Plane}
     (hgrad : D.gradient H x ≠ 0) : (scalarConjugateLinear D H x).IsInvertible := by

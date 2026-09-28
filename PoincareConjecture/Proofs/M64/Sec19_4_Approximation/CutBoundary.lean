@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DomainBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_cut_line_null (c : ℝ) :
     volume {p : LoopPlane | p 0 = c} = 0 := by
@@ -39,9 +25,6 @@ theorem m64_cut_line_null (c : ℝ) :
     ext p
     simp [q, e, S, MeasurableEquiv.finTwoArrow_apply]
   rw [← heq, hpre, hzero]
-
-
-
 
 theorem m64_cut_lines_null
     {k : ℕ} (cut : Fin (k + 1) → ℝ) :

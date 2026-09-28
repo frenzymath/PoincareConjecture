@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Local
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.InnerProductSpace.Projection.Basic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -114,8 +106,6 @@ private theorem sphereLineFrame_bijective
   have hdim : Module.finrank ℝ (TangentSpace (𝓡 3) p) = Module.finrank ℝ E3 := rfl
   exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hdim).mp hi⟩
 
-
-
 def sphereLineSmoothOrientation
     (e : P ≃ₘ⟮𝓡 3, cylinderModel⟯ (UnitTwoSphere × ℝ)) :
     SmoothOrientation3 (P := P) where
@@ -147,8 +137,6 @@ def sphereLineSmoothOrientation
       EuclideanSpace.basisFun_repr]
     convert! h.contMDiffAt using 1
 
-
-
 def lineProductSmoothOrientation
     {N : Type*} [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin 2)) N] [IsManifold (𝓡 2) ∞ N]
@@ -161,7 +149,6 @@ def lineProductSmoothOrientation
   exact sphereLineSmoothOrientation
     ((RiemannianMetric.lineProductDiffeomorph (n := 2) (M := N)).symm.trans
       (s.prodCongr (Diffeomorph.refl 𝓘(ℝ, ℝ) ℝ ∞)))
-
 
 def canonicalSphereLineSmoothOrientation :
     letI := RiemannianMetric.lineProductChartedSpace (n := 2) (M := UnitTwoSphere)

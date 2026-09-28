@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.BallCoverage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_minimizing_velocity_for_exponential
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
@@ -56,8 +42,6 @@ theorem exists_minimizing_velocity_for_exponential
   have hend := geodesic_endpoint_eq_of_initial_data hγ' hη' hγ0 hη0 hγv hηv
   exact ⟨v, hv, hη1.symm.trans (hend.symm.trans hγ1), hnorm⟩
 
-
-
 theorem exponential_image_tangent_ball_eq
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
     (hcompact : IsCompact (closure (g.ball p R)))
@@ -83,9 +67,6 @@ theorem exponential_image_tangent_ball_eq
     rw [hnorm]
     exact hq
 
-
-
-
 theorem exponential_radial_edist_of_injective
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)
     (hcompact : IsCompact (closure (g.ball p R)))
@@ -105,9 +86,6 @@ theorem exponential_radial_edist_of_injective
     g.exists_minimizing_velocity_for_exponential p hR hcompact e hexp hmem
   exact hnorm.symm.trans (congrArg (fun z => ENNReal.ofReal (g.tangentNorm p z))
     (hinj hw hv hew))
-
-
-
 
 theorem exists_smooth_exponential_with_ball_images
     (g : RiemannianMetric n M) (p : M) {R : ℝ} (hR : 0 < R)

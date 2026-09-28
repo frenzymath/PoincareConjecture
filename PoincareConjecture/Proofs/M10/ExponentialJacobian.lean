@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M10.GramNormalization
 import PoincareConjecture.Proofs.M10.MetricTrace
 import PoincareConjecture.Proofs.M10.JacobianEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exponentialJacobian_hasDerivAt
     (hwindow : Icc (T - τmax) T ⊆ J) (hL : LGeodesicTheory F T τmax)

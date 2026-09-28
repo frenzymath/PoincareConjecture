@@ -3,49 +3,11 @@ import PoincareConjecture.Statements.M28Providers
 import PoincareConjecture.Proofs.M28.Thm10_2_Exclusion
 import PoincareConjecture.Proofs.M28.Thm10_2_SameTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m28BoundedDistance (P : M28BoundedDistancePredecessors.{u}) :
     RepairedBoundedDistanceTheory.{u} := by

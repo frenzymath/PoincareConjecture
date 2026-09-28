@@ -8,17 +8,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.CompatibleChartPatch
 import PoincareConjecture.Proofs.M76.RelativeApproximation.ModelInverse
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLEqualityLoci
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -165,10 +154,6 @@ private theorem complete_finite_source_clip
     exact mem_iUnion.mpr ⟨⟨s, hs⟩, (hTs ⟨s, hs⟩).symm ▸ ⟨hz.1, hzs⟩⟩
 
 open Classical in
-
-
-
-
 
 theorem exists_original_signed_tube_model
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

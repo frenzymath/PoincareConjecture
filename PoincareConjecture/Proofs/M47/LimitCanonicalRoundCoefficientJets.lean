@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.NeckBilinearSmooth
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckBilinearReadout
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -121,9 +112,6 @@ private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.li
 
 include P
 
-
-
-
 theorem limitCanonical_round_scalar_coefficient_convergence
     (q : G.limit.sliceCarrier.carrier) (t : ℝ) (ht : t ∈ J) (a b : Fin 3) :
     CompactSmoothConvergenceOn
@@ -160,9 +148,6 @@ theorem limitCanonical_round_scalar_coefficient_convergence
       isCompact_singleton htJ hK hKt hepsilon] with k hk x hx
     simpa only [dist_eq_norm, norm_sub_rev] using hk.2.2 t (mem_singleton t) x hx a b
 
-
-
-
 theorem limitCanonical_round_bilinear_coefficient_convergence
     (q : G.limit.sliceCarrier.carrier) (t : ℝ) (ht : t ∈ J) :
     CompactSmoothConvergenceOn
@@ -180,9 +165,6 @@ theorem limitCanonical_round_bilinear_coefficient_convergence
   exact M34.limitCoordinateBilinear_apply (L := G.limit) q t x v w
 
 end ActualConvergence
-
-
-
 
 theorem limitCanonical_round_reconstructed_eq_chartForm
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J} {H : GeneralizedRicciFlowData.{u}}

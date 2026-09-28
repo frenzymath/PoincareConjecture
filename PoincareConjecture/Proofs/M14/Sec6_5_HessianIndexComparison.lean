@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_VariationContact
 import PoincareConjecture.Proofs.M14.Sec6_4_RealizedIndex
 import PoincareConjecture.Proofs.M09.SecondDerivativeComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
 
-
-
 theorem initialFixed_squareEndpoint_constant (V : M14LVariationData G p R)
     (hfix : V.left_endpoint_fixed) :
     EqOn (V.squareFamily (Real.sqrt a)) (fun _ => V.squareFamily (Real.sqrt a) 0)
@@ -41,8 +30,6 @@ theorem initialFixed_squareEndpoint_constant (V : M14LVariationData G p R)
       Real.sq_sqrt p.tau_nonneg]
     exact (V.left_endpoint_fixed_spec.mp hfix) v hv
   exact fun v hv => (hpoint v hv).trans (hpoint 0 hzero).symm
-
-
 
 theorem secondVariationBoundaryTerm_initialFixed (V : M14LVariationData G p R)
     (D : M14VariationDerivativeData V) (hfix : V.left_endpoint_fixed) :
@@ -62,9 +49,6 @@ private theorem hessian_pair_time_congr {T τ σ : ℝ} (h : τ = σ) (q : G.Poi
       M14ReducedLengthHessianPairing G ⟨q, hq'⟩ f Y Y := by
   subst σ
   rfl
-
-
-
 
 theorem variation_hessian_le_index
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -114,8 +98,6 @@ theorem variation_hessian_le_index
       (R.horizontal_velocity (Real.sqrt b))
       (M14VariationEndpointAcceleration V D (Real.sqrt b) hs)) hc.ne'
   nlinarith
-
-
 
 theorem hessian_le_pullback_index
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationDoublePoint
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,10 +60,6 @@ private theorem exists_parameter_block_neighborhood
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {J : Set ℝ}
-
-
-
-
 
 theorem exists_doublePoint_regular_neighborhood
     (C : M65SmoothFilledLoopFamily F J) (hJ : IsOpen J) (z : LoopAmbient) (ht : z 2 ∈ J)

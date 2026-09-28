@@ -1,22 +1,5 @@
 import PoincareConjecture.Definitions.M73SphereFactors
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal

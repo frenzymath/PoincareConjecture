@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.BarrierLipschitz
 import PoincareConjecture.Proofs.M10.Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology NNReal
@@ -21,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p q : M}
-
 
 theorem reducedLength_time_lipschitzOnWith
     (hL : LGeodesicTheory F T τmax)
@@ -46,7 +37,6 @@ theorem reducedLength_time_lipschitzOnWith
     ContinuousLinearMap.toSpanSingleton ℝ d, hd.hasFDerivAt, B.touches,
     (continuous_const.prodMk continuous_id).continuousAt hdom, ?_⟩
   simpa only [ContinuousLinearMap.norm_toSpanSingleton, Real.norm_eq_abs, hd.deriv] using hB
-
 
 theorem reducedLength_local_time_lipschitz
     (hL : LGeodesicTheory F T τmax)

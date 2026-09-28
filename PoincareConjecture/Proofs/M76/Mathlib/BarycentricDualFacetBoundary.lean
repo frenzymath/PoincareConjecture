@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualEdgeDisk
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetInterval
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedStarIntersections
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +9,6 @@ open Set Geometry
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem link_space_eq_inter_of_closedStar_eq
     (K L : SimplicialComplex ℝ E) (hLK : L ≤ K) (p : E)
@@ -42,7 +31,6 @@ variable (K : SimplicialComplex ℝ E) [Fintype K.faces]
 
 omit [DecidableEq E] in
 
-
 theorem barycentricDualBlock_mono_of_subcomplex
     (L : SimplicialComplex ℝ E) [Fintype L.faces] (hLK : L ≤ K) (s : Finset E) :
     L.barycentricDualBlock s ≤ K.barycentricDualBlock s := by
@@ -51,9 +39,6 @@ theorem barycentricDualBlock_mono_of_subcomplex
   intro x hx
   obtain ⟨u, hu, hsu, hux⟩ := ht.2 x hx
   exact ⟨u, hLK hu, hsu, hux⟩
-
-
-
 
 theorem barycentricDualBlock_link_space_of_paired_facet
     {n : ℕ} (hcard : ∀ v ∈ K.faces, v.card ≤ n + 1)

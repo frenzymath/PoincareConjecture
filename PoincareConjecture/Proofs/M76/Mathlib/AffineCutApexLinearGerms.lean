@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HeightPlaneAffineCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousAffineEquiv
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_apex_linear_height_cut_germ
     (f : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] E) (A : E →ₗ[ℝ] ℝ)

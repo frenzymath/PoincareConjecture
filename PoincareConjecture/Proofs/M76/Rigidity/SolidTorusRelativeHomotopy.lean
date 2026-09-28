@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.MeridianBicollar
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.LinearAlgebra.Dimension.Finrank
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,9 +17,6 @@ local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
-
 
 theorem isPreconnected_hamiltonDiskRim :
     IsPreconnected {x : D | ‖(x : V2)‖ = 1} := by
@@ -47,9 +35,6 @@ theorem isPreconnected_hamiltonDiskRim :
   apply Topology.IsInducing.subtypeVal.isPreconnected_image.mp
   rw [himage]
   exact (isConnected_sphere hrank 0 zero_le_one).isPreconnected
-
-
-
 
 theorem exists_hamiltonSolidTorus_identity_homotopy
     (f : C(H, H)) (hfix : ∀ x ∈ B, f x = x) :
@@ -89,10 +74,6 @@ theorem exists_hamiltonSolidTorus_identity_homotopy
     change P.symm (G (t, P x)) = x
     rw [G.eq_fst t hxA]
     exact P.symm_apply_apply x
-
-
-
-
 
 theorem exists_hamiltonSolidTorus_two_relative_homotopies
     (phi g : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)

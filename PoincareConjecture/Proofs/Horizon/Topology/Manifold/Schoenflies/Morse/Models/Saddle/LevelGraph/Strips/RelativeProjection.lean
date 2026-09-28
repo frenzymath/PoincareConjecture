@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Strips.Projection
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,12 +14,9 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 local notation "IR2" => 𝓘(Real, Real × Real)
 
-
 def stripPlaneMap (g : S2 → E3) (v : E3) (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2)
     (F : OpenPartialHomeomorph (Real × Real) S2) (z : Real × Real) : E2 :=
   J ((Real ∙ v)ᗮ.orthogonalProjectionOnto (g (F z)))
-
-
 
 theorem projected_strip_interval_family_geometry
     {g : S2 → E3} (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

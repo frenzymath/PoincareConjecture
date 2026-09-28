@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Data
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Cuts
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.CapTransversals
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 structure CapGraphEndpoint
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))
@@ -106,8 +94,6 @@ variable
     (e : D.EdgeIndex) (R : D.regions) (hR : R = D.regionLeft e ∨ R = D.regionRight e)
 
 include hdisjoint hsector hclosed hR
-
-
 
 theorem exists_capGraphEndpoint {a b : ℝ} (hab : a ≤ b)
     (g : D.OrientedGraphPiece e R (chartAt (EuclideanSpace ℝ (Fin 2)) (chart R)).symm a b)
@@ -224,8 +210,6 @@ variable (cut : Bool → ℝ)
 
 include hmatch
 
-
-
 theorem exists_capGraphEndpoint_pair :
     Nonempty
       (D.CapGraphEndpoint P region chart B e R (S.piece S.firstPiece) false (cut false) ×
@@ -238,8 +222,6 @@ theorem exists_capGraphEndpoint_pair :
     (S.cut_lt S.lastPiece).le (S.piece S.lastPiece) true (cut true)
     (by simpa only [ite_true, S.lastPiece_succ] using S.cut_last) (hmatch true)
   exact ⟨L, R⟩
-
-
 
 theorem exists_cap_attached_cutChain :
     ∃ (L : D.CapGraphEndpoint P region chart B e R (S.piece S.firstPiece) false (cut false))

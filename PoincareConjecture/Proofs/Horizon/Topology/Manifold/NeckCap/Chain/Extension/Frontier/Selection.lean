@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Exhaustion.Frontier
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Distance.NewScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.NeckOnlyCover
 local notation "slab(" N ")" => EpsilonNeck.coordinate_map N ''
   (Set.prod univ (Icc (-(3 / 4 : ℝ) * (EpsilonNeck.epsilon N)⁻¹)
     ((3 / 4 : ℝ) * (EpsilonNeck.epsilon N)⁻¹)))
-
-
-
 
 theorem exists_neck_at_outer_end_of_quarter_capture :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

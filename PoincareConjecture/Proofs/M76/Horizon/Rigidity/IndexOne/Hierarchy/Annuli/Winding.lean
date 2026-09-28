@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Annuli.Coordinates
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -20,7 +12,6 @@ local notation "Ann" => squareAnnulus 8 1
 local notation "I" => unitInterval
 
 private instance : Fact (0 < 4 * (8 : ℝ)) := ⟨by norm_num⟩
-
 
 noncomputable def cylinderIntegerTwist (n : ℤ) : (I × Circle) ≃ₜ (I × Circle) where
   toFun x := (x.1, x.2 + ((32 * (n : ℝ) * (x.1 : ℝ) : ℝ) : Circle))
@@ -37,8 +28,6 @@ theorem cylinderIntegerTwist_rim (n : ℤ) (x : I × Circle)
   apply Prod.ext
   · rfl
   · rcases hx with hx | hx <;> simp [cylinderIntegerTwist, hx, hn]
-
-
 
 theorem exists_cylinder_winding_correction (f : C(I × Circle, I × Circle))
     (hzero : ∀ z, f (0, z) = (0, z)) (hone : ∀ z, f (1, z) = (1, z)) :
@@ -123,9 +112,6 @@ theorem exists_cylinder_winding_correction (f : C(I × Circle, I × Circle))
         x.2 + (((1 - (t : ℝ)) * remaining x : ℝ) : Circle)) = g x
       rw [hgRim x hx, hremRim x hx]
       simp }⟩⟩
-
-
-
 
 theorem exists_annulus_winding_correction (f : C(Ann, I × Circle))
     (hrims : ∀ side z, f (annulusRimPoint side z) = (if side then 1 else 0, z)) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem inverse_scalar_duration_bounds {r Q : ℝ}
     (hr : 0 < r) (hscalar : r⁻¹ ^ 2 ≤ Q) :
@@ -27,8 +16,6 @@ theorem inverse_scalar_duration_bounds {r Q : ℝ}
   refine ⟨hQ, inv_pos.mpr hQ, ?_⟩
   have hi := (inv_le_inv₀ hQ hthreshold).mpr hscalar
   simpa only [← inv_pow, inv_inv] using hi
-
-
 
 theorem firstFailure_neck_bottom_after_overlap
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -56,8 +43,6 @@ theorem firstFailure_neck_bottom_after_overlap
   rw [hepoch] at ht
   linarith
 
-
-
 theorem firstFailure_neck_window_subset_overlap
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F} {t r Q : ℝ}
@@ -73,8 +58,6 @@ theorem firstFailure_neck_window_subset_overlap
   have hlower := hbottom.trans_le hs.1
   have hupper := hs.2.trans_lt ht.2
   exact ⟨⟨hprevious.trans hlower.le, hupper⟩, hlower.le, hupper⟩
-
-
 
 theorem firstFailure_neck_window_delta
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

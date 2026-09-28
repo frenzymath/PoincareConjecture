@@ -1,68 +1,11 @@
 import PoincareConjecture.Statements.M56Ancestry
 import PoincareConjecture.Proofs.M56.PoincareConstructor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedFiniteAncestry : RepairedAncestryTheory.{u} := by
   refine { ancestry := ?_, poincare := m56PoincareConstructor }

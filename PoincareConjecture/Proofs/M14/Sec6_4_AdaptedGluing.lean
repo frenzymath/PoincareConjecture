@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_UnitAdaptedField
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
-
-
 
 theorem horizontalUnitAdaptedOn_paste {a l c r : ℝ}
     (hal : a ≤ l) (hlc : l < c) (hcr : c < r)
@@ -68,8 +57,6 @@ theorem horizontalUnitAdaptedOn_paste {a l c r : ℝ}
   · exact hlocal hleft (Icc_subset_Icc le_rfl hcr.le) s ⟨hs.1, hsc⟩ W
   · exact hlocal hright (Icc_subset_Icc hal le_rfl) s
       ⟨hlc.le.trans (le_of_not_ge hsc), hs.2⟩ W
-
-
 
 theorem horizontalUnitAdaptedOn_locality (R : M14SquareRootPath G p) :
     DependentIntervalSolutionLocality (IsHorizontalUnitAdaptedFieldOn R) where

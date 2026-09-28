@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_ExactBallCha
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_IntrinsicJetConvergence
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,20 +28,12 @@ variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta R : ℝ}
   {Q : SurgeryCapClose g₀ S g tip scale eta}
 
-
-
 noncomputable def adjustment (D : NormalizedCapExponential Q R) (L : E ≃L[ℝ] E) : E → E :=
   D.coordinateMap ∘ standardFrameLogarithm g₀ L
-
-
-
 
 noncomputable def adjustedCoefficients (D : NormalizedCapExponential Q R)
     (L : E ≃L[ℝ] E) : E → Bilin :=
   fun x => scale⁻¹ ^ 2 • g.pullbackCoefficients (D.map ∘ standardFrameLogarithm g₀ L) x
-
-
-
 
 theorem adjustedCoefficients_eq (D : NormalizedCapExponential Q R) (L : E ≃L[ℝ] E)
     {x : E} (hx : standardFrameLogarithm g₀ L x ∈ ball 0 R) :
@@ -84,9 +67,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
 
-
-
-
 theorem compactSmoothConvergenceOn_initial_adjustments
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
     (hL : Tendsto (fun n => fderiv ℝ (D n).coordinateMap 0) atTop
@@ -108,9 +88,6 @@ theorem compactSmoothConvergenceOn_initial_adjustments
     funext (standardFrameExponential_logarithm g₀ L)
   simpa only [heq, NormalizedCapExponential.adjustment] using hconv
 
-
-
-
 theorem compactSmoothConvergenceOn_adjusted_metrics
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
     (hL : Tendsto (fun n => fderiv ℝ (D n).coordinateMap 0) atTop
@@ -131,9 +108,6 @@ theorem compactSmoothConvergenceOn_adjusted_metrics
     ext v w
     simp only [id_eq, fderiv_id, ContinuousLinearMap.bilinearComp_apply,
       ContinuousLinearMap.id_apply]
-
-
-
 
 theorem eventually_adjusted_intrinsic_jet_error_bound
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

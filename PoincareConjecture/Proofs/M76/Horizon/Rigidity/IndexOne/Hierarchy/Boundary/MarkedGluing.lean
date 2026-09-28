@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Compl
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.SourceCollarCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -29,8 +19,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "C32" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem marked_phase_homeomorph_fixed_on_old_boundary
     (phi psi : C(H, H)) (theta : C)
@@ -55,8 +43,6 @@ theorem marked_phase_homeomorph_fixed_on_old_boundary
   rw [← hAx, A.symm_apply_apply, hA', hA]
   rfl
 
-
-
 theorem old_sourceSlab_eq_of_relative_maps
     (phi psi : C(H, H)) (a b : ℝ)
     (F : (ContinuousMap.id H).HomotopyRel phi B)
@@ -76,8 +62,6 @@ theorem old_sourceSlab_eq_of_relative_maps
     obtain ⟨y, hy⟩ := E.surjective ⟨x, hx⟩
     have hxy : (y : X) = x := (hE y).symm.trans (congrArg Subtype.val hy)
     exact hxy ▸ y.property
-
-
 
 theorem exists_marked_slab_frontier_homeomorph
     (phi psi : C(H, H)) (F : (ContinuousMap.id H).HomotopyRel phi B)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ProductRicciTraceBound
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusClosedConformality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -67,10 +56,6 @@ private theorem curvature_four_norm_bound
 
 variable {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
-
-
 theorem m64CircleProduct_orthogonal_sectional_abs_le
     (P : M62.CircleProductData F circumference) (t : ℝ) {K : ℝ} (hK : 0 ≤ K)
     (q : P.charts.Point) (hcurv : (F.connection t).curvatureTensorNorm q.1 ≤ K)
@@ -113,10 +98,6 @@ theorem m64CircleProduct_orthogonal_sectional_abs_le
   unfold LeviCivitaData.sectionalCurvature
   rw [horth, zero_pow (by decide : 2 ≠ 0), sub_zero, abs_div, abs_of_pos hpos]
   exact (div_le_iff₀ hpos).mpr (hnum.trans_eq (by ring))
-
-
-
-
 
 theorem m64CircleProduct_conformal_annulus_sectional_le
     (P : M62.CircleProductData F circumference) (t : ℝ)

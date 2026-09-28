@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeRectangle
 import PoincareConjecture.Proofs.M58.Cor18_28_DiskExtension
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularAngles
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,15 +14,11 @@ namespace PoincareConjecture
 
 open Proofs.M58
 
-
-
 def m64LocalConeDiskMap {Y : Type*} (H : ℝ × (Y × Y) → Y)
     (center : Y) (gamma : ℝ → Y) (z : LoopPlane) : Y := by
   classical
   exact if z = 0 then center else
     H (1 - diskTimeProfile ‖z‖, center, gamma (m60PlaneAngle z))
-
-
 
 theorem m64_periodic_curve_planeAngle_eq {Y : Type*} {gamma : ℝ → Y}
     (hperiod : Function.Periodic gamma curvePeriod) {z : LoopPlane} (hz : z ≠ 0)
@@ -44,8 +29,6 @@ theorem m64_periodic_curve_planeAngle_eq {Y : Type*} {gamma : ℝ → Y}
     ((m60PlaneAngle_polar z).trans hpolar.symm)
   simpa only [smul_smul, inv_mul_cancel₀ (norm_ne_zero_iff.mpr hz), one_smul] using h
 
-
-
 theorem m64LocalConeDiskMap_inner {Y : Type*} (H : ℝ × (Y × Y) → Y)
     (center : Y) (gamma : ℝ → Y) (h0 : ∀ x, H (0, center, gamma x) = center)
     {z : LoopPlane} (hz : ‖z‖ ≤ 1 / 2) : m64LocalConeDiskMap H center gamma z = center := by
@@ -54,8 +37,6 @@ theorem m64LocalConeDiskMap_inner {Y : Type*} (H : ℝ × (Y × Y) → Y)
   · simp only [m64LocalConeDiskMap, if_pos hz0]
   · rw [m64LocalConeDiskMap, if_neg hz0,
       diskTimeProfile_eq_one (norm_nonneg z) hz, sub_self, h0]
-
-
 
 theorem m64LocalConeDiskMap_polar {Y : Type*} (H : ℝ × (Y × Y) → Y)
     (center : Y) (gamma : ℝ → Y) (hperiod : Function.Periodic gamma curvePeriod)
@@ -73,7 +54,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem m64LocalConeDiskMap_contMDiff
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)
@@ -110,8 +90,6 @@ theorem m64LocalConeDiskMap_contMDiff
     rw [m64LocalConeDiskMap, if_neg hw0,
       m64_periodic_curve_planeAngle_eq hperiod hw0 (hpolar w)]
     rfl
-
-
 
 theorem m64LocalConeDiskMap_boundary {Y : Type*}
     (H : ℝ × (Y × Y) → Y) (center : Y) (gamma : ℝ → Y)

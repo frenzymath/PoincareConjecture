@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedSphereRayCrossing
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SelectedNeckIntrinsicBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,11 +18,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
-
 
 theorem exists_selected_ray_scalar_radius_upper
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.Selection.Deri
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.ClosedComplementUnion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Boundary.WholeCollarRims
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -33,8 +31,6 @@ theorem PairedMarkedBoundary.derived_collar_union_faces (P : PairedMarkedBoundar
     (fun v hvs ↦ P.mark_vertices.symm.subset (hv v hvs)))
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem PairedMarkedBoundary.exists_derived_annuli_with_cut_rims
     (P : PairedMarkedBoundary L retained d) :

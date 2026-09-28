@@ -5,14 +5,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -80,8 +72,6 @@ theorem m48_sum_sq_tensor_basis_independent
         simpa only [update_zero] using T.map_update_smul ![0, w] 0 a u }
   simpa [B] using m48_sum_sq_bilin_basis_independent B b c
 
-
-
 theorem LeviCivitaData.m48_ricciNormSq_eq_sum
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -103,9 +93,6 @@ theorem LeviCivitaData.m48_ricciNormSq_eq_sum
     Module.Basis.coe_toOrthonormalBasis] using
       m48_sum_sq_tensor_basis_independent T (g.orthonormalBasis x)
         (b.toOrthonormalBasis hb')
-
-
-
 
 theorem MetricHomothetyCalculus.m48_ricciNormSq_eq
     {n : ℕ} {M : Type u} {N : Type v}
@@ -138,9 +125,6 @@ theorem MetricHomothetyCalculus.m48_ricciNormSq_eq
   rw [D'.m48_ricciNormSq_eq_sum (f x) (b.map e) hc]
   simp_rw [Module.Basis.map_apply, he, H.ricci_eq D D']
   rfl
-
-
-
 
 theorem SurgeryRegularSlab.m48_ricciNormSq_eq
     {slice : ℝ → GeneralizedSliceCarrier.{u}}

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveFixedSlabs
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open Set
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AlexanderCollarSlab.nonempty_of_slab_eq {S S' : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
@@ -66,10 +53,6 @@ theorem AlexanderCollarSlab.nonempty_of_slab_eq {S S' : Set E}
     bottom_covered := hbase.symm.subset.trans M.bottom_covered }⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.nonempty_cut_restriction {S s₀ s₁ : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
@@ -149,9 +132,6 @@ theorem AlexanderCollarSlab.nonempty_cut_restriction {S s₀ s₁ : Set E}
     constructor
     · exact fun hp => (M.roof_contact ⟨p, hB p.property⟩).mp hp.1
     · exact fun hp => ⟨(M.roof_contact ⟨p, hB p.property⟩).mpr hp, (C p).property.2⟩
-
-
-
 
 theorem AlexanderCollarSlab.nonempty_supported_capped_cut
     {S s₀ s₁ d : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

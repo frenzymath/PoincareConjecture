@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialMetric
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +18,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)
   (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
 
 include D hsec
-
 
 theorem intrinsicWarpingRadius_le_self {s : ℝ} (hs : 0 ≤ s) :
     intrinsicWarpingRadius g hrotation hcomplete s ≤ s := by
@@ -57,8 +47,6 @@ theorem intrinsicWarpingQuotient_le_one {s : ℝ} (hs : 0 ≤ s) :
     rw [mul_intrinsicWarpingQuotient, mul_one]
     exact intrinsicWarpingRadius_le_self g D hrotation hcomplete hsec hs'.le
 
-
-
 theorem intrinsicSpatialMetric_inner_le (x v : StandardCapSpace) :
     (intrinsicSpatialMetric g hrotation hcomplete).inner x v v ≤ inner ℝ v v := by
   by_cases hx : x = 0
@@ -81,7 +69,6 @@ theorem intrinsicSpatialMetric_inner_le (x v : StandardCapSpace) :
         (inner ℝ x v * inner ℝ x v / ‖x‖ ^ 2) := by ring
     _ ≤ q ^ 2 * inner ℝ v v + (1 - q ^ 2) * inner ℝ v v := add_le_add_right h _
     _ = _ := by ring
-
 
 theorem intrinsicSpatialInverse_tangentNorm_le (x v : StandardCapSpace) :
     g.tangentNorm (intrinsicSpatialInverse g hrotation hcomplete x)

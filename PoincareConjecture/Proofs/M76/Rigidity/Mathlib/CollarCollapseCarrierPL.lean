@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CollarCollapsePL
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CollarCollapseHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +10,6 @@ namespace CollarCollapse
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem finitePiecewiseAffineOn_move {t : E → ℝ} {S : Set E}
     (ht : FinitePiecewiseAffineOn t S) (r s : ℝ) :
@@ -34,15 +23,11 @@ theorem finitePiecewiseAffineOn_move {t : E → ℝ} {S : Set E}
     (fun x => t x - s * displacement r (t x)) S
   exact ht.sub hs
 
-
-
 theorem finitePiecewiseAffineOn_collapse_pair {u : E → F} {t : E → ℝ}
     {S : Set E} (hu : FinitePiecewiseAffineOn u S)
     (ht : FinitePiecewiseAffineOn t S) (r : ℝ) :
     FinitePiecewiseAffineOn (fun x => (u x, height r (t x))) S :=
   hu.prod_mk (finitePiecewiseAffineOn_height ht r)
-
-
 
 theorem finitePiecewiseAffineOn_move_pair {u : E → F} {t : E → ℝ}
     {S : Set E} (hu : FinitePiecewiseAffineOn u S)

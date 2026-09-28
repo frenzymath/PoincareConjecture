@@ -1,19 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Definitions.M63Family
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -21,7 +8,6 @@ open scoped Manifold ContDiff Bundle intervalIntegral
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def m64LoopCircleParam (x : ℝ) : LoopCircle :=
   ⟨!₂[Real.cos x, Real.sin x], by
@@ -33,13 +19,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {N : ℕ}
 
-
-
 structure M64PolygonBoundary (polygon : M63GeodesicPolygon g D N) where
   map : ContinuousMap LoopCircle M
   angular_eq : ∀ x, map (m64LoopCircleParam x) = polygon.map x
-
-
 
 noncomputable def m64PolygonLength (polygon : M63GeodesicPolygon g D N) : ℝ :=
   ∫ x in (0 : ℝ)..curvePeriod,
@@ -53,14 +35,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {N : ℕ}
 
-
-
 def M64SampledPolygon (gamma : C1FreeLoopSpace (M := M))
     (polygon : M63GeodesicPolygon g D N) : Prop :=
   ∀ j : Fin N, polygon.vertices j = periodicFreeLoop gamma (m63CellLeft N j)
-
-
-
 
 structure M64RawFamilyApproximation (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g)
@@ -106,8 +83,6 @@ structure M64RawFamilyApproximation (g : RiemannianMetric 3 M)
     0 ≤ freeLoopLength g (Gamma z) - freeLoopLength g (family z) ∧
       freeLoopLength g (Gamma z) - freeLoopLength g (family z) < zeta
   area_error : ∀ z, |fillingArea g (family z) - fillingArea g (Gamma z)| < zeta
-
-
 
 def M64RawFamilyApproximation.toM63 {a b : ℝ}
     {F : RicciFlow 3 M (Set.Icc a b)}

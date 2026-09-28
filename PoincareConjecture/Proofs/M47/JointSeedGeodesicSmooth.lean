@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 import Mathlib.Analysis.ODE.PicardLindelof
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M47
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem jointSeed_geodesic_contMDiffAt
     {g : RiemannianMetric n M} {gamma : ℝ → M} {S : Set ℝ}
@@ -55,8 +43,6 @@ theorem jointSeed_geodesic_contMDiffAt
       (contMDiffOn_iff_contDiffOn.mpr hphaseSmooth.fst) (fun s hs => (hab hs).2.1)
   exact (hcurve.contMDiffAt hnbhd).congr_of_eventuallyEq
     (hlocal.mono fun s hs => hs.1)
-
-
 
 theorem jointSeed_geodesic_contMDiffOn
     {g : RiemannianMetric n M} {gamma : ℝ → M} {S : Set ℝ}

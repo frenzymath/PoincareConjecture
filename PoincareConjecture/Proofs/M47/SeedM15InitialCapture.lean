@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedM15SafeCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46 Proofs.M12
-
-
 
 theorem SeedM15SafeCylinder.initial_scalar_bound
     {F : SurgeryFlowData.{u}} {T : ℝ} {hT : 0 < T} {hTF : T ∈ F.time_domain}

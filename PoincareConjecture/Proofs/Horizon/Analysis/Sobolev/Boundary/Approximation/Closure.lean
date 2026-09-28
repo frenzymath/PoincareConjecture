@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Witnesses
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +34,6 @@ private theorem tendsto_eLpNorm_sub_of_diagonal
       _ ≤ _ := add_le_add (herr n) le_rfl
   exact tendsto_of_tendsto_of_tendsto_of_le_of_le tendsto_const_nhds
     (by simpa using hε.add hlim) (fun _ => bot_le) hbound
-
-
 
 theorem MemW01p.of_tendsto_eLpNorm
     {d : ℕ} {O : Set (EuclideanSpace ℝ (Fin d))} (hO : IsOpen O)

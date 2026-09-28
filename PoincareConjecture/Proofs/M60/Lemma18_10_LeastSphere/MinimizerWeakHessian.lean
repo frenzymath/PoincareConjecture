@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.SecondDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.Localization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +19,6 @@ open Poincare.Analysis.Sobolev.NirenbergCrossBoundsNonSmooth
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
-
 
 theorem suWeak_hessian_integral_le
     {Ω V W : Set E} (B : SmoothEllipticBilinearForm d Ω)
@@ -97,10 +82,6 @@ theorem suWeak_hessian_integral_le
       rw [integral_finsetSum _ (fun i _ => (hHm i k).integrable_sq)]
       exact Finset.sum_le_sum fun i _ => hbound i k
     _ = _ := by simp [Finset.mul_sum, Finset.sum_mul, mul_assoc, energy]
-
-
-
-
 
 theorem suWeak_local_hessian_integral_le
     {Ω O V W : Set E} (B : SmoothEllipticBilinearForm d Ω)

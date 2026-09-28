@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.BoundaryIntersections
 import Mathlib.Topology.Order.IntermediateValue
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -132,7 +122,6 @@ theorem child_inter_parent_edge_subset_frontier (t : R.mesh.Triangle) (i : Fin 3
 include R in
 omit [T2Space M] in
 
-
 theorem edge_interval_of_subset_parent_edge (i : Fin 3) (edge : SmoothEdge M)
     (hinj : InjOn edge.map (Icc (0 : ℝ) 1))
     (hsub : edge.map '' Icc (0 : ℝ) 1 ⊆
@@ -228,8 +217,6 @@ private theorem vertex_of_subsingleton_marked_set (t : R.mesh.Triangle) {A : Set
 
 variable (Q : SmoothTriangleBoundarySubdivision G c T)
 
-
-
 theorem boundary_intersections_of_common_parent_edge
     (t : R.mesh.Triangle) (u : Q.mesh.Triangle) (k l i : Fin 3)
     (hR : ((R.face t).boundary k).map '' Icc (0 : ℝ) 1 ⊆
@@ -299,8 +286,6 @@ theorem child_vertex_mem_marks_of_mem_parent_frontier (t : R.mesh.Triangle) (v :
         (F '' frontier (convexHull ℝ (range b))) :=
     ⟨mem_iUnion.mpr ⟨t, mem_image_of_mem F (mem_range_self v)⟩, hv⟩
   rwa [R.boundary_vertices] at hmem
-
-
 
 theorem cross_intersections_of_shared_parent_subsegment
     (i j : Fin 3) (a d a' d' : ℝ)
@@ -406,7 +391,6 @@ theorem cross_intersections_of_shared_parent_subsegment
 
 omit [T2Space M] in
 
-
 theorem cross_intersections_of_marked_parent_point {q : M}
     (hparents : (F '' convexHull ℝ (range b)) ∩ (G '' convexHull ℝ (range c)) ⊆ {q})
     (hqS : q ∈ S) (hqT : q ∈ T) (t : R.mesh.Triangle) (u : Q.mesh.Triangle) :
@@ -432,9 +416,6 @@ theorem disjoint_children_of_disjoint_parents
     (t : R.mesh.Triangle) (u : Q.mesh.Triangle) :
     Disjoint (R.face t).carrier (Q.face u).carrier :=
   hparents.mono (R.carrier_subset_parent t) (Q.carrier_subset_parent u)
-
-
-
 
 theorem cross_intersections
     (hparents :

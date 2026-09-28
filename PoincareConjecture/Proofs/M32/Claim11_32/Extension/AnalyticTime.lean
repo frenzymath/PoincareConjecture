@@ -1,22 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_32.Extension.AnalyticGradient
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -50,8 +33,6 @@ private theorem box_time_mem (G : GeneralizedRicciFlowData.{u})
     (b : G.box_index) {t : ℝ} (ht : t ∈ (G.box b).interval) : t ∈ G.interval := by
   obtain ⟨U, _, heq⟩ := (G.box b).relatively_open
   exact (heq ▸ ht).1
-
-
 
 theorem extension_box_scalar_evolution_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -116,8 +97,6 @@ private theorem scalarEvolution_continuousOn
   intro t ht
   exact ((hM04.scalar_evolution 3 _ _ (G.box b).flow t ht x).derivWithin (hJ t ht)).symm
 
-
-
 theorem terminal_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -154,8 +133,6 @@ private theorem initial_box_eventually
   have htF : t ∈ F.interval := H.interval_exhausts_preterminal ⟨ht0.le, htT⟩
   exact ⟨⟨ht0, htT⟩, heq ▸ ⟨E.old_times htF, htU⟩⟩
 
-
-
 theorem initial_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureTheory.{u})
     (H : SingularTimeAssumptions F T M) (E : GeneralizedFlowExtension F T)
@@ -178,8 +155,6 @@ theorem initial_scalar_time_derivative_bound
     ((hscalar.pow 2).const_mul H.analytic_constant)
   filter_upwards [hevent, hscalar.eventually (Ioi_mem_nhds hx)] with t ht htx
   exact extension_box_scalar_evolution_bound hM04 H E b ht.1 ht.2 x htx.le
-
-
 
 theorem extension_scalar_time_derivative_bound
     (hM04 : RicciFlowCurvatureTheory.{u})

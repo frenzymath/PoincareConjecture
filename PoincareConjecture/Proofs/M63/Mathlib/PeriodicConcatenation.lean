@@ -5,22 +5,10 @@ import Mathlib.Logic.Equiv.Fin.Rotate
 import Mathlib.Algebra.Order.Floor.Semiring
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
-
-
-
 
 theorem exists_continuous_periodic_concat {X : Type*} [TopologicalSpace X]
     {N : ℕ} (hN : 0 < N) {ell : ℝ} (hell : 0 < ell)

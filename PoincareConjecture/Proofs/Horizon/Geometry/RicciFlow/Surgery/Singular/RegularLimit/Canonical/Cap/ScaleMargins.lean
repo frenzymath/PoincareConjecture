@@ -1,13 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic
 
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
 
 theorem exists_uniform_inverse_square_margin {c L : ℝ} (hc : 1 < c) (hL : 0 < L) :
     ∃ δ : ℝ, 0 < δ ∧ ∀ r : ℝ, 0 < r → r ≤ L →

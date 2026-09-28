@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RetainedCoreMatching
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -73,11 +61,6 @@ private theorem parent_edge_eq_coord_zero
     · refine ⟨mem_range_self _, ?_⟩
       fin_cases i <;> simp [Fin.succAbove, Fin.lt_def, Fin.ext_iff]
 
-
-
-
-
-
 theorem m64Intrinsic_parent_boundary_one_edge_of_coord_order
     (b : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}
     (hK : K ⊆ convexHull ℝ (range b))
@@ -99,12 +82,6 @@ theorem m64Intrinsic_parent_boundary_one_edge_of_coord_order
   rw [← parent_edge_eq_coord_zero b i]
   exact ⟨hxparent, hzero⟩
 
-
-
-
-
-
-
 theorem m64Intrinsic_parent_vertices_unique_of_coord_order
     (b : AffineBasis (Fin 3) ℝ Plane) {K : Set Plane}
     (horder : ∀ i j, (∀ x ∈ K, b.coord i x ≤ b.coord j x) ∨
@@ -116,12 +93,6 @@ theorem m64Intrinsic_parent_vertices_unique_of_coord_order
     norm_num [b.coord_apply, Ne.symm hij] at h
   · have h := hge (b j) hj
     norm_num [b.coord_apply, hij] at h
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_parent_boundary_refinement
     (b : AffineBasis (Fin 3) ℝ Plane) :

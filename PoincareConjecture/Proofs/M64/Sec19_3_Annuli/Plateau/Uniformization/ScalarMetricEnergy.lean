@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarFiniteEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarEnergyPositive
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option backward.isDefEq.respectTransparency.types false
@@ -30,12 +17,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarGradient_energy_bound (H : Plane → ℝ) (x : Plane) :
     |g.inner x (D.gradient H x) (D.gradient H x)| ≤
@@ -58,21 +39,11 @@ theorem scalarGradient_energy_bound (H : Plane → ℝ) (x : Plane) :
         (norm_nonneg _)
     _ = _ := by ring
 
-
-
-
-
-
 theorem scalarGradient_energy_nonneg (H : Plane → ℝ) (x : Plane) :
     0 ≤ g.inner x (D.gradient H x) (D.gradient H x) := by
   by_cases h : D.gradient H x = 0
   · simp [h]
   · exact (g.pos x _ h).le
-
-
-
-
-
 
 theorem scalarGradient_energy_continuousOn {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus) :
@@ -85,12 +56,6 @@ theorem scalarGradient_energy_continuousOn {H : Plane → ℝ}
     simp only [LeviCivitaData.gradient, Poincare.mvfderiv_eq_of_eventuallyEq hy]
   exact ((D.continuous_inner_gradient hVs hVs).continuousAt.congr_of_eventuallyEq
     heq.symm).continuousWithinAt
-
-
-
-
-
-
 
 theorem scalarPotential_finite_metric_energy (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -142,12 +107,6 @@ theorem scalarPotential_finite_metric_energy (w : H1Zero D scalarAnnulus)
     ((ENNReal.continuous_ofReal.comp hrho).aemeasurable) (by simp)).mpr
   simpa only [IntegrableOn, Function.comp_def, ENNReal.toReal_ofReal (hrhop _), smul_eq_mul]
     using! hweighted
-
-
-
-
-
-
 
 theorem scalarPotential_metric_energy_pos (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

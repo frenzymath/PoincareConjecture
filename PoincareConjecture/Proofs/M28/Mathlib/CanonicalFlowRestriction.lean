@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.CanonicalDomainInclusion
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ variable {n : ℕ} {J : Set ℝ}
   {U V : Set (EuclideanSpace ℝ (Fin n))}
   (hU : IsOpen U) (hV : IsOpen V) (hUV : U ⊆ V)
   [Nonempty U] [Nonempty V]
-
-
 
 def canonicalFlowRestriction :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -41,8 +31,6 @@ def canonicalFlowRestriction :
   exact F.pullbackToCanonicalDomain U hU
     (fun x => ⟨x.val, hUV x.property⟩)
     (Poincare.isLocalDiffeomorph_canonicalDomainInclusion (𝕜 := ℝ) hU hV hUV)
-
-
 
 theorem canonicalFlowRestriction_inner :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -65,8 +53,6 @@ theorem canonicalFlowRestriction_inner :
   rw [Poincare.mfderiv_canonicalDomainInclusion (𝕜 := ℝ) hU hV hUV x]
   rfl
 
-
-
 theorem canonicalFlowRestriction_scalar :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hV.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -88,8 +74,6 @@ theorem canonicalFlowRestriction_scalar :
   exact D.scalarCurvature_eq_of_local_isometry (F.connection t)
     isOpen_univ hj.contMDiff.contMDiffOn
     (fun _ _ _ _ => rfl) (mem_univ x)
-
-
 
 theorem canonicalFlowRestriction_nonnegative_iff :
     letI := hV.isOpenEmbedding_subtypeVal.singletonChartedSpace

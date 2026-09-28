@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandBoundaryGeo
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChosenCapUnionFrontier
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Affine.Lines
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,11 +20,6 @@ variable (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
     (collarParameterEquiv.trans L).toHomeomorph.toOpenPartialHomeomorph
     lo a b ua wa ub wb ra rb)
 
-
-
-
-
-
 theorem m64Intrinsic_linear_band_top_lines :
     ∃ lines : List (AnnulusCoordinates →ᵃ[ℝ] ℝ),
       (∀ l ∈ lines, Function.Surjective l) ∧
@@ -54,11 +37,6 @@ theorem m64Intrinsic_linear_band_top_lines :
   change z ∈ L.toLinearMap.toAffineMap '' _ at hi
   rw [image_segment] at hi
   exact hi
-
-
-
-
-
 
 theorem m64Intrinsic_linear_band_frontier_lines :
     ∃ lines : List (AnnulusCoordinates →ᵃ[ℝ] ℝ),
@@ -94,10 +72,6 @@ theorem m64Intrinsic_linear_band_frontier_lines :
 end Bands
 
 open ChartCircleArrangementVertexPatch in
-
-
-
-
 
 theorem m64Intrinsic_retained_caps_frontier_lines
     {gamma : ℝ → AnnulusCoordinates} {T r : ℝ} (hr : 0 < r) (hrT : r ≤ T)

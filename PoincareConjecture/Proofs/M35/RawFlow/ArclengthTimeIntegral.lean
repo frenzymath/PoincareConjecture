@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.AxisTimeCoefficients
 import Mathlib.Analysis.Calculus.ParametricIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 variable {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
-
-
 
 theorem raw_radialArclength_hasDerivAt_integral {t : ℝ} (ht : t ∈ Ioo 0 G.lifetime)
     {r : ℝ} (hr : 0 ≤ r) :

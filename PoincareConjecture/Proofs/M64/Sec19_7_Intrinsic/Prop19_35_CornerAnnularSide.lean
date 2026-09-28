@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcCornerCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +8,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold Bundle Matrix
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_annular_corner_is_convex
     {q : AnnulusCoordinates} (hq : ‖q‖ = 1)
@@ -76,9 +61,6 @@ theorem m64Intrinsic_annular_corner_is_convex
     ring
   have hprod := mul_lt_mul_of_pos_left hrsmall hr
   nlinarith
-
-
-
 
 theorem m64Intrinsic_exists_annular_two_arc_corner_coordinates
     {alpha beta : ℝ → AnnulusCoordinates} (ha : ContDiff ℝ ∞ alpha)

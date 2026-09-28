@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.PathTransportExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace LocalPathTransport
 
 variable {X ι G : Type*} [TopologicalSpace X] {U : ι → Set X} [Monoid G]
 
-
-
 noncomputable def global (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i) :
     LocalPathTransport (fun _ : Unit => (univ : Set X)) G where
@@ -28,8 +17,6 @@ noncomputable def global (L : LocalPathTransport U G)
   square H _ _ := L.extend_square hU hcover H
 
 variable (L : LocalPathTransport (fun _ : Unit => (univ : Set X)) G)
-
-
 
 theorem value_homotopic {x y : X} {p q : Path x y} (hpq : p.Homotopic q) :
     L.value p.toContinuousMap = L.value q.toContinuousMap := by
@@ -42,8 +29,6 @@ theorem value_homotopic {x y : X} {p q : Path x y} (hpq : p.Homotopic q) :
   have hr : S.verticalPath 1 = .const _ y := by ext t; simp [S]
   have h := L.square S () (fun _ => mem_univ _)
   simpa only [hb, ht, hl, hr, L.map_const, mul_one, one_mul] using h
-
-
 
 theorem value_trans {x y z : X} (p : Path x y) (q : Path y z) :
     L.value (p.trans q).toContinuousMap =
@@ -79,9 +64,6 @@ theorem value_trans {x y z : X} (p : Path x y) (q : Path y z) :
     (by change (1 / 2 : ℝ) ≤ 1; norm_num) () (fun _ _ => mem_univ _)
   simpa only [hleft, hright, ContinuousMap.intervalSubpath_zero_one] using h.symm
 
-
-
-
 noncomputable def toMonoidHom
     (L : LocalPathTransport (fun _ : Unit => (univ : Set X)) Gᵐᵒᵖ) (x : X) :
     FundamentalGroup X x →* G where
@@ -102,8 +84,6 @@ noncomputable def toMonoidHom
             MulOpposite.unop (L.value q.toContinuousMap)
         rw [L.value_trans]
         rfl
-
-
 
 @[simp] theorem toMonoidHom_mk
     (L : LocalPathTransport (fun _ : Unit => (univ : Set X)) Gᵐᵒᵖ) (x : X)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SurfaceDualBlockIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem dualEdge_inter_other_vertex_blocks
     (hbound : ∀ v ∈ K.faces, v.card ≤ 3)
@@ -85,9 +72,6 @@ theorem dualEdge_inter_other_vertex_blocks
     · exact hmark u hu huc hpu
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_surface_dual_edge_interval
     (hbound : ∀ v ∈ K.faces, v.card ≤ 3)

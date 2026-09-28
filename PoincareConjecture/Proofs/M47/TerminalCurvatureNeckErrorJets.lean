@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureNeckChartError
 import PoincareConjecture.Proofs.M47.TerminalCurvatureBoundedMovingPullback
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceProductJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -34,8 +25,6 @@ private noncomputable def terminalNeckEvaluation (a b : Fin 3) :
     (E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] ℝ :=
   (ContinuousLinearMap.apply ℝ ℝ (EuclideanSpace.basisFun (Fin 3) ℝ b)).comp
     (ContinuousLinearMap.apply ℝ (E →L[ℝ] ℝ) (EuclideanSpace.basisFun (Fin 3) ℝ a))
-
-
 
 theorem terminalCurvature_exists_neck_chart_error_constant_uniform
     (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :
@@ -133,8 +122,6 @@ theorem terminalCurvature_exists_neck_chart_error_constant_uniform
 variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace E M] [ChartedSpace E X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
-
-
 
 theorem terminalCurvature_exists_neck_chart_error_constant
     (m : ℕ) {D : ℝ} (hD : 1 ≤ D) :

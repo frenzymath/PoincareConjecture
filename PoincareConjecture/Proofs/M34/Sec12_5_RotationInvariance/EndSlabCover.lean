@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndCompactSlabs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,14 +9,10 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
 
-
-
 theorem endClosedSlab_mono {a b c d : ℝ} (hac : c ≤ a) (hbd : b ≤ d) :
     endClosedSlab e a b ⊆ endClosedSlab e c d := by
   rintro _ ⟨z, hz, rfl⟩
   exact ⟨z, ⟨mem_univ _, hac.trans hz.2.1, hz.2.2.trans hbd⟩, rfl⟩
-
-
 
 theorem endEnergyCutoff_eq_one_on_slab {x : StandardCapSpace}
     (hx : x ∈ endClosedSlab e (17 / 5) (23 / 5)) : endEnergyCutoff e x = 1 := by
@@ -35,8 +22,6 @@ theorem endEnergyCutoff_eq_one_on_slab {x : StandardCapSpace}
   apply endEnergyCutoff_eq_one e
   rw [endExhaustion_coordinate_of_two_le e (by linarith)]
   constructor <;> linarith
-
-
 
 theorem endEnergyCutoff_tsupport_subset_three_slabs :
     tsupport (endEnergyCutoff e) ⊆

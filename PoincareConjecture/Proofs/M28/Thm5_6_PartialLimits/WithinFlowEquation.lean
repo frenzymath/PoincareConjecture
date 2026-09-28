@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateRicci
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.TimeDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem equation_of_within_coordinate_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -56,10 +42,6 @@ theorem equation_of_within_coordinate_jets
   rw [← hlimit]
   exact ((hg.contDiffWithinAt_inner_time ht x u v).differentiableWithinAt
     (by simp)).hasDerivWithinAt
-
-
-
-
 
 theorem exists_of_within_coordinate_jets
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M13.Length
 import PoincareConjecture.Definitions.Ch04.Harnack
 import Mathlib.Topology.UniformSpace.Equiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle NNReal ENNReal
@@ -21,7 +13,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T3Space M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T3Space N]
-
 
 theorem homothety_complete_iff (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)

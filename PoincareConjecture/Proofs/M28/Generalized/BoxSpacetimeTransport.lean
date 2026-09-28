@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.BoxTransport
 import Mathlib.Topology.Maps.OpenQuotient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -25,15 +15,10 @@ variable (F : GeneralizedRicciFlowData.{u}) {ι : Type v} (b : ι → F.box_inde
     (J : Set ℝ) (hJF : J ⊆ F.interval)
     (hJ : ∀ s ∈ J, ∀ i, s ∈ (F.box (b i)).interval)
 
-
-
 noncomputable def boxSpacetimeTransport :
     J × range (boxEvaluation F b t ht) → F.point :=
   fun z => ⟨z.1.val, boxTransport F b t z.1.val ht
     (hJ z.1.val z.1.property) (hJF z.1.property) z.2.val⟩
-
-
-
 
 theorem isOpenEmbedding_boxSpacetimeTransport
     (htF : t ∈ F.interval)

@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureBianchi
 import PoincareConjecture.Proofs.M04.ScalarBracket
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -157,4 +153,3 @@ theorem ricci_symm (D : LeviCivitaData g) (x : M) (u v : TangentSpace (𝓡 n) x
   exact curvatureTensor_pair_exchange D x u _ v _
 
 end PoincareConjecture.M04
-

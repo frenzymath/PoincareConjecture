@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.DiskComplement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.ParallelDisks.Charts
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,9 +36,6 @@ private theorem sphere_restriction
     contMDiff_toFun := (F.contMDiff.comp contMDiff_coe_sphere).codRestrict_sphere _
     contMDiff_invFun := (F.symm.contMDiff.comp contMDiff_coe_sphere).codRestrict_sphere _ },
     fun _ => rfl⟩
-
-
-
 
 theorem exists_global_complementary_disk_chart
     (m : E2 → S2) (hmi : InjOn m (closedBall 0 1))
@@ -127,9 +122,6 @@ theorem exists_global_complementary_disk_chart
   refine ⟨e, hes, he, hei, hec, ?_⟩
   rw [e.image_ball_eq_interior (hes ▸ subset_univ _) hec, interior_compl,
     ← hnopen, ParallelDisks.closure_image_ball zero_lt_one n hns, hnclosed]
-
-
-
 
 theorem exists_complementary_boundary_parametrization
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

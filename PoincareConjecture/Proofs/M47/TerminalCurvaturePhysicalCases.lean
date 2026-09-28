@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureScaledCompact
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSourceNeck
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem terminalCurvature_readout_of_physical_source_canonical
     {ι : Type*} (S : ℕ → GeneralizedSliceCarrier.{u}) (J : ℕ → Set ℝ)

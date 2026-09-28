@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Ambient.AmbientFiniteSlabAvoidance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Ambient.AmbientGridPerturbation
 
-
-
-
 set_option autoImplicit false
 
 noncomputable section

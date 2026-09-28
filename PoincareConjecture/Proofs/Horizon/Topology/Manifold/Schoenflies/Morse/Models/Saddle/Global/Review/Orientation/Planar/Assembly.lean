@@ -5,22 +5,11 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Matching
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Tree
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies.SaddleLevel.OrientationReview
-
 
 theorem exists_ball_neighborhood
     {Omega : Set (EuclideanSpace Real (Fin 3))}

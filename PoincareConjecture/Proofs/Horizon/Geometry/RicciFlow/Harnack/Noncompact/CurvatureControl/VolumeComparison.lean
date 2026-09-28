@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.CompactVolume
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem volumeMeasure_lower_bound_of_integral_scalarCurvature_le
     (F : RicciFlow n M J) {a b P : ℝ} (hab : a ≤ b)
@@ -54,8 +43,6 @@ theorem volumeMeasure_lower_bound_of_integral_scalarCurvature_le
     a (left_mem_Icc.mpr hab) b (right_mem_Icc.mpr hab) hab
   linarith
 
-
-
 theorem antitoneOn_volumeMeasure_of_integral_scalarCurvature_nonneg
     (F : RicciFlow n M J) {a b : ℝ}
     (hJ : Icc a b ⊆ interior J)
@@ -75,8 +62,6 @@ theorem antitoneOn_volumeMeasure_of_integral_scalarCurvature_nonneg
   intro t ht
   rw [(hd t (interior_subset ht)).deriv]
   exact neg_nonpos.mpr (hR t (by simpa only [interior_Icc] using ht))
-
-
 
 theorem antitoneOn_volumeMeasure_of_scalarCurvature_nonneg
     (F : RicciFlow n M J) {a b : ℝ}

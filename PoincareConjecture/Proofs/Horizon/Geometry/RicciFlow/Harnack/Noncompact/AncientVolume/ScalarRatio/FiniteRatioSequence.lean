@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Annular.Control
 import Mathlib.Topology.Order.LiminfLimsup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff Bundle
 
 namespace Poincare.AncientVolume
-
-
 
 theorem exists_finite_ratio_sequence
     {X : Type*} [MetricSpace X] [ProperSpace X] [NoncompactSpace X]
@@ -62,9 +51,6 @@ end Poincare.AncientVolume
 namespace PoincareConjecture.RicciFlow
 
 universe u
-
-
-
 
 theorem exists_finite_scalar_ratio_sequence_of_bounded_ancient
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

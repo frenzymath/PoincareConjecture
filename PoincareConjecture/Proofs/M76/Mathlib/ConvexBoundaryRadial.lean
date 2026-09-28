@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSimplex
 import Mathlib.Analysis.Convex.Gauge
 import Mathlib.Analysis.LocallyConvex.Separation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AffineIndependent.linearIndependent_of_linear_level {ι : Type*} {v : ι → E}
     (hv : AffineIndependent ℝ v) (L : E →ₗ[ℝ] ℝ) {c : ℝ} (hc : c ≠ 0)
@@ -31,9 +19,6 @@ theorem AffineIndependent.linearIndependent_of_linear_level {ι : Type*} {v : ι
     simp only [map_sum, map_smul, hL, smul_eq_mul, map_zero, ← Finset.sum_mul] at h
     exact (mul_eq_zero.mp h).resolve_right hc
   exact hv s w hsum (by rw [Finset.weightedVSub_eq_linear_combination _ hsum]; exact hw)
-
-
-
 
 theorem Convex.exists_positive_linear_level_of_subset_frontier {s t : Set E}
     (hs : Convex ℝ s) (hzero : (0 : E) ∈ interior s) (ht : Convex ℝ t)
@@ -51,9 +36,6 @@ theorem Convex.exists_positive_linear_level_of_subset_frontier {s t : Set E}
   intro x hx
   exact le_antisymm (hcl x (heq.symm ▸ (hts hx).1)) (hLt x hx)
 
-
-
-
 theorem AffineIndependent.linearIndependent_of_hull_subset_frontier {s t : Set E}
     (ht : AffineIndependent ℝ ((↑) : t → E)) (hs : Convex ℝ s)
     (hzero : (0 : E) ∈ interior s) (hts : convexHull ℝ t ⊆ frontier s) :
@@ -62,8 +44,6 @@ theorem AffineIndependent.linearIndependent_of_hull_subset_frontier {s t : Set E
     hzero (convex_convexHull ℝ t) hts
   exact ht.linearIndependent_of_linear_level L hc.ne'
     (fun x => hL x (subset_convexHull ℝ t x.property))
-
-
 
 theorem Convex.injOn_normalize_frontier {s : Set E} (hs : Convex ℝ s)
     (hzero : (0 : E) ∈ interior s) : InjOn (normalize : E → E) (frontier s) := by
@@ -80,9 +60,6 @@ theorem Convex.injOn_normalize_frontier {s : Set E} (hs : Convex ℝ s)
     x = ‖x‖ • normalize x := (norm_smul_normalize x).symm
     _ = ‖y‖ • normalize y := by rw [hnorm, hxy]
     _ = y := norm_smul_normalize y
-
-
-
 
 theorem IsCompact.exists_frontier_pos_smul {s : Set E} (hs : IsCompact s)
     (hcv : Convex ℝ s) (hzero : (0 : E) ∈ interior s) {x : E}

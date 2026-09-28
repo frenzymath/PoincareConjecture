@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverRadialEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,12 +35,6 @@ private theorem partial_energy_le_total {q : ℝ → ℝ}
         setIntegral_mono_set hfull (ae_of_all _ hnon)
           (Ioc_subset_Ioc hr.1.le le_rfl).eventuallyLE
       _ = _ := integral_Ioc_eq_integral_Ioo
-
-
-
-
-
-
 
 theorem scalarCover_integrated_boundary_trace_energy {H : Plane → ℝ}
     (hHc : Continuous H)

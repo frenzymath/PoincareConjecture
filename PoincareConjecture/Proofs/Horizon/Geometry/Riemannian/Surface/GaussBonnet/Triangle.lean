@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Chart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Corners
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +13,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   [MeasurableSpace S] [BorelSpace S] [T3Space S]
   {g : RiemannianMetric 2 S}
-
-
-
 
 theorem gaussBonnet_chartTriangle_of_aligned_frame
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -183,8 +174,6 @@ theorem gaussBonnet_chartTriangle_of_aligned_frame
     constructor
     · ring_nf; exact le_rfl
     constructor <;> linarith [hr.1, hr.2]
-
-
 
 theorem exists_gaussBonnet_chartTriangle
     (D : LeviCivitaData g) (e : OpenPartialHomeomorph S (ℝ × ℝ))

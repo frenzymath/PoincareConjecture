@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallChains
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open PoincareConjecture.Proofs.M02.Topology
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
   {I : Type v} {J : Type w}
-
-
 
 theorem integralSmallChains_map_le (U : I → Set X) (V : J → Set Y)
     (r : I → J) (f : C(X, Y)) (hf : ∀ i, Set.MapsTo f (U i) (V (r i))) (n : Nat) :
@@ -45,8 +34,6 @@ theorem integralSmallChains_map_le (U : I → Set X) (V : J → Set Y)
   rintro _ ⟨z, rfl⟩
   exact hf i (hi ⟨z, rfl⟩)
 
-
-
 def integralSmallChainsMap (U : I → Set X) (V : J → Set Y)
     (r : I → J) (f : C(X, Y)) (hf : ∀ i, Set.MapsTo f (U i) (V (r i))) :
     integralSmallChainComplex U ⟶ integralSmallChainComplex V where
@@ -64,8 +51,6 @@ def integralSmallChainsMap (U : I → Set X) (V : J → Set Y)
     apply Subtype.ext
     exact congrArg (fun g => g c.val)
       ((integralChainsFunctor.map (TopCat.ofHom f)).comm i j)
-
-
 
 @[reassoc]
 theorem integralSmallChainsMap_inclusion (U : I → Set X) (V : J → Set Y)

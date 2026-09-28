@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Descent
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.CurvatureNaturality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M44
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 noncomputable def chartTargetLeviCivitaData
     (U : Opens (EuclideanSpace ℝ (Fin n)))
     (e : Diffeomorph (𝓡 n) (𝓡 n) U M ∞) (g : RiemannianMetric n M) :
@@ -39,9 +27,6 @@ noncomputable def chartTargetLeviCivitaData
     (fun _ => e.contMDiff) (fun _ y => ⟨e.mfderivToContinuousLinearEquiv (by simp) y, rfl⟩)
     (fun _ _ _ _ => rfl) (fun x => ⟨(), e.symm x, e.apply_symm_apply x⟩)
 
-
-
-
 noncomputable def physicalBufferFlow {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞) :
     RicciFlow n (⟨e.target, e.open_target⟩ : Opens M) J :=
@@ -52,8 +37,6 @@ noncomputable def physicalBufferFlow {J : Set ℝ} (F : RicciFlow n M J)
         ((F.metric t).pullbackOfLocalDiffeomorph Subtype.val
           (open_inclusion_isLocalDiffeomorph (⟨e.target, e.open_target⟩ : Opens M))))
 
-
-
 theorem physicalBufferFlow_metric_inner {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)
     (t : ℝ) (x : (⟨e.target, e.open_target⟩ : Opens M))
@@ -62,8 +45,6 @@ theorem physicalBufferFlow_metric_inner {J : Set ℝ} (F : RicciFlow n M J)
       (F.metric t).inner x.1
         (mfderiv (𝓡 n) (𝓡 n) Subtype.val x v)
         (mfderiv (𝓡 n) (𝓡 n) Subtype.val x w) := rfl
-
-
 
 theorem physicalBufferFlow_curvatureDerivativeNorm {J : Set ℝ} (F : RicciFlow n M J)
     (e : PartialDiffeomorph (𝓡 n) (𝓡 n) (EuclideanSpace ℝ (Fin n)) M ∞)

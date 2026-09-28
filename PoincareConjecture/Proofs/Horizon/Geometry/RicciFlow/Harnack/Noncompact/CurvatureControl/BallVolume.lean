@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,8 +43,6 @@ private lemma volumeMeasure_ball_ne_top (g : RiemannianMetric n M)
   exact (lt_of_le_of_lt (measure_mono hs)
     (g.volumeMeasure_lt_top_of_isCompact
       (g.isCompact_closedBall_of_metricComplete hc p r))).ne
-
-
 
 theorem RicciFlow.ball_volume_lower_bound_of_integral_scalarCurvature_le
     {J : Set ℝ} (F : RicciFlow n M J) {a b P : ℝ} (hab : a ≤ b)
@@ -97,8 +85,6 @@ theorem RicciFlow.ball_volume_lower_bound_of_integral_scalarCurvature_le
   exact hfixed.trans (ENNReal.toReal_mono
     (volumeMeasure_ball_ne_top (F.metric b) (hcomplete b hb) p r)
     (measure_mono (hball b hb)))
-
-
 
 theorem RicciFlow.ball_volume_lower_bound_of_nonnegative_curvatureOperator
     {J : Set ℝ} (F : RicciFlow n M J) {a b P : ℝ} (hab : a ≤ b)

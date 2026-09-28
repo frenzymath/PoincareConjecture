@@ -2,23 +2,9 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Components
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Bounded
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Topology
 
 namespace Poincare.Topology
-
-
 
 theorem collared_sphere_separates
     {U : Set (EuclideanSpace ℝ (Fin 3))} (hU : IsOpen U)

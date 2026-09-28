@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M04.SpacetimePairings
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import PoincareConjecture.Proofs.M04.ShiCoordinateConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {U : Set M} {g : RiemannianMetric n M}
-
-
 
 theorem contMDiffOn_fixed_covariantTensorDerivative (D : LeviCivitaData g) {k : ℕ}
     {T : ℝ → CovariantTensorEvaluation n M k}
@@ -68,7 +58,6 @@ theorem contMDiffOn_fixed_covariantTensorDerivative (D : LeviCivitaData g) {k : 
   apply (hfirst.sub hsum).congr
   intro p hp
   exact (M04.covariantTensorDerivativeOnFields_eq D (hT p.1) hU hX hp.2).symm
-
 
 theorem contMDiffOn_fixed_iteratedCovariantTensorDerivative (D : LeviCivitaData g) {k : ℕ}
     {T : ℝ → CovariantTensorEvaluation n M k}

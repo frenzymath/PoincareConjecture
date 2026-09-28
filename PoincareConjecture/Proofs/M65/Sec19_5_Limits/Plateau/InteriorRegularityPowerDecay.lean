@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEn
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem ac_radial_power_decay {E : ℝ → ℝ} {r R K : ℝ}
     (hr : 0 < r) (hrR : r ≤ R) (hK : 0 < K)
@@ -69,10 +56,6 @@ theorem ac_radial_power_decay {E : ℝ → ℝ} {r R K : ℝ}
       dsimp only [w]
       rw [Real.div_rpow hr.le hR.le, Real.rpow_neg hR.le]
       ring
-
-
-
-
 
 theorem localMinimum_energy_power_decay
     {M : Type*} [TopologicalSpace M]

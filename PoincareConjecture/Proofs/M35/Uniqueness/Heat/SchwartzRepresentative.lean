@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.SchwartzJetRealization
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ContinuousCoherentJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

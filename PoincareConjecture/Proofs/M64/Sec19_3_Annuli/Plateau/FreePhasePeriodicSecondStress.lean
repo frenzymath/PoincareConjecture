@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseContinuity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseHalfTurnMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressTwoCuts
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -36,10 +24,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "half" => curvePeriod / 2
 local notation "T" => m64AnnulusHalfTurn
-
-
-
-
 
 theorem auxiliaryCircle_free_phase_periodic_second_stress
     (P : M62.CircleProductData F circumference)

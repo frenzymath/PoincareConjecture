@@ -4,10 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.LinearAlgebra.AffineSpace.Ordered
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +18,6 @@ private theorem eventually_gt_of_deriv_pos
   have hlim := (hasDerivAt_iff_tendsto_slope_left_right.mp hd).2
   filter_upwards [hlim.eventually (Ioi_mem_nhds hpos), self_mem_nhdsWithin] with t ht hat
   exact (slope_pos_iff hat).mp ht
-
-
-
-
 
 theorem m64_radial_enters_positive_corner
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -52,10 +44,6 @@ theorem m64_radial_enters_positive_corner
     eventually_gt_of_deriv_pos hd2 hw.2] with t ht h1 h2
   apply ht
   simpa only [zero_smul, hzero, Prod.fst_zero, Prod.snd_zero] using And.intro h1.le h2.le
-
-
-
-
 
 theorem m64_radial_leaves_terminal_corner
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

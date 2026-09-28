@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Components.Counts
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -40,4 +38,3 @@ theorem SourceDoubleComponents.piece_image_preimage
     · exact M.image_mate i ▸ mem_image_of_mem f hm
 
 end PoincareConjecture.M76.Dehn.Annuli
-

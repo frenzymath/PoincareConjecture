@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Statements.M59LoopIdentification
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,11 +12,9 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 theorem m61FamilyWidth_eq_legacy (g : RiemannianMetric 3 M)
     (Gamma : FreeTwoSphereFamily (M := M)) :
     m61FamilyWidth g (m59FamilyMap Gamma) = familyWidth g Gamma := rfl
-
 
 theorem m61Represents_iff_homotopic {q : M59SphereQuotient} {x : M}
     (C : M59IdentificationCore q x)
@@ -42,7 +31,6 @@ theorem m61Represents_iff_homotopic {q : M59SphereQuotient} {x : M}
     exact hFGamma.trans (hGammaDelta.trans hGDelta.symm)
   · intro hFG
     exact ⟨Gamma, hGamma, hclassGamma, hFG.symm.trans hFGamma⟩
-
 
 theorem m61UniqueClassLabels_from_M59 {q : M59SphereQuotient} {x : M}
     (C : M59IdentificationCore q x) : M61UniqueClassLabels q x := by
@@ -61,7 +49,6 @@ theorem m61UniqueClassLabels_from_M59 {q : M59SphereQuotient} {x : M}
   have hlabels := hclassDelta.symm.trans (hclasses.symm.trans hclassGamma)
   exact eq_of_heq (Sigma.mk.inj hlabels).2
 
-
 theorem m61BasedClassWidthRange_eq_free {q : M59SphereQuotient} {x : M}
     (C : M59IdentificationCore q x) (g : RiemannianMetric 3 M)
     {alpha : HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M)) (constantC1Loop x)}
@@ -74,7 +61,6 @@ theorem m61BasedClassWidthRange_eq_free {q : M59SphereQuotient} {x : M}
     exact ⟨G, hnull, (m61Represents_iff_homotopic C hF G).mp hG, hwidth⟩
   · rintro ⟨G, hnull, hFG, hwidth⟩
     exact ⟨G, hnull, (m61Represents_iff_homotopic C hF G).mpr hFG, hwidth⟩
-
 
 theorem m61BasedClassWidth_from_M59 [T2Space M] [SecondCountableTopology M]
     (W : M61RawWidthCore.{u}) {q : M59SphereQuotient} {x : M}

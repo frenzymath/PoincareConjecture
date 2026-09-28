@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinNeighborhood
 import PoincareConjecture.Proofs.M14.Mathlib.EndpointPrimitiveLimit
 import PoincareConjecture.Proofs.M14.Sec6_1_PathPrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,10 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
-
-
-
-
 
 theorem minimizing_action_le_prefix_add_tail (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (m : M14BackwardPath G T τ₁ τ₂ x y) (hmin : M14IsMinimizing m)
@@ -57,9 +44,6 @@ theorem minimizing_action_le_prefix_add_tail (hM12 : GeneralizedRicciGaugeTheory
   have hsmall : 2 * d < D.radius := by linarith [hd.2]
   exact (hmin (prefixJoinPath hM12 q p D d hd.1 hsmall)).trans_eq
     (action_prefixJoinPath_eq_blend hM12 q p D d hd.1 hsmall)
-
-
-
 
 theorem isMinimizing_prefixPath (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : M14BackwardPath G T τ₁ τ₂ x y) (hmin : M14IsMinimizing q)

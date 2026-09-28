@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_Normalized
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_GeodesicTransport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" => StandardCapSpace
 
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
-
-
-
 
 structure NormalizedCapExponential (Q : SurgeryCapClose g₀ S g tip scale eta) (R : ℝ) where
   radius_pos : 0 < R
@@ -45,9 +33,6 @@ structure NormalizedCapExponential (Q : SurgeryCapClose g₀ S g tip scale eta) 
   distance_bound : ∀ v ∈ Metric.ball 0 R, ∀ t ∈ Icc (0 : ℝ) 1,
     Q.normalizedMetric.edist tip (map (t • v)) ≤ ENNReal.ofReal ‖v‖ * ENNReal.ofReal t
   map_mem : ∀ v ∈ Metric.ball 0 R, map v ∈ Q.map '' g₀.metric.ball 0 eta⁻¹
-
-
-
 
 theorem exists_normalizedCapExponential
     (Q : SurgeryCapClose g₀ S g tip scale eta) {R : ℝ} (hR : 0 < R)
@@ -75,8 +60,6 @@ theorem exists_normalizedCapExponential
   simpa only [one_mul] using hd.trans_lt
     ((ENNReal.ofReal_lt_ofReal_iff (inv_pos.mpr Q.eta_pos)).mpr (hvR.trans_le hReta))
 
-
-
 theorem exists_normalizedCapExponential_of_buffer
     (Q : SurgeryCapClose g₀ S g tip scale eta) (heta : eta < 1)
     {r R : ℝ} (hr : 0 < r) (hrEta : r < eta⁻¹) (hR : 0 < R)
@@ -88,9 +71,6 @@ theorem exists_normalizedCapExponential_of_buffer
     (Q.isCompact_closure_normalized_ball heta hr hrEta).of_isClosed_subset isClosed_closure
       (closure_mono (fun _ hx => hx.trans_le (ENNReal.ofReal_le_ofReal hRr)))
   exact exists_normalizedCapExponential Q hR hReta hcompact
-
-
-
 
 theorem exists_initial_exponential_threshold (R : ℝ) (hR : 0 < R) :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (g₀ : StandardInitialMetric)
@@ -115,18 +95,12 @@ namespace NormalizedCapExponential
 
 variable {Q : SurgeryCapClose g₀ S g tip scale eta} {R : ℝ}
 
-
-
 noncomputable def coordinateMap (D : NormalizedCapExponential Q R) : E → E := Q.inverse ∘ D.map
-
-
 
 theorem coordinateMap_smooth (D : NormalizedCapExponential Q R) :
     ContDiffOn ℝ ∞ D.coordinateMap (Metric.ball 0 R) := by
   apply contMDiffOn_iff_contDiffOn.mp
   exact Q.inverse_smooth.comp D.smooth D.map_mem
-
-
 
 theorem coordinateMap_zero (D : NormalizedCapExponential Q R) : D.coordinateMap 0 = 0 := by
   have h0 : (0 : E) ∈ g₀.metric.ball 0 eta⁻¹ := by
@@ -137,12 +111,8 @@ theorem coordinateMap_zero (D : NormalizedCapExponential Q R) : D.coordinateMap 
   exact (congrArg Q.inverse D.map_zero).trans
     ((congrArg Q.inverse Q.map_tip.symm).trans (Q.left_inverse h0))
 
-
-
 noncomputable def phase (D : NormalizedCapExponential Q R) (z : E × ℝ) : E × E :=
   (D.coordinateMap (z.2 • z.1), fderiv ℝ D.coordinateMap (z.2 • z.1) z.1)
-
-
 
 theorem phase_eq_curve_velocity (D : NormalizedCapExponential Q R)
     {v : E} {t : ℝ} (ht : t • v ∈ Metric.ball 0 R) :
@@ -154,8 +124,6 @@ theorem phase_eq_curve_velocity (D : NormalizedCapExponential Q R)
   refine Prod.ext rfl ?_
   simpa only [phase, Function.comp_def, id_eq, one_smul] using hcurve.deriv.symm
 
-
-
 theorem phase_smooth (D : NormalizedCapExponential Q R) :
     ContDiffOn ℝ ∞ D.phase {z : E × ℝ | z.2 • z.1 ∈ Metric.ball 0 R} := by
   intro z hz
@@ -165,15 +133,9 @@ theorem phase_smooth (D : NormalizedCapExponential Q R) :
     (((hmap.fderiv_right (m := ∞) (by simp)).comp z harg).clm_apply contDiffAt_fst)
   exact hphase.contDiffWithinAt
 
-
-
 theorem phase_initial (D : NormalizedCapExponential Q R) (v : E) :
     D.phase (v, 0) = (0, fderiv ℝ D.coordinateMap 0 v) := by
   simp only [phase, zero_smul, D.coordinateMap_zero]
-
-
-
-
 
 theorem coordinate_phase_hasDerivAt (D : NormalizedCapExponential Q R)
     {v : E} (hv : v ∈ Metric.ball 0 R) {t : ℝ} (ht : t • v ∈ Metric.ball 0 R) :
@@ -181,8 +143,6 @@ theorem coordinate_phase_hasDerivAt (D : NormalizedCapExponential Q R)
       (coordinateGeodesicField Q.normalizedCoefficients
         (D.coordinateMap (t • v), deriv (fun u => D.coordinateMap (u • v)) t)) t :=
   Q.hasDerivAt_normalized_geodesic_phase (D.geodesic v hv) ht (D.map_mem _ ht)
-
-
 
 theorem phase_hasDerivAt (D : NormalizedCapExponential Q R)
     {v : E} (hv : v ∈ Metric.ball 0 R) {t : ℝ} (ht : t • v ∈ Metric.ball 0 R) :

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanRegion
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.TwoRaySupport
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,10 +9,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_jordan_interior_closure
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)
@@ -41,11 +25,6 @@ theorem m64Intrinsic_jordan_interior_closure
     exact disjoint_left.mp hiV hp hpfront.1
   refine ⟨hi, ?_⟩
   rw [frontier, closure_closure, hi, frontier, hU.interior_eq]
-
-
-
-
-
 
 theorem m64Intrinsic_jordan_corner_germ
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)
@@ -91,10 +70,6 @@ theorem m64Intrinsic_jordan_corner_germ
   · right
     filter_upwards [H.open_source.mem_nhds hc, h] with z hz heq
     exact (himage.closure hz).trans (propext_iff.mp heq)
-
-
-
-
 
 theorem m64Intrinsic_jordan_positive_corner_germ
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)

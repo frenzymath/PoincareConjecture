@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.LichnerowiczEnergy
 import PoincareConjecture.Proofs.M35.Uniqueness.CompleteScalarMaximum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem bounded_lichnerowicz_zero
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

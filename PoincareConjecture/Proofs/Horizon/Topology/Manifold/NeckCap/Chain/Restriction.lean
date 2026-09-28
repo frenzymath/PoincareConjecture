@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Connected
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Union
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -132,12 +123,10 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {ε : ℝ}
 
-
 def forwardHalf (C : BalancedNeckChain g ε) (hbi : C.shape = .biInfinite) (a : ℤ) :
     BalancedNeckChain g ε :=
   C.restrict (.forward a) ⟨a, by change a ≤ a; exact le_rfl⟩
     (by rw [hbi]; exact subset_univ _)
-
 
 def backwardHalf (C : BalancedNeckChain g ε) (hbi : C.shape = .biInfinite) (a : ℤ) :
     BalancedNeckChain g ε :=

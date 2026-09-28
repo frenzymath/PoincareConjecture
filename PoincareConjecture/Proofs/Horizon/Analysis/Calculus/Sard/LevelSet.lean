@@ -7,7 +7,6 @@ namespace Poincare.Analysis
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
 theorem exists_regular_level_parametrization {V : Set E} (hV : IsOpen V)
     {f g : E → ℝ} (hf : ContDiffOn ℝ ∞ f V) (hg : ContDiffOn ℝ ∞ g V)
     {a : E} (ha : a ∈ V) (hga : g a = 0)

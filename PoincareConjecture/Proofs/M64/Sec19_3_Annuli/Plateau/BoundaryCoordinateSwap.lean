@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCriticalEmbedding
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,21 +13,11 @@ open Poincare.Analysis.Sobolev.BoundaryTangential
 
 namespace PoincareConjecture
 
-
-
-
-
 def m64BoundaryCoordinateSwap : LoopPlane ≃ₗᵢ[ℝ] LoopPlane :=
   LinearIsometryEquiv.piLpCongrLeft 2 ℝ ℝ (Equiv.swap (0 : Fin 2) 1)
 
-
-
-
 theorem m64BoundaryCoordinateSwap_apply (p : LoopPlane) (i : Fin 2) :
     m64BoundaryCoordinateSwap p i = p (Equiv.swap (0 : Fin 2) 1 i) := rfl
-
-
-
 
 theorem m64BoundaryCoordinateSwap_involutive :
     Function.Involutive m64BoundaryCoordinateSwap := by
@@ -46,24 +25,14 @@ theorem m64BoundaryCoordinateSwap_involutive :
   ext i
   simp only [m64BoundaryCoordinateSwap_apply, Equiv.swap_apply_self]
 
-
-
-
 theorem m64BoundaryCoordinateSwap_twice (p : LoopPlane) :
     m64BoundaryCoordinateSwap (m64BoundaryCoordinateSwap p) = p :=
   m64BoundaryCoordinateSwap_involutive p
-
-
-
-
 
 theorem m64BoundaryCoordinateSwap_basis (i : Fin 2) :
     m64BoundaryCoordinateSwap (EuclideanSpace.single i 1) =
       EuclideanSpace.single (Equiv.swap (0 : Fin 2) 1 i) 1 :=
   LinearIsometryEquiv.piLpCongrLeft_single _ _ _
-
-
-
 
 theorem m64BoundaryCoordinateSwap_fderiv {phi : LoopPlane → ℝ}
     (hp : Differentiable ℝ phi) (p : LoopPlane) (i : Fin 2) :
@@ -78,10 +47,6 @@ theorem m64BoundaryCoordinateSwap_fderiv {phi : LoopPlane → ℝ}
   change fderiv ℝ phi (m64BoundaryCoordinateSwap p)
     (m64BoundaryCoordinateSwap (EuclideanSpace.single i 1)) = _
   rw [m64BoundaryCoordinateSwap_basis]
-
-
-
-
 
 theorem m64WeakPartialDeriv_coordinateSwap
     {S : Set LoopPlane} {u v : LoopPlane → ℝ} {i : Fin 2}
@@ -120,9 +85,6 @@ theorem m64WeakPartialDeriv_coordinateSwap
   simpa only [T, m64BoundaryCoordinateSwap_fderiv (hp.differentiable (by simp)),
     Equiv.swap_apply_self] using heq
 
-
-
-
 theorem m64MemW1p_coordinateSwap
     {S : Set LoopPlane} {u : LoopPlane → ℝ} {p : ℝ≥0∞}
     (hu : MemW1p p u S) :
@@ -134,10 +96,6 @@ theorem m64MemW1p_coordinateSwap
   obtain ⟨v, hv, hw⟩ := hu.2 (Equiv.swap (0 : Fin 2) 1 i)
   exact ⟨v ∘ m64BoundaryCoordinateSwap, hv.comp_measurePreserving hmp,
     m64WeakPartialDeriv_coordinateSwap hw⟩
-
-
-
-
 
 theorem m64NormalHalfPlane_H1_memLp {u : LoopPlane → ℝ}
     (hc : HasCompactSupport u) (hu : MemW1p 2 u {p : LoopPlane | 0 < p 1})

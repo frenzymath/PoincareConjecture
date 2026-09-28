@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalDomainCharts
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

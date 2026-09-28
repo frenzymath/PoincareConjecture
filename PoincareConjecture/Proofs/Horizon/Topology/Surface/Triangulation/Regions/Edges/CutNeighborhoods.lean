@@ -1,15 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Sides
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -17,8 +6,6 @@ open Set
 open scoped Topology Manifold ContDiff
 
 namespace Poincare.Topology
-
-
 
 theorem local_region_subset_of_regular_closed
     {X : Type*} [TopologicalSpace X] {C R W : Set X} {p : X}
@@ -47,10 +34,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
-
-
 
 theorem exists_region_closure_neighborhood_of_frontier_subset_within
     (e : D.EdgeIndex) (q : D.regions) {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -114,8 +97,6 @@ theorem exists_region_closure_neighborhood_of_frontier_subset_within
     hCclosed hCregular hCregion hpC hW hpW hconnected havoid
   exact ⟨W, hW, hpW, fun _ hz => (hWsmall hz).1, fun _ hz => (hWsmall hz).2.1,
     disjoint_left.mpr (fun z hzW hzL => (hWsmall hzW).2.2 hzL), hinterior, hclosure⟩
-
-
 
 theorem exists_region_closure_neighborhood_of_frontier_subset
     (e : D.EdgeIndex) (q : D.regions) {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)

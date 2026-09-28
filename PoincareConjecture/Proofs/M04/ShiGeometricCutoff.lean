@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M04.ShiCappedDistance
 import PoincareConjecture.Proofs.M04.ShiCutoffProfile
 import PoincareConjecture.Proofs.M04.ShiSpatialCutoffSupport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

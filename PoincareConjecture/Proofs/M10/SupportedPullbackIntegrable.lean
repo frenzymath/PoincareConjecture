@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SupportedChartTest
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 variable {M E : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [NormedAddCommGroup E] [MeasurableSpace E] [BorelSpace E]
   {μ : Measure E} [IsFiniteMeasureOnCompacts μ]
-
 
 theorem integrable_supported_pullback (e : OpenPartialHomeomorph M E)
     {ψ ρ : E → ℝ} {H : M → ℝ} {A : ℝ} (hψ : Continuous ψ)

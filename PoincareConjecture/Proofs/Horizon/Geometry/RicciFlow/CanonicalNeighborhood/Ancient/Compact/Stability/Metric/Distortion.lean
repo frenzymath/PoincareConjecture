@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.LimitMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -107,8 +99,6 @@ private theorem eventually_local_abs_inner_sub_le
   erw [hv, hcx] at hbound
   exact hbound
 
-
-
 theorem eventually_abs_inner_sub_le_on_compact
     (hconv : M23TerminalMetricConvergence G e)
     {K : Set G.limit.carrier.carrier} (hK : IsCompact K)
@@ -123,8 +113,6 @@ theorem eventually_abs_inner_sub_le_on_compact
   filter_upwards [s.eventually_all.mpr (fun x _ ↦ hbound x)] with k hk x hx v
   obtain ⟨p, hp, hxp⟩ := mem_iUnion₂.mp (hs hx)
   exact hk p hp x hxp v
-
-
 
 theorem eventually_tangentNorm_bounds_on_compact
     (hconv : M23TerminalMetricConvergence G e)

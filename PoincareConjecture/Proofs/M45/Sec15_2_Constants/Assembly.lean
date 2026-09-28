@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M45.Sec15_2_Constants.ConstantSelection
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CanonicalConstants
 import PoincareConjecture.Statements.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem exists_calibratedSetup
     (A : RepairedNeckCapTopologyTheory.{u})
@@ -145,9 +134,6 @@ theorem exists_calibratedSetup
       selector_initial_bound :=
         H.restrictHeight_le_bound K.delta₀ _ K.delta₀_pos hheight _ _ }
   exact ⟨setup, kappa, Delta, rfl, HEq.rfl, ⟨calibration⟩, htwoPrescribed⟩
-
-
-
 
 theorem controlledSchedulesOfProducers
     (A : RepairedNeckCapTopologyTheory.{u})

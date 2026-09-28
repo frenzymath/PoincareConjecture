@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshCapture
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.PartialDiffeomorphPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +14,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 open PoincareConjecture.Proofs.M28.NeckTransfer
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_retained_fresh_geometry
     {epsilon C A : ℝ}

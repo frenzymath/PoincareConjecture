@@ -1,18 +1,4 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.RadialCoverage
-
-
-
-
-
-
-
-
 
 open Set Metric
 
@@ -23,8 +9,6 @@ namespace Poincare.GromovHausdorff
 universe u
 
 namespace CompatiblePointedCompactSystem
-
-
 
 theorem exists_stageEmbedding_eq_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -41,8 +25,6 @@ theorem exists_stageEmbedding_eq_of_radial_stage_coverage
   rcases Set.mem_range.mp hyn with ⟨z, hzy⟩
   exact ⟨n, z, hzy⟩
 
-
-
 theorem exists_stageEmbedding_range_superset_of_compact
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ R : ℝ, ∃ n : ℕ,
@@ -53,8 +35,6 @@ theorem exists_stageEmbedding_range_superset_of_compact
   obtain ⟨R, hKR⟩ := hK.isBounded.subset_closedBall S.completedLimit.base
   obtain ⟨n, hn⟩ := hcover R
   exact ⟨n, hKR.trans hn⟩
-
-
 
 theorem isCompact_completedLimit_closedBall_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
@@ -72,4 +52,3 @@ end CompatiblePointedCompactSystem
 end Poincare.GromovHausdorff
 
 end
-

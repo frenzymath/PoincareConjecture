@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.ScalarTime
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Carrier
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +40,6 @@ theorem eventually_terminal_scalar_control_of_expanding_cylinders
     (fun t ht => hoperator k t (hsub ht)) (p k)
     (fun t ht x hx => hscalar k t (hsub ht) x
       (hx.trans_le (ENNReal.ofReal_le_ofReal hkL)))
-
-
-
 
 theorem exists_terminal_scalar_control_of_expanding_cylinders_universal
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m) :

@@ -1,17 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakDivergence
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakConvolution
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter
 open scoped ContDiff Topology
@@ -225,6 +213,5 @@ theorem WeakSolutionOn.mollified_principal_equation
   have hzero : lebesgueConvolution η (fun _ : Spacetime n => (0 : ℝ)) z = 0 := by
     simp only [lebesgueConvolution, mul_zero, integral_zero]
   simpa only [hzero, add_zero] using hh
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Canonical

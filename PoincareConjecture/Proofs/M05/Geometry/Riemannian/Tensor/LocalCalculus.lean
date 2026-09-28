@@ -1,14 +1,6 @@
-
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 import Mathlib.Geometry.Manifold.Algebra.Structures
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.IsSmoothCovariantTensor
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 lemma contMDiffAt_apply {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T)

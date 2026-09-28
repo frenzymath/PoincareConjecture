@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.LocalRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -156,7 +148,6 @@ lemma curvatureDerivativeOnFields_expand_local (D : LeviCivitaData g)
   rw [curvatureDerivativeOnFields, D.connection_curvatureOnFields_local hY hZ hW]
   rfl
 
-
 theorem second_bianchi_on_fields_local (D : LeviCivitaData g)
     {X Y Z W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hX : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X) x)
@@ -195,7 +186,6 @@ lemma contMDiffAt_curvatureOnFields (D : LeviCivitaData g)
       (D.contMDiffAt_covariantDerivativeOnFields hX hZ))).sub_section
     (D.contMDiffAt_covariantDerivativeOnFields (contMDiffAt_mlieBracket hX hY) hZ)
 
-
 lemma inner_curvatureDerivativeOnFields_local (D : LeviCivitaData g)
     {X Y Z V W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hY : ContMDiffAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% Y) x)
@@ -215,7 +205,6 @@ lemma inner_curvatureDerivativeOnFields_local (D : LeviCivitaData g)
     covariantDerivativeOnFields]
   abel
 
-
 theorem second_bianchi_inner_on_fields_local (D : LeviCivitaData g)
     {X Y Z W : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (v : TangentSpace (𝓡 n) x)
@@ -228,6 +217,5 @@ theorem second_bianchi_inner_on_fields_local (D : LeviCivitaData g)
       g.inner x (D.curvatureDerivativeOnFields Z X Y W x) v = 0 := by
   have h := congrArg (fun w => g.inner x w v) (D.second_bianchi_on_fields_local hX hY hZ hW)
   simpa only [map_add, add_apply, map_zero, zero_apply] using h
-
 
 end PoincareConjecture.LeviCivitaData

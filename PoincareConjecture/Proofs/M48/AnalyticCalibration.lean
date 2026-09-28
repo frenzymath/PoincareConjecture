@@ -1,14 +1,6 @@
 import PoincareConjecture.Statements.M48EpochExtension
 import PoincareConjecture.Proofs.M47.ComponentAnalytics
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -34,12 +26,9 @@ theorem epochAnalyticCutoff_pos : 0 < S.epochAnalyticCutoff B :=
   lt_min (B.delta_pos _ _) (div_pos (S.epochAnalyticRadius_pos B)
     (mul_pos (by norm_num) S.setup.epsilon_pos))
 
-
 noncomputable def calibrateForEpoch : RepairedControlledSchedulesData.{u} :=
   (S.restrictDelta (S.epochAnalyticCutoff B) (S.epochAnalyticCutoff_pos B)).recalibrateAnalytic
     (S.componentAnalyticConstant B) (S.componentAnalyticConstant_pos B)
-
-
 
 noncomputable def epochCalibration : M48AnalyticCalibration (S.calibrateForEpoch B) := by
   have hA : S.modelAnalyticBound ≤ S.componentAnalyticConstant B := by
@@ -79,8 +68,6 @@ noncomputable def epochCalibration : M48AnalyticCalibration (S.calibrateForEpoch
 
 end RepairedControlledSchedulesData
 
-
-
 noncomputable def M48AnalyticCalibration.restrictDelta
     {S : RepairedControlledSchedulesData.{u}} (A : M48AnalyticCalibration S)
     (d : ℝ) (hd : 0 < d) : M48AnalyticCalibration (S.restrictDelta d hd) where
@@ -96,8 +83,6 @@ noncomputable def M48AnalyticCalibration.restrictDelta
   cap_bound := A.cap_bound
   component_bound := A.component_bound
 
-
-
 theorem RepairedEpochExtensionTheory.calibrated
     (E : RepairedEpochExtensionTheory.{u}) (P : M48Predecessors.{u})
     (S : RepairedControlledSchedulesData.{u})
@@ -107,8 +92,6 @@ theorem RepairedEpochExtensionTheory.calibrated
     Nonempty (RepairedEpochExtensionData (S.calibrateForEpoch B) N C) :=
   E.one_step P (S.calibrateForEpoch B) (S.epochCalibration B) N C
 
-
-
 theorem M48Predecessors.componentAnalyticInputs (P : M48Predecessors.{u}) :
     M47ComponentAnalyticPredecessors.{u} := {
   tensor_calculus := P.m32.providers.m04.tensor_calculus 3
@@ -117,9 +100,6 @@ theorem M48Predecessors.componentAnalyticInputs (P : M48Predecessors.{u}) :
   local_derivative_estimates := P.m32.providers.m04.local_derivative_estimates 3
   metric_comparison := P.m32.providers.m04.metric_comparison 3
 }
-
-
-
 
 theorem RepairedEpochExtensionTheory.from_calibrated_predecessors
     (E : RepairedEpochExtensionTheory.{u}) (P : M48Predecessors.{u})

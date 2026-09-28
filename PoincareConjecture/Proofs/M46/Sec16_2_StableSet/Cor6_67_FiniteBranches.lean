@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_FiniteInverse
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_FiniteMinimum
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_RegularImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -52,9 +42,6 @@ private theorem finite_smooth_chart_lower_envelope
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
-
-
-
 
 theorem minimum_action_chart_lipschitz_of_compact_capture
     (LG : GeneralizedLGeometryConclusion G)
@@ -156,9 +143,6 @@ theorem minimum_action_chart_lipschitz_of_compact_capture
       ((e i.val).open_target.mem_nhds (htargets i.val i.property hqV))).of_le (by simp)
   exact finite_smooth_chart_lower_envelope ((hA.inter hV).mem_nhds ⟨hq, hqV⟩)
     hupper hattained hcost
-
-
-
 
 theorem stable_image_full_measure_of_compact_minimizers
     (hM04 : RicciFlowCurvatureTheory.{0})

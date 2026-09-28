@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubpolyhedronZeroSet
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

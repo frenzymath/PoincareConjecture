@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SelectedStandardNeck
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_longer_standard_evolving_neck
     (P : M35StandardCapPredecessors) (atlas : StandardCylinderAtlas)

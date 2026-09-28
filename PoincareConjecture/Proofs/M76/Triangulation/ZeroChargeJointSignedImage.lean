@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointCylinder
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem image_eq_of_signed_joint_finitePL
     {N : Set E} (hN : FinitePiecewiseAffineOn (id : E → E) N)

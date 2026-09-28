@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +9,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem hasFDerivWithinAt_birth_of_continuous_derivative
     {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -68,10 +54,6 @@ theorem hasFDerivWithinAt_birth_of_continuous_derivative
   exact ⟨⟨hp.1.1, hpt.le⟩, hp.2⟩
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem contDiffOn_of_birth_jet_evolution
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -151,10 +133,6 @@ theorem contDiffOn_of_birth_jet_evolution
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem contDiffOn_ricci_coefficients_birth
     {n : ℕ} {T : ℝ} (hT : 0 < T)

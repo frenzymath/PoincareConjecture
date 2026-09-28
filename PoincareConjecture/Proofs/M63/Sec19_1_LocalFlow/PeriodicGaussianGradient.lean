@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PeriodicGaussianDeriv
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem integrable_periodicGaussianFirstKernel (t : ℝ) (f : C(AddCircle L, E)) :
     Integrable (fun s : ℝ => ((-2 * s) * gaussianHeatKernel 1 s) •
@@ -43,10 +31,6 @@ theorem integrable_periodicGaussianFirstKernel (t : ℝ) (f : C(AddCircle L, E))
   rw [norm_smul, (periodicTranslation _).norm_map]
 
 variable [CompleteSpace E]
-
-
-
-
 
 theorem periodicGaussianHeat_derivative_formula_bound {t : ℝ} (ht : 0 < t)
     (f g : C(AddCircle L, E))

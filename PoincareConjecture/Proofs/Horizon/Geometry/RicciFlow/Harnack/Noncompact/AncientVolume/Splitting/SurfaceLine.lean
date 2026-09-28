@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Main
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SurfaceFlatness
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem surface_curvature_eq_zero_of_minimizing_line
     {S : Type u} [TopologicalSpace S] [T3Space S] [ConnectedSpace S]
@@ -61,8 +44,6 @@ theorem surface_curvature_eq_zero_of_minimizing_line
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem not_minimizing_line_of_bounded_ancient_surface
     {S : Type u} [TopologicalSpace S] [T3Space S]

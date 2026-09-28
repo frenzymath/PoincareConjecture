@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalRelativeNoL3CircleFree
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -214,6 +207,5 @@ theorem exists_original_relative_noL3_circle_free_triangles
       hcofaces he hcover Q hQ A hmap hA hpositions Finset.univ
   exact ⟨S',sS',hdis',hSZ',hSR',hSV',hedges',hcofaces',hcontacts',hpositions',
     fun s => hfree' s (Finset.mem_univ s),hcut'⟩
-
 
 end PoincareConjecture.M76

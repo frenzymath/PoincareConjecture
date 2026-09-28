@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiNormalization
 import Mathlib.Analysis.Complex.Conformal
 import Mathlib.Analysis.Complex.Liouville
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -41,10 +32,6 @@ private theorem linear_beltrami_formula (L : ℂ →L[ℝ] ℂ) (μ : ℂ)
   conv_rhs => rw [hv]
   simp only [real_smul, map_add, map_mul, conj_ofReal, conj_I, mul_one]
   ring
-
-
-
-
 
 theorem linearMap_beltrami_formula (L : ℂ →L[ℝ] ℂ) (μ : ℂ)
     (heq : L 1 + I * L I = μ * (L 1 - I * L I)) (v : ℂ) :
@@ -100,11 +87,6 @@ private theorem beltrami_transition_hasDerivAt (f g : ℂ ≃ₜ ℂ) (μ : ℂ 
     change q / p = (q / p) * 1
     exact (mul_one _).symm
   exact hh
-
-
-
-
-
 
 theorem normalized_smooth_beltrami_unique (f g : ℂ ≃ₜ ℂ) (μ : ℂ → ℂ)
     (hf : ContDiff ℝ ∞ (f : ℂ → ℂ)) (hfi : ContDiff ℝ ∞ (f.symm : ℂ → ℂ))

@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.TwoCapRadialMatching
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SphereRadialExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.BoundedSphereAtlas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -24,9 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capCertificates_exists_sphere_diffeomorph_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

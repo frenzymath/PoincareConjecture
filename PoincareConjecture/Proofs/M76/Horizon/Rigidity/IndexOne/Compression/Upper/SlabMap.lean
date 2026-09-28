@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Upper.PhaseMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Upper.Coordinate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -29,8 +20,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 theorem exists_wide_upper_source_slab_map
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

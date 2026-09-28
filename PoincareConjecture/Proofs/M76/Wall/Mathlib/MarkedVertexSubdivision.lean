@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlignedHalfspaceFaces
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexHalfspaces
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_subdivision_with_marked_vertices
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

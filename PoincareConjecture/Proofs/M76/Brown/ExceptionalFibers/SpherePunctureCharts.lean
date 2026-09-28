@@ -1,15 +1,6 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,9 +8,6 @@ open Set Metric
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_punctured_three_space_chart
     (e : X ≃ₜ sphere (0 : EuclideanSpace ℝ (Fin 4)) 1) (p : X) :

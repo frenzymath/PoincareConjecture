@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M04.ShiCoordinateConnection
 import PoincareConjecture.Proofs.M04.ShiFrameODE
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -140,4 +133,3 @@ theorem exists_shiChart_native_parallel_frame [T2Space M]
   exact he
 
 end PoincareConjecture.M04
-

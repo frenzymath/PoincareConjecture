@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCircleConservation
 import Mathlib.Analysis.InnerProductSpace.Harmonic.Basic
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64CircleCurrent_weighted_second_derivative_zero
     {J : Fin 2 → LoopPlane → ℝ} {U : Set LoopPlane} (hU : IsOpen U)
@@ -82,11 +65,6 @@ theorem m64CircleCurrent_weighted_second_derivative_zero
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_horizontal_harmonic_of_conformal_minimum
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

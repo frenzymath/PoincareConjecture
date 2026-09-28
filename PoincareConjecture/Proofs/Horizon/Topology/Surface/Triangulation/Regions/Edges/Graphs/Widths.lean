@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Cuts
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Strips
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {S : D.OrientedEdgeGraphSubdivision e R C a b}
   {dLeft dRight : EuclideanSpace ℝ (Fin 2)} (K : S.CutChain dLeft dRight)
 
-
 noncomputable def CutChain.graphCuts (i : Fin S.count) :
     TransverseGraphCuts (S.piece i).lower
       ((S.piece i).parameter (S.cut i.castSucc)) ((S.piece i).parameter (S.cut i.succ))
@@ -44,7 +33,6 @@ noncomputable def CutChain.graphCuts (i : Fin S.count) :
     (K.left_transverse i) (K.right_transverse i))
 
 omit [T2Space M] in
-
 
 theorem CutChain.exists_adjacent_strip_width (i j : Fin S.count) (hij : i.succ = j.castSucc) :
     ∃ δ > 0, ∀ t ∈ Icc (0 : ℝ) 1, ∀ s ∈ Icc (0 : ℝ) 1,
@@ -103,7 +91,6 @@ theorem CutChain.exists_adjacent_strip_width (i j : Fin S.count) (hij : i.succ =
   exact C.injOn htC.2 hsC.2 heq
 
 omit [T2Space M] in
-
 
 theorem CutChain.exists_simultaneous_strip_width
     (bound : Fin S.count → ℝ) (hbound : ∀ i, 0 < bound i) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RefinedPositiveCapReconstruction
 import PoincareConjecture.Proofs.M38.ZeroCapReconstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,10 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
-
 
 theorem zero_cap_reconstruction_of_discarded_assembly
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcFoo
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FinitePLDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexRadialNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -22,7 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
 open Classical in
-
 
 theorem exists_original_endpoint_sector_boundary_disk
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

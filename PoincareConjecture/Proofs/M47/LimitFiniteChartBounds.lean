@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceChartsBuffers
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem limitFinite_chart_closed_bounds
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
@@ -79,8 +69,6 @@ theorem limitFinite_chart_closed_bounds
       _ ≤ Real.exp (54 * K * τ) * (b0 * ‖v‖ ^ 2) :=
         mul_le_mul_of_nonneg_left (hterminal x hx v).2 (Real.exp_pos _).le
       _ = _ := by ring
-
-
 
 theorem limitFinite_chart_curvature (P : RicciFlowCurvatureTheory.{u})
     {τ R K ρ a0 b0 : ℝ} (hτ : 0 < τ) (hK : 0 < K)

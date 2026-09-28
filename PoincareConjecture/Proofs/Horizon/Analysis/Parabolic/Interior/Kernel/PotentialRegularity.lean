@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.High
 import Mathlib.Analysis.Calculus.ParametricIntegral
 import Mathlib.Analysis.Convolution
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option maxSynthPendingDepth 3

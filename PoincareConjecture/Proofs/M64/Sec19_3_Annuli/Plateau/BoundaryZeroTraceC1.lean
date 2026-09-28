@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.C2ZeroTraceRegularity
 import PoincareConjecture.Proofs.M64.Mathlib.WeakPartialSchwartz
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -25,10 +11,6 @@ open scoped ContDiff SchwartzMap
 open Poincare.Analysis.Sobolev.Weak
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64ZeroTrace_quadratic_contDiffOn {N : ℕ} {R C H beta Lambda : ℝ}
     (hR : 0 < R) (u : LoopPlane → EuclideanSpace ℝ (Fin N))

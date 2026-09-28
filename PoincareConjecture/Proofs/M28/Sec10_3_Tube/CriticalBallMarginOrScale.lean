@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallCurvature
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeScaleBudget
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,9 +28,6 @@ private abbrev criticalTubeScalar
     ∀ k, (T k).carrierOpen → ℝ :=
   fun k x => (H.tubeConnection T k).scalarCurvature x
 
-
-
-
 def CriticalBallModerateWitness
     (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) {A1 delta : ℝ}
@@ -66,9 +47,6 @@ def CriticalBallModerateWitness
       |H.tubeNodeScale T k i ^ 2 * criticalTubeScalar H T k y - 1| <
         (1 / 100 : ℝ)
 
-
-
-
 def CriticalBallMarginOrScale
     (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (A1 : ℝ)
@@ -79,8 +57,6 @@ def CriticalBallMarginOrScale
       (H.tubeCriticalBase T A1 hA1 k) delta,
       criticalTubeDistance H T k x ≤ A1 - delta / 2 ∨
         CriticalBallModerateWitness H T (A1 := A1) (delta := delta) k x
-
-
 
 theorem scalar_le_of_scale_lower_of_accuracy
     {delta scale scalar : ℝ}
@@ -113,8 +89,6 @@ theorem scalar_le_of_scale_lower_of_accuracy
       simpa only [mul_comm] using hmul
     exact hlt.le
 
-
-
 theorem small_scale_budget
     {delta localScale tail : ℝ}
     (_hdelta : 0 < delta) (hlocal : localScale < delta / 48)
@@ -122,7 +96,6 @@ theorem small_scale_budget
     2 * (5858 / 1000 : ℝ) * localScale + delta / 2 + tail <
       (3 / 4 : ℝ) * delta := by
   nlinarith
-
 
 theorem moderate_witness_scalar_bound
     (H : CounterexampleNeckFamily E)
@@ -181,9 +154,6 @@ private theorem critical_tube_distance_lt_of_ball_of_margin
         apply (ENNReal.ofReal_lt_ofReal_iff (by linarith)).mpr
         linarith
   exact ENNReal.toReal_lt_of_lt_ofReal hsum
-
-
-
 
 theorem hcurv_on_criticalBall_of_margin_or_scale
     (H : CounterexampleNeckFamily E)

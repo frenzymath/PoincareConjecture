@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M03.MetricInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -28,8 +18,6 @@ open PoincareConjecture.SpacetimeBounds
 
 abbrev JetE := EuclideanSpace ℝ (Fin 3)
 abbrev JetMetric := MetricCoefficient 3
-
-
 
 local instance jetMetricNorm : NormedAddCommGroup JetMetric :=
   ContinuousLinearMap.toNormedAddCommGroup

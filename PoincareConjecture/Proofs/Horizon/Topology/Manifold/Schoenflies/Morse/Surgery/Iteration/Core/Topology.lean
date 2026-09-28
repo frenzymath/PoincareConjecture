@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Sur
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.ProtectedSets
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.ParallelDisks.Charts
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -76,8 +74,6 @@ namespace SphereSurgeryPath
 
 variable {v : E3}
 
-
-
 def PreservesCaps : {f g : S2 → E3} → SphereSurgeryPath v f g → Prop
   | _, _, .refl _ => True
   | _, _, .minus S next => next.Protects S.capMinusHeights ∧ next.PreservesCaps
@@ -89,8 +85,6 @@ theorem Protects.mono {f g : S2 → E3} {P : SphereSurgeryPath v f g}
   | refl => trivial
   | minus S next ih => exact ⟨fun k hk => hP.1 k (hCB hk), ih hP.2⟩
   | plus S next ih => exact ⟨fun k hk => hP.1 k (hCB hk), ih hP.2⟩
-
-
 
 theorem protected_preconnected_core_dichotomy
     {f g : S2 → E3} (P : SphereSurgeryPath v f g) {B : Set Real}
@@ -189,9 +183,6 @@ private theorem add_disk_to_complement
     intro p hp hdisk
     exact Set.disjoint_left.mp hout (image_mono ball_subset_closedBall hdisk) hp
 
-
-
-
 theorem exists_disjoint_disk_complement
     {f g : S2 → E3} (P : SphereSurgeryPath v f g) (hcaps : P.PreservesCaps) :
     ∃ L : List (OpenPartialHomeomorph E2 S2),
@@ -265,8 +256,6 @@ private theorem isConnected_remove_disk
       exact Set.disjoint_left.mp hout (image_mono ball_subset_closedBall hdisk) hp
     rwa [heq]
 
-
-
 theorem isConnected_core {f g : S2 → E3}
     (P : SphereSurgeryPath v f g) (hcaps : P.PreservesCaps) : IsConnected P.core := by
   induction P with
@@ -311,8 +300,6 @@ theorem Protects.union {tree : SphereSurgeryTree v A f} {C : Set Real}
   | branch hc hsep S minus plus ihM ihP =>
     exact ⟨fun k hk => hk.elim (hB.1 k) (hC.1 k),
       ihM hB.2.1 hC.2.1, ihP hB.2.2 hC.2.2⟩
-
-
 
 theorem exists_cap_preserving_path_to_leaf
     (tree : SphereSurgeryTree v A f) (hg : g ∈ tree.leaves)

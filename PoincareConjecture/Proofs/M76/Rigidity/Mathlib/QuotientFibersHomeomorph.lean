@@ -1,22 +1,11 @@
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Topology.IsQuotientMap
 
 variable {S X Y : Type*} [TopologicalSpace S] [TopologicalSpace X]
   [TopologicalSpace Y] {q : C(S, X)} {r : C(S, Y)}
-
-
-
 
 theorem exists_homeomorph_of_fibers (hq : IsQuotientMap q)
     (hr : IsQuotientMap r)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M30.Generalized.BoxCylinder
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +13,6 @@ namespace PoincareConjecture.M30.Cylinder
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {M : Type v}
   {p : M → C.carrier}
-
-
 
 theorem continuous_family_pointMap [TopologicalSpace M]
     (e : ∀ a : M, GeneralizedFlowCylinder F C origin scale I {p a})
@@ -87,8 +74,6 @@ theorem continuous_family_pointMap [TopologicalSpace M]
   rw [hclock_at]
   exact congrArg (fun w => (⟨origin + z.1.1 / scale, w⟩ : F.point)) heq
 
-
-
 theorem injective_family_pointMap
     (e : ∀ a : M, GeneralizedFlowCylinder F C origin scale I {p a})
     (hI : I.OrdConnected) {s₀ : ℝ} (hs₀ : s₀ ∈ I)
@@ -103,9 +88,6 @@ theorem injective_family_pointMap
     (mem_singleton (p a)) (mem_singleton (p b)) s.2 heq s₀ hs₀
   have hab := hinitial (eq_of_heq (Sigma.mk.inj_iff.mp hzero).2)
   exact Prod.ext rfl hab
-
-
-
 
 theorem isEmbedding_family_pointMap_on_compact [TopologicalSpace M]
     (e : ∀ a : M, GeneralizedFlowCylinder F C origin scale I {p a})

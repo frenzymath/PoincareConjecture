@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.RetainedFrontierComponents
 import PoincareConjecture.Proofs.M76.Wall.OriginalNewFrontierModels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains

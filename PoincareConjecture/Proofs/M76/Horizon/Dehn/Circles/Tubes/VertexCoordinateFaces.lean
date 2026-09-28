@@ -10,8 +10,6 @@ local notation "P2" => (ℝ × ℝ)
 
 open Classical in
 
-
-
 theorem original_vertex_coordinate_faces
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] {C : Set X}

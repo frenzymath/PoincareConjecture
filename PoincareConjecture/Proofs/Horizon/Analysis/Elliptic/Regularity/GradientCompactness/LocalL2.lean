@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.GradientCompactness.Energy
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakDerivativeLimit
 
-
-
-
-
-
-
 noncomputable section
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,7 +8,6 @@ open Set MeasureTheory Filter
 open scoped Topology ENNReal NNReal BigOperators InnerProductSpace
 
 namespace Poincare.Analysis.Elliptic
-
 
 def lipschitzPartialL2 {d : ℕ} {O : Set (EuclideanSpace ℝ (Fin d))}
     [IsFiniteMeasure (volume.restrict O)] (hO : IsOpen O)
@@ -31,7 +24,6 @@ theorem coeFn_lipschitzPartialL2 {d : ℕ} {O : Set (EuclideanSpace ℝ (Fin d))
       fun x => fderiv ℝ u x (EuclideanSpace.single i 1) :=
   MemLp.coeFn_toLp _
 
-
 theorem norm_toLp_sub_sq_eq_integral
     {X : Type*} [MeasurableSpace X] {μ : Measure X} {f g : X → ℝ}
     (hf : MemLp f 2 μ) (hg : MemLp g 2 μ) :
@@ -41,7 +33,6 @@ theorem norm_toLp_sub_sq_eq_integral
   filter_upwards [(hf.sub hg).coeFn_toLp] with x hx
   rw [hx]
   simp only [Pi.sub_apply, real_inner_self_eq_norm_sq, Real.norm_eq_abs, sq_abs]
-
 
 theorem norm_toLp_sub_sq_le_integral
     {X : Type*} [MeasurableSpace X] {μ : Measure X} {U O : Set X}

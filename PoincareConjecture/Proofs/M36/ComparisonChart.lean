@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.SurgeryBalls
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

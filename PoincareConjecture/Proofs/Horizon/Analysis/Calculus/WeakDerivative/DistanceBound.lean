@@ -3,15 +3,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 open Set Filter MeasureTheory
 open scoped Topology NNReal
 
@@ -50,9 +41,6 @@ private theorem segment_bound {f : E → ℝ} {K : ℝ≥0}
       intervalIntegral.integral_mono_ae_restrict (by norm_num)
         hAC.intervalIntegrable_deriv.abs intervalIntegrable_const hbound
     _ = C * ‖v‖ := by simp
-
-
-
 
 theorem lipschitzOnWith_of_ae_fderiv_bound
     (μ : Measure E) [μ.IsAddHaarMeasure] {U G : Set E}
@@ -100,8 +88,6 @@ theorem lipschitzOnWith_of_ae_fderiv_bound
     refine ⟨z, hnear z ?_ hz, hzx.trans_le (min_le_right _ _)⟩
     exact (dist_comm z x).trans_lt (hzx.trans_le (min_le_left _ _))
   simpa [v, Real.dist_eq, dist_eq_norm, abs_sub_comm, norm_sub_rev] using hxclosed
-
-
 
 theorem lipschitzOnWith_of_ae_fderiv_bound_on
     (μ : Measure E) [μ.IsAddHaarMeasure] {U G : Set E}

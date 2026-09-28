@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Homeomorph.Quotient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -102,9 +92,6 @@ theorem projection_eq_zero_iff (z : Square p) :
   change (((z.1 : ℝ) : AddCircle p), ((z.2 : ℝ) : AddCircle p)) = (0, 0) ↔ _
   rw [Prod.mk.injEq, AddCircle.coe_eq_zero_iff_endpoints z.1.property,
     AddCircle.coe_eq_zero_iff_endpoints z.2.property]
-
-
-
 
 theorem exists_homeomorph_of_square_map {X : Type*} [TopologicalSpace X] [T2Space X]
     (f : C(Square p, X)) (hf : Function.Surjective f)

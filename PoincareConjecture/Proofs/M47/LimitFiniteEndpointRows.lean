@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteCapExclusion
 import PoincareConjecture.Proofs.M47.LimitFiniteActualCandidates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -84,8 +75,6 @@ variable
             (F (G.subsequence k)).parameters.C)
 
 include hbad capBudget in
-
-
 
 theorem limitFinite_actual_endpoint_rows
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

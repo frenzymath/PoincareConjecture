@@ -1,18 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.WeakDerivativeLimit
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.L2Approximation
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory
 open Poincare.Analysis.Convolution

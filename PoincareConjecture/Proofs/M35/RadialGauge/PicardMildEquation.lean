@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardConvergence
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gaugeSource_tendsto_of_c1 {b : V → V} {G : V → ℝ → ℝ}
     {u : ℕ → V → ℝ} {v : V → ℝ} {eta L : ℝ}
@@ -42,8 +31,6 @@ theorem gaugeSource_tendsto_of_c1 {b : V → V} {G : V → ℝ → ℝ}
       (𝓝 ((fderiv ℝ v x) (b x))) := by
     exact (ContinuousLinearMap.apply ℝ ℝ (b x)).continuous.continuousAt.tendsto.comp (hdl x)
   exact (heval.add ((hdl x).norm.pow 2)).add hforcing
-
-
 
 theorem gaugePicard_limit_mild_equation
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {u : ℝ → V → ℝ}

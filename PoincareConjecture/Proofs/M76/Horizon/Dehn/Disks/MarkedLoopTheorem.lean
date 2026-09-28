@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.ContinuousTerminalMarked
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.OriginalMarkedProjection
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Resolution.StageDescent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -20,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem nonempty_marked_boundary_PL_loop_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -40,8 +29,6 @@ theorem nonempty_marked_boundary_PL_loop_disk
     OriginalPLTower.exists_continuous_terminal_marked_disk hR hF hFopen f gamma hgamma J houtside
   obtain ⟨folded⟩ := OriginalPLTower.nonempty_folded_stage_marked_disk hR hF hFopen hreach terminal
   exact ⟨folded.project hs0⟩
-
-
 
 theorem exists_marked_boundary_PL_loop_disk
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

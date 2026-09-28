@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FixedArcLength
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,9 +14,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
-
 
 theorem m63ArcCutoff_spatial_derivatives (hc : M62ShrinkingCurve F c)
     {t r : ℝ} (ht : t ∈ Set.Icc a b) (hr : 0 < r) (x0 x : ℝ)
@@ -65,9 +53,6 @@ theorem m63ArcCutoff_spatial_derivatives (hc : M62ShrinkingCurve F c)
     deriv (deriv psi) (z x) / r ^ 2
   rw [hsecond.deriv]
   field_simp [(hvpos x).ne', hr.ne']
-
-
-
 
 theorem m63ArcCutoff_spatial_abs_bounds (hc : M62ShrinkingCurve F c)
     {t r : ℝ} (ht : t ∈ Set.Icc a b) (hr : 0 < r) (x0 x : ℝ)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Coefficients.HolderAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -28,7 +19,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   normedAddCommGroupTangentSpaceVectorSpace normedSpaceTangentSpaceVectorSpace
 
 namespace NormalizedKappaSpacetimeEmbedding
-
 
 noncomputable def terminalPullbackCoefficients
     {kappa : ℝ} {source target : BasedKappaSolution kappa}
@@ -61,8 +51,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem terminalPullbackCoefficients_tendstoUniformlyOn
     (hconv : M23TerminalMetricConvergence G e)
@@ -99,8 +87,6 @@ theorem terminalPullbackCoefficients_tendstoUniformlyOn
       (G.limit.flow.flow.metric 0).pullbackCoefficients (extChartAt (𝓡 3) q).symm z)
     (by positivity : 0 ≤ epsilon / 10) hentry
   exact hnorm.trans_lt (by norm_num; linarith)
-
-
 
 theorem eventually_local_inner_le_twice
     (hconv : M23TerminalMetricConvergence G e) (p : G.limit.carrier.carrier) :
@@ -174,8 +160,6 @@ theorem eventually_local_inner_le_twice
       (mfderiv (𝓡 3) (𝓡 3) c.symm (c x) w) at hbound
   erw [hv, hcx] at hbound
   exact hbound
-
-
 
 theorem eventually_inner_le_twice_on_compact
     (hconv : M23TerminalMetricConvergence G e)

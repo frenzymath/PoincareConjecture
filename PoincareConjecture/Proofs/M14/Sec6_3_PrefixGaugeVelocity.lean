@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareRootComparison
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeParameterDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem squareRootVelocity_gauge_continuation (R : M14SquareRootPath G p)
     (α : ℝ → G.Point) (heq : EqOn R.curve α (M14SqrtParameterInterval a b))

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalCoreFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem canonicalCoreFlow_chart_coefficients {n : ℕ} {J : Set ℝ}
     (F : RicciFlow n (V n) J) :

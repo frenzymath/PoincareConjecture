@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.LocalSmallSubsolution
 import PoincareConjecture.Proofs.M35.Uniqueness.LichnerowiczEnergy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

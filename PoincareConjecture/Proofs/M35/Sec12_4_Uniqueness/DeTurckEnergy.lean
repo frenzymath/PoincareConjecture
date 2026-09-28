@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M04.CurvatureEnergyBochner
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ private theorem fixed_tensorNorm_sq {r : ℕ}
       ∑ a : Fin r → Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)),
         H x (fun i => g.orthonormalBasis x (a i)) ^ 2 := by
   exact Real.sq_sqrt (Finset.sum_nonneg fun _ _ => sq_nonneg _)
-
-
 
 theorem fixed_tensorNorm_sq_hasDerivWithinAt {r : ℕ} {J : Set ℝ} {t : ℝ}
     (H : ℝ → CovariantTensorEvaluation n M r) (R : CovariantTensorEvaluation n M r)
@@ -50,7 +39,6 @@ theorem fixed_tensorNorm_sq_hasDerivWithinAt {r : ℕ} {J : Set ℝ} {t : ℝ}
       (fun (a : Fin r → Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x))) _ =>
         (hd (fun i => g.orthonormalBasis x (a i))).pow 2)
 
-
 theorem fixed_tensor_pairing_le {r : ℕ}
     (H R : CovariantTensorEvaluation n M r) (x : M) :
     (∑ a : Fin r → Fin (Module.finrank ℝ (TangentSpace (𝓡 n) x)),
@@ -65,8 +53,6 @@ theorem fixed_tensor_pairing_le {r : ℕ}
   have hp : 0 ≤ g.tensorNorm H x * g.tensorNorm R x :=
     mul_nonneg (Real.sqrt_nonneg _) (Real.sqrt_nonneg _)
   nlinarith
-
-
 
 theorem tensor_principal_pairing_le_at_norm_max {r m : ℕ}
     (D : LeviCivitaData g) {H : CovariantTensorEvaluation n M r}
@@ -107,8 +93,6 @@ theorem tensor_principal_pairing_le_at_norm_max {r m : ℕ}
             (Fin.cons (e i) (fun j => g.orthonormalBasis x (a j))) ^ 2) :=
       Finset.sum_le_sum fun i _ => hi i
     _ = _ := by rw [Finset.sum_neg_distrib]
-
-
 
 theorem tensor_norm_maximum_velocity {r m : ℕ} {J : Set ℝ} {t : ℝ}
     (D : LeviCivitaData g) (H : ℝ → CovariantTensorEvaluation n M r)

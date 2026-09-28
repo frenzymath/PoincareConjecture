@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,10 +16,6 @@ variable {E : Type uE} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {H : Type uH} [TopologicalSpace H]
   (I : ModelWithCorners ℝ E H) {M : Type uM} [TopologicalSpace M]
   [ChartedSpace H M] [T2Space M] [CompactSpace M] [IsManifold I ∞ M]
-
-
-
-
 
 theorem exists_finite_smoothBumpCovering
     (U : M → Set M) (hU : ∀ x : M, U x ∈ 𝓝 x) :

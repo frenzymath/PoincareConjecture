@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.Resolution.Construction.SelectedStep
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonConvexContainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip _root_.Dehn
 
@@ -92,4 +83,3 @@ theorem exists_paired_innermost_disk_of_region_contact
   exact hphysical.symm
 
 end PoincareConjecture.M76
-

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Lift.HalfSpace
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Relative.Correction
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_supported_lower_lift_preparation
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -45,8 +41,6 @@ theorem exists_supported_lower_lift_preparation
       H L hheight (fun y hy => hagree y (by change b ≤ l y at hy; rwa [hl] at hy)) hC
   exact ⟨L, hLheight, hLlow, hagree, K, hK, G, hfix,
     fun y hy => hhalf (by change b ≤ l y; rwa [hl]), hpoint, himage⟩
-
-
 
 theorem exists_supported_upper_lift_preparation
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

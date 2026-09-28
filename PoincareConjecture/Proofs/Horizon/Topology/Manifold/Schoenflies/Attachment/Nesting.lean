@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BoundedSide
 import Mathlib.Order.Preorder.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -38,8 +30,6 @@ theorem isConnected_compl_image_ball (F : E ≃ₜ E) (hdim : 1 < Module.rank Re
     rw [closure_compl, image_unitBall_interior]
   rw [← hcl]
   exact hconn.closure
-
-
 
 theorem image_closedBall_subset_image_ball_of_sphere_subset
     (F G : E ≃ₜ E) (hdim : 1 < Module.rank Real E)
@@ -95,8 +85,6 @@ private theorem sphere_subset_ball_or_exterior
       rw [image_unitBall_frontier] at hfront
       exact disjoint_left.mp hdisjoint hfront hx
 
-
-
 theorem disjoint_or_nested_image_closedBall
     (F G : E ≃ₜ E) (hdim : 1 < Module.rank Real E)
     (hdisjoint : Disjoint (F '' sphere (0 : E) 1) (G '' sphere (0 : E) 1)) :
@@ -126,8 +114,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [ProperSpace E] [Nontrivial E]
-
-
 
 theorem exists_innermost_image_closedBall
     {ι : Type*} (F : ι -> E ≃ₜ E) (hdim : 1 < Module.rank Real E)

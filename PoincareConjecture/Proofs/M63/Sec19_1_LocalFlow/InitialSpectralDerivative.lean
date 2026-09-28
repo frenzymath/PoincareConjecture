@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialSpectralTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,9 +8,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative
-
-
-
 
 theorem ae_hasDerivAt_initialHeat {iota : Type*} [Countable iota]
     (lambda : iota → NNReal) (w : State iota) {T : ℝ} (hT : 0 ≤ T) :

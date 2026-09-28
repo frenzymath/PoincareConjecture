@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M05.Analysis.Parabolic.CompactMaximum
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Poincare.Parabolic
-
-
-
 
 theorem norm_le_two_of_sq_deriv_le_cube_at_max
     {A : Type*} [TopologicalSpace A] [CompactSpace A]

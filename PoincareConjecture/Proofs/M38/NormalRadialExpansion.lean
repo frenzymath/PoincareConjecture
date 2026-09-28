@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.NormalScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -79,8 +70,6 @@ theorem normalRadiusOrderIso_symm_smooth :
   exact contDiff_const.add ((normalScaleOrderIso_symm_smooth ha ha1).comp
     (contDiff_id.sub contDiff_const))
 
-
-
 noncomputable def normalRadialExpansion :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ where
   toFun := capRadialMap (normalRadiusOrderIso ha ha1).symm
@@ -131,8 +120,6 @@ theorem normalRadialExpansion_closedBall :
   rw [← normalRadiusOrderIso_symm_one ha ha1,
     (normalRadiusOrderIso ha ha1).symm.le_iff_le]
   rw [normalRadiusOrderIso_symm_one]
-
-
 
 theorem normalRadialExpansion_annulus (z : UnitTwoSphere) {s : ℝ}
     (hs : |s| ≤ a / 8) :

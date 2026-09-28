@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StableProductCompletion
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace IsLocalHomeomorphOn
-
-
-
 
 theorem prodMap {X Y Z W : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     [TopologicalSpace Z] [TopologicalSpace W] {f : X → Y} {g : Z → W}
@@ -38,8 +24,6 @@ namespace StableCylinder
 
 variable {X Y C : Type*} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace C]
 
-
-
 def swapLast (X C : Type*) [TopologicalSpace X] [TopologicalSpace C] :
     ((X × C) × ℝ) ≃ₜ ((X × ℝ) × C) where
   toFun z := ((z.1.1, z.2), z.1.2)
@@ -49,20 +33,13 @@ def swapLast (X C : Type*) [TopologicalSpace X] [TopologicalSpace C] :
   continuous_toFun := by fun_prop
   continuous_invFun := by fun_prop
 
-
-
 def overBase (X : Type*) [TopologicalSpace X] (L : (C × ℝ) ≃ₜ (C × ℝ)) :
     ((X × C) × ℝ) ≃ₜ ((X × C) × ℝ) :=
   (Homeomorph.prodAssoc X C ℝ).trans
     (((Homeomorph.refl X).prodCongr L).trans (Homeomorph.prodAssoc X C ℝ).symm)
 
-
-
 def middleMap (f : X × ℝ → Y × ℝ) (z : (X × C) × ℝ) : (Y × C) × ℝ :=
   (( (f (z.1.1, z.2)).1, z.1.2), (f (z.1.1, z.2)).2)
-
-
-
 
 theorem isLocalHomeomorphOn_middleMap (f : X × ℝ → Y × ℝ)
     (hf : IsLocalHomeomorphOn f (univ ×ˢ Ioo (-1) 1)) :
@@ -76,16 +53,9 @@ theorem isLocalHomeomorphOn_middleMap (f : X × ℝ → Y × ℝ)
   exact (swapLast Y C).symm.isLocalHomeomorph.isLocalHomeomorphOn.comp hfirst
     (fun _ _ => mem_univ _)
 
-
-
 def conjugation (L : (C × ℝ) ≃ₜ (C × ℝ)) (f : X × ℝ → Y × ℝ) :
     (X × C) × ℝ → (Y × C) × ℝ :=
   overBase Y L.symm ∘ middleMap f ∘ overBase X L
-
-
-
-
-
 
 theorem conjugation_isLocalHomeomorphOn (L : (C × ℝ) ≃ₜ (C × ℝ))
     (hL : MapsTo L (univ ×ˢ Ioo (-1) 1) (univ ×ˢ Ioo (-1) 1))
@@ -113,9 +83,6 @@ theorem conjugation_isLocalHomeomorphOn (L : (C × ℝ) ≃ₜ (C × ℝ))
   · intro z hz
     exact ⟨(L (z.1.2, z.2)).2, (hL ⟨mem_univ _, hz.2⟩).2, rfl⟩
 
-
-
-
 theorem conjugation_old_product (L : (C × ℝ) ≃ₜ (C × ℝ))
     (hL : MapsTo L (univ ×ˢ Ioo (-1) 1) (univ ×ˢ Ioo (-1) 1))
     (f : X × ℝ → Y × ℝ) (g : X → Y) (U : Set X)
@@ -130,9 +97,6 @@ theorem conjugation_old_product (L : (C × ℝ) ≃ₜ (C × ℝ))
   rw [hv]
   change ((g x, (L.symm (L (c, t))).1), (L.symm (L (c, t))).2) = _
   rw [L.symm_apply_apply]
-
-
-
 
 theorem conjugation_new_product (L : (C × ℝ) ≃ₜ (C × ℝ))
     (q : ℝ → C) (f : X × ℝ → Y × ℝ) {a delta : ℝ} (hda : delta ≤ a)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M38
 
 variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
 
-
 noncomputable def cylinderRegionHomeomorph (E : SurgeryRegionEquivalence A B U V) :
     U ≃ₜ V where
   toFun x := ⟨E.map x.val, E.map_image.subset ⟨x.val, x.property, rfl⟩⟩
@@ -29,12 +20,10 @@ noncomputable def cylinderRegionHomeomorph (E : SurgeryRegionEquivalence A B U V
   continuous_toFun := E.map_smooth.continuousOn.domRestrict.subtype_mk _
   continuous_invFun := E.inverse_smooth.continuousOn.domRestrict.subtype_mk _
 
-
 theorem cylinderCoordinate_mem (C : OpenCylinderModel V) {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) : C.coordinate z ∈ V := by
   have h := (C.homeomorph (z.1, ⟨z.2, hz.2⟩)).property
   rwa [C.coordinate_eq] at h
-
 
 noncomputable def pullbackCylinder (E : SurgeryRegionEquivalence A B U V)
     (C : OpenCylinderModel V) : OpenCylinderModel U where

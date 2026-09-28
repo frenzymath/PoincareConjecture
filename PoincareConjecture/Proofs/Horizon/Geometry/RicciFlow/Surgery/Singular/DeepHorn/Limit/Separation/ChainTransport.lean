@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.SliceAgreement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Restriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,7 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.DeepHorn
-
 
 theorem image_eq_self_of_fixed_compl {M : Type*} [TopologicalSpace M]
     (e : M ≃ₜ M) {U : Set M} (hfix : ∀ x, x ∉ U → e x = x) : e '' U = U := by
@@ -35,8 +27,6 @@ theorem image_eq_self_of_fixed_compl {M : Type*} [TopologicalSpace M]
 end PoincareConjecture.DeepHorn
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_central_sphere_transport_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

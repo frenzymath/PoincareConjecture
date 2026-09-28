@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.OriginalFamilyCocore
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.FamilyNoL3CocoreFree
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -93,4 +86,3 @@ theorem HamiltonMarkedProtectedBall.exists_original_family_noL3_cocore_free
 
 end
 end PoincareConjecture.M76
-

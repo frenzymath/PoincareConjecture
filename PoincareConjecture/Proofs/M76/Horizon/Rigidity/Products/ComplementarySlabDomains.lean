@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.ComplementarySlabCont
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ExactFrontierPreimage
 import PoincareConjecture.Proofs.M76.Wall.OppositePLDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

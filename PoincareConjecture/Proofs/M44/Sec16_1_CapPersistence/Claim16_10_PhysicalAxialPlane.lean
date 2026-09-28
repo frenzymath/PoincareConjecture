@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_PullbackP
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 import PoincareConjecture.Proofs.M01.NormalizationCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +21,6 @@ noncomputable local instance axialPlaneCoefficientNormedGroup :
 
 noncomputable local instance axialPlaneCoefficientNormedSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_normalized_neck_axial_cutoff {k : ℝ} (hk : 0 < k) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧
@@ -81,9 +68,6 @@ theorem exists_normalized_neck_axial_cutoff {k : ℝ} (hk : 0 < k) :
   rw [abs_of_pos hgram]
   exact (div_lt_iff₀ hgram).mpr hcurv
 
-
-
-
 theorem normalizedNeck_sectional
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
     [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
@@ -101,9 +85,6 @@ theorem normalizedNeck_sectional
   rw [show (Q * g.inner x u u) * (Q * g.inner x v v) - (Q * g.inner x u v) ^ 2 =
     Q * (Q * (g.inner x u u * g.inner x v v - (g.inner x u v) ^ 2)) by ring]
   rw [mul_div_mul_left _ _ N.scalar_center_pos.ne', div_mul_eq_div_div, div_right_comm]
-
-
-
 
 theorem exists_physical_neck_axial_cutoff {k : ℝ} (hk : 0 < k) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧

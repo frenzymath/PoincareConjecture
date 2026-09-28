@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.Levels
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -26,7 +17,6 @@ private instance : ConnectedSpace UnitTwoSphere := by
   exact isConnected_sphere
     (by rw [← Module.finrank_eq_rank]; norm_num) 0 (by norm_num)
 
-
 noncomputable def coordinateHeight (horn : StrongHorn E epsilon) (x : horn.carrier) : ℝ :=
   (horn.coordinate.symm x).2
 
@@ -34,11 +24,9 @@ theorem continuous_coordinateHeight (horn : StrongHorn E epsilon) :
     Continuous horn.coordinateHeight :=
   continuous_subtype_val.comp (continuous_snd.comp horn.coordinate.symm.continuous)
 
-
 def coordinateSection (horn : StrongHorn E epsilon) (b : ℝ) :
     Set (E.extended.slice T).carrier :=
   horn.parameterization '' (Set.univ ×ˢ ({b} : Set ℝ))
-
 
 def coordinateTail (horn : StrongHorn E epsilon) (b : ℝ) :
     Set (E.extended.slice T).carrier :=
@@ -106,7 +94,6 @@ theorem isPreconnected_coordinateTail (horn : StrongHorn E epsilon)
   intro z hz
   exact ⟨hz.1, (neg_lt_zero.mpr horn.collar_pos).trans_le (hb0.trans hz.2.1.le), hz.2.2⟩
 
-
 theorem coordinateTail_eq_connectedComponentIn (horn : StrongHorn E epsilon)
     {b : ℝ} (hb0 : 0 ≤ b) (hb1 : b < 1)
     {x : (E.extended.slice T).carrier} (hx : x ∈ horn.coordinateTail b) :
@@ -134,8 +121,6 @@ theorem coordinateTail_eq_connectedComponentIn (horn : StrongHorn E epsilon)
   have hznot := (connectedComponentIn_subset
     (horn.carrier \ horn.coordinateSection b) x hz).2
   exact hznot ((horn.mem_coordinateSection_iff hb0 hb1 z).mpr hzb)
-
-
 
 noncomputable def endCutOfCoordinateSection (horn : StrongHorn E epsilon)
     {delta : ℝ} (N : TerminalStrongNeck E delta) (rho : ℝ)

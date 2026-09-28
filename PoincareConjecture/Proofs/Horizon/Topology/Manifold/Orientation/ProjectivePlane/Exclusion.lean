@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Clos
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Atlas.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Atlas.LocalOrientation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Nonorientable
-
-
-
-
-
-
-

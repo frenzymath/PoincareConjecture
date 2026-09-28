@@ -15,7 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   normedAddCommGroupTangentSpaceVectorSpace normedSpaceTangentSpaceVectorSpace
 
-
 private theorem linear_parameter_quadratic_bounds
     {E E' : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup E'] [NormedSpace ℝ E'] [Nontrivial E']
@@ -44,9 +43,6 @@ private theorem linear_parameter_quadratic_bounds
     apply (div_le_iff₀ (sq_pos_of_pos hinv)).mpr
     nlinarith [mul_le_mul_of_nonneg_left hvlower₂ ha.le]
   · exact (hT (L v)).2.trans ((mul_le_mul_of_nonneg_left hvupper₂ hb).trans_eq (by ring))
-
-
-
 
 theorem exists_terminal_parametrized_spatialJet_time_constant
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -137,9 +133,6 @@ theorem exists_terminal_parametrized_spatialJet_time_constant
   exact hreturn.trans ((mul_le_mul_of_nonneg_left hEuclidean
     (pow_nonneg (norm_nonneg _) _)).trans
       ((mul_le_mul_of_nonneg_right hjD (mul_nonneg hB₀ (abs_nonneg _))).trans_eq (by ring)))
-
-
-
 
 theorem eventually_terminal_parametrizedJet_control_of_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

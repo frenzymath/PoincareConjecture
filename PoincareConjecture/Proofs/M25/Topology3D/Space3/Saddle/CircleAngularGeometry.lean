@@ -7,21 +7,12 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem circleAffine_smooth_immersion (a v : ℝ) (hv : v ≠ 0) :
     let g : ℝ → UnitCircle := fun t =>
@@ -69,8 +60,6 @@ theorem circleAffine_smooth_immersion (a v : ℝ) (hv : v ≠ 0) :
   intro r s hrs
   exact hcomp (congrArg (mfderiv (𝓡 1) 𝓘(ℝ, ℂ) c (g t)) hrs)
 
-
-
 theorem circleAffine_injOn (a v l r : ℝ) (hv : v ≠ 0)
     (hwidth : |v| * (r - l) < 2 * Real.pi) :
     InjOn (fun t : ℝ => complexUnitCircleHomeomorph (Circle.exp (a + v * t))) (Icc l r) := by
@@ -89,8 +78,6 @@ theorem circleAffine_injOn (a v l r : ℝ) (hv : v ≠ 0)
   have hangle := he ⟨t, ht, rfl⟩ ⟨s, hs, rfl⟩
     (complexUnitCircleHomeomorph.injective hts)
   exact (mul_left_cancel₀ hv) (add_left_cancel hangle)
-
-
 
 theorem exists_circleAffine_extension (a v : ℝ) (hv : 0 < |v|)
     (hvpi : |v| < 2 * Real.pi) :

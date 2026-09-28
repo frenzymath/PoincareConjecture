@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedTimeContact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.DirectionEvaluation
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -19,10 +14,8 @@ section Coordinates
 
 variable {I J : Type*} [Fintype I] [Fintype J]
 
-
 noncomputable def hamiltonVectorCoordinates (C : J → I → ℝ) (W : J → ℝ) : I → ℝ :=
   fun a => ∑ i, C i a * W i
-
 
 noncomputable def hamiltonTwoFormCoordinates (C : J → I → ℝ)
     (U : J → J → ℝ) : I → I → ℝ :=
@@ -77,7 +70,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : Type*} [Fintype I]
-
 
 noncomputable def hamiltonFrameCoordinates (g : RiemannianMetric n M) (x : M)
     (e : I → TangentSpace (𝓡 n) x) :
@@ -149,7 +141,6 @@ private lemma sqrt_sum_sq_eq_zero_iff (f : I → ℝ) :
   · rintro rfl
     simp
 
-
 lemma hamiltonCoordinates_sqrt_nonzero (g : RiemannianMetric n M)
     (x : M) (e : I → TangentSpace (𝓡 n) x) (he : LinearIndependent ℝ e)
     (U : I → I → ℝ) (W : I → ℝ) (hnonzero : U ≠ 0 ∨ W ≠ 0) :
@@ -173,7 +164,6 @@ lemma hamiltonCoordinates_sqrt_nonzero (g : RiemannianMetric n M)
     intro hz
     exact hW ((hamiltonVectorCoordinates_eq_zero_iff g x e he W).mp
       ((sqrt_sum_sq_eq_zero_iff _).mp hz))
-
 
 theorem hamiltonFrameCoordinates_sqrt_nonzero (g : RiemannianMetric n M)
     (x : M) (e : I → TangentSpace (𝓡 n) x) (he : LinearIndependent ℝ e)
@@ -259,7 +249,6 @@ lemma tensor_four_contraction_coordinates (g : RiemannianMetric n M)
     hamiltonFrameCoordinates, Fintype.sum_prod_type, mul_assoc, ← hexp] using h
 
 omit [Fintype I] in
-
 
 theorem perturbedHamiltonDirectionQuadratic_eq_fixed {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ t : ℝ)

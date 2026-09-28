@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CapCompressionBuff
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.MorseRadialChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_raw_saddle_piece_band_input
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

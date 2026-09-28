@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Lif
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.Deck
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Topology
@@ -22,7 +13,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace Poincare.Topology
-
 
 theorem semilocallySimplyConnectedSpace_of_chartedSpace (n : ℕ) (M : Type*)
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] :
@@ -40,7 +30,6 @@ theorem semilocallySimplyConnectedSpace_of_chartedSpace (n : ℕ) (M : Type*)
   let : ContractibleSpace U :=
     (e.symm.homeomorphOfImageSubsetSource hball rfl).contractibleSpace_iff.mp inferInstance
   exact ⟨U, hUopen.mem_nhds hxU, show SimplyConnectedSpace U from inferInstance⟩
-
 
 theorem t2Space_of_isCoveringMap {E X : Type*} [TopologicalSpace E]
     [TopologicalSpace X] [T2Space X] {p : E → X} (hp : IsCoveringMap p) :
@@ -60,18 +49,15 @@ variable {M : Type*} [TopologicalSpace M]
   [PathConnectedSpace M] [LocallyPathConnectedSpace M]
   [SemilocallySimplyConnectedSpace M]
 
-
 @[instance_reducible] noncomputable def chartedSpace (x₀ : M) :
     ChartedSpace (EuclideanSpace ℝ (Fin 3)) (UniversalCover x₀) :=
   Poincare.Manifold.LocalHomeomorphLift.chartedSpace (isCoveringMap x₀).isLocalHomeomorph
-
 
 theorem isManifold [IsManifold (𝓡 3) ∞ M] (x₀ : M) :
     letI := chartedSpace x₀
     IsManifold (𝓡 3) ∞ (UniversalCover x₀) :=
   Poincare.Manifold.LocalHomeomorphLift.isManifold
     (isCoveringMap x₀).isLocalHomeomorph (𝓡 3) ∞
-
 
 theorem isLocalDiffeomorph [IsManifold (𝓡 3) ∞ M] (x₀ : M) :
     letI := chartedSpace x₀
@@ -83,8 +69,6 @@ omit [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] in
 
 theorem t2Space [T2Space M] (x₀ : M) : T2Space (UniversalCover x₀) :=
   t2Space_of_isCoveringMap (isCoveringMap x₀)
-
-
 
 theorem t3Space [T2Space M] (x₀ : M) : T3Space (UniversalCover x₀) := by
   let := chartedSpace x₀
@@ -133,8 +117,6 @@ theorem exists_nonidentity_universalCover_transformation
     (H.not_simplyConnectedSpace hns)
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
-
 
 theorem exists_separating_universalCover_with_sheets (H : NeckOnlyCover g)
     (hwhole : H.X = univ)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.MorreySmoothHolderBound
 
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function
@@ -18,7 +12,6 @@ namespace EuclideanMorrey
 variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
 
 theorem smooth_morrey_pair_bound
     {d : ℕ} [NeZero d] {p : ℝ} (hp : (d : ℝ) < p)

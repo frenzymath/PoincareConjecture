@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularBipyramid
 import PoincareConjecture.Proofs.M76.Mathlib.BoundaryUnionMembership
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -19,12 +10,6 @@ namespace Set
 
 variable {X : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [FiniteDimensional ℝ X]
-
-
-
-
-
-
 
 theorem IsFinitePLBallPair.union_of_disk_attachment {s u b c d q : Set X}
     (hs : IsFinitePLBallPair ((ℝ × ℝ) × ℝ) s (b ∪ d))

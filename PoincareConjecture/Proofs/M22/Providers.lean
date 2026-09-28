@@ -14,15 +14,6 @@ import PoincareConjecture.Proofs.M19
 import PoincareConjecture.Proofs.M20.Providers
 import PoincareConjecture.Proofs.M21
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -30,7 +21,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 theorem m22PredecessorsFromMilestones (n : ℕ) :
     M22UniversalNoncollapsingPredecessors.{u} n := by
@@ -91,7 +81,6 @@ theorem m22PredecessorsFromMilestones (n : ℕ) :
   · intro M _ _ _ _ _ _ _ _ _ K S
     obtain ⟨A⟩ := (m20ClassificationFromMilestones (M := M)).asymptotic_classify K
     exact A.classify S
-
 
 theorem m22UniversalNoncollapsingFromMilestones (n : ℕ) :
     Nonempty (UniversalNoncollapsingConclusion.{u} n) :=

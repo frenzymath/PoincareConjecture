@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.MetricMonotonicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -45,7 +37,6 @@ private theorem pair_ball {J : Set ℝ} (L : BlowupLimitFlow.{u} J)
     conv_lhs => rw [← ENNReal.ofReal_toReal ((L.flow.metric s).edist_ne_top x y)]
     exact (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr (by linarith)
 
-
 theorem limitFinite_distance_exp (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) {Q : ℝ} (hQ : 0 < Q)
@@ -77,7 +68,6 @@ theorem limitFinite_distance_exp (h04 : RicciFlowCurvatureTheory.{u})
     ENNReal.mul_ne_top ENNReal.ofReal_ne_top ((L.flow.metric s).edist_ne_top x y)
   simpa only [ENNReal.toReal_mul, ENNReal.toReal_ofReal (Real.exp_nonneg _)] using
     ENNReal.toReal_mono hfin h
-
 
 theorem limitFinite_distance_tendsto_zero (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
@@ -118,7 +108,6 @@ theorem limitFinite_distance_tendsto_zero (h04 : RicciFlowCurvatureTheory.{u})
     simpa only [sub_zero] using
       limitFinite_distance_exp h04 hH hfinite L hQ hQ0 h0 hs x y
 
-
 theorem limitFinite_distance_interior_antitone (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H))
@@ -139,7 +128,6 @@ theorem limitFinite_distance_interior_antitone (h04 : RicciFlowCurvatureTheory.{
         (show t ∈ Icc s t from ⟨hst, le_rfl⟩) hst) hp.1 hp.2
   simp only [ENNReal.ofReal_one, one_mul] at h
   exact ENNReal.toReal_mono ((L.flow.metric s).edist_ne_top x y) h
-
 
 theorem limitFinite_distance_antitone (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)

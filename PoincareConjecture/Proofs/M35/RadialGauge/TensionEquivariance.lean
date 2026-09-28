@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.RadialHarmonicTension
 import PoincareConjecture.Proofs.M35.Uniqueness.AxisRotations
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -84,8 +74,6 @@ private theorem connection_rotation
   simp only [map_add, map_smul]
   rfl
 
-
-
 theorem mapCovariantHessian_radialScale_rotation
     {g b : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g) (B : LeviCivitaData b)
     (hg : ∀ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ,
@@ -113,8 +101,6 @@ theorem mapCovariantHessian_radialScale_rotation
   change _ = Matrix.toEuclideanLin A.1 (_ + _ - _)
   simp only [map_add, map_sub]
   rfl
-
-
 
 theorem mapTension_radialScale_rotation
     {g b : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g) (B : LeviCivitaData b)

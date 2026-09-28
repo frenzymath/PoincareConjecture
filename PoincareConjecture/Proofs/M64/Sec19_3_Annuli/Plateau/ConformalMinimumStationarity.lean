@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakMinimizer
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusDensityCongruence
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -48,9 +36,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
-
 theorem m64Annulus_energy_eq_area_of_ae_conformal
     (A : M64Annulus g c0 c1)
     (hconformal : ∀ᵐ p ∂volume.restrict m64AnnulusDomain,
@@ -68,10 +53,6 @@ theorem m64Annulus_energy_eq_area_of_ae_conformal
     _ = A.area := h
 
 variable [CompactSpace M] [T2Space M]
-
-
-
-
 
 theorem m64Annulus_supported_stationarity_of_conformal_minimum_of_eqOn
     (A : M64Annulus g c0 c1)
@@ -137,8 +118,6 @@ theorem m64Annulus_supported_stationarity_of_conformal_minimum_of_eqOn
     exact (hcomparison s hs).1
   · filter_upwards [isOpen_Ioo.mem_nhds hzero] with s hs
     exact (hcomparison s hs).2
-
-
 
 theorem m64Annulus_supported_stationarity_of_conformal_minimum
     (A : M64Annulus g c0 c1)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardRadius
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOutwardConstant
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalizedBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_cap_outward_core_data (N : CapCertificate g)
     (hcomplete : MetricComplete g) (hsmall : N.epsilon ≤ 1 / 1200)

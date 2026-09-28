@@ -5,27 +5,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import Mathlib.RingTheory.Finiteness.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_finite_collar_phase_products
     {E V X Y ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

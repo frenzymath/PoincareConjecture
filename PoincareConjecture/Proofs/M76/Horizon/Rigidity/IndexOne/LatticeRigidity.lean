@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Rigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LatticeHandleRigidityTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76
-
 
 theorem exists_indexOne_lattice_rigidity
     {ι κ α β : Type*} [Fintype ι] [Fintype κ]

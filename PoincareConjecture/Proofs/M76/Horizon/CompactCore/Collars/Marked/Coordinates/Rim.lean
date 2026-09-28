@@ -5,18 +5,11 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.BallModelCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Coordinates.RimCoordinates
 
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
 
 theorem IsFinitePLBallPair.exists_boundary_homeomorph_at_two_points
     {E F : Type*}
@@ -59,13 +52,9 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Rim" => sphere (0 : V2) 1
 
-
-
 theorem isFinitePLBallPair_planar_square : IsFinitePLBallPair (ℝ × ℝ) Disk Rim :=
   (isFinitePLBallPair_unit_cube (ι := Fin 2)).model_equiv
     (ContinuousLinearEquiv.finTwoArrow ℝ ℝ)
-
-
 
 theorem exists_rim_homeomorph_at_two_points
     (ends : Bool → V2) (hends : ∀ b, ends b ∈ Rim)

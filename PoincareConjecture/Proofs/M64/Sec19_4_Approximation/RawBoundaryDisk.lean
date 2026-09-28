@@ -1,20 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.Reparameterization
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 def m64RawDiskOfBoundaryReparam
     {gamma : C1FreeLoopSpace (M := M)}
@@ -55,10 +37,6 @@ def m64RawDiskOfBoundaryReparam
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
-
-
 def m64C1DiskOfBoundaryReparam
     {gamma : C1FreeLoopSpace (M := M)}
     {boundary : ContinuousMap LoopCircle M}
@@ -80,9 +58,6 @@ def m64C1DiskOfBoundaryReparam
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
-
 theorem m64RawDiskOfBoundaryReparam_area
     {gamma : C1FreeLoopSpace (M := M)}
     {boundary : ContinuousMap LoopCircle M}
@@ -91,9 +66,6 @@ theorem m64RawDiskOfBoundaryReparam_area
     (D : LipschitzSpanningDisk g gamma) :
     (m64RawDiskOfBoundaryReparam r h D).area = D.area := rfl
 
-
-
-
 theorem m64C1DiskOfBoundaryReparam_area
     {gamma : C1FreeLoopSpace (M := M)}
     {boundary : ContinuousMap LoopCircle M}
@@ -101,10 +73,6 @@ theorem m64C1DiskOfBoundaryReparam_area
     (h : ∀ z : LoopCircle, boundary z = gamma (r.map z))
     (D : M64RawSpanningDisk g boundary) :
     (m64C1DiskOfBoundaryReparam r h D).area = D.area := rfl
-
-
-
-
 
 theorem m64RawDiskAreaRange_eq_of_boundary_reparam
     {gamma : C1FreeLoopSpace (M := M)}
@@ -119,9 +87,6 @@ theorem m64RawDiskAreaRange_eq_of_boundary_reparam
     exact ⟨m64C1DiskOfBoundaryReparam r h D, hD⟩
   · rintro ⟨D, hD⟩
     exact ⟨m64RawDiskOfBoundaryReparam r h D, hD⟩
-
-
-
 
 theorem m64RawFillingArea_eq_fillingArea_of_boundary_reparam
     {gamma : C1FreeLoopSpace (M := M)}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Norm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 noncomputable def surfaceRescaling (K : AncientKappaSolution 2 M)
     (tau : ℝ) (htau : 0 < tau) : AncientRescaling K tau := by
@@ -65,7 +56,6 @@ noncomputable def surfaceRescaling (K : AncientKappaSolution 2 M)
       0 hmap (inferInstance : (Iio (0 : ℝ)).OrdConnected) hne t x
     change (F.connection t).scalarCurvature x = _ at hscalar
     rw [hscalar, htime, inv_inv, abs_mul, abs_of_pos htau]
-
 
 theorem exists_diverging_surfaceRescalings (K : AncientKappaSolution 2 M) :
     ∃ tau : ℕ → ℝ, (∀ k, 0 < tau k) ∧ Tendsto tau atTop atTop ∧

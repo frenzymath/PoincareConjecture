@@ -1,16 +1,6 @@
 import Mathlib.Topology.MetricSpace.Isometry
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,8 +14,6 @@ variable {A B : Type*} [MetricSpace A] [MetricSpace B]
   (e : Metric.closedBall p R → B) (he : Isometry e)
   (hρ : 0 < ρ) (hρR : ρ < R)
   (hcover : Metric.ball (e ⟨p, Metric.mem_closedBall_self hR.le⟩) ρ ⊆ range e)
-
-
 
 def ballIsometryOfClosedBallCoverage :
     Metric.ball p ρ ≃ᵢ Metric.ball (e ⟨p, Metric.mem_closedBall_self hR.le⟩) ρ := by
@@ -54,7 +42,6 @@ def ballIsometryOfClosedBallCoverage :
 theorem ballIsometryOfClosedBallCoverage_apply (x : Metric.ball p ρ) :
     (ballIsometryOfClosedBallCoverage p hR e he hρR hcover x).1 =
       e ⟨x.1, x.property.le.trans hρR.le⟩ := rfl
-
 
 def openChartOfClosedBallCoverage : OpenPartialHomeomorph A B := by
   let S : Opens A := ⟨Metric.ball p ρ, Metric.isOpen_ball⟩

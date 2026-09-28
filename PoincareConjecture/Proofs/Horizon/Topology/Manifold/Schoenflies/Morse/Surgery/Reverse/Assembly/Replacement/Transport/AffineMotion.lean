@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.VerticalMotion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.CodimensionZero
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_vertical_affine_motion_within
     {K O : Set (E × Real)} (hK : IsCompact K) (hO : IsOpen O)

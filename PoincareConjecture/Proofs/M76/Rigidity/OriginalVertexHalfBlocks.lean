@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexHalfCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +15,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem vertex_half_ball_pairs (p : (T.marked 2).vertices) (w : ℝ) (hw : w ≠ 0) :
     let N := T.vertexBlock p

@@ -1,21 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.MinimizingRay
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -120,9 +104,6 @@ private theorem exists_ray_approximating_of_minimizing_segments
 end Poincare.AncientVolume.ScalarRatio
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_minimizing_ray_approximating_escaping_sequence
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_IntrinsicJ
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorNaturality
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.Algebra
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
-
 
 theorem isSmoothCovariantTensor_metric_pullback (g : RiemannianMetric n N)
     {f : M → N} (hf : ContMDiff (𝓡 n) (𝓡 n) ∞ f) :
@@ -49,15 +37,10 @@ theorem isSmoothCovariantTensor_metric_pullback (g : RiemannianMetric n N)
         ((hX i).contMDiffAt (hU.mem_nhds hx)) (hf x)
     exact ((hV 0).inner_bundle (hV 1)).contMDiffWithinAt
 
-
-
 theorem isSmoothCovariantTensor_metric (g : RiemannianMetric n M) :
     IsSmoothCovariantTensor (k := 2) (fun x v => g.inner x (v 0) (v 1)) := by
   simpa only [mfderiv_id, ContinuousLinearMap.id_apply, id_eq] using
     isSmoothCovariantTensor_metric_pullback g (f := id) contMDiff_id
-
-
-
 
 theorem tensorNorm_iterated_eq_of_metric_pullback
     {g : RiemannianMetric n M} {h : RiemannianMetric n N}
@@ -87,9 +70,6 @@ theorem tensorNorm_iterated_eq_of_metric_pullback
       ContinuousLinearEquiv.coe_coe] using
       D.iteratedCovariantTensorDerivative_eq_pullback D' hU hf hinv hmetric hS hT hST m hx v
 
-
-
-
 theorem round_error_isSmooth {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
     {g : RiemannianMetric 3 X} {epsilon : ℝ} (R : SingularRoundComponent g epsilon) :
@@ -97,8 +77,6 @@ theorem round_error_isSmooth {X : Type*} [TopologicalSpace X]
       R.model_metric.inner y (v 0) (v 1)) :=
   ((isSmoothCovariantTensor_metric_pullback g R.forward_smooth).const_mul R.scale).sub
     (isSmoothCovariantTensor_metric R.model_metric)
-
-
 
 theorem round_covariant_error_lt {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
@@ -111,9 +89,6 @@ theorem round_covariant_error_lt {X : Type*} [TopologicalSpace X]
   exact metric_covariant_error_lt_of_jet_error R.model_metric R.model_connection
     (fun y v => R.scale * singularMetricPullback g R.forward y v) hj R.epsilon_pos
     ((hjet x).trans_lt hB)
-
-
-
 
 theorem round_quadratic_bounds {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]

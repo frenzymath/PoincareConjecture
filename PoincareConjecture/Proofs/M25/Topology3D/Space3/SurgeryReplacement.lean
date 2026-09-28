@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapIntersection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNorthChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryPasting
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem surgeryNorthChart_equator_formula
     (R : Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)
@@ -58,8 +44,6 @@ variable (a : ℝ → ℝ) (b : E2 → ℝ)
 variable (ha : ContDiff ℝ ∞ a) (hb : ContDiff ℝ ∞ b)
 variable (ha0 : ∀ z, a z ≠ 0) (hb0 : ∀ x, b x ≠ 0)
 
-
-
 noncomputable def surgeryReplacementMap
     (ψ : UnitTwoSphere × ℝ → E3)
     (R : Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞)
@@ -69,9 +53,6 @@ noncomputable def surgeryReplacementMap
   levelPaste (fun q : UnitTwoSphere => (heightCoordinates (q : E3)).2)
     (fun q => ψ (surgeryNorthChart R e q, 0))
     (surgeryCapMap a b ha hb ha0 hb0 T t sigma (k * (1 - r)) l)
-
-
-
 
 theorem surgeryReplacementMap_injective
     (hapos : ∀ z, 0 < a z)

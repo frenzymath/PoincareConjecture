@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Powers
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Cutoffs
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,8 +10,6 @@ open scoped Manifold ContDiff ENNReal NNReal
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 theorem weighted_cutoff_energy_le (D : LeviCivitaData g)
     {S : Set (EuclideanSpace ℝ (Fin n))} (hS : IsCompact S)
@@ -67,8 +59,6 @@ theorem weighted_cutoff_energy_le (D : LeviCivitaData g)
       add_le_add (mul_le_mul_of_nonneg_left hmass hκ) herror
     _ = _ := by ring
 
-
-
 theorem exists_uniform_local_power_gain (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :
     ∃ q : ℝ≥0, 2 < q ∧ ∃ C : ℝ, 0 ≤ C ∧
@@ -94,8 +84,6 @@ theorem exists_uniform_local_power_gain (hn : 2 ≤ n)
   have hweight := weighted_cutoff_energy_le D hS hη hfp.continuous hηS hηbound ha hL
     (mul_nonneg (le_trans (by norm_num) hp) hκ) (fun x hx v => (hell x (hSR hx) v).1) hderiv
   exact (h.trans (mul_le_mul_of_nonneg_left hweight hC)).trans_eq (by ring)
-
-
 
 theorem exists_uniform_scaled_cutoff_power_gain (hn : 2 ≤ n)
     (R : ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :

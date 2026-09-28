@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +34,6 @@ theorem cap_model_ricciNorm_sq (u : ℝ) (hu : u < 1)
   norm_num [Fin.sum_univ_succ, Fin.prod_univ_succ, roundCylinderCoordinateBasis,
     EuclideanSpace.inner_single_left]
   ring
-
-
 
 theorem cap_model_ricciNorm_le (u : ℝ) (hu : u ≤ 0)
     (D0 : LeviCivitaData (M35.cylinderEuclideanMetric u (by linarith)))

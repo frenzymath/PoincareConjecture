@@ -8,10 +8,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Preservation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Bounds.Scalar
-
-
-
-
-
-
-

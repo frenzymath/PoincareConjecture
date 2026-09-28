@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.CompactSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.CompactSupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,8 +12,6 @@ universe u v
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finite_smooth_decomposition_of_isCompactSupport {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hfc : HasCompactSupport f)
@@ -46,8 +38,6 @@ theorem exists_finite_smooth_decomposition_of_isCompactSupport {f : M → ℝ}
 namespace LeviCivitaData
 
 variable [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric n M}
-
-
 
 theorem integral_mul_laplacian_of_hasCompactSupport
     (D : LeviCivitaData g) {u v : M → ℝ}

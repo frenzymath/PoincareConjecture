@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Interior.Contacts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -217,5 +209,3 @@ theorem exists_positive_carrier_chart
       hleftplane y' hyT, hHval]
 
 end Geometry.OriginalPLTower.PlanarAnnulusBoundaryMotion
-
-

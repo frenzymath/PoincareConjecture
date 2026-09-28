@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -25,11 +15,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [T3Space M] [PreconnectedSpace M]
   [MeasurableSpace M] [BorelSpace M]
 
-
 noncomputable def distanceAverage (g : RiemannianMetric n M) (O : M)
     (μ : Measure M) : ℝ :=
   ∫ y, (g.edist O y).toReal + 2 ∂μ
-
 
 theorem integrable_shiftedDistance_of_integrable_distance
     (g : RiemannianMetric n M) (O x : M) (μ : Measure M) [IsFiniteMeasure μ]
@@ -43,8 +31,6 @@ theorem integrable_shiftedDistance_of_integrable_distance
     (g.edist O x).toReal + (g.edist x y).toReal + 2
   rw [Real.norm_eq_abs, abs_of_nonneg (by positivity)]
   linarith [g.toReal_edist_triangle O x y]
-
-
 
 theorem abs_distanceAverage_sub_le_integral_distance
     (g : RiemannianMetric n M) (O x : M) (μ : Measure M) [IsProbabilityMeasure μ]
@@ -62,7 +48,6 @@ theorem abs_distanceAverage_sub_le_integral_distance
   rw [integral_sub hint (integrable_const _)] at havg
   simpa [distanceAverage, Real.norm_eq_abs] using havg
 
-
 theorem integrable_shiftedDistance (g : RiemannianMetric n M) (O x : M)
     (μ : Measure M) [IsFiniteMeasure μ] {ε : ℝ}
     (hμ : ∀ᵐ y ∂μ, (g.edist x y).toReal ≤ ε) :
@@ -74,8 +59,6 @@ theorem integrable_shiftedDistance (g : RiemannianMetric n M) (O x : M)
   rw [Real.norm_eq_abs, abs_of_nonneg (by positivity)]
   have htriangle := g.toReal_edist_triangle O x y
   linarith
-
-
 
 theorem abs_distanceAverage_sub_le (g : RiemannianMetric n M) (O x : M)
     (μ : Measure M) [IsProbabilityMeasure μ] {ε : ℝ}
@@ -90,8 +73,6 @@ theorem abs_distanceAverage_sub_le (g : RiemannianMetric n M) (O x : M)
   have havg := norm_integral_le_of_norm_le_const hbound
   rw [integral_sub hint (integrable_const _)] at havg
   simpa [distanceAverage, Real.norm_eq_abs] using havg
-
-
 
 theorem distanceAverage_bounds (g : RiemannianMetric n M) (O x : M)
     (μ : Measure M) [IsProbabilityMeasure μ] {ε : ℝ} (hε : ε ≤ 1)

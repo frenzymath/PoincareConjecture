@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.QuadraticCoefficientBounds
 import PoincareConjecture.Proofs.M14.Mathlib.CompactCoordinateBox
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -32,9 +23,6 @@ private theorem horizontal_t2Space {p : G.Point} : T2Space (G.Horizontal p) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal p
 
 attribute [local instance] horizontal_t2Space
-
-
-
 
 theorem exponential_gauge_clock_smooth
     (E : M14ExponentialFamily G T x) (Z : G.Horizontal x)
@@ -61,9 +49,6 @@ theorem exponential_gauge_clock_smooth
   refine ⟨fun s hs => ((hlift.comp hγ hsrc) s hs).fst, ?_⟩
   intro s hs
   exact (htime _ (hsrc s hs)).trans (E.clock Z s (hsurv s hs))
-
-
-
 
 theorem squareGauge_compact_coefficient_bounds
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

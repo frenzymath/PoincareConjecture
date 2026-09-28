@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusSquares
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -83,9 +75,6 @@ theorem isPreconnected_annulus_image_sdiff_boundary {T q : Set P2} {L d : ℝ}
   rw [← himage]
   exact (isPreconnected_squareAnnulus_sdiff_depth hd hwidth side).image _
     (hf.continuousOn.mono sdiff_subset)
-
-
-
 
 theorem polygon_annulus_exists_empty_inside {T : Set P2} {m n : ℕ}
     (P : Polygon P2 (m + 3)) (Q : Polygon P2 (n + 3))

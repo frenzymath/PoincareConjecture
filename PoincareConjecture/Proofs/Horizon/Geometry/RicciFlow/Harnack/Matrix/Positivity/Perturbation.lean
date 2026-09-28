@@ -1,20 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.RicciFlow.Harnack
-
 
 lemma quadratic_perturbation_pos
     {q u w C α δ : ℝ} (hδ : 0 < δ)
@@ -40,8 +29,6 @@ lemma quadratic_perturbation_pos
       have hn := mul_nonneg (sq_nonneg δ) (sq_nonneg u)
       linarith only [hp, hn]
   exact pos_of_mul_pos_right (hpositive.trans_le hbound) (by positivity)
-
-
 
 lemma exists_initial_time_quadratic_perturbation_pos
     {C ε δ : ℝ} (hC : 0 ≤ C) (hε : 0 < ε) (hδ : 0 < δ) :

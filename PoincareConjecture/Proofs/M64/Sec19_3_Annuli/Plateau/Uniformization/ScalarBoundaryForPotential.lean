@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryNoncritical
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPotentialUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,13 +15,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Half" => Set.preimage (fun p : Plane => p 0) (Ioi (0 : ℝ))
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
-
 
 theorem annular_harmonic_noncritical_boundary
     {H : Plane → ℝ} (hHc : Continuous H)

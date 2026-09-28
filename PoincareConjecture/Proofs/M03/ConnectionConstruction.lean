@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Ch01.Koszul
 import PoincareConjecture.Proofs.M03.ConnectionCoordinates
 import Mathlib.Geometry.Manifold.VectorBundle.Tensoriality
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -22,7 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M03
-
 
 theorem leviCivitaData_nonempty {n : ℕ} {M : Type u}
     [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

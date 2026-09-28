@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.CircleFreeClasses
 import PoincareConjecture.Proofs.M59.Mathlib.LoopTranspose
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalPostcomposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -27,7 +18,6 @@ variable {N S X : Type*} [DecidableEq N] [Nonempty N]
 
 omit [DecidableEq N] [Nonempty N] in
 
-
 theorem transpose_map_descend
     (F : GenLoop N (GenLoop (Fin 1) X x) GenLoop.const) :
     GenLoop.transpose (mapGenLoop q.descendMap q.descend_const F) =
@@ -39,7 +29,6 @@ theorem transpose_map_descend
   rfl
 
 omit [DecidableEq N] in
-
 
 theorem homotopyGroupMap_descend_injective :
     Function.Injective (homotopyGroupMap N q.descendMap
@@ -59,7 +48,6 @@ theorem homotopyGroupMap_descend_injective :
 
 omit [DecidableEq N] [Nonempty N] in
 
-
 theorem homotopyGroupMap_descend_surjective
     (hpi : Subsingleton (HomotopyGroup N X x)) :
     Function.Surjective (homotopyGroupMap N q.descendMap
@@ -76,8 +64,6 @@ theorem homotopyGroupMap_descend_surjective
     rw [q.transpose_map_descend x, GenLoop.swapNested_swapNested]
     exact hb
   exact ⟨⟦G⟧, Quotient.sound (GenLoop.homotopic_iff_transpose_homotopic.mpr ht).symm⟩
-
-
 
 def continuousLoopEquiv (hpi : Subsingleton (HomotopyGroup N X x)) :
     HomotopyGroup N (GenLoop (Fin 1) X x) GenLoop.const ≃*

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.SpatialJetsWithin
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M44
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem contDiffOn_pullbackCoefficients_within {J : Set ℝ}
     (F : RicciFlow n M J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -43,9 +31,6 @@ theorem contDiffOn_pullbackCoefficients_within {J : Set ℝ}
       (J ×ˢ U) (J ×ˢ univ) := fun _ hp => ⟨hp.1, mem_univ _⟩
   convert! (hc.comp (t, x) hid.contMDiffWithinAt hmap).contDiffWithinAt using 1
 
-
-
-
 theorem continuousOn_pullback_spatialJet {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b)) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
     {e : EuclideanSpace ℝ (Fin n) → M} (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e U) (m : ℕ) :
@@ -53,8 +38,6 @@ theorem continuousOn_pullback_spatialJet {a b : ℝ} (hab : a < b)
       iteratedFDeriv ℝ m ((F.metric z.1).pullbackCoefficients e) z.2) (Icc a b ×ˢ U) :=
   (contDiffOn_spatialJet_within (contDiffOn_pullbackCoefficients_within F hU he)
     (uniqueDiffOn_Icc hab) hU m).continuousOn
-
-
 
 theorem contDiffOn_pullback_spatialJet_time {a b : ℝ} (hab : a < b)
     (F : RicciFlow n M (Icc a b)) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

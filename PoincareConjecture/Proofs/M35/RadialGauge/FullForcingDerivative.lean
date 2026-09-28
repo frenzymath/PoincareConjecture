@@ -1,29 +1,17 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.ExteriorCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
 noncomputable def radialTargetCoupling (f₀ : ℝ → ℝ) (s : ℝ) : ℝ :=
   f₀ s * deriv f₀ s / s
-
 
 noncomputable def radialGaugeForcing (f f₀ velocity : ℝ → ℝ) (sigma r : ℝ) : ℝ :=
   cylinderTargetForcing f velocity r -
     2 * radialTargetCoupling f₀ (r * Real.exp sigma) / f r ^ 2
-
 
 theorem radialGaugeForcing_eq (f f₀ velocity : ℝ → ℝ) (sigma r : ℝ) :
     radialGaugeForcing f f₀ velocity sigma r =
@@ -33,7 +21,6 @@ theorem radialGaugeForcing_eq (f f₀ velocity : ℝ → ℝ) (sigma r : ℝ) :
   unfold radialGaugeForcing cylinderTargetForcing radialTargetCoupling
   simp only [div_eq_mul_inv, mul_inv_rev]
   ring
-
 
 theorem radialTargetCoupling_hasDerivAt {f₀ : ℝ → ℝ}
     (hf₀ : ContDiff ℝ ∞ f₀) {s : ℝ} (hs : s ≠ 0) :
@@ -47,8 +34,6 @@ theorem radialTargetCoupling_hasDerivAt {f₀ : ℝ → ℝ}
   apply h.congr_deriv
   simp only [id_eq, Pi.mul_apply, mul_one]
   field_simp [hs]
-
-
 
 theorem radialGaugeForcing_hasDerivAt {f f₀ velocity : ℝ → ℝ}
     (hf : ContDiff ℝ ∞ f) (hf₀ : ContDiff ℝ ∞ f₀) (sigma : ℝ)

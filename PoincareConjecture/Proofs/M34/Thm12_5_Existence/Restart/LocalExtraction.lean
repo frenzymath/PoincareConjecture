@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.SpacetimeBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -26,19 +16,13 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   [∀ k, TopologicalSpace (Mfamily k)] [∀ k, ChartedSpace StandardCapSpace (Mfamily k)]
   [∀ k, IsManifold (𝓡 3) ∞ (Mfamily k)] (A : MetricFlowApproximation ginit Mfamily)
 
-
-
 def interiorBallDomain (i : ℕ) : Set (ℝ × StandardCapSpace) :=
   Ioo 0 A.time ×ˢ Metric.ball 0 ((i : ℝ) + 1)
-
 
 theorem interiorBallDomain_isOpen (i : ℕ) : IsOpen (A.interiorBallDomain i) :=
   isOpen_Ioo.prod Metric.isOpen_ball
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_local_interior_limits (P : RicciFlowCurvatureTheory.{0}) :
     ∃ σ : ℕ → ℕ, StrictMono σ ∧

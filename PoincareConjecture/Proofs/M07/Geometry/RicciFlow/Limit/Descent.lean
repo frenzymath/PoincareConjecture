@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ChangeMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_of_covering_local_diffeomorphisms
     {n : ℕ} {ι : Type*} [Nonempty ι] {P : ι → Type*} {N : Type*}

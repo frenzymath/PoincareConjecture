@@ -1,20 +1,12 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleCornerCaps
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCapGeometry
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_triangle_caps_avoid_opposite_arcs
     {base alpha beta : ℝ → AnnulusCoordinates} {D A B : ℝ}

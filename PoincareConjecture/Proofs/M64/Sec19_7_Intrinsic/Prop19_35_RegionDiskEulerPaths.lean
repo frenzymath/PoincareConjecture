@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CrossRayRegion
 import Mathlib.Combinatorics.SimpleGraph.Paths
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,13 +8,6 @@ open Set Function
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_oriented_embedded_arc
     {alpha : ℝ → AnnulusCoordinates} {a b : AnnulusCoordinates}
@@ -58,14 +41,6 @@ private theorem m64_dart_image_union_cons {V : Type*} {G : SimpleGraph V}
       arc ⟨(u, v), h⟩ '' Icc 0 1 ∪ ⋃ d ∈ p.darts, arc d '' Icc 0 1 := by
   ext z
   simp
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_embedded_graph_path
     {V : Type*} {G : SimpleGraph V}
@@ -128,14 +103,6 @@ theorem m64Intrinsic_exists_embedded_graph_path
         m64Intrinsic_exists_embedded_join (hcont d) hbc (hinj d) hbi hjoin hjoinmeet
       refine ⟨gamma, hgc, hgi, hg0.trans (hstart d), hg1.trans hb1, ?_⟩
       rw [hgimage, hbimage, m64_dart_image_union_cons]
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_exists_region_between_graph_path_and_arc
     {V : Type*} {G : SimpleGraph V}

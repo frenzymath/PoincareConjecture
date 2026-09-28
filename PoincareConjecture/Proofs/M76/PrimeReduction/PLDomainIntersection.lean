@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.PLDomainExterior
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,16 +12,12 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R P : Set X}
 
-
-
 theorem frontier_inter_eq_of_closed (hR : IsClosed R) (hP : IsClosed P) :
     frontier (R ∩ P) = (frontier R ∩ P) ∪ (R ∩ frontier P) := by
   rw [(hR.inter hP).frontier_eq, hR.frontier_eq, hP.frontier_eq, interior_inter]
   ext x
   simp only [mem_sdiff, mem_inter_iff, mem_union]
   tauto
-
-
 
 theorem PLDomain.halfspace_inter_right (he : PLDomain e R)
     {x : X} (hx : x ∈ frontier R) (hxP : x ∈ interior P) :
@@ -47,8 +36,6 @@ theorem PLDomain.halfspace_inter_right (he : PLDomain e R)
     constructor
     · exact fun h => (hhalf y hy.1).mp h.1
     · exact fun h => ⟨(hhalf y hy.1).mpr h, interior_subset hy.2⟩
-
-
 
 theorem PLDomain.inter_of_disjoint_frontiers (he : PLDomain e R)
     (hP : PLDomain e P) (hdisj : Disjoint (frontier R) (frontier P)) :

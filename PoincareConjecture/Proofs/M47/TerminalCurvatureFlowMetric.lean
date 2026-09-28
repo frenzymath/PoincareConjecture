@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureFlowCoordinates
 import PoincareConjecture.Proofs.M47.TerminalCurvatureCompleteFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.MetricVariation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -97,8 +87,6 @@ private theorem metric_pullback_in_charts
   rw [hderiv]
   exact chart_coefficients_apply_differential g a ha _ _
 
-
-
 theorem terminalCurvature_flow_metric_derivative
     {Phi : ℝ → M → M}
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod (𝓡 n)) ∞ (T% V))
@@ -167,7 +155,6 @@ theorem terminalCurvature_flow_metric_derivative
       (mem_extChartAt_source _))] with s hsx
   simpa +instances only [q, B, c, d, Function.comp_def, extChartAt_to_inv] using
     (metric_pullback_in_charts (g := g) (hF s x) (Phi t x) hsx v w).symm
-
 
 theorem terminalCurvature_flow_preserves_metric
     {Phi : ℝ → M → M}

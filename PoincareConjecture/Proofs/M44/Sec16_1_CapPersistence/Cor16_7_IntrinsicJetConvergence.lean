@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ noncomputable local instance intrinsicJetBilinearNormedGroup : NormedAddCommGrou
 
 noncomputable local instance intrinsicJetBilinearNormedSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem eventually_intrinsic_jet_error_bound
     {ι : Type*} {l : Filter ι} (g : RiemannianMetric 3 E) (D : LeviCivitaData g)

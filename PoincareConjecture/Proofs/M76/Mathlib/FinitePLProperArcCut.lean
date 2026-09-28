@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_proper_arc_cut
     {s q U V W : Set E} {a b : E}

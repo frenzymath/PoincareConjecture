@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.LocalMinimumHessian
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

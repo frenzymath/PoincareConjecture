@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ArcCutoffTime
 import PoincareConjecture.Proofs.M62.Cor0_3_RegularizedEvolution
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -27,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
-
 theorem m63ArcLength_joint_continuousOn (hc : M62ShrinkingCurve F c) (x0 : ℝ) :
     ContinuousOn (fun z : ℝ × ℝ => m63ArcLength F c z.2 x0 z.1)
       (univ ×ˢ Icc a b) := by
@@ -40,11 +28,6 @@ theorem m63ArcLength_joint_continuousOn (hc : M62ShrinkingCurve F c) (x0 : ℝ) 
         ((continuous_snd.comp continuous_subtype_val).comp continuous_fst))
       (fun z => ⟨mem_univ _, z.1.property.2⟩))
     (continuous_fst.comp continuous_subtype_val)
-
-
-
-
-
 
 theorem m63ArcCutoff_regularizedIntegral_time_regular (hc : M62ShrinkingCurve F c)
     (alpha beta x0 r : ℝ) {ε : ℝ} (hε : 0 < ε)

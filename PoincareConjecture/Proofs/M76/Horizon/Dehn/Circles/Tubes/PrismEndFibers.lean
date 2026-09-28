@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedPrismPreimages
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
-
 
 theorem signed_prism_joint_fiber_iff
     {E : Type*} [TopologicalSpace E] {B C J : Set E}

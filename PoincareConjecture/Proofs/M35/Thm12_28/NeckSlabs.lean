@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckAxialDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,16 +9,12 @@ namespace PoincareConjecture.StandardCylinderPatch
 
 variable {length : ℝ} {center : StandardCapSpace}
 
-
-
 theorem closed_axial_slab_subset_carrier (N : StandardCylinderPatch length center)
     {a : ℝ} (ha : a < length) :
     N.coordinate '' (univ ×ˢ Icc (-a) a) ⊆ N.carrier := by
   rintro _ ⟨z, hz, rfl⟩
   rw [← N.coordinate_image]
   exact ⟨z, ⟨mem_univ _, by constructor <;> linarith [hz.2.1, hz.2.2]⟩, rfl⟩
-
-
 
 theorem compact_axial_slab (N : StandardCylinderPatch length center)
     {a : ℝ} (ha : a < length) :
@@ -35,8 +23,6 @@ theorem compact_axial_slab (N : StandardCylinderPatch length center)
   apply N.coordinate_smooth.continuousOn.mono
   intro z hz
   exact ⟨mem_univ _, by constructor <;> linarith [hz.2.1, hz.2.2]⟩
-
-
 
 theorem open_axial_slab (N : StandardCylinderPatch length center)
     {a : ℝ} (ha : a ≤ length) :
@@ -54,8 +40,6 @@ theorem open_axial_slab (N : StandardCylinderPatch length center)
   filter_upwards [N.carrier_open.mem_nhds hmem,
     hcont.preimage_mem_nhds (isOpen_Ioo.mem_nhds hax)] with y hy hiy
   exact ⟨N.inverse y, ⟨mem_univ _, hiy⟩, N.coordinate_right_inverse hy⟩
-
-
 
 theorem axial_abs_eq_at_slab_exit (N : StandardCylinderPatch length center)
     {a : ℝ} (ha : a < length) {y : StandardCapSpace}

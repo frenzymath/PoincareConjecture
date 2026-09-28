@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedInteriorFans
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +18,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 omit [T2Space S] in
 
-
 theorem not_mem_collar_of_not_mem_caps_bands {q : S}
     (hcap : ∀ p s, q ∉ ((T.caps p).face s).carrier)
     (hband : ∀ p i, q ∉ (T.bands p i).faces.carrier)
@@ -36,8 +29,6 @@ theorem not_mem_collar_of_not_mem_caps_bands {q : S}
     exact hcap a.1.1 a.1.2 ha
   · obtain ⟨a, ha⟩ := mem_iUnion.mp hb
     exact hband a.1.1 a.1.2 ha
-
-
 
 theorem exists_core_interior_of_not_mem_caps_bands (q : S)
     (hcap : ∀ p s, q ∉ ((T.caps p).face s).carrier)
@@ -72,7 +63,6 @@ theorem exists_core_interior_of_not_mem_caps_bands (q : S)
   rwa [interior_smooth_coordinate_image _ (T.refined.source r)] at hint
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_of_not_mem_caps_bands (g : RiemannianMetric 2 S)
     (q : Euler.CoordinateVertex T.refinement.coordinates T.refinement.basis)

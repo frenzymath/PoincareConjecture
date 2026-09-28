@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ContinuedPolar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RadialEndpoint
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_exists_smooth_polar_inverse
     {e : AnnulusCoordinates → AnnulusCoordinates} {U : Set AnnulusCoordinates}
@@ -75,10 +58,6 @@ theorem m64Intrinsic_exists_smooth_polar_inverse
     rw [hB]
     exact (hsmooth.differentiableAt (by simp)).hasFDerivAt
   exact (F.contDiffAt_symm hy hD hsmooth).contDiffWithinAt
-
-
-
-
 
 theorem m64Intrinsic_exists_local_lifted_boundary
     {e : AnnulusCoordinates → AnnulusCoordinates} {U : Set AnnulusCoordinates}

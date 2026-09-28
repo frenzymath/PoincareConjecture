@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,24 +14,17 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
-
 def surgeryRetainedCollar
     (event : SurgeryEventData g0 K P slice metric T) (width : ℝ) :
     Set (slice event.tMinus).carrier :=
   event.regular_limit ∩ event.limit_identify.map ⁻¹'
     ⋃ i, (event.necks i).neck.region (-width) width
 
-
-
 theorem surgeryRetainedCollar_isOpen
     (event : SurgeryEventData g0 K P slice metric T) (width : ℝ) :
     IsOpen (surgeryRetainedCollar event width) := by
   exact event.limit_identify.map_smooth.continuousOn.isOpen_inter_preimage
     event.regular_limit_open (isOpen_iUnion fun i => (event.necks i).neck.isOpen_region _ _)
-
-
 
 theorem surgeryRetained_frontier_subset_collar
     (event : SurgeryEventData g0 K P slice metric T) {width : ℝ} (hwidth : 0 < width) :
@@ -61,8 +45,6 @@ theorem surgeryRetained_frontier_subset_collar
   refine ⟨i, hycarrier, ?_, ?_⟩ <;> rw [hyzero]
   · exact neg_neg_of_pos hwidth
   · exact hwidth
-
-
 
 theorem surgeryRetainedCore_compact_interior
     (event : SurgeryEventData g0 K P slice metric T) {width : ℝ} (hwidth : 0 < width) :

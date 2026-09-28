@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.ValueTube
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set
 open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem closedBall_subset_common_level_tube_of_radial_margin
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -71,8 +62,6 @@ theorem closedBall_subset_common_level_tube_of_radial_margin
   refine ⟨?_, fun i => (hfgap i).trans_lt (by linarith)⟩
   obtain ⟨hlo, hhi⟩ := abs_le.mp hdiff
   constructor <;> linarith [hxinner.1, hxinner.2]
-
-
 
 theorem closedBall_subset_common_level_tube_of_normalized_slab
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

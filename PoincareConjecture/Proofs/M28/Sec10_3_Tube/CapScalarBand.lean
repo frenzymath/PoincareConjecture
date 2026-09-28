@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapRatio
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RelativeCapBarrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 omit [T2Space M] in
 
-
 theorem isPreconnected_carrier (N : CapCertificate g) : IsPreconnected N.carrier := by
   apply isPreconnected_of_forall_pair
   intro x hx y hy
@@ -44,8 +34,6 @@ theorem isPreconnected_carrier (N : CapCertificate g) : IsPreconnected N.carrier
   · exact ⟨1, by simp, h1⟩
 
 omit [T2Space M] in
-
-
 
 theorem carrier_subset_scalar_component (N : CapCertificate g) (D : LeviCivitaData g)
     {B Q : ℝ} (hB : N.cap_constant ≤ B) (hQ : 0 < Q)
@@ -64,7 +52,6 @@ theorem carrier_subset_scalar_component (N : CapCertificate g) (D : LeviCivitaDa
   exact lt_trans (by linarith only [hQ]) hscalar
 
 omit [T2Space M] in
-
 
 theorem endpoints_not_mem_of_scalar_band (N : CapCertificate g) (D : LeviCivitaData g)
     {B Q : ℝ} (hB : N.cap_constant ≤ B) (hQ : 0 < Q)
@@ -86,9 +73,6 @@ theorem endpoints_not_mem_of_scalar_band (N : CapCertificate g) (D : LeviCivitaD
     have hpositive : 0 < B * D.scalarCurvature w :=
       mul_pos hBpos (N.scalar_pos_of_connection D hw)
     nlinarith only [hratio, hupper, hpositive]
-
-
-
 
 theorem not_mem_core_of_scalar_band (N : CapCertificate g) (D : LeviCivitaData g)
     (hepsilon : N.epsilon ≤ neckShorteningEpsilon)

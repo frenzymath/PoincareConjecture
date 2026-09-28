@@ -1,23 +1,10 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem circle_lift_add_two_pi_of_strictMono {e : Circle → Circle}
     (he : Function.Injective e) {H : ℝ → ℝ} (hcont : Continuous H) (hmono : StrictMono H)
@@ -45,9 +32,6 @@ theorem circle_lift_add_two_pi_of_strictMono {e : Circle → Circle}
     (by linarith) ⟨hs.1, hslt⟩ ⟨le_rfl, by linarith⟩ hexp
   rw [hst] at hval
   linarith
-
-
-
 
 theorem circle_lift_add_two_pi_of_strictAnti {e : Circle → Circle}
     (he : Function.Injective e) {H : ℝ → ℝ} (hcont : Continuous H) (hanti : StrictAnti H)

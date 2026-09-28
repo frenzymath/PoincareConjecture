@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 import PoincareConjecture.Definitions.M45ControlledSchedules
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,9 +13,6 @@ structure RepairedNoncollapseInductionData
     (S : RepairedControlledSchedulesData.{u}) where
   induction : ∀ p : SurgeryParameterPrefix S.constants,
     S.SeedCompatible p → Nonempty (SurgeryNoncollapseExtension.{u} p)
-
-
-
 
 def OldTestedVolumeControls {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K)

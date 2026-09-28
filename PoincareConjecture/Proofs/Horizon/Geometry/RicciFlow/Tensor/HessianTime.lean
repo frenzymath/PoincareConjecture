@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 lemma hasDerivAt_hessian_time
     (F : RicciFlow n M J) {f : ℝ × M → ℝ} {df : M → ℝ}
@@ -67,8 +57,6 @@ private lemma scalarCurvature_smooth
   intro i _
   rfl
 
-
-
 lemma hasDerivAt_hessian_scalarCurvature
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -99,8 +87,6 @@ lemma hasDerivAt_hessian_scalarCurvature
   · intro y
     exact (hC.scalar_evolution n M J F t (interior_subset ht) y).hasDerivAt
       (mem_interior_iff_mem_nhds.mp ht)
-
-
 
 lemma hasDerivAt_hessian_scalarCurvature_contractions
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

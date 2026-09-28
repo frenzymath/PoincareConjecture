@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerDilation
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -153,10 +143,6 @@ private theorem m65WeakTrace_approximate_at_scale
     Filter.eventually_all.mpr (fun i => (hBlim i).eventually (ball_mem_nhds _ heps))
   obtain ⟨k, hkA, hkB⟩ := (hAe.and hBe).exists
   exact ⟨f k, A k, B k, hf k, hA k, hB k, hkA, hkB⟩
-
-
-
-
 
 theorem m65WeakTrace_exists_smooth_graph
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

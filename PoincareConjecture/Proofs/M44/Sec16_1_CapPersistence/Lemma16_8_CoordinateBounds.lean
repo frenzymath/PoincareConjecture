@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CoordinateEvolution
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +8,6 @@ open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M44
-
-
-
-
 
 theorem exists_closed_coordinate_jet_estimates
     (n m : ℕ) (K : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.NormalChartBounds
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.NormalCoverCoefficients
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CurvatureJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Topology NNReal Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_complete_static_limit_of_normal_covers
     {n : ℕ} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]

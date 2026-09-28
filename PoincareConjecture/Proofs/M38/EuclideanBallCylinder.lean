@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.EuclideanBallNormalization
 import PoincareConjecture.Proofs.M38.EllipsoidComplement
 import PoincareConjecture.Proofs.M38.RoundExteriorCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,11 +20,9 @@ variable (B : SurgeryBallEmbedding euclideanCarrier.{u})
   (L : StandardCapSpace ≃L[ℝ] StandardCapSpace)
   (a : StandardCapSpace)
 
-
 noncomputable def euclideanBallRoundMap (ρ : ℝ) (y : euclideanCarrier.{u}.carrier) :
     StandardCapSpace :=
   directionalRadialMap L ρ ((e y).down - a)
-
 
 noncomputable def euclideanBallRoundInverse (ρ : ℝ) (x : StandardCapSpace) :
     euclideanCarrier.{u}.carrier :=
@@ -54,13 +43,11 @@ theorem euclideanBallAffine_mem_exterior {y : euclideanCarrier.{u}.carrier}
 
 include hb hρ hsize hinner
 
-
 theorem euclideanBallRoundMap_mem {y : euclideanCarrier.{u}.carrier}
     (hy : y ∈ B.closedBallᶜ) :
     directionalRadialScale L * b < ‖euclideanBallRoundMap e L a ρ y‖ :=
   directionalRadialMap_mapsTo_exterior L hb hρ (hsize.trans (by nlinarith))
     (euclideanBallAffine_mem_exterior B e L a hb hinner hy)
-
 
 theorem euclideanBallRoundInverse_mem {x : StandardCapSpace}
     (hx : directionalRadialScale L * b < ‖x‖) :
@@ -78,7 +65,6 @@ theorem euclideanBallRoundInverse_mem {x : StandardCapSpace}
   rw [← heq, e.symm_apply_apply]
   exact hy
 
-
 theorem euclideanBallRound_left_inverse :
     Set.LeftInvOn (euclideanBallRoundMap e L a ρ)
       (euclideanBallRoundInverse e L a ρ)
@@ -90,7 +76,6 @@ theorem euclideanBallRound_left_inverse :
   simp only [ULift.down_up, add_sub_cancel_left]
   exact directionalRadial_right_inverse L hρ
     (norm_pos_iff.mp ((mul_pos (directionalRadialScale_pos L) hb).trans hx))
-
 
 theorem euclideanBallRound_right_inverse :
     Set.LeftInvOn (euclideanBallRoundInverse e L a ρ)
@@ -108,7 +93,6 @@ theorem euclideanBallRound_right_inverse :
     abel
   rw [hpoint, e.symm_apply_apply]
 
-
 theorem euclideanBallRoundMap_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (euclideanBallRoundMap e L a ρ)
       B.closedBallᶜ := by
@@ -123,7 +107,6 @@ theorem euclideanBallRoundMap_smooth :
   exact hJ.comp hc.contMDiffOn (fun y hy =>
     euclideanBallAffine_mem_exterior B e L a hb hinner hy)
 
-
 theorem euclideanBallRoundInverse_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (euclideanBallRoundInverse e L a ρ)
       {x : StandardCapSpace | directionalRadialScale L * b < ‖x‖} := by
@@ -135,7 +118,6 @@ theorem euclideanBallRoundInverse_smooth :
   exact e.symm.contMDiff.comp_contMDiffOn
     ((threeManifold_up_contMDiff StandardCapSpace).comp_contMDiffOn
       (contMDiff_const.contMDiffOn.add hJ))
-
 
 noncomputable def euclideanBallRoundHomeomorph :
     ↥(B.closedBallᶜ) ≃ₜ {x : StandardCapSpace | directionalRadialScale L * b < ‖x‖} where
@@ -149,7 +131,6 @@ noncomputable def euclideanBallRoundHomeomorph :
     (euclideanBallRoundMap_smooth B e L a hb hρ hsize hinner).continuousOn.domRestrict.subtype_mk _
   continuous_invFun :=
     (euclideanBallRoundInverse_smooth B e L a hb hρ hsize hinner).continuousOn.domRestrict.subtype_mk _
-
 
 noncomputable def euclideanBallCylinder : OpenCylinderModel B.closedBallᶜ where
   homeomorph := (roundExteriorHomeomorph (mul_pos (directionalRadialScale_pos L) hb)).trans
@@ -187,19 +168,15 @@ noncomputable def euclideanBallCylinder : OpenCylinderModel B.closedBallᶜ wher
       (euclideanBallRoundMap_smooth B e L a hb hρ hsize hinner)
       (fun _ hy => euclideanBallRoundMap_mem B e L a hb hρ hsize hinner hy)
 
-
 theorem euclideanBallCylinder_coordinate (z : RoundCylinderSpace) :
     (euclideanBallCylinder B e L a hb hρ hsize hinner).coordinate z =
       e.symm (ULift.up (a + directionalRadialInverse L ρ
         (roundExteriorCoordinate (directionalRadialScale L * b) z))) := rfl
 
-
 theorem euclideanBallCylinder_inverse (y : euclideanCarrier.{u}.carrier) :
     (euclideanBallCylinder B e L a hb hρ hsize hinner).inverse y =
       roundExteriorInverse (directionalRadialScale L * b)
         (directionalRadialMap L ρ ((e y).down - a)) := rfl
-
-
 
 theorem euclideanBallCylinder_inner_inverse (z : UnitTwoSphere) {t : ℝ}
     (ht : 1 < t) (htop : t ≤ 5 / 4) :
@@ -237,7 +214,6 @@ theorem euclideanBallCylinder_inner_inverse (z : UnitTwoSphere) {t : ℝ}
   congr 2
   field_simp [hb.ne', ht0.ne', (directionalRadialScale_pos L).ne'] <;> ring
 
-
 theorem euclideanBallCylinder_inner_coordinate (z : UnitTwoSphere) {t : ℝ}
     (ht : 1 < t) (htop : t ≤ 5 / 4) :
     (euclideanBallCylinder B e L a hb hρ hsize hinner).coordinate
@@ -259,7 +235,6 @@ theorem euclideanBallCylinder_inner_coordinate (z : UnitTwoSphere) {t : ℝ}
   rw [← euclideanBallCylinder_inner_inverse B e L a hb hρ hsize hinner z ht htop]
   exact (euclideanBallCylinder B e L a hb hρ hsize hinner).right_inverse hmem
 
-
 theorem euclideanBallCylinder_outer_inverse (y : euclideanCarrier.{u}.carrier)
     (hfix : e y = y) (hy : (3 / 2) * ρ ≤ ‖y.down - a‖) :
     (euclideanBallCylinder B e L a hb hρ hsize hinner).inverse y =
@@ -267,7 +242,6 @@ theorem euclideanBallCylinder_outer_inverse (y : euclideanCarrier.{u}.carrier)
         1 - (directionalRadialScale L * b) / ‖y.down - a‖) := by
   rw [euclideanBallCylinder_inverse, hfix, directionalRadialMap_outer L hρ hy]
   rfl
-
 
 theorem euclideanBallCylinder_outer_coordinate (z : UnitTwoSphere) (s : ℝ)
     (hfix : e (ULift.up (a +

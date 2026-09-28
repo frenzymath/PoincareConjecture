@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.AdaptedFieldOn
 import PoincareConjecture.Proofs.M09.OpenODEUniqueness
 import PoincareConjecture.Proofs.M09.CurvePhase
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

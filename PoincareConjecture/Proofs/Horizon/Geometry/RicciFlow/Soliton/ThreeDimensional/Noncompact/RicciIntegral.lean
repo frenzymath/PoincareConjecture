@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Sh
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -66,8 +59,6 @@ private theorem continuousAt_ricci_curve
   simp only [Function.comp_apply, TensorFiber.continuousMultilinear_apply, R,
     c.left_inv hs, LeviCivitaData.tensorCoordinateSection_apply,
     LeviCivitaData.tensorCoordinateEvaluation, LeviCivitaData.ricciEvaluation, hrec]
-
-
 
 theorem exists_integral_abs_ricci_le_sqrt_length
     (S : GradientShrinkingSolitonData 3 M)

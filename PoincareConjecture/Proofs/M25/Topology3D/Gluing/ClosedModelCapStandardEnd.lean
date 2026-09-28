@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ClosedModelCapCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem closedModelCapData_exists_cofinalEndChart
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
@@ -102,10 +91,6 @@ theorem closedModelCapData_exists_cofinalEndChart
   apply Subtype.isCompact_iff.mpr
   rw [himage]
   exact C.isCompact_end_neck_lower_cut hd
-
-
-
-
 
 theorem closedModelCapData_exists_standardEnd_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

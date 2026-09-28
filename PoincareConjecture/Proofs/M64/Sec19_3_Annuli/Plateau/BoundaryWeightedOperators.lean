@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryNaturalGrowthBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -31,25 +21,14 @@ local instance m64WeightedOperator_pairSpace :
     NormedSpace ℝ ((E × E) →L[ℝ] (E × E) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
-
 def m64WeightedPairMetric (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ) :
     (E × E) →L[ℝ] (E × E) →L[ℝ] ℝ :=
   w 0 • G.bilinearComp (ContinuousLinearMap.fst ℝ E E) (ContinuousLinearMap.fst ℝ E E) +
     w 1 • G.bilinearComp (ContinuousLinearMap.snd ℝ E E) (ContinuousLinearMap.snd ℝ E E)
 
-
-
-
 theorem m64WeightedPairMetric_apply (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ)
     (v z : E × E) :
     m64WeightedPairMetric w G v z = w 0 * G v.1 z.1 + w 1 * G v.2 z.2 := rfl
-
-
-
-
 
 theorem m64WeightedPairMetric_norm_le (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ)
     {C Lambda : ℝ} (hG : ‖G‖ ≤ C) (hw : ∀ i, 0 ≤ w i ∧ w i ≤ Lambda) :
@@ -77,10 +56,6 @@ theorem m64WeightedPairMetric_norm_le (w : Fin 2 → ℝ) (G : E →L[ℝ] E →
       · exact norm_snd_le _
     _ = _ := by ring
 
-
-
-
-
 theorem m64WeightedPairMetric_coercive (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ)
     {kappa mu : ℝ} (hk : 0 ≤ kappa) (hmu : 0 ≤ mu)
     (hG : ∀ v : E, kappa * ‖v‖ ^ 2 ≤ G v v) (hw : ∀ i, mu ≤ w i) (v : E × E) :
@@ -100,10 +75,6 @@ theorem m64WeightedPairMetric_coercive (w : Fin 2 → ℝ) (G : E →L[ℝ] E �
     have h1 : 0 ≤ w 1 * G v.2 v.2 := le_trans (by positivity) (hdiag 1 v.2)
     linarith [hdiag 0 v.1]
 
-
-
-
-
 theorem m64WeightedPairMetric_sub (w : Fin 2 → ℝ) (G H : E →L[ℝ] E →L[ℝ] ℝ) :
     m64WeightedPairMetric w (G - H) = m64WeightedPairMetric w G - m64WeightedPairMetric w H := by
   apply ContinuousLinearMap.ext
@@ -113,10 +84,6 @@ theorem m64WeightedPairMetric_sub (w : Fin 2 → ℝ) (G H : E →L[ℝ] E →L[
   simp only [sub_apply, m64WeightedPairMetric_apply]
   ring
 
-
-
-
-
 theorem m64WeightedPairMetric_gradient_bound
     (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ)
     {C Lambda : ℝ} (hG : ‖G‖ ≤ C) (hw : ∀ i, 0 ≤ w i ∧ w i ≤ Lambda) (v z : E × E) :
@@ -125,10 +92,6 @@ theorem m64WeightedPairMetric_gradient_bound
   rw [← map_sub]
   exact (m64WeightedPairMetric w G).le_of_opNorm_le
     (m64WeightedPairMetric_norm_le w G hG hw) _
-
-
-
-
 
 theorem m64WeightedPairMetric_base_bound
     (w : Fin 2 → ℝ) (G H : E →L[ℝ] E →L[ℝ] ℝ)
@@ -140,10 +103,6 @@ theorem m64WeightedPairMetric_base_bound
   rw [m64WeightedPairMetric_sub] at hnorm
   have h := (m64WeightedPairMetric w G - m64WeightedPairMetric w H).le_of_opNorm_le hnorm v
   simpa only [sub_apply, mul_assoc] using h
-
-
-
-
 
 theorem m64WeightedPairMetric_strong_monotone
     (w : Fin 2 → ℝ) (G : E →L[ℝ] E →L[ℝ] ℝ)

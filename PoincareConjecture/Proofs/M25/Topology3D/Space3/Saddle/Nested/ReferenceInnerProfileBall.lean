@@ -4,25 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.RoundProfileNative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ContainedProfileBall
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedReferenceModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace Pointwise
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_inner_reference_profile_ball_family :
     let U : E2 → ℝ := fun v =>

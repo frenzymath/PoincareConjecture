@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.UniformSampledPolygon
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledPolygonSpeed
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonMapUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m64_uniform_sampled_polygon_unique
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
@@ -71,9 +57,6 @@ theorem m64_uniform_sampled_polygon_unique
   exact hcompare ((hother j).trans (hsampled j).symm)
     ((hother (finRotate N j)).trans (hsampled (finRotate N j)).symm)
     hpq (polygon.side j) (other.side j) hs
-
-
-
 
 theorem m64_uniform_compact_sampled_polygon_unique
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

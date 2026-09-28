@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChangeOfV
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -63,7 +56,6 @@ theorem fderiv_chartPullback_apply
   convert! h using 1
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem exists_chart_fderiv_sq_bound
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -121,7 +113,6 @@ theorem exists_chart_fderiv_sq_bound
     (mul_nonneg (norm_nonneg _) (Real.sqrt_nonneg C)) |>.mpr hop
   simpa only [mul_pow, Real.sq_sqrt hC, mul_comm] using hs
 
-
 theorem integral_eq_chartPullback_density
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -140,7 +131,6 @@ theorem integral_eq_chartPullback_density
     rw [chartPullback_apply e f hx]
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem integrable_chartPullback_density
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -169,8 +159,6 @@ private theorem gradient_energy_nonneg (f : M → ℝ) (x : M) :
   by_cases h : D.gradient f x = 0
   · simp [h]
   · exact (g.pos x _ h).le
-
-
 
 theorem exists_integral_chart_fderiv_sq_le_energy
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -230,8 +218,6 @@ theorem exists_integral_chart_fderiv_sq_le_energy
     (∫ x, ‖fderiv ℝ (chartPullback e f) x‖ ^ 2) * c ≤
         A * ∫ y, G y ∂g.volumeMeasure := by simpa only [mul_comm] using hint
     _ ≤ A * ‖f‖ ^ 2 := mul_le_mul_of_nonneg_left hener hA
-
-
 
 theorem exists_integral_chart_sq_le_energy
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

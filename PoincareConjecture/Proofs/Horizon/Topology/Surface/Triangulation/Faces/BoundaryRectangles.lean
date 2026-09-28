@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.BoundaryRectangles
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Rectangles
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -29,7 +19,6 @@ variable {D : FiniteChartRegionDecomposition (M := M)}
 namespace BoundaryRectangle
 
 variable {a : D.EdgeIndex} (R : D.BoundaryRectangle a)
-
 
 noncomputable def triangleBasis : Bool → AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))
   | false => rectangleLowerBasis (c := -R.width / 2) (d := R.width / 2)
@@ -58,8 +47,6 @@ private theorem segment_image (x y : EuclideanSpace ℝ (Fin 2)) :
   congr 1
   funext t
   simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]
-
-
 
 theorem exists_smoothFaces :
     ∃ face : Bool → SmoothFace M,
@@ -129,9 +116,6 @@ theorem exists_smoothFaces :
         rfl
 
 end BoundaryRectangle
-
-
-
 
 theorem exists_boundary_rectangle_faces (D : FiniteChartRegionDecomposition (M := M))
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius p) :

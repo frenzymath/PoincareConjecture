@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderCurvature
 import PoincareConjecture.Proofs.M34.Standard.CoordinateScalarGerm
 import PoincareConjecture.Proofs.M34.Standard.ScalarMetricJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryChapter11_tendsto_curvatures_zero
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

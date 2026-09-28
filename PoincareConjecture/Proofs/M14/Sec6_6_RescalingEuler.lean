@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPullback
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingPaths
 import PoincareConjecture.Proofs.M14.Sec6_2_SquarePullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,14 +21,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
 
 include hQ in
 
-
 theorem rescalingParameter_mapsTo (τ₁ τ₂ : ℝ) :
     MapsTo (fun s : ℝ => s / Q) (Ioo (Q * τ₁) (Q * τ₂)) (Ioo τ₁ τ₂) := by
   intro s hs
   exact ⟨(lt_div_iff₀ hQ).mpr (by simpa only [mul_comm] using hs.1),
     (div_lt_iff₀ hQ).mpr (by simpa only [mul_comm] using hs.2)⟩
-
-
 
 noncomputable def rescalingPathExtension
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
@@ -47,8 +36,6 @@ noncomputable def rescalingPathExtension
   pullbackExtensionSmulComp (rescalingPullbackExtension hM12 hM13 G Q hQ a E)
     (fun s => s / Q) (fun _ => Q⁻¹) (contDiff_id.div_const Q) contDiff_const
     (rescalingParameter_mapsTo Q hQ τ₁ τ₂)
-
-
 
 theorem rescalingPath_covariantDerivative
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
@@ -73,8 +60,6 @@ theorem rescalingPath_covariantDerivative
   simp only [deriv_const, zero_smul, zero_add, hderiv,
     rescalingPullbackDerivative hM12 hM13 G Q hQ a E (hm hs)] at h
   exact h
-
-
 
 theorem rescalingEulerResidual
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
@@ -112,8 +97,6 @@ theorem rescalingEulerResidual
     rescalingScalarDifferential hM12 hM13 G Q hQ a]
   field_simp [hQ.ne']
 
-
-
 theorem rescalingEulerEquation
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)
@@ -127,9 +110,6 @@ theorem rescalingEulerEquation
   rw [rescalingEulerResidual hM12 hM13 G Q hQ a p E hs W,
     he _ (rescalingParameter_mapsTo Q hQ τ₁ τ₂ hs) W, mul_zero]
 
-
-
-
 theorem rescalingEuler_extension_independent
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
     (E F : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)
@@ -138,8 +118,6 @@ theorem rescalingEuler_extension_independent
   have hd := horizontalCovariantDerivative_extension_independent E F hs
     (isOpen_Ioo.uniqueDiffOn s hs) ((p.curve_regular s hs).mdifferentiableWithinAt (by simp))
   simp only [M14EulerResidual, hd]
-
-
 
 theorem eulerEquation_of_rescaling
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)

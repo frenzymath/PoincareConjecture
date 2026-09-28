@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.CurvatureRicciDerivative
 import PoincareConjecture.Proofs.M03.CurvatureDerivativeTensoriality
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -337,19 +328,16 @@ theorem ricci_second_covariant_derivative_eq_sum_basis
       hθrepr (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) v) i he
   simpa only [hθx, E, J, I2, K, H, N, R] using htraceJ P Q B C hPV hQV hBV hCV
 
-
 abbrev CurvatureResidualPattern (k : ℕ) :=
   Σ (p : ℕ) (q : ℕ),
     ℤ × ((Fin (p + 4) ⊕ Fin (q + 4)) ≃ (Fin (k + 4) ⊕ Fin 4))
 
 namespace CurvatureResidualPattern
 
-
 theorem orders {k : ℕ} (r : CurvatureResidualPattern k) : r.1 + r.2.1 = k := by
   have h := Fintype.card_congr r.2.2.2
   simp only [Fintype.card_sum, Fintype.card_fin] at h
   omega
-
 
 def optionSumLeft {α β : Type*} : (Option α ⊕ β) ≃ Option (α ⊕ β) where
   toFun
@@ -371,7 +359,6 @@ def optionSumLeft {α β : Type*} : (Option α ⊕ β) ≃ Option (α ⊕ β) wh
     | none => rfl
     | some s => cases s <;> rfl
 
-
 def optionSumRight {α β : Type*} : (α ⊕ Option β) ≃ Option (α ⊕ β) where
   toFun
     | .inl a => some (.inl a)
@@ -392,10 +379,8 @@ def optionSumRight {α β : Type*} : (α ⊕ Option β) ≃ Option (α ⊕ β) w
     | none => rfl
     | some s => cases s <;> rfl
 
-
 def oldSlot {k : ℕ} : (Fin (k + 4) ⊕ Fin 4) → (Fin (k + 1 + 4) ⊕ Fin 4) :=
   Sum.map Fin.succ id
-
 
 def slotsLeft {p q k : ℕ}
     (slots : (Fin (p + 4) ⊕ Fin (q + 4)) ≃ (Fin (k + 4) ⊕ Fin 4)) :
@@ -404,7 +389,6 @@ def slotsLeft {p q k : ℕ}
     (optionSumLeft.trans ((Equiv.optionCongr slots).trans
       (optionSumLeft.symm.trans
         (Equiv.sumCongr (finSuccEquiv (k + 4)).symm (Equiv.refl _)))))
-
 
 def slotsRight {p q k : ℕ}
     (slots : (Fin (p + 4) ⊕ Fin (q + 4)) ≃ (Fin (k + 4) ⊕ Fin 4)) :
@@ -458,11 +442,9 @@ theorem oldSlot_endpoint {k : ℕ} (j : Fin 4) :
 theorem oldSlot_last (k : ℕ) :
     oldSlot (k := k) (.inl (Fin.last (k + 3))) = .inl (Fin.last (k + 4)) := rfl
 
-
 def differentiateLeft {k : ℕ} (r : CurvatureResidualPattern k) :
     CurvatureResidualPattern (k + 1) :=
   ⟨r.1 + 1, r.2.1, r.2.2.1, slotsLeft r.2.2.2⟩
-
 
 def differentiateRight {k : ℕ} (r : CurvatureResidualPattern k) :
     CurvatureResidualPattern (k + 1) :=
@@ -519,7 +501,6 @@ theorem fill_slotsRight_right {V : Type*} {p q k : ℕ}
     rfl
   · rw [slotsRight_inr_succ, fill_oldSlot]
     rfl
-
 
 noncomputable def evaluate {ι V : Type*} [Fintype ι] {k : ℕ}
     (r : CurvatureResidualPattern k) (a : ι → ι → ℝ)
@@ -712,7 +693,6 @@ theorem curvature_iterated_insert_lowered_inverse_frame
     _ = _ := by
       simp only [hlowq, hlow _ (hE _)]
 
-
 theorem CurvatureResidualPattern.contMDiffOn_evaluate
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {k : ℕ}
     (r : CurvatureResidualPattern k) (x0 : M) :
@@ -787,7 +767,6 @@ theorem CurvatureResidualPattern.contMDiffOn_evaluate
         (hlow r.2.1 _ (fun j => hfill γ (.inr j))))
   change C (fun y => (r.2.2.1 : ℝ) * Q X y)
   exact contMDiffOn_const.mul hQ
-
 
 theorem CurvatureResidualPattern.covariant_derivative_evaluate
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {k : ℕ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinderPullback
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckSpatialMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
 
 variable {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
   {K : Set ℝ} {U : Set C.carrier}
-
-
 
 noncomputable def ordinaryChapter11CylinderOpenPartialHomeomorph
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hU : IsOpen U)
@@ -73,8 +62,6 @@ noncomputable def ordinaryChapter11CylinderOpenPartialHomeomorph
       rfl
     rwa [himage] at hopen
 
-
-
 theorem ordinaryChapter11CylinderOpenPartialHomeomorph_apply
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ K) (ht : origin + s / scale ∈ I.domain) (x : C.carrier) :
@@ -82,13 +69,10 @@ theorem ordinaryChapter11CylinderOpenPartialHomeomorph_apply
       ordinaryChapter11CylinderSpatialMap R e s hs x :=
   ordinaryChapter11_inverse_projection R ⟨origin + s / scale, ht⟩ (e.forward s hs x)
 
-
 theorem ordinaryChapter11CylinderOpenPartialHomeomorph_source
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ K) (ht : origin + s / scale ∈ I.domain) :
     (ordinaryChapter11CylinderOpenPartialHomeomorph R e hU s hs ht).source = U := rfl
-
-
 
 theorem ordinaryChapter11CylinderOpenPartialHomeomorph_smooth
     (e : GeneralizedFlowCylinder (G) C origin scale K U) (hU : IsOpen U)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitFieldBound
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialDerivativeBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.RepairedStandardCapExistenceData
 
 open M35.Uniqueness
-
-
 
 theorem normalized_radial_field_almost_parallel_on_balls
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Circle.Normal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := Metric.sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem fderiv_eq_self_on_circle_tangent {e : E2 -> E2}
     (he : ContDiff Real ∞ e) (hfix : ∀ p : S1, e p = p) (p : S1)
@@ -73,8 +69,6 @@ private theorem bijective_convex_identity_of_positive_normal
     rw [hB, htan u hpu, ← add_smul, sub_add_cancel, one_smul] at hu
     exact hu
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
-
-
 
 theorem bijective_fderiv_circle_collar_homotopy {e : E2 -> E2}
     (he : ContDiff Real ∞ e) (hfix : ∀ p : S1, e p = p)

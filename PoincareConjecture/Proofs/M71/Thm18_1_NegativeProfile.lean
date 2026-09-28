@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M71.Thm18_1_NegativeTime
 import PoincareConjecture.Proofs.M71.WidthInputs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -18,8 +10,6 @@ namespace PoincareConjecture
 variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {W : RepairedEventChildWitness D.flow}
   {ancestry : RepairedFiniteAncestryData D.flow W}
-
-
 
 theorem m71Profile_neg_at_extinctionTime
     (Q : M71FiniteContinuationService D W ancestry)

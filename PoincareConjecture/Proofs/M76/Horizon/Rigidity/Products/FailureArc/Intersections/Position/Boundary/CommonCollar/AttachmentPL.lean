@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLClosedUnion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

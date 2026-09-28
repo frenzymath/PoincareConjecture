@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalCurvatureLimit
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalFirstLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "StateV" => State ((ℤ × Fin 2) × ι)
 local notation "X" => C(AddCircle L, W)
 local notation "Y" => C(AddCircle curvePeriod, W)
-
-
-
 
 theorem exists_closed_normal_geometric_fields_of_spectral_family
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FiniteCornerCapData
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,10 +8,6 @@ open Set
 open scoped Topology ContDiff Matrix
 
 namespace PoincareConjecture
-
-
-
-
 
 abbrev M64IntrinsicTriangleCaps (base alpha beta : ℝ → AnnulusCoordinates)
     (D A B : ℝ) (U : Set AnnulusCoordinates) :=
@@ -38,10 +29,6 @@ private theorem reverse_image (gamma : ℝ → AnnulusCoordinates) (T : ℝ) :
   change (gamma ∘ fun s => T - s) '' Icc 0 T = _
   rw [image_comp, image_const_sub_Icc]
   simp only [sub_self, sub_zero]
-
-
-
-
 
 theorem m64Intrinsic_exists_triangle_corner_caps
     {base alpha beta : ℝ → AnnulusCoordinates}

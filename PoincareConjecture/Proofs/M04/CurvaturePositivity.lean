@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M04.PointwiseFlatness
 import PoincareConjecture.Proofs.M04.CompactRicciPreservation
 import PoincareConjecture.Proofs.M04.CompactSectionalPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -28,13 +19,11 @@ variable {N : Type u} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
   [T2Space N] [SecondCountableTopology N]
 
-
 theorem nonnegativeSectionalCurvature_preserved [CompactSpace N]
     {T : ℝ} (hT : 0 < T) (F : RicciFlow 3 N (Set.Icc 0 T))
     (hinit : (F.connection 0).NonnegativeSectionalCurvature) :
     ∀ t ∈ Set.Icc 0 T, (F.connection t).NonnegativeSectionalCurvature := by
   exact M04.nonnegativeSectionalCurvature_preserved_compact hT F hinit
-
 
 theorem nonnegativeRicciCurvature_preserved [CompactSpace N]
     {T : ℝ} (hT : 0 < T) (F : RicciFlow 3 N (Set.Icc 0 T))
@@ -95,4 +84,3 @@ theorem flat_of_scalarCurvature_eq_zero [ConnectedSpace N]
     (F.connection t) x (hsec t ht x) (hzeroAll ht)
 
 end PoincareConjecture.RicciFlow
-

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.Uniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.RepairedStandardCapExistenceData

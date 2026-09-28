@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -78,8 +69,6 @@ private def ambientPartialDiffeomorph (U W : Opens M)
   contMDiffOn_toFun := (transportMap_local D).contMDiffOn
   contMDiffOn_invFun := (transportMap_local D.symm).contMDiffOn
 
-
-
 theorem exists_euclidean_chart_of_open_diffeomorph
     (U W : Opens M) (D : Diffeomorph (𝓡 3) (𝓡 3) U W ∞)
     (e : OpenPartialHomeomorph M E3) (hes : e.source = (U : Set M))
@@ -107,8 +96,6 @@ theorem exists_euclidean_chart_of_open_diffeomorph
       inter_subset_right,
     (ambientPartialDiffeomorph U W D).contMDiffOn.comp
       (hei.mono inter_subset_left) inter_subset_right⟩
-
-
 
 def projective_cover_of_open_diffeomorph
     (U W : Opens M) (D : Diffeomorph (𝓡 3) (𝓡 3) U W ∞)

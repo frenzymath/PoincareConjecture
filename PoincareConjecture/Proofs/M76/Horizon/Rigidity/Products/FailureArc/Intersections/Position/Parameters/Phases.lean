@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.WholeCircleA
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.RimCircleCoordinates
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

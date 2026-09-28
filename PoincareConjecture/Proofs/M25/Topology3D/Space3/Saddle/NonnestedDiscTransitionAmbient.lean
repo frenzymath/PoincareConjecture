@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedDiscTransition
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedHeightFirstAmbientExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
 
 theorem exists_saddle_nonnested_disc_transition_ambient
     (U V : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))

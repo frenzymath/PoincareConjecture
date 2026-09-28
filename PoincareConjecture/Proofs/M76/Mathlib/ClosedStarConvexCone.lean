@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarConvexFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -19,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem convexJoin_closedStar_frontier_eq_inter
     (K : SimplicialComplex ℝ E) {C : Set E}
@@ -56,8 +42,6 @@ variable [FiniteDimensional ℝ E]
 
 omit [DecidableEq E] in
 
-
-
 theorem interior_space_eq_empty_of_card_le
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hcard : ∀ s ∈ K.faces, s.card ≤ Module.finrank ℝ E) :
@@ -69,8 +53,6 @@ theorem interior_space_eq_empty_of_card_le
   omega
 
 omit [FiniteDimensional ℝ E] in
-
-
 
 theorem exists_frontier_notMem_closedStar
     (K : SimplicialComplex ℝ E) (hint : interior K.space = ∅)

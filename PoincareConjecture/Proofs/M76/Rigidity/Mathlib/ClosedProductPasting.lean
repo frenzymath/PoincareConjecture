@@ -1,14 +1,6 @@
 import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.ContinuousOn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace ContinuousMap
 
 variable {T X Y : Type*} [TopologicalSpace T] [TopologicalSpace X]
   [TopologicalSpace Y]
-
-
-
 
 theorem exists_paste_of_eq_on_frontier {C : Set X} (hC : IsClosed C)
     (G : C(T × C, Y)) (H : C(T × X, Y))

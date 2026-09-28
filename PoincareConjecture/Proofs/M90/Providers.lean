@@ -44,15 +44,6 @@ import PoincareConjecture.Proofs.M79
 import PoincareConjecture.Proofs.M80
 import PoincareConjecture.Proofs.M83
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -60,16 +51,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
 
 theorem m90SmoothEndpointInputs
     (M : Type u) [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
@@ -112,12 +93,6 @@ theorem m90SmoothEndpointInputs
       (m83NoProjectivePlaneFromMilestones (M := M))
   obtain ⟨I, _hI⟩ := m75EndpointInputFromExtinction G L E
   exact ⟨N0.data, ⟨I⟩⟩
-
-
-
-
-
-
 
 theorem m90EndpointPackageFromMilestones : Nonempty (M80EndpointConclusion.{u}) := by
   have hSmooth : SmoothPoincare.{u} := m75SmoothPoincare m90SmoothEndpointInputs

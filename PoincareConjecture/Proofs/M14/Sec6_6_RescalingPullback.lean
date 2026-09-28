@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingGeometry
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM12 : GeneralizedRicciGaugeTheory.{u} n)
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
-
-
 
 theorem rescalingHorizontalConnection (V : HorizontalSection G.spacetime)
     (p : G.Point) (Z : TangentSpace (spacetimeModel n) p) :
@@ -92,9 +81,6 @@ private theorem horizontal_hasDerivAt_deriv
     (g.toCore p).toNormedSpaceOfTopology (g.continuousAt p) (g.isVonNBounded p)
   exact hd.deriv
 
-
-
-
 noncomputable def rescalingPullbackExtension
     {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
     (E : M14PullbackExtension G γ J Y) :
@@ -121,8 +107,6 @@ noncomputable def rescalingPullbackExtension
       (γ s) (γ s) (M13.parabolicSpacetimeHorizontal G.spacetime Q hQ a (γ s)).toContinuousLinearMap
       (fun r => E.extension r (γ s)) d s hd
 
-
-
 theorem rescalingPullbackDerivative
     {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J) :
@@ -148,8 +132,6 @@ theorem rescalingPullbackDerivative
   rw [hparam]
   erw [rescalingHorizontalConnection hM12 hM13 G Q hQ a (E.extension s) (γ s)]
   simp only [M14HorizontalCovariantDerivative, map_add, hd']
-
-
 
 theorem rescalingScalarDifferential (p : G.Point) (Z : TangentSpace (spacetimeModel n) p) :
     M14HorizontalScalarDifferential (rescalingTransport hM12 hM13 G Q hQ a) p Z =

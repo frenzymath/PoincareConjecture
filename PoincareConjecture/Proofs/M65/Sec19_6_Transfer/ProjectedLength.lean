@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import PoincareConjecture.Proofs.M62.Lemma0_4_Continuity
 import PoincareConjecture.Definitions.M63Family
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -22,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
 
-
-
 theorem m65Projection_tangentNorm_le (P : M62.CircleProductData F circumference)
     (t : ℝ) (q : P.charts.Point) (v : TangentSpace (𝓡 (n + 1)) q) :
     (F.metric t).tangentNorm q.1 (P.charts.split q v).1 ≤
@@ -33,8 +23,6 @@ theorem m65Projection_tangentNorm_le (P : M62.CircleProductData F circumference)
   rw [P.metric_eq]
   exact le_add_of_nonneg_right
     ((P.circle.metricOnPoints.toRiemannianMetric.toCore q.2).re_inner_nonneg _)
-
-
 
 theorem m65Projection_speed_le (P : M62.CircleProductData F circumference)
     (gamma : ℝ → P.charts.Point) {x : ℝ}
@@ -53,8 +41,6 @@ theorem m65Projection_speed_le (P : M62.CircleProductData F circumference)
   rw [← P.charts.split_space] at hchain
   rw [hchain]
   exact m65Projection_tangentNorm_le P t (gamma x) (curveVelocity gamma x)
-
-
 
 theorem m65ProjectedFamilyLength_le
     {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

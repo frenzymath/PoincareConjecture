@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.Pointed
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +12,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.t2Space
 variable {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
   {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
 
-
 theorem exists_exhaustion_superset
     (G : AncientPointedGeometricConvergence C g p T)
     {K : Set G.limitCarrier.carrier} (hK : IsCompact K) :
@@ -28,9 +20,6 @@ theorem exists_exhaustion_superset
     monotone_nat_of_le_succ G.exhaustion_increasing
   exact hK.elim_directed_cover G.exhaustion G.exhaustion_open
     (by rw [G.exhaustion_covers]; exact subset_univ _) hmono.directed_le
-
-
-
 
 theorem eventually_isEmbedding_comp_of_compact
     (G : AncientPointedGeometricConvergence C g p T)

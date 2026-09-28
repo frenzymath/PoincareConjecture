@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AddCircleShortArcCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,22 +9,15 @@ namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
 
-
-
-
 noncomputable def centeredSquareQuotient :
     OpenPartialHomeomorph (ℝ × ℝ) (AddCircle p × AddCircle p) :=
   let A := ContinuousAffineEquiv.constVAdd ℝ (ℝ × ℝ) (p / 2, p / 2)
   A.toHomeomorph.toOpenPartialHomeomorph.trans
     ((openPartialHomeomorphCoe p 0).prod (openPartialHomeomorphCoe p 0))
 
-
-
 theorem centeredSquareQuotient_apply (x : ℝ × ℝ) :
     centeredSquareQuotient p x =
       (((p / 2 + x.1 : ℝ) : AddCircle p), ((p / 2 + x.2 : ℝ) : AddCircle p)) := rfl
-
-
 
 theorem centeredSquareQuotient_source :
     (centeredSquareQuotient p).source = {x | ‖x‖ < p / 2} := by
@@ -49,17 +32,12 @@ theorem centeredSquareQuotient_source :
   · rintro ⟨⟨hx₁, hx₂⟩, hy₁, hy₂⟩
     exact ⟨⟨by linarith, by linarith⟩, by linarith, by linarith⟩
 
-
-
 theorem centeredSquareQuotient_target :
     (centeredSquareQuotient p).target = {z | z.1 ≠ 0 ∧ z.2 ≠ 0} := by
   ext z
   change (((z.1 ≠ ((0 : ℝ) : AddCircle p)) ∧ (z.2 ≠ ((0 : ℝ) : AddCircle p))) ∧ True) ↔
     (z.1 ≠ 0 ∧ z.2 ≠ 0)
   simp
-
-
-
 
 theorem centeredSquareQuotient_transition_mem_piecewiseAffineGroupoid (a b : ℝ) :
     ((openPartialHomeomorphCoe p a).prod (openPartialHomeomorphCoe p b)).trans

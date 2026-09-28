@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -18,7 +11,6 @@ open scoped Manifold ContDiff Topology Bundle
 namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
 
 lemma abs_ricci_le_tangentNorm (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
@@ -45,8 +37,6 @@ lemma abs_ricci_le_tangentNorm (D : LeviCivitaData g)
     _ = _ := by
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
       ring
-
-
 
 lemma abs_ricci_le_of_upper_ellipticity (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) {b K : ℝ} (hb : 0 ≤ b)

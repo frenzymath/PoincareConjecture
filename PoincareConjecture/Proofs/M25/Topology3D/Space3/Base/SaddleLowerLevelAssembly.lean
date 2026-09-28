@@ -5,29 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
 
 theorem exists_saddle_lowerLevelData_of_legs
     (hP : PlanarSchoenfliesService)

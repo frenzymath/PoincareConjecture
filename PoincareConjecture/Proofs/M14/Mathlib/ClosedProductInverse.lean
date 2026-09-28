@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.TimePreservingRelativeInverse
 import PoincareConjecture.Proofs.M09.TriangularBijective
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimension
   {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem exists_closedProduct_inverse {q : E × ℝ → F} {U : Set E} {C : Set ℝ}
     (hU : IsOpen U) (hUc : Convex ℝ U) (hC : Convex ℝ C) (hCd : UniqueDiffOn ℝ C)

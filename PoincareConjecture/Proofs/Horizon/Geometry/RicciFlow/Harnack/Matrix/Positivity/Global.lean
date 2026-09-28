@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.Localization
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.FirstContact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -211,8 +204,6 @@ private theorem normalized_exp_quadratic_pos
       (houtside s (htime hs) p.val.1.val.1 p.property.1 hp))
   exact hp q t ⟨hat, ht.2⟩
 
-
-
 theorem hamiltonBlockPos_on_open_set_of_smoothExhaustion
     {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -271,8 +262,6 @@ theorem hamiltonBlockPos_on_open_set_of_smoothExhaustion
   have h := hnonneg (F.metric t) ⟨frameDirection x e z, hn⟩
   simpa only [hamiltonDirectionQuadratic, frameDirection, FiberFamily.vector,
     cast_eq, sub_zero] using h
-
-
 
 theorem hamiltonBlockPos_of_smoothExhaustion
     {n : ℕ} {M : Type u} [TopologicalSpace M]

@@ -2,20 +2,12 @@ import Mathlib.Topology.Instances.Matrix
 import Mathlib.Analysis.Real.Sqrt
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology
 
 namespace PoincareConjecture.M10
-
 
 theorem tendsto_scaled_sqrt_det {n : ℕ} {A : ℝ → Matrix (Fin n) (Fin n) ℝ}
     (hA : Tendsto (fun s : ℝ ↦ (s⁻¹) ^ 2 • A s) (𝓝[>] (0 : ℝ))

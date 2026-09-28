@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatBoundedRegion
 import PoincareConjecture.Proofs.M76.Brown.OrientedBicollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -16,9 +8,6 @@ open Set Metric
 namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_bounded_oriented_bicollar {S : Set V3}
     (hS : LocallyFlatTopologicalSphere S) :

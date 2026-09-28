@@ -3,28 +3,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexPathSubdivision
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped unitInterval
 
 namespace Path
-
-
-
-
-
 
 theorem homotopic_refl_in_punctured_space
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -123,10 +107,6 @@ theorem homotopic_refl_in_punctured_space
   exact hbased.trans (Path.Homotopic.symm_trans r0)
 
 end Path
-
-
-
-
 
 theorem isSimplyConnected_compl_zero_of_two_lt_finrank
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

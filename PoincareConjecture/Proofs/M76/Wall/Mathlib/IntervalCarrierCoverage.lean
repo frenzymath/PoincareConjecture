@@ -1,23 +1,11 @@
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Homeomorph
-
-
-
 
 theorem surjective_of_interval_endpoints
     {X : Type*} [TopologicalSpace X] (b : Icc (0 : ℝ) 1 ≃ₜ X)

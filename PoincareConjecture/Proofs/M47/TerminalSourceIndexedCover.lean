@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalFiniteCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M]
-
 
 structure TerminalSourceIndexedChartCover
     (g : RiemannianMetric 3 M) (p : M) (A R rho : ℝ) (N : ℕ) where
@@ -45,7 +36,6 @@ private theorem exists_surjective_fin_with_zero {α : Type*} [Fintype α]
   refine ⟨Fin.cases a (Function.invFun e), rfl, ?_⟩
   intro x
   exact ⟨(e x).succ, Function.leftInverse_invFun e.injective x⟩
-
 
 theorem terminalSource_exists_indexed_chart_cover
     (g : RiemannianMetric 3 M) (p : M) {A R rho : ℝ} {N : ℕ}
@@ -74,7 +64,6 @@ theorem terminalSource_exists_indexed_chart_cover
     cover := hindexed }, f, hf0, hf, fun _ => rfl⟩
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M] [SecondCountableTopology M]
-
 
 theorem terminalSourceNormal_nonempty_indexed_chart_cover
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (p : M)

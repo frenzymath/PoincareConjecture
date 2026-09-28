@@ -1,19 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
 import Mathlib.Data.Finset.Sort
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -32,7 +18,6 @@ private theorem subinterval_parameter_mem {a b t : ℝ}
     a + t * (b - a) ∈ Icc a b := by
   constructor <;> nlinarith [mul_nonneg ht.1 (sub_nonneg.mpr hab),
     mul_nonneg (sub_nonneg.mpr ht.2) (sub_nonneg.mpr hab)]
-
 
 noncomputable def SmoothEdge.subedge (e : SmoothEdge M) {a b : ℝ}
     (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ 1) : SmoothEdge M where
@@ -68,7 +53,6 @@ theorem SmoothEdge.subedge_map_one (e : SmoothEdge M) {a b : ℝ}
     (e.subedge ha hab hb).map 1 = e.map b := by
   simp [SmoothEdge.subedge]
 
-
 theorem SmoothEdge.subedge_image (e : SmoothEdge M) {a b : ℝ}
     (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ 1) :
     (e.subedge ha hab hb).map '' Icc (0 : ℝ) 1 = e.map '' Icc a b := by
@@ -85,7 +69,6 @@ theorem SmoothEdge.subedge_image (e : SmoothEdge M) {a b : ℝ}
       congr 1
       ring
 
-
 theorem SmoothEdge.subedge_injOn (e : SmoothEdge M)
     (he : InjOn e.map (Icc (0 : ℝ) 1)) {a b : ℝ}
     (ha : 0 ≤ a) (hab : a < b) (hb : b ≤ 1) :
@@ -94,8 +77,6 @@ theorem SmoothEdge.subedge_injOn (e : SmoothEdge M)
   have hp := he (Icc_subset_Icc ha hb (subinterval_parameter_mem hab.le hs))
     (Icc_subset_Icc ha hb (subinterval_parameter_mem hab.le ht)) h
   exact mul_right_cancel₀ (sub_ne_zero.mpr hab.ne') (add_left_cancel hp)
-
-
 
 theorem exists_ordered_unitInterval_cuts (s : Finset ℝ)
     (hs : ∀ t ∈ s, t ∈ Icc (0 : ℝ) 1) :
@@ -132,8 +113,6 @@ theorem exists_ordered_unitInterval_cuts (s : Finset ℝ)
       mem_singleton_iff]
     tauto
 
-
-
 theorem iUnion_Icc_consecutive {n : ℕ} (hn : 0 < n)
     (c : Fin (n + 1) → ℝ) (hc : Monotone c) :
     (⋃ i : Fin n, Icc (c i.castSucc) (c i.succ)) = Icc (c 0) (c (Fin.last n)) := by
@@ -167,9 +146,6 @@ theorem iUnion_Icc_consecutive {n : ℕ} (hn : 0 < n)
       have hle := s.le_max' i.succ hsucc
       have hlt : j < i.succ := hi ▸ (Fin.castSucc_lt_succ (i := i))
       exact (not_lt_of_ge hle) hlt
-
-
-
 
 theorem SmoothEdge.exists_finite_subdivision (e : SmoothEdge M)
     (he : InjOn e.map (Icc (0 : ℝ) 1)) (s : Finset ℝ)

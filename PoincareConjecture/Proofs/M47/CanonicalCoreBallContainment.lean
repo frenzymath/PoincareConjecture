@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfine
 import PoincareConjecture.Proofs.M44.Mathlib.FirstExit
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
-
 
 theorem scalar_normalized_ball_subset_recut
     {g h : RiemannianMetric 3 M} (N : CapCertificate g) (E : EpsilonNeck h)
@@ -92,8 +80,6 @@ theorem scalar_normalized_ball_subset_recut
       _ ≤ h.pathELength gamma u t := htail
       _ ≤ h.pathELength gamma 0 1 := M36.metric_pathELength_mono h gamma hu.1 ht.2
   exact not_lt_of_ge hcontradiction hlength
-
-
 
 theorem scalar_normalized_core_ball_captured
     {g h : RiemannianMetric 3 M} (N : CapCertificate g) (E : EpsilonNeck h)

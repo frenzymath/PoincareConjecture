@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalStandardTimeJets
 import PoincareConjecture.Proofs.M47.BlowupControlsCapAnalyticComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,8 +19,6 @@ noncomputable local instance capNearbyCoefficientNorm :
 
 noncomputable local instance capNearbyCoefficientSpace : NormedSpace ℝ (MetricCoefficient 3) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_actualCap_nearby_coordinate_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A nu : ℝ}
@@ -78,8 +68,6 @@ theorem exists_actualCap_nearby_coordinate_tolerance {g0 : StandardInitialMetric
       norm_sub_le_norm_sub_add_norm_sub _ _ _
     _ ≤ nu / 2 + nu / 2 := add_le_add (hfirst.trans hproduct) hsecond.le
     _ = nu := by ring
-
-
 
 theorem exists_actualCap_nearby_analytic_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A nu : ℝ}

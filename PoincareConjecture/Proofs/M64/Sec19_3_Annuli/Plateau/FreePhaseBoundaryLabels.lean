@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.MonotonePhaseInterpolation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -28,10 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   {e : M → EuclideanSpace ℝ (Fin m)}
   {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {c0 c1 : ℝ → M}
   {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}
-
-
-
-
 
 theorem exists_lower_phase_chord_label
     (A : M64FreeWeakPhaseAnnulus (n := n) e R c0 c1 H0 H1 k D)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.ProjectiveDoubleBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -25,29 +17,23 @@ variable {Q : Type*} [TopologicalSpace Q]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) Q]
   (C : SmoothProjectiveDoubleModel Q)
 
-
 noncomputable def projectiveDoubleCollarInverse : Q → RoundCylinderSpace :=
   Function.invFunOn C.collar (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)
-
 
 theorem projectiveDoubleCollarInverse_left :
     Set.LeftInvOn (projectiveDoubleCollarInverse C) C.collar
       (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1) :=
   C.collar_injective.leftInvOn_invFunOn
 
-
 theorem projectiveDoubleCollarInverse_mem {y : Q}
     (hy : y ∈ C.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) :
     projectiveDoubleCollarInverse C y ∈ Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1 :=
   Function.invFunOn_mem hy
 
-
 theorem projectiveDoubleCollarInverse_right :
     Set.LeftInvOn C.collar (projectiveDoubleCollarInverse C)
       (C.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) :=
   fun _ hy => Function.invFunOn_eq hy
-
-
 
 theorem projectiveDoubleCollarInverse_smooth :
     ContMDiffOn (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (projectiveDoubleCollarInverse C)
@@ -72,7 +58,6 @@ theorem projectiveDoubleCollarInverse_smooth :
     ⟨s z, hsz, hlocal.localInverse_right_inv hz⟩
   apply C.collar_injective (projectiveDoubleCollarInverse_mem C hzimage) hsz
   rw [projectiveDoubleCollarInverse_right C hzimage, hlocal.localInverse_right_inv hz]
-
 
 noncomputable def projectiveDoubleCollarChart :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace Q ∞ where

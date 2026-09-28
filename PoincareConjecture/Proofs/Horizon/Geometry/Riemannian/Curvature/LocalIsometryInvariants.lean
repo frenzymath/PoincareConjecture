@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Curvature.Tensorial
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
-
-
-
-
-
-
-

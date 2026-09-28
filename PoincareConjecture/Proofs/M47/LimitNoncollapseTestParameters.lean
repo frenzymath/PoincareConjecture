@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpCapture
 import PoincareConjecture.Proofs.M47.LimitNoncollapseCylinders
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_exists_finite_test_horizon
     {H : ENNReal} {t rho : ℝ} (ht : t ≤ 0) (_hrho : 0 < rho)
@@ -34,8 +23,6 @@ theorem limitNoncollapse_exists_finite_test_horizon
   refine ⟨T, hT, hhigh, ?_⟩
   intro s hs
   exact ⟨by linarith [hs.1], hs.2.trans ht⟩
-
-
 
 theorem limitNoncollapse_closure_ball_subset
     {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -52,8 +39,6 @@ theorem limitNoncollapse_closure_ball_subset
   intro x hx
   exact (hsubset hx).trans_lt ((ENNReal.ofReal_lt_ofReal_iff hr).mpr hRr)
 
-
-
 theorem limitNoncollapse_eventually_physical_radius
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) (rho : ℝ) {r0 : ℝ} (hr0 : 0 < r0) :
@@ -63,8 +48,6 @@ theorem limitNoncollapse_eventually_physical_radius
   have hzero : Tendsto (fun k => rho / Real.sqrt (S.scale (G.subsequence k)))
       atTop (𝓝 0) := (Real.tendsto_sqrt_atTop.comp hQ).const_div_atTop rho
   exact (hzero.eventually (Iio_mem_nhds hr0)).mono (fun _ hk => hk.le)
-
-
 
 theorem limitNoncollapse_cancel_physical_volume
     {Q lambda rho kappa : ℝ} (hQ : 0 < Q) (hlambda : 0 < lambda)

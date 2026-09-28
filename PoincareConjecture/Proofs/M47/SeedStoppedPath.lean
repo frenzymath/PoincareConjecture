@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedFirstCrossing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.Proofs.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_seed_path_from_crossing_or_end
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

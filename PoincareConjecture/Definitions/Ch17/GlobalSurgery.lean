@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import PoincareConjecture.Definitions.Ch15.SurgeryContinuation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -38,7 +29,6 @@ structure GlobalSurgerySchedule (K : MetricSurgeryConstants) where
   r_zero : r 0 = setup.epsilon
   r_le_epsilon : ∀ j, r j ≤ setup.epsilon
 
-
   kappa_zero_seed : ∃ κ₀ : ℝ, 0 < κ₀ ∧ kappa 0 = κ₀
 
   Delta_zero_seed : ∃ β δ₀' K₀ D₀ : ℝ,
@@ -50,8 +40,6 @@ structure GlobalSurgerySchedule (K : MetricSurgeryConstants) where
   overlap_bound : ∀ j, setup.selector.h
       (Delta (j + 1) * r (j + 1)) (Delta (j + 1)) ≤
     setup.selector.h (Delta j * r j) (Delta j)
-
-
 
 structure GlobalSurgeryPrefixWitness (K : MetricSurgeryConstants)
     (S : GlobalSurgerySchedule K) (i : ℕ) where
@@ -113,9 +101,6 @@ structure GlobalSurgeryFlowCertificate
     ∃ V : ℝ≥0∞, V ≠ (⊤ : ℝ≥0∞) ∧ ∀ t ∈ flow.time_domain ∩ Kset,
       calibratedMetricVolume (flow.metric t) Set.univ ≤ V
 
-
-
-
   volume_loss_on_compacts : ∀ Kset : Set ℝ, IsCompact Kset →
     ∃ loss : ∀ (T : ℝ) (_hT : T ∈ flow.surgery_times)
         [Nonempty (flow.slice T).carrier], ℝ≥0∞,
@@ -128,7 +113,6 @@ structure GlobalSurgeryFlowCertificate
            (loss T hT = 0 ∧ (flow.event T hT).cap_count = 0)) ∧
            (0 < (flow.event T hT).cap_count →
               ENNReal.ofReal sigma ≤ loss T hT))
-
 
   component_event_count_on_compacts : ∀ Kset : Set ℝ, IsCompact Kset →
     ∃ n : ℕ, ∀ S : Finset ℝ,

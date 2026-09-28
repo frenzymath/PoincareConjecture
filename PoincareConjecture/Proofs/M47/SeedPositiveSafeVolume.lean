@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedOldRecentCases
 import PoincareConjecture.Proofs.M47.SeedM15RecentVolume
 import PoincareConjecture.Proofs.M47.SeedM15CapFloor
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47 M46
-
-
 
 theorem exists_positive_safe_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -87,9 +77,6 @@ theorem exists_positive_safe_volume_constant
       e ebased birth onset hage' birthFloor
     exact (ENNReal.ofReal_le_ofReal (mul_le_mul_of_nonneg_right
       (min_le_right kOld (uniform.kappa / 8)) (pow_nonneg hr.le 3))).trans hvolume
-
-
-
 
 theorem exists_positive_large_test_volume_constant
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

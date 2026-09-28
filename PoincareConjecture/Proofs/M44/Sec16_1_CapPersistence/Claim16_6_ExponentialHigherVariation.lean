@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ExponentialVariation
 import PoincareConjecture.Proofs.M44.Mathlib.ODEHigherVariation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +19,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
 
-
-
-
 theorem compactSmoothConvergenceOn_initial_exponential_phases
     (L : E ≃L[ℝ] E)
     (hL : Tendsto (fun n => fderiv ℝ (D n).coordinateMap 0) atTop
@@ -44,9 +31,6 @@ theorem compactSmoothConvergenceOn_initial_exponential_phases
   simpa only [NormalizedCapExponential.phase_initial, standardFramePhase_initial,
     ContinuousLinearEquiv.coe_coe] using
     hz.prodMk hL.compactSmoothConvergenceOn_clm_apply
-
-
-
 
 theorem tendstoUniformlyOn_exponential_phase_jets
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)
@@ -80,9 +64,6 @@ theorem tendstoUniformlyOn_exponential_phase_jets
   · exact compactSmoothConvergenceOn_initial_geodesicFields g₀ S g tip scale eta Q heta
   · exact (compactSmoothConvergenceOn_initial_exponential_phases
       g₀ S g tip scale eta Q D L hL).mono isOpen_ball (subset_univ _)
-
-
-
 
 theorem compactSmoothConvergenceOn_initial_exponentials
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

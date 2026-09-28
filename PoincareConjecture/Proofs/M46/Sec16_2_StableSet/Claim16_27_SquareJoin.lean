@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CornerRecovery
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,16 +14,12 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 theorem squareCurveDensity_germ_eq {gamma beta : ℝ → G.Point} {A B : Set ℝ} {s : ℝ}
     (hA : A ∈ 𝓝 s) (hB : B ∈ 𝓝 s) (h : gamma =ᶠ[𝓝 s] beta) :
     M14.squareCurveDensity G gamma A s = M14.squareCurveDensity G beta B s := by
   unfold M14.squareCurveDensity M14.projectedCurveVelocityWithin
   rw [mfderivWithin_of_mem_nhds hA, mfderivWithin_of_mem_nhds hB,
     h.mfderiv_eq, h.eq_of_nhds]
-
-
 
 theorem exists_oneCorner_square_join {a c b : ℝ} (hac : a ≤ c) (hcb : c ≤ b)
     (alpha beta : ℝ → G.Point)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreePhaseDegreeEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +20,6 @@ local notation "mu" => volume.restrict S
 
 namespace M64ObservedWeakAnnulus
 
-
-
 theorem constant_reader_vertical_integral
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (hc0 : Continuous (e ∘ c0)) (hc1 : Continuous (e ∘ c1))
@@ -49,8 +39,6 @@ theorem constant_reader_vertical_integral
   rw [← T.integral_comp_comm hi, ← T.integral_comp_comm hb] at hh
   have hP : 0 ≤ curvePeriod := by unfold curvePeriod; positivity
   simpa [Function.comp_def, h0, h1, hP] using hh
-
-
 
 theorem weightedEnergy_ge_constant_reader
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -111,8 +99,6 @@ theorem weightedEnergy_ge_constant_reader
     (mul_nonneg (by positivity) (integral_nonneg fun p => hpos _ _)))
 
 end M64ObservedWeakAnnulus
-
-
 
 theorem M64FreeWeakPhaseAnnulus.weightedEnergy_ge_boundary_reader
     {R : EuclideanSpace ℝ (Fin m) →L[ℝ] LoopPlane} {H0 H1 : ℝ ≃o ℝ} {k D : ℝ}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.CoordinateComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
-
-
-
 
 theorem relative_inner_bounds_of_chart (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) {e : M → N} {q x : M} {a b : ℝ}

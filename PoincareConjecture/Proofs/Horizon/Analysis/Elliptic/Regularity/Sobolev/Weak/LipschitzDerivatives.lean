@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Lipschitz
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -16,8 +9,6 @@ namespace Poincare.Analysis.Sobolev.Weak
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem memLp_top_fderiv_apply_of_lipschitzOn
     {u : E → ℝ} {O : Set E} {C : ℝ≥0}

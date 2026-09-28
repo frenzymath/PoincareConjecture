@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.Horizo
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ConstantLift
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem auxiliaryCircle_curveVelocity_eq
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
     {gamma : ℝ → M} {x : ℝ} (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma x) :
@@ -36,8 +23,6 @@ theorem auxiliaryCircle_curveVelocity_eq
   mfderiv_comp_apply x ((auxiliaryCircle_section_contMDiff P q).mdifferentiableAt
     (by simp)) hgamma 1
 
-
-
 theorem auxiliaryCircle_curveVelocity_split
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
     {gamma : ℝ → M} {x : ℝ} (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma x) :
@@ -45,8 +30,6 @@ theorem auxiliaryCircle_curveVelocity_split
       (curveVelocity (auxiliaryCircleSection P q ∘ gamma) x) = (curveVelocity gamma x, 0) := by
   rw [auxiliaryCircle_curveVelocity_eq P q hgamma]
   exact auxiliaryCircle_section_mfderiv_split P q _ _
-
-
 
 theorem auxiliaryCircle_curveSpeed_eq
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
@@ -57,8 +40,6 @@ theorem auxiliaryCircle_curveSpeed_eq
   unfold curveSpeed RiemannianMetric.tangentNorm
   erw [auxiliaryCircle_curveVelocity_eq P q hc]
   exact congrArg Real.sqrt (auxiliaryCircle_section_metric P time q _ _ _)
-
-
 
 theorem auxiliaryCircle_unitTangent_split
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
@@ -71,8 +52,6 @@ theorem auxiliaryCircle_unitTangent_split
   rw [auxiliaryCircle_curveSpeed_eq P q c time x hc, map_smul]
   erw [auxiliaryCircle_curveVelocity_split P q hc]
   simp only [Prod.smul_mk, smul_zero]
-
-
 
 theorem auxiliaryCircle_curvatureVector_split
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)
@@ -102,8 +81,6 @@ theorem auxiliaryCircle_curvatureVector_split
     auxiliaryCircle_horizontal_pullback_c1 P time hd hY x]
   simp only [Prod.smul_mk, smul_zero]
   rfl
-
-
 
 theorem auxiliaryCircle_curvatureVector_eq
     (P : M62.CircleProductData F circumference) (q : P.circle.Point)

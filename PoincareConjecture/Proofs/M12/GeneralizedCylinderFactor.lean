@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M12.GeneralizedWorldlines
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderSpatial
 import PoincareConjecture.Proofs.M11.WorldlineRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +19,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
-
 
 structure RawCylinderLocalFactor
     (p : (R.timeIntervals.interval (cylinderPhysicalInterval a q e.scale_pos J)).Point × U) where

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_MaximalCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_OrdinaryCylinderExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {origin scale c B : ℝ}
   {U : Set (F.slice origin).carrier}
-
-
-
 
 theorem maximal_cylinder_endpoint_is_surgery
     (e : SurgeryFlowCylinder F (F.slice origin) origin scale (Ico 0 c) U)
@@ -69,9 +57,6 @@ theorem maximal_cylinder_endpoint_is_surgery
   intro h x hx
   rw [hagree 0 ⟨le_rfl, hc⟩ h x]
   exact hinitial _ x hx
-
-
-
 
 theorem maximal_cylinder_has_fixed_lost_line
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)

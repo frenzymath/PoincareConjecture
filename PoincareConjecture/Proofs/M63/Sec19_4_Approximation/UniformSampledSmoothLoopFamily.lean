@@ -12,15 +12,6 @@ import Mathlib.Geometry.Manifold.WhitneyEmbedding
 import Mathlib.Analysis.Calculus.Deriv.Shift
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +25,6 @@ universe u
 namespace PoincareConjecture.M63
 
 open Proofs.M58
-
-
-
 
 theorem exists_uniform_sampled_smooth_loop_family
     {M : Type u} [TopologicalSpace M] [T2Space M]

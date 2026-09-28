@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Neighborhoods
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,7 +13,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
 
 structure BoundaryRectangle (a : D.EdgeIndex) where
   left : ℝ
@@ -47,17 +36,13 @@ namespace BoundaryRectangle
 
 variable {D} {a : D.EdgeIndex} (R : D.BoundaryRectangle a)
 
-
 def closedSource : Set (EuclideanSpace ℝ (Fin 2)) :=
   collarParameterEquiv ⁻¹' (Icc R.left R.right ×ˢ Icc (-R.width / 2) (R.width / 2))
-
 
 def openSource : Set (EuclideanSpace ℝ (Fin 2)) :=
   collarParameterEquiv ⁻¹' (Ioo R.left R.right ×ˢ Ioo (-R.width / 2) (R.width / 2))
 
-
 def carrier : Set M := R.coordinates '' R.closedSource
-
 
 def openCarrier : Set M := R.coordinates '' R.openSource
 
@@ -127,8 +112,6 @@ theorem edge_open_segment_subset : (D.edge a.1 a.2).map '' Ioo R.left R.right �
   exact ⟨ht, by constructor <;> linarith [R.width_pos]⟩
 
 end BoundaryRectangle
-
-
 
 theorem exists_boundary_rectangles
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius p) :

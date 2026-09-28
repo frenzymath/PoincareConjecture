@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.DensityBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ private abbrev E := EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_neck_chart_density_bounds (N : EpsilonNeck g)
     (hscale : N.scale = 1) (q : UnitTwoSphere) (s : ℝ) {x : E}

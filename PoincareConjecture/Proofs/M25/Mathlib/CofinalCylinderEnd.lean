@@ -3,27 +3,9 @@ import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Compactness.LocallyCompact
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
-
-
-
 
 theorem Homeomorph.not_isBounded_image_of_isCompact_compl
     {W E : Type*} [TopologicalSpace W] [PseudoMetricSpace E]
@@ -36,8 +18,6 @@ theorem Homeomorph.not_isBounded_image_of_isCompact_compl
   by_cases hz : Phi.symm z ∈ s
   · exact Or.inl ⟨Phi.symm z, hz, Phi.apply_symm_apply z⟩
   · exact Or.inr ⟨Phi.symm z, hz, Phi.apply_symm_apply z⟩
-
-
 
 theorem IsPreconnected.subset_compl_closedBall_of_unbounded
     {X : Type*} [PseudoMetricSpace X] {T : Set X} (hT : IsPreconnected T)
@@ -69,9 +49,6 @@ variable [ConnectedSpace K] {E : Type*}
   (hcompact : ∀ d ∈ Ioo a b, IsCompact (e.cylinderTail b d)ᶜ)
 
 include Phi hsource hcompact
-
-
-
 
 theorem exists_cylinderTail_norm_gt_after (hd : d ∈ Ioo a b) (R : ℝ) :
     ∃ u ∈ Ioo d b, ∀ x ∈ e.cylinderTail b u, R < ‖Phi x‖ := by
@@ -107,8 +84,6 @@ theorem exists_cylinderTail_norm_gt_after (hd : d ∈ Ioo a b) (R : ℝ) :
       houtside ⟨x, hx, rfl⟩
   exact ((le_max_left _ _).trans_lt hRL).trans hLx
 
-
-
 theorem exists_cylinderTail_disjoint_compact_after
     {Q : Set W} (hQ : IsCompact Q) (hd : d ∈ Ioo a b) :
     ∃ u ∈ Ioo d b, Disjoint Q (e.cylinderTail b u) := by
@@ -131,9 +106,6 @@ variable [CompactSpace K] [T2Space W] [WeaklyLocallyCompactSpace W]
 
 include hsource hescape
 
-
-
-
 theorem closure_cylinderTail_subset_target_of_escape (hd : d ∈ Ioo a b) :
     closure (e.cylinderTail b d) ⊆ e.target := by
   intro x hx
@@ -151,9 +123,6 @@ theorem closure_cylinderTail_subset_target_of_escape (hd : d ∈ Ioo a b) :
   · exact e.cylinderSlab_subset_target hsource hd.1 hu.2 hslab
   · exact (disjoint_left.mp hlate htail hxint).elim
 
-
-
-
 theorem frontier_cylinderTail_eq_slice_of_escape (hd : d ∈ Ioo a b) :
     frontier (e.cylinderTail b d) = e.cylinderSlice d := by
   have hsubset : frontier (e.cylinderTail b d) ⊆ e.target :=
@@ -161,8 +130,6 @@ theorem frontier_cylinderTail_eq_slice_of_escape (hd : d ∈ Ioo a b) :
       (e.closure_cylinderTail_subset_target_of_escape hsource hescape hd)
   rw [← inter_eq_right.mpr hsubset]
   exact e.target_inter_frontier_cylinderTail hsource hd
-
-
 
 theorem closure_cylinderTail_eq_union_slice_of_escape (hd : d ∈ Ioo a b) :
     closure (e.cylinderTail b d) = e.cylinderTail b d ∪ e.cylinderSlice d := by

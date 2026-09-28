@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCutSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.opposite_cut_side_of_cap_avoidance {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Triangulation.PLDiskSurgeryModels
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,9 +11,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_sphere_model_of_two_foot_ball
     {S₀ S₁ H T d₀ q₀ d₁ q₁ : Set E}

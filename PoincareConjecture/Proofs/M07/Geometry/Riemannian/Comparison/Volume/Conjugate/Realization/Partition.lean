@@ -1,25 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Manifold
 import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Metric
 open scoped Manifold Topology ContDiff
 

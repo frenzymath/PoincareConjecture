@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 open Set TopologicalSpace Filter Topology
 open scoped ContDiff Manifold
 
@@ -24,9 +13,6 @@ variable {E F H K S M : Type*}
   {I : ModelWithCorners ℝ E H} {J : ModelWithCorners ℝ F K}
   [TopologicalSpace S] [ChartedSpace H S]
   [TopologicalSpace M] [ChartedSpace K M]
-
-
-
 
 theorem exists_pasted_cylinder
     (A B : Opens M)

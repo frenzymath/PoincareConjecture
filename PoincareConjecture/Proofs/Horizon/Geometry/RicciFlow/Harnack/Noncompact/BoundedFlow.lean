@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.SlabBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Ancient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -89,8 +81,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem hamiltonBlockPos_on_bounded_slab
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁)) {a b K : ℝ}
@@ -159,8 +149,6 @@ theorem hamiltonBlockPos_on_bounded_slab
     t ⟨hc.2, le_rfl⟩ x
   simpa only [G, hamiltonBlockPos_translate, add_zero] using hpos
 
-
-
 theorem scalar_harnack_on_bounded_slab
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁)) {a b K : ℝ}
@@ -176,8 +164,6 @@ theorem scalar_harnack_on_bounded_slab
   intro t ht x
   exact scalar_harnack_nonneg_of_hamiltonBlockPos hC F (hJ ⟨ht.1.le, ht.2.le⟩) x (t - a)
     (hamiltonBlockPos_on_bounded_slab hC F hab hJ hcomplete hbound hcurv t ht x)
-
-
 
 theorem hamiltonBlockPos_of_curvature_slab_bounds
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
@@ -200,8 +186,6 @@ theorem hamiltonBlockPos_of_curvature_slab_bounds
     (fun s hs => hcomplete s (hJ hs)) hK (fun s hs => hcurv s (hJ hs))
     t ⟨ha.2, htb⟩ x
 
-
-
 theorem finite_differential_of_curvature_slab_bounds
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁))
@@ -220,8 +204,6 @@ theorem finite_differential_of_curvature_slab_bounds
   exact finite_differential_of_hamilton_block hC T₀ T₁ F
     (hamiltonBlockPos_of_curvature_slab_bounds hC F hcomplete hcurv hbound)
 
-
-
 theorem finite_differential_of_bounded_curvature
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ K : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁))
@@ -238,8 +220,6 @@ theorem finite_differential_of_bounded_curvature
           2 * (F.connection t).ricci x v v := by
   exact finite_differential_of_curvature_slab_bounds hC F hcomplete hcurv
     (fun _ _ _ hJ => ⟨K, fun s hs => hbound s (hJ hs)⟩)
-
-
 
 theorem ancient_differential_of_bounded_curvature
     (hC : RicciFlowCurvatureTheory.{u}) {K : ℝ}
@@ -292,8 +272,6 @@ theorem ancient_differential_of_bounded_curvature
           hC (Iic 0) F x v).const_mul 2)).add
         ((Poincare.Geometry.RicciFlow.Harnack.ricci_continuousOn_ancient F x v v).const_mul 2)
     exact Poincare.Asymptotics.nonneg_at_zero_of_nonneg_neg (hq 0 self_mem_Iic) hnegative
-
-
 
 theorem scalarCurvature_monotoneOn_of_bounded_ancient_curvature
     (hC : RicciFlowCurvatureTheory.{u}) {K : ℝ}

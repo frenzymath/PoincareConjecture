@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerConformalTrace
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerClass
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +13,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 theorem M65WeakCircleParameter.comp_homeomorph {β : C(LoopCircle, LoopCircle)}
     (hβ : M65WeakCircleParameter β) (H : LoopCircle ≃ₜ LoopCircle) :
     M65WeakCircleParameter (β.comp ⟨H, H.continuous⟩) := by
@@ -38,10 +24,6 @@ theorem M65WeakCircleParameter.comp_homeomorph {β : C(LoopCircle, LoopCircle)}
   apply (closure_mono (show T '' A ⊆ A from ?_)) hh
   rintro _ ⟨_, ⟨h, rfl⟩, rfl⟩
   exact ⟨H.trans h, rfl⟩
-
-
-
-
 
 theorem M65WeakCircleParameter.surjective {β : C(LoopCircle, LoopCircle)}
     (hβ : M65WeakCircleParameter β) : Function.Surjective β := by
@@ -57,11 +39,6 @@ theorem M65WeakCircleParameter.surjective {β : C(LoopCircle, LoopCircle)}
   exact hfn (mem_univ (H.symm y)) (H.apply_symm_apply y)
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65WeakDisk_smooth_change
     {M : Type u} [TopologicalSpace M] {N : ℕ}

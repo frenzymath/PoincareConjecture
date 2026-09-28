@@ -12,14 +12,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Sphe
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Groups.HomotopyGroupHomeomorph
 import PoincareConjecture.Proofs.Horizon.Topology.CWComplex.ThreeDimensional.CWThreeSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,7 +22,6 @@ open scoped Manifold ContDiff Topology ContinuousMap
 universe u
 
 namespace Poincare.Topology
-
 
 private theorem piTwo_of_integralHomology_isZero
     (X : TopCat.{u}) [SimplyConnectedSpace X] (x : X)
@@ -107,7 +98,6 @@ private theorem exists_threeDimensionalCW
     (by exact_mod_cast Nat.add_le_add_right (hdim n j) 1)
     (_root_.Topology.RelCWComplex.openCell_subset_skeletonLT
       (C := (univ : Set M)) n j hj)
-
 
 theorem nonempty_threeManifoldTopologyConclusion_of_integralHomology_two_isZero
     {M : Type u} [TopologicalSpace M]

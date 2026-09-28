@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMetricJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_PhysicalCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ noncomputable local instance terminalScalarCoefficientSpace :
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem jetScalarCurvature_pullbackCoefficients
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
@@ -74,9 +62,6 @@ theorem jetScalarCurvature_pullbackCoefficients
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
-
 
 theorem tendsto_preterminal_scalar
     (event : SurgeryEventData g0 K P slice metric T)
@@ -132,9 +117,6 @@ theorem tendsto_preterminal_scalar
       (event.limit_metric.pullbackCoefficients (event.limit_identify.map ∘ c.symm))
       (c q)))) at hscalar
   simpa only [hread, hreadT, Function.comp_apply, hcx] using hscalar
-
-
-
 
 theorem terminal_scalar_le_of_preterminal
     (event : SurgeryEventData g0 K P slice metric T)

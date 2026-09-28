@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.Coordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,7 +36,6 @@ theorem fderiv_comp_eq_inner_gradient
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
 
-
 theorem sq_fderiv_comp_le_gradient_energy
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -58,7 +50,6 @@ theorem sq_fderiv_comp_le_gradient_energy
   exact real_inner_mul_inner_self_le (D.gradient f (e x)) (mfderiv (𝓡 n) (𝓡 n) e x v)
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem exists_coordinate_derivative_bound
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -110,7 +101,6 @@ theorem exists_coordinate_derivative_bound
       mul_le_mul_of_nonneg_left hbc hE
     _ = _ := by ring
 
-
 theorem integral_compact_image_eq_pullback_density
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -138,8 +128,6 @@ theorem integral_compact_image_eq_pullback_density
           exact hxK (hxy ▸ hy)
         rw [indicator_of_notMem hxK, indicator_of_notMem hxnot, zero_mul]
     _ = _ := by rw [setIntegral_indicator hK.measurableSet, inter_eq_right.mpr hKs]
-
-
 
 theorem exists_integral_sq_coordinate_derivative_le_energy
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

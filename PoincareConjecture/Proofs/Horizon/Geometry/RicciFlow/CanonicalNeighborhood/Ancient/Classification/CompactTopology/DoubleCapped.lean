@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactTopology.Models
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Models
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {t epsilon C : ℝ}
-
 
 def M26StrongDoubleCappedTube.staticCertificate
     (T : M26StrongDoubleCappedTube K t epsilon C) :
@@ -45,7 +32,6 @@ def M26StrongDoubleCappedTube.staticCertificate
   compact := T.compact
   first_attachment := T.first_attachment
   second_attachment := T.second_attachment
-
 
 theorem strongDoubleCapped_sphere_or_projective_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧
@@ -79,8 +65,6 @@ theorem strongDoubleCapped_sphere_or_projective_threshold :
       exact (model.not_univ_of_projectiveDouble_of_compact_positive_sectional
         (K.flow.metric t) (K.flow.connection t) (K.complete t T.time_mem)
         hpositive rfl).elim
-
-
 
 theorem M27KappaAlternativePredecessors.compact_nonround_sphere_or_projective
     (P : M27KappaAlternativePredecessors.{u})

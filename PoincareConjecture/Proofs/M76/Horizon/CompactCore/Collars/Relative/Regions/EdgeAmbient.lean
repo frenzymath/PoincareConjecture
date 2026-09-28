@@ -7,8 +7,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompleteCofaceDualBlock
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetChartSigns
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
 set_option autoImplicit false
 open Set
 

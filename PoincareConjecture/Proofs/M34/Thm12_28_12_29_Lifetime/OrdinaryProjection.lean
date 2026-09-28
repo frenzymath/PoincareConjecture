@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryRealization
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,18 +16,13 @@ variable {M : Type u} [TopologicalSpace M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
   (R : OrdinaryProductRicciGeometry F.metric I)
 
-
-
 def ordinaryChapter11Projection (z : (ordinaryChapter11Flow R).point) : M := z.2.val.2
-
-
 
 theorem ordinaryChapter11Projection_identification (t : I.domain) (x : M) :
     ordinaryChapter11Projection R ⟨t.val, R.product.sliceIdentification t x⟩ = x :=
   congrArg Prod.snd (R.product.sliceIdentification_eq t x)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryChapter11Projection_locallyConstant
     {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
@@ -63,8 +48,6 @@ theorem ordinaryChapter11Projection_locallyConstant
   · intro s' hs'
     exact (hv s' hs').trans (hv s (by simpa only [sub_self, abs_zero] using hdelta)).symm
 
-
-
 theorem ordinaryChapter11Projection_cylinder_eq
     {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ}
     {K : Set ℝ} {U : Set C.carrier}
@@ -76,8 +59,6 @@ theorem ordinaryChapter11Projection_cylinder_eq
   let : PreconnectedSpace K := isPreconnected_iff_preconnectedSpace.mp hK
   exact (ordinaryChapter11Projection_locallyConstant R e hx).apply_eq_of_preconnectedSpace
     ⟨s, hs⟩ ⟨s', hs'⟩
-
-
 
 theorem ordinaryChapter11Projection_cylinder_based
     (p : (ordinaryChapter11Flow R).point) {scale : ℝ} {K : Set ℝ}

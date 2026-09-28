@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +53,6 @@ theorem tendsto_integral_exhaustion_compact_data
           ((norm_nonneg (f y)).trans (hB y))
       _ = _ := mul_comm _ _
   · exact ae_of_all _ fun y => (tendsto_supremum hm hb ht x y).mul_const (f y)
-
-
 
 theorem exists_exhaustion_integral_initial_fderiv_bound
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ThirdCoord
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.PhaseChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactCircleRegularLevel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -24,8 +15,6 @@ local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
-
 
 def CircleCoordinateRegularity {X ι : Type*} [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X V3) (R : Set X)
@@ -131,8 +120,6 @@ abbrev HamiltonZeroThirdCoordinateRegularity {ι : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
     (phi : C(H0, H0)) (theta : C0) : Prop :=
   CircleCoordinateRegularity e R (hamiltonZeroThirdCircleMap phi) theta
-
-
 
 theorem exists_hamiltonZero_third_coordinate_finite_regular_values {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

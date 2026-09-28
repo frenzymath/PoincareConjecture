@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Patches.PlanarSides
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology

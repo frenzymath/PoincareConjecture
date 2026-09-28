@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SpacetimeEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ variable {n : ℕ} {T' T : ℝ} {C D : FlowCarrier n}
       letI : ChartedSpace (EuclideanSpace ℝ (Fin n)) D.carrier := D.chartedSpace
       IsLocalDiffeomorphOn (𝓡 n) (𝓡 n) ∞ f U)
     (I : Set ℝ) (q : C.carrier) (a b : Fin n)
-
-
 
 theorem coordinateCoefficient_of_spatial
     (t : ℝ) (x : EuclideanSpace ℝ (Fin n))
@@ -74,7 +64,6 @@ theorem coordinateCoefficient_of_spatial
   erw [hd]
   rfl
 
-
 theorem coordinateCoefficient_of_spatial_eqOn (J : Set ℝ) :
     letI : TopologicalSpace C.carrier := C.topologicalSpace
     letI : ChartedSpace (EuclideanSpace ℝ (Fin n)) C.carrier := C.chartedSpace
@@ -92,7 +81,6 @@ theorem coordinateCoefficient_of_spatial_eqOn (J : Set ℝ) :
         (extChartAt (𝓡 n) q).symm z.2 ∈ U} := by
   intro z hz
   exact coordinateCoefficient_of_spatial F G hU f hemb hf I q a b z.1 z.2 hz.2
-
 
 theorem iteratedFDeriv_coordinateCoefficient_of_spatial
     (r : ℕ) (p : ℝ × EuclideanSpace ℝ (Fin n))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexCycleConstancy
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexPotentialCycles
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,8 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 local notation "L" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
 open Classical in
-
-
 
 noncomputable def boundaryTopCycleEquiv
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)
@@ -107,8 +96,6 @@ noncomputable def boundaryTopCycleEquiv
       intro r a
       apply Subtype.ext
       exact (coordinateChainEquiv (Triangle L)).map_smul r (fun q => a.val (v q)) }
-
-
 
 theorem finrank_boundary2_ker_eq_vertex_ker
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)

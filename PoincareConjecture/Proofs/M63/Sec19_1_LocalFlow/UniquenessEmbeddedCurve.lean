@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M63Ramp
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem c2ShrinkingCurve_embedded_closed_data
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M} {J : Set ℝ}
@@ -68,9 +55,6 @@ theorem c2ShrinkingCurve_embedded_closed_data
   · exact (hpush.comp_continuousOn hc.velocity_continuous).congr
       (fun z hz => (hderiv z.2 hz.2 z.1).deriv)
   · exact hpush.comp_continuousOn hc.curvature_continuous
-
-
-
 
 theorem c2ShrinkingCurve_embedded_interior_equation
     {F : RicciFlow n M (Icc a b)} {c : ℝ → ℝ → M} {J : Set ℝ}

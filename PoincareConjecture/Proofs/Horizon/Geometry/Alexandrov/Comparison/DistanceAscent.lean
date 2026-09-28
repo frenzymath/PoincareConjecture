@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.DistanceChord
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -26,8 +15,6 @@ private theorem eventually_pos_of_hasDerivAt_pos
   filter_upwards [hslope, self_mem_nhdsWithin] with t ht htpos
   have hmul : 0 < t⁻¹ * f t := by simpa only [zero_add, h0, sub_zero, smul_eq_mul] using ht
   exact (mul_pos_iff_of_pos_left (inv_pos.mpr htpos)).mp hmul
-
-
 
 theorem CurvatureGEnegOne.exists_local_distance_ascent_of_comparisonAngle
     {X : Type*} [MetricSpace X] (hX : CurvatureGEnegOne X)

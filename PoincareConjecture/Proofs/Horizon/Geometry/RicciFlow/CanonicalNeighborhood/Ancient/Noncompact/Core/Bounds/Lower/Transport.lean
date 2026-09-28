@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Nonround
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.Transport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +20,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space RicciFlow.smallMeasurableSpace
   RicciFlow.smallBorelSpace
-
-
 
 theorem normalized_uniform_soul_core_sectional_lower_any_carrier_of_services
     (P : NoncompactKappaServices.{u})
@@ -96,8 +84,6 @@ theorem normalized_uniform_soul_core_sectional_lower_any_carrier
         ∀ v w : TangentSpace (𝓡 3) x, LinearIndependent ℝ ![v, w] →
           c < (K.flow.connection 0).sectionalCurvature x v w := by
   exact normalized_uniform_soul_core_sectional_lower_any_carrier_of_services P.noncompactServices htrichotomy hkappa hD
-
-
 
 theorem noncompact_uniform_soul_core_sectional_lower_multiple_of_services
     (P : NoncompactKappaServices.{u})
@@ -188,8 +174,6 @@ theorem noncompact_uniform_soul_core_sectional_lower_multiple
           c * (K.flow.connection 0).scalarCurvature soul.center <
             (K.flow.connection 0).sectionalCurvature x v w := by
   exact noncompact_uniform_soul_core_sectional_lower_multiple_of_services P.noncompactServices htrichotomy hD
-
-
 
 theorem noncompact_uniform_soul_core_sectional_lower_of_services
     (P : NoncompactKappaServices.{u})

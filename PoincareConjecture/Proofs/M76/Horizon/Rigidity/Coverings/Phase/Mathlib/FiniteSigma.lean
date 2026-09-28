@@ -2,8 +2,6 @@ import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Homotopy.Basic
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -28,7 +26,6 @@ theorem isCoveringMap_finite_sigma [Finite ι] [∀ i, CompactSpace (X i)]
     IsCoveringMap (ContinuousMap.sigma g) :=
   isLocalHomeomorph_iff_isCoveringMap.mp
     (isLocalHomeomorph_sigma g fun i => (hg i).isLocalHomeomorph)
-
 
 def sigmaHomotopy {f g : ∀ i, C(X i, Y)} (H : ∀ i, (f i).Homotopy (g i)) :
     (ContinuousMap.sigma f).Homotopy (ContinuousMap.sigma g) where

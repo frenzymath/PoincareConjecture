@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.FiniteCappedChainDiffeomorph
 import PoincareConjecture.Proofs.M25.Mathlib.DiffeomorphOnOpens
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.exists_finite_chain_ambient_chart :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

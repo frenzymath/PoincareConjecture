@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.ClosedRectanglePhase
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ProductCircleEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,9 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem local_circle_phase_column_sq_le_gram
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -66,9 +51,6 @@ theorem local_circle_phase_column_sq_le_gram
   change (fderiv ℝ L p v) ^ 2 ≤ (P.flow.metric t).inner (f p) W W
   rw [P.metric_eq, hcircle]
   linarith
-
-
-
 
 theorem annulus_exists_continuous_phase_with_gradient_bound
     (P : M62.CircleProductData F circumference) (t : ℝ)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.BoundaryLoopPowers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -36,8 +27,6 @@ private theorem connectorTail_one {X : Type*} [TopologicalSpace X]
     connectorTail k 1 = (Path.refl y).cast k.target rfl := by
   ext s
   simp [connectorTail]
-
-
 
 theorem exists_closed_curve_homotopy_of_conjugate
     {X : Type*} [TopologicalSpace X] {x y : X}
@@ -78,8 +67,6 @@ theorem exists_closed_curve_homotopy_of_conjugate
     { J.toHomotopy with prop' := fun t => (J.source t).trans (J.target t).symm }
   exact ⟨(H₀.trans H₁).trans H₂⟩
 
-
-
 theorem exists_circle_cylinder_of_closed_curves
     {X : Type*} [TopologicalSpace X]
     (H : C(unitInterval × unitInterval, X)) (hclosed : ∀ t, H (t, 0) = H (t, 1)) :
@@ -111,9 +98,6 @@ theorem exists_circle_cylinder_of_closed_curves
   change (Quot.lift g hrel (q (((s : ℝ) : AddCircle (1 : ℝ))))) t = H (t, s)
   rw [hq]
   rfl
-
-
-
 
 theorem exists_singular_boundary_annulus_of_commensurable
     {E₀ E₁ X : Type*}

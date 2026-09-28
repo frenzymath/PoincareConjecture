@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M04.ShiUniformTaylor
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -489,8 +479,6 @@ theorem shiJoinedCompactTuples_subset_base
   intro p hp
   exact ⟨hH hp.2.1.1, hHL hp.2.2.1.1, hHR hp.2.2.2.1⟩
 
-
-
 theorem exists_shiJoinedDensity_uniform_bound [T2Space M]
     (D : LeviCivitaData g) {c cL cR : OpenPartialHomeomorph M E}
     (hc : ContMDiffOn (𝓡 n) 𝓘(ℝ, E) ∞ c c.source)
@@ -543,7 +531,6 @@ private theorem partial_fderiv_contDiffOn
     exact (hf.contDiffAt (hO.mem_nhds hq)).comp (q, q.2)
       (contDiffAt_fst.fst.prodMk contDiffAt_snd)
   exact (hpull.fderiv (m := ∞) contDiffAt_snd (by simp)).contDiffWithinAt
-
 
 theorem shiJoinedDensity_jet_continuousOn [T2Space M]
     (D : LeviCivitaData g) {c cL cR : OpenPartialHomeomorph M E}
@@ -607,4 +594,3 @@ theorem shiJoinedCore_coordinate_sets [T2Space M]
     exact hCs hx.1
 
 end PoincareConjecture.M04
-

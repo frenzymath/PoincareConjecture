@@ -10,9 +10,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 local notation "P2" => (ℝ × ℝ)
 local notation "Ann" => squareAnnulus 8 1
 
-
-
-
 theorem exists_enclosing_polygon_complementary_annuli {n : ℕ}
     (P : Polygon P2 (n + 3)) (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
     {L d : ℝ} (hd : 0 < d) (hwidth : 2 * d < L)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.D
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Path
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.Geodesic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +12,6 @@ universe u
 namespace PoincareConjecture.LeviCivitaData
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_heat_harnack_on_domains_containing_ball
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

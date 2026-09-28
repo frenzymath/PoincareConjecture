@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafInverse
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafGerm
 import Mathlib.Topology.NhdsSet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +12,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_smooth_affineLeaf_extension_matching (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} (hQ : ContDiff ℝ ∞ Q)

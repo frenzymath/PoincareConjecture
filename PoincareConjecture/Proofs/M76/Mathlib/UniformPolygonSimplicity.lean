@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.UniformPolygonSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonHalfOpenParameters
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n m : ℕ}
-
-
-
 
 theorem injective_subdivide (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (t : Fin (m + 2) → ℝ) (ht : StrictMono t)
@@ -39,9 +27,6 @@ theorem injective_subdivide (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
   rw [P.subdivide_apply, P.subdivide_apply] at he
   obtain ⟨hi, hj⟩ := P.eq_of_halfOpen_edge_parameters hP hinj (hparam j) (hparam j') he
   exact congrArg finProdFinEquiv (Prod.ext hi (Fin.castSucc_injective (m + 1) (ht.injective hj)))
-
-
-
 
 theorem hasSimplicialEdges_subdivide (P : Polygon E (n + 3)) (hP : P.HasSimplicialEdges)
     (hinj : Function.Injective P) (t : Fin (m + 2) → ℝ) (ht : StrictMono t)

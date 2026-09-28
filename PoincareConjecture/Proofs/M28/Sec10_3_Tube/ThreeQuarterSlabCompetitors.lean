@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 import Mathlib.Analysis.Real.Pi.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem intrinsicEDist_lt_three_quarter_ceiling (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ (1 / 10000 : ℝ)) {p x : M}
@@ -60,9 +48,6 @@ theorem intrinsicEDist_lt_three_quarter_ceiling (N : EpsilonNeck g)
     (mul_pos (mul_pos (by norm_num) N.scale_pos) hApos)).mpr
   have hh := mul_lt_mul_of_pos_left hfactor N.scale_pos
   nlinarith only [hh]
-
-
-
 
 theorem exists_three_quarter_slab_competitor (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ (1 / 10000 : ℝ)) {p x : M}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckJetAffineNative
 import PoincareConjecture.Proofs.M03.Existence.NativeTensorLaplacianNative
 import PoincareConjecture.Proofs.M03.Existence.ParsevalMetricTraceNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -99,7 +91,6 @@ theorem generatorCorrection_contMDiff (h : SmoothTensor (n := n) (M := M)) (i j 
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (generatorCorrection F charts g0 C h i j) :=
   ContMDiff.sum (fun ab _ => correctionEntry_contMDiff F charts g0 C i j ab
     (scalarProbe_contMDiff F h ab))
-
 
 def correctionWordTerms (i j : Fin n) (ab : iota × iota) :
     List iota → List (DirectionalTerm (n := n) (M := M) (iota := iota))
@@ -242,7 +233,6 @@ theorem dualCoefficient_eq_repr_of_cutoffs (V : SmoothField (n := n) (M := M))
   change ((C.matrix g0 x)⁻¹.mulVec (fun j => g0.inner x (C.field j x) (V x))) i = _
   rw [hpair, Matrix.mulVec_mulVec, hinv, Matrix.one_mulVec]
 
-
 theorem exists_frame_neighborhood {x : M} (hx : x ∈ K) :
     ∃ U : Set M, IsOpen U ∧ x ∈ U ∧ ∀ a y, y ∈ U →
       F a y = ∑ i, dualCoefficient C g0 (F a) i y • C.field i y := by
@@ -294,7 +284,6 @@ theorem directional_frame_eq_native
   change mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f x (C.field i x) = _
   rw [← hF x (C.field i x), map_sum]
   simp only [map_smul, smul_eq_mul, frameCoefficient, scalarDirectional]
-
 
 theorem scalarLaplacian_eq_principal_drift
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -381,7 +370,6 @@ theorem scalarLaplacian_eq_principal_drift
       directionalWord_cons, directionalWord_nil, Finset.sum_sub_distrib, Finset.sum_neg_distrib]
   rw [hraw, hseconds]
   linarith [hbeta]
-
 
 theorem smoothTensorLaplacian_eq_principal_correction
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -485,7 +473,6 @@ theorem smoothTensorLaplacian_eq_principal_correction
   rw [hcomponent, hcorrection]
   ring
 
-
 theorem secondDifference_eq_component_word
     (g : RiemannianMetric n M) (h : SmoothTensor (n := n) (M := M))
     (hmetric : ∀ (x : M) (v w : TangentSpace (𝓡 n) x),
@@ -527,7 +514,6 @@ theorem secondDifference_eq_component_word
   exact hsecond.symm.trans
     ((congrArg (fun f : M → ℝ => scalarDirectional (C.field a) f x) hfirst.symm).trans
       (directionalWord_eventuallyEq C.field [a, b] hnear).eq_of_nhds)
-
 
 theorem smoothResidualTensor_component
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),

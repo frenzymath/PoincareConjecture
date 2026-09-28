@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLGraphCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -19,11 +10,6 @@ namespace OpenPartialHomeomorph
 
 variable {M E : Type*} [TopologicalSpace M] [T2Space M]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_compactly_supported_PL_graph_block
     (e : OpenPartialHomeomorph M E) {A : Set M}

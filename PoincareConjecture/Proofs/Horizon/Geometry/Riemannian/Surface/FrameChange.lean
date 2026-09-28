@@ -4,14 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.Trigonometric.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
-
-
 
 theorem surfaceConnectionForm_rotate
     (D : LeviCivitaData g) {x : S}
@@ -70,8 +60,6 @@ theorem surfaceConnectionForm_rotate
     b x ^ 2 * hskew +
       g.inner x (D.connection e₁ x (Z x)) (e₂ x) * hab
 
-
-
 theorem surfaceConnectionForm_rotate_angle
     (D : LeviCivitaData g) {x : S}
     {e₁ e₂ : (x : S) → TangentSpace (𝓡 2) x}
@@ -102,8 +90,6 @@ theorem surfaceConnectionForm_rotate_angle
       Real.sin (θ x) * (mvfderiv (𝓡 2) θ x (Z x) * -Real.sin (θ x)) =
     D.surfaceConnectionForm e₁ e₂ Z x + mvfderiv (𝓡 2) θ x (Z x)
   linear_combination mvfderiv (𝓡 2) θ x (Z x) * Real.sin_sq_add_cos_sq (θ x)
-
-
 
 theorem integral_connectionForm_rotate_angle
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)
@@ -162,8 +148,6 @@ theorem integral_connectionForm_rotate_angle
   apply ContinuousOn.intervalIntegrable
   intro t ht
   exact ((hφ t ht).derivWithin (m := 0) (by simp)).continuousAt.continuousWithinAt
-
-
 
 theorem exists_angle_integral_connectionForm_rotate
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U)

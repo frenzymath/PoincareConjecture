@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RadialScalar
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +9,6 @@ open Set Filter
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_scalar_jacobi_pos_before_pi
     {R κ : ℝ} (hR : 0 < R) (hκ : 0 < κ) (hRpi : κ * R < Real.pi)
@@ -112,9 +97,6 @@ theorem m64Intrinsic_scalar_jacobi_pos_before_pi
     div_nonpos_of_nonpos_of_nonneg hc.2 (hsin c ⟨hdc.le, le_rfl⟩).le
   linarith
 
-
-
-
 theorem m64Intrinsic_scalar_jacobi_ne_zero_before_pi
     {R κ : ℝ} (hR : 0 < R) (hκ : 0 < κ) (hRpi : κ * R < Real.pi)
     {J J' J'' k : ℝ → ℝ}
@@ -141,9 +123,6 @@ theorem m64Intrinsic_scalar_jacobi_ne_zero_before_pi
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
-
 theorem m64Intrinsic_mfderiv_injective_of_pullbackDensity_pos
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}
     {x : AnnulusCoordinates} (he : ContMDiffAt (𝓡 2) (𝓡 2) ∞ e x)
@@ -159,10 +138,6 @@ theorem m64Intrinsic_mfderiv_injective_of_pullbackDensity_pos
   apply LinearMap.ker_eq_bot.mp
   by_contra hker
   exact hdet (LinearMap.det_eq_zero_iff_ker_ne_bot.mpr hker)
-
-
-
-
 
 theorem m64Intrinsic_radial_mfderiv_injective_of_gaussian_upper
     (N : IntrinsicAnnulus) (K κ : ℝ) (hK : N.GaussianCurvatureBound K)

@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CirclePeriodCoordinates
 import PoincareConjecture.Proofs.M25.Mathlib.CircleArcs
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_period_circle_arc (T : ℝ) (hT : 0 < T)
     (a b : ℝ) (_hab : a < b) (hlen : b < a + T) :

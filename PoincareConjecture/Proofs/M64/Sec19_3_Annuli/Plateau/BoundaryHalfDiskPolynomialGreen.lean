@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfDiskPolynomialTests
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,12 +18,6 @@ local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
-
-
-
-
-
-
 
 theorem M64ObservedWeakAnnulus.vector_test_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -74,11 +56,6 @@ theorem M64ObservedWeakAnnulus.vector_test_green
           phi1 (annulusPoint x 1) • e (c1 x) -
             phi1 (annulusPoint x 0) • e (c0 x) := by simp
 
-
-
-
-
-
 theorem M64ObservedWeakAnnulus.polynomial_test_zero_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     {psi : ℝ → ℝ} (hpsi : ContDiff ℝ 1 psi) (x : ℝ)
@@ -96,11 +73,6 @@ theorem M64ObservedWeakAnnulus.polynomial_test_zero_green
           m64HalfDiskPolynomialTestZeroAt x psi (annulusPoint y 0) 1 • e (c0 y) := by
   exact A.vector_test_green
     (m64HalfDisk_polynomialTestAt_contDiff hpsi x).1 hperiod
-
-
-
-
-
 
 theorem M64ObservedWeakAnnulus.polynomial_test_one_green
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

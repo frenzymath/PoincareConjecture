@@ -10,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m67_regular_piece_of_slice
     {A : GeneralizedSliceCarrier.{u}}
     (C : SurgerySelectedComponent A)

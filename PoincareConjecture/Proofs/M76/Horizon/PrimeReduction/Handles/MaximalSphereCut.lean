@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.PuncturedCom
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedApproximation
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInputs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

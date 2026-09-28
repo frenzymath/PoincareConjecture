@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.CompactSlices
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -17,7 +10,6 @@ namespace Poincare.Parabolic.Interior
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 def timeTranslate (c : ℝ) (f : E × ℝ → F) (p : E × ℝ) : F :=
   f (p.1, p.2 + c)

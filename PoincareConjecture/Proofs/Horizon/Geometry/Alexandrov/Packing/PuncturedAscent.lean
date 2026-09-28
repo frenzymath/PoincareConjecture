@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.PuncturedAngles
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Comparison.DistanceAscent
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

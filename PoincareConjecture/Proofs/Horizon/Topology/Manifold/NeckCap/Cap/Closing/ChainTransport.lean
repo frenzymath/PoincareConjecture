@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Tru
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachment.ChainIntersection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem graphTransport_closed_core_subset_of_graph_in_core (D : CapCertificate g)
     {r : ℝ} (hr : 0 < r) (hrB : r < D.boundary_neck.epsilon⁻¹)
@@ -254,10 +242,6 @@ private theorem coordinate_slice_in_core_or_end (D : CapCertificate g) {a : ℝ}
   · rcases lt_or_gt_of_ne hne with hneg | hpos
     · exact Or.inr (fun q => hn (hmem ⟨ha.1, hneg⟩ q))
     · exact Or.inl (fun q => hp (hmem ⟨hpos, ha.2⟩ q))
-
-
-
-
 
 theorem exists_outgoing_chain_boundary_transport_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 10000 ∧

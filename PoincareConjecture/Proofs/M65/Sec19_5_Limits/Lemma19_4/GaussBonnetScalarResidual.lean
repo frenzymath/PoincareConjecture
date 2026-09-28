@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskInterio
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskConformal
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundaryDifferential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -26,16 +16,11 @@ namespace PoincareConjecture.M65Gauss
 
 open M65Branch
 
-
-
 def complexResidualEnergy {n : ℕ}
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
     (q : Fin n → ℂ) : ℝ :=
   (G (residualRealColumn q) (residualRealColumn q) +
     G (residualImagColumn q) (residualImagColumn q)) / 2
-
-
-
 
 theorem complexResidualEnergy_pos {n : ℕ}
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -53,9 +38,6 @@ theorem complexResidualEnergy_pos {n : ℕ}
       rw [← residual_columns_recover q, ha, hb, map_zero, smul_zero, sub_zero]
     exact add_pos_of_nonneg_of_pos (hnon _) (hG _ hb)
   · exact add_pos_of_pos_of_nonneg (hG _ ha) (hnon _)
-
-
-
 
 theorem complexResidualEnergy_smul {n : ℕ}
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -76,10 +58,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
 
 theorem interior_conformalFactor_power (S : M65MinimalDisk g connection gamma)
     {x : LoopPlane} (hx : x ∈ ball (0 : LoopPlane) 1) :

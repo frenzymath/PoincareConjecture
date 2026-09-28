@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,11 +13,6 @@ variable {E F G M ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [TopologicalSpace M]
 
-
-
-
-
-
 structure PolyhedralPLInCharts (e : ι → OpenPartialHomeomorph M F)
     (f : E → M) (S : Set E) : Prop where
   continuousOn : ContinuousOn f S
@@ -38,10 +21,6 @@ structure PolyhedralPLInCharts (e : ι → OpenPartialHomeomorph M F)
       J.faces.Finite ∧ J.space ⊆ S ∧ IsOpen V ∧ x ∈ V ∧
       Subtype.val '' V ⊆ J.space ∧ MapsTo f J.space (e i).source ∧
       FinitePiecewiseAffineOn ((e i) ∘ f) J.space
-
-
-
-
 
 theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_comp
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
@@ -62,11 +41,6 @@ theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_comp
   refine ⟨L, V, hL, hV, hxV, ?_, hgfL⟩
   intro y hy
   exact hLs.symm.subset (hVJ hy)
-
-
-
-
-
 
 theorem polyhedralPLInCharts_of_affine_projections
     [FiniteDimensional ℝ E]

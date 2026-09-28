@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.PathClassLifts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ universe u
 namespace PathClassCover
 
 variable {X : Type u} [TopologicalSpace X] [LocallySimplyConnectedSpace X] {x₀ : X}
-
-
 
 theorem loop_nullhomotopic [PathConnectedSpace X] (a : PathClassCover x₀) (r : Path a a) :
     r.Homotopic (Path.refl a) := by
@@ -51,14 +39,10 @@ theorem loop_nullhomotopic [PathConnectedSpace X] (a : PathClassCover x₀) (r :
   apply (isCoveringMap_endpoint x₀).injective_path_homotopic_map _ _
   exact hp
 
-
-
 instance simplyConnectedSpace [PathConnectedSpace X] (x₀ : X) :
     SimplyConnectedSpace (PathClassCover x₀) :=
   simply_connected_iff_loops_nullhomotopic.mpr
     ⟨inferInstance, fun a r => loop_nullhomotopic a r⟩
-
-
 
 noncomputable def deck (q : Path.Homotopic.Quotient x₀ x₀) :
     PathClassCover x₀ ≃ₜ PathClassCover x₀ where
@@ -77,12 +61,8 @@ noncomputable def deck (q : Path.Homotopic.Quotient x₀ x₀) :
   continuous_toFun := continuous_append _
   continuous_invFun := continuous_append _
 
-
-
 @[simp] theorem endpoint_deck (q : Path.Homotopic.Quotient x₀ x₀)
     (a : PathClassCover x₀) : (deck q a).endpoint = a.endpoint := rfl
-
-
 
 theorem exists_deck_apply_eq (a b : PathClassCover x₀) (h : a.endpoint = b.endpoint) :
     ∃ q : Path.Homotopic.Quotient x₀ x₀, deck q a = b := by

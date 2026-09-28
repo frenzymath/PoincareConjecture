@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanTranslationNative
 import Mathlib.Analysis.Distribution.SchwartzSpace.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
 open scoped Topology SchwartzMap LineDeriv InnerProductSpace
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65C1L2_testDerivative {d : ℕ}
     {f : EuclideanSpace ℝ (Fin d) → ℝ} (hf : ContDiff ℝ 1 f)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmbeddedPatchImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +14,6 @@ variable {E F X ι : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X F} {f : E → X} {S : Set E}
-
-
-
-
 
 theorem PolyhedralPLInCharts.mem_interior_image_iff
     (hf : PolyhedralPLInCharts e f S)

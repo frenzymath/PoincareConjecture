@@ -7,17 +7,11 @@ open scoped Topology ContDiff Manifold
 
 noncomputable section
 
-
-
-
-
 namespace Poincare.Manifold
 
 variable {n : ℕ} {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {M : Type*} [TopologicalSpace M]
   [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
-
-
 
 theorem exists_regular_superlevel_smooth_embedding
     (hn : Module.finrank ℝ E = n + 1) {f : M → ℝ}

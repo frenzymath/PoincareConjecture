@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Iteration.TestCalculus
 
-
 noncomputable section
 
 open Set MeasureTheory Function Filter Topology
@@ -11,7 +10,6 @@ namespace Poincare.Analysis.Elliptic.Iteration
 variable {n : ℕ}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
 
 def WeakEquation (O : Set E) (F : Fin n → E → ℝ) (f : E → ℝ) : Prop :=
   ∀ φ : E → ℝ, ContDiff ℝ ∞ φ → HasCompactSupport φ → tsupport φ ⊆ O →
@@ -105,7 +103,6 @@ theorem WeakEquation.differentiate
   rw [integral_finsetSum Finset.univ
     (fun i _ => integrable_mul_partial_test (hG i) hφ hφc i)]
   exact neg_injective hbase
-
 
 theorem WeakEquation.remove_flux
     {O : Set E} {F H S : Fin n → E → ℝ} {f : E → ℝ}

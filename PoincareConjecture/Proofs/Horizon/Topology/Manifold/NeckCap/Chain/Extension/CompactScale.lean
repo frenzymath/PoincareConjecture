@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.EscapeCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +11,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_scale_lower_bound_of_meets_compact (D : LeviCivitaData g)
     (epsilon : ℝ) {K : Set M} (hK : IsCompact K) :
@@ -41,8 +31,6 @@ theorem exists_scale_lower_bound_of_meets_compact (D : LeviCivitaData g)
   obtain ⟨i, hi⟩ :=
     (eventually_disjoint_carrier_compact_of_scale_tendsto_zero D N hε htendsto hK).exists
   exact (hmeet i).ne_empty hi.inter_eq
-
-
 
 theorem eventually_scale_lower_bound_of_tendsto (D : LeviCivitaData g)
     {ι : Type*} {l : Filter ι} (N : ι → EpsilonNeck g) {epsilon : ℝ}

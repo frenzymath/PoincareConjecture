@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularPointedHeight
 import PoincareConjecture.Proofs.M76.Triangulation.AffineConvexSphereCapDisks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
-
-
-
-
 
 theorem isFinitePLBallPair_cornerHeight_rim_sublevel {t : ℝ} (ht : t ∈ Ioo 0 2) :
     IsFinitePLBallPair ℝ (frontier base ∩ {p | cornerHeight p ≤ t})
@@ -48,9 +35,6 @@ theorem isFinitePLBallPair_cornerHeight_rim_sublevel {t : ℝ} (ht : t ∈ Ioo 0
     ext p
     exact sub_eq_zero.trans eq_comm
   rwa [hcap, hrim] at h
-
-
-
 
 theorem isFinitePLBallPair_cornerHeight_rim_superlevel {t : ℝ} (ht : t ∈ Ioo 0 2) :
     IsFinitePLBallPair ℝ (frontier base ∩ {p | t ≤ cornerHeight p})

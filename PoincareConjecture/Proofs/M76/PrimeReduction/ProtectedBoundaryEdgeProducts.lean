@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedBoundaryEdgeModel
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeDualMarks
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryEdgeProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
-
 
 theorem exists_protected_boundary_edge_products
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

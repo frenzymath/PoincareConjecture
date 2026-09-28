@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.SourceBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -35,8 +25,6 @@ private theorem positive_order_id_bound {j : ℕ} (hj : 1 ≤ j) (x : V) :
           rw [norm_iteratedFDeriv_zero]
           exact ContinuousLinearMap.norm_id_le
       | succ j => simp only [iteratedFDeriv_succ_const, Pi.zero_apply, norm_zero, zero_le_one]
-
-
 
 theorem forcing_composition_bounded_at_order
     {G : A → V → ℝ → ℝ} {u : A → V → ℝ} {eta : ℝ} (k : ℕ)
@@ -83,9 +71,6 @@ theorem forcing_composition_bounded_at_order
       (ENat.natCast_le_of_coe_top_le_withTop le_rfl j), ContinuousMultilinearMap.opNorm_prod]
     exact (max_le ((positive_order_id_bound hj x).trans hD)
       ((hU j hjk a x).trans (hUle hjk))).trans (le_self_pow₀ hD (by omega))
-
-
-
 
 theorem gaugeSource_highest_jet_bound
     {b : A → V → V} {G : A → V → ℝ → ℝ} {u : A → V → ℝ}

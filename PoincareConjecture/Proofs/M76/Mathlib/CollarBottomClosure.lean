@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
 
 theorem collar_bottom_mem_closure_positive
     {B T s : Set E} {upper A : E → ℝ}

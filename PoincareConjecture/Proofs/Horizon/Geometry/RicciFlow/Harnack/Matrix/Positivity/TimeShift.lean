@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Global
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +14,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J K : Set ℝ}
-
 
 def SmoothExhaustion.translate {F : RicciFlow n M J} {O : M}
     (S : SmoothExhaustion F O) (c : ℝ)
@@ -50,7 +43,6 @@ lemma hamiltonBlockPos_translate {a b a' b' : ℝ} (F : RicciFlow n M (Ioo a b))
     (t : ℝ) (x : M) (τ : ℝ) :
     HamiltonBlockPos (F.translate c hKJ hK hne) t x τ ↔
       HamiltonBlockPos F (t + c) x τ := Iff.rfl
-
 
 theorem hamiltonBlockPos_on_open_set_of_smoothExhaustion_time_origin [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b c T : ℝ}
@@ -90,7 +82,6 @@ theorem hamiltonBlockPos_on_open_set_of_smoothExhaustion_time_origin [T2Space M]
   rw [hamiltonBlockPos_translate] at h
   simpa only [sub_add_cancel] using h
 
-
 theorem hamiltonBlockPos_of_smoothExhaustion_time_origin [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) {a b c T : ℝ}
     (F : RicciFlow n M (Ioo a b)) (O : M) (S : RicciFlow.SmoothExhaustion F O)
@@ -128,8 +119,6 @@ private lemma posSemidef_of_tendsto_entries {ι κ : Type*} [Fintype ι]
       exact (hlim i j).mul_const (v j)
     exact ge_of_tendsto hquad (hpos.mono fun q hq => hq.dotProduct_mulVec_nonneg v)
 
-
-
 theorem hamiltonBlockPos_of_tendsto_elapsedTime {a b : ℝ}
     (F : RicciFlow n M (Ioo a b)) (t : ℝ) (x : M)
     {ι : Type*} {l : Filter ι} [l.NeBot] {f : ι → ℝ} {τ : ℝ}
@@ -156,8 +145,6 @@ theorem hamiltonBlockPos_of_tendsto_elapsedTime {a b : ℝ}
       exact continuousAt_const.add (continuousAt_const.div
         (continuousAt_const.mul continuousAt_id) (mul_ne_zero two_ne_zero hτ))
   exact hentry.tendsto.comp hf
-
-
 
 theorem hamiltonBlockPos_of_time_origin_limit {T₀ T₁ a : ℝ}
     (F : RicciFlow n M (Ioo T₀ T₁)) (t : ℝ) (x : M) (hat : a < t)

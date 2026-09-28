@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunion
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapEmbedding
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_reunion_axial_chart (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)

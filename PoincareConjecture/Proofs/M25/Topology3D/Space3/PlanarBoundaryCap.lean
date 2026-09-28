@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BoundaryDiscCap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] space3_stereographic_dimension
-
-
 
 theorem boundaryDisc_cap_of_planar (hP : PlanarSchoenfliesService)
     (c : UnitCircle → E2) (hc : IsPlanarEmbedding c) (v : UnitTwoSphere) :

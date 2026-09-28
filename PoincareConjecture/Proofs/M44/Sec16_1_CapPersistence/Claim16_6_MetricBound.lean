@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch13.MetricSurgery
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture
 variable {X : Type u} [TopologicalSpace X]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]
 
-
-
 theorem metric_error_sq_le_jet_error
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
     (B : CovariantTensorEvaluation 3 X 2) (k : ℕ) (x : X) :
@@ -34,8 +24,6 @@ theorem metric_error_sq_le_jet_error
     Finset.single_le_sum (f := f) (fun j _ => show 0 ≤ f j from sq_nonneg _)
       (Finset.mem_range.mpr (Nat.zero_lt_succ k))
   exact h
-
-
 
 theorem metric_quadratic_bounds_of_jet_error
     (g : RiemannianMetric 3 X) (D : LeviCivitaData g)
@@ -75,8 +63,6 @@ theorem metric_quadratic_bounds_of_jet_error
     heval.trans (mul_le_mul_of_nonneg_right hnorm.le hv)
   have h := abs_le.mp habs
   constructor <;> nlinarith [h.1, h.2]
-
-
 
 theorem SurgeryCapClose.quadratic_bounds
     {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}

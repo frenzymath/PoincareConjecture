@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.FaceGrap
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Affine.RelativeInteriorHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Filter Module
 open scoped Topology

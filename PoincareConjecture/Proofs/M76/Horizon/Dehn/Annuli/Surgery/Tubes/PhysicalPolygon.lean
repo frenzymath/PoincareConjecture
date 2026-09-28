@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.SelfPaire
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.EndpointLoopPolygon
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 
@@ -11,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {f : E → X} {S : Set E}
-
-
 
 theorem SourceCircleDecomposition.exists_selfpaired_physical_polygon
     (M : SourceCircleDecomposition f S)
@@ -56,8 +52,6 @@ theorem SourceCircleDecomposition.exists_selfpaired_physical_polygon
       rw [← hlval, alpha.apply_symm_apply]
   rw [image_comp (F ∘ f) l, hlimage, image_comp F f, himage, image_comp F f]
 
-
-
 theorem SourceCircleDecomposition.injOn_piece_of_mate_ne
     (M : SourceCircleDecomposition f S) (i : M.Index) (hne : M.mate i ≠ i) :
     InjOn f (M.pieces i) := by
@@ -68,8 +62,6 @@ theorem SourceCircleDecomposition.injOn_piece_of_mate_ne
   have hym : y ∈ M.pieces (M.mate i) := heq.symm ▸
     (M.partner_component i ⟨x, hxG⟩).mp hx
   exact disjoint_left.mp (M.disjoint hne) hym hy
-
-
 
 theorem SourceCircleDecomposition.exists_physical_polygon
     (M : SourceCircleDecomposition f S) (i : M.Index)

@@ -11,8 +11,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m68_finite_event_propagation
     {L U : ℝ} {E : Set ℝ} {f G : ℝ → ℝ}
     (hpiece : ∀ a b, L ≤ a → a < b → b ≤ U →
@@ -46,8 +44,6 @@ theorem m68_finite_event_propagation
       intro x hx hxE
       have hmem := hcover x hx hxE
       exact (Finset.mem_insert.mp hmem).resolve_left (fun hxe => he (hxe ▸ hx))
-
-
 
 theorem horizon_m68_scalar_clock_statement : M68ScalarClockStatement := by
   classical

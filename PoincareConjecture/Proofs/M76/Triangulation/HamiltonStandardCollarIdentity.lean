@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexCubeNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHalfspaceSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,9 +16,6 @@ local notation "R" => latticeHandleDomain ι κ L
 local notation "V3" => (Fin 3 → ℝ)
 
 omit [Fintype κ] in
-
-
-
 
 theorem StandardLatticeHandleAtlas.chartwisePLOn_identity_of_restricted_charts
     (d : β → OpenPartialHomeomorph X V3) (hd : StandardLatticeHandleAtlas ι κ L d)

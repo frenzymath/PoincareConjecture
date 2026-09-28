@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.InitialFans
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 600000
@@ -40,7 +32,6 @@ private theorem segment_mem_hull (k : Fin 3) {t : ℝ} (ht : t ∈ Icc (0 : ℝ)
   rw [segment_eq_image_lineMap]
   exact ⟨t, ht, by simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]⟩
 
-
 theorem open_boundary_mem_boundary_iff (i : Bool × Bool) (k l : Fin 3)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
     ((B.face i).boundary k).map t ∈ ((B.face i).boundary l).map '' Icc (0 : ℝ) 1 ↔
@@ -59,7 +50,6 @@ theorem open_boundary_mem_boundary_iff (i : Bool × Bool) (k l : Fin 3)
       norm_num [Fin.succAbove, Fin.lt_def, Fin.ext_iff] at hc ⊢ <;> linarith [ht.1, ht.2]
   · rintro rfl
     exact ⟨t, ⟨ht.1.le, ht.2.le⟩, rfl⟩
-
 
 theorem open_chord_mem_carrier_iff (i j : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :
@@ -103,7 +93,6 @@ private theorem refined_vertex_mem_hull
   have h := meshTriangleBasis_subset_support M u (subset_convexHull ℝ _ hr)
   simpa only [M, TriangleMesh.refineByLines_support, TriangleMesh.single_support] using h
 
-
 theorem open_boundary_refined_vertex_fan (g : RiemannianMetric 2 S)
     (i : Bool × Bool) (k : Fin 3) (lines : List (Plane →ᵃ[ℝ] ℝ))
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -132,7 +121,6 @@ theorem open_boundary_refined_vertex_fan (g : RiemannianMetric 2 S)
       exact ⟨t, ht, by simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]⟩)
   rwa [heq] at hfan
 
-
 theorem open_first_side_mem_carrier_iff (i : Bool) (j : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
     ((B.face (i, true)).boundary 2).map t ∈ (B.face j).carrier ↔ j.1 = i := by
@@ -155,7 +143,6 @@ theorem open_first_side_mem_carrier_iff (i : Bool) (j : Bool × Bool)
   · intro hji
     apply B.firstSide_subset_carrier j
     rwa [P.firstSide_eq_of_fst_eq (show (i, true).1 = j.1 from hji.symm) B.scale] at hside
-
 
 theorem open_second_side_mem_carrier_iff (i : Bool) (j : Bool × Bool)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) :
@@ -180,8 +167,6 @@ theorem open_second_side_mem_carrier_iff (i : Bool) (j : Bool × Bool)
     apply B.secondSide_subset_carrier j
     rwa [P.secondSide_eq_of_snd_eq (show (true, i).2 = j.2 from hji.symm) B.scale] at hside
 
-
-
 theorem open_chord_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool × Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ))
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -204,7 +189,6 @@ theorem open_chord_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool × Bo
     exact B.refined_contribution_eq_zero_of_not_mem_carrier g j (lines j)
       ((B.open_chord_mem_carrier_iff i j ht).not.mpr hji)
   · simp
-
 
 theorem open_first_side_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ))
@@ -241,7 +225,6 @@ theorem open_first_side_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool)
       ((B.open_first_side_mem_carrier_iff i (j, k) ht).not.mpr hji)
   · simp
 
-
 theorem open_second_side_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ))
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)
@@ -277,7 +260,6 @@ theorem open_second_side_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool
       ((B.open_second_side_mem_carrier_iff i (k, j) ht).not.mpr hji)
   · simp
 
-
 theorem interior_point_mem_carrier_iff (i j : Bool × Bool) {z : Plane}
     (hz : z ∈ interior (convexHull ℝ (range (rightTriangleBasis B.scale_pos)))) :
     B.coordinates i z ∈ (B.face j).carrier ↔ j = i := by
@@ -305,8 +287,6 @@ theorem interior_point_mem_carrier_iff (i j : Bool × Bool) {z : Plane}
     · exact hside 1 (B.second_image i ▸ h)
   · rintro rfl
     exact hi
-
-
 
 theorem interior_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool × Bool)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) {z : Plane}
@@ -340,8 +320,6 @@ theorem interior_refined_vertex_fan (g : RiemannianMetric 2 S) (i : Bool × Bool
       ((B.interior_point_mem_carrier_iff i j hz).not.mpr hji)
   · simp
 
-
-
 theorem mem_carrier_nonvertex_cases (i : Bool × Bool) {q : S}
     (hq : q ∈ (B.face i).carrier)
     (hne : ∀ k : Fin 3, q ≠ B.coordinates i (rightTriangleBasis B.scale_pos k)) :
@@ -372,9 +350,6 @@ theorem mem_carrier_nonvertex_cases (i : Bool × Bool) {q : S}
   refine ⟨k, t, ⟨lt_of_le_of_ne ht.1 (Ne.symm ht0), lt_of_le_of_ne ht.2 ht1⟩, ?_⟩
   rw [B.boundary_map]
   exact (congrArg (B.coordinates i) htz).trans heq
-
-
-
 
 theorem refined_vertex_fan_away_from_original_vertices (g : RiemannianMetric 2 S)
     (lines : Bool × Bool → List (Plane →ᵃ[ℝ] ℝ)) {q : S}

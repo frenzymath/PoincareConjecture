@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Orientation
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -90,9 +88,6 @@ private theorem upper_open_strip_meets_core
     linarith [ht.1]
   · exact hz.1 (mem_iUnion_of_mem E (mem_iUnion_of_mem ⟨hE, heq⟩
       (image_mono ball_subset_closedBall hzE)))
-
-
-
 
 theorem upper_closed_strip_subset_core
     (L : List (SphereSurgeryCoreCap v g B))

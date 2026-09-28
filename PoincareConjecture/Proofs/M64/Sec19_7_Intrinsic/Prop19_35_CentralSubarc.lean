@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDecrease
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,10 +7,6 @@ open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_central_boundary_subarc
     (N : IntrinsicAnnulus) {radius a b epsilon : ℝ} (hradius : radius ≠ 0)

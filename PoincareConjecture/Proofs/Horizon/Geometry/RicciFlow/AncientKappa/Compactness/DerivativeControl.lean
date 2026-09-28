@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.LocalGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture.PointedRicciFlowCompactnessHypotheses
 
 open Set
-
-
 
 theorem eventually_interior_curvatureDerivativeNorm_le_of_m23_predecessors
     {T' T : ℝ}
@@ -147,8 +135,6 @@ theorem eventually_interior_curvatureDerivativeNorm_le_of_m23_predecessors
   change (F.flow.connection (δ + (t - δ))).curvatureDerivativeNorm m x ≤ _ at h
   rwa [show δ + (t - δ) = t by ring] at h
 
-
-
 theorem eventually_two_time_curvatureDerivativeNorm_le_of_m23_predecessors
     {T' T : ℝ}
     (H : PointedRicciFlowCompactnessHypotheses 3 T' T)
@@ -172,8 +158,6 @@ theorem eventually_two_time_curvatureDerivativeNorm_le_of_m23_predecessors
   dsimp only at hkbound ⊢
   intro s hs t ht x hx
   exact hkbound t ht x (hkcontain s hs t ⟨by linarith [ht.1], by linarith [ht.2]⟩ hx)
-
-
 
 theorem eventually_compact_curvatureDerivativeNorm_le_of_m23_predecessors
     {T' T : ℝ}
@@ -221,8 +205,6 @@ theorem eventually_compact_curvatureDerivativeNorm_le_of_m23_predecessors
   dsimp only at hk ⊢
   intro t ht x hx
   exact hk 0 ⟨H.time_bounds.1, H.time_bounds.2⟩ t (hIcc ht) x hx
-
-
 
 theorem eventually_zero_time_curvatureDerivativeNorm_le_of_m23_predecessors
     {T' T : ℝ}

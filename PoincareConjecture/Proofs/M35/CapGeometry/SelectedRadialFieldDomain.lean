@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.RetainedShapeValue
 import PoincareConjecture.Proofs.M35.CapGeometry.RetainedUnitField
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem selected_coordinate_smooth_invertible {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J)
@@ -47,9 +37,6 @@ theorem selected_coordinate_smooth_invertible {J : Set ℝ}
   rw [mfderiv_comp z (hf.mdifferentiableAt (by simp))
     ((hc z).mdifferentiableAt (by simp))]
   exact hfi.comp (hi z)
-
-
-
 
 theorem blowupSequence_coordinate_radial_domain
     (P : M35StandardCapPredecessors)

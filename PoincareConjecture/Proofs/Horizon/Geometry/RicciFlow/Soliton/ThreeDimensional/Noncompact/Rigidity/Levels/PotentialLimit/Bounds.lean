@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.Coverage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MetricComparison
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +19,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_normalizedPotential_value_gradient_ball_bound
     (S : GradientShrinkingSolitonData 3 M) (hD : S.connection.CurvatureTensorCalculus)
@@ -98,8 +89,6 @@ variable {M : Type u} [TopologicalSpace M]
     (fun _ => G.unscaledSourceFlow.shrink.metric)
     (fun k => equivShrink M (q k)) 1)
 
-
-
 theorem unscaledOriginalEmbedding_tangentNorm_eventually_le
     (K : Set L.limitCarrier.carrier) (hK : IsCompact K) :
     ∀ᶠ k in atTop, K ⊆ L.exhaustion k ∧
@@ -121,8 +110,6 @@ theorem unscaledOriginalEmbedding_tangentNorm_eventually_le
   change Real.sqrt (S.metric.inner _ _ _) ≤ _
   rw [G.unscaledOriginalEmbedding_inner L k x (hinc hx) v v]
   exact (hk x hx v).1
-
-
 
 theorem unscaledOriginalEmbedding_eventually_bounded_distance
     (hcomplete : L.limitCarrier.metricComplete (L.limitFlow.metric 0))
@@ -185,8 +172,6 @@ theorem unscaledOriginalEmbedding_eventually_bounded_distance
   exact (ENNReal.toReal_mono ENNReal.ofReal_ne_top hbound.le).trans_eq
     (ENNReal.toReal_ofReal (by positivity))
 
-
-
 theorem normalizedPotentialPullback_eventually_value_differential_bounded
     (hD : S.connection.CurvatureTensorCalculus) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -219,8 +204,6 @@ theorem normalizedPotentialPullback_eventually_value_differential_bounded
   exact (S.connection.abs_mvfderiv_le_gradient_norm _ _ _).trans
     ((mul_le_mul hbounds.2 (hkn.2 x hx v) (Real.sqrt_nonneg _) hB).trans_eq (by ring))
 
-
-
 theorem normalizedPotentialPullback_eventually_value_gradient_bounded
     (hD : S.connection.CurvatureTensorCalculus) (p : M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
@@ -235,8 +218,6 @@ theorem normalizedPotentialPullback_eventually_value_gradient_bounded
   refine ⟨B, hB, ?_⟩
   filter_upwards [hbound] with k hk x hx
   exact ⟨(hk x hx).1, ((L.limitFlow.connection 0).gradient_norm_le_iff _ _ hB).2 (hk x hx).2⟩
-
-
 
 theorem normalizedPotentialPullback_eventually_coordinate_C1_bounded
     (hD : S.connection.CurvatureTensorCalculus) (p : M)

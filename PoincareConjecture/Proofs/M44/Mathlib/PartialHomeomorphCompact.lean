@@ -1,13 +1,5 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,16 +8,12 @@ namespace OpenPartialHomeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space Y]
 
-
-
 theorem image_closure_of_compact_buffer (e : OpenPartialHomeomorph X Y)
     {V : Set X} (hV : IsCompact (closure V)) (hsub : closure V ⊆ e.source) :
     e '' closure V = closure (e '' V) := by
   have hc : ContinuousOn e (closure V) := e.continuousOn.mono hsub
   exact hc.image_closure.antisymm
     (closure_minimal (image_mono subset_closure) (hV.image_of_continuousOn hc).isClosed)
-
-
 
 theorem image_frontier_of_compact_buffer (e : OpenPartialHomeomorph X Y)
     {V : Set X} (hV : IsOpen V) (hcompact : IsCompact (closure V))

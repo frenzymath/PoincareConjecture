@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledPolygon
 import PoincareConjecture.Statements.M64Approximation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
-
-
-
 
 theorem m64StaticApproximationTheory_of_suppliers
     (hcompact : IsCompact (univ : Set M))

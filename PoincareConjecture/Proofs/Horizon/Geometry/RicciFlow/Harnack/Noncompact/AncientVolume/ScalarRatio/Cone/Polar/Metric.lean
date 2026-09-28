@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.SmoothAction
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 namespace Poincare.AncientVolume.ScalarRatio.UnitSliceRadialChartData
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
-
-
 
 def radiusCoordinate (d : UnitSliceRadialChartData hcomparison n) (c : ℝ)
     (z : ℝ × UnitSliceAmbient n) : UnitSliceAmbient n :=
@@ -75,8 +65,6 @@ theorem fderiv_radiusCoordinate (d : UnitSliceRadialChartData hcomparison n)
   rw [mul_comm, ← div_eq_mul_inv]
   exact d.fderiv_radialOrbit_joint_zero hx (a / c) v
 
-
-
 theorem inner_radiusCoordinate_of_level_tangent
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) (hlevel : d.potential x = 1 / 2)
@@ -104,8 +92,6 @@ theorem inner_radiusCoordinate_of_level_tangent
   field_simp
   ring
 
-
-
 theorem inner_radiusCoordinate_regularLevel
     (d : UnitSliceRadialChartData hcomparison n) (c : ℝ≥0) (hc : 0 < c)
     (z : d.Level) (a b : ℝ) (v w : EuclideanSpace ℝ (Fin n)) :
@@ -130,9 +116,6 @@ theorem inner_radiusCoordinate_regularLevel
     rw [mfderiv_eq_fderiv] at hmem
     exact hmem
   exact d.inner_radiusCoordinate_of_level_tangent c hc z.1.2 z.2 a b _ _ (hker v) (hker w)
-
-
-
 
 def polarMap (d : UnitSliceRadialChartData hcomparison n) (c : ℝ)
     (q : ℝ × d.Level) : UnitSliceAmbient n :=
@@ -182,8 +165,6 @@ theorem mfderiv_polarMap (d : UnitSliceRadialChartData hcomparison n)
   erw [hradialD] at hh
   exact hh
 
-
-
 theorem inner_polarMap (d : UnitSliceRadialChartData hcomparison n)
     (c : ℝ≥0) (hc : 0 < c) (z : d.Level) (a b : ℝ) (v w : EuclideanSpace ℝ (Fin n)) :
     letI : Fact (Module.finrank ℝ (UnitSliceAmbient n) = n + 1) := ⟨finrank_euclideanSpace_fin⟩
@@ -198,8 +179,6 @@ theorem inner_polarMap (d : UnitSliceRadialChartData hcomparison n)
   erw [d.mfderiv_polarMap hc, d.mfderiv_polarMap hc]
   erw [hcenter]
   exact d.inner_radiusCoordinate_regularLevel c hc z a b v w
-
-
 
 theorem isInvertible_mfderiv_polarMap (d : UnitSliceRadialChartData hcomparison n)
     (c : ℝ≥0) (hc : 0 < c) (z : d.Level) :

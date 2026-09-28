@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.UpperAnnulus
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -32,8 +24,6 @@ private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 structure LowerAnnularEnd (D : SphereSurgeryCoreCap v g B)
     (C : Set S2) (h : S2 → Real) (a b : Real) where
@@ -99,9 +89,6 @@ theorem boundary_mem_band (A : LowerAnnularEnd D C h a b)
   obtain ⟨q, rfl⟩ := hp
   exact mem_image_of_mem _ ⟨mem_univ _, hDa, hDb⟩
 
-
-
-
 theorem eq_cap_of_boundary_mem_band
     (L : List (SphereSurgeryCoreCap v g B))
     (hpair : L.Pairwise (fun D E => Disjoint
@@ -146,8 +133,6 @@ theorem eq_cap_of_boundary_mem_band
       rw [frontier_core L hpair hcore]
       exact mem_iUnion_of_mem E (mem_iUnion_of_mem hE hpE)
     exact False.elim (hpfront.2 hpint)
-
-
 
 theorem disjoint_band
     (L : List (SphereSurgeryCoreCap v g B))

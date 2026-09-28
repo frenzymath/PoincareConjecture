@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.M13.CurvatureContractions
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.Operator
 import Mathlib.Analysis.InnerProductSpace.Trace
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +14,6 @@ namespace PoincareConjecture.M32
 open PoincareConjecture.SpacetimeBounds
 
 local notation "E" n:max => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem metricTrace_eq_inverse_contraction {n : ℕ}
     (g : RiemannianMetric n (E n)) (x : E n)
@@ -80,14 +63,10 @@ theorem metricTrace_eq_inverse_contraction {n : ℕ}
     RiemannianMetric.inverseCoefficients, PiLp.proj_apply,
     ContinuousLinearMap.coe_coe] using hdual.trans hexp.symm
 
-
-
 noncomputable def scalarMetricTraceTwoJet {n : ℕ} (J : MetricTwoJet n) : ℝ :=
   ∑ i, ∑ j, EuclideanSpace.proj j (J.1.inverse (EuclideanSpace.proj i)) *
     jetRicci J (EuclideanSpace.basisFun (Fin n) ℝ i)
       (EuclideanSpace.basisFun (Fin n) ℝ j)
-
-
 
 theorem contDiffAt_scalarMetricTraceTwoJet {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) : ContDiffAt ℝ ∞ (@scalarMetricTraceTwoJet n) J := by
@@ -100,8 +79,6 @@ theorem contDiffAt_scalarMetricTraceTwoJet {n : ℕ} {J : MetricTwoJet n}
   intro j _
   exact ((EuclideanSpace.proj (𝕜 := ℝ) j).contDiff.contDiffAt.comp J
     (hI.clm_apply contDiffAt_const)).mul (contDiffAt_jetRicci hJ _ _)
-
-
 
 theorem scalarMetricTraceTwoJet_metricTwoJet {n : ℕ}
     {g : RiemannianMetric n (E n)} (D : LeviCivitaData g) (x : E n) :

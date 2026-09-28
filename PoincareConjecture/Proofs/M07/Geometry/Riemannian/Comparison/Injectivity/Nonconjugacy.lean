@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ManifoldComparison
 import PoincareConjecture.Proofs.M07.Analysis.ODE.Jacobi.ComparisonRadius
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem contDiffAt_chartField_radialVariation_of_ball
     {e : EuclideanSpace ℝ (Fin n) → M} {R : ℝ}
@@ -75,8 +64,6 @@ theorem contDiffAt_chartField_radialVariation_of_ball
       (mfderiv (𝓡 n) (𝓡 n) e (s • v) (s • w)) at hdw
   rw [← hdw, map_smul]
 
-
-
 theorem exists_radial_variation_rectangle
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {R : ℝ} {v : E} (hv : v ∈ Metric.ball 0 R) (w : E) :
@@ -100,8 +87,6 @@ theorem exists_radial_variation_rectangle
   · intro s hs t ht
     rw [Metric.mem_ball, dist_zero_right, norm_smul, Real.norm_eq_abs]
     exact (mul_le_mul_of_nonneg_right (abs_lt.mpr ht).le (norm_nonneg _)).trans_lt hs
-
-
 
 theorem tangentNorm_mfderiv_bounds_of_radial_geodesics
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -170,7 +155,6 @@ theorem tangentNorm_mfderiv_bounds_of_radial_geodesics
   rw [hvalue] at h
   simpa only [one_mul, mul_one] using h
 
-
 theorem bijective_mfderiv_of_tangentNorm_lower_bound
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
     (v : EuclideanSpace ℝ (Fin n))
@@ -191,9 +175,6 @@ theorem bijective_mfderiv_of_tangentNorm_lower_bound
   have hsurj : Function.Surjective A :=
     (LinearMap.injective_iff_surjective (f := A.toLinearMap)).mp hinj
   exact ⟨hinj, hsurj⟩
-
-
-
 
 theorem exists_precompact_exponential_with_differential_bounds [T2Space M]
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M)

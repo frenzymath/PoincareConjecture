@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedTopCornerFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.PointClassification
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter
@@ -25,7 +19,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
 
 set_option maxHeartbeats 800000 in
 omit [T2Space S] in
-
 
 theorem band_contribution_at_open_top_canonical_vertex
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
@@ -72,8 +65,6 @@ theorem band_contribution_at_open_top_canonical_vertex
     (fun a => (T.refinement.subdivision (.inr (.inl ⟨⟨p, i⟩, a⟩))).refinement_lines)
     heq j hts ht q.1 hpoint ⟨a, hused⟩
 
-
-
 theorem core_contribution_at_open_top_canonical_vertex
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i : Fin (T.graphs p).count) (j : Fin (T.bands p i).faces.interface.count)
@@ -102,8 +93,6 @@ theorem core_contribution_at_open_top_canonical_vertex
   simp [FiniteChartRegionDecomposition.OrientedGraphPiece.FixedStripBandFaces.coreContactLines,
     List.mem_ofFn]
 
-
-
 theorem canonical_vertex_fan_on_open_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i : Fin (T.graphs p).count) (j : Fin (T.bands p i).faces.interface.count)
@@ -131,7 +120,6 @@ theorem canonical_vertex_fan_on_open_band_top
   ring
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_on_interior_band_top
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.Origina
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.PlanarCofaces
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Polygons.LocalHeights.FiniteFamily
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

@@ -1,13 +1,5 @@
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -15,8 +7,6 @@ open Set Topology
 namespace PoincareConjecture.M38
 
 variable {A : Type*} [TopologicalSpace A] {O : Set A} {x y : A}
-
-
 
 theorem mem_componentIn_of_mem_closure (hx : x ∈ O) (hy : y ∈ O)
     (h : y ∈ closure (connectedComponentIn O x)) : y ∈ connectedComponentIn O x := by
@@ -26,8 +16,6 @@ theorem mem_componentIn_of_mem_closure (hx : x ∈ O) (hy : y ∈ O)
     exact h
   rw [isClosed_connectedComponent.closure_eq] at hc
   exact ⟨⟨y, hy⟩, hc, rfl⟩
-
-
 
 theorem componentIn_closure_inter (hx : x ∈ O) :
     closure (connectedComponentIn O x) ∩ O = connectedComponentIn O x := by
@@ -39,16 +27,12 @@ theorem componentIn_closure_inter (hx : x ∈ O) :
 
 variable [LocallyConnectedSpace A]
 
-
-
 theorem componentIn_frontier_subset (hO : IsOpen O) (hx : x ∈ O) :
     frontier (connectedComponentIn O x) ⊆ frontier O := by
   rw [hO.connectedComponentIn.frontier_eq, hO.frontier_eq]
   intro y hy
   exact ⟨closure_mono (connectedComponentIn_subset O x) hy.1,
     fun hyO => hy.2 (mem_componentIn_of_mem_closure hx hyO hy.1)⟩
-
-
 
 theorem componentIn_interior_closure (hO : IsOpen O) (hx : x ∈ O)
     (hregular : interior (closure O) = O) :
@@ -59,7 +43,6 @@ theorem componentIn_interior_closure (hO : IsOpen O) (hx : x ∈ O)
     rw [hregular] at hyO
     exact mem_componentIn_of_mem_closure hx hyO (interior_subset hy)
   · exact hO.connectedComponentIn.subset_interior_iff.mpr subset_closure
-
 
 theorem componentIn_frontier_closure (hO : IsOpen O) (hx : x ∈ O)
     (hregular : interior (closure O) = O) :

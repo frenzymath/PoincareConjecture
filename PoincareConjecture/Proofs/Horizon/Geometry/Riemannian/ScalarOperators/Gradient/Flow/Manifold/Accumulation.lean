@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.ScalarDescent
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
 open Set Filter PoincareConjecture
 open scoped Topology ContDiff Manifold Bundle
 set_option autoImplicit false
@@ -27,15 +17,12 @@ theorem gradient_energy_nonneg_manifold (D : LeviCivitaData g) (f : M → ℝ) (
   · simp [hz]
   · exact (g.pos x _ hz).le
 
-
 theorem continuousAt_gradient_energy_manifold (D : LeviCivitaData g)
     {f : M → ℝ} {p : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f p) :
     ContinuousAt (fun x => g.inner x (D.gradient f x) (D.gradient f x)) p := by
   have hG := D.contMDiffAt_gradient hf
   have hi := ((g.contMDiff p).clm_bundle_apply hG).clm_bundle_apply hG
   exact (Bundle.contMDiffAt_totalSpace.mp hi).2.continuousAt
-
-
 
 theorem gradient_eq_zero_iff_mfderiv_eq_zero_manifold
     (D : LeviCivitaData g) (f : M → ℝ) (p : M) :
@@ -49,12 +36,10 @@ theorem gradient_eq_zero_iff_mfderiv_eq_zero_manifold
   · intro h
     simp [LeviCivitaData.gradient, mvfderiv, h]
 
-
 theorem gradient_eq_zero_iff_mvfderiv_eq_zero_manifold
     (D : LeviCivitaData g) (f : M → ℝ) (p : M) :
     D.gradient f p = 0 ↔ mvfderiv (𝓡 n) f p = 0 :=
   gradient_eq_zero_iff_mfderiv_eq_zero_manifold D f p
-
 
 theorem gradient_energy_eq_zero_iff_mfderiv_eq_zero_manifold
     (D : LeviCivitaData g) (f : M → ℝ) (p : M) :
@@ -68,12 +53,10 @@ theorem gradient_energy_eq_zero_iff_mfderiv_eq_zero_manifold
   · intro h
     simp [h]
 
-
 theorem gradient_energy_eq_zero_iff_mvfderiv_eq_zero_manifold
     (D : LeviCivitaData g) (f : M → ℝ) (p : M) :
     g.inner p (D.gradient f p) (D.gradient f p) = 0 ↔ mvfderiv (𝓡 n) f p = 0 :=
   gradient_energy_eq_zero_iff_mfderiv_eq_zero_manifold D f p
-
 
 theorem exists_critical_accumulation_of_compact_neg_gradient_manifold
     (D : LeviCivitaData g) {f : M → ℝ} {O K : Set M}
@@ -122,7 +105,6 @@ theorem exists_critical_accumulation_of_compact_neg_gradient_manifold
     change g.inner p (D.gradient f p) v = mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f p v at hi
     simpa [hpgrad] using hi.symm
 
-
 theorem antitoneOn_function_along_neg_gradient_manifold
     (D : LeviCivitaData g) {f : M → ℝ} {O : Set M}
     (hO : IsOpen O) (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f O)
@@ -137,8 +119,6 @@ theorem antitoneOn_function_along_neg_gradient_manifold
   intro t ht
   rw [(hd t (interior_subset ht)).deriv]
   exact neg_nonpos.mpr (gradient_energy_nonneg_manifold D f _)
-
-
 
 theorem exists_limit_of_compact_neg_gradient_of_strict_extrema_manifold
     [T2Space M] (D : LeviCivitaData g) {f : M → ℝ} {O K : Set M}
@@ -165,7 +145,6 @@ theorem exists_limit_of_compact_neg_gradient_of_strict_extrema_manifold
       (hf.continuousOn.mono hKO) hpK hcont hγK hanti hτ hlim hmax
     exact ⟨p, hpK, tendsto_const_nhds.congr' (heq.mono fun _ h => h.symm), hp, Or.inr heq⟩
 
-
 theorem tendsto_of_compact_neg_gradient_of_unique_critical_manifold
     [T2Space M] (D : LeviCivitaData g) {f : M → ℝ} {O K : Set M}
     (hO : IsOpen O) (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f O)
@@ -183,8 +162,6 @@ theorem tendsto_of_compact_neg_gradient_of_unique_critical_manifold
     (fun t ht => (hγ t ht).continuousAt.continuousWithinAt) hγK
     (antitoneOn_function_along_neg_gradient_manifold D hO hf (fun t ht => hKO (hγK t ht)) hγ)
     hτ hlim hmin
-
-
 
 theorem exists_strict_minimum_limit_of_compact_neg_gradient_manifold
     [T2Space M] (D : LeviCivitaData g) {f : M → ℝ} {O K : Set M}

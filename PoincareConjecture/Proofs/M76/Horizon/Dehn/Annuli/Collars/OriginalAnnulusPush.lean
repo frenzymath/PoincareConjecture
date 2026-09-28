@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Collars.SourceComplex
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Collars.FiniteBoundaryPush
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric Topology
 
@@ -18,8 +10,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem exists_original_annulus_push
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

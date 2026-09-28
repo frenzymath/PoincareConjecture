@@ -2,17 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Matrix
@@ -37,8 +26,6 @@ private theorem axisReflection_mulVec (r : ℝ) :
       (EuclideanSpace.single (0 : Fin 3) r).ofLp := by
   ext i
   fin_cases i <;> simp [axisReflection, Matrix.mulVec, dotProduct]
-
-
 
 theorem exists_standardRotation_axis (x : StandardCapSpace) :
     ∃ A : Matrix.specialOrthogonalGroup (Fin 3) ℝ,

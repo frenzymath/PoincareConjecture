@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.ManifoldFlatGluing
 import Mathlib.Algebra.Order.Floor.Ring
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -20,8 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {H : Type*} [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
   {M : Type*} [TopologicalSpace M] [ChartedSpace H M] [IsManifold I ∞ M]
   {ell : ℝ} {p : ℝ → M} {phi : ℝ → ℝ}
-
-
 
 theorem contMDiffAt_comp_of_flat_cells_vertex (hell : 0 < ell)
     (alpha : ℤ → ℝ → M)
@@ -74,9 +63,6 @@ theorem contMDiffAt_comp_of_flat_cells_vertex (hell : 0 < ell)
     have ha := hagreement j (phi y - c) hs
     change p (c + (phi y - c)) = _ at ha
     simpa only [← add_sub_assoc, add_sub_cancel_left] using ha
-
-
-
 
 theorem contMDiff_comp_of_flat_cells (hell : 0 < ell)
     (alpha : ℤ → ℝ → M)

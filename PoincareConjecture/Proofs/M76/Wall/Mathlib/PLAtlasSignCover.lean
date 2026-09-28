@@ -3,27 +3,13 @@ import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Instances.Sign
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 namespace Geometry
 
-
-
 abbrev PLOrientationSheet := {s : SignType // s ≠ 0}
-
-
 
 def plOrientationSheetEquivBool : PLOrientationSheet ≃ Bool where
   toFun s := decide (s.val = 1)
@@ -35,8 +21,6 @@ def plOrientationSheetEquivBool : PLOrientationSheet ≃ Bool where
     | neg => rfl
     | pos => rfl
   right_inv b := by cases b <;> rfl
-
-
 
 theorem nat_card_plOrientationSheet : Nat.card PLOrientationSheet = 2 := by
   rw [Nat.card_congr plOrientationSheetEquivBool,
@@ -94,9 +78,6 @@ private theorem continuousOn_atlasSheetChange
   exact hc.congr (fun z => Subtype.ext
     (atlasSheetChange_val e hcompat U i j z.val.1 z.val.2 z.property.1).symm)
 
-
-
-
 noncomputable def plAtlasSignCore
     (e : ι → OpenPartialHomeomorph X E)
     (hcover : ∀ x : X, ∃ i, x ∈ (e i).source)
@@ -127,15 +108,11 @@ variable (e : ι → OpenPartialHomeomorph X E)
   (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)
   (U : Set X)
 
-
-
 theorem plAtlasSignCore_coordChange (i j : ι) (x : U) (v : PLOrientationSheet)
     (hx : (x : X) ∈ (e i).source ∩ (e j).source) :
     ((plAtlasSignCore e hcover hcompat U).coordChange i j x v).val =
       plAtlasTransitionSign e hcompat i j ⟨x, hx⟩ * v.val :=
   atlasSheetChange_val e hcompat U i j x v hx
-
-
 
 noncomputable def plAtlasSignFiberEquiv (x : U) :
     ((plAtlasSignCore e hcover hcompat U).proj ⁻¹' {x}) ≃ PLOrientationSheet where
@@ -149,9 +126,6 @@ noncomputable def plAtlasSignFiberEquiv (x : U) :
     rfl
   right_inv _ := rfl
 
-
-
-
 theorem plAtlasSignCore_covering :
     let Z := plAtlasSignCore e hcover hcompat U
     IsCoveringMap Z.proj ∧ Continuous Z.proj ∧ IsOpenMap Z.proj ∧
@@ -163,9 +137,6 @@ theorem plAtlasSignCore_covering :
   · intro x
     exact (Nat.card_congr (plAtlasSignFiberEquiv e hcover hcompat U x)).trans
       nat_card_plOrientationSheet
-
-
-
 
 theorem plAtlasSignCore_localTriv (i : ι) :
     let Z := plAtlasSignCore e hcover hcompat U
@@ -192,8 +163,6 @@ theorem plAtlasSignCore_localTriv (i : ι) :
     refine ⟨rfl, ?_⟩
     exact plAtlasSignCore_coordChange e hcover hcompat U _ _ x v
       ⟨hx, (plAtlasSignCore e hcover hcompat U).mem_baseSet_at x⟩
-
-
 
 theorem plAtlasSignCore_localTriv_change (i j : ι) (x : U)
     (hi : (x : X) ∈ (e i).source) (hj : (x : X) ∈ (e j).source)

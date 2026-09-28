@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M33.OldEventPolicy
 import PoincareConjecture.Proofs.M33.TerminalPolicyAtFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem RepairedContinuationConclusion.terminalPolicy
     {F : SurgeryFlowData.{u}} {T : Real}

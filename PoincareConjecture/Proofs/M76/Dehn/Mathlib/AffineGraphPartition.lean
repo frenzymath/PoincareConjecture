@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GeometricGraphEdgeIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteOrderedPartition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open Set
 namespace ContinuousAffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem injective_or_const_real (A : ℝ →ᴬ[ℝ] E) :
     Function.Injective A ∨ ∀ t : ℝ, A t = A 0 := by
@@ -44,10 +32,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
-
-
 
 theorem exists_affine_graph_partition
     (hK : K.faces.Finite) (hdim : ∀ s ∈ K.faces, s.card ≤ 2)

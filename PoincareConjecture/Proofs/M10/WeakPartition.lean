@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.LaplacianLinearity
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -24,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [SecondCountableTopology M] [MeasurableSpace M]
   {g : RiemannianMetric n M}
-
 
 theorem weak_comparison_of_local (D : LeviCivitaData g) (μ : Measure M) (u H : M → ℝ)
     (hlocal : ∀ q : M, ∃ U : Set M, IsOpen U ∧ q ∈ U ∧

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Locality
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 noncomputable def coordinateTriangleSecondField
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

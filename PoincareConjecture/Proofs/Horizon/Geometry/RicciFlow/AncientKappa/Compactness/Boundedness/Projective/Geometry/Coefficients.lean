@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Diameter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Ellipticity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,11 +16,9 @@ namespace PoincareConjecture.CylinderCover
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
-
 def centeredParametrization (f : RoundCylinderSpace → M) (q : UnitTwoSphere)
     (y : RoundCylinderCoordinates) : M :=
   f ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm y.1, y.2)
-
 
 def normalizedCenteredCoefficients (g : RiemannianMetric 3 M)
     (f : RoundCylinderSpace → M) (Q : ℝ) (q : UnitTwoSphere)
@@ -78,8 +68,6 @@ theorem normalizedCenteredCoefficients_basis_eventuallyEq
   rw [roundCylinderTensorCoefficient_pullback_eq g q f p
     ((hf.contMDiffAt ((isOpen_univ.prod isOpen_Ioo).mem_nhds hp')).mdifferentiableAt (by simp))]
   rfl
-
-
 
 theorem norm_fderiv_normalizedCenteredCoefficients_le
     (g : RiemannianMetric 3 M) {f : RoundCylinderSpace → M} {ε Q : ℝ}
@@ -150,8 +138,6 @@ theorem centered_coefficients_eq_pullback
   simp only [map_add, map_smul, add_apply, smul_apply, hb]
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
-
 
 theorem normalizedCenteredCoefficients_lower
     (g : RiemannianMetric 3 M) {f : RoundCylinderSpace → M} {ε Q : ℝ}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgeryOldGerms
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -28,7 +18,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C} {R Fmark : Set M}
   {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
-
 
 structure OriginalGeneralPositionData (step : Step s t)
     (old : StageMarkedDisk t R Fmark base Jgroup) where
@@ -125,7 +114,6 @@ structure OriginalGeneralPositionData (step : Step s t)
         ∀ y ∈ T.source, y ∈ (step.projection ∘ step.inclusion) ''
           (initial.map '' D2 ∩ w.right.source) ↔ (c (T y)).1.1 = 0
 
-
 theorem Step.nonempty_originalGeneralPositionData (step : Step s t)
     (he : PoincareConjecture.M76.PLDomain e R) (hF : Fmark ⊆ frontier R)
     (hopen : IsOpen ((Subtype.val : frontier R → M) ⁻¹' Fmark))
@@ -144,7 +132,6 @@ theorem Step.nonempty_originalGeneralPositionData (step : Step s t)
     hstart, hend, htrans, hstable, hcell,
     Z, G, first, E, hZ, hG, hZs, hGs, hZdim, hGdim,
     hfirst, hinverse, hfirstval, hE, hEs, hcross⟩⟩
-
 
 noncomputable def Step.originalGeneralPositionData (step : Step s t)
     (he : PoincareConjecture.M76.PLDomain e R) (hF : Fmark ⊆ frontier R)

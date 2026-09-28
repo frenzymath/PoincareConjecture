@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Mathlib.Compat
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeConvexChartSides
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,8 +19,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
 
 theorem exists_closedStrip_cap_halfspace_chart
     (P : OriginalDiskProduct e R j) (hR : IsCompact R) (he : PLDomain e R)
@@ -106,8 +93,6 @@ theorem exists_closedStrip_cap_halfspace_chart
     apply exists_compatible_halfspace_of_signed_pair e H hzH hHz
       (fun i => (hcompat i).1) ε hε
     exact Or.inr (fun x hx => (hside x hx).trans ((hregion x hx).and Iff.rfl))
-
-
 
 theorem plDomain_closedStrip (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (he : PLDomain e R)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.IdentityAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedSourceAnnuli
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,7 +9,6 @@ namespace Dehn
 
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
 
 def pairedArmReindex (r₀ r₁ : Bool) : P2 ≃L[ℝ] P2 :=
   if r₀ then
@@ -49,7 +39,6 @@ theorem pairedArmReindex_mem_square (r₀ r₁ : Bool) (d : ℝ) (p : P2) :
     constructor <;> intro h <;>
     constructor <;> constructor <;> linarith [h.1.1, h.1.2, h.2.1, h.2.2]
 
-
 def pairedTubeReindex (r₀ r₁ : Bool) : C3 ≃L[ℝ] C3 :=
   (pairedArmReindex r₀ r₁).prodCongr (ContinuousLinearEquiv.refl ℝ ℝ)
 
@@ -68,8 +57,6 @@ theorem pairedTubeReindex_image (r₀ r₁ : Bool) (L d : ℝ) :
   · intro z hz
     refine ⟨pairedTubeReindex r₀ r₁ z, (pairedTubeReindex_mem r₀ r₁ L d z).mpr hz, ?_⟩
     exact Prod.ext (pairedArmReindex_involutive r₀ r₁ z.1) rfl
-
-
 
 theorem pairedTubeReindex_map
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

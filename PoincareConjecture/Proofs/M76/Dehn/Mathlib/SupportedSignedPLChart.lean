@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreCutoffs
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -21,10 +12,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_supported_signed_PL_boundary_block
     (e : ι → OpenPartialHomeomorph M E)

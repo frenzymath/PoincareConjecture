@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.PeriodicStripEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimumHarmonic
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -18,20 +13,12 @@ namespace PoincareConjecture.M64
 
 open ConnectionVariation
 
-
-
-
-
 theorem fderiv_eq_of_translation {E F : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : E → F} (T : E) (hf : ∀ p, f (T + p) = f p) (p : E) :
     fderiv ℝ f (T + p) = fderiv ℝ f p := by
   rw [← fderiv_comp_add_left]
   exact congrArg (fun F => fderiv ℝ F p) (funext hf)
-
-
-
-
 
 def annulusWeightedTension {n : ℕ}
     (Gamma : EuclideanSpace ℝ (Fin n) →
@@ -42,10 +29,6 @@ def annulusWeightedTension {n : ℕ}
       (EuclideanSpace.basisFun (Fin 2) ℝ 0) p +
     r⁻¹ • covDerivAlong Gamma u (fun z => fderiv ℝ u z (EuclideanSpace.basisFun (Fin 2) ℝ 1))
       (EuclideanSpace.basisFun (Fin 2) ℝ 1) p
-
-
-
-
 
 theorem annulusWeightedTension_periodic {n : ℕ}
     (Gamma : EuclideanSpace ℝ (Fin n) →
@@ -72,11 +55,6 @@ theorem annulusWeightedTension_periodic {n : ℕ}
     fin_cases i <;> simp [T, annulusPoint, add_comm]
   rw [hshift]
   exact htau _
-
-
-
-
-
 
 theorem annulusWeightedTension_contDiffOn {n : ℕ}
     {Gamma : EuclideanSpace ℝ (Fin n) →

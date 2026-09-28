@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.Levels
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Blowup.Controlled.Geometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -31,13 +23,11 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
     Filter.atTop Filter.atTop)
 
-
 def terminalBlowupSequence : GeneralizedBlowupSequence.{u} where
   flow k := (Q k).extension.extended
   base k := ⟨T k, x k⟩
   base_scalar_pos := hpos
   scalar_diverges := hdiv
-
 
 theorem terminalBlowupSequence_balls_compact
     (hbounded : GeneralizedBlowupBoundedDistance (terminalBlowupSequence H Q x hpos hdiv)) :

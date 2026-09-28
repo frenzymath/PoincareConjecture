@@ -2,14 +2,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open Set
 namespace Homeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem image_inter_eq_of_fixedOn (H : X ≃ₜ X) {s V : Set X}
     (hfix : ∀ x ∈ V, H x = x) : (H '' s) ∩ V = s ∩ V := by
@@ -31,17 +20,11 @@ theorem image_inter_eq_of_fixedOn (H : X ≃ₜ X) {s V : Set X}
   · intro hy
     exact ⟨⟨y, hy.1, hfix y hy.2⟩, hy.2⟩
 
-
-
 theorem capped_image_inter_eq_of_fixedOn (H : X ≃ₜ X) {s d V : Set X}
     (hfix : ∀ x ∈ V, H x = x) (hdV : Disjoint d V) :
     (H '' (s ∪ d)) ∩ V = s ∩ V := by
   rw [H.image_inter_eq_of_fixedOn hfix, union_inter_distrib_right,
     hdV.inter_eq, union_empty]
-
-
-
-
 
 theorem capped_image_height_band_eq (H : X ≃ₜ X) (A : X → ℝ)
     {s d : Set X} {δ : ℝ} (hδ : 0 < δ)
@@ -54,10 +37,6 @@ theorem capped_image_height_band_eq (H : X ≃ₜ X) (A : X → ℝ)
   have h := hI (A x) hxI
   rw [hd hxd, abs_zero] at h
   exact (not_le_of_gt hδ) h
-
-
-
-
 
 theorem exists_capped_image_fixed_height_band (H : X ≃ₜ X) (A : X → ℝ)
     {s d : Set X} {δ : ℝ} (hδ : 0 < δ)

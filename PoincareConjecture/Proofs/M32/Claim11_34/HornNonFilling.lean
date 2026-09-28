@@ -6,22 +6,6 @@ import Mathlib.Order.Interval.Set.IsoIoo
 import Mathlib.Topology.Algebra.Field
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -30,9 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 private theorem cylinder_not_isCompact_of_frontier_subset_middleSphere
     {M : Type u} [TopologicalSpace M]
@@ -64,9 +45,6 @@ private theorem cylinder_not_isCompact_of_frontier_subset_middleSphere
     rw [← hcoordinate, C.homeomorph.symm_apply_apply]
   change b (C.homeomorph.symm x).2 = b half
   rw [hinverse]
-
-
-
 
 theorem exists_horn_neck_nonfilling_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -111,9 +89,6 @@ theorem exists_horn_neck_nonfilling_threshold :
   intro hcompact
   exact cylinder_not_isCompact_of_frontier_subset_middleSphere C.tube.cylinder
     C.tube.carrier_open hKU hint' hfront' (hcompact.image e.continuous)
-
-
-
 
 private theorem strongNeck_fixedCollar_subset_ball
     {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
@@ -165,10 +140,6 @@ private theorem strongNeck_fixedCollar_subset_ball
   rw [← hradius]
   exact (ENNReal.ofReal_lt_ofReal_iff
     (mul_pos (by positivity) N.scale_pos)).mpr hstrict
-
-
-
-
 
 theorem terminalBlowupSequence_eventually_horn_neck_no_filling :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

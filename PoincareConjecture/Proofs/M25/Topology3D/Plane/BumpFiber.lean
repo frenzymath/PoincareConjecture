@@ -3,24 +3,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.Deriv.Support
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_fiber_cutoff {r : ℝ} (hr : 0 < r) :
     ∃ β : ℝ → ℝ, ∃ B : ℝ, 0 < B ∧ ContDiff ℝ ∞ β ∧ β 0 = 1 ∧
@@ -55,8 +43,6 @@ theorem exists_smooth_fiber_cutoff {r : ℝ} (hr : 0 < r) :
     have h := hC x
     rw [Real.norm_eq_abs] at h
     linarith [le_max_left C 0]
-
-
 
 theorem exists_smooth_bump_fiber_diffeomorph
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [CompleteSpace V]

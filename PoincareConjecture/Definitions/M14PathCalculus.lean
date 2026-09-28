@@ -4,15 +4,6 @@ import PoincareConjecture.Definitions.Ch01.ScalarOperators
 import Mathlib.Geometry.Manifold.MFDeriv.NormedSpace
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -25,10 +16,8 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
 variable {G : GeneralizedLGeometryTransport n X time I}
 
-
 def M14SqrtParameterInterval (τ₁ τ₂ : ℝ) : Set ℝ :=
   Set.Icc (Real.sqrt τ₁) (Real.sqrt τ₂)
-
 
 structure M14PullbackExtension
     (G : GeneralizedLGeometryTransport n X time I)
@@ -50,7 +39,6 @@ structure M14PullbackExtension
   parameter_derivative : ∀ s ∈ J, ∃ d : G.Horizontal (γ s),
     HasDerivAt (fun r : ℝ => extension r (γ s)) d s
 
-
 noncomputable def M14HorizontalCovariantDerivative
     (G : GeneralizedLGeometryTransport n X time I)
     (γ : ℝ → G.Point) (J : Set ℝ)
@@ -60,13 +48,11 @@ noncomputable def M14HorizontalCovariantDerivative
     rawHorizontalCovariantDerivative G.leafwise (E.extension s) (γ s)
       (mfderivWithin (𝓘(ℝ, ℝ)) (spacetimeModel n) γ J s (1 : ℝ))
 
-
 noncomputable def M14HorizontalScalarDifferential
     (G : GeneralizedLGeometryTransport n X time I)
     (p : G.Point) : TangentSpace (spacetimeModel n) p →L[ℝ] ℝ :=
   mvfderiv (spacetimeModel n) (fun q : G.Point =>
     horizontalScalarCurvature G.leafwise q) p
-
 
 noncomputable def M14EulerResidual
     (G : GeneralizedLGeometryTransport n X time I)
@@ -82,14 +68,12 @@ noncomputable def M14EulerResidual
       (p.horizontal_velocity τ) W +
     2 * horizontalRicci G.leafwise (p.curve τ) (p.horizontal_velocity τ) W
 
-
 def M14EulerEquation
     (G : GeneralizedLGeometryTransport n X time I)
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     (p : M14BackwardPath G T τ₁ τ₂ x y)
     (E : M14PullbackExtension G p.curve (Set.Ioo τ₁ τ₂) p.horizontal_velocity) : Prop :=
   ∀ τ ∈ Set.Ioo τ₁ τ₂, ∀ W : G.Horizontal (p.curve τ), M14EulerResidual G p E τ W = 0
-
 
 structure M14SquareRootPath
     (G : GeneralizedLGeometryTransport n X time I)
@@ -112,13 +96,11 @@ structure M14SquareRootPath
       (M14SqrtParameterInterval τ₁ τ₂) s (1 : ℝ) =
       -(2 * s) • G.spacetime.timeVector (curve s) + (horizontal_velocity s).val
 
-
 noncomputable def M14SquareRootVelocity
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
     (R : M14SquareRootPath G p) (s : ℝ) : G.Horizontal (R.curve s) :=
   R.horizontal_velocity s
-
 
 noncomputable def M14SquareRootEulerResidual
     (G : GeneralizedLGeometryTransport n X time I)
@@ -135,7 +117,6 @@ noncomputable def M14SquareRootEulerResidual
     4 * s * horizontalRicci G.leafwise (R.curve s)
       (M14SquareRootVelocity R s) W
 
-
 noncomputable def M14HorizontalRicciDerivativePairing
     (G : GeneralizedLGeometryTransport n X time I)
     (p : G.Point) (U V W : G.Horizontal p) : ℝ :=
@@ -146,14 +127,12 @@ noncomputable def M14HorizontalRicciDerivativePairing
     (G.leafwise.sliceConnection t).ricciEvaluation x ![
       j.symm U, j.symm V, j.symm W]
 
-
 noncomputable def M14BcalPairing
     (G : GeneralizedLGeometryTransport n X time I)
     (p : G.Point) (U V W : G.Horizontal p) : ℝ :=
   M14HorizontalRicciDerivativePairing G p U V W +
     M14HorizontalRicciDerivativePairing G p V U W -
     M14HorizontalRicciDerivativePairing G p W U V
-
 
 noncomputable def M14HorizontalHessianPairing
     (G : GeneralizedLGeometryTransport n X time I)
@@ -163,7 +142,6 @@ noncomputable def M14HorizontalHessianPairing
   let j := (G.slices t).tangentEquiv x
   LeviCivitaData.hessian (G.leafwise.sliceConnection t)
     (G.leafwise.sliceConnection t).scalarCurvature x (j.symm U) (j.symm V)
-
 
 structure M14JacobiFieldData
     (G : GeneralizedLGeometryTransport n X time I)
@@ -184,8 +162,6 @@ noncomputable def M14JacobiSecondDerivative
   M14HorizontalCovariantDerivative G γ J
     (fun r => M14JacobiFirstDerivative Q r) Q.derivative_extension s
 
-
-
 noncomputable def M14JacobiResidual
     (G : GeneralizedLGeometryTransport n X time I)
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -203,7 +179,6 @@ noncomputable def M14JacobiResidual
     2 * s ^ 2 * M14HorizontalHessianPairing G q Y W +
     4 * s * M14HorizontalRicciDerivativePairing G q Y A W +
     4 * s * horizontalRicci G.leafwise q DY W
-
 
 structure M14LVariationData
     (G : GeneralizedLGeometryTransport n X time I)
@@ -256,7 +231,6 @@ noncomputable def M14VariationAction
   ∫ τ in τ₁..τ₂,
     M14RawLIntegrand G (fun r => V.family r u) (V.family_velocity u) τ
 
-
 noncomputable def M14VariationField
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -268,7 +242,6 @@ noncomputable def M14VariationField
       (mfderiv (𝓘(ℝ, ℝ)) (spacetimeModel n)
         (fun u => V.squareFamily s u) 0 (1 : ℝ))
 
-
 noncomputable def M14EndpointVariationField
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -278,7 +251,6 @@ noncomputable def M14EndpointVariationField
   G.spacetime.horizontalProjection (V.squareFamily s u)
     (mfderiv (𝓘(ℝ, ℝ)) (spacetimeModel n)
       (fun r => V.squareFamily s r) u (1 : ℝ))
-
 
 structure M14VariationDerivativeData
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -293,7 +265,6 @@ structure M14VariationDerivativeData
     M14PullbackExtension G (fun u => V.squareFamily s u) V.parameterDomain
       (M14EndpointVariationField V s)
 
-
 noncomputable def M14VariationEndpointAcceleration
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -306,7 +277,6 @@ noncomputable def M14VariationEndpointAcceleration
     M14HorizontalCovariantDerivative G (fun u => V.squareFamily s u)
       V.parameterDomain (M14EndpointVariationField V s) (D.endpoint_extension s hs) 0
 
-
 noncomputable def M14FirstVariationBoundaryTerm
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -317,7 +287,6 @@ noncomputable def M14FirstVariationBoundaryTerm
     G.spacetime.horizontalMetric.inner (R.curve (Real.sqrt τ₁))
       (M14SquareRootVelocity R (Real.sqrt τ₁)) (M14VariationField V (Real.sqrt τ₁))
 
-
 noncomputable def M14FirstVariationResidualIntegral
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -326,7 +295,6 @@ noncomputable def M14FirstVariationResidualIntegral
     (D : M14VariationDerivativeData V) : ℝ :=
   ∫ s in Real.sqrt τ₁..Real.sqrt τ₂,
     -M14SquareRootEulerResidual G R D.base_extension s (M14VariationField V s)
-
 
 noncomputable def M14SecondVariationBoundaryTerm
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -344,7 +312,6 @@ noncomputable def M14SecondVariationBoundaryTerm
     G.spacetime.horizontalMetric.inner (R.curve (Real.sqrt τ₁))
       (M14SquareRootVelocity R (Real.sqrt τ₁))
       (M14VariationEndpointAcceleration V D (Real.sqrt τ₁) h₁)
-
 
 noncomputable def M14SecondVariationIndexDensity
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -364,7 +331,6 @@ noncomputable def M14SecondVariationIndexDensity
     4 * s * M14HorizontalRicciDerivativePairing G q Y A Y +
     2 * s * M14HorizontalRicciDerivativePairing G q A Y Y
 
-
 noncomputable def M14SecondVariationIndexForm
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -372,10 +338,6 @@ noncomputable def M14SecondVariationIndexForm
     (V : M14LVariationData G (p := p) (R := R))
     (D : M14VariationDerivativeData V) : ℝ :=
   ∫ s in Real.sqrt τ₁..Real.sqrt τ₂, M14SecondVariationIndexDensity V D s
-
-
-
-
 
 def M14VariationJacobiCondition
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
@@ -392,7 +354,6 @@ def M14VariationJacobiCondition
     (∀ s ∈ M14SqrtParameterInterval τ₁ τ₂,
       ∀ W : G.Horizontal (R.curve s), M14JacobiResidual G R Q s W = 0)
 
-
 def M14FirstVariationIdentity
     {T τ₁ τ₂ : ℝ} {x y : G.Point}
     {p : M14BackwardPath G T τ₁ τ₂ x y}
@@ -401,7 +362,6 @@ def M14FirstVariationIdentity
     (D : M14VariationDerivativeData V) : Prop :=
   HasDerivAt (M14VariationAction V)
     (M14FirstVariationBoundaryTerm V + M14FirstVariationResidualIntegral V D) 0
-
 
 def M14SecondVariationIdentity
     {T τ₁ τ₂ : ℝ} {x y : G.Point}

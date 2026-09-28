@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.GeneralizedBridgeCoordinates
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {t : ℝ} (ht : t ∈ H.generalized.interval)
-
-
 
 noncomputable def regular_history_static_neck
     (N : EpsilonNeck (F.metric t)) (hconnection : N.connection = F.connection t)

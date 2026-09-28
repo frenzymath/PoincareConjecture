@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boundary.Regularity.ContinuousOperator
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -274,8 +267,6 @@ private theorem exists_resolventPower_representative (D : LeviCivitaData g)
   have h := toDomainL2_ae (resolventEnergyPower D Ω (n + 1) f)
   rw [toDomainL2_resolventEnergyPower] at h
   exact hFae.trans h.symm
-
-
 
 theorem exists_resolventPower_continuousLinearMap (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) :

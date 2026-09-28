@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundar
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +15,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 variable {n : ℕ}
-
-
-
 
 def normalizedResidualFrame
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -59,9 +46,6 @@ private theorem contDiffOn_normalizedResidualFrame :
     (((contDiff_fst.clm_apply ha).clm_apply ha).contDiffOn.sqrt
       (fun _ h => ne_of_gt h)).inv (fun _ h => (Real.sqrt_pos.mpr h).ne')
   exact (hs.smul ha.contDiffOn).prodMk (hs.smul hb.contDiffOn)
-
-
-
 
 theorem normalizedResidualFrame_orthonormal
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -108,11 +92,6 @@ private theorem compact_comp_sqrt_holder
     _ = _ := by ring
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem halfDisk_normalizedResidualFrame {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -277,10 +256,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {gamma : C1FreeLoopSpace (M := M)}
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem boundary_branch_frame (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

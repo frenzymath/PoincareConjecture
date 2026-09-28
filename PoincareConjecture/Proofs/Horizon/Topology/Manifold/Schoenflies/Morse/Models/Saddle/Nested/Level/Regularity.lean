@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.Level.Equation
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -84,7 +82,6 @@ theorem critical_point_coordinates {p : S2}
     (by rw [inner_three]; simp; ring)
   simp only [vector_zero, vector_one, vector_two] at hy hx
   constructor <;> nlinarith
-
 
 theorem height_one_regular (p : S2) (hp : height p = 1) :
     mfderiv (𝓡 2) 𝓘(Real, Real) height p ≠ 0 := by

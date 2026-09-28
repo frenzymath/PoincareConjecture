@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderLocalInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
-
-
 
 theorem rawCylinder_isOpenEmbedding
     (hI : (cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)

@@ -1,15 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapAttachments
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.ChordRemainders
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -151,7 +142,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (band : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
 theorem mem_interior_union_band (i : Bool × Bool) (right : Bool)
     {t u : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) (hu : u ∈ Ioo (0 : ℝ) 1)
     (hpoint : ((B.face i).boundary 0).map t = (band.endpointEdge right).map u)
@@ -260,7 +250,6 @@ variable {a b ua wa ub wb δ ra rb : ℝ}
 
 omit [T2Space M] in
 
-
 theorem disjoint_cap_interiors (p : D.vertices) (s : Bool × Bool)
     (hs : region p s = R)
     (havoid : ∀ t ∈ Ioo (0 : ℝ) 1, ∀ z : ℝ, |z| < δ →
@@ -287,8 +276,6 @@ variable {cut : D.EdgeIndex → Bool → ℝ}
   (L : D.CapGraphEndpoint P region chart B e R (S.piece S.firstPiece) false (cut e false))
   (T : D.CapGraphEndpoint P region chart B e R (S.piece S.lastPiece) true (cut e true))
   (K : S.CutChain L.direction T.direction)
-
-
 
 theorem CutChain.left_attachment_subset_interior {r δ : ℝ} (hr : r ≤ 1)
     (F : (S.piece S.firstPiece).FixedStripBandFaces (K.graphCuts S.firstPiece) δ r r)
@@ -317,8 +304,6 @@ theorem CutChain.left_attachment_subset_interior {r δ : ℝ} (hr : r ≤ 1)
       (F.disjoint_cap_interiors _ _ L.sector_region havoid)
   rw [F.faces.endpointEdge_image]
   simpa only [Bool.false_eq_true, ite_false, hcut] using L.chordSegment_subset_chord hr
-
-
 
 theorem CutChain.right_attachment_subset_interior {r δ : ℝ} (hr : r ≤ 1)
     (F : (S.piece S.lastPiece).FixedStripBandFaces (K.graphCuts S.lastPiece) δ r r)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Gluing.RetainedLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem SurgeryMetricLimitOn.exists_absolute_gluing
     {S : GeneralizedSliceCarrier.{u}} {a b c : ℝ}
@@ -73,8 +63,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
   {S : ℝ → GeneralizedSliceCarrier.{u}}
   {g : ∀ t, RiemannianMetric 3 (S t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P S g T)
-
-
 
 theorem exists_continuing_flow {b : ℝ} (hb : T < b)
     (F : RicciFlow 3 (S T).carrier (Ico T b)) (hF : F.metric T = g T) :

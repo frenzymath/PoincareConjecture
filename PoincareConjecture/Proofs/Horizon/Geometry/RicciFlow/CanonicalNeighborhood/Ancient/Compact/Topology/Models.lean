@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.CompactTopology.ProjectiveDouble
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Topology.PositiveCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem compact_noEmbeddedTrivialNormalProjectivePlane
     (P : M26CanonicalNeighborhoodPredecessors.{u})
     (K : AncientKappaSolution 3 M) (hcompact : IsCompact (univ : Set M)) :
@@ -35,8 +23,6 @@ theorem compact_noEmbeddedTrivialNormalProjectivePlane
   let : CompactSpace M := ⟨hcompact⟩
   exact K.noEmbeddedTrivialNormalProjectivePlane_of_compact_positive_sectional 0
     (K.positiveSectionalCurvature_of_compact P.classificationServices hcompact 0 le_rfl)
-
-
 
 theorem compact_nonround_sphere_or_projective
     (P : M26CanonicalNeighborhoodPredecessors.{u})

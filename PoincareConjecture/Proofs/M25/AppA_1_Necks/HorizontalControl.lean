@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialVector
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Pairing
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalizedAxialVector_pairing_error (N : EpsilonNeck g)
     {x : M} (hx : x ∈ N.carrier) (v : TangentSpace (𝓡 3) x) :
@@ -51,9 +38,6 @@ theorem normalizedAxialVector_pairing_error (N : EpsilonNeck g)
     N.scale * mvfderiv (𝓡 3) (fun y => (N.coordinate_inverse y).2) x v| ≤
     (2 * N.epsilon) / 1 * g.tangentNorm x v at h
   simpa only [div_one] using h
-
-
-
 
 theorem exists_intersecting_axial_covector_control {η : ℝ} (hη : 0 < η) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -109,9 +93,6 @@ theorem exists_intersecting_axial_covector_control {η : ℝ} (hη : 0 < η) :
     _ = (2 * N'.epsilon + η / 2 + 2 * N.epsilon) * g.tangentNorm x v := by ring
     _ ≤ η * g.tangentNorm x v :=
       mul_le_mul_of_nonneg_right hbudget (Real.sqrt_nonneg _)
-
-
-
 
 theorem exists_intersecting_horizontal_control {η : ℝ} (hη : 0 < η) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

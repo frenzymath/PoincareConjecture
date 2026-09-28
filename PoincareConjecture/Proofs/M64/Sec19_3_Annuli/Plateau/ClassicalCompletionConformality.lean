@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ClassicalCompletionEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationEnergy
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 
-
-
 theorem m64AreaGram_congr_of_eventuallyEq (g : RiemannianMetric n M)
     {f h : LoopPlane → M} {p : LoopPlane} (hf : f =ᶠ[𝓝 p] h) :
     m60AreaGram g f p = m60AreaGram g h p := by
@@ -33,9 +24,6 @@ theorem m64AreaGram_congr_of_eventuallyEq (g : RiemannianMetric n M)
     congrArg (fun q : M => g.inner q u v) hf.eq_of_nhds
   simp only [m60AreaGram, hf.mfderiv_eq, hi]
   rfl
-
-
-
 
 theorem m64Annulus_conformal_of_interior_completion
     (g : RiemannianMetric n M) {f h : LoopPlane → M} {r : ℝ}
@@ -52,9 +40,6 @@ theorem m64Annulus_conformal_of_interior_completion
     exact heq hq
   rw [m64AreaGram_congr_of_eventuallyEq g hgerm]
   exact hc p hp
-
-
-
 
 theorem M64ObservedWeakAnnulus.area_eq_of_conformal_completion
     {e : M → E} {c0 c1 : ℝ → M}

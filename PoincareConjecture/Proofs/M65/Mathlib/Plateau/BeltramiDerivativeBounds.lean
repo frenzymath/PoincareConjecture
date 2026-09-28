@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.SmoothBeurling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -18,10 +8,6 @@ open MeasureTheory FourierTransform Filter LineDeriv
 open scoped Topology SchwartzMap ContDiff ComplexConjugate LineDeriv
 
 namespace Complex
-
-
-
-
 
 def planeDerivativeL2Budget : ℕ → 𝓢(ℂ, ℂ) → ℝ
   | 0, h => ‖h.toLp 2 volume‖
@@ -40,14 +26,9 @@ private theorem budget_le_succ (m : ℕ) (h : 𝓢(ℂ, ℂ)) :
   dsimp only [planeDerivativeL2Budget]
   linarith [budget_nonneg m (∂_{(1 : ℂ)} h), budget_nonneg m (∂_{I} h)]
 
-
-
 theorem planeDerivativeL2Budget_mono {m n : ℕ} (hmn : m ≤ n) (h : 𝓢(ℂ, ℂ)) :
     planeDerivativeL2Budget m h ≤ planeDerivativeL2Budget n h :=
   (monotone_nat_of_le_succ fun j => budget_le_succ j h) hmn
-
-
-
 
 theorem planeDerivativeL2Budget_coordinate_le (m : ℕ) (h : 𝓢(ℂ, ℂ)) (i : Fin 2) :
     planeDerivativeL2Budget m (∂_{orthonormalBasisOneI i} h) ≤
@@ -116,10 +97,6 @@ private theorem exists_localized_budget_bound (m : ℕ) (μ : 𝓢(ℂ, ℂ))
       nlinarith [hbound h, hbound (∂_{(1 : ℂ)} h), hbound (∂_{I} h),
         hbound1 h, hboundI h]
 
-
-
-
-
 theorem exists_localized_principal_budget_bound (m : ℕ) (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hbound : ∀ z, ‖μ z‖ ≤ k) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ h : 𝓢(ℂ, ℂ),
@@ -165,17 +142,10 @@ theorem exists_localized_principal_budget_bound (m : ℕ) (μ : 𝓢(ℂ, ℂ))
         hprincipal h, hprincipal (∂_{(1 : ℂ)} h), hprincipal (∂_{I} h),
         hbound1 h, hboundI h]
 
-
-
-
 def beltramiNeumannTerm (μ : 𝓢(ℂ, ℂ)) (hμ : HasCompactSupport (μ : ℂ → ℂ))
     (a : 𝓢(ℂ, ℂ)) : ℕ → 𝓢(ℂ, ℂ)
   | 0 => a
   | n + 1 => localizedBeurling μ hμ (beltramiNeumannTerm μ hμ a n)
-
-
-
-
 
 theorem exists_geometric_beltramiNeumann_derivative_bounds
     (μ : 𝓢(ℂ, ℂ)) (hμ : HasCompactSupport (μ : ℂ → ℂ))

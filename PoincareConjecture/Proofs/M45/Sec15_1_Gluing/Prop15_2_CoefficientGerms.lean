@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_TransitionChart
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_CylinderCoefficients
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoefficientTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem pullbackCoefficients_comp_bilinear
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     (g : RiemannianMetric 3 M) {f : E → M} {a : E → E} {x : E}
@@ -41,8 +31,6 @@ theorem pullbackCoefficients_comp_bilinear
   rw [mfderiv_comp x (hf.mdifferentiableAt (by simp))
     (ha.contMDiffAt.mdifferentiableAt (by simp)), mfderiv_eq_fderiv]
   rfl
-
-
 
 theorem centeredCylinderMetric_smul (r : ℝ) (B : RoundCylinderTwoTensor)
     (q : UnitTwoSphere) (s : ℝ) :
@@ -68,9 +56,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
 
-
-
-
 theorem recentCenteredMap_pullbackCoefficients
     (hpos : 0 < beta * epsilon) (hsmall : beta * epsilon < 1 / 2)
     (z : RoundCylinderSpace) (t : ℝ) {p : E}
@@ -81,8 +66,6 @@ theorem recentCenteredMap_pullbackCoefficients
   centeredCylinder_pullbackCoefficients _ _ _ _ _
     (I.recent_patch.coordinate_smooth.contMDiffAt
       ((isOpen_univ.prod isOpen_Ioo).mem_nhds ⟨mem_univ _, hp⟩))
-
-
 
 theorem olderCenteredMap_normalizedCoefficients (z : RoundCylinderSpace) (tau : ℝ) {p : E}
     (hp : p ∈ centeredNeckDomain I.older_neck.neck (I.olderCenteredCoordinate z).2) :
@@ -103,9 +86,6 @@ theorem olderCenteredMap_normalizedCoefficients (z : RoundCylinderSpace) (tau : 
       I.older_neck.neck.coordinate_map (I.olderCenteredCoordinate z).1
       (I.olderCenteredCoordinate z).2 p
       (neck_coordinate_contMDiffAt I.older_neck.neck ⟨mem_univ _, hp⟩)).symm
-
-
-
 
 theorem joining_centered_coefficients
     (hpos : 0 < beta * epsilon) (hsmall : beta * epsilon < 1 / 2)

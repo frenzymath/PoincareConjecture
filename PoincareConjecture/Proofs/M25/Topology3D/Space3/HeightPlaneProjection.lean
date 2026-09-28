@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -20,12 +9,9 @@ open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def heightPlaneCoordinates (u : UnitTwoSphere) : E3 ≃L[ℝ] E2 × ℝ :=
   let R := (ℝ ∙ ((u : E3) - EuclideanSpace.single (2 : Fin 3) 1))ᗮ.reflection
   R.toContinuousLinearEquiv.trans heightCoordinates
-
 
 theorem heightPlaneCoordinates_snd (u : UnitTwoSphere) (y : E3) :
     (heightPlaneCoordinates u y).2 = ⟪(u : E3), y⟫_ℝ := by
@@ -40,16 +26,12 @@ theorem heightPlaneCoordinates_snd (u : UnitTwoSphere) (y : E3) :
     _ = ⟪R (u : E3), R y⟫_ℝ := by rw [hRu]
     _ = ⟪(u : E3), y⟫_ℝ := R.inner_map_map _ _
 
-
-
 theorem heightPlaneCoordinates_reconstruct (u : UnitTwoSphere) (y : E3)
     (t : ℝ) (ht : ⟪(u : E3), y⟫_ℝ = t) :
     (heightPlaneCoordinates u).symm ((heightPlaneCoordinates u y).1, t) = y := by
   apply (heightPlaneCoordinates u).injective
   rw [ContinuousLinearEquiv.apply_symm_apply]
   exact Prod.ext rfl ((heightPlaneCoordinates_snd u y).trans ht).symm
-
-
 
 theorem isPlanarEmbedding_height_projection (u : UnitTwoSphere)
     (c : UnitCircle → E3) (hc : ContMDiff (𝓡 1) 𝓘(ℝ, E3) ∞ c)

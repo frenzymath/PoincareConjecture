@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.RadialWeights
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

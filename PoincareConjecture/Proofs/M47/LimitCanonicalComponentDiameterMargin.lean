@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalComponentExtrema
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentDiameterComparison
 import PoincareConjecture.Proofs.M47.LimitCanonicalIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitCanonical_strict_diameter_parameters {C L0 U0 d : ℝ}
     (hlower : C⁻¹ * L0 < d) (hupper : d < C * U0) :
@@ -52,8 +41,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : T3Space G.limit.carrier.carrier := G.limit.carrier.t3Space
 private local instance : ChartedSpace E G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitCanonical_component_eventually_strict_diameters
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

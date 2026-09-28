@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.UpperLevel.Circle
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -52,7 +50,6 @@ theorem upperProjection_image :
     rwa [upperProjection_sphereMap hx]
   · intro q hq
     exact ⟨q, hq, upperProjection_sphereMap hq⟩
-
 
 theorem exists_smooth_circle_upper_level :
     ∃ γ : S1 → E2,

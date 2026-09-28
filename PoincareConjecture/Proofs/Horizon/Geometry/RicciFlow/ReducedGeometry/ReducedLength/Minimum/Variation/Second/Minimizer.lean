@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.Pullback.Congruence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Geometry.DerivativeData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variation.Geometry
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem baseSquareCurve_eqOn_sqrtRegularPath {J : Set ℝ} {F : RicciFlow n M J}
     {T a b : ℝ} {p : BackwardTimePath F T a b}
@@ -45,8 +35,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem secondVariationIndexForm_nonneg_and_integrable (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ} (S : SqrtRegularPath p)
@@ -112,7 +100,6 @@ theorem secondVariationIndexForm_nonneg_and_integrable (K : AncientKappaSolution
     secondVariationIndexDensity_intervalIntegrable K.regularizedPotential_contMDiff
       hclock htime V.toLVariation D hEulerV
 
-
 theorem secondVariationIndexForm_nonneg (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ} (S : SqrtRegularPath p)
     (E : ParametricAlongCurveExtensionOn (Icc 0 (Real.sqrt τ)) S.curve
@@ -125,7 +112,6 @@ theorem secondVariationIndexForm_nonneg (K : AncientKappaSolution 2 M)
     (V : InitialFixedLVariation K.flow 0 0 τ p) (D : LVariationDerivativeData V.toLVariation) :
     0 ≤ secondVariationIndexForm V.toLVariation D :=
   (K.secondVariationIndexForm_nonneg_and_integrable S E hmin heuler hterminal V D).1
-
 
 theorem exists_nonneg_secondVariationIndexForm (K : AncientKappaSolution 2 M)
     {τ : ℝ} {p : BackwardTimePath K.flow 0 0 τ} (S : SqrtRegularPath p)

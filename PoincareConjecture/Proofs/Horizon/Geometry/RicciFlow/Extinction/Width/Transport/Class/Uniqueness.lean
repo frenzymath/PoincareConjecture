@@ -42,8 +42,6 @@ theorem m67_represents_unique {q : M59SphereQuotient} {x : M}
   rw [hclassGamma, hclassDelta] at h
   exact eq_of_heq (Sigma.mk.inj_iff.mp h).2
 
-
-
 theorem m67_alpha_transport_unique
     (S : M59IdentificationSystem.{u}) (B : M59HigherBasepointTransportService.{u})
     {x : M} {y : N} {f : C(M, N)} (hsmooth : ContMDiff (𝓡 3) (𝓡 3) ∞ f)

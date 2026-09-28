@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Mathlib.ODEFirstVariation
 import PoincareConjecture.Proofs.M44.Mathlib.CompactSmoothConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,31 +14,22 @@ section LinearVariation
 variable {E P : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup P] [NormedSpace ℝ P]
 
-
-
 noncomputable def linearVariationalField (F : E → E) (z : E × (P →L[ℝ] E)) :
     E × (P →L[ℝ] E) := (F z.1, (fderiv ℝ F z.1).comp z.2)
 
-
-
 noncomputable def linearVariation (γ : P × ℝ → E) (z : P × ℝ) : E × (P →L[ℝ] E) :=
   (γ z, fderiv ℝ (fun p => γ (p, z.2)) z.1)
-
 
 theorem ContDiff.linearVariationalField {F : E → E} (hF : ContDiff ℝ ∞ F) :
     ContDiff ℝ ∞ (linearVariationalField (P := P) F) :=
   (hF.comp contDiff_fst).prodMk
     (((hF.fderiv_right (m := ∞) (by simp)).comp contDiff_fst).clm_comp contDiff_snd)
 
-
-
 theorem ContDiffAt.linearVariationalField {F : E → E} {z : E × (P →L[ℝ] E)}
     (hF : ContDiffAt ℝ ∞ F z.1) :
     ContDiffAt ℝ ∞ (linearVariationalField F) z :=
   (hF.comp z contDiffAt_fst).prodMk
     (((hF.fderiv_right (by simp)).comp z contDiffAt_fst).clm_comp contDiffAt_snd)
-
-
 
 theorem ContDiffAt.linearVariation {γ : P × ℝ → E} {z : P × ℝ}
     (hγ : ContDiffAt ℝ ∞ γ z) : ContDiffAt ℝ ∞ (linearVariation γ) z := by
@@ -63,9 +45,6 @@ theorem ContDiffAt.linearVariation {γ : P × ℝ → E} {z : P × ℝ}
   have hinc : HasFDerivAt (fun q : P => (q, w.2)) (ContinuousLinearMap.inl ℝ P ℝ) w.1 :=
     (hasFDerivAt_id w.1).prodMk (hasFDerivAt_const w.2 w.1)
   exact (hw.hasFDerivAt.comp w.1 hinc).fderiv
-
-
-
 
 theorem hasDerivAt_linearVariation
     {F : E → E} {γ : P × ℝ → E} {p : P} {t : ℝ}
@@ -88,9 +67,6 @@ theorem hasDerivAt_linearVariation
   exact hode.self_of_nhds.prodMk (hJ.congr_deriv hder)
 
 end LinearVariation
-
-
-
 
 theorem CompactSmoothConvergenceOn.linearVariationalField
     {E P : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

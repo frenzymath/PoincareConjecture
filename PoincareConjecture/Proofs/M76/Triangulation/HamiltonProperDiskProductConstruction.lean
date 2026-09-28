@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerProduc
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexAssembly
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnmarkedProductGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,10 +13,6 @@ local notation "V2" => (Fin 2 → ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_unmarked_disk_product
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCapMayerVietoris
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

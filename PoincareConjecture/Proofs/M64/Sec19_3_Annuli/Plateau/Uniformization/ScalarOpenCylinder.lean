@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,16 +16,8 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 
-
-
-
-
 def scalarCylinderCoordinate : Plane →L[ℝ] Cover :=
   (EuclideanSpace.proj 1).prod (curvePeriod⁻¹ • EuclideanSpace.proj 0)
-
-
-
-
 
 theorem scalarCylinderCoordinate_apply (p : Plane) :
     scalarCylinderCoordinate p = (p 1, curvePeriod⁻¹ * p 0) := rfl
@@ -45,9 +25,6 @@ theorem scalarCylinderCoordinate_apply (p : Plane) :
 private theorem scalarCurvePeriod_pos : 0 < curvePeriod := by
   unfold curvePeriod
   positivity
-
-
-
 
 theorem scalarCylinderCoordinate_injective : Function.Injective scalarCylinderCoordinate := by
   intro v w hvw
@@ -60,9 +37,6 @@ theorem scalarCylinderCoordinate_injective : Function.Injective scalarCylinderCo
   · exact mul_left_cancel₀ (inv_ne_zero scalarCurvePeriod_pos.ne') h0
   · exact h1
 
-
-
-
 theorem scalarCylinderCoordinate_periodic (x s : ℝ) :
     scalarCylinderCoordinate (annulusPoint (x + curvePeriod) s) =
       scalarCylinderCoordinate (annulusPoint x s) + (0, 1) := by
@@ -71,17 +45,10 @@ theorem scalarCylinderCoordinate_periodic (x s : ℝ) :
   congr 1
   rw [mul_add, inv_mul_cancel₀ scalarCurvePeriod_pos.ne']
 
-
-
-
 theorem scalarCylinderCoordinate_right_inverse (y : Cover) :
     scalarCylinderCoordinate (annulusPoint (curvePeriod * y.2) y.1) = y := by
   simp only [scalarCylinderCoordinate_apply, annulusPoint, Matrix.cons_val_zero,
     Matrix.cons_val_one, ← mul_assoc, inv_mul_cancel₀ scalarCurvePeriod_pos.ne', one_mul]
-
-
-
-
 
 theorem exists_smooth_modulus_conformal_open_cylinder (g : RiemannianMetric 2 Plane) :
     ∃ (r : ℝ), 0 < r ∧ ∃ F : Plane → Plane,

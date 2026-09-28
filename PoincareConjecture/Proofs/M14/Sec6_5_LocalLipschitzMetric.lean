@@ -5,15 +5,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
 
 noncomputable def auxiliarySpacetimeForm (F : GeneralizedFlowSpacetime n X time I)
     (q : F.Point) : TangentSpace (spacetimeModel n) q →L[ℝ]
@@ -44,16 +33,12 @@ noncomputable def auxiliarySpacetimeForm (F : GeneralizedFlowSpacetime n X time 
   let L : TangentSpace (spacetimeModel n) q →L[ℝ] F.Horizontal q := F.horizontalProjection q
   exact B.bilinearComp L L + dt.smulRight dt
 
-
-
 theorem auxiliarySpacetimeForm_apply (F : GeneralizedFlowSpacetime n X time I)
     (q : F.Point) (v w : TangentSpace (spacetimeModel n) q) :
     auxiliarySpacetimeForm F q v w =
       F.horizontalMetric.inner q (F.horizontalProjection q v) (F.horizontalProjection q w) +
         (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) F.timeFunction q v) *
           (show ℝ from mfderiv (spacetimeModel n) 𝓘(ℝ) F.timeFunction q w) := rfl
-
-
 
 theorem auxiliarySpacetimeForm_pos (F : GeneralizedFlowSpacetime n X time I)
     (q : F.Point) (v : TangentSpace (spacetimeModel n) q) (hv : v ≠ 0) :
@@ -72,8 +57,6 @@ theorem auxiliarySpacetimeForm_pos (F : GeneralizedFlowSpacetime n X time I)
     simp only [hV, map_zero, zero_add]
     exact mul_self_pos.mpr ht
   · exact add_pos_of_pos_of_nonneg (F.horizontalMetric.pos q _ hV) (mul_self_nonneg _)
-
-
 
 theorem auxiliarySpacetimeForm_contMDiff (F : GeneralizedFlowSpacetime n X time I) :
     ContMDiff (spacetimeModel n)
@@ -125,8 +108,6 @@ theorem auxiliarySpacetimeForm_contMDiff (F : GeneralizedFlowSpacetime n X time 
   apply (hmetric.add htime).contMDiffWithinAt.congr_of_eventuallyEq
   · exact Filter.Eventually.of_forall (fun _ => rfl)
   · rfl
-
-
 
 noncomputable def auxiliarySpacetimeMetric (F : GeneralizedFlowSpacetime n X time I) :
     Bundle.ContMDiffRiemannianMetric (B := F.Point) (spacetimeModel n) ∞

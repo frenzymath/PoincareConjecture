@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckRotationalTip
 import PoincareConjecture.Definitions.M44CapPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_rotational_tip_ricci_eq_scalar
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -53,8 +42,6 @@ theorem source_rotational_tip_ricci_eq_scalar
         simpa only [hunit, mul_one] using h
       _ = _ := by rw [← Finset.sum_mul]; rfl
   linarith only [htrace]
-
-
 
 theorem exists_source_standard_tip_ricci_lower {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) :

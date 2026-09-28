@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Step
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.FilledSides
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 namespace Reverse
-
-
 
 structure MarkedCapLens
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (g : E2 → E3) {v : E3}
@@ -127,7 +123,6 @@ namespace SphereSurgeryStep
 
 variable {f : S2 → E3} {v : E3} {c R : Real} (S : SphereSurgeryStep f v c R)
 
-
 theorem projection_mem_circle_of_mem_prepared
     {y : E3} (hy : y ∈ range (fun p => S.D (f p)))
     (hproj : (Hemisphere.Plane v).orthogonalProjectionOnto y ∈ S.A '' closedBall 0 1)
@@ -154,8 +149,6 @@ theorem projection_mem_circle_of_mem_prepared
   simp [Hemisphere.Plane,
     Submodule.orthogonalProjectionOnto_orthogonalComplement_singleton_eq_zero]
 
-
-
 theorem exists_capMinus_lens
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hB : B '' sphere (0 : E3) 1 = range S.fMinus) :
@@ -171,8 +164,6 @@ theorem exists_capMinus_lens
   obtain ⟨hl, hu⟩ := abs_le.mp hheight
   exact abs_le.mpr ⟨by linarith [S.s_lt_eighth_a, S.a_pos],
     by linarith [S.s_lt_eighth_a, S.a_pos]⟩
-
-
 
 theorem exists_capPlus_lens
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafInjectivity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineLeafDifferential
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace ContinuousAffineMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_smooth_affineLeaf_chart_of_compact (a : F →ᴬ[ℝ] E)
     {Q : F → E →L[ℝ] F} (hQ : ContDiff ℝ ∞ Q)

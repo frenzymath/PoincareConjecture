@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.CappingComponents
 import PoincareConjecture.Proofs.M38.EventDiscardedComponents
 import PoincareConjecture.Proofs.M38.CanonicalRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
-
 theorem capped_component_representative
     (c : ConnectedComponents (CappedDiscardedSpace F T hT P)) :
     ∃ x : eventDiscardedOpen F T hT,
@@ -34,11 +23,6 @@ theorem capped_component_representative
   refine ⟨x, ?_⟩
   change H (ConnectedComponents.mk x) = c
   rw [hx, H.apply_symm_apply]
-
-
-
-
-
 
 theorem exists_capped_canonical_regions
     (N : RepairedNeckCapTopologyTheory.{u}) (hF : SurgeryFlowAdmissible F)

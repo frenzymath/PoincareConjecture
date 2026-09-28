@@ -8,11 +8,9 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
-
 def coordinatePlaneIndex : Fin 3 → Fin 2 → Fin 3 := ![![1, 2], ![0, 2], ![0, 1]]
 
 open Classical in
-
 
 theorem finitePL_coordinate_model_planes
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -211,4 +209,3 @@ theorem finitePL_coordinate_model_planes
   exact hplane
 
 end PoincareConjecture.M76.Dehn
-

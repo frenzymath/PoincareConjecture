@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoRegionBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
 
 structure HamiltonIndexTwoFrame (ι : Type*) [Fintype ι] where
   lower : ι → ℝ
@@ -31,10 +19,6 @@ structure HamiltonIndexTwoFrame (ι : Type*) [Fintype ι] where
   frontier_eq : frontier (Icc lower upper) = (side ∪ outer false) ∪ outer true
   topRimNonempty : (rim true).Nonempty
   sidePL : FinitePiecewiseAffineOn (id : (ι → ℝ) → (ι → ℝ)) side
-
-
-
-
 
 structure HamiltonIndexTwoMarkedBall {ι : Type*} [Fintype ι]
     (F : HamiltonIndexTwoFrame ι) where
@@ -53,9 +37,6 @@ section Boundary
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_fixed_patch_disk_union {s t p q : Set E}
     (hp : FinitePiecewiseAffineOn (id : E → E) p)
@@ -78,10 +59,6 @@ theorem exists_fixed_patch_disk_union {s t p q : Set E}
   exact ⟨H, hH, hHp, hHs⟩
 
 end Boundary
-
-
-
-
 
 theorem exists_hamilton_indexTwo_boundary_map
     {ι : Type*} [Fintype ι] (F : HamiltonIndexTwoFrame ι)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableClosedBounds
 import PoincareConjecture.Proofs.M47.TerminalGermsClosedCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceCountable_closed_limit {tau : ℝ} (htau : 0 < tau)
     {U : Set E} (hU : IsOpen U) (f : ℕ → ℝ × E → V)
@@ -93,8 +82,6 @@ theorem terminalSourceCountable_closed_limit {tau : ℝ} (htau : 0 < tau)
       ⟨⟨by linarith [(hKU hz).1.1], (hKU hz).1.2⟩, (hKU hz).2⟩)).congr_right
     intro z hz
     exact ((hgerm (hKU hz).1.2).iteratedFDeriv ℝ m).eq_of_nhds.symm
-
-
 
 theorem terminalSourceCountable_g4_closed_limit (j : ℕ)
     (S : RepairedControlledSchedulesData.{u})

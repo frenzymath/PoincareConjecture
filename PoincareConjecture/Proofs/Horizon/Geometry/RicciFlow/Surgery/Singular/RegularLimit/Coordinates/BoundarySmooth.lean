@@ -2,14 +2,6 @@ import Mathlib.Analysis.Calculus.FDeriv.Extend
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +12,6 @@ namespace PoincareConjecture.SingularRegularLimit
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ E] [FiniteDimensional ℝ V]
-
-
-
 
 theorem exists_smooth_closure_extension {f : E → V} {U : Set E}
     (hU : IsOpen U) (hconv : Convex ℝ U) (hf : ContDiffOn ℝ ∞ f U)
@@ -84,8 +73,6 @@ theorem exists_smooth_closure_extension {f : E → V} {U : Set E}
   change f x = (J 0 x).curry0
   rw [← hJeq 0 hx]
   rfl
-
-
 
 theorem contDiffOn_terminal_extension_of_jet_bounds
     {f : ℝ × E → V} {fT : E → V} {s T : ℝ} {U : Set E}

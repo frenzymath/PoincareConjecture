@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.FrameCoordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Angle
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 theorem unitField_eq_cos_sin_arccos
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ T : TangentSpace (𝓡 2) x}
@@ -30,7 +23,6 @@ theorem unitField_eq_cos_sin_arccos
   have hunit := (g.inner_self_eq_frameCoordinates_sq x he₁ he₂ horth T).symm.trans hT
   obtain ⟨hrange, hc, hs⟩ := Surface.arccos_unit_upper hunit hpos
   exact ⟨hrange, by rw [hc, hs]; exact g.eq_frameCoordinates_smul x he₁ he₂ horth T⟩
-
 
 theorem contMDiffOn_arccos_frameCoordinate
     (g : RiemannianMetric 2 S) {U : Set S}
@@ -56,7 +48,6 @@ theorem contMDiffOn_arccos_frameCoordinate
   exact (Real.contDiffAt_arccos hn₁ hn₂).comp_contMDiffWithinAt
     (f := fun y => g.inner y (T y) (e₁ y))
     ((hT x hx).inner_bundle (he₁ x hx))
-
 
 theorem arccos_inner_of_angle_sub
     (g : RiemannianMetric 2 S) (x : S) {e₁ e₂ v w : TangentSpace (𝓡 2) x}

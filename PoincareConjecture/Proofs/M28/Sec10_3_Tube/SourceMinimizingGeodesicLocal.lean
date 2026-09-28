@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizingGeodesic
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicLocalPaths
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.NoBranching
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -68,9 +58,6 @@ private theorem tangentNorm_smul (g : RiemannianMetric 3 M)
     g.tangentNorm p (a • v) = |a| * g.tangentNorm p v := by
   simp only [RiemannianMetric.tangentNorm, map_smul, smul_apply, smul_eq_mul]
   rw [← mul_assoc, ← pow_two, Real.sqrt_mul (sq_nonneg a), Real.sqrt_sq_eq_abs]
-
-
-
 
 theorem exists_geodesic_eq_metric_segment_of_right_anchor
     (g : RiemannianMetric 3 M) {η : ℝ → M} {a b c R : ℝ}
@@ -247,9 +234,6 @@ private theorem exists_geodesic_germ_of_metric_segment_lt
     · linarith [hs.2.1]
     · dsimp [y]
       linarith [hs.2.2]
-
-
-
 
 theorem exists_geodesic_germ_of_metric_segment
     (g : RiemannianMetric 3 M) {η : ℝ → M} {a b : ℝ} (hab : a < b)

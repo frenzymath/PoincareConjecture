@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusRadialReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialCircleComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem M64ObservedWeakAnnulus.weighted_lower_circle_energy_comparison
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Sweep.RadialAffineArea
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,7 +76,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 omit [T2Space M] in
 
-
 theorem m64AnnulusJoin_area {g : RiemannianMetric n M} {c0 c1 c2 : ℝ → M}
     (A : M64Annulus g c0 c1) (B : M64Annulus g c1 c2)
     (C : M64Annulus g c0 c2) (hmap : C.map = m64AnnulusJoinMap A.map B.map) :
@@ -148,8 +136,6 @@ theorem m64AnnulusJoin_area {g : RiemannianMetric n M} {c0 c1 c2 : ℝ → M}
   rw [← hunion, setIntegral_union₀ hdis hright.nullMeasurableSet
     (C.area_integrable.mono_set inter_subset_left)
     (C.area_integrable.mono_set inter_subset_left), hleftArea, hrightArea]
-
-
 
 theorem m64Annulus_join_with_area
     {g : RiemannianMetric n M} {c0 c1 c2 : ℝ → M}

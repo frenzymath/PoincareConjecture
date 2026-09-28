@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Decomposition
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -206,8 +198,6 @@ theorem isConnected_middle_inter_end (A : AnnularEndFamily v g B C) (i : A.EndIn
       have hpR : F.chart (q, t) ∈ F.region := F.region_eq_image.superset
         (mem_image_of_mem _ ⟨mem_univ _, ht⟩)
       exact ((A.height_germ _ (F.retained hpR)).eq_of_nhds).trans (F.actual_height q t ht)
-
-
 
 theorem isPreconnected_middleRegion (A : AnnularEndFamily v g B C)
     (hC : IsPreconnected C) (hclosed : IsClosed C) : IsPreconnected A.middleRegion := by

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityRadialEnergy
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityWeakMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open Set Filter Metric MeasureTheory
 open scoped Topology ContDiff SchwartzMap ENNReal LineDeriv
 
 namespace PoincareConjecture.M65Boundary
-
-
-
-
 
 theorem halfDisk_localMap_of_green {M : Type*} {N : ℕ}
     (e : M → EuclideanSpace ℝ (Fin N)) (value : LoopPlane → M)
@@ -98,9 +85,6 @@ theorem halfDisk_localMap_of_green {M : Type*} {N : ℕ}
       (Measure.restrict_mono_set volume (hKU.trans hUS))
     weak_derivative := fun test _hc hs i j => hweak test hs i j
   }, rfl, rfl⟩
-
-
-
 
 theorem weakDisk_exists_boundary_localMap {M : Type*} [TopologicalSpace M] {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}

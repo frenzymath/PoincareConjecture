@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalBoxCoreAgreement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateHalfBoxes
 
 namespace Geometry
-
-
-
-
-
 
 theorem cyclic_box_eq_iff_core_coordinates
     {E ι : Type*} (next : ι → ι) (F f : ι → ((ℝ × ℝ) × ℝ) → E)

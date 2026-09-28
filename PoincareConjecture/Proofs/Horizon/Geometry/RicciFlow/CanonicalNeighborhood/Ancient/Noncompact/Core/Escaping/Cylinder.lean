@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Collar
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph.Product
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +23,6 @@ variable {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [ConnectedSpace M] [SecondCountableTopology M]
   [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem exists_scalarNormalized_sphere_of_round_factor
     (K : AncientKappaSolution 3 M) (A : AncientKappaSolution 2 C)
@@ -91,8 +79,6 @@ theorem exists_scalarNormalized_sphere_of_round_factor
       (fun z _ w _ => hfib z w)
     exact hplane ⟨fun z => (d z).val,
       hopen.isOpenEmbedding_subtypeVal.comp d.isOpenEmbedding⟩
-
-
 
 theorem exists_strongEvolvingNeck_of_round_factor
     (K : AncientKappaSolution 3 M) (A : AncientKappaSolution 2 C)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.ObservedTangentProjection
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingKernelWeakClosure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
-
-
 
 theorem m64Annulus_observed_weak_column_tangent
     {mu : Measure LoopPlane}

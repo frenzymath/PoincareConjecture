@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorField.LieBracket
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +26,6 @@ private lemma contMDiffAt_directional
   simp only [mvfderiv, ContinuousLinearMap.comp_apply]
   simp
   rfl
-
-
 
 lemma contMDiffAt_mvfderiv_spatial
     {f : ℝ × M → ℝ} {t : ℝ} {x : M}

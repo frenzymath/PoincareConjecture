@@ -1,13 +1,8 @@
 import PoincareConjecture.Definitions.Ch17.GlobalSurgery
 
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
-
 
 def GlobalSurgerySchedule.parameterPrefix {K : MetricSurgeryConstants}
     (S : GlobalSurgerySchedule K) (i : Nat) (hi : 0 < i) :
@@ -27,9 +22,6 @@ def GlobalSurgerySchedule.parameterPrefix {K : MetricSurgeryConstants}
   r_zero := S.r_zero
   r_le_epsilon j := S.r_le_epsilon j.val
   Delta_le_setup j := S.Delta_le j.val
-
-
-
 
 theorem globalSurgeryPrefixWitness_of_schedule {K : MetricSurgeryConstants}
     (S : GlobalSurgerySchedule K) (i : Nat) (hi : 0 < i) :

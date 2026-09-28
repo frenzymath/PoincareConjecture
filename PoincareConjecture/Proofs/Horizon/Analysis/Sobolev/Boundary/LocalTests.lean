@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.TangentialTests
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Smooth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -131,7 +124,6 @@ theorem memW01p_inter_of_tsupport_subset
   by_cases hx : x ∈ tsupport u
   · rw [hχone x hx, one_mul]
   · rw [image_eq_zero_of_notMem_tsupport hx, mul_zero]
-
 
 theorem memW01p_standardNirenbergTest_inter
     {W : Set E} (hW : IsOpen W) {u η : E → ℝ}

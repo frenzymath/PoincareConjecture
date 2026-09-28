@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceGeometry
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Matrix.Tensors
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem scalar_directional_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -35,8 +24,6 @@ theorem scalar_directional_eq (P : M35StandardCapPredecessors)
   exact mvfderiv_comp_apply y
     (hreg.mdifferentiable (by simp) _)
     ((sliceDiffeomorph ht).contMDiff.mdifferentiable (by simp) _) v
-
-
 
 theorem scalar_directional_bound (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -61,8 +48,6 @@ theorem scalar_directional_bound (P : M35StandardCapPredecessors)
     _ ≤ A * (F.connection t).scalarCurvature y.val ^ (3 / 2 : ℝ) :=
       hbound y.val hy' _ hv
     _ = _ := congrArg (fun r : ℝ => A * r ^ (3 / 2 : ℝ)) hs.symm
-
-
 
 theorem scalar_time_bound (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)

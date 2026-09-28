@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem norm_regularizedCauchyOperator_le_l1 {h : ℂ → E} {δ : ℝ}
     (hδ : 0 < δ) (hh : Integrable h) (z : ℂ) :
@@ -47,10 +34,6 @@ theorem norm_regularizedCauchyOperator_le_l1 {h : ℂ → E} {δ : ℝ}
   rw [regularizedCauchyOperator, norm_smul, norm_inv, Complex.norm_real,
     Real.norm_eq_abs, abs_of_pos Real.pi_pos, mul_assoc]
   exact mul_le_mul_of_nonneg_left hle (inv_nonneg.mpr Real.pi_pos.le)
-
-
-
-
 
 theorem tendstoUniformly_cauchyOperator_of_l1
     {f : ℕ → ℂ → E} {g : ℂ → E} {R B : ℝ} (hB : 0 ≤ B)

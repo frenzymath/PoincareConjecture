@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Data.Set.Finite.Lattice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +9,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem subsingleton_segment_inter_level (A : E →ᵃ[ℝ] ℝ)
     {a b : E} (hab : A a ≠ A b) (c : ℝ) :
@@ -41,23 +29,16 @@ section Algebraic
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
-
 def oneSkeletonHeightSection (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (c : ℝ) : Set E :=
   {x | ∃ s ∈ K.faces, s.card ≤ 2 ∧
     x ∈ convexHull ℝ (s : Set E) ∧ A x = c}
-
-
 
 theorem oneSkeletonHeightSection_subset (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (c : ℝ) :
     K.oneSkeletonHeightSection A c ⊆ K.space ∩ {x | A x = c} := by
   rintro x ⟨s, hs, _, hxs, hxc⟩
   exact ⟨K.convexHull_subset_space hs hxs, hxc⟩
-
-
 
 theorem subsingleton_small_face_height_section (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A K.vertices)
@@ -80,9 +61,6 @@ theorem subsingleton_small_face_height_section (K : SimplicialComplex ℝ E)
     simpa only [Finset.coe_pair, convexHull_pair] using
       A.subsingleton_segment_inter_level hheight c
 
-
-
-
 theorem finite_oneSkeletonHeightSection (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ)
     (hA : InjOn A K.vertices) (c : ℝ) :
@@ -98,9 +76,6 @@ theorem finite_oneSkeletonHeightSection (K : SimplicialComplex ℝ E)
 end Algebraic
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_triangle_intrinsicInterior_of_notMem_oneSkeletonHeightSection
     (K : SimplicialComplex ℝ E)
@@ -127,9 +102,6 @@ theorem exists_triangle_intrinsicInterior_of_notMem_oneSkeletonHeightSection
   have hface : t.erase v ∈ K.faces := K.down_closed ht
     (Finset.erase_subset v t) (Finset.card_pos.mp (by omega))
   exact hmark ⟨t.erase v, hface, hcard.le, hxv, hx.2⟩
-
-
-
 
 theorem exists_finite_height_section_triangle_interiors
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

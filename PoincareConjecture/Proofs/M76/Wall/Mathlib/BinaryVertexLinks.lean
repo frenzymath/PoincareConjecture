@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryDualBlockLevel
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.SupportingConeLevel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem binary_vertex_link_levels
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

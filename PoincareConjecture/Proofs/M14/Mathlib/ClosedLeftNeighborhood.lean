@@ -1,23 +1,12 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem exists_closed_left_neighborhood {a b t : ℝ} (hat : a < t) (htb : t ≤ b)
     {S : Set ℝ} (hS : S ∈ 𝓝[Icc a b] t) :
@@ -43,9 +32,6 @@ theorem exists_closed_left_neighborhood {a b t : ℝ} (hat : a < t) (htb : t ≤
       hac.le.trans hs.1, hs.2.trans (min_le_left _ _)⟩
   · exact mem_nhdsWithin_iff_exists_mem_nhds_inter.mpr
       ⟨Ioo c e, Ioo_mem_nhds hct hte, fun s hs => ⟨hs.1.1.le, le_min hs.2.2 hs.1.2.le⟩⟩
-
-
-
 
 theorem left_lt_of_Icc_mem_nhdsWithin {a b c d t : ℝ} (hat : a < t) (htb : t ≤ b)
     (hnear : Icc c d ∈ 𝓝[Icc a b] t) : c < t := by

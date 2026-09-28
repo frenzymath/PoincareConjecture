@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProperDiskTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +13,6 @@ local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X]
-
-
-
 
 structure OriginalDiskProduct
     (e : ι → OpenPartialHomeomorph X V3) (R : Set X) (j : V2 → X) where

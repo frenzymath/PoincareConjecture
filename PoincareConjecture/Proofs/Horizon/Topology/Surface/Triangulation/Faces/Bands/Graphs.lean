@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Strip
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.CollarCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Rectangles
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -22,8 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_smoothFace_pair_between_graphs
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

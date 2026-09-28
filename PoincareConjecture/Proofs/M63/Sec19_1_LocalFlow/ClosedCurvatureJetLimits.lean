@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactPathDerivative
 import PoincareConjecture.Proofs.M08.SecondVariationCoordinates
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +26,6 @@ local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_closed_embeddedCurvatureJet_limits
     [T2Space M] (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

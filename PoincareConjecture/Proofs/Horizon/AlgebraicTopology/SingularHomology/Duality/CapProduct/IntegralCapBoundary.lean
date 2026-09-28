@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralCapChains
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

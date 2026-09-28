@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexUniverse
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexSimplex
 import PoincareConjecture.Proofs.M02.Topology.ThreeManifoldTriangulation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory HomologicalComplex
@@ -26,10 +14,6 @@ universe u
 namespace PoincareConjecture
 
 open Proofs.M02.Topology Proofs.M59
-
-
-
-
 
 theorem m59CompactCoverDeckAction_of_orderComplexComparison
     (P02 : RepairedClosedTopologyProvider.{u})

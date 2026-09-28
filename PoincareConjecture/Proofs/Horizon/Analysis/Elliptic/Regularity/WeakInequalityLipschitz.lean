@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakInequalityExtension
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.Lipschitz
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Filter
@@ -17,8 +10,6 @@ namespace Poincare.Analysis.Sobolev.Weak
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem memLp_lineDeriv_of_hasCompactSupport {v : E → ℝ} {C : ℝ≥0}
     (hv : LipschitzWith C v) (hvc : HasCompactSupport v) (p : ℝ≥0∞) (w : E) :
@@ -49,8 +40,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem weakInequality_of_nonneg_compact_lipschitz
     {O : Set E} (hO : IsOpen O) {F : Fin d → E → ℝ} {f v : E → ℝ}

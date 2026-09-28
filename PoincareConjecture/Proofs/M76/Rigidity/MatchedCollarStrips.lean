@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MatchedCollarMap
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedCoverOpenUnion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry
 
 variable {E F X : Type*} {L : Set E} {K : Set F}
   {Q : E → F} {c : E × ℝ → X} {d : F × ℝ → X}
-
-
-
 
 theorem image_matchedCollarMap_open_strip (hQ : Q '' L = K)
     (hzero : ∀ x ∈ L, c (x, 0) = d (Q x, 0)) {eps : ℝ} (heps : 0 < eps) :
@@ -48,9 +36,6 @@ theorem image_matchedCollarMap_open_strip (hQ : Q '' L = K)
       · linarith [hw.2.2]
       · linarith [hw.2.1]
 
-
-
-
 theorem mapsTo_matchedCollarMap_closed_strip {U : Set X} {eps : ℝ}
     (hQ : MapsTo Q L K)
     (hc : MapsTo c (L ×ˢ Icc (0 : ℝ) eps) U)
@@ -64,9 +49,6 @@ theorem mapsTo_matchedCollarMap_closed_strip {U : Set X} {eps : ℝ}
     exact hd ⟨hQ hz.1, by linarith [lt_of_not_ge ht], by linarith [hz.2.1]⟩
 
 variable [TopologicalSpace E] [TopologicalSpace X] {R : Set X}
-
-
-
 
 theorem isOpen_matchedCollarMap_open_strip
     (hR : IsClosed R) (HB : L ≃ₜ frontier R)

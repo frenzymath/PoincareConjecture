@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointSurface
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalBoxProductCoordinates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +10,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] {n : ℕ}
-
-
-
-
 
 theorem exists_joint_cylinder_of_original_polygon_collar
     (P : Polygon V (n + 3)) (hP : P.HasSimplicialEdges)

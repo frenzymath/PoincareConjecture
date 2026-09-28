@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SourceCircleDisc
 import Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter InnerProductSpace
@@ -22,7 +12,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 attribute [local instance] sourceCircle_stereographic_dimension
-
 
 theorem exists_boundary_linear_realization
     (v : UnitTwoSphere)

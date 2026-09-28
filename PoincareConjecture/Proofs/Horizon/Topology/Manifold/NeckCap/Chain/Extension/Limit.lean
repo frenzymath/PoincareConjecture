@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Connected
 import Mathlib.Order.Interval.Set.OrdConnectedLinear
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture
-
 
 theorem ChainShape.exists_active_eq {J : Set ℤ} (hne : J.Nonempty)
     (hJ : OrdConnected J) : ∃ shape : ChainShape, shape.active = J := by
@@ -50,8 +39,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {ε : ℝ}
-
-
 
 theorem exists_limit (C : ℕ → BalancedNeckChain g ε)
     (hincreasing : Monotone (fun n => (C n).shape.active))

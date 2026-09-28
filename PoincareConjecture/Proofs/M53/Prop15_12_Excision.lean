@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralChartSupport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {X : Type u} [TopologicalSpace X]
-
-
-
 
 theorem integral_interior_cover_excision_quasiIso
     (A U : Set X) (hU : IsOpen U) (hcover : interior A ∪ U = Set.univ) :
@@ -116,8 +102,6 @@ theorem integral_interior_cover_excision_quasiIso
   exact HomologySequence.quasiIso_τ₃ T
     (integralNestedRelativePairSequence_shortExact IU AU hIU)
     (integralNestedRelativePairSequence_shortExact I A hIA) hleft hmiddle
-
-
 
 theorem integral_interior_cover_excision
     (A U : Set X) (hU : IsOpen U) (hcover : interior A ∪ U = Set.univ) (n : Nat) :

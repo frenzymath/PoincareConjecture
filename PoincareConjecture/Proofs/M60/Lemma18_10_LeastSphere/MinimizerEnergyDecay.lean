@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakHessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +7,6 @@ open Set
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suComparison_smallness {A B : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B) :
     ∃ q δ : ℝ, 0 < q ∧ q ≤ 1 / 4 ∧ 0 < δ ∧
@@ -53,10 +40,6 @@ theorem suComparison_smallness {A B : ℝ} (hA : 0 ≤ A) (hB : 0 ≤ B) :
   have hdsq := (sq_le_sq₀ hd hδ.le).mpr hdδ
   have h := mul_le_mul_of_nonneg_left hdsq hB
   linarith
-
-
-
-
 
 theorem suEnergy_sqrt_decay {q F : ℝ} (hq : 0 < q) (hq1 : q < 1)
     (hF : 0 ≤ F) {E : ℝ → ℝ} (hE : 0 ≤ E 1)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.HurewiczMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -16,7 +8,6 @@ open scoped Simplicial Topology unitInterval
 universe w v u
 
 namespace PoincareConjecture.Proofs.M02
-
 
 theorem exists_genLoop_transAt_paired_homotopies
     {N X : Type*} [DecidableEq N] [TopologicalSpace X] {x : X}
@@ -103,7 +94,6 @@ theorem exists_genLoop_transAt_paired_homotopies
 variable {C : Type u} [Category.{v} C] [Preadditive C] [HasCoproducts.{w} C]
   [CategoryWithHomology C]
 
-
 theorem singularSimplexHomologyClass_sub_eq_of_paired_homotopies (R : C)
     {A X : TopCat.{w}} {f g p q : A ⟶ X}
     (H : TopCat.Homotopy f g) (K : TopCat.Homotopy p q) {n : ℕ}
@@ -158,7 +148,6 @@ theorem singularSimplexHomologyClass_sub_eq_of_paired_homotopies (R : C)
   simp only [← Preadditive.sub_comp]
   rw [hlift, Category.assoc, HomologicalComplex.toCycles_comp_homologyπ, comp_zero]
 
-
 theorem genLoopSingularHomologyClass_transAt (R : C) (X : TopCat.{w})
     {n : ℕ} {x : X} (i : Fin (n + 1)) (p q : GenLoop (Fin (n + 1)) X x) :
     genLoopSingularHomologyClass R X (GenLoop.transAt i p q) =
@@ -199,7 +188,6 @@ theorem genLoopSingularHomologyClass_transAt (R : C) (X : TopCat.{w})
   simpa only [sub_sub_cancel, sub_neg_eq_add] using
     congrArg (fun z => genLoopSingularHomologyClass R X p - z) hdiff
 
-
 theorem homotopyGroupSingularHomologyMap_mul (R : C) (X : TopCat.{w})
     (n : ℕ) (x : X) (a b : HomotopyGroup.Pi (n + 1) X x) :
     homotopyGroupSingularHomologyMap R X n x (a * b) =
@@ -219,7 +207,6 @@ theorem homotopyGroupSingularHomologyMap_mul (R : C) (X : TopCat.{w})
   simp only [p', q', homotopyGroupSingularHomologyMap_mk,
     genLoopSingularHomologyClass_transAt]
   exact add_comm _ _
-
 
 noncomputable def homotopyGroupSingularHomologyHom (R : C) (X : TopCat.{w})
     (n : ℕ) (x : X) :

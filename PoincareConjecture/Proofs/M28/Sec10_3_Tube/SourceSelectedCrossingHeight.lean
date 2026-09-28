@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFreshSphereIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderMiddleCrossing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_source_selected_crossing_height_accuracy :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 1000 : ℝ) ∧

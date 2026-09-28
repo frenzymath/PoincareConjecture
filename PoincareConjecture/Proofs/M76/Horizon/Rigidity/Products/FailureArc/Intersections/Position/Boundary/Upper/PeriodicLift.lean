@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Upper.PeriodicCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Polyhedra.Mathlib.LocallyInjectivePLLift
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

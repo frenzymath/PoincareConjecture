@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M12.GeneralizedCylinders
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +15,6 @@ open PoincareConjecture.Proofs.M11 PoincareConjecture.Proofs.M12
 
 variable {F : GeneralizedRicciFlowData.{u}}
   (R : GeneralizedFlowCarrierConclusion (flowBoxAtlas F))
-
-
-
 
 theorem originalBox_spatial_local_inverse (b : F.box_index)
     (p : (R.timeIntervals.interval (boxInterval F b)).Point × (F.box b).carrier.carrier) :

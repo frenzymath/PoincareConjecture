@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.BicollarSeparation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,7 +7,6 @@ open Set
 namespace BrownCollar
 
 variable {B : Type*} [TopologicalSpace B]
-
 
 def reverseBicollar : (B × Ioo (-1 : ℝ) 1) ≃ₜ (B × Ioo (-1 : ℝ) 1) where
   toFun z := (z.1, ⟨-(z.2 : ℝ), by
@@ -28,9 +19,6 @@ def reverseBicollar : (B × Ioo (-1 : ℝ) 1) ≃ₜ (B × Ioo (-1 : ℝ) 1) whe
   continuous_invFun := by fun_prop
 
 variable {X : Type*} [TopologicalSpace X] {S C U V : Set X}
-
-
-
 
 theorem exists_bicollar_oriented_to_components [SimplyConnectedSpace X]
     [LocallyPathConnectedSpace X] [ConnectedSpace S]

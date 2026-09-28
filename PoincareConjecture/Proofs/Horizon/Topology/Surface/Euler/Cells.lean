@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.BoundaryMaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,7 +14,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M] {I : Type v}
 
-
 def CoordinateVertex
     (coordinates : I → OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (basis : I → AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) :=
@@ -32,7 +24,6 @@ instance [Finite I]
     (basis : I → AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2))) :
     Finite (CoordinateVertex coordinates basis) :=
   (finite_range (fun p : I × Fin 3 => coordinates p.1 (basis p.1 p.2))).to_subtype
-
 
 def coordinateCorner
     (coordinates : I → OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -59,7 +50,6 @@ theorem coordinateCorner_injective
     (hsource i (subset_convexHull ℝ _ (mem_range_self l))) (congrArg Subtype.val h)
 
 variable [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 noncomputable def coordinateEdgeEnds (face : I → SmoothFace M)
     (coordinates : I → OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

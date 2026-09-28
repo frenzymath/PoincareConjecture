@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M]
-
-
 
 theorem continuousAt_sSup_ball (g : RiemannianMetric n M)
     (f : M → ℝ) (hf : Continuous f) (p : M)
@@ -51,7 +41,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T3Space M]
 
-
 theorem continuousAt_scalarCurvatureSupOn_ball (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hD : Continuous D.scalarCurvature) (p : M)
     {r R : ℝ} (hr : 0 < r) (hrR : r < R)
@@ -59,8 +48,6 @@ theorem continuousAt_scalarCurvatureSupOn_ball (g : RiemannianMetric 3 M)
     ContinuousAt (fun s : ℝ => scalarCurvatureSupOn g D (g.ball p s)) r := by
   simpa only [scalarCurvatureSupOn, image_eq_range] using
     g.continuousAt_sSup_ball D.scalarCurvature hD p hr hrR hcompact
-
-
 
 theorem exists_scalar_calibrated_radius (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hD : Continuous D.scalarCurvature) (p : M)
@@ -82,8 +69,6 @@ theorem exists_scalar_calibrated_radius (g : RiemannianMetric 3 M)
       (scalarCurvatureSupOn g D (g.ball p b) - b⁻¹ ^ 2) from
         ⟨sub_nonpos.mpr hleft, sub_nonneg.mpr hright⟩)
   exact ⟨r, hr, sub_eq_zero.mp hcal⟩
-
-
 
 theorem exists_scalar_calibrated_radius_of_sandwich (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (hD : Continuous D.scalarCurvature) (p : M)

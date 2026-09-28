@@ -8,23 +8,12 @@ import Mathlib.Order.Hom.Set
 import Mathlib.Topology.Order.MonotoneContinuity
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology intervalIntegral
 
 namespace PoincareConjecture.M65
-
-
 
 theorem exists_periodic_arclength_reparam {v : ℝ → ℝ} {P : ℝ}
     (hv : ContDiff ℝ ∞ v) (hv0 : ∀ x, 0 < v x)

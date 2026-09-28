@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M03.LocalCoordinateEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff Topology BigOperators
 
 namespace PoincareConjecture.M34
-
-
 
 theorem hasDerivAt_finite_coordinate_energy
     {n : ℕ} {ι : Type*} [Fintype ι] {I : Set ℝ} (hI : IsOpen I)
@@ -38,8 +27,6 @@ theorem hasDerivAt_finite_coordinate_energy
   have hi : ContDiffOn ℝ 1 (fun z => F z i) (I ×ˢ U) :=
     (EuclideanSpace.proj i : EuclideanSpace ℝ ι →L[ℝ] ℝ).contDiff.comp_contDiffOn hF
   exact Proofs.M03.hasDerivAt_local_coordinate_energy hI hU hi hφ hφc hφU ht
-
-
 
 theorem continuousOn_finite_coordinate_energy
     {n : ℕ} {ι : Type*} [Fintype ι] {K : Set ℝ} (hK : IsCompact K)

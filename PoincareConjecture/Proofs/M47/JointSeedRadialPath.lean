@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M47.JointSeedGeodesicSmooth
 import PoincareConjecture.Proofs.M47.JointSeedRadialExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology ENNReal
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_jointSeed_radial_path
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

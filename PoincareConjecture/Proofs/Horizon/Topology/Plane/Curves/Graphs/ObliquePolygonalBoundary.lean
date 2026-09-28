@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseCuts
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.AffineApproximation
 import Mathlib.Analysis.Calculus.Deriv.AffineMap
 import Mathlib.Analysis.Calculus.Deriv.Inv
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +11,8 @@ open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
 
-
 noncomputable def obliqueProjection (A B : ℝ → ℝ) (x z : ℝ) : ℝ :=
   (x - A z) / (B z - A z)
-
 
 noncomputable def obliqueProjectionDerivative (A B : ℝ → ℝ) (q : ℝ × (ℝ × ℝ)) : ℝ :=
   ((1 - deriv A q.2.1 * q.2.2) * (B q.2.1 - A q.2.1) -
@@ -46,8 +33,6 @@ private theorem continuousOn_obliqueProjectionDerivative
   exact (((continuousOn_const.sub (hAd.mul hd)).mul (hBc.sub hAc)).sub
     ((continuousOn_fst.sub hAc).mul ((hBd.sub hAd).mul hd))).div
       ((hBc.sub hAc).pow 2) (fun q hq => pow_ne_zero _ (sub_pos.mpr (hgap _ hq)).ne')
-
-
 
 theorem TransverseGraphCuts.exists_projection_derivative_tolerance
     {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
@@ -84,7 +69,6 @@ theorem TransverseGraphCuts.exists_projection_derivative_tolerance
   rw [Metric.mem_ball, dist_zero_right, Prod.norm_def, Real.norm_eq_abs, Real.norm_eq_abs]
   exact max_lt hz hd
 
-
 theorem hasDerivAt_obliqueProjection
     {A B z : ℝ → ℝ} {x dz : ℝ}
     (hA : DifferentiableAt ℝ A (z x)) (hB : DifferentiableAt ℝ B (z x))
@@ -97,7 +81,6 @@ theorem hasDerivAt_obliqueProjection
     (sub_pos.mpr hgap).ne' using 1
   dsimp [obliqueProjectionDerivative]
   ring
-
 
 noncomputable def affineHeightBridge (c d ηa ηb x : ℝ) : ℝ :=
   ηa + ((ηb - ηa) / (d - c)) * (x - c)
@@ -116,8 +99,6 @@ private theorem affineHeightBridge_bounds {c d ηa ηb x : ℝ} (hcd : c < d)
     ⟨min_le_left _ _, le_max_left _ _⟩ ⟨min_le_right _ _, le_max_right _ _⟩
   exact ⟨div_nonneg (sub_nonneg.mpr hx.1) (sub_pos.mpr hcd).le,
     (div_le_one (sub_pos.mpr hcd)).mpr (sub_le_sub_right hx.2 _)⟩
-
-
 
 theorem exists_piecewiseAffine_height_bridge
     {lo : ℝ → ℝ} {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)
@@ -193,8 +174,6 @@ private theorem exists_larger_closed_interval {X : Set ℝ} (hX : IsOpen X)
   · exact hright ⟨hr.1.trans hbx, by linarith [hx.2, hr.2]⟩
   exact hI ⟨le_of_not_gt hxa, le_of_not_gt hbx⟩
 
-
-
 structure ObliquePolygonalBoundary {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
     (P : TransverseGraphCuts lo a b ua wa ub wb) (X : Set ℝ) (ra rb : ℝ) where
   count : ℕ
@@ -224,8 +203,6 @@ structure ObliquePolygonalBoundary {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
   projection_deriv_pos : ∀ i x, x ∈ Icc (cut i.castSucc) (cut i.succ) →
     0 < obliqueProjectionDerivative P.A P.B
       (x, (piece i x - lo x, (piece i).linear 1 - deriv lo x))
-
-
 
 theorem exists_obliquePolygonalBoundary
     {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
@@ -342,10 +319,8 @@ variable {lo : ℝ → ℝ} {a b ua wa ub wb : ℝ}
   {P : TransverseGraphCuts lo a b ua wa ub wb} {X : Set ℝ} {ra rb : ℝ}
   (Q : ObliquePolygonalBoundary P X ra rb)
 
-
 noncomputable def parameterCut (j : Fin (Q.count + 1)) : ℝ :=
   obliqueProjection P.A P.B (Q.cut j) (Q.height j)
-
 
 noncomputable def projection (i : Fin Q.count) (x : ℝ) : ℝ :=
   obliqueProjection P.A P.B x (Q.piece i x - lo x)
@@ -397,7 +372,6 @@ theorem parameterCut_last : Q.parameterCut (Fin.last Q.count) = 1 := by
 private theorem smooth_piece (i : Fin Q.count) : ContDiff ℝ ∞ (Q.piece i) := by
   rw [(Q.piece i).decomp]
   exact (Q.piece i).linear.toContinuousLinearMap.contDiff.add contDiff_const
-
 
 def pieceDomain (i : Fin Q.count) : Set ℝ :=
   X ∩ {x | Q.piece i x - lo x ∈ Ioo (-P.radius) P.radius}
@@ -500,7 +474,6 @@ private theorem exists_interval_inverse_on {g : ℝ → ℝ} {V : Set ℝ}
   · exact (hg.continuousOn.mono hI).image_Icc_of_monotoneOn hcd
       (hmono.monotoneOn.mono hIW)
 
-
 structure PieceCoordinates (i : Fin Q.count) where
   parameter : OpenPartialHomeomorph ℝ ℝ
   source_contains : Icc (Q.cut i.castSucc) (Q.cut i.succ) ⊆ parameter.source
@@ -520,14 +493,12 @@ theorem exists_pieceCoordinates (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)
   refine ⟨⟨G, hsource, hsub, heq, hsmooth, hinv, ?_⟩⟩
   simpa only [(Q.projection_endpoints i).1, (Q.projection_endpoints i).2] using himage
 
-
 noncomputable def pieceCoordinates (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)
     (i : Fin Q.count) : Q.PieceCoordinates i := Classical.choice (Q.exists_pieceCoordinates hX hlo i)
 
 namespace PieceCoordinates
 
 variable {Q} {i : Fin Q.count} (C : Q.PieceCoordinates i)
-
 
 noncomputable def upperGraph (t : ℝ) : ℝ :=
   Q.piece i (C.parameter.symm t) - lo (C.parameter.symm t)
@@ -562,8 +533,6 @@ theorem upperGraph_bounds {t : ℝ}
 theorem upperGraph_lt_cap {t : ℝ}
     (ht : t ∈ Icc (Q.parameterCut i.castSucc) (Q.parameterCut i.succ)) :
     C.upperGraph t < Q.height_cap := Q.height_lt_cap i _ (C.inverse_mem_cell ht)
-
-
 
 theorem band_subset_coordinates_source (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X) :
     {q : ℝ × ℝ | q.1 ∈ Icc (Q.parameterCut i.castSucc) (Q.parameterCut i.succ) ∧
@@ -612,8 +581,6 @@ theorem strip_upperGraph_eq {t : ℝ}
   simp only [obliqueStripMap, hx]
   dsimp [upperGraph]
   simp
-
-
 
 theorem image_upperGraph_eq_segment :
     (fun t => obliqueStripMap P.A P.B lo (t, C.upperGraph t)) ''

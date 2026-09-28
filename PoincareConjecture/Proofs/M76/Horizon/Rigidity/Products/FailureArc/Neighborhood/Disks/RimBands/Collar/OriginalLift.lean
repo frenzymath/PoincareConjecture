@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Coordinates.ArmIncidence
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSmallDiskProduct
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

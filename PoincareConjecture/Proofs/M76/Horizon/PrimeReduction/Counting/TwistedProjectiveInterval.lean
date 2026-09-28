@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ProjectiveH
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Cover.Projection
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -204,7 +196,6 @@ theorem zeroSection_disjoint_boundary : Disjoint zeroSection boundary := by
     norm_num [midpoint] at hh
   · have hh := congrArg Subtype.val (hz.symm.trans he)
     norm_num [midpoint] at hh
-
 
 theorem exists_homology_retract (R : ModuleCat (ZMod 2)) :
     ∃ (i : R ⟶ (TopCat.toSSet.obj (TopCat.of Model)).homology R 1)

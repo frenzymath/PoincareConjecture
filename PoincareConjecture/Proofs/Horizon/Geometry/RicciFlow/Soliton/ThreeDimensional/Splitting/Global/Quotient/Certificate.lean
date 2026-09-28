@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Cylinder
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +23,6 @@ local instance : TopologicalSpace d.surface := d.surface_topology
 local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) (d.surface × ℝ) :=
   d.product_charted
 local instance : IsManifold (𝓡 3) ∞ (d.surface × ℝ) := d.product_manifold
-
-
 
 def quotientCertificateOfProjection
     (τ : d.surface × ℝ → d.surface × ℝ)

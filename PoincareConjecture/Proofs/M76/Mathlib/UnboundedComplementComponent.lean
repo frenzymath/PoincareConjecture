@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedBallExterior
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem Bornology.IsBounded.exists_unique_unbounded_complement_component
     {A : Set E} (hA : Bornology.IsBounded A) (hdim : 1 < Module.rank ℝ E) :

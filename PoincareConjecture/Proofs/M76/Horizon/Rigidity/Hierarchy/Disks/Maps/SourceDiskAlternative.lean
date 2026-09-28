@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.DiskF
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.Boundary.RetainedRectangleEdges
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.SimultaneousTerminalGroups
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -26,8 +18,6 @@ local notation "C0" => AddCircle p
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Rim" => sphere (0 : V2) 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
 
 def HamiltonZeroHomeomorphicDiskInstallation {ι κ η : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
@@ -56,7 +46,6 @@ def HamiltonZeroHomeomorphicDiskInstallation {ι κ η : Type*}
       (∀ t x, (Q0 (G (t, x))).1.1 = hamiltonZeroThirdCircleMap phi x) ∧
       ∀ t x, x ∈ R → (Q0 (G (t, x))).2 ∈ AddCircle.closedIntervalArc p alpha beta ∧
         (Q0 (G (t, x))).1.2 ∈ AddCircle.closedIntervalArc p a b
-
 
 def HamiltonZeroTerminalDiskAlternative {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3) (d : κ → OpenPartialHomeomorph X0 V3)
@@ -136,9 +125,6 @@ theorem HamiltonZeroTerminalThirdPhaseData.disk_alternative
       halpha hab hbeta ha horder hb hfirst hsecond
       (fun i => ((if i.1 then v else u : ℝ) : C0)) hthird
       (fun i z hz => hedges (j i z) ((hjrim i ⟨z, sphere_subset_closedBall hz⟩).mpr hz))
-
-
-
 
 theorem exists_hamiltonZero_source_disk_alternatives
     {E ι κ : Type*} [TopologicalSpace E] [Zero E]

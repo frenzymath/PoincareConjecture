@@ -10,8 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m67_event_based_width_transport
     {g₀ : StandardInitialMetric}
     {D : RepairedSurgeryFlowData.{u} g₀}
@@ -86,8 +84,6 @@ theorem m67_event_based_width_transport
       exact E.null_transport (F c) (hF c))
     hrebased eta heta (fun _F _hF => E.filling_transport)
 
-
-
 theorem m67_event_based_width_transport_of_represented_family
     {g₀ : StandardInitialMetric}
     {D : RepairedSurgeryFlowData.{u} g₀}
@@ -130,8 +126,6 @@ theorem m67_event_based_width_transport_of_represented_family
       (H.event_input S hS hpost).child.connected
       (H.event_input S hS hpost).child.basepoint E.post.pi_two_trivial)
     E.post.represents (E.loop.map.comp F)).mp (hrepresented F hF hFrep)
-
-
 
 theorem m67_event_based_width_transport_of_event
     {g₀ : StandardInitialMetric}

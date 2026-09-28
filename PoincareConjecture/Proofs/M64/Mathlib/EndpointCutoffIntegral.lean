@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.EndpointCutoff
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -22,10 +11,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64EndpointCutoff_integral_tendsto
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]

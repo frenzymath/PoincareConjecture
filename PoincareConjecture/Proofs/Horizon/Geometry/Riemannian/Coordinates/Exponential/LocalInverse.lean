@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.LocalInverse
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Endpoint
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
-
-
-
-
-
-
-

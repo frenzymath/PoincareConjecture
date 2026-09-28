@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_strictMono_nestedSubsequence_diagonal
     (s : ℕ → ℕ → ℕ) (hs : ∀ i, StrictMono (s i))

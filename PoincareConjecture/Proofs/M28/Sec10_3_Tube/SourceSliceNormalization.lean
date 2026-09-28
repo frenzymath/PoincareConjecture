@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFamilyScales
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,23 +14,17 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 noncomputable def normalizedSliceMetric (H : CounterexampleNeckFamily E) (k : ℕ) :
     RiemannianMetric 3 ((E (k + H.shift)).flow.slice (E (k + H.shift)).time).carrier :=
   M13.scaleSmoothMetric ((E (k + H.shift)).flow.metric (E (k + H.shift)).time)
     ((E (k + H.shift)).flow.scalar
       ⟨(E (k + H.shift)).time, (E (k + H.shift)).basepoint⟩) (H.base_scalar_pos k)
 
-
-
 noncomputable def normalizedSliceConnection (H : CounterexampleNeckFamily E) (k : ℕ) :
     LeviCivitaData (H.normalizedSliceMetric k) :=
   M13.scaleLeviCivitaData ((E (k + H.shift)).flow.connection (E (k + H.shift)).time)
     ((E (k + H.shift)).flow.scalar
       ⟨(E (k + H.shift)).time, (E (k + H.shift)).basepoint⟩) (H.base_scalar_pos k)
-
-
 
 theorem normalizedSlice_scalar_eq (H : CounterexampleNeckFamily E) (k : ℕ)
     (x : ((E (k + H.shift)).flow.slice (E (k + H.shift)).time).carrier) :
@@ -52,15 +36,11 @@ theorem normalizedSlice_scalar_eq (H : CounterexampleNeckFamily E) (k : ℕ)
     (Diffeomorph.refl (𝓡 3) _ ∞) _ (H.base_scalar_pos k)
     (M13.identity_metricHomothety _ _ (H.base_scalar_pos k)) _ _ x
 
-
-
 theorem normalizedSlice_lower_scalar (H : CounterexampleNeckFamily E) (k : ℕ) :
     (H.normalizedSliceConnection k).scalarCurvature
       ((H.segment k).path (H.segment k).lower) = 16 * (max C 2) ^ 2 := by
   rw [H.normalizedSlice_scalar_eq, (H.segment k).lower_scalar]
   exact mul_div_cancel_right₀ _ (H.base_scalar_pos k).ne'
-
-
 
 theorem normalizedSlice_upper_scalar_tendsto (H : CounterexampleNeckFamily E) :
     Tendsto (fun k => (H.normalizedSliceConnection k).scalarCurvature
@@ -72,8 +52,6 @@ theorem normalizedSlice_upper_scalar_tendsto (H : CounterexampleNeckFamily E) :
   funext k
   rw [H.normalizedSlice_scalar_eq, (H.segment k).lower_scalar]
   field_simp
-
-
 
 theorem normalizedSlice_path_length_lt (H : CounterexampleNeckFamily E) (k : ℕ) :
     (H.normalizedSliceMetric k).pathELength (H.segment k).path

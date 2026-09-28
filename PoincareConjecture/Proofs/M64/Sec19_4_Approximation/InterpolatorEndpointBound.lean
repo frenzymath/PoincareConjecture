@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.TwoEndpointMinimizing
 import PoincareConjecture.Proofs.M58.Mathlib.LocalTangentMap
 import PoincareConjecture.Proofs.M58.Mathlib.CompactRiemannianBallBundle
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64_continuous_endpoint_tangent_input :
     Continuous (fun v : ℝ × (TangentBundle (𝓡 n) M × TangentBundle (𝓡 n) M) =>
@@ -50,9 +34,6 @@ theorem m64_continuous_endpoint_tangent_input :
   exact (contMDiff_equivTangentBundleProd_symm (I := 𝓘(ℝ, ℝ))
     (I' := (𝓡 n).prod (𝓡 n)) (M := ℝ) (M' := M × M) (n := 0)).continuous.comp
       (ht.prodMk hp)
-
-
-
 
 theorem m64_exists_interpolator_endpoint_bound [T2Space M]
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M))
@@ -107,9 +88,6 @@ theorem m64_exists_interpolator_endpoint_bound [T2Space M]
       (⟨x.2.2, w⟩ : TangentBundle (𝓡 n) M)) ∈ K :=
     ⟨⟨hx.1, ⟨mem_univ _, hv⟩, ⟨mem_univ _, hw⟩⟩, hx.2⟩
   exact (le_abs_self _).trans ((hB _ hmem).trans (le_max_left _ _))
-
-
-
 
 theorem m64_interpolator_endpoint_bound_on_short_tube [T2Space M]
     (g : RiemannianMetric n M) (hcompact : IsCompact (univ : Set M))

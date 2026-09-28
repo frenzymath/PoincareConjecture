@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScal
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Locality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ variable {n : ℕ} {M N : Type*}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
-
 
 theorem scalar_ricciNormSq_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -46,9 +34,6 @@ theorem scalar_ricciNormSq_eq_of_local_isometry
     rfl
   · rw [D.curvatureTensor_eq_of_local_isometry D' hU hf hmetric hx, ← hL]
     rfl
-
-
-
 
 theorem scalar_evolution_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
@@ -71,9 +56,6 @@ theorem scalar_evolution_eq_of_local_isometry
       (eventually_of_mem (hU.mem_nhds hx) (fun y hy => hmetric y hy)) hscalar,
     (hid x hx).2]
 
-
-
-
 theorem scalar_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}
     (hU : IsOpen U) (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
@@ -91,9 +73,6 @@ theorem scalar_eq_of_local_homothety
   rw [(scalar_ricciNormSq_eq_of_local_isometry DQ D' hU hf hinv hm hx).1]
   exact M13.homothety_scalarCurvature_eq g (m01RescaledMetric g Q hQ)
     (Diffeomorph.refl (𝓡 n) M ∞) Q hQ (rescaledMetric_identity_homothety hQ) D DQ x
-
-
-
 
 theorem scalar_evolution_eq_of_local_homothety
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : M → N} {U : Set M}

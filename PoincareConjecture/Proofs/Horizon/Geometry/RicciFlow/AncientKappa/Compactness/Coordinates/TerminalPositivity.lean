@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Coordinates.EmbeddingBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 1000000
@@ -17,8 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.AncientCompactness
-
-
 
 theorem tendsto_of_compact_zero_jets
     {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
@@ -57,8 +46,6 @@ variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
 theorem terminal_coefficients_symmetric_positive
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -92,8 +79,6 @@ theorem terminal_coefficients_symmetric_positive
     refine ⟨a, ha, fun v => ?_⟩
     apply ge_of_tendsto (AncientCompactness.tendsto_bilinear_eval (hconv t ht x hx) v v)
     exact hbound.mono fun k hk => (hk t htime x hx v).1
-
-
 
 theorem terminal_coefficients_symmetric_positive_of_zero_jets
     (P : M23NormalizedKappaCompactnessPredecessors)

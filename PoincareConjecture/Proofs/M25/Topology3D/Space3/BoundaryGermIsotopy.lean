@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalPerturbation
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialIsotopyTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CompactField
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_boundary_germ_isotopy_at (v : E) (hv : ‖v‖ = 1)
     (c : (ℝ ∙ v)ᗮ)
@@ -87,8 +75,6 @@ theorem exists_boundary_germ_isotopy_at (v : E) (hv : ‖v‖ = 1)
   rw [htrack, hone 1 (c + w, 1) le_rfl]
   simp only [V, horizontalFieldLift, Prod.fst_add, hχone, one_smul, g',
     add_sub_cancel_left, hw]
-
-
 
 theorem exists_boundary_germ_isotopy (v : E) (hv : ‖v‖ = 1)
     (h : (ℝ ∙ v)ᗮ → (ℝ ∙ v)ᗮ) (hh : ContDiff ℝ ∞ h)

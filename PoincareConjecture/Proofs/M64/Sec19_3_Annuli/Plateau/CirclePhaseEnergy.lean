@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTraceEstimate
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64AnnulusPoint_horizontal_hasDerivAt (s x : ℝ) :
     HasDerivAt (fun y => annulusPoint y s) (EuclideanSpace.single (0 : Fin 2) 1) x := by
@@ -33,9 +18,6 @@ theorem m64AnnulusPoint_horizontal_hasDerivAt (s x : ℝ) :
   simpa only [one_smul, id_eq] using
     ((hasDerivAt_id x).smul_const (EuclideanSpace.single (0 : Fin 2) 1)).const_add
       (annulusPoint 0 s)
-
-
-
 
 theorem m64Annulus_phase_slice_energy
     {L : LoopPlane → ℝ} (hL : ContDiff ℝ 1 L) {d : ℝ}
@@ -63,9 +45,6 @@ theorem m64Annulus_phase_slice_energy
   have hh := SpectralHeatNative.integral_sq_le_time_mul_integral_sq hp
     (hD.intervalIntegrable 0 curvePeriod) ((hD.pow 2).intervalIntegrable 0 curvePeriod)
   simpa only [intervalIntegral.integral_of_le hp, ← integral_Icc_eq_integral_Ioc] using hh
-
-
-
 
 theorem m64Annulus_phase_energy
     {L : LoopPlane → ℝ} (hL : ContDiff ℝ 1 L) {d : ℝ}

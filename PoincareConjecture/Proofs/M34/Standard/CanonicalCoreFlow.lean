@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceDensity
 import PoincareConjecture.Proofs.M34.Standard.CanonicalPullbackTensors
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M34
 
 open DifferenceEnergy
 
-
-
 noncomputable def canonicalCoreFlow {n : ℕ} {J : Set ℝ} (F : RicciFlow n (V n) J) :
     letI :=
       (isOpen_univ : IsOpen (univ : Set (V n))).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -35,8 +23,6 @@ noncomputable def canonicalCoreFlow {n : ℕ} {J : Set ℝ} (F : RicciFlow n (V 
     RicciFlow n (univ : Set (V n)) J :=
   F.pullbackToCanonicalDomain univ isOpen_univ Subtype.val
     (Poincare.isLocalDiffeomorph_subtypeVal (𝓡 n) univ isOpen_univ ∞)
-
-
 
 theorem canonicalCoreFlow_inner {n : ℕ} {J : Set ℝ} (F : RicciFlow n (V n) J) :
     letI :=
@@ -56,9 +42,6 @@ theorem canonicalCoreFlow_inner {n : ℕ} {J : Set ℝ} (F : RicciFlow n (V n) J
     (mfderiv (𝓡 n) (𝓡 n) (Subtype.val : ↑(univ : Set (V n)) → V n) x v) = _
   erw [mfderiv_subtypeVal_singleton isOpen_univ x]
   rfl
-
-
-
 
 theorem canonicalCoreFlow_density {n dH dA dS : ℕ}
     (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))
@@ -99,8 +82,6 @@ theorem canonicalCoreFlow_density {n dH dA dS : ℕ}
   dsimp only [actualDifferenceEnergyDensity]
   rw [canonicalCoreFlow_inner F t x, canonicalCoreFlow_inner F' t x, hA, hR F, hR F']
 
-
-
 theorem canonicalCoreFlow_chart_density {n dH dA dS : ℕ}
     (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))
     (qA : FA n ≃L[ℝ] EuclideanSpace ℝ (Fin dA))
@@ -122,8 +103,6 @@ theorem canonicalCoreFlow_chart_density {n dH dA dS : ℕ}
   exact (canonicalDifferenceDensity_coe univ isOpen_univ qH qA qS
     (canonicalCoreFlow F) (canonicalCoreFlow F') p t ⟨x, mem_univ x⟩).trans
       (canonicalCoreFlow_density qH qA qS F F' t ⟨x, mem_univ x⟩)
-
-
 
 theorem actualDifferenceEnergyDensity_continuous_euclidean {n dH dA dS : ℕ}
     (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))

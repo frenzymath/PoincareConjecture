@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceRegions
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +9,6 @@ namespace Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
-
 
 theorem component_sides_of_disjoint_frontier
     {E : Type*} [TopologicalSpace E] {K A : Set E}
@@ -35,18 +23,12 @@ theorem component_sides_of_disjoint_frontier
     · exact False.elim (disjoint_left.mp havoid hx ⟨subset_closure hxA, hxi⟩)
   · exact Or.inr hxA
 
-
-
-
 def NestedCircleComponentLocation {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3)) (K : Set V2) : Prop :=
   (K ⊆ Q.inside ∧ Disjoint K (D2 \ P.inside)) ∨
     (K ⊆ D2 \ closure P.inside ∧ Disjoint K (closure Q.inside)) ∨
     (K ⊆ P.inside \ closure Q.inside ∧
       Disjoint K (closure Q.inside ∪ (D2 \ P.inside)))
-
-
-
 
 def DisjointCircleComponentLocation {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3)) (K : Set V2) : Prop :=
@@ -55,8 +37,6 @@ def DisjointCircleComponentLocation {m n : ℕ}
     (K ⊆ Q.inside ∧ Disjoint K (closure P.inside) ∧
       Disjoint K (D2 \ (P.inside ∪ Q.inside))) ∨
     K ⊆ D2 \ (closure P.inside ∪ closure Q.inside)
-
-
 
 theorem nested_circle_component_location {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))
@@ -88,8 +68,6 @@ theorem nested_circle_component_location {m n : ℕ}
     · refine Or.inr (Or.inl ⟨fun x hx ↦ ⟨hKD hx, hPout hx⟩, ?_⟩)
       exact disjoint_left.mpr (fun x hx hq ↦ hPout hx (subset_closure (hnest hq)))
 
-
-
 theorem NestedCircleComponentLocation.retained_or_disjoint {m n : ℕ}
     {P : Polygon V2 (m + 3)} {Q : Polygon V2 (n + 3)} {K : Set V2}
     (h : NestedCircleComponentLocation P Q K) :
@@ -99,8 +77,6 @@ theorem NestedCircleComponentLocation.retained_or_disjoint {m n : ℕ}
   · exact Or.inl (fun x hx ↦ Or.inl (subset_closure (hi hx)))
   · exact Or.inl (fun x hx ↦ Or.inr ⟨(ho hx).1, fun hp ↦ (ho hx).2 (subset_closure hp)⟩)
   · exact Or.inr hd
-
-
 
 theorem disjoint_circle_component_location {m n : ℕ}
     (P : Polygon V2 (m + 3)) (Q : Polygon V2 (n + 3))
@@ -128,8 +104,6 @@ theorem disjoint_circle_component_location {m n : ℕ}
     · exact Or.inr (Or.inr (fun x hx ↦
         ⟨hKD hx, fun h ↦ h.elim (hPout hx) (hQout hx)⟩))
 
-
-
 theorem DisjointCircleComponentLocation.retained_piece {m n : ℕ}
     {P : Polygon V2 (m + 3)} {Q : Polygon V2 (n + 3)} {K : Set V2}
     (h : DisjointCircleComponentLocation P Q K) :
@@ -140,9 +114,6 @@ theorem DisjointCircleComponentLocation.retained_piece {m n : ℕ}
   · exact Or.inr (Or.inr (fun x hx ↦ ⟨(ho hx).1, fun h ↦
       (ho hx).2 (h.elim (fun hp ↦ Or.inl (subset_closure hp))
         (fun hq ↦ Or.inr (subset_closure hq)))⟩))
-
-
-
 
 theorem old_circle_component_source_cases
     {X I : Type*} {f : V2 → X} (U : I → Set V2) (a b : I) (hab : a ≠ b)

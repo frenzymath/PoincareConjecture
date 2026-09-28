@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Covering.Completeness
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.UniversalCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
 
 namespace Poincare.Topology.UniversalCover
-
-
 
 theorem metricComplete_pullback
     {M : Type*} [TopologicalSpace M]

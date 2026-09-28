@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Prop8_2_CylinderFlow
 import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,9 +15,6 @@ section Rescaling
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {J : SpacetimeInterval}
-
-
-
 
 theorem rescaling_scalarDifferential_eq
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -70,9 +58,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
-
-
-
 
 theorem actualBallCylinder_scalarDifferential_pullback
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

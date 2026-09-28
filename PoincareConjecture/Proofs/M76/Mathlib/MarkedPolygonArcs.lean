@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearChain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,10 +13,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {N : ℕ}
-
-
-
-
 
 theorem exists_arcs_at_vertices (P : Polygon E (N + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -153,10 +139,6 @@ theorem exists_arcs_at_vertices (P : Polygon E (N + 3))
       simpa only [hu0, hv0] using hx
     · intro x hx
       exact ⟨hU.1 hx, hV.1 hx⟩
-
-
-
-
 
 theorem exists_arcs_at_marks (P : Polygon E (N + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

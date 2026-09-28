@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.RetainedModelNeighborhood
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.NestedCollarCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,9 +26,6 @@ private theorem closure_model_image
   rw [Topology.IsEmbedding.subtypeVal.closure_eq_preimage_closure_image,
     Subtype.image_preimage_coe, inter_eq_right.mpr hEQ] at hc
   simpa only [himage, inter_eq_right.mpr hEQ] using hc
-
-
-
 
 theorem nested_cap_relative_frontier
     {X Y : Type*} [TopologicalSpace X] [T2Space X]
@@ -141,9 +130,6 @@ theorem nested_cap_relative_frontier
     (hDclosed.preimage continuous_subtype_val).closure_eq,
     Topology.IsEmbedding.subtypeVal.closure_eq_preimage_closure_image,
     hcomplImage, hcomplement, ← preimage_inter, hboundary]
-
-
-
 
 theorem nested_cap_relative_frontier_off_closed
     {X Y : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CollarCutMembership
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
-
 
 theorem collar_level_map_mem_selected_cut_iff
     {B T d b k R s₀ s₁ Y : Set E} {upper g A : E → ℝ} {q : E}

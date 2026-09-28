@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSlabClosure
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SeparatingNeckComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem recut_positive_component (N : EpsilonNeck g) {P : Set M}
     (hPo : IsOpen P) (hPc : IsConnected P)

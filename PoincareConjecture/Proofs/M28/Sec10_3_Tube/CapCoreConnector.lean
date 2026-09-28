@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapRatio
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompetitors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_core_connectors (N : CapCertificate g) (D : LeviCivitaData g)
     {B Q : ℝ} (hB : N.cap_constant ≤ B) (hQ : 0 < Q)

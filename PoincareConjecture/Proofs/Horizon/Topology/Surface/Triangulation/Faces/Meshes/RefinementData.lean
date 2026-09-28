@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.BoundarySubdivision
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +12,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace Plane M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 structure CompatibleCoordinateTriangleRefinement {I : Type v}
     (F : I → OpenPartialHomeomorph Plane M) (b : I → AffineBasis (Fin 3) ℝ Plane) where

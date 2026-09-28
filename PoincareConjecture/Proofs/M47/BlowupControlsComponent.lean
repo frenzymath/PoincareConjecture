@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 noncomputable def component_relax_constant
     {M : Type u} [TopologicalSpace M]

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Incidence
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Connectivity
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.Boundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

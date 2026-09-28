@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenOrientation
 import PoincareConjecture.Proofs.M02.Topology.IntegralOpenHomeomorphData
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenMV
 
-
-
 set_option autoImplicit false
 
 noncomputable section

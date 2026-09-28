@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M32.Thm11_31.Levels
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,8 +21,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T epsilon delta delta' rho : ℝ}
   (hfix : ∀ x, x ∉ K → e x = x)
   (hsphere : e '' N.central_sphere = N'.central_sphere)
 
-
-
 def hornEndCut_of_centralSphere_eq (hsphere : N.central_sphere = N'.central_sphere)
     (cut : HornEndCut horn N rho) : HornEndCut horn N' rho where
   point := cut.point
@@ -53,9 +35,6 @@ def hornEndCut_of_centralSphere_eq (hsphere : N.central_sphere = N'.central_sphe
   disjoint_low_curvature := cut.disjoint_low_curvature
 
 include e K hK hKH hKL hfix hsphere
-
-
-
 
 noncomputable def hornEndCut_transport (cut : HornEndCut horn N rho) :
     HornEndCut horn N' rho := by
@@ -107,13 +86,9 @@ noncomputable def hornEndCut_transport (cut : HornEndCut horn N rho) :
       have heq : e x = x := e.injective hfixed
       exact disjoint_left.mp cut.disjoint_low_curvature hx (heq ▸ hy)) }
 
-
-
 @[simp] theorem hornEndCut_transport_carrier (cut : HornEndCut horn N rho) :
     (hornEndCut_transport horn N N' e K hK hKH hKL hfix hsphere cut).carrier =
       e '' cut.carrier := rfl
-
-
 
 theorem hornEndCut_nonempty_iff_of_compact_transport :
     Nonempty (HornEndCut horn N rho) ↔ Nonempty (HornEndCut horn N' rho) := by

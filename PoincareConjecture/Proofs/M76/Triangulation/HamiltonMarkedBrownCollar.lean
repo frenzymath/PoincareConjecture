@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,11 +13,6 @@ local notation "B" => (closedBall (0 : V3) 1)
 local notation "S0" => (sphere (0 : V3) 1)
 
 variable {X : Type*} [TopologicalSpace X] {D S : Set X}
-
-
-
-
-
 
 theorem exists_marked_brown_inward_collar
     (hD : IsUnitBallPair V3 D S) (s : S0 ≃ₜ S) :

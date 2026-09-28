@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.SubsetRank
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.SuppliedRebase
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -158,8 +150,6 @@ private theorem growth_at_rebased_subset_lift
   · filter_upwards [hw] with j hj
     exact hj.2.2
 
-
-
 theorem minLocalAnglePackingRankOn_lt_of_expanding_subset_near_min_badAscentRadius
     {n : ℕ} {M : ℕ → Type} [∀ j, TopologicalSpace (M j)]
     [∀ j, T3Space (M j)] [∀ j, PreconnectedSpace (M j)]
@@ -255,6 +245,5 @@ theorem minLocalAnglePackingRankOn_lt_of_expanding_subset_near_min_badAscentRadi
     (Z := fun j => (Z j).rebase (x j).val) (Y := Y.rebase y)
     g D hcomplete hsec p q z holdconv hθ hθpi hc hcθ hplus hb hρ hascent hpq hqz
     E hxE hqmin κ hκ a ha hazero hactual (fun j => F j) hFz hscale hrebased hold
-
 
 end PoincareConjecture.RiemannianMetric

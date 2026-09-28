@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapRicciFrame
 import PoincareConjecture.Proofs.M47.BlowupControlsCapScalarContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M47
 
 local notation "I" => Fin 3
 local notation "V" => EuclideanSpace ℝ I
-
-
 
 theorem cap_scalar_difference_expansion_normal
     {g0 g1 : RiemannianMetric 3 V} (D0 : LeviCivitaData g0) (D1 : LeviCivitaData g1)

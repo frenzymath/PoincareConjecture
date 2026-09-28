@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M48.LaplacianTransport
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem SurgeryHighCurvatureAnalyticOn.scalar_derivative
     {F : SurgeryFlowData.{u}} {J : Set ℝ} {r C : ℝ}

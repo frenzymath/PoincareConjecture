@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.CompactRays
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RayLimits
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,14 +25,12 @@ theorem rayExtension_dist (γ : basedMinimizingRays p)
   change |(s.toNNReal : ℝ) - (t.toNNReal : ℝ)| = _
   rw [Real.coe_toNNReal s hs, Real.coe_toNNReal t ht]
 
-
 def RayComparison (p : X) : Prop :=
   ∀ γ η : basedMinimizingRays p, ∀ a b : ℝ, 0 < a → 0 < b →
     ∀ s ∈ Icc (0 : ℝ) a, ∀ t ∈ Icc (0 : ℝ) b,
       s ^ 2 + t ^ 2 - 2 * s * t *
         segmentComparisonCosine (rayExtension γ) (rayExtension η) a b ≤
           dist (rayExtension γ s) (rayExtension η t) ^ 2
-
 
 def asymptoticRayDistance (γ η : basedMinimizingRays p) : ℝ :=
   limUnder atTop (fun L : ℝ => dist (rayExtension γ L) (rayExtension η L) / L)
@@ -103,7 +91,6 @@ theorem asymptoticRayDistance_le_dist_one (hcomparison : RayComparison p)
     (y := rayExtension η L)) hLpos.le
   dsimp only [rayExtension] at hnonneg ⊢
   nlinarith [dist_nonneg (x := γ.1 1) (y := η.1 1)]
-
 
 @[instance_reducible] def asymptoticRayPseudoMetric (hcomparison : RayComparison p) :
     PseudoMetricSpace (basedMinimizingRays p) where

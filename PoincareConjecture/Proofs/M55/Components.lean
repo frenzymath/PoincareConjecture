@@ -1,23 +1,11 @@
 import PoincareConjecture.Definitions.M55ChildComponents
 import PoincareConjecture.Proofs.M55.Mathlib.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 noncomputable def RepairedSurgeryGroupEffectsData.childComponents
     {A B : GeneralizedSliceCarrier.{u}} {C : SurgeryTopologyConclusion A B}

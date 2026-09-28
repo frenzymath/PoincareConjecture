@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.CompactRegion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology Geometry Geometry.OriginalPLTower
@@ -27,8 +20,6 @@ local notation "U" => chartShell L retained
 local notation "R" => chartDomain L retained
 local notation "chart" => TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe
   (chartShell L retained) (chartShell_nonempty L retained)
-
-
 
 structure ProtectedAnnulusTerminalData where
   map : (V1 × V2) → U
@@ -58,8 +49,6 @@ structure ProtectedAnnulusTerminalData where
     ∀ negative : C(Q2, Y),
       (∀ u, p (negative u) = stage.sourceMap (endpoint false, u)) → False
   compact_region : MarkedTerminalRegion stage R
-
-
 
 theorem nonempty_protected_annulus_terminal_region
     (he : PLDomain e (latticeHandleDomain (Fin 1) (Fin 2) L))

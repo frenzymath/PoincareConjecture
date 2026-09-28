@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.LimitNoncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SelectedComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
@@ -90,7 +82,6 @@ variable {M : Type u} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
 
-
 theorem unscaledSourceFlow_centers_escape (p : M) (q : ℕ → M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)
     (t : ℝ) (ht : t < 1) :
@@ -110,8 +101,6 @@ theorem unscaledSourceFlow_centers_escape (p : M) (q : ℕ → M)
     rw [← ENNReal.ofReal_toReal ((G.unscaledSourceFlow.metric t).edist_ne_top p (q k))]
     exact ENNReal.ofReal_le_ofReal hdist
   exact (not_le.mpr hk) (hB (mem_image_of_mem _ hmem))
-
-
 
 theorem unscaledPointedLimit_line (p : M) (q : ℕ → M)
     (hescape : Tendsto (fun k => (S.metric.edist p (q k)).toReal) atTop atTop)

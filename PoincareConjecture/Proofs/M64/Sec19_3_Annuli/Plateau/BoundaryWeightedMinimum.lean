@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusRadialReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakMapCircleGreen
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,11 +23,6 @@ local notation "O" => m64AnnulusLowerDomain
 local notation "L" => m64AnnulusLowerStrip
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem weighted_lower_exact_minimum_of_matching_flux
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

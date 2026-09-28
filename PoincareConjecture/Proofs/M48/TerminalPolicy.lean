@@ -1,21 +1,11 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 import PoincareConjecture.Proofs.M33.OldEventPolicy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem M33OldEventDataPreservation.observedTerminalPolicy
     {F : SurgeryFlowData.{u}} {E : SurgeryFlowExtension F} {H : Real}

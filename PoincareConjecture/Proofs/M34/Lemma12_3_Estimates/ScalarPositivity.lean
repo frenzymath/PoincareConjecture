@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.TipPositivity
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.GlobalBounds
 import PoincareConjecture.Proofs.M04.PointwiseFlatness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem initialAngularNumerator_pos (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 ≤ r) :
     0 < g₀.connection.curvatureTensor (EuclideanSpace.single (0 : Fin 3) r)
@@ -52,8 +38,6 @@ theorem initialAngularNumerator_pos (g₀ : StandardInitialMetric) {r : ℝ} (hr
   rw [initialCurvatureTensor_angular_axis g₀ hrpos]
   exact div_pos (mul_pos (initialCoefficients_pos g₀ r).2 hp) (sq_pos_of_pos hrpos)
 
-
-
 theorem initialScalarCurvature_axis_pos (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 ≤ r) :
     0 < g₀.connection.scalarCurvature (EuclideanSpace.single (0 : Fin 3) r) := by
@@ -73,8 +57,6 @@ theorem initialScalarCurvature_axis_pos (g₀ : StandardInitialMetric)
   rw [hz] at hp
   exact (lt_irrefl 0) hp
 
-
-
 theorem initialScalarCurvature_rotation (g₀ : StandardInitialMetric)
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x : StandardCapSpace) :
     g₀.connection.scalarCurvature (standardRotation A x) = g₀.connection.scalarCurvature x := by
@@ -83,15 +65,11 @@ theorem initialScalarCurvature_rotation (g₀ : StandardInitialMetric)
   exact (g₀.connection.scalarCurvature_eq_of_local_isometry g₀.connection isOpen_univ
     hf.contMDiffOn (fun y _ u v => (g₀.rotation_invariant A y u v).symm) (mem_univ x)).symm
 
-
-
 theorem initialScalarCurvature_pos (g₀ : StandardInitialMetric) (x : StandardCapSpace) :
     0 < g₀.connection.scalarCurvature x := by
   obtain ⟨A, hA⟩ := exists_standardRotation_axis x
   rw [← hA, initialScalarCurvature_rotation]
   exact initialScalarCurvature_axis_pos g₀ (norm_nonneg x)
-
-
 
 theorem standardCapEstimate_exists (g₀ : StandardInitialMetric) :
     Nonempty (StandardCapEstimate g₀) :=

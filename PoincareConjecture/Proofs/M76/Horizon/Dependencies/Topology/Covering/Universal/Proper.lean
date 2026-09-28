@@ -1,14 +1,6 @@
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Maps.Proper.CompactlyGenerated
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Topology
@@ -16,7 +8,6 @@ open Set Function Topology
 namespace Poincare.Topology
 
 variable {E X : Type*} [TopologicalSpace E] [TopologicalSpace X] {p : E → X}
-
 
 theorem isCoveringMap_of_proper_localHomeomorph [T2Space E]
     (hp : IsLocalHomeomorph p) (hproper : IsProperMap p) : IsCoveringMap p := by
@@ -29,8 +20,6 @@ theorem isCoveringMap_of_proper_localHomeomorph [T2Space E]
   exact hproper.isClosedMap.isEvenlyCovered_of_openPartialHomeomorph
     ((hproper.isCompact_preimage isCompact_singleton).finite
       (IsDiscrete.of_openPartialHomeomorph p subset_rfl hcharts)) hcharts
-
-
 
 theorem injective_covering_of_simplyConnected [PreconnectedSpace E]
     [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]
@@ -45,8 +34,6 @@ theorem injective_covering_of_simplyConnected [PreconnectedSpace E]
     a = s (p a) := (congr_fun hsp a).symm
     _ = s (p b) := congr_arg s hab
     _ = b := congr_fun hsp b
-
-
 
 theorem bijective_proper_localHomeomorph [T2Space E] [ConnectedSpace E]
     [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]

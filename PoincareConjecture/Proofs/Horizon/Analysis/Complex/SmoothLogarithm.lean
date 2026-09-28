@@ -2,22 +2,12 @@ import Mathlib.Analysis.Complex.CoveringMap
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Complex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem contDiff_of_exp_comp {n : WithTop ℕ∞} {f L : E → ℂ}
     (hf : ContDiff ℝ n f) (hL : Continuous L)
@@ -42,8 +32,6 @@ theorem contDiff_of_exp_comp {n : WithTop ℕ∞} {f L : E → ℂ}
   rw [← hlift y, ← hlift x, ← Complex.exp_sub,
     Complex.log_exp hy.1 hy.2.le, sub_add_cancel]
 
-
-
 theorem exists_contDiff_logarithm {n : WithTop ℕ∞} {f : E → ℂ}
     (hf : ContDiff ℝ n f) (hne : ∀ x, f x ≠ 0)
     (x₀ : E) (z₀ : ℂ) (h₀ : Complex.exp z₀ = f x₀) :
@@ -54,8 +42,6 @@ theorem exists_contDiff_logarithm {n : WithTop ℕ∞} {f : E → ℂ}
       ⟨f, hf.continuous⟩ h₀ (by simpa using hne)
   have hlift (x : E) : Complex.exp (L x) = f x := congrFun hL x
   exact ⟨L, contDiff_of_exp_comp hf L.continuous hlift, hL₀, hlift⟩
-
-
 
 theorem exists_contDiff_logarithm_eq_zero {n : WithTop ℕ∞} {f : E → ℂ}
     (hf : ContDiff ℝ n f) (hne : ∀ x, f x ≠ 0)

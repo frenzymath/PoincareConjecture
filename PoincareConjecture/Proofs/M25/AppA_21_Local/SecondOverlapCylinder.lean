@@ -12,17 +12,7 @@ universe u
 
 namespace PoincareConjecture.M25
 
-
-
-
-
-
-
-
-
-
 set_option linter.unusedVariables false in
-
 
 theorem L3a_second_overlap_cylinder_model :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

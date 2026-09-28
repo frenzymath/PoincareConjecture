@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.Event.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ variable {M P N : Type u}
   [TopologicalSpace P] [ChartedSpace LoopAmbient P] [IsManifold (𝓡 3) ∞ P]
   [TopologicalSpace N] [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N]
 
-
 theorem m67_distance_bound_comp_of_pullback
     (g : RiemannianMetric 3 M) (p : RiemannianMetric 3 P) (h : RiemannianMetric 3 N)
     (e : ContinuousMap M P) (he : ContMDiff (𝓡 3) (𝓡 3) ∞ e)
@@ -37,7 +27,6 @@ theorem m67_distance_bound_comp_of_pullback
   exact (hbound (e x) (e y)).trans
     (mul_le_mul_right (g.edist_map_le_of_metric_pullback p he
       (fun x v w => (hmetric x v w).symm) x y) _)
-
 
 theorem m67_filling_transport_comp_of_pullback [T2Space M] [T2Space N]
     (g : RiemannianMetric 3 M) (p : RiemannianMetric 3 P) (h : RiemannianMetric 3 N)

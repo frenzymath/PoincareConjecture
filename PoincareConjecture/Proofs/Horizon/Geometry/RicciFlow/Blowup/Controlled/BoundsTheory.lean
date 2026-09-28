@@ -1,27 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Blowup.Controlled.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.BoundedDistance.DenseTheory
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

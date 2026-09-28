@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M51.EpochConstruction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +11,6 @@ namespace PoincareConjecture.M51
 
 open M51Numerical
 
-
 def StagePoint
     (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S)
@@ -31,7 +19,6 @@ def StagePoint
   {X : Σ F : SurgeryFlowData.{u}, EpochStage S N C n F //
     X.2.extension.extended.parameters = F₀.parameters ∧
       X.2.observation.H = surgeryEpochStart (n + 2)}
-
 
 noncomputable def stageNode
     {S : RepairedControlledSchedulesData.{u}}
@@ -121,7 +108,6 @@ noncomputable def stageNode
         ⟨Z.extension.parameters_eq.trans hparamsR,
           by simpa only [prefix_index] using hZ⟩⟩
 
-
 def OffsetStagePoint
     (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S)
@@ -130,7 +116,6 @@ def OffsetStagePoint
   {X : Σ F : SurgeryFlowData.{u}, EpochStage S N C (k + n) F //
     X.2.extension.extended.parameters = F₀.parameters ∧
       X.2.observation.H = surgeryEpochStart (k + n + 2)}
-
 
 noncomputable def stageNodeFrom
     {S : RepairedControlledSchedulesData.{u}}
@@ -220,7 +205,6 @@ noncomputable def stageNodeFrom
         ⟨Z.extension.parameters_eq.trans hparamsR,
           by simpa only [prefix_index] using hZ⟩⟩
 
-
 theorem exists_stage_sequence_from
     {S : RepairedControlledSchedulesData.{u}}
     {N : RepairedNoncollapseInductionData S}
@@ -261,7 +245,6 @@ theorem exists_stage_sequence_from
     have hn := (nodes n).property
     exact ⟨rfl, hn.2, hn.1⟩
 
-
 structure ComposedExtension
     (F : ℕ → SurgeryFlowData.{u})
     (E : ∀ n, SurgeryFlowExtension (F n)) (n k : ℕ) where
@@ -272,20 +255,17 @@ structure ComposedExtension
 
 namespace ComposedExtension
 
-
 theorem castSource_extended {F G : SurgeryFlowData.{u}} (h : F = G)
     (E : SurgeryFlowExtension F) :
     (h ▸ E : SurgeryFlowExtension G).extended = E.extended := by
   cases h
   rfl
 
-
 @[simp] theorem refl_identify_apply
     (F : SurgeryFlowData.{u}) {t : ℝ} (ht : t ∈ F.time_domain)
     (x : (F.slice t).carrier) :
     (SurgeryFlowExtension.refl F).identify t ht x = x := by
   rfl
-
 
 theorem trans_identify_apply
     {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
@@ -294,7 +274,6 @@ theorem trans_identify_apply
     (SurgeryFlowExtension.trans E D).identify t ht x =
       D.identify t (E.old_times ht) (E.identify t ht x) := by
   rfl
-
 
 theorem trans_assoc_identify_apply
     {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
@@ -306,12 +285,10 @@ theorem trans_assoc_identify_apply
         t ht x := by
   rfl
 
-
 noncomputable def append {F G : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
     (E : SurgeryFlowExtension G) : SurgeryFlowExtension F :=
   D.trans (hD.symm ▸ E)
-
 
 @[simp] theorem append_extended {F G : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
@@ -319,14 +296,12 @@ noncomputable def append {F G : SurgeryFlowData.{u}}
   subst G
   rfl
 
-
 @[simp] theorem append_refl {F G : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G) :
     append D hD (SurgeryFlowExtension.refl G) = D := by
   subst G
   cases D
   rfl
-
 
 theorem append_assoc {F G H : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
@@ -338,19 +313,16 @@ theorem append_assoc {F G H : SurgeryFlowData.{u}}
   subst H
   rfl
 
-
 noncomputable def identifyTo {F G : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
     (t : ℝ) (ht : t ∈ F.time_domain) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice t).carrier (G.slice t).carrier ∞ :=
   hD ▸ D.identify t ht
 
-
 theorem oldTimeTo {F G : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
     {t : ℝ} (ht : t ∈ F.time_domain) : t ∈ G.time_domain :=
   hD ▸ D.old_times ht
-
 
 theorem identifyTo_append {F G H : SurgeryFlowData.{u}}
     (D : SurgeryFlowExtension F) (hD : D.extended = G)
@@ -362,19 +334,16 @@ theorem identifyTo_append {F G H : SurgeryFlowData.{u}}
   subst H
   rfl
 
-
 noncomputable def identify {F : ℕ → SurgeryFlowData.{u}}
     {E : ∀ n, SurgeryFlowExtension (F n)} {n k : ℕ}
     (D : ComposedExtension F E n k) (t : ℝ) (ht : t ∈ (F n).time_domain) :
     Diffeomorph (𝓡 3) (𝓡 3) ((F n).slice t).carrier ((F (n + k)).slice t).carrier ∞ :=
   identifyTo D.extension D.extended_eq t ht
 
-
 theorem old_times {F : ℕ → SurgeryFlowData.{u}}
     {E : ∀ n, SurgeryFlowExtension (F n)} {n k : ℕ}
     (D : ComposedExtension F E n k) {t : ℝ} (ht : t ∈ (F n).time_domain) :
     t ∈ (F (n + k)).time_domain := oldTimeTo D.extension D.extended_eq ht
-
 
 noncomputable def chain
     (F : ℕ → SurgeryFlowData.{u})
@@ -387,7 +356,6 @@ noncomputable def chain
       exact ⟨append previous.extension previous.extended_eq (E (n + k)),
         (append_extended previous.extension previous.extended_eq (E (n + k))).trans
           (hE (n + k))⟩
-
 
 theorem chain_add
     (F : ℕ → SurgeryFlowData.{u})
@@ -403,7 +371,6 @@ theorem chain_add
     rw [← append_assoc]
     simp only [← ih]
     congr! 2 <;> (change n + (k + l) = n + k + l; omega)
-
 
 theorem chain_identify_add
     (F : ℕ → SurgeryFlowData.{u})
@@ -423,13 +390,11 @@ theorem chain_identify_add
     omega
   · exact chain_add F E hE n k l
 
-
 noncomputable def between
     (F : ℕ → SurgeryFlowData.{u})
     (E : ∀ n, SurgeryFlowExtension (F n))
     (hE : ∀ n, (E n).extended = F (n + 1)) (n m : ℕ) (_h : n ≤ m) :
     SurgeryFlowExtension (F n) := (chain F E hE n (m - n)).extension
-
 
 theorem between_extended
     (F : ℕ → SurgeryFlowData.{u})
@@ -437,7 +402,6 @@ theorem between_extended
     (hE : ∀ n, (E n).extended = F (n + 1)) (n m : ℕ) (h : n ≤ m) :
     (between F E hE n m h).extended = F m :=
   (chain F E hE n (m - n)).extended_eq.trans (congrArg F (Nat.add_sub_of_le h))
-
 
 @[simp] theorem between_self
     (F : ℕ → SurgeryFlowData.{u})
@@ -447,7 +411,6 @@ theorem between_extended
   unfold between
   rw [Nat.sub_self]
   rfl
-
 
 theorem between_trans
     (F : ℕ → SurgeryFlowData.{u})
@@ -466,7 +429,6 @@ theorem between_trans
   congr! 3
   omega
 
-
 noncomputable def identifyBetween
     (F : ℕ → SurgeryFlowData.{u})
     (E : ∀ n, SurgeryFlowExtension (F n))
@@ -475,14 +437,12 @@ noncomputable def identifyBetween
     Diffeomorph (𝓡 3) (𝓡 3) ((F n).slice t).carrier ((F m).slice t).carrier ∞ :=
   identifyTo (between F E hE n m hnm) (between_extended F E hE n m hnm) t ht
 
-
 theorem oldTimeBetween
     (F : ℕ → SurgeryFlowData.{u})
     (E : ∀ n, SurgeryFlowExtension (F n))
     (hE : ∀ n, (E n).extended = F (n + 1)) (n m : ℕ) (hnm : n ≤ m)
     {t : ℝ} (ht : t ∈ (F n).time_domain) : t ∈ (F m).time_domain :=
   oldTimeTo (between F E hE n m hnm) (between_extended F E hE n m hnm) ht
-
 
 theorem identifyBetween_trans
     (F : ℕ → SurgeryFlowData.{u})
@@ -498,7 +458,6 @@ theorem identifyBetween_trans
   simpa only [identifyBetween, oldTimeBetween,
     ← between_trans F E hE n m k hnm hmk] using h
 
-
 theorem exists_of_le
     (F : ℕ → SurgeryFlowData.{u})
     (E : ∀ n, SurgeryFlowExtension (F n))
@@ -509,7 +468,6 @@ theorem exists_of_le
   exact ⟨(chain F E hE n k).extension, (chain F E hE n k).extended_eq⟩
 
 end ComposedExtension
-
 
 theorem exists_stage_sequence
     {S : RepairedControlledSchedulesData.{u}}

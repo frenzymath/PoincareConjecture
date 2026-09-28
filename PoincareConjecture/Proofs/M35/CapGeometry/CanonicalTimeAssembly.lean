@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M35.CapGeometry.InitialCanonicalSlab
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipUniformWindow
 import PoincareConjecture.Proofs.M35.CapGeometry.IndependentScalarRate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem canonical_of_bounded_tip_caps
     (P : M35StandardCapPredecessors) {g₀ : StandardInitialMetric}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RoundVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Coordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter VectorField
 open scoped Manifold ContDiff Topology BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem m60SphereParameter_mfderiv_isInvertible (z : LoopPlane) :
     (mfderiv (𝓡 2) (𝓡 2) m60SphereParameter z).IsInvertible := by
@@ -29,8 +18,6 @@ theorem m60SphereParameter_mfderiv_isInvertible (z : LoopPlane) :
     · rw [m60SphereChart_eq_chartAt]
       exact (contMDiffOn_chart (I := 𝓡 2) (n := ∞)).mdifferentiableOn (by simp)
   exact ⟨he.mfderiv (by simp [m60SphereChart] : z ∈ m60SphereChart.symm.source), rfl⟩
-
-
 
 theorem m60RoundSphere_gradientFlux (D : LeviCivitaData m60RoundSphereMetric)
     {f : UnitTwoSphere → ℝ} (z : LoopPlane)
@@ -60,9 +47,6 @@ theorem m60RoundSphere_gradientFlux (D : LeviCivitaData m60RoundSphereMetric)
         (mfderiv (𝓡 2) (𝓡 2) m60SphereParameter z v) := D.inner_gradient _ _ _
     _ = mvfderiv (𝓡 2) (f ∘ m60SphereParameter) z v := hchain.symm
     _ = _ := by rw [mvfderiv, mfderiv_eq_fderiv]; rfl
-
-
-
 
 theorem m60RoundSphere_laplacian_stereographic (D : LeviCivitaData m60RoundSphereMetric)
     {f : UnitTwoSphere → ℝ} (z : LoopPlane)

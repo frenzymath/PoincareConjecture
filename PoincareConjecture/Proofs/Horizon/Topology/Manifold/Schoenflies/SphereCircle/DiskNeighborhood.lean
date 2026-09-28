@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,10 +54,6 @@ private theorem closure_image_unit_disk
     rw [closure_ball _ (by norm_num : (1 : Real) ≠ 0)]
     exact e.continuousOn.mono hs
   simpa only [closure_ball _ (by norm_num : (1 : Real) ≠ 0)] using hcont.image_closure
-
-
-
-
 
 theorem exists_sphere_disk_neighborhoods_of_stereographic_boundary
     {f : S1 -> S2} {p : S2} (hp : p ∉ range f)

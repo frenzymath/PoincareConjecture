@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M28
 
 variable {M : Type*} [TopologicalSpace M] {U : TopologicalSpace.Opens M}
-
-
-
-
 
 theorem cylinderSignedHeight_component_half
     (phi : U ≃ₜ (UnitTwoSphere × Ioo (0 : ℝ) 1)) {S F : Set M}

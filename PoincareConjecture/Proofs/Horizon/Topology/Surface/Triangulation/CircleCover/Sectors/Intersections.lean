@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Coordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -108,8 +98,6 @@ theorem secondSide_inter_opposite_sector {i j : Bool × Bool} {ε : ℝ}
   rw [hs0]
   exact P.sectorCoordinates_zero i
 
-
-
 theorem cap_intersections {ε : ℝ} (hε : 0 ≤ ε) (hwidth : ε ≤ P.width)
     (S : Bool × Bool → Set M)
     (hclosed : ∀ i, S i ⊆ P.closedSector i)
@@ -155,8 +143,6 @@ theorem cap_intersections {ε : ℝ} (hε : 0 ≤ ε) (hwidth : ε ≤ P.width)
       · exact P.secondSide_inter_opposite_sector hne₂ hwidth ⟨h, hclosed j hz.2⟩
     · rintro z rfl
       exact ⟨hp i, hp j⟩
-
-
 
 theorem exists_neighborhood_subset_sector_caps (S : Bool × Bool → Set M)
     (hnear : ∀ i, ∃ V : Set M, IsOpen V ∧ p ∈ V ∧ V ∩ P.closedSector i ⊆ S i) :

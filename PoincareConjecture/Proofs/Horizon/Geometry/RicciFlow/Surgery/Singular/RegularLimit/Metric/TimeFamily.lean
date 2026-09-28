@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.SpacetimeLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Restriction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -30,7 +23,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def terminalMetricFamily (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (t : ℝ) :
     RiemannianMetric 3 (H.regularRegion P04) :=
@@ -47,7 +39,6 @@ theorem terminalMetricFamily_of_ne (H : SingularTimeAssumptions F T M)
     H.terminalMetricFamily P04 t =
       (H.reference.flow.restrictToOpen (H.regularRegion P04)).metric t := by
   simp only [terminalMetricFamily, if_neg ht]
-
 
 theorem terminalMetricFamily_chartCoefficients_eqOn
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -76,8 +67,6 @@ theorem terminalMetricFamily_chartCoefficients_eqOn
         (mfderiv (𝓡 3) (𝓡 3) (extChartAt (𝓡 3) (q : M)).symm p.2 w)
     rw [H.regularRegion_chart_inverse P04 q hp, H.regularRegion_chart_mfderiv P04 q hp]
     rfl
-
-
 
 theorem terminalMetricFamily_isSmoothFamilyOn
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u}) :

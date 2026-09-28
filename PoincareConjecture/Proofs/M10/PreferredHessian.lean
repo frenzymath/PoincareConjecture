@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.PreferredFields
 import PoincareConjecture.Proofs.M10.RegularGerms
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -98,7 +90,6 @@ theorem preferredField_second_scalar_derivative {f : M → ℝ} (q : M)
   have hEq := congrArg (fun D : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ ↦ D v') hEval.fderiv
   simpa only [ContinuousLinearMap.comp_zero, zero_add, ContinuousLinearMap.flip_apply,
     K, l] using hEq
-
 
 theorem preferred_hessian_of_metric_dual (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {f : M → ℝ} (q : M) (hf : ContMDiffAt (𝓡 n) (𝓘(ℝ, ℝ)) 2 f q)

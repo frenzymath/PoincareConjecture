@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.LocalChart
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Eigenfunction
 
-
-
-
-
-
-
-
-
-
-
-
-
 open Set MeasureTheory
 open scoped Manifold ContDiff InnerProductSpace
 

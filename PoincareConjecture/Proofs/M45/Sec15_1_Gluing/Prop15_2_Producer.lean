@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_SampleGluing
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.CylinderErrorConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,10 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
-
 
 theorem neckGluingProducer :
     ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ 1 / 200 →

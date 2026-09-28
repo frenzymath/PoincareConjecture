@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_2_ScalarEvolution
 import PoincareConjecture.Proofs.M62.Lemma0_1_Commutator
 import PoincareConjecture.Proofs.M62.Lemma0_2_NormalDecomposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem hasDerivAt_curvatureSquared [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
@@ -56,8 +45,6 @@ theorem hasDerivAt_curvatureSquared [T2Space M]
   dsimp only [m62TangentRicci]
   ring
 
-
-
 theorem spatial_evolution [T2Space M]
     (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) : M62SpatialEvolution F c where
@@ -67,8 +54,6 @@ theorem spatial_evolution [T2Space M]
   commutator := fun f hf _ ht x => arc_time_commutator F c hc f hf ht x
   curvature_squared_smooth := curvatureSquared_contDiffOn F c hc
   exact_curvature := fun _ ht x => hasDerivAt_curvatureSquared F c hc ht x
-
-
 
 theorem SpacetimeData.curve_laws [T2Space M]
     {F : RicciFlow n M (Set.Icc a b)} (G : SpacetimeData F)

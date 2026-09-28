@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M60.Mathlib.CurveLengthParameter
 import Mathlib.Algebra.Ring.Periodic
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped NNReal
 
 namespace PoincareConjecture.M60
-
-
 
 theorem variationOnFromTo_add_period {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {T : ℝ} (hp : Function.Periodic f T) (a b : ℝ) :
@@ -32,9 +21,6 @@ theorem variationOnFromTo_add_period {E : Type*} [PseudoEMetricSpace E]
   rw [himage, hcomp] at h
   exact h.symm
 
-
-
-
 theorem lengthParameter_add_period {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {T : ℝ} (hf : LocallyBoundedVariationOn f univ)
     (hp : Function.Periodic f T) (t : ℝ) :
@@ -45,9 +31,6 @@ theorem lengthParameter_add_period {E : Type*} [PseudoEMetricSpace E]
   rw [zero_add] at hshift
   rw [hshift] at h
   exact h.symm.trans (add_comm _ _)
-
-
-
 
 theorem naturalParameterization_add_periodLength {E : Type*} [EMetricSpace E]
     {f : ℝ → E} {T : ℝ} (hf : LocallyBoundedVariationOn f univ)
@@ -60,9 +43,6 @@ theorem naturalParameterization_add_periodLength {E : Type*} [EMetricSpace E]
   have heq (x : ℝ) : naturalParameterization f univ 0 (variationOnFromTo f univ 0 x) = f x :=
     edist_eq_zero.mp (edist_naturalParameterization_eq_zero hf (mem_univ 0) (mem_univ x))
   rw [heq, heq, hp]
-
-
-
 
 theorem convex_range_lengthParameter {E : Type*} [PseudoEMetricSpace E]
     {f : ℝ → E} {C : ℝ≥0} (hf : LipschitzWith C f) :

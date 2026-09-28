@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.ModelClock
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,8 +48,6 @@ private theorem cylinderParallelCoefficient_derivative_basis {u : ℝ} (hu : u �
       roundCylinderCoordinateBasis, EuclideanSpace.inner_single_left, sphereFactor_fderiv_axis]
     <;> field_simp <;> ring
 
-
-
 theorem cylinderParallelCoefficient_derivative_zero {u : ℝ} (hu : u ≠ 1)
     (q : UnitTwoSphere) (A B : ℝ) (p : RoundCylinderCoordinates) (a : Fin 3 → Fin 3) :
     roundCylinderTensorDerivative u (chartAt (EuclideanSpace ℝ (Fin 2)) q)
@@ -72,8 +68,6 @@ theorem roundCylinder_scaled_model_zeroth (u v c : ℝ) (q : UnitTwoSphere)
   rw [roundCylinderGram_eq_stereographic_formula, roundCylinderGram_eq_stereographic_formula]
   dsimp only [cylinderParallelCoefficient, sphereFactor]
   ring
-
-
 
 theorem roundCylinder_scaled_model_positive_jet_zero {u : ℝ} (hu : u ≠ 1)
     (v c : ℝ) (q : UnitTwoSphere) (k : ℕ)

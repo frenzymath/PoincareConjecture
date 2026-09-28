@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Proofs.M58.Mathlib.TwoVectorArea
 import PoincareConjecture.Definitions.M64Annulus
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -26,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m60AreaDensity_le_tangentNorm_product
     (g : RiemannianMetric n M) (f : LoopPlane → M) (z : LoopPlane) :
@@ -64,9 +49,6 @@ theorem m60AreaDensity_le_tangentNorm_product
   refine ⟨sq_nonneg _, ?_⟩
   rw [mul_pow, Real.sq_sqrt huu, Real.sq_sqrt hvv]
   exact hdet
-
-
-
 
 theorem m64AnnulusIntegral_le_of_ae_density_bound
     {g : RiemannianMetric n M} {f : LoopPlane → M}

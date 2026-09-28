@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PlaneReflection
 import PoincareConjecture.Proofs.M60.Mathlib.ManifoldDerivativeEquiv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,33 +10,18 @@ open scoped Manifold
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m64AnnulusFlip : LoopPlane ≃ₜ LoopPlane :=
   m60PlaneReflection.toHomeomorph.trans (Homeomorph.addRight (annulusPoint 0 1))
-
-
-
 
 theorem m64AnnulusFlip_apply (p : LoopPlane) :
     m64AnnulusFlip p = m60PlaneReflection p + annulusPoint 0 1 := rfl
 
-
-
-
 theorem m64AnnulusFlip_coord_zero (p : LoopPlane) : m64AnnulusFlip p 0 = p 0 := by
   simp [m64AnnulusFlip_apply, m60PlaneReflection_apply, annulusPoint]
-
-
-
 
 theorem m64AnnulusFlip_coord_one (p : LoopPlane) : m64AnnulusFlip p 1 = 1 - p 1 := by
   simp [m64AnnulusFlip_apply, m60PlaneReflection_apply, annulusPoint]
   ring
-
-
-
 
 theorem m64AnnulusFlip_annulusPoint (x s : ℝ) :
     m64AnnulusFlip (annulusPoint x s) = annulusPoint x (1 - s) := by
@@ -53,30 +29,18 @@ theorem m64AnnulusFlip_annulusPoint (x s : ℝ) :
   fin_cases i <;>
     simp [m64AnnulusFlip_coord_zero, m64AnnulusFlip_coord_one, annulusPoint]
 
-
-
-
 theorem m64AnnulusFlip_involutive : Function.Involutive m64AnnulusFlip := by
   intro p
   ext i
   fin_cases i <;> simp [m64AnnulusFlip_coord_zero, m64AnnulusFlip_coord_one]
 
-
-
-
 theorem m64AnnulusFlip_isometry : Isometry m64AnnulusFlip :=
   (isometry_add_right (annulusPoint 0 1)).comp m60PlaneReflection.isometry
-
-
-
 
 theorem m64AnnulusFlip_measurePreserving :
     MeasurePreserving m64AnnulusFlip (volume : Measure LoopPlane) volume :=
   (measurePreserving_add_right volume (annulusPoint 0 1)).comp
     m60PlaneReflection.measurePreserving
-
-
-
 
 theorem m64AnnulusFlip_mem_domain (p : LoopPlane) :
     m64AnnulusFlip p ∈ m64AnnulusDomain ↔ p ∈ m64AnnulusDomain := by
@@ -87,24 +51,15 @@ theorem m64AnnulusFlip_mem_domain (p : LoopPlane) :
     (0 ≤ p 0 ∧ p 0 ≤ curvePeriod ∧ 0 ≤ p 1 ∧ p 1 ≤ 1)
   constructor <;> intro h <;> refine ⟨h.1, h.2.1, ?_, ?_⟩ <;> linarith [h.2.2.1, h.2.2.2]
 
-
-
-
 theorem m64AnnulusFlip_preimage_domain :
     m64AnnulusFlip ⁻¹' m64AnnulusDomain = m64AnnulusDomain :=
   Set.ext m64AnnulusFlip_mem_domain
-
-
-
 
 theorem m64AnnulusFlip_hasFDerivAt (p : LoopPlane) :
     HasFDerivAt m64AnnulusFlip
       m60PlaneReflection.toContinuousLinearEquiv.toContinuousLinearMap p := by
   exact m60PlaneReflection.toContinuousLinearEquiv.hasFDerivAt.add_const
     (annulusPoint 0 1)
-
-
-
 
 theorem mfderiv_comp_m64AnnulusFlip
     {n : ℕ} {M : Type*} [TopologicalSpace M]

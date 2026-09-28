@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M09.FamilyPhase
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem angular_velocity_contMDiffOn
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)
@@ -46,9 +34,6 @@ theorem angular_velocity_contMDiffOn
       (fun z hz => show A (B z) ∈ U from hz)
   simpa only [Proofs.M09.familyPhase, Proofs.M09.curvePhase, Function.comp_def,
     A, B, Prod.eta] using hp
-
-
-
 
 theorem time_velocity_contMDiffOn
     (c : P × (ℝ × ℝ) → M) (U : Set (P × (ℝ × ℝ))) (hU : IsOpen U)

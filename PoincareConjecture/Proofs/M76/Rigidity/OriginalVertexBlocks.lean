@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualVertexFaceContainment
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.OriginalDiskStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarInteriorBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -28,15 +19,12 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
 
-
 noncomputable def vertexBlock (p : (T.marked 2).vertices) :
     SimplicialComplex ℝ (T.index → ℝ × V3) :=
   let : Fintype T.ambient.faces := T.finite.fintype
   T.ambient.barycentricDualBlock {(p : T.index → ℝ × V3)}
 
 open Classical in
-
-
 
 theorem vertexBlock_centered_chart (p : (T.marked 2).vertices) :
     (T.vertexBlock p).faces.Finite ∧

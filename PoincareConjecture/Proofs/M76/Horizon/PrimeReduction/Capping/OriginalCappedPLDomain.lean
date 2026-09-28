@@ -18,12 +18,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
 
-
-
-
-
-
-
 theorem exists_original_capped_pl_domain
     {X ι κ : Type*} [MetricSpace X] [Fintype κ] [DecidableEq κ]
     {e : ι → OpenPartialHomeomorph X V3} {R U : Set X}

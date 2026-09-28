@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch06.ReducedVolume
 import PoincareConjecture.Statements.Ch06.ReducedLength
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,7 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 structure ReducedVolumeTheory {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) where

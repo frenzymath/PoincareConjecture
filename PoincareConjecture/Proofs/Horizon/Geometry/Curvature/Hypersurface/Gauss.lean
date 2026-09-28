@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Curvature
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,8 +14,6 @@ namespace Poincare.Geometry.Curvature.Hypersurface
 private abbrev E (k : ℕ) := EuclideanSpace ℝ (Fin k)
 
 variable {m n : ℕ} {g : RiemannianMetric n (E n)} {h : RiemannianMetric m (E m)}
-
-
 
 theorem contDiff_secondFundamentalForm (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : E m → E n} (hF : ContDiff ℝ ∞ F) (u v : E m) :
@@ -62,8 +53,6 @@ private theorem covariantDerivativeAlongMap_add (D : LeviCivitaData g)
       covariantDerivativeAlongMap D F V x u + covariantDerivativeAlongMap D F W x u := by
   simp only [covariantDerivativeAlongMap, fderiv_fun_add hV hW, add_apply, map_add]
   abel
-
-
 
 theorem secondFundamentalForm_covariantDerivative_inner_of_eventually
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -160,8 +149,6 @@ private theorem iterated_covariantDerivativeAlongMap_inner
       (hC.differentiable (by simp) x),
     secondFundamentalForm_covariantDerivative_inner_of_eventually D D' hF hmetric]
   rfl
-
-
 
 theorem gauss_curvatureTensor_of_eventually (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : E m → E n} {x : E m} (hF : ∀ᶠ y in 𝓝 x, ContDiffAt ℝ ∞ F y)

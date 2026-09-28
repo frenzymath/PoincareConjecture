@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapUnionSeparators
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GraphObstacleWidth
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,9 +10,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_trimmed_arc_avoids_caps
     {gamma : ℝ → AnnulusCoordinates} {T r : ℝ} (hr : 0 < r) (hrT : r < T)
@@ -53,9 +42,6 @@ private theorem rotated_inner (u v : AnnulusCoordinates) :
       rw [inner_neg_left, real_inner_comm]
     _ = inner ℝ v (quarterTurn u) := by linarith
     _ = inner ℝ (quarterTurn u) v := real_inner_comm _ _
-
-
-
 
 theorem m64Intrinsic_exists_internal_obstacle_barrier
     {C : Set AnnulusCoordinates} (hC : IsClosed C)

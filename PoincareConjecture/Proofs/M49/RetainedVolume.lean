@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M49.RetainedBoundaryVolume
 import PoincareConjecture.Proofs.M49.LocalIsometryVolume
 import PoincareConjecture.Proofs.M49.RegularLimitDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,9 +15,7 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem event_retained_interior_volume_eq
     (E : SurgeryEventData g₀ K P slice metric T) :
@@ -109,8 +98,6 @@ theorem event_retained_interior_volume_eq
     change E.retention.map (L.symm (L x)) = E.retention.map x
     rw [L.left_inv (hs hx)]
   rwa [himage] at hvol
-
-
 
 theorem event_retained_volume_eq
     (E : SurgeryEventData g₀ K P slice metric T) :

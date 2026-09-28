@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.InteriorRepairs.MotionImages
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.RepairPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -29,8 +20,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {D : MarkedSurfacePositionData step K₀ A₀ j R Fmark}
   {a b : D.K.space} {W : Set s.Carrier} {ε : ℝ}
   (N : PlanarSurfaceBranchMotion step D.K D.endpoint R a b W ε)
-
-
 
 theorem protected_contact_nonexceptional
     (hW : W ∩ ((fun z : A × A => D.projected z.1) '' D.repairPairs) ⊆ {D.projected a})
@@ -81,8 +70,6 @@ theorem protected_contact_nonexceptional
   have hcenter : z = D.projected a := hW ⟨(N.chart_inside hzQ).1, hzE⟩
   exact hv0 (hQz.symm.trans ((congrArg N.chart hcenter).trans N.centered))
 
-
-
 theorem exists_protected_target_crossing
     (hW : W ∩ ((fun z : A × A => D.projected z.1) '' D.repairPairs) ⊆ {D.projected a})
     {v : V3} (hv : v ∈ N.fixed.space) (hvJ : v ∈ interior N.support.space)
@@ -125,4 +112,3 @@ theorem exists_protected_target_crossing
       hTr, hTl⟩
 
 end Geometry.OriginalPLTower.PlanarSurfaceBranchMotion
-

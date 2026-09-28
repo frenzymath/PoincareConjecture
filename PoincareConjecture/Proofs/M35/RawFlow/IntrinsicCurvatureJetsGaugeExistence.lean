@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsForcingEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.GaugeEquation
 import PoincareConjecture.Proofs.M35.RadialGauge.SmoothGaugeEnd
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -35,8 +25,6 @@ noncomputable local instance m35RawGaugeExistenceLocal3 :
     NormedAddCommGroup (V →L[ℝ] Cov) := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35RawGaugeExistenceLocal4 :
     NormedSpace ℝ (V →L[ℝ] Cov) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem exists_raw_intrinsic_smooth_gauge
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

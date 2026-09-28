@@ -1,19 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakMollifiedEquation
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
@@ -21,7 +7,6 @@ open scoped ContDiff
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 open Poincare.Analysis.Parabolic.WeakRegularity.Interior
-
 
 theorem mollified_principal_residual_of_forcing
     {n : ℕ} {U V : Set (Spacetime n)} (hU : IsOpen U) (hV : IsOpen V)

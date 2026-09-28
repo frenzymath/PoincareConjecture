@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_VanishingOperations
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_EvolvingComponents
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ open M36 M44
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem centeredCylinderMetric_contDiffAt_of_smooth {eta : ℝ}
     {B : RoundCylinderTwoTensor} (hB : RoundCylinderTensorSmoothOn eta B)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ioo (-eta⁻¹) eta⁻¹) :
@@ -38,8 +28,6 @@ theorem centeredCylinderMetric_contDiffAt_of_smooth {eta : ℝ}
     exact (chartAt E₂ z.1).map_source (mem_chart_source E₂ z.1)
   exact (hB z.1 i j).contDiffAt
     (((chartAt E₂ z.1).open_target.prod isOpen_Ioo).mem_nhds ⟨hzero, hz⟩)
-
-
 
 theorem pointJetsVanish_correctedCylinderComponent {ι : Type*} {l : Filter ι}
     {t eta : ι → ℝ} {z : ι → RoundCylinderSpace} {B : ι → RoundCylinderTwoTensor}
@@ -115,8 +103,6 @@ theorem pointJetsVanish_correctedCylinderComponent {ι : Type*} {l : Filter ι}
       filter_upwards [] with p
       exact (centeredCylinderComponent_succ _ _ _ k a p).symm
 
-
-
 theorem evolvingCylinderInverseWeight_upper {t : ℝ} (ht : t ≤ 0) (i : Fin 3) :
     evolvingCylinderInverseWeight t i ≤ 1 := by
   have hp : 0 < 2 * (1 - t) := by linarith
@@ -125,8 +111,6 @@ theorem evolvingCylinderInverseWeight_upper {t : ℝ} (ht : t ≤ 0) (i : Fin 3)
   · exact hb
   · exact hb
   · norm_num [evolvingCylinderInverseWeight]
-
-
 
 theorem tendsto_roundCylinderJetErrorSquared_zero {ι : Type*} {l : Filter ι}
     {t eta : ι → ℝ} {z : ι → RoundCylinderSpace} {B : ι → RoundCylinderTwoTensor}

@@ -3,15 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Pow
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.IntegrationByParts
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,7 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point}
-
 
 noncomputable def squareRootLIntegrand {p : M14BackwardPath G T τ₁ τ₂ x y}
     (R : M14SquareRootPath G p) (s : ℝ) : ℝ :=
@@ -38,8 +28,6 @@ private theorem inner_transport {q r : G.Point} (h : q = r)
   cases h
   rfl
 
-
-
 theorem squareRootLIntegrand_eq_transformed
     {p : M14BackwardPath G T τ₁ τ₂ x y} (R : M14SquareRootPath G p)
     {s : ℝ} (hs : s ∈ Set.Ioo (Real.sqrt τ₁) (Real.sqrt τ₂)) :
@@ -51,8 +39,6 @@ theorem squareRootLIntegrand_eq_transformed
   rw [hcurve, Real.sqrt_sq hpos.le]
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
-
-
 
 theorem backwardLAction_eq_transformed (p : M14BackwardPath G T τ₁ τ₂ x y) :
     M14BackwardLAction G p =
@@ -71,8 +57,6 @@ theorem backwardLAction_eq_transformed (p : M14BackwardPath G T τ₁ τ₂ x y)
     Real.sq_sqrt (p.tau_nonneg.trans p.tau_lt.le), Function.comp_def,
     M14BackwardLAction] using hsub.symm
 
-
-
 theorem integral_squareRootLIntegrand_eq_action
     {p : M14BackwardPath G T τ₁ τ₂ x y} (R : M14SquareRootPath G p) :
     (∫ s in Real.sqrt τ₁..Real.sqrt τ₂, squareRootLIntegrand R s) =
@@ -80,8 +64,6 @@ theorem integral_squareRootLIntegrand_eq_action
   rw [backwardLAction_eq_transformed p]
   exact intervalIntegral.integral_congr_Ioo_of_le (Real.sqrt_le_sqrt p.tau_lt.le)
     (fun _ hs => squareRootLIntegrand_eq_transformed R hs)
-
-
 
 theorem squareRootLIntegrand_intervalIntegrable
     {p : M14BackwardPath G T τ₁ τ₂ x y} (R : M14SquareRootPath G p) :

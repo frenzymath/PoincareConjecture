@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Spatial
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.HigherRegularity
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -117,8 +108,6 @@ private theorem canonicalTransport_contMDiffOn_of_chart
         (EuclideanSpace ℝ (Fin n)) (TangentSpace (𝓡 n)) x y x y
         (canonicalTransport F t y)) (e.left_inv (mem_extChartAt_source x)).symm
 
-
-
 theorem canonicalTransport_contMDiffOn (F : RicciFlow n M (Ico a b)) :
     ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n))
       ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n))) ∞
@@ -127,7 +116,6 @@ theorem canonicalTransport_contMDiffOn (F : RicciFlow n M (Ico a b)) :
         p.2 (canonicalTransport F p.1 p.2)) (Ico a b ×ˢ univ) :=
   canonicalTransport_contMDiffOn_of_chart F (fun x _ hac hcb =>
     chartTransport_contDiffOn F x hac hcb)
-
 
 theorem canonicalTransport_contMDiffAt_interior (F : RicciFlow n M (Ico a b))
     {t : ℝ} (ht : t ∈ Ioo a b) (x : M) :

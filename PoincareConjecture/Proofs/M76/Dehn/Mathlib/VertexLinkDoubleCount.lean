@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -17,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
 
 noncomputable def vertexLinkFaceEquiv {n : ℕ} (hn : 0 < n) :
     (Σ p : K.vertices, (K.faceLink {p.val}).FaceOfCard n) ≃
@@ -61,8 +51,6 @@ noncomputable def vertexLinkFaceEquiv {n : ℕ} (hn : 0 < n) :
       exact Finset.insert_erase p.property
     · rfl
 
-
-
 theorem sum_card_vertexLink_faces (hK : K.faces.Finite)
     [Fintype K.vertices] {n : ℕ} (hn : 0 < n) :
     (∑ p : K.vertices, Nat.card ((K.faceLink {p.val}).FaceOfCard n)) =
@@ -85,8 +73,6 @@ theorem sum_card_vertexLink_faces (hK : K.faces.Finite)
       simp only [Finset.sum_const, Finset.card_univ, Nat.card_eq_fintype_card,
         smul_eq_mul, Nat.mul_comm]
 
-
-
 theorem vertexLink_face_double_counts (hK : K.faces.Finite) [Fintype K.vertices] :
     (∑ p : K.vertices, Nat.card (K.faceLink {p.val}).vertices) =
         2 * Nat.card (K.FaceOfCard 2) ∧
@@ -100,7 +86,6 @@ theorem vertexLink_face_double_counts (hK : K.faces.Finite) [Fintype K.vertices]
     K.sum_card_vertexLink_faces hK (by decide : 0 < 1)
 
 open Classical in
-
 
 theorem sum_vertexLink_local_counts (A : SimplicialComplex ℝ E) (hAK : A ≤ K)
     (hK : K.faces.Finite)

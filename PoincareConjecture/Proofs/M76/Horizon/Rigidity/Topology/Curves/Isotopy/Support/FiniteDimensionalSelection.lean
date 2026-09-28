@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Support.RelativePLPasting
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -17,8 +9,6 @@ namespace Geometry
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem FinitePiecewiseAffineOn.continuous_selection_finiteDimensional
     {f₀ f₁ g : E → F} {C : Set E} (h₀ : FinitePiecewiseAffineOn f₀ C)
@@ -33,8 +23,6 @@ theorem FinitePiecewiseAffineOn.continuous_selection_finiteDimensional
       (fun x hx => (hselect x hx).imp (congrArg e) (congrArg e))
   exact (hcoords.postcomp e.symm.toContinuousLinearMap.toContinuousAffineMap).congr
     (fun x _ => e.symm_apply_apply (g x))
-
-
 
 theorem FinitePiecewiseAffineOn.closed_paste_on_carrier_finiteDimensional
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

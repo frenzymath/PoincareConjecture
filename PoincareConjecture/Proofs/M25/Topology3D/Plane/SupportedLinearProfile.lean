@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.ParametricInverse
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function MeasureTheory
 open scoped ContDiff Manifold Interval
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_smooth_monotone_clamp :
     ∃ S : ℝ → ℝ, ContDiff ℝ ∞ S ∧
@@ -83,8 +72,6 @@ theorem exists_smooth_monotone_clamp :
     rw [heq]
     exact ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩
 
-
-
 theorem exists_supported_linear_profile {ε : ℝ} (hε : 0 < ε) :
     ∃ R : ℝ, 0 < R ∧ ∃ η : ℝ → ℝ, ContDiff ℝ ∞ η ∧
       (∀ y, |y| ≤ 1 → η y = y) ∧
@@ -142,8 +129,6 @@ theorem exists_supported_linear_profile {ε : ℝ} (hε : 0 < ε) :
       nlinarith [(hderiv y).1]
     · apply (div_le_iff₀ hden).mpr
       nlinarith [(hderiv y).2]
-
-
 
 theorem exists_supported_positive_scaling
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] [CompleteSpace V]

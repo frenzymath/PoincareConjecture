@@ -7,25 +7,12 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Order.MonotoneContinuity
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_periodic_arclength_homeomorph {p : ℝ} (hp : 0 < p)
     {v : ℝ → ℝ} (hv : ContDiff ℝ 1 v) (hperiod : Function.Periodic v p)

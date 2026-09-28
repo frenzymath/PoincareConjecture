@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.TotalCurvat
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.FiniteComponents
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
@@ -40,7 +34,6 @@ theorem PoincareConjecture.LeviCivitaData.integral_pos_scalarCurvature_surface_l
   simp only [Pi.add_apply] at hb
   rw [integral_add hR (hKi.const_mul 2), integral_const_mul] at hb
   exact hb.trans (add_le_add D.integral_scalarCurvature_le_eight_pi le_rfl)
-
 
 theorem PoincareConjecture.LeviCivitaData.integral_pos_scalarCurvature_surface_le_components
     {M : Type*} [TopologicalSpace M] [T3Space M]

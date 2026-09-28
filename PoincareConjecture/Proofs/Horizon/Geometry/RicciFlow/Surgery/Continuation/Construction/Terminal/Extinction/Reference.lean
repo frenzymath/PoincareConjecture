@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Branch
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

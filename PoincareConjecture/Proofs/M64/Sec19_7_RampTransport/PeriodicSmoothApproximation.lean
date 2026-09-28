@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture.M64.RampTransport
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {W : Type v} [NormedAddCommGroup W] [NormedSpace ℝ W] [FiniteDimensional ℝ W]
-
-
-
-
 
 theorem exists_periodic_smooth_approximation_in_open_jets
     {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)
@@ -105,10 +91,6 @@ theorem exists_periodic_smooth_approximation_in_open_jets
     exact ⟨(hnear x).1.trans_le (min_le_left _ _),
       (hnear x).2.1.trans_le (min_le_left _ _),
       (hnear x).2.2.trans_le (min_le_left _ _)⟩
-
-
-
-
 
 theorem exists_compact_periodic_smooth_approximation
     [T2Space M] [CompactSpace M] [Nonempty M] :

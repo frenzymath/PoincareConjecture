@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ActualPoleCutConeChart
 import PoincareConjecture.Proofs.M76.Mathlib.FixedLateralInverseBox
 import PoincareConjecture.Proofs.M76.Mathlib.RetainedCutAxisImage
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -22,12 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_actual_original_cut_box
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

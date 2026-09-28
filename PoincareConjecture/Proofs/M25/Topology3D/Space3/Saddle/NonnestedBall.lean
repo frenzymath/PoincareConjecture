@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ShortPiece
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceBallChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +11,6 @@ open scoped ContDiff Manifold InnerProductSpace Matrix
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem image_univ_prod_singleton_zero (ψ : UnitTwoSphere × ℝ → E3) :
     ψ '' (Set.univ ×ˢ ({0} : Set ℝ)) =
@@ -35,8 +24,6 @@ theorem image_univ_prod_singleton_zero (ψ : UnitTwoSphere × ℝ → E3) :
   · rintro ⟨q, rfl⟩
     exact ⟨(q, 0), ⟨Set.mem_univ _, rfl⟩, rfl⟩
 
-
-
 theorem exists_ball_of_bridge_witness
     (ψ : UnitTwoSphere × ℝ → E3) (Gshort Kmid : D3) (Sshort : Set E3)
     (Bref : BallNeighborhoodChart E3 E3)
@@ -46,8 +33,6 @@ theorem exists_ball_of_bridge_witness
   rw [image_univ_prod_singleton_zero]
   refine exists_ball_of_diffeomorphic_image (Gshort.trans Kmid) _ Bref ?_
   rw [← hbridge, hshort, Diffeomorph.coe_trans, Set.image_comp]
-
-
 
 theorem exists_ball_of_saddle_piece_nonnested (hP : PlanarSchoenfliesService)
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : UnitTwoSphere)

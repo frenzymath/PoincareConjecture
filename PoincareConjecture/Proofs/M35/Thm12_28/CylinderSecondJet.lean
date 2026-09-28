@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderChristoffel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.M35
-
-
 
 theorem fderiv_roundCylinderTensorDerivative_center {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
@@ -46,8 +35,6 @@ theorem fderiv_roundCylinderTensorDerivative_center {u : ℝ} (hu : u < 1)
   unfold roundCylinderTensorDerivative
   convert! congrArg (fun L : RoundCylinderCoordinates →L[ℝ] ℝ => L v) hd.fderiv using 1
   simp [roundCylinderChristoffel_center, mul_comm]
-
-
 
 theorem roundCylinderIteratedDerivative_two_center {u : ℝ} (hu : u < 1)
     (q : UnitTwoSphere) (s : ℝ) (B : RoundCylinderTwoTensor)

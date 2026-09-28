@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalLowerProducts
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexBlocks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,8 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {T : OriginalProperDiskTriangulation e R j}
 
 open Classical in
-
-
 
 structure OriginalVertexBand (P : OriginalLowerProducts T)
     (p : (T.marked 2).vertices) where

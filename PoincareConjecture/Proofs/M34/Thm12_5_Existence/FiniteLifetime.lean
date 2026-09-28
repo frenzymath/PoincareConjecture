@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PositiveScalarComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_lifetime_le_scalar_bound (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

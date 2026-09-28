@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.MarkedCollarDiskCompression
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.MarkedDiskRimHomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -185,4 +177,3 @@ theorem ChartwisePLSphere.no_returning_marked_collar_compression_at_minimum
     H hH0 hH1 hHmark
 
 end PoincareConjecture.M76
-

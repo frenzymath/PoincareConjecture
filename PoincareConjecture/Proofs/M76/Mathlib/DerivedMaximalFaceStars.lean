@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedStarFaces
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
-
 
 theorem derived_closedStar_faceCenter_space_of_maximal [DecidableEq E]
     (s : K.faces) (hmax : ∀ t : K.faces, s ≤ t → t = s) :
@@ -88,10 +76,6 @@ theorem derived_closedStar_faceCenter_space_of_maximal [DecidableEq E]
           · exact hchain i hi j hj
       · simp only [Finset.image_insert]
     · simpa only [Finset.coe_image] using hxa
-
-
-
-
 
 theorem derived_link_faceCenter_space_of_maximal [DecidableEq E]
     (s : K.faces) (hmax : ∀ t : K.faces, s ≤ t → t = s) :

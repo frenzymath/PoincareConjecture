@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcAlternatingSides
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.RegionBounds
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem IsSimplePolygonalArc.exists_minimal_candidate_orbit
     [FiniteDimensional ℝ E] (hdim : Module.finrank ℝ E = 2)

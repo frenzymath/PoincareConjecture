@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SharedCutComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +14,8 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S R : Set (Fin (F.event T hT).cap_count)) (hSR : S ⊆ R)
 
-
 noncomputable def newCutBalls : Set (partialCappedCarrier F T hT P R).carrier :=
   ⋃ a : {a : R × Bool // a.1.val ∉ S}, (partialCapBall F T hT P R a.val).closedBall
-
 
 theorem sharedCutInclude_disjoint_new (j : SharedCutIndex F T hT P S R)
     (b : {a : R × Bool // a.1.val ∉ S}) :
@@ -43,7 +33,6 @@ theorem sharedCutInclude_disjoint_new (j : SharedCutIndex F T hT P S R)
         exact b.property ((congrArg (fun z : R × Bool => z.1.val) h) ▸ a.1.property)
       exact (partialCapPatch_disjoint F T hT P R _ b.val hab).mono_right
         (partialCapBall_subset_patch F T hT P R b.val)
-
 
 theorem sharedCutOpen_eq_compl_newBalls :
     (sharedCutOpen F T hT P S R hSR : Set (partialCappedCarrier F T hT P R).carrier) =
@@ -85,11 +74,9 @@ theorem sharedCutOpen_eq_compl_newBalls :
               rw [← partialOldInclusion_cap F T hT P R a x hx]
               exact hmem
 
-
 noncomputable def newCutSphereImage : Set (partialCappedCarrier F T hT P S).carrier :=
   partialOldInclusion F T hT P S ''
     {y : eventCutOpen F T hT P S | y.val ∈ eventCutSpheres F T hT P (R \ S)}
-
 
 theorem sharedCutPatch_disjoint_newSpheres (j : SharedCutIndex F T hT P S R) :
     Disjoint (Set.range (sharedCutPatch F T hT P S R hSR j))
@@ -110,7 +97,6 @@ theorem sharedCutPatch_disjoint_newSpheres (j : SharedCutIndex F T hT P S R) :
         rw [hxy]
         exact (cutAttachmentChart F T hT P R (successiveCapIndex F T hT S R hSR a) x).property
       exact (successive_old_mem_iff F T hT P S R hSR y).mp hmem hy
-
 
 theorem sharedCutComparison_range_eq_compl_spheres :
     Set.range (sharedCutComparison F T hT P S R hSR) = (newCutSphereImage F T hT P S R)ᶜ := by

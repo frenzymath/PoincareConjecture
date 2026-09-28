@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M13.Volume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem terminalSourceNormal_scaled_ball (g : RiemannianMetric 3 M)
     {Q : ℝ} (hQ : 0 < Q) (p : M) (r : ℝ) :
@@ -40,8 +30,6 @@ theorem terminalSourceNormal_scaled_ball (g : RiemannianMetric 3 M)
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
 
-
-
 theorem terminalSourceNormal_scaled_volume (g : RiemannianMetric 3 M)
     {Q : ℝ} (hQ : 0 < Q) (A : Set M) :
     calibratedMetricVolume (M13.scaleSmoothMetric g Q hQ) A =
@@ -56,8 +44,6 @@ theorem terminalSourceNormal_scaled_volume (g : RiemannianMetric 3 M)
     rw [Real.rpow_eq_pow, Real.rpow_div_two_eq_sqrt (3 : ℝ) hQ.le]
     exact_mod_cast Real.rpow_natCast (Real.sqrt Q) 3
   simpa only [f, Diffeomorph.coe_refl, image_id, Nat.cast_ofNat, hp] using h
-
-
 
 theorem terminalSourceNormal_scaled_ball_volume_lower
     (g : RiemannianMetric 3 M) {Q v r : ℝ} (hQ : 0 < Q) (p : M)

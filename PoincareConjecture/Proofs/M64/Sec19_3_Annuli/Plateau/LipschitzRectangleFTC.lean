@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.LipschitzDerivatives
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +15,6 @@ open Poincare.Analysis.Sobolev.Weak
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
 theorem m64AnnulusPoint_vertical_lipschitz (x : ℝ) :
     LipschitzWith 1 (annulusPoint x) := by
   apply LipschitzWith.of_dist_le_mul
@@ -36,8 +24,6 @@ theorem m64AnnulusPoint_vertical_lipschitz (x : ℝ) :
     ext i
     fin_cases i <;> simp [annulusPoint]
   simp [dist_eq_norm, heq, norm_smul]
-
-
 
 theorem m64AnnulusPoint_horizontal_lipschitz (s : ℝ) :
     LipschitzWith 1 (fun x => annulusPoint x s) := by
@@ -49,8 +35,6 @@ theorem m64AnnulusPoint_horizontal_lipschitz (s : ℝ) :
     fin_cases i <;> simp [annulusPoint]
   simp [dist_eq_norm, heq, norm_smul]
 
-
-
 theorem m64_lipschitz_partial_integrable {f : LoopPlane → ℝ} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain) (i : Fin 2) :
     IntegrableOn (fun p => fderiv ℝ f p (EuclideanSpace.single i 1)) S volume := by
@@ -59,9 +43,6 @@ theorem m64_lipschitz_partial_integrable {f : LoopPlane → ℝ} {K : ℝ≥0}
     exact (measure_mono interior_subset).trans_lt m64AnnulusDomain_isCompact.measure_lt_top⟩
   exact (memLp_top_fderiv_apply_of_lipschitzOn isOpen_interior
     (hf.mono interior_subset) (EuclideanSpace.single i 1)).integrable (by simp)
-
-
-
 
 theorem m64Annulus_integral_vertical_derivative_lipschitz
     {f : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzWith K f) :
@@ -85,9 +66,6 @@ theorem m64Annulus_integral_vertical_derivative_lipschitz
     _ = _ := by
       rw [integral_Icc_eq_integral_Ioc, ← intervalIntegral.integral_of_le zero_le_one]
       exact hac.integral_deriv_eq_sub
-
-
-
 
 theorem m64Annulus_integral_horizontal_derivative_lipschitz
     {f : LoopPlane → ℝ} {K : ℝ≥0} (hf : LipschitzWith K f) :

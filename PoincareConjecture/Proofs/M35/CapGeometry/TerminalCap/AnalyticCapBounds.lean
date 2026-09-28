@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCapNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ private theorem three_halves_eq (Q : ℝ) (hQ : 0 < Q) :
     Q ^ (3 / 2 : ℝ) = Q * Real.sqrt Q := by
   rw [show (3 / 2 : ℝ) = 1 + 1 / 2 by norm_num,
     Real.rpow_add hQ, Real.rpow_one, ← Real.sqrt_eq_rpow]
-
-
-
 
 theorem exists_radial_cap_analytic_constant {m M L : ℝ}
     (hm : 0 < m) (hM : 0 < M) (hL : 0 < L) :

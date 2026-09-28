@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.IntervalInterpolation
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function
@@ -21,15 +10,11 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def fiberDerivativeEquiv (L : E × ℝ →L[ℝ] ℝ)
     (hL : L (0, 1) ≠ 0) : (E × ℝ) ≃L[ℝ] (E × ℝ) :=
   (ContinuousLinearEquiv.refl ℝ E).skewProd
     (ContinuousLinearEquiv.unitsEquivAut ℝ (Units.mk0 (L (0, 1)) hL))
     (L.comp (ContinuousLinearMap.inl ℝ E ℝ))
-
-
 
 theorem fiberDerivativeEquiv_apply (L : E × ℝ →L[ℝ] ℝ)
     (hL : L (0, 1) ≠ 0) (p : E × ℝ) :
@@ -42,8 +27,6 @@ theorem fiberDerivativeEquiv_apply (L : E × ℝ →L[ℝ] ℝ)
     rw [← hscale, ← map_add]
     simp
 
-
-
 theorem fiberDerivativeEquiv_coe (L : E × ℝ →L[ℝ] ℝ)
     (hL : L (0, 1) ≠ 0) :
     (fiberDerivativeEquiv L hL : E × ℝ →L[ℝ] E × ℝ) =
@@ -51,16 +34,10 @@ theorem fiberDerivativeEquiv_coe (L : E × ℝ →L[ℝ] ℝ)
   apply ContinuousLinearMap.ext
   exact fun p => fiberDerivativeEquiv_apply L hL p
 
-
-
-
 theorem hasDerivAt_fiber {F : E × ℝ → ℝ} {L : E × ℝ →L[ℝ] ℝ}
     {z : E} {x : ℝ} (hF : HasFDerivAt F L (z, x)) :
     HasDerivAt (fun y => F (z, y)) (L (0, 1)) x := by
   exact (hF.comp x (hasFDerivAt_prodMk_right z x)).hasDerivAt
-
-
-
 
 noncomputable def fiberDiffeomorph [CompleteSpace E] {F : E × ℝ → ℝ}
     (hF : ContDiff ℝ ∞ F)
@@ -101,8 +78,6 @@ noncomputable def fiberDiffeomorph [CompleteSpace E] {F : E × ℝ → ℝ}
     { toEquiv := e.toEquiv
       contMDiff_toFun := hT.contMDiff
       contMDiff_invFun := (e.contDiff_symm hderiv hT).contMDiff }
-
-
 
 @[simp] theorem fiberDiffeomorph_apply [CompleteSpace E] {F : E × ℝ → ℝ}
     (hF : ContDiff ℝ ∞ F)

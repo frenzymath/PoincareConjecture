@@ -1,23 +1,9 @@
 import Mathlib.Algebra.Group.Subgroup.Basic
 import Mathlib.Tactic.Group
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
-
-
-
-
 
 theorem old_word_mem_of_case_a {G : Type*} [Group G] (N : Subgroup G) [N.Normal]
     {α β γ δ : G} (h₁ : α * γ ∈ N) (h₂ : α * β⁻¹ * γ * δ⁻¹ ∈ N) :
@@ -36,10 +22,6 @@ theorem old_word_mem_of_case_a {G : Type*} [Group G] (N : Subgroup G) [N.Normal]
     group
   rw [hfactor]
   exact N.mul_mem h₁ h₅
-
-
-
-
 
 theorem old_word_mem_of_case_b {G : Type*} [Group G] (N : Subgroup G) [N.Normal]
     {α β γ δ : G} (h₁ : α * γ⁻¹ ∈ N) (h₂ : α * δ * γ * β ∈ N) :

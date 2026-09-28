@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M03.MetricDifferenceEvolution
 import PoincareConjecture.Proofs.M03.CurvatureHom
 import PoincareConjecture.Proofs.M03.FamilyBundleCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 
@@ -49,7 +40,6 @@ theorem abs_sub_mul_mul_le
           |a'| * |b - b'| * |c| +
           |a'| * |b'| * |c - c'| := by
       simp only [abs_mul]
-
 
 theorem curvature_reaction_eq_inverse_frame_sum
     {n : ℕ} {M : Type u} [TopologicalSpace M]

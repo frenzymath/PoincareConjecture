@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.CanonicalRampRegularity
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.AreaDensityProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,16 +15,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
-
 noncomputable def m64CanonicalAnnulusMap
     (P : M62.CircleProductData F circumference) (f : LoopPlane → M)
     (p : LoopPlane) : P.charts.Point :=
   (f p, P.circle.quotient (circumference * p 0 / curvePeriod))
-
-
-
 
 theorem m64CanonicalAnnulusMap_contMDiffAt
     (P : M62.CircleProductData F circumference) {f : LoopPlane → M}
@@ -49,9 +33,6 @@ theorem m64CanonicalAnnulusMap_contMDiffAt
   exact (P.charts.from_product_smooth.of_le (m := 1) (by norm_num)).contMDiffAt.comp p
     (hf.prodMk ((P.circle.quotient_smooth.of_le (m := 1) (by norm_num)).contMDiffAt.comp p
       hphi.contMDiffAt))
-
-
-
 
 theorem m64CanonicalAnnulusMap_split
     (P : M62.CircleProductData F circumference) {f : LoopPlane → M}
@@ -94,9 +75,6 @@ theorem m64CanonicalAnnulusMap_split
     rw [hphi.hasMFDerivAt.mfderiv] at hq
     exact h.symm.trans hq
 
-
-
-
 theorem m64CanonicalAnnulusMap_tangentNorm_sq
     (P : M62.CircleProductData F circumference) (t : ℝ)
     {f : LoopPlane → M} {p : LoopPlane}
@@ -121,9 +99,6 @@ theorem m64CanonicalAnnulusMap_tangentNorm_sq
   unfold RiemannianMetric.tangentNorm
   rw [Real.sq_sqrt hb]
   ring
-
-
-
 
 theorem m64CanonicalAnnulusMap_column_bounds
     (P : M62.CircleProductData F circumference) (t : ℝ)

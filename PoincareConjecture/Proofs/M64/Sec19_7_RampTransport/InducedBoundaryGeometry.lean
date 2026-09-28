@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.CurvePullbackContinui
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import PoincareConjecture.Definitions.M62Curve
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 omit [IsManifold (𝓡 n) ∞ M] in
 
-
-
-
 theorem m64_induced_boundary_velocity {j : AnnulusCoordinates → M} {radius x : ℝ}
     (hj : MDifferentiableAt (𝓡 2) (𝓡 n) j (intrinsicAnnulusBoundary radius x)) :
     curveVelocity (j ∘ intrinsicAnnulusBoundary radius) x =
@@ -34,10 +27,6 @@ theorem m64_induced_boundary_velocity {j : AnnulusCoordinates → M} {radius x :
   have hc := ((m64Intrinsic_contDiff_boundary radius).contMDiff.mdifferentiableAt
     (by simp) (x := x))
   exact congrArg (fun L => L (1 : ℝ)) (mfderiv_comp x hj hc)
-
-
-
-
 
 theorem m64_induced_boundary_speed (N : IntrinsicAnnulus) (g : RiemannianMetric n M)
     {j : AnnulusCoordinates → M} {radius x : ℝ}
@@ -54,9 +43,6 @@ theorem m64_induced_boundary_speed (N : IntrinsicAnnulus) (g : RiemannianMetric 
 
 variable {a b : ℝ}
 
-
-
-
 theorem m64_induced_boundary_curveSpeed (F : RicciFlow n M (Icc a b)) (time : ℝ)
     (N : IntrinsicAnnulus) {j : AnnulusCoordinates → M} {radius x : ℝ}
     (hj : MDifferentiableAt (𝓡 2) (𝓡 n) j (intrinsicAnnulusBoundary radius x))
@@ -67,10 +53,6 @@ theorem m64_induced_boundary_curveSpeed (F : RicciFlow n M (Icc a b)) (time : �
     intrinsicBoundarySpeed N.metric radius x =
       curveSpeed F (fun y _ => j (intrinsicAnnulusBoundary radius y)) time x :=
   m64_induced_boundary_speed N (F.metric time) hj hmetric
-
-
-
-
 
 theorem m64_induced_boundary_length (F : RicciFlow n M (Icc a b)) (time : ℝ)
     (N : IntrinsicAnnulus) {j : AnnulusCoordinates → M} {radius : ℝ}
@@ -86,9 +68,6 @@ theorem m64_induced_boundary_length (F : RicciFlow n M (Icc a b)) (time : ℝ)
   apply intervalIntegral.integral_congr
   intro x _hx
   exact m64_induced_boundary_curveSpeed F time N (hj x) (hmetric x)
-
-
-
 
 theorem m64_induced_boundary_m62Length (F : RicciFlow n M (Icc a b)) (time : ℝ)
     (N : IntrinsicAnnulus) {j : AnnulusCoordinates → M} {radius : ℝ}
@@ -108,10 +87,6 @@ private theorem tangentNorm_smul (g : RiemannianMetric n M) (p : M)
   rw [show r * (r * g.inner p v v) = r ^ 2 * g.inner p v v by ring,
     Real.sqrt_mul (sq_nonneg r), Real.sqrt_sq_eq_abs]
 
-
-
-
-
 theorem m64_curve_turning_density (F : RicciFlow n M (Icc a b))
     (c : ℝ → ℝ → M) (time x : ℝ) (hs : 0 < curveSpeed F c time x) :
     m62Curvature F c time x * curveSpeed F c time x =
@@ -124,9 +99,6 @@ theorem m64_curve_turning_density (F : RicciFlow n M (Icc a b))
           (spatialUnitTangent F c time) x) * curveSpeed F c time x = _
   rw [tangentNorm_smul, abs_of_pos (inv_pos.mpr hs)]
   field_simp
-
-
-
 
 theorem m64_induced_boundary_unitTangent (F : RicciFlow n M (Icc a b)) (time : ℝ)
     (N : IntrinsicAnnulus) {j : AnnulusCoordinates → M} {radius : ℝ}
@@ -142,10 +114,6 @@ theorem m64_induced_boundary_unitTangent (F : RicciFlow n M (Icc a b)) (time : �
   have hs := m64_induced_boundary_curveSpeed F time N (hj x) (hmetric x)
   change _⁻¹ • curveVelocity (j ∘ intrinsicAnnulusBoundary radius) x = _
   rw [← hs, m64_induced_boundary_velocity (hj x), intrinsicBoundaryUnitTangent, map_smul]
-
-
-
-
 
 theorem m64_induced_boundary_turning_density_le
     (F : RicciFlow n M (Icc a b)) (time : ℝ) (N : IntrinsicAnnulus)
@@ -173,10 +141,6 @@ theorem m64_induced_boundary_turning_density_le
     ((m64Intrinsic_contDiff_boundaryUnitTangent N hradius).contDiffAt.of_le (by norm_cast))
     (hmetric x)
 
-
-
-
-
 theorem m64_induced_boundary_curvature_le
     (F : RicciFlow n M (Icc a b)) (time : ℝ) (N : IntrinsicAnnulus)
     {j : AnnulusCoordinates → M} {radius : ℝ} (hradius : radius ≠ 0)
@@ -192,10 +156,6 @@ theorem m64_induced_boundary_curvature_le
     ((hj x).self_of_nhds.mdifferentiableAt (by simp)) (hmetric x).self_of_nhds
   rw [← hs] at hle
   exact le_of_mul_le_mul_right hle (m64Intrinsic_boundarySpeed_pos N hradius x)
-
-
-
-
 
 theorem m64_induced_boundary_turning_continuous
     (F : RicciFlow n M (Icc a b)) (time : ℝ) (N : IntrinsicAnnulus)
@@ -222,10 +182,6 @@ theorem m64_induced_boundary_turning_continuous
     exact m64Intrinsic_boundarySpeed_pos N hradius x
   rw [m64_curve_turning_density F _ time x hpos, hunit]
   rfl
-
-
-
-
 
 theorem m64_induced_boundary_turning_integral_le
     (F : RicciFlow n M (Icc a b)) (time : ℝ) (N : IntrinsicAnnulus)

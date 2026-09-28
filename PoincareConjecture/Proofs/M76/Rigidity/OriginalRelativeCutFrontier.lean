@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalRegularClosedCut
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeRegionClosure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
 namespace OriginalDiskProduct
-
-
 
 theorem closure_openStrip (P : OriginalDiskProduct e R j)
     (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip)) :
@@ -43,9 +33,6 @@ theorem closure_openStrip (P : OriginalDiskProduct e R j)
   rw [← hreg]
   exact closure_mono hIC
 
-
-
-
 theorem relative_frontier_cut (P : OriginalDiskProduct e R j)
     (hopen : IsOpen ((Subtype.val : R → X) ⁻¹' P.openStrip)) :
     frontier ((Subtype.val : R → X) ⁻¹' P.cutCarrier) =
@@ -56,8 +43,6 @@ theorem relative_frontier_cut (P : OriginalDiskProduct e R j)
   change frontier ((Subtype.val : R → X) ⁻¹' (R \ P.openStrip)) = _
   rw [frontier_subtype_cut_of_closure hUR hopen (P.closure_openStrip hopen),
     P.closedStrip_sdiff_openStrip]
-
-
 
 theorem relative_regular_closed_cut (P : OriginalDiskProduct e R j)
     (hR : IsCompact R) (he : PLDomain e R)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryFrame
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -34,10 +24,6 @@ private theorem covariantDerivativeAlongMap_smul (D : LeviCivitaData g)
   simp only [add_apply, smul_apply, ContinuousLinearMap.smulRight_apply,
     map_smul, covariantDerivativeAlongMap]
   module
-
-
-
-
 
 theorem normalized_gradient_connection_log (D : LeviCivitaData g)
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {z : ℂ}
@@ -108,9 +94,6 @@ theorem normalized_gradient_connection_log (D : LeviCivitaData g)
     _ = (a z * a z) * (-fderiv ℝ lam z I / 2) := by ring
     _ = _ := by rw [hscale]; ring
 
-
-
-
 theorem rotated_frame_connection (D : LeviCivitaData g)
     {H T N : ℂ → EuclideanSpace ℝ (Fin n)} {a b : ℂ → ℝ} {z : ℂ}
     (hH : DifferentiableAt ℝ H z) (hT : DifferentiableAt ℝ T z)
@@ -164,9 +147,6 @@ theorem rotated_frame_connection (D : LeviCivitaData g)
           a z * fderiv ℝ b z v - b z * fderiv ℝ a z v := by ring
     _ = _ := by rw [hab, one_mul]
 
-
-
-
 theorem normalizedResidualFrame_smul
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
     (hG : ∀ v w, G v w = G w v) (q : Fin n → ℂ) (s : ℂ)
@@ -197,10 +177,6 @@ theorem normalizedResidualFrame_smul
   rw [hsqrt, hsa, hsb]
   simp only [mul_inv_rev, smul_add, smul_smul, div_eq_mul_inv, a, rho]
   constructor <;> module
-
-
-
-
 
 theorem complex_phase_connection_term {s : ℂ → ℂ} {z : ℂ}
     (hs : DifferentiableAt ℝ s z) (hne : s z ≠ 0) (v : ℂ) :
@@ -235,10 +211,6 @@ theorem complex_phase_connection_term {s : ℂ → ℂ} {z : ℂ}
   field_simp
   ring
 
-
-
-
-
 theorem complex_power_connection_nonpos (m : ℕ) {z : ℂ} (hz : 0 < z.im) :
     (fderiv ℝ (fun w : ℂ => w ^ m) z 1 / z ^ m).im =
         (m : ℝ) * z⁻¹.im ∧
@@ -264,11 +236,6 @@ theorem complex_power_connection_nonpos (m : ℕ) {z : ℂ} (hz : 0 < z.im) :
   refine ⟨rfl, mul_nonpos_of_nonneg_of_nonpos (Nat.cast_nonneg _) ?_⟩
   rw [Complex.inv_im]
   exact div_nonpos_of_nonpos_of_nonneg (neg_nonpos.mpr hz.le) (Complex.normSq_nonneg z)
-
-
-
-
-
 
 theorem residual_frame_connection_log (D : LeviCivitaData g) (m : ℕ)
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {Q : ℂ → Fin n → ℂ} {z : ℂ}

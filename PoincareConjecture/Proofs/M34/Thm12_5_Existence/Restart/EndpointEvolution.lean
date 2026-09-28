@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.Restart.LimitEvolution
 import PoincareConjecture.Proofs.M34.Standard.InitialEvolutionBootstrap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -27,15 +18,11 @@ variable {ginit : RiemannianMetric 3 StandardCapSpace} {Mfamily : ℕ → Type}
   {A : MetricFlowApproximation ginit Mfamily}
   (G : MetricInteriorCoefficientLimit A)
 
-
-
 theorem contDiffOn_closedCoefficients_interior :
     ContDiffOn ℝ ∞ G.closedCoefficients (Ioo 0 A.time ×ˢ univ) := by
   apply G.smooth.congr
   intro p hp
   exact G.closedCoefficients_of_mem hp.1 p.2
-
-
 
 theorem contDiff_closedCoefficients_slice (t : ℝ) :
     ContDiff ℝ ∞ (fun x => G.closedCoefficients (t, x)) := by
@@ -51,8 +38,6 @@ theorem contDiff_closedCoefficients_slice (t : ℝ) :
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem closedFiniteSpatialJet_of_mem (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.time)
     (x : StandardCapSpace) :
     spatialJet m G.closedCoefficients (t, x) = spatialJet m G.coefficients (t, x) := by
@@ -60,8 +45,6 @@ theorem closedFiniteSpatialJet_of_mem (m : ℕ) {t : ℝ} (ht : t ∈ Ioo 0 A.ti
   exact G.closedSpatialJet_of_mem j ht x
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem closedSpatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
     (t : ℝ) (x : StandardCapSpace) :
@@ -77,8 +60,6 @@ theorem closedSpatialJet_mem_domain (P : RicciFlowCurvatureTheory.{0})
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem deriv_closedCoefficients_eq_operator (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ioo 0 A.time) (x : StandardCapSpace) :
     deriv (fun s => G.closedCoefficients (s, x)) t =
@@ -92,8 +73,6 @@ theorem deriv_closedCoefficients_eq_operator (P : RicciFlowCurvatureTheory.{0})
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem contDiffOn_closedSpatialJet (P : RicciFlowCurvatureTheory.{0}) (m : ℕ) :
     ContDiffOn ℝ ∞ (G.closedSpatialJet m) (Ico 0 A.time ×ˢ univ) :=
   contDiffOn_spatialJets_of_initial_evolution
@@ -104,8 +83,6 @@ theorem contDiffOn_closedSpatialJet (P : RicciFlowCurvatureTheory.{0}) (m : ℕ)
 
 set_option synthInstance.maxHeartbeats 100000 in
 
-
-
 theorem contDiffOn_closedCoefficients (P : RicciFlowCurvatureTheory.{0}) :
     ContDiffOn ℝ ∞ G.closedCoefficients (Ico 0 A.time ×ˢ univ) :=
   contDiffOn_of_initial_spatial_jet_evolution
@@ -115,8 +92,6 @@ theorem contDiffOn_closedCoefficients (P : RicciFlowCurvatureTheory.{0}) :
     (fun p hp => G.deriv_closedCoefficients_eq_operator P hp.1 p.2)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem hasDerivWithinAt_closedCoefficients (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x : StandardCapSpace) :

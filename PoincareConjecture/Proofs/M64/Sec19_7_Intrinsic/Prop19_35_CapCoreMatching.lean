@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ExposedCapChord
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.ConnectedIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.BoundaryContact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,11 +14,6 @@ open ChartCircleArrangementVertexPatch
 namespace PoincareConjecture
 
 open Classical in
-
-
-
-
-
 
 theorem m64Intrinsic_refine_core_to_retained_caps
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) (r : ℝ)

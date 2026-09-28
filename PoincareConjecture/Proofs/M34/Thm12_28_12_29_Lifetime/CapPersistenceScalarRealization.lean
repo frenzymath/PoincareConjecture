@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylin
 import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +23,6 @@ local notation "Ic" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
-
 
 theorem exists_capPersistence_metric_germ (q : UnitTwoSphere) (s : ℝ)
     (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :

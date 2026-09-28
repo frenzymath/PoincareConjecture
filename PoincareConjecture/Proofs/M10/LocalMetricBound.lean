@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set
@@ -21,7 +12,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
 
 theorem backward_metric_continuousAt
     (hwindow : Icc (T - τmax) T ⊆ J)
@@ -46,7 +36,6 @@ theorem backward_metric_continuousAt
 
 set_option backward.isDefEq.respectTransparency false in
 set_option synthInstance.maxHeartbeats 100000 in
-
 
 theorem slice_tangentNorm_locally_le_terminal
     (hwindow : Icc (T - τmax) T ⊆ J)

@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.UniquenessAmbientAccelera
 import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +23,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_uniform_embedded_threeJet_time_modulus [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.MemoryHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.BochnerAbsolute
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

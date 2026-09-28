@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightPreservingSlice
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
-
 
 theorem exists_nonnested_matched_physical_transport
     (u : UnitTwoSphere)

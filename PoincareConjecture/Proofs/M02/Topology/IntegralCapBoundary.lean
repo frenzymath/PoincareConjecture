@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralCapChains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

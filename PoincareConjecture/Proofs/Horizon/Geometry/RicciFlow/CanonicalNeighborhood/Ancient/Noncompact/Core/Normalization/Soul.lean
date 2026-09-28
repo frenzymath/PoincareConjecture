@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.RelativeScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -25,7 +16,6 @@ namespace RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem coordinateChristoffel_eq_of_inner_eq_mul
     {g h : RiemannianMetric n M} {c : ℝ}
@@ -57,7 +47,6 @@ theorem coordinateChristoffel_eq_of_inner_eq_mul
     ContinuousLinearMap.flip_apply, smul_eq_mul]
   ring
 
-
 theorem isGeodesicOn_of_inner_eq_mul
     {g h : RiemannianMetric n M} {c : ℝ}
     (hmetric : ∀ x v w, h.inner x v w = c * g.inner x v w)
@@ -74,7 +63,6 @@ theorem isGeodesicOn_of_inner_eq_mul
 end RiemannianMetric
 
 namespace CoreNormalization
-
 
 def positiveRadiusDivide (c : ℝ) (hc : 0 < c) : Ioi (0 : ℝ) ≃ₜ Ioi (0 : ℝ) where
   toFun r := ⟨r.val / c, div_pos r.property hc⟩
@@ -93,8 +81,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {q : M}
-
-
 
 def pointSoul (A : AncientKappaNormalization K q 0)
     (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :
@@ -122,7 +108,6 @@ def pointSoul (A : AncientKappaNormalization K q 0)
 @[simp] theorem pointSoul_center (A : AncientKappaNormalization K q 0)
     (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :
     (A.pointSoul P).center = P.center := rfl
-
 
 theorem pointSoul_distance (A : AncientKappaNormalization K q 0)
     (P : RiemannianMetric.PointSoulData (K.flow.metric 0)) :

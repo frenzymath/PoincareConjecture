@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.PullbackMetricRegularity
 import PoincareConjecture.Proofs.M60.Mathlib.CoordinateDerivative
 import PoincareConjecture.Definitions.M60Area
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,17 +19,13 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 def m60SUChartMetric (g : RiemannianMetric n M) (e : OpenPartialHomeomorph M E)
     (y : E) : E →L[ℝ] E →L[ℝ] ℝ := M60.metricPullbackForm g e.symm y
-
 
 theorem m60SUChartMetric_apply (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M E) (y v w : E) :
     m60SUChartMetric g e y v w = g.inner (e.symm y)
       (mfderiv (𝓡 n) (𝓡 n) e.symm y v) (mfderiv (𝓡 n) (𝓡 n) e.symm y w) := rfl
-
-
 
 theorem m60SUChartMetric_continuousOn (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M E)
@@ -68,7 +55,6 @@ theorem m60SUChartMetric_continuousOn (g : RiemannianMetric n M)
     (mfderiv (𝓡 n) (𝓡 n) e.symm y v) (mfderiv (𝓡 n) (𝓡 n) e.symm y w)) e.target
   exact (hcolumn v).inner_bundle (hcolumn w)
 
-
 theorem m60SUChartMetric_pos (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M E) (he : e.MDifferentiable (𝓡 n) (𝓡 n))
     {y : E} (hy : y ∈ e.target) {v : E} (hv : v ≠ 0) :
@@ -83,8 +69,6 @@ theorem m60SUChartMetric_pos (g : RiemannianMetric n M)
     exact hid.symm
   exact hv this
 
-
-
 theorem m60SUChartMetric_compact_coercive (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M E) (he : e.MDifferentiable (𝓡 n) (𝓡 n))
     (hei : ContMDiffOn (𝓡 n) (𝓡 n) 1 e.symm e.target)
@@ -92,8 +76,6 @@ theorem m60SUChartMetric_compact_coercive (g : RiemannianMetric n M)
     ∃ a > 0, ∀ y ∈ K, ∀ v, a * ‖v‖ ^ 2 ≤ m60SUChartMetric g e y v v :=
   M60.suCompactMetric_coercive hK _ ((m60SUChartMetric_continuousOn g e hei).mono hKe)
     (fun _ hy _ hv => m60SUChartMetric_pos g e he (hKe hy) hv)
-
-
 
 theorem m60AreaGram_eq_SUChartMetric (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph M E) (he : e.MDifferentiable (𝓡 n) (𝓡 n))

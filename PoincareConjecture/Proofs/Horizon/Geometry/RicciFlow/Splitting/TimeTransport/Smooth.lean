@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.TimeTransport.Regularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -140,8 +132,6 @@ theorem ricci_transport_contMDiffOn
       (e.left_inv hp.2).symm
   · exact congrArg (fun y => (v (TotalSpace.mk' E y (X t y))).2)
       (e.left_inv (mem_extChartAt_source x)).symm
-
-
 
 theorem exists_smooth_terminal_ricci_transport_field
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)

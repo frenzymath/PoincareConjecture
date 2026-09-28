@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M13.CurvatureBianchi
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,7 +9,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem exists_open_smooth_extensions (x : M) (u v w : TangentSpace (𝓡 n) x) :
     ∃ U : Set M, IsOpen U ∧ x ∈ U ∧
@@ -40,7 +32,6 @@ theorem exists_open_smooth_extensions (x : M) (u v w : TangentSpace (𝓡 n) x) 
 
 variable [T2Space M]
 
-
 theorem curvatureOnFields_pointwise_third (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U)
     (X Y Z Z' : (p : M) → TangentSpace (𝓡 n) p)
     (hX : ContMDiffOn (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% X) U)
@@ -61,7 +52,6 @@ theorem curvatureOnFields_pointwise_third (D : LeviCivitaData g) (U : Set M) (hU
   have hB' := curvatureOnFields_bianchi D U hU X Y Z' hX hY hZ' x hx
   rw [h1, h2] at hB
   exact add_right_cancel (add_right_cancel (hB.trans hB'.symm))
-
 
 theorem curvatureOnFields_pointwise (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U)
     (X Y Z X' Y' Z' : (p : M) → TangentSpace (𝓡 n) p)
@@ -86,7 +76,6 @@ theorem curvatureOnFields_pointwise (D : LeviCivitaData g) (U : Set M) (hU : IsO
         ((hY'.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp)) hYY'
     _ = D.curvatureOnFields X' Y' Z' x :=
       curvatureOnFields_pointwise_third D U hU X' Y' Z Z' hX' hY' hZ hZ' x hx hZZ'
-
 
 theorem curvature_eq_curvatureOnFields (D : LeviCivitaData g) (U : Set M) (hU : IsOpen U)
     (X Y Z : (p : M) → TangentSpace (𝓡 n) p)

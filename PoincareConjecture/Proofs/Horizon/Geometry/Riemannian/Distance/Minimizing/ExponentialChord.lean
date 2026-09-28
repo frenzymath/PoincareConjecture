@@ -3,10 +3,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.GeodesicCo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.NormalChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.FrozenMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.HausdorffDensity.ChartComparison
-
-
-
-
-
-
-

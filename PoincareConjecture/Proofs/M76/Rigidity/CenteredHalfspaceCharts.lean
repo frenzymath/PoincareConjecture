@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinderHalfspace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace Geometry
-
-
-
 
 theorem exists_centered_compatible_halfspace_chart
     {X E ι : Type*} [TopologicalSpace X]
@@ -57,9 +46,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
-
 theorem PLDomain.exists_centered_boundary_chart
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
@@ -85,9 +71,6 @@ theorem PLDomain.exists_centered_boundary_chart
   · intro y hy
     rw [hvalue]
     exact (hfront.apply_mem_iff (hGs.subset hy)).symm
-
-
-
 
 theorem exists_centered_disk_rim_chart {z : V2} (hz : z ∈ sphere (0 : V2) 1) :
     ∃ (H : OpenPartialHomeomorph V2 V2) (B : V2 →ₗ[ℝ] ℝ),

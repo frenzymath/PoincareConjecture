@@ -16,8 +16,6 @@ private theorem join_interval_pairs
   obtain ⟨q, hq, hq0, hq1⟩ := hV.exists_unitInterval_chart_with_endpoints hbc
   exact isFinitePLBallPair_joined_intervals p q hp hq hp0 hp1 hq0 hq1 hUV
 
-
-
 theorem exists_nested_shell_arc {S T : Set (ℝ × ℝ)}
     (hS : IsFinitePLBallPair (ℝ × ℝ) S (frontier S))
     (hSc : IsCompact S) (hSne : (interior S).Nonempty) (hTc : IsCompact T)

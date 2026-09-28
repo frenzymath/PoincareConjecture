@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Cont
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Weighted
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.WeakDerivative.Interval
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,7 +91,6 @@ theorem integral_levelVariation_mul_test
       (hη.continuous_deriv (by simp))]
   exact eq_neg_of_add_eq_zero_left hi
 
-
 theorem hasDerivAt_regularLevelIntegral
     {h : M → ℝ} (hh : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ h)
     (hc : HasCompactSupport h) (hs : tsupport h ⊆ U) (t : ℝ) :
@@ -127,7 +119,6 @@ theorem hasDerivAt_regularLevelIntegral
       (q t)).congr_of_eventuallyEq heq
 
 include D in
-
 
 theorem contDiff_regularLevelIntegral
     {h : M → ℝ} (hh : ContMDiff (𝓡 (n + 1)) 𝓘(ℝ, ℝ) ∞ h)

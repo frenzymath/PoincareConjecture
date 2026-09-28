@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.TruncatedDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Overlap.SliceProjection
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +15,6 @@ variable {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [T2Space M] in
-
 
 theorem truncated_closed_core_height_iff (C : CapCertificate g) {a : ℝ}
     (ha : -C.epsilon⁻¹ < a) {x : M} (hx : x ∈ C.end_neck.carrier) :
@@ -42,8 +39,6 @@ theorem truncated_closed_core_height_iff (C : CapCertificate g) {a : ℝ}
     disjoint_left.mp C.disjoint_closed_core_end hc hx
   simpa only [mem_union, hcore, false_or, closure_prod_eq, closure_univ,
     closure_Ioo ha.ne, mem_prod, mem_univ, true_and, mem_Icc, hlo] using hh.symm
-
-
 
 theorem truncated_core_local_defining_function (C : CapCertificate g) {a b : ℝ}
     (ha : -C.epsilon⁻¹ < a) (hab : a < b) (hb : b < C.epsilon⁻¹)

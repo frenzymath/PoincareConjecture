@@ -2,27 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerACL
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Restriction
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
 open scoped Topology InnerProductSpace
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m65L2_exists_slice_subsequence
     {X Y : Type*} [MeasurableSpace X] [MeasurableSpace Y]
@@ -86,11 +71,6 @@ theorem m65L2_exists_slice_subsequence
   have hsqconv := hx.congr (fun n => (hnormsq n).symm)
   have hsqrt := Real.continuous_sqrt.continuousAt.tendsto.comp hsqconv
   simpa only [Function.comp_def, Real.sqrt_sq (norm_nonneg _), Real.sqrt_zero] using hsqrt
-
-
-
-
-
 
 theorem m65Product_AC_of_smooth_L2_graph
     {X : Type*} [MeasurableSpace X] {mu : Measure X} [SFinite mu]

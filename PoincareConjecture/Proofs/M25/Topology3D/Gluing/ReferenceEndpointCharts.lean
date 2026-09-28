@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Services
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_reference_endpoint_charts_of_coordinates
     (rho delta : ℝ) (hrho : 0 < rho)

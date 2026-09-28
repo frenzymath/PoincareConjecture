@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusBranchedBoundaryLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimalBoundaryCurvature
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingAnnulusCurrent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64MovingAnnulusCurrent_trace_continuous
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}
@@ -54,10 +37,6 @@ theorem m64MovingAnnulusCurrent_trace_continuous
     (f := fun y : ℝ => ((0 : ℝ), annulusPoint y s)) hline.continuousAt).continuousWithinAt
 
 variable [T2Space M] [CompactSpace M] {a b : ℝ}
-
-
-
-
 
 theorem m64FreeAnnulus_modulus_log_trace_tendsto_current
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M}
@@ -124,11 +103,6 @@ theorem m64FreeAnnulus_modulus_log_trace_tendsto_current
     (fun x hx => by nlinarith [(hfactor x hx).1])
     (fun x hx he => by rw [(hfactor x hx).2 he, mul_zero])
   simpa only [integral_const_mul] using hlim
-
-
-
-
-
 
 theorem m64FreeAnnulus_modulus_curvature_motion_current_flux_le
     (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}

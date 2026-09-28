@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.ImmersionMetric
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.TrimmedPolarDescent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ClosedStripDifferential
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,11 +16,6 @@ open M64Uniformization
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem m64Annulus_exists_trimmed_intrinsic_metric (A : M64Annulus g c0 c1)
     (hAc : ContMDiffOn (𝓡 2) (𝓡 n) 1 A.map {p : LoopPlane | p 1 ∈ Icc (0 : ℝ) 1})

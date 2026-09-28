@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.CutComponents
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FourContacts.Resolution
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -37,8 +35,6 @@ private theorem card_index_eq_connectedComponents_of_circle_family
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
 
-
-
 theorem card_lowerCutIndex_eq_card_connectedComponents
     (A : AnnularEndFamily v g B C) :
     Nat.card A.LowerCutIndex =
@@ -46,8 +42,6 @@ theorem card_lowerCutIndex_eq_card_connectedComponents
   card_index_eq_connectedComponents_of_circle_family A.lowerCutCircle
     (fun i => (A.lowerCutCircle_geometry i).1.continuous)
     A.lowerCutCircle_joint_injective A.iUnion_range_lowerCutCircle
-
-
 
 theorem card_upperCutIndex_eq_card_connectedComponents
     (A : AnnularEndFamily v g B C) :

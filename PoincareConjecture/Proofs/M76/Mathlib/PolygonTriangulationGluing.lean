@@ -3,23 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonDiagonalStrings
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonDiagonalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialCompatibleUnion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Polygon
-
-
-
-
 
 theorem exists_triangulation_of_split {m n : ℕ} (u : Fin (m + 2) → ℝ × ℝ)
     (v : Fin (n + 2) → ℝ × ℝ)

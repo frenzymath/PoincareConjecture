@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.AncientSolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SelectedComparison
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,9 +18,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 variable {M : Type} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]
   [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_line_of_closed_selected_terminal_segments
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -127,8 +113,6 @@ theorem exists_line_of_closed_selected_terminal_segments
       rw [← ENNReal.ofReal_toReal (((F j).metric (-δ)).edist_ne_top _ _), hu i s hs t ht]
     · intro s hs t ht
       rw [← ENNReal.ofReal_toReal (((F j).metric (-δ)).edist_ne_top _ _), hv i s hs t ht]
-
-
 
 theorem exists_line_of_closed_selected_rescalings
     (P : M23NormalizedKappaCompactnessPredecessors)

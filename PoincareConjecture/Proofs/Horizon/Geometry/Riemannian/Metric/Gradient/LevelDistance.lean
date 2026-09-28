@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.AscendingSlope.Level
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem infDist_level_le_of_gradient_lower_bound
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
@@ -41,8 +31,6 @@ theorem infDist_level_le_of_gradient_lower_bound
   obtain ⟨z, hz, hinc⟩ := g.exists_arbitrarily_close_ascent_of_lt_gradient_norm
     (hf.mdifferentiable (by simp) y) hc.le (hgrad y hy hyt) s hs
   exact ⟨z, ENNReal.toReal_lt_of_lt_ofReal hz, hinc⟩
-
-
 
 theorem sub_le_mul_infDist_level_of_lipschitzOn_closedBall
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
@@ -65,7 +53,6 @@ theorem sub_le_mul_infDist_level_of_lipschitzOn_closedBall
   rw [Real.dist_eq, hpt, dist_comm p x, ← hnearest] at hbound
   exact (le_abs_self (t - f x)).trans hbound
 
-
 theorem div_le_infDist_level_of_lipschitzOn_closedBall
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
     {f : M → ℝ} (hf : Continuous f) {t : ℝ} (hne : (f ⁻¹' {t}).Nonempty)
@@ -78,8 +65,6 @@ theorem div_le_infDist_level_of_lipschitzOn_closedBall
   apply (div_le_iff₀ (show 0 < (L : ℝ) from hL)).mpr
   simpa only [mul_comm] using
     g.sub_le_mul_infDist_level_of_lipschitzOn_closedBall hcomplete hf hne x hLip
-
-
 
 theorem abs_sub_le_mul_toReal_edist_of_gradient_bound_closedBall
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
@@ -147,8 +132,6 @@ theorem abs_sub_le_mul_toReal_edist_of_gradient_bound_closedBall
     (by simp : (0 : ℝ) ∈ Icc 0 1) (by simp : (1 : ℝ) ∈ Icc 0 1)
   simpa only [Real.norm_eq_abs, hγ0, hγ1, sub_zero, abs_one, mul_one] using hvalue
 
-
-
 theorem sub_le_mul_infDist_level_of_gradient_upper_bound
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -168,8 +151,6 @@ theorem sub_le_mul_infDist_level_of_gradient_upper_bound
     (by simpa only [hdist] using hgrad)
   rw [hpt, hdist] at hvalue
   exact (le_abs_self (t - f x)).trans hvalue
-
-
 
 theorem div_le_infDist_level_of_gradient_upper_bound
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g)

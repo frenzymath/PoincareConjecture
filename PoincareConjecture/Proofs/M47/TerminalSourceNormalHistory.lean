@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalSurgery
 import PoincareConjecture.Proofs.M47.TerminalSourceRealizationHistory
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +17,9 @@ variable {S : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow S}
   (htime : ∀ s ∈ Icc (-τ) 0, b + s / Q ∈ H.generalized.interval)
   (e : GeneralizedFlowCylinder H.generalized C b Q (Icc (-τ) 0) U)
 
-
-
 noncomputable def terminalSourceNormal_historyCylinder :
     SurgeryFlowCylinder S C b Q (Icc (-τ) 0) U :=
   (H.cylinders_to_surgery C b Q (Icc (-τ) 0) U ordConnected_Icc U.isOpen htime e).choose
-
-
 
 theorem terminalSourceNormal_historyCylinder_maps :
     let d := terminalSourceNormal_historyCylinder H U htime e
@@ -46,8 +34,6 @@ theorem terminalSourceNormal_historyCylinder_maps :
   funext x
   exact hd.1 s hs x.val x.property
 
-
-
 theorem terminalSourceNormal_history_terminal_map (p0 : U)
     (h0 : (0 : ℝ) ∈ Icc (-τ) 0) :
     let j := terminalSourceNormal_terminalMap U p0
@@ -60,9 +46,6 @@ theorem terminalSourceNormal_history_terminal_map (p0 : U)
   exact hj.trans (congrArg (fun f : U → (S.slice (b + 0 / Q)).carrier =>
     (⟨b + 0 / Q, f⟩ : (t : ℝ) × (U → (S.slice t).carrier)))
       ((terminalSourceNormal_historyCylinder_maps H U htime e).1 0 h0))
-
-
-
 
 theorem terminalSourceNormal_regular_history
     (p0 : U) (h0 : (0 : ℝ) ∈ Icc (-τ) 0)

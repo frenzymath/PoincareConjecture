@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsSpatialJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.CoordinateRicci
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +13,6 @@ namespace PoincareConjecture.M47
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {g : ℝ → RiemannianMetric n M}
-
 
 theorem terminalGerms_metric_coefficients_within
     (hg : RiemannianMetric.IsSmoothFamilyOn g J)
@@ -42,8 +31,6 @@ theorem terminalGerms_metric_coefficients_within
     contDiffAt_fst.contMDiffAt.prodMk contDiffAt_snd.contMDiffAt
   convert! (hc.comp (t, x) hid.contMDiffWithinAt (fun p hp => hp)).contDiffWithinAt using 1
 
-
-
 theorem terminalGerms_metric_coefficients_on
     (hg : RiemannianMetric.IsSmoothFamilyOn g J)
     {U : Set (EuclideanSpace ℝ (Fin n))} {f : EuclideanSpace ℝ (Fin n) → M}
@@ -54,8 +41,6 @@ theorem terminalGerms_metric_coefficients_on
   intro p hp
   exact (terminalGerms_metric_coefficients_within hg (hf p.2 hp.2) hp.1).mono
     (prod_mono subset_rfl (subset_univ U))
-
-
 
 theorem terminalGerms_continuousOn_ricci
     (hg : RiemannianMetric.IsSmoothFamilyOn g J)

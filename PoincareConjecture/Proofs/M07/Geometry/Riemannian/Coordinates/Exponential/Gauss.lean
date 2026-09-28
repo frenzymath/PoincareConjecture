@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.LocalInverse
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialJacobi
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -25,8 +13,6 @@ namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {x : E}
-
-
 
 private theorem fderiv_metric_pairing
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {x : E}
@@ -199,7 +185,6 @@ private theorem exponential_radial_derivative {v : E} (hv : v ∈ D.domain) :
   have huniq := uniqueDiffOn_Icc (show (0 : ℝ) < 1 by norm_num) 1 (by norm_num)
   exact (hrad.hasDerivWithinAt.derivWithin huniq).symm.trans (hwithin.derivWithin huniq)
 
-
 theorem gauss_identity
     (hU : IsOpen U) (hB : ContDiffOn ℝ ∞ B U)
     (hinv : ∀ y ∈ U, (B y).IsInvertible)
@@ -224,7 +209,6 @@ theorem gauss_identity
     ← D.exponential_radial_derivative hv, one_mul, zero_mul, sub_self] at hc
   exact sub_eq_zero.mp hc
 
-
 theorem gauss_identity_at_zero
     {w : E} :
     B (D.exponential 0) (fderiv ℝ D.exponential 0 (0 : E))
@@ -240,11 +224,6 @@ end LocalFlowData
 section Gauss
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_local_exponential_gauss
     (hU : IsOpen U) (hB : ContDiffOn ℝ ∞ B U)

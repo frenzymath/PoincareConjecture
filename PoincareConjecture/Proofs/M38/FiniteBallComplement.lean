@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.SurgeryBallNeighborhood
 import PoincareConjecture.Proofs.M38.CapAnnulus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem preconnected_diff_closed_of_local
     {X : Type*} [TopologicalSpace X] {C K W : Set X}
@@ -63,8 +51,6 @@ theorem preconnected_diff_closed_of_local
   · exact Or.inr (hside b a hb ha (by rwa [union_comm])
       (by rw [inter_comm b a]; exact hdisjoint) hlocal)
 
-
-
 theorem surgeryBall_outer_annulus_connected
     {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A) :
     IsConnected ((B.map '' Metric.ball 0 2) \ B.closedBall) := by
@@ -100,8 +86,6 @@ theorem surgeryBall_outer_annulus_connected
   rw [← himage]
   exact hconnected.image f hf
 
-
-
 theorem finite_surgeryBall_complement_preconnected
     {A : GeneralizedSliceCarrier.{u}} (hA : IsPreconnected (univ : Set A.carrier))
     {ι : Type*} (B : ι → SurgeryBallEmbedding A)
@@ -129,8 +113,6 @@ theorem finite_surgeryBall_complement_preconnected
         rfl
       change IsPreconnected (U \ D.closedBall) at h
       rwa [hset] at h
-
-
 
 theorem surgeryBall_iUnion_complement_connected
     {A : GeneralizedSliceCarrier.{u}} (hA : IsPreconnected (univ : Set A.carrier))

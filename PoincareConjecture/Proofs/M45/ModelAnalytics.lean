@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.AnalyticCalibration
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -31,7 +22,6 @@ theorem M45PointwiseAnalyticEstimate.mono
 namespace RepairedControlledSchedulesData
 
 variable (S : RepairedControlledSchedulesData.{u})
-
 
 noncomputable def modelAnalyticBound : ℝ :=
   max 1 (max S.calibration.Ckappa (max S.calibration.Cstandard
@@ -73,7 +63,6 @@ theorem modelAnalyticBound_lt_constant : S.modelAnalyticBound < S.modelAnalyticC
   unfold modelAnalyticConstant
   linarith [S.modelAnalyticBound_pos]
 
-
 noncomputable def calibrateModelAnalytics : RepairedControlledSchedulesData.{u} :=
   S.recalibrateAnalytic S.modelAnalyticConstant S.modelAnalyticConstant_pos
 
@@ -112,7 +101,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem kappaModelAnalytics (h04 : RicciFlowCurvatureTheory.{u})
     (K : AncientKappaSolution 3 M) (t : ℝ) (ht : t ≤ 0) (x : M) :
     M45PointwiseAnalyticEstimate (K.flow.metric t) (K.flow.connection t) x
@@ -126,7 +114,6 @@ theorem kappaModelAnalytics (h04 : RicciFlowCurvatureTheory.{u})
     from ⟨hR, hgrad, htime⟩).mono (hB.le.trans S.kappa_le_modelAnalyticBound)
 
 end Ancient
-
 
 theorem standardModelAnalytics (t : ℝ)
     (ht : t ∈ Set.Ico 0 S.cap_persistence.standard_cap.flow.base.lifetime)

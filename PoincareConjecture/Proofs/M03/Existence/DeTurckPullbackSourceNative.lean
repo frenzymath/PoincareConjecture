@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.MetricFamilyProducerNative
 import PoincareConjecture.Proofs.M03.Existence.PullbackRicciNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -31,7 +23,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 def smoothPullbackMetric : RiemannianMetric n M :=
   pullbackMetric g Phi (contMDiff_pullback_section g Phi)
 
@@ -41,7 +32,6 @@ def smoothPullbackMetric : RiemannianMetric n M :=
       g.inner (Phi x) (mfderiv (𝓡 n) (𝓡 n) Phi x v)
         (mfderiv (𝓡 n) (𝓡 n) Phi x w) :=
   pullbackMetric_inner g Phi (contMDiff_pullback_section g Phi) x v w
-
 
 theorem connectionDifference_pullback
     (D : LeviCivitaData g) (B : LeviCivitaData background)
@@ -76,7 +66,6 @@ theorem connectionDifference_pullback
     _ = _ := by
       rw [← connectionDifference_apply_field D B hY, hYx]
 
-
 theorem intrinsicDeTurckField_pullback
     (D : LeviCivitaData g) (B : LeviCivitaData background)
     (P : LeviCivitaData (smoothPullbackMetric g Phi))
@@ -110,7 +99,6 @@ theorem intrinsicDeTurckField_pullback
   intro c _
   rw [connectionDifference_pullback g background Phi D B P Q x, hFG, hFG]
 
-
 theorem intrinsicDeTurckField_eq_pullField
     (D : LeviCivitaData g) (B : LeviCivitaData background)
     (P : LeviCivitaData (smoothPullbackMetric g Phi))
@@ -137,7 +125,6 @@ theorem metricLieDerivative_pullback (D : LeviCivitaData g)
       (hW.mdifferentiable (by simp) (Phi x)) u,
     connection_pullField_apply g Phi (contMDiff_pullback_section g Phi) D P W
       (hW.mdifferentiable (by simp) (Phi x)) v]
-
 
 theorem smoothRicciDeTurckTensor_pullback
     (D : LeviCivitaData g) (B : LeviCivitaData background)

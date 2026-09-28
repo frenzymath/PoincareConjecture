@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Prop8_2_ImageRestriction
 import PoincareConjecture.Proofs.M15.Mathlib.GaussianTail
 import PoincareConjecture.Proofs.M15.Mathlib.OrthonormalGaussian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -25,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
   {H : M14StableSet G T τ x E}
 
-
-
 theorem horizontal_gaussian_integral
     (A : M14ReducedVolumeAnalyticData G T τ x E H) {c : ℝ} (hc : 0 < c) :
     (∫ Z, Real.exp (-c * G.spacetime.horizontalMetric.inner x Z Z)
@@ -40,8 +29,6 @@ theorem horizontal_gaussian_integral
     A.measure_data.sourceBasis
     (G.spacetime.horizontalMetric.inner x) A.measure_data.source_basis_orthonormal hc
 
-
-
 theorem horizontal_gaussian_integrable
     (A : M14ReducedVolumeAnalyticData G T τ x E H) {c : ℝ} (hc : 0 < c) :
     Integrable (fun Z => Real.exp (-c * G.spacetime.horizontalMetric.inner x Z Z))
@@ -54,8 +41,6 @@ theorem horizontal_gaussian_integrable
   exact integrable_exp_neg_bilin_of_orthonormal_basis (n := n) (E := G.Horizontal x)
     A.measure_data.sourceBasis
     (G.spacetime.horizontalMetric.inner x) A.measure_data.source_basis_orthonormal hc
-
-
 
 theorem reducedVolumeOn_large_part_le
     (S : M14ReducedVolumeSourceCoverageData G)
@@ -112,10 +97,6 @@ theorem reducedVolumeOn_large_part_le
         (Real.exp (-a / 2) * Real.rpow (2 * Real.pi) ((n : ℝ) / 2)) :=
       mul_le_mul_of_nonneg_left htail.2 (Real.rpow_nonneg (by norm_num) _)
     _ = _ := by ring
-
-
-
-
 
 theorem exists_large_vector_threshold (n : ℕ) :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ∀ ε : ℝ, 0 < ε → ε ≤ ε₀ →

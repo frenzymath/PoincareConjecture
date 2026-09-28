@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Euler.EdgeGeometry
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -146,10 +131,6 @@ private theorem sum_disjoint_turning_le_interval
     _ ≤ ∫ s in Ioc a b, density s := hmono
     _ = intrinsicGeodesicCurvatureIntegral N.metric N.connection 1 a b := by
       exact (intervalIntegral.integral_of_le hab).symm
-
-
-
-
 
 theorem m64Intrinsic_region_boundary_side_intervals_disjoint_turning_le
     {I : Type*} (N : IntrinsicAnnulus)

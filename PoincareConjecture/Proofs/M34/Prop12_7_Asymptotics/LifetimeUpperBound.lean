@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderParameterJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff InnerProductSpace
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
 
 theorem partialFlow_endCylinderParameterDifference_zero
     {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)
@@ -49,8 +37,6 @@ theorem partialFlow_endCylinderParameterDifference_zero
   apply ContinuousLinearMap.ext
   intro w
   rfl
-
-
 
 theorem partialFlow_lifetime_le_one_of_end_jets
     (P : RicciFlowCurvatureTheory.{0}) {g0 : StandardInitialMetric}

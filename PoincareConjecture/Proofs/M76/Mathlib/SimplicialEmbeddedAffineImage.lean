@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
 
 theorem AffineOnFaces.affineIndependent_image_face (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :
@@ -40,8 +30,6 @@ theorem AffineOnFaces.affineIndependent_image_face (hf : K.AffineOnFaces f)
   have h' := h.range
   change AffineIndependent ℝ ((↑) : range (f ∘ ((↑) : s → E)) → F) at h'
   rwa [hr] at h'
-
-
 
 noncomputable def AffineOnFaces.embeddedImage (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) : SimplicialComplex ℝ F := by
@@ -71,8 +59,6 @@ noncomputable def AffineOnFaces.embeddedImage (hf : K.AffineOnFaces f)
       rintro _ ⟨v, hv, rfl⟩
       exact ⟨mem_image_of_mem f hv.1, mem_image_of_mem f hv.2⟩) hyi
 
-
-
 theorem AffineOnFaces.embeddedImage_faces [DecidableEq F] (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) :
     (hf.embeddedImage hinj).faces = (fun s : Finset E => s.image f) '' K.faces := by
@@ -82,8 +68,6 @@ theorem AffineOnFaces.embeddedImage_faces [DecidableEq F] (hf : K.AffineOnFaces 
   funext s
   ext y
   simp only [Finset.mem_image]
-
-
 
 theorem AffineOnFaces.embeddedImage_space (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) : (hf.embeddedImage hinj).space = f '' K.space := by
@@ -105,15 +89,11 @@ theorem AffineOnFaces.embeddedImage_space (hf : K.AffineOnFaces f)
     rw [Finset.coe_image, ← hf.image_convexHull hs]
     exact mem_image_of_mem f hxs
 
-
-
 theorem AffineOnFaces.embeddedImage_finite (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) (hK : K.faces.Finite) : (hf.embeddedImage hinj).faces.Finite := by
   classical
   rw [hf.embeddedImage_faces hinj]
   exact hK.image _
-
-
 
 theorem AffineOnFaces.embeddedImage_vertices (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) : (hf.embeddedImage hinj).vertices = f '' K.vertices := by

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.Termina
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallBoundaryExtension
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.OneSheet.SurjectiveFundamentalGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 

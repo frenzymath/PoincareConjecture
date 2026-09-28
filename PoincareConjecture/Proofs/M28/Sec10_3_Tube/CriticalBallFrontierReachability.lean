@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallCurvature
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +15,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
 
 def CriticalBallFrontierAccess
     (H : CounterexampleNeckFamily E)
@@ -48,9 +33,6 @@ def CriticalBallFrontierAccess
               (y : (T k).carrierOpen)).toReal ∧
         (H.tubeCriticalMetric T A1 k).edist x y <
           ENNReal.ofReal (3 * delta / 4)
-
-
-
 
 theorem critical_radius_witnesses_eventually_near
     (H : CounterexampleNeckFamily E)
@@ -87,10 +69,6 @@ theorem critical_radius_witnesses_eventually_near
   have hq : (H.tubeConnection T (φ j)).scalarCurvature (x j) ≤ K :=
     hKj (x j) hlt
   exact (not_lt_of_ge hq) (hKjn.trans (hx j).2)
-
-
-
-
 
 theorem tube_high_eventually_near
     (H : CounterexampleNeckFamily E)
@@ -200,8 +178,6 @@ private theorem not_regular_of_frontier_access
       (z : (T k).carrierOpen) < ENNReal.ofReal A1 at hzcrit
     exact ENNReal.toReal_lt_of_lt_ofReal hzcrit
   exact (lt_irrefl A1) (hEq ▸ hzfront)
-
-
 
 theorem criticalBallFrontierMargin_of_access
     (H : CounterexampleNeckFamily E)

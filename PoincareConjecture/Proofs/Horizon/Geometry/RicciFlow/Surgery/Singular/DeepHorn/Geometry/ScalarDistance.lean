@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -85,8 +76,6 @@ private theorem scalar_comp_derivative {f : M → ℝ} {F : ℝ → ℝ} {x : M}
   rw [hF.hasDerivAt.hasFDerivAt.fderiv]
   change mvfderiv (𝓡 n) f x v * deriv F (f x) = _
   exact mul_comm _ _
-
-
 
 theorem exists_scalar_level_distance {K B : ℝ} (hK : 0 < K) (hB : 0 < B) :
     ∃ d : ℝ, 0 < d ∧

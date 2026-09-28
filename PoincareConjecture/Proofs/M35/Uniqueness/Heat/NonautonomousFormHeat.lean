@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TimeDependentOperator
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormValueTrace
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +32,6 @@ theorem adjoint_value_trace_eq (J : V →L[ℝ] H)
   rcases ht.1.eq_or_lt with rfl | hpos
   · rw [hU0, hP0, map_zero]
   · exact he ⟨hpos, ht.2⟩
-
-
 
 theorem exists_nonautonomous_form_heat (J : V →L[ℝ] H) (hc : IsCompactOperator J)
     (hd : DenseRange J) (hi : Function.Injective J) (hn : ‖J‖ ≤ 1)

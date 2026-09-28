@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteSegmentCorrespondence
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonPathCycles
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +9,6 @@ open Set Geometry
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
 
 theorem path_vertex_mem_segment_iff (p : Fin (n + 2) → E)
     (hp : Function.Injective p)

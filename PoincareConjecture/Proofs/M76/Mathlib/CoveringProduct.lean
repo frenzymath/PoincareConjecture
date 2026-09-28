@@ -1,23 +1,11 @@
 import Mathlib.Topology.Covering.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E X A : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [TopologicalSpace A] {p : E → X}
-
-
-
 
 theorem IsEvenlyCovered.id_prod {x : X} {F : Type*} [TopologicalSpace F]
     (h : IsEvenlyCovered p x F) (a : A) :
@@ -40,8 +28,6 @@ theorem IsEvenlyCovered.id_prod {x : X} {F : Type*} [TopologicalSpace F]
         (e₁.prodCongr (Homeomorph.refl F)))), ?_⟩
   intro y
   exact Prod.ext rfl (hH ⟨y.1.2, y.2⟩)
-
-
 
 theorem IsCoveringMap.id_prod (hp : IsCoveringMap p) :
     IsCoveringMap (Prod.map (id : A → A) p) :=

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityLocalMinimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusReplacement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +26,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "S" => interior m64AnnulusDomain
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem weighted_coordinate_replacement_minimum
     (A C : M64FreeWeakPhaseAnnulus (n := n) e Robs c0 c1 H0 H1 frequency degree)

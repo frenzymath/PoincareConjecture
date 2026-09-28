@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalBall
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.MetricArc
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.LocalQuadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_smooth_squared_distance_neighborhood (g : RiemannianMetric n M) (p : M) :
     ∃ U : Set M, IsOpen U ∧ p ∈ U ∧
@@ -67,15 +53,10 @@ theorem exists_smooth_squared_distance_neighborhood (g : RiemannianMetric n M) (
   exact ⟨U, hU, hpU, ((contMDiff_iff_contDiff.mpr hQ).comp_contMDiffOn
     (he'.mono hUt)).congr hformula⟩
 
-
-
 theorem contMDiffAt_squared_distance_self (g : RiemannianMetric n M) (p : M) :
     ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => (g.edist p x).toReal ^ 2 / 2) p := by
   obtain ⟨U, hU, hpU, hsmooth⟩ := g.exists_smooth_squared_distance_neighborhood p
   exact hsmooth.contMDiffAt (hU.mem_nhds hpU)
-
-
-
 
 theorem IsGeodesicOn.comp_of_edist_eq
     [T3Space M] [PreconnectedSpace M]

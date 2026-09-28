@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.SliceCapContainment
 import PoincareConjecture.Proofs.M32.Claim11_35.CapGraphObstruction
 import PoincareConjecture.Proofs.M32.Claim11_34.NeckProductGraph.Graph
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +14,6 @@ namespace PoincareConjecture.M32
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
-
 
 theorem exists_blowup_slice_cap_exclusion :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

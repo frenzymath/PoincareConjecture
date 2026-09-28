@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FlatCap
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_bounded_flatCap_profile :
     ∃ a : E → ℝ, ContDiff ℝ ∞ a ∧ (∀ x, 1 ≤ a x) ∧
@@ -54,8 +43,6 @@ theorem exists_bounded_flatCap_profile :
     · exact hbound x hxU
     · rw [hfar x hxU]
       exact hb1 x hx
-
-
 
 theorem exists_flatCap_profile :
     ∃ a : E → ℝ, ContDiff ℝ ∞ a ∧ (∀ x, 0 < a x) ∧

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {P : BoundaryEdgeFamily T}
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem BoundaryVertexFamily.agrees (F : BoundaryVertexFamily P)
     (p q : L.vertices) (x : E × ℝ)
@@ -49,9 +39,6 @@ theorem BoundaryVertexFamily.agrees (F : BoundaryVertexFamily P)
   have hqs : (q : E) ∈ s := Finset.mem_insert_of_mem (Finset.mem_singleton_self _)
   exact (F.keep_edge p s hs hc hps x ⟨hxS, hx.2⟩).trans
     (F.keep_edge q s hs hc hqs x ⟨hxS, hx.2⟩).symm
-
-
-
 
 theorem BoundaryVertexFamily.overlap_iff (F : BoundaryVertexFamily P)
     (hfull : ∀ u ∈ K.faces, (∀ p ∈ u, p ∈ L.vertices) → u ∈ L.faces)

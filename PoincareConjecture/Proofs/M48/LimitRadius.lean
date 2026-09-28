@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M48.AnalyticWindow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -31,7 +22,6 @@ theorem history_threshold {r : ℝ} (hr : 0 < r) :
   have hi : (A.limitRadius r)⁻¹ < (A.historyRadius r)⁻¹ :=
     (inv_lt_inv₀ (A.limitRadius_pos hr) (A.historyRadius_pos hr)).2 (A.historyRadius_lt hr)
   nlinarith [inv_pos.mpr (A.limitRadius_pos hr), inv_pos.mpr (A.historyRadius_pos hr)]
-
 
 theorem cut_scale_lt_historyRadius
     {p : SurgeryParameterPrefix S.constants} {F : SurgeryFlowData.{u}}

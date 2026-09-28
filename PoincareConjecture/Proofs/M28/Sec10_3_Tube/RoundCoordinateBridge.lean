@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -33,8 +22,6 @@ variable {M : Type u} [TopologicalSpace M]
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 noncomputable def roundSourceCoefficients
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon) (q : N.model.carrier) :
@@ -42,13 +29,11 @@ noncomputable def roundSourceCoefficients
   fun p => N.scale • g.pullbackCoefficients
     (N.forward ∘ (extChartAt (𝓡 3) q).symm) p
 
-
 noncomputable def roundModelCoefficients
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
     (N : SingularRoundComponent g epsilon) (q : N.model.carrier) :
     EuclideanSpace ℝ (Fin 3) → MetricCoefficient 3 :=
   N.model_metric.pullbackCoefficients (extChartAt (𝓡 3) q).symm
-
 
 noncomputable def roundSourceJet
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -61,8 +46,6 @@ noncomputable def roundModelJet
     (N : SingularRoundComponent g epsilon) (q : N.model.carrier)
     (p : EuclideanSpace ℝ (Fin 3)) : MetricTwoJet 3 :=
   metricTwoJet (roundModelCoefficients N q) p
-
-
 
 theorem round_model_jet_invertible
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -131,9 +114,6 @@ theorem round_source_jet_invertible
   change (roundSourceCoefficients N q p).IsInvertible
   rw [hcoeff]
   exact gs.isInvertible_pullbackCoefficients hinj
-
-
-
 
 theorem round_model_scalar_eq_six
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

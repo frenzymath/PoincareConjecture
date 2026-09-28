@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Segment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -88,9 +78,6 @@ private theorem edist_lower_of_axis_le_of_not_mem_carrier_local
   rw [closure_Ioo haL.ne] at hclosure
   exact hclosure ⟨haL.le, le_rfl⟩
 
-
-
-
 theorem mem_carrier_of_edist_lt_escape (N : EpsilonNeck g) {x y : M}
     (hx : x ∈ N.carrier) {r : ℝ} (_hr : 0 < r)
     (hrA : r < N.epsilon⁻¹ - |(N.coordinate_inverse x).2|)
@@ -138,8 +125,6 @@ private theorem cap_scalar_le_sup (K : CapCertificate g) {x : M}
     exact hratio x hx z.1 z.2
   exact le_csSup hbounded ⟨⟨x, hx⟩, rfl⟩
 
-
-
 theorem scalar_rpow_neg_half_le_of_normalized_error
     {s R : ℝ} (hs : 0 < s) (hR : 0 < R)
     (herr : |s ^ 2 * R - 1| < 1 / 100) :
@@ -161,8 +146,6 @@ theorem scalar_rpow_neg_half_le_of_normalized_error
   rw [inv_mul_cancel₀ hR.ne'] at hsqmul
   nlinarith [hprod]
 
-
-
 theorem exists_cap_core_normalized_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
       ∀ (M : Type u) [TopologicalSpace M]
@@ -178,10 +161,6 @@ theorem exists_cap_core_normalized_scalar_accuracy :
   refine ⟨epsilon₀, hpos, hsmall, ?_⟩
   intro M _ _ _ _ _ _ _ g K N hN x hxK hxN
   exact haccuracy M g K.connection N hN x hxN
-
-
-
-
 
 theorem exists_cap_core_scalar_radius_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -207,10 +186,6 @@ theorem exists_cap_core_scalar_radius_accuracy :
     exact hxclosed.1
   exact scalar_rpow_neg_half_le_of_normalized_error N.scale_pos
     (K.scalar_pos x hxKcar) (haccuracy M g K N hN x hxK hxN)
-
-
-
-
 
 theorem edist_le_of_mem_closure_tail (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) {x : M} (hx : x ∈ N.carrier)
@@ -306,9 +281,6 @@ theorem edist_le_of_mem_closure_tail (N : EpsilonNeck g)
     exact hed.trans (ENNReal.ofReal_le_ofReal hfactor)
   exact closure_minimal hpoint
     (isClosed_le (continuous_const.edist continuous_id) continuous_const) hp
-
-
-
 
 theorem successor_middle_margin_of_positive_end (K : CapCertificate g)
     (N Q : EpsilonNeck g) {A : ℝ} (hε : N.epsilon ≤ 1 / 1000)
@@ -440,7 +412,6 @@ theorem successor_middle_margin_of_positive_end (K : CapCertificate g)
 
 omit [T2Space M] in
 
-
 theorem predecessor_middle_margin_of_negative_end (K : CapCertificate g)
     (N P : EpsilonNeck g) {A : ℝ} (hPε : P.epsilon = N.epsilon)
     (hAeq : N.epsilon⁻¹ = A)
@@ -473,8 +444,6 @@ theorem predecessor_middle_margin_of_negative_end (K : CapCertificate g)
   exact abs_le.mpr ⟨by linarith [hP.2.1], by linarith [hP.2.2, hrad]⟩
 
 omit [T2Space M] in
-
-
 
 theorem cap_carrier_edist_le_of_core_hit (K : CapCertificate g)
     (N : EpsilonNeck g) {x : M} (hxK : x ∈ K.core)
@@ -517,7 +486,6 @@ theorem cap_carrier_edist_le_of_core_hit (K : CapCertificate g)
 
 omit [T2Space M] in
 
-
 theorem cap_carrier_edist_le_of_core_hit_of_normalized_error
     (K : CapCertificate g) (N : EpsilonNeck g) {x : M}
     (hxK : x ∈ K.core)
@@ -534,10 +502,6 @@ theorem cap_carrier_edist_le_of_core_hit_of_normalized_error
   exact cap_carrier_edist_le_of_core_hit K N hxK
     (scalar_rpow_neg_half_le_of_normalized_error N.scale_pos
       (K.scalar_pos x hxKcar) hscalar)
-
-
-
-
 
 theorem cap_carrier_subset_of_middle_escape (K : CapCertificate g)
     (N : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000) {x : M}
@@ -580,9 +544,6 @@ theorem cap_carrier_subset_of_middle_escape (K : CapCertificate g)
   exact mem_carrier_of_edist_lt_escape N hxN
     (mul_pos (by norm_num) K.cap_constant_pos) hrad (hxy y hy)
 
-
-
-
 theorem cap_carrier_subset_union_of_middle_margin
     (K : CapCertificate g) (N Q : EpsilonNeck g)
     (hNε : N.epsilon ≤ 1 / 1000) (hQε : Q.epsilon ≤ 1 / 1000)
@@ -602,9 +563,6 @@ theorem cap_carrier_subset_union_of_middle_margin
       (cap_carrier_subset_of_middle_escape K N hNε hxK hxN hscaleN hN hy)
   · exact fun y hy => Or.inr
       (cap_carrier_subset_of_middle_escape K Q hQε hxK hxQ hscaleQ hQ hy)
-
-
-
 
 theorem cap_carrier_subset_three_necks (K : CapCertificate g)
     (P N Q : EpsilonNeck g) {A : ℝ}

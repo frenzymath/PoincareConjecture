@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M10.SpacetimeLipschitz
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

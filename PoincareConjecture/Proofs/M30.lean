@@ -4,62 +4,11 @@ import PoincareConjecture.Proofs.M30.ContractAssembly
 import PoincareConjecture.Proofs.M30.Thm11_1.ShortControlSupplier
 import PoincareConjecture.Proofs.M30.Thm11_8.LongControlSupplier
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m30ControlledGeneralizedBlowupLimits
     (P : M30ControlledBlowupPredecessors.{u}) :

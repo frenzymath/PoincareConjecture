@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.TwoForm
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Tensors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -20,8 +13,6 @@ namespace Poincare.RicciFlow.Harnack
 open PoincareConjecture
 
 variable {I : Type*} [Fintype I] [DecidableEq I]
-
-
 
 lemma hamilton_diagonal_nonneg_of_skew_quadratic_nonneg
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
@@ -67,8 +58,6 @@ lemma hamilton_diagonal_nonneg_of_skew_quadratic_nonneg
     mul_one, mul_zero] at h
   simpa [mul_comm, mul_left_comm, mul_assoc] using h
 
-
-
 lemma hamilton_diagonal_nonneg_of_block_posSemidef
     (R : I → I → I → I → ℝ) (P : I → I → I → ℝ) (M : I → I → ℝ)
     (hR : ∀ a b c d, R a b c d = R c d a b)
@@ -86,10 +75,6 @@ lemma hamilton_diagonal_nonneg_of_block_posSemidef
   apply hamilton_diagonal_nonneg_of_skew_quadratic_nonneg R P M hfirst hlast hP
   intro U W hU
   exact hamiltonBlock_quadratic_nonneg_of_posSemidef R P M hR hM hQ U W
-
-
-
-
 
 universe u
 

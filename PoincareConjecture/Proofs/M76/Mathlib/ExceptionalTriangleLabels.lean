@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_exceptional_triangle_labels (A : E →ᵃ[ℝ] ℝ) {s : Finset E}
     (hs : s.card = 3) {q : E} (hqs : q ∈ s) (hq : A q = 0)

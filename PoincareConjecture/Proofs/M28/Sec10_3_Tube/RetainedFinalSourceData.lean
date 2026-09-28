@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFinalChartReadouts
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +18,6 @@ variable {epsilon C A : ℝ}
 set_option maxHeartbeats 3200000 in
 
 set_option backward.isDefEq.respectTransparency true in
-
-
 
 structure RetainedFinalSourceData
     (H : CounterexampleNeckFamily E) (W : CriticalBallSourcePacket H)
@@ -74,13 +64,9 @@ variable {H : CounterexampleNeckFamily E} {W : CriticalBallSourcePacket H}
     LeviCivitaData G.limitMetric}
   {q : ℕ → G.limitCarrier.carrier} {sigma : ℕ → ℕ}
 
-
-
 theorem stage_guard (D : RetainedFinalSourceData H W G D0 q sigma) (i : ℕ) :
     q i ∈ G.exhaustion (D.stage i) ∧ D.stage i + 1 ≤ sigma (D.column i) := by
   exact ⟨(D.readouts i).1, (D.readouts i).2.1⟩
-
-
 
 theorem scale_error (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
@@ -96,8 +82,6 @@ theorem scale_error (D : RetainedFinalSourceData H W G D0 q sigma) :
   intro i e
   exact (D.readouts i).2.2.1
 
-
-
 theorem base_lower (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -111,15 +95,11 @@ theorem base_lower (D : RetainedFinalSourceData H W G D0 q sigma) :
   intro i e
   exact (D.readouts i).2.2.2.1
 
-
-
 theorem normalization_lower (D : RetainedFinalSourceData H W G D0 q sigma)
     (i : ℕ) : ((i : ℝ) + 1) ≤ ((D.neck i).scale⁻¹) ^ 2 := by
   exact (D.readouts i).2.2.2.2.1
 
 set_option maxHeartbeats 3200000 in
-
-
 
 theorem metric_bounds (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
@@ -144,8 +124,6 @@ theorem metric_bounds (D : RetainedFinalSourceData H W G D0 q sigma) :
   intro i delta nu
   exact (D.readouts i).2.2.2.2.2.1
 
-
-
 theorem scalar_error (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -162,8 +140,6 @@ theorem scalar_error (D : RetainedFinalSourceData H W G D0 q sigma) :
 
 set_option maxHeartbeats 3200000 in
 
-
-
 theorem inverse_center (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -177,8 +153,6 @@ theorem inverse_center (D : RetainedFinalSourceData H W G D0 q sigma) :
   exact (D.readouts i).2.2.2.2.2.2.2.1
 
 set_option maxHeartbeats 3200000 in
-
-
 
 theorem core_capture (D : RetainedFinalSourceData H W G D0 q sigma) :
     letI := G.limitCarrier.topologicalSpace
@@ -199,9 +173,6 @@ theorem core_capture (D : RetainedFinalSourceData H W G D0 q sigma) :
 end RetainedFinalSourceData
 
 set_option maxHeartbeats 3200000 in
-
-
-
 
 theorem exists_retained_final_source_data_accuracy (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ (1 / 10000 : ℝ) ∧

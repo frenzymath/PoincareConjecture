@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.ActionCongruence
 import PoincareConjecture.Proofs.M09.FamilyActionDensity
 import PoincareConjecture.Proofs.M09.LocalSmoothPrimitive
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

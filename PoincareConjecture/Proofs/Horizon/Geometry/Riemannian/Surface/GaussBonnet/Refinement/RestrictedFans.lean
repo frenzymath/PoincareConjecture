@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.TangentMetric
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.PolygonalDomains
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
 
 theorem mesh_triangle_inter_frontier (M : TriangleMesh)
     (t u : M.Triangle) (htu : t ≠ u) :
@@ -51,7 +41,6 @@ theorem mesh_triangle_inter_frontier (M : TriangleMesh)
     · norm_num [AffineBasis.coord_apply, Fin.ext_iff] at h0
     · norm_num [AffineBasis.coord_apply, Fin.ext_iff] at h0
 
-
 theorem restrictTriangles_support_subset (M : TriangleMesh)
     (P : Finset M.Vertex → Prop) :
     (M.restrictTriangles P).toPlaneComplex.support ⊆ M.toPlaneComplex.support := by
@@ -59,8 +48,6 @@ theorem restrictTriangles_support_subset (M : TriangleMesh)
   rintro q hq
   obtain ⟨t, ht, hqt⟩ := mem_iUnion₂.mp hq
   exact mem_iUnion₂.mpr ⟨t, ((M.mem_restrictTriangles_triangles P).mp ht).1, hqt⟩
-
-
 
 theorem restrictTriangles_retains_incident_triangle (M : TriangleMesh)
     (P : Finset M.Vertex → Prop) {q : Plane}
@@ -98,8 +85,6 @@ private def restrictedTriangleEquiv (M : TriangleMesh) (P : Finset M.Vertex → 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem meshVertexAngleContribution_restrictTriangles_of_incident
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (x : S)
@@ -130,8 +115,6 @@ theorem meshVertexAngleContribution_restrictTriangles_of_incident
   intro heqx
   exact hnot (Finset.mem_filter.mpr ⟨ht, hinc t k heqx⟩)
 
-
-
 theorem meshVertexAngleContribution_restrictTriangles_interior
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (P : Finset M.Vertex → Prop)
@@ -147,8 +130,6 @@ theorem meshVertexAngleContribution_restrictTriangles_interior
     (hM (meshTriangleBasis_subset_support M t hk))
     (hM (restrictTriangles_support_subset M P (interior_subset hq))) heq
   exact restrictTriangles_retains_incident_triangle M P hq t (hkq ▸ hk)
-
-
 
 theorem single_refineByLines_restrict_interior_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -174,9 +155,6 @@ theorem single_refineByLines_restrict_interior_vertex_fan
     ⟨u.1, ((M.mem_restrictTriangles_triangles P).mp u.2).1⟩ x hx
     (interior_mono (restrictTriangles_support_subset M P) hxint)
 
-
-
-
 theorem single_refineByLines_restrict_interior_vertex_fan_of_source
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (b : AffineBasis (Fin 3) ℝ Plane) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -199,8 +177,6 @@ theorem single_refineByLines_restrict_interior_vertex_fan_of_source
   exact single_refineByLines_restrict_interior_vertex_fan
     (coordinateTangentMetric g F hF hFi _ hq) (OpenPartialHomeomorph.refl Plane)
     b lines P contMDiffOn_id contMDiffOn_id (by simp) u x hx hxint
-
-
 
 theorem meshVertexAngleContribution_restrictTriangles_add_compl
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

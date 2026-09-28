@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.SpatialContact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Jets
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 lemma covariantTensorDerivative_eq_mvfderiv_of_zero_jets
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T)
@@ -43,11 +30,6 @@ lemma covariantTensorDerivative_eq_mvfderiv_of_zero_jets
   rw [D.covariantTensorDerivative_on_fields hT E x
     (fun i => (hE i).mdifferentiableAt (by simp)) a]
   simp only [hfirst, hB, B.map_update_zero, Finset.sum_const_zero, sub_zero]
-
-
-
-
-
 
 theorem tensor_matrix_diffusion_nonneg_at_null [T2Space M]
     {I J : Type} [Fintype I]

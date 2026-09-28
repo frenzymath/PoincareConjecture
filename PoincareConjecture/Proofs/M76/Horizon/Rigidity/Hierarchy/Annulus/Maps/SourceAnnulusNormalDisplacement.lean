@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Coverings.ThirdPhasePLArcs
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.RelativeDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -24,8 +15,6 @@ local notation "C0" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 def HamiltonZeroMarkedAnnulusPLArcFibers
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)
     (j : ℝ × ℝ → X0) (c : C(Ann, unitInterval × C0)) : Prop :=
@@ -38,8 +27,6 @@ def HamiltonZeroMarkedAnnulusPLArcFibers
     Pairwise (fun i k => Disjoint (range (arc i)) (range (arc k))) ∧
     (⋃ i, range (arc i)) = {z | (c z).2 = xi} ∧
     ∀ i t, j (arc i t) ∈ frontier R ↔ t = 0 ∨ t = 1
-
-
 
 def HamiltonZeroInstalledAnnulusPLArcFibers
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3) (R : Set X0)

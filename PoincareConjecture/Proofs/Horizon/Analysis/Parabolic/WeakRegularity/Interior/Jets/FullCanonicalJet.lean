@@ -1,17 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.TimeSpatialJetAlgebra
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
@@ -32,7 +19,6 @@ def canonicalDirection {n : ℕ} (i : Fin (n + 1)) : Spacetime n :=
 @[simp] theorem canonicalDirection_last {n : ℕ} :
     canonicalDirection (Fin.last n) = (0, 1) := by
   simp only [canonicalDirection, Fin.val_last, lt_self_iff_false, dite_false]
-
 
 def HasCanonicalL2Jet {n : ℕ} (U : Set (Spacetime n)) :
     ℕ → (Spacetime n → ℝ) → Prop

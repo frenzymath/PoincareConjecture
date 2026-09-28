@@ -2,14 +2,6 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M38
 variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
-
-
 
 noncomputable def smoothPartialSubtype
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M N ∞)
@@ -44,8 +34,6 @@ noncomputable def smoothPartialSubtype
     intro y hy
     exact (ContMDiffWithinAt.subtypeVal_comp_iff U r.symm r.target y).mp (h y hy)
 
-
-
 theorem partialSubtype_target (e : OpenPartialHomeomorph M N)
     (U : TopologicalSpace.Opens M) (hU : Nonempty U)
     (hsource : e.source ⊆ U) : (e.subtypeRestr hU).target = e.target := by
@@ -54,8 +42,6 @@ theorem partialSubtype_target (e : OpenPartialHomeomorph M N)
   refine ⟨hy, ?_⟩
   simpa only [Set.mem_preimage, TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe_target]
     using hsource (e.map_target hy)
-
-
 
 theorem partialSubtype_both_source (e : OpenPartialHomeomorph M N)
     (U : TopologicalSpace.Opens M) (hU : Nonempty U)

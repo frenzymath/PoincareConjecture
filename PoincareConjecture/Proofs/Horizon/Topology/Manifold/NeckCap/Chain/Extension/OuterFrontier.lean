@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Ends
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,8 +29,6 @@ private theorem mem_coordinate_slab_iff (N : EpsilonNeck g) {a b : ℝ}
   · rintro ⟨hx, hab⟩
     exact ⟨N.coordinate_inverse x, ⟨mem_univ _, hab⟩,
       N.coordinate_map_coordinate_inverse hx⟩
-
-
 
 theorem closure_positive_quarter_diff_carrier_subset (N N' : EpsilonNeck g)
     (hpos : N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹ ⊆ N'.carrier)

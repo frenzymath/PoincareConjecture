@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimensional
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Region
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,7 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 
 variable (h : Diffeomorph 𝓘(Real, Real) 𝓘(Real, Real) Real Real ∞)
     (x : Real → Real)
-
 
 def sliceParam (t y : Real) : E2 :=
   WithLp.toLp 2 ![x (h.symm (t - y^2)), y]
@@ -40,7 +31,6 @@ theorem contDiff_sliceParam (hx : ContDiff Real ∞ x) :
   fin_cases i
   · exact hx.comp (h.symm.contDiff.comp (contDiff_fst.sub (contDiff_snd.pow 2)))
   · exact contDiff_snd
-
 
 theorem sliceParam_isSmoothEmbedding (hx : ContDiff Real ∞ x) (t : Real) :
     _root_.Manifold.IsSmoothEmbedding 𝓘(Real, Real) (𝓡 2) ∞ (sliceParam h x t) := by
@@ -65,9 +55,7 @@ theorem sliceParam_isSmoothEmbedding (hx : ContDiff Real ∞ x) (t : Real) :
     ((congrArg (mfderiv (𝓡 2) 𝓘(Real, Real) P (sliceParam h x t y)) huv).trans
       (hproj v))
 
-
 def sliceAtHeight (t : Real) (p : E2) : E3 := WithLp.toLp 2 ![p 0, p 1, t]
-
 
 theorem sliceAtHeight_image_range (t : Real) :
     sliceAtHeight t '' range (sliceParam h x t) =

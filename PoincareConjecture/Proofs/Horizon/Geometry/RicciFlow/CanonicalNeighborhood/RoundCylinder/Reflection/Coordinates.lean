@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.RoundCylinder
 import Mathlib.Analysis.Calculus.FDeriv.Equiv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,7 +40,6 @@ theorem coordinates_basis (a : Fin 3) :
     coordinates (roundCylinderCoordinateBasis a) = sign a • roundCylinderCoordinateBasis a := by
   fin_cases a <;> simp [roundCylinderCoordinateBasis, sign]
 
-
 def pullback (B : RoundCylinderTwoTensor) : RoundCylinderTwoTensor :=
   fun z v w => B (space z) (v.1, -v.2) (w.1, -w.2)
 
@@ -67,7 +59,6 @@ theorem coefficient_pullback (B : RoundCylinderTwoTensor)
   unfold roundCylinderTensorCoefficient pullback
   dsimp only [space, coordinates_apply]
   rw [hv a, hv b, hB]
-
 
 theorem fderiv_reflect (f : RoundCylinderCoordinates → ℝ)
     (p : RoundCylinderCoordinates) (a : Fin 3) :

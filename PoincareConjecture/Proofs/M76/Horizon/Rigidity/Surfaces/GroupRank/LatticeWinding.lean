@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedAmbient
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.IntegerWinding
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.TopologicalAdapters
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -75,7 +67,6 @@ private theorem zeroCoordinateWinding_injective (x : H0) :
     rw [hzero.eq_fst t hs, hone.eq_fst t hs, htwo.eq_fst t hs]
     exact Q.symm_apply_apply (a s)
 
-
 noncomputable def hamiltonZeroHandleIntegerMap (x : H0) :
     FundamentalGroup H0 x →* G0 :=
   (MulEquiv.funMultiplicative (Fin 3) ℤ).symm.toMonoidHom.comp
@@ -85,7 +76,6 @@ theorem hamiltonZeroHandleIntegerMap_injective (x : H0) :
     Function.Injective (hamiltonZeroHandleIntegerMap x) := by
   exact (MulEquiv.funMultiplicative (Fin 3) ℤ).symm.injective.comp
     (zeroCoordinateWinding_injective x)
-
 
 noncomputable def hamiltonZeroAmbientIntegerMap (x : X0) :
     FundamentalGroup X0 x →* G0 :=

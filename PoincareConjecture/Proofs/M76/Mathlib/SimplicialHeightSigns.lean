@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem mem_both_height_closures_of_not_mem_vertex_heights
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
@@ -52,9 +38,6 @@ theorem mem_both_height_closures_of_not_mem_vertex_heights
     hxs (subset_convexHull ℝ _ hw) hhistrict
   exact ⟨closure_mono (inter_subset_inter_left _ hface) hlower,
     closure_mono (inter_subset_inter_left _ hface) hupper⟩
-
-
-
 
 theorem finite_exceptional_vertex_height_signs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (A : E →ᵃ[ℝ] ℝ) :

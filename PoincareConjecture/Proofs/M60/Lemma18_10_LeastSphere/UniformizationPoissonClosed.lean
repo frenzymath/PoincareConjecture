@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationPoissonSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [PreconnectedSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
-
 
 theorem exists_smooth_negative_laplacian_closed_surface (D : LeviCivitaData g)
     (f : M → ℝ) (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)
@@ -58,9 +46,6 @@ theorem exists_smooth_negative_laplacian_closed_surface (D : LeviCivitaData g)
     simpa only [Measure.restrict_univ] using hUae
   exact ⟨U, hUs', laplacian_eq_of_closed_smooth_poisson u (testToL2 D univ s) f hf
     s.memLp.coeFn_toLp hforce hUs' hUae'⟩
-
-
-
 
 theorem exists_smooth_poisson_closed_surface (D : LeviCivitaData g)
     (f : M → ℝ) (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ f)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.RealKernel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Transport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter
@@ -25,14 +17,10 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M]
   [IsManifold (𝓡 1) ∞ M]
 
-
-
 theorem realHeatKernel_first_moment_bound {t : ℝ} (ht : 0 < t) (ht1 : t ≤ 1) :
     (∫ x, |x| * realHeatKernel t x) ≤ Real.sqrt 2 := by
   exact (integral_abs_mul_realHeatKernel_le ht).trans
     (Real.sqrt_le_sqrt (by nlinarith : 2 * t ≤ 2))
-
-
 
 theorem tendsto_realHeatKernel_first_moment :
     Tendsto (fun t : ℝ ↦ ∫ x, |x| * realHeatKernel t x) (𝓝[>] 0) (𝓝 0) := by
@@ -55,9 +43,6 @@ theorem tendsto_realHeatKernel_first_moment :
     ((continuous_const : Continuous (fun _ : ℝ ↦ (2 : ℝ))).mul continuous_id)).tendsto 0
   simpa [Function.comp_def] using hs.comp hid
 
-
-
-
 theorem transported_realHeatKernel_mass_one
     (g : RiemannianMetric 1 M) (e : M ≃ ℝ)
     (he : ∀ x y, EDist.edist (e x) (e y) = g.edist x y)
@@ -75,8 +60,6 @@ theorem transported_realHeatKernel_mass_one
     (fun z : ℝ ↦ realHeatKernel t (z - e x))
   rw [integral_sub_right_eq_self] at hcomp
   exact hcomp.trans (integral_realHeatKernel ht)
-
-
 
 theorem transported_realHeatKernel_pos
     (g : RiemannianMetric 1 M) (e : M ≃ ℝ)
@@ -167,7 +150,6 @@ theorem transported_realHeatKernel_first_moment_bound
   rw [transported_realHeatKernel_first_moment g e he ht x]
   exact realHeatKernel_first_moment_bound ht ht1
 
-
 theorem transported_realHeatKernel_uniform_first_moment_bound
     (g : RiemannianMetric 1 M) (e : M ≃ ℝ)
     (he : ∀ x y, EDist.edist (e x) (e y) = g.edist x y) :
@@ -189,8 +171,6 @@ theorem tendsto_transported_realHeatKernel_first_moment
   simp_rw [transported_realHeatKernel_first_moment g e he ht]
   rw [ciSup_const]
 
-
-
 theorem tendsto_gaussianAverage_of_continuous_bounded
     {f : ℝ → ℝ} (hf : Continuous f) {C : ℝ}
     (hC : ∀ z, ‖f z‖ ≤ C) (x : ℝ) :
@@ -209,8 +189,6 @@ theorem tendsto_gaussianAverage_of_continuous_bounded
     have hc : Continuous (fun t : ℝ ↦ f (x + Real.sqrt (2 * t) * z)) := by
       fun_prop
     simpa using (hc.tendsto 0).mono_left nhdsWithin_le_nhds
-
-
 
 theorem tendsto_transported_realHeatKernel_initial
     (g : RiemannianMetric 1 M) (e : M ≃ ℝ)

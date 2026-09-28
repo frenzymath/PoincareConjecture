@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundProductConnection
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundSurfaceParallel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem product_parallel_horizontal_zero
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
@@ -77,8 +67,6 @@ theorem product_parallel_horizontal_zero
   rw [hphi0] at hz
   exact hz
 
-
-
 theorem product_parallel_axial_constant
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
     (D : LeviCivitaData g) (Dh : LeviCivitaData h) {Ω : Set V}
@@ -111,8 +99,6 @@ theorem product_parallel_axial_constant
     change fderiv ℝ (fun y => (cylinderCoordinateEquiv (Z y)).2) z w = 0
     simpa only [map_zero, Prod.snd_zero] using he.trans hp
   exact hΩ.is_const_of_fderiv_eq_zero hconnected hf hder hx hy
-
-
 
 theorem product_parallel_reflection_false
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}

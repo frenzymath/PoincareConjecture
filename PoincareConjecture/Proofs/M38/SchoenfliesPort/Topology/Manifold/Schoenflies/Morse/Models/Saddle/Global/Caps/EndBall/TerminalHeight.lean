@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.Collar
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Decomposition
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -14,8 +8,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -29,8 +21,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem Saddle.Caps.exists_physical_height_interval_of_germ
     (T : OpenPartialHomeomorph (S1 × Real) S2) (h physical : S2 → Real)
@@ -70,7 +60,6 @@ namespace SphereSurgeryCoreCap
 variable {v : E3} {g : S2 → E3} {B : Set Real}
   {D : SphereSurgeryCoreCap v g B} {C : Set S2} {h : S2 → Real} {a b : Real}
 
-
 theorem LowerAnnularEnd.exists_physical_height_at_terminal
     (A : LowerAnnularEnd D C h a b) (hab : a ≤ b) (hDb : D.center ≤ b)
     (hgerm : ∀ p ∈ C, h =ᶠ[𝓝 p] (fun q => inner Real v (g q))) :
@@ -86,7 +75,6 @@ theorem LowerAnnularEnd.exists_physical_height_at_terminal
     exact A.height q t ((A.source ▸ ht).2)
   · intro q
     exact hgerm _ (A.retained (mem_image_of_mem A.chart ⟨mem_univ _, hDb, le_rfl⟩))
-
 
 theorem UpperAnnularEnd.exists_physical_height_at_terminal
     (A : UpperAnnularEnd D C h a b) (hab : a ≤ b) (haD : a ≤ D.center)
@@ -107,7 +95,6 @@ theorem UpperAnnularEnd.exists_physical_height_at_terminal
     rw [A.region_eq_image]
     exact mem_image_of_mem A.chart ⟨mem_univ _, le_rfl, haD⟩
 
-
 theorem AnnularEndFamily.exists_lower_terminal_physical_height
     (ends : AnnularEndFamily v g B C) (D : SphereSurgeryCoreCap v g B)
     (hD : D ∈ ends.caps) (hDb : D.center < ends.lowerCut) :
@@ -118,7 +105,6 @@ theorem AnnularEndFamily.exists_lower_terminal_physical_height
         inner Real v (g ((ends.lower D hD hDb).chart (q, t))) = t :=
   (ends.lower D hD hDb).exists_physical_height_at_terminal ends.lower_lt.le hDb.le
     ends.height_germ
-
 
 theorem AnnularEndFamily.exists_upper_terminal_physical_height
     (ends : AnnularEndFamily v g B C) (D : SphereSurgeryCoreCap v g B)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.OrdinaryDerivativeRescaling
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckQuarterBounds
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckTerminalBalls
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +22,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {t epsilon : ℝ}
   (Q : ℝ) (hQ : 0 < Q) (tau : ℝ) (htau : 0 < tau)
   (hwindow : tau ≤ Q * S.scale ^ 2 / 4)
 
-
-
 theorem GeneralizedStrongNeck.global_flow_curvatureTensorNorm
     (s : ℝ) (x : strongNeckOpen S) :
     ((GeneralizedStrongNeck.global_flow S H Q hQ tau htau hwindow).connection
@@ -49,8 +37,6 @@ theorem GeneralizedStrongNeck.global_flow_curvatureTensorNorm
   rw [htime] at h
   exact h
 
-
-
 theorem GeneralizedStrongNeck.global_flow_curvatureDerivativeNorm
     (s : ℝ) (m : ℕ) (x : strongNeckOpen S) :
     ((GeneralizedStrongNeck.global_flow S H Q hQ tau htau hwindow).connection
@@ -64,11 +50,6 @@ theorem GeneralizedStrongNeck.global_flow_curvatureDerivativeNorm
     simp only [parabolicTimeInv, zero_add]
   rw [htime] at h
   exact h
-
-
-
-
-
 
 theorem exists_strongNeck_global_bounds_accuracy
     (hShi : LocalCurvatureDerivativeEstimates.{u}) :

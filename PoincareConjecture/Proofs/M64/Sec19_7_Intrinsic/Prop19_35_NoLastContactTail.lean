@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_OrientedContactRegion
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TranslatedLastContactContradiction
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,12 +9,6 @@ open Set
 open scoped Topology ContDiff Manifold Matrix
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_short_circle_last_contact_tail_impossible
     (N : IntrinsicAnnulus) {base alpha beta eta : ℝ → AnnulusCoordinates}

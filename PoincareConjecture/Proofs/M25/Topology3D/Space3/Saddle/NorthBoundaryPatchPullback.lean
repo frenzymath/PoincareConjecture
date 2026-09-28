@@ -4,22 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldPatchChart
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_north_boundary_patch_pullback
     (A N : BallNeighborhoodChart E3 E3) (o : ℝ)

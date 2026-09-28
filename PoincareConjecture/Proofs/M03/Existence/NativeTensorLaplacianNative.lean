@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M03.Existence.HilbertParabolicNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckTameRemainderNative
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicLieMetricNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +27,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 variable (F : iota → SmoothField (n := n) (M := M))
   (d : FiniteChartData (n := n) (M := M))
 
-
 def scalarLaplacian (f : M → ℝ) (x : M) : ℝ :=
   ∑ i, d.fieldAdjoint (F i) (scalarDirectional (F i) f) x
 
@@ -55,7 +45,6 @@ theorem scalarProbe_contMDiff (h : SmoothTensor (n := n) (M := M)) (ab : iota ×
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (scalarProbe F h ab) :=
   contMDiff_pairing h (F ab.1) (F ab.2)
 
-
 def rawLaplacianCoefficients (h : SmoothTensor (n := n) (M := M)) (x : M) : Coefficients iota :=
   WithLp.toLp 2 (fun ab : iota × iota => scalarLaplacian F d (scalarProbe F h ab) x)
 
@@ -63,7 +52,6 @@ theorem rawLaplacianCoefficients_contMDiff (h : SmoothTensor (n := n) (M := M))
     (ab : iota × iota) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => rawLaplacianCoefficients F d h x ab) :=
   scalarLaplacian_contMDiff F d (scalarProbe_contMDiff F h ab)
-
 
 def smoothTensorLaplacian (g : RiemannianMetric n M) (h : SmoothTensor (n := n) (M := M)) :
     SmoothTensor (n := n) (M := M) :=
@@ -100,7 +88,6 @@ theorem inner_probes_smoothTensorLaplacian (g : RiemannianMetric n M)
     nativeProjection_probes g F hF k x]
 
 variable [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem integral_scalarLaplacian_pairing {f η : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η) :
@@ -143,7 +130,6 @@ theorem inner_derivativeProbes_eq_sum (k h : SmoothTensor (n := n) (M := M)) (x 
       scalarDirectional (F i) (scalarProbe F k ab) x = _
   exact mul_comm _ _
 
-
 theorem integral_derivativeProbes_pairing (k h : SmoothTensor (n := n) (M := M)) :
     (∫ x, inner ℝ (derivativeProbes F k x) (derivativeProbes F h x) ∂d.measure) =
       ∫ x, inner ℝ (probes F k x) (rawLaplacianCoefficients F d h x) ∂d.measure := by
@@ -183,7 +169,6 @@ theorem integral_derivativeProbes_pairing (k h : SmoothTensor (n := n) (M := M))
       intro x
       exact (coefficient_inner (probes F k x) (rawLaplacianCoefficients F d h x)).symm
 
-
 theorem derivativeToLp_pairing_laplacian (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
     (k h : SmoothTensor (n := n) (M := M)) :
@@ -206,7 +191,6 @@ theorem derivativeToLp_pairing_laplacian (g : RiemannianMetric n M)
       filter_upwards [tensorToLp_coe F d.measure k,
         tensorToLp_coe F d.measure (smoothTensorLaplacian F d g h)] with x hk hh
       rw [hk, hh]
-
 
 theorem form_pairing_laplacian (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -233,7 +217,6 @@ theorem form_pairing_laplacian (g : RiemannianMetric n M)
     rw [derivativeToLp_pairing_laplacian F d g hF k h]
   exact congrFun heq z
 
-
 theorem inGeneratorGraph_smoothTensorLaplacian (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
     (h : SmoothTensor (n := n) (M := M)) :
@@ -243,7 +226,6 @@ theorem inGeneratorGraph_smoothTensorLaplacian (g : RiemannianMetric n M)
   apply (inGeneratorGraph_iff_variational (V := firstOrderGraph F d.measure)
     (H := tensorL2 F d.measure) _ _ _).mpr
   exact ⟨intoFirstOrderGraph F d.measure h, rfl, form_pairing_laplacian F d g hF h⟩
-
 
 theorem inGeneratorGraph_pairing_smooth (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -263,7 +245,6 @@ theorem inGeneratorGraph_pairing_smooth (g : RiemannianMetric n M)
     ← real_inner_comm u (intoTensorL2 F d.measure k),
     ← real_inner_comm u (intoTensorL2 F d.measure (smoothTensorLaplacian F d g k))] at hcore
   exact add_left_cancel (hk.symm.trans hcore)
-
 
 theorem integral_inGeneratorGraph_pairing_smooth (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -294,7 +275,6 @@ theorem integral_inGeneratorGraph_pairing_smooth (g : RiemannianMetric n M)
 section LocalProduct
 
 omit [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem contMDiffOn_scalarDirectional {U : Set M} (hU : IsOpen U) {f : M → ℝ}
     (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U)
@@ -343,7 +323,6 @@ private theorem scalarDirectional_finsetSum {jota : Type*} (s : Finset jota)
   simp only [ContinuousLinearMap.sum_apply]
   rfl
 
-
 theorem scalarDirectional_twice_mul (V : SmoothField (n := n) (M := M))
     {U : Set M} (hU : IsOpen U) {f q : M → ℝ}
     (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U)
@@ -373,7 +352,6 @@ theorem scalarDirectional_twice_mul (V : SmoothField (n := n) (M := M))
     (q := fun y => q y * scalarDirectional V f y) (hfd.mul hDqd) (hqd.mul hDfd),
     scalarDirectional_mul V hfd hDqd, scalarDirectional_mul V hqd hDfd]
   ring
-
 
 theorem scalarLaplacian_mul {U : Set M} (hU : IsOpen U) {f q : M → ℝ}
     (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U)
@@ -427,8 +405,6 @@ theorem scalarLaplacian_finsetSum {jota : Type*} (s : Finset jota)
   simp only [scalarLaplacian, hterm]
   exact Finset.sum_comm
 
-
-
 theorem scalarLaplacian_reconstruction {jota : Type*} (s : Finset jota)
     {U : Set M} (hU : IsOpen U) (c q : jota → M → ℝ)
     (hc : ∀ j ∈ s, ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ (c j) U)
@@ -462,11 +438,9 @@ private theorem contMDiffOn_pairing_fields (h : SmoothTensor (n := n) (M := M))
   intro x hx
   exact (Bundle.contMDiffWithinAt_totalSpace.mp (hpair x hx)).2
 
-
 def coframeComponent (g : RiemannianMetric n M)
     (V W : (x : M) → TangentSpace (𝓡 n) x) (ab : iota × iota) (x : M) : ℝ :=
   g.inner x (F ab.1 x) (V x) * g.inner x (F ab.2 x) (W x)
-
 
 theorem smoothTensorLaplacian_component (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -520,12 +494,10 @@ theorem smoothTensorLaplacian_component (g : RiemannianMetric n M)
       ring
     _ = _ := hidentity
 
-
 theorem projectionKernel_contMDiff (g : RiemannianMetric n M) (ab cd : iota × iota) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => projectionKernel g F x ab cd) :=
   (contMDiff_pairing (metricTensor g) (F cd.1) (F ab.1)).mul
     (contMDiff_pairing (metricTensor g) (F cd.2) (F ab.2))
-
 
 def projectionLowerSource (g : RiemannianMetric n M) (x : M)
     (q : Coefficients iota) (dq : DerivativeCoefficients iota) (ab : iota × iota) : ℝ :=
@@ -533,8 +505,6 @@ def projectionLowerSource (g : RiemannianMetric n M) (x : M)
     (fun y => projectionKernel g F y ab cd) x) -
   2 * ∑ cd : iota × iota, ∑ i,
     scalarDirectional (F i) (fun y => projectionKernel g F y ab cd) x * dq (i, cd)
-
-
 
 theorem scalarLaplacian_probe_eq (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -604,7 +574,6 @@ private theorem directional_twice_eq_chart_hessian (p : M)
     ContinuousLinearMap.flip_apply]
   exact add_comm _ _
 
-
 theorem chartField_bilinear_trace (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
     (p : M) {z : ModelE} (hz : z ∈ (chartAt ModelE p).target)
@@ -646,14 +615,12 @@ theorem chartField_bilinear_trace (g : RiemannianMetric n M)
     ∑ i, ∑ j, (Matrix.gram ℝ b)⁻¹ i j * B (J (b i)) (J (b j)) at htrace
   simpa only [hJF, hJb, hgram] using htrace
 
-
 def scalarChartLowerTerm (p : M) (f : M → ℝ) (z : ModelE) : ℝ :=
   ∑ a,
     (fderiv ℝ (f ∘ (chartAt ModelE p).symm) z
       (fderiv ℝ (chartField p (F a)) z (chartField p (F a) z)) +
     d.fieldDivergence (F a) ((chartAt ModelE p).symm z) *
       fderiv ℝ (f ∘ (chartAt ModelE p).symm) z (chartField p (F a) z))
-
 
 theorem scalarLaplacian_chart_principal (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -677,7 +644,6 @@ theorem scalarLaplacian_chart_principal (g : RiemannianMetric n M)
     directional_eq_chart_fderiv p (F a) hf hz]
   ring
 
-
 def tensorChartLowerTerm (g : RiemannianMetric n M)
     (h : SmoothTensor (n := n) (M := M)) (p : M) (i j : Fin n) (z : ModelE) : ℝ :=
   let V := DeTurckNative.chartFrame p i
@@ -689,7 +655,6 @@ def tensorChartLowerTerm (g : RiemannianMetric n M)
     2 * (∑ ab : iota × iota, ∑ a,
       scalarDirectional (F a) (coframeComponent F g V W ab) x *
         scalarDirectional (F a) (scalarProbe F h ab) x)
-
 
 theorem smoothTensorLaplacian_chart_principal (g : RiemannianMetric n M)
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x), (∑ i, g.inner x (F i x) v • F i x) = v)
@@ -745,14 +710,12 @@ private theorem chartMetricJet_second_eq_hessian (g : RiemannianMetric n M)
   rw [fderiv_clm_apply hD (by fun_prop)]
   simp
 
-
 def smoothCoreResidual {g0 g : RiemannianMetric n M}
     (D : LeviCivitaData g) (B : LeviCivitaData g0)
     (h : SmoothTensor (n := n) (M := M)) (x : M)
     (v w : TangentSpace (𝓡 n) x) : ℝ :=
   smoothTensorLaplacian F d g0 h x v w - 2 * D.ricci x v w +
     DeTurckNative.metricLieDerivative D (DeTurckNative.intrinsicDeTurckField D B) x v w
-
 
 def smoothResidualTensor {g0 g : RiemannianMetric n M}
     (D : LeviCivitaData g) (B : LeviCivitaData g0)
@@ -788,8 +751,6 @@ theorem smoothCoreResidual_symm {g0 g : RiemannianMetric n M}
     (x : M) (v w : TangentSpace (𝓡 n) x) :
     smoothCoreResidual F d D B h x v w = smoothCoreResidual F d D B h x w v := by
   simpa only [smoothResidualTensor_apply] using smoothResidualTensor_symm F d D B h hsymm x v w
-
-
 
 theorem smoothCoreResidual_eq_perturbationRemainder
     {g0 g : RiemannianMetric n M} (D : LeviCivitaData g) (B : LeviCivitaData g0)
@@ -871,7 +832,6 @@ theorem smoothCoreResidual_eq_perturbationRemainder
   ring
 
 end LocalProduct
-
 
 def coreResidualL2 {g0 g : RiemannianMetric n M}
     (D : LeviCivitaData g) (B : LeviCivitaData g0)

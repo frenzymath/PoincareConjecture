@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensit
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory Manifold
@@ -87,9 +77,6 @@ private theorem scalar_radius_edist_le_pathELength
     _ = _ := by
       rw [RiemannianMetric.pathELength, lintegral_const_mul' _ _ ENNReal.ofReal_ne_top,
         pathELength_eq_lintegral_mfderivWithin_Icc]
-
-
-
 
 theorem scalar_radius_lower_on_ball
     {M : Type*} [TopologicalSpace M]

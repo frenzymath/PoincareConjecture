@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLift
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.NormalizedMapTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +17,6 @@ open M02.Topology
 variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X)) (A : SSet.{u}) (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X))
   (d : C(E, E)) (hd : p.comp d = p)
-
-
 
 def singularLiftDeck : singularLiftSSet p A χ ⟶ singularLiftSSet p A χ where
   app n := ↾fun z => ⟨(z.val.1,
@@ -50,14 +38,10 @@ def singularLiftDeck : singularLiftSSet p A χ ⟶ singularLiftSSet p A χ where
           ((TopCat.toSSet.map (TopCat.ofHom d)).app n z.val.2)
       exact NatTrans.naturality_apply (TopCat.toSSet.map (TopCat.ofHom d)) f z.val.2
 
-
-
 theorem singularLiftDeck_projection :
     singularLiftDeck p A χ d hd ≫ singularLiftProjection p A χ =
       singularLiftProjection p A χ ≫ TopCat.toSSet.map (TopCat.ofHom d) := by
   rfl
-
-
 
 theorem singularLiftDeck_ne (hfree : ∀ x, d x ≠ x) (n : ℕ)
     (z : (singularLiftSSet p A χ) _⦋n⦌) :
@@ -67,8 +51,6 @@ theorem singularLiftDeck_ne (hfree : ∀ x, d x ≠ x) (n : ℕ)
     (stdSimplex.vertex 0)) h
   exact hfree _ hs
 
-
-
 theorem singularLiftDeck_diagonal_zero (hfree : ∀ x, d x ≠ x) (n : ℕ)
     (s : (singularLiftSSet p A χ).nonDegenerate n) :
     (normalizedIntegralChainBasis (singularLiftSSet p A χ) n).repr
@@ -77,9 +59,6 @@ theorem singularLiftDeck_diagonal_zero (hfree : ∀ x, d x ≠ x) (n : ℕ)
         (normalizedIntegralChainBasis (singularLiftSSet p A χ) n s)) s = 0 :=
   normalizedIntegralChainMap_diagonal_zero _ n
     (fun s => singularLiftDeck_ne p A χ d hd hfree n s.val) s
-
-
-
 
 theorem singularLiftDeck_alternatingTrace_zero
     [∀ n, Finite ((singularLiftSSet p A χ).nonDegenerate n)]

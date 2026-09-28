@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Evolution.M
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Finite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -25,8 +18,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 lemma hamiltonP_heat_quadratic_cancellation
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -61,8 +52,6 @@ lemma hamiltonP_heat_quadratic_cancellation
     add_mul, sub_mul, Finset.sum_add_distrib,
     Finset.sum_sub_distrib, Finset.sum_mul, mul_assoc, ← Finset.mul_sum] at hc ⊢
   linarith only [hc]
-
-
 
 lemma hamiltonM_heat_quadratic_cancellation
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -161,8 +150,6 @@ lemma hamiltonM_heat_quadratic_cancellation
       at hc hheat hderiv hcube hlinear hnegative ⊢
   linarith only [hc, hheat, hderiv, hcube, hlinear, hnegative]
 
-
-
 lemma hamilton_heat_quadratic_nonneg_of_block
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
     (F : RicciFlow n M (Set.Ioo T₀ T₁)) {t : ℝ} (ht : t ∈ Set.Ioo T₀ T₁) (x : M)
@@ -223,8 +210,6 @@ lemma hamilton_heat_quadratic_nonneg_of_block
   simp_rw [F.tensorHeatOperator_riemann hC ht']
   simp only [LeviCivitaData.curvatureB, mul_assoc, ← Finset.mul_sum] at hn hm hp ⊢
   linarith only [hn, hm, hp]
-
-
 
 lemma hamilton_heat_quadratic_nonneg_at_null
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

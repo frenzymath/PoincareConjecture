@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckPullbackResponseNative
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialSpectralTrace
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialResponseTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter AddCircle
@@ -34,9 +26,6 @@ private theorem vector_weight_relation {ι : Type*} [Countable ι] (L : ℝ) (k 
       (scaleWeight (periodicVectorLambda L) k ((p.1.1, (0 : Fin 2)), p.2))⁻¹ * u p := by
   intro p
   rfl
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_scaleDecode (k : ℕ)
     (u : State ((ℤ × Fin 2) × ι)) (a : ℝ) :
@@ -62,9 +51,6 @@ theorem vectorPeriodicSpectralTranslation_scaleDecode (k : ℕ)
   rw [hweight]
   exact hp
 
-
-
-
 theorem vectorPeriodicSpectralTranslation_heat (t : NNReal)
     (u : State ((ℤ × Fin 2) × ι)) (a : ℝ) :
     vectorPeriodicSpectralTranslation (L := L) a
@@ -82,9 +68,6 @@ theorem vectorPeriodicSpectralTranslation_heat (t : NNReal)
   have hp := h p
   change _ = Real.exp (-(t : ℝ) * periodicVectorLambda L p) * _
   simpa only [periodicVectorLambda, periodicSpectrum] using hp
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_shiftedBaseMultiplier
     (u : State ((ℤ × Fin 2) × ι)) (a : ℝ) :
@@ -113,9 +96,6 @@ theorem vectorPeriodicSpectralTranslation_shiftedBaseMultiplier
       simp [shiftedBaseMultiplier, multiplier_apply, periodicVectorLambda,
         periodicSpectrum, one_div]
 
-
-
-
 theorem shiftedBaseMultiplier_injective
     {κ : Type*} [Countable κ] (lambda : κ → NNReal) :
     Function.Injective (shiftedBaseMultiplier lambda) := by
@@ -126,9 +106,6 @@ theorem shiftedBaseMultiplier_injective
   change (1 / Real.sqrt (1 + (lambda i : ℝ))) * u i =
     (1 / Real.sqrt (1 + (lambda i : ℝ))) * v i at hi
   exact mul_left_cancel₀ (by positivity : (1 / Real.sqrt (1 + (lambda i : ℝ))) ≠ 0) hi
-
-
-
 
 theorem continuous_vectorPeriodicSpectralTranslation_compLpL
     (μ : Measure ℝ) :
@@ -142,9 +119,6 @@ theorem continuous_vectorPeriodicSpectralTranslation_compLpL
     simpa only [(vectorPeriodicSpectralTranslation_spec a u).2,
       one_mul] using (le_refl (‖u‖))
   · exact continuous_vectorPeriodicSpectralTranslation (L := L)
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_compLpL_zero
     (μ : Measure ℝ) (F : Lp (State ((ℤ × Fin 2) × ι)) 2 μ) :
@@ -198,9 +172,6 @@ private theorem vectorPeriodicSpectralTranslation_pullbackForcing
   rw [hzero]
   simp
 
-
-
-
 theorem vectorPeriodicSpectralTranslation_responseState
     {T : ℝ} (hT : 0 ≤ T)
     (F : ForcingSpace ((ℤ × Fin 2) × ι) T) (a : ℝ)
@@ -217,9 +188,6 @@ theorem vectorPeriodicSpectralTranslation_responseState
   intro z
   exact vectorPeriodicSpectralTranslation_scaleDecode (L := L) 2 z a
 
-
-
-
 theorem vectorPeriodicSpectralTranslation_shiftedHigh
     {T : ℝ} (hT : 0 ≤ T)
     (F : ForcingSpace ((ℤ × Fin 2) × ι) T) (a : ℝ) :
@@ -234,9 +202,6 @@ theorem vectorPeriodicSpectralTranslation_shiftedHigh
     (periodicVectorLambda L) hT _ _ _ F
   intro z
   exact vectorPeriodicSpectralTranslation_scaleDecode (L := L) 2 z a
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_initialResponseTrace
     {T : ℝ} (hT : 0 ≤ T)
@@ -281,9 +246,6 @@ theorem vectorPeriodicSpectralTranslation_initialResponseTrace
           exact vectorPeriodicSpectralTranslation_shiftedBaseMultiplier
             (L := L) (initialResponseTrace (periodicVectorLambda L) w hT F t) a
   exact shiftedBaseMultiplier_injective (periodicVectorLambda L) hJ
-
-
-
 
 theorem vectorPeriodicSpectralTranslation_initialHeatHigh
     (w : State ((ℤ × Fin 2) × ι)) (a : ℝ) {t : ℝ} (ht : 0 < t) :

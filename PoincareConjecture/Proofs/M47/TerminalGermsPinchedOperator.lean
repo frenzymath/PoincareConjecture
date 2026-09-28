@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalGermsChartFlow
 import PoincareConjecture.Proofs.M04.FlowRiemannRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +33,6 @@ private noncomputable local instance pinchedOperatorBilinSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem terminalGerms_operator_on_closed_of_interior
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
     {a : ℝ} (ha : a < 0) (F : RicciFlow 3 M (Icc a 0))
@@ -63,8 +52,6 @@ theorem terminalGerms_operator_on_closed_of_interior
   filter_upwards [self_mem_nhdsWithin] with s hs
   exact (F.connection s).curvatureTensor_self_nonneg_of_nonnegative_curvatureOperator
     x (hinterior s hs x) v w
-
-
 
 theorem terminalGerms_operator_of_bilinear_jets
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -120,8 +107,6 @@ theorem terminalGerms_operator_of_bilinear_jets
     (fun k => (Fseq k).connection t) (F.connection t) x hj.1
   intro eta heta
   exact (hlower eta heta).mono fun k hk => hk t (Ioo_subset_Icc_self ht)
-
-
 
 theorem terminalGerms_operator_of_original_chart_jets
     {ι : Type*} (U : ι → Set E) (hU : ∀ i, IsOpen (U i))

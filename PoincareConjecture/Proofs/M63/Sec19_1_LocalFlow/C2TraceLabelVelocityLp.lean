@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactPartialDerivativeBounds
 import PoincareConjecture.Proofs.M63.Mathlib.ContinuousL2Product
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "H" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_uniform_spectral_labelVelocity_L2_bound
     (F : RicciFlow n M (Icc a b)) {U : Set W} (hU : IsOpen U) {ρ : W → M}

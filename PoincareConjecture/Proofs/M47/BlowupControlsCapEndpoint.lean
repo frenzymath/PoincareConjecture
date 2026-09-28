@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapRetained
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_RetainedCylinderExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_cap_cylinder_across_retained_endpoint
     (P : M44CapPersistencePredecessors.{u})

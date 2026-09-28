@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourceAnnulusMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.ComponentGroups
 
-
-
 set_option autoImplicit false
 open Set Metric
 

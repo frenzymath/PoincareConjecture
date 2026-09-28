@@ -3,25 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNorma
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Cap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -74,7 +55,6 @@ theorem carrier_eq_closed_core_union_end :
     C.carrier = C.closed_core ∪ C.end_neck.carrier := by
   rw [C.closed_core_eq_complement_end, sdiff_union_of_subset C.end_neck_subset]
 
-
 theorem subset_core_or_compl_closed_core {S : Set M} (hS : IsPreconnected S)
     (havoid : Disjoint S C.boundary_sphere) :
     S ⊆ C.core ∨ S ⊆ C.closed_coreᶜ := by
@@ -87,7 +67,6 @@ theorem subset_core_or_compl_closed_core {S : Set M} (hS : IsPreconnected S)
     exact (Set.disjoint_left.mp havoid) hx
       (C.boundary_eq_closed_core_diff_core.symm ▸ ⟨hcore, hint⟩)
   · exact Or.inr hcore
-
 
 theorem boundary_inter_nonempty_of_crossing {S : Set M} (hS : IsPreconnected S)
     (hin : (S ∩ C.core).Nonempty) (hout : (S \ C.closed_core).Nonempty) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_PullbackErrors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,22 +12,16 @@ variable {ι E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
   {l : Filter ι} {x : ι → E} {f : ι → E → F}
 
-
-
 theorem values (hf : PointJetsVanish f x l) :
     Tendsto (fun i => f i (x i)) l (𝓝 0) := by
   apply tendsto_zero_iff_norm_tendsto_zero.mpr
   simpa only [norm_iteratedFDeriv_zero, norm_zero] using (hf 0).norm
-
-
 
 theorem fderiv (hf : PointJetsVanish f x l) :
     PointJetsVanish (fun i => _root_.fderiv ℝ (f i)) x l := by
   intro m
   apply tendsto_zero_iff_norm_tendsto_zero.mpr
   simpa only [norm_iteratedFDeriv_fderiv, norm_zero] using (hf (m + 1)).norm
-
-
 
 theorem clm (hf : PointJetsVanish f x l)
     (hfs : ∀ i, ContDiffAt ℝ ∞ (f i) (x i)) (L : F →L[ℝ] G) :
@@ -45,8 +31,6 @@ theorem clm (hf : PointJetsVanish f x l)
   apply squeeze_zero (fun _ => norm_nonneg _)
     (fun i => L.norm_iteratedFDeriv_comp_left (hfs i) (by exact_mod_cast le_top))
   simpa only [norm_zero, mul_zero] using ((hf m).norm.const_mul ‖L‖)
-
-
 
 theorem sum {κ : Type*} (s : Finset κ) {f : κ → ι → E → F}
     (hf : ∀ k ∈ s, PointJetsVanish (f k) x l)

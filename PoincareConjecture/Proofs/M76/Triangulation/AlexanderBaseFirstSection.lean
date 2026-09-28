@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseLinkSection
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConnectedSection
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderBaseExtremeCap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem exists_extreme_vertex_cap_ball (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 3) (hK : K.faces.Finite)

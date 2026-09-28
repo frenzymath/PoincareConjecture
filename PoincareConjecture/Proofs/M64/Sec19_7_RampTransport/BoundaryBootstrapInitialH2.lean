@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapCoordinateChange
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapHalfBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -31,10 +20,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {m n : ℕ}
 local notation "Source" => EuclideanSpace ℝ (Fin m)
 local notation "Target" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem closedHalfDisk_coordinate_change_memWkp_two
     {R : ℝ} (hR : 0 < R) {H : ℂ → Source} {F : Source → Target} {T : Set Source}

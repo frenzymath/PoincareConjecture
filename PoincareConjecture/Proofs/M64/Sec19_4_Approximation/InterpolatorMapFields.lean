@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.InterpolatorWitness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [IsManifold (𝓡 n) ∞ M]
 
 omit [T2Space M] in
-
-
-
 
 theorem m64_interpolator_map_continuous
     {g : RiemannianMetric n M} {D : LeviCivitaData g}
@@ -62,8 +47,6 @@ theorem m64_interpolator_map_continuous
   simpa only [hf, input, Function.comp_def] using hc
 
 omit [T2Space M] in
-
-
 
 theorem m64_interpolator_map_periodic
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

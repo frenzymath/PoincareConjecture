@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.LeastConfinedRadialContact
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConfinedRadialInverse
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ClosedCornerRadialInjectivity
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +10,6 @@ open Set Filter Metric
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_earliest_confined_contact
     (N : IntrinsicAnnulus) {K kappa R B : ℝ} (hK : N.GaussianCurvatureBound K)

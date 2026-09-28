@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundar
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,25 +15,16 @@ namespace PoincareConjecture.M65Boundary
 
 open M65StrictTrace
 
-
-
 def diskBoundaryCoordinate (p : ℂ) (z : LoopPlane) : LoopPlane :=
   orthonormalBasisOneI.repr (boundaryCoordinate p (orthonormalBasisOneI.repr.symm z))
 
-
-
 def diskBoundaryInverse (p : ℂ) (w : LoopPlane) : LoopPlane :=
   orthonormalBasisOneI.repr (boundaryInverse p (orthonormalBasisOneI.repr.symm w))
-
-
 
 theorem contDiff_diskBoundaryCoordinate (p : ℂ) : ContDiff ℝ ∞ (diskBoundaryCoordinate p) :=
   orthonormalBasisOneI.repr.toContinuousLinearEquiv.contDiff.comp
     (((contDiff_boundaryCoordinate p).restrict_scalars ℝ).comp
       orthonormalBasisOneI.repr.symm.toContinuousLinearEquiv.contDiff)
-
-
-
 
 theorem norm_diskBoundaryCoordinate {p : ℂ} (hp : ‖p‖ = 1) (z : LoopPlane) :
     ‖diskBoundaryCoordinate p z‖ = Real.exp (-z 1) := by
@@ -89,10 +69,6 @@ private theorem compact_inverse_map_bound (K : Set LoopPlane) (hK : IsCompact K)
     _ = ENNReal.ofReal B * volume (A ∩ L) := by simp
     _ ≤ _ := mul_le_mul_of_nonneg_left
       (measure_mono (inter_subset_inter_right A hcap.image_subset)) bot_le
-
-
-
-
 
 theorem exists_boundary_halfDisk_pullback {p : ℂ} (hp : ‖p‖ = 1) :
     ∃ R : ℝ, 0 < R ∧
@@ -151,10 +127,6 @@ theorem exists_boundary_halfDisk_pullback {p : ℂ} (hp : ‖p‖ = 1) :
     exact (hball z hz.1).2
   exact ⟨R, hr, fun z hz => (hball z hz).1, hcap, hQr,
     compact_inverse_map_bound K hK P Q hP.continuous hcap hQr (fun z hz => (hball z hz.1).1)⟩
-
-
-
-
 
 theorem exists_uniform_boundary_halfDisk_pullback :
     ∃ R : ℝ, 0 < R ∧ ∀ (p : ℂ), ‖p‖ = 1 →
@@ -266,10 +238,6 @@ private theorem smooth_chain (f : LoopPlane → ℝ) (hf : ContDiff ℝ 1 f)
   rw [hv, map_add, map_smul, map_smul]
   simp only [Fin.sum_univ_two, smul_eq_mul, v, B]
 
-
-
-
-
 theorem boundary_smooth_graph_uniform :
     ∃ R : ℝ, 0 < R ∧ ∀ (p : ℂ), ‖p‖ = 1 →
       ∀ (u : Lp ℝ 2 (volume.restrict loopDiskSet))
@@ -326,9 +294,6 @@ theorem boundary_smooth_graph_uniform :
     simp only [Fin.sum_univ_two, h0, h1]
   · intro i
     exact ((Q i).continuous.tendsto d).comp (tendsto_pi_nhds.mpr hBlim)
-
-
-
 
 theorem boundary_smooth_graph {p : ℂ} (hp : ‖p‖ = 1)
     {u : Lp ℝ 2 (volume.restrict loopDiskSet)}

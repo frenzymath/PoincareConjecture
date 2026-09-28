@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Plane.FlowCoordinates
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ namespace Poincare.Manifold.PlaneDiffeomorph
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "v₀" => (!₂[(1 : ℝ), 0] : E₂)
-
-
 
 theorem flow_coordinates_eq_diffeomorph
     (g : Diffeomorph (𝓡 2) (𝓡 2) E₂ E₂ ∞) {L : ℝ}
@@ -49,8 +40,6 @@ theorem flow_coordinates_eq_diffeomorph
     ext i
     fin_cases i <;> simp [a]
   simpa only [hpoint] using heq (mem_univ (x 0 - L))
-
-
 
 theorem flow_coordinates_eq_self_of_exterior
     {V : E₂ → E₂} (hV : ContDiff ℝ ∞ V) {L B T : ℝ}

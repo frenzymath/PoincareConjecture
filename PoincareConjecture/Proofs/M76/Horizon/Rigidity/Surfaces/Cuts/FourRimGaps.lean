@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 import Mathlib.Data.Finset.Sort
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -75,9 +67,6 @@ private theorem exists_ordering_of_injective (l : Fin 3 → ℝ)
   rw [heq]
   exact (S.orderEmbOfFin hcard).strictMono
 
-
-
-
 structure FourRimBridgeCoordinates (q : Set E) (B : Fin 4 → Set E)
     (a b : Fin 4 → E) where
   map : ℝ → E
@@ -97,8 +86,6 @@ structure FourRimBridgeCoordinates (q : Set E) (B : Fin 4 → Set E)
   bridge : ∀ i, B (order i).succ = map '' Icc (lo i) (hi i)
   endpoints : ∀ i, ({map (lo i),map (hi i)} : Set E) =
     {a (order i).succ,b (order i).succ}
-
-
 
 theorem exists_four_rim_bridge_coordinates
     {d q : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)
@@ -165,14 +152,11 @@ namespace FourRimBridgeCoordinates
 
 variable {q : Set E} {B : Fin 4 → Set E} {a b : Fin 4 → E}
 
-
 def gapLo (C : FourRimBridgeCoordinates q B a b) : Fin 4 → ℝ :=
   ![0,C.hi 0,C.hi 1,C.hi 2]
 
 def gapHi (C : FourRimBridgeCoordinates q B a b) : Fin 4 → ℝ :=
   ![C.lo 0,C.lo 1,C.lo 2,1]
-
-
 
 def gap (C : FourRimBridgeCoordinates q B a b) (i : Fin 4) : Set E :=
   C.map '' Icc (C.gapLo i) (C.gapHi i)
@@ -284,8 +268,6 @@ private theorem gap_parameter_contact (C : FourRimBridgeCoordinates q B a b)
   fin_cases i <;> fin_cases j <;> dsimp [gapLo,gapHi] <;>
     norm_num only [mem_Icc] <;> aesop (add safe (by linarith))
 
-
-
 theorem gap_inter_bridge_iff (C : FourRimBridgeCoordinates q B a b)
     (i : Fin 4) (j : Fin 3) (x : E) :
     x ∈ C.gap i ∩ B (C.order j).succ ↔
@@ -331,8 +313,6 @@ private theorem one_mem_gap_parameter_iff (C : FourRimBridgeCoordinates q B a b)
   fin_cases i <;> dsimp [gapLo,gapHi] <;>
     norm_num only [mem_Icc] <;> aesop (add safe (by linarith))
 
-
-
 theorem gap_inter_bridge_zero_iff (C : FourRimBridgeCoordinates q B a b)
     (i : Fin 4) (x : E) :
     x ∈ C.gap i ∩ B 0 ↔ (i = 0 ∧ x = a 0) ∨ (i = 3 ∧ x = b 0) := by
@@ -351,7 +331,6 @@ theorem gap_inter_bridge_zero_iff (C : FourRimBridgeCoordinates q B a b)
       exact ⟨⟨0,(C.zero_mem_gap_parameter_iff 0).mpr rfl,C.zero⟩,C.zero ▸ hm⟩
     · have hm : C.map 1 ∈ B 0 := (C.contact.symm.subset (by simp)).1
       exact ⟨⟨1,(C.one_mem_gap_parameter_iff 3).mpr rfl,C.one⟩,C.one ▸ hm⟩
-
 
 def bridgeOrder (C : FourRimBridgeCoordinates q B a b) : Fin 4 ≃ Fin 4 where
   toFun := Fin.cases 0 (fun j => (C.order j).succ)
@@ -388,8 +367,6 @@ theorem gap_isFinitePLBallPair_cyclic (C : FourRimBridgeCoordinates q B a b)
       {C.bridgeFinish i,C.bridgeStart (i+1)} := by
   have h := C.gap_isFinitePLBallPair i
   fin_cases i <;> simpa [gapLo,gapHi,bridgeStart,bridgeFinish,C.zero,C.one] using h
-
-
 
 theorem gap_inter_bridge_cyclic_iff (C : FourRimBridgeCoordinates q B a b)
     (i j : Fin 4) (x : E) :

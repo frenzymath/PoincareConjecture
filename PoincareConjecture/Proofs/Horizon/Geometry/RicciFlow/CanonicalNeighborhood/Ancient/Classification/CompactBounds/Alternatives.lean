@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Constants
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Diameter.Round
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem compact_nonround_positive_geometry_of_scaled_diameter
     (P : M27KappaAlternativePredecessors.{u}) {D : ℝ} (hD : 0 < D) :
@@ -43,9 +29,6 @@ theorem compact_nonround_positive_geometry_of_scaled_diameter
   intro M _ _ _ _ _ _ _ _ _ K hnonround hcompact hdiam
   exact hgeometry K hnonround hcompact
     (P.compact_nonround_sphere_or_projective K hcompact hnonround) hdiam
-
-
-
 
 theorem compact_positive_geometry_or_strongDoubleCapped
     (P : M27KappaAlternativePredecessors.{u}) :

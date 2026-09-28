@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M04.RiemannRegularity
 import Mathlib.LinearAlgebra.Trace
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -242,4 +238,3 @@ theorem isSmoothCovariantTensor_ricciEvaluation (D : LeviCivitaData g) :
     exact contMDiffOn_ricci D hU (hX 0) (hX 1)
 
 end PoincareConjecture.M04
-

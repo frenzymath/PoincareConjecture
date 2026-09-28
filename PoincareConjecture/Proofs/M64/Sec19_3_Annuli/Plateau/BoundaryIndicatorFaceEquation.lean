@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryFaceZeroExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,9 +8,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64NaturalGrowth_indicator_face_zero_test
     {O : Set LoopPlane} (hO : IsOpen O)

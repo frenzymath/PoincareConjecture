@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.MinimizingStability
 import PoincareConjecture.Proofs.M09.ExponentialLocalInverse
 import PoincareConjecture.Proofs.M09.UniqueMinimizingVectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

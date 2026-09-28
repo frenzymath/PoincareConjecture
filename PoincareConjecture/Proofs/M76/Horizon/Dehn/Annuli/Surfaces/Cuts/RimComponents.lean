@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ConnectedSubsetComponent
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.RimSubcomplexes
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.BoundaryEulerBound
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -14,7 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 open Classical in
 omit [FiniteDimensional ℝ E] in
-
 
 theorem exists_rim_component_assignment
     {ι : Type*} (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -53,7 +50,6 @@ theorem exists_rim_component_assignment
 open Classical in
 omit [FiniteDimensional ℝ E] in
 
-
 theorem mem_component_of_assigned_rim_iff
     (K B : SimplicialComplex ℝ E)
     (C D : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -68,7 +64,6 @@ theorem mem_component_of_assigned_rim_iff
     exact hxC
 
 open Classical in
-
 
 theorem exists_component_boundary_euler_bounds
     {ι : Type*} [Finite ι] (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

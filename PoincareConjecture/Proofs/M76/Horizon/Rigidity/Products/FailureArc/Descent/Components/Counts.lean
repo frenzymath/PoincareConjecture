@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.Counts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Topology.Mathlib.FiniteClosedComponentPartition
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -31,14 +29,12 @@ theorem SourceDoubleComponents.pieces_subset (M : SourceDoubleComponents e f S Q
     (i : M.Index) : M.pieces i ⊆ M.graph.space :=
   fun _ hx => M.cover.symm.subset (mem_iUnion.mpr ⟨i, hx⟩)
 
-
 theorem SourceDoubleComponents.component_counts (M : SourceDoubleComponents e f S Q R) :
     doubleBoundaryComponentCount f S Q = {i | (M.pieces i ∩ Q).Nonempty}.ncard ∧
     doubleInteriorComponentCount f S Q = {i | Disjoint (M.pieces i) Q}.ncard := by
   have : Finite M.Index := M.finite_components
   exact connected_components_mark_counts_of_ambient_partition M.pieces
     (fun i ↦ (M.compact i).isClosed) M.disjoint M.literal_cover M.connected Q
-
 
 theorem SourceDoubleComponents.interval_iff_meets_rim
     (M : SourceDoubleComponents e f S Q R) (i : M.Index) :
@@ -54,7 +50,6 @@ theorem SourceDoubleComponents.interval_iff_meets_rim
     · exact hi
     · exact (Set.not_nonempty_iff_eq_empty.mpr (disjoint_iff_inter_eq_empty.mp hd) h).elim
 
-
 theorem SourceDoubleComponents.exists_interval_of_boundary_count_pos
     (M : SourceDoubleComponents e f S Q R)
     (h : 0 < doubleBoundaryComponentCount f S Q) :
@@ -63,7 +58,6 @@ theorem SourceDoubleComponents.exists_interval_of_boundary_count_pos
   rw [M.component_counts.1] at h
   obtain ⟨i, hi⟩ := (Set.ncard_pos (Set.toFinite _)).mp h
   exact ⟨i, (M.interval_iff_meets_rim i).mpr hi⟩
-
 
 theorem SourceDoubleComponents.exists_polygon_of_interior_count_pos
     (M : SourceDoubleComponents e f S Q R)
@@ -77,7 +71,6 @@ theorem SourceDoubleComponents.exists_polygon_of_interior_count_pos
   · have hmeet := (M.interval_iff_meets_rim i).mp hball
     exact (Set.not_nonempty_iff_eq_empty.mpr (disjoint_iff_inter_eq_empty.mp hi) hmeet).elim
   · exact ⟨i, hpoly⟩
-
 
 theorem SourceDoubleComponents.counts_zero_iff_double_locus_empty
     (M : SourceDoubleComponents e f S Q R) :
@@ -105,7 +98,6 @@ theorem SourceDoubleComponents.counts_zero_iff_double_locus_empty
       exact Set.notMem_empty x (h ▸ hxG)
     constructor <;> apply (Set.ncard_eq_zero (Set.toFinite _)).mpr <;>
       exact Set.eq_empty_iff_forall_notMem.mpr (fun i _ ↦ hn i)
-
 
 theorem SourceDoubleComponents.isEmbedding_of_counts_zero [T2Space X]
     (M : SourceDoubleComponents e f S Q R) (hS : IsCompact S)

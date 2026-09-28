@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialExteriorJets
 import PoincareConjecture.Proofs.M35.RadialGauge.EvenRadialCompactJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M35.RadialGauge
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem even_radial_family_weighted_jets {A : Type*} {f : A → ℝ → ℝ} {N : ℕ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (he : ∀ a, Function.Even (f a))
@@ -64,7 +53,6 @@ private theorem identity_jet_bound (j : ℕ) (x : E) :
           positivity
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem radial_vector_jets_bounded {A : Type*} {f : A → ℝ → ℝ}
     (hf : ∀ a, ContDiff ℝ ∞ (f a)) (he : ∀ a, Function.Even (f a))

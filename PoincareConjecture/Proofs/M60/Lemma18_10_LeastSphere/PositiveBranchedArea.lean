@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.GramRank
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,17 +11,12 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 theorem m60SphereParameter_injective : Function.Injective m60SphereParameter := by
   have ht : m60SphereChart.target = univ := by simp [m60SphereChart]
   intro z w hzw
   exact m60SphereChart.symm.injOn
     (by change z ∈ m60SphereChart.target; rw [ht]; trivial)
     (by change w ∈ m60SphereChart.target; rw [ht]; trivial) hzw
-
-
-
 
 theorem m60SphereParameter_mfderiv_injective (z : LoopPlane) :
     Function.Injective (mfderiv (𝓡 2) (𝓡 2) m60SphereParameter z) := by
@@ -55,8 +41,6 @@ theorem m60SphereParameter_mfderiv_injective (z : LoopPlane) :
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60AreaDensity_pos_of_mfderiv_injective (g : RiemannianMetric n M)
     (F : LoopPlane → M) (z : LoopPlane)
     (hF : Function.Injective (mfderiv (𝓡 2) (𝓡 n) F z)) :
@@ -66,8 +50,6 @@ theorem m60AreaDensity_pos_of_mfderiv_injective (g : RiemannianMetric n M)
   have hne := (m60AreaGram_det_ne_zero_iff g F z).mpr hli
   have hpos := lt_of_le_of_ne (m60AreaGram_det_nonneg g F z) (Ne.symm hne)
   exact Real.sqrt_pos.mpr (lt_max_of_lt_right hpos)
-
-
 
 theorem m60SphereArea_pos_of_finite_branch_set [T2Space M] [SecondCountableTopology M]
     (g : RiemannianMetric n M) (f : UnitTwoSphere → M)
@@ -87,8 +69,6 @@ theorem m60SphereArea_pos_of_finite_branch_set [T2Space M] [SecondCountableTopol
     (m60AreaDensity_continuous g (hf.comp (m60SphereParameter_contMDiff.of_le (by simp))))
     (m60SphereAreaDensity_integrable g f hf)
     (m60AreaDensity_nonneg g (f ∘ m60SphereParameter)) hpos.ne'
-
-
 
 theorem m60BranchedMinimalSphere_area_pos [T2Space M] [SecondCountableTopology M]
     {g : RiemannianMetric n M} {f : UnitTwoSphere → M} (hf : M60BranchedMinimalSphere g f) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralRelativeChains
 import Mathlib.LinearAlgebra.Finsupp.LSum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

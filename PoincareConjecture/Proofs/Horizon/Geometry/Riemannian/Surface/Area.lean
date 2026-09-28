@@ -4,13 +4,6 @@ import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 import Mathlib.MeasureTheory.Constructions.Pi
 import Mathlib.MeasureTheory.Measure.Haar.InnerProductSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 noncomputable def planarVolumeDensity (g : RiemannianMetric 2 S)
     (f : ℝ × ℝ → S) (p : ℝ × ℝ) : ℝ :=
   let u := mfderiv 𝓘(ℝ, ℝ × ℝ) (𝓡 2) f p (1, 0)
@@ -32,8 +24,6 @@ noncomputable def planarVolumeDensity (g : RiemannianMetric 2 S)
 theorem planarVolumeDensity_nonneg (g : RiemannianMetric 2 S)
     (f : ℝ × ℝ → S) (p : ℝ × ℝ) : 0 ≤ g.planarVolumeDensity f p :=
   Real.sqrt_nonneg _
-
-
 
 theorem planarVolumeDensity_eq_abs_frameDet (g : RiemannianMetric 2 S)
     (f : ℝ × ℝ → S) (p : ℝ × ℝ) (e₁ e₂ : TangentSpace (𝓡 2) (f p))
@@ -86,7 +76,6 @@ private theorem pullbackVolumeDensity_planeEquiv
   rw [g.symm (f p) v u]
   simp only [pow_two]
 
-
 theorem continuousOn_planarVolumeDensity
     (g : RiemannianMetric 2 S) (f : OpenPartialHomeomorph (ℝ × ℝ) S)
     (hf : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 2) ∞ f f.source)
@@ -122,8 +111,6 @@ theorem continuousOn_planarVolumeDensity
   exact h.symm
 
 variable [MeasurableSpace S] [BorelSpace S] [T3Space S]
-
-
 
 theorem volumeMeasure_image_eq_lintegral_planar_gramDensity
     (g : RiemannianMetric 2 S) (f : OpenPartialHomeomorph (ℝ × ℝ) S)
@@ -166,7 +153,6 @@ theorem volumeMeasure_image_eq_lintegral_planar_gramDensity
         planeEquiv.toHomeomorph.measurableEmbedding
         (fun p => ENNReal.ofReal (g.planarVolumeDensity f p)) s using 1
 
-
 theorem map_restrict_volumeMeasure_planar_symm
     (g : RiemannianMetric 2 S) (f : OpenPartialHomeomorph (ℝ × ℝ) S)
     (hf : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 2) ∞ f f.source)
@@ -189,7 +175,6 @@ theorem map_restrict_volumeMeasure_planar_symm
     g.volumeMeasure_image_eq_lintegral_planar_gramDensity f hf hfi
       (hs.inter f.open_source.measurableSet) inter_subset_right,
     Measure.restrict_apply hs, withDensity_apply _ (hs.inter f.open_source.measurableSet)]
-
 
 theorem integral_image_eq_integral_planar_density
     (g : RiemannianMetric 2 S) (f : OpenPartialHomeomorph (ℝ × ℝ) S)
@@ -235,8 +220,6 @@ theorem integral_image_eq_integral_planar_density
   apply setIntegral_congr_fun hs
   intro p hp
   simp only [ENNReal.toReal_ofReal (g.planarVolumeDensity_nonneg f p), smul_eq_mul, mul_comm]
-
-
 
 theorem integral_target_eq_integral_planar_density
     (g : RiemannianMetric 2 S) (f : OpenPartialHomeomorph (ℝ × ℝ) S)

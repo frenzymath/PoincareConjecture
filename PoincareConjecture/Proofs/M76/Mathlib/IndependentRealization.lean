@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialEmbeddingSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -26,9 +17,6 @@ private theorem image_face_subset_range {A : AbstractSimplicialComplex ι}
   obtain ⟨s, _, rfl⟩ := ht
   simpa only [Finset.coe_image] using image_subset_range v s
 
-
-
-
 noncomputable def independentComplex (A : AbstractSimplicialComplex ι)
     (hv : LinearIndependent ℝ v) : SimplicialComplex ℝ E := by
   classical
@@ -40,8 +28,6 @@ noncomputable def independentComplex (A : AbstractSimplicialComplex ι)
     simpa only [Finset.coe_union] using
       union_subset (image_face_subset_range hs) (image_face_subset_range ht)
   exact ((hv.linearIndepOn_id.mono hsub).affineIndependent.convexHull_inter').symm.subset
-
-
 
 theorem independentComplex_faces (A : AbstractSimplicialComplex ι)
     (hv : LinearIndependent ℝ v) :
@@ -55,9 +41,6 @@ theorem independentComplex_faces (A : AbstractSimplicialComplex ι)
     exact ⟨s, hs, Finset.coe_image⟩
   · rintro ⟨s, hs, he⟩
     exact ⟨s, hs, Finset.coe_injective (Finset.coe_image.trans he.symm)⟩
-
-
-
 
 theorem isRadialEmbedding_of_linearIndependent (A : AbstractSimplicialComplex ι)
     (hv : LinearIndependent ℝ v) : A.IsRadialEmbedding v := by

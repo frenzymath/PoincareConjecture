@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.DisplacementAction
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem moving_endpoint_recovery
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

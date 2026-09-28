@@ -1,18 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.MollifiedForcingBounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.UniformCutoffEnergy
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter
 open Poincare.Analysis.Convolution

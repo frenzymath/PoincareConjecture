@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalProtectedBallProduct
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Push.ProductSide
 
-
-
-
-
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Metric Geometry Topology

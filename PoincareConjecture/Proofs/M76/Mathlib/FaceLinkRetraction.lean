@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkGraphCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   {K : SimplicialComplex ℝ E} {s : Finset E} {g : E → ℝ × E}
-
-
-
-
 
 theorem AffineOnFaces.graph_off_face_lineMap (hg : K.AffineOnFaces g)
     (hgv : ∀ v ∈ K.vertices, g v = if v ∈ s then 0 else (1, v))
@@ -75,11 +62,6 @@ theorem AffineOnFaces.graph_off_face_lineMap (hg : K.AffineOnFaces g)
   exact hr.1.ne' (congrArg Prod.fst he)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_continuous_faceLink_retraction
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) (s : Finset E) :

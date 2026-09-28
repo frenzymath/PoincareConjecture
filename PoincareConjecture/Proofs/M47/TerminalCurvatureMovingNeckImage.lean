@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialChartJets
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNeckErrorJets
 import PoincareConjecture.Proofs.M47.TerminalCurvatureDoubleImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ open M34
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
 theorem terminalCurvature_double_neck_derivative_budget
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : 2 * epsilon < 1 / 2) :
     Nat.floor (2 * epsilon)⁻¹ + 1 ≤ Nat.floor epsilon⁻¹ := by
@@ -38,8 +27,6 @@ theorem terminalCurvature_double_neck_derivative_budget
     linarith
   simpa only [Nat.floor_add_one (by positivity : 0 ≤ (2 * epsilon)⁻¹)] using
     Nat.floor_mono hgap
-
-
 
 theorem terminalCurvature_exists_moving_neck_image_tolerance
     {epsilon : ℝ} (hepsilon : 0 < epsilon) (hsmall : 2 * epsilon < 1 / 2)

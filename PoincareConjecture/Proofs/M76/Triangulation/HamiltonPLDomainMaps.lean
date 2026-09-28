@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w z
@@ -22,11 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
   {ι : Type w} {κ : Type z} {R : Set X} {T : Set Y}
-
-
-
-
-
 
 structure ChartwisePLOn (e : ι → OpenPartialHomeomorph X V3)
     (d : κ → OpenPartialHomeomorph Y V3) (f : C(R, T)) (U : Set R) : Prop where
@@ -44,14 +29,9 @@ structure ChartwisePLOn (e : ι → OpenPartialHomeomorph X V3)
       ∀ y : R, (y : X) ∈ (e i).source → e i y ∈ K.space →
         (f y : Y) ∈ (d j).source ∧ F (e i y) = d j (f y)
 
-
-
 def ChartwisePLMap (e : ι → OpenPartialHomeomorph X V3)
     (d : κ → OpenPartialHomeomorph Y V3) (f : C(R, T)) : Prop :=
   ChartwisePLOn e d f univ
-
-
-
 
 def ChartwisePLHomeomorph (e : ι → OpenPartialHomeomorph X V3)
     (d : κ → OpenPartialHomeomorph Y V3) (h : R ≃ₜ T) : Prop :=

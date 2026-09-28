@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialJacobian
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularStableEndpoint
 import PoincareConjecture.Proofs.M14.Sec6_3_StrictPrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exponentialWeightedJacobian_differentiableAt_and_deriv_nonpos
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -56,9 +44,6 @@ theorem exponentialWeightedJacobian_differentiableAt_and_deriv_nonpos
   rw [hden] at hL
   exact ⟨(squareWeightedJacobian_hasDerivAt hpos ha hJ).differentiableAt,
     squareWeightedJacobian_deriv_nonpos hpos ha hJ (exponentialJacobian_nonneg E v Z s) hL⟩
-
-
-
 
 theorem exponentialWeightedJacobian_antitoneOn
     (hCoordinates : M12MetricPredecessors.{0} n)

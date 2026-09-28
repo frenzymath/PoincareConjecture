@@ -1,3 +1,1 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
-
-

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M13Rescaling
 import PoincareConjecture.Definitions.M13OrdinaryRescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -17,7 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure GeneralizedParabolicRescalingTheory (n : ℕ) : Prop where
   rescale : ∀ (X : Type u) [TopologicalSpace X]

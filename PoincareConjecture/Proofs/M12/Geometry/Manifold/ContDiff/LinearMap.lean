@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

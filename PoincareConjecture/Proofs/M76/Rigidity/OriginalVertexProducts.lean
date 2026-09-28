@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalLowerProducts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
 open Classical in
-
-
 
 structure OriginalVertexProducts (T : OriginalProperDiskTriangulation e R j) where
   map : (T.marked 2).vertices → (T.index → ℝ × V3) × ℝ → (T.index → ℝ × V3)

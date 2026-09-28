@@ -1,14 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Components.PairedComponents
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 open Classical in
-
 
 structure SourceDoubleComponents
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

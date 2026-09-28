@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.SectionalFormula
 import PoincareConjecture.Proofs.M34.Standard.EuclideanCurvature
 import Mathlib.Topology.Algebra.Module.PerfectSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capSlope_deriv_round {a r : ℝ} (ha : 0 ≤ a) (hr : r < a) :
     deriv (capSlope a) r = -capProfile a r / 4 := by
@@ -29,16 +18,12 @@ theorem capSlope_deriv_round {a r : ℝ} (ha : 0 ≤ a) (hr : r < a) :
   rw [h.deriv, capProfile_eq_round ha hr.le]
   ring
 
-
-
 theorem capSlope_sq_round {a r : ℝ} (ha : 0 ≤ a) (hr : r ≤ a) :
     capSlope a r ^ 2 = 1 - capProfile a r ^ 2 / 4 := by
   rw [capSlope_eq_cos hr, capProfile_eq_round ha hr]
   nlinarith only [Real.sin_sq_add_cos_sq (r / 2)]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem capCurvatureTensor_round {a : ℝ} (ha : 0 < a) (hapi : a ≤ Real.pi / 2)
     (D : LeviCivitaData (capRiemannianMetric a ha hapi))

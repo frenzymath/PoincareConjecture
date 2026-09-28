@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Endpoints
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexCaps
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set Filter
@@ -23,8 +13,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_vertex_caps_matching_edges
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

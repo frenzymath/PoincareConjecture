@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2RatioBound
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Cor19_13_DegreePreservation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem c2_rampPreservation
     {n : ℕ} {M : Type u} [TopologicalSpace M]

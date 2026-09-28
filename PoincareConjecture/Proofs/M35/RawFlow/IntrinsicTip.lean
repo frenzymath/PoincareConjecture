@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicWarping
 import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -27,7 +17,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicWarpingQuotient (s : ℝ) : ℝ :=
   axisDivision (intrinsicWarpingRadius g hrotation hcomplete) s
@@ -53,7 +42,6 @@ theorem mul_intrinsicWarpingQuotient (s : ℝ) :
     mul_axisDivision (intrinsicWarpingRadius_contDiff g hrotation hcomplete),
     intrinsicWarpingRadius_zero, sub_zero]
 
-
 theorem intrinsicWarpingQuotient_pos (s : ℝ) :
     0 < intrinsicWarpingQuotient g hrotation hcomplete s := by
   have hp (r : ℝ) (hr : 0 < r) :
@@ -67,7 +55,6 @@ theorem intrinsicWarpingQuotient_pos (s : ℝ) :
   · rw [hs, intrinsicWarpingQuotient_zero]
     norm_num
   · exact hp s hs
-
 
 noncomputable def intrinsicLogWarping (s : ℝ) : ℝ :=
   Real.log (intrinsicWarpingQuotient g hrotation hcomplete s)
@@ -85,7 +72,6 @@ theorem intrinsicLogWarping_even :
 theorem intrinsicLogWarping_zero : intrinsicLogWarping g hrotation hcomplete 0 = 0 := by
   simp only [intrinsicLogWarping, intrinsicWarpingQuotient_zero, Real.log_one]
 
-
 theorem intrinsicWarpingRadius_eq_exp (s : ℝ) :
     intrinsicWarpingRadius g hrotation hcomplete s =
       s * Real.exp (intrinsicLogWarping g hrotation hcomplete s) := by
@@ -93,14 +79,11 @@ theorem intrinsicWarpingRadius_eq_exp (s : ℝ) :
     Real.exp_log (intrinsicWarpingQuotient_pos g hrotation hcomplete s)]
   exact (mul_intrinsicWarpingQuotient g hrotation hcomplete s).symm
 
-
-
 theorem intrinsicLogWarping_contDiff_norm {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E] :
     ContDiff ℝ ∞ (fun x : E => intrinsicLogWarping g hrotation hcomplete ‖x‖) :=
   contDiff_even_norm (intrinsicLogWarping_contDiff g hrotation hcomplete)
     (intrinsicLogWarping_even g hrotation hcomplete)
-
 
 theorem intrinsicLogWarping_gradient_coefficient_contDiff_norm {E : Type*}
     [NormedAddCommGroup E] [InnerProductSpace ℝ E] :

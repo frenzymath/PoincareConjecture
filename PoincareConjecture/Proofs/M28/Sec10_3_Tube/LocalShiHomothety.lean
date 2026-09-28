@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M13.TangentIsometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorNaturality
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,11 +17,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
-
-
-
-
 
 theorem tensorNorm_eq_of_homothety
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

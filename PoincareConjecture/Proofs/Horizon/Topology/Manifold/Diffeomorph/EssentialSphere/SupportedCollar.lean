@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCollar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Puncture.Extension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ open PoincareConjecture
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_ambient_extension_of_outward_sphere_collar
     (c : OpenPartialHomeomorph RoundCylinderSpace E3)

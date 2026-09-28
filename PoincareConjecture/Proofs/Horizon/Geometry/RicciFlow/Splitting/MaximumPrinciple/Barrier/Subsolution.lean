@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.MaximumPrinciple.MetricBump
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 open Set
 open scoped ContDiff Manifold Topology InnerProductSpace
@@ -19,9 +10,6 @@ open Barrier
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem chartBump_subsolution {g : ℝ → RiemannianMetric n M}
     (conn : ∀ t, LeviCivitaData (g t)) (α : M)

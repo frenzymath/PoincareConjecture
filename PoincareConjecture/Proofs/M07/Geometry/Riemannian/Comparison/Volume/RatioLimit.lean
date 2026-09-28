@@ -1,21 +1,11 @@
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ENNReal NNReal Topology
 
 namespace Poincare.VolumeComparison
-
-
 
 theorem tendsto_div_one_of_eventually_bounds
     {X : Type*} {l : Filter X} {a b : X → ℝ≥0∞} (m : ℕ)

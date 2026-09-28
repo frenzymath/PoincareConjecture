@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SpatialInduction
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.CoordinateState
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
 
-
-
 noncomputable def m65IntrinsicChartField {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (p : M) : ℕ → ℝ → ℝ → EuclideanSpace ℝ (Fin n) × ℝ
@@ -33,8 +23,6 @@ noncomputable def m65IntrinsicChartField {circumference : ℝ}
   | j + 1, t, x => (m65ProjectedCoordinateJet P c p j t x,
       (P.flow.metric t).inner (c x t) (m65IntrinsicTangentJet P.flow c j t x)
         (P.charts.circleUnit (c x t)))
-
-
 
 noncomputable def m65IntrinsicSpatialOperator (F : RicciFlow n M (Icc a b)) (p : M) :
     (j : ℕ) → (ℝ × (Fin (j + 2) → EuclideanSpace ℝ (Fin n) × ℝ)) →
@@ -49,22 +37,15 @@ noncomputable def m65IntrinsicSpatialOperator (F : RicciFlow n M (Icc a b)) (p :
         (chartAt (EuclideanSpace ℝ (Fin n)) p) q.1 (z.1 • S.1) Y.1,
         z.1 * H.2)
 
-
-
-
 noncomputable def m65IntrinsicSpeedCoefficient (F : RicciFlow n M (Icc a b)) (p : M)
     (z : Fin 3 → EuclideanSpace ℝ (Fin n) × ℝ) : ℝ :=
   -(m65FlowChartRicci F p ((z 0).2, (z 0).1) (z 1).1 (z 1).1 +
     m65FlowChartMetric F p ((z 0).2, (z 0).1) (z 2).1 (z 2).1 + (z 2).2 ^ 2)
 
-
-
 def m65IntrinsicSpatialDomain (p : M) (j : ℕ) :
     Set (ℝ × (Fin (j + 2) → EuclideanSpace ℝ (Fin n) × ℝ)) :=
   {z | (z.2 0).2 ∈ Ioo a b ∧
     (z.2 0).1 ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).target}
-
-
 
 def m65IntrinsicSpeedDomain (p : M) : Set (Fin 3 → EuclideanSpace ℝ (Fin n) × ℝ) :=
   {z | (z 0).2 ∈ Ioo a b ∧ (z 0).1 ∈ (chartAt (EuclideanSpace ℝ (Fin n)) p).target}
@@ -82,8 +63,6 @@ theorem m65IntrinsicSpeedDomain_isOpen (p : M) :
     IsOpen (m65IntrinsicSpeedDomain (n := n) (a := a) (b := b) p) := by
   exact (isOpen_Ioo.preimage (by fun_prop)).inter
     ((chartAt (EuclideanSpace ℝ (Fin n)) p).open_target.preimage (by fun_prop))
-
-
 
 theorem m65IntrinsicSpatialOperator_contDiffOn [T2Space M] (p : M) (j : ℕ) :
     ContDiffOn ℝ ∞ (m65IntrinsicSpatialOperator F p j)
@@ -110,8 +89,6 @@ theorem m65IntrinsicSpatialOperator_contDiffOn [T2Space M] (p : M) (j : ℕ) :
     dsimp only
     fun_prop
 
-
-
 theorem m65IntrinsicSpeedCoefficient_contDiffOn (p : M) :
     ContDiffOn ℝ ∞ (m65IntrinsicSpeedCoefficient F p)
       (m65IntrinsicSpeedDomain (a := a) (b := b) p) := by
@@ -127,8 +104,6 @@ theorem m65IntrinsicSpeedCoefficient_contDiffOn (p : M) :
   apply ContDiffAt.contDiffWithinAt
   unfold m65IntrinsicSpeedCoefficient
   fun_prop
-
-
 
 theorem m65IntrinsicChartField_contDiffAt [T2Space M] {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -159,8 +134,6 @@ theorem m65IntrinsicChartField_contDiffAt [T2Space M] {circumference : ℝ}
       (contDiff_id.prodMk contDiff_const) (fun _ => ⟨mem_univ _, ht⟩)
     exact (hhorizontal.contDiffAt (hU.mem_nhds hx)).prodMk hvertical.contDiffAt
 
-
-
 theorem m65ActualVerticalJet_hasDerivAt [T2Space M] {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) {t : ℝ} (ht : t ∈ Ioo a b) (j : ℕ) (x : ℝ) :
@@ -188,8 +161,6 @@ theorem m65ActualVerticalJet_hasDerivAt [T2Space M] {circumference : ℝ}
   rw [hparallel, m65IntrinsicTangentJet_pullback c hc (Ioo_subset_Icc_self ht)]
   simp only [map_zero, add_zero, map_smul, smul_apply, smul_eq_mul]
 
-
-
 theorem m65IntrinsicChartField_hasDerivAt [T2Space M] {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
     (hc : M62ShrinkingCurve P.flow c) (p : M) (j : ℕ) {t x : ℝ}
@@ -205,8 +176,6 @@ theorem m65IntrinsicChartField_hasDerivAt [T2Space M] {circumference : ℝ}
   | succ j =>
     exact (m65ProjectedCoordinateJet_hasDerivAt P c hc p ht hx j).prodMk
       (m65ActualVerticalJet_hasDerivAt P c hc ht j x)
-
-
 
 theorem m65IntrinsicSpeedCoefficient_eq {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

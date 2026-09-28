@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M58.Mathlib.LocalContractionFinite
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.Proofs.M58
-
-
-
 
 theorem exists_local_contraction
     {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.DiagonalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.Source
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -37,8 +27,6 @@ local instance interiorCarrierConnected (D : FlowCarrier 3) : ConnectedSpace D.c
 
 variable (C : ℕ → FlowCarrier.{0} 3)
   (F : ∀ k, RicciFlow 3 (C k).carrier (Iic 0)) (p : ∀ k, (C k).carrier)
-
-
 
 theorem exists_complete_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -114,8 +102,6 @@ theorem exists_complete_interior_geometric_limit
     (fun j => (hparams j).1) (fun j => by linarith [(hparams j).1, (hparams j).2.1])
     (fun j => (hparams j).2.2.1) hraw
   exact ⟨G.ofSubsequence hσ, hG⟩
-
-
 
 theorem exists_complete_bounded_interior_geometric_limit
     (P : M23NormalizedKappaCompactnessPredecessors)

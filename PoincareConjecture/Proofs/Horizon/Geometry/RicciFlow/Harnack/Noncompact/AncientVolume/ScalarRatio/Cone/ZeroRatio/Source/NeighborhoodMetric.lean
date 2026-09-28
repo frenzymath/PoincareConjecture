@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Pullback
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -82,9 +74,6 @@ namespace PoincareConjecture.ChartDistance
 variable {n : ℕ} {ι : Type*}
   (U : ι → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))
   [∀ i, Nonempty (Piece U i)] (O : OverlapSystem (fun i => Piece U i))
-
-
-
 
 theorem exists_neighborhood_metrics_of_local_source_jets :
     letI := quotientChartedSpace U hU O
@@ -193,10 +182,6 @@ variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p) {n : ℕ}
   (hf : Topology.IsOpenEmbedding f)
   (hdist : ∀ i (x y : Piece U i), dist (f (O.include i x)) (f (O.include i y)) =
     ((g i).edist x y).toReal)
-
-
-
-
 
 theorem exists_neighborhood_metrics_of_positive_cone_source_jets :
     letI := quotientChartedSpace U hU O

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.ActionLowerBound
 import PoincareConjecture.Proofs.M10.InitialActionLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
 
-
 theorem reducedLength_range_bddBelow
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)
     (hcurvature : CompleteBoundedCurvatureOn F (Icc (T - τmax) T))
@@ -33,7 +24,6 @@ theorem reducedLength_range_bddBelow
   refine ⟨-C * τ / 3, ?_⟩
   rintro _ ⟨q, rfl⟩
   exact hC τ hτ hmax q
-
 
 theorem sInf_reducedLength_tendsto_zero
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

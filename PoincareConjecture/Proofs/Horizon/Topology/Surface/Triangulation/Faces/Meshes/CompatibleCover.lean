@@ -1,15 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.RefinementIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Assembly
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.RefinementData
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -266,8 +257,6 @@ private theorem compatibleCover_assemble
     · refine Or.inr ⟨F i (b i w), ?_, hw⟩
       exact (Set.Finite.mem_toFinset _).mpr ⟨(i, w), rfl⟩
 
-
-
 inductive CoordinateTriangleBoundaryIntersection
     (F G : OpenPartialHomeomorph Plane M) (b c : AffineBasis (Fin 3) ℝ Plane) : Prop
   | disjoint
@@ -320,8 +309,6 @@ theorem subset_frontiers (h : CoordinateTriangleBoundaryIntersection F G b c) :
         exact mem_image_of_mem _ ⟨(le_min hs.1 ht.1).trans hv.1, hv.2.trans (max_le hs.2 ht.2)⟩
       intro p hp
       exact ⟨hedge F b i ha hd (hF ▸ hp), hedge G c j ha' hd' (hG ▸ hp)⟩
-
-
 
 theorem exists_marks (h : CoordinateTriangleBoundaryIntersection F G b c) :
     ∃ P : Finset M,
@@ -403,9 +390,6 @@ private theorem compatibleCover_subdivision_intersections
     rintro q ⟨z, hz, rfl⟩
     rw [mem_singleton_iff.mp (hv hz), ← hj]
     exact mem_singleton _
-
-
-
 
 theorem nonempty_compatibleCoordinateTriangleRefinement
     {I : Type v} [Finite I]
@@ -491,8 +475,6 @@ theorem nonempty_compatibleCoordinateTriangleRefinement
   obtain ⟨t, hqt⟩ := mem_iUnion.mp hqi
   exact mem_iUnion.mpr ⟨⟨i, t⟩, hqt⟩
 
-
-
 theorem CompatibleCoordinateTriangleRefinement.nonempty_triangulationWithCoordinates
     {I : Type v} [Finite I]
     {F : I → OpenPartialHomeomorph Plane M} {b : I → AffineBasis (Fin 3) ℝ Plane}
@@ -503,8 +485,6 @@ theorem CompatibleCoordinateTriangleRefinement.nonempty_triangulationWithCoordin
   exact compatibleCover_assemble R.face R.coordinates R.basis
     (fun a => hF a.1) (fun a => hFinv a.1) R.source_subset R.carrier_eq
     R.boundary_map R.boundary_injective R.intersections R.intersection_frontier R.cover
-
-
 
 theorem nonempty_finiteSmoothTriangulationWithCoordinates_of_compatible_coordinate_cover
     {I : Type v} [Finite I]
@@ -520,8 +500,6 @@ theorem nonempty_finiteSmoothTriangulationWithCoordinates_of_compatible_coordina
   obtain ⟨R⟩ := nonempty_compatibleCoordinateTriangleRefinement
     F b hF hFinv hsource chart hchart hparents hcover
   exact R.nonempty_triangulationWithCoordinates hF hFinv
-
-
 
 theorem nonempty_finiteSmoothTriangulation_of_compatible_coordinate_cover
     {I : Type v} [Finite I]

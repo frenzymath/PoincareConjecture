@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -13,7 +11,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem scalar_le_core_radius_inv_sq (N : CapCertificate g)
     {y : M} (hy : y ∈ N.core) :
@@ -31,8 +28,6 @@ theorem scalar_le_core_radius_inv_sq (N : CapCertificate g)
       ENNReal.ofReal_pos.mpr (N.core_radius_pos y hy)
   rw [← N.core_radius_eq y hy]
   exact le_csSup hbdd ⟨⟨y, hyball⟩, rfl⟩
-
-
 
 theorem core_radius_lt_of_scalar_lower (N : CapCertificate g)
     {C m L : ℝ} (hC : N.cap_constant ≤ C) (hm : 0 < m) (hL : 0 < L)

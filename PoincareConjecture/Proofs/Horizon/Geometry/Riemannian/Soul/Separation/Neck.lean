@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Rad
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Ambient
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.EscapeCarrier
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,8 +18,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem exists_neck_regions_of_pointSoulData
     (P : PointSoulData g) (N : EpsilonNeck g) :
@@ -72,8 +59,6 @@ theorem exists_neck_regions_of_pointSoulData
     exact ⟨P.radial.isConnected_distanceAnnulus ha hab,
       P.radial.isCompact_distanceAnnulus ha⟩
 
-
-
 theorem exists_neck_regions_of_strictlyPositiveSectionalCurvature
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g)
@@ -101,10 +86,6 @@ theorem exists_neck_regions_of_strictlyPositiveSectionalCurvature
       hside, hspheres, hannuli⟩ := exists_neck_regions_of_pointSoulData P N
   exact ⟨P, A, B, hA, hB, hAc, hBc, hdisj, hcover, hfA, hfB, hneg, hpos',
     hside, hspheres, hannuli⟩
-
-
-
-
 
 theorem exists_escaping_neck_regions_of_no_scale_lower_bound
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

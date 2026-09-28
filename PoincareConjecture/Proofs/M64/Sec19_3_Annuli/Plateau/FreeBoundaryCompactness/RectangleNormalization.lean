@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import Mathlib.MeasureTheory.Integral.Average
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +13,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 local notation "b" => fun i : Fin 2 => EuclideanSpace.single i (1 : ℝ)
-
-
-
 
 theorem rectangle_exists_energy_controlled_normalization
     (F : LoopPlane → ℝ) (hF : ContDiff ℝ 1 F)
@@ -111,9 +100,6 @@ theorem rectangle_exists_energy_controlled_normalization
   exact houter.trans (add_le_add le_rfl
     (mul_le_mul_of_nonneg_left hanchor (by positivity : 0 ≤ 8 * height ^ 2)))
 
-
-
-
 theorem annulus_exists_energy_controlled_normalization
     (F : LoopPlane → ℝ) (hF : ContDiff ℝ 1 F) :
     ∃ c : ℝ,
@@ -134,9 +120,6 @@ theorem annulus_exists_energy_controlled_normalization
     m64AnnulusInteriorIntegral_eq_iterated_integrable (fun p => (fderiv ℝ F p (b 1)) ^ 2)
       (hI _ (((hF.continuous_fderiv (by norm_num)).clm_apply continuous_const).pow 2))]
   simpa only [one_pow, mul_one] using hc
-
-
-
 
 theorem translated_rectangle_exists_energy_controlled_normalization
     (F : LoopPlane → ℝ) (hF : ContDiff ℝ 1 F)

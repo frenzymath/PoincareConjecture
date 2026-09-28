@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarNormalizedJacobian
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +11,6 @@ open scoped Topology ENNReal
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Cover" => ℝ × ℝ
-
-
-
-
 
 theorem scalar_area_overlap_of_collision {f : Cover → Cover} {U : Set Cover}
     (hU : IsOpen U) (hd : ∀ z ∈ U, DifferentiableAt ℝ f z)
@@ -88,9 +72,6 @@ theorem scalar_area_overlap_of_collision {f : Cover → Cover} {U : Set Cover}
         ∫⁻ z in R, ENNReal.ofReal |(fderiv ℝ f z).det| := add_le_add hareaK hareaR
     _ = ∫⁻ z in U, ENNReal.ofReal |(fderiv ℝ f z).det| := by
       rw [← lintegral_union hR.measurableSet hdisjoint, hpartition]
-
-
-
 
 theorem scalar_injOn_of_unit_jacobian_and_image_area {f : Cover → Cover} {U : Set Cover}
     (hU : IsOpen U) (hd : ∀ z ∈ U, DifferentiableAt ℝ f z)

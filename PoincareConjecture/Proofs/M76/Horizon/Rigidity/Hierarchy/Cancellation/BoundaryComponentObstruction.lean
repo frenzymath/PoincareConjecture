@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.ComponentObstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

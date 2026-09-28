@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.LiftedFamilies.PathComparison
 import PoincareConjecture.Proofs.M59.Mathlib.LoopComparisonTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -23,9 +12,6 @@ open PoincareConjecture PoincareConjecture.Proofs.M02 PoincareConjecture.Proofs.
 variable {E X S : Type*} [TopologicalSpace E] [TopologicalSpace X]
   [TopologicalSpace S] [T2Space S] [LocallyCompactSpace S]
   [SimplyConnectedSpace E] {p : E → X}
-
-
-
 
 theorem homotopic_circle_families_of_deck_transport
     (hp : IsCoveringMap p) (q : CubeBoundaryQuotient (Fin 1) S) (c : E)
@@ -61,10 +47,6 @@ theorem homotopic_circle_families_of_deck_transport
   have h := mapGenLoop_homotopic (postcomposeMap S ⟨p, hp.continuous⟩)
     (postcomposeMap_const S ⟨p, hp.continuous⟩ hc') hDB
   rwa [hD, hB] at h
-
-
-
-
 
 theorem homotopic_circle_families_of_deck_piThree
     (hp : IsCoveringMap p) (q : CubeBoundaryQuotient (Fin 1) S) (c : E)

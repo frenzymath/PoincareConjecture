@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MetricExtensio
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.PrecompactExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +12,6 @@ open scoped Topology Manifold ContDiff Bundle ENNReal
 namespace PoincareConjecture
 
 open RiemannianMetric
-
-
-
 
 theorem m64Intrinsic_euclidean_edist_le_of_uniform_lower
     (G : RiemannianMetric 2 AnnulusCoordinates) {c : ℝ} (hc : 0 < c)
@@ -57,8 +41,6 @@ theorem m64Intrinsic_euclidean_edist_le_of_uniform_lower
     dsimp only [r]
     linarith
 
-
-
 theorem m64Intrinsic_isCompact_closure_ball_of_uniform_lower
     (G : RiemannianMetric 2 AnnulusCoordinates) {c : ℝ} (hc : 0 < c)
     (hlower : ∀ p v : AnnulusCoordinates, c * ‖v‖ ≤ G.tangentNorm p v)
@@ -77,9 +59,6 @@ theorem m64Intrinsic_isCompact_closure_ball_of_uniform_lower
     exact (ENNReal.ofReal_le_ofReal_iff (mul_pos (inv_pos.mpr hc) hR).le).mp hd
   exact (isCompact_closedBall x (c⁻¹ * R)).of_isClosed_subset isClosed_closure
     (closure_minimal hsub Metric.isClosed_closedBall)
-
-
-
 
 theorem m64Intrinsic_exists_extension_with_geodesic_initial_data (N : IntrinsicAnnulus) :
     ∃ G : RiemannianMetric 2 AnnulusCoordinates,

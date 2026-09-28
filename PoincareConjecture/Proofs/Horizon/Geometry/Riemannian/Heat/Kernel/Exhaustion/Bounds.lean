@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.DomainHarnack
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,7 +12,6 @@ universe u
 namespace PoincareConjecture.LeviCivitaData
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_dirichletHeatKernel_bound_on_domains_containing_ball
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiCoordinateConnection
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -154,4 +147,3 @@ theorem shiChartTransition_secondJet [T2Space M] (D : LeviCivitaData g)
   exact hconn.symm.trans hRight.symm
 
 end PoincareConjecture.M04
-

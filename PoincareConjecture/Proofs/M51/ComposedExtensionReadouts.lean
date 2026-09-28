@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.StageSequence
 import PoincareConjecture.Proofs.M48.ExtensionMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,27 +15,22 @@ variable {F G : SurgeryFlowData.{u}}
 
 include D hD
 
-
 theorem standardInitialTo : G.standard_initial = F.standard_initial := by
   subst G
   exact D.standard_initial_eq
-
 
 theorem localConstantsTo : G.local_constants = F.local_constants := by
   subst G
   exact D.local_constants_eq
 
-
 theorem parametersTo : G.parameters = F.parameters := by
   subst G
   exact D.parameters_eq
-
 
 theorem oldSurgeryTimeTo (t : ℝ) (ht : t ∈ F.time_domain) :
     t ∈ G.surgery_times ↔ t ∈ F.surgery_times := by
   subst G
   exact D.old_surgery_times t ht
-
 
 theorem identifyTo_metric_pullback
     (t : ℝ) (ht : t ∈ F.time_domain) (x : (F.slice t).carrier)
@@ -56,18 +42,15 @@ theorem identifyTo_metric_pullback
   subst G
   exact D.metric_pullback t ht x v w
 
-
 theorem identifyTo_metric_homothety (t : ℝ) (ht : t ∈ F.time_domain) :
     MetricHomothety (F.metric t) (G.metric t) (identifyTo D hD t ht) 1 := by
   subst G
   exact D.metric_homothety t ht
 
-
 theorem identifyTo_metric_homothety_symm (t : ℝ) (ht : t ∈ F.time_domain) :
     MetricHomothety (G.metric t) (F.metric t) (identifyTo D hD t ht).symm 1 := by
   subst G
   exact D.metric_homothety_symm t ht
-
 
 theorem ordinaryCompatibilityTo
     (a b : ℝ) (hab : a < b)
@@ -83,7 +66,6 @@ theorem ordinaryCompatibilityTo
   subst G
   exact D.ordinary_compatibility a b hab hJ habs hJ' habs' s t x
 
-
 theorem oldEventReferenceTo
     (T : ℝ) (hT : T ∈ F.surgery_times)
     [Nonempty (F.slice T).carrier] [Nonempty (G.slice T).carrier]
@@ -92,7 +74,6 @@ theorem oldEventReferenceTo
   subst G
   exact D.old_event_reference T hT hT'
 
-
 theorem oldRetainedPostTo
     (T : ℝ) (hT : T ∈ F.surgery_times) (hT' : T ∈ G.surgery_times)
     [Nonempty (F.slice T).carrier] [Nonempty (G.slice T).carrier] :
@@ -100,7 +81,6 @@ theorem oldRetainedPostTo
       (F.event T hT).retained_post = (G.event T hT').retained_post := by
   subst G
   exact D.old_retained_post T hT hT'
-
 
 theorem oldRetainedPreTo
     (T : ℝ) (hT : T ∈ F.surgery_times) (hT' : T ∈ G.surgery_times)
@@ -113,7 +93,6 @@ theorem oldRetainedPreTo
         (F.event T hT).retained_pre = (G.event T hT').retained_pre := by
   subst G
   exact D.old_retained_pre T hT hT' t ht ht'
-
 
 theorem oldRetentionTo
     (T : ℝ) (hT : T ∈ F.surgery_times) (hT' : T ∈ G.surgery_times)
@@ -130,7 +109,6 @@ theorem oldRetentionTo
             (identifyTo D hD t.1 ht ((F.event T hT).pre_identify t x))) := by
   subst G
   exact D.old_retention T hT hT' t ht ht' x hx
-
 
 theorem oldVanishingReferenceTo
     (T : ℝ) (hT : T ∈ F.surgery_times)

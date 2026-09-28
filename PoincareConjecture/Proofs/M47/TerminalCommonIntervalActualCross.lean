@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCrossTail
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalM30Tangent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carri
   G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
 
 theorem terminalCommonInterval_actual_cross_control
     {M : Type v} [TopologicalSpace M] [T3Space M]

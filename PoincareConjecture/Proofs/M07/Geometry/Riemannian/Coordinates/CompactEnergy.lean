@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +10,6 @@ namespace PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
 
 theorem exists_uniform_bilinear_lower_bound
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {K : Set E} (hK : IsCompact K)
@@ -43,8 +35,6 @@ theorem exists_uniform_bilinear_lower_bound
     _ = B x v v := by
       simp only [map_smul, smul_apply, smul_eq_mul]
       field_simp [norm_ne_zero_iff.mpr hv]
-
-
 
 theorem isCompact_bilinear_energy_sublevel
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {K : Set E} (hK : IsCompact K)
@@ -80,8 +70,6 @@ end PoincareConjecture
 namespace PoincareConjecture.RiemannianMetric
 
 open scoped Manifold ContDiff
-
-
 
 theorem isCompact_chart_energy_sublevel
     {n : ℕ} {M : Type*} [TopologicalSpace M]

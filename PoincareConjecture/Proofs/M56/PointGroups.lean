@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M56.ComponentModels
 import PoincareConjecture.Proofs.M54.ConnectedSum.Coordinates
 import PoincareConjecture.Proofs.M55.Mathlib.SimplyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +11,8 @@ universe u
 
 namespace PoincareConjecture
 
-
 def M56PointGroups (A : GeneralizedSliceCarrier.{u}) : Prop :=
   ∀ x : A.carrier, Subsingleton (FundamentalGroup A.carrier x)
-
-
 
 theorem m56PointGroups_transport {A B : GeneralizedSliceCarrier.{u}}
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞)
@@ -33,8 +22,6 @@ theorem m56PointGroups_transport {A B : GeneralizedSliceCarrier.{u}}
   have h := (e.toHomeomorph.fundamentalGroupMulEquiv (e.symm y)).symm.toEquiv.subsingleton
   change Subsingleton (FundamentalGroup B.carrier (e (e.symm y))) at h
   simpa only [e.apply_symm_apply] using h
-
-
 
 theorem m56SelectedComponent_pointGroups {A : GeneralizedSliceCarrier.{u}}
     (C : SurgerySelectedComponent A) (hA : M56PointGroups A) :
@@ -50,8 +37,6 @@ theorem m56SelectedComponent_pointGroups {A : GeneralizedSliceCarrier.{u}}
   exact ((e.fundamentalGroupMulEquiv x).trans
     (hclopen.fundamentalGroupMulEquiv (e x))).toEquiv.subsingleton
 
-
-
 theorem m56SelectedComponent_simplyConnected {A : GeneralizedSliceCarrier.{u}}
     (C : SurgerySelectedComponent A) (hA : M56PointGroups A) :
     SimplyConnectedSpace C.carrier.carrier := by
@@ -61,8 +46,6 @@ theorem m56SelectedComponent_simplyConnected {A : GeneralizedSliceCarrier.{u}}
   let : PathConnectedSpace C.carrier.carrier := PathConnectedSpace.of_locallyPathConnectedSpace
   exact simplyConnected_of_pathConnected_of_fundamentalGroup_subsingleton _
     (m56SelectedComponent_pointGroups C hA)
-
-
 
 theorem m56PointGroups_of_survivors {A B : GeneralizedSliceCarrier.{u}}
     (C : SurgeryTopologyConclusion A B)

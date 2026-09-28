@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.An
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.RadialAlignment
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.TerminalLift
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -72,8 +70,6 @@ theorem hasJointPLAnnularIsotopy_of_radial_straightening
     intro x
     exact (H 1).symm_apply_apply (G x)
   exact heq ▸ h
-
-
 
 theorem HasJointPLRadialStraightening.of_isotopy_image
     (gamma : C(I, Ann)) (G : Ann ≃ₜ Ann)

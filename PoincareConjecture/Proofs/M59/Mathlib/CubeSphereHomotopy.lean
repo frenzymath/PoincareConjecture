@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CubeTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -16,8 +7,6 @@ open scoped Topology unitInterval
 open Topology
 
 namespace GenLoop.HomotopyAlong
-
-
 
 noncomputable def sphereHomotopyLift
     {N S X : Type*} [Finite N] [TopologicalSpace S] [T2Space S] [TopologicalSpace X]
@@ -54,8 +43,6 @@ noncomputable def sphereHomotopyLift
     obtain ⟨v, rfl⟩ := hq s
     exact (hF 1 v).trans ((H.toHomotopy.apply_one v).trans (hb v))
 
-
-
 noncomputable def sphereHomotopy
     {N S X : Type*} [Finite N] [TopologicalSpace S] [T2Space S] [TopologicalSpace X]
     (q : C((N → I), S)) (hq : Function.Surjective q)
@@ -65,8 +52,6 @@ noncomputable def sphereHomotopy
     (H : HomotopyAlong p a b) (f g : C(S, X))
     (ha : ∀ v, a v = f (q v)) (hb : ∀ v, b v = g (q v)) : f.Homotopy g :=
   (H.sphereHomotopyLift q hq hfiber f g ha hb).val
-
-
 
 theorem sphereHomotopy_apply
     {N S X : Type*} [Finite N] [TopologicalSpace S] [T2Space S] [TopologicalSpace X]
@@ -78,8 +63,6 @@ theorem sphereHomotopy_apply
     (ha : ∀ v, a v = f (q v)) (hb : ∀ v, b v = g (q v)) (t : I) (v : N → I) :
     H.sphereHomotopy q hq hfiber f g ha hb (t, q v) = H.toHomotopy (t, v) :=
   (H.sphereHomotopyLift q hq hfiber f g ha hb).property t v
-
-
 
 theorem descend_sphere
     {N S X : Type*} [Finite N] [TopologicalSpace S] [T2Space S] [TopologicalSpace X]

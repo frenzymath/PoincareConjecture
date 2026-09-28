@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCompactnessFeedData
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ noncomputable local instance birthBufferCoefficientNorm :
 
 noncomputable local instance birthBufferCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
 
 structure CylinderBirthBuffer {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}}
     {a : ℝ} {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
@@ -55,9 +44,6 @@ structure CylinderBirthBuffer {g0 : StandardInitialMetric} {F : SurgeryFlowData.
   buffer : ∀ x ∈ g0.metric.ball 0 (R0 - 2),
     IsCompact (closure ((D.ordinary.flow.metric 0).ball (chart x) 1)) ∧
       closure ((D.ordinary.flow.metric 0).ball (chart x) 1) ⊆ chart.target
-
-
-
 
 theorem exists_cylinder_birth_buffer (g0 : StandardInitialMetric)
     {R0 : ℝ} (hR0 : 2 < R0) (m : ℕ) :

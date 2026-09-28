@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalCurvatureNorms
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceDensity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem canonicalDomain_connection_difference_norm_le
     {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U] :

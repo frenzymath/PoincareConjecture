@@ -4,19 +4,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Continuity
 import Mathlib.Topology.Order.LocalExtr
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +13,6 @@ namespace PoincareConjecture
 
 variable {E X : Type*} [TopologicalSpace E] [T2Space E]
   [TopologicalSpace X] [T2Space X]
-
-
 
 theorem isCompact_colliding_pairs {K : Set E} (hK : IsCompact K) {f : E → X}
     (hf : ContinuousOn f K)
@@ -60,8 +45,6 @@ section Normed
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
 
 theorem exists_minimal_collision {f : F → X} {r : ℝ}
     (hf : ContinuousOn f (Metric.closedBall 0 r))
@@ -97,7 +80,6 @@ section EqualRadius
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 omit [T2Space X] in
-
 
 private theorem not_norm_lt_of_minimal_collision
     {f : F → X} {r : ℝ} {v w : F}
@@ -142,7 +124,6 @@ private theorem not_norm_lt_of_minimal_collision
 
 omit [T2Space X] in
 
-
 theorem norm_eq_of_minimal_collision
     {f : F → X} {r : ℝ} {v w : F}
     (hv : ‖v‖ ≤ r) (hw : ‖w‖ ≤ r) (heq : f v = f w) (hne : v ≠ w)
@@ -160,7 +141,6 @@ theorem norm_eq_of_minimal_collision
     simpa only [max_comm ‖w‖ ‖v‖] using hmin
 
 omit [T2Space X] [NormedSpace ℝ F] in
-
 
 theorem isLocalMin_max_inverse_norm_of_minimal_collision
     {f : F → X} {r : ℝ} {v w : F}

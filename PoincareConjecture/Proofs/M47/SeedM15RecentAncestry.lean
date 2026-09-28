@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.SeedM15OnsetPath
 import PoincareConjecture.Proofs.M47.SeedM15TestHistory
 import PoincareConjecture.Proofs.M47.SeedComponentBirth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_recent_path_nonpositive
     (hC : RicciFlowCurvatureTheory.{u})

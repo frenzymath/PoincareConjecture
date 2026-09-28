@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.Selection.Offs
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.Cuts.SelectedOverlap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedSurfaceRealization
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -24,8 +22,6 @@ variable {L : Submodule ℤ V2} {α : Type*}
   {d : ProtectedAnnulusTerminalData L retained}
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem PairedMarkedBoundary.exists_boundary_annulus
     (P : PairedMarkedBoundary L retained d) :
@@ -90,8 +86,6 @@ theorem PairedMarkedBoundary.exists_boundary_annulus
     cases b
     · exact (hF0 x).symm
     · exact (hF1 x).symm
-
-
 
 theorem PairedMarkedBoundary.exists_constructed_proper_stage_annulus
     (P : PairedMarkedBoundary L retained d) :

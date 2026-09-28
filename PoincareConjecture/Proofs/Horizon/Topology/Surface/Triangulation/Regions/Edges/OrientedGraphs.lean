@@ -1,20 +1,10 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Sides
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture.Topology.Surface
-
 
 noncomputable def graphVerticalReflection : (ℝ × ℝ) ≃L[ℝ] (ℝ × ℝ) :=
   (ContinuousLinearEquiv.refl ℝ ℝ).prodCongr (ContinuousLinearEquiv.neg ℝ (M := ℝ))
@@ -31,8 +21,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_graph_frame_into_incident_region (e : D.EdgeIndex) (q : D.regions)
     (hq : q = D.regionLeft e ∨ q = D.regionRight e)

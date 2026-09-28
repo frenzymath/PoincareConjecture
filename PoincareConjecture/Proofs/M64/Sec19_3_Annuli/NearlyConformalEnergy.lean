@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DouglasMorreyPipeline
 
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -18,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64_half_trace_le_sqrt_det_add
     {a b c epsilon scale : ℝ}
@@ -66,10 +58,6 @@ theorem m64_half_trace_le_sqrt_det_add
       Real.le_sqrt_of_sq_le hdet'
     linarith
 
-
-
-
-
 theorem m64EnergyDensity_le_areaDensity_add_of_gram_defect
     (g : RiemannianMetric n M) (f : LoopPlane → M) (p : LoopPlane)
     {epsilon scale : ℝ} (hepsilon : 0 ≤ epsilon) (hscale : 0 ≤ scale)
@@ -85,10 +73,6 @@ theorem m64EnergyDensity_le_areaDensity_add_of_gram_defect
   simp only [m60EnergyDensity, m60AreaDensity, Matrix.trace_fin_two,
     Matrix.det_fin_two, m60AreaGram_symm g f p 1 0, div_eq_mul_inv]
   nlinarith [h]
-
-
-
-
 
 theorem M64Annulus.energy_le_area_add_of_nearlyConformal
     {g : RiemannianMetric n M} {c0 c1 : ℝ → M}

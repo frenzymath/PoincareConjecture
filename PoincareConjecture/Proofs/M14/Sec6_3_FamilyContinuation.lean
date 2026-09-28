@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_GaugeFamilyLift
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalCoherence
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,10 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem initialValueCurve_smooth_tube_of_restart
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

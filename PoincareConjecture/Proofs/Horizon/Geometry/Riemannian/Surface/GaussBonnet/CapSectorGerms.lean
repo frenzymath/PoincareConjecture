@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.VertexCaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ theorem mem_coordinateCap_iff
     simpa only [F.left_inv (hsource hq), mem_ofPred_eq] using hq
   · intro h
     exact ⟨F.symm z, h, F.right_inv hz⟩
-
-
 
 theorem coordinateCap_eventually_mem_iff_active_constraints
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -72,8 +62,6 @@ theorem coordinateCap_eventually_mem_iff_active_constraints
       · exact hb h
       · exact (h₂ h).le
 
-
-
 theorem coordinateCap_eventually_mem_iff_excess_nonpos
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (F : OpenPartialHomeomorph (ℝ × ℝ) E) (ε : ℝ)
@@ -112,7 +100,6 @@ theorem chart_carrier_eq_planar_cap (i : Bool × Bool) :
 
 omit [T2Space S] in
 
-
 theorem chart_carrier_first_tip_eventually_iff (i : Bool × Bool) :
     ∀ᶠ z in 𝓝 (chartAt (EuclideanSpace ℝ (Fin 2)) (x i)
       (P.sectorCoordinates i (B.scale, 0))),
@@ -140,7 +127,6 @@ theorem chart_carrier_second_tip_eventually_iff (i : Bool × Bool) :
   simpa only [Prod.fst, Prod.snd, B.scale_pos.ne', false_implies, true_implies, true_and] using h
 
 omit [T2Space S] in
-
 
 theorem chart_carrier_chord_eventually_iff (i : Bool × Bool) {t : ℝ}
     (ht : t ∈ Ioo (0 : ℝ) 1) :

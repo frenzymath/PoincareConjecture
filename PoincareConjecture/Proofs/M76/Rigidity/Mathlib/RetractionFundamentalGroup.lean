@@ -1,22 +1,10 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace FundamentalGroup
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem map_injective_of_leftInverse (f : C(X, Y)) (r : C(Y, X))
     (h : Function.LeftInverse r f) (x : X) :
@@ -38,14 +26,10 @@ theorem map_injective_of_leftInverse (f : C(X, Y)) (r : C(Y, X))
   rw [ha, hb] at hr
   exact Path.Homotopic.Quotient.eq.mpr hr
 
-
-
 theorem map_prodMk_left_injective (y : Y) (x : X) :
     Function.Injective (map
       (⟨fun z : X => (z, y), continuous_id.prodMk continuous_const⟩ : C(X, X × Y)) x) :=
   map_injective_of_leftInverse _ ⟨Prod.fst, continuous_fst⟩ (fun _ => rfl) x
-
-
 
 theorem map_prodMk_right_injective (x : X) (y : Y) :
     Function.Injective (map

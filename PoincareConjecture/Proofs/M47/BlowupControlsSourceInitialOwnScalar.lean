@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialNormalization
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem source_initial_own_scalar_data
     (N : EpsilonNeck g) {T q R_join s delta omega : ℝ}

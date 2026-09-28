@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChainCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
-
-
 
 theorem vertex_potential_eq_on_face (a : ι → ZMod 2)
     (ha : vertexCoboundary A a = 0) {s : Finset ι} (hs : s ∈ A.faces)
@@ -29,8 +18,6 @@ theorem vertex_potential_eq_on_face (a : ι → ZMod 2)
     exact CharTwo.add_eq_zero.mp hz
 
 variable [Fintype ι]
-
-
 
 theorem vertex_potential_triangle_cycle
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)

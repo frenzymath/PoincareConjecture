@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal.LocalSpan
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.Radius.TwoGeodesics
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 @[simp] theorem globalExponential_zero (g : RiemannianMetric n M)
     (hc : MetricComplete g) (q : M) : g.globalExponential hc q 0 = q := by
   simpa only [zero_smul] using
@@ -38,8 +23,6 @@ namespace ContainedNormalDisk
 
 variable {g : RiemannianMetric n M} {S S' : Set M}
 
-
-
 theorem chart_eq_globalExponential (D : ContainedNormalDisk g S)
     (hc : MetricComplete g) {v : EuclideanSpace ℝ (Fin n)}
     (hv : v ∈ D.chart.source) :
@@ -49,16 +32,12 @@ theorem chart_eq_globalExponential (D : ContainedNormalDisk g S)
     (ContinuousLinearEquiv.refl ℝ (EuclideanSpace ℝ (Fin n))) D.chart D.map_zero
     D.derivative_zero D.radial_geodesic hvball).symm
 
-
-
 theorem chart_eq_of_center_eq (D : ContainedNormalDisk g S)
     (D' : ContainedNormalDisk g S') (hc : MetricComplete g)
     (hcenter : D.center = D'.center) {v : EuclideanSpace ℝ (Fin n)}
     (hv : v ∈ D.chart.source) (hv' : v ∈ D'.chart.source) :
     D.chart v = D'.chart v := by
   rw [D.chart_eq_globalExponential hc hv, D'.chart_eq_globalExponential hc hv', hcenter]
-
-
 
 theorem globalExponential_image_disk_subset (D : ContainedNormalDisk g S)
     (hc : MetricComplete g) :
@@ -67,8 +46,6 @@ theorem globalExponential_image_disk_subset (D : ContainedNormalDisk g S)
   rintro x ⟨v, hv, rfl⟩
   rw [← D.chart_eq_globalExponential hc (D.source_eq.symm ▸ hv.1)]
   exact D.contained ⟨v, hv, rfl⟩
-
-
 
 theorem local_span_eq_globalExponential (D : ContainedNormalDisk g S)
     (hc : MetricComplete g) (T : Set M) {r : ℝ} (hr : r ≤ D.radius) :
@@ -82,7 +59,6 @@ theorem local_span_eq_globalExponential (D : ContainedNormalDisk g S)
       D.chart_eq_globalExponential hc hsource]
   · simp only [mem_inter_iff, hv, false_and]
 
-
 theorem local_span_eq_of_center_eq (D : ContainedNormalDisk g S)
     (D' : ContainedNormalDisk g S') (hc : MetricComplete g)
     (hcenter : D.center = D'.center) (T : Set M) {r : ℝ}
@@ -93,8 +69,6 @@ theorem local_span_eq_of_center_eq (D : ContainedNormalDisk g S)
     D'.local_span_eq_globalExponential hc T hr', hcenter]
 
 end ContainedNormalDisk
-
-
 
 theorem globalExponential_smul_mem_of_every_geodesic
     (g : RiemannianMetric n M) (hc : MetricComplete g) {S : Set M}
@@ -108,8 +82,6 @@ theorem globalExponential_smul_mem_of_every_geodesic
   obtain ⟨hgeo, hzero, _⟩ := g.globalGeodesic_spec hc q v
   exact hconv (g.globalGeodesic hc q v) 0 1
     (fun u _ => hgeo u (mem_univ u)) (hzero.symm ▸ hq) hv ht
-
-
 
 theorem span_ball_globalExponential_preimage_eq_of_pos
     (g : RiemannianMetric n M) (hc : MetricComplete g) {S : Set M}

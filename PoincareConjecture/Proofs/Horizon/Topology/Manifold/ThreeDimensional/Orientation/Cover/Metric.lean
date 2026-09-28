@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsom
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Equivalence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ namespace Poincare.Topology.OrientationDoubleCover
 
 variable (M : Type u) [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 noncomputable def pullbackMetric (g : PoincareConjecture.RiemannianMetric 3 M) :
     letI := chartedSpace M
@@ -62,8 +54,6 @@ theorem sectionalCurvature_pullbackMetric (g : PoincareConjecture.RiemannianMetr
   rw [mfderiv_proj_eq_id] at h
   exact h
 
-
-
 theorem strictlyPositiveSectionalCurvature_pullbackMetric
     (g : PoincareConjecture.RiemannianMetric 3 M) (D : PoincareConjecture.LeviCivitaData g)
     (hsec : D.StrictlyPositiveSectionalCurvature) :
@@ -76,7 +66,6 @@ theorem strictlyPositiveSectionalCurvature_pullbackMetric
   rw [pullbackMetric_inner] at hu hv huv
   rw [sectionalCurvature_pullbackMetric M g D]
   exact hsec (proj M p) u v hu hv huv
-
 
 theorem flip_edist (g : PoincareConjecture.RiemannianMetric 3 M) :
     letI := chartedSpace M

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Distance.Cutoff
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.ScalarCutoff
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +15,6 @@ namespace PoincareConjecture.RicciFlow
 variable {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M] {J : Set ℝ}
-
-
-
 
 theorem exists_lower_time_support_distance_cutoff_scalarCurvature
     (hTheory : RicciFlowCurvatureTheory.{u}) (F : RicciFlow (m + 1) M J)
@@ -94,8 +85,6 @@ theorem exists_lower_time_support_distance_cutoff_scalarCurvature
       hTheory ht x φ hU hxU hφ hφtime (by simpa only [heq] using hcutoffpos)
       (hRic x) hlocal hQ (by positivity) hheat
     simpa only [v, heq] using hb
-
-
 
 theorem exists_lower_time_support_distance_cutoff_scalarCurvature_all_points
     (hTheory : RicciFlowCurvatureTheory.{u}) (F : RicciFlow (m + 1) M J)

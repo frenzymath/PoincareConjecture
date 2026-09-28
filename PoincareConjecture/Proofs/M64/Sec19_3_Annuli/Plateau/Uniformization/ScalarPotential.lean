@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarDirichlet
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,21 +16,10 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 def scalarPotentialL2 (Ω : Set Plane) (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
     (w : H1Zero D Ω) : Lp ℝ 2 g.volumeMeasure :=
   (hq.continuous.memLp_of_hasCompactSupport hqc).toLp q + toL2 D Ω w
-
-
-
-
-
 
 theorem boundaryLaplacian_inner (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
@@ -57,11 +34,6 @@ theorem boundaryLaplacian_inner (q : Plane → ℝ)
   rw [show (boundaryLaplacianL2 D q hq hqc) x = D.laplacian q x from hx]
   simp
 
-
-
-
-
-
 theorem boundaryForcing_test_source {Ω : Set Plane} (f : EnergyTest D Ω)
     (w : H1Zero D Ω) :
     boundaryForcing D Ω f f.smooth f.hasCompactSupport w =
@@ -73,13 +45,6 @@ theorem boundaryForcing_test_source {Ω : Set Plane} (f : EnergyTest D Ω)
     · fun_prop
   | ih v =>
     rw [boundaryForcing_eq_neg_gradient, gradientEnergy_coe]
-
-
-
-
-
-
-
 
 theorem scalarPotential_laplacian_pairing {Ω : Set Plane} (q : Plane → ℝ)
     (hq : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ q) (hqc : HasCompactSupport q)
@@ -103,13 +68,6 @@ theorem scalarPotential_laplacian_pairing {Ω : Set Plane} (q : Plane → ℝ)
   rw [hqpair]
   change _ + boundaryForcing D Ω f f.smooth f.hasCompactSupport w = _
   rw [boundaryForcing_test_source, sub_eq_add_neg]
-
-
-
-
-
-
-
 
 theorem exists_annular_distributional_harmonic_potential :
     ∃ (U : Lp ℝ 2 g.volumeMeasure) (w : H1Zero D scalarAnnulus),

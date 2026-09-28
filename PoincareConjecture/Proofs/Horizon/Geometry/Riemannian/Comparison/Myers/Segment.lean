@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Minimizing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Jacobi.CurvatureFrame
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -45,8 +39,6 @@ theorem trace_coefficient (D : LeviCivitaData g)
       LeviCivitaData.radialCurvatureInFrame_apply, ContinuousLinearEquiv.coe_coe]
     rfl
   rw [heq, D.trace_radialCurvatureInFrame]
-
-
 
 theorem ricci_mul_speed_sq_le_of_minimizing [T2Space M]
     (D : LeviCivitaData g) {q : ℝ → M} {ε C k : ℝ}

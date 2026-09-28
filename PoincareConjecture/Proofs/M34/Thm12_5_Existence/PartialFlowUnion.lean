@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowOrder
 import PoincareConjecture.Proofs.M34.Standard.FlowLocality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem partialFlowChain_has_upper_bound {g0 : StandardInitialMetric}
     {c : Set (PartialStandardCapFlow g0)} (hc : IsChain partialFlowLE c)

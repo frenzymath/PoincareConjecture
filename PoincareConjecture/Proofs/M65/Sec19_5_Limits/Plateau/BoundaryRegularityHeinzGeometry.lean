@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHeinzEquation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityRepresentative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Boundary
 
 open M65StrictTrace
-
-
-
-
 
 theorem continuous_boundary_parameter_lift
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -76,10 +62,6 @@ theorem continuous_boundary_parameter_lift
     rw [mem_ball_zero_iff, Real.norm_eq_abs]
     exact (abs_le.mpr ⟨by linarith [ht.1], ht.2⟩).trans_lt (half_lt_self hr)
   exact congrArg gamma (E.left_inv (hrcap htball))
-
-
-
-
 
 theorem continuous_boundary_plane_geometry
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

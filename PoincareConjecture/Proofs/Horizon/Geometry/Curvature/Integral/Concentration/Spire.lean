@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Scalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.NestedCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture
-
-
 
 theorem exists_subseq_prescribed_center_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type*}
@@ -75,8 +65,6 @@ theorem exists_subseq_prescribed_center_scalar_integral_tendsto_atTop
   filter_upwards [(tendsto_atTop.1 hdiv)
     (B + (n : ℝ) ^ 2 * RiemannianMetric.modelVolume n 1 (r i))] with j hj
   linarith only [hj, hbound (phi j)]
-
-
 
 theorem exists_subseq_prescribed_center_scalar_integral_tendsto_atTop_at_scales
     {n : ℕ} {M : ℕ → Type*}

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OldVertices
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.VertexAncestry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +18,6 @@ namespace PoincareConjecture.Topology.Surface
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem lineRefinementMesh_new_vertex_contribution
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
@@ -39,9 +30,6 @@ theorem lineRefinementMesh_new_vertex_contribution
   split_ifs with h
   · exact lineRefinementMesh_new_vertex_fan g F M f t hq h hF hFi hM
   · exact lineRefinementMesh_new_boundary_vertex_fan g F M f t hq h hF hFi hM
-
-
-
 
 theorem refineByLines_vertex_contribution_old_or_new
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -79,9 +67,6 @@ theorem refineByLines_vertex_contribution_old_or_new
           lineRefinementMesh_new_vertex_contribution g F M f s hcut hF hFi hM
     · right
       simpa only [M.lineRefinementMesh_support f] using hnew
-
-
-
 
 theorem refineByLines_new_used_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

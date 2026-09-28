@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeCover
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiPair
 import PoincareConjecture.Proofs.M14.Sec6_2_ClosedFieldExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem gaugeHorizontalCovariantDerivative_contMDiffOn (b : G.gaugeCover.index)
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -79,9 +66,6 @@ theorem gaugeHorizontalCovariantDerivative_contMDiffOn (b : G.gaugeCover.index)
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
 
-
-
-
 theorem horizontalCovariantDerivative_contMDiffOn
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
     {Y : ∀ s, G.Horizontal (R.curve s)}
@@ -115,9 +99,6 @@ theorem horizontalCovariantDerivative_contMDiffOn
     exact horizontalCovariantDerivative_restrict_subset E hsub (uniqueDiffOn_Icc hlr v hv)
       ((R.smooth.mono R.interval_subset v (hsub hv)).mdifferentiableWithinAt (by simp))
   exact (hglobal s ⟨hls, hsr⟩).mono_of_mem_nhdsWithin (hnear s ⟨le_rfl, le_rfl⟩)
-
-
-
 
 theorem exists_horizontalCovariantDerivative_extension
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

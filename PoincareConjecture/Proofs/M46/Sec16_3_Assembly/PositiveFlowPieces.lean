@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.TerminalSectionalLowerBound
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveSurgeryMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open M04
-
 
 theorem positive_component_regular_transport
     (F : SurgeryFlowData.{u}) {a b : ℝ} (hab : a < b)
@@ -54,8 +45,6 @@ theorem positive_component_regular_transport
   exact (component_positive_iff_of_diffeomorph (slab.flow.connection t.1)
     (F.connection t.1) (slab.identify t)
     (fun y u v => (slab.metric_pullback t y u v).symm) z).mp hterminal
-
-
 
 theorem positive_component_surgery_from_reference
     (F : SurgeryFlowData.{u}) {T : ℝ} (hT : T ∈ F.surgery_times)

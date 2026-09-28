@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonZeroLatticePuncturedAtlas
 import Mathlib.Topology.EMetricSpace.Paracompact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,22 +11,13 @@ local notation "W" => LatticeHandleAmbient (Fin 0) (Fin 3) hamiltonZeroPeriodLat
 local notation "Y" => ((Set.singleton hamiltonZeroHandlePuncture)ᶜ : Set W)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 instance hamiltonZeroLatticePunctureT2 : T2Space Y := by
   let : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
   exact hamiltonZeroPunctureModelEquiv.isEmbedding.t2Space
 
-
-
 instance hamiltonZeroLatticePunctureParacompact : ParacompactSpace Y := by
   let : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
   exact hamiltonZeroPunctureModelEquiv.isClosedEmbedding.paracompactSpace
-
-
-
-
-
 
 theorem exists_zero_lattice_marked_wall_core
     (h : OpenPartialHomeomorph CubeShell.Ambient V3) (hsource : h.source = univ)

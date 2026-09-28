@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCapBoundaryContact
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCapBoundaryGraphHit
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.InnerAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem exists_source_tube_cap_exclusion_accuracy (P : RicciFlowCurvatureTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCapSourceDistance
 import PoincareConjecture.Proofs.M47.BlowupControlsPinching
 import PoincareConjecture.Proofs.M47.SeedVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ variable (F : ℕ → SurgeryFlowData.{u}) (base Q : ℕ → ℝ)
   (terminal : ∀ k, C.carrier → ((F k).slice (base k + 0 / Q k)).carrier)
   (badPoint : ∀ k, ((F k).slice (base k)).carrier)
 
-
-
 def FiniteHorizonCapCylinderContact (c d : ℝ) (hc : c < 0) (k : ℕ) (R : ℝ) : Prop :=
   ∃ (a : ℝ) (ha : a ∈ Icc (c - 4 * d) c),
     ∃ E : SurgeryFlowCylinder (F k) C (base k) (Q k) (Icc a 0) (g.ball o R),
@@ -43,8 +32,6 @@ def FiniteHorizonCapCylinderContact (c d : ℝ) (hc : c < 0) (k : ℕ) (R : ℝ)
           ∃ i : Fin ((F k).event (base k + a / Q k) hEvent).cap_count,
             Set.Nonempty (E.forward a ⟨le_rfl, ha.2.trans hc.le⟩ '' g.ball o R ∩
               (((F k).event (base k + a / Q k) hEvent).caps i).carrier)
-
-
 
 theorem finiteHorizon_no_frequent_cap_of_scalar_service
     (P : M47Predecessors.{u}) {c d K : ℝ} (hc : c < 0) (hK : 0 ≤ K)

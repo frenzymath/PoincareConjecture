@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseLiftH1
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreePhaseDiskGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => ball (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
-
-
 
 theorem auxiliaryCircle_cone_weak_phase
     (P : M62.CircleProductData F circumference)

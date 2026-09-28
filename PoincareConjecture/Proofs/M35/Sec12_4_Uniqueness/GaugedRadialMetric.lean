@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusEnd
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem radius_deriv_ne_zero_of_right_inverse {ρ q : ℝ → ℝ}
     (hρ : Differentiable ℝ ρ) (hq : Differentiable ℝ q)
@@ -29,8 +18,6 @@ theorem radius_deriv_ne_zero_of_right_inverse {ρ q : ℝ → ℝ}
   intro hz
   rw [hz, zero_mul] at hp
   norm_num at hp
-
-
 
 theorem inverse_radius_hasDerivAt {ρ q : ℝ → ℝ}
     (hρ : Differentiable ℝ ρ) (hq : Differentiable ℝ q)
@@ -44,7 +31,6 @@ theorem inverse_radius_hasDerivAt {ρ q : ℝ → ℝ}
   apply (hq z).hasDerivAt.congr_deriv
   apply mul_left_cancel₀ hn
   rw [hp, mul_inv_cancel₀ hn]
-
 
 theorem inverse_radial_metric_hasDerivAt {ρ q : ℝ → ℝ}
     (hρ : ContDiff ℝ ∞ ρ) (hq : ContDiff ℝ ∞ q)
@@ -62,8 +48,6 @@ theorem inverse_radial_metric_hasDerivAt {ρ q : ℝ → ℝ}
   convert! (ha.inv hn).pow 2 using 1
   simp only [Nat.cast_ofNat, Nat.reduceSub, pow_one, Function.comp_apply, Pi.inv_apply]
   field_simp [hn]
-
-
 
 theorem inverse_radial_metric_second_hasDerivAt {ρ q : ℝ → ℝ}
     (hρ : ContDiff ℝ ∞ ρ) (hq : ContDiff ℝ ∞ q)
@@ -88,7 +72,6 @@ theorem inverse_radial_metric_second_hasDerivAt {ρ q : ℝ → ℝ}
   field_simp [hn]
   ring
 
-
 theorem inverse_angular_metric_hasDerivAt {ρ q f : ℝ → ℝ}
     (hρ : Differentiable ℝ ρ) (hq : Differentiable ℝ q) (hf : Differentiable ℝ f)
     (hinv : ∀ z, ρ (q z) = z) (z : ℝ) :
@@ -98,8 +81,6 @@ theorem inverse_angular_metric_hasDerivAt {ρ q f : ℝ → ℝ}
   convert! ((hf (q z)).hasDerivAt.comp z hdq).pow 2 using 1
   simp only [Nat.cast_ofNat, Nat.reduceSub, pow_one, Function.comp_apply]
   ring
-
-
 
 theorem inverse_angular_metric_second_hasDerivAt {ρ q f : ℝ → ℝ}
     (hρ : ContDiff ℝ ∞ ρ) (hq : ContDiff ℝ ∞ q) (hf : ContDiff ℝ ∞ f)
@@ -127,8 +108,6 @@ theorem inverse_angular_metric_second_hasDerivAt {ρ q f : ℝ → ℝ}
   simp only [Function.comp_apply, Pi.mul_apply]
   field_simp [hn]
 
-
-
 theorem inverse_radial_metric_tendsto {A : Type*} {l : Filter A}
     {ρ q : A → ℝ → ℝ} {z : A → ℝ}
     (hρ : ∀ a, Differentiable ℝ (ρ a)) (hq : ∀ a, Differentiable ℝ (q a))
@@ -139,7 +118,6 @@ theorem inverse_radial_metric_tendsto {A : Type*} {l : Filter A}
     (inverse_radius_hasDerivAt (hρ a) (hq a) (hinv a) (z a)).deriv
   simp_rw [heq]
   simpa only [inv_one, one_pow] using (hend.inv₀ one_ne_zero).pow 2
-
 
 theorem inverse_radial_metric_deriv_tendsto {A : Type*} {l : Filter A}
     {ρ q : A → ℝ → ℝ} {z : A → ℝ}

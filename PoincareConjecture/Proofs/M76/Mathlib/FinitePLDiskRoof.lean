@@ -1,30 +1,17 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoof
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
 theorem roof_le_third (p : ℝ × ℝ) : roof p ≤ 1 / 3 := by
   have h1 : roof p ≤ p.1 := min_le_left _ _
   have h2 : roof p ≤ p.2 := (min_le_right _ _).trans (min_le_left _ _)
   have h3 : roof p ≤ 1 - p.1 - p.2 := (min_le_right _ _).trans (min_le_right _ _)
   linarith
-
-
 
 theorem roof_eq_third_iff (p : ℝ × ℝ) :
     roof p = 1 / 3 ↔ p = (1 / 3, 1 / 3) := by
@@ -45,10 +32,6 @@ open TriangularRoofModel
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_roof {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) :

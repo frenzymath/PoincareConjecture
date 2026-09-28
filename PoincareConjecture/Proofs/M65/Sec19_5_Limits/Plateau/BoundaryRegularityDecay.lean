@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityIt
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Filter
@@ -86,10 +76,6 @@ private theorem dyadic_weight_scale {R α σ : ℝ} (hR : 0 < R) (n : ℕ) :
       Real.rpow_natCast]
   rw [hp]
   ring
-
-
-
-
 
 theorem weighted_energy_of_disk_decay {R α σ C : ℝ}
     (hR : 0 < R) (hα : 0 < α) (hασ : α < σ) (hC : 0 ≤ C) :

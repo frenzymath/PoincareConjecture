@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Weak.Supports
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.CompactSupport
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,7 +14,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace 
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
-
 
 theorem busemann_distributional_subharmonic_of_distance_comparison
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)

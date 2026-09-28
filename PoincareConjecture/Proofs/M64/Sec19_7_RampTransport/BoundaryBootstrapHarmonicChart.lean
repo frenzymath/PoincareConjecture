@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapSour
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapTargetEquation
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapNormalTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,12 +20,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {n : ℕ}
 local notation "Target" => EuclideanSpace ℝ (Fin (n + 1))
-
-
-
-
-
-
 
 theorem harmonic_normal_chart_contDiffOn_two
     {g : RiemannianMetric (n + 1) Target} (D : LeviCivitaData g)
@@ -98,11 +82,6 @@ theorem harmonic_normal_chart_contDiffOn_two
   apply ((hPhi.of_le (WithTop.coe_le_coe.mpr le_top)).comp hu2 hmap).congr
   intro z hz
   exact (Phi.right_inv (hHT (hsub hz))).symm
-
-
-
-
-
 
 theorem harmonic_regular_trace_exists_closed_c2
     {g : RiemannianMetric (n + 1) Target} (D : LeviCivitaData g)

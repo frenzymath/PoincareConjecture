@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Laplacian
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_scalar_evolution_margin :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
@@ -49,8 +37,6 @@ theorem exists_scalar_evolution_margin :
 end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem exists_neck_scalar_time_derivative_margin
     (hM04 : RicciFlowCurvatureTheory.{u}) :

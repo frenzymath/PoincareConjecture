@@ -3,21 +3,11 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.ProtectedForwardExhaustion
 import PoincareConjecture.Proofs.M25.AppA_21_Local.LocalNegativeReturnCircle
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SingletonTube
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff
 universe u
 namespace PoincareConjecture
-
-
 
 theorem NeckOnlyCover.exists_finite_chain_or_circle_of_negative_end_avoidance :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

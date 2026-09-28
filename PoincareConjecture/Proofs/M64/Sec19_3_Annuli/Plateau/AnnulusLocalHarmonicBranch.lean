@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusHarmonicBranch
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem m64Annulus_finite_branch_set_on_compact_harmonic_chart
     (A : M64Annulus g c0 c1) (K O : Set LoopPlane)

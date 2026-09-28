@@ -1,14 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.RefinementIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Assembly
-
-
-
-
-
-
 
 set_option autoImplicit false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PhysicalBirthMe
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PersistenceWindow
 import PoincareConjecture.Proofs.M13.GeneralizedSlices
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
 
 theorem capCylinder_physicalBirth_lower
     {F : SurgeryFlowData.{u}} {S : MaximalStandardCapFlow F.standard_initial}
@@ -50,9 +39,6 @@ theorem capCylinder_physicalBirth_lower
   convert h using 1
   ring
 
-
-
-
 theorem capCylinder_physicalScalar_lower
     {F : SurgeryFlowData.{u}} {S : MaximalStandardCapFlow F.standard_initial}
     {t : ℝ} {hT : t ∈ F.surgery_times} [Nonempty (F.slice t).carrier]
@@ -70,9 +56,6 @@ theorem capCylinder_physicalScalar_lower
       (e.forward s hs y) := by
   obtain ⟨x, hx, rfl⟩ := comparison.choose_spec.2.2.2.1.symm ▸ hy
   exact hbound x hx
-
-
-
 
 theorem historyCylinder_scalar_pullback
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

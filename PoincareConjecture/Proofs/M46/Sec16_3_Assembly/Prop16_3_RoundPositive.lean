@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M36.CurvatureTrace
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveLocalIsometry
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +19,6 @@ namespace PoincareConjecture.Proofs.M46
 open M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem round_metric_error_sectional_half {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}
@@ -69,8 +58,6 @@ theorem round_metric_error_sectional_half {g h : RiemannianMetric 3 E}
       positivity))
   exact sectional_half_le_of_round_plane_error D' x hepsilon hsmall hmetric hplane u v huv
 
-
-
 theorem positive_sectional_of_rescaled_positive
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     (x : E)
@@ -105,8 +92,6 @@ theorem positive_sectional_of_rescaled_positive
         D (m01RescaledMetric_connection g D Q hQ) x u v
   rw [hscale] at hp
   exact (div_pos_iff_of_pos_right hQ).mp hp
-
-
 
 theorem round_component_positive
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -143,8 +128,6 @@ theorem round_component_positive
   have hp := (sectional_positive_iff_of_local_isometry DE D hW (hf.mono hWV)
     hgeom hzeroW).mp hpositiveE
   exact hfzero' ▸ hp
-
-
 
 theorem canonical_neck_or_cap_of_not_positive
     {F : SurgeryFlowData.{u}} {t : ℝ} {x : (F.slice t).carrier}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Complex.SmoothLogarithm
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Analysis.Complex.Isometry
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,8 +11,6 @@ open scoped ContDiff
 namespace Poincare.ODE.Plane
 
 private abbrev E2 := EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem exists_nonvanishing_compact_modification
     {V : E2 → E2} (hV : ContDiff ℝ ∞ V) (hne : ∀ x, V x ≠ 0)

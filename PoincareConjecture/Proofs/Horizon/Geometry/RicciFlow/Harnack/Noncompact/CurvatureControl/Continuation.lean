@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.BoundedFlow.Components
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +15,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [SecondCountableTopology M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem exists_uniform_curvatureTensorNorm_bound_of_local_right_bound
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
@@ -57,8 +47,6 @@ theorem exists_uniform_curvatureTensorNorm_bound_of_local_right_bound
           (fun s hs y => hb s hs y (mem_univ y))
           (fun s hs => hcurv s ⟨hs.1, hs.2.trans hc.2⟩) t ht x)
   exact ⟨K, hK, fun t ht x => hbound t ht x (mem_univ x)⟩
-
-
 
 theorem finite_differential_of_local_right_curvature_bounds
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}
@@ -129,7 +117,6 @@ theorem exists_uniform_curvatureTensorNorm_bound_on_component_of_local_right_bou
   exact hpos
 
 omit [PreconnectedSpace M] in
-
 
 theorem finite_differential_of_component_local_right_curvature_bounds
     (hC : RicciFlowCurvatureTheory.{u}) {T₀ T₁ : ℝ}

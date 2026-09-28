@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.CompressionCylinderRectangles
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.Counts.FourConvexPiecesEulerCount
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
 
 namespace PoincareConjecture.M76.CompressionCylinder
-
-
 
 theorem surfaceEulerCount_eq_zero
     (K : SimplicialComplex ℝ Ambient) (hK : K.faces.Finite)

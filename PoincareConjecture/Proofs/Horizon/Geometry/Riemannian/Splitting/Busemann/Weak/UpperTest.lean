@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.Weak.Comparison
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem laplacian_upper_test_nonneg_of_compact_comparison (D : LeviCivitaData g)
     {u : M → ℝ}
@@ -99,7 +88,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace 
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M]
 
-
 theorem busemann_laplacian_upper_test_nonneg
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g)
@@ -114,8 +102,6 @@ theorem busemann_laplacian_upper_test_nonneg
     (fun K hK φ hφ hlap hboundary =>
       g.busemann_le_on_compact_of_laplacian_neg D hm hcomplete hRic hγ hK hφ hlap hboundary)
     hφ hmax
-
-
 
 theorem busemann_add_reverse_laplacian_upper_test_nonneg
     (g : RiemannianMetric (m + 1) M) (D : LeviCivitaData g)

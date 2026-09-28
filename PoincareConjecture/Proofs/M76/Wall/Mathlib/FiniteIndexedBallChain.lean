@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteBallChain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem isFinitePLBallPair_fin_ball_chain
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

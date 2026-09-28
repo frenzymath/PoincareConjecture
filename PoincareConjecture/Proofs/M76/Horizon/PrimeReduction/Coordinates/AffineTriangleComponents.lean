@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ActualFaceCom
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,7 +14,6 @@ variable {E F X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace X]
 
 omit [FiniteDimensional ℝ F] in
-
 
 theorem affineIndependent_original_face_chart
     (K : SimplicialComplex ℝ E) (g : E → X) (hgi : InjOn g K.space)
@@ -44,10 +35,6 @@ theorem affineIndependent_original_face_chart
   have h' := h.range
   change AffineIndependent ℝ ((↑) : range (A.toAffineMap ∘ ((↑) : s → E)) → F) at h'
   rwa [hr] at h'
-
-
-
-
 
 theorem exists_original_triangle_graph_components [DecidableEq F]
     (K : SimplicialComplex ℝ E) (g : E → X) (hgi : InjOn g K.space)

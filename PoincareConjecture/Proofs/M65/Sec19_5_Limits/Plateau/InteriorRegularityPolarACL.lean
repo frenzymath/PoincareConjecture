@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerSlicing
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularitySliceMean
 import PoincareConjecture.Proofs.M03.Existence.DeTurckDomainRegularityNative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,12 +35,6 @@ private theorem polarPlane_angular_hasDerivAt (x : LoopPlane) (r t : ℝ) :
     simp only [polarPlane, angularPoint_basis, smul_add, smul_smul, add_assoc]
   rw [heq]
   simpa only [mul_neg, neg_mul, add_assoc, Pi.add_apply] using h.const_add x
-
-
-
-
-
-
 
 theorem weakPair_polar_AC (u : Lp ℝ 2 (volume : Measure LoopPlane))
     (d : Fin 2 → Lp ℝ 2 (volume : Measure LoopPlane))

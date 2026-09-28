@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -19,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 theorem proper_disk_isFinitePLBallPair
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -32,8 +20,6 @@ theorem proper_disk_isFinitePLBallPair
   have h := hproper (b.symm x)
   rw [b.apply_symm_apply] at h
   exact ⟨fun hx ↦ h.mp hx.2, fun hx ↦ ⟨x.property, h.mpr hx⟩⟩
-
-
 
 theorem exists_exact_proper_disk_parametrization
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

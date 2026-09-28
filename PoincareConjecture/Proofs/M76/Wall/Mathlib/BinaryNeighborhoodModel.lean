@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryDerivedEquivalence
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryNeighborhoodImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem exists_binaryNeighborhood_model
     (A : SimplicialComplex ℝ E) (hAK : A ≤ K) :

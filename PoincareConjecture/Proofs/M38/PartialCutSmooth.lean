@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutCompact
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +19,6 @@ noncomputable local instance partialSmoothChartedSpace :
     ChartedSpace StandardCapSpace (PartialCappedSpace F T hT P S) :=
   partialCappedChartedSpace F T hT P S
 
-
 theorem partialCappingInclude_localDiffeomorph (j : PartialCappingIndex F T hT P S) :
     letI := (partialCappingDomain F T hT P S j).isOpen.isOpenEmbedding_subtypeVal.singletonChartedSpace
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (partialCappingInclude F T hT P S j) :=
@@ -34,7 +26,6 @@ theorem partialCappingInclude_localDiffeomorph (j : PartialCappingIndex F T hT P
     (fun j => (partialCappingDomain F T hT P S j : Set StandardCapSpace))
     (fun j => (partialCappingDomain F T hT P S j).isOpen) (partialCappingOverlap F T hT P S)
     (cappingOverlap_smooth _ _ _ (partialCappingMap_smooth F T hT P S)) j
-
 
 theorem partialOldInclusion_localDiffeomorph :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (partialOldInclusion F T hT P S) := by
@@ -70,19 +61,15 @@ theorem partialOldInclusion_localDiffeomorph :
     (partialCappingMap F T hT P S (.inl y) z) at h
   rwa [partialCappingMap_old_center] at h
 
-
 theorem partialOldInclusion_smooth :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (partialOldInclusion F T hT P S) :=
   (partialOldInclusion_localDiffeomorph F T hT P S).contMDiff
-
-
 
 noncomputable def partialOldInverse (q : PartialCappedSpace F T hT P S) :
     eventCutOpen F T hT P S := by
   classical
   exact if h : ∃ y, partialOldInclusion F T hT P S y = q then Classical.choose h
     else partialCappingMap F T hT P S q.out.1 q.out.2
-
 
 theorem partialOldInverse_apply (y : eventCutOpen F T hT P S) :
     partialOldInverse F T hT P S (partialOldInclusion F T hT P S y) = y := by
@@ -92,13 +79,11 @@ theorem partialOldInverse_apply (y : eventCutOpen F T hT P S) :
   rw [dif_pos h]
   exact (partialOldInclusion_openEmbedding F T hT P S).injective (Classical.choose_spec h)
 
-
 theorem partialOldInverse_right {q : PartialCappedSpace F T hT P S}
     (hq : q ∈ Set.range (partialOldInclusion F T hT P S)) :
     partialOldInclusion F T hT P S (partialOldInverse F T hT P S q) = q := by
   obtain ⟨y, rfl⟩ := hq
   rw [partialOldInverse_apply]
-
 
 theorem partialOldInverse_smooth :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (partialOldInverse F T hT P S)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_4_GaugeCovariantFields
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeVelocity
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (b : G.gaugeCover.index)
   {β : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b} {J : Set ℝ}
-
-
-
 
 theorem gaugeHorizontalField_contMDiffOn
     (hβ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ β J)
@@ -74,9 +62,6 @@ theorem gaugeHorizontalField_contMDiffOn
           (G.gaugeCover.cylinder b).toSpacetime (β s) (0, f s)))
   rw [gauge_projectedDifferential b]
 
-
-
-
 noncomputable def horizontalFieldOfGauge {γ : ℝ → G.Point}
     (hrec : ∀ s ∈ J, (G.gaugeCover.cylinder b).toSpacetime (β s) = γ s)
     (f : ℝ → EuclideanSpace ℝ (Fin n)) (s : ℝ) : G.Horizontal (γ s) := by
@@ -90,9 +75,6 @@ private theorem horizontal_cast_heq {q r : G.Point} (h : q = r) (v : G.Horizonta
   cases h
   rfl
 
-
-
-
 theorem horizontalFieldOfGauge_heq {γ : ℝ → G.Point}
     (hrec : ∀ s ∈ J, (G.gaugeCover.cylinder b).toSpacetime (β s) = γ s)
     (f : ℝ → EuclideanSpace ℝ (Fin n)) {s : ℝ} (hs : s ∈ J) :
@@ -100,9 +82,6 @@ theorem horizontalFieldOfGauge_heq {γ : ℝ → G.Point}
       ((G.gaugeCover.metric b).spatialTangentEquiv (β s).1 (β s).2 (f s)) := by
   simp only [horizontalFieldOfGauge, dif_pos hs]
   exact horizontal_cast_heq (hrec s hs) _
-
-
-
 
 theorem horizontalFieldOfGauge_contMDiffOn {γ : ℝ → G.Point}
     (hβ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ β J)
@@ -115,9 +94,6 @@ theorem horizontalFieldOfGauge_contMDiffOn {γ : ℝ → G.Point}
   apply (gaugeHorizontalField_contMDiffOn b hβ hf).congr
   intro s hs
   exact Bundle.TotalSpace.ext (hrec s hs).symm (horizontalFieldOfGauge_heq b hrec f hs)
-
-
-
 
 theorem horizontalCovariantDerivative_lifted_gauge
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)
@@ -152,9 +128,6 @@ theorem horizontalCovariantDerivative_lifted_gauge
 
 variable {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   (R : M14SquareRootPath G p)
-
-
-
 
 theorem squareRootVelocity_gauge_subset
     (hJC : J ⊆ M14SqrtParameterInterval τ₁ τ₂)

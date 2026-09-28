@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapTensorNormAlgebra
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseDerivative
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -38,8 +30,6 @@ theorem cap_operatorComponents_right_comp_norm_le (K L : V →L[ℝ] V) :
         ‖capOperatorComponents (ContinuousLinearMap.adjoint K)‖ :=
       cap_operatorComponents_comp_norm_le _ _
     _ = _ := by rw [LinearIsometryEquiv.norm_map, cap_operatorComponents_adjoint_norm]
-
-
 
 theorem cap_inverse_derivative_components_norm_le
     {A : V → (V →L[ℝ] V)} {x v : V}

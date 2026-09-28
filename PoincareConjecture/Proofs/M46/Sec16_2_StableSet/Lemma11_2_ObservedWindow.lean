@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_EpochWindow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem ObservedInputs.cutoff_mono {K : MetricSurgeryConstants}
     {p : SurgeryParameterPrefix K} {rNext delta delta' : ℝ}
@@ -32,8 +21,6 @@ theorem ObservedInputs.cutoff_mono {K : MetricSurgeryConstants}
   }
   overlap := fun t ht => (inputs.overlap t ht).trans hdelta
 }
-
-
 
 theorem observed_low_cylinder_window {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {rNext cutoff B : ℝ}
@@ -55,8 +42,6 @@ theorem observed_low_cylinder_window {K : MetricSurgeryConstants}
   have htlo : surgeryEpochStart (p.i - 1) ≤ t := by linarith [ht.1]
   have hthi : t < O.H := ht.2.trans_lt D.time_mem.2
   exact ⟨⟨by linarith, hthi⟩, htlo, hthi.trans_le inputs.next_epoch.2⟩
-
-
 
 theorem NoncollapseTest.exists_later_observed_time
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F} (D : NoncollapseTest F O) :

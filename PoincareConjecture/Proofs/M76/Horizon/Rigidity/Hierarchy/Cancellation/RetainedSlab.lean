@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Cancellation.Fro
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.MinimalFirstPhaseComponents
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.ResidualComponentDeletion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

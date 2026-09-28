@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutContacts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapBandGluing
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +10,6 @@ open scoped Topology ContDiff Manifold
 open Poincare.Topology.Plane.Curves PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_inter_subset_frontier_of_regular
     {A B : Set AnnulusCoordinates} (hB : closure (interior B) = B)
@@ -44,10 +29,6 @@ variable {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
-
-
-
 theorem m64Intrinsic_band_cap_inter_subset_frontier
     {C A : Set AnnulusCoordinates} (hAC : A ⊆ C)
     (hinter : C ∩ B.carrier ⊆ B.leftCut ∪ B.rightCut) :
@@ -58,10 +39,6 @@ theorem m64Intrinsic_band_cap_inter_subset_frontier
   rcases hinter ⟨hAC hz.1, hz.2⟩ with hl | hr
   · exact Or.inl (Or.inr hl)
   · exact Or.inr hr
-
-
-
-
 
 theorem m64Intrinsic_cap_attachment_cut_subset_chord
     (face : SmoothFace AnnulusCoordinates) (right : Bool)
@@ -89,11 +66,6 @@ theorem m64Intrinsic_cap_attachment_cut_subset_chord
   intro hzK
   exact disjoint_left.mp hdisj (m64Intrinsic_band_positive_endpoint_subset_region B right
     hregion ⟨t, ⟨lt_of_le_of_ne ht.1 (Ne.symm ht0), ht.2⟩, rfl⟩) hzK
-
-
-
-
-
 
 theorem m64Intrinsic_cap_attachment_open_cut_interior
     (face : SmoothFace AnnulusCoordinates)

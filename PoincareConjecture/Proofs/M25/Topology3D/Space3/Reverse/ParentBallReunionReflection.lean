@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallProtect
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallReunionProfile
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_reunion_reflection_diffeomorph (P : SurgeryCapProfile)
     (T : OpenPartialHomeomorph (E2 × ℝ) E3)

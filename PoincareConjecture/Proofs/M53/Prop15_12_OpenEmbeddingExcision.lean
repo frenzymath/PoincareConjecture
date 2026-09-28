@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M53.Prop15_12_Excision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M53
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem integralRelativeMap_isIso_of_isOpenEmbedding
     (f : C(X, Y)) (hf : IsOpenEmbedding f) {A : Set X} {B : Set Y}
@@ -52,9 +39,6 @@ theorem integralRelativeMap_isIso_of_isOpenEmbedding
     integral_interior_cover_excision B (Set.range f) hf.isOpen_range hcover n
   rw [← hfactor, homologyMap_comp]
   infer_instance
-
-
-
 
 theorem integralRelativeMap_isIso_of_closed_support
     (f : C(X, Y)) (hf : IsOpenEmbedding f) {A : Set X} {B K : Set Y}

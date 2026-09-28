@@ -6,18 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -29,9 +17,6 @@ open Set Filter TopologicalSpace
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem smooth_hessian_on_of_minimizing_identity
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -102,9 +87,6 @@ theorem smooth_hessian_on_of_minimizing_identity
   change DU.hessian (fun z : U => f z) y v w = D.hessian f x v w at hh
   rw [← hh, DU.hessian_eq_metric_of_geodesic_quadratic hfU hquadU, hmetric]
 
-
-
-
 theorem exists_local_radial_model_of_rescaled_normal_charts
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -174,9 +156,6 @@ end PoincareConjecture.RiemannianMetric
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_flat_local_radial_model_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackCurvature
 import PoincareConjecture.Proofs.M09.CompactFieldExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +14,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m65Pullback_hasDerivAt_coordinates {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) {gamma : ℝ → M}

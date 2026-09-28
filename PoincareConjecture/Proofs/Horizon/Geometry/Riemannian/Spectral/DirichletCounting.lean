@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Spectral.Counting.C
 import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.Absorption
 import PoincareConjecture.Proofs.Horizon.Analysis.Spectral.Counting.Summability
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -77,7 +65,6 @@ theorem norm_toDomainL2_sum_energyEigenfunction_sq (s : Finset (EigenIndex D Ω)
     (eigenbasis D Ω hn hΩ hc).orthonormal.inner_sum]
   simp only [conj_trivial, ← pow_two]
 
-
 theorem norm_sum_energyEigenfunction_sq_le (s : Finset (EigenIndex D Ω))
     (a : EigenIndex D Ω → ℝ) {Λ : ℝ}
     (hs : ∀ i ∈ s, eigenvalue D Ω i ≤ Λ) :
@@ -94,7 +81,6 @@ open Counting Poincare.Analysis.Spectral.Counting
 include hn hΩ hc
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_eigenvalue_finset_counting :
     ∃ C : ℝ, 0 < C ∧ ∀ Λ : ℝ, 0 ≤ Λ → ∀ s : Finset (EigenIndex D Ω),
@@ -168,8 +154,6 @@ theorem exists_eigenvalue_finset_counting :
   exact hcount.trans (mul_le_mul_of_nonneg_right (le_max_left C' 1)
     (Real.rpow_nonneg (by linarith) _))
 
-
-
 theorem exists_eigenvalue_counting :
     ∃ C : ℝ, 0 < C ∧ ∀ Λ : ℝ, 0 ≤ Λ →
       {i : EigenIndex D Ω | eigenvalue D Ω i ≤ Λ}.Finite ∧
@@ -180,8 +164,6 @@ theorem exists_eigenvalue_counting :
   apply finite_ncard_le_of_finset_card_le
   intro s hs
   exact hbound Λ hΛ s (fun i hi => hs hi)
-
-
 
 theorem summable_eigenvalue_weighted_exp (t : ℝ) (ht : 0 < t) (m : ℕ) :
     Summable (fun i : EigenIndex D Ω =>

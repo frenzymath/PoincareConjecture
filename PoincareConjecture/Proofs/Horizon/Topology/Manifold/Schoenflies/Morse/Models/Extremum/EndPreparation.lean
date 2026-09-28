@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.CylinderEnd
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Caps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +14,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 theorem exists_minimum_preparation_with_profile
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -104,8 +99,6 @@ theorem exists_minimum_preparation_with_profile
     rw [hH _ hqr, hsum, hnorm, J.map_smul]
     exact hGcylinder (J q) ρ (by simpa using hq) hρpos
       (by nlinarith [hρ.1]) ((sq_le_sq₀ hρpos.le hr.le).mpr hρ.2)
-
-
 
 theorem exists_minimum_preparation_with_upper_plane_action
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

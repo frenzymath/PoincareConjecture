@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetChart
 import PoincareConjecture.Proofs.M11.OrdinaryChartMetric
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))
   (g : ℝ → RiemannianMetric n U)
 
-
-
 theorem ordinaryChartMetric_openSubset_apply (x y : U) (t : ℝ)
     (v w : EuclideanSpace ℝ (Fin n)) :
     Proofs.M11.ordinaryChartMetric g x (t, y.val) v w = (g t).inner y v w := by
@@ -37,14 +26,10 @@ theorem ordinaryChartMetric_openSubset_apply (x y : U) (t : ℝ)
   change (g t).inner ((chartAt (EuclideanSpace ℝ (Fin n)) x).symm y.val) v w = _
   rw [U.chartAt_symm_apply_val]
 
-
-
 noncomputable def backwardMetricCoefficient (T : ℝ) (x : U)
     (z : ℝ × EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ :=
   (2 * Real.sqrt z.1) • Proofs.M11.ordinaryChartMetric g x (T - z.1, z.2)
-
-
 
 theorem backwardMetricCoefficient_apply (T : ℝ) (x y : U) (t : ℝ)
     (v w : EuclideanSpace ℝ (Fin n)) :
@@ -53,17 +38,12 @@ theorem backwardMetricCoefficient_apply (T : ℝ) (x y : U) (t : ℝ)
   simp only [backwardMetricCoefficient, smul_apply, smul_eq_mul,
     ordinaryChartMetric_openSubset_apply]
 
-
-
 theorem backwardMetricCoefficient_symm (T : ℝ) (x : U)
     (z : ℝ × EuclideanSpace ℝ (Fin n)) (v w : EuclideanSpace ℝ (Fin n)) :
     backwardMetricCoefficient U g T x z v w = backwardMetricCoefficient U g T x z w v := by
   change (2 * Real.sqrt z.1) * Proofs.M11.ordinaryChartMetric g x (T - z.1, z.2) v w =
     (2 * Real.sqrt z.1) * Proofs.M11.ordinaryChartMetric g x (T - z.1, z.2) w v
   rw [Proofs.M11.ordinaryChartMetric_symm g x (T - z.1) z.2 v w]
-
-
-
 
 theorem backwardMetricCoefficient_contDiffOn {K J : Set ℝ}
     (hg : RiemannianMetric.IsSmoothFamilyOn g K) (T : ℝ) (x : U)
@@ -91,9 +71,6 @@ theorem backwardMetricCoefficient_contDiffOn {K J : Set ℝ}
     exact hz.2
   exact (contDiffOn_const.mul (contDiffOn_fst.sqrt (fun z hz => (hpos z.1 hz.1).ne'))).smul
     (hm.comp hmap hmem)
-
-
-
 
 theorem backwardMetricCoefficient_pos (T : ℝ) (x : U) {t : ℝ} (ht : 0 < t)
     {y : EuclideanSpace ℝ (Fin n)} (hy : y ∈ U) (v : EuclideanSpace ℝ (Fin n)) (hv : v ≠ 0) :

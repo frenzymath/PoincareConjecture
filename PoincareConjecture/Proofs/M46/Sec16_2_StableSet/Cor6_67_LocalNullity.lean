@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M10.NullTransport
 import Mathlib.Analysis.Calculus.Rademacher
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
-
-
 
 theorem comparison_nondifferentiability_null
     (g : RiemannianMetric n M) {f : M → ℝ} (A : Set M)
@@ -71,8 +59,6 @@ theorem comparison_nondifferentiability_null
     (by simpa only [← extChartAt_source (𝓡 n)] using hx.1.1)).mpr
   simpa only [modelWithCornersSelf_coe, range_id, mdifferentiableWithinAt_univ]
     using hdiff.mdifferentiableAt
-
-
 
 theorem survival_criticalValues_null
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}

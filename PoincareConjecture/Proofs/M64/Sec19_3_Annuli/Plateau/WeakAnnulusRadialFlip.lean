@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +23,6 @@ local notation "mu" => volume.restrict S
 local notation "T" => m64AnnulusRadialFlip
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_radial_flip (A : M64ObservedWeakAnnulus (n := n) e c0 c1) :
     ∃ W : M64ObservedWeakAnnulus (n := n) e c1 c0,

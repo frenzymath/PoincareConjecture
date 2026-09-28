@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TriangleRegularFans
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCornerFans
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +12,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_triangle_region_fan_defects
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M03.ScalarCommutator
 import PoincareConjecture.Proofs.M03.CurvatureTensoriality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

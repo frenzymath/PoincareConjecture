@@ -3,15 +3,6 @@ import Mathlib.Topology.Compactness.CompactlyGeneratedSpace
 import Mathlib.Topology.MetricSpace.HausdorffDistance
 import Mathlib.Analysis.Convex.Jensen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set Metric

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.JetEstimates
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetOperator
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -51,7 +43,6 @@ private theorem abs_inverse_component_le
     _ ≤ ‖I‖ * ‖EuclideanSpace.proj (𝕜 := ℝ) i‖ := I.le_opNorm _
     _ ≤ C * 1 := mul_le_mul hI (norm_euclidean_proj_le i) (norm_nonneg _) hC
     _ = C := mul_one _
-
 
 theorem scalarTwoJet_sub_le {J J₀ : MetricTwoJet 3} {δ K : ℝ}
     (hδ : 0 ≤ δ) (hδone : δ ≤ 1)

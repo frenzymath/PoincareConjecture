@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonEdgeIsotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Nested.RibbonInterior
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,10 +26,6 @@ private theorem image_eq_of_fixed_complement
     by_contra hn
     have he : F.symm x = x := (hfix (F.symm x) hn).symm.trans (F.apply_symm_apply x)
     exact hn (he.symm ▸ hx)
-
-
-
-
 
 theorem exists_supported_nested_disk_pair_isotopy_of_shared_ribbon
     (A B : Fin 2 → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

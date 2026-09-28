@@ -1,23 +1,10 @@
 import Mathlib.Combinatorics.SimpleGraph.Connectivity.Connected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace SimpleGraph
-
-
-
-
 
 theorem Preconnected.induce_of_attached_vertices
     {V : Type*} {G : SimpleGraph V} {s t : Set V}

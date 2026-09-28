@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.EventPreservation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ open SurgeryEventRebuild
 
 variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {past future : ℝ → SliceMetric.{u}} {T : ℝ}
-
 
 noncomputable def copyPast
     (E : SurgeryEventData g₀ K P (fun t => (past t).1) (fun t => (past t).2) T)
@@ -183,7 +173,6 @@ theorem copyPast_retention_map (x : (past E.tMinus).1.carrier) :
   region_map (hPast E.tMinus ⟨E.tMinus_nonnegative, E.tMinus_lt.le⟩)
     (hPast T ⟨E.tMinus_nonnegative.trans E.tMinus_lt.le, le_rfl⟩)
     E.retained_pre E.retained_post E.retention x
-
 
 theorem copyPast_preservation : M33NonemptyEventDataPreservation E (E.copyPast hPast) := by
   refine {

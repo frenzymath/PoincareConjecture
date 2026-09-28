@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RayPerturbation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_source_radial_variation_of_normalized_distance_limits
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

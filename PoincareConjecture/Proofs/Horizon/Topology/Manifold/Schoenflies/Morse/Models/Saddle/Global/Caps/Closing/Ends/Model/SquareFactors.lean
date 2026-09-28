@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.CoordinateRescaling
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,7 +9,6 @@ open scoped ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing.Model
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
-
 
 theorem exists_signed_square_coordinates_of_factors
     {U : Set E2} (hU : IsOpen U) (h0 : (0 : E2) ∈ U)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryRadialCutoff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,19 +10,10 @@ open scoped ContDiff Topology BigOperators
 
 namespace PoincareConjecture
 
-
-
-
 def m64BoundaryCutoffRadius (R : ℝ) (j : ℕ) : ℝ := R / 4 ^ j
-
-
-
 
 theorem m64BoundaryCutoffRadius_pos {R : ℝ} (hR : 0 < R) (j : ℕ) :
     0 < m64BoundaryCutoffRadius R j := by unfold m64BoundaryCutoffRadius; positivity
-
-
-
 
 theorem m64BoundaryCutoffRadius_antitone {R : ℝ} (hR : 0 < R) :
     Antitone (m64BoundaryCutoffRadius R) := by
@@ -42,38 +22,23 @@ theorem m64BoundaryCutoffRadius_antitone {R : ℝ} (hR : 0 < R) :
   gcongr
   norm_num
 
-
-
-
 theorem m64BoundaryCutoffRadius_succ (R : ℝ) (j : ℕ) :
     m64BoundaryCutoffRadius R (j + 1) = m64BoundaryCutoffRadius R j / 4 := by
   simp only [m64BoundaryCutoffRadius, pow_succ, div_mul_eq_div_div]
 
-
-
-
 def m64BoundaryAveragedCutoff (a : LoopPlane) (R : ℝ) (N : ℕ) (p : LoopPlane) : ℝ :=
   (N : ℝ)⁻¹ * ∑ j ∈ Finset.range N,
     m64BoundaryRadialCutoff a (m64BoundaryCutoffRadius R j) p
-
-
-
 
 theorem m64BoundaryAveragedCutoff_contDiff (a : LoopPlane) (R : ℝ) (N : ℕ) :
     ContDiff ℝ ∞ (m64BoundaryAveragedCutoff a R N) := by
   apply contDiff_const.mul
   exact ContDiff.sum (fun j _ => m64BoundaryRadialCutoff_contDiff a _)
 
-
-
-
 theorem m64BoundaryAveragedCutoff_nonneg (a : LoopPlane) (R : ℝ) (N : ℕ) (p : LoopPlane) :
     0 ≤ m64BoundaryAveragedCutoff a R N p := by
   apply mul_nonneg (inv_nonneg.mpr (Nat.cast_nonneg _))
   exact Finset.sum_nonneg (fun j _ => m64BoundaryRadialCutoff_nonneg a _ p)
-
-
-
 
 theorem m64BoundaryAveragedCutoff_le_one (a : LoopPlane) (R : ℝ)
     {N : ℕ} (hN : 0 < N) (p : LoopPlane) : m64BoundaryAveragedCutoff a R N p ≤ 1 := by
@@ -85,18 +50,12 @@ theorem m64BoundaryAveragedCutoff_le_one (a : LoopPlane) (R : ℝ)
   exact (mul_le_mul_of_nonneg_left hsum (inv_nonneg.mpr (Nat.cast_nonneg _))).trans_eq
     (inv_mul_cancel₀ hn)
 
-
-
-
 theorem m64BoundaryAveragedCutoff_antitone_radius {a p q : LoopPlane} {R : ℝ}
     (hR : 0 < R) (N : ℕ) (hpq : ‖p - a‖ ≤ ‖q - a‖) :
     m64BoundaryAveragedCutoff a R N q ≤ m64BoundaryAveragedCutoff a R N p := by
   apply mul_le_mul_of_nonneg_left _ (inv_nonneg.mpr (Nat.cast_nonneg _))
   exact Finset.sum_le_sum (fun j _ =>
     m64BoundaryRadialCutoff_antitone_radius (m64BoundaryCutoffRadius_pos hR j) hpq)
-
-
-
 
 theorem m64BoundaryAveragedCutoff_eq_one {a p : LoopPlane} {R : ℝ}
     (hR : 0 < R) {N : ℕ} (hN : 0 < N)
@@ -112,9 +71,6 @@ theorem m64BoundaryAveragedCutoff_eq_one {a p : LoopPlane} {R : ℝ}
     Finset.sum_const, Finset.card_range, nsmul_eq_mul, mul_one]
   exact inv_mul_cancel₀ (Nat.cast_ne_zero.mpr (Nat.ne_of_gt hN))
 
-
-
-
 theorem m64BoundaryAveragedCutoff_eq_zero {a p : LoopPlane} {R : ℝ}
     (hR : 0 < R) (N : ℕ) (hp : R ≤ ‖p - a‖) :
     m64BoundaryAveragedCutoff a R N p = 0 := by
@@ -126,9 +82,6 @@ theorem m64BoundaryAveragedCutoff_eq_zero {a p : LoopPlane} {R : ℝ}
     exact hj.trans hp
   simp only [m64BoundaryAveragedCutoff, Finset.sum_congr rfl hterm,
     Finset.sum_const_zero, mul_zero]
-
-
-
 
 theorem m64BoundaryAveragedCutoff_column (a p : LoopPlane) (R : ℝ) (N : ℕ) (i : Fin 2) :
     fderiv ℝ (m64BoundaryAveragedCutoff a R N) p (EuclideanSpace.single i 1) =
@@ -173,10 +126,6 @@ private theorem sq_sum_of_pairwise_mul_zero {I : Type*} (s : Finset I) (f : I �
   · intro j hj hji
     exact h i hi j hj hji.symm
   · exact fun hnot => (hnot hi).elim
-
-
-
-
 
 theorem m64BoundaryAveragedCutoff_column_energy (a : LoopPlane) {R : ℝ}
     (hR : 0 < R) {N : ℕ} (hN : 0 < N) (i : Fin 2) :

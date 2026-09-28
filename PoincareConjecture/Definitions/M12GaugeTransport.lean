@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M12HorizontalCalculus
 import PoincareConjecture.Definitions.M12MovingGauge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,12 +15,9 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   {e : MovingSpacetimeGauge F T C}
 
-
 noncomputable def pullbackHorizontalSection (G : MovingSpacetimeGaugeGeometry e)
     (V : HorizontalSection F) (t : T.Point) (x : C) : TangentSpace (𝓡 n) x :=
   (G.spatialTangentEquiv t x).symm (V (e.toSpacetime (t, x)))
-
-
 
 noncomputable def movingGaugeSectionTimeDerivative (G : MovingSpacetimeGaugeGeometry e)
     (V : HorizontalSection F) (t : T.Point) (x : C) : TangentSpace (𝓡 n) x :=

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonUnitCubePLCollar
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X]
-
-
-
 
 theorem ChartwisePLSphere.cap_interior_transition_mem_piecewiseAffineGroupoid
     {e : ι → OpenPartialHomeomorph X V3} {S : Set X}

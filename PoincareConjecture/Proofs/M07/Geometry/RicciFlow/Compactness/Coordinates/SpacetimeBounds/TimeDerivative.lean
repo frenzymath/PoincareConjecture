@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Coordinates.Coefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -26,7 +17,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
 theorem differentiableAt_pullbackCoefficients_time (F : RicciFlow n M J)
     (hJ : IsOpen J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -36,7 +26,6 @@ theorem differentiableAt_pullbackCoefficients_time (F : RicciFlow n M J)
   have hs := (F.contDiffOn_pullbackCoefficients hJ hU he).contDiffAt (x := (t, x))
     ((hJ.prod hU).mem_nhds ⟨ht, hx⟩)
   exact (hs.comp t (contDiffAt_id.prodMk contDiffAt_const)).differentiableAt (by simp)
-
 
 theorem deriv_pullbackCoefficients_apply (F : RicciFlow n M J)
     (hJ : IsOpen J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -54,8 +43,6 @@ theorem deriv_pullbackCoefficients_apply (F : RicciFlow n M J)
       (deriv (fun s => (F.metric s).pullbackCoefficients e x) t u v) t := by
     simpa using hv
   exact hv'.unique ((F.equation t ht (e x) _ _).hasDerivAt (hJ.mem_nhds ht))
-
-
 
 theorem norm_deriv_pullbackCoefficients_le [T2Space M] (F : RicciFlow n M J)
     (hJ : IsOpen J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

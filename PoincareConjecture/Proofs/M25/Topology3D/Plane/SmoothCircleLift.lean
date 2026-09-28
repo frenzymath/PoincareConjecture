@@ -3,24 +3,12 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.LocallyConvex.WithSeminorms
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_contDiff_sphere_parameter_lift
     {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderContractions
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderTimeJets
 import Mathlib.LinearAlgebra.Multilinear.Basis
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem tendsto_cylinder_jet_of_components {r : ℕ}
     {F : ℕ → ContinuousMultilinearMap ℝ (fun _ : Fin r => EuclideanSpace ℝ (Fin 3)) ℝ}
@@ -45,8 +34,6 @@ theorem tendsto_cylinder_jet_of_components {r : ℕ}
   apply hev.isInducing.tendsto_nhds_iff.mpr
   exact tendsto_pi_nhds.mpr h
 
-
-
 theorem metric_component_contDiffAt
     (g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)))
     (p v w : EuclideanSpace ℝ (Fin 3)) :
@@ -59,9 +46,6 @@ theorem metric_component_contDiffAt
   let ev : (E →L[ℝ] E →L[ℝ] ℝ) →L[ℝ] ℝ :=
     (ContinuousLinearMap.apply ℝ ℝ w).comp (ContinuousLinearMap.apply ℝ (E →L[ℝ] ℝ) v)
   exact ev.contDiff.contDiffAt.comp p (g.contDiffAt_euclideanCoefficients p)
-
-
-
 
 theorem cylinder_curvatureTensorNorm_tendsto_of_time_tendsto
     (g : ℕ → RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)))
@@ -126,9 +110,6 @@ theorem cylinder_curvatureTensorNorm_tendsto_of_time_tendsto
     have h := cylinder_curvatureTensorNorm_center u' hu' modelD (q 0) 0
     simpa only [← Prod.zero_eq_mk, map_zero] using h
   exact hmodel ▸ hnorm
-
-
-
 
 theorem cylinder_curvatureTensorNorm_tendsto
     (g : ℕ → RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3)))

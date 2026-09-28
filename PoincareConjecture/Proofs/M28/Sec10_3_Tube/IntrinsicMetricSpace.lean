@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 @[instance_reducible] noncomputable def intrinsicOpenMetricSpace
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
@@ -42,7 +30,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   rw [intrinsicOpenMetric_edist]
   exact hfinite p q
 
-
 theorem intrinsicOpenMetricSpace_topology
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (hfinite : ∀ p q : U, intrinsicEDist g (U : Set M) (p : M) (q : M) ≠ ⊤) :
@@ -51,8 +38,6 @@ theorem intrinsicOpenMetricSpace_topology
       d.toPseudoMetricSpace.toUniformSpace.toTopologicalSpace :=
   rfl
 
-
-
 theorem intrinsicOpenMetricSpace_edist
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (hfinite : ∀ p q : U, intrinsicEDist g (U : Set M) (p : M) (q : M) ≠ ⊤)
@@ -60,8 +45,6 @@ theorem intrinsicOpenMetricSpace_edist
     letI := intrinsicOpenMetricSpace g U hfinite
     edist p q = intrinsicEDist g (U : Set M) (p : M) (q : M) :=
   intrinsicOpenMetric_edist g U p q
-
-
 
 theorem intrinsicOpenMetricSpace_dist
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

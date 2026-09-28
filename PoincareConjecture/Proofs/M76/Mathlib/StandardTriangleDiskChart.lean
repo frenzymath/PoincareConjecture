@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularCapDisks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
-
-
-
 
 theorem exists_base_disk_chart : ∃ e : base ≃ₜ disk, e.IsFinitePL ∧
     (∀ x : base, (e x : (ℝ × ℝ) × ℝ) = ((x : ℝ × ℝ), 0)) ∧
@@ -28,9 +17,6 @@ theorem exists_base_disk_chart : ∃ e : base ≃ₜ disk, e.IsFinitePL ∧
   refine ⟨e, he, hval, fun x => ?_⟩
   rw [hval, mem_rim, frontier_base]
   simp
-
-
-
 
 theorem exists_triangle_disk_chart :
     ∃ e : convexHull ℝ (range TriangleDiskModel.rightTriangle) ≃ₜ disk,

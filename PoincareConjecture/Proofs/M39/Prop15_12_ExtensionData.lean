@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M39ComparisonMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,10 +12,6 @@ variable {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
   {T : ℝ} {hT : T ∈ D.flow.surgery_times}
   [Nonempty (D.flow.slice T).carrier]
   (I : RepairedComparisonMapInput D T hT)
-
-
-
-
 
 def ComparisonLocalModel
     (f : I.parent.carrier.carrier → I.child.carrier.carrier)
@@ -41,9 +28,6 @@ def ComparisonLocalModel
             ((D.flow.event T hT).local_embed i
               (((D.flow.event T hT).local_result i).collapse
                 ((D.flow.event T hT).limit_identify.map (I.parent.inclusion x))))) U))
-
-
-
 
 structure ComparisonExtension where
   map : ContinuousMap I.parent.carrier.carrier I.child.carrier.carrier

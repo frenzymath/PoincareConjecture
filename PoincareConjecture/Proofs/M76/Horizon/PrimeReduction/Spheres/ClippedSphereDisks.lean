@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.ClippedSphereParameter
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.SmallSphereDisk
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,9 +9,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
-
-
-
 
 theorem ChartwisePLSphere.exists_clipped_disk_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

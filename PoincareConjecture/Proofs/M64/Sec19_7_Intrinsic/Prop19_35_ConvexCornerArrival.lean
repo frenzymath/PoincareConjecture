@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConvexCornerReturn
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,10 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_convex_corner_arrival_nonneg
     {eta : ℝ → AnnulusCoordinates} {u T : ℝ}
@@ -46,10 +38,6 @@ theorem m64Intrinsic_convex_corner_arrival_nonneg
   constructor
   · simpa only [map_neg, Prod.fst_neg] using neg_nonneg.mpr hnonpos.1
   · simpa only [map_neg, Prod.snd_neg] using neg_nonneg.mpr hnonpos.2
-
-
-
-
 
 theorem m64Intrinsic_interior_geodesic_arrival_not_positive_multiple
     (G : RiemannianMetric 2 AnnulusCoordinates)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckMixedForcingNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckTensorForcingNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ open TensorProbeNative DeTurckNative DeTurckRationalJetNative DeTurckSourceJetNa
   DeTurckMetricProducerNative DeTurckTensorForcingNative
 
 variable {n : ℕ}
-
 
 theorem source_background_difference (B C q : MetricJet2 (n := n)) (i j : Fin n) :
     ricciDeTurckSource B q i j - ricciDeTurckSource C q i j =
@@ -188,7 +179,6 @@ theorem varyingHighTuple_ae_eq
       exact hx.trans (matrixWordContinuous_eq F C g0 hF word
         ((p.word_length_le_metricOrder_of_mem true word i j ha).trans hbg) i j QB background hQB x)
   | inverse b i j => exact False.elim (hw (Nat.zero_le m))
-
 
 theorem exists_smooth_varying_jet_action
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -358,7 +348,6 @@ private theorem backgroundOrder_le_degree {jota : Type*} (p : Expr jota n) (b : 
     omega
   | neg p hp => exact hp
 
-
 theorem exists_smooth_background_word_action
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
       (∑ a, g0.inner x (F a x) v • F a x) = v)
@@ -414,7 +403,6 @@ section FiniteCover
 
 variable (A : CompatibleChartCover (n := n) (M := M))
 
-
 theorem backgroundDifferenceEntry_reconstruction (background g : RiemannianMetric n M)
     (D : LeviCivitaData g) (B : LeviCivitaData background) (B0 : LeviCivitaData g0)
     (ab : iota × iota) :
@@ -456,7 +444,6 @@ theorem backgroundOutput_ae_eq {k : ℕ} (Q : ChartSourceTuples (iota := iota) A
     hQ ab word hw
   rw [backgroundDifferenceEntry_reconstruction F g0 A background g D B B0 ab] at heq
   exact heq
-
 
 theorem exists_smooth_background_chart_action
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),

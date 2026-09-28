@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Dee
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Limit.Separation.Boundary
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Geometry.EndCut.PrefixInterior
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,12 +16,10 @@ namespace PoincareConjecture.StrongHorn
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T} (horn : StrongHorn E epsilon)
 
-
 theorem isClosed_coordinateClosedTail (a : ℝ) :
     IsClosed (Subtype.val '' {x : horn.carrier | a ≤ horn.coordinateHeight x}) := by
   exact horn.isClosed_carrier.isClosedEmbedding_subtypeVal.isClosedMap _
     (isClosed_le continuous_const horn.continuous_coordinateHeight)
-
 
 theorem exists_positive_coordinate_lower_bound
     {K : Set (E.extended.slice T).carrier} (hK : IsCompact K) (hne : K.Nonempty)
@@ -57,7 +46,6 @@ theorem exists_positive_coordinate_lower_bound
   refine ⟨horn.coordinateHeight x, hxpos, (horn.coordinate.symm x).2.property.2, ?_⟩
   intro y hy
   exact ⟨⟨y, (hKH hy).1⟩, hmin hy, rfl⟩
-
 
 theorem isPreconnected_interior_diff_coordinateClosedTail {a : ℝ}
     (ha1 : a < 1) :
@@ -98,8 +86,6 @@ theorem isPreconnected_interior_diff_coordinateClosedTail {a : ℝ}
   apply horn.parameterization_smooth.continuousOn.mono
   exact fun _ hz => ⟨mem_univ _, (neg_lt_zero.mpr horn.collar_pos).trans hz.2.1,
     hz.2.2.trans ha1⟩
-
-
 
 theorem contained_neck_isSeparating {delta : ℝ} (N : TerminalStrongNeck E delta)
     (hdelta : delta < 1 / 2) (hN : N.carrier ⊆ horn.carrier) :

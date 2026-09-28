@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff ENNReal
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_density_of_scaled_density
     {M : Type*} [TopologicalSpace M]

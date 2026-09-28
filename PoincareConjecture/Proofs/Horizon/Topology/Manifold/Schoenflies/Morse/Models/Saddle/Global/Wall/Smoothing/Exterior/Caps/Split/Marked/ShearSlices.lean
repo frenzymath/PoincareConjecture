@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Immersion.FiniteDimen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Caps.Split.Marked.Shear
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -132,7 +130,6 @@ theorem range_sphereLatitude {t : Real} (ht : t ∈ Ioo (-1 : Real) 1) :
       rw [← mul_assoc, mul_inv_cancel₀ hr.ne', one_mul]
     · exact hyt.symm
 
-
 def tangentFlatShearSlice (z : Real × S1) : E3 :=
   tangentFlatShear (sphereLatitude z.1 z.2)
 
@@ -157,8 +154,6 @@ theorem tangentFlatShearSlice_isSmoothEmbedding {t : Real} (ht : t ∈ Ioo (-1 :
     (hlat.contMDiff.mdifferentiable (by simp) _)]
   exact (tangentFlatShear.mfderivToContinuousLinearEquiv (by simp) _).injective.comp
     ((hlat.isImmersion.isImmersionAt q).injective_mfderiv_modelWithCornersSelf (by simp))
-
-
 
 theorem range_tangentFlatShearSlice {t : Real} (ht : t ∈ Ioo (-1 : Real) 1) :
     range (fun q => tangentFlatShearSlice (t, q)) =

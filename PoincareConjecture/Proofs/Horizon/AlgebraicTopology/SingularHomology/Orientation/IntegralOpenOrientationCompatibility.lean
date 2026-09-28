@@ -13,7 +13,6 @@ universe u
 
 namespace Poincare.Topology
 
-
 theorem integralOpenOrientation_comp
     {X Y Z : Type u} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
     [T2Space X] [T2Space Y] [T2Space Z] [LocallyCompactSpace X]

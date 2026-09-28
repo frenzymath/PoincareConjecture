@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.LocalRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -236,8 +228,6 @@ private theorem metricConnection_smooth :
     with y hy
   simp only [ContinuousLinearMap.inCoordinates, ContinuousLinearMap.comp_apply]
   rw [Bundle.Trivialization.continuousLinearMapAt_apply_of_mem ℝ _ hy]
-
-
 
 noncomputable def withMetric : LeviCivitaData g where
   connection := metricConnection D0 g

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.FiniteMarkedTowe
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Approximation.ProtectedCylinder
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Coordinates.RetainedShell
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe a
@@ -35,9 +24,6 @@ local notation "U" => chartShell L retained
 local notation "R" => chartDomain L retained
 local notation "chart" => TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe
   (chartShell L retained) (chartShell_nonempty L retained)
-
-
-
 
 theorem exists_protected_annulus_tower_with_cutPL
     (he : PLDomain e (latticeHandleDomain (Fin 1) (Fin 2) L))
@@ -112,9 +98,6 @@ theorem exists_protected_annulus_tower_with_cutPL
     hC, hSs ▸ hAC, hr, hrPL, hs0, hreach, fun y hy ↦ hcut y (hCW hy), hterm⟩
   intro x hx
   exact (hfu x ⟨sphere_subset_closedBall hx.1, hx.2⟩).trans (hgrim x hx)
-
-
-
 
 theorem exists_protected_annulus_tower
     (he : PLDomain e (latticeHandleDomain (Fin 1) (Fin 2) L))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicInverseFamily
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -53,8 +44,6 @@ variable (P : RicciFlowCurvatureTheory.{0})
       (G.flow.metric t).inner (standardRotation A x)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = (G.flow.metric t).inner x u v)
-
-
 
 theorem rawInverseRadius_continuousOn_slab {T : ℝ} (hT : 0 ≤ T)
     (hTlt : T < G.lifetime) :

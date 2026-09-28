@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_PreterminalTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c d : ℝ} {U : Set C.carrier}
-
-
-
-
 
 theorem exists_cylinder_across_retained_event
     (e : SurgeryFlowCylinder F C origin scale (Ico 0 c) U)

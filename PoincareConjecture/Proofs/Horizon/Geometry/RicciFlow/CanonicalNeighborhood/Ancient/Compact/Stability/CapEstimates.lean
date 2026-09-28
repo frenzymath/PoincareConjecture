@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Supremum
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Metric.IntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,7 +38,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
 
-
 theorem tendstoUniformlyOn_cap_scalarCurvature
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (t : ℝ), t ≤ 0 → ∀ x ∈ G.exhaustion k,
@@ -64,7 +53,6 @@ theorem tendstoUniformlyOn_cap_scalarCurvature
     funext (A.connection.scalarCurvature_eq (G.limit.flow.flow.connection 0))
   rwa [heq]
 
-
 theorem tendsto_cap_scalarSup
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (t : ℝ), t ≤ 0 → ∀ x ∈ G.exhaustion k,
@@ -77,7 +65,6 @@ theorem tendsto_cap_scalarSup
       (𝓝 (scalarCurvatureSupOn (G.limit.flow.flow.metric 0) A.connection A.carrier)) := by
   simpa only [scalarSup_image] using
     A.scalar_sup_tendsto (hconv.tendstoUniformlyOn_cap_scalarCurvature hfixed A)
-
 
 theorem eventually_cap_scalar_pos_and_ratio
     (hconv : M23TerminalMetricConvergence G e)
@@ -99,8 +86,6 @@ theorem eventually_cap_scalar_pos_and_ratio
     exact hk.1 x hx
   · rintro _ ⟨x, hx, rfl⟩ _ ⟨y, hy, rfl⟩
     exact hk.2.choose_spec.2 x hx y hy
-
-
 
 theorem eventually_cap_intrinsic_diameter_bound
     (hconv : M23TerminalMetricConvergence G e)

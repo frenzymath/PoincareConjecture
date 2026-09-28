@@ -1,19 +1,10 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteBilinearCoordinates
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
 
 open scoped ContDiff
-
 
 theorem ContDiffAt.piLpBilinearFromCoordinates
     {𝕜 E F I J : Type*} [NontriviallyNormedField 𝕜]
@@ -29,8 +20,6 @@ theorem ContDiffAt.piLpBilinearFromCoordinates
       (PiLp p fun _ : I => 𝕜) →L[𝕜] (PiLp q fun _ : J => 𝕜) →L[𝕜] F :=
     ContinuousLinearMap.piLpBilinearFromCoordinates
   exact L.contDiff.contDiffAt.comp x (contDiffAt_pi.2 (fun i => contDiffAt_pi.2 (hf i)))
-
-
 
 theorem ContDiffAt.bilinearPullback
     {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

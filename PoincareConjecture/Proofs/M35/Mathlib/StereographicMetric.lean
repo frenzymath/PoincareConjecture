@@ -1,21 +1,11 @@
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M35
 
 variable {V : Type*} [NormedAddCommGroup V] [InnerProductSpace ℝ V]
-
-
 
 theorem fderiv_stereoInvFunAux_apply (v w a : V) :
     fderiv ℝ (stereoInvFunAux v) w a =
@@ -30,8 +20,6 @@ theorem fderiv_stereoInvFunAux_apply (v w a : V) :
   have h := hi.smul hv
   change HasFDerivAt (stereoInvFunAux v) _ w at h
   simpa using congrArg (fun L : V →L[ℝ] V => L a) h.fderiv
-
-
 
 theorem inner_fderiv_stereoInvFunAux (v w a b : V)
     (hv : ‖v‖ = 1) (hw : inner ℝ v w = 0)
@@ -48,8 +36,6 @@ theorem inner_fderiv_stereoInvFunAux (v w a b : V)
   rw [real_inner_comm a w]
   field_simp
   ring
-
-
 
 theorem hasFDerivAt_stereographicMetricFactor (K : ℝ) (w : V) :
     HasFDerivAt (fun x : V => K / (‖x‖ ^ 2 + 4) ^ 2)

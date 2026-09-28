@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.CutoffIntegralComparison
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +9,6 @@ open Set MeasureTheory Filter
 open scoped Topology BigOperators
 
 namespace MeasureTheory
-
-
-
 
 theorem tendsto_cutoff_coordinate_energy
     {X F ι : Type*} [TopologicalSpace X] [MeasurableSpace X] [OpensMeasurableSpace X]

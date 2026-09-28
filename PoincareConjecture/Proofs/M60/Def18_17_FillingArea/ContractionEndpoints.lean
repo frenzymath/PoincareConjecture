@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.ContractionTime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem m60Contraction_swapped_derivative (C : ℝ × (M × M) → M)
     (x : ℝ × (M × M)) (v : TangentSpace (𝓡 3) x.2.2)
@@ -44,9 +33,6 @@ theorem m60Contraction_swapped_derivative (C : ℝ × (M × M) → M)
     mfderiv_prodMk mdifferentiableAt_snd mdifferentiableAt_fst,
     mfderiv_id, mfderiv_snd, mfderiv_fst] at hc
   exact hc
-
-
-
 
 theorem m60Contraction_endpointDerivative_bounds [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M))

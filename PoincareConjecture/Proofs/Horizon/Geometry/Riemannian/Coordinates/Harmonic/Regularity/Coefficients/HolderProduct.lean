@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Holder
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,8 +13,6 @@ section Compact
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem memHolder_half_of_contDiff_compact {f : E → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) : MemHolder (1 / 2) f := by
@@ -40,8 +29,6 @@ theorem memHolder_half_of_contDiff_compact {f : E → F}
   exact ((holderWith_zero_of_norm_le hnorm).of_le_of_le hlip.holderWith
     (show (0 : ℝ≥0) ≤ 1 / 2 by positivity) (show (1 / 2 : ℝ≥0) ≤ 1 by norm_num)).memHolder
 
-
-
 theorem memHolder_half_fderiv_of_contDiff_compact {f : E → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) :
     MemHolder (1 / 2) (fderiv ℝ f) :=
@@ -54,8 +41,6 @@ section Product
 variable {X E F : Type*} [MetricSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem holderWith_clm_apply {A : X → E →L[ℝ] F} {f : X → E}
     {α HA Hf MA Mf : ℝ≥0} (hA : HolderWith HA α A) (hf : HolderWith Hf α f)
@@ -89,7 +74,6 @@ theorem holderWith_clm_apply {A : X → E →L[ℝ] F} {f : X → E}
   simpa only [coe_nndist, NNReal.coe_mul, NNReal.coe_add, NNReal.coe_rpow,
     dist_eq_norm] using hnorm
 
-
 theorem nnHolderNorm_clm_apply_le {A : X → E →L[ℝ] F} {f : X → E}
     {α MA Mf : ℝ≥0} (hA : MemHolder α A) (hf : MemHolder α f)
     (hAbound : ∀ x, ‖A x‖ ≤ MA) (hfbound : ∀ x, ‖f x‖ ≤ Mf) :
@@ -102,8 +86,6 @@ end Product
 section Absorption
 
 variable {X Y : Type*} [MetricSpace X] [MetricSpace Y]
-
-
 
 theorem holderWith_of_self_improving_bound {f : X → Y} {α a b : ℝ≥0}
     (hf : MemHolder α f) (ha : a < 1)
@@ -125,8 +107,6 @@ section CompactAbsorption
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
 
 theorem holderWith_half_fderiv_of_self_improving {f : E → F}
     (hf : ContDiff ℝ ∞ f) (hc : HasCompactSupport f) {a b : ℝ≥0} (ha : a < 1)

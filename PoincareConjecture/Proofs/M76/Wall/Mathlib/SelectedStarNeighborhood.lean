@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem exists_selected_star_neighborhood
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

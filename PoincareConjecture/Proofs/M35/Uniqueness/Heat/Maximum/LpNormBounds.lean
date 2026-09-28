@@ -1,14 +1,6 @@
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

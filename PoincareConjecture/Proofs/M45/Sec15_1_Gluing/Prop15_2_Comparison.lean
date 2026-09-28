@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Patches
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderTimeComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators Topology
@@ -18,9 +9,6 @@ universe u
 
 namespace PoincareConjecture.M45
 
-
-
-
 theorem evolvingCylinderInverseWeight_pos {t : ℝ} (ht : t < 1) (i : Fin 3) :
     0 < M44.evolvingCylinderInverseWeight t i := by
   have h : 0 < (2 * (1 - t))⁻¹ := by positivity
@@ -28,8 +16,6 @@ theorem evolvingCylinderInverseWeight_pos {t : ℝ} (ht : t < 1) (i : Fin 3) :
   · exact h
   · exact h
   · norm_num [M44.evolvingCylinderInverseWeight]
-
-
 
 theorem evolvingTensorNormSquared_nonneg {t : ℝ} (ht : t < 1)
     {r : ℕ} (q : UnitTwoSphere) (s : ℝ) (T : (Fin r → Fin 3) → ℝ) :
@@ -41,8 +27,6 @@ theorem evolvingTensorNormSquared_nonneg {t : ℝ} (ht : t < 1)
     (Finset.prod_nonneg fun i _ => (evolvingCylinderInverseWeight_pos ht (a i)).le)
     (sq_nonneg _)
 
-
-
 theorem evolvingJetError_mono_order {t : ℝ} (ht : t < 1)
     (B : RoundCylinderTwoTensor) {m n : ℕ} (hmn : m ≤ n)
     (z : RoundCylinderSpace) :
@@ -53,16 +37,11 @@ theorem evolvingJetError_mono_order {t : ℝ} (ht : t < 1)
   intro k _ _
   exact evolvingTensorNormSquared_nonneg ht z.1 z.2 _
 
-
-
 theorem cylinderDomain_mono {eta epsilon : ℝ} (heta : 0 < eta) (hle : eta ≤ epsilon) :
     Set.Ioo (-epsilon⁻¹) epsilon⁻¹ ⊆ Set.Ioo (-eta⁻¹) eta⁻¹ := by
   have hi : epsilon⁻¹ ≤ eta⁻¹ := inv_anti₀ heta hle
   intro s hs
   exact ⟨lt_of_le_of_lt (neg_le_neg hi) hs.1, lt_of_lt_of_le hs.2 hi⟩
-
-
-
 
 theorem familyClose_mono {eta epsilon : ℝ} (heta : 0 < eta) (hle : eta ≤ epsilon)
     {J K : Set ℝ} (hKJ : K ⊆ J) (hK : ∀ t ∈ K, t < 1)
@@ -80,9 +59,6 @@ theorem familyClose_mono {eta epsilon : ℝ} (heta : 0 < eta) (hle : eta ≤ eps
     intro t ht z hz
     exact (evolvingJetError_mono_order (hK t ht) (B t) horder z).trans
       (hjet t (hKJ ht) z (hdom hz))
-
-
-
 
 theorem recent_piecewise_comparison {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)

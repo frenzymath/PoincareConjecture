@@ -4,17 +4,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Data.Set.Card
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v
@@ -22,9 +11,6 @@ universe u v
 open Set
 
 namespace CoveringTwoSheet
-
-
-
 
 noncomputable def equivProduct {E : Type v} {X : Type u} (p : E → X)
     (htwo : ∀ x, (p ⁻¹' {x}).ncard = 2) : E ≃ X × Fin 2 := by
@@ -34,14 +20,9 @@ noncomputable def equivProduct {E : Type v} {X : Type u} (p : E → X)
     exact Fintype.equivFinOfCardEq ((fintypeCard_eq_ncard _).trans (htwo x))
   exact (Equiv.sigmaPreimageEquiv p).symm.trans (Equiv.sigmaEquivProdOfEquiv e)
 
-
-
 theorem fst_equivProduct {E : Type v} {X : Type u} (p : E → X)
     (htwo : ∀ x, (p ⁻¹' {x}).ncard = 2) (y : E) :
     (equivProduct p htwo y).1 = p y := rfl
-
-
-
 
 theorem ncard_fiber_fst {X : Type u} (x : X) :
     ((Prod.fst : X × Fin 2 → X) ⁻¹' {x}).ncard = 2 := by
@@ -56,11 +37,6 @@ theorem ncard_fiber_fst {X : Type u} (x : X) :
 end CoveringTwoSheet
 
 namespace IsCoveringMap
-
-
-
-
-
 
 theorem exists_two_sheet_model
     {E : Type v} {X : Type u} [TopologicalSpace E] [TopologicalSpace X]

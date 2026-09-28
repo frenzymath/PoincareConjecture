@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Nonorientable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem RiemannianMetric.PointSoulData.noEmbeddedTrivialNormalProjectivePlane
     {g : RiemannianMetric 3 M} (P : RiemannianMetric.PointSoulData g)
@@ -50,8 +39,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
 
-
-
 theorem M23TerminalExtension.noEmbeddedTrivialNormalProjectivePlane_of_pointSouls
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
     {G : M23InteriorConvergence S} (T : M23TerminalExtension G)
@@ -62,8 +49,6 @@ theorem M23TerminalExtension.noEmbeddedTrivialNormalProjectivePlane_of_pointSoul
   intro k
   obtain ⟨P⟩ := hsoul k
   exact P.noEmbeddedTrivialNormalProjectivePlane (S.term k).flow
-
-
 
 theorem M23TerminalExtension.not_projectivePlaneLine_of_pointSouls
     {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}

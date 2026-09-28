@@ -2,27 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartCompression
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPuncturedSquareCompression
 import PoincareConjecture.Proofs.M76.Mathlib.TorusSquareCompactCore
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
-
-
 
 theorem exists_punctured_torus_compression {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hdhalf : d < (4 * L) / 2) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalPartitionSides
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.ContainedCollar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

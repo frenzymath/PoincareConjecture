@@ -3,26 +3,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalComponentSurfaceCounts
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrimalDualTrees
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLCubeSphereModel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
 
 theorem exists_edgeComponent_cube_sphere_of_count
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

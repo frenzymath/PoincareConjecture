@@ -3,20 +3,11 @@ import Mathlib.Analysis.Calculus.FDeriv.Add
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
-
-
 
 theorem fderiv_eq_zero_of_eqOn_outer_annulus
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
@@ -57,8 +48,6 @@ theorem fderiv_eq_zero_of_eqOn_outer_annulus
   exact hunique.eq hf.hasFDerivAt.hasFDerivWithinAt
     ((hasFDerivWithinAt_const c q (closedBall b δ)).congr'
       (fun x hx => hconst (hB hx)) hqB)
-
-
 
 theorem fderiv_eq_of_eqOn_outer_annulus
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace Real E]

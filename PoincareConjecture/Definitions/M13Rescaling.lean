@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M13DomainTransport
 import PoincareConjecture.Statements.M13BackwardEndpoints
 import PoincareConjecture.Statements.M13ScaleBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 structure GeneralizedParabolicRescaling {n : ℕ} {X : Type u} [TopologicalSpace X]
     {A : AdaptedMetricAtlas n X} (R : GeneralizedFlowCarrierConclusion A)

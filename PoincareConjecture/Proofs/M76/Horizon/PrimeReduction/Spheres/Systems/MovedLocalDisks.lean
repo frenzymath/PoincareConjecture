@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Loca
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PLCarrierMotion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
-
-
-
 
 theorem exists_moved_finite_sphere_system_clipped_disk_neighborhood
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -78,4 +65,3 @@ theorem exists_moved_finite_sphere_system_clipped_disk_neighborhood
   exact hopen.preimage hbackcont
 
 end PoincareConjecture.M76
-

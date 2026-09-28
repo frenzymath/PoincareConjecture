@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Coordinates.BufferedAtlas
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Frames.Segmented
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

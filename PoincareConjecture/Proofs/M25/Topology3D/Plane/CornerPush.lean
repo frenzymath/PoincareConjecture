@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.LineLevel
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OppositeCoordinate
 import Mathlib.Analysis.Convex.Hull
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,20 +13,15 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
 noncomputable def cornerPushPoint (q a b : E) (t : ℝ) : E :=
   AffineMap.lineMap q (midpoint ℝ a b) t
-
 
 theorem cornerPushPoint_zero (q a b : E) : cornerPushPoint q a b 0 = q := by
   simp [cornerPushPoint]
 
-
 theorem cornerPushPoint_one (q a b : E) :
     cornerPushPoint q a b 1 = midpoint ℝ a b := by
   simp [cornerPushPoint]
-
-
 
 theorem cornerPushPoint_mem_triangle (q a b : E) {t : ℝ} (ht : t ∈ Icc 0 1) :
     cornerPushPoint q a b t ∈ convexHull ℝ {q, a, b} := by
@@ -44,8 +29,6 @@ theorem cornerPushPoint_mem_triangle (q a b : E) {t : ℝ} (ht : t ∈ Icc 0 1) 
   have hm : midpoint ℝ a b ∈ convexHull ℝ ({q, a, b} : Set E) :=
     segment_subset_convexHull (by simp) (by simp) (midpoint_mem_segment a b)
   exact (convex_convexHull ℝ _).lineMap_mem hq hm ht
-
-
 
 theorem cornerPushPoint_simple_corner {q a b : E} (ha : a ≠ q) (hb : b ≠ q)
     (hinter : segment ℝ q a ∩ segment ℝ q b ⊆ {q})
@@ -94,8 +77,6 @@ theorem cornerPushPoint_simple_corner {q a b : E} (ha : a ≠ q) (hb : b ≠ q)
     exact ⟨left_mem_segment ℝ _ _, left_mem_segment ℝ _ _⟩
 
 end Module
-
-
 
 theorem contDiff_cornerPushPoint {W E : Type*}
     [NormedAddCommGroup W] [NormedSpace ℝ W]

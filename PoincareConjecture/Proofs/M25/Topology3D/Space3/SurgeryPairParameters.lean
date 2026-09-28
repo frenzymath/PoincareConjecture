@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularSurgeryData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryMatchingProfile
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_surgery_pair_parameters (P : SurgeryCapProfile)
     (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) (t : ℝ)

@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalEndFrontier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.OriginalLabeledEndEmbedding
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76
@@ -209,4 +202,3 @@ theorem disjoint_closed_region_of_preconnected_not_subset
   exact ⟨⟨y,hTF hy⟩,subset_closure (hsub hy),rfl⟩
 
 end PoincareConjecture.M76
-

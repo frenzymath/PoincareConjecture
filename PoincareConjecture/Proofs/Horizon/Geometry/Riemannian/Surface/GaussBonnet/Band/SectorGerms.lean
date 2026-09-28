@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Ba
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.DerivativeTest
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Topology Manifold ContDiff
 open Poincare.Topology.Plane.Curves Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem eventually_graph_side_of_hasStrictFDerivAt
     {f : (ℝ × ℝ) → ℝ} {f' : (ℝ × ℝ) →L[ℝ] ℝ} {h : ℝ → ℝ} {t : ℝ}
@@ -65,12 +55,9 @@ variable {M : Type*} [TopologicalSpace M]
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
 noncomputable def topLineExcess (i : Fin B.interface.count)
     (z : EuclideanSpace ℝ (Fin 2)) : ℝ :=
   (collarParameterEquiv z).2 - B.interface.piece i (collarParameterEquiv z).1
-
-
 
 noncomputable def topLineFunctional (i : Fin B.interface.count) :
     EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ :=
@@ -80,7 +67,6 @@ noncomputable def topLineFunctional (i : Fin B.interface.count) :
 
 @[simp] theorem topLineFunctional_apply (i : Fin B.interface.count)
     (z : EuclideanSpace ℝ (Fin 2)) : B.topLineFunctional i z = B.topLineExcess i z := rfl
-
 
 theorem topLineFunctional_vertical (i : Fin B.interface.count) :
     (B.topLineFunctional i).linear (collarParameterEquiv.symm (0, 1)) = 1 := by
@@ -131,8 +117,6 @@ private theorem upperGraph_strip_eq_of_mem_target
   simp only [obliqueStripMap, hx]
   dsimp [ObliquePolygonalBoundary.PieceCoordinates.upperGraph]
   simp [C]
-
-
 
 theorem topLineExcess_eventually_nonpos_iff
     (i : Fin B.interface.count) {t : ℝ}
@@ -225,8 +209,6 @@ theorem topLineExcess_eventually_nonpos_iff
   simpa only [topLineExcess, collarParameterEquiv.apply_symm_apply] using
     eventually_graph_side_of_hasStrictFDerivAt (hfc.hasStrictFDerivAt (by simp)) hpositive hh hzero
 
-
-
 theorem band_top_eventually_mem_iff_active_constraints
     {q : EuclideanSpace ℝ (Fin 2)}
     (hq : (collarParameterEquiv q).1 ∈ Icc (0 : ℝ) 1)
@@ -291,8 +273,6 @@ theorem band_top_eventually_mem_iff_active_constraints
   · rintro ⟨i, hi, hl, hr, htop⟩
     exact ⟨i, (hc i).mpr ⟨hi, hl, hr⟩, hz.le, htop⟩
 
-
-
 theorem band_open_top_eventually_mem_iff_topLineExcess
     (i : Fin B.interface.count) {t : ℝ}
     (ht : t ∈ Ioo (B.cut i.castSucc) (B.cut i.succ)) :
@@ -332,7 +312,6 @@ theorem band_open_top_eventually_mem_iff_topLineExcess
     exact ⟨i, hti, fun h => False.elim (ht.1.ne h),
       fun h => False.elim (ht.2.ne h), hh⟩
 
-
 theorem planar_carrier_eq_oblique_image :
     F.symm '' B.carrier =
       (fun q : EuclideanSpace ℝ (Fin 2) => collarParameterEquiv.symm
@@ -344,8 +323,6 @@ theorem planar_carrier_eq_oblique_image :
       (B.cuts.coordinates B.open_domain B.smooth_lower (collarParameterEquiv q)) ∈ F.source :=
     (B.band_subset_source hq).2
   exact F.left_inv hsource
-
-
 
 theorem planar_carrier_open_top_eventually_iff
     (i : Fin B.interface.count) {t : ℝ}
@@ -579,9 +556,6 @@ private theorem internal_top_graph_order
     · apply hc'.mpr
       nlinarith [mul_nonneg (sub_nonneg.mpr (le_of_not_ge h)) (sub_nonneg.mpr hxle')]
 
-
-
-
 theorem band_internal_top_eventually_mem_iff_affine_sectors
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
     ∀ᶠ q : ℝ × ℝ in 𝓝 (B.cut i.succ, B.interface.height i.succ),
@@ -633,12 +607,9 @@ theorem band_internal_top_eventually_mem_iff_affine_sectors
       exact (le_total q.1 (B.cut i.succ)).elim
         (fun hs => Or.inl ⟨hs, h.1⟩) (fun hs => Or.inr ⟨hs, h.2⟩)
 
-
 noncomputable def planarTopVertex (k : Fin (B.interface.count + 1)) :
     EuclideanSpace ℝ (Fin 2) := collarParameterEquiv.symm
       (B.interface.cut k, lo (B.interface.cut k) + B.interface.height k)
-
-
 
 theorem planar_carrier_internal_top_eventually_iff
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :

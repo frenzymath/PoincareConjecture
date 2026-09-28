@@ -1,14 +1,6 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

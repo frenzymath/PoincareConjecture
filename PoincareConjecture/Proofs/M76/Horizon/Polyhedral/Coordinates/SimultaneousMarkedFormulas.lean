@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFullChartStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

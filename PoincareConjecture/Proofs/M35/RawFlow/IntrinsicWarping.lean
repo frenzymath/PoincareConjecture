@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicRadialCoordinate
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialEndSlope
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,13 +36,11 @@ theorem axisAngularCoefficient_zero_eq_radial :
     g.euclideanCoefficients (0 • e 2) (e 2) (e 2)
   simpa only [hz, hA, zero_smul] using h
 
-
 theorem axisWarpingRadius_contDiff : ContDiff ℝ ∞ (axisWarpingRadius g) :=
   contDiff_id.mul ((axisAngularCoefficient_contDiff g).sqrt
     (fun r => (axisAngularCoefficient_pos g r).ne'))
 
 variable (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicWarpingRadius (s : ℝ) : ℝ :=
   axisWarpingRadius g ((radialArclengthOrderIso g hrotation hcomplete).symm s)
@@ -64,7 +53,6 @@ theorem intrinsicWarpingRadius_contDiff :
 theorem intrinsicWarpingRadius_zero : intrinsicWarpingRadius g hrotation hcomplete 0 = 0 := by
   simp only [intrinsicWarpingRadius, radialArclengthOrderIso_symm_zero,
     axisWarpingRadius, zero_mul]
-
 
 theorem intrinsicWarpingRadius_odd :
     Function.Odd (intrinsicWarpingRadius g hrotation hcomplete) := by
@@ -83,7 +71,6 @@ theorem intrinsicWarpingRadius_pos {s : ℝ} (hs : 0 < s) :
     0 < intrinsicWarpingRadius g hrotation hcomplete s :=
   axisWarpingRadius_pos g (radialArclengthOrderIso_symm_pos g hrotation hcomplete hs)
 
-
 theorem intrinsicWarpingRadius_hasDerivAt {s : ℝ} (hs : 0 < s) :
     HasDerivAt (intrinsicWarpingRadius g hrotation hcomplete)
       (axisWarpingSlope g ((radialArclengthOrderIso g hrotation hcomplete).symm s)) s := by
@@ -95,7 +82,6 @@ theorem intrinsicWarpingRadius_hasDerivAt {s : ℝ} (hs : 0 < s) :
   change axisWarpingSlope g r = Real.sqrt (axisRadialCoefficient g r) *
     axisWarpingSlope g r * (Real.sqrt (axisRadialCoefficient g r))⁻¹
   field_simp [(Real.sqrt_pos.mpr (axisRadialCoefficient_pos g r)).ne']
-
 
 theorem intrinsicWarpingRadius_deriv_hasDerivAt {s : ℝ} (hs : 0 < s) :
     HasDerivAt (deriv (intrinsicWarpingRadius g hrotation hcomplete))
@@ -113,7 +99,6 @@ theorem intrinsicWarpingRadius_deriv_hasDerivAt {s : ℝ} (hs : 0 < s) :
   filter_upwards [eventually_gt_nhds hs] with a ha
   exact (intrinsicWarpingRadius_hasDerivAt g hrotation hcomplete ha).deriv
 
-
 theorem intrinsicWarpingRadius_hasDerivAt_zero :
     HasDerivAt (intrinsicWarpingRadius g hrotation hcomplete) 1 0 := by
   have ha := ((axisAngularCoefficient_contDiff g).differentiable (by simp) 0).hasDerivAt
@@ -127,7 +112,6 @@ theorem intrinsicWarpingRadius_hasDerivAt_zero :
   rw [radialArclengthOrderIso_symm_zero, axisAngularCoefficient_zero_eq_radial g hrotation,
     mul_inv_cancel₀ (Real.sqrt_pos.mpr (axisRadialCoefficient_pos g 0)).ne'] at hc
   exact hc
-
 
 theorem rotational_scalar_eq_intrinsicWarping (D : LeviCivitaData g)
     {s : ℝ} (hs : 0 < s) :

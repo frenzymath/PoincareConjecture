@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessTarget
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,10 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [CompactSpace M] [T2Space M]
 
 local notation "V" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem chartReadable_observation_with_planar_projection
     (f : M → V) (hf : ContMDiff (𝓡 n) (𝓡 2) ∞ f) :

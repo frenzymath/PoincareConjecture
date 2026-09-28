@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FirstContactNormals
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -18,9 +7,6 @@ open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_compact_first_contact
     {X : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

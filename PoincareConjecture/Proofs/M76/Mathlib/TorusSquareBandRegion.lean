@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CenteredTorusSquareChart
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCrossingBandImmersion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLAnnularStrip
-
-
-
 
 theorem centeredSquareQuotient_mem_crossingBand_iff {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (hdhalf : d < (4 * L) / 2) {x : ℝ × ℝ}
@@ -44,9 +32,6 @@ theorem centeredSquareQuotient_mem_crossingBand_iff {L d : ℝ}
     AddCircle.coe_center_mem_shortArc_iff (4 * L) hd hdhalf hxI,
     Prod.norm_def, Real.norm_eq_abs, Real.norm_eq_abs, lt_max_iff]
   exact or_comm
-
-
-
 
 theorem outside_centeredSquareQuotient_mem_crossingBand {L d : ℝ}
     (hL : 0 < L) (hd : 0 < d) (z : AddCircle (4 * L) × AddCircle (4 * L)) :

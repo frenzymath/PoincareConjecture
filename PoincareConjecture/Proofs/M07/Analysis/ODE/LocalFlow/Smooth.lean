@@ -1,24 +1,5 @@
-
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.Existence
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -44,9 +25,6 @@ private theorem contDiff_cutoff_smul
     exact contDiffAt_const.congr_of_eventuallyEq heq
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_smooth_localFlow
     {U : Set E} (hU : IsOpen U) {F : E → E}

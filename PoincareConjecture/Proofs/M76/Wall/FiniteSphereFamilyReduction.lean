@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalFilledSphereAttachment
 import PoincareConjecture.Proofs.M76.Wall.IndexedSphericalFilling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +8,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_smaller_filled_spherical_family
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

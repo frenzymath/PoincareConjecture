@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import Mathlib.Algebra.BigOperators.Group.Finset.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 structure FamilyCutState
     (P : SurgeryCapProfile) (u : UnitTwoSphere)
@@ -66,8 +53,6 @@ structure FamilyCutState
   caps_avoid : ∀ a : Fin capCount, ∀ k : Fin r, ∀ y ∈ (cap a).cap,
     width k ≤ |⟪(u : E3), y⟫_ℝ - cut k|
 
-
-
 def FamilyCutState.measure
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
     {r : ℕ} {cut : Fin r → ℝ} {D : ℝ}
@@ -77,9 +62,6 @@ def FamilyCutState.measure
     {n : ℕ} {psi : Fin n → UnitTwoSphere × ℝ → E3}
     (S : FamilyCutState P u r cut D m0 B Phi n psi) : ℕ :=
   ∑ k : Fin r, S.count k
-
-
-
 
 theorem exists_initial_family_cut_state
     (P : SurgeryCapProfile) (u : UnitTwoSphere)

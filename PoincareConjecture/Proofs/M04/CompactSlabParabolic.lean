@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M04.CompactDomainParabolic
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

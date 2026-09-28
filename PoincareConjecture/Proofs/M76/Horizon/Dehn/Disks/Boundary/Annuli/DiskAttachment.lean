@@ -9,8 +9,6 @@ local notation "P2" => (ℝ × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
 
-
-
 theorem isFinitePLBallPair_attach_annulus_inner {D A q r : Set E} {L d : ℝ}
     (hD : IsFinitePLBallPair P2 D q) (hcontact : D ∩ A = q)
     (hd : 0 < d) (hwidth : 2 * d < L)
@@ -47,8 +45,6 @@ theorem isFinitePLBallPair_attach_annulus_inner {D A q r : Set E} {L d : ℝ}
   obtain ⟨hball, _⟩ := hs.exists_piece_replacement ha hD hinter hcontact hrim c
     ⟨f, hfPL, hf⟩ hmem hf
   exact hboundary ▸ hball
-
-
 
 theorem isFinitePLBallPair_attach_annulus_outer {D A q r : Set E} {L d : ℝ}
     (hD : IsFinitePLBallPair P2 D q) (hcontact : D ∩ A = q)

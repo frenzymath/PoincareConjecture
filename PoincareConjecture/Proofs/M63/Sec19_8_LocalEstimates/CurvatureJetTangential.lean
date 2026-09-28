@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetSpatialCalculus
 import Mathlib.Data.Nat.Choose.Sum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -25,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63TangentJetPair_arc_iterate [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -120,9 +107,6 @@ theorem m63TangentJetPair_arc_iterate [T2Space M]
         intro p hp
         rw [Nat.choose_symm_of_eq_add (Finset.mem_antidiagonal.mp hp).symm]
 
-
-
-
 theorem m63CurvatureJet_tangent_succ [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) (m : ℕ)
@@ -158,8 +142,6 @@ theorem m63CurvatureJet_tangent_succ [T2Space M]
     Nat.cast_one, one_mul] at h
   rw [Finset.Nat.sum_antidiagonal_eq_sum_range_succ_mk] at h
   linarith only [h]
-
-
 
 theorem m63CurvatureJet_tangent_abs_le [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

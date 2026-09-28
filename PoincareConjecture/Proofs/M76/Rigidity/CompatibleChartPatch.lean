@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +11,6 @@ variable {E V X ι : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [TopologicalSpace X] {e : ι → OpenPartialHomeomorph X V}
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_compatible_chart_patch
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.CapIncidentAssembly
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.NeckCap.Cap.Closing.Tube.CapAbsorption
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_capped_tube_region_comparison_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 1000 ∧
@@ -41,9 +29,6 @@ theorem exists_capped_tube_region_comparison_threshold :
     openDiffeomorphRegions (U ⊔ V) U D.symm (D p)
   rw [← C.carrier_eq_union] at E
   exact ⟨E⟩
-
-
-
 
 theorem exists_capped_tube_incident_assembly_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 1000 ∧

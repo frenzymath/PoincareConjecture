@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalLevels.Bounds
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -31,8 +29,6 @@ theorem saddle_height_lt_fortyone_fortieths {p : S2}
   rw [height_apply, hy]
   nlinarith [sq_nonneg ((p : E3) 2 - 1 / 2)]
 
-
-
 theorem critical_in_height_band_iff_eq_saddle {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0)
     (hpz : (p : E3) 2 ∈ Ioo (3 / 5 : Real) (5 / 8))
@@ -56,7 +52,6 @@ theorem exists_unique_critical_point_in_height_band :
   obtain ⟨p, hl, hu, _, _, hp, hh⟩ := exists_critical_point_above_nested_cut
   exact ⟨p, ⟨hl, hu⟩, ⟨hh, saddle_height_lt_fortyone_fortieths hp ⟨hl, hu⟩⟩,
     hp, critical_in_height_band_iff_eq_saddle hp ⟨hl, hu⟩⟩
-
 
 theorem nested_cutting_heights_regular (q : S2) (hq : height q = 1 ∨ height q = 13 / 10) :
     mfderiv (𝓡 2) 𝓘(Real, Real) height q ≠ 0 := by

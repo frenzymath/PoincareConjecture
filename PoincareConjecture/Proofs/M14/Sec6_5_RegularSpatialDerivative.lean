@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_RegularSmooth
 import PoincareConjecture.Proofs.M14.Sec6_3_ActionDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_StablePrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +20,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
 
 attribute [local instance] horizontal_t2Space
 
-
-
 theorem reducedLengthAt_eq_normalized_action (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hs : (Z, s) ∈ E.domain) (hpos : 0 < s)
     (hmin : M14IsMinimizing (E.path Z s hs hpos)) :
@@ -40,9 +29,6 @@ theorem reducedLengthAt_eq_normalized_action (E : M14ExponentialFamily G T x)
     E.reduced_length_eq Z s hs hpos]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem reducedLengthAt_horizontal_differential
     (hCoordinates : M12MetricPredecessors.{0} n)

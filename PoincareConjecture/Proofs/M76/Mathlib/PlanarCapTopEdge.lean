@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarSegmentCap
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PlanarSegment
-
-
-
 
 theorem exists_cap_point_towards_lower {q a : ℝ × ℝ}
     (hqx : 0 < q.1) (hqy : 0 < q.2) (hqh : q.1 + q.2 = 1)
@@ -47,9 +35,6 @@ theorem exists_cap_point_towards_lower {q a : ℝ × ℝ}
   rw [AffineMap.lineMap_apply_module']
   change t * (a.1 - q.1) + q.1 + (t * (a.2 - q.2) + q.2) < 1
   nlinarith [mul_neg_of_pos_of_neg ht (sub_neg.mpr hah)]
-
-
-
 
 theorem endpoint_heights_eq_of_miss_cap {a b q : ℝ × ℝ}
     (hq : q ∈ openSegment ℝ a b) (hqx : 0 < q.1) (hqy : 0 < q.2)

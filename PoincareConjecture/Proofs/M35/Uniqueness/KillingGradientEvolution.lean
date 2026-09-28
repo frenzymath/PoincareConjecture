@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.KillingRicciCovector
 import PoincareConjecture.Proofs.M04.TensorLaplacianCommutator
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -63,9 +54,6 @@ private theorem derivative_sub {n : ℕ} {M : Type*} [TopologicalSpace M]
   simp only [LeviCivitaData.covariantTensorDerivative, Fin.cons_zero, Fin.cons_succ,
     mvfderiv_fun_sub hs ht, sub_apply, Finset.sum_sub_distrib]
   ring
-
-
-
 
 theorem killingCovectorGradient_heat_hasDerivAt_of_eventually_heat
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -165,7 +153,6 @@ theorem killingCovectorGradient_heat_hasDerivAt_of_eventually_heat
   apply hd.congr_deriv
   rw [hRic, hsplit]
   linarith only [hc]
-
 
 theorem killingCovectorGradient_heat_hasDerivAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

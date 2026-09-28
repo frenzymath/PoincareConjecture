@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCylinderTensor
 import PoincareConjecture.Proofs.M35.CapGeometry.VanishingMetricErrorJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35
 
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem radialCylinderTensor_jetError_tendsto_zero
     (A : ℕ → ℝ → ℝ) (b s : ℕ → ℝ) (s₀ : ℝ) (q : ℕ → UnitTwoSphere)

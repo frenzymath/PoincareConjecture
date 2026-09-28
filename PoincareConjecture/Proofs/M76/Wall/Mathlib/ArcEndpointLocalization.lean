@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.InitialArcCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace OpenPartialHomeomorph
-
-
-
 
 theorem exists_endpoint_arc_neighborhood
     {X E : Type*} [TopologicalSpace X] [T2Space X]

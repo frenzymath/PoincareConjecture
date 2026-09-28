@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.InverseOpenDistance
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.OpenCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ variable {M N : Type*} [TopologicalSpace M] [TopologicalSpace N] [T2Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
-
-
-
 
 theorem mem_intrinsicImage_regularPoints_of_compact_inverse_buffer
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -84,9 +72,6 @@ theorem mem_intrinsicImage_regularPoints_of_compact_inverse_buffer
     exact ⟨e.symm (q : N), hball hd, e.toPartialEquiv.right_inv (hU q.property)⟩
   exact hQ.of_isClosed_subset isClosed_closure
     ((closure_mono hsub).trans hQ.isClosed.closure_subset)
-
-
-
 
 theorem mem_regularPoints_of_compact_inverse_buffer
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

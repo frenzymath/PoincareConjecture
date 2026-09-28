@@ -1,21 +1,6 @@
 import PoincareConjecture.Definitions.Ch17.GlobalSurgery
 import PoincareConjecture.Definitions.M51GlobalSchedule
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

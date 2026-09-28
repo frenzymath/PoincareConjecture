@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalVertexLinkRanks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexLinkDoubleCount
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FaceCofaceDoubleCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -21,9 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem original_chart_stars_boundary_counts
     (K A : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hAK : A ≤ K)

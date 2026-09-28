@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCompariso
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem roundCylinderGram_chosenChart (u : ℝ) (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) :
@@ -47,16 +34,12 @@ theorem roundCylinderGram_chosenChart (u : ℝ) (q : UnitTwoSphere)
     simp [roundCylinderCoordinateBasis, Matrix.diagonal,
       EuclideanSpace.basisFun_apply, EuclideanSpace.inner_single_left]
 
-
-
 theorem mfderiv_sphere_chart_symm_center (q : UnitTwoSphere) :
     mfderiv (𝓡 2) (𝓡 2) (chartAt E₂ q).symm (chartAt E₂ q q) =
       ContinuousLinearMap.id ℝ E₂ := by
   have h := mfderivWithin_range_extChartAt_symm (I := 𝓡 2) (x := q)
   rw [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at h
   convert! h using 1
-
-
 
 theorem roundCylinderTensorCoefficient_chart_center
     (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace) (a b : Fin 3) :
@@ -67,8 +50,6 @@ theorem roundCylinderTensorCoefficient_chart_center
   change B ((chartAt E₂ z.1).symm (chartAt E₂ z.1 z.1), z.2)
     (roundCylinderCoordinateBasis a) (roundCylinderCoordinateBasis b) = _
   rw [hz]
-
-
 
 theorem roundCylinderJetErrorSquared_zero_eq
     (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace) :
@@ -94,8 +75,6 @@ theorem roundCylinderJetErrorSquared_zero_eq
         EvolvingRoundCylinderMetric 0 z
           (roundCylinderCoordinateBasis p.1) (roundCylinderCoordinateBasis p.2)) ^ 2)).trans
     (Fintype.sum_prod_type _)
-
-
 
 theorem sum_roundCylinderCoordinateBasis (v : RoundCylinderCoordinates) :
     (∑ i : Fin 3, (![v.1 0, v.1 1, v.2] i : ℝ) • roundCylinderCoordinateBasis i) = v := by

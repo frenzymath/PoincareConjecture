@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.SegmentSpeed
 import PoincareConjecture.Proofs.M34.Standard.CompactCompleteness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ namespace PoincareConjecture.M47Positive
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
-
-
 
 theorem exists_minimizing_segment_with_speed (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p x : M) :
@@ -60,10 +47,6 @@ theorem exists_minimizing_segment_with_speed (g : RiemannianMetric n M)
   exact ⟨epsilon, hepsilon, gamma, hgeo, hzero, hone, hmin,
     fun t ht => (hC t (hI ht)).trans hCd⟩
 
-
-
-
-
 theorem exists_point_at_intrinsic_radius (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p x : M) {rho : ℝ} (hrho : 0 < rho)
     (hdistance : rho ≤ (g.edist p x).toReal) :
@@ -80,9 +63,6 @@ theorem exists_point_at_intrinsic_radius (g : RiemannianMetric n M)
     zero_sub, abs_neg, abs_of_nonneg hparameter.1] at h
   change (g.edist p (gamma (rho / d))).toReal = rho / d * d at h
   rwa [div_mul_cancel₀ _ hd.ne'] at h
-
-
-
 
 theorem ricci_distance_sq_le_of_ball_lower (g : RiemannianMetric n M)
     (D : LeviCivitaData g) (hc : MetricComplete g) (p x : M) {k : ℝ}

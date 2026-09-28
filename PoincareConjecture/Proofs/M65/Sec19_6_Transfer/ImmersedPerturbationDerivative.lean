@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationCompos
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingConnection
 import PoincareConjecture.Proofs.M09.VelocityChainRules
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   {n : ℕ}
-
-
-
 
 theorem foldControls_parameter_smooth
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)
@@ -44,9 +32,6 @@ theorem foldControls_parameter_smooth
     (foldControls_contMDiffOn Phi beta d hPhi hbeta hbound L).contMDiffAt
       ((isOpen_ball.prod isOpen_univ).mem_nhds ⟨mem_ball_self hd, mem_univ (x, y)⟩)
   exact h.comp 0 (contMDiff_id.prodMk contMDiff_const).contMDiffAt
-
-
-
 
 theorem foldControls_single_velocity
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)
@@ -80,9 +65,6 @@ theorem foldControls_single_velocity
 
 variable [IsManifold (𝓡 3) ∞ M]
 
-
-
-
 theorem foldControls_mfderiv_single
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)
     (hPhi : ∀ i, ContMDiffOn ((𝓡 3).prod (𝓘(ℝ, ℝ))) (𝓡 3) ∞ (Phi i)
@@ -108,9 +90,6 @@ theorem foldControls_mfderiv_single
         congrArg (fun line : ℝ → (Fin n → ℝ) =>
           fun r => foldControls Phi beta L (line r) x y) hsingle] at hline
   exact hline.symm.trans (foldControls_single_velocity Phi beta d hd hPhi hzero L hL j hj x y)
-
-
-
 
 theorem foldControls_chart_fderiv_single
     (Phi : Fin n → M × ℝ → M) (beta : Fin n → ℝ → ℝ) (d : ℝ) (hd : 0 < d)

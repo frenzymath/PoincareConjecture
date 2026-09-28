@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Height
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapCollar
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -121,8 +119,6 @@ theorem mem_boundedCylinderNorthernCap_iff_equation
     rw [hr]
     exact hp
 
-
-
 theorem mem_boundedCylinderNorthernCap_iff_height
     {v y : E3} (hv : ‖v‖ = 1)
     (hy : ‖(Hemisphere.Plane v).orthogonalProjectionOnto y‖ < 1) :
@@ -147,8 +143,6 @@ theorem mem_boundedCylinderNorthernCap_iff_height
   · intro heq
     rw [heq]
     exact boundedCapHeight_spec hz hz1
-
-
 
 theorem mem_boundedCylinderNorthernCap_iff_boundary_height
     {v y : E3} (hv : ‖v‖ = 1)
@@ -178,8 +172,6 @@ theorem mem_boundedCylinderNorthernCap_iff_boundary_height
       apply (div_le_iff₀ hd).mpr
       nlinarith
     simp [boundedCapEquation, Real.smoothTransition.zero_of_nonpos ha]
-
-
 
 theorem mem_boundedCylinderNorthernCap_iff_cases
     {v y : E3} (hv : ‖v‖ = 1) :

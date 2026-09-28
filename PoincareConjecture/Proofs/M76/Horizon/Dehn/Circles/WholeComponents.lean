@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ComponentRetention
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusRegion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.OriginalPairedSourceAnnuli
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -23,8 +14,6 @@ local notation "D2" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
-
-
 
 theorem OrdinaryIntervalMarkedModel.clip_inter_double_locus
     (D : OrdinaryIntervalMarkedModel old i) (j : Fin 2) :
@@ -82,8 +71,6 @@ theorem OrdinaryIntervalMarkedModel.clip_inter_double_locus
     exact ⟨(D.clips_data j.castSucc).2.1.symm.subset
       ⟨hxsource, show f x ∈ D.core from interior_subset (D.core_neighborhood hphysical)⟩,
       hxdouble⟩
-
-
 
 theorem OrdinaryIntervalMarkedModel.annuli_inter_double_locus
     (D : OrdinaryIntervalMarkedModel old i) (A : Fin 2 → Set V2)

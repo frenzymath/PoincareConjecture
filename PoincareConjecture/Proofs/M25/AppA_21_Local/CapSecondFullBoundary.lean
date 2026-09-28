@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapBoundaryOrientation
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCommonSphereComponent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.full_end_subset_of_boundary_in_cap_extension
     {M : Type u} [TopologicalSpace M]

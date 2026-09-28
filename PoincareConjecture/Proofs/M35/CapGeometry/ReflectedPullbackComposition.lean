@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.ReflectedChartField
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
-
 
 theorem twistedChartLift_mpullback_comp
     (N : M27TwistedSphereLineFlowCertificate K) (q : UnitTwoSphere)

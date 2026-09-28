@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M51.PrefixVolumeControls
 import PoincareConjecture.Proofs.M45.InitialGeometry
 import PoincareConjecture.Statements.M50FinitePrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -18,7 +9,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.M51
-
 
 theorem initialVolume_ne_top (F : SurgeryFlowData.{u}) :
     calibratedMetricVolume (F.metric 0) Set.univ ≠ ⊤ :=
@@ -31,9 +21,6 @@ private theorem finite_of_card_bound (s : Set ℝ) (n : ℕ)
   obtain ⟨A, hA, hcard⟩ := Set.Infinite.exists_subset_card_eq hinfinite (n + 1)
   have hle : n + 1 ≤ n := by simpa only [hcard] using h A hA
   exact Nat.not_succ_le_self n hle
-
-
-
 
 theorem uniformPrefixEventCount
     {K : MetricSurgeryConstants} (S : GlobalSurgerySchedule K)
@@ -81,8 +68,6 @@ theorem uniformPrefixEventCount
     hHB (P.observedVolumeControls H13) hvolume hscales
   rw [hevents] at hcount
   exact ⟨finite_of_card_bound _ n hcount, hcount⟩
-
-
 
 theorem selectedPrefixLoss
     {K : MetricSurgeryConstants} (S : GlobalSurgerySchedule K)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarCoreMap
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCollarShellMap
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalCubeShellGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

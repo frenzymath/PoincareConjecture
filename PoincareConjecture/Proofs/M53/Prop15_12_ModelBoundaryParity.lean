@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_TwoPunctureHomology
 import PoincareConjecture.Proofs.M53.Prop15_12_RelativeTriple
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportLocalization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,10 +14,6 @@ open PoincareConjecture.Proofs.M02.Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
-
 
 theorem even_planeExterior_tripleBoundary_of_point_parity
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

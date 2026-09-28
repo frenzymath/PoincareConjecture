@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapUniformGain
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem ConnectedNeckCapCover.exists_uniform_cap_truncation_depth_gain :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -119,9 +105,6 @@ theorem ConnectedNeckCapCover.exists_uniform_cap_truncation_depth_gain :
       (C0.end_neck.isOpen_region _ _) hpP
     exact hgain H hH seed hseed x hxseed C0 hC0 hx0 hproper C1 hC1 hcut
       ⟨z, hzP.1, hznew⟩
-
-
-
 
 theorem ConnectedNeckCapCover.exists_singleCap_or_core_cap_without_enlarging_truncation :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

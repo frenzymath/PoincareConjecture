@@ -15,8 +15,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 theorem ComponentBranchModel.graph_mem_self_paired_axis_iff
     (D : ComponentBranchModel old i) (hself : old.mate i = i)
     {w : V2} (hw : w ∈ D2) (hcore : f w ∈ D.core) :
@@ -29,8 +27,6 @@ theorem ComponentBranchModel.graph_mem_self_paired_axis_iff
     · rintro ⟨v, hv, hfv⟩
       exact ⟨v, hv, congrArg D.graph hfv⟩
   rw [hphysical, old.piece_image_preimage i w hw, hself, union_self]
-
-
 
 theorem ComponentBranchModel.source_strip_selected_iff
     (D : ComponentBranchModel old i) (hself : old.mate i = i)
@@ -49,8 +45,6 @@ theorem ComponentBranchModel.source_strip_selected_iff
   rw [← D.graph_mem_self_paired_axis_iff hself h.1 hcore, h.2.2,
     haxis _ (signedSheetStripMap_mem j hz)]
   fin_cases j <;> simp [signedSheetStripMap_apply]
-
-
 
 theorem ComponentBranchModel.source_strip_axis_cover
     (D : ComponentBranchModel old i) (hself : old.mate i = i)

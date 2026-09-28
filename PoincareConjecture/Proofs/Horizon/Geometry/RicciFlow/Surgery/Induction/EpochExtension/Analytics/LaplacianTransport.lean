@@ -4,10 +4,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.Ep
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Analytics.RicciNormTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Within
 import Mathlib.Geometry.Manifold.VectorField.Pullback
-
-
-
-
-
-
-

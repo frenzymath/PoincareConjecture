@@ -3,26 +3,12 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapAncientTransfer
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckAncientTransfer
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitCanonicalAlternatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Topology ENNReal
 
 namespace PoincareConjecture.M34
-
-
-
-
 
 theorem exists_ordinary_canonical_persistence
     (P : RepairedKappaAlternativeTheory.{0}) {epsilon : ℝ}

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrescribedIntervalDiskMap
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalCrossingResolution
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -24,18 +13,13 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 
-
 noncomputable def resolutionMap (b : ℝ) (alternatePair positive : Bool) : P2 → C3 :=
   if alternatePair then alternate b positive else strip b positive
-
 
 def stripRim : Set P2 :=
   ({0, 1} ×ˢ Icc (-1 : ℝ) 1) ∪ (Icc (0 : ℝ) 1 ×ˢ {-1, 1})
 
-
 def arm (u : ℝ) : Set P2 := Icc (0 : ℝ) 1 ×ˢ {u}
-
-
 
 theorem exists_arm_parameter (u : ℝ) :
     IsFinitePLBallPair ℝ (arm u) {(0, u), (1, u)} ∧
@@ -60,10 +44,6 @@ theorem exists_arm_parameter (u : ℝ) :
   rw [himage] at hparam
   obtain ⟨p, hp, hpval⟩ := hparam
   exact ⟨hball, p, hp, hpval⟩
-
-
-
-
 
 theorem exists_disk_map_of_resolution_arm
     {E F X ι : Type*}

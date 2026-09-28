@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.PositiveFrontier
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SaturatedHeight
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_positive_frontier_closed_quarter_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -116,9 +102,6 @@ theorem exists_positive_frontier_closed_quarter_control :
     apply (ENNReal.ofReal_lt_ofReal_iff (by positivity)).mpr
     nlinarith [mul_pos N.scale_pos hL]
   exact (not_le_of_gt hstrict) (((ENNReal.ofReal_le_ofReal hlower).trans hd).trans hu)
-
-
-
 
 theorem exists_positive_frontier_closed_negative_quarter_control :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

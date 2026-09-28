@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.StandardDiskBandAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.BoundaryProductNormalization
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 

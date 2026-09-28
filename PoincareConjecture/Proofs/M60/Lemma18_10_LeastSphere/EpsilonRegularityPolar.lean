@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +18,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def suLogPolar (x : LoopPlane) : LoopPlane :=
   Real.exp (-x 0) • Proofs.M58.angularPoint (x 1)
@@ -440,4 +430,3 @@ theorem punctureCoordinates_inverse {z : LoopPlane} (hz : z ≠ 0)
   simp only [smul_smul, mul_inv_cancel₀ hzn.ne', one_smul]
 
 end PoincareConjecture.M60
-

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointOldMetric
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointComplete
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOriginalCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ private noncomputable local instance endpointReadoutBilinAdd :
     NormedAddCommGroup Bilin := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance endpointReadoutBilinSpace :
     NormedSpace ℝ Bilin := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_original_charts
     {ι : Type v} {X : Type u} [TopologicalSpace X] [ChartedSpace E X]
@@ -76,8 +65,6 @@ private local instance endpointReadoutManifold :
 
 local notation "U" => (fun m : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m))
-
-
 
 theorem limitFinite_endpoint_inner_chart_metric
     (hfinite : H ≠ ⊤) (dStage : ℕ → ℝ) (hdStage : ∀ m, 0 < dStage m)

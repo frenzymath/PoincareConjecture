@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedImageBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,8 +36,6 @@ private theorem inverse_quadratic_le
   rw [hw] at hm
   have hright : D.toPartialEquiv (D.symm.toPartialEquiv y) = y := D.right_inv hy
   exact hm.trans_eq (congrArg (fun z : Y => C ^ 2 * h.inner z w w) hright)
-
-
 
 theorem horizon_ball_subset_image [RegularSpace X] [T2Space Y]
     (g : RiemannianMetric 3 X) (h : RiemannianMetric 3 Y)
@@ -106,8 +95,6 @@ theorem horizon_ball_subset_image [RegularSpace X] [T2Space Y]
         congr 1
         rw [div_eq_mul_inv, mul_comm]
       _ ≤ _ := mul_le_mul_right hdist _
-
-
 
 theorem horizon_target_ball_volume_le_source [T3Space X] [T3Space Y]
     [SecondCountableTopology X] [MeasurableSpace X] [MeasurableSpace Y]

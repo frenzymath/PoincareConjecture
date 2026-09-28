@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.Equivale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Equivalence
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Function TopologicalSpace Poincare.Geometry.Manifold.RegularFiber
@@ -19,7 +18,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
   (he : ∀ x, (x ∈ U ∧ f x = c) ↔ (x ∈ V ∧ h x = d))
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m+k))) = m+k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
 
 theorem openRegularFiberMetric_inner_equivOfEq
     (g : RiemannianMetric (m+k) M) (x : openFiber f U c)
@@ -48,7 +46,6 @@ theorem openRegularFiberMetric_inner_equivOfEq
   simp only [openRegularFiberMetric_inner]
   rw [hcomp]
   rfl
-
 
 theorem openRegularFiberMetric_edist_equivOfEq
     (g : RiemannianMetric (m+k) M) (x y : openFiber f U c) :

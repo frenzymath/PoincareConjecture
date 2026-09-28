@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M74.Cor15_4.SchoenfliesGlobalChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -46,8 +37,6 @@ private theorem radial_annulus_isConnected {r R : ℝ} (hr : 0 < r) (hrR : r < R
   have hc := (SurgeryCoordinates.cylinder_interval_simplyConnected r R hrR).isPathConnected
   exact hc.isConnected.image _ (continuous_snd.smul
     (continuous_subtype_val.comp continuous_fst)).continuousOn
-
-
 
 theorem shiftedSchoenflies_original_sphere_image
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) :
@@ -100,9 +89,6 @@ private theorem chart_ball_annulus_union (c : StandardCapSpace → StandardCapSp
     rcases lt_or_gt_of_ne hne with h | h
     · exact Or.inl (mem_image_of_mem _ (mem_ball_zero_iff.mpr h))
     · exact Or.inr (mem_image_of_mem _ ⟨h, mem_ball_zero_iff.mp hx⟩)
-
-
-
 
 theorem shiftedSchoenflies_original_ball_image
     (D : SchoenfliesData (B.shiftedPunctureCollar d) (1 / 4)) :

@@ -5,23 +5,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldChartTransport
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_nonnested_reference_radial_field
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

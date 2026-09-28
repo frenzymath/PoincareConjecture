@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiGaugeFields
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,16 +17,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {β : ℝ → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b} {J : Set ℝ}
 
-
-
 theorem gaugeLift_spatialCurve_contDiffOn
     (hβ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ β J) :
     ContDiffOn ℝ ∞ (fun s => (β s).2.val) J := by
   have hi : ContMDiff (𝓡 n) (𝓡 n) ∞
       (Subtype.val : G.gaugeCover.spatial b → EuclideanSpace ℝ (Fin n)) := contMDiff_subtype_val
   exact (hi.comp_contMDiffOn (fun s hs => (hβ s hs).snd)).contDiffOn
-
-
 
 theorem exists_horizontalGauge_coordinates {q : G.Point} {s : ℝ}
     (h : (G.gaugeCover.cylinder b).toSpacetime (β s) = q) (Y : G.Horizontal q) :
@@ -43,9 +31,6 @@ theorem exists_horizontalGauge_coordinates {q : G.Point} {s : ℝ}
   refine ⟨((G.gaugeCover.metric b).spatialTangentEquiv (β s).1 (β s).2).symm (h.symm ▸ Y), ?_⟩
   rw [ContinuousLinearEquiv.apply_symm_apply]
   exact (eqRec_heq _ _).symm
-
-
-
 
 theorem exists_smooth_horizontalGauge_coordinates {γ : ℝ → G.Point}
     (hβ : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ β J)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Po
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.Cover
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.ExpandingRealizations
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -93,7 +85,6 @@ private theorem pointedGHDistance_le_of_near
 
 def BasedMetricSpaceBundle.rebase (X : BasedMetricSpaceBundle.{0}) (p : X.carrier) :
     BasedMetricSpaceBundle.{0} := { X with base := p }
-
 
 theorem pointedGHDistance_rebased_balls_le
     {X Y : BasedMetricSpaceBundle.{0}}
@@ -185,7 +176,6 @@ theorem pointedGHDistance_rebased_balls_le
       change dist (Q.left (e zA)) (Q.right (f y)) ≤ 7 * ε
       linarith
   linarith
-
 
 theorem exists_subseq_rebased_pointedGHConvergesUnbounded_with_ball_covers
     {X : ℕ → BasedMetricSpaceBundle.{0}} {Y : BasedMetricSpaceBundle.{0}}

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.RescaledCh
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.ComponentDistances
 import Mathlib.Data.Nat.Pairing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,14 +24,10 @@ private noncomputable def regularStageUnitBallMap (k j : ℕ) (hjk : j ≤ k) (l
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : M k :=
   (cover k j hjk).unitBallMap ⟨l % (N j + 1), Nat.mod_lt _ (Nat.succ_pos _)⟩ x
 
-
-
 noncomputable def regularUnitBallMap (k i : ℕ)
     (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : M k :=
   regularStageUnitBallMap cover k (min (Nat.unpair i).1 k) (min_le_right _ _)
     (Nat.unpair i).2 x
-
-
 
 theorem regularUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
     regularUnitBallMap cover k i =
@@ -51,15 +37,11 @@ theorem regularUnitBallMap_of_le (k i : ℕ) (hik : (Nat.unpair i).1 ≤ k) :
   simp only [regularUnitBallMap, min_eq_left hik]
   rfl
 
-
-
 theorem regularUnitBallMap_pair (k j : ℕ) (hjk : j ≤ k) (l : Fin (N j + 1)) :
     regularUnitBallMap cover k (Nat.pair j l) = (cover k j hjk).unitBallMap l := by
   funext x
   simp only [regularUnitBallMap, Nat.unpair_pair, min_eq_left hjk]
   simp only [regularStageUnitBallMap, Nat.mod_eq_of_lt l.isLt]
-
-
 
 theorem regularUnitBallMap_zero (k : ℕ) :
     regularUnitBallMap cover k 0 ⟨0, by simp⟩ = p k := by
@@ -68,8 +50,6 @@ theorem regularUnitBallMap_zero (k : ℕ) :
   simp only [RegularNormalChartCover.unitBallMap, smul_zero]
   exact ((cover k 0 (Nat.zero_le k)).map_zero 0).trans
     (cover k 0 (Nat.zero_le k)).centre_zero
-
-
 
 theorem regularUnitBallMap_isLocalDiffeomorph
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
@@ -80,14 +60,10 @@ theorem regularUnitBallMap_isLocalDiffeomorph
     IsLocalDiffeomorph (𝓡 n) (𝓡 n) ∞ (regularUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isLocalDiffeomorph (hρ _) (hρR _) _
 
-
-
 theorem regularUnitBallMap_isOpenEmbedding
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (k i : ℕ) :
     Topology.IsOpenEmbedding (regularUnitBallMap cover k i) :=
   (cover k _ (min_le_right _ _)).unitBallMap_isOpenEmbedding (hρ _) (hρR _) _
-
-
 
 theorem regularUnitBallMap_distance_bounds
     (hdist : ∀ k (x y : M k), edist x y = (g k).edist x y)
@@ -131,8 +107,6 @@ theorem regularUnitBallMap_distance_bounds
     rw [hreal] at h
     exact (mul_le_mul_of_nonneg_right (Finset.inf'_le lower hj) dist_nonneg).trans h
 
-
-
 theorem regularUnitBallMap_base_distance_bound
     (hdist : ∀ k (x y : M k), edist x y = (g k).edist x y)
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, 2 * ρ j < R j) (i : ℕ) :
@@ -150,8 +124,6 @@ theorem regularUnitBallMap_base_distance_bound
       Nat.mod_lt _ (Nat.succ_pos _)⟩ (NormalChartCover.rescale_mem_half_ball (hρ _) x)
   exact h.trans (Finset.le_sup' bound hj)
 
-
-
 theorem regularUnitBallMap_pairwise_bounded
     (hdist : ∀ k (x y : M k), edist x y = (g k).edist x y)
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, 2 * ρ j < R j)
@@ -163,9 +135,6 @@ theorem regularUnitBallMap_pairwise_bounded
   exact ⟨A + B, fun k x y => (dist_triangle_left _ _ (p k)).trans
     (add_le_add (hA k x) (hB k y))⟩
 
-
-
-
 theorem regularUnitBallMap_eventually_mem_regularComponent
     (hρ : ∀ j, 0 < ρ j) (hρR : ∀ j, ρ j / 2 ≤ R j) (i : ℕ) :
     ∀ᶠ k in atTop, ∀ x,
@@ -174,9 +143,6 @@ theorem regularUnitBallMap_eventually_mem_regularComponent
   filter_upwards [eventually_ge_atTop (Nat.unpair i).1] with k hk x
   rw [regularUnitBallMap_of_le cover k i hk]
   exact (cover k _ hk).unitBallMap_mem_regularComponent (hρ _) (hρR _) _ x
-
-
-
 
 theorem regularUnitBallMap_compact_cover (hρ : ∀ j, 0 < ρ j) (j : ℕ) :
     ∃ S : Finset ℕ,

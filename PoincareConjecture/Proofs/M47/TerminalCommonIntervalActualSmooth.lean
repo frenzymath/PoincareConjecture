@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSmoothAssembly
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalCoefficientJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Nested.ChartTests
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,9 +34,6 @@ private noncomputable def m30TerminalDiffeomorph (n : ℕ) :
   open_target := (terminalCommonInterval_m30TerminalMap G n).open_target
   contMDiffOn_toFun := (terminalCommonInterval_m30_terminal_source G n).2.1
   contMDiffOn_invFun := (terminalCommonInterval_m30_terminal_source G n).2.2
-
-
-
 
 theorem terminalCommonInterval_actual_terminal_identification
     (P : M47Predecessors.{u})

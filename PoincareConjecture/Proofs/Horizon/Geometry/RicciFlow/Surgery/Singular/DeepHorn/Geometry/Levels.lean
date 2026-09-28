@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Hor
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,7 +14,6 @@ namespace StrongHorn
 
 variable {F : GeneralizedRicciFlowData.{u}} {T epsilon : ℝ}
   {E : GeneralizedFlowExtension F T}
-
 
 theorem exists_tail_avoiding_compact (horn : StrongHorn E epsilon)
     (K : Set (E.extended.slice T).carrier) (hK : IsCompact K) :
@@ -43,7 +33,6 @@ theorem exists_tail_avoiding_compact (horn : StrongHorn E epsilon)
   · refine ⟨0, le_rfl, by norm_num, ?_⟩
     intro s t ht ht1 hx
     exact hne ⟨(s, ⟨t, ⟨ht.le, ht1⟩⟩), hx⟩
-
 
 theorem tail_not_subset_compact (horn : StrongHorn E epsilon)
     (b : ℝ) (hb : b < 1)
@@ -67,7 +56,6 @@ variable {M : Type u} [TopologicalSpace M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions F T M}
 
-
 theorem isCompact_scalar_sublevel (Q : SingularLimitConclusion H) (q : ℝ) :
     IsCompact {x | (Q.extension.extended.connection T).scalarCurvature x ≤ q} := by
   obtain ⟨L, hL⟩ := Q.scalar_lower
@@ -77,7 +65,6 @@ theorem isCompact_scalar_sublevel (Q : SingularLimitConclusion H) (q : ℝ) :
   rw [← Q.terminal_scalar_eq, heq]
   exact Q.scalar_proper _ isCompact_Icc
 
-
 theorem isCompact_closure_of_scalar_bound (Q : SingularLimitConclusion H)
     (U : Set (Q.extension.extended.slice T).carrier) (q : ℝ)
     (hbound : ∀ x ∈ U, (Q.extension.extended.connection T).scalarCurvature x ≤ q) :
@@ -85,7 +72,6 @@ theorem isCompact_closure_of_scalar_bound (Q : SingularLimitConclusion H)
   apply (Q.isCompact_scalar_sublevel q).of_isClosed_subset isClosed_closure
   exact closure_minimal hbound
     (isClosed_le (Q.extension.extended.connection T).continuous_scalarCurvature continuous_const)
-
 
 theorem exists_horn_tail_scalar_gt (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension (terminalAccuracyFactor * H.epsilon)) (q : ℝ) :
@@ -96,7 +82,6 @@ theorem exists_horn_tail_scalar_gt (Q : SingularLimitConclusion H)
   obtain ⟨b, hb0, hb1, hb⟩ := horn.exists_tail_avoiding_compact _
     (Q.isCompact_scalar_sublevel q)
   exact ⟨b, hb0, hb1, fun s t ht ht1 => lt_of_not_ge (hb s t ht ht1)⟩
-
 
 theorem exists_horn_ray_scalar_eq (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension (terminalAccuracyFactor * H.epsilon))
@@ -123,8 +108,6 @@ theorem exists_horn_ray_scalar_eq (Q : SingularLimitConclusion H)
     simpa [f, horn.coordinate_eq, t1] using (hb s t hbt ht1).le
   obtain ⟨a, ha⟩ := intermediate_value_univ t0 t1 hf ⟨h0, h1⟩
   exact ⟨a, by simpa [f, horn.coordinate_eq] using ha⟩
-
-
 
 theorem exists_last_horn_ray_scalar_eq (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension (terminalAccuracyFactor * H.epsilon))
@@ -180,7 +163,6 @@ theorem exists_last_horn_ray_scalar_eq (Q : SingularLimitConclusion H)
     intro heq
     exact (ne_of_lt hzlt) (heq ▸ htq))
   exact (ne_of_gt (hlater t hzt (ht.2.trans_lt hc1))) htq
-
 
 theorem exists_horn_scalar_eq_inverse_sq (Q : SingularLimitConclusion H)
     (horn : StrongHorn Q.extension (terminalAccuracyFactor * H.epsilon))

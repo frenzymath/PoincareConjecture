@@ -1,29 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CommonCapExteriorFilling
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
-
-
-
-
 
 theorem exists_saddle_nested_pair_common_cap_inputs
     (hP : PlanarSchoenfliesService)

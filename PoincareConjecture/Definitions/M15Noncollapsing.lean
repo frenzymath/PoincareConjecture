@@ -1,27 +1,6 @@
 import PoincareConjecture.Definitions.M14MeasureTransport
 import PoincareConjecture.Definitions.M13OrdinaryRescaling
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology intervalIntegral
@@ -32,16 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval}
-
-
-
-
-
-
-
-
-
-
 
 structure M15ActualBallCylinder
     (G : GeneralizedLGeometryTransport n X time I)
@@ -68,15 +37,6 @@ structure M15ActualBallCylinder
   curvature_bound : ∀ s : (G.timeIntervals.interval K).Point, ∀ c : C,
     horizontalCurvatureNorm G.leafwise
       (embedding.toSpacetime (s, c)) ≤ r⁻¹ ^ 2
-
-
-
-
-
-
-
-
-
 
 structure M15Theorem81Configuration
     (G : GeneralizedLGeometryTransport n X time I)
@@ -105,11 +65,6 @@ structure M15Theorem81Configuration
     calibratedMetricVolume (G.slices (T - tau₀)).metricOnPoints
       (stable.endpoint_slice_map '' W)
 
-
-
-
-
-
 def M15Theorem81Estimate
     {G : GeneralizedLGeometryTransport n X time I}
     {T : ℝ} {x : (G.slices T).Point}
@@ -123,13 +78,6 @@ def M15Theorem81Estimate
   ENNReal.ofReal (κ * r ^ n) ≤
     calibratedMetricVolume (G.slices T).metricOnPoints
       ((G.slices T).metricOnPoints.ball x r)
-
-
-
-
-
-
-
 
 structure M15GeneralizedUniformData (n : ℕ) (taubar l₀ V : ℝ) where
   taubar_pos : 0 < taubar
@@ -150,22 +98,9 @@ structure M15GeneralizedUniformData (n : ℕ) (taubar l₀ V : ℝ) where
     (configuration : M15Theorem81Configuration G T x E taubar l₀ V r K C B) →
       M15Theorem81Estimate configuration kappa
 
-
-
-
-
-
 def M15GeneralizedUniformTheorem (n : ℕ) : Prop :=
   ∀ (taubar l₀ V : ℝ), 0 < taubar → 0 < l₀ → 0 < V →
     Nonempty (M15GeneralizedUniformData.{u} n taubar l₀ V)
-
-
-
-
-
-
-
-
 
 def M15GeneralizedNoncollapseAt
     (G : GeneralizedLGeometryTransport n X time I)
@@ -181,12 +116,6 @@ def M15GeneralizedNoncollapseAt
         calibratedMetricVolume
           (G.slices (G.spacetime.timeFunction p)).metricOnPoints
           ((G.slices (G.spacetime.timeFunction p)).metricOnPoints.ball x r)
-
-
-
-
-
-
 
 structure M15ConfigurationProvider
     (G : GeneralizedLGeometryTransport n X time I)
@@ -204,11 +133,6 @@ structure M15ConfigurationProvider
         Nonempty (M15Theorem81Configuration G
           (G.spacetime.timeFunction p) x E taubar l₀ V r K C B)
 
-
-
-
-
-
 def M15ProviderImpliesNoncollapse
     (G : GeneralizedLGeometryTransport n X time I)
     (Omega : Set G.Point)
@@ -218,15 +142,6 @@ def M15ProviderImpliesNoncollapse
     (κ = U.kappa ∧
       ∀ (p : G.Point) (_hp : p ∈ Omega),
         M15GeneralizedNoncollapseAt G p r₀ κ)
-
-
-
-
-
-
-
-
-
 
 structure M15CompactTheorem810Data
     (M : Type u) [TopologicalSpace M]
@@ -268,11 +183,6 @@ def M15CompactTheorem810Estimate
     calibratedMetricVolume (F.metric D.t₀)
       ((F.metric D.t₀).ball D.p D.r)
 
-
-
-
-
-
 structure M15CompactUniformData (omega T₀ : ℝ) where
   omega_pos : 0 < omega
   T₀_pos : 0 < T₀
@@ -290,11 +200,6 @@ structure M15CompactUniformData (omega T₀ : ℝ) where
 def M15CompactTheorem810 : Prop :=
   ∀ (omega T₀ : ℝ), 0 < omega → 0 < T₀ →
     Nonempty (M15CompactUniformData.{u} omega T₀)
-
-
-
-
-
 
 structure M15NoncollapsingTheory (n : ℕ) : Prop where
   generalized : M15GeneralizedUniformTheorem.{u} n

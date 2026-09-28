@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -39,8 +32,6 @@ theorem pathELength_comp_le_of_tangentNorm_le_on_Icc
 end PoincareConjecture.RiemannianMetric
 
 namespace PoincareConjecture
-
-
 
 theorem exists_first_exit_of_continuous
     {X : Type*} [TopologicalSpace X] {γ : ℝ → X} (hγ : Continuous γ)

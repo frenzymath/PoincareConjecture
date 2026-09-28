@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeVertical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem gauge_vertical_germs (e f : AttainmentGauge G)
     (gamma : ℝ → G.Point) (hgamma : Continuous gamma) {a b T c : ℝ}

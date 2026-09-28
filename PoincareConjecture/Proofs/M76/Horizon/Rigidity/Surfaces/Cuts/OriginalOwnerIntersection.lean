@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexSlabCommonEdge
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

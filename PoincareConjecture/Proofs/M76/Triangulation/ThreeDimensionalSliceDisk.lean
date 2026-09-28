@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.RegularSliceDisk
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,7 +11,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
 omit [FiniteDimensional ℝ E] in
-
 
 theorem linear_ne_zero_of_nonempty_regularSlice (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hreg : ∀ v ∈ K.vertices, A v ≠ 0)
@@ -36,11 +26,6 @@ theorem linear_ne_zero_of_nonempty_regularSlice (K : SimplicialComplex ℝ E)
   apply hreg v hvK
   have h := A.linearMap_vsub v x
   simpa [hA, hxA] using h.symm
-
-
-
-
-
 
 theorem exists_finitePL_disk_in_regularSlice (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite)

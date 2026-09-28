@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.FourRimGaps
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ConnectedRimProjection
 import Mathlib.Logic.Equiv.Fin.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -120,8 +112,6 @@ theorem nonempty_exteriorGapCoordinates
   · intro i j hij
     exact exteriorCopiedBridge_pairwise K P D hcofaces B h hbound hz
       (fun he => hij ((exteriorFourIndex K P D labels).injective he))
-
-
 
 theorem exists_original_exterior_gaps
     (labels : ResidualComplementaryEdge K P D ≃ Fin 2)

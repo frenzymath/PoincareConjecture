@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SphereDisplacement
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M28
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_local_sphere_ambient_transport
     {F : ℝ × UnitTwoSphere → E₃}
@@ -60,10 +47,6 @@ theorem exists_local_sphere_ambient_transport
         _ = x := es.symm_apply_apply x
     change et (es.symm x) = x
     rw [hsi, hetfix x hx]
-
-
-
-
 
 theorem exists_compact_sphere_ambient_transport
     {F : ℝ × UnitTwoSphere → E₃}

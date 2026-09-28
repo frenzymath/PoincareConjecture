@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.NoReturn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
-
 
 theorem pathELength_lower_of_cross_central_sphere (N : EpsilonNeck g)
     (hε : N.epsilon ≤ 1 / 1000) {γ : ℝ → M}
@@ -96,9 +83,6 @@ theorem pathELength_lower_of_cross_central_sphere (N : EpsilonNeck g)
   have hlen := mul_le_mul_of_nonneg_left hinv hs.le
   nlinarith
 
-
-
-
 theorem mem_component_complement_of_negative_half_overlap
     (N N' : EpsilonNeck g) (hε : N.epsilon ≤ 1 / 1000)
     (heq : N'.epsilon = N.epsilon)
@@ -133,8 +117,6 @@ theorem mem_component_complement_of_negative_half_overlap
     ⟨0, ⟨le_rfl, zero_le_one⟩, hγ0⟩ havoid
     ⟨1, ⟨zero_le_one, le_rfl⟩, hγ1⟩
 
-
-
 theorem positive_half_subset_component_complement_of_mem_closure_positive_quarter
     (N : EpsilonNeck g) {p : M}
     (hp : p ∈ closure (N.region (N.epsilon⁻¹ / 2) N.epsilon⁻¹)) :
@@ -168,9 +150,6 @@ theorem positive_half_subset_component_complement_of_mem_closure_positive_quarte
     (union_subset hpositive_avoid hquarter_avoid)
   exact subset_union_left.trans hsub
 
-
-
-
 theorem overlap_subset_positive_three_quarters_of_frontier
     (N N' : EpsilonNeck g) (hN : N.IsSeparating)
     (hε : N.epsilon ≤ 1 / 1000) (heq : N'.epsilon = N.epsilon)
@@ -200,8 +179,6 @@ theorem overlap_subset_positive_three_quarters_of_frontier
   apply N.not_meets_both_halves_of_isSeparating hN hU hcomponent havoid
   exact ⟨⟨x, hxU, hx.1, (N.coordinate_inverse_mem x hx.1).2.1, by linarith⟩,
     ⟨y, hpositive hy, hy⟩⟩
-
-
 
 theorem exists_frontier_overlap_subset_positive_three_quarters_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

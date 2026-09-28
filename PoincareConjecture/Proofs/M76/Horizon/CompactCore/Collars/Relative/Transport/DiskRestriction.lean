@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "K2" => closedBall (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
 local notation "I+" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_confined_disk_collar_of_finite_surface_product
     {X E ι : Type*} [TopologicalSpace X]

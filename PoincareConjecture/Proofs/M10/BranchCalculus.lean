@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.PhaseField
 import PoincareConjecture.Proofs.M10.MixedAction
 import PoincareConjecture.Proofs.M10.ProductDerivatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -20,17 +12,14 @@ namespace PoincareConjecture.M10
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [InnerProductSpace ℝ Y]
 
-
 noncomputable def actionBranchMomentum (E : X × ℝ → Y)
     (B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ) (z : X × ℝ) : Y →L[ℝ] ℝ :=
   (2 * Real.sqrt z.2) • B (E z, z.2) (fderiv ℝ E z (0, 1))
-
 
 noncomputable def actionBranchPhase (E : X × ℝ → Y)
     (B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ) (Z : X) (t : ℝ) :
     ℝ × Y × (Y →L[ℝ] ℝ) :=
   (t, E (Z, t), actionBranchMomentum E B (Z, t))
-
 
 theorem actionBranchMomentum_contDiffAt {E : X × ℝ → Y}
     {B : Y × ℝ → Y →L[ℝ] Y →L[ℝ] ℝ} {z : X × ℝ}
@@ -39,7 +28,6 @@ theorem actionBranchMomentum_contDiffAt {E : X × ℝ → Y}
   exact (contDiffAt_const.mul (contDiffAt_snd.sqrt ht.ne')).smul
     ((hB.comp z (hE.prodMk contDiffAt_snd)).clm_apply
       ((hE.fderiv_right (by simp)).clm_apply contDiffAt_const))
-
 
 theorem hasDerivAt_actionBranchPhase
     {E : X × ℝ → Y} {A : X × ℝ → ℝ}

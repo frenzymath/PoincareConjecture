@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.Components
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,7 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 def reverseRegions {A B : GeneralizedSliceCarrier.{u}}
     {U : Set A.carrier} {V : Set B.carrier}
@@ -30,8 +21,6 @@ def reverseRegions {A B : GeneralizedSliceCarrier.{u}}
   right_inverse := e.left_inverse
   map_smooth := e.inverse_smooth
   inverse_smooth := e.map_smooth
-
-
 
 noncomputable def openDiffeomorphRegions {A B : GeneralizedSliceCarrier.{u}}
     (U : TopologicalSpace.Opens A.carrier) (V : TopologicalSpace.Opens B.carrier)
@@ -49,7 +38,6 @@ noncomputable def openDiffeomorphRegions {A B : GeneralizedSliceCarrier.{u}}
   exact composeRegions (reverseRegions (openRegionEquivalence A U x))
     (composeRegions d (openRegionEquivalence B V (e x)))
 
-
 theorem openDiffeomorphRegions_apply {A B : GeneralizedSliceCarrier.{u}}
     (U : TopologicalSpace.Opens A.carrier) (V : TopologicalSpace.Opens B.carrier)
     (e : U ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ V) (x : U) (y : A.carrier) (hy : y ∈ U) :
@@ -58,7 +46,6 @@ theorem openDiffeomorphRegions_apply {A B : GeneralizedSliceCarrier.{u}}
   apply congrArg (fun z : U => (e z).val)
   apply Subtype.ext
   exact (openRegionEquivalence A U x).right_inverse hy
-
 
 theorem openDiffeomorphRegions_inverse {A B : GeneralizedSliceCarrier.{u}}
     (U : TopologicalSpace.Opens A.carrier) (V : TopologicalSpace.Opens B.carrier)

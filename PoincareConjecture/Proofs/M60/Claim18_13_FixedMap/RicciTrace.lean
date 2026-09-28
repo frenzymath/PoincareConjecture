@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.RicciQuadratic
 import PoincareConjecture.Proofs.M60.Claim18_13_FixedMap.GramDerivative
 import PoincareConjecture.Proofs.M60.Mathlib.GramTraceBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem m60SphereRicciTraceDensity_bound (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) {C : ℝ} (hC : 0 ≤ C)

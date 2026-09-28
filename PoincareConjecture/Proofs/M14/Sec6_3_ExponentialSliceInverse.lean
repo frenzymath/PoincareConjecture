@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialSliceMap
 import PoincareConjecture.Proofs.M09.ManifoldLocalInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,9 +26,6 @@ private theorem bijective_iff_of_horizontal_val_eq {a b : G.Point} (h : a = b)
   have heq : A = B := ContinuousLinearMap.ext (fun W => Subtype.ext (hval W))
   rw [heq]
 
-
-
-
 theorem exponentialSliceMap_differential_bijective_iff (E : M14ExponentialFamily G T x)
     {τ : ℝ} (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point)
     {Z : G.Horizontal x} (hZ : (Z, Real.sqrt τ) ∈ E.domain) :
@@ -57,10 +44,6 @@ theorem exponentialSliceMap_differential_bijective_iff (E : M14ExponentialFamily
     (L.toContinuousLinearMap.comp A) (E.differential Z (Real.sqrt τ) hZ)
     (fun W => exponentialSliceMap_differential_val E hτ q₀ hZ W)
   exact (Function.Bijective.of_comp_iff' L.bijective A).symm.trans hcomp
-
-
-
-
 
 theorem exists_exponentialSlice_local_inverse (E : M14ExponentialFamily G T x)
     {τ : ℝ} (hτ : 0 ≤ τ) (q₀ : (G.slices (T - τ)).Point)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.UnattachedComponents
 import PoincareConjecture.Proofs.M38.ComponentTransport
 import PoincareConjecture.Proofs.M38.WholeComponentGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
 
 noncomputable def unattachedAmbientOldDiffeomorph
     (x : eventDiscardedOpen F T hT)
@@ -71,8 +60,6 @@ noncomputable def unattachedAmbientOldDiffeomorph
     exact (contMDiff_subtype_val (U := eventDiscardedOpen F T hT)).comp
       (contMDiff_subtype_val (U := componentOpen O x))
 
-
-
 noncomputable def unattachedAmbientComponentDiffeomorph
     (x : eventDiscardedOpen F T hT)
     (hunattached : ∀ i,
@@ -83,11 +70,6 @@ noncomputable def unattachedAmbientComponentDiffeomorph
         (cappedOldInclusion F T hT P x)).carrier ∞ :=
   (unattachedAmbientOldDiffeomorph F T hT P x hunattached).trans
     (unattachedComponentDiffeomorph F T hT P x hunattached)
-
-
-
-
-
 
 theorem exists_unattached_component_geometry
     (N : RepairedNeckCapTopologyTheory.{u}) (hF : SurgeryFlowAdmissible F)

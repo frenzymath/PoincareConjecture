@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedSignedPLChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace OpenPartialHomeomorph
 variable {M E ι : Type*} [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_PL_defining_cut_near_compact_with_signs
     (e : ι → OpenPartialHomeomorph M E)
@@ -117,11 +103,6 @@ theorem exists_PL_defining_cut_near_compact_with_signs
       apply (mem_interior_iff_notMem_frontier hyR).mpr
       intro hyfront
       exact (ne_of_gt hypos) (hrzero y hyfront)
-
-
-
-
-
 
 theorem exists_PL_defining_cut_near_compact
     (e : ι → OpenPartialHomeomorph M E)

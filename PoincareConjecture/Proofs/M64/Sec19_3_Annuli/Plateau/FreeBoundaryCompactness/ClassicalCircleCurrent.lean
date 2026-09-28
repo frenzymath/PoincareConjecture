@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.CirclePhaseEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,9 +16,6 @@ namespace PoincareConjecture.M64
 
 local notation "S" => interior m64AnnulusDomain
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem phase_horizontal_integral
     {L : LoopPlane → ℝ} (hL : ContDiff ℝ 1 L) {d : ℝ}
@@ -60,9 +45,6 @@ theorem phase_horizontal_integral
   simp only [hslice]
   simp
 
-
-
-
 theorem phase_planar_current_integral {circumference : ℝ}
     (C : M62.CircleGeometry circumference) {L : LoopPlane → ℝ}
     (hL : ContDiff ℝ 1 L) {d : ℝ}
@@ -72,9 +54,6 @@ theorem phase_planar_current_integral {circumference : ℝ}
         (curvePeriod / circumference) * d := by
   simp_rw [planarCircleCurrent_phase_derivative C L (hL.differentiable (by simp) _) e0]
   rw [integral_const_mul, phase_horizontal_integral hL hshift]
-
-
-
 
 theorem circle_map_planar_current_integral {circumference : ℝ}
     (C : M62.CircleGeometry circumference) (f : LoopPlane → C.Point)
@@ -100,9 +79,6 @@ theorem circle_map_planar_current_integral {circumference : ℝ}
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem classical_free_ramp_current_positive
     (P : M62.CircleProductData F circumference) (t : ℝ) (gamma : ℝ → P.charts.Point)

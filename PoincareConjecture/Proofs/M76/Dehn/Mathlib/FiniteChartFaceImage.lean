@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChartImageIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedraSubcomplexes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem vertexSubcomplex_face_space
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -35,10 +23,6 @@ theorem vertexSubcomplex_face_space
 end Geometry.SimplicialComplex
 
 namespace Geometry
-
-
-
-
 
 theorem PolyhedralPLInCharts.exists_finite_face_chart_image
     {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

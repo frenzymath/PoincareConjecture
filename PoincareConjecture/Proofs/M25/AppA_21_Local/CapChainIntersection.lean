@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCuts
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem CapCertificate.inter_subset_end_region_of_avoids_slice
     (C : CapCertificate g) {t : ℝ}
@@ -59,9 +46,6 @@ theorem CapCertificate.inter_subset_end_region_of_avoids_slice
   intro x hx
   by_contra hnot
   exact houtside hx.2 ⟨hx.1, hnot⟩
-
-
-
 
 theorem CapCertificate.inter_chain_union_eq_end_neck
     (C : CapCertificate g) (D : BalancedNeckChain g C.epsilon)

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.Radial.Parameters
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.BoundedCylinder
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 def quadraticMinimumRadius (v : E3) (p : S2) : Real :=
   if inner Real v (p : E3) < 0 then minimumCapLowerRadius (inner Real v (p : E3))
@@ -84,8 +80,6 @@ theorem contMDiff_quadraticMinimumRadius {v : E3} (hv : ‖v‖ = 1) :
       filter_upwards [hn] with q hq
       rw [quadraticMinimumRadius_eq_cylinder q ⟨by linarith [hq.1], hq.2⟩,
         boundedCylinderRadius_of_abs_height_le v q (abs_le.mpr ⟨by linarith [hq.1], hq.2.le⟩)]
-
-
 
 theorem exists_quadraticMinimum_radial_ambient {v : E3} (hv : ‖v‖ = 1) :
     ∃ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,

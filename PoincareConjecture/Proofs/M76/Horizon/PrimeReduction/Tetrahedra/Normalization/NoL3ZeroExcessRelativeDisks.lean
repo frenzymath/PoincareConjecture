@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normaliza
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3RelativeInteriorPieces
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RawCenteredFamilyCollars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry Metric

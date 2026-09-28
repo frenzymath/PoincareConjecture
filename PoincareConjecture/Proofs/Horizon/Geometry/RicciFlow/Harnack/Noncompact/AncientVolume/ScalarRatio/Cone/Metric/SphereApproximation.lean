@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RayDensity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.RiemannianLink
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,14 +12,10 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
 
-
-
 def sphereLinkRelation (hcomparison : RayComparison p) (L τ : ℝ)
     (x : Metric.sphere p L) (z : AsymptoticLink p hcomparison) : Prop :=
   ∃ γ : basedMinimizingRays p, asymptoticLinkProjection hcomparison γ = z ∧
     dist (x : X) (rayExtension γ L) / L < τ
-
-
 
 theorem sphereLinkRelation_surjective (hcomparison : RayComparison p)
     {L τ : ℝ} (hL : 0 < L) (hτ : 0 < τ) (z : AsymptoticLink p hcomparison) :
@@ -70,9 +54,6 @@ private theorem sphereLinkRelation_distortion
         |dist (rayExtension γ L) (rayExtension η L) / L - asymptoticRayDistance γ η| :=
       add_le_add hsource le_rfl
     _ < _ := by linarith [hlimit γ η]
-
-
-
 
 theorem exists_sphereLinkRelation_approximation [ProperSpace X]
     (hcomparison : RayComparison p)
@@ -120,10 +101,6 @@ open scoped Manifold ContDiff ENNReal
 namespace PoincareConjecture.RiemannianMetric
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
-
 
 theorem exists_sphereLinkRelation_approximation_of_metricComplete
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

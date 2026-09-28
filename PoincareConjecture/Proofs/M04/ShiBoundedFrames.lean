@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M04.ShiBufferedAtlas
 import PoincareConjecture.Proofs.M04.ShiSegmentedFrames
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -248,4 +240,3 @@ theorem exists_shi_uniform_bounded_parallel_frames [T2Space M]
       (P j t) (hpair' j t ht)
 
 end PoincareConjecture.M04
-

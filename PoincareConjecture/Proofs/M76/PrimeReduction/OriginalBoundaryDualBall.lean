@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryStarBall
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSurfaceIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -42,9 +34,6 @@ private theorem barycentric_star_face_containment
       · exact hmax hi h
     exact convexHull_mono him
       (i.val.centroid_mem_convexHull (K.nonempty_of_mem_faces i.property))
-
-
-
 
 theorem exists_original_boundary_dual_half_ball
     (K L : SimplicialComplex ℝ E) [Fintype K.faces] [Fintype L.faces]

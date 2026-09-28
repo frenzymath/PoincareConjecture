@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckFrontierDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   {g : RiemannianMetric 3 M}
 
 omit [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] in
-
 
 theorem path_endpoint_mem_slab_of_short_length (W : EpsilonNeck g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)

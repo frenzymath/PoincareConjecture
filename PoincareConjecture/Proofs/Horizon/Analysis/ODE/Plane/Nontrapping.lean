@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Plane.NoReturn
 
-
-
-
-
-
-
-
-
-
-
 open Set
 open scoped ContDiff
 
 namespace Poincare.ODE.Plane
-
-
 
 theorem not_isBounded_forward_orbit
     {V : EuclideanSpace ℝ (Fin 2) → EuclideanSpace ℝ (Fin 2)}

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem ball_image (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -24,8 +14,6 @@ theorem ball_image (P : M35StandardCapPredecessors)
       ((generalizedFlow F).metric t).ball ((sliceDiffeomorph ht).symm p) r := by
   change _ = (metric F t).ball ((sliceDiffeomorph ht).symm p) r
   simpa only [Real.sqrt_one, one_mul] using (slice_calculus P F ht).ball_image p r
-
-
 
 theorem volume_ball (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)

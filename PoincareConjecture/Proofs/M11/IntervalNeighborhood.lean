@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M11.IntervalTopology
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.DiskNeighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Normalization
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_sphere_disk_neighborhoods_of_injective_mfderiv
     {f : S1 -> S2} (hf : ContMDiff (𝓡 1) (𝓡 2) ∞ f)
@@ -48,9 +38,6 @@ theorem exists_sphere_disk_neighborhoods_of_injective_mfderiv
   obtain ⟨e₀, e₁, _, hdisks⟩ :=
     exists_sphere_disk_neighborhoods_of_stereographic_boundary hp A hboundary
   exact ⟨e₀, e₁, hdisks⟩
-
-
-
 
 theorem exists_sphere_disk_neighborhoods_of_smooth_circle
     {f : S1 -> S2} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 1) (𝓡 2) ∞ f) :

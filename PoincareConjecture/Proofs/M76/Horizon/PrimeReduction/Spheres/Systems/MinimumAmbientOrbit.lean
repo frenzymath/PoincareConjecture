@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.SkeletonMinimality
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.AmbientTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicDeTurckNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option backward.isDefEq.respectTransparency false

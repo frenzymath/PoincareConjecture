@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Tria
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.FiniteConvexBall
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

@@ -15,14 +15,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Assembly.Convergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Conclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -35,9 +27,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 
 local instance compactnessProofConnected (C : FlowCarrier.{0} 3) :
     ConnectedSpace C.carrier := connectedSpace_iff_univ.mpr C.connected
-
-
-
 
 theorem m23LimitBoundedCurvature_of_limit
     {kappa : ℝ} (B : BasedKappaSolution kappa) :
@@ -56,51 +45,6 @@ theorem m23LimitBoundedCurvature_of_limit
     |(B.flow.flow.connection t).curvatureTensorNorm x| ≤ K
   intro t ht
   exact B.flow.bounded_curvature t ht
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m23NormalizedKappaCompactness
     (N : NormalizedKappaCompactnessData)
@@ -137,7 +81,6 @@ theorem m23NormalizedKappaCompactness
     limit_bounded_curvature := m23LimitBoundedCurvature_of_limit G.limit
     terminal_extension := hterminal
   }⟩
-
 
 theorem m23NormalizedKappaCompactnessConclusionTheory
     (N : NormalizedKappaCompactnessData)

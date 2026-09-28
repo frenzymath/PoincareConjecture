@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureComparisonNative
 import Mathlib.MeasureTheory.Function.LpSpace.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -35,7 +26,6 @@ def mapPullbackL2Fun (f : Lp E 2 (ν.map b)) : Lp E 2 ν :=
 theorem mapPullbackL2Fun_coe (f : Lp E 2 (ν.map b)) :
     mapPullbackL2Fun b hb f =ᵐ[ν] f ∘ b :=
   MemLp.coeFn_toLp _
-
 
 def mapPullbackL2 : Lp E 2 (ν.map b) →ₗᵢ[ℝ] Lp E 2 ν where
   toFun := mapPullbackL2Fun b hb
@@ -68,7 +58,6 @@ theorem mapPullbackL2_coe (f : Lp E 2 (ν.map b)) :
   mapPullbackL2Fun_coe b hb f
 
 variable {μ : Measure Y} {C : ℝ≥0∞} (hC : C ≠ ∞) (hdom : ν.map b ≤ C • μ)
-
 
 def dominatedPullbackL2 : Lp E 2 μ →L[ℝ] Lp E 2 ν :=
   (mapPullbackL2 b hb).toContinuousLinearMap.comp
@@ -123,7 +112,6 @@ theorem coordinateMeasure_le (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ
     (fun y hy => ENNReal.ofReal_le_ofReal (hbound y hy))
 
 variable {E : Type w} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 def chartPullbackL2 (e : OpenPartialHomeomorph M ModelE) {A : Set ModelE}
     (hA : MeasurableSet A) (hAt : A ⊆ e.target) {μ : Measure M} {c : ℝ}

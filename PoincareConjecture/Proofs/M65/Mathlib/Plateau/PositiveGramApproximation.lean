@@ -7,16 +7,6 @@ import Mathlib.Analysis.SpecificLimits.Basic
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -76,11 +66,6 @@ private theorem positive_convolution (φ : ContDiffBump (0 : ℂ))
         rw [norm_smul, Real.norm_eq_abs, abs_of_nonneg (φ.nonneg_normed t)]
         exact mul_le_mul_of_nonneg_left ht.2 (φ.nonneg_normed t)
       _ = C := by rw [integral_mul_const, φ.integral_normed, one_mul]
-
-
-
-
-
 
 theorem exists_positive_annular_approximation
     (H : ℂ → Matrix (Fin 2) (Fin 2) ℝ) (hH : LocallyIntegrable H volume)

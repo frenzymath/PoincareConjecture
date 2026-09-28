@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.ParallelTensorProduct
 import PoincareConjecture.Proofs.M35.RawFlow.SmoothUpperSupport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +24,6 @@ theorem metricGram_nonneg (g : RiemannianMetric n M) (x : M)
   have hi (a b : TangentSpace (𝓡 n) x) : inner ℝ a b = g.inner x a b := rfl
   exact sub_nonneg.mpr (by
     simpa only [hi, pow_two] using real_inner_mul_inner_self_le u v)
-
 
 theorem curvature_diffusion_with_scalar_barrier (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -78,8 +68,6 @@ theorem curvature_diffusion_with_scalar_barrier (D : LeviCivitaData g)
     D.riemannEvaluation y w + f y * metricGramEvaluation g y w) x ![u, v, u, v] at h
   rw [tensorLaplacian_add D hR hF, tensorLaplacian_scalar_mul_metricGram D hf] at h
   exact h
-
-
 
 theorem curvature_diffusion_with_local_scalar_barrier
     {gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData gE)

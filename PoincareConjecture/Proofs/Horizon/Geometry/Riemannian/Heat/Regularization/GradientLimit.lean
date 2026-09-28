@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.Approximation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +12,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M] {g : RiemannianMetric n M}
-
-
 
 theorem gradient_norm_le_of_tendsto (D : LeviCivitaData g)
     {ι : Type*} {l : Filter ι} [l.NeBot] {u : ι → M → ℝ} {f : M → ℝ}
@@ -50,7 +37,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem tendsto_integral_of_dominated_initial_approximations
     (H : ConservativeHeatKernelData g) {f : M → ℝ} (hf : Continuous f)
     {L : ℝ} (hLip : ∀ x y, |f y - f x| ≤ L * (g.edist x y).toReal)
@@ -70,8 +56,6 @@ theorem tendsto_integral_of_dominated_initial_approximations
       mul_le_mul_of_nonneg_right (hb j y) (abs_nonneg (H.kernel x y t))
   · filter_upwards [] with y
     exact (hl y).mul_const (H.kernel x y t)
-
-
 
 theorem kernel_integral_gradient_bound_of_compact_evolutions [PreconnectedSpace M]
     (H : ConservativeHeatKernelData g) (hcomplete : MetricComplete g) (O : M)

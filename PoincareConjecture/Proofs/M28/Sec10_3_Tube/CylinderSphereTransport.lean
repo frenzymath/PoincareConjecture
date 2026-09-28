@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderAnnulus
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SphereAmbientTransport
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SmoothSphereIsotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +15,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   {U : TopologicalSpace.Opens M}
-
-
-
 
 theorem exists_compact_annulus_sphere_transport
     (T : OpenCylinderModel (U : Set M)) {H : ℝ × UnitTwoSphere → M}

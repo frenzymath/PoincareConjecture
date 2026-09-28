@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusSmoothGram
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64AnnulusInterior_closure : closure m64AnnulusInterior = m64AnnulusDomain := by
   let H := PiLp.homeomorph 2 (fun _ : Fin 2 => ℝ)
@@ -47,10 +32,6 @@ theorem m64AnnulusInterior_closure : closure m64AnnulusInterior = m64AnnulusDoma
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64Annulus_conformal_on_domain_of_ae
     (A : M64Annulus g c0 c1) {O : Set LoopPlane}
@@ -80,10 +61,6 @@ theorem m64Annulus_conformal_on_domain_of_ae
       (fun _ => (0 : ℝ)) m64AnnulusInterior := fun p hp => (hpoint p hp).2
   exact fun p hp => ⟨hdiag.of_subset_closure (hcont 0 0) (hcont 1 1) hsub hclosure hp,
     hcross.of_subset_closure (hcont 0 1) continuousOn_const hsub hclosure hp⟩
-
-
-
-
 
 theorem m64Annulus_conformal_fderiv_on_domain_of_ae
     (A : M64Annulus g c0 c1) {O : Set LoopPlane}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationRegularBlocks
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationSiteCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,14 +20,10 @@ variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
 
-
-
 def loopDoublePointEquation (Gamma : P → ℝ → C1FreeLoopSpace (M := M))
     (q : M) (w : P × LoopAmbient) : LoopAmbient :=
   (chartAt LoopAmbient q) (periodicFreeLoop (Gamma w.1 (w.2 2)) (w.2 0)) -
     (chartAt LoopAmbient q) (periodicFreeLoop (Gamma w.1 (w.2 2)) (w.2 1))
-
-
 
 theorem loopDoublePointEquation_contDiffAt
     (Gamma : P → ℝ → C1FreeLoopSpace (M := M)) (J : Set ℝ) (d : ℝ) (hJ : IsOpen J)
@@ -58,11 +45,6 @@ variable [T2Space M] [CompactSpace M]
   {a b : ℝ} {F : RicciFlow 3 M (Icc a b)} {J : Set ℝ}
 
 set_option maxHeartbeats 1400000 in
-
-
-
-
-
 
 theorem exists_transverse_control_family (C : M65SmoothFilledLoopFamily F J)
     (hJ : IsOpen J) (K : Set ℝ) (hK : IsCompact K) (hKJ : K ⊆ J)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.SpeedDistance
 import PoincareConjecture.Proofs.M09.CompactTangentDisk
 import PoincareConjecture.Proofs.M09.CurvePhase
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

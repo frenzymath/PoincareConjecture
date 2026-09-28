@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckMinimizerSameLevel
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeData
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNeckRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

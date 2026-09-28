@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.RoundedVertexPath
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.PeriodicFiber
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +8,6 @@ open Set Function Filter
 open scoped Topology ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
 
 noncomputable def deletionClockVertex (N : ℕ) (j : ℤ) : ℝ :=
   (j : ℝ) - ((j / (N : ℤ) : ℤ) + ((j + 1) / (N : ℤ) : ℤ) : ℝ) / 2
@@ -31,7 +20,6 @@ theorem deletionClockVertex_add_period {N : ℕ} (hN : 0 < N) (j : ℤ) :
   simp only [deletionClockVertex, show j + (N : ℤ) + 1 = (j + 1) + N by omega,
     hq, Int.cast_add, Int.cast_natCast, Int.cast_one]
   ring
-
 
 theorem deletionClockVertex_step_bounds {N : ℕ} (hN : 2 ≤ N) (j : ℤ) :
     1 / 2 ≤ deletionClockVertex N (j + 1) - deletionClockVertex N j ∧
@@ -51,7 +39,6 @@ theorem deletionClockVertex_step_bounds {N : ℕ} (hN : 2 ≤ N) (j : ℤ) :
     Int.cast_add, Int.cast_one]
   constructor <;> linarith
 
-
 theorem roundedVertexPath_add_period (ρ : ℝ → ℝ) (P : ℤ → ℝ) (N : ℤ) (T : ℝ)
     (hP : ∀ j, P (j + N) = P j + T) (t : ℝ) :
     roundedVertexPath ρ P (t + N) = roundedVertexPath ρ P t + T := by
@@ -64,7 +51,6 @@ theorem roundedVertexPath_add_period (ρ : ℝ → ℝ) (P : ℤ → ℝ) (N : �
   rw [show t + (N : ℝ) - (↑⌊t + 1 / 2⌋ + N) = t - ↑⌊t + 1 / 2⌋ by ring]
   simp only [hP, roundedCorner, smul_eq_mul]
   ring
-
 
 theorem deriv_roundedVertexPath_mem_Icc {ρ : ℝ → ℝ} (P : ℤ → ℝ) {δ a b : ℝ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -99,7 +85,6 @@ theorem deriv_roundedVertexPath_mem_Icc {ρ : ℝ → ℝ} (P : ℤ → ℝ) {δ
       mul_nonneg hr (sub_nonneg.mpr hright.1)]
   · nlinarith [mul_nonneg hl (sub_nonneg.mpr hleft.2),
       mul_nonneg hr (sub_nonneg.mpr hright.2)]
-
 
 noncomputable def deletionClock (ρ : ℝ → ℝ) (N : ℕ) : ℝ → ℝ :=
   roundedVertexPath ρ (deletionClockVertex N)
@@ -143,7 +128,6 @@ theorem strictMono_deletionClock {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 2
   intro t
   linarith [(deriv_deletionClock_mem_Icc hN hδ hδhalf htail hbound hρ hder t).1]
 
-
 theorem surjective_of_add_periods {f : ℝ → ℝ} {T U : ℝ} (hT : 0 < T) (hU : 0 < U)
     (hf : Continuous f) (hper : ∀ t, f (t + T) = f t + U) : Surjective f := by
   have hs : Surjective (fun t => (T / U) * f t) :=
@@ -165,7 +149,6 @@ theorem surjective_deletionClock {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 2
     (contDiff_deletionClock N hδ hδhalf htail hbound hρ).continuous
     (fun t => by simpa only [add_sub_assoc] using
       deletionClock_add_period (N := N) ρ (by omega) t)
-
 
 noncomputable def deletionClockDiffeomorph {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 2 ≤ N)
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -222,7 +205,6 @@ theorem deletionClockVertex_neg_one {N : ℕ} (hN : 2 ≤ N) :
   rw [show (-1 : ℤ) + N = N - 1 by omega, deletionClockVertex_last hN] at h
   linarith
 
-
 theorem deletionClock_eq_self {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
     (htail : ∀ s, δ ≤ |s| → ρ s = |s|)
@@ -237,7 +219,6 @@ theorem deletionClock_eq_self {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ}
   simp only [roundedCorner, Int.cast_sub, Int.cast_one, Int.cast_add, smul_eq_mul]
   ring
 
-
 theorem deletionClock_eq_at_zero {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 3 ≤ N)
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
     (htail : ∀ s, δ ≤ |s| → ρ s = |s|)
@@ -251,7 +232,6 @@ theorem deletionClock_eq_at_zero {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 3
     deletionClockVertex_neg_one (by omega), deletionClockVertex_eq_self (by omega) (by omega)]
   simp only [roundedCorner, Int.cast_zero, Int.cast_one, sub_zero, smul_eq_mul]
   ring
-
 
 theorem deletionClock_eq_at_penultimate {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 4 ≤ N)
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -271,7 +251,6 @@ theorem deletionClock_eq_at_penultimate {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} 
   simp only [roundedCorner, Int.cast_sub, Int.cast_natCast, Int.cast_one, Int.cast_ofNat,
     smul_eq_mul]
   ring
-
 
 theorem deletionClock_eq_at_last {ρ : ℝ → ℝ} {δ : ℝ} {N : ℕ} (hN : 3 ≤ N)
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)

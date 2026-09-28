@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.GeodesicLength
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -130,8 +120,6 @@ theorem radial_minimizing_star
           (ENNReal.ofReal_mul' (p := a) (q := ‖v‖) (norm_nonneg v)).symm
   change g.edist p (e (a • v)) = ENNReal.ofReal ‖a • v‖
   simpa only [norm_smul, Real.norm_of_nonneg ha0] using (le_antisymm hupp hlow)
-
-
 
 theorem exists_precompact_polar_cut_null
     (g : PoincareConjecture.RiemannianMetric n M) (p : M) {R : ℝ}

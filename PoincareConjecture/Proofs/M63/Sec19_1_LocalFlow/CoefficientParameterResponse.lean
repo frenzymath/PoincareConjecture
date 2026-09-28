@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialParameterBranch
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredRealCoefficientSource
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -17,10 +9,6 @@ open scoped Topology
 namespace PoincareConjecture.M63
 
 open SpectralHeatNative QuasilinearDeTurckNative
-
-
-
-
 
 theorem exists_coefficient_parameter_response
     {iota E : Type*} [Countable iota]

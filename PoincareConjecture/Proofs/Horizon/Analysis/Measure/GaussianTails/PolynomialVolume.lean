@@ -3,8 +3,6 @@ import Mathlib.MeasureTheory.Integral.Lebesgue.Countable
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 import Mathlib.Algebra.Order.Floor.Semiring
 
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory

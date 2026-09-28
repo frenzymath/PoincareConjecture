@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.DomainChange
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -18,8 +8,6 @@ open scoped ContDiff Topology
 namespace Poincare.Analysis.Calculus
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem smooth_convergence_spacetime_lift
     {U : Set E} (hU : IsOpen U) {a : ℕ → E → E}
@@ -61,9 +49,6 @@ theorem smooth_convergence_spacetime_lift
       exact (iteratedFDeriv_prodMk contDiffAt_fst
         (contDiffAt_snd : ContDiffAt ℝ ∞ (Prod.snd : ℝ × E → E) z)
         (by exact_mod_cast le_top : (m : ℕ∞ω) ≤ ∞)).symm
-
-
-
 
 theorem smooth_convergence_spacetime_bilinear_pullback
     [FiniteDimensional ℝ E]

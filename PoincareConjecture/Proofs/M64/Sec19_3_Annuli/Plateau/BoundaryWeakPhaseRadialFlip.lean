@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakSeamContinuity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,19 +19,11 @@ local notation "T" => m64AnnulusRadialFlip
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
-
-
 theorem m64Integral_unitInterval_reflect (f : ℝ → ℝ) :
     (∫ s in Icc (0 : ℝ) 1, f (1 - s)) = ∫ s in Icc (0 : ℝ) 1, f s := by
   have h := intervalIntegral.integral_comp_sub_left (a := (0 : ℝ)) (b := 1) f 1
   simpa only [sub_self, sub_zero, intervalIntegral.integral_of_le zero_le_one,
     ← integral_Icc_eq_integral_Ioc] using h
-
-
-
-
 
 theorem m64WeakPartialDeriv_annulusRadialFlip
     {u v : LoopPlane → ℝ} {i : Fin 2}
@@ -69,10 +50,6 @@ theorem m64WeakPartialDeriv_annulusRadialFlip
   simp only [mul_comm] at ht ⊢
   linarith
 
-
-
-
-
 theorem m64WeakPhase_radialFlip_seam (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ)
     (D : ℝ)
     (hseam : ∀ phi : LoopPlane → ℝ, ContDiff ℝ 1 phi →
@@ -97,10 +74,6 @@ theorem m64WeakPhase_radialFlip_seam (u : LoopPlane → ℝ) (V : Fin 2 → Loop
   simpa only [Function.comp_apply, m64AnnulusRadialFlip_point,
     m64Integral_unitInterval_reflect (fun s => phi (annulusPoint curvePeriod s))] using ht
 
-
-
-
-
 theorem m64WeakPhase_radialFlip_lower (u : LoopPlane → ℝ) (v : LoopPlane → ℝ)
     (b : ℝ → ℝ)
     (hupper : ∀ phi : LoopPlane → ℝ, ContDiff ℝ 1 phi →
@@ -122,10 +95,6 @@ theorem m64WeakPhase_radialFlip_lower (u : LoopPlane → ℝ) (v : LoopPlane →
     one_mul] at hh
   rw [hupper (phi ∘ T) hpc hb] at hh
   simpa only [Function.comp_apply, m64AnnulusRadialFlip_point, sub_self] using hh
-
-
-
-
 
 theorem m64WeakPhase_monotone_affine_upper_trace_continuous
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b : ℝ → ℝ) (D : ℝ)

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
 
 @[reducible] def toMetricSpace (g : RiemannianMetric n M) : MetricSpace M := by
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Basic
 import Mathlib.Geometry.Manifold.ChartedSpace
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

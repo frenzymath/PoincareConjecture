@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ namespace Homeomorph
 variable {E F V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
-
-
 
 theorem IsFinitePL.transport_level_chart {S : Set E} {T : Set F} {B : Set V}
     {H : S ≃ₜ T} (hH : H.IsFinitePL) {r : E → ℝ} {A : F → ℝ}

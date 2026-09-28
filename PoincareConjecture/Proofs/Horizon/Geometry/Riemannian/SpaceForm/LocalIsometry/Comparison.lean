@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Exponenti
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.LocalInverse
 import Mathlib.Analysis.Real.Pi.Bounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem bijective_mfderiv_of_spherical_metric
     (g : RiemannianMetric n M) {e : EuclideanSpace ℝ (Fin n) → M}
@@ -73,8 +63,6 @@ theorem bijective_mfderiv_of_spherical_metric
       nlinarith
     exact inner_self_eq_zero.mp hi
   exact ⟨hinj, (LinearMap.injective_iff_surjective (f := A.toLinearMap)).mp hinj⟩
-
-
 
 theorem exists_local_isometry_of_spherical_exponentials
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -201,8 +189,6 @@ theorem exists_local_isometry_of_spherical_exponentials
   rw [hleft v, hleft w] at hm
   erw [A.right_inv hx.1] at hm
   exact hm
-
-
 
 theorem exists_local_isometry_of_unit_curvature
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

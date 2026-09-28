@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.TensorProbeL2Native
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Analysis.InnerProductSpace.ProdL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option synthInstance.maxHeartbeats 200000
@@ -26,7 +17,6 @@ namespace PoincareConjecture.TensorProbeNative
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem contMDiff_pairing (h : SmoothTensor (n := n) (M := M))
     (V W : SmoothField (n := n) (M := M)) :
@@ -52,7 +42,6 @@ variable {iota : Type v} [Fintype iota]
 
 abbrev DerivativeCoefficients (iota : Type v) [Fintype iota] :=
   EuclideanSpace ℝ (iota × iota × iota)
-
 
 def derivativeProbes (F : iota → SmoothField (n := n) (M := M)) :
     SmoothTensor (n := n) (M := M) →ₗ[ℝ] C(M, DerivativeCoefficients iota) where
@@ -89,14 +78,12 @@ def derivativeProbes (F : iota → SmoothField (n := n) (M := M)) :
 variable [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
   (F : iota → SmoothField (n := n) (M := M)) (μ : Measure M) [IsFiniteMeasure μ]
 
-
 def derivativeToLp : SmoothTensor (n := n) (M := M) →ₗ[ℝ] Lp (DerivativeCoefficients iota) 2 μ :=
   (ContinuousMap.toLp 2 μ ℝ).toLinearMap.comp (derivativeProbes F)
 
 theorem derivativeToLp_coe (h : SmoothTensor (n := n) (M := M)) :
     derivativeToLp F μ h =ᵐ[μ] derivativeProbes F h :=
   ContinuousMap.coeFn_toLp μ (derivativeProbes F h)
-
 
 abbrev FirstOrderAmbient :=
   WithLp 2 (tensorL2 F μ × Lp (DerivativeCoefficients iota) 2 μ)
@@ -105,7 +92,6 @@ def firstOrderImage : SmoothTensor (n := n) (M := M) →ₗ[ℝ] FirstOrderAmbie
   (WithLp.linearEquiv 2 ℝ
     (tensorL2 F μ × Lp (DerivativeCoefficients iota) 2 μ)).symm.toLinearMap.comp
       ((intoTensorL2 F μ).prod (derivativeToLp F μ))
-
 
 def firstOrderGraph : Submodule ℝ (FirstOrderAmbient F μ) :=
   (firstOrderImage F μ).range.topologicalClosure
@@ -116,7 +102,6 @@ instance firstOrderGraph_completeSpace : CompleteSpace (firstOrderGraph F μ) :=
 def intoFirstOrderGraph : SmoothTensor (n := n) (M := M) →ₗ[ℝ] firstOrderGraph F μ :=
   (firstOrderImage F μ).codRestrict (firstOrderGraph F μ) (fun h =>
     (firstOrderImage F μ).range.le_topologicalClosure (LinearMap.mem_range_self _ h))
-
 
 def graphValue : firstOrderGraph F μ →L[ℝ] tensorL2 F μ :=
   (WithLp.fstL 2 ℝ (tensorL2 F μ) (Lp (DerivativeCoefficients iota) 2 μ)).comp

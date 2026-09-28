@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.GraphHeightSublevels
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem lower_neighbors_reachable_of_preconnected_link
     (K : SimplicialComplex ℝ E) (A : E → ℝ) (p : K.vertices)
@@ -63,10 +50,6 @@ theorem lower_neighbors_reachable_of_preconnected_link
           exact hface.1 }
   exact (hlink ⟨⟨a, hneighbor a hpa⟩, ha⟩ ⟨⟨b, hneighbor b hpb⟩, hb⟩).map lift
 
-
-
-
-
 theorem preconnected_sublevel_graph_of_preconnected_links
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hG : K.vertexAbstractComplex.edgeGraph.Preconnected)
@@ -82,10 +65,6 @@ theorem preconnected_sublevel_graph_of_preconnected_links
   intro p a b hpa hpb ha hb
   exact K.lower_neighbors_reachable_of_preconnected_link A p (hlink p p.property)
     a b hpa hpb ha hb
-
-
-
-
 
 theorem preconnected_signed_sublevel_graphs_of_preconnected_links
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M15.Prop8_2_UpperBound
 import PoincareConjecture.Proofs.M15.Thm8_1_Reduction
 import PoincareConjecture.Proofs.M15.Thm8_1_DimensionZero
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem generalizedUniformTheorem
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

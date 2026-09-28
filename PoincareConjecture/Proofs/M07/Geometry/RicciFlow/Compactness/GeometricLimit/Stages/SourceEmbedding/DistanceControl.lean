@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.BoundaryEscape
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.DistanceMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem tendstoUniformlyOn_chart_approximation_of_local_charts
     {ι : Type*} {X : ι → Type*} [∀ i, MetricSpace (X i)]

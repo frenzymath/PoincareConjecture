@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Lemma8_7_SquareRootLift
 import PoincareConjecture.Proofs.M15.Lemma8_6_HorizontalSpeed
 import PoincareConjecture.Proofs.M15.Prop8_2_LocalEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_actualBallCylinder_lift_terminal_speed_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

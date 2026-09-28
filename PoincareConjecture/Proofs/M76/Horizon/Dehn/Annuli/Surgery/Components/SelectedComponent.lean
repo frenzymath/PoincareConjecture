@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Decomposition
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -46,8 +44,6 @@ theorem pieces_isCompact (D : SourceCircleDecomposition f S) (i : D.Index) :
 
 theorem pieces_isConnected (D : SourceCircleDecomposition f S) (i : D.Index) :
     IsConnected (D.pieces i) := (D.topology i).2.1
-
-
 
 theorem source_preimage_piece_image (D : SourceCircleDecomposition f S) (i : D.Index) :
     S ∩ f ⁻¹' (f '' D.pieces i) = D.pieces i ∪ D.pieces (D.mate i) := by

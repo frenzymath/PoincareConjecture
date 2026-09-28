@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 import Mathlib.Data.Fintype.EquivFin
 import Mathlib.Data.Fintype.Sum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_family_surgery_reindex
     (n : ℕ) (psi : Fin n → UnitTwoSphere × ℝ → E3)

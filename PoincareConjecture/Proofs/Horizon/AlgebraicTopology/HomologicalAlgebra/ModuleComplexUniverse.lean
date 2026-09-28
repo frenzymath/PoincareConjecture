@@ -4,14 +4,6 @@ import Mathlib.Algebra.Homology.HomologicalComplexAbelian
 import Mathlib.Algebra.Category.ModuleCat.Abelian
 import Mathlib.LinearAlgebra.Quotient.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 set_option backward.isDefEq.respectTransparency false

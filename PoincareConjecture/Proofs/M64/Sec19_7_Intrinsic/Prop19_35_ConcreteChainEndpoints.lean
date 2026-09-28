@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConcreteArcBandChain
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -11,9 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture.M64IntrinsicArcBandChain
-
-
-
 
 theorem endpoint_zero {gamma : ℝ → AnnulusCoordinates} {a b : ℝ}
     {U : Set AnnulusCoordinates} (C : M64IntrinsicArcBandChain gamma a b U)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedFirstFailureObservation
 import PoincareConjecture.Proofs.M47.NoncollapseHorizon
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_ObservedWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_firstFailure_noncollapsed
     (P : M47Predecessors.{u}) {K : MetricSurgeryConstants}

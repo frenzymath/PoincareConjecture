@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.CompatibleEndIntegral
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndDensityComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_endOverlap_integral_bound
     {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)

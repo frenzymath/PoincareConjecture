@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzRectangleFT
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.PeriodicRectangleLipschitz
 import PoincareConjecture.Proofs.M40.Mathlib.LocalSmoothLipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,9 +36,6 @@ private theorem periodic_rectangle_trace_locallyLipschitz
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem admitted_ramp_label_locallyLipschitz
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -133,9 +118,6 @@ theorem admitted_ramp_label_locallyLipschitz
     |sigma u - sigma v| ≤ ((C * B : ℝ≥0) : ℝ) * |u - v| / alpha :=
       (le_div_iff₀ halpha).mpr (by simpa only [mul_comm] using hbound)
     _ = _ := by rw [NNReal.coe_mul]; ring
-
-
-
 
 theorem admitted_ramp_label_exists_degreeOneLift
     (P : M62.CircleProductData F circumference) (t : ℝ)

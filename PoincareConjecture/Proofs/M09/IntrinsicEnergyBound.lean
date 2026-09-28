@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.IntrinsicEnergy
 import PoincareConjecture.Proofs.M09.GeometricEnergyBound
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Laplaci
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
 import PoincareConjecture.Statements.M44Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 universe u
 
 namespace PoincareConjecture.M44
-
-
 
 theorem scalar_smooth_of_predecessors
     (P : M44CapPersistencePredecessors.{u}) {n : ℕ} {M : Type u}
@@ -52,9 +40,6 @@ variable {n : ℕ} {M N : Type*}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
-
 
 theorem curvatureContractions_eq_of_metric_linearEquiv
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : M) (y : N)
@@ -110,9 +95,6 @@ variable {n : ℕ} {N : Type*} [TopologicalSpace N] [ChartedSpace (E n) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
   {g : RiemannianMetric n (E n)} {h : RiemannianMetric n N}
 
-
-
-
 theorem scalar_ricciNormSq_eq_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : E n → N} {x : E n}
     (hf : ContMDiffAt (𝓡 n) (𝓡 n) ∞ f x)
@@ -128,9 +110,6 @@ theorem scalar_ricciNormSq_eq_of_metric_pullback
     rfl
   · rw [D.curvatureTensor_eq_pullback_euclidean D' hf hinv hmetric, ← he]
     rfl
-
-
-
 
 theorem scalar_evolution_eq_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h) {f : E n → N} {U : Set (E n)}

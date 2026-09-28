@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamLocalComparison
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PolarCircleColumn
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusSeamDomain
 
-
-
 def seamEnergyDensity (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (p : LoopPlane) : ℝ :=
   (Q (m64AnnulusSeamExtend A.map p)
@@ -34,21 +26,15 @@ def seamEnergyDensity (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (m64AnnulusSeamExtend (A.column 1 : LoopPlane → E) p)
     (m64AnnulusSeamExtend (A.column 1 : LoopPlane → E) p)) / 2
 
-
-
 def seamDiskEnergy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (a : LoopPlane) (r : ℝ) : ℝ :=
   ∫ p in Metric.ball a r, A.seamEnergyDensity Q p
-
-
 
 def seamAngularEnergy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) (rho s : ℝ) : ℝ :=
   ∫ x in Icc (0 : ℝ) curvePeriod,
     ‖m64MorreyPolarAngularColumn a rho
       (fun i => m64AnnulusSeamExtend (A.column i : LoopPlane → E)) (annulusPoint x s)‖ ^ 2
-
-
 
 theorem seamEnergyDensity_eq_extend (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) :
@@ -59,8 +45,6 @@ theorem seamEnergyDensity_eq_extend (A : M64ObservedWeakAnnulus (n := n) e c0 c1
   simp only [seamEnergyDensity, m64AnnulusSeamExtend]
   split_ifs <;> rfl
 
-
-
 theorem seamEnergyDensity_integrable (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
     {C : ℝ} (hb : ∀ q, ‖Q q‖ ≤ C) : IntegrableOn (A.seamEnergyDensity Q) O volume := by
@@ -68,27 +52,19 @@ theorem seamEnergyDensity_integrable (A : M64ObservedWeakAnnulus (n := n) e c0 c
   exact memLp_one_iff_integrable.mp (m64AnnulusSeamExtend_memLp
     (memLp_one_iff_integrable.mpr (A.energy_integrable Q hQ hei hb)))
 
-
-
 theorem seamEnergyDensity_nonneg (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hpos : ∀ q w, 0 ≤ Q q w w) (p : LoopPlane) :
     0 ≤ A.seamEnergyDensity Q p :=
   div_nonneg (add_nonneg (hpos _ _) (hpos _ _)) (by norm_num)
-
-
 
 theorem seamDiskEnergy_nonneg (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hpos : ∀ q w, 0 ≤ Q q w w)
     (a : LoopPlane) (r : ℝ) : 0 ≤ A.seamDiskEnergy Q a r :=
   integral_nonneg (A.seamEnergyDensity_nonneg Q hpos)
 
-
-
 theorem seamAngularEnergy_nonneg (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (a : LoopPlane) (rho s : ℝ) : 0 ≤ A.seamAngularEnergy a rho s :=
   integral_nonneg fun _ => sq_nonneg _
-
-
 
 theorem seamDiskEnergy_le_energy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
@@ -101,8 +77,6 @@ theorem seamDiskEnergy_le_energy (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
         (Eventually.of_forall (A.seamEnergyDensity_nonneg Q hpos))
         (Eventually.of_forall hball)
     _ = _ := A.seam_extension_energy Q hQ hei hb
-
-
 
 theorem seamDiskEnergy_mono (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Reg
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Circle
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.ModelSpaces
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -38,8 +30,6 @@ private instance : Nonempty S1 := by
   obtain ⟨x, hx⟩ := (NormedSpace.sphere_nonempty (x := (0 : E2))).mpr
     (by norm_num : (0 : Real) ≤ 1)
   exact ⟨⟨x, hx⟩⟩
-
-
 
 theorem exists_annular_chart_of_injective_bijective_derivative
     {F : S1 × Real -> S2} {s : Set (S1 × Real)} (hs : IsOpen s)
@@ -87,7 +77,6 @@ theorem exists_annular_chart_of_injective_bijective_derivative
   have hright : F (e.symm y) = y := e.right_inv hy
   rw [hright] at hinverse
   simpa only [modelWithCornersSelf_prod] using hinverse.contMDiffWithinAt
-
 
 theorem bijective_mfderiv_of_height_and_slices
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -146,8 +135,6 @@ private theorem exists_regular_band_around
     constructor <;> linarith [hp.1, hp.2]
   exact hball hd ⟨p, hcrit, rfl⟩
 
-
-
 theorem image_openLevel_component_of_isCompact
     {h : S2 -> Real} (U : Opens S2) (c : Real)
     (hcompact : IsCompact ((U : Set S2) ∩ h ⁻¹' {c}))
@@ -188,7 +175,6 @@ theorem image_openLevel_component_of_isCompact
   rintro y ⟨x, hx, rfl⟩
   exact hclopen.connectedComponent_subset hpL hx
 
-
 theorem image_openLevel_component
     {h : S2 -> Real} (U : Opens S2) (c : Real)
     (hfull : h ⁻¹' {c} ⊆ (U : Set S2)) (p : openLevelSet h U c) :
@@ -208,8 +194,6 @@ theorem image_openLevel_component
   change openLevelIncl h U c '' connectedComponent p = Subtype.val '' connectedComponent (e p)
   rw [← he, image_image]
   rfl
-
-
 
 theorem exists_smooth_regular_level_component_tube_of_smooth
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -329,8 +313,6 @@ theorem exists_smooth_regular_level_component_tube_of_smooth
     · rintro ⟨y, hy, rfl⟩
       obtain ⟨q, hq⟩ := d.surjective ⟨y, hy⟩
       exact ⟨q, congrArg (fun z : C => openLevelIncl h U c z.val) hq⟩
-
-
 
 theorem exists_smooth_regular_level_component_tube
     {h : S2 -> Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalStarConeCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,9 +13,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   (K L : SimplicialComplex ℝ E) [Fintype K.faces] [Fintype L.faces]
-
-
-
 
 theorem exists_boundary_edge_dual_link_data
     (hLK : L ≤ K) (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)
@@ -98,10 +86,6 @@ theorem exists_boundary_edge_dual_link_data
   rcases Finset.mem_union.mp hamem with has | hab'
   · exact hta has
   · exact hab (Finset.mem_singleton.mp hab')
-
-
-
-
 
 theorem isFinitePLBallPair_boundary_edge_dual
     (hLK : L ≤ K) (hLcard : ∀ t ∈ L.faces, t.card ≤ 3)

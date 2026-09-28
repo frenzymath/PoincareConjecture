@@ -1,14 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.GraphNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.Strip
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -24,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
 variable (D : FiniteChartRegionDecomposition (M := M))
 
 omit [T2Space M] in
-
 
 theorem exists_regions_of_two_sided_neighborhood (e : D.EdgeIndex)
     {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1) {W U V : Set M}
@@ -102,7 +92,6 @@ theorem exists_regions_of_two_sided_neighborhood (e : D.EdgeIndex)
       exact ⟨(show z ∈ W \ K from hpartition ▸ Or.inr hz).1, hVC hz⟩
 
 omit [T2Space M] in
-
 
 theorem exists_rectangle_incident_regions (e : D.EdgeIndex)
     (H : OpenPartialHomeomorph (ℝ × ℝ) M)
@@ -201,8 +190,6 @@ theorem exists_rectangle_incident_regions (e : D.EdgeIndex)
     apply mem_closure_image (H.continuousAt (hsource ⟨hq.1, by
       constructor <;> linarith [hq.2.1, hq.2.2]⟩))
     rwa [hclV]
-
-
 
 theorem exists_edge_graph_incident_regions (e : D.EdgeIndex)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)

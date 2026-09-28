@@ -4,24 +4,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.DistinctRayStraightening
 import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
 
 theorem exists_interior_arc_pair_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionDomainPullback
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -22,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem composed_map_fderiv_joint_c1
     {F H : ℝ → V → V} {J : Set ℝ}
@@ -38,8 +26,6 @@ theorem composed_map_fderiv_joint_c1
   intro p hp
   exact fderiv_comp p.2 ((hFs p.1 hp.1).differentiable (by simp) (H p.1 p.2))
     ((hHs p.1 hp.1).differentiable (by simp) p.2)
-
-
 
 theorem composed_map_hessian_joint_c1
     {F H : ℝ → V → V} {J : Set ℝ}

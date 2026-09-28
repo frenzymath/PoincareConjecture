@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.An
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Original.AnnularStraightening
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Arcs.ContactInduction
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip unitInterval
 
@@ -130,8 +128,6 @@ theorem exists_original_annular_circle_collar_motion_of_endpoint
   · rintro _ ⟨z, rfl⟩
     obtain ⟨x, rfl⟩ := q.surjective z
     exact ⟨_, mem_range_self x, Subtype.ext (hpoint x)⟩
-
-
 
 theorem exists_original_annular_circle_collar_straightening
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

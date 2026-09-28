@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M44Providers
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff Topology Bundle
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_buffered_initial_derivative_bound
     (P : M44CapPersistencePredecessors.{u}) (n m : ℕ)
@@ -57,9 +44,6 @@ theorem exists_buffered_initial_derivative_bound
   apply le_trans _ hsum
   simpa only [Nat.sub_eq_zero_of_le hj, Nat.cast_zero, zero_div,
     Real.rpow_zero, div_one] using hh
-
-
-
 
 theorem buffered_pullback_ellipticity
     (P : M44CapPersistencePredecessors.{u}) {n : ℕ} {M : Type u} [TopologicalSpace M]

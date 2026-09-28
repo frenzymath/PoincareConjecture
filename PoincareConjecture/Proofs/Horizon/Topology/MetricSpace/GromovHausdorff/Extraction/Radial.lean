@@ -1,18 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Extraction.CrossRadius
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.ClosedBallTransition
-
-
-
-
-
-
-
 
 open Set Filter Topology Metric
 open scoped Topology
@@ -20,12 +7,6 @@ open scoped Topology
 noncomputable section
 
 namespace Poincare.GromovHausdorff
-
-
-
-
-
-
 
 theorem exists_subseq_compatible_marked_closedBall_limits_with_inner_ball_range_of_uniform_packing_bounds
     (X : Nat -> BasedMetricSpaceBundle.{0})
@@ -90,10 +71,6 @@ theorem exists_subseq_compatible_marked_closedBall_limits_with_inner_ball_range_
           (Y i).toFiniteDiameterBasedMetricSpace
     exact hmarked i
 
-
-
-
-
 theorem exists_subseq_compatible_marked_closedBall_limits_with_proper_completedLimit_of_uniform_packing_bounds
     (X : Nat -> BasedMetricSpaceBundle.{0})
     [forall k, CompleteSpace (X k).carrier]
@@ -130,4 +107,3 @@ theorem exists_subseq_compatible_marked_closedBall_limits_with_proper_completedL
 end Poincare.GromovHausdorff
 
 end
-

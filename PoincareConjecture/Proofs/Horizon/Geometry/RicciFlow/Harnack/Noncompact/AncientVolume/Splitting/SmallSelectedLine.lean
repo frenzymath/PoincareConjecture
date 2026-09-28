@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SelectedLine
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SmallRescaledLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem exists_isometric_line_of_small_selected_terminal_segments
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

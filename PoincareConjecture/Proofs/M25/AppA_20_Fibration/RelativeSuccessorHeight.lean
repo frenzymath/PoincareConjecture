@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SliceProjectionDifferential
 import PoincareConjecture.Proofs.M25.Mathlib.FiberwiseGraphComplement
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture
 
 open Classical in
-
-
 
 theorem EpsilonNeck.exists_relative_successor_height_continuity :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

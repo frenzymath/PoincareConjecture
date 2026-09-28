@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.IntrinsicBounds.PathDistance.Integration
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

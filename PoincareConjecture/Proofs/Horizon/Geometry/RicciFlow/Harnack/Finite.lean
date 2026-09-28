@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Diagonal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MetricDuality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -25,7 +16,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 def HamiltonBlockPos
     {T₀ T₁ : ℝ} (F : RicciFlow n M (Ioo T₀ T₁)) (t : ℝ) (x : M)
@@ -69,9 +59,6 @@ theorem finite_differential_of_hamilton_diagonal
   intro t ht x v
   apply finite_differential_of_hamilton_diagonal_nonneg hC T₀ T₁ F t ht x v
   exact hdiag t ht x v
-
-
-
 
 theorem finite_differential_of_hamilton_block
     (hC : RicciFlowCurvatureTheory.{u})

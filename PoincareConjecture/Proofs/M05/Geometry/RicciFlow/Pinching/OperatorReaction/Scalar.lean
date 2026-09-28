@@ -1,15 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.ReactionInvariance
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -42,7 +31,6 @@ private theorem linear_ode_nonneg
     ring)
   intro t ht
   exact (mul_nonneg_iff_of_pos_left (Real.exp_pos _)).mp (hg t ht)
-
 
 theorem reaction_two_order
     {a b : ℝ} (hab : a ≤ b) {lam mu nu : ℝ → ℝ}
@@ -77,7 +65,6 @@ theorem reaction_two_order
     (sub_nonneg.mpr hinit.2)
   exact fun t ht => ⟨sub_nonneg.mp (hfirst t ht), sub_nonneg.mp (hsecond t ht)⟩
 
-
 theorem scalarRegion_antitone_time {s t : ℝ} (ht : 0 ≤ t) (hts : t ≤ s) :
     scalarRegion s ⊆ scalarRegion t := by
   intro p hp
@@ -98,8 +85,6 @@ theorem scalarRegion_antitone_time {s t : ℝ} (ht : 0 ≤ t) (hts : t ≤ s) :
       unfold logBarrier
       exact mul_le_mul_of_nonneg_left (by linarith) hpos
     exact hbar.trans (hp.2 (hcut.trans hx))
-
-
 
 theorem reaction_two_invariance
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)

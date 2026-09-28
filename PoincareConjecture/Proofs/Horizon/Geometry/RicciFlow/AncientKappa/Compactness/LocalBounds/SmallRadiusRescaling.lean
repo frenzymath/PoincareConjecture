@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.UnitVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.BaseRadius
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ local instance smallRadiusCarrierConnected (C : FlowCarrier.{0} 3) : ConnectedSp
   connectedSpace_iff_univ.mpr C.connected
 
 variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
-
-
 
 theorem exists_small_radius_rescaled_sequence
     (P : M23NormalizedKappaCompactnessPredecessors) {ν : ℝ} (hν : 0 < ν)
@@ -113,8 +101,6 @@ theorem exists_small_radius_rescaled_sequence
       m23_exists_local_curvature_bound_of_unit_ball_volume P S.kappa_pos hν hr
     exact ⟨B, hB, fun k ↦ hbound (S.term k).carrier (K k) (hkappa k)
       (S.term k).base (hunit k).ge⟩
-
-
 
 theorem exists_small_radius_rescaled_sequence_of_not_localCurvatureEstimate
     (P : M23NormalizedKappaCompactnessPredecessors) (hn : ¬ M23LocalCurvatureEstimate S) :

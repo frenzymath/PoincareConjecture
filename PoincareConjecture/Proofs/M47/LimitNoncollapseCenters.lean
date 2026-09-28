@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseWorldlines
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M47
 variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 theorem limitNoncollapse_pointMap_injective_at
     (e : GeneralizedFlowCylinder F C origin scale I U)
     (s : ℝ) (hs : s ∈ I) {x y : C.carrier}
@@ -33,8 +23,6 @@ theorem limitNoncollapse_pointMap_injective_at
     x = e.inverse s hs (e.forward s hs x) := (e.left_inverse s hs hx).symm
     _ = e.inverse s hs (e.forward s hs y) := by rw [hsp]
     _ = y := e.left_inverse s hs hy
-
-
 
 theorem limitNoncollapse_convergence_center_identity
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

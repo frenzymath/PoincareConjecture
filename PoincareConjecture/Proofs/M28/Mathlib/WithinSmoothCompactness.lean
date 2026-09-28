@@ -1,24 +1,10 @@
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetExtraction
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
-
 
 theorem exists_common_contDiffOn_subsequence_of_withinJet_bounds
     {E F : ℕ → Type*}

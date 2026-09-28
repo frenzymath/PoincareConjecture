@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.NormalRadialExpansion
 import PoincareConjecture.Proofs.M38.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} {a : ℝ}
   (ha : 0 < a) (ha1 : a < 1) (B : SurgeryBallEmbedding A)
-
-
 
 noncomputable def normalCorrectedBall : SurgeryBallEmbedding A := by
   let e := normalRadialExpansion ha ha1
@@ -68,8 +57,6 @@ theorem normalCorrectedBall_annulus (z : UnitTwoSphere) {s : ℝ} (hs : |s| ≤ 
       B.map ((1 + s / a) • z.val) := by
   change B.map (normalRadialExpansion ha ha1 ((1 + s) • z.val)) = _
   rw [normalRadialExpansion_annulus ha ha1 z hs]
-
-
 
 theorem exists_surgeryBall_preserving_radial_germ
     (b : OpenPartialHomeomorph StandardCapSpace A.carrier)

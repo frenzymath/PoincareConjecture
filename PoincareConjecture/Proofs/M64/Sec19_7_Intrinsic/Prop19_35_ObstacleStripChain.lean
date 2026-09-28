@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ObstacleBarriers
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TransverseStripSeparation
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,9 +22,6 @@ private theorem exists_axis_height_avoiding
   obtain ⟨delta, hdelta, hball⟩ := Metric.mem_nhds_iff.mp hnear
   refine ⟨delta, hdelta, fun z hz => hball ?_⟩
   simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] using hz
-
-
-
 
 theorem m64Intrinsic_exists_obstacle_avoiding_strip_chain
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma)

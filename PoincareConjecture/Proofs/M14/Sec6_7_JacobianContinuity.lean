@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_PullbackJacobian
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,9 +12,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
   {H : M14StableSet G T τ x E}
-
-
-
 
 theorem measureData_jacobian_continuousOn (D : M14MeasureJacobianData G T τ x E H) :
     ContinuousOn D.jacobian H.carrier := by

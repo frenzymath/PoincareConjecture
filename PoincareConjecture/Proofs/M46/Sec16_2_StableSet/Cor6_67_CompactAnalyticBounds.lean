@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_EulerContinuity
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Matrix.Bounds
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -24,8 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontalScalarDifferential_continuous_total
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
@@ -42,9 +30,6 @@ theorem horizontalScalarDifferential_continuous_total
   have h := (contMDiff_snd_tangentBundle_modelSpace ℝ (𝓘(ℝ, ℝ))).comp
     ((H.scalar_smooth.contMDiff_tangentMap (m := ∞) (by simp)).comp hI)
   exact h.continuous
-
-
-
 
 theorem compact_cage_analytic_bounds
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

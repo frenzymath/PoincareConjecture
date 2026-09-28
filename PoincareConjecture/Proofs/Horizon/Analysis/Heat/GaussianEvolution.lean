@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.RealKernel
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory ProbabilityTheory Filter
@@ -49,8 +41,6 @@ theorem integrable_deriv_of_lipschitz_standardGaussian {L : ℝ≥0} {f : ℝ �
     Integrable (deriv f) (gaussianReal 0 1) := by
   exact (integrable_const (L : ℝ)).mono' (measurable_deriv f).aestronglyMeasurable
     (ae_of_all _ fun _ ↦ norm_deriv_le_of_lipschitz hf)
-
-
 
 theorem integral_deriv_standardGaussian {L : ℝ≥0} {f : ℝ → ℝ}
     (hf : LipschitzWith L f) (hdf : Differentiable ℝ f) :

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveRecenter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,20 +8,11 @@ namespace Geometry.AlexanderSectionProfile
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
-
-
 def HasFiniteHeightSignEvents (W : AlexanderSectionProfile E) : Prop :=
   ∃ C : Set ℝ, C.Finite ∧
     ∀ x ∈ W.carrier, W.height x ∉ C →
       x ∈ closure (W.carrier ∩ {y | W.height y < W.height x}) ∧
         x ∈ closure (W.carrier ∩ {y | W.height x < W.height y})
-
-
-
-
 
 theorem HasFiniteHeightSignEvents.recenter {W : AlexanderSectionProfile E}
     (hW : W.HasFiniteHeightSignEvents) (c : ℝ) :

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureSourceCharts
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +49,6 @@ local notation "t" => (fun k : ℕ => baseTime (n k) + -H.toReal / q k)
 local notation "gSource" => (fun k : ℕ =>
   rescaledMetric (SurgeryFlowData.metric (F (n k)) (t k)) (q k)
     (GeneralizedBlowupSequence.base_scalar_pos seq (n k)))
-
-
 
 theorem limitFinite_endpoint_scalar_ceiling
     {ι : Type v} (gE : RiemannianMetric 3 X) (DE : LeviCivitaData gE)
@@ -128,8 +117,6 @@ theorem limitFinite_endpoint_scalar_ceiling
   · have hVempty : V = ∅ := Set.not_nonempty_iff_eq_empty.mp hVne
     subst V
     exact Eventually.of_forall (fun _ => ⟨empty_subset _, fun _ hx => False.elim hx⟩)
-
-
 
 theorem limitFinite_endpoint_scalar_ceiling_on_terminal_ball
     {ι : Type v} (gE : RiemannianMetric 3 X) (DE : LeviCivitaData gE)

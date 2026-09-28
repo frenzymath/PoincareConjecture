@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_boundary_reparametrization_of_filling
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
@@ -70,8 +59,6 @@ theorem exists_boundary_reparametrization_of_filling
   let hlocal := Poincare.isLocalDiffeomorph_of_contMDiff_bijective_mfderiv hQs hQderiv
   exact ⟨hlocal.diffeomorphOfBijective hQbij, hQ⟩
 
-
-
 theorem exists_marked_disk_of_filling
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -99,9 +86,6 @@ theorem exists_marked_disk_of_filling
     have hloc : IsLocalDiffeomorphAt (𝓡 2) (𝓡 2) ∞ d x :=
       ⟨D, hsource hx, fun _ _ => rfl⟩
     exact hloc.comp (𝓡 2) S2 (q.isLocalDiffeomorph (d x))
-
-
-
 
 theorem exists_marked_cap_of_filling
     {f : S2 → E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

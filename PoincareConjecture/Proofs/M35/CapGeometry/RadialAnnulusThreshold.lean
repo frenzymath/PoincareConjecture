@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialAnnulusComparison
 import PoincareConjecture.Proofs.M35.CapGeometry.UnitTimeCanonical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem exists_radial_annulus_comparison_threshold
     (P : M35StandardCapPredecessors)

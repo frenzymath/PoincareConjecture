@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalGrowth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open Poincare.Analysis.Sobolev Poincare.Analysis.Sobolev.Weak
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
 
 theorem suSmoothCutoff_poincare
     {center : LoopPlane} {R : ℝ} (hR : 0 < R) {phi : LoopPlane → ℝ}
@@ -100,8 +90,6 @@ theorem suSmoothCutoff_poincare
   change (∫ x, phi x ^ 2) ≤ 4 * R ^ 2 * ∫ x, J x
   linarith
 
-
-
 theorem suWeightedCutoff_poincare
     {center : LoopPlane} {R : ℝ} (hR : 0 < R) {phi W : LoopPlane → ℝ}
     (hphi : ContDiff ℝ ∞ phi) (hc : HasCompactSupport phi)
@@ -133,8 +121,6 @@ theorem suWeightedCutoff_poincare
     simp only [hzero, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_pow,
       Finset.sum_const_zero, mul_zero, le_refl]
 
-
-
 theorem suNaturalGrowth_local_potential
     {center : LoopPlane} {R nu C0 A : ℝ} (hR : 0 < R) (hnu : 0 < nu)
     (hC0 : 0 ≤ C0) {phi H W : LoopPlane → ℝ}
@@ -154,8 +140,6 @@ theorem suNaturalGrowth_local_potential
   nlinarith
 
 set_option maxHeartbeats 600000 in
-
-
 
 theorem suAlphaCoordinate_natural_value_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -408,8 +392,6 @@ private theorem alpha_potential_bound
     (memLp_one_iff_integrable.mp (hphi2.mul' (memLp_one_iff_integrable.mpr hHI))) htestW
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem SUWeakAlphaCoordinate.small_potential
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.RetainedPartner
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -16,7 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
-
 
 theorem HasRetainedComponentModel.finitePL_id {U : Set V2}
     (h : HasRetainedComponentModel U) : FinitePiecewiseAffineOn (id : V2 → V2) U := by
@@ -29,8 +20,6 @@ theorem HasRetainedComponentModel.finitePL_id {U : Set V2}
 
 namespace PolygonalCrossingResolution
 
-
-
 theorem double_locus_copy_isFinitePL
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}
     (hPL : ∃ J : V2 → V2, FinitePiecewiseAffineOn J K ∧ ∀ x : K, J x = j x)
@@ -42,8 +31,6 @@ theorem double_locus_copy_isFinitePL
   refine ⟨J, ?_, fun x ↦ (hH x).trans (hJval _).symm⟩
   rw [← hLs]
   exact hJ.restrict L hLf (fun _ hx ↦ (hLs ▸ hx).1)
-
-
 
 theorem restricted_double_partner_isFinitePL
     {X : Type*} {f : V2 → X} {K : Set V2} (hKS : K ⊆ D2)
@@ -63,8 +50,6 @@ theorem restricted_double_partner_isFinitePL
   intro x
   obtain ⟨hx, hval⟩ := hq x
   exact hval.trans (hPval _)
-
-
 
 theorem retained_double_locus_finitePL_id
     {X I : Type*} [Finite I] {f : V2 → X} {K : Set V2} (hKS : K ⊆ D2)
@@ -94,8 +79,6 @@ theorem retained_double_locus_finitePL_id
   rw [heq]
   exact FinitePiecewiseAffineOn.iUnion
     (fun i : {i // U i ⊆ K ∧ U (mate i) ⊆ K} ↦ (hmodel i.val).finitePL_id)
-
-
 
 theorem RetainedSquareMapFacts.exists_finitePL_partner
     {X : Type*} {f g : V2 → X} {K : Set V2} {j : K → V2}

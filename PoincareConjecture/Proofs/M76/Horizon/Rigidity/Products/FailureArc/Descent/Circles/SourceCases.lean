@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Circles.MixedCollars
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open _root_.Dehn

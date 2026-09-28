@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.PeriodicChartTension
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,11 +15,6 @@ open CoordinateExponential
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
-
 
 theorem annulus_chart_harmonic_on_strip (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)
     (hminimum : A.area = m64LeastAnnulusArea g c0 c1)

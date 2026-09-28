@@ -1,20 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJetMollification
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakCommutation
-
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
@@ -25,8 +10,6 @@ namespace Poincare.Analysis.Parabolic.WeakRegularity.Interior
 
 open Canonical
 
-
-
 def HasTimeSpatialL2Jet {n : ℕ} (U : Set (Spacetime n)) :
     ℕ → ℕ → (Spacetime n → ℝ) → Prop
   | 0, k, u => HasSpatialL2Jet U k u
@@ -36,7 +19,6 @@ def HasTimeSpatialL2Jet {n : ℕ} (U : Set (Spacetime n)) :
           tsupport φ ⊆ U →
           (∫ y in U, φ y * T y) = -(∫ y in U, timeDeriv φ y * u y)
 
-
 theorem HasTimeSpatialL2Jet.spatial
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m k u) : HasSpatialL2Jet U k u := by
@@ -44,18 +26,15 @@ theorem HasTimeSpatialL2Jet.spatial
   | zero => exact hu
   | succ m => exact hu.1
 
-
 theorem HasTimeSpatialL2Jet.memLp
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m k u) : MemLp u 2 (volume.restrict U) :=
   hu.spatial.memLp
 
-
 theorem HasTimeSpatialL2Jet.locallyIntegrableOn
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m k u) : LocallyIntegrableOn u U volume :=
   hu.spatial.locallyIntegrableOn
-
 
 theorem HasTimeSpatialL2Jet.congr_ae
     {n m k : ℕ} {U : Set (Spacetime n)} {u v : Spacetime n → ℝ}
@@ -71,7 +50,6 @@ theorem HasTimeSpatialL2Jet.congr_ae
     congr 1
     exact integral_congr_ae (huv.mono fun y hy =>
       congrArg (fun a => timeDeriv φ y * a) hy)
-
 
 theorem HasTimeSpatialL2Jet.restrict
     {n m k : ℕ} {U V : Set (Spacetime n)} {u : Spacetime n → ℝ}
@@ -95,7 +73,6 @@ theorem HasTimeSpatialL2Jet.restrict
       ((tsupport_fderiv_apply_subset ℝ (0, 1)).trans hφV)]
     exact hTw φ hφ hφc (hφV.trans hVU)
 
-
 theorem HasTimeSpatialL2Jet.lower_spatial
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m (k + 1) u) : HasTimeSpatialL2Jet U m k u := by
@@ -104,7 +81,6 @@ theorem HasTimeSpatialL2Jet.lower_spatial
   | succ m ih =>
     obtain ⟨hus, T, hT, hTw⟩ := hu
     exact ⟨hus.lower, T, ih hT, hTw⟩
-
 
 theorem HasTimeSpatialL2Jet.of_spatial_le
     {n m j k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
@@ -116,7 +92,6 @@ theorem HasTimeSpatialL2Jet.of_spatial_le
     obtain ⟨hus, T, hT, hTw⟩ := hu
     exact ⟨hus.of_le hjk, T, ih hT, hTw⟩
 
-
 theorem HasTimeSpatialL2Jet.lower_time
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U (m + 1) k u) : HasTimeSpatialL2Jet U m k u := by
@@ -125,7 +100,6 @@ theorem HasTimeSpatialL2Jet.lower_time
   | succ m ih =>
     obtain ⟨hus, T, hT, hTw⟩ := hu
     exact ⟨hus, T, ih hT, hTw⟩
-
 
 theorem HasTimeSpatialL2Jet.of_time_le
     {n j m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
@@ -155,7 +129,6 @@ private theorem time_jet_test_integrable
       hφ.continuous.continuousOn hφc
   exact hi.integrableOn
 
-
 theorem HasTimeSpatialL2Jet.zero
     {n : ℕ} (U : Set (Spacetime n)) (m k : ℕ) :
     HasTimeSpatialL2Jet U m k (fun _ => 0) := by
@@ -165,7 +138,6 @@ theorem HasTimeSpatialL2Jet.zero
     refine ⟨HasSpatialL2Jet.zero U k, fun _ => 0, ih, ?_⟩
     intro φ hφ hφc hφU
     simp
-
 
 theorem HasTimeSpatialL2Jet.add
     {n m k : ℕ} {U : Set (Spacetime n)} {u w : Spacetime n → ℝ}
@@ -191,7 +163,6 @@ theorem HasTimeSpatialL2Jet.add
       hTw φ hφ hφc hφU, hSw φ hφ hφc hφU]
     ring
 
-
 theorem HasTimeSpatialL2Jet.neg
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m k u) : HasTimeSpatialL2Jet U m k (fun y => -u y) := by
@@ -204,13 +175,11 @@ theorem HasTimeSpatialL2Jet.neg
     simp only [mul_neg, integral_neg, neg_neg]
     linarith only [hTw φ hφ hφc hφU]
 
-
 theorem HasTimeSpatialL2Jet.sub
     {n m k : ℕ} {U : Set (Spacetime n)} {u w : Spacetime n → ℝ}
     (hu : HasTimeSpatialL2Jet U m k u) (hw : HasTimeSpatialL2Jet U m k w) :
     HasTimeSpatialL2Jet U m k (fun y => u y - w y) := by
   simpa only [sub_eq_add_neg] using hu.add hw.neg
-
 
 theorem HasTimeSpatialL2Jet.sum
     {n m k : ℕ} {U : Set (Spacetime n)} {ι : Type*} (s : Finset ι)
@@ -222,7 +191,6 @@ theorem HasTimeSpatialL2Jet.sum
   | @insert i s hi ih =>
     simpa only [Finset.sum_insert hi] using (hf i (Finset.mem_insert_self _ _)).add
       (ih (fun j hj => hf j (Finset.mem_insert_of_mem hj)))
-
 
 theorem HasTimeSpatialL2Jet.mul_smooth
     {n m k : ℕ} {U : Set (Spacetime n)} {u q : Spacetime n → ℝ}
@@ -243,8 +211,6 @@ theorem HasTimeSpatialL2Jet.mul_smooth
     intro φ hφ hφc hφU
     exact (weak_directional_derivative_mul_smooth hU hq (0, 1)
       hus.locallyIntegrableOn hT.locallyIntegrableOn hTw).2.2 φ hφ hφc hφU
-
-
 
 theorem HasTimeSpatialL2Jet.exists_spatial_derivatives
     {n m k : ℕ} {U : Set (Spacetime n)} {u : Spacetime n → ℝ}

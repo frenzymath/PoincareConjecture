@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.Cone
 import Mathlib.Topology.UniformSpace.Dini
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +12,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 open Splitting (segmentComparisonCosine)
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem continuous_basedMinimizingRay_evaluation :
     Continuous (fun a : ℝ≥0 × basedMinimizingRays p => a.2.1 a.1) := by
@@ -52,7 +37,6 @@ theorem continuous_rescaled_ray_evaluation (L : ℝ) :
       (((a.1 : ℝ) * L).toNNReal, a.2)) := by fun_prop
   exact continuous_basedMinimizingRay_evaluation.comp ht
 
-
 def asymptoticConeRayProjection (hcomparison : RayComparison p)
     (a : ℝ≥0 × basedMinimizingRays p) : AsymptoticCone p hcomparison :=
   asymptoticConeProjection hcomparison (a.1, asymptoticLinkProjection hcomparison a.2)
@@ -77,8 +61,6 @@ private theorem normalized_ray_distance_right_zero (γ η : basedMinimizingRays 
     dist (rayExtension γ (r * L)) (rayExtension η ((0 : ℝ≥0) * L)) / L = r := by
   rw [dist_comm]
   exact normalized_ray_distance_left_zero η γ r hL
-
-
 
 theorem antitoneOn_rescaled_ray_distance (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) (r s : ℝ≥0) :
@@ -114,7 +96,6 @@ theorem antitoneOn_rescaled_ray_distance (hcomparison : RayComparison p)
       (y := rayExtension η (s * b))) hb.le)
   nlinarith [dist_nonneg (x := rayExtension γ (r * a)) (y := rayExtension η (s * a))]
 
-
 theorem cone_distance_le_rescaled_ray_distance (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) (r s : ℝ≥0) {L : ℝ} (hL : 0 < L) :
     dist (asymptoticConeRayProjection hcomparison (r, γ))
@@ -123,8 +104,6 @@ theorem cone_distance_le_rescaled_ray_distance (hcomparison : RayComparison p)
   apply le_of_tendsto (tendsto_dist_asymptoticConeProjection hcomparison γ η r s)
   filter_upwards [eventually_ge_atTop L] with a ha
   exact antitoneOn_rescaled_ray_distance hcomparison γ η r s hL (hL.trans_le ha) ha
-
-
 
 theorem tendstoUniformlyOn_cone_distance [ProperSpace X]
     (hcomparison : RayComparison p) (R : ℝ≥0) :
@@ -172,8 +151,6 @@ theorem tendstoUniformlyOn_cone_distance [ProperSpace X]
   intro ε hε
   filter_upwards [huni ε hε, eventually_ge_atTop (1 : ℝ)] with L hL hLone q hq
   simpa only [F, max_eq_left hLone] using hL q hq
-
-
 
 theorem exists_uniform_cone_distance_bound [ProperSpace X]
     (hcomparison : RayComparison p) (R : ℝ≥0) {ε : ℝ} (hε : 0 < ε) :

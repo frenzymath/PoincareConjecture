@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.DuhamelThirdJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ noncomputable local instance m35DuhamelJetEndLocal1 :
   ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35DuhamelJetEndLocal2 :
     NormedSpace ℝ (V →L[ℝ] F) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem heatDuhamel_derivatives_weighted_vanish_uniformly
     {f : ℝ → V → F} {C T : ℝ} (hC : 0 ≤ C) (hT : 0 ≤ T)

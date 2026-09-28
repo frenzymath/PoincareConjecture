@@ -5,15 +5,6 @@ import Mathlib.Topology.UniformSpace.UniformApproximation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.TimeTranslation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.SourceNoncollapse
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ open scoped Manifold ContDiff Topology Bundle ENNReal
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem ball_volume_lower_bound_at_radius_of_metricComplete_zero
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -78,8 +67,6 @@ theorem ball_volume_lower_bound_at_radius_of_metricComplete_zero
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
 
 theorem ball_volume_lower_bound_of_eventually_controlled_source_balls
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -256,8 +243,6 @@ private theorem eventually_coordinate_pullback
     rw [hd]
     rfl
 
-
-
 theorem tendsto_coordinate_curvatureTensorNorm_prod
     (G : PointedGeometricConvergence S) (q : G.limitCarrier.carrier)
     (p : ℝ × EuclideanSpace ℝ (Fin n)) (ht : p.1 ∈ Ioo T' T)
@@ -300,7 +285,6 @@ theorem tendsto_coordinate_curvatureTensorNorm_prod
     (G.limitFlow.metricAt p.1) (G.limitFlow.flow.connection p.1) q p.1 p.2 hp g D hg] at hn
   exact hn
 
-
 theorem tendsto_curvatureTensorNorm_prod
     (G : PointedGeometricConvergence S) (p : ℝ × G.limitCarrier.carrier)
     (ht : p.1 ∈ Ioo T' T) :
@@ -324,8 +308,6 @@ theorem tendsto_curvatureTensorNorm_prod
   filter_upwards [tendsto_snd.eventually (continuousAt_snd.preimage_mem_nhds
     (extChartAt_source_mem_nhds (I := 𝓡 n) p.2))] with z hz
   rw [c.left_inv hz]
-
-
 
 theorem eventually_curvatureTensorNorm_lt_on_compact
     (G : PointedGeometricConvergence S)
@@ -351,8 +333,6 @@ theorem eventually_curvatureTensorNorm_lt_on_compact
   exact hk q hq p hpq
 
 attribute [local instance] FlowCarrier.t3Space
-
-
 
 theorem eventually_source_ball_curvature_bound
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -420,8 +400,6 @@ theorem eventually_source_ball_curvature_bound
   rw [abs_of_nonneg hn]
   exact h.le
 
-
-
 theorem ball_volume_lower_bound_of_source_noncollapse
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
     (hcomplete : G.limitCarrier.metricComplete (G.limitFlow.metricAt 0))
@@ -472,8 +450,6 @@ private theorem coordinateCoefficient_time_shift {n : ℕ} (C : FlowCarrier n)
   have hz : z + (s, 0) = (z.1 + s, z.2) := Prod.ext rfl (add_zero _)
   rw [hz]
   rfl
-
-
 
 def shiftTime {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -547,7 +523,6 @@ def shiftTime {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
       iteratedFDeriv_comp_add_right (𝕜 := ℝ) (f := cl) r (s, 0) z]
     exact hh
 
-
 def repoint {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     {g : ∀ k, ℝ → (C k).metric} {p : ∀ k, (C k).carrier} {T : ℝ}
     (G : AncientPointedGeometricConvergence C g p T)
@@ -589,8 +564,6 @@ def repoint {n : ℕ} {C : ℕ → FlowCarrier.{0} n}
     obtain ⟨l, hjl, hl⟩ := G.pullback_metric_CInfinity q (j + N) r K hK hKE ε hε
     exact ⟨l, by omega, fun k hk ↦ hl (k + N) (by omega)⟩
 
-
-
 theorem ball_volume_lower_bound_at_radius_of_ancient_source_bounds
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {J : ℕ → Set ℝ}
     (F : ∀ k, RicciFlow n (C k).carrier (J k)) {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -615,8 +588,6 @@ theorem ball_volume_lower_bound_at_radius_of_ancient_source_bounds
   exact (G.subsequence_strictMono.tendsto_atTop.comp (tendsto_add_atTop_nat N)).eventually
     (hvolume r hr hrR)
 
-
-
 theorem ball_volume_lower_bound_of_ancient_source_noncollapse
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {T : ℝ}
     (F : ∀ k, RicciFlow n (C k).carrier (Iio T)) {p : ∀ k, (C k).carrier}
@@ -640,8 +611,6 @@ theorem ball_volume_lower_bound_of_ancient_source_noncollapse
   let W := G.window F (ha.trans hb) hbT.le 0 hsub
   apply W.ball_volume_lower_bound_of_source_noncollapse ⟨ha, hb⟩ hcomplete κ
     (Eventually.of_forall fun k ↦ hnoncollapse (G.subsequence (k + 0))) hR hbound
-
-
 
 theorem ball_volume_lower_bound_of_static_source_noncollapse
     {n : ℕ} {C : ℕ → FlowCarrier.{0} n} {T : ℝ}
@@ -703,8 +672,6 @@ variable {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology 
   [ConnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {F : RicciFlow 3 M (Iic 0)} {t₀ : ℝ} {p : M}
-
-
 
 theorem metricKappaNoncollapsed (L : SpatialLineLimit F t₀ p) (ht₀ : t₀ < 0)
     {κ : ℝ}

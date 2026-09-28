@@ -3,16 +3,6 @@ import Mathlib.Topology.Constructions
 import Mathlib.Topology.Separation.Regular
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -35,8 +25,6 @@ theorem exists_open_injOn_inter_closed
     intro y hy
     exact (hy.1 hy.2).elim
 
-
-
 theorem isLocallyInjective_of_closed_cover
     {X Y : Type*} [TopologicalSpace X] {A B : Set X}
     (hA : IsClosed A) (hB : IsClosed B) (hcover : A ∪ B = univ)
@@ -57,8 +45,6 @@ theorem isLocallyInjective_of_closed_cover
   · exact hcross y hyA z hzB heq
   · exact (hcross z hzA y hyB heq.symm).symm
   · exact hiV ⟨hy.2, hyB⟩ ⟨hz.2, hzB⟩ heq
-
-
 
 theorem isLocallyInjective_on_closed_union
     {X Y : Type*} [TopologicalSpace X] {A B : Set X}
@@ -85,8 +71,6 @@ theorem isLocallyInjective_on_closed_union
   · intro x hx y hy heq
     exact Subtype.ext (hcross x hx y hy heq)
 
-
-
 theorem isLocallyInjective_on_disjoint_closed_union
     {X Y : Type*} [TopologicalSpace X] {A B : Set X}
     (hA : IsClosed A) (hB : IsClosed B) (hdis : Disjoint A B) {f : X → Y}
@@ -107,8 +91,6 @@ theorem isLocallyInjective_on_disjoint_closed_union
     intro y hy z hz heq
     exact Subtype.ext (hiU ⟨hy.1, y.property.resolve_left hy.2⟩
       ⟨hz.1, z.property.resolve_left hz.2⟩ heq)
-
-
 
 theorem exists_compact_embedded_neighborhood
     {X Y : Type*} [TopologicalSpace X] [CompactSpace X] [T2Space X]

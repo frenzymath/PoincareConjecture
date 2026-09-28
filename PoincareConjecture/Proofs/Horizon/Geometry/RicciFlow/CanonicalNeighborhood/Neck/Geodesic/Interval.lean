@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +13,6 @@ theorem exists_subinterval_of_two_mul_le {L h t : ℝ}
   by_cases hf : t + h ≤ L
   · exact ⟨t, t + h, ht.1, hf, by ring, le_rfl, by linarith⟩
   · exact ⟨t - h, t, by linarith, ht.2, by ring, by linarith, le_rfl⟩
-
-
 
 theorem abs_velocity_lower_bound_on_subinterval
     {f v : ℝ → ℝ} {a b t A C δ : ℝ}
@@ -60,8 +47,6 @@ theorem abs_velocity_lower_bound_on_subinterval
   apply (mul_le_mul_iff_left₀ hh).mp
   nlinarith
 
-
-
 theorem abs_velocity_lower_bound
     {f v : ℝ → ℝ} {L h A C δ : ℝ}
     (hh : 0 < h) (hL : 2 * h ≤ L) (hA : 0 < A) (hδ : 0 ≤ δ)
@@ -79,7 +64,6 @@ theorem abs_velocity_lower_bound
   simpa only [hba] using abs_velocity_lower_bound_on_subinterval hab ht' hA hδ
     (fun u hu => hf u (hsub hu)) (fun u hu => hv u (hsub hu) t ht)
     (hmin a ham b hbm hab.le)
-
 
 theorem velocity_pos_of_abs_lower_bound
     {f v : ℝ → ℝ} {L k : ℝ} (hL : 0 < L) (hk : 0 < k)
@@ -106,8 +90,6 @@ theorem velocity_pos_of_abs_lower_bound
   rw [hzero, abs_zero] at hh
   linarith
 
-
-
 theorem velocity_lower_bound
     {f v acc : ℝ → ℝ} {L h A C δ : ℝ}
     (hh : 0 < h) (hL : 2 * h ≤ L) (hA : 0 < A) (hδ : 0 ≤ δ)
@@ -130,10 +112,6 @@ theorem velocity_lower_bound
     (fun u hu => (hv u hu).continuousAt.continuousWithinAt) habs horient
   intro t ht
   simpa only [abs_of_pos (hsign t ht)] using habs t ht
-
-
-
-
 
 theorem scaled_velocity_lower_bound
     {f v acc : ℝ → ℝ} {L r ε h C δ : ℝ}
@@ -167,11 +145,6 @@ theorem scaled_velocity_close_to_unit
   constructor
   · linarith
   · linarith
-
-
-
-
-
 
 theorem long_scaled_velocity_lower_bound
     {f v acc : ℝ → ℝ} {L r ε C δ : ℝ}

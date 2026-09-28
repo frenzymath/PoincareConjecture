@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerExtract
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.L2Coefficients
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.WeakEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,11 +31,6 @@ private theorem m65WeakMetric_symm (g : RiemannianMetric 3 M)
   exact M65Interior.ambientMetric_symmetric _ v w
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem m65WeakDisk_energy_le_of_limit (g : RiemannianMetric 3 M)
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}

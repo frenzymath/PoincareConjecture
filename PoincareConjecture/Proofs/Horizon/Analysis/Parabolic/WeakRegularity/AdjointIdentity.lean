@@ -1,21 +1,7 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.CanonicalEquation
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Measure.OpenPos
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter
 open scoped ContDiff Topology

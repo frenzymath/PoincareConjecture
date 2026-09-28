@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.KillingCovector
 import PoincareConjecture.Proofs.M04.TensorTimeCommutator
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem killingCovector_heat_hasDerivAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)
@@ -63,8 +53,6 @@ theorem killingCovector_heat_hasDerivAt
   convert! hd.hasDerivAt htime using 1
   rw [hpair, DeTurckNative.intrinsicRicci_symm (G.flow.connection t) x (X t x) (v 0)]
   ring
-
-
 
 theorem killingCovector_joint_flow {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (X : ℝ → StandardCapSpace → StandardCapSpace)

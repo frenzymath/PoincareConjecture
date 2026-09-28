@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_NeckPatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -17,13 +9,10 @@ open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.Proofs.M46
 
-
 noncomputable def canonicalNeckVolumeFloor : ℝ := canonicalSphereVolumeFloor / 256
-
 
 theorem canonicalNeckVolumeFloor_pos : 0 < canonicalNeckVolumeFloor :=
   div_pos canonicalSphereVolumeFloor_pos (by norm_num)
-
 
 theorem canonicalNeckPatch_measurable (q : UnitTwoSphere) (a : ℝ) :
     MeasurableSet (canonicalNeckPatch q a) := by
@@ -39,7 +28,6 @@ theorem canonicalNeckPatch_measurable (q : UnitTwoSphere) (a : ℝ) :
       (ENNReal.continuous_ofReal.comp (by fun_prop))
   exact hball.prod measurableSet_Ioo
 
-
 theorem canonicalNeckPatch_model_volume (q : UnitTwoSphere) {a : ℝ}
     (ha : 0 < a) (ha1 : a ≤ 1) :
     ENNReal.ofReal (canonicalSphereVolumeFloor * a ^ 2 * (2 * a)) ≤
@@ -54,7 +42,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
-
 
 theorem canonicalNeck_patch_ball_volume (q : UnitTwoSphere)
     (hq : N.coordinate_map (q, 0) = N.center) {a : ℝ}
@@ -79,8 +66,6 @@ theorem canonicalNeck_patch_ball_volume (q : UnitTwoSphere)
       (N.scale / 2) ^ 3 * (canonicalSphereVolumeFloor * a ^ 2 * (2 * a)) := by ring
   rw [heq]
   exact h
-
-
 
 theorem canonicalNeck_test_ball_volume {s : ℝ} (hs : 0 < s)
     (hscale : s ≤ 3 * N.scale) :

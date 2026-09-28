@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec4_1_Whiskering.Service
 import PoincareConjecture.Proofs.M59.Mathlib.CubeSphereHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -20,14 +10,9 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 def m59FamilyCube (Gamma : FreeTwoSphereFamily (M := M)) :
     GenLoop (Fin 2) (C1FreeLoopSpace (M := M)) (constantC1Loop Gamma.basepoint) :=
   ⟨Gamma.class_certificate.cube_representative, Gamma.class_certificate.boundary_const⟩
-
-
-
 
 theorem whisker_constantLoopPath_freeHomotopic
     (q : M59SphereQuotient) (Gamma Delta : FreeTwoSphereFamily (M := M))

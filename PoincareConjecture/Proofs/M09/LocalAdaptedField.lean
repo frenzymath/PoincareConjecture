@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M09.SquareChartTransport
 import PoincareConjecture.Proofs.M09.ChartFieldDerivative
 import PoincareConjecture.Proofs.M09.CompactFieldExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

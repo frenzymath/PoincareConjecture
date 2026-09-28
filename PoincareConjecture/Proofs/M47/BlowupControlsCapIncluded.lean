@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapEndpoint
 import PoincareConjecture.Proofs.M47.BlowupControlsCapOrdinaryEndpoint
 import PoincareConjecture.Proofs.M47.BlowupControlsCapClosedComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_actualCap_included_comparison_cutoff
     (P : M44CapPersistencePredecessors.{u})

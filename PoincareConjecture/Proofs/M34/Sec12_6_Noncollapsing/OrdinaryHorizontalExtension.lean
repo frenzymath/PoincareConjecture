@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.OrdinaryHorizontalLift
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.OrdinaryProductGeometry
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +14,6 @@ variable {n : ℕ} {I : SpacetimeInterval}
   {g : ℝ → RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem ordinaryProductHorizontalLift_hasDerivAt
     (R : OrdinaryProductSpacetimeConclusion g I) (z : R.spacetime.Point)
@@ -45,8 +33,6 @@ theorem ordinaryProductHorizontalLift_hasDerivAt
     (l := ordinaryProductHorizontalLift R z) (l' := ordinaryProductHorizontalLift R z) s hd ha
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 noncomputable def ordinaryModelHorizontalExtension
     (R : OrdinaryProductRicciGeometry g I)

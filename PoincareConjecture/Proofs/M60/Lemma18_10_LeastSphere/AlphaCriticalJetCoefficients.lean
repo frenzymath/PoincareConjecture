@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAffineSystem
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,13 +51,9 @@ local instance jetSystemPairDerivativeNormedSpace {n : ℕ} :
     NormedSpace ℝ (Grad n →L[ℝ] Grad n →L[ℝ] E n →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 def suAlphaFirstJetPoint {n : ℕ} (z : LoopPlane × Jet n) : Point n :=
   ((z.1, suJetBlock (0 : Fin 3) z.2),
     (suJetBlock (1 : Fin 3) z.2, suJetBlock (2 : Fin 3) z.2))
-
-
 
 def suAlphaJetOriginalFlux {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -78,16 +65,12 @@ def suAlphaJetOriginalSource {n : ℕ} {M : Type*} [TopologicalSpace M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ) (p : Point n) : E n →L[ℝ] ℝ :=
   suAlphaCoordinateSource g b alpha p.1 p.2
 
-
-
 def suAlphaFirstJetPrincipal {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ) (z : LoopPlane × Jet n) :
     Grad (3 * n) →L[ℝ] Grad (3 * n) →L[ℝ] ℝ :=
   let p := suAlphaFirstJetPoint z
   suJetBlockPrincipal (k := 3) (fderiv ℝ (suAlphaCoordinateFlux g b alpha p.1) p.2)
-
-
 
 def suAlphaFirstJetFluxOffset {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -100,7 +83,6 @@ def suAlphaFirstJetFluxOffset {n : ℕ} {M : Type*} [TopologicalSpace M]
     ∑ k : Fin 2, (fderiv ℝ (suAlphaJetOriginalFlux g b alpha) p
       ((EuclideanSpace.single k 1, suJetBlock k.succ z.2), 0)).comp
         ((suJetBlock k.succ).prodMap (suJetBlock k.succ))
-
 
 def suAlphaFirstJetSourceLinear {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -166,8 +148,6 @@ theorem suJetBlock_firstJetWeakColumn_succ {m : ℕ}
   dsimp only [suFirstJetWeakColumn]
   simp only [Equiv.symm_apply_apply, Fin.cases_succ]
 
-
-
 theorem suAlphaJetOriginal_contDiffAt
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -217,8 +197,6 @@ theorem suAlphaFirstJetPoint_contDiff {n : ℕ} : ContDiff ℝ ∞ (@suAlphaFirs
   unfold suAlphaFirstJetPoint
   fun_prop
 
-
-
 theorem suAlphaFirstJet_gradient_contDiffAt
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -235,8 +213,6 @@ theorem suAlphaFirstJet_gradient_contDiffAt
       ((suAlphaFirstJetPoint_contDiff.contDiffAt.comp _ contDiffAt_fst).fst.prodMk contDiffAt_snd)
   · exact suAlphaFirstJetPoint_contDiff.contDiffAt.snd
   · simp
-
-
 
 theorem suJetBlockPrincipal_contDiff {k m : ℕ} :
     ContDiff ℝ ∞ (@suJetBlockPrincipal k m) := by
@@ -260,8 +236,6 @@ theorem suJetBlockPrincipal_contDiff {k m : ℕ} :
       simp [suJetBlockPrincipal, ContinuousLinearMap.bilinearComp_apply, Finset.mul_sum]
   }
   exact L.toContinuousLinearMap.contDiff
-
-
 
 theorem suAlphaFirstJet_coefficients_contDiffAt
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -307,8 +281,6 @@ theorem suAlphaFirstJet_coefficients_contDiffAt
           contDiffAt_snd)).prodMk
           contDiffAt_const)).clm_comp contDiffAt_const
 
-
-
 def suAlphaFirstJetCoefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -317,8 +289,6 @@ def suAlphaFirstJetCoefficients
   fluxOffset := suAlphaFirstJetFluxOffset g b alpha
   sourceLinear := suAlphaFirstJetSourceLinear g b alpha
   sourceOffset := suAlphaFirstJetSourceOffset g b alpha
-
-
 
 theorem suJetBlock_single {k m : ℕ} (j l : Fin k) (a : Fin m) :
     suJetBlock j (EuclideanSpace.single (finProdFinEquiv (l, a)) 1) =
@@ -348,8 +318,6 @@ theorem suAlphaFirstJetPoint_fderiv {n : ℕ} (z w : LoopPlane × Jet n) :
         (((suJetBlock (1 : Fin 3)).comp P).prod ((suJetBlock (2 : Fin 3)).comp P))
   change fderiv ℝ L z w = L w
   rw [L.fderiv]
-
-
 
 theorem suAlphaFirstJet_flux_zero
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -393,8 +361,6 @@ theorem suAlphaJetOriginalFlux_fderiv_snd
   have hd := hF.hasFDerivAt.comp p.2 hi
   have he := hd.fderiv
   exact (congrArg (fun L => L v) he).symm
-
-
 
 theorem suAlphaFirstJet_flux_succ
     {n : ℕ} {M : Type*} [TopologicalSpace M]

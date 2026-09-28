@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.SmoothRampDensities
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -21,9 +9,6 @@ open scoped Manifold ContDiff
 universe u v
 
 namespace PoincareConjecture.M64.RampTransport
-
-
-
 
 theorem subarc_integral_error_of_uniform_density
     {f g : ℝ → ℝ} (hf : Continuous f) (hg : Continuous g)
@@ -50,9 +35,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_smooth_ramp_subarc_approximation
     (P : M62.CircleProductData F circumference)

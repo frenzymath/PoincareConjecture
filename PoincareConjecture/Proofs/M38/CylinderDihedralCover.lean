@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.ProjectiveReflectionCover
 import PoincareConjecture.Proofs.M38.DihedralCutComponents
 import Mathlib.GroupTheory.SpecificGroups.Dihedral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,7 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def cylinderDihedralHeight : ZMod 0 →+* ℝ := ZMod.castHom (dvd_refl 0) ℝ
-
 
 @[instance_reducible]
 noncomputable def cylinderDihedralAction : MulAction (DihedralGroup 0) RoundCylinderSpace where
@@ -67,10 +56,8 @@ noncomputable def cylinderDihedralAction : MulAction (DihedralGroup 0) RoundCyli
 
 attribute [local instance] cylinderDihedralAction
 
-
 theorem cylinderDihedral_rotation (n : ℤ) (p : RoundCylinderSpace) :
     (DihedralGroup.r (n : ZMod 0) : DihedralGroup 0) • p = cylinderIntegerTranslation n p := rfl
-
 
 theorem cylinderDihedral_reflection (n : ℤ) (p : RoundCylinderSpace) :
     (DihedralGroup.sr (n : ZMod 0) : DihedralGroup 0) • p = cylinderIntegerReflection (-n) p := by
@@ -79,14 +66,12 @@ theorem cylinderDihedral_reflection (n : ℤ) (p : RoundCylinderSpace) :
   · change -(n : ℝ) - p.2 = ((-n : ℤ) : ℝ) - p.2
     rw [Int.cast_neg]
 
-
 instance cylinderDihedral_continuous : ContinuousConstSMul (DihedralGroup 0) RoundCylinderSpace where
   continuous_const_smul g := by
     cases g with
     | r n => exact continuous_fst.prodMk (continuous_snd.add continuous_const)
     | sr n =>
       exact (continuous_neg.comp continuous_fst).prodMk (continuous_const.sub continuous_snd)
-
 
 theorem cylinderDihedral_free (g : DihedralGroup 0) (p : RoundCylinderSpace)
     (h : g • p = p) : g = 1 := by
@@ -102,8 +87,6 @@ theorem cylinderDihedral_free (g : DihedralGroup 0) (p : RoundCylinderSpace)
     change -p.1 = p.1 at hz
     have hpair : (-p.1, -(0 : ℝ)) = (p.1, (0 : ℝ)) := by simp only [hz, neg_zero]
     exact False.elim (cylinderReflection_ne (p.1, 0) hpair)
-
-
 
 theorem cylinderDihedral_isQuotientCoveringMap
     {Q : GeneralizedSliceCarrier.{u}} (q : RoundCylinderSpace → Q.carrier)

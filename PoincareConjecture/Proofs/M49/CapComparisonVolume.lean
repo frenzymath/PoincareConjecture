@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M49.MetricBallTopology
 import PoincareConjecture.Proofs.M49.Mathlib.SmoothPartialChart
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,8 +15,6 @@ namespace PoincareConjecture.M49
 
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {h eta : ℝ}
-
-
 
 noncomputable def surgeryCapCloseChart (C : SurgeryCapClose g₀ S g tip h eta) (heta : eta < 1) :
     OpenPartialHomeomorph StandardCapSpace S.carrier :=
@@ -39,9 +29,7 @@ noncomputable def surgeryCapCloseChart (C : SurgeryCapClose g₀ S g tip h eta) 
       exact ⟨hi, (LinearMap.injective_iff_surjective_of_finrank_eq_finrank
         (f := (mfderiv (𝓡 3) (𝓡 3) C.map p).toLinearMap) rfl).mp hi⟩)
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem surgeryCapClose_volume_image_le (C : SurgeryCapClose g₀ S g tip h eta)
     (heta : eta < 1)

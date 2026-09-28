@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralChainCoordinates
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportMayerVietoris
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Gradient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 lemma gradient_add (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
     (hf : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) f x)
     (hh : MDifferentiableAt (𝓡 n) 𝓘(ℝ, ℝ) h x) :
@@ -28,7 +21,6 @@ lemma gradient_add (D : LeviCivitaData g) {f h : M → ℝ} {x : M}
   ext v
   rw [D.inner_gradient, mvfderiv_fun_add hf hh]
   simp only [map_add, add_apply, D.inner_gradient]
-
 
 lemma hessian_add (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
@@ -50,13 +42,11 @@ lemma hessian_add (D : LeviCivitaData g) {f h : M → ℝ}
       ((D.contMDiffAt_gradient (hh x)).mdifferentiableAt (by simp))]
   simp only [add_apply, map_add]
 
-
 lemma laplacian_add (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)
     (hh : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ h) (x : M) :
     D.laplacian (fun y => f y + h y) x = D.laplacian f x + D.laplacian h x := by
   simp only [laplacian, D.hessian_add hf hh, Finset.sum_add_distrib]
-
 
 lemma laplacian_sub (D : LeviCivitaData g) {f h : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f)

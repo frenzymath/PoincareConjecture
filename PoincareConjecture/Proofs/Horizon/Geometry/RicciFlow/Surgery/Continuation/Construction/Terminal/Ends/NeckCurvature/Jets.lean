@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.MetricJets.Covariant
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

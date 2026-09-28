@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Collars.SourceSlabHeight
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CirclePhaseIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -46,7 +38,6 @@ theorem sourceSurface_subset_slab (phi : C(H, H)) {lo hi c : ℝ} (hc : c ∈ Ic
   rw [(mem_sourceSurface_iff phi (c : C) xR).mp hx]
   exact ⟨c, hc, rfl⟩
 
-
 noncomputable def sourceSurfaceHeightCoordinates (phi : C(H, H)) (lo hi c : ℝ)
     (hlo : 0 ≤ lo) (hhi : hi < p) (hc : c ∈ Icc lo hi) :
     sourceSurface phi (c : C) ≃ₜ
@@ -59,7 +50,6 @@ noncomputable def sourceSurfaceHeightCoordinates (phi : C(H, H)) (lo hi c : ℝ)
   continuous_toFun := (continuous_subtype_val.subtype_mk _).subtype_mk _
   continuous_invFun := (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _
 
-
 def sourcePhaseBand (phi : C(H, H)) (a b : ℝ) : Set R :=
   {x | sourcePhase phi (latticeHandleDomainEquiv (Fin 1) (Fin 2) L x) ∈
     AddCircle.openIntervalArc p a b}
@@ -68,8 +58,6 @@ theorem isOpen_sourcePhaseBand (phi : C(H, H)) (a b : ℝ) :
     IsOpen (sourcePhaseBand phi a b) :=
   (AddCircle.isOpen_openIntervalArc p a b).preimage
     ((sourcePhase phi).continuous.comp (latticeHandleDomainEquiv (Fin 1) (Fin 2) L).continuous)
-
-
 
 noncomputable def sourceBandHeightCoordinates (phi : C(H, H)) (lo hi a b : ℝ)
     (hlo : 0 ≤ lo) (hhi : hi < p) (hla : lo < a) (hbh : b < hi) :

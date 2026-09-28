@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.LocalPointMotion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,15 +8,12 @@ open scoped Manifold ContDiff NNReal
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def coordinateGermCutoff (h x : StandardCapSpace) : StandardCapSpace :=
   coordinateMotionBump x • h
-
 
 theorem coordinateGermCutoff_zero (h x : StandardCapSpace) (hx : 1 ≤ ‖x‖) :
     coordinateGermCutoff h x = 0 := by
   simp only [coordinateGermCutoff, coordinateMotionBump_zero x hx, zero_smul]
-
 
 theorem coordinateGermError_norm (h : StandardCapSpace → StandardCapSpace) {a : ℝ≥0}
     (hh : LipschitzOnWith a h (Metric.closedBall 0 1)) (hzero : h 0 = 0)
@@ -39,7 +27,6 @@ theorem coordinateGermError_norm (h : StandardCapSpace → StandardCapSpace) {a 
     ‖h x‖ ≤ (a : ℝ) * ‖x‖ := hb
     _ ≤ (a : ℝ) * 1 := mul_le_mul_of_nonneg_left hx a.property
     _ = a := mul_one _
-
 
 theorem coordinateGermCutoff_dist_inner (h : StandardCapSpace → StandardCapSpace)
     {a : ℝ≥0} (hh : LipschitzOnWith a h (Metric.closedBall 0 1)) (hzero : h 0 = 0)
@@ -80,7 +67,6 @@ theorem coordinateGermCutoff_dist_inner (h : StandardCapSpace → StandardCapSpa
       simp only [NNReal.coe_mul, NNReal.coe_add, NNReal.coe_one, dist_eq_norm]
       ring
 
-
 theorem coordinateGermCutoff_dist_outer (h : StandardCapSpace → StandardCapSpace)
     {a : ℝ≥0} (hh : LipschitzOnWith a h (Metric.closedBall 0 1)) (hzero : h 0 = 0)
     (x y : StandardCapSpace) (hx : ‖x‖ ≤ 1) (hy : 1 ≤ ‖y‖) :
@@ -107,7 +93,6 @@ theorem coordinateGermCutoff_dist_outer (h : StandardCapSpace → StandardCapSpa
             (mul_le_mul_of_nonneg_left (le_add_of_nonneg_right (by norm_num)) a.property)
             dist_nonneg
 
-
 theorem coordinateGermCutoff_lipschitz (h : StandardCapSpace → StandardCapSpace)
     {a : ℝ≥0} (hh : LipschitzOnWith a h (Metric.closedBall 0 1)) (hzero : h 0 = 0) :
     LipschitzWith (a * (coordinateMotionBumpConstant + 1))
@@ -125,7 +110,6 @@ theorem coordinateGermCutoff_lipschitz (h : StandardCapSpace → StandardCapSpac
         coordinateGermCutoff_zero (h y) y (le_of_not_ge hy), dist_self]
       positivity
 
-
 theorem coordinateGermCutoff_smooth (h : StandardCapSpace → StandardCapSpace)
     (hh : ContDiffOn ℝ ∞ h (Metric.ball 0 2)) :
     ContDiff ℝ ∞ (fun x => coordinateGermCutoff (h x) x) := by
@@ -142,16 +126,13 @@ theorem coordinateGermCutoff_smooth (h : StandardCapSpace → StandardCapSpace)
     exact (contDiffAt_const (c := (0 : StandardCapSpace))).congr_of_eventuallyEq
       (hnear.mono fun y hy => coordinateGermCutoff_zero (h y) y hy.le)
 
-
 noncomputable def coordinateGermNormalize (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) (x : StandardCapSpace) : StandardCapSpace :=
   δ⁻¹ • h (δ • x)
 
-
 theorem coordinateGermNormalize_zero (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) (hzero : h 0 = 0) : coordinateGermNormalize h δ 0 = 0 := by
   simp only [coordinateGermNormalize, smul_zero, hzero]
-
 
 theorem coordinateGermNormalize_smooth (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) {U : Set StandardCapSpace} (hh : ContDiffOn ℝ ∞ h U)
@@ -160,7 +141,6 @@ theorem coordinateGermNormalize_smooth (h : StandardCapSpace → StandardCapSpac
   apply ContDiffOn.const_smul
   exact hh.comp (contDiff_id.const_smul δ).contDiffOn (fun x hx => hU x (by
     simpa only [Metric.mem_ball, dist_zero_right] using hx))
-
 
 theorem coordinateGermNormalize_lipschitz (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) (hδ : 0 < δ) {a : ℝ≥0} {V : Set StandardCapSpace}
@@ -188,7 +168,6 @@ theorem coordinateGermNormalize_lipschitz (h : StandardCapSpace → StandardCapS
       rw [dist_eq_norm]
       field_simp [hδ.ne']
 
-
 theorem coordinateGerm_rescale_lipschitz (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) (hδ : 0 < δ) {a : ℝ≥0} (hh : LipschitzWith a h) :
     LipschitzWith a (fun x => δ • h (δ⁻¹ • x)) := by
@@ -207,7 +186,6 @@ theorem coordinateGerm_rescale_lipschitz (h : StandardCapSpace → StandardCapSp
       rw [dist_eq_norm]
       field_simp [hδ.ne']
 
-
 theorem coordinateGerm_rescale_formula (h : StandardCapSpace → StandardCapSpace)
     (δ : ℝ) (hδ : 0 < δ) (x : StandardCapSpace) :
     δ • coordinateGermCutoff (coordinateGermNormalize h δ (δ⁻¹ • x)) (δ⁻¹ • x) =
@@ -216,9 +194,6 @@ theorem coordinateGerm_rescale_formula (h : StandardCapSpace → StandardCapSpac
     mul_inv_cancel₀ hδ.ne', one_smul]
   congr 1
   field_simp [hδ.ne']
-
-
-
 
 theorem exists_coordinateGermExtension (f : StandardCapSpace → StandardCapSpace)
     {U : Set StandardCapSpace} (hU : IsOpen U) (h0U : (0 : StandardCapSpace) ∈ U)

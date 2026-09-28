@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_SubarcLengthDec
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryPeriodicity
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,10 +10,6 @@ open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_complementary_boundary_length (N : IntrinsicAnnulus) (a b : ℝ) :
     intrinsicBoundaryLength N.metric 1 a b +
@@ -28,10 +20,6 @@ theorem m64Intrinsic_complementary_boundary_length (N : IntrinsicAnnulus) (a b :
     (hs.intervalIntegrable a b) (hs.intervalIntegrable b (a + rampPeriod))
   have hperiod := (m64Intrinsic_boundarySpeed_periodic N 1).intervalIntegral_add_eq a 0
   simpa only [intrinsicBoundaryLength, zero_add] using hadd.trans hperiod
-
-
-
-
 
 theorem m64Intrinsic_no_focusing_of_curvature_bound
     (N : IntrinsicAnnulus) {a b rho kappa M : ℝ}
@@ -57,10 +45,6 @@ theorem m64Intrinsic_no_focusing_of_curvature_bound
   have hupper := mul_le_mul_of_nonneg_left hturn (by positivity : 0 ≤ 2 * rho)
   have hstrict := mul_lt_mul_of_pos_right hsmall hlen
   nlinarith only [hbound, hupper, hstrict]
-
-
-
-
 
 theorem m64Intrinsic_no_local_cyclic_focusing
     (N : IntrinsicAnnulus) {a b q rho kappa M : ℝ}

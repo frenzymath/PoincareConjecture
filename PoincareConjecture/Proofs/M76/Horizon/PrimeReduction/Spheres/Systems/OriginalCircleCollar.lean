@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ComponentNeig
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.AffineFaceCarrier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTrianglePlane
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 
@@ -42,9 +33,6 @@ theorem original_triangle_planar_coordinates
   have hxspan := convexHull_subset_affineSpan (A '' (s : Set E)) (hTs.subset hx)
   have hyspan := convexHull_subset_affineSpan (A '' (s : Set E)) (hTs.subset hy)
   exact (hFR hxspan).symm.trans ((congrArg F (E₂.injective hxy)).trans (hFR hyspan))
-
-
-
 
 theorem exists_original_sphere_system_circle_collar
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

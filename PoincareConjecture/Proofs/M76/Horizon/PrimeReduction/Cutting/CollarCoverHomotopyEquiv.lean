@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedCutCollarRetraction
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
 set_option autoImplicit false
 open Set
 open scoped Topology

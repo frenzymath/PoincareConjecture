@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.NormalCover
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +15,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     {g : RiemannianMetric n M} {p : M} {δ R ρ : ℝ} {N : ℕ}
 
-
-
 noncomputable def unitBallMap (C : RegularNormalChartCover g p δ R ρ N)
     (i : Fin (N + 1)) (x : ball (0 : EuclideanSpace ℝ (Fin n)) 1) : M :=
   C.chart i ((ρ / 2) • (x : EuclideanSpace ℝ (Fin n)))
-
-
 
 theorem unitBallMap_distances (C : RegularNormalChartCover g p δ R ρ N)
     (hρ : 0 < ρ) (i : Fin (N + 1))
@@ -44,8 +30,6 @@ theorem unitBallMap_distances (C : RegularNormalChartCover g p δ R ρ N)
     _ (NormalChartCover.rescale_mem_half_ball hρ y)
   simpa only [unitBallMap, dist_smul₀, Real.norm_eq_abs, abs_of_pos (half_pos hρ),
     mul_assoc, Subtype.dist_eq] using h
-
-
 
 theorem unitBallMap_isLocalDiffeomorph
     (C : RegularNormalChartCover g p δ R ρ N)
@@ -70,8 +54,6 @@ theorem unitBallMap_isLocalDiffeomorph
     exact (ball_subset_ball hρR) (NormalChartCover.rescale_mem_half_ball hρ x)
   exact hL.comp (𝓡 n) M ((C.chart i).isLocalDiffeomorphAt (𝓡 n) (𝓡 n) ∞ hx)
 
-
-
 theorem unitBallMap_isOpenEmbedding
     (C : RegularNormalChartCover g p δ R ρ N)
     (hρ : 0 < ρ) (hρR : ρ / 2 ≤ R) (i : Fin (N + 1)) :
@@ -94,8 +76,6 @@ theorem unitBallMap_isOpenEmbedding
   exact (smul_right_injective _ (ne_of_gt (half_pos hρ)))
     ((C.chart i).injOn hx hy hxy)
 
-
-
 theorem unitBallMap_cover (C : RegularNormalChartCover g p δ R ρ N)
     (hρ : 0 < ρ) :
     regularComponent g p (4 * δ) ⊆ ⋃ i, C.unitBallMap i ''
@@ -114,9 +94,6 @@ theorem unitBallMap_cover (C : RegularNormalChartCover g p δ R ρ N)
     hx, ?_⟩⟩
   dsimp [unitBallMap, x]
   rw [smul_smul, mul_inv_cancel₀ (ne_of_gt (half_pos hρ)), one_smul]
-
-
-
 
 theorem unitBallMap_mem_regularComponent
     (C : RegularNormalChartCover g p δ R ρ N)

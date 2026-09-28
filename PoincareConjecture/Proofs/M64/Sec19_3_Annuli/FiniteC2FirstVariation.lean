@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FiniteC2AnnulusMotion
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.FinitePeriodicFirstVariation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RelabelAreaRange
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,11 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
-
 
 theorem m64C2Annulus_exists_finite_first_variation
     (F : RicciFlow n M (Icc a b)) {c0 c1 : ℝ → ℝ → M}

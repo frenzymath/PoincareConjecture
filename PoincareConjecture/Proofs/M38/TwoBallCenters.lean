@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.OpenPointMotion
 import PoincareConjecture.Proofs.M38.PuncturedComponent
 import PoincareConjecture.Proofs.M38.ComponentBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,16 +13,12 @@ namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 theorem surgeryBall_map_ne_center (v : StandardCapSpace)
     (hv : v ∈ Metric.ball 0 2) (hv0 : v ≠ 0) : B.map v ≠ B.map 0 := by
   intro heq
   have hcoord := congrArg B.inverse heq
   rw [B.left_inverse hv, B.left_inverse (by simp)] at hcoord
   exact hv0 hcoord
-
-
-
 
 theorem exists_second_center_in_ball
     (q : A.carrier) (hq : q ∈ connectedComponent (B.map 0)) (hq0 : q ≠ B.map 0)
@@ -52,8 +39,6 @@ theorem exists_second_center_in_ball
   refine ⟨e, hfix _ (fun h => h.2 rfl), he, ?_⟩
   intro x hx
   exact hfix x (fun h => hx h.1)
-
-
 
 theorem exists_two_ball_centers_in_chart (D : SurgeryBallEmbedding A)
     (hD : D.map 0 ∈ connectedComponent (B.map 0)) (hne : D.map 0 ≠ B.map 0)

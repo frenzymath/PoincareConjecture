@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Sectors.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -22,8 +12,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_vertex_sector_regions {p : D.vertices}
     (P : ChartCircleArrangementVertexPatch D.radius (p : M))
@@ -62,8 +50,6 @@ theorem exists_vertex_sector_regions {p : D.vertices}
       (D.vertices_subset_boundary p.property)
   · rw [← P.closedSectors_cover]
     exact iUnion_mono hclosed
-
-
 
 theorem exists_vertex_patches_with_regions :
     ∃ (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

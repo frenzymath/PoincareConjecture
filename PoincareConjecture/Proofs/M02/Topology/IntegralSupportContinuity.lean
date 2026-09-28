@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -44,7 +34,6 @@ theorem exists_open_integralRelativeProjection_support [T2Space X]
     apply (integral_subspace_range_iff S n c).mpr
     intro s hsf y hy
     exact Set.mem_iUnion₂.mpr ⟨s, hsf, hy⟩
-
 
 theorem exists_open_integralRelativeHomology_lift [T2Space X]
     (K : Set X) (n : Nat) (a : integralRelativeHomology Kᶜ n) :
@@ -88,8 +77,6 @@ theorem exists_open_integralRelativeHomology_lift [T2Space X]
   change homologyMap f n (Q.homologyπ n w) = R.homologyπ n (cyclesMap f n w) at he
   rw [hwz, hz] at he
   exact he
-
-
 
 theorem exists_open_integralRelativeHomology_lift_forall [T2Space X]
     (K : Set X) (n : Nat) (a : integralRelativeHomology Kᶜ n) :

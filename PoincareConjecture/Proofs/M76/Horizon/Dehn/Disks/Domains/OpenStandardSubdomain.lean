@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Domains.CompactSubdomain
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem PLDomain.standard_open_image
     (U : TopologicalSpace.Opens V3) (hU : Nonempty U) {K : Set U}
@@ -69,11 +57,6 @@ theorem PLDomain.standard_open_image
         exact heq ▸ hw
       · intro hzK
         exact ⟨j.symm z, hzK, hjz⟩
-
-
-
-
-
 
 theorem exists_compact_standard_subdomain_in_open
     (U : TopologicalSpace.Opens V3) (hU : Nonempty U) {R A : Set U} {W : Set V3}

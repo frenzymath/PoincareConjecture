@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.SmoothCirclePullback
 import PoincareConjecture.Definitions.Ch15.SurgeryTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Filter Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem sphereBundle_pullback_height_regular (Q : GeneralizedSliceCarrier)
     (B : SurgerySphereBundle Q) :

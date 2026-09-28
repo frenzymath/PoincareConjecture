@@ -1,28 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geometry.TensorNorm
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
 
 namespace PoincareConjecture.M32
-
-
 
 theorem evolvingCylinderGram_posSemidef {s : ℝ} (hs : s < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) :
@@ -40,8 +22,6 @@ theorem evolvingCylinderGram_posSemidef {s : ℝ} (hs : s < 1)
   exact (Matrix.PosSemidef.smul (Matrix.posSemidef_gram ℝ v) (by positivity)).add
     (by simpa using Matrix.posSemidef_vecMulVec_self_star w)
 
-
-
 theorem evolvingCylinderTensorNormSquared_nonneg {s : ℝ} (hs : s < 1)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates)
     {r : ℕ} (A : (Fin r → Fin 3) → ℝ) :
@@ -49,8 +29,6 @@ theorem evolvingCylinderTensorNormSquared_nonneg {s : ℝ} (hs : s < 1)
   apply inverseGram_contraction_nonneg
   exact (evolvingCylinderGram_posSemidef hs q p).posDef_iff_det_ne_zero.mpr
     (roundCylinderGram_det_ne_zero hs q p)
-
-
 
 theorem evolvingCylinderJetErrorSquared_mono {s : ℝ} (hs : s < 1)
     (B : RoundCylinderTwoTensor) (z : RoundCylinderSpace) {k l : ℕ} (hkl : k ≤ l) :
@@ -60,15 +38,11 @@ theorem evolvingCylinderJetErrorSquared_mono {s : ℝ} (hs : s < 1)
     (Finset.range_mono (Nat.add_le_add_right hkl 1))
     (fun i _ _ => evolvingCylinderTensorNormSquared_nonneg hs z.1 _ _)
 
-
-
 theorem neckInterval_subset {epsilon delta : ℝ} (he : 0 < epsilon)
     (hed : epsilon ≤ delta) :
     Set.Ioo (-delta⁻¹) delta⁻¹ ⊆ Set.Ioo (-epsilon⁻¹) epsilon⁻¹ := by
   have hinv : delta⁻¹ ≤ epsilon⁻¹ := (inv_le_inv₀ (he.trans_le hed) he).2 hed
   exact Set.Ioo_subset_Ioo (neg_le_neg hinv) hinv
-
-
 
 theorem roundCylinderFamilyClose_mono {epsilon delta : ℝ}
     {I : Set ℝ} {B : ℝ → RoundCylinderTwoTensor}

@@ -11,8 +11,6 @@ open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
 
-
-
 structure ReferenceNormalPacket
     (c : Fin 2 → UnitCircle → E2) (carrier delta : Set E2) (v : E2) where
   W : Fin 2 → Set E2
@@ -37,11 +35,6 @@ structure ReferenceNormalPacket
 
 set_option linter.unusedVariables false in
 set_option maxHeartbeats 1500000 in
-
-
-
-
-
 
 theorem exists_reference_arc_packet
     (hP : PlanarSchoenfliesService)

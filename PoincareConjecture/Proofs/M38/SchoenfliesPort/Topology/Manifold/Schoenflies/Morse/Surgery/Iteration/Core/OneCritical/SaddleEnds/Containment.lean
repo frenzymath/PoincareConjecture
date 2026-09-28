@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Orientation
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -104,9 +96,6 @@ private theorem upper_open_strip_meets_core
     linarith [ht.1]
   · exact hz.1 (mem_iUnion_of_mem E (mem_iUnion_of_mem ⟨hE, heq⟩
       (image_mono ball_subset_closedBall hzE)))
-
-
-
 
 theorem upper_closed_strip_subset_core
     (L : List (SphereSurgeryCoreCap v g B))

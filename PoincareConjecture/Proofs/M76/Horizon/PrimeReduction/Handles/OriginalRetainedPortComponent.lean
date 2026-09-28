@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.ProtectedRes
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.RetainedPLDomain
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedApproximation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

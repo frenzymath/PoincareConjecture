@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.ConformalRicciNormal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -18,9 +9,6 @@ open Filter
 open scoped ContDiff Manifold Bundle Topology BigOperators
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65PlaneRicciTraceDensity_gauss
     {g : RiemannianMetric 3 (EuclideanSpace ℝ (Fin 3))}

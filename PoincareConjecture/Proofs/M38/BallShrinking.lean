@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallPatchDiffeomorph
 import PoincareConjecture.Proofs.M38.RadialCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,28 +11,23 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def ballShrinkTransition (t : ℝ) : ℝ :=
   t * Real.smoothTransition (4 * t - 5)
-
 
 theorem ballShrinkTransition_zero (t : ℝ) (ht : t ≤ 5 / 4) :
     ballShrinkTransition t = 0 := by
   simp [ballShrinkTransition, Real.smoothTransition.zero_of_nonpos (by linarith :
     4 * t - 5 ≤ 0)]
 
-
 theorem ballShrinkTransition_outer (t : ℝ) (ht : 3 / 2 ≤ t) :
     ballShrinkTransition t = t := by
   simp [ballShrinkTransition, Real.smoothTransition.one_of_one_le (by linarith :
     1 ≤ 4 * t - 5)]
 
-
 theorem ballShrinkTransition_nonneg (t : ℝ) : 0 ≤ ballShrinkTransition t := by
   by_cases ht : 0 ≤ t
   · exact mul_nonneg ht (Real.smoothTransition.nonneg _)
   · simpa only [ballShrinkTransition_zero t (by linarith)] using (le_refl (0 : ℝ))
-
 
 theorem ballShrinkTransition_monotone : Monotone ballShrinkTransition := by
   intro a b hab
@@ -51,34 +37,27 @@ theorem ballShrinkTransition_monotone : Monotone ballShrinkTransition := by
   · rw [ballShrinkTransition_zero a (by linarith)]
     exact ballShrinkTransition_nonneg b
 
-
 theorem ballShrinkTransition_smooth : ContDiff ℝ ∞ ballShrinkTransition :=
   contDiff_id.mul (Real.smoothTransition.contDiff.comp
     ((contDiff_const.mul contDiff_id).sub contDiff_const))
 
-
 noncomputable def ballShrinkProfile (c t : ℝ) : ℝ :=
   c * t + (1 - c) * ballShrinkTransition t
-
 
 theorem ballShrinkProfile_linear (c t : ℝ) (ht : t ≤ 5 / 4) :
     ballShrinkProfile c t = c * t := by
   rw [ballShrinkProfile, ballShrinkTransition_zero t ht, mul_zero, add_zero]
 
-
 @[simp] theorem ballShrinkProfile_zero (c : ℝ) : ballShrinkProfile c 0 = 0 := by
   rw [ballShrinkProfile_linear c 0 (by norm_num), mul_zero]
-
 
 theorem ballShrinkProfile_outer (c t : ℝ) (ht : 3 / 2 ≤ t) :
     ballShrinkProfile c t = t := by
   rw [ballShrinkProfile, ballShrinkTransition_outer t ht]
   ring
 
-
 theorem ballShrinkProfile_smooth (c : ℝ) : ContDiff ℝ ∞ (ballShrinkProfile c) :=
   (contDiff_const.mul contDiff_id).add (contDiff_const.mul ballShrinkTransition_smooth)
-
 
 theorem ballShrinkProfile_strictMono {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     StrictMono (ballShrinkProfile c) := by
@@ -86,7 +65,6 @@ theorem ballShrinkProfile_strictMono {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
   exact add_lt_add_of_lt_of_le (mul_lt_mul_of_pos_left hab hc)
     (mul_le_mul_of_nonneg_left (ballShrinkTransition_monotone hab.le)
       (sub_nonneg.mpr hc1.le))
-
 
 theorem ballShrinkProfile_deriv_pos {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     0 < deriv (ballShrinkProfile c) t := by
@@ -99,12 +77,10 @@ theorem ballShrinkProfile_deriv_pos {c : ℝ} (hc : 0 < c) (hc1 : c < 1) (t : �
   exact add_pos_of_pos_of_nonneg hc
     (mul_nonneg (sub_nonneg.mpr hc1.le) ballShrinkTransition_monotone.deriv_nonneg)
 
-
 theorem ballShrinkProfile_lower {c : ℝ} (hc1 : c < 1) (t : ℝ) :
     c * t ≤ ballShrinkProfile c t := by
   exact le_add_of_nonneg_right
     (mul_nonneg (sub_nonneg.mpr hc1.le) (ballShrinkTransition_nonneg t))
-
 
 theorem ballShrinkProfile_le_self {c : ℝ} (hc1 : c < 1) (t : ℝ) (ht : 0 ≤ t) :
     ballShrinkProfile c t ≤ t := by
@@ -114,7 +90,6 @@ theorem ballShrinkProfile_le_self {c : ℝ} (hc1 : c < 1) (t : ℝ) (ht : 0 ≤ 
   have hterm := mul_le_mul_of_nonneg_left htransition (sub_nonneg.mpr hc1.le)
   dsimp only [ballShrinkProfile]
   nlinarith
-
 
 theorem ballShrinkProfile_surjective {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     Function.Surjective (ballShrinkProfile c) := by
@@ -133,21 +108,17 @@ theorem ballShrinkProfile_surjective {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     have hnonpos : y / c ≤ 0 := div_nonpos_of_nonpos_of_nonneg (by linarith) hc.le
     rw [ballShrinkProfile_linear c (y / c) (by linarith), mul_div_cancel₀ _ hc.ne']
 
-
 noncomputable def ballShrinkOrderIso (c : ℝ) (hc : 0 < c) (hc1 : c < 1) : ℝ ≃o ℝ :=
   (ballShrinkProfile_strictMono hc hc1).orderIsoOfSurjective _
     (ballShrinkProfile_surjective hc hc1)
 
-
 @[simp] theorem ballShrinkOrderIso_apply (c : ℝ) (hc : 0 < c) (hc1 : c < 1) (t : ℝ) :
     ballShrinkOrderIso c hc hc1 t = ballShrinkProfile c t := rfl
-
 
 @[simp] theorem ballShrinkOrderIso_symm_zero {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     (ballShrinkOrderIso c hc hc1).symm 0 = 0 := by
   apply (ballShrinkOrderIso c hc hc1).injective
   simp
-
 
 theorem ballShrinkOrderIso_symm_smooth {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     ContDiff ℝ ∞ (ballShrinkOrderIso c hc hc1).symm := by
@@ -156,7 +127,6 @@ theorem ballShrinkOrderIso_symm_smooth {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     (fun t => ((ballShrinkProfile_smooth c).differentiable (by simp) t).hasDerivAt)
     (ballShrinkProfile_smooth c)
 
-
 theorem ballShrinkOrderIso_symm_linear {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (t : ℝ) (ht : t ≤ c * (5 / 4)) :
     (ballShrinkOrderIso c hc hc1).symm t = t / c := by
@@ -164,7 +134,6 @@ theorem ballShrinkOrderIso_symm_linear {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
   rw [OrderIso.apply_symm_apply, ballShrinkOrderIso_apply,
     ballShrinkProfile_linear c (t / c) ((div_le_iff₀ hc).mpr (by nlinarith))]
   exact (mul_div_cancel₀ t hc.ne').symm
-
 
 noncomputable def ballShrinkDiffeomorph (c : ℝ) (hc : 0 < c) (hc1 : c < 1) :
     Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace ∞ where
@@ -181,7 +150,6 @@ noncomputable def ballShrinkDiffeomorph (c : ℝ) (hc : 0 < c) (hc1 : c < 1) :
         rw [ballShrinkOrderIso_symm_linear hc hc1 t ht]
         exact div_eq_inv_mul t c))
 
-
 theorem ballShrinkDiffeomorph_norm {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) :
     ‖ballShrinkDiffeomorph c hc hc1 x‖ = ballShrinkProfile c ‖x‖ := by
@@ -189,12 +157,10 @@ theorem ballShrinkDiffeomorph_norm {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
   intro t ht
   simpa using (ballShrinkProfile_strictMono hc hc1).monotone ht
 
-
 theorem ballShrinkDiffeomorph_linear {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) (hx : ‖x‖ ≤ 5 / 4) :
     ballShrinkDiffeomorph c hc hc1 x = c • x :=
   capRadialMap_eq_smul _ c x (ballShrinkProfile_linear c ‖x‖ hx)
-
 
 theorem ballShrinkDiffeomorph_symm_linear {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) (hx : ‖x‖ ≤ c * (5 / 4)) :
@@ -203,7 +169,6 @@ theorem ballShrinkDiffeomorph_symm_linear {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
   rw [ballShrinkOrderIso_symm_linear hc hc1 ‖x‖ hx]
   exact div_eq_inv_mul ‖x‖ c
 
-
 theorem ballShrinkDiffeomorph_outer {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) (hx : 3 / 2 ≤ ‖x‖) :
     ballShrinkDiffeomorph c hc hc1 x = x := by
@@ -211,7 +176,6 @@ theorem ballShrinkDiffeomorph_outer {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
   simpa only [one_smul] using capRadialMap_eq_smul
     (ballShrinkOrderIso c hc hc1) 1 x (by
       rw [ballShrinkOrderIso_apply, ballShrinkProfile_outer c ‖x‖ hx, one_mul])
-
 
 theorem ballShrinkDiffeomorph_closedBall {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (r : ℝ) (hr : r ≤ 5 / 4) :
@@ -233,12 +197,10 @@ theorem ballShrinkDiffeomorph_closedBall {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 noncomputable def surgeryBallShrinkDiffeomorph (c : ℝ) (hc : 0 < c) (hc1 : c < 1) :
     Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞ :=
   surgeryBallPatchDiffeomorph (ballShrinkDiffeomorph c hc hc1)
     (ballShrinkDiffeomorph_outer hc hc1) B
-
 
 theorem surgeryBallShrinkDiffeomorph_map {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) (hx : ‖x‖ ≤ 5 / 4) :
@@ -250,7 +212,6 @@ theorem surgeryBallShrinkDiffeomorph_map {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
       (ballShrinkDiffeomorph_outer hc hc1) B (B.map x) = B.map (c • x)
   rw [surgeryBallPatchDiffeomorph_map _ _ _ hxball, ballShrinkDiffeomorph_linear hc hc1 x hx]
 
-
 theorem surgeryBallShrinkDiffeomorph_symm_map {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     (x : StandardCapSpace) (hx : ‖x‖ ≤ c * (5 / 4)) :
     (surgeryBallShrinkDiffeomorph B c hc hc1).symm (B.map x) = B.map (c⁻¹ • x) := by
@@ -261,7 +222,6 @@ theorem surgeryBallShrinkDiffeomorph_symm_map {c : ℝ} (hc : 0 < c) (hc1 : c < 
       (ballShrinkDiffeomorph_outer hc hc1) B).symm (B.map x) = B.map (c⁻¹ • x)
   rw [surgeryBallPatchDiffeomorph_symm_map _ _ _ hxball,
     ballShrinkDiffeomorph_symm_linear hc hc1 x hx]
-
 
 theorem surgeryBallShrinkDiffeomorph_closedImage {c : ℝ} (hc : 0 < c) (hc1 : c < 1) :
     surgeryBallShrinkDiffeomorph B c hc hc1 '' (B.map '' Metric.closedBall 0 (5 / 4)) =
@@ -277,20 +237,15 @@ theorem surgeryBallShrinkDiffeomorph_closedImage {c : ℝ} (hc : 0 < c) (hc1 : c
     _ = B.map '' Metric.closedBall 0 (c * (5 / 4)) := by
       rw [ballShrinkDiffeomorph_closedBall hc hc1 (5 / 4) le_rfl]
 
-
 theorem surgeryBallShrinkDiffeomorph_eq_self_off_compact {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     {x : A.carrier} (hx : x ∉ B.map '' Metric.closedBall 0 (3 / 2)) :
     surgeryBallShrinkDiffeomorph B c hc hc1 x = x :=
   surgeryBallPatchDiffeomorph_eq_self_off_compact _ _ B hx
 
-
 theorem surgeryBallShrinkDiffeomorph_symm_eq_self_off_compact {c : ℝ} (hc : 0 < c) (hc1 : c < 1)
     {x : A.carrier} (hx : x ∉ B.map '' Metric.closedBall 0 (3 / 2)) :
     (surgeryBallShrinkDiffeomorph B c hc hc1).symm x = x :=
   surgeryBallPatchDiffeomorph_symm_eq_self_off_compact _ _ B hx
-
-
-
 
 theorem exists_surgeryBallShrink (rho : ℝ) (hrho : 0 < rho) :
     ∃ e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞,

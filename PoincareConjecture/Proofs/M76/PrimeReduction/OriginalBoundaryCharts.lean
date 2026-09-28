@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.VertexStarChartRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X]
-
-
-
 
 theorem exists_original_boundary_star_chart
     (K A : SimplicialComplex ℝ E) (hAK : A ≤ K)
@@ -78,9 +66,6 @@ theorem exists_original_boundary_star_chart
     rw [hqval, hHB]
   · exact (show (A.closedStar p).AffineOnFaces (fun z => B (g z)) from
       fun s hs => hface s (hstar hs)).postcomp r
-
-
-
 
 theorem original_boundary_faceAffine_vertex_stars
     (K A : SimplicialComplex ℝ E) (hA : A.faces.Finite) (hAK : A ≤ K)

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTriangularEnergy
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,15 +14,10 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 
-
-
 theorem m64BoundedCoefficient_mul_integrable
     {a f : LoopPlane → ℝ} (ha : AEStronglyMeasurable a mu) (hf : Integrable f mu)
     {C : ℝ} (hb : ∀ p, |a p| ≤ C) : Integrable (fun p => a p * f p) mu :=
   hf.bdd_mul ha (Eventually.of_forall hb)
-
-
-
 
 theorem m64BoundedCoefficient_integral_tendsto
     {a : ℝ → LoopPlane → ℝ} {a0 f : LoopPlane → ℝ}

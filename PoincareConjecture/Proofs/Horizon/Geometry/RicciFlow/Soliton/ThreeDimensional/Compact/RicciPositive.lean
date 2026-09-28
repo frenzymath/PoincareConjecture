@@ -6,12 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M}
-
 
 theorem ShrinkingSolitonFlow.nonnegativeSectionalCurvature
     (G : ShrinkingSolitonFlow S) {t : ℝ} (ht : t < 0) :
@@ -49,7 +42,6 @@ private theorem ricci_eq_of_metric_eq {g h : RiemannianMetric 3 M}
     (x : M) (v w : TangentSpace (𝓡 3) x) : D.ricci x v w = D'.ricci x v w := by
   subst h
   simp only [LeviCivitaData.ricci, D.horizon_curvatureTensor_eq D']
-
 
 theorem ShrinkingSolitonFlow.ricci_pos_of_compact [CompactSpace M]
     (hC : RicciFlowCurvatureTheory.{u}) (G : ShrinkingSolitonFlow S)

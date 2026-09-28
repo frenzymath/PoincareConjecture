@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.TreeCotreeResidualEdges
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.TreeEdgeParity
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -19,13 +9,9 @@ open PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace AbstractSimplicialComplex
 
-
-
 def boundaryFaceParity {V : Type*} [DecidableEq V] (number : V → ℕ)
     (s e : Finset V) : ZMod 2 :=
   ∑ v ∈ s \ e, ((s.filter (fun w => number w < number v)).card : ZMod 2)
-
-
 
 theorem exists_triangle_boundary_parity_vertex
     {V : Type*} [DecidableEq V] (A : PreAbstractSimplicialComplex V)
@@ -58,9 +44,6 @@ private theorem triangle_shared_edge_eq_inter
   exact Finset.eq_of_subset_of_card_le
     (fun x hx => Finset.mem_inter.mpr ⟨heq hx, her hx⟩)
     (by rw [e.property.2]; exact hcard)
-
-
-
 
 theorem exists_primal_dual_trees_with_triangle_signs
     {V : Type*} [Fintype V] [DecidableEq V] (A : AbstractSimplicialComplex V)

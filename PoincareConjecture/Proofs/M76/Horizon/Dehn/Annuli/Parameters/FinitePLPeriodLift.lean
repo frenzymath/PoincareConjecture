@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.CompactLocallyPLComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M03.CurvatureJoint
 import PoincareConjecture.Proofs.M03.CurvaturePairExchange
 import PoincareConjecture.Proofs.M03.Existence.TensorProbeL2Native
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option backward.isDefEq.respectTransparency false
@@ -60,7 +50,6 @@ private theorem curvatureFirstSlot_apply {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (x : M) (u v w : TangentSpace (𝓡 n) x) :
     curvatureFirstSlot D x v w u = D.curvature x u v w :=
   Classical.choose_spec (exists_curvatureFirstSlot D x v w) u
-
 
 def intrinsicRicciBilin {g : RiemannianMetric n M} (D : LeviCivitaData g)
     (x : M) : BilinFib x := by
@@ -277,7 +266,6 @@ def smoothMetricLieDerivative {g : RiemannianMetric n M}
     (hW : ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, E)) ∞ (T% W)) :
     TensorProbeNative.SmoothTensor (n := n) (M := M) :=
   ⟨metricLieDerivative D W, metricLieDerivative_contMDiff D W hW⟩
-
 
 def smoothRicciDeTurckTensor {g background : RiemannianMetric n M}
     (D : LeviCivitaData g) (B : LeviCivitaData background) :

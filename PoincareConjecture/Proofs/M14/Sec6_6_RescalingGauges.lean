@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M13.Carrier
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {time : X → ℝ} {I : SpacetimeInterval}
-
-
 
 noncomputable def rescalingCylinder
     (S : GeneralizedFlowSpacetime n X time I) (D : SpacetimeIntervalSystem)
@@ -71,8 +60,6 @@ noncomputable def rescalingCylinder
       (hd.mdifferentiable (by simp) _)] at hvw
     exact hvw
 
-
-
 noncomputable def rescalingCylinderMetric
     (S : GeneralizedFlowSpacetime n X time I) (D : SpacetimeIntervalSystem)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
@@ -106,8 +93,6 @@ noncomputable def rescalingCylinderMetric
           (g.spatialTangentEquiv ((P.diffeomorph K).symm t) x w))
     rw [M13.scaleSmoothMetric_inner, M13.parabolicSpacetime_metric]
     exact congrArg (Q * ·) (g.metric_eq ((P.diffeomorph K).symm t) x v w)
-
-
 
 noncomputable def rescalingGaugeCover
     (S : GeneralizedFlowSpacetime n X time I) (D : SpacetimeIntervalSystem)

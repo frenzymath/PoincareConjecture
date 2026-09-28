@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Cutting.Finite
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBoundaryCollarTopology
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -79,9 +71,6 @@ theorem disk_partition_components
     refine ⟨k, (hcoe (point k) y).mpr ?_⟩
     exact (hcomp k y ⟨hyk, y.property.2⟩).symm.subset (hx k)
   exact ⟨⟨Equiv.ofBijective f ⟨hfinj, hfsurj⟩⟩, hcomp, hclosure⟩
-
-
-
 
 theorem finite_proper_arc_component_count
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.MovingMetricColumns
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -62,8 +50,6 @@ private theorem quadratic_integrable
   have hh := (B x).le_opNorm₂ (u x) (u x)
   have hs := mul_le_mul_of_nonneg_right hx (sq_nonneg ‖u x‖)
   nlinarith
-
-
 
 theorem m64MovingQuadratic_le_liminf
     (B : ℕ → X → E →L[ℝ] E →L[ℝ] ℝ) (B0 : X → E →L[ℝ] E →L[ℝ] ℝ)

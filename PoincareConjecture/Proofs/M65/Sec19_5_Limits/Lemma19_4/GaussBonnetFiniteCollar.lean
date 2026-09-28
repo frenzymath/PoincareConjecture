@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetCollarRegularity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,12 +51,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {gamma : C1FreeLoopSpace (M := M)}
 
 set_option maxHeartbeats 2000000 in
-
-
-
-
-
-
 
 theorem exists_boundary_radial_lower_limit (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

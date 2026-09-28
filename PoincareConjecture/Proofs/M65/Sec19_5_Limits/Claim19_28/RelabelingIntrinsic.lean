@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.RelabelingGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m65IntrinsicRegularity_spatial_mdiff (c : ℝ → ℝ → M)
     (hreg : M63IntrinsicRegularityOn F c (Icc a b)) {t : ℝ} (ht : t ∈ Ioo a b)
@@ -40,8 +30,6 @@ theorem m65IntrinsicRegularity_spatial_mdiff (c : ℝ → ℝ → M)
     (show DifferentiableAt ℝ (fun y : ℝ => (y, t)) x by fun_prop).mdifferentiableAt
   exact hj.comp x hslice
 
-
-
 theorem m65IntrinsicJetSquared_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) (hreg : M63IntrinsicRegularityOn F c (Icc a b))
     {phi : ℝ → ℝ} (hphi : Differentiable ℝ phi)
@@ -51,8 +39,6 @@ theorem m65IntrinsicJetSquared_fixed_relabeling (c : ℝ → ℝ → M)
   unfold m63CurvatureJetSquared
   rw [m65CurvatureJet_fixed_relabeling c hc hphi hpos (Ioo_subset_Icc_self ht)
     (fun j y => m65IntrinsicRegularity_spatial_mdiff c hreg ht j y)]
-
-
 
 theorem m65ShrinkingEquation_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ}

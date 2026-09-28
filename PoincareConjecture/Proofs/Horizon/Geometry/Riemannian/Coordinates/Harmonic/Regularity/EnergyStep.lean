@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.SobolevScale
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.IterationStep
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -17,7 +10,6 @@ open scoped Manifold ContDiff ENNReal NNReal
 namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
-
 
 theorem exists_scaled_energy_cutoff :
     ∃ A : ℝ, 0 ≤ A ∧ ∀ z : EuclideanSpace ℝ (Fin n), ∀ ρ : ℝ, 0 < ρ →
@@ -44,8 +36,6 @@ theorem exists_scaled_energy_cutoff :
     have hx' : ‖x - z‖ ≤ ρ / 2 := by simpa only [Metric.mem_closedBall, dist_eq_norm] using hx
     linarith
   · exact Poincare.Parabolic.Interior.norm_fderiv_rescaledCutoff_le χ.contDiff hρ hAderiv z
-
-
 
 theorem exists_uniform_energy_power_step (hn : 2 ≤ n)
     {a b P : ℝ} (ha : 0 < a) (hb : 0 ≤ b) (hP : 0 ≤ P) :

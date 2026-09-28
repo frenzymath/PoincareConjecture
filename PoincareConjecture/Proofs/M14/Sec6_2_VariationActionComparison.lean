@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationAction
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,9 +22,6 @@ private theorem inner_heq {x y : G.Point} (h : x = y)
   cases h
   cases hv
   rfl
-
-
-
 
 theorem variationAction_eq_of_squareFamily (V : M14LVariationData G p R)
     (S : M14SquareRootPath G q) {u : ℝ} (hu : u ∈ V.parameterDomain)

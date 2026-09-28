@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialJets
 import PoincareConjecture.Proofs.M47.CanonicalNeckStrictMargin
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.Proofs.M47
 open M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderTensorNormSquared_neckAxialWeight_le
     {lambda u : ℝ} (hlambda : lambda ∈ Icc (0 : ℝ) 1) (hu : u ≤ 0)
@@ -51,8 +41,6 @@ theorem roundCylinderTensorNormSquared_neckAxialWeight_le
   have hsq : (∏ i, neckAxialWeight lambda (a i)) ^ 2 ≤ 1 := by nlinarith
   apply mul_le_mul_of_nonneg_left ?_ (Finset.prod_nonneg fun i _ => hgram (a i))
   simpa only [mul_pow, one_mul] using mul_le_mul_of_nonneg_right hsq (sq_nonneg (T a))
-
-
 
 theorem roundCylinderTensorNormSquared_neckAxialConstantArray
     {u : ℝ} (hu : u ≠ 1) (q : UnitTwoSphere) (z v : ℝ) (r : ℕ) :

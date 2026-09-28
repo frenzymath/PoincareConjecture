@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -19,8 +12,6 @@ local notation "E" => (V2 × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "D3" => closedBall (0 : V3) 1
 local notation "Q3" => sphere (0 : V3) 1
-
-
 
 theorem exists_finitePL_cubePrismBoundary_sphere {a b : ℝ} (hab : a < b) :
     ∃ h : Q3 ≃ₜ cubePrismBoundary a b, h.IsFinitePL := by

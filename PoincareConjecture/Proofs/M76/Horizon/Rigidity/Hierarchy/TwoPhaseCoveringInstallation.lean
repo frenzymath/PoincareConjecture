@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Phase.FiberwiseL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.CollarPhaseGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.TwoPhaseCoverings
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

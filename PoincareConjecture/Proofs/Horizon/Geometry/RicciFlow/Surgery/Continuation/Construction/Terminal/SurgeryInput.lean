@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Pinching
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -43,7 +35,6 @@ theorem terminal_height_scalar_large :
   simpa only [inv_pow] using
     (le_inv_comm₀ (sq_pos_of_pos hh) F.local_constants.R₀_pos).mp hsquare
 
-
 def terminalSurgeryInput {G : GeneralizedRicciFlowData.{u}}
     (E : GeneralizedFlowExtension G T)
     (N : TerminalStrongNeck E (F.parameters.delta T))
@@ -70,8 +61,6 @@ variable {M : Type u} [TopologicalSpace M]
   {H : SingularTimeAssumptions G T M}
   {L : RepairedSingularRegularLimitData H} {N : RepairedHornSelectionData H}
   {I : RepairedContinuationInput F T}
-
-
 
 theorem exists_terminal_surgery
     (bridge : RepairedContinuationLimitBridge H L N I)

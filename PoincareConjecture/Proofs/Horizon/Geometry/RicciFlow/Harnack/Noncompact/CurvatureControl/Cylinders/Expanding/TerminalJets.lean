@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Derivatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -134,8 +123,6 @@ private theorem terminal_pullback_ellipticity
         mul_le_mul_of_nonneg_left (hinit v).2 (Real.exp_nonneg _)
       _ = _ := by ring
 
-
-
 theorem exists_terminal_cylinder_spatialJet_time_constant
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
     (d : ℕ) (Z : ℕ → ℝ) {a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b) :
@@ -182,9 +169,6 @@ theorem exists_terminal_cylinder_spatialJet_time_constant
       hδ hδone e x hdist hell hu v)
     (fun k _ u hu => hcurv k u ⟨by linarith [hu.1], hu.2⟩ (e x) hdist) hinit
   exact (h j hj).2 s hs t ht
-
-
-
 
 theorem eventually_terminal_spatialJet_control_of_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetNorm
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 import PoincareConjecture.Proofs.M09.SpeedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem axial_tangentNorm_le (N : EpsilonNeck g) (q : UnitTwoSphere)
     {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -68,8 +57,6 @@ theorem axial_tangentNorm_le (N : EpsilonNeck g) (q : UnitTwoSphere)
   exact (Real.sqrt_le_sqrt hA').trans_eq
     (Real.sqrt_sq (mul_nonneg (by norm_num) N.scale_pos.le))
 
-
-
 theorem axial_curve_velocity (N : EpsilonNeck g) (q : UnitTwoSphere)
     {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
     curveVelocity (fun r => N.coordinate_map (q, r)) s =
@@ -88,8 +75,6 @@ theorem axial_curve_velocity (N : EpsilonNeck g) (q : UnitTwoSphere)
   exact (congrArg (fun L : ℝ →L[ℝ] EuclideanSpace ℝ (Fin 3) => L 1) hchain).trans
     (congrArg (fun v : EuclideanSpace ℝ (Fin 2) × ℝ =>
       mfderiv ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) N.coordinate_map (q, s) v) hvalue)
-
-
 
 theorem axial_dist_le [T3Space M] [ConnectedSpace M]
     (N : EpsilonNeck g) (q : UnitTwoSphere)
@@ -125,8 +110,6 @@ theorem axial_dist_le [T3Space M] [ConnectedSpace M]
       ((hγ.mono hsub).of_le (by norm_num)) (fun r hr => hspeed r (hsub hr))
     simpa only [dist_comm, zero_sub, abs_of_nonpos hneg] using hbound
 
-
-
 theorem isCompact_central_sphere_m35 (N : EpsilonNeck g) : IsCompact N.central_sphere := by
   rw [N.central_sphere_eq]
   apply (isCompact_univ.prod isCompact_singleton).image_of_continuousOn
@@ -135,8 +118,6 @@ theorem isCompact_central_sphere_m35 (N : EpsilonNeck g) : IsCompact N.central_s
   refine ⟨mem_univ _, ?_⟩
   rw [mem_singleton_iff.mp hz.2]
   exact ⟨neg_neg_of_pos (inv_pos.mpr N.epsilon_pos), inv_pos.mpr N.epsilon_pos⟩
-
-
 
 theorem isCompact_closure [T3Space M] [ConnectedSpace M]
     (N : EpsilonNeck g) (hcomplete : MetricComplete g) : IsCompact (closure N.carrier) := by

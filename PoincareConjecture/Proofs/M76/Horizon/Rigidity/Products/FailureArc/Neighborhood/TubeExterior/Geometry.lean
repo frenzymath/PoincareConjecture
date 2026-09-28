@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.RelativeFrontierOpenness
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeRegionClosure
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

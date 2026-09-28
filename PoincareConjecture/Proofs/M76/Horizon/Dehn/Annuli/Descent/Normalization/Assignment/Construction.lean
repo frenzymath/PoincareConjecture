@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.A
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.ProtectedSubcomplex
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.FiniteHistory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -25,8 +16,6 @@ variable {U V M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M] {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ U} {f : U → M} {r : M → ℝ} {C : Set M}
   {s t : Stage e S f r C}
-
-
 
 structure OriginalRelativeNormalization (step : Step s t)
     (K : SimplicialComplex ℝ V) (j : V → t.Carrier) (R : Set M) (boundary : Set V) where
@@ -71,8 +60,6 @@ structure OriginalRelativeNormalization (step : Step s t)
   stable : ∀ i k, i ≤ k → k ≤ length →
     EqOn (states k).map (states i).map (prior i).space
   fixes_protected : ∀ k ≤ length, EqOn (states k).map j fixed.space
-
-
 
 theorem Step.nonempty_original_relative_normalization (step : Step s t)
     {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)

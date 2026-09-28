@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RicciTraceTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem m60SphereCurvatureContribution_plane (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (f : UnitTwoSphere → M)

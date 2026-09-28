@@ -2,16 +2,6 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -23,11 +13,6 @@ section GeneralPeriod
 variable {L : ℝ}
 
 local notation "Q" => AddCircle L
-
-
-
-
-
 
 theorem exists_marked_annulus_angular_lift_period (hL : 0 < L)
     (rho : C(I × Q, Q))
@@ -90,8 +75,6 @@ theorem exists_marked_annulus_angular_lift_period (hL : 0 < L)
   ring
 
 end GeneralPeriod
-
-
 
 theorem exists_marked_annulus_angular_lift
     (rho : C(I × AddCircle (8 : ℝ), AddCircle (8 : ℝ)))

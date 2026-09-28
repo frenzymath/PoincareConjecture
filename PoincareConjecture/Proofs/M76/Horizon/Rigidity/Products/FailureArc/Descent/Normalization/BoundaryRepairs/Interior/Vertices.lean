@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Interior.Parameter
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.PlanarParameterLink
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 open PoincareConjecture.M76.Dehn
@@ -85,4 +83,3 @@ theorem moved_positive_vertex_crossing
     O hO hpO
 
 end Geometry.OriginalPLTower.PlanarAnnulusBoundaryMotion
-

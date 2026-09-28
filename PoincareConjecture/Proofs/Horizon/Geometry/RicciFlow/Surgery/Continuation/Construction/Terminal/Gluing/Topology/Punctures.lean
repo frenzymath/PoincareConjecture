@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.Basic
 import Mathlib.Order.Interval.Set.Infinite
 import Mathlib.Topology.Algebra.Field
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

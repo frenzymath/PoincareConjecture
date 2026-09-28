@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.CalibratedHorn.NeckGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.CollarDistance
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,8 +13,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem edist_lower_of_not_mem_coordinate_slab (N : EpsilonNeck g)
     {a b d : ℝ} (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹)

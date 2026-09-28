@@ -12,7 +12,6 @@ local notation "V3" => (Fin 3 → ℝ)
 open Classical in
 set_option maxHeartbeats 800000 in
 
-
 theorem ComponentBranchModel.exists_local_vertex_exterior_point
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

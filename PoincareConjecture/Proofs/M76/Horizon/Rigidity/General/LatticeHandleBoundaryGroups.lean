@@ -3,24 +3,11 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RetractionFundamentalGroup
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLatticeHandleModel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M76
-
-
 
 theorem finite_unit_rim_of_card_eq_one {ι : Type*} [Fintype ι]
     (hι : Fintype.card ι = 1) :
@@ -41,9 +28,6 @@ theorem finite_unit_rim_of_card_eq_one {ι : Type*} [Fintype ι]
     simp only [mem_ofPred_eq, mem_preimage, mem_sphere_zero_iff_norm]
   rw [hrim]
   exact Set.Finite.preimage Subtype.val_injective.injOn hsphere
-
-
-
 
 theorem latticeHandleBoundary_pi1_injective_of_card_eq_one
     {ι κ : Type*} [Fintype ι] [Fintype κ] (hι : Fintype.card ι = 1)

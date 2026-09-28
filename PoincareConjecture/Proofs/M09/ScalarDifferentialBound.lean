@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M09.RicciDerivative
 import PoincareConjecture.Proofs.M09.TensorEvaluationBound
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators RealInnerProductSpace

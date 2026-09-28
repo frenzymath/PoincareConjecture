@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Generalized.OrdinaryExtraction
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinMetricCoefficients
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem contDiffOn_generalized_pullback_coefficient
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

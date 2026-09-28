@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalConnectionDifferenceEvolution
 import PoincareConjecture.Proofs.M34.Standard.CanonicalFlowCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_uniform_actual_connection_energy_bound
     {n dH dA dS : ℕ}

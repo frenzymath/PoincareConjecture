@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Metric.Complements.ClosedBallComplement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

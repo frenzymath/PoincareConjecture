@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.Ad
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Orientation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Permutation
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,7 +9,6 @@ open Set VectorField
 open scoped Manifold ContDiff Bundle Matrix
 
 namespace PoincareConjecture.Topology.Surface
-
 
 def trianglePermutationOrientation (r : Equiv.Perm (Fin 3)) : ℝ :=
   let v := standardTriangleVertex (r.symm 1) - standardTriangleVertex (r.symm 0)
@@ -34,7 +27,6 @@ theorem trianglePermutationOrientation_sq (r : Equiv.Perm (Fin 3)) :
   fin_cases i <;> fin_cases j <;> fin_cases k <;>
     norm_num [standardTriangleVertex] at *
 
-
 theorem trianglePermutationOrientation_cyclic (k : Fin 3) :
     trianglePermutationOrientation (Equiv.addRight k) = 1 := by
   fin_cases k <;> norm_num [trianglePermutationOrientation, standardTriangleVertex,
@@ -43,8 +35,6 @@ theorem trianglePermutationOrientation_cyclic (k : Fin 3) :
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem coordinateTriangle_frameOrientation_reindex_zero
     (g : RiemannianMetric 2 S)
@@ -98,8 +88,6 @@ theorem coordinateTriangle_frameOrientation_reindex_zero
   rcases sq_eq_one_iff.mp hδ with hδ | hδ <;>
     rcases sq_eq_one_iff.mp hκ with hκ | hκ <;> nlinarith
 
-
-
 theorem coordinateTriangle_frameOrientation_reindex
     (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -127,8 +115,6 @@ theorem coordinateTriangle_frameOrientation_reindex
   rw [hδ _ (subset_convexHull ℝ _ (mem_range_self (r.symm 0)))] at hzero
   intro z hz
   exact (hδ z hz).trans hzero
-
-
 
 theorem surfaceTurningForm_coordinate_reindex
     {g : RiemannianMetric 2 S} (D : LeviCivitaData g)

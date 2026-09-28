@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalRoundSourceTensor
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundIntrinsicJets
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,9 +35,6 @@ private local instance (G : GeneralizedBlowupConvergence V J) :
 private local instance (G : GeneralizedBlowupConvergence V J) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 
-
-
-
 noncomputable def limitCanonicalRoundDifferenceTensor
     (G : GeneralizedBlowupConvergence V J) (i : X → G.limit.sliceCarrier.carrier)
     (c : ℝ) (k : ℕ) : CovariantTensorEvaluation 3 X 2 :=
@@ -54,9 +42,6 @@ noncomputable def limitCanonicalRoundDifferenceTensor
     ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩ c x v -
       c * (G.limit.flow.metric 0).inner (i x)
         (mfderiv (𝓡 3) (𝓡 3) i x (v 0)) (mfderiv (𝓡 3) (𝓡 3) i x (v 1))
-
-
-
 
 theorem limitCanonical_round_difference_smooth
     (G : GeneralizedBlowupConvergence V J) {i : X → G.limit.sliceCarrier.carrier}
@@ -66,10 +51,6 @@ theorem limitCanonical_round_difference_smooth
   (limitCanonical_round_source_tensor_smooth (G.embedding k) hk hi 0
     ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩ c).sub
       ((M44.isSmoothCovariantTensor_metric_pullback (G.limit.flow.metric 0) hi).const_mul c)
-
-
-
-
 
 theorem limitCanonical_round_local_energy_bound
     (P : M47Predecessors.{u}) (G : GeneralizedBlowupConvergence V J)

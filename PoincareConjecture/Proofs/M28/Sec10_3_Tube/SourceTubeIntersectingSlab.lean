@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeInitialPair
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicDistanceEnergy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallRetainedPath
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +18,6 @@ namespace SourceTubeData
 variable {epsilon C A D0 D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D0 D}
   {S : CounterexampleNeckSegment E}
-
-
-
 
 theorem intrinsicEDist_lt_of_initial_graph_intersection (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 10000 : ℝ)) (f : UnitTwoSphere → ℝ)
@@ -109,9 +97,6 @@ namespace CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
 
 theorem tube_distance_lt_of_initial_graph_intersection
     (H : CounterexampleNeckFamily E) (T : ∀ k, SourceTubeData (H.segment k))

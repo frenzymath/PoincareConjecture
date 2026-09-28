@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.EssentialAnnulusBarrier
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip unitInterval
 namespace PoincareConjecture.M76
@@ -207,4 +205,3 @@ theorem exists_closed_half_cylinder
     exact ⟨j z,rfl,rfl,rfl⟩
 
 end PoincareConjecture.M76
-

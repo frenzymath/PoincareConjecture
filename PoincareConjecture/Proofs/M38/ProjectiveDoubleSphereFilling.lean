@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.CylinderCarrier
 import PoincareConjecture.Proofs.M38.CylinderCoverFilling
 import Mathlib.Algebra.Module.ULift
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +14,6 @@ universe u
 namespace PoincareConjecture.M38
 
 attribute [local instance] cylinderDihedralAction cylinderLiftChartedSpace
-
 
 @[instance_reducible]
 noncomputable def cylinderCarrierDihedralAction :
@@ -38,7 +27,6 @@ noncomputable def cylinderCarrierDihedralAction :
     exact mul_smul g h p.down
 
 attribute [local instance] cylinderCarrierDihedralAction
-
 
 theorem cylinderDihedral_lifted_quotient_cover
     {Q : GeneralizedSliceCarrier.{u}} (q : RoundCylinderSpace → Q.carrier)
@@ -70,9 +58,6 @@ theorem cylinderDihedral_lifted_quotient_cover
     obtain ⟨x, ⟨y, hy, rfl⟩, hx⟩ := hg
     change g • y.down ∈ U at hx
     exact ⟨g • y.down, ⟨y.down, hy, rfl⟩, hx⟩
-
-
-
 
 theorem projectiveDouble_sphere_filling_or_lifted_coordinates
     (Q : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel Q.carrier)

@@ -1,14 +1,6 @@
 import Mathlib.Topology.Constructions
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem physical_strip_cut_geometry {E C U D : Set X}
     (hE : IsClosed E) (hC : IsClosed C) (hCE : C ⊆ E)

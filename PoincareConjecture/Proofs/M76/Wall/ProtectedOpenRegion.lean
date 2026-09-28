@@ -1,15 +1,6 @@
 import Mathlib.Topology.Constructions.SumProd
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X] {R C K F : Set X}
-
-
-
 
 theorem sdiff_eq_interior_sdiff_of_frontier_subset
     (hBC : frontier R ⊆ C) : R \ C = interior R \ C := by
@@ -30,10 +18,6 @@ theorem sdiff_eq_interior_sdiff_of_frontier_subset
       (fun hf => hx.2 (hBC hf)), hx.2⟩
   · intro hx
     exact ⟨interior_subset hx.1, hx.2⟩
-
-
-
-
 
 theorem protected_open_cut_region (hC : IsClosed C)
     (hBC : frontier R ⊆ C) (hFR : F ⊆ R)

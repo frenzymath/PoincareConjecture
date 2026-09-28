@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Area.Triangulation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.VolumeSupport
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -17,8 +11,6 @@ namespace PoincareConjecture.Topology.Surface.FiniteSmoothTriangulation
 variable {S : Type*} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]
   [T3Space S] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S]
   [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem disjoint_face_interiors (T : FiniteSmoothTriangulation (M := S))
     (g : RiemannianMetric 2 S) :

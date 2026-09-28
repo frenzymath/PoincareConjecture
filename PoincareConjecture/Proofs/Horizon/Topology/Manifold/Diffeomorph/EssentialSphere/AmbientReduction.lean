@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.RadialCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.EssentialSphere.Puncture
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,7 +13,6 @@ namespace Poincare
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
 
 def puncturedDiffeomorph (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hF : F 0 = 0) : Diffeomorph (𝓡 3) (𝓡 3)
@@ -44,8 +34,6 @@ def puncturedDiffeomorph (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (hF : F 0 = 0)
     (x : puncturedThreeSpace) : (puncturedDiffeomorph F hF x : E3) = F x := rfl
 
-
-
 theorem exists_ambient_sphere_map_fixing_puncture
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
     (hinside : (0 : E3) ∈ F '' ball 0 1) :
@@ -63,9 +51,6 @@ theorem exists_ambient_sphere_map_fixing_puncture
     have hqnorm : ‖q‖ = 1 := mem_sphere_zero_iff_norm.mp hq
     change F (D q) = F q
     rw [hfix q (by simpa only [hqnorm] using hr.le)]
-
-
-
 
 theorem exists_cylinder_coordinates_of_ambient_sphere
     (F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

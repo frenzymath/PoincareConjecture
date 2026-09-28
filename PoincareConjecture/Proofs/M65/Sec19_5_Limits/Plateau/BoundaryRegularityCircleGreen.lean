@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularitySe
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryArc
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -53,10 +43,6 @@ private theorem puncturedArc_shift (p : LoopCircle) :
     Complex.ofReal_add, add_mul, Complex.exp_add, he]
   simp only [boundaryCoordinate, mul_comm I (t : ℂ), mul_comm v]
 
-
-
-
-
 theorem circle_integral_eq_short_arc (p : LoopCircle) {r : ℝ}
     (hrπ : r < Real.pi) (f : LoopCircle → ℝ)
     (hzero : ∀ z ∉ puncturedArc p '' Icc (-r) r, f z = 0) :
@@ -92,9 +78,6 @@ theorem circle_integral_eq_short_arc (p : LoopCircle) {r : ℝ}
         integral_Ioc_eq_integral_Ioo]
     _ = _ := hrestrict
 
-
-
-
 theorem boundaryCirclePoint_eq_puncturedArc {p : ℂ} (hp : ‖p‖ = 1) (s : ℝ) :
     boundaryCirclePoint hp s =
       puncturedArc ⟨-orthonormalBasisOneI.repr p, by
@@ -104,11 +87,6 @@ theorem boundaryCirclePoint_eq_puncturedArc {p : ℂ} (hp : ‖p‖ = 1) (s : �
     LinearIsometryEquiv.symm_apply_apply, neg_neg]
   congr 2
   simp [EuclideanSpace.basisFun_apply]
-
-
-
-
-
 
 theorem boundary_replacement_green_integral {M : Type*} {N : ℕ}
     (e : M → EuclideanSpace ℝ (Fin N)) (γ : LoopCircle → M)

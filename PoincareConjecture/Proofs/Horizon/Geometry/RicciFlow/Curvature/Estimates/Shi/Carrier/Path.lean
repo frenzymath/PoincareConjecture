@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection
 import Mathlib.Geometry.Manifold.Riemannian.PathELength
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

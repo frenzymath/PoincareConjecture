@@ -1,13 +1,5 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ApproximatesLinearOn
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +11,6 @@ variable {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   {f : E → F} {Q : E →L[𝕜] F} {S : Set E} {T : Set F} {c K : ℝ≥0}
-
-
-
 
 theorem comp_inverse_projection (hf : ApproximatesLinearOn f Q S c)
     (g : F → E) (hgS : MapsTo g T S) (hQg : ∀ u ∈ T, Q (g u) = u)
@@ -36,8 +25,6 @@ theorem comp_inverse_projection (hf : ApproximatesLinearOn f Q S c)
     _ ≤ c * (K * ‖u - v‖) := mul_le_mul_of_nonneg_left (hg u hu v hv) c.coe_nonneg
     _ = _ := by rw [NNReal.coe_mul, mul_assoc]
 
-
-
 theorem open_image_comp_inverse_projection [CompleteSpace F]
     (hf : ApproximatesLinearOn f Q S c)
     (g : F → E) (hgS : MapsTo g T S) (hQg : ∀ u ∈ T, Q (g u) = u)
@@ -50,9 +37,6 @@ theorem open_image_comp_inverse_projection [CompleteSpace F]
     have hbound : c * K < ‖(e.symm : F →L[𝕜] F)‖₊⁻¹ := by
       simpa [e] using hsmall
     exact (ha.toOpenPartialHomeomorph (f' := e) (f ∘ g) T (Or.inr hbound) hT).open_target
-
-
-
 
 theorem injOn_of_inverse_secant_bound (hf : ApproximatesLinearOn f Q S c)
     (hQ : ∀ x ∈ S, ∀ y ∈ S, ‖x - y‖ ≤ K * ‖Q x - Q y‖)

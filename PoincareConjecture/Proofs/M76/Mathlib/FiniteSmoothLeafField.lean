@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFaceLeafAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFrontierAttachment
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ open EuclideanSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_smoothLeafField_near_faces (K : SimplicialComplex ℝ E) (m : ℕ)
     (hfull : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = m + 1)
@@ -132,10 +120,6 @@ theorem exists_smoothLeafField_near_faces (K : SimplicialComplex ℝ E) (m : ℕ
         · exact hRT x hx
         · rw [hRP.self_of_nhdsSet (show x ∈ B from mem_iUnion₂.mpr ⟨t, ht, hx⟩)]
           exact hPT t ht x hx
-
-
-
-
 
 theorem exists_smoothLeafField_near_space (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite) (m : ℕ)

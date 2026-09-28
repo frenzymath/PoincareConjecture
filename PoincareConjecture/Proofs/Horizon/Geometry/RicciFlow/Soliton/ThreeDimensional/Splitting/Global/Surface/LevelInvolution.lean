@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.UniversalProperty
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.LevelSet
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (n + 1))) = n + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
 
 def zeroLevelInvolution :
     letI := openLevelSetChartedSpace hr (⊤ : Opens M) (fun x _ => hreg x) n 0
@@ -80,7 +71,6 @@ theorem zeroLevelInvolution_free (hfree : ∀ x, τ x ≠ x) :
   letI := openLevelSetChartedSpace hr (⊤ : Opens M) (fun x _ => hreg x) n 0
   intro x hx
   exact hfree (zeroLevelIncl r x) (congrArg (zeroLevelIncl r) hx)
-
 
 theorem zeroLevelInvolution_preserves_metric (g : RiemannianMetric (n + 1) M)
     (hmetric : ∀ (x : M) (u v : TangentSpace (𝓡 (n + 1)) x),

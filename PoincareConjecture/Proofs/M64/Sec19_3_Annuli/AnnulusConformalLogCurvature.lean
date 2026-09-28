@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLogRegularization
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.TargetChartEstimate
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,11 +47,6 @@ private theorem conformal_factor_contDiffOn
       (mfderiv (𝓡 2) (𝓡 n) φ q d) := congrArg (fun L => L d) hd
   rw [hduq]
   exact (hdd q hq).symm.trans (chartCoefficients_apply g b (hchart q hq) _ _).symm
-
-
-
-
-
 
 theorem m64ConformalHarmonicChart_log_add_laplacian_lower_bound
     (D : LeviCivitaData g) (b : M)

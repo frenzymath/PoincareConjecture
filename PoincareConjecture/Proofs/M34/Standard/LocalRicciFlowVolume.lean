@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M34.Standard.LocalCalibratedImageVolume
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem calibratedMetricVolume_le_exp_mul_of_local_ricci_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]

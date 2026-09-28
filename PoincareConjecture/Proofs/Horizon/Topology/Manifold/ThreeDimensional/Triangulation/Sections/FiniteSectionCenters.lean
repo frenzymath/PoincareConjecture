@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Sections.FiniteSectionCoordinates
 import Mathlib.Data.Finset.Powerset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

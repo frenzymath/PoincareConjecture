@@ -2,30 +2,15 @@ import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonTriangleRegion
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonReindex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace TriangleDiskModel
 
-
-
 def rightTriangle : Polygon (ℝ × ℝ) 3 := ⟨![(0, 0), (1, 0), (0, 1)]⟩
 
-
-
 def leftTriangle : Polygon (ℝ × ℝ) 3 := ⟨![(0, 1), (-1, 0), (0, 0)]⟩
-
-
 
 def wholeTriangle : Polygon (ℝ × ℝ) 3 := ⟨![(-1, 0), (1, 0), (0, 1)]⟩
 
@@ -41,17 +26,11 @@ private theorem independent_horizontal {a b : ℝ} (hab : a ≠ b) :
     · simp [S]
   exact h.comm_right
 
-
-
 theorem independent_rightTriangle : AffineIndependent ℝ rightTriangle :=
   independent_horizontal (by norm_num)
 
-
-
 theorem independent_leftTriangle : AffineIndependent ℝ leftTriangle :=
   (independent_horizontal (a := -1) (b := 0) (by norm_num)).comm_right.comm_left
-
-
 
 theorem independent_wholeTriangle : AffineIndependent ℝ wholeTriangle :=
   independent_horizontal (by norm_num)
@@ -63,8 +42,6 @@ private theorem hull_le (P : Polygon (ℝ × ℝ) 3) (L : (ℝ × ℝ) →ₗ[�
 private theorem hull_ge (P : Polygon (ℝ × ℝ) 3) (L : (ℝ × ℝ) →ₗ[ℝ] ℝ) (r : ℝ)
     (h : ∀ i, r ≤ L (P i)) {x : ℝ × ℝ} (hx : x ∈ convexHull ℝ (range P)) : r ≤ L x :=
   convexHull_min (by rintro _ ⟨i, rfl⟩; exact h i) ((convex_Ici r).linear_preimage L) hx
-
-
 
 theorem mem_right_region_iff (x : ℝ × ℝ) :
     x ∈ convexHull ℝ (range rightTriangle) ↔ 0 ≤ x.1 ∧ 0 ≤ x.2 ∧ x.1 + x.2 ≤ 1 := by
@@ -84,8 +61,6 @@ theorem mem_right_region_iff (x : ℝ × ℝ) :
     · exact mem_range_self
     · apply Prod.ext <;> simp [Fin.sum_univ_succ, rightTriangle]
 
-
-
 theorem mem_left_region_iff (x : ℝ × ℝ) :
     x ∈ convexHull ℝ (range leftTriangle) ↔ x.1 ≤ 0 ∧ 0 ≤ x.2 ∧ x.2 - x.1 ≤ 1 := by
   constructor
@@ -104,8 +79,6 @@ theorem mem_left_region_iff (x : ℝ × ℝ) :
       ring
     · exact mem_range_self
     · apply Prod.ext <;> simp [Fin.sum_univ_succ, leftTriangle]
-
-
 
 theorem mem_whole_region_iff (x : ℝ × ℝ) :
     x ∈ convexHull ℝ (range wholeTriangle) ↔
@@ -129,8 +102,6 @@ theorem mem_whole_region_iff (x : ℝ × ℝ) :
     · apply Prod.ext <;> simp [Fin.sum_univ_succ, wholeTriangle]
       ring
 
-
-
 theorem mem_common_edge_iff (x : ℝ × ℝ) :
     x ∈ segment ℝ (0, 1) (0, 0) ↔ x.1 = 0 ∧ 0 ≤ x.2 ∧ x.2 ≤ 1 := by
   constructor
@@ -140,8 +111,6 @@ theorem mem_common_edge_iff (x : ℝ × ℝ) :
   · rintro ⟨hx, hy, hy'⟩
     refine ⟨x.2, 1 - x.2, hy, by linarith, by ring, ?_⟩
     apply Prod.ext <;> simp [hx]
-
-
 
 theorem mem_open_common_edge_iff (x : ℝ × ℝ) :
     x ∈ openSegment ℝ (0, 1) (0, 0) ↔ x.1 = 0 ∧ 0 < x.2 ∧ x.2 < 1 := by
@@ -153,8 +122,6 @@ theorem mem_open_common_edge_iff (x : ℝ × ℝ) :
     refine ⟨x.2, 1 - x.2, hy, by linarith, by ring, ?_⟩
     apply Prod.ext <;> simp [hx]
 
-
-
 theorem region_union : convexHull ℝ (range rightTriangle) ∪ convexHull ℝ (range leftTriangle) =
     convexHull ℝ (range wholeTriangle) := by
   ext x
@@ -165,8 +132,6 @@ theorem region_union : convexHull ℝ (range rightTriangle) ∪ convexHull ℝ (
     rcases le_total 0 x.1 with hx | hx
     · exact Or.inl ⟨hx, hy, hp⟩
     · exact Or.inr ⟨hx, hy, hm⟩
-
-
 
 theorem region_inter : convexHull ℝ (range rightTriangle) ∩ convexHull ℝ (range leftTriangle) =
     segment ℝ (0, 1) (0, 0) := by

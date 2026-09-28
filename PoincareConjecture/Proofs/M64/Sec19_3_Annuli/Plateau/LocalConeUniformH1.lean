@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeWeakFilling
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeH1Radius
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "circleMu" => volume.restrict (Icc (0 : ℝ) curvePeriod)
-
-
 
 theorem m64ChartReadable_uniform_H1_cone_radius
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -76,8 +63,6 @@ theorem m64ChartReadable_uniform_H1_cone_radius
     (Finset.single_le_sum (fun q _ => hC q) p.2)
     (integral_nonneg fun x => sq_nonneg ‖v x‖)
 
-
-
 theorem m64ChartReadable_small_energy_H1_cone
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
     (hei : IsEmbedding e) (hread : M60.SUChartReadable (n := n) e) :
@@ -107,8 +92,6 @@ theorem m64ChartReadable_small_energy_H1_cone
   change ‖e (gamma x) - e (gamma 0)‖ ^ 2 ≤
     curvePeriod * ∫ t in Icc (0 : ℝ) curvePeriod, ‖v t‖ ^ 2 at hradius
   nlinarith [norm_nonneg (e (gamma x) - e (gamma 0))]
-
-
 
 theorem m64ChartReadable_uniform_H1_cone_energy
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.OpenInclusionDifferential
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ section Topological
 
 variable {E : Type*} [TopologicalSpace E] {U : Set E} (hU : IsOpen U) [Nonempty U]
 
-
-
 theorem canonicalOpen_chart_eq :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     ∀ p q : U, chartAt E p = chartAt E q := by
@@ -29,16 +18,12 @@ theorem canonicalOpen_chart_eq :
   intro p q
   rfl
 
-
-
 theorem canonicalOpen_chart_source :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     ∀ p : U, (chartAt E p).source = univ := by
   let := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
   intro p
   exact hU.isOpenEmbedding_subtypeVal.toOpenPartialHomeomorph_source _
-
-
 
 theorem canonicalOpen_chart_target :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -49,16 +34,12 @@ theorem canonicalOpen_chart_target :
     (Subtype.val : U → E)).target = U
   rw [Topology.IsOpenEmbedding.toOpenPartialHomeomorph_target, Subtype.range_coe]
 
-
-
 theorem canonicalOpen_chart_symm_apply :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     ∀ p q : U, (chartAt E p).symm (q : E) = q := by
   let := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
   intro p q
   exact hU.isOpenEmbedding_subtypeVal.toOpenPartialHomeomorph_left_inv _
-
-
 
 theorem canonicalOpen_chart_coe_symm :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -73,8 +54,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
     {E : Type*} [NormedAddCommGroup E] [NormedSpace 𝕜 E]
     {U : Set E} (hU : IsOpen U) [Nonempty U]
 
-
-
 theorem canonicalOpen_extChart_target :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     ∀ p : U, (extChartAt 𝓘(𝕜, E) p).target = U := by
@@ -82,8 +61,6 @@ theorem canonicalOpen_extChart_target :
   intro p
   rw [extChartAt_target, canonicalOpen_chart_target hU]
   simp
-
-
 
 theorem canonicalOpen_mfderiv_symm :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -98,8 +75,6 @@ theorem canonicalOpen_mfderiv_symm :
   rw [ModelWithCorners.range_eq_univ, mfderivWithin_univ] at hd
   exact hd
 
-
-
 theorem canonicalOpen_contMDiffAt_symm :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓘(𝕜, E)) (n := ∞)
@@ -111,8 +86,6 @@ theorem canonicalOpen_contMDiffAt_symm :
   have hh := contMDiffOn_extChartAt_symm (I := 𝓘(𝕜, E)) (n := ∞) p
   rw [canonicalOpen_extChart_target hU] at hh
   exact (hh x hx).contMDiffAt (hU.mem_nhds hx)
-
-
 
 theorem canonicalOpen_mfderiv_restrict
     {F H N : Type*} [NormedAddCommGroup F] [NormedSpace 𝕜 F]

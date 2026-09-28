@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.RegularGerms
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -22,7 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
   {p q : M} {τ : ℝ}
 
-
 theorem reducedLength_regular_laplacian_le
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (r : ReducedLengthRegularPoint F T τmax p q τ) :
@@ -34,7 +25,6 @@ theorem reducedLength_regular_laplacian_le
     r.representative_eq (q, τ) r.center_mem] at h
   simpa only [reducedLengthLaplacian, sub_eq_add_neg, add_comm] using
     (le_sub_iff_add_le').mpr h
-
 
 theorem reducedLength_regular_weak_integrands
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)

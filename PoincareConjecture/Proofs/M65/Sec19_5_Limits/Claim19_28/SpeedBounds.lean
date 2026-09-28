@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_1_SpeedEvolution
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LogDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m65Speed_exp_bounds_on (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 H : ℝ} (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)

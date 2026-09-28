@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionRefinementJoins
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +10,6 @@ open PoincareConjecture.Topology.Surface Poincare.Topology.Plane.Meshes
 open PoincareConjecture.Topology.Surface.Euler
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_coordinate_parent_corner_retained
     {I : Type*} [Finite I]

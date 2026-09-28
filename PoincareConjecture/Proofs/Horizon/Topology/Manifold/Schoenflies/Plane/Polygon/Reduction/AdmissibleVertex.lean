@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.RegionNesting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +10,8 @@ section Module
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
 
-
 def polygonVertexTriangle (p : Polygon E n) (k : Fin n) : Set E :=
   convexHull ℝ {p k, p ((finRotate n).symm k), p (finRotate n k)}
-
-
 
 def IsAdmissibleVertex (p : Polygon E n) (k : Fin n) : Prop :=
   polygonVertexTriangle p k ∩ p.boundary ℝ =
@@ -33,8 +20,6 @@ def IsAdmissibleVertex (p : Polygon E n) (k : Fin n) : Prop :=
 end Module
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n m : ℕ}
-
-
 
 theorem polygonIncidentEdges_subset_triangle_inter_boundary (p : Polygon E n) (k : Fin n) :
     segment ℝ (p k) (p ((finRotate n).symm k)) ∪ segment ℝ (p k) (p (finRotate n k)) ⊆
@@ -54,8 +39,6 @@ theorem polygonIncidentEdges_subset_triangle_inter_boundary (p : Polygon E n) (k
     apply polygon_edgeSet_subset_boundary p k
     rw [polygon_edgeSet_eq_segment]
     exact hx
-
-
 
 theorem IsSimplePolygon.admissibleVertex_of_child [FiniteDimensional ℝ E]
     {p : Polygon E n} {q : Polygon E m} (hq : IsSimplePolygon q)

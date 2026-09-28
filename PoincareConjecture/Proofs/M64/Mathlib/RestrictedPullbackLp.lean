@@ -1,17 +1,6 @@
 import Mathlib.MeasureTheory.Function.LpSpace.Indicator
 import Mathlib.MeasureTheory.Function.LpSeminorm.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 variable {X Y E : Type*} [MeasurableSpace X] [MeasurableSpace Y]
   [NormedAddCommGroup E] {mu : Measure X} {nu : Measure Y}
   {T : X → Y} {K : Set X} {O : Set Y} {p : ℝ≥0∞}
-
-
-
-
 
 theorem m64MeasurePreserving_memLp_restrict
     (hT : MeasurePreserving T mu nu) (hO : MeasurableSet O)
@@ -47,11 +32,6 @@ theorem m64MeasurePreserving_memLp_restrict
     _ ≤ eLpNorm (U ∘ T) p mu := eLpNorm_mono_measure _ Measure.restrict_le_self
     _ = eLpNorm U p nu := eLpNorm_comp_measurePreserving hU.aestronglyMeasurable hT
     _ = _ := eLpNorm_indicator_eq_eLpNorm_restrict hO
-
-
-
-
-
 
 theorem m64MeasurePreserving_ae_restrict
     (hT : MeasurePreserving T mu nu) (hO : MeasurableSet O)

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapTransfer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stackMorseCanonicalCap_image_eq_of_annular_match
     (u : UnitTwoSphere) (A : OpenPartialHomeomorph (E2 × ℝ) E3)

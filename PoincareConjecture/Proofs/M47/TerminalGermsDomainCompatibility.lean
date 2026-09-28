@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsOpenReadout
 import PoincareConjecture.Proofs.M47.TerminalGermsFiniteDescent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_open_domains_metric_compatibility
     {n : ℕ} {ι : Type*} {P : ι → Type*} {N : Type*}
@@ -69,8 +57,6 @@ theorem terminalGerms_open_domains_metric_compatibility
       _ = _ := congrArg₂ (fun v w : EuclideanSpace ℝ (Fin n) =>
         gW.inner ⟨y, hyW⟩ v w) ha hb
   exact hV'.symm.trans hW'
-
-
 
 theorem terminalGerms_domain_flows_compatibility
     {n : ℕ} {ι : Type*} {P : ι → Type*} {N : Type*}

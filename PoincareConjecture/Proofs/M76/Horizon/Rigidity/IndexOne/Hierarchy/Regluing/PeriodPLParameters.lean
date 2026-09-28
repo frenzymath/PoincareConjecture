@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.S
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianParameter
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLGluing
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -18,7 +16,6 @@ local notation "C" => AddCircle p
 local notation "L" => hamiltonLowerPeriodLattice (Fin 2)
 local notation "X" => LatticeHandleAmbient (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
-
 
 noncomputable def diskCircleParameter (z : W) : D × C := by
   classical
@@ -38,7 +35,6 @@ theorem continuousOn_diskCircleParameter : ContinuousOn diskCircleParameter (D �
 theorem diskCircleParameter_period (z : W) :
     diskCircleParameter (z.1, z.2 + p) = diskCircleParameter z := by
   simp [diskCircleParameter]
-
 
 theorem polyhedralPL_standardMeridianBoxParameter
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}
@@ -64,8 +60,6 @@ theorem injOn_standardMeridianBoxParameter (a b : ℝ) (hab : a < b)
   have htime := congrArg Prod.snd hh
   exact Prod.ext hfirst ((AddCircle.coe_eq_coe_iff_of_mem_Ico
     ⟨hz.2.1, hz.2.2.trans_lt hwidth⟩ ⟨hw.2.1, hw.2.2.trans_lt hwidth⟩).mp htime)
-
-
 
 theorem polyhedralPL_diskCircle_signed_parameter
     {Y α : Type*} [TopologicalSpace Y] {e : α → OpenPartialHomeomorph Y V3}

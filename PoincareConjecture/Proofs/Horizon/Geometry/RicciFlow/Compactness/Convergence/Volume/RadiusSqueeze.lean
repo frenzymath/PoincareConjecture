@@ -1,14 +1,6 @@
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +8,6 @@ open Set Filter
 open scoped Topology ENNReal
 
 namespace Poincare
-
-
 
 theorem tendsto_of_ball_volume_radius_squeeze
     {f : ℕ → ℝ≥0∞} {V : ℝ → ℝ≥0∞} {r : ℝ} (n : ℕ)

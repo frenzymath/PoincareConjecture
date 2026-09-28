@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcEndpointJointBoundary
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedEndpointHalfFaceMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex

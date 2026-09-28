@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbation
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AnnularRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem contDiff_diffeomorph_family_symm (D : ℝ → E ≃ₘ[ℝ] E)
     (hD : ContDiff ℝ ∞ (fun p : ℝ × E => D p.1 p.2)) :
@@ -59,9 +47,6 @@ theorem contDiff_diffeomorph_family_symm (D : ℝ → E ≃ₘ[ℝ] E)
   change D y.1 ((D y.1).symm y.2) = D y.1 (e.symm y).2
   rw [(D y.1).apply_symm_apply]
   exact hvalue.symm
-
-
-
 
 theorem exists_smooth_diffeomorph_family_of_fderiv_close_id
     (F : ℝ × E → E) (hF : ContDiff ℝ ∞ F) {c : ℝ≥0} (hc : c < 1)

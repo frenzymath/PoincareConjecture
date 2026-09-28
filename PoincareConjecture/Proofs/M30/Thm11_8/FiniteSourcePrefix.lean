@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedScalarConvergence
 import PoincareConjecture.Proofs.M30.Generalized.WorldlineUniqueness
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
 
 theorem eventually_finiteSlab_scalar_of_generalized_limit_bound_on_prefix
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -85,8 +73,6 @@ theorem eventually_finiteSlab_scalar_of_generalized_limit_bound_on_prefix
       ((G.embedding k).pointMap s (herr.1 hs) y) / S.scale (G.subsequence k) ≤
         B + 1 by linarith).trans (le_max_right _ _)
 
-
-
 theorem eventually_finiteSlab_scalar_of_limit_bound_on_prefix
     {S : GeneralizedBlowupSequence.{u}} {T : ℝ}
     (G : GeneralizedBlowupConvergence S (Ioc (-T) 0))
@@ -109,9 +95,6 @@ theorem eventually_finiteSlab_scalar_of_limit_bound_on_prefix
                 max 4 (B + 1) * S.scale (G.subsequence k) := by
   exact eventually_finiteSlab_scalar_of_generalized_limit_bound_on_prefix G hA hslabs
     t ht (htT.trans hTTplus) (closedSlab_subset_openSlab htT) hscalar
-
-
-
 
 theorem eventually_finiteSlab_prefix_scalar_of_limit_bound
     {S : GeneralizedBlowupSequence.{u}} {T : ℝ}

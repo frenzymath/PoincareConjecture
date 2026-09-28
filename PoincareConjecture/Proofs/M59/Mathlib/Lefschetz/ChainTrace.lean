@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.TraceExact
 import Mathlib.Algebra.Homology.Homotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,12 +14,8 @@ namespace ChainComplex
 
 variable {K : Type u} [CommRing K] {C : ChainComplex (ModuleCat.{v} K) ℕ}
 
-
-
 def alternatingTrace (f : C ⟶ C) (N : ℕ) : K :=
   ∑ i ∈ Finset.range (N + 1), (-1 : K) ^ i * LinearMap.trace K (C.X i) (f.f i).hom
-
-
 
 theorem alternatingTrace_sub_of_homotopy
     [∀ i, Module.Free K (C.X i)] [∀ i, Module.Finite K (C.X i)] {f g : C ⟶ C}
@@ -60,8 +46,6 @@ theorem alternatingTrace_sub_of_homotopy
       rw [hsucc N, pow_succ]
       linear_combination ih
 
-
-
 theorem alternatingTrace_eq_of_homotopy
     [∀ i, Module.Free K (C.X i)] [∀ i, Module.Finite K (C.X i)] {f g : C ⟶ C}
     (H : Homotopy f g) (N : ℕ) (htop : C.d (N + 1) N = 0) :
@@ -69,8 +53,6 @@ theorem alternatingTrace_eq_of_homotopy
   apply sub_eq_zero.mp
   rw [alternatingTrace_sub_of_homotopy H N, htop, comp_zero,
     ModuleCat.hom_zero, map_zero, mul_zero]
-
-
 
 theorem alternatingTrace_eq_zero_of_diagonal_eq_zero
     (f : C ⟶ C) (N : ℕ) (ι : ℕ → Type*) [∀ i, Finite (ι i)]

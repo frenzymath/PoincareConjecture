@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,11 +10,6 @@ namespace Homeomorph
 variable {V E : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePL.exists_union_homeomorph_fixing_residual
     {S q : Set V} {T₀ T₁ R : Set E} {L₀ : S ≃ₜ T₀} (hL₀ : L₀.IsFinitePL)

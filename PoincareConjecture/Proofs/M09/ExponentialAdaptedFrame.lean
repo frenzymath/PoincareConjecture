@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.AdaptedOrthonormalFrame
 import PoincareConjecture.Proofs.M09.FamilyEndpointEquation
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

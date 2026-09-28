@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.InteriorRepairs.ExceptionRepair
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 open PoincareConjecture.M76.Dehn

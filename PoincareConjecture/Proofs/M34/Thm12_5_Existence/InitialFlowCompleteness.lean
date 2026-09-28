@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.InitialRicciFlow
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M34.InteriorCoefficientLimit
 
 variable {g0 : StandardInitialMetric} {A : CompactCapApproximation g0}
   (G : InteriorCoefficientLimit A)
-
-
 
 theorem limitMetric_exp_bounds (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x v : StandardCapSpace) :
@@ -40,8 +29,6 @@ theorem limitMetric_exp_bounds (P : RicciFlowCurvatureTheory.{0})
     change (G.limitMetric P t).inner x v v = G.coefficients (t, x) v v at heq
     rw [heq]
     exact G.coefficients_exp_bounds P htpos x v
-
-
 
 theorem initial_tangentNorm_le_limit (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) (x v : StandardCapSpace) :
@@ -65,8 +52,6 @@ theorem initial_tangentNorm_le_limit (P : RicciFlowCurvatureTheory.{0})
   have hsqrt := Real.sqrt_le_sqrt hmetric
   rw [hexp, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (Real.exp_nonneg _)] at hsqrt
   exact hsqrt
-
-
 
 theorem initialFlow_complete (P : RicciFlowCurvatureTheory.{0})
     {t : ℝ} (ht : t ∈ Ico 0 A.time) : MetricComplete ((G.initialFlow P).metric t) := by

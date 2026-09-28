@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.LocalRank
 
-
 open Set
 namespace Poincare.Alexandrov
 noncomputable def minLocalAnglePackingRankOn {X : Type*} [MetricSpace X]

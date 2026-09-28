@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M02.BallHomotopyExtension
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.StereographicConformal
 import Mathlib.Topology.Piecewise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ open scoped Topology unitInterval
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem suNullSphere_relative_caps
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -56,9 +44,6 @@ theorem suNullSphere_relative_caps
       change AffineMap.lineMap ((a x).val) ((b x).val) (t : ℝ) = _
       rw [← hab hx, AffineMap.lineMap_same_apply]
     exact (congrArg F (Subtype.ext hsame)).trans (hF (a x))
-
-
-
 
 theorem suHomotopy_extend_closed
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -120,9 +105,6 @@ theorem suHomotopy_extend_closed
     exact H.apply_one x
   · intro x hx
     exact dif_neg hx
-
-
-
 
 theorem suNullSphere_replace_closed_caps
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.NormalDeTurckDifference
 import PoincareConjecture.Proofs.M03.Existence.IntrinsicLieMetricNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

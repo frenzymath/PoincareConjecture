@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.MorseRadialChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HorizontalMembership
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LocalizedClockGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,10 +11,6 @@ open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 3000000 in
-
-
-
-
 
 theorem exists_relative_collar_band_verticalization
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

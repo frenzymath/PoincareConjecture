@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundProductConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem product_euclideanConnection_fderiv
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
@@ -49,8 +39,6 @@ theorem product_euclideanConnection_fderiv
   simpa only [Function.comp_def, ContinuousLinearMap.comp_apply] using!
     congrArg (fun A : V →L[ℝ] V => A w) hd.fderiv
 
-
-
 theorem product_curvature
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)
@@ -70,8 +58,6 @@ theorem product_curvature
   apply cylinderCoordinateEquiv.injective
   simp only [map_sub, map_add, ContinuousLinearEquiv.apply_symm_apply,
     Prod.mk_add_mk, Prod.mk_sub_mk, add_zero, sub_self]
-
-
 
 theorem product_curvatureTensor
     {g : RiemannianMetric 3 V} {h : RiemannianMetric 2 E2}

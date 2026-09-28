@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.SphereLocalF
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatBoundedRegion
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.Projection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -1,4 +1,3 @@
-
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.LinearAlgebra.CrossProduct
 import Mathlib.Tactic.FieldSimp
@@ -6,17 +5,9 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
 open Matrix
 
 namespace Poincare.LinearAlgebra
-
 
 theorem crossProduct_dotProduct_self_of_orthonormal {u v : Fin 3 → ℝ}
     (hu : u ⬝ᵥ u = 1) (hv : v ⬝ᵥ v = 1) (huv : u ⬝ᵥ v = 0) :
@@ -47,7 +38,6 @@ private theorem exists_unit_perpendicular (w : Fin 3 → ℝ) :
         Fin.succ_zero_eq_one]
       ring
 
-
 theorem exists_orthonormal_crossProduct_coordinates (w : Fin 3 → ℝ)
     (hw : w ⬝ᵥ w = 1) :
     ∃ u v : Fin 3 → ℝ,
@@ -59,7 +49,6 @@ theorem exists_orthonormal_crossProduct_coordinates (w : Fin 3 → ℝ)
   · rw [cross_cross_eq_smul_sub_smul', hu, hwu]
     simp
 
-
 theorem exists_orthonormal_crossProduct (w : EuclideanSpace ℝ (Fin 3))
     (hw : dotProduct w w = 1) :
     ∃ u v : EuclideanSpace ℝ (Fin 3),
@@ -67,7 +56,6 @@ theorem exists_orthonormal_crossProduct (w : EuclideanSpace ℝ (Fin 3))
         crossProduct u v = (w : Fin 3 → ℝ) := by
   obtain ⟨u, v, hu, hv, huv, huv_eq⟩ := exists_orthonormal_crossProduct_coordinates w hw
   exact ⟨WithLp.toLp 2 u, WithLp.toLp 2 v, hu, hv, huv, huv_eq⟩
-
 
 theorem exists_orthonormal_crossProduct_of_norm_eq_one (w : EuclideanSpace ℝ (Fin 3))
     (hw : ‖w‖ = 1) :
@@ -77,7 +65,6 @@ theorem exists_orthonormal_crossProduct_of_norm_eq_one (w : EuclideanSpace ℝ (
   apply exists_orthonormal_crossProduct
   have h := real_inner_self_eq_norm_sq w
   simpa only [EuclideanSpace.inner_eq_star_dotProduct, star_trivial, hw, one_pow] using h
-
 
 theorem norm_crossProduct_of_orthonormal {u v : EuclideanSpace ℝ (Fin 3)}
     (hu : dotProduct u u = 1) (hv : dotProduct v v = 1) (huv : dotProduct u v = 0) :

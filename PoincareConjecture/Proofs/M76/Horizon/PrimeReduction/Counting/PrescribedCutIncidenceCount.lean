@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.FiniteCompl
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentCycleRankBound
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHomologyCount
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory
 open scoped BigOperators

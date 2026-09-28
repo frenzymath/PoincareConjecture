@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Polygons.TriangleProducts
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -46,6 +44,4 @@ structure SurfaceLowerProducts (T : CoorientedSurfaceStars E) where
     (fun r : ℝ => map s (s.centroid ℝ id, r)) '' I =
       T.dualRegion s ∩ (T.marked 1).space
 
-
 end Geometry.SimplicialComplex
-

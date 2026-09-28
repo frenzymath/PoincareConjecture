@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandJunctionGerms
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ChainTopAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +46,6 @@ theorem band_endpoint_top_mem_scaled_core_contacts
     rw [he, smul_smul]⟩
 
 set_option maxHeartbeats 2000000 in
-
 
 theorem canonical_vertex_fan_at_upper_band_junction
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

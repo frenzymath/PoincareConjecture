@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalMetric
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_PhysicalBirthMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,14 +18,11 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
 noncomputable def cylinderQuadratic
     (e : SurgeryFlowCylinder F C origin 1 I U) (x : C.carrier)
     (v : TangentSpace (𝓡 3) x) (s : ℝ) : ℝ := by
   classical
   exact if hs : s ∈ I then e.pullbackInner s hs x v v else 0
-
 
 theorem cylinderQuadratic_of_mem (e : SurgeryFlowCylinder F C origin 1 I U)
     (x : C.carrier) (v : TangentSpace (𝓡 3) x) (s : ℝ) (hs : s ∈ I) :
@@ -43,8 +31,6 @@ theorem cylinderQuadratic_of_mem (e : SurgeryFlowCylinder F C origin 1 I U)
       (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x v) := by
   classical
   simp only [cylinderQuadratic, dif_pos hs, SurgeryFlowCylinder.pullbackInner, one_mul]
-
-
 
 theorem cylinderQuadratic_eq_slab
     (e : SurgeryFlowCylinder F C origin 1 I U) (hU : IsOpen U)
@@ -72,8 +58,6 @@ theorem cylinderQuadratic_eq_slab
   rw [cylinderQuadratic_of_mem e x v s hs, hnear.mfderiv_eq, hnear.eq_of_nhds,
     mfderiv_comp x (hi.mdifferentiableAt (by simp)) (hf.mdifferentiableAt (by simp))]
   exact S.metric_pullback ⟨origin + s / 1, hs'⟩ (f x) _ _
-
-
 
 theorem cylinderQuadratic_eq_preterminal
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -106,8 +90,6 @@ theorem cylinderQuadratic_eq_preterminal
   rw [cylinderQuadratic_of_mem e x v s hs, hnear.mfderiv_eq, hnear.eq_of_nhds,
     mfderiv_comp x (hi.mdifferentiableAt (by simp)) (hf.mdifferentiableAt (by simp))]
   exact event.pre_metric ⟨origin + s / 1, hs'⟩ (f x) _ _
-
-
 
 theorem cylinderQuadratic_eq_retained_terminal
     (e : SurgeryFlowCylinder F C origin 1 I U) (hU : IsOpen U)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsFrame
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 noncomputable def intrinsicCurvatureSlots : (m : ℕ) → Fin (4 + m) → ℝ → StandardCapSpace
   | 0 => ![intrinsicAxisAngular g hrotation hcomplete, intrinsicAxisRadial g hrotation hcomplete,
@@ -69,7 +59,6 @@ theorem intrinsicCurvatureSlots_parallel (m : ℕ) (i : Fin (4 + m))
   | succ m ih =>
       refine Fin.cases (intrinsicAxisRadial_parallel g hrotation hcomplete D hs) ih i
 
-
 noncomputable def intrinsicCurvatureJet (m : ℕ) (s : ℝ) : ℝ :=
   D.iteratedCovariantTensorDerivative D.riemannEvaluation m
     (intrinsicAxisCurve g hrotation hcomplete s)
@@ -101,7 +90,6 @@ theorem intrinsicCurvatureJet_contDiff (m : ℕ) :
     LeviCivitaData.tensorCoordinateEvaluation_model] using
     he.comp ((hS.comp (intrinsicAxisCurve_contDiff g hrotation hcomplete)).prodMk hV)
 
-
 theorem intrinsicCurvatureJet_hasDerivAt (m : ℕ) {s : ℝ} (hs : 0 < s) :
     HasDerivAt (intrinsicCurvatureJet g hrotation hcomplete D m)
       (intrinsicCurvatureJet g hrotation hcomplete D (m + 1) s) s := by
@@ -132,8 +120,6 @@ theorem intrinsicCurvatureJet_hasDerivAt (m : ℕ) {s : ℝ} (hs : 0 < s) :
   exact ((intrinsicCurvatureJet_contDiff g hrotation hcomplete D m).differentiable
     (by simp) s).hasDerivAt.congr_deriv hfinal
 
-
-
 theorem iteratedDeriv_intrinsicCurvatureJet (m : ℕ) {s : ℝ} (hs : 0 < s) :
     iteratedDeriv m (intrinsicCurvatureJet g hrotation hcomplete D 0) s =
       intrinsicCurvatureJet g hrotation hcomplete D m s := by
@@ -146,8 +132,6 @@ theorem iteratedDeriv_intrinsicCurvatureJet (m : ℕ) {s : ℝ} (hs : 0 < s) :
         filter_upwards [eventually_gt_nhds hs] with a ha
         exact ih ha
       rw [heq.deriv_eq, (intrinsicCurvatureJet_hasDerivAt g hrotation hcomplete D m hs).deriv]
-
-
 
 theorem abs_intrinsicCurvatureJet_le (m : ℕ) (s : ℝ) :
     |intrinsicCurvatureJet g hrotation hcomplete D m s| ≤

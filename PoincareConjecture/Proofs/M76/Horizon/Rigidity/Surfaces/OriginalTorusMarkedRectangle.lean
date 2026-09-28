@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalMiddle
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusResidualOwnerArcs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -133,12 +123,6 @@ private theorem exists_interior_boundary_mark
     have hv := congrArg Subtype.val hm
     norm_num [m] at hv
 
-
-
-
-
-
-
 theorem exists_marked_boundary_rectangle
     {D B : Set E} (hball : IsFinitePLBallPair (ℝ × ℝ) D B)
     {a b : E} (ha : a ∈ B) (hb : b ∈ B) (hab : a ≠ b) :
@@ -246,9 +230,6 @@ theorem exists_marked_boundary_rectangle
   exact ⟨c, d, W, Z, L, R, hcB, hdB, hca, hcb, hda, hdb,
     hW, hZ, hL, hR, hboundary, hWZ, hLR, hWL, hWR, hZL, hZR,
     C, hC, hCW, hCZ, hCL, hCR⟩
-
-
-
 
 theorem exists_marked_boundary_rectangle_of_owner_interval
     {J : SimplicialComplex ℝ E} [Fintype J.faces]

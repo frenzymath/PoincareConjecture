@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.TrivialSectionPositiveSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 private theorem mem_vertices_of_face_member (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) {v : E} (hv : v ∈ s) : v ∈ K.vertices :=
   K.down_closed hs (Finset.singleton_subset_iff.mpr hv) (Finset.singleton_nonempty v)
-
-
-
-
 
 theorem extreme_vertex_zero_section (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)
@@ -54,9 +41,6 @@ theorem extreme_vertex_zero_section (K : SimplicialComplex ℝ E)
       simpa only [convexHull_singleton] using convexHull_mono hsub hz
     · rintro x rfl
       exact ⟨vertices_subset_space hqK, hAq⟩
-
-
-
 
 theorem extreme_vertex_level_homothety (K : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -93,9 +77,6 @@ theorem extreme_vertex_level_homothety (K : SimplicialComplex ℝ E)
       (mem_image_of_mem (AffineMap.homothety q (c / β)) hyt)
     exact ⟨K.convexHull_subset_space ht hx.1, hx.2⟩
 
-
-
-
 theorem extreme_vertex_top_section_nonempty (K : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)
@@ -122,9 +103,6 @@ theorem extreme_vertex_top_section_nonempty (K : SimplicialComplex ℝ E)
   · change A (AffineMap.lineMap q v (β / A v)) = β
     rw [A.apply_lineMap, hAq, AffineMap.lineMap_apply_ring', sub_zero, add_zero,
       div_mul_cancel₀ β hvpos.ne']
-
-
-
 
 theorem extreme_vertex_sublevel_eq_convexJoin (K : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

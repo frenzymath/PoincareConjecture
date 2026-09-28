@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMeasurableVe
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicGreenIdentity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeWeakPhaseClass
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -31,9 +19,6 @@ local notation "mu" => volume.restrict S
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem m64Annulus_scalar_weak_of_green
     {u : LoopPlane → ℝ} {V : Fin 2 → LoopPlane → ℝ} {b0 b1 : ℝ → ℝ} {D : ℝ}
@@ -73,9 +58,6 @@ theorem m64Annulus_scalar_weak_of_green
   apply eq_neg_iff_add_eq_zero.mpr
   simpa only [mul_comm, add_comm] using heq
 
-
-
-
 theorem m64Annulus_vertical_green_sub_const
     {u V : LoopPlane → ℝ} {b0 b1 : ℝ → ℝ}
     (hu : MemLp u 2 mu) (hb0 : Continuous b0) (hb1 : Continuous b1)
@@ -110,9 +92,6 @@ theorem m64Annulus_vertical_green_sub_const
   apply integral_congr_ae
   filter_upwards [] with x
   ring
-
-
-
 
 theorem m64Annulus_seam_green_sub_const
     {u V : LoopPlane → ℝ} {D : ℝ} (hu : MemLp u 2 mu)

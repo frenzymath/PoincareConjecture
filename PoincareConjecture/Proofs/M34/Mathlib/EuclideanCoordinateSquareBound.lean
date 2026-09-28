@@ -1,20 +1,9 @@
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Operator.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
 
 theorem ContinuousLinearMap.sum_sq_euclidean_apply_le
     {E ι : Type*} [SeminormedAddCommGroup E] [NormedSpace ℝ E] [Fintype ι]

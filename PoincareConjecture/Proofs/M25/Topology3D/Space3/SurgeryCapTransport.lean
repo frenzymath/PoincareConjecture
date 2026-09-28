@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +12,6 @@ local notation "I2" => (modelWithCornersSelf Real E2)
 local notation "CINF" => ((Top.top : ENat) : WithTop ENat)
 
 variable {psi psiNew : Prod UnitTwoSphere Real -> E3} {u : UnitTwoSphere}
-
-
 
 theorem flatChart_mem_sourceCap (C : SurgeryCapTag psi u)
     (x : E2) (hx : norm x <= 1 / 4) : C.sourceCap (C.flatChart x) := by
@@ -43,8 +32,6 @@ theorem flatChart_mem_sourceCap (C : SurgeryCapTag psi u)
   refine Exists.intro q (And.intro hq ?_)
   have hflat := C.flat_eq q hq (by rw [hcoords]; exact hx)
   simpa only [hcoords] using hflat.symm
-
-
 
 theorem exists_source_band_mem (C : SurgeryCapTag psi u)
     (U : Set UnitTwoSphere) (hU : IsOpen U) (hcap : Set.Subset C.sourceCap U) :
@@ -73,8 +60,6 @@ theorem exists_source_band_mem (C : SurgeryCapTag psi u)
   have hqd : (heightCoordinates (q : E3)).2 < d :=
     lt_of_lt_of_le hq (min_le_left _ _)
   linarith
-
-
 
 noncomputable def pullback (C : SurgeryCapTag psi u)
     (e : OpenPartialHomeomorph UnitTwoSphere UnitTwoSphere)
@@ -150,7 +135,6 @@ noncomputable def pullback (C : SurgeryCapTag psi u)
     rw [heq _ (e.map_target hxt) s hs1, e.right_inv hxt, C.collar_eq x hx (gamma * s) htime]
     simp only [mul_assoc]
 
-
 theorem pullback_cap (C : SurgeryCapTag psi u)
     (e : OpenPartialHomeomorph UnitTwoSphere UnitTwoSphere)
     (he : ContMDiffOn I2 I2 CINF e e.source)
@@ -162,7 +146,6 @@ theorem pullback_cap (C : SurgeryCapTag psi u)
     (C.pullback e he hei gamma hgamma hcap heq).cap = C.cap := by
   rw [cap_eq_image, cap_eq_image]
   rfl
-
 
 theorem pullback_seam (C : SurgeryCapTag psi u)
     (e : OpenPartialHomeomorph UnitTwoSphere UnitTwoSphere)

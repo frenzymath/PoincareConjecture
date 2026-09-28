@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothInitialCoordinateOrbit
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicInitialCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
 open scoped ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_smooth_vectorPeriodic_initialCoordinate_orbit
     {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]

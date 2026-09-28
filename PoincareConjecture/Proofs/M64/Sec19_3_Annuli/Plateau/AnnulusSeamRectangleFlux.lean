@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamRadialPullbackTest
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => m64AnnulusSeamDomain
-
-
 
 theorem M64ObservedWeakAnnulus.exists_seam_matching_rectangle_circle
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

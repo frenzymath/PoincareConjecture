@@ -1,17 +1,6 @@
-
-
-
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 import Mathlib.Analysis.Convex.Between
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -36,7 +25,6 @@ private theorem right_triangle_independent {ε : ℝ} (hε : 0 < ε) :
   have hw0 : w 0 = 0 := by simpa [Fin.sum_univ_succ, hw1, hw2] using hw
   fin_cases i <;> assumption
 
-
 noncomputable def rightTriangleBasis {ε : ℝ} (hε : 0 < ε) : AffineBasis (Fin 3) ℝ E2 :=
   ⟨![!₂[0, 0], !₂[ε, 0], !₂[0, ε]], right_triangle_independent hε,
     (right_triangle_independent hε).affineSpan_eq_top_iff_card_eq_finrank_add_one.mpr
@@ -44,7 +32,6 @@ noncomputable def rightTriangleBasis {ε : ℝ} (hε : 0 < ε) : AffineBasis (Fi
 
 @[simp] theorem rightTriangleBasis_apply {ε : ℝ} (hε : 0 < ε) (i : Fin 3) :
     rightTriangleBasis hε i = ![!₂[0, 0], !₂[ε, 0], !₂[0, ε]] i := rfl
-
 
 theorem rightTriangleBasis_coord {ε : ℝ} (hε : 0 < ε) (z : E2) (i : Fin 3) :
     (rightTriangleBasis hε).coord i z = ![1 - z 0 / ε - z 1 / ε, z 0 / ε, z 1 / ε] i := by
@@ -61,7 +48,6 @@ theorem rightTriangleBasis_coord {ε : ℝ} (hε : 0 < ε) (z : E2) (i : Fin 3) 
       congrArg ((rightTriangleBasis hε).coord i) hz.symm
     _ = w i :=
       (rightTriangleBasis hε).coord_apply_combination_of_mem (Finset.mem_univ i) hw
-
 
 theorem mem_rightTriangleBasis_convexHull {ε : ℝ} (hε : 0 < ε) (z : E2) :
     z ∈ convexHull ℝ (range (rightTriangleBasis hε)) ↔

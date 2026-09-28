@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.UnitLens
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +14,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
 open Poincare.Geometry.Euclidean
-
-
-
 
 theorem exists_common_marked_unit_cap_lens
     {v : E3} (hv : ‖v‖ = 1) (c s : Real) (hs : s ≠ 0)

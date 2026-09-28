@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalInteriorStarBall
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.DualVertexFaceContainment
 import PoincareConjecture.Proofs.M76.Mathlib.SubdivisionVertices
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -19,10 +9,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem isFinitePLBallPair_original_interior_vertex_dual
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

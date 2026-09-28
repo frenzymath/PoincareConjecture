@@ -1,20 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.OneDimensional
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -27,8 +12,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_finite_smoothEdge_level_intersections {I : Type v} [Finite I]
     (e : I → SmoothEdge M) (g : M → ℝ)

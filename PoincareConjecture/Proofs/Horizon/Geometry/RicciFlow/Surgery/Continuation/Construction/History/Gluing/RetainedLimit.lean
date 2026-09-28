@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Gluing.OpenMetricJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.OpenFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem SurgeryMetricLimitOn.pullbackTarget
     {A B : GeneralizedSliceCarrier.{u}}
@@ -60,8 +50,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
   {S : ℝ → GeneralizedSliceCarrier.{u}}
   {g : ∀ t, RiemannianMetric 3 (S t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P S g T)
-
-
 
 theorem continuing_metric_limit {J : Set ℝ} (F : RicciFlow 3 (S T).carrier J)
     (hF : F.metric T = g T) :

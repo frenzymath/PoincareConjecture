@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.CornerCo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningProtectedCorner
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningCornerSides
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
@@ -210,4 +203,3 @@ theorem OriginalDiskProduct.exists_original_bigon_marked_correction
     (and_iff_left hleft).symm.trans ((hmarks z hz t ht).2.trans (and_iff_left hright))⟩
 
 end PoincareConjecture.M76
-

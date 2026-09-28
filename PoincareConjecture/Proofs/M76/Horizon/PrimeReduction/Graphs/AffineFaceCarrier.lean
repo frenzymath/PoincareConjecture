@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
 
 theorem exists_finite_affine_face_carrier
     (K : SimplicialComplex ℝ E) {s : Finset E} (hs : s ∈ K.faces)

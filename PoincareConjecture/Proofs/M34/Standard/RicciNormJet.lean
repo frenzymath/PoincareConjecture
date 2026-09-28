@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.TensorCoordinateNorm
 import PoincareConjecture.Proofs.M34.Mathlib.InvertibleBilinearGram
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem LeviCivitaData.tensorNorm_ricciEvaluation_sq
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -42,16 +32,12 @@ namespace M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def ricciNormSquaredTwoJet {n : ℕ} (J : MetricTwoJet n) : ℝ :=
   (tensorNormFromComponents
     (Matrix.of (fun i j => J.1 (EuclideanSpace.basisFun (Fin n) ℝ i)
       (EuclideanSpace.basisFun (Fin n) ℝ j)))
     (fun I : Fin 2 → Fin n => jetRicci J (EuclideanSpace.basisFun (Fin n) ℝ (I 0))
       (EuclideanSpace.basisFun (Fin n) ℝ (I 1)))) ^ 2
-
-
 
 theorem continuousAt_ricciNormSquaredTwoJet {n : ℕ} {J : MetricTwoJet n}
     (hJ : J.1.IsInvertible) : ContinuousAt ricciNormSquaredTwoJet J := by
@@ -64,8 +50,6 @@ theorem continuousAt_ricciNormSquaredTwoJet {n : ℕ} {J : MetricTwoJet n}
       (EuclideanSpace.basisFun (Fin n) ℝ (I 1))).continuousAt.tendsto)
     (hJ.det_bilinear_basis_ne_zero (EuclideanSpace.basisFun (Fin n) ℝ).toBasis)
   exact h.pow 2
-
-
 
 theorem ricciNormSquaredTwoJet_metricTwoJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

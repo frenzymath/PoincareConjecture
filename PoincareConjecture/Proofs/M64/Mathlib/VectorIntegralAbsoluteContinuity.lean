@@ -1,15 +1,5 @@
 import Mathlib.MeasureTheory.Function.AbsolutelyContinuous
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,11 +7,6 @@ noncomputable section
 open Set MeasureTheory
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem intervalIntegral_vector_absolutelyContinuous
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

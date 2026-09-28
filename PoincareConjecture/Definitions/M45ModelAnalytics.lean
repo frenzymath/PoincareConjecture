@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M45PointwiseAnalyticEstimate
     {M : Type u} [TopologicalSpace M]
@@ -29,8 +16,6 @@ def M45PointwiseAnalyticEstimate
     scalarGradientNorm g D x ≤ B * D.scalarCurvature x ^ (3 / 2 : ℝ) ∧
     |D.laplacian D.scalarCurvature x + 2 * D.ricciNormSq x| ≤
       B * D.scalarCurvature x ^ 2
-
-
 
 structure M45ModelAnalyticBounds where
   neck_constant : ℝ
@@ -50,7 +35,6 @@ structure M45ModelAnalyticBounds where
         (N : SingularRoundComponent g epsilon),
         epsilon ≤ 1 / 200 → ∀ x ∈ N.carrier,
           M45PointwiseAnalyticEstimate g D x round_constant
-
 
   standard_neck :
     ∀ (atlas : StandardCylinderAtlas) {g₀ : StandardInitialMetric}

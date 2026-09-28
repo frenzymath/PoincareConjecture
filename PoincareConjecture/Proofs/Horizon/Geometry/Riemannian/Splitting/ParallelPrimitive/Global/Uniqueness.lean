@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace PoincareConjecture.ParallelPrimitive
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eqOn_of_mvfderiv_eq (U : Opens M) (hUc : IsPreconnected (U : Set M))
     {f k : M → ℝ} (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U)

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ParentBoundaryRefinement
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,10 +9,6 @@ open scoped Topology
 open Poincare.Topology.Plane.Meshes PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_preconnected_subset_segment_convex
     {A : Set AnnulusCoordinates} (hA : IsPreconnected A)
@@ -71,12 +55,6 @@ private theorem parent_edge_coord_zero
   have h0 : i ≠ i.succAbove 0 := Ne.symm (Fin.succAbove_ne i 0)
   have h1 : i ≠ i.succAbove 1 := Ne.symm (Fin.succAbove_ne i 1)
   simp only [b.coord_apply_ne h0, b.coord_apply_ne h1, AffineMap.lineMap_same_apply]
-
-
-
-
-
-
 
 theorem m64Intrinsic_child_straight_boundary_contact
     (F G : OpenPartialHomeomorph Plane AnnulusCoordinates)

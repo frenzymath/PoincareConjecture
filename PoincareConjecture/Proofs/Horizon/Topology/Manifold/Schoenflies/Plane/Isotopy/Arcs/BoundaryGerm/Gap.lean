@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.Connector
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,8 +26,6 @@ private theorem subset_compl_of_preconnected_gap
     exact (hxC ((closure_minimal (hin.trans interior_subset) hC) hxG)).elim
   · exact hout
 
-
-
 theorem preconnected_gap_subset_compl_of_disjoint_closed
     {X : Type*} [TopologicalSpace X] {C₀ C₁ G : Set X}
     (hC₀ : IsClosed C₀) (hC₁ : IsClosed C₁) (hdis : Disjoint C₀ C₁)
@@ -53,8 +45,6 @@ theorem preconnected_gap_subset_compl_of_disjoint_closed
     exact ⟨x, hxG, fun hx => disjoint_left.mp hdis hxC hx⟩
   exact fun x hx hmem => hmem.elim (hout₀ hx) (hout₁ hx)
 
-
-
 theorem connector_image_subset_compl_of_disjoint_closed
     {X : Type*} [TopologicalSpace X] {C₀ C₁ : Set X}
     (hC₀ : IsClosed C₀) (hC₁ : IsClosed C₁) (hdis : Disjoint C₀ C₁)
@@ -70,8 +60,6 @@ theorem connector_image_subset_compl_of_disjoint_closed
   exact preconnected_gap_subset_compl_of_disjoint_closed hC₀ hC₁ hdis
     (isPreconnected_Ioo.image β (hβ.mono Ioo_subset_Icc_self)) havoid
     ⟨β 0, hend (by simp), hβ₀⟩ ⟨β 1, hend (by simp), hβ₁⟩
-
-
 
 theorem exists_closedBall_disjoint_of_preconnected_gap
     {X : Type*} [PseudoMetricSpace X] {C₀ C₁ G : Set X}

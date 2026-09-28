@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedParameterLift
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,10 +16,6 @@ local notation "J" => Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ
 local notation "D" => coordinateCylinder J
 local notation "R" => latticeHandleDomain ι κ L
 local notation "X" => LatticeHandleAmbient ι κ L
-
-
-
-
 
 theorem protected_cube_image_isFinitePL
     (e : α → OpenPartialHomeomorph X (Fin 3 → ℝ))

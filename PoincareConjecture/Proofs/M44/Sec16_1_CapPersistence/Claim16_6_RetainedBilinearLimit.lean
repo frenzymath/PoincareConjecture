@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedMe
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 import Mathlib.Data.Finset.Lattice.Fold
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ noncomputable local instance retainedBilinearNorm : NormedAddCommGroup Bilin :=
 
 noncomputable local instance retainedBilinearSpace : NormedSpace ℝ Bilin :=
   ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem bilinear_jets_of_surgeryMetricLimitOn
     {A B : GeneralizedSliceCarrier.{u}}
@@ -87,9 +75,6 @@ theorem bilinear_jets_of_surgeryMetricLimitOn
   have hnorm := SpacetimeBounds.norm_iteratedFDeriv_bilinear_le_of_components
     basis (hc.sub hf') k hcomponents
   exact hnorm.trans_lt (by norm_num; linarith)
-
-
-
 
 theorem retained_bilinear_jet_limit
     {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}

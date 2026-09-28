@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphSuffix
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallStrongRadius
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.PathCapture
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -25,10 +15,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
 
 theorem exists_retained_short_suffix_capture_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

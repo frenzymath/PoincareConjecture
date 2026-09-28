@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.RawSphereCut
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalCutHomologyRetract
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
 set_option autoImplicit false
 open Set
 open scoped Topology

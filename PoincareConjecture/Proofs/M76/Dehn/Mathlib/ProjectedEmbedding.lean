@@ -1,21 +1,9 @@
 import Mathlib.Topology.IsLocalHomeomorph
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
-
-
-
 
 theorem IsLocalHomeomorph.exists_embedding_restrict
     {X Y Z : Type*} [TopologicalSpace X] [TopologicalSpace Y] [TopologicalSpace Z]
@@ -30,10 +18,6 @@ theorem IsLocalHomeomorph.exists_embedding_restrict
   refine ⟨W, B.open_source.preimage hj.continuous, hx, ?_⟩
   rw [he]
   exact B.isOpenEmbedding_restrict.isEmbedding.comp hbranch
-
-
-
-
 
 theorem Function.Injective.finite_fiber_comp_ncard_le
     {X Y Z : Type*} {j : X → Y} (hj : Function.Injective j)

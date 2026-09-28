@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_InitialCylinder
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_MaximalCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 structure MaximalCapSample (g0 : StandardInitialMetric)
     (F : SurgeryFlowData.{u}) (a : ℝ) (ha : a ∈ F.surgery_times)
@@ -46,22 +34,14 @@ variable {g0 : StandardInitialMetric} {F : SurgeryFlowData.{u}} {a B : ℝ}
   {ha : a ∈ F.surgery_times} [Nonempty (F.slice a).carrier]
   {i : Fin (F.event a ha).cap_count}
 
-
-
 theorem region_open (D : MaximalCapSample g0 F a ha i B) : IsOpen D.region :=
   D.target_eq ▸ D.chart.open_target
-
-
 
 theorem region_nonempty (D : MaximalCapSample g0 F a ha i B) : D.region.Nonempty := by
   rw [← D.target_eq]
   exact ⟨D.target_point.1, D.target_point.2⟩
 
 end MaximalCapSample
-
-
-
-
 
 theorem exists_maximal_cap_sample
     (P : M44CapPersistencePredecessors.{u})

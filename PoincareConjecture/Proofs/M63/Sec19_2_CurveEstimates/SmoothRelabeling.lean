@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingScalars
 import PoincareConjecture.Proofs.M62.Lemma0_2_NormalizedFields
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) (d : ℝ → ℝ → M)
 
-
-
 theorem unitTangent_mdifferentiable (hd : M62ShrinkingCurve F d)
     {t : ℝ} (ht : t ∈ Ioo a b) :
     MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n).tangent
@@ -40,8 +28,6 @@ theorem unitTangent_mdifferentiable (hd : M62ShrinkingCurve F d)
     (differentiableAt_id.prodMk (differentiableAt_const t)).mdifferentiableAt
   exact hj.comp x hs
 
-
-
 theorem smooth_curvatureVector_comp (hd : M62ShrinkingCurve F d)
     {phi : ℝ → ℝ} (hphi : Differentiable ℝ phi) (hpos : ∀ x, 0 < deriv phi x)
     {t : ℝ} (ht : t ∈ Ioo a b) (x : ℝ) :
@@ -50,8 +36,6 @@ theorem smooth_curvatureVector_comp (hd : M62ShrinkingCurve F d)
   exact curvatureVector_comp F d
     ((hd.spatial_regular t (Ioo_subset_Icc_self ht)).mdifferentiable (by norm_num))
     hphi hpos (unitTangent_mdifferentiable F d hd ht (phi x))
-
-
 
 theorem curvatureJet_joint_contMDiff [T2Space M] (hd : M62ShrinkingCurve F d)
     (i : ℕ) :
@@ -64,8 +48,6 @@ theorem curvatureJet_joint_contMDiff [T2Space M] (hd : M62ShrinkingCurve F d)
   | succ i ih =>
     exact M62.spatialDerivative_joint_contMDiff F d hd
       (fun z => m63CurvatureJet F d i z.2 z.1) ih
-
-
 
 theorem curvatureJet_mdifferentiable [T2Space M] (hd : M62ShrinkingCurve F d)
     {t : ℝ} (ht : t ∈ Ioo a b) (i : ℕ) :
@@ -80,8 +62,6 @@ theorem curvatureJet_mdifferentiable [T2Space M] (hd : M62ShrinkingCurve F d)
     (differentiableAt_id.prodMk (differentiableAt_const t)).mdifferentiableAt
   exact hj.comp x hs
 
-
-
 theorem smooth_curvatureJet_comp [T2Space M] (hd : M62ShrinkingCurve F d)
     {phi : ℝ → ℝ} (hphi : Differentiable ℝ phi) (hpos : ∀ x, 0 < deriv phi x)
     {t : ℝ} (ht : t ∈ Ioo a b) (i : ℕ) (x : ℝ) :
@@ -91,8 +71,6 @@ theorem smooth_curvatureJet_comp [T2Space M] (hd : M62ShrinkingCurve F d)
     ((hd.spatial_regular t (Ioo_subset_Icc_self ht)).mdifferentiable (by norm_num))
     hphi hpos (fun y => unitTangent_mdifferentiable F d hd ht (phi y))
     (fun j y => curvatureJet_mdifferentiable F d hd ht j (phi y)) i x
-
-
 
 theorem smooth_curvatureJetSquared_comp [T2Space M] (hd : M62ShrinkingCurve F d)
     {phi : ℝ → ℝ} (hphi : Differentiable ℝ phi) (hpos : ∀ x, 0 < deriv phi x)
@@ -106,8 +84,6 @@ section CircleProduct
 
 variable {F' : RicciFlow n M (Icc a b)} {circumference : ℝ}
   (P : M62.CircleProductData F' circumference) (c : ℝ → ℝ → P.charts.Point)
-
-
 
 theorem smooth_rampRatio_comp (hc : M62ShrinkingCurve P.flow c)
     {phi : ℝ → ℝ} (hphi : Differentiable ℝ phi) (hpos : ∀ x, 0 < deriv phi x)

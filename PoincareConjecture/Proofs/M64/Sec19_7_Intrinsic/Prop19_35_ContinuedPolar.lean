@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_MetricGerm
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegularExponential
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RadialGeodesicRealization
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,10 +13,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
 
 theorem m64Intrinsic_isOpen_radial_core {V : Set AnnulusCoordinates} (hV : IsOpen V) :
     IsOpen {v : AnnulusCoordinates | ∀ t ∈ Icc (0 : ℝ) 1, t • v ∈ V} := by
@@ -47,10 +29,6 @@ theorem m64Intrinsic_isOpen_radial_core {V : Set AnnulusCoordinates} (hV : IsOpe
   apply Filter.mem_of_superset (hS.mem_nhds (hvS (mem_singleton v)))
   intro w hw t ht
   exact hprod (show (w, t) ∈ S ×ˢ I from ⟨hw, hI ht⟩)
-
-
-
-
 
 theorem m64Intrinsic_exists_continued_radial_exponential_realizing_geodesics
     (N : IntrinsicAnnulus) {p : AnnulusCoordinates} (hp : p ∈ standardAnnulusDomain)
@@ -158,10 +136,6 @@ theorem m64Intrinsic_exists_continued_radial_exponential_realizing_geodesics
       exact hqconf ⟨mul_nonneg hT.le ht.1,
         (mul_le_mul_of_nonneg_left ht.2 hT.le).trans_eq (mul_one T)⟩
 
-
-
-
-
 theorem m64Intrinsic_exists_continued_radial_exponential_on_ball
     (N : IntrinsicAnnulus) {p : AnnulusCoordinates} (hp : p ∈ standardAnnulusDomain)
     {R : ℝ} (hR : 0 < R) :
@@ -182,11 +156,6 @@ theorem m64Intrinsic_exists_continued_radial_exponential_on_ball
   obtain ⟨e, U, hU, hzero, hball, he0, hes, he, hm, hg, hgeo, hstar, hcontains, _⟩ :=
     m64Intrinsic_exists_continued_radial_exponential_realizing_geodesics N hp hR
   exact ⟨e, U, hU, hzero, hball, he0, hes, he, hm, hg, hgeo, hstar, hcontains⟩
-
-
-
-
-
 
 theorem m64Intrinsic_exists_continued_radial_exponential
     (N : IntrinsicAnnulus) {p : AnnulusCoordinates} (hp : p ∈ standardAnnulusDomain)

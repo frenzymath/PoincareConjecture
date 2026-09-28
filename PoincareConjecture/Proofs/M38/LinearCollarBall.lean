@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M38.BallNormalCorrection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.MatchingBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 noncomputable def exponentialLinearCollar :
     PartialDiffeomorph CylModel CylModel RoundCylinderSpace RoundCylinderSpace ∞ where
@@ -63,8 +51,6 @@ noncomputable def exponentialLinearCollar :
     have hz' : (-1 : ℝ) < z.2 := hz.2
     exact (Real.contDiffAt_log.mpr (by linarith)).contMDiffAt.comp z
       (contMDiff_const.add contMDiff_snd).contMDiffAt
-
-
 
 theorem exists_ballNeighborhood_matching_linear_collar
     {A : GeneralizedSliceCarrier.{u}}
@@ -152,9 +138,6 @@ theorem exists_ballNeighborhood_matching_linear_collar
       rw [he]
       congr 2
       ring
-
-
-
 
 theorem exists_surgeryBall_matching_linear_collar
     {A : GeneralizedSliceCarrier.{u}}

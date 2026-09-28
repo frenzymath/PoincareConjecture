@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Integral
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedTotalCurvature
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -18,7 +10,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.LeviCivitaData
-
 
 theorem integral_scalarCurvature_le_eight_pi
     {S : Type u} [TopologicalSpace S] [MeasurableSpace S] [BorelSpace S]

@@ -2,8 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.Pow.Deriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

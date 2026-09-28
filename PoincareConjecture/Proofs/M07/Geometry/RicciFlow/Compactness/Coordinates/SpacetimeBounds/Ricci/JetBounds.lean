@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Curvature.MetricBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.Ricci
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,8 +41,6 @@ theorem norm_iteratedFDeriv_inverseCoefficients_le
   rw [hp j, one_mul] at h₁
   rw [hp i, one_mul] at h₂
   exact h₁.trans h₂
-
-
 
 theorem exists_affine_ricci_component_jet_bound
     (n q : ℕ) (c : ℝ) (hc : 0 ≤ c) (K : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)

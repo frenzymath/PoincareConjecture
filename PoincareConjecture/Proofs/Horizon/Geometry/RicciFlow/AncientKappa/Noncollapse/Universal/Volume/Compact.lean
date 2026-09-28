@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 import Mathlib.Topology.Algebra.Order.Field
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [CompactSpace M]
-
-
 
 theorem tendsto_ball_volume_div_pow_zero_of_compact (g : RiemannianMetric n M)
     (hn : 0 < n) (p : M) :
@@ -47,8 +37,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   [CompactSpace M]
-
-
 
 theorem asymptotic_volume_ratio_zero_of_compact (K : AncientKappaSolution n M)
     (hcalculus : (K.flow.connection 0).CurvatureTensorCalculus) :

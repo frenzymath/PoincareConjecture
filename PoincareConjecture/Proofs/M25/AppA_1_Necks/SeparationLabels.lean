@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.SphereContainment
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.OverlapSlab
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_near_center_separation_agreement :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -91,9 +75,6 @@ end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.NeckOnlyCover
 
-
-
-
 theorem exists_locally_constant_separation_label :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -147,9 +128,6 @@ theorem exists_locally_constant_separation_label :
   change decide ((neck ⟨N.center, hx⟩).IsSeparating) = true ↔ N.IsSeparating
   exact decide_eq_true_iff.trans
     (hagree (neck ⟨N.center, hx⟩) N (hepsilon _) hNsmall hnear)
-
-
-
 
 theorem exists_uniform_separation_labels :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

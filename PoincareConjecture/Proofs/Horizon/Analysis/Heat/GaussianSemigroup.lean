@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Heat.GaussianEvolution
 import Mathlib.MeasureTheory.Group.IntegralConvolution
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory ProbabilityTheory Filter

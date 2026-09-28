@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCollar
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SphereGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +8,6 @@ open Set Topology IsManifold
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem threeSphereStereographic_isLocalDiffeomorphOn (p0 : UnitThreeSphere) :
     IsLocalDiffeomorphOn (𝓡 3) 𝓘(ℝ, E3) ∞ (threeSphereStereographic p0)
@@ -37,9 +22,6 @@ theorem threeSphereStereographic_isLocalDiffeomorphOn (p0 : UnitThreeSphere) :
       contMDiffOn_invFun := contMDiffOn_symm_of_mem_maximalAtlas he }
   intro x
   exact ⟨d, x.2, fun _ _ => rfl⟩
-
-
-
 
 theorem projective_collar_stereographic_control
     {p : RealProjectiveThree} (p0 : UnitThreeSphere) (hp0 : Quotient.mk' p0 = p)
@@ -85,9 +67,6 @@ theorem projective_collar_stereographic_control
   · intro z hz w hw heq
     exact hinj hz hw ((threeSphereStereographic p0).injOn (hsource hz) (hsource hw) heq)
 
-
-
-
 theorem projective_collar_stereographic_disjoint
     {p : RealProjectiveThree} (p0 : UnitThreeSphere) (hp0 : Quotient.mk' p0 = p)
     {a b : ℝ} {L1 L2 : UnitTwoSphere × ℝ → UnitThreeSphere}
@@ -108,10 +87,6 @@ theorem projective_collar_stereographic_disjoint
   have hvalues : L1 z = L2 w := (threeSphereStereographic p0).injOn
     (hsource (hD1 hz)) (hsource (hD2 hw)) heq.symm
   exact hd ⟨z, hz, rfl⟩ ⟨w, hw, hvalues.symm⟩
-
-
-
-
 
 theorem projective_collar_stereographic_normalized
     {p : RealProjectiveThree} (p0 : UnitThreeSphere) (hp0 : Quotient.mk' p0 = p)

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.Connected
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.Small
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -9,8 +8,6 @@ open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem scalar_integral_le_of_small_connected_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

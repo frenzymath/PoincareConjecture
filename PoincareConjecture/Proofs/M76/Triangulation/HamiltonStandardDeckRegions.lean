@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIncidence
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -99,10 +90,6 @@ private theorem compact_nonempty_not_contained_in_translate [FiniteDimensional �
   rw [← hzx]
   simpa only [← add_assoc, neg_add_cancel, zero_add] using hz
 
-
-
-
-
 theorem disjoint_closure_translate_of_disjoint_frontier [FiniteDimensional ℝ E]
     {U : Set E} (hU : IsOpen U) (hUb : Bornology.IsBounded U)
     (hUc : IsConnected U) (hUf : IsConnected (frontier U))
@@ -132,11 +119,6 @@ theorem disjoint_closure_translate_of_disjoint_frontier [FiniteDimensional ℝ E
       (hUc.nonempty.mono subset_closure) hv (hcl ▸ h)).elim
   · exact (compact_nonempty_not_contains_translate hB
       (hUc.nonempty.mono subset_closure) hv (hcl ▸ h)).elim
-
-
-
-
-
 
 theorem injOn_closure_of_injOn_connected_frontier [FiniteDimensional ℝ E]
     {A : Type*} [AddGroup A] (p : E →+ A)

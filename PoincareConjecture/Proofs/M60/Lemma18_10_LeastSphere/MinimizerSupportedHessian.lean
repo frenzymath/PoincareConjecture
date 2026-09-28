@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -97,9 +87,6 @@ private theorem scalar_supported_hessian :
   exact hKb.trans (mul_le_mul_of_nonneg_left
     (add_le_add (add_le_add hpmono humono) hfmono) hC)
 
-
-
-
 theorem suL2_component_integrals {m : ℕ} {μ : Measure Plane}
     {u : Plane → EuclideanSpace ℝ (Fin m)} (hu : MemLp u 2 μ) :
     (∑ b : Fin m, ∫ x, (u x b) ^ 2 ∂μ) = ∫ x, ‖u x‖ ^ 2 ∂μ := by
@@ -108,9 +95,6 @@ theorem suL2_component_integrals {m : ℕ} {μ : Measure Plane}
   rw [← integral_finsetSum _ (fun b _ => (hc b).integrable_sq)]
   exact integral_congr_ae (Eventually.of_forall fun x =>
     (EuclideanSpace.real_norm_sq_eq (u x)).symm)
-
-
-
 
 theorem suSupported_weak_hessian_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (m : ℕ)

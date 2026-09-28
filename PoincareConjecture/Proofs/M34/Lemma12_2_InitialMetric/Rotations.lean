@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Matrix
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem standardRotation_inner (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)
     (u v : StandardCapSpace) :
@@ -31,13 +19,9 @@ theorem standardRotation_inner (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)
   rw [Matrix.dotProduct_mulVec, ← Matrix.vecMul_transpose A.1 (WithLp.ofLp v),
     Matrix.vecMul_vecMul, hA, Matrix.vecMul_one]
 
-
-
 noncomputable def capRotationIsometry (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) :
     StandardCapSpace →ₗᵢ[ℝ] StandardCapSpace :=
   (Matrix.toLpLin 2 2 A.1).isometryOfInner (standardRotation_inner A)
-
-
 
 theorem standardRotation_mfderiv (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)
     (x : StandardCapSpace) :
@@ -45,9 +29,6 @@ theorem standardRotation_mfderiv (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)
       (capRotationIsometry A).toContinuousLinearMap := by
   rw [mfderiv_eq_fderiv]
   exact (capRotationIsometry A).toContinuousLinearMap.fderiv
-
-
-
 
 theorem capRiemannianMetric_rotation_invariant (a : ℝ) (ha : 0 < a)
     (hapi : a ≤ Real.pi / 2) (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)

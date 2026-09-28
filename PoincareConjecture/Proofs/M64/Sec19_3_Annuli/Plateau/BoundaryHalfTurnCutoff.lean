@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnMeasure
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,9 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64SmoothTransition_deriv_zero {x : ℝ} (hx : x ≤ 0 ∨ 1 ≤ x) :
     deriv Real.smoothTransition x = 0 := by
@@ -31,9 +22,6 @@ theorem m64SmoothTransition_deriv_zero {x : ℝ} (hx : x ≤ 0 ∨ 1 ≤ x) :
     filter_upwards [] with y
     rw [Real.smoothTransition.one_of_one_le hx]
     exact Real.smoothTransition.le_one y
-
-
-
 
 theorem m64SmoothTransition_deriv_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ x, |deriv Real.smoothTransition x| ≤ C := by
@@ -49,28 +37,17 @@ theorem m64SmoothTransition_deriv_bound :
     rw [m64SmoothTransition_deriv_zero hz, abs_zero]
     exact le_max_right _ _
 
-
-
-
 def m64HalfTurnCutoff (j : ℕ) (p : LoopPlane) : ℝ :=
   Real.smoothTransition (((j : ℝ) + 1) / (curvePeriod / 2) * (p 0 - curvePeriod / 2))
-
-
 
 theorem m64HalfTurnCutoff_contDiff (j : ℕ) : ContDiff ℝ ∞ (m64HalfTurnCutoff j) := by
   apply Real.smoothTransition.contDiff.comp
   exact contDiff_const.mul
     ((EuclideanSpace.proj (𝕜 := ℝ) (0 : Fin 2)).contDiff.sub contDiff_const)
 
-
-
-
 theorem m64HalfTurnCutoff_bounds (j : ℕ) (p : LoopPlane) :
     0 ≤ m64HalfTurnCutoff j p ∧ m64HalfTurnCutoff j p ≤ 1 :=
   ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩
-
-
-
 
 theorem m64HalfTurnCutoff_endpoints (j : ℕ) (s : ℝ) :
     m64HalfTurnCutoff j (annulusPoint 0 s) = 0 ∧
@@ -86,9 +63,6 @@ theorem m64HalfTurnCutoff_endpoints (j : ℕ) (s : ℝ) :
     have he : curvePeriod - curvePeriod / 2 = curvePeriod / 2 := by ring
     rw [he, div_mul_cancel₀ _ ha.ne']
     linarith [Nat.cast_nonneg (α := ℝ) j]
-
-
-
 
 theorem m64HalfTurnCutoff_fderiv (j : ℕ) (p : LoopPlane) (i : Fin 2) :
     fderiv ℝ (m64HalfTurnCutoff j) p (EuclideanSpace.single i 1) =
@@ -107,9 +81,6 @@ theorem m64HalfTurnCutoff_fderiv (j : ℕ) (p : LoopPlane) (i : Fin 2) :
     (fun q : LoopPlane => c * (q 0 - curvePeriod / 2))) p _ = _
   rw [hd.fderiv]
   fin_cases i <;> simp [L, c, mul_comm]
-
-
-
 
 theorem m64HalfTurnCutoff_eventually {p : LoopPlane} (hp : p 0 ≠ curvePeriod / 2) :
     ∀ᶠ j : ℕ in atTop,
@@ -130,9 +101,6 @@ theorem m64HalfTurnCutoff_eventually {p : LoopPlane} (hp : p 0 ≠ curvePeriod /
     have hNj : (N : ℝ) ≤ (j : ℝ) := by exact_mod_cast hj
     nlinarith
 
-
-
-
 theorem m64HalfTurnCutoff_deriv_eventually {p : LoopPlane}
     (hp : p 0 ≠ curvePeriod / 2) (i : Fin 2) :
     ∀ᶠ j : ℕ in atTop,
@@ -150,9 +118,6 @@ theorem m64HalfTurnCutoff_deriv_eventually {p : LoopPlane}
       · exact Or.inr (Real.smoothTransition.eq_one_iff_one_le.mp hz)
     rw [m64SmoothTransition_deriv_zero harg, mul_zero]
   · rfl
-
-
-
 
 theorem m64HalfTurnCutoff_matching_derivative_bound
     {C L : ℝ} (hC : 0 ≤ C) (hL : 0 ≤ L)

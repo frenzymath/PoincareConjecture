@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchRegularizedO
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchKernelError
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric Filter
@@ -19,9 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem norm_sub_regularizedCauchyOperator_le {h : ℂ → E} {δ R B : ℝ}
     (hδ : 0 < δ) (hB : 0 ≤ B) (hh : AEStronglyMeasurable h volume)
@@ -60,9 +48,6 @@ theorem norm_sub_regularizedCauchyOperator_le {h : ℂ → E} {δ R B : ℝ}
     _ ≤ Real.pi⁻¹ * ((4 * Real.pi * δ) * B) :=
       mul_le_mul_of_nonneg_left hint (inv_nonneg.mpr Real.pi_pos.le)
     _ = _ := by field_simp
-
-
-
 
 theorem continuous_cauchyOperator_of_bound [CompleteSpace E] {h : ℂ → E} {R B : ℝ}
     (hB : 0 ≤ B) (hh : AEStronglyMeasurable h volume)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcInsertion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,9 +36,6 @@ private theorem arcLift_center_indices {n : ℕ} (i : Fin (n + 1)) :
     exact (finRotate_of_lt i.succ.isLt).symm
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_relative_polygonalArc_lift {n : ℕ}
     (A B : E) (X : E →ₗ[ℝ] ℝ) (hAB : X A < X B)

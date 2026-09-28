@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Hypersurface
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 lemma hessian_mean_curvature (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M)
@@ -63,8 +54,6 @@ lemma hessian_mean_curvature (D : LeviCivitaData g)
   exact h
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem integral_hypersurface_bochner_level_cutoff (D : LeviCivitaData g)
     {f : M → ℝ} {η : ℝ → ℝ}

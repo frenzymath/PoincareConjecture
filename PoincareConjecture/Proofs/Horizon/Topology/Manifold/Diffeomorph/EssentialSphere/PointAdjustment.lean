@@ -3,23 +3,12 @@ import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold NNReal
 
 namespace Poincare
-
-
 
 theorem exists_diffeomorph_move_zero_in_unitBall
     {n : ℕ} {a : EuclideanSpace ℝ (Fin n)} (ha : ‖a‖ < 1) :

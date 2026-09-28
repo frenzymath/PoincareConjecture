@@ -1,21 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumBandCaller
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMixedBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilySourceAtlas.exists_ball_of_extremum_core
     {original : UnitTwoSphere × ℝ → E3}

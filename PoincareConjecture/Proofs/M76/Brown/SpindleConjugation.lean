@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.SpindleHeight
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {B : Type*} [MetricSpace B]
-
 
 def spindle (height : B → ℝ) : Set (B × Ico (0 : ℝ) 1) :=
   {z | (z.2 : ℝ) < height z.1}
@@ -42,9 +31,6 @@ private theorem spindleUpperHomeomorph_mem_iff (height : B → ℝ) (hc : Contin
     apply hAN
     exact (collapseHeight_le z.val.2.property.1).trans_lt hz
   · rw [spindleUpperHomeomorph_apply_above height hc hbounds z (le_of_not_gt hz)]
-
-
-
 
 noncomputable def spindleRestriction (height : B → ℝ) (hc : Continuous height)
     (hbounds : ∀ b, height b ∈ Icc (0 : ℝ) 1)
@@ -89,11 +75,6 @@ theorem spindleRestriction_symm_apply (height : B → ℝ) (hc : Continuous heig
     (N : Set (B × Ico (0 : ℝ) 1)) (hAN : spindle height ⊆ N) (z : N) :
     ((spindleRestriction height hc hbounds N hAN).symm z : B × Ico (0 : ℝ) 1) =
       ((spindleUpperHomeomorph height hc hbounds).symm z).val := rfl
-
-
-
-
-
 
 theorem exists_compact_spindle_conjugation
     (height : B → ℝ) (hc : Continuous height)
@@ -221,10 +202,6 @@ theorem exists_compact_spindle_conjugation
     rw [hPN]
     exact spindleUpperHomeomorph_symm_apply_above height hc hbounds
       (f z) (le_of_not_gt hfzA)
-
-
-
-
 
 theorem exists_compact_spindle_conjugation_fixed_frontier
     (height : B → ℝ) (hc : Continuous height)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcCandidate
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcAuxiliaryEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem IsSimplePolygonalArc.exists_minimal_arc_candidate_map
     [FiniteDimensional ℝ E] (hdim : Module.finrank ℝ E = 2)

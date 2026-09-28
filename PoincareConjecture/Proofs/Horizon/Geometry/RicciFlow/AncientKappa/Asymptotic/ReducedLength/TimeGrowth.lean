@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TemporalBounds
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -62,8 +54,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 namespace AncientAsymptoticSolitonPredecessors
 
-
-
 theorem reducedLength_inverse_weighted_time_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
     (p q : M) {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
@@ -88,7 +78,6 @@ theorem reducedLength_inverse_weighted_time_le
       ((P.continuous_reducedLength p a ha).div_const _)
   exact hclosed.closure_subset ((calibratedMetricVolume (K.flow.metric 0)).dense_of_ae hae q)
 
-
 theorem reducedLength_later_time_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
     (p q : M) {a b : ℝ} (ha : 0 < a) (hab : a ≤ b) :
@@ -100,8 +89,6 @@ theorem reducedLength_later_time_le
 end AncientAsymptoticSolitonPredecessors
 
 namespace AncientRescalingSequence
-
-
 
 theorem reducedLength_at_base_time_le
     {K : AncientKappaSolution n M} (S : AncientRescalingSequence K)

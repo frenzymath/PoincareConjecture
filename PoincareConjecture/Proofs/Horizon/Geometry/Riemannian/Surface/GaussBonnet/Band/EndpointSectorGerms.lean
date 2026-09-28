@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.SectorGerms
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,7 +42,6 @@ private theorem eventually_graph_nonneg_of_hasStrictFDerivAt
       have hb := (abs_le.mp hq).1
       nlinarith [mul_pos hp hpos]
 
-
 noncomputable def transverseCutLine (lo : ℝ → ℝ) (a u w : ℝ) :
     EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ :=
   ((w • ((LinearMap.fst ℝ ℝ ℝ).toAffineMap - AffineMap.const ℝ (ℝ × ℝ) a)) -
@@ -60,8 +52,6 @@ noncomputable def transverseCutLine (lo : ℝ → ℝ) (a u w : ℝ) :
     (q : EuclideanSpace ℝ (Fin 2)) :
     transverseCutLine lo a u w q =
       w * ((collarParameterEquiv q).1 - a) - u * ((collarParameterEquiv q).2 - lo a) := rfl
-
-
 
 theorem transverseCutLine_linear_ne_zero
     {lo : ℝ → ℝ} {a u w : ℝ} (C : TransverseCutCoordinates lo a u w) :
@@ -81,8 +71,6 @@ theorem transverseCutLine_linear_ne_zero
   have hp := C.positive_deriv 0 C.zero_mem_source
   rw [heq] at hp
   simp at hp
-
-
 
 theorem transverseCutLine_eventually_sides
     {lo : ℝ → ℝ} {a u w η : ℝ} (C : TransverseCutCoordinates lo a u w)
@@ -180,7 +168,6 @@ private theorem transverseCutLine_eventually_oblique_sides
   rw [hq.1, hq.2, hcurve q.2]
   constructor <;> constructor <;> intro h <;> nlinarith
 
-
 noncomputable def endpointCutFunctional (_B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
     (right : Bool) :
     EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ :=
@@ -207,7 +194,6 @@ theorem endpointCutFunctional_last_vertex :
       lo (B.interface.cut (Fin.last B.interface.count)) + B.interface.height (Fin.last B.interface.count))) = 0
   rw [B.interface.last_vertex, transverseCutLine_apply, collarParameterEquiv.apply_symm_apply]
   ring
-
 
 theorem firstCutFunctional_eventually_nonpos_iff :
     ∀ᶠ q : ℝ × ℝ in 𝓝 (0, B.interface.height 0),
@@ -238,7 +224,6 @@ private theorem lastCell_succ : B.lastCell.succ = Fin.last B.interface.count := 
   have hn := B.interface.count_pos
   omega
 
-
 theorem lastCutFunctional_eventually_nonpos_iff :
     ∀ᶠ q : ℝ × ℝ in 𝓝 (1, B.interface.height (Fin.last B.interface.count)),
       B.endpointCutFunctional true (collarParameterEquiv.symm
@@ -264,8 +249,6 @@ theorem lastCutFunctional_eventually_nonpos_iff :
     (fun _ => by simp) hlo
   filter_upwards [hg] with q hq
   simpa only [endpointCutFunctional, ↓reduceIte] using hq.1
-
-
 
 theorem band_first_top_eventually_mem_iff_affine_sector :
     ∀ᶠ q : ℝ × ℝ in 𝓝 (0, B.interface.height 0),
@@ -310,7 +293,6 @@ theorem band_first_top_eventually_mem_iff_affine_sector :
     have hp : 0 < B.cut B.firstCell.succ := by
       simpa using B.cut_strictMono (show 0 < B.firstCell.succ by change 0 < 1; norm_num)
     exact False.elim (hp.ne h)
-
 
 theorem band_last_top_eventually_mem_iff_affine_sector :
     ∀ᶠ q : ℝ × ℝ in 𝓝 (1, B.interface.height (Fin.last B.interface.count)),
@@ -393,8 +375,6 @@ private theorem planar_carrier_eventually_of_oblique
     simp only [collarParameterEquiv.apply_symm_apply, G.right_inv hzt,
       collarParameterEquiv.symm_apply_apply]
 
-
-
 theorem planar_carrier_first_top_eventually_iff :
     ∀ᶠ z in 𝓝 (B.planarTopVertex 0), z ∈ F.symm '' B.carrier ↔
       B.endpointCutFunctional false z ≤ 0 ∧ B.topLineFunctional B.firstCell z ≤ 0 := by
@@ -421,7 +401,6 @@ theorem planar_carrier_first_top_eventually_iff :
     rfl
   rw [← hmap]
   exact B.planar_carrier_eventually_of_oblique _ hq _ B.band_first_top_eventually_mem_iff_affine_sector
-
 
 theorem planar_carrier_last_top_eventually_iff :
     ∀ᶠ z in 𝓝 (B.planarTopVertex (Fin.last B.interface.count)), z ∈ F.symm '' B.carrier ↔

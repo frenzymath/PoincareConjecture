@@ -7,13 +7,6 @@ import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -574,4 +567,3 @@ theorem shiChart_curvature_formula [T2Space M] (D : LeviCivitaData g)
   abel
 
 end PoincareConjecture.M04
-

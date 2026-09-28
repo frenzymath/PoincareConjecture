@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.ParameterRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Ancient.CompactEmbedding
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   normedAddCommGroupTangentSpaceVectorSpace normedSpaceTangentSpaceVectorSpace
 
 namespace PointedGeometricConvergence
-
-
 
 theorem eventually_cylinderCover_parametrizations_regular
     {a b : ℝ} {S : PointedFlowSequence 3 a b}
@@ -85,8 +77,6 @@ end PointedGeometricConvergence
 
 namespace AncientPointedGeometricConvergence
 
-
-
 theorem eventually_cylinderCover_slab_regular
     {C : ℕ → FlowCarrier.{0} 3} {g : ∀ k, ℝ → (C k).metric}
     {p : ∀ k, (C k).carrier} {T : ℝ}
@@ -107,8 +97,6 @@ theorem eventually_cylinderCover_slab_regular
     (hj (mem_image_of_mem Φ ⟨mem_univ _, z.property.2.1.le, z.property.2.2.le⟩))
   exact (hΦ z).comp (𝓡 3) (C (G.subsequence i)).carrier
     (G.embedding_smooth i ⟨Φ z, hz⟩)
-
-
 
 theorem eventually_cylinderCover_antipodal_fibers
     {C : ℕ → FlowCarrier.{0} 3} {g : ∀ k, ℝ → (C k).metric}

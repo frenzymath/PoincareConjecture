@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutI
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutBoundaryArcs
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutArcPairing
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -107,8 +100,6 @@ theorem whole_fiber_of_longBoundaryArc_pairing (i : Fin 4)
   · rintro r (rfl | rfl)
     · exact ⟨hp, rfl⟩
     · exact ⟨hq, hH p⟩
-
-
 
 theorem exists_longBoundaryArc_pairing_with_exact_fibers (i : Fin 4) :
     ∃ H : A.longBoundaryArc i ≃ₜ A.longBoundaryArc (A.arcPairing i), H.IsFinitePL ∧

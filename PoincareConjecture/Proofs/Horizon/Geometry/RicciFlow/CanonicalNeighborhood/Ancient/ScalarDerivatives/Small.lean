@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Normalized
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +42,6 @@ theorem ancientKappaNoncollapsed_shrink (F : RicciFlow n M (Iic 0))
   simpa only [F.shrink_curvatureTensorNorm, Equiv.symm_apply_apply] using
     hbound s hs (equivShrink M q) hmem
 
-
-
 noncomputable def smallAncientKappaSolution (K : AncientKappaSolution n M)
     (κ : ℝ) (hκ : 0 < κ) (hnc : AncientKappaNoncollapsed K.flow κ) :
     AncientKappaSolution n (Shrink.{0} M) where
@@ -72,7 +63,6 @@ noncomputable def smallAncientKappaSolution (K : AncientKappaSolution n M)
     exact ⟨equivShrink M x, by simpa using hx⟩
   noncollapsed := ancientKappaNoncollapsed_shrink K.flow hnc
 
-
 noncomputable abbrev smallKappaCarrier : FlowCarrier.{0} n where
   carrier := Shrink.{0} M
   topologicalSpace := inferInstance
@@ -89,8 +79,6 @@ variable {N : Type u} [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N] [IsManifold (𝓡 3) ∞ N]
   [MeasurableSpace N] [BorelSpace N] [T2Space N] [T3Space N]
   [SecondCountableTopology N] [ConnectedSpace N]
-
-
 
 noncomputable abbrev smallBasedKappaSolution (K : AncientKappaSolution 3 N)
     (x : N) (κ : ℝ) (hκ : 0 < κ) (hnc : AncientKappaNoncollapsed K.flow κ)

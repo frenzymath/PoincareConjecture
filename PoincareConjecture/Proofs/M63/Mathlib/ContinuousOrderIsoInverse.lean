@@ -1,22 +1,11 @@
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem continuous_inverse_orderIso_family {Z : Type*} [TopologicalSpace Z]
     (phi : Z → (ℝ ≃o ℝ)) (hphi : ∀ a, Continuous (fun z => phi z a)) :

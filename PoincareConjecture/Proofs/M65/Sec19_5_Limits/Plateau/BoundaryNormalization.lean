@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.ThreePointNormalization
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.SpanningDiskReparameterization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Complex
@@ -21,11 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
-
 
 theorem m65SpanningDisk_threePointNormalization {g : RiemannianMetric 3 M}
     {γ : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ)

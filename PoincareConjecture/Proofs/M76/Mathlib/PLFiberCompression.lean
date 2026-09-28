@@ -2,63 +2,36 @@ import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarShear
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLFiberCompression
 
-
-
-
 noncomputable def value (delta w t : ℝ) : ℝ :=
   delta * t + (1 - delta) * max (-w) (min t w)
-
-
 
 theorem value_of_le_neg {delta w t : ℝ} (hw : 0 ≤ w) (ht : t ≤ -w) :
     value delta w t = delta * t - (1 - delta) * w := by
   rw [value, min_eq_left (by linarith), max_eq_left ht]
   ring
 
-
-
 theorem value_of_mem {delta w t : ℝ} (ht : t ∈ Icc (-w) w) :
     value delta w t = t := by
   rw [value, min_eq_left ht.2, max_eq_right ht.1]
   ring
 
-
-
 theorem value_of_width_le {delta w t : ℝ} (hw : 0 ≤ w) (ht : w ≤ t) :
     value delta w t = delta * t + (1 - delta) * w := by
   rw [value, min_eq_right ht, max_eq_right (by linarith)]
 
-
-
 theorem value_zero_width (delta t : ℝ) : value delta 0 t = delta * t := by
   simp only [value, neg_zero, max_eq_left (min_le_right t 0), mul_zero, add_zero]
-
-
 
 theorem continuous_value (delta : ℝ) :
     Continuous (fun z : ℝ × ℝ => value delta z.1 z.2) := by
   unfold value
   fun_prop
-
-
-
 
 theorem strictMono_value {delta w : ℝ} (hd : 0 < delta) (hw : 0 ≤ w) :
     StrictMono (value delta w) := by
@@ -86,9 +59,6 @@ theorem strictMono_value {delta w : ℝ} (hd : 0 < delta) (hw : 0 ≤ w) :
         value_of_width_le hw (by linarith)]
       nlinarith [mul_pos hd (sub_pos.mpr hab)]
 
-
-
-
 theorem inverse_value {delta w : ℝ} (hd : 0 < delta) (hw : 0 ≤ w) (t : ℝ) :
     value delta⁻¹ w (value delta w t) = t := by
   by_cases ht : t ≤ -w
@@ -108,9 +78,6 @@ theorem inverse_value {delta w : ℝ} (hd : 0 < delta) (hw : 0 ≤ w) (t : ℝ) 
       field_simp
       ring
 
-
-
-
 theorem image_unit_interval {delta w : ℝ} (hd : 0 < delta)
     (hw : 0 ≤ w) (hw1 : w ≤ 1) :
     value delta w '' Ioo (-1) 1 =
@@ -121,8 +88,6 @@ theorem image_unit_interval {delta w : ℝ} (hd : 0 < delta)
     value_of_le_neg hw (by linarith), value_of_width_le hw hw1]
   congr 1 <;> ring
 
-
-
 theorem value_mem_unit_interval {delta w t : ℝ} (hd : 0 < delta)
     (hd1 : delta ≤ 1) (hw : 0 ≤ w) (hw1 : w ≤ 1)
     (ht : t ∈ Ioo (-1) 1) : value delta w t ∈ Ioo (-1) 1 := by
@@ -130,9 +95,6 @@ theorem value_mem_unit_interval {delta w t : ℝ} (hd : 0 < delta)
   have htop : delta + (1 - delta) * w ≤ 1 := by
     nlinarith [mul_nonneg (sub_nonneg.mpr hd1) (sub_nonneg.mpr hw1)]
   exact ⟨lt_of_le_of_lt (by linarith) h.1, lt_of_lt_of_le h.2 htop⟩
-
-
-
 
 theorem abs_value_le {delta w t : ℝ} (hd : 1 ≤ delta) (hw : 0 ≤ w) :
     |value delta w t| ≤ delta * |t| := by
@@ -150,10 +112,6 @@ theorem abs_value_le {delta w t : ℝ} (hd : 1 ≤ delta) (hw : 0 ≤ w) :
       constructor <;> nlinarith [mul_nonneg (sub_nonneg.mpr hd) hw,
         mul_nonneg (show 0 ≤ delta by linarith) (show 0 ≤ t - w by linarith)]
 
-
-
-
-
 noncomputable def homeomorph {X : Type*} [TopologicalSpace X]
     (delta : ℝ) (hd : 0 < delta) (w : X → ℝ) (hw : ∀ x, 0 ≤ w x)
     (hc : Continuous w) : (X × ℝ) ≃ₜ (X × ℝ) where
@@ -166,10 +124,6 @@ noncomputable def homeomorph {X : Type*} [TopologicalSpace X]
     ((hc.comp continuous_fst).prodMk continuous_snd))
   continuous_invFun := continuous_fst.prodMk ((continuous_value delta⁻¹).comp
     ((hc.comp continuous_fst).prodMk continuous_snd))
-
-
-
-
 
 theorem finitePiecewiseAffineOn_value {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -186,8 +140,6 @@ theorem finitePiecewiseAffineOn_value {E : Type*}
     (hm.postcomp ((1 - delta) • ContinuousAffineMap.id ℝ ℝ)).congr (fun _ _ => rfl)
   exact hdt.add hdm
 
-
-
 theorem locallyPiecewiseAffineOn_value_pair (delta : ℝ) :
     LocallyPiecewiseAffineOn (fun z : ℝ × ℝ => value delta z.1 z.2) univ := by
   intro z _
@@ -203,9 +155,6 @@ theorem locallyPiecewiseAffineOn_value_pair (delta : ℝ) :
   rw [hJK]
   exact hzK (mem_singleton z)
 
-
-
-
 theorem locallyPiecewiseAffineOn_value {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {w t : E → ℝ} {U : Set E} (delta : ℝ)
@@ -213,9 +162,6 @@ theorem locallyPiecewiseAffineOn_value {E : Type*}
     LocallyPiecewiseAffineOn (fun x => value delta (w x) (t x)) U := by
   exact ((locallyPiecewiseAffineOn_value_pair delta).comp
     (hw.prod_mk ht)).mono hw.isOpen (fun _ hx => ⟨hx, mem_univ _⟩)
-
-
-
 
 theorem homeomorph_mem_piecewiseAffineGroupoid {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

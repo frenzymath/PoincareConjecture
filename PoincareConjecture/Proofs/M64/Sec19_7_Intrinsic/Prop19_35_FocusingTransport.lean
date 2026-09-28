@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingEndpoint
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_pullback_modelOn
     (N : IntrinsicAnnulus) {gamma V : ℝ → AnnulusCoordinates}
@@ -46,9 +32,6 @@ theorem m64Intrinsic_pullback_modelOn
   congr 1
   rw [m64Intrinsic_curveVelocity_eq_deriv]
   rfl
-
-
-
 
 theorem m64Intrinsic_pullback_coordinate_transport
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}
@@ -94,9 +77,6 @@ theorem m64Intrinsic_pullback_coordinate_transport
     simpa only [ConnectionVariation.covDerivAlong, fderiv_eq_smul_deriv,
       one_smul] using! h)
 
-
-
-
 theorem m64Intrinsic_pullback_congr_base
     (N : IntrinsicAnnulus) {gamma eta V : ℝ → AnnulusCoordinates}
     {J : Set ℝ} (hJ : IsOpen J) {t : ℝ} (ht : t ∈ J)
@@ -106,9 +86,6 @@ theorem m64Intrinsic_pullback_congr_base
       rampHorizontalCovariantDerivative N.connection eta V t := by
   rw [m64Intrinsic_pullback_modelOn N hJ ht hgamma hV,
     m64Intrinsic_pullback_modelOn N hJ ht heta hV, hge.deriv_eq, hge.self_of_nhds]
-
-
-
 
 theorem m64Intrinsic_pushed_radial_pairing
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -122,8 +99,6 @@ theorem m64Intrinsic_pushed_radial_pairing
   change N.metric.inner (e x) (mfderiv (𝓡 2) (𝓡 2) e x (c • x))
     (mfderiv (𝓡 2) (𝓡 2) e x w) = _ at h
   simpa only [mfderiv_eq_fderiv] using! h
-
-
 
 theorem m64Intrinsic_pushed_focusing_norm
     (N : IntrinsicAnnulus) (e : AnnulusCoordinates → AnnulusCoordinates)
@@ -144,9 +119,6 @@ theorem m64Intrinsic_pushed_focusing_norm
     Real.sqrt_sq (mul_pos hc hx).le]
   dsimp only [c]
   field_simp
-
-
-
 
 theorem m64Intrinsic_pushed_boundary_focusing
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M10.MinimizingLifts
 import PoincareConjecture.Proofs.M10.SliceDifferentiability
 import PoincareConjecture.Proofs.M10.SliceSard
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem mem_regularImage_of_differentiable_noncritical_value
     (hL : LGeodesicTheory F T τmax) (hwindow : Icc (T - τmax) T ⊆ J)
@@ -63,7 +53,6 @@ theorem mem_regularImage_of_differentiable_noncritical_value
   exact himage
 
 variable [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem regularImage_slice_complement_eq_zero
     (hL : LGeodesicTheory F T τmax)

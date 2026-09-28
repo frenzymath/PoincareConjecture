@@ -4,19 +4,11 @@ import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Data.Finset.Max
 import Mathlib.Topology.Homotopy.HomotopyGroup
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem exists_stdSimplex_cube_coordinates (n : Nat) :
     Exists fun q : C((Fin n -> unitInterval), stdSimplex Real (Fin (n + 1))) =>
@@ -66,7 +58,6 @@ theorem exists_stdSimplex_cube_coordinates (n : Nat) :
         exact continuous_const
   exact ⟨⟨fun t => ⟨a t, ha t⟩, hc.subtype_mk ha⟩, fun _ => rfl, fun _ _ => rfl⟩
 
-
 theorem stdSimplex_cube_coordinates_boundary_iff (n : Nat)
     (q : C((Fin n -> unitInterval), stdSimplex Real (Fin (n + 1))))
     (hq0 : forall t, q t 0 = ∏ k : Fin n, (1 - (t k : Real)))
@@ -101,7 +92,6 @@ theorem stdSimplex_cube_coordinates_boundary_iff (n : Nat)
       refine ⟨k, Finset.mem_univ _, ?_⟩
       rw [hk]
       exact sub_self 1
-
 
 theorem stdSimplex_cube_coordinates_injOn (n : Nat)
     (q : C((Fin n -> unitInterval), stdSimplex Real (Fin (n + 1))))
@@ -142,7 +132,6 @@ theorem stdSimplex_cube_coordinates_injOn (n : Nat)
   have heq := DFunLike.congr_fun htu j.succ
   rw [hqs, hqs, ← hp] at heq
   exact hj (Subtype.ext (mul_right_cancel₀ (ne_of_gt hpos) heq))
-
 
 theorem stdSimplex_cube_coordinates_surjective (n : Nat)
     (q : C((Fin n -> unitInterval), stdSimplex Real (Fin (n + 1))))

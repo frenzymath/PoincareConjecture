@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.AngularPaths
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.UniformRayDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +12,6 @@ open scoped Topology NNReal ENNReal Manifold ContDiff Bundle
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
 
 theorem rayExtension_dist_eq_twice_of_asymptoticRayDistance_eq_two
     (hc : RayComparison p) (α β : basedMinimizingRays p)
@@ -51,8 +37,6 @@ open Poincare.AncientVolume.ScalarRatio
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem dist_sq_add_dist_sq_le_of_minimizing_midpoint
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hc : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
@@ -74,8 +58,6 @@ theorem dist_sq_add_dist_sq_le_of_minimizing_midpoint
   simp only [smul_eq_mul, mul_zero, zero_add, show (1 / 2 : ℝ) * (2 * L) = L by ring,
     hγ0, hγL, hγ2L, zero_pow (by norm_num : (2 : ℕ) ≠ 0), sub_zero] at hh
   nlinarith [hh]
-
-
 
 theorem asymptoticRayDistance_sq_add_le_four_of_antipodal
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -109,7 +91,6 @@ theorem asymptoticRayDistance_sq_add_le_four_of_antipodal
   apply (div_le_iff₀ (sq_pos_of_pos hL)).2
   nlinarith [h]
 
-
 theorem asymptoticLink_dist_sq_add_le_four_of_antipodal
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature) (p : M) :
@@ -126,7 +107,6 @@ theorem asymptoticLink_dist_sq_add_le_four_of_antipodal
   obtain ⟨ζ, rfl⟩ := surjective_asymptoticLinkProjection hc z
   simp only [dist_asymptoticLinkProjection] at hxy ⊢
   exact g.asymptoticRayDistance_sq_add_le_four_of_antipodal D hcomplete hsec p α β ζ hxy
-
 
 theorem asymptoticConeUnitSlice_dist_sq_add_le_four_of_antipodal
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

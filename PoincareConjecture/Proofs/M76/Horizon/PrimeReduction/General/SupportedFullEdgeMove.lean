@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.SupportedAxi
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.SupportedMoveContactSet
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -19,10 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
-
 
 theorem coarse_edge_inter_prism_support_subset_axis
     {X : Type*} [TopologicalSpace X]
@@ -42,9 +30,6 @@ theorem coarse_edge_inter_prism_support_subset_axis
   change B.symm (T (z.1, 0)) = B.symm (T z)
   rw [← hcoord.2]
 
-
-
-
 theorem eqOn_coarse_edge_diff_axis_of_prism_support
     {X : Type*} [TopologicalSpace X]
     (B : OpenPartialHomeomorph X V3) (T : P3 ≃ᴬ[ℝ] V3)
@@ -61,8 +46,6 @@ theorem eqOn_coarse_edge_diff_axis_of_prism_support
   intro hxC
   exact hx.2 (coarse_edge_inter_prism_support_subset_axis B T hDaxis hprism hedge ⟨hx.1, hxC⟩)
 
-
-
 theorem coarse_axis_image_chart_coordinates
     {X : Type*} [TopologicalSpace X]
     (B : OpenPartialHomeomorph X V3) (T : P3 ≃ᴬ[ℝ] V3)
@@ -73,9 +56,6 @@ theorem coarse_axis_image_chart_coordinates
   rintro x ⟨⟨z, hz, rfl⟩, _⟩
   rw [B.right_inv (htarget z hz), T.symm_apply_apply]
   exact ⟨hs hz, rfl⟩
-
-
-
 
 theorem exists_original_supported_full_edge_move
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DirichletLaplacian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -34,9 +24,6 @@ private theorem generator_graph_add {W H : Type*}
     HilbertResolventNative.InGeneratorGraph J (u + v) (a + b) := by
   unfold HilbertResolventNative.InGeneratorGraph at hu hv ⊢
   rw [add_add_add_comm, map_add, hu, hv]
-
-
-
 
 theorem exists_dirichlet_initial_heat {K : Set V} (hK : IsCompact K)
     {T : ℝ} (hT : 0 ≤ T) (f : supportedTests K) :
@@ -67,15 +54,12 @@ theorem exists_dirichlet_initial_heat {K : Set V} (hK : IsCompact K)
     exact generator_graph_add (W := dirichletForm K) (H := dirichletValue K) (dirichletInclusion K)
       (dirichletGenerator_laplacian hK.isClosed f) ht
 
-
 def dirichletGradient (K : Set V) : dirichletForm K →L[ℝ] DirichletGradient n :=
   (WithLp.sndL 2 ℝ (dirichletValue K) (DirichletGradient n)).comp
     (dirichletForm K).subtypeL
 
 @[simp] theorem dirichletGradient_into (K : Set V) (f : supportedTests K) :
     dirichletGradient K (intoDirichletForm K f) = testGradient K f := rfl
-
-
 
 theorem dirichlet_generator_weak_heat {K : Set V} {U D : dirichletValue K}
     (hgraph : HilbertResolventNative.InGeneratorGraph («V» := dirichletForm K)

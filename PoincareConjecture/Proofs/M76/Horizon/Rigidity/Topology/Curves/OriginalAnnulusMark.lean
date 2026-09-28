@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.OriginalAnnulusCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry PLAnnularStrip
@@ -19,7 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Ann" => squareAnnulus 8 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
-
 
 def originalAnnulusOpenMark {X : Type*} [TopologicalSpace X]
     {B : Set X} (H : Ann ≃ₜ B) : Set X :=
@@ -61,10 +51,6 @@ theorem originalAnnulusOpenMark_contains_core {X : Type*} [TopologicalSpace X]
     depth_annulusMap (by norm_num) (by norm_num) z
   rw [hd]
   norm_num
-
-
-
-
 
 theorem exists_originalPL_annular_mark_core_homotopy
     {X V ι : Type*} [TopologicalSpace X]

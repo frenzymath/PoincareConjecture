@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFourDiskGluing
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateFourRegionIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set CoordinateFourRegions
@@ -18,12 +8,6 @@ open Set CoordinateFourRegions
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
-
 
 theorem exists_marked_graph_with_signed_vertical_labels
     {F S : Set E} (arc disk : Bool × Bool → Set E) (a b : E) (A : E → ℝ)

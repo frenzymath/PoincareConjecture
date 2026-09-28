@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.TwoChartComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +23,6 @@ variable
 
 include ha hc hpunct
 
-
 theorem collarRegion_union_target :
     U ∪ comparisonCentralSphere c = U ∪ c.target := by
   apply Set.Subset.antisymm
@@ -44,7 +35,6 @@ theorem collarRegion_union_target :
       by_cases hz0 : z.2 = 0
       · exact Or.inr ⟨z, ⟨Set.mem_univ _, hz0⟩, hzx⟩
       · exact Or.inl (hzx ▸ hpunct z hz hz0)
-
 
 theorem collarRegion_isOpen (hU : IsOpen U) :
     IsOpen (U ∪ comparisonCentralSphere c) := by
@@ -61,11 +51,9 @@ variable
   {U : Set A.carrier} {V : Set B.carrier}
   (E : SurgeryRegionEquivalence A B U V)
 
-
 noncomputable def collarRegionComparisonMap (x : A.carrier) : B.carrier := by
   classical
   exact if x ∈ comparisonCentralSphere cA then cB (cA.symm x) else E.map x
-
 
 theorem collarRegionComparisonMap_off {x : A.carrier}
     (hx : x ∉ comparisonCentralSphere cA) :
@@ -169,9 +157,6 @@ theorem collarRegionComparisonMap_smooth (hU : IsOpen U) :
     apply (hlocal.contMDiffAt (cA.open_target.mem_nhds htarget)).congr_of_eventuallyEq
     filter_upwards [cA.open_target.mem_nhds htarget] with y hy
     exact collarRegionComparisonMap_target cA cB E ha hcA hmatch hy
-
-
-
 
 noncomputable def collarRegionComparison (hU : IsOpen U) (hV : IsOpen V) :
     SurgeryRegionEquivalence A B (U ∪ comparisonCentralSphere cA)

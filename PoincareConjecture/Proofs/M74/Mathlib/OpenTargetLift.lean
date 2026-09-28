@@ -1,14 +1,5 @@
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,19 +11,13 @@ section Sets
 
 variable {X Y : Type*} [TopologicalSpace Y] (U : Opens Y) (y0 : U) (f : X → Y)
 
-
-
 noncomputable def liftMap : X → U := by
   classical
   exact fun x => if h : f x ∈ U then ⟨f x, h⟩ else y0
 
-
-
 theorem liftMap_val_of_mem {x : X} (hx : f x ∈ U) :
     (U.liftMap y0 f x).val = f x := by
   simp only [liftMap, dif_pos hx]
-
-
 
 theorem liftMap_image {s : Set X} (h : MapsTo f s U) :
     U.liftMap y0 f '' s = Subtype.val ⁻¹' (f '' s) := by
@@ -55,8 +40,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace H M] [ChartedSpace H' N]
   (U : Opens N) (y0 : U) {f : M → N} {s : Set M} {n : ℕ∞ω}
-
-
 
 theorem contMDiffOn_liftMap (hf : ContMDiffOn I J n f s) (h : MapsTo f s U) :
     ContMDiffOn I J n (U.liftMap y0 f) s := by

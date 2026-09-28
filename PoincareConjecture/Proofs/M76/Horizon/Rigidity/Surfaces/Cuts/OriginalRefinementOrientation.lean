@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutCoherentSigns
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalOwnerIntersection
 
-
 set_option autoImplicit false
 open Set Geometry Classical
 open AbstractSimplicialComplex PreAbstractSimplicialComplex.ModTwoCochains
@@ -66,8 +65,6 @@ theorem charted_refined_cross_ne_zero
     (by simpa only [Finset.coe_insert, Finset.coe_singleton] using hmap)
     ![a, b, x] hp himage
   exact planar_triangle_cross_ne_zero _ hind
-
-
 
 theorem charted_refined_cofaces_cancel
     (K : SimplicialComplex ℝ E) (number : E → ℕ) (sourceSign : Finset E → ZMod 2)

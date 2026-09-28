@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]
   [NormedAddCommGroup Y] [NormedSpace ℝ Y]
-
 
 theorem endpoint_time_linear_bijective (D : (X × ℝ) →L[ℝ] Y)
     (hD : Function.Bijective (fun h : X ↦ D (h, 0))) :
@@ -45,7 +36,6 @@ theorem endpoint_time_linear_bijective (D : (X × ℝ) →L[ℝ] Y)
     rw [hsplit, map_add, hx, sub_add_cancel]
 
 variable [FiniteDimensional ℝ X]
-
 
 theorem exists_smooth_endpoint_time_inverse {E : X × ℝ → Y} {z₀ : X × ℝ}
     {k : ℕ∞ω} (hE : ContDiffAt ℝ k E z₀) (hk : k ≠ 0)

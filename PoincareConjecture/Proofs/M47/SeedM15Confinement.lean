@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15Cages
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_ObservedWindow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
-
 
 theorem exists_seedM15_confinementCutoff
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

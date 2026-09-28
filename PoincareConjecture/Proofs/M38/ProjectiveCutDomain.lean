@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.ProjectiveInteriorCut
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
 
 theorem projectiveDouble_regular_sides
     {Q : Type*} [TopologicalSpace Q] [ChartedSpace StandardCapSpace Q]
@@ -35,9 +24,6 @@ theorem projectiveDouble_regular_sides
   constructor
   · rw [hfirst, interior_compl, hsecond, compl_compl]
   · rw [hsecond, interior_compl, hfirst, compl_compl]
-
-
-
 
 theorem exists_projectiveDouble_first_cut_domain
     (A : GeneralizedSliceCarrier.{u}) (C : SmoothProjectiveDoubleModel A.carrier)

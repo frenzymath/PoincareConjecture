@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckScalarComparison
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.Regularity
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M47
-
-
 
 theorem cap_affine_factor_bounds {beta gamma : ℝ}
     (hsmall : gamma ≤ 1 / 1200) (hbeta : |beta - 1| ≤ (16 / 5 : ℝ) * gamma) :
@@ -51,8 +40,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 theorem cap_neck_normalized_scalar_difference (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200) (q : UnitTwoSphere)
     {c : ℝ} (hc : c ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -63,8 +50,6 @@ theorem cap_neck_normalized_scalar_difference (N : EpsilonNeck g)
     N.connection hQ (le_refl (0 : ℝ)) N.metric_comparison.close
     (N.coordinate_map (q, c)) (N.coordinate_map_mem_of_axial_mem hc)
   simpa only [sub_zero, div_one, inv_pow, div_inv_eq_mul, mul_comm] using h
-
-
 
 theorem cap_neck_affine_factor_continuousOn (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / 1200) (q : UnitTwoSphere) :

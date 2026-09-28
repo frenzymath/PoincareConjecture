@@ -1,18 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.LocalEnergy
-
-
-
-
-
-
-
-
-
 
 open Set Metric Filter MeasureTheory
 open scoped ContDiff Topology
@@ -85,8 +71,6 @@ private theorem cutoff_residual {χ u : Spacetime n → ℝ}
   ring_nf
   simp only [Finset.sum_add_distrib]
   ring
-
-
 
 theorem exists_local_second_parabolic_energy
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)

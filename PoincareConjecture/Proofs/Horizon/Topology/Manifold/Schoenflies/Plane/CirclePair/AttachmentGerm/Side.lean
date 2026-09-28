@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Cir
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.LocalExtension
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +35,6 @@ private theorem fderiv_eq_self_on_local_circle_tangent
   obtain ⟨w, rfl⟩ := huL
   exact (congrArg (fun A => A w) hchain).symm
 
-
-
 theorem normal_derivative_pos_of_local_inward
     {k : E2 → E2} (hk : ContDiff Real ∞ k) (p : S1)
     (hfix : ∀ᶠ x in 𝓝 (p : E2), x ∈ sphere (0 : E2) 1 → k x = x)
@@ -71,8 +67,6 @@ theorem normal_derivative_pos_of_local_inward
     rw [heq] at hz
     simp at hz
   exact lt_of_le_of_ne (by linarith) hne.symm
-
-
 
 theorem exists_disk_diffeomorph_of_local_inward_germ
     (k : E2 → E2) (p : S1) {U : Set E2} (hU : IsOpen U) (hpU : (p : E2) ∈ U)

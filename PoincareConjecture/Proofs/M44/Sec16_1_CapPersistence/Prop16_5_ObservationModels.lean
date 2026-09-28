@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_PreparedCounterexamples
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_StandardIdentification
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,18 +28,12 @@ namespace CapPersistenceCounterexample
 variable {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}
   {start rNext A eta theta cutoff : ℝ}
 
-
-
-
 theorem observation_lifetime_one
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff) :
     X.observation.standard_flow.base.lifetime = 1 :=
   (maximal_lifetime_eq_of_heq X.fixed_scales.standard_initial_eq
     X.observation.standard_flow setup.standard_flow X.standard_flow_eq).trans
       setup.standard_lifetime_one
-
-
-
 
 theorem observation_metric_eq
     (X : CapPersistenceCounterexample.{u} setup start rNext A eta theta cutoff)

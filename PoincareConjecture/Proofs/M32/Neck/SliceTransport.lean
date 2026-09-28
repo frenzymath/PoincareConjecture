@@ -2,21 +2,6 @@ import PoincareConjecture.Proofs.M32.Neck.NearbyTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.CollarDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,16 +17,12 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 private theorem sliceTransport_radius_lt_inv (N : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / (64 * Real.pi)) :
     32 * Real.pi < N.epsilon⁻¹ := by
   have hbound : 64 * Real.pi ≤ N.epsilon⁻¹ := by
     simpa only [one_div, inv_inv] using inv_anti₀ N.epsilon_pos hsmall
   linarith [Real.pi_pos]
-
-
 
 private theorem sliceTransport_scale_le (N P : EpsilonNeck g)
     (hscalar : P.scale ^ 2 * P.connection.scalarCurvature N.center < 3 / 2) :
@@ -65,8 +46,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 private theorem sliceTransport_slice_edist (N P : EpsilonNeck g)
     (hscale : P.scale ≤ 2 * N.scale) (hcenter : N.center ∈ P.carrier)
@@ -94,8 +73,6 @@ private theorem sliceTransport_slice_edist (N P : EpsilonNeck g)
     (by positivity : 0 ≤ 2 * Real.pi)
   nlinarith
 
-
-
 private theorem sliceTransport_slice_mem_closedCollar (N P : EpsilonNeck g)
     (hsmall : N.epsilon ≤ 1 / (64 * Real.pi))
     (hscale : P.scale ≤ 2 * N.scale) (hcenter : N.center ∈ P.carrier)
@@ -119,10 +96,6 @@ private theorem sliceTransport_slice_mem_closedCollar (N P : EpsilonNeck g)
   nlinarith [mul_pos Real.pi_pos N.scale_pos]
 
 end SliceBounds
-
-
-
-
 
 theorem exists_center_slice_graph_in_fixed_collar :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -199,10 +172,6 @@ theorem exists_center_slice_graph_in_fixed_collar :
   have hheight : t = h q := congrArg Prod.snd hinverse
   exact abs_le.mpr ⟨by simpa only [hheight] using ht.1,
     by simpa only [hheight] using ht.2⟩
-
-
-
-
 
 theorem exists_center_in_carrier_compact_transport :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

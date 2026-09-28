@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,10 +13,6 @@ namespace Homeomorph
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePL.section_eq_polygon_of_preconnected_signs
     {s : Set E} {C : Set F} {e : s ≃ₜ frontier C} (he : e.IsFinitePL)
@@ -86,9 +73,6 @@ theorem IsFinitePL.section_eq_polygon_of_preconnected_signs
       obtain ⟨hxn, hxp⟩ := hsigns x hx.1 hx.2
       exact hinter.subset ⟨closure_minimal hpU hUc hxp, closure_minimal hnV hVc hxn⟩
     · exact (hnotV (hwhole hVc hnV hpV)).elim
-
-
-
 
 theorem IsFinitePL.exists_section_polygon_of_preconnected_signs
     {s : Set E} {C : Set F} {e : s ≃ₜ frontier C} (he : e.IsFinitePL)

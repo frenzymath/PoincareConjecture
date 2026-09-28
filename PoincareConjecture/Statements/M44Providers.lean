@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

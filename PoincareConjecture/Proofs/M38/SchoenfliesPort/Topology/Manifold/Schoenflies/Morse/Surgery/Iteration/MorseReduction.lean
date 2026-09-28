@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Perturbation.DistinctValues
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularLevel.Cuts
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -31,9 +23,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
-
 
 structure SphereMorseReduction (f : S2 -> E3) where
   v : S2
@@ -67,9 +56,6 @@ structure SphereMorseReduction (f : S2 -> E3) where
       {p : S2 | mfderiv (𝓡 2) 𝓘(Real, Real)
         (fun q => inner Real (v : E3) (D (f q))) p = 0})
   preserves_caps : tree.PreservesCaps
-
-
-
 
 theorem nonempty_sphereMorseReduction
     (f : S2 -> E3) (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f) :
@@ -119,15 +105,11 @@ namespace SphereMorseReduction
 
 variable {f : S2 -> E3} (M : SphereMorseReduction f)
 
-
-
 theorem exists_leaf_at_critical_point {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real)
       (fun q => inner Real (M.v : E3) (M.D (f q))) p = 0) :
     ∃ g ∈ M.tree.leaves, g =ᶠ[𝓝 p] (fun q => M.D (f q)) := by
   exact M.tree.exists_protected_point_in_leaf M.protects_critical_values ⟨p, hp, rfl⟩
-
-
 
 theorem leaf_height_band {g : S2 -> E3} (hg : g ∈ M.tree.leaves) :
     ∃ b ∈ (M.cuts : Set Real)ᶜ,

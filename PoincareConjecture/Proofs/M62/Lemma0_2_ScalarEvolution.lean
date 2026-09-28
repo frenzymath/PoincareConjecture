@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_2_NormalizedFields
 import PoincareConjecture.Proofs.M62.Cor0_3_RegularizedGradient
 import PoincareConjecture.Proofs.M62.Sec19_1_MovingCommutation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
 set_option maxHeartbeats 2000000 in
-
-
 
 theorem curvature_squared_arcSecond_eq [T2Space M]
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Set.Ioo a b) (x : ℝ) :
@@ -112,8 +101,6 @@ theorem curvature_squared_arcSecond_eq [T2Space M]
   field_simp
   ring
 
-
-
 theorem spatialDerivative_norm_split
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Set.Ioo a b) (x : ℝ) :
     (F.metric t).inner (c x t)
@@ -193,8 +180,6 @@ theorem spatialDerivative_norm_split
   ring
 
 set_option maxHeartbeats 5000000 in
-
-
 
 theorem curvature_squared_time_pair [T2Space M]
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Set.Ioo a b) (x : ℝ) :

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureScaledGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +34,6 @@ private theorem cap_intrinsic_diameter_lt
   apply ENNReal.ofReal_le_ofReal
   exact (mul_le_mul_of_nonneg_left hpow N.cap_constant_pos.le).trans
     (mul_le_mul_of_nonneg_right hC (Real.rpow_nonneg hH.le _))
-
-
-
 
 theorem limitFinite_cap_end_distance_of_forward_bound
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]

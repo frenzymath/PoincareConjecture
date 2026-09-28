@@ -1,8 +1,5 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem regularTimes_left_dense (H : SingularTimeAssumptions F T M)
     {s : ℝ} (hs : s ∈ F.interval) (a : ℝ) (has : a < s) :
@@ -49,7 +45,6 @@ theorem regularTimes_left_dense (H : SingularTimeAssumptions F T M)
     linarith
   · exact ⟨m, H.interval_exhausts_preterminal
       ⟨hmpos.le, hms.trans (H.interval_preterminal hs).2⟩, ham, hms.le, Or.inr hm⟩
-
 
 theorem dense_canonical_control (H : SingularTimeAssumptions F T M)
     (t : ℝ) (x : (F.slice t).carrier)

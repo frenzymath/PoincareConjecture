@@ -1,15 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.DerivativeRegularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.HilbertFiber
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -26,12 +17,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem tensorLaplacian_isSmooth (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T) :
     IsSmoothCovariantTensor (D.tensorLaplacian T) :=
   (D.covariantTensorDerivative_isSmooth (D.covariantTensorDerivative_isSmooth hT)).tensorTrace
-
 
 theorem tensorLaplacian_multilinear (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T) (p : M) :
@@ -39,12 +28,10 @@ theorem tensorLaplacian_multilinear (D : LeviCivitaData g) {k : ℕ}
       ∀ v, D.tensorLaplacian T p v = A v :=
   (D.tensorLaplacian_isSmooth hT).1 p
 
-
 def tensorLaplacianFiber (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T) (p : M) :
     TensorFiber (TangentSpace (𝓡 n) p) k :=
   TensorFiber.toMultilinear.symm (D.tensorLaplacian_multilinear hT p).choose
-
 
 @[simp] theorem tensorLaplacianFiber_apply (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n M k} (hT : IsSmoothCovariantTensor T) (p : M)

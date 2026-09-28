@@ -2,22 +2,12 @@ import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 import Mathlib.Topology.Order.Monotone
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ENNReal
 
 namespace ENNReal
-
-
 
 theorem antitoneOn_exp_weight_of_growth {f : ℝ → ℝ≥0∞} {s : Set ℝ} {k : ℝ}
     (h : ∀ a ∈ s, ∀ b ∈ s, a ≤ b →
@@ -32,8 +22,6 @@ theorem antitoneOn_exp_weight_of_growth {f : ℝ → ℝ≥0∞} {s : Set ℝ} {
       rw [← mul_assoc, ← ofReal_mul (Real.exp_pos _).le, ← Real.exp_add]
       have he : -(k * b) + k * (b - a) = -(k * a) := by ring
       rw [he]
-
-
 
 theorem exists_finite_left_limit_of_exp_growth {f : ℝ → ℝ≥0∞} {a T k : ℝ}
     (haT : a < T) (hfa : f a ≠ ⊤)

@@ -6,17 +6,6 @@ import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.LinearAlgebra.Matrix.Trace
 import Mathlib.Topology.Instances.Matrix
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.Matrix
@@ -43,7 +32,6 @@ private theorem detMultilinear_linearDeriv (A B : Matrix n n ℝ) :
   · rw [Finset.sum_comm]
     rfl
 
-
 theorem fderiv_det_eq_trace_adjugate_mul (A B : Matrix n n ℝ) :
     fderiv ℝ Matrix.det A B = Matrix.trace (Matrix.adjugate A * B) := by
   change fderiv ℝ (fun a : n → n → ℝ => (Matrix.of a).det)
@@ -53,7 +41,6 @@ theorem fderiv_det_eq_trace_adjugate_mul (A B : Matrix n n ℝ) :
     (detMultilinear.linearDeriv (fun i j => A i j)) (fun i j => A i j) at h
   rw [h.fderiv]
   exact detMultilinear_linearDeriv A B
-
 
 theorem fderiv_det_eq_det_mul_trace_inv_mul (A B : Matrix n n ℝ)
     (hA : IsUnit A.det) :
@@ -65,13 +52,11 @@ theorem fderiv_det_eq_det_mul_trace_inv_mul (A B : Matrix n n ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 theorem differentiableAt_det {G : E → Matrix n n ℝ} {x : E}
     (hG : ∀ i j, DifferentiableAt ℝ (fun y => G y i j) x) :
     DifferentiableAt ℝ (fun y => (G y).det) x := by
   exact (detMultilinear.hasFDerivAt (fun i j => G x i j)).differentiableAt.comp x
     (differentiableAt_pi.mpr fun i => differentiableAt_pi.mpr (hG i))
-
 
 theorem fderiv_det {G : E → Matrix n n ℝ} {x : E}
     (hG : ∀ i j, DifferentiableAt ℝ (fun y => G y i j) x)
@@ -104,7 +89,6 @@ private theorem sqrt_det_factor {d : ℝ} (hd : 0 < d) (a : ℝ) :
     (1 / (2 * Real.sqrt d)) * (d * a) = (d / Real.sqrt d) * ((1 / 2) * a) := by ring
     _ = (1 / 2) * a * Real.sqrt d := by rw [hdiv]; ring
 
-
 theorem fderiv_sqrt_det {G : E → Matrix n n ℝ} {x : E}
     (hG : ∀ i j, DifferentiableAt ℝ (fun y => G y i j) x)
     (hpos : 0 < (G x).det) (v : E) :
@@ -115,7 +99,6 @@ theorem fderiv_sqrt_det {G : E → Matrix n n ℝ} {x : E}
   rw [_root_.fderiv_sqrt (differentiableAt_det hG) (ne_of_gt hpos),
     smul_apply, smul_eq_mul, fderiv_det hG (ne_of_gt hpos).isUnit]
   exact sqrt_det_factor hpos _
-
 
 theorem hasDerivAt_det_eq_det_mul_trace_inv_mul
     (G : ℝ → Matrix n n ℝ) (G' : Matrix n n ℝ) (t : ℝ)
@@ -131,7 +114,6 @@ theorem hasDerivAt_det_eq_det_mul_trace_inv_mul
     ext i j
     exact (hG i j).deriv
   rwa [hentries] at h
-
 
 theorem hasDerivAt_sqrt_det_eq_half_trace_inv_mul
     (G : ℝ → Matrix n n ℝ) (G' : Matrix n n ℝ) (t : ℝ)

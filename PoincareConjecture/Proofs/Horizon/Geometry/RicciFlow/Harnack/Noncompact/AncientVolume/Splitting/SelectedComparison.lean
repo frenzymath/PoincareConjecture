@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.NoBranching
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -116,8 +106,6 @@ private theorem unit_reparameterization_of_fractional_segment
     change a⁻¹ * |s - t| * a = |s - t|
     rw [mul_right_comm, inv_mul_cancel₀ ha'.ne', one_mul]
 
-
-
 theorem toponogov_hinge_of_fractional_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
@@ -157,8 +145,6 @@ theorem toponogov_hinge_of_fractional_segments
     g.toponogov_hinge D hcomplete hsec ha hb hη₁ hη₂ hη₁0 hη₂0 hη₂speed hη₁min hη₂min
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_selected_normalized_opposite_segments
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -232,9 +218,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_isometric_line_of_selected_small_rescalings
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

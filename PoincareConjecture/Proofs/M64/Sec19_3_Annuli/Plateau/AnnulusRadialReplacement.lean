@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialWeakExt
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityChartEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusReplacement
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +19,6 @@ open Poincare.Analysis.Sobolev.Weak
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusLowerDomain
 local notation "L" => m64AnnulusLowerStrip
-
-
 
 theorem m64AnnulusLower_integral_local
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -60,8 +46,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "mu" => volume.restrict S
-
-
 
 theorem M64ObservedWeakAnnulus.lower_fixed_columns
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -96,8 +80,6 @@ theorem M64ObservedWeakAnnulus.lower_fixed_columns
     (hvalue.mono fun p hp => congrArg e hp)
 
 set_option maxHeartbeats 1000000 in
-
-
 
 theorem M64ObservedWeakAnnulus.lower_replace
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

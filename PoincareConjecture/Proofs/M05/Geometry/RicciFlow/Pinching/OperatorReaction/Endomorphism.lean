@@ -1,15 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.OperatorReaction.Diagonal
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -20,8 +9,6 @@ local instance : NormedSpace ℝ ThreeMatrix := Matrix.normedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 noncomputable def endomorphismReaction
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

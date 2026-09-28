@@ -1,16 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TensorReaction
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.Reaction
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,8 +37,6 @@ private instance reactionFiniteDimensional (x : M) :
   unfold TangentSpace
   infer_instance
 
-
-
 theorem tensorReaction_ricciComplementTensor_apply_orthonormalBasis [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
@@ -68,8 +56,6 @@ theorem tensorReaction_ricciComplementTensor_apply_orthonormalBasis [T2Space M]
   congr 1
   ext k
   fin_cases k <;> simp [OrthonormalBasis.repr_self, EuclideanSpace.basisFun_apply]
-
-
 
 theorem tensorReaction_ricciComplementTensor_eq_curvatureB [T2Space M]
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem c2ShrinkingCurve_fixedLabel_comp
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M} {J : Set ℝ}
@@ -119,9 +106,6 @@ theorem c2ShrinkingCurve_fixedLabel_comp
     rw [hcurv z.2 hz.2 z.1]
   · rw [hcurv t (interior_subset ht) x]
     exact hc.equation t ht (psi x)
-
-
-
 
 theorem c2ShrinkingCurve_fixedLabel_curvature_contMDiffOn
     (F : RicciFlow n M (Icc a b)) {c : ℝ → ℝ → M} {J : Set ℝ}

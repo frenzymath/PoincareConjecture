@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.CoordinateIntegration
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology BigOperators

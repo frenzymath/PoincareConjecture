@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projectiv
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Fibration.LiftedNeck
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_projective_boundary_collar_lift :
     ∃ F : C(NeckDomain C.boundary_neck.epsilon, UnitThreeSphere),
@@ -131,8 +118,6 @@ private theorem smooth_projective_boundary_collar_lift
     exact ((N.coordinate_inverse_smooth.contMDiffAt (N.carrier_open.mem_nhds hqN)).comp q
       (S.local_diffeomorph ⟨q, hqmem⟩).contMDiffAt).contMDiffWithinAt
 
-
-
 theorem exists_smooth_projective_boundary_collar :
     ∃ e : OpenPartialHomeomorph RoundCylinderSpace UnitThreeSphere,
       e.source = C.boundary_neck.cylinderDomain ∧
@@ -189,8 +174,6 @@ theorem exists_smooth_projective_boundary_collar :
   · rw [hneg, het]
     exact hexhaust
 
-
-
 theorem projective_boundary_collar_frontier
     (e : OpenPartialHomeomorph RoundCylinderSpace UnitThreeSphere)
     (hes : e.source = C.boundary_neck.cylinderDomain)
@@ -222,9 +205,6 @@ theorem projective_boundary_collar_frontier
     refine ⟨⟨hmem _ (hzero p), ?_⟩, e.map_source (hzero p)⟩
     rw [hlift _ (hzero p), ← N.centralSphere_range]
     exact mem_range_self p
-
-
-
 
 theorem projective_boundary_collar_sides [T2Space M]
     (e : OpenPartialHomeomorph RoundCylinderSpace UnitThreeSphere)

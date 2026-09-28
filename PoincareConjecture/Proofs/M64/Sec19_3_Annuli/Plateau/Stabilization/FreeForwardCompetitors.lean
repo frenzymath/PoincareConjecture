@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FreeBo
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusFreeAnnulusFamily
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ForwardMinimalCompetitor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +13,6 @@ namespace PoincareConjecture.M64
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference auxiliary : ℝ}
-
-
-
-
 
 theorem auxiliaryCircle_free_modulus_exists_forward
     (P : M62.CircleProductData F circumference)
@@ -70,10 +53,6 @@ theorem auxiliaryCircle_free_modulus_exists_forward
   filter_upwards [hforward eta heta, hsmall] with h hh hd
   obtain ⟨B, hB⟩ := hadmit h hd
   exact ⟨B, hB.trans_le hh⟩
-
-
-
-
 
 theorem auxiliaryCircle_annulusFlow_forward_of_free_modulus_minimum
     (P : M62.CircleProductData F circumference)

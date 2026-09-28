@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Models
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph.Product
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,8 +41,6 @@ variable {C : Type*} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) C] [IsManifold (𝓡 2) ∞ C]
   {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_centered_scalarNormalized_projectiveCylinder_cover
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 2 C)
@@ -141,8 +130,6 @@ theorem exists_centered_scalarNormalized_projectiveCylinder_cover
 
 variable [T2Space C] [T3Space C] [ConnectedSpace C]
   [SecondCountableTopology C] [MeasurableSpace C] [BorelSpace C]
-
-
 
 theorem TwoDimensionalAncientRoundCertificate.roundCylinder_or_projective_cover
     {A : AncientKappaSolution 2 C} (H : TwoDimensionalAncientRoundCertificate A)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.FlowPathSpeed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M28
 
 variable (F : GeneralizedRicciFlowData.{u}) {ι : Type v} (b : ι → F.box_index)
     (t : ℝ) (ht : ∀ i, t ∈ (F.box (b i)).interval)
-
-
-
 
 theorem boxTransport_speed_eq
     (s : ℝ) (hs : ∀ i, s ∈ (F.box (b i)).interval) (hsF : s ∈ F.interval)
@@ -52,9 +39,6 @@ theorem boxTransport_speed_eq
   rw [heq.eq_of_nhds, heq.mfderiv_eq]
   exact F.tangentNorm_box_curve (b i) s (hs i)
     ((F.box (b i)).inverse t (ht i) ∘ γ) v hmodel
-
-
-
 
 theorem continuousOn_boxTransport_speed
     (J : Set ℝ) (hJF : J ⊆ F.interval)

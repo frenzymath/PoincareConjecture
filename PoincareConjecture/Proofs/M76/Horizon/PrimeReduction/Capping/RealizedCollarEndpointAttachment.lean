@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.Carri
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalFiniteSphereCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalEndpointBallAttachment
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

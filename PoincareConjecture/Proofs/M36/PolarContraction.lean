@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.PolarMetric
 import PoincareConjecture.Proofs.M36.CollapseMap
 import PoincareConjecture.Proofs.M36.StandardCapConcavity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

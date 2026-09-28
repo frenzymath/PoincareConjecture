@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -112,7 +105,6 @@ theorem centralSphere_range :
     have ht' : t = 0 := ht
     subst t
     exact ⟨p, hx⟩
-
 
 theorem central_sphere_isotopic_self :
     SmoothSphereIsotopicIn N.carrier N.central_sphere N.central_sphere := by

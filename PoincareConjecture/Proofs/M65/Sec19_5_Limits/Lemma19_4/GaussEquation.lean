@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussMapCurvature
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,8 +15,6 @@ private abbrev E (k : ℕ) := EuclideanSpace ℝ (Fin k)
 
 variable {m n : ℕ} {g : RiemannianMetric n (E n)} {h : RiemannianMetric m (E m)}
 
-
-
 theorem contDiffAt_secondFundamentalForm (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : E m → E n} {x : E m} (hF : ContDiffAt ℝ ∞ F x) (u v : E m) :
     ContDiffAt ℝ ∞ (fun y => secondFundamentalForm D D' F y u v) x := by
@@ -37,16 +27,12 @@ theorem contDiffAt_secondFundamentalForm (D : LeviCivitaData g) (D' : LeviCivita
       (hd.clm_apply contDiffAt_const))).sub
     (hd.clm_apply ((hΓ'.clm_apply contDiffAt_const).clm_apply contDiffAt_const))
 
-
-
 private theorem covariantDerivativeAlongMap_congr (D : LeviCivitaData g)
     (F : E m → E n) {V W : E m → E n} {x : E m}
     (hVW : V =ᶠ[𝓝 x] W) (u : E m) :
     covariantDerivativeAlongMap D F V x u = covariantDerivativeAlongMap D F W x u := by
   unfold covariantDerivativeAlongMap
   rw [hVW.fderiv_eq, hVW.self_of_nhds]
-
-
 
 private theorem covariantDerivativeAlongMap_add (D : LeviCivitaData g)
     (F : E m → E n) {V W : E m → E n} {x : E m}
@@ -55,8 +41,6 @@ private theorem covariantDerivativeAlongMap_add (D : LeviCivitaData g)
       covariantDerivativeAlongMap D F V x u + covariantDerivativeAlongMap D F W x u := by
   simp only [covariantDerivativeAlongMap, fderiv_fun_add hV hW, add_apply, map_add]
   abel
-
-
 
 theorem secondFundamentalForm_covariantDerivative_inner
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -92,8 +76,6 @@ theorem secondFundamentalForm_covariantDerivative_inner
   rw [map_sub, hn, sub_zero]
   linarith
 
-
-
 private theorem covariantDerivativeAlongMap_lift_inner
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : E m → E n} {Y : E m → E m} {x : E m} (hF : ContDiffAt ℝ ∞ F x)
@@ -107,8 +89,6 @@ private theorem covariantDerivativeAlongMap_lift_inner
   rw [secondFundamentalForm_eq_covariantDerivativeAlongMap D D' hF hY,
     map_sub, sub_apply, ← hmetric.self_of_nhds] at hn
   linarith
-
-
 
 private theorem iterated_covariantDerivativeAlongMap_inner
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -142,8 +122,6 @@ private theorem iterated_covariantDerivativeAlongMap_inner
       (hC.differentiable (by simp) x),
     secondFundamentalForm_covariantDerivative_inner D D' hF hmetric]
   rfl
-
-
 
 theorem gauss_curvatureTensor (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {F : E m → E n} {x : E m} (hF : ∀ᶠ y in 𝓝 x, ContDiffAt ℝ ∞ F y)

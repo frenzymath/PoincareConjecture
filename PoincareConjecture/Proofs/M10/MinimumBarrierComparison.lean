@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M10.MinimumInitialLimit
 import PoincareConjecture.Proofs.M10.HessianMinimum
 import PoincareConjecture.Proofs.M10.BarrierLipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem sInf_reducedLength_mul_sub_le
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)
@@ -95,7 +84,6 @@ theorem sInf_reducedLength_mul_sub_le
       exact frequently_slope_lt_of_upper_support hS heq hupper hderiv
   exact sub_le_iff_le_add.mpr
     (by simpa only [add_comm] using hcomparison b ⟨hab, le_rfl⟩)
-
 
 theorem reducedLength_minimum_bound_of_attainment
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

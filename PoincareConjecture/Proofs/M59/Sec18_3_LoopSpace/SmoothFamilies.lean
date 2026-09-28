@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.LoopValueCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -27,7 +19,6 @@ variable {E : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem contMDiffOn_m59SmoothFamily (G : E × LoopPlane → M) (a : E)
     (hG : ∀ z : LoopCircle, ContMDiffAt 𝓘(ℝ, E × LoopPlane) (𝓡 3) 1 G (a, z.val)) :
     ContMDiffOn (𝓡 2) (𝓡 3) 1
@@ -42,22 +33,16 @@ theorem contMDiffOn_m59SmoothFamily (G : E × LoopPlane → M) (a : E)
     contDiffAt_const.prodMk ((contDiffAt_radialNormalization hw0).of_le (by simp))
   exact ((hG z).comp w hinput.contMDiffAt).contMDiffWithinAt
 
-
-
 def m59SmoothFamilyLoop (G : E × LoopPlane → M) (a : E)
     (hG : ∀ z : LoopCircle, ContMDiffAt 𝓘(ℝ, E × LoopPlane) (𝓡 3) 1 G (a, z.val)) :
     C1FreeLoopSpace (M := M) :=
   loopOfExtension (fun w => G (a, radialNormalization w)) (contMDiffOn_m59SmoothFamily G a hG)
-
-
 
 theorem m59SmoothFamilyLoop_apply (G : E × LoopPlane → M) (a : E)
     (hG : ∀ z : LoopCircle, ContMDiffAt 𝓘(ℝ, E × LoopPlane) (𝓡 3) 1 G (a, z.val))
     (z : LoopCircle) : m59SmoothFamilyLoop G a hG z = G (a, z.val) := by
   change G (a, radialNormalization z.val) = _
   rw [radialNormalization_of_norm_eq_one z.property]
-
-
 
 theorem m59SmoothFamilyLoop_tangent (G : E × LoopPlane → M) (a : E)
     (hG : ∀ z : LoopCircle, ContMDiffAt 𝓘(ℝ, E × LoopPlane) (𝓡 3) 1 G (a, z.val))
@@ -89,8 +74,6 @@ theorem m59SmoothFamilyLoop_tangent (G : E × LoopPlane → M) (a : E)
       hi heq (loopCircleTangent z)
     rw [hd] at h
     exact h
-
-
 
 theorem continuous_m59SmoothFamilyLoop {B : Type w} [TopologicalSpace B]
     (G : E × LoopPlane → M) (a : B → E) (ha : Continuous a)

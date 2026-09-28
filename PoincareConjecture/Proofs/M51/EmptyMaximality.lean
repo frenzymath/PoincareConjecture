@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EmptyFamily
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

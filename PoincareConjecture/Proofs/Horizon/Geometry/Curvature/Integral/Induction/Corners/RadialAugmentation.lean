@@ -1,18 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.AugmentedPair
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.OppositeCross
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
-
 
 theorem PoincareConjecture.LeviCivitaData.augmented_strainer_pair_full_bounds_of_radial_cross
     {n k : ℕ} {M : Type*} [TopologicalSpace M]

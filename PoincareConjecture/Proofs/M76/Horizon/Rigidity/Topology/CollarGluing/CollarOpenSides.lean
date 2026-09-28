@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.CollarGluing.OpenFrontierCollapse
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SupportedCollarCollapse
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -11,9 +9,6 @@ namespace PoincareConjecture.M76
 
 variable {E X : Type*} [TopologicalSpace E] [Zero E]
   [TopologicalSpace X] [T2Space X]
-
-
-
 
 theorem nonempty_openFrontierCollapse_of_bicollar
     {R : Set X} (hR : IsClosed R) {B : Set E} (hB : IsCompact B)

@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold
@@ -32,8 +22,6 @@ variable {k : Type*} [NontriviallyNormedField k]
   {Y : Type*} [TopologicalSpace Y] [ChartedSpace H'' Y]
   {r : WithTop ℕ∞}
 
-
-
 theorem contMDiff_of_continuous_lift {p : X → Y} {f : A → X}
     (hp : IsLocalDiffeomorph J K r p) (hf : Continuous f)
     (hpf : ContMDiff I K r (p ∘ f)) : ContMDiff I J r f := by
@@ -44,8 +32,6 @@ theorem contMDiff_of_continuous_lift {p : X → Y} {f : A → X}
   filter_upwards [hf.continuousAt.preimage_mem_nhds
     (h.localInverse.open_target.mem_nhds h.localInverse_mem_target)] with b hb
   exact (h.localInverse_left_inv hb).symm
-
-
 
 theorem exists_contMDiff_covering_lift
     [SimplyConnectedSpace A] [LocallyPathConnectedSpace A]

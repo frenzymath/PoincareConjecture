@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyDisk
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,14 +10,9 @@ namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
 theorem hasCompactSupport_dbar {ψ : ℂ → E} (hs : HasCompactSupport ψ) :
     HasCompactSupport (dbar ψ) :=
   (hs.fderiv ℝ).comp_left (ContinuousLinearMap.map_zero dbarLinear)
-
-
-
 
 theorem integral_inv_smul_dbar [CompleteSpace E] {ψ : ℂ → E}
     (hψ : ContDiff ℝ 1 ψ) (hs : HasCompactSupport ψ) :
@@ -55,9 +39,6 @@ theorem integral_inv_smul_dbar [CompleteSpace E] {ψ : ℂ → E}
   simp only [RCLike.ofReal_eq_complex_ofReal, ofReal_mul, ofReal_ofNat, smul_smul]
   module
 
-
-
-
 theorem cauchyOperator_dbar [CompleteSpace E] {h : ℂ → E}
     (hh : ContDiff ℝ 1 h) (hs : HasCompactSupport h) (z : ℂ) :
     cauchyOperator (dbar h) z = h z := by
@@ -82,9 +63,6 @@ theorem cauchyOperator_dbar [CompleteSpace E] {h : ℂ → E}
       (fun w : ℂ => (z - w)⁻¹ • dbar h w) volume z
   rw [cauchyOperator, ← hchange, hJ, smul_smul,
     inv_mul_cancel₀ (ofReal_ne_zero.mpr Real.pi_ne_zero), one_smul]
-
-
-
 
 theorem dbar_cauchyOperator [CompleteSpace E] {h : ℂ → E}
     (hh : ContDiff ℝ 1 h) (hs : HasCompactSupport h) (z : ℂ) :

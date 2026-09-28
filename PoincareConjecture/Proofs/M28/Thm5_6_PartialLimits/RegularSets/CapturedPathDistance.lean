@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.EmbeddingI
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.RelativeCompactMetric
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.InverseOpenDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -26,10 +17,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)]
   {g : ∀ k, RiemannianMetric 3 (M k)} {p : ∀ k, M k}
-
-
-
-
 
 theorem eventually_edist_le_twice_captured_path_length
     (G : RegularPointedMetricConvergence g p) :

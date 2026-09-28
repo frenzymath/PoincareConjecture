@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EndpointMeasure
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_curve_lift_speed_le
     (N : IntrinsicAnnulus)
@@ -48,9 +36,6 @@ theorem m64Intrinsic_curve_lift_speed_le
     mul_nonneg (sq_nonneg c) (sq_nonneg _)
   rw [mul_pow, mul_pow, sq_abs]
   nlinarith only [h, hdiscard]
-
-
-
 
 theorem m64Intrinsic_lifted_curve_measure_le
     (N : IntrinsicAnnulus)
@@ -93,8 +78,6 @@ theorem m64Intrinsic_lifted_curve_measure_le
   convert hspeed using 1
   dsimp only [f, f']
   ring
-
-
 
 theorem m64Intrinsic_lifted_curve_endpoint_graph_measure_le
     (N : IntrinsicAnnulus)

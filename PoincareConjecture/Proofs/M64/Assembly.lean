@@ -4,19 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.DiskComparisonComplete
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.FiniteNetsComplete
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.FlowConclusionAssembly
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -32,9 +19,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {G : M63AmbientGeometry F}
 
-
-
-
 theorem m64FamilyApproximationTheory_of_M63
     (hM63 : M63RampEstimatesTheory.{u})
     (hcompact : IsCompact (Set.univ : Set M))
@@ -44,9 +28,6 @@ theorem m64FamilyApproximationTheory_of_M63
   intro Gamma hnull zeta hzeta
   exact (m64StaticApproximationTheory_of_compact (F.metric a) (F.connection a)
     hcompact).raw_family Gamma hnull zeta hzeta
-
-
-
 
 theorem m64ThreeDimensionalFlowConclusion_of_flow_M63
     (hM63 : M63RampEstimatesTheory.{u})

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.EndComponentFilling
 import PoincareConjecture.Proofs.M76.Wall.PLDomainLocalPathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_original_compact_connected_filling
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

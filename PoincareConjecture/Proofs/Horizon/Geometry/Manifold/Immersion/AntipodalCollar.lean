@@ -3,13 +3,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Analysis.Normed.Module.Connected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,8 +81,6 @@ private theorem injective_mfderiv_radialCoordinates (q₀ : S2) {x : E3} (hx : x
   rw [← ContinuousLinearMap.comp_apply, ← ContinuousLinearMap.comp_apply, ← hd] at h
   exact h
 
-
-
 theorem not_forall_injective_mfderiv_of_locally_antipodal
     (F : sphere (0 : EuclideanSpace ℝ (Fin 3)) 1 × ℝ → EuclideanSpace ℝ (Fin 3))
     (hF : ∀ q, ContMDiffAt ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ F (q, 0))
@@ -142,8 +133,6 @@ theorem not_forall_injective_mfderiv_of_locally_antipodal
     (LinearMap.ker_eq_bot.mpr hix)
     (LinearMap.range_eq_top.mpr (LinearMap.injective_iff_surjective.mp hix))
   exact ⟨L, rfl⟩
-
-
 
 theorem not_isLocalDiffeomorphOn_antipodal_collar {a : ℝ} (ha : 0 < a)
     (F : sphere (0 : EuclideanSpace ℝ (Fin 3)) 1 × ℝ → EuclideanSpace ℝ (Fin 3))

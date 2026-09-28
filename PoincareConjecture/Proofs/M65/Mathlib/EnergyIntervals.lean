@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M65.Mathlib.EnergyBadTimes
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral BigOperators
 
 namespace PoincareConjecture.M65
-
-
-
 
 theorem energy_badIntervals_sum_le {ι : Type*} {indices : Finset ι}
     {left right : ι → ℝ} {energy : ℝ → ℝ} {a b C B : ℝ}

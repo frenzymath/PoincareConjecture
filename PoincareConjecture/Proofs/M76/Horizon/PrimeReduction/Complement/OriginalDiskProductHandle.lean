@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.OriginalDiskCut
 import PoincareConjecture.Proofs.M76.Wall.PLDomainLocalPathConnected
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ProductHandleNotPuncturedSphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped unitInterval
@@ -118,10 +109,6 @@ theorem OriginalDiskProduct.not_homeomorph_punctured_sphere_of_connected_cut
     (Sphere \ ⋃ i, D i \ B i : Set V4)) at hno
   rw [union_comm, hcover] at hno
   exact hno
-
-
-
-
 
 theorem exists_original_disk_cut_with_product_obstruction
     {U : Set X} (hR : IsCompact R) (he : PLDomain e R)

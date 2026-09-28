@@ -4,17 +4,6 @@ import PoincareConjecture.Definitions.Ch09.AsymptoticVolume
 import PoincareConjecture.Definitions.Ch09.ShrinkingSoliton
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,10 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 structure BasedKappaSolution (kappa : ℝ) where
   carrier : FlowCarrier 3
@@ -68,16 +53,9 @@ structure BasedKappaSolution (kappa : ℝ) where
     letI : ConnectedSpace C.carrier := connectedSpace
     (flow.flow.connection 0).scalarCurvature base = 1
 
-
-
 structure NormalizedKappaSolutionSequence (kappa : ℝ) where
   kappa_pos : 0 < kappa
   term : ℕ → BasedKappaSolution kappa
-
-
-
-
-
 
 structure NormalizedKappaSpacetimeEmbedding
     {kappa : ℝ} {source target : BasedKappaSolution kappa}
@@ -111,7 +89,6 @@ structure NormalizedKappaSpacetimeEmbedding
     ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 3)) (𝓘(ℝ, ℝ).prod (𝓡 3)) ∞
       inverse (toFun '' domain)
 
-
 noncomputable def normalizedKappaPullbackInnerValue
     {kappa : ℝ} {source target : BasedKappaSolution kappa}
     {domain : Set (ℝ × target.carrier.carrier)}
@@ -138,7 +115,6 @@ noncomputable def normalizedKappaPullbackInnerValue
     (mfderiv (𝓡 3) (𝓡 3) ψ x v)
     (mfderiv (𝓡 3) (𝓡 3) ψ x w)
 
-
 noncomputable def normalizedKappaPullbackCoefficient
     {kappa : ℝ} {source target : BasedKappaSolution kappa}
     {domain : Set (ℝ × target.carrier.carrier)}
@@ -154,7 +130,6 @@ noncomputable def normalizedKappaPullbackCoefficient
   normalizedKappaPullbackInnerValue e p.1 (c.symm p.2)
     (A (EuclideanSpace.basisFun (Fin 3) ℝ a))
     (A (EuclideanSpace.basisFun (Fin 3) ℝ b))
-
 
 structure NormalizedKappaGeometricConvergence
     {kappa : ℝ} (S : NormalizedKappaSolutionSequence kappa) where

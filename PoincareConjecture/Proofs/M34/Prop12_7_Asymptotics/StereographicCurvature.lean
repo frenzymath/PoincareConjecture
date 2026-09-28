@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.StereographicConnection
 import PoincareConjecture.Proofs.M03.CurvatureTrace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem stereographicCylinderLogDerivative_contDiff (i : Fin 2) :
     ContDiff ℝ ∞ (stereographicCylinderLogDerivative i) := by
@@ -31,9 +19,6 @@ theorem stereographicCylinderLogDerivative_contDiff (i : Fin 2) :
   exact (contDiff_const.mul
     (EuclideanSpace.proj i.castSucc : E3 →L[ℝ] ℝ).contDiff).div hd
     (fun x => (stereographicCylinderDenominator_pos x).ne')
-
-
-
 
 theorem stereographicCylinderChristoffel_fderiv (x u v w : E3) :
     fderiv ℝ (fun y => stereographicCylinderChristoffel y u v) x w =
@@ -69,8 +54,6 @@ theorem stereographicCylinderChristoffel_fderiv (x u v w : E3) :
   fin_cases i <;> simp [V0, V1]
   ring
 
-
-
 theorem stereographicCylinderCurvature_eq {b : ℝ} (hb : 0 < b)
     (D : LeviCivitaData (stereographicCylinderMetric b hb)) (x u v w : E3) :
     D.curvature x u v w =
@@ -80,8 +63,6 @@ theorem stereographicCylinderCurvature_eq {b : ℝ} (hb : 0 < b)
   simp only [stereographicCylinderEuclideanConnection_eq hb D]
   rw [stereographicCylinderChristoffel_comp_comm x u v w]
   abel
-
-
 
 theorem stereographicCylinderCurvature_trace_zero {b : ℝ} (hb : 0 < b)
     (D : LeviCivitaData (stereographicCylinderMetric b hb)) (x u v : E3) :
@@ -96,8 +77,6 @@ theorem stereographicCylinderCurvature_trace_zero {b : ℝ} (hb : 0 < b)
   simp only [stereographicCylinderDenominator]
   ring
 
-
-
 theorem stereographicCylinderCurvature_trace_one {b : ℝ} (hb : 0 < b)
     (D : LeviCivitaData (stereographicCylinderMetric b hb)) (x u v : E3) :
     (EuclideanSpace.proj 1 : E3 →L[ℝ] ℝ) (D.curvature x (EuclideanSpace.single 1 1) u v) =
@@ -111,16 +90,11 @@ theorem stereographicCylinderCurvature_trace_one {b : ℝ} (hb : 0 < b)
   simp only [stereographicCylinderDenominator]
   ring
 
-
-
 theorem stereographicCylinderCurvature_trace_two {b : ℝ} (hb : 0 < b)
     (D : LeviCivitaData (stereographicCylinderMetric b hb)) (x u v : E3) :
     (EuclideanSpace.proj 2 : E3 →L[ℝ] ℝ) (D.curvature x (EuclideanSpace.single 2 1) u v) = 0 := by
   rw [stereographicCylinderCurvature_eq hb D]
   simp [stereographicCylinderChristoffel_fderiv]
-
-
-
 
 theorem stereographicCylinderRicci {b : ℝ} (hb : 0 < b)
     (D : LeviCivitaData (stereographicCylinderMetric b hb)) (x u v : E3) :

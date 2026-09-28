@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.AnnularExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -20,20 +11,14 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E]
 
-
-
 noncomputable def curveTubeProjection [NormedSpace ℝ E] (q0 : sphere (0 : E) 1)
     (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) (y : ℝ × E) : sphere (0 : E) 1 :=
   unitRadialProjection q0 (e.symm y).2
-
-
 
 noncomputable def curveTubeHeight (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (y : ℝ × E) : ℝ := ‖(e.symm y).2‖ - 1
 
 variable [NormedSpace ℝ E]
-
-
 
 theorem curveTubeCoordinates_apply_radial (q0 : sphere (0 : E) 1)
     (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) (z : ℝ) (q : sphere (0 : E) 1)
@@ -46,8 +31,6 @@ theorem curveTubeCoordinates_apply_radial (q0 : sphere (0 : E) 1)
   · exact (unitRadialProjection_pos_smul q0 hpos (q : E)).trans
       (unitRadialProjection_apply_coe q0 q)
   · simp [norm_smul, Real.norm_eq_abs, abs_of_pos hpos, norm_eq_of_mem_sphere q]
-
-
 
 theorem curveTubeCoordinates_reconstruct (q0 : sphere (0 : E) 1)
     (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E)) (y : ℝ × E)
@@ -64,8 +47,6 @@ section InnerProduct
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 theorem contDiffOn_curveTubeHeight (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     {k : ℕ∞ω} (hInv : ContDiffOn ℝ k e.symm e.target)
     (hx : ∀ y ∈ e.target, (e.symm y).2 ≠ 0) :
@@ -73,8 +54,6 @@ theorem contDiffOn_curveTubeHeight (e : OpenPartialHomeomorph (ℝ × E) (ℝ ×
   intro y hy
   have h := (hInv.contDiffAt (e.open_target.mem_nhds hy)).snd
   exact (((contDiffAt_norm ℝ (hx y hy)).comp y h).sub contDiffAt_const).contDiffWithinAt
-
-
 
 theorem contMDiffOn_curveTubeProjection {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
     (q0 : sphere (0 : E) 1) (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
@@ -93,8 +72,6 @@ variable (hs : e.source = Ioo l u ×ˢ {x : E | |‖x‖ - 1| < w})
 variable (he : ∀ p : ℝ × E, e p = (p.1, curveAnnularExtension o q0 c p))
 
 include hw hs he
-
-
 
 theorem curveAnnularTube_coordinates {y : ℝ × E} (hy : y ∈ e.target) :
     (e.symm y).2 ≠ 0 ∧ y.1 ∈ Ioo l u ∧ |curveTubeHeight e y| < w ∧
@@ -123,8 +100,6 @@ theorem curveAnnularTube_coordinates {y : ℝ × E} (hy : y ∈ e.target) :
     _ = _ := by
       rw [hpair]
       exact curveAnnularExtension_apply_radial o q0 c y.1 (curveTubeProjection q0 e y) hheight
-
-
 
 theorem curveAnnularTube_coordinates_apply (z : ℝ) (hz : z ∈ Ioo l u)
     (q : sphere (0 : E) 1) {r : ℝ} (hr : |r| < w) :

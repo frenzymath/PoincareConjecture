@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 import Mathlib.Algebra.Order.Archimedean.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal Topology
@@ -18,8 +8,6 @@ open scoped ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 noncomputable def restrictCylinderTime
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -39,8 +27,6 @@ noncomputable def restrictCylinderTime
     obtain ⟨b, y, delta, hdelta, hlocal⟩ := e.vertical_compatibility s (hJI hs) x hx
     exact ⟨b, y, delta, hdelta, fun s' hs' hdist => hlocal s' (hJI hs') hdist⟩
 
-
-
 noncomputable def restrictFiniteHorizonSlab
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T T' kappa r₀ : ℝ}
     (L : M30FiniteHorizonSlab S k A T' kappa r₀) (hTT' : T ≤ T') :
@@ -52,8 +38,6 @@ noncomputable def restrictFiniteHorizonSlab
     embedding := restrictCylinderTime L.embedding hI
     zero_identity := fun hzero x hx => L.zero_identity (hI hzero) x hx
     noncollapsed := fun s hs x hx => L.noncollapsed s (hI hs) x hx }
-
-
 
 noncomputable def longControls_of_step_slabs
     {S : GeneralizedBlowupSequence.{u}} {epsilon C kappa r₀ mu c : ℝ}

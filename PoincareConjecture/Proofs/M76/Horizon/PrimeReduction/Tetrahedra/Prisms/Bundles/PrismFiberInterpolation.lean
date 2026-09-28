@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.PrismFiberEndpointPairs
 
-
-
 set_option autoImplicit false
 noncomputable section
 open Set Geometry

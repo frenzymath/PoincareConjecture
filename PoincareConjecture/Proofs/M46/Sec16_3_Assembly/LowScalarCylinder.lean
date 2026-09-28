@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Thm8_1_StableConfiguration
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.SmallBallVolume
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ universe u
 
 namespace PoincareConjecture.Proofs.M46
 
-
-
 structure LowScalarCylinder {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     (D : NoncollapseTest F O) (rho : ℝ) where
   cylinder : SurgeryFlowCylinder F (F.slice D.time) D.time 1
@@ -32,8 +21,6 @@ structure LowScalarCylinder {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
   curvature : ∀ s hs y, y ∈ (F.metric D.time).ball D.center (2 * rho) →
     (F.connection (D.time + s / 1)).curvatureTensorNorm
       (cylinder.forward s hs y) ≤ rho⁻¹ ^ 2
-
-
 
 def LowScalarCylinder.test {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     {D : NoncollapseTest F O} {rho : ℝ} (C : LowScalarCylinder D rho)
@@ -56,8 +43,6 @@ def LowScalarCylinder.test {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     curvature := fun s hs y hy => C.curvature s hs y (hball hy)
   }
 
-
-
 theorem LowScalarCylinder.terminal_curvature
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
     {D : NoncollapseTest F O} {rho : ℝ} (C : LowScalarCylinder D rho)
@@ -72,8 +57,6 @@ theorem LowScalarCylinder.terminal_curvature
   have hnorm := congrArg (fun p : (t : ℝ) × (F.slice t).carrier =>
     (F.connection p.1).curvatureTensorNorm p.2) hp
   exact hnorm ▸ h
-
-
 
 theorem LowScalarCylinder.small_volume (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryPhaseCircleColumns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.Weak Proofs.M58
-
-
 
 theorem m64WeakPhase_circle_current
     {O : Set LoopPlane} (hO : IsOpen O)

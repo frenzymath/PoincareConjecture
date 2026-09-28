@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.DirichletForm
 import PoincareConjecture.Proofs.M03.Existence.HilbertParabolicNative
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -69,8 +59,6 @@ private theorem totallyBounded_dirichletImage_value {K : Set V} (hK : IsCompact 
   exact (show ‖dirichletImage K f‖ < R by
     simpa only [Metric.mem_ball, dist_zero_right] using hyR).le
 
-
-
 theorem totallyBounded_dirichletInclusion_closedBall {K : Set V} (hK : IsCompact K)
     {R : ℝ} (hR : 0 ≤ R) :
     TotallyBounded (dirichletInclusion K '' Metric.closedBall 0 R) := by
@@ -84,18 +72,12 @@ theorem totallyBounded_dirichletInclusion_closedBall {K : Set V} (hK : IsCompact
   rintro u ⟨v, hvR, rfl⟩
   exact ⟨(v : DirichletAmbient K), ⟨v.property, hvR⟩, rfl⟩
 
-
-
 theorem isCompactOperator_dirichletInclusion {K : Set V} (hK : IsCompact K) :
     IsCompactOperator (dirichletInclusion K) := by
   apply (isCompactOperator_iff_isCompact_closure_image_closedBall
     (dirichletInclusion K).toLinearMap zero_lt_one).mpr
   exact (totallyBounded_dirichletInclusion_closedBall hK zero_le_one).closure.isCompact_of_isClosed
     isClosed_closure
-
-
-
-
 
 theorem exists_dirichlet_response {K : Set V} (hK : IsCompact K)
     {T : ℝ} (hT : 0 ≤ T) {F : ℝ → dirichletValue K}

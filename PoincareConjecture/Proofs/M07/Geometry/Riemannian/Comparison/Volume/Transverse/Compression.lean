@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Matrix
 import Mathlib.Analysis.Matrix.Normed
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 def transverseOperator (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[ℝ] E) :
     EuclideanSpace ℝ (Fin m) →L[ℝ] EuclideanSpace ℝ (Fin m) :=
   (Matrix.toEuclideanLin ((LinearMap.toMatrix b.toBasis b.toBasis A.toLinearMap).submatrix
@@ -27,8 +24,6 @@ def transverseOperator (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[�
       (EuclideanSpace.basisFun (Fin m) ℝ).toBasis (transverseOperator b A).toLinearMap =
       (LinearMap.toMatrix b.toBasis b.toBasis A.toLinearMap).submatrix Fin.succ Fin.succ := by
   simp [transverseOperator, Matrix.toEuclideanLin_eq_toLin_orthonormal]
-
-
 
 theorem transverseOperator_comp
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A B : E →L[ℝ] E)
@@ -56,7 +51,6 @@ theorem transverseOperator_comp
     transverseOperator b (-A) = -transverseOperator b A := by
   simp [transverseOperator, Matrix.submatrix_neg]
 
-
 theorem hasDerivAt_transverseOperator
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E)
     {A : ℝ → E →L[ℝ] E} {A' : E →L[ℝ] E} {t : ℝ} (hA : HasDerivAt A A' t) :
@@ -72,7 +66,6 @@ theorem hasDerivAt_transverseOperator
       hasDerivAt_toMatrix_operator b hA i.succ j.succ
   exact C.toContinuousLinearMap.hasFDerivAt.comp_hasDerivAt t hd
 
-
 theorem isSymmetric_transverseOperator
     (b : OrthonormalBasis (Fin (m + 1)) ℝ E) (A : E →L[ℝ] E)
     (hA : LinearMap.IsSymmetric A.toLinearMap) :
@@ -80,7 +73,6 @@ theorem isSymmetric_transverseOperator
   apply (LinearMap.isHermitian_toMatrix_iff (EuclideanSpace.basisFun (Fin m) ℝ)).mp
   rw [toMatrix_transverseOperator, Matrix.isHermitian_iff_isSymm]
   exact isSymm_transverse b A hA
-
 
 theorem isInvertible_of_toMatrix_det_ne_zero
     {ι F : Type*} [Fintype ι] [DecidableEq ι]
@@ -93,8 +85,6 @@ theorem isInvertible_of_toMatrix_det_ne_zero
   refine ⟨e.toContinuousLinearEquiv, ?_⟩
   apply ContinuousLinearMap.coe_injective
   exact Matrix.toLin_toMatrix b b A.toLinearMap
-
-
 
 theorem deriv2_transverse_determinantRoot_le_of_jacobi
     [CompleteSpace E] (b : OrthonormalBasis (Fin (m + 1)) ℝ E)

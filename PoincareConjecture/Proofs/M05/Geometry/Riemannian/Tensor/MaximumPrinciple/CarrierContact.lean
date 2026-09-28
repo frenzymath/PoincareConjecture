@@ -1,19 +1,7 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.Isometry
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.LaplacianRegularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.SupportingLaplacian
 import PoincareConjecture.Proofs.M05.Analysis.Parabolic.SupportTransport
-
-
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -34,9 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 n) x) := by
   unfold TangentSpace
   infer_instance
-
-
-
 
 theorem exists_radialCarrierContact (D : LeviCivitaData g) (p : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

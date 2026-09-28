@@ -1,14 +1,5 @@
 import PoincareConjecture.Statements.M12MovingGaugeTheory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,7 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem compatibleCylinder_mfderiv_prod (e : CompatibleSpacetimeCylinder S D M)
     (g : SpacetimeCylinderMetric e) (t : D.Point) (x : M) (a : ℝ)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.SweptDerivatives
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FlowMetricScaling
 import PoincareConjecture.Proofs.M58.Mathlib.TwoVectorArea
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaDensity_le_column_norms (g : RiemannianMetric n M)
     (f : LoopPlane → M) (p : LoopPlane) :
@@ -41,8 +31,6 @@ theorem m65AreaDensity_le_column_norms (g : RiemannianMetric n M)
   exact Proofs.M58.twoVectorArea_le u v
 
 variable {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
-
-
 
 theorem m65SweptDensity_le {c : ℝ → ℝ → M} (hc : M62ShrinkingCurve F c)
     {s t : ℝ} (has : a < s) (hst : s ≤ t) (htb : t < b) (x y : ℝ) :
@@ -65,9 +53,6 @@ theorem m65SweptDensity_le {c : ℝ → ℝ → M} (hc : M62ShrinkingCurve F c)
   change _ ≤ ((t - s) * deriv Real.smoothTransition y) *
     ‖m62CurvatureVector F c tau x‖ * ‖curveVelocity (n := n) (fun r => c r tau) x‖
   exact h.trans_eq (by ring)
-
-
-
 
 theorem m65SweptDensity_fixedMetric_le {K0 K1 K2 : ℝ}
     (bounds : CurveEvolutionAmbientBounds F K0 K1 K2) (hK2 : 0 ≤ K2)

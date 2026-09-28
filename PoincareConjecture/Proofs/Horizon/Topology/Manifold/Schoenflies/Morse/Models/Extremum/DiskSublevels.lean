@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Caps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -69,9 +67,6 @@ private theorem compact_region_height_bounds
     subst x
     exact hpb.ne hxb
 
-
-
-
 theorem height_bounds_on_disk_of_unique_critical
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
     (d : OpenPartialHomeomorph E2 S2) (hds : closedBall 0 1 ⊆ d.source)
@@ -111,8 +106,6 @@ private theorem exists_small_sublevel_subset_neighborhood
     intro x hx _
     by_contra hxU
     exact hne ⟨x, hx, hxU⟩
-
-
 
 theorem exists_exact_morse_sublevels_on_compact_disk
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

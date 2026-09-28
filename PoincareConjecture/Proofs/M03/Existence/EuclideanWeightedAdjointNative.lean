@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanLocalIntegrationByPartsNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 
@@ -47,7 +39,6 @@ theorem densityDivergence_contDiffOn {U : Set E} (hU : IsOpen U)
     (ContDiffOn.sum (fun i _ =>
       (((hρ.mul (ha i)).fderiv_of_isOpen hU (by simp)).clm_apply contDiffOn_const)))
 
-
 theorem densityAdjointTest_eq {U : Set E} (hU : IsOpen U)
     {ρ : E → ℝ} (hρ : ContDiffOn ℝ ∞ ρ U) (hρpos : ∀ x ∈ U, 0 < ρ x)
     {a : iota → E → ℝ} (ha : ∀ i, ContDiffOn ℝ ∞ (a i) U) (v : iota → E)
@@ -82,7 +73,6 @@ theorem densityAdjointTest_contDiffOn {U : Set E} (hU : IsOpen U)
     ((densityDivergence_contDiffOn hU hρ hρpos ha v).mul hη)).congr
   intro x hx
   exact densityAdjointTest_eq hU hρ hρpos ha v hη hx
-
 
 theorem integral_weightedFirstOrder_eq_adjoint (η : 𝓢(E, ℝ)) (hη : HasCompactSupport η)
     {U : Set E} (hU : IsOpen U) (hηU : tsupport η ⊆ U)

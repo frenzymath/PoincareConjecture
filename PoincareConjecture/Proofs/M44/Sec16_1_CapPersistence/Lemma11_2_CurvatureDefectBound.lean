@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_Connection
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_LoweredConnectionDerivative
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Operator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M44
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem abs_inner_covariantConnectionDifference_le {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon : ℝ}
@@ -91,9 +78,6 @@ theorem abs_inner_covariantConnectionDifference_le {g h : RiemannianMetric 3 E}
   linarith only [hsum]
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem abs_curvatureTensor_difference_le {g h : RiemannianMetric 3 E}
     (D : LeviCivitaData g) (D' : LeviCivitaData h) (x : E) {epsilon K : ℝ}

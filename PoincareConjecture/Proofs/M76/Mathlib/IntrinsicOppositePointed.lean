@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveTwoSidedPointed
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_intrinsic_opposite_pointed_deformations_with_signs
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}
@@ -163,9 +150,6 @@ theorem AlexanderCollarSlab.exists_intrinsic_opposite_pointed_deformations_with_
     have htarget := congrArg ((G '' (s' ∪ d)) ∩ ·) hlevel
     exact ⟨(Homeomorph.setCongr hsource.symm).trans (F'.trans (Homeomorph.setCongr htarget)),
       hF'.setCongr hsource htarget⟩
-
-
-
 
 theorem AlexanderCollarSlab.exists_intrinsic_opposite_pointed_deformations
     {S : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

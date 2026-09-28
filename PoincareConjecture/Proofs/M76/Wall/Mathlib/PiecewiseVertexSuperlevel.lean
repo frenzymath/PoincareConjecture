@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.VertexInducedSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {f : E → ℝ}
-
-
-
-
 
 theorem AffineOnFaces.vertexSuperlevel_space (hf : K.AffineOnFaces f) (r : ℝ)
     (hside : ∀ s ∈ K.faces,

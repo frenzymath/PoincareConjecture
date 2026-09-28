@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTubeSigns
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -98,9 +90,6 @@ theorem source_strip_period_fibers {E : Type*} {L d a b : ℝ}
     AddCircle.coe_eq_coe_iff_eq_or_endpoints hx.1 hy.1]
   simp only [div_left_inj' hd.ne', htime, hstart, hend]
   tauto
-
-
-
 
 theorem exists_source_annulus_of_endpoint_strip
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

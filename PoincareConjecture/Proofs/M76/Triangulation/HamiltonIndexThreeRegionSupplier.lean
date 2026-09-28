@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexThreeRegionBalls
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereRegionInduction
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangularRoofModel
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 def HasZeroChargeAlexanderRegionBalls (E : Type*)
     [NormedAddCommGroup E] [NormedSpace ℝ E] : Prop :=
@@ -34,10 +20,6 @@ def HasZeroChargeAlexanderRegionBalls (E : Type*)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_indexThree_chart_handleStraightening_of_zero_charge_supplier
     (hdim : Module.finrank ℝ E = 3)

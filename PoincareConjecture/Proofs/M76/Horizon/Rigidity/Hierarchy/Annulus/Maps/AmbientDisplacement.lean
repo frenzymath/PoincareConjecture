@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Maps.Adjustments.Tangential
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.SecondCoordinateLifts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

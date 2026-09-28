@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Models.Cylinder
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -65,8 +58,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {S : GradientShrinkingSolitonData 3 M} {G : ShrinkingSolitonFlow S}
-
-
 
 theorem involution_preserves_tangent_forms (q : QuotientSphereLineCertificate G) :
     letI := q.cover_topology

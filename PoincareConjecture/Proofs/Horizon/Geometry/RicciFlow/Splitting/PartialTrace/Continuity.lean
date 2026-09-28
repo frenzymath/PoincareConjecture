@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.PartialTraceEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.TimeTransport.Smooth
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +14,6 @@ namespace Poincare.RicciFlow.Splitting
 
 variable {E H : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H]
-
 
 theorem partialTrace_eq_of_isometry (k : ℕ) (A : E →L[ℝ] E) (B : H →L[ℝ] H)
     (P : E ≃ₗᵢ[ℝ] H)
@@ -115,8 +107,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
 theorem exists_smooth_local_ricci_transport_frame [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
     (F : RicciFlow n M (Icc a b)) (p : M) :
@@ -177,7 +167,6 @@ theorem exists_smooth_local_ricci_transport_frame [T2Space M]
     rw [(P ⟨x, hxV⟩).inner_map_map]
     simp only [OrthonormalBasis.inner_eq_ite, ι, Fin.cast_inj]
 
-
 theorem continuousOn_ricci_pairing (hab : a < b) (F : RicciFlow n M (Icc a b))
     (X Y : ℝ → (x : M) → TangentSpace (𝓡 n) x)
     (hX : ContMDiffOn (𝓘(ℝ, ℝ).prod (𝓡 n))
@@ -200,8 +189,6 @@ theorem continuousOn_ricci_pairing (hab : a < b) (F : RicciFlow n M (Icc a b))
   apply h.congr
   intro q hq
   exact (inner_ricciEndomorphism hab F q.2 hq.1 _ _).symm
-
-
 
 theorem ricciPartialTrace_continuousOn [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)
@@ -247,7 +234,6 @@ theorem ricciPartialTrace_continuousOn [T2Space M]
     continuousAt_snd.preimage_mem_nhds (hU.mem_nhds hpU)
   filter_upwards [self_mem_nhdsWithin, nhdsWithin_le_nhds hUnhds] with q hq hqU
   exact heq q hq.1 hqU
-
 
 theorem ricciPartialTrace_continuousOn_prod [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (hab : a < b)

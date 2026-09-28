@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RectangleCornerArcs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry RectangleCornerArcs
@@ -23,9 +13,6 @@ private theorem zero_interval_pair {t : ℝ} (ht : t ≠ 0) :
     exact isFinitePLBallPair_Icc h
   · rw [uIcc_of_ge h.le, pair_comm]
     exact isFinitePLBallPair_Icc h
-
-
-
 
 theorem vertical_axis_ballPair {z : ℝ} (hz : z ≠ 0) :
     IsFinitePLBallPair ℝ ({(0 : ℝ)} ×ˢ uIcc 0 z) {(0, 0), (0, z)} := by
@@ -43,9 +30,6 @@ theorem vertical_axis_ballPair {z : ℝ} (hz : z ≠ 0) :
   have hvends : v '' {0, z} = {((0 : ℝ), 0), (0, z)} := by
     simpa only [hvval] using image_pair (v : ℝ → ℝ × ℝ) 0 z
   simpa only [hvs, hvends] using (zero_interval_pair hz).affine_image v hv.injOn
-
-
-
 
 theorem horizontal_axis_ballPair {t : ℝ} (ht : t ≠ 0) :
     IsFinitePLBallPair ℝ (uIcc 0 t ×ˢ {(0 : ℝ)}) {(0, 0), (t, 0)} := by
@@ -70,9 +54,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem FinitePiecewiseAffineOn.rectangle_corner_patches
     {ψ : (ℝ × ℝ) → E} {T : Set (ℝ × ℝ)}
@@ -99,10 +80,6 @@ theorem FinitePiecewiseAffineOn.rectangle_corner_patches
       (cornerArc_ballPair hab hcd).image_of_subset hψ hinner hinj.injOn
   · simpa only [image_pair] using houterPair.image_of_subset hψ houter hinj.injOn
   · rw [← image_inter hinj, cornerArc_inter_opposite hab hcd, image_pair]
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.quadrant_axis_intervals
     {ψ : (ℝ × ℝ) → E} {T : Set (ℝ × ℝ)}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M54.Mathlib.LocalPathTransport
 import PoincareConjecture.Proofs.M54.Mathlib.DyadicSubdivision
 import PoincareConjecture.Proofs.M54.Mathlib.GridProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -19,12 +10,8 @@ namespace LocalPathTransport
 
 variable {X ι G : Type*} [TopologicalSpace X] {U : ι → Set X} [Monoid G]
 
-
-
 def Subordinate (U : ι → Set X) (p : C(unitInterval, X)) (n : ℕ) : Prop :=
   ∀ k < 2 ^ n, ∃ i, MapsTo p (Icc (dyadicPoint n k) (dyadicPoint n (k + 1))) (U i)
-
-
 
 theorem Subordinate.succ {p : C(unitInterval, X)} {n : ℕ} (h : Subordinate U p n) :
     Subordinate U p (n + 1) := by
@@ -35,21 +22,15 @@ theorem Subordinate.succ {p : C(unitInterval, X)} {n : ℕ} (h : Subordinate U p
   obtain ⟨i, hi⟩ := h (k / 2) hk'
   exact ⟨i, hi.mono_left (dyadic_cell_subset n k)⟩
 
-
-
 theorem Subordinate.mono {p : C(unitInterval, X)} {n m : ℕ}
     (h : Subordinate U p n) (hnm : n ≤ m) : Subordinate U p m := by
   induction m, hnm using Nat.le_induction with
   | base => exact h
   | succ m _ ih => exact ih.succ
 
-
-
 noncomputable def dyadicValue (L : LocalPathTransport U G) (p : C(unitInterval, X)) (n : ℕ) : G :=
   ((List.range (2 ^ n)).map (fun k =>
     L.value (p.intervalSubpath (dyadicPoint n k) (dyadicPoint n (k + 1))))).prod
-
-
 
 theorem dyadicValue_succ (L : LocalPathTransport U G) (p : C(unitInterval, X))
     {n : ℕ} (h : Subordinate U p n) : L.dyadicValue p (n + 1) = L.dyadicValue p n := by
@@ -68,16 +49,12 @@ theorem dyadicValue_succ (L : LocalPathTransport U G) (p : C(unitInterval, X))
   simpa only [dyadicPoint_even, show 2 * k + 1 + 1 = 2 * (k + 1) by omega] using
     L.interval_mul p hleft hright i hi
 
-
-
 theorem dyadicValue_stable (L : LocalPathTransport U G) (p : C(unitInterval, X))
     {n m : ℕ} (h : Subordinate U p n) (hnm : n ≤ m) :
     L.dyadicValue p m = L.dyadicValue p n := by
   induction m, hnm using Nat.le_induction with
   | base => rfl
   | succ m hnm ih => exact (L.dyadicValue_succ p (h.mono hnm)).trans ih
-
-
 
 theorem exists_subordinate (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i)
     (p : C(unitInterval, X)) : ∃ n, Subordinate U p n := by
@@ -87,14 +64,10 @@ theorem exists_subordinate (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, 
   obtain ⟨i, hi⟩ := mem_iUnion.mp (hcover (mem_univ (p t)))
   exact mem_iUnion.mpr ⟨i, hi⟩
 
-
-
 noncomputable def extend (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i)
     (p : C(unitInterval, X)) : G :=
   L.dyadicValue p (Classical.choose (exists_subordinate hU hcover p))
-
-
 
 theorem extend_eq_dyadicValue (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i)
@@ -105,8 +78,6 @@ theorem extend_eq_dyadicValue (L : LocalPathTransport U G)
   exact (L.dyadicValue_stable p hm (le_max_left m n)).symm.trans
     (L.dyadicValue_stable p h (le_max_right m n))
 
-
-
 theorem extend_eq_local (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i)
     (p : C(unitInterval, X)) (i : ι) (hp : ∀ t, p t ∈ U i) :
@@ -115,8 +86,6 @@ theorem extend_eq_local (L : LocalPathTransport U G)
   rw [L.extend_eq_dyadicValue hU hcover p h]
   have hlast : dyadicPoint 0 1 = 1 := dyadicPoint_last 0
   simp [dyadicValue, hlast]
-
-
 
 theorem extend_const (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i) (x : X) :
@@ -155,8 +124,6 @@ private theorem vertical_subordinate
   intro l hl
   obtain ⟨i, hi⟩ := hgrid k hk l hl
   exact ⟨i, fun t ht => hi ⟨⟨dyadicPoint_mono n hkj, dyadicPoint_mono n hjk⟩, ht⟩⟩
-
-
 
 theorem extend_square (L : LocalPathTransport U G)
     (hU : ∀ i, IsOpen (U i)) (hcover : univ ⊆ ⋃ i, U i)

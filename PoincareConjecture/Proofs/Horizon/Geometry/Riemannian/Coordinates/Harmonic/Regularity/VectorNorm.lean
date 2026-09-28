@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Boc
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.GradientTime
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem contMDiff_vector_normSq
     {V : (x : M) → TangentSpace (𝓡 n) x}
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% V)) :
@@ -30,7 +22,6 @@ theorem contMDiff_vector_normSq
   intro x
   have h := ((g.contMDiff x).clm_bundle_apply (hV x)).clm_bundle_apply (hV x)
   exact (Bundle.contMDiffAt_totalSpace.mp h).2
-
 
 theorem gradient_vector_normSq_le (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x} {x : M}
@@ -57,7 +48,6 @@ theorem gradient_vector_normSq_le (D : LeviCivitaData g)
         (D.connection V x (g.orthonormalBasis x i))
   nlinarith only [h]
 
-
 theorem regularized_vector_norm_pos
     (V : (x : M) → TangentSpace (𝓡 n) x) {ε : ℝ} (hε : 0 < ε) (x : M) :
     0 < Real.sqrt (g.inner x (V x) (V x) + ε) := by
@@ -66,7 +56,6 @@ theorem regularized_vector_norm_pos
     · simp [h]
     · exact (g.pos x _ h).le
   exact Real.sqrt_pos.mpr (add_pos_of_nonneg_of_pos hQ hε)
-
 
 theorem contMDiff_regularized_vector_norm
     {V : (x : M) → TangentSpace (𝓡 n) x}
@@ -78,8 +67,6 @@ theorem contMDiff_regularized_vector_norm
   have hpos := Real.sqrt_pos.mp (regularized_vector_norm_pos (g := g) V hε x)
   exact (Real.contDiffAt_sqrt hpos.ne').contMDiffAt.comp x
     ((contMDiff_vector_normSq (g := g) hV x).add contMDiffAt_const)
-
-
 
 theorem gradient_regularized_vector_norm_le (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Gauge.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedGeometry.OrdinaryCapture
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : ℝ → RiemannianMetric n M} {I : SpacetimeInterval}
 
-
 def toLGeometry (P : OrdinaryProductRicciGeometry g I)
     (h : IntrinsicGeneralizedRicciEquation P.leafwiseConnection) :
     GeneralizedLGeometryTransport n (I.domain × M) (fun p => p.1.val) I where
@@ -34,12 +23,10 @@ def toLGeometry (P : OrdinaryProductRicciGeometry g I)
   leafwise := P.leafwiseConnection
   ricciEquation := h
 
-
 theorem intrinsicEquation_of_ricciFlow (F : RicciFlow n M I.domain)
     (P : OrdinaryProductRicciGeometry F.metric I) :
     IntrinsicGeneralizedRicciEquation P.leafwiseConnection :=
   (P.equation_iff F.connection).mpr F.equation
-
 
 def ricciFlowLGeometry (F : RicciFlow n M I.domain)
     (P : OrdinaryProductRicciGeometry F.metric I) :
@@ -53,7 +40,6 @@ theorem productCylinder_surjective : Function.Surjective P.product.productCylind
 
 @[simp] theorem productCylinder_range : Set.range P.product.productCylinder.toSpacetime =
     Set.univ := Set.range_eq_univ.mpr P.productCylinder_surjective
-
 
 def pointMap : P.product.spacetime.Point → M := fun p => p.2
 

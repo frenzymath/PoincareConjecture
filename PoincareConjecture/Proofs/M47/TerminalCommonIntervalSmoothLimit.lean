@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.TransitionCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +7,6 @@ open Set Filter Poincare.Analysis.Calculus
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_smooth_actual_coordinate_limits
     {d : ℕ} {U V : ℕ → Set (EuclideanSpace ℝ (Fin d))}

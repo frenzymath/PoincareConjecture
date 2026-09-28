@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseCuts
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.ImplicitFunction.Quadrants
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -174,9 +164,6 @@ private theorem exists_height_tube {u v : ℝ} {W : Set (ℝ × ℝ)} (hW : IsOp
     (hV.mem_nhds (h0V (mem_singleton (0 : ℝ))))
   refine ⟨δ, hδ, fun t ht z hz => hUV ⟨hIU ht, hball ?_⟩⟩
   simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] using hz
-
-
-
 
 theorem exists_avoiding_strip
     {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)

@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.ConnectedCo
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.Connected
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Similarity
 
-
 open Set MeasureTheory PoincareConjecture
 open scoped Manifold ContDiff Bundle
 set_option autoImplicit false

@@ -8,18 +8,6 @@ import PoincareConjecture.Statements.Ch06.LGeometry
 import PoincareConjecture.Statements.Ch06.ReducedLength
 import PoincareConjecture.Statements.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContMDiff ContDiff Bundle Topology intervalIntegral BigOperators
@@ -40,8 +28,6 @@ def M14FiniteValueStatement
 
 def M14AttainmentStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
-
-
 
   ∀ (T τ : ℝ) (x : G.Point)
     (E : M14ExponentialFamily G T x)
@@ -254,8 +240,6 @@ def M14ReducedVolumeStatement
           M14ReducedVolumeOnStable G T x τmax Hmax ≤
           M14ReducedVolumeOnStable G T x τ Hτ
 
-
-
 def M14ChartProductLipschitzOn
     (G : GeneralizedLGeometryTransport n X time I)
     (f : G.Point → ℝ) (z₀ : G.Point)
@@ -294,9 +278,6 @@ def M14LocalLipschitzStatement
         M14ChartProductLipschitzOn G
           (M14ReducedLengthAt G T 0 x) (H.endpoint_map Z) U
 
-
-
-
 def M14SmallTimeCoverageStatement
     (G : GeneralizedLGeometryTransport n X time I) : Prop :=
   ∀ (T : ℝ) (x : G.Point) (E : M14ExponentialFamily G T x)
@@ -314,9 +295,6 @@ def M14SmallTimeCoverageStatement
         ∃ H : M14StableSet G T τ x E, B ⊆ H.carrier ∧
           ∀ Z, Z ∈ B → ∀ s ∈ Set.Icc 0 τ,
             E.gamma Z (Real.sqrt s) ∈ K
-
-
-
 
 structure M14ReducedVolumeAnalyticData
     (G : GeneralizedLGeometryTransport n X time I)
@@ -378,11 +356,6 @@ noncomputable def M14ReducedVolumeOnAnalyticCarrier
     (W : Set (G.Horizontal x)) : ℝ :=
   ∫ q in H.endpoint_slice_map '' W, A.density q
     ∂calibratedMetricVolume (G.slices (T - τ)).metricOnPoints
-
-
-
-
-
 
 structure M14ReducedVolumeSourceCoverageData
     (G : GeneralizedLGeometryTransport n X time I) where
@@ -462,8 +435,6 @@ structure M14ReducedVolumeSourceCoverageData
               ∃ Aτ : M14ReducedVolumeAnalyticData G T τ x E Hτ,
                 Real.rpow τ₀ (-(n : ℝ) / 2) * Real.exp (-l₀) * V ≤
                   M14ReducedVolumeOnAnalyticCarrier Aτ W
-
-
 
 structure M14AnalyticRescalingData
     (G : GeneralizedLGeometryTransport n X time I)
@@ -640,9 +611,6 @@ structure M14OrdinaryProviders (n : ℕ) : Prop where
     LGeodesicTheory F T τmax → ReducedLengthDifferentialTheory F T τmax →
     Nonempty (ReducedVolumeTheory F T τmax)
 
-
-
-
 structure M14OrdinaryCaptureData
     (G : GeneralizedLGeometryTransport n X time I)
     (C : Type u) [TopologicalSpace C]
@@ -769,7 +737,6 @@ structure M14OrdinaryCaptureOutput
         (D.point_map '' ((fun q => q.val) ''
           (H.endpoint_slice_map '' H.carrier)))
 
-
   captured_stable_image_full_measure : ∀ (τ : ℝ) (x : G.Point)
     (E : M14ExponentialFamily G T x)
     (H : M14StableSet G T τ x E),
@@ -777,7 +744,6 @@ structure M14OrdinaryCaptureOutput
     calibratedMetricVolume (G.slices (T - τ)).metricOnPoints
       ({q | q.val ∈ Set.range e.toSpacetime} \
         (H.endpoint_slice_map '' H.carrier)) = 0
-
 
   captured_slice_measure_transport : ∀ (τ : ℝ), 0 < τ → τ < τmax →
     ∀ A : Set (G.slices (T - τ)).Point, MeasurableSet A →

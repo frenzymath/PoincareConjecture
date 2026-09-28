@@ -10,7 +10,6 @@ universe u
 
 namespace PoincareConjecture
 
-
 structure M67ClassDatum (S : M59IdentificationSystem.{u})
     {A : GeneralizedSliceCarrier.{u}} (C : SurgerySelectedComponent A) where
   pi_two_trivial : Subsingleton (HomotopyGroup.Pi 2 C.carrier.carrier C.basepoint)

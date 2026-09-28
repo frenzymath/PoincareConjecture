@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.Deriv.Comp
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +14,6 @@ namespace PoincareConjecture.M51Ordinary
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def literalTranslate {J : Set ℝ} (F : RicciFlow n M J)
     (a : ℝ) (K : Set ℝ) (hK : K.OrdConnected) (hne : K.Nontrivial)
@@ -62,7 +51,6 @@ noncomputable def literalTranslate {J : Set ℝ} (F : RicciFlow n M J)
     ((literalTranslate F a K hK hne hclock).connection t).curvatureTensorNorm x =
       (F.connection (a + t)).curvatureTensorNorm x := rfl
 
-
 noncomputable def tail {T a : ℝ} (F : RicciFlow n M (Ico 0 T))
     (ha : 0 ≤ a) (haT : a < T) : RicciFlow n M (Ico 0 (T - a)) :=
   literalTranslate F a (Ico 0 (T - a)) ordConnected_Ico
@@ -89,7 +77,6 @@ noncomputable def tail {T a : ℝ} (F : RicciFlow n M (Ico 0 T))
 theorem tail_isLeast {T a : ℝ} (haT : a < T) : IsLeast (Ico 0 (T - a)) 0 :=
   ⟨⟨le_rfl, sub_pos.mpr haT⟩, fun _ ht => ht.1⟩
 
-
 theorem tail_curvature_bound {T a L : ℝ} (F : RicciFlow n M (Ico 0 T))
     (ha : 0 ≤ a) (haT : a < T)
     (hbound : ∀ t ∈ Ico a T, ∀ x : M, (F.connection t).curvatureTensorNorm x ≤ L) :
@@ -97,7 +84,6 @@ theorem tail_curvature_bound {T a L : ℝ} (F : RicciFlow n M (Ico 0 T))
       ((tail F ha haT).connection t).curvatureTensorNorm x ≤ L := by
   intro t ht x
   exact hbound (a + t) ⟨by linarith [ht.1], by linarith [ht.2]⟩ x
-
 
 noncomputable def restart {δ : ℝ} (R : RicciFlow n M (Ico 0 δ))
     (hδ : 0 < δ) (a : ℝ) : RicciFlow n M (Ico a (a + δ)) :=

@@ -2,14 +2,6 @@ import Mathlib.Topology.VectorBundle.Riemannian
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +16,11 @@ variable {B : Type*} [TopologicalSpace B]
   [∀ x, NormedAddCommGroup (E x)] [∀ x, InnerProductSpace ℝ (E x)]
   [FiberBundle F E] [VectorBundle ℝ F E] [IsContinuousRiemannianBundle F E]
 
-
 lemma continuous_fiber_norm : Continuous (fun q : TotalSpace F E => ‖q.2‖) := by
   have h : Continuous (fun q : TotalSpace F E => inner ℝ q.2 q.2) :=
     Continuous.inner_bundle (F := F) continuous_id continuous_id
   simpa only [Function.comp_def, real_inner_self_eq_norm_sq, Real.sqrt_sq_eq_abs, abs_norm] using
     Real.continuous_sqrt.comp h
-
-
 
 theorem isCompact_disk_over [T2Space B] [LocallyCompactSpace B]
     [FiniteDimensional ℝ F] {K : Set B} (hK : IsCompact K) (R : ℝ) :
@@ -73,7 +62,6 @@ theorem isCompact_disk_over [T2Space B] [LocallyCompactSpace B]
       _ ≤ C x * max R 0 :=
         mul_le_mul (hLsub x hqx).2.le (hq.2.trans (le_max_left _ _))
           (norm_nonneg _) (hCpos x).le
-
 
 theorem isCompact_sphere_over [T2Space B] [LocallyCompactSpace B]
     [FiniteDimensional ℝ F] {K : Set B} (hK : IsCompact K) (R : ℝ) :

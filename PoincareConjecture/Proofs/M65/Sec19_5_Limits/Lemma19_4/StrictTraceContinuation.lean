@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceInterio
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceArcCapture
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M65StrictTrace
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem differential_zero_interior_of_local_zero (D : LeviCivitaData g)
     {f : LoopPlane → M}
@@ -50,9 +38,6 @@ theorem differential_zero_interior_of_local_zero (D : LeviCivitaData g)
     hA ⟨x, hx, hzero⟩ hcl
   intro z hz
   exact mem_of_mem_nhds (s := {w : LoopPlane | mfderiv (𝓡 2) (𝓡 3) f w = 0}) (hall hz)
-
-
-
 
 theorem not_local_zero_of_Jordan_trace [T2Space M] (D : LeviCivitaData g)
     {N : ℕ} {e : M → EuclideanSpace ℝ (Fin N)}

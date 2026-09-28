@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineSubspaceAvoidance
 import Mathlib.Data.Set.Finite.Lattice
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +9,6 @@ open Set
 namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_avoiding_directions [FiniteDimensional ℝ E]
     {ι : Type*} [Finite ι] (A : ι → AffineSubspace ℝ E)
@@ -44,10 +30,6 @@ theorem exists_avoiding_directions [FiniteDimensional ℝ E]
   intro i hi hui
   exact hu (mem_iUnion.mpr ⟨⟨i, hi⟩, hui⟩)
 
-
-
-
-
 theorem subsingleton_line_parameters (A : AffineSubspace ℝ E) (v u : E)
     (hu : (A : Set E).Nonempty → u ∉ A.direction) :
     {t : ℝ | v + t • u ∈ A}.Subsingleton := by
@@ -58,10 +40,6 @@ theorem subsingleton_line_parameters (A : AffineSubspace ℝ E) (v u : E)
     simpa only [vsub_eq_sub, add_sub_add_left_eq_sub, ← sub_smul] using
       vsub_mem_direction ha hb
   exact (A.direction.smul_mem_iff (sub_ne_zero.mpr hab)).mp hsub
-
-
-
-
 
 theorem exists_pos_small_line_avoiding
     {ι : Type*} [Finite ι] (A : ι → AffineSubspace ℝ E) (v u : E)

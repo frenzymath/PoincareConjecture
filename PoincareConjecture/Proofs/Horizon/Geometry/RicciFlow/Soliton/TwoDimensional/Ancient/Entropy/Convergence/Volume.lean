@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.UniformLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.TotalCurvature
 
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter
@@ -12,7 +11,6 @@ namespace PoincareConjecture.SurfaceEntropy
 variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [CompactSpace M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 theorem eventually_volume_le_of_uniform_scalar
     {g : ℕ → RiemannianMetric 2 M} (D : ∀ k, LeviCivitaData (g k)) {c : ℝ}

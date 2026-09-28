@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M10.CalibratedTransport
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,7 +13,6 @@ namespace PoincareConjecture.M49
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M]
-
 
 theorem calibratedMetricVolume_isLocallyFinite (g : RiemannianMetric n M) :
     IsLocallyFiniteMeasure (calibratedMetricVolume g) := by
@@ -60,17 +50,14 @@ theorem calibratedMetricVolume_isLocallyFinite (g : RiemannianMetric n M) :
       simp only [lintegral_const, Measure.restrict_apply_univ]
       exact ENNReal.mul_lt_top ENNReal.ofReal_lt_top measure_ball_lt_top
 
-
 theorem calibratedMetricVolume_lt_top_of_isCompact (g : RiemannianMetric n M)
     {K : Set M} (hK : IsCompact K) : calibratedMetricVolume g K < ⊤ := by
   let := calibratedMetricVolume_isLocallyFinite g
   exact hK.measure_lt_top
 
-
 theorem sliceVolume_lt_top (F : SurgeryFlowData.{u}) {t : ℝ}
     (ht : t ∈ F.time_domain) : calibratedMetricVolume (F.metric t) univ < ⊤ :=
   calibratedMetricVolume_lt_top_of_isCompact (F.metric t) (F.slices_compact t ht)
-
 
 theorem initialVolume_ne_top (F : SurgeryFlowData.{u}) :
     calibratedMetricVolume (F.metric 0) univ ≠ ⊤ :=

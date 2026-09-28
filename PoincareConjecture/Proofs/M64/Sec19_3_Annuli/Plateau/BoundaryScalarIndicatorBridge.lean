@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryScalarEquation
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryIndicatorEquation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +18,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem m64WeightedChart_scalar_indicator_equation
     (g : RiemannianMetric n M) (b : M) (modulus : ℝ)
@@ -134,11 +118,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
-
 
 theorem weighted_lower_scalar_indicator_equation_of_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

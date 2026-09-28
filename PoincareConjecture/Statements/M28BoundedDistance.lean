@@ -1,19 +1,6 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 import PoincareConjecture.Statements.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -21,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M28SameTimeEstimateStatement (epsilon₀ : ℝ) : Prop :=
   ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ epsilon₀ →
@@ -35,8 +20,6 @@ def M28SameTimeEstimateStatement (epsilon₀ : ℝ) : Prop :=
             generalizedSliceStrongCanonicalNeighborhoods F epsilon C
               (4 * F.scalar ⟨t, x⟩) t →
             RepairedBoundedDistanceEstimate F A D t x
-
-
 
 def M28DenseTimeEstimateStatement (epsilon₀ : ℝ) : Prop :=
   ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ epsilon₀ →
@@ -66,7 +49,6 @@ theorem dense_constants (P : RepairedBoundedDistanceTheory.{u}) :
       M28DenseTimeEstimateStatement.{u} epsilon₀ := by
   obtain ⟨epsilon₀, hpos, hsmall, _, hdense⟩ := P.bounds
   exact ⟨epsilon₀, hpos, hsmall, hdense⟩
-
 
 theorem constants (P : RepairedBoundedDistanceTheory.{u}) :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

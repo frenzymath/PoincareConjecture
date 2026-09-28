@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.Tensor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Positive.Metric
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,16 +15,13 @@ namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p)
 
-
 def positiveConeRadii : Opens ℝ := ⟨Ioi 0, isOpen_Ioi⟩
-
 
 def positiveConePolarMap (q : positiveConeRadii × AsymptoticConeUnitSlice p hc) :
     AsymptoticConePositive p hc :=
   ⟨asymptoticConeDilation hc ⟨q.1.1, q.1.2.le⟩ q.2.1, by
     rw [asymptoticConeRadius_dilation, q.2.property, mul_one]
     exact q.1.2⟩
-
 
 def positiveConePolarInverse (a : AsymptoticConePositive p hc) :
     positiveConeRadii × AsymptoticConeUnitSlice p hc :=
@@ -93,8 +83,6 @@ private theorem polar_chart_coneImage (d : UnitSliceRadialChartData hc n)
     simp only [hz, NNReal.coe_zero, mul_zero] at hr
     linarith
   rw [ha, asymptoticConeDilation_mul, hscale, mul_assoc, mul_inv_cancel₀ hnonzero, mul_one]
-
-
 
 theorem isLocalDiffeomorph_positiveConePolarMap :
     letI := unitSliceChartedSpace hc n hcover
@@ -170,8 +158,6 @@ theorem isLocalDiffeomorph_positiveConePolarMap :
   rw [hsecond]
   congr 1
   exact Subtype.ext hKfirst.symm
-
-
 
 def positiveConePolarDiffeomorph :
     letI := unitSliceChartedSpace hc n hcover
@@ -324,8 +310,6 @@ private theorem positiveConePolarMap_inner_level
     (mfderiv I (𝓡 (n + 1)) Q ((c : ℝ), z) (a, v))
     (mfderiv I (𝓡 (n + 1)) Q ((c : ℝ), z) (b, w))
   exact hmetric.trans (hQtensor ((c : ℝ), z) hzQ a b v w)
-
-
 
 theorem positiveConePolarMap_inner :
     letI := unitSliceChartedSpace hc n hcover

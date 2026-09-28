@@ -1,17 +1,5 @@
 import PoincareConjecture.Definitions.Ch16.ControlledSurgery
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,9 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 def RepairedNonemptyEventPreInterval (F : SurgeryFlowData.{u}) : Prop :=
   ∀ (T : ℝ) (hT : T ∈ F.surgery_times),
@@ -50,9 +35,6 @@ structure RepairedVolumeLossControls
   nonempty_pre_interval : RepairedNonemptyEventPreInterval F
   vanishing_pre_interval : RepairedVanishingEventPreInterval F
   zero_cap_discard : RepairedZeroCapDiscard F
-
-
-
 
 structure RepairedObservedVolumeControls
     (F : SurgeryFlowData.{u}) (O : SurgeryObservation F) : Prop where
@@ -89,8 +71,6 @@ structure RepairedSurgeryEventLossData
     [Nonempty (F.slice T).carrier] where
   loss : ℝ≥0∞
 
-
-
   left_limit_volume : ℝ≥0∞
   left_limit_volume_ne_top : left_limit_volume ≠ ⊤
   left_limit_volume_tendsto :
@@ -109,8 +89,6 @@ structure RepairedSurgeryEventLossData
   terminal_volume_drop :
     calibratedMetricVolume (F.metric T) Set.univ + loss ≤
       calibratedMetricVolume (F.event T hT).limit_metric Set.univ
-
-
 
   event_case :
     (∃ i : Fin (F.event T hT).cap_count,
@@ -146,19 +124,14 @@ structure RepairedVolumeLossData
     ∀ [IsEmpty (F.slice T).carrier],
       RepairedVanishingVolumeData F T hT
 
-
   volume_growth : ∀ a b : ℝ,
     a ∈ F.time_domain → b ∈ F.time_domain → a ≤ b →
       calibratedMetricVolume (F.metric b) Set.univ ≤
         ENNReal.ofReal (Real.exp (6 * (b - a))) *
           calibratedMetricVolume (F.metric a) Set.univ
 
-
-
   loss_scale_factor : ℝ
   loss_scale_factor_pos : 0 < loss_scale_factor
-
-
 
   horn_loss_lower_bound : ∀ H : ℝ, 0 ≤ H →
     ∃ sigma : ℝ, 0 < sigma ∧
@@ -170,7 +143,6 @@ structure RepairedVolumeLossData
                   (loss_scale_factor *
                     (F.parameters.h T ^ 3 / F.parameters.delta T)) ≤
                 (event_loss T hT).loss
-
 
   component_event_count_bound : ∀ H : ℝ, 0 ≤ H →
     ∃ n : ℕ, ∀ S : Finset ℝ,

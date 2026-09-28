@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceCurvatureTime
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.SecondJetBound
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicL2RelabelingLimit
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,10 +24,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace ℝ ι
 local notation "StateV" => State ((ℤ × Fin 2) × ι)
 local notation "Y" => C(AddCircle curvePeriod, W)
-
-
-
-
 
 theorem exists_closed_normalCurvature_limit_of_spectral_family
     [T2Space M]

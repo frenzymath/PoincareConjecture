@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.SpacetimeMetricConvergence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
 open scoped Topology NNReal Manifold ContDiff
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem source_exhaustion_spacetime_pullbackCoefficients_tendsto_jets_of_expanding_flows
     {ι : Type*} {n : ℕ}
@@ -96,10 +84,6 @@ local instance ancientConvergence_sourceCharts (k : ℕ) :
   (D k).chartedSpace
 local instance ancientConvergence_sourceManifold (k : ℕ) :
     IsManifold (𝓡 n) ∞ (D k).carrier := (D k).isManifold
-
-
-
-
 
 noncomputable def completeAncientWindowConvergence
     {ι : Type} [Countable ι]

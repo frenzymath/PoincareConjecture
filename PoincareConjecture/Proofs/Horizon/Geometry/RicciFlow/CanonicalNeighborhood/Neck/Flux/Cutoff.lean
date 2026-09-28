@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -25,7 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
 noncomputable def axialCutoff (φ : ℝ → ℝ) : M → ℝ :=
   N.carrier.indicator (fun x => φ (N.coordinate_inverse x).2)
 
@@ -36,7 +24,6 @@ theorem axialCutoff_eq_of_mem (φ : ℝ → ℝ) {x : M} (hx : x ∈ N.carrier) 
 theorem axialCutoff_eq_zero_of_not_mem (φ : ℝ → ℝ) {x : M}
     (hx : x ∉ N.carrier) : N.axialCutoff φ x = 0 :=
   Set.indicator_of_notMem hx _
-
 
 theorem support_axialCutoff_subset {φ : ℝ → ℝ} {a b : ℝ}
     (hφ : support φ ⊆ Icc a b) :
@@ -53,13 +40,11 @@ theorem support_axialCutoff_subset {φ : ℝ → ℝ} {a b : ℝ}
   rw [N.coordinate_map_eq] at hi
   exact hi
 
-
 theorem hasCompactSupport_axialCutoff {φ : ℝ → ℝ} {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹)
     (hφ : support φ ⊆ Icc a b) : HasCompactSupport (N.axialCutoff φ) :=
   HasCompactSupport.of_support_subset_isCompact (N.isCompact_coordinate_slab ha hb)
     (N.support_axialCutoff_subset hφ)
-
 
 theorem contMDiff_axialCutoff {φ : ℝ → ℝ} {a b : ℝ}
     (ha : -N.epsilon⁻¹ < a) (hb : b < N.epsilon⁻¹)
@@ -94,7 +79,6 @@ theorem axialCutoff_nonneg {φ : ℝ → ℝ} (hφ : ∀ s, 0 ≤ φ s) (x : M) 
     exact hφ _
   · rw [N.axialCutoff_eq_zero_of_not_mem φ hx]
 
-
 theorem gradient_axialCutoff (D : LeviCivitaData g) {φ : ℝ → ℝ}
     (hφ : ContDiff ℝ ∞ φ) {x : M} (hx : x ∈ N.carrier) :
     D.gradient (N.axialCutoff φ) x =
@@ -114,8 +98,6 @@ theorem gradient_axialCutoff (D : LeviCivitaData g) {φ : ℝ → ℝ}
       (N.coordinate_inverse_smooth.contMDiffAt
         (N.carrier_open.mem_nhds hx))).mdifferentiableAt (by simp))
     (hφ.differentiable (by simp) _)
-
-
 
 theorem exists_axial_cutoff :
     ∃ ψ : M → ℝ, ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ ψ ∧ HasCompactSupport ψ ∧

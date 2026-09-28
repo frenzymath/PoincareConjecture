@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalLimitIdentities
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.UniformSpace.UniformApproximation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +11,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_composition_tendsto_of_rows
     {M N : Type u} [MetricSpace M] [MetricSpace N]
@@ -36,8 +26,6 @@ theorem terminalCommonInterval_composition_tendsto_of_rows
     (hT x).eventually (mem_interior_iff_mem_nhds.mp hj)
   exact (hS j).tendsto_comp hg.continuousAt.continuousWithinAt
     (tendsto_nhdsWithin_iff.mpr ⟨hT x, hmem⟩)
-
-
 
 theorem terminalCommonInterval_global_inverse_limits
     {M N : Type u} [MetricSpace M] [MetricSpace N]

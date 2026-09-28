@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.SourceSla
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.ComplementarySlabContraction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.SourceSurface
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -29,7 +20,6 @@ local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 
 private instance : Fact (0 < p) := ⟨by norm_num⟩
-
 
 theorem exists_complementary_sourceSlabs_with_transverse_corners
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)
@@ -233,7 +223,6 @@ theorem exists_complementary_sourceSlabs_with_transverse_corners
     rw [hNmem, and_comm]
     exact hGB y hy
 
-
 theorem exists_complementary_sourceSlabs_with_marked_corners
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)
     (d : β → OpenPartialHomeomorph X V3)
@@ -271,7 +260,6 @@ theorem exists_complementary_sourceSlabs_with_marked_corners
   intro uv huv theta ht x hx
   obtain ⟨psi, lambda, w, v, G, hw, _, _, hchart⟩ := hcharts uv huv theta ht x hx
   exact ⟨psi, lambda, w, G, hw, hchart⟩
-
 
 theorem exists_complementary_sourceSlabs
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

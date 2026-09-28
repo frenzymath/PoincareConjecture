@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometrySectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -67,7 +58,6 @@ theorem strictlyPositiveSectionalCurvature_of_unbounded_scalarCurvature
     exact hunbounded
       ((L.convergence.limit.bddAbove_scalarCurvature_iff_bounded_curvature hC t ht).mpr hbound)
   · exact hpos
-
 
 theorem ulift_strictlyPositiveSectionalCurvature_of_unbounded_scalarCurvature
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

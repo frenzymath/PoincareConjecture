@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 import PoincareConjecture.Proofs.M38.ProjectiveModel
 import PoincareConjecture.Proofs.M38.PuncturedProjectiveSmooth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -25,11 +16,9 @@ namespace PoincareConjecture.M38
 attribute [local instance] projectiveChartedSpace projective_isManifold projective_t2
   projectiveLiftChartedSpace projective_lift_isManifold
 
-
 def projectiveLiftPunctureOpen (p : RealProjectiveThree) :
     TopologicalSpace.Opens projectiveCarrier.{u}.carrier :=
   ⟨({ULift.up p} : Set projectiveCarrier.{u}.carrier)ᶜ, isClosed_singleton.isOpen_compl⟩
-
 
 noncomputable def projectiveLiftPuncturePoint (p : RealProjectiveThree) :
     projectiveLiftPunctureOpen.{u} p := by
@@ -38,7 +27,6 @@ noncomputable def projectiveLiftPuncturePoint (p : RealProjectiveThree) :
   refine ⟨ULift.up q, ?_⟩
   intro heq
   exact hq (congrArg ULift.down heq)
-
 
 noncomputable def projectivePunctureLiftDiffeomorph (p : RealProjectiveThree) :
     (projectiveLiftPunctureOpen.{u} p) ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ (projectivePunctureOpen p) where
@@ -55,12 +43,10 @@ noncomputable def projectivePunctureLiftDiffeomorph (p : RealProjectiveThree) :
 
 variable (A : GeneralizedSliceCarrier.{u}) {p : RealProjectiveThree} {U : Set A.carrier}
 
-
 noncomputable def liftedPuncturedProjectiveDiffeomorph
     (C : StandardPuncturedProjectiveCover A.carrier p U) :
     (projectiveLiftPunctureOpen.{u} p) ≃ₘ^∞⟮𝓡 3, 𝓡 3⟯ (puncturedProjectiveCoverOpen C) :=
   (projectivePunctureLiftDiffeomorph p).trans (puncturedProjectiveCoverDiffeomorph C)
-
 
 noncomputable def puncturedProjectiveRegionEquivalence
     (C : StandardPuncturedProjectiveCover A.carrier p U) :
@@ -68,7 +54,6 @@ noncomputable def puncturedProjectiveRegionEquivalence
       ({ULift.up p} : Set projectiveCarrier.{u}.carrier)ᶜ U :=
   openDiffeomorphRegions (projectiveLiftPunctureOpen p) (puncturedProjectiveCoverOpen C)
     (liftedPuncturedProjectiveDiffeomorph A C) (projectiveLiftPuncturePoint p)
-
 
 theorem puncturedProjectiveRegionEquivalence_apply
     (C : StandardPuncturedProjectiveCover A.carrier p U)
@@ -84,8 +69,6 @@ theorem puncturedProjectiveRegionEquivalence_apply
         (projectiveLiftPuncturePoint p) x hxl
     _ = (puncturedProjectiveCoverDiffeomorph C ⟨x.down, hx⟩).val := rfl
 
-
-
 noncomputable def projectiveBallRegionEquivalence
     (C : StandardPuncturedProjectiveCover A.carrier p U)
     (B : SurgeryBallEmbedding projectiveCarrier.{u}) (hcenter : B.map 0 = ULift.up p) :
@@ -93,8 +76,6 @@ noncomputable def projectiveBallRegionEquivalence
   have e := surgeryBallPunctureEquivalence B
   rw [hcenter] at e
   exact composeRegions e (puncturedProjectiveRegionEquivalence A C)
-
-
 
 theorem exists_projective_ball_region
     (C : StandardPuncturedProjectiveCover A.carrier p U)

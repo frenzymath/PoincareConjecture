@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ChainEndBarrier
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalGraphRegions
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +14,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem EpsilonTubeCertificate.closure_first_belowGraph
     (T : EpsilonTubeCertificate g X) {i : ℤ} (hi : IsLeast T.chain.shape.active i)
@@ -70,9 +56,6 @@ theorem EpsilonTubeCertificate.closure_first_belowGraph
       exact ⟨N.coordinate_graph_mem_closure_belowGraph_m28 f hdom q,
         hNT (N.coordinate_map_mem_of_axial _ (hdom q))⟩
 
-
-
-
 theorem EpsilonTubeCertificate.frontier_first_belowGraph
     (T : EpsilonTubeCertificate g X) {i : ℤ} (hi : IsLeast T.chain.shape.active i)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)
@@ -99,9 +82,6 @@ theorem EpsilonTubeCertificate.frontier_first_belowGraph
       exact (ne_of_lt hn.2) heq
     exact ⟨hopen.frontier_eq.symm ▸ And.intro hcl.1 hnot, hcl.2⟩
 
-
-
-
 theorem EpsilonTubeCertificate.isClopen_first_belowGraph_complement
     (T : EpsilonTubeCertificate g X) {i : ℤ} (hi : IsLeast T.chain.shape.active i)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)
@@ -118,9 +98,6 @@ theorem EpsilonTubeCertificate.isClopen_first_belowGraph_complement
   have hcl : (x : M) ∈ closure (N.belowGraph_m28 f) ∩ T.carrier := ⟨hxcl, x.property.1⟩
   have hmem := (T.closure_first_belowGraph hi f hf hdom hc hbound) ▸ hcl
   exact hmem.resolve_right x.property.2
-
-
-
 
 theorem EpsilonTubeCertificate.connectedComponentIn_first_belowGraph
     (T : EpsilonTubeCertificate g X) {i : ℤ} (hi : IsLeast T.chain.shape.active i)

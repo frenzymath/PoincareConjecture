@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderBottom
 import PoincareConjecture.Proofs.M47.ComponentEstimateRetained
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_closed_cylinder_backward_extension_or_cap
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

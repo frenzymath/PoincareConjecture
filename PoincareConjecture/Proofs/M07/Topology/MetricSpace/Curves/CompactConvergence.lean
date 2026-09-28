@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Curves.ArcLength
 import Mathlib.Topology.ContinuousMap.Bounded.ArzelaAscoli
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Topology ENNReal NNReal BoundedContinuousFunction
 

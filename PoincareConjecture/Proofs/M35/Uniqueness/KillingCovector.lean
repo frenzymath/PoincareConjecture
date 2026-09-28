@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatEnergy
 import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +12,9 @@ namespace PoincareConjecture.M35.Uniqueness
 
 local notation:max "V" n:max => EuclideanSpace ℝ (Fin n)
 
-
 noncomputable def killingCovector {n : ℕ} (g : RiemannianMetric n (V n))
     (X : V n → V n) : CovariantTensorEvaluation n (V n) 1 :=
   fun x v => g.inner x (X x) (v 0)
-
 
 theorem isSmoothCovariantTensor_killingCovector {n : ℕ}
     (g : RiemannianMetric n (V n)) (X : V n → V n) (hX : ContDiff ℝ ∞ X) :
@@ -38,8 +25,6 @@ theorem isSmoothCovariantTensor_killingCovector {n : ℕ}
     (g.inner x (X x)).toLinearMap, fun _ => rfl⟩, ?_⟩
   intro U _ Y hY
   exact (euclidean_field_contMDiff hX).contMDiffOn.inner_bundle (hY 0)
-
-
 
 theorem killingCovector_derivative {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X)
@@ -60,8 +45,6 @@ theorem killingCovector_derivative {n : ℕ} {g : RiemannianMetric n (V n)}
   rw [D.mvfderiv_inner (fun _ => v 0) X (fun _ => v 1)
     ((hS x).mdifferentiableAt (by simp)) ((hC (v 1) x).mdifferentiableAt (by simp))]
   ring
-
-
 
 theorem killingCovector_second_derivative {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X)
@@ -93,8 +76,6 @@ theorem killingCovector_second_derivative {n : ℕ} {g : RiemannianMetric n (V n
   simp only [fieldHessian, map_sub, sub_apply]
   ring
 
-
-
 theorem killingCovector_laplacian {n : ℕ} {g : RiemannianMetric n (V n)}
     (D : LeviCivitaData g) (X : V n → V n) (hX : ContDiff ℝ ∞ X)
     (x : V n) (v : Fin 1 → V n) :
@@ -104,8 +85,6 @@ theorem killingCovector_laplacian {n : ℕ} {g : RiemannianMetric n (V n)}
   simp only [LeviCivitaData.tensorLaplacian, LeviCivitaData.iteratedCovariantTensorDerivative,
     killingCovector_second_derivative D X hX, map_sum, sum_apply]
   exact Finset.sum_congr rfl (fun _ _ => rfl)
-
-
 
 theorem killing_defect_eq_covector_symmetrization {n : ℕ}
     {g : RiemannianMetric n (V n)} (D : LeviCivitaData g)

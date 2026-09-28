@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Endpoint
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -93,7 +84,6 @@ theorem active_coordinate_mem_open (i : Fin D.length) {x : V}
     exact hxold (hxy.symm ▸ hy)
 
 omit [FiniteDimensional ℝ V] in
-
 
 theorem active_carrier_iff (i : Fin D.length) {z : V3} (hz : z ∈ D.comparisonOpen i) :
     z ∈ (D.motions i).coordinates.map 1 '' (D.motions i).freeComplex.space ↔

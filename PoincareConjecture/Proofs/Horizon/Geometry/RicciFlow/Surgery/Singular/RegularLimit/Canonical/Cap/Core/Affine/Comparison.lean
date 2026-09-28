@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Affine.Error
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Closeness
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +31,6 @@ theorem smoothOn_scaled_pullback {ε δ : ℝ} (c a s : ℝ) {B : RoundCylinderT
     RoundCylinderTensorSmoothOn δ (fun z v w => c * pullback a s B z v w) := by
   intro q i j
   exact contDiffOn_const.mul (smoothOn_pullback a s hB hbilinear hsub q i j)
-
-
 
 theorem normalized_jetError_weighted_le {ε δ c a : ℝ}
     (ha : 0 < a) (haone : a ≤ 1) (hca : c * a ^ 2 = 1) (s : ℝ)
@@ -71,8 +67,6 @@ theorem normalized_jetError_weighted_le {ε δ c a : ℝ}
   simpa only [mul_assoc] using mul_le_mul_of_nonneg_left
     (errorPullback_jetError_le c a s ha haone B hbilinear order z)
     (show 0 ≤ 1 + θ by linarith)
-
-
 
 theorem close_normalized_pullback {ε c a : ℝ} (hε : 0 < ε)
     (hc : 1 ≤ c) (hcmax : c ≤ 11 / 10) (hcε : c - 1 ≤ ε / 4)

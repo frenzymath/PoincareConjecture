@@ -5,20 +5,6 @@ import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Function.LpSpace.ContinuousFunctions
 import Mathlib.Topology.Algebra.Module.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option synthInstance.maxHeartbeats 200000
@@ -45,7 +31,6 @@ abbrev SmoothTensor :=
 abbrev SmoothField :=
   ContMDiffSection (𝓡 n) ModelE ∞ (TangentSpace (𝓡 n) : M → Type _)
 
-
 def metricTensor (g : RiemannianMetric n M) : SmoothTensor (n := n) (M := M) :=
   ⟨g.inner, g.contMDiff⟩
 
@@ -70,7 +55,6 @@ theorem continuous_pairing (h : SmoothTensor (n := n) (M := M))
 variable {iota : Type v} [Fintype iota]
 
 abbrev Coefficients (iota : Type v) [Fintype iota] := EuclideanSpace ℝ (iota × iota)
-
 
 def probes (F : iota → SmoothField (n := n) (M := M)) :
     SmoothTensor (n := n) (M := M) →ₗ[ℝ] C(M, Coefficients iota) where
@@ -114,7 +98,6 @@ theorem probes_injective (F : iota → SmoothField (n := n) (M := M))
 variable [CompactSpace M] [MeasurableSpace M] [BorelSpace M]
   (F : iota → SmoothField (n := n) (M := M)) (μ : Measure M) [IsFiniteMeasure μ]
 
-
 def tensorToLp : SmoothTensor (n := n) (M := M) →ₗ[ℝ] Lp (Coefficients iota) 2 μ :=
   (ContinuousMap.toLp 2 μ ℝ).toLinearMap.comp (probes F)
 
@@ -140,13 +123,11 @@ theorem tensorToLp_norm_sq (h : SmoothTensor (n := n) (M := M)) :
       filter_upwards [tensorToLp_coe F μ h] with x hx
       rw [hx, real_inner_self_eq_norm_sq]
 
-
 def tensorL2 : Submodule ℝ (Lp (Coefficients iota) 2 μ) :=
   (tensorToLp F μ).range.topologicalClosure
 
 instance tensorL2_completeSpace : CompleteSpace (tensorL2 F μ) :=
   inferInstanceAs (CompleteSpace (tensorToLp F μ).range.topologicalClosure)
-
 
 def intoTensorL2 : SmoothTensor (n := n) (M := M) →ₗ[ℝ] tensorL2 F μ :=
   (tensorToLp F μ).codRestrict (tensorL2 F μ) (fun h =>

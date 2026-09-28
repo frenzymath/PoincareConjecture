@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,8 +64,6 @@ private lemma weighted_comparison_square (D : LeviCivitaData g)
   rw [g.symm x (D.gradient η x) (D.gradient f x),
     g.symm x (D.gradient ξ x) (D.gradient f x)]
   nlinarith
-
-
 
 theorem weighted_subsolution_spatial_cutoff_estimate (D : LeviCivitaData g)
     {η f ξ d e : M → ℝ}

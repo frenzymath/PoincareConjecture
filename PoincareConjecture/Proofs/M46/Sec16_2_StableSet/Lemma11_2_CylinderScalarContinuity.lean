@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalarL
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import Mathlib.Topology.Order.LeftRight
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c : ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinderScalar_continuousWithinAt_right
     (P : M44CapPersistencePredecessors.{u})
@@ -59,8 +48,6 @@ theorem cylinderScalar_continuousWithinAt_right
   have hc := cylinderScalar_continuousOn_slab P e hx hsb hJ hfree s hsI
     ⟨le_rfl, hsb.le⟩ hVI hVtime
   exact (hc s ⟨le_rfl, hsr.le⟩).mono_of_mem_nhdsWithin (Icc_mem_nhdsGE hsr)
-
-
 
 theorem cylinderScalar_continuousWithinAt_left_of_not_surgery
     (P : M44CapPersistencePredecessors.{u})
@@ -103,8 +90,6 @@ theorem cylinderScalar_continuousWithinAt_left_of_not_surgery
     ⟨has.le, le_rfl⟩ hVI hVtime
   exact (hc s ⟨hrs.le, le_rfl⟩).mono_of_mem_nhdsWithin (Icc_mem_nhdsLE hrs)
 
-
-
 theorem cylinderScalar_continuousOn
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
     (e : SurgeryFlowCylinder F C origin scale (Icc c 0) U)
@@ -132,8 +117,6 @@ theorem cylinderScalar_continuousOn
       intro t ht
       exact mem_singleton_iff.mpr
         (le_antisymm (by simpa only [hs0] using ht.1.2) ht.2)
-
-
 
 theorem cylinderScalar_hasDerivAt_of_not_surgery
     (P : M44CapPersistencePredecessors.{u})

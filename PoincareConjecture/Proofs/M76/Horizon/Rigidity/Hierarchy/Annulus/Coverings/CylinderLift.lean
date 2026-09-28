@@ -2,22 +2,11 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Instances.AddCircle.Real
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.OneSheet.IdentityHomotopy
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open scoped unitInterval
 
 namespace IsCoveringMap
-
-
 
 theorem exists_cylinder_lift_homeomorph
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -43,9 +32,6 @@ theorem exists_cylinder_lift_homeomorph
     isLocalHomeomorph_iff_isCoveringMap.mp
       (hcomp.of_comp hg.isLocalHomeomorph last.continuous)
   exact ⟨hlast.homeomorphOfHomotopyId L, L, hlift⟩
-
-
-
 
 theorem exists_addCircle_cylinder_lift_homeomorph
     {p q : ℝ} (hp : 0 < p) (_hq : 0 < q)

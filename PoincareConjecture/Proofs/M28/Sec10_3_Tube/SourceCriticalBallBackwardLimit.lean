@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardRest
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinLocalFlows
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.CoordinateFamily
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +26,6 @@ variable {epsilon C A : ℝ}
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2000000 in
-
-
-
 
 structure BackwardChartLimit (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a) where
 
@@ -86,9 +73,6 @@ variable (D : CriticalBallBackwardChartData H T A1 hA1 phi G q a)
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem exists_backward_limit {K : ℝ} (hK : 0 ≤ K)
     (hcurv : ∀ k t, t ∈ Icc (-(a / 8)) 0 → ∀ x : strongNeckOpen (D.neck k),

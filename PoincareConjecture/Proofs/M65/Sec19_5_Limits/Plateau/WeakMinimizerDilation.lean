@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.ChartLpNative
 import PoincareConjecture.Proofs.M03.Existence.ChartPullbackEnergyNative
 import Mathlib.MeasureTheory.Measure.Haar.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,9 +30,6 @@ private theorem m65Dilation_map_le {r : ℝ} (hr : 1 / 2 ≤ r) :
     finrank_euclideanSpace, Fintype.card_fin] using
       mul_le_mul_of_nonneg_right hcoef (show 0 ≤ volume s from bot_le)
 
-
-
-
 noncomputable def m65DiskDilationL2 (r : ℝ) (hr : 1 / 2 ≤ r) :
     Lp ℝ 2 (volume : Measure LoopPlane) →L[ℝ]
       Lp ℝ 2 (volume.restrict loopDiskSet) :=
@@ -50,15 +37,11 @@ noncomputable def m65DiskDilationL2 (r : ℝ) (hr : 1 / 2 ≤ r) :
     (measurable_const_smul r).aemeasurable (by norm_num : (4 : ℝ≥0∞) ≠ ⊤)
     (m65Dilation_map_le hr)
 
-
-
 theorem m65DiskDilationL2_coe (r : ℝ) (hr : 1 / 2 ≤ r)
     (w : Lp ℝ 2 (volume : Measure LoopPlane)) :
     m65DiskDilationL2 r hr w =ᵐ[volume.restrict loopDiskSet]
       fun z => w (r • z) :=
   ChartLpNative.dominatedPullbackL2_coe _ _ _ _ w
-
-
 
 theorem m65DiskDilationL2_norm_le (r : ℝ) (hr : 1 / 2 ≤ r)
     (w : Lp ℝ 2 (volume : Measure LoopPlane)) :
@@ -118,9 +101,6 @@ private theorem m65DiskDilationL2_schwartz
     simpa only [integral_zero, ← heq, Real.sqrt_sq (norm_nonneg _), Real.sqrt_zero,
       Function.comp_def] using hh
   exact tendsto_iff_norm_sub_tendsto_zero.mpr hn
-
-
-
 
 theorem m65DiskDilationL2_tendsto
     (r : ℕ → ℝ) (hr : ∀ n, 1 / 2 ≤ r n) (hrlim : Tendsto r atTop (𝓝 1))

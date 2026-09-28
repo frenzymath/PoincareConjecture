@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.CirclePair.AttachmentGerm.Filling
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,8 +31,6 @@ private theorem contDiffOn_graph_shift (c : Real) :
   fin_cases i
   · exact hcoord 0
   · exact (hcoord 1).add (contDiffOn_const.mul hs)
-
-
 
 def upperBoundaryFlattening : PartialDiffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞ where
   toFun x := WithLp.toLp 2 ![x 0, x 1 - Real.sqrt (1-(x 0)^2)]
@@ -77,8 +73,6 @@ theorem upperBoundaryFlattening_circle_germ :
     rw [show 1-(x 0)^2 = (x 1)^2 by linarith, Real.sqrt_sq hx.le]
   ext i
   fin_cases i <;> simp [upperBoundaryFlattening, hroot]
-
-
 
 theorem exists_filling_adapted_to_ribbon_edge
     (A R : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

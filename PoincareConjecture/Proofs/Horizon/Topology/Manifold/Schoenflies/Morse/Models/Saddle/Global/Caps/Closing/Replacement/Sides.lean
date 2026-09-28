@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Replacement.Terminal
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +42,6 @@ theorem terminal_upper_cap_height (data : TerminalSaddleData M P p e)
     (neg_le_neg j.2.le) le_rfl hcap
   simpa only [Poincare.Geometry.Euclidean.inner_heightReflection, neg_le_neg_iff] using hh
 
-
-
 theorem lower_halfspace_image_of_fixed_upper
     (R : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞) (v : E3) (b : Real)
     (hR : EqOn R id {y | b ≤ inner Real v y}) {y : E3}
@@ -55,8 +51,6 @@ theorem lower_halfspace_image_of_fixed_upper
   have heq : R y = y := R.injective hfix
   rw [heq] at h
   exact h hy
-
-
 
 theorem exists_simultaneous_terminal_replacement_of_side_replacements
     (data : TerminalSaddleData M P p e)
@@ -124,8 +118,6 @@ theorem exists_simultaneous_terminal_replacement_of_side_replacements
         exact hcu.trans (by
           simpa only [comp_apply, hEheight] using terminal_upper_cap_height data j hq)
       rw [hfixed, hupper, hi]
-
-
 
 theorem exists_simultaneous_flat_terminal_replacement_of_prepared
     (data : TerminalSaddleData M P p e)

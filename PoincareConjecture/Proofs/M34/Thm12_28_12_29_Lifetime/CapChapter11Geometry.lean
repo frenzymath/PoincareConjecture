@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryPinching
 import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.PartialFlowCapture
 import PoincareConjecture.Proofs.M34.Lemma12_6_Curvature.Nonnegative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M34
-
-
 
 theorem partialFlow_chapter11_calculus {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors)
@@ -33,8 +20,6 @@ theorem partialFlow_chapter11_calculus {g0 : StandardInitialMetric}
     (F.flow.metric t.val) (R.product.slices t.val).metricOnPoints
     (R.product.sliceIdentification t) 1 zero_lt_one
     (ordinarySlice_metricHomothety R.product t)
-
-
 
 theorem partialFlow_chapter11_compact_ball {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors)
@@ -50,8 +35,6 @@ theorem partialFlow_chapter11_compact_ball {g0 : StandardInitialMetric}
   rw [ordinaryChapter11_identification_projection R t p.2] at h
   exact h
 
-
-
 theorem partialFlow_chapter11_branch {g0 : StandardInitialMetric}
     (F : PartialStandardCapFlow g0) (P : M34StandardCapPredecessors)
     (E0 : StandardCapEstimate g0)
@@ -62,9 +45,6 @@ theorem partialFlow_chapter11_branch {g0 : StandardInitialMetric}
   exact ordinaryChapter11_nonnegative (I := partialFlowSpacetimeInterval F) (F := F.flow)
     R (partialFlow_chapter11_calculus F P R)
     (fun _ ht => ht.1) (partialFlow_nonnegativeSectionalCurvature P.curvature E0 F)
-
-
-
 
 theorem standardFlow_chapter11_noncollapsed {g0 : StandardInitialMetric}
     (F : MaximalStandardCapFlow g0) (P : M34StandardCapPredecessors)

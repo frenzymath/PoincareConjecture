@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaEnergy
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.EnergyComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M65Filling
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem energy_integrable_of_withinC1 (g : RiemannianMetric 3 M)
     {f : LoopPlane → M} (hf : ContMDiffOn (𝓡 2) (𝓡 3) 1 f loopDiskSet) :
@@ -53,9 +41,6 @@ theorem energy_integrable_of_withinC1 (g : RiemannianMetric 3 M)
     mem_of_superset (Metric.isOpen_ball.mem_nhds hz) Metric.ball_subset_closedBall
   simp only [m60EnergyDensity, Matrix.trace, Matrix.diag_apply, m60AreaGram, A,
     mfderivWithin_of_mem_nhds hn]
-
-
-
 
 def moved_spanningDisk {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
     {gamma : C1FreeLoopSpace (M := M)} (S : M65MinimalDisk g D gamma)
@@ -86,9 +71,6 @@ def moved_spanningDisk {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
   rw [h0, h1]
   exact hboundary x
 
-
-
-
 theorem filling_le_moved_energy {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
     {gamma : C1FreeLoopSpace (M := M)} (S : M65MinimalDisk g D gamma)
     (g' : RiemannianMetric 3 M) (gamma' : C1FreeLoopSpace (M := M))
@@ -105,9 +87,6 @@ theorem filling_le_moved_energy {g : RiemannianMetric 3 M} {D : LeviCivitaData g
   exact hle.trans (m65ParametrizedArea_le_energy g' (Phi ∘ S.disk.map)
     Q.area_integrable (energy_integrable_of_withinC1 g'
       (hPhi.comp_contMDiffOn S.boundary_regular)))
-
-
-
 
 theorem minimal_energy_eq_filling {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
     {gamma : C1FreeLoopSpace (M := M)} (S : M65MinimalDisk g D gamma) :

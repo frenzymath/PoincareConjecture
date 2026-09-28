@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetric
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_InitialChartBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,14 +16,10 @@ namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
 
-
-
 noncomputable def safeTestInterval (a : ℝ) (ha : 0 < a) : SpacetimeInterval where
   domain := Icc (-a) 0
   ordConnected := ordConnected_Icc
   nontrivial := ⟨-a, ⟨le_rfl, by linarith⟩, 0, ⟨by linarith, le_rfl⟩, by linarith⟩
-
-
 
 structure TestedSafeCylinder
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}
@@ -64,9 +51,6 @@ private theorem test_point_heq {F : SurgeryFlowData.{u}}
     (h : HEq (H.forward s hs x) (H.forward t ht y)) : HEq x y := by
   subst t
   exact heq_of_eq ((H.forward_openEmbedding s hs).injective (eq_of_heq h))
-
-
-
 
 theorem exists_testedSafeCylinder
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

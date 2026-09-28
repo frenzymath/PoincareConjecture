@@ -1,16 +1,4 @@
-
-
-
 import Mathlib.Topology.Connected.Basic
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,8 +9,6 @@ namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
 theorem preconnected_subset_interior_of_disjoint_frontier
     {A D : Set X} (hA : IsPreconnected A) (hfront : Disjoint A (frontier D))
     (hmeet : (A ∩ interior D).Nonempty) : A ⊆ interior D := by
@@ -32,8 +18,6 @@ theorem preconnected_subset_interior_of_disjoint_frontier
   apply hA.subset_left_of_subset_union isOpen_interior isOpen_interior _ hcover hmeet
   exact disjoint_left.mpr fun x hx hx' => (interior_subset hx') (interior_subset hx)
 
-
-
 theorem mem_frontier_connectedComponentIn_of_preconnected
     {K U : Set X} {p u : X} (hU : IsPreconnected U) (hUK : U ⊆ Kᶜ)
     (hu : u ∈ U) (hpK : p ∈ K) (hpU : p ∈ closure U) :
@@ -41,8 +25,6 @@ theorem mem_frontier_connectedComponentIn_of_preconnected
   refine ⟨closure_mono (hU.subset_connectedComponentIn hu hUK) hpU, ?_⟩
   intro h
   exact connectedComponentIn_subset Kᶜ u (interior_subset h) hpK
-
-
 
 theorem connectedComponentIn_eq_or_eq_of_two_sided_neighborhood
     {K W U V : Set X} {p u v x : X} (hW : W ∈ 𝓝 p)
@@ -64,9 +46,6 @@ theorem connectedComponentIn_eq_or_eq_of_two_sided_neighborhood
       (hU.subset_connectedComponentIn hu (subset_union_left.trans hUV) hzU)).symm)
   · exact Or.inr ((connectedComponentIn_eq hzC).trans (connectedComponentIn_eq
       (hV.subset_connectedComponentIn hv (subset_union_right.trans hUV) hzV)).symm)
-
-
-
 
 theorem mem_frontier_connectedComponentIn_iff_of_two_sided_neighborhood
     {K W U V : Set X} {p u v x : X} (hW : W ∈ 𝓝 p)

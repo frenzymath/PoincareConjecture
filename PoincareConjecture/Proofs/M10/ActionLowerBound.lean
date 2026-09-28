@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M10.ScalarBound
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem corrected_square_action_hasDerivAt (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) (C : ℝ) {s : ℝ} (hs : 0 < s) (hmax : s ^ 2 < τmax) :
@@ -40,7 +30,6 @@ theorem corrected_square_action_hasDerivAt (G : LExponentialGeometry F T τmax p
   apply (ha.add hc).congr_deriv
   simp only [backwardLIntegrand, Real.sqrt_sq hs.le]
   ring
-
 
 theorem normalized_action_lower_bound (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) {τ C : ℝ} (hτ : 0 < τ) (hmax : τ < τmax)
@@ -92,7 +81,6 @@ theorem normalized_action_lower_bound (G : LExponentialGeometry F T τmax p)
   nlinarith only [hbound]
 
 variable [ConnectedSpace M] [T3Space M]
-
 
 theorem exists_uniform_reducedLength_lower_bound
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
 theorem ComponentBranchModel.nonempty_original_reflected_annulus
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}

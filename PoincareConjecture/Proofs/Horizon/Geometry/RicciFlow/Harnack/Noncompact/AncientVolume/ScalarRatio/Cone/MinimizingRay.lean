@@ -2,23 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacia
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.LineLimit
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +9,6 @@ open Filter Metric Set
 open scoped Topology Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_minimizing_ray_of_metricComplete
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

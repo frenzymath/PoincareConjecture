@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_ExponentialChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_PhysicalExponentialBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
 
-
-
 noncomputable def standardFrameDiffeomorph (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     Diffeomorph (𝓡 3) (𝓡 3) E E ∞ where
   toFun := standardFrameExponential g₀ L
@@ -32,9 +21,6 @@ noncomputable def standardFrameDiffeomorph (g₀ : StandardInitialMetric) (L : E
   right_inv := standardFrameExponential_logarithm g₀ L
   contMDiff_toFun := (standardFrameExponential_contDiff g₀ L).contMDiff
   contMDiff_invFun := (standardFrameLogarithm_contDiff g₀ L).contMDiff
-
-
-
 
 theorem standardFrameLogarithm_mem_ball
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)
@@ -51,9 +37,6 @@ theorem standardFrameLogarithm_mem_ball
     have h := mem_image_of_mem (standardFrameLogarithm g₀ L) hx
     rw [standardFrameLogarithm_image_ball g₀ L hL hr] at h
     exact h
-
-
-
 
 theorem isCompact_normalized_ball_of_small_tolerance
     {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
@@ -78,10 +61,6 @@ variable (g₀ : StandardInitialMetric) (S : ℕ → GeneralizedSliceCarrier.{u}
   (tip : (n : ℕ) → (S n).carrier) (scale eta : ℕ → ℝ) {R : ℝ}
   (Q : (n : ℕ) → SurgeryCapClose g₀ (S n) (g n) (tip n) (scale n) (eta n))
   (D : (n : ℕ) → NormalizedCapExponential (Q n) R)
-
-
-
-
 
 theorem eventually_initial_exactBall_charts
     (heta : Tendsto eta atTop (𝓝 0)) (L : E ≃L[ℝ] E)

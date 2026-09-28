@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedIntrinsicShapeCompact
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedAmbientBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 open Uniqueness
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_intrinsic_shape_on_ambient_ball
     (P : M35StandardCapPredecessors)

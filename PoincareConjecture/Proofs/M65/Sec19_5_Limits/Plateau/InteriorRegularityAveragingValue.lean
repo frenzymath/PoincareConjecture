@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityAveragingDerivative
 import Mathlib.Analysis.Calculus.ContDiff.Convolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff Convolution
 
 namespace PoincareConjecture.M65Interior
-
-
 
 noncomputable def averagingValue (u : LoopPlane → ℝ) (r : ℝ) (x : LoopPlane) : ℝ :=
   ∫ z, u z * averagingKernel r (x - z)
@@ -34,16 +22,11 @@ private theorem averagingKernel_parameters (r : ℝ) :
   · intro p hp
     exact (averagingKernel_joint_contDiffAt hp.1.1.ne').contDiffWithinAt
 
-
-
 theorem averagingValue_integrable {u : LoopPlane → ℝ} (hu : LocallyIntegrable u volume)
     {r : ℝ} (hr : 0 < r) (x : LoopPlane) :
     Integrable (fun z => u z * averagingKernel r (x - z)) := by
   exact (averagingKernel_hasCompactSupport hr).convolutionExists_right
     (ContinuousLinearMap.mul ℝ ℝ) hu (averagingKernel_contDiff r).continuous x
-
-
-
 
 theorem averagingValue_joint_contDiffAt {u : LoopPlane → ℝ}
     (hu : LocallyIntegrable u volume) {r : ℝ} (hr : 0 < r) (x : LoopPlane) :
@@ -53,8 +36,6 @@ theorem averagingValue_joint_contDiffAt {u : LoopPlane → ℝ}
     isOpen_Ioo (isCompact_closedBall (0 : LoopPlane) (2 * r)) hzero hu hsmooth
   exact h.contDiffAt ((isOpen_Ioo.prod isOpen_univ).mem_nhds
     ⟨⟨hr, by linarith⟩, mem_univ x⟩)
-
-
 
 theorem averagingValue_joint_hasFDerivAt {u : LoopPlane → ℝ}
     (hu : LocallyIntegrable u volume) {r : ℝ} (hr : 0 < r) (x : LoopPlane) :
@@ -88,10 +69,6 @@ private theorem averagingValue_joint_derivative_integrable {u : LoopPlane → �
     exact hzero p.1 p.2 hp.1 hp.2
   exact hs.convolutionExists_right ((ContinuousLinearMap.mul ℝ ℝ).precompR (ℝ × LoopPlane))
     hu hc x
-
-
-
-
 
 theorem averagingValue_radius_hasDerivAt {u : LoopPlane → ℝ}
     (hu : LocallyIntegrable u volume) {r : ℝ} (hr : 0 < r) (x : LoopPlane) :

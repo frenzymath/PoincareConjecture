@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLo
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.AbsolutelyContinuousFun
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.LebesgueDifferentiationThm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Filter
 open scoped Topology NNReal
 
 namespace PoincareConjecture.M65Interior
-
-
-
 
 theorem ac_comp_lipschitz {E F : Type*} [PseudoMetricSpace E] [PseudoMetricSpace F]
     {v : ℝ → E} {g : E → F} {a b : ℝ} {S : Set E} {K : ℝ≥0}
@@ -37,9 +24,6 @@ theorem ac_comp_lipschitz {E F : Type*} [PseudoMetricSpace E] [PseudoMetricSpace
       intro i hi
       exact hg.dist_le_mul _ (hvs (hI.1 i hi).1) _ (hvs (hI.1 i hi).2)
     _ = _ := (Finset.mul_sum _ _ _).symm
-
-
-
 
 theorem coordinatewise_ac {N : ℕ} {v : ℝ → EuclideanSpace ℝ (Fin N)} {a b : ℝ}
     (hv : ∀ j, AbsolutelyContinuousOnInterval (fun t => v t j) a b) :
@@ -61,10 +45,6 @@ theorem coordinatewise_ac {N : ℕ} {v : ℝ → EuclideanSpace ℝ (Fin N)} {a 
   intro i _
   simpa only [dist_eq_norm, PiLp.sub_apply] using hnorm (v (I.2 i).1 - v (I.2 i).2)
 
-
-
-
-
 theorem increment_ae_hasDerivAt {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [CompleteSpace E] {v d : ℝ → E} {a b : ℝ} (hab : a < b)
     (hd : IntervalIntegrable d volume a b)
@@ -83,9 +63,6 @@ theorem increment_ae_hasDerivAt {E : Type*} [NormedAddCommGroup E]
   filter_upwards [isOpen_Ioo.mem_nhds htopen] with y hy
   exact (eq_add_of_sub_eq (hinc a ⟨le_rfl, hab.le⟩ y ⟨hy.1.le, hy.2.le⟩)).trans
     (add_comm _ _)
-
-
-
 
 theorem ac_chain_integral {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [CompleteSpace E] {v d : ℝ → E} {g : E → ℝ}

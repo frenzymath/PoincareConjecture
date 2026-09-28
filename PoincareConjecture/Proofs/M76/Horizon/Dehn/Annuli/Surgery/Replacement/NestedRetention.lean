@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Replacement.NestedCylinder
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.NestedOpenSource
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 open _root_.Dehn

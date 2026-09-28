@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralUnions
 
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -39,9 +37,6 @@ private theorem finite_iUnion_charts
         exact PolyhedralPLInCharts.union_of_finite he (K i) L (hK i) hL (hg i) hgL
   obtain ⟨L, _, hLs, hgL⟩ := hfinite Finset.univ
   simpa only [hLs, Finset.mem_univ, iUnion_true] using hgL
-
-
-
 
 theorem exists_finite_copy_pasting
     {F X ι J : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

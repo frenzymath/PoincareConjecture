@@ -1,23 +1,11 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.FiniteComplement
 import Mathlib.Topology.Connected.LocallyConnected
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem exists_component_representative_of_closure_cover
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]
@@ -29,8 +17,6 @@ theorem exists_component_representative_of_closure_cover
   obtain ⟨z, hzx, hzy⟩ := mem_closure_iff.mp hxy _ hS.connectedComponentIn
     (mem_connectedComponentIn hx)
   exact ⟨y, hy, (connectedComponentIn_eq hzx).trans (connectedComponentIn_eq hzy).symm⟩
-
-
 
 theorem exists_finite_component_closure_cover_of_dense
     {X : Type*} [TopologicalSpace X] {S : Set X}
@@ -69,7 +55,6 @@ theorem exists_finite_component_closure_cover_of_dense
     have hqq' : q = q' := (ha q).symm.trans (hcc.trans (ha q'))
     exact congrArg (fun q => (a q : X)) hqq'
   · rw [← R.closure_biUnion, hcover, hS.closure_eq]
-
 
 theorem dense_compl_finite_frontier_union
     {X I : Type*} [TopologicalSpace X] (s : Finset I) (A : I → Set X)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.TubeArmReindex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

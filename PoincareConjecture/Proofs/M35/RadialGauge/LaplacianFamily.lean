@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.HeatEquation
 import PoincareConjecture.Proofs.M35.RadialGauge.JointJetContinuity
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -29,8 +21,6 @@ noncomputable local instance m35LaplacianFamilyHessianGroup :
     NormedAddCommGroup (V →L[ℝ] V →L[ℝ] ℝ) := ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35LaplacianFamilyHessianSpace :
     NormedSpace ℝ (V →L[ℝ] V →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem euclideanLaplacian_family_controls {u : A → V → ℝ}
     (hc : Continuous (fun p : A × V => u p.1 p.2))

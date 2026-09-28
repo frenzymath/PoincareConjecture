@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open Set Filter Bundle
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_smooth_unit_clock (Q : GeneralizedSliceCarrier)
     (f : Q.carrier → ℝ) (hf : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ f)

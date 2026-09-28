@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.SourceDiskFamilyInstallation
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Maps.DiskBoundaryExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -25,9 +17,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Rim" => (Set.ofPred (fun z : Disk => (z : V2) ∈ sphere (0 : V2) 1))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
-
 
 theorem exists_hamiltonZero_homeomorphic_disk_family_installation
     {ι κ η : Type*} [Fintype η]
@@ -104,4 +93,3 @@ theorem exists_hamiltonZero_homeomorphic_disk_family_installation
     hsame, fun i z => (hbase i z).trans (hqD i z), hRfirst, hRsecond, G, hGphase, hGarc⟩
 
 end PoincareConjecture.M76
-

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.RegularQuotient
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,9 +8,6 @@ open Set Topology
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem exists_ambient_chart {U : Set X} {V : Set Y} (R : U ≃ₜ V)
     (hU : IsOpen U) (hV : IsOpen V) (hne : U.Nonempty) :
@@ -47,9 +35,6 @@ end Homeomorph
 namespace Topology.IsQuotientMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem exists_regular_chart {q : X → Y} (hq : IsQuotientMap q)
     {T : Set Y} (hT : IsOpen T) (hne : T.Nonempty) (hinj : InjOn q (q ⁻¹' T)) :

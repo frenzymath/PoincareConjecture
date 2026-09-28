@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.LocalPLScalarArithmetic
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreCutoffs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Filter
@@ -20,9 +10,6 @@ namespace OpenPartialHomeomorph
 
 variable {X E ι : Type*} [TopologicalSpace X] [T2Space X] [LocallyCompactSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_supported_PL_scalar_extension
     (e : ι → OpenPartialHomeomorph X E)

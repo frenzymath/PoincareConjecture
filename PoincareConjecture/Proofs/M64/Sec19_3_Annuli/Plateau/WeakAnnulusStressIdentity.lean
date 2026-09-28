@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCrossEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +18,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem m64ObservedMetric_symmetric_pair_of_mDifferentiableAt
     (g : RiemannianMetric n M) (e : M → E) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -66,9 +51,6 @@ namespace M64ObservedWeakAnnulus
 
 variable {e : M → EuclideanSpace ℝ (Fin m)} {c0 c1 : ℝ → M}
 
-
-
-
 theorem stress_eq_ae_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
     (g : RiemannianMetric n M) (he : ContMDiff (𝓡 n) (𝓡 m) 1 e)
@@ -91,9 +73,6 @@ theorem stress_eq_ae_of_contMDiffOn
     m64ObservedMetric_diagonal_of_mDifferentiableAt g e he Q hdiag hd 1,
     m64ObservedMetric_symmetric_pair_of_mDifferentiableAt g e he Q hdiag hd 0 1]
   exact ⟨rfl, by ring⟩
-
-
-
 
 theorem gram_integrable_of_contMDiffOn
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

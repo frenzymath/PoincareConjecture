@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.FiniteCappingComparison
 import PoincareConjecture.Proofs.M38.FiniteBallShrinking
 import PoincareConjecture.Proofs.M38.CapAnnulus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_finiteCappingDiffeomorph_of_germs
     {A D : GeneralizedSliceCarrier.{u}} {ι : Type*} [Finite ι]

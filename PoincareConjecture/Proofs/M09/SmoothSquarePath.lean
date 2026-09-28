@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M09.FamilyActionDensity
 import PoincareConjecture.Proofs.M09.SquareActionIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

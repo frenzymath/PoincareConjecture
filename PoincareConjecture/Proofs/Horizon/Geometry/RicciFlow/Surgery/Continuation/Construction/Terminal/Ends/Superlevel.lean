@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BallPreimage
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -49,7 +38,6 @@ variable {M : Type u} [TopologicalSpace M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {H : SingularTimeAssumptions G T M}
 
-
 theorem exists_end_tail_scalar_gt (Q : SingularLimitConclusion H)
     (K : TerminalComponentPath Q.extension) (e : TerminalEnd K) (q : ℝ) :
     ∃ n, ∀ x ∈ e.tail n, q < Q.terminal_scalar x.val := by
@@ -65,8 +53,6 @@ theorem exists_end_tail_scalar_gt (Q : SingularLimitConclusion H)
     rw [htail] at hx
     exact connectedComponentIn_subset _ _ hx
   exact hout (hn hle)
-
-
 
 theorem exists_end_superlevel_region (Q : SingularLimitConclusion H)
     (K : TerminalComponentPath Q.extension) (e : TerminalEnd K) (q : ℝ)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M15.Prop8_2_CylinderDistance
 import PoincareConjecture.Proofs.M15.Mathlib.CompactBuffer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal NNReal Topology
@@ -26,8 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) C] [IsManifold (𝓡 n) ∞ C]
   [T2Space C] [SecondCountableTopology C]
 
-
-
 theorem actualBallCylinder_normalized_domain
     (B : M15ActualBallCylinder G T x r K C) (hQ : 0 < r⁻¹ ^ 2) :
     (parabolicInterval (r⁻¹ ^ 2) hQ (T - r ^ 2) K).domain = Set.Icc 0 1 := by
@@ -39,8 +27,6 @@ theorem actualBallCylinder_normalized_domain
   congr 1
   field_simp [B.radius_pos.ne']
   ring
-
-
 
 theorem actualBallCylinder_normalized_curvature_le_one
     (B : M15ActualBallCylinder G T x r K C)
@@ -69,9 +55,6 @@ theorem actualBallCylinder_normalized_curvature_le_one
   change (R.flow.connection s).curvatureTensorNorm c = _ at hscale
   rw [hscale, div_le_iff₀ hQ, one_mul]
   exact hbound
-
-
-
 
 theorem actualBallCylinder_normalized_terminal_edist_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -109,9 +92,6 @@ theorem actualBallCylinder_normalized_terminal_edist_le
   rw [horig] at hdist
   simpa only [← mul_assoc, ← ENNReal.ofReal_mul (Real.exp_pos _).le,
     mul_comm (Real.exp (n : ℝ)) r] using hdist
-
-
-
 
 theorem actualBallCylinder_normalized_initial_precompact
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

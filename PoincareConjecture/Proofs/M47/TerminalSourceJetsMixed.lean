@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceJetsSpatial
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CompactnessFeedJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RicciTimeGluing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -28,8 +20,6 @@ variable {α : Type v} (l : Filter α) (M : α → Type u)
   [∀ k, TopologicalSpace (M k)] [∀ k, ChartedSpace E (M k)]
   [∀ k, IsManifold (𝓡 3) ∞ (M k)] [∀ k, T2Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
-
-
 
 theorem terminalSourceJets_mixed (P : RicciFlowCurvatureTheory.{u})
     {τ R H ρ : ℝ} (hτ : 0 < τ) (hH : 0 < H) (hρ : 0 < ρ) (hρR : 2 * ρ < R)
@@ -85,9 +75,6 @@ theorem terminalSourceJets_mixed (P : RicciFlowCurvatureTheory.{u})
   intro m
   obtain ⟨B, hB, hbound⟩ := h m
   exact ⟨B, hB, hbound.mono fun k hk t ht x hx => hk (t, x) ⟨ht, hx⟩⟩
-
-
-
 
 theorem terminalSourceJets_eventually_mixed_on_buffer (P : RicciFlowCurvatureTheory.{u})
     {τ R H ρ : ℝ} (hτ : 0 < τ) (hH : 0 < H) (hρ : 0 < ρ) (hρR : 2 * ρ < R)

@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PrismCycle
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicFrames
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_signed_cyclic_tube_of_incident_frames
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

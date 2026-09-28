@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralSupportCap
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralCapDegrees
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

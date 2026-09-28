@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_SubspaceTransport
 import PoincareConjecture.Proofs.M53.Prop15_12_CylinderSurface
 import PoincareConjecture.Proofs.M53.Mathlib.ZeroSliceChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +12,6 @@ open PoincareConjecture.Proofs.M02.Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
 
 theorem surfaceInclusion_chartCylinder_homology_isIso
     {X E : Type u} [TopologicalSpace X] [T2Space X]

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TimeBounds
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem regular_reducedLength_deriv_abs_bound {K : AncientKappaSolution n M}
     (P : AncientAsymptoticSolitonPredecessors K) {R τ : ℝ} {p q : M}
     (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
@@ -35,8 +28,6 @@ theorem regular_reducedLength_deriv_abs_bound {K : AncientKappaSolution n M}
     exact (r.representative_eq (q, s) hs).symm
   rw [heq.deriv_eq]
   exact P.regular_reducedLength_time_abs_bound r
-
-
 
 theorem regular_reducedLength_deriv_abs_le_later
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -106,8 +97,6 @@ private theorem reducedLength_time_abs_le_ordered
         continuous_const).div_const _).mul continuous_const
   exact hclosed.closure_subset ((calibratedMetricVolume (K.flow.metric 0)).dense_of_ae hae q)
 
-
-
 theorem reducedLength_time_abs_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
     (p q : M) {α β a b : ℝ} (hα : 0 < α) (ha : a ∈ Icc α β) (hb : b ∈ Icc α β) :
@@ -119,8 +108,6 @@ theorem reducedLength_time_abs_le
   · simpa only [abs_sub_comm] using
       (reducedLength_time_abs_le_ordered P p q hα hb.1 hba ha.2).trans_eq
         (by rw [abs_of_nonneg (sub_nonneg.mpr hba)])
-
-
 
 theorem rescaled_reducedLength_time_abs_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

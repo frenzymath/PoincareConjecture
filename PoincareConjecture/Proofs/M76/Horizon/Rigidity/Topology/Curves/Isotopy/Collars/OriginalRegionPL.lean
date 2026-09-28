@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Co
 import PoincareConjecture.Proofs.M76.Rigidity.LocalEmbeddedParameterCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 

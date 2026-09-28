@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Statements.M12GeneralizedEquation
 import PoincareConjecture.Definitions.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem compatibleCylinder_metric_comparison
     {X : Type u} [TopologicalSpace X] {time : X → ℝ}

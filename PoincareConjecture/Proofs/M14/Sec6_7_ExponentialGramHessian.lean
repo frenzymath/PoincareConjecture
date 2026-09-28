@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_ExponentialGramVariation
 import PoincareConjecture.Proofs.M14.Sec6_3_ExponentialJacobiField
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialJacobi
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -45,9 +36,6 @@ private theorem hessian_pair_parameter_congr (γ : ℝ → G.Point)
       M14ReducedLengthHessianPairing G ⟨γ s, hs⟩ f (Y s) (Y s) := by
   subst s
   rfl
-
-
-
 
 theorem exponentialJacobi_index_eq_hessian
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -104,9 +92,6 @@ theorem exponentialJacobi_index_eq_hessian
     hessian_pair_parameter_congr R.curve Q.field (M14ReducedLengthAt G T 0 x)
       (Real.sqrt_sq hpos.le) hclock hq, Real.sqrt_zero, Real.sqrt_sq hpos.le] at hi
   exact hi
-
-
-
 
 theorem exponentialJacobi_boundary_eq_hessian
     (hCoordinates : M12MetricPredecessors.{0} n)

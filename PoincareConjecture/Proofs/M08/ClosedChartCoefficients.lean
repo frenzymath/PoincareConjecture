@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M08.ChartEulerRegularity
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

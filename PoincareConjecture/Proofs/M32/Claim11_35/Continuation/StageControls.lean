@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.FiniteSlabs
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +8,6 @@ open scoped ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
 
 noncomputable def restrictControlledBlowupCylinderTime
     {S : GeneralizedBlowupSequence.{u}} {k : ℕ} {A T T' B eta : ℝ}
@@ -31,9 +19,6 @@ noncomputable def restrictControlledBlowupCylinderTime
     zero_identity := fun hs x hx => e.zero_identity (hI hs) x hx
     curvature_bound := fun s hs x hx => e.curvature_bound s (hI hs) x hx
     negative_curvature_bound := fun s hs x hx => e.negative_curvature_bound s (hI hs) x hx }
-
-
-
 
 theorem geometricLongControls_of_closed_cylinders
     (S : GeneralizedBlowupSequence.{u}) {T B : ℝ} (hT : 0 < T) (hB : 0 ≤ B)

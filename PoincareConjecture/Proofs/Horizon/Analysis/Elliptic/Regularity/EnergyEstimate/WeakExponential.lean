@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.ExponentialTest
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakInequalityLipschitz
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,8 +13,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 variable {d : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem weakInequality_exponential_test
     {O : Set E} (hO : IsOpen O) (hOc : IsCompact (closure O))

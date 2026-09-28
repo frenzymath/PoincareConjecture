@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M64Annulus
 import PoincareConjecture.Proofs.M60.Filling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -26,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   {A : M64Annulus (P.flow.metric t) c0 c1}
   {gamma0 gamma1 : C1FreeLoopSpace (M := M)}
 
-
-
 theorem m65ProjectedDiskComparison
     (projection : M64AnnulusProjection P t)
     (gluing : M64DiskGluingConclusion P t A gamma0 gamma1)
@@ -40,8 +29,6 @@ theorem m65ProjectedDiskComparison
   obtain ⟨_, B, _, harea, _, hle⟩ := projection c0 c1 A
   refine ⟨D1, m60FillingArea_nonneg_of_disk _ _ D1, ?_⟩
   exact (gluing.infimum ⟨D0⟩ ⟨D1⟩).trans (harea.symm.trans_le hle)
-
-
 
 theorem m65FillingArea_le_add_annulus
     (projection : M64AnnulusProjection P t)

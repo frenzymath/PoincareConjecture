@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.EuclideanJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Parametrized.LinearEquiv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -22,14 +12,11 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def roundCylinderEuclideanModelCoefficients
     (x : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   RiemannianMetric.parameterBilinearEquiv (RiemannianMetric.lineModelEquiv 2).symm
     (roundCylinderModelCoefficients ((RiemannianMetric.lineModelEquiv 2).symm x))
-
 
 theorem contDiff_roundCylinderEuclideanModelCoefficients :
     ContDiff ℝ ∞ roundCylinderEuclideanModelCoefficients := by
@@ -44,8 +31,6 @@ theorem contDiff_roundCylinderEuclideanModelCoefficients :
       (E := RoundCylinderCoordinates →L[ℝ] RoundCylinderCoordinates →L[ℝ] ℝ)
       (F := EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ) P
   exact hP.comp (contDiff_roundCylinderModelCoefficients.comp T.contDiff)
-
-
 
 theorem roundCylinderEuclideanModelCoefficients_basis
     (q : UnitTwoSphere) (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) (i j : Fin 3) :
@@ -65,16 +50,12 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def m25_normalizedEuclideanCoefficients (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (x : EuclideanSpace ℝ (Fin 3)) :
     EuclideanSpace ℝ (Fin 3) →L[ℝ] EuclideanSpace ℝ (Fin 3) →L[ℝ] ℝ :=
   RiemannianMetric.parameterBilinearEquiv (RiemannianMetric.lineModelEquiv 2).symm
     (N.normalizedCenteredCoefficients q
       ((0, s) + (RiemannianMetric.lineModelEquiv 2).symm x))
-
-
 
 theorem m25_normalizedEuclideanCoefficients_contDiffAt (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : EuclideanSpace ℝ (Fin 3)}
@@ -99,8 +80,6 @@ theorem m25_normalizedEuclideanCoefficients_contDiffAt (N : EpsilonNeck g)
   exact hP.contDiffAt.comp x
     (hN.comp (f := fun y : EuclideanSpace ℝ (Fin 3) => (0, s) + T y) x hphi)
 
-
-
 theorem m25_normalizedEuclideanCoefficients_basis_eventuallyEq (N : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
     (i j : Fin 3) :
@@ -119,8 +98,6 @@ theorem m25_normalizedEuclideanCoefficients_basis_eventuallyEq (N : EpsilonNeck 
   simpa only [Function.comp_def, m25_normalizedEuclideanCoefficients,
     RiemannianMetric.parameterBilinearEquiv_apply,
     m25_lineModelEquiv_symm_roundCylinderEuclideanBasis, T] using h.symm
-
-
 
 theorem m25_exists_normalizedEuclideanCoefficients_scalar_twoJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {M : Type u} [TopologicalSpace M]

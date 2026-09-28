@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiReflectionEquation
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -69,11 +60,6 @@ private theorem closed_disk_forward (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
       _ ≤ t * 1 := mul_le_mul_of_nonneg_left hz ht.1
       _ < 1 := by simpa only [mul_one] using lt_of_le_of_ne ht.2 htn
   exact (ne_of_lt hsmall) htnorm
-
-
-
-
-
 
 theorem exists_disk_smooth_beltrami_diffeomorphism (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

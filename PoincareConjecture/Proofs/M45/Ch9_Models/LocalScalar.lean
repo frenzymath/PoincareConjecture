@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Localit
 import PoincareConjecture.Proofs.M04.RicciRegularity
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.TraceRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ variable {n : ℕ} {M N : Type*}
   [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
 
-
-
 theorem model_scalar_smooth (D : LeviCivitaData g) :
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ D.scalarCurvature := by
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -45,21 +34,15 @@ theorem model_scalar_smooth (D : LeviCivitaData g) :
   simpa [contMDiffOn_univ, RiemannianMetric.tensorTrace,
     LeviCivitaData.scalarCurvature, LeviCivitaData.ricciEvaluation] using hs
 
-
-
 noncomputable def modelRicciBilinear (D : LeviCivitaData g) (x : M) :
     TangentSpace (𝓡 n) x →ₗ[ℝ] TangentSpace (𝓡 n) x →ₗ[ℝ] ℝ :=
   ∑ i, D.curvatureTensor_bilinear_first_third x
     (g.orthonormalBasis x i) (g.orthonormalBasis x i)
 
-
-
 theorem modelRicciBilinear_apply (D : LeviCivitaData g) (x : M)
     (v w : TangentSpace (𝓡 n) x) : modelRicciBilinear D x v w = D.ricci x v w := by
   simp only [modelRicciBilinear, LinearMap.sum_apply,
     LeviCivitaData.curvatureTensor_bilinear_first_third_apply, LeviCivitaData.ricci]
-
-
 
 theorem model_ricciNormSq_eq_sum_basis (D : LeviCivitaData g) (x : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -74,8 +57,6 @@ theorem model_ricciNormSq_eq_sum_basis (D : LeviCivitaData g) (x : M) :
   intro ι _ b
   simpa only [modelRicciBilinear_apply, LeviCivitaData.ricciNormSq] using
     M13.sum_sq_bilinear_basis_eq (modelRicciBilinear D x) (g.orthonormalBasis x) b
-
-
 
 theorem model_ricciNormSq_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -104,8 +85,6 @@ theorem model_ricciNormSq_eq_of_local_isometry
   rw [D.ricci_eq_of_local_isometry D' hU hf hmetric hx]
   rfl
 
-
-
 theorem model_scalar_differential_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
     {f : M → N} {U : Set M} (hU : IsOpen U)
@@ -124,8 +103,6 @@ theorem model_scalar_differential_eq_of_local_isometry
   rw [mvfderiv_comp x ((model_scalar_smooth D' (f x)).mdifferentiableAt (by simp))
     ((hf.contMDiffAt (hU.mem_nhds hx)).mdifferentiableAt (by simp))]
   rfl
-
-
 
 theorem model_scalar_evolution_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -146,9 +123,6 @@ theorem model_scalar_evolution_eq_of_local_isometry
       (eventually_of_mem (hU.mem_nhds hx) hinv)
       (eventually_of_mem (hU.mem_nhds hx) hmetric) (model_scalar_smooth D' (f x)),
     model_ricciNormSq_eq_of_local_isometry D D' hU hf hmetric hx]
-
-
-
 
 theorem model_scalarGradientNorm_le {X : Type*} [TopologicalSpace X]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) X] [IsManifold (𝓡 3) ∞ X]

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeContinuous
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialTargetCorrection
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,27 +17,19 @@ open Proofs.M58
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 def m64EuclideanInterpolator (z : ℝ × (E × E)) : E :=
   (1 - z.1) • z.2.1 + z.1 • z.2.2
-
-
 
 theorem m64EuclideanInterpolator_contDiff :
     ContDiff ℝ ∞ (m64EuclideanInterpolator (m := m)) := by
   exact ((contDiff_const.sub contDiff_fst).smul contDiff_snd.fst).add
     (contDiff_fst.smul contDiff_snd.snd)
 
-
-
 theorem m64EuclideanInterpolator_contMDiff :
     ContMDiff (𝓘(ℝ, ℝ).prod ((𝓡 m).prod (𝓡 m))) (𝓡 m) 1
       (m64EuclideanInterpolator (m := m)) := by
   exact ((contMDiff_const.sub contMDiff_fst).smul contMDiff_snd.fst).add
     (contMDiff_fst.smul contMDiff_snd.snd)
-
-
 
 theorem m64EuclideanInterpolator_speed (s : ℝ) (p q : E) :
     (RiemannianMetric.euclideanMetric m).tangentNorm (m64EuclideanInterpolator (s, p, q))
@@ -67,8 +48,6 @@ theorem m64EuclideanInterpolator_speed (s : ℝ) (p q : E) :
     RiemannianMetric.euclideanMetric_edist, edist_dist, dist_eq_norm, norm_sub_rev]
   exact (ENNReal.toReal_ofReal (norm_nonneg _)).symm
 
-
-
 theorem m64EuclideanInterpolator_last_column (s : ℝ) (p q v : E) :
     mfderiv (𝓘(ℝ, ℝ).prod ((𝓡 m).prod (𝓡 m))) (𝓡 m) m64EuclideanInterpolator
       (s, p, q) (0, 0, v) = s • v := by
@@ -85,12 +64,8 @@ theorem m64EuclideanInterpolator_last_column (s : ℝ) (p q v : E) :
     zero_apply, zero_add, smul_apply, ContinuousLinearMap.id_apply,
     Pi.add_apply, id_eq] using! heq
 
-
-
 def m64EuclideanCone (w : ℝ → E) : LoopPlane → E :=
   m64LocalConeDiskMap m64EuclideanInterpolator (w 0) w
-
-
 
 theorem m64EuclideanCone_continuous {w : ℝ → E}
     (hw : Continuous w) (hperiod : Function.Periodic w curvePeriod) :
@@ -99,15 +74,11 @@ theorem m64EuclideanCone_continuous {w : ℝ → E}
     (fun x => by simp [m64EuclideanInterpolator])
     (fun _ _ _ => m64EuclideanInterpolator_contDiff.continuous.continuousAt)
 
-
-
 theorem m64EuclideanCone_tendsto (w : ℕ → ℝ → E) (u : ℝ → E)
     (hw : ∀ x, Tendsto (fun j => w j x) atTop (𝓝 (u x))) (p : LoopPlane) :
     Tendsto (fun j => m64EuclideanCone (w j) p) atTop (𝓝 (m64EuclideanCone u p)) :=
   m64LocalConeDiskMap_tendsto m64EuclideanInterpolator (fun j => w j 0) w (u 0) u
     (hw 0) hw (fun _ _ _ => m64EuclideanInterpolator_contDiff.continuous.continuousAt) p
-
-
 
 theorem m64EuclideanCone_contDiff {w : ℝ → E}
     (hw : ContDiff ℝ 1 w) (hperiod : Function.Periodic w curvePeriod) :
@@ -117,15 +88,11 @@ theorem m64EuclideanCone_contDiff {w : ℝ → E}
     (fun x => by simp [m64EuclideanInterpolator])
     (fun _ _ _ => (m64EuclideanInterpolator_contMDiff (m := m)).contMDiffAt)
 
-
-
 theorem m64EuclideanCone_boundary {w : ℝ → E}
     (hperiod : Function.Periodic w curvePeriod) (x : ℝ) :
     m64EuclideanCone w (angularPoint x) = w x :=
   m64LocalConeDiskMap_boundary m64EuclideanInterpolator (w 0) w hperiod
     (fun x => by simp [m64EuclideanInterpolator]) x
-
-
 
 theorem m64EuclideanCone_range {w : ℝ → E} {z : E} {r : ℝ}
     (hw : ∀ x, w x ∈ closedBall z r) (p : LoopPlane) :

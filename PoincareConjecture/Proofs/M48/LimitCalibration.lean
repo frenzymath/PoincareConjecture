@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M45.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,8 +12,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
-
-
 
 theorem m48CalibratedLimit
     (S : RepairedControlledSchedulesData.{u})

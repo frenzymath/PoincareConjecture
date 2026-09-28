@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialIntegration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RadialFlipGeometry
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -25,8 +16,6 @@ local notation "O" => m64AnnulusLowerDomain
 local notation "R" => m60PlaneReflection
 local notation "T" => m64AnnulusRadialFlip
 local notation "v" => m64AnnulusRadialTranslation
-
-
 
 theorem m64AnnulusRadialFlip_lower_translation (p : LoopPlane) : T (v + p) = R p := by
   ext i
@@ -61,9 +50,6 @@ private theorem reflected_norm_sq
       linarith
     simp only [m64AnnulusLowerExtend, if_neg hneg, indicator_of_mem hpS,
       indicator_of_notMem hRpnot, norm_zero, zero_pow (by norm_num : (2 : ℕ) ≠ 0), add_zero]
-
-
-
 
 theorem m64LowerReflection_integral_norm_sq
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

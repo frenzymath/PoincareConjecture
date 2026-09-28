@@ -1,17 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorConnectivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture.Topology.Surface
-
 
 theorem affineBasis_vector_reconstruction (c : AffineBasis (Fin 3) ℝ Plane) (w : Plane) :
     (c.coord 1).linear w • (c 1 - c 0) +
@@ -23,7 +15,6 @@ theorem affineBasis_vector_reconstruction (c : AffineBasis (Fin 3) ℝ Plane) (w
     simpa using (c.coord 2).map_vadd (c 0) w
   rw [h1, h2, add_assoc] at h
   exact add_left_cancel (h.trans (add_comm _ _))
-
 
 theorem affineBasis_edge_ne_smul (b : AffineBasis (Fin 3) ℝ Plane)
     (i j k : Fin 3) (hji : j ≠ i) (hjk : j ≠ k) (a : ℝ) :
@@ -41,8 +32,6 @@ theorem affineBasis_edge_ne_smul (b : AffineBasis (Fin 3) ℝ Plane)
   rw [h1, map_smul, h2, smul_zero] at he
   exact one_ne_zero he
 
-
-
 theorem affineBasis_second_coord_ne_zero_of_mapped_first_edge
     (b c : AffineBasis (Fin 3) ℝ Plane) (L : Plane →L[ℝ] Plane)
     (hL : Function.Injective L) (i j k : Fin 3) (hji : j ≠ i) (hjk : j ≠ k)
@@ -55,7 +44,6 @@ theorem affineBasis_second_coord_ne_zero_of_mapped_first_edge
   apply hL
   rw [map_smul, hw, hk, neg_smul]
   exact congrArg Neg.neg he
-
 
 theorem affineBasis_first_coord_ne_zero_of_mapped_second_edge
     (b c : AffineBasis (Fin 3) ℝ Plane) (L : Plane →L[ℝ] Plane)

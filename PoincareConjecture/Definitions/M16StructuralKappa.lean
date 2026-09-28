@@ -1,21 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.AsymptoticSoliton
 import PoincareConjecture.Definitions.M13OrdinaryRescaling
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 structure AncientKappaNormalization (K : AncientKappaSolution n M)
     (p : M) (b : ℝ) where
@@ -48,7 +32,6 @@ structure AncientKappaNormalization (K : AncientKappaSolution n M)
       (K.flow.connection (b + s / scale)).curvatureTensorNorm x / scale
   normalized_scalar :
     (target.flow.connection 0).scalarCurvature p = 1
-
 
 structure AncientKappaStructuralData (K : AncientKappaSolution n M) where
   scalar_pos : ∀ t : ℝ, t ≤ 0 → ∀ x : M,

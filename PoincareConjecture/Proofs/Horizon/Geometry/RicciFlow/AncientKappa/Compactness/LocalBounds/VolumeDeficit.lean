@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.LocalBounds.EarlierVolumeUpper
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Unnormalized.Volume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +18,6 @@ local instance volumeDeficitCarrierConnected (C : FlowCarrier 3) : ConnectedSpac
   connectedSpace_iff_univ.mpr C.connected
 
 variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
-
-
 
 theorem exists_complete_flat_slice_with_volume_deficit
     (P : M23NormalizedKappaCompactnessPredecessors) (hn : ¬ M23LocalCurvatureEstimate S) :

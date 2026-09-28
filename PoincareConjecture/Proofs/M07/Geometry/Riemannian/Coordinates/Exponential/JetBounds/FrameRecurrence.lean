@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.RadialCurvature
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,8 +45,6 @@ private theorem multilinear_eq_sum_radial_frame
     (eq_sum_radial_frame b hTi hTv x (V i))
   simpa only [Function.update_eq_self, MultilinearMap.map_update_sum,
     MultilinearMap.map_update_smul, smul_eq_mul] using h
-
-
 
 theorem fderiv_radialCurvatureComponent_eq_frame_sum
     (D : LeviCivitaData g)

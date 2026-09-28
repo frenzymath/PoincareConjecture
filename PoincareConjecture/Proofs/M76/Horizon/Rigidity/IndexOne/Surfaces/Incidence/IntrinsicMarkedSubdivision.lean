@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.Incidenc
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Models.PlanarStarIncidence
 import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleChartStars
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

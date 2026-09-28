@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Covering
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ZeroDimensional
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,14 +13,12 @@ open Set Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
 
-
 def PoincareConjecture.RiemannianMetric.annularCornerVolumeConstant
     (m k : ℕ) (H η : ℝ) : ℝ :=
   let l := min (1 / 4 : ℝ) (η / 4)
   (⌈(12 / l) ^ (m + k) * Real.exp (6 * ((m + k : ℕ) : ℝ))⌉₊ : ℝ) *
     (2 * ((k : ℝ) + 1) / l) ^ k * max 1 (euclideanUnitBallVolume (m + k)) *
       4 ^ (m + k) * Real.exp (((m + k : ℕ) : ℝ) * (H + 4))
-
 
 theorem PoincareConjecture.RiemannianMetric.annularCornerVolumeConstant_pos
     (m k : ℕ) (H : ℝ) {η : ℝ} (hη : 0 < η) :
@@ -223,8 +214,6 @@ private theorem annular_recenter
     exact lt_of_le_of_lt Manifold.riemannianEDist_triangle (ENNReal.add_lt_add hqz hzx)
 
 end PoincareConjecture.RiemannianMetric
-
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_openFiber_total_volume_le_annular_mul_pow
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

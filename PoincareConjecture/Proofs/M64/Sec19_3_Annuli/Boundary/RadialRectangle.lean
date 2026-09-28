@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusPeriodicHarmonicMinimum
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -15,14 +11,8 @@ namespace PoincareConjecture.M64
 
 open Proofs.M58
 
-
-
-
 def annulusRadialRectangle (lo hi : ℝ) : Set LoopPlane :=
   {p | 0 ≤ p 0 ∧ p 0 ≤ curvePeriod ∧ lo ≤ p 1 ∧ p 1 ≤ hi}
-
-
-
 
 theorem annulusRadialRectangle_preimage (lo hi : ℝ) :
     loopPlaneEquivProd.symm ⁻¹' annulusRadialRectangle lo hi =
@@ -31,9 +21,6 @@ theorem annulusRadialRectangle_preimage (lo hi : ℝ) :
   change (0 ≤ q.1 ∧ q.1 ≤ curvePeriod ∧ lo ≤ q.2 ∧ q.2 ≤ hi) ↔
     (0 ≤ q.1 ∧ lo ≤ q.2) ∧ q.1 ≤ curvePeriod ∧ q.2 ≤ hi
   tauto
-
-
-
 
 theorem annulusRadialRectangle_isCompact (lo hi : ℝ) :
     IsCompact (annulusRadialRectangle lo hi) := by
@@ -53,22 +40,13 @@ theorem annulusRadialRectangle_isCompact (lo hi : ℝ) :
   rw [heq]
   exact (isCompact_Icc.prod isCompact_Icc).image hmap
 
-
-
-
 theorem annulusRadialRectangle_subset {lo hi : ℝ} (hlo : 0 ≤ lo) (hhi : hi ≤ 1) :
     annulusRadialRectangle lo hi ⊆ m64AnnulusDomain :=
   fun _ hp => ⟨hp.1, hp.2.1, hlo.trans hp.2.2.1, hp.2.2.2.trans hhi⟩
 
-
-
-
 theorem annulusRadialRectangle_subset_strip {lo hi : ℝ} (hlo : 0 < lo) (hhi : hi < 1) :
     annulusRadialRectangle lo hi ⊆ m64AnnulusOpenStrip :=
   fun _ hp => ⟨hlo.trans_le hp.2.2.1, hp.2.2.2.trans_lt hhi⟩
-
-
-
 
 theorem annulusRadialRectangle_measurePreserving (lo hi : ℝ) :
     MeasurePreserving (fun q : ℝ × ℝ => annulusPoint q.1 q.2)
@@ -82,9 +60,6 @@ theorem annulusRadialRectangle_measurePreserving (lo hi : ℝ) :
   simpa only [annulusRadialRectangle_preimage] using
     measurePreserving_loopPlaneEquivProd.symm.restrict_preimage_emb
       loopPlaneEquivProd.symm.measurableEmbedding (annulusRadialRectangle lo hi)
-
-
-
 
 theorem annulusRadialRectangle_integral {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (lo hi : ℝ) (f : LoopPlane → E) :

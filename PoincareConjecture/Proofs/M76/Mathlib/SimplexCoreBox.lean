@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StdSimplexCore
 import Mathlib.Algebra.BigOperators.Field
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,31 +9,22 @@ namespace StdSimplexCore
 
 variable (ι κ : Type*) [Fintype ι] [Fintype κ]
 
-
-
-
 def boxRegion (η : ℝ) : Set ((ι → ℝ) × (κ → ℝ)) :=
   {z | (∀ i, η ≤ z.1 i) ∧ z.2 ∈ Icc 0 (fun _ => η) ∧
     (∑ i, z.1 i) + ∑ j, z.2 j = 1}
 
 variable {κ}
 
-
-
 noncomputable def boxScale (η : ℝ) (v : κ → ℝ) : ℝ :=
   1 - (∑ j, v j) / (1 - (Fintype.card ι : ℝ) * η)
 
 variable {ι}
-
-
 
 theorem boxDenominator_pos {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1) :
     0 < 1 - (Fintype.card ι : ℝ) * η := by
   have hκ : 0 ≤ (Fintype.card κ : ℝ) * η := mul_nonneg (Nat.cast_nonneg _) hη
   nlinarith [hbound]
-
-
 
 theorem boxScale_pos {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1)
@@ -56,15 +37,11 @@ theorem boxScale_pos {η : ℝ} (hη : 0 ≤ η)
   rw [boxScale, sub_pos, div_lt_one hden]
   nlinarith [hbound, hsum]
 
-
-
 theorem boxScale_mul {η : ℝ} (hden : 1 - (Fintype.card ι : ℝ) * η ≠ 0)
     (v : κ → ℝ) :
     boxScale ι η v * (1 - (Fintype.card ι : ℝ) * η) =
       1 - (Fintype.card ι : ℝ) * η - ∑ j, v j := by
   rw [boxScale, sub_mul, one_mul, div_mul_cancel₀ _ hden]
-
-
 
 theorem continuous_boxScale (ι : Type*) [Fintype ι] (η : ℝ) :
     Continuous (boxScale ι η : (κ → ℝ) → ℝ) := by
@@ -73,21 +50,14 @@ theorem continuous_boxScale (ι : Type*) [Fintype ι] (η : ℝ) :
 
 variable (ι κ)
 
-
-
 noncomputable def boxPoint (η : ℝ) (q : ι → ℝ) (v : κ → ℝ) :
     (ι → ℝ) × (κ → ℝ) :=
   (fun i => η + boxScale ι η v * (q i - η), v)
-
-
-
 
 noncomputable def boxBase (η : ℝ) (z : (ι → ℝ) × (κ → ℝ)) : ι → ℝ :=
   fun i => η + (z.1 i - η) / boxScale ι η z.2
 
 variable {ι κ}
-
-
 
 theorem boxPoint_mem {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1)
@@ -103,8 +73,6 @@ theorem boxPoint_mem {η : ℝ} (hη : 0 ≤ η)
       Finset.sum_const, Finset.card_univ, nsmul_eq_mul, hq.2]
     rw [boxScale_mul (boxDenominator_pos hη hbound).ne']
     ring
-
-
 
 theorem boxBase_mem {η : ℝ} (hη : 0 ≤ η)
     (hbound : ((Fintype.card ι : ℝ) + Fintype.card κ) * η < 1)
@@ -124,8 +92,6 @@ theorem boxBase_mem {η : ℝ} (hη : 0 ≤ η)
     rw [hsum, mul_div_cancel_left₀ _ ha.ne']
     ring
 
-
-
 theorem boxBase_boxPoint (η : ℝ) (q : ι → ℝ) (v : κ → ℝ)
     (ha : boxScale ι η v ≠ 0) :
     boxBase ι κ η (boxPoint ι κ η q v) = q := by
@@ -133,8 +99,6 @@ theorem boxBase_boxPoint (η : ℝ) (q : ι → ℝ) (v : κ → ℝ)
   simp only [boxBase, boxPoint, add_sub_cancel_left]
   rw [mul_div_cancel_left₀ _ ha]
   ring
-
-
 
 theorem boxPoint_boxBase (η : ℝ) (z : (ι → ℝ) × (κ → ℝ))
     (ha : boxScale ι η z.2 ≠ 0) :

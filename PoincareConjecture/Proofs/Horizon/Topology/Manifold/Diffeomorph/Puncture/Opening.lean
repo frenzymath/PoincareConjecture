@@ -4,15 +4,6 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +12,6 @@ open Set TopologicalSpace Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare
-
 
 def positiveHalfLine : Opens ℝ := ⟨Ioi 0, isOpen_Ioi⟩
 
@@ -106,8 +96,6 @@ private theorem openingInverse_surjOn {δ : ℝ} (hδ : 0 < δ) :
       ⟨hleft, hright⟩
   exact ⟨s, ha.trans_le hs.1, hsy⟩
 
-
-
 theorem exists_halfLine_opening {δ : ℝ} (hδ : 0 < δ) :
     ∃ F : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ positiveHalfLine ∞,
       StrictMono (fun t : ℝ => (F t : ℝ)) ∧
@@ -178,11 +166,8 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "S2" => Metric.sphere (0 : E3) 1
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 def unitBallExterior : Opens E3 :=
   ⟨{x | 1 < ‖x‖}, isOpen_lt continuous_const continuous_norm⟩
-
-
 
 theorem exists_cylinder_diffeomorph_exterior
     (F : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ positiveHalfLine ∞) :
@@ -245,8 +230,6 @@ theorem exists_cylinder_diffeomorph_exterior
       apply (ContMDiff.subtypeVal_comp_iff positiveHalfLine _).mp
       exact hlog
   exact ⟨⟨⟨f, g, hleft, hright⟩, hf, hg⟩, fun _ => rfl⟩
-
-
 
 theorem exists_puncture_ball_opening {δ : ℝ} (hδ : 0 < δ) :
     ∃ (F : Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ positiveHalfLine ∞)

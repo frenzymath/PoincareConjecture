@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.IntrinsicLieMetricNative
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Data.List.OfFn
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
 theorem exists_supported_chart_cutoff (p : M) {K : Set M}
     (hK : IsClosed K) (hKU : K ⊆ (chartAt E p).source) :
     ∃ eta : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ eta ∧
@@ -47,7 +39,6 @@ theorem exists_supported_chart_cutoff (p : M) {K : Set M}
     exact (notMem_tsupport_iff_eventuallyEq.mpr hz) hx
   · intro x hx
     exact hone.filter_mono (nhds_le_nhdsSet hx)
-
 
 structure Cutoffs (p : M) (K : Set M) where
   eta : M → ℝ
@@ -198,7 +189,6 @@ theorem jet_first_eventuallyEq (g : RiemannianMetric n M) {x : M}
   rw [hy.mfderiv_eq, hfield]
   rfl
 
-
 theorem jet_eq (g : RiemannianMetric n M) {x : M}
     (heta : C.eta =ᶠ[𝓝 x] 1) (hzeta : C.zeta =ᶠ[𝓝 x] 1) :
     C.jet g x = frameMetricJet g (chartFrame p) x := by
@@ -228,7 +218,6 @@ theorem jet_eq_on (g : RiemannianMetric n M) {x : M} (hx : x ∈ K) :
     C.jet g x = frameMetricJet g (chartFrame p) x := by
   have heta := C.eta_one x hx
   exact C.jet_eq g heta (C.zeta_one x (C.mem_eta_support hx))
-
 
 theorem jet_difference (g h : RiemannianMetric n M) (x : M) (i j : Fin n)
     (w : List (Fin n)) :
@@ -265,8 +254,6 @@ theorem residual_eq_source (g0 g : RiemannianMetric n M) (x : M) (i j : Fin n) :
   rw [hp, hq]
   simp only [chartStateSource,
     lowerJetState, chartStateJet, backgroundLowerJet]
-
-
 
 theorem residual_eq_intrinsic (g0 g : RiemannianMetric n M)
     (B : LeviCivitaData g0) (D : LeviCivitaData g) {x : M} (hx : x ∈ K) (i j : Fin n) :
@@ -311,7 +298,6 @@ theorem jet_first_eq_native (g0 g : RiemannianMetric n M)
   rw [C.field_eq_sum g0 F hF a x, map_sum]
   simp only [map_smul, smul_eq_mul, scalarDirectional]
 
-
 theorem jet_second_eq_native (g0 g : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))
     (hF : ∀ (x : M) (v : TangentSpace (𝓡 n) x),
@@ -340,7 +326,6 @@ theorem probeCoefficient_contMDiff (g0 : RiemannianMetric n M)
     ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ (C.probeCoefficient g0 F i j a b) :=
   (C.eta_smooth.mul (C.fieldCoefficient_contMDiff g0 F i a)).mul
     (C.fieldCoefficient_contMDiff g0 F j b)
-
 
 theorem matrix_sub_eq_sum_probes (g0 g h : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))
@@ -441,8 +426,6 @@ private theorem exists_compact_scalar_family_bounds
     let k : Index := (j, ⟨⟨w.length, by omega⟩, w.get⟩)
     simpa only [d, k, List.ofFn_get] using hlp k
 
-
-
 theorem exists_fieldCoefficient_bounds (g0 : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) :
     ∃ A : ℝ, 0 ≤ A ∧
@@ -487,7 +470,6 @@ private theorem scalarDerivativeBounds_fintypeSum {gamma : Type*} [Fintype gamma
     funext x
     exact e.symm.sum_comp (fun a => f a x)
   rwa [heq] at hs
-
 
 theorem exists_matrixDifference_bound (g0 : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))
@@ -569,7 +551,6 @@ theorem exists_matrixDifference_low_bound (g0 : RiemannianMetric n M)
       Finset.sum_le_sum (fun a _ => Finset.sum_le_sum (fun b _ => hterm a b))
     _ = L * D := by simp only [Finset.sum_const, Finset.card_univ, nsmul_eq_mul, L]; ring
 
-
 theorem exists_background_matrix_bounds (g0 : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) :
     ∃ A : ℝ, 0 ≤ A ∧ ∀ i j : Fin n,
@@ -582,8 +563,6 @@ theorem exists_background_matrix_bounds (g0 : RiemannianMetric n M)
 section UniformInverse
 
 open scoped Matrix.Norms.Elementwise
-
-
 
 theorem exists_matrix_inverse_radius (g0 : RiemannianMetric n M) :
     ∃ rho I : ℝ, 0 < rho ∧ 0 < I ∧
@@ -606,8 +585,6 @@ theorem exists_matrix_inverse_radius (g0 : RiemannianMetric n M) :
   simpa only [hsum] using (hbound (fun y => C.matrix g y - C.matrix g0 y) hs hn x).2 i j
 
 end UniformInverse
-
-
 
 theorem exists_uniform_matrixDerivative_bounds (g0 : RiemannianMetric n M)
     (F : iota → SmoothField (n := n) (M := M))

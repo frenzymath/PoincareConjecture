@@ -18,7 +18,6 @@ namespace PoincareConjecture.M08
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem continuationAction_intervalIntegrable {J U : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) {a b : ℝ} (hab : a ≤ b)
     (hU : IsOpen U) (hIU : Icc a b ⊆ U) (α : ℝ → M)

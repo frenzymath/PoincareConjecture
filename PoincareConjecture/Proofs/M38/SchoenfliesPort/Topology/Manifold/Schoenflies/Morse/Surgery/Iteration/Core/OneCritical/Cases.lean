@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Critical
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -38,9 +30,6 @@ private theorem swapMorseCoordinates_zero (x : E2) : swapMorseCoordinates x 0 = 
 private theorem swapMorseCoordinates_one (x : E2) : swapMorseCoordinates x 1 = x 0 := rfl
 
 variable {f : S2 → E3} (M : SphereMorseReduction f)
-
-
-
 
 theorem terminal_core_cases
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)

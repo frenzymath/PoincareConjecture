@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ThreeDimensional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem curvature_norm_le_of_scalar_le (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {t B : ℝ} (ht : t ∈ F.interval)
@@ -46,7 +37,6 @@ theorem curvature_norm_le_of_scalar_le (H : SingularTimeAssumptions F T M)
   exact Poincare.fullNorm_le_of_hamiltonIvey (H.interval_nonnegative ht)
     h12 h23 rfl hnorm hR hpinch
 
-
 theorem reference_curvature_norm_le_of_scalar_le (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {t B : ℝ}
     (ht : t ∈ Ico H.reference.tMinus T) (x : M) (hR : H.reference.scalar t x ≤ B) :
@@ -56,8 +46,6 @@ theorem reference_curvature_norm_le_of_scalar_le (H : SingularTimeAssumptions F 
     (fun y _ v w => (H.reference.metric_pullback t ht y v w).symm) (mem_univ x)]
   apply H.curvature_norm_le_of_scalar_le P04 (H.reference.window_subset ht)
   simpa only [H.reference.scalar_pullback, SingularTimeReference.scalar] using hR
-
-
 
 theorem exists_open_uniform_curvature_tail (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet) :

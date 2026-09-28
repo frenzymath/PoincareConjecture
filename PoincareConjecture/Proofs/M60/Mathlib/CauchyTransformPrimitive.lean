@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.PolarRestrictionIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Complex Set MeasureTheory
@@ -19,7 +11,6 @@ variable {V : Type*} [NormedAddCommGroup V] [NormedSpace ℂ V]
   [NormedSpace ℝ V] [IsScalarTower ℝ ℂ V]
 
 omit [IsScalarTower ℝ ℂ V] in
-
 
 theorem continuous_cauchyRiemannDerivative {f : ℂ → V} (hf : ContDiff ℝ 1 f) :
     Continuous (cauchyRiemannDerivative f) := by
@@ -52,9 +43,6 @@ private theorem integral_cauchyRiemannDerivative_angle {f : ℂ → V}
   rw [intervalIntegral.integral_sub h1 h2]
   simp only [intervalIntegral.integral_smul, integral_deriv_polar_angle hf,
     smul_zero, sub_zero]
-
-
-
 
 theorem cauchyTransform_cauchyRiemannDerivative {f : ℂ → V}
     (hf : ContDiff ℝ 1 f) (z : ℂ) :

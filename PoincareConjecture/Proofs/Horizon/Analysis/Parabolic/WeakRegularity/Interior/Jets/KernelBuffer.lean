@@ -1,18 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.MollifiedForcingBounds
 import Mathlib.Topology.MetricSpace.Thickening
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter
 open Poincare.Analysis.Convolution

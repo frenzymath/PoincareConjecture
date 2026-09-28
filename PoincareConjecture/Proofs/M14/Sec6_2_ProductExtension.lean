@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
 
 theorem horizontal_parameter_hasDerivAt_of_contMDiffAt
     (V : ℝ → HorizontalSection G.spacetime)
@@ -50,8 +40,6 @@ theorem horizontal_parameter_hasDerivAt_of_contMDiffAt
   exact ⟨_, (e.symmL ℝ p).hasFDerivAt.comp_hasDerivAt s
     (hy.differentiableAt (by simp)).hasDerivAt⟩
 
-
-
 theorem horizontal_parameter_hasDerivAt
     (V : ℝ → HorizontalSection G.spacetime)
     (hV : ContMDiff ((𝓘(ℝ, ℝ)).prod (spacetimeModel n))
@@ -61,9 +49,6 @@ theorem horizontal_parameter_hasDerivAt
     (s : ℝ) (p : G.Point) : ∃ d : G.Horizontal p,
       HasDerivAt (fun r => V r p) d s :=
   horizontal_parameter_hasDerivAt_of_contMDiffAt V s p (hV (s, p))
-
-
-
 
 noncomputable def pullbackExtensionOfGlobalSmooth
     {γ : ℝ → G.Point} {J : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}

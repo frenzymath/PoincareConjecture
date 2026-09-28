@@ -6,13 +6,6 @@ import PoincareConjecture.Proofs.M09.CenteredChartOperators
 import PoincareConjecture.Proofs.M09.ActionCongruence
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerBubbleLimit
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByPartsTests
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.BranchSet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -106,8 +98,6 @@ private theorem smoothSequence_classical_columns
   exact PiLp.ext fun a => hz a
 
 set_option maxHeartbeats 2400000 in
-
-
 
 theorem suWeakAlphaCoordinate_weightedEuler_of_smooth
     {g : RiemannianMetric n M} {p : M} {u : LoopPlane → E}

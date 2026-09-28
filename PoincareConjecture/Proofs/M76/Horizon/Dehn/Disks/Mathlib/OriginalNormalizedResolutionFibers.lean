@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionD
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.AlternateResolutionDoubleRelation
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.JoinedSourceContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,7 +15,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "D2" => closedBall (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
 
 structure RetainedSquareMapFacts {X : Type*} (f g : V2 → X)
     (S : Set V2) (j : S → V2) : Prop where
@@ -47,18 +38,14 @@ variable {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Topologica
   {c : Bool → P2 → V2} {τ : C3 → X}
   {D : OriginalResolutionWordExclusionData f Z base G c τ (1 / 4)}
 
-
 noncomputable def OriginalNormalizedResolutionPairData.retainedUpperCopy
     (P : OriginalNormalizedResolutionPairData e D) : (D.A ∪ D.C : Set V2) → V2 :=
   joinSourceCopies D.disjointAC P.sourceU.jA P.sourceU.jC
-
 
 noncomputable def OriginalNormalizedResolutionPairData.retainedAlternateCopy
     (P : OriginalNormalizedResolutionPairData e D) : ((D.A ∪ D.M) ∪ D.C : Set V2) → V2 :=
   joinSourceCopies (disjoint_union_left.mpr ⟨D.disjointAC, D.disjointMC⟩)
     (joinSourceCopies D.disjointAM P.sourceV.jA P.sourceV.jM) P.sourceV.jC
-
-
 
 theorem OriginalNormalizedResolutionPairData.retained_fibers
     (P : OriginalNormalizedResolutionPairData e D)

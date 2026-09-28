@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Smoothing.HamiltonCairnsBridge
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonHandleAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M76
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [SecondCountableTopology M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
-
 
 theorem smoothingConclusion_of_lower_handle_cases
     (P : SmoothingBridgeInput (M := M))

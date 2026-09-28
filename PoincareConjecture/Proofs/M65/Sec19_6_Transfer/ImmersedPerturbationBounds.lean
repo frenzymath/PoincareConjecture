@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationPeriodic
 import Mathlib.Algebra.Field.Periodic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {a b : ℝ} {J : Set ℝ}
 
 omit [NormedSpace ℝ P] [T2Space M] in
-
-
 
 theorem residual_zero_at_original (F : RicciFlow 3 M (Icc a b)) (hJ : IsOpen J)
     (C : M65SmoothFilledLoopFamily F J)
@@ -62,10 +51,6 @@ theorem residual_zero_at_original (F : RicciFlow 3 M (Icc a b)) (hJ : IsOpen J)
       m62CurvatureVector F (fun y t => periodicFreeLoop (Gamma 0 t) y) q x : LoopAmbient) = 0 := by
     rw [hv, hH, hCSF q hq x, sub_self]
   simp only [RiemannianMetric.tangentNorm, hzero, map_zero, Real.sqrt_zero]
-
-
-
-
 
 theorem exists_uniform_residual_radius (F : RicciFlow 3 M (Icc a b))
     (hJ : IsOpen J) (hJF : J ⊆ Ioo a b) (C : M65SmoothFilledLoopFamily F J)
@@ -115,8 +100,6 @@ theorem exists_uniform_residual_radius (F : RicciFlow 3 M (Icc a b))
     ⟨Ico_subset_Icc_self hy, hq⟩).le
 
 omit [T2Space M] in
-
-
 
 theorem exists_uniform_length_bound {N : ℕ} (F : RicciFlow 3 M (Icc a b))
     (hJ : IsOpen J) (hJF : J ⊆ Ioo a b)

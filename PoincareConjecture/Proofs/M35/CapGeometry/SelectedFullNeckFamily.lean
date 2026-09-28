@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.FullNeckJetDifference
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckStrictMargin
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPullbackSmoothness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_full_neck_family_close
     (P : M35StandardCapPredecessors)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CoordinateConnectionBilinear
 import PoincareConjecture.Proofs.M09.TimeSpaceDerivative
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

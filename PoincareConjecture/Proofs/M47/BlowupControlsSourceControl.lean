@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceScalar
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ private theorem scalar_eq_of_heq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   rfl
-
-
 
 theorem exists_first_failure_short_search_scalar_bound
     (S : RepairedControlledSchedulesData.{u})

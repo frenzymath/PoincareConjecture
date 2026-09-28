@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.LocalModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal
 
 namespace PoincareConjecture.ChartDistance
-
-
 
 theorem HasLocalSourceModels.tendstoUniformlyOn_pairwise_distance
     {ι : Type*} {n : ℕ}

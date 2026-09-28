@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactnessBounds
 import Mathlib.LinearAlgebra.QuadraticForm.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ local instance suMetricNormalizationBilinearGroup {E : Type*}
 local instance suMetricNormalizationBilinearSpace {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem suPositiveMetric_linear_normalization {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -80,9 +69,6 @@ theorem suPositiveMetric_linear_normalization {n : ℕ}
   simp only [map_add, add_apply, hs w v, norm_add_sq_real] at hvw
   linarith
 
-
-
-
 theorem suContinuousMetric_local_normalization {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) →
       EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -126,8 +112,6 @@ theorem suContinuousMetric_local_normalization {n : ℕ}
     change (1 / 2 : ℝ) * ‖v‖ ^ 2 ≤ C z v v
     linarith [neg_le_of_abs_le he']
 
-
-
 theorem suAlphaHessianTerm_linear_change {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
     (L : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n))
@@ -138,9 +122,6 @@ theorem suAlphaHessianTerm_linear_change {n : ℕ}
         (fun i => L (v i)) (fun i j => L (H i j)) d := by
   simp only [suAlphaHessianTerm, map_smul, map_sum, bilinearComp_apply,
     ContinuousLinearEquiv.coe_apply, L.symm_apply_apply]
-
-
-
 
 theorem suAlphaHessianTerm_transformed_bound {n : ℕ}
     (B : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -29,7 +19,6 @@ private theorem interval_coordinate_bounds (x : closedBall (0 : V1) 1) :
     -1 ≤ (x : V1) 0 ∧ (x : V1) 0 ≤ 1 := by
   have hx : ‖(x : V1)‖ ≤ 1 := mem_closedBall_zero_iff.mp x.property
   exact abs_le.mp ((norm_le_pi_norm (x : V1) 0).trans hx)
-
 
 noncomputable def cylinder : (unitInterval × Q2) ≃ₜ source where
   toFun p := ⟨((fun _ : Fin 1 ↦ 2 * (p.1 : ℝ) - 1), p.2), by
@@ -72,8 +61,6 @@ theorem cylinder_one (u : Q2) : cylinder (1, u) =
   change 2 * (1 : ℝ) - 1 = 1
   norm_num
 
-
-
 theorem exists_source_lift
     {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
     {p : X → M} (hp : IsCoveringMap p)
@@ -102,8 +89,6 @@ theorem exists_source_lift
     rw [cylinder.symm_apply_apply]
     exact hp.liftHomotopy_zero H negative hzero u
 
-
-
 theorem exists_source_triangulation :
     ∃ K : SimplicialComplex ℝ (V1 × V2), K.faces.Finite ∧ K.space = source := by
   classical
@@ -117,8 +102,6 @@ theorem exists_source_triangulation :
       boundary_squareRimPolygon
   obtain ⟨A, hA, hAs, _⟩ := K.exists_finite_triangulation_prod J hK hJ
   exact ⟨A, hA, hAs.trans (by rw [hKs, hJs]; rfl)⟩
-
-
 
 theorem exists_polyhedralPL_source_lift
     {E M X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

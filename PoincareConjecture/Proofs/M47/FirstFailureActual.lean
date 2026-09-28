@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.FirstFailureActualLimit
 import PoincareConjecture.Proofs.M47.CanonicalStandardRecutCover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem firstFailure_attained_infimum
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -43,9 +30,6 @@ theorem firstFailure_attained_infimum
             ¬ SurgeryCanonicalControl F t x F.parameters.epsilon F.parameters.C := by
   exact firstFailure_attained_of_standard_cover P S p hp
     (fun _ hs _ hdistance => standard_tip_locus_setup_cap S hs hdistance) r hr hle
-
-
-
 
 theorem firstFailure_attained
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

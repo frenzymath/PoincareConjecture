@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicLocalPaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicSplicing
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_intrinsic_minimizer_of_metric_segment (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {p q : M} {η : ℝ → M}
@@ -88,9 +76,6 @@ theorem exists_intrinsic_minimizer_of_metric_segment (g : RiemannianMetric 3 M)
   refine ⟨γ, hγ0, ?_, hγ, hγU, ?_⟩
   · exact hγ1.trans (by simpa only [htn, Set.Icc.coe_one] using hη1)
   · simpa only [htn, Set.Icc.coe_one, ENNReal.ofReal_one, one_mul] using hγlength
-
-
-
 
 theorem exists_intrinsic_minimizer_of_compact_sequence
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

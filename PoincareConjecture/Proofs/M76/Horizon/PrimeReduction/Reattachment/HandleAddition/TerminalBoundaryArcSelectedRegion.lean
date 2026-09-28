@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ContractibleBallExtension
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Jordan.Domains
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.PlanarJordanSimpleConnectivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

@@ -141,4 +141,3 @@ def fixedVariationOfSquare {J : Set ℝ} {F : RicciFlow n M J}
     (hright v hv)
 
 end PoincareConjecture.M08
-

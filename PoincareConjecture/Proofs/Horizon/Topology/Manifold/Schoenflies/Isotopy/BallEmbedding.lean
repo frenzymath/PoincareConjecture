@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Linearization
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_supported_embedded_ball_shrinking
     {r c : Real} (hc : 0 < c) (hc1 : c ≤ 1)
@@ -72,7 +58,6 @@ theorem exists_supported_embedded_ball_shrinking
   intro x hx
   simpa [G, d] using hmotion 1 (show (1 : Real) ∈ Icc 0 1 by simp) x hx
 
-
 theorem exists_global_extension_of_ball_embedding
     {r : Real} (hr : 0 < r)
     (f : E -> E) (hf : ContDiff Real ∞ f)
@@ -113,8 +98,6 @@ theorem exists_global_extension_of_ball_embedding
   apply Q.injective
   change Q (Q.symm x) = Q (f x)
   rw [Q.apply_symm_apply, hQ x hx]
-
-
 
 theorem exists_global_extension_of_local_ball_embedding
     {r : Real} (hr : 0 < r) (f : E -> E)

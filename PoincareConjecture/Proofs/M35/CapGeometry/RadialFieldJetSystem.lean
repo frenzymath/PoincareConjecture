@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Mathlib.PointJetBounds
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialFieldPullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ local instance radialCoefficientNormedSpace : NormedSpace ℝ C := inferInstance
 local instance radialSystemNormedGroup : NormedAddCommGroup (C × (V × ℝ)) := inferInstance
 local instance radialSystemNormedSpace : NormedSpace ℝ (C × (V × ℝ)) := inferInstance
 
-
-
 noncomputable def radialFieldJetPolynomial (z : C × (V × ℝ)) : V →L[ℝ] V × ℝ :=
   let b := z.1.1
   let gamma := z.1.2.1
@@ -43,7 +32,6 @@ noncomputable def radialFieldJetPolynomial (z : C × (V × ℝ)) : V →L[ℝ] V
   let a := z.2.2
   (a • (ContinuousLinearMap.id ℝ V - (b u).smulRight u) - gamma.flip u).prod
     (-(ricci u u / 2 + a ^ 2) • b u)
-
 
 theorem radialFieldJetPolynomial_contDiff : ContDiff ℝ ∞ radialFieldJetPolynomial := by
   have hu : ContDiff ℝ ∞ (fun z : C × (V × ℝ) => z.2.1) := contDiff_snd.fst
@@ -62,8 +50,6 @@ theorem radialFieldJetPolynomial_contDiff : ContDiff ℝ ∞ radialFieldJetPolyn
       ((contDiff_fst.snd.snd).clm_apply hu).clm_apply hu
     exact ((hr.div_const 2).add (ha.pow 2)).neg.smul hbu
   exact (ContinuousLinearMap.prodₗᵢ ℝ).contDiff.comp (hleft.prodMk hright)
-
-
 
 theorem radial_field_shape_jets_at {ι : Type*} {n : ℕ}
     {coeff : ι → V → C} {z : ι → V → V × ℝ} {p : ι → V}

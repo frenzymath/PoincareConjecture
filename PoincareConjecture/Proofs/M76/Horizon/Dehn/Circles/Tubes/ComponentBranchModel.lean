@@ -10,9 +10,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 
-
-
-
 structure ComponentBranchModel
     {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -61,8 +58,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 theorem OrdinaryDoubleCurveModel.exists_component_branch_model [T2Space X]
     (old : OrdinaryDoubleCurveModel e f R) (hf : PolyhedralPLInCharts e f D2)
     (he : PLDomain e R) (i : old.Index)
@@ -93,8 +88,6 @@ theorem ComponentBranchModel.graph_inverse (D : ComponentBranchModel old i)
   have heq : D.inverse z = D.homeomorph.symm ⟨z, hz⟩ := Subtype.ext (D.inverse_value ⟨z, hz⟩)
   rw [heq, D.homeomorph.apply_symm_apply]
 
-
-
 theorem ComponentBranchModel.mem_diskImage (D : ComponentBranchModel old i)
     (z : D.sample → ℝ × V3) (hz : z ∈ D.complex.space) :
     z ∈ D.diskImage.space ↔ (D.inverse z : X) ∈ f '' D2 := by
@@ -113,8 +106,6 @@ theorem ComponentBranchModel.mem_diskImage (D : ComponentBranchModel old i)
     · change D.graph (f x) = z
       rw [hfx, D.graph_inverse z hz]
 
-
-
 theorem RawCrossingChart.disk_image_iff
     {x y : V2} (C : RawCrossingChart e f R x y)
     (z : X) (hz : z ∈ C.chart.source) :
@@ -129,8 +120,6 @@ theorem RawCrossingChart.disk_image_iff
       · exact ⟨a, C.right_subset ha, haz⟩
   rw [h, mem_union, C.left_image z hz, C.right_image z hz]
   tauto
-
-
 
 theorem ComponentBranchModel.exists_raw_star (D : ComponentBranchModel old i)
     (p : D.sample → ℝ × V3) (hp : p ∈ D.axis.vertices) :

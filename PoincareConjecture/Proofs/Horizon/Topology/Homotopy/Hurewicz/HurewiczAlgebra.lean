@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Hurewicz.HurewiczRepresentatives
 import Mathlib.Algebra.Group.Equiv.TypeTags
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory
@@ -15,9 +8,6 @@ open CategoryTheory
 universe w
 
 namespace Poincare.Topology
-
-
-
 
 theorem exists_homotopyGroupPi_mulEquiv_of_integral_hurewicz_bijective
     (X : TopCat.{w}) (n : ℕ) (x : X)

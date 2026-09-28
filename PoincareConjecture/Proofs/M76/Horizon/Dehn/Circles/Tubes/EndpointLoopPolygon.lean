@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem exists_partitioned_polygon_of_endpoint_loop {f : ℝ → E}
     (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1))
     (hfib : ∀ x ∈ Icc (0 : ℝ) 1, ∀ y ∈ Icc (0 : ℝ) 1,
@@ -121,8 +119,6 @@ theorem exists_partitioned_polygon_of_endpoint_loop {f : ℝ → E}
         (show r ∈ Icc (t 0) (t (Fin.last (n + 1))) by rwa [ht0, ht1])
       exact mem_iUnion.mpr ⟨j, (hedge j).symm.subset ⟨r, hj, rfl⟩⟩
   exact ⟨n, t, Q, hsize, ht, ht0, ht1, hQi, hQs, hQb, hQ, hedge⟩
-
-
 
 theorem exists_polygon_of_endpoint_loop {f : ℝ → E}
     (hf : FinitePiecewiseAffineOn f (Icc (0 : ℝ) 1))

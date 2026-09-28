@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,13 +10,10 @@ namespace PoincareConjecture.Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 
-
 noncomputable def neckAxialTensorArray (lambda c : ℝ) {r : ℕ}
     (T : RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ) :
     RoundCylinderCoordinates → (Fin r → Fin 3) → ℝ :=
   fun p a => (∏ i, neckAxialWeight lambda (a i)) * T (neckAxialCoordinate lambda c p) a
-
-
 
 theorem roundCylinderTensorDerivative_neckAxialTensorArray
     (lambda c u : ℝ) (q : UnitTwoSphere) {r : ℕ}

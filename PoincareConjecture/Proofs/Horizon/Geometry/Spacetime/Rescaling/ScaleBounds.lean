@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Interval.Homeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal

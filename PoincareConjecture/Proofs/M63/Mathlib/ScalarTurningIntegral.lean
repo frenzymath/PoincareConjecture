@@ -3,24 +3,12 @@ import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.ArctanDeriv
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped ContDiff intervalIntegral
 
 namespace intervalIntegral
-
-
 
 theorem integral_abs_deriv_eq_sub_of_monotoneOn {h : ℝ → ℝ} {a b : ℝ}
     (hh : ContDiff ℝ 1 h) (hab : a < b) (hmono : MonotoneOn h (Icc a b)) :
@@ -37,8 +25,6 @@ theorem integral_abs_deriv_eq_sub_of_monotoneOn {h : ℝ → ℝ} {a b : ℝ}
       exact abs_of_nonneg (hsign x hx)
     _ = h b - h a := integral_deriv_eq_sub (fun x _ => hdiff x)
       (hh.continuous_deriv_one.intervalIntegrable a b)
-
-
 
 theorem integral_abs_deriv_eq_sub_of_antitoneOn {h : ℝ → ℝ} {a b : ℝ}
     (hh : ContDiff ℝ 1 h) (hab : a < b) (hanti : AntitoneOn h (Icc a b)) :
@@ -60,8 +46,6 @@ theorem integral_abs_deriv_eq_sub_of_antitoneOn {h : ℝ → ℝ} {a b : ℝ}
 
 end intervalIntegral
 
-
-
 theorem HasDerivAt.arctan_mul_div {f : ℝ → ℝ} {f' x A B : ℝ}
     (hf : HasDerivAt f f' x) (hB : B ≠ 0) :
     HasDerivAt (fun u => Real.arctan (A * f u / B))
@@ -74,8 +58,6 @@ theorem HasDerivAt.arctan_mul_div {f : ℝ → ℝ} {f' x A B : ℝ}
   ring
 
 namespace intervalIntegral
-
-
 
 theorem integral_turningDensity_le_pi {f : ℝ → ℝ} {ell A B : ℝ}
     (hf : ContDiff ℝ 1 f) (hell : 0 < ell) (hA : 0 ≤ A) (hB : 0 < B)

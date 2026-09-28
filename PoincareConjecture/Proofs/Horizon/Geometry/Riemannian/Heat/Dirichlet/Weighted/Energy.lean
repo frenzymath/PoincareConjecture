@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Weig
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.DomainResolvent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -80,7 +71,6 @@ theorem EnergyTest.twisted_energy_lower_bound (f : EnergyTest D Ω)
     (f.integrable_gradient v) hp
   rw [integral_const_mul, ← testToL2_inner w w, real_inner_self_eq_norm_sq] at hi
   simpa only [energyInner, testToL2_inner, add_sub_cancel_left] using hi
-
 
 theorem twisted_energy_lower_bound (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
     (χ : M → ℝ) (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (L : ℝ)

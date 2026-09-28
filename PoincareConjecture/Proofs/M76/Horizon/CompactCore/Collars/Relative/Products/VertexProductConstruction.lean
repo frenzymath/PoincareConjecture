@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertic
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Vertices.BandGluing
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.LowerProductConstruction
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -136,21 +134,15 @@ theorem SurfaceLowerProducts.exists_vertex_products_of_bands
         rw [hempty p q hs, empty_inter]
       rw [hbaseEmpty, empty_prod, image_empty, hempty p q hs]
 
-
-
 theorem SurfaceLowerProducts.exists_vertex_products (P : SurfaceLowerProducts T) :
     Nonempty (SurfaceVertexProducts T) := by
   classical
   exact P.exists_vertex_products_of_bands
     (fun p => Classical.choice (P.exists_vertex_band p))
 
-
-
 theorem CoorientedSurfaceStars.exists_vertex_products
     (T : CoorientedSurfaceStars E) : Nonempty (SurfaceVertexProducts T) := by
   classical
   exact (Classical.choice T.exists_lower_products).exists_vertex_products
 
-
 end Geometry.SimplicialComplex
-

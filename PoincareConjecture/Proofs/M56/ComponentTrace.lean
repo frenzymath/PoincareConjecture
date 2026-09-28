@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M56.EventGap
 import PoincareConjecture.Proofs.M56.Mathlib.ComponentClasses
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M56ComponentTrace (F : SurgeryFlowData.{u}) (T : ℝ) where
   time_subset : Icc 0 T ⊆ F.time_domain
@@ -40,8 +30,6 @@ structure M56ComponentTrace (F : SurgeryFlowData.{u}) (T : ℝ) where
       x ∈ interior (F.event s.1 hs).retained_pre ∧
       (F.event s.1 hs).retention.map x ∈ connectedComponent (point s)
 
-
-
 theorem m56Slab_pullback_eq (F : SurgeryFlowData.{u})
     {a b c d : ℝ} (hab : a < b) (hJ : Icc a b ⊆ F.time_domain)
     (hfree : Disjoint F.surgery_times (Ioc a b))
@@ -59,8 +47,6 @@ theorem m56Slab_pullback_eq (F : SurgeryFlowData.{u})
   simp only [SurgeryRegularSlab.transport, Diffeomorph.symm_apply_apply] at h
   have hinv := congrArg ((F.regular_slabs a b hab hJ hfree).identify ⟨t, ht⟩).symm h
   simpa only [Diffeomorph.symm_apply_apply] using hinv
-
-
 
 theorem m56Event_pullback_eq (F : SurgeryFlowData.{u})
     {T : ℝ} (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.LongSlabService
 import PoincareConjecture.Proofs.M30.Thm11_8.HorizonTimeSequence
 import PoincareConjecture.Proofs.M30.Thm11_8.BackwardInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
-
-
-
 
 theorem eventually_generalized_point_noncollapsed_of_longSlabService
     {S : GeneralizedBlowupSequence.{u}} {T0 : ℝ≥0∞} {kappa r0 : ℝ}

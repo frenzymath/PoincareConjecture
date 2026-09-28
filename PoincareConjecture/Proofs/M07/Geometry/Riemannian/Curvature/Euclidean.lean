@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Convergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 open scoped Manifold ContDiff Bundle Topology
@@ -55,8 +48,6 @@ namespace LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem connection_eq_fderiv_add (D : LeviCivitaData g)
     {Y : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
     {x : EuclideanSpace ℝ (Fin n)} (hY : DifferentiableAt ℝ Y x)
@@ -83,7 +74,6 @@ theorem connection_eq_fderiv_add (D : LeviCivitaData g)
   simp only [fderiv_const_apply, zero_apply, sub_zero] at h
   convert! (sub_eq_iff_eq_add.mp h).trans (add_comm _ _) using 1
 
-
 theorem contDiffAt_euclideanConnection (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
     ContDiffAt ℝ ∞ (D.euclideanConnection u v) x := by
@@ -99,7 +89,6 @@ theorem contDiffAt_euclideanConnection (D : LeviCivitaData g)
   convert! contMDiffAt_iff_contDiffAt.mp hh using 1
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem curvature_eq_euclideanConnection (D : LeviCivitaData g)
     (x u v w : EuclideanSpace ℝ (Fin n)) :
@@ -158,8 +147,6 @@ private theorem tendsto_euclideanConnection_of_metric_jets
     (continuous_fst.clm_apply continuous_snd).continuousAt.tendsto.comp
       (hi.prodMk_nhds hK) using 1
 
-
-
 theorem tendsto_curvature_of_metric_jets
     {ι : Type*} {l : Filter ι}
     {gseq : ι → RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -181,7 +168,6 @@ theorem tendsto_curvature_of_metric_jets
     hzero hone (hc b c)
   simp_rw [curvature_eq_euclideanConnection]
   convert! ((hd v w u).add (hn u v w)).sub ((hd u w v).add (hn v u w)) using 1
-
 
 theorem tendsto_curvatureTensor_of_metric_jets
     {ι : Type*} {l : Filter ι}

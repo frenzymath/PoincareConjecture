@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Hessian.Locality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {ι : Type*}
-
 
 theorem hessian_finset_sum_at (D : LeviCivitaData g) (s : Finset ι)
     (f : ι → M → ℝ) {x : M}
@@ -72,7 +63,6 @@ theorem sum_mvfderiv_eq_zero_of_sum_eq_one_near (s : Finset ι) (ψ : ι → M �
     Poincare.mvfderiv_eq_of_eventuallyEq hone, mvfderiv_const]
   rfl
 
-
 theorem sum_hessian_eq_zero_of_sum_eq_one_near (D : LeviCivitaData g)
     (s : Finset ι) (ψ : ι → M → ℝ) {x : M}
     (hψ : ∀ i ∈ s, ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (ψ i) x)
@@ -81,8 +71,6 @@ theorem sum_hessian_eq_zero_of_sum_eq_one_near (D : LeviCivitaData g)
     (∑ i ∈ s, D.hessian (ψ i) x u v) = 0 := by
   rw [← D.hessian_finset_sum_at s ψ hψ u v, D.hessian_eq_of_eventuallyEq hone]
   simp only [hessian, hessianOnFields, mvfderiv_const, zero_apply, sub_zero]
-
-
 
 theorem hessian_finset_patch_eq (D : LeviCivitaData g) (s : Finset ι)
     (ψ f : ι → M → ℝ) {x : M}
@@ -109,8 +97,6 @@ theorem hessian_finset_patch_eq (D : LeviCivitaData g) (s : Finset ι)
   have hdv := sum_mvfderiv_eq_zero_of_sum_eq_one_near s ψ hψ hone v
   simp only [sub_mul, mul_sub, Finset.sum_add_distrib, Finset.sum_sub_distrib,
     ← Finset.mul_sum, ← Finset.sum_mul, hH, hdu, hdv, mul_zero, zero_mul, sub_zero]
-
-
 
 theorem hessian_finset_patch_le (D : LeviCivitaData g) (s : Finset ι)
     (ψ f : ι → M → ℝ) {x : M}
@@ -144,8 +130,6 @@ theorem hessian_finset_patch_le (D : LeviCivitaData g) (s : Finset ι)
     _ = _ := by
       have hx : (∑ i ∈ s, ψ i x) = 1 := hone.self_of_nhds
       rw [Finset.sum_add_distrib, ← Finset.sum_mul, hx, one_mul]
-
-
 
 theorem hessian_finset_patch_le_of_error_bounds (D : LeviCivitaData g) (s : Finset ι)
     (ψ f : ι → M → ℝ) {x : M}
@@ -218,8 +202,6 @@ private theorem partition_sum_eq_one_near (ρ : SmoothPartitionOfUnity ι (𝓡 
   filter_upwards [ρ.eventually_finsupport_subset x] with y hy
   exact ρ.sum_finsupport' y (Set.mem_univ y) hy
 
-
-
 theorem hessian_partition_mul_eq (D : LeviCivitaData g)
     (ρ : SmoothPartitionOfUnity ι (𝓡 n) M) (f : ι → M → ℝ) (x : M)
     (hf : ∀ i, x ∈ tsupport (ρ i) → ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ (f i) x)
@@ -235,8 +217,6 @@ theorem hessian_partition_mul_eq (D : LeviCivitaData g)
     (fun i _ => (ρ i).contMDiff x)
     (fun i hi => hf i ((ρ.mem_fintsupport_iff x i).mp hi))
     (partition_sum_eq_one_near ρ x) a ℓ u v
-
-
 
 theorem hessian_partition_mul_le_of_error_bounds (D : LeviCivitaData g)
     (ρ : SmoothPartitionOfUnity ι (𝓡 n) M) (f : ι → M → ℝ) (x : M)

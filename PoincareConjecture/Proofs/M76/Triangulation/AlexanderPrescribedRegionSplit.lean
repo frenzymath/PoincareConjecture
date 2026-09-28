@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderConvexSupportSplit
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +9,6 @@ namespace Geometry.AlexanderSectionProfile
 variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
-
-
 
 theorem exists_recursive_sphere_split_in_prescribed_region
     (W : AlexanderSectionProfile E) (hdim : Module.finrank ℝ E = 3)

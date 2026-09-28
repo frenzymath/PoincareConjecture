@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationDoublePoint
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +12,9 @@ universe u
 
 namespace PoincareConjecture.M65Perturbation
 
-
-
 def controlBlock {k : ℕ} (i : Fin k) : (Fin 3 → ℝ) →L[ℝ] (Fin (k * 3) → ℝ) :=
   ContinuousLinearMap.pi (fun j => if (finProdFinEquiv.symm j).1 = i then
     ContinuousLinearMap.proj (finProdFinEquiv.symm j).2 else 0)
-
-
-
 
 theorem controlBlock_single {k : ℕ} (i : Fin k) (j : Fin 3) :
     controlBlock i (Pi.single j 1) = Pi.single (finProdFinEquiv (i, j)) 1 := by
@@ -64,10 +49,6 @@ variable {M : Type u} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   {J : Set ℝ} {k : ℕ}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem combined_control_block_eq (C : M65SmoothFilledLoopFamily F J)
     (d : Fin k → ℝ) (hd : ∀ i, 0 < d i)
@@ -129,10 +110,6 @@ theorem combined_control_block_eq (C : M65SmoothFilledLoopFamily F J)
     by_cases hv : v = j <;> simp [hv]
   change A (Pi.single j r) = B (Pi.single j r)
   rw [hr, map_smul, map_smul, hcol]
-
-
-
-
 
 theorem exists_combined_control_family (C : M65SmoothFilledLoopFamily F J)
     (d : Fin k → ℝ) (hd : ∀ i, 0 < d i)

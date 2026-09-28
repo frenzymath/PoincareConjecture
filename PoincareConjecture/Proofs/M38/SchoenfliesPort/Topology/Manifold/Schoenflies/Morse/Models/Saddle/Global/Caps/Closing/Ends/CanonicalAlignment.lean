@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Geometry.Euclidean.PlaneLift.Reflection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Relative.HalfSpace
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -19,8 +13,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -37,7 +29,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 
-
 def terminalCylinder {v : E3} (Q : Set (Hemisphere.Plane v)) (a b : Real) : Set E3 :=
   (fun z : Hemisphere.Plane v × Real => z.2 • v + (z.1 : E3)) '' (Q ×ˢ Icc a b)
 
@@ -50,8 +41,6 @@ theorem isCompact_canonicalNorthernCap (v : E3) :
   apply IsCompact.image
   · exact (isClosed_le continuous_const (by fun_prop)).isCompact
   · exact (contMDiff_boundedCylinderRadius v).continuous.smul continuous_subtype_val
-
-
 
 theorem exists_supported_canonical_lower_cap_vertical_alignment
     {v : E3} (hv : ‖v‖ = 1)
@@ -124,8 +113,6 @@ theorem exists_supported_canonical_lower_cap_vertical_alignment
     have heq : (fun z => G (H z)) = fun z => H (F z) := funext hG
     rw [heq, ← image_image, himage, image_union, hcap, hHQ]
 
-
-
 theorem exists_complete_lower_cap_alignment
     {v : E3} (hv : ‖v‖ = 1)
     (γ : S1 → Hemisphere.Plane v)
@@ -157,9 +144,6 @@ theorem exists_complete_lower_cap_alignment
     rw [image_comp, image_comp, image_heightReflection_liftPlaneDiffeomorph,
       hcap, image_heightReflection_liftPlaneDiffeomorph]
     simp only [neg_neg]
-
-
-
 
 theorem exists_supported_complete_lower_cap_alignment
     {v : E3} (hv : ‖v‖ = 1)

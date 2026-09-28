@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullConnection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullSections
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -45,8 +38,6 @@ theorem covariantRicciDerivative_eq_zero_of_terminal_null_vector
   simpa only [hVx] using
     (covariantRicciDerivative_all_slots_eq_zero_of_terminal_null hC hab F hsec V
       ((hV x hxU).contMDiffAt (hU.mem_nhds hxU)) hn u w).1
-
-
 
 theorem tensorLaplacian_ricci_eq_zero_of_terminal_null_vector
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
@@ -86,8 +77,6 @@ theorem tensorLaplacian_ricci_eq_zero_of_terminal_null_vector
   simpa only [hVx] using secondCovariantRicciDerivative_eq_zero_of_null_section
     (F.connection b) hD V hV' hn hDV hfirst
     ((F.metric b).orthonormalBasis x i) ((F.metric b).orthonormalBasis x i) w
-
-
 
 theorem ricci_hasDerivWithinAt_zero_of_null_vector
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ}

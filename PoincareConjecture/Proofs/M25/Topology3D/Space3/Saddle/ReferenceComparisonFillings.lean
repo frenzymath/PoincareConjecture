@@ -6,15 +6,6 @@ import Mathlib.Algebra.Order.ToIntervalMod
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M25.Topology3D
 set_option maxHeartbeats 1500000 in
 
 set_option linter.unusedVariables false in
-
-
-
 
 theorem exists_nonnested_reference_comparison_fillings
     (hP : PlanarSchoenfliesService)

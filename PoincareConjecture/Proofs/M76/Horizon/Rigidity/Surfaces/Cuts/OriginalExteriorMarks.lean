@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalExteriorGaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -122,8 +114,6 @@ theorem exteriorCopiedMark_projection_originalExteriorMarks
       originalExteriorMarks K P D hcofaces B labels
         ((exteriorFourIndex K P D labels).symm (i.1,j)) := by
   exact (originalExteriorMarks_apply_inverse K P D hcofaces B labels i.1 j).symm
-
-
 
 theorem nonempty_originalExteriorPrimalSectors
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)

@@ -7,10 +7,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.SpacetimeMetricConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.SourceMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Subsequence
-
-
-
-
-
-
-

@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Inheritance.Coordinates
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SpatialJets
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +19,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M} {S : AncientRescalingSequence K}
 
-
 theorem tendstoUniformlyOn_coordinate_metricJet (G : AncientCompactTimeConvergence S)
     (q : G.limit.carrier.carrier) (j r : ℕ) (a b : Fin n)
     {A : Set (ℝ × EuclideanSpace ℝ (Fin n))} (hA : IsCompact A)
@@ -37,7 +35,6 @@ theorem tendstoUniformlyOn_coordinate_metricJet (G : AncientCompactTimeConvergen
   filter_upwards [eventually_ge_atTop N] with k hk p hp
   simpa only [dist_eq_norm, MetricJet, norm_sub_rev] using hN k hk a b p hp
 
-
 theorem timeWindow_mem_nhds_neg_one {k : ℕ} (hk : 1 ≤ k) :
     ancientM18TimeWindow k ∈ 𝓝 (-1 : ℝ) := by
   have hk' : (1 : ℝ) ≤ k := by exact_mod_cast hk
@@ -46,7 +43,6 @@ theorem timeWindow_mem_nhds_neg_one {k : ℕ} (hk : 1 ≤ k) :
   · have hpos : 0 < (k : ℝ) + 1 := by positivity
     have hi : ((k : ℝ) + 1)⁻¹ < 1 := (inv_lt_one₀ hpos).mpr (by linarith)
     linarith
-
 
 theorem tendstoUniformlyOn_coordinate_spatial_metricJet_neg_one
     (G : AncientCompactTimeConvergence S) (q : G.limit.carrier.carrier)

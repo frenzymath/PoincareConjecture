@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.Inte
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Components.BoundaryInterval
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Components.GraphIncidence
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology Filter
 open scoped Topology
@@ -73,4 +71,3 @@ theorem exists_finite_proper_double_graph
     ← hproper _ (hGs.subset x.property).1, hvalue]
 
 end PoincareConjecture.M76.Dehn.Annuli
-

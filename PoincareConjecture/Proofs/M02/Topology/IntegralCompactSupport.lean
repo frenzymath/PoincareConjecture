@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralConvexSupport
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportContinuity
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -92,8 +84,6 @@ theorem integralEuclideanFiniteConvexSupportThree_detected
       rw [map_zero]
       exact hb x hx
 
-
-
 theorem integralEuclideanCompactSupportAbove_isZero
     (K : Set (EuclideanSpace Real (Fin 3))) (hK : IsCompact K) (n : Nat) :
     IsZero (integralSupportHomology K (n + 4)) := by
@@ -113,8 +103,6 @@ theorem integralEuclideanCompactSupportAbove_isZero
     rw [hb₀, map_zero] at hb
     exact hb.symm
   exact ModuleCat.isZero_iff_subsingleton.mpr ⟨fun a b => (hz a).trans (hz b).symm⟩
-
-
 
 theorem integralEuclideanCompactSupportThree_detected
     (K : Set (EuclideanSpace Real (Fin 3))) (hK : IsCompact K)

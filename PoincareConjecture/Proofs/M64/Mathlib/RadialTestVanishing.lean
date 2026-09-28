@@ -1,16 +1,6 @@
 import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Measure.Lebesgue.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -19,9 +9,6 @@ open Set MeasureTheory
 open scoped ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem radialCoefficient_ae_eq_zero_of_test_pairings
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
@@ -33,18 +20,12 @@ theorem radialCoefficient_ae_eq_zero_of_test_pairings
   exact (ae_restrict_iff' measurableSet_Ioo).mpr
     (isOpen_Ioo.ae_eq_zero_of_integral_contDiff_smul_eq_zero hf h)
 
-
-
-
 theorem ae_and_exists_mem_of_measure_ne_zero
     {X : Type*} [MeasurableSpace X] {mu : Measure X} {s : Set X}
     (hs : mu s ≠ 0) {P Q : X → Prop}
     (hP : ∀ᵐ x ∂mu.restrict s, P x) (hQ : ∀ᵐ x ∂mu.restrict s, Q x) :
     (∀ᵐ x ∂mu.restrict s, P x ∧ Q x) ∧ ∃ x ∈ s, P x ∧ Q x := by
   exact ⟨hP.and hQ, Measure.exists_mem_of_measure_ne_zero_of_ae hs (hP.and hQ)⟩
-
-
-
 
 theorem exists_common_good_radius_of_ae
     {a b : ℝ} (hab : a < b) {P Q : ℝ → Prop}

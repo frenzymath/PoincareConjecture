@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurvePath
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedCurvePasting
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,10 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ σ τ' : ℝ} {x y x' y' : G.Point} {Z : G.Horizontal x}
-
-
-
-
 
 theorem exists_initialValuePath_of_overlap (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (P : M14SquareRootInitialValuePath G T τ x y Z)

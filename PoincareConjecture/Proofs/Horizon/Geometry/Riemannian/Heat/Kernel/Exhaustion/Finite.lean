@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Supremum
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Initial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [IsManifold (𝓡 (n + 1)) ∞ M]
   [PreconnectedSpace M] [NoncompactSpace M]
   {g : RiemannianMetric (n + 1) M}
-
-
 
 theorem exists_bounded_dirichletHeatKernel_exhaustion
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)
@@ -44,9 +34,6 @@ theorem exists_bounded_dirichletHeatKernel_exhaustion
   exact ⟨Ω, S, K, hnest, hcover, hK, hmono, fun _ ht x y =>
     D.bddAbove_dirichletHeatKernel_exhaustion (Nat.succ_pos _) hc hk hRic
       (fun j => (S j).isOpen) hΩmono hcover hK hmono ht x y⟩
-
-
-
 
 theorem exists_positive_subprobability_kernel
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

@@ -1,9 +1,5 @@
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
 set_option autoImplicit false
 
 open Bundle

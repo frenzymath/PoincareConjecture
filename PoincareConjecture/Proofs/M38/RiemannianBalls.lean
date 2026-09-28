@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Topology.Connected.PathConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M38
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem isPathConnected_ball (g : RiemannianMetric n M) (x : M)
     {r : ℝ} (hr : 0 < r) : IsPathConnected (g.ball x r) := by

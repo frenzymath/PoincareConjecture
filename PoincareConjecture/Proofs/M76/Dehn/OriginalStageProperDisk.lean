@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalStageBoundaryDisk
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBoundaryDiskPush
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe v w z
@@ -32,9 +22,6 @@ variable {G : Type v} {M : Type w} {ι : Type z}
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 omit [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G] [DecidableEq G] in
-
-
-
 
 theorem Stage.exists_pushed_marked_disk (st : Stage e S f r C)
     {R : Set M} {N : Set st.Carrier} (hN : IsCompact N)
@@ -68,11 +55,6 @@ theorem Stage.exists_pushed_marked_disk (st : Stage e S f r C)
     change st.projection (k x) ∈ frontier R
     rw [hkrim ⟨x, hxQ⟩]
     exact hFmark (rim ⟨x, hxQ⟩).property
-
-
-
-
-
 
 theorem Stage.exists_marked_terminal_proper_disk (st : Stage e S f r C)
     (hSD : S.space = D) {R : Set M} {N : Set st.Carrier} (hN : IsCompact N)

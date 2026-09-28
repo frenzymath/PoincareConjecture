@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M15.Prop8_2_ScalarTransport
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_unit_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ) :
@@ -65,10 +54,6 @@ theorem exists_unit_scalar_gradient_bound
       mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left hder' (sq_nonneg _)) hN
     _ ≤ (1 + 2 * (n : ℝ) ^ 2 * A) * (F.metric s).tangentNorm c v := by
       nlinarith
-
-
-
-
 
 theorem exists_actualBallCylinder_horizontal_scalar_gradient_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

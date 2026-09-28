@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangl
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -40,8 +31,6 @@ theorem mem_edge_intrinsicInterior_of_not_vertex (K : SimplicialComplex ℝ E)
   exact heq ▸ hqs
 
 variable [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_interior_skeleton_edge_cofaces (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hdim : Module.finrank ℝ E = 2) {q : E}
@@ -95,8 +84,6 @@ theorem exists_interior_skeleton_edge_cofaces (K : SimplicialComplex ℝ E)
       · exact hs.2.2
       · exact ht.2.2
 
-
-
 theorem refined_triangle_boundary_edgeStar_eq (K R L Q : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 2) {e t : Finset E}
     (he : e ∈ K.faces) (hecard : e.card = 2)
@@ -119,8 +106,6 @@ theorem refined_triangle_boundary_edgeStar_eq (K R L Q : SimplicialComplex ℝ E
       Finset.mem_erase.mpr ⟨fun h => hpe (by simpa only [h] using hx), het hx⟩⟩
   exact J.retained_edge_edgeStar_eq R L Q hJ hJdim hLR hQR
     (hL.trans hJS.symm) heJ hecard hQ hq
-
-
 
 theorem exists_interior_skeleton_shared_boundary_stars
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

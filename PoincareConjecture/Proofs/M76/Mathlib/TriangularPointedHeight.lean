@@ -2,39 +2,22 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoof
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSectionBallPair
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineLevelComplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
 def cornerHeight : (ℝ × ℝ) →ₗ[ℝ] ℝ :=
   LinearMap.fst ℝ ℝ ℝ + (2 : ℝ) • LinearMap.snd ℝ ℝ ℝ
 
-
-
 theorem cornerHeight_apply (p : ℝ × ℝ) : cornerHeight p = p.1 + 2 * p.2 := rfl
-
-
 
 theorem cornerHeight_mem_Icc {p : ℝ × ℝ} (hp : p ∈ base) :
     cornerHeight p ∈ Icc 0 2 := by
   rw [base_eq_triangle, TriangleDiskModel.mem_right_region_iff] at hp
   rw [cornerHeight_apply]
   constructor <;> linarith [hp.1, hp.2.1, hp.2.2]
-
-
 
 theorem cornerHeight_eq_zero_iff {p : ℝ × ℝ} (hp : p ∈ base) :
     cornerHeight p = 0 ↔ p = (0, 0) := by
@@ -45,8 +28,6 @@ theorem cornerHeight_eq_zero_iff {p : ℝ × ℝ} (hp : p ∈ base) :
     apply Prod.ext <;> change _ = (0 : ℝ) <;> linarith [hp.1, hp.2.1]
   · rintro rfl
     norm_num [cornerHeight_apply]
-
-
 
 theorem cornerHeight_eq_two_iff {p : ℝ × ℝ} (hp : p ∈ base) :
     cornerHeight p = 2 ↔ p = (0, 1) := by
@@ -62,9 +43,6 @@ theorem cornerHeight_eq_two_iff {p : ℝ × ℝ} (hp : p ∈ base) :
   · rintro rfl
     norm_num [cornerHeight_apply]
 
-
-
-
 theorem cornerHeight_interior_section_nonempty {t : ℝ} (ht : t ∈ Ioo 0 2) :
     (interior base ∩ {p | cornerHeight p = t}).Nonempty := by
   let x := t * (2 - t) / 4
@@ -77,10 +55,6 @@ theorem cornerHeight_interior_section_nonempty {t : ℝ} (ht : t ∈ Ioo 0 2) :
     exact lt_min hx (lt_min (by linarith) (by linarith))
   · change x + 2 * ((t - x) / 2) = t
     ring
-
-
-
-
 
 theorem isFinitePLBallPair_cornerHeight_section {t : ℝ} (ht : t ∈ Ioo 0 2) :
     IsFinitePLBallPair ℝ (base ∩ {p | cornerHeight p = t})

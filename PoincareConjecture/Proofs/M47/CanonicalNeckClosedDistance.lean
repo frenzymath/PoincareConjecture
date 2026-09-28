@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M] {J : Set ℝ}
-
 
 theorem ordinary_closed_neck_metric_le (G : RicciFlow 3 M J) (T : ℝ)
     (N : EpsilonNeck (G.metric T)) (hsmall : N.epsilon ≤ 1 / 200)
@@ -53,7 +43,6 @@ theorem ordinary_closed_neck_metric_le (G : RicciFlow 3 M J) (T : ℝ)
     (hclosure.symm ▸ hs)
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
-
 
 theorem ordinary_closed_neck_center_distance (G : RicciFlow 3 M J) (T : ℝ)
     (N : EpsilonNeck (G.metric T)) (hsmall : N.epsilon ≤ 1 / 200)
@@ -87,7 +76,6 @@ theorem ordinary_closed_neck_center_distance (G : RicciFlow 3 M J) (T : ℝ)
         ENNReal.ofReal ((2 * Real.pi + 2 * N.epsilon⁻¹) * N.scale) :=
       mul_le_mul_right hdiam _
     _ = _ := by rw [← ENNReal.ofReal_mul (by norm_num)]; congr 1; ring
-
 
 theorem strongNeck_closed_center_distance (P : M47Predecessors.{u})
     {F : SurgeryFlowData.{u}} {T epsilon : ℝ}

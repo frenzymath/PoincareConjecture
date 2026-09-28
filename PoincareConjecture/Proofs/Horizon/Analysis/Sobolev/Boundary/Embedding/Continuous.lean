@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Embedding.Sup
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.MorreyHigherOrder
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Coefficients
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,8 +68,6 @@ private theorem eq_zero_on_closed_lower_halfSpace {F u : E → ℝ}
     simp only [PiLp.norm_single, norm_one, mul_one, Real.norm_eq_abs,
       abs_of_pos (div_pos hε (by norm_num : (0 : ℝ) < 2))]
     linarith
-
-
 
 theorem exists_continuous_zero_extension {u : E → ℝ} (hc : HasCompactSupport u)
     (hu0 : MemW01p 2 u {x : E | 0 < x 0})

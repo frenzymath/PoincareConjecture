@@ -1,15 +1,6 @@
 import Mathlib.Topology.IsLocalHomeomorph
 import Mathlib.Data.Set.Card
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,9 +8,6 @@ open Set Topology
 namespace Topology
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 structure TwoBranchWindow (r : X → Y) where
   left : OpenPartialHomeomorph X Y
@@ -34,10 +22,6 @@ structure TwoBranchWindow (r : X → Y) where
   whole_preimage : r ⁻¹' target = left.source ∪ right.source
 
 end Topology
-
-
-
-
 
 theorem IsLocalHomeomorph.exists_twoBranchWindow
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [T2Space X]

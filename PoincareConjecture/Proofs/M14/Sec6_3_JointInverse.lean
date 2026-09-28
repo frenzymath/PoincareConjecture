@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_JointLocalInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,16 +13,11 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
 
-
-
-
 noncomputable def jointEndpointInverse (E : M14ExponentialFamily G T x)
     (q : G.Point) : G.Horizontal x × ℝ := by
   classical
   exact if h : ∃ z : G.Horizontal x × ℝ, z ∈ M14JointDomain G E ∧ E.gamma z.1 z.2 = q then
     h.choose else 0
-
-
 
 theorem jointEndpointInverse_spec (E : M14ExponentialFamily G T x) {q : G.Point}
     (hq : q ∈ range (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2)) :
@@ -43,15 +29,10 @@ theorem jointEndpointInverse_spec (E : M14ExponentialFamily G T x) {q : G.Point}
     exact ⟨z.val, z.property, rfl⟩
   simpa only [jointEndpointInverse, dif_pos h] using h.choose_spec
 
-
-
 theorem jointEndpointInverse_left (E : M14ExponentialFamily G T x)
     (z : M14JointDomain G E) : jointEndpointInverse E (E.gamma z.1.1 z.1.2) = z.val := by
   have h := jointEndpointInverse_spec E (mem_range_self z)
   exact stableGraph_endpoint_injective E h.1.1 z.property.1 h.2
-
-
-
 
 theorem jointMap_range_isOpen (E : M14ExponentialFamily G T x) :
     IsOpen (range (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2)) := by
@@ -59,8 +40,6 @@ theorem jointMap_range_isOpen (E : M14ExponentialFamily G T x) :
   rintro q ⟨z, rfl⟩
   obtain ⟨O, hO, hpO, inv, _, hmem, hright⟩ := exists_jointMap_local_inverse E z.property
   exact mem_of_superset (hO.mem_nhds hpO) (fun q hq => ⟨⟨inv q, hmem q hq⟩, hright q hq⟩)
-
-
 
 theorem jointEndpointInverse_smooth (E : M14ExponentialFamily G T x) :
     let metric := G.spacetime.horizontalMetric.toRiemannianMetric
@@ -88,8 +67,6 @@ theorem jointEndpointInverse_smooth (E : M14ExponentialFamily G T x) :
     exact stableGraph_endpoint_injective E hi.1.1 (hmem q hq).1 (hi.2.trans (hright q hq).symm)
   exact ((hsm.contMDiffAt (hO.mem_nhds hpO)).congr_of_eventuallyEq hagree).contMDiffWithinAt
 
-
-
 theorem jointEndpointInverse_continuous (E : M14ExponentialFamily G T x) :
     ContinuousOn (jointEndpointInverse E)
       (range (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2)) := by
@@ -100,8 +77,6 @@ theorem jointEndpointInverse_continuous (E : M14ExponentialFamily G T x) :
   let : InnerProductSpace ℝ (G.Horizontal x) :=
     .ofCoreOfTopology (metric.toCore x) (metric.continuousAt x) (metric.isVonNBounded x)
   exact (jointEndpointInverse_smooth E).continuousOn
-
-
 
 theorem jointMap_isOpenMap (E : M14ExponentialFamily G T x) :
     IsOpenMap (fun z : M14JointDomain G E => E.gamma z.1.1 z.1.2) := by

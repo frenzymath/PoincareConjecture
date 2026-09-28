@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.InducedOpenImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

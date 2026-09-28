@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.CompressionComplexity
 import Mathlib.Algebra.BigOperators.Fin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -90,8 +81,6 @@ private theorem int_sum_eq_two_selected_add_complement {n : ℕ} (f : Fin n → 
   rw [Finset.sum_subtype (p := fun i => i ≠ a ∧ i ≠ b) _
     (by simp [and_comm]) f] at h2
   omega
-
-
 
 theorem compressionComplexity_indexed_of_euler_change
     {n m : ℕ} (oldGenus : Fin n → ℕ) (newGenus : Fin m → ℕ)

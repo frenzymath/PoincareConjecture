@@ -1,22 +1,12 @@
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M38
-
-
 
 theorem continuous_lift_smooth
     {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

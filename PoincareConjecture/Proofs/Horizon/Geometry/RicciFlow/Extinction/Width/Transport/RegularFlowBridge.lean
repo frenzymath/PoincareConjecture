@@ -9,8 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def repairedRegularFlow
     {g₀ : StandardInitialMetric}
     (D : RepairedSurgeryFlowData.{u} g₀)

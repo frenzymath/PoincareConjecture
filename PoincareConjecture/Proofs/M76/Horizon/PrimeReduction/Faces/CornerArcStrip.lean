@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcOrder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -65,9 +57,6 @@ private theorem rimArc_difference {a b c d : ℝ}
       · exact (ha.trans_le h.1.1).ne' hi.1
       · apply hn
         exact Or.inr (Prod.ext (le_antisymm hi.1.2 h.1.1) h.2)
-
-
-
 
 theorem exists_corner_arc_strip
     {a b c d : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)

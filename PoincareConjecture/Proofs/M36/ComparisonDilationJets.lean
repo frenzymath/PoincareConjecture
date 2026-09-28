@@ -1,14 +1,5 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology
@@ -17,7 +8,6 @@ namespace PoincareConjecture.M36
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem comparison_iteratedFDeriv_comp_equiv (L : E ≃L[ℝ] E)
     (f : E → F) (x : E) (j : ℕ) :
@@ -49,7 +39,6 @@ theorem norm_iteratedFDeriv_comp_dilation (f : E → F) {a : ℝ}
     _ ≤ ‖iteratedFDeriv ℝ j f (L x)‖ * |a| ^ j :=
       mul_le_mul_of_nonneg_left (pow_le_pow_left₀ (norm_nonneg _) hnorm j) (norm_nonneg _)
     _ = _ := by rw [hL, mul_comm]
-
 
 theorem norm_iteratedFDeriv_dilation_at {f : E → F} {a b : ℝ} {x : E} {j m : ℕ}
     (ha : 0 < a) (ha2 : a ≤ 2) (hf : ContDiffAt ℝ ∞ f (a • x))

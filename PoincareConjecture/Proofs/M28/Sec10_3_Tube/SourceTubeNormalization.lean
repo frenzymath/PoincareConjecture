@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenNeckRestriction
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,30 +19,25 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
 def tubeMetric (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
     RiemannianMetric 3 (T k).carrierOpen :=
   intrinsicOpenMetric (H.normalizedSliceMetric k) (T k).carrierOpen
-
 
 def tubeConnection (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
     LeviCivitaData (H.tubeMetric T k) :=
   Classical.choice (exists_leviCivitaData (H.tubeMetric T k))
 
-
 def tubeBase (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) : (T k).carrierOpen :=
   ⟨(H.segment k).path (H.segment k).lower,
     (T k).path_mem (left_mem_Icc.mpr (H.segment k).lower_lt_upper.le)⟩
 
-
 def tubeHigh (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) : (T k).carrierOpen :=
   ⟨(H.segment k).path (H.segment k).upper,
     (T k).path_mem (right_mem_Icc.mpr (H.segment k).lower_lt_upper.le)⟩
-
 
 theorem tube_scalar_eq (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) (x : (T k).carrierOpen) :
@@ -60,15 +46,11 @@ theorem tube_scalar_eq (H : CounterexampleNeckFamily E)
   intrinsicOpenMetric_scalarCurvature (H.normalizedSliceMetric k)
     (T k).carrierOpen (H.tubeConnection T k) (H.normalizedSliceConnection k) x
 
-
-
 theorem tube_edist_ne_top (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) (x y : (T k).carrierOpen) :
     (H.tubeMetric T k).edist x y ≠ ⊤ := by
   let : PreconnectedSpace (T k).carrierOpen := (T k).preconnected
   exact (H.tubeMetric T k).edist_ne_top x y
-
-
 
 theorem tube_base_regular (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
@@ -82,8 +64,6 @@ theorem tube_base_regular (H : CounterexampleNeckFamily E)
       H.tubeBase T k := Subtype.ext hcenter
   simpa only [hp, tubeMetric] using h
 
-
-
 theorem tube_high_distance_lt (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ) :
     (H.tubeMetric T k).edist (H.tubeBase T k) (H.tubeHigh T k) <
@@ -95,7 +75,6 @@ theorem tube_high_distance_lt (H : CounterexampleNeckFamily E)
     (H.segment k).lower_lt_upper.le hpath (T k).path_mem).trans_lt
       (H.normalizedSlice_path_length_lt k)
 
-
 theorem tube_high_scalar_tendsto (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) :
     Tendsto (fun k => (H.tubeConnection T k).scalarCurvature (H.tubeHigh T k))
@@ -103,8 +82,6 @@ theorem tube_high_scalar_tendsto (H : CounterexampleNeckFamily E)
   simpa only [tube_scalar_eq, tubeHigh] using H.normalizedSlice_upper_scalar_tendsto
 
 end CounterexampleNeckFamily
-
-
 
 theorem exists_source_tube_initial_bound_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

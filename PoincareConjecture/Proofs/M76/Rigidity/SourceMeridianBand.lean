@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianBand
 import PoincareConjecture.Proofs.M76.Rigidity.SourceBoundaryCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +16,6 @@ local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "I" => Icc (-1 : ℝ) 1
-
-
-
 
 theorem polyhedralPL_source_hamiltonMeridianBand
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}

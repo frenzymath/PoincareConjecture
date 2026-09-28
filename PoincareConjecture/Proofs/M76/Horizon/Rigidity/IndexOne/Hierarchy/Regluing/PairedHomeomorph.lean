@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluin
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Gluing.PhasePartition
 import PoincareConjecture.Proofs.M76.Mathlib.CompactHomeomorphGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -33,8 +24,6 @@ private instance : T2Space X := ((Homeomorph.refl (Fin 1 → ℝ)).prodCongr
 variable {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
   {d : β → OpenPartialHomeomorph X V3} {phi : C(H, H)}
   {M : PairedMeridianHierarchy e d phi} {uv : ℝ × ℝ}
-
-
 
 structure StandardToSourceSlab (m : ExactSlabMeridian M uv) where
   map : sourceSlab (ContinuousMap.id H) uv.1 uv.2 ≃ₜ sourceSlab M.eta uv.1 uv.2
@@ -164,8 +153,6 @@ theorem map_fixed_old
 
 end StandardToSourceSlab
 
-
-
 theorem exists_paired_slab_homeomorph
     {m₀ : ExactSlabMeridian M (M.a, M.b)}
     {m₁ : ExactSlabMeridian M (M.b, M.a + p)}
@@ -224,8 +211,6 @@ theorem exists_paired_slab_homeomorph
   rcases htarget.1.symm.subset x.property with hx₀ | hx₁
   · exact (hleft ⟨x, hx₀⟩).trans (S₀.map_fixed_old h₀ ⟨x, hx₀⟩ hx)
   · exact (hright ⟨x, hx₁⟩).trans (S₁.map_fixed_old h₁ ⟨x, hx₁⟩ hx)
-
-
 
 theorem exists_original_paired_slab_homeomorph
     (hd : StandardLatticeHandleAtlas (Fin 1) (Fin 2) L d)

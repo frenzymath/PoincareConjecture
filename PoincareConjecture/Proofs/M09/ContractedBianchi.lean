@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.CurvatureDerivativeSymmetry
 import PoincareConjecture.Proofs.M09.CurvatureBianchi
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

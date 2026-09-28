@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ open Set
 namespace AddCircle
 
 variable (p : ℝ) [Fact (0 < p)]
-
-
-
 
 theorem surjective_of_homotopy_id {h : C(AddCircle p, AddCircle p)}
     (H : (ContinuousMap.id (AddCircle p)).Homotopy h) : Function.Surjective h := by

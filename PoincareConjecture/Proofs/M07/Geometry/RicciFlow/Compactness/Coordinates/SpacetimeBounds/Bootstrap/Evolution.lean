@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.PartialDerivatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 1000000
@@ -40,9 +31,6 @@ theorem deriv_spatialJet_eq_operator {n : ℕ} {Q : Jet E V n → V}
     simpa only [hevol (z.1, x) ⟨hz.1, hx⟩] using hd.hasDerivAt
   exact (SpacetimeBounds.hasDerivAt_spatialJet hf hJ hU hz.1 hk j hz.2).deriv.trans
     (operator_spatialJet hΩ hQ hf hJ hU hrange hz.1 hz.2 j).symm
-
-
-
 
 theorem eventuallyBounded_joint_spatial_jets {α : Type*} (l : Filter α)
     {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}

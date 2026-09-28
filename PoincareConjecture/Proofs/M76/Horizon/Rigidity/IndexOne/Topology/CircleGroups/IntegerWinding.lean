@@ -6,22 +6,10 @@ import Mathlib.Algebra.Group.Equiv.Opposite
 import Mathlib.Algebra.Group.Equiv.TypeTags
 import Mathlib.GroupTheory.SpecificGroups.Cyclic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 noncomputable def integerPeriodDeckEquiv (p : ℝ) (hp : 0 < p) :
     ℤ ≃+ AddSubgroup.zmultiples p := by
@@ -40,8 +28,6 @@ noncomputable def integerPeriodDeckEquiv (p : ℝ) (hp : 0 < p) :
     obtain ⟨n, hn⟩ := AddSubgroup.mem_zmultiples_iff.mp z.property
     exact ⟨n, Subtype.ext hn⟩
 
-
-
 noncomputable def circleFundamentalGroupEquivInt (p : ℝ) (hp : 0 < p)
     (x : AddCircle p) : FundamentalGroup (AddCircle p) x ≃* Multiplicative ℤ := by
   classical
@@ -51,7 +37,6 @@ noncomputable def circleFundamentalGroupEquivInt (p : ℝ) (hp : 0 < p)
   exact (cov.fundamentalGroupEquiv e).trans
     ((MulOpposite.opMulEquiv : Multiplicative (AddSubgroup.zmultiples p) ≃* _).symm.trans
       (AddEquiv.toMultiplicative (integerPeriodDeckEquiv p hp).symm))
-
 
 theorem circleFundamentalGroup_isCyclic (p : ℝ) (hp : 0 < p) (x : AddCircle p) :
     IsCyclic (FundamentalGroup (AddCircle p) x) :=

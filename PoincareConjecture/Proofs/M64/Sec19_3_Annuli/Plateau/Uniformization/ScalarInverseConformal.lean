@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverRegular
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateConformal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,14 +16,8 @@ local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
 def scalarInverseCoverMap (e : OpenPartialHomeomorph Cover Cover) : Cover → Plane :=
   scalarCoverMap ∘ e.symm
-
-
-
 
 theorem scalarInverseCoverMap_smooth (e : OpenPartialHomeomorph Cover Cover)
     (hei : ContDiffOn ℝ ∞ e.symm e.target) :
@@ -42,10 +25,6 @@ theorem scalarInverseCoverMap_smooth (e : OpenPartialHomeomorph Cover Cover)
   intro y hy
   exact (scalarCoverMap_smooth.contDiffAt.comp y
     (hei.contDiffAt (e.open_target.mem_nhds hy))).contDiffWithinAt
-
-
-
-
 
 theorem scalarInverseCoverMap_periodic (e : OpenPartialHomeomorph Cover Cover)
     (hsource : e.source = scalarCoverStrip)
@@ -64,10 +43,6 @@ theorem scalarInverseCoverMap_periodic (e : OpenPartialHomeomorph Cover Cover)
     apply e.injOn (e.map_target hy') hz'
     rw [e.right_inv hy', hdeck _ hz, e.right_inv hy]
   simp only [scalarInverseCoverMap, Function.comp_apply, hinv, scalarCoverMap_periodic]
-
-
-
-
 
 theorem scalarNormalizedCoverMap_fderiv_apply {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -89,10 +64,6 @@ theorem scalarNormalizedCoverMap_fderiv_apply {H : Plane → ℝ} {V : Cover →
   rw [hF.fderiv]
   simp only [ContinuousLinearMap.prod_apply, ContinuousLinearMap.comp_apply,
     smul_apply, smul_eq_mul, scalarCoverForm, div_eq_mul_inv, mul_comm]
-
-
-
-
 
 theorem scalarInverseCoverMap_coordinates {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -127,10 +98,6 @@ theorem scalarInverseCoverMap_coordinates {H : Plane → ℝ} {V : Cover → ℝ
   rw [hF]
   exact h
 
-
-
-
-
 theorem scalarInverseCoverMap_metric_identity {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
     (hdV : ∀ z ∈ scalarCoverStrip, HasFDerivAt V (scalarCoverForm D H z) z)
@@ -160,9 +127,6 @@ theorem scalarInverseCoverMap_metric_identity {H : Plane → ℝ} {V : Cover →
     (div_eq_iff hP).mp (congrArg Prod.snd hw)
   rw [← scalarConjugateForm_metric_identity D H, hv0, hw0, hv1, hw1]
   ring
-
-
-
 
 theorem scalarInverseCoverMap_fderiv_injective {H : Plane → ℝ} {V : Cover → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

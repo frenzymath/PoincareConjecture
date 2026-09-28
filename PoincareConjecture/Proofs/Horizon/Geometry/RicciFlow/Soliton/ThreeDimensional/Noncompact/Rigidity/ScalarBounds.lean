@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.RicciPositive
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Rank
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ private theorem ricci_eq_of_metric_eq {g h : RiemannianMetric 3 M}
     (x : M) (v w : TangentSpace (𝓡 3) x) : D.ricci x v w = D'.ricci x v w := by
   subst h
   simp only [LeviCivitaData.ricci, D.horizon_curvatureTensor_eq D']
-
-
 
 theorem scalarCurvature_pos
     (S : GradientShrinkingSolitonData 3 M) (hC : RicciFlowCurvatureTheory.{u})
@@ -90,15 +79,11 @@ theorem scalarCurvature_pos
     simp [TangentSpace]
   omega
 
-
-
 theorem exists_uniform_positive_scalar_lower_bound
     (S : GradientShrinkingSolitonData 3 M) (hC : RicciFlowCurvatureTheory.{u}) :
     ∃ c : ℝ, 0 < c ∧ ∀ x : M, c ≤ S.connection.scalarCurvature x :=
   S.exists_scalar_positive_global_lower_bound (hC.tensor_calculus 3 M S.metric S.connection)
     (S.scalarCurvature_pos hC)
-
-
 
 theorem not_bddAbove_distance_sq_mul_scalarCurvature
     (S : GradientShrinkingSolitonData 3 M) (hC : RicciFlowCurvatureTheory.{u})

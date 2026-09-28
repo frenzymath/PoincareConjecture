@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Poisson.Approximation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +26,6 @@ private theorem continuous_gradient_inner (D : LeviCivitaData g) {u v : M → �
       (((g.contMDiff x).clm_bundle_apply (D.contMDiffAt_gradient (hu x))).clm_bundle_apply
         (D.contMDiffAt_gradient (hv x)))).2
   exact hs.continuous
-
 
 theorem integral_scalar_mul_laplacian_le_fisher_add_laplacian_sq
     (D : LeviCivitaData g) (hR : ∀ x, 0 < D.scalarCurvature x)
@@ -108,7 +97,6 @@ theorem integral_scalar_mul_laplacian_le_fisher_add_laplacian_sq
   dsimp [R] at *
   linarith
 
-
 theorem integral_scalar_variance_le_fisher (D : LeviCivitaData g)
     (hR : ∀ x, 0 < D.scalarCurvature x) {r : ℝ}
     (hr : (∫ x, D.scalarCurvature x ∂g.volumeMeasure) = r * g.volumeMeasure.real univ) :
@@ -169,7 +157,6 @@ theorem integral_scalar_variance_le_fisher (D : LeviCivitaData g)
   rw [real_inner_self_eq_norm_sq, hnorm] at hlim
   dsimp [J] at hlim
   linarith
-
 
 theorem integral_scalar_variance_le_fisher_of_integral_sub_eq_zero
     (D : LeviCivitaData g) (hR : ∀ x, 0 < D.scalarCurvature x) {r : ℝ}

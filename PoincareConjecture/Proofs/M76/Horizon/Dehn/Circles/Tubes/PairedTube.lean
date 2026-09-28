@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcJoi
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcCanonicalBlockMaps
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.BranchInverses
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex Topology
 
@@ -29,8 +21,6 @@ private theorem dualBlock_congr
   have hi : hK = hL := Subsingleton.elim _ _
   cases hi
   rfl
-
-
 
 theorem exists_translated_unit_diamond_block
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -83,8 +73,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 theorem OrdinaryIntervalMarkedModel.region_eq_complex_of_core_interior
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R) :
     D.marks (.inl false) = D.complex := by
@@ -103,8 +91,6 @@ theorem OrdinaryIntervalMarkedModel.region_eq_complex_of_core_interior
     ((D.marks_full (.inl false)).1 ht)).mp hvt
   exact (D.marks (.inl false)).down_closed ht
     (by simpa using hvt') (Finset.singleton_nonempty _)
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_circle_joint_family
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R) :
@@ -180,7 +166,6 @@ theorem OrdinaryIntervalMarkedModel.exists_circle_joint_family
       rw [hdec])
   exact ⟨B, G, eta, hB, fun p ↦ D.chart_region (point p), hG, hcenter, heta⟩
 
-
 structure PairedCircleBlockData (D : OrdinaryIntervalMarkedModel old i)
     [Fintype D.complex.faces] {n : ℕ} (p : Fin (n + 3) → D.sample → ℝ × V3) where
   joint : ∀ j, signedTubeDiamond ≃ₜ
@@ -203,8 +188,6 @@ structure PairedCircleBlockData (D : OrdinaryIntervalMarkedModel old i)
   axis : ∀ j (x : ↥(signedTubeDiamond ×ˢ Icc (0 : ℝ) 1)),
     (x : P2 × ℝ).1 = (0, 0) ↔
       (map j x : D.sample → ℝ × V3) ∈ (D.marks (.inr 2)).space
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_circle_block_data
     (D : OrdinaryIntervalMarkedModel old i) (hcore : D.core ⊆ interior R)

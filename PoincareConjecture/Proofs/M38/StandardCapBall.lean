@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.RotationMetric
 import PoincareConjecture.Proofs.M38.RadialRegions
 import PoincareConjecture.Proofs.M38.CapCorrespondence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,16 +10,12 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 theorem cap_chart_domain_compact {g₀ : StandardInitialMetric}
     {S : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 S.carrier} {h : ℝ}
     (C : SurgeryCapChart g₀ S g h) : IsCompact C.domain := by
   let : CompactSpace C.carrier := isCompact_iff_compactSpace.mp C.carrier_compact
   let : CompactSpace C.domain := C.homeomorph.symm.compactSpace
   exact isCompact_iff_compactSpace.mpr inferInstance
-
-
-
 
 theorem riemannian_edist_continuous {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -44,21 +31,15 @@ theorem riemannian_edist_continuous {n : ℕ} {M : Type u} [TopologicalSpace M]
   change Continuous (fun p : M × M => EDist.edist p.1 p.2)
   exact continuous_edist
 
-
-
 theorem standard_ball_open (g₀ : StandardInitialMetric) (r : ℝ) :
     IsOpen (g₀.metric.ball 0 r) :=
   isOpen_lt ((riemannian_edist_continuous g₀.metric).comp
     (continuous_const.prodMk continuous_id)) continuous_const
 
-
 theorem standard_closed_ball_closed (g₀ : StandardInitialMetric) (r : ℝ) :
     IsClosed {x | g₀.metric.edist 0 x ≤ ENNReal.ofReal r} :=
   isClosed_le ((riemannian_edist_continuous g₀.metric).comp
     (continuous_const.prodMk continuous_id)) continuous_const
-
-
-
 
 theorem standard_cap_ball_eq_euclidean {g₀ : StandardInitialMetric}
     {S : GeneralizedSliceCarrier.{u}} {g : RiemannianMetric 3 S.carrier} {h : ℝ}
@@ -81,9 +62,6 @@ theorem standard_cap_ball_eq_euclidean {g₀ : StandardInitialMetric}
     exact (show g₀.metric.edist 0 x <
       ENNReal.ofReal (g₀.cylindrical_end.radius + 4) from hx).le
   · exact standard_ball_radial g₀ _
-
-
-
 
 theorem event_cap_euclidean_radius (F : SurgeryFlowData.{u})
     (T : ℝ) (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]

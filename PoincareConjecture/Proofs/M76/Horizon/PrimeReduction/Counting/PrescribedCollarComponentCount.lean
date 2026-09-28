@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.PrescribedC
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PrescribedCollarPorts
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.MarkedComponentDomains
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory
 namespace PoincareConjecture.M76

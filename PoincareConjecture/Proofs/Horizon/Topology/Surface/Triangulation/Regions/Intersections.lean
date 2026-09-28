@@ -1,10 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Decomposition
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -49,8 +43,6 @@ theorem regions_disjoint {R S : D.regions} (hne : R ≠ S) :
   exact hne (Subtype.ext (D.regions_distinct R R.property S S.property
     ((connectedComponentIn_eq hp).trans (connectedComponentIn_eq hp').symm)))
 
-
-
 theorem inter_eq_arrangement_traces {R S : D.regions} (hne : R ≠ S)
     {A B : Set M}
     (hA : A \ chartDiskBoundaryUnion D.centers D.radius ⊆ connectedComponentIn
@@ -67,8 +59,6 @@ theorem inter_eq_arrangement_traces {R S : D.regions} (hne : R ≠ S)
       exact disjoint_left.mp (D.regions_disjoint hne) (hA ⟨hpA, hpK⟩) (hB ⟨hpB, hpK⟩)
     exact ⟨⟨hpA, hpK⟩, hpB, hpK⟩
   · exact fun hp => ⟨hp.1.1, hp.2.1⟩
-
-
 
 theorem region_closure_subset_assigned_pieces
     {ι : Type*} [Finite ι] (region : ι → D.regions) (piece : ι → Set M)
@@ -91,8 +81,6 @@ theorem region_closure_subset_assigned_pieces
     exact mem_iUnion.mpr ⟨⟨i, hiR⟩, hi⟩
   exact hN.inter_closure.trans
     (closure_minimal hsub (isClosed_iUnion_of_finite (fun i => hclosed i.1)))
-
-
 
 theorem frontier_assigned_pieces_subset
     {ι : Type*} [Finite ι] (region : ι → D.regions) (piece : ι → Set M)

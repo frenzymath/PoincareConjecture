@@ -1,15 +1,5 @@
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
-
 
 theorem IsCompact.exists_open_shrinkings_inter_subset
     {A B U V N : Set X} (hA : IsCompact A) (hB : IsCompact B)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.Retaine
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.SeparatedSphereCaps
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

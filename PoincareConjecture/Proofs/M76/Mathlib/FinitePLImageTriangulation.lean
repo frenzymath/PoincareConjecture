@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import Mathlib.Analysis.Convex.Caratheodory
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem exists_finite_triangulation_iUnion_finiteHull
     {ι : Type*} [Finite ι] (T : ι → Finset F) :
@@ -57,11 +41,6 @@ theorem exists_finite_triangulation_iUnion_finiteHull
   · intro s hs
     obtain ⟨p, hsp⟩ := hfaces s hs
     exact ⟨p.1, hsp.trans (convexHull_mono (Finset.coe_subset.mpr p.2.property.1))⟩
-
-
-
-
-
 
 theorem AffineOnFaces.exists_finite_triangulation_image
     {K : SimplicialComplex ℝ E} {f : E → F} (hf : K.AffineOnFaces f)
@@ -103,9 +82,6 @@ theorem AffineOnFaces.exists_finite_triangulation_image
 end Geometry.SimplicialComplex
 
 namespace Geometry
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_finite_triangulation_image
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

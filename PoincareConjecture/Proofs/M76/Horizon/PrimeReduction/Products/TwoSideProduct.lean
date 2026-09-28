@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -47,9 +39,6 @@ private theorem exists_reflected_unit_product
   refine ⟨D, (hC.affine_conjugate a b).setCongr hsource htarget, ?_⟩
   intro z
   rfl
-
-
-
 
 theorem exists_two_side_product
     (N : Set E) (U : Bool → Set E)

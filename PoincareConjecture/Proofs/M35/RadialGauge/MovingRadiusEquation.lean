@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusInverseFamily
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem mapRadius_comp_hasDerivAt
     {w : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)
@@ -46,8 +34,6 @@ theorem mapRadius_comp_hasDerivAt
     rw [show (1, b) = (1, 0) + b • ((0, 1) : ℝ × ℝ) by ext <;> simp,
       map_add, map_smul, smul_eq_mul, htime, hspace]
   simpa only [hlin, Function.comp_def, id_eq] using h
-
-
 
 theorem corrected_radius_comp_solves_harmonic
     {w : ℝ → ℝ → ℝ} {J : Set ℝ} (hJ : IsOpen J)

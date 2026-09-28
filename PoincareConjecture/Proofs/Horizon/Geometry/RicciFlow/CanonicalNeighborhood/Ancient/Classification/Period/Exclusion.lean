@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,9 +23,6 @@ variable {N U M : Type*}
   [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem translation_eq_zero_of_round_ancient_cover
     (K : AncientKappaSolution 3 M) (F : RicciFlow 3 U (Iic 0))

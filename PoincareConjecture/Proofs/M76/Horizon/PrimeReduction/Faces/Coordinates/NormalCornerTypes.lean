@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.Coordinates.TriangleCornerSymmetries
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -48,8 +39,6 @@ theorem frontier_point_edge_cases {p : ℝ × ℝ}
 
 private theorem pair_eq_of_points {p q p' q' : ℝ × ℝ} (hp : p = p') (hq : q = q') :
     ({p, q} : Set (ℝ × ℝ)) = {p', q'} := congrArg₂ (fun x y => ({x, y} : Set (ℝ × ℝ))) hp hq
-
-
 
 theorem exists_unique_normal_corner {p q : ℝ × ℝ}
     (hp : p ∈ frontier base) (hq : q ∈ frontier base)

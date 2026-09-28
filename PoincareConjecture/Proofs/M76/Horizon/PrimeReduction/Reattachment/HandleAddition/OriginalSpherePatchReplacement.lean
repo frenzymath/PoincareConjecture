@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Triangulation.PLBallBoundaryDiskComplement
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
-
 
 theorem ChartwisePLSphere.exists_original_disk_complement
     {X F ι : Type*} [TopologicalSpace X]
@@ -96,7 +85,6 @@ theorem ChartwisePLSphere.exists_original_disk_complement
   rw [hsi.image_sdiff_subset (sdiff_subset.trans hgd),hsd,
     (hsi.mono hgd).image_sdiff_subset hgr,himage d subset_rfl,himage q hd.1]
 
-
 theorem ball_patch_set_identities
     {X : Type*} {S Q T A r : Set X}
     (hrA : r ⊆ A) (hAT : A ⊆ T) (hTQ : T ⊆ Q) (hcontact : Q ∩ S = A) :
@@ -134,7 +122,6 @@ theorem ball_patch_set_identities
     simp only [mem_union,mem_sdiff]
     tauto
 
-
 theorem ChartwisePLSphere.exists_original_ball_patch_replacement
     {X F ι : Type*} [TopologicalSpace X] [T2Space X]
     [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
@@ -166,7 +153,6 @@ theorem ChartwisePLSphere.exists_original_ball_patch_replacement
     (hfrim.trans hgrim.symm) hsg
   rw [hfimage,hgimage] at hnew
   exact ⟨s.map,t.map,k,r,c,b,hk,hc,hfk,hgc,hfi,hgi,hfimage,hgimage,hfrim,hgrim,hnew,hQnew⟩
-
 
 theorem ChartwisePLSphere.nonbounding_original_ball_patch_replacement
     {X F ι : Type*} [MetricSpace X]
@@ -208,4 +194,3 @@ theorem ChartwisePLSphere.nonbounding_original_ball_patch_replacement
     hnewout hTout' (by rw [hgimage,hgrim]; exact hback) hnonbounding
 
 end PoincareConjecture.M76
-

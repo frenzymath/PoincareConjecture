@@ -1,16 +1,6 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 import Mathlib.Topology.Subpath
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.Topology
@@ -21,10 +11,7 @@ universe u v
 
 variable {X : Type u} [TopologicalSpace X]
 
-
 abbrev Loop (x : X) := Path x x
-
-
 
 def PathIn (A : Set X) {x y : X} (p : Path x y) : Prop :=
   Set.range p ⊆ A
@@ -41,11 +28,6 @@ theorem pathIn_trans_left {A : Set X} {x y z : X}
   intro z hz
   rw [Path.trans_range] at hz
   exact hz.elim (fun hpz => hp hpz) (fun hqz => hq hqz)
-
-
-
-
-
 
 theorem path_connector_insertion
     {x₀ x₁ x₂ : X}
@@ -66,15 +48,6 @@ theorem path_connector_insertion
       Path.Homotopic.trans_assoc p g.symm (g.trans q)
     exact hassoc.trans (Path.Homotopic.hcomp (Path.Homotopic.refl p) hinner)
   exact hproduct.symm
-
-
-
-
-
-
-
-
-
 
 theorem loop_decomposition_two
     {x₀ x₁ : X} (A B : Set X)
@@ -101,30 +74,18 @@ theorem loop_decomposition_two
     exact (path_connector_insertion p q g).symm
   exact ⟨a, b, ha, hb, hproduct.symm⟩
 
-
-
-
-
-
-
-
-
-
 abbrev CoveredLoop (x₀ : X) :=
   Σ A : Set X, {p : Loop x₀ // PathIn A p}
 
 namespace CoveredLoop
 
-
 def path {x₀ : X} (p : CoveredLoop x₀) : Loop x₀ :=
   p.2.1
-
 
 theorem path_in {x₀ : X} (p : CoveredLoop x₀) : PathIn p.1 p.path :=
   p.2.2
 
 end CoveredLoop
-
 
 def coveredLoopProduct (x₀ : X) : List (CoveredLoop x₀) → Loop x₀
   | [] => Path.refl x₀
@@ -159,11 +120,6 @@ theorem coveredLoopProduct_append_single
   exact (coveredLoopProduct_append ps [p]).trans
     (Path.Homotopic.hcomp (Path.Homotopic.refl (coveredLoopProduct x₀ ps)) htail)
 
-
-
-
-
-
 inductive CoveredPathChain (x₀ : X) : Set X → X → Type u
   | single {A : Set X} {y : X}
       (p : Path x₀ y) (hp : PathIn A p) : CoveredPathChain x₀ A y
@@ -175,14 +131,11 @@ inductive CoveredPathChain (x₀ : X) : Set X → X → Type u
 
 namespace CoveredPathChain
 
-
 def toPath {x₀ : X} {A : Set X} {y : X}
     (c : CoveredPathChain x₀ A y) : Path x₀ y :=
   match c with
   | .single p _ => p
   | .extend c p _ _ _ => c.toPath.trans p
-
-
 
 structure PrefixDecomposition
     {x₀ : X} {A : Set X} {y : X} (c : CoveredPathChain x₀ A y) where
@@ -191,7 +144,6 @@ structure PrefixDecomposition
   boundary_in : PathIn A boundary
   homotopic : c.toPath.Homotopic
     ((coveredLoopProduct x₀ loops).trans boundary)
-
 
 def prefixDecomposition
     {x₀ : X} {A : Set X} {y : X} (c : CoveredPathChain x₀ A y) :
@@ -246,11 +198,6 @@ def prefixDecomposition
         Path.Homotopic.hcomp happend.symm (Path.Homotopic.refl (g.trans p))
       exact h₀.trans (h₁.trans (h₂.trans (h₃.trans h₄)))
 
-
-
-
-
-
 theorem decompose_loop
     {x₀ : X} {A : Set X} (c : CoveredPathChain x₀ A x₀) :
     ∃ loops : List (CoveredLoop x₀),
@@ -264,8 +211,6 @@ theorem decompose_loop
       coveredLoopProduct_append_single d.loops lastLoop
   exact d.homotopic.trans happend.symm
 
-
-
 theorem decompose_loop_with_membership
     {x₀ : X} {A : Set X} (c : CoveredPathChain x₀ A x₀) :
     ∃ loops : List (CoveredLoop x₀),
@@ -276,8 +221,6 @@ theorem decompose_loop_with_membership
   intro p hp
   exact p.path_in
 
-
-
 theorem loop_decomposition_of_covered_chain
     {x₀ : X} {A : Set X} (γ : Loop x₀)
     (c : CoveredPathChain x₀ A x₀) (hγ : γ.Homotopic c.toPath) :
@@ -285,7 +228,6 @@ theorem loop_decomposition_of_covered_chain
       γ.Homotopic (coveredLoopProduct x₀ loops) := by
   obtain ⟨loops, hc⟩ := c.decompose_loop
   exact ⟨loops, hγ.trans hc⟩
-
 
 theorem loop_decomposition_of_covered_chain_with_membership
     {x₀ : X} {A : Set X} (γ : Loop x₀)
@@ -298,18 +240,6 @@ theorem loop_decomposition_of_covered_chain_with_membership
 
 end CoveredPathChain
 
-
-
-
-
-
-
-
-
-
-
-
-
 structure PathConnectedOpenCover (x₀ : X) (ι : Type v) where
   carrier : ι → Set X
   isOpen : ∀ i, IsOpen (carrier i)
@@ -317,7 +247,6 @@ structure PathConnectedOpenCover (x₀ : X) (ι : Type v) where
   base_mem : ∀ i, x₀ ∈ carrier i
   pathConnected : ∀ i, IsPathConnected (carrier i)
   interPathConnected : ∀ i j, IsPathConnected (carrier i ∩ carrier j)
-
 
 def CoveredPathChain.carrierSets {x₀ : X} {A : Set X} {y : X}
     (c : CoveredPathChain x₀ A y) : Set (Set X) :=
@@ -346,8 +275,6 @@ theorem CoveredPathChain.prefix_loops_mem_carrierSets
       · exact Or.inr (ih q hq)
       · exact Or.inr c.current_mem_carrierSets
 
-
-
 theorem CoveredPathChain.decompose_loop_with_carrierSets
     {x₀ : X} {A : Set X} (c : CoveredPathChain x₀ A x₀) :
     ∃ loops : List (CoveredLoop x₀),
@@ -367,8 +294,6 @@ theorem CoveredPathChain.decompose_loop_with_carrierSets
     · exact c.prefix_loops_mem_carrierSets p hp
     · exact c.current_mem_carrierSets
 
-
-
 theorem CoveredPathChain.decompose_of_endpoint_eq_with_carrierSets
     {x₀ y : X} {A : Set X} (c : CoveredPathChain x₀ A y) (hy : y = x₀) :
     ∃ loops : List (CoveredLoop x₀),
@@ -376,7 +301,6 @@ theorem CoveredPathChain.decompose_of_endpoint_eq_with_carrierSets
       ∀ p ∈ loops, p.1 ∈ c.carrierSets := by
   subst y
   simpa using c.decompose_loop_with_carrierSets
-
 
 theorem pathIn_subpath_of_Icc_subset
     {x y : X} (γ : Path x y) (s t : I) (hst : s ≤ t)
@@ -387,7 +311,6 @@ theorem pathIn_subpath_of_Icc_subset
   obtain ⟨r, hr, rfl⟩ := hz
   exact hA hr
 
-
 structure CoveredSubdivisionPrefix
     {x₀ : X} {ι : Type v} (A : ι → Set X) (γ : Loop x₀)
     (t : ℕ → I) (index : ℕ → ι) (hstart : γ (t 0) = x₀) (n : ℕ) where
@@ -395,9 +318,6 @@ structure CoveredSubdivisionPrefix
   homotopic : chain.toPath.Homotopic
     ((γ.subpath (t 0) (t (n + 1))).cast hstart.symm rfl)
   carrierSets_subset : chain.carrierSets ⊆ Set.range A
-
-
-
 
 def coveredSubdivisionPrefix
     {x₀ : X} {ι : Type v} (A : ι → Set X)
@@ -456,14 +376,6 @@ def coveredSubdivisionPrefix
         rcases hS with hS | hS
         · exact ⟨index (n + 1), hS.symm⟩
         · exact ih.carrierSets_subset hS
-
-
-
-
-
-
-
-
 
 theorem loop_decomposition_of_pathConnectedOpenCover
     {x₀ : X} {ι : Type v} (cover : PathConnectedOpenCover x₀ ι)

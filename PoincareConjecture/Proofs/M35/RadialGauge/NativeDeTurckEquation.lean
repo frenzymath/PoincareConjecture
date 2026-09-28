@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.MovingPullbackDerivative
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawJointRegularity
 import PoincareConjecture.Proofs.M03.Existence.PullbackRicciNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -26,8 +17,6 @@ variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
 
-
-
 theorem nativeDeTurckField_contDiff {g b : RiemannianMetric n V}
     (K : LeviCivitaData g) (B : LeviCivitaData b) :
     ContDiff ℝ ∞ (intrinsicDeTurckField K B) := by
@@ -36,8 +25,6 @@ theorem nativeDeTurckField_contDiff {g b : RiemannianMetric n V}
     simpa only [trivializationAt_model_space_apply] using!
       (Bundle.contMDiffAt_totalSpace.mp ((intrinsicDeTurckField_contMDiff K B) x)).2
   exact contMDiff_iff_contDiff.mp h
-
-
 
 theorem inverse_pullback_solves_native_deturck
     {J : Set ℝ} (F : RicciFlow n V J)

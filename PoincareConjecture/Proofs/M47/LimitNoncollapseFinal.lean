@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseVolume
 import PoincareConjecture.Proofs.M47.LimitNoncollapseContractedTest
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,10 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
 
 theorem limitNoncollapse_of_finite_slabs
     (P : M47Predecessors.{u})

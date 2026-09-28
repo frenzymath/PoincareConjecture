@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundaryEstimate
 import Mathlib.Topology.MetricSpace.Equicontinuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -94,11 +83,6 @@ private theorem m65Normalized_pin_data {M : Type u} {N : ℕ}
       fin_cases i <;> assumption
 
 set_option maxHeartbeats 1200000 in
-
-
-
-
-
 
 theorem m65NormalizedWeakDisks_boundary_equicontinuous
     {M : Type u} [TopologicalSpace M] {N : ℕ} {ι : Type*}

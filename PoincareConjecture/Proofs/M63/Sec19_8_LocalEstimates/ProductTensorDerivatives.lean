@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductRicciDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m63CircleProduct_covariantTensorDerivative
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -124,8 +111,6 @@ theorem m63CircleProduct_covariantTensorDerivative
     exact congrArg Prod.fst (P.productChartField_split p (u j) (r j) q)
   rw [hsplit]
   exact hformula u r
-
-
 
 theorem m63CircleProduct_iteratedCovariantTensorDerivative
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

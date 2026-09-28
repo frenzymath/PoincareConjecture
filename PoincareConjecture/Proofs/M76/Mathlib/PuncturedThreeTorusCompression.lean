@@ -2,26 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PuncturedCubeCompression
 import PoincareConjecture.Proofs.M76.Mathlib.TorusCubeBandRegion
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartCompression
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TorusCube
-
-
-
-
-
 
 theorem exists_punctured_three_torus_compression (p : ℝ) [Fact (0 < p)]
     {d : ℝ} (hd : 0 < d) (hdhalf : d < p / 2) :

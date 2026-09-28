@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierComponentLift
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLAtlasLiftLabels
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -18,10 +8,6 @@ open Set Geometry Topology
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem exists_original_frontier_component_sign_labels
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

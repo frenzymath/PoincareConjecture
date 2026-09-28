@@ -4,15 +4,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Logic.Equiv.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,9 +11,6 @@ open Set Topology
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] {U : Set E}
-
-
-
 
 theorem continuous_extendDomain_of_vanishing_bound (e : U ≃ₜ U) (hU : IsOpen U)
     {b : E → ℝ} (hb : Continuous b) (hbzero : EqOn b (fun _ => 0) Uᶜ)
@@ -58,9 +46,6 @@ theorem continuous_extendDomain_of_vanishing_bound (e : U ≃ₜ U) (hU : IsOpen
     rw [hfix]
     simpa only [id_eq, sub_add_cancel, zero_add] using hdelta.add continuous_id.continuousAt
 
-
-
-
 noncomputable def extendByVanishingBound (e : U ≃ₜ U) (hU : IsOpen U)
     {b : E → ℝ} (hb : Continuous b) (hbzero : EqOn b (fun _ => 0) Uᶜ)
     (hbound : ∀ x : U, ‖(e x : E) - x‖ ≤ b x)
@@ -72,8 +57,6 @@ noncomputable def extendByVanishingBound (e : U ≃ₜ U) (hU : IsOpen U)
       continuous_invFun :=
         e.symm.continuous_extendDomain_of_vanishing_bound hU hb hbzero hinvbound }
 
-
-
 theorem extendByVanishingBound_apply_mem (e : U ≃ₜ U) (hU : IsOpen U)
     {b : E → ℝ} (hb : Continuous b) (hbzero : EqOn b (fun _ => 0) Uᶜ)
     (hbound : ∀ x : U, ‖(e x : E) - x‖ ≤ b x)
@@ -82,8 +65,6 @@ theorem extendByVanishingBound_apply_mem (e : U ≃ₜ U) (hU : IsOpen U)
     e.extendByVanishingBound hU hb hbzero hbound hinvbound x = (e ⟨x, hx⟩ : E) := by
   classical
   exact Equiv.Perm.extendDomain_apply_subtype e.toEquiv (Equiv.refl U) hx
-
-
 
 theorem extendByVanishingBound_apply_notMem (e : U ≃ₜ U) (hU : IsOpen U)
     {b : E → ℝ} (hb : Continuous b) (hbzero : EqOn b (fun _ => 0) Uᶜ)

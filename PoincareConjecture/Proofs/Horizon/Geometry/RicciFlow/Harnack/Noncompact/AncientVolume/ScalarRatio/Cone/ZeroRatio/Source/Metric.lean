@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Positive.Distance
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,7 +26,6 @@ variable {X : Type*} [MetricSpace X] {p : X} (hc : RayComparison p) {n : ℕ}
   (hf : Topology.IsOpenEmbedding f)
   (hdist : ∀ i (x y : Piece U i), dist (f (O.include i x)) (f (O.include i y)) =
     ((g i).edist x y).toReal)
-
 
 def positiveConeRealizationMetric :
     letI := quotientChartedSpace U hU O
@@ -66,8 +56,6 @@ theorem positiveConeRealizationMetric_inner :
   let := positiveCone_isManifold hc n hne hcover
   intro x v w
   rfl
-
-
 
 theorem positiveConeRealizationMetric_pullbackCoefficients :
     letI := quotientChartedSpace U hU O
@@ -145,8 +133,6 @@ theorem positiveConeRealizationMetric_pullbackCoefficients :
     (mfderiv (𝓡 (n + 1)) (𝓡 (n + 1)) T x w)
   rw [hbase] at hm
   exact hm.symm.trans (hT.2.2 x hxT v w)
-
-
 
 theorem positiveConeRealizationMetric_radialPotential :
     letI := quotientChartedSpace U hU O

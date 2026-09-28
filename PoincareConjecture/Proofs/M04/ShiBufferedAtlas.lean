@@ -5,14 +5,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.EMetricSpace.Basic
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -317,4 +309,3 @@ theorem exists_shi_common_mesh (D : LeviCivitaData g) {C : Set M} {m : ℕ}
     _ = B * L * R := by ring
 
 end PoincareConjecture.M04
-

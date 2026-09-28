@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Contracte
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.Constancy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,7 +51,6 @@ theorem mvfderiv_scalarCurvature_eq_zero_of_three_dimensional_einstein
   exact Finset.sum_eq_zero fun i _ => by
     change _ * mvfderiv (𝓡 3) D.scalarCurvature x (b i) = 0
     rw [hd, mul_zero]
-
 
 theorem constantPositiveSectionalCurvature_of_three_dimensional_einstein
     [PreconnectedSpace M] [Nonempty M]

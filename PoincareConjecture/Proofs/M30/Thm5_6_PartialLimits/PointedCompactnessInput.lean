@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.EarlierVolume
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   RicciFlow.smallCarrier RicciFlow.smallChartedSpace RicciFlow.smallIsManifold
   RicciFlow.smallT3Space RicciFlow.smallMeasurableSpace RicciFlow.smallBorelSpace
-
-
-
 
 theorem exists_pointedCompactnessHypotheses_of_finite_source_family
     {T B rho v : ℝ} (hT : 0 < T) (hrho : 0 < rho) (hv : 0 < v)

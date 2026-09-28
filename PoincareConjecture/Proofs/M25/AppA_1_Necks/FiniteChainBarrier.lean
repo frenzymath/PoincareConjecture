@@ -5,17 +5,6 @@ import Mathlib.Data.Int.SuccPred
 import Mathlib.Data.Finset.Max
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +13,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.BalancedNeckChain
-
-
-
 
 theorem exists_positive_frontier_negative_quarter_exclusion :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

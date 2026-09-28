@@ -57,4 +57,3 @@ theorem secondVariation_nonneg {J : Set ℝ} {F : RicciFlow n M J}
   exact secondDerivative_nonneg_of_localMin (isLocalMin_variationLLength hmin V) hc hd
 
 end PoincareConjecture.M08
-

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetShift
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +10,6 @@ namespace TopologicalSpace.Opens
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (U : Opens E)
   (u : ℝ → U) (η : ℝ → E) {s v : ℝ}
 
-
-
-
 theorem affineShift_curve_contMDiffAt
     (hu : ContMDiffAt (𝓘(ℝ, ℝ)) (𝓘(ℝ, E)) 1 u s)
     (hη : ContDiffAt ℝ 1 η s) (hshift : (u s).val + v • η s ∈ U) :
@@ -29,9 +18,6 @@ theorem affineShift_curve_contMDiffAt
     ((contDiffAt_const (c := v)).smul hη).contMDiffAt
   exact (((U.affineShift_contMDiffOn _ hshift).contMDiffAt
     (U.affineShift_domain_isOpen.mem_nhds hshift)).of_le (by simp)).comp s (hu.prodMk hηv)
-
-
-
 
 theorem affineShift_curve_hasDerivAt
     (hu : DifferentiableAt ℝ (fun t => (u t).val) s)

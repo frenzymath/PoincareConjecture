@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalSliceSegments
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexExtremeFaces
 import PoincareConjecture.Proofs.M76.Mathlib.ExtremeSegmentIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exceptionalSliceGraph_segment_inter (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0)

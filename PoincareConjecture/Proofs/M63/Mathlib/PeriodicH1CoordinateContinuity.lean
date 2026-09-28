@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle MeasureTheory Filter
@@ -16,9 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 theorem norm_periodicH1Coordinates_le (f g : C(AddCircle L, ℂ))
     (h : ∀ x : ℝ, HasDerivAt (fun y : ℝ => f (y : AddCircle L)) (g (x : AddCircle L)) x) :
@@ -37,9 +26,6 @@ theorem norm_periodicH1Coordinates_le (f g : C(AddCircle L, ℂ))
   have hs : ‖periodicH1Coordinates f g h‖ ^ 2 ≤ (‖f‖ + ‖g‖) ^ 2 := by
     nlinarith [hb f, hb g, mul_nonneg (norm_nonneg f) (norm_nonneg g)]
   exact (sq_le_sq₀ (norm_nonneg _) (by positivity)).mp hs
-
-
-
 
 theorem continuous_periodicH1Coordinates {P : Type*} [TopologicalSpace P]
     (f g : P → C(AddCircle L, ℂ)) (hf : Continuous f) (hg : Continuous g)

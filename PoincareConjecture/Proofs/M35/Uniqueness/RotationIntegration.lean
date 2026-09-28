@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.CoordinateRotations
 import PoincareConjecture.Proofs.M35.Uniqueness.AxisRotations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology Matrix
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem linear_killing_path_preserves_metric {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -57,8 +46,6 @@ theorem linear_killing_path_preserves_metric {n : ℕ}
     g.euclideanCoefficients x u v
   simpa only [hzero] using heq
 
-
-
 theorem coordinateRotation_hasDerivAt_time (s : ℝ) (x : StandardCapSpace) :
     HasDerivAt (fun t => standardRotation (coordinateRotation t) x)
       (coordinateRotationGenerator (standardRotation (coordinateRotation s) x)) s := by
@@ -89,8 +76,6 @@ theorem coordinateRotation_hasDerivAt_time (s : ℝ) (x : StandardCapSpace) :
     fin_cases i <;>
       simp [coordinateRotationGenerator, standardRotation, coordinateRotation, L,
         Matrix.toEuclideanLin, dotProduct, Fin.sum_univ_succ] <;> ring
-
-
 
 theorem coordinateRotation_isometry_of_killing {g : RiemannianMetric 3 StandardCapSpace}
     (D : LeviCivitaData g)

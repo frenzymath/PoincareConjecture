@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetMetr
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalHolder
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ open Poincare.Analysis.Sobolev.Weak
 noncomputable section
 
 namespace PoincareConjecture.M60
-
-
 
 def SUQuadraticWeakSystem.restrict {m : ℕ}
     {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -68,9 +57,6 @@ def SUQuadraticWeakSystem.restrict {m : ℕ}
       (fun x hx => by rw [image_eq_zero_of_notMem_tsupport (hnot x hx.2), map_zero])] at he
   exact he
 
-
-
-
 theorem suAffineWeakSystem_smooth_local :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (m : ℕ)
       {u : LoopPlane → EuclideanSpace ℝ (Fin m)}
@@ -101,8 +87,6 @@ theorem suAffineWeakSystem_smooth_local :
   exact hfinite k m (S.restrict hr hrR) C hflux hsource hO hmap hA hc hB hd
     hnu hcoercive N
 
-
-
 theorem suAlphaSphere_smooth_of_coordinates
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -131,9 +115,6 @@ theorem suAlphaSphere_smooth_of_coordinates
     f.continuous.continuousAt (ct.open_source.mem_nhds hpt)] with y hys hyt
   change f y = ct.symm (ct (f (cs.symm (cs y))))
   rw [cs.left_inv hys, ct.left_inv hyt]
-
-
-
 
 theorem suWeakAlphaCoordinate_smooth_of_holder
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -172,9 +153,6 @@ theorem suWeakAlphaCoordinate_smooth_of_holder
     funext (suJetBlock_firstJet_zero u)
   rwa [he] at hu
 
-
-
-
 theorem suWeakAlphaCoordinate_smooth
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -197,8 +175,6 @@ theorem suWeakAlphaCoordinate_smooth
   obtain ⟨H⟩ := hholder b alpha u V center radius ha hah S G
   exact hsmooth b alpha u V center radius ha has S G H
 
-
-
 theorem suWeakAlphaCoordinate_smooth_alpha_one
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -206,8 +182,6 @@ theorem suWeakAlphaCoordinate_smooth_alpha_one
   obtain ⟨eps0, heps, _, hsmooth⟩ := suWeakAlphaCoordinate_smooth g
   intro b u V center radius S
   exact hsmooth b 1 u V center radius le_rfl (by linarith) S
-
-
 
 theorem suWeakAlphaSphere_smooth
     {n : ℕ} {M : Type*} [TopologicalSpace M]

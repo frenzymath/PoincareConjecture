@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.SmoothTangentChartPhase
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Analysis.Calculus.Deriv.Comp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

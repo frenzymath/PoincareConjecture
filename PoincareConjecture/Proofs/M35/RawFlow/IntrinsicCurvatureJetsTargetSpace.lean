@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsTarget
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialRapidProfile
 import PoincareConjecture.Proofs.M35.RadialGauge.DilatedRapidProfile
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Bundle
 namespace PoincareConjecture.M35.Uniqueness
 
 open RadialGauge
-
-
 
 theorem raw_intrinsic_dilated_target_jets_bounded
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

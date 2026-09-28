@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicArclength
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2GaugeWitnesses
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.SlopeRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem exists_c2_constant_speed_relabeling (F : RicciFlow n M (Icc a b))
     (gamma : ℝ → M) (t : ℝ) (hperiod : Function.Periodic gamma curvePeriod)

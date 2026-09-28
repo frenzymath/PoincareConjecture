@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Coordinates.Center
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.RetainedComparison
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -61,8 +59,6 @@ variable {M : Type u} [TopologicalSpace M]
     N.carrier H.reference.regularLimitSet)
   (hclose : RoundCylinderFamilyClose δ (Ioc (-1 : ℝ) 0)
     (H.regularNeckWeakenedTerminalTensor P04 hΩ ht N x₀ hR hεδ))
-
-
 
 def terminalStrongNeckOfComparison : GeneralizedStrongNeck (H.nonemptyExtension P04 hΩ).extended T δ := by
   let Q := (H.terminalConnection P04).scalarCurvature x₀

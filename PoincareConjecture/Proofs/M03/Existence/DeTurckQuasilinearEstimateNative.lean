@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckTameCompositionNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckInverseCompositionNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckTameRemainderNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1400000
 set_option backward.isDefEq.respectTransparency false
@@ -94,8 +85,6 @@ private theorem lpNorm_list_sum_le {jota : Type*} (l : List jota) (f : jota → 
       (by norm_num : (1 : ENNReal) ≤ 2)).trans
       (add_le_add_right (ih (fun k hk => hf k (List.mem_cons_of_mem j hk))) _)
 
-
-
 theorem lpNorm_directionalWord_mul_second_le
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (w : List iota)
     (hw : w.length ≤ 2 * r) (i j : iota) {f u : M → ℝ}
@@ -172,8 +161,6 @@ theorem lpNorm_directionalWord_mul_second_le
           ring
       rw [hconst, splitDirectionalWord_length, Nat.cast_pow, Nat.cast_ofNat]
 
-
-
 theorem lpNorm_directionalWord_principal_sub_le
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (w : List iota)
     (hw : w.length ≤ 2 * r) (i j : iota) {f g u v : M → ℝ}
@@ -230,8 +217,6 @@ theorem lpNorm_directionalWord_principal_sub_le
         (2 : ℝ) ^ w.length * (c * D + d * C) := add_le_add hfirst hsecond
     _ = _ := by ring
 
-
-
 theorem lpNorm_directionalWord_principal_sub_mixed_le
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (w : List iota)
     (hw : w.length ≤ 2 * r) (i j : iota) {f g u v : M → ℝ}
@@ -285,10 +270,6 @@ theorem lpNorm_directionalWord_principal_sub_mixed_le
         (2 * (max tu tv * Hd + td * Hv)) := mul_le_mul_of_nonneg_left hsum hfactor
     _ = _ := by rw [pow_succ]; ring
 
-
-
-
-
 private theorem directionalWord_const_mul
     (F : iota → SmoothField (n := n) (M := M)) (w : List iota) (c : ℝ) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
@@ -306,7 +287,6 @@ private theorem directionalWord_const_mul
       (scalarDirectional_mul (F i) (ψ := fun _ : M => c)
         (f := directionalWord F w f) mdifferentiableAt_const
         ((directionalWord_contMDiff F w hf).mdifferentiable (by simp) x))
-
 
 structure ScalarDerivativeBounds
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (C : ℝ) (f : M → ℝ) : Prop where
@@ -440,7 +420,6 @@ def budgetScale (c : ℝ) (a : ℝ × ℝ) : ℝ × ℝ := (|c| * a.1, |c| * a.2
 
 def budgetSum (q : ℕ) (a : ℝ × ℝ) : ℝ × ℝ := ((q : ℝ) * a.1, (q : ℝ) * a.2)
 
-
 structure ScalarDifferenceBounds
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (δ : ℝ)
     (a : ℝ × ℝ) (f g : M → ℝ) : Prop where
@@ -536,7 +515,6 @@ def deTurckFirstBudget (q r : ℕ) (a inverse1 gamma gamma1 : ℝ × ℝ)
 def lieLowerBudget (q r : ℕ) (v p W W1 : ℝ × ℝ) : ℝ × ℝ :=
   budgetSum q (budgetProduct r W p + budgetProduct r v W1 + budgetProduct r v W1)
 
-
 def lowerJetSourceBudget (q r : ℕ) (v p a : ℝ × ℝ) (c c1 : ℝ) : ℝ × ℝ :=
   let gamma := christoffelBudget q r p a
   let inverse1 := inverseFirstBudget q r p a
@@ -545,8 +523,6 @@ def lowerJetSourceBudget (q r : ℕ) (v p a : ℝ × ℝ) (c c1 : ℝ) : ℝ × 
   let W := deTurckBudget q r a gamma c
   let W1 := deTurckFirstBudget q r a inverse1 gamma gamma1 c c1
   budgetScale (-2) ricci + lieLowerBudget q r v p W W1
-
-
 
 theorem lowerJetSource_directional_difference_bounds
     (F : iota → SmoothField (n := n) (M := M)) (r : ℕ) (δ : ℝ)
@@ -648,8 +624,6 @@ private theorem scalarDirectional_finset_sum_at {jota : Type*} (s : Finset jota)
       scalarDirectional V (f j) x + scalarDirectional V (fun y => ∑ k ∈ s, f k y) x at hsum
     rw [hsum, ih (fun k hk => hf k (Finset.mem_insert_of_mem hk))]
 
-
-
 theorem second_derivative_eq_of_field_sum
     {alpha : Type*} (F : iota → SmoothField (n := n) (M := M))
     (V : alpha → (x : M) → TangentSpace (𝓡 n) x) (c : alpha → iota → M → ℝ)
@@ -699,7 +673,6 @@ theorem second_derivative_eq_of_field_sum
   simp_rw [hinner, Finset.mul_sum, mul_add]
   simp only [Finset.sum_add_distrib, mul_assoc]
 
-
 def differentiatedCoefficientSplits : List iota → List (List iota × List iota)
   | [] => []
   | i :: w =>
@@ -738,7 +711,6 @@ theorem differentiatedCoefficientSplits_length (w : List iota) :
   simpa only [splitDirectionalWord_length, List.length_append, List.length_cons,
     List.length_nil, zero_add] using h.symm
 
-
 theorem directionalWord_mul_top_split
     (F : iota → SmoothField (n := n) (M := M)) (w : List iota) {a u : M → ℝ}
     (ha : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ a)
@@ -752,7 +724,6 @@ theorem directionalWord_mul_top_split
   simp only [List.map_append, List.sum_append, List.map_cons, List.map_nil,
     List.sum_cons, List.sum_nil, add_zero, directionalWord_nil]
   exact add_comm _ _
-
 
 theorem lpNorm_directionalWord_mul_second_top_le
     (F : iota → SmoothField (n := n) (M := M)) (w : List iota) (i j : iota)
@@ -809,7 +780,6 @@ theorem lpNorm_directionalWord_mul_second_top_le
     (by norm_num : (1 : ENNReal) ≤ 2)).trans
       (add_le_add (lpNorm_mul_le_sup μ ha.continuous
         (directionalWord_contMDiff F (w ++ [i, j]) hu).continuous hepsilon ha0) htail)
-
 
 theorem contracted_second_derivative_eq_of_field_sum
     {alpha : Type*} [Fintype alpha]

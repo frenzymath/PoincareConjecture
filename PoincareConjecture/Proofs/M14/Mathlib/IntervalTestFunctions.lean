@@ -2,25 +2,12 @@ import Mathlib.Analysis.Distribution.AEEqOfIntegralContDiff
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped ContDiff Topology intervalIntegral
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
-
-
-
 
 theorem ContinuousOn.eq_zero_of_intervalIntegral_contDiff_smul {a b : ℝ}
     (hab : a < b) {f : ℝ → E} (hf : ContinuousOn f (Icc a b))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ManifoldLocalInverse
 import Mathlib.Topology.DiscreteSubset
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,16 +13,12 @@ variable [FiniteDimensional ℝ E]
 variable [TopologicalSpace M] [ChartedSpace E M] [IsManifold 𝓘(ℝ, E) ∞ M]
 variable [TopologicalSpace N] [ChartedSpace E N] [IsManifold 𝓘(ℝ, E) ∞ N]
 
-
-
 theorem exists_injective_neighborhood_of_mfderiv
     (f : M → N) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, E) ∞ f) (x : M)
     (hdf : Function.Injective (mfderiv 𝓘(ℝ, E) 𝓘(ℝ, E) f x)) :
     ∃ U : Set M, IsOpen U ∧ x ∈ U ∧ InjOn f U := by
   obtain ⟨e, hxe, he, _⟩ := exists_smooth_manifold_local_inverse f hf x hdf
   exact ⟨e.source, e.open_source, hxe, he ▸ e.injOn⟩
-
-
 
 theorem finite_regular_fiber [CompactSpace M] [T2Space N]
     (f : M → N) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, E) ∞ f) (y : N)

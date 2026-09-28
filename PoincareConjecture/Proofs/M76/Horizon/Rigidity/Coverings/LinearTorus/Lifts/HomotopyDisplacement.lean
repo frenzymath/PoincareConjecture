@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Lifts.Scalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped unitInterval
@@ -15,8 +7,6 @@ open scoped unitInterval
 namespace PoincareConjecture.M76.LinearTorus
 
 variable (p : ℝ) {X : Type*} [TopologicalSpace X] {S : Set X}
-
-
 
 theorem exists_scalar_displacement_of_homotopyRel
     {f g : C(X, AddCircle p)} (H : f.HomotopyRel g S) :
@@ -50,8 +40,6 @@ theorem exists_scalar_displacement_of_homotopyRel
         rw [H.eq_fst t hx, H.eq_fst t' hx]) (1 : unitInterval) 0
     exact hconst.trans (hL0 x)
 
-
-
 theorem exists_real_displacement_of_homotopyRel
     {f g : C(X, AddCircle p × AddCircle p)} (H : f.HomotopyRel g S) :
     ∃ W : C(X, ℝ × ℝ), (∀ x, quotientMap p (W x) = g x - f x) ∧
@@ -65,8 +53,6 @@ theorem exists_real_displacement_of_homotopyRel
     exact Prod.ext (hW₁ x) (hW₂ x)
   · intro x hx
     exact Prod.ext (hS₁ x hx) (hS₂ x hx)
-
-
 
 theorem exists_real_displacement_of_homotopy
     {f g : C(X, AddCircle p × AddCircle p)} (H : f.Homotopy g) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODEBounds
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPicardRange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,10 +9,6 @@ open scoped ContDiff NNReal
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
-
 
 theorem closedODE_exists_local_family {a b t₀ : ℝ} (hab : a < b)
     {U : Set E} (hU : IsOpen U) (V : ℝ × E → E)

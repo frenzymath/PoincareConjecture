@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Jacobi.ParallelFrame
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,7 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem GeodesicVariation.contDiffOn_variationField
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {S I : Set ℝ}
@@ -45,7 +36,6 @@ theorem GeodesicVariation.contDiffOn_variationField
     (((hu.fderiv_right (by simp)).comp t hc).clm_apply contDiffAt_const)
   exact hF.contDiffWithinAt.congr (fun s hs => (heq s hs).symm) (heq t ht).symm
 
-
 theorem GeodesicVariation.deriv_position
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {S I : Set ℝ}
     (Γ : GeodesicVariation B S I) {t : ℝ} (ht : t ∈ I) :
@@ -53,8 +43,6 @@ theorem GeodesicVariation.deriv_position
   have hd : HasDerivAt (fun s => (Γ.phase (0, s)).1) (Γ.phase (0, t)).2 t :=
     (Γ.geodesic 0 Γ.base_mem t ht).fst
   exact hd.deriv
-
-
 
 theorem GeodesicVariation.exists_parallel_jacobi [CompleteSpace E] [FiniteDimensional ℝ E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} {S I : Set ℝ} {a b : ℝ}

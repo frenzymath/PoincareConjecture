@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Initial.FiniteEdges
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Faces.RetainedHistory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

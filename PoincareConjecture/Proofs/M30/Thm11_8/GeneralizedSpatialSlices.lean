@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Generalized.CylinderSpatialHomeomorph
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,16 +13,12 @@ namespace PoincareConjecture.M30
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold
 
-
-
 noncomputable def normalizedBlowupSliceMetric (S : GeneralizedBlowupSequence.{u})
     (k : ℕ) (t : ℝ) :
     RiemannianMetric 3
       ((S.flow k).slice ((S.base k).1 + t / S.scale k)).carrier :=
   M13.scaleSmoothMetric ((S.flow k).metric ((S.base k).1 + t / S.scale k))
     (S.scale k) (S.base_scalar_pos k)
-
-
 
 noncomputable def generalizedSliceHomeomorph
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -52,8 +38,6 @@ noncomputable def generalizedSliceHomeomorph
     ⟨G.exhaustion.space k, G.exhaustion.space_open k⟩
   exact Cylinder.spatialHomeomorph (J := W) (U := U) (G.embedding k) ⟨t, ht⟩
 
-
-
 theorem generalizedSliceHomeomorph_contMDiffAt
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) (k : ℕ) (t : ℝ)
@@ -62,8 +46,6 @@ theorem generalizedSliceHomeomorph_contMDiffAt
     ContMDiffAt (𝓡 3) (𝓡 3) ∞ (generalizedSliceHomeomorph G k t ht) x :=
   (G.embedding k).forward_smooth t ht x hx |>.contMDiffAt
     ((G.exhaustion.space_open k).mem_nhds hx)
-
-
 
 theorem generalizedSliceHomeomorph_symm_contMDiffAt
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
@@ -76,8 +58,6 @@ theorem generalizedSliceHomeomorph_symm_contMDiffAt
   ((G.embedding k).inverse_smooth t ht y hy).contMDiffAt
     ((generalizedSliceHomeomorph G k t ht).open_target.mem_nhds hy)
 
-
-
 theorem exists_generalized_exhaustion_stage
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
     (G : GeneralizedBlowupConvergence S J) {K : Set G.limit.carrier.carrier}
@@ -88,8 +68,6 @@ theorem exists_generalized_exhaustion_stage
       rw [G.exhaustion.space_covers]
       exact subset_univ _)
     G.exhaustion.space_increasing.directed_le
-
-
 
 theorem exists_generalized_time_shift
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

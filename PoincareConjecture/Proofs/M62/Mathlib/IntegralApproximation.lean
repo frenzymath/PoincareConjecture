@@ -1,23 +1,12 @@
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter MeasureTheory Set
 open scoped Topology intervalIntegral
 
 namespace intervalIntegral
-
-
-
 
 theorem sub_le_integral_of_nonneg_approximation
     {T L : ℝ → ℝ} {R : ℝ → ℝ → ℝ} {A B a b : ℝ} (hA : 0 ≤ A)

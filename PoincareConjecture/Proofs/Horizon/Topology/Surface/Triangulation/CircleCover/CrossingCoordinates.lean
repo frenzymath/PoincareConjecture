@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.CircleCover.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.CollarCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.TransverseLevels
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -18,8 +8,6 @@ open Set Metric
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem exists_smooth_coordinate_restriction
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) (ℝ × ℝ))
@@ -57,10 +45,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
-
-
 
 theorem exists_chartCircle_crossing_coordinates (x y : M) {rx ry : ℝ}
     (hrx : 0 < rx) (hry : 0 < ry)

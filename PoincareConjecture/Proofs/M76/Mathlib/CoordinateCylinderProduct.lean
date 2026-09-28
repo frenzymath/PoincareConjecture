@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +8,6 @@ open Set Metric
 namespace Geometry
 
 variable (ι κ : Type*) [Fintype ι]
-
-
-
 
 noncomputable def coordinateCylinderProduct :
     coordinateCylinder (Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ)) ≃ₜ
@@ -53,9 +40,6 @@ noncomputable def coordinateCylinderProduct :
     | inl i => exact (continuous_apply i).comp (continuous_subtype_val.comp continuous_fst)
     | inr j => exact (continuous_apply j).comp continuous_snd
 
-
-
-
 theorem coordinateCylinderProduct_frontier
     (x : coordinateCylinder (Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ)))
     (hx : (x : (ι ⊕ κ) → ℝ) ∈
@@ -76,9 +60,6 @@ theorem coordinateCylinderProduct_frontier
   exact hx.2 (mem_interior.mpr ⟨U, hsub, hU, hlt⟩)
 
 variable [Fintype κ]
-
-
-
 
 theorem coordinateCylinderProduct_displacement
     (G : (closedBall (0 : ι → ℝ) 1 × (κ → ℝ)) ≃ₜ

@@ -3,9 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ThreeArcStraigh
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcSideClassification
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicArcSideTurning
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +14,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 open Classical in
-
-
-
 
 theorem m64Intrinsic_digon_boundary_turning_eq_zero
     (N : IntrinsicAnnulus) {U V : Set AnnulusCoordinates}

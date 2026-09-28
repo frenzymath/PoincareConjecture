@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StandardCollar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +23,6 @@ noncomputable local instance globalCollarTwoJetNormedGroup :
 
 noncomputable local instance globalCollarTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
 
 theorem collarJetRegion_of_pullback
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g)
@@ -90,9 +77,6 @@ theorem collarJetRegion_of_pullback
   simp only [collarJetMargin, jetScalarCurvature_metricTwoJet D, jetCurvature_metricTwoJet D]
   exact sub_pos.mpr hmargin
 
-
-
-
 theorem continuousOn_euclidean_twoJet_time {J : Set ℝ} (hJ : UniqueDiffOn ℝ J)
     (F : RicciFlow 3 E J) (x : E) :
     ContinuousOn (fun t => metricTwoJet (F.metric t).euclideanCoefficients x) J := by
@@ -104,9 +88,6 @@ theorem continuousOn_euclidean_twoJet_time {J : Set ℝ} (hJ : UniqueDiffOn ℝ 
   have h := continuousOn_pullback_twoJet_time hJ F isOpen_univ
     (contMDiff_id.contMDiffOn (s := univ)) (mem_univ x)
   simpa only [hid] using h
-
-
-
 
 theorem exists_global_standard_collar {g0 : StandardInitialMetric}
     (S : RepairedStandardCapExistenceData g0) {C theta : ℝ}

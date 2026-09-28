@@ -1,15 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Topology.Separation.Regular
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +9,6 @@ open scoped Topology
 namespace OpenPartialHomeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_fill_fixed_core (e : OpenPartialHomeomorph X X)
     {A C T : Set X} (hsource : e.source = Aᶜ) (htarget : e.target = T \ A)
@@ -78,10 +66,6 @@ theorem exists_fill_fixed_core (e : OpenPartialHomeomorph X X)
     exact piecewise_eq_of_notMem C _ _ hx
 
 variable {Y : Type*} [TopologicalSpace Y] [RegularSpace Y]
-
-
-
-
 
 theorem exists_closed_fiber_core {q : X → Y} (hq : Continuous q)
     (c : Y) {V : Set Y} (hV : IsOpen V) (hc : c ∈ V) :

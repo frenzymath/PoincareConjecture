@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Projective.Certificate
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Projective.DoubleCertificate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace Topology
@@ -29,8 +19,6 @@ local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem nonempty_projective_pair_certificate
     (U V : Opens M) {p q : RealProjectiveThree}

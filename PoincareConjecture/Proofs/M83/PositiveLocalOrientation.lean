@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M83.EuclideanOrientation
 import PoincareConjecture.Proofs.M83.PositiveLinearLocal
 import PoincareConjecture.Proofs.M02.Topology.PositiveThreeAtlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,8 +51,6 @@ private theorem affineMap_action (O : LocalOrientation E3) (x y : E3)
   change homologyMap (integralRelativeMap l hl) 3 = 𝟙 _ at hp
   rw [hp, ModuleCat.id_apply, translation_preserves_orientation] at h
   exact h
-
-
 
 theorem positiveOpenPartialOrientation
     (O : LocalOrientation E3) (c : OpenPartialHomeomorph E3 E3)

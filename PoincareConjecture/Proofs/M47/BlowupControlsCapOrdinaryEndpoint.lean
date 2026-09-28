@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_EventNeighborhood
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_OrdinaryCylinderExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_cap_cylinder_across_ordinary_endpoint
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

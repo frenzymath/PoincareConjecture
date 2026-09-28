@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLSupportedInsertion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +8,6 @@ namespace OpenPartialHomeomorph
 
 variable {M E ι : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 structure SupportedPLOverlapCorrection
     (c : ι → OpenPartialHomeomorph M E) (d : OpenPartialHomeomorph M E)
@@ -56,11 +42,6 @@ structure SupportedPLOverlapCorrection
     ((c i).target ∩ (c i).symm ⁻¹' neighborhood)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 def HasSupportedPLOverlapStraightening : Prop :=
   ∀ s : Finset (OpenPartialHomeomorph M E),

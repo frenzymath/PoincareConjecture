@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Annulus.Tower
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.TwoCommensurableAnnularMarks
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip Geometry.OriginalPLTower
 open Poincare.Topology.Orientation.ProjectivePlane

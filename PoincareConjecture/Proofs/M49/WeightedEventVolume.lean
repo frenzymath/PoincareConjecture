@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M49.DirectLeftLimitVolume
 import PoincareConjecture.Proofs.M49.Mathlib.ExponentialJumpBalance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -18,8 +9,6 @@ open scoped Topology ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M49
-
-
 
 theorem weighted_event_losses_le_initial
     (F : SurgeryFlowData.{u}) {b : ℝ} (hb : b ∈ F.time_domain)

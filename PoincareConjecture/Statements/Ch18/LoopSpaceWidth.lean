@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import PoincareConjecture.Statements.Ch01.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -20,18 +12,15 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 def ReparameterizedLoops (γ₁ γ₂ : C1FreeLoopSpace (M := M)) : Prop :=
   ∃ r : CircleReparameterization, ∀ z : LoopCircle,
     γ₁ z = γ₂ (r.map z)
-
 
 structure LoopSpaceWidthPredecessors where
   manifold : CompactConnectedThreeManifold (M := M)
   metric : RiemannianMetric 3 M
   basepoint : M
   pi_two_subsingleton : Subsingleton (HomotopyGroup.Pi 2 M basepoint)
-
 
 structure LoopSpaceWidthConclusions (P : LoopSpaceWidthPredecessors (M := M)) where
 

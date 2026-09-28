@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Diffeomorph.Sphere
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.LocalInverse
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -67,8 +59,6 @@ theorem isLocalDiffeomorph_of_injective_mfderiv
   filter_upwards [c.open_source.mem_nhds (mem_chart_source _ _)] with y hy
   simp only [Function.comp_apply, c.left_inv hy]
 
-
-
 theorem isLocalDiffeomorph_sphere_of_injective_ambient_mfderiv
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -90,8 +80,6 @@ theorem isLocalDiffeomorph_sphere_of_injective_ambient_mfderiv
     (mfderiv (𝓡 n) (𝓡 n) f x))
   rw [← hcomp]
   exact hinj x
-
-
 
 def sphereDiffeomorphOfUnitMap
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

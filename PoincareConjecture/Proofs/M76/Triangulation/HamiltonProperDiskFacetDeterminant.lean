@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexOppositeApices
 import Mathlib.LinearAlgebra.Determinant
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -58,8 +49,6 @@ private theorem affine_coord_eq_basis_coord (b : AffineBasis ι ℝ E)
       simp only [Finsupp.single_apply, b.coord_apply, Subtype.mk.injEq, eq_comm]
   exact congrArg (fun f : E →ᵃ[ℝ] ℝ => f q) hc
 
-
-
 theorem det_eq_coord_of_fixes_affine_facet (b : AffineBasis ι ℝ E)
     (i j : ι) (hij : i ≠ j) (a : E →ᵃ[ℝ] E)
     (hfix : ∀ k, k ≠ i → a (b k) = b k) :
@@ -73,8 +62,6 @@ theorem det_eq_coord_of_fixes_affine_facet (b : AffineBasis ι ℝ E)
   have h := det_eq_repr_of_fixed_basis_except (b.basisOf j) ⟨i, hij⟩ a.linear hfixed
   rw [b.basisOf_apply, a.linearMap_vsub, hbase] at h
   exact h.trans (affine_coord_eq_basis_coord b i j hij (a (b i)))
-
-
 
 theorem det_mul_coord_of_fixes_affine_facet (b : AffineBasis ι ℝ E)
     (i j : ι) (hij : i ≠ j) (a : E →ᵃ[ℝ] E)
@@ -91,10 +78,6 @@ theorem det_mul_coord_of_fixes_affine_facet (b : AffineBasis ι ℝ E)
     · rw [hfix k hki, b.coord_apply_ne (Ne.symm hki), mul_zero]
   rw [det_eq_coord_of_fixes_affine_facet b i j hij a hfix]
   exact (congrArg (fun f : E →ᵃ[ℝ] ℝ => f q) he).symm
-
-
-
-
 
 theorem same_det_sign_of_opposite_facet_coordinates
     (b : AffineBasis ι ℝ E) (i j : ι) (hij : i ≠ j)

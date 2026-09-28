@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutArcPairing
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.BoundaryPairing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -38,8 +30,6 @@ def arcEndpointCorner (i : Fin 4) (j : Fin 2) : Fin 4 := if j = 0 then i-1 else 
 
 noncomputable def arcEndpointSource (i : Fin 4) (j : Fin 2) : E :=
   A.sourceMap K P D hD hcofaces hP labels (if j = 0 then A.bridgeBegin i else A.bridgeEnd i)
-
-
 
 def originalCornerStep (a b : Fin 4) : Prop :=
   ∃ (i : Fin 4) (j k : Fin 2), a = arcEndpointCorner i j ∧
@@ -109,8 +99,6 @@ theorem endpoint_source_eq_corner_related {i k : Fin 4} {j l : Fin 2}
   · subst k
     exact Relation.EqvGen.rel _ _ ⟨i,j,l,rfl,rfl,he⟩
 
-
-
 theorem exists_corner_endpoint_of_original_spoke (a t : Fin 4)
     (ht : t ∈ ({A.matching a,A.matching a+1} : Set (Fin 4))) :
     ∃ (i : Fin 4) (j : Fin 2), arcEndpointCorner i j = a ∧
@@ -124,8 +112,6 @@ theorem exists_corner_endpoint_of_original_spoke (a t : Fin 4)
   · subst t
     refine ⟨a+1,0,?_,hr.symm⟩
     simp [arcEndpointCorner]
-
-
 
 theorem consecutive_original_sectors_corner_related (t : Fin 4) :
     Relation.EqvGen A.originalCornerStep (A.matching.symm (t-1)) (A.matching.symm t) := by
@@ -181,8 +167,6 @@ theorem originalCornerStep_reversing_shift
     rw [A.arcPairing_involutive] at hp
     exact (A.source_bridge_begin_ne_end i (hp.trans he.symm)).elim
 
-
-
 theorem reversingCornerStep_connected_of_source_reversal
     (hreverse : ∀ i, A.sourceMap K P D hD hcofaces hP labels (A.bridgeBegin (A.arcPairing i)) =
       A.sourceMap K P D hD hcofaces hP labels (A.bridgeEnd i)) :
@@ -196,9 +180,6 @@ theorem reversingCornerStep_connected_of_source_reversal
     | trans a b c hab hbc ihab ihbc => exact Relation.EqvGen.trans _ _ _ ihab ihbc
   intro i j
   simpa only [sub_add_cancel] using hmap (A.originalCornerStep_connected (i-1) (j-1))
-
-
-
 
 theorem arcPairing_opposite_of_source_reversal
     (hreverse : ∀ i, A.sourceMap K P D hD hcofaces hP labels (A.bridgeBegin (A.arcPairing i)) =

@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.Tube
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -117,9 +109,6 @@ private theorem normalized_belt_height {s t δ : Real} (hs : s ≠ 0)
 namespace SphereSurgeryCoreCap
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
-
 
 theorem exists_cylindrical_belt_chart_of_width (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
@@ -245,7 +234,6 @@ theorem exists_cylindrical_belt_chart_of_width (D : SphereSurgeryCoreCap v g B)
       abs_div, abs_neg, abs_of_pos (by norm_num : (0 : Real) < 2)] at hh
     linarith [abs_pos.mpr D.scale_ne_zero]
 
-
 theorem exists_cylindrical_belt_chart (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g) :
     ∃ (J : Hemisphere.Plane v ≃ₗᵢ[Real] E2)
@@ -260,8 +248,6 @@ theorem exists_cylindrical_belt_chart (D : SphereSurgeryCoreCap v g B)
         {p : S2 | |inner Real v (g p) - (D.center + D.scale / 2)| < |D.scale| / 4} ∧
       F.target ⊆ D.chart '' ball 0 1 :=
   D.exists_cylindrical_belt_chart_of_width hg (by linarith [abs_nonneg D.scale])
-
-
 
 theorem regular_on_open_cylindrical_belt (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
@@ -299,7 +285,6 @@ theorem regular_on_open_cylindrical_belt (D : SphereSurgeryCoreCap v g B)
   rw [hzero, ContinuousLinearMap.zero_comp] at hchain
   have hbad := congrArg (fun L : E1 × Real →L[Real] Real => L (0, 1)) hchain
   norm_num at hbad
-
 
 theorem regular_on_cylindrical_belt (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

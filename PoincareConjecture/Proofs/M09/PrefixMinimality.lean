@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ExponentialConcatenation
 import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

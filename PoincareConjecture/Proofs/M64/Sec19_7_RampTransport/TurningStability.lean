@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.SmoothRampArcs
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -28,10 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
-
 
 theorem exists_smooth_ramp_with_turning_margin
     (P : M62.CircleProductData F circumference)

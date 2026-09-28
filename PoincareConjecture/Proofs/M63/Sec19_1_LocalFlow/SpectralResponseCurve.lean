@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SpectralSpatialJets
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,17 +14,10 @@ variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
   {T : ℝ} (hT : 0 ≤ T) (w : State ((ℤ × Fin 2) × ι))
   (F0 : ForcingSpace ((ℤ × Fin 2) × ι) T)
 
-
-
-
 noncomputable def initialResponseCurve : ℝ → ℝ → EuclideanSpace ℝ ι :=
   fun t x => WithLp.toLp 2 (vectorPeriodicJet (L := L) 1 0 (by omega)
     (initialResponseTrace (fun p : (ℤ × Fin 2) × ι => periodicSpectrum L p.1)
       w hT F0 (projIcc 0 T hT t)) (x : AddCircle L))
-
-
-
-
 
 theorem initialResponseCurve_spec :
     let lambda := fun p : (ℤ × Fin 2) × ι => periodicSpectrum L p.1
@@ -70,10 +54,6 @@ theorem initialResponseCurve_spec :
     exact E.toContinuousLinearMap.hasFDerivAt.comp_hasDerivAt x
       (hasDerivAt_vectorPeriodicJet (L := L) (k := 1) (j := 0) (by omega)
         (V (projIcc 0 T hT t)) x)
-
-
-
-
 
 theorem initialResponseCurve_spatial_jets :
     let lambda := fun p : (ℤ × Fin 2) × ι => periodicSpectrum L p.1

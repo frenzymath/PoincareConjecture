@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M38.SingleCutNeighborhood
 import PoincareConjecture.Proofs.M38.AlignedSphereTwoBallCylinder
 import PoincareConjecture.Proofs.M38.ShortCollarConnectedSum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,10 +21,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   (i : Fin (F.event T hT).cap_count) (hi : i ∉ S)
 
 include hi in
-
-
-
-
 
 theorem singleCut_nonseparating_data
     (hsame : ConnectedComponents.mk ((singleCutBall F T hT P S i false).map 0) =

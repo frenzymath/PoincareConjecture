@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.RestrictedFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem restrictTriangles_retains_incident_triangle_of_local_subset
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) {q : Plane}
@@ -40,8 +30,6 @@ theorem restrictTriangles_retains_incident_triangle_of_local_subset
     ((hVo.inter isOpen_interior).subset_interior_iff.mpr hsub ⟨hzV, hzt⟩) t
   simpa only [TriangleMesh.triangleCarrier, range_meshTriangleBasis] using interior_subset hzt
 
-
-
 theorem restrictTriangles_incident_iff_of_support_eventuallyEq
     (M : TriangleMesh) (P Q : Finset M.Vertex → Prop) {q : Plane}
     (hlocal : (M.restrictTriangles P).toPlaneComplex.support =ᶠ[𝓝 q]
@@ -56,8 +44,6 @@ theorem restrictTriangles_incident_iff_of_support_eventuallyEq
     rw [TriangleMesh.toPlaneComplex_support]
     exact mem_iUnion₂.mpr ⟨t.1, (M.mem_restrictTriangles_triangles P).mpr ⟨t.2, ht⟩, hzt⟩
   exact ⟨hforward P Q hlocal, hforward Q P hlocal.symm⟩
-
-
 
 theorem affineTriangle_eventually_mem_iff_active_halfspaces
     (b : AffineBasis (Fin 3) ℝ Plane) {q : Plane}
@@ -84,8 +70,6 @@ theorem affineTriangle_eventually_mem_iff_active_halfspaces
     · exact h i hi
     · exact (hz i hi).le
 
-
-
 theorem affineTriangle_eventually_mem_iff_corner_halfspaces
     (b : AffineBasis (Fin 3) ℝ Plane) (i : Fin 3) :
     ∀ᶠ z in 𝓝 (b i), z ∈ convexHull ℝ (range b) ↔
@@ -96,9 +80,6 @@ theorem affineTriangle_eventually_mem_iff_corner_halfspaces
   rw [hz]
   simp only [AffineBasis.coord_apply]
   simp
-
-
-
 
 theorem restrictTriangles_support_eventually_eq_active_halfspaces
     (M : TriangleMesh) (P : Finset M.Vertex → Prop) (q : Plane) :
@@ -135,8 +116,6 @@ theorem restrictTriangles_support_eventually_eq_active_halfspaces
     exact mem_iUnion₂.mpr ⟨t.1,
       (M.mem_restrictTriangles_triangles P).mpr ⟨t.2, htP⟩, (hz t).mpr ⟨hqt, hsector⟩⟩
 
-
-
 def restrictTrianglesTriangleEquiv (M : TriangleMesh) (P : Finset M.Vertex → Prop)
     [DecidablePred P] :
     (M.restrictTriangles P).Triangle ≃ {t : M.Triangle // P t.1} where
@@ -148,8 +127,6 @@ def restrictTrianglesTriangleEquiv (M : TriangleMesh) (P : Finset M.Vertex → P
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem meshVertexAngleContribution_restrictTriangles_eq_sum
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -173,8 +150,6 @@ theorem meshVertexAngleContribution_restrictTriangles_eq_sum
   rw [heq, ← Finset.sum_filter]
   exact (Finset.sum_subtype (Finset.univ.filter fun t : M.Triangle => P t.1)
     (by simp) c).symm
-
-
 
 theorem meshVertexAngleContribution_restrictTriangles_eq_of_support_eventuallyEq
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

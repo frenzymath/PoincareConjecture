@@ -1,14 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -17,9 +8,6 @@ open scoped Topology InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem exists_sphericalCap_subset (u : E) (hu : ‖u‖ = 1)
     {U : Set E} (hU : U ∈ 𝓝 u) :

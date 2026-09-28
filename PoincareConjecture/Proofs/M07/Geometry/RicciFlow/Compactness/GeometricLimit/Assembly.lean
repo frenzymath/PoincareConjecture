@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLim
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.QuotientJetConvergence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Subsequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -119,10 +110,6 @@ noncomputable def pointedGeometricConvergence_of_quotient_limit
 end PoincareConjecture.ChartDistance
 
 namespace PoincareConjecture
-
-
-
-
 
 noncomputable def PointedGeometricConvergence.reindex
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}

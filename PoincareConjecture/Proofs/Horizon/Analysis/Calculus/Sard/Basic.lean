@@ -6,20 +6,10 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Analysis.Calculus.TaylorIntegral
 import Mathlib.MeasureTheory.Function.Jacobian
 
-
-
-
-
-
-
-
 open MeasureTheory Set
 open scoped ContDiff
 
 namespace Poincare.Analysis
-
-
-
 
 noncomputable def lineMap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (y v : E) : ℝ →L[ℝ] E :=
@@ -47,9 +37,6 @@ theorem iteratedFDeriv_lineMap
     rfl
   rw [hline]
   exact hcomp
-
-
-
 
 theorem norm_sub_le_of_flat_iteratedFDeriv
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -198,9 +185,6 @@ variable [MeasurableSpace (EuclideanSpace ℝ (Fin m))]
   [BorelSpace (EuclideanSpace ℝ (Fin m))]
   [MeasurableSpace (EuclideanSpace ℝ (Fin n))]
   [BorelSpace (EuclideanSpace ℝ (Fin n))]
-
-
-
 
 theorem measure_zero_image_of_locallyHolderOnWith_of_finrank_div_lt
     {s : Set (EuclideanSpace ℝ (Fin m))}

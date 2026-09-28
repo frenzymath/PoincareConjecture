@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Terminal.Gluing
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +23,6 @@ local instance terminalConstructionConnected (C : FlowCarrier.{0} 3) :
 variable {κ : ℝ} (S : NormalizedKappaSolutionSequence κ)
   (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
     (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
-
-
 
 theorem exists_terminal_referenceChartBall_flow
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -93,8 +82,6 @@ theorem exists_terminal_referenceChartBall_flow
       (mfderiv (𝓡 3) (𝓡 3) (fun y : U => c.symm y) x w)
   rw [hd]
   rfl
-
-
 
 theorem exists_terminal_flow_on_interior_carrier
     (P : M23NormalizedKappaCompactnessPredecessors)

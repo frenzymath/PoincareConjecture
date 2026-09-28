@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.CoordinateEnergyVariation
 import Mathlib.Analysis.Calculus.LineDeriv.IntegrationByParts
 import Mathlib.MeasureTheory.Function.LocallyIntegrable
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,8 +19,6 @@ open Poincare.Riemannian.RadialTransport ConnectionVariation ConjugateVariation
 variable {P E : Type*}
   [NormedAddCommGroup P] [NormedSpace ℝ P]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem contDiff_of_support_subset_closed
     {f : P → E} {K O : Set P} {n : ℕ∞ω}
@@ -46,8 +36,6 @@ theorem contDiff_of_support_subset_closed
 variable [FiniteDimensional ℝ P] [MeasurableSpace P] [BorelSpace P]
   {μ : Measure P} [Measure.IsAddHaarMeasure μ]
 
-
-
 theorem integral_fderiv_eq_zero_of_hasCompactSupport
     {q : P → ℝ} (hq : ContDiff ℝ ∞ q) (hqc : HasCompactSupport q) (d : P) :
     ∫ x, fderiv ℝ q x d ∂μ = 0 := by
@@ -64,8 +52,6 @@ theorem integral_fderiv_eq_zero_of_hasCompactSupport
 
 omit [FiniteDimensional ℝ P] [MeasurableSpace P] [BorelSpace P] in
 
-
-
 theorem support_covariantDerivative_subset
     (A : P → P →L[ℝ] E →L[ℝ] E) (V : P → E) (d : P) :
     Function.support (fun x => covariantDerivative A V x d) ⊆ tsupport V := by
@@ -76,7 +62,6 @@ theorem support_covariantDerivative_subset
   exact hx (by simp [covariantDerivative, hV, hd])
 
 omit [FiniteDimensional ℝ P] in
-
 
 theorem integrable_covariant_pairings
     {A : P → P →L[ℝ] E →L[ℝ] E}
@@ -113,8 +98,6 @@ theorem integrable_covariant_pairings
   · exact (contDiff_of_support_subset_closed (isClosed_tsupport V) hO hVO
       ((hG.clm_apply hV).clm_apply hDW) hsR).continuous
       |>.integrable_of_hasCompactSupport (hVc.mono' hsR)
-
-
 
 theorem integral_covariant_pairing_eq_neg
     {A : P → P →L[ℝ] E →L[ℝ] E}
@@ -153,10 +136,6 @@ theorem integral_covariant_pairing_eq_neg
   simp_rw [hprod] at hz
   rw [integral_add hi.1 hi.2] at hz
   linarith
-
-
-
-
 
 theorem covDerivAlong_trace_integration_by_parts
     {ι : Type*} [Fintype ι] (e : ι → P)

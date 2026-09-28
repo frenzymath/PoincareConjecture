@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Maps.OpenPartialHomeomorph.Com
 import PoincareConjecture.Proofs.M38.ProjectiveReverse
 import PoincareConjecture.Proofs.M38.LinearCollarBall
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +13,6 @@ universe u
 namespace PoincareConjecture.M38
 
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem exists_ballNeighborhood_in_coordinates
     {M : Type u} [TopologicalSpace M] [ChartedSpace StandardCapSpace M] [T2Space M]
@@ -94,8 +81,6 @@ theorem exists_ballNeighborhood_in_coordinates
   change (e.symm ∘ f) '' Metric.closedBall 0 1 = K
   rw [image_comp, hfL]
   exact e.toPartialEquiv.symm_image_image_of_subset_source hKs
-
-
 
 theorem exists_surgeryBall_of_collared_coordinate_domain
     {A : GeneralizedSliceCarrier.{u}}

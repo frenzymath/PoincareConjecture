@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedHalfspaceGraph
 import PoincareConjecture.Proofs.M76.Mathlib.GraphAttachedVertices
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBirthStar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
-
 
 theorem exists_positive_graph_neighbor_of_mem_closure
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -57,10 +43,6 @@ theorem exists_positive_graph_neighbor_of_mem_closure
   · exact Finset.mem_insert_of_mem ((Finset.mem_singleton.mp hy).symm ▸ hv)
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem preconnected_positive_vertex_graph_of_sign_preservation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

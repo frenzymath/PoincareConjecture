@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.LocalCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Small
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -36,8 +28,6 @@ theorem compactnessWindow_curvature_bound (S : AncientRescalingSequence K)
     (compactnessUpper j) A (by linarith [compactnessUpper_base j]) (compactnessUpper_neg j)
   refine ⟨C, hC.le, Filter.Eventually.of_forall fun k t₀ ht₀ t ht x hx ↦ ?_⟩
   exact (le_abs_self _).trans (hbound k t₀ ht₀.2 t ht.2 x hx)
-
-
 
 theorem finiteCompactness (S : AncientRescalingSequence K)
     (P : AncientAsymptoticSolitonPredecessors K) (j : ℕ) :

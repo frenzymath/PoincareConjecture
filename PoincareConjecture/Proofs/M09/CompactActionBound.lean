@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.EndpointComparisonAction
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

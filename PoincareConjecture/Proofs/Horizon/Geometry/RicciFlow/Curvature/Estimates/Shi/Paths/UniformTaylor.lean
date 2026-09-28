@@ -4,17 +4,6 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -82,8 +71,6 @@ private theorem iteratedDeriv_line_eq
     congrArg (fun A => A (fun _ : Fin k => (1 : ℝ))) h
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_uniform_quadratic_taylor_bound [FiniteDimensional ℝ V]
     (K : Set P) (hK : IsCompact K) (O : Set (P × V)) (hO : IsOpen O)

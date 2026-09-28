@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Frame.Transport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,13 +13,6 @@ open PoincareConjecture.RicciFlow.Frame
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [CompleteSpace E] [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
 
 theorem exists_metric_orthonormal_transport
     {J : Set ℝ} (G : EvolvingMetricData (V := E) J)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Tubes.Branches.PairedNeighborhoods
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -18,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] {sourceSet rimSet : Set E}
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
-
-
 
 theorem SourceDoubleComponents.exists_paired_component_neighborhoods
     [T2Space X] (M : SourceDoubleComponents e f sourceSet rimSet R)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2Continuity
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductIdentities
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem c2_slope_continuousOn (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T))
     (hT : a < T) :
@@ -39,8 +28,6 @@ theorem c2_slope_continuousOn (P : M62.CircleProductData F circumference)
     (fun z hz => (c2_speed_pos P.flow c hc hz.2 z.1).ne')
   simpa only [Pi.mul_def, Pi.inv_def, m62Slope, spatialUnitTangent,
     map_smul, smul_apply, smul_eq_mul] using hinv.mul hpair
-
-
 
 theorem c2_abs_slope_le_one (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T))
@@ -64,8 +51,6 @@ theorem c2_abs_slope_le_one (P : M62.CircleProductData F circumference)
   calc
     _ ≤ ‖S‖ * ‖B‖ := abs_real_inner_le_norm S B
     _ = 1 := by rw [hS, hB, mul_one]
-
-
 
 theorem c2_rampRatio_continuousOn (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T))

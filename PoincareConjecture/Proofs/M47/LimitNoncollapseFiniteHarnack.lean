@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteHarnackDomain
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.BoundedFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Comparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,7 +23,6 @@ private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     SecondCountableTopology L.carrier.carrier := L.carrier.secondCountable
 private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     ConnectedSpace L.carrier.carrier := L.connectedSpace
-
 
 theorem limitFinite_interior_harnack (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
@@ -62,7 +53,6 @@ theorem limitFinite_interior_harnack (h04 : RicciFlowCurvatureTheory.{u})
   simpa [spacetimeEnergy, F, limitFiniteOpenFlow,
     Poincare.Geometry.RicciFlow.Harnack.restrictFlow] using hi
 
-
 theorem limitFinite_weighted_scalar (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H))
@@ -87,7 +77,6 @@ theorem limitFinite_weighted_scalar (h04 : RicciFlowCurvatureTheory.{u})
     simpa only [Pi.mul_apply, Pi.add_apply, id_eq, zero_add] using h
   · simp
 
-
 theorem limitFinite_scalar_le (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) {Q : ℝ}
@@ -98,7 +87,6 @@ theorem limitFinite_scalar_le (h04 : RicciFlowCurvatureTheory.{u})
   apply (le_div_iff₀ (by linarith [ht'.1] : 0 < t + H.toReal)).mpr
   exact (limitFinite_weighted_scalar h04 hH hfinite L t ht x).2.trans
     (mul_le_mul_of_nonneg_right (hQ0 x) (limitFinite_horizon_pos hH hfinite).le)
-
 
 theorem limitFinite_scalar_harnack (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
@@ -114,7 +102,6 @@ theorem limitFinite_scalar_harnack (h04 : RicciFlowCurvatureTheory.{u})
     (limitFinite_horizon_pos hH hfinite).le)⟩
   exact ((L.flow.connection 0).scalarCurvature_le_curvatureTensorNorm_sharp x).trans
     ((mul_le_mul_of_nonneg_left (hterminal x) (by norm_num)).trans (le_max_right _ _))
-
 
 theorem limitFinite_ricci_slab (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)

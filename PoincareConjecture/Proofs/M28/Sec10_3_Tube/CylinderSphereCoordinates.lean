@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereTransport
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderEndRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -38,9 +28,6 @@ private theorem homeomorph_symm_height (T : OpenCylinderModel (U : Set M)) (x : 
       univ ×ˢ Ioo (0 : ℝ) 1 from ⟨mem_univ _, (T.homeomorph.symm x).2.property⟩)
   rw [hcoord] at h
   exact (congrArg Prod.snd h).symm
-
-
-
 
 theorem exists_isotopic_sphere_coordinates
     (T : OpenCylinderModel (U : Set M)) {S : Set M}

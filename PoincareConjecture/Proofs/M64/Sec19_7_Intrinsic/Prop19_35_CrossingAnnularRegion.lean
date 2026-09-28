@@ -1,22 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CrossRayRegion
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AnnularBigonRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,10 +8,6 @@ open Set Function Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_crossing_annular_region
     {alpha beta base : ℝ → AnnulusCoordinates} {A B a b : ℝ}

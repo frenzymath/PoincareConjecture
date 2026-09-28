@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.ReducedLengthSublevel
 import PoincareConjecture.Proofs.M10.CompactSublevelMinimum
 import PoincareConjecture.Proofs.M10.Continuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -52,7 +43,6 @@ theorem exists_uniform_reducedLength_comparator
     (ha.trans_le hτ.1) (hτ.2.trans_lt hbmax)).trans ?_⟩
   exact hLbound (mem_image_of_mem A hτ)
 
-
 theorem reducedLength_infimum_on_compact_time
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -83,7 +73,6 @@ theorem reducedLength_infimum_on_compact_time
     obtain ⟨q, _, _, hq⟩ := exists_global_minimum_of_compact_sublevel hslice hK
       (hsub τ (ha.trans_le hτ.1) hτ.2) (hcomp τ hτ)
     exact ⟨q, hq⟩
-
 
 theorem reducedLength_minimum_data
     (hL : LGeodesicTheory F T τmax) (G : LExponentialGeometry F T τmax p)

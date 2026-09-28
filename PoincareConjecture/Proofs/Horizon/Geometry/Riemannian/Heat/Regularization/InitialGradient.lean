@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Regularization.InitialGradient.Continuity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,8 +15,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 def compactInitialEvolution (D : LeviCivitaData g) {Ω : ℕ → Set M}
     (S : ∀ j, Poincare.Manifold.SmoothDomain n (Ω j)) (f : M → ℝ)
@@ -50,7 +37,6 @@ theorem compactInitialEvolution_of_pos (D : LeviCivitaData g) {Ω : ℕ → Set 
 
 variable [PreconnectedSpace M]
 
-
 theorem contMDiffOn_compactInitialEvolution
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)
     (hRic : ∀ x (v : TangentSpace (𝓡 n) x), -k * g.inner x v v ≤ D.ricci x v v)
@@ -63,8 +49,6 @@ theorem contMDiffOn_compactInitialEvolution
     hf hfc).congr
   intro p hp
   exact compactInitialEvolution_of_pos D S f hp.1 p.2
-
-
 
 theorem continuousOn_compactInitialEvolution_gradient_normSq
     (D : LeviCivitaData g) (hc : MetricComplete g) {k : ℝ} (hk : 0 ≤ k)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductCut
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.CompressionCapGeometry
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -18,8 +10,6 @@ namespace PoincareConjecture.M76
 
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem OriginalDiskProduct.compressed_frontier_away_block
     {X ι : Type*} [TopologicalSpace X]
@@ -41,10 +31,6 @@ theorem OriginalDiskProduct.compressed_frontier_away_block
 end PoincareConjecture.M76
 
 namespace Set
-
-
-
-
 
 theorem unaffected_components_of_eq_sdiff
     {X κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -115,10 +101,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 
-
-
-
-
 theorem OriginalDiskProduct.unaffected_frontier_components
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
     {e : ι → OpenPartialHomeomorph X V3} {K F Fnew : Set X} {j : V2 → X}
@@ -134,9 +116,6 @@ theorem OriginalDiskProduct.unaffected_frontier_components
   Set.unaffected_components_of_eq_sdiff
     (P.isCompact_closed_strip (by norm_num : (1 / 2 : ℝ) ≤ 1)).isClosed
     S hcompact hconn hcover hcomponent (P.compressed_frontier_away_block hnew)
-
-
-
 
 theorem OriginalDiskProduct.new_frontier_components_avoiding_caps
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

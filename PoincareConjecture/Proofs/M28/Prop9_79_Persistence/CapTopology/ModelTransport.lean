@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,10 +13,6 @@ variable {M M' : Type u} [TopologicalSpace M] [TopologicalSpace M']
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M']
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ M']
-
-
-
-
 
 noncomputable def transport_m28 {kind : CapModelKind} {p : RealProjectiveThree} {V : Set M}
     (C : CapModelEquivalence kind p V)

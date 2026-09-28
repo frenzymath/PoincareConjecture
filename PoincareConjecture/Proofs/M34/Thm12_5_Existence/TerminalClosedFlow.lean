@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Standard.FlowLocality
 import PoincareConjecture.Proofs.M34.Standard.RicciOperatorEvaluation
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.Coordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,42 +21,31 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (hfull : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
 
-
-
 noncomputable def closedMetricConnection (t : ℝ) :
     Σ g : RiemannianMetric 3 StandardCapSpace, LeviCivitaData g :=
   if t < S then ⟨F.flow.metric t, F.flow.connection t⟩ else
     let g := L.metric P E0 hS hSF hB hfull
     ⟨g, g.euclideanLeviCivitaData⟩
 
-
 noncomputable def closedMetric (t : ℝ) : RiemannianMetric 3 StandardCapSpace :=
   (L.closedMetricConnection P E0 hS hSF hB hfull t).1
-
 
 noncomputable def closedConnection (t : ℝ) :
     LeviCivitaData (L.closedMetric P E0 hS hSF hB hfull t) :=
   (L.closedMetricConnection P E0 hS hSF hB hfull t).2
-
-
 
 theorem closedMetricConnection_of_lt {t : ℝ} (ht : t < S) :
     L.closedMetricConnection P E0 hS hSF hB hfull t =
       ⟨F.flow.metric t, F.flow.connection t⟩ := by
   simp only [closedMetricConnection, ht, if_true]
 
-
 theorem closedMetric_of_lt {t : ℝ} (ht : t < S) :
     L.closedMetric P E0 hS hSF hB hfull t = F.flow.metric t := by
   simp only [closedMetric, L.closedMetricConnection_of_lt P E0 hS hSF hB hfull ht]
 
-
-
 theorem closedMetric_terminal :
     L.closedMetric P E0 hS hSF hB hfull S = L.metric P E0 hS hSF hB hfull := by
   simp only [closedMetric, closedMetricConnection, lt_self_iff_false, if_false]
-
-
 
 theorem closedMetric_coefficients (t : ℝ) :
     (L.closedMetric P E0 hS hSF hB hfull t).euclideanCoefficients =
@@ -79,8 +58,6 @@ theorem closedMetric_coefficients (t : ℝ) :
     rw [L.metric_coefficients]
     funext x
     exact (L.closedCoefficients_of_le (not_lt.mp ht) x).symm
-
-
 
 theorem closedMetric_smooth :
     RiemannianMetric.IsSmoothFamilyOn (L.closedMetric P E0 hS hSF hB hfull) (Icc 0 S) := by
@@ -95,8 +72,6 @@ theorem closedMetric_smooth :
     exact congrArg (fun A => A x u v) (L.closedMetric_coefficients P E0 hS hSF hB hfull t)
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem closedMetric_equation_Ioc {t : ℝ} (ht : t ∈ Ioc 0 S) (x u v : StandardCapSpace) :
     HasDerivWithinAt (fun s => (L.closedMetric P E0 hS hSF hB hfull s).inner x u v)
@@ -116,8 +91,6 @@ theorem closedMetric_equation_Ioc {t : ℝ} (ht : t ∈ Ioc 0 S) (x u v : Standa
       (L.closedMetric_coefficients P E0 hS hSF hB hfull s))
   rw [hfunction]
   simpa only [map_zero, add_zero, zero_add, hop] using h
-
-
 
 theorem closedMetric_equation {t : ℝ} (ht : t ∈ Icc 0 S) (x u v : StandardCapSpace) :
     HasDerivWithinAt (fun s => (L.closedMetric P E0 hS hSF hB hfull s).inner x u v)
@@ -141,8 +114,6 @@ theorem closedMetric_equation {t : ℝ} (ht : t ∈ Icc 0 S) (x u v : StandardCa
     have hd := L.closedMetric_equation_Ioc P E0 hS hSF hB hfull ⟨hpos, ht.2⟩ x u v
     exact hd.mono_of_mem_nhdsWithin hdom
 
-
-
 noncomputable def closedFlow : RicciFlow 3 StandardCapSpace (Icc 0 S) where
   metric := L.closedMetric P E0 hS hSF hB hfull
   connection := L.closedConnection P E0 hS hSF hB hfull
@@ -150,8 +121,6 @@ noncomputable def closedFlow : RicciFlow 3 StandardCapSpace (Icc 0 S) where
   nontrivial := ⟨0, ⟨le_rfl, hS.le⟩, S, ⟨hS.le, le_rfl⟩, hS.ne⟩
   smooth := L.closedMetric_smooth P E0 hS hSF hB hfull
   equation t ht x u v := L.closedMetric_equation P E0 hS hSF hB hfull (t := t) ht x u v
-
-
 
 theorem closedFlow_complete {t : ℝ} (ht : t ∈ Icc 0 S) :
     MetricComplete ((L.closedFlow P E0 hS hSF hB hfull).metric t) := by

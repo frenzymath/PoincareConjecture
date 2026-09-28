@@ -12,16 +12,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicDerivativeConvergence
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.SecondJetBound
 import PoincareConjecture.Proofs.M04.ScalarHessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +33,6 @@ local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_normalFirstJet_normalizationDerivative_limits [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

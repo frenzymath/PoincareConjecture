@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_JordanCorner
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -19,10 +7,6 @@ open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_regular_support_product_line_germ
     {K : Set (ℝ × ℝ)} (hK : IsClosed K) (hregular : closure (interior K) = K)
@@ -74,10 +58,6 @@ theorem m64Intrinsic_regular_support_product_line_germ
   · right
     filter_upwards [h.trans hBcl] with z hz
     exact propext_iff.mp hz
-
-
-
-
 
 theorem m64Intrinsic_jordan_product_line_germ
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)

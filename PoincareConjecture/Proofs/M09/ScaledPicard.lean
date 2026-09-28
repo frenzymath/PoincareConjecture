@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.PathSpaceCalculus
 import PoincareConjecture.Proofs.M09.PathPrimitive
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology

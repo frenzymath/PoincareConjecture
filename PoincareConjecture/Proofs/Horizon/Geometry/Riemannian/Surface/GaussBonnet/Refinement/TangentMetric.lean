@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.MeshTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +12,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
 
 noncomputable def coordinateTangentMetric
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -49,7 +41,6 @@ noncomputable def coordinateTangentMetric
       g.inner (F q) (mfderiv (𝓡 2) (𝓡 2) F q v)
         (mfderiv (𝓡 2) (𝓡 2) F q w) := rfl
 
-
 theorem coordinateTriangleVelocity_refl
     (b : AffineBasis (Fin 3) ℝ Plane) (i j : Fin 3) :
     coordinateTriangleVelocity (OpenPartialHomeomorph.refl Plane) b i j = b j - b i := by
@@ -58,7 +49,6 @@ theorem coordinateTriangleVelocity_refl
   change (mfderiv (𝓡 2) (𝓡 2) id (b i)) (b j - b i) = _
   rw [mfderiv_id]
   rfl
-
 
 theorem coordinateTriangleAngle_eq_tangentMetric
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -75,8 +65,6 @@ theorem coordinateTriangleAngle_eq_tangentMetric
     coordinateTriangleVelocity_eq_differential F b hF hb,
     coordinateTriangleVelocity_refl, RiemannianMetric.cornerAngle,
     coordinateTangentMetric_inner, map_smul, smul_apply]
-
-
 
 theorem meshVertexAngleContribution_eq_tangentMetric
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

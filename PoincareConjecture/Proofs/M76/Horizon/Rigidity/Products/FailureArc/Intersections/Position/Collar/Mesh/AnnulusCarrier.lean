@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Reduction.Sourc
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusOpenChart
 import Mathlib.Topology.Instances.AddCircle.Real
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

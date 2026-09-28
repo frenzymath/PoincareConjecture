@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CirclePeriodCoordinates
 import Mathlib.Analysis.Calculus.Deriv.Basic
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function
@@ -21,8 +10,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem contMDiff_of_smooth_period_lift (T : ℝ) (hT : T ≠ 0)
     (c : UnitCircle → E) (hc : ContDiff ℝ ∞ (c ∘ periodCircleParam T)) :
@@ -33,9 +20,6 @@ theorem contMDiff_of_smooth_period_lift (T : ℝ) (hT : T ≠ 0)
     rw [comp_assoc, hsection, comp_id]
   have h := hc.comp_contMDiffAt hs
   rwa [heq] at h
-
-
-
 
 theorem mfderiv_injective_of_nonzero_period_lift (T : ℝ) (hT : T ≠ 0)
     (c : UnitCircle → E) (hc : ContDiff ℝ ∞ (c ∘ periodCircleParam T))

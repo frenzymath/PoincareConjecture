@@ -4,27 +4,13 @@ import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace BrownCollar
 
-
-
 noncomputable def collapseHeight (a t : ℝ) : ℝ := max 0 (min t (2 * t - a))
-
-
 
 noncomputable def liftHeight (a t : ℝ) : ℝ := max t ((t + a) / 2)
 
@@ -76,8 +62,6 @@ theorem liftHeight_zero {a : ℝ} (ha : 0 ≤ a) : liftHeight a 0 = a / 2 := by
 
 variable {B : Type*} [TopologicalSpace B]
 
-
-
 def spindleUpper (height : B → ℝ) : Set (B × Ico (0 : ℝ) 1) :=
   {z | height z.1 / 2 ≤ (z.2 : ℝ)}
 
@@ -93,10 +77,6 @@ private theorem continuous_liftHeight (height : B → ℝ) (hc : Continuous heig
   have ht : Continuous (fun z : B × Ico (0 : ℝ) 1 => (z.2 : ℝ)) :=
     continuous_subtype_val.comp continuous_snd
   exact ht.max ((ht.add (hc.comp continuous_fst)).div_const 2)
-
-
-
-
 
 noncomputable def spindleUpperHomeomorph (height : B → ℝ) (hc : Continuous height)
     (hbounds : ∀ b, height b ∈ Icc (0 : ℝ) 1) :

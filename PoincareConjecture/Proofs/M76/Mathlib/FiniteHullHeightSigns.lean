@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 import Mathlib.Data.Finset.Max
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +9,6 @@ open Set
 namespace Finset
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem eq_of_mem_convexHull_of_injective_affine_minimum
     (s : Finset E) (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A (s : Set E))
@@ -38,10 +23,6 @@ theorem eq_of_mem_convexHull_of_injective_affine_minimum
     exact hA hw.1 hv (sub_eq_zero.mp hw.2)
   have h := convexHull_mono hsingle hzero
   simpa only [convexHull_singleton, mem_singleton_iff] using h
-
-
-
-
 
 theorem mem_both_height_closures_of_distinct_level_points
     (s : Finset E) (hs : s.Nonempty) (A : E →ᵃ[ℝ] ℝ)

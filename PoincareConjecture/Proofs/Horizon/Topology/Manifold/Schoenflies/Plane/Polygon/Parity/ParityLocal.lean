@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.BoundaryBasics
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology BigOperators
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem lineSideParity_prev_eq_of_vertex_height
     {E : Type*} [AddCommGroup E] [Module ℝ E] {n : ℕ}
@@ -35,8 +23,6 @@ theorem lineSideParity_prev_eq_of_vertex_height
   simp only [lineSideParity, Equiv.apply_symm_apply, hq,
     lineLevelPoint_left, lineLevelPoint_right H hi]
 
-
-
 theorem sum_weighted_heightStep_equiv {I : Type*} [Fintype I]
     (e : I ≃ I) (w : I → ZMod 2) (h : I → ℝ) (y : ℝ) :
     ∑ i, w i * (heightStep (h i) y + heightStep (h (e i)) y) =
@@ -47,8 +33,6 @@ theorem sum_weighted_heightStep_equiv {I : Type*} [Fintype I]
     Equiv.sum_comp e (fun i => w (e.symm i) * heightStep (h i) y)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem polygonCrossingParity_eventually_eq (p : Polygon E n) (X H : E →ₗ[ℝ] ℝ)
     (hX : Continuous X) (hH : Continuous H)
@@ -95,8 +79,6 @@ theorem polygonCrossingParity_eventually_eq (p : Polygon E n) (X H : E →ₗ[�
     _ = polygonCrossingParity p X H q :=
       Finset.sum_congr rfl fun i _ => (hedges.self_of_nhds i).symm
 
-
-
 theorem isLocallyConstant_polygonCrossingParity (p : Polygon E n) (X H : E →ₗ[ℝ] ℝ)
     (hX : Continuous X) (hH : Continuous H)
     (hcoords : Function.Injective (fun x => (X x, H x)))
@@ -107,8 +89,6 @@ theorem isLocallyConstant_polygonCrossingParity (p : Polygon E n) (X H : E →�
   intro q
   exact continuous_subtype_val.continuousAt.eventually
     (polygonCrossingParity_eventually_eq p X H hX hH hcoords he q.property)
-
-
 
 theorem polygonCrossingParity_eq_of_isPreconnected (p : Polygon E n) (X H : E →ₗ[ℝ] ℝ)
     (hX : Continuous X) (hH : Continuous H)

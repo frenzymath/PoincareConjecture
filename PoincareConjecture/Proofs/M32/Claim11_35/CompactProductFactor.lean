@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M32.Mathlib.ProductSeparator
 import PoincareConjecture.Proofs.M32.Claim11_35.FiniteProductFactor
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M32
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem blowupLimit_exists_compact_product_on_closed_slab
     (P : RepairedHornSelectionPredecessors.{u}) {T₀ : ℝ≥0∞}

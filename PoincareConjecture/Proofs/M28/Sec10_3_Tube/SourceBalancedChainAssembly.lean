@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,15 +13,9 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
-
 def neckOfList (l : List (EpsilonNeck g)) (fallback : EpsilonNeck g) (i : ℤ) :
     EpsilonNeck g :=
   l.getD i.toNat fallback
-
-
-
 
 structure SourceEdgePacket (N Q : EpsilonNeck g) (ε : ℝ) : Prop where
   epsilon_N : N.epsilon = ε
@@ -50,9 +34,6 @@ structure SourceEdgePacket (N Q : EpsilonNeck g) (ε : ℝ) : Prop where
         g.edist N.center Q.center ∧
       g.edist N.center Q.center ≤
         ENNReal.ofReal ((1.01 : ℝ) * N.scale * ε⁻¹)
-
-
-
 
 theorem exists_source_balanced_chain_of_edge_packets
     (l : List (EpsilonNeck g)) (fallback : EpsilonNeck g) (ε : ℝ)

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boun
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Embedding.Continuous
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.SmoothRepresentative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +20,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M} {Ω : Set M}
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem exists_local_heatPower_continuous (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :

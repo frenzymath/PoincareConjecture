@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M03.Existence.FrameDeTurckDerivativeNative
 import PoincareConjecture.Proofs.M03.Existence.CoordinateEllipticityNative
 import Mathlib.Geometry.Manifold.BumpFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -130,7 +123,6 @@ theorem inverse_entry_contMDiff (G : M → Matrix (Fin n) (Fin n) ℝ)
   have hc := hinv.comp (f := fun y a b => G y a b) x (hG x)
   exact contMDiffAt_pi_space.mp (contMDiffAt_pi_space.mp hc i) j
 
-
 theorem matrix_inv_sub_inv_entry
     {A B : Matrix (Fin n) (Fin n) ℝ} (hA : A.det ≠ 0) (hB : B.det ≠ 0)
     (i j : Fin n) :
@@ -180,7 +172,6 @@ theorem directionalWord_inverse_append
         (fun u _ => smooth_sum Finset.univ _ (fun v _ => hterm u v)) x
     _ = _ := Finset.sum_congr rfl
       (fun u _ => directionalWord_sum Finset.univ F w _ (fun v _ => hterm u v) x)
-
 
 def inverseSupBound (n k : ℕ) (A I : ℝ) : ℝ :=
   match k with
@@ -267,7 +258,6 @@ theorem norm_directionalWord_inverse_le
             J + (n : ℝ) ^ 2 * (2 : ℝ) ^ (2 * k) * A * J ^ 2
           nlinarith only [hJ]
 
-
 theorem directionalWord_inverse_sub
     (F : iota → SmoothField (n := n) (M := M)) (w : List iota)
     (G H : M → Matrix (Fin n) (Fin n) ℝ)
@@ -298,7 +288,6 @@ theorem directionalWord_inverse_sub
         (fun u _ => smooth_sum Finset.univ _ (fun v _ => hterm u v)) x
     _ = _ := Finset.sum_congr rfl
       (fun u _ => directionalWord_sum Finset.univ F w _ (fun v _ => hterm u v) x)
-
 
 theorem norm_directionalWord_inverse_sub_le
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ)
@@ -414,7 +403,6 @@ theorem inverseL2Bound_nonneg (n k : ℕ) {A J : ℝ} (hA : 0 ≤ A) (hJ : 0 ≤
   induction k with
   | zero => exact hJ
   | succ k ih => dsimp only [inverseL2Bound]; positivity
-
 
 theorem lpNorm_directionalWord_inverse_le_of_low
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ)
@@ -545,8 +533,6 @@ theorem lpNorm_directionalWord_inverse_le_of_low
             nlinarith only [mul_nonneg hK hU]
   exact hall k le_rfl
 
-
-
 theorem lpNorm_directionalWord_inverse_le
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ)
     (G : M → Matrix (Fin n) (Fin n) ℝ)
@@ -565,7 +551,6 @@ theorem lpNorm_directionalWord_inverse_le
   lpNorm_directionalWord_inverse_le_of_low μ F k G hG hdet hA
     (inverseSupBound_nonneg n (k / 2 + 1) hA hI) hH hGLow
     (norm_directionalWord_inverse_le F (k / 2 + 1) G hG hdet hA hI hGLow hInv) hGHigh
-
 
 theorem lpNorm_directionalWord_inverse_sub_le_of_bounds
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ)
@@ -652,7 +637,6 @@ theorem lpNorm_directionalWord_inverse_sub_le_of_bounds
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, nsmul_eq_mul]
       ring
 
-
 theorem lpNorm_directionalWord_inverse_sub_le
     (F : iota → SmoothField (n := n) (M := M)) (k : ℕ)
     (G H : M → Matrix (Fin n) (Fin n) ℝ)
@@ -713,7 +697,6 @@ end InverseL2
 
 section PositiveExtension
 
-
 def positiveMatrixExtension (chi : M → ℝ) (G : M → Matrix (Fin n) (Fin n) ℝ)
     (x : M) : Matrix (Fin n) (Fin n) ℝ :=
   chi x • G x + (1 - chi x) • 1
@@ -729,7 +712,6 @@ theorem positiveMatrixExtension_posDef (chi : M → ℝ)
   · exact ((hG x hx).smul (lt_of_le_of_ne (hzero x) (Ne.symm hx))).add_posSemidef
       ((Matrix.PosSemidef.one : (1 : Matrix (Fin n) (Fin n) ℝ).PosSemidef).smul
         (sub_nonneg.mpr (hone x)))
-
 
 theorem positiveMatrixExtension_contMDiff (chi : M → ℝ)
     (G : M → Matrix (Fin n) (Fin n) ℝ) {U : Set M} (hU : IsOpen U)
@@ -782,7 +764,6 @@ theorem positiveMatrixExtension_eventuallyEq (chi : M → ℝ)
   filter_upwards [hchi] with y hy
   exact positiveMatrixExtension_eq_of_one chi G hy
 
-
 theorem directionalWord_eventuallyEq (F : iota → SmoothField (n := n) (M := M))
     (w : List iota) {f g : M → ℝ} {x : M} (h : f =ᶠ[𝓝 x] g) :
     directionalWord F w f =ᶠ[𝓝 x] directionalWord F w g := by
@@ -818,7 +799,6 @@ theorem directionalWord_positiveMatrixExtension_inv_eq
 section ChartMetric
 
 variable [T2Space M]
-
 
 def cutoffChartMetric (g : RiemannianMetric n M) (p : M)
     (b : SmoothBumpFunction (𝓡 n) p) : M → Matrix (Fin n) (Fin n) ℝ :=
@@ -896,7 +876,6 @@ section UniformInverse
 
 open scoped Matrix.Norms.Elementwise
 
-
 theorem exists_uniform_inverse_perturbation [CompactSpace M]
     (G : M → Matrix (Fin n) (Fin n) ℝ) (hG : Continuous G)
     (hpos : ∀ x, (G x).PosDef) :
@@ -932,7 +911,6 @@ theorem exists_uniform_inverse_perturbation [CompactSpace M]
     simpa only [Metric.mem_closedBall, dist_zero_right] using hsmall x
   refine ⟨hSpos _ hmem, fun i j => ?_⟩
   exact (Matrix.norm_entry_le_entrywise_sup_norm _).trans (hbound _ ⟨_, hmem, rfl⟩)
-
 
 theorem exists_cutoffChartMetric_inverse_perturbation [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) (p : M) (b : SmoothBumpFunction (𝓡 n) p) :

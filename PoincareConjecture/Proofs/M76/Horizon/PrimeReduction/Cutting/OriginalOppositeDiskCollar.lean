@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.ClosedSphere
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CenteredOppositeCollar
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

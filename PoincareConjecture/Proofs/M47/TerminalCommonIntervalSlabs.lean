@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalDecision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,15 +9,12 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
 def TerminalCommonIntervalSlab (V : GeneralizedBlowupSequence.{u}) (T : ℝ) : Prop :=
   ∃ B : ℝ, 0 ≤ B ∧ ∀ A : ℝ, 0 < A → ∀ eta : ℝ, 0 < eta →
     ∀ᶠ k in atTop, Nonempty (ControlledBlowupCylinder V k A T B eta)
 
-
 def TerminalCommonIntervalHorizons (V : GeneralizedBlowupSequence.{u}) : Set ℝ≥0∞ :=
   {H | ∀ T : ℝ, 0 < T → ENNReal.ofReal T < H → TerminalCommonIntervalSlab V T}
-
 
 theorem terminalCommonInterval_slab_mono
     {V : GeneralizedBlowupSequence.{u}} {T T' : ℝ}
@@ -36,7 +25,6 @@ theorem terminalCommonInterval_slab_mono
   filter_upwards [hc A hA eta heta] with k hk
   exact hk.map (fun e => terminalCommonInterval_restrict e le_rfl hT le_rfl le_rfl)
 
-
 theorem terminalCommonInterval_slab_reindex
     {V : GeneralizedBlowupSequence.{u}} {T : ℝ}
     (h : TerminalCommonIntervalSlab V T) {sigma : ℕ → ℕ} (hsigma : StrictMono sigma) :
@@ -45,7 +33,6 @@ theorem terminalCommonInterval_slab_reindex
   refine ⟨B, hB, fun A hA eta heta => ?_⟩
   filter_upwards [hsigma.tendsto_atTop.eventually (hc A hA eta heta)] with k hk
   exact terminalCommonInterval_reindex_cylinder_iff.mpr hk
-
 
 theorem terminalCommonInterval_slab_iff_tests
     (V : GeneralizedBlowupSequence.{u}) (T : ℝ) :
@@ -66,7 +53,6 @@ theorem terminalCommonInterval_slab_iff_tests
     exact hk.map (fun e => terminalCommonInterval_restrict e
       (by linarith : A ≤ (a : ℝ) + 1) le_rfl le_rfl hm.le)
 
-
 theorem terminalCommonInterval_rational_slab_reflect
     {V : GeneralizedBlowupSequence.{u}} (hdec : TerminalCommonIntervalDecided V)
     {sigma : ℕ → ℕ} (hsigma : StrictMono sigma) (q : ℚ)
@@ -83,7 +69,6 @@ theorem terminalCommonInterval_rational_slab_reflect
     obtain ⟨k, hk, hn⟩ := (htrue.and (hsigma.tendsto_atTop.eventually hno)).exists
     exact (hn hk).elim
 
-
 theorem terminalCommonInterval_rational_buffer {T : ℝ} {H : ℝ≥0∞}
     (hT : 0 < T) (hH : ENNReal.ofReal T < H) :
     ∃ q : ℚ, T < (q : ℝ) ∧ ENNReal.ofReal (q : ℝ) < H := by
@@ -93,7 +78,6 @@ theorem terminalCommonInterval_rational_buffer {T : ℝ} {H : ℝ≥0∞}
   · have hreal : T < H.toReal := (ENNReal.ofReal_lt_iff_lt_toReal hT.le htop).mp hH
     obtain ⟨q, hq, hqH⟩ := exists_rat_btwn hreal
     exact ⟨q, hq, (ENNReal.ofReal_lt_iff_lt_toReal (hT.trans hq).le htop).mpr hqH⟩
-
 
 theorem terminalCommonInterval_horizons_reindex
     {V : GeneralizedBlowupSequence.{u}} (hdec : TerminalCommonIntervalDecided V)

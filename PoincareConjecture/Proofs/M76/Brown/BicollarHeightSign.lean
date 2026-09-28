@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.TwoOpenSignCover
 import PoincareConjecture.Proofs.M76.Brown.SignedCylinderCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -23,8 +15,6 @@ def bicollarHeight (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C) (y : C) : ℝ :=
 theorem continuous_bicollarHeight (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C) :
     Continuous (bicollarHeight H) :=
   continuous_subtype_val.comp (continuous_snd.comp H.symm.continuous)
-
-
 
 theorem bicollarHeight_eq_zero_iff (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C)
     (hbase : ∀ s, (H (bicollarBase s) : X) = (s : X)) (y : C) :
@@ -54,8 +44,6 @@ theorem bicollar_point_mem_overlap (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C)
   have hzero := (bicollarHeight_eq_zero_iff H hbase (H z)).mpr hS
   rw [bicollarHeight, H.symm_apply_apply] at hzero
   exact hz hzero
-
-
 
 noncomputable def bicollarOverlapUnit (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C)
     (hbase : ∀ s, (H (bicollarBase s) : X) = (s : X)) (x : X) : SignTypeˣ := by
@@ -105,9 +93,6 @@ theorem continuousOn_bicollarOverlapUnit (H : (S × Ioo (-1 : ℝ) 1) ≃ₜ C)
   refine Units.continuous_iff.mpr ⟨hv, ?_⟩
   have hinv (s : SignType) : s⁻¹ = s := rfl
   simpa only [Units.val_inv_eq_inv_val, hinv, Set.domRestrict_apply] using hv
-
-
-
 
 theorem exists_bicollar_sign_section [SimplyConnectedSpace X] [LocallyPathConnectedSpace X]
     [Nonempty X] (hS : IsClosed S) (hC : IsOpen C)

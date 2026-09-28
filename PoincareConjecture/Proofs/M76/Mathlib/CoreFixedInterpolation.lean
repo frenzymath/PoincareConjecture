@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroFaceHull
 import PoincareConjecture.Proofs.M76.Mathlib.AffineOnFaces
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {f : E → E}
-
-
-
-
 
 theorem AffineOnFaces.eqOn_core_of_sectors (hf : K.AffineOnFaces f)
     (hsector : ∀ s ∈ K.faces,

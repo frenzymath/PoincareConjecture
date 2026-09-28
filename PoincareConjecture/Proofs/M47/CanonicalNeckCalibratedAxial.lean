@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckPathLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ section CoordinateNorm
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
 
 theorem standardNeck_pullback_lower_calibrated {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)
@@ -60,7 +51,6 @@ theorem standardNeck_pullback_lower_calibrated {epsilon u : ℝ} {x : StandardCa
   have hlo := (abs_le.mp (herr.trans herror)).1
   change ‖v‖ ^ 2 ≤ C v v at hmodel
   linarith
-
 
 theorem standardNeck_axial_derivative_calibrated {epsilon u : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch epsilon⁻¹ x) (g : RiemannianMetric 3 StandardCapSpace)
@@ -112,7 +102,6 @@ theorem standardNeck_axial_derivative_calibrated {epsilon u : ℝ} {x : Standard
   exact hbound
 
 end CoordinateNorm
-
 
 theorem standardNeck_axial_edist_le_pathELength_calibrated
     {epsilon u : ℝ} {x : StandardCapSpace}

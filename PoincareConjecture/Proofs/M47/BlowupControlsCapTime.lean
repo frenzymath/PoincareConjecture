@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapSurvival
 import PoincareConjecture.Proofs.M47.BlowupControlsCapMargin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem cap_elapsed_lt_comparison_margin
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

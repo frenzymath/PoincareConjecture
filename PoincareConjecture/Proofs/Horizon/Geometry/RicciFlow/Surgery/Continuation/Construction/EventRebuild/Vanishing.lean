@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.EventPreservation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +14,6 @@ namespace PoincareConjecture.SurgeryVanishingEventData
 open SurgeryEventRebuild
 
 variable {P : SurgeryParameters} {past future : ℝ → SliceMetric.{u}} {T : ℝ}
-
 
 noncomputable def copyPast
     (E : SurgeryVanishingEventData P (fun t => (past t).1) (fun t => (past t).2) T)
@@ -90,7 +79,6 @@ theorem copyPast_pre_identify_apply (t : Set.Ico E.tMinus T)
         (hPast t.1 ⟨E.tMinus_nonnegative.trans t.2.1, t.2.2.le⟩) (E.pre_identify t x) :=
   diffeomorph_apply (hPast E.tMinus ⟨E.tMinus_nonnegative, E.tMinus_lt.le⟩)
     (hPast t.1 ⟨E.tMinus_nonnegative.trans t.2.1, t.2.2.le⟩) (E.pre_identify t) x
-
 
 theorem copyPast_preservation : M33VanishingEventDataPreservation E (E.copyPast hPast) where
   reference_eq := rfl

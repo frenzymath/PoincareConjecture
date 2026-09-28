@@ -6,16 +6,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SquareRepresentative
 import PoincareConjecture.Proofs.M14.Mathlib.SectionThroughVector
 import PoincareConjecture.Statements.M14PathCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +20,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
-
-
-
 
 theorem squareRootPathOfEuler_residual_interior
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -78,9 +65,6 @@ theorem squareRootPathOfEuler_residual_interior
     (Real.lt_sqrt ((Real.sqrt_nonneg τ₁).trans_lt hs.1).le).mp hs.2⟩
   rw [heuler _ hτ W, mul_zero]
 
-
-
-
 theorem squareRootPathOfEuler_residual
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E₀ : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)
@@ -107,16 +91,12 @@ theorem squareRootPathOfEuler_residual
   have hZs' : Z (R.curve s) = W := hZs
   simpa only [hZs'] using hclosed hs
 
-
-
 theorem squareRootRegularizationStatement (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) : M14SquareRootRegularizationStatement G := by
   intro T τ₁ τ₂ x y p E₀ heuler
   let R := squareRootPathOfEuler p hCoordinates hM12 E₀ heuler
   obtain ⟨E⟩ := exists_squareRoot_velocity_extension R
   exact ⟨R, E, fun _ hs W => squareRootPathOfEuler_residual p hCoordinates hM12 E₀ heuler E hs W⟩
-
-
 
 theorem squareRootEulerResidual_eq_zero_of_euler
     (hCoordinates : M12MetricPredecessors.{0} n) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import Mathlib.Tactic.Module
-
-
-
-
-
-
-

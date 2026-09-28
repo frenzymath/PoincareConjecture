@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimatePinching
 import PoincareConjecture.Proofs.M47.CanonicalScalarStability
 import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,10 +38,6 @@ private theorem scalar_sup_univ_attained
     rintro _ ⟨y, rfl⟩
     exact hbound y.val
   · exact le_csSup hb ⟨⟨p, mem_univ p⟩, rfl⟩
-
-
-
-
 
 theorem exists_component_strict_scalar_duration
     (P : M47Predecessors.{u}) (PS : M47ScalarPersistencePredecessors.{u})

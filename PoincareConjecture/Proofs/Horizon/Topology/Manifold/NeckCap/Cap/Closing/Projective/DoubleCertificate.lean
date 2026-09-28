@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.C
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.ProjectiveModel
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Projective.Transport
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture.SmoothProjectiveDoubleModel
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "CylModel" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 def of_collar
     {Q : Type u} [TopologicalSpace Q] [ChartedSpace E3 Q]
@@ -128,8 +115,6 @@ def of_collar
     rw [c.left_inv hz]
     exact mul_pos hδ htl
 
-
-
 theorem nonempty_closedComponentCertificate
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]
     [IsManifold (𝓡 3) ∞ M] [T2Space M]
@@ -165,8 +150,6 @@ theorem nonempty_closedComponentCertificate
     forward_smooth := contMDiff_subtype_val
     inverse_smooth := hinv_smooth }
   exact S.nonempty_closedComponentCertificate hcompact hcomponent
-
-
 
 theorem nonempty_closedComponentCertificate_of_collar_in_open
     {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M]

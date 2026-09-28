@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalCapControl
 import PoincareConjecture.Proofs.M47.LimitCanonicalComponentControl
 import PoincareConjecture.Proofs.M47.LimitCanonicalRoundControl
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +41,6 @@ private local instance : T3Space G.limit.carrier.carrier := G.limit.carrier.t3Sp
 private local instance : SecondCountableTopology G.limit.carrier.carrier :=
   G.limit.carrier.secondCountable
 private local instance : ConnectedSpace G.limit.carrier.carrier := G.limit.connectedSpace
-
-
 
 theorem limitCanonical_eventually_selected_control
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

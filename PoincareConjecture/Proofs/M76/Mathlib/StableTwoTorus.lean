@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.StableCircleStep
 import PoincareConjecture.Proofs.M76.Mathlib.StableTorusBands
 import PoincareConjecture.Proofs.M76.Mathlib.StableAnnulusImmersion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableTorus
-
-
-
-
 
 theorem exists_stable_twoTorus :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

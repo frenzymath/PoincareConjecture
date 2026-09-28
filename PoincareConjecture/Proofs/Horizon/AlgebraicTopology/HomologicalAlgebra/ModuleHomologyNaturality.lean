@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.HomologicalAlgebra.ModuleBilinearHomology
 import Mathlib.Algebra.Homology.ShortComplex.HomologicalComplex
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory

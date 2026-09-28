@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_InitialJetCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialPhaseBounds
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +20,6 @@ noncomputable local instance comparisonCoefficientNormedGroup :
 
 noncomputable local instance comparisonCoefficientNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem exists_initial_comparison_metric_bounds (g₀ : StandardInitialMetric)
     {K : Set E} (hK : IsCompact K) (m : ℕ) :
@@ -79,10 +66,6 @@ theorem exists_initial_comparison_metric_bounds (g₀ : StandardInitialMetric)
       have hi := Finset.single_le_sum (fun k _ => (hC k).le) (Finset.mem_univ i)
       dsimp [Z]
       linarith only [hi]
-
-
-
-
 
 theorem exists_initial_comparison_curvature_bounds (g₀ : StandardInitialMetric)
     {K : Set E} (hK : IsCompact K) (m : ℕ) :

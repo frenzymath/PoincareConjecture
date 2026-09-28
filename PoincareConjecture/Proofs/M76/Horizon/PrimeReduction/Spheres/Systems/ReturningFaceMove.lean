@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.FaceRibb
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.OriginalSkeletonContactCount
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.SupportedEdgeCofaceTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry TriangleDiskModel
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_original_protected_sphere_system_returning_face_move_with_other_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -301,7 +291,6 @@ theorem exists_original_protected_sphere_system_returning_face_move_with_other_f
       apply H.injective
       change H (H.symm z) = H z
       rw [H.apply_symm_apply, hHC z hz]
-
 
 theorem exists_original_protected_sphere_system_returning_face_move
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

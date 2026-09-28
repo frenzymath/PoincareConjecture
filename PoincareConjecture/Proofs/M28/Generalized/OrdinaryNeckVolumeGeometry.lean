@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.FullNeckVolumeCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +24,6 @@ private theorem ordinary_neck_coordinates_norm_sq (v : E) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem ordinary_neck_chart_speed_lower (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : E}
@@ -79,9 +68,6 @@ theorem ordinary_neck_chart_speed_lower (N : EpsilonNeck g)
   rw [cylinderNeckChart_mfderiv_apply N q s hx]
   exact (mul_le_mul_of_nonneg_left hsqrt (div_nonneg N.scale_pos.le (by norm_num))).trans
     (N.coordinate_speed_bounds z hx.2 w).1
-
-
-
 
 theorem ordinary_neck_chart_density_lower (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) {x : E}

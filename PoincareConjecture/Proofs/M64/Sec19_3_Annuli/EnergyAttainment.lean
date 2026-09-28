@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.NearlyConformalEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DomainBoundary
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,10 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem M64AnnulusNearlyConformalSequenceCertificate.energy_tendsto_infimum
     {S : M64AnnulusMinimizingSequenceCertificate
@@ -57,10 +42,6 @@ theorem M64AnnulusNearlyConformalSequenceCertificate.energy_tendsto_infimum
       (E.nearly_conformal k) m64AnnulusDomain_measurableSet
       (E.energy_integrable k) m64AnnulusDomain_boundary_null
 
-
-
-
-
 structure M64WeakEnergyLowerSemicontinuityCertificate
     (S : M64AnnulusMinimizingSequenceCertificate
       (g := g) (c0 := c0) (c1 := c1))
@@ -78,10 +59,6 @@ structure M64WeakEnergyLowerSemicontinuityCertificate
       m64AnnulusWeakEnergyDensity g C.limit.gradient p) ≤
         liminf (fun k => ∫ p in m64AnnulusDomain,
           m60EnergyDensity g (S.sequence (C.subsequence k)).map p) atTop
-
-
-
-
 
 theorem M64WeakEnergyLowerSemicontinuityCertificate.area_le_infimum
     {S : M64AnnulusMinimizingSequenceCertificate
@@ -104,10 +81,6 @@ theorem M64WeakEnergyLowerSemicontinuityCertificate.area_le_infimum
       L.weak_energy_le_liminf
     _ = m64LeastAnnulusArea g c0 c1 := henergy.liminf_eq
 
-
-
-
-
 theorem M64WeakEnergyLowerSemicontinuityCertificate.toAreaCertificate
     {S : M64AnnulusMinimizingSequenceCertificate
       (g := g) (c0 := c0) (c1 := c1)}
@@ -123,10 +96,6 @@ theorem M64WeakEnergyLowerSemicontinuityCertificate.toAreaCertificate
     simpa only [Function.comp_def] using hsub
   rw [hsub'.liminf_eq]
   exact L.area_le_infimum
-
-
-
-
 
 noncomputable def m64DouglasMorreyAttainmentCertificate_of_energy_pipeline
     [T3Space M] [PreconnectedSpace M]

@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.StereographicCap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem stereographicCapHeight_mem_unit_interval {r : ℝ} (hr : 0 < r) :
     stereographicCapHeight r ∈ Ioo (-1 : ℝ) 1 := by
@@ -31,8 +18,6 @@ theorem stereographicCapHeight_mem_unit_interval {r : ℝ} (hr : 0 < r) :
     apply (div_lt_one hd).mpr
     nlinarith [sq_pos_of_pos hr]
 
-
-
 theorem stereographicCapHeight_complement {r : ℝ} (hr : 0 < r) :
     stereographicCapHeight (4 / r) = -stereographicCapHeight r := by
   have hd : 4 + r ^ 2 ≠ 0 := ne_of_gt (by positivity)
@@ -42,8 +27,6 @@ theorem stereographicCapHeight_complement {r : ℝ} (hr : 0 < r) :
   ring
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem stereoInvFun_image_closedBall_pos (v : E) (hv : ‖v‖ = 1) {r : ℝ}
     (hr : 0 < r) :
@@ -67,8 +50,6 @@ theorem stereoInvFun_image_closedBall_pos (v : E) (hv : ‖v‖ = 1) {r : ℝ}
     apply (stereoInvFun_cap_iff v hv hr.le _).mp
     rwa [heq]
 
-
-
 theorem stereoInvFun_cap_eq_iff (v : E) (hv : ‖v‖ = 1) {r : ℝ} (hr : 0 ≤ r)
     (w : (ℝ ∙ v)ᗮ) :
     stereographicCapHeight r = ⟪-v, (stereoInvFun hv w : E)⟫_ℝ ↔ w ∈ sphere 0 r := by
@@ -82,8 +63,6 @@ theorem stereoInvFun_cap_eq_iff (v : E) (hv : ‖v‖ = 1) {r : ℝ} (hr : 0 ≤
     nlinarith [norm_nonneg w]
   · intro h
     rw [h]
-
-
 
 theorem stereoInvFun_image_sphere_pos (v : E) (hv : ‖v‖ = 1) {r : ℝ}
     (hr : 0 < r) :

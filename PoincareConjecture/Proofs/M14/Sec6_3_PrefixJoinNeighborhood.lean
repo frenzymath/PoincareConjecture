@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinGauge
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
-
-
-
 
 theorem prefixJoinGauge_nonempty (q : M14BackwardPath G T τ₁ τ₂ x y)
     (p : M14BackwardPath G T τ₁ c x (q.curve c)) (hc : c < τ₂) :

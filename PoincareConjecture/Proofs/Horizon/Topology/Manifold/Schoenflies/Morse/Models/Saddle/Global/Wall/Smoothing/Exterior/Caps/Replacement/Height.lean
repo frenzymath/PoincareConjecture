@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Parameters
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private def lineDilation (a : Real) (ha : a ≠ 0) : Real ≃ₘ[Real] Real wher
   right_inv t := by field_simp
   contMDiff_toFun := (contDiff_const.mul contDiff_id).contMDiff
   contMDiff_invFun := (contDiff_id.div_const a).contMDiff
-
-
 
 theorem exists_cylindrical_height_diffeomorph {b : Real} (hb : 0 < b) :
     ∃ σ : Real, 0 < σ ∧ σ < b ∧ σ < 1/2 ∧ ∃ H : Real ≃ₘ[Real] Real,
@@ -101,8 +97,6 @@ theorem exists_cylindrical_height_diffeomorph {b : Real} (hb : 0 < b) :
       rw [hzero,hfix b (by rw [abs_of_pos hb])] at hh
       linarith
   exact ⟨a/2,half_pos ha,by linarith,by linarith,H,hmono,hzero,hformula,hfix⟩
-
-
 
 theorem exists_cylindrical_height_and_radius {b : Real} (hb : 0 < b) :
     ∃ σ : Real, 0 < σ ∧ σ < b ∧ σ < 1/2 ∧

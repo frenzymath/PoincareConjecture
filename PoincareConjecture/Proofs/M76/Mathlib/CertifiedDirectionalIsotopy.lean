@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.NonnegativeDirectionalIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLAffineScalarDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,11 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_certified_directional_isotopy_with_global_finitePL
     {f : E → ℝ} {S U T : Set E} (hf : FinitePiecewiseAffineOn f S)
@@ -58,11 +44,6 @@ theorem FinitePiecewiseAffineOn.exists_certified_directional_isotopy_with_global
       ring)
   exact ⟨g, hgn, hgf, hgQ, hgU, ε, hε, H, hc, hci, hformula,
     K, hK, hcv, hcover, hg, hgK, hPL, hglobal⟩
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.exists_certified_directional_isotopy
     {f : E → ℝ} {S U T : Set E} (hf : FinitePiecewiseAffineOn f S)

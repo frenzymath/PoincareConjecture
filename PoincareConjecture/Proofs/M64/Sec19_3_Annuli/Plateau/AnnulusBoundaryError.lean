@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryErrorLocaliz
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusLowerContinuity
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityAffineWeak
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -35,7 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "O" => m64AnnulusLowerDomain
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem lower_representative_eq_boundary_below
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -63,7 +49,6 @@ theorem lower_representative_eq_boundary_below
     simpa only [← hpoint] using htrace (p 0) ⟨hp.1, hp.2.1⟩
 
 omit [IsManifold (𝓡 n) ∞ M] [T2Space M] in
-
 
 theorem lower_boundary_error_weak_data
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -120,10 +105,6 @@ theorem lower_boundary_error_weak_data
     ((P.comp_memLp' (hDM i)).const_mul (-1)) hwA (m64WeakPartial_const_mul hwC (-1))
   simpa only [neg_one_mul, ← sub_eq_add_neg, PiLp.sub_apply, P,
     EuclideanSpace.coe_proj, Function.comp_apply, D, C] using h
-
-
-
-
 
 theorem weighted_exists_lower_zero_boundary_tests [CompactSpace M]
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

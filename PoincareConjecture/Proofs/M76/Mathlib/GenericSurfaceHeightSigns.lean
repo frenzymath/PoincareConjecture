@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.GraphHeightNeighbors
 import PoincareConjecture.Proofs.M76.Mathlib.GraphLinkSublevels
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineHeightSigns
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
 
 theorem mem_both_height_closures_of_generic_nonvertex
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (hA : InjOn A K.vertices)
@@ -60,8 +47,6 @@ theorem mem_both_height_closures_of_generic_nonvertex
   exact ⟨closure_mono (inter_subset_inter_left _ hface) hnegative,
     closure_mono (inter_subset_inter_left _ hface) hpositive⟩
 
-
-
 theorem mem_lower_height_closure_of_adjacent_vertex
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (p q : K.vertices) (hpq : K.vertexAbstractComplex.edgeGraph.Adj p q)
@@ -78,11 +63,6 @@ theorem mem_lower_height_closure_of_adjacent_vertex
     subset_convexHull ℝ _ (Finset.mem_insert_of_mem (Finset.mem_singleton_self _))
   exact closure_mono (inter_subset_inter_left _ (K.convexHull_subset_space hface))
     ((convex_convexHull ℝ _).mem_closure_lower_affine_height A hp hq hheight)
-
-
-
-
-
 
 theorem mem_both_height_closures_of_preconnected_sublevels
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

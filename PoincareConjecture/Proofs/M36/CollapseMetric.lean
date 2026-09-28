@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.SurgeryMetric
 import PoincareConjecture.Proofs.M36.NeckMetricBound
 import PoincareConjecture.Proofs.M36.CollapsedPathComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_Assembly
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_AreaLoss
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,12 +14,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
-
 
 structure M64IntrinsicGlobalStripCertificate
     (N : IntrinsicAnnulus) (delta r K mu : ℝ) where
@@ -89,10 +70,6 @@ private theorem m64Intrinsic_global_strip_area_loss
       intrinsicBoundaryLength N.metric 1 0 rampPeriod / 10 := by
   exact m64Intrinsic_long_fiber_length_lt_tenth N C.hS C.hSsub C.hheight
     C.c_pos C.radius_pos hfirst (m64Intrinsic_global_strip_area_bound C) C.hsmall
-
-
-
-
 
 theorem m64Intrinsic_length_loss_estimates_of_global_strip_control
     (hcontrol : ∀ delta r K : ℝ, 0 < delta → delta < 1 / 100 → 0 < r →

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1CompositionCore
 import PoincareConjecture.Proofs.M63.Mathlib.DenseNonlinearExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Set
@@ -17,10 +8,6 @@ open AddCircle Set
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
-
 
 theorem exists_periodicH1_composition {ι : Type*} [Fintype ι]
     (Φ : (ι → ℂ) → ℂ) (Φ1 : (ι → ℂ) → (ι → ℂ) →L[ℝ] ℂ)

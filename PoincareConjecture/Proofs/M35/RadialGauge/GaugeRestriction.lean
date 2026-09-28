@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.SmoothEuclideanGauge
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialSymmetry
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ variable {m n : ℕ}
 local notation "V" => EuclideanSpace ℝ (Fin m)
 local notation "W" => EuclideanSpace ℝ (Fin n)
 
-
 theorem orthogonal_invariant_eq_of_norm_eq {u : V → ℝ}
     (hu : ∀ (L : V ≃ₗᵢ[ℝ] V) x, u (L x) = u x) {x y : V}
     (hxy : ‖x‖ = ‖y‖) : u x = u y := by
@@ -31,13 +21,10 @@ theorem orthogonal_invariant_eq_of_norm_eq {u : V → ℝ}
   rw [Submodule.reflection_sub hxy] at h
   exact h.symm
 
-
 theorem orthogonal_invariant_restrict (I : V →ₗᵢ[ℝ] W) {u : W → ℝ}
     (hu : ∀ (L : W ≃ₗᵢ[ℝ] W) x, u (L x) = u x)
     (L : V ≃ₗᵢ[ℝ] V) (x : V) : u (I (L x)) = u (I x) :=
   orthogonal_invariant_eq_of_norm_eq hu (by simp only [I.norm_map, L.norm_map])
-
-
 
 theorem norm_iteratedFDeriv_restrict_le (I : V →ₗᵢ[ℝ] W)
     {u : W → ℝ} (hu : ContDiff ℝ ∞ u) (j : ℕ) (x : V) :
@@ -51,7 +38,6 @@ theorem norm_iteratedFDeriv_restrict_le (I : V →ₗᵢ[ℝ] W)
   change ‖iteratedFDeriv ℝ j u (I x) (fun i => I (v i))‖ ≤ _
   simpa only [I.norm_map] using (iteratedFDeriv ℝ j u (I x)).le_opNorm (fun i => I (v i))
 
-
 theorem weighted_c1_restrict (I : V →ₗᵢ[ℝ] W) {u : W → ℝ} {eta : ℝ}
     (hu : ContDiff ℝ ∞ u)
     (hv : ∀ x, (1 + ‖x‖) * |u x| ≤ eta)
@@ -64,7 +50,6 @@ theorem weighted_c1_restrict (I : V →ₗᵢ[ℝ] W) {u : W → ℝ} {eta : ℝ
     rw [norm_iteratedFDeriv_one, norm_iteratedFDeriv_one] at h
     have hi := mul_le_mul_of_nonneg_left h (by positivity : 0 ≤ 1 + ‖x‖)
     exact hi.trans (by simpa only [I.norm_map] using hd (I x))
-
 
 noncomputable def threeIntoFive :
     EuclideanSpace ℝ (Fin 3) →ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 5) := by
@@ -81,8 +66,6 @@ noncomputable def threeIntoFive :
     funext (fun i => b.toBasis.constr_basis ℝ (fun i => c (ι i)) i)
   rw [heq]
   exact hc
-
-
 
 theorem exists_three_dimensional_gauge
     {u : EuclideanSpace ℝ (Fin 5) → ℝ} (hu : ContDiff ℝ ∞ u)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilySeparation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +33,6 @@ theorem core_parent_support_union (R : T.decomposition.regions) :
       rfl
     _ = _ := by rw [← image_iUnion, meshTriangleBasis_sources_cover]
 
-
-
 theorem other_parent_contribution_eq_zero_in_core_interior
     (g : RiemannianMetric 2 S) (R : T.decomposition.regions) {q : S}
     (hq : q ∈ (chartAt Plane (T.chart R : S)).symm ''
@@ -56,8 +47,6 @@ theorem other_parent_contribution_eq_zero_in_core_interior
   rw [T.core_parent_support_union,
     interior_smooth_coordinate_image _ (T.refined.source R)]
   exact hq
-
-
 
 theorem canonical_vertex_fan_in_core_interior
     (g : RiemannianMetric 2 S) (R : T.decomposition.regions)

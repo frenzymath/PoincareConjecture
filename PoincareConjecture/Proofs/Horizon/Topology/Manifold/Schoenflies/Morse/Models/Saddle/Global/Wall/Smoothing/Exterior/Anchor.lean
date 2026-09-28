@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ResolutionCircles
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.ProjectedResolution
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ open SaddleLevel SphereSurgeryCoreCap
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_negative_anchor_circles_of_first_pairing
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
@@ -86,8 +75,6 @@ theorem exists_negative_anchor_circles_of_first_pairing
       range_comp P (A.lowerCutCircle (I i))
     _ = P '' (negativePatchArc e r t i ∪ K (E i)) := by rw [hI i]
     _ = _ := by rw [image_union, hlocal]
-
-
 
 theorem exists_negative_anchor_circles_of_flattened_strips
     {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}

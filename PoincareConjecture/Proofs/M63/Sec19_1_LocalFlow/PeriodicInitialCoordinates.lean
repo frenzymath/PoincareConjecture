@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealPeriodicJets
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicCircleTrace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
 open scoped ENNReal
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_realPeriodic_initialCoordinates {L : ℝ} [Fact (0 < L)]
     (f : C(AddCircle L, ℝ)) (hf : ContDiff ℝ 2 (fun x : ℝ => f (x : AddCircle L))) :

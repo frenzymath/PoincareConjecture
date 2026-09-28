@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoordinateFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedRicciEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +20,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryP
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T b : ℝ}
 
-
-
 theorem retainedChartCoefficients_symm
     (event : SurgeryEventData g0 K P slice metric T)
     (G : RicciFlow 3 (slice T).carrier (Icc T b))
@@ -41,9 +30,6 @@ theorem retainedChartCoefficients_symm
   split_ifs
   · exact (event.pre_flow.metric t).symm _ _ _
   · exact (G.metric t).symm _ _ _
-
-
-
 
 theorem retainedChartCoefficients_pos
     (event : SurgeryEventData g0 K P slice metric T)
@@ -73,9 +59,6 @@ theorem retainedChartCoefficients_pos
     exact hz
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_retained_coordinate_flow
     (event : SurgeryEventData g0 K P slice metric T)

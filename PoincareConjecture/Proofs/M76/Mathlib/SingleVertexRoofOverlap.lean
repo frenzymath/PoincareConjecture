@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexSlabCommonEdge
 import PoincareConjecture.Proofs.M76.Mathlib.SingleVertexSourceRoof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,10 +8,6 @@ open Set Geometry
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem eq_crossing_of_singleVertex_section_overlap (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hAq : A q = 0) {β : ℝ} (hβ : 0 ≤ β)
@@ -43,10 +30,6 @@ theorem eq_crossing_of_singleVertex_section_overlap (K : SimplicialComplex ℝ E
     rw [heq, Finset.coe_erase]
     exact hw
   exact hAe hxe hwe (hAx.trans hAw.symm)
-
-
-
-
 
 theorem singleVertex_roof_value_at_overlap [DecidableEq E] (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hqK : q ∈ K.vertices) (hAq : A q = 0)

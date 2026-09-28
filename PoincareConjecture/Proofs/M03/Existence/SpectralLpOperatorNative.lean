@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralResponseLinearityNative
 import Mathlib.Analysis.InnerProductSpace.l2Space
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.SpectralHeatNative
 variable {iota : Type*}
 
 abbrev ForcingSpace (iota : Type*) (T : ℝ) := Lp (State iota) 2 (timeMeasure T)
-
 
 theorem forcing_norm_sq {μ : Measure ℝ} (F : Lp (State iota) 2 μ) :
     ‖F‖ ^ 2 = ∫ t, ‖F t‖ ^ 2 ∂μ := by
@@ -88,7 +79,6 @@ theorem generatorLp_smul (hT : 0 ≤ T) (lambda : iota → NNReal)
     ((Lp.memLp F).const_smul a) lambda (Lp.coeFn_smul a F)).trans
       (ae_generatorState_smul_of_memLp hT (Lp.memLp F) lambda a)
 
-
 theorem derivativeLp_generatorLp_energy (hT : 0 ≤ T) (lambda : iota → NNReal)
     (F : ForcingSpace iota T) :
     ‖derivativeLp hT lambda F‖ ^ 2 + ‖generatorLp hT lambda F‖ ^ 2 ≤ ‖F‖ ^ 2 := by
@@ -122,14 +112,12 @@ def generatorLinearMap (hT : 0 ≤ T) (lambda : iota → NNReal) :
   map_add' := generatorLp_add hT lambda
   map_smul' := generatorLp_smul hT lambda
 
-
 def derivativeOperator (hT : 0 ≤ T) (lambda : iota → NNReal) :
     ForcingSpace iota T →L[ℝ] ForcingSpace iota T :=
   (derivativeLinearMap hT lambda).mkContinuous 1
     (fun F => by
       change ‖derivativeLp hT lambda F‖ ≤ 1 * ‖F‖
       simpa only [one_mul] using norm_derivativeLp_le hT lambda F)
-
 
 def generatorOperator (hT : 0 ≤ T) (lambda : iota → NNReal) :
     ForcingSpace iota T →L[ℝ] ForcingSpace iota T :=
@@ -163,7 +151,6 @@ theorem derivativeLp_add_generatorLp (hT : 0 ≤ T) (lambda : iota → NNReal)
       apply MemLp.toLp_congr
       exact derivativeState_add_generatorState_of_memLp hT (Lp.memLp F) lambda
     _ = F := Lp.toLp_coeFn F (Lp.memLp F)
-
 
 theorem derivativeOperator_add_generatorOperator (hT : 0 ≤ T) (lambda : iota → NNReal) :
     derivativeOperator hT lambda + generatorOperator hT lambda =

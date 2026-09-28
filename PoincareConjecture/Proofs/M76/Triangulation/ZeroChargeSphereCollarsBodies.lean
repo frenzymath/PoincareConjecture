@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeSphereCollarsData
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleMarkedPolygonSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AlternatingCutNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {n : ℕ}
-
-
-
-
 
 theorem exists_sphere_collar_body_family
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

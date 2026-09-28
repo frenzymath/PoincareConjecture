@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeSetInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,8 +12,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem IsFinitePLBallPair.exists_polygon_subdisk_with_interior {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) {n : ℕ} (P : Polygon E (n + 3))
@@ -110,9 +98,6 @@ theorem IsFinitePLBallPair.exists_polygon_subdisk_with_interior {d q : Set E}
       _ = (Subtype.val : d → E) ⁻¹' (g '' closure R.inside \ P.boundary ℝ) := by
         rw [preimage_sdiff, ← hboundary, himage hDC, himage hBC,
           ← preimage_sdiff, ← preimage_sdiff, hregion]
-
-
-
 
 theorem IsFinitePLBallPair.exists_polygon_subdisk {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) {n : ℕ} (P : Polygon E (n + 3))

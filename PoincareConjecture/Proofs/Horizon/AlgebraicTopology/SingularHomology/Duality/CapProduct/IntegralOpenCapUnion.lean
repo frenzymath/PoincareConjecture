@@ -5,7 +5,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Dual
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.IntegralCompactSupportEmpty
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Cohomology.CompactSupport.Transport.IntegralCompactSupportHomeomorph
 
-
 set_option autoImplicit false
 
 noncomputable section
@@ -15,7 +14,6 @@ open CategoryTheory Limits TopologicalSpace Set
 universe u
 
 namespace Poincare.Topology
-
 
 variable {X : Type} [TopologicalSpace X] [T2Space X] [RegularSpace X]
   [LocallyCompactSpace X]

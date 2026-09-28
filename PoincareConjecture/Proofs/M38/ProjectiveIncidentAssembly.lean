@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M38.DihedralCutComparison
 import PoincareConjecture.Proofs.M38.ProjectiveIncidentFillings
 import PoincareConjecture.Proofs.M38.SpaceformIncidentAssembly
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem projectiveDouble_incident_assembly_of_component_chart
     (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)

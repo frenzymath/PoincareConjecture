@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBandExhaustion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,12 +16,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
-
-
 
 theorem scalarCoverJacobian_integral_eq_period {H : Plane → ℝ}
     (hHc : Continuous H)
@@ -106,12 +88,6 @@ theorem scalarCoverJacobian_integral_eq_period {H : Plane → ℝ}
     have hbF' := abs_lt.mp hbF
     constructor <;> linarith [hN n hn]
   exact tendsto_nhds_unique hfull hperiod
-
-
-
-
-
-
 
 theorem scalarPotential_energy_eq_period (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} (hHc : Continuous H)

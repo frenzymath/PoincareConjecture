@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Frontier.ResidualDecrease
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.SlabMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.RadialDifferential
 import Mathlib.Analysis.InnerProductSpace.NormDet
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullbackVolumeDensity_eq_abs_det_frame
     (g : RiemannianMetric n M) (f : EuclideanSpace ℝ (Fin n) → M)
@@ -54,8 +42,6 @@ theorem pullbackVolumeDensity_eq_abs_det_frame
     A.toLinearMap.normDet_eq_abs_det]
   simp only [ContinuousLinearMap.det, RCLike.ofReal_real_eq_id, id_eq,
     Real.sqrt_sq_eq_abs, abs_abs]
-
-
 
 theorem abs_det_scaled_differential_eq
     (g : RiemannianMetric n M) (f : EuclideanSpace ℝ (Fin n) → M)

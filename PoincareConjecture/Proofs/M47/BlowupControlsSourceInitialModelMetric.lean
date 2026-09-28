@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapBoxMetric
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_EvolvingCylinderField
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_model_metric_bounds {u : ℝ} (hu : u ∈ Icc (-1 : ℝ) 0)
     {p : E} (hp : ‖cylinderHorizontalProjection p‖ ≤ 1) (v : E) :
@@ -53,8 +43,6 @@ theorem source_initial_model_metric_bounds {u : ℝ} (hu : u ∈ Icc (-1 : ℝ) 
     have hup := mul_le_mul_of_nonneg_left hstatic.2 hfactor
     have htime := mul_le_mul_of_nonneg_right hu.1 (sq_nonneg ‖v‖)
     nlinarith only [hup, htime, mul_nonpos_of_nonpos_of_nonneg hu.2 hV]
-
-
 
 theorem source_initial_model_pullback (u : ℝ) (q : UnitTwoSphere) (s : ℝ)
     (p v w : E) :

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M28.Generalized.StrongNeckSourceBounds
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckNormalCovers
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCompactCore
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 structure CounterexampleSourceGeometry {epsilon C A : ℝ}
     {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
@@ -61,10 +45,6 @@ structure CounterexampleSourceGeometry {epsilon C A : ℝ}
         (hv : ∀ k, v k ∈ Icc (H.segment k).lower (H.segment k).upper) (k : ℕ),
         Nonempty (NormalChartCover (fun _ => (H.normalizedSourceFlow v hv k).metric 0)
           (H.normalizedSourceNeck v hv k).center (-1) 1 r R ρ (1 / 4) (9 / 4) n)
-
-
-
-
 
 theorem exists_counterexample_source_family_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :

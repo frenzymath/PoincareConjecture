@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskFrontierStars
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Filter
@@ -22,9 +14,6 @@ local notation "P2" => (ℝ × ℝ)
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.frontier_vertex_ballPair
     (T : HamiltonProperDiskTriangulation R D b) (p : T.disk.vertices)

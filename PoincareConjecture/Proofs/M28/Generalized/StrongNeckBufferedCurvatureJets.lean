@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,8 +27,6 @@ private theorem buffered_window_tensor_weight {u : ℝ}
   have hsmall : (1 / 256 : ℝ) ≤ (1 / 4 : ℝ) ^ (2 + k) := by
     interval_cases k <;> norm_num
   exact hsmall.trans hprod
-
-
 
 theorem buffered_cylinder_covariant_component_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon)
@@ -78,8 +66,6 @@ theorem buffered_cylinder_covariant_component_le
     nlinarith
   exact (sq_le_sq₀ (abs_nonneg _) (by positivity)).mp hsq
 
-
-
 theorem buffered_cylinder_first_component_le
     {epsilon u : ℝ} (hepsilon : 0 < epsilon)
     (hu : u ∈ Icc (-(3 / 4 : ℝ)) 0) {B : RoundCylinderTwoTensor}
@@ -99,8 +85,6 @@ theorem buffered_cylinder_first_component_le
   rw [cylinderTensorDerivative_time_eq (lt_of_le_of_lt hu.2 (by norm_num)),
     roundCylinderTensorDerivative_center] at h
   exact h
-
-
 
 theorem exists_buffered_cylinder_second_component_bound :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ (epsilon u : ℝ), 0 < epsilon →

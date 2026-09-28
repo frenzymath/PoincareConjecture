@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHe
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityConformalChart
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -130,10 +121,6 @@ private theorem straight_metric_compact_bounds
     exact mul_le_mul_of_nonneg_left
       ((le_abs_self _).trans ((hhi _ hwS).trans (le_max_left _ _))) (sq_nonneg ‖v‖)
 
-
-
-
-
 theorem straight_harmonic_equation
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)
     {H : LoopPlane → LoopAmbient} {U : Set LoopPlane} (hU : IsOpen U)
@@ -160,11 +147,6 @@ theorem straight_harmonic_equation
     Finset.sum_sub_distrib, map_sum, sub_eq_add_neg]
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem straight_harmonic_transverse_growth
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)
@@ -299,10 +281,6 @@ private theorem plane_complex_second (H : LoopPlane → LoopAmbient)
     Function.comp_apply, ContinuousLinearEquiv.coe_coe, Matrix.cons_val_zero,
     Matrix.cons_val_one, e, LinearIsometryEquiv.coe_toContinuousLinearEquiv] using hh
 
-
-
-
-
 theorem plane_harmonic_of_complex_equation
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)
     {H : LoopPlane → LoopAmbient} {z : ℂ}
@@ -351,9 +329,6 @@ theorem plane_harmonic_of_complex_equation
   simpa only [Fin.sum_univ_two, PiLp.add_apply, PiLp.zero_apply, e,
     LinearIsometryEquiv.coe_toContinuousLinearEquiv] using add_eq_zero_iff_eq_neg.mpr hk
 
-
-
-
 theorem plane_conformal_of_complex_norm
     (g : RiemannianMetric 3 LoopAmbient) {H : LoopPlane → LoopAmbient} {z : ℂ} {a : ℝ}
     (hH : DifferentiableAt ℝ H (Complex.orthonormalBasisOneI.repr z))
@@ -391,10 +366,6 @@ theorem plane_conformal_of_complex_norm
   have hsym := g.symm (H (e z)) w v
   change g.inner (H (e z)) v v = g.inner (H (e z)) w w ∧ g.inner (H (e z)) v w = 0
   exact ⟨hv.trans hw.symm, by linarith⟩
-
-
-
-
 
 theorem straight_metric_data (g : RiemannianMetric 3 LoopAmbient)
     {H : LoopPlane → LoopAmbient} {U K : Set LoopPlane}

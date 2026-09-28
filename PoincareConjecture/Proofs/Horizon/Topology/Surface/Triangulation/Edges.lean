@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Basic
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,11 +13,8 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M]
 
-
 def affineChartSegment (a b : EuclideanSpace ℝ (Fin 2)) : ℝ → EuclideanSpace ℝ (Fin 2) :=
   fun t => a + t • (b - a)
-
-
 
 theorem exists_smoothEdge_of_affineChartSegment
     (p : M) {a b : EuclideanSpace ℝ (Fin 2)} (hab : a ≠ b)

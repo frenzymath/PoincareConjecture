@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsGaugeCoeffici
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsForcingEnd
 import PoincareConjecture.Proofs.M35.RadialGauge.RadialTimeEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -69,8 +60,6 @@ theorem rawIntrinsicGaugeDrift_eq_radial {t : ℝ} (ht : t ∈ Ico 0 G.lifetime)
     (eq_div_iff (norm_ne_zero_iff.mpr hx)).mpr hd
   change (2 * axisDivision (deriv h) ‖x‖ - xi ‖x‖) • x = _
   rw [hcoefficient]
-
-
 
 theorem raw_intrinsic_radius_time_equation
     {u : ℝ → V → ℝ} {T t₀ t r : ℝ} (hTlt : T < G.lifetime)

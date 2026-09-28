@@ -3,17 +3,6 @@ import Mathlib.Data.ENNReal.Real
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -21,8 +10,6 @@ open scoped ENNReal
 namespace Poincare.MetricCurves
 
 variable {X : Type*} [PseudoEMetricSpace X]
-
-
 
 theorem edist_eq_of_broken_segment
     {a b c x y : X} {A B s t : ℝ}
@@ -52,8 +39,6 @@ theorem edist_eq_of_broken_segment
     rw [heq] at h
     exact ENNReal.le_of_add_le_add_right ENNReal.ofReal_ne_top
       (ENNReal.le_of_add_le_add_left ENNReal.ofReal_ne_top h)
-
-
 
 theorem edist_add_eq_of_add_eq
     {p x z q : X}

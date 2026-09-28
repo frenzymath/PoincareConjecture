@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CyclicDiagonalIndices
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonReindex
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
 
 theorem range_split_subset {E : Type*} {m n : ℕ}
     (u : Fin (m + 1) → E) (v : Fin (n + 1) → E) :
@@ -31,9 +21,6 @@ theorem range_split_subset {E : Type*} {m n : ℕ}
   rw [Fin.range_snoc, Fin.range_snoc]
   exact ⟨insert_subset (hv (mem_range_self 0)) hu,
     insert_subset (hu (mem_range_self 0)) hv⟩
-
-
-
 
 theorem exists_strings_at_diagonal {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {N : ℕ} (P : Polygon E (N + 4)) (hP : P.HasSimplicialEdges)

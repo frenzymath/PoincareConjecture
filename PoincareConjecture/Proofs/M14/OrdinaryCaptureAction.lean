@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 import PoincareConjecture.Proofs.M14.Sec6_2_IntervalLift
 import PoincareConjecture.Statements.M12GaugeTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +24,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {g : SpacetimeCylinderMetric e} {F : RicciFlow n C K.domain} {T τmax : ℝ}
   (D : M14OrdinaryCaptureData G C K e g F T τmax)
 
-
-
 def ordinaryCaptureGeometry : MovingSpacetimeGaugeGeometry e.toMovingSpacetimeGauge where
   metric := F.metric
   smooth := F.smooth
@@ -46,8 +34,6 @@ def ordinaryCaptureGeometry : MovingSpacetimeGaugeGeometry e.toMovingSpacetimeGa
     rw [D.metric_eq t.property]
     exact g.metric_eq t c v w
 
-
-
 theorem ordinaryCapture_movingCalculus
     (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals) :
     MovingGaugeCalculus G.leafwise (ordinaryCaptureGeometry D) F.connection :=
@@ -56,7 +42,6 @@ theorem ordinaryCapture_movingCalculus
 
 omit [T3Space C] [ConnectedSpace C] [SecondCountableTopology C]
   [MeasurableSpace C] [BorelSpace C] in
-
 
 theorem ordinaryCapture_cylinderVelocity
     (θ : ℝ → (G.timeIntervals.interval K).Point) (q : ℝ → C) {s : ℝ}
@@ -91,7 +76,6 @@ theorem ordinaryCapture_cylinderVelocity
 
 include D in
 
-
 theorem ordinaryCapture_cylinderDensity
     (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals)
     (θ : ℝ → (G.timeIntervals.interval K).Point) (q : ℝ → C) {s : ℝ}
@@ -108,8 +92,6 @@ theorem ordinaryCapture_cylinderDensity
   change (F.connection (θ s).val).scalarCurvature (q s) =
     horizontalScalarCurvature G.leafwise (e.toSpacetime (θ s, q s)) at hscalar
   rw [← hscalar]
-
-
 
 theorem ordinaryCapture_action_transport
     (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals)

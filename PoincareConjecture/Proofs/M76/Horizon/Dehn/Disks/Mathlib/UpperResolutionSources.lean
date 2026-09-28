@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedAttachmentSources
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -20,7 +13,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
-
 
 structure UpperResolutionSources
     {EA EC X : Type*}
@@ -70,7 +62,6 @@ theorem embeddings : Topology.IsEmbedding s.jA ∧ Topology.IsEmbedding s.jS ∧
     (h.comp (rightDiskCopy_isEmbedding s.m)).comp (leftDiskCopy_isEmbedding s.nS),
     h.comp (leftDiskCopy_isEmbedding s.nC)⟩
 
-
 theorem cover : (range s.jA ∪ range s.jS) ∪ range s.jC = D := by
   ext y
   constructor
@@ -87,7 +78,6 @@ theorem cover : (range s.jA ∪ range s.jS) ∪ range s.jC = D := by
     · exact Or.inr ⟨x, by
         simpa only [jC, Homeomorph.symm_apply_apply] using
           congrArg (fun z : T ↦ (s.H.symm z : V2)) hx⟩
-
 
 theorem preimage (U : Set X) : D ∩ g ⁻¹' U =
     (s.jA '' {x : SA | fA x ∈ U} ∪ s.jS '' {x : Sstrip | fS x ∈ U}) ∪

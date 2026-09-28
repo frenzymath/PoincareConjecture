@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.LoopClassTransport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HomotopyLoopWhisker
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousMap.Homotopy
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {f g : C(X, Y)}
-
-
 
 theorem map_loop_homotopic_refl (H : f.Homotopy g) {x : X} (p : Path x x)
     (hp : (p.map g.continuous).Homotopic (Path.refl (g x))) :
@@ -28,8 +17,6 @@ theorem map_loop_homotopic_refl (H : f.Homotopy g) {x : X} (p : Path x x)
   apply Path.Homotopic.Quotient.exact
   rw [H.loop_quotient_eq_whisker p]
   exact htrace
-
-
 
 theorem all_map_loops_homotopic_refl (H : f.Homotopy g)
     (hg : ∀ (x : X) (p : Path x x), (p.map g.continuous).Homotopic (Path.refl (g x))) :

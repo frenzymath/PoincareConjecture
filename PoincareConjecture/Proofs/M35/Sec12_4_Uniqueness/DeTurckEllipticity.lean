@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Sec12_4_Uniqueness.DeTurckEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +39,6 @@ private theorem covector_sq_le_metric_trace (h : RiemannianMetric n M) (x : M)
   exact (Finset.sum_mul_sq_le_sq_mul_sq Finset.univ
     (fun i => e.repr v i) (fun i => L (e i))).trans_eq (by rw [hparseval])
 
-
-
 theorem covector_trace_le_of_metric_le (g h : RiemannianMetric n M) (x : M)
     {C : ℝ} (hdom : ∀ v, h.inner x v v ≤ C * g.inner x v v)
     (L : TangentSpace (𝓡 n) x →ₗ[ℝ] ℝ) :
@@ -69,7 +58,6 @@ theorem covector_trace_le_of_metric_le (g h : RiemannianMetric n M) (x : M)
         C * ∑ j, L (h.orthonormalBasis x j) ^ 2 :=
       Finset.sum_le_sum fun i _ => hterm i
     _ = _ := by simp [hdim, mul_assoc]
-
 
 theorem fixed_tensorNorm_sq_first (g : RiemannianMetric n M) {r : ℕ}
     (A : CovariantTensorEvaluation n M (r + 1)) (x : M) :
@@ -94,8 +82,6 @@ theorem fixed_tensorNorm_sq_first (g : RiemannianMetric n M) {r : ℕ}
       (Fin.cons (b i) (fun j => b (a j)) : Fin (r + 1) → TangentSpace (𝓡 n) x) :=
     Fin.comp_cons b i a
   rw [he]
-
-
 
 theorem tensor_first_slot_trace_coercive (g h : RiemannianMetric n M) {r : ℕ}
     {A : CovariantTensorEvaluation n M (r + 1)} (hA : IsSmoothCovariantTensor A)

@@ -2,25 +2,11 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryDualBlockLevel
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteContactEdgeVertex
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualFacetBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry.SimplicialComplex
-
-
-
-
 
 theorem image_endpoint_foot_rim_binaryLevel
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

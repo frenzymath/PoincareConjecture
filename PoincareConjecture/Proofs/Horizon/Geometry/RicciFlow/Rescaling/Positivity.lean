@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Contraction
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle BigOperators
 universe u

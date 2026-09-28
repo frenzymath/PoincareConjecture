@@ -2,28 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.S
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.CylinderGluing
-
-
-
 
 theorem exists_centered_scalar_extension
     (h : RoundCylinderSpace → ℝ)

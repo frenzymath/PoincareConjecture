@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapWorldlineSurvival
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +15,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F.base) (F := F.base.flow) R
 
 include P
-
-
 
 theorem standardFlow_chapter11_finite_slabs (p : ℕ → (G).point)
     (hpositive : ∀ k, 0 < (G).scalar (p k))

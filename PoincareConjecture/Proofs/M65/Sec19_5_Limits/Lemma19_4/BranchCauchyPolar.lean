@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyOperat
 import Mathlib.Analysis.SpecialFunctions.PolarCoord
 import Mathlib.MeasureTheory.Integral.CircleIntegral
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,22 +14,14 @@ namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
 def dbarLinear : (ℂ →L[ℝ] E) →L[ℝ] E :=
   (2 : ℂ)⁻¹ • (ContinuousLinearMap.apply ℝ E 1 +
     I • ContinuousLinearMap.apply ℝ E I)
 
-
-
 def dbar (ψ : ℂ → E) (z : ℂ) : E := dbarLinear (fderiv ℝ ψ z)
-
-
 
 theorem continuous_dbar {ψ : ℂ → E} (hψ : ContDiff ℝ 1 ψ) : Continuous (dbar ψ) :=
   dbarLinear.continuous.comp (hψ.continuous_fderiv one_ne_zero)
-
-
 
 theorem realLinear_apply_complex (D : ℂ →L[ℝ] E) (z : ℂ) :
     D z = (z.re : ℂ) • D 1 + (z.im : ℂ) • D I := by
@@ -48,9 +30,6 @@ theorem realLinear_apply_complex (D : ℂ →L[ℝ] E) (z : ℂ) :
   conv_lhs => rw [hz]
   rw [map_add, map_smul, map_smul]
   simp only [RCLike.real_smul_eq_coe_smul (K := ℂ), RCLike.ofReal_eq_complex_ofReal]
-
-
-
 
 theorem realLinear_polar_dbar (D : ℂ →L[ℝ] E) {e : ℂ} (he : ‖e‖ = 1) :
     e⁻¹ • (D 1 + I • D I) = D e + I • D (I * e) := by
@@ -61,9 +40,6 @@ theorem realLinear_polar_dbar (D : ℂ →L[ℝ] E) {e : ℂ} (he : ‖e‖ = 1)
   simp only [I_mul_re, I_mul_im, ofReal_neg]
   simp only [smul_add, smul_smul, sub_mul, mul_assoc, I_mul_I, mul_neg_one, sub_neg_eq_add]
   module
-
-
-
 
 theorem radial_cauchy_dbar (D : ℂ →L[ℝ] E) {r : ℝ} (hr : 0 < r) (θ : ℝ) :
     r • ((circleMap 0 r θ)⁻¹ • dbarLinear D) =

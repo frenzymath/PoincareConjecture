@@ -2,23 +2,12 @@ import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_smoothTransition_regular :
     (∀ t ∈ Ioo (0 : ℝ) 1, 0 < deriv Real.smoothTransition t) ∧

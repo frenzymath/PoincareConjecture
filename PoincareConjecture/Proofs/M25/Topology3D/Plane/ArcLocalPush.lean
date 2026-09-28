@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcInsertion
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SupportedRadialSlide
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.FamilyPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -113,8 +104,6 @@ private theorem arcLocal_same_admissible {n : ℕ} {p : Polygon E (n + 2)}
       rcases hx with hx | hx
       · exact Or.inl (by rw [hx, hqp]; exact right_mem_segment ℝ _ _)
       · exact Or.inr (by rw [hx, hqs]; exact right_mem_segment ℝ _ _)
-
-
 
 theorem exists_supported_polygonalArc_push {n : ℕ}
     (A B : E) (X : E →ₗ[ℝ] ℝ) (hAB : X A < X B)

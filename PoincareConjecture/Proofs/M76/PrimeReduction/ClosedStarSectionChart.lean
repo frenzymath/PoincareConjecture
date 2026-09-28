@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.RadialSectionConeExtension
 import PoincareConjecture.Proofs.M76.Mathlib.RadialFrontierAlignedCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {ι : Type*} [Finite ι] [Nonempty ι]
-
-
 
 theorem exists_finitePL_closedStar_section_chart
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Corners
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.Boundary
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -145,8 +138,6 @@ private theorem bottom_velocity_one (i : Fin B.interface.count) :
   rw [show φ 0 = B.cut i.succ by simp [φ]] at h
   exact h
 
-
-
 theorem adjacent_bottom_upward_velocity
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
     coordinateTriangleVelocity (B.faceCoordinates (i, false)) (B.faceBasis (i, false)) 1 2 =
@@ -154,8 +145,6 @@ theorem adjacent_bottom_upward_velocity
   unfold coordinateTriangleVelocity
   rw [funext (B.right_map i), funext (B.left_map j), hij]
   rfl
-
-
 
 theorem adjacent_bottom_vertices
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :
@@ -173,7 +162,6 @@ theorem adjacent_bottom_vertices
   exact ⟨hi, hj, hj⟩
 
 include hF hFi in
-
 
 theorem internal_bottom_corner_fan (g : RiemannianMetric 2 S)
     (i j : Fin B.interface.count) (hij : i.succ = j.castSucc) :

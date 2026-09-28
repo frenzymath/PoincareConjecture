@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescaling
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E}
-
-
-
 
 theorem injOn_pos_smul_vertices
     (hinj : InjOn (NormedSpace.normalize : E → E) K.space)
@@ -32,8 +20,6 @@ theorem injOn_pos_smul_vertices
   simpa only [normalize_smul_of_pos (hr x hx), normalize_smul_of_pos (hr y hy)] using h
 
 variable [DecidableEq E]
-
-
 
 theorem radialRescale_vertices
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -52,9 +38,6 @@ theorem radialRescale_vertices
     exact ⟨{x}, hx, by simp⟩
 
 variable [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_radialRescale_homeomorph (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)
@@ -82,8 +65,6 @@ theorem exists_radialRescale_homeomorph (K : SimplicialComplex ℝ E)
         rw [radialRescale_vertices]
         exact (surjOn_image v K.vertices).rightInvOn_invFunOn)
   exact ⟨f, g, e, hf, hg, hfv, hef, heg⟩
-
-
 
 theorem exists_link_radialRescale_homeomorph (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (r : E → ℝ)

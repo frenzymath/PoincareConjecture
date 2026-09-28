@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.ResidualBand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 
-
-
 set_option autoImplicit false
 
 open Set Geometry

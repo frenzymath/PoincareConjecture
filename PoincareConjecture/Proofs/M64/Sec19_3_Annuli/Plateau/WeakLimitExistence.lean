@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.IntrinsicEnergyCompactness
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakColumnTangency
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64Annulus_exists_intrinsic_weak_limit
     (g : RiemannianMetric n M)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableIntegration
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology ENNReal
 
 namespace PoincareConjecture
-
-
 
 theorem m64NonnegativeIntegral_subsequence
     {X : Type*} [MeasurableSpace X] {mu : Measure X}
@@ -45,8 +32,6 @@ theorem m64NonnegativeIntegral_subsequence
   refine ⟨k, hk, ?_⟩
   filter_upwards [hae, hrep, Lp.coeFn_zero ℝ 1 mu] with x hx hxr hz
   simpa only [hxr, hz, Pi.zero_apply] using hx
-
-
 
 theorem m64Annulus_strong_slice_subsequence
     {E : Type*} [NormedAddCommGroup E] {l : ℕ}

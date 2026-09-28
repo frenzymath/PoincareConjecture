@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTaylorRemaind
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTimePotential
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricFormTest
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -71,8 +63,6 @@ theorem metric_form_test_pointwise_pair {K : Set V}
   simp only [hz, RCLike.inner_apply, conj_trivial]
   convert! metricEntropy_test_pair g η Q x (dirichletFieldValue K u x) w using 1
   exact Finset.sum_congr rfl fun _ _ => mul_comm _ _
-
-
 
 theorem metric_form_test_hasFDerivAt {K : Set V}
     (g : RiemannianMetric n V) (η : V → ℝ) (hη : ContDiff ℝ ∞ η)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RoundScala
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ForwardScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_SlabScalarTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
-
 
 theorem exists_surgery_canonical_scalar_evolution_bound
     (P : M44CapPersistencePredecessors.{u}) (C : ℝ) :
@@ -61,9 +49,6 @@ theorem exists_surgery_canonical_scalar_evolution_bound
   | round N hx =>
       exact (hround (F.connection t) N F.parameters.epsilon_le x hx).trans
         (mul_le_mul_of_nonneg_right hR (sq_nonneg _))
-
-
-
 
 theorem exists_surgery_canonical_scalar_rate_within
     (P : M44CapPersistencePredecessors.{u}) (C : ℝ) :

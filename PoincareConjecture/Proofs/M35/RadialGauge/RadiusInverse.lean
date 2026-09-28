@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.RadiusBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.Diffeomorphism.Perturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff NNReal
@@ -37,8 +28,6 @@ theorem mapRadius_deriv_sub_one_bound {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u
   have h := abs_add_le (Real.exp (u r) - 1) (Real.exp (u r) * r * deriv u r)
   rw [abs_mul, abs_mul, Real.abs_exp] at h
   nlinarith only [h, he, hprod]
-
-
 
 theorem exists_mapRadius_smooth_inverse {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u)
     (hv : ∀ r, (1 + |r|) * |u r| ≤ 1 / 8)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphSect
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.Logic.Relation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.CutGraph

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityRe
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityLocalC1
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerClassical
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -180,11 +170,6 @@ private theorem odd_energy_decay {N : ℕ} {R beta Λ : ℝ} (hR : 0 < R)
     _ = _ := by ring
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem zero_trace_quadratic_contDiffOn {N : ℕ} {R C H beta Λ : ℝ} (hR : 0 < R)
     (X : M65LocalWeakMap (id : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin N))

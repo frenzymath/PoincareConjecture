@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapOuterSectorAngles
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.SectorTransversality
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +14,6 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
-
-
 
 theorem first_outer_injective_chart_differential
     (i : Bool) (v : S) (hchart : ∀ j, x (i, j) = v) (j : Bool) :
@@ -70,8 +61,6 @@ theorem first_outer_injective_chart_differential
     rw [congrArg D (C.left_inv hc)] at he
     exact he
 
-
-
 theorem second_outer_injective_chart_differential
     (i : Bool) (v : S) (hchart : ∀ j, x (j, i) = v) (j : Bool) :
     ∃ L : Plane →L[ℝ] Plane, Function.Injective L ∧
@@ -118,8 +107,6 @@ theorem second_outer_injective_chart_differential
     rw [congrArg D (C.left_inv hc)] at he
     exact he
 
-
-
 theorem firstOuterChartSpoke_coordinates_ne_zero
     (i : Bool) (v : S) (hchart : ∀ j, x (i, j) = v)
     (c : AffineBasis (Fin 3) ℝ Plane)
@@ -137,8 +124,6 @@ theorem firstOuterChartSpoke_coordinates_ne_zero
   · exact affineBasis_second_coord_ne_zero_of_mapped_first_edge
       (rightTriangleBasis B.scale_pos) c L₁ hL₁ 1 0 2 (by decide) (by decide)
       (B.firstOuterChartSpoke i v) hw₁ (by rwa [hc0, hc1])
-
-
 
 theorem secondOuterChartSpoke_coordinates_ne_zero
     (i : Bool) (v : S) (hchart : ∀ j, x (j, i) = v)

@@ -1,12 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Intersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapGluing
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,7 +20,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {dLeft dRight : EuclideanSpace ℝ (Fin 2)} (K : S.CutChain dLeft dRight)
   {δ r : ℝ}
   (B : ∀ i : Fin S.count, (S.piece i).FixedStripBandFaces (K.graphCuts i) δ r r)
-
 
 def cutRay (k : Fin (S.count + 1)) (u : ℝ) : M :=
   C (C.symm ((D.edge e.1 e.2).map (S.cut k)) + u • K.direction k)
@@ -86,8 +79,6 @@ theorem adjacent_band_inter_subset_frontier (i j : Fin S.count) (hij : i.succ = 
       (B i).rightCut_eq_segment (S.cut_lt i).le
   rw [K.adjacent_band_intersection B i j hij hseparate, ← hright]
   exact fun _ h => (B i).faces.outer_boundaries_subset_frontier (Or.inr h)
-
-
 
 theorem open_cutRay_subset_interior_adjacent_union (i j : Fin S.count)
     (hij : i.succ = j.castSucc)
@@ -168,8 +159,6 @@ private theorem frontier_iUnion_subset_of_internal_cut_cancellation
     exact False.elim (hnot i j (hcancel i j hij
       ⟨u, ⟨lt_of_le_of_ne hu.1 (Ne.symm hu0), lt_of_le_of_ne hu.2 hur⟩, rfl⟩))
 
-
-
 theorem frontier_iUnion_band_carrier_subset
     (hseparate : ∀ (i j : Fin S.count), i.succ = j.castSucc →
       ∀ t ∈ Icc (0 : ℝ) 1, ∀ s ∈ Icc (0 : ℝ) 1,
@@ -223,7 +212,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
 omit [T2Space M] in
-
 
 theorem left_open_endpointEdge_image (hab : a ≤ b) :
     (B.faces.endpointEdge false).map '' Ioo (0 : ℝ) 1 =

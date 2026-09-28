@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteJetNormBounds
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,9 +9,6 @@ open Poincare.Analysis.Calculus
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [Fintype ι]
-
-
-
 
 theorem norm_covariantArray_jet_le_of_total_order
     (e : ι → E) (r N : ℕ) (x : E)

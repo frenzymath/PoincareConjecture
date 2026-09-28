@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryBirth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_component_birth
     (F : SurgeryFlowData.{u}) {T : ℝ} (hT : T ∈ F.time_domain)
@@ -53,9 +42,6 @@ theorem exists_seed_component_birth
   rcases hstop with hzero | hcap
   · exact Or.inl (by simp only [hzero, div_one, add_neg_cancel])
   · exact Or.inr hcap
-
-
-
 
 theorem seed_singleton_component_birth_meets_cap
     {F : SurgeryFlowData.{u}} {T : ℝ} (hT : 0 < T)

@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FlowIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Symmetry
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -15,8 +14,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem coordinate_gradient_metric_derivative
     {D : LeviCivitaData g} {f : M → ℝ}
@@ -165,8 +162,6 @@ private theorem metric_pullback_in_charts
   dsimp only
   rw [hderiv]
   exact chartCoefficients_apply_chartDifferential g a ha _ _
-
-
 
 theorem hasDerivAt_gradientFlow_metric_pairing
     {D : LeviCivitaData g} {f : M → ℝ} {Φ : ℝ → M → M}

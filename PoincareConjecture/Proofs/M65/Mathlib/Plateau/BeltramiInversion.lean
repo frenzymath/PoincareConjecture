@@ -3,15 +3,6 @@ import Mathlib.Analysis.Complex.RemovableSingularity
 import Mathlib.Analysis.Calculus.Deriv.Star
 import Mathlib.Analysis.Normed.Field.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,35 +12,26 @@ open scoped Topology ContDiff ComplexConjugate
 
 namespace Complex
 
-
-
 def beltramiCircleInversion (z : ℂ) : ℂ := (conj z)⁻¹
-
 
 @[simp] theorem beltramiCircleInversion_involutive (z : ℂ) :
     beltramiCircleInversion (beltramiCircleInversion z) = z := by
   simp only [beltramiCircleInversion, map_inv₀, conj_conj, inv_inv]
 
-
 @[simp] theorem beltramiCircleInversion_eq_zero (z : ℂ) :
     beltramiCircleInversion z = 0 ↔ z = 0 := by
   simp only [beltramiCircleInversion, inv_eq_zero, map_eq_zero]
-
 
 theorem contDiffAt_beltramiCircleInversion {z : ℂ} (hz : z ≠ 0) :
     ContDiffAt ℝ ∞ beltramiCircleInversion z := by
   apply conjCLE.contDiff.contDiffAt.inv
   exact star_ne_zero.mpr hz
 
-
-
 theorem beltramiCircleInversion_tendsto_zero :
     Tendsto beltramiCircleInversion (cocompact ℂ) (𝓝[≠] (0 : ℂ)) := by
   have hi : Tendsto (fun z : ℂ => z⁻¹) (cocompact ℂ) (𝓝[≠] (0 : ℂ)) := by
     simpa only [Metric.cobounded_eq_cocompact] using (tendsto_inv₀_cobounded' (α := ℂ))
   exact hi.comp conjCLE.toHomeomorph.isClosedEmbedding.tendsto_cocompact
-
-
 
 theorem beltramiCircleInversion_tendsto_infinity :
     Tendsto beltramiCircleInversion (𝓝[≠] (0 : ℂ)) (cocompact ℂ) := by
@@ -59,7 +41,6 @@ theorem beltramiCircleInversion_tendsto_infinity :
   convert! hh using 1
   funext z
   exact (map_inv₀ (starRingEnd ℂ) z).symm
-
 
 def beltramiCircleReflect (f : ℂ → ℂ) (z : ℂ) : ℂ :=
   beltramiCircleInversion (f (beltramiCircleInversion z))
@@ -86,8 +67,6 @@ private theorem reflect_continuous (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0) :
     exact (contDiffAt_beltramiCircleInversion hn).continuousAt.comp
       (f := fun w => f (beltramiCircleInversion w)) hfj
 
-
-
 def beltramiReflectedHomeomorph (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0) : ℂ ≃ₜ ℂ where
   toFun := beltramiCircleReflect f
   invFun := beltramiCircleReflect f.symm
@@ -98,8 +77,6 @@ def beltramiReflectedHomeomorph (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0) : ℂ ≃�
   continuous_toFun := reflect_continuous f hf0
   continuous_invFun := reflect_continuous f.symm (f.injective (by
     simpa only [f.apply_symm_apply] using hf0.symm))
-
-
 
 theorem hasDerivAt_beltramiCircleReflect (f : ℂ → ℂ) {z : ℂ} (hz : z ≠ 0)
     (hf : DifferentiableAt ℂ f (beltramiCircleInversion z))
@@ -123,9 +100,6 @@ theorem hasDerivAt_beltramiCircleReflect (f : ℂ → ℂ) {z : ℂ} (hz : z ≠
     simp only [beltramiCircleInversion, ← map_inv₀, div_eq_mul_inv, mul_inv_rev, neg_mul]
     ring
 
-
-
-
 theorem analyticAt_beltramiCircleReflect_zero (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
     (hhol : ∀ᶠ z in cocompact ℂ, DifferentiableAt ℂ (f : ℂ → ℂ) z) :
     AnalyticAt ℂ (beltramiCircleReflect f) 0 := by
@@ -137,9 +111,6 @@ theorem analyticAt_beltramiCircleReflect_zero (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 
   apply (hasDerivAt_beltramiCircleReflect f hne hz _).differentiableAt
   intro hh
   exact hne ((beltramiCircleInversion_eq_zero z).mp (f.injective (hh.trans hf0.symm)))
-
-
-
 
 theorem contDiff_beltramiCircleReflect (f : ℂ ≃ₜ ℂ) (hf0 : f 0 = 0)
     (hf : ContDiff ℝ ∞ (f : ℂ → ℂ))

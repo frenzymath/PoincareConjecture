@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularUpperTriangleStrip
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSegmentCollar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLStrip
@@ -17,9 +8,6 @@ open Set Geometry PLStrip
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem triangle_upper_section_eq_edgeLevels (A : E →ᵃ[ℝ] ℝ) {v u w : E} {c : ℝ}
     (hv : c < A v) (hu : A u < c) (hw : A w < c) :
@@ -33,10 +21,6 @@ theorem triangle_upper_section_eq_edgeLevels (A : E →ᵃ[ℝ] ℝ) {v u w : E}
   exact neg_inj.symm
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_triangle_segment_collar (A : E →ᵃ[ℝ] ℝ) {v u w : E} {α β : ℝ}
     (hi : AffineIndependent ℝ ![v, u, w]) (hαβ : α < β)

@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -45,9 +36,6 @@ private theorem subface_inter_subset
     fun _ hx => ⟨hx.1.1, hx.2⟩
   exact convexHull_mono hsub hxst
 
-
-
-
 def ofGenerators (F : Set (Finset E))
     (hind : ∀ S ∈ F, AffineIndependent 𝕜 ((↑) : S → E))
     (hinter : ∀ S ∈ F, ∀ T ∈ F, convexHull 𝕜 (S : Set E) ∩ convexHull 𝕜 (T : Set E) ⊆
@@ -63,16 +51,11 @@ def ofGenerators (F : Set (Finset E))
     rintro s t ⟨_, S, hS, hsS⟩ ⟨_, T, hT, htT⟩
     exact subface_inter_subset hind hinter hS hsS hT htT
 
-
-
 theorem mem_ofGenerators_faces
     (hind : ∀ S ∈ F, AffineIndependent 𝕜 ((↑) : S → E))
     (hinter : ∀ S ∈ F, ∀ T ∈ F, convexHull 𝕜 (S : Set E) ∩ convexHull 𝕜 (T : Set E) ⊆
       convexHull 𝕜 ((S : Set E) ∩ T)) (s : Finset E) :
     s ∈ (ofGenerators F hind hinter).faces ↔ s.Nonempty ∧ ∃ S ∈ F, s ⊆ S := Iff.rfl
-
-
-
 
 theorem space_ofGenerators
     (hind : ∀ S ∈ F, AffineIndependent 𝕜 ((↑) : S → E))
@@ -91,8 +74,6 @@ theorem space_ofGenerators
       simp only [Finset.not_nonempty_iff_eq_empty.mp h, Finset.coe_empty,
         convexHull_empty, notMem_empty] at hxS
     exact mem_space_iff.mpr ⟨S, ⟨hne, S, hS, Finset.Subset.refl _⟩, hxS⟩
-
-
 
 theorem finite_ofGenerators_faces (hF : F.Finite)
     (hind : ∀ S ∈ F, AffineIndependent 𝕜 ((↑) : S → E))

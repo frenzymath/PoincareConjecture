@@ -3,16 +3,6 @@ import PoincareConjecture.Definitions.M26CanonicalNeighborhoods
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.Shrink
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Carrier.StrongNeck
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,7 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
   (hkappa : 0 < kappa) (hnoncollapsed : AncientKappaNoncollapsed K.flow kappa)
   (hnormalized : (K.flow.connection 0).scalarCurvature p = 1)
 
-
 def toSmallBased : BasedKappaSolution kappa :=
   ScalarDerivatives.smallBasedKappaSolution K p kappa hkappa hnoncollapsed hnormalized
 
@@ -50,14 +39,11 @@ def toSmallBased : BasedKappaSolution kappa :=
 @[simp] theorem toSmallBased_base :
     (K.toSmallBased p hkappa hnoncollapsed hnormalized).base = equivShrink M p := rfl
 
-
 theorem toSmallBased_isCompact (hcompact : IsCompact (univ : Set M)) :
     IsCompact (univ : Set
       (K.toSmallBased p hkappa hnoncollapsed hnormalized).carrier.carrier) := by
   simpa only [image_univ, EquivLike.range_eq_univ] using
     hcompact.image (Poincare.Topology.SecondCountable.homeomorphShrink M).continuous
-
-
 
 theorem toSmallBased_noEmbeddedTrivialNormalProjectivePlane
     (hno : NoEmbeddedTrivialNormalProjectivePlane K) :
@@ -66,8 +52,6 @@ theorem toSmallBased_noEmbeddedTrivialNormalProjectivePlane
   rintro ⟨f, hf⟩
   exact hno ⟨(Poincare.Topology.SecondCountable.homeomorphShrink M).symm ∘ f,
     (Poincare.Topology.SecondCountable.homeomorphShrink M).symm.isOpenEmbedding.comp hf⟩
-
-
 
 theorem cap_of_toSmallBased {epsilon C : ℝ}
     (hcap : ∃ A : CapCertificate
@@ -78,8 +62,6 @@ theorem cap_of_toSmallBased {epsilon C : ℝ}
       A.epsilon = epsilon ∧ A.cap_constant ≤ C ∧ p ∈ A.core := by
   obtain ⟨A, hepsilon, hconstant, hp⟩ := hcap
   exact ⟨K.flow.capFromShrink 0 A, hepsilon, hconstant, hp⟩
-
-
 
 theorem strongNeck_of_toSmallBased {t epsilon : ℝ}
     (hneck : ∃ A : StrongEvolvingNeck

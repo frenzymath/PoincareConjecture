@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalI
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.ZeroProtectedIrreducibleReplacement
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.IndexTwoProtectedIrreducibleReplacement
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -29,8 +22,6 @@ theorem hasHamiltonProtectedIrreducibleReplacement_of_card_eq_one
     b.exists_original_irreducible_exterior_atlas L he hdim hi
   exact ⟨charts,N,hN,hprotected,b'.isPLIrreducible_handle_of_exterior he' hdim hi hI,
     hforward,hreverse⟩
-
-
 
 theorem hasHamiltonProtectedIrreducibleReplacement
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

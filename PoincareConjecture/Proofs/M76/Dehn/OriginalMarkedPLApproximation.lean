@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalCompactPairModel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.MarkedPolyhedronHomotopy
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,11 +12,6 @@ variable {U M E ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [FiniteDimensional ℝ U] [TopologicalSpace M] [T2Space M]
   [LocallyCompactSpace M] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_original_marked_PL_approximation
     (e : ι → OpenPartialHomeomorph M E)

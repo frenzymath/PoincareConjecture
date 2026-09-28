@@ -1,17 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 import Mathlib.Analysis.Calculus.TangentCone.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +12,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   [NormedAddCommGroup G] [NormedSpace 𝕜 G]
 
-
-
 theorem ContinuousAffineMap.iteratedFDerivWithin_comp_right
     (g : G →ᴬ[𝕜] E) {f : E → F} {s : Set E} {n : ℕ∞ω}
     (hf : ContDiffOn 𝕜 n f s) (hs : UniqueDiffOn 𝕜 s)
@@ -35,9 +22,6 @@ theorem ContinuousAffineMap.iteratedFDerivWithin_comp_right
         (fun _ => g.contLinear) :=
   (((hf.of_le hi).ftaylorSeriesWithin hs).comp_continuousAffineMap g
     |>.eq_iteratedFDerivWithin_of_uniqueDiffOn le_rfl hpre hx).symm
-
-
-
 
 theorem iteratedFDeriv_prod_slice_eq_within
     {f : G × E → F} {J : Set G} {U : Set E} {n : ℕ∞ω}

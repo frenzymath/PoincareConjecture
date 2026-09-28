@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialModelFrame
 import PoincareConjecture.Proofs.M47.BlowupControlsCapModelEnergy
 import PoincareConjecture.Proofs.M47.CanonicalNeckRicciDiagonals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ local notation "E2" => EuclideanSpace ℝ (Fin 2)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_native_axial_bounds
     {epsilon u : ℝ} (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 2)

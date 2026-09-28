@@ -1,16 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.Adjoint
 import Mathlib.Analysis.InnerProductSpace.Spectrum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,7 +10,6 @@ namespace PoincareConjecture.HilbertResolventNative
 variable {V H : Type*}
   [NormedAddCommGroup V] [InnerProductSpace ℝ V] [CompleteSpace V]
   [NormedAddCommGroup H] [InnerProductSpace ℝ H] [CompleteSpace H]
-
 
 def solution (J : V →L[ℝ] H) : H →L[ℝ] V := J.adjoint
 
@@ -33,7 +22,6 @@ theorem solution_unique (J : V →L[ℝ] H) (f : H) (u : V)
   apply ext_inner_left ℝ
   intro v
   exact (hu v).trans (solution_pairing J f v).symm
-
 
 def operator (J : V →L[ℝ] H) : H →L[ℝ] H := J.comp (solution J)
 
@@ -112,7 +100,6 @@ theorem eigenvalue_le_one (J : V →L[ℝ] H) (hJ : DenseRange J)
       (mul_le_mul_of_nonneg_right (norm_operator_le_one J hnorm) (norm_nonneg f))
   rw [heig, norm_smul, Real.norm_eq_abs, abs_of_pos hmu] at hbound
   nlinarith [norm_pos_iff.mpr hf]
-
 
 def parameter (mu : ℝ) (hmu : 0 < mu) (hle : mu ≤ 1) : NNReal :=
   ⟨mu⁻¹ - 1, by

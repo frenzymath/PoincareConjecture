@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M34.Sec12_6_Noncollapsing.EarlyBallVolume
 import PoincareConjecture.Proofs.M04.TensorNormBounds
 import PoincareConjecture.Proofs.M09.RiemannianProper
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem partialFlow_exists_fixed_exterior_volume
     {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)

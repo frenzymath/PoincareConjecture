@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.OpenSubset
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiber
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +21,6 @@ variable {m k : ℕ} {M : Type*} [TopologicalSpace M]
 local instance openFiber_ambient_finrank :
     Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin (m + k))) = m + k) :=
   ⟨finrank_euclideanSpace_fin⟩
-
 
 def openRegularFiberMetric (g : RiemannianMetric (m + k) M) :
     letI := openFiberChartedSpace (m := m) hf U hreg c
@@ -56,7 +48,6 @@ theorem openRegularFiberMetric_tangentNorm (g : RiemannianMetric (m + k) M)
       g.tangentNorm (openFiberIncl f U c x)
         (mfderiv (𝓡 m) (𝓡 (m + k)) (openFiberIncl f U c) x v) := rfl
 
-
 theorem metricComplete_openRegularFiberMetric [T3Space M]
     (g : RiemannianMetric (m + k) M) (hcomplete : MetricComplete g)
     (hclosed : IsClosed ((U : Set M) ∩ f ⁻¹' {c})) :
@@ -69,8 +60,6 @@ theorem metricComplete_openRegularFiberMetric [T3Space M]
     (contMDiff_openFiberIncl hf U hreg c) ?_
     (openRegularFiberMetric_inner hf U hreg c g) hcomplete
   exact ⟨isEmbedding_openFiberIncl f U c, by rwa [range_openFiberIncl]⟩
-
-
 
 theorem mfderiv_gradient_openRegularFiberMetric
     (g : RiemannianMetric (m + k) M) {φ : M → ℝ}
@@ -103,7 +92,6 @@ theorem mfderiv_gradient_openRegularFiberMetric
       (contMDiff_pi_space.mp hf) (openFiberIncl f U c x)] at h
   exact h
 
-
 theorem tangentNorm_gradient_openRegularFiberMetric_eq_norm_starProjection
     (g : RiemannianMetric (m + k) M) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 (m + k)) 𝓘(ℝ, ℝ) ∞ φ) (x : openFiber f U c) :
@@ -128,7 +116,6 @@ theorem tangentNorm_gradient_openRegularFiberMetric_eq_norm_starProjection
     infer_instance
   rw [openRegularFiberMetric_tangentNorm, mfderiv_gradient_openRegularFiberMetric hf U hreg c g hφ x]
   rfl
-
 
 theorem tangentNorm_gradient_openRegularFiberMetric_le
     (g : RiemannianMetric (m + k) M) {φ : M → ℝ}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.LocallyFlatEndQuotient
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.SphereRegionCancellation
 import Mathlib.Topology.Compactification.OnePoint.Sphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -23,9 +12,6 @@ namespace PoincareConjecture.M76.LocallyFlatTopologicalSphere
 local notation "V3" => (Fin 3 → ℝ)
 local notation "X3" => OnePoint V3
 local notation "S3" => sphere (0 : EuclideanSpace ℝ (Fin 4)) 1
-
-
-
 
 theorem exists_compactified_ball_homeomorph {S : Set V3}
     (hS : LocallyFlatTopologicalSphere S) :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.NonsphericalBoundary
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.PuncturedComponentPortBoundary
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalGraphEdges
 import Mathlib.Combinatorics.SimpleGraph.DegreeSum
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ open scoped BigOperators
 open PreAbstractSimplicialComplex.ModTwoCochains
 
 namespace LinearMap
-
-
 
 theorem finrank_le_of_relative_kernel
     {k V W : Type*} [Field k] [AddCommGroup V] [Module k V]
@@ -65,7 +56,6 @@ theorem card_edges_eq_card_edgeGraph :
   exact (Nat.card_congr (Equiv.subtypeUnivEquiv hall)).symm.trans
     (A.card_original_graph_edges A.edgeGraph le_rfl).symm
 
-
 theorem card_edges_eq_vertices_of_two_neighbors
     (hdegree : ∀ v, (A.edgeGraph.neighborSet v).ncard = 2) :
     Nat.card (Edge A.toPreAbstractSimplicialComplex) = Nat.card ι := by
@@ -80,8 +70,6 @@ theorem card_edges_eq_vertices_of_two_neighbors
     simp only [SimpleGraph.edgeFinset_card, Nat.card_eq_fintype_card]
   rw [hc, Nat.card_eq_fintype_card]
   omega
-
-
 
 theorem finrank_edge_quotient_eq_one_of_two_neighbors
     (hconn : A.edgeGraph.Connected)

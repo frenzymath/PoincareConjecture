@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.PositionedCircleBallCaps
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.CircleSurgeryRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcCut
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.TwoProperArcCuts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -52,8 +44,6 @@ private theorem horizontal_order_implies_vertical_order
     intro he
     exact disjoint_left.mp hdis hyW (he.symm ▸ hZ.1 (by simp))
   exact lt_of_le_of_ne hbd hne
-
-
 
 theorem endpoint_order_of_disjoint_arcs
     {a b c d : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)

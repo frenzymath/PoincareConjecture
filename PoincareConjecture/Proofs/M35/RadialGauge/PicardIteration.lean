@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.PicardContraction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem gaugePicard_weighted_c1_bound
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {eta B L C T : ℝ}
@@ -59,8 +48,6 @@ theorem gaugePicard_weighted_c1_bound
     have hgain : (B * eta + eta ^ 2 + L * eta + C) * heatC1Gain (n + 1) t ≤ eta :=
       (mul_le_mul_of_nonneg_left (heatC1Gain_mono ht.1 ht.2) hS).trans hsmall
     exact ⟨h.1.trans hgain, h.2.trans hgain⟩
-
-
 
 theorem gaugePicard_weighted_c1_geometric
     {b : ℝ → V → V} {G : ℝ → V → ℝ → ℝ} {eta B L C T : ℝ}

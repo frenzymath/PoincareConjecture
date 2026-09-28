@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.AreaWeight
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -21,9 +13,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Icc a b))
-
-
-
 
 theorem m65AreaWeight_uniformBounds (compact : IsCompact (univ : Set M)) :
     ∃ U : ℝ, 0 < U ∧ ∃ D : ℝ, 0 < D ∧

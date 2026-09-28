@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexIntrinsicInterior
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ open Set
 namespace Convex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem combo_intrinsicInterior_self_mem {S : Set E} (hS : Convex ℝ S)
     {x y : E} (hx : x ∈ intrinsicInterior ℝ S) (hy : y ∈ S)
@@ -64,9 +52,6 @@ theorem combo_intrinsicInterior_self_mem {S : Set E} (hS : Convex ℝ S)
   change b • (A y' - A x') + A x' = _
   rw [hxx, hyy, ha']
   module
-
-
-
 
 theorem intrinsicInterior_union_of_subset {S T : Set E}
     (hS : Convex ℝ S) (hT : Convex ℝ T) (hTS : T ⊆ S) :

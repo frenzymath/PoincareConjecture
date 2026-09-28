@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceHighCritical
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,7 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Matrix
 namespace PoincareConjecture.M25.Topology3D
 
 noncomputable section
-
 
 theorem reference_critical_values_explicit
     (ws wm : ℝ)

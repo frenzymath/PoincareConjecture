@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ApproximationCoefficients
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactFamily
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Harmonic.Perturbation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34.CompactCapApproximation
 
 variable {g0 : StandardInitialMetric} (A : CompactCapApproximation g0)
-
-
 
 theorem coefficients_exp_bounds (P : RicciFlowCurvatureTheory.{0})
     (k : ℕ) {t : ℝ} (ht : t ∈ Icc 0 A.time) {x : StandardCapSpace}
@@ -41,8 +30,6 @@ theorem coefficients_exp_bounds (P : RicciFlowCurvatureTheory.{0})
   rw [A.coefficients_zero k hx] at h
   norm_num at h ⊢
   exact h
-
-
 
 theorem exists_compact_ellipticity (P : RicciFlowCurvatureTheory.{0})
     {K : Set StandardCapSpace} (hK : IsCompact K) :
@@ -94,8 +81,6 @@ theorem exists_compact_ellipticity (P : RicciFlowCurvatureTheory.{0})
       _ ≤ Real.exp (6 * A.curvature_bound 0 * A.time) * (max b 0 * ‖v‖ ^ 2) :=
         mul_le_mul_of_nonneg_left (hupper x hx v) (Real.exp_pos _).le
       _ = _ := by ring
-
-
 
 theorem norm_coefficients_le (k : ℕ) (t : ℝ) (x : StandardCapSpace)
     {b : ℝ} (hb : 0 ≤ b) (hupper : ∀ v, A.coefficients k t x v v ≤ b * ‖v‖ ^ 2) :

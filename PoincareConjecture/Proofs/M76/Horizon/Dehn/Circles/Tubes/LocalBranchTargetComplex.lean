@@ -9,7 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
 theorem convex_subset_coordinate_cross {S : Set V3} (hS : Convex ℝ S)
     (hcross : ∀ z ∈ S, z 0 = 0 ∨ z 1 = 0) :
     (∀ z ∈ S, z 0 = 0) ∨ ∀ z ∈ S, z 1 = 0 := by
@@ -30,8 +29,6 @@ theorem convex_subset_coordinate_cross {S : Set V3} (hS : Convex ℝ S)
   rcases hm with hm | hm
   · exact ha0 (by linarith)
   · exact hb1 (by linarith)
-
-
 
 theorem local_crossing_vertexSubcomplex_space
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -102,8 +99,6 @@ theorem local_crossing_vertexSubcomplex_space
     · fin_cases j
       · exact ((hA v hvK).mp (A.convexHull_subset_space (hzother (h1 z hzs)) hvh)).2.1
       · exact h1 v hvh
-
-
 
 theorem ComponentBranchModel.exists_marked_raw_star
     {X ι : Type*} [TopologicalSpace X]

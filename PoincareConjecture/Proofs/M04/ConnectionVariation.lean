@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M04.TensorDerivativeClosure
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -280,4 +273,3 @@ theorem hasDerivAt_connection_pairing (F : RicciFlow n M J)
   rw [hVelocity, hPointwise hX hY hZ, hPointwise hY hX hZ, hPointwise hZ hX hY]
 
 end PoincareConjecture.M04
-

@@ -1,14 +1,6 @@
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

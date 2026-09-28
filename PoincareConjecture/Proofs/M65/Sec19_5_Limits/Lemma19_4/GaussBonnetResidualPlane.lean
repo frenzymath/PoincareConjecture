@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetProjection
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexGradient
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,16 +12,11 @@ namespace PoincareConjecture.M65Branch
 
 variable {n : ℕ}
 
-
-
 def residualRealColumn : (Fin n → ℂ) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   LinearMap.toContinuousLinearMap {
     toFun := fun q => WithLp.toLp 2 (fun i => (q i).re)
     map_add' := by intro v w; ext i; exact add_re _ _
     map_smul' := by intro r v; ext i; exact smul_re _ _ }
-
-
-
 
 def residualImagColumn : (Fin n → ℂ) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
   LinearMap.toContinuousLinearMap {
@@ -46,8 +32,6 @@ def residualImagColumn : (Fin n → ℂ) →L[ℝ] EuclideanSpace ℝ (Fin n) :=
       change -(r • v i).im = r * -(v i).im
       rw [smul_im, smul_eq_mul, mul_neg] }
 
-
-
 theorem residual_columns_recover (q : Fin n → ℂ) :
     coordinateComplexification (residualRealColumn q) -
       I • coordinateComplexification (residualImagColumn q) = q := by
@@ -55,9 +39,6 @@ theorem residual_columns_recover (q : Fin n → ℂ) :
   change ((q i).re : ℂ) - I * (-(q i).im : ℝ) = q i
   rw [ofReal_neg, mul_neg, sub_neg_eq_add]
   simpa only [mul_comm] using Complex.re_add_im (q i)
-
-
-
 
 theorem residual_columns_complexGradient (H : ℂ → EuclideanSpace ℝ (Fin n)) (z : ℂ) :
     residualRealColumn (complexGradient H z) = fderiv ℝ H z 1 ∧
@@ -67,9 +48,6 @@ theorem residual_columns_complexGradient (H : ℂ → EuclideanSpace ℝ (Fin n)
     simp
   · change -(((fderiv ℝ H z 1 i : ℝ) : ℂ) - I * ((fderiv ℝ H z I i : ℝ) : ℂ)).im = _
     simp
-
-
-
 
 theorem residual_columns_smul (s : ℂ) (q : Fin n → ℂ) :
     residualRealColumn (s • q) = s.re • residualRealColumn q + s.im • residualImagColumn q ∧
@@ -83,9 +61,6 @@ theorem residual_columns_smul (s : ℂ) (q : Fin n → ℂ) :
     rw [mul_im]
     ring
 
-
-
-
 theorem conformal_columns_rotate_scale
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (G : E →L[ℝ] E →L[ℝ] ℝ) (hG : ∀ v w, G v w = G w v)
@@ -96,9 +71,6 @@ theorem conformal_columns_rotate_scale
   have hba : G b a = 0 := (hG b a).trans hab
   simp only [map_add, map_smul, add_apply, smul_apply, smul_eq_mul, hab, hba, hbb]
   constructor <;> ring
-
-
-
 
 theorem residual_columns_conformal_of_smul
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -113,9 +85,6 @@ theorem residual_columns_conformal_of_smul
   obtain ⟨ha, hb⟩ := residual_columns_smul s⁻¹ (s • q)
   rw [smul_smul, inv_mul_cancel₀ hs, one_smul] at ha hb
   simpa only [← ha, ← hb] using hrot
-
-
-
 
 theorem residual_columns_factor_pos
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -133,9 +102,6 @@ theorem residual_columns_factor_pos
     exact (lt_irrefl 0) hpositive
   apply hq
   rw [← residual_columns_recover q, hr, hi, map_zero, smul_zero, sub_zero]
-
-
-
 
 theorem residual_projection_eq_of_gradient_factor
     (G : EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ)
@@ -156,10 +122,6 @@ theorem residual_projection_eq_of_gradient_factor
     simpa only [Complex.normSq_apply, sq] using mt Complex.normSq_eq_zero.mp hs
   rw [← ha, ← hb, hsa, hsb]
   exact (twoPlaneProjection_rotate_scale G hG hc hd s.re s.im hnorm).symm
-
-
-
-
 
 theorem residual_projection_extension_memLp
     {H : ℂ → EuclideanSpace ℝ (Fin n)} {q : ℂ → Fin n → ℂ}

@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.TwoSidedUnion
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.Neighborhood
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Interior
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -64,8 +53,6 @@ theorem coordinate_triangle_boundary_avoids_other_edges
   fin_cases i <;> fin_cases j <;> norm_num at hij <;>
     norm_num [Fin.succAbove, Fin.ext_iff, Fin.lt_def] at hc <;>
     linarith [ht.1, ht.2]
-
-
 
 theorem SmoothFace.mem_interior_union_of_shared_edge
     (f g : SmoothFace M) (i j : Fin 3)
@@ -137,8 +124,6 @@ theorem SmoothFace.mem_interior_union_of_shared_edge
     (hWopen.mem_nhds htW) hpartition hUpath.isConnected.isPreconnected
     hVpath.isConnected.isPreconnected hUpath.nonempty hVpath.nonempty hWdense hfrontf hfrontg
   exact mem_interior_iff_mem_nhds.mpr (Filter.mem_of_superset (hWopen.mem_nhds htW) hcover)
-
-
 
 theorem mem_interior_union_of_coordinate_triangles_shared_edge
     (f g : SmoothFace M)

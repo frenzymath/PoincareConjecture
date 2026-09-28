@@ -3,14 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
 open scoped Manifold ContDiff Bundle Topology
@@ -106,7 +98,6 @@ private theorem fderiv_connectionBilinear_apply (D : LeviCivitaData g)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem curvatureOnFields_eq_curvature_euclidean (D : LeviCivitaData g)
     {X Y Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}
     {x : EuclideanSpace ℝ (Fin n)}
@@ -133,7 +124,6 @@ theorem curvatureOnFields_eq_curvature_euclidean (D : LeviCivitaData g)
   simp only [← connectionBilinear_apply, map_add, map_sub, sub_apply]
   rw [hs]
   module
-
 
 theorem curvatureOnFields_eq_curvature_euclidean_of_contMDiffAt (D : LeviCivitaData g)
     {X Y Z : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}

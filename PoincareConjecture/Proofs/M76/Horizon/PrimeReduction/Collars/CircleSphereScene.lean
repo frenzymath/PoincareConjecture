@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CirclePlanar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.CirclePlanarNeighborhood
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.PairedChartRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex
 
@@ -19,8 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "C3" => (P2 × ℝ)
-
-
 
 theorem ChartwisePLSphere.exists_finitePL_sheet_circle_tube
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

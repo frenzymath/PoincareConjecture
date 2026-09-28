@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceBallChart
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem nonnested_reference_lower_label_images
     (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d)

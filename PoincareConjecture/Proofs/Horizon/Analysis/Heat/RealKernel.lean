@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Heat.Gaussian
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory ProbabilityTheory
@@ -120,8 +110,6 @@ theorem contDiffOn_realHeatKernel :
     · intro p hp
       change 0 < p.1 at hp
       positivity
-
-
 
 theorem gaussianAverage_eq_integral_realHeatKernel {f : ℝ → ℝ}
     (hf : Continuous f) {t : ℝ} (ht : 0 < t) (x : ℝ) :

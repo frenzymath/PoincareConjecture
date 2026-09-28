@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.CanonicalConnectionDifferenceBound
 import PoincareConjecture.Proofs.M34.Standard.CanonicalActualCurvatureBound
 import PoincareConjecture.Proofs.M34.Mathlib.EuclideanCoordinateSquareBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem exists_canonicalDomain_differenceDensity_bound
     {n dH dA dS : ℕ} (qH : FH n ≃L[ℝ] EuclideanSpace ℝ (Fin dH))

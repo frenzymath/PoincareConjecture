@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Ends.NeckPacking
 import Mathlib.Order.Zorn
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,8 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M]
   {g : RiemannianMetric 3 M} {H : ConnectedNeckCapCover g}
-
-
 
 theorem RepairedNeckCapTopologyData.globalConclusion
     (D : RepairedNeckCapTopologyData g H) (hwhole : H.isWhole) :
@@ -62,8 +51,6 @@ theorem RepairedNeckCapTopologyData.globalConclusion
       simpa only [hwhole] using hcontains
     exact ⟨.fibration { fibration with contains_X := hwhole' } hε
       (Set.eq_univ_of_univ_subset hwhole')⟩
-
-
 
 theorem appendixA25_of_appendixA21 (hlocal : AppendixA21Theory g H)
     (hwhole : H.isWhole) : AppendixA25Theory g H hwhole := by

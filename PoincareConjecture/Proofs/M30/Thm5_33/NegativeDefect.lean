@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 import PoincareConjecture.Proofs.M30.Mathlib.LogPinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem weak_log_pinching_of_branch {F : GeneralizedRicciFlowData.{u}}
     (hF : generalizedPinchedOrNonnegative F) {t : ℝ} (ht : t ∈ F.interval)
@@ -35,9 +24,6 @@ theorem weak_log_pinching_of_branch {F : GeneralizedRicciFlowData.{u}}
       positivity) hlog
     nlinarith
   · exact (hnonnegative.2 t ht x).2 hX
-
-
-
 
 theorem eventually_negativeDefect_le (S : GeneralizedBlowupSequence.{u})
     (hbranch : ∀ k, generalizedPinchedOrNonnegative (S.flow k))

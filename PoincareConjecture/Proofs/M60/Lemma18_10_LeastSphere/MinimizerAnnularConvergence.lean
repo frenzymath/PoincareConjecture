@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityDec
 import Mathlib.Topology.UniformSpace.CompactConvergence
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +15,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem suChartReadable_differential_injective
     {d : ℕ} {e : M → EuclideanSpace ℝ (Fin d)}
@@ -46,8 +34,6 @@ theorem suChartReadable_differential_injective
     exact h
   rw [hchain, hchain, huv]
 
-
-
 theorem suObservation_tendsto_compactOpen
     {d : ℕ} {e : M → EuclideanSpace ℝ (Fin d)} (he : Continuous e)
     (hei : IsEmbedding e) (f : ℕ → C(LoopPlane, M)) (v : C(LoopPlane, M))
@@ -57,9 +43,6 @@ theorem suObservation_tendsto_compactOpen
   have h := ContinuousMap.tendsto_of_tendstoLocallyUniformly
     (F := fun j => E.comp (f j)) (f := E.comp v) hvalue
   exact (E.isInducing_postcomp (X := LoopPlane) hei.isInducing).tendsto_nhds_iff.mpr h
-
-
-
 
 theorem suCompactOpen_eventually_pairs
     (f : ℕ → C(LoopPlane, M)) (v : C(LoopPlane, M))
@@ -78,8 +61,6 @@ theorem suCompactOpen_eventually_pairs
     K hK U hU hpair
 
 open scoped Bundle in
-
-
 
 theorem suObservation_metric_derivative_bound [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {d : ℕ} {e : M → EuclideanSpace ℝ (Fin d)}
@@ -113,9 +94,6 @@ theorem suObservation_metric_derivative_bound [CompactSpace M] [T2Space M]
         simpa only [mul_comm] using hs.trans ho)
     _ = _ := by ring
 
-
-
-
 theorem suObservation_eventually_metric_bound [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {d : ℕ} {e : M → EuclideanSpace ℝ (Fin d)}
     (he : ContMDiff (𝓡 n) (𝓡 d) ∞ e) (hread : SUChartReadable (n := n) e)
@@ -146,8 +124,6 @@ theorem suObservation_eventually_metric_bound [CompactSpace M] [T2Space M]
   exact (hbound (f j) (hf j) z w).trans
     (mul_le_mul_of_nonneg_right (mul_le_mul_of_nonneg_left ht hC.le) (norm_nonneg w))
 
-
-
 theorem suObservation_metric_bound_on_compact [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) {d : ℕ} {e : M → EuclideanSpace ℝ (Fin d)}
     (he : ContMDiff (𝓡 n) (𝓡 d) ∞ e) (hread : SUChartReadable (n := n) e)
@@ -164,9 +140,6 @@ theorem suObservation_metric_bound_on_compact [CompactSpace M] [T2Space M]
   exact (hbound f hf z w).trans (mul_le_mul_of_nonneg_right
     (mul_le_mul_of_nonneg_left ((hT z hz).trans (by linarith [le_max_left T 0])) hC.le)
       (norm_nonneg w))
-
-
-
 
 theorem suCircle_family_neighborhood
     {Y : Type*} [TopologicalSpace Y] {F : unitInterval × LoopPlane → Y}

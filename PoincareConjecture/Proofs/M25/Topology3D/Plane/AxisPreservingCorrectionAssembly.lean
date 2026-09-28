@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcTubeHomotopy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_axis_preserving_correction_of_certified_homotopy
     (F : ℝ → (ℝ × ℝ) ≃ₘ[ℝ] (ℝ × ℝ))

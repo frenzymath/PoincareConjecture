@@ -1,19 +1,8 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.TransverseLevels
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.InnerProductSpace.Calculus
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,8 +10,6 @@ open Set
 open scoped ContDiff Topology
 
 namespace Poincare.Topology.Plane.Curves
-
-
 
 theorem exists_smooth_interval_inverse_of_deriv_pos
     {g : ℝ → ℝ} (hg : ContDiff ℝ ∞ g) {a b : ℝ} (hab : a ≤ b)
@@ -74,8 +61,6 @@ theorem exists_smooth_interval_inverse_of_deriv_pos
     rintro _ ⟨t, ht, rfl⟩
     exact G.map_source (hWsub ht)
 
-
-
 theorem exists_tangent_projection_coordinates
     {v : EuclideanSpace ℝ (Fin 2)} (hv : v ≠ 0) :
     ∃ L : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] (ℝ × ℝ),
@@ -90,9 +75,6 @@ theorem exists_tangent_projection_coordinates
   exact exists_equiv_of_transverse_functionals (a := innerSL ℝ v)
     (b := innerSL ℝ (quarterTurn v)) ha (inner_quarterTurn_self v)
     (real_inner_self_pos.mpr hJv).ne'
-
-
-
 
 theorem exists_graph_coordinates_of_positive_projection
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)

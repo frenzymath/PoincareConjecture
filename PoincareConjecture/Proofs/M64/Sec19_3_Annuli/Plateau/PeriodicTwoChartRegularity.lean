@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusTwoCutC1
 import Mathlib.Algebra.Order.ToIntervalMod
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -29,9 +20,6 @@ local notation "v" => annulusPoint (curvePeriod / 2) 0
 private theorem point_coordinates (p : LoopPlane) : annulusPoint (p 0) (p 1) = p := by
   ext i
   fin_cases i <;> rfl
-
-
-
 
 theorem m64PeriodicMap_contMDiffOn_of_two_charts
     {F G : LoopPlane → M} {Y : Set ℝ} {k : ℕ∞ω}

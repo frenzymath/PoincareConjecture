@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -99,9 +91,6 @@ private theorem exists_glued_vertex_product [FiniteDimensional ℝ E]
     obtain ⟨p, hp⟩ := mem_iUnion.mp (hcover.symm.subset hx)
     rw [hvalue p x hp]
     exact P.proper p x hp
-
-
-
 
 theorem HamiltonProperDiskVertexProducts.exists_unmarked_disk_product
     [FiniteDimensional ℝ E] {T : HamiltonProperDiskTriangulation R D b}

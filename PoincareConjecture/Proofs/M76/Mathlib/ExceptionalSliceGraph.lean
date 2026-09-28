@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.StrictCrossingPointIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.GeometricGraphComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,29 +9,17 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
-
 def strictCrossingEdges (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) : Set (Finset E) :=
   {e | e ∈ K.faces ∧ A.StraddlesZero e}
-
-
 
 theorem finite_strictCrossingEdges (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (hK : K.faces.Finite) : (K.strictCrossingEdges A).Finite :=
   hK.subset (fun _ he => he.1)
 
-
-
-
 noncomputable def exceptionalCrossingPoint (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (q : E) : Option (K.strictCrossingEdges A) → E
   | none => q
   | some e => A.straddlingPoint e.val e.property.2
-
-
-
-
 
 def exceptionalSliceGraph [DecidableEq E]
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ) (q : E) :
@@ -66,9 +45,6 @@ def exceptionalSliceGraph [DecidableEq E]
     | none => exact h
     | some e => exact h.1 rfl⟩
 
-
-
-
 theorem exceptionalCrossingPoint_injective (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hq : q ∈ K.vertices) :
     Function.Injective (K.exceptionalCrossingPoint A q) := by
@@ -85,9 +61,6 @@ theorem exceptionalCrossingPoint_injective (K : SimplicialComplex ℝ E)
       exact False.elim (K.straddlingPoint_ne_vertex A e.property.1 e.property.2 hq hab)
     | some f =>
       exact congrArg some (K.straddlingPoint_injective_without_regularity A hab)
-
-
-
 
 theorem exceptionalCrossingPoint_mem (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} (hq : q ∈ K.vertices) (hAq : A q = 0)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Convergence.Curvature
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ namespace PoincareConjecture.FlowCarrier
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem scalarCurvature_eq_of_frozen_coordinate_germ
     {n : ℕ} (C : FlowCarrier n) (gM : C.metric)

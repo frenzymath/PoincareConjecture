@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.UniformScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_compact_uniform_curvature_tail
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -49,8 +38,6 @@ theorem exists_compact_uniform_curvature_tail
   rw [Real.dist_eq] at hdist
   have := (abs_sub_lt_iff.mp hdist).2
   linarith
-
-
 
 theorem exists_compact_terminal_metric_exponential_comparison
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -79,8 +66,6 @@ theorem exists_compact_terminal_metric_exponential_comparison
       have he : 6 * K * (T - t) + -2 * (3 : ℝ) * K * (T - t) = 0 := by ring
       rw [he, Real.exp_zero]
     simpa only [← mul_assoc, hexp, one_mul] using hmul
-
-
 
 theorem eventually_terminal_tangentNorm_comparison
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

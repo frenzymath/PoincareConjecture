@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentGeometry
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingBuffer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_initial_model_buffer
     {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
@@ -69,8 +57,6 @@ theorem exists_source_initial_model_buffer
     refine ⟨E.coordinate_inverse x, ⟨mem_univ _, ?_⟩,
       E.coordinate_map_coordinate_inverse hx⟩
     exact ⟨(E.coordinate_inverse_mem x hx).2.1.le, (E.coordinate_inverse_mem x hx).2.2.le⟩
-
-
 
 theorem exists_source_initial_fixed_geometry_tolerance
     {g0 : StandardInitialMetric} (standard : RepairedStandardCapExistenceData g0)

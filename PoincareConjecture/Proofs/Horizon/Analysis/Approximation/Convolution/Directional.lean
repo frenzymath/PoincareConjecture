@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Semiconcavity
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter ContinuousLinearMap MeasureTheory
@@ -19,8 +11,6 @@ namespace Poincare
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [MeasurableSpace E] [BorelSpace E]
   (μ : Measure E) [μ.IsAddHaarMeasure]
-
-
 
 theorem normed_convolution_increment_le {f : E → ℝ} (hf : Continuous f)
     (φ : ContDiffBump (0 : E)) {x v : E} {t c : ℝ}
@@ -54,8 +44,6 @@ theorem normed_convolution_increment_le {f : E → ℝ} (hf : Continuous f)
         simp only [hzero, zero_mul, le_refl]
     _ = c := by rw [integral_mul_const, φ.integral_normed, one_mul]
 
-
-
 theorem fderiv_normed_convolution_apply_le_of_increment_bound
     {f : E → ℝ} (hf : Continuous f) (φ : ContDiffBump (0 : E))
     {x v : E} {c r : ℝ} (hr : 0 < r)
@@ -80,7 +68,6 @@ theorem fderiv_normed_convolution_apply_le_of_increment_bound
   simp only [zero_add, zero_smul, add_zero, smul_eq_mul]
   exact (inv_mul_le_iff₀ ht0).mpr hinc
 
-
 theorem fderiv_normed_convolution_apply_le {f : E → ℝ} (hf : Continuous f)
     (φ : ContDiffBump (0 : E)) {v : E} {c : ℝ}
     (hbound : ∀ y : E, ∀ t : ℝ, 0 ≤ t → f (y + t • v) - f y ≤ t * c)
@@ -92,8 +79,6 @@ theorem fderiv_normed_convolution_apply_le {f : E → ℝ} (hf : Continuous f)
 end Poincare
 
 namespace Poincare
-
-
 
 theorem exists_contDiff_lipschitz_semiconcave_directional_approx
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

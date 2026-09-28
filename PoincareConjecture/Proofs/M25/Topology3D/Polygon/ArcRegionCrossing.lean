@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.Regions
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.LocalRegionSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {m : ℕ} {r : Polygon E m}
-
-
 
 theorem IsSimplePolygon.opposite_local_rays_regions (hr : IsSimplePolygon r)
     (hdim : Module.finrank ℝ E = 2) (q a b : E) (ε : ℝ) (W A B : Set E)

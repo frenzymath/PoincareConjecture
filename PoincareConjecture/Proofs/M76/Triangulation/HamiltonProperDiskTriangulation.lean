@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFullChartStars
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralFrontierRegion
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "V" => ((ℝ × ℝ) × ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 structure HamiltonProperDiskPairChart (R D : Set E) where
 
@@ -41,10 +29,6 @@ structure HamiltonProperDiskPairChart (R D : Set E) where
       ∀ x ∈ chart.source, x ∈ D ↔ 0 ≤ (chart x).1.1 ∧ (chart x).2 = 0)
 
 variable [DecidableEq E]
-
-
-
-
 
 structure HamiltonProperDiskTriangulation (R D : Set E)
     (b : closedBall (0 : V2) 1 ≃ₜ D) where
@@ -89,11 +73,6 @@ structure HamiltonProperDiskTriangulation (R D : Set E)
 
   star_affine : ∀ p : disk.vertices,
     (ambient.closedStar p).AffineOnFaces (pairChart p).chart
-
-
-
-
-
 
 theorem exists_proper_disk_triangulation_of_pair_charts
     {R D : Set E} (hR : IsCompact R) (hreg : closure (interior R) = R)

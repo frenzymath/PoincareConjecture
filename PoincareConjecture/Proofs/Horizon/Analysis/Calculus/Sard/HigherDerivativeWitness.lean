@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Sard.Basic
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 
-
-
-
-
-
-
-
 open Set Function
 open scoped ContDiff
 

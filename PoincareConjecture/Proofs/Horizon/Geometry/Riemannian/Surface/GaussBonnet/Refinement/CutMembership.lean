@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.Incidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +11,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
 
 theorem affineCutPoint_eq_reverse_of_mul_neg (f : Plane →ᵃ[ℝ] ℝ)
     (a b : Plane) (hcross : f a * f b < 0) :
@@ -91,8 +83,6 @@ private theorem crossing_has_ordering (M : TriangleMesh) (f : Plane →ᵃ[ℝ] 
     · exact Or.inr (Or.inr (Or.inr ⟨⟨e, h0, h1, h2⟩⟩))
     · exact Or.inr (Or.inl ⟨⟨e, h0, h1, h2⟩⟩)
 
-
-
 theorem affineCutPoint_mem_localRefinementBoundaryCuts (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {a b : M.Vertex}
     (ha : a ∈ t.1) (hb : b ∈ t.1)
@@ -130,8 +120,6 @@ theorem affineCutPoint_mem_localRefinementBoundaryCuts (M : TriangleMesh)
   · exact False.elim ((crossing_has_ordering M f t i j hcross).elim hp
       (fun h => h.elim hn (fun h => h.elim hep hen)))
 
-
-
 theorem mem_localRefinementBoundaryCuts_iff_crossed_edge (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane} :
     q ∈ localRefinementBoundaryCuts M f t ↔
@@ -141,8 +129,6 @@ theorem mem_localRefinementBoundaryCuts_iff_crossed_edge (M : TriangleMesh)
   · exact localRefinementBoundaryCuts_crossed_edge M f t
   · rintro ⟨a, ha, b, hb, hcross, rfl⟩
     exact affineCutPoint_mem_localRefinementBoundaryCuts M f t ha hb hcross
-
-
 
 theorem localRefinementBoundaryCuts_mem_of_mem_hull (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}
@@ -156,8 +142,6 @@ theorem localRefinementBoundaryCuts_mem_of_mem_hull (M : TriangleMesh)
   have hseg := affineCutPoint_mem_openSegment_of_mul_neg f _ _ hcross
   have huab := mesh_edge_endpoints_mem_of_openSegment_mem_hull M t u ha hb hab hseg hu
   exact affineCutPoint_mem_localRefinementBoundaryCuts M f u huab.1 huab.2 hcross
-
-
 
 theorem localRefinementBoundaryCuts_mem_iff_mem_hull (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle) {q : Plane}

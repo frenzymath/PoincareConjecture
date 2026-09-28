@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.InitialAxialPatch
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCharts
 import PoincareConjecture.Proofs.M35.Thm12_28.SphereCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,7 +9,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
 
 theorem cylinderAxialDilation_mfderiv (c : ℝ) (hc : 0 < c)
     (z : StandardCylinderSpace)
@@ -34,8 +25,6 @@ theorem cylinderAxialDilation_mfderiv (c : ℝ) (hc : 0 < c)
     (fun L : (EuclideanSpace ℝ (Fin 2) × ℝ) →L[ℝ]
         (EuclideanSpace ℝ (Fin 2) × ℝ) => L v) hprod.mfderiv
   convert! h using 1
-
-
 
 theorem initial_axial_patch_pullback
     (g : RiemannianMetric 3 StandardCapSpace) {length : ℝ} {x : StandardCapSpace}

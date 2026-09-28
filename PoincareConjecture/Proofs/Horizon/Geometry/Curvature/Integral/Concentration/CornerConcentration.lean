@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.AnnularStability
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.AscentRestriction
 
-
-
-
-
-
-
-
 noncomputable section
 
 open Set Filter Topology MeasureTheory Function
@@ -61,7 +54,6 @@ private theorem corner_pointedGH_subseq
   obtain ⟨δ,hδ,hpos,⟨⟨C,hC⟩,hdist⟩⟩ := h r hr
   exact ⟨fun j => δ (φ j),hδ.comp hφ,fun j => hpos (φ j),
     ⟨C,fun j => hC (φ j)⟩,hdist.comp hφ⟩
-
 
 set_option maxHeartbeats 2500000 in
 theorem PoincareConjecture.exists_corner_scalar_concentration_of_annular_bound

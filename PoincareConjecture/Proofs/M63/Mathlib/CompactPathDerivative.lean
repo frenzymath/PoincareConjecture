@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M03.Existence.DeTurckParameterBackgroundNative
 import Mathlib.Analysis.Normed.Operator.LinearIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Topology
 
 universe u v
-
-
-
-
 
 theorem hasDerivAt_compact_curry
     {K : Type v} [TopologicalSpace K] [CompactSpace K]

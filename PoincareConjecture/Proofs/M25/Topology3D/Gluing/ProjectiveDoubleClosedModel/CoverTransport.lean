@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_puncturedProjective_cover_of_odd_partialHomeomorph
     {M : Type u} [TopologicalSpace M]
@@ -88,9 +74,6 @@ theorem exists_puncturedProjective_cover_of_odd_partialHomeomorph
       ⟨dH, hsource.symm ▸ x.property, fun _ _ => rfl⟩
     exact hHx.comp (𝓡 3) M (P.local_diffeomorph ⟨H x, (hmap x.property).1⟩)
 
-
-
-
 theorem standardPuncturedProjectiveCover_nonempty_corestrict_opens
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -145,9 +128,6 @@ theorem standardPuncturedProjectiveCover_nonempty_corestrict_opens
     apply Subtype.ext
     rw [hG hyU]
     exact (hi.localInverse_right_inv hy).symm
-
-
-
 
 theorem standardPuncturedProjectiveCover_nonempty_postcompose_diffeomorph
     {M : Type u} [TopologicalSpace M]

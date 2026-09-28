@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsCylinder
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +31,6 @@ variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
 
 include hmap
 
-
-
 theorem cap_ordinary_coefficients_eq (s : ℝ) (hs : s ∈ J)
     {x : StandardCapSpace} (hx : x ∈ F.standard_initial.metric.ball 0 A) :
     (G.flow.metric s).pullbackCoefficients
@@ -53,8 +42,6 @@ theorem cap_ordinary_coefficients_eq (s : ℝ) (hs : s ∈ J)
   intro w
   exact (G.pullback_eq_cylinder hmap p s hs hx v w).trans
     (capComparisonCoefficients_apply e initial.chart s hs x v w).symm
-
-
 
 theorem cap_ordinary_twoJet_eq (s : ℝ) (hs : s ∈ J)
     {x : StandardCapSpace} (hx : x ∈ F.standard_initial.metric.ball 0 A) :

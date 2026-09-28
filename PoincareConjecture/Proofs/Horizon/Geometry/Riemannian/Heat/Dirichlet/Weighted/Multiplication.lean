@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Localization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Support
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 theorem exists_mulSmooth_norm_bound_of_compact_closure (hc : IsCompact (closure Ω))
     (χ : M → ℝ) (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) :
@@ -48,7 +37,6 @@ theorem exists_mulSmooth_norm_bound_of_compact_closure (hc : IsCompact (closure 
     exact mul_assoc _ _ _
   exact ⟨‖A‖, norm_nonneg A, fun f => by rw [← hA]; exact A.le_opNorm f⟩
 
-
 def domainMulSmoothCLM (D : LeviCivitaData g) (Ω : Set M)
     (hc : IsCompact (closure Ω)) (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) :
@@ -60,7 +48,6 @@ def domainMulSmoothCLM (D : LeviCivitaData g) (Ω : Set M)
 @[simp] theorem domainMulSmoothCLM_apply (hc : IsCompact (closure Ω))
     (χ : M → ℝ) (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (f : EnergyTest D Ω) :
     domainMulSmoothCLM D Ω hc χ hχ f = f.mulSmooth χ hχ := rfl
-
 
 def energyMulSmooth (D : LeviCivitaData g) (Ω : Set M)
     (hc : IsCompact (closure Ω)) (χ : M → ℝ)
@@ -120,7 +107,6 @@ private theorem exists_domain_mul_bound (hΩ : IsOpen Ω) (hc : IsCompact (closu
   obtain ⟨C, hC⟩ := hc.exists_bound_of_continuousOn hχ.continuousOn
   exact ⟨C, (ae_restrict_mem hΩ.measurableSet).mono fun x hx => hC x (subset_closure hx)⟩
 
-
 def domainMulL2 (g : RiemannianMetric n M) (Ω : Set M)
     (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω)) (χ : M → ℝ) (hχ : Continuous χ) :
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=
@@ -167,7 +153,6 @@ theorem domainMulL2_mul (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
     domainMulL2_ae hΩ hc χ hχ (domainMulL2 g Ω hΩ hc η hη f),
     domainMulL2_ae hΩ hc η hη f] with x h₁ h₂ h₃
   rw [h₁, h₂, h₃, mul_assoc]
-
 
 theorem toDomainL2_energyMulSmooth (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω))
     (χ : M → ℝ) (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (u : H1Zero D Ω) :

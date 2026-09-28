@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,11 +9,6 @@ open scoped Topology
 namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_ordered_endpoint_cuts (P : Polygon E n)
     (U : Fin n → Set E) (hU : ∀ i, IsOpen (U i)) (hPU : ∀ i, P i ∈ U i)

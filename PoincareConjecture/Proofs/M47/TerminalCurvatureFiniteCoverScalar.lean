@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureChartScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 open M34 SpacetimeBounds SpacetimeBounds.Bootstrap
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem terminalCurvature_eventually_scalar_on_finite_cover
     {ι : Type*} [Finite ι]

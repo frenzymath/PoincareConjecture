@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M74.ServiceMirror
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -88,8 +79,6 @@ private theorem productEquiv_symm_contMDiff (e : Track ≃ Track)
     exact hi'.symm
   exact hJ.congr_of_eventuallyEq hsame
 
-
-
 theorem isotopyTrack_bijective {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hFt : ∀ t : ℝ, ∃ g : Diffeomorph (𝓡 2) (𝓡 2)
       UnitTwoSphere UnitTwoSphere ∞, ∀ q, g q = F t q) :
@@ -106,9 +95,6 @@ theorem isotopyTrack_bijective {F : ℝ → UnitTwoSphere → UnitTwoSphere}
   · rintro ⟨t, q⟩
     obtain ⟨g, hg⟩ := hFt t
     exact ⟨(t, g.symm q), Prod.ext rfl ((hg _).symm.trans (g.apply_symm_apply q))⟩
-
-
-
 
 theorem isotopyTrack_mfderiv_bijective {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hF : ContMDiff ITrack (𝓡 2) ∞ (fun p : Track => F p.1 p.2))
@@ -146,9 +132,6 @@ theorem isotopyTrack_mfderiv_bijective {F : ℝ → UnitTwoSphere → UnitTwoSph
     simp
     rfl
 
-
-
-
 noncomputable def sphereIsotopyTrackDiffeomorph
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hF : ContMDiff ITrack (𝓡 2) ∞ (fun p : Track => F p.1 p.2))
@@ -164,16 +147,12 @@ noncomputable def sphereIsotopyTrackDiffeomorph
     contMDiff_invFun := productEquiv_symm_contMDiff e hs
       (isotopyTrack_mfderiv_bijective hF hFt) }
 
-
-
 @[simp] theorem sphereIsotopyTrackDiffeomorph_apply
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}
     (hF : ContMDiff ITrack (𝓡 2) ∞ (fun p : Track => F p.1 p.2))
     (hFt : ∀ t : ℝ, ∃ g : Diffeomorph (𝓡 2) (𝓡 2)
       UnitTwoSphere UnitTwoSphere ∞, ∀ q, g q = F t q) (p : Track) :
     sphereIsotopyTrackDiffeomorph hF hFt p = (p.1, F p.1 p.2) := rfl
-
-
 
 @[simp] theorem sphereIsotopyTrackDiffeomorph_symm_fst
     {F : ℝ → UnitTwoSphere → UnitTwoSphere}

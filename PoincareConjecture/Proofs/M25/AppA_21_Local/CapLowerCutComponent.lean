@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapEndSeparation
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.RetainedLevelComponents
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem CapCertificate.end_neck_lower_cut_eq_negative_component
     {M : Type u} [TopologicalSpace M]

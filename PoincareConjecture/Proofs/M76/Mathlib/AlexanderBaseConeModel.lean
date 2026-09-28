@@ -2,60 +2,34 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeCarriers
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoof
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace AlexanderBaseConeModel
 
-
-
 def lift : (ℝ × ℝ) →ᴬ[ℝ] ((ℝ × ℝ) × ℝ) :=
   (ContinuousAffineMap.id ℝ (ℝ × ℝ)).prod (ContinuousAffineMap.const ℝ (ℝ × ℝ) 1)
 
-
-
 def top : Set ((ℝ × ℝ) × ℝ) := lift '' TriangularRoofModel.base
-
-
 
 def rim : Set ((ℝ × ℝ) × ℝ) := lift '' frontier TriangularRoofModel.base
 
-
-
 def solid : Set ((ℝ × ℝ) × ℝ) :=
   {p | 0 ≤ p.1.1 ∧ 0 ≤ p.1.2 ∧ p.1.1 + p.1.2 ≤ p.2 ∧ p.2 ≤ 1}
-
-
 
 theorem isFinitePLBallPair_top : IsFinitePLBallPair (ℝ × ℝ) top rim :=
   TriangularRoofModel.isFinitePLBallPair_base.affine_image lift
     (fun _ _ _ _ h => congrArg Prod.fst h)
 
-
-
 theorem height_top (p : ((ℝ × ℝ) × ℝ)) (hp : p ∈ top) : p.2 = 1 := by
   obtain ⟨x, _, rfl⟩ := hp
   rfl
-
-
 
 theorem rim_nonempty : rim.Nonempty := by
   refine ⟨lift (0, 0), mem_image_of_mem lift ?_⟩
   rw [TriangularRoofModel.frontier_base]
   norm_num [TriangularRoofModel.roof]
-
-
-
 
 theorem solid_eq_convexJoin : solid = convexJoin ℝ {0} top := by
   ext p
@@ -91,15 +65,11 @@ theorem solid_eq_convexJoin : solid = convexJoin ℝ {0} top := by
     exact ⟨mul_nonneg hr.1 hx.1, mul_nonneg hr.1 hx.2.1,
       by nlinarith [mul_le_mul_of_nonneg_left hx.2.2 hr.1], by simpa using hr.2⟩
 
-
-
 def forms : Fin 4 → ((ℝ × ℝ) × ℝ) →ᵃ[ℝ] ℝ :=
   let x := ((LinearMap.fst ℝ ℝ ℝ).comp (LinearMap.fst ℝ (ℝ × ℝ) ℝ)).toAffineMap
   let y := ((LinearMap.snd ℝ ℝ ℝ).comp (LinearMap.fst ℝ (ℝ × ℝ) ℝ)).toAffineMap
   let z := (LinearMap.snd ℝ (ℝ × ℝ) ℝ).toAffineMap
   ![-x, -y, x + y - z, z - AffineMap.const ℝ ((ℝ × ℝ) × ℝ) 1]
-
-
 
 theorem solid_eq_halfspaces : solid = {p | ∀ i, forms i p ≤ 0} := by
   ext p
@@ -110,21 +80,16 @@ theorem solid_eq_halfspaces : solid = {p | ∀ i, forms i p ≤ 0} := by
   constructor <;> rintro ⟨hx, hy, hsum, hz⟩ <;> exact ⟨by linarith, by linarith,
     by linarith, by linarith⟩
 
-
-
 theorem forms_linear_ne_zero (i : Fin 4) : (forms i).linear ≠ 0 := by
   intro hzero
   have h := LinearMap.congr_fun hzero (((1, 1), 1) : (ℝ × ℝ) × ℝ)
   fin_cases i <;> norm_num [forms] at h
-
 
 theorem isClosed_solid : IsClosed solid := by
   rw [solid_eq_halfspaces]
   simp only [ofPred_forall]
   exact isClosed_iInter fun i => isClosed_le (forms i).continuous_of_finiteDimensional
     continuous_const
-
-
 
 theorem interior_solid : interior solid =
     {p | 0 < p.1.1 ∧ 0 < p.1.2 ∧ p.1.1 + p.1.2 < p.2 ∧ p.2 < 1} := by
@@ -137,23 +102,16 @@ theorem interior_solid : interior solid =
   constructor <;> rintro ⟨hx, hy, hsum, hz⟩ <;> exact ⟨by linarith, by linarith,
     by linarith, by linarith⟩
 
-
-
 theorem isCompact_solid : IsCompact solid := by
   have hc : IsCompact (Icc (((0, 0), 0) : (ℝ × ℝ) × ℝ) ((1, 1), 1)) := isCompact_Icc
   apply hc.of_isClosed_subset isClosed_solid
   rintro p ⟨hx, hy, hsum, hz⟩
   exact ⟨⟨⟨hx, hy⟩, by linarith⟩, ⟨⟨by linarith, by linarith⟩, hz⟩⟩
 
-
-
 theorem interior_solid_nonempty : (interior solid).Nonempty := by
   refine ⟨((1 / 8, 1 / 8), 1 / 2), ?_⟩
   rw [interior_solid]
   norm_num
-
-
-
 
 theorem frontier_solid : frontier solid = top ∪ convexJoin ℝ {0} rim := by
   rw [frontier, isClosed_solid.closure_eq, interior_solid]
@@ -213,9 +171,6 @@ theorem frontier_solid : frontier solid = top ∪ convexJoin ℝ {0} rim := by
         exact ⟨by nlinarith [hi.1], by nlinarith [hi.2.1],
           by nlinarith [hi.2.2.1]⟩
       exact hxpos.ne' hxroof
-
-
-
 
 theorem isFinitePLBallPair_cone : IsFinitePLBallPair ((ℝ × ℝ) × ℝ)
     (convexJoin ℝ {0} top) (top ∪ convexJoin ℝ {0} rim) := by

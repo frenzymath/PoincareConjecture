@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.NeckCapCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_tube_of_neckCapRegion (e : TerminalEnd K) (n : ℕ)
     (hproper : ∀ D : Set ℝ, IsCompact D →
@@ -61,8 +51,6 @@ theorem exists_tube_of_neckCapRegion (e : TerminalEnd K) (n : ℕ)
         · exact (Set.disjoint_left.mp (hk m (le_max_right n k)) ⟨y, hy, rfl⟩ hcap).elim
         · exact htube
       exact ⟨m, le_max_left n k, { certificate.tube with contains_X := hsub }, hR.2.1⟩
-
-
 
 theorem exists_tube_of_canonical_control (e : TerminalEnd K)
     (A : RepairedNeckCapTopologyTheory.{u})

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.EventRebuild.Transport
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,7 +20,6 @@ private theorem initial_pair (A : SurgeryRegularSlab
     (fun t => (past t).1) (fun t => (past t).2) a b)
     (h : Set.EqOn past future (Set.Icc a b)) : past a = future a :=
   h ⟨le_rfl, A.ordered.le⟩
-
 
 def copyFamily : SurgeryRegularSlab
     (fun t => (future t).1) (fun t => (future t).2) a b where
@@ -55,7 +46,6 @@ theorem copyFamily_identify_apply (t : Set.Icc a b) (x : (past a).1.carrier) :
         (SurgeryEventRebuild.identify (past a) (future a) (initial_pair A h) x) =
       SurgeryEventRebuild.identify (past t) (future t) (h t.property) (A.identify t x) :=
   diffeomorph_apply (initial_pair A h) (h t.property) (A.identify t) x
-
 
 theorem copyFamily_transport (s t : Set.Icc a b) (x : (past s).1.carrier) :
     (A.copyFamily h).transport s t

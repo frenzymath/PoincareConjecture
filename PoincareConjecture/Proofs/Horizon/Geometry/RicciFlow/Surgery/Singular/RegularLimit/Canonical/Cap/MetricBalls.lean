@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.MetricComparison
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T3Space M]
-
-
 
 theorem ball_subset_ball_of_tangentNorm_le_on_closedBall
     (g h : RiemannianMetric n M) (p : M) {r R C : ℝ}
@@ -91,8 +81,6 @@ theorem ball_subset_ball_of_tangentNorm_le_on_closedBall
   have hcontr := ((hgdist.trans hlength).trans_lt hstrict).trans_le
     (ENNReal.ofReal_le_ofReal hrR)
   exact (not_lt_of_ge hu.2.ge) hcontr
-
-
 
 theorem isCompact_closure_ball_of_tangentNorm_le_on_closedBall
     (g h : RiemannianMetric n M) (p : M) {r R C : ℝ}

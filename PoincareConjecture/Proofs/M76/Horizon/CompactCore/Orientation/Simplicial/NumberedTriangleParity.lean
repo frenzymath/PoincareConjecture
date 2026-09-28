@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.TriangleTreeSigns
 import Mathlib.Order.Interval.Finset.Fin
 import Mathlib.Data.Finset.Sort
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace AbstractSimplicialComplex

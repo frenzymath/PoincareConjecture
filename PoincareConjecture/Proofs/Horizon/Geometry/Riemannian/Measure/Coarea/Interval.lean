@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Continuity
 import Mathlib.MeasureTheory.Measure.HasOuterApproxClosed
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory TopologicalSpace
@@ -96,7 +89,6 @@ theorem integral_coarea_isClosed
         rw [integral_mul_const]
         exact mul_comm _ _
   exact tendsto_nhds_unique hleft (hright.congr' (Eventually.of_forall fun k => (heq k).symm))
-
 
 theorem integral_coarea_Icc
     {h : M → ℝ} (hh : Continuous h) (hc : HasCompactSupport h)

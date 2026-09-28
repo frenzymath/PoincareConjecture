@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CircleIntervalComplement
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.CircleAngularGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_source_circle_complement
     (q : UnitCircle → UnitTwoSphere) (hq : Continuous q) (hqi : Injective q)

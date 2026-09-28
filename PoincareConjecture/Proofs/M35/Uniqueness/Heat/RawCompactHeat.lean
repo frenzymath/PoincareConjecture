@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.PrincipalContinuousHeat
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawPrincipalContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,8 +37,6 @@ theorem exists_rawCutoffPrincipalCoefficient_ellipticity (g : RiemannianMetric n
   intro x hx ξ
   simpa only [rawCutoffPrincipalCoefficient_apply, hηK x hx, one_mul, hAK _ _ x hx]
     using hell x hx ξ
-
-
 
 theorem exists_raw_compact_principal_heat {J : Set ℝ} (F : RicciFlow n V J)
     {a b : ℝ} (hab : a < b) (hJ : Icc a b ⊆ J)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_finite_subdivision_min_affine (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {ι : Type*} [Finite ι] [Nonempty ι]
@@ -46,9 +34,6 @@ theorem exists_finite_subdivision_min_affine (K : SimplicialComplex ℝ E)
     sub_nonpos.mpr (hi j (Finset.mem_univ j))
   exact sub_nonpos.mp (s.affine_nonpos_on_hull_of_centroid
     (L.nonempty_of_mem_faces hs) (A i - A j) hside hcent x hx)
-
-
-
 
 theorem finitePiecewiseAffineOn_of_affine_minimum [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

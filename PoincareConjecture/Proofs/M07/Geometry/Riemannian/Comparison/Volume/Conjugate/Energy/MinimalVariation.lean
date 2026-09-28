@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Energy.Chart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Piece
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem sum_chartEnergy_ge_of_minimizing_endpoints
     (g : PoincareConjecture.RiemannianMetric n M) {N : ℕ} (τ : ℕ → ℝ)
@@ -88,8 +78,6 @@ theorem sum_chartEnergy_ge_of_minimizing_endpoints
       (by simpa only [uIcc_of_le (hτ i (Finset.mem_range.mp hi))] using ht)
   rw [heq] at h
   linarith
-
-
 
 theorem isLocalMin_sum_chartEnergy
     (g : PoincareConjecture.RiemannianMetric n M) {N : ℕ} (τ : ℕ → ℝ)

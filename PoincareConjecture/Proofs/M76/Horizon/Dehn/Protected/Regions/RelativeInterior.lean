@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Analysis.Convex.Topology
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 

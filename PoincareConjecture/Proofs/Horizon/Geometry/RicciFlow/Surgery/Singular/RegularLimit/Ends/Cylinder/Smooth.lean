@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -61,7 +53,6 @@ theorem halfAxial_collar (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] {U : Set M}
 
-
 noncomputable def halfOpenPartialHomeomorph (Q : OpenCylinderModel U) (hU : IsOpen U)
     (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :
     OpenPartialHomeomorph RoundCylinderSpace M where
@@ -102,16 +93,12 @@ theorem halfOpenPartialHomeomorph_mdifferentiable
   · exact ((halfAxialInverse_smooth side a).comp_contMDiffOn
       Q.inverse_smooth).mdifferentiableOn (by simp)
 
-
-
 theorem halfParameterization_regular (Q : OpenCylinderModel U) (hU : IsOpen U)
     (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1)
     (z : RoundCylinderSpace) (hz : z.2 ∈ Ico (0 : ℝ) 1) :
     Function.Bijective (mfderiv CylModel (𝓡 3) (Q.halfParameterization side a) z) :=
   (Q.halfOpenPartialHomeomorph_mdifferentiable hU side ha).mfderiv_bijective
     (halfAxial_mem_open side ha hz)
-
-
 
 theorem halfParameterization_smooth_collar (Q : OpenCylinderModel U)
     (side : Bool) {a : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) :

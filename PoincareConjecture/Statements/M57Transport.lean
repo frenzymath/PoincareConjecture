@@ -3,15 +3,6 @@ import PoincareConjecture.Statements.M40ComparisonHomotopy
 import PoincareConjecture.Statements.M53SphereSeparation
 import PoincareConjecture.Statements.M56Ancestry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -33,45 +24,6 @@ def RepairedComparisonProviderRealization
       ∃ hsmall : 2 * D.flow.parameters.epsilon ≤ epsilon₀,
         ∃ hK : RepairedComparisonMapProviderRealization G39 D K,
           C = Classical.choice (hprovider.2 D hsmall K hK)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedTransportTheory : Prop where
   poincare_inputs :

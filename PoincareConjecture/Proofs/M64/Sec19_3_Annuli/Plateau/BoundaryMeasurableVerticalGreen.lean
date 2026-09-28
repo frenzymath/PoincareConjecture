@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnBoundary
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementIntegration
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -27,9 +14,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "I" => Icc (0 : ℝ) curvePeriod
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
-
 
 theorem m64Annulus_measurable_vertical_green
     {q : ℝ → ℝ} (hq : MemLp q 2 (volume.restrict I))

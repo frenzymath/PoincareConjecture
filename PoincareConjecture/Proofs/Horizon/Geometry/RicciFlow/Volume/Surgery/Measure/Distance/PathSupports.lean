@@ -2,24 +2,6 @@ import PoincareConjecture.Proofs.M10.PathSupports
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Distance.CurveCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.Distance.SupportIntegral
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter
@@ -32,7 +14,6 @@ namespace PoincareConjecture.SurgeryVolume.Measure
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {γ : ℝ → M}
-
 
 theorem sub_le_integral_speed_of_upper_supports
     (g : RiemannianMetric n M) {f : M → ℝ} {U : Set M}
@@ -55,7 +36,6 @@ theorem sub_le_integral_speed_of_upper_supports
     hγ.continuous.continuousAt hdom, ?_⟩
   exact (le_abs_self _).trans (hbound _)
 
-
 theorem ofReal_sub_le_pathELength_of_upper_supports
     (g : RiemannianMetric n M) {f : M → ℝ} {U : Set M}
     (hf : ContinuousOn f U) {C : ℝ} (hC : 0 ≤ C)
@@ -70,7 +50,6 @@ theorem ofReal_sub_le_pathELength_of_upper_supports
     (sub_le_integral_speed_of_upper_supports g hf hsupport hγ hab hγU)
   rwa [ENNReal.ofReal_mul hC, ← pathELength_eq_ofReal_integral_tangentNorm g hγ hab] at h
 
-
 theorem pathELength_reverse_unit (g : RiemannianMetric n M)
     (hγ : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 n) 1 γ) :
     g.pathELength (γ ∘ fun t : ℝ ↦ 1 - t) 0 1 = g.pathELength γ 0 1 := by
@@ -83,7 +62,6 @@ theorem pathELength_reverse_unit (g : RiemannianMetric n M)
       (fun _ _ _ _ h ↦ sub_le_sub_left h 1)
       ((differentiable_const (1 : ℝ)).sub differentiable_id).differentiableOn
       (hγ.mdifferentiable one_ne_zero).mdifferentiableOn)
-
 
 theorem edist_le_pathELength_of_upper_supports
     (g : RiemannianMetric n M) {f : M → ℝ} {U : Set M}

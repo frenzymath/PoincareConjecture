@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeStability
 import PoincareConjecture.Proofs.M14.Mathlib.CompactCoordinateBox
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem exists_open_smallTime_uniqueMinimizing
     (hCoordinates : M12MetricPredecessors.{0} n)
@@ -54,9 +42,6 @@ theorem exists_open_smallTime_uniqueMinimizing
       hU hlift hright htime hO hxO hOU hS hconvex hSU hcoord
       (hBN (mem_insert 0 B)) hη hηδ hA hC hcurv hcapture hspeed haction
   exact ⟨N, hN, (subset_insert 0 B).trans hBN, ε, hε, hεη.trans hηδ, hunique⟩
-
-
-
 
 theorem smallTimeCoverageStatement (hCoordinates : M12MetricPredecessors.{0} n)
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

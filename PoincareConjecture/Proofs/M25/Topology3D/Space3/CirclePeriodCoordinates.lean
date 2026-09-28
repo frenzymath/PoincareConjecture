@@ -3,17 +3,6 @@ import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,13 +10,10 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def complexUnitCircleHomeomorph : Circle ≃ₜ UnitCircle :=
   Complex.orthonormalBasisOneI.repr.toHomeomorph.subtype (fun z => by
     change z ∈ sphere (0 : ℂ) 1 ↔ Complex.orthonormalBasisOneI.repr z ∈ sphere (0 : E2) 1
     simp only [mem_sphere_zero_iff_norm, LinearIsometryEquiv.norm_map])
-
 
 theorem complexUnitCircleHomeomorph_contMDiff :
     ContMDiff (𝓡 1) (𝓡 1) ∞ complexUnitCircleHomeomorph := by
@@ -38,7 +24,6 @@ theorem complexUnitCircleHomeomorph_contMDiff :
   exact (Complex.orthonormalBasisOneI.repr.contDiff.contMDiff.comp
     hi).codRestrict_sphere _
 
-
 theorem complexUnitCircleHomeomorph_symm_contMDiff :
     ContMDiff (𝓡 1) (𝓡 1) ∞ complexUnitCircleHomeomorph.symm := by
   let : Fact (Module.finrank ℝ E2 = 1 + 1) := ⟨by simp [E2]⟩
@@ -47,16 +32,12 @@ theorem complexUnitCircleHomeomorph_symm_contMDiff :
   exact (Complex.orthonormalBasisOneI.repr.symm.contDiff.contMDiff.comp
     hi).codRestrict_sphere _
 
-
 noncomputable def periodUnitCircleHomeomorph (T : ℝ) (hT : T ≠ 0) :
     AddCircle T ≃ₜ UnitCircle :=
   (AddCircle.homeomorphCircle hT).trans complexUnitCircleHomeomorph
 
-
 noncomputable def periodCircleParam (T : ℝ) (s : ℝ) : UnitCircle :=
   complexUnitCircleHomeomorph (Circle.exp (2 * Real.pi / T * s))
-
-
 
 theorem periodUnitCircleHomeomorph_coe (T : ℝ) (hT : T ≠ 0) (s : ℝ) :
     periodUnitCircleHomeomorph T hT (s : AddCircle T) = periodCircleParam T s := by
@@ -64,14 +45,10 @@ theorem periodUnitCircleHomeomorph_coe (T : ℝ) (hT : T ≠ 0) (s : ℝ) :
   rw [AddCircle.homeomorphCircle_apply, AddCircle.toCircle_apply_mk]
   rfl
 
-
 theorem periodCircleParam_contMDiff (T : ℝ) :
     ContMDiff 𝓘(ℝ, ℝ) (𝓡 1) ∞ (periodCircleParam T) :=
   complexUnitCircleHomeomorph_contMDiff.comp
     (contMDiff_circleExp.comp ((contDiff_const.mul contDiff_id).contMDiff))
-
-
-
 
 theorem exists_periodCircle_local_time (T : ℝ) (hT : T ≠ 0) (q : UnitCircle) :
     ∃ s : UnitCircle → ℝ, ContMDiffAt (𝓡 1) 𝓘(ℝ, ℝ) ∞ s q ∧

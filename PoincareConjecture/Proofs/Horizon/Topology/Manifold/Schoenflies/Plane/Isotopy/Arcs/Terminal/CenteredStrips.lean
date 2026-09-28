@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.CenteredCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ActualStripData
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,7 +42,6 @@ theorem terminal_centered_strip_flattening (d : TerminalSaddleGeometry M P p e)
     ⟨by linarith [ht.1, s.delta_lt_bandHeight], ht.2.trans s.delta_lt_bandHeight.le⟩ x hx,
     terminalCenteredFrame_translate]
 
-
 def terminalActualTrace (d : TerminalSaddleGeometry M P p e) : Set E2 :=
   ⋃ i, (fun x => Saddle.toE2 (terminalCenteredFrame d (g (d.strips i (x, 0))))) ''
     Icc (d.a i) (d.b i)
@@ -58,8 +55,6 @@ private theorem projection_translate (y : E3) (t : Real) :
     Saddle.toE2 (y + t • (EuclideanSpace.single 2 1 : E3)) = Saddle.toE2 y := by
   ext i
   fin_cases i <;> simp [Saddle.toE2, PiLp.add_apply, PiLp.smul_apply]
-
-
 
 theorem terminal_centered_actual_level_eq_open_patch_union_trace
     (d : TerminalSaddleGeometry M P p e) (s : ActualStripData d)

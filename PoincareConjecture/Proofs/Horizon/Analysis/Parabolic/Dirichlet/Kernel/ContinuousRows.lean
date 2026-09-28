@@ -2,14 +2,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Normed.Operator.Compact.Basic
 import Mathlib.Topology.ContinuousMap.Bounded.Normed
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +13,6 @@ namespace Poincare.Analysis.Dirichlet.Kernel
 
 variable {E X : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [CompleteSpace E] [TopologicalSpace X]
-
-
 
 noncomputable def evaluationRow (T : E →L[ℝ] (X →ᵇ ℝ)) (x : X) : E :=
   (InnerProductSpace.toDual ℝ E).symm
@@ -68,8 +58,6 @@ private theorem continuous_evaluation_comp (T : E →L[ℝ] (X →ᵇ ℝ))
     simpa only [sub_apply, ContinuousLinearMap.comp_apply,
       BoundedContinuousFunction.evalCLM_apply, dist_eq_norm] using hq.le
   exact hnorm.trans_lt (half_lt_self hε)
-
-
 
 theorem continuous_evaluationRow (T : E →L[ℝ] (X →ᵇ ℝ))
     (hT : IsCompactOperator T) : Continuous (evaluationRow T) :=

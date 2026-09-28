@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactDifferential
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactGauss
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M47
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
-
 
 structure TerminalSourceChart (g : RiemannianMetric 3 M) (R : ℝ) where
   chart : PartialDiffeomorph (𝓡 3) (𝓡 3) E M ∞
@@ -53,7 +44,6 @@ theorem invertible {x : E} (hx : x ∈ Metric.ball 0 R) :
 theorem gauss {x : E} (hx : x ∈ Metric.ball 0 R) (w : E) :
     g.pullbackCoefficients C.chart x x w = inner ℝ x w :=
   CoordinateExponential.gauss_identity_of_radial_family g C.smooth C.radial C.speed x hx w
-
 
 theorem terminal_bounds (D : LeviCivitaData g) {H ρ : ℝ}
     (hρR : 2 * ρ < R)

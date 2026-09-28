@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Di
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Support.Tracks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 

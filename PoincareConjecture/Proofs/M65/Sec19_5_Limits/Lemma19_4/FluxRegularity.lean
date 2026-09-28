@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.PlaneFirstVariation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.DiskDivergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,13 +14,9 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def m65PlaneFluxVector (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) (t : ℝ) (z : LoopPlane) : LoopPlane :=
   !₂[m65PlaneVariationFlux g u t 0 z, m65PlaneVariationFlux g u t 1 z]
-
-
 
 theorem m65PlaneVariationFlux_contDiffAt (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) {t : ℝ} {z : LoopPlane}
@@ -51,8 +38,6 @@ theorem m65PlaneVariationFlux_contDiffAt (g : RiemannianMetric n M)
   dsimp only [m65PlaneVariationFlux]
   rw [EuclideanSpace.basisFun_apply]
 
-
-
 theorem m65PlaneFluxVector_contDiffAt (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) {t : ℝ} {z : LoopPlane}
     (hu : ContMDiffAt ((𝓘(ℝ, ℝ)).prod (𝓡 2)) (𝓡 n) ∞ (Function.uncurry u) (t, z)) :
@@ -62,9 +47,6 @@ theorem m65PlaneFluxVector_contDiffAt (g : RiemannianMetric n M)
   fin_cases i
   · exact m65PlaneVariationFlux_contDiffAt g u hu 0
   · exact m65PlaneVariationFlux_contDiffAt g u hu 1
-
-
-
 
 theorem m65PlaneFluxVector_inner (g : RiemannianMetric n M)
     (u : ℝ → LoopPlane → M) (t : ℝ) (z w : LoopPlane) :

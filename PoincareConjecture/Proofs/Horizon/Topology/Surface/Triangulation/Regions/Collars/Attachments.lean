@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Basic
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapGluing
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -71,8 +61,6 @@ theorem right_attachment_subset_interior_fittedRegionCollar (hr : r ≤ 1)
       ⟨⟨(D.edgeEndpoint p.1.2 true, (T p).sector), (T p).sector_region⟩, hq⟩)
   · intro q hq
     exact Or.inr (mem_iUnion.mpr ⟨⟨⟨p, (S p).lastPiece⟩, rfl⟩, hq⟩)
-
-
 
 theorem openChordAttachment_subset_interior_fittedRegionCollar
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)

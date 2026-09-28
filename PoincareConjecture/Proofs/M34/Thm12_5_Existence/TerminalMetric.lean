@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalJets
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open SpacetimeBounds
 variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (L : PartialFlowTerminalJets F S)
 
-
-
 theorem coefficients_tendsto (x : StandardCapSpace) :
     Tendsto (fun t => (F.flow.metric t).euclideanCoefficients x)
       (𝓝[<] S) (𝓝 (L.coefficients x)) := by
@@ -35,15 +23,11 @@ theorem coefficients_tendsto (x : StandardCapSpace) :
   have h := e.continuous.continuousAt.tendsto.comp (L.jet_tendsto 0 x)
   convert! h using 1
 
-
-
 theorem coefficients_apply_tendsto (x u v : StandardCapSpace) :
     Tendsto (fun t => (F.flow.metric t).inner x u v)
       (𝓝[<] S) (𝓝 (L.coefficients x u v)) := by
   have hc : Continuous (fun A : MetricCoefficient 3 => A u v) := by fun_prop
   exact hc.continuousAt.tendsto.comp (L.coefficients_tendsto x)
-
-
 
 theorem coefficients_symm (x u v : StandardCapSpace) :
     L.coefficients x u v = L.coefficients x v u := by
@@ -57,8 +41,6 @@ variable (P : RicciFlowCurvatureTheory.{0}) (E0 : StandardCapEstimate g0)
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
 
 include P hS hSF hB hfull
-
-
 
 theorem coefficients_exp_bounds (x v : StandardCapSpace) :
     Real.exp (-6 * B * S) * g0.metric.inner x v v ≤ L.coefficients x v v ∧
@@ -79,26 +61,18 @@ theorem coefficients_exp_bounds (x v : StandardCapSpace) :
     le_of_tendsto_of_tendsto (L.coefficients_apply_tendsto x v v)
       (hp.continuousAt.tendsto.mono_left nhdsWithin_le_nhds) (hb.mono fun _ ht => ht.2)⟩
 
-
-
 theorem coefficients_pos (x v : StandardCapSpace) (hv : v ≠ 0) :
     0 < L.coefficients x v v :=
   (mul_pos (Real.exp_pos _) (g0.metric.pos x v hv)).trans_le
     (L.coefficients_exp_bounds P hS hSF hB hfull x v).1
-
-
 
 noncomputable def metric : RiemannianMetric 3 StandardCapSpace :=
   RiemannianMetric.ofEuclideanCoefficients L.coefficients
     (L.contDiff_coefficients P E0 hS hSF hB hfull) L.coefficients_symm
     (L.coefficients_pos P hS hSF hB hfull)
 
-
-
 theorem metric_coefficients :
     (L.metric P E0 hS hSF hB hfull).euclideanCoefficients = L.coefficients := rfl
-
-
 
 theorem initial_tangentNorm_le (x v : StandardCapSpace) :
     g0.metric.tangentNorm x v ≤
@@ -119,8 +93,6 @@ theorem initial_tangentNorm_le (x v : StandardCapSpace) :
   have hsqrt := Real.sqrt_le_sqrt hmetric
   rw [hexp, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (Real.exp_nonneg _)] at hsqrt
   exact hsqrt
-
-
 
 theorem metric_complete : MetricComplete (L.metric P E0 hS hSF hB hfull) :=
   RiemannianMetric.metricComplete_of_tangentNorm_comparison

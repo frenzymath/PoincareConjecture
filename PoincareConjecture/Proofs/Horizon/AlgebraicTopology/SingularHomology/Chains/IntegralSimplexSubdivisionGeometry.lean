@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chai
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Chains.IntegralChainCoordinates
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

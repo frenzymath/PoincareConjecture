@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.ClosedSh
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalMarkedProductCorrection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Rescaling
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,8 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "Disk" => closedBall (0 : V2) 1
 local notation "Rim" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
-
-
 
 theorem OriginalDiskProduct.exists_sheet_preserving_correction
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

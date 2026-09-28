@@ -1,16 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.BandIntersections
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Vertices.ChordRemainders
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.Coordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -104,7 +94,6 @@ theorem tip_mem_cap : D.edgeFromEndpoint e terminal trim ∈
     (((caps (D.edgeEndpoint e terminal)).face E.sector).boundary_image_subset_frontier
       E.radialEdge ⟨1, by simp, rfl⟩)
 
-
 theorem tip_cap_unique
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)
     (hsector : ∀ p i, (P p).sector i ⊆ connectedComponentIn
@@ -164,7 +153,6 @@ theorem positive_chord_mem_sector {u : ℝ} (hu : u ∈ Ioo (0 : ℝ) 1) :
   rw [E.chord_map]
   apply (caps (D.edgeEndpoint e terminal)).chord_interior_mem_sector
   split_ifs <;> constructor <;> linarith [hu.1, hu.2]
-
 
 theorem chordSegment_inter_cap {r : ℝ} (hr : r < 1)
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)
@@ -236,7 +224,6 @@ theorem last_rightCut_eq_chordSegment (hi : i = S.lastPiece) :
     CapGraphEndpoint.chordSegment, edgeFromEndpoint, ite_true] using
     B.rightCut_eq_ray (S.cut_lt S.lastPiece).le
 
-
 theorem band_inter_cap
     (hr : r < 1)
     (hdisjoint : ∀ p q, p ≠ q → Disjoint (P p).carrier (P q).carrier)
@@ -272,9 +259,6 @@ theorem band_inter_cap
     · simp only [ite_and, if_pos hi,
         T.chordSegment_inter_cap hr hdisjoint huniqueT p s hsR]
     · simp only [ite_and, if_neg hi, empty_inter]
-
-
-
 
 theorem cap_band_face_coordinate_intersection
     (hr : r < 1)

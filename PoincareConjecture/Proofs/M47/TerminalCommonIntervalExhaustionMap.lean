@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M47
 variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [Nonempty M]
 
-
-
 noncomputable def terminalCommonInterval_exhaustionMap
     {E : Set M} (hE : IsOpen E) (f : M → N)
     (hf : Topology.IsOpenEmbedding (fun x : E => f x)) : OpenPartialHomeomorph M N :=
@@ -32,16 +22,12 @@ noncomputable def terminalCommonInterval_exhaustionMap
       congrArg Subtype.val (hf.injective (a₁ := ⟨x, hx⟩) (a₂ := ⟨y, hy⟩) heq)).toPartialEquiv f E)
     (continuousOn_iff_continuous_domRestrict.mpr hf.continuous) hf.isOpenMap hE
 
-
-
 theorem terminalCommonInterval_exhaustion_map_readouts
     {E : Set M} (hE : IsOpen E) (f : M → N)
     (hf : Topology.IsOpenEmbedding (fun x : E => f x)) :
     let e := terminalCommonInterval_exhaustionMap hE f hf
     e.source = E ∧ e.target = f '' E ∧ (e : M → N) = f := by
   exact ⟨rfl, rfl, rfl⟩
-
-
 
 theorem terminalCommonInterval_exhaustion_map_smooth
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

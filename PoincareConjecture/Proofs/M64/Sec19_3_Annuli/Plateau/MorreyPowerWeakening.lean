@@ -1,18 +1,11 @@
 import Mathlib.Analysis.SpecialFunctions.Pow.Real
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
 
 theorem m64Morrey_power_bound_weaken
     {E K R r beta gamma : ℝ} (hE : E ≤ K * r ^ beta)

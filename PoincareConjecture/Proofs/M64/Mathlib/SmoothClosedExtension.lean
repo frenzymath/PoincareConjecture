@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,10 +9,6 @@ open Set Filter
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_contDiff_eq_nhds_of_isClosed
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

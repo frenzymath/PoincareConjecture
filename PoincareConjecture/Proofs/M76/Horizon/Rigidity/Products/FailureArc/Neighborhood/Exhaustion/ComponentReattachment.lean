@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.PLDomainComponents
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

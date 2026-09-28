@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarMarkedCutCharts
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexFrontierCoordinateQuadrants
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -29,10 +20,6 @@ private theorem nonpos_iff_of_zero_nonneg {a b : ℝ}
     have hapos : 0 < a := lt_of_not_ge ha
     have hb0 : b = 0 := le_antisymm hb (hp.mp hapos.le)
     exact hapos.ne' (hz.mpr hb0)
-
-
-
-
 
 theorem isFinitePLBallPair_closedStar_coordinate_caps
     (K : SimplicialComplex ℝ ((ℝ × ℝ) × ℝ)) (hK : K.faces.Finite)

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_AnalyticData
 import PoincareConjecture.Proofs.M14.Sec6_7_ZeroTimeIntegral
 import PoincareConjecture.Proofs.M14.Thm8_1_TerminalLowerBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem reducedVolumeSourceCoverageData_of_smallTimeCoverage
     (hCoordinates : M12MetricPredecessors.{0} n)

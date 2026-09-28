@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.Topology
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem boundary_subset_truncated_end_closure (C : CapCertificate g)
     {d : ℝ} (hd : -C.epsilon⁻¹ < d) :
@@ -52,8 +44,6 @@ theorem same_core_eq_complement_truncated_end (C : CapCertificate g) (b : ℝ) :
   · rintro ⟨hx | hx, hn⟩
     · exact hx
     · exact (hn hx).elim
-
-
 
 theorem exists_same_core_truncated_domain_topology_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -119,7 +109,6 @@ theorem exists_same_core_truncated_domain_topology_threshold :
 end PoincareConjecture.CapCertificate
 
 namespace PoincareConjecture.SingularRegularLimit
-
 
 theorem exists_terminal_same_core_truncated_domain_topology_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

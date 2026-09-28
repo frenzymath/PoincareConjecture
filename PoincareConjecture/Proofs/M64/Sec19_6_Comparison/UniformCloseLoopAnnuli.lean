@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.CanonicalAnnulusConstruc
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.CloseLoopInterpolator
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.SampledInterpolatorVertical
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64_uniform_close_loop_canonical_annuli
     {M : Type u} [TopologicalSpace M] [T2Space M]

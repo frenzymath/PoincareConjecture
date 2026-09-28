@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedVolume.Rigidity
 import Mathlib.Topology.Order.MonotoneConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 theorem exists_ancient_reducedVolume_limit
     (F : RicciFlow n M (Iic 0))
@@ -61,8 +50,6 @@ theorem exists_ancient_reducedVolume_limit
     exact hmono hτ (lt_of_lt_of_le hτ ht) ht
   · intro a ha τ hτ
     exact hlim.comp (ha.atTop_mul_const hτ)
-
-
 
 theorem exists_ancient_reducedVolume_limit_lt_euclidean
     (F : RicciFlow n M (Iic 0))

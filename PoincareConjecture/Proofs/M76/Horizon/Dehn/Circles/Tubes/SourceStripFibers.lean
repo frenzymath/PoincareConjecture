@@ -8,9 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 
-
-
-
 theorem source_strip_fibers_of_signed_tube
     {E F : Type*} (sigma : P2 × ℝ → E) {a b : ℝ}
     (closing : SignedAxisPermutation)

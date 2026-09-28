@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLTransitionSignComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,10 +26,6 @@ private theorem exists_full_interior_patch (K : SimplicialComplex ℝ E)
       b.mem_interior_convexHull_of_mem_intrinsicInterior (by simpa [b] using hy)
     simpa [b] using h
   exact ⟨⟨t, ht, htc, x, hxt, hx⟩, y, hyO, hyint⟩
-
-
-
-
 
 theorem exists_composable_affine_patches
     (h k : OpenPartialHomeomorph E E) (K L M : SimplicialComplex ℝ E)

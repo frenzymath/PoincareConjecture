@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalFrame
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +13,6 @@ open ConnectionAlongCurve ConnectionVariation
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_inverse_parallel_jacobi_vector
     (N : IntrinsicAnnulus) {q : ℝ → AnnulusCoordinates} {I : Set ℝ} {b t : ℝ}
@@ -69,9 +54,6 @@ theorem m64Intrinsic_inverse_parallel_jacobi_vector
     (uniqueDiffOn_Icc hb t ht)).symm.trans
       (hwithin.derivWithin (uniqueDiffOn_Icc hb t ht))
   exact heq ▸ (hV.differentiableAt (by simp)).hasDerivAt
-
-
-
 
 theorem m64Intrinsic_transverse_jacobi_equation
     (N : IntrinsicAnnulus) {q : ℝ → AnnulusCoordinates} {I : Set ℝ} {b t : ℝ}

@@ -1,12 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -19,7 +12,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
 theorem SurgeryEndCut.disjoint_compact_component
     {g : RiemannianMetric 3 M} {N : EpsilonNeck g}
     (cut : SurgeryEndCut N) {x : M} (hC : IsCompact (connectedComponent x)) :
@@ -30,7 +22,6 @@ theorem SurgeryEndCut.disjoint_compact_component
   refine Set.disjoint_left.2 fun y hy hyC => ?_
   apply cut.escapes_compact (connectedComponent x) hC
   simpa only [← connectedComponent_eq hyC] using hc.subset_connectedComponent hy
-
 
 theorem SurgeryEventTerminalPolicy.compact_component_retained
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
@@ -50,7 +41,6 @@ theorem SurgeryEventTerminalPolicy.compact_component_retained
     obtain ⟨i, hi⟩ := Set.mem_iUnion.1 htail
     exact Set.disjoint_left.1 ((policy.cuts i).disjoint_compact_component hC) hi hy
 
-
 theorem SurgeryEventTerminalPolicy.high_component_discarded
     {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants}
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
@@ -67,8 +57,6 @@ theorem SurgeryEventTerminalPolicy.high_component_discarded
     (connectedComponent_eq hyz).trans (connectedComponent_eq hy).symm
   have hz : z ∈ connectedComponent x := heq ▸ mem_connectedComponent
   exact (hhigh z hz).not_ge hR
-
-
 
 theorem SurgeryVanishingEventTerminalPolicy.scalar_limit_gt
     {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}

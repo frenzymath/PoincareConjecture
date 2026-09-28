@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusPairedCycles
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalGraphEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -22,17 +12,12 @@ open Classical
 variable {V : Type*} [Fintype V] [DecidableEq V]
   {A : AbstractSimplicialComplex V}
 
-
-
 abbrev ResidualEdge (L : Finset (Edge A.toPreAbstractSimplicialComplex)) :=
   {e : Edge A.toPreAbstractSimplicialComplex // e ∈ L}
-
-
 
 abbrev OriginalTorusBoundarySide (P : SimpleGraph V)
     (L : Finset (Edge A.toPreAbstractSimplicialComplex)) :=
   (P.edgeSet ⊕ ResidualEdge L) × Bool
-
 
 structure OriginalTorusBoundarySideInventory
     (P : SimpleGraph V)
@@ -136,9 +121,6 @@ theorem exists_of_trees_and_residual
       cases sign <;> rfl
 
 end OriginalTorusBoundarySideInventory
-
-
-
 
 theorem exists_original_torus_boundary_inventory
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M09.SquareChartFlow
 import PoincareConjecture.Proofs.M09.ChartCurveEquation
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.TensorPullback
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Extinction.RoundCurvature.CoordinateFormula
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -155,8 +149,6 @@ private theorem tensor_evaluation_contDiffAt
   refine ⟨contMDiffAt_id, ?_⟩
   simpa using contMDiffAt_iff_contDiffAt.mpr (hV i)
 
-
-
 theorem covariantTwoTensorSecondDerivative_of_christoffel_zero
     (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) 2}
@@ -207,8 +199,6 @@ theorem covariantTwoTensorSecondDerivative_of_christoffel_zero
   simp only [sub_apply]
   erw [D.tensor_fderiv_zero_left hT x a v ((hΓuv u).differentiableAt (by simp)) (hΓzero u),
     D.tensor_fderiv_zero_right hT x a u ((hΓuv v).differentiableAt (by simp)) (hΓzero v)]
-
-
 
 theorem alternatingSecondDerivative_eq_covariant_add_curvature
     (D : LeviCivitaData g)

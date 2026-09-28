@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSlopeEquation
 import PoincareConjecture.Proofs.M35.RawFlow.RawRadialVelocityBound
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -51,8 +42,6 @@ theorem rawWarpingSlope_deriv_nonpos {t s : ℝ} (ht : t ∈ Ico 0 G.lifetime) (
   rw [(rawWarpingRadius_deriv_hasDerivAt P G hrotation ht hs).deriv]
   exact axisWarpingSecond_nonpos (G.flow.connection t) (hrotation t ht)
     (raw_nonnegative_sectional P G ht) (rawInverseRadius_pos P G hrotation ht hs)
-
-
 
 theorem rawTangentialCurvature_bounds {T K : ℝ} (hK : 0 ≤ K)
     (hTlt : T < G.lifetime)

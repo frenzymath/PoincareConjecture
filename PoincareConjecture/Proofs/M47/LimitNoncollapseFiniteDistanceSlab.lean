@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteDistanceEndpoint
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.DistanceDistortion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -62,7 +54,6 @@ private theorem interior_slab (h04 : RicciFlowCurvatureTheory.{u})
     hΛ hscale x y hlocal
   norm_num only [Nat.cast_ofNat] at h
   exact h
-
 
 theorem limitFinite_distance_slab (h04 : RicciFlowCurvatureTheory.{u})
     {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)

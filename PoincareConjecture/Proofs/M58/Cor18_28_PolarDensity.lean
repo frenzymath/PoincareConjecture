@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import PoincareConjecture.Proofs.M58.Mathlib.TwoVectorArea
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Real Bundle
@@ -21,9 +12,6 @@ namespace PoincareConjecture.Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem mul_parametrizedAreaDensity_le_polar (g : RiemannianMetric 3 M)
     (F : LoopPlane → M) (z : LoopPlane) {r : ℝ} (hr : 0 ≤ r) (t : ℝ) :

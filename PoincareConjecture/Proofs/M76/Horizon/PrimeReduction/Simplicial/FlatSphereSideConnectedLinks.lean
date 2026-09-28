@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HalfspaceConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandLevels
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularBandTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold InnerProductSpace NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_regular_collar_horizontal_transport
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

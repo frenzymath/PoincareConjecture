@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Packing
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Extraction.Radial
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.LengthLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,9 +15,6 @@ variable {n : ℕ} {M : ℕ → Type}
   [∀ j, TopologicalSpace (M j)] [∀ j, T3Space (M j)]
   [∀ j, ChartedSpace (EuclideanSpace ℝ (Fin n)) (M j)]
   [∀ j, IsManifold (𝓡 n) ∞ (M j)] [∀ j, PreconnectedSpace (M j)]
-
-
-
 
 theorem exists_subseq_proper_pointed_limit_of_ricci_lower_bound
     (g : ∀ j, RiemannianMetric n (M j)) (p : ∀ j, M j)
@@ -84,10 +69,6 @@ theorem exists_subseq_proper_pointed_limit_of_ricci_lower_bound
       X hpack
   refine ⟨hpack, phi, S, hphi, hproper, hinner, hreal⟩
 
-
-
-
-
 theorem exists_subseq_proper_geodesic_pointed_limit_of_ricci_lower_bound
     (g : ∀ j, RiemannianMetric n (M j)) (p : ∀ j, M j)
     (hn : 1 ≤ n) (κ : ℝ) (hκ : 0 ≤ κ)
@@ -130,4 +111,3 @@ theorem exists_subseq_proper_geodesic_pointed_limit_of_ricci_lower_bound
       X hpack happrox phi S hcover hreals
 
 end PoincareConjecture.RiemannianMetric
-

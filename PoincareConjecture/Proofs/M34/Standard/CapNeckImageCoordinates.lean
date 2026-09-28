@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNeckSets
 import PoincareConjecture.Proofs.M34.Mathlib.PartialImageTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem capShiftedCoordinate_mem {epsilon c : ℝ}
     (hdom : Ioo (-epsilon⁻¹ + c) (epsilon⁻¹ + c) ⊆
       Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -35,8 +24,6 @@ theorem capShiftedCoordinate_mem {epsilon c : ℝ}
   refine ⟨N.coordinate_map_mem_of_axial_mem (hdom hs), ?_⟩
   rw [N.coordinate_inverse_coordinate_map_of_axial_mem (hdom hs)]
   exact hs
-
-
 
 theorem capShiftedCoordinate_contMDiffOn {epsilon c : ℝ}
     (hdom : Ioo (-epsilon⁻¹ + c) (epsilon⁻¹ + c) ⊆
@@ -49,8 +36,6 @@ theorem capShiftedCoordinate_contMDiffOn {epsilon c : ℝ}
   intro z hz
   change (z.1, z.2 + c) ∈ univ ×ˢ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹
   exact ⟨mem_univ _, hdom ⟨by linarith [hz.2.1], by linarith [hz.2.2]⟩⟩
-
-
 
 noncomputable def capShiftedCoordinate {epsilon c : ℝ}
     (hdom : Ioo (-epsilon⁻¹ + c) (epsilon⁻¹ + c) ⊆
@@ -94,8 +79,6 @@ noncomputable def capShiftedCoordinate {epsilon c : ℝ}
     exact N.coordinate_map_coordinate_inverse x.property.1
 
 variable {X : Type v} [TopologicalSpace X]
-
-
 
 noncomputable def capImageRegionHomeomorph (e : OpenPartialHomeomorph M X)
     {epsilon c : ℝ}

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.NativeChartDensitySmoothNative
 import PoincareConjecture.Proofs.M03.Existence.EuclideanWeightedAdjointNative
 import PoincareConjecture.Proofs.M03.Existence.NativeDirectionalProductNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -33,11 +24,9 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 
 variable (d : FiniteChartData (n := n) (M := M))
 
-
 def coordinateDivergence (p : M) (V : SmoothField (n := n) (M := M)) (z : E) : ℝ :=
   densityDivergence (d.chartDensity p) (fun i z => chartField p V z i)
     (PiLp.basisFun 2 ℝ (Fin n)) z
-
 
 def coordinateAdjoint (p : M) (V : SmoothField (n := n) (M := M))
     (η : E → ℝ) (z : E) : ℝ :=
@@ -67,7 +56,6 @@ theorem coordinateAdjoint_eq (p : M) (V : SmoothField (n := n) (M := M))
     (d.chartDensity_contDiffOn p) (fun _ hy => d.chartDensity_pos p hy)
     (contDiffOn_chartField_coordinate p V) _ hη hz
 
-
 theorem integral_coordinateFirstOrder_eq_adjoint (p : M)
     (V : SmoothField (n := n) (M := M)) (η : 𝓢(E, ℝ)) (hη : HasCompactSupport η)
     (hηU : tsupport η ⊆ (chartAt E p).target)
@@ -79,7 +67,6 @@ theorem integral_coordinateFirstOrder_eq_adjoint (p : M)
   integral_weightedFirstOrder_eq_adjoint η hη (chartAt E p).open_target hηU
     (d.chartDensity_contDiffOn p) (fun _ hz => d.chartDensity_pos p hz)
     (contDiffOn_chartField_coordinate p V) _ hf
-
 
 theorem contMDiff_weight_mul_chart (p : M) {φ : M → ℝ}
     (hφ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ φ)
@@ -96,7 +83,6 @@ theorem contMDiff_weight_mul_chart (p : M) {φ : M → ℝ}
     filter_upwards [notMem_tsupport_iff_eventuallyEq.mp hxφ] with y hy
     change φ y = 0 at hy
     rw [hy, zero_mul]
-
 
 def fieldDivergence (V : SmoothField (n := n) (M := M)) (x : M) : ℝ :=
   ∑ i : d.centers, d.weight i x * d.coordinateDivergence i.val V (d.chart i x)
@@ -116,7 +102,6 @@ theorem weight_mul_coordinateDivergence_contMDiff (i : d.centers)
   contMDiff_weight_mul_chart i.val (d.weight_smooth i)
     (d.weight_support_subset i) (d.coordinateDivergence_contDiffOn i.val V)
 
-
 def fieldAdjoint (V : SmoothField (n := n) (M := M)) (f : M → ℝ) (x : M) : ℝ :=
   -scalarDirectional V f x - d.fieldDivergence V x * f x
 
@@ -134,7 +119,6 @@ theorem coordinateAdjoint_native (p : M) (V : SmoothField (n := n) (M := M))
   rw [d.coordinateAdjoint_eq p V (contDiffOn_scalar_chartInverse p hf) hz]
   exact congrArg (fun a : ℝ => -a - d.coordinateDivergence p V z *
     f ((chartAt E p).symm z)) (directional_eq_chart_firstOrder p V hf hz).symm
-
 
 theorem integral_nativeDirectional_chart_eq_adjoint (p : M)
     (V : SmoothField (n := n) (M := M)) (η : 𝓢(E, ℝ)) (hη : HasCompactSupport η)

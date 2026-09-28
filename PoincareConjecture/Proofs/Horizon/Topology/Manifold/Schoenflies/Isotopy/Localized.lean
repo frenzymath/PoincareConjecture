@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.CodimensionZero
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
-
 
 theorem exists_ambient_isotopy_of_compact_isotopy_within
     {a b : Real} {K U : Set E} (hK : IsCompact K) (hU : IsOpen U)
@@ -80,8 +68,6 @@ theorem exists_ambient_isotopy_of_compact_isotopy_within
       exact (hpath s).hasDerivWithinAt)
     (hi a (G (a, x)))
   exact heq ht
-
-
 
 theorem exists_ambient_isotopy_of_codimZero_isotopy_within
     {a b : Real} {K U : Set E} (hK : IsCompact K) (hU : IsOpen U)

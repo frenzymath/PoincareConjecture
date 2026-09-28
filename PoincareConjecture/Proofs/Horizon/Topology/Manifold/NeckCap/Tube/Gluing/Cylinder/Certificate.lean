@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.Cylinder.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Isotopy
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TopologicalSpace

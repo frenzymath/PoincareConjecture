@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusCircleCurrent
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusIntrinsicTension
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_closed
     (P : M62.CircleProductData F circumference) (t : ℝ)
@@ -74,10 +59,6 @@ theorem m64AnnulusCircleCurrent_closed
   rw [hxy, hyx, htor]
 
 variable [T2Space M] [CompactSpace M]
-
-
-
-
 
 theorem m64AnnulusCircleCurrent_divergence_zero_of_conformal_minimum
     (P : M62.CircleProductData F circumference) (hcirc : 0 < circumference) (t : ℝ)

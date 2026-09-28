@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Bounds.ParametrizedComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -44,8 +36,6 @@ private theorem scalar_normalized_jet_comparison
   calc
     _ ≤ B * δ + (η + 2 * D * Z * δ) := htri
     _ = _ := by ring
-
-
 
 theorem exists_roundCylinder_buffered_comparison_constants
     {J : Set ℝ} (hJ : IsCompact J) (d : ℕ) :
@@ -104,8 +94,6 @@ theorem exists_roundCylinder_buffered_comparison_constants
   apply scalar_normalized_jet_comparison _ _ _ hs hsone hscalar _ (hinit j hj) (htime j hj)
   exact (hmodel j (0, z.2) ⟨rfl, hzJ⟩).trans
     (Finset.single_le_sum (fun l _ => hZ₀ l) (Finset.mem_range.mpr (Nat.lt_succ_of_le hj)))
-
-
 
 theorem exists_roundCylinder_terminal_error_tolerance
     {ε C B : ℝ} (hε : 0 < ε) (hC : 0 ≤ C) (hB : 0 ≤ B) :

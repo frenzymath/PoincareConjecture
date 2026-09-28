@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,8 +18,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   (T : OriginalProperDiskTriangulation e R j)
 
 open Classical in
-
-
 
 theorem dualBlock_mapsTo_original_interior
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

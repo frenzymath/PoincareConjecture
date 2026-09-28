@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.StereographicMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,12 +9,8 @@ namespace PoincareConjecture.M34
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def stereographicCylinderLogDerivative (i : Fin 2) (x : E3) : ℝ :=
   -2 * x i.castSucc / stereographicCylinderDenominator x
-
-
 
 theorem stereographicCylinderDenominator_hasFDerivAt (x : E3) :
     HasFDerivAt stereographicCylinderDenominator
@@ -33,8 +20,6 @@ theorem stereographicCylinderDenominator_hasFDerivAt (x : E3) :
     ((EuclideanSpace.proj 0 : E3 →L[ℝ] ℝ).hasFDerivAt.pow 2)).add
       ((EuclideanSpace.proj 1 : E3 →L[ℝ] ℝ).hasFDerivAt.pow 2) using 1
   simp
-
-
 
 theorem stereographicCylinderDensity_fderiv (x w : E3) :
     fderiv ℝ stereographicCylinderDensity x w =
@@ -55,8 +40,6 @@ theorem stereographicCylinderDensity_fderiv (x w : E3) :
     (2 * x 0 * w 0 + 2 * x 1 * w 1) = _
   field_simp
   ring
-
-
 
 theorem stereographicCylinderLogDerivative_fderiv (i : Fin 2) (x w : E3) :
     fderiv ℝ (stereographicCylinderLogDerivative i) x w =
@@ -80,8 +63,6 @@ theorem stereographicCylinderLogDerivative_fderiv (i : Fin 2) (x w : E3) :
       (stereographicCylinderDenominator x)⁻¹ * (-2 * w i.castSucc) = _
   field_simp
   ring
-
-
 
 theorem stereographicCylinderCoefficients_fderiv (b : ℝ) (x u v w : E3) :
     fderiv ℝ (fun y => stereographicCylinderCoefficients b y u v) x w =

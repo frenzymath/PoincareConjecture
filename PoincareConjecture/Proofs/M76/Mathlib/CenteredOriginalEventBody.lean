@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CenteredDerivedSurface
 import PoincareConjecture.Proofs.M76.Mathlib.MinimalFaceRadialTransport
 import PoincareConjecture.Proofs.M76.Mathlib.SmallClosedStarNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,12 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
-
 
 theorem exists_centered_original_event_body
     {ι : Type*} [Finite ι] [Nonempty ι]

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHo
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.Bundles.PrismTrimComponentTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.ComponentHomeomorphTransport
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set CategoryTheory Limits
 namespace PoincareConjecture.M76

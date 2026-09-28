@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckTerminalMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalClock
 import PoincareConjecture.Proofs.M34.Standard.NeckRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem exists_ordinary_closed_neck_scalar_bound (hC : RicciFlowCurvatureTheory.{u}) :
     ∃ C : ℝ, 0 < C ∧
@@ -53,7 +43,6 @@ theorem exists_ordinary_closed_neck_scalar_bound (hC : RicciFlowCurvatureTheory.
     closure_Ioc (by norm_num)
   exact le_on_closure hstrict (hclosure.symm ▸ hcont) continuousOn_const
     (hclosure.symm ▸ hs)
-
 
 theorem exists_strongNeck_closed_scalar_bound (P : M47Predecessors.{u}) :
     ∃ C : ℝ, 0 < C ∧ ∀ {F : SurgeryFlowData.{u}} {T epsilon : ℝ},

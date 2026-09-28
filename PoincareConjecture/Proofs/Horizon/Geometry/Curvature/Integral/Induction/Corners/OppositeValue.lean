@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient.LevelDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set
@@ -42,8 +41,6 @@ theorem abs_sum_increment_le_of_opposite_gradient_bounds
   exact Poincare.CurvatureIntegral.norm_add_le_of_opposite
     (D.gradient f z) (D.gradient h z) hδ hfn hhn hop
 
-
-
 theorem abs_partner_increment_le_of_opposite_gradient_bounds
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -63,8 +60,6 @@ theorem abs_partner_increment_le_of_opposite_gradient_bounds
     |h x - h p| = |((f x + h x) - (f p + h p)) - (f x - f p)| := by congr 1; ring
     _ ≤ |(f x + h x) - (f p + h p)| + |f x - f p| := abs_sub _ _
     _ ≤ _ := add_le_add hsum hgap
-
-
 
 theorem abs_centered_strainer_tilt_error_le
     {n k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

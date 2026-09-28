@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M04.SectionalRayleigh
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -19,8 +11,6 @@ open M04
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem six_mul_sectional_lower_le_scalar (D : LeviCivitaData g) (x : M) (k : ℝ)
     (hsec : ∀ u v : TangentSpace (𝓡 3) x,

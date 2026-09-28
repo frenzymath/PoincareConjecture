@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.Componen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.SelectedChartStars
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -125,8 +117,6 @@ theorem OrdinaryDoubleCurveModel.exists_component_axis_model_with_raw_branches
       (hT true).1, ?_, (hT true).2.2.1, ?_⟩
     · simpa only [sources, if_true, hQs] using (hT true).2.1
     · exact (hM (.inr true)).2.1.trans (hT true).2.2.2.symm
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_component_axis_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

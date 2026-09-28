@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedAffineHomeomorph
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
 
 theorem exists_independent_basis_realization (K : SimplicialComplex ℝ E)
     (b : Module.Basis K.vertices ℝ F) :
@@ -55,9 +43,6 @@ theorem exists_independent_basis_realization (K : SimplicialComplex ℝ E)
   refine ⟨f, hf, hinj, ?_, hleft, hfb⟩
   rw [hf.embeddedImage_vertices hinj, hr]
   exact b.linearIndependent.affineIndependent.range
-
-
-
 
 theorem exists_independent_euclidean_realization (K : SimplicialComplex ℝ E)
     [Fintype K.vertices] :

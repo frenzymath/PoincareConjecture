@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.BoundaryGraphAttachment
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalPrimalSectors
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -103,8 +95,6 @@ theorem attached_fiber_outside_primal {x : E} (hx : x ∉ d) :
   rw [graphAttachment_projection_fiber]
   have hi : ∀ i, x ∉ C.sector i := fun i h ↦ hx (C.sector_subset i h)
   simp only [if_neg (hi _), iUnion_empty, union_empty]
-
-
 
 theorem attached_primal_fiber
     (hz : ∀ i x, x ∈ C.sector i →
@@ -211,8 +201,6 @@ theorem attached_spoke_fiber_ncard
   have hi : i ≠ i + 3 := by fin_cases i <;> decide
   exact Set.ncard_pair (C.attached_sector_copies_ne g k hz hdis hi
     (C.spoke_subset_sector i hx) ((C.spoke_eq_sector_inter i).subset hx).1)
-
-
 
 theorem attached_spoke_traces_subset_rim
     (hz : ∀ i x, x ∈ C.sector i →

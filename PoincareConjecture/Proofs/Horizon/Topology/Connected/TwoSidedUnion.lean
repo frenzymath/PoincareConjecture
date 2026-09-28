@@ -1,13 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -16,8 +7,6 @@ open scoped Topology
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem subset_union_of_two_sided_neighborhood
     {A B K W U V : Set X} {p : X}

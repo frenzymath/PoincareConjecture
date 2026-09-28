@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Gluing.Basic
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "I" => Icc (-1 : ℝ) 1
-
-
 
 theorem OriginalSurfacePairChart.exists_transverse_patch
     {X E ι : Type*} [TopologicalSpace X]

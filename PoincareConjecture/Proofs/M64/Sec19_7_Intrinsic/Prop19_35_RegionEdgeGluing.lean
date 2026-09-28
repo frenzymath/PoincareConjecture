@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundary
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapBandGluing
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,12 +10,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 theorem m64Intrinsic_shared_edge_image_mem_interior
     (f g : SmoothFace AnnulusCoordinates)
@@ -118,13 +99,6 @@ theorem m64Intrinsic_shared_edge_image_mem_interior
     · subst j
       exact himage.symm ▸ hj
     · exact False.elim (hqN (Or.inr (mem_iUnion.mpr ⟨⟨j, hjl⟩, hj⟩)))
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_paired_side_subset_region_interior
     {I : Type*} (face : I → SmoothFace AnnulusCoordinates)

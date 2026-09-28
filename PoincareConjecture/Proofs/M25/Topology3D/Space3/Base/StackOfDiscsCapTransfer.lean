@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCapEndCaller
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ScaledBallChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace Topology
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
-
 
 theorem stackCanonicalCap_image_eq_of_annular_match
     (T Q : OpenPartialHomeomorph P P)
@@ -240,8 +228,6 @@ theorem stackCanonicalCap_image_eq_of_annular_match
     exact hTs (hpoint q hq)
   · rintro _ ⟨q, hq, rfl⟩
     exact hQs (hpoint q hq)
-
-
 
 theorem exists_stackCapNormalization_in_matched_chart
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

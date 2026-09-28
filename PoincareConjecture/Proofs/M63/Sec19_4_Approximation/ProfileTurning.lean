@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M63.Mathlib.ScalarTurningIntegral
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.Profile
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff intervalIntegral
 
 namespace PoincareConjecture
-
-
 
 theorem m63Profile_turning_integral_le_pi {N : ℕ} (hN : 0 < N) {A B : ℝ}
     (hA : 0 ≤ A) (hB : 0 < B) (t : ℝ) :

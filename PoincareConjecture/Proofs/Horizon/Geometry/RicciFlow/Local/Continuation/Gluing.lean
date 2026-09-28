@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Connection.Rat
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Metric.RicciPairRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Local.Energy.Comparison.ScalarMixedDerivative
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 
@@ -35,8 +24,6 @@ set_option synthInstance.maxHeartbeats 200000
 
 open scoped BigOperators
 open Bundle Manifold Filter
-
-
 
 theorem exists_ricciFlow_gluing_of_uniform_metric_jets
     {n : ℕ} {M : Type u} [TopologicalSpace M]
@@ -502,7 +489,6 @@ theorem exists_ricciFlow_gluing_of_uniform_metric_jets
     exact (hgl t ht.2).symm
   · intro t ht
     exact (hgr t ht.1).symm
-
 
 theorem exists_ricciFlow_time_translate
     {n : ℕ} {M : Type u} [TopologicalSpace M]

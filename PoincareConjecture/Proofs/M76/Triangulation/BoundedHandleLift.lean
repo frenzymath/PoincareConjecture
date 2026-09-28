@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LatticeHomeomorphLift
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinderProduct
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +12,6 @@ variable (ι κ : Type*) [Fintype ι] [Fintype κ]
 local notation "B" => closedBall (0 : ι → ℝ) 1
 local notation "D" => coordinateCylinder
   (Finset.univ.map (Function.Embedding.inl : ι ↪ ι ⊕ κ))
-
-
-
 
 theorem exists_boundedHandleLift
     (L : Submodule ℤ (κ → ℝ)) [DiscreteTopology L] [IsZLattice ℝ L]

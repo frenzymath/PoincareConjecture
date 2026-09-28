@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.AffineSpectralResponse
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.PositiveSpectralInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,10 +14,6 @@ variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
   {lambda : iota → NNReal} {T0 : ℝ}
   (N : TimeDependentSpectralResidual lambda T0) (w : State iota)
-
-
-
-
 
 theorem exists_positive_initial_interval (hT0 : 0 < T0)
     (hsmall : 2 * N.perturbationConstant + 2 * N.principalConstant * ‖w‖ < 1) :

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinarySlices
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
   {I : SpacetimeInterval} {F : RicciFlow 3 M I.domain}
 
-
-
 def ordinaryChapter11Source (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
     [T3Space M] [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M] :
@@ -39,8 +27,6 @@ def ordinaryChapter11Source (M : Type u) [TopologicalSpace M]
   t2Space := inferInstance
   t3Space := inferInstance
   secondCountable := inferInstance
-
-
 
 noncomputable def ordinaryChapter11Box (R : OrdinaryProductSpacetimeConclusion F.metric I) :
     GeneralizedRicciFlowBox (ordinaryChapter11Slice R)
@@ -59,8 +45,6 @@ noncomputable def ordinaryChapter11Box (R : OrdinaryProductSpacetimeConclusion F
   metric_pullback := fun t ht => R.sliceMetric_eq ⟨t, ht⟩
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 noncomputable def ordinaryChapter11Flow (R : OrdinaryProductRicciGeometry F.metric I) :
     GeneralizedRicciFlowData where

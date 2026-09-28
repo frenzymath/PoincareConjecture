@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RadialArclength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 namespace PoincareConjecture.M35.Uniqueness
 
 private noncomputable abbrev e2 : StandardCapSpace := EuclideanSpace.single 2 1
-
-
 
 theorem pathELength_axis_segment_eq
     (g : RiemannianMetric 3 StandardCapSpace) {a b : ℝ} (hab : a ≤ b) :
@@ -43,8 +32,6 @@ theorem pathELength_axis_segment_eq
   exact intervalIntegral.integral_eq_sub_of_hasDerivAt
     (fun s _ => radialArclength_hasDerivAt g s) (hcont.intervalIntegrable a b)
 
-
-
 theorem edist_axis_segment_le
     (g : RiemannianMetric 3 StandardCapSpace) {a b : ℝ} (hab : a ≤ b) :
     g.edist (a • e2) (b • e2) ≤
@@ -55,8 +42,6 @@ theorem edist_axis_segment_le
   have hsm : ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 (fun s : ℝ => s • e2) :=
     contMDiff_iff_contDiff.mpr (contDiff_id.smul contDiff_const)
   exact Manifold.riemannianEDist_le_pathELength hsm.contMDiffOn rfl rfl hab
-
-
 
 theorem exists_outward_radial_interval
     (g : RiemannianMetric 3 StandardCapSpace) (hcomplete : MetricComplete g)
@@ -69,8 +54,6 @@ theorem exists_outward_radial_interval
   apply (radialArclength_strictMono g).lt_iff_lt.mp
   rw [heq]
   linarith
-
-
 
 theorem radial_interval_subset_ball
     (g : RiemannianMetric 3 StandardCapSpace) {a b L : ℝ}

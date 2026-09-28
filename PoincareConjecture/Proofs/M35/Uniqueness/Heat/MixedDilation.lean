@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.Heat.NormalizedDilation
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.TimeDependentOperator
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.FormMixedHeat
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5

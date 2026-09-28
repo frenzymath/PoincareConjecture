@@ -8,50 +8,6 @@ import PoincareConjecture.Statements.M36MetricSurgery
 import PoincareConjecture.Statements.M46NoncollapseInduction
 import PoincareConjecture.Statements.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -59,9 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 structure M48Predecessors : Prop where
   m11 : GeneralizedSpacetimeGeometryTheory.{u} 3

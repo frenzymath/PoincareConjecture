@@ -4,10 +4,6 @@ import PoincareConjecture.Proofs.M11.SliceLabelIdentification
 import PoincareConjecture.Proofs.M11.BoxCylinderMetric
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

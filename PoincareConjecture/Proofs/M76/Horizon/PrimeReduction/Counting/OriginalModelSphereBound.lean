@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalNon
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.PrescribedCollarComponentCount
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CenteredCollarBase
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry CategoryTheory Limits
 namespace PoincareConjecture.M76.PrismBelt

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.OrthogonalOperatorSplit
 import PoincareConjecture.Proofs.M76.Smoothing.CycleFrameCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Smoothing
@@ -18,14 +8,9 @@ namespace PoincareConjecture.M76.Smoothing
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 abbrev CycleFrameRadialOperatorSpace (n : ℕ) (b : Module.Basis (Fin (n + 3)) ℝ E) :=
   {Q : E →L[ℝ] ℂ // Function.RightInverse (cycleFrameInclusion b) Q ∧
     (cyclicEdgeComplex n).IsRadialEmbedding (fun i => Q (b i))}
-
-
-
 
 noncomputable def cycleFrameRadialOperatorHomeomorph (n : ℕ)
     (b : Module.Basis (Fin (n + 3)) ℝ E) :
@@ -42,15 +27,10 @@ noncomputable def cycleFrameRadialOperatorHomeomorph (n : ℕ)
         (fun _ => _) }
   exact e.trans (cycleFrameProjectionHomeomorph n b)
 
-
-
 abbrev AmbientCycleProjectionSpace (n : ℕ) (V : Submodule ℝ E)
     (b : Module.Basis (Fin (n + 3)) ℝ V) :=
   {Q : E →L[ℝ] ℂ // Function.RightInverse (V.subtypeL.comp (cycleFrameInclusion b)) Q ∧
     (cyclicEdgeComplex n).IsRadialEmbedding (fun i => Q (b i))}
-
-
-
 
 noncomputable def ambientCycleProjectionHomeomorph (n : ℕ) (V : Submodule ℝ E)
     (b : Module.Basis (Fin (n + 3)) ℝ V) :
@@ -61,9 +41,6 @@ noncomputable def ambientCycleProjectionHomeomorph (n : ℕ) (V : Submodule ℝ 
       (cyclicEdgeComplex n).IsRadialEmbedding (fun i => R (b i)))).trans
         ((cycleFrameRadialOperatorHomeomorph n b).prodCongr (Homeomorph.refl _))
 
-
-
-
 theorem contractible_ambientCycleProjectionSpace (n : ℕ) (V : Submodule ℝ E)
     (b : Module.Basis (Fin (n + 3)) ℝ V) :
     ContractibleSpace (AmbientCycleProjectionSpace n V b) := by
@@ -71,9 +48,6 @@ theorem contractible_ambientCycleProjectionSpace (n : ℕ) (V : Submodule ℝ E)
     (show Real.pi / 2 ∈ Set.Ioo (0 : ℝ) Real.pi from
       ⟨half_pos Real.pi_pos, half_lt_self Real.pi_pos⟩)
   exact (ambientCycleProjectionHomeomorph n V b).contractibleSpace
-
-
-
 
 noncomputable def ambientFrameCycleHomeomorph (n : ℕ) (V : Submodule ℝ E)
     (b : Module.Basis (Fin (n + 3)) ℝ V) :

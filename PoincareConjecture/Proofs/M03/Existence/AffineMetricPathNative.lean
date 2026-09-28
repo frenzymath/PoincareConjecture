@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.MetricPerturbationNative
 import PoincareConjecture.Proofs.M03.Existence.ConjugatingFlowNative
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1200000
 set_option synthInstance.maxHeartbeats 100000
@@ -31,8 +21,6 @@ variable {n : ℕ} {M : Type u}
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "FiberBilin" =>
   fun x : M => TangentSpace (𝓡 n) x →L[ℝ] TangentSpace (𝓡 n) x →L[ℝ] ℝ
-
-
 
 def affineTimeCoeff (T t : ℝ) : ℝ :=
   if t ∈ Set.Ico (0 : ℝ) T then t else 0
@@ -67,9 +55,6 @@ theorem metric_inner_nonneg (g₀ : RiemannianMetric n M)
   by_cases hv : v = 0
   · simp [hv]
   · exact (g₀.pos x v hv).le
-
-
-
 
 structure AffineMetricPathData (g₀ : RiemannianMetric n M) where
   direction : ∀ x : M, FiberBilin x
@@ -243,10 +228,6 @@ theorem metric_eq_toSmallMetricPath (t : ℝ) :
   apply ContinuousLinearMap.ext
   intro w
   exact hinner x v w
-
-
-
-
 
 theorem exists_metricFamily_of_affine_source
     [T2Space M] [SecondCountableTopology M] [CompactSpace M]

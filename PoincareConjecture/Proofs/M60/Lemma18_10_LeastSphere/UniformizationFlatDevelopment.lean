@@ -14,15 +14,6 @@ import Mathlib.Analysis.InnerProductSpace.ConformalLinearMap
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationIsothermal
 import PoincareConjecture.Proofs.M01.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,9 +36,6 @@ private theorem plane_field_smooth {X : Plane → Plane} (hX : ContDiff ℝ ∞ 
   intro x
   rw [contMDiffAt_totalSpace]
   exact ⟨contMDiffAt_id, by simpa using contMDiffAt_iff_contDiffAt.mpr hX.contDiffAt⟩
-
-
-
 
 theorem exists_flat_connection_primitive
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
@@ -107,9 +95,6 @@ theorem exists_flat_connection_primitive
     ContinuousLinearMap.comp_apply, ContinuousLinearMap.flip_apply,
     RiemannianMetric.euclideanCoefficients, LeviCivitaData.surfaceConnectionForm,
     LeviCivitaData.covariantDerivativeOnFields] using! hL.symm
-
-
-
 
 theorem exists_parallel_frame_of_flat_plane
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
@@ -208,9 +193,6 @@ theorem exists_parallel_frame_of_flat_plane
     simpa only [hself, hcross.symm, zero_smul, zero_add] using heq
   exact ⟨e₁, e₂, he₁, he₂, heunit₁, heunit₂, heorth, hz₁, hz₂⟩
 
-
-
-
 theorem exists_potential_of_parallel_plane_field
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
     (e : Plane → Plane) (he : ContDiff ℝ ∞ e)
@@ -266,9 +248,6 @@ theorem exists_potential_of_parallel_plane_field
   rw [D.hessian_eq_inner_connection_gradient
     ((contMDiff_iff_contDiff.mpr hf) x), show D.gradient f = e from funext hgrad,
     hparallel, map_zero, zero_apply]
-
-
-
 
 theorem exists_developing_map_of_flat_plane
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)
@@ -336,9 +315,6 @@ private theorem zero_hessian_geodesic_affine
   exact hS.eqOn_of_deriv_eq hSc.isPreconnected hdiff
     (fun u _ => (hlin u).differentiableAt.differentiableWithinAt)
     (fun u hu => (hconst u hu).trans (hlin u).deriv.symm) h0 (by simp) ht
-
-
-
 
 theorem exists_diffeomorph_of_complete_flat_plane
     (g : RiemannianMetric 2 Plane) (D : LeviCivitaData g)

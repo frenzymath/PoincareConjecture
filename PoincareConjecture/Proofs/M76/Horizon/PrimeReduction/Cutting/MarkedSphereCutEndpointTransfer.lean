@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalEndp
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalFiniteSphereCollar
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalSphereConnected
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

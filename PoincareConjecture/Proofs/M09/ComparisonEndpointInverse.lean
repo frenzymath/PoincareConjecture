@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.ManifoldLocalInverse
 import PoincareConjecture.Proofs.M09.TriangularBijective
 import PoincareConjecture.Proofs.M09.SmoothSquareAction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.BoundedSpher
 import PoincareConjecture.Proofs.M76.Brown.LocallyFlatSphereBalls
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Protected.Regions.CoordinateBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

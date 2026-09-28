@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODERestart
 import PoincareConjecture.Proofs.M14.Sec6_3_ClosedEulerExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +14,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem exists_closedChartEulerPhase_restart_family {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) (x₀ : M)
@@ -73,11 +60,6 @@ theorem exists_closedChartEulerPhase_restart_family {J : Set ℝ} (F : RicciFlow
     intro s hs
     obtain ⟨hmap, hd⟩ := (hdata z hz).2 s hs
     exact ⟨hmap.1, (hphase hs hmap.1).symm ▸ hd⟩
-
-
-
-
-
 
 theorem exists_closedChartEulerPhase_restart_along {J : Set ℝ} (F : RicciFlow n M J)
     (hM04 : RicciFlowCurvatureTheory.{u}) (T : ℝ) (x₀ : M)

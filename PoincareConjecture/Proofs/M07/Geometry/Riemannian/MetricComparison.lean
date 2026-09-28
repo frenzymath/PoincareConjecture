@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -20,7 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem pathELength_eq_lintegral_tangentNorm
     (g : RiemannianMetric n M) (γ : ℝ → M) (a b : ℝ) :
@@ -34,7 +22,6 @@ theorem pathELength_eq_lintegral_tangentNorm
   rw [← ofReal_norm, norm_eq_sqrt_real_inner]
   rfl
 
-
 theorem pathELength_le_of_tangentNorm_le
     (g h : RiemannianMetric n M) (γ : ℝ → M) (a b C : ℝ)
     (hC : 0 ≤ C)
@@ -47,7 +34,6 @@ theorem pathELength_le_of_tangentNorm_le
   intro u hu
   exact (ENNReal.ofReal_le_ofReal (hbound u hu _)).trans_eq
     (ENNReal.ofReal_mul hC)
-
 
 theorem ball_subset_ball_of_tangentNorm_le
     (g h : RiemannianMetric n M) (p : M) (r C : ℝ) (hC : 0 < C)
@@ -76,8 +62,6 @@ theorem ball_subset_ball_of_tangentNorm_le
   exact (hdist.trans hlength).trans_lt
     (ENNReal.mul_lt_mul_right (ne_of_gt (ENNReal.ofReal_pos.mpr hC))
       ENNReal.ofReal_ne_top hγlength)
-
-
 
 theorem edist_le_mul_edist_of_tangentNorm_le_on_ball
     (g h : RiemannianMetric n M) (p : M) (r C : ℝ) (hr : 0 < r) (hC : 0 < C)

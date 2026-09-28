@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureComparisonNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter
@@ -23,7 +14,6 @@ namespace PoincareConjecture.ChartMeasureNative
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 def positiveRegion (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ)) (k : ℕ) :
     Set ModelE := e.target ∩ e.symm ⁻¹' {x | 1 / (k + 1 : ℝ) < φ x}
@@ -43,7 +33,6 @@ theorem positiveRegion_lower (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ
   weightedChartMeasure_lower e φ (positiveRegion_open e φ k).measurableSet
     (positiveRegion_subset_target e φ k)
     (fun _ hy => ENNReal.ofReal_le_ofReal hy.2.le)
-
 
 theorem ae_zero_weightedSource_of_positiveRegion
     (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ)) {f : ModelE → ℝ}
@@ -66,7 +55,6 @@ theorem ae_zero_weightedSource_of_positiveRegion
     ENNReal.ofReal_pos.mp (pos_iff_ne_zero.mpr hnonzero)
   obtain ⟨k, hk⟩ := exists_nat_one_div_lt hpos
   exact hy k ⟨hyt, hk⟩
-
 
 theorem ae_zero_weightedChart_of_positiveRegion
     (e : OpenPartialHomeomorph M ModelE) (φ : C(M, ℝ)) {f : M → ℝ}

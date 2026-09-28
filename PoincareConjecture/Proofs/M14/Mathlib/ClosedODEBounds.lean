@@ -1,15 +1,6 @@
 import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,9 +9,6 @@ open scoped ContDiff NNReal
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
 
 theorem closedODE_exists_ball_bounds {a b : ℝ} (hab : a < b)
     {U : Set E} (hU : IsOpen U) (V : ℝ × E → E)

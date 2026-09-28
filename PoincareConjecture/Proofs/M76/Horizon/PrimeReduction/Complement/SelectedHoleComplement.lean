@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.Finit
 import PoincareConjecture.Proofs.M76.Triangulation.ConvexSphereLargeDisks
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonAlexanderConsequences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.CubicalThreeSphere
@@ -23,9 +13,6 @@ namespace Set
 local notation "V3" => (Fin 3 → ℝ)
 local notation "V4" => (Fin 4 → ℝ)
 local notation "P3" => ((ℝ × ℝ) × ℝ)
-
-
-
 
 theorem IsFinitePLBallPair.selected_hole_complement
     {a r : Set V4} (ha : IsFinitePLBallPair V3 a r) (haS : a ⊆ sphere)

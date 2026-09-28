@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLCoreCutoffs
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePLSuperlevelFrontier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,10 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
 
 theorem PLDomain.exists_compact_subdomain_near
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Flags.GeometricAffineFlags
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Triangulation.Polyhedral.FiniteConvexLipschitz
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

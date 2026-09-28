@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -79,10 +70,6 @@ private theorem exists_centered_interval_parameter {θ : ℝ} (hθ : θ ∈ Ioo 
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_signed_interval_fiber {N : Set E} {cn cs cp : E}
     (hN : IsFinitePLBallPair ℝ N {cn, cp}) (f : E → ℝ)

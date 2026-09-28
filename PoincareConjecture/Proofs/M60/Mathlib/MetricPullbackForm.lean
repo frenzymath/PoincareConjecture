@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ local notation "F" => EuclideanSpace ℝ (Fin m)
 local notation "TX" => TangentSpace (𝓡 n) (M := X)
 local notation "TY" => TangentSpace (𝓡 m) (M := Y)
 
-
-
 noncomputable def metricPullbackForm (g : RiemannianMetric m Y) (f : X → Y) (x : X) :
     TX x →L[ℝ] TX x →L[ℝ] ℝ :=
   ((mfderiv (𝓡 n) (𝓡 m) f x).precomp ℝ).comp
@@ -39,13 +28,10 @@ noncomputable def metricPullbackForm (g : RiemannianMetric m Y) (f : X → Y) (x
 
 omit [IsManifold (𝓡 n) ∞ X] in
 
-
 theorem metricPullbackForm_apply (g : RiemannianMetric m Y) (f : X → Y)
     (x : X) (v w : TX x) :
     metricPullbackForm (n := n) g f x v w =
       g.inner (f x) (mfderiv (𝓡 n) (𝓡 m) f x v) (mfderiv (𝓡 n) (𝓡 m) f x w) := rfl
-
-
 
 theorem metricPullbackForm_coordinates (g : RiemannianMetric m Y) (f : X → Y)
     {x₀ x : X}
@@ -76,8 +62,6 @@ theorem metricPullbackForm_coordinates (g : RiemannianMetric m Y) (f : X → Y)
   dsimp only [ex, ey] at hcancel
   simp only [Bundle.Trivial.eq_trivialization, Bundle.Trivial.linearMapAt_trivialization,
     LinearMap.id_apply, metricPullbackForm_apply, hcancel]
-
-
 
 theorem metricPullbackForm_contMDiffAt (g : RiemannianMetric m Y)
     {f : X → Y} {x₀ : X} (hf : ContMDiffAt (𝓡 n) (𝓡 m) ∞ f x₀) :

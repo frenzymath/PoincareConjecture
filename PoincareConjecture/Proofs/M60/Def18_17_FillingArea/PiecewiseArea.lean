@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskRescaling
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m60AreaDensity_congr_of_eventuallyEq (g : RiemannianMetric n M)
     {f h : LoopPlane → M} {z : LoopPlane} (hf : f =ᶠ[𝓝 z] h) :
     m60AreaDensity g f z = m60AreaDensity g h z := by
@@ -35,8 +22,6 @@ theorem m60AreaDensity_congr_of_eventuallyEq (g : RiemannianMetric n M)
     congrArg (fun p : M => g.inner p u v) hf.eq_of_nhds
   simp only [m60AreaDensity, m60AreaGram, hf.mfderiv_eq, hi]
   rfl
-
-
 
 theorem m60AreaDensity_piecewise_closedBall_ae (g : RiemannianMetric n M)
     (f h : LoopPlane → M) (r : ℝ) :
@@ -60,9 +45,6 @@ theorem m60AreaDensity_piecewise_closedBall_ae (g : RiemannianMetric n M)
       exact piecewise_eq_of_notMem _ _ _ hx
     rw [piecewise_eq_of_notMem _ _ _ hi]
     exact m60AreaDensity_congr_of_eventuallyEq g heq
-
-
-
 
 theorem m60AreaIntegral_piecewise_closedBall (g : RiemannianMetric n M)
     (f h : LoopPlane → M) (r : ℝ) (S : Set LoopPlane)

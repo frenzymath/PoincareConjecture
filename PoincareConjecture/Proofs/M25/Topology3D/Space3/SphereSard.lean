@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SardRegularValues
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -19,19 +9,14 @@ open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 noncomputable def sphereRadialExtension (N : UnitTwoSphere → UnitTwoSphere) (x : E3) : E3 :=
   ‖x‖ • (N (sphereDirection x) : E3)
-
-
 
 theorem sphereRadialExtension_smul (N : UnitTwoSphere → UnitTwoSphere)
     (q : UnitTwoSphere) {r : ℝ} (hr : 0 < r) :
     sphereRadialExtension N (r • (q : E3)) = r • (N q : E3) := by
   rw [sphereRadialExtension, sphereDirection_smul q hr, norm_smul,
     Real.norm_eq_abs, abs_of_pos hr, norm_eq_of_mem_sphere, mul_one]
-
 
 theorem sphereRadialExtension_contDiffOn (N : UnitTwoSphere → UnitTwoSphere)
     (hN : ContMDiff (𝓡 2) (𝓡 2) ∞ N) :
@@ -41,8 +26,6 @@ theorem sphereRadialExtension_contDiffOn (N : UnitTwoSphere → UnitTwoSphere)
     fun x hx => (contDiffAt_norm ℝ (show x ≠ 0 from hx)).contDiffWithinAt
   exact (hn.contMDiffOn.smul (contMDiff_coe_sphere.comp_contMDiffOn
     (hN.comp_contMDiffOn sphereDirection_contMDiffOn))).contDiffOn
-
-
 
 theorem sphere_mfderiv_injective_of_radialExtension
     (N : UnitTwoSphere → UnitTwoSphere) (hN : ContMDiff (𝓡 2) (𝓡 2) ∞ N)
@@ -76,8 +59,6 @@ theorem sphere_mfderiv_injective_of_radialExtension
     (hG (h.trans ((congrArg (fun v => r • B v) hab).trans h'.symm)))
   exact injective_mvfderiv_subtypeVal_sphere q
     (congrArg (NormedSpace.fromTangentSpace (𝕜 := ℝ) (q : E3)) hA)
-
-
 
 theorem exists_opposite_sphere_regularValues (N : UnitTwoSphere → UnitTwoSphere)
     (hN : ContMDiff (𝓡 2) (𝓡 2) ∞ N) :

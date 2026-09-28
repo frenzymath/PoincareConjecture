@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,10 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m60AreaDensity_eq_zero_of_factor (g : RiemannianMetric n M)
     (c : ℝ → M) (psi : LoopPlane → ℝ) (z : LoopPlane)
@@ -76,26 +63,15 @@ theorem m60AreaDensity_eq_zero_of_factor (g : RiemannianMetric n M)
     ring
   simp only [m60AreaDensity, hdet, max_self, Real.sqrt_zero]
 
-
-
-
-
 theorem m64AnnulusArea_nonneg (f : LoopPlane → M) :
     0 ≤ m64AnnulusArea g f :=
   integral_nonneg (fun _ => Real.sqrt_nonneg _)
-
-
-
 
 theorem m64AnnulusDomain_measurableSet :
     MeasurableSet m64AnnulusDomain := by
   change MeasurableSet {p : LoopPlane |
     0 ≤ p 0 ∧ p 0 ≤ curvePeriod ∧ 0 ≤ p 1 ∧ p 1 ≤ 1}
   measurability
-
-
-
-
 
 theorem m64AnnulusDomain_isCompact : IsCompact m64AnnulusDomain := by
   have hmap : Continuous (fun p : ℝ × ℝ => annulusPoint p.1 p.2) := by
@@ -115,16 +91,9 @@ theorem m64AnnulusDomain_isCompact : IsCompact m64AnnulusDomain := by
   rw [heq]
   exact (isCompact_Icc.prod isCompact_Icc).image hmap
 
-
-
-
 theorem m64AnnulusDomain_volume_ne_top :
     volume m64AnnulusDomain ≠ (⊤ : ENNReal) :=
   m64AnnulusDomain_isCompact.measure_ne_top
-
-
-
-
 
 theorem M64Annulus.area_le_energy (A : M64Annulus g c0 c1)
     (hmeas : MeasurableSet m64AnnulusDomain)
@@ -135,30 +104,18 @@ theorem M64Annulus.area_le_energy (A : M64Annulus g c0 c1)
   exact MeasureTheory.setIntegral_mono_on A.area_integrable hE hmeas
     (fun p _ => m60AreaDensity_le_energyDensity g A.map p)
 
-
-
-
 theorem M64Annulus.area_nonneg (A : M64Annulus g c0 c1) : 0 ≤ A.area :=
   m64AnnulusArea_nonneg A.map
-
-
-
 
 theorem m64AnnulusAreaRange_nonempty (A : M64Annulus g c0 c1) :
     (m64AnnulusAreaRange g c0 c1).Nonempty :=
   ⟨A.area, A, rfl⟩
-
-
-
 
 theorem m64AnnulusAreaRange_bddBelow (g : RiemannianMetric n M) (c0 c1 : ℝ → M) :
     BddBelow (m64AnnulusAreaRange g c0 c1) := by
   refine ⟨0, ?_⟩
   rintro _ ⟨A, rfl⟩
   exact A.area_nonneg
-
-
-
 
 theorem m64LeastAnnulusArea_nonneg (A : M64Annulus g c0 c1) :
     0 ≤ m64LeastAnnulusArea g c0 c1 := by
@@ -168,15 +125,9 @@ theorem m64LeastAnnulusArea_nonneg (A : M64Annulus g c0 c1) :
   rintro _ ⟨B, rfl⟩
   exact B.area_nonneg
 
-
-
-
 theorem m64LeastAnnulusArea_le_annulus (A : M64Annulus g c0 c1) :
     m64LeastAnnulusArea g c0 c1 ≤ A.area :=
   csInf_le (m64AnnulusAreaRange_bddBelow g c0 c1) ⟨A, rfl⟩
-
-
-
 
 theorem m64LeastAnnulusArea_eq_of_isLeast
     (B : M64Annulus g c0 c1)
@@ -186,10 +137,6 @@ theorem m64LeastAnnulusArea_eq_of_isLeast
   apply le_csInf (m64AnnulusAreaRange_nonempty B)
   rintro _ ⟨C, rfl⟩
   exact hB C
-
-
-
-
 
 theorem m64LeastAnnulusArea_near_minimizer (A : M64Annulus g c0 c1)
     {epsilon : ℝ} (hepsilon : 0 < epsilon) :

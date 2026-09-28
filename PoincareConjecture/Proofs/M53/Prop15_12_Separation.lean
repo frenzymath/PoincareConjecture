@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M53.Prop15_12_RelativeClass
 import PoincareConjecture.Proofs.M53.Prop15_12_SphereChart
 import PoincareConjecture.Proofs.M53.Mathlib.ChartCylinder
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,10 +18,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M53
-
-
-
-
 
 theorem sphere_complement_not_isPreconnected
     {M : Type u} [TopologicalSpace M] [T2Space M]

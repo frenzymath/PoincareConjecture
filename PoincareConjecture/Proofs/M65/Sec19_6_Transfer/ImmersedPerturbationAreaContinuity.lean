@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.FillingLimit
 import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.FlowFillingScaling
 import PoincareConjecture.Proofs.M62.Cor0_3_AmbientBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M65Perturbation
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b circumference : ℝ} {J : Set ℝ} {F : RicciFlow 3 M (Icc a b)}
-
-
-
 
 theorem fillingArea_continuousOn (P : M62.CircleProductData F circumference)
     (hJF : J ⊆ Icc a b) (disks : ∀ q ∈ J, M64DiskAreaComparison P q)

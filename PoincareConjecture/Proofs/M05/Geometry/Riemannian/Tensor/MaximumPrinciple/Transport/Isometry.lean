@@ -1,14 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Tensor.MaximumPrinciple.Transport.MetricCompatibility
 import Mathlib.Analysis.InnerProductSpace.Orthonormal
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -47,7 +38,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def radialNeighborhood (p : M) (r : ℝ) : Set M :=
   (extChartAt (𝓡 n) p).source ∩
     {x | extChartAt (𝓡 n) p x - extChartAt (𝓡 n) p p ∈ Metric.ball 0 r}
@@ -64,9 +54,6 @@ lemma mem_radialNeighborhood (p : M) {r : ℝ} (hr : 0 < r) :
     p ∈ radialNeighborhood (n := n) p r := by
   exact ⟨mem_extChartAt_source p, by simpa only [mem_ofPred_eq, sub_self] using
     (Metric.mem_ball_self hr : (0 : EuclideanSpace ℝ (Fin n)) ∈ Metric.ball 0 r)⟩
-
-
-
 
 theorem exists_radialParallelIsometries_with_basis_jets (D : LeviCivitaData g) (p : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -126,7 +113,6 @@ theorem exists_radialParallelIsometries_with_basis_jets (D : LeviCivitaData g) (
   choose P hP using hP
   exact ⟨r, Y, hr, hrU, hY, hinit, hparallel, hfirst, hsecond, P, hP⟩
 
-
 theorem exists_radialParallelIsometries (D : LeviCivitaData g) (p : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
       ⟨g.toRiemannianMetric⟩
@@ -148,8 +134,6 @@ theorem exists_radialParallelIsometries (D : LeviCivitaData g) (p : M) :
   obtain ⟨r, Y, hr, hrU, hY, hinit, hpar, _, _, P, hP⟩ :=
     D.exists_radialParallelIsometries_with_basis_jets p
   exact ⟨r, Y, hr, hrU, hY, hinit, hpar, P, hP⟩
-
-
 
 lemma fieldFromCenteredCoordinates_sum {ι : Type*} [Fintype ι] (p : M)
     (Y : ι → EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)) (a : ι → ℝ) (x : M) :
@@ -182,8 +166,6 @@ private lemma connection_sum_smul (D : LeviCivitaData g) {ι : Type*} [Fintype �
   intro i _
   exact D.connection.isCovariantDerivativeOn.smul_const (a i)
     ((hW i).mdifferentiableAt (by simp))
-
-
 
 theorem exists_radialParallelIsometries_with_jets (D : LeviCivitaData g) (p : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -263,7 +245,6 @@ theorem exists_radialParallelIsometries_with_jets (D : LeviCivitaData g) (p : M)
   · intro x v
     rw [fieldFromCenteredCoordinates_sum]
     exact hP x v
-
 
 theorem exists_radialParallelIsometries_with_fields (D : LeviCivitaData g) (p : M) :
     letI : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=

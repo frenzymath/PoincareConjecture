@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncoll
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.M04.SectionalRayleigh
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -77,7 +67,6 @@ private theorem complement_eq_inner (D : LeviCivitaData g)
 
 omit [T2Space M] in
 
-
 theorem ricciComplement_mem_iff (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) (c : ℝ) :
     (letI : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
@@ -123,9 +112,6 @@ theorem ricciComplement_mem_iff (D : LeviCivitaData g)
     · rw [← heval, ← heval]
       exact hratio v w ((hunit v).mpr hv) ((hunit w).mpr hw)
 
-
-
-
 theorem ricciComplement_lower_of_sectional_lower
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) (m : ℝ)
     (hsec : ∀ u v : TangentSpace (𝓡 3) x,
@@ -150,7 +136,6 @@ theorem ricciComplement_lower_of_sectional_lower
 
 omit [T2Space M] in
 
-
 theorem ricciComplement_le_half_scalar
     (D : LeviCivitaData g) (x : M)
     (hsec : ∀ u v : TangentSpace (𝓡 3) x, 0 ≤ D.curvatureTensor x u v u v)
@@ -161,9 +146,6 @@ theorem ricciComplement_le_half_scalar
   change D.scalarCurvature x / 2 * g.inner x v v - D.ricci x v v ≤ _
   rw [hv, mul_one]
   exact sub_le_self _ hRic
-
-
-
 
 theorem ricci_lower_of_complement_pinching
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

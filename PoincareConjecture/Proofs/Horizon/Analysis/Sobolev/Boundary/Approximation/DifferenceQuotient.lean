@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.DifferenceQuotient.WeakBound
 import Mathlib.MeasureTheory.Integral.Lebesgue.DominatedConvergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -140,8 +133,6 @@ private theorem mollify_comm {ε : ℝ} (hε : 0 < ε) (u : E → ℝ) :
   rw [convolution_lsmul, convolution_lsmul_swap]
   apply integral_congr_ae
   exact Eventually.of_forall fun _ => by simp [smul_eq_mul, mul_comm]
-
-
 
 theorem tendsto_eLpNorm_diffQuot_sub_weakPartial
     {u g : E → ℝ} (hu : MemLp u 2 volume) (hg : MemLp g 2 volume)

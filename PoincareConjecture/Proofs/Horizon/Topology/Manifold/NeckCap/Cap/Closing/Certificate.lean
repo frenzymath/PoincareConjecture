@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +11,6 @@ namespace PoincareConjecture.SmoothClosedComponentModel
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 theorem nonempty_closedComponentCertificate {kind : ClosedComponentKind} {Y : Set M}
     (S : SmoothClosedComponentModel kind Y) (hcompact : IsCompact Y)

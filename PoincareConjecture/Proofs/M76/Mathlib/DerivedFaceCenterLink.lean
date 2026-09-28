@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedFaceChainIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (c : K.faces → E)
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
-
-
-
 
 theorem derived_faceCenter_link_vertices (s : K.faces) :
     ((K.derivedSubdivision c hc).link (c s)).vertices =
@@ -57,10 +45,6 @@ theorem derived_faceCenter_link_vertices (s : K.faces) :
         · exact hcomp
         · exact Or.inl le_rfl
       simpa only [Finset.image_insert, Finset.image_singleton] using hface
-
-
-
-
 
 theorem pair_mem_derived_faceCenter_link_of_comparable
     (s t u : K.faces) (ht : t ≠ s) (hu : u ≠ s)
@@ -100,10 +84,6 @@ theorem pair_mem_derived_faceCenter_link_of_comparable
       · exact htu.symm
       · exact Or.inl le_rfl
     simpa only [Finset.image_insert, Finset.image_singleton] using hface
-
-
-
-
 
 theorem connected_derived_faceCenter_link_of_strict_faces
     (r s u : K.faces) (hrs : r < s) (hsu : s < u) :

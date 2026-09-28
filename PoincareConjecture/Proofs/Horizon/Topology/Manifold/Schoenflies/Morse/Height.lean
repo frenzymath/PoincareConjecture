@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Normal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.RegularValues
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -77,8 +68,6 @@ theorem height_critical_iff_normal
   · rintro (h | h)
     · exact ⟨1, by rw [h, one_smul]⟩
     · exact ⟨-1, by rw [h]; simp⟩
-
-
 
 theorem exists_height_with_finite_critical_points
     (f : sphere (0 : EuclideanSpace Real (Fin 3)) 1 ->

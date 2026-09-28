@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDisk
 import PoincareConjecture.Proofs.M76.Mathlib.PlanarDiskConvexContainment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +9,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_planar_disk_of_whole_level_polygon
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)
@@ -72,11 +58,6 @@ theorem exists_planar_disk_of_whole_level_polygon
       hdplaneB hC (by
         rintro _ ⟨i, rfl⟩
         exact hSC (hsection.subset (P.vertex_mem_boundary i)).1)
-
-
-
-
-
 
 theorem exists_planar_disk_family_of_whole_level_polygons
     (hdim : Module.finrank ℝ E = 3) (A : E →ᵃ[ℝ] ℝ) (hA : A.linear ≠ 0)

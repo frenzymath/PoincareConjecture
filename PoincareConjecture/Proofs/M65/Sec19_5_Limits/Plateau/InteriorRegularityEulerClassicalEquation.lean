@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityEulerClassical
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.HessianTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,10 +37,6 @@ private theorem coordinate_column_derivative {N : ℕ}
   simp
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
 
 theorem classical_harmonic_of_weak {N : ℕ}
     {g : RiemannianMetric N (EuclideanSpace ℝ (Fin N))} (D : LeviCivitaData g)

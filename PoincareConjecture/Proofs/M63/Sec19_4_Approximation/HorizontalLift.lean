@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProductChartPullback
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductIdentities
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ open Proofs.M09
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {circumference : ℝ} {C : M62.CircleGeometry circumference}
-
-
-
 
 theorem circleProduct_horizontalLift
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -108,8 +95,6 @@ theorem circleProduct_horizontalLift
     rw [hprodEq, hbaseEq] at hformula
     exact ⟨hX, hformula⟩
   exact ⟨fun x hx => (hlocal x hx).1.contMDiffWithinAt, fun x hx => (hlocal x hx).2⟩
-
-
 
 theorem circleUnit_pullback_zero {a b : ℝ} {F : RicciFlow n M (Icc a b)}
     (P : M62.CircleProductData F circumference) (t : ℝ)

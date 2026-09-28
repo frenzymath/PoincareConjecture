@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M13.ConnectionTransport
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
 
 noncomputable def homothetyTangentIsometry
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

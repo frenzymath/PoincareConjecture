@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.SliceIdentifications
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,8 +49,6 @@ theorem oldBox_relatively_open (H : SingularTimeAssumptions F T M)
     rcases H.extendedTimeInterval_subset_old_union_terminal P04 ht with ht | ht
     · exact ht
     · exact (hT.ne ht).elim
-
-
 
 def oldBox (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (b : F.box_index) :

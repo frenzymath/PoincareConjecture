@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDiskGluing
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonDiagonalStrings
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem isFinitePLBallPair_closed_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P) :
@@ -46,10 +33,6 @@ theorem isFinitePLBallPair_closed_inside {n : ℕ} (P : Polygon (ℝ × ℝ) (n 
       have hQ := ih m (by omega) (mk (Fin.snoc u (v 0))) hsQ hiQ
       have hR := ih n (by omega) (mk (Fin.snoc v (u 0))) hsR hiR
       simpa only [hins, hboundary] using isFinitePLBallPair_of_split u v hs hi hdiagonal hQ hR
-
-
-
-
 
 theorem exists_finitePL_closed_inside_extension {m n : ℕ}
     (P : Polygon (ℝ × ℝ) (m + 3)) (Q : Polygon (ℝ × ℝ) (n + 3))

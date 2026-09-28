@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Connect
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Normal
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Spectral
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
@@ -87,9 +80,6 @@ theorem shapeOperator_selfAdjoint (D : LeviCivitaData g) (D' : LeviCivitaData h)
       h.inner x u (shapeOperator D D' F x N v) := by
   rw [h.symm x u, inner_shapeOperator, inner_shapeOperator,
     secondFundamentalForm_symm D D' hF]
-
-
-
 
 theorem inner_shapeOperator_neg_normal_eq_normal_derivative
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

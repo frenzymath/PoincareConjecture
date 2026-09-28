@@ -1,31 +1,12 @@
 import PoincareConjecture.Proofs.M30.Mathlib.EventualClosedCompactness
 import Mathlib.Order.Filter.AtTopBot.CountablyGenerated
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 theorem exists_smooth_limit_on_closed_convex_of_eventually_of_pointwise
     {X Y : Type*} [NormedAddCommGroup X] [NormedSpace ℝ X]

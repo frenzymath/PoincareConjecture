@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarAnalyticConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,12 +12,10 @@ namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
 noncomputable def scalarAnalyticJet (n : ℕ)
     (J : Jet (EuclideanSpace ℝ (Fin n)) (MetricCoefficient n) 4) : ℝ × ℝ × ℝ :=
   (scalarTwoJet (twoJetProjection n (baseProjection 2 2 J)),
     scalarDifferentialNormJet n (baseProjection 3 1 J), scalarEvolutionJet n J)
-
 
 theorem continuousOn_scalarAnalyticJet (n : ℕ) :
     ContinuousOn (scalarAnalyticJet n) (curvatureJetDomain n 2) := by
@@ -45,7 +34,6 @@ theorem continuousOn_scalarAnalyticJet (n : ℕ) :
   have hE := (continuousOn_scalarEvolutionJet n).continuousAt
     ((isOpen_curvatureJetDomain n 2).mem_nhds hJ)
   exact hS.prodMk (hD.prodMk hE)
-
 
 theorem scalarAnalyticJet_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

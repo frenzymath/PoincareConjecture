@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.CompactControl
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Coordinates.Convergence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -26,7 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def regularCoordinateDomain (H : SingularTimeAssumptions F T M) (q : M) :
     Set (EuclideanSpace ℝ (Fin 3)) :=
   (extChartAt (𝓡 3) q).target ∩
@@ -36,8 +28,6 @@ theorem regularCoordinateDomain_isOpen (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (q : M) : IsOpen (H.regularCoordinateDomain q) :=
   (continuousOn_extChartAt_symm q).isOpen_inter_preimage (isOpen_extChartAt_target q)
     (H.regularLimitSet_isOpen P04)
-
-
 
 theorem smooth_terminal_coordinate_limit_on_compacts
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u}) (q : M) :

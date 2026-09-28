@@ -4,10 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.InducedBoundaryGeomet
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.TrimmedBoundaryApproximation
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_BoundaryNormal
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,10 +28,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Icc a b)) (time : ℝ)
   {c0 c1 : ℝ → M}
-
-
-
-
 
 theorem m64_trimmed_boundary_comparison
     (A : M64Annulus (F.metric time) c0 c1)

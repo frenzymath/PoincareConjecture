@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeDiskMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +11,6 @@ namespace PoincareConjecture
 open Proofs.M58
 
 variable {M : Type*} [TopologicalSpace M]
-
-
 
 theorem m64LocalConeDiskMap_continuous
     (H : ℝ × (M × M) → M) (center : M) (gamma : ℝ → M)
@@ -61,8 +48,6 @@ theorem m64LocalConeDiskMap_continuous
     have hw0 : w ≠ 0 := hw
     rw [m64LocalConeDiskMap, if_neg hw0,
       m64_periodic_curve_planeAngle_eq hperiod hw0 (hpolar w)]
-
-
 
 theorem m64LocalConeDiskMap_tendsto
     (H : ℝ × (M × M) → M) (center : ℕ → M) (gamma : ℕ → ℝ → M)

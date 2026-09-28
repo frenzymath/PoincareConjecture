@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.RetainedComponentLabels
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +14,6 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
-
 theorem post_cap_patch_component (i : Fin (F.event T hT).cap_count)
     (x : (F.slice T).carrier) (hx : x ∈ (P i).ball.map '' Metric.ball 0 2) :
     ConnectedComponents.mk x = ConnectedComponents.mk (P i).retainedAnnularPoint.val := by
@@ -35,9 +25,6 @@ theorem post_cap_patch_component (i : Fin (F.event T hT).cap_count)
     simpa only [Set.range_comp, Subtype.range_coe_subtype, Set.ofPred_mem_eq] using h
   exact ConnectedComponents.coe_eq_coe'.mpr
     (hconnected.subset_connectedComponent (P i).retainedAnnularPoint_mem hx)
-
-
-
 
 noncomputable def capComplementComponentsHomeomorph :
     ConnectedComponents (eventCapComplementOpen F T hT) ≃ₜ
@@ -73,18 +60,15 @@ noncomputable def capComplementComponentsHomeomorph :
   continuous_invFun :=
     (postRetainedComponentLabel F T hT P).continuous.connectedComponentsLift_continuous
 
-
 theorem capComplementComponentsHomeomorph_apply (x : eventCapComplementOpen F T hT) :
     capComplementComponentsHomeomorph F T hT P (ConnectedComponents.mk x) =
       ConnectedComponents.mk x.val := rfl
-
 
 theorem capComplementComponentsHomeomorph_symm_apply (x : (F.slice T).carrier) :
     (capComplementComponentsHomeomorph F T hT P).symm (ConnectedComponents.mk x) =
       postRetainedComponentLabel F T hT P x := rfl
 
 include P in
-
 
 theorem capComplement_preimage_component (x : eventCapComplementOpen F T hT) :
     (Subtype.val : eventCapComplementOpen F T hT → (F.slice T).carrier) ⁻¹'
@@ -100,12 +84,9 @@ theorem capComplement_preimage_component (x : eventCapComplementOpen F T hT) :
     exact congrArg (capComplementComponentsHomeomorph F T hT P)
       (ConnectedComponents.coe_eq_coe'.mpr hy)
 
-
 def eventRetainedInteriorOpen :
     TopologicalSpace.Opens (F.slice (F.event T hT).tMinus).carrier :=
   ⟨interior (F.event T hT).retained_pre, isOpen_interior⟩
-
-
 
 def retentionInteriorHomeomorph :
     eventRetainedInteriorOpen F T hT ≃ₜ eventCapComplementOpen F T hT where
@@ -120,7 +101,6 @@ def retentionInteriorHomeomorph :
     (retentionInteriorEquivalence F T hT).map_smooth.continuousOn.domRestrict.subtype_mk _
   continuous_invFun :=
     (retentionInteriorEquivalence F T hT).inverse_smooth.continuousOn.domRestrict.subtype_mk _
-
 
 noncomputable def retentionInteriorComponentsHomeomorph :
     ConnectedComponents (eventRetainedInteriorOpen F T hT) ≃ₜ
@@ -140,20 +120,16 @@ noncomputable def retentionInteriorComponentsHomeomorph :
   continuous_invFun :=
     (retentionInteriorHomeomorph F T hT).symm.continuous.connectedComponentsMap_continuous
 
-
-
 noncomputable def retainedComponentsHomeomorph :
     ConnectedComponents (eventRetainedInteriorOpen F T hT) ≃ₜ
       ConnectedComponents (F.slice T).carrier :=
   (retentionInteriorComponentsHomeomorph F T hT).trans (capComplementComponentsHomeomorph F T hT P)
-
 
 theorem retainedComponentsHomeomorph_apply (x : eventRetainedInteriorOpen F T hT) :
     retainedComponentsHomeomorph F T hT P (ConnectedComponents.mk x) =
       ConnectedComponents.mk ((F.event T hT).retention.map x.val) := rfl
 
 include P in
-
 
 theorem eventRetainedInterior_finite_components :
     Finite (ConnectedComponents (eventRetainedInteriorOpen F T hT)) := by

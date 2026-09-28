@@ -1,49 +1,6 @@
 import Mathlib.Analysis.Calculus.BumpFunction.InnerProduct
 import Mathlib.Analysis.Calculus.ContDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Metric
 
 noncomputable section
@@ -51,20 +8,6 @@ noncomputable section
 namespace PoincareConjecture.Conjugate.Realization
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_contDiff_eqOn_of_contDiffOn_Ioo {f : ℝ → E} {a b c d : ℝ} {n : ℕ}
     (hf : ContDiffOn ℝ n f (Ioo a b)) (hac : a < c) (hcd : c ≤ d) (hdb : d < b) :

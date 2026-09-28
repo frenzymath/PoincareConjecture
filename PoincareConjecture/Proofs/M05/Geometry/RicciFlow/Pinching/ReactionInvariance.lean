@@ -1,4 +1,3 @@
-
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
@@ -7,22 +6,10 @@ import PoincareConjecture.Proofs.M05.Analysis.Calculus.Nonnegative
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Barrier
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Reaction
 
-
-
-
-
-
-
-
-
-
-
-
 namespace Poincare.HamiltonIvey
 
 open Set
 open scoped Topology
-
 
 private theorem trace_reaction_lower_bound {lam mu nu : ℝ} :
     2 * (lam + mu + nu) ^ 2 / 3 ≤
@@ -48,11 +35,6 @@ private theorem horizontal_boundary_strict
   have htrace' := (div_le_iff₀ hden2).mp htrace
   apply (div_lt_iff₀ hden2).2
   nlinarith
-
-
-
-
-
 
 theorem reaction_trace_lower_bound
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
@@ -199,12 +181,6 @@ private theorem logarithmic_boundary_strict
     nlinarith
   linarith
 
-
-
-
-
-
-
 theorem reaction_log_branch_invariance
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
     {lam mu nu S X : ℝ → ℝ}
@@ -312,11 +288,6 @@ private theorem normalized_barrier_nonneg_iff {t s y : ℝ} (hy : 0 < y) :
     have := (le_div_iff₀ hy).mpr
       (show (Real.log y + Real.log (1 + t) - 3) * y ≤ s by nlinarith)
     linarith
-
-
-
-
-
 
 theorem reaction_invariance
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)

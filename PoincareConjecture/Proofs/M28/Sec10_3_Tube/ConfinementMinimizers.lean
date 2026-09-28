@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckEndpointShortening
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem exists_confined_sequence_and_minimizer_of_endpoint_crossings
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedGraphBands
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BandCutContacts
 
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,10 +21,6 @@ private theorem endpoint_height_image
   cases right
   · exact B.left_height_image
   · exact B.right_height_image
-
-
-
-
 
 theorem m64Intrinsic_nested_band_cut_contact
     {F : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates}

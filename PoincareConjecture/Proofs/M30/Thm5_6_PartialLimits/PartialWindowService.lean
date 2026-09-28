@@ -1,23 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.FlowConvergence
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric Poincare.Gluing Poincare.Analysis.Calculus
@@ -27,10 +10,6 @@ open PoincareConjecture.ChartDistance
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
-
 
 structure PartialLimitWindowExport
     {n : ℕ} {M : ℕ → Type u}
@@ -43,7 +22,6 @@ structure PartialLimitWindowExport
   tau_pos : 0 < tau
   limit : PartialPointedFlowConvergence F p A 0
 
-
 def PartialLimitWindowExport.embedding
     {n : ℕ} {M : ℕ → Type u}
     [∀ k, TopologicalSpace (M k)]
@@ -55,9 +33,6 @@ def PartialLimitWindowExport.embedding
     (E : PartialLimitWindowExport F p A) :
     ∀ k, E.limit.limitCarrier.carrier → M (E.limit.subsequence k) :=
   E.limit.embedding
-
-
-
 
 structure SelectedParabolicApplicationData
     {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
@@ -120,9 +95,6 @@ structure SelectedParabolicApplicationData
         ((flow k).metric t).pullbackCoefficients
           (chartParametrization (U := U) (hU := isOpen_U) (i := i)
             (embedding k i)) x v v
-
-
-
 
 def PartialLimitWindowService : Prop :=
   ∀ (M : ℕ → Type u) [∀ k, MetricSpace (M k)]

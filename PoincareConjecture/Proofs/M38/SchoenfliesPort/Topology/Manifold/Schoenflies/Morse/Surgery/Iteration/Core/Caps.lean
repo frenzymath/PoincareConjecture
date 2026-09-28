@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Topology
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -28,8 +20,6 @@ namespace Poincare.Manifold.Schoenflies
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 structure SphereSurgeryCoreCap (v : E3) (g : S2 → E3) (B : Set Real) where
   chart : OpenPartialHomeomorph E2 S2
@@ -150,8 +140,6 @@ namespace SphereSurgeryPath
 
 variable {v : E3} {f g : S2 → E3} {B : Set Real}
 
-
-
 theorem exists_model_cap_complement (P : SphereSurgeryPath v f g)
     (hcaps : P.PreservesCaps) (hprotects : P.Protects B) :
     ∃ L : List (SphereSurgeryCoreCap v g B),
@@ -248,8 +236,6 @@ end SphereSurgeryPath
 namespace SphereSurgeryTree
 
 variable {v : E3} {A : Finset Real} {f g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_model_cap_core_to_leaf
     (tree : SphereSurgeryTree v A f) (hg : g ∈ tree.leaves)

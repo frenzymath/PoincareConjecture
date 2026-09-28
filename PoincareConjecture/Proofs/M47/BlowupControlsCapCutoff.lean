@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PrefixMonotone
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_5_OverlapCaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_overlapCapCutoff_upperHorizon {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {K : MetricSurgeryConstants}
@@ -64,8 +53,6 @@ theorem exists_overlapCapCutoff_upperHorizon {g0 : StandardInitialMetric}
     (Proofs.M46.redecorateTo_standard_flow O old.standard_initial_eq)
     modelScales hadmissible hpinched hcanonical t hT ht hstart
     (scales.delta_le t ⟨ht, hstart⟩) i
-
-
 
 theorem exists_first_failure_capCutoff
     (S : RepairedControlledSchedulesData.{u})

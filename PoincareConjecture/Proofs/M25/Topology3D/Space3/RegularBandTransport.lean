@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularBandField
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelFlow
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped ContDiff Manifold InnerProductSpace Topology NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_symmetric_interval_of_nhdsSet {a b : ℝ} (hab : a ≤ b)
     {p : ℝ → Prop} (hp : ∀ᶠ z in 𝓝ˢ (Icc a b), p z) :
@@ -49,10 +35,6 @@ theorem exists_symmetric_interval_of_nhdsSet {a b : ℝ} (hab : a ≤ b)
         dsimp [d] at hz
         linarith [hz.2]
       · exact ⟨z, ⟨le_of_not_gt hza, le_of_not_gt hbz⟩, by simpa using hε⟩
-
-
-
-
 
 theorem exists_regular_collar_band_transport
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ) (u : E3)

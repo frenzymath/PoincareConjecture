@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Regions.ResidualModelInvariance
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.PhaseModelExcision
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -128,8 +121,6 @@ theorem exists_component_embedding_of_closed_excision
       · exact disjoint_left.mp hout hxi hxD
   obtain ⟨f, _, hf⟩ := M.exists_component_embedding_of_deletion M' J hdelete
   exact ⟨f, hf⟩
-
-
 
 theorem exists_retained_model_after_closed_excision
     {X ι : Type*} [TopologicalSpace X]

@@ -1,11 +1,5 @@
 import PoincareConjecture.Definitions.M44CapPersistence
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

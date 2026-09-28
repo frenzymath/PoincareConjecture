@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.Cap
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Normalization.StrongNeck
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -32,8 +21,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 attribute [local instance] RicciFlow.smallCarrier RicciFlow.smallChartedSpace
   RicciFlow.smallIsManifold RicciFlow.smallT3Space
-
-
 
 theorem exists_smallBased_without_neighborhoods
     (P : M26CanonicalNeighborhoodPredecessors.{u})
@@ -80,8 +67,6 @@ theorem exists_smallBased_without_neighborhoods
     obtain ⟨A, hε, hC, hp⟩ := N.target.cap_of_toSmallBased p hkappa htarget N.normalized_scalar h
     exact hcap ⟨N.capFromNormalization A, by simpa using hε,
       by simpa using hC, by simpa using hp⟩
-
-
 
 theorem exists_normalized_bad_neighborhood_sequence
     (P : M26CanonicalNeighborhoodPredecessors.{u})

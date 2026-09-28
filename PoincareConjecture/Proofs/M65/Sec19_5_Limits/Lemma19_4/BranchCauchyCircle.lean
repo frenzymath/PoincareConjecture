@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyPolar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
 
-
-
-
 theorem continuous_cauchyPolarField {ψ : ℂ → E} (hψ : ContDiff ℝ 1 ψ)
     {v : ℝ → ℂ} (hv : Continuous v) :
     Continuous (fun p : ℝ × ℝ => fderiv ℝ ψ (circleMap 0 p.1 p.2) (v p.2)) := by
@@ -30,9 +17,6 @@ theorem continuous_cauchyPolarField {ψ : ℂ → E} (hψ : ContDiff ℝ 1 ψ)
     unfold circleMap
     fun_prop
   exact ((hψ.continuous_fderiv one_ne_zero).comp hc).clm_apply (hv.comp continuous_snd)
-
-
-
 
 theorem integral_cauchyPolarRadial [CompleteSpace E] {ψ : ℂ → E}
     (hψ : ContDiff ℝ 1 ψ) (R θ : ℝ) :
@@ -50,9 +34,6 @@ theorem integral_cauchyPolarRadial [CompleteSpace E] {ψ : ℂ → E}
       (continuous_id.prodMk continuous_const)).intervalIntegrable 0 R
   simpa only [circleMap_zero_radius, Function.const_apply] using
     intervalIntegral.integral_eq_sub_of_hasDerivAt (fun r _ => hd r) hi
-
-
-
 
 theorem integral_cauchyPolarAngular [CompleteSpace E] {ψ : ℂ → E}
     (hψ : ContDiff ℝ 1 ψ) {r : ℝ} (hr : 0 < r) :

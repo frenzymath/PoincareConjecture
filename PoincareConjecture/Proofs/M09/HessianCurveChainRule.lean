@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.ChartFieldDerivative
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 import PoincareConjecture.Proofs.M09.ChartVelocity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

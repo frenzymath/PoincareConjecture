@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem map_volumeMeasure_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
@@ -60,8 +49,6 @@ theorem map_volumeMeasure_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set
   rw [hrange] at h
   exact h
 
-
-
 theorem integral_ball_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
     (hinner : ∀ (x : U) (v w : TangentSpace (𝓡 n) x),
@@ -86,8 +73,6 @@ theorem integral_ball_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
   rw [Measure.restrict_restrict_of_subset hsub] at he
   exact he.symm
 
-
-
 theorem integral_scalarCurvature_ball_subtype_val {U : Opens M}
     (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
@@ -104,8 +89,6 @@ theorem integral_scalarCurvature_ball_subtype_val {U : Opens M}
       contMDiff_subtype_val.contMDiffOn (fun y _ v w => hinner y v w) (mem_univ x)
   simp_rw [hscalar]
   exact integral_ball_subtype_val hclosed g gU hinner p r D.scalarCurvature
-
-
 
 theorem integral_scalarCurvature_ball_connectedComponent
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (p : M) (r : ℝ) :

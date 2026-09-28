@@ -13,8 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem exists_isMinOn_of_compact_carrier
     {P : Type*} [TopologicalSpace P] {K : Set P}
     (hK : IsCompact K) (hKne : K.Nonempty) (L : P → ℝ)

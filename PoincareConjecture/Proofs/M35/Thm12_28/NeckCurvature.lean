@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCharts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Pullback
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,8 +12,6 @@ variable {length : ℝ} {center : StandardCapSpace}
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem exists_euclidean_metric_realization (N : StandardCylinderPatch length center)
     (g : RiemannianMetric 3 StandardCapSpace)
@@ -58,9 +47,6 @@ theorem exists_euclidean_metric_realization (N : StandardCylinderPatch length ce
         apply (hi y hy).injective
         exact hz.trans (map_zero (mfderiv (𝓡 3) (𝓡 3) f y)).symm)
   exact ⟨g', D', Filter.mem_of_superset (hV.mem_nhds hpV) hcoeff⟩
-
-
-
 
 theorem exists_euclidean_curvature_realization (N : StandardCylinderPatch length center)
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)

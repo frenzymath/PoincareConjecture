@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.SpireCenters
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Pointed.Convergence.BoundedSubsets
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open Poincare.GromovHausdorff
 universe u
 
 namespace Poincare.CurvatureIntegral
-
-
 
 theorem eq_base_of_pointConverges_badAscentRadius_zero_at_scaled_spire_on_subset
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -60,8 +50,6 @@ theorem eq_base_of_pointConverges_badAscentRadius_zero_at_scaled_spire_on_subset
   rw [dist_comm] at hspireBound
   have hscaled := mul_le_mul_of_nonneg_left hhalf hκ.le
   linarith only [hscaled, hspireBound, hlimitBound, hρb]
-
-
 
 theorem tendsto_dist_base_zero_of_badAscentRadius_zero_at_scaled_spire_on_subset
     {X : ℕ → BasedMetricSpaceBundle.{u}} {Y : BasedMetricSpaceBundle.{u}}
@@ -135,6 +123,5 @@ theorem tendsto_dist_base_zero_of_badAscentRadius_zero_at_scaled_spire_on_subset
   have hεle : ε₀ ≤ (0 : ℝ) := ge_of_tendsto hrad
     (Eventually.of_forall (fun j => le_of_not_gt (hφbad (ψ j))))
   exact (not_le_of_gt hε₀) hεle
-
 
 end Poincare.CurvatureIntegral

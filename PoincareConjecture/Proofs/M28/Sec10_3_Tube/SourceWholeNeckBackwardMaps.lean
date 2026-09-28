@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceWholeNeckBackwardFamily
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckCollar
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -35,8 +26,6 @@ variable {epsilon C A : ℝ}
     letI := G.limitCarrier.isManifold
     EpsilonNeck G.limitMetric}
 
-
-
 def fixedDomain (_D : WholeNeckBackwardData H W G sigma V) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -50,8 +39,6 @@ def fixedDomain (_D : WholeNeckBackwardData H W G sigma V) :
 
 variable (D : WholeNeckBackwardData H W G sigma V)
 
-
-
 theorem epsilon_pos (D : WholeNeckBackwardData H W G sigma V) : 0 < epsilon := by
   let := G.limitCarrier.topologicalSpace
   let := G.limitCarrier.chartedSpace
@@ -59,8 +46,6 @@ theorem epsilon_pos (D : WholeNeckBackwardData H W G sigma V) : 0 < epsilon := b
   have h := V.epsilon_pos
   rw [D.epsilon_limit] at h
   linarith
-
-
 
 theorem center_mem_fixedDomain :
     letI := G.limitCarrier.topologicalSpace
@@ -76,8 +61,6 @@ theorem center_mem_fixedDomain :
   exact V.central_sphere_subset_region (neg_neg_of_pos hwidth) hwidth
     V.center_on_central_sphere
 
-
-
 def criticalMap (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -87,8 +70,6 @@ def criticalMap (k : ℕ) :
   let := G.limitCarrier.chartedSpace
   let := G.limitCarrier.isManifold
   exact fun x => G.embedding (sigma (k + D.offset)) x.val
-
-
 
 theorem criticalMap_localDiffeomorph (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -105,8 +86,6 @@ theorem criticalMap_localDiffeomorph (k : ℕ) :
     (𝓡 3) (H.tubeCriticalRegion W.tube W.radius (D.sourceIndex k))
     (G.embedding_smooth (sigma (k + D.offset)) ⟨x.val, hx⟩)
 
-
-
 def originalMap (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -118,8 +97,6 @@ def originalMap (k : ℕ) :
   let := G.limitCarrier.chartedSpace
   let := G.limitCarrier.isManifold
   exact fun x => (D.criticalMap k x).val.val
-
-
 
 theorem originalMap_localDiffeomorph (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
@@ -140,8 +117,6 @@ theorem originalMap_localDiffeomorph (k : ℕ) :
         (openSubtype_isLocalDiffeomorph (W.tube (D.sourceIndex k)).carrierOpen
           (D.criticalMap k x).val)
 
-
-
 theorem originalMap_in_core (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -155,8 +130,6 @@ theorem originalMap_in_core (k : ℕ) :
   intro x
   exact D.capture k x.val x.property.1 (abs_lt.mpr x.property.2).le
 
-
-
 def neckMap (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace
     letI := G.limitCarrier.chartedSpace
@@ -166,8 +139,6 @@ def neckMap (k : ℕ) :
   let := G.limitCarrier.chartedSpace
   let := G.limitCarrier.isManifold
   exact fun x => ⟨D.originalMap k x, (D.originalMap_in_core k x).1⟩
-
-
 
 theorem neckMap_localDiffeomorph (k : ℕ) :
     letI := G.limitCarrier.topologicalSpace

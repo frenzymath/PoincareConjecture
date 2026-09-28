@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Collars.CollarNormalLabel
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType Filter Topology
@@ -57,9 +50,6 @@ private theorem path_sign_of_normal_coordinate
   change sign (E (T.symm (T (F t)))).2 = s * sign (T (F t)).2 at he
   rw [T.left_inv hts, hth, sign_mul, sign_pos ht, mul_one] at he
   exact (htv ht).symm.trans he
-
-
-
 
 theorem positive_normal_labels_eq_of_tube_coordinates
     {S : Set X} (E : ι → OpenPartialHomeomorph X (P × ℝ))

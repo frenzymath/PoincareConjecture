@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.HurewiczRepresentatives
 import Mathlib.CategoryTheory.Limits.Shapes.ZeroObjects
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits
@@ -15,8 +8,6 @@ open CategoryTheory Limits
 universe w
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem subsingleton_homotopyGroupPi_of_integral_hurewicz_injective_isZero
     (X : TopCat.{w}) (n : ℕ) (x : X)

@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.M10.Calibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M34
-
-
 
 theorem volumeCalibration_eq_haarFactor (n : ℕ) :
     euclideanVolumeCalibration n =
@@ -36,8 +26,6 @@ theorem volumeCalibration_eq_haarFactor (n : ℕ) :
   exact ENNReal.mul_div_cancel_right (M10.euclideanHausdorff_unitBall_pos n).ne'
     (M10.euclideanHausdorff_unitBall_lt_top n).ne
 
-
-
 theorem calibratedVolume_eq_volumeMeasure {n : ℕ} {M : Type u}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
     [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
@@ -47,8 +35,6 @@ theorem calibratedVolume_eq_volumeMeasure {n : ℕ} {M : Type u}
     Measure.euclideanHausdorffMeasure
   rw [volumeCalibration_eq_haarFactor]
   rfl
-
-
 
 theorem exists_core_volume_bound (g₀ : StandardInitialMetric) :
     ∃ C : ℝ, 0 < C ∧

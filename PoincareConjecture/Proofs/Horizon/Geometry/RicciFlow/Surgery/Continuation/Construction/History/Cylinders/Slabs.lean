@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import Mathlib.Topology.LocallyConstant.Basic
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -27,8 +15,6 @@ namespace PoincareConjecture.M33RegularHistoryRealization
 variable {G : GeneralizedRicciFlowData.{u}} {F : SurgeryFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ} {J : Set ℝ} {U : Set C.carrier}
   (h : M33RegularHistoryRealization G F)
-
-
 
 theorem cylinder_slab_compatibility
     (e : GeneralizedFlowCylinder G C origin scale J U) (hJ : J.OrdConnected)

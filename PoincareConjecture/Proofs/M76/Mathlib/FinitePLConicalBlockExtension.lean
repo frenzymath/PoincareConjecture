@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLConicalOuterCaps
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,27 +10,16 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
 
-
-
 def chartedHalfBlock (S : Set E) (f : E → ((ℝ × ℝ) × ℝ)) (boundary : Bool) : Set E :=
   S ∩ {x | (boundary = true → 0 ≤ (f x).1.1) ∧ 0 ≤ (f x).2}
 
-
-
 def chartedHalfBlockOuter (L : Set E) (f : E → ((ℝ × ℝ) × ℝ))
     (boundary : Bool) : Set E := chartedHalfBlock L f boundary
-
-
-
 
 def chartedHalfBlockActive (S : Set E) (f : E → ((ℝ × ℝ) × ℝ))
     (boundary : Bool) : Set E :=
   S ∩ {x | (boundary = true → 0 ≤ (f x).1.1) ∧ 0 ≤ (f x).2 ∧
     ((boundary = true ∧ (f x).1.1 = 0) ∨ (f x).2 = 0)}
-
-
-
-
 
 theorem AffineOnFaces.conical_halfBlock_ball_pairs
     [DecidableEq E] {K : SimplicialComplex ℝ E} {f : E → ((ℝ × ℝ) × ℝ)}
@@ -142,11 +122,6 @@ theorem AffineOnFaces.conical_halfBlock_ball_pairs
       simpa [F, A, B] using hball
     · rw [hcontact]
       simpa [chartedHalfBlockOuter, chartedHalfBlock] using hquads false false
-
-
-
-
-
 
 theorem AffineOnFaces.exists_conical_halfBlock_extension
     [DecidableEq E] {K : SimplicialComplex ℝ E} {f : E → ((ℝ × ℝ) × ℝ)}

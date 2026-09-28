@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayChord
 import PoincareConjecture.Proofs.M28.Sec10_5_Angles.SelectedEndRayChordLimits
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SelectedChordPacking
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +16,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 theorem exists_compact_selected_end_chord_link
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalAffineExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +10,6 @@ variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [DecidableEq E] [DecidableEq F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
-
-
-
 
 theorem AffineOnFaces.exists_height_preserving_cone_extension
     (hf : K.AffineOnFaces f) (hinj : InjOn f K.space) (hK : K.faces.Finite)

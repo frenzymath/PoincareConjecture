@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryAutonomousDifference
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,10 +25,6 @@ local instance m64ComponentDifference_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem m64WeightedMetric_component_difference
     (G : E → E →L[ℝ] E →L[ℝ] ℝ)

@@ -3,8 +3,6 @@ import Mathlib.Topology.Covering.AddCircle
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Tactic.Module
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -12,7 +10,6 @@ open Set Topology
 namespace PoincareConjecture.M76.LinearTorus
 
 variable (p : ℝ) (A : Matrix (Fin 2) (Fin 2) ℤ)
-
 
 def integerMatrixHom : (AddCircle p × AddCircle p) →+ (AddCircle p × AddCircle p) where
   toFun x := (A 0 0 • x.1 + A 0 1 • x.2, A 1 0 • x.1 + A 1 1 • x.2)
@@ -27,7 +24,6 @@ theorem continuous_integerMatrixHom : Continuous (integerMatrixHom p A) := by
   change Continuous (fun x : AddCircle p × AddCircle p =>
     (A 0 0 • x.1 + A 0 1 • x.2, A 1 0 • x.1 + A 1 1 • x.2))
   fun_prop
-
 
 def integerMatrixMap : C(AddCircle p × AddCircle p, AddCircle p × AddCircle p) :=
   ⟨integerMatrixHom p A, continuous_integerMatrixHom p A⟩

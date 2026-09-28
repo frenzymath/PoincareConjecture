@@ -1,17 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.CapAvoidance
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.TransverseDirections
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,13 +32,10 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {r : M → ℝ} {p : M} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → M} (B : VertexCapFaces P x)
 
-
 noncomputable def chordEndpoint (s : Bool × Bool) (vertical : Bool) :
     EuclideanSpace ℝ (Fin 2) :=
   if vertical then B.planarCoordinates s (0, B.scale)
   else B.planarCoordinates s (B.scale, 0)
-
-
 
 noncomputable def chordDirection (s : Bool × Bool) (vertical : Bool) :
     EuclideanSpace ℝ (Fin 2) :=
@@ -168,7 +153,6 @@ theorem chord_ray_image (s : Bool × Bool) (vertical : Bool) :
 
 omit [T2Space M] in
 
-
 theorem chord_transverse_pos_of_region_tube
     (s : Bool × Bool) (vertical : Bool) {S : Set M} (hsector : P.sector s ⊆ S)
     (A : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] (ℝ × ℝ))
@@ -228,7 +212,6 @@ theorem chord_transverse_pos_of_region_tube
 
 omit [T2Space M] in
 
-
 theorem exists_chord_ray_length
     (s : Bool × Bool) (vertical : Bool)
     (A : EuclideanSpace ℝ (Fin 2) ≃L[ℝ] (ℝ × ℝ))
@@ -272,9 +255,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
-
 
 theorem exists_incident_cap_chord_transversal
     (P : ∀ p : D.vertices, ChartCircleArrangementVertexPatch D.radius (p : M))

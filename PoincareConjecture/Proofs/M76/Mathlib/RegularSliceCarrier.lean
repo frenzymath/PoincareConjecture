@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RegularSliceGraph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
-
 
 theorem regularSliceGraph_carrier (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)
     (hreg : ∀ v ∈ K.vertices, A v ≠ 0)

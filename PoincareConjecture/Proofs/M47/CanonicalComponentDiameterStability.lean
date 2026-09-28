@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.CanonicalMetricStability
 import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M] [CompactSpace M]
-
-
 
 theorem component_diameter_bounds_persist
     (hC : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

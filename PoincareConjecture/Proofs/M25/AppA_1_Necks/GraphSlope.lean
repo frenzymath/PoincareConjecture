@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.HorizontalControl
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SphereContainment
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_coordinate_horizontal_tangentNorm_le
     [MeasurableSpace M] [BorelSpace M] [T3Space M] (N : EpsilonNeck g)
@@ -60,9 +46,6 @@ theorem normalized_coordinate_horizontal_tangentNorm_le
     dsimp only [normalized_pullback] at h
     nlinarith
   exact (Real.sqrt_le_iff).mpr ⟨by positivity, hnorm⟩
-
-
-
 
 theorem coordinate_graph_axial_identity (N N' : EpsilonNeck g)
     {h : UnitTwoSphere → ℝ} (hsmooth : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) ∞ h)
@@ -135,10 +118,6 @@ theorem coordinate_graph_axial_identity (N N' : EpsilonNeck g)
         (L (D (q, h q) (v, 0)) + d * L (D (q, h q) (0, 1))) := by ring
     _ = 0 := by rw [hsplit, mul_zero]
 
-
-
-
-
 theorem exists_coordinate_graph_slope_bound {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -200,10 +179,6 @@ theorem exists_coordinate_graph_slope_bound {α : ℝ} (hα : 0 < α) :
   change |d| ≤ α * ‖w‖
   nlinarith
 
-
-
-
-
 theorem exists_contained_slice_graph_with_slope {α : ℝ} (hα : 0 < α) :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -239,10 +214,6 @@ theorem exists_contained_slice_graph_with_slope {α : ℝ} (hα : 0 < α) :
   exact ⟨⟨h, hsmooth, hdom, hrange, hslope N N'
     (hN.trans (min_le_right _ _)) (hN'.trans (min_le_right _ _)) h hsmooth hdom
     (fun q => (hpoint q).1) t (fun q => (hpoint q).2)⟩, hisotopy⟩
-
-
-
-
 
 theorem exists_middle_central_sphere_graph_with_slope
     {α κ : ℝ} (hα : 0 < α) (hκ : κ ∈ Ioc 0 1) :

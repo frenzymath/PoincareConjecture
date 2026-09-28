@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveBandTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,9 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem IsFinitePL.exists_heightInterval_restriction
     {N : Set E} {a b α β : ℝ} {d : Icc a b ≃ₜ N} (hd : d.IsFinitePL)

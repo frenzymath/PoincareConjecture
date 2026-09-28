@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Neck.Static.Constructor
 import PoincareConjecture.Definitions.Ch09.CanonicalNeighborhoods
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,7 +33,6 @@ noncomputable def restrictNeck {g : RiemannianMetric 3 M}
 
 variable [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
 
 noncomputable def restrictStrongNeck {K : AncientKappaSolution 3 M} {t delta epsilon : ℝ}
     (N : StrongEvolvingNeck K t delta) (hle : delta ≤ epsilon) (hhalf : epsilon < 1 / 2) :

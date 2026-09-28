@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.LevelSets
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,9 +32,6 @@ private def componentEquivOfHomeomorph {X Y : Type*} [TopologicalSpace X]
     rw [hfiber]
     exact isConnected_singleton).toEquiv
 
-
-
-
 theorem exists_level_homeomorph_retained_of_disk_splicing
     (f f' : S2 → E3) (v : E3) (c : Real)
     (e d : OpenPartialHomeomorph E2 S2)
@@ -59,10 +48,6 @@ theorem exists_level_homeomorph_retained_of_disk_splicing
   obtain ⟨hlevel, _⟩ := level_eq_and_eventuallyEq_of_disk_splicing
     f f' v c e d hesource hdclosed g hcap hoff havoid
   exact ⟨(Homeomorph.setCongr hlevel).trans (interHomeomorphNested _ _), fun _ => rfl⟩
-
-
-
-
 
 theorem card_level_components_of_parallel_disk_splicing
     (f fMinus fPlus : S2 → E3) (v : E3) {c ε a : Real}

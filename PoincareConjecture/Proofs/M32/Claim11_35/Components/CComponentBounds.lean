@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch11.SingularLimits
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Calibration
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Distance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -39,9 +30,6 @@ private theorem component_sqrt_mul_neg_half_le {Q m R : ℝ}
     _ = m ^ (-1 / 2 : ℝ) := by
       rw [← Real.rpow_add hQ]
       norm_num
-
-
-
 
 theorem c_component_normalized_carrier
     {M : Type u} [TopologicalSpace M]

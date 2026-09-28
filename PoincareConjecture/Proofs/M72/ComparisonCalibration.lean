@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M72.Providers
 import PoincareConjecture.Proofs.M52.ComparisonCalibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,19 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem m72CalibratedGlobalFlowWithRawTopology
     (A : RepairedNeckCapTopologyTheory.{u})

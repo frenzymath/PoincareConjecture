@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.AnnularPair
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.ScaleScalarFunction
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +10,6 @@ open Set Filter MeasureTheory
 open Poincare.CurvatureIntegral Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology BigOperators
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem exists_critical_ball_concentration_with_level_opposite_partners
     {m : ℕ} (hm : 1 ≤ m) {M : ℕ → Type*}

@@ -1,18 +1,7 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalTensorMargin
 import PoincareConjecture.Definitions.M27CanonicalGeometry
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
-
 
 set_option linter.style.haveILetI false
 
@@ -25,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem limitCanonical_covariant_sub_metric
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -46,7 +33,6 @@ theorem limitCanonical_covariant_sub_metric
         ![v 0, v 1, v 2] = _
   rw [D.covariantTensorDerivative_metric_eq_zero]
   simp
-
 
 theorem limitCanonical_iterated_sub_metric
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -71,8 +57,6 @@ theorem limitCanonical_iterated_sub_metric
           D.covariantTensorDerivative
             (D.iteratedCovariantTensorDerivative B (j + 1))
         rw [ih (by omega)]
-
-
 
 theorem limitCanonical_singularMetricJetErrorSquared_eq
     {g : RiemannianMetric 3 M} (D : LeviCivitaData g)
@@ -105,9 +89,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
-
 
 theorem limitCanonical_round_error_lt
     {K : AncientKappaSolution 3 M} {t epsilon : ℝ}

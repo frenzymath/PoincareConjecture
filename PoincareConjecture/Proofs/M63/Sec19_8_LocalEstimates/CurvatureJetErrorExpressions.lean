@@ -2,21 +2,11 @@ import PoincareConjecture.Proofs.M63.Mathlib.MarkedTensorContraction
 import Mathlib.Data.Fin.VecNotation
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
-
 
 noncomputable def m63RiemannJetErrorExpression :
     Nat -> List (Int × MarkedTensorContraction 4)
@@ -24,7 +14,6 @@ noncomputable def m63RiemannJetErrorExpression :
   | m + 1 =>
       markedTensorExpressionDerivative (m63RiemannJetErrorExpression m) ++
         [(1, { order := 0, test := 2, jet := ![1, 0, 0, m + 1] })]
-
 
 noncomputable def m63RicciJetErrorExpression :
     Nat -> List (Int × MarkedTensorContraction 2)
@@ -37,13 +26,9 @@ noncomputable def m63RicciJetErrorExpression :
          (-1, { order := 1, test := 2, jet := ![m + 1, 0, 0] }),
          (1, { order := 1, test := 0, jet := ![0, 0, m + 1] })]
 
-
 def m63JetErrorMassBound : Nat -> Nat
   | 0 => 4
   | m + 1 => (m + 4) * m63JetErrorMassBound m + 4
-
-
-
 
 theorem m63JetErrorExpression_spec (m : Nat) :
     (∀ q ∈ m63RiemannJetErrorExpression m,

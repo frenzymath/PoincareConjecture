@@ -3,16 +3,6 @@ import Mathlib.Analysis.Normed.Operator.NNNorm
 import Mathlib.Topology.Order.Bornology
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +10,6 @@ open Set
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem not_isBounded_lt_halfspace (X : E →L[ℝ] ℝ) (hX : Function.Surjective X)
     (c : ℝ) : ¬ Bornology.IsBounded {x | X x < c} := by
@@ -36,8 +24,6 @@ theorem not_isBounded_lt_halfspace (X : E →L[ℝ] ℝ) (hX : Function.Surjecti
   rw [hz] at hbz
   have := min_le_left b c
   linarith
-
-
 
 theorem not_isBounded_compl_component_of_lt_linear_bound (X : E →L[ℝ] ℝ)
     (hX : Function.Surjective X) (c : ℝ) {C : Set E}

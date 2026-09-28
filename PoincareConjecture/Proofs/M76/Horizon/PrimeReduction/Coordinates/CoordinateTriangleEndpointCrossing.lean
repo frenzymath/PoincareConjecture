@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalTriangleEndpointCrossing
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,8 +8,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 noncomputable def crossingCoordinateOrder : C3 ≃ᴬ[ℝ] V3 :=
   let L : C3 ≃ₗ[ℝ] V3 :=
@@ -93,9 +83,6 @@ private theorem exists_local_compatible_endpoint_coordinates
     change crossingCoordinateOrder (T.symm (C x)) = _
     rw [hCval x hxC]
     rfl
-
-
-
 
 theorem HasOriginalEdgeCofaceCharts.exists_triangle_endpoint_crossing_in_chart
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

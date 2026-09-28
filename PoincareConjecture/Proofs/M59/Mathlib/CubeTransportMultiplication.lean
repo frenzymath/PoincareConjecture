@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CubeTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -22,14 +14,10 @@ variable {N X : Type*} [Finite N] [DecidableEq N] [TopologicalSpace X]
 
 namespace HomotopyAlong
 
-
-
 def slice (H : HomotopyAlong p a b) (t : I) : GenLoop N X (p t) :=
   ⟨⟨fun v => H.toHomotopy (t, v),
     H.toHomotopy.continuous.comp (continuous_const.prodMk continuous_id)⟩,
     fun v hv => H.boundary_path t ⟨v, hv⟩⟩
-
-
 
 def transAt (i : N) (H : HomotopyAlong p a b) (G : HomotopyAlong p c d) :
     HomotopyAlong p (GenLoop.transAt i a c) (GenLoop.transAt i b d) where
@@ -70,8 +58,6 @@ def transAt (i : N) (H : HomotopyAlong p a b) (G : HomotopyAlong p c d) :
     GenLoop.boundary (GenLoop.transAt i (H.slice t) (G.slice t)) v v.property
 
 end HomotopyAlong
-
-
 
 theorem boundaryTransport_transAt (i : N) (p : Path x y) (a b : GenLoop N X x) :
     Homotopic (boundaryTransport p (GenLoop.transAt i a b))

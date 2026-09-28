@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.DualFaceGraph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -18,8 +8,6 @@ namespace AbstractSimplicialComplex
 
 variable {V : Type*} [DecidableEq V] (A : AbstractSimplicialComplex V)
   (T : SimpleGraph V) (hT : T ≤ A.edgeGraph)
-
-
 
 theorem mem_range_primalFaceLabel_iff (s : A.faces) :
     s ∈ Set.range (A.primalFaceLabel T hT) ↔ s.val.card = 1 ∨
@@ -48,8 +36,6 @@ variable [Fintype V]
 
 omit [DecidableEq V] in
 
-
-
 theorem mem_range_dualFaceLabel_iff (s : A.faces) :
     s ∈ Set.range (dualFaceLabel A.toPreAbstractSimplicialComplex T hcofaces) ↔
       s.val.card = 3 ∨ ∃ e : Edge A.toPreAbstractSimplicialComplex,
@@ -71,9 +57,6 @@ theorem mem_range_dualFaceLabel_iff (s : A.faces) :
           ⟨e, he⟩)).val.val = s.val
       rw [Equiv.apply_symm_apply]
       exact hs.symm
-
-
-
 
 theorem range_dualFaceLabel_eq_compl
     (hbound : ∀ s ∈ A.faces, s.card ≤ 3) :

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.MarkedBoundaryPLLoopDisk
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.HomotopyLoopWhisker
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,10 +15,6 @@ local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
-
-
-
-
 
 theorem exists_marked_PL_square_pair
     {e : ι → OpenPartialHomeomorph X V3} {R : Set X} (he : PLDomain e R)

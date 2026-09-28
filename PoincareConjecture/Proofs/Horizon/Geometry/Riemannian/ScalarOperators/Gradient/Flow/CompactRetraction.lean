@@ -5,12 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Transport
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.ObliqueProjection
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,7 +24,6 @@ private theorem scalar_derivative_along_curve
   change HasDerivAt (fun t => f (γ t))
     (mfderiv (𝓡 n) 𝓘(ℝ, ℝ) f (γ s) ((1 : ℝ) • W (γ s))) s at hd'
   simpa [mvfderiv, NormedSpace.fromTangentSpace] using hd'
-
 
 theorem exists_positive_level_retraction_on_compact_buffer
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -160,7 +153,6 @@ theorem exists_positive_level_retraction_on_compact_buffer
   have hnorm : ‖L w‖ ≤ Real.exp ((H/l^2)*σ y) * ‖w‖ := by
     nlinarith [norm_nonneg (L w)]
   exact hnorm.trans (mul_le_mul_of_nonneg_left hwn (Real.exp_pos _).le)
-
 
 theorem exists_opposite_level_retraction_on_compact_buffer
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -293,7 +285,5 @@ theorem exists_opposite_level_retraction_on_compact_buffer
   have htimebound := (hhit y hyV).2.2.1
   simpa only [F,hzero y hyW,abs_of_nonneg htime.1,abs_of_nonneg (sub_nonneg.mpr hy.2.1)]
     using htimebound
-
-
 
 end PoincareConjecture.LeviCivitaData

@@ -1,15 +1,6 @@
 import Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho
 import Mathlib.LinearAlgebra.Determinant
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -44,8 +35,6 @@ private theorem gramSchmidt_inner_self_pos {n : ℕ}
         rw [hz, add_zero, real_inner_self_eq_norm_sq]
   rw [gramSchmidtNormed, real_inner_smul_left, hinner]
   exact mul_pos (inv_pos.mpr hn) (sq_pos_of_pos hn)
-
-
 
 theorem exists_orthogonal_linear_interpolation {n : ℕ}
     (L : EuclideanSpace ℝ (Fin n) ≃L[ℝ] EuclideanSpace ℝ (Fin n)) :

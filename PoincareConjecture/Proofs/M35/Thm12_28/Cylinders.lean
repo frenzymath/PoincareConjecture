@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.GeneralizedFlow
 import PoincareConjecture.Definitions.M13TimeRescaling
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,16 +9,12 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
 
-
-
 theorem clock_embedding {J I : Set ℝ} {a Q : ℝ} (hQ : 0 < Q)
     (htime : ∀ s ∈ I, a + s / Q ∈ J) :
     Topology.IsEmbedding (fun s : I => (⟨a + s.val / Q, htime s.val s.property⟩ : J)) := by
   apply Topology.IsEmbedding.subtypeVal.of_comp_iff.mp
   exact (parabolicTimeOrderIso Q hQ a).symm.toHomeomorph.isEmbedding.comp
     Topology.IsEmbedding.subtypeVal
-
-
 
 noncomputable def cylinder {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (a Q : ℝ) (hQ : 0 < Q) (I : Set ℝ) (U : Set StandardCapSpace)
@@ -47,8 +35,6 @@ noncomputable def cylinder {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     refine ⟨(), x, 1, zero_lt_one, ?_⟩
     intro s hs _
     exact ⟨htime s hs, rfl⟩
-
-
 
 theorem cylinder_pullbackInner {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (a Q : ℝ) (hQ : 0 < Q) (I : Set ℝ) (U : Set StandardCapSpace)

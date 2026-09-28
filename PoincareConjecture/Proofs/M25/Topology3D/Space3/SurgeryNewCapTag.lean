@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SouthernSphereChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D.SurgeryCapTag
 
 local notation "CINF" => ((Top.top : ENat) : WithTop ENat)
-
-
 
 noncomputable def of_cap_patch
     (P : SurgeryCapProfile) (psi : Prod UnitTwoSphere Real -> E3) (u : UnitTwoSphere)

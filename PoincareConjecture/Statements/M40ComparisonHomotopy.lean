@@ -2,13 +2,6 @@ import PoincareConjecture.Definitions.M40ComparisonHomotopy
 import PoincareConjecture.Statements.Ch01.Topology
 import PoincareConjecture.Statements.M39ComparisonMap
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

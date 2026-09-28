@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.ScalarJetContinuity
 import PoincareConjecture.Proofs.M35.RadialGauge.EvenRadialCompactJets
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -41,8 +31,6 @@ theorem raw_intrinsic_jet_continuous_subtype (j : ℕ) :
     ((continuous_subtype_val.comp continuous_fst).prodMk continuous_snd)
     (fun p => ⟨p.1.2, mem_univ _⟩)
 
-
-
 theorem raw_intrinsic_quotient_jet_continuous_subtype (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ =>
       iteratedDeriv j (axisDivision (rawWarpingRadius P G hrotation p.1.1)) p.2) := by
@@ -52,8 +40,6 @@ theorem raw_intrinsic_quotient_jet_continuous_subtype (j : ℕ) :
     rw [rawWarpingRadius_eq P G hrotation ⟨t.2.1, t.2.2.trans_lt hTlt⟩]
     exact intrinsicWarpingRadius_contDiff _ _ _
   · exact raw_intrinsic_jet_continuous_subtype P G hrotation hT hTlt (j + 1)
-
-
 
 theorem raw_intrinsic_log_jet_continuous_subtype (j : ℕ) :
     Continuous (fun p : Icc (0 : ℝ) T × ℝ =>
@@ -69,8 +55,6 @@ theorem raw_intrinsic_log_jet_continuous_subtype (j : ℕ) :
     exact (intrinsicWarpingQuotient_pos _ _ _ r).ne'
   exact RadialGauge.scalar_jets_continuous_log hs hp
     (raw_intrinsic_quotient_jet_continuous_subtype P G hrotation hT hTlt) j
-
-
 
 theorem raw_intrinsic_log_euclidean_jets_bounded_on_ball
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactClosedTimeExtension
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathSubstitution
 import Mathlib.Analysis.Normed.Operator.LinearIsometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M63
 
 variable {E : Type u} {F : Type v} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem exists_contDiffOn_closedTime_pathSubstitution {C : Set ℝ} [CompactSpace C]
     (hC : UniqueDiffOn ℝ C) {U : Set E} (hU : IsOpen U)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.BanachVolterraNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

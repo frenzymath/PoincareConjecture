@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.MeasureTheory.Integral.GaussianMoment.Bounds
 import PoincareConjecture.Proofs.Horizon.MeasureTheory.Integral.GaussianMoment.Series
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -16,8 +9,6 @@ open scoped ENNReal Topology
 namespace Poincare.MeasureTheory.GaussianMoment
 
 universe u
-
-
 
 theorem exists_gaussian_first_moment_bound
     (n : ℕ) (A B c : ℝ) (hn : 0 < n) (hA : 1 ≤ A) (hB : 0 ≤ B) (hc : 0 < c) :
@@ -62,8 +53,6 @@ theorem exists_gaussian_first_moment_bound
       exact mul_le_mul_of_nonneg_left (hgauss y) dist_nonneg)
   refine ⟨hg0.1, hg1.1, ?_⟩
   simpa only [Pi.mul_apply, Real.norm_of_nonneg (hprod _), pow_one] using hg1.2
-
-
 
 theorem tendstoUniformly_gaussian_first_moment
     (n : ℕ) (A B c : ℝ) (hn : 0 < n) (hA : 1 ≤ A) (hB : 0 ≤ B) (hc : 0 < c)

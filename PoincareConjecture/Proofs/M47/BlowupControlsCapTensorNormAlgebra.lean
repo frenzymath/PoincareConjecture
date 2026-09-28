@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapInverseMetric
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -47,8 +37,6 @@ end Arrays
 
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
-
-
 noncomputable def capOperatorComponents (L : E₃ →L[ℝ] E₃) :
     EuclideanSpace ℝ (Fin 3 × Fin 3) :=
   WithLp.toLp 2 (fun p => inner ℝ (EuclideanSpace.basisFun (Fin 3) ℝ p.1)
@@ -74,8 +62,6 @@ theorem cap_operatorComponents_identity_norm :
       nsmul_eq_mul, Nat.cast_ofNat, mul_one]
   rw [← hs, Real.sqrt_sq (norm_nonneg _)]
 
-
-
 theorem cap_operatorComponents_norm_le (L : E₃ →L[ℝ] E₃) :
     ‖capOperatorComponents L‖ ≤ Real.sqrt 3 * ‖L‖ := by
   apply (sq_le_sq₀ (norm_nonneg _) (mul_nonneg (Real.sqrt_nonneg _) (norm_nonneg _))).mp
@@ -88,8 +74,6 @@ theorem cap_operatorComponents_norm_le (L : E₃ →L[ℝ] E₃) :
       rw [(EuclideanSpace.basisFun (Fin 3) ℝ).orthonormal.norm_eq_one, mul_one] at h
       exact (sq_le_sq₀ (norm_nonneg _) (norm_nonneg _)).mpr h
     _ = _ := by simp
-
-
 
 theorem cap_operatorComponents_comp_norm_le (L K : E₃ →L[ℝ] E₃) :
     ‖capOperatorComponents (L.comp K)‖ ≤ ‖L‖ * ‖capOperatorComponents K‖ := by
@@ -108,8 +92,6 @@ theorem cap_operatorComponents_neg (L : E₃ →L[ℝ] E₃) :
   ext p
   simp only [capOperatorComponents, WithLp.ofLp_toLp, neg_apply,
     inner_neg_right, PiLp.neg_apply]
-
-
 
 theorem cap_frameInverseGram_component_error_le
     {M : Type*} [TopologicalSpace M]

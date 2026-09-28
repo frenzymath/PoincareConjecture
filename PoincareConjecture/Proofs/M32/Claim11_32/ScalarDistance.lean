@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal NNReal Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem exists_scalar_level_distance {K B : ℝ} (hK : 0 < K) (hB : 0 < B) :
     ∃ d : ℝ, 0 < d ∧

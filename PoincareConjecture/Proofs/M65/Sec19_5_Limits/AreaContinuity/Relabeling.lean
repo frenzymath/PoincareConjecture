@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {gamma eta : C1FreeLoopSpace (M := M)}
-
-
 
 def m65RelabelSpanningDisk (e : LoopCircle ≃ₜ LoopCircle)
     (he : ∀ z, eta z = gamma (e z)) (D : LipschitzSpanningDisk g gamma) :
@@ -47,13 +36,9 @@ def m65RelabelSpanningDisk (e : LoopCircle ≃ₜ LoopCircle)
   area_integrable := D.area_integrable
   area_nonnegative := D.area_nonnegative
 
-
-
 theorem m65RelabelSpanningDisk_area (e : LoopCircle ≃ₜ LoopCircle)
     (he : ∀ z, eta z = gamma (e z)) (D : LipschitzSpanningDisk g gamma) :
     (m65RelabelSpanningDisk e he D).area = D.area := rfl
-
-
 
 theorem m65RelabelSpanningDisk_nonempty_iff (e : LoopCircle ≃ₜ LoopCircle)
     (he : ∀ z, eta z = gamma (e z)) :
@@ -63,8 +48,6 @@ theorem m65RelabelSpanningDisk_nonempty_iff (e : LoopCircle ≃ₜ LoopCircle)
     exact ⟨m65RelabelSpanningDisk e.symm (fun z => by rw [he, e.apply_symm_apply]) D⟩
   · rintro ⟨D⟩
     exact ⟨m65RelabelSpanningDisk e he D⟩
-
-
 
 theorem m65RelabelSpanningDisk_areaRange (e : LoopCircle ≃ₜ LoopCircle)
     (he : ∀ z, eta z = gamma (e z)) :
@@ -76,9 +59,6 @@ theorem m65RelabelSpanningDisk_areaRange (e : LoopCircle ≃ₜ LoopCircle)
     exact ⟨m65RelabelSpanningDisk e.symm (fun z => by rw [he, e.apply_symm_apply]) D, rfl⟩
   · rintro ⟨D, rfl⟩
     exact ⟨m65RelabelSpanningDisk e he D, rfl⟩
-
-
-
 
 theorem m65FillingArea_relabel (e : LoopCircle ≃ₜ LoopCircle)
     (he : ∀ z, eta z = gamma (e z)) : fillingArea g eta = fillingArea g gamma := by

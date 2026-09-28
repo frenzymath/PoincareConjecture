@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.RawMatchedCoordinates
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,14 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -70,9 +56,6 @@ private theorem modelSeeds_height (i : Fin 3) :
   · exact Or.inl (lowerSeed_height (-1) (by norm_num))
   · right
     simp [modelSeeds, Saddle.height_apply]
-
-
-
 
 theorem exists_terminal_saddle_geometry_with_matched_planar_chart
     {f : S2 → E3} (M : SphereMorseReduction f)
@@ -218,8 +201,6 @@ theorem exists_terminal_saddle_geometry_with_matched_planar_chart
     · rw [hupp] at hi
       linarith [hi.2]
 
-
-
 theorem exists_terminal_saddle_geometry_with_planar_chart
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -255,8 +236,6 @@ theorem exists_terminal_saddle_geometry_with_planar_chart
   exact ⟨d, hm, hz, hs, a, ε, ha, hε, hsmall, hsource, R, hR,
     fun x hx t ht => (hlevel x hx t ht).1⟩
 
-
-
 theorem exists_terminal_saddle_geometry_with_matching_square
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -284,7 +263,6 @@ theorem exists_terminal_saddle_geometry_with_matching_square
     M hg P hP hcaps hp hc hunique e he0 hep he hei het hform
   exact ⟨d, hmodel, hzero, hsquare⟩
 
-
 theorem exists_terminal_saddle_geometry_with_fixed_critical_level
     {f : S2 → E3} (M : SphereMorseReduction f)
     {g : S2 → E3} (hg : g ∈ M.tree.leaves)
@@ -310,8 +288,6 @@ theorem exists_terminal_saddle_geometry_with_fixed_critical_level
   obtain ⟨d, hmodel, hzero, _⟩ := exists_terminal_saddle_geometry_with_matching_square
     M hg P hP hcaps hp hc hunique e he0 hep he hei het hform
   exact ⟨d, hmodel, hzero⟩
-
-
 
 theorem exists_terminal_saddle_geometry
     {f : S2 → E3} (M : SphereMorseReduction f)

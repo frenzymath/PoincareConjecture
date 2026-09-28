@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.DiskBlockFronti
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Topology.HomotopyLoopContractions
 import PoincareConjecture.Proofs.M76.Horizon.Dependencies.AlgebraicTopology.FundamentalGroup.VanKampen.MapNullhomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -32,10 +24,6 @@ theorem OriginalDiskProduct.frontier_block_subset
   rintro x (hx | ⟨z, hz, rfl⟩)
   · exact hFY hx
   · exact hPY ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
-
-
-
-
 
 theorem OriginalDiskProduct.frontier_block_loops_contract
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

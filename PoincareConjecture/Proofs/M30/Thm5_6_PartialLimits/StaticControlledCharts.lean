@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.CompleteStaticLimit
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.JetBounds
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ universe u
 namespace PoincareConjecture.M30
 
 open ChartDistance
-
-
-
 
 theorem exists_complete_static_limit_of_controlled_charts
     {n : ℕ} (U : ℕ → Set (EuclideanSpace ℝ (Fin n))) (hU : ∀ i, IsOpen (U i))

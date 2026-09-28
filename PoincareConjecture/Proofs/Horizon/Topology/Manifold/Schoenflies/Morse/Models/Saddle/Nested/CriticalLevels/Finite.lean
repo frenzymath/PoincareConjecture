@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Nested.CriticalPoint
 import Mathlib.Algebra.Polynomial.Roots
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,7 +33,6 @@ theorem critical_polynomial_eq_zero {p : S2}
   rw [mul_pow, neg_sq, mul_pow, hn] at hs
   dsimp [criticalPolynomial]
   nlinarith
-
 
 theorem critical_latitude_injOn :
     InjOn (fun p : S2 => (p : E3) 2)

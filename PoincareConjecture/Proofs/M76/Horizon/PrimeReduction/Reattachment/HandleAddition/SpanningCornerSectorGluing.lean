@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -19,8 +11,6 @@ local notation "Half" => Set.prod (Set.prod I I) (Icc (0 : ℝ) 1)
 local notation "Minus" => Set.prod (Set.prod (Icc (-1 : ℝ) 0) I) (Icc (0 : ℝ) 1)
 local notation "Plus" => Set.prod (Set.prod (Icc (0 : ℝ) 1) I) (Icc (0 : ℝ) 1)
 local notation "Base" => Set.prod (Set.prod ({0} : Set ℝ) I) (Icc (0 : ℝ) 1)
-
-
 
 theorem exists_original_marked_corner_sector_gluing
     {X ι : Type*} [TopologicalSpace X]

@@ -11,8 +11,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem disk_frontier_meets_disk_interior {A ar S sr : Set P2}
     (hA : IsFinitePLBallPair P2 A ar) (hS : IsFinitePLBallPair P2 S sr)
     (hmeet : (A ∩ interior S).Nonempty) (hoff : (A \ S).Nonempty) :
@@ -31,8 +29,6 @@ theorem disk_frontier_meets_disk_interior {A ar S sr : Set P2}
   rw [hA.closure_interior_of_finrank_eq rfl, hS.closure_interior_of_finrank_eq rfl] at hclosed
   obtain ⟨z, hz, hno⟩ := hoff
   exact hno (hclosed hz)
-
-
 
 theorem disk_cut_separating_scalar {T A B W : Set P2}
     (hA : IsCompact A) (hB : IsCompact B) (hneA : A.Nonempty) (hneB : B.Nonempty)
@@ -88,9 +84,6 @@ theorem disk_cut_separating_scalar {T A B W : Set P2}
     refine ⟨hcover.subset (Or.inl hh.1), ?_⟩
     exact le_antisymm ((hleft _ (hcover.subset (Or.inl hh.1))).mpr hh.1)
       ((hright _ (hcover.subset (Or.inl hh.1))).mpr hh.2)
-
-
-
 
 theorem exists_nested_disk_cut_halves {S sq T tq W Z : Set P2} {a b x y : P2}
     (hS : IsFinitePLBallPair P2 S sq) (hT : IsFinitePLBallPair P2 T tq)

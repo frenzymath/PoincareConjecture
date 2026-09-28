@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.FiniteSphereFamilyReduction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,11 +7,6 @@ open Set
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem exists_single_spherical_frontier_of_filled_family
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -79,11 +64,6 @@ theorem exists_single_spherical_frontier_of_filled_family
           Snew hSnew hdisjointNew hSintNew hfrontNew hrelNew
       exact ⟨M, T, hMc, hMconn, hLLnew.trans hLnewM, hMR, hM, hT, hTint,
         hBT, hfrontM, hrelM, hprotectM⟩
-
-
-
-
-
 
 theorem exists_single_spherical_frontier_of_finite_family
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]

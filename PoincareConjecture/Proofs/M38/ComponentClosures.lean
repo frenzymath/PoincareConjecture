@@ -1,14 +1,5 @@
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,8 +9,6 @@ namespace PoincareConjecture.M38
 variable {A : Type*} [TopologicalSpace A] {O : Set A}
   (hlocal : ∀ z ∈ closure O, ∃ U : Set A,
     IsOpen U ∧ z ∈ U ∧ IsPreconnected (U ∩ O))
-
-
 
 theorem local_inter_subset_component {x : A} {U : Set A}
     (hconnected : IsPreconnected (U ∩ O))
@@ -31,8 +20,6 @@ theorem local_inter_subset_component {x : A} {U : Set A}
   rwa [← connectedComponentIn_eq hyC] at h
 
 include hlocal
-
-
 
 theorem component_closure_clopen (x : A) :
     IsClopen ((Subtype.val : closure O → A) ⁻¹'
@@ -48,9 +35,6 @@ theorem component_closure_clopen (x : A) :
   filter_upwards [hn] with w hw
   exact closure_mono hsub (hU.inter_closure ⟨hw, w.property⟩)
 
-
-
-
 theorem closure_componentIn_eq (x : A) (hx : x ∈ O) :
     closure (connectedComponentIn O x) = connectedComponentIn (closure O) x := by
   have hsub : closure (connectedComponentIn O x) ⊆ closure O :=
@@ -64,8 +48,6 @@ theorem closure_componentIn_eq (x : A) (hx : x ∈ O) :
     rw [connectedComponentIn_eq_image (subset_closure hx)]
     rintro y ⟨z, hz, rfl⟩
     exact hcc hz
-
-
 
 theorem exists_component_closure (z : A) (hz : z ∈ closure O) :
     ∃ x ∈ O, closure (connectedComponentIn O x) =

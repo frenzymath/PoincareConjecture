@@ -10,15 +10,6 @@ import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 import Mathlib.Topology.Separation.Basic
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,9 +27,6 @@ variable {n : Nat} {M : Type u} [TopologicalSpace M]
 local notation "W" => EuclideanSpace Real ι
 local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, Real)
-
-
-
 
 theorem exists_terminal_embeddedCurvatureJets
     [T2Space M] (F : RicciFlow n M (Icc a b))

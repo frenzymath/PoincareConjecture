@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Repar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.Circle.Reparametrization
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.TerminalObstacles
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -19,13 +13,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
-
-
-
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -72,8 +59,6 @@ private theorem ambient_sphere_embedding
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
 
 theorem exists_actual_terminal_cap_complement
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)
@@ -128,7 +113,6 @@ theorem exists_actual_terminal_cap_complement
   have hdis := disjoint_image_of_injective (f := (H : E3 → E3)) H.injective
     (actual_terminal_cap_interior_disjoint_band data hg i)
   exact disjoint_left.mp hdis (hopen.symm ▸ ⟨hyS, hy⟩) hyband
-
 
 theorem exists_model_terminal_cap_complement
     (data : TerminalSaddleData M P p e) (i : Fin 3)
@@ -220,8 +204,6 @@ private theorem lift_image_slice
       change Saddle.toE3 (Φ (χ z) z (Saddle.toE2 (Saddle.toE3 x z))) z = y
       rw [hproj, hxy, ← hy, hcoord]
 
-
-
 theorem terminal_band_image
     (data : TerminalSaddleData M P p e)
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -233,7 +215,6 @@ theorem terminal_band_image
     H '' data.toTerminalSaddleGeometry.actualBand = data.toTerminalSaddleGeometry.modelBand := by
   exact Saddle.image_iUnion_slice_parametric_of_matching Φ χ _ _ H
     (lift_image_slice Φ χ H hH) hχ hplanar
-
 
 theorem terminal_cap_band_inter_image
     (data : TerminalSaddleData M P p e)
@@ -287,8 +268,6 @@ private theorem disk_boundary_embedding
   apply ((mp.isLocalDiffeomorphAt (𝓡 2) (𝓡 2) ∞ (hsrc q)).mfderivToContinuousLinearEquiv
     (by simp)).injective.comp
   convert! injective_mvfderiv_subtypeVal_sphere q
-
-
 
 theorem exists_terminal_boundary_reparametrization
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves)

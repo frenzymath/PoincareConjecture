@@ -3,16 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,8 +11,6 @@ open scoped InnerProductSpace RealInnerProductSpace NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem inwardField_radial_bound (f : E → E) {K : ℝ≥0} (hK : LipschitzWith K f)
     (hin : ∀ q : E, ‖q‖ = 1 → ⟪q, f q⟫_ℝ ≤ 0)
@@ -63,8 +51,6 @@ theorem inwardField_radial_bound (f : E → E) {K : ℝ≥0} (hK : LipschitzWith
       exact mul_le_mul_of_nonneg_left (mul_le_mul_of_nonneg_left hi hr.le) (by norm_num)
     _ ≤ 2 * (K : ℝ) * (r ^ 2 - 1) := by
       nlinarith [mul_nonneg K.coe_nonneg (sub_nonneg.mpr hx)]
-
-
 
 theorem boundedFlow_mapsTo_closedBall [CompleteSpace E]
     (f : E → E) {K L : ℝ≥0} (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)

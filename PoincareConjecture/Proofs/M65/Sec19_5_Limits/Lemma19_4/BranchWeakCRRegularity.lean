@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchWeakCRConvol
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
 import Mathlib.Analysis.Complex.LocallyUniformLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +9,6 @@ open Set Metric Filter MeasureTheory Complex
 open scoped Topology ContDiff SchwartzMap Convolution
 
 namespace PoincareConjecture.M65Branch
-
-
-
-
 
 theorem tendstoLocallyUniformlyOn_bump_convolution {F : ℂ → ℂ} {U : Set ℂ}
     (hF : LocallyIntegrable F volume) (hU : IsOpen U) (hc : ContinuousOn F U)
@@ -46,10 +30,6 @@ theorem tendstoLocallyUniformlyOn_bump_convolution {F : ℂ → ℂ} {U : Set �
       (Eventually.of_forall fun _ => hF.aestronglyMeasurable)
       (hcx.tendsto.comp tendsto_snd) tendsto_snd
   exact (hval.prodMk_nhds hconv).mono_right (nhds_le_uniformity (F x))
-
-
-
-
 
 theorem differentiableOn_of_weak_dbar_eq_zero {F : ℂ → ℂ} {U : Set ℂ}
     (hF : LocallyIntegrable F volume) (hU : IsOpen U) (hc : ContinuousOn F U)

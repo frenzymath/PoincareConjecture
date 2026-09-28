@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 structure LocalNonnegativeBackwardModel (g : RiemannianMetric 3 M)
     (U : Set M) (x : M) where
@@ -66,10 +54,6 @@ structure LocalNonnegativeBackwardModel (g : RiemannianMetric 3 M)
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
 
-
-
-
-
 structure QuantitativeBackwardNeck (g : RiemannianMetric 3 M)
     (D : LeviCivitaData g) (epsilon K : ℝ) (U : Set M) (x : M) where
 
@@ -94,9 +78,6 @@ structure QuantitativeBackwardNeck (g : RiemannianMetric 3 M)
     letI := model.carrier.isManifold
     ∀ t ∈ Icc (-model.duration) 0, ∀ p, model.embedding p ∈ neck.carrier →
       (model.flow.connection t).curvatureTensorNorm p ≤ K * neck.scale⁻¹ ^ 2
-
-
-
 
 structure SingularNeckTube (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     (epsilon : ℝ) where
@@ -129,9 +110,6 @@ structure SingularNeckTube (g : RiemannianMetric 3 M) (D : LeviCivitaData g)
     Nonempty (QuantitativeBackwardNeck g D epsilon backward_curvature_bound carrier x)
 
   backward_models : ∀ x ∈ carrier, Nonempty (LocalNonnegativeBackwardModel g carrier x)
-
-
-
 
 structure SingularNeckTubeWitness (epsilon : ℝ) where
 

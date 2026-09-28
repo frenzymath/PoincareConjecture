@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.RelativeCorner
 import PoincareConjecture.Proofs.M76.Brown.RelativeHalfspaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry BrownCollar
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
 
 theorem exists_local_collar_of_quadrant_chart
     {X E : Type*} [TopologicalSpace X]
@@ -178,8 +166,6 @@ theorem exists_local_collar_of_quadrant_chart
   change G.symm (G y + (0 : ℝ) • v) = y
   rw [zero_smul, add_zero]
   exact G.left_inv (show (y : X) ∈ G.source from hyD.1)
-
-
 
 theorem exists_local_collar_of_marked_face_chart
     {X E : Type*} [TopologicalSpace X]

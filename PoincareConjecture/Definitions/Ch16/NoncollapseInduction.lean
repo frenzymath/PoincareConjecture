@@ -7,7 +7,6 @@ universe u
 
 namespace PoincareConjecture
 
-
 structure SurgeryPostPrefixScales {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (F : SurgeryFlowData.{u})
     (O : SurgeryObservation F) (rNext deltaNext : ℝ) : Prop where
@@ -24,17 +23,10 @@ def SurgeryObservationIsNextEpoch {K : MetricSurgeryConstants}
     (O : SurgeryObservation F) : Prop :=
   surgeryEpochStart p.i < O.H ∧ O.H ≤ surgeryEpochStart (p.i + 1)
 
-
-
-
-
-
 def SurgeryObservationIsMaximalNextEpoch {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) {F : SurgeryFlowData.{u}}
     (O : SurgeryObservation F) : Prop :=
   SurgeryObservationIsNextEpoch p O ∧ F.time_domain = Set.Ico 0 O.H
-
-
 
 structure SurgeryNoncollapseExtension {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) where
@@ -57,10 +49,6 @@ structure SurgeryNoncollapseExtension {K : MetricSurgeryConstants}
         F.parameters.delta t ≤ cutoff rNext) →
       SurgeryNoncollapsedOn F (surgeryObservationInterval O) kappaNew
 
-
-
-
-
 def SurgeryVolumeControlOn (F : SurgeryFlowData.{u})
     (J : Set ℝ) (kappa : ℝ)
     (center_ok : ∀ (t : ℝ), (F.slice t).carrier → Prop) : Prop :=
@@ -76,7 +64,6 @@ def SurgeryVolumeControlOn (F : SurgeryFlowData.{u})
           r⁻¹ ^ 2) →
       ENNReal.ofReal (kappa * r ^ 3) ≤
         calibratedMetricVolume (F.metric t) ((F.metric t).ball x r)
-
 
 def SurgeryTestedVolumeOn (F : SurgeryFlowData.{u})
     (J : Set ℝ) (kappa rBase B : ℝ) : Prop :=

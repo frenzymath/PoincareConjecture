@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.RiemannianL
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.PuncturedAscent
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Riemannian.PointedLimit
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -160,7 +150,6 @@ theorem exists_eventually_proper_regular_slabs_of_sectional_pointed_limit
   refine ⟨r, ε, H, hr, hε, by linarith, hH, ?_⟩
   exact hslabs (5 * r / 4) (7 * r / 4) (by linarith) (by linarith) (by linarith)
 
-
 theorem exists_eventually_wide_proper_regular_slabs_at_small_radii
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]
     [∀ j, T3Space (M j)] [∀ j, PreconnectedSpace (M j)]
@@ -199,7 +188,6 @@ theorem exists_eventually_wide_proper_regular_slabs_at_small_radii
   obtain ⟨ε, H, hε, hεr, hH, hslabs⟩ := hsmall r hr hrr₀
   refine ⟨ε, H, hε, hεr, hH, ?_⟩
   exact hslabs (9 * r / 8) (15 * r / 8) (by linarith) (by linarith) (by linarith)
-
 
 theorem exists_eventually_wide_proper_regular_slabs_of_sectional_pointed_limit
     {n : ℕ} {M : ℕ → Type u} [∀ j, TopologicalSpace (M j)]

@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M25.AppA_20_Fibration.CompactCutChart
 import PoincareConjecture.Proofs.M25.Mathlib.NormalizedGraphStrip
 import Mathlib.Data.Fin.VecNotation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
 universe u
 namespace PoincareConjecture.BalancedNeckChain
-
-
 
 theorem exists_closing_product_charts :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

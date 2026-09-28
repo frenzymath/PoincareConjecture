@@ -18,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 lemma tensorTrace_tensorTrace_curvatureRicci
     (D : LeviCivitaData g) (x : M)
     (a b : TangentSpace (𝓡 n) x) :
@@ -69,8 +67,6 @@ lemma curvatureRicci_eq_double_trace (D : LeviCivitaData g) :
   funext x z
   have hz : ![z 0, z 1] = z := by ext i; fin_cases i <;> rfl
   simpa only [hz] using (D.tensorTrace_tensorTrace_curvatureRicci x (z 0) (z 1)).symm
-
-
 
 lemma covariantTensorDerivative_curvatureRicci
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -155,7 +151,6 @@ lemma isSmoothCovariantTensor_ricciReaction
       D.ricciReaction y (z 0) (z 1)) := by
   exact ((D.isSmoothCovariantTensor_curvatureRicci hD).const_mul 2).sub
     ((D.isSmoothCovariantTensor_tensorProduct_trace_order_two hD.2.1 hD.2.1).const_mul 2)
-
 
 lemma covariantTensorDerivative_ricciReaction
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

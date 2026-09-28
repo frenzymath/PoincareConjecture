@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_SquareScalarField
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularSpatialDerivative
 import PoincareConjecture.Proofs.M14.Sec6_3_StrictPrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -36,9 +27,6 @@ private theorem scalar_transport {q r : G.Point} (h : q = r)
       mvfderiv (spacetimeModel n) f r (h ▸ A).val := by
   cases h
   rfl
-
-
-
 
 theorem reducedLengthAt_time_derivative_square
     (hCoordinates : M12MetricPredecessors.{0} n)

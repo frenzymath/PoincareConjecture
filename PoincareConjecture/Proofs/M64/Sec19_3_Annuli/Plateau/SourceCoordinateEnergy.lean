@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceCoordinateWeakData
 import PoincareConjecture.Proofs.M64.Mathlib.MeasurePreservingColumnEnergy
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +10,6 @@ open Set Metric MeasureTheory Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64SourceCoordinate_energy_growth {m n : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin m))

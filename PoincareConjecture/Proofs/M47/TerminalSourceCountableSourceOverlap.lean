@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceActualOverlap
 import PoincareConjecture.Proofs.M47.TerminalGermsOverlapLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ open ChartDistance
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceCountable_source_overlap
     (U : ℕ → Set E) (hU : ∀ n, IsOpen (U n)) [∀ n, Nonempty (Piece U n)]

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.WeakReplacement
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.ClassicalEquation
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -23,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
-
 
 theorem laplacian_eq_zero_of_smooth_distributional
     (hΩ : IsOpen Ω) {U : M → ℝ}
@@ -69,8 +60,6 @@ theorem laplacian_eq_zero_of_smooth_distributional
       (x := x) (by simpa only [Pi.mul_apply, b.eq_one, one_mul] using mul_ne_zero hRx hRx)
     exact hpos.ne' hzero
   exact (D.laplacian_eq_of_eventuallyEq hVU).symm.trans hRx
-
-
 
 theorem laplacian_eq_zero_of_smooth_weakHarmonicReplacement
     (hΩ : IsOpen Ω) (q : Lp ℝ 2 g.volumeMeasure) (w : H1Zero D Ω)

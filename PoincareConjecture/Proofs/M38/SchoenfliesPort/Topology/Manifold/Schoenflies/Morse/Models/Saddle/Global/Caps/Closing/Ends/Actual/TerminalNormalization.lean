@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.TerminalData
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.CylindricalPreparationUpper
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -38,16 +30,12 @@ variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
 
-
 def terminalActualCutCircle (data : TerminalSaddleData M P p e) (i : Fin 3) : S1 → S2 :=
   match data.labels i with
   | .inl j => data.ends.lowerCutCircle j
   | .inr j => data.ends.upperCutCircle j
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem exists_terminal_actual_canonical_normalization_of_height_preserving_map
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves) (i : Fin 3)
@@ -147,7 +135,6 @@ theorem exists_terminal_actual_canonical_normalization_of_height_preserving_map
       simpa only [hrim, Function.comp_apply, congrEmbedding] using hFimage
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem exists_terminal_actual_canonical_normalization
     (data : TerminalSaddleData M P p e) (hg : g ∈ M.tree.leaves) (i : Fin 3) :

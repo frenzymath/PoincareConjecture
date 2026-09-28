@@ -4,21 +4,6 @@ import PoincareConjecture.Statements.M61Width
 import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Definitions.M57Transport
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -66,7 +51,6 @@ structure M69ClassLedger
         (alpha ⟨a, ⟨ha, hab.le.trans hb⟩⟩)
         (alpha ⟨b, ⟨ha.trans hab.le, hb⟩⟩)
 
-
   event_transport : ∀ (S : Set.Icc (0 : ℝ) T)
       (hS : S.1 ∈ D.flow.surgery_times)
       (hpost : Nonempty (D.flow.slice S.1).carrier),
@@ -92,9 +76,6 @@ structure M69ClassLedger
                   E.f (P.component s).basepoint =
                     E.f (P.component s).basepoint)) E.pre.alpha) =
                 E.post.alpha))
-
-
-
 
 noncomputable def m69M67Choice
     {g₀ : StandardInitialMetric}
@@ -143,8 +124,6 @@ structure M69FinitePieceInput
   ordered : 0 ≤ T₁ ∧ T₁ ≤ T₂ ∧ T₂ ≤ T
   chronology : M67FiniteChronology
     (↑P.surgery_times : Set ℝ) T₁ T₂
-
-
 
   start_width_properties :
     M61BasedClassWidthProperties q

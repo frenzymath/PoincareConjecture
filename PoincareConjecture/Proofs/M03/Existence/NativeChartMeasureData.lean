@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartMeasureNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
@@ -23,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "ModelE" => EuclideanSpace ℝ (Fin n)
-
 
 structure FiniteChartData where
   centers : Finset M
@@ -60,7 +51,6 @@ theorem exists_weight_pos (x : M) : ∃ i : d.centers, 0 < d.weight i x :=
 
 variable [MeasurableSpace M] [BorelSpace M]
 
-
 def measure : Measure M :=
   Measure.sum (fun i : d.centers => weightedChartMeasure (d.chart i) (d.weight i))
 
@@ -82,7 +72,6 @@ instance measure_finite : IsFiniteMeasure d.measure :=
 end FiniteChartData
 
 variable [T2Space M] [CompactSpace M]
-
 
 theorem exists_finiteChartData : Nonempty (FiniteChartData (n := n) (M := M)) := by
   classical

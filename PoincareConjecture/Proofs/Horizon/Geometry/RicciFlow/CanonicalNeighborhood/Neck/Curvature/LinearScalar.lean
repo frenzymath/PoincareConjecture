@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.BilinearJetBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Curvature.ModelJetBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -101,8 +89,6 @@ private theorem normalized_realization_scalar_sub_one_le
   dsimp only [δ] at hbound
   nlinarith only [hbound, hNε]
 
-
-
 theorem scalarCurvature_sub_one_le
     {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -117,8 +103,6 @@ theorem scalarCurvature_sub_one_le
   have hbound := normalized_realization_scalar_sub_one_le N hε z.1 hz.2 Dh heq
   rw [(N.normalized_realization_curvature D z.1 hz.2 Dh heq).1] at hbound
   simpa only [z, Prod.mk.eta, N.coordinate_map_coordinate_inverse hx] using hbound
-
-
 
 theorem exists_linear_scalarCurvature_control :
     ∃ A ε₀ : ℝ, 0 < A ∧ 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

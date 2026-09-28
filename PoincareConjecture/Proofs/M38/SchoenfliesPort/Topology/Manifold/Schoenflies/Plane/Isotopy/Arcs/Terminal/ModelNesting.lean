@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.ModelMarkedCircles
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.CircleMatching
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -289,8 +281,6 @@ private theorem standard_model_pair_not_nested
   obtain ⟨h01, h10⟩ := raw_standard_pair_not_nested hs hsu U hU hUcover
   exact ⟨fun h => h01 (nestedPair_postcomp F.symm h),
     fun h => h10 (nestedPair_postcomp F.symm h)⟩
-
-
 
 theorem exists_standard_model_negative_branch_circle_pairs_unnested
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.shear)

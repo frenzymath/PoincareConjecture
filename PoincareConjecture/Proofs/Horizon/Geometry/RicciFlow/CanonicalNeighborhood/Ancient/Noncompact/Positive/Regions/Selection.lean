@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Nonround
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.NoncompactKappa.Positive
-
 
 theorem uniform_curvature_scale_separation_of_services
     (P : NoncompactKappaServices.{u}) {a : ℝ} (ha : 0 ≤ a) :
@@ -77,8 +64,6 @@ theorem uniform_curvature_scale_separation_of_services
   have hupper := mul_le_mul_of_nonneg_left hn (Real.sqrt_nonneg C)
   nlinarith [Real.sqrt_pos.mpr hCpos]
 
-
-
 theorem uniform_curvature_scale_separation
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {a : ℝ} (ha : 0 ≤ a) :
     ∃ L : ℝ, 0 < L ∧
@@ -102,7 +87,6 @@ variable {M : Type u} [TopologicalSpace M]
 
 omit [NoncompactSpace M] in
 
-
 theorem exists_strong_neck_at_radius
     {K : AncientKappaSolution 3 M} {S : RiemannianMetric.PointSoulData (K.flow.metric 0)}
     {epsilon D D₁ : ℝ} (H : SoulCenteredCoreEstimate K S epsilon D D₁)
@@ -122,8 +106,6 @@ theorem exists_strong_neck_at_radius
     rw [hx] at hlt
     exact (not_lt_of_ge houtside) hlt)
   exact ⟨N, hN ▸ hx⟩
-
-
 
 theorem exists_enclosing_strong_neck_radius_of_services
     (P : NoncompactKappaServices.{u}) {D a : ℝ} (hD : 1 < D)
@@ -176,8 +158,6 @@ theorem exists_enclosing_strong_neck_radius_of_services
     hcancel, one_mul, hcenter] at h
   exact h
 
-
-
 theorem exists_enclosing_strong_neck_radius
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {D a : ℝ} (hD : 1 < D)
     (ha : 0 ≤ a) :
@@ -195,8 +175,6 @@ theorem exists_enclosing_strong_neck_radius
           a * N.terminal_neck.scale <
             R * soulScalar K S.center ^ (-1 / 2 : ℝ) := by
   exact exists_enclosing_strong_neck_radius_of_services P.noncompactServices hD ha
-
-
 
 theorem exists_enclosing_strong_neck_regions_of_services
     (P : NoncompactKappaServices.{u}) {D : ℝ} (hD : 1 < D) :
@@ -250,8 +228,6 @@ theorem exists_enclosing_strong_neck_regions_of_services
       ((K.flow.metric 0).edist_ne_top S.center x)).mpr
     have hRscale := mul_pos hRpos hpos
     nlinarith
-
-
 
 theorem exists_enclosing_strong_neck_regions
     (P : M26CanonicalNeighborhoodPredecessors.{u}) {D : ℝ} (hD : 1 < D) :

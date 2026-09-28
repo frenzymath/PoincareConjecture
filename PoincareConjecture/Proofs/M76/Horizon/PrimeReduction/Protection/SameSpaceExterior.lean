@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Handles.SameSpaceIrreducibleAtlas
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.ExteriorRetainedPortComponent
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusPeriodicHarmonicMinimum
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,10 +22,6 @@ private theorem phase_hessian_sub_linear {f : LoopPlane → ℝ} {p : LoopPlane}
   have hB : fderiv ℝ B = fun _ : LoopPlane => B := funext fun _ => B.fderiv
   rw [hB] at h
   simpa only [Pi.sub_def, fderiv_const_apply, zero_apply, sub_zero] using h
-
-
-
-
 
 theorem m64PeriodicModulus_eq_affine_of_constant_boundary
     {r : ℝ} (hr : 0 < r) {f : LoopPlane → ℝ} {c : ℝ}

@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem exists_upper_reference_local_filling :
     let U : E2 → ℝ := fun v =>

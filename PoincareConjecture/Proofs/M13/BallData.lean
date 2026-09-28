@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M13.DomainLaws
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

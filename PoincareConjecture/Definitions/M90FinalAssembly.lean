@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M80EndpointAssembly
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

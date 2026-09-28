@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Reduction.Component
 
-
 noncomputable section
 set_option autoImplicit false
 
@@ -37,8 +36,6 @@ theorem sectionalCurvature_connectedComponentMetric
   unfold LeviCivitaData.sectionalCurvature
   rw [hR]
   rfl
-
-
 
 theorem scalar_integral_le_of_connected_bound
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

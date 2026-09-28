@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RadialLevelCurvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.LocalIsometry
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +14,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
-
-
 
 theorem UnitSliceRadialChartData.levelMetric_curvatureTensor_eq_one
     (d : UnitSliceRadialChartData hcomparison n) (z : d.Level)
@@ -44,8 +32,6 @@ theorem UnitSliceRadialChartData.levelMetric_curvatureTensor_eq_one
 variable (hcover : ∀ x : AsymptoticConeUnitSlice p hcomparison,
   ∃ (d : UnitSliceRadialChartData hcomparison n) (z : d.Level),
     (d.levelHomeomorph z).1 = x)
-
-
 
 theorem curvatureTensor_eq_one_of_unitSliceMetric_pullback :
     letI := unitSliceChartedSpace hcomparison n hcover
@@ -80,8 +66,6 @@ theorem curvatureTensor_eq_one_of_unitSliceMetric_pullback :
   rw [d.levelMetric_curvatureTensor_eq_one, hm, hm, hm, hm] at hR
   simpa only [hL] using hR.symm
 
-
-
 theorem unitSliceMetric_curvatureTensor_eq_one :
     letI := unitSliceChartedSpace hcomparison n hcover
     letI := unitSlice_isManifold hcomparison n hcover
@@ -93,8 +77,6 @@ theorem unitSliceMetric_curvatureTensor_eq_one :
   let := unitSlice_isManifold hcomparison n hcover
   exact curvatureTensor_eq_one_of_unitSliceMetric_pullback hcover
     (unitSliceMetric hcover) (unitSliceMetric_inner hcover)
-
-
 
 theorem unitSliceMetric_sectionalCurvature_eq_one :
     letI := unitSliceChartedSpace hcomparison n hcover
@@ -118,9 +100,6 @@ universe u
 namespace PoincareConjecture.RicciFlow
 
 open Poincare.AncientVolume.ScalarRatio
-
-
-
 
 theorem unitSliceMetric_curvature_one_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

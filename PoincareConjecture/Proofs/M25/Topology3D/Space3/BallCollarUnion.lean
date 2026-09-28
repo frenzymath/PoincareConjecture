@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallCollarMatching
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartUnion
 import Mathlib.Analysis.Normed.Module.Normalize
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_uniform_sphere_band {U : Set E} (hU : IsOpen U)
     (hSU : sphere (0 : E) 1 ⊆ U) :
@@ -57,8 +45,6 @@ theorem exists_uniform_sphere_band {U : Set E} (hU : IsOpen U)
     rw [hdist]
     exact hx.trans hεd
 
-
-
 theorem exists_ball_collar_band (B : BallNeighborhoodChart E E) (f : E → E)
     (hmatch : ∀ᶠ x in 𝓝ˢ (sphere (0 : E) 1), B.chart x = f x) :
     ∃ ε : ℝ, 0 < ε ∧ ε < 1 ∧ ball 0 (1 + ε) ⊆ B.chart.source ∧
@@ -78,8 +64,6 @@ theorem exists_ball_collar_band (B : BallNeighborhoodChart E E) (f : E → E)
     linarith
   refine ⟨ε, hε, hεd.trans hd1, ?_, fun x hx => hUf x (hband (hx.trans hεd))⟩
   exact (ball_subset_ball (by linarith : 1 + ε ≤ r)).trans hrs
-
-
 
 theorem exists_ball_outer_collar_union (B : BallNeighborhoodChart E E)
     (R : OpenPartialHomeomorph E E)

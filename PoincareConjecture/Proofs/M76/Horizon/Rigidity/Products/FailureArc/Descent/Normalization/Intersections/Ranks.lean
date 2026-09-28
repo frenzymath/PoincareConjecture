@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,9 +16,6 @@ variable {U V M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
-
-
-
 
 theorem MarkedSurfaceMotionData.finrank_plane
     {s t : Stage e S f r C} {step : Step s t}
@@ -50,12 +38,6 @@ theorem MarkedSurfaceMotionData.finrank_plane
     change Module.finrank ℝ motion.plane.direction = 2
     rw [hdir]
     omega
-
-
-
-
-
-
 
 theorem MarkedSurfaceMotionData.surface_intersection_rank_bounds
     {s t : Stage e S f r C} {step : Step s t}

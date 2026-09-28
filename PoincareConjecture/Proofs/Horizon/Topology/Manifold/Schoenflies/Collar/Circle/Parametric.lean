@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Co
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CompactExtension
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -61,9 +53,6 @@ private theorem isLocalDiffeomorphAt_of_contDiff_bijective
     contMDiffOn_toFun := hF.contMDiff.contMDiffOn.congr (fun _ _ => rfl)
     contMDiffOn_invFun := hHi }
   exact ⟨Φ, hHa, fun _ _ => rfl⟩
-
-
-
 
 theorem exists_parametric_circle_neighborhood
     {T : Set Real} (hT : IsCompact T) (G : P2 → E2)

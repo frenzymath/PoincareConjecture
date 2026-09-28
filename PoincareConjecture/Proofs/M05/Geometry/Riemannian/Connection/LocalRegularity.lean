@@ -1,13 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Connection.MetricDuality
 import PoincareConjecture.Proofs.M05.Geometry.Riemannian.Curvature.SecondBianchi
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 lemma exists_open_contMDiffOn_extend (x : M) :
     ∃ U : Set M, IsOpen U ∧ x ∈ U ∧ ∀ v : TangentSpace (𝓡 n) x,
@@ -46,7 +37,6 @@ lemma exists_open_contMDiffOn_extend (x : M) :
     simpa using congrArg Prod.snd (e.apply_mk_symm hy w)
 
 namespace LeviCivitaData
-
 
 lemma contMDiffAt_covariantDerivativeOnFields (D : LeviCivitaData g)
     {X Y : (x : M) → TangentSpace (𝓡 n) x} {x : M}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Model
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,9 +34,6 @@ theorem hasDerivAt_modelS_derivative {κ : ℝ} (hκ : 0 ≤ κ) (t : ℝ) :
         (Real.sq_sqrt hκ)]
     simpa only [id_eq, mul_one, heq] using
       (((hasDerivAt_id t).const_mul (Real.sqrt κ)).cosh)
-
-
-
 
 theorem antitoneOn_div_modelS_of_second_derivative_le
     {κ R : ℝ} (hκ : 0 ≤ κ) (hR : 0 < R) {y y' y'' : ℝ → ℝ}

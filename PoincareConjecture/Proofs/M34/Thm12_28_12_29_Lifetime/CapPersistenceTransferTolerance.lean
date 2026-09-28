@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CapNeckNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem capPersistence_exists_old_transfer_accuracy (epsilon tau : ℝ)
     (hepsilon : 0 < epsilon) (htau : 0 < tau) :

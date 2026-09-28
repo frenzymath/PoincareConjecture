@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalBoundaryArcClosedRegion
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

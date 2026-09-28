@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneShellBoundary
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDomainCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -59,12 +49,6 @@ private theorem plDomain_of_shell_frontier {R : Set V3}
   apply plDomain_of_regular_closed_local_ball_pairs hR hreg K hK hKs
   rw [hKs]
   exact hlocal
-
-
-
-
-
-
 
 theorem plDomain_affineImage_complementaryRegion
     (a : W ≃ᴬ[ℝ] V3) {B T : Set W}

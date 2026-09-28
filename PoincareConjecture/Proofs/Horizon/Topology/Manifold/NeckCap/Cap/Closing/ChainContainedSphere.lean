@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Enc
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Complement
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +18,6 @@ private theorem subset_open_of_disjoint_frontier {X : Type*} [TopologicalSpace X
   apply Poincare.Topology.preconnected_subset_interior_of_disjoint_frontier
     hS.isPreconnected hdis
   rwa [hU.interior_eq, inter_comm]
-
-
 
 theorem exists_finite_chain_closed_side_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -92,8 +79,6 @@ theorem exists_finite_chain_closed_side_threshold :
       exact disjoint_left.mpr (fun x hx hxF => hext hxF (D.core_subset_closed_core hx))
     rw [← D.closure_core_eq_closed_core]
     exact (image_mono (closure_mono hsub)).trans hVA
-
-
 
 theorem exists_finite_chain_transported_boundary_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.Component
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.PhysicalPolygon
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicModelOrder
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -15,8 +13,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X]
   {S : Set E} {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
   {old : SourceCircleDecomposition f S} {i : old.Index}
-
-
 
 theorem ComponentBranchModel.exists_axis_order
     (D : ComponentBranchModel (e := e) (R := R) old i) :
@@ -36,8 +32,6 @@ theorem ComponentBranchModel.exists_axis_order
     exact (old.pieces_isConnected i).image (D.graph ∘ f) D.selected_PL.continuousOn
   exact D.axis.exists_exact_cyclic_polygon_of_polygon_carrier
     (D.complex_finite.subset D.axis_le) hconn P hP hPi (hPs.trans D.axis_space.symm)
-
-
 
 theorem SourceCircleDecomposition.exists_interior_circle_model [T2Space X]
     (Q : SimplicialComplex ℝ E) (hQ : Q.faces.Finite) (hQS : Q.space = S)
@@ -63,4 +57,3 @@ theorem SourceCircleDecomposition.exists_interior_circle_model [T2Space X]
   exact ⟨D, hD, hcharts, D.exists_axis_order⟩
 
 end PoincareConjecture.M76.Dehn.Annuli
-

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.EndExhaustion
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalExtension
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.PullbackRicci
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,32 +14,23 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable def endCutoffWeight (e : StandardCylindricalEnd g) (L : ℝ)
     (x : StandardCapSpace) : ℝ :=
   Real.smoothTransition (endExhaustion e x - L)
-
-
 
 theorem endCutoffWeight_contDiff (e : StandardCylindricalEnd g) (L : ℝ) :
     ContDiff ℝ ∞ (endCutoffWeight e L) :=
   Real.smoothTransition.contDiff.comp
     ((contMDiff_iff_contDiff.mp (endExhaustion_contMDiff e)).sub contDiff_const)
 
-
 theorem endCutoffWeight_mem_Icc (e : StandardCylindricalEnd g) (L : ℝ)
     (x : StandardCapSpace) : endCutoffWeight e L x ∈ Icc (0 : ℝ) 1 :=
   ⟨Real.smoothTransition.nonneg _, Real.smoothTransition.le_one _⟩
-
-
 
 noncomputable def cutoffCoefficients (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) (x : StandardCapSpace) :=
   (1 - endCutoffWeight e L x) • h.euclideanCoefficients x +
     endCutoffWeight e L x • g.euclideanCoefficients x
-
-
 
 theorem cutoffCoefficients_contDiff (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) :
@@ -61,7 +42,6 @@ theorem cutoffCoefficients_contDiff (e : StandardCylindricalEnd g)
       (show ContDiff ℝ ∞ g.euclideanCoefficients from
         contDiff_iff_contDiffAt.mpr g.contDiffAt_euclideanCoefficients))
 
-
 theorem cutoffCoefficients_symm (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) (x u v : StandardCapSpace) :
     cutoffCoefficients e h L x u v = cutoffCoefficients e h L x v u := by
@@ -69,8 +49,6 @@ theorem cutoffCoefficients_symm (e : StandardCylindricalEnd g)
     endCutoffWeight e L x * g.inner x u v = _
   rw [h.symm x u v, g.symm x u v]
   rfl
-
-
 
 theorem cutoffCoefficients_pos (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) (x v : StandardCapSpace)
@@ -86,8 +64,6 @@ theorem cutoffCoefficients_pos (e : StandardCylindricalEnd g)
   · rw [heq]
     simpa using hg
 
-
-
 noncomputable def cutoffMetric (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) :
     RiemannianMetric 3 StandardCapSpace :=
@@ -95,13 +71,9 @@ noncomputable def cutoffMetric (e : StandardCylindricalEnd g)
     (cutoffCoefficients_contDiff e h L) (cutoffCoefficients_symm e h L)
     (cutoffCoefficients_pos e h L)
 
-
-
 theorem cutoffMetric_coefficients (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ) :
     (cutoffMetric e h L).euclideanCoefficients = cutoffCoefficients e h L := rfl
-
-
 
 theorem cutoffMetric_coefficients_of_le (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {L : ℝ} {x : StandardCapSpace}
@@ -111,8 +83,6 @@ theorem cutoffMetric_coefficients_of_le (e : StandardCylindricalEnd g)
     Real.smoothTransition.zero_of_nonpos (sub_nonpos.mpr hx), sub_zero, one_smul,
     zero_smul, add_zero]
 
-
-
 theorem cutoffMetric_coefficients_of_add_one_le (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) {L : ℝ} {x : StandardCapSpace}
     (hx : L + 1 ≤ endExhaustion e x) :
@@ -120,8 +90,6 @@ theorem cutoffMetric_coefficients_of_add_one_le (e : StandardCylindricalEnd g)
   simp only [cutoffMetric_coefficients, cutoffCoefficients, endCutoffWeight,
     Real.smoothTransition.one_of_one_le (by linarith : 1 ≤ endExhaustion e x - L),
     sub_self, zero_smul, one_smul, zero_add]
-
-
 
 theorem cutoffMetric_pullbackCoefficients (e : StandardCylindricalEnd g)
     (h : RiemannianMetric 3 StandardCapSpace) (L : ℝ)

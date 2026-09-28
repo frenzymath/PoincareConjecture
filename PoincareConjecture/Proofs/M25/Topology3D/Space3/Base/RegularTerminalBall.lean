@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreEnds
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.exists_ball_of_regular_core
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

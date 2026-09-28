@@ -120,4 +120,3 @@ theorem regularizedIndexPairDensity_green_value {J C : Set ℝ} (F : RicciFlow n
   ring
 
 end PoincareConjecture.M08
-

@@ -1,22 +1,9 @@
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
-
-
-
 
 theorem closure_connectedComponentIn_subset_union_compl
     {X : Type*} [TopologicalSpace X] (U : Set X) (x : X) :
@@ -33,9 +20,6 @@ theorem closure_connectedComponentIn_subset_union_compl
         (isClosed_connectedComponent (x := (⟨x, hx⟩ : U))).closure_eq ▸ hsub, rfl⟩
     · exact Or.inr hyU
   · simp only [connectedComponentIn_eq_empty hx, closure_empty, empty_subset]
-
-
-
 
 theorem connectedComponentIn_compl_inter_neighborhood_nonempty
     {X : Type*} [TopologicalSpace X] [ConnectedSpace X] [LocallyConnectedSpace X]
@@ -61,9 +45,6 @@ theorem connectedComponentIn_compl_inter_neighborhood_nonempty
   obtain ⟨s, hs⟩ := hne
   exact connectedComponentIn_subset Sᶜ x (hall.symm ▸ mem_univ s) hs
 
-
-
-
 theorem compl_eq_union_connectedComponentIn_of_two_half_collar
     {X : Type*} [TopologicalSpace X] [ConnectedSpace X] [LocallyConnectedSpace X]
     {S V B₀ B₁ : Set X} (hS : IsClosed S) (hne : S.Nonempty) (hV : IsOpen V)
@@ -88,9 +69,6 @@ theorem compl_eq_union_connectedComponentIn_of_two_half_collar
         (hB₁.subset_connectedComponentIn hx₁ (subset_union_right.trans hsub) hy₁)).symm
       exact Or.inr (heq ▸ mem_connectedComponentIn hx)
   · exact union_subset (connectedComponentIn_subset _ _) (connectedComponentIn_subset _ _)
-
-
-
 
 theorem frontier_connectedComponentIn_compl_eq_of_closure_subset
     {X : Type*} [TopologicalSpace X] [LocallyConnectedSpace X]

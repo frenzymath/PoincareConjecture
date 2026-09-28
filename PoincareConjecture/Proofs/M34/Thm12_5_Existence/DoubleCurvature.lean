@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +14,6 @@ variable {g : RiemannianMetric 3 StandardCapSpace}
 
 set_option backward.isDefEq.respectTransparency false in
 
-
 theorem endDoubleParametrization_mfderiv_isInvertible (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) {x : StandardCapSpace}
     (hx : x ∈ endTruncation e (L + 1)) :
@@ -35,8 +24,6 @@ theorem endDoubleParametrization_mfderiv_isInvertible (e : StandardCylindricalEn
     mfderiv (𝓡 3) (𝓡 3) (endDoubleParametrization e hL i) x
   exact ⟨ContinuousLinearEquiv.ofBijective A (LinearMap.ker_eq_bot.mpr hbij.1)
     (LinearMap.range_eq_top.mpr hbij.2), rfl⟩
-
-
 
 theorem endDoubleParametrization_curvatureDerivativeNorm (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) {L : ℝ} (hL : 1 < L)
@@ -50,8 +37,6 @@ theorem endDoubleParametrization_curvatureDerivativeNorm (D : LeviCivitaData g)
     (fun _ hy => endDoubleParametrization_mfderiv_isInvertible e hL i hy)
     (fun _ hy u v => endDoubleParametrization_metric e hL i hy u v) k hx
 
-
-
 theorem endDoubleParametrization_scalarCurvature (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) {L : ℝ} (hL : 1 < L)
     (D' : LeviCivitaData (endDoubleMetric e hL)) (i : Bool)
@@ -63,7 +48,6 @@ theorem endDoubleParametrization_scalarCurvature (D : LeviCivitaData g)
     (fun _ hy u v => endDoubleParametrization_metric e hL i hy u v) hx
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem endDouble_nonnegativeSectionalCurvature (D : LeviCivitaData g)
     (hD : D.NonnegativeSectionalCurvature) (e : StandardCylindricalEnd g)
@@ -81,8 +65,6 @@ theorem endDouble_nonnegativeSectionalCurvature (D : LeviCivitaData g)
     (fun _ hy a b => endDoubleParametrization_metric e hL i hy a b) hx]
   exact hD x a b
 
-
-
 theorem endDouble_curvatureDerivativeNorm_le (D : LeviCivitaData g)
     (e : StandardCylindricalEnd g) (k : ℕ) {C : ℝ}
     (hC : ∀ x : StandardCapSpace, D.curvatureDerivativeNorm k x ≤ C)
@@ -91,8 +73,6 @@ theorem endDouble_curvatureDerivativeNorm_le (D : LeviCivitaData g)
   obtain ⟨i, x, hx, rfl⟩ := endDoubleParametrization_cover e hL q
   rw [← endDoubleParametrization_curvatureDerivativeNorm D e hL D' i k hx]
   exact hC x
-
-
 
 theorem endDouble_scalar_bounds (g0 : StandardInitialMetric) (E0 : StandardCapEstimate g0)
     {L : ℝ} (hL : 1 < L)
@@ -103,8 +83,6 @@ theorem endDouble_scalar_bounds (g0 : StandardInitialMetric) (E0 : StandardCapEs
   rw [← endDoubleParametrization_scalarCurvature g0.connection g0.cylindrical_end hL D i hx]
   exact E0.scalar_bounds x
 
-
-
 theorem endDouble_curvatureDerivative_bounds (g0 : StandardInitialMetric)
     (E0 : StandardCapEstimate g0) (k : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (L : ℝ) (hL : 1 < L)
@@ -113,8 +91,6 @@ theorem endDouble_curvatureDerivative_bounds (g0 : StandardInitialMetric)
   obtain ⟨C, hC, hbound⟩ := E0.curvature_derivative_bounds k
   exact ⟨C, hC, fun _ hL D q =>
     endDouble_curvatureDerivativeNorm_le g0.connection g0.cylindrical_end k hbound hL D q⟩
-
-
 
 theorem endDouble_curvatureTensorNorm_bound (g0 : StandardInitialMetric)
     (E0 : StandardCapEstimate g0) :

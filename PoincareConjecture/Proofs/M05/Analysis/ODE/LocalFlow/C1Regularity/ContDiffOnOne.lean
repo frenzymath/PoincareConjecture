@@ -1,15 +1,4 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.C1Regularity.JointFrechetDerivative
-
 
 noncomputable section
 
@@ -579,7 +568,6 @@ private lemma opNorm_coprod_le {F G H : Type*}
         have h2 : ‖p.2‖ ≤ ‖p‖ := by rw [Prod.norm_def]; exact le_max_right _ _
         gcongr
     _ = (‖L₁‖ + ‖L₂‖) * ‖p‖ := by ring
-
 
 theorem continuousOn_fderiv_flow_of_isLocalFlow
     (hΦ : IsLocalFlow f t₀ x₀ r tmin tmax Φ)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.FiniteCylin
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Disks.Boundary.OriginalDiskParametrization
 import PoincareConjecture.Proofs.M76.Rigidity.SourceMeridianBand
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -24,10 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (-1 : ℝ) 1
-
-
-
-
 
 theorem exists_exact_proper_disk_of_original_cylindrical_band
     {X α : Type*} [TopologicalSpace X] [T2Space X]

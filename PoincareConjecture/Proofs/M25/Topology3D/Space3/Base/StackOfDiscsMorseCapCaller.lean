@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorseGraph
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsMorseNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackMorseCanonicalCapNormalization
     (psi : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)

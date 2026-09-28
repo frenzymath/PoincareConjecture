@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Profile.ProfileDerivatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.RadialDistance
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,11 +17,9 @@ private noncomputable def capMultiplierProfile (g₀ : StandardInitialMetric)
   tipCutoff A r (A - t) * conformalFactor C q epsilon (A - t) +
     (1 - tipCutoff A r (A - t)) * conformalFactor C q epsilon A
 
-
 noncomputable def standardCapConformalProfile (g₀ : StandardInitialMetric)
     (C q epsilon r t : ℝ) : ℝ :=
   -Real.log (capMultiplierProfile g₀ C q epsilon r t) / 2
-
 
 noncomputable def standardCapConformalExponent (g₀ : StandardInitialMetric)
     (C q epsilon r : ℝ) (x : StandardCapSpace) : ℝ :=
@@ -132,8 +124,6 @@ theorem standardCapConformalProfile_second_deriv_zero (g₀ : StandardInitialMet
     (C q r t : ℝ) : deriv (deriv (standardCapConformalProfile g₀ C q 0 r)) t = 0 := by
   rw [standardCapConformalProfile_zero]
   simp
-
-
 
 theorem standardCapConformalProfile_jets_eventually_small (g₀ : StandardInitialMetric)
     (C q r : ℝ) {K : Set ℝ} (hK : IsCompact K) {eta : ℝ} (heta : 0 < eta) :
@@ -246,8 +236,6 @@ theorem standardCapConformalProfile_second_deriv_outer (g₀ : StandardInitialMe
   rw [(standardCapConformalProfile_germ_outer g₀ C q epsilon hr ht).deriv.deriv_eq]
   exact cap_second_deriv_reflection (smoothProfile_contDiff C q epsilon) _ t
 
-
-
 theorem sectionalCurvature_smul {g : RiemannianMetric 3 StandardCapSpace}
     (D : LeviCivitaData g) (x u v : StandardCapSpace) {a b : ℝ}
     (ha : a ≠ 0) (hb : b ≠ 0) :
@@ -275,8 +263,6 @@ theorem sectionalCurvature_smul {g : RiemannianMetric 3 StandardCapSpace}
   rw [hnum, hden]
   exact mul_div_mul_left _ _ (mul_ne_zero (pow_ne_zero 2 ha) (pow_ne_zero 2 hb))
 
-
-
 theorem positiveScaling_orthonormal_sqrt (g : RiemannianMetric 3 StandardCapSpace)
     (m : StandardCapSpace → ℝ) (hm : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ m)
     (hpos : ∀ x, 0 < m x) (x u v : StandardCapSpace)
@@ -294,9 +280,6 @@ theorem positiveScaling_orthonormal_sqrt (g : RiemannianMetric 3 StandardCapSpac
   unfold LeviCivitaData.IsOrthonormalPair at hpair ⊢
   rw [he, he, he]
   exact hpair
-
-
-
 
 theorem standardCap_sectional_multiplier_pos (g₀ : StandardInitialMetric)
     (C q epsilon : ℝ) {r : ℝ} (hr : 0 < r)
@@ -372,8 +355,6 @@ private theorem cap_hessian_constant_germ {g : RiemannianMetric 3 StandardCapSpa
     mvfderiv (𝓡 3) f x (D.connection Y x (X x)) = 0
   rw [cap_mvfderiv_constant_germ hzero, cap_mvfderiv_constant_germ hf, sub_self]
 
-
-
 theorem sectionalCurvature_positiveScaling_constant_germ
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)
     (F : StandardCapSpace → ℝ) (hFs : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
@@ -389,8 +370,6 @@ theorem sectionalCurvature_positiveScaling_constant_germ
     D.inner_gradient, cap_mvfderiv_constant_germ hF,
     cap_mvfderiv_constant_germ hF, cap_mvfderiv_constant_germ hF]
   ring
-
-
 
 theorem positiveScaling_const_sectional_pos {g : RiemannianMetric 3 StandardCapSpace}
     (D : LeviCivitaData g) {c : ℝ} (hc : 0 < c)
@@ -436,8 +415,6 @@ theorem standardCapConformalExponent_germ_tip (g₀ : StandardInitialMetric)
   rw [standardCapConformalExponent_eq_profile]
   exact standardCapConformalProfile_eq_tip g₀ C q epsilon hr hy.le
 
-
-
 theorem standardCap_sectional_multiplier_tip (g₀ : StandardInitialMetric)
     (C q epsilon : ℝ) {r : ℝ} (hr : 0 < r)
     (D : LeviCivitaData (positiveScaling g₀.metric
@@ -480,8 +457,6 @@ theorem standardCap_angular_ratio_continuousAt (g₀ : StandardInitialMetric)
     (euclideanWarpRadius_contDiff g₀).continuous.continuousAt
     (euclideanWarpRadius_pos g₀ hu).ne'
 
-
-
 theorem standardCap_angular_ratio_le (g₀ : StandardInitialMetric)
     {a u : ℝ} (ha : 0 < a) (hau : a ≤ u) :
     angularRadiusSlope g₀ u / euclideanWarpRadius g₀ u ≤
@@ -522,8 +497,6 @@ theorem standardCap_sectional_tangential_continuousAt (g₀ : StandardInitialMet
   filter_upwards [lt_mem_nhds hu] with v hv
   exact (standardCap_sectional_tangential g₀ hv).symm
 
-
-
 theorem standardCap_radial_endpoint_outer_pos (g₀ : StandardInitialMetric)
     {C q epsilon r u : ℝ} (hC : 0 < C) (hq : 0 < q) (hepsilon : 0 < epsilon)
     (hr : 0 < r) (hu : 0 < u) (ht : 3 * r / 4 < radialArclength g₀ u)
@@ -556,8 +529,6 @@ theorem standardCap_radial_endpoint_outer_pos (g₀ : StandardInitialMetric)
     deriv (deriv (smoothProfile C q epsilon)) s + (-deriv (smoothProfile C q epsilon) s) * z
   rw [neg_mul, ← sub_eq_add_neg, add_sub_assoc, hid]
   exact add_pos_of_nonneg_of_pos (standardCap_sectional_radial_nonneg g₀ hu) (mul_pos hd hb)
-
-
 
 theorem standardCap_radial_tip_endpoint_eventually_pos (g₀ : StandardInitialMetric)
     (C q r : ℝ) {K : Set ℝ} (hK : IsCompact K) (hKpos : K ⊆ Ioi 0) :
@@ -592,8 +563,6 @@ theorem standardCap_radial_tip_endpoint_eventually_pos (g₀ : StandardInitialMe
   simp only [standardCapConformalProfile_second_deriv_zero,
     standardCapConformalProfile_deriv_zero, zero_mul, add_zero]
   norm_num
-
-
 
 theorem standardCap_tangential_endpoint_eventually_pos (g₀ : StandardInitialMetric)
     (C q r : ℝ) {K : Set ℝ} (hK : IsCompact K) (hKpos : K ⊆ Ioi 0) :
@@ -674,10 +643,6 @@ private theorem cap_axis_sectional_eq_tip (g₀ : StandardInitialMetric)
     (inv_ne_zero (radialSpeed_pos g₀ u).ne')
     (inv_ne_zero (Real.sqrt_pos.mpr (axisTangentialCoefficient_pos g₀ u)).ne')] at hk
   exact hk
-
-
-
-
 
 theorem exists_standardCap_multiplier_positive (g₀ : StandardInitialMetric) :
     ∃ (r : ℝ) (hr : 0 < r), r ≤ g₀.cylindrical_end.radius ∧
@@ -789,8 +754,5 @@ theorem exists_standardCap_multiplier_positive (g₀ : StandardInitialMetric) :
       _ < q := hqgeom
   exact standardCap_radial_endpoint_outer_pos g₀ hC hqpos hepsilon hr hu
     (by linarith only [hr, houter]) hs hgeom
-
-
-
 
 end PoincareConjecture.MetricSurgery

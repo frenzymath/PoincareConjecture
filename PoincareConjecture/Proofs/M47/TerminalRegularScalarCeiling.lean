@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableCoreCover
 import PoincareConjecture.Proofs.M47.TerminalCurvatureActualUniformScalar
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -46,9 +37,6 @@ local notation "gSource" => (fun k : ℕ =>
   RiemannianMetric.connectedComponentMetric (gPhysical k) (center k))
 local notation "e" => (fun (k j : ℕ) (hjk : j ≤ k) => TerminalRegularStageData.maps (data k j hjk))
 local notation "point" => (fun k : ℕ => (Subtype.mk (center k) mem_connectedComponent : M k))
-
-
-
 
 theorem terminalSource_regular_physical_scalar_ceiling
     {X : Type v} [TopologicalSpace X] [ChartedSpace E X]

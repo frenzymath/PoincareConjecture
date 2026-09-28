@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.SourceSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -21,9 +12,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
-
-
-
 
 noncomputable def oldSlabCoordinates (phi : C(H, H)) (a b : ℝ)
     (F : (ContinuousMap.id H).HomotopyRel phi B) :
@@ -98,8 +86,6 @@ theorem oldSlabCoordinates_symm_original_point (phi : C(H, H)) (a b : ℝ)
       ((latticeHandleDomainEquiv (Fin 1) (Fin 2) L).symm
         (hamiltonOneHierarchyCoordinates.symm (z.1.val, z.2.val)) : X) := rfl
 
-
-
 noncomputable def closedPhaseIntervalCoordinates (a b : ℝ) (ha : 0 ≤ a) (hb : b < p) :
     Icc a b ≃ₜ AddCircle.closedIntervalArc p a b := by
   let : Fact (0 < p) := ⟨by norm_num⟩
@@ -112,15 +98,11 @@ noncomputable def closedPhaseIntervalCoordinates (a b : ℝ) (ha : 0 ≤ a) (hb 
     (f := Equiv.Set.imageOfInjOn (fun t : ℝ => (t : C)) (Icc a b) hinj)
     (((AddCircle.continuous_mk' p).comp continuous_subtype_val).subtype_mk _)
 
-
-
 noncomputable def oldSlabIntervalCoordinates (phi : C(H, H)) (a b : ℝ)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (ha : 0 ≤ a) (hb : b < p) :
     ↥(sourceSlab phi a b ∩ frontier R) ≃ₜ (hamiltonOneAnnulusRim × Icc a b) :=
   (oldSlabCoordinates phi a b F).trans
     (Homeomorph.prodCongr (Homeomorph.refl _) (closedPhaseIntervalCoordinates a b ha hb).symm)
-
-
 
 theorem oldSlabIntervalCoordinates_symm_original_point (phi : C(H, H)) (a b : ℝ)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (ha : 0 ≤ a) (hb : b < p)

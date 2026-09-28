@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.EnergyBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateWeakDerivative
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +11,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.HarmonicCoordinates
 
 open LeviCivitaData.Dirichlet
-
-
 
 theorem coordinateDerivative_refl_norm_sq_le_of_ellipticity
     {n : ℕ} {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
@@ -82,8 +73,6 @@ theorem coordinateDerivative_refl_norm_sq_le_of_ellipticity
           (mul_le_mul_of_nonneg_left hnorm (div_nonneg hb (Real.sqrt_nonneg _))) (sq_nonneg _)
       _ = _ := by ring
 
-
-
 theorem coordinateDerivative_refl_opNorm_le_of_ellipticity
     {n : ℕ} {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -102,8 +91,6 @@ theorem coordinateDerivative_refl_opNorm_le_of_ellipticity
   apply (sq_le_sq₀ (norm_nonneg _) (by positivity)).mp
   rw [mul_pow, mul_pow, Real.sq_sqrt (div_nonneg hb (Real.sqrt_nonneg _))]
   exact coordinateDerivative_refl_norm_sq_le_of_ellipticity ha hb D hell hΩ hS v u
-
-
 
 theorem localCoordinateDerivative_refl_norm_sq_le_of_ellipticity
     {n : ℕ} {R a b : ℝ} (ha : 0 < a) (hb : 0 ≤ b)

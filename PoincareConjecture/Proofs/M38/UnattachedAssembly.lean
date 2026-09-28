@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.UnattachedGeometry
 import PoincareConjecture.Proofs.M38.WholeComponentAssembly
 import PoincareConjecture.Proofs.M38.CappedCanonicalRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M38
 
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
-
-
-
 
 theorem exists_unattached_component_assemblies
     (N : RepairedNeckCapTopologyTheory.{u}) (hF : SurgeryFlowAdmissible F)
@@ -60,8 +47,6 @@ theorem exists_unattached_component_assemblies
     ((F.event T hT).pre_identify t x.val) isClosed_connectedComponent.isCompact
     hcanonical hepsilon
   exact ⟨n, D, hc, hn, hs, exists_transportAssembly S d.symm⟩
-
-
 
 theorem exists_zeroCap_discarded_assembly
     (N : RepairedNeckCapTopologyTheory.{u}) (hF : SurgeryFlowAdmissible F)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TetrahedronBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.VertexAbstractComplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open PreAbstractSimplicialComplex.ModTwoCochains
 namespace Geometry.SimplicialComplex
 
 variable {G : Type*} [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
 
 theorem tetrahedronCofaces_card_eq_original
     (K : SimplicialComplex ℝ G) [Fintype K.vertices]

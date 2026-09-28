@@ -5,20 +5,11 @@ import Mathlib.Tactic.Choose
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.FieldSimp
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 
 namespace Poincare.Topology
-
-
 
 theorem sub_le_card_mul_of_finite_cover
     {X ι : Type*} [TopologicalSpace X] [PreconnectedSpace X] [Finite ι]
@@ -68,8 +59,6 @@ theorem sub_le_card_mul_of_finite_cover
   have hcard := Nat.card_le_card_of_injective index hinj
   rw [Nat.card_fin] at hcard
   omega
-
-
 
 theorem dist_le_card_mul_of_image_ball_cover
     {X Y ι : Type*} [PseudoMetricSpace X] [PreconnectedSpace X]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.PositiveCollarStrips
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K L : SimplicialComplex ℝ E} [Fintype K.faces] [Finite L.faces]
 
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_small_relative_boundary_product (hLK : L ≤ K)
     (C : (L.space ×ˢ I : Set (E × ℝ)) ≃ₜ (K.barycentricNeighborhood L).space)

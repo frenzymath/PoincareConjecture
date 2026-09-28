@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.Cap.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Quotient.EndNecks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 theorem strong_necks_outside_interior_slabCore
     (C : M27TwistedSphereLineFlowCertificate K)
@@ -46,8 +36,6 @@ theorem strong_necks_outside_interior_slabCore
       (m27TwistedProductInvolution q)
     rw [C.scalarCurvature_eq ht (C.cover (m27TwistedProductInvolution q)) p]
     simpa only [m27TwistedProductInvolution, abs_of_neg (lt_of_not_ge hq)] using hx
-
-
 
 theorem exists_cap_core_or_strong_neck
     (C : M27TwistedSphereLineFlowCertificate K)

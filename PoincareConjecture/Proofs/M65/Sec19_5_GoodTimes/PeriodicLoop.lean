@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.AngularTangen
 import PoincareConjecture.Definitions.Ch19.CurveEvolution
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -61,14 +53,10 @@ private theorem periodic_arg_contMDiffAt (c : ℝ → M)
   filter_upwards [isClosed_singleton.isOpen_compl.mem_nhds hz] with w hw
   exact periodic_arg_local c hp hz hw
 
-
-
-
 noncomputable def m65PeriodicLoopExtension (c : ℝ → M) (z : LoopPlane) : M :=
   c (Complex.orthonormalBasisOneI.repr.symm z).arg
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem m65PeriodicLoopExtension_contMDiffOn (c : ℝ → M)
     (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 c) (hp : Function.Periodic c curvePeriod) :
@@ -84,14 +72,10 @@ theorem m65PeriodicLoopExtension_contMDiffOn (c : ℝ → M)
     Complex.orthonormalBasisOneI.repr.symm.toContinuousLinearEquiv.contDiff.contMDiff.contMDiffAt
       ).contMDiffWithinAt
 
-
-
 noncomputable def m65LoopOfPeriodic (c : ℝ → M)
     (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 c) (hp : Function.Periodic c curvePeriod) :
     C1FreeLoopSpace (M := M) :=
   loopOfExtension (m65PeriodicLoopExtension c) (m65PeriodicLoopExtension_contMDiffOn c hc hp)
-
-
 
 theorem m65PeriodicFreeLoop_loopOfPeriodic (c : ℝ → M)
     (hc : ContMDiff 𝓘(ℝ, ℝ) (𝓡 3) 1 c) (hp : Function.Periodic c curvePeriod)

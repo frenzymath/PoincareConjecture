@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.RegularHistory
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.NeckCoordinates
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ variable {g₀ : StandardInitialMetric} {K : MetricSurgeryConstants} {P : Surger
   {S : ℝ → GeneralizedSliceCarrier.{u}}
   {g : ∀ t, RiemannianMetric 3 (S t).carrier} {T : ℝ}
   (E : SurgeryEventData g₀ K P S g T)
-
-
 
 theorem retained_post_interior_nonempty [Nonempty (S T).carrier] :
     (interior E.retained_post).Nonempty := by
@@ -177,7 +165,6 @@ theorem regular_distance (t : ℝ) (ht : t ∈ W.interval) (hT : t ∉ F.surgery
       m33RegularRegion_of_regular F t hT, mem_univ]
   exact ((F.slice t).openSubset_distance_of_isClosed (regionOpens W t)
     (hregion ▸ isClosed_univ) (F.metric t) x y).symm
-
 
 def inverse (t : ℝ) (ht : t ∈ W.interval) : (F.slice t).carrier → (slice W t).carrier := by
   let : Nonempty (slice W t).carrier := (slice_nonempty_iff W t).mpr ht

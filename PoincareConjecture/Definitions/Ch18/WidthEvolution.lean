@@ -5,15 +5,6 @@ import Mathlib.Algebra.Category.ModuleCat.Abelian
 import Mathlib.Algebra.Category.ModuleCat.Colimits
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
@@ -21,7 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal intervalIntegral
 universe u v
 
 namespace PoincareConjecture
-
 
 def mappedGenLoop {X : Type u} {Y : Type v} [TopologicalSpace X]
     [TopologicalSpace Y] {x : X} {y : Y} {n : ℕ}
@@ -32,14 +22,12 @@ def mappedGenLoop {X : Type u} {Y : Type v} [TopologicalSpace X]
     have hg : gamma z = x := gamma.2 z hz
     simpa [hg] using h⟩
 
-
 def mappedHomotopyClass {X : Type u} {Y : Type v} [TopologicalSpace X]
     [TopologicalSpace Y] {x : X} {y : Y} {n : ℕ}
     (f : ContinuousMap X Y) (h : f x = y) :
     HomotopyGroup.Pi n X x → HomotopyGroup.Pi n Y y :=
   Quotient.map (mappedGenLoop f h) (fun _ _ hab =>
     ContinuousMap.HomotopicRel.comp_continuousMap hab f)
-
 
 noncomputable def componentThirdHomology (X : Type u) [TopologicalSpace X] :
     ModuleCat.{u} ℤ :=
@@ -51,7 +39,6 @@ noncomputable def componentThirdHomologyMap {X Y : Type u}
     componentThirdHomology X →ₗ[ℤ] componentThirdHomology Y :=
   (((AlgebraicTopology.singularHomologyFunctor (ModuleCat.{u} ℤ) 3).obj
     (ModuleCat.of ℤ (ULift.{u} ℤ))).map (TopCat.ofHom f)).hom
-
 
 structure WidthComponentSlice where
   ambient : GeneralizedSliceCarrier.{u}
@@ -82,9 +69,6 @@ noncomputable def componentPiThreeClass (C : WidthComponentSlice.{u}) :
     HomotopyGroup.Pi 3 C.carrier.carrier C.family.basepoint :=
   C.loop_pi_three C.family.homotopy_class
 
-
-
-
 structure SmoothComponentClassMap (C D : WidthComponentSlice.{u}) where
   map : ContinuousMap C.carrier.carrier D.carrier.carrier
   smooth : ContMDiff (𝓡 3) (𝓡 3) ∞ map
@@ -104,8 +88,6 @@ structure SmoothComponentClassMap (C D : WidthComponentSlice.{u}) where
     (∀ c, Gamma.family c = loop_map (C.family.family c)) ∧
       FreeTwoSphereHomotopic Gamma D.family
 
-
-
 def ComponentMapDegreeOne {C D : WidthComponentSlice.{u}}
     (f : SmoothComponentClassMap C D) : Prop :=
   ∀ z : componentThirdHomology C.carrier.carrier,
@@ -113,8 +95,6 @@ def ComponentMapDegreeOne {C D : WidthComponentSlice.{u}}
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 structure WidthRegularSlab {t₀ t₁ : ℝ}
     (slice : Set.Icc t₀ t₁ → WidthComponentSlice.{u})
@@ -138,9 +118,6 @@ structure WidthRegularSlab {t₀ t₁ : ℝ}
   scalar_pullback : ∀ (s : Set.Icc a.1 b.1) x,
     (slice ⟨s.1, ⟨a.2.1.trans s.2.1, s.2.2.trans b.2.2⟩⟩).connection.scalarCurvature
       (identify s x) = (flow.connection s.1).scalarCurvature x
-
-
-
 
 structure SurgeryComponentPath (M : Type u) [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]

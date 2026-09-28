@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SpectralTracePrimitive
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicLaplacian
 import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M63
 open SpectralHeatNative
 
 variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
-
-
-
 
 theorem vectorPeriodicJet_shiftedBase (k j : ℕ) (hj : j ≤ k)
     (u : State ((ℤ × Fin 2) × ι)) :
@@ -36,9 +25,6 @@ theorem vectorPeriodicJet_shiftedBase (k j : ℕ) (hj : j ≤ k)
       scaleWeight, pow_one, one_div]
   change vectorPeriodicJet (L := L) k j hj (shiftedBaseMultiplier lambda u) = _
   rw [hJ, vectorPeriodicJet_scaleDecode]
-
-
-
 
 theorem vectorPeriodicJet_high_second_derivative
     (H V : State ((ℤ × Fin 2) × ι))
@@ -62,10 +48,6 @@ theorem vectorPeriodicJet_high_second_derivative
   refine ⟨hderiv, ?_⟩
   rw [iteratedDeriv_succ, iteratedDeriv_one, hfirst]
   exact hderiv.deriv
-
-
-
-
 
 theorem initialResponseTrace_decoded_derivative
     (w : State ((ℤ × Fin 2) × ι)) {T : ℝ} (hT : 0 ≤ T)
@@ -106,9 +88,6 @@ theorem initialResponseTrace_decoded_derivative
   rw [← hJV] at hlap
   rw [hlap]
   abel
-
-
-
 
 theorem initialResponseTrace_decoded_integral
     (w : State ((ℤ × Fin 2) × ι)) {T : ℝ} (hT : 0 ≤ T)

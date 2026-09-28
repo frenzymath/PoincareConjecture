@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 structure M63AmbientGeometry (F : RicciFlow n M (Set.Icc a b)) where
   K0 : ℝ
@@ -35,9 +24,6 @@ structure M63AmbientGeometry (F : RicciFlow n M (Set.Icc a b)) where
     M62.CircleProductIdentities (product circumference h)
   product_bounds : ∀ circumference (h : 0 < circumference),
     CurveEvolutionAmbientBounds (product circumference h).flow K0 K1 K2
-
-
-
 
 structure M63C2CurveEstimates (F : RicciFlow n M (Set.Icc a b))
     (c : ℝ → ℝ → M) (T K0 K1 K2 : ℝ) : Prop where
@@ -78,13 +64,10 @@ structure M63C2CurveEstimates (F : RicciFlow n M (Set.Icc a b))
       m62CurvatureSquared F c t x * curveSpeed F c t x) ≤
     m62Length F c a * Real.exp (K2 * (T - a))
 
-
 noncomputable def m63RampRatio {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (ε t x : ℝ) : ℝ :=
   m62RegularizedCurvature P.flow c ε t x / m62Slope P c t x
-
-
 
 structure M63C2SlopeLaws {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference)
@@ -98,8 +81,6 @@ structure M63C2SlopeLaws {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
   lower_bound : ∀ t ∈ Set.Ioo a T, ∀ x, 0 ≤ m62Slope P c t x →
     m62ArcSecondDerivative P.flow c t (m62Slope P c t) x - K2 * m62Slope P c t x ≤
       deriv (fun s => m62Slope P c s x) t
-
-
 
 structure M63RampPreservation {F : RicciFlow n M (Set.Icc a b)}
     {circumference : ℝ} (P : M62.CircleProductData F circumference)
@@ -133,8 +114,6 @@ structure M63RampPreservation {F : RicciFlow n M (Set.Icc a b)}
           (R0 + m62C1 K0 K1 K2 * Real.exp (K2 * (T - a)) / m * (t - a)) *
             Real.exp ((m62C1 K0 K1 K2 + K2) * (t - a))
 
-
-
 def M63C2RampExistence {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) : Prop :=
   ∀ gamma : ℝ → P.charts.Point,
@@ -147,7 +126,6 @@ def M63C2RampExistence {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
         M63IntrinsicRegularityOn P.flow c (Set.Icc a b) ∧
         ∀ t ∈ Set.Icc a b, M63IsRampAt P (fun x => c x t) t
 
-
 def M63SmoothRampExistence {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) : Prop :=
   ∀ gamma : ℝ → P.charts.Point,
@@ -158,9 +136,6 @@ def M63SmoothRampExistence {F : RicciFlow n M (Set.Icc a b)} {circumference : �
         M62ShrinkingCurve P.flow c ∧ (∀ x, c x a = gamma x) ∧
         M63IntrinsicRegularityOn P.flow c (Set.Icc a b) ∧
         ∀ t ∈ Set.Icc a b, M63IsRampAt P (fun x => c x t) t
-
-
-
 
 structure M63UniformDerivativeEstimates {F : RicciFlow n M (Set.Icc a b)}
     (G : M63AmbientGeometry F) (L0 Theta0 : ℝ) where

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Atlas.Positive
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,9 +12,6 @@ universe u v
 namespace Poincare.Topology.Orientation.ProjectivePlane
 
 open Poincare.Topology
-
-
-
 
 def positiveThreeAtlasOpenEmbedding
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

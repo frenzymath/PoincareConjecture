@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M10.TerminalGradient
 import PoincareConjecture.Proofs.M10.RegularGerms
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,7 +14,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem normalized_action_hasDerivAt (G : LExponentialGeometry F T τmax p)
     (Z : TangentSpace (𝓡 n) p) {τ : ℝ} (hτ : 0 < τ) (hmax : τ < τmax) :
@@ -43,7 +33,6 @@ theorem normalized_action_hasDerivAt (G : LExponentialGeometry F T τmax p)
   ring
 
 variable [ConnectedSpace M]
-
 
 theorem reducedLength_time_gradient_identity
     (hDifferential : ReducedLengthDifferentialTheory F T τmax) {q : M} {τ : ℝ}
@@ -84,7 +73,6 @@ theorem reducedLength_gradientNormSq_eq_terminal_speed
   simp_rw [hpair]
   exact (((F.metric (T - τ)).orthonormalBasis (G.gamma Z τ)).sum_sq_inner_left _).trans
     (real_inner_self_eq_norm_sq _).symm
-
 
 theorem normalized_action_regular_hasDerivAt
     (hL : LGeodesicTheory F T τmax)

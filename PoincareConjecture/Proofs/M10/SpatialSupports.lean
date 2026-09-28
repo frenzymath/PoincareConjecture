@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M10.GradientNorm
 import PoincareConjecture.Proofs.M10.LocalMetricBound
 import PoincareConjecture.Statements.Ch06.ReducedLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ namespace PoincareConjecture.M10
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p : M}
-
 
 theorem reducedLength_local_terminal_supports
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)

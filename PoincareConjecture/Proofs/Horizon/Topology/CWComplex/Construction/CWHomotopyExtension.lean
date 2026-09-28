@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.CWComplex.Construction.CWCellPasting
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Extension.DiskHomotopyExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

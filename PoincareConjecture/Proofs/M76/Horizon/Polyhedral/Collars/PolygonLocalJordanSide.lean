@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalLineModel
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -73,8 +65,6 @@ theorem exists_local_jordan_side_labels {n : ℕ}
     e.exists_local_complementary_sides he hlocal
   exact ⟨U, L, R, hU, hqU, hL, hR, hcover,
     P.local_jordan_side_labels hP hinj hq hU hqU hL hR hcover⟩
-
-
 
 theorem exists_local_jordan_half_rectangles {n : ℕ}
     (P : Polygon (ℝ × ℝ) (n + 3)) (hP : P.HasSimplicialEdges)

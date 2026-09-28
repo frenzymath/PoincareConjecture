@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.RetainedNeckScalar
 import PoincareConjecture.Proofs.M47.RetainedNeckVolume
 import PoincareConjecture.Proofs.M47.ComponentEstimateCapExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
 
-
-
 theorem event_retained_center_scalar
     (E : SurgeryEventData g0 K P slice metric T) (D : LeviCivitaData (metric T))
     (i : Fin E.cap_count) :
@@ -35,8 +24,6 @@ theorem event_retained_center_scalar
       (E.necks i).neck.scale⁻¹ ^ 2 := by
   rw [← PoincareConjecture.M47.localResult_scalar_eq E D i]
   exact retained_neck_center_scalar (E.local_result i)
-
-
 
 theorem event_retained_center_ball_volume
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)
@@ -59,8 +46,6 @@ theorem event_retained_center_ball_volume
     ((local_result_embedding_volume_eq E i hmeas).symm.le.trans
       (measure_mono hsub))
 
-
-
 theorem event_retained_center_mem_cap
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count) :
     E.local_embed i ((E.local_result i).collapse (E.necks i).neck.center) ∈
@@ -69,8 +54,6 @@ theorem event_retained_center_mem_cap
   refine mem_image_of_mem _ (frontier_subset_closure ?_)
   rw [← (E.local_result i).cap_boundary]
   exact mem_image_of_mem _ (E.necks i).neck.center_on_central_sphere
-
-
 
 theorem event_cap_contact_distance
     (E : SurgeryEventData g0 K P slice metric T) (i : Fin E.cap_count)

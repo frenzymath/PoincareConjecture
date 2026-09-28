@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Coefficients
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -14,8 +12,6 @@ universe u
 namespace PoincareConjecture.MetricSurgery
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_centeredNeck_initial_jet_bound (m : ℕ) :
     ∃ Z : ℝ, 0 < Z ∧
@@ -44,8 +40,6 @@ theorem cylinderModelField_zero_upper (v : E) :
   rw [cylinderModelField_zero]
   simp only [add_apply, smul_apply, ContinuousLinearMap.smulRight_apply, smul_eq_mul]
   nlinarith [sq_nonneg (cylinderHeightCovector v)]
-
-
 
 theorem normalizedNeckMetric_centered_ellipticity
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.IntegralRatio
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,8 +26,6 @@ theorem ofReal_modelVolume_eq_lintegral (n : ℕ) {κ r : ℝ}
     ofReal_integral_eq_lintegral_ofReal hf hnonneg]
   exact (lintegral_const_mul _
     (ENNReal.continuous_ofReal.comp ((continuous_modelS κ).pow (n - 1))).measurable).symm
-
-
 
 theorem antitoneOn_angular_div_modelVolume {Ω : Type*} [MeasurableSpace Ω]
     (μ : Measure Ω) {n : ℕ} (hn : 1 ≤ n) {κ R : ℝ} (hκ : 0 ≤ κ)

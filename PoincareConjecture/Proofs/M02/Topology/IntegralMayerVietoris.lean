@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralExcision
 import Mathlib.Algebra.Homology.ShortComplex.ModuleCat
 import Mathlib.Algebra.Homology.HomologicalComplexBiprod
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

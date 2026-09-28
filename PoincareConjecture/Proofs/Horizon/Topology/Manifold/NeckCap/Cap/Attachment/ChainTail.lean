@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cylinder.Tails
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Regions
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
 
 theorem exists_cylinder_tail_in_cap_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -86,8 +71,6 @@ theorem exists_cylinder_tail_in_cap_threshold :
     closure_mono hnegativeSubset (C.boundary_subset_negative_end_closure hboundary)
   exact False.elim (disjoint_left.mp hdisj (C.boundary_subset_closed_core hboundary)
     (hclosure hwitness))
-
-
 
 theorem exists_outgoing_chain_capTubeAttachment_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

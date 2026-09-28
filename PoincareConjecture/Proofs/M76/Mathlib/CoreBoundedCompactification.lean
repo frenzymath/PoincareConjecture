@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CoreCompressionDisplacement
 import PoincareConjecture.Proofs.M76.Mathlib.VanishingDisplacementExtension
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,19 +10,11 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def coreBall : E ≃ₜ ball (0 : E) 2 :=
   (Homeomorph.Set.univ E).symm.trans
     (OpenPartialHomeomorph.coreCompression.toHomeomorphSourceTarget)
 
-
-
 theorem coreBall_apply (x : E) : (coreBall x : E) = NormedSpace.coreCompression x := rfl
-
-
-
 
 theorem coreBall_conjugate_bound (g : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖g x - x‖ ≤ C) (y : ball (0 : E) 2) :
@@ -46,10 +29,6 @@ theorem coreBall_conjugate_bound (g : E ≃ₜ E) {C : ℝ}
     (mul_le_mul_of_nonneg_right
       (mul_le_mul_of_nonneg_left (by simpa only [norm_sub_rev] using hC x)
         (by norm_num)) (by rw [he]; exact hy.le))
-
-
-
-
 
 noncomputable def coreRadialCompactification (g : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖g x - x‖ ≤ C) : E ≃ₜ E := by
@@ -66,8 +45,6 @@ noncomputable def coreRadialCompactification (g : E ≃ₜ E) {C : ℝ}
       simpa only [g.apply_symm_apply] using hC (g.symm x)
     exact coreBall_conjugate_bound g.symm hsymm
 
-
-
 theorem coreRadialCompactification_apply_mem (g : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖g x - x‖ ≤ C) {y : E} (hy : y ∈ ball (0 : E) 2) :
     g.coreRadialCompactification hC y =
@@ -76,8 +53,6 @@ theorem coreRadialCompactification_apply_mem (g : E ≃ₜ E) {C : ℝ}
   exact Equiv.Perm.extendDomain_apply_subtype
     (((coreBall : E ≃ₜ ball (0 : E) 2).symm.trans g).trans coreBall).toEquiv
     (Equiv.refl (ball (0 : E) 2)) hy
-
-
 
 theorem coreRadialCompactification_fixed_outside (g : E ≃ₜ E) {C : ℝ}
     (hC : ∀ x, ‖g x - x‖ ≤ C) {y : E} (hy : y ∉ ball (0 : E) 2) :

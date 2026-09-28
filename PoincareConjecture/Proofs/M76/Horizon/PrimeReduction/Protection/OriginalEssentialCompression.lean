@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.EssentialAnnulusBallProduct
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedMeridianSphereObstruction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -120,8 +112,6 @@ theorem no_essential_compression_disk_in_original_model
       exact (hcontact z hzc).mpr hz
   exact no_standard_meridian_compression_disk L he hdim p hp hpi himage hboundary
     hend hmeridian hc f hf hfi hfR hrim (hfD.trans hrim)
-
-
 
 theorem HamiltonMarkedProtectedBall.exists_original_annulus_noncompression
     {ι κ α W : Type*} [Fintype ι] [Fintype κ]

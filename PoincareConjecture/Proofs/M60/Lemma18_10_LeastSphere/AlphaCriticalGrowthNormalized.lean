@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalAbsorpt
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaVariationalComparison
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.InteriorEstimates.Energy.SecondDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,8 +43,6 @@ local instance {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
     NormedSpace ℝ ((E × E) →L[ℝ] (E × E) →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
 theorem suGradientParameters_compact
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E] :
     IsCompact {q : ℝ × E | 0 ≤ q.1 ∧ q.1 ^ 2 + ‖q.2‖ ^ 2 = 1} := by
@@ -68,8 +57,6 @@ theorem suGradientParameters_compact
   · rw [Metric.mem_closedBall, dist_zero_right]
     nlinarith [hq.2, sq_nonneg q.1, norm_nonneg q.2]
 
-
-
 theorem suGradientParameters_coercive
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (B : E →L[ℝ] E →L[ℝ] ℝ) {c kappa t : ℝ} {v : E}
@@ -82,8 +69,6 @@ theorem suGradientParameters_coercive
       (mul_le_mul_of_nonneg_right (min_le_left _ _) (sq_nonneg _))
       (mul_le_mul_of_nonneg_right (min_le_right _ _) (sq_nonneg _))
     _ ≤ _ := by linarith
-
-
 
 theorem suAlphaFlux_gradient_scaling
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -115,8 +100,6 @@ theorem suAlphaFlux_gradient_scaling
         (2 * alpha * (c + B v v) ^ (alpha - 1) * B v w) := by rw [htone, one_mul]
     _ = _ := by ring
 
-
-
 theorem suGradientParameters_normalize
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] (v : E) :
     ∃ t : ℝ, 0 < t ∧ t ^ 2 + ‖t • v‖ ^ 2 = 1 ∧ t ≤ 1 := by
@@ -131,8 +114,6 @@ theorem suGradientParameters_normalize
     nlinarith
   refine ⟨t, ht, heq, ?_⟩
   nlinarith [sq_nonneg ‖t • v‖]
-
-
 
 theorem suNormalizedCoefficient_derivative_bound
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -152,8 +133,6 @@ theorem suNormalizedCoefficient_derivative_bound
   intro x hx t v ht hunit
   exact (hC (mem_image_of_mem _ ⟨hx, ht, hunit⟩)).trans
     ((le_max_left C 0).trans (by linarith))
-
-
 
 theorem suNormalizedCoefficient_gradient_bound
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -190,8 +169,6 @@ theorem suNormalizedCoefficient_gradient_bound
       (mul_le_mul hC hL (norm_nonneg L) ((norm_nonneg _).trans hC)) hpow.le
     _ = C * t ^ (degree + 1) := by rw [Real.rpow_add ht, Real.rpow_one]; ring
 
-
-
 theorem suNormalizedCoefficient_base_bound
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -223,8 +200,6 @@ theorem suNormalizedCoefficient_base_bound
     abs_of_pos (Real.rpow_pos_of_pos ht degree)]
   exact (mul_le_mul_of_nonneg_left h (Real.rpow_nonneg ht.le degree)).trans_eq (by ring)
 
-
-
 theorem suAlphaFlux_normalized_contDiffAt
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -243,8 +218,6 @@ theorem suAlphaFlux_normalized_contDiffAt
       (x, t, v) := by fun_prop
   have hweight := hbase.rpow_const_of_ne (p := alpha - 1) hpos.ne'
   exact (contDiffAt_const.mul hweight).smul (hmetric.clm_apply (by fun_prop))
-
-
 
 theorem suHomogeneousCoefficient_bounds
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -277,8 +250,6 @@ theorem suHomogeneousCoefficient_bounds
     exact suNormalizedCoefficient_base_bound hconv N (t • v) ht degree
       (fun z hz => (hN (z, t, t • v) ⟨hz, ht.le, hunit⟩).differentiableAt (by norm_num))
       (fun z hz => hbound z hz t (t • v) ht.le hunit) hx hy
-
-
 
 theorem suAlphaFlux_coefficient_bounds
     {P E : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -314,8 +285,6 @@ theorem suAlphaFlux_coefficient_bounds
     rw [suAlphaFlux_gradient_scaling (B x) hnonneg
       (hk.trans_le (hpositive x hx).1) ht alpha v]
     simp only [N, smul_smul, mul_comm]
-
-
 
 def suAlphaSource {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -377,8 +346,6 @@ theorem suAlphaSource_normalized_contDiffAt
   exact (contDiffAt_const.mul hweight).smul
     ((hsource.clm_apply (by fun_prop)).clm_apply (by fun_prop))
 
-
-
 theorem suAlphaSource_coefficient_bounds
     {P E F : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -417,8 +384,6 @@ theorem suAlphaSource_coefficient_bounds
       (hk.trans_le (hpositive x hx).1) ht alpha v]
     simp only [N, smul_smul, mul_comm]
 
-
-
 theorem suGradientParameters_rpow
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {v : E} {t : ℝ} (ht : 0 < t) (hunit : t ^ 2 + ‖t • v‖ ^ 2 = 1) (degree : ℝ) :
@@ -440,8 +405,6 @@ theorem suGradientParameters_rpow
       congr 1
       ring
 
-
-
 theorem suNaturalWeight_segment_bound
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {q r z : E} (hz : z ∈ segment ℝ q r) {p : ℝ} (hp : 0 ≤ p) :
@@ -460,8 +423,6 @@ theorem suNaturalWeight_segment_bound
       (by nlinarith [norm_nonneg z]) hp).trans
         (le_add_of_nonneg_right (Real.rpow_nonneg (by positivity) _))
 
-
-
 theorem suNaturalCoefficient_difference
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -475,8 +436,6 @@ theorem suNaturalCoefficient_difference
   apply (hbound z).trans
   apply mul_le_mul_of_nonneg_left _ hC
   simpa only [add_comm] using suNaturalWeight_segment_bound hz hp
-
-
 
 theorem suAlphaFlux_canonical_monotone
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -505,9 +464,6 @@ theorem suAlphaFlux_canonical_monotone
             (Real.rpow_nonneg (add_nonneg (hk.le.trans hc) (hnonneg q)) _)
             (Real.rpow_nonneg (add_nonneg (hk.le.trans hc) (hnonneg r)) _)))
     _ ≤ _ := suAlphaFlux_weighted_monotone B hnonneg hsymm (hk.le.trans hc) ha q r
-
-
-
 
 theorem suNaturalWeights_pair_square
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

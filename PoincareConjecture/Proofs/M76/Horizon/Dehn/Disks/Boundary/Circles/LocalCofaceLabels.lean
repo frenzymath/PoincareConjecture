@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
 
-
-
 theorem exists_boundary_joint_coface_arc_labels
     (A L : SimplicialComplex ℝ E) [Fintype A.faces]
     (hLA : L ≤ A)

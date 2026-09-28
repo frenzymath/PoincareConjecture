@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedRegionPatchIncidence
 import Mathlib.SetTheory.Cardinal.Finite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem exists_indexed_components_of_closed_partition
     {X κ : Type*} [TopologicalSpace X] [Finite κ]

@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.DistanceDistortion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SourceSegments
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -63,9 +50,6 @@ private theorem comparison_cosine_additive_bounds
     _ ≤ ((a + b) ^ 2 - c ^ 2 + 4 * C * (a + b) + 4 * C ^ 2) / (2 * a * b) :=
       div_le_div_of_nonneg_left holdplus hden hdenle
     _ = _ := by field_simp; ring
-
-
-
 
 theorem tendsto_comparison_cosine_of_additive_bounds
     {a b c A B D : ℕ → ℝ} {C : ℝ} (hC : 0 ≤ C)
@@ -130,9 +114,6 @@ private theorem endpoint_distance_triangle
   let := g.toMetricSpace
   change dist x y ≤ dist q x + dist q y
   simpa only [dist_comm x q] using dist_triangle x q y
-
-
-
 
 theorem exists_buffered_opposite_minimizing_segments
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

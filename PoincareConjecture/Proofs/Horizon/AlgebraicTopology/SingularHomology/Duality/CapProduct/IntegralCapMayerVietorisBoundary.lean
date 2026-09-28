@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralCapMayerVietoris
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import PoincareConjecture.Proofs.Horizon.MeasureTheory.Integral.GaussianMoment.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_first_moment_bound_of_gaussian
     (n : ℕ) (A B c : ℝ) (hn : 0 < n) (hA : 1 ≤ A) (hB : 0 ≤ B) (hc : 0 < c) :

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.IntrinsicMinimizer
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +9,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem continuousOn_of_edist_segment
     (g : RiemannianMetric n M) {η : ℝ → M} {d : ℝ≥0∞} (hd : d ≠ ⊤)
@@ -39,8 +27,6 @@ theorem continuousOn_of_edist_segment
   intro s hs t ht
   change g.edist (η s) (η t) ≤ _
   rw [hη s hs t ht, ENNReal.coe_toNNReal hd, edist_dist, Real.dist_eq, mul_comm]
-
-
 
 theorem exists_local_point_of_edist_segment
     (g : RiemannianMetric n M) {η : ℝ → M} {p q : M}
@@ -90,8 +76,6 @@ theorem exists_local_point_of_edist_segment
   · rw [hpt, htq, ← add_mul, ← ENNReal.ofReal_add ht.1 (sub_nonneg.mpr ht.2)]
     simp
 
-
-
 theorem exists_local_minimizing_step_of_precompact_ball
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)
     (hcompact : IsCompact (closure (g.ball p R)))
@@ -105,7 +89,6 @@ theorem exists_local_minimizing_step_of_precompact_ball
     (ne_top_of_lt (hq.trans_le le_top)) hη hU hr
 
 omit [T2Space M] in
-
 
 theorem exists_precompact_ball_of_edist_add_eq
     (g : RiemannianMetric n M) (p x q : M) {R : ℝ}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {E V M ι σ : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [TopologicalSpace M] [Finite σ]
   {e : ι → OpenPartialHomeomorph M V}
-
-
-
 
 theorem polyhedralPLInCharts_of_finite_cover
     (hcover_e : ∀ x : M, ∃ i, x ∈ (e i).source)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.MetricFamilyProducerNative
 import PoincareConjecture.Proofs.M03.Existence.WithinConjugatingFlowNative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold

@@ -7,15 +7,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +14,6 @@ noncomputable section
 namespace Poincare.Analysis.Spectral.Counting
 
 open scoped BigOperators
-
-
 
 theorem summable_neg_rpow_of_counting {ι : Type*} (w : ι → ℝ)
     (hw : ∀ i, 1 ≤ w i) (q : ℕ) (A : ℝ) (hA : 0 ≤ A)
@@ -126,8 +115,6 @@ theorem summable_neg_rpow_of_counting {ι : Type*} (w : ι → ℝ)
             ← Real.rpow_add h2pos, ← Real.rpow_add h2pos, hexpL]
   refine (Finset.sum_le_sum hfiber).trans ?_
   exact hg_summable.sum_le_tsum _ (fun m _ => hg_nn m)
-
-
 
 theorem summable_weighted_exp_of_counting {ι : Type*} (lam : ι → ℝ)
     (hlam : ∀ i, 0 ≤ lam i) (C : ℝ) (hC : 0 ≤ C) (p : ℝ)

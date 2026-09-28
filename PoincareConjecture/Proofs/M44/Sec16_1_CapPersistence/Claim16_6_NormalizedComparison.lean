@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialCon
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedCoefficients
 import PoincareConjecture.Proofs.M01.NormalizationVolumeScaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,21 +15,14 @@ namespace PoincareConjecture.SurgeryCapClose
 variable {g₀ : StandardInitialMetric} {S : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 S.carrier} {tip : S.carrier} {scale eta : ℝ}
 
-
-
 noncomputable def normalizedMetric (Q : SurgeryCapClose g₀ S g tip scale eta) :
     RiemannianMetric 3 S.carrier :=
   m01RescaledMetric g (scale⁻¹ ^ 2) (sq_pos_of_pos (inv_pos.mpr Q.scale_pos))
-
-
 
 theorem normalizedMetric_ball (Q : SurgeryCapClose g₀ S g tip scale eta)
     (p : S.carrier) (r : ℝ) : Q.normalizedMetric.ball p r = g.ball p (scale * r) := by
   rw [normalizedMetric, m01RescaledMetric_ball,
     Real.sqrt_sq (inv_pos.mpr Q.scale_pos).le, div_inv_eq_mul, mul_comm r scale]
-
-
-
 
 noncomputable def normalizedComparison (Q : SurgeryCapClose g₀ S g tip scale eta) :
     SurgeryCapClose g₀ S Q.normalizedMetric tip 1 eta where
@@ -61,17 +45,12 @@ noncomputable def normalizedComparison (Q : SurgeryCapClose g₀ S g tip scale e
     simpa only [inv_one, one_pow, one_mul, surgeryCapPullback, normalizedMetric,
       m01RescaledMetric_inner] using Q.jets
 
-
-
 theorem normalizedComparison_coefficients (Q : SurgeryCapClose g₀ S g tip scale eta) :
     Q.normalizedComparison.normalizedCoefficients = Q.normalizedCoefficients := by
   funext x
   ext v w
   simp only [normalizedCoefficients_apply, normalizedComparison, normalizedMetric,
     m01RescaledMetric_inner, inv_one, one_pow, one_mul]
-
-
-
 
 theorem isCompact_closure_normalized_ball
     (Q : SurgeryCapClose g₀ S g tip scale eta) (heta : eta < 1)

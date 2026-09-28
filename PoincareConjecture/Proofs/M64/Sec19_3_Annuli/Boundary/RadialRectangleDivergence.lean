@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.RadialRectangle
 import Mathlib.MeasureTheory.Integral.DivergenceTheorem
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -16,10 +11,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M64
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem annulusRadialRectangle_integral_divergence
     {lo hi : ℝ} (hlh : lo ≤ hi) {O : Set LoopPlane} (hO : IsOpen O)
@@ -78,9 +69,6 @@ theorem annulusRadialRectangle_integral_divergence
   rw [annulusRadialRectangle_integral]
   simpa only [D, ContinuousLinearMap.comp_apply, hL0, hL1, hL,
     sub_eq_add_neg, add_assoc] using hdiv
-
-
-
 
 theorem annulusRadialRectangle_integral_divergence_periodic
     {lo hi : ℝ} (hlh : lo ≤ hi) {O : Set LoopPlane} (hO : IsOpen O)

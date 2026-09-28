@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_JacobiLocalExistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +28,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hclock : ∀ s ∈ Icc a c, (β s).1.val = T - s ^ 2)
 
 include hCoordinates hscalar W hM04 x₀ hβ hrec hclock
-
-
-
 
 theorem IsHorizontalJacobiPairOn.coordinate_phase
     {z : ∀ s, G.Horizontal (R.curve s) × G.Horizontal (R.curve s)}
@@ -102,9 +90,6 @@ theorem IsHorizontalJacobiPairOn.coordinate_phase
   have hd := ((hf s hs).differentiableWithinAt (by simp)).hasDerivWithinAt.prodMk
     ((hg s hs).differentiableWithinAt (by simp)).hasDerivWithinAt
   exact heq ▸ hd
-
-
-
 
 theorem gaugeHorizontalJacobiPair_unique
     {z z' : ∀ s, G.Horizontal (R.curve s) × G.Horizontal (R.curve s)}

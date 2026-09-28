@@ -1,27 +1,10 @@
 import PoincareConjecture.Statements.M69
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
 
 theorem m69FinitePiecePropagation : M69FinitePieceStatement.{u} := by
   intro g₀ D W T P hcomparison hscalar K C H B A S initial hM61 hM64 hM65

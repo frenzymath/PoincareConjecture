@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.AmbientMorseChart
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 noncomputable def nonnestedReferenceDiffeomorph
     (c : ℝ) (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d) :
@@ -87,8 +76,6 @@ noncomputable def nonnestedReferenceDiffeomorph
     contMDiff_toFun := hF.contMDiff
     contMDiff_invFun := hG.contMDiff }
 
-
-
 theorem nonnestedReferenceDiffeomorph_apply_symm
     (c : ℝ) (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d) :
     (∀ y : E3, nonnestedReferenceDiffeomorph c d hd y =
@@ -101,8 +88,6 @@ theorem nonnestedReferenceDiffeomorph_apply_symm
             d (2 * (p.1.1 ^ 2 + p.1.2 ^ 2))]) := by
   exact ⟨fun _ => rfl, fun _ => rfl⟩
 
-
-
 noncomputable def nonnestedReferenceBallChart
     (c : ℝ) (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d) :
     BallNeighborhoodChart E3 ((ℝ × ℝ) × ℝ) where
@@ -110,8 +95,6 @@ noncomputable def nonnestedReferenceBallChart
   closedBall_subset_source := subset_univ _
   smooth := (nonnestedReferenceDiffeomorph c d hd).contDiff.contDiffOn
   smooth_symm := (nonnestedReferenceDiffeomorph c d hd).symm.contDiff.contDiffOn
-
-
 
 theorem nonnestedReferenceBallChart_regions
     (c : ℝ) (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d) :
@@ -153,8 +136,6 @@ theorem nonnestedReferenceBallChart_regions
     mem_sphere_zero_iff_norm]
   refine ⟨?_, ?_, ?_⟩ <;> constructor <;> intro hp <;>
     nlinarith [norm_nonneg (F.symm p)]
-
-
 
 theorem nonnestedReferenceBallChart_morse_box
     (c : ℝ) (d : ℝ → ℝ) (hd : ContDiff ℝ ∞ d)

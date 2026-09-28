@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M51.EmptyExtension
 import PoincareConjecture.Proofs.M48.ExtensionCylinderMetric
 import PoincareConjecture.Proofs.M48.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

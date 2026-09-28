@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareVariationConstruction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem exists_variationOfSquare_eqOn (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (R : M14SquareRootPath G p) (H : ℝ × ℝ → G.Point) {r : ℝ} (hr : 0 < r)

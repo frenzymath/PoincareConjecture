@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellEventually
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.PolygonCellBoundaryNull
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64_interpolator_vertical_column_ae_of_cell_extensions
     {g : RiemannianMetric n M} {D : LeviCivitaData g}

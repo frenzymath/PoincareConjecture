@@ -2,24 +2,12 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Set
 open scoped Topology
 
 namespace Real
-
-
 
 theorem le_exp_sq_mul_of_deriv_le {v v' : ℝ → ℝ} {a b S : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hS : 0 ≤ S)
@@ -63,8 +51,6 @@ theorem le_exp_sq_mul_of_deriv_le {v v' : ℝ → ℝ} {a b S : ℝ}
   have hmul := mul_le_mul_of_nonneg_left hstep (exp_pos (a * s ^ 2)).le
   rw [← mul_assoc, hcancel, one_mul] at hmul
   exact hmul
-
-
 
 theorem sqrt_le_exp_sq_mul_of_deriv_le {q q' : ℝ → ℝ} {a b S : ℝ}
     (ha : 0 ≤ a) (hb : 0 ≤ b) (hS : 0 ≤ S)

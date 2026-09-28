@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Connectio
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.Extensions
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -24,7 +14,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
 
 theorem contMDiffOn_mpullback (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)
     (U : Set M) (V : (y : N) → TangentSpace (𝓡 n) y)
@@ -38,7 +27,6 @@ theorem contMDiffOn_mpullback (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)
   exact ⟨p, hp, rfl⟩
 
 variable [T2Space M] [T2Space N]
-
 
 theorem homothety_iterated_connection_mpullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -68,7 +56,6 @@ theorem homothety_iterated_connection_mpullback
     homothety_connection_mpullback g h f Q hf D D' Z p hZp
       (VectorField.mpullback (𝓡 n) (𝓡 n) f Y p)
 
-
 theorem homothety_curvatureOnFields_mpullback
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hf : MetricHomothety g h f Q)
@@ -97,7 +84,6 @@ theorem homothety_curvatureOnFields_mpullback
     ← diffeomorph_mfderiv_mpullback f (VectorField.mlieBracket (𝓡 n) X Y) x,
     homothety_connection_mpullback g h f Q hf D D' Z x hZx,
     diffeomorph_mpullback_mlieBracket f X Y x hXx hYx, map_sub, map_sub]
-
 
 theorem homothety_curvature_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -129,7 +115,6 @@ theorem homothety_curvature_eq
   rw [hpull, hpull, hpull] at HC
   exact HP.trans (congrArg (mfderiv (𝓡 n) (𝓡 n) f x) HC.symm)
 
-
 theorem homothety_curvatureTensor_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hf : MetricHomothety g h f Q)
@@ -140,7 +125,6 @@ theorem homothety_curvatureTensor_eq
       (mfderiv (𝓡 n) (𝓡 n) f x z) = Q * D.curvatureTensor x u v w z := by
   unfold LeviCivitaData.curvatureTensor
   rw [homothety_curvature_eq g h f Q hf D D', hf]
-
 
 theorem homothety_sectionalCurvature_eq
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

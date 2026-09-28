@@ -5,16 +5,6 @@ import PoincareConjecture.Statements.M13Rescaling
 import PoincareConjecture.Statements.M27KappaAlternatives
 import PoincareConjecture.Statements.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

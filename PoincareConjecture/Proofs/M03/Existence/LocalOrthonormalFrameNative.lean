@@ -3,15 +3,6 @@ import Mathlib.Analysis.InnerProductSpace.GramSchmidtOrtho
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 2400000
 set_option backward.isDefEq.respectTransparency false
@@ -81,7 +72,6 @@ theorem contMDiffOn_scalar_sqrt {s : Set M} {f : M → ℝ}
     ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ (fun x => Real.sqrt (f x)) s := by
   intro x hx
   exact (Real.contDiffAt_sqrt (hzero x hx)).contMDiffAt.comp_contMDiffWithinAt x (hf x hx)
-
 
 theorem metricGramSchmidt_contMDiffOn (g : RiemannianMetric n M)
     (F : Fin n → (x : M) → TangentSpace (𝓡 n) x) {U : Set M}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalClosedFlow
 import PoincareConjecture.Proofs.M34.Standard.FlowCurvatureContinuity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S) (hSF : S ≤ F.lifetime) (hB : 0 < B)
   (hfull : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
-
-
 
 theorem closedFlow_curvatureDerivative_le (m : ℕ) {C : ℝ}
     (hbound : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
@@ -56,8 +44,6 @@ theorem closedFlow_curvatureDerivative_le (m : ℕ) {C : ℝ}
     exact hold s hs
   · exact hold t ⟨ht.1, hlt⟩
 
-
-
 theorem closedFlow_curvatureTensorNorm_le {t : ℝ} (ht : t ∈ Icc 0 S)
     (x : StandardCapSpace) :
     ((L.closedFlow P E0 hS hSF hB hfull).connection t).curvatureTensorNorm x ≤ B := by
@@ -66,8 +52,6 @@ theorem closedFlow_curvatureTensorNorm_le {t : ℝ} (ht : t ∈ Icc 0 S)
       rw [LeviCivitaData.curvatureDerivativeNorm_zero]
       exact hfull s hs y) ht x
   simpa only [LeviCivitaData.curvatureDerivativeNorm_zero] using h
-
-
 
 theorem closedFlow_curvatureDerivative_bound (m : ℕ) :
     ∃ C : ℝ, 0 < C ∧ ∀ t ∈ Icc 0 S, ∀ x : StandardCapSpace,

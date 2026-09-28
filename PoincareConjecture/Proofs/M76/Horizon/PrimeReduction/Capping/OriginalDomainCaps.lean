@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topo
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTerminalPair
 import PoincareConjecture.Proofs.M76.RelativeApproximation.InteriorSourceModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -21,9 +12,6 @@ open Set Metric Geometry Geometry.SeparatedSphereCaps
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_original_domain_capped_complex
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Fintype κ] [DecidableEq κ]

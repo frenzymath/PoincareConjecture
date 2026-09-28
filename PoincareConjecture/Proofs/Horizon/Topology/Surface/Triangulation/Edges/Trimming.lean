@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Paths.Trimming
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.DisjointCollars
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -22,8 +12,6 @@ universe u v
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_trimmed_disjoint_chart_arc_collars
     {I : Type v} [Finite I] (p : I → M) (f : I → ℝ → EuclideanSpace ℝ (Fin 2))

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.ReflectedDeckField
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +11,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
 
 theorem exists_reflected_pair_in_chart_ball :
     ∃ (q : UnitTwoSphere) (x y : V) (R : ℝ), 0 < R ∧

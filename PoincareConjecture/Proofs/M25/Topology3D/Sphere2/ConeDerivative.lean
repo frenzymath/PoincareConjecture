@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Services
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.RadialCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -20,13 +10,9 @@ namespace PoincareConjecture.M25.Topology3D
 
 private instance sphereDimensionFact : Fact (Module.finrank ℝ E3 = 2 + 1) := ⟨by simp⟩
 
-
-
 noncomputable def sphereConeExtension (q0 : UnitTwoSphere)
     (f : UnitTwoSphere → UnitTwoSphere) (x : E3) : E3 :=
   ‖x‖ • (f (unitRadialProjection q0 x) : E3)
-
-
 
 @[simp] theorem sphereConeExtension_apply_sphere (q0 q : UnitTwoSphere)
     (f : UnitTwoSphere → UnitTwoSphere) :
@@ -34,15 +20,11 @@ noncomputable def sphereConeExtension (q0 : UnitTwoSphere)
   simp only [sphereConeExtension, norm_eq_of_mem_sphere q,
     unitRadialProjection_apply_coe, one_smul]
 
-
-
 @[simp] theorem norm_sphereConeExtension (q0 : UnitTwoSphere)
     (f : UnitTwoSphere → UnitTwoSphere) (x : E3) :
     ‖sphereConeExtension q0 f x‖ = ‖x‖ := by
   rw [sphereConeExtension, norm_smul, Real.norm_of_nonneg (norm_nonneg x),
     norm_eq_of_mem_sphere, mul_one]
-
-
 
 theorem sphereConeExtension_pos_smul (q0 : UnitTwoSphere)
     (f : UnitTwoSphere → UnitTwoSphere) {a : ℝ} (ha : 0 < a) (x : E3) :
@@ -50,8 +32,6 @@ theorem sphereConeExtension_pos_smul (q0 : UnitTwoSphere)
   rw [sphereConeExtension, unitRadialProjection_pos_smul q0 ha,
     norm_smul, Real.norm_of_nonneg ha.le, mul_smul]
   rfl
-
-
 
 theorem sphereConeExtension_symm_apply_apply (q0 : UnitTwoSphere)
     (f : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) (x : E3) :
@@ -66,8 +46,6 @@ theorem sphereConeExtension_symm_apply_apply (q0 : UnitTwoSphere)
     unitRadialProjection_coe_of_ne_zero q0 hx, smul_smul,
     mul_inv_cancel₀ (norm_ne_zero_iff.mpr hx), one_smul]
 
-
-
 theorem contDiffAt_sphereConeExtension (q0 : UnitTwoSphere)
     (f : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) {x : E3} (hx : x ≠ 0) :
     ContDiffAt ℝ ∞ (sphereConeExtension q0 f) x := by
@@ -78,9 +56,6 @@ theorem contDiffAt_sphereConeExtension (q0 : UnitTwoSphere)
     (((contMDiff_coe_sphere (n := 2) (m := ∞)).comp f.contMDiff).contMDiffAt.comp x
       hπ).contDiffAt
   exact (contDiffAt_norm ℝ hx).smul hF
-
-
-
 
 theorem exists_sphereConeExtension_derivative_equiv (q0 p : UnitTwoSphere)
     (f : UnitTwoSphere ≃ₘ⟮𝓡 2, 𝓡 2⟯ UnitTwoSphere) :

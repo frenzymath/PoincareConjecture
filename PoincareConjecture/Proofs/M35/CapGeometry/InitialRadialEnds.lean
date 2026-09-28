@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.InitialRadialComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,8 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem exists_initial_radial_cap_ends
     (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}

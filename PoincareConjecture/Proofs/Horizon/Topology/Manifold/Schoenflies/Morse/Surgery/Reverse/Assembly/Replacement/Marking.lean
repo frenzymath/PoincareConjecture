@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Models.ClosedMarking
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_ambient_disk_marking
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -52,7 +48,6 @@ theorem exists_ambient_disk_marking
   intro x hx
   rw [hm x hx]
   exact B.apply_symm_apply (g x)
-
 
 theorem exists_ambient_disk_marking_at_radius
     (B : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)

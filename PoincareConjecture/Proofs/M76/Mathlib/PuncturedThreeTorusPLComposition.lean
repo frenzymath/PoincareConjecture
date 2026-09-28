@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedThreeTorusCompression
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedChartCompressionPL
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TorusCube
-
-
-
-
-
 
 theorem exists_punctured_PL_immersion_of_bands
     (p : ℝ) [Fact (0 < p)] {d : ℝ} (hd : 0 < d) (hdhalf : d < p / 2)

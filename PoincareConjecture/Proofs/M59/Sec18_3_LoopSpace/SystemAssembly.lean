@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RelativePostcomposition
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.SphereQuotient
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.CircleQuotient
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -23,8 +14,6 @@ open scoped Manifold ContDiff Topology unitInterval
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure M59ComparisonService where
   comparison : ∀ {M : Type u} [TopologicalSpace M]
@@ -52,9 +41,6 @@ structure M59ComparisonService where
         (surgeryHomotopyMap (n := 2) L.map (L.map_based based) alpha) =
       surgeryHomotopyMap (n := 3) f based (comparison compactM connectedM x piTwoM alpha)
 
-
-
-
 def M59FreeClassFaithfulness (q : M59SphereQuotient) : Prop :=
   ∀ {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
@@ -66,8 +52,6 @@ def M59FreeClassFaithfulness (q : M59SphereQuotient) : Prop :=
       M59NormalizedAt q x Gamma → M59NormalizedAt q x Delta →
       (m59FamilyMap Gamma).Homotopic (m59FamilyMap Delta) →
         familySigmaClass Gamma = familySigmaClass Delta
-
-
 
 noncomputable def m59IdentificationCore_of_comparison_and_free_class
     (q : M59SphereQuotient) (C : M59ComparisonService.{u}) (hfree : M59FreeClassFaithfulness.{u} q)
@@ -88,9 +72,6 @@ noncomputable def m59IdentificationCore_of_comparison_and_free_class
       (hfree hcompact hconnected x hpi Gamma Delta hGamma hDelta h)
   relative_surjective := m59_relative_surjective m59CircleQuotient.pole x
   relative_faithful := m59_relative_faithful m59CircleQuotient.pole x hpi
-
-
-
 
 noncomputable def m59IdentificationSystem_of_comparison_and_free_class
     (C : M59ComparisonService.{u}) (hfree : M59FreeClassFaithfulness.{u} m59SphereQuotient) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.SaddleOrientationPrimitives
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularLevelField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Function
@@ -87,9 +78,6 @@ private theorem collar_arc_orthogonality
     have heq := hd.deriv
     rw [hHG, deriv_const] at heq
     exact heq.symm
-
-
-
 
 theorem collar_arc_orientation
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

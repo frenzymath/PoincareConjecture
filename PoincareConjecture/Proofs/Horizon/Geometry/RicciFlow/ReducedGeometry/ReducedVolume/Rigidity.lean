@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedVolume.Theory
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem IsStaticEuclideanFlowOn.scalarCurvature_eq_zero
     {J : Set ℝ} {F : RicciFlow n M J} {a b t : ℝ}
@@ -40,8 +29,6 @@ theorem IsStaticEuclideanFlowOn.scalarCurvature_eq_zero
     rw [hz.derivWithin hd] at hderiv
     linarith
   simp only [LeviCivitaData.scalarCurvature, hRic, Finset.sum_const_zero]
-
-
 
 theorem reducedVolume_lt_euclidean_of_scalar_pos
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

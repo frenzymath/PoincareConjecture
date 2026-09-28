@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Immersion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -20,13 +13,11 @@ variable {m n : ℕ} {M N : Type*}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
 
-
 noncomputable def parametrizedVolumeDensity (g : RiemannianMetric n N)
     (e : EuclideanSpace ℝ (Fin m) → N) (x : EuclideanSpace ℝ (Fin m)) : ℝ :=
   Real.sqrt (Matrix.of (fun i j : Fin m => g.inner (e x)
     (mfderiv (𝓡 m) (𝓡 n) e x (EuclideanSpace.basisFun (Fin m) ℝ i))
     (mfderiv (𝓡 m) (𝓡 n) e x (EuclideanSpace.basisFun (Fin m) ℝ j)))).det
-
 
 theorem parametrizedVolumeDensity_congr (g : RiemannianMetric n N)
     {e₁ e₂ : EuclideanSpace ℝ (Fin m) → N} {x : EuclideanSpace ℝ (Fin m)}
@@ -34,8 +25,6 @@ theorem parametrizedVolumeDensity_congr (g : RiemannianMetric n N)
     g.parametrizedVolumeDensity e₁ x = g.parametrizedVolumeDensity e₂ x := by
   unfold parametrizedVolumeDensity
   rw [he.eq_of_nhds, he.mfderiv_eq]
-
-
 
 theorem pullbackVolumeDensity_induced (g : RiemannianMetric n N)
     (F : M → N) (hF : ContMDiff (𝓡 m) (𝓡 n) ∞ F)

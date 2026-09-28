@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangularCornerRimIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedFinitePLBallCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -20,11 +10,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_small_pointed_rim_width_intervals
     {d b : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d b)

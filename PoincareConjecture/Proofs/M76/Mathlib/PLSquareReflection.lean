@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLStripEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLStrip
-
-
 
 def flipHeight : square ≃ₜ square where
   toFun p := ⟨((p : ℝ × ℝ).1, 1 - (p : ℝ × ℝ).2), p.property.1,
@@ -34,8 +23,6 @@ def flipHeight : square ≃ₜ square where
     (continuous_const.sub (continuous_snd.comp continuous_subtype_val))).subtype_mk _
   continuous_invFun := ((continuous_fst.comp continuous_subtype_val).prodMk
     (continuous_const.sub (continuous_snd.comp continuous_subtype_val))).subtype_mk _
-
-
 
 theorem isFinitePL_flipHeight : flipHeight.IsFinitePL := by
   let X : (ℝ × ℝ) →ᴬ[ℝ] ℝ := (ContinuousLinearMap.fst ℝ ℝ ℝ).toContinuousAffineMap

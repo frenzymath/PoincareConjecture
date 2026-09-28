@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient.Flow.ManifoldExpansion
 import Mathlib.Analysis.Calculus.ImplicitContDiff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +8,6 @@ open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
 
 private theorem exists_smooth_scalar_implicit_function
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -69,7 +60,6 @@ private theorem exists_smooth_scalar_implicit_function
       exact Prod.ext he₂.symm rfl
     exact ⟨hpair ▸ hes (e.map_target hz), hpair ▸ he₁⟩
 
-
 private theorem hitting_time_control
     {F : ℝ → ℝ} {F' : ℝ → ℝ} {δ c s : ℝ}
     (hδ : 0 < δ) (hc : 0 < c) (hs : s ∈ Ioo (-δ) δ)
@@ -116,8 +106,6 @@ private theorem scalar_derivative_along_curve
   simpa [mvfderiv, NormedSpace.fromTangentSpace] using hd'
 
 end PoincareConjecture.LeviCivitaData
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_smooth_normalizedGradient_hitting_map
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

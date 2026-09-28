@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M04.ConnectionScalar
 import PoincareConjecture.Proofs.M04.MetricPairings
 import Mathlib.Tactic.FinCases
 
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

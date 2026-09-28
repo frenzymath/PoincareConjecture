@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.CompactChartMargin
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 import Mathlib.Data.Fintype.EquivFin
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -22,9 +13,6 @@ variable {E F N : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [TopologicalSpace F]
   [MetricSpace N] [ChartedSpace F N]
-
-
-
 
 theorem exists_finite_relative_charts (f₀ : C(E, N)) {K O : Set E}
     (hK : IsCompact K) (hO : IsOpen O) (hKO : K ⊆ O) :

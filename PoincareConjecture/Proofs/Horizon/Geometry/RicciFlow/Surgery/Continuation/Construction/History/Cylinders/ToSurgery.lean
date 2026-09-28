@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Cylinders.Slabs
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Events.Separation
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -31,8 +21,6 @@ variable {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}
   (htime : ∀ s ∈ J, origin + s / scale ∈ G.interval)
 
 include W hInterval hJ
-
-
 
 theorem cylinder_event_coordinates (s : ℝ) (hs : s ∈ J)
     (hT : origin + s / scale ∈ F.surgery_times)
@@ -106,7 +94,6 @@ variable (hRange : ∀ t ht, range (h.forward t ht) = m33RegularRegion F t)
 
 include hRange
 
-
 def toSurgeryCylinder : SurgeryFlowCylinder F C origin scale J U := by
   refine {
     scale_pos := e.scale_pos
@@ -176,7 +163,6 @@ theorem toSurgeryCylinder_pullbackInner (hU : IsOpen U)
   exact congrArg (scale * ·) (h.metric_pullback (origin + s / scale) (htime s hs)
     (e.forward s hs x) (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x v)
       (mfderiv (𝓡 3) (𝓡 3) (e.forward s hs) x w))
-
 
 theorem cylinders_to_surgery (hU : IsOpen U) :
     ∃ d : SurgeryFlowCylinder F C origin scale J U,

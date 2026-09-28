@@ -1,17 +1,8 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SignedAxisPermutations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76.Dehn
-
 
 def reflectedCycleClosingFrame (first last frameFirst frameLast : SignedAxisPermutation) :
     SignedAxisPermutation :=
@@ -26,7 +17,6 @@ theorem reflectedCycleClosingFrame_agreement
     SignedAxisPermutation.diamond_trans_apply (frameFirst.trans first) (frameLast.trans last).symm,
     ← SignedAxisPermutation.diamond_trans_apply frameLast last,
     SignedAxisPermutation.diamond_apply_symm, SignedAxisPermutation.diamond_trans_apply]
-
 
 theorem exists_reflected_cycle_frames (n : ℕ)
     (left right : Fin (n + 2) → SignedAxisPermutation)

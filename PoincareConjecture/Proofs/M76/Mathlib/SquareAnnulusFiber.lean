@@ -1,31 +1,16 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusImage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PLAnnularStrip
 
-
-
 theorem coordinate_mem_Icc {L s t : ℝ}
     (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) :
     coordinate L s t ∈ Icc t (L - t) := by
   rw [← coordinate_image_Icc ht]
   exact mem_image_of_mem _ hs
-
-
-
 
 theorem stripRotation_transverse_injective {L d : ℝ} (hwidth : 4 * d < L)
     {p q : ℝ × ℝ} (hp : p ∈ rectangle L d) (hq : q ∈ rectangle L d)
@@ -42,8 +27,6 @@ theorem stripRotation_transverse_injective {L d : ℝ} (hwidth : 4 * d < L)
   fin_cases i <;> fin_cases j <;> dsimp [stripRotation, stripMap] at h₁ h₂ <;>
     linarith [hu.1, hu.2, hv.1, hv.2, hp.2.1, hp.2.2, hq.2.1, hq.2.2]
 
-
-
 theorem coordinate_eq_initial_iff {L s t : ℝ}
     (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) :
     coordinate L s t = t ↔ s = 0 := by
@@ -56,8 +39,6 @@ theorem coordinate_eq_initial_iff {L s t : ℝ}
     exact h
   · rintro rfl
     exact (coordinate_endpoints ht).1
-
-
 
 theorem coordinate_eq_terminal_iff {L s t : ℝ}
     (ht : 4 * |t| < L) (hs : s ∈ Icc 0 L) :

@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M09.RealizedSquareVariation
 import PoincareConjecture.Proofs.M09.VariationHessianComparison
 import PoincareConjecture.Proofs.M09.LocalHessianTrace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

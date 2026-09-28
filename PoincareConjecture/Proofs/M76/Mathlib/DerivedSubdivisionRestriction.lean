@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
 
 theorem derivedSubdivision_faces_of_ambient_centers (c : Finset E → E)
     (hc : ∀ s ∈ K.faces, ∃ w : E → ℝ, (∀ v ∈ s, 0 < w v) ∧
@@ -54,8 +42,6 @@ theorem derivedSubdivision_faces_of_ambient_centers (c : Finset E → E)
       rw [← Finset.image_image, Finset.attach_image_val]
 
 omit [DecidableEq E] in
-
-
 
 theorem derivedSubdivision_mono {L : SimplicialComplex ℝ E} [Fintype L.faces]
     (hKL : K ≤ L) (c : Finset E → E)

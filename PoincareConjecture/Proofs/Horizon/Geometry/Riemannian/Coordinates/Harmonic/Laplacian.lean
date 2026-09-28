@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.MetricExtension
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Laplacian.Harmonic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +13,6 @@ namespace PoincareConjecture
 namespace LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 lemma laplacian_coordinate_eq_neg_christoffel_trace (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) (j : Fin n) :
@@ -38,8 +27,6 @@ lemma laplacian_coordinate_eq_neg_christoffel_trace (D : LeviCivitaData g)
     funext fun _ => ContinuousLinearMap.fderiv _
   rw [hd] at h
   simpa [RiemannianMetric.euclideanCoefficients] using! h
-
-
 
 lemma laplacian_coordinate_eq_zero_of_coefficients (D : LeviCivitaData g)
     {B : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -59,9 +46,6 @@ lemma laplacian_coordinate_eq_zero_of_coefficients (D : LeviCivitaData g)
 end LeviCivitaData
 
 namespace RiemannianMetric
-
-
-
 
 lemma exists_harmonic_realization_on_ball
     {n : ℕ} {r R a b : ℝ} (hr : 0 < r) (hrR : r < R)

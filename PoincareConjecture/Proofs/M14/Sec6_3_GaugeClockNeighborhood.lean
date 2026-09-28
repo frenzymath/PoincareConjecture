@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeTimeDirection
 import PoincareConjecture.Proofs.M14.Mathlib.IntervalRelativeNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
-
 
 theorem gauge_has_later_time (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
@@ -77,18 +64,12 @@ theorem gauge_has_later_time (b : G.gaugeCover.index)
   rw [hzero] at hnorm
   exact (zero_ne_one : (0 : ℝ) ≠ 1) hnorm
 
-
-
-
 theorem gauge_timeDomain_mem_nhdsWithin (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)
     (x₀ : G.gaugeCover.spatial b) :
     (G.gaugeCover.interval b).domain ∈ 𝓝[I.domain] t₀.val :=
   ordConnected_mem_nhdsWithin_of_directions (G.gaugeCover.interval b).ordConnected
     t₀.property (gauge_has_earlier_time b t₀ x₀) (gauge_has_later_time b t₀ x₀)
-
-
-
 
 theorem gauge_squareClock_mem_nhdsWithin (b : G.gaugeCover.index)
     (t₀ : (G.timeIntervals.interval (G.gaugeCover.interval b)).Point)

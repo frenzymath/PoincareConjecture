@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.TerminalCylinder
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.AmbientTransport
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -15,8 +9,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -33,8 +25,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem exists_lower_terminal_cylindrical_preparation
     {v : E3} {g : S2 → E3} {B : Set Real}
@@ -91,9 +81,6 @@ theorem exists_lower_terminal_cylindrical_preparation
   simp only [Hemisphere.Plane,
     Submodule.orthogonalProjectionOnto_orthogonalComplement_singleton_eq_zero,
     smul_zero, add_zero]
-
-
-
 
 theorem exists_prepared_cylindrical_lower_terminal_end_normalization
     {v : E3} {g : S2 → E3} {B : Set Real}

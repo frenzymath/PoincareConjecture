@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.OpenRegionEquivalences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A B : GeneralizedSliceCarrier.{u}}
-
 
 def comparisonCentralSphere
     (c : PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3)
@@ -36,7 +26,6 @@ variable
 
 include ha hc
 
-
 theorem comparisonCentral_source :
     Set.univ ×ˢ ({0} : Set ℝ) ⊆ c.source := by
   rintro z ⟨hz, hs⟩
@@ -45,17 +34,14 @@ theorem comparisonCentral_source :
   exact ⟨hz, by simpa only [hs0] using neg_neg_of_pos ha,
     by simpa only [hs0] using ha⟩
 
-
 theorem comparisonCentral_subset_target : comparisonCentralSphere c ⊆ c.target := by
   rintro _ ⟨z, hz, rfl⟩
   exact c.map_source (comparisonCentral_source c ha hc hz)
-
 
 theorem comparisonCentral_isClosed : IsClosed (comparisonCentralSphere c) := by
   apply IsCompact.isClosed
   exact (isCompact_univ.prod isCompact_singleton).image_of_continuousOn
     (c.contMDiffOn_toFun.continuousOn.mono (comparisonCentral_source c ha hc))
-
 
 theorem comparisonCentral_mem_iff {z : RoundCylinderSpace} (hz : z ∈ c.source) :
     c z ∈ comparisonCentralSphere c ↔ z.2 = 0 := by
@@ -78,18 +64,15 @@ variable
   (E : SurgeryRegionEquivalence A B
     (comparisonCentralSphere cA)ᶜ (comparisonCentralSphere cB)ᶜ)
 
-
 noncomputable def twoChartComparisonMap (x : A.carrier) : B.carrier := by
   classical
   exact if x ∈ comparisonCentralSphere cA then cB (cA.symm x) else E.map x
-
 
 theorem twoChartComparisonMap_complement {x : A.carrier}
     (hx : x ∉ comparisonCentralSphere cA) :
     twoChartComparisonMap cA cB E x = E.map x := by
   classical
   simp only [twoChartComparisonMap, if_neg hx]
-
 
 theorem twoChartComparisonMap_central {x : A.carrier}
     (hx : x ∈ comparisonCentralSphere cA) :
@@ -180,9 +163,6 @@ theorem twoChartComparisonMap_smooth :
     filter_upwards [hopen.mem_nhds hx] with y hy
     exact twoChartComparisonMap_complement cA cB E hy
 
-
-
-
 noncomputable def twoChartComparisonDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞ where
   toFun := twoChartComparisonMap cA cB E
@@ -194,12 +174,10 @@ noncomputable def twoChartComparisonDiffeomorph :
   contMDiff_invFun := twoChartComparisonMap_smooth cB cA (reverseRegions E)
     ha hcB hcA (twoChartComparison_inverse_matching cA cB E ha hcA hmatch)
 
-
 theorem twoChartComparisonDiffeomorph_complement {x : A.carrier}
     (hx : x ∉ comparisonCentralSphere cA) :
     twoChartComparisonDiffeomorph cA cB E ha hcA hcB hmatch x = E.map x :=
   twoChartComparisonMap_complement cA cB E hx
-
 
 theorem twoChartComparisonDiffeomorph_collar {z : RoundCylinderSpace}
     (hz : z ∈ Set.univ ×ˢ Set.Ioo (-a) a) :

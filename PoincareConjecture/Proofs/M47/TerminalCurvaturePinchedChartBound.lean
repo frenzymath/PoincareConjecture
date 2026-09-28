@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsPinchedOperator
 import PoincareConjecture.Proofs.M47.TerminalCurvatureOriginalChartBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -87,8 +78,6 @@ variable (S : RepairedControlledSchedulesData.{u})
 
 include htau hcoeff hGood hmetric hQ hphi hsigma hjet P
 
-
-
 theorem terminalGerms_original_chart_operator_of_first_failure :
     ∀ i t, t ∈ Icc (-tau i) 0 → ∀ x,
       ((G i).connection t).NonnegativeCurvatureOperator x := by
@@ -102,8 +91,6 @@ theorem terminalGerms_original_chart_operator_of_first_failure :
     (Fseq i) (C i) (hGood i) (hmetric i) (hQ i)
   intro eta heta
   exact hsigma.tendsto_atTop.eventually (hsource eta heta)
-
-
 
 theorem terminalCurvature_bound_of_pinched_original_charts
     {epsilon1 epsilon A Hscalar : ℝ} (hM45 : M45SmallNeckScaleBound.{u} epsilon1)

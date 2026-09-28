@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M54.Mathlib.LocalPathTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped unitInterval
 namespace ContinuousMap
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 def toPath (p : C(unitInterval, X)) : Path (p 0) (p 1) where
   toContinuousMap := p
@@ -32,8 +21,6 @@ namespace Path.Homotopic.Quotient
 variable {X : Type*} [TopologicalSpace X] (b : X)
     (tails : ∀ x : X, Joined b x → Path.Homotopic.Quotient b x)
 
-
-
 noncomputable def basedTransport {x y : X} (p : Path.Homotopic.Quotient x y) :
     (FundamentalGroup X b)ᵐᵒᵖ := by
   classical
@@ -41,21 +28,15 @@ noncomputable def basedTransport {x y : X} (p : Path.Homotopic.Quotient x y) :
     MulOpposite.op ((tails x hx).trans (p.trans (tails y (hx.trans ⟨p.out⟩)).symm))
   else 1
 
-
-
 theorem basedTransport_of_joined {x y : X} (p : Path.Homotopic.Quotient x y)
     (hx : Joined b x) (hy : Joined b y) :
     basedTransport b tails p =
       MulOpposite.op ((tails x hx).trans (p.trans (tails y hy).symm)) := by
   simp only [basedTransport, dif_pos hx]
 
-
-
 theorem basedTransport_of_not_joined {x y : X} (p : Path.Homotopic.Quotient x y)
     (hx : ¬ Joined b x) : basedTransport b tails p = 1 := by
   simp only [basedTransport, dif_neg hx]
-
-
 
 @[simp] theorem basedTransport_cast {x y x' y' : X}
     (p : Path.Homotopic.Quotient x y) (hx : x' = x) (hy : y' = y) :
@@ -63,8 +44,6 @@ theorem basedTransport_of_not_joined {x y : X} (p : Path.Homotopic.Quotient x y)
   subst x'
   subst y'
   rw [cast_rfl_rfl]
-
-
 
 @[simp] theorem basedTransport_refl (x : X) :
     basedTransport b tails (refl x) = 1 := by
@@ -78,8 +57,6 @@ theorem basedTransport_of_not_joined {x y : X} (p : Path.Homotopic.Quotient x y)
 private theorem symm_trans_cancel {x y z : X} (p : Path.Homotopic.Quotient x y)
     (q : Path.Homotopic.Quotient y z) : p.symm.trans (p.trans q) = q := by
   rw [← trans_assoc, symm_trans, refl_trans]
-
-
 
 theorem basedTransport_trans {x y z : X}
     (p : Path.Homotopic.Quotient x y) (q : Path.Homotopic.Quotient y z) :
@@ -108,7 +85,6 @@ namespace ContinuousMap
 variable {X : Type*} [TopologicalSpace X]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem square_boundary_homotopic (H : C(unitInterval × unitInterval, X)) :
     ((H.horizontalPath 0).toPath.trans (H.verticalPath 1).toPath).Homotopic
@@ -139,26 +115,19 @@ namespace Path.Homotopic.Quotient
 variable {X : Type*} [TopologicalSpace X] (b : X)
     (tails : ∀ x : X, Joined b x → Path.Homotopic.Quotient b x)
 
-
-
 noncomputable def basedContinuousTransport (p : C(unitInterval, X)) :
     (FundamentalGroup X b)ᵐᵒᵖ := basedTransport b tails (mk p.toPath)
-
-
 
 @[simp] theorem basedContinuousTransport_path {x y : X} (p : Path x y) :
     basedContinuousTransport b tails p.toContinuousMap = basedTransport b tails (mk p) := by
   have hp : p.toContinuousMap.toPath = p.cast p.source p.target := by ext t; rfl
   rw [basedContinuousTransport, hp, mk_cast, basedTransport_cast]
 
-
-
 @[simp] theorem basedContinuousTransport_const (x : X) :
     basedContinuousTransport b tails (.const _ x) = 1 :=
   basedTransport_refl b tails x
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem basedContinuousTransport_square (H : C(unitInterval × unitInterval, X)) :
     basedContinuousTransport b tails (H.horizontalPath 0) *

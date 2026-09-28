@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalClosedSlabHandleHomotopies
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyClosedSides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +14,6 @@ local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "B0" => latticeHandleBoundary (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
-
-
-
-
 
 theorem hamiltonZero_slab_side_preimages (phi : C(H0, H0))
     {a b : ℝ} (ha : 0 < a) (hab : a < b) (hb : b < 4 * 16)
@@ -91,11 +76,6 @@ theorem hamiltonZero_slab_side_preimages (phi : C(H0, H0))
   exact ⟨hclosed, hinterior, by rw [preimage_compl, hinterior]⟩
 
 open Classical in
-
-
-
-
-
 
 theorem exists_hamiltonZero_slab_preserving_adjustment {ι κ : Type*}
     (e : ι → OpenPartialHomeomorph X0 V3)

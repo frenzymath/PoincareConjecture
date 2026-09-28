@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.DistinctPowers
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +8,6 @@ open Set Function
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem loopPowerThreshold_orbit_displacement {s ell : ℝ}
     (hs : 0 < s) (hell : 0 ≤ ell) (N : ℕ)
@@ -49,8 +38,6 @@ theorem loopPowerThreshold_orbit_displacement {s ell : ℝ}
   rw [hscale]
   nlinarith [hbig]
 
-
-
 theorem loopPowerThreshold_orbit_energy {s ell : ℝ}
     (hs : 0 < s) (hell : 0 ≤ ell) (N : ℕ)
     (hshort : ell ≤ loopPowerThreshold s N) :
@@ -70,8 +57,6 @@ theorem loopPowerThreshold_orbit_energy {s ell : ℝ}
   constructor
   · nlinarith
   · nlinarith [mul_le_mul_of_nonneg_right hNb (sq_nonneg delta), sq_pos_of_pos hb]
-
-
 
 theorem loopPowerThreshold_quarter_margin {s ell : ℝ}
     (hs : 0 < s) (hell : 0 ≤ ell) (N : ℕ)
@@ -96,7 +81,6 @@ theorem loopPowerThreshold_quarter_margin {s ell : ℝ}
   rw [mul_add, hscale]
   nlinarith
 
-
 theorem loopOrbitRadius_le_quarter {s : ℝ} (hs : 0 < s) (N : ℕ) :
     loopOrbitRadius s N ≤ s / 4 := by
   have hpow : (1 : ℝ) ≤ (2 : ℝ) ^ N := one_le_pow₀ (by norm_num)
@@ -104,8 +88,6 @@ theorem loopOrbitRadius_le_quarter {s : ℝ} (hs : 0 < s) (N : ℕ) :
   unfold loopOrbitRadius
   apply (div_le_iff₀ (by positivity : 0 < 16 * (2 : ℝ) ^ N)).mpr
   nlinarith
-
-
 
 theorem deck_motion_iterates_mem_quarter_ball
     {n : ℕ} {M : Type*} {f : EuclideanSpace ℝ (Fin n) → M} {s : ℝ}

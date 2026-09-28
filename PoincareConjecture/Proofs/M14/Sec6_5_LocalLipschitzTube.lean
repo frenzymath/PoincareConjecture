@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_JointNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,10 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
-
 
 theorem exists_survivor_gauge_tube (E : M14ExponentialFamily G T x)
     {Z : G.Horizontal x} {s : ℝ} (hsurv : (Z, s) ∈ E.domain) (hs : 0 < s) :

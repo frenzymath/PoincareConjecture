@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Plateau.BeltramiSobolev
 import Mathlib.Analysis.Calculus.SmoothSeries
 import Mathlib.MeasureTheory.Function.LpSpace.InfiniteSum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -104,12 +94,6 @@ private theorem beurling_eq_neumann_sum_ae (μ a h : 𝓢(ℂ, ℂ))
     Lp.coeFn_tsum (tsum_enorm_ne_top_iff_summable_norm.mpr hBsum), hterms] with z hz hsz htz
   rw [hz, hBeq, hsz]
   exact tsum_congr (fun n => (htz n).symm)
-
-
-
-
-
-
 
 theorem exists_schwartz_beltrami_forcing (μ : 𝓢(ℂ, ℂ))
     (hμ : HasCompactSupport (μ : ℂ → ℂ)) {k : ℝ} (hk : k < 1)

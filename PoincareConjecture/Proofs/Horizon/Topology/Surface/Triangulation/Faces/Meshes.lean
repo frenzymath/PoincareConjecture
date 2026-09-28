@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Meshes.Subdivision.Lines
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.BoundaryMaps
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Topology
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,7 +10,6 @@ open scoped Manifold ContDiff Topology
 open Poincare.Topology.Plane.Meshes
 
 namespace PoincareConjecture.Topology.Surface
-
 
 noncomputable def meshTriangleBasis (mesh : TriangleMesh) (t : mesh.Triangle) :
     AffineBasis (Fin 3) ℝ Plane :=
@@ -63,8 +51,6 @@ private theorem mesh_oppositeEdgePoints_hull (mesh : TriangleMesh)
     Finset.image_singleton, Finset.coe_insert, Finset.coe_singleton, convexHull_pair,
     affineSegment_eq_segment]
   rfl
-
-
 
 theorem meshTriangleBasis_pair_intersections (mesh : TriangleMesh)
     (s t : mesh.Triangle) (hst : s ≠ t) :
@@ -128,8 +114,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace Plane M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_smoothFaces_of_triangleMesh (mesh : TriangleMesh)
     (F : OpenPartialHomeomorph Plane M)
@@ -219,8 +203,6 @@ theorem exists_smoothFaces_of_triangleMesh (mesh : TriangleMesh)
         exact hvs
       rw [← hj]
       exact hvertexfront s j
-
-
 
 theorem exists_normalized_smoothFaces_of_triangleMesh (mesh : TriangleMesh)
     (F : OpenPartialHomeomorph Plane M)

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.SlopeRegularity
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63SmoothReactionBounds (F : RicciFlow n M (Icc a b))
     (c : ℝ → ℝ → M) (hc : M62ShrinkingCurve F c) {K0 K1 K2 : ℝ}
@@ -52,8 +38,6 @@ theorem m63SmoothReactionBounds (F : RicciFlow n M (Icc a b))
     exact hQ ⟨(y, t), ⟨Ico_subset_Icc_self hy, Ioo_subset_Icc_self ht⟩, rfl⟩
   have hnonneg := M62.curvatureSquared_nonneg F c t x
   constructor <;> linarith
-
-
 
 theorem m63SmoothSlope_lower {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)
@@ -91,9 +75,6 @@ theorem m63SmoothSlope_lower {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
       simp only [m62ArcSecondDerivative, m62ArcDerivative, zero_mul, add_zero]
       exact le_rfl) hinit
   exact fun t ht x => h x t ht
-
-
-
 
 theorem m63SmoothRamp_preserved {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (c : ℝ → ℝ → P.charts.Point)

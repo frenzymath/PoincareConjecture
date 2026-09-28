@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M15.Lemma8_7_SpatialLift
 import PoincareConjecture.Proofs.M15.Lemma8_7_LiftedVelocity
 import PoincareConjecture.Definitions.M14PathCalculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem squareRootPath_lift_speed_eq
     {n : ℕ} {X : Type u} [TopologicalSpace X]

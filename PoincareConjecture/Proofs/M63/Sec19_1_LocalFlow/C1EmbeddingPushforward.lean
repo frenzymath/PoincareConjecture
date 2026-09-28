@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.GeodesicConnection
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +21,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem hasDerivAt_embedding_pushforward_of_contMDiffAt_one
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {e : M → W}

@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

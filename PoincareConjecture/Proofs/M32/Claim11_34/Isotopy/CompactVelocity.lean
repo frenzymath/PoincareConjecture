@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.Isotopy.LocalVelocity
 import PoincareConjecture.Proofs.M32.Mathlib.CompactBumpPartition
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,11 +14,6 @@ namespace PoincareConjecture.M32
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
-
 
 theorem exists_compactly_supported_sphere_velocity
     {F : ℝ × UnitTwoSphere → M}

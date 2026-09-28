@@ -1,14 +1,6 @@
 import Mathlib.Geometry.Manifold.ChartedSpace
 import Mathlib.Topology.Perfect
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +11,6 @@ variable {H X : Type*} [TopologicalSpace H] [PerfectSpace H]
   [TopologicalSpace X] [ChartedSpace H X]
 
 include H in
-
 
 theorem dense_compl_singleton_of_charted (p : X) : Dense ({p}ᶜ : Set X) := by
   apply dense_compl_singleton_iff_not_open.mpr

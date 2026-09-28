@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M04.ScalarEstimates
 import PoincareConjecture.Proofs.Ch02.ScalarComparison
 import PoincareConjecture.Proofs.M04.ScalarEvolution
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -22,7 +14,6 @@ section GeneralDimension
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem scalarCurvature_velocity_lowerBound {J : Set ℝ} (F : RicciFlow n M J)
     (hn : 0 < n) (t : ℝ) (ht : t ∈ J) (x : M)
@@ -43,8 +34,6 @@ theorem scalarCurvature_velocity_lowerBound {J : Set ℝ} (F : RicciFlow n M J)
         2 * (((F.connection t).scalarCurvature x) ^ 2 / (n : ℝ)) := by ring
     _ ≤ _ := by linarith
 
-
-
 theorem scalarCurvature_lowerBound [CompactSpace M] {a b : ℝ}
     (F : RicciFlow n M (Set.Ico a b)) (hab : a < b) (hn : 0 < n)
     (r0 : ℝ) (hr0 : r0 < 0)
@@ -61,7 +50,6 @@ theorem scalarCurvature_lowerBound [CompactSpace M] {a b : ℝ}
     (F.scalarCurvature_velocity_lowerBound hn) hinit
 
 end GeneralDimension
-
 
 theorem scalarCurvature_lowerBound_three
     {M : Type u} [TopologicalSpace M]

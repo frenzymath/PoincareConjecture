@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.DistanceControl
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter Metric Poincare.Gluing
 open scoped Topology NNReal Manifold ContDiff
@@ -20,8 +12,6 @@ variable {ι : Type*} {n : ℕ}
     [∀ i, Nonempty (Piece U i)]
     (O : OverlapSystem (fun i => Piece U i))
     {M : ℕ → Type*} (e : ∀ k i, Piece U i → M k)
-
-
 
 def HasLocalSourceModels (F : ∀ k, Quotient O.setoid → M k)
     (V : Set (Quotient O.setoid)) : Prop :=

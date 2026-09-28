@@ -3,26 +3,12 @@ import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 import PoincareConjecture.Proofs.M34.Mathlib.FirstExitLevel
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
-
 
 theorem mapsTo_ball_of_local_speed_bound
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

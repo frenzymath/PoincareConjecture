@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SliceStaticNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.TransportedEndTopology
 import PoincareConjecture.Proofs.M35.CapGeometry.BoundaryDefiningFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 namespace PoincareConjecture.CapCertificate
 
 open M35.OrdinaryRealization
-
-
 
 noncomputable def toOrdinarySlice (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -151,8 +140,6 @@ noncomputable def toOrdinarySlice (P : M35StandardCapPredecessors)
     rintro _ ⟨x, hx, rfl⟩
     rw [scalar_evolution_eq P F ht, hscalar, ← hconnection]
     exact hevolution x hx
-
-
 
 theorem generalized_canonical_control (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)

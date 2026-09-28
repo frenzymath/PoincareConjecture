@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckPhysicalAssembly
 import PoincareConjecture.Proofs.M34.Standard.CapMetricScalingNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ private theorem physical_neck_of_scale_eq
       S.neck.center = e.forward 0 (by constructor <;> norm_num) N.center := by
   subst Q
   exact Proofs.M47.exists_physical_strong_neck_of_family N e hscalar hfamily
-
-
 
 theorem limitCanonical_exists_physical_neck
     (N : EpsilonNeck g) (hNscale : N.scale = 1)

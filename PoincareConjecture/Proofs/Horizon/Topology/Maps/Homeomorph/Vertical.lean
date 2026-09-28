@@ -5,15 +5,6 @@ import Mathlib.Topology.Algebra.Order.Field
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +12,6 @@ set_option autoImplicit false
 open Set
 
 namespace Homeomorph.Vertical
-
 
 def tent (r t : ℝ) : ℝ := max 0 (r - |t|)
 
@@ -41,7 +31,6 @@ theorem tent_lipschitz (r : ℝ) : LipschitzWith 1 (tent r) := by
       abs_max_sub_max_le_max _ _ _ _
     _ = |(|a| - |b|)| := by simp [abs_sub_comm, sub_sub_sub_cancel_left]
     _ ≤ |a - b| := abs_abs_sub_abs_le_abs_sub a b
-
 
 def move (r h t : ℝ) : ℝ := t + h / r * tent r t
 
@@ -96,7 +85,6 @@ theorem surjective_move {r h : ℝ} : Function.Surjective (move r h) := by
 
 variable {X : Type*} [TopologicalSpace X]
 
-
 def graphMap (r : ℝ) (h : X → ℝ) (z : X × ℝ) : X × ℝ :=
   (z.1, move r (h z.1) z.2)
 
@@ -121,8 +109,6 @@ omit [TopologicalSpace X] in
 theorem graphMap_eq_self {r : ℝ} {h : X → ℝ} {z : X × ℝ}
     (hz : r ≤ |z.2|) : graphMap r h z = z :=
   Prod.ext rfl (move_eq_self hz)
-
-
 
 def graphHomeomorph [CompactSpace X] [T2Space X] {r : ℝ}
     (hr : 0 < r) (h : X → ℝ) (hh : Continuous h) (hbound : ∀ x, |h x| < r) :
@@ -166,7 +152,6 @@ theorem move_mem_Ioo_iff {r R h t : ℝ} (hr : 0 < r) (hrR : r ≤ R)
   have hleft : move r h (-R) < move r h t ↔ -R < t := hm.lt_iff_lt
   have hright : move r h t < move r h R ↔ t < R := hm.lt_iff_lt
   simpa only [hn, hp, mem_Ioo] using and_congr hleft hright
-
 
 def graphHomeomorphOn [CompactSpace X] [T2Space X] {r R : ℝ}
     (hr : 0 < r) (hrR : r ≤ R) (h : X → ℝ) (hh : Continuous h)

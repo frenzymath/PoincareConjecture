@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialBallQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric unitInterval NormedSpace
@@ -33,15 +25,10 @@ private theorem sphereRadialCoordinates_factors
 
 variable [ProperSpace E] [Nontrivial E]
 
-
-
-
 noncomputable def radialClosedBallMap (f : C(sphere (0 : E) 1, sphere (0 : F) 1)) :
     C(closedBall (0 : E) 1, closedBall (0 : F) 1) :=
   (isQuotientMap_unitSphereRadialMap E).lift (sphereRadialCoordinates f)
     (sphereRadialCoordinates_factors f)
-
-
 
 theorem radialClosedBallMap_apply_radial (f : C(sphere (0 : E) 1, sphere (0 : F) 1))
     (z : I × sphere (0 : E) 1) :
@@ -50,14 +37,10 @@ theorem radialClosedBallMap_apply_radial (f : C(sphere (0 : E) 1, sphere (0 : F)
     ((isQuotientMap_unitSphereRadialMap E).lift_comp (sphereRadialCoordinates f)
       (sphereRadialCoordinates_factors f))
 
-
-
 theorem norm_radialClosedBallMap (f : C(sphere (0 : E) 1, sphere (0 : F) 1))
     (x : closedBall (0 : E) 1) : ‖(f.radialClosedBallMap x : F)‖ = ‖(x : E)‖ := by
   obtain ⟨z, rfl⟩ := surjective_unitSphereRadialMap E x
   rw [radialClosedBallMap_apply_radial, norm_unitSphereRadialMap, norm_unitSphereRadialMap]
-
-
 
 theorem radialClosedBallMap_apply_sphere (f : C(sphere (0 : E) 1, sphere (0 : F) 1))
     (x : sphere (0 : E) 1) :
@@ -74,9 +57,6 @@ namespace Homeomorph
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E] [Nontrivial E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [ProperSpace F] [Nontrivial F]
-
-
-
 
 noncomputable def radialClosedBallExtension (e : sphere (0 : E) 1 ≃ₜ sphere (0 : F) 1) :
     closedBall (0 : E) 1 ≃ₜ closedBall (0 : F) 1 where
@@ -95,15 +75,11 @@ noncomputable def radialClosedBallExtension (e : sphere (0 : E) 1 ≃ₜ sphere 
   continuous_toFun := ContinuousMap.continuous _
   continuous_invFun := ContinuousMap.continuous _
 
-
-
 theorem radialClosedBallExtension_apply_sphere
     (e : sphere (0 : E) 1 ≃ₜ sphere (0 : F) 1) (x : sphere (0 : E) 1) :
     e.radialClosedBallExtension ⟨x, sphere_subset_closedBall x.property⟩ =
       ⟨e x, sphere_subset_closedBall (e x).property⟩ :=
   ContinuousMap.radialClosedBallMap_apply_sphere _ x
-
-
 
 theorem norm_radialClosedBallExtension
     (e : sphere (0 : E) 1 ≃ₜ sphere (0 : F) 1) (x : closedBall (0 : E) 1) :

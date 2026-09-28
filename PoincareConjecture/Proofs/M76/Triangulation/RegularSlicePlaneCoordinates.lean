@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.RegularSliceCircles
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSliceCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E]
-
-
-
 
 theorem exists_regularSlice_plane_polygons (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) (hreg : ∀ v ∈ K.vertices, A v ≠ 0)

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.TimeContact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds.PrescribedJet
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -68,8 +61,6 @@ private lemma ricciTensorAction_metric_basis
     (g.orthonormalBasis x c) (g.orthonormalBasis x a)).2.2.2]
   ring
 
-
-
 lemma hasDerivAt_metricTwoFormIdentity_basis
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -98,8 +89,6 @@ lemma hasDerivAt_metricTwoFormIdentity_basis
   dsimp only [D, E] at ha
   rw [ha]
   ring
-
-
 
 noncomputable def perturbedHamiltonFixedQuadratic
     (F : RicciFlow n M J) (T₀ t : ℝ) (x : M) (α : ℝ → M → ℝ) (ψ : ℝ → ℝ)
@@ -260,8 +249,6 @@ private lemma deriv_perturbedHamiltonFixedQuadratic
   simp only [pow_two]
   ring
 
-
-
 lemma deriv_perturbedHamiltonFixedQuadratic_eq_heat_add_spatial
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     (T₀ : ℝ) {t : ℝ} (ht : t ∈ interior J) (hτ : t - T₀ ≠ 0) (x : M)
@@ -304,9 +291,6 @@ lemma deriv_perturbedHamiltonFixedQuadratic_eq_heat_add_spatial
     Matrix.head_cons, Matrix.tail_cons, add_mul, sub_mul,
     Finset.sum_add_distrib, Finset.sum_sub_distrib, mul_assoc] at hd ha ⊢
   linarith only [hd, ha]
-
-
-
 
 theorem deriv_perturbedHamiltonFixedQuadratic_ge [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
@@ -366,7 +350,6 @@ theorem deriv_perturbedHamiltonFixedQuadratic_ge [T2Space M]
   dsimp only [V, Ric, D, b, k] at hd hh hs hj ⊢
   linarith only [hd, hh, hs, hj]
 
-
 def hamiltonPerturbationErrorBound (n : ℕ) (K T : ℝ) : ℝ :=
   1 + 2 * (n : ℝ) ^ 3 * (K + 1) +
     (6 * (n : ℝ) ^ 3 + 8 * (n : ℝ) ^ 4 * (2 * K + 1)) +
@@ -423,8 +406,6 @@ private lemma hamilton_error_coefficients_le
           (n : ℝ) ^ 4 * K * T + n := by gcongr
       _ = E := by dsimp only [E]; ring
       _ ≤ _ := hCE
-
-
 
 theorem deriv_perturbedHamiltonFixedQuadratic_ge_of_bound [T2Space M]
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 import PoincareConjecture.Proofs.M76.Mathlib.PureTriangleClosedStar
 import Mathlib.Analysis.Convex.PathConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem isPathConnected_space_of_connected_edgeGraph (K : SimplicialComplex ℝ E)
     (hK : K.vertexAbstractComplex.edgeGraph.Connected) : IsPathConnected K.space := by
@@ -54,9 +41,6 @@ theorem isPathConnected_space_of_connected_edgeGraph (K : SimplicialComplex ℝ 
   exact ((convex_convexHull ℝ _).segment_subset
     (subset_convexHull ℝ _ hvs) hxs).trans (K.convexHull_subset_space hs)
 
-
-
-
 theorem extreme_vertex_height_link (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) {q : E} {β : ℝ}
     (hgap : ∀ v ∈ K.vertices, v ≠ q → β < A v) :
@@ -67,10 +51,6 @@ theorem extreme_vertex_height_link (K : SimplicialComplex ℝ E)
   intro v hv
   exact hgap v (K.down_closed hs.1 (Finset.singleton_subset_iff.mpr hv)
     (Finset.singleton_nonempty v)) (fun hvq => hs.2.1 (hvq ▸ hv))
-
-
-
-
 
 theorem extreme_vertex_section_eq_image_link (K : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -127,10 +107,6 @@ theorem extreme_vertex_section_eq_image_link (K : SimplicialComplex ℝ E)
         div_mul_cancel₀ β hypos.ne']
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem isConnected_extreme_vertex_section (K : SimplicialComplex ℝ E)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)

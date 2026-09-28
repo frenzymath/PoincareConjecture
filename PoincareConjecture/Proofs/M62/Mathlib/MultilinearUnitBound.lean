@@ -2,20 +2,9 @@ import Mathlib.Analysis.Normed.Module.Multilinear.Basic
 import Mathlib.Analysis.Normed.Module.Normalize
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
-
 
 theorem MultilinearMap.norm_le_mul_prod_of_unit_bound
     {ι : Type*} [Fintype ι] {E : ι → Type*}

@@ -1,22 +1,5 @@
-
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.ClosedBall
 import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.GromovHausdorff.Limit.Transitions
-
-
-
-
-
-
-
-
-
-
-
 
 open Set Metric
 
@@ -27,8 +10,6 @@ namespace Poincare.GromovHausdorff
 universe u
 
 namespace CompatiblePointedCompactSystem
-
-
 
 def transitionChainClosedBallMap
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real) :
@@ -46,7 +27,6 @@ def transitionChainClosedBallMap
             (S.transitionChain_isometry n k).dist_eq _ _
           _ <= R := x.property)⟩
 
-
 theorem transitionChainClosedBallMap_isometry
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real) :
     Isometry (S.transitionChainClosedBallMap n k R) := by
@@ -54,8 +34,6 @@ theorem transitionChainClosedBallMap_isometry
   change edist (S.transitionChain n k x) (S.transitionChain n k y) =
     edist x y
   exact (S.transitionChain_isometry n k).edist_eq _ _
-
-
 
 theorem stageClosedBallMap_comp_transitionChainClosedBallMap
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real) :
@@ -67,9 +45,6 @@ theorem stageClosedBallMap_comp_transitionChainClosedBallMap
   change S.stageEmbedding (n + k) (S.transitionChain n k x) =
     S.stageEmbedding n x
   exact congrFun (S.stageEmbedding_comp_transitionChain n k) x
-
-
-
 
 theorem transitionChainClosedBallMap_surjective_of_coverage
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real)
@@ -95,9 +70,6 @@ theorem transitionChainClosedBallMap_surjective_of_coverage
           exact congrFun (S.stageEmbedding_comp_transitionChain n k) x
     _ = S.stageEmbedding (n + k) y := hxy
 
-
-
-
 theorem exists_transitionChainClosedBallMap_surjective_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ R : ℝ, ∃ n : ℕ,
@@ -112,8 +84,6 @@ theorem exists_transitionChainClosedBallMap_surjective_of_radial_stage_coverage
   intro k
   exact S.transitionChainClosedBallMap_surjective_of_coverage n k R hn
 
-
-
 theorem transitionChainClosedBallMap_stable_of_radial_stage_coverage
     (S : CompatiblePointedCompactSystem.{u})
     (hcover : ∀ R : ℝ, ∃ n : ℕ,
@@ -127,8 +97,6 @@ theorem transitionChainClosedBallMap_stable_of_radial_stage_coverage
   refine ⟨n, ?_⟩
   intro k
   exact S.transitionChainClosedBallMap_surjective_of_coverage n k (R + 1) hn
-
-
 
 noncomputable def transitionChainClosedBallEquiv_of_coverage
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real)
@@ -146,8 +114,6 @@ noncomputable def transitionChainClosedBallEquiv_of_coverage
         hcover_n))
     (S.transitionChainClosedBallMap_isometry n k R)
 
-
-
 theorem transitionChainClosedBallEquiv_of_coverage_base
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real)
     (hR : 0 <= R)
@@ -159,8 +125,6 @@ theorem transitionChainClosedBallEquiv_of_coverage_base
   apply Subtype.ext
   change S.transitionChain n k (S.stage n).base = (S.stage (n + k)).base
   exact S.transitionChain_base n k
-
-
 
 theorem stageClosedBallEquiv_of_coverage_comp_transitionChainClosedBallEquiv
     (S : CompatiblePointedCompactSystem.{u}) (n k : Nat) (R : Real)
@@ -176,12 +140,6 @@ theorem stageClosedBallEquiv_of_coverage_comp_transitionChainClosedBallEquiv
   change S.stageEmbedding (n + k) (S.transitionChain n k x) =
     S.stageEmbedding n x
   exact congrFun (S.stageEmbedding_comp_transitionChain n k) x
-
-
-
-
-
-
 
 theorem radial_stage_coverage_of_transitionChainClosedBallMap_surjective
     (S : CompatiblePointedCompactSystem.{u})
@@ -240,10 +198,6 @@ theorem radial_stage_coverage_of_transitionChainClosedBallMap_surjective
   exact (closure_minimal hlocal hC)
     ((hU.open_subset_closure_inter Metric.isOpen_ball) hyball)
 
-
-
-
-
 theorem transitionChainClosedBallMap_surjective_of_inner_ball_range
     (S : CompatiblePointedCompactSystem.{u})
     (hinner : ∀ i : ℕ,
@@ -279,10 +233,6 @@ theorem transitionChainClosedBallMap_surjective_of_inner_ball_range
       change S.transition (n + k) (S.transitionChain n k w) = y
       exact (congrArg (S.transition (n + k)) (congrArg Subtype.val hw)).trans hx
 
-
-
-
-
 theorem radial_stage_coverage_of_inner_ball_range
     (S : CompatiblePointedCompactSystem.{u})
     (hinner : ∀ i : ℕ,
@@ -301,4 +251,3 @@ end CompatiblePointedCompactSystem
 end Poincare.GromovHausdorff
 
 end
-

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateGeometry
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem component_cylinder_image_diameter_lt
     {F : SurgeryFlowData.{u}} {origin C Q : ℝ} {I : Set ℝ}

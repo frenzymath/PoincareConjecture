@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
@@ -16,9 +7,6 @@ open Set Geometry PLAnnularStrip
 namespace Dehn
 
 local notation "P2" => (ℝ × ℝ)
-
-
-
 
 theorem exists_oriented_polygon_collar
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

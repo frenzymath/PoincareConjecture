@@ -5,23 +5,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonAffineImage
 import PoincareConjecture.Proofs.M76.Mathlib.AffineBasisEquivalence
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSubsets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Polygon
-
-
-
 
 theorem exists_finitePL_triangle_boundary_model {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] [FiniteDimensional ℝ E] {n : ℕ}

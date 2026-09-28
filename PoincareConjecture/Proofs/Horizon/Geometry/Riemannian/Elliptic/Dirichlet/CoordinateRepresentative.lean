@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.Coordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,7 +14,6 @@ universe u
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem map_restrict_volumeMeasure_coordinate_subset (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -41,8 +33,6 @@ theorem map_restrict_volumeMeasure_coordinate_subset (g : RiemannianMetric n M)
     Measure.restrict_restrict_of_subset hOs] at h
   exact h
 
-
-
 theorem coordinate_representative_ae (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (he : ContMDiffOn (𝓡 n) (𝓡 n) ∞ e e.source)
@@ -61,8 +51,6 @@ theorem coordinate_representative_ae (g : RiemannianMetric n M)
     (hac.ae_eq hUv)
   filter_upwards [h, ae_restrict_mem hOimage.measurableSet] with y hy hyO
   simpa only [e.right_inv (hOt hyO)] using hy
-
-
 
 theorem exists_smooth_representative_on_coordinate_image (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

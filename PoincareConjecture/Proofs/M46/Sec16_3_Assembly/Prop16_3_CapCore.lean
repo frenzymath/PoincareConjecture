@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 import PoincareConjecture.Proofs.M15.Thm1_34_LocalVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,14 +12,11 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M] [MeasurableSpace M] [Borel
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
 theorem canonicalCap_core_mem_carrier {x : M} (hx : x ∈ N.core) : x ∈ N.carrier := by
   rw [N.core_eq_interior_closed_core] at hx
   have h := interior_subset hx
   rw [N.closed_core_eq_complement_end] at h
   exact h.1
-
-
 
 theorem canonicalCap_core_scalar_bounds {x : M} (hx : x ∈ N.core)
     {B : ℝ} (hB : N.cap_constant ≤ B) :
@@ -58,8 +46,6 @@ theorem canonicalCap_core_scalar_bounds {x : M} (hx : x ∈ N.core)
   · rw [← N.core_radius_eq x hx]
     exact csSup_le hnonempty (by rintro _ ⟨y, rfl⟩; exact hf y)
 
-
-
 theorem canonicalCap_core_volume {x : M} (hx : x ∈ N.core)
     {B : ℝ} (hB : N.cap_constant ≤ B) :
     ENNReal.ofReal (B⁻¹ * N.core_radius x ^ 3) ≤
@@ -72,8 +58,6 @@ theorem canonicalCap_core_volume {x : M} (hx : x ∈ N.core)
     (((inv_le_inv₀ hBpos N.cap_constant_pos).mpr hB).trans hb.le)
     (pow_nonneg (N.core_radius_pos x hx).le _)
 
-
-
 theorem canonicalCap_core_radius_le {x : M} (hx : x ∈ N.core)
     {r : ℝ} (hr : 0 < r)
     (hhigh : r⁻¹ ^ 2 ≤ N.connection.scalarCurvature x) : N.core_radius x ≤ r := by
@@ -84,8 +68,6 @@ theorem canonicalCap_core_radius_le {x : M} (hx : x ∈ N.core)
   have hscalar := (canonicalCap_core_scalar_bounds N hx (le_refl N.cap_constant)).1 x hxball
   have hi := (sq_le_sq₀ (inv_pos.mpr hr).le (inv_pos.mpr hq).le).mp (hhigh.trans hscalar)
   exact (inv_le_inv₀ hr hq).mp hi
-
-
 
 theorem canonicalCap_test_radius_le {x : M} (hx : x ∈ N.core)
     {B s : ℝ} (hB1 : 1 ≤ B) (hB : N.cap_constant ≤ B) (hs : 0 < s)

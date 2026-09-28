@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem open_eq_of_frontier_eq_of_common_exterior
     {X : Type*} [TopologicalSpace X] {U V : Set X}
@@ -53,8 +41,6 @@ theorem open_eq_of_frontier_eq_of_common_exterior
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [Nontrivial F]
 
-
-
 theorem bounded_open_eq_of_frontier_eq {U V : Set F}
     (hU : IsOpen U) (hV : IsOpen V)
     (hUb : Bornology.IsBounded U) (hVb : Bornology.IsBounded V)
@@ -72,8 +58,6 @@ theorem bounded_open_eq_of_frontier_eq {U V : Set F}
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
 
-
-
 theorem BallNeighborhoodChart.inside_eq_of_boundary_eq
     (B D : BallNeighborhoodChart E F) (hdim : 1 < Module.rank ℝ E)
     (hboundary : B.boundary = D.boundary) : B.inside = D.inside := by
@@ -84,15 +68,11 @@ theorem BallNeighborhoodChart.inside_eq_of_boundary_eq
     exact (B.outside_connected hdim).isPreconnected
   · rw [B.frontier_inside, D.frontier_inside, hboundary]
 
-
-
 theorem BallNeighborhoodChart.closedRegion_eq_of_boundary_eq
     (B D : BallNeighborhoodChart E F) (hdim : 1 < Module.rank ℝ E)
     (hboundary : B.boundary = D.boundary) : B.closedRegion = D.closedRegion := by
   rw [← B.closure_inside, ← D.closure_inside,
     B.inside_eq_of_boundary_eq D hdim hboundary]
-
-
 
 theorem compactChart_region_eq_of_boundary_eq
     {X : Type*} [TopologicalSpace X] [T2Space X] [PreconnectedSpace X]

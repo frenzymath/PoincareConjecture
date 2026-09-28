@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.CircleMatching
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set Metric
@@ -11,8 +9,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.Terminal
 open Plane.Isotopy.ArcPairs
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem nestedPair_asymm_of_smooth
     (C D : S1 → E2)
@@ -32,8 +28,6 @@ theorem nestedPair_asymm_of_smooth
   have hxq := A.injective hxeq
   subst x
   exact (ne_of_lt (mem_ball_zero_iff.mp hx)) (mem_sphere_zero_iff_norm.mp hq)
-
-
 
 theorem exists_circle_candidate_with_matching_nesting
     (C : Fin 2 → S1 → E2) (D : Fin 3 → Fin 2 → S1 → E2)

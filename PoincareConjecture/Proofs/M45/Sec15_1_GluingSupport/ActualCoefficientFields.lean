@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_CoefficientGerms
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.AffineGluingError
 import PoincareConjecture.Proofs.M01.NormalizationMetric
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,15 +21,11 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 structure SmoothPositiveCoefficients (A : E → MetricCoefficient 3) (U : Set E) : Prop where
   smooth : ContDiffOn ℝ ∞ A U
   symmetric : ∀ x ∈ U, ∀ v w, A x v w = A x w v
   positive : ∀ x ∈ U, ∀ v, v ≠ 0 → 0 < A x v v
   invertible : ∀ x ∈ U, (A x).IsInvertible
-
-
 
 theorem SmoothPositiveCoefficients.smul {A : E → MetricCoefficient 3} {U : Set E}
     (h : SmoothPositiveCoefficients A U) {r : ℝ} (hr : 0 < r) :
@@ -58,9 +47,6 @@ theorem SmoothPositiveCoefficients.smul {A : E → MetricCoefficient 3} {U : Set
       simp only [ContinuousLinearMap.comp_apply, smul_apply, map_smul,
         hA.inverse_apply_self, smul_smul, mul_inv_cancel₀ hr.ne', one_smul,
         ContinuousLinearMap.id_apply]
-
-
-
 
 theorem smoothPositiveCoefficients_of_pullback
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -104,13 +90,9 @@ local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 variable {epsilon beta : ℝ} (I : M45NeckGluingInput.{u} epsilon beta)
 
-
-
 def recentCenteredField (z : RoundCylinderSpace) (t : ℝ) : E → MetricCoefficient 3 :=
   centeredCylinderMetric (roundCylinderPullback (I.recent_flow.metric t)
     I.recent_patch.coordinate) z.1 z.2
-
-
 
 def olderCenteredField (z : RoundCylinderSpace) (tau : ℝ) : E → MetricCoefficient 3 :=
   centeredCylinderMetric (fun y v w => I.older_neck.neck.scale⁻¹ ^ 2 *
@@ -119,13 +101,9 @@ def olderCenteredField (z : RoundCylinderSpace) (tau : ℝ) : E → MetricCoeffi
       I.older_neck.neck.coordinate_map y v w)
     (I.olderCenteredCoordinate z).1 (I.olderCenteredCoordinate z).2
 
-
-
 def identifiedCenteredField (z : RoundCylinderSpace) (t : ℝ) : E → MetricCoefficient 3 :=
   centeredCylinderMetric (roundCylinderPullback (I.older_flow.metric t)
     (I.identify ∘ I.recent_patch.coordinate)) z.1 z.2
-
-
 
 theorem recentCenteredField_data (hpos : 0 < beta * epsilon)
     (hsmall : beta * epsilon < 1 / 2) (z : RoundCylinderSpace) (t : ℝ) :
@@ -140,8 +118,6 @@ theorem recentCenteredField_data (hpos : 0 < beta * epsilon)
   simpa only [recentCenteredField, one_smul] using
     (I.recentCenteredMap_pullbackCoefficients hpos hsmall z t hp).symm
 
-
-
 theorem olderCenteredField_data (z : RoundCylinderSpace) (tau : ℝ) :
     SmoothPositiveCoefficients (I.olderCenteredField z tau)
       (centeredNeckDomain I.older_neck.neck (I.olderCenteredCoordinate z).2) := by
@@ -153,9 +129,6 @@ theorem olderCenteredField_data (z : RoundCylinderSpace) (tau : ℝ) :
     (a := I.older_neck.neck.scale⁻¹ ^ 2) (sq_pos_of_pos (inv_pos.mpr I.older_neck.neck.scale_pos))
   intro p hp
   exact I.olderCenteredMap_normalizedCoefficients z tau hp
-
-
-
 
 theorem identifiedCenteredField_eq (hpos : 0 < beta * epsilon)
     (hsmall : beta * epsilon < 1 / 2) (z : RoundCylinderSpace) (t : ℝ) {p : E}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceEvolvingAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ open Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
 
 theorem source_recent_translation_smooth {epsilon epsilon' c : ℝ}
     (hdom : ∀ r ∈ Ioo (-epsilon'⁻¹) epsilon'⁻¹,
@@ -47,7 +37,6 @@ theorem source_recent_translation_smooth {epsilon epsilon' c : ℝ}
     contDiffOn_const.mul hcomp
   exact hprod.congr fun p _ =>
     roundCylinderTensorCoefficient_neckAxialTensorPullback 1 c B q p a b
-
 
 theorem source_recent_translation_coefficient_error_bound
     {epsilon epsilon' c K : ℝ}

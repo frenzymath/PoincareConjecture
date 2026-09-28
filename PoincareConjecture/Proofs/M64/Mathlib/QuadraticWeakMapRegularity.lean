@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.QuadraticSystemRegularity
 import PoincareConjecture.Proofs.M64.Mathlib.WeakPartialSchwartz
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -24,11 +13,6 @@ open scoped ContDiff SchwartzMap LineDeriv InnerProductSpace
 namespace PoincareConjecture
 
 open EuclideanTranslationNative Poincare.Analysis.Sobolev.Weak
-
-
-
-
-
 
 theorem m64QuadraticWeakMap_contDiffOn {N : ℕ}
     (u : LoopPlane → EuclideanSpace ℝ (Fin N))

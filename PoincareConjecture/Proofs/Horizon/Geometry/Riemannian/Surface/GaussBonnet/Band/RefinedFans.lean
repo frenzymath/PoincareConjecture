@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.ObliqueTopCorners
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OriginalCorners
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -59,16 +51,11 @@ private theorem vertex_parameter_source (v : Fin (B.interface.count + 1) × Bool
   rw [hh]
   cases v.2 <;> simp [hpos.le]
 
-
-
 theorem coordinates_symm_vertex (v : Fin (B.interface.count + 1) × Bool) :
     collarParameterEquiv (B.coordinates.symm (B.vertex v)) =
       (B.cut v.1, if v.2 then B.interface.height v.1 else 0) := by
   rw [vertex, B.coordinates.left_inv (B.vertex_parameter_source v),
     collarParameterEquiv.apply_symm_apply]
-
-
-
 
 theorem vertex_mem_face_carrier_iff
     (p : Fin B.interface.count × Bool) (v : Fin (B.interface.count + 1) × Bool) :
@@ -119,8 +106,6 @@ theorem vertex_mem_face_carrier_iff
     rw [B.face_carrier_eq_coordinates]
     exact ⟨B.faceBasis p k, subset_convexHull ℝ _ (mem_range_self k), hk⟩
 
-
-
 theorem refined_contribution_eq_zero_of_not_mem_carrier
     (g : RiemannianMetric 2 S) (p : Fin B.interface.count × Bool)
     (lines : List (Plane →ᵃ[ℝ] ℝ)) {q : S} (hq : q ∉ (B.face p).carrier) :
@@ -142,8 +127,6 @@ theorem refined_contribution_eq_zero_of_not_mem_carrier
       (subset_convexHull ℝ _ (mem_range_self k))
     simpa only [M, TriangleMesh.refineByLines_support, TriangleMesh.single_support] using hm
   simp only [if_neg hne]
-
-
 
 theorem refined_contribution_at_vertex
     (g : RiemannianMetric 2 S)
@@ -182,8 +165,6 @@ theorem refined_contribution_at_vertex
       fun hk => hv ((B.vertex_mem_face_carrier_iff p v).mpr ⟨k, hk⟩)
     simp only [if_neg hne]
 
-
-
 theorem sum_refined_vertex_contributions
     (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -201,8 +182,6 @@ theorem sum_refined_vertex_contributions
   intro p _
   exact B.refined_contribution_at_vertex g hF hFi p (lines p) v
 
-
-
 theorem internal_bottom_refined_vertex_fan
     (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -215,8 +194,6 @@ theorem internal_bottom_refined_vertex_fan
         (B.vertex (i.succ, false))) = Real.pi := by
   rw [B.sum_refined_vertex_contributions g hF hFi lines]
   exact B.internal_bottom_vertex_fan g hF hFi i j hij
-
-
 
 theorem internal_top_refined_vertex_fan
     (g : RiemannianMetric 2 S)

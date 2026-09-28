@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.WithinBilinearFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.LocalFlows
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +8,6 @@ open Set Filter Poincare.Gluing
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.ChartDistance
-
-
-
 
 theorem exists_ricciFlow_on_within_coordinate_limit
     {ι : Type*} {n : ℕ}

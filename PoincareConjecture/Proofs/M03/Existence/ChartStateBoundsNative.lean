@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartStateContinuity
 import Mathlib.Topology.MetricSpace.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

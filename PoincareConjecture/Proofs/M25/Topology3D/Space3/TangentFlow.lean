@@ -1,21 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.InwardFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped InnerProductSpace NNReal
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem boundedFlow_negField {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [CompleteSpace E] (f : E → E) {K L : ℝ≥0}
@@ -34,8 +24,6 @@ theorem boundedFlow_negField {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]
 
-
-
 theorem tangentFlow_mapsTo_closedBall (f : E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)
     (htan : ∀ q : E, ‖q‖ = 1 → ⟪q, f q⟫_ℝ = 0) (t : ℝ) :
@@ -52,8 +40,6 @@ theorem tangentFlow_mapsTo_closedBall (f : E → E) {K L : ℝ≥0}
     change boundedFlow f hK hL x t ∈ closedBall 0 1
     rw [← hrev]
     exact hm
-
-
 
 theorem tangentFlow_image_closedBall (f : E → E) {K L : ℝ≥0}
     (hK : LipschitzWith K f) (hL : ∀ x, ‖f x‖ ≤ L)

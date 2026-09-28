@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_NormalizedPhase
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exists_initialValuePath_realizing_normalized_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -93,9 +81,6 @@ theorem exists_initialValuePath_realizing_normalized_phase
   apply congrArg (G.gaugeCover.cylinder b).toSpacetime
   exact Prod.ext (Subtype.ext ((hclock s hs).trans (hβclock s hs).symm))
     (Subtype.ext ((hcoord s hs).trans (hβcoord s hs).symm))
-
-
-
 
 theorem exists_initialValuePath_realizing_momentum_phase
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLRectanglePatches
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set RectangleCornerArcs
@@ -18,10 +7,6 @@ open Set RectangleCornerArcs
 namespace Geometry
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem quadrant_graph_contact_of_height_surface
     {ψ : (ℝ × ℝ) → E} {F S g : Set E} (A : E →ₗ[ℝ] ℝ) {t z : ℝ}
@@ -45,11 +30,6 @@ theorem quadrant_graph_contact_of_height_surface
     rcases hx with hx | hx
     · exact Or.inr ((hheight x).trans hx.1)
     · exact Or.inl ((hsurface x hxR).mpr hx.2)
-
-
-
-
-
 
 theorem quadrant_axis_incidence_of_height_surface
     {ψ : (ℝ × ℝ) → E} (hinj : Function.Injective ψ)

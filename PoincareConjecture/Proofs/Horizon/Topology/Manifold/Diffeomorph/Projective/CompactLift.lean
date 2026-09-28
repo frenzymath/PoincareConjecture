@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.Covering
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,7 +14,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E3 M] [T2Space M]
   {p : RealProjectiveThree} {U : Set M}
   (S : StandardPuncturedProjectiveCover M p U)
-
 
 theorem compact_lift_topology {K : Set M} (hK : IsCompact K) (hKU : K ⊆ U)
     (hregular : closure (interior K) = K) :

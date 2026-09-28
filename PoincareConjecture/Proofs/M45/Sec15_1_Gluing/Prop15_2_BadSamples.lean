@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_Conclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M45
-
-
-
 
 theorem piecewiseTensor_smooth_on_output {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)
@@ -35,9 +23,6 @@ theorem piecewiseTensor_smooth_on_output {epsilon beta : ℝ}
     (contDiffOn_const.prodMk contDiffOn_id)
   intro p hp
   exact ⟨⟨by linarith [ht.1], ht.2⟩, hp.1, cylinderDomain_mono hpos hle hp.2⟩
-
-
-
 
 theorem exists_bad_gluing_sample {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_one : beta ≤ 1)
@@ -54,8 +39,6 @@ theorem exists_bad_gluing_sample {epsilon beta : ℝ}
     epsilon ^ 2 / 2, ?_, ?_⟩
   · nlinarith [sq_pos_of_pos hepsilon]
   · exact h
-
-
 
 theorem bad_gluing_sample_is_older {epsilon beta t : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_half : beta ≤ 1 / 2)
@@ -80,8 +63,6 @@ theorem bad_gluing_sample_is_older {epsilon beta t : ℝ}
     horder z).trans (hjet t ⟨hjoin, ht.2⟩ z hz')
   simp only [M45NeckGluingInput.piecewiseTensor, if_pos hjoin] at hbad
   nlinarith [sq_pos_of_pos hepsilon]
-
-
 
 theorem exists_bad_older_sample {epsilon beta : ℝ}
     (hepsilon : 0 < epsilon) (hbeta : 0 < beta) (hbeta_half : beta ≤ 1 / 2)

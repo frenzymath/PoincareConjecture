@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SlopeDerivative
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65Projection_inner_self (P : M62.CircleProductData F circumference)
     (t : ℝ) (q : P.charts.Point) (V : TangentSpace (𝓡 (n + 1)) q) :
@@ -54,8 +43,6 @@ theorem m65Projection_inner_self (P : M62.CircleProductData F circumference)
     simp only [map_smul, smul_apply, smul_eq_mul, hframe, mul_one]
   rw [hpair, P.metric_eq, hvertical]
   ring
-
-
 
 theorem m65Projection_immersed_of_slope_lt_one (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

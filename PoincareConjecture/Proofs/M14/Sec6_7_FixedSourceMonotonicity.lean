@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_7_GaussianBound
 import PoincareConjecture.Proofs.M14.Sec6_7_IntegralComparison
 import PoincareConjecture.Proofs.M14.Sec6_7_BackwardStable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point}
-
-
-
 
 theorem stableDensity_fixed_source_mono
     (hCoordinates : M12MetricPredecessors.{0} n)

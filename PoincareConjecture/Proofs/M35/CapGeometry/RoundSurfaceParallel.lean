@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.ParallelFieldCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology BigOperators
 namespace PoincareConjecture.M35
 
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem positive_surface_curvature_kernel
     {M : Type*} [TopologicalSpace M] [ChartedSpace E2 M]
@@ -58,7 +48,6 @@ theorem positive_surface_curvature_kernel
   have hb : (b.repr z) 1 = 0 := (mul_eq_zero.mp hz0).resolve_right hK.ne'
   rw [ha, hb, zero_smul, zero_smul, zero_add] at hrepr
   exact hrepr.symm
-
 
 theorem positive_surface_parallel_germ
     {g : RiemannianMetric 2 E2} (D : LeviCivitaData g)

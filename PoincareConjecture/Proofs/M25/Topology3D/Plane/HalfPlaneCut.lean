@@ -2,23 +2,12 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Algebra.Support
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem snd_pos_of_fixed_strip {E : Type*} [TopologicalSpace E]
     (F : (E × ℝ) ≃ₜ (E × ℝ)) {ε : ℝ} (hε : 0 < ε)
@@ -43,9 +32,6 @@ theorem snd_pos_of_fixed_strip {E : Type*} [TopologicalSpace E]
   have heq : F (x.1, w) = F r := heqr.trans hFr.symm
   have hwzero : w = 0 := congrArg Prod.snd (F.injective heq)
   exact (ne_of_gt (lt_of_lt_of_le hv hw.1)) hwzero
-
-
-
 
 theorem exists_upper_halfSpace_diffeomorph_family
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

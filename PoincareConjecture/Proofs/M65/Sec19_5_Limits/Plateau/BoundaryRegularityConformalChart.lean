@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityHarmonicChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,9 +36,6 @@ private theorem interior_conformal_norm (g : RiemannianMetric 3 M)
     Fin.isValue, ite_true, zero_ne_one, one_ne_zero, ite_false, mul_zero,
     add_zero, zero_add, EuclideanSpace.real_norm_sq_eq, Fin.sum_univ_two]
   ring
-
-
-
 
 theorem complex_parameter_chart_conformal_norm
     (g : RiemannianMetric 3 M) (gE : RiemannianMetric 3 LoopAmbient) (p : M)
@@ -108,10 +96,6 @@ theorem complex_parameter_chart_conformal_norm
     _ = _ := by
       rw [show ‖e (v * d)‖ = ‖v * d‖ from orthonormalBasisOneI.repr.norm_map _, norm_mul, mul_pow]
       ring
-
-
-
-
 
 theorem continuous_boundary_chart_conformal
     (g : RiemannianMetric 3 M) (gE : RiemannianMetric 3 LoopAmbient)

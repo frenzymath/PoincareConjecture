@@ -2,20 +2,6 @@ import Mathlib.MeasureTheory.Constructions.HaarToSphere
 import Mathlib.MeasureTheory.Measure.Prod
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Order
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open MeasureTheory Measure Set Metric Module
 open scoped ENNReal NNReal
 
@@ -24,8 +10,6 @@ namespace Poincare.VolumeComparison
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [MeasurableSpace E] [BorelSpace E]
 
-
-
 instance nullSingletonClass_volumeIoiPow (n : ℕ) :
     NullSingletonClass (Measure.volumeIoiPow n) where
   measure_singleton r := by
@@ -33,10 +17,8 @@ instance nullSingletonClass_volumeIoiPow (n : ℕ) :
     rw [comap_subtype_coe_apply measurableSet_Ioi]
     simp
 
-
 def IsRadialGraph (A : Set E) : Prop :=
   ∀ u ∈ sphere (0 : E) 1, ∀ r₁ r₂ : ℝ, 0 < r₁ → 0 < r₂ → r₁ • u ∈ A → r₂ • u ∈ A → r₁ = r₂
-
 
 theorem addHaar_eq_zero_of_isRadialGraph (μ : Measure E) [μ.IsAddHaarMeasure]
     {A : Set E} (hAmeas : MeasurableSet A) (hA0 : (0 : E) ∉ A) (hray : IsRadialGraph A) :

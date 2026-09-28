@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoCornerOrientedBands
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -15,10 +7,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_arc_band_carriers_avoid_remainder
     {I : Type*} [Finite I] (S lower : I → Set AnnulusCoordinates)

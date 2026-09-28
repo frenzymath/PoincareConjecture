@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Core.Escaping.Cylinder
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Noncompact.Convergence.Stability
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
-
-
 
 theorem M23TerminalExtension.eventually_strongEvolvingNeck_of_line_of_services
     (P : NoncompactKappaServices.{u})
@@ -63,8 +50,6 @@ theorem M23TerminalExtension.eventually_strongEvolvingNeck_of_line
       ∃ N : StrongEvolvingNeck (S.term (G.subsequence k)).flow 0 epsilon,
         N.center = (S.term (G.subsequence k)).base := by
   exact M23TerminalExtension.eventually_strongEvolvingNeck_of_line_of_services P.noncompactServices T hplane γ hγ hε hεsmall
-
-
 
 theorem M23TerminalExtension.eventually_strongEvolvingNeck_of_nearby_necks_of_services
     (P : NoncompactKappaServices.{u})

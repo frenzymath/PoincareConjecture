@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityFullDecay
 import Mathlib.MeasureTheory.Measure.OpenPos
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Boundary
 
 open M65Interior
-
-
-
-
 
 theorem weakDisk_boundary_holder_representative
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
@@ -89,11 +75,6 @@ theorem weakDisk_boundary_holder_representative
     (show 0 < α / 2 by positivity) (show 0 ≤ (2 / c) * B by positivity) hdecay
   refine ⟨R / 8, α / 2, H, v, by positivity, by positivity, by linarith, hH, hv, ?_, hholder⟩
   exact hAE.mono fun z hz => hz.trans (congrArg e (hXv z))
-
-
-
-
-
 
 theorem continuous_representative_diameter_trace
     {M : Type*} [TopologicalSpace M] {N : ℕ}
@@ -192,11 +173,6 @@ theorem continuous_representative_diameter_trace
   · exact hpall ⟨hspos, hs.2⟩
   · have hn : -s ∈ Icc (0 : ℝ) R := ⟨by linarith, by linarith [hs.1]⟩
     simpa only [neg_neg] using hnall hn
-
-
-
-
-
 
 theorem weakDisk_boundary_continuous_representative
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

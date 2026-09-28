@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureEarlierTangent
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem terminalCurvature_source_balls_of_original_jets
     {ι : Type*}

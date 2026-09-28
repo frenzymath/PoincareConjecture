@@ -1,16 +1,5 @@
 import PoincareConjecture.Definitions.M57Transport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -172,14 +161,6 @@ theorem m57RegularNonzeroTransport_of_diffeomorph
   rw [hback] at hinv
   rw [hone] at hinv
   exact hinv
-
-
-
-
-
-
-
-
 
 theorem m57AncestryTransport_of_input
     {g₀ : StandardInitialMetric}

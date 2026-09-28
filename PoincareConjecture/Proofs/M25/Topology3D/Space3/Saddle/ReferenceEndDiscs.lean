@@ -4,15 +4,6 @@ import Mathlib.Analysis.Calculus.ContDiff.WithLp
 import Mathlib.Geometry.Manifold.Algebra.Structures
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,9 +12,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1500000 in
-
-
-
 
 theorem exists_nonnested_reference_end_disc_charts
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

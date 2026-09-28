@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackReparametrization
 import PoincareConjecture.Proofs.M14.Sec6_2_EulerResidual
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
 
-
-
 noncomputable def squarePullbackExtension
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity) :
     M14PullbackExtension G (fun s => p.curve (s ^ 2))
@@ -34,8 +23,6 @@ noncomputable def squarePullbackExtension
     (contDiff_id.pow 2) (contDiff_const.mul contDiff_id)
     (fun _ hs => ⟨Real.lt_sq_of_sqrt_lt hs.1,
       (Real.lt_sqrt ((Real.sqrt_nonneg τ₁).trans_lt hs.1).le).mp hs.2⟩)
-
-
 
 theorem horizontalCovariantDerivative_square
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)
@@ -61,8 +48,6 @@ theorem horizontalCovariantDerivative_square
   simpa only [squarePullbackExtension, Function.comp_def, hsq.deriv, hscale.deriv,
     show 2 * s * (2 * s) = 4 * s ^ 2 by ring] using h
 
-
-
 theorem horizontalRicci_smul_left (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (q : G.Point) (v w : G.Horizontal q) (c : ℝ) :
     horizontalRicci G.leafwise q (c • v) w = c * horizontalRicci G.leafwise q v w := by
@@ -70,9 +55,6 @@ theorem horizontalRicci_smul_left (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     G.timeIntervals G.gaugeCover).2 G.leafwise
   rw [H.ricci_symmetric q (c • v) w, horizontalRicci_smul_right hM12,
     H.ricci_symmetric q w v]
-
-
-
 
 theorem squarePullback_eulerResidual (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity)

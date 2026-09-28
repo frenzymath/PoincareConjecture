@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import Mathlib.Data.Finset.Powerset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt

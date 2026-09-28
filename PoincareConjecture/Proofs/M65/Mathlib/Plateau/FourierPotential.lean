@@ -3,17 +3,6 @@ import Mathlib.Analysis.Fourier.RiemannLebesgueLemma
 import Mathlib.Analysis.SpecialFunctions.Pow.Integral
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -53,14 +42,8 @@ private theorem integrable_moment_schwartz_div_id (f : 𝓢(ℂ, ℂ)) (n : ℕ)
     rw [norm_div, pow_succ]
     field_simp [norm_ne_zero_iff.mpr hz]
 
-
-
-
 def schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) (z : ℂ) : ℂ :=
   (Real.pi * I)⁻¹ * 𝓕⁻ (fun ξ => (𝓕 h : 𝓢(ℂ, ℂ)) ξ / ξ) z
-
-
-
 
 theorem contDiff_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) :
     ContDiff ℝ (⊤ : ℕ∞) (schwartzDbarPotential h) := by
@@ -70,8 +53,6 @@ theorem contDiff_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) :
     𝓕⁻ (fun ξ => (𝓕 h : 𝓢(ℂ, ℂ)) ξ / ξ) z)
   simpa only [Real.fourierInv_eq_fourier_neg, Function.comp_def] using
     contDiff_const.mul (hf.comp contDiff_neg)
-
-
 
 theorem tendsto_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) :
     Tendsto (schwartzDbarPotential h) (cocompact ℂ) (𝓝 0) := by
@@ -163,10 +144,6 @@ private theorem fourierInv_const_mul (a : ℂ) (f : ℂ → ℂ) (z : ℂ) :
   funext ξ
   ring
 
-
-
-
-
 theorem dbar_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) (z : ℂ) :
     (fderiv ℝ (schwartzDbarPotential h) z 1 +
       I * fderiv ℝ (schwartzDbarPotential h) z I) / 2 = h z := by
@@ -187,10 +164,6 @@ theorem dbar_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) (z : ℂ) :
     exact congrFun (h.continuous.fourierInv_fourier_eq h.integrable (𝓕 h).integrable) z
   rw [hinv, ← mul_assoc, inv_mul_cancel₀, one_mul]
   exact mul_ne_zero (ofReal_ne_zero.mpr Real.pi_ne_zero) I_ne_zero
-
-
-
-
 
 theorem dz_schwartzDbarPotential (h : 𝓢(ℂ, ℂ)) (z : ℂ) :
     (fderiv ℝ (schwartzDbarPotential h) z 1 -

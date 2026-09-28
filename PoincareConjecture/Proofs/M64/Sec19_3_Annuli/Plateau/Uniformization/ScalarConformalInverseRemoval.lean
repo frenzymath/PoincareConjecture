@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarComplexOpen
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +9,6 @@ open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M64Uniformization
-
-
-
 
 theorem scalar_conformal_linear_inverse (L : ℂ ≃L[ℝ] ℂ)
     (hL : IsConformalMap (L : ℂ →L[ℝ] ℂ)) :
@@ -36,10 +21,6 @@ theorem scalar_conformal_linear_inverse (L : ℂ ≃L[ℝ] ℂ)
   simp only [ContinuousLinearEquiv.coe_coe, L.apply_symm_apply] at h
   rw [h]
   simp [hc.ne']
-
-
-
-
 
 theorem scalar_localHomeomorph_regular_of_conformal_punctured
     (e : OpenPartialHomeomorph ℂ ℂ) {c : ℂ} (hc : c ∈ e.source)
@@ -78,10 +59,6 @@ theorem scalar_localHomeomorph_regular_of_conformal_punctured
   change ((fderiv ℝ e.symm (e c)).comp (fderiv ℝ e c)) u =
     ((fderiv ℝ e.symm (e c)).comp (fderiv ℝ e c)) v at h
   simpa only [heq, ContinuousLinearMap.id_apply] using h
-
-
-
-
 
 theorem scalar_locally_injective_regular_of_conformal_punctured
     {f : ℂ → ℂ} {U : Set ℂ} (hU : IsOpen U) (hcU : ContinuousOn f U)

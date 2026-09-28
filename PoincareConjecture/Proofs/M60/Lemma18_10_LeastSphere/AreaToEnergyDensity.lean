@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaToEnergyMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -18,8 +10,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m60SphereRegularizedMetric_gram (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -37,8 +27,6 @@ theorem m60SphereRegularizedMetric_gram (g : RiemannianMetric n M)
   rw [mul_assoc]
   rfl
 
-
-
 theorem m60SphereRegularizedMetric_energyDensity (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (delta : ℝ) (hdelta : 0 < delta) (z : LoopPlane) :
@@ -49,8 +37,6 @@ theorem m60SphereRegularizedMetric_energyDensity (g : RiemannianMetric n M)
     real_inner_self_eq_norm_sq, (EuclideanSpace.basisFun (Fin 2) ℝ).norm_eq_one,
     one_pow, mul_one]
   ring
-
-
 
 theorem m60SphereRegularizedMetric_det (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -64,8 +50,6 @@ theorem m60SphereRegularizedMetric_det (g : RiemannianMetric n M)
     m60SphereEnergyDensity, m60EnergyDensity, Matrix.trace_fin_two]
   norm_num [EuclideanSpace.basisFun, EuclideanSpace.inner_single_left]
   ring
-
-
 
 theorem m60SphereRegularizedMetric_areaDensity_bound (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CompactnessFeedBirthSmooth
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CompactnessFeedBirthEquation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,11 +30,6 @@ noncomputable local instance rescaledLimitBirthTwoJetSpace : NormedSpace ℝ (Me
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem exists_rescaled_partial_flow_of_compactSmooth
     (g0 : StandardInitialMetric) {T : ℝ} (hT : 0 < T)

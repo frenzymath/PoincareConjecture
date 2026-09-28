@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeAcceleration
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} {p : M14BackwardPath G T τ₁ τ₂ x y}
   {R : M14SquareRootPath G p}
 
-
-
 noncomputable def variationAccelerationField
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V) (s : ℝ) :
     G.Horizontal (R.curve s) := by
@@ -36,15 +24,11 @@ noncomputable def variationAccelerationField
   exact if hs : s ∈ M14SqrtParameterInterval τ₁ τ₂ then
     M14VariationEndpointAcceleration V D s hs else 0
 
-
-
 theorem variationAccelerationField_eq
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)
     {s : ℝ} (hs : s ∈ M14SqrtParameterInterval τ₁ τ₂) :
     variationAccelerationField V D s = M14VariationEndpointAcceleration V D s hs := by
   simp only [variationAccelerationField, dif_pos hs]
-
-
 
 noncomputable def variationAccelerationBoundaryPair
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V) (s : ℝ) : ℝ :=
@@ -63,8 +47,6 @@ private theorem horizontal_inner_eq_of_heq {q r : G.Point} (h : q = r)
   cases ha
   cases hz
   rfl
-
-
 
 theorem variationAccelerationBoundaryPair_gauge
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)
@@ -101,9 +83,6 @@ theorem variationAccelerationBoundaryPair_gauge
     ((hrec s hs 0 hzero).trans (V.square_base s)).symm hA hZ).trans
       (gauge_chartActionMetric b W T x₀ (β (s, 0)).2 s (β (s, 0)).1
         (hclock s hs 0 hzero).symm _ _).symm
-
-
-
 
 theorem variationAccelerationBoundaryPair_contDiffOn
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V)
@@ -160,9 +139,6 @@ theorem variationAccelerationBoundaryPair_contDiffOn
     exact variationAccelerationBoundaryPair_gauge V D b hCoordinates W x₀
       hN hP hzero hPsub hβ hrec hclock hr
   exact (contDiffWithinAt_inter (hN.mem_nhds hsN)).mp (hactual s ⟨hs, hsN⟩)
-
-
-
 
 theorem secondVariationBoundaryTerm_eq_accelerationPair
     (V : M14LVariationData G p R) (D : M14VariationDerivativeData V) :

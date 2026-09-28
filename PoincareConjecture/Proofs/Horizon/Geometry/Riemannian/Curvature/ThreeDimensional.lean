@@ -3,23 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.AlgebraicSp
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Calculus
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.Definitions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 open scoped Manifold ContDiff Bundle BigOperators
 
 namespace PoincareConjecture.LeviCivitaData
@@ -29,8 +12,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem three_dimensional_curvature_operator_spectrum
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M) :

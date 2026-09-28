@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalCapCompactFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem exists_source_cap_certificate_at_base_of_locus {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta gamma C R : ℝ}

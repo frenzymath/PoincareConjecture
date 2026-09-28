@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SphereExteriorSurfaceGerms
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76
@@ -17,8 +15,6 @@ private def sphereCornerCoordinates (positive : Bool) : V3 ≃L[ℝ] C3 where
   map_smul' c z := by cases positive <;> ext <;> simp
   continuous_toFun := by cases positive <;> simp only [Bool.false_eq_true,if_false,if_true] <;> fun_prop
   continuous_invFun := by cases positive <;> simp only [Bool.false_eq_true,if_false,if_true] <;> fun_prop
-
-
 
 theorem exists_signed_original_sphere_corner_chart
     {X ι : Type*} [TopologicalSpace X]

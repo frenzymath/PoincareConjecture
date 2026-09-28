@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.VectorHeatEnergy
 import PoincareConjecture.Proofs.M13.CurvatureContractions
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M35.Uniqueness.Heat
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem raw_ricciSharp_inverse_gram {g : RiemannianMetric n V}
     (D : LeviCivitaData g) (x z : V) :
@@ -45,8 +34,6 @@ theorem raw_ricci_pair_contDiff {g : RiemannianMetric n V}
   have h := M04.contMDiffOn_ricci D isOpen_univ hu.contMDiffOn hv.contMDiffOn
   exact contDiffOn_univ.mp h.contDiffOn
 
-
-
 theorem raw_ricciSharp_contDiff {g : RiemannianMetric n V}
     (D : LeviCivitaData g) (z : V) :
     ContDiff ℝ ∞ (fun x => RicciFlow.ricciSharp D x z) := by
@@ -57,8 +44,6 @@ theorem raw_ricciSharp_contDiff {g : RiemannianMetric n V}
   intro j _
   exact (raw_inverseGram_entry_contDiff g i j).smul
     ((raw_ricci_pair_contDiff D z (EuclideanSpace.single i 1)).smul contDiff_const)
-
-
 
 def rawRicciLinear {g : RiemannianMetric n V} (D : LeviCivitaData g) (x : V) : V →L[ℝ] V :=
   LinearMap.toContinuousLinearMap {
@@ -82,8 +67,6 @@ theorem rawRicciLinear_contDiff {g : RiemannianMetric n V} (D : LeviCivitaData g
   apply contDiff_clm_apply_iff.mpr
   intro z
   exact raw_ricciSharp_contDiff D z
-
-
 
 theorem exists_raw_compact_ricciSharp_bound {g : RiemannianMetric n V}
     (D : LeviCivitaData g) {K : Set V} (hK : IsCompact K) :

@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventGe
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarOrientation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem BallNeighborhoodChart.closedRegion_trichotomy
     (A B : BallNeighborhoodChart E3 E3)
@@ -54,7 +43,6 @@ theorem BallNeighborhoodChart.closedRegion_trichotomy
   intro y hyA hyB
   rw [← A.inside_union_boundary] at hyA
   exact hyA.elim (fun hy => hout hy hyB) (fun hy => hAo hy hyB)
-
 
 theorem RegularSurgeryEvent.exists_movable_child_axis_outside
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -246,7 +234,6 @@ theorem RegularSurgeryEvent.exists_movable_child_axis_outside
     · exact hout
   have hzout := hLzout ⟨(0, z), ⟨rfl, hz.1, le_rfl⟩, rfl⟩
   simpa only [T, hTformula, j, mem_compl_iff] using hzout
-
 
 theorem RegularSurgeryEvent.exists_canonical_child_containment
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

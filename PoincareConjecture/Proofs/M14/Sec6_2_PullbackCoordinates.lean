@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.TrivializationConnection
 import PoincareConjecture.Proofs.M14.Mathlib.VectorGraphDerivative
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,14 +21,10 @@ variable (e : Trivialization (EuclideanSpace ℝ (Fin n))
     (TotalSpace.proj : TotalSpace (EuclideanSpace ℝ (Fin n)) G.Horizontal → G.Point))
   [MemTrivializationAtlas e]
 
-
-
 noncomputable def horizontalConnectionDifference (p : G.Point) :
     G.Horizontal p →L[ℝ] TangentSpace (spacetimeModel n) p →L[ℝ] G.Horizontal p :=
   ((rawHorizontalCovariantDerivative_isCovariantDerivative G.leafwise).mono
     (subset_univ e.baseSet)).difference e.isCovariantDerivativeOn_flatCovariantDerivative p
-
-
 
 theorem pullbackExtension_coordinates_contMDiffAt
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)
@@ -55,9 +42,6 @@ theorem pullbackExtension_coordinates_contMDiffAt
   exact e.continuousLinearMapAt_apply_of_mem ℝ hz _
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem horizontalCovariantDerivative_coordinates
     (E : M14PullbackExtension G γ J Y) {s : ℝ} (hs : s ∈ J)

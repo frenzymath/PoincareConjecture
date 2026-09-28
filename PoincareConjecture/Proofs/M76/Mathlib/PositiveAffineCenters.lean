@@ -4,15 +4,6 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ open scoped BigOperators
 namespace Finset
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem exists_positive_center_affine_zero (s : Finset E) (A : E →ᵃ[ℝ] ℝ)
     {c x : E}
@@ -51,9 +39,6 @@ theorem exists_positive_center_affine_zero (s : Finset E) (A : E →ᵃ[ℝ] ℝ
     dsimp only [r]
     field_simp
     ring
-
-
-
 
 theorem positive_centers_same_side {s t : Finset E} (hst : s ⊆ t)
     (A : E →ᵃ[ℝ] ℝ) {x y : E}

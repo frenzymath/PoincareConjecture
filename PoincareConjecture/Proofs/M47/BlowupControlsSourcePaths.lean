@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceScalar
 import PoincareConjecture.Proofs.M34.Standard.LocalInverseMetricBound
 import PoincareConjecture.Proofs.M34.Standard.CapIntrinsicDiameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M47
 
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W) {base : ℝ} (ht : base ∈ H.generalized.interval)
-
-
 
 theorem regular_history_inverse_pathELength_le
     {gamma : ℝ → (F.slice base).carrier} {a b : ℝ}
@@ -57,8 +46,6 @@ theorem regular_history_inverse_pathELength_le
       H.history.inverse base ht := rfl
   rw [hiFun] at hlength
   simpa only [ENNReal.ofReal_one, one_mul] using hlength
-
-
 
 theorem regular_history_path_prefix_scalar_bound
     {Q A D s : ℝ} (hQ : 0 < Q)

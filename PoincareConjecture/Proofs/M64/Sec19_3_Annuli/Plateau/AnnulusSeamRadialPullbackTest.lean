@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamRadialCut
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamPullbackTest
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,8 +13,6 @@ namespace PoincareConjecture
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64_exists_compact_radial_seam_test
     {K : Set LoopPlane} (hK : IsCompact K) (hKO : K ⊆ m64AnnulusSeamDomain)

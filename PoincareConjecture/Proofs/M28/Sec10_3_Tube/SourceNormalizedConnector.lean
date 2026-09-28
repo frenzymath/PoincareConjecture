@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFiniteWalk
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallRetainedPath
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
-
-
 theorem source_neck_subset_tube_carrier
     (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) {k : ℕ} {i : ℤ}
@@ -38,9 +26,6 @@ theorem source_neck_subset_tube_carrier
   change x ∈ ⋃ j : {j // j ∈ (T k).chain.shape.active},
     ((T k).chain.neck j.1).carrier
   exact mem_iUnion.mpr ⟨⟨i, hi⟩, hx⟩
-
-
-
 
 theorem source_connector_base_subarc
     (H : CounterexampleNeckFamily E)
@@ -80,9 +65,6 @@ private theorem connector_factor_le_eight (hepsilon : epsilon ≤ (1 / 1000 : �
   have hpi : Real.pi + 1 ≤ (5 : ℝ) := by linarith [Real.pi_le_four]
   have hbound := mul_le_mul hproduct hpi (by positivity) (by norm_num)
   exact hbound.trans (by norm_num)
-
-
-
 
 theorem normalized_source_connector_of_finite_walk
     (H : CounterexampleNeckFamily E)

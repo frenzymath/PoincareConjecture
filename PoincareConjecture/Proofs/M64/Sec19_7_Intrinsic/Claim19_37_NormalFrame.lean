@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalJacobiEquation
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.RadialFrame
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +15,6 @@ open ConnectionAlongCurve ConnectionVariation
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_boundary_unit_tangent_inner
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) (a : ℝ) :
     N.metric.inner (intrinsicAnnulusBoundary radius a)
@@ -42,8 +28,6 @@ theorem m64Intrinsic_boundary_unit_tangent_inner
     Real.sq_sqrt (Real.sqrt_pos.mp hs).le
   simp only [intrinsicBoundaryUnitTangent, map_smul, smul_apply, smul_eq_mul, ← hsq]
   field_simp
-
-
 
 theorem m64Intrinsic_exists_normal_parallel_frame
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0) (a : ℝ)

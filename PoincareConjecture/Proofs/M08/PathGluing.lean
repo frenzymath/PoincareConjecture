@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology

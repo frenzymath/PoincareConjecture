@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.VariationAction
 import PoincareConjecture.Proofs.M09.VariationSecondBoundary
 import PoincareConjecture.Proofs.M09.HessianCurveChainRule
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

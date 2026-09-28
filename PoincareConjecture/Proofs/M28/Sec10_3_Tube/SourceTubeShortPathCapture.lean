@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeEndTails
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphSide
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSlabRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +16,6 @@ namespace PoincareConjecture.M28.SourceTubeData
 variable {epsilon C A D0 D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D0 D}
   {S : CounterexampleNeckSegment E}
-
-
-
-
 
 theorem short_path_mapsTo_of_terminal_avoidance (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 1000 : ℝ)) (f : UnitTwoSphere → ℝ)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Convex.UpperSupport
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.DerivHyp
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,9 +8,6 @@ open Set Filter
 open scoped Topology
 
 namespace Poincare.Alexandrov
-
-
-
 
 theorem ode_lower_comparison_of_approximate_upper_support
     {f L : ℝ → ℝ} {a b : ℝ}
@@ -83,9 +72,6 @@ private theorem hyperbolic_combination_second_deriv (A B t : ℝ) :
   rw [hfirst]
   exact (((Real.hasDerivAt_sinh t).const_mul A).add
     ((Real.hasDerivAt_cosh t).const_mul B)).deriv
-
-
-
 
 theorem hyperbolic_upper_comparison_of_approximate_upper_support
     {f u : ℝ → ℝ} {b v₀ : ℝ} (hb : 0 < b)

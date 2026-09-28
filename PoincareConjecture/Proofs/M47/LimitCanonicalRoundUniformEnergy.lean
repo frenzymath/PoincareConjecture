@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalRoundLocalEnergy
 import PoincareConjecture.Proofs.M34.Standard.LocalPullbackRealization
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +24,6 @@ private local instance (G : GeneralizedBlowupConvergence V J) :
     ChartedSpace E3 G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance (G : GeneralizedBlowupConvergence V J) :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
-
 
 theorem limitCanonical_round_neighborhood_energy_bound
     (P : M47Predecessors.{u}) (G : GeneralizedBlowupConvergence V J)
@@ -81,10 +68,6 @@ theorem limitCanonical_round_neighborhood_energy_bound
   refine ⟨W, hW, ?_⟩
   filter_upwards [hbound] with k hk y hy
   simpa only [a.left_inv hy.1] using hk (a y) hy.2
-
-
-
-
 
 theorem limitCanonical_round_uniform_energy_bound
     [CompactSpace X]

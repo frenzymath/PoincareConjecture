@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Flow.Regularity.Potential
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.Levels.MetricExpansion.Manifold
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -32,8 +24,6 @@ private theorem ricci_smul_self (D : LeviCivitaData g)
   simp_rw [← D.curvatureTensor_bilinear_first_third_apply]
   simp only [map_smul, LinearMap.smul_apply, smul_eq_mul, ← Finset.mul_sum]
   ring
-
-
 
 theorem ricci_le_half_scalarCurvature_mul_inner_of_sectional_nonneg
     (D : LeviCivitaData g) (x : M)
@@ -70,7 +60,6 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
 
-
 theorem hessian_ge_one_sub_scalar_half
     (S : GradientShrinkingSolitonData 3 M)
     (x : M) (v : TangentSpace (𝓡 3) x) :
@@ -81,8 +70,6 @@ theorem hessian_ge_one_sub_scalar_half
       x (S.nonnegative_curvature x) v w) v
   have heq := S.soliton_equation x v v
   nlinarith
-
-
 
 theorem hessian_nonneg_of_scalarCurvature_le_one
     (S : GradientShrinkingSolitonData 3 M)
@@ -95,9 +82,6 @@ theorem hessian_nonneg_of_scalarCurvature_le_one
     · exact (S.metric.pos x v hv).le
   exact (mul_nonneg (div_nonneg (sub_nonneg.mpr hR) (by norm_num)) hinner).trans
     (S.hessian_ge_one_sub_scalar_half x v)
-
-
-
 
 theorem exists_local_normalizedGradient_flow_with_nondecreasing_metric
     (S : GradientShrinkingSolitonData 3 M) {U : Set M}

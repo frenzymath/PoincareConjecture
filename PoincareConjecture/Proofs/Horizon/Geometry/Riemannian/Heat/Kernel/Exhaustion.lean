@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Exhaustion
 import Mathlib.Geometry.Manifold.PartitionOfUnity
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -24,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
-
 
 theorem exists_smooth_compactSupport_cutoffs (g : RiemannianMetric n M) :
     ∃ χ : ℕ → M → ℝ,
@@ -54,11 +42,6 @@ theorem exists_smooth_compactSupport_cutoffs (g : RiemannianMetric n M) :
     obtain ⟨N, hN⟩ := K.exists_superset_of_isCompact hs
     exact eventually_atTop.mpr ⟨N, fun j hj x hx ↦ hf1 j (K.subset hj (hN hx))⟩
 
-
-
-
-
-
 theorem eventually_cutoff_mul_eq_of_hasCompactSupport
     {χ : ℕ → M → ℝ}
     (hχ : ∀ s : Set M, IsCompact s → ∀ᶠ j in atTop, EqOn (χ j) 1 s)
@@ -74,7 +57,6 @@ theorem eventually_cutoff_mul_eq_of_hasCompactSupport
       by_contra hne
       exact hx (subset_closure hne)
     simp [hxf]
-
 
 theorem exists_smooth_compact_sublevel (g : RiemannianMetric n M) :
     ∃ f : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f ∧

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.DerivativeLipschitz
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.PathDisplacement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
-
 
 noncomputable def height (C : M27TwistedSphereLineFlowCertificate K) (x : M) : ℝ :=
   |(C.cover_surjective x).choose.2|
@@ -140,7 +130,6 @@ private theorem regularized_height_derivative_bound
   exact (mul_le_of_le_one_left (abs_nonneg _) (regularized_abs_derivative_le hδ p.2)).trans
     (C.line_tangent_le ht p w)
 
-
 theorem edist_height_le (C : M27TwistedSphereLineFlowCertificate K)
     {t : ℝ} (ht : t ≤ 0) (x y : M) :
     EDist.edist (C.height x) (C.height y) ≤ (K.flow.metric t).edist x y := by
@@ -166,7 +155,6 @@ theorem abs_height_sub_le_toReal_edist (C : M27TwistedSphereLineFlowCertificate 
   have h := ENNReal.toReal_mono ((K.flow.metric t).edist_ne_top x y)
     (C.edist_height_le ht x y)
   simpa only [edist_dist, Real.dist_eq, ENNReal.toReal_ofReal (abs_nonneg _)] using h
-
 
 theorem edist_le_mem_slabCore (C : M27TwistedSphereLineFlowCertificate K)
     {t r R : ℝ} (ht : t ≤ 0) (hR : 0 ≤ R) {x y : M}
@@ -203,7 +191,6 @@ private theorem edist_cover_line_le_of_le (C : M27TwistedSphereLineFlowCertifica
     (K.flow.metric t).edist_le_of_tangentNorm_le hab isOpen_univ (subset_univ _)
       hγ.contMDiffOn zero_le_one (fun s _ => (hspeed s).le)
 
-
 theorem edist_cover_line_le (C : M27TwistedSphereLineFlowCertificate K)
     {t : ℝ} (ht : t ≤ 0) (p : UnitTwoSphere) (a b : ℝ) :
     (K.flow.metric t).edist (C.cover (p, a)) (C.cover (p, b)) ≤ ENNReal.ofReal |a - b| := by
@@ -218,13 +205,11 @@ theorem edist_cover_line_le (C : M27TwistedSphereLineFlowCertificate K)
     rw [hc, abs_of_nonneg (sub_nonneg.mpr hba)]
     exact C.edist_cover_line_le_of_le ht p hba
 
-
 theorem edist_cover_line_eq (C : M27TwistedSphereLineFlowCertificate K)
     {t : ℝ} (ht : t ≤ 0) (p : UnitTwoSphere) {a b : ℝ} (ha : 0 ≤ a) (hb : 0 ≤ b) :
     (K.flow.metric t).edist (C.cover (p, a)) (C.cover (p, b)) = ENNReal.ofReal |a - b| := by
   apply le_antisymm (C.edist_cover_line_le ht p a b)
   simpa only [C.height_cover, abs_of_nonneg ha, abs_of_nonneg hb, edist_dist, Real.dist_eq] using
     C.edist_height_le ht (C.cover (p, a)) (C.cover (p, b))
-
 
 end PoincareConjecture.M27TwistedSphereLineFlowCertificate

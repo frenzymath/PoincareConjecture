@@ -2,20 +2,9 @@ import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
 
 theorem ContinuousOn.exists_first_frontier_time
     {X : Type*} [TopologicalSpace X] {γ : ℝ → X} {a b : ℝ}
@@ -51,9 +40,6 @@ theorem ContinuousOn.exists_first_frontier_time
     rcases lt_or_eq_of_le hs.2 with hsc | rfl
     · exact subset_closure (hprior ⟨hs.1, hsc⟩)
     · exact hcl
-
-
-
 
 theorem ContinuousOn.mapsTo_of_open_prefix
     {X : Type*} [TopologicalSpace X] {f : ℝ → X} {a b : ℝ}

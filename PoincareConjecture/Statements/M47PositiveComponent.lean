@@ -1,23 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Definitions.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -25,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 def M47PositiveComponentBlowupStatement : Prop :=
   ∀ (M : Type u) [TopologicalSpace M]

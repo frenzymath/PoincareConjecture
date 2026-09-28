@@ -1,22 +1,10 @@
 import Mathlib.Analysis.Calculus.ContDiff.Comp
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem fderiv_fderiv_comp_apply_of_contDiffOn
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]

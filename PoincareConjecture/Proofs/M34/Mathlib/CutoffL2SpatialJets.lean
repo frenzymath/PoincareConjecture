@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Uniquen
 import PoincareConjecture.Proofs.M34.Mathlib.CutoffCoordinateEnergyLimit
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateEnergyZero
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,15 +16,11 @@ variable {n : ℕ} {F : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   {ι : Type*} [Fintype ι]
 
-
-
 noncomputable def cutoffCoordinateEnergy (q : F →L[ℝ] EuclideanSpace ℝ ι)
     (φ : EuclideanSpace ℝ (Fin n) → ℝ) (h : EuclideanSpace ℝ (Fin n) → F) : ℝ :=
   letI : MeasurableSpace (EuclideanSpace ℝ (Fin n)) := borel _
   letI : BorelSpace (EuclideanSpace ℝ (Fin n)) := ⟨rfl⟩
   ∑ i, ∫ x, (φ x * q (h x) i) ^ 2
-
-
 
 theorem cutoffCoordinateEnergy_nonneg (q : F →L[ℝ] EuclideanSpace ℝ ι)
     (φ : EuclideanSpace ℝ (Fin n) → ℝ) (h : EuclideanSpace ℝ (Fin n) → F) :
@@ -43,9 +28,6 @@ theorem cutoffCoordinateEnergy_nonneg (q : F →L[ℝ] EuclideanSpace ℝ ι)
   let : MeasurableSpace (EuclideanSpace ℝ (Fin n)) := borel _
   let : BorelSpace (EuclideanSpace ℝ (Fin n)) := ⟨rfl⟩
   exact Finset.sum_nonneg fun i _ => integral_nonneg fun x => sq_nonneg _
-
-
-
 
 theorem tendsto_zero_of_cutoff_energy
     [FiniteDimensional ℝ F]
@@ -101,8 +83,6 @@ theorem tendsto_zero_of_cutoff_energy
   refine ⟨S.subsequence, ?_⟩
   simpa [hlim0] using hval.tendsto_at hxφ
 
-
-
 theorem tendstoUniformlyOn_iteratedFDeriv_of_cutoff_energy
     [FiniteDimensional ℝ F]
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -129,9 +109,6 @@ theorem tendstoUniformlyOn_iteratedFDeriv_of_cutoff_energy
   simpa [iteratedFDeriv_zero] using
     tendstoUniformlyOn_iteratedFDeriv_of_eventually_smooth hΩ hpoint hsmooth
       hboundΩ m hK hKφ
-
-
-
 
 theorem tendstoUniformlyOn_iteratedFDeriv_of_cutoff_energy_Icc
     [FiniteDimensional ℝ F]

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.BufferedRadius
 import PoincareConjecture.Proofs.M35.RawFlow.MetricSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.CapCertificate
-
-
-
-
 
 theorem exists_local_core_scalar_witness
     {M : Type u} [TopologicalSpace M]

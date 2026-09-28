@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionIntrinsicDensity
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexIntrinsicInterior
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem exists_subcomplex_of_frontier
     (K J : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -78,9 +66,6 @@ theorem exists_subcomplex_of_frontier
   refine ⟨L, hLK, hJL, hLS.antisymm ?_⟩
   rw [← hreg]
   exact closure_minimal hinside hclosed
-
-
-
 
 theorem exists_finite_triangulation_of_polyhedral_frontier
     {S : Set E} (hS : IsCompact S) (hreg : closure (interior S) = S)

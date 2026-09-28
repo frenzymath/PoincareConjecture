@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChainCoordinates
 import Mathlib.Combinatorics.SimpleGraph.Acyclic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -20,12 +11,10 @@ variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
 
-
 def edgeInGraph (T : SimpleGraph ι) (e : Edge A) : Prop :=
   ∃ u v, T.Adj u v ∧ e.val = {u, v}
 
 open Classical in
-
 
 theorem reachableCut_value_eq (G : SimpleGraph ι) (u : ι) {v w : ι}
     (hvw : G.Adj v w) :
@@ -38,8 +27,6 @@ theorem reachableCut_value_eq (G : SimpleGraph ι) (u : ι) {v w : ι}
 variable [Finite ι]
 
 open Classical in
-
-
 
 theorem edgeChain_eq_zero_of_acyclic_support (T : SimpleGraph ι) (hT : T.IsAcyclic)
     (c : Module.Dual (ZMod 2) (Edge A → ZMod 2))

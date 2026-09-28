@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.CapScalarEstimates
 import PoincareConjecture.Proofs.M35.Thm12_28.EvolvingNeckScalar
 import PoincareConjecture.Proofs.M35.RawFlow.BlowupTimes
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
-
-
 
 theorem canonical_scalar_analytic_controls (P : M35StandardCapPredecessors) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧
@@ -80,9 +66,6 @@ theorem canonical_scalar_analytic_controls (P : M35StandardCapPredecessors) :
     intro u hu
     exact ⟨by linarith [N.epsilon_pos, hu.1], hu.2⟩
 
-
-
-
 theorem exists_guarded_scalar_bound_of_canonical (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)
     (atlas : StandardCylinderAtlas)
@@ -104,8 +87,6 @@ theorem exists_guarded_scalar_bound_of_canonical (P : M35StandardCapPredecessors
   intro t ht x hR
   exact (le_abs_self _).trans
     (hbound atlas epsilon C (min_le_left _ _) t ht x hR (hc t ht x)).2
-
-
 
 theorem exists_guarded_scalar_gradient_of_canonical (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (F : MaximalStandardCapFlow g₀)

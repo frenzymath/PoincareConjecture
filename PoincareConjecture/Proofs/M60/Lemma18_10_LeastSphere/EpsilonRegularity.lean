@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityMeanValue
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +10,6 @@ open scoped ContDiff Topology Manifold
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem suAlphaPrincipalQuadratic_uniform
     (G : E →L[ℝ] E →L[ℝ] ℝ) (a b : E) {rho alpha : ℝ}
@@ -435,8 +426,6 @@ private theorem mapAlpha_divergence_lower
   rw [Fin.sum_univ_two, (hflux (b 0)).fderiv_eq, (hflux (b 1)).fderiv_eq]
   exact hlow
 
-
-
 theorem exists_divergence_heinz :
     ∃ B : ℝ, 0 < B ∧ ∀ (K L R : ℝ), 0 ≤ K → 0 ≤ L → 0 < R → R ≤ 1 →
       ∀ D : LeviCivitaData (RiemannianMetric.euclideanMetric 2),
@@ -566,8 +555,6 @@ private theorem divergence_to_weak
   erw [integral_add (hi1.const_mul K) (hi2.const_mul L)] at hm
   simp only [neg_neg, integral_const_mul] at hm
   exact hm
-
-
 
 theorem m60AlphaMap_small_energy [CompactSpace M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) :

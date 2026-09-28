@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarEnergyPositive
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationConjugate
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,27 +17,11 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
 def scalarMetricFlux (H : Plane → ℝ) (i : Fin 2) (x : Plane) : ℝ :=
   g.pullbackVolumeDensity id x * WithLp.ofLp (D.gradient H x) i
 
-
-
-
-
-
 def scalarConjugateForm (H : Plane → ℝ) (x : Plane) : Plane →L[ℝ] ℝ :=
   M60.rotatedFlux (scalarMetricFlux D H 0) (scalarMetricFlux D H 1) x
-
-
-
-
-
-
 
 theorem scalarMetricFlux_divergence_zero {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -73,12 +44,6 @@ private theorem flux_smooth {U : Plane → ℝ}
     contDiff_iff_contDiffAt.mpr fun x => D.contDiffAt_gradient_euclidean
       ((contMDiff_iff_contDiff.mp hU).contDiffAt (x := x))
   exact hrho.mul ((show Plane →L[ℝ] ℝ from EuclideanSpace.proj i).contDiff.comp hgrad)
-
-
-
-
-
-
 
 theorem exists_conjugate_on_ball {A B : Plane → ℝ}
     (hA : ContDiff ℝ ∞ A) (hB : ContDiff ℝ ∞ B) {x : Plane} {r : ℝ}
@@ -110,13 +75,6 @@ theorem exists_conjugate_on_ball {A B : Plane → ℝ}
   have hxy : x + (y - x) = y := by abel
   simpa only [Function.comp_def, id_eq, M60.rotatedFlux, hxy,
     ContinuousLinearMap.comp_id] using h
-
-
-
-
-
-
-
 
 theorem exists_local_annular_conjugate {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

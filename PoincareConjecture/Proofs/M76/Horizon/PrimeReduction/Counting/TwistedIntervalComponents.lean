@@ -3,8 +3,6 @@ import Mathlib.Topology.Connected.LocallyPathConnected
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.FiberMetric
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapter
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,13 +15,9 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 def auxiliaryCircleRadialLift (P : M62.CircleProductData F circumference)
     (f : LoopPlane → M) (delta : ℝ) : LoopPlane → P.charts.Point :=
   fun z => (f z, P.circle.quotient (delta * z 1))
-
-
 
 theorem auxiliaryCircle_radial_lipschitz
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -61,8 +46,6 @@ theorem auxiliaryCircle_radial_lipschitz
     _ = ENNReal.ofReal (A.lipschitz_constant + |delta|) *
         ENNReal.ofReal ‖(x : LoopPlane) - y‖ := by
       rw [ENNReal.ofReal_add A.lipschitz_nonnegative (abs_nonneg delta), add_mul]
-
-
 
 theorem auxiliaryCircle_radial_annulus [T2Space M]
     (P : M62.CircleProductData F circumference) (time : ℝ)
@@ -100,8 +83,6 @@ theorem auxiliaryCircle_radial_annulus [T2Space M]
     (lt_add_one (∫ z in m64AnnulusDomain,
       m60AreaDensity (P.flow.metric time) (auxiliaryCircleRadialLift P A.map delta) z))
   exact ⟨B, hB⟩
-
-
 
 theorem auxiliaryCircle_separated_boundary_ranges
     (P : M62.CircleProductData F circumference) (c0 c1 : ℝ → M)

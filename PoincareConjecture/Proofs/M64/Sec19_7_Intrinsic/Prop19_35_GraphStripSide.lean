@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EndpointStripFrontier
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +9,6 @@ open scoped Topology ContDiff
 open Poincare.Topology.Plane.Curves
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_graph_strip_inward_endpoint_point
     (L : (ℝ × ℝ) ≃L[ℝ] AnnulusCoordinates)
@@ -58,9 +47,6 @@ theorem m64Intrinsic_graph_strip_inward_endpoint_point
     simp only [if_true]
     rw [P.linearCoordinates_right L hX hf hz, P.right.parameter.left_inv hrcut.1]
     exact hrU
-
-
-
 
 theorem m64Intrinsic_closed_half_strip_inside
     {U : Set AnnulusCoordinates} (hU : IsOpen U)

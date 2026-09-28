@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.EmbeddingHessianVector
 import PoincareConjecture.Proofs.M63.Mathlib.FixedCompositionSecondDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem coordinateHessian_retraction_identity {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {e : M → W} (he : ContMDiff (𝓡 n) 𝓘(ℝ, W) ∞ e)

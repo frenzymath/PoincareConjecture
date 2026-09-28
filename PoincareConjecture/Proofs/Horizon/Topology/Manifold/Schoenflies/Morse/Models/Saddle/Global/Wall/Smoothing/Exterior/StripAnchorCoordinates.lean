@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Wall.Smoothing.Exterior.Pasting
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ private abbrev S2 := sphere (0 : E3) 1
 local notation "IR" => 𝓘(Real, Real)
 local notation "IR2" => 𝓘(Real, Real × Real)
 
-
 theorem anchorStripParameter_coordinates
     {height : S2 → Real} {c t₀ : Real}
     (F : OpenPartialHomeomorph (Real × Real) S2)
@@ -40,7 +31,6 @@ theorem anchorStripParameter_coordinates
   · exact (R t₀).apply_symm_apply (F.symm (α q)).1
   · linarith
 
-
 theorem anchorStripParameter_reconstructs
     {height : S2 → Real} {c t₀ : Real}
     (F : OpenPartialHomeomorph (Real × Real) S2)
@@ -51,8 +41,6 @@ theorem anchorStripParameter_reconstructs
     F (R t₀ (anchorStripParameter F R t₀ α q), t₀) = α q := by
   rw [anchorStripParameter_coordinates F hheight R α hlevel hq]
   exact F.right_inv hq
-
-
 
 theorem strip_anchor_parameter_geometry
     {height : S2 → Real} {c t₀ : Real}

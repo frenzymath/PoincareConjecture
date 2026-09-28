@@ -1,21 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Statements.M63RampEstimates
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -30,14 +15,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)}
 
-
 noncomputable def m64FlowAnnulusArea {circumference : ℝ}
     (P : M62.CircleProductData F circumference)
     (c0 c1 : ℝ → ℝ → P.charts.Point) (t : ℝ) : ℝ :=
   m64LeastAnnulusArea (P.flow.metric t) (fun x => c0 x t) (fun x => c1 x t)
-
-
-
 
 structure M64AnnulusFlowConclusion (G : M63AmbientGeometry F)
     {circumference : ℝ} (h : 0 < circumference)
@@ -61,10 +42,6 @@ structure M64AnnulusFlowConclusion (G : M63AmbientGeometry F)
       Real.exp (((2 : ℝ) * n - 1) * G.K0 * (t - s)) *
         m64FlowAnnulusArea (G.product circumference h) c0 c1 s
 
-
-
-
-
 structure M64AnnulusEvolution (G : M63AmbientGeometry F) : Prop where
   curvature_bounded : ∀ t ∈ Set.Icc a b,
     BddAbove (Set.range (fun x : M => (F.connection t).curvatureTensorNorm x))
@@ -84,9 +61,6 @@ structure M64AnnulusEvolution (G : M63AmbientGeometry F) : Prop where
         (fun x => c0 x a) (fun x => c1 x a) →
       M64AnnulusFlowConclusion G h c0 c1
 
-
-
-
 def M64AnnulusProjection {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (t : ℝ) : Prop :=
   ∀ (c0 c1 : ℝ → P.charts.Point) (A : M64Annulus (P.flow.metric t) c0 c1),
@@ -103,10 +77,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
 
-
-
-
-
 structure M64DiskGluingConclusion {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (t : ℝ)
     {c0 c1 : ℝ → P.charts.Point} (A : M64Annulus (P.flow.metric t) c0 c1)
@@ -121,8 +91,6 @@ structure M64DiskGluingConclusion {circumference : ℝ}
     Nonempty (LipschitzSpanningDisk (F.metric t) gamma1) →
       |fillingArea (F.metric t) gamma1 - fillingArea (F.metric t) gamma0| <=
         m64ProjectedAnnulusArea P t A
-
-
 
 def M64DiskAreaComparison {circumference : ℝ}
     (P : M62.CircleProductData F circumference) (t : ℝ) : Prop :=

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeVectorGreen
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityWeakGluing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -20,10 +9,6 @@ open scoped Topology ContDiff SchwartzMap
 namespace PoincareConjecture.M65LocalWeakMap
 
 open M65Interior
-
-
-
-
 
 theorem exists_cone_replacement {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

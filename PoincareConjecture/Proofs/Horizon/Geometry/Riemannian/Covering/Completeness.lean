@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.LocalDiffeom
 import Mathlib.Topology.Covering.Basic
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +11,6 @@ open Set Filter Topology
 open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem metricComplete_of_isCoveringMap
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -114,8 +102,6 @@ theorem metricComplete_of_isCoveringMap
       (H.symm.continuous.continuousAt.tendsto.comp hv))
     simpa only [Function.comp_def, H.symm_apply_apply, v] using this
   exact ⟨(H.symm z).1, (tendsto_add_atTop_iff_nat k).mp hlim⟩
-
-
 
 theorem metricComplete_pullbackOfLocalDiffeomorph
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]

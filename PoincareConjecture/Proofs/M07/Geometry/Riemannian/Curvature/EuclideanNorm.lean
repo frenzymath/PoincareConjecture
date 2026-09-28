@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormContinuity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ScalarJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 200000
 set_option maxSynthPendingDepth 12
@@ -105,8 +97,6 @@ private lemma differentiableAt_euclideanConnection (D : LeviCivitaData g)
     DifferentiableAt ℝ (D.euclideanConnection u v) x :=
   (D.contDiffAt_euclideanConnection x u v).differentiableAt (by simp)
 
-
-
 theorem exists_multilinear_curvatureTensor (D : LeviCivitaData g)
     (x : EuclideanSpace ℝ (Fin n)) :
     ∃ A : MultilinearMap ℝ (fun _ : Fin 4 => EuclideanSpace ℝ (Fin n)) ℝ,
@@ -137,8 +127,6 @@ theorem exists_multilinear_curvatureTensor (D : LeviCivitaData g)
   change g.inner x (D.curvature x (v 0) (v 1) (v 3)) (v 2) = R v
   rw [curvature_eq_euclideanConnection]
   rfl
-
-
 
 theorem tendsto_curvatureTensorNorm_of_metric_jets
     {α : Type*} {l : Filter α}
@@ -174,8 +162,6 @@ theorem tendsto_curvatureTensorNorm_of_metric_jets
   · intro i
     exact tendsto_curvatureTensor_of_metric_jets Dseq D x
       (b (i 0)) (b (i 1)) (b (i 2)) (b (i 3)) hzero hone htwo
-
-
 
 theorem tendsto_curvatureTensorNorm_of_scalar_metric_jets
     {α : Type*} {l : Filter α}

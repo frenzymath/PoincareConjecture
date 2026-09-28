@@ -1,21 +1,10 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem generalizedSliceStrongCanonicalNeighborhoods.mono_cutoff
     {F : GeneralizedRicciFlowData.{u}} {epsilon C Q Q' s : ℝ}
@@ -24,8 +13,6 @@ theorem generalizedSliceStrongCanonicalNeighborhoods.mono_cutoff
   intro y hy
   exact h y (hQ.trans hy)
 
-
-
 theorem generalizedEarlierStrongCanonicalNeighborhoods.at_time
     {F : GeneralizedRicciFlowData.{u}} {epsilon C t : ℝ}
     {x : (F.slice t).carrier}
@@ -33,8 +20,6 @@ theorem generalizedEarlierStrongCanonicalNeighborhoods.at_time
     (ht : t ∈ F.interval) :
     generalizedSliceStrongCanonicalNeighborhoods F epsilon C (4 * F.scalar ⟨t, x⟩) t :=
   h t ht le_rfl
-
-
 
 theorem generalizedEarlierDenseStrongCanonicalNeighborhoods.at_minimum
     {F : GeneralizedRicciFlowData.{u}} {epsilon C t : ℝ}
@@ -46,9 +31,6 @@ theorem generalizedEarlierDenseStrongCanonicalNeighborhoods.at_minimum
   have hst' : s = t := le_antisymm hst (hmin s hs)
   subst s
   exact hslice
-
-
-
 
 theorem generalizedEarlierDenseStrongCanonicalNeighborhoods.rebase
     {F : GeneralizedRicciFlowData.{u}} {epsilon C s t : ℝ}

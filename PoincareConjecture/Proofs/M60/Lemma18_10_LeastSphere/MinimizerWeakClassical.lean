@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerClassicalGradient
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerNearLaplacianHolder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +15,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 
-
-
 theorem suWeakPartial_congr_ae {O : Set Plane} {i : Fin 2}
     {u v p q : Plane → ℝ} (hw : HasWeakPartialDeriv i p u O)
     (hu : v =ᵐ[volume.restrict O] u) (hp : q =ᵐ[volume.restrict O] p) :
@@ -35,8 +25,6 @@ theorem suWeakPartial_congr_ae {O : Set Plane} {i : Fin 2}
       integral_congr_ae (hu.mono fun x hx => by rw [hx])
     _ = -(∫ x in O, p x * φ x) := hw φ hφ hc hs
     _ = _ := congrArg Neg.neg (integral_congr_ae (hp.mono fun x hx => by rw [hx]))
-
-
 
 theorem suPlaneColumns_continuousOn {m : ℕ} {O : Set Plane}
     {p : Fin 2 → Plane → EuclideanSpace ℝ (Fin m)}
@@ -49,10 +37,6 @@ theorem suPlaneColumns_continuousOn {m : ℕ} {O : Set Plane}
   intro x _
   ext v
   simp [suPlaneColumns]
-
-
-
-
 
 theorem suNearLaplacian_C1_holder :
     ∃ δ C : ℝ, 0 < δ ∧ 0 < C ∧ ∀ (m : ℕ)

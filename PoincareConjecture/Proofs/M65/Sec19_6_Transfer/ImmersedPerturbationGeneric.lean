@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationTransverse
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationFiniteFibers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,11 +38,6 @@ private theorem original_separation_radius (C : M65SmoothFilledLoopFamily F J)
   exact ⟨rho, hrho, fun t ht => (hcontrol 0 (mem_ball_self hd) t ht).2⟩
 
 set_option maxHeartbeats 1800000 in
-
-
-
-
-
 
 theorem exists_generic_control_family (C : M65SmoothFilledLoopFamily F J)
     (hJ : IsOpen J) (K : Set ℝ) (hK : IsCompact K) (hKJ : K ⊆ J) :

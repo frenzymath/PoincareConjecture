@@ -1,15 +1,5 @@
 import PoincareConjecture.Definitions.Ch11.SingularLimits
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +8,6 @@ open scoped Manifold ContDiff Bundle BigOperators
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem singularMetricJetErrorSquared_term_le
     {X : Type u} [TopologicalSpace X]
@@ -43,8 +30,6 @@ theorem singularMetricJetErrorSquared_term_le
       (fun y v ↦ B y v - g₀.inner y (v 0) (v 1)) i) x) ^ 2)
     (fun i _ ↦ sq_nonneg _) (Finset.mem_range.mpr (Nat.lt_succ_iff.mpr hj))
   exact hsingle.trans hE'
-
-
 
 theorem singularMetricJetNorm_lt_of_error_lt
     {X : Type u} [TopologicalSpace X]

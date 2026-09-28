@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -66,7 +58,6 @@ private lemma curvatureTensor_sum_frame (D : LeviCivitaData g) (x : M)
   change _ = _ * inner ℝ (b i) u * inner ℝ (b j) v * inner ℝ (b k) u * inner ℝ (b l) v
   ring
 
-
 theorem curvatureTensor_self_nonneg_of_nonnegative_curvatureOperator
     (D : LeviCivitaData g) (x : M) (hoperator : D.NonnegativeCurvatureOperator x)
     (u v : TangentSpace (𝓡 n) x) : 0 ≤ D.curvatureTensor x u v u v := by
@@ -100,8 +91,6 @@ theorem curvatureTensor_self_nonneg_of_nonnegative_curvatureOperator
   rw [heq] at hnonneg
   rw [D.curvatureTensor_sum_frame x u v]
   exact hnonneg
-
-
 
 theorem sectionalCurvature_nonneg_of_nonnegative_curvatureOperator
     (D : LeviCivitaData g) (x : M) (hoperator : D.NonnegativeCurvatureOperator x)

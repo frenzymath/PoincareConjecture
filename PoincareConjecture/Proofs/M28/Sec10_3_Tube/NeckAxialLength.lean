@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompetitors
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckLengthComparison
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
 
 theorem coordinate_path_axial_displacement_le_of_speed (N : EpsilonNeck g)
     {c : ℝ} (hc : 0 ≤ c)
@@ -96,8 +85,6 @@ theorem coordinate_path_axial_displacement_le_of_speed (N : EpsilonNeck g)
       symm
       exact Manifold.pathELength_eq_lintegral_mfderivWithin_Icc
 
-
-
 theorem coordinate_path_axial_displacement_le (N : EpsilonNeck g)
     {η : ℝ → RoundCylinderSpace}
     (hη : ContMDiffOn 𝓘(ℝ, ℝ) ((𝓡 2).prod 𝓘(ℝ, ℝ)) 1 η (Icc (0 : ℝ) 1))
@@ -106,8 +93,6 @@ theorem coordinate_path_axial_displacement_le (N : EpsilonNeck g)
       g.pathELength (N.coordinate_map ∘ η) 0 1 :=
   coordinate_path_axial_displacement_le_of_speed N
     (div_nonneg N.scale_pos.le (by norm_num)) N.coordinate_axial_speed_lower hη hηN
-
-
 
 theorem path_axial_displacement_le_of_speed (N : EpsilonNeck g)
     {c : ℝ} (hc : 0 ≤ c)
@@ -138,8 +123,6 @@ theorem path_axial_displacement_le_of_speed (N : EpsilonNeck g)
   have hbound := coordinate_path_axial_displacement_le_of_speed N hc hspeed hη hηN
   rw [hlength, hσlen] at hbound
   simpa only [η, Function.comp_apply, h0, h1] using hbound
-
-
 
 theorem path_axial_displacement_le (N : EpsilonNeck g)
     {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)

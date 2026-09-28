@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.ComparisonGluing
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SupportedComparison
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.NeighborhoodSubspaces
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,9 +20,6 @@ variable {J : Type u} [PartialOrder J] [Fintype J]
 open scoped Classical in
 set_option backward.isDefEq.respectTransparency false in
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem supportedSingularComparison_minimal_gluing
     (s : Finset J) (v : J) (hminimal : ∀ j ∈ s, j ≤ v → j = v)

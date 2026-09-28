@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity.LocalDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Manifold
@@ -26,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem edist_le_riemannianEDist_of_mfderiv_le_one {f : M → F}
     (hf : ContMDiff I 𝓘(ℝ, F) 1 f)

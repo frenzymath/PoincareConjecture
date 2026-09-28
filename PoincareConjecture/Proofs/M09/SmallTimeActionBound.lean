@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ExponentialCoercivity
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

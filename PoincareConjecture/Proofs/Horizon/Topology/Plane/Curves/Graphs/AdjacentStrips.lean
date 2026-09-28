@@ -1,18 +1,7 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.ImplicitFunction.Quadrants
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Compactness.Compact
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,11 +38,6 @@ private theorem scalar_first_derivative
   change fderiv ℝ (ℓ ∘ fun q => K q - p) 0 (1, 0) = _
   rw [hd.fderiv]
   rfl
-
-
-
-
-
 
 theorem exists_adjacent_strip_separation
     (F G : OpenPartialHomeomorph (ℝ × ℝ) E)
@@ -191,7 +175,6 @@ theorem exists_adjacent_strip_separation
 
 omit [NormedAddCommGroup E] [NormedSpace ℝ E] in
 
-
 theorem image_inter_eq_of_endpoint_separation
     {F G : ℝ × ℝ → E} {A B : Set (ℝ × ℝ)} {S : Set E}
     (hsep : ∀ q ∈ A, ∀ r ∈ B, F q = G r → q.1 = 1 ∧ r.1 = 0)
@@ -205,9 +188,6 @@ theorem image_inter_eq_of_endpoint_separation
   · intro y hy
     exact ⟨image_mono inter_subset_left (hFend.symm ▸ hy),
       image_mono inter_subset_left (hGend.symm ▸ hy)⟩
-
-
-
 
 theorem exists_adjacent_strip_intersection
     (F G : OpenPartialHomeomorph (ℝ × ℝ) E)

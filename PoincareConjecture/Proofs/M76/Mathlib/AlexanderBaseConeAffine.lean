@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem AffineMap.image_convexJoin (f : E →ᵃ[ℝ] F) (s t : Set E) :
     f '' convexJoin ℝ s t = convexJoin ℝ (f '' s) (f '' t) := by
@@ -38,11 +25,6 @@ theorem AffineMap.image_convexJoin (f : E →ᵃ[ℝ] F) (s t : Set E) :
 namespace Set
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.convexJoin_of_affine_level {d q : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d q) (A : E →ᵃ[ℝ] ℝ)

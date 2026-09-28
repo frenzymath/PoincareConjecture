@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialAxialDistance
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialLocalDistance
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoining
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,8 +35,6 @@ private theorem initial_comparison_radius_buffer
   refine ⟨by linarith, ?_⟩
   have h := mul_lt_mul_of_pos_left hinv heta
   simpa only [mul_one, mul_inv_cancel₀ heta.ne'] using h
-
-
 
 theorem source_initial_old_map_height_lt
     {F : SurgeryFlowData.{u}} {t : ℝ} (hT : t ∈ F.surgery_times)

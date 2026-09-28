@@ -4,15 +4,6 @@ import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.Analysis.Normed.Lp.MeasurableSpace
 import Mathlib.Analysis.SpecialFunctions.Pow.Continuity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,7 +12,6 @@ open Set MeasureTheory
 open scoped ENNReal
 
 namespace PoincareConjecture.HarmonicCoordinates
-
 
 theorem continuous_memLp_restrict_isCompact {n : ℕ}
     {μ : Measure (EuclideanSpace ℝ (Fin n))} [IsFiniteMeasureOnCompacts μ]
@@ -35,14 +25,12 @@ theorem continuous_memLp_restrict_isCompact {n : ℕ}
   filter_upwards [ae_restrict_mem hS.measurableSet] with x hx
   exact hC (mem_image_of_mem _ hx)
 
-
 theorem continuous_memLp_restrict_closedBall {n : ℕ}
     {μ : Measure (EuclideanSpace ℝ (Fin n))} [IsFiniteMeasureOnCompacts μ]
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : Continuous f)
     (z : EuclideanSpace ℝ (Fin n)) (ρ : ℝ) (q : ℝ≥0∞) :
     MemLp f q (μ.restrict (Metric.closedBall z ρ)) :=
   continuous_memLp_restrict_isCompact hf (isCompact_closedBall z ρ) q
-
 
 theorem continuous_memLp_restrict_ball {n : ℕ}
     {μ : Measure (EuclideanSpace ℝ (Fin n))} [IsFiniteMeasureOnCompacts μ]
@@ -51,7 +39,6 @@ theorem continuous_memLp_restrict_ball {n : ℕ}
     MemLp f q (μ.restrict (Metric.ball z ρ)) :=
   (continuous_memLp_restrict_closedBall hf z ρ q).mono_measure
     (Measure.restrict_mono Metric.ball_subset_closedBall le_rfl)
-
 
 theorem eLpNorm_rpow_toReal_sq {α : Type*} [MeasurableSpace α]
     {μ : Measure α} {f : α → ℝ} (hfn : ∀ x, 0 ≤ f x)
@@ -66,7 +53,6 @@ theorem eLpNorm_rpow_toReal_sq {α : Type*} [MeasurableSpace α]
   congr 1
   norm_num
   ring
-
 
 theorem setIntegral_rpow_sq_eq_eLpNorm_rpow {n : ℕ}
     {μ : Measure (EuclideanSpace ℝ (Fin n))} [IsFiniteMeasureOnCompacts μ]

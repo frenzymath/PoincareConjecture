@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.Extraction.Ancient.LimitRegularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Lipschitz
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -68,8 +67,6 @@ theorem reducedLengthPullback_limit_intrinsic_gradient_bound_in_coordinates_ae
   rw [(G.limit.flow.connection (-τ)).gradient_norm_sq_eq_inverse_pairing e
     contMDiffOn_chart_symm contMDiffOn_chart (hUs hxs) hf]
   exact hx
-
-
 
 theorem reducedLengthPullback_limit_gradient_bound_ae
     (G : AncientCompactTimeConvergence S) (P : AncientAsymptoticSolitonPredecessors K)

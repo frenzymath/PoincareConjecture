@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.OriginalScalarTranslationPL
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.Translations.Vector
 
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -14,8 +12,6 @@ local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "R0" => latticeHandleDomain (Fin 0) (Fin 3) L0
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
-
-
 
 theorem chartwisePL_hamiltonZero_vector_translation {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

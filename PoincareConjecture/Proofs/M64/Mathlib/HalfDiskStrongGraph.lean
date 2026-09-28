@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.HalfDiskPolarRepresentatives
 import PoincareConjecture.Proofs.M64.Mathlib.RestrictedPullbackLp
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -34,11 +21,6 @@ private theorem continuous_compact_memLp {X : Type*} [TopologicalSpace X]
     {f : X → ℝ} (hf : Continuous f) : MemLp f 2 (mu.restrict K) :=
   (memLp_two_iff_integrable_sq hf.aestronglyMeasurable).mpr
     ((hf.pow 2).continuousOn.integrableOn_compact hK)
-
-
-
-
-
 
 theorem m64HalfDisk_strong_graph_extract {epsilon R H : ℝ}
     (hepsilon : 0 < epsilon) (hRH : R ≤ H)

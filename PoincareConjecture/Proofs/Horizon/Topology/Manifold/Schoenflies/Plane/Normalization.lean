@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Ambient
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Reduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +10,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies
 
 private instance : Fact (Module.finrank Real (EuclideanSpace Real (Fin 2)) = 2) := ⟨by simp⟩
-
-
 
 theorem exists_ambient_diffeomorph_of_smooth_circle
     (f : sphere (0 : EuclideanSpace Real (Fin 2)) 1 -> EuclideanSpace Real (Fin 2))

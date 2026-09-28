@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,15 +21,11 @@ noncomputable local instance modelCurvatureCoefficientNormedGroup :
 noncomputable local instance modelCurvatureCoefficientNormedSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
 
-
-
 theorem model_horizontal_basis_left (i : Fin 3) (x : E) :
     H (e i) x = ![(cylinderEuclideanEquiv x).1 0,
       (cylinderEuclideanEquiv x).1 1, 0] i := by
   rw [cylinderHorizontalForm_apply, cylinderEuclideanEquiv_basis]
   fin_cases i <;> simp [roundCylinderCoordinateBasis, EuclideanSpace.inner_single_left]
-
-
 
 theorem model_horizontal_basis_right (x : E) (i : Fin 3) :
     H x (e i) = ![(cylinderEuclideanEquiv x).1 0,
@@ -45,8 +33,6 @@ theorem model_horizontal_basis_right (x : E) (i : Fin 3) :
   rw [model_horizontal_symm, model_horizontal_basis_left]
 
 set_option maxHeartbeats 1600000 in
-
-
 
 theorem model_evolvingCylinder_curvature_basis {t : ℝ} (ht : t < 1)
     (x : E) (i j k l : Fin 3) :

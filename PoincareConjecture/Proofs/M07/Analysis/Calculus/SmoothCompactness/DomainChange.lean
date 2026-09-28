@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Pullback
 import Mathlib.Analysis.InnerProductSpace.EuclideanDist
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped ContDiff Topology
@@ -22,7 +12,6 @@ variable {E E' F : Type*}
   [NormedAddCommGroup E'] [NormedSpace ℝ E']
   [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
 theorem iteratedFDeriv_comp_continuousLinearEquiv
     (e : E' ≃L[ℝ] E) (f : E → F) (m : ℕ) (x : E') :
     iteratedFDeriv ℝ m (f ∘ e) x =
@@ -30,7 +19,6 @@ theorem iteratedFDeriv_comp_continuousLinearEquiv
         (fun _ => e.toContinuousLinearMap) := by
   simpa only [preimage_univ, iteratedFDerivWithin_univ] using
     e.iteratedFDerivWithin_comp_right f uniqueDiffOn_univ (mem_univ (e x)) m
-
 
 theorem norm_iteratedFDeriv_comp_continuousLinearEquiv_le
     (e : E' ≃L[ℝ] E) (f : E → F) (m : ℕ) (x : E') :
@@ -40,7 +28,6 @@ theorem norm_iteratedFDeriv_comp_continuousLinearEquiv_le
   simpa only [Finset.prod_const, Finset.card_univ, Fintype.card_fin] using
     (iteratedFDeriv ℝ m f (e x)).norm_compContinuousLinearMap_le
       (fun _ : Fin m => e.toContinuousLinearMap)
-
 
 theorem tendstoUniformlyOn_jet_comp_continuousLinearEquiv
     (e : E' ≃L[ℝ] E) {f : ℕ → E → F} {f₀ : E → F} {K : Set E'} (m : ℕ)
@@ -56,8 +43,6 @@ theorem tendstoUniformlyOn_jet_comp_continuousLinearEquiv
   simp_rw [iteratedFDeriv_comp_continuousLinearEquiv]
   exact h
 
-
-
 theorem compact_jet_convergence_comp_continuousLinearEquiv
     (e : E' ≃L[ℝ] E) {U : Set E} {f : ℕ → E → F} {f₀ : E → F}
     (hjet : ∀ m K, IsCompact K → K ⊆ U → TendstoUniformlyOn
@@ -68,8 +53,6 @@ theorem compact_jet_convergence_comp_continuousLinearEquiv
   intro m K hK hKU
   exact tendstoUniformlyOn_jet_comp_continuousLinearEquiv e m
     (hjet m (e '' K) (hK.image e.continuous) (image_subset_iff.mpr hKU))
-
-
 
 theorem compact_jet_convergence_comp_continuousLinearEquiv_iff
     (e : E' ≃L[ℝ] E) {U : Set E} {f : ℕ → E → F} {f₀ : E → F} :
@@ -82,8 +65,6 @@ theorem compact_jet_convergence_comp_continuousLinearEquiv_iff
   have hback := compact_jet_convergence_comp_continuousLinearEquiv e.symm h
   simpa [Function.comp_def] using hback
 
-
-
 theorem locally_eventually_smooth_comp_continuousLinearEquiv
     (e : E' ≃L[ℝ] E) {U : Set E} {f : ℕ → E → F}
     (hlocal : ∀ x ∈ U, ∃ W, IsOpen W ∧ x ∈ W ∧
@@ -95,7 +76,6 @@ theorem locally_eventually_smooth_comp_continuousLinearEquiv
   exact ⟨e ⁻¹' W, hW.preimage e.continuous, hxW,
     hks.mono fun k hk => hk.comp_continuousLinearMap e.toContinuousLinearMap⟩
 
-
 theorem locally_eventually_smooth_comp_continuousLinearEquiv_iff
     (e : E' ≃L[ℝ] E) {U : Set E} {f : ℕ → E → F} :
     (∀ x ∈ e ⁻¹' U, ∃ W, IsOpen W ∧ x ∈ W ∧
@@ -105,8 +85,6 @@ theorem locally_eventually_smooth_comp_continuousLinearEquiv_iff
   refine ⟨fun h => ?_, locally_eventually_smooth_comp_continuousLinearEquiv e⟩
   have hback := locally_eventually_smooth_comp_continuousLinearEquiv e.symm h
   simpa [Function.comp_def] using hback
-
-
 
 theorem compact_jet_convergence_continuousLinearEquiv_comp
     (e : E ≃L[ℝ] E') {U : Set F} {f : ℕ → F → E} {f₀ : F → E}
@@ -122,8 +100,6 @@ theorem compact_jet_convergence_continuousLinearEquiv_comp
     (fun x => iteratedFDeriv ℝ m (e ∘ f₀) x) atTop K
   simp_rw [ContinuousLinearEquiv.iteratedFDeriv_comp_left]
   exact h
-
-
 
 theorem smooth_convergence_bilinear_on_finiteDimensional
     [FiniteDimensional ℝ E]
@@ -162,8 +138,6 @@ theorem smooth_convergence_bilinear_on_finiteDimensional
   obtain ⟨W, hW, hxW, hks⟩ := hback x hx
   exact ⟨U ∩ W, hU.inter hW, ⟨hx, hxW⟩, inter_subset_left,
     hks.mono fun k hk => hk.mono inter_subset_right⟩
-
-
 
 theorem smooth_convergence_comp_on_finiteDimensional
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
@@ -213,8 +187,6 @@ theorem smooth_convergence_comp_on_finiteDimensional
   obtain ⟨W, hW, hxW, hks⟩ := hback x hx
   exact ⟨V ∩ W, hV.inter hW, ⟨hx, hxW⟩, inter_subset_left,
     hks.mono fun k hk => hk.mono inter_subset_right⟩
-
-
 
 theorem smooth_convergence_pullback_bilinear_on_finiteDimensional
     [FiniteDimensional ℝ E]

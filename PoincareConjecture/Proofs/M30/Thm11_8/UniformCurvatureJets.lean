@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckCurvatureOperator
 import Mathlib.Topology.UniformSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M30
 open SpacetimeBounds
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem tendstoUniformlyOn_metricTwoJet_of_uniform_spatial_jets
     {ι A : Type*} {n : ℕ} {l : Filter ι}
@@ -70,9 +56,6 @@ theorem tendstoUniformlyOn_metricTwoJet_of_uniform_spatial_jets
     Metric.tendstoUniformlyOn_iff.mp h2 delta hdelta] with k hk0 hk1 hk2
   intro p hp
   exact max_lt (hk0 p hp) (max_lt (hk1 p hp) (hk2 p hp))
-
-
-
 
 theorem tendstoUniformlyOn_jetCurvatureNorm_of_uniform_jets
     {ι X : Type*} [TopologicalSpace X] {l : Filter ι}

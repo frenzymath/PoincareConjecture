@@ -3,20 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundaryT
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_GeodesicArcSideTurning
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.BoundarySum
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,9 +29,6 @@ private theorem cyclic_side_image
   intro t _
   simp only [affineChartSegment, AffineMap.lineMap_apply_module]
   module
-
-
-
 
 theorem m64Intrinsic_region_circle_side_turning_le
     {I : Type*} (N : IntrinsicAnnulus)
@@ -103,8 +86,6 @@ theorem m64Intrinsic_region_circle_side_turning_le
   exact (Finset.sum_le_sum fun p hp => (hdata p hp).2.2.2.2).trans hsum
 
 open Classical in
-
-
 
 theorem m64Intrinsic_region_circle_geodesic_turning_le
     {I : Type*} [Fintype I] (N : IntrinsicAnnulus)

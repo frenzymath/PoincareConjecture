@@ -2,24 +2,11 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Pol
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Triangle.UnitTriangle
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_openSegment_mem_unitCorner {a b : ℝ × ℝ}
     (ha : min a.1 a.2 < 0) (hb : 0 < b.1 ∧ 0 < b.2)
@@ -48,9 +35,6 @@ theorem exists_openSegment_mem_unitCorner {a b : ℝ × ℝ}
   rcases min_eq_iff.mp hw0 with ⟨hx, _⟩ | ⟨hy, _⟩
   · exact Or.inr ⟨hx, hnonneg.2, by linarith⟩
   · exact Or.inl ⟨hnonneg.1, by linarith, hy⟩
-
-
-
 
 theorem exists_endpoint_interior_unitTriangle_le_sum {a b z : ℝ × ℝ}
     (hz : z ∈ segment ℝ a b) (hzT : z ∈ interior unitTriangle)

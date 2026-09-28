@@ -1,14 +1,4 @@
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M07.Analysis.ODE.LocalFlow.ParametricLinearODE.Variational
-
 
 noncomputable section
 
@@ -21,7 +11,6 @@ section VariationalSolution
 
 variable {F G : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [CompleteSpace G]
-
 
 attribute [local instance] parametricLinearODEEndoNormedAddCommGroup
 attribute [local instance] parametricLinearODEEndoNormedSpace

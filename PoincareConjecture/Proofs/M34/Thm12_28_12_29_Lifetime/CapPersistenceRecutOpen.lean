@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCollarSides
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,16 +12,12 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
 def recutCarrier (b : ℝ) : Set M :=
   N.closed_core ∪ N.end_neck.region (-N.epsilon⁻¹) b
-
 
 theorem recutCarrier_subset_carrier (b : ℝ) : N.recutCarrier b ⊆ N.carrier := by
   intro x hx
   exact hx.elim (fun hy => N.closed_core_subset_carrier hy) (fun he => N.end_neck_subset he.1)
-
-
 
 theorem recutCarrier_sdiff_end (b : ℝ) :
     N.recutCarrier b \ N.end_neck.region (-N.epsilon⁻¹) b = N.closed_core := by
@@ -45,9 +30,6 @@ theorem recutCarrier_sdiff_end (b : ℝ) :
     intro he
     rw [N.closed_core_eq_complement_end] at hx
     exact hx.2 he.1
-
-
-
 
 theorem recutCarrier_isOpen {b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) : IsOpen (N.recutCarrier b) := by

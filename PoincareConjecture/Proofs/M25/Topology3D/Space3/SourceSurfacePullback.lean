@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -21,8 +10,6 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E H M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [TopologicalSpace H] (I : ModelWithCorners ℝ E H)
 variable [TopologicalSpace M] [ChartedSpace H M]
-
-
 
 theorem exists_collar_surface_source_pullback
     (ψ : UnitTwoSphere × ℝ → E3) (hψ : IsCollarEmbedding ψ)

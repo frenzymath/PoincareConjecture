@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_6_RescalingBranches
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_StableDomain
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +21,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
 include hCoordinates in
-
 
 theorem rescalingStableInitialVector_iff {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -68,9 +59,6 @@ theorem rescalingStableInitialVector_iff {T τ : ℝ} {x : G.Point}
     exact (rescalingUniqueBranch_iff hCoordinates hM12 hM13 G Q hQ a E E' W).mpr
       (hbranch _ hW)
 
-
-
-
 noncomputable def rescalingStableSet {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
     (E' : M14ExponentialFamily (rescalingTransport hM12 hM13 G Q hQ a)
@@ -87,7 +75,6 @@ noncomputable def rescalingStableSet {T τ : ℝ} {x : G.Point}
   exact stableSetOfSlicePoint E' (mul_pos hQ H.tau_pos) q₀'
 
 include hCoordinates in
-
 
 theorem rescalingStable_carrier_iff {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

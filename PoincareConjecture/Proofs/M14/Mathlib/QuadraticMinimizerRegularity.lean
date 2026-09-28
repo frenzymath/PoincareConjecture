@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.WeakMomentumRegularity
 import PoincareConjecture.Proofs.M08.ChartEulerRegularity
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -43,9 +34,6 @@ private noncomputable local instance trilinearNormedGroup :
 
 private noncomputable local instance trilinearNormedSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
-
-
-
 
 theorem contDiffOn_of_quadratic_local_minima {a b : ℝ} (hab : a < b) {S : Set E}
     (B : ℝ × E → E →L[ℝ] E →L[ℝ] ℝ) (V : ℝ × E → ℝ)

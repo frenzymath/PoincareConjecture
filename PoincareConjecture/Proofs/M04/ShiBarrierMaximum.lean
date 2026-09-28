@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M04.CompactDomainParabolic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

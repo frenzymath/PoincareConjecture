@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.VertexStarSi
 import PoincareConjecture.Proofs.M76.PrimeReduction.BoundaryVertexHalfBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.BarycentricStarCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_sphere_side_dual_half_ball
     (K P N : SimplicialComplex ℝ E)

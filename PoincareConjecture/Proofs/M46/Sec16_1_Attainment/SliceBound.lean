@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.ValueContinuity
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.InitialSliceValue
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.CappedMinimumComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem cappedSliceAction_contact
     (hCoordinates : M12MetricPredecessors.{0} 3)
@@ -67,9 +56,6 @@ theorem cappedSliceAction_contact
       (mul_nonneg (by norm_num) hs.1.le)
   · rw [heq]
     exact le_max_right _ _
-
-
-
 
 theorem cappedSliceAction_le_three_mul
     (hCoordinates : M12MetricPredecessors.{0} 3)

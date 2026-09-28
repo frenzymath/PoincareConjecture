@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexHalfCharts
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarMarkedCutCharts
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,10 +16,6 @@ local notation "C3" => ((ℝ × ℝ) × ℝ)
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
-
-
 
 theorem exists_vertex_base_convex_chart (p : (T.marked 2).vertices) :
     ∃ (boundary : Bool) (C : Set C3) (L : (Fin 3 ⊕ Fin 3) → C3 →ₗ[ℝ] ℝ)

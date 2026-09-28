@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareGaugeEnergy
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -45,9 +36,6 @@ private noncomputable local instance bilinearNormedSpace :
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem compact_gauge_metric_coercive {K : Set G.Point} (hK : IsCompact K)
     (hlift : ContinuousOn lift K) (x₀ : G.gaugeCover.spatial b) :
     ∃ κ : ℝ, 0 < κ ∧ ∀ q ∈ K, ∀ v : EuclideanSpace ℝ (Fin n),
@@ -73,9 +61,6 @@ theorem compact_gauge_metric_coercive {K : Set G.Point} (hK : IsCompact K)
   obtain ⟨κ, hκ, hbound⟩ := M08.compact_positive_forms_coercive hK B hB hpos
   refine ⟨κ, hκ, fun q hq v => ?_⟩
   simpa only [B, ordinaryChartMetric_openSubset_apply] using hbound q hq v
-
-
-
 
 theorem squarePath_gauge_prefix_kinetic_eq
     {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)

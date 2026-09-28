@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Height
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelGradient.FactorCurvature.Normal
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,9 +63,6 @@ private theorem graph_product_height_gradient (z : C × ℝ) :
   rfl
 
 include hproduct in
-
-
-
 
 theorem ricci_eq_zero_of_product_projection_mfderiv_eq_zero
     (x : L) (v : TangentSpace (𝓡 (n + 1)) x)

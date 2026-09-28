@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.CutAnnuli
 import PoincareConjecture.Proofs.M38.EventSlices
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +15,8 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
 
-
 noncomputable def eventCutSpheres : Set (F.slice (F.event T hT).tMinus).carrier :=
   ⋃ i : S, (P i.val).collar '' (Set.univ ×ˢ ({0} : Set ℝ))
-
 
 theorem eventCutSpheres_compact : IsCompact (eventCutSpheres F T hT P S) := by
   apply isCompact_iUnion
@@ -33,11 +24,9 @@ theorem eventCutSpheres_compact : IsCompact (eventCutSpheres F T hT P S) := by
   rw [(P i.val).collar_central]
   exact event_sphere_compact F T hT i.val
 
-
 noncomputable def eventCutOpen :
     TopologicalSpace.Opens (F.slice (F.event T hT).tMinus).carrier :=
   ⟨(eventCutSpheres F T hT P S)ᶜ, (eventCutSpheres_compact F T hT P S).isClosed.isOpen_compl⟩
-
 
 theorem cutAnnularChart_target_cutOpen (i : Fin (F.event T hT).cap_count) (positive : Bool) :
     ((P i).cutAnnularChart positive).target ⊆ eventCutOpen F T hT P S := by
@@ -53,18 +42,15 @@ theorem cutAnnularChart_target_cutOpen (i : Fin (F.event T hT).cap_count) (posit
     exact ⟨hz.1, by simpa only [Set.mem_singleton_iff.mp hz.2] using
       (show (0 : ℝ) ∈ Set.Ioo (-1 : ℝ) 1 by norm_num)⟩
 
-
 theorem eventCutOpen_nonempty (i : Fin (F.event T hT).cap_count) (positive : Bool) :
     Nonempty (eventCutOpen F T hT P S) := by
   refine ⟨⟨(P i).collar (cutSideReflection positive (capUnitDirection 0, 1 / 2)), ?_⟩⟩
   exact cutAnnularChart_target_cutOpen F T hT P S i positive
     ⟨(capUnitDirection 0, 1 / 2), ⟨Set.mem_univ _, by norm_num⟩, rfl⟩
 
-
 theorem eventCutOpen_empty :
     (eventCutOpen F T hT P ∅ : Set (F.slice (F.event T hT).tMinus).carrier) = Set.univ := by
   simp [eventCutOpen, eventCutSpheres]
-
 
 theorem eventCutSpheres_univ :
     eventCutSpheres F T hT P Set.univ = frontier (F.event T hT).retained_pre := by
@@ -77,7 +63,6 @@ theorem eventCutSpheres_univ :
   · rintro ⟨i, hi⟩
     exact ⟨⟨i, Set.mem_univ i⟩, (P i).collar_central.symm ▸ hi⟩
 
-
 theorem eventCutOpen_univ :
     (eventCutOpen F T hT P Set.univ : Set (F.slice (F.event T hT).tMinus).carrier) =
       interior (F.event T hT).retained_pre ∪ (F.event T hT).retained_preᶜ := by
@@ -86,7 +71,6 @@ theorem eventCutOpen_univ :
   ext x
   simp only [Set.mem_compl_iff, Set.mem_diff, Set.mem_union]
   tauto
-
 
 theorem cutAnnularChart_targets_disjoint
     (a b : S × Bool) (hab : a ≠ b) :
@@ -107,10 +91,8 @@ theorem cutAnnularChart_targets_disjoint
       ((P a.1.val).cutAnnularChart_target_subset a.2)
       ((P b.1.val).cutAnnularChart_target_subset b.2)
 
-
 noncomputable def eventCutNeighborhood : Set (F.slice (F.event T hT).tMinus).carrier :=
   ⋃ i : S, (P i.val).collar '' (Set.univ ×ˢ Set.Ioo (-1 / 2 : ℝ) (1 / 2))
-
 
 theorem eventCutNeighborhood_open : IsOpen (eventCutNeighborhood F T hT P S) := by
   apply isOpen_iUnion
@@ -119,10 +101,8 @@ theorem eventCutNeighborhood_open : IsOpen (eventCutNeighborhood F T hT P S) := 
   intro z hz
   exact ⟨hz.1, by linarith [hz.2.1], by linarith [hz.2.2]⟩
 
-
 noncomputable def eventCutRemainder : Set (F.slice (F.event T hT).tMinus).carrier :=
   (eventCutNeighborhood F T hT P S)ᶜ
-
 
 theorem eventCutRemainder_compact : IsCompact (eventCutRemainder F T hT P S) := by
   have ht := mem_time_domain_before_surgery F hT (F.event T hT).tMinus_nonnegative
@@ -130,7 +110,6 @@ theorem eventCutRemainder_compact : IsCompact (eventCutRemainder F T hT P S) := 
   letI : CompactSpace (F.slice (F.event T hT).tMinus).carrier :=
     isCompact_univ_iff.mp (F.slices_compact _ ht)
   exact (eventCutNeighborhood_open F T hT P S).isClosed_compl.isCompact
-
 
 theorem eventCutRemainder_subset :
     eventCutRemainder F T hT P S ⊆ eventCutOpen F T hT P S := by
@@ -140,8 +119,6 @@ theorem eventCutRemainder_subset :
   subst s
   exact hx (Set.mem_iUnion.mpr
     ⟨i, (z, 0), ⟨Set.mem_univ _, by norm_num⟩, hmap⟩)
-
-
 
 theorem eventCutRemainder_cover {x : (F.slice (F.event T hT).tMinus).carrier}
     (hx : x ∈ eventCutOpen F T hT P S) (hnot : x ∉ eventCutRemainder F T hT P S) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlNormalized
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +12,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {m : ℕ} [ChartedSpace (EuclideanSpace ℝ (Fin m)) X] [IsManifold (𝓡 m) ∞ X]
   [T3Space X] [ConnectedSpace X] {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
-
-
-
 
 theorem exists_normalized_ball_in_standard_recut_image
     (h : RiemannianMetric m X) (hcomplete : MetricComplete h)

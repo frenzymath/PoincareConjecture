@@ -3,24 +3,12 @@ import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Topology.Algebra.Support
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
 
 theorem exists_compact_tube_conjugate
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -108,9 +96,6 @@ theorem exists_compact_tube_conjugate
 end Poincare.Manifold.Schoenflies.Plane
 
 namespace Poincare.Manifold.Schoenflies
-
-
-
 
 theorem exists_supported_partial_chart_transport
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Locality
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,7 +69,6 @@ private lemma mvfderiv_inner_mpullback_of_metric_pullback
   rw [hd, mvfderiv_comp x (mdifferentiableAt_inner_fields (h := h) hA hB) hf]
   simp only [ContinuousLinearMap.comp_apply, mpullback,
     hinv.self_of_nhds.self_apply_inverse]
-
 
 theorem connection_mpullback_of_metric_pullback_of_contMDiffAt_two
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -149,7 +142,6 @@ theorem connection_mpullback_of_metric_pullback_of_contMDiffAt_two
     simp only [covariantDerivativeOnFields, FiberBundle.extend_apply_self] at hk'
     linarith
   rw [heq, hmetric.self_of_nhds, hi.self_apply_inverse]
-
 
 theorem connection_mpullback_of_metric_pullback
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

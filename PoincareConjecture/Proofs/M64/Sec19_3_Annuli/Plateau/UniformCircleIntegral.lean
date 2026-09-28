@@ -1,11 +1,5 @@
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -16,7 +10,6 @@ namespace PoincareConjecture
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
 
 omit [CompleteSpace E] in
-
 
 theorem m64TendstoUniformlyOn_smul_bounded
     {X : Type*} {S : Set X} {f : ℕ → X → E} {u : X → E}
@@ -39,7 +32,6 @@ theorem m64TendstoUniformlyOn_smul_bounded
     _ = epsilon := mul_div_cancel₀ _ hCp.ne'
 
 omit [CompleteSpace E] in
-
 
 theorem m64UniformCircle_weighted_integral_tendsto
     {f : ℕ → ℝ → E} {u : ℝ → E} {a b : ℝ} (hab : a ≤ b)

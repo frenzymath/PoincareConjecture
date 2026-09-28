@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Regluing.PeriodPLParameters
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -50,8 +41,6 @@ private theorem exists_period_short_chart (x : C) :
       fun _ => rfl, Or.inr ⟨by linarith, by linarith [ht.2]⟩⟩
     · rw [← hct]; exact c.map_source htS
     · rw [hInv]; constructor <;> linarith [ht.2]
-
-
 
 theorem polyhedralPL_slab_parameter_of_period
     {E Y α β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

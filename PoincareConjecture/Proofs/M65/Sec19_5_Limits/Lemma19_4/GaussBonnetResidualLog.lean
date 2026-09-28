@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryLog
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -22,11 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 open M65Gauss
-
-
-
-
-
 
 theorem residual_logarithmicDensity_integrable {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

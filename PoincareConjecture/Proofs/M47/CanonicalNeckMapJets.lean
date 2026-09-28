@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceChart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_ClosedTimeJets
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem neck_chart_map_jets_at_recorded_order [T2Space M]
     {g : RiemannianMetric 3 M} (N : EpsilonNeck g) (m : ℕ)
@@ -54,9 +41,6 @@ theorem neck_chart_map_jets_at_recorded_order [T2Space M]
       (by omega) a hH hHt
     exact ⟨D, hD, fun q z hz hsource hcenter j hj =>
       hbound q z hz hsource hcenter j (by omega)⟩
-
-
-
 
 theorem metric_jets_uniform_near_time_on_compact
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

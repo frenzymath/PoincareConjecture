@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderBi
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedBirthBalls
 import PoincareConjecture.Proofs.M44.Mathlib.RestrictChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,10 +32,6 @@ noncomputable local instance initialCylinderTwoJetNorm :
 
 noncomputable local instance initialCylinderTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_initial_cylinder_bound (P : M44CapPersistencePredecessors.{u})
     (g0 : StandardInitialMetric) (estimate : StandardCapEstimate g0)

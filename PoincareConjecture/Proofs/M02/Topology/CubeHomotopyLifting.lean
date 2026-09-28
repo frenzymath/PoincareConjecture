@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 import PoincareConjecture.Proofs.M02.Topology.HomotopyPostcomposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

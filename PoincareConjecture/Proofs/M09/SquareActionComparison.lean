@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.BrokenActionComparison
 import PoincareConjecture.Proofs.M09.ActionCongruence
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

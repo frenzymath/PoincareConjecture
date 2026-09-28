@@ -2,23 +2,10 @@ import Mathlib.Topology.Connected.LocallyPathConnected
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Order.Filter.AtTopBot.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem IsPreconnected.mem_iff_of_connectedComponentIn_eq
     {X : Type*} [TopologicalSpace X] {A U F : Set X}
@@ -30,10 +17,6 @@ theorem IsPreconnected.mem_iff_of_connectedComponentIn_eq
     exact hF x hxF ▸ hA.subset_connectedComponentIn hx hAU hy
   · intro hyF
     exact hF y hyF ▸ hA.subset_connectedComponentIn hy hAU hx
-
-
-
-
 
 theorem JoinedIn.eventually_component_mem_iff
     {X : Type*} [TopologicalSpace X] {Y : ℕ → Type*}
@@ -70,10 +53,6 @@ theorem JoinedIn.eventually_component_mem_iff
   have hx₁ : e k x₁ ∈ e k '' range γ :=
     mem_image_of_mem _ ⟨1, γ.target⟩
   exact hconnected.mem_iff_of_connectedComponentIn_eq himage hF hx₀ hx₁
-
-
-
-
 
 theorem not_joinedIn_of_eventually_opposite_component_labels
     {X : Type*} [TopologicalSpace X] {Y : ℕ → Type*}

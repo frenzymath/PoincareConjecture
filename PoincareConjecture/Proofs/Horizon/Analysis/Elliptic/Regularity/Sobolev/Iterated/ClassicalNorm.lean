@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Density
 
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Set Filter Topology Metric Function

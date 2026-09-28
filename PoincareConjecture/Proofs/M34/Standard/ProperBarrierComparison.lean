@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M04.CompactDomainParabolic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Linearity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,9 +10,6 @@ namespace PoincareConjecture.M34
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem nonnegative_of_proper_barrier
     (g : ℝ → RiemannianMetric n M) (D : (t : ℝ) → LeviCivitaData (g t))

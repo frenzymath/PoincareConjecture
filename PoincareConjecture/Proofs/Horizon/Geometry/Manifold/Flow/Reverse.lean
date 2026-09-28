@@ -1,12 +1,6 @@
 import Mathlib.Geometry.Manifold.IntegralCurve.Transform
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.Uniqueness
 
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false

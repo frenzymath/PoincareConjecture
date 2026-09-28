@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceAffineGeometry
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceScaleStress
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,8 +11,6 @@ open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
 
-
-
 theorem m64SourceAffine_comp {E : Type*} (f : LoopPlane → E)
     (a : LoopPlane) (s : ℝ) (hs : s ≠ 0) :
     f ∘ m64SourceAffine a s hs = fun z =>
@@ -29,15 +19,11 @@ theorem m64SourceAffine_comp {E : Type*} (f : LoopPlane → E)
   simp only [Function.comp_apply, map_add, ContinuousLinearEquiv.apply_symm_apply]
   rfl
 
-
-
 theorem m64SourceAffine_fderiv {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (f : LoopPlane → E) (a : LoopPlane) (s : ℝ) (hs : s ≠ 0) (p : LoopPlane) :
     fderiv ℝ (f ∘ m64SourceAffine a s hs) p =
       fderiv ℝ (f ∘ m64SourceScale s hs) ((m64SourceScale s hs).symm a + p) := by
   rw [m64SourceAffine_comp, fderiv_comp_add_left]
-
-
 
 theorem m64SourceAffine_second_fderiv {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -49,9 +35,6 @@ theorem m64SourceAffine_second_fderiv {E : Type*}
       fderiv ℝ (f ∘ m64SourceScale s hs) ((m64SourceScale s hs).symm a + z) :=
     funext (m64SourceAffine_fderiv f a s hs)
   rw [hfirst, fderiv_comp_add_left]
-
-
-
 
 theorem m64SourceAffine_quadratic_growth {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -73,9 +56,6 @@ theorem m64SourceAffine_quadratic_growth {E : Type*}
   change m64SourceScale s hs ((m64SourceScale s hs).symm a + p) ∈ O
   change a + m64SourceScale s hs p ∈ O at hp
   simpa only [map_add, ContinuousLinearEquiv.apply_symm_apply] using hp
-
-
-
 
 theorem m64AreaGram_sourceAffine {n : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -107,9 +87,6 @@ theorem m64AreaGram_sourceAffine {n : ℕ} {M : Type*}
   simp only [map_smul, smul_apply, smul_eq_mul]
   change _ = _ * _ * g.inner (f (Phi p)) _ _
   ring
-
-
-
 
 theorem m64AreaGram_sourceAffine_conformal {n : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

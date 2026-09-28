@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripCutSides
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.StripHalfDiskComplement
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -39,8 +31,6 @@ private theorem planar_strip_not_in_center_boundary_disk
     rw [hA.frontier_eq_of_finrank_eq rfl]
     exact hcenter (mem_image_of_mem c hxcenter)
   exact hf.2 (interior_mono hsub hi)
-
-
 
 theorem exists_opposite_strip_sides_of_center_trace
     {A B QA QB : Set P2}

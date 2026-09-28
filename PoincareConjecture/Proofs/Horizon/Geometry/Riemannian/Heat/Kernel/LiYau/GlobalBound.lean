@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.LiYau.DistanceBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Distance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +8,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem liYau_bound_of_ricci_lower
     {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

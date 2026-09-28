@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEsti
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.CrossTerms.Coefficient
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.TestFunction.Weak
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function
@@ -131,7 +123,6 @@ private lemma pointwise_half_sum_f_v_test
   simp only [one_mul, div_one] at h_y
   have h_abs : |f x * v_test x| = |f x| * |v_test x| := abs_mul _ _
   linarith
-
 
 omit [NeZero d] in
 theorem f_term_bound_nonsmooth_quantitative
@@ -362,7 +353,6 @@ theorem f_term_bound_nonsmooth_quantitative
         C * ∫ x in Ω', (f x) ^ 2 ∂(volume : Measure E) := by ring
     linarith
   linarith
-
 
 omit [NeZero d] in
 theorem f_term_bound_nonsmooth

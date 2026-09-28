@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.OriginalSpherePairCharts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +13,6 @@ local notation "J" => Icc (-1 : ℝ) 1
 variable {X E ι : Type*} [TopologicalSpace X] [T2Space X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   {e : ι → OpenPartialHomeomorph X V3} {S : Set X}
-
-
-
 
 theorem ChartwisePLSphere.exists_bicollar_level_sphere
     (s : ChartwisePLSphere e S) (F : X → E)
@@ -103,8 +90,6 @@ theorem ChartwisePLSphere.exists_bicollar_level_sphere
     map := k
     map_eq := fun _ => rfl
     piecewiseAffine := hk }, fun _ => rfl⟩
-
-
 
 theorem ChartwisePLSphere.exists_bicollar_level_pair_chart
     (s : ChartwisePLSphere e S) (F : X → E)

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.ChartFunctionLipschitz
 import PoincareConjecture.Proofs.M10.Rademacher
 import PoincareConjecture.Proofs.M10.SliceLipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
 
 theorem reducedLength_slice_nondifferentiability_eq_zero
     (hL : LGeodesicTheory F T τmax)

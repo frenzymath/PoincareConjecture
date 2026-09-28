@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.Local
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.JointInverse
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,8 +57,6 @@ private theorem exists_locally_uniform_smooth_timeDependentFlows
       (fun z hz => ⟨hsub hz.1, (hUright z.2 hz.2).2.1⟩)
   · exact fun y hy => (hUright y hy).2.2
   · exact fun y hy t ht => hsol (ψ (r, y)) (hUright y hy).2.1 t (hsub ht)
-
-
 
 theorem exists_uniform_smooth_local_timeDependentFlows
     {J : Set ℝ} (hJ : IsOpen J)

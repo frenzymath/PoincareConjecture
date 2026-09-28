@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalVertexProducts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -24,7 +16,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
 open Classical in
-
 
 theorem OriginalProperDiskTriangulation.vertex_bases_cover
     (T : OriginalProperDiskTriangulation e R j) :
@@ -46,7 +37,6 @@ theorem OriginalProperDiskTriangulation.vertex_bases_cover
     exact (T.dualRegion_inter_disk {p}).symm.subset hxp
 
 open Classical in
-
 
 theorem OriginalVertexProducts.exists_model_product
     {T : OriginalProperDiskTriangulation e R j} (P : OriginalVertexProducts T) :

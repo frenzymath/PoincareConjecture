@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryUniformTange
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryTangentialHessian
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryLocalEmbedding
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,10 +26,6 @@ local instance m64InitialGain_trilinearGroup :
 local instance m64InitialGain_trilinearSpace :
     NormedSpace ℝ (E →L[ℝ] E →L[ℝ] E →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
 
 theorem m64WeightedMixedMetric_conformal_initial_gain
     (dirichlet : Fin n → Prop) {a : LoopPlane} {R : ℝ} (hR : 0 < R)

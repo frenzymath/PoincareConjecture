@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.NormalProductUnits
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,9 +14,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => ((ℝ × ℝ) × ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_original_proper_disk_normal_units
     {X ι : Type*} [TopologicalSpace X]

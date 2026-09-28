@@ -3,15 +3,6 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.EMetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,9 +11,6 @@ open scoped Convex NNReal ENNReal
 attribute [local instance] Classical.propDecidable
 
 namespace PoincareConjecture.M60
-
-
-
 
 theorem lipschitzOnWith_piecewise_of_convex
     {E Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [PseudoEMetricSpace Y]

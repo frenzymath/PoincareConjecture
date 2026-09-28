@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeJointCyclicFamily
 import PoincareConjecture.Proofs.M76.Mathlib.InwardOrientedHeightCutBoxes
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHeightCutBoxes
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -21,11 +12,6 @@ namespace PoincareConjecture.M76.ZeroChargeJoint
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_original_sphere_collar
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

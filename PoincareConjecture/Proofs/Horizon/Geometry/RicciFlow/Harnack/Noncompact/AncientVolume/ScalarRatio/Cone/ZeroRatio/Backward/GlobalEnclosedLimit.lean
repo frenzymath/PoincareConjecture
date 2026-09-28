@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.Pullback
 import Mathlib.Topology.Compactness.Lindelof
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -75,8 +66,6 @@ private theorem exists_local_convergent_partialDiffeomorph
     (Eventually.of_forall fun k => (heq (gseq k)).symm.mono hKs)).congr_right
       ((heq g).symm.mono hKs)
 
-
-
 theorem exists_countable_convergent_metric_atlas
     [SecondCountableTopology X] [Nonempty X]
     (g : RiemannianMetric n X) (gseq : ℕ → RiemannianMetric n X)
@@ -104,8 +93,6 @@ theorem exists_countable_convergent_metric_atlas
     (fun p _ => mem_iUnion.mpr ⟨p, hd p⟩)
   refine ⟨fun i => d (index i), fun x => ?_, fun i => hlim (index i)⟩
   exact mem_iUnion.mp (hindex (mem_univ x))
-
-
 
 theorem convergent_metric_charts_on_open
     (g : RiemannianMetric n X) (gseq : ℕ → RiemannianMetric n X)
@@ -167,9 +154,6 @@ theorem convergent_metric_charts_on_open
     exact ((hlim m K hK (hKt.trans hct)).congr
       (Eventually.of_forall fun k => (heq (gseq k)).symm.mono hKt)).congr_right
         ((heq g).symm.mono hKt)
-
-
-
 
 theorem exists_global_enclosed_smooth_limit
     [SecondCountableTopology X] [Nonempty X]

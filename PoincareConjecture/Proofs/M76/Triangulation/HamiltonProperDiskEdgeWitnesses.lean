@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskDualInciden
 import PoincareConjecture.Proofs.M76.Mathlib.PairedFacetChartSigns
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualContact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -27,9 +17,6 @@ local notation "Cube" => closedBall (0 : V2) 1
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   {R D : Set E} {b : Cube ≃ₜ D}
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_edge_chart_sign_witnesses
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)
@@ -82,10 +69,6 @@ theorem HamiltonProperDiskTriangulation.exists_edge_chart_sign_witnesses
       hmark hv htv hvc', h.1, h.2⟩
   · exact ⟨v, hv, u, hu, htv, htu, hvc', huc', hmark hv htv hvc',
       hmark hu htu huc', h.2, h.1⟩
-
-
-
-
 
 theorem HamiltonProperDiskTriangulation.exists_edge_normal_witnesses
     (T : HamiltonProperDiskTriangulation R D b) (h3 : Module.finrank ℝ E = 3)

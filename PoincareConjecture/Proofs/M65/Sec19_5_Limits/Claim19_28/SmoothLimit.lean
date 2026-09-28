@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M04.LocalMetricComparison
 import Mathlib.Topology.UniformSpace.Ascoli
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +17,6 @@ universe u
 namespace PoincareConjecture
 
 open SpacetimeBounds.Bootstrap
-
 
 private noncomputable def m65JetValues (n : ℕ) :
     Jet ℝ (M65ProjectedChartStateSpace n) 2 →L[ℝ] M65ProjectedChartJetSpace n where
@@ -50,7 +41,6 @@ private theorem m65JetValues_actual {n : ℕ}
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M] {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
 
 private theorem m65StateSpatialBounds {κ : Type*} {circumference : κ → ℝ}
     (P : ∀ k, M62.CircleProductData F (circumference k))
@@ -205,7 +195,6 @@ private theorem m65ActualStateJointBounds {κ : Type*} {circumference : κ → �
       obtain ⟨C, hC, hCd, hCr⟩ := hfinite j
       exact ⟨C, hC, hCd, Eventually.of_forall hCr⟩)
   simpa only [EventuallyBoundedJet, eventually_top] using h
-
 
 omit [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T2Space M] in
 private theorem m65C0_chart_rectangle {Ω : Set (ℝ × ℝ)} (hΩ : IsOpen Ω)
@@ -525,12 +514,6 @@ private theorem m65Jets_of_pointwise {V : Type*} [NormedAddCommGroup V]
   exact tendstoUniformlyOn_iff_restrict.mpr (UniformFun.tendsto_iff_tendstoUniformly.mp ht)
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
-
-
 
 theorem m65Projected_exists_smooth_curveShortening_limit
     (hcompact : IsCompact (univ : Set M)) {circumference : ℕ → ℝ}

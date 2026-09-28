@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.AffineBound
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import Mathlib.Analysis.Convex.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import Mathlib.Topology.MetricSpace.Cauchy
 import Mathlib.Topology.MetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,8 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.AncientCompactness
 
 variable {X Y : Type*} [TopologicalSpace X] [PseudoMetricSpace Y]
-
-
 
 theorem cauchySeq_terminal_of_time_lipschitz
     {f : ℕ → ℝ → Y} {g : ℝ → Y} {L : ℝ} (hL : 0 ≤ L)
@@ -58,8 +44,6 @@ theorem cauchySeq_terminal_of_time_lipschitz
   have h₃ := dist_triangle (g (-δ)) (f n (-δ)) (f n 0)
   rw [dist_comm (g (-δ)) (f n (-δ))] at h₃
   linarith
-
-
 
 theorem exists_terminal_limit_of_time_lipschitz [CompleteSpace Y]
     {f : ℕ → ℝ × X → Y} {g : ℝ × X → Y} {U : Set X}

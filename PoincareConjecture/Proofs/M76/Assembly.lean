@@ -2,16 +2,6 @@ import PoincareConjecture.Definitions.M76SmoothingBridge
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasTransport
 import PoincareConjecture.Proofs.M76.Smoothing.AtlasConstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M76
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [SecondCountableTopology M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
-
-
 
 def smoothingBridgeOfAtlas (P : SmoothingBridgeInput (M := M))
     (a : ChartedSpace (EuclideanSpace ℝ (Fin 3)) M)
@@ -38,8 +26,6 @@ def smoothingBridgeOfAtlas (P : SmoothingBridgeInput (M := M))
   model_compact := inferInstance
   model_connected := P.connected
   model_homeomorph := Homeomorph.refl M
-
-
 
 theorem smoothingConclusion_iff_exists_atlas (P : SmoothingBridgeInput (M := M)) :
     M76SmoothingConclusion P ↔
@@ -55,8 +41,6 @@ theorem smoothingConclusion_iff_exists_atlas (P : SmoothingBridgeInput (M := M))
   · rintro ⟨a, ha⟩
     exact ⟨smoothingBridgeOfAtlas P a ha⟩
 
-
-
 theorem smoothingConclusion_of_coordinates {ι : Type*}
     (P : SmoothingBridgeInput (M := M))
     (c : ι → OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)))
@@ -65,8 +49,6 @@ theorem smoothingConclusion_of_coordinates {ι : Type*}
       ((c i).symm.trans (c j)).source) : M76SmoothingConclusion P :=
   (smoothingConclusion_iff_exists_atlas P).mpr
     (exists_smooth_atlas_of_coordinates c hcover hcompat)
-
-
 
 theorem smoothingConclusion_of_analytic_coordinates {ι : Type*}
     (P : SmoothingBridgeInput (M := M))

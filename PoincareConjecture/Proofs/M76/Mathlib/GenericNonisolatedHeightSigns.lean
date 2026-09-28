@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteHullHeightSigns
 import PoincareConjecture.Proofs.M76.Mathlib.ConnectedComplexGraph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem mem_both_height_closures_of_generic_nonisolated
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

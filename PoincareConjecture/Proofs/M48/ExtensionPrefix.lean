@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M48.ExtensionNoncollapse
 import PoincareConjecture.Definitions.M33BranchContinuation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -34,7 +24,6 @@ private theorem oldEntry_before_horizon {K : MetricSurgeryConstants}
       simpa only [hj] using ht.2
     · exact ht.2
   exact ⟨ht0, (htj.trans_le (epochStart_mono hj)).trans_le hstart⟩
-
 
 theorem SurgeryPrefixControls.onExtension
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -79,7 +68,6 @@ theorem SurgeryPrefixControls.onExtension
     simpa only [E.parameters_eq] using old.kappa_schedule j hj t (hold j hj ht)
   · intro j hj t ht
     simpa only [E.parameters_eq] using old.h_schedule j hj t (hold j hj ht)
-
 
 theorem RepairedBranchContinuationData.prefixControls
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}

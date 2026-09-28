@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalStripDiskAttachment
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

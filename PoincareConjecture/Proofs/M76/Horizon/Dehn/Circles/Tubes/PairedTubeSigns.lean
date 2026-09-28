@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.BranchIn
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.ModelArc
 import PoincareConjecture.Proofs.M76.Mathlib.HeightBoxGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -55,8 +46,6 @@ theorem signedSheetStripMap_finitePL {a b : ℝ} (hab : a < b) (j : Fin 2) :
     HeightBox.rectangle_ballPair (show (0 : ℝ) < 1 by norm_num) hab
   exact ⟨K, hK, hKs, K.affineOnFaces_affine
     (signedSheetStripMap j).toContinuousAffineMap⟩
-
-
 
 theorem signed_diamond_closing_eq_true
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -136,8 +125,6 @@ variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
   {old : OrdinaryDoubleCurveModel e f R} {i : old.Index}
 
-
-
 theorem OrdinaryIntervalMarkedModel.branch_inverse_selected_iff
     (D : OrdinaryIntervalMarkedModel old i)
     (u : ∀ j : Fin 2, (D.marks (.inr j.castSucc)).space ≃ₜ (D.clips j.castSucc).space)
@@ -174,9 +161,6 @@ theorem OrdinaryIntervalMarkedModel.branch_inverse_selected_iff
   · intro hx
     obtain ⟨w, hw, hval⟩ := himage.symm.subset hx
     exact hinj (hcontains hw) hsource hval ▸ hw
-
-
-
 
 theorem OrdinaryIntervalMarkedModel.exists_paired_source_strips
     (D : OrdinaryIntervalMarkedModel old i) {a b : ℝ} (hab : a < b)

@@ -1,14 +1,6 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M04

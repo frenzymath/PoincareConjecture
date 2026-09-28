@@ -1,9 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedCylinderRim
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedAttachmentFiniteModel
 
-
-
-
 noncomputable section
 
 open Set Metric BrownCollar
@@ -51,8 +48,6 @@ theorem markedIntervalBallCoordinates_rim (t : Icc (0 : ℝ) 1) :
     · right; rw [h]; norm_num
     · left; rw [h]; norm_num
 
-
-
 def markedProductCylinder {ι Y : Type*} [Fintype ι] [TopologicalSpace Y]
     (P : (sphere (0 : ι → ℝ) 1 ×ˢ closedBall (0 : κ → ℝ) (3 / 2)) ≃ₜ Y) :
     (sphere (0 : ι → ℝ) 1 × Icc (0 : ℝ) 1) ≃ₜ Y :=
@@ -64,9 +59,6 @@ theorem markedProductCylinder_apply {ι Y : Type*} [Fintype ι] [TopologicalSpac
     (z : sphere (0 : ι → ℝ) 1 × Icc (0 : ℝ) 1) :
     markedProductCylinder P z = P ⟨((z.1 : ι → ℝ), fun _ => 3 * (z.2 : ℝ) - 3 / 2),
       z.1.property, (markedIntervalBallCoordinates z.2).property⟩ := rfl
-
-
-
 
 theorem marked_product_lower_rim_data
     {ι Y B : Type*} [Fintype ι] [TopologicalSpace Y] [TopologicalSpace B]

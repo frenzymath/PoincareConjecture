@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Metric.Link
 import Mathlib.Topology.UniformSpace.Dini
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,8 +12,6 @@ namespace Poincare.AncientVolume.ScalarRatio
 open Splitting (segmentComparisonCosine)
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
-
 
 theorem antitoneOn_normalized_ray_distance (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) :
@@ -47,16 +32,12 @@ theorem antitoneOn_normalized_ray_distance (hcomparison : RayComparison p)
     (div_nonneg (dist_nonneg (x := rayExtension γ L) (y := rayExtension η L)) hL.le)
   nlinarith [dist_nonneg (x := rayExtension γ r) (y := rayExtension η r)]
 
-
-
 theorem asymptoticRayDistance_le_normalized_ray_distance (hcomparison : RayComparison p)
     (γ η : basedMinimizingRays p) {L : ℝ} (hL : 0 < L) :
     asymptoticRayDistance γ η ≤ dist (rayExtension γ L) (rayExtension η L) / L := by
   apply le_of_tendsto (tendsto_asymptoticRayDistance hcomparison γ η)
   filter_upwards [eventually_ge_atTop L] with r hr
   exact antitoneOn_normalized_ray_distance hcomparison γ η hL (hL.trans_le hr) hr
-
-
 
 theorem continuous_asymptoticRayDistance (hcomparison : RayComparison p) :
     Continuous (fun q : basedMinimizingRays p × basedMinimizingRays p =>
@@ -68,8 +49,6 @@ theorem continuous_asymptoticRayDistance (hcomparison : RayComparison p) :
       asymptoticLinkProjection hcomparison q.2) :=
     (continuous_asymptoticLinkProjection hcomparison).comp continuous_snd
   simpa only [dist_asymptoticLinkProjection] using h.dist h'
-
-
 
 theorem tendstoUniformly_asymptoticRayDistance [ProperSpace X]
     (hcomparison : RayComparison p) :
@@ -104,8 +83,6 @@ theorem tendstoUniformly_asymptoticRayDistance [ProperSpace X]
   intro ε hε
   filter_upwards [huni ε hε, eventually_ge_atTop (1 : ℝ)] with L hL hLone q
   simpa only [F, max_eq_left hLone] using hL q
-
-
 
 theorem exists_uniform_normalized_ray_distance_bound [ProperSpace X]
     (hcomparison : RayComparison p) {ε : ℝ} (hε : 0 < ε) :

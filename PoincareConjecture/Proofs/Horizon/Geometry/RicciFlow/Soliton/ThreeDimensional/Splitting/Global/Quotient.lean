@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Orientation
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.RicciFlow.Splitting
 variable {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
-
 
 def nullOrientationOrbitSetoid (C : NullOrientationCover D) :
     Setoid (UnitRicciKernel D) where
@@ -44,10 +32,8 @@ def nullOrientationOrbitSetoid (C : NullOrientationCover D) :
       · exact Or.inr (hqr.trans hpq)
       · exact Or.inl (hqr.trans (by rw [hpq, C.deck_involutive]))
 
-
 abbrev NullOrientationQuotient (C : NullOrientationCover D) :=
   Quotient (nullOrientationOrbitSetoid C)
-
 
 def nullOrientationQuotientMap (C : NullOrientationCover D) :
     UnitRicciKernel D → NullOrientationQuotient C :=

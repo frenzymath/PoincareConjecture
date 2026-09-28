@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M38.AnnulusReparametrization
 import PoincareConjecture.Proofs.M38.CapBallEmbedding
 import PoincareConjecture.Proofs.M38.FiniteBallNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_surgeryBall_with_image_in_open
     {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
@@ -43,8 +32,6 @@ theorem exists_surgeryBall_with_image_in_open
   rw [annulusReparametrizedBall_image]
   rintro _ ⟨x, hx, rfl⟩
   exact (haV hx).2
-
-
 
 theorem exists_surgeryBall_with_disjoint_finite_images
     {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.ProtectedRegionHomotopies
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "D" => closedBall (0 : V2) 1
-
-
 
 theorem exists_prescribed_frontier_filling_in_protected_region
     {X : Type*} [TopologicalSpace X] {R C F : Set X}

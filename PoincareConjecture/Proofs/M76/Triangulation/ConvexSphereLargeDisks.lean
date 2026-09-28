@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.CubeSphereLargeDisks
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexSpherePoleNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
 
 theorem exists_convex_frontier_disk_of_compact_with_open_interior (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)
@@ -99,10 +87,6 @@ theorem exists_convex_frontier_disk_of_compact_with_open_interior (K : Simplicia
       rw [hmem d hdT, hmem q (hd.1.trans hdT)]
     rw [heq]
     exact hopen.preimage e.continuous
-
-
-
-
 
 theorem exists_convex_frontier_disk_of_compact (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) {s : Set E} (hs : IsCompact s) (hcv : Convex ℝ s)

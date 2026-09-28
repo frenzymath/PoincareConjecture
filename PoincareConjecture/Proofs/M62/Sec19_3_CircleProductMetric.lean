@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M62.Sec19_3_CircleProductCharts
 import PoincareConjecture.Proofs.M01.NormalizationMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.Gluing.InducedForm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_circleProductMetric
     (g : RiemannianMetric n M) {p : ℝ} (C : CircleGeometry p)

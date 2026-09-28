@@ -2,12 +2,6 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.Analysis.Calculus.Deriv.Shift
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -16,8 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m64Periodic_integrableOn_shift
     {E : Type*} [NormedAddCommGroup E] {f : ℝ → E} {T : ℝ} (hT : 0 < T)
@@ -30,8 +22,6 @@ theorem m64Periodic_integrableOn_shift
     simpa only [sub_self, add_sub_cancel_left] using ha
   exact (intervalIntegrable_iff_integrableOn_Icc_of_le hT.le).mp ha'
 
-
-
 theorem m64Periodic_memLp_two_shift
     {E : Type*} [NormedAddCommGroup E] {f : ℝ → E} {T : ℝ} (hT : 0 < T)
     (hperiod : Function.Periodic f T) (hf : MemLp f 2 (volume.restrict (Icc (0 : ℝ) T)))
@@ -42,8 +32,6 @@ theorem m64Periodic_memLp_two_shift
   have hsq := m64Periodic_integrableOn_shift hT hs
     ((memLp_two_iff_integrable_sq_norm hf.aestronglyMeasurable).mp hf) a
   exact (memLp_two_iff_integrable_sq_norm hi.aestronglyMeasurable).mpr hsq
-
-
 
 theorem m64Periodic_integral_shift
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -56,8 +44,6 @@ theorem m64Periodic_integral_shift
   have h := hshift.trans hperiodInt
   simpa only [intervalIntegral.integral_of_le hT.le,
     ← integral_Icc_eq_integral_Ioc] using h
-
-
 
 theorem m64Periodic_deriv
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

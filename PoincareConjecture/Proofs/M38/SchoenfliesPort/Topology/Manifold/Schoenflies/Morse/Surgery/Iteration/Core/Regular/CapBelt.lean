@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Regular
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -13,8 +7,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -35,8 +27,6 @@ private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
   prodChartedSpace E1 S1 Real Real
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_small_belt_subset_open (D : SphereSurgeryCoreCap v g B)
     (hg : Continuous g) {U : Set S2} (hU : IsOpen U)
@@ -101,8 +91,6 @@ private theorem annular_slice_deriv_injective
   apply (hloc.mfderivToContinuousLinearEquiv (by simp)).injective.comp
   intro x y hxy
   exact congrArg Prod.fst hxy
-
-
 
 theorem cap_slice_eq_annular_slice (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)
@@ -204,8 +192,6 @@ theorem cap_slice_eq_annular_slice_of_nonneg (D : SphereSurgeryCoreCap v g B)
       (h := fun p => inner Real v (g p)) hheight hc htarget D.height_eq_on_boundary
   · exact D.cap_slice_eq_annular_slice hg F hFs hF hFi hheight hpos hθ1 hc htarget
 
-
-
 theorem image_cap_slice_eq_circle (D : SphereSurgeryCoreCap v g B)
     {θ : Real} (hθ : θ ∈ Ico (0 : Real) 1) :
     g '' ((D.chart '' closedBall 0 1) ∩
@@ -217,8 +203,6 @@ theorem image_cap_slice_eq_circle (D : SphereSurgeryCoreCap v g B)
     g ⁻¹' {y : E3 | inner Real v y = D.center + D.scale * θ}) = _
   rw [image_inter_preimage, D.image_closedBall, D.range_eq]
   exact lifted_cap_slice_eq_circle D.unit_v D.center D.scale D.scale_ne_zero D.planeMap hθ
-
-
 
 theorem exists_annular_cap_belt (D : SphereSurgeryCoreCap v g B)
     (hg : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ g)

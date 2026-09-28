@@ -4,11 +4,6 @@ import Mathlib.Analysis.Convex.Basic
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Homology.IntegralHomologyZero
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -44,7 +37,6 @@ private def integralPairSumKernelIso : kernel integralPairSum.{u} ≅ integralCo
       map_add' := fun _ _ => rfl
       map_smul' := fun _ _ => rfl }
   exact ModuleCat.kernelIsoKer integralPairSum ≪≫ e.toModuleIso
-
 
 def integralTwoComponentsAugmentationKernelIso
     (X : Type u) [TopologicalSpace X] (e : ZerothHomotopy X ≃ Bool) :
@@ -121,7 +113,6 @@ private def integralZeroSphereEquivBool :
       rw [e.norm_map]
       rfl)
   exact eS.trans integralRealUnitSphereEquivBool
-
 
 def integralZeroSphereAugmentationKernelIso :
     kernel (integralHomologyZeroAugmentation

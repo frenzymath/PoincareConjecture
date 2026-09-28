@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcDeletion
 import Mathlib.Data.Fin.Tuple.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped ContDiff
 namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 noncomputable def polygonArcInsertVertex (q : Polygon E (n + 2)) (i : Fin (n + 1))
     (t : ℝ) : Polygon E (n + 3) :=
@@ -34,8 +24,6 @@ private theorem arcInsert_internal (i : Fin (n + 1)) :
   · have hh := congrArg Fin.val h
     simp only [Fin.val_succ, Fin.val_castSucc, Fin.val_last] at hh
     omega
-
-
 
 theorem polygonArcInsertVertex_spec (q : Polygon E (n + 2)) (i : Fin (n + 1)) (t : ℝ) :
     let k := i.castSucc.succ
@@ -55,8 +43,6 @@ theorem polygonArcInsertVertex_spec (q : Polygon E (n + 2)) (i : Fin (n + 1)) (t
   · simpa only [Fin.succAbove_ne_last_last (arcInsert_internal i).2] using
       hret (Fin.last (n + 1))
   · exact congrArg Polygon.mk (funext hret)
-
-
 
 theorem polygonArcInsertVertex_delete_eq (p : Polygon E (n + 3))
     (i : Fin (n + 1)) (t : ℝ)
@@ -92,8 +78,6 @@ private theorem arcInsert_center_indices (i : Fin (n + 1)) :
     exact finRotate_of_lt i.castSucc.isLt
   · rw [hright, ← hmid]
     exact (finRotate_of_lt i.succ.isLt).symm
-
-
 
 theorem polygonArcInsertVertex_boundary (q : Polygon E (n + 2)) (i : Fin (n + 1))
     (t : ℝ) (ht : t ∈ Icc 0 1) :
@@ -145,8 +129,6 @@ private theorem arcInsert_other_edge (i : Fin (n + 1)) (a : Fin (n + 2))
         a.val - 1 + 1 + 1) = a.val + 1
       rw [if_neg (by omega)]
       omega
-
-
 
 theorem IsSimplePolygonalArc.isSimple_polygonArcInsertVertex {q : Polygon E (n + 2)}
     (hq : IsSimplePolygonalArc q) (i : Fin (n + 1)) (t : ℝ) (ht : t ∈ Ioo 0 1) :
@@ -283,8 +265,6 @@ theorem IsSimplePolygonalArc.isSimple_polygonArcInsertVertex {q : Polygon E (n +
             ← polygon_arcEdge_eq_segment q a', ← polygon_arcEdge_eq_segment q b']
           exact hq.edges_inter a' b' hab'
 
-
-
 theorem contDiff_polygonArcInsertVertex_apply {W : Type*}
     [NormedAddCommGroup W] [NormedSpace ℝ W] {s : ℕ∞ω}
     {q : W → Polygon E (n + 2)} {t : W → ℝ} (i : Fin (n + 1)) (j : Fin (n + 3))
@@ -297,8 +277,6 @@ theorem contDiff_polygonArcInsertVertex_apply {W : Type*}
   · have heq (z : W) := (polygonArcInsertVertex_spec (q z) i (t z)).2.1 a
     simp_rw [heq]
     exact hq a
-
-
 
 theorem polygonArcInsertVertex_strict_bounds (q : Polygon E (n + 2))
     (i : Fin (n + 1)) (t : ℝ) (ht : t ∈ Ioo 0 1) (X : E →ₗ[ℝ] ℝ)

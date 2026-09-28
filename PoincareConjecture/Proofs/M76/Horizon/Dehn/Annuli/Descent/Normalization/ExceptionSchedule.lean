@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Contacts.WholeCharts
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.FiniteExceptionNeighborhoods
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -30,7 +21,6 @@ namespace OriginalRelativeNormalization
 
 variable (D : OriginalRelativeNormalization step K j R boundary)
 
-
 def exceptionalDoubleValues : Set s.Carrier :=
   D.exceptionalValues ∩ D.projected '' doubleLocusOn D.projected K.space
 
@@ -45,7 +35,6 @@ theorem exceptionalDoubleValues_interior :
   exact D.double_point_interior hx hy hne hxy
 
 omit [FiniteDimensional ℝ V] in
-
 
 theorem exists_exception_schedule :
     ∃ (n : ℕ) (q : Fin n ≃ D.exceptionalDoubleValues)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,8 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_two_interval_disk_normalization
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -77,8 +66,6 @@ theorem exists_two_interval_disk_normalization
     exact (hdH _).trans (h0 t)
   · intro t
     exact (hdH _).trans (h1 t)
-
-
 
 theorem polyhedralPL_square_normalization
     {E F X ι : Type*}

@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Boundar
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.AnnulusPeriodMap
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonStandardQuotientPL
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -27,8 +16,6 @@ local notation "C" => AddCircle (4 * (128 : ℝ))
 local notation "C32" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
 
-
-
 theorem standardTargetAnnulus_period_coordinates (theta : C)
     (z : C32 × Icc (-1 : ℝ) 1) :
     (standardTargetAnnulus theta
@@ -40,8 +27,6 @@ theorem standardTargetAnnulus_period_coordinates (theta : C)
             (by norm_num) (by norm_num) z.1) : X) := by
   simp [standardTargetAnnulus, Dehn.annulusCylinderHomeomorph,
     standardAnnulusCylinderCoordinates, Prod.map, Prod.swap]
-
-
 
 theorem exists_standardTargetAnnulus_polyhedral_parameter
     {β : Type*} {d : β → OpenPartialHomeomorph X V3}

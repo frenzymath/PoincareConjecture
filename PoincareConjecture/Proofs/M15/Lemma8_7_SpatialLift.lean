@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M15.Lemma8_7_SpatialInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,9 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem compatibleCylinder_spatial_lift_contMDiffOn
     {n : ℕ} {X : Type u} [TopologicalSpace X]
@@ -49,9 +37,6 @@ theorem compatibleCylinder_spatial_lift_contMDiffOn
   change (L t).2 = k (gamma t)
   rw [← hL t htJ]
   exact (hrecover (L t) (by rwa [hL t htJ])).symm
-
-
-
 
 theorem compatibleCylinder_exists_initial_lift
     {n : ℕ} {X : Type u} [TopologicalSpace X]
@@ -101,9 +86,6 @@ theorem compatibleCylinder_exists_initial_lift
   · apply e.embedding.isInducing.continuousOn_iff.mpr
     exact (hgamma.continuousOn.mono hsub).congr hL
   · exact compatibleCylinder_spatial_lift_contMDiffOn G D e g (hgamma.mono hsub) L hL
-
-
-
 
 theorem compatibleCylinder_lift_contMDiffOn
     {n : ℕ} {X : Type u} [TopologicalSpace X]

@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -198,9 +190,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g} {gamma : C1FreeLoopSpace (M := M)}
 
-
-
-
 theorem boundary_lift (S : M65MinimalDisk g D gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))
     (hregular : ∀ x, curveVelocity (n := 3) (periodicFreeLoop gamma) x ≠ 0) :
@@ -242,8 +231,6 @@ private theorem shifted_loop_pathLength (g : RiemannianMetric 3 M)
     (Proofs.M58.periodic_freeLoopSpeed g gamma).intervalIntegral_add_eq s 0
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem boundary_speed_integral (S : M65MinimalDisk g D gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))
@@ -292,8 +279,6 @@ theorem boundary_speed_integral (S : M65MinimalDisk g D gamma)
 
 set_option backward.isDefEq.respectTransparency false in
 
-
-
 theorem radial_norm_eq_boundary_speed (S : M65MinimalDisk g D gamma) (theta : ℝ) :
     g.tangentNorm (S.disk.map (Proofs.M58.angularPoint theta))
       (mfderivWithin (𝓡 2) (𝓡 3) S.disk.map loopDiskSet
@@ -318,9 +303,6 @@ theorem radial_norm_eq_boundary_speed (S : M65MinimalDisk g D gamma) (theta : �
   unfold RiemannianMetric.tangentNorm
   rw [S.withinDifferential_inner_self hz, S.withinDifferential_inner_self hz,
     hn, Proofs.M58.norm_angularPoint, one_pow]
-
-
-
 
 theorem radial_norm_integral (S : M65MinimalDisk g D gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))

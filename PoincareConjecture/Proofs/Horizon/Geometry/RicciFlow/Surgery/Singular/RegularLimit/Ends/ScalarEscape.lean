@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Assembly
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.TerminalGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.TerminalComponentPath
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T}
-
 
 theorem isCompact_scalar_sublevel (K : TerminalComponentPath E)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)
@@ -45,13 +37,11 @@ namespace PoincareConjecture.TerminalEnd
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
 
-
 theorem tail_subset_compl_exhaustion (e : TerminalEnd K) (n : ℕ) :
     e.tail n ⊆ (e.exhaustion n)ᶜ := by
   obtain ⟨x, _, hx⟩ := e.tail_component n
   rw [hx]
   exact connectedComponentIn_subset _ x
-
 
 theorem exists_tail_scalar_gt (e : TerminalEnd K)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)
@@ -66,7 +56,6 @@ theorem exists_tail_scalar_gt (e : TerminalEnd K)
   intro hscalar
   exact e.tail_subset_compl_exhaustion m hx
     (e.exhaustion.subset hnm (hn hscalar))
-
 
 theorem eventually_scalar_gt (e : TerminalEnd K)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)
@@ -85,8 +74,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem nonemptyExtension_end_scalar_escape (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (hΩ : H.reference.regularLimitSet.Nonempty)

@@ -3,15 +3,6 @@ import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.Connected.Clopen
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -96,8 +87,6 @@ private theorem finite_connected_partition_equiv
   intro x hx
   have hx' := hb (a i) hx
   simpa only [hba i] using hx'
-
-
 
 theorem exists_two_circles_of_ambient_partition
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.TimeDependentSpectralResidual
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,11 +13,6 @@ variable {iota : Type*} [Countable iota]
   [MeasurableSpace (State iota)] [BorelSpace (State iota)]
   {lambda : iota → NNReal} {T r : ℝ}
   (N : TimeDependentSpectralResidual lambda T)
-
-
-
-
-
 
 theorem exists_spectral_response (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 ≤ r)
     (hsmall : 2 * N.perturbationConstant + 8 * N.principalConstant * r +
@@ -74,10 +59,6 @@ theorem exists_spectral_response (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 ≤ r)
         integral_response_energy_le_of_memLp hT (Lp.memLp F) lambda
       _ = ‖F‖ ^ 2 := (forcing_norm_sq F).symm
       _ ≤ r ^ 2 := (sq_le_sq₀ (norm_nonneg F) hr).mpr hF
-
-
-
-
 
 theorem forcing_fixedPoint_unique (hT : 0 ≤ T) (hT1 : T ≤ 1) (hr : 0 ≤ r)
     (hsmall : 2 * N.perturbationConstant + 8 * N.principalConstant * r +

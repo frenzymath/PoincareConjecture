@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M04.RicciTraceVariation
 import PoincareConjecture.Proofs.M04.ScalarTraceVariation
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -151,4 +144,3 @@ theorem hasDerivAt_scalarCurvature_evolution (F : RicciFlow n M J)
   rw [htraceR]
 
 end PoincareConjecture.M04
-

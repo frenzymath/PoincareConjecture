@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.StaticMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,7 +26,6 @@ local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) (ULift.{u} M) :=
 local instance : IsManifold (𝓡 3) ∞ (ULift.{u} M) :=
   Poincare.Manifold.uliftIsManifold (𝓡 3) M
 
-
 @[simp] theorem ulift_scalarGradientNorm (F : RicciFlow 3 M J)
     (t : ℝ) (x : ULift.{u} M) :
     scalarGradientNorm (F.ulift.metric t) (F.ulift.connection t) x =
@@ -48,8 +38,6 @@ local instance : IsManifold (𝓡 3) ∞ (ULift.{u} M) :=
   let H := Homothety.metricHomothetyCalculus (F.ulift.metric t) (F.metric t) e 1
     zero_lt_one he
   exact H.m48_scalarGradient_eq he (F.ulift.connection t) (F.connection t) x
-
-
 
 @[simp] theorem ulift_scalarEvolution (F : RicciFlow 3 M J)
     (t : ℝ) (x : ULift.{u} M) :
@@ -70,8 +58,6 @@ end RicciFlow
 
 attribute [local instance] AncientKappaSolution.uliftSecondCountable
   AncientKappaSolution.uliftConnectedSpace
-
-
 
 theorem uniformKappaCapDerivativeBounds_small
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :
@@ -101,8 +87,6 @@ theorem uniformKappaCapDerivativeBounds_small
   simpa only [L, AncientKappaSolution.ulift_flow, RicciFlow.ulift_scalarGradientNorm,
     RicciFlow.ulift_scalarEvolution, RicciFlow.ulift_scalarCurvature] using
     hderivatives t ht (ULift.up.{u} x)
-
-
 
 theorem uniformKappaCapDerivativeFields_small
     (P : M26CanonicalNeighborhoodPredecessors.{u}) :

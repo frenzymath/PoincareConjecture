@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapHalfBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -30,10 +20,6 @@ private theorem boundaryComplexCoordinates_face (p : Plane) (hp : p 0 = 0) :
     boundaryComplexCoordinates p = (p 1 : ℂ) := by
   simp [boundaryComplexCoordinates, LinearIsometryEquiv.trans_apply,
     Complex.orthonormalBasisOneI_repr_symm_apply, m64BoundaryCoordinateSwap_apply, hp]
-
-
-
-
 
 theorem boundaryComplexCoordinates_mixed_data
     {R : ℝ} (hR : 0 < R) {u : ℂ → Target}
@@ -81,10 +67,6 @@ theorem boundaryComplexCoordinates_mixed_data
       (boundaryComplexCoordinates p) (boundaryComplexCoordinates (EuclideanSpace.single 0 1))) 0 = 0
     rw [boundaryComplexCoordinates_basis, if_pos rfl, boundaryComplexCoordinates_face p h0]
     exact hn (p 1) (hfacebound p hp h0)
-
-
-
-
 
 theorem contDiffOn_closedHalfDisk_of_boundaryComplexCoordinates
     {R : ℝ} {u : ℂ → Target}

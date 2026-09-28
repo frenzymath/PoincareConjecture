@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.M59LoopIdentification
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopTopology
 import PoincareConjecture.Proofs.M02.CubeHomotopyExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -20,8 +11,6 @@ noncomputable section
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m59_square_boundary_iff (z : Fin 2 → I) :
     z ∈ Cube.boundary (Fin 2) ↔
@@ -39,8 +28,6 @@ theorem m59_square_boundary_iff (z : Fin 2 → I) :
     · exact ⟨1, Or.inl h⟩
     · exact ⟨1, Or.inr h⟩
 
-
-
 def m59RelativeSquareShrink : C(I × (Fin 2 → I), Fin 2 → I) :=
   ⟨fun p i => if i = 0 then unitInterval.symm p.1 * p.2 0 else p.2 i, by
     apply continuous_pi
@@ -52,8 +39,6 @@ def m59RelativeSquareShrink : C(I × (Fin 2 → I), Fin 2 → I) :=
     · simp only [hi, if_false]
       exact (continuous_apply i).comp continuous_snd⟩
 
-
-
 theorem m59RelativeSquareShrink_zero (z : Fin 2 → I) :
     m59RelativeSquareShrink (0, z) = z := by
   ext i
@@ -61,8 +46,6 @@ theorem m59RelativeSquareShrink_zero (z : Fin 2 → I) :
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem m59RelativeLoopCubeAt_boundary {x : M}
     {F : C((Fin 2 → I), C1FreeLoopSpace (M := M))}
@@ -73,9 +56,6 @@ theorem m59RelativeLoopCubeAt_boundary {x : M}
   · exact hF.2 z h
   · exact ⟨x, hF.1 z (Or.inr (Or.inl h))⟩
   · exact ⟨x, hF.1 z (Or.inr (Or.inr h))⟩
-
-
-
 
 theorem m59_relative_surjective (z0 : LoopCircle) (x : M)
     (F : C((Fin 2 → I), C1FreeLoopSpace (M := M)))

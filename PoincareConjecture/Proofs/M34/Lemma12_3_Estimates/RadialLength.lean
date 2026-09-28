@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M09.RiemannianProper
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Manifold
@@ -20,42 +10,30 @@ open scoped Manifold ContDiff Bundle ENNReal
 
 namespace PoincareConjecture.M34
 
-
 noncomputable def initialRadialSpeed (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   Real.sqrt (initialRadialCoefficient g₀ r)
-
-
 
 noncomputable def initialWarping (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   r * Real.sqrt (initialAngularCoefficient g₀ r)
 
-
 theorem initialRadialSpeed_pos (g₀ : StandardInitialMetric) (r : ℝ) :
     0 < initialRadialSpeed g₀ r := Real.sqrt_pos.mpr (initialCoefficients_pos g₀ r).1
-
 
 theorem initialRadialSpeed_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (initialRadialSpeed g₀) :=
   (initialRadialCoefficient_contDiff g₀).sqrt (fun r => (initialCoefficients_pos g₀ r).1.ne')
-
-
 
 theorem initialWarping_contDiff (g₀ : StandardInitialMetric) :
     ContDiff ℝ ∞ (initialWarping g₀) :=
   contDiff_id.mul ((initialAngularCoefficient_contDiff g₀).sqrt
     (fun r => (initialCoefficients_pos g₀ r).2.ne'))
 
-
-
 theorem initialWarping_pos (g₀ : StandardInitialMetric) {r : ℝ} (hr : 0 < r) :
     0 < initialWarping g₀ r :=
   mul_pos hr (Real.sqrt_pos.mpr (initialCoefficients_pos g₀ r).2)
 
-
 noncomputable def initialRadialLength (g₀ : StandardInitialMetric) (r : ℝ) : ℝ :=
   ∫ t in 0..r, initialRadialSpeed g₀ t
-
-
 
 theorem initialRadialLength_hasDerivAt (g₀ : StandardInitialMetric) (r : ℝ) :
     HasDerivAt (initialRadialLength g₀) (initialRadialSpeed g₀ r) r := by
@@ -64,7 +42,6 @@ theorem initialRadialLength_hasDerivAt (g₀ : StandardInitialMetric) (r : ℝ) 
     hc.stronglyMeasurable.stronglyMeasurableAtFilter hc.continuousAt
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialAxis_edist_le_radialLength (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 ≤ r) :
@@ -102,8 +79,6 @@ theorem initialAxis_edist_le_radialLength (g₀ : StandardInitialMetric)
     ⟨g₀.metric.toRiemannianMetric⟩
   exact riemannianEDist_le_pathELength hγ.contMDiffOn
     (by simp [γ]) (haxis r) hr
-
-
 
 theorem initialRadialLength_unbounded (g₀ : StandardInitialMetric) (B : ℝ) :
     ∃ r : ℝ, 0 ≤ r ∧ B < initialRadialLength g₀ r := by

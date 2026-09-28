@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcNesting
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Collars.PolygonLocalJordanSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -18,8 +9,6 @@ namespace Polygon
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
 
 theorem returning_axis_segment {u v : V} (hu : u.2 = 0) (hv : v.2 = 0)
     (huv : u.1 ≤ v.1) :
@@ -36,8 +25,6 @@ theorem returning_axis_segment {u v : V} (hu : u.2 = 0) (hv : v.2 = 0)
     exact ⟨hx, rfl⟩
   · rintro ⟨hz, hz0⟩
     exact ⟨z.1, hz, Prod.ext rfl hz0.symm⟩
-
-
 
 theorem exists_returning_base_upper_rectangle {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
@@ -106,10 +93,6 @@ theorem exists_returning_base_upper_rectangle {n : ℕ} (P : Polygon V (n + 3))
     linarith
   · exact hR
 
-
-
-
-
 theorem returning_arc_outer_endpoint_order {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)
     (hup : ∀ i, 0 ≤ (P i).2) {A B : Set V} {u v a b : V}
@@ -164,10 +147,6 @@ theorem returning_arc_outer_endpoint_order {n : ℕ} (P : Polygon V (n + 3))
   rw [returning_axis_segment hu.2 hv.2 huv.le] at haseg
   exact hau.not_ge haseg.1.1
 
-
-
-
-
 theorem exists_returning_ribbon_side_parameter {η : ℝ} (hη : 0 < η)
     {f g : ℝ → ℝ} (hf : ContinuousOn f (Icc (-η) η))
     (hfi : InjOn f (Icc (-η) η)) (hg : ContinuousOn g (Icc (-η) η))
@@ -200,10 +179,6 @@ theorem exists_returning_ribbon_side_parameter {η : ℝ} (hη : 0 < η)
       by simpa [abs_of_pos hρ] using hρε, hρ.ne', hanti h0 hp hρ, ?_⟩
     apply hnear
     simpa [Real.dist_eq, abs_of_pos hρ] using hρδ
-
-
-
-
 
 theorem exists_outer_returning_ribbon_side {n : ℕ} (P : Polygon V (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P)

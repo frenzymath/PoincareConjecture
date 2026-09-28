@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.Mathlib.StereographicAntipode
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SphereGluing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +8,6 @@ open Set Metric IsManifold
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_bounded_threeSphere_stereographic_atlas
     (v : UnitThreeSphere) {rPlus rMinus : ℝ}

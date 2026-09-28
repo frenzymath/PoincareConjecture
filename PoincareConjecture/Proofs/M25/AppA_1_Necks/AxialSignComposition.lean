@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AxialTransversality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_positive_cross_axis_composition :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

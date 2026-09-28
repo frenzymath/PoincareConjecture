@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 set_option maxHeartbeats 1800000 in
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem sectional_laplacian_nonneg_of_local_lower
     (D : LeviCivitaData g) (m : ℝ) {U : Set M} (hU : IsOpen U)

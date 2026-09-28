@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogov.Support.Radial
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,8 +50,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem deriv2_shifted_inverse_radius_sq_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -110,9 +99,6 @@ theorem deriv2_shifted_inverse_radius_sq_le
   exact h
 
 variable [T3Space M] [ConnectedSpace M]
-
-
-
 
 theorem exists_squared_distance_upper_support_of_shift
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -169,8 +155,6 @@ theorem exists_squared_distance_upper_support_of_shift
       ring
     rw [hcoef] at h
     exact h
-
-
 
 theorem exists_squared_distance_upper_support
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

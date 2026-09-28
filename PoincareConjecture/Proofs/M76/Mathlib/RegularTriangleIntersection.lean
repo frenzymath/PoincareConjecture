@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleZeroSlice
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem straddlesZero_of_regular_zero (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     (he : e.card = 2) (hreg : ∀ u ∈ e, A u ≠ 0) {x : E}
@@ -28,9 +18,6 @@ theorem straddlesZero_of_regular_zero (A : E →ᵃ[ℝ] ℝ) {e : Finset E}
     Finset.insert_subset_iff.mpr ⟨hu, Finset.singleton_subset_iff.mpr hv⟩
   have heq := Finset.eq_of_subset_of_card_le hsub (by rw [he, Finset.card_pair huv])
   exact ⟨u, v, hAu, hAv, by rw [← heq, Finset.coe_pair]⟩
-
-
-
 
 theorem segment_straddlingPoints_eq_triangleSlice (A : E →ᵃ[ℝ] ℝ)
     {e f t : Finset E} (he : A.StraddlesZero e) (hf : A.StraddlesZero f)
@@ -61,9 +48,6 @@ end AffineMap
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem common_straddling_edge_of_triangle_intersection
     (K : SimplicialComplex ℝ E) (A : E →ᵃ[ℝ] ℝ)

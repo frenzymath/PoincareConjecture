@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SupportedCalculus
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M10
 
 variable {M E : Type*} [TopologicalSpace M]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 noncomputable def chartSupportedTest (e : OpenPartialHomeomorph M E) (φ : M → ℝ) : E → ℝ :=
   e.target.indicator (φ ∘ e.symm)
@@ -52,7 +43,6 @@ theorem chartSupportedTest_support (e : OpenPartialHomeomorph M E) {φ : M → �
     exact ⟨e.symm x, subset_tsupport φ hφ, e.right_inv hxt⟩
   exact ⟨hK.of_isClosed_subset (isClosed_tsupport _) hsub, hsub,
     hsub.trans (image_subset_iff.mpr (fun q hq ↦ e.map_source (hs hq)))⟩
-
 
 theorem chartSupportedTest_contDiff (e : OpenPartialHomeomorph M E) {φ : M → ℝ}
     (hc : HasCompactSupport φ) (hs : tsupport φ ⊆ e.source) {k : ℕ∞ω}

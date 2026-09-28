@@ -3,17 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Defs
 import Mathlib.MeasureTheory.Measure.Hausdorff
 import Mathlib.Geometry.Manifold.Riemannian.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,11 +11,9 @@ universe u
 
 namespace PoincareConjecture
 
-
 noncomputable def MetricJet {α : Type*} [NormedAddCommGroup α] [NormedSpace ℝ α]
     (r : ℕ) (f : α → ℝ) (_s : Set α) (x : α) :=
   iteratedFDeriv ℝ r f x
-
 
 structure FlowCarrier (n : ℕ) where
   carrier : Type u
@@ -47,15 +34,11 @@ abbrev FlowCarrier.tangent {n : ℕ} (C : FlowCarrier n) (x : C.carrier) :=
   @TangentSpace ℝ _ (EuclideanSpace ℝ (Fin n)) _ _ (EuclideanSpace ℝ (Fin n)) _ (𝓡 n) C.carrier
     C.topologicalSpace C.chartedSpace x
 
-
 structure BasedFlow (n : ℕ) (T' T : ℝ) (C : FlowCarrier n) where
   base : C.carrier
   flow : @RicciFlow n C.carrier C.topologicalSpace C.chartedSpace C.isManifold
     (Set.Ioo T' T)
   volumeMeasure : @MeasureTheory.Measure C.carrier C.measurableSpace
-
-
-
 
   spacetimeVectorField : ∀ _t : ℝ, ∀ x : C.carrier, ℝ × C.tangent x
   spacetimeVectorField_time :
@@ -77,7 +60,6 @@ noncomputable def coordinateCoefficient {n : ℕ} (C : FlowCarrier n) (q : C.car
     (A (EuclideanSpace.basisFun (Fin n) ℝ a))
     (A (EuclideanSpace.basisFun (Fin n) ℝ b))
 
-
 def metricBall {n : ℕ} (C : FlowCarrier n) (g : C.metric) (x : C.carrier)
     (r : ℝ) : Set C.carrier :=
   letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -96,7 +78,6 @@ noncomputable def metricNorm {n : ℕ} (C : FlowCarrier n) (g : C.metric) (x : C
     (v : C.tangent x) : ℝ :=
   Real.sqrt (C.metricInner g x v v)
 
-
 noncomputable def metricHausdorffVolume {n : ℕ} (C : FlowCarrier n) (g : C.metric) :
     @MeasureTheory.Measure C.carrier C.measurableSpace :=
   letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -112,7 +93,6 @@ noncomputable def metricHausdorffVolume {n : ℕ} (C : FlowCarrier n) (g : C.met
     ⟨⟨g.inner, g.toContinuousRiemannianMetric.continuous, fun _ _ _ ↦ rfl⟩⟩
   letI : EMetricSpace C.carrier := EMetricSpace.ofRiemannianMetric (𝓡 n) C.carrier
   MeasureTheory.Measure.hausdorffMeasure (n : ℝ)
-
 
 def metricComplete {n : ℕ} (C : FlowCarrier n) (g : C.metric) : Prop :=
   letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -158,7 +138,6 @@ noncomputable def zeroBallVolume {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
 
 end BasedFlow
 
-
 structure SmoothSpacetimeEmbedding {n : ℕ} {T' T : ℝ}
     {C D : FlowCarrier n} (F : BasedFlow n T' T C) (G : BasedFlow n T' T D)
     (domain : Set (ℝ × C.carrier)) where
@@ -198,7 +177,6 @@ structure SmoothSpacetimeEmbedding {n : ℕ} {T' T : ℝ}
         mfderiv (𝓡 n) (𝓡 n) (ψ t) x (F.spacetimeVectorField t x).2) =
         (G.spacetimeVectorField t (ψ t x)).2
 
-
 abbrev SpacetimeEmbedding {n : ℕ} {T' T : ℝ}
     {C D : FlowCarrier n} (F : BasedFlow n T' T C) (G : BasedFlow n T' T D)
     (A : ℝ) (I : Set ℝ) :=
@@ -210,7 +188,6 @@ noncomputable def BasedFlow.metricAt {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
   letI : ChartedSpace (EuclideanSpace ℝ (Fin n)) C.carrier := C.chartedSpace
   letI : IsManifold (𝓡 n) ∞ C.carrier := C.isManifold
   F.flow.metric t
-
 
 def CurvatureBoundOn {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}
     {D : FlowCarrier n} (F : BasedFlow n T' T C) (G : BasedFlow n T' T D)

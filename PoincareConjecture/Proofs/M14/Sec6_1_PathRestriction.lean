@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_1_LLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped intervalIntegral
@@ -19,8 +11,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point}
-
-
 
 def restrictPath (p : M14BackwardPath G T τ₁ τ₂ x y)
     (a b : ℝ) (ha : τ₁ ≤ a) (hab : a < b) (hb : b ≤ τ₂) :
@@ -44,14 +34,10 @@ def restrictPath (p : M14BackwardPath G T τ₁ τ₂ x y)
     rw [Set.uIcc_of_le hab.le, Set.uIcc_of_le p.tau_lt.le]
     exact fun _ ht => ⟨ha.trans ht.1, ht.2.trans hb⟩)
 
-
-
 theorem action_restrictPath (p : M14BackwardPath G T τ₁ τ₂ x y)
     (a b : ℝ) (ha : τ₁ ≤ a) (hab : a < b) (hb : b ≤ τ₂) :
     M14BackwardLAction G (restrictPath p a b ha hab hb) =
       ∫ t in a..b, M14BackwardLIntegrand G p t := rfl
-
-
 
 theorem action_split (p : M14BackwardPath G T τ₁ τ₂ x y)
     {a : ℝ} (ha : a ∈ Set.Ioo τ₁ τ₂) :

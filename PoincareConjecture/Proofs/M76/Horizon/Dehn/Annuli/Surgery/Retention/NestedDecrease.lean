@@ -11,9 +11,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli.NestedResolvingCylinder
 local notation "P2" => (ℝ × ℝ)
 local notation "Cyl" => Set.prod (sphere (0 : Fin 2 → ℝ) 1) (Icc (-1 : ℝ) 1)
 
-
-
-
 theorem double_component_count_lt
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X F} {l r L d : ℝ} {A : Fin 2 → Set P2}

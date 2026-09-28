@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleClosedArc
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.FiniteCarrierLocalPathConnected
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -64,8 +56,6 @@ local notation "L0" => hamiltonZeroPeriodLattice
 local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 theorem exists_hamiltonZero_closed_marked_component_sphere
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3)
     {N R F U S : Set X0} (he : PLDomain e N) (hN : IsCompact N)
@@ -109,8 +99,6 @@ theorem exists_hamiltonZero_closed_marked_component_sphere
 local notation "H0" => LatticeHandle (Fin 0) (Fin 3) L0
 local notation "p" => (4 * (16 : ℝ))
 local notation "C0" => AddCircle p
-
-
 
 theorem exists_hamiltonZero_closed_second_component_sphere
     {ι : Type*} (e : ι → OpenPartialHomeomorph X0 V3) (phi : C(H0, H0))

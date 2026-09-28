@@ -1,17 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import PoincareConjecture.Proofs.M28.Mathlib.FrontierCrossing
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,10 +54,6 @@ private theorem literal_side_cover (K : CapCertificate g) {T0 : Set M}
         exact False.elim (Set.disjoint_left.mp havoid hx hboundary)
     · exact Or.inr hclosedx
   exact hT.subset_or_subset hopenCore hclosed.isOpen_compl hdis hcover
-
-
-
-
 
 theorem exists_literal_carrier_cap_boundary_contact
     {T0 : Set M} (K : CapCertificate g)

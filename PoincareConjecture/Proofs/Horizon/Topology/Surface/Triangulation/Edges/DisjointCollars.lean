@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.CollarCoordinates
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -39,11 +29,8 @@ private theorem exists_disjoint_open_neighborhoods
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
-
 def chartArcCarrier (p : M) (f : ℝ → EuclideanSpace ℝ (Fin 2)) (a b : ℝ) : Set M :=
   (chartAt (EuclideanSpace ℝ (Fin 2)) p).symm '' (f '' Icc a b)
-
-
 
 theorem exists_surface_normal_collar_coordinates_within (p : M)
     {f : ℝ → EuclideanSpace ℝ (Fin 2)} (hf : ContDiff ℝ ∞ f)
@@ -92,8 +79,6 @@ theorem exists_surface_normal_collar_coordinates_within (p : M)
   have h := hnewstrip hz
   change collarParameterEquiv.symm (collarParameterEquiv z) ∈ D.source at h
   simpa only [collarParameterEquiv.symm_apply_apply] using h
-
-
 
 theorem exists_disjoint_surface_normal_collars [T2Space M]
     {I : Type v} [Finite I] (p : I → M) (f : I → ℝ → EuclideanSpace ℝ (Fin 2))

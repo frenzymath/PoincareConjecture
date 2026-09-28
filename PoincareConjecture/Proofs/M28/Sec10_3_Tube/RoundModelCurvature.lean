@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelPolarization
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundComponent
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 

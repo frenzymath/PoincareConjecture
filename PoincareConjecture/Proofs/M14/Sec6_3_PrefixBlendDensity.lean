@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_PrefixJoinCoordinates
 import PoincareConjecture.Proofs.M14.Sec6_3_GaugeBlendDensity
 import PoincareConjecture.Proofs.M14.Sec6_1_InteriorDensity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -49,9 +40,6 @@ private noncomputable local instance bilinearNormedSpace :
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem blend_contMDiffOn_one (a d : ℝ) :
     ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) 1
       (gaugeBlend D.index D.lift p.curve q.curve a d) (Ioo (c - D.radius) c) := by
@@ -66,8 +54,6 @@ theorem blend_contMDiffOn_one (a d : ℝ) :
     (D.prefix_in_image s (Ioo_subset_Icc_self hs))
     (D.continuation_in_image s ⟨hs.1.le, by linarith [hs.2, D.radius_pos]⟩)
     (D.region_subset (D.blend_mem_region a d (Ioo_subset_Icc_self hs)))).contMDiffWithinAt
-
-
 
 theorem exists_blend_density_bound (hM12 : GeneralizedRicciGaugeTheory.{u} n) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ a d : ℝ, ∀ s ∈ Ioo (c - D.radius) c,

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Reaction
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +17,6 @@ open RicciFlow.Splitting
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem curvatureTensorNorm_eq_zero_of_two_le_ricciNullity
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -88,7 +76,6 @@ theorem curvatureTensorNorm_eq_zero_of_two_le_ricciNullity
   apply le_antisymm _ (Real.sqrt_nonneg _)
   exact (D.curvatureTensorNorm_le_scalarCurvature_sharp hD x hoperator).trans_eq hscalar
 
-
 theorem ricciNullity_le_one_of_nonflat
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (hoperator : D.NonnegativeCurvatureOperator x)
@@ -100,8 +87,6 @@ theorem ricciNullity_le_one_of_nonflat
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture.RicciFlow
-
-
 
 theorem ricciNullity_eq_one_of_terminal_null_plane
     {M : Type u} [TopologicalSpace M] [T2Space M] [ConnectedSpace M]

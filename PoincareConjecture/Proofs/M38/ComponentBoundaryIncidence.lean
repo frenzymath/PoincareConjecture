@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.ComponentFrontiers
 import PoincareConjecture.Proofs.M38.EventDiscardedComponents
 import PoincareConjecture.Proofs.M38.CappingComponentLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -27,7 +18,6 @@ namespace EventCapCoordinates
 
 variable {i : Fin (F.event T hT).cap_count} (P : EventCapCoordinates F T hT i)
 
-
 theorem attachmentChart_target_image :
   Subtype.val '' P.attachmentChart.target =
       P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) := by
@@ -39,19 +29,15 @@ theorem attachmentChart_target_image :
   · intro hy
     exact ⟨⟨y, P.annular_target_discarded hy⟩, hy, rfl⟩
 
-
 theorem positive_collar_connected :
     IsConnected (P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1)) := by
   rw [← P.attachmentChart_target_image]
   exact P.attachmentChart_target_connected.image _ continuous_subtype_val.continuousOn
 
-
 theorem attachmentPoint_positive :
     P.attachmentPoint.val ∈ P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) := by
   have h := P.attachmentPoint_mem
   rwa [P.attachmentChart_target] at h
-
-
 
 theorem collar_discarded_inter :
     (P.collar '' (Set.univ ×ˢ Set.Ioo (-1 : ℝ) 1)) ∩
@@ -80,8 +66,6 @@ theorem collar_discarded_inter :
       fun z hz => ⟨hz.1, neg_one_lt_zero.trans hz.2.1, hz.2.2⟩
     exact ⟨Set.image_mono hsub hy, P.annular_target_discarded hy⟩
 
-
-
 theorem central_mem_closure_positive (z : UnitTwoSphere) :
     P.collar (z, 0) ∈ closure (P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1)) := by
   let V : Set RoundCylinderSpace := Set.univ ×ˢ Set.Ioo (0 : ℝ) (1 / 2)
@@ -102,7 +86,6 @@ theorem central_mem_closure_positive (z : UnitTwoSphere) :
   intro p hp
   exact ⟨hp.1, hp.2.1, by linarith [hp.2.2]⟩
 
-
 theorem positive_collar_subset_component (x : eventDiscardedOpen F T hT)
     (hlabel : ConnectedComponents.mk P.attachmentPoint = ConnectedComponents.mk x) :
     P.collar '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) ⊆
@@ -112,8 +95,6 @@ theorem positive_collar_subset_component (x : eventDiscardedOpen F T hT)
   apply Set.image_mono
   intro y hy
   exact ConnectedComponents.coe_eq_coe'.mp ((P.attachment_component_eq hy).trans hlabel)
-
-
 
 theorem central_mem_component_closure_iff (x : eventDiscardedOpen F T hT)
     (z : UnitTwoSphere) :
@@ -147,9 +128,6 @@ theorem central_mem_component_closure_iff (x : eventDiscardedOpen F T hT)
 end EventCapCoordinates
 
 variable (F T hT) (P : ∀ i, EventCapCoordinates F T hT i)
-
-
-
 
 theorem event_component_frontier (x : eventDiscardedOpen F T hT) :
     frontier (connectedComponentIn (F.event T hT).retained_preᶜ x.val) =
@@ -187,8 +165,6 @@ theorem event_component_frontier (x : eventDiscardedOpen F T hT) :
     subst s
     exact ((P i).central_mem_component_closure_iff x z).mpr hi
 
-
-
 theorem event_component_interior_closure (x : eventDiscardedOpen F T hT) :
     interior (closure (connectedComponentIn (F.event T hT).retained_preᶜ x.val)) =
       connectedComponentIn (F.event T hT).retained_preᶜ x.val := by
@@ -197,8 +173,6 @@ theorem event_component_interior_closure (x : eventDiscardedOpen F T hT) :
   apply componentIn_interior_closure
     (F.event T hT).retained_pre_compact.isClosed.isOpen_compl x.property
   rw [closure_compl, event_discarded_interior]
-
-
 
 theorem event_closed_component_frontier (x : eventDiscardedOpen F T hT) :
     frontier (closure (connectedComponentIn (F.event T hT).retained_preᶜ x.val)) =
@@ -213,8 +187,6 @@ theorem event_closed_component_frontier (x : eventDiscardedOpen F T hT) :
       (by rw [closure_compl, event_discarded_interior])]
   exact event_component_frontier F T hT P x
 
-
-
 theorem event_component_frontier_nonempty_iff (x : eventDiscardedOpen F T hT) :
     (frontier (connectedComponentIn (F.event T hT).retained_preᶜ x.val)).Nonempty ↔
       ∃ i, ConnectedComponents.mk (P i).attachmentPoint = ConnectedComponents.mk x := by
@@ -226,8 +198,6 @@ theorem event_component_frontier_nonempty_iff (x : eventDiscardedOpen F T hT) :
   · rintro ⟨i, hi⟩
     obtain ⟨y, hy⟩ := (event_sphere_connected F T hT i).nonempty
     exact ⟨y, Set.mem_iUnion.mpr ⟨⟨i, hi⟩, hy⟩⟩
-
-
 
 theorem event_component_boundary_unique (x : eventDiscardedOpen F T hT)
     (y : (F.slice (F.event T hT).tMinus).carrier)

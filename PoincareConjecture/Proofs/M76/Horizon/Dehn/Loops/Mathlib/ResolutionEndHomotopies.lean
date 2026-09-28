@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonalResolutionEndPaths
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.ResolutionEndWordCalculation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,8 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76.Dehn.PolygonalCrossingResolution
 
 local notation "C3" => ((ℝ × ℝ) × ℝ)
-
-
 
 structure MarkedResolutionEndData {X : Type*} [TopologicalSpace X]
     (Fmark : Set X) (τ : C3 → X) (b : ℝ) (t : unitInterval) where
@@ -53,8 +42,6 @@ structure MarkedResolutionEndData {X : Type*} [TopologicalSpace X]
   U_homotopic : U.Homotopic (ra.symm.trans rc)
   L_homotopic : L.Homotopic (rl.symm.trans ra)
   R_homotopic : R.Homotopic (rr.symm.trans rc)
-
-
 
 theorem nonempty_marked_resolution_end_data
     {X : Type*} [TopologicalSpace X] {Fmark : Set X} (τ : C3 → X)
@@ -129,9 +116,6 @@ theorem nonempty_marked_resolution_end_data
     exact congrArg τ (hL s)
   · intro s
     exact congrArg τ (hR s)
-
-
-
 
 theorem exists_marked_resolution_end_word_calculations
     {X : Type*} [TopologicalSpace X] {Fmark : Set X} (τ : C3 → X)

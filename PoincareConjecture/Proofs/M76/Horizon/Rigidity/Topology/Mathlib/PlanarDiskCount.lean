@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.SurfaceEu
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleIncidenceRanks
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.CocycleExactnessOfContractions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains

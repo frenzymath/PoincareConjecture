@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M09.VelocityRestriction
 import PoincareConjecture.Proofs.M09.SquareChartAtFlow
 import PoincareConjecture.Proofs.M09.OpenODEUniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M36.StandardBalls
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 import PoincareConjecture.Definitions.Ch12.StandardCap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
 
-
-
-
 theorem exists_standard_ball_radius (g0 : StandardInitialMetric) (x : E) :
     ∃ R : ℝ, 0 < R ∧ x ∈ g0.metric.ball 0 R := by
   refine ⟨|M36.radialArclength g0 ‖x‖| + 1, by positivity, ?_⟩
@@ -31,9 +18,6 @@ theorem exists_standard_ball_radius (g0 : StandardInitialMetric) (x : E) :
   rw [M36.standard_edist_zero,
     ENNReal.ofReal_lt_ofReal_iff (by positivity : 0 < |M36.radialArclength g0 ‖x‖| + 1)]
   linarith only [le_abs_self (M36.radialArclength g0 ‖x‖)]
-
-
-
 
 theorem curvature_bound_of_standard_exhaustion
     (g0 : StandardInitialMetric) {g : RiemannianMetric 3 E}
@@ -45,11 +29,6 @@ theorem curvature_bound_of_standard_exhaustion
   have hnorm : 0 ≤ D.curvatureTensorNorm x := Real.sqrt_nonneg _
   rw [abs_of_nonneg hnorm]
   exact hbound R hR x hx
-
-
-
-
-
 
 theorem curvature_bound_of_tendsto_on_standard_exhaustion
     (g0 : StandardInitialMetric) {J : Set ℝ}
@@ -65,10 +44,6 @@ theorem curvature_bound_of_tendsto_on_standard_exhaustion
   intro R hR y hy
   exact le_of_tendsto (hconv t ht y)
     ((hbound R hR).mono fun k hk => hk t ht y hy)
-
-
-
-
 
 theorem curvature_bound_of_metric_jets_on_standard_exhaustion
     (g0 : StandardInitialMetric) {J : Set ℝ}
@@ -91,10 +66,6 @@ theorem curvature_bound_of_metric_jets_on_standard_exhaustion
   exact LeviCivitaData.tendsto_curvatureTensorNorm_of_scalar_metric_jets
     (fun k => Dseq k t) (D t) x (EuclideanSpace.basisFun (Fin 3) ℝ).toBasis
     (hjets t ht x)
-
-
-
-
 
 theorem curvature_locally_bounded_of_standard_exhaustion
     (g0 : StandardInitialMetric) {lifetime : ℝ}

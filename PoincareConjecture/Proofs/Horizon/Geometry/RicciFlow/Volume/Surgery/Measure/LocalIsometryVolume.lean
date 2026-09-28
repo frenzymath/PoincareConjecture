@@ -4,26 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Topol
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Topology.SmoothPartialChart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -40,9 +20,7 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T3Space N] [MeasurableSpace N] [BorelSpace N]
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem calibratedMetricVolume_image_eq_of_partial_isometry
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -132,8 +110,6 @@ theorem calibratedMetricVolume_image_eq_of_partial_isometry
           simpa only [one_mul] using (hV B hB hBV).ge⟩) hA hAs
   rw [← SurgeryVolume.Measure.map_inverse_restrict_apply e (calibratedMetricVolume h) hA hAs]
   exact le_antisymm hforward hreverse
-
-
 
 theorem calibratedMetricVolume_image_eq_of_injective_isometry
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) {f : M → N}

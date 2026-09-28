@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallChains
 import PoincareConjecture.Proofs.M02.Topology.IntegralSimplexSubdivisionGeometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

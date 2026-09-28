@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.ChartEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set Filter Topology
@@ -22,8 +11,6 @@ namespace PoincareConjecture.ReducedLengthMinimum.Variational
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem finite_chartH1_limit {ι : Type*} [Fintype ι]
     (g : RiemannianMetric n M) (a b : ι → ℝ) (hab : ∀ i, a i ≤ b i)

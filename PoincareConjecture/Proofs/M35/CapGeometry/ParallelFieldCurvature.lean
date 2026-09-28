@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanFields
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +18,6 @@ local instance parallelDualNormedGroup : NormedAddCommGroup (V →L[ℝ] ℝ) :=
 local instance parallelDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) := inferInstance
 local instance parallelMetricNormedGroup : NormedAddCommGroup (V →L[ℝ] V →L[ℝ] ℝ) := inferInstance
 local instance parallelMetricNormedSpace : NormedSpace ℝ (V →L[ℝ] V →L[ℝ] ℝ) := inferInstance
-
-
 
 theorem curvature_parallel_field_germ
     {g : RiemannianMetric n V} (D : LeviCivitaData g)
@@ -54,8 +45,6 @@ theorem curvature_parallel_field_germ
     D.curvature x u v (Z x) at h
   rw [hc, hc, hparallel.self_of_nhds] at h
   simpa using h.symm
-
-
 
 theorem curvatureTensor_parallel_field_germ
     {g : RiemannianMetric n V} (D : LeviCivitaData g)

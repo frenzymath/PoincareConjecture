@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffine
 import Mathlib.Geometry.Manifold.StructureGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry
 
 variable (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 def piecewiseAffinePregroupoid : Pregroupoid E where
   property := LocallyPiecewiseAffineOn
@@ -31,20 +19,13 @@ def piecewiseAffinePregroupoid : Pregroupoid E where
     exact ⟨V, hxV, hV⟩
   congr _ hgf hf := hf.congr (fun x hx => (hgf x hx).symm)
 
-
-
-
 def piecewiseAffineGroupoid : StructureGroupoid E :=
   (piecewiseAffinePregroupoid E).groupoid
-
-
 
 theorem mem_piecewiseAffineGroupoid_iff (e : OpenPartialHomeomorph E E) :
     e ∈ piecewiseAffineGroupoid E ↔
       LocallyPiecewiseAffineOn e e.source ∧ LocallyPiecewiseAffineOn e.symm e.target :=
   Iff.rfl
-
-
 
 instance piecewiseAffineGroupoid_closedUnderRestriction :
     ClosedUnderRestriction (piecewiseAffineGroupoid E) where

@@ -1,15 +1,5 @@
 import Mathlib.Analysis.ODE.ExistUnique
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped NNReal

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeFrame
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M62.SpacetimeCharts
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem mvfderiv_product_scalar (C : SpacetimeCharts n M a b)
     (f : M × ℝ → ℝ) (q : C.Point)
@@ -57,8 +46,6 @@ theorem mvfderiv_product_scalar (C : SpacetimeCharts n M a b)
   rw [← C.split_space, ← C.split_time] at hchain
   exact hchain.trans hsplit
 
-
-
 theorem mvfderiv_product_horizontal (C : SpacetimeCharts n M a b)
     (f : M × ℝ → ℝ) (q : C.Point)
     (hf : MDifferentiableAt ((𝓡 n).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, ℝ)
@@ -69,8 +56,6 @@ theorem mvfderiv_product_horizontal (C : SpacetimeCharts n M a b)
       mvfderiv (𝓡 n) (fun p => f (p, (q.2 : ℝ))) q.1 V := by
   rw [C.mvfderiv_product_scalar f q hf]
   simp [horizontal]
-
-
 
 theorem mvfderiv_product_time (C : SpacetimeCharts n M a b)
     (f : M × ℝ → ℝ) (q : C.Point)

@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M03.Existence.EuclideanGraphRellichNative
 import Mathlib.MeasureTheory.Measure.SeparableMeasure
 import Mathlib.Analysis.InnerProductSpace.PiL2
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Filter Set
@@ -24,10 +13,6 @@ namespace PoincareConjecture
 
 open EuclideanTranslationNative EuclideanRellichNative EuclideanGraphRellichNative
   EuclideanMollificationNative
-
-
-
-
 
 theorem m65C1L2_weak_subsequence {d : ℕ}
     {K : Set (EuclideanSpace ℝ (Fin d))} (hK : IsCompact K)

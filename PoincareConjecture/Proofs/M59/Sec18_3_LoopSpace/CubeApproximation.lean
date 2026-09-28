@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.FiniteChartApproximation
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.SmoothFamilies
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.CubeCircleDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [MetricSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m59_cube_loop_approximation (n : Nat)
     (F : C((Fin n → I) × LoopCircle, M)) (p : M)

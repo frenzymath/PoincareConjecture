@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_RegularTimeDerivative
 import PoincareConjecture.Proofs.M14.Sec6_5_GradientIdentity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
 
 theorem reducedLengthAt_joint_time_identity
     (hCoordinates : M12MetricPredecessors.{0} n)

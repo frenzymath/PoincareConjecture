@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.OriginalWholeDiskProduct
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

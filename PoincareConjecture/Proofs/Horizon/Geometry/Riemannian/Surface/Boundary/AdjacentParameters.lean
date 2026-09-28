@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Boundary.AdjacentFrames
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,7 +26,6 @@ private theorem interval_bijOn_order {φ : ℝ → ℝ}
     exact Or.inr ⟨hends.2, hends.1, hm⟩
 
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem chartTriangle_side_parameter
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
@@ -90,7 +82,6 @@ theorem chartTriangle_side_parameter
 
 omit [IsManifold (𝓡 2) ∞ S] in
 
-
 theorem chartTriangle_side_parameter_hasDerivAt
     (e f : OpenPartialHomeomorph S (ℝ × ℝ))
     (he : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ × ℝ) ∞ e e.source)
@@ -103,9 +94,6 @@ theorem chartTriangle_side_parameter_hasDerivAt
   have hL := ((contMDiffAt_iff_contDiffAt.mp htrans).differentiableAt (by simp)).hasFDerivAt
   have h := hL.comp_hasDerivAt t ((hasDerivAt_const t (0 : ℝ)).prodMk (hasDerivAt_id t))
   exact (ContinuousLinearMap.snd ℝ ℝ ℝ).hasFDerivAt.comp_hasDerivAt t h
-
-
-
 
 theorem exists_chartTriangle_side_orientation
     (g : RiemannianMetric 2 S) (e f : OpenPartialHomeomorph S (ℝ × ℝ))

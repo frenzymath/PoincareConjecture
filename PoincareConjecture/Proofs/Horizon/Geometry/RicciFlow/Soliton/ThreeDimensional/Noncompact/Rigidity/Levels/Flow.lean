@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Noncompact.Rigidity.ScalarFlow
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -43,8 +36,6 @@ theorem potential_monotone_on_gradient_flow
     (S.connection.gradient S.potential (γ t))
   exact real_inner_self_nonneg
 
-
-
 theorem potential_linear_growth_on_forward_gradient_curve
     (S : GradientShrinkingSolitonData 3 M) {a : ℝ}
     (ha : ∀ x : M, a ≤ S.potential x → 1 ≤
@@ -63,8 +54,6 @@ theorem potential_linear_growth_on_forward_gradient_curve
     0 (by simp) t ht ht
   dsimp only [Function.comp_def] at hbound
   linarith
-
-
 
 theorem forward_gradient_curve_centers_escape
     (S : GradientShrinkingSolitonData 3 M) {a : ℝ}
@@ -91,8 +80,6 @@ theorem forward_gradient_curve_centers_escape
     (k : ℝ) (Nat.cast_nonneg k)
   linarith
 
-
-
 theorem scalar_strictMonoOn_forward_gradient_curve
     (S : GradientShrinkingSolitonData 3 M)
     (hD : S.connection.CurvatureTensorCalculus)
@@ -116,8 +103,6 @@ theorem scalar_strictMonoOn_forward_gradient_curve
     (show 0 ≤ t from interior_subset ht)))
   simp [hzero] at hg
   norm_num at hg
-
-
 
 theorem exists_threshold_scalar_lt_of_escaping_subsequence
     (S : GradientShrinkingSolitonData 3 M)

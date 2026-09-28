@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.TangentialTests
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.ExponentIteration
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,8 +14,6 @@ open Weak BoundaryTangential Poincare.Analysis.Sobolev.Euclidean
 
 variable {d : ℕ} [NeZero d]
 local notation "E" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem memW1p_zeroExtension {p : ℝ≥0∞} (hp : 1 ≤ p) {u : E → ℝ}
     (hu0 : MemW01p 2 u (halfSpace d)) (hu : MemW1p p u (halfSpace d)) :

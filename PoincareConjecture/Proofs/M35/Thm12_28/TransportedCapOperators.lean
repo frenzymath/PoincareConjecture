@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CompactScalarOperators
 import PoincareConjecture.Proofs.M35.Thm12_28.CapCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -31,9 +23,6 @@ private theorem three_halves_le_quadruple {S r : ℝ}
     _ = 2 ^ (3 / 2 : ℝ) * r ^ (3 / 2 : ℝ) := Real.mul_rpow (by norm_num) hr
     _ ≤ 4 * r ^ (3 / 2 : ℝ) :=
       mul_le_mul_of_nonneg_right htwo (Real.rpow_nonneg hr _)
-
-
-
 
 theorem blowupSequence_cap_scalar_operator_bounds (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

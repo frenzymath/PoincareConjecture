@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ModTwoCochainIncidence
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,24 +12,19 @@ variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
 
-
 noncomputable def edgeValue (z : Edge A → ZMod 2) (i j : ι) : ZMod 2 :=
   if hij : i = j then 0 else
     if hface : {i, j} ∈ A.faces then z (pairEdge A i j hface hij) else 0
-
 
 theorem edgeValue_self (z : Edge A → ZMod 2) (i : ι) : edgeValue A z i i = 0 := by
   simp [edgeValue]
 
 open Classical in
 
-
 theorem edgeValue_pair (z : Edge A → ZMod 2) (i j : ι)
     (hface : {i, j} ∈ A.faces) (hne : i ≠ j) :
     edgeValue A z i j = z (pairEdge A i j hface hne) := by
   simp only [edgeValue, dif_neg hne, dif_pos hface]
-
-
 
 theorem edgeValue_symm (z : Edge A → ZMod 2) (i j : ι) :
     edgeValue A z i j = edgeValue A z j i := by
@@ -56,9 +41,6 @@ theorem edgeValue_symm (z : Edge A → ZMod 2) (i j : ι) :
         dif_neg hface']
 
 variable [Fintype ι]
-
-
-
 
 theorem edgeValue_compose (z : Edge A → ZMod 2) (hz : edgeCoboundary A z = 0)
     {s : Finset ι} (hs : s ∈ A.faces) {i j k : ι}
@@ -91,16 +73,11 @@ theorem edgeValue_compose (z : Edge A → ZMod 2) (hz : edgeCoboundary A z = 0)
     edgeValue_pair A z i k hfaceik hik]
   simpa only [CharTwo.neg_eq] using (eq_neg_iff_add_eq_zero.mpr hzt)
 
-
-
 noncomputable def cocycleOfClosed (z : Edge A → ZMod 2)
     (hz : edgeCoboundary A z = 0) : A.ModTwoEdgeCocycle where
   value := edgeValue A z
   diagonal := edgeValue_self A z
   compose := fun _ hs _ hi _ hj _ hk => edgeValue_compose A z hz hs hi hj hk
-
-
-
 
 theorem mem_range_vertexCoboundary_of_coboundary (z : Edge A → ZMod 2)
     (hz : edgeCoboundary A z = 0) (hc : (cocycleOfClosed A z hz).IsCoboundary) :
@@ -121,16 +98,11 @@ theorem mem_range_vertexCoboundary_of_coboundary (z : Edge A → ZMod 2)
 
 omit [Fintype ι] in
 
-
-
 theorem boundary1_edge (e : Edge A) :
     (vertexCoboundary A).dualMap (LinearMap.proj e) =
       ∑ i ∈ e.val, (LinearMap.proj i : Module.Dual (ZMod 2) (ι → ZMod 2)) := by
   ext a
   simp [vertexCoboundary_apply]
-
-
-
 
 theorem boundary2_triangle (t : Triangle A) :
     (edgeCoboundary A).dualMap (LinearMap.proj t) =

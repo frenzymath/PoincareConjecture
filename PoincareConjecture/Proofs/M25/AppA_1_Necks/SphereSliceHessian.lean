@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.CentralSphere
 import PoincareConjecture.Proofs.M25.Mathlib.SphereChartJets
 import PoincareConjecture.Proofs.M25.Mathlib.SecondDerivativeBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -29,15 +20,11 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def transitionSphereChart (N N' : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ) (z : EuclideanSpace ℝ (Fin 2)) :
     EuclideanSpace ℝ (Fin 3) :=
   (N'.coordinate_inverse
     (N.coordinate_map ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm z, s))).1.val
-
-
 
 theorem contDiff_transitionSphereChart (N N' : EpsilonNeck g)
     (q : UnitTwoSphere) {s : ℝ}
@@ -57,8 +44,6 @@ theorem contDiff_transitionSphereChart (N N' : EpsilonNeck g)
     (N'.carrier_open.mem_nhds (hsub _))).comp z (hslice.comp z hc)
   exact contMDiffAt_iff_contDiffAt.mp
     (hcoe.contMDiffAt.comp z (contMDiffAt_fst.comp z hi))
-
-
 
 theorem exists_transitionSphereChart_hessian_bound :
     ∃ C : ℝ, 0 < C ∧ ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧
@@ -216,9 +201,6 @@ theorem exists_transitionSphereChart_hessian_bound :
   calc
     _ ≤ 1 * (6 * a * b) ^ 2 + 1 * (b * (J * a ^ 2 + 6 * a)) := by gcongr
     _ = _ := by ring
-
-
-
 
 theorem exists_transitionSphereChart_error_hessian_bound :
     ∃ C : ℝ, 0 < C ∧ ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

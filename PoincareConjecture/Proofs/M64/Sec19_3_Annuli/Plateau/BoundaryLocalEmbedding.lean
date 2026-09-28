@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryCoordinateSw
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryConformalGain
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.Sobolev
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,10 +13,6 @@ open Poincare.Analysis.Sobolev.Weak
 open Poincare.Analysis.Sobolev.Euclidean
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64HalfBall_H1_memLp {u : LoopPlane → ℝ} {a : LoopPlane} {r R : ℝ}
     (hrR : r < R) (hu : MemW1p 2 u (ball a R ∩ {p : LoopPlane | 0 < p 1}))
@@ -48,10 +33,6 @@ theorem m64HalfBall_H1_memLp {u : LoopPlane → ℝ} {a : LoopPlane} {r R : ℝ}
   filter_upwards [ae_restrict_mem (measurableSet_ball.inter hH.measurableSet)] with p hp
   change chi p * u p = u p
   rw [hone p (ball_subset_closedBall hp.1), one_mul]
-
-
-
-
 
 theorem m64HalfBall_conformal_columns_memLp
     {n : ℕ} (G : LoopPlane → EuclideanSpace ℝ (Fin n) →L[ℝ]

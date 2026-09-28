@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskModelFacts
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.EmptyInteriorFaceDimension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,8 +14,6 @@ local notation "Q" => sphere (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
 
 theorem rim_parameter_image :
     InjOn T.parameter (T.marked 3).space ∧ T.parameter '' (T.marked 3).space = Q := by
@@ -40,8 +30,6 @@ theorem rim_parameter_image :
       exact hz
     · intro z hz
       exact ⟨T.graph (j z), ⟨j z, ⟨z, hz, rfl⟩, rfl⟩, hu z hz⟩
-
-
 
 theorem rim_face_card_le {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 3).faces) : s.card ≤ 2 := by

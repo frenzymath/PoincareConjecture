@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.Terminal.Gluing.Retained.Embedding
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -94,7 +86,6 @@ theorem closure_retained_subset_neighborhood :
     obtain ⟨i, hi⟩ := mem_iUnion.mp (hfront hxf)
     exact retainedPieceOpen_subset_neighborhood I U (some i)
       ((I i).centralSphere_subset_retainedCollar hi)
-
 
 def retainedRegionEquivalence : SurgeryRegionEquivalence S (cutCarrier I R U hU hd hc)
     (closure (U : Set S.carrier))

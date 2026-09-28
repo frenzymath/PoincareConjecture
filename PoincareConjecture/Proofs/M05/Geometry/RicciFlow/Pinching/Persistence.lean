@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.ReactionInvariance
 import PoincareConjecture.Definitions.Ch04.Pinching
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -37,10 +26,6 @@ theorem scalar_lower_bound_persists_of_M04
   intro t ht x
   exact hM04.normalized_scalar_lower_bound M a b F ha hab hinit t ht x
 
-
-
-
-
 theorem scalar_region_persists_of_ordered_reaction
     {a b : ℝ} (ha : 0 ≤ a) (hab : a ≤ b)
     {lam mu nu : ℝ → ℝ}
@@ -61,11 +46,6 @@ theorem scalar_region_persists_of_ordered_reaction
         Poincare.HamiltonIvey.scalarRegion t := by
   exact Poincare.HamiltonIvey.reaction_invariance ha hab hlam hmu hnu hord
     hdlam hdmu hdnu hinit
-
-
-
-
-
 
 theorem initial_scalar_region_of_pinching
     {a S X : ℝ} (ha : 0 ≤ a)
@@ -94,9 +74,6 @@ theorem initial_scalar_region_of_pinching
       apply (div_le_div_iff₀ hden1 hden4).2
       nlinarith
     exact hhorizontal.trans htrace'
-
-
-
 
 theorem logarithmic_pinching_of_scalar_region
     {t lam mu nu : ℝ} (ht : 0 ≤ t) (hmu : mu ≤ lam) (hnu : nu ≤ mu)
@@ -179,11 +156,6 @@ theorem logarithmic_pinching_of_ordered_reaction
     (hord t htcc).1 (hord t htcc).2
     (scalar_region_persists_of_ordered_reaction ha hab.le hlam hmu hnu
       hord hdlam hdmu hdnu hinit t htcc) hX
-
-
-
-
-
 
 theorem flow_log_pinching_of_ordered_reaction
     {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)

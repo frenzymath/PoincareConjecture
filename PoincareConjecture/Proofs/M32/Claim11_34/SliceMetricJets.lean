@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.SpatialJets
 import PoincareConjecture.Proofs.M32.Claim11_34.Noncompact
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Curvature
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,11 +46,6 @@ private theorem slice_pullbackCoefficient_eq
       ((G.embedding k).forward t ht ∘ (extChartAt (𝓡 3) q).symm) y _) = _
   rw [hd, rescaledMetric_inner]
   rfl
-
-
-
-
-
 
 theorem blowup_tendstoUniformlyOn_slice_pullbackJet
     (G : GeneralizedBlowupConvergence S J) {t : ℝ} (ht : t ∈ J)

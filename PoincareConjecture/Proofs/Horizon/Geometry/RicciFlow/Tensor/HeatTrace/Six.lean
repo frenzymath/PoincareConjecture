@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.HeatTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.LaplacianTrace.Six
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_RetainedCylinderExtension
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_LaterSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M44
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale c : ℝ} {U : Set C.carrier}
-
-
-
 
 theorem exists_preterminal_parameter (hscale : 0 < scale) (hc : 0 < c)
     {tMinus : ℝ} (hminus : tMinus < origin + c / scale) :
@@ -42,9 +29,6 @@ theorem exists_preterminal_parameter (hscale : 0 < scale) (hc : 0 < c)
     apply (div_lt_div_iff_of_pos_right hscale).mp
     linarith
   exact ⟨r, ⟨hr0, hrc⟩, by rw [hclock]; exact ⟨(le_max_right _ _).trans ht.le, hT⟩⟩
-
-
-
 
 theorem exists_fixed_lost_line
     (e : SurgeryFlowCylinder F C origin scale (Ico 0 c) U)
@@ -71,10 +55,6 @@ theorem exists_fixed_lost_line
   rw [cylinder_preterminal_coordinates_eq e hT hpre s hs r hr ht hr' x hx]
   exact hlost
 
-
-
-
-
 theorem exists_lost_line_of_no_extension
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
     (e : SurgeryFlowCylinder F C origin scale (Ico 0 c) U)
@@ -98,9 +78,6 @@ theorem exists_lost_line_of_no_extension
   obtain ⟨e', _⟩ := exists_cylinder_across_retained_event e hU hc hcd hT hpre hJ hNo
     r hr hr' hret
   exact hstop ⟨e'⟩
-
-
-
 
 theorem disappears_of_fixed_lost_line
     {U : Set (F.slice origin).carrier}

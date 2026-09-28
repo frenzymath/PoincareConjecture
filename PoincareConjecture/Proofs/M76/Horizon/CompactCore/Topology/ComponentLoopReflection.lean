@@ -1,21 +1,11 @@
 import Mathlib.Topology.Homotopy.Path
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Path.Homotopic
-
 
 theorem of_map_homeomorph
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -35,14 +25,11 @@ theorem of_map_homeomorph
   · intro t x hx
     exact (congrArg H.symm (L.prop t x hx)).trans (H.symm_apply_apply _)
 
-
 theorem cast_refl {X : Type*} [TopologicalSpace X] {a b : X} {p : Path a a}
     (h : p.Homotopic (Path.refl a)) (hab : b = a) :
     (p.cast hab hab).Homotopic (Path.refl b) := by
   subst b
   exact h
-
-
 
 theorem of_map_whole_component
     {X : Type*} [TopologicalSpace X] {S F : Set X} (hSF : S ⊆ F)

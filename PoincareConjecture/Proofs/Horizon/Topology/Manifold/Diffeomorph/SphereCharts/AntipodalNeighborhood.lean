@@ -3,14 +3,6 @@ import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -18,8 +10,6 @@ open Set Metric
 namespace PoincareConjecture.SphereCharts
 
 local notation "E3" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem exists_antipodal_ball_neighborhood
     (b : OpenPartialHomeomorph E3 UnitThreeSphere)
@@ -52,8 +42,6 @@ theorem exists_antipodal_ball_neighborhood
     rintro _ ⟨x, hx, rfl⟩
     exact (henlarge hx).2
   exact hWdis.mono himage (image_mono himage)
-
-
 
 theorem exists_exponential_antipodal_ball_neighborhood
     (b : OpenPartialHomeomorph E3 UnitThreeSphere)

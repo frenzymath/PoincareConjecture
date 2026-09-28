@@ -1,24 +1,9 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.ConstantEnergy
-
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open scoped ContDiff
 
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
-
 
 theorem weak_directional_derivative_mul_smooth
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)

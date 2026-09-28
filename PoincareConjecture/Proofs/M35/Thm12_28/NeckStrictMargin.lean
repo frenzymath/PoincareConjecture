@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +18,6 @@ private theorem square_le_weighted (a b theta : ℝ) (h : 0 < theta) :
     rw [hid]
     exact sq_nonneg _
   exact sub_nonneg.mp ((mul_nonneg_iff_of_pos_left h).mp hnonneg)
-
-
 
 theorem roundCylinderTensorNormSquared_le_weighted {u theta : ℝ}
     (hu : u < 1) (htheta : 0 < theta)
@@ -50,8 +39,6 @@ theorem roundCylinderTensorNormSquared_le_weighted {u theta : ℝ}
   convert mul_le_mul_of_nonneg_left (square_le_weighted (T a) (S a) theta htheta) hw using 1
   ring
 
-
-
 theorem roundCylinderJetErrorSquared_le_weighted {u theta : ℝ}
     (hu : u < 1) (htheta : 0 < theta)
     (B C : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace) :
@@ -66,8 +53,6 @@ theorem roundCylinderJetErrorSquared_le_weighted {u theta : ℝ}
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.RoundCylinderFamilyClose
-
-
 
 theorem exists_same_epsilon_perturbation_margin {epsilon : ℝ} {I : Set ℝ}
     {C : ℝ → RoundCylinderTwoTensor} (hC : RoundCylinderFamilyClose epsilon I C)

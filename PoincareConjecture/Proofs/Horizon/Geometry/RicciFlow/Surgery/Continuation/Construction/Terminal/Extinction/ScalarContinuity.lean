@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Reference
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Evolution.Scalar.Within
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -71,7 +63,6 @@ theorem gluing_scalar_terminal (z : (Q.extension.extended.slice T).carrier) :
       (Q.gluing_map (⟨T, H.reference.tMinus_lt, le_rfl⟩, z)) = Q.terminal_scalar z := by
   rw [Q.gluing_terminal, Q.terminal_scalar_eq]
   rfl
-
 
 theorem exists_strict_scalar_tail (z : (Q.extension.extended.slice T).carrier)
     (a : ℝ) (ha : a < Q.terminal_scalar z) :

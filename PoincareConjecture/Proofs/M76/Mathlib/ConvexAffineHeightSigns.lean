@@ -2,24 +2,11 @@ import Mathlib.Analysis.Convex.Topology
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.Topology.Homeomorph.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem Convex.mem_closure_lower_affine_height
     {C : Set E} (hC : Convex ℝ C) (A : E →ᵃ[ℝ] ℝ)
@@ -33,9 +20,6 @@ theorem Convex.mem_closure_lower_affine_height
     exact mem_image_of_mem A hy
   exact (openSegment_subset_Ioo hlt hAy).2
 
-
-
-
 theorem Convex.mem_closure_upper_affine_height
     {C : Set E} (hC : Convex ℝ C) (A : E →ᵃ[ℝ] ℝ)
     {x z : E} (hx : x ∈ C) (hz : z ∈ C) (hlt : A x < A z) :
@@ -46,9 +30,6 @@ theorem Convex.mem_closure_upper_affine_height
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
-
 
 theorem mem_lower_height_closure_of_height_preserving
     {S : Set X} {T : Set Y} (H : S ≃ₜ T) (A : X → ℝ) (B : Y → ℝ)
@@ -65,9 +46,6 @@ theorem mem_lower_height_closure_of_height_preserving
   change B (H y) < B (H x)
   rw [hheight y, hheight x]
   exact hy
-
-
-
 
 theorem mem_upper_height_closure_of_height_preserving
     {S : Set X} {T : Set Y} (H : S ≃ₜ T) (A : X → ℝ) (B : Y → ℝ)

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.Compa
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Components.LocalInjectivity
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Reduction.SourceGeometry
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 

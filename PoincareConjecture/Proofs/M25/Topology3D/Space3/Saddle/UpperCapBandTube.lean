@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalTubeChart
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -21,10 +13,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem exists_saddle_upper_cap_band_tube
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

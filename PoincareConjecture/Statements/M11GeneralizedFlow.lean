@@ -1,13 +1,5 @@
 import PoincareConjecture.Statements.M11CompatibleOperations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,11 +10,8 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
 
-
-
 structure GeneralizedFlowCarrierConclusion (A : AdaptedMetricAtlas n X) where
   timeIntervals : SpacetimeIntervalSystem
-
 
   interval_localDiffeomorph : ∀ (K L : SpacetimeInterval) (h : L.domain ⊆ K.domain),
     IsOpen {t : K.domain | t.val ∈ L.domain} →
@@ -63,9 +52,6 @@ structure GeneralizedFlowCarrierConclusion (A : AdaptedMetricAtlas n X) where
   compatible : CompatibleSpacetimeTheory.{u, u} spacetime timeIntervals
   coordinate_compatible : CompatibleSpacetimeTheory.{u, 0} spacetime timeIntervals
 
-
-
-
 structure OrdinaryProductSpacetimeConclusion {n : ℕ} {M : Type u} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     (g : ℝ → RiemannianMetric n M) (I : SpacetimeInterval) where
@@ -92,8 +78,6 @@ structure OrdinaryProductSpacetimeConclusion {n : ℕ} {M : Type u} [Topological
       (mfderiv (𝓡 n) (𝓡 n) (sliceIdentification t) x w) = (g t.val).inner x v w
   compatible : CompatibleSpacetimeTheory.{u, u} spacetime timeIntervals
   coordinate_compatible : CompatibleSpacetimeTheory.{u, 0} spacetime timeIntervals
-
-
 
 structure GeneralizedSpacetimeGeometryTheory (n : ℕ) : Prop where
   realize : ∀ (X : Type u) [TopologicalSpace X] [T2Space X] [SecondCountableTopology X]

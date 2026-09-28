@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Ends.ClosingDisk
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.RegularBand.CapGraph.Belt
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -18,8 +12,6 @@ open _root_.Poincare.Manifold.Schoenflies.Saddle.Caps.Closing
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -34,7 +26,6 @@ open Poincare.Geometry.Euclidean
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
 
 theorem closing_rim_subset_of_canonical_cylinder
     {v : E3} (hv : ‖v‖ = 1)
@@ -77,11 +68,6 @@ private theorem complementary_cap_sdiff
     · exact hrim ⟨hyΔ, by by_contra h; exact hyD ⟨hyΔ, h⟩⟩
   · intro y hy
     exact ⟨Or.inl hy, fun hh => hh.2 (le_antisymm (hE y hy) (hΔ y hh.1))⟩
-
-
-
-
-
 
 theorem exists_simultaneous_curved_lower_cap_pair_replacement
     {v : E3} (hv : ‖v‖ = 1)

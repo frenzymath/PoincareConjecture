@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.OriginalEdgeCofaceCoordinates
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalEdgePosition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 def HasOriginalEdgeCofaceCharts {E X ι : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
@@ -44,9 +31,6 @@ private theorem mem_image_iff_of_fixed {X : Type*} [TopologicalSpace X]
   · intro h
     exact ⟨x, h, hx⟩
 
-
-
-
 theorem HasOriginalEdgeCofaceCharts.image_of_disjoint_support
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {S C : Set X}
@@ -69,9 +53,6 @@ theorem HasOriginalEdgeCofaceCharts.image_of_disjoint_support
     exact (mem_image_iff_of_fixed G (hG hz.2.2)).trans (hFS z hz.1)
   · intro z hz
     exact hFL z hz.1
-
-
-
 
 theorem ChartwisePLSphere.exists_original_complex_edge_coface_motion
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

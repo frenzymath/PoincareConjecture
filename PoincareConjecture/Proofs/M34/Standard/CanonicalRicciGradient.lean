@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceJetFluxParameters
 import PoincareConjecture.Proofs.M03.MetricDifferenceEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem DifferenceEnergy.curvatureAction_trace {n : ℕ}
     (gamma : Gamma n) (R : Raw n) (i j k : Fin n) :
@@ -39,8 +26,6 @@ theorem DifferenceEnergy.curvatureAction_trace {n : ℕ}
     Finset.sum_comm (f := fun l p => gamma i k p * R l l j p)]
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
-
-
 
 theorem canonicalDomain_ricci_trace :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -60,8 +45,6 @@ theorem canonicalDomain_ricci_trace :
   change (D.curvature _ ((PiLp.basisFun 2 ℝ (Fin n)) l) u v).ofLp l = _
   rw [PiLp.basisFun_apply]
   rfl
-
-
 
 theorem canonicalDomain_ricci_expansion :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -102,9 +85,6 @@ theorem canonicalDomain_ricci_expansion :
   apply Finset.sum_congr rfl
   intro j _
   exact Finset.sum_comm
-
-
-
 
 theorem canonicalDomain_covariantCurvatureArray_ricci_trace :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

@@ -1,25 +1,12 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Metric
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem norm_fderiv_zero_le_of_two_derivative_bounds
     {f : E → F} {h δ K : ℝ} (hh : 0 < h) (hδ : 0 ≤ δ) (hK : 0 ≤ K)

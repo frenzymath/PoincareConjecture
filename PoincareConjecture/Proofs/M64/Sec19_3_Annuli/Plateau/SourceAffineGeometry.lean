@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.SourceAffineWeakTransport
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -15,8 +7,6 @@ set_option warningAsError true
 open Set Metric
 
 namespace PoincareConjecture
-
-
 
 theorem m64SourceAffine_mapsTo_closedBall (a : LoopPlane) (s : ℝ) (hs : s ≠ 0)
     {kappa : ℝ} (hk : 0 ≤ kappa)
@@ -30,8 +20,6 @@ theorem m64SourceAffine_mapsTo_closedBall (a : LoopPlane) (s : ℝ) (hs : s ≠ 
     ((mul_le_mul_of_nonneg_right hD (dist_nonneg)).trans
       (mul_le_mul_of_nonneg_left (mem_closedBall.mp hp) hk))
 
-
-
 theorem m64SourceAffine_mapsTo_ball (a : LoopPlane) (s : ℝ) (hs : s ≠ 0)
     {kappa R rho : ℝ} (hk : 0 ≤ kappa)
     (hD : ‖(m64SourceScale s hs).toContinuousLinearMap‖ ≤ kappa)
@@ -44,9 +32,6 @@ theorem m64SourceAffine_mapsTo_ball (a : LoopPlane) (s : ℝ) (hs : s ≠ 0)
   have h := m64SourceAffine_mapsTo_closedBall a s hs hk hD 0 R hp
   rw [hzero] at h
   exact mem_ball.mpr ((mem_closedBall.mp h).trans_lt hsmall)
-
-
-
 
 theorem m64SourceCoordinate_holder {E F : Type*} [PseudoMetricSpace E] [PseudoMetricSpace F]
     (a : LoopPlane) (s : ℝ) (hs : s ≠ 0) {u : LoopPlane → E} {H : E → F}

@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Coeffic
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Comparison.Jets.ComparisonCoordinateJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -50,8 +37,6 @@ private theorem contDiffAt_christoffelOfCoefficientPair
     (ContinuousLinearMap.flipₗᵢ ℝ E E (E →L[ℝ] ℝ)).contDiff
   unfold christoffelOfCoefficientPair
   fun_prop
-
-
 
 theorem exists_finite_christoffel_jet_bound_at
     {ι : Type*} {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ} (x : ι → E)

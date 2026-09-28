@@ -1,14 +1,5 @@
 import Mathlib.Topology.Homotopy.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace ContinuousMap.HomotopyRel
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 def of_homeomorph_conjugacy
     {f₀ f₁ : C(Y, Y)} {g₀ g₁ : C(X, X)} {S : Set Y}
@@ -36,7 +25,6 @@ def of_homeomorph_conjugacy
     change h.symm (F (t, h x)) = g₀ x
     rw [F.eq_fst t hx, ← h₀, h.symm_apply_apply]
 
-
 theorem of_homeomorph_conjugacy_apply
     {f₀ f₁ : C(Y, Y)} {g₀ g₁ : C(X, X)} {S : Set Y}
     (F : f₀.HomotopyRel f₁ S) (h : X ≃ₜ Y)
@@ -49,7 +37,6 @@ end ContinuousMap.HomotopyRel
 namespace Homeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
 
 theorem preimage_fixedSet_of_conjugacy (h : X ≃ₜ Y)
     {f : Y → Y} {g : X → X} {S : Set Y}

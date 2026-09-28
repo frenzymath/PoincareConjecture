@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Spheres.Compression.Spheri
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.PrescribedPhaseProducts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.FiniteComponentBicollar
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 

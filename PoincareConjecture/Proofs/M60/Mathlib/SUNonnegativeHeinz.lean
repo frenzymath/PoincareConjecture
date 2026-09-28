@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Mathlib.SUHeinzEstimate
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -16,15 +8,12 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M60
 
-
 theorem suPlaneLaplacian_add_const (u : EuclideanSpace ℝ (Fin 2) → ℝ)
     (c : ℝ) (x : EuclideanSpace ℝ (Fin 2)) :
     suPlaneLaplacian (fun y => u y + c) x = suPlaneLaplacian u x := by
   have hd : fderiv ℝ (fun y => u y + c) = fderiv ℝ u :=
     funext fun _ => fderiv_add_const c
   simp only [suPlaneLaplacian, hd]
-
-
 
 theorem exists_heinz_estimate :
     ∃ A : ℝ, 0 < A ∧ ∀ (K R : ℝ), 0 ≤ K → 0 < R → R ≤ 1 →

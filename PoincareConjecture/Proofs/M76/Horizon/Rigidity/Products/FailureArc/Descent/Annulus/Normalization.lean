@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Composition.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.Composition.RimHomotopy
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 open PoincareConjecture.M76 PoincareConjecture.M76.Dehn

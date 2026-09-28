@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalJetNorm
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalMetricNormalization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity.Metric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,13 +24,11 @@ local instance jetMetricBilinearNormedSpace {F : Type*}
     [NormedAddCommGroup F] [NormedSpace ℝ F] :
     NormedSpace ℝ (F →L[ℝ] F →L[ℝ] ℝ) := ContinuousLinearMap.toNormedSpace
 
-
 def suAlphaMetricOperator {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (y : E n) : E n →L[ℝ] E n :=
   InnerProductSpace.continuousLinearMapOfBilin
     (g.pullbackCoefficients (chartAt (E n) b).symm y)
-
 
 theorem suAlphaMetricOperator_isUnit {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -52,7 +41,6 @@ theorem suAlphaMetricOperator_isUnit {n : ℕ} {M : Type*} [TopologicalSpace M]
   exact (mul_pos hkappa (pow_pos (norm_pos_iff.mpr hv) 2)).trans_le
     (hmetric y (mem_singleton _) v)
 
-
 theorem suAlphaMetricOperator_contDiffOn {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) :
@@ -60,19 +48,16 @@ theorem suAlphaMetricOperator_contDiffOn {n : ℕ} {M : Type*} [TopologicalSpace
   unfold suAlphaMetricOperator InnerProductSpace.continuousLinearMapOfBilin
   exact contDiffOn_const.clm_comp (g.contDiffOn_chartCoefficients b)
 
-
 def suAlphaPrincipalWeight {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ) (p : Point n) : ℝ :=
   let G := g.pullbackCoefficients (chartAt (E n) b).symm p.1.2
   2 * alpha * (1 + (G p.2.1 p.2.1 + G p.2.2 p.2.2) / suAlphaRoundFactor p.1.1) ^ (alpha - 1)
 
-
 def suAlphaPrincipalNormalizer {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ) (p : Point n) : E n →L[ℝ] E n :=
   (suAlphaPrincipalWeight g b alpha p)⁻¹ • Ring.inverse (suAlphaMetricOperator g b p.1.2)
-
 
 theorem suAlphaPrincipalWeight_pos_smooth {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -109,7 +94,6 @@ theorem suAlphaPrincipalWeight_pos_smooth {n : ℕ} {M : Type*} [TopologicalSpac
       ((contDiffAt_const.add (hQ.div (hls.contDiffAt.comp p contDiffAt_fst.fst)
         (hlambda _).ne')).rpow_const_of_ne hpos.ne')
 
-
 theorem suAlphaPrincipalNormalizer_contDiffAt {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) {alpha : ℝ} (ha : 1 ≤ alpha) (p : Point n)
@@ -122,7 +106,6 @@ theorem suAlphaPrincipalNormalizer_contDiffAt {n : ℕ} {M : Type*} [Topological
   exact (hw.2.inv hw.1.ne').smul ((hi.contDiffAt
     ((isOpen_extChartAt_target b).mem_nhds hy)).comp p contDiffAt_fst.snd)
 
-
 theorem suAlphaMetricOperator_apply {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (y v : E n) (a : Fin n) :
@@ -133,7 +116,6 @@ theorem suAlphaMetricOperator_apply {n : ℕ} {M : Type*} [TopologicalSpace M]
     one_mul] using InnerProductSpace.continuousLinearMapOfBilin_apply
       (g.pullbackCoefficients (chartAt (E n) b).symm y) v (EuclideanSpace.single a 1)
 
-
 def suAlphaPrincipalTrace {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ) (p : Point n)
@@ -143,8 +125,6 @@ def suAlphaPrincipalTrace {n : ℕ} {M : Type*} [TopologicalSpace M]
       (H 0 i, H 1 i) (suColumnBasis a i)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem suAlphaPrincipalTrace_formula {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -197,7 +177,6 @@ theorem suAlphaPrincipalTrace_formula {n : ℕ} {M : Type*} [TopologicalSpace M]
   field_simp [hl.ne', hd.ne']
   ring
 
-
 theorem suAlphaPrincipalNormalizer_trace {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) {alpha : ℝ} (ha : 1 ≤ alpha) (p : Point n)
@@ -212,8 +191,6 @@ theorem suAlphaPrincipalNormalizer_trace {n : ℕ} {M : Type*} [TopologicalSpace
   rw [mul_inv_cancel₀ (suAlphaPrincipalWeight_pos_smooth g b ha p hy).1.ne', one_smul]
   exact ReducedLengthMinimum.Variational.inverse_operator_apply _
     (suAlphaMetricOperator_isUnit g b p.1.2 hy) _
-
-
 
 theorem suAlphaPrincipalNormalizer_residual {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -244,8 +221,6 @@ theorem suAlphaPrincipalNormalizer_residual {n : ℕ} {M : Type*} [TopologicalSp
     norm_smul, Real.norm_of_nonneg (sub_nonneg.mpr ha)]
   exact (mul_le_mul_of_nonneg_left ht (sub_nonneg.mpr ha)).trans_eq (by ring)
 
-
-
 theorem suAlphaFirstJet_principalTrace_block {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
     (g : RiemannianMetric n M) (b : M) (alpha : ℝ)
@@ -262,8 +237,6 @@ theorem suAlphaFirstJet_principalTrace_block {n : ℕ} {M : Type*} [TopologicalS
     ContinuousLinearMap.bilinearComp_apply, suJetBlock_columnBasis]
   simp only [apply_ite, map_zero, Finset.sum_ite_eq', Finset.mem_univ, ↓reduceIte]
   rfl
-
-
 
 def suAlphaFirstJetNormalization {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]
@@ -333,9 +306,6 @@ def suAlphaFirstJetNormalization {n : ℕ} {M : Type*} [TopologicalSpace M]
       mul_nonneg hd (Real.sqrt_nonneg _)
     change ‖T R‖ ≤ delta * Real.sqrt (∑ i : Fin 2, ∑ k : Fin 2, ‖T (H i k)‖ ^ 2)
     nlinarith [norm_nonneg (T R)]
-
-
-
 
 theorem suAlphaFirstJet_normalization {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (E n) M] [IsManifold (𝓡 n) ∞ M]

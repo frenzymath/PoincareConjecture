@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ClosedContinuation
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.RampInitialBounds
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2RatioBound
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +12,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem c2_ramp_existence_of_local (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) {K0 K1 K2 : ℝ}
@@ -83,9 +69,6 @@ theorem c2_ramp_existence_of_local (P : M62.CircleProductData F circumference)
   apply c2_ramp_preserved P hlocal c hc (hT0.trans_le hT0b) hBounds
   rw [show (fun x => c x a) = gamma from funext hinit]
   exact hramp
-
-
-
 
 theorem smooth_ramp_existence_of_local (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) {K0 K1 K2 : ℝ}

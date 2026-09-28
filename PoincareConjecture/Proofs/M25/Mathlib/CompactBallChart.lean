@@ -5,23 +5,9 @@ import Mathlib.Topology.Connected.LocallyPathConnected
 import Mathlib.Topology.MetricSpace.ProperSpace
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
-
-
 
 theorem isPathConnected_norm_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -52,16 +38,12 @@ namespace OpenPartialHomeomorph
 variable {E W : Type*} [NormedAddCommGroup E]
   [TopologicalSpace W] (D : OpenPartialHomeomorph E W) {R r : ℝ}
 
-
-
 theorem image_closedBall_subset_target (hsource : D.source = ball 0 R) (hrR : r < R) :
     D '' closedBall 0 r ⊆ D.target := by
   rintro x ⟨z, hz, rfl⟩
   apply D.map_source
   rw [hsource]
   exact closedBall_subset_ball hrR hz
-
-
 
 theorem isCompact_image_closedBall [ProperSpace E]
     (hsource : D.source = ball 0 R) (hrR : r < R) :
@@ -71,15 +53,11 @@ theorem isCompact_image_closedBall [ProperSpace E]
   rw [hsource]
   exact closedBall_subset_ball hrR
 
-
-
 theorem isImage_closedBall (hsource : D.source = ball 0 R) (hrR : r < R) :
     D.IsImage (closedBall 0 r) (D '' closedBall 0 r) := by
   apply IsImage.of_image_eq
   rw [inter_eq_right.mpr (D.image_closedBall_subset_target hsource hrR), hsource,
     inter_eq_right.mpr (closedBall_subset_ball hrR)]
-
-
 
 theorem interior_image_closedBall [NormedSpace ℝ E] (hsource : D.source = ball 0 R)
     (hr : 0 < r) (hrR : r < R) :
@@ -90,8 +68,6 @@ theorem interior_image_closedBall [NormedSpace ℝ E] (hsource : D.source = ball
     inter_eq_right.mpr (interior_subset.trans
       (D.image_closedBall_subset_target hsource hrR))] at h
   exact h.symm
-
-
 
 theorem frontier_image_closedBall [NormedSpace ℝ E] [ProperSpace E] [T2Space W]
     (hsource : D.source = ball 0 R) (hr : 0 < r) (hrR : r < R) :
@@ -104,9 +80,6 @@ theorem frontier_image_closedBall [NormedSpace ℝ E] [ProperSpace E] [T2Space W
     inter_eq_right.mpr (sphere_subset_closedBall.trans (closedBall_subset_ball hrR)),
     inter_eq_right.mpr hfront] at h
   exact h.symm
-
-
-
 
 theorem compl_image_closedBall_inter_target (hsource : D.source = ball 0 R)
     (hrR : r < R) :
@@ -130,9 +103,6 @@ theorem compl_image_closedBall_inter_target (hsource : D.source = ball 0 R)
     have hvz : v = z := D.injOn hvs hzs heq
     exact (not_le_of_gt hz.1) (hvz ▸ mem_closedBall_zero_iff.mp hv)
 
-
-
-
 theorem m25_isConnected_compl_image_closedBall [NormedSpace ℝ E] [ProperSpace E] [T2Space W]
     [ConnectedSpace W] [LocallyConnectedSpace W]
     (hsource : D.source = ball 0 R) (hr : 0 < r) (hrR : r < R)
@@ -151,9 +121,6 @@ theorem m25_isConnected_compl_image_closedBall [NormedSpace ℝ E] [ProperSpace 
   · intro heq
     have hx : D 0 ∈ (D '' closedBall 0 r)ᶜ := heq.symm ▸ mem_univ _
     exact hx ⟨0, by simpa using hr.le, rfl⟩
-
-
-
 
 theorem isPathConnected_compl_image_closedBall [NormedSpace ℝ E] [ProperSpace E] [T2Space W]
     [ConnectedSpace W] [LocallyPathConnectedSpace W]

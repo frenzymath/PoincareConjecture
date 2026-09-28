@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphRealization
 import Mathlib.Topology.LocallyFinite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set StdSimplexCore
 
@@ -57,8 +49,6 @@ private theorem continuous_faceCoordinate {J : Type*} [Fintype J] [DecidableEq J
 def coordinateGraphCarrier {J L : Type*} [Fintype J] [DecidableEq J]
     (a b : L → J) : Set (J → ℝ) :=
   Set.range (fun j : J => Pi.single j (1 : ℝ)) ∪ ⋃ l, barycentricFace {a l, b l}
-
-
 
 theorem exists_coordinate_edge_map
     {J L Y : Type*} [Fintype J] [Fintype L] [DecidableEq J]
@@ -208,8 +198,6 @@ theorem coordinateGraphCarrier_subdivision (ends : I → Bool → V) :
       · exact Or.inr (mem_iUnion.mpr ⟨(i, some false), hi⟩)
       · exact Or.inr (mem_iUnion.mpr ⟨(i, none), hi⟩)
       · exact Or.inr (mem_iUnion.mpr ⟨(i, some true), hi⟩)
-
-
 
 theorem exists_subdivided_path_map {Y : Type*} [TopologicalSpace Y]
     (ends : I → Bool → V) (a : V → Y) (u : I → Bool → Y)

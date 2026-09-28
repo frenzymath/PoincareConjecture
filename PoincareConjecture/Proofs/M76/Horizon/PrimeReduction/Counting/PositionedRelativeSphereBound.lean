@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.NormalizedR
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.RelativeNoL3NonreturningPosition
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalRelativeNoL3CircleFreeTriangles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

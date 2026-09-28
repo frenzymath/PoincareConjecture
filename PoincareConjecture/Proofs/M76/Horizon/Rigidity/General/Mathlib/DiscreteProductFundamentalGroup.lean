@@ -1,24 +1,12 @@
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace FundamentalGroup
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   [TotallyDisconnectedSpace X]
-
-
-
 
 theorem map_snd_injective_of_totallyDisconnected (x : X × Y) :
     Function.Injective (map (⟨Prod.snd, continuous_snd⟩ : C(X × Y, Y)) x) := by

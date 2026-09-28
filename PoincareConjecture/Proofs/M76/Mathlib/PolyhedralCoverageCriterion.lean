@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineSubspaceAvoidance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Module
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsClosed.covers_of_interior_off_affineSubspaces {C U : Set E}
     (hC : IsClosed C) (hU : IsOpen U) (hconv : Convex ℝ U)

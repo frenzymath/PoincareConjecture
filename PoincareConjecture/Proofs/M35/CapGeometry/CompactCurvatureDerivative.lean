@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.SelectedCurvatureDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem blowupSequence_terminal_curvature_derivative_bounded_chart
     (P : M35StandardCapPredecessors)

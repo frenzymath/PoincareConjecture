@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTetrahedronAdjacency
 import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -18,17 +10,11 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (K : SimplicialComplex ℝ E)
 
-
-
 abbrev FaceOfCard (n : ℕ) := {s : Finset E // s ∈ K.faces ∧ s.card = n}
-
-
 
 theorem finite_faceOfCard (hK : K.faces.Finite) (n : ℕ) :
     Finite (K.FaceOfCard n) :=
   (hK.subset (fun _ hs => hs.1)).to_subtype
-
-
 
 noncomputable def vertexSingletonFaceEquiv : K.vertices ≃ K.FaceOfCard 1 := by
   let f : K.vertices → K.FaceOfCard 1 := fun p =>
@@ -45,12 +31,8 @@ noncomputable def vertexSingletonFaceEquiv : K.vertices ≃ K.FaceOfCard 1 := by
       exact t.property.1
     exact ⟨⟨p, hpK⟩, Subtype.ext hp.symm⟩
 
-
-
 theorem card_faceOfCard_one : Nat.card (K.FaceOfCard 1) = Nat.card K.vertices :=
   (Nat.card_congr K.vertexSingletonFaceEquiv).symm
-
-
 
 def markedFaceEquiv (A : SimplicialComplex ℝ E) (hAK : A ≤ K) (n : ℕ) :
     {s : K.FaceOfCard n // s.val ∈ A.faces} ≃ A.FaceOfCard n where
@@ -58,8 +40,6 @@ def markedFaceEquiv (A : SimplicialComplex ℝ E) (hAK : A ≤ K) (n : ℕ) :
   invFun s := ⟨⟨s.val, hAK s.property.1, s.property.2⟩, s.property.1⟩
   left_inv _ := rfl
   right_inv _ := rfl
-
-
 
 def markedVertexEquiv (A : SimplicialComplex ℝ E) (hAK : A ≤ K) :
     {p : K.vertices // p.val ∈ A.vertices} ≃ A.vertices where
@@ -73,7 +53,6 @@ end Geometry.SimplicialComplex
 namespace Fintype
 
 open Classical in
-
 
 theorem sum_one_two_add_card_subtype {ι : Type*} [Fintype ι] (P : ι → Prop) :
     (∑ i, if P i then 1 else 2) + Nat.card {i // P i} = 2 * Nat.card ι := by

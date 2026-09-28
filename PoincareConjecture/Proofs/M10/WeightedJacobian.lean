@@ -1,17 +1,8 @@
 import PoincareConjecture.Proofs.M10.Density
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M10
-
 
 theorem weightedJacobian_hasDerivAt {n : ℕ} {a J : ℝ → ℝ} {d R L t : ℝ}
     (ht : 0 < t) (ha : HasDerivAt a d t) (hJ : HasDerivAt J (J t * (R + L)) t) :
@@ -23,7 +14,6 @@ theorem weightedJacobian_hasDerivAt {n : ℕ} {a J : ℝ → ℝ} {d R L t : ℝ
   rw [Real.rpow_sub_one ht.ne']
   simp only [Pi.neg_apply, Real.rpow_eq_pow, Pi.mul_apply]
   ring
-
 
 theorem weightedJacobian_deriv_nonpos {n : ℕ} {a J : ℝ → ℝ} {D Q R L t : ℝ}
     (ht : 0 < t) (ha : HasDerivAt a (D + Q) t)

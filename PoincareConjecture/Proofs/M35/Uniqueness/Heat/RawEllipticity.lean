@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawCoordinateOperator
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,19 +43,15 @@ theorem rawCoordinateGram_posDef (g : RiemannianMetric n V) (x : V) :
   rw [hg]
   exact Matrix.posDef_gram_of_linearIndependent b.linearIndependent
 
-
 def rawHeatPrincipalSymbol (g : RiemannianMetric n V) (x : V) (ℓ : V →L[ℝ] ℝ) : ℝ :=
   DeTurckNative.quadratic (rawCoordinateGram g x)⁻¹
     (fun i => ℓ (EuclideanSpace.single i 1))
-
 
 theorem rawHeatPrincipalSymbol_eq_inverse_gram (g : RiemannianMetric n V)
     (x : V) (ℓ : V →L[ℝ] ℝ) :
     rawHeatPrincipalSymbol g x ℓ =
       DeTurckNative.quadratic (rawCoordinateGram g x)⁻¹
         (fun i => ℓ (EuclideanSpace.single i 1)) := rfl
-
-
 
 theorem exists_raw_compact_ellipticity (g : RiemannianMetric n V)
     {K : Set V} (hK : IsCompact K) :
@@ -78,8 +65,6 @@ theorem exists_raw_compact_ellipticity (g : RiemannianMetric n V)
   intro x hx ℓ
   rw [rawHeatPrincipalSymbol_eq_inverse_gram]
   exact hb x hx _
-
-
 
 theorem exists_raw_compact_principal_bound (g : RiemannianMetric n V)
     {K : Set V} (hK : IsCompact K) :

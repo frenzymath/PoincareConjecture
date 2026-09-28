@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalScalar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FocusingTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +15,6 @@ open ConnectionVariation CoordinateExponential
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
-
-
 theorem m64Intrinsic_manifoldCovDeriv_model
     (N : IntrinsicAnnulus) (q V : ℝ → AnnulusCoordinates) (t : ℝ) :
     manifoldCovDerivAlong N.metric q V 1 t =
@@ -42,8 +28,6 @@ theorem m64Intrinsic_manifoldCovDeriv_model
     rfl
   simp [manifoldCovDerivAlong, hcoeff, covDerivAlong, fderiv_eq_smul_deriv]
 
-
-
 theorem m64Intrinsic_manifoldCovDeriv_eq_frozen
     (N : IntrinsicAnnulus) {q V : ℝ → AnnulusCoordinates} {I : Set ℝ}
     (hI : IsOpen I) {t : ℝ} (ht : t ∈ I) (hq : DifferentiableAt ℝ q t)
@@ -52,9 +36,6 @@ theorem m64Intrinsic_manifoldCovDeriv_eq_frozen
       rampHorizontalCovariantDerivative N.connection q V t := by
   exact (m64Intrinsic_manifoldCovDeriv_model N q V t).trans
     (m64Intrinsic_pullback_modelOn N hI ht hq hV).symm
-
-
-
 
 theorem m64Intrinsic_normal_variation_initial_covDeriv
     (N : IntrinsicAnnulus) {radius : ℝ}

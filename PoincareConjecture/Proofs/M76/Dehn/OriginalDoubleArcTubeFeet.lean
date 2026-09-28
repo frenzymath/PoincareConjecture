@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeFaces
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex
@@ -22,9 +11,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 
 open Classical in
-
-
-
 
 theorem exists_original_signed_tube_feet
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

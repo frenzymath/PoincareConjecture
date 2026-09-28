@@ -2,21 +2,9 @@ import PoincareConjecture.Proofs.M64.Mathlib.CompactStrictChord
 import Mathlib.Geometry.Convex.Cone.Basic
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
-
-
-
-
 
 theorem m64ClosedCone_exists_scaled_strict_chord_bound
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [ProperSpace E]
@@ -47,10 +35,6 @@ theorem m64ClosedCone_exists_scaled_strict_chord_bound
   rw [← smul_sub, norm_smul, Real.norm_eq_abs, abs_of_pos (inv_pos.mpr hr),
     ← mul_assoc, mul_inv_cancel₀ hr.ne', one_mul] at hh
   exact hh
-
-
-
-
 
 theorem m64ClosedCone_exists_scaled_chord_bound_to_vector
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [ProperSpace E]

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +33,6 @@ theorem scalar_positive_of_nonflat_surface {g : RiemannianMetric 2 M}
     rw [D.curvatureTensor_eq_half_scalarCurvature, ← hzero]
     simp
   simp [LeviCivitaData.curvatureTensorNorm, hz]
-
-
 
 theorem ricci_lower_bound_of_surface_conservation {g : RiemannianMetric 2 M}
     (D : LeviCivitaData g) (f : M → ℝ) (α : ℝ) (hα : 0 < α)

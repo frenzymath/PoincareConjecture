@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_7_PhysicalInit
 import PoincareConjecture.Proofs.M44.Mathlib.SmoothChartInverse
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_NormalizedCoefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ universe u
 namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
-
-
-
 
 theorem exists_physical_birth_chart
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)
@@ -89,9 +76,6 @@ theorem exists_physical_birth_chart
     rw [M36.standard_ball_eq_euclidean F.standard_initial hR]
     exact (convex_ball (0 : E) _).isPreconnected
   exact ⟨e, rfl, fun _ => rfl, himage, hconnected.image f hf.continuousOn⟩
-
-
-
 
 theorem physical_birth_pullback_eq
     (F : SurgeryFlowData.{u}) (t : ℝ) (hT : t ∈ F.surgery_times)

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem cylinder_jet_difference_uniform
     (order : ℕ) (I : Set ℝ) (hI : IsCompact I) (hItime : ∀ u ∈ I, u < 1) (l : ℝ)
@@ -78,9 +67,6 @@ end PoincareConjecture.M35
 
 namespace PoincareConjecture.RoundCylinderFamilyClose
 
-
-
-
 theorem perturb_of_jet_difference_le {delta epsilon eta : ℝ} {I : Set ℝ}
     {B C : ℝ → RoundCylinderTwoTensor} (hC : RoundCylinderFamilyClose delta I C)
     (hd : 0 < delta) (hde : delta ≤ epsilon) (hI : ∀ u ∈ I, u < 1)
@@ -99,9 +85,6 @@ theorem perturb_of_jet_difference_le {delta epsilon eta : ℝ} {I : Set ℝ}
 end PoincareConjecture.RoundCylinderFamilyClose
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem cylinder_family_close_eventually_of_coefficient_jets
     {delta epsilon : ℝ} (hd : 0 < delta) (he : 0 < epsilon) (hde : delta ≤ epsilon / 4)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.ProfileODE
 import PoincareConjecture.Proofs.M65.Def18_23_Profile.AreaComparisonProfile
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -22,21 +14,15 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {a b : ℝ} (F : RicciFlow 3 M (Set.Icc a b))
 
-
-
 noncomputable def m65RestartedAreaProfile (s A t : ℝ) : ℝ :=
   areaComparisonProfile F 0 t +
     Real.exp ((∫ r in a..s, flowScalarCurvatureInfimum F r / 2) -
       (∫ r in a..t, flowScalarCurvatureInfimum F r / 2)) *
         (A - areaComparisonProfile F 0 s)
 
-
-
 @[simp] theorem m65RestartedAreaProfile_initial (s A : ℝ) :
     m65RestartedAreaProfile F s A s = A := by
   simp [m65RestartedAreaProfile]
-
-
 
 theorem m65RestartedAreaProfile_difference (s A B t : ℝ) :
     m65RestartedAreaProfile F s A t - areaComparisonProfile F B t =
@@ -55,15 +41,11 @@ theorem m65RestartedAreaProfile_difference (s A B t : ℝ) :
     (A - areaComparisonProfile F 0 s) - areaComparisonProfile F B t = _
   linear_combination Real.exp (P s - P t) * hs - ht + B * hexp
 
-
-
 @[simp] theorem m65RestartedAreaProfile_at_start (A t : ℝ) :
     m65RestartedAreaProfile F a A t = areaComparisonProfile F A t := by
   have h := m65RestartedAreaProfile_difference F a A A t
   rw [areaComparisonProfile_initial, sub_self, mul_zero] at h
   exact sub_eq_zero.mp h
-
-
 
 theorem areaComparisonPrimitive_hasDerivWithinAt
     (compact : IsCompact (Set.univ : Set M)) {t : ℝ} (ht : t ∈ Set.Icc a b) :
@@ -75,8 +57,6 @@ theorem areaComparisonPrimitive_hasDerivWithinAt
   exact intervalIntegral.integral_hasDerivWithinAt_right
     ((hq.mono (Set.uIcc_subset_Icc ha ht)).intervalIntegrable)
     (hq.stronglyMeasurableAtFilter_nhdsWithin measurableSet_Icc t) (hq t ht)
-
-
 
 theorem m65RestartedAreaProfile_hasDerivWithinAt
     (compact : IsCompact (Set.univ : Set M)) (s A : ℝ)

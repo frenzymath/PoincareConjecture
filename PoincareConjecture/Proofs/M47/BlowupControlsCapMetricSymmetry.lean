@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapNormalDerivative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +50,6 @@ private theorem tensor_two_derivative
     fin_cases i <;> simp
   rw [h0, h1]
 
-
-
 theorem cap_metricDifference_derivative_symm
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0)
     (x u v w : V) :
@@ -79,8 +69,6 @@ theorem cap_metricDifference_derivative_symm
   rw [heq, hs x (D0.euclideanConnection u v x) w,
     hs x v (D0.euclideanConnection u w x)]
   ring
-
-
 
 theorem cap_metricDifference_hessian_symm_normal
     {g0 g1 : RiemannianMetric n V} (D0 : LeviCivitaData g0)

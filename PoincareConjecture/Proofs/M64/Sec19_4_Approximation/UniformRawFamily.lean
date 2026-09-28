@@ -7,17 +7,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.UniformFillingAreaCom
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.CloseLoopFamilyHomotopy
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.UniformSampledChordLength
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,10 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_uniform_raw_family
     {M : Type u} [TopologicalSpace M] [T2Space M] [SecondCountableTopology M]

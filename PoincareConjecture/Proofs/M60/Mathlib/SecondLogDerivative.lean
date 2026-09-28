@@ -2,14 +2,6 @@ import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.M60
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem second_fderiv_log {a : E → ℝ} {p : E}
     (ha : ContDiffAt ℝ 2 a p) (hp : a p ≠ 0) (v : E) :

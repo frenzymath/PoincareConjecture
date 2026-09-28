@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M56.ComponentModels
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -28,8 +15,6 @@ private theorem m56SelectedComponent_right_inverse
     C.inclusion (C.inverse y) = y := by
   obtain ⟨x, rfl⟩ := hy
   exact congrArg C.inclusion (C.left_inverse x)
-
-
 
 noncomputable def m56EqualRangeDiffeomorph
     {A B : GeneralizedSliceCarrier.{u}}
@@ -70,8 +55,6 @@ noncomputable def m56EqualRangeDiffeomorph
     simp only [d.apply_symm_apply]
     exact Q.left_inverse y
 
-
-
 theorem m56EqualRangeDiffeomorph_inclusion
     {A B : GeneralizedSliceCarrier.{u}}
     (P : SurgerySelectedComponent A) (Q : SurgerySelectedComponent B)
@@ -82,8 +65,6 @@ theorem m56EqualRangeDiffeomorph_inclusion
     Q.inclusion (m56EqualRangeDiffeomorph P Q d hforward hbackward x) =
       d (P.inclusion x) :=
   m56SelectedComponent_right_inverse Q (hforward x)
-
-
 
 theorem m56RegionComponentDiffeomorph_exists
     {A B : GeneralizedSliceCarrier.{u}} {V : Set B.carrier}

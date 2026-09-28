@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComponentCochainExactness
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleIncidenceRanks
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -20,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (K : SimplicialComplex ℝ E)
-
-
 
 theorem edgeComponentComplex_triangle_cofaces
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -38,9 +27,6 @@ theorem edgeComponentComplex_triangle_cofaces
   apply hcofaces _ (K.edgeComponentComplex_le C e.property.1)
   simpa only [Finset.card_map] using e.property.2
 
-
-
-
 theorem edgeComponentComplex_triangle_connected
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, s ⊆ t ∧ t.card = 3)
@@ -55,9 +41,6 @@ theorem edgeComponentComplex_triangle_connected
     intro p hp
     rw [K.edgeComponentComplex_vertex_link C hp]
     exact hlinks p (K.edgeComponentComplex_le C hp)
-
-
-
 
 theorem edgeComponentComplex_surface_count [Fintype K.vertices]
     (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)

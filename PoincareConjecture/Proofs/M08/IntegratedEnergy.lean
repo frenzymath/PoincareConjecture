@@ -4,13 +4,6 @@ import Mathlib.MeasureTheory.Function.L2Space
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,7 +91,6 @@ theorem integratedForm_nonneg {μ : Measure A}
   rw [hrep]
   exact ht (v t)
 
-
 theorem integratedForm_sub_norm_le {μ : Measure A}
     {B D : A → E →L[ℝ] E →L[ℝ] ℝ} (hB : MemLp B ∞ μ) (hD : MemLp D ∞ μ)
     {δ : ℝ} (hδ : 0 ≤ δ) (herror : ∀ᵐ t ∂μ, ‖B t - D t‖ ≤ δ) :
@@ -117,7 +109,6 @@ theorem continuousOn_memLp_top_Icc {V : Type*} [NormedAddCommGroup V]
   apply memLp_top_of_bound (hf.aestronglyMeasurable measurableSet_Icc) C
   filter_upwards [ae_restrict_mem measurableSet_Icc] with s hs
   exact hC s hs
-
 
 theorem integratedForm_tendsto_of_uniform {a b : ℝ}
     (B : ℕ → ℝ → E →L[ℝ] E →L[ℝ] ℝ) (D : ℝ → E →L[ℝ] E →L[ℝ] ℝ)

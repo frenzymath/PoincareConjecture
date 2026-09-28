@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarIntegerNoOverlap
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarStripInjectivity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +19,6 @@ local notation "Cover" => ℝ × ℝ
 local notation "Band" => Set.prod (Ioo (1 : ℝ) 2) (Ioo (0 : ℝ) 1)
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarNormalizedCoverMap_injOn (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)
@@ -83,10 +66,6 @@ theorem scalarNormalizedCoverMap_injOn (w : H1Zero D scalarAnnulus)
     (fun z hz n => scalarNormalizedCoverMap_sub_int (H := H) hP.ne' hdeck hz n) hband
     (fun a ha k hk => scalar_integer_translate_no_overlap hE hcover hupper ha hk)
 
-
-
-
-
 theorem scalarNormalizedCover_isHomeomorph (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -111,10 +90,6 @@ theorem scalarNormalizedCover_isHomeomorph (w : H1Zero D scalarAnnulus)
   intro x y hxy
   exact Subtype.ext (scalarNormalizedCoverMap_injOn D w hHc hHs hHae hlap hinner houter
     hdV hdeck hrange x.property y.property (congrArg Subtype.val hxy))
-
-
-
-
 
 theorem exists_homeomorphic_annular_cover_conjugate :
     ∃ (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ),

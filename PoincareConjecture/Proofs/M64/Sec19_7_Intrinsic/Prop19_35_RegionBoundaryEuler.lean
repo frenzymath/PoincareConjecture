@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionBoundaryDegree
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,11 +11,6 @@ open PoincareConjecture.Topology.Surface
 namespace PoincareConjecture
 
 open Classical in
-
-
-
-
-
 
 theorem m64Intrinsic_region_gaussBonnet_boundary_defects
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

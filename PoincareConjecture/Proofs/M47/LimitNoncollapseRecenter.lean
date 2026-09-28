@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSource
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +17,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   (V : Set (F.slice (origin + a / scale)).carrier)
   (hV : V ⊆ e.forward a ha '' U)
 
-
-
-
 noncomputable def limitNoncollapseCylinderRecenter :
     GeneralizedFlowCylinder F (F.slice (origin + a / scale))
       (origin + a / scale) 1 J V :=
@@ -36,15 +24,11 @@ noncomputable def limitNoncollapseCylinderRecenter :
   limitNoncollapseCylinderSource (limitNoncollapseCylinderReclock e a hrange)
     chart.symm V hV (fun _ hx => chart.symm.map_source (hV hx))
 
-
-
 theorem limitNoncollapseCylinderRecenter_pointMap (s : ℝ) (hs : s ∈ J)
     (x : (F.slice (origin + a / scale)).carrier) :
     (limitNoncollapseCylinderRecenter e hU a ha hrange V hV).pointMap s hs x =
       e.pointMap (a + scale * s) (hrange hs) (e.inverse a ha x) := by
   exact limitNoncollapseCylinderReclock_pointMap e a hrange s hs (e.inverse a ha x)
-
-
 
 theorem limitNoncollapseCylinderRecenter_zero (h0 : 0 ∈ J)
     (x : (F.slice (origin + a / scale)).carrier) (hx : x ∈ V) :
@@ -57,8 +41,6 @@ theorem limitNoncollapseCylinderRecenter_zero (h0 : 0 ∈ J)
       (e.right_inverse a ha (hV hx))
   exact (limitNoncollapseCylinderRecenter_pointMap e hU a ha hrange V hV 0 h0 x).trans
     (hpoint _ _ (by ring))
-
-
 
 theorem limitNoncollapseCylinderRecenter_pullbackInner (s : ℝ) (hs : s ∈ J)
     (x : (F.slice (origin + a / scale)).carrier) (hx : x ∈ V)
@@ -74,8 +56,6 @@ theorem limitNoncollapseCylinderRecenter_pullbackInner (s : ℝ) (hs : s ∈ J)
   exact hsource.trans (limitNoncollapseCylinderReclock_pullbackInner e a hrange s hs
     (e.inverse a ha x) _ _)
 
-
-
 theorem limitNoncollapseCylinderRecenter_curvatureNorm (s : ℝ) (hs : s ∈ J)
     (x : (F.slice (origin + a / scale)).carrier) :
     F.curvatureNorm
@@ -84,7 +64,6 @@ theorem limitNoncollapseCylinderRecenter_curvatureNorm (s : ℝ) (hs : s ∈ J)
   rw [limitNoncollapseCylinderRecenter_pointMap]
 
 include e in
-
 
 theorem limitNoncollapseCylinder_time_mem (s : ℝ) (hs : s ∈ I) (x : C.carrier) :
     origin + s / scale ∈ F.interval :=

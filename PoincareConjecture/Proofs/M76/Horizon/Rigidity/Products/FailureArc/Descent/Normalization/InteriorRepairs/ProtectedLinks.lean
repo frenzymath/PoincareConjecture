@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.LocalCrossingLink
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.MovedVertexCrossing
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -146,4 +137,3 @@ theorem protected_link_sections
         _ < 0 := hvneg⟩
 
 end Geometry.OriginalPLTower.PlanarSurfaceBranchMotion
-

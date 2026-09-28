@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Recovery.BackwardPath
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.Regularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,7 +47,6 @@ theorem regularizedLIntegrand_intervalIntegrable_of_smooth (K : AncientKappaSolu
   have hcont : ContinuousOn (regularizedLIntegrand K.flow 0 α) (Icc 0 (Real.sqrt τ)) :=
     (K.regularizedLIntegrand_contDiffOn_of_smooth α hU hα).continuousOn.mono hI
   exact hcont.intervalIntegrable_of_Icc (Real.sqrt_nonneg τ)
-
 
 theorem exists_lVariation_of_smoothSquareFamily (K : AncientKappaSolution 2 M)
     {τ : ℝ} (p : BackwardTimePath K.flow 0 0 τ)
@@ -139,7 +128,6 @@ theorem exists_lVariation_of_smoothSquareFamily (K : AncientKappaSolution 2 M)
   have hvalue : family t u = f (Real.sqrt t, u) := heq u (Ioo_subset_Icc_self ht)
   simp only [backwardLIntegrand, curveVelocity, hd]
   rw [hvalue]
-
 
 theorem exists_initialFixedLVariation_of_smoothSquareFamily (K : AncientKappaSolution 2 M)
     {τ : ℝ} (p : BackwardTimePath K.flow 0 0 τ)

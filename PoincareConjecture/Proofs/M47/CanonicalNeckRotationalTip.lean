@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.RotationOrbit
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,8 +44,6 @@ private theorem rotation_mfderiv
       (Matrix.toEuclideanLin A.1).toContinuousLinearMap := by
   rw [mfderiv_eq_fderiv]
   exact (Matrix.toEuclideanLin A.1).toContinuousLinearMap.hasFDerivAt.fderiv
-
-
 
 theorem rotational_tip_ricci_isotropic
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

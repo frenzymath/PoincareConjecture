@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCrossingIndex
 import Mathlib.Topology.MetricSpace.Pseudo.Defs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter PlanarSegment
@@ -36,10 +27,6 @@ private theorem eventually_vertical_contribution {a b q : ℝ × ℝ}
   filter_upwards [hc.continuousAt.eventually (eventually_crossingContribution hab hq)]
     with y hy
   simpa only [crossingContribution, horizontalStep] using hy
-
-
-
-
 
 theorem eventually_crossingIndex_vertical (P : Polygon (ℝ × ℝ) n)
     (hP : P.HasNonverticalEdges) {q : ℝ × ℝ} {i : Fin n}
@@ -72,9 +59,6 @@ theorem eventually_crossingIndex_vertical (P : Polygon (ℝ × ℝ) n)
     ← Finset.sum_erase_add _ (fun j => crossingContribution (P j) (P (finRotate n j)) q)
       (Finset.mem_univ i), hsum, hzero, add_zero]
   simp only [crossingContribution, aboveLine, ← hheight, horizontalStep]
-
-
-
 
 theorem exists_crossingIndex_ne_of_isolated_edge (P : Polygon (ℝ × ℝ) n)
     (hP : P.HasNonverticalEdges) {q : ℝ × ℝ} {i : Fin n}

@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MeasureComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.RadiusSqueeze
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +25,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_volume_image_bounds
     (hconv : M23TerminalMetricConvergence G e)
@@ -87,8 +74,6 @@ theorem eventually_volume_image_bounds
   simpa only [calibratedMetricVolume_eq_volumeMeasure, g, h, E,
     NormalizedKappaSpacetimeEmbedding.spatialHomeomorph_apply] using And.intro hu hl
 
-
-
 theorem tendsto_volume_image_of_isCompact_closure
     (hconv : M23TerminalMetricConvergence G e)
     {U : Set G.limit.carrier.carrier} (hU : IsOpen U)
@@ -102,8 +87,6 @@ theorem tendsto_volume_image_of_isCompact_closure
     (r := 0) 3 continuousAt_const
     (fun _ hC ↦ (hconv.eventually_volume_image_bounds hU hcompact hC).mono fun _ h ↦ h.1)
     (fun _ hC ↦ (hconv.eventually_volume_image_bounds hU hcompact hC).mono fun _ h ↦ h.2)
-
-
 
 theorem tendsto_cap_volume_image
     (hconv : M23TerminalMetricConvergence G e)

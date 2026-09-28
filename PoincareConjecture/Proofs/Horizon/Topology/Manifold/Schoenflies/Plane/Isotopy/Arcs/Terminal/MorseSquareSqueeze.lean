@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -212,9 +210,6 @@ private theorem mem_compact_negative_ribbon_of_bounds
     field_simp
     ring
   · rfl
-
-
-
 
 theorem exists_morse_square_squeeze_into_ribbon_neighborhood
     {r t a ρ : Real} (hr : 0 < r) (ht : 0 < t)

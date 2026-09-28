@@ -1,20 +1,7 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.SecondEnergy
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.WeakPrincipalResidual
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.MollifiedGradientL2
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.L2FluxEnergy
-
-
-
-
-
-
-
-
 
 open Set Filter MeasureTheory Metric
 open Poincare.Analysis.Convolution

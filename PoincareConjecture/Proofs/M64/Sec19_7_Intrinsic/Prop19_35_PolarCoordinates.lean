@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Trans
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Bounds.Ricci
 import PoincareConjecture.Statements.M64Comparison
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture
 
 open RiemannianMetric
-
-
-
-
-
 
 theorem m64Intrinsic_ricci_lower_at_of_curvature_norm
     (N : IntrinsicAnnulus) (K : ℝ)
@@ -46,10 +28,6 @@ theorem m64Intrinsic_ricci_lower_at_of_curvature_norm
   norm_num at h
   simpa only [Nat.cast_one, one_mul, neg_mul] using h
 
-
-
-
-
 theorem m64Intrinsic_ricci_lower_of_curvature_norm
     (N : IntrinsicAnnulus) (K : ℝ)
     (hcurv : ∀ p ∈ standardAnnulusDomain,
@@ -59,11 +37,6 @@ theorem m64Intrinsic_ricci_lower_of_curvature_norm
     -((1 : ℝ) * K) * N.metric.inner p v v ≤
       N.connection.ricci p v v := by
   exact m64Intrinsic_ricci_lower_at_of_curvature_norm N K p (hcurv p hp) v
-
-
-
-
-
 
 theorem m64Intrinsic_radial_ricci_lower_of_ball_curvature_norm
     (N : IntrinsicAnnulus) (K R : ℝ)
@@ -83,10 +56,6 @@ theorem m64Intrinsic_radial_ricci_lower_of_ball_curvature_norm
     (e (s • theta)) (hcurv (e (s • theta)) (hmap s hs)) w
   simpa only [Nat.cast_one, one_mul, neg_mul] using hpoint
 
-
-
-
-
 theorem m64Intrinsic_radial_ricci_lower_of_curvature_norm
     (N : IntrinsicAnnulus) (K : ℝ)
     (hcurv : ∀ p ∈ standardAnnulusDomain,
@@ -103,11 +72,6 @@ theorem m64Intrinsic_radial_ricci_lower_of_curvature_norm
   have h := m64Intrinsic_ricci_lower_of_curvature_norm N K hcurv
     (e (s • theta)) (hmap s hs) w
   simpa only [Nat.cast_one, one_mul, neg_mul] using h
-
-
-
-
-
 
 theorem m64Intrinsic_polarDensity_cross_le_of_ricci
     (N : IntrinsicAnnulus)
@@ -146,11 +110,6 @@ theorem m64Intrinsic_polarDensity_cross_le_of_ricci
   exact RiemannianMetric.polarDensity_cross_le_on_regular_ray
     (m := 1) N.metric N.connection one_pos hU h0 he hgeo hmetric theta htheta
     hb hkappa hsub hinj hRic' ht hs hts
-
-
-
-
-
 
 theorem m64Intrinsic_polarDensity_cross_le_of_curvature_norm
     (N : IntrinsicAnnulus)

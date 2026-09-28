@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerHarmonicDec
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Eigenfunction
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.WeakDerivativeLimit
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +20,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "L" => secondOrderOperator (fun _ : Plane => (1 : Matrix (Fin 2) (Fin 2) ℝ))
   (fun _ : Fin 2 => fun _ : Plane => (0 : ℝ))
 
-
-
 theorem suWeak_partial_congr {O : Set Plane} {u v p q : Plane → ℝ} {i : Fin 2}
     (hw : HasWeakPartialDeriv i p u O)
     (huv : u =ᵐ[volume.restrict O] v) (hpq : p =ᵐ[volume.restrict O] q) :
@@ -48,16 +36,10 @@ theorem suWeak_partial_congr {O : Set Plane} {u v p q : Plane → ℝ} {i : Fin 
       apply integral_congr_ae
       filter_upwards [hpq] with x hx using congrArg (fun t => t * φ x) hx
 
-
-
-
 theorem suPlane_partial_smooth {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hu : ContDiffOn ℝ ∞ u O) (i : Fin 2) :
     ContDiffOn ℝ ∞ (partialDeriv i u) O :=
   (hu.fderiv_of_isOpen hO (m := ∞) (by simp)).clm_apply contDiffOn_const
-
-
-
 
 theorem suHarmonic_partial {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hu : ContDiffOn ℝ ∞ u O) (hz : EqOn (L u) (fun _ => 0) O) (i : Fin 2) :
@@ -89,8 +71,6 @@ theorem suHarmonic_partial {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
   rw [hLzero.fderiv_eq]
   simp
 
-
-
 theorem suPlaneLaplace_smooth {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hu : ContDiffOn ℝ ∞ u O) : ContDiffOn ℝ ∞ (L u) O := by
   have heq : L u = fun x => partialDeriv 0 (partialDeriv 0 u) x +
@@ -110,9 +90,6 @@ private theorem smooth_mul_test_integrable {O : Set Plane} (hO : IsOpen O)
       (tsupport_mul_subset_left.trans hφO)
   simpa only [mul_comm] using
     (hcont.integrable_of_hasCompactSupport hφc.mul_right).integrableOn (s := O)
-
-
-
 
 theorem suPlaneLaplace_zero_of_weak {O : Set Plane} (hO : IsOpen O) {u : Plane → ℝ}
     (hu : ContDiffOn ℝ ∞ u O)
@@ -167,9 +144,6 @@ private theorem continuous_memLp_two_precompact {O V : Set Plane}
   apply (memLp_two_iff_integrable_sq hfm).mpr
   exact ((hf.mono hVO).pow 2).integrableOn_compact hVc |>.mono_set subset_closure
 
-
-
-
 theorem suWeakHarmonic_representative {O V : Set Plane}
     (hO : IsOpen O) (hV : IsOpen V) (hVc : IsCompact (closure V))
     (hVO : closure V ⊆ O) {u : Plane → ℝ} {p : Fin 2 → Plane → ℝ}
@@ -204,9 +178,6 @@ theorem suWeakHarmonic_representative {O V : Set Plane}
   have he := ((heq.restrict hsub).congr_flux (fun i => (hgrad i).symm)) φ hφ hφc hφV
   simpa only [zero_mul, integral_zero, partialDeriv] using he
 
-
-
-
 theorem suWeakHarmonic_hessian {O V : Set Plane}
     (hO : IsOpen O) (hV : IsOpen V) (hVc : IsCompact (closure V))
     (hVO : closure V ⊆ O) {u : Plane → ℝ} {p : Fin 2 → Plane → ℝ}
@@ -233,9 +204,6 @@ theorem suWeakHarmonic_hessian {O V : Set Plane}
       (suPlane_partial_smooth hO (suPlane_partial_smooth hO hU i) j).continuousOn
         ).locallyIntegrable (by norm_num))
     ((hH i j).locallyIntegrable (by norm_num))
-
-
-
 
 theorem suWeakHarmonic_hessian_decay :
     ∃ C : ℝ, 0 < C ∧ ∀ {u : Plane → ℝ} {p : Fin 2 → Plane → ℝ}

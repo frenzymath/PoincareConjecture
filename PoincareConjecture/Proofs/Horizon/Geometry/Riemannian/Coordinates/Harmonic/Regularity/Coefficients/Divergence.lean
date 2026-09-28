@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Div
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.FrozenPositiveDefinite
 import Mathlib.Analysis.Calculus.Gradient.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -24,7 +15,6 @@ namespace PoincareConjecture.HarmonicCoordinates
 
 variable {n : ℕ}
 
-
 theorem euclidean_gradient_component (f : EuclideanSpace ℝ (Fin n) → ℝ)
     (x : EuclideanSpace ℝ (Fin n)) (i : Fin n) :
     _root_.gradient f x i = fderiv ℝ f x (EuclideanSpace.basisFun (Fin n) ℝ i) := by
@@ -33,13 +23,10 @@ theorem euclidean_gradient_component (f : EuclideanSpace ℝ (Fin n) → ℝ)
   simpa only [gradient, EuclideanSpace.basisFun_apply,
     EuclideanSpace.inner_single_right, starRingEnd_apply, star_trivial, one_mul] using h
 
-
 theorem contDiff_euclidean_gradient {f : EuclideanSpace ℝ (Fin n) → ℝ}
     (hf : ContDiff ℝ ∞ f) : ContDiff ℝ ∞ (_root_.gradient f) := by
   exact (InnerProductSpace.toDual ℝ (EuclideanSpace ℝ (Fin n))).symm.contDiff.comp
     (hf.fderiv_right (by simp))
-
-
 
 theorem lapEval_fderiv_eq_divergence_gradient {f : EuclideanSpace ℝ (Fin n) → ℝ}
     (hf : ContDiff ℝ ∞ f) (x : EuclideanSpace ℝ (Fin n)) :
@@ -62,8 +49,6 @@ namespace PoincareConjecture.LeviCivitaData
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem divergenceOperator_gradient (D : LeviCivitaData g)
     (f : EuclideanSpace ℝ (Fin n) → ℝ) (x : EuclideanSpace ℝ (Fin n)) :
     g.euclideanDivergenceOperator x (_root_.gradient f x) =
@@ -80,8 +65,6 @@ theorem divergenceOperator_gradient (D : LeviCivitaData g)
   simp only [RiemannianMetric.euclideanDivergenceOperator, smul_apply,
     ContinuousLinearMap.comp_apply, hdual, hg]
 
-
-
 theorem density_mul_laplacian_eq_divergenceOperator (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)
     (x : EuclideanSpace ℝ (Fin n)) :
@@ -92,8 +75,6 @@ theorem density_mul_laplacian_eq_divergenceOperator (D : LeviCivitaData g)
   rw [D.density_mul_laplacian_eq_divergence (hf.contDiffAt)]
   simp only [D.divergenceOperator_gradient]
   rfl
-
-
 
 theorem lapEval_fderiv_eq_metric_add_divergence (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ} (hf : ContDiff ℝ ∞ f)

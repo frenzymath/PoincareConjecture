@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.Busemann.GradientBound
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Composition
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,8 +56,6 @@ theorem gradient_norm_le_of_local_distance_lipschitz (D : LeviCivitaData g)
     (show 0 ≤ g.tangentNorm (γ 0) v from Real.sqrt_nonneg _),
     ENNReal.toReal_ofReal (abs_nonneg _)] at hdist'
   simpa only [Real.norm_eq_abs, sub_zero, abs_sub_comm] using (hLip (γ t) htW).trans hdist'
-
-
 
 theorem one_le_gradient_norm_of_local_radial_calibration (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} {W : Set M} (hW : W ∈ 𝓝 x)
@@ -126,8 +116,6 @@ theorem one_le_gradient_norm_of_local_radial_calibration (D : LeviCivitaData g)
     sub_sub_cancel, abs_of_pos ha] at hreal
   change a ≤ C * a at hreal
   nlinarith
-
-
 
 theorem gradient_normSq_eq_two_mul_of_radial_calibration (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} {W : Set M} (hW : W ∈ 𝓝 x)
@@ -190,11 +178,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
-
-
-
-
 
 theorem exists_local_radial_eikonal_of_normal_chart_coefficients
     (g : ℕ → RiemannianMetric n M) (hc : ∀ k, MetricComplete (g k))

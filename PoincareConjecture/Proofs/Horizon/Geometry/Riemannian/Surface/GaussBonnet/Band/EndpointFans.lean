@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.RefinedFans
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ private theorem lastCell_succ : B.lastCell.succ = Fin.last B.interface.count := 
   simp only [lastCell, Fin.val_succ, Fin.val_last]
   omega
 
-
-
 theorem sum_corner_weights_first
     (w : (Fin B.interface.count × Bool) → Fin 3 → ℝ) (top : Bool) :
     (∑ p : Fin B.interface.count × Bool, ∑ k : Fin 3,
@@ -49,7 +39,6 @@ theorem sum_corner_weights_first
       add_zero, zero_add, Finset.sum_add_distrib,
       Finset.sum_ite_eq', Finset.mem_univ, Finset.sum_const_zero]
   ring
-
 
 theorem sum_corner_weights_last
     (w : (Fin B.interface.count × Bool) → Fin 3 → ℝ) (top : Bool) :
@@ -71,7 +60,6 @@ theorem sum_corner_weights_last
       Finset.sum_ite_eq', Finset.mem_univ, Finset.sum_const_zero]
   ring
 
-
 theorem cell_bottom_corner_sum (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
     (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target) (i : Fin B.interface.count) :
@@ -87,8 +75,6 @@ theorem cell_bottom_corner_sum (g : RiemannianMetric 2 S)
     (smooth_obliqueSurfaceCoordinates F hF B.cuts B.open_domain B.smooth_lower)
     (smooth_obliqueSurfaceCoordinates_symm F hFi B.cuts B.open_domain B.smooth_lower)
     (fun _ ht => (B.interface.pieceCoordinates B.open_domain B.smooth_lower i).parameter_mem_target ht) g
-
-
 
 theorem cell_top_corner_sum (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -107,8 +93,6 @@ theorem cell_top_corner_sum (g : RiemannianMetric 2 S)
     (smooth_obliqueSurfaceCoordinates_symm F hFi B.cuts B.open_domain B.smooth_lower)
     (fun _ ht => (B.interface.pieceCoordinates B.open_domain B.smooth_lower i).parameter_mem_target ht) g
 
-
-
 theorem first_bottom_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
     (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target)
@@ -126,8 +110,6 @@ theorem first_bottom_refined_vertex_fan (g : RiemannianMetric 2 S)
   have h := B.cell_bottom_corner_sum g hF hFi B.firstCell
   rw [B.face_corner_eq_vertex] at h
   simpa [cornerVertexIndex, firstCell] using h
-
-
 
 theorem last_bottom_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
@@ -152,8 +134,6 @@ theorem last_bottom_refined_vertex_fan (g : RiemannianMetric 2 S)
     rw [B.lastCell_succ]
   rw [hp]
 
-
-
 theorem first_top_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)
     (hFi : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F.symm F.target)
@@ -176,8 +156,6 @@ theorem first_top_refined_vertex_fan (g : RiemannianMetric 2 S)
     rfl
   rw [hp]
   exact g.cornerAngle_comm _ _ _
-
-
 
 theorem last_top_refined_vertex_fan (g : RiemannianMetric 2 S)
     (hF : ContMDiffOn (𝓡 2) (𝓡 2) ∞ F F.source)

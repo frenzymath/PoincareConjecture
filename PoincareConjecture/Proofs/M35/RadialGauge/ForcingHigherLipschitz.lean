@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.JetCalculus
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.defeqAttrib.useBackward true
 
@@ -31,8 +23,6 @@ noncomputable local instance m35ForcingHigherLipschitzLocal3 :
   ContinuousLinearMap.toNormedAddCommGroup
 noncomputable local instance m35ForcingHigherLipschitzLocal4 :
     NormedSpace ℝ ((V × ℝ) →L[ℝ] D) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem forcing_higher_derivatives_lipschitz_of_third_bound
     {G : V → ℝ → ℝ} {eta M : ℝ}

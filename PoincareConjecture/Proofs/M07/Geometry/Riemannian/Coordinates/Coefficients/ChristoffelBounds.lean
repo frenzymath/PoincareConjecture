@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficient
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.JetBounds.Operations
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -50,8 +39,6 @@ private theorem christoffelBilinear_eq_contraction
 
 variable [FiniteDimensional ℝ E]
 
-
-
 theorem contDiffOn_christoffelBilinear_of_uniformEllipticity
     {ι : Type*} {U : Set E} (hU : IsOpen U)
     {A : ι → E → E →L[ℝ] E →L[ℝ] ℝ}
@@ -62,8 +49,6 @@ theorem contDiffOn_christoffelBilinear_of_uniformEllipticity
   exact (CoordinateExponential.contDiffAt_christoffelBilinear
     ((hA i x hx).contDiffAt (hU.mem_nhds hx))
     (isInvertible_of_uniformEllipticity (A := A i x) ha (hell i x hx))).contDiffWithinAt
-
-
 
 theorem hasUniformJetBoundsOn_christoffelBilinear
     {ι : Type*} {U : Set E} (hU : IsOpen U)

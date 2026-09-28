@@ -3,14 +3,6 @@ import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.Gluing.Smooth
 import PoincareConjecture.Proofs.M07.Topology.Gluing.Separation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ variable {I : Type u} {O : Type v} [TopologicalSpace O]
   (U : I → Set (EuclideanSpace ℝ (Fin 3))) (hU : ∀ i, IsOpen (U i))
   [∀ i, Nonempty (U i)]
   (e : ∀ i, OpenPartialHomeomorph (U i) O)
-
-
 
 theorem cappingOverlap_smooth
     (hsmooth : ∀ i,
@@ -52,8 +42,6 @@ theorem cappingOverlap_smooth
       OpenPartialHomeomorph.trans_apply, OpenPartialHomeomorph.symm_source]
     exact (hsmooth j).2.comp ((hsmooth i).1.mono Set.inter_subset_left)
       (fun _ hx => hx.2)
-
-
 
 theorem cappingOverlap_t2
     (hclosed : ∀ i j, i ≠ j → IsClosed {q : U i × U j |

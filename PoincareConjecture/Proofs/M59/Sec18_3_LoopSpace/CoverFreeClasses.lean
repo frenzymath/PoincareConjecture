@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NoncompactFreeClasses
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.LiftedFamilies.FrozenTransfer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +9,6 @@ open scoped Manifold ContDiff Topology unitInterval
 universe u
 
 namespace PoincareConjecture
-
-
-
-
 
 def M59CompactCoverDeckAction : Prop :=
   ∀ {M E : Type u}
@@ -35,10 +20,6 @@ def M59CompactCoverDeckAction : Prop :=
       ∀ (c : E) (r : Path c (d c)) (a : HomotopyGroup.Pi 3 E c),
         surgeryHomotopyMap (n := 3) d rfl a =
           (m59HigherBasepointTransport E 3).map r a
-
-
-
-
 
 theorem m59FreeClassFaithfulness_of_compact_cover_deck
     (hdeck : M59CompactCoverDeckAction.{u}) (q : M59SphereQuotient) :
@@ -78,8 +59,6 @@ theorem m59FreeClassFaithfulness_of_compact_cover_deck
     exact hdeck p hp d (by ext e; rfl) c r a
   · exact m59_normalized_classes_eq_of_noncompact_pathCover
       hcompact hconnected q x hpi hcover Gamma Delta hGamma hDelta
-
-
 
 noncomputable def m59IdentificationSystem_of_compact_cover_deck
     (hdeck : M59CompactCoverDeckAction.{u}) : M59IdentificationSystem.{u} :=

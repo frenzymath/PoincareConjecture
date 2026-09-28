@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Acceleration.NeckChart
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Acceleration.Estimate
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ open scoped Topology Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.CylinderCover
-
-
 
 theorem exists_axial_hessian_bound :
     ∃ K : ℝ, ∀ {M : Type u} [TopologicalSpace M]

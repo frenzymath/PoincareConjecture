@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.PlanarTriangleBoundaries
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem original_triangle_eq_of_common_refined_triangle
     (K L M : SimplicialComplex ℝ E) (hdim : Module.finrank ℝ E = 2)
@@ -34,8 +23,6 @@ theorem original_triangle_eq_of_common_refined_triangle
   have hfront := K.distinct_triangle_inter_subset_frontiers hs ht hscard htcard hne
     ⟨interior_subset hcS, interior_subset hcT⟩
   exact hfront.1.2 hcS
-
-
 
 theorem refined_triangle_owner_unique (K : SimplicialComplex ℝ E)
     (hdim : Module.finrank ℝ E = 2)

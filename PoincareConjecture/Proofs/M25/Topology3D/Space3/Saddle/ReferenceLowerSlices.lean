@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceBallChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RadialSphereChart
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function Filter
@@ -19,9 +11,6 @@ open scoped ContDiff Manifold Topology
 namespace PoincareConjecture.M25.Topology3D
 
 set_option maxHeartbeats 3000000 in
-
-
-
 
 theorem exists_nonnested_reference_lower_slices
     (sigma : ℝ) (hsigma : 0 < sigma) (hsigmaSmall : sigma ≤ 1 / 16)

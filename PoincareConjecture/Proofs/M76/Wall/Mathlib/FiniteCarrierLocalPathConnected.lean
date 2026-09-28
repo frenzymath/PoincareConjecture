@@ -3,16 +3,6 @@ import Mathlib.Analysis.Convex.PathConnected
 import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Topology.Connected.LocallyPathConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -21,9 +11,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem exists_open_pathConnected_nhds_of_finite
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -59,9 +46,6 @@ theorem exists_open_pathConnected_nhds_of_finite
   refine ⟨V, hV, mem_ball_self hr, hVconn, ?_⟩
   intro y hy
   exact hWN (hUW (hball hy).2)
-
-
-
 
 theorem locallyPathConnectedSpace_of_finite
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite) :

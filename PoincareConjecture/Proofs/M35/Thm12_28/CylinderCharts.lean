@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.EuclideanCylinder
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
 
 noncomputable def cylinderChart (q : UnitTwoSphere)
     (p : EuclideanSpace ℝ (Fin 3)) : RoundCylinderSpace :=
@@ -33,8 +22,6 @@ private theorem sphere_chart_symm_smooth (q : UnitTwoSphere)
   exact (contMDiffOn_chart_symm (I := 𝓡 2) (n := ∞) p hp).contMDiffAt
     ((chartAt (EuclideanSpace ℝ (Fin 2)) q).open_target.mem_nhds hp)
 
-
-
 theorem cylinderChart_contMDiff (q : UnitTwoSphere) :
     ContMDiff (𝓡 3) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞ (cylinderChart q) := by
   intro p
@@ -46,16 +33,12 @@ theorem cylinderChart_contMDiff (q : UnitTwoSphere) :
     (contDiff_snd.comp cylinderCoordinateEquiv.contDiff).contDiffAt.contMDiffAt
   exact ((sphere_chart_symm_smooth q _).comp p hfst).prodMk hsnd
 
-
-
 theorem preferredCylinderChart_contMDiff (q : UnitTwoSphere) :
     ContMDiff 𝓘(ℝ, RoundCylinderCoordinates) ((𝓡 2).prod 𝓘(ℝ, ℝ)) ∞
       (fun p : RoundCylinderCoordinates =>
         ((chartAt (EuclideanSpace ℝ (Fin 2)) q).symm p.1, p.2)) := by
   have h := (cylinderChart_contMDiff q).comp cylinderCoordinateEquiv.symm.contDiff.contMDiff
   simpa only [cylinderChart, Function.comp_def, ContinuousLinearEquiv.apply_symm_apply] using h
-
-
 
 theorem mfderiv_cylinderChart (q : UnitTwoSphere)
     (p v : EuclideanSpace ℝ (Fin 3)) :
@@ -78,8 +61,6 @@ theorem mfderiv_cylinderChart (q : UnitTwoSphere)
   have heq := congrArg (fun D => D v) hprod
   rw [hcomp, mfderiv_eq_fderiv, A.hasFDerivAt.fderiv] at heq
   exact heq
-
-
 
 theorem cylinderChart_mfderiv_invertible (q : UnitTwoSphere)
     (p : EuclideanSpace ℝ (Fin 3)) :

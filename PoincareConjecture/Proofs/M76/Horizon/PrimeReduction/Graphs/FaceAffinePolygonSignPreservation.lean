@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.FiniteVertex
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLImage
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialEmbeddedAffineImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,10 +12,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem ncard_polygon_composed_zero_eq_two_of_strict_sign_preservation
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -134,8 +121,6 @@ theorem ncard_polygon_composed_zero_eq_two_of_strict_sign_preservation
   rw [hnew, Set.ncard_image_of_injective _ hgi] at hcount
   exact hcount
 
-
-
 theorem ncard_face_affine_polygon_image_zero_eq_two
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
     (hbound : ∀ s ∈ K.faces, s.card ≤ 2)
@@ -165,9 +150,6 @@ theorem ncard_face_affine_polygon_image_zero_eq_two
       exact ⟨⟨x, hx, rfl⟩, hxB⟩
   rw [hset, (hfi.mono inter_subset_left).ncard_image]
   exact hcount
-
-
-
 
 theorem exists_polygon_zero_stability_radius
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

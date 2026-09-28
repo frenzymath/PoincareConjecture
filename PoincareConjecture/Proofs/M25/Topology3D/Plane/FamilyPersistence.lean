@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.Tube
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothAbsolute
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_curve_embedding_margin
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -61,9 +50,6 @@ theorem exists_curve_embedding_margin
     intro u v huv
     apply hj
     exact congrArg (NormedSpace.fromTangentSpace (c z q)) huv
-
-
-
 
 theorem exists_smooth_interval_clamp {a b d : ℝ} (hab : a ≤ b) (hd : 0 < d) :
     ∃ θ : ℝ → ℝ, ContDiff ℝ ∞ θ ∧

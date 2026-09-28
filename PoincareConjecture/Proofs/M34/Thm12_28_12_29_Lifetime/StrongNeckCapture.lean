@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestriction
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitMetricJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,8 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem isCompact_coordinate_map_closedStrip {r : ℝ} (hr : r < N.epsilon⁻¹) :
     IsCompact (N.coordinate_map '' (univ ×ˢ Icc (-r) r)) := by
   have hsub : (univ : Set UnitTwoSphere) ×ˢ Icc (-r) r ⊆
@@ -34,8 +22,6 @@ theorem isCompact_coordinate_map_closedStrip {r : ℝ} (hr : r < N.epsilon⁻¹)
     exact ⟨hz.1, (neg_lt_neg hr).trans_le hz.2.1, hz.2.2.trans_lt hr⟩
   exact (isCompact_univ.prod isCompact_Icc).image_of_continuousOn
     (N.coordinate_map_smooth.continuousOn.mono hsub)
-
-
 
 theorem restrictedCarrier_subset_coordinate_map_closedStrip (epsilon : ℝ) :
     N.restrictedCarrier epsilon ⊆
@@ -54,9 +40,6 @@ namespace PoincareConjecture.GeneralizedBlowupConvergence
 variable {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}
   (C : GeneralizedBlowupConvergence S J)
 
-
-
-
 theorem eventually_captures_closed_neck
     (g : RiemannianMetric 3 C.limit.sliceCarrier.carrier) (N : EpsilonNeck g)
     {r : ℝ} (hr : r < N.epsilon⁻¹) (hJ : Icc (-1 : ℝ) 0 ⊆ J) :
@@ -68,8 +51,6 @@ theorem eventually_captures_closed_neck
   filter_upwards [eventually_ge_atTop j, C.exhaustion.time_cofinal _ isCompact_Icc hJ]
     with k hk ht
   exact ⟨hj.trans (C.exhaustion.space_increasing hk), ht⟩
-
-
 
 theorem eventually_captures_restricted_neck
     (g : RiemannianMetric 3 C.limit.sliceCarrier.carrier) (N : EpsilonNeck g)

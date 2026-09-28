@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Hyperbola
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Differential
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S1 := sphere (0 : E2) 1
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem negative_chart_coordinate_eq_levelArc
     {height : S2 → Real} {c t : Real}
@@ -43,13 +33,9 @@ theorem negative_chart_coordinate_eq_levelArc
     rw [hsq, Real.sqrt_sq_eq_abs, abs_of_neg hnegative, neg_neg]
   · rfl
 
-
 def anchorLongitudinalCoordinate
     (e : OpenPartialHomeomorph E2 S2) (α : S1 → S2) (q : S1) : Real :=
   e.symm (α q) 1
-
-
-
 
 theorem negative_anchor_longitudinal_geometry
     {height : S2 → Real} {c t : Real} (ht : t < 0)

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRegularityLoc
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeightedCoordinateVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,9 +22,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem weighted_affine_chart_energy_minimum
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)
@@ -182,9 +167,6 @@ theorem weighted_affine_chart_energy_minimum
   rw [integral_sub (hJI t ht) (hJI 0 hzero),
     integral_sub ((hJI t ht).mono_set hrD) ((hJI 0 hzero).mono_set hrD)] at hdiff
   linarith
-
-
-
 
 theorem weighted_interior_coordinate_variation_eq_zero
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

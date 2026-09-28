@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.SliceScalarEstimates
 import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology BigOperators
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem ricciNormSq_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)
@@ -49,8 +39,6 @@ theorem ricciNormSq_eq (P : M35StandardCapPredecessors)
       rw [he, he]
       exact congrArg (fun r : ℝ => r ^ 2)
         ((slice_calculus P F ht).ricci_eq (F.connection t) (connection F t) x (b i) (b j))
-
-
 
 theorem scalar_evolution_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {t : ℝ} (ht : t ∈ J)

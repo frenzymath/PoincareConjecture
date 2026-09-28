@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceCylinders
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 theorem cylinder_spatial_locallyConstant {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {C : GeneralizedSliceCarrier} {a Q : ℝ} {I : Set ℝ} {U : Set C.carrier}
@@ -36,8 +25,6 @@ theorem cylinder_spatial_locallyConstant {J : Set ℝ} (F : RicciFlow 3 Standard
     (by simpa only [Metric.mem_ball, Real.dist_eq] using hs')
   exact (congrArg Subtype.val heq).trans hy.symm
 
-
-
 theorem cylinder_spatial_eq {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     {C : GeneralizedSliceCarrier} {a Q : ℝ} {I : Set ℝ} {U : Set C.carrier}
     (e : GeneralizedFlowCylinder (generalizedFlow F) C a Q I U)
@@ -46,8 +33,6 @@ theorem cylinder_spatial_eq {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (e.forward s hs x).val = (e.forward t ht x).val := by
   let : PreconnectedSpace I := isPreconnected_iff_preconnectedSpace.mp hI
   exact (cylinder_spatial_locallyConstant F e hx).apply_eq_of_preconnectedSpace ⟨s, hs⟩ ⟨t, ht⟩
-
-
 
 theorem cylinder_curvature_eq (P : M35StandardCapPredecessors)
     {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J) {a Q : ℝ}

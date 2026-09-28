@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.InteriorRepairs.CarrierCrossings
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -63,4 +55,3 @@ theorem exists_whole_crossing
   exact (N.left_plane y hy).trans (hflat (N.chart y) hyH)
 
 end Geometry.OriginalPLTower.PlanarSurfaceBranchMotion
-

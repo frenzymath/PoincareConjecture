@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.CylinderRegionTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +16,9 @@ variable (G : Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ
 
 include hG
 
-
 theorem cylinderReparametrization_mem {p : RoundCylinderSpace}
     (hp : p ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
     G p ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 := hG.subset ⟨p, hp, rfl⟩
-
 
 theorem cylinderReparametrization_symm_mem {p : RoundCylinderSpace}
     (hp : p ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) :
@@ -36,7 +26,6 @@ theorem cylinderReparametrization_symm_mem {p : RoundCylinderSpace}
   obtain ⟨q, hq, hqp⟩ := hG.symm.subset hp
   rw [← hqp, G.symm_apply_apply]
   exact hq
-
 
 noncomputable def cylinderStripHomeomorph :
     (UnitTwoSphere × Set.Ioo (0 : ℝ) 1) ≃ₜ (UnitTwoSphere × Set.Ioo (0 : ℝ) 1) where
@@ -74,8 +63,6 @@ noncomputable def cylinderStripHomeomorph :
 variable {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier}
   (C : OpenCylinderModel U)
 
-
-
 noncomputable def reparametrizeCylinder : OpenCylinderModel U where
   homeomorph := (cylinderStripHomeomorph G hG).symm.trans C.homeomorph
   coordinate := C.coordinate ∘ G.symm
@@ -94,10 +81,8 @@ noncomputable def reparametrizeCylinder : OpenCylinderModel U where
     rw [G.symm_apply_apply, C.right_inverse hx]
   inverse_smooth := G.contMDiff.comp_contMDiffOn C.inverse_smooth
 
-
 @[simp] theorem reparametrizeCylinder_coordinate (p : RoundCylinderSpace) :
     (reparametrizeCylinder G hG C).coordinate p = C.coordinate (G.symm p) := rfl
-
 
 @[simp] theorem reparametrizeCylinder_inverse (x : A.carrier) :
     (reparametrizeCylinder G hG C).inverse x = G (C.inverse x) := rfl

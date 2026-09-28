@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Tensor.TimeDerivativ
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.ContractedBianchi
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +16,6 @@ namespace PoincareConjecture.RicciFlow
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 theorem sum_deriv_connection_extend_eq_zero
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M) :
@@ -59,7 +51,6 @@ theorem sum_deriv_connection_extend_eq_zero
   simp only [hzero, zero_smul, Finset.sum_const_zero] at h
   exact h.symm
 
-
 theorem hasDerivAt_laplacian_of_time_derivative
     (F : RicciFlow n M J) {f : ℝ × M → ℝ} {df : M → ℝ}
     {t : ℝ} (ht : t ∈ interior J)
@@ -90,8 +81,6 @@ theorem hasDerivAt_laplacian_of_time_derivative
   simp only [RiemannianMetric.tensorTrace, W, T, Fin.cons_zero, Fin.cons_one,
     Finset.sum_sub_distrib, ← map_sum, F.sum_deriv_connection_extend_eq_zero ht, map_zero,
     sub_zero, LeviCivitaData.laplacian]
-
-
 
 theorem hasDerivAt_laplacian
     (F : RicciFlow n M J) {f : M × ℝ → ℝ} {t : ℝ}

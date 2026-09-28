@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightPreservingDa
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightPreservingSlice
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 noncomputable def SaddleLowerLevelData.mapHeightPreserving
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -69,9 +58,6 @@ noncomputable def SaddleLowerLevelData.mapHeightPreserving
           rw [W.disc_boundary b]
         _ = _ := (range_comp' _ _).symm }
 
-
-
-
 theorem SaddleLowerLevelData.mapHeightPreserving_geometry
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     {D : SaddlePieceData psi u}
@@ -114,9 +100,6 @@ theorem SaddleLowerLevelData.mapHeightPreserving_geometry
       rcases h with h | h
       · exact Or.inl ((himg (W.disc 0).closedRegion (W.disc 1).inside).mpr h)
       · exact Or.inr ((himg (W.disc 1).closedRegion (W.disc 0).inside).mpr h)
-
-
-
 
 theorem SaddlePieceData.mapHeightPreserving_cases
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

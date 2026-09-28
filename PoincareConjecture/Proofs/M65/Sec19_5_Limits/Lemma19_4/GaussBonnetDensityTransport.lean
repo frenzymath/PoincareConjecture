@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetLaplacian
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -86,10 +77,6 @@ private theorem laplacian_vector_comp_holomorphic {n : ℕ}
   simpa only [mul_re, ofReal_re, ofReal_im, mul_zero, sub_zero,
     PiLp.smul_apply, smul_eq_mul] using hi
 
-
-
-
-
 theorem laplacian_comp_holomorphic {f : ℂ → ℝ} {psi : ℂ → ℂ} {z : ℂ}
     (hf : ContDiffAt ℝ ∞ f (psi z)) (hpsi : ContDiffAt ℂ ∞ psi z) :
     Δ (f ∘ psi) z = ‖deriv psi z‖ ^ 2 * Δ f (psi z) := by
@@ -106,11 +93,6 @@ theorem laplacian_comp_holomorphic {f : ℂ → ℝ} {psi : ℂ → ℂ} {z : �
   simpa only [Function.comp_apply, J, v, ContinuousLinearMap.smulRight_apply,
     ContinuousLinearMap.id_apply, PiLp.smul_apply, smul_eq_mul,
     EuclideanSpace.basisFun_apply, PiLp.single_apply, ite_true, mul_one] using hi
-
-
-
-
-
 
 theorem logarithmic_laplacian_comp_holomorphic
     {lambda localFactor : ℂ → ℝ} {psi : ℂ → ℂ} {z : ℂ}
@@ -143,9 +125,6 @@ theorem logarithmic_laplacian_comp_holomorphic
   rw [(laplacian_congr_nhds hlogs).self_of_nhds, hsum, hmul,
     hharm.2.self_of_nhds, Pi.zero_apply, mul_zero, add_zero]
   exact laplacian_comp_holomorphic hlog hpsi.contDiffAt
-
-
-
 
 theorem det_real_fderiv_holomorphic {psi : ℂ → ℂ} {z p : ℂ}
     (hpsi : HasDerivAt psi p z) : (fderiv ℝ psi z).det = ‖p‖ ^ 2 := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.TwoSegmentGermDegree
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,8 +8,6 @@ open scoped Topology
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
 
 theorem exists_two_segment_germ_of_link_section_ncard
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -72,8 +61,6 @@ theorem exists_two_segment_germ_of_link_section_ncard
       · exact Or.inr hxseg
     · intro hx
       exact hx.elim (fun h => hsegments u hu.1 hu.2 h) (fun h => hsegments v hv.1 hv.2 h)
-
-
 
 theorem ncard_graph_degree_of_link_section_ncard
     (K G : SimplicialComplex ℝ E) (hK : K.faces.Finite) (hG : G.faces.Finite)

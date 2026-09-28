@@ -2,15 +2,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Logic.Equiv.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -50,8 +41,6 @@ private theorem continuous_closedExtension (e : S ≃ₜ S) (hS : IsClosed S)
   rw [hcover] at hcont
   exact continuousOn_univ.mp hcont
 
-
-
 noncomputable def closedExtension (e : S ≃ₜ S) (hS : IsClosed S)
     (he : ∀ x : S, (x : X) ∈ frontier S → e x = x) : X ≃ₜ X := by
   classical
@@ -63,23 +52,17 @@ noncomputable def closedExtension (e : S ≃ₜ S) (hS : IsClosed S)
   apply e.injective
   rw [e.apply_symm_apply, he x hx]
 
-
-
 theorem closedExtension_apply_mem (e : S ≃ₜ S) (hS : IsClosed S)
     (he : ∀ x : S, (x : X) ∈ frontier S → e x = x) {x : X} (hx : x ∈ S) :
     e.closedExtension hS he x = (e ⟨x, hx⟩ : X) := by
   classical
   exact Equiv.Perm.extendDomain_apply_subtype e.toEquiv (Equiv.refl S) hx
 
-
-
 theorem closedExtension_apply_notMem (e : S ≃ₜ S) (hS : IsClosed S)
     (he : ∀ x : S, (x : X) ∈ frontier S → e x = x) {x : X} (hx : x ∉ S) :
     e.closedExtension hS he x = x := by
   classical
   exact Equiv.Perm.extendDomain_apply_not_subtype _ _ hx
-
-
 
 theorem closedExtension_apply_frontier (e : S ≃ₜ S) (hS : IsClosed S)
     (he : ∀ x : S, (x : X) ∈ frontier S → e x = x) {x : X} (hx : x ∈ frontier S) :

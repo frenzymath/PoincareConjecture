@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.LimitEquations.SmoothHamiltonJacobi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.Equation.BackwardPotential
 
-
 noncomputable section
 set_option autoImplicit false
 

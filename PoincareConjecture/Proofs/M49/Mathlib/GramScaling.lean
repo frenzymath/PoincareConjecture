@@ -1,20 +1,9 @@
 import Mathlib.LinearAlgebra.Matrix.Determinant.Basic
 import Mathlib.Analysis.Real.Sqrt
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Matrix
-
-
 
 theorem sqrt_det_smul_sq {ι : Type*} [Fintype ι] [DecidableEq ι]
     (A : Matrix ι ι ℝ) {c : ℝ} (hc : 0 ≤ c) :

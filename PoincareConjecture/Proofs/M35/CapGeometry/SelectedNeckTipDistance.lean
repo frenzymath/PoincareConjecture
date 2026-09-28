@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.SelectedFullStaticNeck
 import PoincareConjecture.Proofs.M35.CapGeometry.NeckTipDistance
 import PoincareConjecture.Proofs.M35.Thm12_28.TransportedNeckPatch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 local notation "V" => StandardCapSpace
-
-
 
 theorem blowupSequence_selected_neck_tip_distance :
     ∃ delta : ℝ, 0 < delta ∧ ∀ (P : M35StandardCapPredecessors)

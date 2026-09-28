@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.Frame.GeometricConnection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +29,6 @@ local instance adaptedBilinGroup :
 local instance adaptedBilinSpace :
     NormedSpace ℝ (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ) :=
   ContinuousLinearMap.toNormedSpace
-
-
 
 theorem chartConnection_eq_retainedConnection
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)
@@ -78,8 +68,6 @@ theorem chartActionMetric_time_fderiv
     ContinuousLinearMap.zero_apply, zero_add, ContinuousLinearMap.add_apply,
     ContinuousLinearMap.flip_apply] using h
 
-
-
 theorem chartTransportOperator_retainedConnection_pairing
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)
     (hy : y ∈ (chartAt (EuclideanSpace ℝ (Fin n)) x).source)
@@ -101,8 +89,6 @@ theorem chartTransportOperator_retainedConnection_pairing
     chartTransportOperator_pairing _ _ (chartActionMetric_pos F T x hz),
     chartActionMetric_time_fderiv F T s x y hy ht v w]
   ring
-
-
 
 theorem chartTransportOperator_adapted_pairing
     {J : Set ℝ} (F : RicciFlow n M J) (T s : ℝ) (x y : M)

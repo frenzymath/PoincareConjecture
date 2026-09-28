@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationControlAssembly
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationZeroChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +10,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M65Perturbation
-
-
-
 
 def controlCoordinates {k : ℕ} (i : Fin k) : (Fin (k * 3) → ℝ) ≃L[ℝ]
     LoopAmbient × ({j : Fin k // j ≠ i} → Fin 3 → ℝ) :=
@@ -34,9 +22,6 @@ def controlCoordinates {k : ℕ} (i : Fin k) : (Fin (k * 3) → ℝ) ≃L[ℝ]
   e.toContinuousLinearEquiv.trans
     ((PiLp.continuousLinearEquiv 2 ℝ (fun _ : Fin 3 => ℝ)).symm.prodCongr
       (ContinuousLinearEquiv.refl ℝ _))
-
-
-
 
 theorem controlCoordinates_block {k : ℕ} (i : Fin k) (u : Fin 3 → ℝ) :
     controlCoordinates i (controlBlock i u) = (WithLp.toLp 2 u, 0) := by
@@ -53,19 +38,12 @@ theorem controlCoordinates_block {k : ℕ} (i : Fin k) (u : Fin 3 → ℝ) :
     rw [finProdFinEquiv.symm_apply_apply]
     simp [j.2]
 
-
-
-
 theorem controlCoordinates_symm_fst {k : ℕ} (i : Fin k) (u : LoopAmbient) :
     (controlCoordinates i).symm (u, 0) = controlBlock i u.ofLp := by
   apply (controlCoordinates i).injective
   rw [ContinuousLinearEquiv.apply_symm_apply, controlCoordinates_block]
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_control_zero_chart {k : ℕ} (i : Fin k)
     (Q : (Fin (k * 3) → ℝ) × LoopAmbient → LoopAmbient)

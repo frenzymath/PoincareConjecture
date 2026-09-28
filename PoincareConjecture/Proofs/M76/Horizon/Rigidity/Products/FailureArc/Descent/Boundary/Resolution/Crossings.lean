@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Resolution.OpenCopy
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.CrossingFamily
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

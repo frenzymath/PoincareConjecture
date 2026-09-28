@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugeWeakLimit
 import PoincareConjecture.Proofs.M08.IntegratedEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,17 +14,12 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
 
-
-
 noncomputable def gaugePieceAction (e : AttainmentGauge G) {a b : ℝ}
     (gamma : ℝ → G.Point) (w : M08.ChartL2 (EuclideanSpace ℝ (Fin 3)) a b) : ℝ :=
   (∫ s in a..b, (1 / 2 : ℝ) * gaugeLiftMetric e.index e.lift e.center (gamma s)
     (w s) (w s)) + ∫ s in a..b, 2 * s ^ 2 * horizontalScalarCurvature G.leafwise (gamma s)
 
 set_option synthInstance.maxHeartbeats 200000 in
-
-
-
 
 theorem finite_gauge_action_le (hM12 : GeneralizedRicciGaugeTheory.{u} 3)
     {iota : Type*} [Fintype iota] (e : iota → AttainmentGauge G) (a b : iota → ℝ)

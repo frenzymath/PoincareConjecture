@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.GroupRank.Lattice
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchySurfaces
 import Mathlib.Topology.Instances.AddCircle.Defs
 
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M76

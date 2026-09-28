@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_GaugeScalarHessian
 import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeAcceleration
 import PoincareConjecture.Proofs.M14.Sec6_4_VariationGaugeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -45,9 +36,6 @@ private theorem scalar_differential_eq_of_heq {q r : G.Point}
   cases h
   cases hY
   rfl
-
-
-
 
 theorem variationEndpoint_secondDeriv_comp
     (hCoordinates : SpacetimeGaugeTheory.{u, 0} G.leafwise G.timeIntervals)

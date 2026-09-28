@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -124,6 +117,5 @@ theorem PLDomain.isOpen_relative_sdiff_of_frontier_subset {R B Z : Set X}
       ((hU.preimage continuous_subtype_val).mem_nhds ⟨hxint, hx.2⟩)
     intro y hy
     exact ⟨interior_subset hy.1, hy.2⟩
-
 
 end PoincareConjecture.M76

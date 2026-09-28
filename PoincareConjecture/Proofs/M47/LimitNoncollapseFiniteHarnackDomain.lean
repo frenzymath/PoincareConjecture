@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.RicciBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,7 +22,6 @@ private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
 private local instance {J : Set ℝ} (L : BlowupLimitFlow.{u} J) :
     T3Space L.carrier.carrier := L.carrier.t3Space
 
-
 theorem limitFinite_domain_eq {H : ℝ≥0∞} (hfinite : H ≠ ⊤) :
     blowupBackwardInterval H = Ioc (-H.toReal) 0 := by
   ext t
@@ -42,15 +33,12 @@ theorem limitFinite_domain_eq {H : ℝ≥0∞} (hfinite : H ≠ ⊤) :
     exact ⟨ht, (ENNReal.ofReal_lt_iff_lt_toReal (neg_nonneg.mpr ht) hfinite).mpr
       (by linarith)⟩
 
-
 theorem limitFinite_horizon_pos {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤) :
     0 < H.toReal := ENNReal.toReal_pos hH.ne' hfinite
-
 
 theorem limitFinite_interior_eq {H : ℝ≥0∞} (hfinite : H ≠ ⊤) :
     interior (blowupBackwardInterval H) = Ioo (-H.toReal) 0 := by
   rw [limitFinite_domain_eq hfinite, interior_Ioc]
-
 
 def limitFiniteOpenFlow {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) :
@@ -62,16 +50,13 @@ def limitFiniteOpenFlow {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
       exact ⟨-3 * H.toReal / 4, ⟨by linarith, by linarith⟩,
         -H.toReal / 4, ⟨by linarith, by linarith⟩, by linarith⟩)
 
-
 theorem limitFiniteOpenFlow_metric {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) (t : ℝ) :
     (limitFiniteOpenFlow hH hfinite L).metric t = L.flow.metric t := rfl
 
-
 theorem limitFiniteOpenFlow_connection {H : ℝ≥0∞} (hH : 0 < H) (hfinite : H ≠ ⊤)
     (L : BlowupLimitFlow.{u} (blowupBackwardInterval H)) (t : ℝ) :
     HEq ((limitFiniteOpenFlow hH hfinite L).connection t) (L.flow.connection t) := HEq.rfl
-
 
 theorem limitFinite_scalar_nonneg (h04 : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (L : BlowupLimitFlow.{u} J) (t : ℝ) (ht : t ∈ J)
@@ -79,7 +64,6 @@ theorem limitFinite_scalar_nonneg (h04 : RicciFlowCurvatureTheory.{u})
   ((L.flow.connection t).curvatureOperatorBound_scalarCurvature
     (h04.tensor_calculus 3 L.carrier.carrier (L.flow.metric t) (L.flow.connection t))
     x (L.nonnegative_curvature_operator t ht x)).1
-
 
 theorem limitFinite_slice_operator_bound (h04 : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (L : BlowupLimitFlow.{u} J) (t : ℝ) (ht : t ∈ J) :
@@ -97,7 +81,6 @@ theorem limitFinite_slice_operator_bound (h04 : RicciFlowCurvatureTheory.{u})
     x (L.nonnegative_curvature_operator t ht x)).2 A hA
   exact hop.trans (mul_le_mul_of_nonneg_right hscalar
     (Finset.sum_nonneg fun _ _ => Finset.sum_nonneg fun _ _ => sq_nonneg _))
-
 
 theorem limitFinite_ricci_bounds (h04 : RicciFlowCurvatureTheory.{u})
     {J : Set ℝ} (L : BlowupLimitFlow.{u} J) (t : ℝ) (ht : t ∈ J)

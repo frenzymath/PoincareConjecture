@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetStability
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem full_cylinder_jet_difference_uniform
     (order : ℕ) (I : Set ℝ) (hI : IsCompact I) (hItime : ∀ u ∈ I, u < 1) (l : ℝ)

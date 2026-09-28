@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch01.Normalization
 import PoincareConjecture.Statements.Ch04.Pinching
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

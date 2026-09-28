@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.VariableRadii
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -14,8 +7,6 @@ open Set Filter MeasureTheory
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
-
-
 
 theorem integral_scalarCurvature_posPart_ball_le_integral_add_model_of_le_radius
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -44,8 +35,6 @@ theorem integral_scalarCurvature_posPart_ball_le_integral_add_model_of_le_radius
 end PoincareConjecture.LeviCivitaData
 
 namespace PoincareConjecture
-
-
 
 theorem exists_subseq_prescribed_center_scalar_integral_tendsto_atTop_with_positive_radii
     {n : ℕ} {M : ℕ → Type*}

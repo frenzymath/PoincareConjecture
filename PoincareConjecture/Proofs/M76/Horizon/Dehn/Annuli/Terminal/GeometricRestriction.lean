@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.CyclicModelOrder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.BoundaryBasics
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexFaceInclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u v w
@@ -31,8 +23,6 @@ theorem subcomplexVertexEmbedding_faces {K L : SimplicialComplex ℝ E} (hLK : L
   change (t.map (K.subcomplexVertexEmbedding L hLK)).map (Function.Embedding.subtype _) ∈ K.faces
   rw [Finset.map_map]
   exact hLK ht
-
-
 
 theorem barycentric_mem_subcomplex_face {K L : SimplicialComplex ℝ E}
     [Fintype K.vertices] (hLK : L ≤ K) (x : K.space) (hx : (x : E) ∈ L.space) :
@@ -58,8 +48,6 @@ theorem barycentric_mem_subcomplex_face {K L : SimplicialComplex ℝ E}
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X] [ConnectedSpace X]
   {Z : Type w} [TopologicalSpace Z]
-
-
 
 theorem finrank_closed_le_coboundaries_add_one_of_marked_polygon
     (K L : SimplicialComplex ℝ E) [Fintype K.vertices] [Fintype L.vertices]

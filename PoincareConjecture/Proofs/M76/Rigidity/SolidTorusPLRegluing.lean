@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.SolidTorusRegluing
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianPLDescent
 import PoincareConjecture.Proofs.M76.Rigidity.HomeomorphInverseCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,10 +17,6 @@ local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "H" => LatticeHandle (Fin 2) (Fin 1) L
 local notation "B" => latticeHandleBoundary (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
-
-
 
 theorem exists_hamiltonSolidTorus_PL_regluing
     {α β : Type*}

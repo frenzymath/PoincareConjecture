@@ -6,8 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.LocalCalculu
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Ring
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -154,9 +152,6 @@ private lemma connection_timeDerivative_koszul
   have he := hl.unique (h.congr_of_eventuallyEq heq)
   linarith
 
-
-
-
 theorem inner_deriv_connection_extend_of_equation
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (x : M) (u v w : TangentSpace (𝓡 n) x) :
@@ -205,7 +200,6 @@ theorem inner_deriv_connection_extend_of_equation
   rw [he]
   ring
 
-
 theorem inner_deriv_connection_extend
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
     (hD : (F.connection t).CurvatureTensorCalculus)
@@ -220,7 +214,6 @@ theorem inner_deriv_connection_extend
         (F.connection t).covariantTensorDerivative (F.connection t).ricciEvaluation x ![w, u, v] := by
   have _ := hD
   exact F.inner_deriv_connection_extend_of_equation ht x u v w
-
 
 theorem connection_hasDerivAt_ricci_of_equation
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)
@@ -242,7 +235,6 @@ theorem connection_hasDerivAt_ricci_of_equation
       (by simp) |>.hasDerivAt, ?_⟩
   intro u w
   exact F.inner_deriv_connection_extend_of_equation ht x u v w
-
 
 theorem connection_hasDerivAt_ricci
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J)

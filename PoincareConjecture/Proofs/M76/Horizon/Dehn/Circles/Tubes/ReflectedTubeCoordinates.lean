@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.SignedAxisMonodromy
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.ReflectionTubeDoubling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open Dehn
@@ -184,7 +175,6 @@ theorem reflectedTubeTransverse_closing_iff (closing : SignedAxisPermutation)
     (reflectedTubeTransverse closing d hd).injective.eq_iff]
   simp only [Prod.ext_iff, neg_eq_iff_eq_neg]
 
-
 noncomputable def normalizedReflectedTube {E : Type*} (closing : SignedAxisPermutation)
     (a b L d : ℝ) (hab : a < b) (hL : 0 < L) (hd : 0 < d) (sigma : C3 → E) : C3 → E :=
   sigma ∘ reflectedTubeCoordinates closing a b L d hab hL hd
@@ -296,7 +286,6 @@ theorem reflectedTubeTransverse_sheet (closing : SignedAxisPermutation)
       SignedAxisPermutation.reflectionFrame, SignedAxisPermutation.linear_apply,
       signedSquareToDiamond_apply, hs, smul_eq_mul, hd.ne'] <;> constructor <;>
     intro h <;> nlinarith
-
 
 theorem normalizedReflectedTube_old_sheets {E : Type*} (closing : SignedAxisPermutation)
     (a b L d : ℝ) (hab : a < b) (hL : 0 < L) (hd : 0 < d) (sigma : C3 → E)

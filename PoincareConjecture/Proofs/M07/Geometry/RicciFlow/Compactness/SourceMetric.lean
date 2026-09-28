@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Pointed
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

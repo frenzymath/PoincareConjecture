@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.TransitionBounds
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +9,6 @@ open scoped ContDiff Topology
 namespace PoincareConjecture.CoordinateTransition
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasUniformJetBoundsOn_of_christoffel_hessian_finite
     {ι : Type*} {U V : Set E} (hU : IsOpen U) (hV : IsOpen V)

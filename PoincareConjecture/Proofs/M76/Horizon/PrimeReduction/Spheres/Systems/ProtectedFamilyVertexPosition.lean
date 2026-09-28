@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.OriginalFamilyPointPosition
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalPLMotionComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +8,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_protected_sphere_system_vertex_position
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -103,4 +92,3 @@ theorem exists_protected_sphere_system_vertex_position
       · exact disjoint_left.mp hFV hx hxV
 
 end PoincareConjecture.M76
-

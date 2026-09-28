@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,10 +13,6 @@ variable {E F G X ι : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G] [FiniteDimensional ℝ G]
   [TopologicalSpace X]
-
-
-
-
 
 theorem PolyhedralPLInCharts.locallyPiecewiseAffineOn_inverse_comp
     {e : ι → OpenPartialHomeomorph X F} {f : E → X} {S : Set E}

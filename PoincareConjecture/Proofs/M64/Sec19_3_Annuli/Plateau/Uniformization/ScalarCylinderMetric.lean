@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCylinderArea
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,10 +17,6 @@ local notation "Strip" => Set.preimage (fun p : Plane => p 1) (Ioo (0 : ℝ) 1)
 private theorem period_pos : 0 < curvePeriod := by
   unfold curvePeriod
   positivity
-
-
-
-
 
 theorem scalarInverseCylinderMap_modulus_conformal
     {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
@@ -96,11 +81,6 @@ theorem scalarInverseCylinderMap_modulus_conformal
       _ = E * ((curvePeriod / P)⁻¹ * m60AreaGram g F p 1 1) := by
         rw [mul_left_comm E, h11, mul_one]
   · exact (mul_eq_zero.mp h01).resolve_left hE
-
-
-
-
-
 
 theorem exists_smooth_modulus_conformal_cylinder_area (g : RiemannianMetric 2 Plane) :
     ∃ (r : ℝ), 0 < r ∧ ∃ F : Plane → Plane,

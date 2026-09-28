@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn.SignedJointCross
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (J : SignedJointCross E)
 
-
-
 theorem half_ball (j : Fin 2) (b : Bool) :
     IsFinitePLBallPair (ℝ × ℝ) (J.disk ∩ {z | side b (J.coordinate j z)})
       ((J.rim ∩ {z | side b (J.coordinate j z)}) ∪ J.axis j) := by
@@ -22,8 +20,6 @@ theorem half_ball (j : Fin 2) (b : Bool) :
   cases b
   · exact h.1
   · simpa only [side, axis, if_true, union_comm] using h.2
-
-
 
 theorem quarter_ball (b c : Bool) :
     IsFinitePLBallPair (ℝ × ℝ) (J.quarter b c)
@@ -95,8 +91,6 @@ theorem quarter_axis_one (b c : Bool) : J.quarter b c ∩ J.axis 1 = J.radius 1 
     have hz1 : J.coordinate 1 z = 0 := hz.1.2
     cases c <;> simp [side, hz1]
 
-
-
 theorem quarter_boundary_arcs (b c : Bool) :
     IsFinitePLBallPair ℝ (J.radius 0 c ∪ J.radius 1 b) {J.endpoint 0 c, J.endpoint 1 b} ∧
     IsFinitePLBallPair ℝ (J.quarter b c ∩ J.rim) {J.endpoint 0 c, J.endpoint 1 b} ∧
@@ -146,8 +140,6 @@ theorem quarter_boundary_arcs (b c : Bool) :
     rw [← hOeq]
     exact hO'
   exact ⟨hU, hOball, hUO⟩
-
-
 
 theorem quarter_intersections (b c : Bool) :
     J.quarter b c ∩ J.quarter b (!c) = J.radius 1 b ∧

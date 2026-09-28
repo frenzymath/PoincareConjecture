@@ -4,15 +4,6 @@ import Mathlib.Analysis.Normed.Module.Ball.Homeomorph
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.Compactification.OnePoint.Sphere
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -187,7 +178,6 @@ theorem sphere_map_nullhomotopic_of_pi_trivial
     obtain ⟨a, rfl⟩ := hq.surjective x
     exact (hG 1 a).trans (H.apply_one a)
 
-
 def unitSphereHomeomorph
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
     {F : Type v} [NormedAddCommGroup F] [NormedSpace ℝ F]
@@ -219,7 +209,6 @@ def unitSphereHomeomorph
   · apply Continuous.subtype_mk
     exact ((e.symm.continuous.comp continuous_subtype_val).norm.inv₀ hm).smul
       (e.symm.continuous.comp continuous_subtype_val)
-
 
 theorem exists_disk_extension_of_nullhomotopic
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -273,7 +262,6 @@ theorem exists_disk_extension_of_nullhomotopic
     Subtype.ext (by simp [Q])
   rw [hx] at h
   exact h.trans (H.symm.apply_one x)
-
 
 theorem exists_characteristic_disk_extension
     {Y : Type v} [TopologicalSpace Y] (n : Nat)

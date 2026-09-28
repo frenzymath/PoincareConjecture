@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.BoundaryGerm.CommonArc
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.Isotopy
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.BoundaryGerm
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_supported_disk_isotopy_of_common_arc
     (A B : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

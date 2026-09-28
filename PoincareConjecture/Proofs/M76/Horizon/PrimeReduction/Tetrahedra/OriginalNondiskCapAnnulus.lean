@@ -11,14 +11,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normaliza
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normalization.BoundaryComponentExcess
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normalization.PositiveExcessPiece
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 universe u
 open Set Geometry Metric PLAnnularStrip

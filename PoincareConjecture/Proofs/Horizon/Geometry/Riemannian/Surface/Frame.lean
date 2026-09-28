@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
 lemma inner_normalize_eq_one (g : RiemannianMetric 2 S) (x : S)
     (v : TangentSpace (𝓡 2) x) (hv : 0 < g.inner x v v) :
     g.inner x ((Real.sqrt (g.inner x v v))⁻¹ • v)
@@ -28,7 +20,6 @@ lemma inner_normalize_eq_one (g : RiemannianMetric 2 S) (x : S)
   simp only [map_smul, smul_apply, smul_eq_mul]
   field_simp
   exact (Real.sq_sqrt hv.le).symm
-
 
 lemma contMDiffOn_normalize (g : RiemannianMetric 2 S)
     {U : Set S} {V : (x : S) → TangentSpace (𝓡 2) x}
@@ -45,8 +36,6 @@ lemma contMDiffOn_normalize (g : RiemannianMetric 2 S)
     (f := fun y => g.inner y (V y) (V y))
     ((hV x hx).inner_bundle (hV x hx))
   exact (hs.inv₀ (Real.sqrt_ne_zero'.mpr (hpos x hx))).smul_section (hV x hx)
-
-
 
 theorem exists_local_orthonormal_frame (g : RiemannianMetric 2 S) (p : S) :
     ∃ (U : Set S) (e₁ e₂ : (x : S) → TangentSpace (𝓡 2) x),
@@ -102,8 +91,6 @@ theorem exists_local_orthonormal_frame (g : RiemannianMetric 2 S) (p : S) :
     fun x hx => he₁unit x hx.1, fun x hx => ?_, fun x hx => ?_⟩
   · exact g.inner_normalize_eq_one x (C x) hx.2
   · simp only [e₂, map_smul, smul_eq_mul, horthC x hx.1, mul_zero]
-
-
 
 theorem exists_aligned_orthonormal_frame_of_independent_fields (g : RiemannianMetric 2 S)
     {U : Set S} {X Y : (x : S) → TangentSpace (𝓡 2) x}
@@ -170,8 +157,6 @@ theorem exists_aligned_orthonormal_frame_of_independent_fields (g : RiemannianMe
       horth x hx, hu₂ x hx, mul_zero, sub_zero, mul_one] using hc
   rw [hX₁, hX₂, hY₂, zero_mul, sub_zero]
   exact mul_pos hs₁ hs₂
-
-
 
 theorem exists_orthonormal_frame_of_independent_fields (g : RiemannianMetric 2 S)
     {U : Set S} {X Y : (x : S) → TangentSpace (𝓡 2) x}

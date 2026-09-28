@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDiskModel
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskPartition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace TriangleDiskModel
-
-
 
 theorem isFinitePLBallPair_common_edge :
     IsFinitePLBallPair ℝ (segment ℝ ((0, 1) : ℝ × ℝ) (0, 0)) {(0, 1), (0, 0)} := by
@@ -63,9 +51,6 @@ private theorem common_edge_sdiff_endpoints :
     rintro (⟨_, h⟩ | ⟨_, h⟩)
     · exact (ne_of_lt hy') h
     · exact (ne_of_gt hy) h
-
-
-
 
 theorem exists_disk_attachment_model :
     ∃ b c : Set (ℝ × ℝ),

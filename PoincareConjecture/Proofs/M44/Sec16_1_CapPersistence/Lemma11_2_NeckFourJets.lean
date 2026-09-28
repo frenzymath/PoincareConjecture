@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScal
 import PoincareConjecture.Proofs.M36.CylinderAllOrderBounds
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +15,6 @@ open PoincareConjecture.SpacetimeBounds PoincareConjecture.M36
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_centeredCylinderMetric_fourJet_bound :
     ∃ C : ℝ, 0 < C ∧ ∀ {epsilon : ℝ}, 0 < epsilon → epsilon ≤ 1 →
@@ -71,10 +57,6 @@ theorem exists_centeredCylinderMetric_fourJet_bound :
         (Finset.mem_univ k)
     _ ≤ C := by dsimp [C]; linarith
 
-
-
-
-
 theorem centeredCylinderMetric_lower {epsilon : ℝ} (hepsilon : 0 < epsilon)
     (hsmall : epsilon ≤ 1 / 36) {B : RoundCylinderTwoTensor}
     (hB : RoundCylinderClose epsilon 0 B) (horder : 2 ≤ ⌊epsilon⁻¹⌋₊)
@@ -97,10 +79,6 @@ theorem centeredCylinderMetric_lower {epsilon : ℝ} (hepsilon : 0 < epsilon)
     centeredCylinderError B z.1 z.2 0 v v at heq
   have hlo := (abs_le.mp herr).1
   nlinarith [mul_le_mul_of_nonneg_right hsmall (sq_nonneg ‖v‖)]
-
-
-
-
 
 theorem exists_centeredNeck_scalar_evolution_bound :
     ∃ C : ℝ, 0 < C ∧

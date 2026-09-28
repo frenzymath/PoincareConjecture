@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.OldVertices
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.EdgeMultiplicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ namespace PoincareConjecture.Topology.Surface
 
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
-
-
 
 theorem lineRefinementMesh_interior_vertex_fan_of_initial
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
@@ -50,8 +40,6 @@ theorem lineRefinementMesh_interior_vertex_fan_of_initial
     exact hfan t v hv hxint
   · exact lineRefinementMesh_new_vertex_fan g F M f t hcut hxint hF hFi hM
 
-
-
 theorem refineByLines_interior_vertex_fan_of_initial
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)
     (M : TriangleMesh) (lines : List (Plane →ᵃ[ℝ] ℝ))
@@ -72,8 +60,6 @@ theorem refineByLines_interior_vertex_fan_of_initial
   | cons f fs ih =>
     apply ih (M.lineRefinementMesh f) (by simpa only [M.lineRefinementMesh_support f] using hM)
       (lineRefinementMesh_interior_vertex_fan_of_initial g F M f hF hFi hM hfan) u x hx hxint
-
-
 
 theorem single_refineByLines_interior_vertex_fan
     (g : RiemannianMetric 2 S) (F : OpenPartialHomeomorph Plane S)

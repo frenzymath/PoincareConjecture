@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalCapNearbyNeck
 import PoincareConjecture.Proofs.M47.CanonicalStandardMetricBounds
 import PoincareConjecture.Proofs.M47.BlowupControlsCapPhysicalCertificate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
 
 theorem exists_standard_nearby_metric_factor {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta Lambda : ℝ}
@@ -48,9 +37,6 @@ theorem exists_standard_nearby_metric_factor {g0 : StandardInitialMetric}
   have h := hbound s hs v hv x w
   rw [abs_sub_comm v s] at h
   exact h.trans (mul_le_mul_of_nonneg_right hexp (Real.sqrt_nonneg _))
-
-
-
 
 theorem exists_actualCap_nearby_physical_certificate_tolerance {g0 : StandardInitialMetric}
     (standard : RepairedStandardCapExistenceData g0) {theta A v : ℝ}

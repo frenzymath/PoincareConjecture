@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallConnected
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.Dehn
-
 
 theorem isPreconnected_subset_one_cut_piece
     {X : Type*} [TopologicalSpace X] {K A B W : Set X}
@@ -57,10 +46,6 @@ private theorem exists_cut_away_from_connected_set
     · simpa only [union_comm] using hAB
     · simpa only [inter_comm] using hABi
   · exact ⟨A, B, U, V, hA, hB, hAB, hABi, hAQ, hBQ, hKB⟩
-
-
-
-
 
 theorem exists_two_proper_arc_cuts_with_union
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -140,8 +125,6 @@ theorem exists_two_proper_arc_cuts_with_union
   · have hMC : M ∪ C = B := by rwa [union_comm]
     rw [hMC, hBQ]
     simpa only [union_comm] using hB
-
-
 
 theorem exists_two_proper_arc_cuts
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

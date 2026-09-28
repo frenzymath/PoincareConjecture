@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M36.NeckCoordinates
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_3_NeckPatch
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -70,8 +60,6 @@ private theorem retained_coordinate_pullback (R : MetricSurgeryResult g0 I)
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
-
 theorem retained_central_distance (R : MetricSurgeryResult g0 I)
     (q r : UnitTwoSphere) :
     R.metric.edist (R.collapse (I.neck.coordinate_map (q, 0)))
@@ -123,8 +111,6 @@ theorem retained_central_distance (R : MetricSurgeryResult g0 I)
       RiemannianMetric.euclideanMetric_inner, sub_zero, mul_one, zero_mul,
       add_zero, mul_assoc] using h
   exact M46.canonicalSphereMetric.edist_le_mul_of_inner_mfderiv_le R.metric hF hC hbound q r
-
-
 
 theorem retained_axial_distance (R : MetricSurgeryResult g0 I)
     (q : UnitTwoSphere) {z : ℝ} (hz : z ∈ Icc (-1 : ℝ) 0) :

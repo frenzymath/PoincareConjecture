@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackReparametrization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,14 +15,10 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J : Set ℝ} {P : ∀ s, G.Horizontal (γ s)}
 
-
-
 noncomputable def smulPullbackExtension (E : M14PullbackExtension G γ J P)
     (c : ℝ → ℝ) (hc : ContDiff ℝ ∞ c) :
     M14PullbackExtension G γ J (fun s => c s • P s) :=
   pullbackExtensionSmulComp E id c contDiff_id hc (fun _ hs => hs)
-
-
 
 theorem horizontalCovariantDerivative_smul (E : M14PullbackExtension G γ J P)
     (c : ℝ → ℝ) (hc : ContDiff ℝ ∞ c) {s : ℝ} (hs : s ∈ J) :

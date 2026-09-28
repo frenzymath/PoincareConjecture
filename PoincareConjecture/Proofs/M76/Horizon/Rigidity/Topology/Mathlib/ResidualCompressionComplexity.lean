@@ -1,17 +1,6 @@
 import Mathlib.Algebra.BigOperators.Fin
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped BigOperators
 
@@ -37,8 +26,6 @@ private theorem sum_two_selected_complement {ι A : Type*}
     (by simp [and_comm]) f] at h'
   rw [← h, ← h']
   ac_rfl
-
-
 
 theorem residualComplexity_decreases_of_euler_change
     {ι κ : Type*} [Fintype ι] [Fintype κ]

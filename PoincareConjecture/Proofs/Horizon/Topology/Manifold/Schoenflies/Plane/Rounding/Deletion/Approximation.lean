@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Deletion.Regularity
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -208,7 +200,6 @@ theorem contDiff_roundedPolygonParameter_const {N : ℕ} [NeZero N] (p : Polygon
     contDiff_const.prodMk contDiff_id)
   convert hc using 1
   rfl
-
 
 theorem dist_roundedPolygon_delete_last_clock_le (p : Polygon E (n + 4))
     (hmid : p (Fin.last (n + 3)) =

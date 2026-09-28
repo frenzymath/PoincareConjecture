@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.JetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -18,9 +9,6 @@ namespace PoincareConjecture.Proofs.M28.FiniteHessian
 
 variable {ι E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem HasUniformJetBoundsAt.smul_family {n : ℕ} {f : ι → E → F} {x : ι → E}
     (h : HasUniformJetBoundsAt n f x)
@@ -33,10 +21,6 @@ theorem HasUniformJetBoundsAt.smul_family {n : ℕ} {f : ι → E → F} {x : ι
   rw [iteratedFDeriv_const_smul_apply' ((hf i).of_le (by exact_mod_cast le_top)), norm_smul]
   exact mul_le_mul ((hc i).trans (le_max_left _ _)) (hC m hm i)
     (norm_nonneg _) (le_max_right _ _)
-
-
-
-
 
 theorem HasUniformJetBoundsAt.exists_scalar_error_tail
     {n : ℕ} {f : ι → E → F} {x : ι → E} (h : HasUniformJetBoundsAt n f x)

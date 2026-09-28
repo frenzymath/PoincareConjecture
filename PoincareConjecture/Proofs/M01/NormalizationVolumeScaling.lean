@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M01.NormalizationScaling
 import PoincareConjecture.Proofs.M01.NormalizationVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold MeasureTheory
@@ -33,7 +25,6 @@ theorem m01RescaledMetric_ball [MeasurableSpace M] [BorelSpace M] [T3Space M]
   rw [ENNReal.lt_div_iff_mul_lt (Or.inl hne) (Or.inl ENNReal.ofReal_ne_top), mul_comm]
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
 
 theorem m01RescaledMetric_hausdorffVolume (g : RiemannianMetric 3 M) (c : ℝ)
     (hc : 0 < c) (s : Set M) :

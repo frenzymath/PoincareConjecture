@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.Rescaling
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

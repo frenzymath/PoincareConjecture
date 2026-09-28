@@ -2,14 +2,6 @@ import Mathlib.Geometry.Manifold.SmoothEmbedding
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +19,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   [TopologicalSpace P] [ChartedSpace G P]
   {n : ℕ∞ω} [IsManifold 𝓘(𝕜, G) n P]
   {f : M → N} {p : N → P}
-
 
 theorem IsImmersionOfComplement.comp_localDiffeomorph
     (hf : IsImmersionOfComplement F 𝓘(𝕜, E) 𝓘(𝕜, G) n f)
@@ -72,14 +63,11 @@ theorem IsImmersionOfComplement.comp_localDiffeomorph
   apply h.writtenInCharts
   simpa using hv'.1
 
-
 theorem IsImmersion.comp_localDiffeomorph
     (hf : IsImmersion 𝓘(𝕜, E) 𝓘(𝕜, G) n f)
     (hp : IsLocalDiffeomorph 𝓘(𝕜, G) 𝓘(𝕜, G) n p) :
     IsImmersion 𝓘(𝕜, E) 𝓘(𝕜, G) n (p ∘ f) :=
   (hf.isImmersionOfComplement_complement.comp_localDiffeomorph hp).isImmersion
-
-
 
 theorem IsSmoothEmbedding.comp_localDiffeomorph [CompactSpace M] [T2Space P]
     (hf : IsSmoothEmbedding 𝓘(𝕜, E) 𝓘(𝕜, G) n f)

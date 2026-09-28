@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalSegments
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductBall
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

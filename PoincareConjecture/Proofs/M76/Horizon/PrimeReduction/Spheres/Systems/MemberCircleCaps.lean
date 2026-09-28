@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.PrimeReduction.CompatibleNormalCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPairs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -120,9 +111,6 @@ theorem exists_raw_member_cap
     map_eq := fun _ => rfl
     piecewiseAffine := hkS }
   exact ⟨t, hkd', hkimage⟩
-
-
-
 
 theorem ChartwisePLSphere.exists_circle_caps
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

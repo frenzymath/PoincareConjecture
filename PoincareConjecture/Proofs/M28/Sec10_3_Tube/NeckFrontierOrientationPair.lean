@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicMinimizerSubsegments
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckAxialLength
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Intrinsic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -164,10 +154,6 @@ private theorem frontier_old_orientations_opposite
   · rw [hm, hp]
   · rw [hm, hp, neck_reversed_reversed]
   · exact False.elim (hbad (hm.trans hp.symm))
-
-
-
-
 
 theorem exists_neck_frontier_orientation_pair_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 1000 : ℝ) ∧

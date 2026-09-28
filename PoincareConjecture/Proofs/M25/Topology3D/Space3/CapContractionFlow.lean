@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CapContraction
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.InwardFlow
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -27,16 +17,12 @@ variable (hag : EqOn f (capContractionField χ u) (closedBall 0 1))
 
 include hχ hzero hu hag
 
-
-
 theorem capFlow_mapsTo_closedBall (t : ℝ) (ht : 0 ≤ t) :
     MapsTo (fun x => boundedFlow f hK hL x t) (closedBall 0 1) (closedBall 0 1) := by
   apply boundedFlow_mapsTo_closedBall f hK hL ?_ t ht
   intro x hx
   rw [hag (mem_closedBall_zero_iff.mpr hx.le)]
   exact capContractionField_inward χ hχ hzero u hu x hx
-
-
 
 theorem capFlow_distance_sq_le (x : E) (hx : x ∈ closedBall 0 1)
     (t : ℝ) (ht : 0 ≤ t) :
@@ -70,8 +56,6 @@ theorem capFlow_distance_sq_le (x : E) (hx : x ∈ closedBall 0 1)
       rw [← mul_assoc, ← Real.exp_add, neg_add_cancel, Real.exp_zero, one_mul]
     _ ≤ Real.exp (-t) * ‖x - u‖ ^ 2 :=
       mul_le_mul_of_nonneg_left hbound (Real.exp_pos _).le
-
-
 
 theorem capFlow_height_mono (x : E) (hx : x ∈ closedBall 0 1) :
     MonotoneOn (fun t => ⟪u, boundedFlow f hK hL x t⟫_ℝ) (Ici 0) := by

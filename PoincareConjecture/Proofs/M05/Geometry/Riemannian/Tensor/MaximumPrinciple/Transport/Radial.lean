@@ -1,14 +1,4 @@
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.ParametricLinearODE
-
-
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -21,14 +11,11 @@ variable {E F : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [CompleteSpace F]
 
-
 def coefficient (Γ : E → E →L[ℝ] F →L[ℝ] F) (x : E) (t : ℝ) : F →L[ℝ] F :=
   -(Γ (t • x) x)
 
-
 def solution (Γ : E → E →L[ℝ] F →L[ℝ] F) (v : F) : E → ℝ → F :=
   ODE.LocalFlow.linearODESolution (coefficient Γ) (-2) 2 0 (fun _ => v)
-
 
 def field (Γ : E → E →L[ℝ] F →L[ℝ] F) (v : F) (x : E) : F :=
   solution Γ v x 1
@@ -96,7 +83,6 @@ lemma field_smul {Γ : E → E →L[ℝ] F →L[ℝ] F}
     field Γ v (s • x) = solution Γ v x s := by
   simpa only [field, mul_one] using solution_smul hΓ v x hs (t := 1) (by norm_num)
 
-
 def covariantDerivative (Γ : E → E →L[ℝ] F →L[ℝ] F) (Y : E → F)
     (x u : E) : F := fderiv ℝ Y x u + Γ x u (Y x)
 
@@ -104,8 +90,6 @@ omit [FiniteDimensional ℝ E] in
 @[simp] lemma field_zero {Γ : E → E →L[ℝ] F →L[ℝ] F}
     (hΓ : ContDiff ℝ ∞ Γ) (v : F) : field Γ v 0 = v := by
   simpa using field_smul hΓ v (0 : E) (s := 0) (by norm_num)
-
-
 
 lemma covariantDerivative_field_radial {Γ : E → E →L[ℝ] F →L[ℝ] F}
     (hΓ : ContDiff ℝ ∞ Γ) (v : F) (u : E) {s : ℝ} (hs : |s| < 1) :
@@ -125,7 +109,6 @@ lemma covariantDerivative_field_radial {Γ : E → E →L[ℝ] F →L[ℝ] F}
   rw [← field_smul hΓ v u hs.le] at hder
   exact eq_neg_iff_add_eq_zero.mp hder
 
-
 lemma covariantDerivative_field_zero {Γ : E → E →L[ℝ] F →L[ℝ] F}
     (hΓ : ContDiff ℝ ∞ Γ) (v : F) (u : E) :
     covariantDerivative Γ (field Γ v) 0 u = 0 := by
@@ -136,8 +119,6 @@ lemma covariantDerivative_smul_direction (Γ : E → E →L[ℝ] F →L[ℝ] F)
     (Y : E → F) (x u : E) (c : ℝ) :
     covariantDerivative Γ Y x (c • u) = c • covariantDerivative Γ Y x u := by
   simp only [covariantDerivative, map_smul, smul_apply, smul_add]
-
-
 
 lemma covariantDerivative_field_radial_all {Γ : E → E →L[ℝ] F →L[ℝ] F}
     (hΓ : ContDiff ℝ ∞ Γ) (v : F) (u : E) (s : ℝ) :
@@ -159,8 +140,6 @@ lemma contDiff_covariantDerivative {Γ : E → E →L[ℝ] F →L[ℝ] F} {Y : E
     ContDiff ℝ ∞ (fun x => covariantDerivative Γ Y x u) := by
   exact ((hY.fderiv_right (by simp)).clm_apply contDiff_const).add
     ((hΓ.clm_apply contDiff_const).clm_apply hY)
-
-
 
 lemma secondCovariantDerivative_field_zero {Γ : E → E →L[ℝ] F →L[ℝ] F}
     (hΓ : ContDiff ℝ ∞ Γ) (v : F) (u : E) :

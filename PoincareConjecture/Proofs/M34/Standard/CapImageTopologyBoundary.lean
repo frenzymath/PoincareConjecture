@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CapImageTopology
 import PoincareConjecture.Proofs.M34.Mathlib.RegularSublevelPartialImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +14,6 @@ variable {M X : Type*} [TopologicalSpace M] [TopologicalSpace X]
   [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
-
-
 
 theorem image_boundary_local_defining_function
     (e : OpenPartialHomeomorph M X)

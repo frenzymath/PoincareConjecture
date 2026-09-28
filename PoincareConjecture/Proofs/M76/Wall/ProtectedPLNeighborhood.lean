@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.ProtectedPLIntersection
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLHalfspaceNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem exists_protected_PL_neighborhood
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

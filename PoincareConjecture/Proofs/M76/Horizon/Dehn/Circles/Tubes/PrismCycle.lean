@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PrismEndFibers
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLFamilyGluing
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPaths
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
-
-
 
 theorem exists_signed_prism_cut_map
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -99,8 +88,6 @@ theorem exists_signed_prism_cut_map
     let x := (map i).symm ⟨y, hi⟩
     exact ⟨x, mem_iUnion.mpr ⟨i, x.property⟩,
       (hval i x).trans (congrArg Subtype.val ((map i).apply_symm_apply ⟨y, hi⟩))⟩
-
-
 
 theorem exists_signed_prism_cycle_map
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

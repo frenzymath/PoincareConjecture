@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawStage
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallMetricIdentity
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +17,6 @@ variable {epsilon C A : ℝ}
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem regularRawStageDiffeomorph_metric_pairing
     (H : CounterexampleNeckFamily E)
@@ -110,9 +97,6 @@ theorem regularRawStageDiffeomorph_metric_pairing
   exact hmetric.trans (congrArg (fun r : ℝ => Q * r) hpair)
 
 set_option maxHeartbeats 3200000 in
-
-
-
 
 theorem regularRawStageDiffeomorph_relative_inner_bounds
     (H : CounterexampleNeckFamily E)

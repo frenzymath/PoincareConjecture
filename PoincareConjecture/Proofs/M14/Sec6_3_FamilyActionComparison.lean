@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareFamilyAction
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveAction
 import PoincareConjecture.Proofs.M14.Sec6_2_VariationActionComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {P : Type} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
-
-
-
 
 theorem variationAction_eq_squareFamilyAction (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (V : M14LVariationData G p R) (γ : ℝ × P → G.Point) {C : Set ℝ} {U : Set P}

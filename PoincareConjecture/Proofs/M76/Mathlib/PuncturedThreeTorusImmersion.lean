@@ -2,29 +2,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.StableThreeTorus
 import PoincareConjecture.Proofs.M76.Mathlib.ThickTorusEmbedding
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedThreeTorusPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace StableTorus
-
-
-
-
-
-
-
-
 
 theorem exists_punctured_threeTorus_PL_immersion :
     letI : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩

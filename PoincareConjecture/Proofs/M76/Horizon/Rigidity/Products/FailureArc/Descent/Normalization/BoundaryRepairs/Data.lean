@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SupportedChartRegion
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcSurgery
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -27,7 +17,6 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
-
 
 structure PlanarAnnulusBoundaryMotion
     (step : Step s t) (j : P2 → t.Carrier) (R Fmark : Set M)

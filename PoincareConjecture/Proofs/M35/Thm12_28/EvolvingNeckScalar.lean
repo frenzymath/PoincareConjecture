@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.M35.Thm12_28.ParabolicScalar
 import PoincareConjecture.Proofs.M35.RawFlow.Completeness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
-
 
 theorem exists_half_neck_scalar_bounds (P : M35StandardCapPredecessors) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧
@@ -97,9 +85,6 @@ theorem exists_half_neck_scalar_bounds (P : M35StandardCapPredecessors) :
     rw [R.scalar_evolution_eq_of_interval P.curvature (by norm_num) hsub x, htop, abs_div,
       abs_of_nonneg (sq_nonneg Q)] at htime
     exact (div_le_iff₀ (sq_pos_of_pos hQ)).mp htime
-
-
-
 
 theorem exists_evolving_neck_scalar_bounds (P : M35StandardCapPredecessors) :
     ∃ delta A : ℝ, 0 < delta ∧ 0 < A ∧

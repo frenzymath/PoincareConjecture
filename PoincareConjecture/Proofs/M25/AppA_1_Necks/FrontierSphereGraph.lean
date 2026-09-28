@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.FrontierSphereQuarter
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SliceProjectionDifferential
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
 
 theorem exists_oriented_positive_frontier_graph_at_sphere :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -15,7 +7,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
     (G H : SimplicialComplex ℝ E)
-
 
 theorem subcomplex_neighbor_image_of_ncard_eq (hG : G.faces.Finite) (hHG : H ≤ G)
     (v : H.vertices)
@@ -34,7 +25,6 @@ theorem subcomplex_neighbor_image_of_ncard_eq (hG : G.faces.Finite) (hHG : H ≤
   · simpa only [H.ncard_edgeGraph_neighborSet, G.ncard_edgeGraph_neighborSet] using
       hdegree.ge
   · exact hfinite.subset fun _ hx => (G.faceLink_vertices_subset {v.val} hx).1
-
 
 theorem subcomplex_component_of_ncard_eq (hG : G.faces.Finite) (hHG : H ≤ G)
     (hdegree : ∀ v : H.vertices,
@@ -103,7 +93,6 @@ theorem subcomplex_component_of_ncard_eq (hG : G.faces.Finite) (hHG : H ≤ G)
       let w' : H.vertices := ⟨w.val, hkeep w hw.1⟩
       exact ⟨w', ⟨(hmem w').mpr hw.1, (hdegree w').trans hw.2⟩, rfl⟩
 
-
 theorem no_return_to_of_subcomplex (hG : G.faces.Finite) (hHG : H ≤ G)
     (hdegree : ∀ v : H.vertices,
       (H.vertexAbstractComplex.edgeGraph.neighborSet v).ncard =
@@ -124,7 +113,6 @@ theorem no_return_to_of_subcomplex (hG : G.faces.Finite) (hHG : H ≤ G)
     heq.subset ⟨v.val, ⟨v.property, hv⟩, rfl⟩
   obtain ⟨w, hw, _⟩ := hvimage
   exact h ⟨D₀, ⟨⟨w, hw.1⟩, hw.2⟩, heq ▸ hR⟩
-
 
 theorem nonreturning_of_subcomplex
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

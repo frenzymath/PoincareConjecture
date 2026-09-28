@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates.Critical
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -16,8 +10,6 @@ open _root_.Poincare.Manifold.Schoenflies.PlaneArcs
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -143,8 +135,6 @@ theorem terminal_model_chart_not_isLocalMax
   simp at hh
   change d.model (d.modelChart (EuclideanSpace.single 1 u)) 2 ≤ d.model (d.modelChart 0) 2 at hm
   nlinarith [sq_pos_of_pos hu]
-
-
 
 theorem terminal_standard_model_chart_center
     (d : TerminalSaddleGeometry M P p e) (hmodel : d.model = Saddle.shear)

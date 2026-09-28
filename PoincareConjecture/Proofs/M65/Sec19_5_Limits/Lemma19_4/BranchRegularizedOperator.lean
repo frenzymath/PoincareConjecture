@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchRegularizedKernel
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchCauchyMeasurable
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -21,8 +11,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E]
-
-
 
 theorem integrable_of_bound_support {h : ℂ → E} {R B : ℝ}
     (hh : AEStronglyMeasurable h volume)
@@ -36,13 +24,8 @@ theorem integrable_of_bound_support {h : ℂ → E} {R B : ℝ}
 
 variable [NormedSpace ℂ E]
 
-
-
 def regularizedCauchyOperator (δ : ℝ) (h : ℂ → E) (z : ℂ) : E :=
   (Real.pi : ℂ)⁻¹ • ∫ w : ℂ, regularizedCauchyKernel δ (z - w) • h w
-
-
-
 
 theorem integrable_regularizedCauchyOperator {h : ℂ → E} {δ R B : ℝ}
     (hδ : 0 < δ) (hh : AEStronglyMeasurable h volume)
@@ -58,9 +41,6 @@ theorem integrable_regularizedCauchyOperator {h : ℂ → E} {δ R B : ℝ}
   rw [norm_smul]
   exact mul_le_mul_of_nonneg_right (norm_regularizedCauchyKernel_le hδ (z - w))
     (norm_nonneg _)
-
-
-
 
 theorem continuous_regularizedCauchyOperator [CompleteSpace E]
     {h : ℂ → E} {δ R B : ℝ} (hδ : 0 < δ)

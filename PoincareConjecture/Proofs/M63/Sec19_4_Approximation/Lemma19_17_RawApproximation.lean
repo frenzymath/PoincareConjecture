@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.UniformFillingAreaCom
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.CloseLoopFamilyHomotopy
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff BigOperators
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m63RawApproximation_nonempty
     {M : Type u} [TopologicalSpace M] [T2Space M]

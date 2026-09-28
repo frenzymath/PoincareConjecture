@@ -1,22 +1,9 @@
 import Mathlib.Analysis.Normed.Operator.Extend
 import Mathlib.Analysis.Normed.Operator.Bilinear
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M63
-
-
-
-
 
 theorem exists_dense_bilinear_extension
     {K E F G : Type*} [NontriviallyNormedField K]

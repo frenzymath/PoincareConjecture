@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import Mathlib.Topology.Order.Basic
 import Mathlib.Topology.Separation.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.M44
-
-
 
 theorem isolated_surgery_neighborhood (F : SurgeryFlowData.{u})
     {t : ℝ} (ht : t ∈ F.time_domain) :
@@ -38,9 +27,6 @@ theorem isolated_surgery_neighborhood (F : SurgeryFlowData.{u})
   by_contra hne
   exact h.1 ⟨⟨hs, h.2⟩, hne⟩
 
-
-
-
 theorem exists_surgery_free_right_interval (F : SurgeryFlowData.{u})
     {t H : ℝ} (ht : t ∈ F.time_domain) (htH : t < H) :
     ∃ b : ℝ, t < b ∧ b < H ∧ Disjoint F.surgery_times (Ioc t b) := by
@@ -54,9 +40,6 @@ theorem exists_surgery_free_right_interval (F : SurgeryFlowData.{u})
   have hst := hlocal s hs ⟨hat.trans hsI.1, hsI.2.trans_lt
     (hbmin.trans_le (min_le_right _ _))⟩
   exact (ne_of_gt hsI.1) hst
-
-
-
 
 theorem exists_surgery_free_closed_neighborhood (F : SurgeryFlowData.{u})
     {l t h : ℝ} (ht : t ∈ F.time_domain) (hlt : l < t) (hth : t < h)

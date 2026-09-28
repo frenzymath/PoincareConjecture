@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Circles.Step
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology PLAnnularStrip
 
@@ -13,8 +11,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "Q" => sphere (0 : V2) 1
 local notation "Circle" => AddCircle (4 * (8 : ℝ))
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 theorem exists_embedded_planar_region_annulus
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

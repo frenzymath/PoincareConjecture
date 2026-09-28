@@ -1,26 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.LocalPLHalfspaceGluing
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
 
-
-
 def handleTransverseStrip (J : Finset (Fin 3)) : Set (Fin 3 → ℝ) :=
   {x | ∀ i, i ∉ J → |x i| < 1}
-
-
 
 theorem isOpen_handleTransverseStrip (J : Finset (Fin 3)) :
     IsOpen (handleTransverseStrip J) := by
@@ -31,10 +19,6 @@ theorem isOpen_handleTransverseStrip (J : Finset (Fin 3)) :
   rw [hrep]
   exact isOpen_iInter_of_finite fun i =>
     isOpen_iInter_of_finite fun _ => isOpen_lt (continuous_apply i).abs continuous_const
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_handle_attaching_strip
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

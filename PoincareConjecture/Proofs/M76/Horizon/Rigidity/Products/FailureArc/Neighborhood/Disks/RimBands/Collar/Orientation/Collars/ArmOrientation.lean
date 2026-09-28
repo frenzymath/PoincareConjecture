@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Collar.Orientation.Collars.TubeNormalChart
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighborhood.Disks.RimBands.Coordinates.ArmIncidence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology Filter
@@ -53,8 +46,6 @@ private theorem armMidpointCoordinates_zero_interior
   rw [armMidpointCoordinates_zero]
   simp only [tube, interior_prod_eq, interior_Icc]
   exact ⟨⟨signed_radius_mem hr hr1 b, signed_radius_mem hr hr1 _⟩, by norm_num⟩
-
-
 
 theorem orientation_eq_of_actual_signed_arms
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.NeckDiagonalContraction
 import PoincareConjecture.Proofs.M34.Mathlib.RoundCylinderJetErrorBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff BigOperators
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
 
 theorem roundCylinderTensorNormSquared_chart_center_nonneg
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
@@ -34,16 +22,12 @@ theorem roundCylinderTensorNormSquared_chart_center_nonneg
   · exact inv_nonneg.mpr (mul_nonneg (by norm_num) (sub_nonneg.mpr hu.le))
   · norm_num
 
-
-
 theorem roundCylinderJetErrorSquared_nonneg {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) (order : ℕ) (z : RoundCylinderSpace) :
     0 ≤ roundCylinderJetErrorSquared u B order z := by
   unfold roundCylinderJetErrorSquared
   exact Finset.sum_nonneg fun _ _ =>
     roundCylinderTensorNormSquared_chart_center_nonneg hu _ _ _
-
-
 
 theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
     (B : RoundCylinderTwoTensor) {m n : ℕ} (hmn : m ≤ n) (z : RoundCylinderSpace) :
@@ -52,8 +36,6 @@ theorem roundCylinderJetErrorSquared_mono_order {u : ℝ} (hu : u < 1)
   apply Finset.sum_le_sum_of_subset_of_nonneg (Finset.range_mono (Nat.add_le_add_right hmn 1))
   intro k _ _
   exact roundCylinderTensorNormSquared_chart_center_nonneg hu _ _ _
-
-
 
 theorem roundCylinderTensorNormSquared_chart_center_le
     {u : ℝ} (hu : u < 1) (q : UnitTwoSphere) (s : ℝ) {r : ℕ}
@@ -70,8 +52,6 @@ theorem roundCylinderTensorNormSquared_chart_center_le
   · exact inv_nonneg.mpr (mul_nonneg (by norm_num) (sub_nonneg.mpr hu.le))
   · exact inv_nonneg.mpr (mul_nonneg (by norm_num) (sub_nonneg.mpr hu.le))
   · norm_num
-
-
 
 theorem roundCylinderJetErrorSquared_le_two_mul
     {u : ℝ} (hu : u < 1) (B D : RoundCylinderTwoTensor)
@@ -94,8 +74,6 @@ end PoincareConjecture.M34
 
 namespace PoincareConjecture
 
-
-
 theorem RoundCylinderTensorSmoothOn.mono_epsilon {delta epsilon : ℝ}
     (hdelta : 0 < delta) (hde : delta ≤ epsilon) {B : RoundCylinderTwoTensor}
     (hB : RoundCylinderTensorSmoothOn delta B) :
@@ -104,8 +82,6 @@ theorem RoundCylinderTensorSmoothOn.mono_epsilon {delta epsilon : ℝ}
   intro q a b
   exact (hB q a b).mono fun p hp =>
     ⟨hp.1, lt_of_le_of_lt (neg_le_neg hinv) hp.2.1, hp.2.2.trans_le hinv⟩
-
-
 
 theorem RoundCylinderClose.mono_epsilon {delta epsilon u : ℝ}
     (hdelta : 0 < delta) (hde : delta ≤ epsilon) (hu : u < 1)
@@ -119,8 +95,6 @@ theorem RoundCylinderClose.mono_epsilon {delta epsilon u : ℝ}
   exact (M34.roundCylinderJetErrorSquared_mono_order hu B
     (Nat.floor_mono hinv) z).trans (hjet z
       ⟨lt_of_le_of_lt (neg_le_neg hinv) hz.1, hz.2.trans_le hinv⟩)
-
-
 
 theorem RoundCylinderFamilyClose.mono_epsilon {delta epsilon : ℝ}
     (hdelta : 0 < delta) (hde : delta ≤ epsilon) {I : Set ℝ}

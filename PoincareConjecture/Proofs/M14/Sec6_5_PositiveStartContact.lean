@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_PositiveStartContactBounds
 import PoincareConjecture.Proofs.M14.Sec6_5_VariationContact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,9 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   {R : M14SquareRootPath G p}
 
-
-
-
 theorem exists_local_fixedTime_actionSet_bddBelow
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (hp : M14IsMinimizing p)
     (U : Set G.Point) (hU : IsOpen U) (hy : y ∈ U)
@@ -39,10 +27,6 @@ theorem exists_local_fixedTime_actionSet_bddBelow
   intro q hq
   exact actionSet_bddBelow_of_pastFinite (p.tau_nonneg.trans_lt p.tau_lt)
     (hN.mem_nhds hq.1) ((hf q hq.2).contMDiffAt (hU.mem_nhds hq.2)).continuousAt hfinite
-
-
-
-
 
 theorem isLocalMin_variationAction_gap_of_smooth_minimizing
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (V : M14LVariationData G p R)

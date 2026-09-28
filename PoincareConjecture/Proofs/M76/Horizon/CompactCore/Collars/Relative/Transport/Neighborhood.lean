@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Regions.Duals
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +9,6 @@ namespace Geometry.SimplicialComplex.CoorientedSurfaceStars
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
   (T : CoorientedSurfaceStars E)
-
-
 
 theorem exists_open_neighborhood_in_dual_union :
     ∃ U : Set E, IsOpen U ∧ (T.marked 2).space ⊆ U ∧
@@ -34,9 +25,6 @@ theorem exists_open_neighborhood_in_dual_union :
   rw [T.ambient.barycentricNeighborhood_space_eq_iUnion_dualBlocks] at hxN
   obtain ⟨p, hp, hxp⟩ := mem_iUnion₂.mp hxN
   exact mem_iUnion.mpr ⟨⟨p, hp⟩, ⟨hxp, hxR⟩⟩
-
-
-
 
 theorem exists_realized_neighborhood_in_dual_union
     {X : Type*} [TopologicalSpace X] {C W S : Set X}

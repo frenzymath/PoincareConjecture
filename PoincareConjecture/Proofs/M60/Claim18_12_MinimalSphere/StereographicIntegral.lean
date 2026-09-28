@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.Integrability
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 theorem m60SphereParameter_radial_integral :
     (∫ r in Ioi (0 : ℝ), r * (16 / (r ^ 2 + 4) ^ 2)) = 2 := by
@@ -40,9 +30,6 @@ theorem m60SphereParameter_radial_integral :
     (fun r hr => mul_nonneg hr.le (by positivity)) hlim
   norm_num at h
   exact h
-
-
-
 
 theorem m60SphereParameter_factor_integral :
     (∫ z : LoopPlane, 16 / (‖z‖ ^ 2 + 4) ^ 2) = 4 * Real.pi := by

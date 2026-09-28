@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RetainedTi
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants} {P : SurgeryParameters}
   {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T b : ℝ}
-
-
-
 
 theorem retained_inverse_coordinates_invertible
     (event : SurgeryEventData g0 K P slice metric T)
@@ -56,9 +44,6 @@ theorem retained_inverse_coordinates_invertible
     ⟨hl.mfderivToContinuousLinearEquiv (by simp), rfl⟩
   rw [mfderiv_comp x (hr.mdifferentiableAt (by simp)) (hc.mdifferentiableAt (by simp))]
   exact hj.comp hi
-
-
-
 
 theorem retainedChartCoefficients_equation_away
     (event : SurgeryEventData g0 K P slice metric T)
@@ -106,9 +91,6 @@ theorem retainedChartCoefficients_equation_away
       Poincare.Geometry.RicciFlow.Harnack.restrictFlow] using
         hd.congr_of_eventuallyEq heq
 
-
-
-
 theorem retainedChartCoefficients_invertible
     (event : SurgeryEventData g0 K P slice metric T)
     (G : RicciFlow 3 (slice T).carrier (Icc T b))
@@ -122,9 +104,6 @@ theorem retainedChartCoefficients_invertible
   · exact (event.pre_flow.metric t).isInvertible_chartCoefficients q (hchart hx)
   · exact (G.metric t).isInvertible_pullbackCoefficients
       (retained_inverse_coordinates_invertible event q hchart hret hx).injective
-
-
-
 
 theorem retainedChartCoefficients_smooth_ricci
     (event : SurgeryEventData g0 K P slice metric T)

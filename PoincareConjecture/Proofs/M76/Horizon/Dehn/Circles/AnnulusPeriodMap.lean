@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PLAnnularStrip
 
 namespace Dehn
-
-
-
 
 theorem exists_square_annulus_map_of_period
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutBoundaryArcs
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical
@@ -328,8 +321,6 @@ noncomputable def arcStart (i : Fin 4) : A.longBoundaryArc i :=
 noncomputable def arcFinish (i : Fin 4) : A.longBoundaryArc i :=
   ⟨A.gapCenter i,Or.inr ((A.gapSpokes i).left_ball.1 (Or.inl rfl))⟩
 
-
-
 theorem exists_longBoundaryArc_pairing_homeomorph_with_endpoints
     (hbound : ∀ s ∈ K.faces, s.card ≤ 3) (i : Fin 4) :
     ∃ H : A.longBoundaryArc i ≃ₜ A.longBoundaryArc (A.arcPairing i), H.IsFinitePL ∧
@@ -419,9 +410,6 @@ theorem copied_spoke_contact_endpoint (i t : Fin 4) (ht : t = i ∨ t = i+1)
     (hb : (A.sectorCopy i '' A.sectors.spoke t) ∩ A.boundaryBridgeUnion = {b}) :
     A.sectorCopy i (originalExteriorMarks K P D hcofaces A.bands labels (A.sectors.order t)) = b :=
   singleton_injective ((A.copied_spoke_inter_bridges i t ht).symm.trans hb)
-
-
-
 
 theorem exists_gapSpoke_original_indices (i : Fin 4) :
     ∃ l r : Fin 4, ({l,r} : Set (Fin 4)) = {A.matching i,A.matching i+1} ∧

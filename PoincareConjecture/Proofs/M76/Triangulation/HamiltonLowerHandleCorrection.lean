@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonTorusRigidity
 import PoincareConjecture.Proofs.M76.Triangulation.BoundedHandleLift
 import PoincareConjecture.Proofs.M76.Triangulation.PLHandleCompactification
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -30,12 +18,8 @@ local notation "D" => coordinateCylinder J
 local notation "C" => closedBall (0 : V) 1
 local notation "R" => latticeHandleDomain ι κ L
 
-
-
 def latticeCoordinateProjection (x : V) : LatticeHandleAmbient ι κ L :=
   (fun i => x (Sum.inl i), QuotientAddGroup.mk (fun j => x (Sum.inr j)))
-
-
 
 noncomputable def cylinderLatticeProjection (x : D) : R :=
   (latticeHandleDomainEquiv ι κ L).symm
@@ -43,12 +27,6 @@ noncomputable def cylinderLatticeProjection (x : D) : R :=
       QuotientAddGroup.mk (coordinateCylinderProduct ι κ x).2)
 
 variable {E α β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
-
 
 structure HamiltonProtectedCoreData
     (h : V → E)
@@ -78,10 +56,6 @@ structure HamiltonProtectedCoreData
     (fun x => (quotient x : LatticeHandleAmbient ι κ L)) C
 
 variable {ι κ L}
-
-
-
-
 
 theorem lowerHandleStraightening_of_marked_core_comparison
     (h : V → E)

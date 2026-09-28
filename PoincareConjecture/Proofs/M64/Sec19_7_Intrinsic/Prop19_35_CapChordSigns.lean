@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_InwardRaySign
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Triangles.CapTransversality
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -41,10 +29,6 @@ private theorem transverse_inner_ne_zero {u w : AnnulusCoordinates}
   have hu : u = 0 := quarterTurn.injective (by simpa only [map_zero] using
     (inner_self_eq_zero.mp hself))
   exact (hind.ne_zero (0 : Fin 2)) (by simpa using hu)
-
-
-
-
 
 theorem m64Intrinsic_fitted_cap_chord_signs
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T r : ℝ}
@@ -104,10 +88,6 @@ theorem m64Intrinsic_fitted_cap_chord_signs
     (hregular r ⟨hr, hrT⟩) hU hV hdisj hfU hfV (hray r ⟨hr, hrT⟩) hleftne hleftRay,
     m64Intrinsic_inward_ray_transverse_pos hg hend hinj hrT'
       (hregular (T - r) hrT') hU hV hdisj hfU hfV (hray (T - r) hrT') hrightne hrightRay⟩
-
-
-
-
 
 theorem m64Intrinsic_cap_endpoint_chord_sign
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T r : ℝ}

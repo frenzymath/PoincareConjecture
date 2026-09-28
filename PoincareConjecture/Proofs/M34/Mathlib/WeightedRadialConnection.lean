@@ -1,21 +1,10 @@
 import PoincareConjecture.Proofs.M34.Mathlib.RadialConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem weightedRadialChristoffel_pairing (l c b A B C : ℝ) (x u v w : E)
     (hr : c + b * ‖x‖ ^ 2 = l) :
@@ -29,8 +18,6 @@ theorem weightedRadialChristoffel_pairing (l c b A B C : ℝ) (x u v w : E)
   linear_combination
     (B * inner ℝ u v * inner ℝ x w +
       C * inner ℝ x u * inner ℝ x v * inner ℝ x w) * hr
-
-
 
 theorem weightedRadialChristoffel_koszul (l c b d e A B C : ℝ) (x u v w : E)
     (hr : c + b * ‖x‖ ^ 2 = l) (hA : 2 * c * A = d)

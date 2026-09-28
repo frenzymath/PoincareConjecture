@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.DistanceDistortion
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +13,6 @@ namespace PoincareConjecture.RicciFlow
 variable {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M] [IsManifold (𝓡 (m + 1)) ∞ M]
   {J : Set ℝ}
-
-
-
 
 theorem toReal_edist_le_add_of_ricci_upper_on_balls_intrinsic
     (F : RicciFlow (m + 1) M J) (hm : 0 < m)

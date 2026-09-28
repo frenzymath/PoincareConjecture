@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricFamily.PullbackCoefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -31,9 +23,6 @@ private theorem contDiffOn_affine_time
       (I ×ˢ U) (J ×ˢ univ) := fun _ hz => ⟨htime hz.1, mem_univ _⟩
   exact ((hB p.2 hp.2 _ (htime hp.1)).comp p hclock.contDiffWithinAt hmaps).const_smul Q
 
-
-
-
 theorem metricFamily_contDiffWithinAt_spacetime_pullbackCoefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -56,9 +45,6 @@ theorem metricFamily_contDiffWithinAt_spacetime_pullbackCoefficients
     (M := EuclideanSpace ℝ (Fin n)) (fun _ _ => rfl) x p.2
     ((g p.1).pullbackCoefficients f p.2)).symm
 
-
-
-
 theorem metricFamily_contDiffOn_rescaled_pullbackCoefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -71,8 +57,6 @@ theorem metricFamily_contDiffOn_rescaled_pullbackCoefficients
       Q • (g (a + p.1 / Q)).pullbackCoefficients f p.2) (I ×ˢ U) := by
   exact contDiffOn_affine_time (fun x hx _ ht =>
     metricFamily_contDiffWithinAt_spacetime_pullbackCoefficients hg (hf x hx) ht) a Q htime
-
-
 
 theorem metricFamily_contDiffOn_spacetime_chartCoefficient
     {n : ℕ} {M : Type*} [TopologicalSpace M]

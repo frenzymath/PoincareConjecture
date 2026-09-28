@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.Coordinates
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.WeakEquation
-
-
-
-
-
-
-

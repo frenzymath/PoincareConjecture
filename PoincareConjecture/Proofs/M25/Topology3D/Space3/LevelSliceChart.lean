@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularSurfaceChart
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +9,6 @@ open scoped ContDiff Manifold
 namespace PoincareConjecture.M25.Topology3D
 
 variable {M : Type*} [TopologicalSpace M]
-
-
 
 noncomputable def levelSliceChart (f : M → ℝ) (t : ℝ)
     (e : OpenPartialHomeomorph M (ℝ × ℝ))
@@ -76,13 +62,10 @@ noncomputable def levelSliceChart (f : M → ℝ) (t : ℝ)
       (continuous_id.prodMk continuous_const).continuousOn (fun _ hs => hs)).congr
         (fun s hs => hj s hs)
 
-
-
 @[simp] theorem levelSliceChart_source (f : M → ℝ) (t : ℝ)
     (e : OpenPartialHomeomorph M (ℝ × ℝ))
     (hcoord : ∀ y ∈ e.source, (e y).2 = f y) (x : {y // f y = t}) :
     (levelSliceChart f t e hcoord x).source = {p | p.1 ∈ e.source} := rfl
-
 
 @[simp] theorem levelSliceChart_apply (f : M → ℝ) (t : ℝ)
     (e : OpenPartialHomeomorph M (ℝ × ℝ))
@@ -93,8 +76,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [FiniteDimensional ℝ E] [ChartedSpace E M]
 variable [IsManifold 𝓘(ℝ, E) ∞ M]
 
-
-
 theorem exists_regular_level_line_chart (hdim : Module.finrank ℝ E = 2)
     (f : M → ℝ) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (t : ℝ)
     (hreg : ∀ y, f y = t → mfderiv 𝓘(ℝ, E) 𝓘(ℝ, ℝ) f y ≠ 0)
@@ -103,8 +84,6 @@ theorem exists_regular_level_line_chart (hdim : Module.finrank ℝ E = 2)
   obtain ⟨e, hxe, _, _, hcoord⟩ :=
     exists_surface_regular_chart hdim f hf x.1 (hreg x.1 x.2)
   exact ⟨levelSliceChart f t e hcoord x, hxe⟩
-
-
 
 theorem locallyConnected_regular_surface_level (hdim : Module.finrank ℝ E = 2)
     (f : M → ℝ) (hf : ContMDiff 𝓘(ℝ, E) 𝓘(ℝ, ℝ) ∞ f) (t : ℝ)
@@ -120,8 +99,6 @@ theorem locallyConnected_regular_surface_level (hdim : Module.finrank ℝ E = 2)
         (exists_regular_level_line_chart hdim f hf t hreg x).choose_spec
       chart_mem_atlas := fun _ => mem_univ _ }
   exact ChartedSpace.locallyConnectedSpace ℝ _
-
-
 
 theorem finite_regular_surface_level_components [CompactSpace M]
     (hdim : Module.finrank ℝ E = 2)

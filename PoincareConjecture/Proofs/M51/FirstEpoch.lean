@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.NormalizedStart
 import PoincareConjecture.Proofs.M51.EpochControls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M51Initial
-
-
 
 theorem firstObservation (F : SurgeryFlowData.{u})
     (standard_flow : MaximalStandardCapFlow F.standard_initial)
@@ -76,9 +66,6 @@ theorem firstObservation (F : SurgeryFlowData.{u})
 variable {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [CompactSpace M] [Nonempty M]
-
-
-
 
 theorem exists_first_epoch (S : RepairedControlledSchedulesData.{u})
     (N : RepairedNoncollapseInductionData S) (C : RepairedCanonicalInductionData S N)

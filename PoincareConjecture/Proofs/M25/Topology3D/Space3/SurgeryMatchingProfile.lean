@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.FixedSphereBallPreservati
 import Mathlib.Analysis.Normed.Module.Normalize
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -21,20 +10,16 @@ open scoped ContDiff Manifold Topology Pointwise InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
 
-
 noncomputable def surgeryMatchingRadius (c a r : ℝ) : ℝ :=
   c + a * (r ^ 2 - 1) / (1 + r ^ 2)
-
 
 theorem surgeryMatchingRadius_contDiff (c a : ℝ) :
     ContDiff ℝ ∞ (surgeryMatchingRadius c a) := by
   exact contDiff_const.add ((contDiff_const.mul ((contDiff_id.pow 2).sub contDiff_const)).div
     (contDiff_const.add (contDiff_id.pow 2)) (fun r => ne_of_gt (by positivity)))
 
-
 @[simp] theorem surgeryMatchingRadius_one (c a : ℝ) : surgeryMatchingRadius c a 1 = c := by
   simp [surgeryMatchingRadius]
-
 
 theorem surgeryMatchingRadius_hasDerivAt_one (c a : ℝ) :
     HasDerivAt (surgeryMatchingRadius c a) a 1 := by
@@ -52,10 +37,8 @@ theorem surgeryMatchingRadius_hasDerivAt_one (c a : ℝ) :
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 noncomputable def surgeryMatchingCollar (c a : ℝ) (x : E) : E :=
   (surgeryMatchingRadius c a ‖x‖ / c) • NormedSpace.normalize x
-
 
 theorem surgeryMatchingCollar_contDiffOn (c a : ℝ) :
     ContDiffOn ℝ ∞ (surgeryMatchingCollar (E := E) c a) ({0}ᶜ : Set E) := by
@@ -65,12 +48,10 @@ theorem surgeryMatchingCollar_contDiffOn (c a : ℝ) :
   exact (((surgeryMatchingRadius_contDiff c a).contDiffAt.comp x hn).div_const c).smul
     (hn.inv (norm_ne_zero_iff.mpr hx) |>.smul contDiffAt_id) |>.contDiffWithinAt
 
-
 theorem surgeryMatchingCollar_fixed {c : ℝ} (hc : c ≠ 0) (a : ℝ)
     {x : E} (hx : ‖x‖ = 1) : surgeryMatchingCollar c a x = x := by
   rw [surgeryMatchingCollar, hx, surgeryMatchingRadius_one, div_self hc,
     one_smul, NormedSpace.normalize_eq_self_of_norm_eq_one hx]
-
 
 theorem surgeryMatchingCollar_fderiv_normal (c a : ℝ)
     {x : E} (hx : ‖x‖ = 1) :
@@ -99,8 +80,6 @@ theorem surgeryMatchingCollar_fderiv_normal (c a : ℝ)
     |>.congr_of_eventuallyEq heq)
 
 variable [FiniteDimensional ℝ E]
-
-
 
 theorem exists_surgery_matching_diffeomorph {c a : ℝ} (hc : 0 < c) (ha : 0 < a) :
     ∃ R : Diffeomorph 𝓘(ℝ, E) 𝓘(ℝ, E) E E ∞,

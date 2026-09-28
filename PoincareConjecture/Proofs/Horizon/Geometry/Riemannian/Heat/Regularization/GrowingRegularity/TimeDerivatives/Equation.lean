@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Uniform
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -82,8 +74,6 @@ theorem iterate_timeDerivative_eventuallyEq {f g : E × ℝ → F} {p : E × ℝ
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
 
-
-
 theorem timeDerivative_static_heat_equation
     {a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι}
     {f : EuclideanSpace ℝ ι × ℝ → F} (hf : ContDiff ℝ ∞ f)
@@ -147,9 +137,6 @@ theorem iterate_timeDerivative_static_heat_equation
   | succ k ih =>
     rw [Function.iterate_succ_apply']
     exact ⟨contDiff_timeDerivative ih.1, timeDerivative_static_heat_equation ih.1 hJ ih.2⟩
-
-
-
 
 theorem iterate_timeDerivative_static_heat_equation_on
     {a : EuclideanSpace ℝ ι → EuclideanSpace ℝ ι →L[ℝ] EuclideanSpace ℝ ι}

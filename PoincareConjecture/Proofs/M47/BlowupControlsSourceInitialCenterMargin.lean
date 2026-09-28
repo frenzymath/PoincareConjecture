@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialPhysicalTip
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialBirthBall
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialAvoidance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_source_initial_older_center_margin
     (g0 : StandardInitialMetric) (gamma : ℝ)

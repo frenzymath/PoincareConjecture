@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.Ch12.StandardCap
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Definitions.M32HornSelection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -39,9 +31,6 @@ noncomputable def surgeryEpochStart (j : ℕ) : ℝ := (2 : ℝ) ^ j / 32
 def surgeryEpoch (j : ℕ) : Set ℝ :=
   Set.Ico (surgeryEpochStart j) (surgeryEpochStart (j + 1))
 
-
-
-
 def surgeryEpochEntry (j : ℕ) : Set ℝ :=
   if j = 0 then Set.Ico 0 (surgeryEpochStart 0) else
     Set.Ico (surgeryEpochStart (j - 1)) (surgeryEpochStart j)
@@ -69,9 +58,6 @@ structure SurgeryObservation (F : SurgeryFlowData.{u}) where
   interval_subset : Set.Ico 0 H ⊆ F.time_domain
   standard_flow : MaximalStandardCapFlow F.standard_initial
 
-
-
-
 def SurgeryObservation.redecorate {F : SurgeryFlowData.{u}}
     (O : SurgeryObservation F)
     (standard_flow : MaximalStandardCapFlow F.standard_initial) :
@@ -80,9 +66,6 @@ def SurgeryObservation.redecorate {F : SurgeryFlowData.{u}}
     H_pos := O.H_pos
     interval_subset := O.interval_subset
     standard_flow := standard_flow }
-
-
-
 
 def SurgeryObservation.redecorateTo
     {K : MetricSurgeryConstants} {p : SurgeryParameterPrefix K}
@@ -110,9 +93,6 @@ def SurgeryNoncollapsedOn (F : SurgeryFlowData.{u})
         (F.connection (t + s / 1)).curvatureTensorNorm (e.forward s hs y) ≤ r⁻¹ ^ 2) →
       ENNReal.ofReal (kappa * r ^ 3) ≤
         calibratedMetricVolume (F.metric t) ((F.metric t).ball x r)
-
-
-
 
 def SurgeryNoncollapsedAssumptionOn (F : SurgeryFlowData.{u})
     (J : Set ℝ) : Prop :=
@@ -172,8 +152,6 @@ def prefixFinalInterval {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) : Set ℝ :=
   Set.Ico 0 (surgeryEpochStart p.i)
 
-
-
 structure SurgeryFixedScalesOn {K : MetricSurgeryConstants}
     (setup : SurgeryControlSetup K) (F : SurgeryFlowData.{u})
     (O : SurgeryObservation F) (start r deltaUpper : ℝ) : Prop where
@@ -189,10 +167,6 @@ structure SurgeryFixedScalesOn {K : MetricSurgeryConstants}
     F.parameters.h t = setup.selector.h
       (F.parameters.delta t * F.parameters.r t) (F.parameters.delta t)
 
-
-
-
-
 def SurgeryHighCurvatureAnalyticOn (F : SurgeryFlowData.{u})
     (J : Set ℝ) (r C : ℝ) : Prop :=
   ∀ t ∈ J, t ∈ F.time_domain → ∀ x : (F.slice t).carrier,
@@ -203,12 +177,6 @@ def SurgeryHighCurvatureAnalyticOn (F : SurgeryFlowData.{u})
             (F.connection t).scalarCurvature x +
             2 * (F.connection t).ricciNormSq x| ≤
           C * (F.connection t).scalarCurvature x ^ 2
-
-
-
-
-
-
 
 def SurgeryScalarDerivativeControlOn (F : SurgeryFlowData.{u})
     (J : Set ℝ) (r C : ℝ) : Prop :=

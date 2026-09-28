@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRay
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.DistinctEndRays
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M28
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
 
 theorem exists_selected_metricEndRay_at_point
     (T : EpsilonTubeCertificate g X) (C : OpenCylinderModel T.carrier)
@@ -64,9 +50,6 @@ theorem exists_selected_metricEndRay_at_point
     change s ∈ Ioc (0 : ℝ) (r p) at hs
     exact hgammaLower (r p - s)
       ⟨by linarith only [hs.2], by linarith only [hs.1]⟩
-
-
-
 
 theorem exists_two_distinct_selected_metricEndRay_data
     (T : EpsilonTubeCertificate g X) (C : OpenCylinderModel T.carrier)

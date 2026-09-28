@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusWeakClassicalColumns
 import Mathlib.Analysis.Calculus.ContDiff.WithLp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -44,11 +33,6 @@ private theorem contDiffOn_one_of_continuous_derivative
     exact self_mem_nhdsWithin
   · intro h
     norm_num at h
-
-
-
-
-
 
 theorem compact_halfSpace_H4_contDiffOn_closure
     {u U : Plane → ℝ} (hc : HasCompactSupport u) (hu : MemWkp 4 2 u Half)
@@ -123,10 +107,6 @@ theorem compact_halfSpace_H4_contDiffOn_closure
     rw [hDJ hy]
     exact hd y
 
-
-
-
-
 theorem compact_halfSpace_H4_vector_contDiffOn_closure
     {n : ℕ} {u U : Plane → EuclideanSpace ℝ (Fin n)}
     (hc : ∀ i, HasCompactSupport (fun z => u z i))
@@ -142,11 +122,6 @@ theorem compact_halfSpace_H4_vector_contDiffOn_closure
   · filter_upwards [hU] with z hz
     exact congrArg (fun y => y i) hz
   · exact (EuclideanSpace.proj i).continuous.comp_continuousOn hUc
-
-
-
-
-
 
 theorem local_halfSpace_H4_contDiffOn_closure
     {W O : Set Plane} (hW : IsOpen W) (hO : IsOpen O)
@@ -165,10 +140,6 @@ theorem local_halfSpace_H4_contDiffOn_closure
     change u z = chi z * u z
     rw [hone z (subset_closure hz), one_mul]
   · exact hc
-
-
-
-
 
 theorem local_halfSpace_H4_vector_contDiffOn_closure
     {n : ℕ} {W O : Set Plane} (hW : IsOpen W) (hO : IsOpen O)

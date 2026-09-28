@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.InducedOpenImage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ local notation "I" => Icc (0 : ℝ) 1
 local notation "J" => Icc (-1 : ℝ) 1
 
 variable {A X : Type*} [TopologicalSpace A] [CompactSpace A] [TopologicalSpace X]
-
-
 
 theorem Continuous.exists_closed_positive_strip_subset {f : A × I → X}
     (hf : Continuous f) {W : Set X} (hW : IsOpen W)
@@ -40,9 +30,6 @@ theorem Continuous.exists_closed_positive_strip_subset {f : A × I → X}
   have htδ : |(t : ℝ)| ≤ δ := by rwa [abs_of_nonneg t.property.1]
   have h := hstrip a ⟨t, htJ⟩ htδ
   simpa [u, abs_of_nonneg t.property.1] using h
-
-
-
 
 theorem Topology.IsEmbedding.exists_positive_collar_strips {f : A × I → X}
     (hf : Topology.IsEmbedding f) {W : Set X} (hW : IsOpen W)

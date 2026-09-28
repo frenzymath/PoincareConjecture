@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Generalized.BoxCylinder
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transitions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,16 +10,12 @@ universe u v
 
 namespace PoincareConjecture.M30
 
-
-
 theorem box_forward_mfderiv_bijective (F : GeneralizedRicciFlowData.{u})
     (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval)
     (x : (F.box b).carrier.carrier) :
     Function.Bijective (mfderiv (𝓡 3) (𝓡 3) ((F.box b).forward t ht) x) :=
   ((F.box b).flow.metric t).mfderiv_bijective_of_pullback_eq (F.metric t) x
     ((F.box b).metric_pullback t ht x)
-
-
 
 theorem box_inverse_regular (F : GeneralizedRicciFlowData.{u})
     (b : F.box_index) (t : ℝ) (ht : t ∈ (F.box b).interval)
@@ -61,8 +47,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {M : Type v} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   {p : M → C.carrier}
-
-
 
 theorem regularAt_of_meeting_box
     (e : ∀ a : M, GeneralizedFlowCylinder F C origin scale I {p a})
@@ -100,9 +84,6 @@ theorem regularAt_of_meeting_box
   rw [heq.mfderiv_eq, mfderiv_comp a (houter.mdifferentiableAt (by simp))
     (hinner.mdifferentiableAt (by simp))]
   exact (box_forward_mfderiv_bijective F b _ hbt _).comp hinner_bij
-
-
-
 
 theorem regularAt_of_initial
     (e : ∀ a : M, GeneralizedFlowCylinder F C origin scale I {p a})

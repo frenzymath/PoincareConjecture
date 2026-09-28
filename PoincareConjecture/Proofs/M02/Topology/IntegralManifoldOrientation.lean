@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralHomologyUniverse
 import PoincareConjecture.Proofs.M02.Topology.IntegralConvexSupport
 import Mathlib.Geometry.Manifold.ChartedSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

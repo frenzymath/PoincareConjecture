@@ -4,8 +4,6 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -13,7 +11,6 @@ open Set Topology
 namespace PoincareConjecture.M76.LinearTorus
 
 variable (p : ℝ)
-
 
 def quotientMap : C(ℝ × ℝ, AddCircle p × AddCircle p) :=
   ⟨fun x => ((x.1 : AddCircle p), (x.2 : AddCircle p)),

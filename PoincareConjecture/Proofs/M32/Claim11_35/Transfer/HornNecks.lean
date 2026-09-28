@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.Transfer.FamilyClose
 import PoincareConjecture.Proofs.M32.Claim11_35.NeckTransfer.Eventual
 import PoincareConjecture.Proofs.M32.Claim11_32.HornBalls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -31,10 +20,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, BorelSpace (M k)] [∀ k, T2Space (M k)] [∀ k, T3Space (M k)]
   [∀ k, SecondCountableTopology (M k)]
   {F : ℕ → GeneralizedRicciFlowData.{u}} {T : ℕ → ℝ}
-
-
-
-
 
 theorem terminalBlowupConvergence_eventually_strongNecks_in_horns
     (H : ∀ k, SingularTimeAssumptions (F k) (T k) (M k))

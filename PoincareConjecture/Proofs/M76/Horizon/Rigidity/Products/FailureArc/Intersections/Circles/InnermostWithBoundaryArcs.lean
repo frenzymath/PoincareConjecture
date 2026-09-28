@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Circles.DiskAvoidance
 import PoincareConjecture.Proofs.M76.Mathlib.InnermostPolygonDisk
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -32,8 +23,6 @@ private theorem integrableOn_integral_of_subprobability
   rw [Real.norm_eq_abs, abs_of_nonneg (integral_nonneg (hnonneg x))]
   exact (setIntegral_le_integral (hrow x) (Eventually.of_forall (hnonneg x))).trans
     (hmass x)
-
-
 
 theorem heatKernel_le_double_ball_integral_of_harnack
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

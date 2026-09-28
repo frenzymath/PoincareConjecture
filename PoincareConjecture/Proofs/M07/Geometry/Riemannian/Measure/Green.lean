@@ -7,20 +7,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.ChartSupp
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.Local
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -38,8 +24,6 @@ private theorem fderiv_eq_sum_coordinates
   simpa only [map_sum, map_smul, smul_eq_mul, OrthonormalBasis.coe_toBasis,
     OrthonormalBasis.coe_toBasis_repr_apply, EuclideanSpace.basisFun_repr,
     mul_comm] using h.symm
-
-
 
 theorem integral_mul_laplacian_density
     (D : LeviCivitaData g)
@@ -97,7 +81,6 @@ private theorem integral_volumeMeasure_eq_density
   rw [volumeMeasure_eq_withDensity, integral_withDensity_eq_integral_toReal_smul
     hm (Filter.Eventually.of_forall fun _ => ENNReal.ofReal_lt_top)]
   simp only [ENNReal.toReal_ofReal (le_of_lt (hs _).2), smul_eq_mul, mul_comm]
-
 
 theorem integral_mul_laplacian_euclidean
     (D : LeviCivitaData g)

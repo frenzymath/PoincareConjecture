@@ -6,21 +6,9 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
-
-
 
 theorem tsum_le_of_boundary_neighbor_bounds {a b : ℕ → ℝ} {C q r : ℝ}
     (ha : Summable a) (hb : Summable b) (hn : ∀ i, 0 ≤ a i) (hC : 0 ≤ C) (hr : 0 ≤ r)
@@ -58,8 +46,6 @@ theorem tsum_le_of_boundary_neighbor_bounds {a b : ℕ → ℝ} {C q r : ℝ}
       apply mul_le_mul_of_nonneg_left _ hC
       nlinarith [mul_nonneg hr (hn 0), mul_le_mul_of_nonneg_left htwo (sq_nonneg r)]
     _ = C * (q + 1 + r + r ^ 2) * A := by ring
-
-
 
 theorem geometric_weighted_neighbor_sum_le {E R : ℕ → ℝ} {C : ℝ}
     (hE : Summable (fun i => (1 / 2 : ℝ) ^ i * E i))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderRicci
 import PoincareConjecture.Proofs.M34.Sec12_5_RotationInvariance.EndPullbackFlow
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g)
-
-
 
 noncomputable def endCylinderMetric (t : ℝ) :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -35,8 +23,6 @@ noncomputable def endCylinderMetric (t : ℝ) :
     (Subtype.val : endReferenceRegion e → StandardCapSpace)
     (Poincare.isLocalDiffeomorph_subtypeVal (𝓡 3) (endReferenceRegion e)
       (endReferenceRegion_isOpen e) ∞)
-
-
 
 theorem endCylinderMetric_inner :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -55,8 +41,6 @@ theorem endCylinderMetric_inner :
   rw [mfderiv_subtypeVal_singleton (endReferenceRegion_isOpen e)]
   rfl
 
-
-
 theorem endCylinderMetric_smooth :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.isManifold_singleton
@@ -69,9 +53,6 @@ theorem endCylinderMetric_smooth :
     (Subtype.val : endReferenceRegion e → StandardCapSpace)
     (Poincare.isLocalDiffeomorph_subtypeVal (𝓡 3) (endReferenceRegion e)
       (endReferenceRegion_isOpen e) ∞)
-
-
-
 
 theorem endCylinderMetric_ricci :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -100,9 +81,6 @@ theorem endCylinderMetric_ricci :
       fderiv ℝ (endExhaustion e) p v) / 2) hx).mp
         (endCylinderAuxRicci_coordinate e t DA hh u v)
 
-
-
-
 theorem endCylinderMetric_hasDerivWithinAt :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.isManifold_singleton
@@ -125,9 +103,6 @@ theorem endCylinderMetric_hasDerivWithinAt :
   apply hh.congr_of_mem _ ht
   intro s hs
   rw [endCylinderMetric_inner, endCylinderParameter, if_pos hs, endCylinderCoefficients_apply]
-
-
-
 
 noncomputable def endCylinderFlow :
     letI := (endReferenceRegion_isOpen e).isOpenEmbedding_subtypeVal.singletonChartedSpace

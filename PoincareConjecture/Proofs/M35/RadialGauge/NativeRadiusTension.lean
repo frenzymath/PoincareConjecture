@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TensionEquivariance
 import PoincareConjecture.Proofs.M35.RadialGauge.CorrectedEquation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +26,6 @@ private theorem radius_product_second_deriv {h : ℝ → ℝ} (hh : ContDiff ℝ
   have hdd := ((contDiff_infty_iff_deriv.mp hh).2.differentiable (by simp) r).hasDerivAt
   have hd2 := (hd.add ((hasDerivAt_id r).mul hdd)).deriv
   simpa only [Pi.add_def, Pi.mul_def, id_eq, one_mul, two_mul, add_assoc] using hd2
-
-
 
 theorem mapTension_radialScale_eq_harmonic
     (g b : RiemannianMetric 3 StandardCapSpace)

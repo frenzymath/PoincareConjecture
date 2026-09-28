@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralOpenOrientation
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralOrientationCover
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,11 +18,8 @@ open Poincare.Topology
 variable {X Y Z : Type u} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace Z]
 
-
 abbrev LocalHomology (X : Type u) [TopologicalSpace X] (x : X) (d : Nat) :=
   integralSupportHomology ({x} : Set X) d
-
-
 
 def localChainsMap (f : C(X, Y)) (hf : Function.Injective f) (x : X) :
     integralSupportChains ({x} : Set X) ⟶
@@ -39,12 +28,9 @@ def localChainsMap (f : C(X, Y)) (hf : Function.Injective f) (x : X) :
     intro z hz h
     exact hz (hf h))
 
-
 def localHomologyMap (f : C(X, Y)) (hf : Function.Injective f) (x : X) (d : Nat) :
     LocalHomology X x d ⟶ LocalHomology Y (f x) d :=
   homologyMap (localChainsMap f hf x) d
-
-
 
 @[reassoc]
 theorem localChainsMap_projection (f : C(X, Y)) (hf : Function.Injective f) (x : X) :
@@ -52,8 +38,6 @@ theorem localChainsMap_projection (f : C(X, Y)) (hf : Function.Injective f) (x :
       integralChainsFunctor.map (TopCat.ofHom f) ≫
         integralRelativeProjection ({f x}ᶜ : Set Y) :=
   integralRelativeMap_projection _ _
-
-
 
 @[simp]
 theorem localChainsMap_id (x : X) :
@@ -65,8 +49,6 @@ theorem localChainsMap_id (x : X) :
   rw [CategoryTheory.Functor.map_id, Category.id_comp]
   rfl
 
-
-
 @[reassoc]
 theorem localChainsMap_comp (f : C(X, Y)) (g : C(Y, Z))
     (hf : Function.Injective f) (hg : Function.Injective g) (x : X) :
@@ -74,15 +56,11 @@ theorem localChainsMap_comp (f : C(X, Y)) (g : C(Y, Z))
       localChainsMap (g.comp f) (hg.comp hf) x :=
   integralRelativeMap_comp _ _ _ _
 
-
-
 @[simp]
 theorem localHomologyMap_id (x : X) (d : Nat) :
     localHomologyMap (ContinuousMap.id X) Function.injective_id x d =
       𝟙 (LocalHomology X x d) := by
   rw [localHomologyMap, localChainsMap_id, homologyMap_id]
-
-
 
 @[reassoc]
 theorem localHomologyMap_comp (f : C(X, Y)) (g : C(Y, Z))
@@ -92,8 +70,6 @@ theorem localHomologyMap_comp (f : C(X, Y)) (g : C(Y, Z))
   rw [localHomologyMap, localHomologyMap, ← homologyMap_comp, localChainsMap_comp]
   rfl
 
-
-
 theorem localChainsMap_eq_embedding (f : C(X, Y)) (hf : Function.Injective f) (x : X) :
     localChainsMap f hf x = integralSupportEmbeddingChains f hf ({x} : Set X) ≫
       (integralRelativeSetIso
@@ -102,8 +78,6 @@ theorem localChainsMap_eq_embedding (f : C(X, Y)) (hf : Function.Injective f) (x
   rw [localChainsMap_projection, ← Category.assoc,
     integralSupportEmbeddingChains_projection, Category.assoc,
     integralRelativeSetIso_projection]
-
-
 
 theorem localHomologyMap_isIso [T2Space Y]
     (f : C(X, Y)) (hf : _root_.Topology.IsOpenEmbedding f) (x : X) (d : Nat) :
@@ -118,15 +92,11 @@ theorem localHomologyMap_isIso [T2Space Y]
     infer_instance
   infer_instance
 
-
-
 def localHomologyEquiv [T2Space Y]
     (f : C(X, Y)) (hf : _root_.Topology.IsOpenEmbedding f) (x : X) (d : Nat) :
     LocalHomology X x d ≃ₗ[Int] LocalHomology Y (f x) d := by
   let := localHomologyMap_isIso f hf x d
   exact (asIso (localHomologyMap f hf.injective x d)).toLinearEquiv
-
-
 
 theorem localHomologyMap_openOrientation [T2Space X] [T2Space Y]
     [LocallyCompactSpace X] (f : C(X, Y)) (hf : _root_.Topology.IsOpenEmbedding f)
@@ -149,8 +119,6 @@ theorem localHomologyMap_openOrientation [T2Space X] [T2Space Y]
     ModuleCat.comp_apply, integralOpenOrientation_point]
   exact congrArg (fun k => k (omega (f x))) hH
 
-
-
 theorem localHomologyMap_restriction
     (f : C(X, Y)) (hf : Function.Injective f) {K : Set X} (x : X)
     (hx : x ∈ K) (d : Nat) :
@@ -167,8 +135,6 @@ theorem localHomologyMap_restriction
     localChainsMap, integralRelativeMap_projection,
     ← Category.assoc, integralSupportEmbeddingChains_projection,
     Category.assoc, integralSupportRestriction_projection]
-
-
 
 theorem relativeHomologyMap_eq_of_homotopy
     {f g : C(X, Y)} (H : ContinuousMap.Homotopy f g)

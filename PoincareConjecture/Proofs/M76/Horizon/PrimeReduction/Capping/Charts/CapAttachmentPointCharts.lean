@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.CapAttachmentLocalBalls
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.FinitePLBallInteriorChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "J" => Icc (-1 : ℝ) 1
-
-
 
 theorem exists_chart_of_attachment_product
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -50,9 +39,6 @@ theorem exists_chart_of_attachment_product
   obtain ⟨Q, f, g, hQs, hQt, hf, hg, hQf, hQg, hgm, hleft, hright⟩ :=
     hA.exists_open_cube_interior_chart c hAW hopenA
   exact ⟨A, q, hAW, Q, f, g, hA, hpA, hQs, hQt, hf, hg, hQf, hQg, hgm, hleft, hright⟩
-
-
-
 
 theorem exists_attachment_point_chart
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

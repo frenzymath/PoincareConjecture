@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceProdu
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceTensorReadout
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -43,8 +34,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : ChartedSpace E₃ G.limit.carrier.carrier := G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 private local instance : T2Space G.limit.carrier.carrier := G.limit.carrier.t2Space
-
-
 
 theorem limitCanonical_eventually_chart_neck_metric_jets
     (P : M47Predecessors.{u}) (N : EpsilonNeck (G.limit.flow.metric 0))

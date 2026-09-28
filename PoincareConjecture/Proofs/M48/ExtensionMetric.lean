@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M48.ExtensionCylinderMetric
 import PoincareConjecture.Proofs.M48.StaticMetric
 import PoincareConjecture.Statements.M13Rescaling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +13,6 @@ universe u
 namespace PoincareConjecture.SurgeryFlowExtension
 
 variable {F : SurgeryFlowData.{u}} (E : SurgeryFlowExtension F)
-
 
 theorem identify_heq {s t : ℝ} (hs : s ∈ F.time_domain) (ht : t ∈ F.time_domain)
     {x : (F.slice s).carrier} {y : (F.slice t).carrier}
@@ -74,7 +64,6 @@ theorem metric_calculus_symm (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (t : ℝ) (ht : t ∈ F.time_domain) :
     MetricHomothetyCalculus (E.extended.metric t) (F.metric t) (E.identify t ht).symm 1 :=
   m13.metric_homothety _ _ _ _ _ 1 (by norm_num) (E.metric_homothety_symm t ht)
-
 
 theorem positive_component (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
     (t : ℝ) (ht : t ∈ F.time_domain) (x : (F.slice t).carrier)

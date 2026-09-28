@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_MinimizingRegion.SliceValues
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.JointSublevel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
-
 
 theorem confinementRegion_compact_minima
     (hM04 : RicciFlowCurvatureTheory.{0})

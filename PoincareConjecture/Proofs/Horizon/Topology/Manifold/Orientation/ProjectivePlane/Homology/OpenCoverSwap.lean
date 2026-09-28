@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Maye
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.MayerVietoris.IntegralSupportMayerVietoris
 import Mathlib.Algebra.Homology.HomologySequenceLemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,15 +18,10 @@ open Poincare.Topology
 
 variable {X : Type u} [TopologicalSpace X]
 
-
-
 def coverIntersectionMap (A B : Set X) (f : C(X, X))
     (hAB : MapsTo f A B) (hBA : MapsTo f B A) : C(↥(A ∩ B), ↥(A ∩ B)) :=
   ⟨fun x => ⟨f x, hBA x.property.2, hAB x.property.1⟩,
     (f.continuous.comp continuous_subtype_val).subtype_mk _⟩
-
-
-
 
 theorem openCoverSwap_connecting
     (A B : Set X) (hA : IsOpen A) (hB : IsOpen B) (hcover : A ∪ B = univ)
@@ -113,9 +98,6 @@ theorem openCoverSwap_connecting
   rw [← Category.assoc e.hom, ← hc]
   simp only [Category.assoc, Iso.hom_inv_id_assoc, Preadditive.comp_neg]
   exact hn.symm
-
-
-
 
 theorem openCoverSwap_homology_neg
     (A B : Set X) [ContractibleSpace A] [ContractibleSpace B]

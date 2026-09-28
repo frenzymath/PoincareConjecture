@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.ObservedCoordinateMetric
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.C2BoundaryTargetCoordinates
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -19,9 +10,6 @@ open Set Metric
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64BoundaryCoordinate_metric_data {n m : ℕ} {M : Type*}
     [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.OneBound
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.EssentialRims
 import Mathlib.Analysis.Convex.Contractible
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry BrownCollar
 

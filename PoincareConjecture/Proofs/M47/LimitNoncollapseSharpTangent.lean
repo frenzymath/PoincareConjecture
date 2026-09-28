@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSharpMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_sharp_tangent_bounds
     {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -66,8 +55,6 @@ private local instance : TopologicalSpace G.limit.carrier.carrier :=
 private local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) G.limit.carrier.carrier :=
   G.limit.carrier.chartedSpace
 private local instance : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
-
-
 
 theorem limitNoncollapse_generalized_compact_tangent_comparison
     {K : Set G.limit.sliceCarrier.carrier} (hK : IsCompact K)

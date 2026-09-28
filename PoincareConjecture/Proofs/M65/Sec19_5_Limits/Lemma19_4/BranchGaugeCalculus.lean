@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeSeries
 import Mathlib.Analysis.Complex.Conformal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65Branch
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℂ E]
-
-
-
 
 theorem differentiableAt_complex_of_dbar_eq_zero {f : ℂ → E} {z : ℂ}
     (hf : DifferentiableAt ℝ f z) (hz : dbar f z = 0) : DifferentiableAt ℂ f z := by
@@ -35,9 +22,6 @@ theorem differentiableAt_complex_of_dbar_eq_zero {f : ℂ → E} {z : ℂ}
   simp only [smul_add, smul_smul, I_mul_I, neg_one_smul, smul_zero] at hI
   exact (eq_of_sub_eq_zero (show I • fderiv ℝ f z 1 - fderiv ℝ f z I = 0 by
     simpa only [sub_eq_add_neg] using hI)).symm
-
-
-
 
 theorem dbar_clm_apply {P : ℂ → E →L[ℂ] E} {F : ℂ → E} {z : ℂ}
     (hP : DifferentiableAt ℝ P z) (hF : DifferentiableAt ℝ F z) :

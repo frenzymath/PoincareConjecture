@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlternatingPolygonCuts
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalEndpointCutSelection
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
@@ -21,15 +10,9 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
-
 def midpointArcNeighborhoods (U V : Fin n → Set E) : Fin (n * 2) → Set E := fun k =>
   let ij := finProdFinEquiv.symm k
   if ij.2 = 0 then V ij.1 else U (finRotate n ij.1)
-
-
-
 
 theorem midpointArcNeighborhoods_properties (P : Polygon E n)
     (α β : Fin n → ℝ) (hα : ∀ i, α i ∈ Ioo (0 : ℝ) (1 / 2))
@@ -91,11 +74,6 @@ theorem midpointArcNeighborhoods_properties (P : Polygon E n)
     apply hend
     simp only [Equiv.apply_symm_apply, mem_insert_iff, mem_singleton_iff]
     exact Or.inr rfl
-
-
-
-
-
 
 theorem exists_alternating_cut_neighborhoods (P : Polygon E n)
     (U : Fin n → Set E) (hU : ∀ i, IsOpen (U i))

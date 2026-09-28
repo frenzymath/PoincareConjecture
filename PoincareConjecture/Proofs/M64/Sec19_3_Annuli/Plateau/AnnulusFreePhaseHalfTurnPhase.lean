@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementInteg
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseHalfTurnLabels
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusFreePhaseSeamObservation
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,14 +23,8 @@ local notation "a" => curvePeriod / 2
 local instance (p : LoopPlane) : Decidable (p ∈ m64AnnulusHalfLeft) :=
   Classical.propDecidable _
 
-
-
-
 def m64FreePhaseHalfTurn (u : LoopPlane → ℝ) (D : ℝ) (p : LoopPlane) : ℝ :=
   if p 0 < a then u (T p) else u (T p) + D
-
-
-
 
 theorem m64AnnulusHalfLeft_subset_interior :
     m64AnnulusHalfLeft ⊆ S := by
@@ -44,9 +32,6 @@ theorem m64AnnulusHalfLeft_subset_interior :
   apply (m64AnnulusInterior_coordinates p).mpr
   have hP : 0 < curvePeriod := by unfold curvePeriod; positivity
   exact ⟨hp.1, by linarith [hp.2.1], hp.2.2⟩
-
-
-
 
 theorem m64FreePhaseHalfTurn_eq_piecewise
     {u : LoopPlane → ℝ} {D : ℝ} :
@@ -72,9 +57,6 @@ theorem m64FreePhaseHalfTurn_eq_piecewise
     simp only [m64FreePhaseHalfTurn, Set.piecewise, hk, hlt,
       Function.comp_apply]
 
-
-
-
 theorem m64FreePhaseHalfTurn_memLp
     {u : LoopPlane → ℝ} (hu : MemLp u 2 mu) (D : ℝ) :
     MemLp (m64FreePhaseHalfTurn u D) 2 mu := by
@@ -99,16 +81,10 @@ theorem m64FreePhaseHalfTurn_memLp
     exact hp.symm
   exact MemLp.ae_eq heq hpw
 
-
-
-
 theorem m64FreePhaseHalfTurn_left
     {u : LoopPlane → ℝ} {D : ℝ} {p : LoopPlane} (hp : p ∈ K) :
     m64FreePhaseHalfTurn u D p = u (T p) := by
   simp only [m64FreePhaseHalfTurn, hp.2.1, ↓reduceIte]
-
-
-
 
 theorem m64FreePhaseHalfTurn_right
     {u : LoopPlane → ℝ} {D : ℝ} {p : LoopPlane}
@@ -117,9 +93,6 @@ theorem m64FreePhaseHalfTurn_right
   simp only [m64FreePhaseHalfTurn]
   rw [if_neg]
   linarith [hp.1]
-
-
-
 
 theorem m64FreePhaseHalfTurn_observation
     {u : LoopPlane → ℝ} {k : ℝ} {D : ℝ}

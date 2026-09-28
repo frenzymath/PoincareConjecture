@@ -1,22 +1,9 @@
 import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
-
-
-
 
 theorem TendstoUniformlyOn.withinJets_of_ambient
     {𝕜 E F α : Type*} [NontriviallyNormedField 𝕜]
@@ -35,8 +22,6 @@ theorem TendstoUniformlyOn.withinJets_of_ambient
     exact (iteratedFDerivWithin_eq_iteratedFDeriv hS (hk x hx) (hKS hx)).symm
   · intro x hx
     exact (iteratedFDerivWithin_eq_iteratedFDeriv hS (hg x hx) (hKS hx)).symm
-
-
 
 theorem iteratedFDerivWithin_prod_eq_of_isOpen
     {𝕜 T E F : Type*} [NontriviallyNormedField 𝕜]

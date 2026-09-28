@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_EmbeddedCollar
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryParameters
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +12,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem m64Intrinsic_inward_unit_normal_unique
     (N : IntrinsicAnnulus) {a : ℝ} {v w : AnnulusCoordinates}
@@ -84,8 +69,6 @@ theorem m64Intrinsic_inward_unit_normal_unique
   have hz1 : z.2 = 1 := by nlinarith
   simpa only [hz1, one_smul] using hw.symm
 
-
-
 theorem m64Intrinsic_inward_normal_periodic
     (N : IntrinsicAnnulus) {normal : ℝ → AnnulusCoordinates}
     (hnormal : ∀ a,
@@ -105,8 +88,6 @@ theorem m64Intrinsic_inward_normal_periodic
   rw [hT] at ho
   exact m64Intrinsic_inward_unit_normal_unique N hu (hnormal a).1 ho
     (hnormal a).2.1 hi (hnormal a).2.2
-
-
 
 theorem m64Intrinsic_normal_map_periodic
     (G : RiemannianMetric 2 AnnulusCoordinates)

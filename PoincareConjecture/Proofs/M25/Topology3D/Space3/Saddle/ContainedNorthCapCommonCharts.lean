@@ -7,22 +7,12 @@ import Mathlib.Topology.NhdsSet
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_contained_north_cap_common_charts
     (A N : BallNeighborhoodChart E3 E3) (o : ℝ)

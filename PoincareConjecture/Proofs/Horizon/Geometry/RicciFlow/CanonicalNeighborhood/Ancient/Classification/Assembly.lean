@@ -8,14 +8,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Models
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.Twisted.Alternatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,8 +15,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m27KappaAlternatives_of_nonround_geometry
     (P : M27KappaAlternativePredecessors.{u})
@@ -74,8 +64,6 @@ theorem m27KappaAlternatives_of_nonround_geometry
     · exact strongCanonicalNeighborhood_of_round K hr hepsilon C t ht x
     · exact hpoint K hr hexception t ht x
 
-
-
 theorem m27KappaAlternatives_of_nonround_classification
     (P : M27KappaAlternativePredecessors.{u})
     (hclassification : ∃ epsilonBar : ℝ, 0 < epsilonBar ∧
@@ -103,8 +91,6 @@ theorem m27KappaAlternatives_of_nonround_classification
     · obtain ⟨Q⟩ := roundAncientSphericalSpaceForm L hr
       exact .round hr Q
     · exact hgeom L hr
-
-
 
 theorem m27KappaAlternatives_of_positive_classification
     (P : M27KappaAlternativePredecessors.{u})

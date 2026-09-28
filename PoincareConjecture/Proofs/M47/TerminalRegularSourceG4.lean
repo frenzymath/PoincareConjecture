@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalRegularSourceRealization
 import PoincareConjecture.Proofs.M47.TerminalSourceJetsG4Assembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalSource_regular_stage_G4
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

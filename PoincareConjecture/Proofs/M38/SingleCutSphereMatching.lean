@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M38.EnclosingBallSphere
 import PoincareConjecture.Proofs.M38.EnclosingBallSubregions
 import PoincareConjecture.Proofs.M38.ShortCollarChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +17,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
   (i : Fin (F.event T hT).cap_count) (hi : i ∉ S)
-
 
 theorem singleCutRegionEquivalence_inverse_collar (positive : Bool) (z : UnitTwoSphere)
     (s : ℝ) (hs : s ∈ Set.Ioo (0 : ℝ) 1) :
@@ -44,7 +35,6 @@ theorem singleCutRegionEquivalence_inverse_collar (positive : Bool) (z : UnitTwo
 variable (C : SurgeryBallEmbedding (partialCappedCarrier F T hT P (insert i S)))
 
 include hi in
-
 
 theorem singleCutBall_annulus_mem_inner (positive : Bool)
     (hB : (singleCutBall F T hT P S i positive).map '' Metric.closedBall 0 (5 / 4) ⊆
@@ -73,8 +63,6 @@ variable (p : sphereCarrier.{u}.carrier) {a b : ℝ}
   (ha : 0 < a) (ha8 : a ≤ 1 / 8) (hb : 0 < b) (hba : b < a)
 
 include hb hba
-
-
 
 theorem singleCutSphere_negative
     (hB₀ : (singleCutBall F T hT P S i false).map '' Metric.closedBall 0 (5 / 4) ⊆
@@ -111,8 +99,6 @@ theorem singleCutSphere_negative
         ((1 - a * ((b / a) * s)) • z.val)))
   rw [hcancel]
 
-
-
 theorem singleCutSphere_positive
     (hB₁ : (singleCutBall F T hT P S i true).map '' Metric.closedBall 0 (5 / 4) ⊆
       C.map '' Metric.ball 0 1)
@@ -146,7 +132,6 @@ theorem singleCutSphere_positive
   rw [hcancel]
 
 include ha8 in
-
 
 theorem singleCut_shortCollar_mem_inner_image
     (hB₀ : (singleCutBall F T hT P S i false).map '' Metric.closedBall 0 (5 / 4) ⊆

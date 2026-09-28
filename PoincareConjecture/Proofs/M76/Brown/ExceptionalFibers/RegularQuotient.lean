@@ -1,15 +1,6 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.ContinuousMap.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +8,6 @@ open Set Topology
 namespace Topology.IsQuotientMap
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 theorem exists_regular_homeomorph {q : X → Y} (hq : IsQuotientMap q)
     {T : Set Y} (hT : IsOpen T) (hinj : InjOn q (q ⁻¹' T)) :
@@ -30,8 +19,6 @@ theorem exists_regular_homeomorph {q : X → Y} (hq : IsQuotientMap q)
     exact Subtype.ext (hinj x.property y.property (congrArg Subtype.val h))
   have hr : IsHomeomorph r := isHomeomorph_iff_isQuotientMap_injective.mpr ⟨hqr, hir⟩
   exact ⟨hr.homeomorph r, fun _ => rfl⟩
-
-
 
 theorem isOpen_image_of_saturated {q : X → Y} (hq : IsQuotientMap q)
     {U : Set X} (hU : IsOpen U) (hsat : q ⁻¹' (q '' U) = U) :
@@ -46,8 +33,6 @@ namespace ContinuousMap
 variable {X Y : Type*} [TopologicalSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y]
 
-
-
 theorem exists_two_fiber_regular_homeomorph (q : C(X, Y))
     (hq : Function.Surjective q) (a b : Y)
     (hfib : ∀ x y, q x = q y ↔ x = y ∨
@@ -61,9 +46,6 @@ theorem exists_two_fiber_regular_homeomorph (q : C(X, Y))
   · exact h
   · exact False.elim (hx (by simp [h.1]))
   · exact False.elim (hx (by simp [h.1]))
-
-
-
 
 theorem isOpen_image_of_contains_two_fibers (q : C(X, Y))
     (hq : Function.Surjective q) (a b : Y)

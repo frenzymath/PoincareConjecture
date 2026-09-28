@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedTube
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CylinderScalarBound
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_CylinderMetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,9 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem seed_search_scalar_and_curvature
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})
@@ -89,8 +78,6 @@ theorem seed_search_scalar_and_curvature
   exact ⟨hscalar, (M46.pinched_curvature_norm_le P.toM46 (hpinch _ ht)
     (mem_univ (e.forward s hs x))).trans
       (mul_le_mul_of_nonneg_left (max_le_max_right _ hscalar) (by norm_num))⟩
-
-
 
 theorem seed_search_metric_comparison
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

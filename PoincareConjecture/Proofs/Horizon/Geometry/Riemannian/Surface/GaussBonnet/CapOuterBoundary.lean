@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.CoreSupportGerms
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Corners.OuterFaces
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ open scoped Topology Manifold ContDiff Bundle
 open Poincare.Topology.Plane.Meshes Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem independent_or_negative_smul_of_not_pos_smul {d e : Plane}
     (hd : d ≠ 0) (he : e ≠ 0) (hpos : ∀ c : ℝ, 0 < c → e ≠ c • d) :
@@ -42,7 +33,6 @@ theorem independent_or_negative_smul_of_not_pos_smul {d e : Plane}
   have hn : ¬ 0 < c⁻¹ := fun hp => hpos _ hp heq
   exact lt_of_le_of_ne (le_of_not_gt hn) (inv_ne_zero hcne)
 
-
 theorem union_opposite_positive_rays_eq_range (a d : Plane) {c : ℝ} (hc : c < 0) :
     ((fun t : ℝ => a + t • d) '' Ici (0 : ℝ)) ∪
       ((fun t : ℝ => a + t • (c • d)) '' Ici (0 : ℝ)) =
@@ -60,8 +50,6 @@ theorem union_opposite_positive_rays_eq_range (a d : Plane) {c : ℝ} (hc : c < 
     · refine Or.inr ⟨t / c, div_nonneg_of_nonpos (le_of_not_ge ht) hc.le, ?_⟩
       change a + (t / c) • (c • d) = a + t • d
       rw [smul_smul, div_mul_cancel₀ _ hc.ne]
-
-
 
 theorem affine_ray_range_eq_zero_set
     (l : Plane →ᵃ[ℝ] ℝ) (hl : Function.Surjective l) {a d : Plane}
@@ -106,8 +94,6 @@ theorem affine_ray_range_eq_zero_set
     rw [← hr]
     abel
 
-
-
 theorem affineSegment_eventuallyEq_positive_ray {a b : Plane} (hab : b ≠ a) :
     affineSegment ℝ a b =ᶠ[𝓝 a]
       (fun t : ℝ => a + t • (b - a)) '' Ici (0 : ℝ) := by
@@ -127,7 +113,6 @@ theorem affineSegment_eventuallyEq_positive_ray {a b : Plane} (hab : b ≠ a) :
     refine ⟨t, ⟨ht, by nlinarith⟩, ?_⟩
     simp only [AffineMap.lineMap_apply, vsub_eq_sub, vadd_eq_add, add_comm]
 
-
 theorem support_eventuallyEq_frontier {X : Type*} [TopologicalSpace X]
     {A B : Set X} {q : X} (h : A =ᶠ[𝓝 q] B) :
     frontier A =ᶠ[𝓝 q] frontier B := by
@@ -143,8 +128,6 @@ theorem support_eventuallyEq_frontier {X : Type*} [TopologicalSpace X]
   have hic := Filter.EventuallyEq.mem_interior_iff hcomp
   rw [interior_compl, interior_compl] at hic
   simpa only [mem_compl_iff, not_not] using (not_congr hic).and (not_congr hi)
-
-
 
 theorem frontier_compl_interior_preimage_eventuallyEq
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
@@ -197,7 +180,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   {r : S → ℝ} {p : S} {P : ChartCircleArrangementVertexPatch r p}
   {x : Bool × Bool → S} (B : VertexCapFaces P x)
 
-
 theorem closure_interior_union :
     closure (interior (⋃ s, (B.face s).carrier)) = ⋃ s, (B.face s).carrier := by
   apply Poincare.Topology.closure_interior_iUnion_of_regular_closed
@@ -235,8 +217,6 @@ theorem chord_one_eq_secondOuterTip (i j : Bool) :
   rw [B.boundary_map]
   simpa [Function.comp_apply, affineChartSegment] using B.coordinate_second_outer_tip i j
 
-
-
 theorem frontier_union_eventuallyEq_first_chords (i : Bool) :
     frontier (⋃ s, (B.face s).carrier) =ᶠ[𝓝 (B.firstOuterTip i)]
       ⋃ j : Bool, ((B.face (i, j)).boundary 0).map '' Icc (0 : ℝ) 1 := by
@@ -263,8 +243,6 @@ theorem frontier_union_eventuallyEq_first_chords (i : Bool) :
   · intro h
     obtain ⟨j, hj⟩ := mem_iUnion.mp h
     exact mem_iUnion.mpr ⟨(i, j), hj⟩
-
-
 
 theorem frontier_union_eventuallyEq_second_chords (i : Bool) :
     frontier (⋃ s, (B.face s).carrier) =ᶠ[𝓝 (B.secondOuterTip i)]
@@ -294,7 +272,6 @@ theorem frontier_union_eventuallyEq_second_chords (i : Bool) :
     exact mem_iUnion.mpr ⟨(j, i), hj⟩
 
 omit [T2Space S] in
-
 
 theorem chart_frontier_union_eventuallyEq_incident_segments
     (v : S) (s : Bool → Bool × Bool) (q : S)
@@ -343,8 +320,6 @@ theorem chart_frontier_union_eventuallyEq_incident_segments
     obtain ⟨j, hj⟩ := mem_iUnion.mp h
     exact mem_iUnion.mpr ⟨j, (hchord j).symm ▸ ⟨z, hj, rfl⟩⟩
 
-
-
 theorem chart_frontier_union_eventuallyEq_first_rays (i : Bool) (v : S)
     (hchart : ∀ j, x (i, j) = v) :
     let a := chartAt Plane v (B.firstOuterTip i)
@@ -380,8 +355,6 @@ theorem chart_frontier_union_eventuallyEq_first_rays (i : Bool) (v : S)
   · intro h
     obtain ⟨j, hj⟩ := mem_iUnion.mp h
     exact mem_iUnion.mpr ⟨j, (propext_iff.mp (hrz j)).mpr hj⟩
-
-
 
 theorem chart_frontier_union_eventuallyEq_second_rays (i : Bool) (v : S)
     (hchart : ∀ j, x (j, i) = v) :
@@ -420,8 +393,6 @@ theorem chart_frontier_union_eventuallyEq_second_rays (i : Bool) (v : S)
     obtain ⟨j, hj⟩ := mem_iUnion.mp h
     exact mem_iUnion.mpr ⟨j, (propext_iff.mp (hrz j)).mpr hj⟩
 
-
-
 theorem first_outer_chords_not_pos_smul (i : Bool) (v : S)
     (hchart : ∀ j, x (i, j) = v) {c : ℝ} (hc : 0 < c) :
     chartAt Plane v (B.secondOuterTip true) - chartAt Plane v (B.firstOuterTip i) ≠
@@ -447,8 +418,6 @@ theorem first_outer_chords_not_pos_smul (i : Bool) (v : S)
       ((B.face (i, true)).boundary_image_subset_frontier 0 ⟨u, Ioo_subset_Icc_self hu, rfl⟩)
   have hi := (B.open_chord_mem_carrier_iff (i, false) (i, true) ht).mp hm
   exact Bool.noConfusion (congrArg Prod.snd hi)
-
-
 
 theorem second_outer_chords_not_pos_smul (i : Bool) (v : S)
     (hchart : ∀ j, x (j, i) = v) {c : ℝ} (hc : 0 < c) :

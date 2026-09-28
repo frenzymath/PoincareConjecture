@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Tower.Terminal
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Tower.Fold
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Tower.Projection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.OriginalPLTower
 
@@ -20,8 +11,6 @@ local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "Rim" => Set.prod (sphere (0 : V1) 1) (sphere (0 : V2) 1)
-
-
 
 theorem exists_embedded_chart_annulus
     (L : Submodule ℤ V2) {α : Type*}

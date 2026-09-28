@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.Origina
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.OriginalConeEdgeMarks
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.OriginalSkeletonBoundaryFixed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex unitInterval

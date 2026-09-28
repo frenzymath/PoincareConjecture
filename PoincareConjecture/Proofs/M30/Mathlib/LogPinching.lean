@@ -1,20 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Log.Basic
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M30
-
-
 
 theorem negative_le_scaled_of_log_pinching {R X Q B eta : ℝ}
     (hQ : 0 < Q) (hB : 0 ≤ B) (heta : 0 < eta)

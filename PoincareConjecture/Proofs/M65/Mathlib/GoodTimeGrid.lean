@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M65.Mathlib.EnergyIntervals
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory Set
 open scoped intervalIntegral BigOperators
 
 namespace PoincareConjecture.M65
-
-
-
 
 theorem exists_energy_good_grid {energy : ℝ → ℝ} {a b C B h : ℝ} (n : ℕ)
     (hab : a ≤ b) (hh : 0 < h) (hend : a + (n : ℝ) * h ≤ b)

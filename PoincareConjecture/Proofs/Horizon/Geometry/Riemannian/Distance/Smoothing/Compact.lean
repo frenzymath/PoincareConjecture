@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompactHes
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.FiniteMinimum
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Cutoff
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,9 +45,6 @@ private theorem inactive_of_cutoff_zero (δ : ℝ) (hδ : 0 < δ) (k : ℕ)
   have hmin := Poincare.finiteRegularizedMin_le δ hδ k b j
   have hlarge := hhigh i hi
   linarith
-
-
-
 
 theorem exists_contMDiff_approx_on_compact_of_local_with_gradient_bound (D : LeviCivitaData g)
     {S : Set M} (hS : IsCompact S) {d : M → ℝ} (hd : ContinuousOn d S)
@@ -170,8 +159,6 @@ theorem exists_contMDiff_approx_on_compact_of_local_with_gradient_bound (D : Lev
   · intro x hx v
     exact D.hessian_finiteRegularizedMin_le_of_active δ hδ k b
       (fun i => (hb i).contMDiffAt) v (fun i hi => (hbounds x hx i hi).2 v)
-
-
 
 theorem exists_contMDiff_approx_on_compact_of_local (D : LeviCivitaData g)
     {S : Set M} (hS : IsCompact S) {d : M → ℝ} (hd : ContinuousOn d S)

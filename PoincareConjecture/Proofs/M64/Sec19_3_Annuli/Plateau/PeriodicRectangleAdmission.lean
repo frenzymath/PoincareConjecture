@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.LipschitzAnnulusAdapt
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Infimum
 import Mathlib.Algebra.Order.ToIntervalMod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -25,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m64Annulus_exists_eqOn_rectangle_of_lipschitz
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}

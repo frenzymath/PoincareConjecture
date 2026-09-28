@@ -3,22 +3,12 @@ import Mathlib.Topology.ContinuousMap.Basic
 import Mathlib.Topology.Homotopy.Affine
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
 open scoped unitInterval
 
 namespace Poincare.Topology
-
 
 theorem exists_closedBall_cylinder_retraction
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :
@@ -105,7 +95,6 @@ theorem exists_closedBall_cylinder_retraction
       change u z = (z.2 : E)
       simp only [u, hdz, inv_one, one_smul]
 
-
 theorem exists_closedBall_homotopy_extension
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     (f : C(closedBall (0 : E) 1, X)) (h : C(unitInterval × sphere (0 : E) 1, X))
@@ -181,7 +170,6 @@ theorem exists_closedBall_homotopy_extension
       exact mem_sphere_zero_iff_norm.mp x.property)
     simpa only [hrx] using hgs
 
-
 theorem sphere_nullhomotopic_iff_extends_closedBall
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
     (p : C(sphere (0 : E) 1, X)) :
@@ -204,7 +192,6 @@ theorem sphere_nullhomotopic_iff_extends_closedBall
       ext z
       exact hF z
     rwa [hp] at hN
-
 
 theorem exists_closedBall_cylinder_deformation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] :

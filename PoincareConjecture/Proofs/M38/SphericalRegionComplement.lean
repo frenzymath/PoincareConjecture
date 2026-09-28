@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M38.SphericalSphereFilling
 import PoincareConjecture.Proofs.M38.FiniteSphereNesting
 import PoincareConjecture.Proofs.M38.FiniteBallComplement
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
-
 
 theorem exists_spherical_region_complement
     {ι : Type*} [Finite ι] {U : Set sphereCarrier.{u}.carrier}

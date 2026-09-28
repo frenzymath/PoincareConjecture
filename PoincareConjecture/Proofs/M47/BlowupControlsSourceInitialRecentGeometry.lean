@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRecentPaths
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCenterMargin
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialJoiningHeightPath
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,8 +24,6 @@ variable {g0 : StandardInitialMetric} {G : MaximalStandardCapFlow g0}
   (hshort : v * (G.connection v).scalarCurvature z < 1 + gamma)
 
 include hsmall hdisjoint hshort
-
-
 
 theorem exists_standard_initial_neck_half_strip_paths
     {x y : StandardCapSpace} (hx : x ∈ N.patch.carrier)
@@ -78,8 +66,6 @@ theorem exists_standard_initial_neck_half_strip_paths
     (abs_sub _ _).trans (add_le_add haabs.le hheight)
   linarith only [hdiff]
 
-
-
 theorem standard_initial_neck_half_strip_tip_distance
     {x : StandardCapSpace} (hx : x ∈ N.patch.carrier)
     (hheight : |(N.patch.inverse x).2| ≤ 1)
@@ -120,9 +106,6 @@ theorem standard_initial_neck_half_strip_tip_distance
   linarith only [hfarReal, hdistReal, htriangleReal, hL]
 
 end StandardGeometry
-
-
-
 
 theorem exists_source_initial_recent_geometry_tolerance
     (g0 : StandardInitialMetric) (gamma : ℝ)

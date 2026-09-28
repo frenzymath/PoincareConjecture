@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamDiskReplacement
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakReplacementEnergy
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -32,8 +20,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64WeakAnnulusSeamReplacement_energy
     (Q : M → E →L[ℝ] E →L[ℝ] ℝ) (hQ : Continuous Q) (hei : IsEmbedding e)
@@ -85,8 +71,6 @@ theorem m64WeakAnnulusSeamReplacement_energy
     integral_sub hi hoK]
   simp only [hext, new, old]
   ring
-
-
 
 theorem M64ObservedWeakAnnulus.exists_seam_local_comparison_of_outer_agreement
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

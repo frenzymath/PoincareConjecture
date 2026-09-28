@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.InitialKilling
 import PoincareConjecture.Proofs.M03.MetricGradientEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -18,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem linear_killing_defect_hasDerivAt
     {g₀ : StandardInitialMetric} (G : PartialStandardCapFlow g₀)

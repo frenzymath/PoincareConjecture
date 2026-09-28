@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Intervals.ModelArc
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalDoubleArcTubeMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval
 
@@ -19,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
 local notation "I01" => Icc (0 : ℝ) 1
-
-
 
 theorem OrdinaryDoubleCurveModel.exists_interval_tube_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

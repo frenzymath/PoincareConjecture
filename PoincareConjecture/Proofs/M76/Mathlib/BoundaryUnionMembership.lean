@@ -1,20 +1,8 @@
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Set
-
-
-
 
 theorem mem_union_iff_of_intersections {X : Type*} {s u b c d q : Set X}
     (hcu : c ⊆ u) (hqb : q ⊆ b) (hsu : s ∩ u = d) (hcd : c ∩ d = q)

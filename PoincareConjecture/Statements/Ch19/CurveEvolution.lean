@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch19.CurveEvolution
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -23,7 +13,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 variable {t₀ t₁ : ℝ}
-
 
 structure CurveEvolutionAmbientBounds
     (F : RicciFlow n M (Set.Icc t₀ t₁)) (K₀ K₁ K₂ : ℝ) : Prop where
@@ -41,7 +30,6 @@ structure CurveEvolutionAmbientBounds
       (F.metric t).tangentNorm x v ≤ 1 → (F.metric t).tangentNorm x w ≤ 1 →
         |(F.connection t).ricci x v w| ≤ K₂
 
-
 structure CurveEvolutionPredecessors where
   curvature : RicciFlowCurvatureTheory.{u}
   flow : RicciFlow n M (Set.Icc t₀ t₁)
@@ -50,7 +38,6 @@ structure CurveEvolutionPredecessors where
   K₂ : ℝ
   bounds_nonnegative : 0 ≤ K₀ ∧ 0 ≤ K₁ ∧ 0 ≤ K₂
   bounds : CurveEvolutionAmbientBounds flow K₀ K₁ K₂
-
 
 structure CurveEvolutionSolution (F : RicciFlow n M (Set.Icc t₀ t₁)) where
   family : CurveShrinkingFlow.Data F
@@ -67,8 +54,6 @@ structure CurveEvolutionSolution (F : RicciFlow n M (Set.Icc t₀ t₁)) where
     (fun x ↦ curveCurvature family t x * curveSpeed F family.curve t x)
     MeasureTheory.volume 0 curvePeriod
 
-
-
 noncomputable def correctedCurvatureSquaredRhs
     {F : RicciFlow n M (Set.Icc t₀ t₁)} (S : CurveEvolutionSolution F)
     (C₀ t x : ℝ) : ℝ :=
@@ -78,7 +63,6 @@ noncomputable def correctedCurvatureSquaredRhs
       (normalCovariantDerivative S.family t x (S.curvature_extension t)) +
     2 * (curveCurvatureSquared S.family t x) ^ 2 +
     C₀ * (curveCurvatureSquared S.family t x + curveCurvature S.family t x)
-
 
 noncomputable def regularizedCurveCurvature
     {F : RicciFlow n M (Set.Icc t₀ t₁)} (S : CurveEvolutionSolution F)
@@ -92,7 +76,6 @@ noncomputable def regularizedCurveCurvatureRhs
       (fun y ↦ regularizedCurveCurvature S ε t y) x +
     (curveCurvature S.family t x) ^ 3 +
     C₁ * (regularizedCurveCurvature S ε t x + 1)
-
 
 structure CurveEvolutionEstimates
     {F : RicciFlow n M (Set.Icc t₀ t₁)} (S : CurveEvolutionSolution F)
@@ -132,8 +115,6 @@ structure CurveEvolutionEstimates
       totalCurveCurvature S.family b + totalCurveLength S.family b ≤
         (totalCurveCurvature S.family a + totalCurveLength S.family a) *
           Real.exp ((C₁ + C₂) * (b - a))
-
-
 
 structure CurveEvolutionConclusions
     (P : CurveEvolutionPredecessors (n := n) (M := M) (t₀ := t₀) (t₁ := t₁)) where

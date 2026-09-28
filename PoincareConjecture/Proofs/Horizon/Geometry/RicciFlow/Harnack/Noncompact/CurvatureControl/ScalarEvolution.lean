@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Contraction
 import Mathlib.Algebra.QuadraticDiscriminant
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +15,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem LeviCivitaData.ricciNormSq_le_scalarCurvature_sq_of_ricci_nonneg
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -64,8 +52,6 @@ theorem LeviCivitaData.ricciNormSq_le_scalarCurvature_sq_of_ricci_nonneg
       Finset.sum_le_sum (fun i _ => Finset.sum_le_sum (fun j _ => hsq (b i) (b j)))
     _ = _ := by simp only [← Finset.mul_sum, ← Finset.sum_mul, pow_two]
 
-
-
 theorem RicciFlow.deriv_scalarCurvature_le_laplacian_add_sq_of_ricci_nonneg
     (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)
@@ -79,8 +65,6 @@ theorem RicciFlow.deriv_scalarCurvature_le_laplacian_add_sq_of_ricci_nonneg
   have hnorm := (F.connection t).ricciNormSq_le_scalarCurvature_sq_of_ricci_nonneg
     (hC.tensor_calculus n M (F.metric t) (F.connection t)) x hRic
   linarith
-
-
 
 theorem RicciFlow.deriv_scalarCurvature_le_laplacian_add_sq_of_nonnegative_curvatureOperator
     [T2Space M] (hC : RicciFlowCurvatureTheory.{u}) {J : Set ℝ} (F : RicciFlow n M J)

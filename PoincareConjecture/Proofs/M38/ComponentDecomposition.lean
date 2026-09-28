@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.Components
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,8 +7,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_component_decomposition (S : GeneralizedSliceCarrier.{u})
     (hS : IsCompact (Set.univ : Set S.carrier)) :
@@ -58,8 +48,6 @@ theorem exists_component_decomposition (S : GeneralizedSliceCarrier.{u})
       pairwise_disjoint := hdisjoint
       cover := hcover }
   exact ⟨_, r, D, fun _ => rfl⟩
-
-
 
 theorem identity_conclusion (S : GeneralizedSliceCarrier.{u})
     (hS : IsCompact (Set.univ : Set S.carrier)) :

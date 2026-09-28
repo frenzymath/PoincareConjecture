@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Derivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Hessian.Commutation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -33,7 +24,6 @@ private lemma contMDiffAt_inner_fields
   have h := ((g.contMDiff x).clm_bundle_apply hV).clm_bundle_apply hW
   simpa using (contMDiffAt_totalSpace.mp h).2
 
-
 theorem mvfderiv_normSq (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x} {x : M}
     (hV : MDifferentiableAt (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) (T% V) x)
@@ -44,7 +34,6 @@ theorem mvfderiv_normSq (D : LeviCivitaData g)
   simp only [covariantDerivativeOnFields, FiberBundle.extend_apply_self] at h
   rw [g.symm x (V x)] at h
   linarith
-
 
 theorem hessianOnFields_normSq (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}
@@ -75,7 +64,6 @@ theorem hessianOnFields_normSq (D : LeviCivitaData g)
   simp only [covariantDerivativeOnFields, map_sub, sub_apply]
   ring
 
-
 theorem hessian_normSq (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}
     (hV : ContMDiff (𝓡 n) ((𝓡 n).prod 𝓘(ℝ, EuclideanSpace ℝ (Fin n))) ∞ (T% V))
@@ -91,7 +79,6 @@ theorem hessian_normSq (D : LeviCivitaData g)
   rw [D.hessianOnFields_normSq hV _ _
     (FiberBundle.contMDiffAt_extend (𝓡 n) (EuclideanSpace ℝ (Fin n)) v)]
   simp only [FiberBundle.extend_apply_self]
-
 
 theorem laplacian_normSq (D : LeviCivitaData g)
     {V : (x : M) → TangentSpace (𝓡 n) x}
@@ -109,7 +96,6 @@ theorem laplacian_normSq (D : LeviCivitaData g)
   simp_rw [D.hessian_normSq hV]
   simp only [Finset.sum_add_distrib, Finset.mul_sum]
 
-
 theorem sum_hessian_sq_eq_inner_connection_gradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
     (v : TangentSpace (𝓡 n) x) :
@@ -126,7 +112,6 @@ theorem sum_hessian_sq_eq_inner_connection_gradient (D : LeviCivitaData g)
   change (inner ℝ (D.connection (D.gradient f) x v) (g.orthonormalBasis x j)) ^ 2 = _
   rw [real_inner_comm (g.orthonormalBasis x j), pow_two]
 
-
 theorem laplacian_gradient_normSq (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
     let b := g.orthonormalBasis x
@@ -140,7 +125,6 @@ theorem laplacian_gradient_normSq (D : LeviCivitaData g)
   rw [D.laplacian_normSq (D.contMDiff_gradient hf)]
   simp_rw [D.sum_hessian_sq_eq_inner_connection_gradient (hf x)]
 
-
 theorem laplacian_gradient_normSq_eq_third_derivative (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
     D.laplacian (fun y => g.inner y (D.gradient f y) (D.gradient f y)) x =
@@ -150,7 +134,6 @@ theorem laplacian_gradient_normSq_eq_third_derivative (D : LeviCivitaData g)
         (g.orthonormalBasis x i) (g.orthonormalBasis x j)) ^ 2 := by
   rw [D.laplacian_gradient_normSq hf]
   simp_rw [D.covariantTensorDerivative_hessian_eq hf]
-
 
 theorem sum_covariantTensorDerivative_hessian_gradient (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :
@@ -183,8 +166,6 @@ theorem sum_covariantTensorDerivative_hessian_gradient (D : LeviCivitaData g)
   simp_rw [hterm]
   rw [Finset.sum_add_distrib, D.sum_covariantTensorDerivative_hessian_eq hf]
   rfl
-
-
 
 theorem bochner_identity (D : LeviCivitaData g)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (x : M) :

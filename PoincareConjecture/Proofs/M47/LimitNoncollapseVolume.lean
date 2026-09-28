@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCylinderVolume
 import PoincareConjecture.Proofs.M47.LimitNoncollapseSqueeze
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitNoncollapse_source_ball_volume_transfer
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -41,8 +31,6 @@ theorem limitNoncollapse_source_ball_volume_transfer
   exact e.source_ball_volume_le_of_localization hU h0 hscale g o hp hV hVU hAV
     hlocal hbound
 
-
-
 theorem limitNoncollapse_theta_ninth_product {theta kappa r : ℝ}
     (htheta : 0 ≤ theta) :
     ENNReal.ofReal (theta ^ 3) *
@@ -51,8 +39,6 @@ theorem limitNoncollapse_theta_ninth_product {theta kappa r : ℝ}
   rw [← ENNReal.ofReal_mul (pow_nonneg htheta 3)]
   congr 1
   ring
-
-
 
 theorem limitNoncollapse_exact_density_of_theta_bounds
     {kappa r : ℝ} {V : ℝ≥0∞}

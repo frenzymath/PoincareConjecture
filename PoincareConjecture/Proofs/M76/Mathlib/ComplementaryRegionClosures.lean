@@ -1,21 +1,10 @@
 import Mathlib.Topology.Closure
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] {A U V : Set X}
-
-
-
 
 theorem closure_eq_compl_of_complementary_regions
     (hcover : Aᶜ = U ∪ V) (hdis : Disjoint U V) (hfront : frontier U = A) :
@@ -32,17 +21,12 @@ theorem closure_eq_compl_of_complementary_regions
     · have hx : x ∈ U ∪ V := hcover ▸ hxA
       exact Or.inl (hx.resolve_right hxV)
 
-
-
-
 theorem interior_closure_eq_of_complementary_regions
     (hcover : Aᶜ = U ∪ V) (hdis : Disjoint U V)
     (hU : frontier U = A) (hV : frontier V = A) : interior (closure U) = U := by
   have hcover' : Aᶜ = V ∪ U := hcover.trans (union_comm _ _)
   rw [closure_eq_compl_of_complementary_regions hcover hdis hU, interior_compl,
     closure_eq_compl_of_complementary_regions hcover' hdis.symm hV, compl_compl]
-
-
 
 theorem frontier_closure_eq_of_complementary_regions
     (hcover : Aᶜ = U ∪ V) (hdis : Disjoint U V)

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Curvature.StandardCapConcavity
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -470,8 +464,6 @@ private theorem plane_radial_weight (g₀ : StandardInitialMetric)
         ((inner ℝ x v) ^ 2 + (inner ℝ x w) ^ 2) := by ring
     _ = _ := by rw [← hc]; ring
 
-
-
 theorem standardCap_sectional_plane (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w : StandardCapSpace)
     (hvv : g₀.metric.inner x v v = 1) (hww : g₀.metric.inner x w w = 1)
@@ -569,9 +561,6 @@ private theorem plane_angular_log_derivative (g₀ : StandardInitialMetric)
   rw [← hs]
   field_simp [hr.ne', hs0, (radialSpeed_pos g₀ r).ne']
 
-
-
-
 theorem standardCap_sectional_positiveScaling_endpoints (g₀ : StandardInitialMetric)
     (F : StandardCapSpace → ℝ) (hFs : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
     (D' : LeviCivitaData (positiveScaling g₀.metric (fun y => Real.exp (-2 * F y))
@@ -597,8 +586,6 @@ theorem standardCap_sectional_positiveScaling_endpoints (g₀ : StandardInitialM
     plane_angular_log_derivative g₀ (norm_pos_iff.mpr hx),
     standardCap_sectional_plane g₀ hx v w hvv hww hvw]
   ring
-
-
 
 theorem standardCap_sectional_positiveScaling_pos (g₀ : StandardInitialMetric)
     (F : StandardCapSpace → ℝ) (hFs : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
@@ -632,6 +619,5 @@ theorem standardCap_sectional_positiveScaling_pos (g₀ : StandardInitialMetric)
     simpa only [hb, zero_mul, sub_zero, one_mul, zero_add] using hT
   · exact add_pos_of_pos_of_nonneg (mul_pos (lt_of_le_of_ne hb0 (Ne.symm hb)) hR)
       (mul_nonneg (sub_nonneg.mpr hb1) hT.le)
-
 
 end PoincareConjecture.MetricSurgery

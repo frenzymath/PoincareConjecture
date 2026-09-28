@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.SmoothBridge
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +14,6 @@ variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N]
-
-
-
-
 
 structure ConeAnnulusTransportData
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} where

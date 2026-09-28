@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.PairedCo
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Crossings.SelectedChartStars
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcTubeModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology
 
@@ -20,8 +11,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
 
 structure OrdinaryIntervalMarkedModel {X ι : Type*} [TopologicalSpace X]
     {e : ι → OpenPartialHomeomorph X V3} {f : V2 → X} {R : Set X}
@@ -99,7 +88,6 @@ structure OrdinaryIntervalMarkedModel {X ι : Type*} [TopologicalSpace X]
     ∃ y : f '' old.pieces i,
       MapsTo (fun z ↦ (inverse z : X)) (complex.closedStar p).space (charts y).source ∧
       (complex.closedStar p).AffineOnFaces (charts y ∘ (fun z ↦ (inverse z : X)))
-
 
 theorem OrdinaryDoubleCurveModel.nonempty_interval_marked_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

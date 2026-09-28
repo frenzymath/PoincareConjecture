@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetSpatialC
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -25,10 +16,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem m63CurvatureJetSquared_bound_of_finite_dissipation [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

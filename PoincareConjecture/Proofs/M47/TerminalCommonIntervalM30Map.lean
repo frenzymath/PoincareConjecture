@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckSpatialMap
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -75,13 +67,10 @@ private theorem exists_terminal_map (n : ℕ) :
       (G.exhaustion.space_open n) 0 h0)
   exact ⟨f, hsource, hf, hi, fun _ => ⟨hmap, hinv⟩⟩
 
-
-
 noncomputable def terminalCommonInterval_m30TerminalMap (n : ℕ) :
     OpenPartialHomeomorph G.limit.sliceCarrier.carrier
       ((V.flow (G.subsequence n)).slice (V.base (G.subsequence n)).1).carrier :=
   (exists_terminal_map G n).choose
-
 
 theorem terminalCommonInterval_m30_terminal_source (n : ℕ) :
     let f := terminalCommonInterval_m30TerminalMap G n
@@ -90,8 +79,6 @@ theorem terminalCommonInterval_m30_terminal_source (n : ℕ) :
       ContMDiffOn (𝓡 3) (𝓡 3) ∞ f.symm f.target := by
   have h := (exists_terminal_map G n).choose_spec
   exact ⟨h.1, h.2.1, h.2.2.1⟩
-
-
 
 theorem terminalCommonInterval_m30_terminal_maps
     (n : ℕ) (h0 : (0 : ℝ) ∈ Icc (-G.exhaustion.time n) 0) :
@@ -108,7 +95,6 @@ theorem terminalCommonInterval_m30_terminal_maps
         (G.embedding n).inverse 0 h0⟩ :=
   (exists_terminal_map G n).choose_spec.2.2.2 h0
 
-
 theorem terminalCommonInterval_m30_terminal_base (n : ℕ) :
     terminalCommonInterval_m30TerminalMap G n G.limit.base = (V.base (G.subsequence n)).2 := by
   have h0 : (0 : ℝ) ∈ Icc (-G.exhaustion.time n) 0 :=
@@ -118,7 +104,6 @@ theorem terminalCommonInterval_m30_terminal_base (n : ℕ) :
       ((V.flow (G.subsequence n)).slice t).carrier) =>
       (⟨z.1, z.2 G.limit.base⟩ : (V.flow (G.subsequence n)).point)) hmap
   exact eq_of_heq (Sigma.mk.inj (hp.trans (G.base_preserving n h0))).2
-
 
 theorem terminalCommonInterval_m30_terminal_inner
     (n : ℕ) (h0 : (0 : ℝ) ∈ Icc (-G.exhaustion.time n) 0)

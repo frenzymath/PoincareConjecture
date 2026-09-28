@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -18,10 +8,6 @@ open Set unitInterval
 namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 structure PLCarrierMotion (C P : Set E) (ε : ℝ) where
   map : I → E ≃ₜ E
@@ -35,8 +21,6 @@ structure PLCarrierMotion (C P : Set E) (ε : ℝ) where
   small : ∀ t x, dist (map t x) x < ε
 
 namespace PLCarrierMotion
-
-
 
 noncomputable def refl (J : SimplicialComplex ℝ E) (hJ : J.faces.Finite)
     (P : Set E) {ε : ℝ} (hε : 0 < ε) : PLCarrierMotion J.space P ε where
@@ -54,10 +38,6 @@ noncomputable def refl (J : SimplicialComplex ℝ E) (hJ : J.faces.Finite)
   small _ x := by
     change dist x x < ε
     simpa only [dist_self] using hε
-
-
-
-
 
 noncomputable def trans [FiniteDimensional ℝ E]
     {C P : Set E} {ε δ : ℝ}

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AddCirclePLCutoff
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineProd
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
 
 theorem LocallyPiecewiseAffineOn.max {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -45,14 +33,8 @@ end Geometry
 
 namespace PLBandCutoff
 
-
-
 noncomputable def unionWidth {X Y : Type*} (w : X → ℝ) (v : Y → ℝ) (z : X × Y) : ℝ :=
   max (w z.1) (v z.2)
-
-
-
-
 
 theorem unionWidth_properties {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (w : X → ℝ) (v : Y → ℝ) (hcw : Continuous w) (hcv : Continuous v)
@@ -77,9 +59,6 @@ theorem unionWidth_properties {X Y : Type*} [TopologicalSpace X] [TopologicalSpa
         (congrArg (fun r => max r (v z.2)) (hwk z.1 hx.1)).trans (max_eq_left (hv z.2).2))
     · exact (show max (w z.1) (v z.2) = 1 from
         (congrArg (max (w z.1)) (hvl z.2 hy.2)).trans (max_eq_right (hw z.1).2))
-
-
-
 
 theorem locallyPiecewiseAffineOn_unionWidth
     {E F X Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

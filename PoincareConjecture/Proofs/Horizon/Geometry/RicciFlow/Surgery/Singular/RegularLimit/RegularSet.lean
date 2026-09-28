@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Reference
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.ScalarComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 theorem mem_regularLimitSet_of_scalar_tail (H : SingularTimeAssumptions F T M)
     {x : M} {s B : ℝ} (hs : H.reference.tMinus ≤ s) (hsT : s < T)
     (hbound : ∀ t ∈ Ico s T, H.reference.scalar t x ≤ B) :
@@ -36,8 +25,6 @@ theorem mem_regularLimitSet_of_scalar_tail (H : SingularTimeAssumptions F T M)
   have hst : s < t := (le_max_right a s).trans_lt htlo
   exact ⟨t, (le_max_left a s).trans_lt htlo, ⟨hs.trans hst.le, hthi⟩,
     hbound t ⟨hst.le, hthi⟩⟩
-
-
 
 theorem exists_open_uniform_scalar_tail (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {x : M} (hx : x ∈ H.reference.regularLimitSet) :
@@ -73,14 +60,12 @@ theorem exists_open_uniform_scalar_tail (H : SingularTimeAssumptions F T M)
   intro y hy
   exact H.mem_regularLimitSet_of_scalar_tail hsref.le hs.2 (fun t ht => hbound t ht y hy)
 
-
 theorem regularLimitSet_isOpen (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : IsOpen H.reference.regularLimitSet := by
   rw [isOpen_iff_mem_nhds]
   intro x hx
   obtain ⟨s, B, U, _, _, _, hU, hxU, hsub, _⟩ := H.exists_open_uniform_scalar_tail P04 hx
   exact mem_of_superset (hU.mem_nhds hxU) hsub
-
 
 theorem regularLimitSet_eventually_bounded (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :

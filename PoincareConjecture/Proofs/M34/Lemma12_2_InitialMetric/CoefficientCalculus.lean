@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.Connection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M34
-
-
 
 theorem capAngularCoefficient_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     HasDerivAt (capAngularCoefficient a)
@@ -30,8 +18,6 @@ theorem capAngularCoefficient_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
   simp only [Pi.div_apply, id_eq, Nat.reduceSub, pow_one]
   field_simp
   ring
-
-
 
 theorem capRadialCoefficient_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     HasDerivAt (capRadialCoefficient a)
@@ -48,8 +34,6 @@ theorem capRadialCoefficient_hasDerivAt (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
   field_simp
   ring
 
-
-
 theorem capChristoffelA_eq (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :
     capChristoffelA a r = capSlope a r / (r * capProfile a r) - 1 / r ^ 2 := by
@@ -57,16 +41,12 @@ theorem capChristoffelA_eq (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     capAngularCoefficient, if_neg hr]
   field_simp
 
-
-
 theorem capChristoffelB_eq (a : ℝ) {r : ℝ} (hr : r ≠ 0) :
     capChristoffelB a r = 1 / r ^ 2 - capProfile a r * capSlope a r / r ^ 3 := by
   rw [capChristoffelB, (capAngularCoefficient_hasDerivAt a hr).deriv,
     capRadialCoefficient, if_neg hr, capAngularCoefficient, if_neg hr]
   field_simp
   ring
-
-
 
 theorem capChristoffelC_eq (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :
@@ -76,8 +56,6 @@ theorem capChristoffelC_eq (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     capRadialCoefficient, if_neg hr, capAngularCoefficient, if_neg hr]
   field_simp
   ring
-
-
 
 theorem capChristoffel_radial_identity (a : ℝ) {r : ℝ} (hr : r ≠ 0)
     (hf : capProfile a r ≠ 0) :

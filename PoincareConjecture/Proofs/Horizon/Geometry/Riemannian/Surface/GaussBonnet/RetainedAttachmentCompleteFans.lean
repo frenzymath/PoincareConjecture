@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.RetainedBandCoreFans
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Band.EndpointAngles
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,7 +20,6 @@ variable {S : Type*} [TopologicalSpace S] [T2Space S]
   (T : RetainedCoordinateTriangulation (M := S))
 
 omit [T2Space S] in
-
 
 theorem cap_band_core_union_mem_nhds_of_collar_germ
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -51,7 +43,6 @@ theorem cap_band_core_union_mem_nhds_of_collar_germ
   · exact Or.inr h
 
 set_option maxHeartbeats 800000 in
-
 
 theorem vertex_contribution_eq_cap_add_band_add_core
     (g : RiemannianMetric 2 S)
@@ -105,7 +96,6 @@ theorem vertex_contribution_eq_cap_add_band_add_core
 
 set_option maxHeartbeats 800000 in
 
-
 theorem first_attachment_band_core_contribution (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
     let q := (chartAt Plane (T.chart p.1.1 : S)).symm
@@ -139,7 +129,6 @@ theorem first_attachment_band_core_contribution (g : RiemannianMetric 2 S)
 
 set_option maxHeartbeats 800000 in
 
-
 theorem last_attachment_band_core_contribution (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1) :
     let q := (chartAt Plane (T.chart p.1.1 : S)).symm
@@ -171,7 +160,6 @@ theorem last_attachment_band_core_contribution (g : RiemannianMetric 2 S)
   simpa only [hc0] using hfan
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_at_first_upper_attachment (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1)
@@ -205,7 +193,6 @@ theorem canonical_vertex_fan_at_first_upper_attachment (g : RiemannianMetric 2 S
   ring
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_at_last_upper_attachment (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (hr : T.length < 1)

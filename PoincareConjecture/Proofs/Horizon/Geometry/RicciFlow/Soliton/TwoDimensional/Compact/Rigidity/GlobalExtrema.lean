@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.Degenerate
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +11,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type*} [TopologicalSpace M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
 
 theorem gradient_normSq_eq_at_critical_point (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -36,8 +26,6 @@ theorem gradient_normSq_eq_at_critical_point (D : LeviCivitaData g)
   simp only [map_zero, add_zero] at he
   rw [D.scalar_eq_exp_potential_difference_of_surface_soliton hf hsol p x] at he
   nlinarith
-
-
 
 theorem isMinOn_of_critical_scalar_le (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)
@@ -64,8 +52,6 @@ theorem isMinOn_of_critical_scalar_le (D : LeviCivitaData g)
     have hsign := mul_nonpos_of_nonneg_of_nonpos (sub_nonneg.mpr hbound) hneg.le
     nlinarith
 
-
-
 theorem isMaxOn_of_critical_scalar_ge (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)
     (hf : ContMDiff (𝓡 2) 𝓘(ℝ, ℝ) 2 f)
@@ -86,8 +72,6 @@ theorem isMaxOn_of_critical_scalar_ge (D : LeviCivitaData g)
   have hexp := mul_lt_mul_of_pos_left (Real.add_one_lt_exp hpos.ne') hR
   have hsign := mul_nonpos_of_nonpos_of_nonneg (sub_nonpos.mpr hbound) hpos.le
   nlinarith
-
-
 
 theorem isMinOn_or_isMaxOn_of_critical_point (D : LeviCivitaData g)
     {f : M → ℝ} {lambda : ℝ} (hlambda : 0 < lambda)

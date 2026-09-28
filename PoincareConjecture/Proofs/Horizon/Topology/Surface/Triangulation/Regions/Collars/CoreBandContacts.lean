@@ -1,12 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.Interfaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.OuterFaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CapGluing
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -97,7 +91,6 @@ variable {D : FiniteChartRegionDecomposition (M := M)} {e : D.EdgeIndex} {R : D.
   {P : TransverseGraphCuts G.lower (G.parameter a) (G.parameter b) ua wa ub wb}
   {δ ra rb : ℝ} (B : G.FixedStripBandFaces P δ ra rb)
 
-
 noncomputable def firstUpperChartBasis : AffineBasis (Fin 3) ℝ Plane :=
   affineBasisOfTriangle
     (fun j => (collarParameterEquiv.trans G.frame.symm) (B.faces.firstUpperCornerBasis j))
@@ -147,7 +140,6 @@ theorem firstUpperChartSides_subset_parent :
 
 omit [T2Space M] in
 
-
 theorem core_first_upper_contact_subset_corner_sides (T : TriangleMesh)
     (hinterior : Disjoint (C '' T.toPlaneComplex.support) (interior B.faces.carrier))
     (hlower : Disjoint (C '' T.toPlaneComplex.support) B.faces.lowerArc) :
@@ -165,8 +157,6 @@ theorem core_first_upper_contact_subset_corner_sides (T : TriangleMesh)
   refine ⟨q, hq, ?_⟩
   rw [← hqy]
   exact (C.left_inv (B.faces.corner_sides_subset_source hq).2).symm
-
-
 
 theorem exists_core_refinement_first_upper_contacts (T : TriangleMesh)
     (hinterior : Disjoint (C '' T.toPlaneComplex.support) (interior B.faces.carrier))

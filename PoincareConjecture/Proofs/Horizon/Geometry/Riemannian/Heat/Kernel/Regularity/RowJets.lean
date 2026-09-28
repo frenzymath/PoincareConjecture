@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.SpatialJets
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.KernelJets
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -45,8 +38,6 @@ theorem exists_evaluationRow_coordinate_jet_bound
   exact norm_iteratedFDeriv_evaluationRow_coordinate_le D S e he k m t (ha.trans_le hat)
     (hVs (subset_closure (hKV hx))) (hVΩ (mem_image_of_mem e (hKV hx))) hC.le
     (fun f => hbound S hVΩ hat f x hx)
-
-
 
 theorem exists_evaluationRow_coordinate_jets_bound
     (D : LeviCivitaData g)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.VaryingScalar
 import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,9 +25,6 @@ variable {M : Type v} [TopologicalSpace M]
   [∀ k, IsManifold (𝓡 3) ∞ (X k)] {ι : Type w} [Finite ι]
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_eventual_atlas_bounds
     (g : RiemannianMetric 3 M) (h : ∀ k, RiemannianMetric 3 (X k))
@@ -158,9 +145,6 @@ section Source
 variable {ι : Type w} {X : ι → Type u} [∀ i, TopologicalSpace (X i)]
   [∀ i, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (X i)]
   [∀ i, IsManifold (𝓡 3) ∞ (X i)] {h : ∀ i, RiemannianMetric 3 (X i)}
-
-
-
 
 theorem source_coefficient_jets
     (N : ∀ i, EpsilonNeck (h i)) {epsilon : ℝ}

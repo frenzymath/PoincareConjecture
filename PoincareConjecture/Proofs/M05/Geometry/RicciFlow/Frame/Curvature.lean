@@ -1,17 +1,9 @@
-
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Analysis.Calculus.Deriv.Prod
 import Mathlib.Analysis.Calculus.Deriv.Mul
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Ring
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -117,8 +109,6 @@ private lemma hasDerivWithinAt_four_moving
     (fun d => by simpa only [hL, e3] using (h3 d).differentiableWithinAt)
     hz (by simpa only [hL, e3] using h3 (z t))
 
-
-
 noncomputable def ricciSharp (D : LeviCivitaData g) (x : M)
     (v : TangentSpace (𝓡 n) x) : TangentSpace (𝓡 n) x :=
   let b := g.orthonormalBasis x
@@ -150,10 +140,6 @@ private lemma curvatureReaction_add_ricciSharp
   simp only [Finset.sum_add_distrib]
   ring
 
-
-
-
-
 theorem curvatureReaction_add_ricciSharp_eq
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
     (u v w z : TangentSpace (𝓡 n) x) :
@@ -165,11 +151,6 @@ theorem curvatureReaction_add_ricciSharp_eq
         2 * (D.curvatureB x u v w z - D.curvatureB x u v z w -
           D.curvatureB x u z v w + D.curvatureB x u w v z) := by
   exact curvatureReaction_add_ricciSharp D hD x u v w z
-
-
-
-
-
 
 theorem hasDerivWithinAt_curvature_moving_inputs
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)

@@ -3,8 +3,6 @@ import Mathlib.Analysis.Normed.Operator.Banach
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -13,8 +11,6 @@ open Set Function Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 def minimumCapHeight (z : Real) : Real :=
   if hz : 0 ≤ z ∧ z < 1 then Classical.choose (exists_unique_minimumCap_height hz.1 hz.2)
@@ -44,7 +40,6 @@ theorem minimumCapHeight_pos {z : Real} (hz : 0 < z) (hz1 : z < 1) :
   intro hu0
   rw [← hu0, minimumCapSquaredRadius_eq_self (by norm_num : (0 : Real) ≤ 1 / 4)] at heq
   exact hz.ne heq
-
 
 theorem contDiffAt_minimumCapHeight {z : Real} (hz1 : z < 1) :
     ContDiffAt Real ∞ minimumCapHeight z := by

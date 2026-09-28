@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeFlux
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M65Interior
-
-
 
 theorem coneAngularFlux_AC {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
@@ -40,9 +28,6 @@ theorem coneAngularFlux_AC {g : EuclideanSpace ℝ (Fin 3) → ℝ}
   exact (hτ.contDiffOn.absolutelyContinuousOnInterval.fun_mul hcone).fun_mul
     (ht.comp hp).contDiffOn.absolutelyContinuousOnInterval
 
-
-
-
 theorem coneAngularFlux_integral_deriv {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     {v d : ℝ → EuclideanSpace ℝ (Fin 3)} {v0 : EuclideanSpace ℝ (Fin 3)}
     {r ρ s : ℝ} (hr : 0 < r) (hρ : 0 < ρ)
@@ -62,10 +47,6 @@ theorem coneAngularFlux_integral_deriv {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     hs x test ht i).integral_deriv_eq_sub]
   simp [coneAngularFlux, coneCoordinates, hper, polarPlane, Proofs.M58.angularPoint,
     Proofs.M58.angularVector]
-
-
-
-
 
 theorem coneRadialFlux_integral_deriv {g : EuclideanSpace ℝ (Fin 3) → ℝ}
     (v : ℝ → EuclideanSpace ℝ (Fin 3)) {v0 : EuclideanSpace ℝ (Fin 3)}

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_BoundaryGeometry
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,9 +8,6 @@ open Set MeasureTheory
 open scoped Topology intervalIntegral
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_exists_equal_integral_partition
     {f : ℝ → ℝ} (hf : Continuous f) (hpos : ∀ t, 0 < f t)
@@ -75,8 +60,6 @@ theorem m64Intrinsic_exists_equal_integral_partition
   change F (p k) + (∫ x in p k..p (k + 1), f x) = F (p (k + 1)) at hadd
   change (∫ x in p k..p (k + 1), f x) = F P / n
   linarith
-
-
 
 theorem m64Intrinsic_exists_equal_boundary_length_partition
     (N : IntrinsicAnnulus) {radius : ℝ} (hradius : radius ≠ 0)

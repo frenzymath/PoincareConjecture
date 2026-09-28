@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeTensorDerivatives
 import PoincareConjecture.Statements.M14GeneralizedLGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +20,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {e : MovingSpacetimeGauge G.spacetime J C}
   {g : MovingSpacetimeGaugeGeometry e}
 
-
-
 theorem movingGauge_spacetimeDifferential (t : J.Point) (x : C) (f : G.Point → ℝ)
     (hf : ContMDiffAt (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞ f (e.toSpacetime (t, x)))
     (v : TangentSpace (𝓡 n) x) :
@@ -43,8 +33,6 @@ theorem movingGauge_spacetimeDifferential (t : J.Point) (x : C) (f : G.Point →
   rw [mvfderiv_comp_apply x (hf.mdifferentiableAt (by simp))
     (he.mdifferentiable (by simp) x), ← g.spatialTangentEquiv_eq]
 
-
-
 theorem sliceHessian_eq_reducedLengthHessianPairing {t T τ : ℝ} (ht : t = T - τ)
     (q : G.Point) (hq : G.spacetime.timeFunction q = t) (f : G.Point → ℝ)
     (v w : G.Horizontal q) :
@@ -54,8 +42,6 @@ theorem sliceHessian_eq_reducedLengthHessianPairing {t T τ : ℝ} (ht : t = T -
       M14ReducedLengthHessianPairing G ⟨q, hq.trans ht⟩ f v w := by
   subst t
   rfl
-
-
 
 theorem movingGauge_spacetimeHessian {c : MetricLeviCivitaFamily g.metric}
     (H : MovingGaugeCalculus G.leafwise g c) (t : J.Point) (x : C)

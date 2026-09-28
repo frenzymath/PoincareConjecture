@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Classification.UniversalCover
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Product
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem calibrated_sphereLineFlowCertificate_of_terminal_null [SimplyConnectedSpace M]
     (P : AncientKappaClassificationServices.{u})
@@ -68,7 +56,6 @@ theorem calibrated_sphereLineFlowCertificate_of_terminal_null [SimplyConnectedSp
   rw [he t ht, hd, hd]
   exact congrArg (fun s : ℝ => s + a.2 * b.2) (hq t ht z.1 a.1 b.1)
 
-
 theorem sphereLineFlowCertificate_of_terminal_null [SimplyConnectedSpace M]
     (P : AncientKappaClassificationServices.{u})
     (K : AncientKappaSolution 3 M) (x : M) (v w : TangentSpace (𝓡 3) x)
@@ -80,8 +67,6 @@ theorem sphereLineFlowCertificate_of_terminal_null [SimplyConnectedSpace M]
   obtain ⟨_, _, C, _⟩ :=
     K.calibrated_sphereLineFlowCertificate_of_terminal_null P x v w hv hw hvw hzero
   exact ⟨C⟩
-
-
 
 theorem exists_calibrated_sphereLine_cover_of_terminal_null
     (P : AncientKappaClassificationServices.{u})
@@ -135,7 +120,6 @@ theorem exists_calibrated_sphereLine_cover_of_terminal_null
     (mfderiv _ _ p (C.identification z) (mfderiv _ _ C.identification z b)) = _
   rw [← hmetric]
   exact C.metric_transport t ht z a b
-
 
 theorem exists_sphereLine_cover_of_terminal_null
     (P : AncientKappaClassificationServices.{u})

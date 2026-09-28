@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicCurvatureJetsForcing
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,13 +21,10 @@ variable (P : RicciFlowCurvatureTheory.{0}) {g₀ : StandardInitialMetric}
 
 local notation "V" => EuclideanSpace ℝ (Fin 5)
 
-
 noncomputable def rawIntrinsicGaugeDrift (t : ℝ) : V → V :=
   smoothGaugeDrift
     (fun r => Real.log (axisDivision (rawWarpingRadius P G hrotation t) r))
     (axisDivision (rawRadialVelocity P G hrotation t))
-
-
 
 noncomputable def rawIntrinsicGaugeForcing (t₀ t : ℝ) : V → ℝ → ℝ :=
   smoothGaugeForcing
@@ -56,8 +44,6 @@ theorem rawIntrinsicGaugeForcing_contDiff {t₀ t : ℝ}
     (axisDivision_contDiff (intrinsicRadialVelocity_contDiff _ _ _))
     (axisDivision_even_of_odd (intrinsicRadialVelocity_contDiff _ _ _)
       (intrinsicRadialVelocity_odd _ _ _))
-
-
 
 theorem raw_intrinsic_gauge_coefficient_constants
     (H : StandardCapEstimate g₀) {T t₀ eta : ℝ}
@@ -93,8 +79,6 @@ theorem raw_intrinsic_gauge_coefficient_constants
       (show (x, a) ∈ S from ⟨mem_univ _, abs_le.mp ha⟩)
     simpa only [Prod.mk_sub_mk, sub_self, Prod.norm_def, norm_zero,
       Real.norm_eq_abs, max_eq_right (abs_nonneg (a - c))] using h
-
-
 
 theorem rawIntrinsicGaugeDrift_equivariant (Q : V ≃ₗᵢ[ℝ] V) (t : ℝ) (x : V) :
     rawIntrinsicGaugeDrift P G hrotation t (Q x) =

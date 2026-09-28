@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M04.ShiCarrier
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,9 +49,6 @@ local notation "Q" => (fun k => GeneralizedBlowupSequence.scale
   (G.subsequence (sigma (eta k))))
 local notation "c" => (-H.toReal)
 local notation "g" => (G.limit.flow.metric 0)
-
-
-
 
 theorem limitFinite_eventually_retained_terminal_ball
     (hsigma : StrictMono sigma) (heta : StrictMono eta)

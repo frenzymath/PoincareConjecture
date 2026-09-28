@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.AffineFaceCar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.EndpointCappedTube
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.TubeTriangleFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Module
 
@@ -21,9 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_original_sphere_system_component_tubes_with_other_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -255,8 +244,6 @@ theorem exists_original_sphere_system_component_tubes_with_other_faces
     exact (hNiother j hji).mono_left (Set.image_mono
       (fun x hx => (hUW (hTU hx).2).2))
 
-
-
 theorem exists_original_sphere_system_component_tubes
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [DecidableEq E] [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -394,8 +381,6 @@ theorem exists_original_sphere_system_component_tubes
       hphysical, hPhiQ, hPhiout, hPhiPL, hPhiinv, hPhiS, hW, hDW, ?_, hrest⟩, htubes⟩
   intro a ha ha2
   exact hfacesW a ha (by omega) (by intro h; subst a; omega)
-
-
 
 theorem exists_original_sphere_system_returning_component_tubes_with_other_faces
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -600,8 +585,6 @@ theorem exists_original_sphere_system_returning_component_tubes_with_other_faces
       hRi, hFi⟩
   · exact fun x hx => ⟨(hT hx).1, (hT hx).2.1.1, (hT hx).2.2⟩
   · exact fun F hF z hzsheet hz => hF _ (hends z hzsheet hz)
-
-
 
 theorem exists_original_sphere_system_returning_component_tubes
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

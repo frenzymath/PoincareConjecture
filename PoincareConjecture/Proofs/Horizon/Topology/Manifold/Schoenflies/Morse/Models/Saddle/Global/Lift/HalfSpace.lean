@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Lift.Parametric
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
 noncomputable section
 set_option autoImplicit false
 open Set
@@ -11,8 +9,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
-
-
 
 theorem exists_parametric_lift_fixed_below
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -47,7 +43,6 @@ theorem exists_parametric_lift_fixed_below
       rw [Real.smoothTransition.one_of_one_le
         ((le_div_iff₀ (sub_pos.mpr hab)).mpr (by linarith)), one_mul]
     rw [hH, hτone]
-
 
 theorem exists_parametric_lift_fixed_above
     (Φ : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

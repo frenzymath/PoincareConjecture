@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerRescaledEst
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterface
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ noncomputable section
 
 namespace PoincareConjecture.M60
 
-
-
 theorem suRoundFactor_smooth_pos :
     ContDiff ℝ ∞ suAlphaRoundFactor ∧ ∀ z, 0 < suAlphaRoundFactor z := by
   constructor
@@ -30,8 +20,6 @@ theorem suRoundFactor_smooth_pos :
   · intro z
     unfold suAlphaRoundFactor
     positivity
-
-
 
 theorem suRoundFactor_fderiv (z v : LoopPlane) :
     fderiv ℝ suAlphaRoundFactor z v =
@@ -47,8 +35,6 @@ theorem suRoundFactor_fderiv (z v : LoopPlane) :
     nsmul_eq_mul, Nat.reduceSub, pow_one]
   field_simp
   ring
-
-
 
 theorem suRoundFactor_second (z v : LoopPlane) :
     fderiv ℝ (fun y => fderiv ℝ suAlphaRoundFactor y v) z v =
@@ -71,8 +57,6 @@ theorem suRoundFactor_second (z v : LoopPlane) :
   field_simp
   ring
 
-
-
 theorem suRoundFactor_laplacian (z : LoopPlane) :
     (∑ i : Fin 2, fderiv ℝ (fun y => fderiv ℝ suAlphaRoundFactor y
       (EuclideanSpace.basisFun (Fin 2) ℝ i)) z (EuclideanSpace.basisFun (Fin 2) ℝ i)) =
@@ -82,9 +66,6 @@ theorem suRoundFactor_laplacian (z : LoopPlane) :
   rw [EuclideanSpace.real_norm_sq_eq]
   simp only [Fin.sum_univ_two]
   ring
-
-
-
 
 theorem suRoundFactor_rescaled_bounds (a : LoopPlane) {s R : ℝ}
     (ha : ‖a‖ ≤ 1) (hs : 0 < s) (hs1 : s ≤ 1) (hR : R ≤ 1) :

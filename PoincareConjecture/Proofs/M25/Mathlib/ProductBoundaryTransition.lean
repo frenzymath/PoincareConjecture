@@ -5,16 +5,6 @@ import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Topology
@@ -29,10 +19,7 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {M : Type w'} [TopologicalSpace M] [ChartedSpace H' M]
   [IsManifold J ∞ M]
 
-
 set_option linter.unusedSectionVars false in
-
-
 
 theorem exists_positive_scalar_boundary_transition
     (e f : OpenPartialHomeomorph (K × ℝ) M)

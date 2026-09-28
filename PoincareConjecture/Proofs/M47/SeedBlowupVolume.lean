@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.SeedBlowupVolumeCylinder
 import PoincareConjecture.Proofs.M33.HistoryMetric
 import PoincareConjecture.Definitions.Ch16.NoncollapseInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem seed_blowup_terminal_volume {F : SurgeryFlowData.{u}}
     {W : M33RegularHistoryWindow F} (H : M33RegularHistoryData W)
@@ -49,8 +39,6 @@ theorem seed_blowup_terminal_volume {F : SurgeryFlowData.{u}}
   rw [H.ball_volume_of_subset t ht x _ regular]
   simpa only [div_pow, mul_div_assoc] using
     volume t htJ htF (H.history.forward t ht x) trivial _ hr hsmall test based curvature
-
-
 
 theorem exists_seed_blowup_terminal_volume_constants {k tau B : ℝ}
     (hk : 0 < k) (htau : 0 < tau) (hB : 0 ≤ B) :

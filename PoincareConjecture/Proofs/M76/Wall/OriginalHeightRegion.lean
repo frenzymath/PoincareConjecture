@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.SelectedStarNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -18,10 +8,6 @@ open Set Geometry Geometry.SimplicialComplex
 namespace PoincareConjecture.M76
 
 open Classical in
-
-
-
-
 
 theorem original_exterior_height_region
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

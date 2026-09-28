@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompetitors
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -65,12 +55,10 @@ theorem openSubtype_isLocalDiffeomorph (U : TopologicalSpace.Opens M) :
   · change x ∈ e.source
     simp only [e, TopologicalSpace.Opens.openPartialHomeomorphSubtypeCoe_source, mem_univ]
 
-
 def intrinsicOpenMetric (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M) :
     RiemannianMetric 3 U :=
   g.pullbackOfLocalDiffeomorph (Subtype.val : U → M)
     (openSubtype_isLocalDiffeomorph U)
-
 
 @[simp] theorem intrinsicOpenMetric_inner (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) (x : U) (v w : TangentSpace (𝓡 3) x) :
@@ -78,8 +66,6 @@ def intrinsicOpenMetric (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M
       g.inner (x : M)
         (mfderiv (𝓡 3) (𝓡 3) (Subtype.val : U → M) x v)
         (mfderiv (𝓡 3) (𝓡 3) (Subtype.val : U → M) x w) := rfl
-
-
 
 theorem intrinsicOpenMetric_pathELength (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {η : ℝ → U} {a b : ℝ} (hab : a ≤ b)
@@ -117,9 +103,6 @@ theorem intrinsicOpenMetric_pathELength (g : RiemannianMetric 3 M)
   rw [← hnormU, ← hnormM]
   rfl
 
-
-
-
 theorem exists_intrinsicOpenMetric_path_lift (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 3) 1 γ (Icc a b))
@@ -141,8 +124,6 @@ theorem exists_intrinsicOpenMetric_path_lift (g : RiemannianMetric 3 M)
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact Manifold.pathELength_congr heq
-
-
 
 theorem intrinsicOpenMetric_edist (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) (p q : U) :

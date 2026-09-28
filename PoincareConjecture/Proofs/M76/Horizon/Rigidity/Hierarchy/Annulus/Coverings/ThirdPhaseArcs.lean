@@ -3,14 +3,6 @@ import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Maps.CoordinateHomotopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

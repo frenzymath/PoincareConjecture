@@ -9,14 +9,6 @@ import PoincareConjecture.Statements.M17BlowupSetup
 import PoincareConjecture.Statements.M20ThreeDimensionalClassification
 import PoincareConjecture.Statements.M21AsymptoticVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,12 +16,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 structure M22UniversalNoncollapsingPredecessors (_n : ℕ) : Prop where
   tensor_calculus :
@@ -167,10 +153,6 @@ structure M22UniversalNoncollapsingPredecessors (_n : ℕ) : Prop where
       ∃ L : AncientAsymptoticSolitonLimitData S,
         ThreeDimensionalAsymptoticClassificationCertificate S L
   volume_ratio : ∀ d : ℕ, AsymptoticVolumeRatioTheory.{u} d
-
-
-
-
 
 structure UniversalNoncollapsingConclusion (n : ℕ) where
   data : UniversalNoncollapsingData

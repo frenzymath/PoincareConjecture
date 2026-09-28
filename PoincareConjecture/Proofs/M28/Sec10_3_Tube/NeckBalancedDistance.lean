@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckFrontierDistance
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -85,8 +76,6 @@ private theorem neck_center_edist_upper_closure (N : EpsilonNeck g) {x : M}
         4 * standardSpherePathCeiling) * N.scale)} :=
     isClosed_le (continuous_const.edist continuous_id) continuous_const
   exact (closure_minimal (fun _ hy => neck_center_edist_upper N hy) hclosed) hx
-
-
 
 theorem exists_neck_frontier_distance_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

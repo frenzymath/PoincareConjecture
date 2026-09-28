@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOrderedSubdivision
 import PoincareConjecture.Proofs.M02.Topology.IntegralChainCoordinates
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Curvature.Recurrence
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +37,6 @@ theorem abs_coordinateCurvatureComponent_le (D : LeviCivitaData g)
       _ = _ := by simp
   exact heval.trans (mul_le_mul hcurv hprod
     (Finset.prod_nonneg fun _ _ => Real.sqrt_nonneg _) hK)
-
-
 
 theorem norm_iteratedFDeriv_coordinateCurvatureComponent_succ_le
     (D : LeviCivitaData g)

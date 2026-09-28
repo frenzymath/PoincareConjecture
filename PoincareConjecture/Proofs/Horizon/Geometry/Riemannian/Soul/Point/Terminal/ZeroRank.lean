@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.CompleteGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.NormalChart
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eq_singleton_of_isolated_of_every_geodesic
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}
@@ -65,9 +50,6 @@ theorem eq_singleton_of_isolated_of_every_geodesic
     simpa only [mem_ball, hdt] using htδ))
   rw [heq, dist_self] at hdt
   exact htpos.ne' hdt.symm
-
-
-
 
 theorem eq_singleton_of_zero_local_span_of_every_geodesic
     (g : RiemannianMetric n M) (hcomplete : MetricComplete g) {S : Set M}

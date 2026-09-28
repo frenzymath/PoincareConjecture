@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M35.Thm12_28.TransportedVolume
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.PullbackGeodesics
 import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -50,9 +41,6 @@ variable (g : RiemannianMetric 3 V) (D : LeviCivitaData g)
   (hcomplete : MetricComplete g) (hsec : D.NonnegativeSectionalCurvature)
 
 include D hsec hrotation hcomplete
-
-
-
 
 theorem radial_ambient_ball_volume_lower (P : M35StandardCapPredecessors)
     {R m r : ℝ} (hR : 0 < R) (hm0 : 0 < m) (hr : 0 ≤ r)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Transverse.Compression
 import Mathlib.Analysis.Calculus.Deriv.Abs
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -59,7 +52,6 @@ theorem hasDerivAt_deriv_abs_determinantRoot
   have he := ((hh.div_const m).mul hd).congr_of_eventuallyEq heq
   convert! he using 1
   ring
-
 
 theorem deriv2_abs_determinantRoot_le_of_riccati
     {J V : ℝ → Matrix ι ι ℝ} {K : Matrix ι ι ℝ} {κ t : ℝ}
@@ -113,8 +105,6 @@ theorem deriv2_abs_determinantRoot_le_of_jacobi
   · exact isSymm_jacobi_matrix_logarithmicDerivative b hJ hV hK hzero ht' hi
   · exact hasDerivAt_jacobi_matrix_logarithmicDerivative b (hJ t ht') (hV t ht') hinv
   · exact hRic
-
-
 
 theorem deriv2_abs_transverse_determinantRoot_le_of_jacobi
     {m : ℕ} {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E] [CompleteSpace E]

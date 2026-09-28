@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryWeakPhaseFlux
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.DividedDifferences
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,16 +14,8 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
 
-
-
-
-
 def m64VerticalPrimitive (f : LoopPlane → ℝ) (p : LoopPlane) : ℝ :=
   ∫ s in p 1..1, f (annulusPoint (p 0) s)
-
-
-
-
 
 theorem m64VerticalPrimitive_contDiff {f : LoopPlane → ℝ} (hf : ContDiff ℝ ∞ f) :
     ContDiff ℝ ∞ (m64VerticalPrimitive f) := by
@@ -68,17 +50,9 @@ theorem m64VerticalPrimitive_contDiff {f : LoopPlane → ℝ} (hf : ContDiff ℝ
   rw [heq]
   exact (contDiff_const.sub (EuclideanSpace.proj (𝕜 := ℝ) (1 : Fin 2)).contDiff).mul hh
 
-
-
-
-
 theorem m64VerticalPrimitive_top (f : LoopPlane → ℝ) (x : ℝ) :
     m64VerticalPrimitive f (annulusPoint x 1) = 0 := by
   simp [m64VerticalPrimitive, annulusPoint]
-
-
-
-
 
 theorem m64VerticalPrimitive_vertical_derivative {f : LoopPlane → ℝ}
     (hf : ContDiff ℝ ∞ f) (p : LoopPlane) :
@@ -100,10 +74,6 @@ theorem m64VerticalPrimitive_vertical_derivative {f : LoopPlane → ℝ}
   change HasDerivAt (fun s => m64VerticalPrimitive f (annulusPoint (p 0) s)) _ _ at hcomp
   rw [hfun] at hcomp
   simpa only [heq] using hcomp.unique hd
-
-
-
-
 
 theorem m64VerticalPrimitive_sq_le_slice {f : LoopPlane → ℝ}
     (hf : ContDiff ℝ ∞ f) (x : ℝ) {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1) :
@@ -136,10 +106,6 @@ theorem m64VerticalPrimitive_sq_le_slice {f : LoopPlane → ℝ}
     rw [intervalIntegral.integral_of_le hs.2, ← integral_Icc_eq_integral_Ioc]
   rw [heq]
   exact hsq.trans hbound
-
-
-
-
 
 theorem m64VerticalPrimitive_l2_bounds {f : LoopPlane → ℝ}
     (hf : ContDiff ℝ ∞ f) :

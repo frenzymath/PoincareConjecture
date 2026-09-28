@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Loca
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.LevelSupport
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Partition
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory TopologicalSpace
@@ -31,7 +25,6 @@ local instance global_finrank :
   ⟨finrank_euclideanSpace_fin⟩
 
 include hf hreg in
-
 
 theorem integral_coarea
     {h : M → ℝ} (hh : Continuous h) (hc : HasCompactSupport h)

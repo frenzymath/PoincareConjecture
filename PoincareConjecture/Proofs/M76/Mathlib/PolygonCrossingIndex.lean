@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PlanarCrossingContribution
 import Mathlib.Algebra.BigOperators.Ring.Finset
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter PlanarSegment
@@ -20,13 +11,8 @@ namespace Polygon
 
 variable {n : ℕ}
 
-
-
 def HasNonverticalEdges (P : Polygon (ℝ × ℝ) n) : Prop :=
   ∀ i, (P i).1 ≠ (P (finRotate n i)).1
-
-
-
 
 noncomputable def crossingIndex (P : Polygon (ℝ × ℝ) n) (q : ℝ × ℝ) : ℤ :=
   ∑ i, crossingContribution (P i) (P (finRotate n i)) q
@@ -38,10 +24,6 @@ private theorem sum_by_parts {I : Type*} [Fintype I] (r : Equiv.Perm I)
   congr 1
   simpa only [Equiv.symm_apply_apply] using
     Equiv.sum_comp r (fun i => H i * C (r.symm i))
-
-
-
-
 
 theorem eventuallyEq_crossingIndex (P : Polygon (ℝ × ℝ) n)
     (hP : P.HasNonverticalEdges) {q : ℝ × ℝ} (hq : q ∉ P.boundary ℝ) :
@@ -75,9 +57,6 @@ theorem eventuallyEq_crossingIndex (P : Polygon (ℝ × ℝ) n)
     _ = ∑ i, H i q * (C i - C (r.symm i)) := Finset.sum_congr rfl fun i _ => hv i
     _ = P.crossingIndex q := (sum_by_parts r _ C).symm
 
-
-
-
 theorem isLocallyConstant_crossingIndex (P : Polygon (ℝ × ℝ) n)
     (hP : P.HasNonverticalEdges) :
     IsLocallyConstant (fun q : ↥((P.boundary ℝ)ᶜ) => P.crossingIndex q.val) := by
@@ -85,8 +64,6 @@ theorem isLocallyConstant_crossingIndex (P : Polygon (ℝ × ℝ) n)
   intro q
   exact continuous_subtype_val.continuousAt.eventually
     (P.eventuallyEq_crossingIndex hP q.property)
-
-
 
 theorem crossingIndex_eq_of_isPreconnected (P : Polygon (ℝ × ℝ) n)
     (hP : P.HasNonverticalEdges) {s : Set ↥((P.boundary ℝ)ᶜ)}

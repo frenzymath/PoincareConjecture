@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.UnrestrictedLabels
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -26,9 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "S" => m64AnnulusDomain
 
-
-
-
 def unrestrictedFreeClassicalEnergyRange
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) : Set ℝ :=
   {x | ∃ r : ℝ, 0 < r ∧ ∃ sigma0 sigma1 : LipschitzDegreeOneLabel,
@@ -37,16 +22,12 @@ def unrestrictedFreeClassicalEnergyRange
         r⁻¹ * m60AreaGram g A.map p 1 1) / 2) S volume ∧
       x = m64ClassicalWeightedGramEnergy g A r}
 
-
-
 theorem free_energy_range_subset_unrestricted
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) :
     m64FreeClassicalWeightedGramEnergyRange g c0 c1 ⊆
       unrestrictedFreeClassicalEnergyRange g c0 c1 := by
   rintro x ⟨r, hr, sigma0, sigma1, A, hA, hx⟩
   exact ⟨r, hr, .ofMonotone sigma0, .ofMonotone sigma1, A, hA, hx⟩
-
-
 
 theorem unrestricted_energy_range_bddBelow
     (g : RiemannianMetric n M) (c0 c1 : ℝ → M) :
@@ -71,9 +52,6 @@ variable [T2Space M] (g : RiemannianMetric n M) {c0 c1 : ℝ → M}
 
 include hc0 hp0 hL0 hc1 hp1 hL1
 
-
-
-
 theorem least_area_le_unrestricted_weightedEnergy
     (sigma0 sigma1 : LipschitzDegreeOneLabel)
     (A : M64Annulus g (c0 ∘ sigma0.map) (c1 ∘ sigma1.map))
@@ -87,9 +65,6 @@ theorem least_area_le_unrestricted_weightedEnergy
     m64LeastAnnulusArea g c0 c1 ≤ B.area := m64LeastAnnulusArea_le_annulus B
     _ = A.area := hB
     _ ≤ m64ClassicalWeightedGramEnergy g A r := A.area_le_weightedGramEnergy hr hA
-
-
-
 
 theorem least_area_eq_unrestricted_energy_sInf
     (A0 : M64Annulus g c0 c1)

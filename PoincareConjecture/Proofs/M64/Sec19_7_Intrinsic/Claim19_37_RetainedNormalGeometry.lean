@@ -5,23 +5,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_CollarImage
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CurvatureLoss
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_EndpointLift
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,11 +16,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
-
-
 
 theorem m64Intrinsic_exists_retained_normal_geometry
     (N : IntrinsicAnnulus) (K : ℝ) (hK : N.GaussianCurvatureBound K)
@@ -302,14 +280,6 @@ theorem m64Intrinsic_exists_retained_normal_geometry
   · intro x hx0 hx1; exact himage x hx0 hx1
   · intro a ha haR; exact houter a ha haR
   · intro a ha haR; exact hendreg a ha haR
-
-
-
-
-
-
-
-
 
 theorem m64Intrinsic_retained_focusing_of_global_injective
     (N : IntrinsicAnnulus) {e : AnnulusCoordinates → AnnulusCoordinates}

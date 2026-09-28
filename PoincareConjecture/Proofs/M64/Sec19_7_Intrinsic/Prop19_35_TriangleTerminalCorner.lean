@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_RegionAcuteCorner
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +22,6 @@ private theorem reverse_image (gamma : ℝ → AnnulusCoordinates) (T : ℝ) :
   change (gamma ∘ fun s => T - s) '' Icc 0 T = _
   rw [image_comp, image_const_sub_Icc]
   simp only [sub_self, sub_zero]
-
-
-
-
 
 theorem m64Intrinsic_triangle_terminal_convex_coordinates
     {U V : Set AnnulusCoordinates} (R : M64IntrinsicCoordinateTriangulation (closure U))

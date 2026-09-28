@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.OriginalNonspher
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.NonsphericalFrontierGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.ClopenIncompressibility
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

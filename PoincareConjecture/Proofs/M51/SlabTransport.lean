@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Pullback
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric.LocalDiffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff
@@ -30,9 +21,6 @@ variable {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric' : ∀ t, RiemannianMetric 3 (slice' t).carrier}
     {initial : Diffeomorph (𝓡 3) (𝓡 3)
       (slice' a).carrier (slice a).carrier ∞}
-
-
-
 
 structure PullbackData (S : SurgeryRegularSlab slice metric a b)
     (slice' : ℝ → GeneralizedSliceCarrier.{u})
@@ -53,10 +41,6 @@ structure PullbackData (S : SurgeryRegularSlab slice metric a b)
         (mfderiv (𝓡 3) (𝓡 3)
           (initial.trans ((S.identify t).trans (sliceMap t))) x w) =
       (flow.metric t.1).inner x v w
-
-
-
-
 
 noncomputable def PullbackData.ofIsometry
     (S : SurgeryRegularSlab slice metric a b)
@@ -115,14 +99,10 @@ noncomputable def PullbackData.ofIsometry
   rw [slice_isometry t (j (e x)) _ _, S.metric_pullback t (e x) _ _]
   rfl
 
-
-
 noncomputable def PullbackData.identify (D : PullbackData S slice' metric' initial)
     (t : Set.Icc a b) :
     Diffeomorph (𝓡 3) (𝓡 3) (slice' a).carrier (slice' t.1).carrier ∞ :=
   initial.trans ((S.identify t).trans (D.sliceMap t))
-
-
 
 noncomputable def pullback (S : SurgeryRegularSlab slice metric a b)
     (D : PullbackData S slice' metric' initial) :
@@ -147,14 +127,10 @@ noncomputable def pullback (S : SurgeryRegularSlab slice metric a b)
         (D.flow.metric t.1).inner x v w
       exact D.metric_pullback t x v w }
 
-
-
 @[simp] theorem pullback_ordered
     (S : SurgeryRegularSlab slice metric a b)
     (D : PullbackData S slice' metric' initial) :
     (pullback S D).ordered = S.ordered := rfl
-
-
 
 theorem pullback_transport
     (S : SurgeryRegularSlab slice metric a b)
@@ -171,8 +147,6 @@ theorem pullback_transport
   simp only [Diffeomorph.coe_trans, Function.comp_apply,
     Diffeomorph.symm_trans',
     Diffeomorph.symm_apply_apply, Diffeomorph.apply_symm_apply]
-
-
 
 theorem pullback_transport_symm
     (S : SurgeryRegularSlab slice metric a b)

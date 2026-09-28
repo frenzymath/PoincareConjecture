@@ -1,8 +1,6 @@
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Carrier
 
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -10,8 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 namespace PoincareConjecture
 
 namespace FlowCarrier
-
-
 
 noncomputable def metricEMetricSpace {n : ℕ} (C : FlowCarrier n) (g : C.metric) :
     EMetricSpace C.carrier :=

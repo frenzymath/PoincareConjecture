@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.Reflection.MorseChart
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.MorseReduction
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +18,6 @@ private abbrev S2 := sphere (0 : E3) 1
 
 variable {f : S2 → E3}
 
-
-
 def reflectedOriginal (M : SphereMorseReduction f) : S2 → E3 :=
   fun q => M.D.symm (heightReflection (mem_sphere_zero_iff_norm.mp M.v.property) (M.D (f q)))
 
@@ -29,8 +25,6 @@ def reflectedOriginal (M : SphereMorseReduction f) : S2 → E3 :=
     M.D (M.reflectedOriginal q) =
       heightReflection (mem_sphere_zero_iff_norm.mp M.v.property) (M.D (f q)) :=
   M.D.apply_symm_apply _
-
-
 
 theorem exists_reflected (M : SphereMorseReduction f) :
     ∃ R : SphereMorseReduction M.reflectedOriginal,

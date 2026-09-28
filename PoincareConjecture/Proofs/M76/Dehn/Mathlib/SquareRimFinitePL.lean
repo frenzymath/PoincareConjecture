@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.SquareRimCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPartition
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLUnionMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,12 +12,8 @@ namespace PoincareConjecture.M76.Dehn
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q" => sphere (0 : V2) 1
 
-
-
 noncomputable def squareRimParameter (t : ℝ) : V2 :=
   (squareRimLoop.extend t : V2)
-
-
 
 theorem squareRimParameter_apply (t : unitInterval) :
     squareRimParameter t = (squareRimLoop t : V2) :=
@@ -45,9 +31,6 @@ private theorem finitePL_affine_Icc {E : Type*} [NormedAddCommGroup E]
     simp [H]
   obtain ⟨K, hK, hspace⟩ := isCompact_Icc.exists_finite_triangulation_of_halfspaces H hrep
   exact ⟨K, hK, hspace, K.affineOnFaces_affine A⟩
-
-
-
 
 theorem finitePiecewiseAffineOn_squareRimParameter :
     FinitePiecewiseAffineOn squareRimParameter (Icc (0 : ℝ) 1) := by
@@ -91,9 +74,6 @@ theorem finitePiecewiseAffineOn_squareRimParameter :
   rw [← hcover]
   exact FinitePiecewiseAffineOn.iUnion fun i =>
     (finitePL_affine_Icc (A i) _ _).congr (hformula i).symm
-
-
-
 
 theorem finitePL_squareRim_composition {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] {f : V2 → E} (hf : FinitePiecewiseAffineOn f Q) :

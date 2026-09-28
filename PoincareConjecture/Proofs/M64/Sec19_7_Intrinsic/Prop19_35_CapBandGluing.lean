@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ChosenCapFaces
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Gluing
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,10 +21,6 @@ private theorem segment_mem_triangle (b : AffineBasis (Fin 3) ℝ AnnulusCoordin
   refine ⟨t, ht, ?_⟩
   simp [affineChartSegment, AffineMap.lineMap_apply, add_comm]
 
-
-
-
-
 theorem m64Intrinsic_coordinate_face_boundary_injective
     (face : SmoothFace AnnulusCoordinates)
     (C : OpenPartialHomeomorph AnnulusCoordinates AnnulusCoordinates)
@@ -55,10 +39,6 @@ theorem m64Intrinsic_coordinate_face_boundary_injective
   have h := C.injOn (hsource (segment_mem_triangle b k ht))
     (hsource (segment_mem_triangle b k hs)) heq
   exact smul_left_injective ℝ hne (add_left_cancel h)
-
-
-
-
 
 theorem m64Intrinsic_cap_band_attachment_interior
     (face : SmoothFace AnnulusCoordinates)

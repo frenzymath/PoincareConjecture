@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.JetBounds.GaussExtension
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -50,8 +42,6 @@ private def metricOfCoefficients
     convert! hB.contDiffAt.contMDiffAt using 1
     ext y v w
     simp [hom_trivializationAt_apply, ContinuousLinearMap.inCoordinates, TangentSpace]
-
-
 
 theorem exists_gauss_metric_extension
     {r s R : ℝ} (hr : 0 < r) (hrs : r < s) (hsR : s < R)

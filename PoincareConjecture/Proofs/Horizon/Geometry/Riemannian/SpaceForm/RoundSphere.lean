@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Imme
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Euclidean
 import Mathlib.Geometry.Manifold.Instances.Sphere
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle
@@ -17,7 +11,6 @@ open PoincareConjecture
 
 abbrev UnitSphere (n : ℕ) :=
   Metric.sphere (0 : EuclideanSpace ℝ (Fin (n + 1))) 1
-
 
 noncomputable def roundSphereMetric (n : ℕ) :
     RiemannianMetric n (UnitSphere n) := by

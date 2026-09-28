@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CubePrismBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

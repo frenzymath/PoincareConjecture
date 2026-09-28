@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.PositiveDerivedRestriction
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryFaceCenters
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem exists_binaryDerived_homeomorph (A : SimplicialComplex ℝ E) (hAK : A ≤ K) :
     ∃ (f g : E → E) (e : K.space ≃ₜ K.space),

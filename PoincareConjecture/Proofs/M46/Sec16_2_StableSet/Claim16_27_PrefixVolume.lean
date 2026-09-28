@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +10,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem old_prefix_realized_ball_volume (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -58,8 +46,6 @@ theorem old_prefix_realized_ball_volume (P : M46Predecessors.{u})
     M13.originalSlice_volume R.geometry P.m13 t,
     R.history.ball_volume_of_subset t ht y r hregular]
   exact hvolume
-
-
 
 theorem HalfRadiusHistory.old_prefix_ball_volume (P : M46Predecessors.{u})
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)

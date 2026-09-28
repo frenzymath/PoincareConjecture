@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.CappedSliceValue
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_4_SliceIndex
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_67_InteriorSurvival
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T start : ℝ} {x : G.Point}
-
-
 
 theorem cappedSliceAction_active_contact
     (hCoordinates : M12MetricPredecessors.{0} 3)

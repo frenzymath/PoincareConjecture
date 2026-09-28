@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Coordinates.RetainedShe
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Towers.CylinderLift
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M76.Dehn.ProtectedAnnulus
 local notation "V1" => (Fin 1 → ℝ)
 local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
 
 theorem projected_sourceShell_protected
     (L : Submodule ℤ V2) {α : Type*}
@@ -40,8 +31,6 @@ theorem projected_sourceShell_protected
   have hxy := retained.quotient_injective hy2 (sourceShell_subset_block hx) heq
   have hn : ‖x.2‖ ≤ 1 := mem_closedBall_zero_iff.mp (hxy ▸ hy.2)
   exact (not_lt_of_ge hn) hx.2.1
-
-
 
 theorem exists_protected_annulus_of_chart
     (L : Submodule ℤ V2) [DiscreteTopology L] {α : Type*}

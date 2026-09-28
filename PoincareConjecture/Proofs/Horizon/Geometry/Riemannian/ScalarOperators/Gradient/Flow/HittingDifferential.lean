@@ -10,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology InnerProductSpace
 
 namespace Poincare.Manifold
 
-
-
 theorem mfderiv_hittingMap_eq
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -64,8 +62,6 @@ theorem mfderiv_hittingMap_eq
   rw [hDR, ha, neg_smul, sub_eq_add_neg, add_comm]
 
 end Poincare.Manifold
-
-
 
 theorem PoincareConjecture.LeviCivitaData.tangentNorm_mfderiv_hittingMap_le_of_expansion
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -152,8 +148,6 @@ theorem PoincareConjecture.LeviCivitaData.tangentNorm_mfderiv_hittingMap_le_of_e
     simpa only [hscale] using hformula
   rw [hformula']
   exact hproject
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_smooth_level_retraction_with_expansion
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

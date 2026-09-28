@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2RatioRegularity
 import PoincareConjecture.Proofs.M63.Mathlib.WeightedDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
-
 
 theorem c2_rampRatio_evolution (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)

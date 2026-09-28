@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusPeriodicSquareBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
@@ -36,10 +25,6 @@ def squareCarrierEquiv : Square p ≃ₜ (squareCarrier p) :=
     continuous_toFun := by fun_prop
     continuous_invFun := by fun_prop }
 
-
-
-
-
 structure SourceSquareMap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (K : SimplicialComplex ℝ E) where
   map : C(Square p, K.space)
@@ -49,9 +34,6 @@ structure SourceSquareMap {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
       ∃ F : (ℝ × ℝ) → E,
       FinitePiecewiseAffineOn F (squareCarrier p) ∧
         ∀ z : Square p, F (z.1, z.2) = (map z : E)
-
-
-
 
 noncomputable def SourceSquareMap.of_closed_filling
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -106,9 +88,6 @@ noncomputable def SourceSquareMap.of_closed_filling
       | trans z w v hzw hwv ihzw ihwv => exact ihzw.trans ihwv
   refine { map := f, surjective := hsurjective, fibers := hfib, finite_piecewise_affine := ?_ }
   exact hfpa
-
-
-
 
 noncomputable def SourceSquareMap.of_ambient_closed_filling
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -177,10 +156,6 @@ noncomputable def SourceSquareMap.of_ambient_dependent_family
   intro s i
   exact SourceSquareMap.of_ambient_closed_filling (p := p) (f s i) (F s i)
     (hF s i) (hvalue s i) (hsurjective s i) (hside s i) (hno_extra s i)
-
-
-
-
 
 noncomputable def SourceSquareMap.of_torusHomeomorph
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -270,10 +245,6 @@ theorem SourceSquareMap.exists_ambientRepresentative
         exact Subtype.ext h
       · exact congrArg Subtype.val
     rw [huv z, huv w, hcoerce, M.fibers, projection_eq_iff p]
-
-
-
-
 
 theorem SourceSquareMap.exists_family_ambient_data
     {E η : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

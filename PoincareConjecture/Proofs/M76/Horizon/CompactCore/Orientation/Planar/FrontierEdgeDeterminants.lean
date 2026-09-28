@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.FrontierStarCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.Planar.PairedTriangleDeterminants
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

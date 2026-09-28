@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevelMap
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +19,6 @@ variable {M : Type*} [TopologicalSpace M]
 
 local instance : Fact (Module.finrank ℝ (EuclideanSpace ℝ (Fin 3)) = 2 + 1) :=
   ⟨finrank_euclideanSpace_fin⟩
-
-
 
 theorem hasDerivAt_comp_axis (N : EpsilonNeck g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ f) (q : UnitTwoSphere)
@@ -59,8 +49,6 @@ theorem regularLevel_sphereProjection_contMDiff
     ((N.coordinate_inverse_smooth.contMDiffAt
       (N.carrier_open.mem_nhds (hU z.1.2))).comp z
         (contMDiff_openLevelIncl hf U hreg 2 c z))
-
-
 
 theorem regularLevel_sphereProjection_bijective_mfderiv
     (N : EpsilonNeck g) {f : M → ℝ}

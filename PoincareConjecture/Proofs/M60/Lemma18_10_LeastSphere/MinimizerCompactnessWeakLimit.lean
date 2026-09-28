@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCompactness
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaEnergy
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +22,6 @@ private theorem clm_tendsto_apply
     Tendsto (fun j => L j (v j)) atTop (𝓝 (L0 v0)) :=
   isBoundedBilinearMap_apply.continuous.continuousAt.tendsto.comp (hL.prodMk_nhds hv)
 
-
-
-
 theorem suVanishingPower_mul_tendsto
     {a b c : ℕ → ℝ} {a0 b0 : ℝ}
     (ha : Tendsto a atTop (𝓝 a0)) (hb : Tendsto b atTop (𝓝 b0))
@@ -43,9 +38,6 @@ theorem suVanishingPower_mul_tendsto
     rw [norm_mul, Real.norm_of_nonneg (Real.rpow_nonneg (hap j).le _)]
     exact mul_le_of_le_one_left (norm_nonneg _) (Real.rpow_le_one (hap j).le hj.le (hcn j))
   · simpa only [Real.rpow_zero, one_mul] using (ha.rpow hc (Or.inl ha0)).mul hb
-
-
-
 
 theorem suVanishingPower_integral_tendsto
     {X : Type*} [MeasurableSpace X] (mu : Measure X) [IsFiniteMeasure mu]
@@ -138,9 +130,6 @@ private theorem unweighted_variation_bound
       · exact (norm_sum_le _ _).trans (Finset.sum_le_sum fun i _ => hsecond i)
     _ = _ := by simp only [Fin.sum_univ_two]; ring
 
-
-
-
 theorem suWeightedChartVariation_tendsto
     (g : RiemannianMetric n M) (b : M)
     (u : ℕ → LoopPlane → E) (u0 phi : LoopPlane → E)
@@ -222,10 +211,6 @@ theorem suWeightedChartVariation_tendsto
 open CoordinateExponential ConnectionVariation
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem suWeightedEuler_limit_variation
     (g : RiemannianMetric n M) (b : M)

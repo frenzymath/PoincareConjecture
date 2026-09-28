@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.OppositeCoordinate
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.PairCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.SegmentSubdivision
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   {p : Polygon E (n + 2)}
-
-
 
 theorem IsSimplePolygonalArc.linearIndependent_of_not_admissible
     (hp : IsSimplePolygonalArc p) (k : Fin (n + 2))
@@ -91,8 +79,6 @@ theorem IsSimplePolygonalArc.linearIndependent_of_not_admissible
   rw [(segment_split_at_point hmem).1]
   exact hT hx.1
 
-
-
 theorem internal_of_mem_vertexTriangle_of_endpoint_extrema
     (p : Polygon E (n + 2)) (k : Fin (n + 2))
     (hk0 : k ≠ 0) (hkl : k ≠ Fin.last (n + 1)) (X : E →ₗ[ℝ] ℝ)
@@ -142,8 +128,6 @@ theorem internal_of_mem_vertexTriangle_of_endpoint_extrema
     change X (p j) < X (p (Fin.last (n + 1))) at hh
     rw [hjl] at hh
     exact (lt_irrefl _ hh)
-
-
 
 theorem IsSimplePolygonalArc.exists_internal_minimal_triangle_vertex
     [FiniteDimensional ℝ E] (hdim : Module.finrank ℝ E = 2)

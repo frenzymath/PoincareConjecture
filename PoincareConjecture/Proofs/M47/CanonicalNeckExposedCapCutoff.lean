@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckFirstFailureCap
 import PoincareConjecture.Proofs.M47.CanonicalNeckExposedStandardCap
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,9 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
-
 
 theorem exists_firstFailure_exposed_standard_cap_cutoff
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Scaling
 
-
-
-
-
-
-
-
 noncomputable section
 
 namespace PoincareConjecture.CoordinateExponential
@@ -15,7 +8,6 @@ open Set Metric Filter
 open scoped ContDiff Topology NNReal
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 structure LocalFlowData
     (B : E → E →L[ℝ] E →L[ℝ] ℝ) (U : Set E) (x : E) where
@@ -102,7 +94,6 @@ theorem mul_mem {c t : ℝ} (hc : |c| ≤ 1)
   exact (mul_le_mul_of_nonneg_right hc (abs_nonneg _)).trans_lt (by
     simpa only [one_mul] using abs_lt.mpr ht)
 
-
 theorem scaling {c : ℝ} (hc : |c| ≤ 1) {v : E} (hv : v ∈ ball 0 D.radius)
     {t : ℝ} (ht : t ∈ Ioo (-D.radius) D.radius) :
     D.flow (c • v, t) = velocityScale c (D.flow (v, c * t)) := by
@@ -119,7 +110,6 @@ theorem scaling {c : ℝ} (hc : |c| ≤ 1) {v : E} (hv : v ∈ ball 0 D.radius)
     ?_ ht
   rw [mul_zero, D.initial (c • v) hcv, D.initial v hv]
   rfl
-
 
 theorem zero {t : ℝ} (ht : t ∈ Ioo (-D.radius) D.radius) :
     D.flow (0, t) = (x, 0) := by

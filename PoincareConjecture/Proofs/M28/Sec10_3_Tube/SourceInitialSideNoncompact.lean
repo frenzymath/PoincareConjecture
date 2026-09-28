@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallInitialSides
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceInitialGraphIsotopy
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderSphereSides
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem not_isCompact_closure_retained_initial_side
     {epsilon C A : ℝ}

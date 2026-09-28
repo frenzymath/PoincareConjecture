@@ -1,17 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.ForcedSecondJets
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open scoped ContDiff Topology
@@ -130,6 +117,5 @@ theorem exists_local_forced_weak_second_jets_of_memLpOn
     change (∫ y in ball z r, φ y * H i j y) =
       -(∫ y in ball z r, spatialDeriv i φ y * U.indicator (g j) y) at he
     rwa [hpair measurableSet_ball hballU] at he
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

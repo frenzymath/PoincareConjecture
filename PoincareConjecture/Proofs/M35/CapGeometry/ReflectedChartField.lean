@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.ReflectedDeckField
 import PoincareConjecture.Proofs.M35.CapGeometry.M27ProductChartMetric
 import PoincareConjecture.Proofs.M35.CapGeometry.RoundProductParallel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +12,6 @@ namespace PoincareConjecture.M35
 
 local notation "V" => EuclideanSpace ℝ (Fin 3)
 local notation "Ip" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
 
 theorem cylinderChart_pullback_axial (q : UnitTwoSphere)
     (Y : (p : UnitTwoSphere × ℝ) → TangentSpace Ip p) (x : V) :
@@ -36,11 +26,9 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace V M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M}
 
-
 noncomputable def twistedChartLift (N : M27TwistedSphereLineFlowCertificate K)
     (q : UnitTwoSphere) (Z : (p : M) → TangentSpace (𝓡 3) p) : V → V :=
   mpullback (𝓡 3) Ip (cylinderChart q) (mpullback Ip (𝓡 3) N.cover Z)
-
 
 theorem twistedChartLift_axial_odd (N : M27TwistedSphereLineFlowCertificate K)
     (q : UnitTwoSphere) (Z : (p : M) → TangentSpace (𝓡 3) p) {x y : V}
@@ -54,8 +42,6 @@ theorem twistedChartLift_axial_odd (N : M27TwistedSphereLineFlowCertificate K)
       congrArg (fun p : UnitTwoSphere × ℝ => (Y p).2) hpoints
     _ = -(Y (cylinderChart q x)).2 := twisted_cover_field_axial_odd N Z _
     _ = _ := congrArg (fun r : ℝ => -r) (cylinderChart_pullback_axial q Y x).symm
-
-
 
 theorem twistedChartLift_limit_axial_odd (N : M27TwistedSphereLineFlowCertificate K)
     (q : UnitTwoSphere) (Zseq : ℕ → (p : M) → TangentSpace (𝓡 3) p)
@@ -72,8 +58,6 @@ theorem twistedChartLift_limit_axial_odd (N : M27TwistedSphereLineFlowCertificat
       =ᶠ[atTop] (fun k => (cylinderCoordinateEquiv (twistedChartLift N q (Zseq k) y)).2) :=
     Eventually.of_forall fun k => (twistedChartLift_axial_odd N q (Zseq k) hpoints).symm
   exact tendsto_nhds_unique hyy (hxx.neg.congr' he)
-
-
 
 theorem twistedChartLift_parallel_limit_false
     (N : M27TwistedSphereLineFlowCertificate K) (q : UnitTwoSphere)

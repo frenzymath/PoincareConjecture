@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.P
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Disks.ExactMeridian
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Hierarchy.Bands.MarkedProduct
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -28,8 +20,6 @@ local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "p" => (4 * (128 : ℝ))
 local notation "C" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
-
-
 
 structure ExactSlabMeridian {α β : Type*}
     {e : α → OpenPartialHomeomorph X V3}
@@ -68,8 +58,6 @@ structure ExactSlabMeridian {α β : Type*}
       (product.map '' (D ×ˢ Ioo (-v) v))) ∧
     IsOpen ((Subtype.val : frontier (sourceSlab M.eta uv.1 uv.2) → X) ⁻¹'
       (product.map '' (Q ×ˢ Ioo (-v) v)))
-
-
 
 theorem PairedMeridianHierarchy.exists_exact_meridian
     {α β : Type*} {e : α → OpenPartialHomeomorph X V3}
@@ -125,8 +113,6 @@ theorem PairedMeridianHierarchy.exists_exact_meridian
     disk_proper := hproper, disk_rim := hrim
     width := w, width_pos := hw, width_small := hws, product := P
     product_marks := hPmarks, product_open := hPopen }⟩
-
-
 
 theorem exists_original_paired_exact_meridians
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

@@ -1,14 +1,6 @@
 import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.ODE.PicardLindelof
 
-
-
-
-
-
-
-
-
 noncomputable section
 open Set Filter Function Metric
 open scoped Topology ContDiff NNReal

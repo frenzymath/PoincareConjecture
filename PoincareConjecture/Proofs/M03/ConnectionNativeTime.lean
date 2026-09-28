@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M03.CurvatureTrace
 import PoincareConjecture.Proofs.M03.ScalarMixedDerivative
 import Mathlib.Analysis.Calculus.Deriv.Slope
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators

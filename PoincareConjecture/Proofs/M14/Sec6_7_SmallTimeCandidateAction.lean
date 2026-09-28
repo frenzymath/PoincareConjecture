@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurveEndpoints
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 import PoincareConjecture.Definitions.M14Exponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
 
 theorem smallTimeCandidate_action_eq_integral
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)
@@ -55,9 +43,6 @@ theorem smallTimeCandidate_action_eq_integral
     (sq_pos_of_pos hs) (E.gamma W) hγ hsub hclock hx hy
   rw [← haction]
   simpa only [Real.sqrt_zero, Real.sqrt_sq hs.le] using hint.symm
-
-
-
 
 theorem smallTimeCandidate_action_le
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) (E : M14ExponentialFamily G T x)

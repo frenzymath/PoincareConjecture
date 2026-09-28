@@ -1,16 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.CubeSimplexCoordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Cube.ThreeFaceFold
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.Topology
-
 
 theorem stdSimplex_cube_coordinates_cons (n : Nat)
     (q : C((Fin (n + 1) -> unitInterval), stdSimplex Real (Fin (n + 2))))
@@ -41,7 +34,6 @@ theorem stdSimplex_cube_coordinates_cons (n : Nat)
       (t j : Real) * ((if j.succ < 0 then 1 - (a : Real) else 1) *
       ∏ k : Fin n, if j.succ < k.succ then 1 - (t k : Real) else 1)
     rw [if_neg (Fin.not_lt_zero _), if_neg (Fin.not_lt_zero _)]
-
 
 theorem stdSimplex_three_face_fold_cube_first (n : Nat)
     (q : C((Fin (n + 1) -> unitInterval), stdSimplex Real (Fin (n + 2))))
@@ -100,7 +92,6 @@ theorem stdSimplex_three_face_fold_cube_first (n : Nat)
     rw [hw2, hmin, hs1, stdSimplex_face_zero]
     exact sub_self _
   · exact (hws _ j).trans ((htail a j).trans (hftail j).symm)
-
 
 theorem stdSimplex_three_face_fold_cube_second (n : Nat)
     (q : C((Fin (n + 1) -> unitInterval), stdSimplex Real (Fin (n + 2))))

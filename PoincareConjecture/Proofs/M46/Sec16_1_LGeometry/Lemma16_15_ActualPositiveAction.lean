@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_PositiveAction
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,10 @@ variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
   {T tau : ℝ} {x y : G.Point}
 
-
-
 noncomputable def pathPositiveDensity (p : M14BackwardPath G T 0 tau x y) (s : ℝ) : ℝ :=
   max (horizontalScalarCurvature G.leafwise (p.curve s)) 0 +
     G.spacetime.horizontalMetric.inner (p.curve s)
       (p.horizontal_velocity s) (p.horizontal_velocity s)
-
-
 
 theorem pathPositiveDensity_nonneg (p : M14BackwardPath G T 0 tau x y) (s : ℝ) :
     0 ≤ pathPositiveDensity p s := by
@@ -39,9 +26,6 @@ theorem pathPositiveDensity_nonneg (p : M14BackwardPath G T 0 tau x y) (s : ℝ)
   by_cases hv : p.horizontal_velocity s = 0
   · simp only [hv, map_zero, le_refl]
   · exact (G.spacetime.horizontalMetric.pos (p.curve s) (p.horizontal_velocity s) hv).le
-
-
-
 
 theorem pathPositiveAction_integrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (p : M14BackwardPath G T 0 tau x y) :
@@ -61,9 +45,6 @@ theorem pathPositiveAction_integrable
   dsimp only [pathPositiveDensity, M14RawLIntegrand]
   ring
 
-
-
-
 theorem pathPositiveAction_le_action_add
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (p : M14BackwardPath G T 0 tau x y)
     {K : ℝ} (hK : 0 ≤ K)
@@ -72,9 +53,6 @@ theorem pathPositiveAction_le_action_add
       M14BackwardLAction G p + (2 / 3 : ℝ) * K * tau * Real.sqrt tau :=
   positiveAction_le_action_add p.tau_lt.le hK hscalar p.action_integrable
     (pathPositiveAction_integrable hM12 p)
-
-
-
 
 theorem pathPositiveDensity_tail_integrable
     (hM12 : GeneralizedRicciGaugeTheory.{u} 3) (p : M14BackwardPath G T 0 tau x y)

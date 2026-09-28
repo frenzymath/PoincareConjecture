@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialAffineCone
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +15,6 @@ open Proofs.M58
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 theorem m64EuclideanEnergyDensity (f : LoopPlane → E) (z : LoopPlane) :
     m60EnergyDensity (RiemannianMetric.euclideanMetric m) f z =
       (‖fderiv ℝ f z (EuclideanSpace.single (0 : Fin 2) 1)‖ ^ 2 +
@@ -40,8 +27,6 @@ theorem m64EuclideanEnergyDensity (f : LoopPlane → E) (z : LoopPlane) :
       ‖fderiv ℝ f z (EuclideanSpace.single (1 : Fin 2) 1)‖ ^ 2) = _
   ring
 
-
-
 theorem m64Euclidean_curve_speed (w : ℝ → E) (t : ℝ) :
     (RiemannianMetric.euclideanMetric m).tangentNorm (w t) (curveVelocity w t) =
       ‖deriv w t‖ := by
@@ -49,8 +34,6 @@ theorem m64Euclidean_curve_speed (w : ℝ → E) (t : ℝ) :
     simpa +instances only [curveVelocity, mfderiv_eq_fderiv] using!
       (fderiv_apply_one_eq_deriv : fderiv ℝ w t 1 = deriv w t)
   simp +instances only [hv, RiemannianMetric.euclideanMetric_tangentNorm]
-
-
 
 theorem m64EuclideanInterpolator_last_column_bound {s : ℝ} (hs : s ∈ Icc (0 : ℝ) 1)
     (p q v : E) :
@@ -63,8 +46,6 @@ theorem m64EuclideanInterpolator_last_column_bound {s : ℝ} (hs : s ∈ Icc (0 
     rw [norm_smul, Real.norm_of_nonneg hs.1, one_mul]
     exact mul_le_of_le_one_left (norm_nonneg _) hs.2
   simpa +instances only [RiemannianMetric.euclideanMetric_tangentNorm] using! hnorm
-
-
 
 theorem m64EuclideanCone_energy_bound :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (w : ℝ → E), ContDiff ℝ 1 w →

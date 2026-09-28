@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.PullbackScalarSign
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Curvature.MovingJets
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem tendsto_retained_closed_curvature
     (hSlice : SpatialSliceJetConvergenceService.{0, 0, 0, 0, 0})

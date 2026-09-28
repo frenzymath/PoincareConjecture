@@ -4,20 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.Stereographic.Transition
 import Mathlib.Analysis.Normed.Module.Normalize
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -72,9 +58,6 @@ private theorem cylinderRadialDirection_contMDiffAt {x : E₃} (hx : x ≠ 0) :
       ((isOpen_ne.preimage (innerSL ℝ (v : E₃)).continuous).mem_nhds hv)
   have h := (U.contDiff.contDiffAt.comp (cylinderRadialDirection x : E₃) hs).contMDiffAt.comp x hf
   convert! h using 1
-
-
-
 
 theorem cylinder_exists_local_parametrization_jet_bound
     {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M] [IsManifold (𝓡 3) ∞ M]

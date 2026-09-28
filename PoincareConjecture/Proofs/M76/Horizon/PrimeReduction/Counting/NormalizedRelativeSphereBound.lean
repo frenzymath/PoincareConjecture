@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.OriginalMod
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Normalization.OriginalRelativeNoL3FiniteNormalization
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.InteriorSphereLinks
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 namespace PoincareConjecture.M76

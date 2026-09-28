@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexExtremeFaces
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,8 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem mem_vertices_of_finite_simplex_frontier_contact
     (G : SimplicialComplex ℝ E) (hdim : ∀ s ∈ G.faces, s.card ≤ 2)
@@ -65,8 +54,6 @@ theorem mem_vertices_of_finite_simplex_frontier_contact
     have hsingle := (convex_segment u v).isPreconnected.isDiscrete_iff_subsingleton.mp
       hsegfin.isDiscrete
     exact (huv (hsingle (left_mem_segment ℝ u v) (right_mem_segment ℝ u v))).elim
-
-
 
 theorem actual_component_frontier_eq_degree_one_vertices
     (G : SimplicialComplex ℝ E) (hdim : ∀ s ∈ G.faces, s.card ≤ 2)
@@ -135,10 +122,6 @@ theorem actual_component_frontier_eq_degree_one_vertices
     have hwC := C.mem_supp_of_adj_mem_supp hvC hvw
     exact ⟨⟨⟨v, hvC⟩, ⟨w, hwC⟩, hvw, left_mem_segment ℝ _ _⟩,
       (hfrontier v).mpr hvone⟩
-
-
-
-
 
 theorem exists_actual_face_components
     (G : SimplicialComplex ℝ E) (hG : G.faces.Finite)

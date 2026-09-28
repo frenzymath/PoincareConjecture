@@ -1,28 +1,12 @@
 import PoincareConjecture.Proofs.M25.Mathlib.PositiveRadialExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesRadial
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
-
 
 theorem exists_radial_extension
     {κ : UnitTwoSphere × ℝ → E3} {δ : ℝ} (S : SchoenfliesData κ δ)

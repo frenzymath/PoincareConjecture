@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M56.PointGroups
 import PoincareConjecture.Proofs.M33.RegularHistory
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.FiniteEventInduction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem m56PointGroups_induction (F : SurgeryFlowData.{u})
     (hzero : M56PointGroups (F.slice 0))
@@ -45,8 +35,6 @@ theorem m56PointGroups_induction (F : SurgeryFlowData.{u})
     exact hevent s hs.1 hpost
       (ih (F.event s hs.1).tMinus
         ⟨(F.event s hs.1).tMinus_nonnegative, (F.event s hs.1).tMinus_lt⟩) x
-
-
 
 theorem m56PointGroups_of_witness (F : SurgeryFlowData.{u})
     (W : RepairedEventChildWitness F) (hzero : M56PointGroups (F.slice 0))

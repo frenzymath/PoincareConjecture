@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M02.FiniteSectionCW
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology

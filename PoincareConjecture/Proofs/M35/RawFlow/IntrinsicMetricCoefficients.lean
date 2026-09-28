@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RawFlow.IntrinsicSpatialMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,7 +16,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x u)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
-
 
 theorem intrinsicSpatialMetric_rotation
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x u v : StandardCapSpace) :
@@ -60,7 +50,6 @@ private theorem quotient_abs (r : ℝ) :
   · rw [abs_of_nonneg hr]
   · rw [abs_of_nonpos hr, intrinsicWarpingQuotient_even]
 
-
 theorem intrinsicSpatialMetric_axisAngularCoefficient (r : ℝ) :
     axisAngularCoefficient (intrinsicSpatialMetric g hrotation hcomplete) r =
       intrinsicWarpingQuotient g hrotation hcomplete r ^ 2 := by
@@ -73,7 +62,6 @@ theorem intrinsicSpatialMetric_axisAngularCoefficient (r : ℝ) :
   rw [intrinsicSpatialMetric_inner g hrotation hcomplete hx]
   simp [e, _root_.norm_smul, Real.norm_eq_abs, inner_smul_left,
     EuclideanSpace.inner_single_left, quotient_abs]
-
 
 theorem intrinsicSpatialMetric_axisRadialCoefficient (r : ℝ) :
     axisRadialCoefficient (intrinsicSpatialMetric g hrotation hcomplete) r = 1 := by

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.NormalizationJetBounds
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetErrorExpansion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -25,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63CurvatureJet_diffusionError_pair_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -259,9 +246,6 @@ theorem m63CurvatureJet_diffusionError_pair_bound [T2Space M]
   exact ((abs_add_le _ _).trans (add_le_add hsum hE)).trans_eq (by
     dsimp only [D1, C0]
     ring)
-
-
-
 
 theorem m63CurvatureJetSquared_dissipation_of_lower_bounds [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

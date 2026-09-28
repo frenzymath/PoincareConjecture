@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M14
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem norm_sub_sub_linear_le_sq {S : Set E} {f : E → F}
     {f' : E → E →L[ℝ] F} {K : ℝ≥0} (hS : Convex ℝ S)

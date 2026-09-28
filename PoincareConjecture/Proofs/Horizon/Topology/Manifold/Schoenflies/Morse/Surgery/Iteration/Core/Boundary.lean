@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.Caps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -47,7 +45,6 @@ variable (L : List (SphereSurgeryCoreCap v g B))
 
 include hpair hC
 
-
 theorem core_inter_closed_disk (D : SphereSurgeryCoreCap v g B) (hD : D ∈ L) :
     C ∩ (D.chart '' closedBall 0 1) = D.chart '' sphere (0 : E2) 1 := by
   rw [← D.closed_disk_diff_open_disk]
@@ -68,8 +65,6 @@ theorem core_inter_closed_disk (D : SphereSurgeryCoreCap v g B) (hD : D ∈ L) :
       exact hpo hpE
     · exact Set.disjoint_left.mp (hpair.forall hD hE heq) hpD
         (image_mono ball_subset_closedBall hpE)
-
-
 
 theorem frontier_core : frontier C = ⋃ D ∈ L, D.chart '' sphere (0 : E2) 1 := by
   classical
@@ -103,8 +98,6 @@ theorem frontier_core : frontier C = ⋃ D ∈ L, D.chart '' sphere (0 : E2) 1 :
     have hpCD := (core_inter_closed_disk L hpair hC D hD).superset hpD
     refine ⟨mem_iUnion_of_mem D (mem_iUnion_of_mem hD hpCD.2), ?_⟩
     simpa only [hC, mem_compl_iff] using hpCD.1
-
-
 
 theorem connectedComponentIn_frontier (D : SphereSurgeryCoreCap v g B) (hD : D ∈ L)
     {p : S2} (hp : p ∈ D.chart '' sphere (0 : E2) 1) :

@@ -1,21 +1,8 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffinePlaneRectangleIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem IsPreconnected.mem_iff_of_disjoint_frontier
     {X : Type*} [TopologicalSpace X] {S D : Set X}
@@ -39,11 +26,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem IsFinitePLBallPair.mem_iff_of_preconnected_avoiding_rim_in_plane
     {d q T : Set E} (hd : IsFinitePLBallPair (ℝ × ℝ) d q)

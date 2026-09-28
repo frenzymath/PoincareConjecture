@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLiftDeck
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.NormalizedComparison
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FixedPointFree
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -41,8 +30,6 @@ variable (P02 : RepairedClosedTopologyProvider.{u})
 include P02 hp
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem compactThree_deck_homologyMap_eq_id_of_liftComparison
     (hcomparison : QuasiIso (SSet.chainComplexMap
@@ -83,9 +70,6 @@ theorem compactThree_deck_homologyMap_eq_id_of_liftComparison
     (D.normalizedChainComplex integralCoefficient) F e he N (Nat.le_max_left _ _) htop
   exact singularLiftDeck_alternatingTrace_zero p (nerve J) χ d hd
     (hp.deck_fixedPointFree_of_ne_id d (congrArg DFunLike.coe hd) hid) N
-
-
-
 
 theorem compactThree_deck_piThreeMap_eq_transport_of_liftComparison
     (hcomparison : QuasiIso (SSet.chainComplexMap

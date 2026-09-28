@@ -1,25 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.BoundaryRefinement
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Boundary
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.ClosureCover
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -33,8 +14,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M]
   [IsManifold (𝓡 2) ∞ M]
-
-
 
 structure FiniteChartRegionDecomposition where
   centers : Finset M
@@ -126,8 +105,6 @@ structure FiniteChartRegionDecomposition where
     frontier (connectedComponentIn (chartDiskBoundaryUnion centers radius)ᶜ x) =
       ⋃ a : {a : Σ i, Fin (edgeCount i) | x = regionLeft a ∨ x = regionRight a},
         (edge a.val.1 a.val.2).map '' Icc (0 : ℝ) 1
-
-
 
 theorem exists_finite_chart_region_decomposition [CompactSpace M] :
     Nonempty (FiniteChartRegionDecomposition (M := M)) := by

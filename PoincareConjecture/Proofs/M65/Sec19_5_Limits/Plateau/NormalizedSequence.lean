@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.MinimizingSequence
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryNormalization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Complex
@@ -21,10 +12,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
-
 
 theorem m65Plateau_normalizedMinimizingSequence (g : RiemannianMetric 3 M)
     (γ : C1FreeLoopSpace (M := M)) (hfill : Nonempty (LipschitzSpanningDisk g γ))

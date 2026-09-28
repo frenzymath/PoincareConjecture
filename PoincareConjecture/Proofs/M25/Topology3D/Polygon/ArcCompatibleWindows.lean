@@ -2,22 +2,11 @@ import Mathlib.Topology.MetricSpace.Pseudo.Lemmas
 import Mathlib.Topology.Order.Compact
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_compatible_padded_windows {I : Type*} [Finite I] [Nonempty I]
     (U : I → Set ℝ) (R : I → I → Prop) (hU : ∀ i, IsOpen (U i))

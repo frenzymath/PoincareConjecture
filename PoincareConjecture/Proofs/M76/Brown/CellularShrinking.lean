@@ -3,17 +3,6 @@ import Mathlib.Topology.Homeomorph.Defs
 import Mathlib.Topology.MetricSpace.Cauchy
 import Mathlib.Topology.UniformSpace.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,10 +11,6 @@ open scoped Topology BoundedContinuousFunction
 namespace Homeomorph
 
 variable {X : Type*} [MetricSpace X] [CompactSpace X]
-
-
-
-
 
 theorem exists_collapse_of_nested_shrinking
     (K : ℕ → Set X) (hclosed : ∀ n, IsClosed (K n)) (hnested : Antitone K)

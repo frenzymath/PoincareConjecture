@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.LocalAffineDeterminantSign
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLTransitionFacetOrientation
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -71,10 +61,6 @@ private theorem exists_common_full_interiors
   exact ⟨⟨t, ht, htc, y, intrinsicInterior_subset hyt, hyU⟩,
     ⟨u, hu, huc, y, intrinsicInterior_subset hyu, hyU⟩, y, hyU, hytint, hyuint⟩
 
-
-
-
-
 theorem AffineOnFaces.det_mul_pos_of_eqOn_convex_open
     {K L : SimplicialComplex ℝ E} {f g : E → E}
     (hf : K.AffineOnFaces f) (hg : L.AffineOnFaces g)
@@ -113,10 +99,6 @@ theorem AffineOnFaces.det_mul_pos_of_eqOn_convex_open
 end Geometry.SimplicialComplex
 
 namespace Geometry
-
-
-
-
 
 theorem exists_finite_convex_sign_neighborhood
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

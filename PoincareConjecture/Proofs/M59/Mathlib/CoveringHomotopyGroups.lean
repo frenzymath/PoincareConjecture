@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.CubicalPostcomposition
 import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Algebra.Module.LocallyConvex
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,9 +16,6 @@ open PoincareConjecture.Proofs.M02 PoincareConjecture.Proofs.M59
 
 variable {E : Type u} {X : Type v} {N : Type w}
   [TopologicalSpace E] [TopologicalSpace X] {p : E → X}
-
-
-
 
 theorem exists_genLoop_lift [Finite N] [Nontrivial N] (hp : IsCoveringMap p)
     (e : E) (f : GenLoop N X (p e)) :
@@ -55,9 +42,6 @@ theorem exists_genLoop_lift [Finite N] [Nontrivial N] (hp : IsCoveringMap p)
   apply Subtype.ext
   exact ContinuousMap.ext hproj
 
-
-
-
 theorem homotopyGroupMap_injective [Nonempty N] (hp : IsCoveringMap p) (e : E) :
     Function.Injective (homotopyGroupMap N ⟨p, hp.continuous⟩ (rfl : p e = p e)) := by
   intro a b
@@ -71,8 +55,6 @@ theorem homotopyGroupMap_injective [Nonempty N] (hp : IsCoveringMap p) (e : E) :
     ⟨z, hz, (GenLoop.boundary f z hz).trans (GenLoop.boundary g z hz).symm⟩).mpr
   exact Quotient.exact h
 
-
-
 theorem homotopyGroupMap_surjective [Finite N] [Nontrivial N]
     (hp : IsCoveringMap p) (e : E) :
     Function.Surjective (homotopyGroupMap N ⟨p, hp.continuous⟩ (rfl : p e = p e)) := by
@@ -82,14 +64,10 @@ theorem homotopyGroupMap_surjective [Finite N] [Nontrivial N]
   obtain ⟨g, hg⟩ := hp.exists_genLoop_lift e f
   exact ⟨⟦g⟧, congrArg (fun k => (⟦k⟧ : HomotopyGroup N X (p e))) hg⟩
 
-
-
 noncomputable def homotopyGroupEquiv [Finite N] [Nontrivial N] [DecidableEq N]
     (hp : IsCoveringMap p) (e : E) : HomotopyGroup N E e ≃* HomotopyGroup N X (p e) :=
   MulEquiv.ofBijective (homotopyGroupMapHom ⟨p, hp.continuous⟩ rfl)
     ⟨hp.homotopyGroupMap_injective e, hp.homotopyGroupMap_surjective e⟩
-
-
 
 @[simp] theorem homotopyGroupEquiv_apply [Finite N] [Nontrivial N] [DecidableEq N]
     (hp : IsCoveringMap p) (e : E) (a : HomotopyGroup N E e) :

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M83.OpenEmbedding_Pullback
 import PoincareConjecture.Proofs.M83.LocalOrientationFromAtlas
 import PoincareConjecture.Proofs.M83.ProjectivePlaneThickening_NonOrientable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology
@@ -19,15 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
 
 theorem m83OrientationExclusion : M83OrientationExclusionStatement.{u} := by
   intro M _ _ _ _ _ A
@@ -44,9 +27,6 @@ theorem m83OrientationExclusion : M83OrientationExclusionStatement.{u} := by
   obtain ⟨O⟩ := Proofs.M83.exists_localOrientation_of_positiveThreeAtlas P
   exact Proofs.M83.projectivePlaneThickening_not_orientable O
 
-
-
-
 theorem m83NoProjectivePlaneFromTopology
     (hM83 : M83OrientationExclusionStatement.{u})
     {M : Type u} [TopologicalSpace M] [T2Space M]
@@ -57,10 +37,6 @@ theorem m83NoProjectivePlaneFromTopology
     NoTrivialNormalProjectivePlane (M := M) := by
   obtain ⟨O⟩ := H.orientation
   exact hM83 M O
-
-
-
-
 
 theorem m83NoProjectivePlaneFromMilestones
     {M : Type u} [TopologicalSpace M] [T2Space M]

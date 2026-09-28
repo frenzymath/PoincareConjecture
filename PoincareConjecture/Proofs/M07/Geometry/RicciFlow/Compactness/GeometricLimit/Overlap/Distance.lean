@@ -5,15 +5,6 @@ import Mathlib.Topology.MetricSpace.ProperSpace.Real
 import Mathlib.Topology.Algebra.Order.Field
 import PoincareConjecture.Proofs.M07.Topology.Sequences.Diagonal
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -59,9 +50,6 @@ private theorem exists_common_locallyUniform_limits
     (x := fun k i => u i k) (fun k i => subset_closure (mem_range_self k))
   exact ⟨σ, hσ, F, fun i =>
     ContinuousMap.tendsto_iff_tendstoLocallyUniformly.mp (tendsto_pi_nhds.mp hF i)⟩
-
-
-
 
 theorem exists_pairwise_limits
     {X : ℕ → Type*} [∀ i, PseudoMetricSpace (X i)]
@@ -133,8 +121,6 @@ theorem zero_trans {i j l : ι} {x : X i} {y : X j} {z : X l}
   apply le_antisymm _ (nonneg hD i l x z)
   simpa only [hxy, hyz, add_zero] using triangle hD i j l x y z
 
-
-
 def zeroSetoid : Setoid (Σ i, X i) where
   r p q := D p.1 q.1 (p.2, q.2) = 0
   iseqv := ⟨fun p => self hD p.1 p.2,
@@ -167,8 +153,6 @@ theorem zero_unique [∀ i, MetricSpace (X i)]
   exact dist_le_zero.mp hdist
 
 end Relation
-
-
 
 theorem isClosed_zero {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
     (D : C(X × Y, ℝ)) : IsClosed {p | D p = 0} :=

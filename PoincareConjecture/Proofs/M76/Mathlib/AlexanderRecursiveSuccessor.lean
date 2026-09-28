@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSelectedCover
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedralIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +10,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem AlexanderCollarSlab.nonempty_selected_successor
     {S s d TX TY X : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

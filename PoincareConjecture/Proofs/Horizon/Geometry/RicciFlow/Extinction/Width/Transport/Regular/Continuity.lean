@@ -23,7 +23,6 @@ variable
     {hM64 : M64ComparisonTheory.{u}}
     {hM65 : M65DeformationTheory hM61 hM64}
 
-
 theorem m67_width_right_continuous
     (X : M67ChangingWidthPath D W P K C H B A q hM61 hM65)
     (s : Set.Icc (0 : ℝ) T) (epsilon : ℝ) (hepsilon : 0 < epsilon) :
@@ -58,7 +57,6 @@ theorem m67_width_right_continuous
     intro t hst _ht
     have hts : t = s := Subtype.ext (by linarith [t.2.2])
     simpa [hts] using hepsilon
-
 
 theorem m67_width_continuous_at_regular
     (X : M67ChangingWidthPath D W P K C H B A q hM61 hM65)

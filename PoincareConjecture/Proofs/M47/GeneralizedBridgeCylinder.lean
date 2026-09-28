@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.GeneralizedBridgeGeometry
 import PoincareConjecture.Proofs.M33.GuardedCylinders
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M47
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
   (H : M33RegularHistoryData W)
 
-
-
 theorem regular_history_backward_cylinder_time
     {C : GeneralizedSliceCarrier.{u}} {t scale a : ℝ} {U : Set C.carrier}
     (ht : t ∈ H.generalized.interval)
@@ -34,8 +22,6 @@ theorem regular_history_backward_cylinder_time
   apply W.interval_connected.out W.zero_mem (H.interval_eq ▸ ht)
   refine ⟨F.time_domain_nonnegative (e.time_subset (mem_image_of_mem _ hs)), ?_⟩
   exact add_le_of_nonpos_right (div_nonpos_of_nonpos_of_nonneg hs.2 e.scale_pos.le)
-
-
 
 theorem exists_regular_history_backward_cylinder
     {C : GeneralizedSliceCarrier.{u}} {t scale a : ℝ} {U : Set C.carrier}
@@ -54,8 +40,6 @@ theorem exists_regular_history_backward_cylinder
 variable {t origin scale : ℝ} (ht : t ∈ H.generalized.interval)
   {J : Set ℝ} (U : Set (F.slice t).carrier)
   (d : GeneralizedFlowCylinder H.generalized (F.slice t) origin scale J U)
-
-
 
 noncomputable def regular_history_rebase_cylinder :
     GeneralizedFlowCylinder H.generalized (H.generalized.slice t) origin scale J
@@ -95,8 +79,6 @@ noncomputable def regular_history_rebase_cylinder :
     rw [d.left_inverse s hs hx, H.history.left_inverse t ht x]
   · exact d.embedding.comp (Topology.IsEmbedding.id.prodMap
       ((H.history.forward_openEmbedding t ht).isEmbedding.restrict hmaps))
-
-
 
 theorem regular_history_rebase_pullback (hU : IsOpen U)
     (s : ℝ) (hs : s ∈ J) (x : (H.generalized.slice t).carrier)

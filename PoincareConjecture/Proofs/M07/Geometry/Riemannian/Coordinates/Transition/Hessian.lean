@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.ChangeCoordinates
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Jacobi
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -69,8 +55,6 @@ private theorem inner_coordinateChristoffel_transition
     (hinv.self_apply_inverse (metricKoszulCovector (fderiv ℝ B x) u v))
   simpa [coordinateChristoffel, metricKoszulCovector] using h
 
-
-
 theorem coordinateChristoffel_change_coordinates_bilinear
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
     (hB : DifferentiableAt ℝ B x) (hC : DifferentiableAt ℝ C (f x))
@@ -113,8 +97,6 @@ open PoincareConjecture
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem fderiv_fderiv_eq_christoffel
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
     (hB : DifferentiableAt ℝ B x) (hC : DifferentiableAt ℝ C (f x))
@@ -132,8 +114,6 @@ theorem fderiv_fderiv_eq_christoffel
     (coordinateChristoffel_change_coordinates_bilinear hB hC hBinv hCinv
       hCsymm.self_of_nhds hf hsurj hmetric u v).symm
 
-
-
 theorem surjective_of_pullback_isInvertible [FiniteDimensional ℝ E]
     {B C : E →L[ℝ] E →L[ℝ] ℝ} {D : E →L[ℝ] E}
     (hB : B.IsInvertible)
@@ -145,11 +125,8 @@ theorem surjective_of_pullback_isInvertible [FiniteDimensional ℝ E]
   change D u = D v at huv
   rw [hmetric u w, hmetric v w, huv]
 
-
 abbrev ChristoffelSpace (E : Type*) [NormedAddCommGroup E] [NormedSpace ℝ E] :=
   E →L[ℝ] E →L[ℝ] E
-
-
 
 noncomputable def transitionHessianPolynomial
     (z : ChristoffelSpace E ×
@@ -161,8 +138,6 @@ noncomputable def transitionHessianPolynomial
     (A B : ChristoffelSpace E) (D : E →L[ℝ] E) (u v : E) :
     transitionHessianPolynomial (A, (B, D)) u v = D (A u v) - B (D u) (D v) := by
   rfl
-
-
 
 theorem transitionHessianPolynomial_eq
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
@@ -187,7 +162,6 @@ theorem transitionHessianPolynomial_eq
   rw [h]
   abel
 
-
 theorem fderiv_fderiv_eq_transitionHessianPolynomial
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {x : E}
     (hB : DifferentiableAt ℝ B x) (hC : DifferentiableAt ℝ C (f x))
@@ -201,8 +175,6 @@ theorem fderiv_fderiv_eq_transitionHessianPolynomial
         (CoordinateExponential.christoffelBilinear C (f x), fderiv ℝ f x)) := by
   ext u v
   exact (transitionHessianPolynomial_eq hB hC hBinv hCinv hCsymm hf hsurj hmetric u v).symm
-
-
 
 theorem fderiv_fderiv_eq_transitionHessianPolynomial_on
     {B C : E → E →L[ℝ] E →L[ℝ] ℝ} {f : E → E} {U V : Set E}
@@ -226,7 +198,6 @@ theorem fderiv_fderiv_eq_transitionHessianPolynomial_on
     (hf.contDiffAt (hU.mem_nhds hx)) (hsurj x hx)
     (Filter.Eventually.mono (hU.mem_nhds hx) (fun y hy => hmetric y hy))
 
-
 theorem contDiff_transitionHessianPolynomial
     [CompleteSpace E] [FiniteDimensional ℝ E] :
     ContDiff ℝ ∞ (transitionHessianPolynomial :
@@ -245,7 +216,6 @@ end PoincareConjecture.CoordinateTransition
 namespace PoincareConjecture.CoordinateExponential
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem contDiffOn_christoffelBilinear [CompleteSpace E]
     {B : E → E →L[ℝ] E →L[ℝ] ℝ} {U : Set E} (hU : IsOpen U)

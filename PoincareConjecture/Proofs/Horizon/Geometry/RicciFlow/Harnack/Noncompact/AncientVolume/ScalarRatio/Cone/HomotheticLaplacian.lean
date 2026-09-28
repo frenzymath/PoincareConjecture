@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Derivativ
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.Trace
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.DerivativeOnFields
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem covariantTensorDerivative_riemannEvaluation_homothetic_last
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -51,7 +42,6 @@ theorem covariantTensorDerivative_riemannEvaluation_homothetic_last
     D.curvatureTensor_eq_zero_of_constant_covariantDerivative hD V hVsmooth c hV y a b w
   simpa [X, riemannEvaluation, Fin.sum_univ_succ, hzero, hV, mvfderiv_const] using h
 
-
 theorem covariantTensorDerivative_riemannEvaluation_homothetic_first
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -66,7 +56,6 @@ theorem covariantTensorDerivative_riemannEvaluation_homothetic_first
     neg_neg, (hD.2.2.2.1 x b w a (c • u)).2.1,
     D.curvatureTensor_swap_first]
 
-
 theorem covariantTensorDerivative_riemannEvaluation_homothetic_third
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -79,8 +68,6 @@ theorem covariantTensorDerivative_riemannEvaluation_homothetic_third
     D.covariantTensorDerivative_riemannEvaluation_homothetic_first hD V hVsmooth c hV,
     (hD.2.2.2.1 x (c • u) w a b).2.1]
 
-
-
 theorem covariantTensorDerivative_riemannEvaluation_homothetic_pair_eq_zero
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
     (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -92,8 +79,6 @@ theorem covariantTensorDerivative_riemannEvaluation_homothetic_pair_eq_zero
     (hD.2.2.2.1 x (c • u) a (V x) b).1,
     D.curvatureTensor_eq_zero_of_constant_covariantDerivative hD V hVsmooth c hV]
   simp
-
-
 
 theorem secondCovariantTensorDerivative_riemannEvaluation_homothetic_pair
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -130,8 +115,6 @@ theorem secondCovariantTensorDerivative_riemannEvaluation_homothetic_pair
     D.curvatureTensor_smul_first, D.curvatureTensor_smul_third] at h
   rw [h]
   ring
-
-
 
 theorem tensorLaplacian_riemannEvaluation_homothetic_pair
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

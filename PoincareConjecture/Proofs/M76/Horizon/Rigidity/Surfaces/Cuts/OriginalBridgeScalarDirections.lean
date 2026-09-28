@@ -1,15 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalBridgeReversal
 import Mathlib.LinearAlgebra.Dual.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76.OriginalTriangleCopies
-
-
 
 theorem exists_edge_scalar_coordinate
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -27,8 +23,6 @@ theorem exists_edge_scalar_coordinate
   rintro x ⟨r, rfl⟩ y ⟨s, rfl⟩ he
   rw [hval, hval] at he
   exact congrArg (AffineMap.lineMap a b) (add_left_cancel he)
-
-
 
 theorem scalar_interval_direction_of_samples
     {f : ℝ → ℝ} {a b r s : ℝ} (hab : a < b)
@@ -55,8 +49,6 @@ theorem scalar_interval_endpoint_product_neg_of_samples
     rw [sign_mul, hfsgn, hgsgn, ← sign_mul, sign_neg hneg]
   exact sign_eq_neg_one_iff.mp hsgn
 
-
-
 theorem endpoint_pair_reversal_of_local_scalar_product
     {E : Type*} (ell : E → ℝ) (f g : ℝ → E)
     {a b c d r s u v : ℝ} (hab : a < b) (hcd : c < d)
@@ -73,8 +65,6 @@ theorem endpoint_pair_reversal_of_local_scalar_product
   · simp only [Function.comp_apply, h0, h1] at hn
     exact (not_lt_of_ge (mul_self_nonneg (ell (f b) - ell (f a))) hn).elim
   · exact h
-
-
 
 theorem scalar_interval_direction_of_affine_overlap
     {g : ℝ → ℝ} (h : ℝ →ᵃ[ℝ] ℝ) {a b r s q : ℝ}

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.Nested.ReferenceLo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NorthCapEndTransport
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,8 +13,6 @@ open scoped ContDiff Manifold InnerProductSpace Matrix
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem exists_reference_native_three_ends
     (ws wm d : ℝ)

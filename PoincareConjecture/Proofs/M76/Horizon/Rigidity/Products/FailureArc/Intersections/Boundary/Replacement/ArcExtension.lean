@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 
-
-
 set_option autoImplicit false
 open Set
 

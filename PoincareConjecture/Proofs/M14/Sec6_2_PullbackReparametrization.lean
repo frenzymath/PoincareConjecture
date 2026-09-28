@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.PullbackSectionSmooth
 import Mathlib.Geometry.Manifold.VectorBundle.ContMDiffSection
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {J K : Set ℝ} {Y : ∀ s, G.Horizontal (γ s)}
-
-
-
 
 noncomputable def pullbackExtensionSmulComp (E : M14PullbackExtension G γ J Y)
     (f c : ℝ → ℝ) (hf : ContDiff ℝ ∞ f) (hc : ContDiff ℝ ∞ c) (hmap : MapsTo f K J) :
@@ -83,9 +72,6 @@ noncomputable def pullbackExtensionSmulComp (E : M14PullbackExtension G γ J Y)
   · intro s hs
     exact horizontal_parameter_hasDerivAt_of_contMDiffAt W s (γ (f s))
       ((hW _ (hgraph (f s) (hmap hs))).contMDiffAt (hN.mem_nhds (hgraph (f s) (hmap hs))))
-
-
-
 
 theorem horizontalCovariantDerivative_smul_comp
     (E : M14PullbackExtension G γ J Y) (f c : ℝ → ℝ)

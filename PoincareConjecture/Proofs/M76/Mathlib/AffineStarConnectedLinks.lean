@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.InteriorConnectedLinks
 import PoincareConjecture.Proofs.M76.Mathlib.AffineStarFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePolyhedronMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ namespace Geometry.SimplicialComplex
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [DecidableEq V]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem AffineOnFaces.isConnected_faceLink_of_embeddedImage [DecidableEq E]
     {K : SimplicialComplex ℝ V} {f : V → E} (hf : K.AffineOnFaces f)
@@ -39,10 +26,6 @@ theorem AffineOnFaces.isConnected_faceLink_of_embeddedImage [DecidableEq E]
       (isConnected_iff_connectedSpace.mp hconn))
 
 variable [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem isConnected_faceLink_of_faceAffine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)
@@ -79,9 +62,6 @@ theorem isConnected_faceLink_of_faceAffine_vertex_stars
   have hsource := hf.isConnected_faceLink_of_embeddedImage hinj hS hsS hlink
   exact (K.closedFaceStar_faceLink_of_subset
     (Finset.singleton_subset_iff.mpr hps)) ▸ hsource
-
-
-
 
 theorem isConnected_faceLink_of_affine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

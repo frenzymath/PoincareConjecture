@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.BoxGeometry
 import PoincareConjecture.Proofs.M11.SpatialCalculus
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

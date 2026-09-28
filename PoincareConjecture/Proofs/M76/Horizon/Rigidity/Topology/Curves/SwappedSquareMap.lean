@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTorusSquareMap
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.SourceTorusBand
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -19,7 +17,6 @@ def squareSwap (p : ℝ) : Square p ≃ₜ Square p := Homeomorph.prodComm _ _
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} [Fact (0 < p)]
-
 
 def SourceSquareMap.swap (M : SourceSquareMap p K) : SourceSquareMap p K where
   map := M.map.comp ⟨squareSwap p, (squareSwap p).continuous⟩
@@ -46,15 +43,11 @@ def SourceSquareMap.swap (M : SourceSquareMap p K) : SourceSquareMap p K where
 @[simp] theorem SourceSquareMap.swap_map (M : SourceSquareMap p K) (z : Square p) :
     M.swap.map z = M.map (squareSwap p z) := rfl
 
-
-
 theorem SourceSquareMap.swap_homeomorph_value (M : SourceSquareMap p K)
     (h : (AddCircle p × AddCircle p) ≃ₜ K.space)
     (hh : ∀ z, h (projection p z) = M.map z) (z : Square p) :
     ((Homeomorph.prodComm _ _).trans h) (projection p z) = M.swap.map z :=
   hh (squareSwap p z)
-
-
 
 theorem SourceSquareMap.swap_homeomorph_eq (M : SourceSquareMap p K)
     (h hs : (AddCircle p × AddCircle p) ≃ₜ K.space)
@@ -73,8 +66,6 @@ theorem SourceSquareMap.swap_homeomorph_symm (M : SourceSquareMap p K)
     hs.symm x = (h.symm x).swap := by
   rw [M.swap_homeomorph_eq h hs hh hsvalue]
   rfl
-
-
 
 theorem SourceSquareMap.exists_two_original_coordinate_bands
     [FiniteDimensional ℝ E]

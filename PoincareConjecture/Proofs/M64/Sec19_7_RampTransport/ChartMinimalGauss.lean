@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Hypersurface.Charts
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Variation.Manifold
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Intrinsic
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,10 +22,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
   {h : RiemannianMetric 2 (EuclideanSpace ℝ (Fin 2))}
-
-
-
-
 
 theorem m64_harmonic_chart_gaussian_le_sectional
     (D : LeviCivitaData g) (Dh : LeviCivitaData h)

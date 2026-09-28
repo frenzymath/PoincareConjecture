@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
 
 omit [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N] in
-
 
 theorem mfderiv_bijective_of_smooth_leftInvOn
     {f : M → N} {inverse : N → M} {U : Set M} (hU : IsOpen U)
@@ -59,8 +49,6 @@ theorem mfderiv_bijective_of_smooth_leftInvOn
   exact ⟨hleftD.injective,
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank hfin).mp hleftD.injective⟩
 
-
-
 theorem isOpen_image_of_smooth_leftInvOn
     {f : M → N} {inverse : N → M} {U : Set M} (hU : IsOpen U)
     (hf : ContMDiffOn (𝓡 n) (𝓡 n) ∞ f U)
@@ -72,8 +60,6 @@ theorem isOpen_image_of_smooth_leftInvOn
     ((hf x hx).contMDiffAt (hU.mem_nhds hx))
     (mfderiv_bijective_of_smooth_leftInvOn hU hf hi hleft hx)]
   exact image_mem_map (hU.mem_nhds hx)
-
-
 
 theorem contMDiffAt_inverse_of_smooth_leftInvOn
     {f : M → N} {inverse : N → M} {U : Set M} (hU : IsOpen U)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Collar
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.ContainedSphere
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -64,7 +54,6 @@ theorem not_isCompact_of_half_region_subset (N : EpsilonNeck g) {K : Set M}
     rw [heq] at hh
     exact lt_irrefl _ hh
 
-
 theorem not_isCompact_of_frontier_eq_central_sphere (N : EpsilonNeck g) {K : Set M}
     (hK : K ⊆ N.carrier) (hfront : frontier K = N.central_sphere)
     (hint : (interior K).Nonempty) : ¬ IsCompact K := by
@@ -101,8 +90,6 @@ end PoincareConjecture.EpsilonNeck
 
 namespace PoincareConjecture.CapCertificate
 
-
-
 theorem exists_closed_core_neck_noncontainment_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧
       ∀ {M : Type u} [TopologicalSpace M]
@@ -134,8 +121,6 @@ theorem exists_closed_core_neck_noncontainment_threshold :
     exact C.core_nonempty.image e.symm
   exact N.not_isCompact_of_frontier_eq_central_sphere hcore hfront hint
     (C.closed_core_compact.image e.symm.continuous)
-
-
 
 theorem exists_neck_noncontainment_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 200 ∧

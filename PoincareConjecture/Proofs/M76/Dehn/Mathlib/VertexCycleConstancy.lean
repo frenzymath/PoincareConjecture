@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleChainKernel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.VertexTriangleIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -20,7 +10,6 @@ namespace PreAbstractSimplicialComplex.ModTwoCochains
 variable {ι : Type*} [Fintype ι] (A : PreAbstractSimplicialComplex ι)
 
 open Classical in
-
 
 theorem boundary2_ker_coordinates_of_common_edge
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card ≤ 2)
@@ -45,8 +34,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
 local notation "L" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
 open Classical in
-
-
 
 theorem boundary2_ker_coordinates_of_common_vertex
     (hpure : ∀ t ∈ K.faces, ∃ q ∈ K.faces, t ⊆ q ∧ q.card = 3)

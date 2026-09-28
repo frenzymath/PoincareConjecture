@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.BinaryFootStarContainment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -19,9 +9,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
-
-
-
 
 theorem original_endpoint_foot_subset_sphere
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

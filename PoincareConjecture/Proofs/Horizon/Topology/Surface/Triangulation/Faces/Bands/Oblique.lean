@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Polygonal
 import PoincareConjecture.Proofs.Horizon.Topology.Plane.Curves.Graphs.ObliquePolygonalBoundary
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +14,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 noncomputable def obliqueSurfaceCoordinates
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -78,8 +67,6 @@ theorem smooth_obliqueSurfaceCoordinates_symm
       (fun _ hz => hz.2.1))
   exact hH.contMDiffOn.comp (hFinv.mono (fun _ hz => hz.1)) (fun _ hz => hz.2)
 
-
-
 structure ObliqueBandFaces
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     (lo : ℝ → ℝ) (a b ua wa ub wb ra rb : ℝ) where
@@ -95,8 +82,6 @@ structure ObliqueBandFaces
     SmoothGraphBandPair (obliqueSurfaceCoordinates F cuts open_domain smooth_lower)
       (fun _ => 0) (interface.pieceCoordinates open_domain smooth_lower i).upperGraph
       (interface.strictMono_parameterCut open_domain smooth_lower (Fin.castSucc_lt_succ (i := i)))
-
-
 
 noncomputable def obliqueBandFacesOfInterface
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -144,7 +129,6 @@ noncomputable def obliqueBandFacesOfInterface
 
 omit [T2Space M] [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M] in
 
-
 theorem exists_graph_coordinate_source_tube
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
     {lo : ℝ → ℝ} {X : Set ℝ} (hX : IsOpen X) (hlo : ContDiffOn ℝ ∞ lo X)
@@ -176,8 +160,6 @@ theorem exists_graph_coordinate_source_tube
   intro x hx z hz
   exact (hUV (a := (x, z)) ⟨hx.1, hball (by
     simpa only [Metric.mem_ball, dist_zero_right, Real.norm_eq_abs] using hz)⟩).2
-
-
 
 theorem exists_obliqueBandFaces
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M)
@@ -224,13 +206,10 @@ variable {F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M}
   {lo : ℝ → ℝ} {a b ua wa ub wb ra rb : ℝ}
   (B : ObliqueBandFaces F lo a b ua wa ub wb ra rb)
 
-
 noncomputable abbrev coordinates : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) M :=
   obliqueSurfaceCoordinates F B.cuts B.open_domain B.smooth_lower
 
-
 noncomputable abbrev cut : Fin (B.interface.count + 1) → ℝ := B.interface.parameterCut
-
 
 noncomputable abbrev upperGraph (i : Fin B.interface.count) : ℝ → ℝ :=
   (B.interface.pieceCoordinates B.open_domain B.smooth_lower i).upperGraph
@@ -252,13 +231,10 @@ theorem upperGraph_endpoints (i : Fin B.interface.count) :
       B.upperGraph i (B.cut i.succ) = B.interface.height i.succ :=
   (B.interface.pieceCoordinates B.open_domain B.smooth_lower i).upperGraph_endpoints
 
-
 noncomputable def face (i : Fin B.interface.count × Bool) : SmoothFace M := (B.pair i.1).face i.2
-
 
 def band : Set (EuclideanSpace ℝ (Fin 2)) :=
   ⋃ i, coordinateGraphBand (fun _ => 0) (B.upperGraph i) (B.cut i.castSucc) (B.cut i.succ)
-
 
 noncomputable def vertex (i : Fin (B.interface.count + 1) × Bool) : M :=
   B.coordinates (collarParameterEquiv.symm
@@ -342,7 +318,6 @@ private theorem face_intersection_of_lt {i j : Fin B.interface.count} (hij : i <
     have hsep : (i : ℕ) + 1 < j := by have hval : (i : ℕ) < j := hij; omega
     rw [disjoint_iff_inter_eq_empty.mp (B.nonadjacent_disjoint hsep s t)]
     exact empty_subset _
-
 
 theorem face_intersection (i j : Fin B.interface.count × Bool) (hij : i ≠ j) :
     (∃ k l : Fin 3, (B.face i).boundary k = (B.face j).boundary l ∧
@@ -472,9 +447,7 @@ private theorem cut_height_image {f : ℝ → ℝ} {x u w r : ℝ}
       · simp
       · ext <;> simp [AffineMap.lineMap_apply] <;> ring
 
-
 def firstCell : Fin B.interface.count := ⟨0, B.interface.count_pos⟩
-
 
 def lastCell : Fin B.interface.count := ⟨B.interface.count - 1, by
   have hn := B.interface.count_pos

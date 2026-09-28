@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Centered
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +13,6 @@ namespace PoincareConjecture
 local instance : Bundle.RiemannianBundle
     (RoundCylinderTangent : RoundCylinderSpace → Type _) :=
   ⟨roundCylinderProductMetric.toRiemannianMetric⟩
-
 
 theorem roundCylinderClose_iterated_normSquared_lt
     {ε : ℝ} {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose ε 0 B)
@@ -42,8 +33,6 @@ theorem roundCylinderClose_iterated_normSquared_lt
   · intro j _
     exact roundCylinderTensorNormSquared_nonneg z.1 _ _
   · exact Finset.mem_range.mpr (Nat.lt_succ_iff.mpr hk)
-
-
 
 theorem roundCylinderClose_first_derivative_apply_le
     {ε : ℝ} (hε : 0 < ε) (hεone : ε ≤ 1)
@@ -79,8 +68,6 @@ theorem roundCylinderClose_first_derivative_apply_le
   simpa only [componentMultilinearMap_basis, roundCylinderTensorNormSquared,
     Matrix.of_apply, b, roundCylinderChartBasis_apply] using hnorm.le
 
-
-
 theorem roundCylinderClose_first_jet_center
     {ε : ℝ} {B : RoundCylinderTwoTensor} (hB : RoundCylinderClose ε 0 B)
     (q : UnitTwoSphere) {s : ℝ} (hs : s ∈ Ioo (-ε⁻¹) ε⁻¹) (a : Fin 3 → Fin 3) :
@@ -105,8 +92,6 @@ theorem roundCylinderClose_first_jet_center
   rw [fderiv_sub hd ((contDiff_roundCylinderGram 0 q (a 1) (a 2)).differentiable
     (by simp) (0, s)), fderiv_roundCylinderGram_center]
   simp
-
-
 
 theorem roundCylinderClose_coefficient_derivative_center_le
     {ε : ℝ} (hε : 0 < ε) (hεone : ε ≤ 1)

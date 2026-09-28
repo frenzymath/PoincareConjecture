@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.Essential
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts.MatchingBalls
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Closing.Certificate
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -223,8 +211,6 @@ private theorem exists_matching_balls [T2Space M]
     have hm := (hmatch (q, -t) (by simpa only [abs_neg] using ht)).2
     change d (Real.exp (-t) • (q : E3)) = c₀ (q, -t) at hm
     simpa only [hc₀val, neg_neg] using hm.symm
-
-
 
 theorem nonempty_euclidean_pair_certificate [IsManifold (𝓡 3) ∞ M] [T2Space M]
     (U V : Opens M) (e f : OpenPartialHomeomorph M E3)

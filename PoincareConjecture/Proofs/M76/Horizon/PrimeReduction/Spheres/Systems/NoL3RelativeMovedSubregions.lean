@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.NoL3
 import PoincareConjecture.Proofs.M76.PrimeReduction.SphereAmbientTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.PLDomainAmbientTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

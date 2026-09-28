@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.PeriodReflection
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Parameters.PrescribedPhaseShear
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M30.Generalized.WorldlineUniqueness
 import PoincareConjecture.Definitions.M13TimeRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M30.Cylinder
-
-
 
 noncomputable def ofBox (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (origin scale : ℝ) (hscale : 0 < scale) {I : Set ℝ}
@@ -47,16 +35,12 @@ noncomputable def ofBox (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     intro s' hs' _
     exact ⟨hI hs', rfl⟩
 
-
-
 @[simp] theorem ofBox_pointMap (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (origin scale : ℝ) (hscale : 0 < scale) {I : Set ℝ}
     (hI : I ⊆ (fun s : ℝ => origin + s / scale) ⁻¹' (F.box b).interval)
     (s : ℝ) (hs : s ∈ I) (x : (F.box b).carrier.carrier) :
     (ofBox F b origin scale hscale hI).pointMap s hs x =
       (⟨origin + s / scale, (F.box b).forward _ (hI hs) x⟩ : F.point) := rfl
-
-
 
 @[simp] theorem ofBox_pullbackInner (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (origin scale : ℝ) (hscale : 0 < scale) {I : Set ℝ}
@@ -66,8 +50,6 @@ noncomputable def ofBox (F : GeneralizedRicciFlowData.{u}) (b : F.box_index)
     (ofBox F b origin scale hscale hI).pullbackInner s hs x v w =
       scale * ((F.box b).flow.metric (origin + s / scale)).inner x v w := by
   exact congrArg (scale * ·) ((F.box b).metric_pullback _ (hI hs) x v w)
-
-
 
 theorem forward_eq_box_on_overlap
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -3,16 +3,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -48,8 +38,6 @@ private theorem existsUnique_level_of_deriv_ge
   refine ⟨t, ⟨ht, htc⟩, ?_⟩
   intro s hs
   exact hmono.injOn ⟨hs.1.1.le, hs.1.2.le⟩ ⟨ht.1.le, ht.2.le⟩ (hs.2.trans htc.symm)
-
-
 
 theorem existsUnique_level_of_abs_deriv_ge
     {F : ℝ → ℝ} {W m c : ℝ} (hW : 0 < W) (hm : 0 < m)

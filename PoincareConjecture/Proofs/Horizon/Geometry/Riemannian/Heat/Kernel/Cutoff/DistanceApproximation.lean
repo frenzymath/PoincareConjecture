@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.LipschitzApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators NNReal Topology
@@ -17,8 +8,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_approx_of_partition_with_error {ι : Type*} [Countable ι]
     (g : RiemannianMetric n M) (r : M → ℝ)
@@ -85,8 +74,6 @@ theorem exists_approx_of_partition_with_error {ι : Type*} [Countable ι]
       (div_le_div_of_nonneg_right hgeom (by norm_num : (0 : ℝ) ≤ 4)) hN
     nlinarith
 
-
-
 theorem exists_approx_of_local_with_error [T2Space M] [SigmaCompactSpace M]
     (g : RiemannianMetric n M) (r : M → ℝ)
     (hlocal : ∀ p : M, ∃ U : Set M, U ∈ 𝓝 p ∧ ∀ δ : ℝ, 0 < δ → ∃ f : M → ℝ,
@@ -114,8 +101,6 @@ theorem exists_approx_of_local_with_error [T2Space M] [SigmaCompactSpace M]
   have hs : tsupport (ρ i) ⊆ U (fs.c i) := hfs.toSmoothPartitionOfUnity i
   exact ⟨f, fun x hx ↦ hsm x (hs hx), fun x hx ↦ he x (hs hx),
     fun x hx ↦ hd x (hs hx)⟩
-
-
 
 theorem exists_smooth_distance_approx_with_error [T3Space M] [PreconnectedSpace M]
     (g : RiemannianMetric n M) (O : M) {ε : ℝ} (hε : 0 < ε) :

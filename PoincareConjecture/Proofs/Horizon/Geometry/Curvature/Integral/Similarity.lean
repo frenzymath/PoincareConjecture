@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scali
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Normalization.Scaling.Geometry
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set MeasureTheory
@@ -23,7 +16,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
 
 theorem integral_scalarCurvature_eq_of_metric_similarity
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -39,7 +31,6 @@ theorem integral_scalarCurvature_eq_of_metric_similarity
   simp only [rescaledMetric_volumeMeasure, integral_smul_measure,
     rescaledMetric_scalarCurvature, ENNReal.toReal_pow,
     ENNReal.toReal_ofReal (Real.sqrt_nonneg a)]
-
 
 theorem setIntegral_scalarCurvature_eq_of_metric_similarity
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -69,7 +60,6 @@ theorem setIntegral_scalarCurvature_eq_of_metric_similarity
         (rescaledMetric_scalarCurvature g D a ha x)
   simp only [hscalar, G, rescaledMetric_volumeMeasure, Measure.restrict_smul,
     integral_smul_measure, ENNReal.toReal_pow, ENNReal.toReal_ofReal (Real.sqrt_nonneg a)]
-
 
 theorem setIntegral_pos_scalarCurvature_eq_of_metric_similarity
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Collars.FinitePLBallBoundaryCollar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Products.TwoSideProduct
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -59,9 +50,6 @@ namespace Set.IsFinitePLBallPair
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "J" => Icc (-1 : ℝ) 1
-
-
-
 
 theorem exists_attachment_product
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

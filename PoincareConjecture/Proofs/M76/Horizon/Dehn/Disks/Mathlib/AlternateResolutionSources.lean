@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedAttachmentSources
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -20,8 +13,6 @@ local notation "I01" => Icc (0 : ℝ) 1
 local notation "TR" => convexHull ℝ (range rightTriangle)
 local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
-
-
 
 structure AlternateResolutionSources
     {EA EM EC X : Type*}
@@ -69,7 +60,6 @@ structure AlternateResolutionSources
   keepR : ∀ x : Sstrip, g (H.symm (rightDiskCopy mR (leftDiskCopy nR x))) = fR x
   keepC : ∀ x : SC, g (H.symm (leftDiskCopy nC x)) = fC x
 
-
 namespace AlternateResolutionSources
 
 variable {EA EM EC X : Type*}
@@ -111,7 +101,6 @@ theorem embeddings : Topology.IsEmbedding s.jA ∧ Topology.IsEmbedding s.jL ∧
     (h.comp (rightDiskCopy_isEmbedding s.mR)).comp (leftDiskCopy_isEmbedding s.nR),
     h.comp (leftDiskCopy_isEmbedding s.nC)⟩
 
-
 theorem cover : (((range s.jA ∪ range s.jL) ∪ range s.jM) ∪ range s.jR) ∪
     range s.jC = D := by
   ext y
@@ -138,7 +127,6 @@ theorem cover : (((range s.jA ∪ range s.jL) ∪ range s.jM) ∪ range s.jR) �
     · exact Or.inr ⟨x, by
         simpa only [jC, Homeomorph.symm_apply_apply] using
           congrArg (fun z : T ↦ (s.H.symm z : V2)) hx⟩
-
 
 theorem preimage (U : Set X) : D ∩ g ⁻¹' U =
     (((s.jA '' {x : SA | fA x ∈ U} ∪ s.jL '' {x : Sstrip | fL x ∈ U}) ∪

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M38.Components
 import Mathlib.Topology.Covering.Quotient
 import Mathlib.Data.ZMod.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +12,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
 
 @[instance_reducible]
 noncomputable def cylinderReflectionAction : AddAction (ZMod 2) RoundCylinderSpace where
@@ -40,14 +29,11 @@ noncomputable def cylinderReflectionAction : AddAction (ZMod 2) RoundCylinderSpa
 
 attribute [local instance] cylinderReflectionAction
 
-
 theorem cylinderReflection_zero (p : RoundCylinderSpace) : (0 : ZMod 2) +ᵥ p = p :=
   zero_vadd _ _
 
-
 theorem cylinderReflection_one (p : RoundCylinderSpace) :
     (1 : ZMod 2) +ᵥ p = (-p.1, -p.2) := if_neg (by decide)
-
 
 instance cylinderReflection_continuous : ContinuousConstVAdd (ZMod 2) RoundCylinderSpace where
   continuous_const_vadd n := by
@@ -58,7 +44,6 @@ instance cylinderReflection_continuous : ContinuousConstVAdd (ZMod 2) RoundCylin
     · simpa only [if_neg hn, Function.comp_def] using
         ((continuous_neg.comp continuous_fst).prodMk (continuous_neg.comp continuous_snd) :
           Continuous (fun p : RoundCylinderSpace => (-p.1, -p.2)))
-
 
 theorem cylinderReflection_ne (p : RoundCylinderSpace) : (-p.1, -p.2) ≠ p := by
   intro h
@@ -73,14 +58,11 @@ theorem cylinderReflection_ne (p : RoundCylinderSpace) : (-p.1, -p.2) ≠ p := b
 
 variable (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
 
-
 noncomputable def projectivePolarTarget : TopologicalSpace.Opens projectiveCarrier.{u}.carrier :=
   ⟨{projectiveAffineMap R 0}ᶜ, isClosed_singleton.isOpen_compl⟩
 
-
 noncomputable def projectivePolarProjection (p : RoundCylinderSpace) : projectivePolarTarget.{u} R :=
   ⟨projectivePolarMap R p, projectivePolar_ne_center R p⟩
-
 
 theorem projectivePolarProjection_surjective :
     Function.Surjective (projectivePolarProjection.{u} R) := by
@@ -89,7 +71,6 @@ theorem projectivePolarProjection_surjective :
   rw [← projectivePolar_range R] at hy
   obtain ⟨p, hp⟩ := hy
   exact ⟨p, Subtype.ext hp⟩
-
 
 theorem projectivePolarProjection_isAddQuotientCoveringMap :
     IsAddQuotientCoveringMap (projectivePolarProjection.{u} R) (ZMod 2) where

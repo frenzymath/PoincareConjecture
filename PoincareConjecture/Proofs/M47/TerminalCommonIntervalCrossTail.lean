@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCrossDistance
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v w
 
 namespace PoincareConjecture.M47
-
-
 
 def terminalCommonInterval_compactTangentControl
     {M : Type u} [TopologicalSpace M]
@@ -34,8 +24,6 @@ def terminalCommonInterval_compactTangentControl
         (h n).tangentNorm (e n x) (mfderiv (𝓡 3) (𝓡 3) (e n) x v) ∧
       (h n).tangentNorm (e n x) (mfderiv (𝓡 3) (𝓡 3) (e n) x v) ≤
         lambda⁻¹ * g.tangentNorm x v
-
-
 
 theorem terminalCommonInterval_eventually_cross_control
     {M : Type u} {N : Type v} {X : ℕ → Type w}

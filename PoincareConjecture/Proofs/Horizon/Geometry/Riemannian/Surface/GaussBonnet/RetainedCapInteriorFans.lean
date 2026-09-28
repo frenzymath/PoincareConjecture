@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshFamilySeparation
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.CapUnionFrontier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,7 +29,6 @@ theorem cap_parent_support_union (p : T.decomposition.vertices) :
   rw [(T.refinement.subdivision (.inl (p, i))).support, (T.caps p).carrier_eq i]
   rfl
 
-
 theorem vertex_contribution_eq_cap_sum_of_interior
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) {q : S}
     (hq : q ∈ interior (⋃ i, ((T.caps p).face i).carrier)) :
@@ -59,15 +51,11 @@ theorem vertex_contribution_eq_cap_sum_of_interior
   · intro i
     rfl
 
-
-
 theorem cap_center_vertex_fan (g : RiemannianMetric 2 S) (p : T.decomposition.vertices) :
     coordinateVertexAngleContribution g T.refinement.coordinates T.refinement.basis (p : S) =
       2 * Real.pi := by
   rw [T.vertex_contribution_eq_cap_sum_of_interior g p (T.caps p).center_mem_interior_union]
   simpa only [Fintype.sum_prod_type] using T.cap_center_contribution g p
-
-
 
 theorem cap_mem_interior_of_not_mem_chord (p : T.decomposition.vertices) {q : S}
     (hq : ∃ i, q ∈ ((T.caps p).face i).carrier)
@@ -80,7 +68,6 @@ theorem cap_mem_interior_of_not_mem_chord (p : T.decomposition.vertices) {q : S}
   exact hchord i hi
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_away_from_cap_chords
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)
@@ -113,7 +100,6 @@ theorem canonical_vertex_fan_away_from_cap_chords
   exact hchord i ⟨t, Ioo_subset_Icc_self ht, hpoint⟩
 
 set_option maxHeartbeats 800000 in
-
 
 theorem canonical_vertex_fan_in_cap_interior
     (g : RiemannianMetric 2 S) (p : T.decomposition.vertices)

@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.Sweep
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.Family
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.Compression
 private abbrev E1 := EuclideanSpace Real (Fin 1)
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
-
-
 
 theorem exists_marked_disk_compression_family_away_arc
     (b : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -45,8 +37,6 @@ theorem exists_marked_disk_compression_family_away_arc
   exact exists_slab_compression_family_with_relative_support C e
     ((isCompact_closedBall 0 1).image b.continuous) hW hO hslab hzero
     (hedge.trans (image_mono sphere_subset_closedBall)) hDW hBO
-
-
 
 theorem exists_supported_disk_isotopy_of_fixed_arc_neighborhood
     (B D : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)

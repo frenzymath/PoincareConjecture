@@ -3,10 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCollision
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ConfinedPolarInjectivity
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CompactPolarLift
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,11 +11,6 @@ open Set Filter Metric
 open scoped Topology ContDiff Manifold
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_exists_collision_continuous_polar_lift
     (N : IntrinsicAnnulus) {alpha beta : ℝ → AnnulusCoordinates}

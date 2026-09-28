@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.FinitePLIntervalEndpoint
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Filter
 open scoped Topology
@@ -140,4 +138,3 @@ theorem exists_source_intersection_boundary_germ
   · exact fun hz => hsubset hz
 
 end PoincareConjecture.M76
-

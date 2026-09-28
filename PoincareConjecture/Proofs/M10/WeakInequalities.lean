@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M10.TimeDerivativeMeasurable
 import PoincareConjecture.Proofs.M10.WeakPartition
 import PoincareConjecture.Proofs.M10.MeasureRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory

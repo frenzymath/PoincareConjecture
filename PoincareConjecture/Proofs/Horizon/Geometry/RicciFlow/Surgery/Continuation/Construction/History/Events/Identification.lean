@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.RegularSlices
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.OpenFlow
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,11 +15,9 @@ namespace PoincareConjecture.Surgery.RegularHistory.EventIdentify
 variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F} {T : ℝ}
     (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]
 
-
 abbrev carrier : GeneralizedSliceCarrier.{u} :=
   (F.slice (F.event T hT).tMinus).openSubset
     (SurgeryRegionEquivalence.sourceInterior (U := (F.event T hT).retained_pre))
-
 
 def pre (t : Ico (F.event T hT).tMinus T) (htW : t.val ∈ W.interval)
     (htS : t.val ∉ F.surgery_times) : (carrier hT).carrier → (slice W t.val).carrier :=
@@ -76,7 +63,6 @@ theorem pre_metric (t : Ico (F.event T hT).tMinus T)
       ((contMDiff_subtype_val (n := ∞)).mdifferentiable (by simp) x) z)
   rw [← metric_pullback W t.val, hderiv v, hderiv w]
   exact (F.event T hT).pre_metric t x.val _ _
-
 
 def post {b : ℝ} (A : SurgeryRegularSlab F.slice F.metric T b)
     (t : Icc T b) (htW : t.val ∈ W.interval)
@@ -139,7 +125,6 @@ theorem post_metric {b : ℝ} (A : SurgeryRegularSlab F.slice F.metric T b)
   rw [← metric_pullback W t.val, hderiv v, hderiv w]
   exact A.metric_pullback t ((F.event T hT).retention.map x.val) _ _
 
-
 theorem post_event_range {b : ℝ} (A : SurgeryRegularSlab F.slice F.metric T b)
     (hTW : T ∈ W.interval) :
     range (forward W T ∘
@@ -185,8 +170,6 @@ theorem post_transport {b : ℝ} (A : SurgeryRegularSlab F.slice F.metric T b)
     A.transport s t (forward W s.val (post hT A s hsW hsS x)) =
       forward W t.val (post hT A t htW htS x) := by
   simp only [forward_post, SurgeryRegularSlab.transport, Diffeomorph.symm_apply_apply]
-
-
 
 theorem post_slab_compatibility {b : ℝ} (hTb : T < b)
     (hPost : Icc T b ⊆ F.time_domain) (hPostFree : Disjoint F.surgery_times (Ioc T b))

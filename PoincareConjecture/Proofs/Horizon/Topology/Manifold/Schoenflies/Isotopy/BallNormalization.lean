@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.B
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Isotopy.BallEmbedding
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereIsotopy.LinearPath
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -12,8 +10,6 @@ open Set Metric
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 theorem exists_supported_ball_normalization {n : Nat}
     (A : Diffeomorph (𝓡 n) (𝓡 n)
@@ -68,8 +64,6 @@ theorem exists_supported_ball_normalization {n : Nat}
     rw [hPhi' x hx]
     have h := hPsi 1 (show (1 : Real) ∈ Icc 0 1 by simp) x hx
     convert! h using 1 <;> simp [G, B, add_comm] <;> rfl
-
-
 
 theorem exists_supported_matching_of_ball_embeddings {n : Nat}
     (A B : Diffeomorph (𝓡 n) (𝓡 n)

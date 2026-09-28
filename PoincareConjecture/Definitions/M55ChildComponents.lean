@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M54GroupEffects
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology

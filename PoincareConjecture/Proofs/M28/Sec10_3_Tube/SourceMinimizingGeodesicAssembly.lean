@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceMinimizingGeodesicLocal
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -88,9 +79,6 @@ private theorem geodesic_germ_congr
   filter_upwards [heq, hlocal] with u hu hlocalu
   exact ⟨hu.trans hlocalu.1, hlocalu.2⟩
 
-
-
-
 theorem exists_geodesic_eq_intrinsic_metric_segment
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     {η : ℝ → M} {L : ℝ} (hL : 0 < L)
@@ -162,9 +150,6 @@ theorem exists_geodesic_eq_intrinsic_metric_segment
     obtain ⟨ξ, _, heq, hspeed⟩ := hgerms t ht
     rw [heq.mfderiv_eq, heq.self_of_nhds]
     exact hspeed
-
-
-
 
 theorem exists_intrinsic_unit_geodesic_minimizer
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

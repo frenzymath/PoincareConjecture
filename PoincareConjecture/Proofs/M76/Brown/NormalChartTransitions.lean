@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.NormalSignGerms
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ namespace BrownCollar
 
 variable {X P Q R : Type*} [TopologicalSpace X] [TopologicalSpace P]
   [TopologicalSpace Q] [TopologicalSpace R]
-
-
 
 theorem NormalSignAt.of_source_subset
     {e f : OpenPartialHomeomorph (P × ℝ) (Q × ℝ)} {p : P} {s : SignType}
@@ -28,9 +18,6 @@ theorem NormalSignAt.of_source_subset
   intro z hz
   rw [← heq (hUs hz)]
   exact hsign z hz
-
-
-
 
 theorem chart_transition_cancellation
     (e : OpenPartialHomeomorph X (P × ℝ))
@@ -51,8 +38,6 @@ theorem chart_transition_cancellation
     have hfs : e.symm z ∈ f.source := hz.1.2
     change g (f.symm (f (e.symm z))) = g (e.symm z)
     rw [f.left_inv hfs]
-
-
 
 theorem normal_chart_sign_cocycle
     (e : OpenPartialHomeomorph X (P × ℝ))

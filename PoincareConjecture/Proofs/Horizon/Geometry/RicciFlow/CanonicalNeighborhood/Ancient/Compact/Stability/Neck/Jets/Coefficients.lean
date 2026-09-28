@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Cylinder.Jets.CylinderAllOrderBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.ParametrizedCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -64,8 +55,6 @@ theorem normalizedNeckMetric_centeredCoefficients_jet
   · exact (centeredCylinderError_contDiffAt N.metric_comparison.close z hz).of_le
       (by exact_mod_cast le_top)
 
-
-
 theorem exists_normalizedNeck_centered_coefficient_jet_bound (m : ℕ) :
     ∃ C : ℝ, 0 < C ∧
       ∀ {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
@@ -84,8 +73,6 @@ theorem exists_normalizedNeck_centered_coefficient_jet_bound (m : ℕ) :
   apply (hbound N.epsilon_pos N.metric_comparison.close hm z hz).trans
   exact (mul_le_mul_of_nonneg_left (show N.epsilon ≤ 1 by
     linarith [N.epsilon_lt_half]) hA.le).trans_eq (mul_one A)
-
-
 
 theorem exists_normalizedNeck_centered_coefficient_jet_bounds (m : ℕ) :
     ∃ C : ℝ, 0 < C ∧

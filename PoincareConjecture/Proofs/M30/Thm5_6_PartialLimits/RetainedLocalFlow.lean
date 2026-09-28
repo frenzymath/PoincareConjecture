@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.CoordinateFlowRealizat
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.RetainedChartFlows
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +17,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_closed_flow_on_retained_chart
     (hFlow : WithinBilinearFlowService.{0})

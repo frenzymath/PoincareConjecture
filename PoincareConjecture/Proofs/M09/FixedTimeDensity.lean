@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M09.BoundedMinimizingVectors
 import PoincareConjecture.Proofs.M09.MinimizingInitialVectors
 import Mathlib.Topology.Order.DenselyOrdered
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option maxHeartbeats 800000

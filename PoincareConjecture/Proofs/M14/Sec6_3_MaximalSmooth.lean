@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SmoothPrefixPropagation
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialSmooth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,10 +18,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
-
-
 
 theorem initialValueCurve_smooth_prefix
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -58,10 +44,6 @@ theorem initialValueCurve_smooth_prefix
   exact ⟨V, hV, hZV, fun z hz => initialValueDomain_prefix
     (hsurvV z.1 hz.1) hz.2.1 hz.2.2, hsmV⟩
 
-
-
-
-
 theorem initialValueCurve_smooth_neighborhood_positive
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hbase : G.spacetime.timeFunction x = T) {Z : G.Horizontal x} {s : ℝ}
@@ -85,9 +67,6 @@ theorem initialValueCurve_smooth_neighborhood_positive
   rw [hprod, nhdsWithin_prod_eq, nhdsWithin_univ]
   exact prod_mem_prod (hU.mem_nhds hZU) hnear
 
-
-
-
 theorem initialValueDomain_relative_open
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (hbase : G.spacetime.timeFunction x = T) :
@@ -101,9 +80,6 @@ theorem initialValueDomain_relative_open
       initialValueCurve_smooth_neighborhood_positive hM04 hM12 hbase hs hz
     obtain ⟨U, hU, hzU, hUsub⟩ := mem_nhdsWithin.mp hnear
     exact ⟨U, hU, hzU, hUsub.trans hsub⟩
-
-
-
 
 theorem initialValueCurve_family_smooth
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -124,9 +100,6 @@ theorem initialValueCurve_family_smooth
       initialValueCurve_smooth_neighborhood_positive hM04 hM12 hbase hs hz
     exact (hsm (Z, s) ⟨hZU, hs.le, hsr⟩).mono_of_mem_nhdsWithin
       (nhdsWithin_mono (Z, s) (initialValueDomain_admissible hbase) hnear)
-
-
-
 
 theorem initialValueCurve_joint_continuous
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

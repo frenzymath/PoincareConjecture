@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.Def19_12_PositiveDegree
 import PoincareConjecture.Proofs.M62.Sec19_3_CircleIdentities
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +13,6 @@ namespace PoincareConjecture.M63
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Set.Icc a b)} {circumference : ℝ}
-
-
 
 theorem canonicalRamp_speed (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} {x : ℝ} (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma x)
@@ -47,8 +36,6 @@ theorem canonicalRamp_speed (P : M62.CircleProductData F circumference)
   dsimp only [m63CanonicalRamp]
   ring
 
-
-
 theorem canonicalRamp_speed_pos (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} {x : ℝ} (hgamma : MDifferentiableAt 𝓘(ℝ, ℝ) (𝓡 n) gamma x)
     (t : ℝ) : 0 < curveSpeed P.flow (fun y _ => m63CanonicalRamp P gamma y) t x := by
@@ -56,8 +43,6 @@ theorem canonicalRamp_speed_pos (P : M62.CircleProductData F circumference)
   apply Real.sqrt_pos.mpr
   have hA : 0 < circumference / curvePeriod := div_pos P.circle.positive Real.two_pi_pos
   nlinarith [sq_nonneg (curveSpeed F (fun y _ => gamma y) t x), sq_pos_of_pos hA]
-
-
 
 theorem canonicalRamp_isRamp (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} (hgamma : MDifferentiable 𝓘(ℝ, ℝ) (𝓡 n) gamma) (t : ℝ) :
@@ -78,8 +63,6 @@ theorem canonicalRamp_isRamp (P : M62.CircleProductData F circumference)
   rw [hd.deriv]
   exact div_pos (div_pos P.circle.positive Real.two_pi_pos)
     (canonicalRamp_speed_pos P (hgamma x) t)
-
-
 
 theorem canonicalRamp_length_le (P : M62.CircleProductData F circumference)
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma) (t : ℝ) :

@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.RectangleCornerArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLPrescribedBoundaryArc
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoof
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -62,9 +54,6 @@ theorem rimArc_inter_vertices {a b : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1)
 
 theorem vertices_subset_frontier : vertices ⊆ frontier base := by
   rintro p (rfl | rfl | rfl) <;> norm_num [frontier_base, roof]
-
-
-
 
 theorem exists_corner_arc_cut {a b : ℝ}
     (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)

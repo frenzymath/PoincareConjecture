@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M04.MetricPairings
 import PoincareConjecture.Definitions.M62Geometry
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ noncomputable section
 namespace PoincareConjecture.M62
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_circleMetric_of_flatQuotient {p : ℝ}
     [ChartedSpace (EuclideanSpace ℝ (Fin 1)) (AddCircle p)]
@@ -115,8 +104,6 @@ theorem exists_circleMetric_of_flatQuotient {p : ℝ}
   change e.symm (τ.symm y v) * e.symm (τ.symm y w) =
     e.symm (τ.symmL ℝ y v) * e.symm (τ.symmL ℝ y w)
   rw [Trivialization.symmL_apply τ hy, Trivialization.symmL_apply τ hy]
-
-
 
 theorem nonempty_circleGeometry {p : ℝ} (hp : 0 < p) :
     Nonempty (CircleGeometry p) := by

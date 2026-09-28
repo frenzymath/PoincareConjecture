@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.ScalarDerivatives.Services
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -24,7 +14,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 local instance (C : FlowCarrier.{0} 3) : ConnectedSpace C.carrier :=
   connectedSpace_iff_univ.mpr C.connected
-
 
 theorem uniform_based_local_scalar_bound
     (S : ScalarDerivativeServices.{u}) {kappa : ℝ} (hkappa : 0 < kappa)

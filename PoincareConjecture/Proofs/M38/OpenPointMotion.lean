@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M38.LocalPointMotion
 import PoincareConjecture.Proofs.M38.ChartBall
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,17 +13,14 @@ namespace PoincareConjecture.M38
 
 variable (A : GeneralizedSliceCarrier.{u}) (O : Set A.carrier)
 
-
 def PointMotionWithin (x y : A.carrier) : Prop :=
   ∃ e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞,
     e x = y ∧ ∀ z : A.carrier, z ∉ O → e z = z
-
 
 theorem pointMotionWithin_refl (x : A.carrier) : PointMotionWithin A O x x :=
   ⟨Diffeomorph.refl (𝓡 3) A.carrier ∞, rfl, fun _ _ => rfl⟩
 
 variable {A O}
-
 
 theorem PointMotionWithin.symm {x y : A.carrier} (h : PointMotionWithin A O x y) :
     PointMotionWithin A O y x := by
@@ -42,7 +31,6 @@ theorem PointMotionWithin.symm {x y : A.carrier} (h : PointMotionWithin A O x y)
     apply e.injective
     change e (e.symm z) = e z
     rw [e.apply_symm_apply, hfix z hz]
-
 
 theorem PointMotionWithin.trans {x y z : A.carrier}
     (hxy : PointMotionWithin A O x y) (hyz : PointMotionWithin A O y z) :
@@ -56,14 +44,12 @@ theorem PointMotionWithin.trans {x y z : A.carrier}
     change f (e p) = p
     rw [hefix p hp, hffix p hp]
 
-
 theorem PointMotionWithin.mem {x y : A.carrier}
     (hxy : PointMotionWithin A O x y) (hx : x ∈ O) : y ∈ O := by
   obtain ⟨e, he, hfix⟩ := hxy
   by_contra hy
   have h : y = x := e.injective ((hfix y hy).trans he.symm)
   exact hy (h.symm ▸ hx)
-
 
 theorem exists_pointMotionWithin_neighborhood (hO : IsOpen O)
     (p : A.carrier) (hp : p ∈ O) :
@@ -102,7 +88,6 @@ theorem exists_pointMotionWithin_neighborhood (hO : IsOpen O)
     refine ⟨e, ?_, fun z hz => hfix z (fun h => hz (himage h))⟩
     rwa [hcenter] at he
 
-
 theorem pointMotionWithin_orbit_open (hO : IsOpen O) (x : A.carrier) :
     IsOpen {y : O | PointMotionWithin A O x y.val} := by
   rw [isOpen_iff_mem_nhds]
@@ -114,7 +99,6 @@ theorem pointMotionWithin_orbit_open (hO : IsOpen O) (x : A.carrier) :
       hyV) ?_
   intro z hz
   exact hy.trans (hmove z.val hz)
-
 
 theorem pointMotionWithin_orbit_clopen (hO : IsOpen O) (x : A.carrier) :
     IsClopen {y : O | PointMotionWithin A O x y.val} := by
@@ -129,8 +113,6 @@ theorem pointMotionWithin_orbit_clopen (hO : IsOpen O) (x : A.carrier) :
   intro z hz hzreach
   exact hy (hzreach.trans (hmove z.val hz).symm)
 
-
-
 theorem exists_diffeomorph_in_open_component (hO : IsOpen O)
     (x : A.carrier) (hx : x ∈ O) (y : A.carrier)
     (hy : y ∈ connectedComponentIn O x) :
@@ -140,7 +122,6 @@ theorem exists_diffeomorph_in_open_component (hO : IsOpen O)
   obtain ⟨q, hq, rfl⟩ := hy
   exact (pointMotionWithin_orbit_clopen hO x).connectedComponent_subset
     (pointMotionWithin_refl A O x) hq
-
 
 theorem exists_diffeomorph_in_connected_open (hO : IsOpen O) (hconn : IsPreconnected O)
     (x : A.carrier) (hx : x ∈ O) (y : A.carrier) (hy : y ∈ O) :

@@ -1,14 +1,6 @@
 import Mathlib.LinearAlgebra.Matrix.PosDef
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,40 +9,32 @@ namespace PoincareConjecture.DeTurckNative
 
 variable {n : ℕ}
 
-
 def quadratic (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ) : ℝ :=
   ∑ k, ∑ l, G k l * xi k * xi l
 
-
 def traceVariation (G h : Matrix (Fin n) (Fin n) ℝ) : ℝ :=
   ∑ k, ∑ l, G k l * h k l
-
 
 def divergence (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (j : Fin n) : ℝ :=
   ∑ k, ∑ l, G k l * xi k * h l j
 
-
 def christoffelSymbol (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (k i j : Fin n) : ℝ :=
   (1 / 2 : ℝ) * ∑ l, G k l * (xi i * h j l + xi j * h i l - xi l * h i j)
-
 
 def ricciSymbol (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (i j : Fin n) : ℝ :=
   -2 * ∑ k, (xi k * christoffelSymbol G xi h k i j -
     xi j * christoffelSymbol G xi h k i k)
 
-
 def oneFormSymbol (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (j : Fin n) : ℝ :=
   divergence G xi h j - (1 / 2 : ℝ) * xi j * traceVariation G h
 
-
 def correctionSymbol (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (i j : Fin n) : ℝ :=
   xi i * oneFormSymbol G xi h j + xi j * oneFormSymbol G xi h i
-
 
 def symbol (G : Matrix (Fin n) (Fin n) ℝ) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) : Matrix (Fin n) (Fin n) ℝ :=
@@ -108,7 +92,6 @@ private theorem ricciSymbol_eq (G : Matrix (Fin n) (Fin n) ℝ)
     christoffel_trace G hG xi h i, christoffel_contraction G xi h hh i j]
   ring
 
-
 theorem symbol_eq_quadratic (G : Matrix (Fin n) (Fin n) ℝ)
     (hG : ∀ k l, G k l = G l k) (xi : Fin n → ℝ)
     (h : Matrix (Fin n) (Fin n) ℝ) (hh : ∀ i j, h i j = h j i)
@@ -117,8 +100,6 @@ theorem symbol_eq_quadratic (G : Matrix (Fin n) (Fin n) ℝ)
   rw [symbol, ricciSymbol_eq G hG xi h hh i j, correctionSymbol,
     oneFormSymbol, oneFormSymbol]
   ring
-
-
 
 theorem symbol_isSymm (G : Matrix (Fin n) (Fin n) ℝ)
     (hG : ∀ k l, G k l = G l k) (xi : Fin n → ℝ)

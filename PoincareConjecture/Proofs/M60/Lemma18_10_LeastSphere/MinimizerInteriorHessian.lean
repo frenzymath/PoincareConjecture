@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerCutoffBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M60
 open Poincare.Analysis.Sobolev.Weak
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
 
 theorem suNearLaplacian_cutoff_hessian_bound :
     ∃ δ C : ℝ, 0 < δ ∧ 0 < C ∧ ∀ (m : ℕ) (χ : Plane → ℝ) (N : ℝ),

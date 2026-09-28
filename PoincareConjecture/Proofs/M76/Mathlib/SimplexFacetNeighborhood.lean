@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ReplacedSimplexCoordinates
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,9 +10,6 @@ namespace AffineBasis
 
 variable {ι E : Type*} [Finite ι] [DecidableEq ι]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem mem_interior_union_convexHull_update (b : AffineBasis ι ℝ E) (i : ι) (q x : E)
     (hqi : b.coord i q < 0) (hxi : b.coord i x = 0)

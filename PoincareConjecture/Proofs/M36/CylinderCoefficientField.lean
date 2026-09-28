@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M36.CylinderCoordinateJets
 import PoincareConjecture.Proofs.M36.CylinderEuclidean
 import Mathlib.Analysis.Calculus.FDeriv.CompCLM
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

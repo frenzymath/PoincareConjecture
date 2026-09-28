@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ variable {M N : Type u} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) N]
   {kind : CapModelKind} {p : RealProjectiveThree}
-
-
-
 
 noncomputable def transport
     (e : PartialDiffeomorph (𝓡 3) (𝓡 3) M N ∞)

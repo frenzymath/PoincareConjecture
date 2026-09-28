@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Mathlib.RadialConnection
 import Mathlib.Tactic.Module
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
 
 theorem fderiv_radialChristoffel {A B C : ℝ → ℝ} {A' B' C' : ℝ} {x : E}
     (hx : x ≠ 0) (hA : HasDerivAt A A' ‖x‖) (hB : HasDerivAt B B' ‖x‖)
@@ -45,9 +33,6 @@ theorem fderiv_radialChristoffel {A B C : ℝ → ℝ} {A' B' C' : ℝ} {x : E}
     zero_add, innerSL_apply_apply, smul_eq_mul, Pi.mul_apply, Pi.add_apply,
     id_eq]
   module
-
-
-
 
 theorem radialChristoffel_curvature_expression {A B C : ℝ → ℝ} {A' B' C' : ℝ}
     {x : E} (hx : x ≠ 0) (hA : HasDerivAt A A' ‖x‖) (hB : HasDerivAt B B' ‖x‖)

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsBo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_StandardSphereMargin
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -38,8 +29,6 @@ noncomputable local instance tipCoefficientSpace : NormedSpace ℝ (MetricCoeffi
 noncomputable local instance tipTwoJetNorm : NormedAddCommGroup J2 := Prod.normedAddCommGroup
 
 noncomputable local instance tipTwoJetSpace : NormedSpace ℝ J2 := Prod.normedSpace
-
-
 
 theorem exists_source_tip_ricci_jet_tolerance
     {K : Set J2} (hK : IsCompact K) (hinv : ∀ J ∈ K, J.1.IsInvertible)
@@ -94,8 +83,6 @@ theorem exists_source_tip_ricci_jet_tolerance
     nlinarith only [hlower, hmodel, mul_nonneg halpha.le (sq_nonneg ‖v‖)]
   change 0 ≤ M44.jetRicciBilinear J' v v - mu * J'.1 v v at hpositive
   exact sub_nonneg.mp hpositive
-
-
 
 theorem exists_source_standard_tip_ricci_tolerance {g0 : StandardInitialMetric}
     (P : RepairedCapPersistenceData.{u} g0) {theta : ℝ} (htheta : theta < 1) :

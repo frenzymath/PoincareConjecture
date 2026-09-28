@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.CylinderTail
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 import Mathlib.Geometry.Manifold.ContMDiff.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem capTubeAttachment_exists_cofinalOverlapChart
     {M : Type u} [TopologicalSpace M]

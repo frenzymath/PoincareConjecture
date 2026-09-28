@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityReflection
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -390,10 +381,6 @@ private theorem odd_holder {N : ℕ} {R beta H : ℝ} (hb : 0 < beta) (hH : 0 �
   simpa only [dist_eq_norm] using hholder x hx y hy
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem halfDisk_odd_localMap {N : ℕ} {R beta H : ℝ} (hR : 0 < R)
     (X : M65LocalWeakMap (id : EuclideanSpace ℝ (Fin N) → EuclideanSpace ℝ (Fin N))

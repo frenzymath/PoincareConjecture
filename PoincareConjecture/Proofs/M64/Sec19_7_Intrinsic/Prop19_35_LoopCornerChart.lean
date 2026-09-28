@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_LoopCornerTopology
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CornerChart
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,10 +10,6 @@ open scoped Topology ContDiff Manifold Matrix
 open Poincare.Topology.Plane.Triangles
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_corner_chart
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)
@@ -79,10 +62,6 @@ theorem m64Intrinsic_exists_loop_corner_chart
   refine ⟨H, h0, hbase, hH, hHi, haxis, haxis', ?_, hD, ?_⟩
   · simpa [hc0, c, rightTriangleBasis_coord] using hrays
   · simpa only [hbetaD.deriv] using hD'
-
-
-
-
 
 theorem m64Intrinsic_exists_loop_corner_region
     {gamma : ℝ → AnnulusCoordinates} (hg : ContDiff ℝ ∞ gamma) {T : ℝ} (hT : 0 < T)

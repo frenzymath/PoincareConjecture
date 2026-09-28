@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.OriginalFiniteExceptionalPairs
 import PoincareConjecture.Proofs.M76.Dehn.OriginalIntersectionRankBounds
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.TriangleInteriorCrossingChart
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -31,11 +19,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {f : V2 → M} {r : M → ℝ} {C : Set M}
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem Step.exists_history_original_crossed_pair
     {s t : Stage e S f r C} (step : Step s t)
@@ -178,7 +161,6 @@ theorem Step.exists_history_original_crossed_pair
       ∀ c ∈ L.faces, a ⊆ c → c = a := by
     intro c hc hac
     exact (Finset.eq_of_subset_of_card_le hac (by have h := hbound c hc; omega)).symm
-
 
   have hedge (L N : SimplicialComplex ℝ V3) (hN : N.faces.Finite)
       {a b : Finset V3} (ha : a ∈ L.faces) (hb : b ∈ N.faces)
@@ -514,7 +496,6 @@ theorem Step.exists_history_original_crossed_pair
           (by simpa only [union_comm] using hjoin) (hbcofaces hb2)
       exact ⟨H, hpH, hHO, hH0, hHPL, hHiPL, hHA, hHB⟩
   obtain ⟨H, hpH, hHO, hH0, hHPL, hHiPL, hHA, hHB⟩ := hchart
-
 
   have hactive (z : V3) (hz : z ∈ O) : z ∈ A.space ↔
       z ∈ B i '' (lower '' convexHull ℝ ((order i).val : Set V2) ∩ (B i).source) := by

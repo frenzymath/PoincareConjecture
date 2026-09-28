@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.Frame
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,11 +14,9 @@ variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
   {g : RiemannianMetric 2 S}
 
-
 noncomputable def surfaceConnectionForm (D : LeviCivitaData g)
     (e₁ e₂ Z : (x : S) → TangentSpace (𝓡 2) x) (x : S) : ℝ :=
   g.inner x (D.covariantDerivativeOnFields Z e₁ x) (e₂ x)
-
 
 lemma inner_covariantDerivative_unit_eq_zero (D : LeviCivitaData g)
     (X : (x : S) → TangentSpace (𝓡 2) x)
@@ -70,8 +61,6 @@ private lemma inner_covariantDerivatives_frame_eq_zero (D : LeviCivitaData g)
   simp only [map_smul, smul_apply, smul_eq_mul,
     D.inner_covariantDerivative_unit_eq_zero Y he₂ hunit₂, mul_zero]
 
-
-
 theorem curvatureTensor_eq_exteriorDerivative_surfaceConnectionForm
     (D : LeviCivitaData g) {U : Set S} (hU : IsOpen U) {x : S} (hx : x ∈ U)
     {e₁ e₂ X Y : (x : S) → TangentSpace (𝓡 2) x}
@@ -109,9 +98,6 @@ theorem curvatureTensor_eq_exteriorDerivative_surfaceConnectionForm
     ← D.curvatureOnFields_eq_curvature_manifold hX hY he₁x]
   simp only [curvatureOnFields, covariantDerivativeOnFields, map_sub, sub_apply]
   rfl
-
-
-
 
 theorem exists_local_scalarCurvature_connectionForm (D : LeviCivitaData g) (p : S) :
     ∃ (U : Set S) (e₁ e₂ : (x : S) → TangentSpace (𝓡 2) x),

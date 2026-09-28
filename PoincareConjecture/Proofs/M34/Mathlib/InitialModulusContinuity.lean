@@ -1,20 +1,10 @@
 import Mathlib.Analysis.Normed.Group.Continuity
 import Mathlib.Analysis.Normed.Group.Uniform
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
 
 theorem continuousWithinAt_zero_of_initial_norm_bound
     {X F : Type*} [TopologicalSpace X] [NormedAddCommGroup F]

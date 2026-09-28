@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCenterConnection
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundJetCompactEnvelope
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +31,6 @@ private theorem nested_metric_derivative_evaluation
       (differentiableAt_const (c := w)),
     fderiv_clm_apply hD (differentiableAt_const (c := v))]
   simp
-
-
 
 theorem round_model_center_metric_jet_bounds
     {g : RiemannianMetric 3 M} {epsilon : ℝ}
@@ -143,7 +132,6 @@ theorem round_model_center_metric_jet_bounds
   apply ContinuousLinearMap.opNorm_le_bound _ (by positivity)
   intro z
   simpa only [Real.norm_eq_abs] using hpoint u v w z
-
 
 theorem round_model_center_metricTwoJet_mem_boundSet
     {g : RiemannianMetric 3 M} {epsilon : ℝ}

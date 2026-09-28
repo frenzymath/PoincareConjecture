@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.InteriorSmoothRealization
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.WeakJetTimeDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

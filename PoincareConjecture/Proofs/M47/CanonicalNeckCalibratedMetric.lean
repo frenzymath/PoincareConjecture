@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckCoarseMetric
 import PoincareConjecture.Proofs.M47.CanonicalNeckClosedScalar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +14,6 @@ namespace PoincareConjecture.Proofs.M47
 open M36 M44 M45
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
 
 theorem negativeCylinder_coefficient_calibrated_bounds {epsilon t : ℝ}
     (hepsilon : 0 < epsilon) (hsmall : epsilon ≤ 1 / 200)
@@ -63,7 +53,6 @@ theorem negativeCylinder_coefficient_calibrated_bounds {epsilon t : ℝ}
   have herror : 36 * epsilon * ‖v‖ ^ 2 ≤ (9 / 50 : ℝ) * ‖v‖ ^ 2 :=
     mul_le_mul_of_nonneg_right (by linarith) (sq_nonneg ‖v‖)
   constructor <;> linarith [(abs_le.mp herr).1, (abs_le.mp herr).2, hmodel.1, hmodel.2]
-
 
 theorem neck_metric_le_calibrated
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -115,7 +104,6 @@ theorem neck_metric_le_calibrated
     _ ≤ (23 / 10 : ℝ) ^ 2 * g0.inner (f 0) v v := by simpa only [hw] using hlocal w
     _ = (23 / 10 : ℝ) ^ 2 * g0.inner x v v :=
       congrArg (fun y : M => (23 / 10 : ℝ) ^ 2 * g0.inner y v v) hfzero
-
 
 theorem ordinary_closed_neck_metric_le_calibrated
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedLimitNoncollapse
 import PoincareConjecture.Definitions.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal
@@ -17,8 +8,6 @@ open scoped ENNReal
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem long_limit_certificates_of_longSlabService
     (S : GeneralizedBlowupSequence.{u}) {T0 : ℝ≥0∞} {kappa r0 : ℝ}

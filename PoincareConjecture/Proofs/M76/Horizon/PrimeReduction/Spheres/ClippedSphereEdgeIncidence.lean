@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.ClippedSpher
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.LocalDiskEdgeCofaces
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FreeFaceCarrierBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,8 +9,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem ChartwisePLSphere.clipped_face_card_le_three
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -34,9 +22,6 @@ theorem ChartwisePLSphere.clipped_face_card_le_three
   obtain ⟨L, hL, hLs, hbound, _⟩ := sS.exists_finite_chart_carrier Q hQ J hJ hJQ
   exact P.face_card_le_of_hull_subset_finite_carrier L hL ht
     ((P.convexHull_subset_space ht).trans (hPs.trans hLs.symm).subset) hbound
-
-
-
 
 theorem ChartwisePLSphere.ncard_clipped_edge_triangle_cofaces
     {X ι : Type*} [TopologicalSpace X] [T2Space X]
@@ -56,8 +41,6 @@ theorem ChartwisePLSphere.ncard_clipped_edge_triangle_cofaces
   exact P.ncard_triangle_cofaces_eq_two_of_local_disk hP
     (fun t ht => sS.clipped_face_card_le_three Q hQ J P hJ hJQ hPs ht)
     ha ha2 hwa hd hdP hwd hopen
-
-
 
 theorem ChartwisePLSphere.exists_clipped_edge_two_triangle_germ
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

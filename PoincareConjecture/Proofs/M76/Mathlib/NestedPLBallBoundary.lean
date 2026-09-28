@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ namespace Set
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.mem_closure_sdiff_of_nested
     {s b t c : Set E} (hs : IsFinitePLBallPair V s b)
@@ -69,10 +55,6 @@ theorem IsFinitePLBallPair.mem_closure_sdiff_of_nested
     hg.continuousOn.mono (closure_minimal sdiff_subset hC.isClosed)
   have hresult := hmap.closure_of_continuousOn hcontinuous hxcl
   rwa [hgf x hxt] at hresult
-
-
-
-
 
 theorem IsFinitePLBallPair.boundary_eq_of_same_carrier
     {s b c : Set E} (hb : IsFinitePLBallPair V s b)

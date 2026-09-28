@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Small
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Universe
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,7 +43,6 @@ noncomputable local instance smallMeasurableSpace (M : Type u)
 local instance smallBorelSpace (M : Type u) [TopologicalSpace M] [T3Space M]
     [SecondCountableTopology M] : BorelSpace (Shrink.{0} M) := ⟨rfl⟩
 
-
 noncomputable def FlowCarrier.shrink {n : ℕ} (C : FlowCarrier.{u} n) :
     FlowCarrier.{0} n where
   carrier := Shrink.{0} C.carrier
@@ -72,8 +61,6 @@ noncomputable def FlowCarrier.shrink {n : ℕ} (C : FlowCarrier.{u} n) :
         (Poincare.Topology.SecondCountable.homeomorphShrink C.carrier).continuous.continuousOn
 
 namespace RicciFlow
-
-
 
 noncomputable def smallBufferedCylinderSequence
     {n : ℕ} (C : ℕ → FlowCarrier.{u} n) (J : ℕ → Set ℝ)
@@ -101,7 +88,6 @@ private theorem small_hausdorff_volume_lower_bound
   simpa only [mul_comm] using hν
 
 set_option maxHeartbeats 800000 in
-
 
 theorem exists_pointedCompactnessHypotheses_of_small_terminal_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -200,9 +186,6 @@ theorem exists_pointedCompactnessHypotheses_of_small_terminal_cylinders
     exact ⟨by positivity, fun t ht x hx => hk 0 ⟨hatime, hδ⟩ t (hI ht) x hx⟩
   · intro A _
     exact ⟨((m + 1 : ℕ) : ℝ) ^ 2 * 4, by positivity, hcurv A⟩
-
-
-
 
 theorem exists_nonflat_pointed_limit_of_small_terminal_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

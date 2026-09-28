@@ -124,4 +124,3 @@ theorem regularizedIndexPairDensity_contDiffOn {J : Set ℝ} (F : RicciFlow n M 
   exact hpair.contDiffOn.sub hres
 
 end PoincareConjecture.M08
-

@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M04.MetricComparison
 import PoincareConjecture.Proofs.M45.ModelAnalytics
 import PoincareConjecture.Definitions.M45InitialPrefix
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -27,13 +19,11 @@ theorem m47ComponentAnalyticPredecessors_from_M04 :
   metric_comparison := @RicciFlow.metric_comparison_of_curvature_bound 3
 }
 
-
 theorem m47ComponentAnalytics_from_predecessors
     (T : RepairedCanonicalInductionTheory.{u})
     (P : M47ComponentAnalyticPredecessors.{u}) (C : ℝ) (hC : 1 ≤ C) :
     Nonempty (M47ComponentAnalyticBounds.{u} C) :=
   T.component_analytics P C hC
-
 
 theorem m47ComponentAnalyticsFromMilestones (C : ℝ) (hC : 1 ≤ C) :
     Nonempty (M47ComponentAnalyticBounds.{u} C) :=
@@ -44,7 +34,6 @@ namespace RepairedControlledSchedulesData
 
 variable (S : RepairedControlledSchedulesData.{u})
   (B : M47ComponentAnalyticBounds.{u} S.setup.C)
-
 
 noncomputable def componentAnalyticConstant : ℝ :=
   2 * max S.modelAnalyticBound B.constant
@@ -66,7 +55,6 @@ theorem component_le_componentAnalyticConstant_half :
     B.constant ≤ S.componentAnalyticConstant B / 2 := by
   rw [S.componentAnalyticConstant_half B]
   exact le_max_right _ _
-
 
 noncomputable def calibrateComponentAnalytics : RepairedControlledSchedulesData.{u} :=
   (S.restrictDelta (B.delta S.setup.standard_initial S.constants)
@@ -100,7 +88,6 @@ theorem calibrateComponentAnalytics_standard_flow :
 
 theorem calibrateComponentAnalytics_cap_persistence :
     (S.calibrateComponentAnalytics B).cap_persistence = S.cap_persistence := rfl
-
 
 theorem componentAnalyticEstimate (F : SurgeryFlowData.{u})
     (hInitial : F.standard_initial = S.setup.standard_initial)

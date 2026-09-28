@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Separation.Ray
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Depth.Points
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Separation.Diameter
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type*} [MetricSpace M] [ConnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] {g : RiemannianMetric 3 M}
-
-
 
 theorem half_neck_depth_gt_central_slab_bound (N : EpsilonNeck g)
     (hN : N.epsilon ≤ 1 / (4 * neckDepthConstant * (2 * Real.pi + 2)))
@@ -49,8 +38,6 @@ theorem half_neck_depth_gt_central_slab_bound (N : EpsilonNeck g)
     nlinarith
   exact hstrict.trans_le (N.half_neck_depth_lower_bound hx hσ haxis hy)
 
-
-
 theorem minimizing_half_neck_not_mem_compact_side (N : EpsilonNeck g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)
     (hN : N.epsilon ≤ 1 / (4 * neckDepthConstant * (2 * Real.pi + 2)))
@@ -71,8 +58,6 @@ theorem minimizing_half_neck_not_mem_compact_side (N : EpsilonNeck g)
   have hdeep := N.half_neck_depth_gt_central_slab_bound hN hmem hσ haxis hy
   rw [← hdist] at hdeep
   linarith [ht.1]
-
-
 
 theorem minimizing_half_neck_outward_sign (N : EpsilonNeck g)
     (hdist : ∀ x y : M, dist x y = (g.edist x y).toReal)

@@ -7,7 +7,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
 
-
 structure RawSourceCrossing {E X ι : Type*} [TopologicalSpace E] [TopologicalSpace X]
     (e : ι → OpenPartialHomeomorph X V3) (f : E → X)
     (S : Set E) (R : Set X) (x y : E) where
@@ -30,8 +29,6 @@ structure RawSourceCrossing {E X ι : Type*} [TopologicalSpace E] [TopologicalSp
   region : chart.source ⊆ interior R ∨
     ((∀ z ∈ chart.source, z ∈ R ↔ 0 ≤ chart z 2) ∧
       ∀ z ∈ chart.source, z ∈ frontier R ↔ chart z 2 = 0)
-
-
 
 theorem nonempty_rawSourceCrossing_of_twoBranchWindow
     {E X Y ι : Type*} [TopologicalSpace E] [TopologicalSpace X] [TopologicalSpace Y]

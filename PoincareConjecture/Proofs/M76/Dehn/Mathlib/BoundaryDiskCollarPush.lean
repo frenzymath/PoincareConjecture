@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimZeroHeight
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.BoundaryDiskCollarCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLArithmetic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "D" => closedBall (0 : V2) 1
 local notation "Q" => sphere (0 : V2) 1
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_collar_pushed_boundary_disk
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

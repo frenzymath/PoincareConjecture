@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M38.UnionRefinement
 import PoincareConjecture.Proofs.M38.ComponentDecomposition
 import PoincareConjecture.Proofs.M38.CappingBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -24,16 +15,10 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
-
 theorem cappedDiscardedCarrier_nonempty_of_cap_count_pos
     (hcount : 0 < (F.event T hT).cap_count) :
     Nonempty (cappedDiscardedCarrier F T hT P).carrier :=
   ⟨(cappedCapBall F T hT P ⟨0, hcount⟩).map 0⟩
-
-
-
-
 
 noncomputable def fullCutFamilyAssembly
     (hcount : 0 < (F.event T hT).cap_count) {m n : ℕ}
@@ -49,10 +34,6 @@ noncomputable def fullCutFamilyAssembly
       (cappedDiscardedCarrier_nonempty_of_cap_count_pos F T hT P hcount))
     (fullCutSumDiffeomorph F T hT P)
   operations := .refl
-
-
-
-
 
 theorem exists_fullCutComponentAssembly
     (hcount : 0 < (F.event T hT).cap_count) :

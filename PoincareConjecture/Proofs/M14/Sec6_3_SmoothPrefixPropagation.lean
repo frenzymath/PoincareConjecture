@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_TimeDomain
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedPrefixPropagation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,10 +18,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem initialValueCurve_smooth_prefix_from_initial_tube
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

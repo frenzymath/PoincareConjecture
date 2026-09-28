@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnGreenTests
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnBoundary
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +20,6 @@ local notation "a" => curvePeriod / 2
 local notation "v" => annulusPoint (curvePeriod / 2) 0
 local notation "ei" i => EuclideanSpace.single (i : Fin 2) (1 : ℝ)
 
-
-
-
 theorem m64HalfTurnTest_fderiv {phi : LoopPlane → ℝ} (hp : ContDiff ℝ 1 phi)
     (p : LoopPlane) (i : Fin 2) (w : LoopPlane) :
     fderiv ℝ (fun q => phi (q + w)) p (ei i) = fderiv ℝ phi (p + w) (ei i) := by
@@ -37,17 +28,11 @@ theorem m64HalfTurnTest_fderiv {phi : LoopPlane → ℝ} (hp : ContDiff ℝ 1 ph
   simpa only [Function.comp_def, id_eq, ContinuousLinearMap.comp_id] using
     congrArg (fun L : LoopPlane →L[ℝ] ℝ => L (ei i)) h.fderiv
 
-
-
-
 theorem m64HalfTurnTest_piece (phi : LoopPlane → ℝ) (p : LoopPlane) :
     m64HalfTurnPiece (fun q => phi (q + v)) (fun q => phi (q + -v)) p =
       phi (m64AnnulusHalfTurn p) := by
   simp only [m64HalfTurnPiece, m64AnnulusHalfTurn, sub_eq_add_neg]
   split_ifs <;> rfl
-
-
-
 
 theorem m64HalfTurn_vertical_green
     {u V : LoopPlane → E} (hu : Integrable u mu) (hV : Integrable V mu)
@@ -107,9 +92,6 @@ theorem m64HalfTurn_vertical_green
   · exact m64BoundaryHalfTurn_integral_pair
       (hp.continuous.comp (m64Source_annulusPoint_contDiff 0).continuous).aestronglyMeasurable
       (hc0.integrableOn_Icc : IntegrableOn c0 I volume).aestronglyMeasurable
-
-
-
 
 theorem m64HalfTurn_seam_green
     {u V : LoopPlane → E} (hu : Integrable u mu) (hV : Integrable V mu)

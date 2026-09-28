@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.FinitePLSphereDisks
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +11,6 @@ variable {E F V : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
-
-
-
 
 theorem IsFinitePL.exists_small_local_ball_pairs_of_convex_frontier
     {s : Set E} {C : Set F} {e : s ≃ₜ frontier C} (he : e.IsFinitePL)

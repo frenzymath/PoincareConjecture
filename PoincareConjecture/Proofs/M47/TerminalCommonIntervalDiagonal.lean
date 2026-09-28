@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalHorizon
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -17,7 +9,6 @@ open scoped Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
 
 theorem terminalCommonInterval_cofinal_times {H : ℝ≥0∞} (hH : 0 < H) :
     ∃ T buffered : ℕ → ℝ, StrictMono T ∧ StrictMono buffered ∧
@@ -46,7 +37,6 @@ theorem terminalCommonInterval_cofinal_times {H : ℝ≥0∞} (hH : 0 < H) :
     have hlt : ENNReal.ofReal t < f (2 * n) := hn.trans_le (hf.monotone (by omega))
     exact (ENNReal.ofReal_lt_iff_lt_toReal ht.le (hfinite _)).mp hlt
 
-
 theorem terminalCommonInterval_row_bounds
     (V : GeneralizedBlowupSequence.{u}) (T : ℕ → ℝ)
     (hT : ∀ j, 0 < T j ∧ ENNReal.ofReal (T j) < terminalCommonIntervalHorizon V) :
@@ -54,7 +44,6 @@ theorem terminalCommonInterval_row_bounds
       ∀ᶠ k in atTop, Nonempty (ControlledBlowupCylinder V k A (T j) (B j) eta) := by
   choose B hB hc using fun j => terminalCommonInterval_horizon_mem V (T j) (hT j).1 (hT j).2
   exact ⟨B, hB, hc⟩
-
 
 theorem terminalCommonInterval_diagonal_cylinders
     (V : GeneralizedBlowupSequence.{u}) (T B : ℕ → ℝ)
@@ -69,7 +58,6 @@ theorem terminalCommonInterval_diagonal_cylinders
     exact hc j (n + 1) (by positivity) (1 / (n + 1)) (by positivity)
   obtain ⟨beta, hbeta, hb⟩ := Poincare.exists_strictMono_forall_le_of_eventually hrow
   exact ⟨beta, hbeta, fun n j hj => hb n n le_rfl j (Finset.mem_range.mpr (by omega))⟩
-
 
 theorem terminalCommonInterval_buffered_diagonal
     (V : GeneralizedBlowupSequence.{u}) (hH : 0 < terminalCommonIntervalHorizon V) :

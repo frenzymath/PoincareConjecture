@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.ScalarEscape
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Construction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -26,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M] [SecondCountableTopology M]
   {G : GeneralizedRicciFlowData.{u}} {T : ℝ} {H : SingularTimeAssumptions G T M}
-
 
 theorem SingularLimitConclusion.exists_uniform_strict_scalar_tail
     (Q : SingularLimitConclusion H) (K : Set (Q.extension.extended.slice T).carrier)
@@ -56,8 +46,6 @@ theorem SingularLimitConclusion.exists_uniform_strict_scalar_tail
   change a < Q.extension.extended.scalar
     (Q.gluing_map (⟨t, htref, ht.2.le⟩, z)) at h
   rwa [Q.gluing_scalar_old t ⟨htref, ht.2.le⟩ ht.2 z] at h
-
-
 
 theorem SingularLimitConclusion.exists_uniform_scalar_tail_off_open
     (Q : SingularLimitConclusion H) (U : Set M) (hU : IsOpen U) (a : ℝ)
@@ -166,7 +154,6 @@ theorem reference_pointwise_strict_scalar_tail (hempty : I.controlled_core = ∅
   · obtain ⟨s, hs, hsT, htail⟩ := H.scalar_diverges_uniformly_off_regularLimitSet
       ricciFlowCurvatureTheory (I.rho⁻¹ ^ 2 + 1)
     exact ⟨I.rho⁻¹ ^ 2 + 1, by linarith, s, hs, hsT, fun t ht => htail t ht x hx⟩
-
 
 theorem reference_uniform_scalar_tail (hempty : I.controlled_core = ∅)
     (a : ℝ) (ha : a < I.rho⁻¹ ^ 2) :

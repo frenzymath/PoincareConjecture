@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteSourceAlternative
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.TimeTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem limitFinite_endpoint_buffer_flow
     {M : Type u} [TopologicalSpace M]

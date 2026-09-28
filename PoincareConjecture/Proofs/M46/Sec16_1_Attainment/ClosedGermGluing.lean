@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_Attainment.GaugePartition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +11,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport 3 X time I}
-
-
-
 
 theorem exists_closed_germ_gluing {iota : Type*} [Finite iota] [Nonempty iota]
     (A : Set ℝ) (C : iota → Set ℝ) (hC : ∀ i, IsClosed (C i))

@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -92,7 +80,5 @@ theorem exists_terminal_scalar_time_constant
     (fun s hs => (hdiff s hs).continuousAt.continuousWithinAt)
     (fun s hs => (hdiff s (interior_subset hs)).differentiableWithinAt)
     (fun s hs => hslope s (interior_subset hs)) t ht 0 (by norm_num) ht.2
-
-
 
 end PoincareConjecture.RicciFlow

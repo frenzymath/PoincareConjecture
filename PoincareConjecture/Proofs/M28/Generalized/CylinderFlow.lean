@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M12
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,10 +18,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C a q J.domain U)
   (hI : (Proofs.M12.cylinderPhysicalInterval a q e.scale_pos J).domain ⊆ F.interval)
-
-
-
-
 
 theorem exists_raw_cylinder_ordinary_flow :
     ∃ G : Proofs.M12.FlowBoxRicciGeometry F,

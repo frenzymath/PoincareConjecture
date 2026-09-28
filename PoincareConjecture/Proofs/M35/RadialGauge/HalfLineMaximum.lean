@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M04.ShiBarrierMaximum
 import PoincareConjecture.Proofs.M09.LocalMinimumHessian
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
-
 
 theorem halfLine_nonpositive_of_bounded
     {w : ℝ → ℝ → ℝ} {T K V M : ℝ}

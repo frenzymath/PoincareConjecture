@@ -3,25 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGr
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientRescaledLimit
 import PoincareConjecture.Statements.M32HornSelection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -35,10 +16,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSpace
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
-
 
 theorem exists_compact_round_surface_product_of_minimizing_line
     {M : Type u} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
@@ -83,10 +60,6 @@ theorem exists_compact_round_surface_product_of_minimizing_line
   let : ConnectedSpace (RiemannianMetric.zeroLevelSet f) := hconn
   let C := FlowCarrier.ofConnectedManifold 2 (RiemannianMetric.zeroLevelSet f)
   exact ⟨C, A, hconstant, P.m19_round A, e, hmetric, hnorm⟩
-
-
-
-
 
 theorem m30AncientIdentification_exists_compact_round_surface_product
     (P : RepairedHornSelectionPredecessors.{u})
@@ -138,10 +111,6 @@ theorem m30AncientIdentification_exists_compact_round_surface_product
     exact hmetric t ht z v w
   · intro t ht x
     exact (hnorm t ht x).trans (m30AncientIdentification_curvatureTensorNorm_eq L I t ht x)
-
-
-
-
 
 theorem longBlowupConclusion_exists_compact_round_surface_product
     (P : RepairedHornSelectionPredecessors.{u})

@@ -1,9 +1,2 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Pullback
-
-
-
-
-
-
-

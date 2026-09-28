@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_FirstContactLocal
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalMetric
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,9 +24,6 @@ private theorem inverse_height_pairing
     conv_lhs => arg 2; rw [hw]
     simp only [map_add, map_smul, horth, hunit, smul_eq_mul, mul_zero, mul_one, zero_add]
   simpa only [A.apply_symm_apply] using (hpair (A.symm v)).symm
-
-
-
 
 theorem m64Intrinsic_first_normal_contact_opposite
     (G : RiemannianMetric 2 AnnulusCoordinates)

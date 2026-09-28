@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Orientation.HalfspaceSign
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLLocalSignComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

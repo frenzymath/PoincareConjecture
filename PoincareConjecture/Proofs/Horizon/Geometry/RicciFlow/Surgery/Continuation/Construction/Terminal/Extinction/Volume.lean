@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Evolu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Measure.CalibratedVolume
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Analysis.ExponentialLeftLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

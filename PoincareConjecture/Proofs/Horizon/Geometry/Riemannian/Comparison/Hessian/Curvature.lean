@@ -1,6 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Sectional
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -11,8 +10,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem inner_radialCurvature_ge_of_sectional_lower_bound
     (D : LeviCivitaData g) (x : M) {K : ℝ} (hK : 0 ≤ K)

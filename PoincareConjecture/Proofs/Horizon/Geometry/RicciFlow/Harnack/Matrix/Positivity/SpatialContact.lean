@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Posit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Product
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.MaximumPrinciple.SupportingLaplacian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {I : Type} [Fintype I]
-
-
 
 lemma laplacian_quadratic_at_null
     (D : LeviCivitaData g) {A : M → Matrix I I ℝ} {z : M → I → ℝ}
@@ -92,8 +81,6 @@ lemma laplacian_quadratic_at_null
   simp_rw [hsum, hterm]
   simp only [Finset.sum_add_distrib, hcross₁, hcross₂, zero_add]
   simp only [← Finset.mul_sum, Finset.sum_add_distrib]
-
-
 
 lemma laplacian_quadratic_nonneg_at_null
     (D : LeviCivitaData g) {A : M → Matrix I I ℝ} {z : M → I → ℝ}
@@ -175,8 +162,6 @@ private lemma exists_smooth_scalar_first_jet [T2Space M]
     change L (e.symm (e v)) = L v
     rw [e.symm_apply_apply]
 
-
-
 lemma laplacian_quadratic_nonneg_at_null_on_open [T2Space M]
     (D : LeviCivitaData g) {A : M → Matrix I I ℝ} {z : M → I → ℝ}
     {U : Set M} (hU : IsOpen U)
@@ -213,8 +198,6 @@ lemma laplacian_quadratic_nonneg_at_null_on_open [T2Space M]
     rw [Poincare.mvfderiv_eq_of_eventuallyEq heq]
   simpa only [(hweq _).self_of_nhds, (hBeq _ _).self_of_nhds,
     D.laplacian_eq_of_eventuallyEq (hBeq _ _), hgrad (hBeq _ _), hgrad (hweq _)] using h
-
-
 
 lemma quadratic_diffusion_nonneg_of_prescribed_gradients [T2Space M]
     (D : LeviCivitaData g) {A : M → Matrix I I ℝ}

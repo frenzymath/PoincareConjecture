@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.CollarBaseComparison
 import PoincareConjecture.Proofs.M76.Rigidity.MatchedCollarGeometry
 import PoincareConjecture.Proofs.M76.Rigidity.MatchedCollarStrips
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +15,6 @@ variable {E F X ι : Type*}
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R U : Set X}
-
-
-
 
 theorem exists_matched_boundary_product
     (hcover : ∀ x : X, ∃ i, x ∈ (e i).source)

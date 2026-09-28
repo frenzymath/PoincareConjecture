@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialError
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ namespace PoincareConjecture.Proofs.M47
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "V" => RoundCylinderCoordinates
-
-
 
 theorem neckAxialCoordinate_mem_open_interval
     {epsilon lambda c z : ℝ} (_hepsilon : 0 < epsilon)
@@ -39,7 +28,6 @@ theorem neckAxialCoordinate_mem_open_interval
         add_lt_add_of_le_of_lt le_rfl hc
       _ = epsilon⁻¹ := by ring
   exact abs_lt.mp hlt
-
 
 theorem roundCylinderTensorSmoothOn_neckAxialTensorPullback
     {epsilon lambda c : ℝ} (hepsilon : 0 < epsilon)
@@ -67,8 +55,6 @@ theorem roundCylinderTensorSmoothOn_neckAxialTensorPullback
     contDiffOn_const.mul hcomp
   exact hprod.congr fun p _ =>
     roundCylinderTensorCoefficient_neckAxialTensorPullback lambda c B q p a b
-
-
 
 theorem exists_same_epsilon_neck_axial_compression
     {epsilon : ℝ} (hepsilon : 0 < epsilon) {I : Set ℝ}
@@ -121,8 +107,6 @@ theorem exists_same_epsilon_neck_axial_compression
   exact add_le_add
     (mul_le_mul_of_nonneg_left (hbound u hu (neckAxialSpaceMap lambda c z) himage)
       (show 0 ≤ 1 + theta by positivity)) le_rfl
-
-
 
 theorem isCompact_neckAxialSpaceMap_closed_cylinder
     {epsilon lambda c : ℝ} (hepsilon : 0 < epsilon)

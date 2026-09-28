@@ -1,10 +1,3 @@
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.TransportedCarrier
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.CurvatureTensor
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Pinching.GeometricPreservation.Transport
-
-
-
-
-
-
-

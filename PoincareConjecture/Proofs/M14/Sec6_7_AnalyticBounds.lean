@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_DisjointImages
 import PoincareConjecture.Proofs.M14.Sec6_7_SourceGaussian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -22,16 +13,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
 
-
-
 theorem analyticCarrier_nonneg (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
     {W : Set (G.Horizontal x)} (hW : W ⊆ H.carrier) (hm : MeasurableSet W) :
     0 ≤ M14ReducedVolumeOnAnalyticCarrier A W := by
   apply setIntegral_nonneg (stable_slice_image_measurable H hW hm)
   exact fun q hq => A.density_nonnegative q (image_mono hW hq)
-
-
 
 theorem analyticCarrier_mono (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H)
@@ -42,8 +29,6 @@ theorem analyticCarrier_mono (H : M14StableSet G T τ x E)
   · filter_upwards [ae_restrict_mem (stable_slice_image_measurable H hV hm)] with q hq
     exact A.density_nonnegative q (image_mono hV hq)
   · exact Eventually.of_forall (fun q hq => image_mono hWV hq)
-
-
 
 theorem analyticCarrier_le_euclidean (H : M14StableSet G T τ x E)
     (A : M14ReducedVolumeAnalyticData G T τ x E H) :

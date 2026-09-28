@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalGraphRegions
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.LocalUpperSide
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -202,8 +193,6 @@ theorem union_eq_graph_half_union_successor_upper_m28 (A B : EpsilonNeck g)
   · apply disjoint_left.mpr
     intro x hxA hxB
     exact hxA.2 ⟨hxA.1, (hside x ⟨hxA.1, hxB.1⟩).mp hxB.2.1⟩
-
-
 
 theorem graph_half_partition_m28 (A B : EpsilonNeck g)
     (f : UnitTwoSphere → ℝ) (hf : Continuous f)

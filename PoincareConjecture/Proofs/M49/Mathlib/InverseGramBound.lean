@@ -1,24 +1,13 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Tensor.NormBounds
 import Mathlib.Analysis.Matrix.PosDef
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators Matrix
 
 namespace Matrix
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem abs_bilinear_apply_le_inverse_gram_norm {ι : Type*} [Fintype ι] [DecidableEq ι]
     {G : Matrix ι ι ℝ} (hG : G.PosDef) (A : Matrix ι ι ℝ) (x y : ι → ℝ) :

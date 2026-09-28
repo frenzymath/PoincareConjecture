@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexPolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLImageTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -137,10 +128,6 @@ private theorem exists_endpoint_negative_cap
     exact hz.2
   · intro hx2
     exact ⟨B x, ⟨hx.2, hx2⟩, B.left_inv hx.1⟩
-
-
-
-
 
 theorem exists_arc_endpoint_cap_region
     (B : Fin 2 → OpenPartialHomeomorph V3 V3)

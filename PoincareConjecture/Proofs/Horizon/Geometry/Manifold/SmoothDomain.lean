@@ -4,20 +4,10 @@ import Mathlib.Geometry.Manifold.IsManifold.InteriorBoundary
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Algebra.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
-
 
 theorem ModelWithCorners.isInteriorPoint_iff_of_mem_maximalAtlas
     {𝕜 : Type*} [NontriviallyNormedField 𝕜]
@@ -40,8 +30,6 @@ theorem ModelWithCorners.isInteriorPoint_iff_of_mem_maximalAtlas
   exact e.interior_extend_target_subset_interior_range h
 
 namespace Poincare.Manifold
-
-
 
 structure SmoothDomain (n : ℕ) [NeZero n] {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -67,11 +55,9 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
 
 include D
 
-
 def intrinsicInterior : Set (closure Ω) :=
   letI := D.chartedSpace
   (𝓡∂ n).interior (closure Ω)
-
 
 def intrinsicBoundary : Set (closure Ω) :=
   letI := D.chartedSpace
@@ -83,7 +69,6 @@ theorem intrinsicBoundary_eq_compl : D.intrinsicBoundary = D.intrinsicInterior�
 
 @[simp] theorem image_intrinsicInterior : Subtype.val '' D.intrinsicInterior = Ω :=
   D.image_interior
-
 
 @[simp] theorem image_boundary :
     Subtype.val '' D.intrinsicBoundary = frontier Ω := by
@@ -134,8 +119,6 @@ theorem contMDiff_inclusion :
   let := D.chartedSpace
   exact D.isSmoothEmbedding.contMDiff
 
-
-
 theorem exists_compatible_charts (x : closure Ω) :
     letI := D.chartedSpace
     ∃ (φ : OpenPartialHomeomorph (closure Ω) (EuclideanHalfSpace n))
@@ -165,7 +148,6 @@ theorem exists_compatible_charts (x : closure Ω) :
   dsimp only [Function.comp_apply] at hz
   rw [h.domChart.extend_left_inv hy] at hz
   exact hz
-
 
 theorem exists_flattening_chart (x : closure Ω) :
     ∃ (ψ : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin n)))
@@ -243,7 +225,6 @@ theorem exists_flattening_chart (x : closure Ω) :
   refine ⟨hclosure, hinterior, ?_⟩
   rw [D.isOpen.frontier_eq, mem_sdiff, hclosure, hinterior]
   exact ⟨fun h => le_antisymm (le_of_not_gt h.2) h.1, fun h => by simp [h]⟩
-
 
 theorem exists_flattening_parametrization (x : closure Ω) :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M,

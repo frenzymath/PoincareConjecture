@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapImageCertificate
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapLimitNormalization
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceNormalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +30,6 @@ private local instance : T3Space G.limit.carrier.carrier := G.limit.carrier.t3Sp
 private local instance : SecondCountableTopology G.limit.carrier.carrier :=
   G.limit.carrier.secondCountable
 private local instance : ConnectedSpace G.limit.carrier.carrier := G.limit.connectedSpace
-
-
 
 theorem limitCanonical_eventually_cap_certificate
     (P : M47Predecessors.{u}) (F : ℕ → SurgeryFlowData.{u})

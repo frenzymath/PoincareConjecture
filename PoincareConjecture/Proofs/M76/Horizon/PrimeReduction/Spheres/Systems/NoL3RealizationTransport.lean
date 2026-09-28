@@ -3,15 +3,6 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalFiniteModelBallImages
 import PoincareConjecture.Proofs.M76.Mathlib.CompatibleChartPLMaps
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

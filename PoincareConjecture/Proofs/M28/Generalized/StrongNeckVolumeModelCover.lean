@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M28
 
 private abbrev E := EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem exists_neckVolumeModelChart_finite_cover (S : ℝ) :
     ∃ t : Finset (univ ×ˢ Icc (-2 * S) (2 * S) : Set RoundCylinderSpace),

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.EnergyBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.VectorNorm
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ private theorem frame_inner_self_nonneg (x u : EuclideanSpace ℝ (Fin n)) :
   by_cases hu : u = 0
   · simp [hu]
   · exact (g.pos x _ hu).le
-
-
 
 theorem connection_energy_le_of_directional_bound (D : LeviCivitaData g)
     (X : (x : EuclideanSpace ℝ (Fin n)) → TangentSpace (𝓡 n) x)
@@ -71,10 +61,6 @@ theorem connection_energy_le_of_directional_bound (D : LeviCivitaData g)
       simp only [Finset.sum_const, Finset.card_univ, Fintype.card_fin, hdim, nsmul_eq_mul]
       ring
 
-
-
-
-
 theorem gradient_sub_reference_energy_le (D : LeviCivitaData g)
     {f q : EuclideanSpace ℝ (Fin n) → ℝ} {x : EuclideanSpace ℝ (Fin n)}
     (hf : DifferentiableAt ℝ f x) (hq : DifferentiableAt ℝ q x)
@@ -115,9 +101,6 @@ theorem gradient_sub_reference_energy_le (D : LeviCivitaData g)
           (HarmonicCoordinates.gradient_energy_le_fderiv_sq D _ x ha hlower) (by norm_num))
         (mul_le_mul_of_nonneg_left hdelta (by norm_num))
     _ = _ := by ring
-
-
-
 
 theorem integral_gradient_sub_reference_energy_le (D : LeviCivitaData g)
     {f q : EuclideanSpace ℝ (Fin n) → ℝ} {X : EuclideanSpace ℝ (Fin n) → EuclideanSpace ℝ (Fin n)}

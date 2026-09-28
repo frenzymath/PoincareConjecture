@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakStrongCompactnes
 import PoincareConjecture.Proofs.M03.Existence.LpFiniteCoordinatesNative
 import PoincareConjecture.Proofs.M03.Existence.FiniteLocalizationCompactnessNative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -28,8 +18,6 @@ variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64Annulus_weak_vector_l2_isCompact
     (u : ℕ → LoopPlane → E) (V : ℕ → Fin 2 → LoopPlane → E)

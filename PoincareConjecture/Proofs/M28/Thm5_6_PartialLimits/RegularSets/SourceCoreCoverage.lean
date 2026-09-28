@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CoordinateCore
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.MetricExhaustion
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ universe u v
 namespace PoincareConjecture.M28
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem eventually_source_core_subset_image
     {n : ℕ} {Q : Type v} {M : ℕ → Type u} [∀ k, MetricSpace (M k)]
@@ -153,8 +140,6 @@ theorem eventually_source_core_subset_image
   have hid := Function.invFun_eq (hr xp hxpC)
   rw [hinv] at hid
   exact hid.symm
-
-
 
 theorem eventually_source_core_subset_exhaustion_image
     {n : ℕ} [Nonempty (ball (0 : EuclideanSpace ℝ (Fin n)) 1)]

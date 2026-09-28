@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CurvatureJetOperator
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M34
 open SpacetimeBounds SpacetimeBounds.Bootstrap CoordinateExponential
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem metric_spatialJet_mem_curvatureJetDomain {n : ℕ}
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) (m : ℕ)
@@ -40,8 +28,6 @@ theorem metric_spatialJet_mem_curvatureJetDomain {n : ℕ}
 set_option synthInstance.maxHeartbeats 100000 in
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem curvatureJetComponents_spatialJet {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

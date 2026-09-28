@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.CenterBounds
 import PoincareConjecture.Proofs.Horizon.Analysis.Asymptotics.LocalOscillation
 
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

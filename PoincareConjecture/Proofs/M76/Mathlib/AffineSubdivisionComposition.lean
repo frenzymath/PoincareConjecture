@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineMapSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ namespace Geometry.SimplicialComplex
 variable {E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [NormedAddCommGroup G] [NormedSpace ℝ G]
   {K : SimplicialComplex ℝ E} {L : SimplicialComplex ℝ F} {f : E → F} {g : F → G}
-
-
-
 
 theorem AffineOnFaces.comp_of_hull_images (hf : K.AffineOnFaces f)
     (hg : L.AffineOnFaces g)
@@ -32,9 +21,6 @@ theorem AffineOnFaces.comp_of_hull_images (hf : K.AffineOnFaces f)
   obtain ⟨a, ha⟩ := hf s hs
   obtain ⟨b, hb⟩ := hg t ht
   exact ⟨b.comp a, fun x hx => (hb (hst hx)).trans (congrArg b (ha hx))⟩
-
-
-
 
 theorem AffineOnFaces.exists_subdivision_comp [FiniteDimensional ℝ F]
     (hf : K.AffineOnFaces f) (hg : L.AffineOnFaces g)

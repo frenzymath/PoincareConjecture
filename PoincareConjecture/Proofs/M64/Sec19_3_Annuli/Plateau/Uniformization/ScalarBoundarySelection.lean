@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverTotalEnergy
 import Mathlib.MeasureTheory.Integral.Average
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,12 +10,6 @@ open Set Filter MeasureTheory
 open scoped Topology
 
 namespace PoincareConjecture.M64Uniformization
-
-
-
-
-
-
 
 theorem scalar_exists_energy_radius {F : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hF : IntegrableOn F (Ioo a b)) (hnon : ∀ r ∈ Ioo a b, 0 ≤ F r) :
@@ -52,12 +33,6 @@ theorem scalar_exists_energy_radius {F : ℝ → ℝ} {a b : ℝ} (hab : a < b)
       (b - r) * F r ≤ (b - a) * F r :=
         mul_le_mul_of_nonneg_right (sub_le_sub_left hr.1.le b) (hnon r hr)
       _ ≤ _ := by simpa only [mul_comm] using hbound
-
-
-
-
-
-
 
 theorem scalar_exists_inner_small_energy_radius {F : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hF : IntegrableOn F (Ioo a b)) (hnon : ∀ r ∈ Ioo a b, 0 ≤ F r)
@@ -94,11 +69,6 @@ theorem scalar_exists_inner_small_energy_radius {F : ℝ → ℝ} {a b : ℝ} (h
   · dsimp only [c] at hr
     linarith [hr.2]
   · exact hbound.trans_lt (hident ▸ (le_abs_self _).trans_lt hsmallc)
-
-
-
-
-
 
 theorem scalar_exists_outer_small_energy_radius {F : ℝ → ℝ} {a b : ℝ} (hab : a < b)
     (hF : IntegrableOn F (Ioo a b)) (hnon : ∀ r ∈ Ioo a b, 0 ≤ F r)

@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Converge
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.MetricMonotonicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -27,8 +17,6 @@ section Generic
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem terminal_tangentNorm_le_of_ricci_nonneg
     (F : RicciFlow n M (Iic 0)) {s : ℝ} (hs : s ≤ 0)
@@ -51,8 +39,6 @@ theorem terminal_tangentNorm_le_of_ricci_nonneg
       exact mul_nonpos_of_nonpos_of_nonneg (by norm_num) (hRic t (interior_subset ht))
   exact Real.sqrt_le_sqrt (hanti ⟨le_rfl, hs⟩ ⟨hs, le_rfl⟩ hs)
 
-
-
 theorem ball_subset_terminal_ball_of_ricci_nonneg
     (F : RicciFlow n M (Iic 0)) {s : ℝ} (hs : s ≤ 0) (p : M) (r : ℝ)
     (hRic : ∀ t ∈ Icc s 0, ∀ x ∈ (F.metric s).ball p r,
@@ -72,8 +58,6 @@ variable {M : Type} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [PreconnectedSpace M]
-
-
 
 theorem earlier_ball_volume_le_exp_mul_terminal_ball
     (F : RicciFlow 3 M (Iic 0)) (p : M) {s B ρ r : ℝ}
@@ -126,9 +110,6 @@ theorem earlier_ball_volume_le_exp_mul_terminal_ball
   intro x hx
   exact (F.ball_subset_terminal_ball_of_ricci_nonneg hs p ρ
     (fun t ht y _ v => hRic t ht y v) hx).trans_le (ENNReal.ofReal_le_ofReal hρr)
-
-
-
 
 theorem terminal_ball_volume_lower_bound_of_interior_noncollapse
     (F : RicciFlow 3 M (Iic 0)) (κ : ℝ)

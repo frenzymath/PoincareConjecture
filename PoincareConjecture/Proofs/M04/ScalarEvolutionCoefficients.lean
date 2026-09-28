@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M04.RicciRegularity
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -466,4 +459,3 @@ theorem continuousOn_flow_ricciNormSq (F : RicciFlow n M J) :
   exact ⟨hp.1, hpt⟩
 
 end PoincareConjecture.M04
-

@@ -1,23 +1,9 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.ChartCover
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges.LevelSets
 import Mathlib.Geometry.Manifold.BumpFunction
 import Mathlib.Geometry.Manifold.Instances.Real
 import Mathlib.Geometry.Manifold.Algebra.SmoothFunctions
 import Mathlib.Analysis.InnerProductSpace.Calculus
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -30,8 +16,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_chart_squaredRadius_function (x : M) {r R : ℝ}
     (hr : 0 < r) (hrR : r < R)
@@ -85,8 +69,6 @@ theorem exists_chart_squaredRadius_function (x : M) {r R : ℝ}
       nlinarith [mul_nonneg hnonneg (sub_nonneg.mpr hqr),
         mul_nonneg (sub_nonneg.mpr hle) (sub_nonneg.mpr hRr)]
 
-
-
 theorem exists_chart_circle_level_function (x : M) {r R : ℝ}
     (hr : 0 < r) (hrR : r < R)
     (hR : closedBall (chartAt (EuclideanSpace ℝ (Fin 2)) x x) R ⊆
@@ -126,8 +108,6 @@ theorem exists_chart_circle_level_function (x : M) {r R : ℝ}
     change g (e.symm z) = ‖e (e.symm z) - e x‖ ^ 2 at hval
     change g (e.symm z) = ρ ^ 2
     rw [hval, e.right_inv hztarget, ← dist_eq_norm, mem_sphere.mp hz]
-
-
 
 theorem exists_chart_circle_finite_edge_intersections {I : Type*} [Finite I]
     (x : M) (edge : I → SmoothEdge M) {a b r R : ℝ}

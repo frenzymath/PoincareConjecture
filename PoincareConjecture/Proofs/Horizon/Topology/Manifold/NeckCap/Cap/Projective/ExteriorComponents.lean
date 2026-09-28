@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Projective.CollarLift
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.CountableComplement
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,8 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
   (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_projective_end_neck_lift :
     ∃ F : C(NeckDomain C.end_neck.epsilon, UnitThreeSphere),
@@ -93,7 +79,6 @@ theorem exists_projective_end_neck_lift :
       · exact ⟨hmem z, (hlift z).symm ▸ (N.coordinate z).property⟩
       · exact ⟨hnegmem z, (hneglift z).symm ▸ (N.coordinate z).property⟩
 
-
 theorem neg_mem_projectiveClosedCoreLift_iff (q : UnitThreeSphere) :
     -q ∈ C.projectiveClosedCoreLift S ↔ q ∈ C.projectiveClosedCoreLift S := by
   have hp : (Quotient.mk' (-q) : RealProjectiveThree) = Quotient.mk' q :=
@@ -109,8 +94,6 @@ theorem neg_mem_projectiveClosedCoreLift_iff (q : UnitThreeSphere) :
     have hq' : Quotient.mk' (-q) ≠ C.puncture := hp.symm ▸ hq
     have heq := (S.fibers (-q) q hq' hq).mpr (Or.inr rfl)
     exact ⟨hq', heq.symm ▸ hc⟩
-
-
 
 theorem compl_projectiveClosedCoreLift :
     (C.projectiveClosedCoreLift S)ᶜ =
@@ -315,8 +298,6 @@ variable {M : Type u} [TopologicalSpace M]
   (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
 
-
-
 theorem isConnected_projective_boundary_collar_exterior [T2Space M]
     (e : OpenPartialHomeomorph RoundCylinderSpace UnitThreeSphere)
     (hes : e.source = C.boundary_neck.cylinderDomain)
@@ -364,9 +345,6 @@ theorem isConnected_projective_boundary_collar_exterior [T2Space M]
     rw [exterior_of_collar_partition e hcover' hL (hi.trans interior_subset) hZ ho]
     exact hcL
 
-
-
-
 theorem projectiveClosedCoreLift_exterior_components
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :
     let A := connectedComponentIn (C.projectiveClosedCoreLift S)ᶜ a
@@ -394,8 +372,6 @@ theorem projectiveClosedCoreLift_exterior_components
       rw [hneg] at hq
       exact (hexhaust.symm ▸ hq).1
     exact hqm (hp.symm.subset hqp)
-
-
 
 theorem disjoint_closure_projectiveClosedCoreLift_exterior [T2Space M]
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :
@@ -428,8 +404,6 @@ theorem disjoint_closure_projectiveClosedCoreLift_exterior [T2Space M]
   · exact ⟨e.target, e.open_target, ht, hc.isPreconnected⟩
   · exact ⟨Neg.neg '' e.target, (Homeomorph.neg UnitThreeSphere).isOpenMap _ e.open_target,
       ht, hcneg.isPreconnected⟩
-
-
 
 theorem exists_projective_exterior_frontier_sphere [T2Space M]
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_GoodTimes.ChartLoopLimit
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.ImmersedAreaTransfer
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -22,7 +13,6 @@ variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem m65TimeSlice_contMDiff {J : Set ℝ} (hJ : IsOpen J)
     (c : ℝ → ℝ → M)
     (hc : ContMDiffOn 𝓘(ℝ, ℝ × ℝ) (𝓡 3) ∞ (fun z => c z.2 z.1) (J ×ˢ univ))
@@ -32,9 +22,6 @@ theorem m65TimeSlice_contMDiff {J : Set ℝ} (hJ : IsOpen J)
     ((hJ.prod isOpen_univ).mem_nhds ⟨ht, mem_univ x⟩)
   have hs : ContDiff ℝ ∞ (fun y : ℝ => (t, y)) := contDiff_const.prodMk contDiff_id
   exact (h.comp x hs.contMDiff.contMDiffAt).of_le (by simp)
-
-
-
 
 theorem m65PeriodicFamily_exists_loops {J : Set ℝ} (hJ : IsOpen J)
     (c : ℝ → ℝ → M)
@@ -54,9 +41,6 @@ theorem m65PeriodicFamily_exists_loops {J : Set ℝ} (hJ : IsOpen J)
   exact m65PeriodicFreeLoop_loopOfPeriodic _ _ _ x
 
 set_option maxHeartbeats 600000 in
-
-
-
 
 theorem m65SmoothFilledLoopFamily_of_values
     {a b : ℝ} (F : RicciFlow 3 M (Icc a b))

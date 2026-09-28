@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch01.Topology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -17,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M02
-
-
 
 theorem nonempty_orientationCompatibleAtlas
     {M : Type u} [TopologicalSpace M]

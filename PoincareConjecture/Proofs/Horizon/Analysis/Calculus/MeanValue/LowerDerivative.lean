@@ -1,20 +1,11 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Analysis
-
-
 
 lemma exists_neg_deriv_le_div {f : ℝ → ℝ} {a b C : ℝ}
     (hab : a < b) (hc : ContinuousOn f (Icc a b))
@@ -26,8 +17,6 @@ lemma exists_neg_deriv_le_div {f : ℝ → ℝ} {a b C : ℝ}
   rw [heq, ← neg_div]
   apply div_le_div_of_nonneg_right _ (sub_pos.mpr hab).le
   linarith
-
-
 
 lemma exists_neg_deriv_le_of_power_bound {A : ℝ → ℝ} {b α : ℝ} {m : ℕ}
     (hb : 0 < b) (hm : 1 ≤ m)

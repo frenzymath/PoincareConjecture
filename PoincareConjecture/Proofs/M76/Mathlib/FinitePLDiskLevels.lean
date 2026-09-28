@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.TriangularRoofLevels
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallPreimages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -18,10 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_roof_with_disk_levels {d b : Set E}
     (hd : IsFinitePLBallPair (ℝ × ℝ) d b) :

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PLLocalSignComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +19,6 @@ private theorem mem_original_atlas_transition
 variable {X E ι : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
 
-
-
-
 noncomputable def plAtlasTransitionSign
     (e : ι → OpenPartialHomeomorph X E)
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)
@@ -39,16 +26,12 @@ noncomputable def plAtlasTransitionSign
   plLocalSign ((e i).symm.trans (e j)) (hcompat i j)
     ⟨e i x, mem_original_atlas_transition e i j x.property.1 x.property.2⟩
 
-
-
 theorem plAtlasTransitionSign_ne_zero
     (e : ι → OpenPartialHomeomorph X E)
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)
     (i j : ι) (x : ((e i).source ∩ (e j).source : Set X)) :
     plAtlasTransitionSign e hcompat i j x ≠ 0 :=
   plLocalSign_ne_zero _ _ _
-
-
 
 theorem isLocallyConstant_plAtlasTransitionSign
     (e : ι → OpenPartialHomeomorph X E)
@@ -62,8 +45,6 @@ theorem isLocallyConstant_plAtlasTransitionSign
   have hq : Continuous q := hc.subtype_mk _
   exact (isLocallyConstant_plLocalSign h (hcompat i j)).comp_continuous hq
 
-
-
 theorem plAtlasTransitionSign_self
     (e : ι → OpenPartialHomeomorph X E)
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid E)
@@ -76,9 +57,6 @@ theorem plAtlasTransitionSign_self
     (e i).open_target ((e i).map_source x.property)
     (fun y hy => (e i).right_inv hy)
   exact heq.trans (plLocalSign_refl ⟨e i x, mem_univ _⟩)
-
-
-
 
 theorem plAtlasTransitionSign_cocycle
     (e : ι → OpenPartialHomeomorph X E)
@@ -129,8 +107,6 @@ theorem plAtlasTransitionSign_cocycle
     _ = plLocalSign (hij.trans hjk)
         ((piecewiseAffineGroupoid E).trans (hcompat i j) (hcompat j k)) z := hmul.symm
     _ = plAtlasTransitionSign e hcompat i k ⟨x, hi, hk⟩ := hsame
-
-
 
 theorem plAtlasTransitionSign_symm
     (e : ι → OpenPartialHomeomorph X E)

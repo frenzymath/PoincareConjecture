@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology BigOperators
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def GeneralizedFlowCylinder.restrictSpace
     {F : GeneralizedRicciFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -55,7 +47,6 @@ private theorem restrictedMap_open (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : Topology.IsOpenEmbedding (restrictedMap N hed) :=
   N.carrier_open.isOpenEmbedding_subtypeVal.comp
     (N.coordinate.isOpenEmbedding.comp (domainInclusion_open N.epsilon_pos hed))
-
 
 noncomputable def restrictAccuracy (N : GeneralizedStrongNeck F t epsilon)
     (hed : epsilon ≤ delta) : GeneralizedStrongNeck F t delta := by
@@ -125,7 +116,6 @@ theorem restrictAccuracy_carrier_subset (N : GeneralizedStrongNeck F t epsilon)
 
 end GeneralizedStrongNeck
 
-
 noncomputable def HornEndCut.restrictAccuracy
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta eta rho : ℝ}
     {E : GeneralizedFlowExtension F T} {horn : StrongHorn E epsilon}
@@ -141,7 +131,6 @@ noncomputable def HornEndCut.restrictAccuracy
   contains_tail := cut.contains_tail
   escapes_compact := cut.escapes_compact
   disjoint_low_curvature := cut.disjoint_low_curvature
-
 
 def HornEndCut.enlargeRadius
     {F : GeneralizedRicciFlowData.{u}} {T epsilon delta rho sigma : ℝ}
@@ -161,7 +150,6 @@ def HornEndCut.enlargeRadius
     intro x hx
     exact hx.trans (pow_le_pow_left₀ (inv_nonneg.mpr (hr.trans_le hrs).le)
       ((inv_le_inv₀ (hr.trans_le hrs) hr).2 hrs) 2))
-
 
 theorem DeepHornNeckConclusion.mono
     {F : GeneralizedRicciFlowData.{u}} {T epsilon C rho sigma delta eta h : ℝ}

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.FrontierComponents.Injection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -35,8 +27,6 @@ theorem isClopen_sdiff_of_disjoint_frontier (hD : IsClosed D)
     exact and_iff_right x.property
   rw [hcomp]
   exact hclopen.compl
-
-
 
 theorem ambient_injective_sdiff_of_disjoint_frontier
     (hD : IsClosed D) (hfront : Disjoint P (frontier D))

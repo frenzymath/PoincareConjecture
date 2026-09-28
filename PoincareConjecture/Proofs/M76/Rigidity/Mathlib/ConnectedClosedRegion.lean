@@ -1,20 +1,10 @@
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {X : Type*} [TopologicalSpace X] [PreconnectedSpace X]
-
-
 
 theorem IsClosed.isConnected_of_isConnected_frontier {K : Set X}
     (hK : IsClosed K) (hfront : IsConnected (frontier K)) : IsConnected K := by

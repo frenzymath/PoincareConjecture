@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoDiskParameter
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexTwoCoverPlacement
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCubeParameter
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -36,10 +26,6 @@ variable {L : Submodule ℤ V1} [DiscreteTopology L] {α γ β : Type*}
 
 local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
-
-
-
-
 
 theorem HamiltonIndexTwoDehnGeometry.exists_protected_cover_placement
     (geometry : HamiltonIndexTwoDehnGeometry L e T region)

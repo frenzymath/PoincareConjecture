@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AffineHyperplaneCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,11 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem FinitePiecewiseAffineOn.inter_image_rectangle_eq_half_in_plane
     {f : (ℝ × ℝ) → E} {r : ℝ} (hr : 0 < r)

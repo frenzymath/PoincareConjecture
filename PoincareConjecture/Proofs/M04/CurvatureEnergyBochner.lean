@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M04.CurvatureEnergyProduct
 import PoincareConjecture.Proofs.M04.CurvatureEnergyTrace
 import PoincareConjecture.Definitions.Ch01.ScalarOperators
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -272,4 +265,3 @@ theorem laplacian_tensorNorm_sq (D : LeviCivitaData g) {r : ℕ}
       rfl
 
 end PoincareConjecture.M04
-

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_5_SharpAdaptedPair
 import PoincareConjecture.Proofs.M14.Sec6_5_SharpTensorBasis
 import PoincareConjecture.Proofs.M14.Sec6_5_SharpTraceEquality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -37,9 +28,6 @@ private theorem hessian_pair_parameter_congr (γ : ℝ → G.Point)
       M14ReducedLengthHessianPairing G ⟨γ s, hs⟩ f (Y s) (Y s) := by
   subst s
   rfl
-
-
-
 
 theorem reducedLengthHessian_joint_sharp
     (hCoordinates : M12MetricPredecessors.{0} n)

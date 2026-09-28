@@ -1,16 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Energy.L2Approximation
-
-
-
-
-
-
-
 
 open Set MeasureTheory
 open Poincare.Analysis.Convolution
@@ -55,6 +43,5 @@ theorem integral_mollifiedValue_sq_le
   have hs := mul_self_le_mul_self (norm_nonneg _) hb
   simpa only [← pow_two, mul_pow, norm_toLp_sq hm, norm_toLp_sq hu,
     mollifiedValue] using hs
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Canonical

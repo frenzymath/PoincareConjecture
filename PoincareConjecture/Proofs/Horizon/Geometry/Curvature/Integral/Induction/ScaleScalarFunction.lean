@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.ScaleScalarAnnuli
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.ScaleAnnularParameters
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +34,6 @@ private theorem modelVolume_two_mul_le_scalar_power (m : ℕ) {r : ℝ}
       apply mul_le_mul_of_nonneg_left
         (pow_le_pow_of_le_one hr.le hr1 (by omega : m ≤ m + 2))
       positivity [euclideanUnitBallVolume_pos (m + 2)]
-
-
 
 theorem radial_annulus_scalar_bound_of_quarter_gradient
     {m : ℕ} (hm : 1 ≤ m) {M : Type u} [TopologicalSpace M]

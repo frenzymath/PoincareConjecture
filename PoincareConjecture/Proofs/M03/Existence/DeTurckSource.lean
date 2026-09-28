@@ -4,15 +4,6 @@ import Mathlib.Topology.Instances.Matrix
 import Mathlib.Topology.MetricSpace.Basic
 import Mathlib.Topology.Algebra.Ring.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -154,8 +145,6 @@ theorem continuous_symbol_joint (i j : Fin n) :
     (fun p : Matrix (Fin n) (Fin n) ℝ × (Fin n → ℝ) ×
       Matrix (Fin n) (Fin n) ℝ => correctionSymbol p.1 p.2.1 p.2.2 i j))
   exact hricci.add hcorr
-
-
 
 theorem continuous_symbol_matrix_joint :
     Continuous (fun p : Matrix (Fin n) (Fin n) ℝ × (Fin n → ℝ) ×

@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.RectangleMeasurableI
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.EnergyDensityCoordinates
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PiecewiseArea
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -27,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem m64Annulus_energyDensity_ae_eq_of_eqOn
     (g : RiemannianMetric n M) {f h : LoopPlane → M}
     (heq : EqOn f h m64AnnulusDomain) :
@@ -39,8 +25,6 @@ theorem m64Annulus_energyDensity_ae_eq_of_eqOn
   apply m60EnergyDensity_congr_of_eventuallyEq g
   filter_upwards [isOpen_interior.mem_nhds hp] with q hq
   exact heq (interior_subset hq)
-
-
 
 theorem m64Annulus_areaDensity_ae_eq_of_eqOn
     (g : RiemannianMetric n M) {f h : LoopPlane → M}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVectorVariation
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +18,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
   FiberBundle.t2Space (EuclideanSpace ℝ (Fin n)) G.Horizontal x
 
 attribute [local instance] horizontal_t2Space
-
-
 
 theorem exponentialLine_contMDiffOn (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {b : ℝ} {U : Set ℝ}
@@ -53,8 +42,6 @@ theorem exponentialLine_contMDiffOn (E : M14ExponentialFamily G T x)
   exact E.family_smooth.comp hkM.contMDiffOn
     (fun z hz => (E.maximal_lifetime _).out (E.domain_zero _) (hsurv z.2 hz.2) hz.1)
 
-
-
 theorem exponentialLine_contMDiffAt (E : M14ExponentialFamily G T x)
     (Z W : G.Horizontal x) {b c r : ℝ} {U : Set ℝ} (hU : IsOpen U)
     (hsurv : ∀ v ∈ U, (Z + v • W, b) ∈ E.domain)
@@ -65,9 +52,6 @@ theorem exponentialLine_contMDiffAt (E : M14ExponentialFamily G T x)
     ⟨Ioo_subset_Icc_self hc, hr⟩).contMDiffAt
   exact mem_of_superset ((isOpen_Ioo.prod hU).mem_nhds ⟨hc, hr⟩)
     (fun _ hz => ⟨Ioo_subset_Icc_self hz.1, hz.2⟩)
-
-
-
 
 theorem exponentialLine_gauge_coordinate_velocity_contDiffAt
     (E : M14ExponentialFamily G T x) (Z W : G.Horizontal x)

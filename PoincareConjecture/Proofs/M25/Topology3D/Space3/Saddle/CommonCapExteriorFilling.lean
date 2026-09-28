@@ -3,22 +3,11 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.PlanarBoundaryDisc
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallRegionSides
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_common_cap_exterior_filling
     (hP : PlanarSchoenfliesService)

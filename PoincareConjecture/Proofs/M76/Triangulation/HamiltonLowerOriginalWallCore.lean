@@ -2,23 +2,11 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerSourceEnd
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonLowerSourceConnected
 import Mathlib.Topology.EMetricSpace.Paracompact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 instance hamiltonLowerAmbientT2 (ι κ : Type*) [Finite κ] :
     T2Space (LatticeHandleAmbient ι κ (hamiltonLowerPeriodLattice κ)) := by
@@ -26,8 +14,6 @@ instance hamiltonLowerAmbientT2 (ι κ : Type*) [Finite κ] :
   let : Fact (0 < 4 * (128 : ℝ)) := ⟨by norm_num⟩
   exact ((Homeomorph.refl (ι → ℝ)).prodCongr
     (hamiltonLowerLatticePiEquiv κ)).isEmbedding.t2Space
-
-
 
 instance hamiltonLowerOpenParacompact (ι κ : Type*) [Finite ι] [Finite κ]
     (U : TopologicalSpace.Opens
@@ -44,12 +30,6 @@ variable {ι κ : Type*} [Fintype ι] [Fintype κ] [Nonempty κ]
 local notation "V" => ((ι → ℝ) × (κ → ℝ))
 local notation "W" => LatticeHandleAmbient ι κ (hamiltonLowerPeriodLattice κ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
-
 
 theorem HamiltonLowerLatticeImmersion.exists_original_marked_wall_core
     (I : HamiltonLowerLatticeImmersion κ)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.PeriodicFiber
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Graph.GraphTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [Fact (Module.finrank ℝ E = 2)]
-
-
 
 theorem exists_smooth_normal_graph_of_positive_tube_projection
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))
@@ -141,8 +129,6 @@ theorem exists_smooth_normal_graph_of_positive_tube_projection
   · rintro y ⟨q, rfl⟩
     obtain ⟨s, rfl⟩ := surjective_sphereCircleParameter e q
     exact ⟨β s, hformula s⟩
-
-
 
 theorem exists_ambient_diffeomorph_of_positive_tube_projection
     (e : ℂ ≃ₗᵢ[ℝ] E) (o : Orientation ℝ E (Fin 2))

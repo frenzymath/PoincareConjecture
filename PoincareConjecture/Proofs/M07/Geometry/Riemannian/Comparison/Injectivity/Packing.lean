@@ -1,21 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Polar.ChangeOfVariables
 import Mathlib.MeasureTheory.Integral.Lebesgue.Add
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,8 +8,6 @@ open Set Filter Function MeasureTheory
 open scoped Topology Manifold ContDiff ENNReal
 
 namespace PoincareConjecture
-
-
 
 theorem exists_measurable_injOn_partition
     {X Y : Type*} [TopologicalSpace X] [SecondCountableTopology X]
@@ -57,7 +40,6 @@ theorem exists_measurable_injOn_partition
   · intro i
     exact (hVi (a i)).mono ((disjointed_le W i).trans inter_subset_left)
 
-
 theorem finite_fiber_le_tsum_image_indicator
     {X Y : Type*} {f : X → Y} {U : Set X} (P : ℕ → Set X)
     (hcover : U ⊆ ⋃ i, P i) (hinj : ∀ i, InjOn f (P i))
@@ -82,8 +64,6 @@ theorem finite_fiber_le_tsum_image_indicator
         nsmul_eq_mul, mul_one]
     _ ≤ ∑' i, (f '' P i).indicator (fun _ => (1 : ℝ≥0∞)) q :=
       ENNReal.tsum_comp_le_tsum_of_injective hji _
-
-
 
 theorem mul_measure_le_tsum_injective_image
     {X Y : Type*} [MeasurableSpace Y] (ν : Measure Y)
@@ -121,9 +101,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
-
 theorem mul_volumeMeasure_le_lintegral_pullback_of_finite_fibers
     (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -151,8 +128,6 @@ theorem mul_volumeMeasure_le_lintegral_pullback_of_finite_fibers
           (hP i) (fun x hx => he x (hPU i hx)) (hinj i)
     _ = ∫⁻ x in U, ENNReal.ofReal (g.pullbackVolumeDensity e x) := by
       rw [← lintegral_iUnion hP hdisj, hcover]
-
-
 
 theorem mul_volumeMeasure_le_density_bound_of_finite_fibers
     (g : RiemannianMetric n M)

@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Separation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cover
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Function Set Topology
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
 
 theorem simplyConnectedSpace_neckDomain {ε : ℝ} (hε : 0 < ε) :
     SimplyConnectedSpace (NeckDomain ε) := by
@@ -39,8 +28,6 @@ variable {M E : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [TopologicalSpace E] {g : RiemannianMetric 3 M} (N : EpsilonNeck g)
 
-
-
 theorem exists_lifted_coordinate {p : E → M} (hp : IsCoveringMap p)
     (e : E) (he : p e ∈ N.carrier) :
     ∃ F : C(NeckDomain N.epsilon, E),
@@ -56,7 +43,6 @@ theorem exists_lifted_coordinate {p : E → M} (hp : IsCoveringMap p)
     (N.carrier_open.isOpenEmbedding_subtypeVal.comp N.coordinate.isOpenEmbedding)
     (N.coordinate.symm ⟨p e, he⟩) e
   exact congr_arg Subtype.val (N.coordinate.apply_symm_apply ⟨p e, he⟩).symm
-
 
 theorem disjoint_lifted_coordinate_translate [PreconnectedSpace E]
     {p : E → M} (hp : IsCoveringMap p) {F : NeckDomain N.epsilon → E}
@@ -102,8 +88,6 @@ theorem image_lifted_central_sphere {p : E → M} {F : NeckDomain N.epsilon → 
   congr 1
   funext y
   exact congr_fun hF _
-
-
 
 theorem lifted_coordinate_complementary_regions [T2Space E] [SimplyConnectedSpace E]
     [LocallyPathConnectedSpace E] (F : NeckDomain N.epsilon → E)
@@ -159,8 +143,6 @@ theorem not_simplyConnectedSpace [T2Space M] (H : NeckOnlyCover g)
   obtain ⟨x, hx⟩ := H.connected_X.nonempty
   obtain ⟨N, hN, _⟩ := H.pointwise_center_cover x hx
   exact N.not_simplyConnectedSpace_of_isNonseparating (hns N hN)
-
-
 
 theorem exists_lifted_centered_coordinate (H : NeckOnlyCover g) (hwhole : H.X = univ)
     {p : E → M} (hp : IsCoveringMap p) (e : E) :

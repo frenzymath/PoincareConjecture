@@ -1,15 +1,6 @@
 import PoincareConjecture.Statements.M47CanonicalInduction
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem canonicalInduction_counterexample
     {K : MetricSurgeryConstants} (p : SurgeryParameterPrefix K)
@@ -51,20 +40,16 @@ theorem canonicalInduction_counterexample
   by_contra hbad
   exact hnone ⟨F, O, hnext, old, admissible, pinched, policy, scales, overlap, hbad⟩
 
-
 theorem canonicalInduction_radius_bounds {r : ℝ} (hr : 0 < r) (n : ℕ) :
     0 < r / ((n : ℝ) + 1) ∧ r / ((n : ℝ) + 1) ≤ r := by
   have hn : 0 < (n : ℝ) + 1 := by positivity
   refine ⟨div_pos hr hn, (div_le_iff₀ hn).mpr ?_⟩
   nlinarith only [Nat.cast_nonneg (α := ℝ) n, hr]
 
-
 theorem canonicalInduction_radius_tendsto (r : ℝ) :
     Tendsto (fun n : ℕ => r / ((n : ℝ) + 1)) atTop (𝓝 0) := by
   simpa only [mul_one_div, mul_zero] using
     (tendsto_one_div_add_atTop_nhds_zero_nat (𝕜 := ℝ)).const_mul r
-
-
 
 theorem canonicalInduction_scalar_diverges {r : ℝ} (hr : 0 < r)
     {Q : ℕ → ℝ} (hQ : ∀ n : ℕ, (r / ((n : ℝ) + 1))⁻¹ ^ 2 ≤ Q n) :

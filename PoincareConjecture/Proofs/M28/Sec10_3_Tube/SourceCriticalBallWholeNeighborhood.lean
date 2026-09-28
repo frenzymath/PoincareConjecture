@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallChartCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallFreshCapture
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.RegularSets.CompactOpenDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +14,6 @@ universe u
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem eventually_retained_whole_neighborhood_in_core
     {epsilon C A : ℝ}

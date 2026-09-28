@@ -1,15 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Widths
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.Arcs
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,10 +19,7 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
       (chartAt (EuclideanSpace ℝ (Fin 2)) (chart p.1.1 : M)).symm
       (cut p.1.2 false) (1 - cut p.1.2 true))
 
-
 abbrev IncidentGraphPieceIndex := Σ p : D.IncidentEdgeIndex, Fin (S p).count
-
-
 
 def IncidentGraphPiecesSeparated (i j : D.IncidentGraphPieceIndex chart cut S) : Prop :=
   i.1.1.2 ≠ j.1.1.2 ∨ (i.1 = j.1 ∧
@@ -53,8 +40,6 @@ theorem incidentGraphPiecesSeparated_disjoint
     rcases hgap with hgap | hgap
     · exact (S p).disjoint_pieceArc_of_gap hgap
     · exact ((S p).disjoint_pieceArc_of_gap hgap).symm
-
-
 
 theorem exists_incident_graph_strip_width
     (hcut : ∀ e t, cut e t ∈ Ioo (0 : ℝ) (1 / 3))

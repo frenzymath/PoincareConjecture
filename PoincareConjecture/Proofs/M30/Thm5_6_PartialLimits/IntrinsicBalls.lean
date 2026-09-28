@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M13.Length
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalIsometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -87,8 +77,6 @@ private theorem exists_subtype_path {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
     ⟨g.toRiemannianMetric⟩
   exact Manifold.pathELength_congr heq
 
-
-
 theorem intrinsic_edist_eq_of_ball_subset (p q : U) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (U : Set M))
     (hq : (q : M) ∈ g.ball (p : M) r) :
@@ -111,8 +99,6 @@ theorem intrinsic_edist_eq_of_ball_subset (p q : U) {r : ℝ}
     _ = g.pathELength γ 0 1 := hlength
     _ < l := hlen.trans_le (min_le_left _ _)
 
-
-
 theorem intrinsic_ball_eq_preimage (p : U) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (U : Set M)) :
     h.ball p r = (Subtype.val : U → M) ⁻¹' g.ball (p : M) r := by
@@ -123,8 +109,6 @@ theorem intrinsic_ball_eq_preimage (p : U) {r : ℝ}
       (h.edist_map_le_of_metric_pullback g contMDiff_subtype_val hinner p q).trans_lt hq
   · intro hq
     rwa [intrinsic_edist_eq_of_ball_subset g U h hinner p q hball hq]
-
-
 
 theorem intrinsic_ball_image (p : U) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (U : Set M)) :
@@ -137,16 +121,12 @@ theorem intrinsic_ball_image (p : U) {r : ℝ}
   · intro hx
     exact ⟨⟨x, hball hx⟩, hx, rfl⟩
 
-
-
 theorem intrinsic_closure_ball_eq_preimage (p : U) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (U : Set M)) :
     closure (h.ball p r) = (Subtype.val : U → M) ⁻¹' closure (g.ball (p : M) r) := by
   rw [intrinsic_ball_eq_preimage g U h hinner p hball]
   exact (U.isOpen.isOpenEmbedding_subtypeVal.isOpenMap.preimage_closure_eq_closure_preimage
     continuous_subtype_val _).symm
-
-
 
 theorem intrinsic_isCompact_closure_ball (p : U) {r : ℝ}
     (hcompact : IsCompact (closure (g.ball (p : M) r)))
@@ -159,15 +139,11 @@ theorem intrinsic_isCompact_closure_ball (p : U) {r : ℝ}
 
 variable [T3Space M] [SecondCountableTopology M] [MeasurableSpace M] [BorelSpace M]
 
-
-
 theorem intrinsic_calibratedMetricVolume_eq_image {B : Set U} (hB : MeasurableSet B) :
     calibratedMetricVolume h B = calibratedMetricVolume g ((Subtype.val : U → M) '' B) := by
   rw [calibratedMetricVolume_eq_volumeMeasure, calibratedMetricVolume_eq_volumeMeasure]
   exact (h.volumeMeasure_image_eq_of_injOn_metric_pullback g contMDiff_subtype_val hinner
     isOpen_univ (Set.injOn_of_injective Subtype.val_injective) hB (subset_univ B)).symm
-
-
 
 theorem intrinsic_calibratedMetricVolume_ball (p : U) {r : ℝ}
     (hball : g.ball (p : M) r ⊆ (U : Set M)) :

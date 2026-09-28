@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedBallExtension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,10 +10,6 @@ variable {V W X : Type*}
   [NormedAddCommGroup V] [NormedSpace ℝ V] [FiniteDimensional ℝ V]
   [NormedAddCommGroup W] [NormedSpace ℝ W]
   [NormedAddCommGroup X] [NormedSpace ℝ X] [FiniteDimensional ℝ X]
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_extension_fix_outer_piece
     {s b d q : Set X} (hs : IsFinitePLBallPair V s (b ∪ d))
@@ -55,11 +41,6 @@ theorem IsFinitePLBallPair.exists_extension_fix_outer_piece
   intro x
   apply Subtype.ext
   exact (congrArg (fun y : s => (y : X)) (hHB ⟨x, Or.inl x.property⟩)).trans (hBb x)
-
-
-
-
-
 
 theorem IsFinitePLBallPair.exists_two_side_extension_fix_outer
     {s₀ s₁ b₀ b₁ d q : Set X}

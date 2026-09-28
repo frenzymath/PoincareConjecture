@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Connection.LocalReg
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.VectorField.Commutator
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.Commutation.SlotAlgebra
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -136,8 +129,6 @@ private lemma secondCovariantTensorDerivative_expand
   simp_rw [hslot]
   simp only [sub_apply]
   ring
-
-
 
 theorem covariantTensorDerivative_commutator
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}

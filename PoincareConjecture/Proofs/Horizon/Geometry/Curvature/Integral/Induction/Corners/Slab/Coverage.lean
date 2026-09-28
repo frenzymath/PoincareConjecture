@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Slab.Parameters
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Slab.StripCenters
 
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle Topology BigOperators

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalC
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderRicciFlow
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderPreterminalCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem CylinderRicciFlow.physical_coefficients_eq
     {e : SurgeryFlowCylinder F C origin scale I U}
@@ -56,9 +44,6 @@ theorem CylinderRicciFlow.physical_coefficients_eq
     (mfderiv (𝓡 3) (𝓡 3) (cylinderTargetTransport e f s hs ∘ targetChart f p) x w) = _
   rw [mfderiv_comp x hdt hdf]
   exact G.physical_metric_link s hs _ _ _
-
-
-
 
 theorem cylinderTerminalChart_quadratic_le
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -115,9 +100,6 @@ theorem cylinderTerminalChart_quadratic_le
     exact G.physical_coefficients_eq hmap p s hs hx v v
   rw [hread]
   exact mul_le_mul_of_nonneg_left (hbound s hs) (inv_pos.mpr e.scale_pos).le
-
-
-
 
 theorem CylinderRicciFlow.pullback_quadratic_le_initial
     (P : M44CapPersistencePredecessors.{u}) {c K : ℝ} (hK : 0 ≤ K)

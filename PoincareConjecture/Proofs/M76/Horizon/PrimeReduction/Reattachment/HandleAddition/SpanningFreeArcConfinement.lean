@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningAnnularSource
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.TerminalClosedEndCover
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 namespace PoincareConjecture.M76
@@ -48,7 +41,6 @@ theorem arc_between_closed_separators_subset_middle
     · exact hxM
     · exact (disjoint_left.mp hIO hxI hxO).elim
   · exact hxM
-
 
 theorem HamiltonMarkedProtectedBall.arc_between_nested_annular_circles
     {ι κ α : Type*} [Fintype ι] [Fintype κ]

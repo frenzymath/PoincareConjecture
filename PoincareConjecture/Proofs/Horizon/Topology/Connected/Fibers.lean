@@ -2,15 +2,11 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Order.IntermediateValue
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem subset_of_connected_of_frontier_saturated
     {X : Type*} [TopologicalSpace X] {S C : Set X}
@@ -33,9 +29,6 @@ theorem subset_of_connected_of_frontier_saturated
   · exact hcover
   · obtain ⟨x, hx, hxC⟩ := hmeet
     exact ⟨x, hx, (mem_interior_iff_notMem_frontier hxC).mpr (hnot x hx)⟩
-
-
-
 
 theorem eq_image_closed_band_of_frontier_saturated
     {X Y : Type*} [TopologicalSpace X] [PreconnectedSpace X] [TopologicalSpace Y]
@@ -62,8 +55,6 @@ theorem eq_image_closed_band_of_frontier_saturated
       exact hfront t ht w hz
     · exact ⟨p, ⟨q, hqp⟩, hp⟩
   exact hsub (mem_range_self x)
-
-
 
 theorem eq_union_image_closed_band_of_frontier_saturated
     {X Y : Type*} [TopologicalSpace X] [PreconnectedSpace X] [TopologicalSpace Y]

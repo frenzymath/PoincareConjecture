@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceChartsBuffers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
 
 theorem source_initial_chart_closed_bounds
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M]

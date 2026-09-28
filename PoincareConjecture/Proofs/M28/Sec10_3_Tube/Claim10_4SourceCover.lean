@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceNecks
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem exists_counterexample_superlevel_cover_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

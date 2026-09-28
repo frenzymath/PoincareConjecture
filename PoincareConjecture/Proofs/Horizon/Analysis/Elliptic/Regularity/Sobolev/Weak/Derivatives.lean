@@ -1,12 +1,3 @@
-
-
-
-
-
-
-
-
-
 import Mathlib
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Weak.WholeSpace
 import Mathlib.Analysis.Calculus.BumpFunction.Convolution
@@ -15,13 +6,6 @@ import Mathlib.Analysis.Calculus.ContDiff.Convolution
 import Mathlib.Analysis.Convex.Integral
 import Mathlib.Analysis.Normed.Lp.SmoothApprox
 import Mathlib.MeasureTheory.Integral.Bochner.ContinuousLinearMap
-
-
-
-
-
-
-
 
 noncomputable section
 
@@ -34,8 +18,6 @@ variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
-
-
 def HasWeakPartialDeriv (i : Fin d) (g f : E → ℝ) (Ω : Set E) : Prop :=
   ∀ φ : E → ℝ,
     ContDiff ℝ (⊤ : ℕ∞) φ →
@@ -44,14 +26,11 @@ def HasWeakPartialDeriv (i : Fin d) (g f : E → ℝ) (Ω : Set E) : Prop :=
     ∫ x in Ω, f x * (fderiv ℝ φ x) (EuclideanSpace.single i 1) =
       -∫ x in Ω, g x * φ x
 
-
 abbrev HasWeakPartialDeriv' (i : Fin d) (g f : E → ℝ) (Ω : Set E) : Prop :=
   HasWeakPartialDeriv (d := d) i g f Ω
 
-
 def HasWeakGrad (G : E → E) (f : E → ℝ) (Ω : Set E) : Prop :=
   ∀ i : Fin d, HasWeakPartialDeriv i (fun x => G x i) f Ω
-
 
 def HasWeakDiv (g : E → ℝ) (F : E → E) (Ω : Set E) : Prop :=
   ∀ φ : E → ℝ,
@@ -415,6 +394,5 @@ theorem HasWeakPartialDeriv.of_eLpNormApprox_p
         atTop (nhds (-∫ x in Ω, g x * φ x)) := by
     simpa [h_eq_n] using h_rhs_tendsto
   exact tendsto_nhds_unique h_lhs_tendsto h_eq_tendsto
-
 
 end Poincare.Analysis.Sobolev.Weak

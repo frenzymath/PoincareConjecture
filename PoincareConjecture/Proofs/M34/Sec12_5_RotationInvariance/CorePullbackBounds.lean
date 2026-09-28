@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalCoreCoefficients
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowSpatialJetBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.M34
 
 open DifferenceEnergy
-
-
-
 
 theorem partialFlow_corePullback_bounds (P : RicciFlowCurvatureTheory.{0})
     {g0 : StandardInitialMetric} (E0 : StandardCapEstimate g0)

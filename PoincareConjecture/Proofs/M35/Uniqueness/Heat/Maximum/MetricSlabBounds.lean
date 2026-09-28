@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTimePotential
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.RawJointInverse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -64,7 +56,6 @@ theorem rawMetric_quadratic_family_continuousOn {J : Set ℝ} (F : RicciFlow n V
     (rawMetricBilin_family_contDiffOn F).continuousOn.comp
       continuous_fst.continuousOn (fun _ hp => hp.1)
   exact (hg.clm_apply continuous_snd.continuousOn).clm_apply continuous_snd.continuousOn
-
 
 theorem exists_raw_metric_slab_lower_bound {J I : Set ℝ} (F : RicciFlow n V J)
     (hI : IsCompact I) (hIJ : I ⊆ J) {K : Set V} (hK : IsCompact K) :

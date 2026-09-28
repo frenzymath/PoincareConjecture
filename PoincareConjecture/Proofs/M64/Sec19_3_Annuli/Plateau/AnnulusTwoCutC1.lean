@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusCutCompletion
 import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -26,9 +18,6 @@ local notation "D" => Set.ofPred (fun p : LoopPlane =>
   p 0 ∈ Ioo (0 : ℝ) curvePeriod ∧ p 1 ∈ Icc (0 : ℝ) 1)
 local notation "half" => curvePeriod / 2
 local notation "v" => annulusPoint (curvePeriod / 2) 0
-
-
-
 
 theorem m64AnnulusCutCompletion_contMDiffOn
     {f g : LoopPlane → M}

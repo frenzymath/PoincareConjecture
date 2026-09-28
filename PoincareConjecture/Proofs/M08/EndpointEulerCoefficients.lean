@@ -203,4 +203,3 @@ theorem chartActionMetric_closed_curve_derivative {J C : Set ℝ} (F : RicciFlow
   simpa only [hus] using hcurve
 
 end PoincareConjecture.M08
-

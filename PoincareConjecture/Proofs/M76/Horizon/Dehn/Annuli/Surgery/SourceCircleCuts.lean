@@ -9,8 +9,6 @@ namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem source_polygon_disk_or_enclosing {n : ℕ} (P : Polygon P2 (n + 3))
     (hP : P.HasSimplicialEdges) (hi : Function.Injective P) {L d : ℝ}
     (hboundary : ∀ p ∈ P.boundary ℝ, -d < depth L p ∧ depth L p < d) :
@@ -40,8 +38,6 @@ theorem source_polygon_disk_or_enclosing {n : ℕ} (P : Polygon P2 (n + 3))
     have ho := hout ((mem_annulusSquare_iff L d p).mpr hge)
     rw [P.closure_inside hP hi] at hp
     exact hp ho
-
-
 
 theorem enclosing_source_polygons_nested {m n : ℕ}
     (P : Polygon P2 (m + 3)) (Q : Polygon P2 (n + 3))

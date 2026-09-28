@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Iso
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.FixedMorseSquare
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.NestedFixedSquare
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -49,9 +47,6 @@ private theorem boundary_image (A : Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞) :
   have h := A.toHomeomorph.image_frontier (closedBall (0 : E2) 1)
   rw [frontier_closedBall _ one_ne_zero] at h
   exact h.symm
-
-
-
 
 theorem exists_marked_circle_pair_isotopy_fixing_morse_square
     (C D : Fin 2 → S1 → E2)

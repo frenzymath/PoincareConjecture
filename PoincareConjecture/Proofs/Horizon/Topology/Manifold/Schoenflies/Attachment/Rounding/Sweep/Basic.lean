@@ -3,17 +3,6 @@ import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -23,7 +12,6 @@ open scoped Manifold ContDiff
 namespace Poincare.Manifold.Schoenflies.Rounding
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
-
 
 def sweepMap (p : E × Real) : E × Real :=
   (((1 + p.2 ^ 2) / (1 + p.2 ^ 2 * ‖p.1‖ ^ 2)) • p.1,
@@ -45,7 +33,6 @@ theorem sweepMap_fst_norm_sq (x : E) (k : Real) :
       ((1 + k ^ 2) / (1 + k ^ 2 * ‖x‖ ^ 2)) ^ 2 * ‖x‖ ^ 2 := by
   simp only [sweepMap, norm_smul, Real.norm_eq_abs, mul_pow, sq_abs]
 
-
 theorem sweepMap_quadratic (x : E) (k q : Real) :
     ‖(sweepMap (x, k)).1‖ ^ 2 + (sweepMap (x, k)).2 ^ 2 +
       2 * q * (sweepMap (x, k)).2 - 1 =
@@ -54,7 +41,6 @@ theorem sweepMap_quadratic (x : E) (k q : Real) :
   simp only [sweepMap]
   field_simp [(sweep_den_pos x k).ne']
   <;> ring
-
 
 def sweepTarget : Set (E × Real) := {p | p.2 ≠ 0 ∨ ‖p.1‖ < 1}
 
@@ -67,7 +53,6 @@ def sweepDiscriminant (p : E × Real) : Real :=
 
 def sweepScale (p : E × Real) : Real :=
   (1 + ‖p.1‖ ^ 2 + p.2 ^ 2 + sweepDiscriminant p) / 2
-
 
 def sweepInv (p : E × Real) : E × Real :=
   ((sweepScale p)⁻¹ • p.1,
@@ -248,7 +233,6 @@ theorem contDiffOn_sweepInv :
     ((contDiffAt_const.mul contDiffAt_snd).div (hD.sub hL)
       (sweepInv_den_pos hp).ne')).contDiffWithinAt
 
-
 def sweepPartialHomeomorph : OpenPartialHomeomorph (E × Real) (E × Real) where
   toFun := sweepMap
   invFun := sweepInv
@@ -263,10 +247,8 @@ def sweepPartialHomeomorph : OpenPartialHomeomorph (E × Real) (E × Real) where
   continuousOn_toFun := contDiff_sweepMap.continuous.continuousOn
   continuousOn_invFun := contDiffOn_sweepInv.continuousOn
 
-
 def sweepRange : TopologicalSpace.Opens (E × Real) :=
   ⟨sweepTarget, isOpen_sweepTarget⟩
-
 
 def sweepParametrization :
     Diffeomorph 𝓘(Real, E × Real) 𝓘(Real, E × Real)
@@ -318,7 +300,6 @@ def sweepParametrization :
     (sweepParametrization p : E × Real) =
       sweepMap (OpenPartialHomeomorph.univUnitBall p.1, p.2) := rfl
 
-
 theorem sweepMap_mem_quadratic_iff (x : E) (k q : Real) (hx : ‖x‖ < 1) :
     ‖(sweepMap (x, k)).1‖ ^ 2 + ((sweepMap (x, k)).2 + q) ^ 2 ≤ 1 + q ^ 2 ↔
       k ∈ Icc (-q - Real.sqrt (q ^ 2 + 1)) (-q + Real.sqrt (q ^ 2 + 1)) := by
@@ -345,7 +326,6 @@ theorem sweepMap_mem_quadratic_iff (x : E) (k q : Real) (hx : ‖x‖ < 1) :
   rw [he, sq_le_sq, abs_of_nonneg (Real.sqrt_nonneg _), abs_le]
   constructor <;> rintro ⟨h₁, h₂⟩ <;> constructor <;> linarith
 
-
 def sweepHeightChange (q : Real) :
     Diffeomorph 𝓘(Real, E × Real) 𝓘(Real, E × Real) (E × Real) (E × Real) ∞ := by
   let a := Real.sqrt (q ^ 2 + 1)
@@ -371,7 +351,6 @@ def sweepHeightChange (q : Real) :
       (contDiff_const.sub (contDiff_const.mul contDiff_snd))).contMDiff
     contMDiff_invFun := (contDiff_fst.prodMk
       ((contDiff_const.sub contDiff_snd).div_const (2 * a))).contMDiff }
-
 
 def capSweepParametrization (q : Real) :
     Diffeomorph 𝓘(Real, E × Real) 𝓘(Real, E × Real)
@@ -485,7 +464,6 @@ theorem capSweepParametrization_image_boundary_zero (q : Real) :
     refine ⟨p.1, mem_univ _, ?_⟩
     rw [← hp]
     exact congrArg Subtype.val ((capSweepParametrization q).apply_symm_apply z)
-
 
 theorem capSweepParametrization_image_slab (q : Real) :
     (fun p : E × Real => (capSweepParametrization q p : E × Real)) ''

@@ -1,15 +1,6 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.LinearAlgebra.Matrix.NonsingularInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped ContDiff BigOperators
 variable {𝕜 E ι : Type*} [NontriviallyNormedField 𝕜]
   [NormedAddCommGroup E] [NormedSpace 𝕜 E] [Fintype ι] [DecidableEq ι]
   {n : ℕ∞ω} {S : Set E} {A : E → Matrix ι ι 𝕜}
-
-
 
 theorem ContDiffOn.matrix_det (hA : ∀ a b, ContDiffOn 𝕜 n (fun x => A x a b) S) :
     ContDiffOn 𝕜 n (fun x => (A x).det) S := by
@@ -31,8 +20,6 @@ theorem ContDiffOn.matrix_det (hA : ∀ a b, ContDiffOn 𝕜 n (fun x => A x a b
   rw [heq]
   exact ContDiffOn.sum fun σ _ => contDiffOn_const.mul
     (contDiffOn_prod fun i _ => hA (σ i) i)
-
-
 
 theorem ContDiffOn.matrix_inv (hA : ∀ a b, ContDiffOn 𝕜 n (fun x => A x a b) S)
     (hdet : ∀ x ∈ S, (A x).det ≠ 0) (a b : ι) :

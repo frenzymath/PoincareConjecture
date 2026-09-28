@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLFixedChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -21,9 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3}
-
-
-
 
 theorem exists_original_chart_ball (i : ι) (x : X) (hx : x ∈ (e i).source)
     {U : Set X} (hU : IsOpen U) (hxU : x ∈ U) :
@@ -94,8 +83,6 @@ theorem exists_original_chart_ball (i : ι) (x : X) (hx : x ∈ (e i).source)
     refine ⟨z, ?_, c.left_inv hxc⟩
     exact ⟨0, mem_closedBall_self zero_le_one, by simp only [ha, smul_zero, add_zero]⟩
   exact ⟨D, hD, hxD, hDU, ⟨hball⟩⟩
-
-
 
 theorem PLDomain.exists_ball_in_interior {R : Set X} (he : PLDomain e R)
     (hne : (interior R).Nonempty) :

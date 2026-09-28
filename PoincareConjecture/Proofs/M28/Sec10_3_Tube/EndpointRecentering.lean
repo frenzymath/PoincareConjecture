@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckCenterConnector
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CapCoreConnector
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderUniformScalar
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -22,12 +12,8 @@ universe u
 
 namespace PoincareConjecture.M28
 
-
-
 def endpointConnectorBudget (epsilon C : ℝ) : ℝ :=
   max C 2 + 8 * standardSpherePathCeiling + 4 / epsilon
-
-
 
 theorem endpointConnectorBudget_pos {epsilon C : ℝ} (hepsilon : 0 < epsilon) :
     0 < endpointConnectorBudget epsilon C := by
@@ -94,9 +80,6 @@ private theorem exists_reverse_unit_connector
       (fun _ _ _ _ h => sub_le_sub_left h 1)
       ((differentiable_const (1 : ℝ)).sub differentiable_id).differentiableOn
       (by simpa only [sub_self, sub_zero] using hγ.mdifferentiableOn one_ne_zero))
-
-
-
 
 theorem exists_neck_endpoint_recentering_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -173,9 +156,6 @@ theorem exists_neck_endpoint_recentering_accuracy :
     ⟨δ, hδ0.trans hγ1, hδ1.trans hγ0, hδ, hδN, ?_⟩⟩
   rw [hδlen]
   exact hγbound
-
-
-
 
 theorem exists_cap_endpoint_recentering
     {M : Type u} [TopologicalSpace M]

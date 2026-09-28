@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.BoundedCylinder
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemisphere.Caps
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 def northernDiskSphere {v : E3} (hv : ‖v‖ = 1)
     (x : Hemisphere.Plane v) : S2 :=
@@ -51,7 +40,6 @@ private theorem northernDiskSphere_height {v : E3} (hv : ‖v‖ = 1)
   have hx := Submodule.mem_orthogonal_singleton_iff_inner_right.mp x.property
   simp [northernDiskSphere_formula, inner_smul_right, inner_add_right, hx, hv,
     div_eq_mul_inv, mul_comm]
-
 
 theorem image_closedBall_northernDiskSphere {v : E3} (hv : ‖v‖ = 1) :
     northernDiskSphere hv '' closedBall (0 : Hemisphere.Plane v) 1 =
@@ -170,10 +158,6 @@ private theorem northernDiskSphere_bounded_collar {v : E3} (hv : ‖v‖ = 1)
   congr 1
   rw [div_eq_mul_inv, mul_comm]
 
-
-
-
-
 theorem exists_northern_cylindrical_cap_with_range (v : E3) (hv : ‖v‖ = 1) :
     ∃ g : Hemisphere.Plane v → E3,
       ContDiff Real ∞ g ∧ Function.Injective g ∧
@@ -222,7 +206,6 @@ theorem exists_northern_cylindrical_cap_with_range (v : E3) (hv : ‖v‖ = 1) :
         northernDiskSphere hv := funext fun x => hF (northernDiskSphere hv x)
     rw [heq, Set.image_comp, image_closedBall_northernDiskSphere]
 
-
 theorem exists_northern_cylindrical_cap (v : E3) (hv : ‖v‖ = 1) :
     ∃ g : Hemisphere.Plane v → E3,
       ContDiff Real ∞ g ∧ Function.Injective g ∧
@@ -237,8 +220,6 @@ theorem exists_northern_cylindrical_cap (v : E3) (hv : ‖v‖ = 1) :
   obtain ⟨g, hg, hi, hd, hb, hh, hc, hbound, _⟩ :=
     exists_northern_cylindrical_cap_with_range v hv
   exact ⟨g, hg, hi, hd, hb, hh, hc, hbound⟩
-
-
 
 theorem exists_southern_cylindrical_cap (v : E3) (hv : ‖v‖ = 1) :
     ∃ g : Hemisphere.Plane v → E3,

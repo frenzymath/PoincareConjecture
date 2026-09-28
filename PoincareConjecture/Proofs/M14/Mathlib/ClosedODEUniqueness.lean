@@ -2,17 +2,6 @@ import Mathlib.Analysis.ODE.ExistUnique
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Topology.Order.IntermediateValue
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -21,9 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem closedODE_eventuallyEqWithin {a b t₀ : ℝ} (hab : a < b)
     {U : Set E} (hU : IsOpen U) (V : ℝ × E → E)
@@ -101,9 +87,6 @@ theorem closedODE_eventuallyEqWithin {a b t₀ : ℝ} (hab : a < b)
       (fun r hr => (hg r (hsub (Ioc_subset_Icc_self hr))).mono_of_mem_nhdsWithin
         (Icc_mem_nhdsLE_of_mem ⟨htI.1.trans_lt hr.1, hr.2.trans ht₀.2⟩))
       (fun r hr => (hdata (hsegment (Ioc_subset_Icc_self hr))).2) heq ⟨le_rfl, hle⟩
-
-
-
 
 theorem closedODE_interval_solution_unique {a b t₀ : ℝ} (hab : a < b)
     {U : Set E} (hU : IsOpen U) (V : ℝ × E → E)

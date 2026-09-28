@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M14.OrdinaryCaptureBranches
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialVector
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,9 +23,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (hCoordinates : SpacetimeGaugeTheory.{u, u} G.leafwise G.timeIntervals)
 
 include hCoordinates
-
-
-
 
 theorem ordinaryCapture_unique_branch_lift
     (hPath : M14PathCalculusConclusion G)
@@ -80,9 +67,6 @@ theorem ordinaryCapture_unique_branch_lift
     exact (hrq hs).symm.trans ((D.path_curve_eq 0 τ _ _ r' hrc s hs).symm.trans
       ((congrArg D.point_map (hr'p hs)).trans
         ((D.path_curve_eq 0 τ _ _ p hc s hs).trans (hW hs))))
-
-
-
 
 theorem ordinaryCapture_unique_branch_transport
     (hPath : M14PathCalculusConclusion G)

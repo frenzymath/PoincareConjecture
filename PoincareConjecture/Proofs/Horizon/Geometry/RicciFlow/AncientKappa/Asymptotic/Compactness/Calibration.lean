@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Calibrated
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Basic
 import Mathlib.Geometry.Euclidean.Volume.Measure
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory

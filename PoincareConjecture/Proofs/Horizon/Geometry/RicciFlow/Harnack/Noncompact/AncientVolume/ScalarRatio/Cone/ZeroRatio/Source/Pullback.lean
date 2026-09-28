@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LocalConvergence
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.SourceSmooth
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,8 +46,6 @@ theorem exists_source_pullback_metrics
   refine ⟨(hlocal hk).contMDiff, fun x v w => ?_⟩
   simp only [G, dif_pos hk, pullbackOfLocalDiffeomorph_inner]
 
-
-
 theorem pullbackCoefficients_eq_of_source_metric
     {N P : Type*} [TopologicalSpace N] [TopologicalSpace P]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
@@ -77,8 +68,6 @@ theorem pullbackCoefficients_eq_of_source_metric
   simp only [pullbackCoefficients, hd, ContinuousLinearMap.comp_apply, Function.comp_apply,
     ContinuousLinearMap.bilinearComp_apply]
   rfl
-
-
 
 theorem inner_eq_pullback_invFun
     {N P : Type*} [TopologicalSpace N] [TopologicalSpace P] [Nonempty P]
@@ -106,8 +95,6 @@ theorem inner_eq_pullback_invFun
   have hv := congrArg (fun L => L v) hd
   have hw := congrArg (fun L => L w) hd
   convert! congrArg₂ (fun b c => g.inner y b c) hv hw using 1
-
-
 
 theorem iteratedFDeriv_pullbackCoefficients_eq_of_source_metric
     {N P : Type*} [TopologicalSpace N] [TopologicalSpace P]

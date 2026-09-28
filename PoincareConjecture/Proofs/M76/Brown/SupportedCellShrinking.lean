@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.UnitBallPairs
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -22,10 +12,6 @@ namespace Set
 variable {X E Y : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [PseudoMetricSpace Y]
-
-
-
-
 
 theorem IsUnitBallPair.exists_supported_shrinking
     {Q T : Set X} (hpair : IsUnitBallPair E Q (frontier Q))

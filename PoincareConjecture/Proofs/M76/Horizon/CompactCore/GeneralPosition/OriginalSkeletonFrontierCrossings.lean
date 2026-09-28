@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.GeneralPosition.ChartLineCrossings
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexTriangulation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry unitInterval
 
 namespace OpenPartialHomeomorph
-
-
 
 theorem source_edge_frontier_alternative
     {E X V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -55,9 +44,6 @@ theorem source_edge_frontier_alternative
 end OpenPartialHomeomorph
 
 namespace Geometry.SimplicialComplex
-
-
-
 
 theorem original_skeleton_frontier_crossings
     {E X V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

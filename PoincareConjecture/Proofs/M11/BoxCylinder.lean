@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M11.SpacetimeGeometry
 import PoincareConjecture.Definitions.M11CompatibleEmbedding
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

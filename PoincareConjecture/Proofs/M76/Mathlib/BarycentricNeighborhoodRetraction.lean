@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.BarycentricNeighborhoodCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.AffineVertexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.AffineFaceMaps
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] (K : SimplicialComplex ℝ E) [Fintype K.faces]
-
-
-
-
 
 theorem exists_barycentricNeighborhood_retraction
     {L : SimplicialComplex ℝ E} [Finite L.faces] (hLK : L ≤ K)

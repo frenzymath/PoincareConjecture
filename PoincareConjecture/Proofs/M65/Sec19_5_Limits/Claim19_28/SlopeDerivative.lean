@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M62.Claim19_11_SlopeEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65Slope_hasDerivAt (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -52,8 +41,6 @@ theorem m65Slope_hasDerivAt (P : M62.CircleProductData F circumference)
     map_smul, smul_apply, smul_eq_mul]
   have hv := (M62.speed_pos P.flow c hc ht x).ne'
   field_simp
-
-
 
 theorem m65Slope_deriv_abs_le (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geo
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Cylinders.CylinderSource
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.RoundCylinderCongruence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,7 +23,6 @@ namespace GeneralizedFlowExtension
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ} (E : GeneralizedFlowExtension F T)
 
-
 noncomputable def oldSliceDiffeomorph (t : ℝ) (ht : t ∈ F.interval) :
     Diffeomorph (𝓡 3) (𝓡 3) (F.slice t).carrier (E.extended.slice t).carrier ∞ where
   toFun := E.forward t ht
@@ -43,7 +33,6 @@ noncomputable def oldSliceDiffeomorph (t : ℝ) (ht : t ∈ F.interval) :
   contMDiff_invFun := E.inverse_smooth t ht
 
 variable {C : GeneralizedSliceCarrier.{u}} {a q : ℝ} {J : Set ℝ} {U : Set C.carrier}
-
 
 noncomputable def pushCylinder (d : GeneralizedFlowCylinder F C a q J U)
     (hC : Nonempty C.carrier) : GeneralizedFlowCylinder E.extended C a q J U := by
@@ -120,7 +109,6 @@ theorem pushCylinder_pullbackInner (d : GeneralizedFlowCylinder F C a q J U)
         (mfderiv (𝓡 3) (𝓡 3) (d.forward s hs) x w)) = _
   rw [E.metric_pullback]
   rfl
-
 
 noncomputable def strongNeck (t : ℝ) (ht : t ∈ F.interval) {epsilon : ℝ}
     (N : GeneralizedStrongNeck F t epsilon) : GeneralizedStrongNeck E.extended t epsilon := by

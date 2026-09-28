@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinePolygonSubdivision
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set AffineMap
@@ -18,21 +9,13 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
 
-
-
 def edgeCut (P : Polygon E n) (t : Fin n → ℝ) (i : Fin n) : E :=
   lineMap (P i) (P (finRotate n i)) (t i)
-
-
-
 
 def cutArc (P : Polygon E n) (t : Fin n → ℝ) (i : Fin n) : Set E :=
   (lineMap (P i) (P (finRotate n i)) '' Icc (t i) 1) ∪
     (lineMap (P (finRotate n i)) (P (finRotate n (finRotate n i))) ''
       Icc 0 (t (finRotate n i)))
-
-
-
 
 theorem exists_edge_cuts_avoiding (P : Polygon E (n + 3))
     (hinj : Function.Injective P) {F : Set E} (hF : F.Finite) :
@@ -47,14 +30,9 @@ theorem exists_edge_cuts_avoiding (P : Polygon E (n + 3))
   choose t ht havoid using h
   exact ⟨t, fun i => ⟨ht i, havoid i⟩⟩
 
-
-
 theorem edgeCut_mem_edgeSet (P : Polygon E n) (t : Fin n → ℝ)
     {i : Fin n} (ht : t i ∈ Icc (0 : ℝ) 1) : P.edgeCut t i ∈ P.edgeSet ℝ i :=
   ⟨t i, ht, rfl⟩
-
-
-
 
 theorem edgeCut_injective (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -63,8 +41,6 @@ theorem edgeCut_injective (P : Polygon E (n + 3))
   intro i j hij
   exact (P.eq_of_halfOpen_edge_parameters hP hinj
     ⟨(ht i).1.le, (ht i).2⟩ ⟨(ht j).1.le, (ht j).2⟩ hij).1
-
-
 
 theorem edgeCut_notMem_range (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
@@ -79,17 +55,12 @@ theorem edgeCut_notMem_range (P : Polygon E (n + 3))
     ⟨ht.1.le, ht.2⟩ ⟨le_rfl, zero_lt_one⟩ heq
   exact ht.1.ne' h.2
 
-
-
 theorem cutArc_subset_adjacent_edges (P : Polygon E n) (t : Fin n → ℝ)
     (ht : ∀ i, t i ∈ Icc (0 : ℝ) 1) (i : Fin n) :
     P.cutArc t i ⊆ P.edgeSet ℝ i ∪ P.edgeSet ℝ (finRotate n i) := by
   rintro x (⟨r, hr, rfl⟩ | ⟨r, hr, rfl⟩)
   · exact Or.inl ⟨r, ⟨(ht i).1.trans hr.1, hr.2⟩, rfl⟩
   · exact Or.inr ⟨r, ⟨hr.1, hr.2.trans (ht _).2⟩, rfl⟩
-
-
-
 
 theorem iUnion_cutArc (P : Polygon E n) (t : Fin n → ℝ)
     (ht : ∀ i, t i ∈ Icc (0 : ℝ) 1) :
@@ -110,10 +81,6 @@ theorem iUnion_cutArc (P : Polygon E n) (t : Fin n → ℝ)
         (show lineMap (P i) (P (finRotate n i)) r ∈
           lineMap (P i) (P (finRotate n i)) '' Icc 0 (t i) from
           ⟨r, ⟨hr.1, (lt_of_not_ge hrt).le⟩, rfl⟩)
-
-
-
-
 
 theorem exists_subordinate_cut_arcs (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

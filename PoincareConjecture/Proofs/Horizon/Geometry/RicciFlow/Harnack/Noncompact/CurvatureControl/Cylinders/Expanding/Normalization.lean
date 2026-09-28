@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Expanding.VolumeBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.RescaledSequence
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
   FlowCarrier.borelSpace FlowCarrier.chartedSpace FlowCarrier.isManifold
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
 attribute [local instance] smallCarrier smallChartedSpace smallIsManifold
-
 
 theorem rescaledTerminalFlow_ball_volume_lower_bound
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -51,8 +43,6 @@ theorem rescaledTerminalFlow_ball_volume_lower_bound
           ν * (Real.sqrt Q * (r / Real.sqrt Q)) ^ n := by rw [mul_pow]; ring
       _ = ν * r ^ n := by rw [mul_div_cancel₀ _ hne]
   rwa [hid] at h
-
-
 
 theorem exists_nonflat_ancient_limit_of_small_rescaled_expanding_cylinders
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)
@@ -104,8 +94,6 @@ theorem exists_nonflat_ancient_limit_of_small_rescaled_expanding_cylinders
       (Q k) (hQ k) (τ k) (p k) (hnormalize k)) hν
   filter_upwards [hvolume] with k hk
   exact (F k).rescaledTerminalFlow_unit_volume_lower_bound (Q k) (hQ k) (τ k) (p k) hk
-
-
 
 theorem small_rescaled_ancient_limit_ball_volume_lower_bound
     {m : ℕ} (hC : RicciFlowCurvatureTheory.{u}) (hm : 0 < m)

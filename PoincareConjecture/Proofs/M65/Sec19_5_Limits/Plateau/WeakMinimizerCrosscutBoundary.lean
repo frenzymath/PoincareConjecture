@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundar
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityPolarMeasure
 import Mathlib.Analysis.SpecialFunctions.Trigonometric.InverseDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,12 +10,7 @@ open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def m65CrosscutAngle (r : ℝ) : ℝ := Real.arccos (r / 2)
-
-
 
 theorem m65Crosscut_mem_disk {r t : ℝ} (hr : 0 < r) (hr1 : r ≤ 1)
     (ht : t ∈ Icc (-m65CrosscutAngle r) (m65CrosscutAngle r)) :
@@ -44,8 +29,6 @@ theorem m65Crosscut_mem_disk {r t : ℝ} (hr : 0 < r) (hr1 : r ≤ 1)
   simp [M65Interior.polarPlane, Proofs.M58.angularPoint, EuclideanSpace.basisFun_apply]
   nlinarith [congrArg (fun x : ℝ => r ^ 2 * x) (Real.sin_sq_add_cos_sq t),
     mul_nonneg hr.le (sub_nonneg.mpr hcos)]
-
-
 
 theorem m65Crosscut_endpoint {r σ : ℝ} (hr : 0 < r) (hr1 : r ≤ 1)
     (hσ : σ = 1 ∨ σ = -1) :
@@ -121,9 +104,6 @@ private theorem m65Crosscut_angle_map_le {ε R σ : ℝ} (hε : 0 < ε) (hR : R 
   simp only [ContinuousLinearMap.det_toSpanSingleton] at hmap
   exact hbound.trans (hmap ▸ Measure.restrict_mono himage le_rfl)
 
-
-
-
 noncomputable def m65CrosscutBoundaryL2 {ε R σ : ℝ}
     (hε : 0 < ε) (hR : R ≤ 1) (hσ : σ = 1 ∨ σ = -1) :
     Lp ℝ 2 m65CircleBoundaryMeasure →L[ℝ] Lp ℝ 2 (volume.restrict (Icc ε R)) :=
@@ -133,9 +113,6 @@ noncomputable def m65CrosscutBoundaryL2 {ε R σ : ℝ}
     (by norm_num : (1 : ℝ≥0∞) ≠ ⊤)
     (by simpa only [one_smul] using m65Crosscut_angle_map_le hε hR hσ)).comp
       m65CircleBoundaryPullback.toContinuousLinearMap
-
-
-
 
 theorem m65CrosscutBoundaryL2_coe {ε R σ : ℝ}
     (hε : 0 < ε) (hR : R ≤ 1) (hσ : σ = 1 ∨ σ = -1)
@@ -153,9 +130,6 @@ theorem m65CrosscutBoundaryL2_coe {ε R σ : ℝ}
   apply hc.trans
   exact ae_of_ae_map ha.aemeasurable
     (ae_mono (m65Crosscut_angle_map_le hε hR hσ) (m65CircleBoundaryPullback_coe b))
-
-
-
 
 theorem m65CrosscutBoundaryL2_ae_of_ae {ε R σ : ℝ}
     (hε : 0 < ε) (hR : R ≤ 1) (hσ : σ = 1 ∨ σ = -1)

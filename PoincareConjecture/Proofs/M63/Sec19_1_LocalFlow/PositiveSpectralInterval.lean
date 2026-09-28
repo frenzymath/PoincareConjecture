@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.TimeDependentSpectralResponse
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -25,9 +14,6 @@ variable {iota : Type*} [Countable iota] [MeasurableSpace (State iota)]
   {lambda : iota → NNReal} {T0 T : ℝ}
   (N : TimeDependentSpectralResidual lambda T0)
 
-
-
-
 def restrict (hT : T ≤ T0) : TimeDependentSpectralResidual lambda T where
   toFun := N.toFun
   measurable := N.measurable
@@ -37,10 +23,6 @@ def restrict (hT : T ≤ T0) : TimeDependentSpectralResidual lambda T where
   principalConstant := N.principalConstant
   lowerConstant := N.lowerConstant
   mixed := ae_mono (Measure.restrict_mono (Ioc_subset_Ioc le_rfl hT) le_rfl) N.mixed
-
-
-
-
 
 theorem exists_positive_interval (hT0 : 0 < T0)
     (heps : (N.perturbationConstant : ℝ) < 1 / 2) :

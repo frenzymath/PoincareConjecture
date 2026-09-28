@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CentralLinkSigns
 import PoincareConjecture.Proofs.M76.Dehn.OriginalDoubleArcCrossedStar
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLInteriorChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.SimplicialComplex Topology

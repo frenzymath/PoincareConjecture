@@ -1,32 +1,16 @@
 import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
 
 variable {X : Type*} [TopologicalSpace X]
 
-
-
-
-
 def Set.HasLocalComplementarySides (A : Set X) : Prop :=
   ∀ a ∈ A, ∃ U L R : Set X, IsOpen U ∧ a ∈ U ∧
     IsPreconnected L ∧ IsPreconnected R ∧ U \ A = L ∪ R ∧
     A ∩ U ⊆ closure L ∧ A ∩ U ⊆ closure R
-
-
-
 
 theorem IsPreconnected.subset_connectedComponentIn_of_inter_nonempty
     {A S : Set X} {x : X} (hS : IsPreconnected S) (hSA : S ⊆ A)
@@ -37,8 +21,6 @@ theorem IsPreconnected.subset_connectedComponentIn_of_inter_nonempty
   exact hS.subset_connectedComponentIn hyS hSA
 
 variable [LocallyConnectedSpace X]
-
-
 
 theorem IsClosed.frontier_connectedComponentIn_compl_subset {A : Set X}
     (hA : IsClosed A) (x : X) : frontier (connectedComponentIn Aᶜ x) ⊆ A := by
@@ -52,8 +34,6 @@ theorem IsClosed.frontier_connectedComponentIn_compl_subset {A : Set X}
   exact hq.2 (by rw [hC.interior_eq, heq]; exact mem_connectedComponentIn hqa)
 
 omit [LocallyConnectedSpace X] in
-
-
 
 theorem Set.HasLocalComplementarySides.isOpen_component_frontier
     {A : Set X} (hsides : A.HasLocalComplementarySides) (x : X) :
@@ -83,9 +63,6 @@ theorem Set.HasLocalComplementarySides.isOpen_component_frontier
 
 variable [PreconnectedSpace X]
 
-
-
-
 theorem Set.HasLocalComplementarySides.frontier_component_eq
     {A : Set X} (hsides : A.HasLocalComplementarySides) (hA : IsClosed A)
     (hconn : IsConnected A) {x : X} (hx : x ∈ Aᶜ) :
@@ -107,9 +84,6 @@ theorem Set.HasLocalComplementarySides.frontier_component_eq
     rw [hall]
     trivial
   exact hm
-
-
-
 
 theorem Set.HasLocalComplementarySides.exists_two_components
     {A : Set X} (hsides : A.HasLocalComplementarySides) (hA : IsClosed A)

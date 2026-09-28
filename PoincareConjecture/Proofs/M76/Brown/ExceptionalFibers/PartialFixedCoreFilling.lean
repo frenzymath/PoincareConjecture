@@ -1,14 +1,5 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace OpenPartialHomeomorph
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem exists_fill_fixed_core_on_open (e : OpenPartialHomeomorph X X)
     {U A C T : Set X} (hU : IsOpen U)

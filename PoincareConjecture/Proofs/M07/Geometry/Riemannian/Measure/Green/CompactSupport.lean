@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.Chart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Green.Partition
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.Exhaustion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -28,7 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem integrable_mul_laplacian
     (D : LeviCivitaData g) {u v : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
@@ -38,7 +25,6 @@ theorem integrable_mul_laplacian
   exact (hu.continuous.mul (D.continuous_laplacian hv)).integrable_of_hasCompactSupport
     hc.mul_right
 
-
 theorem integrable_inner_gradient
     (D : LeviCivitaData g) {u v : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
@@ -47,7 +33,6 @@ theorem integrable_inner_gradient
     Integrable (fun x => g.inner x (D.gradient u x) (D.gradient v x)) g.volumeMeasure := by
   exact (D.continuous_inner_gradient hu hv).integrable_of_hasCompactSupport
     (D.hasCompactSupport_inner_gradient hc v)
-
 
 theorem integral_mul_laplacian_of_sigmaCompact [SigmaCompactSpace M]
     (D : LeviCivitaData g) {u v : M → ℝ}
@@ -87,8 +72,6 @@ theorem integral_mul_laplacian_of_sigmaCompact [SigmaCompactSpace M]
         dsimp only
         rw [hgrad, map_sum, sum_apply]
 
-
-
 theorem integral_mul_laplacian [PreconnectedSpace M]
     (D : LeviCivitaData g) {u v : M → ℝ}
     (hu : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ u)
@@ -100,12 +83,6 @@ theorem integral_mul_laplacian [PreconnectedSpace M]
   let : SigmaCompactSpace M :=
     SigmaCompactSpace_iff_exists_compact_covering.mpr ⟨K, K.isCompact, K.iUnion_eq⟩
   exact D.integral_mul_laplacian_of_sigmaCompact hu hv hc
-
-
-
-
-
-
 
 theorem integral_mul_laplacian_comm [PreconnectedSpace M]
     (D : LeviCivitaData g) {u v : M → ℝ}
@@ -124,8 +101,6 @@ theorem integral_mul_laplacian_comm [PreconnectedSpace M]
     change inner ℝ (D.gradient u x) (D.gradient v x) =
       inner ℝ (D.gradient v x) (D.gradient u x)
     rw [real_inner_comm])
-
-
 
 theorem integral_mul_laplacian_comm_of_hasCompactSupport_left [PreconnectedSpace M]
     (D : LeviCivitaData g) {u v : M → ℝ}
@@ -180,8 +155,6 @@ theorem integral_mul_laplacian_comm_of_hasCompactSupport_left [PreconnectedSpace
         rw [hχone hxK]
         simp
       · simp [D.laplacian_eq_zero_of_notMem_tsupport hx]
-
-
 
 theorem integrable_mul_laplacian_of_hasCompactSupport_right
     (D : LeviCivitaData g) {u v : M → ℝ} (hu : Continuous u)

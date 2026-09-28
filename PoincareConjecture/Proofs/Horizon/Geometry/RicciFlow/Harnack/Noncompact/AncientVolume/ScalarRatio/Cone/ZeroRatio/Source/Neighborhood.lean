@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.UnitNeighborhood
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Source.MetricConvergence
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +11,6 @@ open Set Filter Poincare.Gluing Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology ENNReal NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem exists_source_embeddings_near_realized_unit_slice
     {n : ℕ} {X : Type*} [MetricSpace X] [ProperSpace X] {p : X}

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.TerminalHorizontalProjection
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.Closing.Collar.RadialChart
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -40,8 +38,6 @@ private theorem injective_fderiv_preserving_second
     have hfirst : u.1 = 0 := hi (hs.trans (map_zero _).symm)
     exact Prod.ext hfirst ht
   exact ⟨hinj, LinearMap.injective_iff_surjective.mp hinj⟩
-
-
 
 theorem exists_horizontal_fiber_chart
     (C : PartialDiffeomorph 𝓘(Real, E2 × Real) (𝓡 3) (E2 × Real) E3 ∞)
@@ -185,9 +181,6 @@ open SaddleLevel
 variable {f : S2 → E3} {M : SphereMorseReduction f} {g : S2 → E3}
   {P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g}
   {p : S2} {e : OpenPartialHomeomorph E2 S2}
-
-
-
 
 theorem exists_terminal_model_horizontal_chart
     (data : TerminalSaddleData M P p e) (i : Fin 3) :

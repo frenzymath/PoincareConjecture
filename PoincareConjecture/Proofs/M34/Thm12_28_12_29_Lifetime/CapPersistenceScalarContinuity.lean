@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.ScalarJetOperator
 import PoincareConjecture.Proofs.M34.Mathlib.NeckFiniteBilinearJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M34
 
 open SpacetimeBounds SpacetimeBounds.Bootstrap
-
-
-
 
 theorem capPersistence_exists_scalar_tolerance {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)

@@ -2,16 +2,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +15,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {E F : Type*} [NormedAddCommGroup E] [NormedSpace 𝕜 E]
   [NormedAddCommGroup F] [NormedSpace 𝕜 F]
   {n : ℕ∞ω} {f : E → F} {g : F → E} {s : Set E}
-
-
-
 
 theorem fderiv_injective_of_leftInvOn
     (hf : ContDiffOn 𝕜 n f s) (hg : ContDiffOn 𝕜 n g (f '' s))
@@ -61,9 +48,6 @@ variable {𝕜 : Type*} [RCLike 𝕜]
   [FiniteDimensional 𝕜 E] [FiniteDimensional 𝕜 F]
   {n : ℕ∞ω} {f : E → F} {g : F → E} {s : Set E}
 
-
-
-
 theorem isOpen_image_of_leftInvOn
     (hf : ContDiffOn 𝕜 n f s) (hg : ContDiffOn 𝕜 n g (f '' s))
     (hs : IsOpen s) (hleft : LeftInvOn g f s) (hn : n ≠ 0)
@@ -82,10 +66,6 @@ theorem isOpen_image_of_leftInvOn
     (hfx.differentiableAt hn).hasFDerivAt
   rw [← (hfx.hasStrictFDerivAt' hderiv hn).map_nhds_eq_of_equiv]
   exact image_mem_map (hs.mem_nhds hx)
-
-
-
-
 
 theorem exists_openPartialHomeomorph_of_leftInvOn
     (hf : ContDiffOn 𝕜 n f s) (hg : ContDiffOn 𝕜 n g (f '' s))

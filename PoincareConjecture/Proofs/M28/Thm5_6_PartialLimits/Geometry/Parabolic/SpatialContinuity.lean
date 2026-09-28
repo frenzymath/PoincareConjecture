@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M28.Mathlib.SpatialJetsWithin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M28
-
-
 
 theorem continuousOn_spatialJet_of_within
     {T E F : Type*} [NormedAddCommGroup T] [NormedSpace ℝ T]
@@ -36,9 +24,6 @@ theorem continuousOn_spatialJet_of_within
   intro z hz
   exact iteratedFDeriv_spatial_slice_eq_within hJ hU hf hz.1 hz.2
     (by exact_mod_cast le_top)
-
-
-
 
 theorem continuousOn_time_spatialJet_of_within
     {T E F : Type*} [NormedAddCommGroup T] [NormedSpace ℝ T]

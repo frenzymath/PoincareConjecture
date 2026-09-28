@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedStarProjectionCoverage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +7,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_open_eq_affineSpan_of_maximal_face
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -71,10 +58,6 @@ theorem exists_open_eq_affineSpan_of_maximal_face
     exact ⟨convexHull_subset_affineSpan _ hxt, hxU⟩
   · rintro ⟨hxspan, hxU⟩
     exact ⟨K.convexHull_subset_space hs (hOhull ⟨hxU.1, hxspan⟩), hxU⟩
-
-
-
-
 
 theorem exists_open_eq_affineSpan_of_triangle_interior
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

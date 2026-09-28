@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.EpsilonRegularityExt
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalInterface
 import PoincareConjecture.Proofs.M60.Mathlib.CovariantIntegrationByParts
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -564,9 +556,6 @@ private theorem puncture_harmonic_variation (g : RiemannianMetric n M) (p : M)
     (setIntegral_congr_fun measurableSet_ball (fun z _ => hL η z)).trans hz⟩
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem suHarmonicPuncture_removable_weak [CompactSpace M] [T2Space M]
     {g : RiemannianMetric n M} (D : LeviCivitaData g) {φ : LoopPlane → M}

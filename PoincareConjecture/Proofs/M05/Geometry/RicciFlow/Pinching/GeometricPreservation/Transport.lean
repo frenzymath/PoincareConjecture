@@ -1,17 +1,5 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Transport.Smooth
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Frame.Evolution
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -25,7 +13,6 @@ namespace PoincareConjecture.RicciFlow.Frame
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
 
 theorem canonicalTransport_hasDerivAt_curvature
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Ico a b))
@@ -66,7 +53,6 @@ theorem canonicalTransport_hasDerivAt_curvature
     (hinput u) (hinput v) (hinput w) (hinput z)).hasDerivAt
       (mem_interior_iff_mem_nhds.mp hinterior)
 
-
 theorem canonicalTransport_contMDiff_space
     (F : RicciFlow n M (Ico a b)) {t : ℝ} (ht : t ∈ Ico a b) :
     ContMDiff (𝓡 n)
@@ -78,9 +64,6 @@ theorem canonicalTransport_contMDiff_space
   rw [← contMDiffOn_univ]
   exact (canonicalTransport_contMDiffOn F).comp
     (contMDiffOn_const.prodMk contMDiffOn_id) (fun _ _ => ⟨ht, mem_univ _⟩)
-
-
-
 
 theorem exists_canonical_curvature_transport
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Ico a b))

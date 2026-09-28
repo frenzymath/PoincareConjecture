@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embeddin
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.SpatialEmbedding
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
-
 
 noncomputable def neckDomainHomeomorphSlab (ε : ℝ) :
     NeckDomain ε ≃ₜ (univ ×ˢ Ioo (-ε⁻¹) ε⁻¹ : Set RoundCylinderSpace) :=
@@ -28,8 +19,6 @@ noncomputable def neckDomainHomeomorphSlab (ε : ℝ) :
 
 @[simp] theorem neckDomainHomeomorphSlab_coe (ε : ℝ) (z : NeckDomain ε) :
     (neckDomainHomeomorphSlab ε z : RoundCylinderSpace) = (z.1, (z.2 : ℝ)) := rfl
-
-
 
 noncomputable def neckDomainCoordinates {M : Type*} [TopologicalSpace M]
     {ε : ℝ} (e : OpenPartialHomeomorph RoundCylinderSpace M)
@@ -74,8 +63,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
 
 variable {a b : ℝ} {S : PointedFlowSequence 3 a b}
 
-
-
 noncomputable def cylinderSlabEmbedding (G : PointedGeometricConvergence S)
     (hzero : a < 0 ∧ 0 < b)
     (Φ : RoundCylinderSpace ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ G.limitCarrier.carrier)
@@ -98,7 +85,6 @@ noncomputable def cylinderSlabEmbedding (G : PointedGeometricConvergence S)
     (G.cylinderSlabEmbedding hzero Φ ε k).symm x =
       Φ.symm ((G.embedding k).inverse (0, x)).2 := rfl
 
-
 theorem eventually_cylinderSlab_subset_exhaustion (G : PointedGeometricConvergence S)
     (Φ : RoundCylinderSpace ≃ₘ⟮(𝓡 2).prod 𝓘(ℝ, ℝ), 𝓡 3⟯ G.limitCarrier.carrier)
     (ε : ℝ) :
@@ -107,8 +93,6 @@ theorem eventually_cylinderSlab_subset_exhaustion (G : PointedGeometricConvergen
     isCompact_univ.prod isCompact_Icc
   obtain ⟨j, hj⟩ := G.exists_exhaustion_superset (hcompact.image Φ.continuous)
   exact (eventually_ge_atTop j).mono fun k hk => hj.trans (G.exhaustion_monotone hk)
-
-
 
 theorem eventually_cylinderSlabEmbedding (G : PointedGeometricConvergence S)
     (hzero : a < 0 ∧ 0 < b)
@@ -147,7 +131,6 @@ theorem eventually_cylinderSlabEmbedding (G : PointedGeometricConvergence S)
     have hpos := inv_pos.mpr hε
     exact ⟨hz.1, by simpa only [mem_singleton_iff.mp hz.2] using
       (show (0 : ℝ) ∈ Ioo (-ε⁻¹) ε⁻¹ from ⟨neg_neg_of_pos hpos, hpos⟩)⟩
-
 
 theorem cylinderSlabEmbedding_center (G : PointedGeometricConvergence S)
     (hzero : a < 0 ∧ 0 < b)

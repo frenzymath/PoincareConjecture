@@ -1,21 +1,9 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.LinearAlgebra.Matrix.BilinearForm
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace ContinuousLinearMap
-
-
-
 
 theorem IsInvertible.det_bilinear_basis_ne_zero
     {𝕜 E ι : Type*} [NontriviallyNormedField 𝕜]

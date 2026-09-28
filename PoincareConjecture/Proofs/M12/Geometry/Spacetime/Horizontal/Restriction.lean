@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Choice
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.MetricDuality
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

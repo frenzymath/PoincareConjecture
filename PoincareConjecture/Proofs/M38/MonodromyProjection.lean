@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.MonodromyAtlas
 import PoincareConjecture.Proofs.M38.CircleCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -19,27 +11,22 @@ namespace PoincareConjecture.M38
 private instance sphereDimension :
     Fact (Module.finrank ℝ StandardCapSpace = 2 + 1) := ⟨by simp [StandardCapSpace]⟩
 
-
 noncomputable def monodromyPolarPoint (p : RoundCylinderSpace) : monodromyPunctureOpen :=
   ⟨Real.exp p.2 • p.1.val, by
     apply norm_pos_iff.mp
     simpa [norm_smul] using Real.exp_pos p.2⟩
 
-
 theorem monodromyPolarPoint_norm (p : RoundCylinderSpace) :
     ‖(monodromyPolarPoint p).val‖ = Real.exp p.2 := by
   simp [monodromyPolarPoint, norm_smul]
-
 
 theorem monodromyPolarPoint_logRadius (p : RoundCylinderSpace) :
     monodromyLogRadius (monodromyPolarPoint p) = p.2 := by
   rw [monodromyLogRadius, monodromyPolarPoint_norm, Real.log_exp]
 
-
 theorem monodromyPolarPoint_direction (p : RoundCylinderSpace) :
     capUnitDirection (monodromyPolarPoint p).val = p.1 :=
   capUnitDirection_smul p.1 (Real.exp_pos p.2)
-
 
 theorem monodromyPolarPoint_reconstruct (x : monodromyPunctureOpen) :
     monodromyPolarPoint (capUnitDirection x.val, monodromyLogRadius x) = x := by
@@ -47,7 +34,6 @@ theorem monodromyPolarPoint_reconstruct (x : monodromyPunctureOpen) :
   change Real.exp (Real.log ‖x.val‖) • (capUnitDirection x.val).val = x.val
   rw [Real.exp_log (norm_pos_iff.mpr x.property)]
   exact capUnitDirection_radial x.val
-
 
 theorem monodromyPolarPoint_smooth :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ monodromyPolarPoint := by
@@ -62,8 +48,6 @@ attribute [local instance] monodromyChartedSpace monodromy_isManifold
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
-
 noncomputable def monodromyProjection : MonodromyQuotient phi → UnitCircle :=
   Quotient.lift (fun x => circlePeriodMap (monodromyLogRadius x)) (by
     intro x y hxy
@@ -71,16 +55,12 @@ noncomputable def monodromyProjection : MonodromyQuotient phi → UnitCircle :=
     rw [← hn, monodromyDeck_logRadius]
     exact (circlePeriodMap_eq_iff _ _).mpr ⟨n, by ring⟩)
 
-
 theorem monodromyProjection_mk (x : monodromyPunctureOpen) :
     monodromyProjection phi (mq x) = circlePeriodMap (monodromyLogRadius x) := rfl
-
 
 theorem monodromyProjection_continuous : Continuous (monodromyProjection phi) :=
   (monodromy_open_quotient phi).isQuotientMap.continuous_iff.mpr
     (circlePeriodMap_smooth.continuous.comp monodromyLogRadius_smooth.continuous)
-
-
 
 theorem monodromyProjection_smooth :
     ContMDiff (𝓡 3) (𝓡 1) ∞ (monodromyProjection phi) := by
@@ -99,7 +79,6 @@ theorem monodromyProjection_smooth :
     (monodromy_quotient_localHomeomorph phi).apply_localInverseAt_of_mem hq
   change monodromyProjection phi q = circlePeriodMap (monodromyLogRadius (s q))
   exact (congrArg (monodromyProjection phi) heq).symm
-
 
 theorem monodromyProjection_surjective : Function.Surjective (monodromyProjection phi) := by
   intro b

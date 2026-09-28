@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourcePointwiseLongCanonical
 import PoincareConjecture.Proofs.M36.StandardBalls
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_compact_source_standard_unrestricted_canonical_transfer
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

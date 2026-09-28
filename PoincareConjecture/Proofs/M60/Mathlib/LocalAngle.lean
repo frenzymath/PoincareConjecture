@@ -1,19 +1,9 @@
 import Mathlib.Analysis.SpecialFunctions.Complex.LogDeriv
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
-
-
 
 theorem exists_contDiffAt_angle {z : ℂ} (hz : z ≠ 0) :
     ∃ theta : ℂ → ℝ, ContDiffAt ℝ 1 theta z ∧

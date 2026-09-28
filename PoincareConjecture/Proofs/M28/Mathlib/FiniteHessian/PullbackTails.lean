@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteHessian.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +11,6 @@ variable {ι E F G : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
-
-
-
-
 
 theorem exists_bilinear_pullback_error_tail (n : ℕ) (stage : ι → ℕ)
     {f : ι → E → F} {A : ι → F → F →L[ℝ] F →L[ℝ] G} {x : ι → E}

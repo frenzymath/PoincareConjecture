@@ -1,23 +1,12 @@
 import Mathlib.Analysis.Matrix.Order
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators Matrix
 
 namespace Matrix
 
-
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem tensor_contraction_nonneg {ι σ : Type*} [Fintype ι] [Fintype σ] [DecidableEq σ]
     {G : Matrix ι ι ℝ} (hG : G.PosSemidef) (T : (σ → ι) → ℝ) :

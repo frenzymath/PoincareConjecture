@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.CurveVelocityRegularity
 import PoincareConjecture.Proofs.M14.Sec6_2_PullbackReparametrization
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +17,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ : ℝ} {x y : G.Point} (p : M14BackwardPath G T τ₁ τ₂ x y)
-
-
-
 
 theorem backwardPath_contMDiffOn_of_velocity_extension
     (E : M14PullbackExtension G p.curve (Ioo τ₁ τ₂) p.horizontal_velocity) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_FiniteScalarCom
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CanonicalAnalytics
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveCylinderLines
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin c : ℝ} {U : Set C.carrier}
-
-
 
 theorem cylinderScalar_le_four_inv_sq
     (P : M44CapPersistencePredecessors.{u}) (hpinch : SurgeryFlowPinched F)
@@ -75,9 +64,6 @@ theorem cylinderScalar_le_four_inv_sq
     (by simpa only [f, neg_zero] using hinitial) hrate' hshort
   intro s hs
   simpa only [f, neg_neg] using hbound (-s) (by constructor <;> linarith [hs.1, hs.2])
-
-
-
 
 theorem canonical_cylinderScalar_le_four_inv_sq
     (P : M44CapPersistencePredecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralOpenMayerVietoris
 import Mathlib.Algebra.Homology.HomologySequenceLemmas
 import Mathlib.CategoryTheory.Preadditive.AdditiveFunctor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -55,9 +45,6 @@ private theorem quasiIso_biprod_map
   infer_instance
 
 set_option backward.isDefEq.respectTransparency false in
-
-
-
 
 theorem simplicialComparison_quasiIso_of_openCover
     {X : Type u} [TopologicalSpace X] (U V : Set X)

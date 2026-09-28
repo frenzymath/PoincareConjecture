@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.CollaredD
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.SphereCharts
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.BallImages
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -33,8 +21,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M} (C : CapCertificate g)
   (S : StandardPuncturedProjectiveCover M C.puncture C.carrier)
-
-
 
 theorem exists_projective_exterior_boundary_collar
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :
@@ -106,9 +92,6 @@ theorem exists_projective_exterior_boundary_collar
       congr 1
       funext q
       exact congrArg Subtype.val (congrFun hfk q)
-
-
-
 
 theorem exists_oriented_projective_exterior_collar
     (a : UnitThreeSphere) (ha : Quotient.mk' a = C.puncture) :

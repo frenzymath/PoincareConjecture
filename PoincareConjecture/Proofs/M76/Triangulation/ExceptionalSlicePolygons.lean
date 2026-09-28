@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalSliceIntersections
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalGraphPolygons
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCharge
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,11 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_exceptionalSlice_polygons_with_zero_degree [DecidableEq E]
     (K : SimplicialComplex ℝ E)
@@ -62,10 +47,6 @@ theorem exists_exceptionalSlice_polygons_with_zero_degree [DecidableEq E]
   · rw [K.exceptionalSliceGraph_carrier A hq hAq hzero hpure, hcover]
   · intro hz
     exact (hcycles ((alexanderCurveCount_eq_zero_iff _).mp hz)).ncard_neighbors_eq_zero_or_two none
-
-
-
-
 
 theorem exists_exceptionalSlice_polygons (K : SimplicialComplex ℝ E)
     (A : E →ᵃ[ℝ] ℝ) (hK : K.faces.Finite) {q : E} (hq : q ∈ K.vertices)

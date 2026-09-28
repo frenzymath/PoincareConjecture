@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneDiskProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneStandardProduct
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMiddleBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -46,9 +37,6 @@ private theorem closure_open_square_annulus :
     have h := hf.continuousWithinAt.mem_closure hcl hmaps
     simpa only [f, div_self hn.ne', one_smul] using h
 
-
-
-
 theorem complementaryRegion_squareMiddleBlock :
     complementaryRegion squareMiddleBlock = squareShell := by
   have hdiff : interior squareBlock \ squareMiddleBlock =
@@ -67,12 +55,9 @@ theorem complementaryRegion_squareMiddleBlock :
     closure_Ioo (by norm_num : (-1 : ℝ) ≠ 1), closure_open_square_annulus]
   rfl
 
-
 noncomputable def standardShellBoundary : frontier squareShell ≃ₜ
     frontier (complementaryRegion squareMiddleBlock) :=
   Homeomorph.setCongr (congrArg frontier complementaryRegion_squareMiddleBlock.symm)
-
-
 
 noncomputable def standardDiskProduct {width : ℝ}
     (hwidth : 0 < width) (hsmall : width ≤ (1 / 4 : ℝ)) :

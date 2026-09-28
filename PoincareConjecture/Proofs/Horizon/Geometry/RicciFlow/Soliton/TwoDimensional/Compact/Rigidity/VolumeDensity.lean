@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Rigidity.SlabDensity
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +8,6 @@ open Set MeasureTheory Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.SurfaceSoliton
-
 
 theorem measureReal_open_slab_of_closed_slabs
     {X : Type*} [MeasurableSpace X] {μ : Measure X} [IsFiniteMeasure μ]
@@ -55,8 +46,6 @@ variable {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   {g : RiemannianMetric 2 M}
-
-
 
 theorem volume_open_slab_eq_of_constant_slab_density (g : RiemannianMetric 2 M)
     {f : M → ℝ} {a b c : ℝ}

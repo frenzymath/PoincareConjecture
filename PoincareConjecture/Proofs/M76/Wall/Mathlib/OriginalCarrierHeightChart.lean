@@ -1,27 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.OriginalCarrierNeighborhood
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.EmbeddedNonvertexHeight
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry.SimplicialComplex
-
-
-
-
-
-
 
 theorem exists_original_carrier_height_chart
     {E V X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

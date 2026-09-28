@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

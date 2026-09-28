@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.Euclidean
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -20,8 +11,6 @@ open scoped ContDiff Manifold Bundle Topology
 namespace PoincareConjecture.M65Gauss
 
 variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
-
-
 
 def connectionCoefficient (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)) :
     EuclideanSpace ℝ (Fin n) →L[ℝ]
@@ -49,13 +38,9 @@ def connectionCoefficient (D : LeviCivitaData g) (x : EuclideanSpace ℝ (Fin n)
       intro w
       exact (D.connection (fun _ => w) x).map_smul c u }
 
-
-
 theorem connectionCoefficient_apply (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :
     connectionCoefficient D x u v = D.euclideanConnection u v x := rfl
-
-
 
 theorem contDiff_connectionCoefficient (D : LeviCivitaData g) :
     ContDiff ℝ ∞ (connectionCoefficient D) := by
@@ -64,8 +49,6 @@ theorem contDiff_connectionCoefficient (D : LeviCivitaData g) :
   apply contDiff_clm_apply_iff.mpr
   intro v
   exact contDiff_iff_contDiffAt.mpr fun x => D.contDiffAt_euclideanConnection x u v
-
-
 
 private theorem fderiv_metric_apply (x a b c : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ (fun y => g.inner y a b) x c =
@@ -76,8 +59,6 @@ private theorem fderiv_metric_apply (x a b c : EuclideanSpace ℝ (Fin n)) :
   simp only [ContinuousLinearMap.comp_zero, zero_add, ContinuousLinearMap.flip_apply] at hh
   convert! hh using 1
 
-
-
 private theorem fderiv_metric_symm (x a b c : EuclideanSpace ℝ (Fin n)) :
     fderiv ℝ g.euclideanCoefficients x c a b =
       fderiv ℝ g.euclideanCoefficients x c b a := by
@@ -85,8 +66,6 @@ private theorem fderiv_metric_symm (x a b c : EuclideanSpace ℝ (Fin n)) :
   congr 2
   ext y
   exact g.symm y a b
-
-
 
 theorem connectionCoefficient_metricCompatible (D : LeviCivitaData g)
     (x u v w : EuclideanSpace ℝ (Fin n)) :
@@ -103,8 +82,6 @@ theorem connectionCoefficient_metricCompatible (D : LeviCivitaData g)
     g.inner x (D.connection (fun _ => v) x u) w +
       g.inner x (D.connection (fun _ => w) x u) v
   linarith
-
-
 
 theorem connectionCoefficient_symm (D : LeviCivitaData g)
     (x u v : EuclideanSpace ℝ (Fin n)) :

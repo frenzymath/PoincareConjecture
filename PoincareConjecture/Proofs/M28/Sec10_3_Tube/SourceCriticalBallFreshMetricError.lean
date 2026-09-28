@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFreshCoefficients
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallRawChartBounds
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedCylinderErrors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 open tube PoincareConjecture.Proofs.M28.NeckTransfer PoincareConjecture.Proofs.M28.FiniteHessian
 
 set_option maxHeartbeats 3200000 in
-
-
-
-
 
 theorem exists_retained_fresh_metric_error
     {epsilon C A : ℝ}

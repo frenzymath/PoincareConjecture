@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M36.RadialDistance
 import PoincareConjecture.Proofs.M36.RadialInverse
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ENNReal Topology

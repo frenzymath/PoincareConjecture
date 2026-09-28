@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapScalarBounds
 import PoincareConjecture.Proofs.M34.Mathlib.EarlierBadPoint
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,8 +16,6 @@ local notation "G" => ordinaryChapter11Flow
   (I := partialFlowSpacetimeInterval F) (F := F.flow) R
 
 include P
-
-
 
 theorem partialFlow_chapter11_bad_points (Good : (G).point → Prop)
     (hbad : ∀ Q : ℝ, 0 < Q → ∃ p : (G).point, Q ≤ (G).scalar p ∧ ¬ Good p) :

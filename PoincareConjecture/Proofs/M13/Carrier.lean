@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M13.IntervalTransport
 import PoincareConjecture.Proofs.M13.Atlas
 import PoincareConjecture.Statements.M11GeneralizedFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -535,6 +527,5 @@ noncomputable def rescaledCarrierCore
                 (fun q ↦ (V q).val) p)) = 0 := hbracket
         rw [hbracket']
         field_simp [hQ.ne']
-
 
 end PoincareConjecture.M13

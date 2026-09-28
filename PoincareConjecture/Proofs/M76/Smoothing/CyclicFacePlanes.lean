@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarPlaneCoordinates
 import PoincareConjecture.Proofs.M76.Smoothing.TangentCycleProjections
 import Mathlib.LinearAlgebra.Complex.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry ContinuousLinearMap AbstractSimplicialComplex
@@ -22,11 +12,6 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
-
-
 
 theorem contractible_cyclicFaceStarPlanes (K : SimplicialComplex ℝ E)
     (hK : AffineIndependent ℝ ((↑) : K.vertices → E))

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.MetricConvergence
 import PoincareConjecture.Proofs.M28.Mathlib.WithinConvergenceBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -48,10 +39,6 @@ private theorem limit_chart_coefficients_continuousOn
   exact ((G.limitMetric.contDiffOn_chartCoefficients q).contDiffAt
       ((isOpen_extChartAt_target (I := 𝓡 n) q).mem_nhds (hK hz))).continuousAt_iteratedFDeriv
       (by exact_mod_cast le_top) |>.continuousWithinAt
-
-
-
-
 
 theorem PartialPointedMetricConvergence.exists_eventual_initial_chart_jet_bound
     (G : PartialPointedMetricConvergence g p A)

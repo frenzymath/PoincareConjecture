@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_StandardIdentification
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsBounds
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,9 +17,6 @@ noncomputable local instance familyConvergenceCoefficientNorm : NormedAddCommGro
 noncomputable local instance familyConvergenceCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
 
-
-
-
 theorem tendstoUniformlyOn_of_subsubsequence
     {X Y : Type*} [PseudoMetricSpace Y] {f : ℕ → X → Y} {g : X → Y} {K : Set X}
     (hsub : ∀ sigma : ℕ → ℕ, StrictMono sigma →
@@ -45,9 +31,6 @@ theorem tendstoUniformlyOn_of_subsubsequence
   obtain ⟨tau, _, hconv⟩ := hsub sigma hsigma
   obtain ⟨n, hn⟩ := (Metric.tendstoUniformlyOn_iff.mp hconv epsilon hepsilon).exists
   exact hbad (tau n) hn
-
-
-
 
 theorem tendstoUniformlyOn_partial_spatialJets_model
     {g0 : StandardInitialMetric} {E0 : RepairedStandardCapExistenceData g0}

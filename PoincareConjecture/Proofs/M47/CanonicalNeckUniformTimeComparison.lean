@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckUniformTimeJets
 import PoincareConjecture.Proofs.M47.CanonicalNeckChartDifference
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +16,6 @@ local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem chart_neck_metric_jets_uniform_time_delta [T2Space M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -56,9 +46,6 @@ theorem chart_neck_metric_jets_uniform_time_delta [T2Space M]
   exact (hbound (F.metric s) (F.metric t) eta heta.le
     (fun x hx k hk => (hmod s hs t ht hst x hx k hk).le)
     q z hz hsource hcenter j hj i l).trans_lt hsmall
-
-
-
 
 theorem neck_metric_jets_uniform_time_delta [T3Space M]
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

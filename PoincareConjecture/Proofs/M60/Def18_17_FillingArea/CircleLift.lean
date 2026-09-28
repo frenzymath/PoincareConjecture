@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.Analysis.SpecialFunctions.Complex.Circle
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 noncomputable def m60LoopCircleHomeomorphCircle : LoopCircle ≃ₜ Circle where
   toFun z := ⟨Complex.orthonormalBasisOneI.repr.symm z.val, by
@@ -39,8 +28,6 @@ noncomputable def m60LoopCircleHomeomorphCircle : LoopCircle ≃ₜ Circle where
     apply Continuous.subtype_mk
     exact Complex.orthonormalBasisOneI.repr.continuous.comp continuous_subtype_val
 
-
-
 theorem m60LoopCircleHomeomorphCircle_angular (t : ℝ) :
     m60LoopCircleHomeomorphCircle
       ⟨Proofs.M58.angularPoint t, Proofs.M58.norm_angularPoint t⟩ = Circle.exp t := by
@@ -49,9 +36,6 @@ theorem m60LoopCircleHomeomorphCircle_angular (t : ℝ) :
   rw [Complex.orthonormalBasisOneI_repr_symm_apply, Circle.coe_exp]
   change (Real.cos t : ℂ) + (Real.sin t : ℂ) * Complex.I = Complex.exp (t * Complex.I)
   rw [Complex.exp_mul_I, ← Complex.ofReal_cos, ← Complex.ofReal_sin]
-
-
-
 
 theorem m60_exists_circle_reparameterization_lift (sigma : CircleReparameterization) :
     ∃ H : ℝ ≃ₜ ℝ,
@@ -82,8 +66,6 @@ theorem m60_exists_circle_reparameterization_lift (sigma : CircleReparameterizat
   dsimp only [e', Homeomorph.trans_apply] at hh
   rw [hc] at hh
   exact hh
-
-
 
 theorem m60CircleLift_period (sigma : CircleReparameterization) (H : ℝ ≃ₜ ℝ)
     (hlift : ∀ t : ℝ,

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.LeafFields.OriginalEdgeCofaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem HasOriginalEdgeCofaceCharts.surgery_left_of_disjoint_support
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [TopologicalSpace X]
@@ -49,8 +38,6 @@ theorem HasOriginalEdgeCofaceCharts.surgery_left_of_disjoint_support
     exact (hmem hz.2.2.1 hz.2.2.2).trans (hFS z hz.1)
   · intro z hz
     exact hFL z hz.1
-
-
 
 theorem HasOriginalEdgeCofaceCharts.surgery_pair_of_disjoint_support
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

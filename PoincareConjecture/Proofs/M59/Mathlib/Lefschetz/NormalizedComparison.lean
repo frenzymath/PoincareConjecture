@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteNerveChains
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,8 +11,6 @@ universe u
 namespace PoincareConjecture.Proofs.M59
 
 open M02.Topology
-
-
 
 theorem normalizedIntegralChainMap_fromNormalized {A B : SSet.{u}} (f : A ⟶ B) :
     SSet.normalizedChainComplexMap f integralCoefficient ≫
@@ -36,9 +25,6 @@ theorem normalizedIntegralChainMap_fromNormalized {A B : SSet.{u}} (f : A ⟶ B)
 
 variable {X Y : Type u} [TopologicalSpace X] [TopologicalSpace Y]
 
-
-
-
 def normalizedSingularComparison {A : SSet.{u}}
     (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X)) :
     A.normalizedChainComplex integralCoefficient.{u} ⟶ integralChains X :=
@@ -46,8 +32,6 @@ def normalizedSingularComparison {A : SSet.{u}}
     SSet.chainComplexMap χ integralCoefficient
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem normalizedSingularComparison_naturality {A B : SSet.{u}}
     (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X))
@@ -65,9 +49,6 @@ theorem normalizedSingularComparison_naturality {A B : SSet.{u}}
   simp only [Functor.map_comp] at hm
   simpa only [Category.assoc] using
     congrArg (fun k => A.fromNormalizedChainComplex integralCoefficient ≫ k) hm
-
-
-
 
 theorem normalizedSingularComparison_quasiIso_iff {A : SSet.{u}}
     (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X)) :

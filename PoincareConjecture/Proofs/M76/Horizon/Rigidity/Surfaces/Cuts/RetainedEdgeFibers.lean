@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.FiberChains
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.OriginalTrianglePartialQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -68,14 +60,12 @@ theorem mem_convexHull_iff_edge_subset
   apply convexHull_mono (Finset.coe_subset.mpr hsub)
   simpa only [Finset.coe_pair, convexHull_pair] using openSegment_subset_segment ℝ a b hz
 
-
 theorem fiberTriangle_edge_inventory
     {a b z : E} (hab : a ≠ b) (he : ({a, b} : Finset E) ∈ K.faces)
     (hz : z ∈ openSegment ℝ a b) {s t : Triangle K}
     (hcofaces : ∀ u : Triangle K, ({a, b} : Finset E) ⊆ u.val ↔ u = s ∨ u = t)
     (u : fiberTriangle K z) : u.val = s ∨ u.val = t :=
   (hcofaces u.val).mp ((mem_convexHull_iff_edge_subset K hab he hz u.val).mp u.property)
-
 
 theorem retained_edge_fiberChain_eq
     {a b z : E} (hab : a ≠ b) (he : ({a, b} : Finset E) ∈ K.faces)
@@ -99,7 +89,6 @@ theorem retained_edge_fiberChain_eq
   | symm q r hqr ih => exact ih.symm
   | trans q r w hqr hrw ihqr ihrw => exact ihqr.trans ihrw
 
-
 theorem partialMk_injective_retained_edge_fiber
     (label : Triangle K → ℝ) (hi : Function.Injective label)
     {a b z : E} (hab : a ≠ b) (he : ({a, b} : Finset E) ∈ K.faces)
@@ -112,7 +101,6 @@ theorem partialMk_injective_retained_edge_fiber
   apply retained_edge_fiberChain_eq K hab he hz hcofaces contact hst hts
   apply (fiberCopy_glue_iff K label hi contact u v).mp
   exact (partialQuotient_mk_eq_iff K label contact _ _).mp huv
-
 
 theorem partialMk_eq_iff_retained_edge
     (label : Triangle K → ℝ) (hi : Function.Injective label)
@@ -133,7 +121,6 @@ theorem partialMk_eq_iff_retained_edge
   have hqr : q = r := congrArg Subtype.val huv
   apply Subtype.ext
   exact projection_injective_on_copy K label q hq (hqr ▸ hr) (hx.trans hy.symm)
-
 
 theorem partialMk_ne_of_retained_edge_owners
     (label : Triangle K → ℝ) (hi : Function.Injective label)

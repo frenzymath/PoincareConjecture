@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonSplitSimplicity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,15 +8,11 @@ namespace Polygon
 
 variable {E : Type*} {m n : ℕ}
 
-
-
 theorem edgeVertices_subset_range (P : Polygon E n) (i : Fin n) :
     (P.edgeVertices i : Set E) ⊆ range P := by
   classical
   simp only [edgeVertices, Finset.coe_pair, pair_subset_iff]
   exact ⟨mem_range_self i, mem_range_self (finRotate n i)⟩
-
-
 
 theorem range_split_inter (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (hinj : Function.Injective (Fin.append u v)) :
@@ -47,9 +34,6 @@ theorem range_split_inter (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
       exact ⟨Or.inl rfl, Or.inr (mem_range_self 0)⟩
 
 variable [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem boundary_split_inter (u : Fin (m + 1) → E) (v : Fin (n + 1) → E)
     (hP : (mk (Fin.append u v)).HasSimplicialEdges)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.StrongNeckVolumeImages
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.CenterDensity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -25,11 +15,8 @@ open tube RiemannianMetric
 
 private abbrev E := EuclideanSpace ℝ (Fin 3)
 
-
-
 def normalizedNeckVolumeLowerConstant : ℝ :=
   euclideanUnitBallVolume 3 / (48 * 4 ^ 3)
-
 
 theorem normalizedNeckVolumeLowerConstant_pos :
     0 < normalizedNeckVolumeLowerConstant :=
@@ -39,9 +26,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem normalized_neck_ball_volume_lower (N : EpsilonNeck g)
     (hscale : N.scale = 1) (hcarrier : N.carrier = univ)

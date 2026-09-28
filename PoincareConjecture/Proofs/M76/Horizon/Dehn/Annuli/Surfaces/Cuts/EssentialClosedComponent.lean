@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Wall.Mathlib.FinitePLCubeSphereModel
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.InteriorSphereLinks
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PreAbstractSimplicialComplex.ModTwoCochains
 open AbstractSimplicialComplex TriangularRoofModel

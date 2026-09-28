@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompatibleInverseChart
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervals
 import Mathlib.Topology.Order.LeftRightNhds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ open Set Geometry
 namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem PLDomain.exists_boundary_exit_path
     {X ι : Type*} [TopologicalSpace X]

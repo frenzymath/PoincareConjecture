@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_StandardPa
 import PoincareConjecture.Proofs.M36.StandardBalls
 import Mathlib.Analysis.Convex.Contractible
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +10,6 @@ open Set
 open scoped Manifold ContDiff Topology ENNReal ContinuousMap
 
 namespace PoincareConjecture.M44
-
-
 
 theorem StandardCylinderPatch.contMDiff_sphere {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) :
@@ -33,14 +20,9 @@ theorem StandardCylinderPatch.contMDiff_sphere {length : ℝ} {center : Standard
   exact (N.coordinate_smooth.contMDiffAt ((isOpen_univ.prod isOpen_Ioo).mem_nhds hz)).comp z
     (contMDiffAt_id.prodMk contMDiffAt_const)
 
-
-
 def StandardCylinderPatch.sphereMap {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) : C(UnitTwoSphere, StandardCapSpace) :=
   ⟨fun z => N.coordinate (z, 0), (StandardCylinderPatch.contMDiff_sphere N).continuous⟩
-
-
-
 
 theorem exists_standard_ball_containing_compact (g0 : StandardInitialMetric)
     {K : Set StandardCapSpace} (hK : IsCompact K) (A : ℝ) :
@@ -62,8 +44,6 @@ theorem exists_standard_ball_containing_compact (g0 : StandardInitialMetric)
   dsimp only [R]
   linarith only [hb, hBR]
 
-
-
 theorem StandardCylinderPatch.exists_sphere_ball {length : ℝ} {center : StandardCapSpace}
     (N : StandardCylinderPatch length center) (g0 : StandardInitialMetric) (A : ℝ) :
     ∃ R : ℝ, 0 < R ∧ A < R ∧
@@ -72,17 +52,11 @@ theorem StandardCylinderPatch.exists_sphere_ball {length : ℝ} {center : Standa
     (isCompact_range (StandardCylinderPatch.sphereMap N).continuous) A
   exact ⟨R, hR, hAR, fun z => hsub (mem_range_self z)⟩
 
-
-
 theorem standard_ball_contractible (g0 : StandardInitialMetric) {R : ℝ} (hR : 0 < R) :
     ContractibleSpace (g0.metric.ball 0 R) := by
   rw [M36.standard_ball_eq_euclidean g0 hR]
   exact (convex_ball (0 : StandardCapSpace) _).contractibleSpace
     ⟨0, Metric.mem_ball_self ((M36.radialEuclideanRadius_pos_iff g0 R).mpr hR)⟩
-
-
-
-
 
 theorem sphere_factor_through_standard_ball_not_localHomeomorph
     (g0 : StandardInitialMetric) {R : ℝ} (hR : 0 < R)

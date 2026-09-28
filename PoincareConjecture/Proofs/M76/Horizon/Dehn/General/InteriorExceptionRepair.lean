@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.OriginalInteriorCrossi
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.ProjectedCrossingCoordinates
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchMotionSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -28,8 +20,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {s t : Stage e S f r C} {step : Step s t} {R Fmark : Set M}
   {base : Fmark} {Jgroup : Subgroup (FundamentalGroup Fmark base)}
   {old : StageMarkedDisk t R Fmark base Jgroup}
-
-
 
 theorem OriginalGeneralPositionData.exists_interior_exception_repair
     (data : OriginalGeneralPositionData step old)

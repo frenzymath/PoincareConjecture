@@ -3,27 +3,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplicialPathFamily
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonProperArcCut
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
-
-
 
 theorem IsCompact.exists_finitePL_disk_cut_of_proper_arc
     {C U V W : Set (ℝ × ℝ)} {a b : ℝ × ℝ}

@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -21,23 +11,17 @@ namespace PoincareConjecture.M34
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem ricci_eq_of_metric_eq {g g' : RiemannianMetric n M} (h : g = g')
     (D : LeviCivitaData g) (D' : LeviCivitaData g') (x : M)
     (u v : TangentSpace (𝓡 n) x) : D.ricci x u v = D'.ricci x u v := by
   subst g'
   exact D.ricci_eq D' x u v
 
-
-
 theorem curvatureTensorNorm_eq_of_metric_eq {g g' : RiemannianMetric n M} (h : g = g')
     (D : LeviCivitaData g) (D' : LeviCivitaData g') (x : M) :
     D.curvatureTensorNorm x = D'.curvatureTensorNorm x := by
   subst g'
   exact D.curvatureTensorNorm_eq D' x
-
-
 
 noncomputable def flowOfLocalRepresentatives (J : Set ℝ)
     (g : ℝ → RiemannianMetric n M) (D : (t : ℝ) → LeviCivitaData (g t))

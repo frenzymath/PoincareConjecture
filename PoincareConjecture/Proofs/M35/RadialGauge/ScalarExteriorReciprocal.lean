@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M35.RadialGauge.ScalarRapidProducts
 import Mathlib.Analysis.Calculus.ContDiff.Bounds
 import Mathlib.Analysis.Normed.Group.Bounded
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff BigOperators
 
 namespace PoincareConjecture.M35.RadialGauge
-
-
 
 theorem positive_reciprocal_exterior_jets_bounded {A : Type*} {f : A → ℝ → ℝ}
     {c : ℝ} (hc : 0 < c)

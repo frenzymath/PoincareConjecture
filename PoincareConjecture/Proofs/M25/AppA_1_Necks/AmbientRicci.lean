@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.AmbientScalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +13,6 @@ namespace PoincareConjecture.EpsilonNeck
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem realization_ricci_eq (N : EpsilonNeck g)
     (q : UnitTwoSphere) (s : ℝ)

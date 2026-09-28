@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.PositiveHistoryTerminal
 import PoincareConjecture.Definitions.Ch15.SurgeryEndPolicy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47Positive
-
-
-
 
 theorem surgery_positive_component_whole_retention
     (hC : RicciFlowCurvatureTheory.{u}) (F : SurgeryFlowData.{u})
@@ -52,8 +40,6 @@ theorem surgery_positive_component_whole_retention
   obtain ⟨policy⟩ := hpolicy.nonempty T hTJ hT
   exact positive_pre_component_whole_retention hC E policy v x hstart hq hretained
 
-
-
 theorem positive_retained_child_cap_free
     (hC : RicciFlowCurvatureTheory.{u}) (F : SurgeryFlowData.{u})
     {J : Set ℝ} (hpolicy : SurgeryFlowTerminalPolicyOn F J)
@@ -69,9 +55,6 @@ theorem positive_retained_child_cap_free
     hpolicy hTJ hT v q hpos mem_connectedComponent hretained
   intro i
   simpa only [himage] using hfree i
-
-
-
 
 theorem pre_component_nonpositive_of_retained_child_meets_cap
     (hC : RicciFlowCurvatureTheory.{u}) (F : SurgeryFlowData.{u})

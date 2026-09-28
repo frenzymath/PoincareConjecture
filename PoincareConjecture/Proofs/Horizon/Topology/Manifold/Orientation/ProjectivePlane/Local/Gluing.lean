@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Local.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ namespace LocalOrientation
 variable {X Y Z : Type u} [TopologicalSpace X] [TopologicalSpace Y]
   [TopologicalSpace Z]
 
-
-
 theorem pullback_comp [T2Space X] [T2Space Y] [T2Space Z]
     [LocallyCompactSpace X] [LocallyCompactSpace Y]
     (O : LocalOrientation Z) (f : C(X, Y)) (g : C(Y, Z))
@@ -45,8 +35,6 @@ theorem pullback_comp [T2Space X] [T2Space Y] [T2Space Z]
   exact (LocalOrientation.map_pullback O g hg (f x)).trans
     (LocalOrientation.map_pullback O (g.comp f) (hg.comp hf) x).symm
 
-
-
 theorem pullback_congr [T2Space X] [T2Space Y] [LocallyCompactSpace X]
     (O : LocalOrientation Y) (f g : C(X, Y))
     (hf : _root_.Topology.IsOpenEmbedding f) (hg : _root_.Topology.IsOpenEmbedding g)
@@ -54,8 +42,6 @@ theorem pullback_congr [T2Space X] [T2Space Y] [LocallyCompactSpace X]
     (O.pullback f hf).atPoint x = (O.pullback g hg).atPoint x := by
   subst g
   rfl
-
-
 
 theorem pullback_smul [T2Space X] [T2Space Y] [LocallyCompactSpace X]
     (O P : LocalOrientation Y) (a : Int)
@@ -66,8 +52,6 @@ theorem pullback_smul [T2Space X] [T2Space Y] [LocallyCompactSpace X]
   change localHomologyMap f hf.injective x 3 _ = localHomologyMap f hf.injective x 3 _
   rw [map_zsmul, map_pullback, map_pullback, h]
 
-
-
 theorem exists_smul [T2Space X] [PreconnectedSpace X]
     (O P : LocalOrientation X) (x : X) :
     ∃ a : Int, ∀ y, O.atPoint y = a • P.atPoint y := by
@@ -77,14 +61,10 @@ theorem exists_smul [T2Space X] [PreconnectedSpace X]
   have he := congrArg (P.basis y) h
   simpa only [LinearEquiv.apply_symm_apply, basis_apply] using he
 
-
-
 def inclusionClass {U : Set X} (O : LocalOrientation U) (x : U) :
     LocalHomology X x 3 :=
   localHomologyMap (⟨Subtype.val, continuous_subtype_val⟩ : C(U, X))
     Subtype.val_injective x 3 (O.atPoint x)
-
-
 
 def glue [T2Space X] {I : Type v}
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))
@@ -118,8 +98,6 @@ def glue [T2Space X] {I : Type v}
       (localHomologyMap_restriction inc Subtype.val_injective z hz 3)
     rw [ModuleCat.comp_apply, ModuleCat.comp_apply, hb z hz] at h
     exact h.symm.trans (hcompat i (idx z.val) z.val z.property (hidx z.val))
-
-
 
 theorem glue_atPoint [T2Space X] {I : Type v}
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

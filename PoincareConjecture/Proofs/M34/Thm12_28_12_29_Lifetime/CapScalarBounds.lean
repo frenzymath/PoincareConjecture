@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapChapter11Geometry
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,8 +17,6 @@ local notation "G" => ordinaryChapter11Flow
 
 include P
 
-
-
 theorem partialFlow_chapter11_scalar_past_bound {b : ℝ} (hb : b ∈ Ico 0 F.lifetime) :
     ∃ B : ℝ, ∀ p : (G).point, p.1 ≤ b → (G).scalar p ≤ B := by
   obtain ⟨B, _, hbound⟩ := M10.exists_uniform_scalarCurvature_bound F.flow
@@ -40,8 +28,6 @@ theorem partialFlow_chapter11_scalar_past_bound {b : ℝ} (hb : b ∈ Ico 0 F.li
     R (partialFlow_chapter11_calculus F P R) p).le.trans
     ((le_abs_self _).trans (hbound p.1
       ⟨(ordinaryChapter11Point_time_mem R p).1, hp⟩ (ordinaryChapter11Projection R p)))
-
-
 
 theorem partialFlow_chapter11_times_tendsto (p : ℕ → (G).point)
     (hscalar : Tendsto (fun k => (G).scalar (p k)) atTop atTop) :
@@ -60,8 +46,6 @@ theorem partialFlow_chapter11_times_tendsto (p : ℕ → (G).point)
   · intro b hb
     exact Eventually.of_forall fun k =>
       (ordinaryChapter11Point_time_mem R (p k)).2.trans hb
-
-
 
 theorem partialFlow_chapter11_scaled_time_tendsto (p : ℕ → (G).point)
     (hscalar : Tendsto (fun k => (G).scalar (p k)) atTop atTop) :

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Geometry.Carrier
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

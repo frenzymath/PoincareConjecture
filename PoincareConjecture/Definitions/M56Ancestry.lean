@@ -3,18 +3,6 @@ import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Definitions.M38LocalTopology
 import PoincareConjecture.Definitions.M55ChildComponents
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -50,8 +38,6 @@ structure RepairedEventChildWitness (F : SurgeryFlowData.{u}) where
 structure RepairedComponentPath
     (F : SurgeryFlowData.{u}) (T : ℝ)
     (W : RepairedEventChildWitness F) where
-
-
 
   terminal_mem : T ∈ F.time_domain
   component : ∀ s : Set.Icc (0 : ℝ) T,
@@ -141,8 +127,6 @@ structure RepairedComponentPath
 structure RepairedFiniteAncestryData (F : SurgeryFlowData.{u})
     (W : RepairedEventChildWitness F) where
 
-
-
   initial_component : SurgerySelectedComponent (F.slice 0)
   initial_component_cover : Set.range initial_component.inclusion = Set.univ
   path_for : ∀ (T : ℝ) (_hT : T ∈ F.time_domain)
@@ -166,9 +150,6 @@ structure RepairedFiniteAncestryData (F : SurgeryFlowData.{u})
               ⟨T, ⟨F.time_domain_nonnegative hT, le_rfl⟩⟩).inclusion
   bounded_event_count : ∀ H : ℝ, 0 ≤ H →
     (F.surgery_times ∩ Set.Icc 0 H).Finite
-
-
-
 
 structure M56PoincareAncestryData (F : SurgeryFlowData.{u})
     (L : RawLocalSurgeryTopologyData F) where

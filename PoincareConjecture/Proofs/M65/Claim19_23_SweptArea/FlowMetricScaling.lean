@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Claim19_23_SweptArea.MetricScaling
 import PoincareConjecture.Proofs.M62.Cor0_3_PointwiseBounds
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
@@ -24,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) {K0 K1 K2 : ℝ}
 
-
-
 theorem m65Ricci_quadratic_bound (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {t : ℝ} (ht : t ∈ Set.Icc a b) (x : M) (v : TangentSpace (𝓡 n) x) :
     |(F.connection t).ricci x v v| ≤ K2 * (F.metric t).inner x v v := by
@@ -38,8 +27,6 @@ theorem m65Ricci_quadratic_bound (bounds : CurveEvolutionAmbientBounds F K0 K1 K
     Matrix.cons_val_one, Matrix.cons_val_fin_one, RiemannianMetric.tangentNorm,
     Real.mul_self_sqrt hnonneg] using h
 
-
-
 theorem m65FlowMetric_comparison (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {s t : ℝ} (hs : s ∈ Set.Icc a b) (ht : t ∈ Set.Icc a b)
     (x : M) (v : TangentSpace (𝓡 n) x) :
@@ -48,8 +35,6 @@ theorem m65FlowMetric_comparison (bounds : CurveEvolutionAmbientBounds F K0 K1 K
   (F.metric_inner_self_exp_bounds (convex_Icc a b) Set.Subset.rfl x v K2
     (fun _ hr => m65Ricci_quadratic_bound F bounds hr x v) hs ht).2
 
-
-
 theorem m65FlowAreaDensity_scaling (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {s t : ℝ} (hs : s ∈ Set.Icc a b) (ht : t ∈ Set.Icc a b)
     (f : LoopPlane → M) (z : LoopPlane) :
@@ -57,8 +42,6 @@ theorem m65FlowAreaDensity_scaling (bounds : CurveEvolutionAmbientBounds F K0 K1
       Real.exp ((2 * K2) * |t - s|) * m60AreaDensity (F.metric s) f z :=
   m65AreaDensityScaling_of_metric_comparison (F.metric s) (F.metric t)
     (Real.exp_nonneg _) (m65FlowMetric_comparison F bounds hs ht) f z
-
-
 
 theorem m65FlowArea_scaling (bounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {s t : ℝ} (hs : s ∈ Set.Icc a b) (ht : t ∈ Set.Icc a b)

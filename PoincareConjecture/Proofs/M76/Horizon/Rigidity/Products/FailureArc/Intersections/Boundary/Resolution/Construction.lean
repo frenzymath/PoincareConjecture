@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Intervals.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.MarkedFrontierNeighborhood
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

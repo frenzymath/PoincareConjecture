@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationParameters
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationTopology
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,11 +13,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] [CompactSpace M]
   {a b : ℝ} {J : Set ℝ} {s t : ℝ}
-
-
-
-
-
 
 theorem m65Exists_generic_residual_approximation (F : RicciFlow 3 M (Icc a b))
     (hJ : IsOpen J) (hJF : J ⊆ Ioo a b) (C : M65SmoothFilledLoopFamily F J)

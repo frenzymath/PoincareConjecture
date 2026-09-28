@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Continuation.Construction.History.Retention
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

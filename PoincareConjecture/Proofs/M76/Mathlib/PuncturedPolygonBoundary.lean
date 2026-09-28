@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PolygonComplementComponents
 import PoincareConjecture.Proofs.M76.Mathlib.PuncturedCircle
 import Mathlib.Topology.Perfect
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ variable {n : ℕ} (P : Polygon (ℝ × ℝ) (n + 3))
   (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)
 
 include hP hinj
-
-
-
 
 theorem isConnected_boundary_sdiff_singleton (q : ℝ × ℝ) :
     IsConnected (P.boundary ℝ \ {q}) := by
@@ -40,9 +28,6 @@ theorem isConnected_boundary_sdiff_singleton (q : ℝ × ℝ) :
     exact h
   · rw [sdiff_singleton_eq_self hq]
     exact P.isConnected_boundary hP hinj
-
-
-
 
 theorem closure_boundary_sdiff_singleton (q : ℝ × ℝ) :
     closure (P.boundary ℝ \ {q}) = P.boundary ℝ := by

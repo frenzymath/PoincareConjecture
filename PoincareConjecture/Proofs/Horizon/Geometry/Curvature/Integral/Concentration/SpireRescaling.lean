@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.Spire
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Rescaling
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 private theorem one_le_inv_radius_sq {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
     1 ≤ (r ^ 2)⁻¹ :=
   (one_le_inv₀ (sq_pos_of_pos hr)).mpr (by nlinarith only [hr, hr1])
-
-
-
 
 theorem exists_subseq_prescribed_center_rescaled_unitBall_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type*}
@@ -70,8 +58,6 @@ theorem exists_subseq_prescribed_center_rescaled_unitBall_scalar_integral_tendst
   rw [hs] at hscale
   rw [hscale]
   exact le_mul_of_one_le_left hj (one_le_pow₀ (Real.one_le_sqrt.mpr hc))
-
-
 
 theorem exists_prescribed_center_rescaled_pointed_limit_scalar_integral_tendsto_atTop
     {n : ℕ} {M : ℕ → Type}

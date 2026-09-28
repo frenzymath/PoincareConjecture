@@ -3,15 +3,6 @@ import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 import Mathlib.LinearAlgebra.Dual.Lemmas
 import Mathlib.Analysis.Normed.Module.RCLike.Real
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

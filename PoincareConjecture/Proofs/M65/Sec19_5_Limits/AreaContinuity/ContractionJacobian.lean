@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.ContractionDerivative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -23,8 +14,6 @@ open Proofs.M58
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {X : Type v} [TopologicalSpace X]
-
-
 
 theorem m65ContractionAnnulusMap_continuous_columns
     (C : ℝ × (M × M) → M) (gamma eta : X → C1FreeLoopSpace (M := M))
@@ -113,8 +102,6 @@ theorem m65ContractionAnnulusMap_continuous_columns
       simpa +instances [EuclideanSpace.basisFun_apply, EuclideanSpace.single, tangentMap] using!
         m65ContractionAnnulusMap_mfderiv C (gamma q.1) (eta q.1) q.2
           (EuclideanSpace.basisFun (Fin 2) ℝ 1) (hC q)
-
-
 
 theorem m65ContractionAnnulusMap_continuous_density
     (g : RiemannianMetric 3 M) (C : ℝ × (M × M) → M)

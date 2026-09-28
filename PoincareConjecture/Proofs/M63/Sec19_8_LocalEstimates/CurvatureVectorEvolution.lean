@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M62.Lemma0_2_CurveLaws
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -26,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63SpatialDerivative_time_commutator_pair [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -172,9 +158,6 @@ theorem m63SpatialDerivative_time_commutator_pair [T2Space M]
   field_simp
   nlinarith only [hcomm]
 
-
-
-
 theorem m63CurvatureVector_time_pair [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {t : ℝ} (ht : t ∈ Ioo a b) (x : ℝ)
@@ -299,9 +282,6 @@ theorem m63CurvatureVector_time_pair [T2Space M]
   convert hcomm using 1
   dsimp only [D, S, H, A, m62CurvatureVector]
   ring
-
-
-
 
 theorem m63CurvatureSquared_firstJet_dissipation
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

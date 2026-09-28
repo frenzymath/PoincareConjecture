@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ConnectedComponent
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +16,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 def connectedComponentMetric (g : RiemannianMetric n M) (p : M) :
     RiemannianMetric n (Poincare.connectedComponentOpens (EuclideanSpace ℝ (Fin n)) p) :=
@@ -67,8 +58,6 @@ theorem pathELength_subtype_val {U : Opens M}
   rw [norm_eq_sqrt_real_inner, norm_eq_sqrt_real_inner]
   exact congrArg Real.sqrt (hinner (γ t) _ _)
 
-
-
 theorem edist_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
     (hinner : ∀ (x : U) (v w : TangentSpace (𝓡 n) x),
@@ -109,7 +98,6 @@ theorem edist_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
     rw [← pathELength_subtype_val g gU hinner γ hγ] at hle
     exact hle.trans_lt hlen
 
-
 theorem mem_of_edist_lt_top {U : Opens M} (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) {x y : M} (hx : x ∈ U)
     (hxy : g.edist x y < ⊤) : y ∈ U := by
@@ -121,7 +109,6 @@ theorem mem_of_edist_lt_top {U : Opens M} (hclosed : IsClosed (U : Set M))
   rw [← h0, ← h1]
   apply hγ.continuous.mapsTo_connectedComponent 0
   simp
-
 
 theorem image_ball_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
     (g : RiemannianMetric n M) (gU : RiemannianMetric n U)
@@ -140,8 +127,6 @@ theorem image_ball_subtype_val {U : Opens M} (hclosed : IsClosed (U : Set M))
       ((show g.edist x y < ENNReal.ofReal r from hy).trans_le le_top)
     refine ⟨⟨y, hyU⟩, ?_, rfl⟩
     simpa only [ball, mem_ofPred_eq, edist_subtype_val hclosed g gU hinner] using hy
-
-
 
 theorem metricComplete_of_subtype_val [T3Space M] {U : Opens M}
     (hclosed : IsClosed (U : Set M))
@@ -173,8 +158,6 @@ theorem metricComplete_of_subtype_val [T3Space M] {U : Opens M}
   rw [Subtype.range_coe_subtype]
   change @IsComplete M mM.toUniformSpace (U : Set M)
   exact @IsClosed.isComplete M mM.toUniformSpace hcomplete (U : Set M) hclosed
-
-
 
 theorem volumeMeasure_ball_subtype_val [T3Space M] [MeasurableSpace M] [BorelSpace M]
     {U : Opens M} (hclosed : IsClosed (U : Set M))

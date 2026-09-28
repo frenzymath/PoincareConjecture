@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M64Approximation
 import PoincareConjecture.Proofs.M58.Sec18_4_LoopLength
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,10 +13,6 @@ universe u
 namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
-
-
-
-
 
 theorem exists_continuous_loopCircle_map_of_periodic
     (f : ℝ → M) (hcont : Continuous f)
@@ -79,10 +66,6 @@ theorem exists_continuous_loopCircle_map_of_periodic
     · exact congrArg (fun z : LoopCircle => z.1 0) hcoord
     · exact congrArg (fun z : LoopCircle => z.1 1) hcoord
   exact congrArg hperiod.lift hang
-
-
-
-
 
 theorem exists_polygon_boundary
     {n : ℕ} [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]

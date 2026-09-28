@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Prop16_4_RegularRegion
 import PoincareConjecture.Proofs.M10.ScalarBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem NoncollapseTest.terminal_curvature {F : SurgeryFlowData.{u}}
     {O : SurgeryObservation F} (D : NoncollapseTest F O)
@@ -33,7 +23,6 @@ theorem NoncollapseTest.terminal_curvature {F : SurgeryFlowData.{u}}
     (F.connection p.1).curvatureTensorNorm p.2) hp
   exact hnorm ▸ h
 
-
 theorem NoncollapseTest.center_scalar_le {F : SurgeryFlowData.{u}}
     {O : SurgeryObservation F} (D : NoncollapseTest F O) :
     (F.connection D.time).scalarCurvature D.center ≤ 9 * D.radius⁻¹ ^ 2 := by
@@ -47,8 +36,6 @@ theorem NoncollapseTest.center_scalar_le {F : SurgeryFlowData.{u}}
     (M10.abs_scalarCurvature_le (F.metric D.time) (F.connection D.time) D.center)
   norm_num only [Nat.cast_ofNat, show (3 : ℝ) ^ 2 = 9 by norm_num] at htrace
   exact htrace.trans (mul_le_mul_of_nonneg_left (D.terminal_curvature hcenter) (by norm_num))
-
-
 
 theorem canonicalNeck_scale_of_scalar_bound
     {M : Type*} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Per
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Coordinates.Critical
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,9 +13,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S2 := sphere (0 : EuclideanSpace Real (Fin 3)) 1
-
-
-
 
 theorem exists_regularization_of_morse_level
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)
@@ -111,9 +100,6 @@ theorem exists_regularization_of_morse_level
   by_cases hqp : q = p
   · exact hpchange (hqp ▸ hq)
   · exact hqp (hunique q ((hvalues q hqc' hqp).symm.trans hq) hqc')
-
-
-
 
 theorem exists_compact_regular_completion_of_morse_exterior
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

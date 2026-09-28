@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.TerminalCompleteness
 import PoincareConjecture.Statements.Ch05.Compactness
 import PoincareConjecture.Definitions.Ch11.BlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +12,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space
-
-
-
 
 noncomputable def retainedClosedBlowupLimit
     {T tau B : ℝ} (htau : 0 < tau) (htauT : tau < T)

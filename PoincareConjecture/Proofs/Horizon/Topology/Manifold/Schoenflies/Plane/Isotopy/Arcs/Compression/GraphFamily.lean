@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Rounding.Push.Graph
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,7 +10,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.Compression
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E]
-
 
 theorem exists_graph_push_family_within
     (b : E → Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b)

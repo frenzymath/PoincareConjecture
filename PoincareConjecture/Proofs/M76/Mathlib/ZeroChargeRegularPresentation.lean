@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +7,6 @@ open Set
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem HasAlexanderCurvePresentation.hasDisjointPolygonPresentation_of_nonisolated
     {S : Set E} (h : HasAlexanderCurvePresentation S 0)

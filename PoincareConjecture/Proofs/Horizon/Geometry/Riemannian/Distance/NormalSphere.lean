@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.Intrins
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Orthonormal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.NormalBall
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_distance_sphere_homeomorph_radius
     (g : RiemannianMetric n M) (p : M) :
@@ -114,7 +104,6 @@ theorem exists_distance_sphere_homeomorph_radius
     continuous_toFun := hforward
     continuous_invFun := hbackward
   }⟩
-
 
 theorem exists_small_distance_sphere_homeomorph
     (g : RiemannianMetric n M) (p : M) :

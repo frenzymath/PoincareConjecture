@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCapIn
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCutPreservation
 import Mathlib.Algebra.BigOperators.Group.Finset.Piecewise
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology InnerProductSpace BigOperators
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem FamilyCutState.exists_surgery_step
     (hP : PlanarSchoenfliesService)

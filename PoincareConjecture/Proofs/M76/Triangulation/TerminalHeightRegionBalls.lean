@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HeightSeparatedSets
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionOpenAttachment
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionCertificates
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -22,11 +11,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem HasAlexanderRegionBalls.of_height_cut_contact
     {B T s d C : Set E} (A : E → ℝ) {c : ℝ}

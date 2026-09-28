@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedReferenceMod
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarRadialCoordinates
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_nestedReference_collar (d : ℝ) :
     let psi : UnitTwoSphere × ℝ → E3 :=

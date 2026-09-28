@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Orientation.ProjectivePlane.Cover.Projection
 import PoincareConjecture.Proofs.Horizon.Topology.Quotient.Coordinates
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +10,6 @@ open Set
 open scoped Topology Manifold ContDiff
 
 namespace PoincareConjecture
-
-
 
 theorem exists_projectiveCylinderSlab_homeomorph
     {M : Type*} [TopologicalSpace M] (f : RoundCylinderSpace → M) {s : ℝ}
@@ -92,9 +83,6 @@ theorem exists_projectiveCylinderSlab_homeomorph
   refine ⟨hQ.homeomorphOfFibers hF heq, ?_⟩
   intro q t
   exact congrArg Subtype.val (hQ.homeomorphOfFibers_apply hF heq (q, t))
-
-
-
 
 theorem exists_projectiveCylinderSlab_collar
     {M : Type*} [TopologicalSpace M]

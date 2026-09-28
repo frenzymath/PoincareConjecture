@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.UniformizationCompactification
 import Mathlib.Analysis.Complex.OpenMapping
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -106,10 +94,6 @@ private theorem punctured_ball_preconnected (c : ℂ) {r : ℝ} (hr : 0 < r) :
     (by rw [← Module.finrank_eq_rank]; norm_num) (0 : ℂ)).isConnected.isPreconnected.image
   exact (OpenPartialHomeomorph.continuous_univBall c r).continuousOn
 
-
-
-
-
 theorem scalar_analytic_or_conjugate_of_conformal_punctured {f : ℂ → ℂ} {c : ℂ}
     (hc : ContinuousAt f c)
     (hf : ∀ᶠ z in 𝓝[≠] c, ContDiffAt ℝ ∞ f z ∧ IsConformalMap (fderiv ℝ f z)) :
@@ -127,10 +111,6 @@ theorem scalar_analytic_or_conjugate_of_conformal_punctured {f : ℂ → ℂ} {c
   · exact Or.inr (Complex.analyticAt_of_differentiable_on_punctured_nhds_of_continuousAt
       (Filter.Eventually.mono hmem h)
       (Complex.continuous_conj.continuousAt.comp hc))
-
-
-
-
 
 theorem scalar_nhds_le_map_of_conformal_punctured {f : ℂ → ℂ} {c : ℂ}
     (hc : ContinuousAt f c)
@@ -161,10 +141,6 @@ theorem scalar_nhds_le_map_of_conformal_punctured {f : ℂ → ℂ} {c : ℂ}
     change map conj (𝓝 (conj (f c))) ≤ _ at hmap
     rw [hnhds] at hmap
     simpa only [map_map, Function.comp_def, Complex.conj_conj] using hmap
-
-
-
-
 
 theorem scalar_fiber_isolated_of_conformal_punctured {f : ℂ → ℂ} {c : ℂ}
     (hc : ContinuousAt f c)

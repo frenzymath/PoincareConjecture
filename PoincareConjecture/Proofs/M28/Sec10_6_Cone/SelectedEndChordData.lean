@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayEndpoint
 import PoincareConjecture.Proofs.M28.Mathlib.MetricEndRayConeTriangle
 import PoincareConjecture.Proofs.M28.Sec10_6_Cone.ChordConeAnnulus
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,10 +19,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {X : Set M}
-
-
-
-
 
 structure SelectedEndChordData
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)
@@ -134,10 +120,6 @@ structure SelectedEndChordData
       ∀ r s t : ℝ, 0 < r → 0 < s → 0 < t →
         chordConeDistance r t (dist x z) ≤
           chordConeDistance r s (dist x y) + chordConeDistance s t (dist y z)
-
-
-
-
 
 theorem exists_selected_end_chord_data
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

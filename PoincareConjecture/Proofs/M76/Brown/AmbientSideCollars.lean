@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Brown.AmbientSideRegions
 import PoincareConjecture.Proofs.M76.Brown.HalfspaceLocalCollars
 import PoincareConjecture.Proofs.M76.Brown.CompactCollaring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open Set
 namespace BrownCollar
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 structure AmbientSideCollars (S : Set X) where
   neighborhood : Set X
@@ -45,9 +34,6 @@ end BrownCollar
 namespace BrownCollar
 
 variable {X P : Type*} [MetricSpace X] [TopologicalSpace P]
-
-
-
 
 theorem exists_ambient_side_collars {S : Set X} (hS : IsCompact S) [Nonempty S]
     (E : S → OpenPartialHomeomorph X (P × ℝ))

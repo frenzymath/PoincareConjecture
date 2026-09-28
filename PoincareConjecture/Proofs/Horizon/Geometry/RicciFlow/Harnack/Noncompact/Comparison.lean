@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.NoncompactMaximum
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Linearity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] {J : Set ℝ}
   {F : RicciFlow n M J} {O : M}
-
-
-
 
 theorem SmoothExhaustion.nonpos_of_heat_le_mul
     (S : SmoothExhaustion F O)
@@ -109,8 +98,6 @@ theorem SmoothExhaustion.nonpos_of_heat_le_mul
   have hsmall' := hsmall t ht x rfl
   change u x t - ε * Real.exp (A * t) * S.toFun x ≤ 0 at hvnonpos
   linarith
-
-
 
 theorem SmoothExhaustion.nonpos_of_heat_le_mul_of_metricComplete
     [T3Space M] [PreconnectedSpace M] (S : SmoothExhaustion F O)

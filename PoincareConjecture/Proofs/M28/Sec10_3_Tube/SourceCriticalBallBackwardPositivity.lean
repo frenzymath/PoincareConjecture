@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceCriticalBallBackwardPinc
 import PoincareConjecture.Proofs.M28.Sec10_1_Pinching.OperatorPositivity
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Normalization.Curvature.Calculus
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -38,9 +28,6 @@ variable {epsilon C A : ℝ}
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
 
 theorem BackwardChartLimit.nonnegativeCurvatureOperator (L : BackwardChartLimit D)
     (P : RicciFlowCurvatureTheory.{u}) (hphi : StrictMono phi)

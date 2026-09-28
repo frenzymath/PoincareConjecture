@@ -2,25 +2,6 @@ import PoincareConjecture.Definitions.M33BranchContinuation
 import PoincareConjecture.Definitions.M46NoncollapseInduction
 import PoincareConjecture.Definitions.M47CanonicalInduction
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,12 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
 
 structure SurgeryEpochContinuationControls {K : MetricSurgeryConstants}
     (p : SurgeryParameterPrefix K) (F : SurgeryFlowData.{u})
@@ -66,7 +41,6 @@ structure RepairedEpochExtensionData
     SurgeryEpochContinuationControls p F O
       (Classical.choice (N.induction p hp))
       (Classical.choice (C.induction p hp)) →
-
 
       ∃ E : SurgeryFlowExtension F,
         ∃ _old_event_data : M33OldEventDataPreservation E,

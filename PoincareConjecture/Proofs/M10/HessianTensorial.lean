@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M10.PreferredHessian
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle

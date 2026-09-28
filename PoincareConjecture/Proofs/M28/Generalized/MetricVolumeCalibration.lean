@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M13.Volume
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.OpenMetricVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u v
 
 namespace PoincareConjecture.M28
-
 
 theorem euclideanVolumeCalibration_eq_addHaarScalarFactor (n : ℕ) :
     euclideanVolumeCalibration n =
@@ -47,7 +36,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem volumeMeasure_eq_calibratedMetricVolume (g : RiemannianMetric n M) :
     g.volumeMeasure = calibratedMetricVolume g := by
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 n) : M → Type _) :=
@@ -64,7 +52,6 @@ theorem volumeMeasure_eq_calibratedMetricVolume (g : RiemannianMetric n M) :
 variable [TopologicalSpace N] [MeasurableSpace N] [BorelSpace N] [T3Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
 
-
 theorem volumeMeasure_homothety_image (g : RiemannianMetric n M)
     (h : RiemannianMetric n N) (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞)
     (Q : ℝ) (hQ : 0 < Q) (hf : MetricHomothety g h f Q) (S : Set M) :
@@ -72,7 +59,6 @@ theorem volumeMeasure_homothety_image (g : RiemannianMetric n M)
       ENNReal.ofReal (Real.rpow Q ((n : ℝ) / 2)) * g.volumeMeasure S := by
   rw [volumeMeasure_eq_calibratedMetricVolume, volumeMeasure_eq_calibratedMetricVolume]
   exact M13.homothety_volume_image g h f Q hQ hf S
-
 
 theorem volumeMeasure_scaleSmoothMetric (g : RiemannianMetric n M)
     (Q : ℝ) (hQ : 0 < Q) (S : Set M) :
@@ -90,7 +76,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [SecondCountableTopology M]
 
-
 theorem intrinsicOpenMetric_volumeMeasure (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) :
     g.volumeMeasure.comap (Subtype.val : U → M) =
@@ -98,14 +83,12 @@ theorem intrinsicOpenMetric_volumeMeasure (g : RiemannianMetric 3 M)
   rw [volumeMeasure_eq_calibratedMetricVolume, volumeMeasure_eq_calibratedMetricVolume]
   exact intrinsicOpenMetric_calibratedVolume g U
 
-
 theorem intrinsicOpenMetric_volumeMeasure_apply (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) {S : Set U} (hS : MeasurableSet S) :
     (intrinsicOpenMetric g U).volumeMeasure S =
       g.volumeMeasure ((Subtype.val : U → M) '' S) := by
   rw [volumeMeasure_eq_calibratedMetricVolume, volumeMeasure_eq_calibratedMetricVolume]
   exact intrinsicOpenMetric_calibratedVolume_apply g U hS
-
 
 theorem intrinsicOpenMetric_volumeMeasure_univ (g : RiemannianMetric 3 M)
     (U : TopologicalSpace.Opens M) :
@@ -121,7 +104,6 @@ theorem intrinsicOpenMetric_volumeMeasure_univ (g : RiemannianMetric 3 M)
     _ = g.volumeMeasure ((Subtype.val : U → M) '' (Set.univ : Set U)) :=
       intrinsicOpenMetric_volumeMeasure_apply g U MeasurableSet.univ
     _ = g.volumeMeasure (U : Set M) := congrArg g.volumeMeasure himage
-
 
 theorem intrinsicOpenMetric_scaleSmoothMetric_volumeMeasure_univ
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)

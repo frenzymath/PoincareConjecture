@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Capture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +8,6 @@ open Set Function TopologicalSpace
 namespace Poincare.Geometry.Manifold.RegularLevel
 
 variable {M : Type*} [TopologicalSpace M]
-
-
 
 theorem image_connectedComponent_openLevelIncl
     (f : M → ℝ) (U : Opens M) (c : ℝ) (z : openLevelSet f U c) :
@@ -47,8 +36,6 @@ theorem image_connectedComponent_openLevelIncl
     have hsubset := hpre.subset_connectedComponent (mem_connectedComponentIn hz)
     rw [← himage]
     exact image_mono hsubset
-
-
 
 theorem range_comp_openLevelIncl_eq_connectedComponentIn
     {Y : Type*} (f : M → ℝ) (U : Opens M) (c : ℝ)

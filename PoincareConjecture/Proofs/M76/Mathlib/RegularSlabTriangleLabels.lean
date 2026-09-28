@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_regular_triangle_apex (A : E →ᵃ[ℝ] ℝ) {s : Finset E} (hs : s.card = 3)
     {α β : ℝ} (hreg : ∀ z ∈ s, A z < α ∨ β < A z)
@@ -67,8 +55,6 @@ theorem exists_regular_triangle_apex (A : E →ᵃ[ℝ] ℝ) {s : Finset E} (hs 
 end AffineMap
 
 namespace Finset
-
-
 
 theorem eq_pair_of_subset_triple {V : Type*} [DecidableEq V] {e : Finset V}
     (he : e.card = 2) {v u w : V} (hes : e ⊆ {v, u, w}) :

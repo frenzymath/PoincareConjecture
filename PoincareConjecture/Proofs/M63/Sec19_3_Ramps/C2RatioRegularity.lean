@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_3_Ramps.C2SlopePreservation
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b T : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
-
-
 theorem c2_rampRatio_contDiff (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)
     (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T))
@@ -36,8 +24,6 @@ theorem c2_rampRatio_contDiff (P : M62.CircleProductData F circumference)
   exact ((c2_scalar_contDiff_of_local P.flow c hc hlocal ht).2.2 epsilon hepsilon).div
     (c2_slope_contDiff_of_local P hlocal c hc ht) hu
 
-
-
 theorem c2_rampRatio_periodic (P : M62.CircleProductData F circumference)
     (hlocal : M63LocalCurveTheory P.flow) (c : ℝ → ℝ → P.charts.Point)
     (hc : M63C2ShrinkingCurveOn P.flow c (Icc a T)) (hT : a < T)
@@ -47,8 +33,6 @@ theorem c2_rampRatio_periodic (P : M62.CircleProductData F circumference)
   intro x
   simp only [m63RampRatio, c2_regularized_periodic P.flow c hc hlocal hT epsilon ht x,
     c2_slope_periodic P c hc ht x]
-
-
 
 theorem c2_rampRatio_differentiableAt_time (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) {K0 K1 K2 : ℝ}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.SeedPreliminaryVolume
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

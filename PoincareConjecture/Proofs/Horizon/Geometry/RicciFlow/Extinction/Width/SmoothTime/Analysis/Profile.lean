@@ -4,8 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
 open Set Filter MeasureTheory
 open scoped Topology intervalIntegral
 

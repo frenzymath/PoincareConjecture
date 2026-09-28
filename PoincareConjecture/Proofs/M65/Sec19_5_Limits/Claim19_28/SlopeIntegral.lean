@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SlopeDerivative
 import PoincareConjecture.Definitions.M63Ramp
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -23,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
-
-
 
 theorem m65CircleLift_velocity_pairing (C : M62.CircleGeometry circumference)
     (lift : ℝ → ℝ) (hlift : ContDiff ℝ 2 lift) (x : ℝ) :
@@ -47,8 +36,6 @@ theorem m65CircleLift_velocity_pairing (C : M62.CircleGeometry circumference)
   rw [C.frame_quotient]
   simpa +instances only [mul_one] using!
     C.metric_quotient (lift x) (deriv lift x) 1
-
-
 
 theorem m65Slope_mul_speed_eq_lift_deriv (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -82,8 +69,6 @@ theorem m65Slope_mul_speed_eq_lift_deriv (P : M62.CircleProductData F circumfere
   have hv := (M62.speed_pos P.flow c hc ht x).ne'
   field_simp
 
-
-
 theorem m65Slope_integral_period_eq_circumference
     (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)
@@ -99,8 +84,6 @@ theorem m65Slope_integral_period_eq_circumference
   have hp := L.period_shift start
   rw [hdegree, Nat.cast_one, one_mul] at hp
   linarith
-
-
 
 theorem m65Slope_integral_eq_circumference (P : M62.CircleProductData F circumference)
     (c : ℝ → ℝ → P.charts.Point) (hc : M62ShrinkingCurve P.flow c)

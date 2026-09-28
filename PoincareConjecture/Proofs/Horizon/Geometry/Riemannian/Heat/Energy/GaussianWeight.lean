@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Energy.Cutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -52,7 +42,6 @@ theorem continuousOn_gaussian_weight {ρ : M → ℝ}
   have := hp.1.2
   linarith
 
-
 theorem exists_smooth_distance_majorant [T3Space M] [PreconnectedSpace M]
     (D : LeviCivitaData g) (O : M) :
     ∃ ρ : M → ℝ, ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ρ ∧
@@ -80,8 +69,6 @@ theorem exists_smooth_distance_majorant [T3Space M] [PreconnectedSpace M]
     have hsq := Real.sq_sqrt hnonneg
     change Real.sqrt _ ≤ 2 at hnorm
     nlinarith [Real.sqrt_nonneg (g.inner x (D.gradient u x) (D.gradient u x))]
-
-
 
 theorem gaussian_weight_differential_inequality (D : LeviCivitaData g)
     {ρ : M → ℝ} (hρ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ ρ)
@@ -119,8 +106,6 @@ theorem gaussian_weight_differential_inequality (D : LeviCivitaData g)
     ring
   rw [hid]
   exact div_nonpos_of_nonpos_of_nonneg (by nlinarith) (sq_nonneg _)
-
-
 
 theorem exp_gaussian_weight_le {ρ r T t a : ℝ}
     (hr : 0 ≤ r) (hρ : r ≤ ρ) (hT : 0 < T) (ha : 0 < a)

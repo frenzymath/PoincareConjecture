@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C2TraceNormalization
 import Mathlib.Analysis.Calculus.ParametricIntervalIntegral
 import Mathlib.Analysis.SpecialFunctions.Integrals.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -27,10 +17,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
-
 
 theorem curveSpeed_spatial_derivative_integral [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -154,10 +140,6 @@ theorem curveSpeed_spatial_derivative_integral [T2Space M]
   have hid := hlog.unique hlog'
   rw [hI] at hid
   exact (div_eq_iff (speed_pos F c hc ht x).ne').mp hid |>.trans (by ring)
-
-
-
-
 
 theorem curveSpeed_spatial_abs_bound [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

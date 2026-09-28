@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetShift
 import PoincareConjecture.Proofs.M14.Sec6_1_CompactPerturbation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -27,25 +19,17 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n))
 
-
-
 noncomputable def backwardGaugeFamily (v t : ℝ) : G.Point :=
   (G.gaugeCover.cylinder b).toSpacetime ((lift (p.curve t)).1,
     (G.gaugeCover.spatial b).affineShift (lift (p.curve t)).2 (v • η t))
-
-
 
 noncomputable def supportedBackwardGaugeFamily (v t : ℝ) : G.Point := by
   classical
   exact if t ∈ tsupport η then backwardGaugeFamily p b lift η v t else p.curve t
 
-
-
 theorem supportedBackwardGaugeFamily_eq_of_not_tsupport {t : ℝ} (ht : t ∉ tsupport η)
     (v : ℝ) : supportedBackwardGaugeFamily p b lift η v t = p.curve t := by
   simp only [supportedBackwardGaugeFamily, if_neg ht]
-
-
 
 theorem supportedBackwardGaugeFamily_eq_gauge {t : ℝ}
     (ht : (G.gaugeCover.cylinder b).toSpacetime (lift (p.curve t)) = p.curve t) (v : ℝ) :
@@ -57,8 +41,6 @@ theorem supportedBackwardGaugeFamily_eq_gauge {t : ℝ}
       TopologicalSpace.Opens.affineShift_zero, Prod.mk.eta]
     exact ht.symm
 
-
-
 theorem supportedBackwardGaugeFamily_at_zero
     (hsrc : ∀ t ∈ tsupport η,
       (G.gaugeCover.cylinder b).toSpacetime (lift (p.curve t)) = p.curve t) (t : ℝ) :
@@ -69,8 +51,6 @@ theorem supportedBackwardGaugeFamily_at_zero
       Prod.mk.eta, hsrc t hs]
   · exact supportedBackwardGaugeFamily_eq_of_not_tsupport p b lift η hs 0
 
-
-
 theorem supportedBackwardGaugeFamily_time
     (hclock : ∀ t ∈ tsupport η, (lift (p.curve t)).1.val =
       G.spacetime.timeFunction (p.curve t)) {t : ℝ} (ht : t ∈ Icc τ₁ τ₂) (v : ℝ) :
@@ -80,8 +60,6 @@ theorem supportedBackwardGaugeFamily_time
       (G.gaugeCover.cylinder b).time_eq, hclock t hs, p.curve_time t ht]
   · rw [supportedBackwardGaugeFamily_eq_of_not_tsupport p b lift η hs,
       p.curve_time t ht]
-
-
 
 theorem backwardGaugeFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -98,8 +76,6 @@ theorem backwardGaugeFamily_contMDiffAt {U : Set G.Point} (hU : IsOpen U)
       (by simp)).comp t (hL.snd.prodMk hη1)
   exact ((G.gaugeCover.cylinder b).smooth.of_le (by simp)).contMDiffAt.comp t
     (hL.fst.prodMk hS)
-
-
 
 theorem supportedBackwardGaugeFamily_contMDiffOn {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -124,8 +100,6 @@ theorem supportedBackwardGaugeFamily_contMDiffOn {U : Set G.Point} (hU : IsOpen 
       exact supportedBackwardGaugeFamily_eq_of_not_tsupport p b lift η hsp v
     exact (p.curve_regular t ht).congr_of_eventuallyEq
       (heq.filter_mono nhdsWithin_le_nhds) heq.eq_of_nhds
-
-
 
 theorem supportedBackwardGaugeFamily_continuousOn {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)

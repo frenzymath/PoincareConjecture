@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.UpperResolutionSources
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -26,7 +18,6 @@ variable {EA EC X : Type*}
   {fA : EA → X} {fS : P2 → X} {fC : EC → X} {g : V2 → X}
   (s : UpperResolutionSources SA SC Sstrip pA pC pminus pplus fA fS fC g)
 
-
 theorem left_middle_eq_iff (x : SA) (y : Sstrip) :
     s.jA x = s.jS y ↔ ∃! t : I01, (x : EA) = pA t ∧ y = pminus t := by
   have heq : s.jA x = s.jS y ↔ (s.nA x : P2) = s.nS y := by
@@ -39,7 +30,6 @@ theorem left_middle_eq_iff (x : SA) (y : Sstrip) :
       have h1 : rightDiskCopy s.nA x = leftDiskCopy s.nS y := Subtype.ext h
       exact congrArg (fun z ↦ (s.H.symm (rightDiskCopy s.m z) : V2)) h1
   exact heq.trans (s.fiberAS x y)
-
 
 theorem middle_right_eq_iff (y : Sstrip) (z : SC) :
     s.jS y = s.jC z ↔ ∃! t : I01, y = pplus t ∧ (z : EC) = pC t := by
@@ -58,7 +48,6 @@ theorem middle_right_eq_iff (y : Sstrip) (z : SC) :
     exact ⟨s.nS.injective (Subtype.ext h), hz⟩
   · rintro ⟨rfl, hz⟩
     exact ⟨rfl, hz⟩
-
 
 theorem disjoint_outer (harms : Disjoint (range pminus) (range pplus)) :
     Disjoint (range s.jA) (range s.jC) := by

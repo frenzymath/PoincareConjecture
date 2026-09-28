@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.DirectionalRadialAdjustment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,14 +10,11 @@ namespace PoincareConjecture.M38
 
 variable (L : StandardCapSpace ≃L[ℝ] StandardCapSpace)
 
-
 def ellipsoidExteriorOpen (t : ℝ) : TopologicalSpace.Opens StandardCapSpace :=
   ⟨{x | t < ‖L.symm x‖}, isOpen_lt continuous_const (continuous_norm.comp L.symm.continuous)⟩
 
-
 def roundBallExteriorOpen (r : ℝ) : TopologicalSpace.Opens StandardCapSpace :=
   ⟨{x | r < ‖x‖}, isOpen_lt continuous_const continuous_norm⟩
-
 
 theorem mem_linear_closedBall_image_iff (t : ℝ) (x : StandardCapSpace) :
     x ∈ L '' Metric.closedBall 0 t ↔ ‖L.symm x‖ ≤ t := by
@@ -37,13 +26,11 @@ theorem mem_linear_closedBall_image_iff (t : ℝ) (x : StandardCapSpace) :
     exact ⟨L.symm x, by simpa only [Metric.mem_closedBall, dist_zero_right] using hx,
       L.apply_symm_apply x⟩
 
-
 theorem ellipsoidExteriorOpen_eq (t : ℝ) :
     (ellipsoidExteriorOpen L t : Set StandardCapSpace) = (L '' Metric.closedBall 0 t)ᶜ := by
   ext x
   change (t < ‖L.symm x‖) ↔ ¬x ∈ L '' Metric.closedBall 0 t
   simp only [mem_linear_closedBall_image_iff, not_le]
-
 
 theorem roundBallExteriorOpen_eq (r : ℝ) :
     (roundBallExteriorOpen r : Set StandardCapSpace) = (Metric.closedBall 0 r)ᶜ := by
@@ -51,12 +38,10 @@ theorem roundBallExteriorOpen_eq (r : ℝ) :
   change (r < ‖x‖) ↔ ¬x ∈ Metric.closedBall 0 r
   simp only [Metric.mem_closedBall, dist_zero_right, not_le]
 
-
 theorem ellipsoid_inverse_norm (x : StandardCapSpace) :
     ‖L.symm x‖ = ‖x‖ * ‖L.symm (capUnitDirection x).val‖ := by
   conv_lhs => rw [← capUnitDirection_radial x]
   rw [map_smul, norm_smul, Real.norm_eq_abs, abs_of_nonneg (norm_nonneg x)]
-
 
 theorem ellipsoid_boundary_radius_le (w : UnitTwoSphere) {t : ℝ} (ht : 0 < t) :
     t / ‖L.symm w.val‖ ≤ ‖(L : StandardCapSpace →L[ℝ] StandardCapSpace)‖ * t := by
@@ -74,7 +59,6 @@ variable {t ρ : ℝ} (ht : 0 < t) (hρ : 0 < ρ)
 
 include ht hρ hsize
 
-
 theorem ellipsoid_boundary_profile (w : UnitTwoSphere) :
     ρ * ballShrinkProfile (directionalRadialCoefficient L w)
       ((t / ‖L.symm w.val‖) / ρ) = directionalRadialScale L * t := by
@@ -85,7 +69,6 @@ theorem ellipsoid_boundary_profile (w : UnitTwoSphere) :
   rw [ballShrinkProfile_linear _ _ ((div_le_iff₀ hρ).mpr hboundary),
     directionalRadialCoefficient]
   field_simp [hρ.ne', hk.ne'] <;> ring
-
 
 theorem directionalRadialMap_exterior_iff {x : StandardCapSpace} (hx : x ≠ 0) :
     directionalRadialScale L * t < ‖directionalRadialMap L ρ x‖ ↔ t < ‖L.symm x‖ := by
@@ -104,14 +87,12 @@ theorem ellipsoidExterior_ne_zero {x : StandardCapSpace} (hx : t < ‖L.symm x�
   have hpos := ht.trans hx
   simpa only [hzero, map_zero, norm_zero, lt_self_iff_false] using hpos
 
-
 theorem directionalRadialMap_mapsTo_exterior :
     Set.MapsTo (directionalRadialMap L ρ) {x | t < ‖L.symm x‖}
       {y | directionalRadialScale L * t < ‖y‖} := by
   intro x hx
   exact (directionalRadialMap_exterior_iff L ht hρ hsize
     (ellipsoidExterior_ne_zero L ht hx)).mpr hx
-
 
 theorem directionalRadialInverse_mapsTo_exterior :
     Set.MapsTo (directionalRadialInverse L ρ) {y | directionalRadialScale L * t < ‖y‖}
@@ -123,7 +104,6 @@ theorem directionalRadialInverse_mapsTo_exterior :
     (directionalRadialInverse_ne_zero L hρ hy0)).mp
   rw [directionalRadial_right_inverse L hρ hy0]
   exact hy
-
 
 theorem directionalRadialMap_exterior_image :
     directionalRadialMap L ρ '' {x | t < ‖L.symm x‖} =
@@ -138,7 +118,6 @@ theorem directionalRadialMap_exterior_image :
       directionalRadialInverse_mapsTo_exterior L ht hρ hsize hy,
       directionalRadial_right_inverse L hρ hy0⟩
 
-
 theorem directionalRadialInverse_exterior_image :
     directionalRadialInverse L ρ '' {y | directionalRadialScale L * t < ‖y‖} =
       {x | t < ‖L.symm x‖} := by
@@ -149,7 +128,6 @@ theorem directionalRadialInverse_exterior_image :
     exact ⟨directionalRadialMap L ρ x,
       directionalRadialMap_mapsTo_exterior L ht hρ hsize hx,
       directionalRadial_left_inverse L hρ (ellipsoidExterior_ne_zero L ht hx)⟩
-
 
 noncomputable def ellipsoidComplementDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) (ellipsoidExteriorOpen L t)
@@ -184,10 +162,8 @@ noncomputable def ellipsoidComplementDiffeomorph :
     exact (directionalRadialInverse_contDiffAt L (norm_pos_iff.mp
       ((mul_pos (directionalRadialScale_pos L) ht).trans y.property))).contMDiffAt
 
-
 theorem ellipsoidComplementDiffeomorph_apply (x : ellipsoidExteriorOpen L t) :
     (ellipsoidComplementDiffeomorph L ht hρ hsize x).val = directionalRadialMap L ρ x.val := rfl
-
 
 theorem ellipsoidComplementDiffeomorph_symm_apply
     (y : roundBallExteriorOpen (directionalRadialScale L * t)) :

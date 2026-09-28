@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.CurveJetDensities
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.PeriodicJetTolerance
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.ShortBoundaryCollar
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -30,9 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M] [CompactSpace M
   {a b : ℝ} {ι : Type v} [Fintype ι]
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_c2_approximation_collar_tolerance
     (F : RicciFlow n M (Icc a b))

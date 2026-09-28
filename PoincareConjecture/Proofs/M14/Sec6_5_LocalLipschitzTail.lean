@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_LocalLipschitzDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x q0 : G.Point}
-
-
-
-
 
 theorem exists_terminal_tail_neighborhood (hτ : 0 < τ)
     (htime : G.spacetime.timeFunction q0 = T - τ)

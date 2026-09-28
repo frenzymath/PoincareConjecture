@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M38.SphereBundleHeight
 import PoincareConjecture.Proofs.M38.RegularClock
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.ProperControl
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_sphereBundle_pullback_flow (Q : GeneralizedSliceCarrier)
     [CompactSpace Q.carrier] (B : SurgerySphereBundle Q) :

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.GradientFrame
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle InnerProductSpace
@@ -17,8 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {ι : Type*} [Fintype ι]
-
-
 
 theorem strainer_gradients_regular
     (g : RiemannianMetric n M) (f : ι → M → ℝ) (x : M)
@@ -42,8 +33,6 @@ theorem strainer_gradients_regular
   convert hs using 1
   funext v i
   exact (g.inner_gradient (f i) x v).symm
-
-
 
 theorem strainer_card_le_and_mfderiv_ne_zero
     (g : RiemannianMetric n M) (f : ι → M → ℝ) (x : M)

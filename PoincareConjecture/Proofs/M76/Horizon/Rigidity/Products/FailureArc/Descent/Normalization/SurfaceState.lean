@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.FaceData
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
@@ -25,10 +15,6 @@ variable {U E V M ι : Type*}
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
 
-
-
-
-
 structure MarkedSurfaceState (t : Stage e S f r C) (K : SimplicialComplex ℝ V)
     (U : K.faces → Set t.Carrier) (R Fmark : Set M) (rimSet : Set V) where
   map : V → t.Carrier
@@ -39,10 +25,6 @@ structure MarkedSurfaceState (t : Stage e S f r C) (K : SimplicialComplex ℝ V)
     map x ∈ frontier (t.projection ⁻¹' R) ↔ x ∈ rimSet
   mark : MapsTo map (rimSet) (t.projection ⁻¹' Fmark)
   retained : ∀ a : K.faces, MapsTo map (convexHull ℝ (a.val : Set V)) (U a)
-
-
-
-
 
 def MarkedSurfaceState.move {s t : Stage e S f r C} {step : Step s t}
     {K K₀ K₁ : SimplicialComplex ℝ V} (hK : K.faces.Finite)
@@ -74,9 +56,6 @@ def MarkedSurfaceState.move {s t : Stage e S f r C} {step : Step s t}
     rw [motion.mark]
     exact state.mark hx
   retained := motion.retained 1
-
-
-
 
 theorem MarkedSurfaceState.move_map {s t : Stage e S f r C} {step : Step s t}
     {K K₀ K₁ : SimplicialComplex ℝ V} (hK : K.faces.Finite)

@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteCarrierFaceInteriors
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Whole.FixedCollar
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

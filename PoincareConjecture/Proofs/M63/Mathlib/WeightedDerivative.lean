@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace Poincare.Parabolic
-
-
-
 
 theorem weighted_second_mul {f g w : ℝ → ℝ} {x : ℝ}
     (hf : ContDiff ℝ 2 f) (hg : ContDiff ℝ 2 g)
@@ -41,9 +29,6 @@ theorem weighted_second_mul {f g w : ℝ → ℝ} {x : ℝ}
     weighted_deriv_eq hw (hg.differentiable_deriv_two x),
     weighted_deriv_eq hw (hf.differentiable_deriv_two x), hsecond, hfirst]
   ring
-
-
-
 
 theorem weighted_second_div {f g w : ℝ → ℝ} {x : ℝ}
     (hf : ContDiff ℝ 2 f) (hg : ContDiff ℝ 2 g)

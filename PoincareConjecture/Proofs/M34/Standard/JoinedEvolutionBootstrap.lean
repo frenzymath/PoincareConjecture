@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.DerivativeJoining
 import PoincareConjecture.Proofs.M34.Standard.InitialJetDerivative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +13,6 @@ open SpacetimeBounds SpacetimeBounds.Bootstrap
 
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup V] [NormedSpace ℝ V]
-
-
-
 
 theorem hasFDerivAt_jointJetDerivative_of_open
     {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}
@@ -61,8 +48,6 @@ variable {n : ℕ} {Q : Jet E V n → V} {Ω : Set (Jet E V n)}
 
 include hΩ hQ hf hc hrange hevol
 
-
-
 theorem hasFDerivAt_joinedJointJetDerivative (j : ℕ) {p : ℝ × E}
     (hp : p ∈ Ioo a b ×ˢ univ) :
     HasFDerivAt (fun z : ℝ × E => iteratedFDeriv ℝ j (fun x => f (z.1, x)) z.2)
@@ -75,9 +60,6 @@ theorem hasFDerivAt_joinedJointJetDerivative (j : ℕ) {p : ℝ × E}
       (isOpen_Ioo.sdiff isClosed_singleton) hf
       (fun z hz => hrange z ⟨hz.1.1, hz.2⟩) hevol j
     exact ⟨⟨hq.1, hqc⟩, hq.2⟩
-
-
-
 
 theorem contDiffOn_spatialJets_of_joined_evolution (j : ℕ) :
     ContDiffOn ℝ ∞
@@ -102,14 +84,10 @@ theorem contDiffOn_spatialJets_of_joined_evolution (j : ℕ) :
         exact hd.hasFDerivWithinAt
   exact contDiffOn_infty.mpr (fun r => hfinite r j)
 
-
-
 theorem contDiffOn_of_joined_spatial_jet_evolution :
     ContDiffOn ℝ ∞ f (Ioo a b ×ˢ univ) := by
   have hz := contDiffOn_spatialJets_of_joined_evolution hΩ hQ hf hc hrange hevol 0
   exact (continuousMultilinearCurryFin0 ℝ E V).toContinuousLinearEquiv.contDiff.comp_contDiffOn hz
-
-
 
 theorem hasDerivAt_of_joined_spatial_jet_evolution
     {p : ℝ × E} (hp : p ∈ Ioo a b ×ˢ univ) :

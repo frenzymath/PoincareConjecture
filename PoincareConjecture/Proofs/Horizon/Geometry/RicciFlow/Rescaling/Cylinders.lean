@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Geometry
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.CurvatureControl.Cylinders.Scalar
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped Manifold ContDiff Bundle ENNReal
@@ -30,7 +20,6 @@ theorem rescalingTime_mem_Icc {Q : ℝ} (hQ : 0 < Q) (τ A : ℝ)
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
 
 noncomputable def normalizedCylinder (F : RicciFlow n M J)
     (Q : ℝ) (hQ : 0 < Q) (τ A : ℝ) (hA : 0 < A)
@@ -83,9 +72,6 @@ theorem normalizedCylinder_scalar_le_four (F : RicciFlow n M J)
 end PoincareConjecture.RicciFlow
 
 namespace PoincareConjecture.RicciFlow
-
-
-
 
 theorem exists_normalized_large_cylinder
     {m : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

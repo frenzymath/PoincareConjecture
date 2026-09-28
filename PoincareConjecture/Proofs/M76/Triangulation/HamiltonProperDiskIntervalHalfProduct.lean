@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalEndpointExtension
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalPrismRim
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -87,10 +77,6 @@ private theorem exists_horizontal_identity {B : Set E} {a z : E}
   have hinv : J.symm x = ⟨(x : E × ℝ).1, x.property.1⟩ := by
     exact (congrArg J.symm hx.symm).trans (J.symm_apply_apply _)
   exact congrArg Subtype.val hinv
-
-
-
-
 
 theorem exists_interval_half_product {B N Q : Set E} (a : Bool → E)
     (hB : IsFinitePLBallPair ℝ B {a false, a true}) (ha : a false ≠ a true)

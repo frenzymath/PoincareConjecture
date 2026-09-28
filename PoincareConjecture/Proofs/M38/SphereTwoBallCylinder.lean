@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M38.SphereTwoBallEnds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,7 +12,6 @@ namespace PoincareConjecture.M38
 
 variable {A D : GeneralizedSliceCarrier.{u}}
 
-
 theorem twoBallTransport_complement (B₀ B₁ : SurgeryBallEmbedding A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞) :
     e '' (B₀.closedBall ∪ B₁.closedBall)ᶜ =
@@ -29,7 +19,6 @@ theorem twoBallTransport_complement (B₀ B₁ : SurgeryBallEmbedding A)
         (transportSurgeryBall B₁ e).closedBall)ᶜ := by
   rw [Set.image_compl_eq (f := fun x => e x) e.bijective, Set.image_union,
     transportSurgeryBall_closedBall, transportSurgeryBall_closedBall]
-
 
 noncomputable def twoBallTransportEquivalence (B₀ B₁ : SurgeryBallEmbedding A)
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier D.carrier ∞) :
@@ -46,8 +35,6 @@ noncomputable def twoBallTransportEquivalence (B₀ B₁ : SurgeryBallEmbedding 
   right_inverse := fun y _ => e.apply_symm_apply y
   map_smooth := e.contMDiff.contMDiffOn
   inverse_smooth := e.symm.contMDiff.contMDiffOn
-
-
 
 theorem exists_spherePole_uniform_annulus
     (L : StandardCapSpace ≃L[ℝ] StandardCapSpace) {b R : ℝ}
@@ -92,10 +79,6 @@ theorem exists_spherePole_uniform_annulus
       mul_le_mul (by linarith)
         (mul_le_mul_of_nonneg_left hnorm (mul_pos hb hu).le) hq.le (by positivity)
     _ ≤ 4 := by nlinarith [hprod]
-
-
-
-
 
 theorem exists_sphereTwoBallCylinder
     (B₀ B₁ : SurgeryBallEmbedding sphereCarrier.{u})

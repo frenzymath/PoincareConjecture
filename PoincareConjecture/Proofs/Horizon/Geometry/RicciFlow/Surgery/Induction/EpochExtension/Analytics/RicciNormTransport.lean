@@ -5,10 +5,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Generalize
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Flow.Basic
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Topology.Algebra.Module.FiniteDimension
-
-
-
-
-
-
-

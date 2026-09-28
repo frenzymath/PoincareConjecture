@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Sublevel.Minimum
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Geometry.Manifold
-
-
 
 theorem strict_bounds_on_interior_of_regular
     {n : Nat} {M : Type*} [TopologicalSpace M]
@@ -36,8 +32,6 @@ theorem strict_bounds_on_interior_of_regular
     change mfderiv (𝓡 n) 𝓘(Real, Real) (-h) x = 0 at hn
     exact hreg x hxK (by simpa only [mfderiv_neg, neg_eq_zero] using hn)
 
-
-
 theorem exists_boundary_extrema_of_regular
     {n : Nat} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -56,8 +50,6 @@ theorem exists_boundary_extrema_of_regular
       (hmax.isLocalMax (mem_interior_iff_mem_nhds.mp hqi)).neg
     change mfderiv (𝓡 n) 𝓘(Real, Real) (-h) q = 0 at hn
     exact hreg q hq (by simpa only [mfderiv_neg, neg_eq_zero] using hn)
-
-
 
 theorem exists_two_distinct_critical_points
     {n : Nat} {M : Type*} [TopologicalSpace M]

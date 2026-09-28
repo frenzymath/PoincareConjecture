@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.EuclideanMollificationNative
 import PoincareConjecture.Proofs.M03.Existence.CompactSupportLpNative
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 set_option backward.isDefEq.respectTransparency false
@@ -29,7 +20,6 @@ local notation "E" => EuclideanSpace ℝ (Fin n)
 
 def restrictedKernel (K : Set E) (hε : 0 < ε) : C(K, ScalarL2 n) :=
   ⟨fun x => mollifierKernel hε x, (continuous_mollifierKernel hε).comp continuous_subtype_val⟩
-
 
 def compactMollifier {K : Set E} (hK : IsCompact K) (hε : 0 < ε) :
     ScalarL2 n →L[ℝ] ScalarL2 n := by
@@ -92,7 +82,6 @@ theorem norm_compactMollifier_error_le {K : Set E} (hK : IsCompact K) (hε : 0 <
     _ ≤ ε ^ 2 * D ^ 2 := mul_le_mul_of_nonneg_left henergy (sq_nonneg ε)
     _ = _ := (mul_pow ε D 2).symm
 
-
 theorem totallyBounded_of_compact_approximation {H : Type*}
     [NormedAddCommGroup H] [NormedSpace ℝ H] {S : Set H} {R : ℝ}
     (hR : ∀ u ∈ S, ‖u‖ ≤ R)
@@ -119,7 +108,6 @@ theorem totallyBounded_of_compact_approximation {H : Type*}
     rw [dist_comm, dist_eq_norm]
     exact herr u hu
   exact (dist_triangle u (A u) c).trans_lt (by linarith)
-
 
 theorem totallyBounded_supported_C1 {K : Set E} (hK : IsCompact K)
     {S : Set (ScalarL2 n)} {R D : ℝ} (hD : 0 ≤ D)
@@ -153,7 +141,6 @@ theorem isCompact_closure_supported_C1 {K : Set E} (hK : IsCompact K)
 section GraphClosure
 
 variable {V H : Type*} [NormedAddCommGroup V] [NormedAddCommGroup H]
-
 
 theorem value_mem_closure_bounded_image (p : V → H) (hp : Continuous p)
     {S : Set V} {x : V} (hx : x ∈ closure S) {R : ℝ} (hxR : ‖x‖ ≤ R) :

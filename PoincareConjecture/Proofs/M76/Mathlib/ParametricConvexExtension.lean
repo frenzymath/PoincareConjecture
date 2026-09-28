@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleConvexExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ContractibleMappingSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace ContinuousMap
 
 variable {E B Y : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
   [TopologicalSpace B] [LocallyCompactSpace B] [TopologicalSpace Y] [ContractibleSpace Y]
-
-
-
 
 theorem exists_convexBody_parametric_extension {C : Set E}
     (hC : IsClosed C) (hc : Convex ℝ C) (hi : (interior C).Nonempty)

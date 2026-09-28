@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M15.Thm8_10_OrdinaryProduct
 import PoincareConjecture.Proofs.M15.Lemma8_7_LiftedVelocity
 import PoincareConjecture.Definitions.Ch06.LGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -25,8 +16,6 @@ namespace PoincareConjecture.Proofs.M15
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {I : SpacetimeInterval}
-
-
 
 theorem ordinaryProduct_backwardIntegrand_eq
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -86,9 +75,6 @@ theorem ordinaryProduct_backwardIntegrand_eq
   unfold backwardLIntegrand M14BackwardLIntegrand M14RawLIntegrand
   erw [hscalar, hmetric]
   rfl
-
-
-
 
 theorem ordinaryProduct_backwardPath_projection
     (hM12 : GeneralizedRicciGaugeTheory.{u} n)

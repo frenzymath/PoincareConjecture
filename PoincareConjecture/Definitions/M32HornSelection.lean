@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M31SingularRegularLimit
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -16,8 +8,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 structure CommonSurgeryScaleSelector where
   h : ℝ → ℝ → ℝ
   h_pos : ∀ rho delta, 0 < rho → 0 < delta → 0 < h rho delta
@@ -25,10 +15,6 @@ structure CommonSurgeryScaleSelector where
   h_mono_rho : ∀ delta, 0 ≤ delta →
     MonotoneOn (fun rho => h rho delta) (Set.Ici 0)
   h_mono_delta : ∀ rho, 0 ≤ rho → MonotoneOn (h rho) (Set.Ici 0)
-
-
-
-
 
 structure M32DeepHornScaleSelection (epsilon C analyticConstant : ℝ)
     extends CommonSurgeryScaleSelector where
@@ -54,13 +40,10 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
 
-
 structure RepairedHornSelectionData
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
     (H : SingularTimeAssumptions F T M) where
   limit : SingularLimitConclusion H
-
-
 
 def SingularTimeAssumptions.restrictRadius
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
@@ -78,8 +61,6 @@ def SingularTimeAssumptions.restrictRadius
       H.scalar_gradient_bound t ht x (hthreshold.trans hx)
     canonical_control := fun t ht hregular x hx =>
       H.canonical_control t ht hregular x (hthreshold.trans hx) }
-
-
 
 def SingularLimitConclusion.restrictRadius
     {F : GeneralizedRicciFlowData.{u}} {T : ℝ}

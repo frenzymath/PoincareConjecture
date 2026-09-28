@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Projective.Diameter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Projection
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +14,6 @@ namespace PoincareConjecture
 variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 theorem roundCylinderClose_scaled_pullback_upper
     (g : RiemannianMetric 3 M) (Φ : RoundCylinderSpace → M)
@@ -63,8 +55,6 @@ theorem hasDerivAt_cylinderCover_comp_axis
   have hcomp := ((hf _).mdifferentiableAt (by simp)).hasMFDerivAt.comp t
     ((hmap.mdifferentiableAt (by simp)).hasMFDerivAt.comp t hpair)
   exact hcomp.hasFDerivAt.hasDerivAt
-
-
 
 theorem cylinderCover_levelGraph_inner_mfderiv_le
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (Φ : RoundCylinderSpace → M)
@@ -177,8 +167,6 @@ theorem cylinderCover_levelGraph_inner_mfderiv_le
   change 2 * r ^ 2 * (2 * V + K ^ 2 * V) ≤ (2 * r * (1 + K)) ^ 2 * V
   have hnonneg := mul_nonneg hs (mul_nonneg hV (show 0 ≤ 8 * K + 2 * K ^ 2 by positivity))
   nlinarith only [hnonneg]
-
-
 
 theorem cylinderCover_levelGraph_tangentNorm_mfderiv_le
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g) (Φ : RoundCylinderSpace → M)

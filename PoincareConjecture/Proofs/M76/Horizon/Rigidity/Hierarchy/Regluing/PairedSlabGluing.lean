@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.LocalPLInterio
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coordinates.CompactDomainRestriction
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.Mathlib.ShiftedCircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -74,8 +65,6 @@ theorem complementary_closed_circle_arcs_union
   · exact Or.inl ⟨t, ⟨ht.1, htb⟩, htx⟩
   · exact Or.inr ⟨t, ⟨(lt_of_not_ge htb).le, ht.2.le⟩, htx⟩
 
-
-
 theorem isLocallyInjective_of_complementary_marked_slabs
     {X Y : Type*} [TopologicalSpace X] {p : ℝ} [Fact (0 < p)]
     {S P Q B : Set X} (hP : IsClosed P) (hQ : IsClosed Q) (hcover : S ⊆ P ∪ Q)
@@ -96,8 +85,6 @@ theorem isLocallyInjective_of_complementary_marked_slabs
     rw [← complementary_closed_circle_arcs_inter p hab hw]
     exact ⟨hmapP hyP, hxy ▸ hmapQ hxQ⟩
   · exact hyQ
-
-
 
 theorem isLocallyInjective_on_literal_complementary_slabs
     {X Y : Type*} [TopologicalSpace X] {p : ℝ} [Fact (0 < p)]
@@ -143,8 +130,6 @@ local notation "C0" => AddCircle p
 local notation "Ann" => squareAnnulus 8 1
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
 theorem hamiltonZero_mem_frontier_of_locally_injective_phase_endpoint
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}
     {d : κ → OpenPartialHomeomorph X0 (Fin 3 → ℝ)} {psi : C(H0, H0)}
@@ -171,9 +156,6 @@ theorem hamiltonZero_mem_frontier_of_locally_injective_phase_endpoint
     exact ⟨U, hU, hy, fun z hz w hw hzw => hi hz hw (congrArg Subtype.val hzw)⟩
   exact hf.mem_frontier_of_short_circle_endpoint hi phase hopen hab hw
     (fun y => hmap y.property) ⟨x, hx⟩ hend
-
-
-
 
 theorem hamiltonZero_locally_injective_of_complementary_slabs
     {ι κ : Type*} {e : ι → OpenPartialHomeomorph X0 (Fin 3 → ℝ)}
@@ -231,8 +213,6 @@ theorem hamiltonZero_nonfolded_annulus_target_injective
     (congrArg Prod.snd hcoords)
   refine Prod.ext (Subtype.ext ?_) (congrArg (fun z : (C0 × C0) × C0 => z.1.1) hcoords)
   exact mul_left_cancel₀ (sub_ne_zero.mpr hne.symm) (add_right_cancel heq)
-
-
 
 theorem hamiltonZero_nonfolded_annuli_locally_injective
     {η : Type*} [Finite η] (phi : C(H0, H0))

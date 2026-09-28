@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeShortPathCapture
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ThreeQuarterSlabCompetitors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M28.SourceTubeData
 variable {epsilon C A D0 D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D0 D}
   {S : CounterexampleNeckSegment E}
-
-
-
 
 theorem exists_central_slab_competitor_in_tube (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 10000 : ℝ)) (f : UnitTwoSphere → ℝ)
@@ -70,9 +57,6 @@ theorem exists_central_slab_competitor_in_tube (T : SourceTubeData S)
     (hlength.trans_le (ENNReal.ofReal_le_ofReal hgap.le))
   exact ⟨gamma, h0, h1, hgamma, hN, hT, hlength⟩
 
-
-
-
 theorem exists_fresh_slab_competitor_in_tube (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 10000 : ℝ)) (f : UnitTwoSphere → ℝ)
     (hf : Continuous f) (hbound : ∀ q, |f q| < epsilon⁻¹ / 32)
@@ -93,10 +77,6 @@ theorem exists_fresh_slab_competitor_in_tube (T : SourceTubeData S)
         ENNReal.ofReal ((151 / 200 : ℝ) * N.scale * epsilon⁻¹) :=
   T.exists_central_slab_competitor_in_tube hsmall f hf hbound N heps hscale
     N.center_on_central_sphere hcenter hside hterminal hx hheight
-
-
-
-
 
 theorem fresh_three_quarter_slab_subset (T : SourceTubeData S)
     (hsmall : epsilon ≤ (1 / 10000 : ℝ)) (f : UnitTwoSphere → ℝ)

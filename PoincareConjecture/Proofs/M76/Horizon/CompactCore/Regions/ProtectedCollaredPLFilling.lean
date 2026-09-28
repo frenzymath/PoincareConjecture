@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.ProtectedInnerSquareFilling
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Regions.ProtectedInnerSquarePLApproximation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry unitInterval

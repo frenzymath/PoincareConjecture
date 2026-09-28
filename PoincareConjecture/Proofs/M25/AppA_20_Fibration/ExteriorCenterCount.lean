@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_1_Necks.Overlap_A11
 import Mathlib.Topology.EMetricSpace.Basic
 import Mathlib.Data.Fintype.Card
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem NeckOnlyCover.exists_exterior_center_count_bound :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

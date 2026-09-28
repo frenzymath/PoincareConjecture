@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M08.RegularizedAction
 import PoincareConjecture.Statements.Ch04.CurvatureTheory
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -98,7 +91,6 @@ theorem sqrt_mem_square_interior {a b τ : ℝ} (ha : 0 ≤ a)
     0 < τ ∧ Real.sqrt τ ∈ Set.Ioo (Real.sqrt a) (Real.sqrt b) := by
   have hpos := ha.trans_lt hτ.1
   exact ⟨hpos, Real.sqrt_lt_sqrt ha hτ.1, Real.sqrt_lt_sqrt hpos.le hτ.2⟩
-
 
 noncomputable def backwardExtensionOfSquare {J : Set ℝ} {F : RicciFlow n M J}
     {T τ₁ τ₂ : ℝ} (p : BackwardTimePath F T τ₁ τ₂)
@@ -277,7 +269,6 @@ theorem regularizedEulerResidual_square_transport (hM04 : RicciFlowCurvatureTheo
   rw [hmetric]
   field_simp [hs0]
   ring
-
 
 theorem isBackwardLGeodesic_of_regularizedEuler_extension {J : Set ℝ}
     {F : RicciFlow n M J} {T τ₁ τ₂ : ℝ} (hM04 : RicciFlowCurvatureTheory.{u})

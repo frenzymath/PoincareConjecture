@@ -1,21 +1,11 @@
 import Mathlib.Topology.MetricSpace.Completion
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace UniformSpace.Completion
-
-
 
 theorem radius_le_dist_of_precompact_ball
     {Y : Type*} [MetricSpace Y] (E : Completion Y)

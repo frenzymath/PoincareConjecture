@@ -2,23 +2,11 @@ import PoincareConjecture.Statements.M34StandardCapExistence
 import PoincareConjecture.Proofs.M27.Providers
 import PoincareConjecture.Proofs.M30.Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m34StandardCapPredecessorsFromMilestones :
     M34StandardCapPredecessors := by

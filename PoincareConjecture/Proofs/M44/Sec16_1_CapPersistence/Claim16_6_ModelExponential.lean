@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_StandardPoleBalls
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_InitialExponential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Topology
 namespace PoincareConjecture.M44
 
 local notation "E" => StandardCapSpace
-
-
 
 theorem standardRadialExponential_isGeodesicOn (g₀ : StandardInitialMetric) (v : E) :
     g₀.metric.IsGeodesicOn (fun t : ℝ => standardRadialExponential g₀ (t • v)) univ := by
@@ -41,25 +30,17 @@ theorem standardRadialExponential_isGeodesicOn (g₀ : StandardInitialMetric) (v
   · simp only [mem_ofPred_eq, Metric.mem_ball, dist_zero_right, R]
     linarith [norm_nonneg v]
 
-
-
 noncomputable def standardFrameExponential (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     E → E := standardRadialExponential g₀ ∘ L
-
-
 
 theorem standardFrameExponential_contDiff (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     ContDiff ℝ ∞ (standardFrameExponential g₀ L) :=
   (standardRadialExponential_contDiff g₀).comp L.contDiff
 
-
-
 theorem standardFrameExponential_zero (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     standardFrameExponential g₀ L 0 = 0 := by
   simp only [standardFrameExponential, Function.comp_apply, map_zero,
     standardRadialExponential_zero]
-
-
 
 theorem standardFrameExponential_hasFDerivAt_zero
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
@@ -69,14 +50,10 @@ theorem standardFrameExponential_hasFDerivAt_zero
   simpa only [standardFrameExponential, ContinuousLinearMap.id_comp] using
     hd.comp 0 L.hasFDerivAt
 
-
-
 noncomputable def standardFramePhase (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)
     (z : E × ℝ) : E × E :=
   (standardFrameExponential g₀ L (z.2 • z.1),
     fderiv ℝ (standardFrameExponential g₀ L) (z.2 • z.1) z.1)
-
-
 
 theorem standardFramePhase_contDiff (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) :
     ContDiff ℝ ∞ (standardFramePhase g₀ L) := by
@@ -84,8 +61,6 @@ theorem standardFramePhase_contDiff (g₀ : StandardInitialMetric) (L : E ≃L[�
   have harg : ContDiff ℝ ∞ (fun z : E × ℝ => z.2 • z.1) := by fun_prop
   exact (he.comp harg).prodMk
     (((he.fderiv_right (m := ∞) (by simp)).comp harg).clm_apply contDiff_fst)
-
-
 
 theorem standardFramePhase_eq_curve_velocity
     (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (v : E) (t : ℝ) :
@@ -97,16 +72,11 @@ theorem standardFramePhase_eq_curve_velocity
   refine Prod.ext rfl ?_
   simpa only [standardFramePhase, Function.comp_def, id_eq, one_smul] using hd.deriv.symm
 
-
-
 theorem standardFramePhase_initial (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E) (v : E) :
     standardFramePhase g₀ L (v, 0) = (0, L v) := by
   simp only [standardFramePhase, zero_smul, standardFrameExponential_zero,
     (standardFrameExponential_hasFDerivAt_zero g₀ L).fderiv,
     ContinuousLinearEquiv.coe_coe]
-
-
-
 
 theorem standardFramePhase_hasDerivAt (g₀ : StandardInitialMetric) (L : E ≃L[ℝ] E)
     (v : E) (t : ℝ) :

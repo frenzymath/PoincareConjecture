@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SourceEmbedding.UniformMetric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_quadratic_of_unit_error
     {M : Type u} [TopologicalSpace M]
@@ -52,8 +42,6 @@ theorem terminalGerms_quadratic_of_unit_error
   nlinarith [g.pos x v hv]
 
 open ChartDistance
-
-
 
 theorem terminalGerms_source_quadratic_bound
     (U : ℕ → Set (EuclideanSpace ℝ (Fin 3))) (hU : ∀ i, IsOpen (U i))

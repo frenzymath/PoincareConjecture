@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.M04.FixedExtension
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

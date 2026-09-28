@@ -1,8 +1,6 @@
 import Mathlib.Geometry.Manifold.IntegralCurve.ExistUnique
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem eqOn_of_isMIntegralCurveOn
     {X : (x : M) → TangentSpace (𝓡 n) x} {U : Set M} (hU : IsOpen U)
@@ -52,8 +48,6 @@ theorem eqOn_of_isMIntegralCurveOn
       (hX.contMDiffAt (hU.mem_nhds (hαU t ht.2)))
       (hα.isMIntegralCurveAt hmem) (hβ.isMIntegralCurveAt hmem) ht.1
     exact (heq.and hmem).mono (fun _ hs => hs)
-
-
 
 theorem exists_gluing_of_integralCurves
     {X : (x : M) → TangentSpace (𝓡 n) x} {U : Set M} (hU : IsOpen U)

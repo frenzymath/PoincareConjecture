@@ -1,25 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
-
 
 theorem IsCompact.exists_frontier_radial_pole_of_linear_image
     {C : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

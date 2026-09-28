@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_6_Comparison.AnnulusReflectionGeometry
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AreaEnergy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem m64AreaDensity_comp_annulusFlip (g : RiemannianMetric n M)
     (f : LoopPlane → M) (z : LoopPlane) :
@@ -50,9 +38,6 @@ theorem m64AreaDensity_comp_annulusFlip (g : RiemannianMetric n M)
   simp only [m60AreaDensity, Matrix.det_fin_two, m60AreaGram, h0, h1, map_neg,
     neg_apply, neg_neg, neg_mul_neg]
 
-
-
-
 theorem m64AreaDensity_integrableOn_comp_annulusFlip (g : RiemannianMetric n M)
     (f : LoopPlane → M) (hf : IntegrableOn (m60AreaDensity g f) m64AnnulusDomain volume) :
     IntegrableOn (m60AreaDensity g (fun w => f (m64AnnulusFlip w)))
@@ -65,9 +50,6 @@ theorem m64AreaDensity_integrableOn_comp_annulusFlip (g : RiemannianMetric n M)
   simp_rw [m64AreaDensity_comp_annulusFlip]
   exact hi
 
-
-
-
 theorem m64AnnulusArea_comp_annulusFlip (g : RiemannianMetric n M)
     (f : LoopPlane → M) :
     m64AnnulusArea g (fun w => f (m64AnnulusFlip w)) = m64AnnulusArea g f := by
@@ -76,9 +58,6 @@ theorem m64AnnulusArea_comp_annulusFlip (g : RiemannianMetric n M)
   have h := m64AnnulusFlip_measurePreserving.setIntegral_preimage_emb
     m64AnnulusFlip.toMeasurableEquiv.measurableEmbedding (m60AreaDensity g f) m64AnnulusDomain
   rwa [m64AnnulusFlip_preimage_domain] at h
-
-
-
 
 noncomputable def m64Annulus_reverse {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) : M64Annulus g c1 c0 where
@@ -114,9 +93,6 @@ noncomputable def m64Annulus_reverse {g : RiemannianMetric n M} {c0 c1 : ℝ →
     exact (hz ((m64AnnulusFlip_mem_domain z).mpr hzdom)).comp z
       (m64AnnulusFlip_hasFDerivAt z).hasMFDerivAt.mdifferentiableAt
   area_integrable := m64AreaDensity_integrableOn_comp_annulusFlip g A.map A.area_integrable
-
-
-
 
 theorem m64Annulus_reverse_area {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
     (A : M64Annulus g c0 c1) : (m64Annulus_reverse A).area = A.area :=

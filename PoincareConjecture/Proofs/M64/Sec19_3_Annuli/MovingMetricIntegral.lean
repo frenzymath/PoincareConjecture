@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMetricEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapVariation
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
 
-
-
-
-
 theorem m64Annulus_moving_metric_energy_contDiffAt
     (F : RicciFlow n M (Icc a b)) {v : ℝ × LoopPlane → M}
     (t : ℝ) {q : ℝ × LoopPlane} (ht : t + q.1 ∈ Ioo a b)
@@ -39,11 +24,6 @@ theorem m64Annulus_moving_metric_energy_contDiffAt
   exact (m64MixedAnnulusEnergy_contDiffAt F
     (q := (t + q.1, q)) ht hv).comp (f := fun w : ℝ × LoopPlane => (t + w.1, w)) q
       ((contDiffAt_const.add contDiffAt_fst).prodMk contDiffAt_id)
-
-
-
-
-
 
 theorem m64AnnulusEnergy_hasDerivAt_of_local_moving_metric
     (F : RicciFlow n M (Icc a b)) {t : ℝ} (ht : t ∈ Ioo a b)

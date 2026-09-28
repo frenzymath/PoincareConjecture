@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressMoment
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryHalfTurnBoundary
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.PeriodicCircleShift
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 set_option backward.isDefEq.respectTransparency false
@@ -43,9 +32,6 @@ private theorem stress_integrable {U V : LoopPlane → ℝ}
   exact (m64Annulus_continuous_mul_integrable hU hc0).add
     (m64Annulus_continuous_mul_integrable hV hc1)
 
-
-
-
 theorem m64LocalizedStress_halfTurn
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)
     {eta rho : ℝ → ℝ} (heta : ContDiff ℝ ∞ eta)
@@ -73,9 +59,6 @@ theorem m64LocalizedStress_halfTurn
         hsecond]
     _ = _ := m64AnnulusHalfTurn_integral_comp
       (stress_integrable hU hV heta hrho).aestronglyMeasurable
-
-
-
 
 theorem m64LocalizedStress_of_two_cuts
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)

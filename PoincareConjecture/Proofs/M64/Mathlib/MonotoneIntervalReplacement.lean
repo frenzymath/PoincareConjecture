@@ -3,18 +3,6 @@ import Mathlib.Topology.Order.DenselyOrdered
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -23,11 +11,6 @@ noncomputable section
 open Set
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Monotone_interval_replacement
     {f g : ℝ → ℝ} {a b : ℝ} (hab : a ≤ b)

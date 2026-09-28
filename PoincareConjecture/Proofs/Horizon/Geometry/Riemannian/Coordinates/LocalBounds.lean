@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Manifold
@@ -26,7 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_compact_coordinate_bounds (g : RiemannianMetric n M) (q : M) :
     ∃ r C : ℝ, 0 < r ∧ 0 < C ∧
@@ -88,7 +77,6 @@ theorem exists_compact_coordinate_bounds (g : RiemannianMetric n M) (q : M) :
       (Real.sqrt_nonneg _))
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_compact_coordinate_ellipticity (g : RiemannianMetric n M) (q : M) :
     ∃ r C : ℝ, 0 < r ∧ 0 < C ∧

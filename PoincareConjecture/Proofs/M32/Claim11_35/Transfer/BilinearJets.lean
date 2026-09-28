@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.SpatialJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -82,8 +68,6 @@ private theorem bilinear_dual_sum_apply (d : Fin 3 → Fin 3 → ℝ) (a b : Fin
     EuclideanSpace.inner_single_left]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem blowup_uniform_bilinear_errorJets
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

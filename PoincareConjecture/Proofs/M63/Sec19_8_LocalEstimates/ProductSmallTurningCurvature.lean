@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.C2SmallSubarcStabili
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.ProductAmbientDerivativeBounds
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.C2EstimatesFromLocal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -28,9 +17,6 @@ open M62
 variable {n : Nat} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace Real (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : Real}
-
-
-
 
 theorem m63CircleProduct_small_turning_curvature [T2Space M]
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))

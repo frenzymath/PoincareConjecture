@@ -4,17 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.PairedPositiveApexLinearGerms
 import PoincareConjecture.Proofs.M76.Mathlib.OriginalCutLinkAccumulation
 import PoincareConjecture.Proofs.M76.Mathlib.MinimalFaceRadialTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -23,11 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] {n : ℕ}
-
-
-
-
-
 
 theorem exists_auxiliary_original_polygon_cut_box
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

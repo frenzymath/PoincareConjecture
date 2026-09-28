@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.DisjointPhaseColl
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.PhaseBoundaryGeometry
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Arcs.Mathlib.ShiftedCircleClosedArc
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology Poincare.Topology
 
@@ -34,8 +25,6 @@ private theorem image_reverse_collar {E X : Type*} (c : E × ℝ → X)
     exact ⟨(z, -t), ⟨hz, hI t ht⟩, rfl⟩
   · rintro ⟨⟨z, t⟩, ⟨hz, ht⟩, rfl⟩
     exact ⟨(z, -t), ⟨hz, hI t ht⟩, by simp⟩
-
-
 
 theorem exists_hamiltonZero_first_boundary_collars
     {E : Type*} [TopologicalSpace E]

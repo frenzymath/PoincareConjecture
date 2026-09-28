@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M15.Lemma8_3_SmallPart
 import PoincareConjecture.Proofs.M15.Lemma8_9_LargePart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M15
-
-
-
 
 theorem exists_actualBallCylinder_reducedVolume_bound
     (hM04 : RicciFlowCurvatureTheory.{u}) (n : ℕ)

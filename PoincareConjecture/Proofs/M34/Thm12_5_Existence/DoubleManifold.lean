@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M34.Mathlib.OpenSubsetTransitionSmooth
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.Gluing.Smooth
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Poincare.Gluing
@@ -21,15 +12,11 @@ namespace PoincareConjecture.M34
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
 
-
-
 noncomputable abbrev endDoublePieceChartedSpace (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : ChartedSpace StandardCapSpace (EndDoublePiece e L) := by
   let := endDoublePiece_nonempty e hL
   have hU := endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)
   exact hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
-
-
 
 theorem endDoublePiece_isManifold (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -39,8 +26,6 @@ theorem endDoublePiece_isManifold (e : StandardCylindricalEnd g)
   have hU := endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)
   exact hU.isOpenEmbedding_subtypeVal.isManifold_singleton
 
-
-
 theorem endDoublePiece_subtypeVal_isLocalDiffeomorph (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
     let := endDoublePieceChartedSpace e hL
@@ -48,8 +33,6 @@ theorem endDoublePiece_subtypeVal_isLocalDiffeomorph (e : StandardCylindricalEnd
   let := endDoublePiece_nonempty e hL
   exact Poincare.isLocalDiffeomorph_subtypeVal (𝓡 3) _
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)) ∞
-
-
 
 theorem endDoubleTransition_contMDiffOn (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -61,8 +44,6 @@ theorem endDoubleTransition_contMDiffOn (e : StandardCylindricalEnd g)
     (endDoubleCollarHomeomorph e hL)
     (endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (endAxialReflection_collar_contMDiffOn e hL) (endDoubleCollar_subset_truncation e hL)
-
-
 
 theorem endDoubleOverlap_smooth (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) :
@@ -82,15 +63,11 @@ theorem endDoubleOverlap_smooth (e : StandardCylindricalEnd g)
       twoPieceOverlap_transition_ne _ _ hij]
     exact endDoubleTransition_contMDiffOn e hL
 
-
-
 noncomputable instance endDouble_chartedSpace (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : ChartedSpace StandardCapSpace (EndDouble e hL) := by
   let := endDoublePiece_nonempty e hL
   exact quotientChartedSpace (fun _ : Bool => endTruncation e (L + 1))
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith)) (endDoubleOverlap e hL)
-
-
 
 instance endDouble_isManifold (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : IsManifold (𝓡 3) ∞ (EndDouble e hL) := by
@@ -99,14 +76,10 @@ instance endDouble_isManifold (e : StandardCylindricalEnd g)
     (fun _ => endTruncation_isOpen e (show 0 ≤ L + 1 by linarith))
     (endDoubleOverlap e hL) (endDoubleOverlap_smooth e hL)
 
-
-
 instance endDouble_nonempty (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) : Nonempty (EndDouble e hL) :=
   let x := Classical.choice (endDoublePiece_nonempty e hL)
   ⟨(endDoubleOverlap e hL).include false x⟩
-
-
 
 theorem endDouble_include_isLocalDiffeomorph (e : StandardCylindricalEnd g)
     {L : ℝ} (hL : 1 < L) (i : Bool) :

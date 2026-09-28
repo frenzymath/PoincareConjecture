@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeLargeInitialBall
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRegion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
 
 theorem tube_initial_neck_distance_lt (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k)) (k : ℕ)
@@ -103,8 +92,6 @@ theorem tube_initial_neck_distance_lt (H : CounterexampleNeckFamily E)
       (H.normalizedSliceMetric k).pathELength γ 0 1 :=
     sInf_le ⟨γ, hγ, h0, h1, hγT, rfl⟩
   exact hle.trans_lt hnormalized
-
-
 
 theorem tubeCritical_contains_initial_neck (H : CounterexampleNeckFamily E)
     (T : ∀ k, SourceTubeData (H.segment k))

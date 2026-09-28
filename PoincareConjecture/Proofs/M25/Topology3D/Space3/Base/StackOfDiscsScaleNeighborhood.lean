@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleCha
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldLocalization
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,7 +10,6 @@ open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 namespace PoincareConjecture.M25.Topology3D
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
 
 theorem exists_stackCapCoreNeighborhood (C : SurgeryCapTag psi u)
     (hpsi : IsCollarEmbedding psi) (K L : Set E3) (_hK : IsCompact K) (_hL : IsCompact L)
@@ -228,7 +217,6 @@ theorem exists_stackCapCoreNeighborhood (C : SurgeryCapTag psi u)
   have hh := congrArg (fun y => C.sign * (inner ℝ (u : E3) y - s)) heq
   rw [hheight ⟨x, hx⟩ w, hheight theta d] at hh
   exact (ne_of_lt hw.2) hh
-
 
 theorem exists_stackCapScaleCutoff (C : SurgeryCapTag psi u)
     (lambda : ℝ) (hlambda : 0 < lambda) (hsmall : lambda < C.scale)

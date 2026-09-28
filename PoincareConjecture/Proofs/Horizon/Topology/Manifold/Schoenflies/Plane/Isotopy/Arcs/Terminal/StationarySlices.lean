@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.CommonNeighborhood
 import Mathlib.Analysis.Normed.Affine.MazurUlam
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +34,6 @@ private theorem frame_projection_translate (d : TerminalSaddleGeometry M P p e)
   rw [map_add, map_smul, hJv]
   ext i
   fin_cases i <;> simp [Saddle.toE2, axis]
-
-
 
 theorem terminal_actual_slice_eq_patch_union_strips
     (d : TerminalSaddleGeometry M P p e) {t : Real} (ht : t ∈ Icc (-d.delta) d.delta) :
@@ -76,8 +72,6 @@ theorem terminal_actual_slice_eq_patch_union_strips
   apply image_congr
   intro s _
   exact frame_projection_translate d _ t
-
-
 
 theorem exists_terminal_stationary_exterior_neighborhood_within
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)
@@ -131,8 +125,6 @@ theorem exists_terminal_stationary_exterior_neighborhood_within
   · intro t ht
     simpa only [add_zero] using (hexterior t ht).trans
       (hexterior 0 ⟨by linarith, hδ.le⟩).symm
-
-
 
 theorem exists_terminal_stationary_exterior_neighborhood
     (hg : g ∈ M.tree.leaves) (d : TerminalSaddleGeometry M P p e)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedNearAncestor
 import PoincareConjecture.Proofs.M47.SeedVolumeAlternatives
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +12,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open M46
-
-
-
 
 theorem exists_volume_or_small_component_positive_ancestry
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

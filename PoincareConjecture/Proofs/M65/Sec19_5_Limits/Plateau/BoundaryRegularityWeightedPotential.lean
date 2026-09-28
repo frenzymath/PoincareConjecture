@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityKernel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory Complex
@@ -18,11 +8,6 @@ open scoped Topology
 namespace PoincareConjecture.M65Boundary
 
 open M65Branch
-
-
-
-
-
 
 theorem weighted_cauchy_estimate {b : ℝ} (hb : 1 < b) (hb2 : b < 2) :
     ∃ C > 0, ∀ (h : ℂ → ℂ) (x : ℂ), AEStronglyMeasurable h volume →

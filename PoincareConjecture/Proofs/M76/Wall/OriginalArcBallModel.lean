@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalArcDualGeometry
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.OrderedIntervalComplex
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.ArcDualBallChain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -25,11 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 
 open Classical in
-
-
-
-
-
 
 theorem PLDomain.exists_arc_ball_model
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

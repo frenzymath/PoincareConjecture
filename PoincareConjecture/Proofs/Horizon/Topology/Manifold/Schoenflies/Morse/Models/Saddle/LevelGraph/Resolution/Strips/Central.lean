@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Resolution.Strips.Labels
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -44,8 +42,6 @@ theorem central_strip_exterior_iff {M : Type*} [TopologicalSpace M]
     exact hus ▸ hu
   · intro hmid
     exact (hcover.subset (mem_iUnion_of_mem i ⟨(s, 0), ⟨hmid, rfl⟩, rfl⟩)).2
-
-
 
 theorem central_strip_test_points {M : Type*} [TopologicalSpace M]
     {h : M → Real} {c r : Real}

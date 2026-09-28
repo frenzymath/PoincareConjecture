@@ -1,25 +1,11 @@
 import Mathlib.Data.Real.Basic
 import Mathlib.Data.Set.Lattice
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
-
 
 theorem pointed_collar_level_source_partition {X : Type*}
     {B b k : Set X} {q : X} {upper g r : X → ℝ} {t a : ℝ}

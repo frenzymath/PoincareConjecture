@@ -3,21 +3,12 @@ import Mathlib.Analysis.Normed.Module.WeakDual
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
 open Filter Topology
 
 namespace PoincareConjecture.M08
-
 
 theorem exists_weak_subsequence {H : Type*} [NormedAddCommGroup H]
     [InnerProductSpace ℝ H] [CompleteSpace H] [TopologicalSpace.SeparableSpace H]
@@ -50,7 +41,6 @@ theorem exists_weak_subsequence {H : Type*} [NormedAddCommGroup H]
       exact heval w
     have htest : Tendsto (fun k ↦ inner ℝ (v (φ k)) z) atTop (𝓝 (ζ z)) := h
     simpa only [heval, hw] using htest
-
 
 theorem quadratic_energy_support {H : Type*} [NormedAddCommGroup H]
     [NormedSpace ℝ H] (v : ℕ → H) (w : H) (C : ℝ) (hC : 0 ≤ C)
@@ -90,7 +80,6 @@ theorem quadratic_energy_support {H : Type*} [NormedAddCommGroup H]
   simp only [ContinuousLinearMap.sub_apply] at herr
   linarith
 
-
 theorem quadratic_energy_le_of_weak_limit {H : Type*} [NormedAddCommGroup H]
     [NormedSpace ℝ H] (v : ℕ → H) (w : H) (C : ℝ) (hC : 0 ≤ C)
     (hbound : ∀ k, ‖v k‖ ≤ C)
@@ -103,7 +92,6 @@ theorem quadratic_energy_le_of_weak_limit {H : Type*} [NormedAddCommGroup H]
   obtain ⟨ell, hlim, hell⟩ := quadratic_energy_support v w C hC hbound hweak Q Qk hpositive hQ
   exact le_of_tendsto_of_tendsto hlim he (Filter.Eventually.of_forall
     (fun k ↦ (hell k).trans (henergy k)))
-
 
 theorem finite_quadratic_action_le {ι : Type*} [Fintype ι] {H : ι → Type*}
     [∀ i, NormedAddCommGroup (H i)] [∀ i, NormedSpace ℝ (H i)]

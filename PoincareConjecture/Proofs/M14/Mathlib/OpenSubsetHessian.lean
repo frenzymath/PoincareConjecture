@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.OpenSubsetChart
 import PoincareConjecture.Proofs.M09.LocalCenteredHessian
 import PoincareConjecture.Proofs.M09.SecondDerivativeComposition
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} (U : TopologicalSpace.Opens (EuclideanSpace ℝ (Fin n)))
 
-
-
 theorem openSubset_chartVectorField (x y : U) (v : EuclideanSpace ℝ (Fin n)) :
     Proofs.M09.chartVectorField x v y = v := by
   change (mfderiv (𝓡 n) (𝓡 n)
@@ -30,9 +20,6 @@ theorem openSubset_chartVectorField (x y : U) (v : EuclideanSpace ℝ (Fin n)) :
   rw [Proofs.M11.mfderiv_openSubtype_val]
   change (ContinuousLinearMap.id ℝ (EuclideanSpace ℝ (Fin n))).inverse v = v
   simp
-
-
-
 
 theorem openSubset_secondDeriv_comp {g : RiemannianMetric n U}
     (D : LeviCivitaData g) (f : U → ℝ) (O : Set U) (hO : IsOpen O)

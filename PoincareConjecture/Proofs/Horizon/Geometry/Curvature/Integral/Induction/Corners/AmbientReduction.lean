@@ -5,22 +5,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Similarit
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Pullback
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularFiber.UniversalProperty
 
-
-
-
-
-
-
-
 open Set Function Filter TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology
 universe u
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
-
-
-
 
 theorem PoincareConjecture.normalizedCornerScalarBound_of_connected_ambient
     (n m k : ℕ) (hdim : n = m+k) (δ H η C : ℝ)

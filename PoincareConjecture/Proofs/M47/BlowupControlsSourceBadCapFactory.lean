@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceCapFactoryAbove
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceTipExclusion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_first_failure_search_bad_cap_cutoff_above
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

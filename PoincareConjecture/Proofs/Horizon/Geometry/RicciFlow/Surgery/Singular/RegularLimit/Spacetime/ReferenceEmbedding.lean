@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Geometry
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function TopologicalSpace Topology
@@ -21,7 +14,6 @@ variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
 
-
 def interiorSpacetimeForward (R : SingularTimeReference F T M)
     (p : Ioo R.tMinus T × M) : F.point :=
   R.spacetime_forward (⟨p.1, ⟨p.1.property.1.le, p.1.property.2⟩⟩, p.2)
@@ -30,7 +22,6 @@ def interiorSpacetimeForward (R : SingularTimeReference F T M)
     (p : Ioo R.tMinus T × M) :
     (R.interiorSpacetimeForward p).1 = (p.1 : ℝ) :=
   R.spacetime_time _
-
 
 theorem interiorSpacetimeForward_range (R : SingularTimeReference F T M) :
     range R.interiorSpacetimeForward = {p : F.point | p.1 ∈ Ioo R.tMinus T} := by
@@ -47,7 +38,6 @@ theorem interiorSpacetimeForward_range (R : SingularTimeReference F T M) :
     refine ⟨(⟨t, ht.symm ▸ hp⟩, x), ?_⟩
     exact htx
 
-
 theorem interiorSpacetimeForward_isOpenEmbedding (R : SingularTimeReference F T M) :
     IsOpenEmbedding R.interiorSpacetimeForward := by
   refine ⟨?_, ?_⟩
@@ -56,7 +46,6 @@ theorem interiorSpacetimeForward_isOpenEmbedding (R : SingularTimeReference F T 
         fun _ ht => ⟨ht.1.le, ht.2⟩)).prodMap IsEmbedding.id)
   · rw [R.interiorSpacetimeForward_range]
     exact isOpen_Ioo.preimage F.time_continuous
-
 
 def openSpacetimeForward (R : SingularTimeReference F T M) (U : Opens M)
     (p : Ioo R.tMinus T × U) : F.point :=
@@ -67,13 +56,11 @@ def openSpacetimeForward (R : SingularTimeReference F T M) (U : Opens M)
     (R.openSpacetimeForward U p).1 = (p.1 : ℝ) :=
   R.interiorSpacetimeForward_time _
 
-
 theorem openSpacetimeForward_eq (R : SingularTimeReference F T M)
     (U : Opens M) (p : Ioo R.tMinus T × U) :
     R.openSpacetimeForward U p =
       (⟨p.1, R.forward p.1 ⟨p.1.property.1.le, p.1.property.2⟩ p.2⟩ : F.point) :=
   Sigma.ext (R.spacetime_time _) (R.spacetime_spatial _)
-
 
 theorem openSpacetimeForward_isOpenEmbedding (R : SingularTimeReference F T M)
     (U : Opens M) : IsOpenEmbedding (R.openSpacetimeForward U) :=
@@ -82,7 +69,6 @@ theorem openSpacetimeForward_isOpenEmbedding (R : SingularTimeReference F T M)
 theorem openSpacetimeForward_injective (R : SingularTimeReference F T M) (U : Opens M) :
     Injective (R.openSpacetimeForward U) :=
   (R.openSpacetimeForward_isOpenEmbedding U).injective
-
 
 theorem mem_range_openSpacetimeForward_iff (R : SingularTimeReference F T M)
     (U : Opens M) (p : F.point) :

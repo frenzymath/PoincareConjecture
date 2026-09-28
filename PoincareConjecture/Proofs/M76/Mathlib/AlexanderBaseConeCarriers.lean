@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalStar
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem mem_convexJoin_zero_iff (s : Set E) (x : E) :
     x ∈ convexJoin ℝ {0} s ↔ ∃ y ∈ s, ∃ r ∈ Icc (0 : ℝ) 1, x = r • y := by
@@ -31,9 +19,6 @@ theorem mem_convexJoin_zero_iff (s : Set E) (x : E) :
   · rintro ⟨y, hy, r, hr, rfl⟩
     exact ⟨0, mem_singleton 0, y, hy, 1 - r, r,
       sub_nonneg.mpr hr.2, hr.1, by ring, by simp⟩
-
-
-
 
 theorem LinearMap.injOn_normalize_of_level (L : E →ₗ[ℝ] ℝ) {s : Set E}
     {c : ℝ} (hc : c ≠ 0) (hL : ∀ x ∈ s, L x = c) :
@@ -49,9 +34,6 @@ theorem LinearMap.injOn_normalize_of_level (L : E →ₗ[ℝ] ℝ) {s : Set E}
 
 namespace Geometry.SimplicialComplex
 
-
-
-
 theorem linearIndependent_faces_of_linear_level (K : SimplicialComplex ℝ E)
     (L : E →ₗ[ℝ] ℝ) {c : ℝ} (hc : c ≠ 0)
     (hL : ∀ x ∈ K.space, L x = c) :
@@ -59,10 +41,6 @@ theorem linearIndependent_faces_of_linear_level (K : SimplicialComplex ℝ E)
   intro s hs
   exact (K.indep hs).linearIndependent_of_linear_level L hc
     (fun x => hL x (K.subset_space hs x.property))
-
-
-
-
 
 theorem coneAtZero_space_eq_convexJoin [DecidableEq E] (K : SimplicialComplex ℝ E)
     (hlin : ∀ s ∈ K.faces, LinearIndependent ℝ ((↑) : s → E))
@@ -90,10 +68,6 @@ theorem coneAtZero_space_eq_convexJoin [DecidableEq E] (K : SimplicialComplex �
     apply convexHull_subset_space (insert_zero_mem_coneAtZero_faces hlin hrad hs)
     rw [Finset.coe_insert]
     exact smul_mem_convexHull_insert_zero hys hr
-
-
-
-
 
 theorem exists_finite_cone_of_linear_level (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hne : K.space.Nonempty) (L : E →ₗ[ℝ] ℝ)

@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonRelativePLApproximati
 import PoincareConjecture.Proofs.M76.Mathlib.CompactPLNeighborhoodModel
 import Mathlib.Geometry.Manifold.ChartedSpace
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,8 +13,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X}
 
-
-
 theorem PLDomain.locallyCompactSpace (he : PLDomain e R) : LocallyCompactSpace X := by
   classical
   let : ChartedSpace V3 X := {
@@ -33,10 +21,6 @@ theorem PLDomain.locallyCompactSpace (he : PLDomain e R) : LocallyCompactSpace X
     mem_chart_source := fun x => Classical.choose_spec (he.cover x)
     chart_mem_atlas := fun x => mem_range_self (Classical.choose (he.cover x)) }
   exact ChartedSpace.locallyCompactSpace V3 X
-
-
-
-
 
 theorem exists_interior_supported_PL_model [T2Space X]
     (hR : IsCompact R) (he : PLDomain e R)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialInverse
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialDistance
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,10 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
-
 
 theorem exists_source_initial_cap_avoidance_tolerance
     (g0 : StandardInitialMetric) :

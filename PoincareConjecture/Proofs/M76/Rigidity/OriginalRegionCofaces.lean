@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskRim
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.SubcomplexCarrierNeighborhood
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompleteCofaceDualBlock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -24,8 +15,6 @@ local notation "V3" => (Fin 3 → ℝ)
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
   (T : OriginalProperDiskTriangulation e R j)
-
-
 
 theorem exists_triangle_vertex_interior
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)
@@ -52,8 +41,6 @@ theorem exists_triangle_vertex_interior
   rw [T.inverse_eq ⟨p, hpK⟩, ← T.model_eq (T.model.symm ⟨p, hpK⟩),
     T.model.apply_symm_apply]
 
-
-
 theorem face_mem_region_of_inverse_interior
     {t : Finset (T.index → ℝ × V3)} (ht : t ∈ T.ambient.faces)
     {x : T.index → ℝ × V3} (hx : x ∈ convexHull ℝ (t : Set _))
@@ -67,8 +54,6 @@ theorem face_mem_region_of_inverse_interior
   filter_upwards [hpre, self_mem_nhdsWithin] with y hy hyK
   exact (T.inverse_mem_region_iff hyK).mp (interior_subset hy)
 
-
-
 theorem triangle_coface_mem_region
     {s t : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)
     (hscard : s.card = 3) (ht : t ∈ T.ambient.faces) (hst : s ⊆ t) :
@@ -78,7 +63,6 @@ theorem triangle_coface_mem_region
     (subset_convexHull ℝ _ (hst hps)) hpI
 
 open Classical in
-
 
 theorem triangle_dualBlock_eq_region
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)
@@ -94,7 +78,6 @@ theorem triangle_dualBlock_eq_region
     (fun t ht hst => T.triangle_coface_mem_region hs hscard ht hst)
 
 open Classical in
-
 
 theorem triangle_dualBlock_subset_region
     {s : Finset (T.index → ℝ × V3)} (hs : s ∈ (T.marked 2).faces)

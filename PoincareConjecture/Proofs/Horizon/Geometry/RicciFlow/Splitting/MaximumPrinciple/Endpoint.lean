@@ -11,7 +11,6 @@ open Barrier
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem positive_at_chart_endpoint
     {D : Set M} (hD : IsCompact D) (α : M)
     (hchart : D ⊆ (chartAt (EuclideanSpace ℝ (Fin n)) α).source)

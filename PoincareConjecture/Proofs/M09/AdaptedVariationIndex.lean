@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.AdaptedOrthonormalFrame
 import PoincareConjecture.Proofs.M09.ScalarIndexIntegral
 import PoincareConjecture.Proofs.M09.VariationIndexIntegrability
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

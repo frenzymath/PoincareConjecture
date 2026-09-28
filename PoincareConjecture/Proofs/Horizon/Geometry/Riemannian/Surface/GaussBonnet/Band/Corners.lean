@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.BoundaryRectangles
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Coordinates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -47,7 +40,6 @@ private theorem upper_source_subset :
 
 include hF hrect in
 omit [IsManifold (𝓡 2) ∞ S] in
-
 
 theorem rectangle_diagonal_velocity_zero :
     coordinateTriangleVelocity F (rectangleLowerBasis hab hcd) 0 2 =

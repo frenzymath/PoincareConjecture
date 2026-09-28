@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Relation.Patches
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteDoubleRelation
 
-
-
 set_option autoImplicit false
 open Set
 

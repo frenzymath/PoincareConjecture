@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Classical
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Elliptic.Dirichlet.InteriorRegularity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 12
@@ -27,8 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω Ω' : Set M}
-
-
 
 theorem exists_smooth_weakPoisson_replacement [PreconnectedSpace M]
     (hn : 0 < n) (hΩo : IsOpen Ω) (hΩ : Ω ⊆ Ω') {P : ℝ}
@@ -106,8 +96,6 @@ open LeviCivitaData.Dirichlet
 variable {n : ℕ} [NeZero n]
   {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
 theorem exists_smooth_weakHarmonicReplacement_of_smooth (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) {q : EuclideanSpace ℝ (Fin n) → ℝ}
     (hq : ContDiff ℝ ∞ q) (w : H1Zero D (Metric.ball 0 R))
@@ -153,8 +141,6 @@ theorem exists_smooth_weakHarmonicReplacement_of_smooth (D : LeviCivitaData g)
     ae_restrict_of_ae Q.memLp.coeFn_toLp,
     ae_restrict_mem Metric.isOpen_ball.measurableSet] with x hx hadd hQ hxB
   rw [hx, hadd, Pi.add_apply, show (testToL2 D Set.univ Q) x = Q x from hQ, hQeq x hxB]
-
-
 
 theorem exists_smooth_harmonicReplacement_on_ball (D : LeviCivitaData g)
     {R : ℝ} (hR : 0 < R) {q : EuclideanSpace ℝ (Fin n) → ℝ}

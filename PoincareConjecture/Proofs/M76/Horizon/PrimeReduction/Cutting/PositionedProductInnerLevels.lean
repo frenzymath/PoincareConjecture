@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CompactClosedStrip
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 namespace PoincareConjecture.M76

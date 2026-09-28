@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Toponogo
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Support
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,8 +16,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem mvfderiv_endpoint_le_of_hessian_le (D : LeviCivitaData g)
     {U : Set M} (hU : IsOpen U) {f : M → ℝ}
@@ -91,8 +88,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_distance_radial_upper_support_on_minimizing_segment
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -211,9 +206,6 @@ theorem exists_distance_radial_upper_support_on_minimizing_segment
     rw [hxB] at hu
     simpa only [rho, D.gradient_const_add_at ((hnormB.contMDiffAt
       (B'.open_target.mem_nhds hxmem)).mdifferentiableAt (by simp))] using hu
-
-
-
 
 theorem exists_distance_upper_support_gradient_pairing_le
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

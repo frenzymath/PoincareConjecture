@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierSurfaceModel
 import PoincareConjecture.Proofs.M76.Wall.OriginalFrontierComponents
 import PoincareConjecture.Proofs.M76.Wall.OriginalComponentSphere
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry PreAbstractSimplicialComplex.ModTwoCochains
@@ -25,10 +14,6 @@ variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3}
 
 open Classical in
-
-
-
-
 
 theorem PLDomain.exists_new_frontier_component_models
     {N B F : Set X} (he : PLDomain e N) (hN : IsCompact N) (hNne : N.Nonempty)

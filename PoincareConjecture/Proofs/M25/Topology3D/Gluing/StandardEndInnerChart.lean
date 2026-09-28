@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.SchoenfliesCompactSide
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M25.Topology3D.SchoenfliesData
-
-
-
-
 
 theorem exists_buffered_interior_chart
     {W : Type u} [TopologicalSpace W] [ChartedSpace E3 W]

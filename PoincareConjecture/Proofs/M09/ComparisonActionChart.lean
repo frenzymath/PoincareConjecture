@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.M09.PathComparison
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 import Mathlib.Geometry.Manifold.Algebra.LieGroup
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

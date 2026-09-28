@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M48.RegularSpacetime
 import PoincareConjecture.Proofs.M13.GeneralizedSlices
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

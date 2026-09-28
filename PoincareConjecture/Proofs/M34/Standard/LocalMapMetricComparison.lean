@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.PathLengthComparison
 import PoincareConjecture.Proofs.M34.Standard.MetricComparisonCompleteness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.CompactConfinement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ variable {n m : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [ChartedSpace (EuclideanSpace ℝ (Fin m)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 m) ∞ N] [T3Space M]
-
-
-
 
 theorem edist_image_le_mul_edist_of_tangentNorm_le_on_triple_ball
     (g : RiemannianMetric n M) (h : RiemannianMetric m N) (f : M → N)
@@ -86,9 +74,6 @@ theorem edist_image_le_mul_edist_of_tangentNorm_le_on_triple_ball
       exact mul_le_mul' le_rfl (hlen.le.trans (min_le_left _ _)))
   simpa only [mul_comm] using (ENNReal.div_le_iff
     (ENNReal.ofReal_pos.mpr hC).ne' ENNReal.ofReal_ne_top).mp hdiv
-
-
-
 
 theorem exists_open_edist_image_bound_of_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric m N) (f : M → N)

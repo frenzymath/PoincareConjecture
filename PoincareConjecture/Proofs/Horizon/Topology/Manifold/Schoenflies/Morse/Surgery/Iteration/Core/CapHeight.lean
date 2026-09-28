@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.InverseFunction.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Hyperplane
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +34,6 @@ theorem normalized_height_nonneg (D : SphereSurgeryCoreCap v g B)
     mul_div_cancel_left₀ _ D.scale_ne_zero]
   exact height_nonneg_of_mem_boundedCylinderNorthernCap hy
 
-
 theorem zero_slice_eq_circle (D : SphereSurgeryCoreCap v g B) :
     (D.parametrization '' closedBall (0 : E2) 1) ∩
       {y : E3 | inner Real v y = D.center} =
@@ -46,8 +43,6 @@ theorem zero_slice_eq_circle (D : SphereSurgeryCoreCap v g B) :
   simpa only [boundedCylinderNorthernCap, mul_zero, add_zero] using
     lifted_cap_slice_eq_circle D.unit_v D.center D.scale D.scale_ne_zero D.planeMap
       (show (0 : Real) ∈ Ico 0 1 by norm_num)
-
-
 
 theorem boundary_image_eq_circle (D : SphereSurgeryCoreCap v g B) :
     D.parametrization '' sphere (0 : E2) 1 =
@@ -129,8 +124,6 @@ theorem boundary_image_eq_circle (D : SphereSurgeryCoreCap v g B) :
     change D.center • v + (D.planeMap (J.symm (J z)) : E3) = _
     rw [J.symm_apply_apply]
 
-
-
 theorem normalized_height_eq_zero_iff (D : SphereSurgeryCoreCap v g B)
     {x : E2} (hx : x ∈ closedBall (0 : E2) 1) :
     (inner Real v (D.parametrization x)-D.center)/D.scale = 0 ↔
@@ -157,8 +150,6 @@ theorem normalized_height_pos (D : SphereSurgeryCoreCap v g B)
   have hn := mem_sphere_zero_iff_norm.mp hS
   have hlt := mem_ball_zero_iff.mp hx
   linarith
-
-
 
 theorem normalized_height_pos_on_open_disk (D : SphereSurgeryCoreCap v g B)
     {p : S2} (hp : p ∈ D.chart '' ball (0 : E2) 1) :

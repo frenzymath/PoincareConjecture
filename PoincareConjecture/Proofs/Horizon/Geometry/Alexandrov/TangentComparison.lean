@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.ComparisonAngle
 import Mathlib.Geometry.Euclidean.Angle.Unoriented.TriangleInequality
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -24,7 +15,6 @@ theorem angle_sum_le_two_pi (u v w : V) :
   have h := angle_le_angle_add_angle u (-v) w
   rw [angle_neg_right, angle_neg_left] at h
   linarith
-
 
 theorem comparisonAngle_le_angle_of_cosh_le {r s t : ℝ} (hr : 0 < r) (hs : 0 < s)
     {u v : V} (hu : ‖u‖ = 1) (hv : ‖v‖ = 1)

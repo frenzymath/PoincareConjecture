@@ -5,8 +5,6 @@ open Set Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem exists_retained_double_locus_copy
     {E Y X : Type*} [TopologicalSpace E] [TopologicalSpace Y] [T2Space Y]
     {f : E → X} {g : Y → X} {K : Set E} {S : Set Y}
@@ -30,8 +28,6 @@ theorem exists_retained_double_locus_copy
     · rintro ⟨x, ⟨y, heq, hne⟩, rfl⟩
       exact ⟨⟨x, x.property, y, y.property, heq, hne⟩, rfl⟩
   exact ⟨hJ.toHomeomorph.trans (Homeomorph.setCongr hrange), fun _ ↦ rfl⟩
-
-
 
 theorem exists_restricted_source_partner
     {E X : Type*} [TopologicalSpace E] {f : E → X} {K S : Set E}
@@ -61,8 +57,6 @@ theorem exists_restricted_source_partner
   have hqc : Continuous q :=
     ((p.continuous.comp (continuous_inclusion hsub)).subtype_val).subtype_mk hmem
   exact ⟨⟨⟨q, q, hq, hq⟩, hqc, hqc⟩, hq, fun x ↦ ⟨hsub x.property, rfl⟩⟩
-
-
 
 theorem retained_relation_unique_other_point
     {E Y X : Type*} {f : E → X} {g : Y → X} {K S : Set E} {T : Set Y}

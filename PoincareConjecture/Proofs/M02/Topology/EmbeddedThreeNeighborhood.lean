@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.EmbeddedThreeNearest
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 import Mathlib.Topology.Homotopy.Equiv
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

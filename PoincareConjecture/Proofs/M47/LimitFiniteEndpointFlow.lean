@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointExtraction
 import PoincareConjecture.Proofs.M47.TerminalGermsMetricRealization
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.LocalFlows
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +23,6 @@ private noncomputable local instance finiteEndpointFlowBilinAdd :
     NormedAddCommGroup V := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance finiteEndpointFlowBilinSpace :
     NormedSpace ℝ V := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_chart_flow
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

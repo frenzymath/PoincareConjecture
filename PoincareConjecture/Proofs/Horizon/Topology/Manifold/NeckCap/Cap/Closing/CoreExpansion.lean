@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Complement
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Overlap.GraphTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,7 +14,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem exists_core_point_outside_boundary_collar (C : CapCertificate g)
     {r : ℝ} (hr : 0 < r) (hrB : r < C.boundary_neck.epsilon⁻¹) :
@@ -60,8 +49,6 @@ theorem exists_core_point_outside_boundary_collar (C : CapCertificate g)
     B.coordinate_inverse_coordinate_map ⟨mem_univ _, ha⟩] at hi
   have hba : b = a := congrArg Prod.snd hi
   exact (not_lt_of_ge (abs_le.mpr (hba ▸ hb))) har
-
-
 
 theorem closed_core_subset_graphTransport_of_graph_in_end (C : CapCertificate g)
     {r : ℝ} (hr : 0 < r) (hrB : r < C.boundary_neck.epsilon⁻¹)

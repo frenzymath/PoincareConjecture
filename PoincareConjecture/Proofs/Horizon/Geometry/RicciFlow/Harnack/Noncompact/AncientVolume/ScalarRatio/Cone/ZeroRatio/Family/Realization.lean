@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Family.RadialRealization
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.Family.Coverage
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +10,6 @@ open Set Filter Poincare.AncientVolume.ScalarRatio
 open scoped Manifold ContDiff Topology ENNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_radial_cone_realization_of_normal_chart_family_on_rays
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -107,8 +97,6 @@ theorem exists_radial_cone_realization_of_normal_chart_family_on_rays
     fun j => isometry_subtype_coe.comp (he j), hδ,
     (fun j => (hcoverage j).1), (fun j => (hcoverage j).2), fun j => ?_⟩
   simpa only [hscale, toMetricSpace_dist] using hradial j
-
-
 
 theorem exists_cone_realization_of_normal_chart_family_on_rays
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

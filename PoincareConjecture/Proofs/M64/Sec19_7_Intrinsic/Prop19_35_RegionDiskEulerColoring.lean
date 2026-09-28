@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Combinatorial.Incidence
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,11 +18,6 @@ private lemma m64_exists_closed_cover_member_of_mem_closure
   obtain ⟨i, hi⟩ := mem_iUnion.mp (closure_minimal hsub hc hp)
   obtain ⟨hPi, hpAi⟩ := mem_iUnion.mp hi
   exact ⟨i, hpAi, hPi⟩
-
-
-
-
-
 
 theorem m64Intrinsic_exists_jordan_cell_coloring
     {X I : Type*} [TopologicalSpace X] [Finite I]
@@ -99,10 +83,6 @@ theorem m64Intrinsic_exists_jordan_cell_coloring
     rcases (hinc k).mp hpk with hki | hkj <;>
       rcases (hinc l).mp hpl with hli | hlj <;>
       simp_all only [Bool.true_eq_false]
-
-
-
-
 
 theorem m64Intrinsic_region_cycle_fill_of_jordan_partition
     {X I E : Type*} [TopologicalSpace X] [Fintype I]

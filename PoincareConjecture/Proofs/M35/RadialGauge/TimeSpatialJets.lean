@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.TimeSpatialInterchange
 import PoincareConjecture.Proofs.M35.RadialGauge.JointJetContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ}
 
 local notation "V" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem time_spatial_jets_interchange (k : ℕ)
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]

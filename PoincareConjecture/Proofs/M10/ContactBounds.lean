@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.RegularGerms
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -16,7 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M10
-
 
 theorem deriv_eq_of_contact {f g : ℝ → ℝ} {s : ℝ}
     (hf : DifferentiableAt ℝ f s) (hg : DifferentiableAt ℝ g s)
@@ -31,7 +22,6 @@ theorem deriv_eq_of_contact {f g : ℝ → ℝ} {s : ℝ}
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
-
 
 theorem mvfderiv_eq_zero_of_isLocalMin {f : M → ℝ} {q : M}
     (hf : MDifferentiableAt (𝓡 n) (𝓘(ℝ, ℝ)) f q) (hmin : IsLocalMin f q) :
@@ -48,7 +38,6 @@ theorem mvfderiv_eq_zero_of_isLocalMin {f : M → ℝ} {q : M}
     using congrArg (fun L : EuclideanSpace ℝ (Fin n) →L[ℝ] ℝ ↦ L v)
       hchart.fderiv_eq_zero
 
-
 theorem mvfderiv_eq_of_contact {f g : M → ℝ} {q : M}
     (hf : MDifferentiableAt (𝓡 n) (𝓘(ℝ, ℝ)) f q)
     (hg : MDifferentiableAt (𝓡 n) (𝓘(ℝ, ℝ)) g q)
@@ -64,7 +53,6 @@ theorem mvfderiv_eq_of_contact {f g : M → ℝ} {q : M}
 variable [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ} {p q : M} {τ : ℝ}
 
-
 theorem barrier_time_deriv_eq (r : ReducedLengthRegularPoint F T τmax p q τ)
     (B : ReducedLengthUpperBarrier F T p q τ) :
     deriv (fun s ↦ B.representative (q, s)) τ =
@@ -76,7 +64,6 @@ theorem barrier_time_deriv_eq (r : ReducedLengthRegularPoint F T τmax p q τ)
   exact (deriv_eq_of_contact (reducedLength_hasDerivAt r).differentiableAt
     hd.differentiableAt B.touches.symm
     ((continuous_const.prodMk continuous_id).continuousAt hdom)).symm
-
 
 theorem barrier_spatial_differential_eq
     (r : ReducedLengthRegularPoint F T τmax p q τ)
@@ -91,14 +78,12 @@ theorem barrier_spatial_differential_eq
     (B.representative_space_smooth.mdifferentiableAt (by simp)) B.touches.symm
     ((continuous_id.prodMk continuous_const).continuousAt hdom)).symm
 
-
 theorem barrier_gradientNormSq_eq (r : ReducedLengthRegularPoint F T τmax p q τ)
     (B : ReducedLengthUpperBarrier F T p q τ) :
     reducedLengthGradientNormSq F T B.representative τ q =
       reducedLengthGradientNormSq F T (fun z ↦ reducedLength F T p z.1 z.2) τ q := by
   unfold reducedLengthGradientNormSq
   rw [barrier_spatial_differential_eq r B]
-
 
 theorem reducedLength_local_derivative_bounds [ConnectedSpace M]
     (hDifferential : ReducedLengthDifferentialTheory F T τmax)

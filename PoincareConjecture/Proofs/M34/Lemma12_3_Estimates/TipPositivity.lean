@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Lemma12_3_Estimates.SlopeMonotonicity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,7 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M34
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialAxis_angular_orthonormal (g₀ : StandardInitialMetric) (r : ℝ) :
     let α := (Real.sqrt (initialAngularCoefficient g₀ r))⁻¹
@@ -47,7 +36,6 @@ theorem initialAxis_angular_orthonormal (g₀ : StandardInitialMetric) (r : ℝ)
   · simp only [map_smul, smul_apply, smul_eq_mul, h12, mul_zero]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem initialTip_angular_positive (g₀ : StandardInitialMetric) {R r : ℝ}
     (htip : ∀ x ∈ g₀.metric.ball 0 R, ∀ u v,
@@ -78,8 +66,6 @@ theorem initialTip_angular_positive (g₀ : StandardInitialMetric) {R r : ℝ}
     g₀.connection.curvatureTensor_smul_third,
     g₀.connection.curvatureTensor_smul_last] at hp
   simpa only [mul_pos_iff_of_pos_left hα] using hp
-
-
 
 theorem initialTip_angular_positive_segment (g₀ : StandardInitialMetric) :
     ∃ δ : ℝ, 0 < δ ∧ ∀ r : ℝ, 0 ≤ r → r < δ →

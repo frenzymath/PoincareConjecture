@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.Uniqueness.CenteredQuadratic
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Scaling
 import PoincareConjecture.Proofs.M10.LaplacianLinearity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +9,6 @@ open Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem hessian_add_at
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
@@ -43,8 +32,6 @@ theorem hessian_add_at
   simp only [add_apply]
   ring
 
-
-
 theorem laplacian_add_at
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)
     {f h : StandardCapSpace → ℝ} {x : StandardCapSpace}
@@ -54,8 +41,6 @@ theorem laplacian_add_at
   simp only [LeviCivitaData.laplacian,
     hessian_add_at D (contMDiffAt_iff_contDiffAt.mp hf) (contMDiffAt_iff_contDiffAt.mp hh),
     Finset.sum_add_distrib]
-
-
 
 theorem laplacian_const_add_at
     {g : RiemannianMetric 3 StandardCapSpace} (D : LeviCivitaData g)

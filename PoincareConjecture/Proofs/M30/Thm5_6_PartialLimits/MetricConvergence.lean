@@ -1,19 +1,6 @@
 import PoincareConjecture.Definitions.Ch05.Compactness
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,9 +9,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 structure PartialPointedMetricConvergence {n : ℕ} {M : ℕ → Type u}
     [∀ k, TopologicalSpace (M k)]
@@ -71,7 +55,6 @@ structure PartialPointedMetricConvergence {n : ℕ} {M : ℕ → Type u}
 
   base_preserving : ∀ j, embedding j base = p (subsequence j)
 
-
   metric_jets : letI := limitCarrier.topologicalSpace
     letI := limitCarrier.chartedSpace
     letI := limitCarrier.isManifold
@@ -82,12 +65,9 @@ structure PartialPointedMetricConvergence {n : ℕ} {M : ℕ → Type u}
         (iteratedFDeriv ℝ m (limitMetric.pullbackCoefficients
           (extChartAt (𝓡 n) q).symm)) atTop K
 
-
   boundary_control : letI := limitCarrier.topologicalSpace
     ∀ B : ℝ, B < A → ∃ l : ℕ, ∀ᶠ j in atTop, ∀ q ∈ frontier (exhaustion l),
       ENNReal.ofReal B ≤ (g (subsequence j)).edist (p (subsequence j)) (embedding j q)
-
-
 
 noncomputable def PartialPointedMetricConvergence.reindex
     {n : ℕ} {M : ℕ → Type u} [∀ k : ℕ, TopologicalSpace (M k)]

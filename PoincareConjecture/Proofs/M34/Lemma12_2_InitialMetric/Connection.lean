@@ -2,39 +2,21 @@ import PoincareConjecture.Proofs.M34.Lemma12_2_InitialMetric.RadialBounds
 import PoincareConjecture.Proofs.M34.Mathlib.RadialConnection
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanConstruction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M34
 
-
-
 noncomputable def capChristoffelA (a r : ℝ) : ℝ :=
   deriv (capAngularCoefficient a) r / (2 * r * capAngularCoefficient a r)
-
-
 
 noncomputable def capChristoffelB (a r : ℝ) : ℝ :=
   capRadialCoefficient a r - deriv (capAngularCoefficient a) r / (2 * r)
 
-
-
 noncomputable def capChristoffelC (a r : ℝ) : ℝ :=
   deriv (capRadialCoefficient a) r / (2 * r) -
     2 * capChristoffelA a r * capRadialCoefficient a r
-
-
 
 theorem capMetricInner_fderiv (a : ℝ) {x : StandardCapSpace} (hx : x ≠ 0)
     (u v w : StandardCapSpace) :
@@ -50,14 +32,11 @@ theorem capMetricInner_fderiv (a : ℝ) {x : StandardCapSpace} (hx : x ≠ 0)
     ((capRadialCoefficient_contDiffAt a (norm_ne_zero_iff.mpr hx)).differentiableAt
       (by simp)).hasDerivAt u v w
 
-
-
 noncomputable def capLeviCivitaData (a : ℝ) (ha : 0 < a) (hapi : a ≤ Real.pi / 2) :
     LeviCivitaData (capRiemannianMetric a ha hapi) :=
   (capRiemannianMetric a ha hapi).euclideanLeviCivitaData
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem capConnection_formula {a : ℝ} (ha : 0 < a) (hapi : a ≤ Real.pi / 2)
     (D : LeviCivitaData (capRiemannianMetric a ha hapi))

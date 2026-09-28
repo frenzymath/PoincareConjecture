@@ -2,14 +2,6 @@ import PoincareConjecture.Definitions.M13OrdinaryRescaling
 import PoincareConjecture.Proofs.M13.IntervalTransport
 import Mathlib.Geometry.Manifold.MFDeriv.SpecificFunctions
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

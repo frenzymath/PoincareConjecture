@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.AttainmentConclusion
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnet
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaInequality
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture
-
-
-
 
 theorem m65EmbeddedFillingAreaInequality_proved
     {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]

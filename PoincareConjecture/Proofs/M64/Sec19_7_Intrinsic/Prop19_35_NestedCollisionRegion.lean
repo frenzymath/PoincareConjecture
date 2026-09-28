@@ -1,10 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCrossing
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NestedJordanRegions
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,10 +8,6 @@ open Set
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_nested_collision_region
     {U V : Set AnnulusCoordinates} (hU : IsOpen U) (hV : IsOpen V)

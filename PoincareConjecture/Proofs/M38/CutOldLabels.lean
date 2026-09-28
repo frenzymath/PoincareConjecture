@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.EventGraphCover
 import PoincareConjecture.Proofs.M38.PartialCutDomains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,13 +25,11 @@ local instance : LocallyConnectedSpace (eventRetainedInteriorOpen F T hT) :=
 local instance : LocallyConnectedSpace (eventDiscardedOpen F T hT) :=
   (eventDiscardedOpen F T hT).isOpen.locallyConnectedSpace
 
-
 noncomputable def retainedVertexLabel : C(eventRetainedInteriorOpen F T hT, D) :=
   ⟨fun x => label (Sum.inl (ConnectedComponents.mk x)),
     (continuous_of_discreteTopology : Continuous
       (fun c : ConnectedComponents (eventRetainedInteriorOpen F T hT) => label (Sum.inl c))).comp
         ConnectedComponents.continuous_coe⟩
-
 
 noncomputable def discardedVertexLabel : C(eventDiscardedOpen F T hT, D) :=
   ⟨fun x => label (Sum.inr (ConnectedComponents.mk x)),
@@ -47,13 +37,11 @@ noncomputable def discardedVertexLabel : C(eventDiscardedOpen F T hT, D) :=
       (fun c : ConnectedComponents (eventDiscardedOpen F T hT) => label (Sum.inr c))).comp
         ConnectedComponents.continuous_coe⟩
 
-
 noncomputable def cutOldPatch (j : Bool ⊕ {i // i ∉ S}) :
     TopologicalSpace.Opens (eventCutOpen F T hT P S) :=
   let k : Bool ⊕ Fin (F.event T hT).cap_count := j.map id Subtype.val
   ⟨Subtype.val ⁻¹' (eventPrePatch F T hT P k : Set _),
     (eventPrePatch F T hT P k).isOpen.preimage continuous_subtype_val⟩
-
 
 noncomputable def cutOldPatchLabel (j : Bool ⊕ {i // i ∉ S}) :
     C(cutOldPatch F T hT P S j, D) :=
@@ -66,7 +54,6 @@ noncomputable def cutOldPatchLabel (j : Bool ⊕ {i // i ∉ S}) :
         (continuous_subtype_val.comp continuous_subtype_val).subtype_mk _⟩
   | .inr i => ContinuousMap.const _
       (label (.inl (ConnectedComponents.mk (P i.val).retainedAttachmentPoint)))
-
 
 theorem cutOldPatchLabel_on_retained (j : Bool ⊕ {i // i ∉ S})
     (x : eventCutOpen F T hT P S) (hxj : x ∈ cutOldPatch F T hT P S j)
@@ -134,7 +121,6 @@ theorem cutOldPatchLabel_agree (j k : Bool ⊕ {i // i ∉ S})
           · exact (Set.disjoint_left.mp
               ((P i.val).collars_disjoint (P j.val) hij) hxj hxk).elim
 
-
 theorem cutOldPatch_cover (x : eventCutOpen F T hT P S) :
     ∃ j, (cutOldPatch F T hT P S j : Set (eventCutOpen F T hT P S)) ∈ 𝓝 x := by
   by_cases hr : x.val ∈ eventRetainedInteriorOpen F T hT
@@ -159,12 +145,10 @@ theorem cutOldPatch_cover (x : eventCutOpen F T hT P S) :
   have hz0 : z.2 = 0 := hz.2
   exact ⟨hz.1, by simpa only [hz0] using (show (0 : ℝ) ∈ Set.Ioo (-1 : ℝ) 1 by norm_num)⟩
 
-
 noncomputable def cutOldLabel : C(eventCutOpen F T hT P S, D) :=
   ContinuousMap.liftCover (fun j => cutOldPatch F T hT P S j)
     (cutOldPatchLabel F T hT P S label) (cutOldPatchLabel_agree F T hT P S label hagrees)
     (cutOldPatch_cover F T hT P S)
-
 
 theorem cutOldLabel_patch (j : Bool ⊕ {i // i ∉ S})
     (x : cutOldPatch F T hT P S j) :
@@ -176,20 +160,17 @@ theorem cutOldLabel_patch (j : Bool ⊕ {i // i ∉ S})
     (hφ := cutOldPatchLabel_agree F T hT P S label hagrees)
     (hS := cutOldPatch_cover F T hT P S) (i := j) x
 
-
 theorem cutOldLabel_retained (x : eventCutOpen F T hT P S)
     (hx : x.val ∈ eventRetainedInteriorOpen F T hT) :
     cutOldLabel F T hT P S label hagrees x =
       label (.inl (ConnectedComponents.mk (⟨x.val, hx⟩ : eventRetainedInteriorOpen F T hT))) :=
   cutOldLabel_patch F T hT P S label hagrees (.inl false) ⟨x, hx⟩
 
-
 theorem cutOldLabel_discarded (x : eventCutOpen F T hT P S)
     (hx : x.val ∈ eventDiscardedOpen F T hT) :
     cutOldLabel F T hT P S label hagrees x =
       label (.inr (ConnectedComponents.mk (⟨x.val, hx⟩ : eventDiscardedOpen F T hT))) :=
   cutOldLabel_patch F T hT P S label hagrees (.inl true) ⟨x, hx⟩
-
 
 theorem cutOldLabel_collar (i : Fin (F.event T hT).cap_count) (hi : i ∉ S)
     (x : eventCutOpen F T hT P S)

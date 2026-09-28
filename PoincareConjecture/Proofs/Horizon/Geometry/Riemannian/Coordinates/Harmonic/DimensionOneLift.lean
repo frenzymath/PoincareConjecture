@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.RadialCurve
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,7 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 1)) M] [IsManifold (𝓡 1) ∞ M]
-
 
 lemma isInvertible_mfderiv_of_euclidean_pullback_one (g : RiemannianMetric 1 M)
     {e : EuclideanSpace ℝ (Fin 1) → M} {x : EuclideanSpace ℝ (Fin 1)}
@@ -46,8 +34,6 @@ lemma isInvertible_mfderiv_of_euclidean_pullback_one (g : RiemannianMetric 1 M)
     (LinearMap.injective_iff_surjective_of_finrank_eq_finrank rfl).mp hinj
   exact ⟨ContinuousLinearEquiv.ofBijective A (LinearMap.ker_eq_bot.mpr hinj)
     (LinearMap.range_eq_top.mpr hsurj), rfl⟩
-
-
 
 lemma pullbackCoefficients_eq_of_radial_norm_one (g : RiemannianMetric 1 M)
     {e : EuclideanSpace ℝ (Fin 1) → M} {U : Set (EuclideanSpace ℝ (Fin 1))}
@@ -96,8 +82,6 @@ lemma pullbackCoefficients_eq_of_radial_norm_one (g : RiemannianMetric 1 M)
           mem_nhdsWithin_of_mem_nhds (hU.mem_nhds hzero)] with z hzne hz
         exact hnonzero z hz hzne)
 
-
-
 theorem exists_arclength_lift_of_precompact_ball_one [T2Space M]
     (g : RiemannianMetric 1 M) (p : M) {R : ℝ} (hR : 0 < R)
     (hcompact : IsCompact (closure (g.ball p R))) :
@@ -135,8 +119,6 @@ theorem exists_arclength_lift_of_precompact_ball_one [T2Space M]
   · intro x hx
     simpa only [one_smul, ENNReal.ofReal_one, mul_one] using
       ((hgeo x hx).2 1 (by simp)).2
-
-
 
 theorem exists_arclength_lift_of_metricComplete_one [T3Space M]
     (g : RiemannianMetric 1 M) (hcomplete : MetricComplete g)

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalTubeChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_innermost_family_tube
     (S : Set E3) (u : UnitTwoSphere) (t d : ℝ) (_hd : 0 < d)

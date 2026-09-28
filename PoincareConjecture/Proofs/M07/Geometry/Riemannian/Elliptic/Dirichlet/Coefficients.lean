@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Elliptic.Dirichlet.CoordinateEnergy
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Coefficients
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,13 +17,11 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 def divergenceCoefficients (g : RiemannianMetric n M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (x : EuclideanSpace ℝ (Fin n)) (i j : Fin n) : ℝ :=
   g.pullbackVolumeDensity e x *
     EuclideanSpace.proj i ((g.pullbackCoefficients e x).inverse (EuclideanSpace.proj j))
-
 
 theorem contDiffOn_divergenceCoefficients
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -48,7 +38,6 @@ theorem contDiffOn_divergenceCoefficients
     (hI.clm_apply (contDiffAt_const (c := EuclideanSpace.proj (𝕜 := ℝ) j)))
   exact ((g.contDiffAt_pullbackVolumeDensity hef (hD.mfderiv_injective hx)).1.mul
     hentry).contDiffWithinAt
-
 
 theorem divergenceCoefficients_symm
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -79,7 +68,6 @@ private theorem covector_eq_sum_proj (L : EuclideanSpace ℝ (Fin n) →L[ℝ] �
   ext v
   simpa using covector_apply_eq_sum L v
 
-
 theorem sum_divergenceCoefficients_eq_inverse_pairing
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
     (x : EuclideanSpace ℝ (Fin n))
@@ -96,7 +84,6 @@ theorem sum_divergenceCoefficients_eq_inverse_pairing
   apply Finset.sum_congr rfl
   intro j _
   ring
-
 
 theorem divergenceCoefficients_pos
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -137,7 +124,6 @@ theorem divergenceCoefficients_pos
     ring, hsum]
   exact mul_pos (g.contDiffAt_pullbackVolumeDensity
     (he.contMDiffAt (e.open_source.mem_nhds hx)) hinj).2 hpos
-
 
 theorem density_mul_inner_gradient_eq_sum_divergenceCoefficients
     {D : LeviCivitaData g} {Ω : Set M}

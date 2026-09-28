@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M45.Ch9_Models.LocalScalar
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScaling
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarJet
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,18 +14,12 @@ open PoincareConjecture.M44
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 
-
-
-
 theorem model_scale_three_halves {Q : ℝ} (hQ : 0 < Q) :
     Q * Real.sqrt Q = Q ^ (3 / 2 : ℝ) := by
   calc
     _ = Q ^ (1 : ℝ) * Q ^ (1 / 2 : ℝ) := by rw [Real.rpow_one, Real.sqrt_eq_rpow]
     _ = Q ^ (1 + 1 / 2 : ℝ) := (Real.rpow_add hQ _ _).symm
     _ = _ := by norm_num
-
-
-
 
 theorem model_differential_bound_of_rescaled
     (g : RiemannianMetric 3 E) (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
@@ -72,10 +57,6 @@ theorem model_differential_bound_of_rescaled
     field_simp
   rw [heq, model_scale_three_halves hQ, mul_comm] at hscale
   exact hscale
-
-
-
-
 
 theorem model_analytic_of_normalized_chart
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]

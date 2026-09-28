@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Separation.Bounded
 import Mathlib.Topology.Connected.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace Poincare.Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem subset_of_isPreconnected_of_disjoint_frontier
     {U V : Set X} (hU : IsOpen U) (hV : IsPreconnected V)
@@ -32,8 +21,6 @@ theorem subset_of_isPreconnected_of_disjoint_frontier
     · exact Or.inr fun hxcl => Set.disjoint_left.mp hfront hx
         (by rw [hU.frontier_eq]; exact ⟨hxcl, hxU⟩)
   · exact hmeet
-
-
 
 theorem eq_side_of_frontier_partition
     {Omega S A B : Set X} (hOmega : IsOpen Omega)
@@ -68,7 +55,6 @@ theorem eq_side_of_frontier_partition
     apply subset_of_isPreconnected_of_disjoint_frontier hOmega hcB hbv
     obtain ⟨x, hx⟩ := hconn.nonempty
     exact ⟨x, hb hx, hx⟩
-
 
 theorem eq_bounded_side_of_frontier_partition
     {E : Type*} [NormedAddCommGroup E] {Omega S A B : Set E}

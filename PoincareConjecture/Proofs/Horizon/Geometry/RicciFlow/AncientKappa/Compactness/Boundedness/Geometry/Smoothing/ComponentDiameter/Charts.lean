@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compact
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 import Mathlib.Geometry.Manifold.MFDeriv.FDeriv
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +12,6 @@ open scoped Manifold ContDiff
 namespace PoincareConjecture.AncientCompactness
 
 local notation "I₃" => 𝓘(ℝ, CoordinateThree)
-
-
 
 theorem exists_collar_in_open
     {M Y : Type*} [TopologicalSpace M] [TopologicalSpace Y] [CompactSpace Y]
@@ -63,8 +54,6 @@ theorem exists_collar_in_open
   · intro y
     rfl
 
-
-
 theorem exists_coordinate_critical_point_of_compact_connected_level_collar
     {M Y : Type*} [TopologicalSpace M] [TopologicalSpace Y]
     [CompactSpace Y] [ConnectedSpace Y]
@@ -85,8 +74,6 @@ theorem exists_coordinate_critical_point_of_compact_connected_level_collar
   change f (e.symm (e (c (y, ⟨0, neg_lt_zero.mpr hs, hs⟩)))) = a
   rw [e.left_inv (hUe (c (y, ⟨0, neg_lt_zero.mpr hs, hs⟩)).property)]
   exact hlevel y
-
-
 
 theorem mfderiv_eq_zero_of_coordinate_critical_point
     {M : Type*} [TopologicalSpace M]
@@ -115,9 +102,6 @@ theorem mfderiv_eq_zero_of_coordinate_critical_point
     (mfderiv I₃ I₃ e.symm x (mfderiv I₃ I₃ e (e.symm x) v)) at hz
   rw [← hv] at hz
   exact hz.symm
-
-
-
 
 theorem exists_critical_point_in_chart_ball_of_compact_connected_level_collar
     {M Y : Type*} [TopologicalSpace M] [TopologicalSpace Y]

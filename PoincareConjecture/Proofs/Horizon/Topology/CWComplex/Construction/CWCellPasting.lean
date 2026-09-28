@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.CWComplex.Construction.CWCellExtension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M51.GlobalGeometry
 import PoincareConjecture.Proofs.M51.GlobalEventSlabs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,8 +16,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : Nat}
   (Q : CompletedStageChain S N C F0 k)
   (m13 : GeneralizedParabolicRescalingTheory.{u} 3)
-
-
 
 noncomputable def globalFlow : SurgeryFlowData.{u} where
   standard_initial := F0.standard_initial
@@ -56,19 +45,11 @@ noncomputable def globalFlow : SurgeryFlowData.{u} where
   maximal_intervals := Q.global_maximal_intervals m13
   extinction_permanent := Q.global_extinction_permanent
 
-
-
 theorem globalFlow_time_domain : (Q.globalFlow m13).time_domain = Ici 0 := rfl
-
-
 
 theorem globalFlow_parameters : (Q.globalFlow m13).parameters = F0.parameters := rfl
 
-
-
 theorem globalFlow_pinched : SurgeryFlowPinched (Q.globalFlow m13) := Q.global_pinched
-
-
 
 theorem globalFlow_terminalPolicy :
     SurgeryFlowTerminalPolicyOn (Q.globalFlow m13) (Q.globalFlow m13).time_domain where

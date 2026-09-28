@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.FiniteSectionCoordinates
 import Mathlib.Data.Finset.Powerset
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

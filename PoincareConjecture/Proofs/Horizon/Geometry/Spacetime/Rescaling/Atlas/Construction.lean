@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Spacetime.Rescaling.Atlas
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff Topology
@@ -21,7 +9,6 @@ open scoped ContDiff Topology
 universe u
 
 namespace PoincareConjecture.ParabolicRescaling
-
 
 noncomputable def timeHomeomorph (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I : SpacetimeInterval) : I.domain ≃ₜ (parabolicInterval Q hQ a I).domain where
@@ -36,7 +23,6 @@ noncomputable def timeHomeomorph (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
   continuous_invFun :=
     (continuous_const.add (continuous_subtype_val.div_const Q)).subtype_mk _
 
-
 theorem interval_relatively_open (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
     (I J : SpacetimeInterval)
     (h : ∃ U : Set ℝ, IsOpen U ∧ J.domain = I.domain ∩ U) :
@@ -50,7 +36,6 @@ theorem interval_relatively_open (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   {time : X → ℝ} {I : SpacetimeInterval}
-
 
 noncomputable def rescaledBox (b : AdaptedMetricBox n X time I)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
@@ -83,7 +68,6 @@ noncomputable def rescaledBox (b : AdaptedMetricBox n X time I)
     mul_pos hQ (b.metric_pos _
       ((mem_parabolicInterval_iff Q hQ a b.interval t).1 ht) x hx v hv)
 
-
 noncomputable def rescaledTransition {b c : AdaptedMetricBox n X time I}
     {t : ℝ} {x y : EuclideanSpace ℝ (Fin n)}
     (θ : AdaptedMetricTransition b c t x y) (Q : ℝ) (hQ : 0 < Q) (a : ℝ) :
@@ -110,7 +94,6 @@ noncomputable def rescaledTransition {b c : AdaptedMetricBox n X time I}
         (fderiv ℝ θ.coordinateChange z v) (fderiv ℝ θ.coordinateChange z w)
     rw [θ.metric_eq _ ((mem_parabolicInterval_iff Q hQ a θ.interval s).1 hs) z hz]
 
-
 noncomputable def rescaledAtlas (A : AdaptedMetricAtlas n X)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) : AdaptedMetricAtlas n X where
   time p := parabolicTime Q a (A.time p)
@@ -135,7 +118,6 @@ noncomputable def rescaledAtlas (A : AdaptedMetricAtlas n X)
     obtain ⟨θ⟩ := A.transitions b c (parabolicTimeInv Q a t) hb' hc' x y he
     simpa only [parabolicTime_parabolicTimeInv Q hQ a t] using
       (Nonempty.intro (rescaledTransition θ Q hQ a))
-
 
 noncomputable def atlasRescaling (A : AdaptedMetricAtlas n X)
     (Q : ℝ) (hQ : 0 < Q) (a : ℝ) : ParabolicAtlasRescaling A Q hQ a where

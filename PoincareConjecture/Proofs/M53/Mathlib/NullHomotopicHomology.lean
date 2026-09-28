@@ -1,14 +1,5 @@
 import Mathlib.AlgebraicTopology.SingularHomology.HomotopyInvariance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits AlgebraicTopology
@@ -19,8 +10,6 @@ variable {C : Type u} [Category.{v} C] [Preadditive C]
   [HasCoproducts.{w} C] [CategoryWithHomology C]
 
 namespace AlgebraicTopology
-
-
 
 theorem singularHomology_map_const (R : C) {X Y : TopCat.{w}} (y : Y)
     (n : Nat) (hn : n ≠ 0) :
@@ -39,8 +28,6 @@ theorem singularHomology_map_const (R : C) {X Y : TopCat.{w}} (y : Y)
 end AlgebraicTopology
 
 namespace TopCat.Homotopy
-
-
 
 theorem singularHomologyMap_eq_zero_of_const
     {X Y : TopCat.{w}} {f : X ⟶ Y} {y : Y}

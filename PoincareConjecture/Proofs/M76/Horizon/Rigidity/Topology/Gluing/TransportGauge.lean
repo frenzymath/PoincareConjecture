@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Gluing.ComponentTransport
 import PoincareConjecture.Proofs.M54.Mathlib.PathTransportFundamentalGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M76.IncompressibleGluing
 open Path.Homotopic.Quotient
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
-
 
 noncomputable def mappedLoopHom (f : C(X, Y)) (a : X) {b : Y}
     (t : Path.Homotopic.Quotient b (f a)) :
@@ -37,14 +26,11 @@ theorem mappedLoopHom_injective (f : C(X, Y)) (a : X) {b : Y}
   apply MulOpposite.unop_injective
   exact hf (congrArg MulOpposite.unop hpq)
 
-
 noncomputable def mappedTailDifference (f : C(X, Y)) {a x : X} {b : Y}
     (t : Path.Homotopic.Quotient b (f a))
     (s : Path.Homotopic.Quotient a x) (r : Path.Homotopic.Quotient b (f x)) :
     (FundamentalGroup Y b)ᵐᵒᵖ :=
   MulOpposite.op (r.trans ((s.map f).symm.trans t.symm))
-
-
 
 theorem mapped_transport_gauge (f : C(X, Y)) {a x y : X} {b : Y}
     (t : Path.Homotopic.Quotient b (f a))
@@ -64,8 +50,6 @@ theorem mapped_transport_gauge (f : C(X, Y)) {a x y : X} {b : Y}
   simp only [map_trans, map_symm, trans_assoc, symm_trans_assoc]
 
 variable {A : Type*} [Group A]
-
-
 
 noncomputable def gaugeTransport
     (L : LocalPathTransport (fun _ : Unit => (univ : Set X)) A)

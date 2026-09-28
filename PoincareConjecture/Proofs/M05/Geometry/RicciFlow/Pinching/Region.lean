@@ -1,17 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.Barrier
 import Mathlib.Analysis.InnerProductSpace.Spectrum
 import Mathlib.LinearAlgebra.Trace
-
-
-
-
-
-
-
-
-
-
 
 namespace Poincare.HamiltonIvey
 
@@ -44,8 +33,6 @@ theorem rayleigh_ge_least {T : E →ₗ[ℝ] E} (hT : T.IsSymmetric)
       rw [← Finset.mul_sum, hsq, mul_one]
     _ ≤ _ := Finset.sum_le_sum fun i _ => mul_le_mul_of_nonneg_right
       (hT.eigenvalues_antitone hn (by omega)) (sq_nonneg _)
-
-
 
 theorem least_eigenvalue_concave (hn : Module.finrank ℝ E = 3)
     {T U : E →ₗ[ℝ] E} (hT : T.IsSymmetric) (hU : U.IsSymmetric)

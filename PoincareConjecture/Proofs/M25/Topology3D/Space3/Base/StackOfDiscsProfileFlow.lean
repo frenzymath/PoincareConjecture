@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileChart
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -47,7 +37,6 @@ local notation "chi" => fun y : E3 => sigma * (inner ℝ (u : E3) y - seam)
 include ha0 ha1 hb0 hb1 hapos0 hapos1 hbpos0 hbpos1 habound0 habound1
   hsource hT hTi hheight hsign hlambda hdelta hW hcircle
   ha0near ha1near hb0near hb1near in
-
 
 theorem exists_stackPlacedProfileEvolution
     {V0 : Set E3} (hV0 : IsOpen V0)
@@ -179,7 +168,6 @@ theorem exists_stackPlacedProfileEvolution
 include ha0 ha1 hb0 hb1 hapos0 hapos1 hbpos0 hbpos1 habound0 habound1
   hsource hT hTi hheight hsign hlambda hdelta hW hcircle
   ha0near ha1near hb0near hb1near in
-
 
 theorem exists_stackPlacedProfileEvolution_in_height_strip
     (B0 eta : ℝ) (_hB0 : 1 ≤ B0)

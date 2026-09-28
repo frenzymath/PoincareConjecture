@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M04.ScalarContractions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +19,6 @@ private theorem derivative_neg (D : LeviCivitaData g) {k : ℕ}
   simp only [LeviCivitaData.covariantTensorDerivative, mvfderiv_fun_neg,
     neg_apply, Finset.sum_neg_distrib]
   ring
-
-
 
 theorem riemannDerivative_swap_first (D : LeviCivitaData g) (x : M)
     (a b c d e : TangentSpace (𝓡 n) x) :
@@ -53,8 +42,6 @@ theorem riemannDerivative_swap_first (D : LeviCivitaData g) (x : M)
     D.covariantTensorDerivative D.riemannEvaluation x ![a, c, b, d, e] at hp
   linarith only [hp]
 
-
-
 theorem riemannDerivative_swap_last (D : LeviCivitaData g) (x : M)
     (a b c d e : TangentSpace (𝓡 n) x) :
     D.covariantTensorDerivative D.riemannEvaluation x ![a, b, c, d, e] =
@@ -77,7 +64,6 @@ theorem riemannDerivative_swap_last (D : LeviCivitaData g) (x : M)
     D.covariantTensorDerivative D.riemannEvaluation x ![a, b, c, e, d] at hp
   linarith only [hp]
 
-
 theorem riemannDerivative_pair_exchange (D : LeviCivitaData g) (x : M)
     (a b c d e : TangentSpace (𝓡 n) x) :
     D.covariantTensorDerivative D.riemannEvaluation x ![a, b, c, d, e] =
@@ -96,8 +82,6 @@ theorem riemannDerivative_pair_exchange (D : LeviCivitaData g) (x : M)
     (M04.isSmoothCovariantTensor_riemannEvaluation D) s x a ![b, c, d, e]
   rw [he, hv] at hp
   exact hp
-
-
 
 theorem killing_riemannDerivative_divergence (D : LeviCivitaData g) (x : M)
     (a b c : TangentSpace (𝓡 n) x) :

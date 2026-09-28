@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedQuarterPrismPrescribedMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedQuarterBoundaryMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.DensityBound
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem inv_factorial_mul_pow_le_pullbackVolumeDensity
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -60,8 +47,6 @@ theorem inv_factorial_mul_pow_le_pullbackVolumeDensity
   rw [← hdet]
   nlinarith [mul_le_mul_of_nonneg_right hinv' (abs_nonneg A.toContinuousLinearMap.det)]
 
-
-
 theorem density_mul_volume_le_volumeMeasure_image_of_differential_lower_bound
     [MeasurableSpace M] [BorelSpace M] [T3Space M]
     (g : RiemannianMetric n M) {f : EuclideanSpace ℝ (Fin n) → M}
@@ -78,8 +63,6 @@ theorem density_mul_volume_le_volumeMeasure_image_of_differential_lower_bound
     _ = ∫⁻ _ in U, ENNReal.ofReal (((n.factorial : ℝ) * C ^ n)⁻¹) := by simp
     _ ≤ _ := setLIntegral_mono' hU fun x hx => ENNReal.ofReal_le_ofReal
       (g.inv_factorial_mul_pow_le_pullbackVolumeDensity hC (hderiv x hx) (hbound x hx))
-
-
 
 theorem ball_volume_lower_bound_of_injective_exponential
     [MeasurableSpace M] [BorelSpace M] [T3Space M]

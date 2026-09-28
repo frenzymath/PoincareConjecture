@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.InnerParallel
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.ExhaustionFunction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +10,6 @@ open scoped Topology Manifold ContDiff ENNReal
 namespace Poincare.Riemannian.Soul
 
 variable {M : Type*} [MetricSpace M] [ProperSpace M]
-
-
 
 theorem infDist_compl_horoball_eq_sub_exhaustion
     (hsegments : HasMinimizingSegments M) {p x : M} {c : ℝ}
@@ -60,8 +51,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem infDist_frontier_eq_infDist_compl
     (g : RiemannianMetric n M) (hc : MetricComplete g)

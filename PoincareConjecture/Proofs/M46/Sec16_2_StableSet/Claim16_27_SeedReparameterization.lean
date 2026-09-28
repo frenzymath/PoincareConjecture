@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SpatialPath
 import PoincareConjecture.Proofs.M08.ReferenceEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -42,8 +34,6 @@ theorem seed_curveVelocity_reparameterization {gamma : ℝ → M} {tau d s : ℝ
     (g := gamma) hgamma hq.differentiableAt.mdifferentiableAt 1
   rw [hqm, map_smul] at hchain
   exact hchain
-
-
 
 theorem seed_referenceSpeedSq_bound (g : RiemannianMetric n M)
     {gamma : ℝ → M} (hgamma : ContMDiff 𝓘(ℝ, ℝ) (𝓡 n) 1 gamma)

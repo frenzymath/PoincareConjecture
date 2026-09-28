@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.MetricComparison
 import PoincareConjecture.Proofs.M30.Thm5_6_PartialLimits.BoundaryCoverage
 import PoincareConjecture.Proofs.M13.Length
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -66,9 +56,6 @@ private theorem eventually_pathELength_le {γ : ℝ → G.limitCarrier.carrier}
   rw [mfderiv_comp t (hmap.mdifferentiableAt (by simp)) hdiff]
   exact hk (γ t) hγt (mfderiv 𝓘(ℝ) (𝓡 n) γ t 1)
 
-
-
-
 theorem eventually_mem_ball {r : ℝ} {x : G.limitCarrier.carrier}
     (hx : letI := G.limitCarrier.topologicalSpace
       letI := G.limitCarrier.chartedSpace
@@ -108,8 +95,6 @@ theorem eventually_mem_ball {r : ℝ} {x : G.limitCarrier.carrier}
       mul_le_mul' (ENNReal.ofReal_le_ofReal hsqrt_le) le_rfl
     _ = ENNReal.ofReal (2 * r) := (ENNReal.ofReal_mul (by norm_num)).symm
 
-
-
 theorem ball_subset_exhaustion_of_source_ball_coverage {r : ℝ} {l : ℕ}
     (hcover : ∀ᶠ k in atTop,
       (g (G.subsequence k)).ball (p (G.subsequence k)) (2 * r) ⊆
@@ -133,8 +118,6 @@ theorem ball_subset_exhaustion_of_source_ball_coverage {r : ℝ} {l : ℕ}
     (a₁ := ⟨y, G.exhaustion_monotone hlk hy⟩)
     (a₂ := ⟨x, G.exhaustion_monotone hik hxstage⟩) heq)
   simpa only [hyx] using hy
-
-
 
 theorem isCompact_closure_ball [∀ k, T2Space (M k)] {r : ℝ}
     (hr : 0 < r) (hrA : 2 * r < A) :

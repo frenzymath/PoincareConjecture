@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M36.SurgeryMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M03.ConnectionExistence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +12,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.M36
-
-
 
 theorem sectionalCurvature_eq_of_local_isometry
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
@@ -47,9 +35,6 @@ theorem sectionalCurvature_eq_of_local_isometry
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
 
 theorem surgeryMetric_inner_pureCap (g₀ : StandardInitialMetric) (N : EpsilonNeck g)
     (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -76,9 +61,6 @@ theorem surgeryMetric_inner_pureCap (g₀ : StandardInitialMetric) (N : EpsilonN
       (radialConformalMultiplier g₀ C q N.epsilon r (surgeryBallInclusion g₀ _ y) *
         metricPullbackForm g₀.metric (surgeryBallInclusion g₀ _) y a b)
   ring
-
-
-
 
 theorem surgeryMetric_sectional_pureCap_pos (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -128,10 +110,6 @@ theorem surgeryMetric_sectional_pureCap_pos (g₀ : StandardInitialMetric)
   rw [sectionalCurvature_eq_of_local_isometry D Dphysical hU
     (surgeryBallInclusion_contMDiff g₀ _).contMDiffOn hmetric hy]
   exact positiveScaling_const_sectional_pos Dcap hc Dphysical (i y) hcap _ _ hpair'
-
-
-
-
 
 theorem exists_surgeryMetric_pureCap_positive (g₀ : StandardInitialMetric) :
     ∃ (r : ℝ) (hr : 0 < r), r ≤ g₀.cylindrical_end.radius ∧
@@ -187,7 +165,6 @@ theorem mvfderiv_scalar_profile_germ {F s : X → ℝ} {phi : ℝ → ℝ} {x : 
   simp only [mvfderiv, mfderiv_eq_fderiv, ContinuousLinearMap.comp_apply]
   exact fderiv_eq_deriv_mul (𝕜 := ℝ)
 
-
 theorem gradient_scalar_profile_germ (D : LeviCivitaData h)
     {F s : X → ℝ} {phi : ℝ → ℝ} {x : X}
     (hphi : DifferentiableAt ℝ phi (s x))
@@ -198,9 +175,6 @@ theorem gradient_scalar_profile_germ (D : LeviCivitaData h)
   ext a
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
   exact mvfderiv_scalar_profile_germ hphi hs heq a
-
-
-
 
 theorem hessian_scalar_profile_germ (D : LeviCivitaData h)
     {F s : X → ℝ} {phi : ℝ → ℝ} {x : X}
@@ -236,9 +210,6 @@ theorem hessian_scalar_profile_germ (D : LeviCivitaData h)
     mvfderiv_scalar_profile_germ (F := c) (hphi'.differentiable (by simp) (s x)) hsd
       (Filter.EventuallyEq.rfl)]
 
-
-
-
 theorem sectionalCurvature_positiveScaling_profile
     (h : RiemannianMetric n X) (D : LeviCivitaData h)
     (F : X → ℝ) (hF : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ F)
@@ -265,9 +236,6 @@ theorem sectionalCurvature_positiveScaling_profile
   simp only [map_smul, smul_apply, smul_eq_mul]
   ring
 
-
-
-
 theorem sectionalCurvature_positiveScaling_profile_lower_bound
     (h : RiemannianMetric n X) (D : LeviCivitaData h)
     (F : X → ℝ) (hF : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ F)
@@ -293,9 +261,6 @@ theorem sectionalCurvature_positiveScaling_profile_lower_bound
   have hA := mul_nonneg (sq_nonneg (deriv phi (s x)))
     (add_nonneg (sq_nonneg (mvfderiv (𝓡 n) s x a)) (sq_nonneg (mvfderiv (𝓡 n) s x b)))
   nlinarith only [hH, hN, hA]
-
-
-
 
 theorem sectionalCurvature_positiveScaling_profile_lower_of_split
     (h : RiemannianMetric n X) (D : LeviCivitaData h)
@@ -355,8 +320,6 @@ theorem sectionalCurvature_positiveScaling_profile_lower_of_split
       nlinarith only [hbase, hsmall, mul_nonneg ht hA0]
     exact (neg_nonpos.mpr hxi).trans ((mul_nonneg (Real.exp_pos _).le hbracket).trans hL)
 
-
-
 theorem sectionalCurvature_positiveScaling_profile_pos_of_split
     (h : RiemannianMetric n X) (D : LeviCivitaData h)
     (F : X → ℝ) (hF : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ F)
@@ -397,9 +360,6 @@ theorem sectionalCurvature_positiveScaling_profile_pos_of_split
       nlinarith only [hbase, hsmall, mul_nonneg ht hA0]
   exact (mul_pos (Real.exp_pos _) hbracket).trans_le hL
 
-
-
-
 theorem sectionalCurvature_positiveScaling_smoothProfile_retained
     (h : RiemannianMetric n X) (D : LeviCivitaData h)
     (F : X → ℝ) (hF : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ F)
@@ -423,8 +383,6 @@ theorem sectionalCurvature_positiveScaling_smoothProfile_retained
 
 end Profile
 
-
-
 theorem standardCapConformalExponent_eq_on_transition (g₀ : StandardInitialMetric)
     (C q epsilon : ℝ) {r : ℝ} (hr : 0 < r) (hrA : r ≤ g₀.cylindrical_end.radius)
     {x : StandardCapSpace} (hx : standardSurgeryHeight g₀ x ≤ 2) :
@@ -434,9 +392,6 @@ theorem standardCapConformalExponent_eq_on_transition (g₀ : StandardInitialMet
   rw [radialConformalMultiplier_eq_on_transition g₀ C q epsilon hr hrA hx]
   simp only [conformalFactor, Real.log_exp]
   ring
-
-
-
 
 theorem surgeryMetric_sectional_retained (g₀ : StandardInitialMetric) (N : EpsilonNeck g)
     (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -510,8 +465,6 @@ theorem surgeryMetric_sectional_retained (g₀ : StandardInitialMetric) (N : Eps
     (fun z hz => (surgeryRetainedInverse_contMDiffAt g₀ N hcut (hne z hz)).contMDiffWithinAt)
     hmetric hyU a b
 
-
-
 theorem surgeryMetric_sectional_retained_pos (g₀ : StandardInitialMetric) (N : EpsilonNeck g)
     (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
     (hlambda : 0 < N.connection.scalarCurvature N.center) (heta : 0 < eta) (hr : 0 < r)
@@ -537,8 +490,6 @@ theorem surgeryMetric_sectional_retained_pos (g₀ : StandardInitialMetric) (N :
   rw [surgeryMetric_sectional_retained g₀ N hcut C q eta r hlambda heta hr hq hrA D hy
     a b hpair]
   exact hpositive _ (surgeryRetainedInverse_mem g₀ N hcut y) _ _ hpair'
-
-
 
 theorem surgeryMetric_leastSectional_retained (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
@@ -588,8 +539,6 @@ theorem surgeryMetric_leastSectional_retained (g₀ : StandardInitialMetric)
     have hab' := (hp a' b').mpr hab
     exact ⟨a', b', hab', hk.trans (hK a' b' hab').symm⟩
 
-
-
 theorem surgeryMetric_negativeCurvaturePart_retained (g₀ : StandardInitialMetric)
     (N : EpsilonNeck g) (hcut : surgeryCapRadius g₀ < N.epsilon⁻¹) (C q eta r : ℝ)
     (hlambda : 0 < N.connection.scalarCurvature N.center) (heta : 0 < eta) (hr : 0 < r)
@@ -601,6 +550,5 @@ theorem surgeryMetric_negativeCurvaturePart_retained (g₀ : StandardInitialMetr
       N.connection.negativeCurvaturePart (surgeryRetainedInverse g₀ N y) := by
   unfold LeviCivitaData.negativeCurvaturePart
   rw [surgeryMetric_leastSectional_retained g₀ N hcut C q eta r hlambda heta hr hq hrA D hy]
-
 
 end PoincareConjecture.M36

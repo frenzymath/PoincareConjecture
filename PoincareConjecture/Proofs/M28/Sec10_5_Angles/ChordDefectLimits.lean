@@ -8,16 +8,6 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,9 +17,6 @@ open scoped Topology
 
 namespace PoincareConjecture.M28
 
-
-
-
 def chordDefect (d : ℝ → ℝ → ℝ) (s t : ℝ) : ℝ :=
   (d s t ^ 2 - (s - t) ^ 2) / (s * t)
 
@@ -38,8 +25,6 @@ private theorem positive_Ioc_mem_nhdsGT {a : ℝ} (ha : 0 < a) :
   filter_upwards [self_mem_nhdsWithin,
     mem_nhdsWithin_of_mem_nhds (Iic_mem_nhds ha)] with s hs hsa
   exact ⟨hs, hsa⟩
-
-
 
 theorem chordDefect_bounds {d : ℝ → ℝ → ℝ} {s t : ℝ}
     (hs : 0 < s) (ht : 0 < t) (hlower : |s - t| ≤ d s t)
@@ -56,9 +41,6 @@ theorem chordDefect_bounds {d : ℝ → ℝ → ℝ} {s t : ℝ}
   change (d s t ^ 2 - (s - t) ^ 2) / (s * t) ≤ 4
   apply (div_le_iff₀ (mul_pos hs ht)).mpr
   nlinarith
-
-
-
 
 theorem chordDefect_le_of_corresponding_side_lower
     {d : ℝ → ℝ → ℝ} {S T s t : ℝ}
@@ -77,9 +59,6 @@ theorem chordDefect_le_of_corresponding_side_lower
   change chordDefect d S T ≤ (d s t ^ 2 - (s - t) ^ 2) / (s * t)
   apply (le_div_iff₀ (mul_pos hs ht)).mpr
   nlinarith
-
-
-
 
 theorem exists_joint_chord_limit
     {k : ℝ → ℝ → ℝ} {A B : ℝ} (hA : 0 < A) (hB : 0 < B)
@@ -120,9 +99,6 @@ theorem exists_joint_chord_limit
       (positive_Ioc_mem_nhdsGT hB)] with p hp
     exact (hupper p.1 hp.1 p.2 hp.2).trans_lt hu
 
-
-
-
 theorem exists_chordDefect_limit_of_corresponding_side_lower
     {d : ℝ → ℝ → ℝ} {A B : ℝ} (hA : 0 < A) (hB : 0 < B)
     (htriangle : ∀ s ∈ Ioc (0 : ℝ) A, ∀ t ∈ Ioc (0 : ℝ) B,
@@ -142,9 +118,6 @@ theorem exists_chordDefect_limit_of_corresponding_side_lower
     exact chordDefect_le_of_corresponding_side_lower hS.1 hT.1 hs.1 ht.1
       (hcomparison S hS T hT s hs t ht)
 
-
-
-
 theorem chordDefect_le_joint_limit_of_corresponding_side_lower
     {d : ℝ → ℝ → ℝ} {K S T : ℝ} (hS : 0 < S) (hT : 0 < T)
     (hlimit : Tendsto (fun p : ℝ × ℝ => chordDefect d p.1 p.2)
@@ -158,8 +131,6 @@ theorem chordDefect_le_joint_limit_of_corresponding_side_lower
     (positive_Ioc_mem_nhdsGT hT)] with p hp
   exact chordDefect_le_of_corresponding_side_lower hS hT hp.1.1 hp.2.1
     (hcomparison p.1 hp.1 p.2 hp.2)
-
-
 
 theorem sqrt_chord_limit_bounds {K : ℝ} (hK : K ∈ Icc (0 : ℝ) 4) :
     Real.sqrt K ∈ Icc (0 : ℝ) 2 ∧ (Real.sqrt K) ^ 2 = K := by
@@ -192,9 +163,6 @@ private theorem sqrt_scaled_chordDefect_identity (d : ℝ → ℝ → ℝ)
       d (h * r) (h * s) / h := by
   rw [← scaled_chordDefect_identity d hh.ne' hr.ne' hs.ne']
   exact Real.sqrt_sq (div_nonneg hd hh.le)
-
-
-
 
 theorem tendsto_rescaled_distance_of_chordDefect_limit
     {d : ℝ → ℝ → ℝ} {A B K r s : ℝ}
@@ -231,9 +199,6 @@ theorem tendsto_rescaled_distance_of_chordDefect_limit
       hsmap.eventually (positive_Ioc_mem_nhdsGT hB)] with h hh hhr hhs
     exact sqrt_scaled_chordDefect_identity d hh hr hs (hnonneg _ hhr _ hhs)
   exact Filter.Tendsto.congr' heq hroot
-
-
-
 
 theorem tendsto_equal_radius_distance_of_chordDefect_limit
     {d : ℝ → ℝ → ℝ} {A B K : ℝ} (hA : 0 < A) (hB : 0 < B)

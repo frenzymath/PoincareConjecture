@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Scalar.SharpBounds
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem operator_bound_of_tensor_calculus (K : AncientKappaSolution n M)
     (t : ℝ) (ht : t ≤ 0)
@@ -46,8 +34,6 @@ theorem operator_bound_of_tensor_calculus (K : AncientKappaSolution n M)
   exact (le_abs_self _).trans
     (((K.flow.connection t).abs_scalarCurvature_le_curvatureTensorNorm x).trans
       (mul_le_mul_of_nonneg_left ((le_abs_self _).trans (hbound x)) (sq_nonneg _)))
-
-
 
 theorem scalar_monotone_of_differential (K : AncientKappaSolution n M)
     (hdifferential : ∀ t ≤ 0, ∀ x : M, ∀ v : TangentSpace (𝓡 n) x,
@@ -85,8 +71,6 @@ theorem scalar_monotone_of_differential (K : AncientKappaSolution n M)
       simpa only [dif_pos (show a ≤ 0 from ha')] using (hderiv a ha').choose_spec.2
   exact hm (hst.trans ht) ht hst
 
-
-
 theorem exists_scalar_pos_of_tensor_calculus (K : AncientKappaSolution n M)
     (t : ℝ) (ht : t ≤ 0)
     (hcalculus : (K.flow.connection t).CurvatureTensorCalculus) :
@@ -98,8 +82,6 @@ theorem exists_scalar_pos_of_tensor_calculus (K : AncientKappaSolution n M)
   exact hpos.trans_le
     ((K.flow.connection t).curvatureTensorNorm_le_scalarCurvature_sharp hcalculus x
       (K.nonnegative_curvature_operator t ht x))
-
-
 
 theorem whole_past_bound_of_scalar_monotone (K : AncientKappaSolution n M)
     (hcalculus : ∀ t ≤ 0, (K.flow.connection t).CurvatureTensorCalculus)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M47.EventSeedGeometry
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +12,6 @@ namespace PoincareConjecture.Proofs.M47
 variable {g0 : StandardInitialMetric} {K : MetricSurgeryConstants}
   {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
   {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
-
-
 
 theorem seed_birth_cap_height
     (E : SurgeryEventData g0 K P slice metric T) (D : LeviCivitaData (metric T))

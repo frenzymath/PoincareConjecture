@@ -6,18 +6,6 @@ import Mathlib.LinearAlgebra.BilinearForm.Hom
 import Mathlib.LinearAlgebra.Multilinear.Curry
 import Mathlib.Analysis.Normed.Module.RCLike.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators

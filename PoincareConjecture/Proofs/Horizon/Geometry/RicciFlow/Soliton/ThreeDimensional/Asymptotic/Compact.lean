@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Asymptotic.RoundFlow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.Classification
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -89,7 +82,6 @@ theorem constantPositiveSectionalCurvature_of_compact
     A.connection (H.connection t) hround
   exact round_of_pullbackDiffeomorph F
     (Poincare.Manifold.uliftDiffeomorph (𝓡 3) L.convergence.limit.carrier.carrier) t hH
-
 
 theorem classificationCertificate_of_compact
     (hC : RicciFlowCurvatureTheory.{u}) (L : AncientAsymptoticSolitonLimitData S)

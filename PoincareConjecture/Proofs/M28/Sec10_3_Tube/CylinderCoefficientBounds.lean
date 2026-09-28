@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CylinderOrdinaryJets
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +21,6 @@ private theorem low_order_cylinderTensorWeight {k : ℕ} (hk : k ≤ 2)
   have hsmall : (1 / 16 : ℝ) ≤ (1 / 2 : ℝ) ^ (2 + k) := by
     interval_cases k <;> norm_num
   exact hsmall.trans hprod
-
-
 
 theorem cylinder_covariant_component_le
     {epsilon : ℝ} (hepsilon : 0 < epsilon) {B : RoundCylinderTwoTensor}
@@ -68,12 +58,9 @@ theorem cylinder_covariant_component_le
     nlinarith
   exact (sq_le_sq₀ (abs_nonneg _) (by positivity)).mp hsq
 
-
 theorem norm_roundCylinderCoordinateBasis (a : Fin 3) :
     ‖roundCylinderCoordinateBasis a‖ = 1 := by
   fin_cases a <;> simp [roundCylinderCoordinateBasis]
-
-
 
 theorem cylinder_first_component_le
     {epsilon : ℝ} (hepsilon : 0 < epsilon) {B : RoundCylinderTwoTensor}
@@ -92,9 +79,6 @@ theorem cylinder_first_component_le
       (0, z.2) (Fin.cons i a)| ≤ 4 * epsilon at h
   rw [roundCylinderTensorDerivative_center] at h
   exact h
-
-
-
 
 theorem exists_cylinder_second_component_bound :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ (epsilon : ℝ), 0 < epsilon →

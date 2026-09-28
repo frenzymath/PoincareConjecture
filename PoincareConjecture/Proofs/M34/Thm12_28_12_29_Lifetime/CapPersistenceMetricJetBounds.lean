@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceEuclideanJets
 import PoincareConjecture.Proofs.M34.Mathlib.NeckFiniteBilinearJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +11,6 @@ namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
-
-
-
-
 
 theorem capPersistence_exists_realized_metric_jet_bound (n : ℕ) (delta : ℝ) :
     ∃ K : ℝ, 1 ≤ K ∧ ∀ (B : RoundCylinderTwoTensor),

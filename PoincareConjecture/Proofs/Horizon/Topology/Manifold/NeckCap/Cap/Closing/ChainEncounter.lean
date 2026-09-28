@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.CoreConne
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cover
 import PoincareConjecture.Proofs.Horizon.Topology.Connected.BoundaryIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,8 +18,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem frontier_core_contact_of_closed_core_contact (C D : CapCertificate g)
     {x : M} (hx : x ∈ D.core \ C.carrier)
@@ -51,10 +38,6 @@ theorem frontier_core_contact_of_closed_core_contact (C D : CapCertificate g)
 end CapCertificate
 
 namespace ConnectedNeckCapCover
-
-
-
-
 
 theorem exists_closed_core_encounter_closing_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

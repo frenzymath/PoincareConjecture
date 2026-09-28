@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M34.Standard.LocalHomothetyCurvature
 import PoincareConjecture.Proofs.M34.Standard.NeckRestriction
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_CylinderChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +26,6 @@ variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {g : RiemannianMetric 3 C.carrier} (N : EpsilonNeck g)
   {origin scale : ℝ} {I : Set ℝ}
   (e : SurgeryFlowCylinder F C origin scale I N.carrier)
-
-
 
 theorem source_neck_slice_metric_realization (s : ℝ) (hs : s ∈ I)
     (q : UnitTwoSphere) {c : ℝ} (hc : c ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹) :
@@ -135,8 +124,6 @@ theorem source_neck_slice_metric_realization (s : ℝ) (hs : s ∈ I)
     change D1.scalarCurvature p = _
     simpa only [f, Function.comp_apply, hpoint] using hscalar
 
-
-
 theorem source_neck_slice_scalar_difference_le (hsmall : N.epsilon ≤ 1 / 200)
     (s : ℝ) (hs : s ∈ I) (hs0 : s ≤ 0)
     (hclose : RoundCylinderClose N.epsilon s (surgeryCylinderPullback e N.coordinate_map s))
@@ -153,8 +140,6 @@ theorem source_neck_slice_scalar_difference_le (hsmall : N.epsilon ≤ 1 / 200)
   rw [hscalar] at h
   have hpoint : N.coordinate_map (z.1, z.2) = x := neck_coordinate_inverse N hx
   rwa [hpoint] at h
-
-
 
 theorem source_initial_old_scalar_difference_le
     {T : ℝ} (hT : T ∈ F.surgery_times) [Nonempty (F.slice T).carrier]

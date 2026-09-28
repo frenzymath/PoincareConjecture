@@ -1,26 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RelativeManifoldPLApproximation
 import PoincareConjecture.Proofs.M76.Mathlib.SimplyConnectedDiskPairExtension
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Geometry
-
-
-
 
 theorem PolyhedralPLInCharts.congr
     {E F M ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -40,11 +25,6 @@ theorem PolyhedralPLInCharts.congr
 end Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem exists_polyhedralPL_disk_extension
     {E F M ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

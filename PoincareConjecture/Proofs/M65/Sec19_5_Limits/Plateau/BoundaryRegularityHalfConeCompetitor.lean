@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityPu
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityWeakReplacement
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityConeVectorGreen
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -77,11 +67,6 @@ private theorem inverse_function_memLp {p : ℂ} (hp : ‖p‖ = 1)
   exact (memLp_two_iff_integrable_sq
     (transfer u (hu.integrable (by norm_num : (1 : ENNReal) ≤ 2))).1).mpr
       (transfer (fun z => u z ^ 2) hu.integrable_sq)
-
-
-
-
-
 
 theorem exists_boundary_function_pushforward_uniform :
     ∃ R : ℝ, 0 < R ∧ ∀ {p : ℂ}, ‖p‖ = 1 → ∀ r : ℝ, 0 < r → r ≤ R →
@@ -148,8 +133,6 @@ theorem exists_boundary_function_pushforward_uniform :
   apply integral_congr_ae
   filter_upwards [hUQ, hD i] with w hu' hd'
   rw [hu', hd']
-
-
 
 theorem exists_boundary_function_pushforward {p : ℂ} (hp : ‖p‖ = 1) :
     ∃ R : ℝ, 0 < R ∧ ∀ r : ℝ, 0 < r → r ≤ R →
@@ -254,11 +237,6 @@ private theorem halfDisk_green_integrable {N : ℕ} {K : Set LoopPlane}
 set_option maxHeartbeats 1800000 in
 
 open Classical in
-
-
-
-
-
 
 theorem exists_boundary_half_cone_competitor_uniform
     {M : Type*} [TopologicalSpace M] {N : ℕ}
@@ -453,7 +431,6 @@ theorem exists_boundary_half_cone_competitor_uniform
     _ = _ := heq.symm
 
 open Classical in
-
 
 theorem exists_boundary_half_cone_competitor
     {M : Type*} [TopologicalSpace M] {N : ℕ}

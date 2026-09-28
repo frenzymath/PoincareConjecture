@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhoo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Reversal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.SmoothDomain
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -65,8 +53,6 @@ theorem frontier_closure_inside : frontier (closure G.inside) =
     _ = frontier G.inside := G.inside_open.frontier_eq.symm
     _ = G.neck.terminal_neck.central_sphere := G.inside_frontier
 
-
-
 theorem exists_outward_neck :
     ∃ Q : EpsilonNeck (K.flow.metric 0), Q.epsilon = epsilon ∧
       Q.carrier = G.neck.terminal_neck.carrier ∧
@@ -85,7 +71,6 @@ theorem exists_outward_neck :
         neg_zero, neg_neg, G.neck.terminal_epsilon] using h.2
     · simpa only [EpsilonNeck.reversed_region, EpsilonNeck.reversed_epsilon,
         neg_zero, G.neck.terminal_epsilon] using h.1
-
 
 theorem exists_outward_height_neck :
     ∃ Q : EpsilonNeck (K.flow.metric 0),
@@ -113,7 +98,6 @@ theorem exists_outward_height_neck :
       rw [G.inside_frontier, ← hsphere]
       exact (Q.mem_central_sphere_iff y).mpr ⟨hy, heq⟩
 
-
 theorem exists_closed_side_halfspace_chart (a : closure G.inside) :
     ∃ e : OpenPartialHomeomorph M (EuclideanSpace ℝ (Fin 3)),
       a.val ∈ e.source ∧
@@ -135,8 +119,6 @@ theorem exists_closed_side_halfspace_chart (a : closure G.inside) :
       rw [hsphere, ← G.inside_frontier, G.inside_open.frontier_eq]
       exact ⟨a.property, ha⟩
     · exact hheight
-
-
 
 theorem nonempty_smoothDomain : Nonempty (Poincare.Manifold.SmoothDomain 3 G.inside) := by
   obtain ⟨Q, _, _, hsphere, _, _, hheight⟩ := G.exists_outward_height_neck

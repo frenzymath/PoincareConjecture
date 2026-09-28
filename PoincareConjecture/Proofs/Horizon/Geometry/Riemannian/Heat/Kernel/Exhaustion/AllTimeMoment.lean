@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.MeasureTheory.Integral.KernelMoment
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaustion.Moment
 
-
 set_option autoImplicit false
 
 open Set MeasureTheory

@@ -3,8 +3,6 @@ import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Geometry.Manifold.Algebra.SmoothFunctions
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,7 +54,6 @@ theorem contMDiffAt_direction {x : Plane} (hx : x ≠ 0) :
     intro y
     exact Subtype.ext (direction_coe y.property)
   exact (contMDiffAt_subtype_iff (x := (⟨x, hx⟩ : U))).mp (hd ⟨x, hx⟩)
-
 
 def radial : PartialDiffeomorph (𝓡 2) Iprod Plane (Circle × Real) ∞ where
   toFun x := (direction x, ‖x‖ - 1)

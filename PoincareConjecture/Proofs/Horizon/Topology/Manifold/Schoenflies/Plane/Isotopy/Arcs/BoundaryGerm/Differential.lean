@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Germ.SphereDifferential
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies.PlaneArcs.BoundaryGerm
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev S1 := sphere (0 : E2) 1
 private instance : Fact (Module.finrank Real E2 = 1 + 1) := ⟨by simp⟩
-
 
 theorem fderiv_eq_self_on_fixed_circle_patch
     {D : E2 -> E2} (hD : ContDiff Real ∞ D)
@@ -42,8 +35,6 @@ theorem fderiv_eq_self_on_fixed_circle_patch
     exact hu
   obtain ⟨w, rfl⟩ := huL
   exact (congrArg (fun A => A w) hchain).symm
-
-
 
 theorem positive_normal_of_inward_circle_patch
     {D : E2 -> E2} (hD : ContDiff Real ∞ D)
@@ -79,8 +70,6 @@ theorem positive_normal_of_inward_circle_patch
     rw [heq] at hz
     simp at hz
   exact lt_of_le_of_ne (by linarith) hne.symm
-
-
 
 theorem bijective_fderiv_homotopy_of_inward_circle_patch
     {D : E2 -> E2} (hD : ContDiff Real ∞ D)

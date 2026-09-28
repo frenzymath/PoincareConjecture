@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Mathlib.PositivePolar
 import PoincareConjecture.Proofs.M25.Mathlib.ProductBoundaryTransition
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.OrientedCollarCorrection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_cylinder_model_of_opposite_half_charts
     {M : Type u} [TopologicalSpace M]

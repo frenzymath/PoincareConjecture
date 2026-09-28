@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.SingularHomotopyClasses
 import PoincareConjecture.Proofs.M02.Topology.HomotopyAddition
 import PoincareConjecture.Proofs.M02.Topology.SimplicialHomologyDetection
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Simplicial
@@ -17,7 +9,6 @@ open CategoryTheory Simplicial
 universe u
 
 namespace PoincareConjecture.Proofs.M02.Topology
-
 
 theorem singularPointedSimplexClass_eq_of_homology_eq
     (X : TopCat.{u}) (n : Nat)

@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M34.Mathlib.MultilinearBasisConvergence
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.ScalarJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
 open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem tendsto_iteratedFDeriv_euclideanCoefficients_of_scalar_jets
     {n : ℕ} {α : Type*} {l : Filter α}

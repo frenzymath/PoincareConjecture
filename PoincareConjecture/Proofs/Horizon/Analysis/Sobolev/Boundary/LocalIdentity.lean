@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.LocalTests
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.NirenbergIdentity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,8 +50,6 @@ private theorem extended_weakPartial {u : E → ℝ} {p : Fin d → E → ℝ}
       isWeakGrad := hw }
   have hu' : MemW01p (ENNReal.ofReal (2 : ℝ)) u (halfSpace d) := by simpa using hu
   exact (zeroExtendMemW1pWitnessP isOpen_halfSpace (by norm_num : (1 : ℝ) < 2) hu' w).isWeakGrad i
-
-
 
 theorem local_tangential_nirenberg_identity
     {W : Set E} (hW : IsOpen W)

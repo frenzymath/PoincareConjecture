@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.DeepHorn.Neck.Spatial
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.CenteredNeckMetric
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 10
@@ -109,8 +107,6 @@ theorem regularNeckCenteredLift_mfderiv_invertible (z : RoundCylinderSpace) {p :
   have hs : Function.Surjective L := LinearMap.surjective_of_injective (f := L.toLinearMap) hi
   exact ⟨ContinuousLinearEquiv.ofBijective L (LinearMap.ker_eq_bot.mpr hi)
     (LinearMap.range_eq_top.mpr hs), rfl⟩
-
-
 
 theorem regularNeckCenteredLift_coefficients (z : RoundCylinderSpace) {p : E}
     (hp : p ∈ centeredNeckDomain (N.spatialNeck hε) z.2) :

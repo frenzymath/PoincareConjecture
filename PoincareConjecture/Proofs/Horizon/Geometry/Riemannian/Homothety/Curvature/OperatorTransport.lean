@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Curvature.ContractionTransport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -23,7 +13,6 @@ variable {n : ℕ} {M : Type*} {N : Type*}
   [IsManifold (𝓡 n) ∞ M] [T2Space M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N] [T2Space N]
-
 
 theorem homothety_curvatureOperatorQuadratic_basis
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -50,7 +39,6 @@ theorem homothety_curvatureOperatorQuadratic_basis
     ← mul_div_assoc, ← Finset.sum_div]
   rfl
 
-
 theorem homothety_nonnegative_operator_iff
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
     (f : Diffeomorph (𝓡 n) (𝓡 n) M N ∞) (Q : ℝ) (hQ : 0 < Q)
@@ -73,7 +61,6 @@ theorem homothety_nonnegative_operator_iff
     (h.orthonormalBasis (f x)) b]
   simp only [b, homothety_curvatureOperatorQuadratic_basis g h f Q hQ hf D D',
     le_div_iff₀ hQ, zero_mul]
-
 
 theorem homothety_operator_bound_iff
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

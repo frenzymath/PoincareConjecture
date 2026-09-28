@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Tube.Gluing.C
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Topology.Transport
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.Truncation.NeckContraction
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -276,8 +269,6 @@ theorem exists_smooth_truncation_threshold :
   intro M _ _ _ _ _ _ _ g C hε b hb
   obtain ⟨E, hsource, htarget, hE, hEi, hfix, _⟩ := htransport C hε b hb
   exact ⟨E, hsource, htarget, hE, hEi, hfix⟩
-
-
 
 theorem exists_truncated_carrier_model_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryGeometry
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,11 +11,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M64
 
 open M65Branch M65StrictTrace
-
-
-
-
-
 
 theorem halfDisk_immersed_gradient_regular
     {n : ℕ} [Nonempty (Fin n)]

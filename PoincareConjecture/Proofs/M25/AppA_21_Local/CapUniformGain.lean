@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapEndWidth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem ConnectedNeckCapCover.exists_uniform_cap_truncation_depth_gain_of_end_neck_overlap :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

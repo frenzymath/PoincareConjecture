@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_PointJetConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +11,6 @@ variable {ι E F G : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
   [NormedAddCommGroup G] [NormedSpace ℝ G]
 
-
-
 def FinitePointJetBounded (m : ℕ) (f : ι → E → F) (x : ι → E) (l : Filter ι) : Prop :=
   ∀ j ≤ m, l.IsBoundedUnder (· ≤ ·) (fun i => ‖iteratedFDeriv ℝ j (f i) (x i)‖)
 
@@ -28,12 +18,8 @@ namespace FinitePointJetBounded
 
 variable {m n : ℕ} {f : ι → E → F} {x : ι → E} {l : Filter ι}
 
-
-
 theorem mono_order (h : FinitePointJetBounded n f x l) (hmn : m ≤ n) :
     FinitePointJetBounded m f x l := fun j hj => h j (hj.trans hmn)
-
-
 
 theorem bound_all (h : FinitePointJetBounded m f x l) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ᶠ i in l, ∀ j ≤ m, ‖iteratedFDeriv ℝ j (f i) (x i)‖ ≤ C := by
@@ -46,16 +32,12 @@ theorem bound_all (h : FinitePointJetBounded m f x l) :
   exact (hi k).trans ((le_max_left _ _).trans
     (Finset.single_le_sum (fun q _ => le_max_right (c q) 0) (Finset.mem_univ k)))
 
-
-
 theorem zero (h : l.IsBoundedUnder (· ≤ ·) (fun i => ‖f i (x i)‖)) :
     FinitePointJetBounded 0 f x l := by
   intro j hj
   have : j = 0 := by omega
   subst j
   simpa only [norm_iteratedFDeriv_zero] using h
-
-
 
 theorem succ_of_fderiv
     (hzero : l.IsBoundedUnder (· ≤ ·) (fun i => ‖f i (x i)‖))
@@ -66,14 +48,10 @@ theorem succ_of_fderiv
   | zero => simpa only [norm_iteratedFDeriv_zero] using hzero
   | succ j => simpa only [norm_iteratedFDeriv_fderiv] using hderiv j (by omega)
 
-
-
 theorem fderiv (h : FinitePointJetBounded (m + 1) f x l) :
     FinitePointJetBounded m (fun i => _root_.fderiv ℝ (f i)) x l := by
   intro j hj
   simpa only [norm_iteratedFDeriv_fderiv] using h (j + 1) (by omega)
-
-
 
 theorem congr {g : ι → E → F} (h : FinitePointJetBounded m f x l)
     (heq : ∀ i, f i =ᶠ[𝓝 (x i)] g i) : FinitePointJetBounded m g x l := by
@@ -84,8 +62,6 @@ theorem congr {g : ι → E → F} (h : FinitePointJetBounded m f x l)
     rw [((heq i).iteratedFDeriv (𝕜 := ℝ) j).self_of_nhds]
   rw [← hh]
   exact h j hj
-
-
 
 theorem prodMk {g : ι → E → G}
     (hf : FinitePointJetBounded m f x l) (hg : FinitePointJetBounded m g x l)
@@ -101,9 +77,6 @@ theorem prodMk {g : ι → E → G}
   rw [iteratedFDeriv_prodMk (hfs i) (hgs i) (by exact_mod_cast le_top),
     ContinuousMultilinearMap.opNorm_prod]
   exact max_le_max hiA hiB
-
-
-
 
 theorem comp {g : ι → F → G}
     (hf : FinitePointJetBounded m f x l)
@@ -126,9 +99,6 @@ theorem comp {g : ι → F → G}
     exact (hiA k (hk'.trans hj)).trans
       ((le_max_left A 1).trans (le_self_pow₀ (le_max_right A 1) (by omega)))
 
-
-
-
 theorem smooth_postcompose [FiniteDimensional ℝ F] {g : F → G}
     (hf : FinitePointJetBounded m f x l)
     (hfs : ∀ i, ContDiffAt ℝ ∞ (f i) (x i)) (hg : ContDiff ℝ ∞ g) :
@@ -148,8 +118,6 @@ theorem smooth_postcompose [FiniteDimensional ℝ F] {g : F → G}
   exact hf.comp hout hfs (fun _ => hg.contDiffAt)
 
 end FinitePointJetBounded
-
-
 
 theorem PointJetsConverge.finite_bound {f : ι → E → F} {x : ι → E}
     {f0 : E → F} {x0 : E} {l : Filter ι}

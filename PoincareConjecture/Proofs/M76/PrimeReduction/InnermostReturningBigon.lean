@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.ReturningArcNesting
 import Mathlib.Order.WellFoundedSet
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace Polygon
 
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Set.preimage (Prod.snd : (ℝ × ℝ) → ℝ) ({0} : Set ℝ))
-
-
-
 
 theorem exists_innermost_returning_bigon {ι : Type*} [Finite ι] [Nonempty ι]
     (n : ι → ℕ) (P : ∀ i, Polygon V (n i + 3))

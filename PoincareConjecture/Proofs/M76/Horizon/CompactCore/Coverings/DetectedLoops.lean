@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.BarycentricWalkLifts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 theorem IsCoveringMap.not_homotopic_refl_of_lift_ne

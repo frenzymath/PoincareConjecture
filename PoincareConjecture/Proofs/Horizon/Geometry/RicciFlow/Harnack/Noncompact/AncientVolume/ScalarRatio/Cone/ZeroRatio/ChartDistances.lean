@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.ZeroRatio.RadialModel
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.AnnularDistance
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
@@ -25,9 +12,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
-
 
 theorem exists_uniform_distance_limit_on_closedBall_of_normal_chart_coefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
@@ -75,10 +59,6 @@ end PoincareConjecture.RiemannianMetric
 universe u
 
 namespace PoincareConjecture.RicciFlow
-
-
-
-
 
 theorem exists_flat_radial_chart_with_source_distances_of_zero_ratio
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
@@ -194,10 +174,6 @@ theorem exists_flat_radial_chart_with_source_distances_of_zero_ratio
     exact ⟨(hmodel x (h2rW hx)).1, (hmodel x (h2rW hx)).2.1,
       hflat x (hWV (h2rW hx)), (hmodel x (h2rW hx)).2.2.1,
       (hmodel x (h2rW hx)).2.2.2⟩
-
-
-
-
 
 theorem exists_distance_normalized_flat_radial_chart_with_source_distances
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

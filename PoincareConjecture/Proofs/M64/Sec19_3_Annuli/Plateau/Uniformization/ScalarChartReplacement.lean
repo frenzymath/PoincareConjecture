@@ -3,19 +3,6 @@ import PoincareConjecture.Proofs.M40.Mathlib.ChartPerturbation
 import PoincareConjecture.Proofs.M60.Mathlib.ChartApproximation
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.PiecewiseArea
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +19,6 @@ variable {n : ℕ} {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
-
-
 
 theorem scalar_exists_chart_area_replacements
     (g : RiemannianMetric n M) (e : OpenPartialHomeomorph M E)

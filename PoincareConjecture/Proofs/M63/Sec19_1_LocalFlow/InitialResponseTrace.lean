@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CenteredSpectralResponse
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +11,6 @@ open SpectralHeatNative QuasilinearDeTurckNative
 variable {iota : Type*} [Countable iota] (lambda : iota → NNReal)
   (w : State iota) {T : ℝ}
 
-
-
-
 noncomputable def initialResponseTrace (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     ResponsePath iota T where
   toFun t := heat lambda (t : ℝ).toNNReal w + shiftedTracePath hT lambda F t
@@ -29,9 +18,6 @@ noncomputable def initialResponseTrace (hT : 0 ≤ T) (F : ForcingSpace iota T) 
     ((continuous_heat_apply lambda w).comp
       (continuous_real_toNNReal.comp continuous_subtype_val)).add
       (shiftedTracePath hT lambda F).continuous
-
-
-
 
 theorem initialResponseTrace_spec (hT : 0 ≤ T) (F : ForcingSpace iota T) :
     initialResponseTrace lambda w hT F ⟨0, le_rfl, hT⟩ = w ∧

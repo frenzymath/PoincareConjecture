@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.M35StandardCapUniqueness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,8 +10,6 @@ namespace StandardCapNeighborhood
 
 variable {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
   {F : MaximalStandardCapFlow g₀} {t epsilon C C' : ℝ} {x : StandardCapSpace}
-
-
 
 theorem scalarSup_pos (N : StandardCapNeighborhood atlas F t epsilon C x) :
     0 < scalarCurvatureSupOn (F.metric t) (F.connection t) N.carrier := by
@@ -32,8 +22,6 @@ theorem scalarSup_pos (N : StandardCapNeighborhood atlas F t epsilon C x) :
     exact (N.scalar_ratio x hxcore.1 z.1 z.2).le
   exact (N.scalar_pos x hxcore.1).trans_le
     (le_csSup hbounded ⟨⟨x, hxcore.1⟩, rfl⟩)
-
-
 
 def mono_constant (N : StandardCapNeighborhood atlas F t epsilon C x)
     (hCC' : C ≤ C') : StandardCapNeighborhood atlas F t epsilon C' x := by
@@ -72,8 +60,6 @@ def mono_constant (N : StandardCapNeighborhood atlas F t epsilon C x)
 
 end StandardCapNeighborhood
 
-
-
 theorem StandardCanonicalAlternative.mono_constant
     {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
     {F : MaximalStandardCapFlow g₀} {t epsilon C C' : ℝ} {x : StandardCapSpace}
@@ -85,8 +71,6 @@ theorem StandardCanonicalAlternative.mono_constant
   | evolving_neck N => exact .evolving_neck N
 
 namespace M45
-
-
 
 theorem standardCanonicalServices {g₀ : StandardInitialMetric}
     {E : RepairedStandardCapExistenceData g₀}

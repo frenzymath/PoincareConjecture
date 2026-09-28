@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.EllipsoidRounding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,12 +8,9 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
 theorem ellipsoidRoundingTrack_one (A : E ≃L[ℝ] E) {y : E} (hy : y ≠ 0) :
     ellipsoidRoundingTrack A 1 y = ellipsoidRadialRatio A y • y := by
   rw [ellipsoidRoundingTrack, one_mul, Real.exp_log (ellipsoidRadialRatio_pos A hy)]
-
-
 
 theorem ellipsoidRoundingTrack_image_sphere (A : E ≃L[ℝ] E) {r : ℝ} (hr : 0 < r) :
     ellipsoidRoundingTrack A 1 '' (A '' sphere (0 : E) r) = sphere 0 r := by

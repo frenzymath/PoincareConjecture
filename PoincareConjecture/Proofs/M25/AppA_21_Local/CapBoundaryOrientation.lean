@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapBasics
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Coordinates
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.Reversal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.exists_outward_boundary_neck
     {M : Type u} [TopologicalSpace M]

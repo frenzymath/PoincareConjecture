@@ -5,13 +5,6 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.Normed.Operator.BanachSteinhaus
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -156,8 +149,6 @@ private theorem differentiableAt_of_inner_smooth {U : Set E} (hU : IsOpen U)
     (lt_div_iff₀ (by linarith : 0 < C + 1)).mp (lt_of_lt_of_le hy' (min_le_right _ _))
   have hCsmall : C * ‖y - x‖ ≤ ε := by nlinarith [norm_nonneg (y - x)]
   exact (hC y hyball).trans (by nlinarith [norm_nonneg (y - x)])
-
-
 
 theorem contDiffOn_of_inner_smooth
     {U : Set E} {f : E → H} (hU : IsOpen U)

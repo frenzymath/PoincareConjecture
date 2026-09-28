@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ZeroApexSlice
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
 
 theorem convexHull_insert_level_homothety (A : E →ᵃ[ℝ] ℝ)
     {q : E} (hq : A q = 0) {s : Set E} (hs : s.Nonempty)
@@ -52,9 +41,6 @@ theorem convexHull_insert_level_homothety (A : E →ᵃ[ℝ] ℝ)
     rw [A.apply_lineMap, hq, hbase y hy, lineMap_apply_ring', sub_zero, add_zero,
       div_mul_cancel₀ c hβ.ne']
 
-
-
-
 theorem zeroApex_residual_level_homothety (A : E →ᵃ[ℝ] ℝ) {q w v : E}
     (hq : A q = 0) (hw : A w = 0) {β c : ℝ} (hβ : 0 < β) (hβv : β < A v)
     (hc : c ∈ Icc 0 β) :
@@ -68,19 +54,11 @@ theorem zeroApex_residual_level_homothety (A : E →ᵃ[ℝ] ℝ) {q w v : E}
   · exact A.apply_edgeLevel (by rw [hw]; exact (hβ.trans hβv).ne') β
   · exact A.apply_edgeLevel (by rw [hq]; exact (hβ.trans hβv).ne') β
 
-
-
-
-
 theorem homothety_zero_edgeLevel (A : E →ᵃ[ℝ] ℝ) {q : E} (hq : A q = 0)
     {β : ℝ} (hβ : β ≠ 0) (u : E) (c : ℝ) :
     homothety q (c / β) (A.edgeLevel q u β) = A.edgeLevel q u c := by
   rw [homothety_eq_lineMap, lineMap_apply_module', edgeLevel, edgeLevel, hq, sub_zero,
     sub_zero, add_sub_cancel_right, smul_smul, div_mul_cancel₀ c hβ]
-
-
-
-
 
 theorem positive_triangle_level_homothety (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hq : A q = 0) {β c : ℝ} (hβ : 0 < β) (hβu : β < A u) (hβv : β < A v)

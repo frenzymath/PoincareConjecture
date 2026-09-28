@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M48.StaticNeck
 import PoincareConjecture.Proofs.M48.StaticCap
 import PoincareConjecture.Proofs.M48.StaticComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

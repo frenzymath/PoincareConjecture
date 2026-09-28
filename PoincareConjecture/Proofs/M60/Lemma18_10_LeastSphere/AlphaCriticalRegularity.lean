@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalDifferenceQuotient
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +21,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {V : Fin 2 → LoopPlane → EuclideanSpace ℝ (Fin n)} {center : LoopPlane} {R : ℝ}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem difference_integrand (S : SUWeakAlphaCoordinate g b alpha u V center R)
     (ha : 1 ≤ alpha) :
@@ -137,9 +127,6 @@ theorem difference_integrand (S : SUWeakAlphaCoordinate g b alpha u V center R)
   ring
 
 set_option maxHeartbeats 1400000 in
-
-
-
 
 theorem uniform_difference_quotients (S : SUWeakAlphaCoordinate g b alpha u V center R)
     (ha : 1 ≤ alpha) :
@@ -406,8 +393,6 @@ theorem uniform_difference_quotients (S : SUWeakAlphaCoordinate g b alpha u V ce
         Finset.sum_const_zero, add_zero, sub_zero, le_refl]
 
 end SUWeakAlphaCoordinate
-
-
 
 theorem suWeakAlphaCoordinate_initial_gain
     {n : ℕ} {M : Type*} [TopologicalSpace M]

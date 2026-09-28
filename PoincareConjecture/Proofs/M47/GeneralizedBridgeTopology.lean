@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch09.NeckCapTopology
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +18,6 @@ variable {M X : Type u} [TopologicalSpace M] [TopologicalSpace X]
 
 omit [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X] in
 
-
 theorem diffeomorph_image_connectedComponent (x : M) :
     f '' connectedComponent x = connectedComponent (f x) := by
   apply (f.continuous.image_connectedComponent_subset x).antisymm
@@ -35,8 +25,6 @@ theorem diffeomorph_image_connectedComponent (x : M) :
   refine ⟨f.symm y, ?_, f.apply_symm_apply y⟩
   have h := f.symm.continuous.image_connectedComponent_subset (f x) ⟨y, hy, rfl⟩
   simpa only [f.symm_apply_apply] using h
-
-
 
 noncomputable def diffeomorph_image_smooth_closed_model
     {kind : ClosedComponentKind} {U : Set M} (N : SmoothClosedComponentModel kind U) :
@@ -67,8 +55,6 @@ noncomputable def diffeomorph_image_smooth_closed_model
     change f.symm (f x) ∈ U
     rw [f.symm_apply_apply]
     exact hx
-
-
 
 noncomputable def diffeomorph_image_closed_certificate
     {kind : ClosedComponentKind} {U : Set M} (N : ClosedComponentCertificate kind U) :

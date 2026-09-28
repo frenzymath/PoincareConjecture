@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.ChartSegment
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.LocalDilation
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.LocalQuadratic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,9 +18,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem locally_lipschitz_chart_of_riemannian_edist_bound
     (g : RiemannianMetric n M) (f : M → ℝ) {L : ℝ≥0}
@@ -233,11 +218,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {X : Type*} [MetricSpace X]
 
-
-
-
-
-
 theorem open_potential_of_ambient_isometry_and_local_radial_law
     (g : RiemannianMetric 3 M) (U : TopologicalSpace.Opens M)
     (j : U → X) (hj : ∀ x y : U, edist (j x) (j y) = g.edist (x : M) (y : M))
@@ -280,11 +260,6 @@ theorem open_potential_of_ambient_isometry_and_local_radial_law
   have hquad := ConePotential.quadratic_of_local_distance_and_radial_law
     h j phi hlocal hvariation
   exact ⟨hLip, hquad, h.contMDiff_of_locally_lipschitz_geodesic_quadratic f hLip hquad⟩
-
-
-
-
-
 
 theorem open_radius_potential_of_retained_isometry
     (g : RiemannianMetric 3 M) (K : Set M) (U : TopologicalSpace.Opens M)

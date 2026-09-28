@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.OriginalP
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.MarkedProductInteriorChart
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.CocoreWindow
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 

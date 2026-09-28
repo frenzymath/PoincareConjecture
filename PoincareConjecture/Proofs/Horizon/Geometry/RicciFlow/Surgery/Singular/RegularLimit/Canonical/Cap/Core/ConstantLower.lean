@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Bounds
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceLower
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem sqrt_mul_inverse_epsilon_lt_constant (C : CapCertificate g) :
     Real.sqrt (1 - C.epsilon) * C.epsilon⁻¹ < C.cap_constant := by
@@ -40,7 +32,6 @@ theorem sqrt_mul_inverse_epsilon_lt_constant (C : CapCertificate g) :
     (mul_pos C.cap_constant_pos C.end_neck.scale_pos)).mp (hlow.trans_lt hhigh)
   rw [C.end_neck_epsilon] at hreal
   nlinarith [C.end_neck.scale_pos]
-
 
 theorem inverse_epsilon_mul_ninetyNine_lt_constant (C : CapCertificate g) :
     (0.99 : ℝ) * C.epsilon⁻¹ < C.cap_constant := by

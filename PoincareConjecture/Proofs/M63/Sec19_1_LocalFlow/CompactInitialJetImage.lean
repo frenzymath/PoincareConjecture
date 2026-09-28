@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.ContinuousDependenceEmbeddedJets
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSmoothApproximation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +17,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 local notation "W" => EuclideanSpace ℝ ι
 local notation "Y" => C(AddCircle curvePeriod, (W × W) × W)
-
-
-
 
 theorem exists_compact_initialJet_image [CompactSpace Z]
     (gamma : Z → ℝ → M)

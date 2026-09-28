@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Splitting.ParallelG
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Noncollapse
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -29,9 +19,6 @@ variable {n : ℕ} {N U M : Type*}
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) U] [IsManifold (𝓡 (n + 1)) ∞ U]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M] [IsManifold (𝓡 (n + 1)) ∞ M]
   [SecondCountableTopology N]
-
-
-
 
 theorem calibratedVolume_univ_le_of_translation
     (h : RiemannianMetric n N) (G : RiemannianMetric (n + 1) U)

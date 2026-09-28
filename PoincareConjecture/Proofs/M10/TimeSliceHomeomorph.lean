@@ -2,13 +2,6 @@ import Mathlib.Topology.OpenPartialHomeomorph.Composition
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Geometry.Manifold.Instances.Real
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +12,6 @@ namespace PoincareConjecture.M10
 section Topology
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]
-
 
 def timeSliceHomeomorph (e : OpenPartialHomeomorph (X × ℝ) (Y × ℝ))
     (htime : ∀ z, (e z).2 = z.2)
@@ -69,7 +61,6 @@ section Smoothness
 variable {n : ℕ} {E M : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
 
-
 theorem timeSliceHomeomorph_contMDiffOn
     (e : OpenPartialHomeomorph (E × ℝ) (M × ℝ))
     (htime : ∀ z, (e z).2 = z.2)
@@ -81,7 +72,6 @@ theorem timeSliceHomeomorph_contMDiffOn
       (timeSliceHomeomorph e htime hitime t).source :=
   contMDiff_fst.comp_contMDiffOn
     (he.comp (contMDiff_id.prodMk (contMDiff_const (c := t))).contMDiffOn (fun _ hx ↦ hx))
-
 
 theorem timeSliceHomeomorph_symm_contMDiffOn
     (e : OpenPartialHomeomorph (E × ℝ) (M × ℝ))

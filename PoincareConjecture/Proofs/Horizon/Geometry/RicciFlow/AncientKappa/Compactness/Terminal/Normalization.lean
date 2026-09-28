@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.Ch01.CurvatureConnection
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.ScalarBuffer
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Monotonicity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -43,9 +33,6 @@ private theorem terminal_nonnegativeCurvatureOperator_iff_of_metric_eq
     LeviCivitaData.curvatureOperatorQuadratic, D.horizon_curvatureTensor_eq E]
 
 namespace RicciFlow
-
-
-
 
 theorem nonnegativeCurvatureOperator_terminal_of_interior
     (P : M23NormalizedKappaCompactnessPredecessors)
@@ -90,9 +77,6 @@ local instance normalizationSourceConnected (k : ℕ) :
 variable (G : AncientPointedGeometricConvergence (fun k => (S.term k).carrier)
   (fun k t => (S.term k).flow.flow.metric (t - 1)) (fun k => (S.term k).base) 1)
 
-
-
-
 theorem closedLimit_scalar_normalized
     (P : M23NormalizedKappaCompactnessPredecessors)
     (hcontrol : M23AllTimeCurvatureControl S)
@@ -135,8 +119,6 @@ theorem closedLimit_scalar_normalized
       (continuous_const.sub (continuous_const.mul (continuous_const.sub continuous_id))).continuousOn
       (by simpa only [closure_Iio] using hreg) hzero
     simpa only [sub_self, mul_zero, sub_zero] using h
-
-
 
 theorem closedLimit_nonnegativeCurvatureOperator
     (P : M23NormalizedKappaCompactnessPredecessors)

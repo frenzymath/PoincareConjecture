@@ -3,27 +3,11 @@ import Mathlib.Topology.Algebra.ContinuousAffineMap
 import Mathlib.Topology.Separation.Connected
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace ContinuousOn
-
-
-
-
-
 
 theorem add_smul_eq_of_finite_affine_selection
     {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [Finite ι]

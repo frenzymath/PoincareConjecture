@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonBoundedPuncturedImmersion
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_original_source_uniform_collar
     {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

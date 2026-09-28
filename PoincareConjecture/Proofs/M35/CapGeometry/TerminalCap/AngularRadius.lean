@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialCylinderTensor
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderJetEstimates
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -15,8 +8,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
-
 
 theorem radialCylinderTensor_angular_bound {A : ℝ → ℝ} {epsilon s : ℝ}
     (he : 0 < epsilon)

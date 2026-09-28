@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M58.Cor18_28_PolarIntegration
 import PoincareConjecture.Definitions.M64Annulus
 import Mathlib.MeasureTheory.Integral.Prod
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped intervalIntegral
 
 namespace PoincareConjecture
-
-
 
 theorem m65Integral_annulusDomain {f : LoopPlane → ℝ} (hf : Continuous f) :
     (∫ p in m64AnnulusDomain, f p) =

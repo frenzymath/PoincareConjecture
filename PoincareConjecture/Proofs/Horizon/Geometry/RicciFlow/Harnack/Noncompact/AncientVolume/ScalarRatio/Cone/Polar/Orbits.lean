@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.Polar.Dilation
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,8 +10,6 @@ open Set Filter TopologicalSpace PoincareConjecture
 open scoped Manifold ContDiff Topology NNReal ENNReal Bundle
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem tangentNorm_deriv_zero_of_edist_affine_segment
     {n : ℕ} (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -84,7 +74,6 @@ namespace Poincare.AncientVolume.ScalarRatio.UnitSliceRadialChartData
 
 variable {X : Type*} [MetricSpace X] {p : X} {hcomparison : RayComparison p} {n : ℕ}
 
-
 def radialOrbit (d : UnitSliceRadialChartData hcomparison n) (x : UnitSliceAmbient n)
     (t : ℝ) : UnitSliceAmbient n :=
   d.ambientChart.symm (asymptoticConeDilation hcomparison (Real.toNNReal (1 + t)) (d.ambientChart x))
@@ -93,8 +82,6 @@ theorem radialOrbit_zero (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) : d.radialOrbit x 0 = x := by
   simp only [radialOrbit, add_zero, Real.toNNReal_one, asymptoticConeDilation_one]
   exact d.ambientChart.left_inv hx
-
-
 
 theorem exists_radialOrbit_interval (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) :
@@ -148,9 +135,6 @@ theorem exists_radialOrbit_interval (d : UnitSliceRadialChartData hcomparison n)
   rw [← d.radial _ (hsource t ht), hvalue t ht, asymptoticConeRadius_dilation,
     NNReal.coe_mul, Real.coe_toNNReal _ (hpos t ht), mul_pow, ← d.radial x hx]
   ring
-
-
-
 
 theorem hasDerivAt_radialOrbit_zero (d : UnitSliceRadialChartData hcomparison n)
     {x : UnitSliceAmbient n} (hx : x ∈ d.ambientChart.source) :

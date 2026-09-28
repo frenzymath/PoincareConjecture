@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLIntervalBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Intersections.ProperAnnularRims
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 
@@ -26,7 +24,6 @@ theorem image_right_space_eq_intersection
     exact ⟨y, ⟨hy, hx⟩, rfl⟩
 
 open Classical in
-
 
 theorem exists_single_spanning_interval
     (C : SurfaceIntersectionComponents Source Target f g rim)
@@ -102,8 +99,6 @@ theorem component_card_eq_one_of_single_mark
   rw [Nat.card_congr C.intrinsic]
   exact Nat.card_eq_one_iff_exists.mpr ⟨i, huniq⟩
 
-
-
 theorem exists_marked_spanning_interval_parametrization [FiniteDimensional ℝ F]
     (C : SurfaceIntersectionComponents Source Target f g rim)
     (hgi : InjOn g Target) (mark : Set X) (p : X)
@@ -161,8 +156,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Rim" => Set.prod (sphere (0 : V1) 1) (sphere (0 : V2) 1)
 
-
-
 theorem exists_proper_annular_spanning_interval
     {X : Type*} [TopologicalSpace X] {R S₀ S₁ : Set X}
     (hS₀ : S₀ ⊆ frontier R) (g : Bool → (V1 × V2) → X)
@@ -200,8 +193,6 @@ theorem exists_proper_annular_spanning_interval
   intro t
   rw [hproper ⟨H t, hsource t⟩, ← hboundary t]
   exact ⟨fun hx => ⟨hx, (hsource t).2⟩, fun hx => hx.1⟩
-
-
 
 theorem exists_coordinate_annuli_spanning_interval
     {Circle X : Type*} [TopologicalSpace Circle] [TopologicalSpace X]

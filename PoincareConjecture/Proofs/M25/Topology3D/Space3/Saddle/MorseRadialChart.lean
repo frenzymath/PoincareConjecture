@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem morseRadialDisc_geometry (r : ℝ) (hr : 0 < r) :
     IsOpen {s : ℝ × ℝ | s.1 ^ 2 + s.2 ^ 2 < r ^ 2} ∧
@@ -59,9 +46,6 @@ theorem morseRadialDisc_geometry (r : ℝ) (hr : 0 < r) :
   refine ⟨hball ▸ e.toHomeomorph.isOpenMap _ isOpen_ball,
     hclosed ▸ (isCompact_closedBall (0 : E2) r).image e.continuous, ?_⟩
   rw [← hball, ← e.image_closure, closure_ball _ hr.ne', hclosed]
-
-
-
 
 theorem morseRadialChart_geometry
     (P : OpenPartialHomeomorph (ℝ × ℝ) E2) (R : ℝ) (hR : 0 < R)

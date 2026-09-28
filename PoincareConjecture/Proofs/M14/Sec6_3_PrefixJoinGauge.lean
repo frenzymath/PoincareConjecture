@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ₁ τ₂ c : ℝ} {x y : G.Point}
-
-
-
 
 structure PrefixJoinGauge (q : M14BackwardPath G T τ₁ τ₂ x y)
     (p : M14BackwardPath G T τ₁ c x (q.curve c)) where

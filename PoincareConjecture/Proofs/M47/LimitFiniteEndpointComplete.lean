@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.LimitNoncollapseFiniteHarnackDomain
 import PoincareConjecture.Proofs.M34.Standard.NonnegativeRicciMetric
 import PoincareConjecture.Proofs.M35.RawFlow.Completeness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -39,7 +30,6 @@ private local instance finiteEndpointCompleteT3 :
 local notation "U" => (fun m : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space m) (G.exhaustion.space_open m))
 
-
 theorem limitFinite_original_metric_floor (h04 : RicciFlowCurvatureTheory.{u})
     (t : ℝ) (ht : t ∈ blowupBackwardInterval H)
     (x : G.limit.sliceCarrier.carrier) (v : E) :
@@ -50,8 +40,6 @@ theorem limitFinite_original_metric_floor (h04 : RicciFlowCurvatureTheory.{u})
     (convex_Icc t 0) hJ x v
     (fun s hs => (limitFinite_ricci_bounds h04 G.limit s (hJ hs) x v).1)
   exact hanti ⟨le_rfl, ht.1⟩ ⟨ht.1, le_rfl⟩ ht.1
-
-
 
 theorem limitFinite_endpoint_complete (h04 : RicciFlowCurvatureTheory.{u})
     (hfinite : H ≠ ⊤) (d : ℕ → ℝ) (hd : ∀ m, 0 < d m)

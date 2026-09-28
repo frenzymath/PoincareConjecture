@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SmallLipschitzHomeomorph
 import Mathlib.Algebra.Order.Archimedean.Basic
 import Mathlib.Analysis.Normed.Group.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -89,9 +78,6 @@ private theorem exists_supported_core_halving :
     rw [hH]
     change x + (-1 / 2 : ℝ) • clippedCore x = x
     rw [clippedCore_eq_zero x hx, smul_zero, add_zero]
-
-
-
 
 theorem exists_supported_unit_cube_compression (epsilon : ℝ) (hepsilon : 0 < epsilon) :
     ∃ (r : ℝ) (H : (ι → ℝ) ≃ₜ (ι → ℝ)),

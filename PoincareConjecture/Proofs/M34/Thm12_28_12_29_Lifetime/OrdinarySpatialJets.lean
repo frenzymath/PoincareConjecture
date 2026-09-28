@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.OrdinaryCylinderCoo
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.FixedFlowSequence
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.LimitMetricJets
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +19,6 @@ variable {M : Type u} [TopologicalSpace M]
   (R : OrdinaryProductRicciGeometry F.metric I)
 
 local notation "G" => ordinaryChapter11Flow (I := I) (F := F) R
-
-
 
 theorem ordinaryChapter11Cylinder_spatial_jet
     {J : Set ℝ} {L : BlowupLimitFlow.{u} J}
@@ -50,8 +38,6 @@ theorem ordinaryChapter11Cylinder_spatial_jet
     hKdiff ((continuousOn_extChartAt_symm q).isOpen_inter_preimage
       (isOpen_extChartAt_target q) hU) inter_subset_left hp.1 hp.2
   exact WithTop.coe_le_coe.mpr le_top
-
-
 
 theorem ordinaryChapter11_tendsto_spatial_metricJet
     (p : ℕ → (G).point) (hpositive : ∀ k, 0 < (G).scalar (p k))

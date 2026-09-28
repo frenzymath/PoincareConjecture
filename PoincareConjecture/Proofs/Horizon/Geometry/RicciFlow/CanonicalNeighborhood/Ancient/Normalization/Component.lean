@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Length
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Curvature.Conformal.CurvatureTrace
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.SectionalBounds
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +27,6 @@ private theorem terminalMetricHomothety (A : AncientKappaNormalization K p b) :
   intro x v w
   simpa [Diffeomorph.coe_refl, mfderiv_id] using A.metric_eq 0 x v w
 
-
 theorem metricDiameter_normalized_zero (A : AncientKappaNormalization K p b) (X : Set M) :
     metricDiameter (A.target.flow.metric 0) X =
       Real.sqrt A.scale * metricDiameter (K.flow.metric b) X := by
@@ -50,7 +40,6 @@ theorem metricDiameter_normalized_zero (A : AncientKappaNormalization K p b) (X 
   simpa only [Set.smul_set_range, smul_eq_mul] using
     Real.sSup_smul_of_nonneg (Real.sqrt_nonneg A.scale)
       (Set.range (fun q : X × X => ((K.flow.metric b).edist q.1 q.2).toReal))
-
 
 theorem scalarCurvatureSup_normalized_zero (A : AncientKappaNormalization K p b) :
     scalarCurvatureSup (A.target.flow.metric 0) (A.target.flow.connection 0) =
@@ -66,7 +55,6 @@ theorem scalarCurvatureSup_normalized_zero (A : AncientKappaNormalization K p b)
     Real.sSup_smul_of_nonneg (inv_nonneg.mpr A.scale_pos.le)
       (Set.range (K.flow.connection b).scalarCurvature)
 
-
 theorem terminalNormalized_inner (A : AncientKappaNormalization K p b)
     (x : M) (v w : TangentSpace (𝓡 3) x) :
     (A.target.flow.metric 0).inner x
@@ -77,7 +65,6 @@ theorem terminalNormalized_inner (A : AncientKappaNormalization K p b)
   have hs := Real.sq_sqrt A.scale_pos.le
   field_simp [(Real.sqrt_pos.mpr A.scale_pos).ne']
   rw [hs]
-
 
 theorem terminalNormalized_sectional (A : AncientKappaNormalization K p b)
     (x : M) (v w : TangentSpace (𝓡 3) x) :
@@ -103,7 +90,6 @@ private theorem terminalNormalized_scalarPower (A : AncientKappaNormalization K 
         (K.nonnegative_curvature_operator b hb x) _ _
   rw [A.scalar_eq 0 le_rfl, zero_div, add_zero, Real.div_rpow hR A.scale_pos.le,
     neg_div, Real.rpow_neg A.scale_pos.le, div_inv_eq_mul, Real.sqrt_eq_rpow, mul_comm]
-
 
 theorem canonicalComponentFromNormalization (A : AncientKappaNormalization K p b) (hb : b ≤ 0)
     (N : M27CanonicalComponent A.target 0 C) : M27CanonicalComponent K b C := by

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.NormalizedCubes
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.RegularRepresentatives
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Topology unitInterval
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m59_regular_homotopy_of_class_eq (q : M59SphereQuotient) (x : M)
     (Gamma Delta : FreeTwoSphereFamily (M := M))

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetEvolution
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.FirstJetTermBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set
@@ -25,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63FirstJetSquared_dissipation [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

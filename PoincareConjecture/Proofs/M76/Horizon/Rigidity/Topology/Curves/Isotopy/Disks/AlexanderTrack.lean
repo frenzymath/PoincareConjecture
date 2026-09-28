@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLClosedExtension
 import PoincareConjecture.Proofs.M76.Mathlib.ClosedBallIsotopy
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseProductTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +11,6 @@ namespace Homeomorph
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem alexanderFamily_joint_finitePL (G : E ≃ₜ E) {C : Set E}
     (hG : FinitePiecewiseAffineOn (G : E → E) C)
@@ -133,9 +122,6 @@ theorem alexanderFamily_joint_finitePL (G : E ≃ₜ E) {C : Set E}
     (finitePiecewiseAffineOn_union hinside hzero) (FinitePiecewiseAffineOn.iUnion houtside)
   rwa [hcover] at htotal
 
-
-
-
 theorem IsFinitePL.closedExtension_alexander_joint_finitePL
     {C : Set E} {e : C ≃ₜ C} (he : e.IsFinitePL) (hC : IsClosed C)
     (hfix : ∀ x : C, (x : E) ∈ frontier C → e x = x)
@@ -175,9 +161,6 @@ theorem IsFinitePL.closedExtension_alexander_joint_finitePL
     (fun i x hx => G.injective (by rw [G.apply_symm_apply, hGfix i x hx])) J hJ htime
   simpa only [alexanderFamily_symm] using hi
 
-
-
-
 theorem IsFinitePL.exists_closedBall_joint_PL_isotopy
     {e : Metric.closedBall (0 : E) 1 ≃ₜ Metric.closedBall (0 : E) 1}
     (he : e.IsFinitePL)
@@ -204,8 +187,6 @@ theorem IsFinitePL.exists_closedBall_joint_PL_isotopy
     (fun x hx => hfix x (by simpa only [Metric.mem_sphere, dist_zero_right] using
       Metric.frontier_closedBall_subset_sphere hx)) L hL hrep J hJ htime
 
-
-
 theorem IsFinitePL.closedExtension_alexander_joint_finitePL_on_prism
     {C : Set E} {e : C ≃ₜ C} (he : e.IsFinitePL) (hC : IsClosed C)
     (hfix : ∀ x : C, (x : E) ∈ frontier C → e x = x)
@@ -230,7 +211,6 @@ theorem IsFinitePL.closedExtension_alexander_joint_finitePL_on_prism
   have h := he.closedExtension_alexander_joint_finitePL hC hfix L hL hrep J hJ
     (fun p hp => (hJs ▸ hp).1)
   rwa [hJs] at h
-
 
 theorem IsFinitePL.exists_square_joint_PL_isotopy
     {e : Metric.closedBall (0 : Fin 2 → ℝ) 1 ≃ₜ Metric.closedBall (0 : Fin 2 → ℝ) 1}

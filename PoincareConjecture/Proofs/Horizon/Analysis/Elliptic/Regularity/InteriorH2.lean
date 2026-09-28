@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.LocalEquat
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.SecondDerivative
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.EnergyEstimate.Substitution.Assembly
 
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory Metric
@@ -60,7 +54,6 @@ theorem exists_memWkp_two_of_global_weakEquation
   intro h hh hle
   exact (le_div_iff₀ (div_pos B.hlam_pos (by norm_num))).mpr (by
     simpa only [mul_comm] using hC hh hle)
-
 
 theorem exists_memWkp_two_of_weakEquation
     {O : Set E} (hO : IsOpen O) (A : E → Matrix (Fin d) (Fin d) ℝ)

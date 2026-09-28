@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedM15ComponentCapture
 import PoincareConjecture.Proofs.M47.SeedM15PathPositivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +19,6 @@ private theorem surgeryPositive_of_time_heq
   subst t
   rw [← eq_of_heq hxy]
   exact hpos
-
-
 
 theorem seedM15_onset_path_nonpositive
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

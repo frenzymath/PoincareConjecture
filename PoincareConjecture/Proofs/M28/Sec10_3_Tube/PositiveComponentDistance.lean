@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.LastClosedVisit
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckSpherePaths
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceEdgeMinimizerOverlap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M28
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
-
-
 
 theorem intrinsicEDist_to_positive_component_le (N : EpsilonNeck g)
     (V : TopologicalSpace.Opens M) (hSV : N.central_sphere ⊆ (V : Set M))

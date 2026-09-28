@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialH1Filli
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusRadialDiskGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LocalConeAffine
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,16 +14,12 @@ namespace PoincareConjecture
 
 open Proofs.M58 Poincare.Analysis.Sobolev.Weak
 
-
-
 theorem m64ConeNormalize_preimage_closedBall (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     m64ConeNormalize a r ⁻¹' closedBall 0 1 = closedBall a r := by
   ext p
   simp only [mem_preimage, m64ConeNormalize, mem_closedBall, dist_eq_norm, sub_zero, norm_smul,
     Real.norm_of_nonneg (inv_nonneg.mpr hr.le)]
   rw [← div_eq_inv_mul, div_le_iff₀ hr, one_mul]
-
-
 
 theorem m64ConeNormalize_lower {a p : LoopPlane} (ha : a 1 = 0)
     {r : ℝ} (hr : 0 < r) (hp : p 1 ≤ 0) : m64ConeNormalize a r p 1 ≤ 0 := by
@@ -48,8 +33,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => ball (0 : LoopPlane) 1
 local notation "K" => closedBall (0 : LoopPlane) 1
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64RadialDisk_affine_data
     (e : M → E) (F : LoopPlane → M) (W : Fin 2 → LoopPlane → E)
@@ -83,8 +66,6 @@ theorem m64RadialDisk_affine_data
       congrFun (m64ConeNormalize_affine a r) p
     simpa only [hN, m64ConeNormalize_preimage_ball a hr, f, V,
       Function.comp_apply, PiLp.smul_apply, smul_eq_mul] using hh
-
-
 
 theorem m64RadialDisk_affine_green
     (u : LoopPlane → E) (W : Fin 2 → LoopPlane → E)
@@ -123,8 +104,6 @@ theorem m64RadialDisk_affine_green
     ring
   rw [hleft, hright, ← smul_add, m64ContinuousH1Disk_green u W hu hW hw hc psi hpsi i]
 
-
-
 theorem m64RadialDisk_affine_column_energy
     (W : LoopPlane → E) (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     (∫ p in ball a r, ‖r⁻¹ • W (m64ConeNormalize a r p)‖ ^ 2) = ∫ z in S, ‖W z‖ ^ 2 := by
@@ -136,7 +115,6 @@ theorem m64RadialDisk_affine_column_energy
   field_simp [hr.ne']
 
 omit [TopologicalSpace M] in
-
 
 theorem m64RadialDisk_affine_energy
     (F : LoopPlane → M) (W : Fin 2 → LoopPlane → E)

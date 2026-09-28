@@ -8,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 
 local notation "P2" => (ℝ × ℝ)
 
-
-
 theorem exists_boundary_vertex_strip_from_halves
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     (V Z : Set E) (F U : Bool → Set E) (D : Bool → Bool → Set E)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationSequence
 import PoincareConjecture.Proofs.M65.Sec19_6_Transfer.ImmersedPerturbationBounds
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,10 +12,6 @@ namespace PoincareConjecture.M65Perturbation
 
 variable {N : ℕ} {M : Type*} [TopologicalSpace M] [ChartedSpace LoopAmbient M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M] {a b : ℝ} {J : Set ℝ}
-
-
-
-
 
 theorem exists_controlled_generic_parameters (F : RicciFlow 3 M (Icc a b))
     (hJ : IsOpen J) (hJF : J ⊆ Ioo a b) (C : M65SmoothFilledLoopFamily F J)

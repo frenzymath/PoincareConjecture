@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Lift
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Basic
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -32,7 +23,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 omit [T2Space M] [SecondCountableTopology M] [ConnectedSpace M] in
 
-
 theorem ancientKappaNoncollapsed_ulift (F : RicciFlow n M (Iic 0))
     {kappa : ℝ} (hkappa : AncientKappaNoncollapsed F kappa) :
     AncientKappaNoncollapsed (F.ulift : RicciFlow n (ULift.{v} M) (Iic 0)) kappa := by
@@ -52,8 +42,6 @@ local instance uliftSecondCountable : SecondCountableTopology (ULift.{v} M) :=
 
 local instance uliftConnectedSpace : ConnectedSpace (ULift.{v} M) :=
   (Homeomorph.ulift : ULift.{v} M ≃ₜ M).connectedSpace_iff.mpr inferInstance
-
-
 
 noncomputable def ulift (K : AncientKappaSolution n M) :
     AncientKappaSolution n (ULift.{v} M) where

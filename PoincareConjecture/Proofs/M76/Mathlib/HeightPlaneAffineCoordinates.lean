@@ -2,16 +2,6 @@ import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.LinearAlgebra.Projection
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -74,10 +64,6 @@ private theorem exists_normalization_of_first_ne_zero
   field_simp [show a ≠ 0 from ha]
   <;> ring
 
-
-
-
-
 theorem exists_height_normalization_preserving_last
     (A : ((ℝ × ℝ) × ℝ) →ₗ[ℝ] ℝ)
     (hA : ∃ x : (ℝ × ℝ) × ℝ, x.2 = 0 ∧ A x ≠ 0) :
@@ -104,10 +90,6 @@ namespace Submodule
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_height_plane_coordinates (L : Submodule ℝ E)
     (hdim : Module.finrank ℝ E = 3) (hL : Module.finrank ℝ L = 2)
@@ -147,10 +129,6 @@ namespace AffineSubspace
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_centered_height_plane_coordinates (P : AffineSubspace ℝ E)
     (hdim : Module.finrank ℝ E = 3) (hP : Module.finrank ℝ P.direction = 2)

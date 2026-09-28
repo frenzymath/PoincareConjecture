@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.CanonicalNeckAxialCompression
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +10,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
 
 noncomputable def neckAxialInverse (lambda c : ℝ) (z : RoundCylinderSpace) : RoundCylinderSpace :=
   (z.1, (z.2 - c) / lambda)
@@ -53,8 +43,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
 
-
-
 def compressedNeckCarrier (N : EpsilonNeck g) (lambda c : ℝ) : Set M :=
   N.carrier ∩ (neckAxialInverse lambda c ∘ N.coordinate_inverse) ⁻¹'
     (univ ×ˢ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -65,8 +53,6 @@ theorem compressedNeckCarrier_isOpen (N : EpsilonNeck g) (lambda c : ℝ) :
     (neckAxialInverse_contMDiff lambda c).continuous.comp_continuousOn
       N.coordinate_inverse_smooth.continuousOn
   exact h.isOpen_inter_preimage N.carrier_open (isOpen_univ.prod isOpen_Ioo)
-
-
 
 noncomputable def compressedNeckCoordinate (N : EpsilonNeck g)
     {lambda c : ℝ} (hlambda : lambda ∈ Ioo (0 : ℝ) 1)
@@ -139,8 +125,6 @@ theorem compressedNeckCoordinate_inverse_left (N : EpsilonNeck g)
       (neckAxialCoordinate_mem_open_interval N.epsilon_pos hlambda hc
         ⟨z.2.property.1.le, z.2.property.2.le⟩)]
   exact neckAxialInverse_left hlambda.1.ne' c _
-
-
 
 theorem compressedNeckCoordinate_map_smooth (N : EpsilonNeck g)
     {lambda c : ℝ} (hlambda : lambda ∈ Ioo (0 : ℝ) 1)

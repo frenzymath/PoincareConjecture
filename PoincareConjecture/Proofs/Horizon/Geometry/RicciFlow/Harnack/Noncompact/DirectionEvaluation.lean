@@ -2,11 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.D
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Spacetime.M
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.PerturbedSpatialContact
 
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -22,8 +17,6 @@ open PoincareConjecture Poincare.VectorBundle
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 lemma continuousAt_tensor_family_evaluation
     {A : Type*} [TopologicalSpace A] {k : ℕ}
@@ -141,8 +134,6 @@ private lemma contMDiffAt_inner_two_connections {J : Set ℝ}
   convert h using 1
   rfl
 
-
-
 lemma contMDiffAt_curvatureTensor_fields_on {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) {x : M} {O : Set M} (hO : IsOpen O) (hx : x ∈ O)
@@ -180,14 +171,10 @@ lemma contMDiffAt_curvatureTensor_fields_on {J : Set ℝ}
   dsimp only [Pi.sub_apply, D] at hcompat₁ hcompat₂ ⊢
   linarith only [hcompat₁, hcompat₂]
 
-
-
 abbrev HamiltonDirection (n : ℕ) (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] :=
   fiberFamilies (F := EuclideanSpace ℝ (Fin n)) (E := TangentSpace (𝓡 n) (M := M)) (Fin n) ×
     EuclideanSpace ℝ ((Fin n × Fin n) ⊕ Fin n)
-
-
 
 noncomputable def hamiltonDirectionQuadratic {J : Set ℝ} (F : RicciFlow n M J)
     (T₀ : ℝ) (t : ℝ) (q : HamiltonDirection n M) : ℝ :=
@@ -217,8 +204,6 @@ private lemma continuousAt_tensor_direction_fields {k : ℕ}
   exact (FiberFamily.continuous_vector (F := EuclideanSpace ℝ (Fin n))
     (E := TangentSpace (𝓡 n)) (a i)).continuousAt.comp
       (f := fun p : ℝ × HamiltonDirection n M => p.2.1) continuousAt_snd.fst
-
-
 
 theorem continuousAt_hamiltonDirectionQuadratic {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ : ℝ)
@@ -262,8 +247,6 @@ theorem continuousAt_hamiltonDirectionQuadratic {J : Set ℝ}
         ((hR a b c d).mul (hc (Sum.inl (a, b)))).mul (hc (Sum.inl (c, d)))
   exact (hsumM.add (continuousAt_const.mul hsumP)).add hsumR
 
-
-
 theorem continuousOn_hamiltonDirectionQuadratic {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ : ℝ)
     {a b : ℝ} (hJ : Icc a b ⊆ interior J) (hτ : ∀ t ∈ Icc a b, t - T₀ ≠ 0) :
@@ -271,8 +254,6 @@ theorem continuousOn_hamiltonDirectionQuadratic {J : Set ℝ}
       hamiltonDirectionQuadratic F T₀ p.1 p.2) (Icc a b ×ˢ univ) := by
   rintro ⟨t, q⟩ ht
   exact (continuousAt_hamiltonDirectionQuadratic hC F T₀ (hJ ht.1) (hτ t ht.1) q).continuousWithinAt
-
-
 
 noncomputable def perturbedHamiltonDirectionQuadratic {J : Set ℝ} (F : RicciFlow n M J)
     (T₀ : ℝ) (φ : ℝ × M → ℝ) (ψ : ℝ → ℝ) (t : ℝ) (q : HamiltonDirection n M) : ℝ :=
@@ -284,8 +265,6 @@ noncomputable def perturbedHamiltonDirectionQuadratic {J : Set ℝ} (F : RicciFl
     φ (t, x) * (∑ a, ∑ b, (F.metric t).inner x (e a) (e b) * W a * W b) +
     ψ t * (∑ a, ∑ b, ∑ c, ∑ d,
       metricTwoFormIdentity (F.metric t) x ![e a, e b, e c, e d] * U a b * U c d)
-
-
 
 theorem continuousAt_perturbedHamiltonDirectionQuadratic {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ : ℝ)
@@ -324,8 +303,6 @@ theorem continuousAt_perturbedHamiltonDirectionQuadratic {J : Set ℝ}
         (continuousAt_fst.prodMk hx)
   exact ((continuousAt_hamiltonDirectionQuadratic hC F T₀ ht hτ q).add
     (hφ'.mul hsumg)).add ((hψ.comp continuousAt_fst).mul hsumI)
-
-
 
 theorem continuousOn_perturbedHamiltonDirectionQuadratic {J : Set ℝ}
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J) (T₀ : ℝ)

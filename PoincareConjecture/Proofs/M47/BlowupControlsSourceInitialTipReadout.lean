@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsCapSliceMap
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_RicciJetNorm
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +24,6 @@ noncomputable local instance tipReadoutCoefficientNorm :
 
 noncomputable local instance tipReadoutCoefficientSpace :
     NormedSpace ℝ (MetricCoefficient 3) := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem source_capComparison_ricci_lower
     {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}

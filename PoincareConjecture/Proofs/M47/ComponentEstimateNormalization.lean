@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateStrictHistory
 import PoincareConjecture.Proofs.M47.ComponentEstimatePinching
 import PoincareConjecture.Proofs.M13.ContractionTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem exists_component_normalized_history
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}} {origin d Q L : ℝ}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLCircleArcs
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,10 +8,6 @@ open Set
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem strict_sign_data_of_finitePL_signed_pairs {c : Set E} (A : E → ℝ)
     (hneg : IsFinitePLBallPair ℝ (c ∩ {x | A x ≤ 0}) (c ∩ {x | A x = 0}))
@@ -57,10 +44,6 @@ theorem strict_sign_data_of_finitePL_signed_pairs {c : Set E} (A : E → ℝ)
 end Set
 
 namespace Polygon
-
-
-
-
 
 theorem strict_sign_data {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

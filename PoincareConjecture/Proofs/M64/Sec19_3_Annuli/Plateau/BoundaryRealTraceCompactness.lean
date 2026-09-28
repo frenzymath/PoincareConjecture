@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMonotonePhas
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.MonotoneHelly
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.VaryingGreen
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -57,11 +46,6 @@ private theorem scalar_green_limit
     M64.weak_affine_identity_of_tendsto hU hV (testIntegral (F := ℝ) phi hp)
       (testIntegral dphi hdp) hc (fun j => by
         simpa only [testIntegral_toLp, smul_eq_mul, dphi] using hseq j)
-
-
-
-
-
 
 theorem m64WeakPhase_monotone_real_trace_subsequence
     (u : ℕ → LoopPlane → ℝ) (V : ℕ → Fin 2 → LoopPlane → ℝ) (b : ℕ → ℝ → ℝ)

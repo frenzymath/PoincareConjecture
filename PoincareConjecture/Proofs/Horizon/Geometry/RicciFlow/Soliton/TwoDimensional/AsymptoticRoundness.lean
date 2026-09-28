@@ -4,13 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Roundness
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Classification
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -24,7 +17,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 2 M} {S : AncientRescalingSequence K}
-
 
 theorem round (L : AncientAsymptoticSolitonLimitData S) {t : ℝ} (ht : t < 0) :
     let C := L.convergence.limit.carrier
@@ -84,8 +76,6 @@ theorem scalar_eq_neg_inv_of_round (L : AncientAsymptoticSolitonLimitData S)
   convert heq using 1
   ring
 
-
-
 theorem roundCertificate_of_round (L : AncientAsymptoticSolitonLimitData S)
     (hround : ∀ t : ℝ, t < 0 →
       let C := L.convergence.limit.carrier
@@ -106,7 +96,6 @@ theorem roundCertificate_of_round (L : AncientAsymptoticSolitonLimitData S)
     exact L.convergence.limit.flow.homotheticMetricSlice_of_scalarCurvature
       (fun t ht => L.scalar_eq_neg_inv_of_round ht (hround t ht))
 
-
 theorem roundCertificate (L : AncientAsymptoticSolitonLimitData S) :
     TwoDimensionalAsymptoticRoundCertificate S L :=
   L.roundCertificate_of_round (fun _ ht => L.round ht)
@@ -119,7 +108,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 theorem asymptoticRoundTheory (P : TwoDimensionalClassificationPredecessors (M := M))
     (K : AncientKappaSolution 2 M) : Nonempty (TwoDimensionalAsymptoticRoundTheory K) := by

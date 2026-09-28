@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SimplicialCocycleConnected
 import Mathlib.Topology.Homotopy.Lifting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set StdSimplexCore

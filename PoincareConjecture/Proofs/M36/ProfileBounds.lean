@@ -5,19 +5,9 @@ import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M36
-
 
 theorem profile_term_le {q s : ℝ} (hq : 0 < q) (hs : 0 < s) :
     (q ^ 2 / s ^ 4) * Real.exp (-q / s) ≤ 24 / q ^ 2 := by
@@ -40,7 +30,6 @@ theorem profile_term_lt {q s : ℝ} (hq : 100 < q) (hs : 0 < s) :
   apply (div_lt_iff₀ (sq_pos_of_pos hq0)).2
   nlinarith [sq_nonneg (q - 100)]
 
-
 theorem largeQ_of_bounds (g₀ : StandardInitialMetric) (K : MetricSurgeryConstants)
     (hq : 100 < K.q)
     (hA : 100 * (4 + g₀.cylindrical_end.radius) ^ 2 < K.q) :
@@ -54,7 +43,6 @@ theorem exists_profile_parameter (g₀ : StandardInitialMetric) :
   refine ⟨101 + 100 * (4 + g₀.cylindrical_end.radius) ^ 2, ?_, ?_⟩
   · nlinarith [sq_nonneg (4 + g₀.cylindrical_end.radius)]
   · linarith
-
 
 theorem exists_neck_threshold (g₀ : StandardInitialMetric) {upper : ℝ}
     (hupper : 0 < upper) :

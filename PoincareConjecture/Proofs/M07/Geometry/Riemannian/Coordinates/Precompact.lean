@@ -5,17 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuatio
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.FixedChart
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuation.Speed
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +12,6 @@ open Set Filter
 open scoped Manifold ContDiff Topology ENNReal NNReal
 
 namespace PoincareConjecture.RiemannianMetric
-
 
 theorem exists_geodesic_continuation_of_terminal_chart
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -72,15 +60,6 @@ theorem exists_geodesic_continuation_of_terminal_chart
       · simp [η, hul]
     exact ⟨heq, htarget, hderivq, hderivw⟩
 
-
-
-
-
-
-
-
-
-
 theorem exists_precompact_chart_patch_continuation
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -102,12 +81,6 @@ theorem exists_precompact_chart_patch_continuation
           (-coordinateChristoffel (g.pullbackCoefficients (extChartAt (𝓡 n) p).symm)
             (q' t) (w' t) (w' t)) t := by
   exact exists_chart_geodesic_continuation g p hK hKU htb hqK hq hw
-
-
-
-
-
-
 
 theorem exists_geodesic_continuation_of_edist_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
@@ -148,10 +121,6 @@ theorem exists_geodesic_continuation_of_edist_bound
     exact ((extChartAt (𝓡 n) p).left_inv (hsource ht)).symm
   exact exists_geodesic_continuation_of_terminal_chart g ht₁.1 ht₁.2 hγ p
     hK hKU hqrepr hqK hq hw
-
-
-
-
 
 theorem exists_geodesic_continuation_of_compact_confinement
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]

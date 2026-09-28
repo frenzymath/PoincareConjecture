@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeBoundary
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem Convex.convexJoin_zero_inter_frontier {Q d : Set E} (hQ : Convex ℝ Q)
     (hzero : (0 : E) ∈ interior Q) (hd : d ⊆ frontier Q) :
@@ -36,9 +23,6 @@ theorem Convex.convexJoin_zero_inter_frontier {Q d : Set E} (hQ : Convex ℝ Q)
     exact hxeq.symm ▸ hy
   · intro x hx
     exact ⟨subset_convexJoin_right (singleton_nonempty (0 : E)) hx, hd hx⟩
-
-
-
 
 theorem Convex.convexJoin_zero_inter_of_nonempty {Q d e : Set E}
     (hQ : Convex ℝ Q) (hzero : (0 : E) ∈ interior Q)
@@ -65,10 +49,6 @@ theorem Convex.convexJoin_zero_inter_of_nonempty {Q d e : Set E}
     exact (mem_convexJoin_zero_iff _ _).mpr ⟨y, ⟨hy, hyz.symm ▸ hz⟩, r, hr, hxy⟩
   · exact fun _ hx => ⟨convexJoin_mono_right inter_subset_left hx,
       convexJoin_mono_right inter_subset_right hx⟩
-
-
-
-
 
 theorem IsCompact.convexJoin_zero_frontier_eq {Q : Set E} (hQ : IsCompact Q)
     (hcv : Convex ℝ Q) (hzero : (0 : E) ∈ interior Q)

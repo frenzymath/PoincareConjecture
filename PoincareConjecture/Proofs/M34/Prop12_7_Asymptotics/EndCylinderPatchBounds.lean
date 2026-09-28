@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCenteredCylinderJets
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.CylinderPullbackSmooth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem exists_endTail_reference_index (N : ℕ) {s : ℝ} (hs : (N : ℝ) + 9 / 2 < s) :
     ∃ k : ℕ, N ≤ k ∧ s - (k + 1 : ℕ) ∈ Icc (17 / 5 : ℝ) (23 / 5) := by
@@ -34,9 +21,6 @@ theorem exists_endTail_reference_index (N : ℕ) {s : ℝ} (hs : (N : ℝ) + 9 /
   simp only [Nat.cast_add, Nat.cast_one]
   dsimp [k]
   constructor <;> linarith
-
-
-
 
 theorem endCenteredCylinder_familyClose_of_tail
     {g0 : RiemannianMetric 3 StandardCapSpace} (e : StandardCylindricalEnd g0)

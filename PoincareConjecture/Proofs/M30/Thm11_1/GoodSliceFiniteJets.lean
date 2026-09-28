@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.Parabolic.Spa
 import Mathlib.Order.Filter.Finite
 import Mathlib.Topology.UniformSpace.HeineCantor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,10 +16,6 @@ universe u v w
 namespace PoincareConjecture.M30
 
 set_option maxHeartbeats 800000 in
-
-
-
-
 
 theorem exists_good_slice_with_finite_metric_jets
     (F : GeneralizedRicciFlowData.{u}) {epsilon C t : ℝ}

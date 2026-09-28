@@ -5,22 +5,6 @@ import PoincareConjecture.Proofs.M32.Claim11_32.NeckVolume
 import PoincareConjecture.Proofs.M32.Claim11_32.Worldlines.Neck
 import PoincareConjecture.Statements.M30ControlledBlowupLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -42,9 +26,6 @@ variable {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   (hpos : ∀ k, 0 < ((Q k).extension.extended.connection (T k)).scalarCurvature (x k))
   (hdiv : Tendsto (fun k =>
     ((Q k).extension.extended.connection (T k)).scalarCurvature (x k)) atTop atTop)
-
-
-
 
 noncomputable def terminalBlowupSequence_commonControls
     (hM04 : RicciFlowCurvatureTheory.{u})
@@ -106,9 +87,6 @@ noncomputable def terminalBlowupSequence_commonControls
     obtain ⟨N, rfl⟩ := hk y hy
     exact strongNeck_noncollapsed_at_center N hnecke 1
 
-
-
-
 theorem terminalBlowupSequence_short_limit
     (hM04 : RicciFlowCurvatureTheory.{u})
     (hM29 : RepairedGeneralizedBoundedDistanceTheory.{u})
@@ -134,9 +112,6 @@ theorem terminalBlowupSequence_short_limit
     (terminalBlowupSequence_commonControls H Q x hpos hdiv hM04 hM29
       hepsilon_pos hepsilon_small hnecke hC_pos hK hB hepsilon hC hconstant
       hcutoff hscale horn hx hboundary)
-
-
-
 
 theorem terminalBlowupSequence_short_limit_of_hornBoundaryBelow
     (hM04 : RicciFlowCurvatureTheory.{u})

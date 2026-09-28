@@ -13,7 +13,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 open Classical in
 
-
 theorem vertex_outer_base_eq_iUnion_edges (p : (T.marked 2).vertices) :
     T.surfaceBase {(p : E)} ∩ ((T.vertexBlock p).link p).space =
       ⋃ s ∈ (T.marked 2).faces, ⋃ (_ : s.card = 2),
@@ -88,7 +87,6 @@ theorem vertex_outer_base_eq_iUnion_edges (p : (T.marked 2).vertices) :
 
 open Classical in
 
-
 theorem vertex_base_rim_eq_edges_union_frontier (p : (T.marked 2).vertices) :
     T.dualRegionRim {(p : E)} ∩ (T.marked 2).space =
       (⋃ s ∈ (T.marked 2).faces, ⋃ (_ : s.card = 2),
@@ -96,6 +94,4 @@ theorem vertex_base_rim_eq_edges_union_frontier (p : (T.marked 2).vertices) :
           (T.surfaceBase {(p : E)} ∩ (T.marked 1).space) := by
   rw [T.vertex_base_rim_eq, T.vertex_outer_base_eq_iUnion_edges]
 
-
 end Geometry.SimplicialComplex.CoorientedSurfaceStars
-

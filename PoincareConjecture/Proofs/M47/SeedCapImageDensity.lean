@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.SeedCapModelDensity
 import PoincareConjecture.Proofs.M34.Standard.CapBallVolumeImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 universe u
 
 namespace PoincareConjecture.Proofs.M47
-
-
 
 theorem exists_seed_cap_image_density (g0 : StandardInitialMetric)
     {A0 Rmax : ℝ} (hA0 : 0 < A0) (hRmax : 0 < Rmax) :

@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M11.OrdinaryCharts
 import PoincareConjecture.Proofs.M11.FiniteDimensionalSmooth
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

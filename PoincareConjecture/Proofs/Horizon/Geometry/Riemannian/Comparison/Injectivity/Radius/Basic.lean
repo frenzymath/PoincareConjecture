@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Geodesic.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.Gauss.Manifold
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +11,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def globalGeodesic (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin n)) : ℝ → M :=
@@ -36,12 +23,9 @@ theorem globalGeodesic_spec (g : RiemannianMetric n M)
       HasDerivAt (fun t => extChartAt (𝓡 n) p (g.globalGeodesic hc p v t)) v 0 :=
   Classical.choose_spec (g.exists_global_geodesic hc p v)
 
-
 noncomputable def globalExponential (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin n)) : M :=
   g.globalGeodesic hc p v 1
-
-
 
 theorem globalExponential_eq_endpoint (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) (v : EuclideanSpace ℝ (Fin n))
@@ -58,7 +42,6 @@ theorem globalExponential_eq_endpoint (g : RiemannianMetric n M)
     (hzero.trans hγ0.symm) (hvel.deriv.trans hγv.deriv.symm)
   exact (heq 1 (by norm_num)).self_of_nhds
 
-
 theorem exists_exponential_chart_eq_globalExponential_nhds
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M) :
     ∃ e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M,
@@ -73,8 +56,6 @@ theorem exists_exponential_chart_eq_globalExponential_nhds
     (Eventually.of_forall fun v => (g.globalGeodesic_spec hc p v).2.1)
     (Eventually.of_forall fun v => (g.globalGeodesic_spec hc p v).2.2)
 
-
-
 theorem exists_pos_injOn_globalExponential (g : RiemannianMetric n M)
     (hc : MetricComplete g) (p : M) :
     ∃ r : ℝ, 0 < r ∧
@@ -87,7 +68,6 @@ theorem exists_pos_injOn_globalExponential (g : RiemannianMetric n M)
   intro v hv w hw h
   apply e.injOn (hsub hv).1 (hsub hw).1
   exact (hsub hv).2.symm.trans (h.trans (hsub hw).2)
-
 
 noncomputable def truncatedInjectivityRadius (g : RiemannianMetric n M)
     (hc : MetricComplete g) (C : ℝ) (p : M) : ℝ :=
@@ -116,7 +96,6 @@ theorem truncatedInjectivityRadius_le (g : RiemannianMetric n M)
     exact False.elim ((not_lt_of_ge (Real.sqrt_nonneg _)) hv)
   · exact fun _ h => h.2.1
 
-
 theorem truncatedInjectivityRadius_pos (g : RiemannianMetric n M)
     (hc : MetricComplete g) {C : ℝ} (hC : 0 < C) (p : M) :
     0 < g.truncatedInjectivityRadius hc C p := by
@@ -127,7 +106,6 @@ theorem truncatedInjectivityRadius_pos (g : RiemannianMetric n M)
     hinj.mono fun _ hv => hv.trans_le (min_le_left r C)
   exact hpos.trans_le
     (g.le_truncatedInjectivityRadius hc p hpos.le (min_le_right _ _) hinj')
-
 
 theorem injOn_globalExponential_of_lt_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C r : ℝ}
@@ -141,8 +119,6 @@ theorem injOn_globalExponential_of_lt_truncatedInjectivityRadius
   obtain ⟨s, hs, hrs⟩ := (lt_csSup_iff ⟨C, fun _ h => h.2.1⟩ hne).mp hr
   exact hs.2.2.mono fun _ hv => hv.trans hrs
 
-
-
 theorem injOn_globalExponential_truncatedInjectivityRadius
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C : ℝ}
     (hC : 0 ≤ C) (p : M) :
@@ -155,7 +131,6 @@ theorem injOn_globalExponential_truncatedInjectivityRadius
   exact g.injOn_globalExponential_of_lt_truncatedInjectivityRadius hc hC p hrρ
     ((le_max_left _ _).trans_lt hr) ((le_max_right _ _).trans_lt hr) heq
 
-
 theorem truncatedInjectivityRadius_le_max_of_collision
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C : ℝ}
     (hC : 0 ≤ C) (p : M) {v w : EuclideanSpace ℝ (Fin n)}
@@ -165,7 +140,6 @@ theorem truncatedInjectivityRadius_le_max_of_collision
   have hlt := lt_of_not_ge h
   exact hne (g.injOn_globalExponential_truncatedInjectivityRadius hc hC p
     ((le_max_left _ _).trans_lt hlt) ((le_max_right _ _).trans_lt hlt) heq)
-
 
 theorem not_injOn_globalExponential_of_truncatedInjectivityRadius_lt
     (g : RiemannianMetric n M) (hc : MetricComplete g) {C r : ℝ}

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundarySourceHorizontalGreen
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakAnnulusClass
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,8 +17,6 @@ local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "e0" => EuclideanSpace.single (0 : Fin 2) (1 : ℝ)
 local notation "e1" => EuclideanSpace.single (1 : Fin 2) (1 : ℝ)
-
-
 
 theorem m64HorizontalSource_quasiMeasurePreserving {tau : ℝ ≃ₜ ℝ}
     (hi : ContDiff ℝ 1 tau.symm) (hmono : StrictMono tau)
@@ -54,8 +41,6 @@ theorem m64HorizontalSource_quasiMeasurePreserving {tau : ℝ ≃ₜ ℝ}
   intro p hp
   have hpre := m64HorizontalSource_preimage_interior hmono h0 hP
   exact (congrArg (fun U => p ∈ U) hpre).mpr hp
-
-
 
 theorem m64HorizontalSource_memLp_two
     {E : Type*} [NormedAddCommGroup E] {f : LoopPlane → E}
@@ -93,9 +78,6 @@ theorem m64HorizontalSource_memLp_two
   rw [← mul_assoc, mul_comm (deriv tau.symm (tau (p 0))),
     m64HorizontalSource_inverse_deriv (ht.differentiable (by simp))
       (hi.differentiable (by simp)), one_mul]
-
-
-
 
 theorem m64HorizontalSource_weakPartial {tau : ℝ ≃ₜ ℝ}
     (ht : ContDiff ℝ ∞ tau) (hi : ContDiff ℝ ∞ tau.symm)

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.Redu
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variation.TraceComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.CompactTime
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +19,6 @@ open ReducedLengthMinimum.Variational
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem sqrtRegularPath_action {J : Set ℝ} {F : RicciFlow n M J}
     {T τ : ℝ} {q : BackwardTimePath F T 0 τ} (S : SqrtRegularPath q) :
@@ -91,9 +79,6 @@ private theorem continuousOn_scalar_squareCurve (K : AncientKappaSolution 2 M)
   have hsq := (sq_le_sq₀ hs.1 (Real.sqrt_nonneg τ)).mpr hs.2
   rw [Real.sq_sqrt hτ.le] at hsq
   exact ⟨⟨neg_le_neg hsq, neg_nonpos.mpr (sq_nonneg s)⟩, mem_univ _⟩
-
-
-
 
 theorem curvature_add_minimum_le_two_of_index_trace (K : AncientKappaSolution 2 M)
     {τ m : ℝ} (hτ : 0 < τ) (q : BackwardTimePath K.flow 0 0 τ)

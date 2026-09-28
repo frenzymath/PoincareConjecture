@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.ODE.Uniqueness.Open
 import Mathlib.Algebra.Order.Floor.Ring
 
-
-
-
-
-
-
 noncomputable section
 
 namespace Poincare.ODE
@@ -15,7 +9,6 @@ open Set Filter
 open scoped ContDiff Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
 
 theorem exists_gluing_of_solutions
     {U : Set E} (hU : IsOpen U) {F : E → E} (hF : ContDiffOn ℝ ∞ F U)
@@ -48,8 +41,6 @@ theorem exists_gluing_of_solutions
       Filter.Eventually.mono (hJ₂.mem_nhds ht) fun _ hs => heq₂ hs
     rw [heq₂ ht]
     exact ⟨(hβ t ht).1, (hβ t ht).2.congr_of_eventuallyEq he⟩
-
-
 
 theorem exists_forward_solution_of_finite_solutions
     {U K : Set E} (hU : IsOpen U) {F : E → E} (hF : ContDiffOn ℝ ∞ F U)

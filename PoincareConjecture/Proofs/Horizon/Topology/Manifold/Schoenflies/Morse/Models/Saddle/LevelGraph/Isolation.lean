@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.CriticalSet.Closed
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenSubset
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -54,8 +52,6 @@ private theorem component_mem_nhds_of_regular
       ⟨z, mem_connectedComponent, rfl⟩
   exact mem_of_superset (hjo.isOpenMap.image_mem_nhds
     (isOpen_connectedComponent.mem_nhds (mem_connectedComponent (x := z)))) hsub
-
-
 
 theorem exists_open_isolating_neighborhood
     {h : S2 → Real} (hh : ContMDiff (𝓡 2) 𝓘(Real, Real) ∞ h)

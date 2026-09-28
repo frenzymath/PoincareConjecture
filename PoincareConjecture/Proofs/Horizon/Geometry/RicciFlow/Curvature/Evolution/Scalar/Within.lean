@@ -7,10 +7,3 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.ScalarEvol
 import Mathlib.Analysis.Calculus.TangentCone.Real
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
-
-
-
-
-
-
-

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surfaces.TwoCapTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -91,8 +83,6 @@ variable (K : SimplicialComplex ℝ E) (L : Bool → SimplicialComplex ℝ E)
 
 include hfaces
 
-
-
 theorem two_cap_triangle_iff (s : Finset (E × ℝ)) :
     (s ∈ J.faces ∧ s.card = 3) ↔
       (∃ t ∈ K.faces, t.card = 3 ∧ s = t.image z) ∨
@@ -109,8 +99,6 @@ theorem two_cap_triangle_iff (s : Finset (E × ℝ)) :
     · exact ⟨(hfaces _).mpr (Or.inl ⟨t, ht, rfl⟩), (zcard t).trans hc⟩
     · exact ⟨(hfaces _).mpr (Or.inr ⟨b, Or.inr ⟨t, ht, rfl⟩⟩), by
         rw [Finset.card_insert_of_notMem (anot b t), zcard, hc]⟩
-
-
 
 theorem two_cap_pure
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -135,8 +123,6 @@ theorem two_cap_pure
       Finset.insert_subset_insert _ (Finset.image_subset_image hut)⟩
     rw [Finset.card_insert_of_notMem (anot b t), zcard, hc]
 
-
-
 theorem two_cap_base_edge_cofaces_iff (s : Finset E) (hsc : s.card = 2)
     (t : Finset (E × ℝ)) :
     (t ∈ J.faces ∧ t.card = 3 ∧ s.image z ⊆ t) ↔
@@ -157,7 +143,6 @@ theorem two_cap_base_edge_cofaces_iff (s : Finset E) (hsc : s.card = 2)
         rw [Finset.card_insert_of_notMem (anot b s), zcard, hsc],
         Finset.subset_insert _ _⟩
 
-
 theorem two_cap_unmarked_edge_count (s : Finset E) (hsc : s.card = 2)
     (hmark : ∀ b, s ∉ (L b).faces) :
     {t : Finset (E × ℝ) | t ∈ J.faces ∧ t.card = 3 ∧ s.image z ⊆ t}.ncard =
@@ -174,7 +159,6 @@ theorem two_cap_unmarked_edge_count (s : Finset E) (hsc : s.card = 2)
     · rintro ⟨u, ⟨hu, hc, hsu⟩, rfl⟩
       exact Or.inl ⟨u, hu, hc, hsu, rfl⟩
   rw [he, ncard_image_of_injective _ zimagei]
-
 
 theorem two_cap_marked_edge_count (s : Finset E) (hsc : s.card = 2)
     (b : Bool) (hsb : s ∈ (L b).faces)
@@ -209,8 +193,6 @@ theorem two_cap_marked_edge_count (s : Finset E) (hsc : s.card = 2)
     · rintro (rfl | rfl)
       · exact Or.inl ⟨u, huc.1, huc.2.1, huc.2.2, rfl⟩
       · exact Or.inr ⟨b, hsb, rfl⟩
-
-
 
 theorem two_cap_radial_edge_cofaces_iff (b : Bool) (v : E) (t : Finset (E × ℝ)) :
     (t ∈ J.faces ∧ t.card = 3 ∧ {a b, z v} ⊆ t) ↔
@@ -251,7 +233,6 @@ theorem two_cap_radial_edge_count (b : Bool) (v : E) :
   rw [he, ncard_image_of_injective _ (conei b)]
 
 open Classical in
-
 
 theorem two_cap_two_triangle_cofaces
     (hdis : Disjoint (L false).space (L true).space)

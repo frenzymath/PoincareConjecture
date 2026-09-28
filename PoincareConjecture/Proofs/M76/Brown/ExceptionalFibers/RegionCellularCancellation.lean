@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.CellularCancellation
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.SupportedFiberRegions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +10,6 @@ namespace Homeomorph
 variable {X Y E : Type*} [MetricSpace X] [CompactSpace X]
   [TopologicalSpace Y] [T2Space Y]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [ProperSpace E]
-
-
-
 
 theorem exists_region_marked_of_disjoint_cellular_fibers
     (K L : ℕ → Set X) (hK : ∀ n, IsCompact (K n)) (hL : ∀ n, IsCompact (L n))

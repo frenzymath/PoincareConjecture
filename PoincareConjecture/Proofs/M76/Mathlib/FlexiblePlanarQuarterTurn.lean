@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PLFiberCompression
 import PoincareConjecture.Proofs.M76.Mathlib.SupportedPlanarQuarterTurn
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLFiberCompression
-
-
-
 
 noncomputable def scalarHomeomorph (delta w : ℝ) (hd : 0 < delta) (hw : 0 ≤ w) :
     ℝ ≃ₜ ℝ where
@@ -33,10 +19,6 @@ noncomputable def scalarHomeomorph (delta w : ℝ) (hd : 0 < delta) (hw : 0 ≤ 
 end PLFiberCompression
 
 namespace SupportedPlanarShear
-
-
-
-
 
 theorem exists_quarterTurn_homeomorph_of_lt {a b : ℝ} (ha : 0 < a) (hab : a < b) :
     ∃ F : (ℝ × ℝ) ≃ₜ (ℝ × ℝ),

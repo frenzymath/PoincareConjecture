@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.LocalHessianTrace
 import PoincareConjecture.Proofs.M09.CoordinateCompatibility
 import Mathlib.Analysis.Calculus.FDeriv.Symmetric
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

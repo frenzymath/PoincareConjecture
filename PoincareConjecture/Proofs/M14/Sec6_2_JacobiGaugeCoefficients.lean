@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_GaugeCoefficients
 import PoincareConjecture.Proofs.M08.WeightedJacobiIdentities
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -41,9 +32,6 @@ private theorem gauge_chart_source : y ∈ (chartAt (EuclideanSpace ℝ (Fin n))
   exact mem_univ y
 
 include hCoordinates hM04 hac htime hs ht
-
-
-
 
 theorem gauge_closedJacobiPotential
     (hscalar : ContMDiff (spacetimeModel n) (𝓘(ℝ, ℝ)) ∞
@@ -80,9 +68,6 @@ theorem gauge_closedJacobiPotential
     movingGauge_ricciDerivativePairing (ordinaryGauge_movingCalculus b hCoordinates W)] at h
   simpa only [openSubset_chartFrame, gauge_extChartAt_eq_val, ordinaryGaugeGeometry,
     CompatibleSpacetimeCylinder.toMovingSpacetimeGauge] using h
-
-
-
 
 theorem gauge_chartActionMetric_timeWithin_pair (v w : EuclideanSpace ℝ (Fin n)) :
     M08.timeWithinFDeriv (Icc a c) (extChartAt (𝓡 n) x).target

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.EssentialSquareRim
 import Mathlib.Analysis.Convex.Contractible
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.SimplyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology
 
@@ -23,8 +14,6 @@ open PoincareConjecture Poincare.Manifold.Schoenflies
 local notation "V2" => (Fin 2 → ℝ)
 local notation "Q2" => sphere (0 : V2) 1
 local notation "Plane" => (ℝ × ℝ)
-
-
 
 theorem squareRimLoop_class_eq_one_of_polygon_disk
     {n : ℕ} (P : Polygon Plane (n + 3))
@@ -46,8 +35,6 @@ theorem squareRimLoop_class_eq_one_of_polygon_disk
   have hnull := (SimplyConnectedSpace.paths_homotopic
     (squareRimLoop.map lifted.continuous) (Path.refl (lifted squareRimBase))).map inclusion
   exact Path.Homotopic.Quotient.eq.mpr hnull
-
-
 
 theorem essential_polygon_encloses_inner_disk
     {m n k : ℕ} (outer : Polygon Plane (m + 3))

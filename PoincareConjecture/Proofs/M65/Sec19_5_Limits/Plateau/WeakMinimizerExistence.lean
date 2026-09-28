@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerEnergyLimit
 import Mathlib.Topology.Order.IsLUB
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -53,13 +42,6 @@ private theorem m65WeakDisk_gradient_coercive (g : RiemannianMetric 3 M)
   rw [integral_const_mul, integral_finsetSum _ fun i _ => hi i] at hbound
   simp only [← Lp.norm_sq_eq_integral_norm_sq, Fin.sum_univ_two] at hbound
   exact hbound
-
-
-
-
-
-
-
 
 theorem m65WeakDisk_exists_normalized_minimum (g : RiemannianMetric 3 M)
     {e : M → EuclideanSpace ℝ (Fin N)} {γ : LoopCircle → M}

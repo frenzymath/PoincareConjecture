@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Surfaces.EssentialRims
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.General.LatticeHandleBoundaryGroups
 
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -62,7 +60,6 @@ theorem sourceRimCircle_isClopen (phi : C(H, H)) (theta : C)
       (sourceRimCoordinates phi theta F x).property⟩
   have hc : Continuous label := by fun_prop
   exact (isClopen_discrete {a : E | (a : D) = b}).preimage hc
-
 
 noncomputable def sourceRimCircleCoordinates (phi : C(H, H)) (theta : C)
     (F : (ContinuousMap.id H).HomotopyRel phi B) (b : D)

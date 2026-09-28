@@ -1,22 +1,11 @@
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem contDiff_timeCutoff
     {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

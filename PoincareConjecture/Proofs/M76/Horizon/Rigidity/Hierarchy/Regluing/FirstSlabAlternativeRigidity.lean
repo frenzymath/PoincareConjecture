@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.FirstSlabDiskAlt
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.FirstSlabRigidity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Regluing.SourceTerminalBallRigidity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology
 

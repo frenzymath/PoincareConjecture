@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.Gram
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Density
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter Module
@@ -19,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M] [IsManifold (𝓡 (n + 1)) ∞ M]
 
-
-
 noncomputable def levelCoordinateDensity (g : RiemannianMetric (n + 1) M)
     (e : EuclideanSpace ℝ (Fin (n + 1)) → M)
     (x : EuclideanSpace ℝ (Fin (n + 1))) : ℝ :=
@@ -29,8 +20,6 @@ noncomputable def levelCoordinateDensity (g : RiemannianMetric (n + 1) M)
       (EuclideanSpace.basisFun (Fin (n + 1)) ℝ i.succ))
     (mfderiv (𝓡 (n + 1)) (𝓡 (n + 1)) e x
       (EuclideanSpace.basisFun (Fin (n + 1)) ℝ j.succ)))).det
-
-
 
 theorem pullbackVolumeDensity_mul_tangentNorm
     (g : RiemannianMetric (n + 1) M)
@@ -64,8 +53,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (n + 1))) M] [IsManifold (𝓡 (n + 1)) ∞ M]
   (g : RiemannianMetric (n + 1) M)
 
-
-
 theorem inner_gradient_levelCoordinates
     {e : EuclideanSpace ℝ (Fin (n + 1)) → M} {f : M → ℝ}
     {x : EuclideanSpace ℝ (Fin (n + 1))}
@@ -86,7 +73,6 @@ theorem inner_gradient_levelCoordinates
     exact (PiLp.proj 2 (fun _ : Fin (n + 1) => ℝ) 0).fderiv
   rw [hd] at h
   exact h.symm
-
 
 theorem pullbackVolumeDensity_mul_gradient_norm
     {e : EuclideanSpace ℝ (Fin (n + 1)) → M} {f : M → ℝ}

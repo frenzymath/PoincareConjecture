@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedPathPrimitive
 import PoincareConjecture.Proofs.M09.SmoothImplicit
 import Mathlib.Analysis.SpecificLimits.Normed
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,14 +13,11 @@ namespace PoincareConjecture.M14
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
   {a b : ℝ}
 
-
-
 noncomputable def closedPicardResidual (t₀ : Icc a b) (f : ℝ × E → E)
     (hf : ContinuousOn f (Icc a b ×ˢ univ)) (z : E × C(Icc a b, E)) : C(Icc a b, E) :=
   z.2 - ContinuousMap.const _ z.1 - closedPathPrimitive t₀ (closedTimePostcomp f hf z.2)
 
 omit [CompleteSpace E] in
-
 
 theorem closedPicardResidual_contDiff [FiniteDimensional ℝ E] (hab : a < b)
     (t₀ : Icc a b) (f : ℝ × E → E) (hf : ContDiffOn ℝ ∞ f (Icc a b ×ˢ univ)) :
@@ -39,9 +26,6 @@ theorem closedPicardResidual_contDiff [FiniteDimensional ℝ E] (hab : a < b)
     (ContinuousLinearMap.const (R := ℝ) (M := E) (Icc a b)).contDiff.comp contDiff_fst
   exact (contDiff_snd.sub hconst).sub ((closedPathPrimitive t₀).contDiff.comp
     ((closedTimePostcomp_contDiff (uniqueDiffOn_Icc hab) f hf).comp contDiff_snd))
-
-
-
 
 theorem exists_closedPicard_smooth_family [FiniteDimensional ℝ E] (hab : a < b)
     (t₀ : Icc a b) (f : ℝ × E → E) (hf : ContDiffOn ℝ ∞ f (Icc a b ×ˢ univ))

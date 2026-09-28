@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M28.Mathlib.FiniteBufferedChartCover
 import PoincareConjecture.Proofs.M28.Mathlib.WithinJetsOfAmbient
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Harnack.Regularity
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -51,10 +41,6 @@ private theorem staticStage_openCodomain
 set_option synthInstance.maxHeartbeats 200000 in
 
 set_option maxHeartbeats 2400000 in
-
-
-
-
 
 theorem exists_nonnegative_backward_flow_on_static_stage
     (hC : RicciFlowCurvatureTheory.{u}) {S : GeneralizedBlowupSequence.{u}}

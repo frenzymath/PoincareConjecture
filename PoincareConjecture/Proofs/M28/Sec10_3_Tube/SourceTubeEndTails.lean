@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeVolume
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.NeckPairCoreCapture
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,10 @@ variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
 
-
-
 def coreUnion (T : SourceTubeData S) (theta : ℝ) : Set (E.flow.slice E.time).carrier :=
   ⋃ i ∈ Finset.range T.list.nodes.length,
     (T.list.node (i : ℤ)).2.coordinate_map ''
       (univ ×ˢ Icc (-(theta * epsilon⁻¹)) (theta * epsilon⁻¹))
-
-
 
 theorem coreUnion_compact_subset (T : SourceTubeData S) {theta : ℝ}
     (htheta : theta < 1) :
@@ -61,10 +48,6 @@ theorem coreUnion_compact_subset (T : SourceTubeData S) {theta : ℝ}
         exact hwidth
     rw [T.carrier_eq_iUnion_nodes]
     exact mem_iUnion₂.mpr ⟨i, hi, hxN⟩
-
-
-
-
 
 theorem subset_coreUnion_end_tails (T : SourceTubeData S)
     (hepsilon : epsilon ≤ (1 / 1000 : ℝ)) {theta : ℝ}
@@ -146,9 +129,6 @@ theorem subset_coreUnion_end_tails (T : SourceTubeData S)
       exact Or.inl (Or.inl (hcore (i - 1) hprev hcapture.1
         (by linarith only [hcapture.2.1, hwidth])
         (by linarith only [hcapture.2.2, hwidth])))
-
-
-
 
 theorem frontier_subset_end_tail_closures (T : SourceTubeData S)
     (hepsilon : epsilon ≤ (1 / 1000 : ℝ)) {theta : ℝ}

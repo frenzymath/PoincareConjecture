@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M25.AppA_21_Local.CapCommonSphereProducer
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapLastSliceCores
 import PoincareConjecture.Proofs.M25.AppA_21_Local.CapChainIntersection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem CapCertificate.exists_opposite_tube_tail_of_finite_core_frontier :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

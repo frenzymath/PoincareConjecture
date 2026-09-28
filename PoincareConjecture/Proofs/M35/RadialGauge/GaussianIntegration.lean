@@ -1,15 +1,6 @@
 import Mathlib.Probability.Distributions.Gaussian.Real
 import Mathlib.MeasureTheory.Integral.IntegralEqImproper
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,7 +10,6 @@ open scoped Topology
 namespace PoincareConjecture.M35.RadialGauge
 
 variable {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
-
 
 theorem standardGaussianDensity_hasDerivAt (x : ℝ) :
     HasDerivAt (gaussianPDFReal 0 1) (-x * gaussianPDFReal 0 1 x) x := by
@@ -38,8 +28,6 @@ theorem standardGaussianDensity_hasDerivAt (x : ℝ) :
   apply h.congr_deriv
   ring
 
-
-
 theorem integrable_standardGaussian_density_smul {f : ℝ → F}
     (hf : Integrable f (gaussianReal 0 1)) :
     Integrable (fun x => gaussianPDFReal 0 1 x • f x) := by
@@ -47,8 +35,6 @@ theorem integrable_standardGaussian_density_smul {f : ℝ → F}
   have h := (integrable_withDensity_iff_integrable_smul'
     (measurable_gaussianPDF 0 1) (Eventually.of_forall (fun x => gaussianPDF_lt_top))).mp hf
   simpa only [toReal_gaussianPDF] using h
-
-
 
 theorem integral_standardGaussian_derivative {f f' : ℝ → F}
     (hderiv : ∀ x, HasDerivAt f (f' x) x)

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1Core
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle
@@ -15,9 +7,6 @@ open AddCircle
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)]
-
-
-
 
 noncomputable def periodicH1VectorDecoder (ι : Type*) [Fintype ι] :
     (ι → lp (fun _ : ℤ => ℂ) 2) →L[ℂ] C(AddCircle L, ι → ℂ) := by
@@ -45,9 +34,6 @@ noncomputable def periodicH1VectorDecoder (ι : Type*) [Fintype ι] :
   exact ((D (u i)).norm_coe_le_norm x).trans
     ((norm_periodicSobolevJet_le 0 0 (by omega) (u i)).trans
       (mul_le_mul_of_nonneg_left (norm_le_pi_norm u i) (norm_nonneg _)))
-
-
-
 
 theorem norm_periodicH1VectorDecoder_le {ι : Type*} [Fintype ι]
     (u : ι → lp (fun _ : ℤ => ℂ) 2) :

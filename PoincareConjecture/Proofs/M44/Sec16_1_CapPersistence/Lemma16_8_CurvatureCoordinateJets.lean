@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_FiniteScal
 import PoincareConjecture.Proofs.M36.ComparisonCovariantJets
 import PoincareConjecture.Proofs.M36.ComparisonCoordinateJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,10 +28,6 @@ noncomputable local instance curvatureTwoJetNormedGroup :
 
 noncomputable local instance curvatureTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_curvature_component_jet_bound (m : ℕ) {a : ℝ} (ha : 0 < a) (Z : ℝ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (g : RiemannianMetric 3 E) (D : LeviCivitaData g) (x : E),

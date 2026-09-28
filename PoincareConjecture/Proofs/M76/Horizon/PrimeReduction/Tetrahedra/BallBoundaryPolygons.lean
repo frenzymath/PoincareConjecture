@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.ConvexSphereLargeDisks
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallNormalization
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Regions.PunctureBallTriangulation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Metric
 namespace Set

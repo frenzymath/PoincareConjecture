@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexFaceCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicFaceSaturation
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ open Set
 namespace AffineBasis
 
 variable {ι E : Type*} [Finite ι] [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem coord_pos_of_mem_intrinsicInterior_convexHull_image (b : AffineBasis ι ℝ E)
     {s : Set ι} {x : E} (hx : x ∈ intrinsicInterior ℝ (convexHull ℝ (b '' s)))
@@ -40,8 +29,6 @@ theorem coord_pos_of_mem_intrinsicInterior_convexHull_image (b : AffineBasis ι 
     simp
   rw [he] at hmove0
   linarith
-
-
 
 theorem mem_interior_convexHull_of_mem_intrinsicInterior (b : AffineBasis ι ℝ E)
     {x : E} (hx : x ∈ intrinsicInterior ℝ (convexHull ℝ (range b))) :

@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Wall.ProtectedRegionHomotopies
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M76
-
-
 
 theorem exists_avoiding_frontier_loop_homotopy_of_inclusion_null
     {X : Type*} [TopologicalSpace X] {R C F : Set X}
@@ -50,8 +40,6 @@ theorem exists_avoiding_frontier_loop_homotopy_of_inclusion_null
         apply Subtype.ext
         exact congrArg (Subtype.val : (R \ C : Set X) → X) (G.eq_fst t hs) }
   exact ⟨H, fun z => (G z).property.2⟩
-
-
 
 theorem protected_frontier_loop_contractions_iff
     {X : Type*} [TopologicalSpace X] {R C F : Set X}

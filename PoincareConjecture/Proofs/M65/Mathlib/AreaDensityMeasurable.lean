@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Mathlib.ChartJacobian
 import Mathlib.Analysis.Calculus.FDeriv.Measurable
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter
@@ -21,8 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem m65AreaDensity_aestronglyMeasurable_in_chart
     (g : RiemannianMetric n M) (p : M) {f : LoopPlane → M} {domain : Set LoopPlane}
@@ -48,9 +37,6 @@ theorem m65AreaDensity_aestronglyMeasurable_in_chart
   dsimp only [J, Function.comp_apply]
   rw [Set.piecewise_eq_of_mem U _ _ htarget]
   exact (m65AreaDensity_eq_chartJacobian g p hz (hmap hzd)).symm
-
-
-
 
 theorem m65AreaDensity_aestronglyMeasurable
     (g : RiemannianMetric n M) {f : LoopPlane → M} {domain : Set LoopPlane}

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCommonIntervalOriginalApproximation
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalActualCross
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalCompactCapture
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v w
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_metric_approximation
     {X : ℕ → Type u} [∀ n, MetricSpace (X n)]
@@ -52,8 +42,6 @@ private local instance actualApproximationManifold :
     IsManifold (𝓡 3) ∞ G.limit.carrier.carrier := G.limit.carrier.isManifold
 private local instance actualApproximationConnected : ConnectedSpace G.limit.carrier.carrier :=
   G.limit.connectedSpace
-
-
 
 theorem terminalCommonInterval_actual_original_approximation
     {M : Type v} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

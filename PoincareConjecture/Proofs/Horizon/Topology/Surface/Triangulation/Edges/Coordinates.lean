@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Edges
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -21,8 +11,6 @@ universe u
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem SmoothEdge.contDiffAt_chart_and_deriv_ne_zero (e : SmoothEdge M)
     (p : M) {t : ℝ} (ht : t ∈ Ioo (0 : ℝ) 1)

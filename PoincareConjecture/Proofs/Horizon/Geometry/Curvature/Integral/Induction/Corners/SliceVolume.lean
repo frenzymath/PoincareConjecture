@@ -2,19 +2,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Regu
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.CompactSet
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Coarea.CompactImage
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Bundle Topology
-
 
 private theorem curve_eqOn_Ioo
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -53,8 +46,6 @@ private theorem curve_eqOn_Ioo
       (hα.isMIntegralCurveAt hmem) (hβ.isMIntegralCurveAt hmem) ht.1
     exact (heq.and hmem).mono (fun _ hs => hs)
 
-
-
 private theorem normalizedGradient_smooth_of_regular
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
@@ -74,7 +65,6 @@ private theorem normalizedGradient_smooth_of_regular
       (fun y => g.inner y (D.gradient f y) (D.gradient f y)) x :=
     hgrad.inner_bundle hgrad
   exact ((contDiffAt_inv ℝ hp).contMDiffAt.comp x hpair).smul_section hgrad
-
 
 private theorem scalar_le_of_integrable_slice_bound
     {A : ℝ → ℝ} (hAi : Integrable A) (hA : ∀ s, 0 ≤ A s)
@@ -99,7 +89,6 @@ private theorem scalar_le_of_integrable_slice_bound
   have hmul := mul_le_mul_of_nonneg_left hsub hC
   exact hCB.trans hmul
 
-
 private theorem tangentNorm_le_of_inner_exp_bound
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
@@ -118,7 +107,6 @@ private theorem tangentNorm_le_of_inner_exp_bound
         · exact (g.pos x v hv).le
       rw [Real.sqrt_mul hn, two_mul, Real.exp_add,
         Real.sqrt_mul_self (Real.exp_pos a).le, mul_comm]
-
 
 private theorem regularLevel_mass_le_of_smooth_image
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
@@ -213,8 +201,6 @@ private theorem regularLevel_mass_le_of_smooth_image
     ((measure_mono hsub).trans hle)
   simp only [ENNReal.toReal_mul, ENNReal.toReal_pow, ENNReal.toReal_ofReal hC.le] at hreal
   exact hreal
-
-
 
 theorem PoincareConjecture.RiemannianMetric.openFiber_sliceVolume_le_on_ambient_closedBall
     {d k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

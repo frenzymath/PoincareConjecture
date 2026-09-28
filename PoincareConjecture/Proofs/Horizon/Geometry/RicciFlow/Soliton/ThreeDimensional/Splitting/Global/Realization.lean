@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensi
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Quotient.Component
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Quotient.Antipodal
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,7 +26,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]
   {S : GradientShrinkingSolitonData 3 M} (G : ShrinkingSolitonFlow S)
 
 set_option maxHeartbeats 1000000 in
-
 
 theorem globalSplittingObligation_of_null_plane
     (hP : ThreeDimensionalClassificationPredecessors.{u})

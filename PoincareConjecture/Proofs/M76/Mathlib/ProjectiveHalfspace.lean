@@ -4,15 +4,6 @@ import Mathlib.Data.Real.Basic
 import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,12 +13,8 @@ namespace LinearMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
 
-
-
 noncomputable def fractionalRadial (L : E →ₗ[ℝ] ℝ) (x : E) : E :=
   (1 + L x)⁻¹ • x
-
-
 
 theorem fractionalRadial_neg_denom (L : E →ₗ[ℝ] ℝ) {x : E}
     (hx : 1 + L x ≠ 0) :
@@ -36,15 +23,11 @@ theorem fractionalRadial_neg_denom (L : E →ₗ[ℝ] ℝ) {x : E}
   field_simp [hx]
   ring
 
-
-
 theorem fractionalRadial_neg_apply (L : E →ₗ[ℝ] ℝ) {x : E}
     (hx : 1 + L x ≠ 0) : (-L).fractionalRadial (L.fractionalRadial x) = x := by
   change (1 + (-L) (L.fractionalRadial x))⁻¹ • L.fractionalRadial x = x
   rw [L.fractionalRadial_neg_denom hx]
   simp only [inv_inv, fractionalRadial, smul_smul, mul_inv_cancel₀ hx, one_smul]
-
-
 
 theorem fractionalRadial_injOn (L : E →ₗ[ℝ] ℝ) :
     InjOn L.fractionalRadial {x | 1 + L x ≠ 0} := by
@@ -54,9 +37,6 @@ theorem fractionalRadial_injOn (L : E →ₗ[ℝ] ℝ) :
       (L.fractionalRadial_neg_apply hx).symm
     _ = (-L).fractionalRadial (L.fractionalRadial y) := congrArg _ he
     _ = y := L.fractionalRadial_neg_apply hy
-
-
-
 
 theorem fractionalRadial_affineIndependent (L : E →ₗ[ℝ] ℝ)
     {ι : Type*} {p : ι → E} (hp : AffineIndependent ℝ p)

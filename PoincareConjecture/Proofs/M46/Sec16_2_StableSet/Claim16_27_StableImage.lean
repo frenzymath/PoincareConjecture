@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 import PoincareConjecture.Proofs.M14.Sec6_1_PathCongruence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ namespace PoincareConjecture.Proofs.M46
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point} {E : M14ExponentialFamily G T x}
-
-
 
 theorem stableEndpoint_reducedLength (H : M14StableSet G T tau x E)
     {Z : G.Horizontal x} (hZ : Z ∈ H.carrier) :
@@ -56,8 +43,6 @@ theorem stableEndpoint_reducedLength (H : M14StableSet G T tau x E)
     H.endpoint_slice_map_val Z hZ]
   rfl
 
-
-
 theorem reducedLength_le_of_action_bound {L epsilon : ℝ}
     (hepsilon : 0 < epsilon) (hL : 0 ≤ L) (htau : epsilon ^ 2 ≤ tau)
     {y : G.Point} (haction : M14ActionValue G T 0 tau x y ≤ L / 2) :
@@ -71,8 +56,6 @@ theorem reducedLength_le_of_action_bound {L epsilon : ℝ}
       div_le_div_of_nonneg_left (by positivity) (by positivity)
         (mul_le_mul_of_nonneg_left hroot (by norm_num))
     _ = L / (4 * epsilon) := by ring
-
-
 
 theorem stable_source_of_open_comparison (H : M14StableSet G T tau x E)
     (A : Set (G.slices (T - tau)).Point) (hA : IsOpen A)
@@ -103,8 +86,6 @@ theorem stable_source_of_open_comparison (H : M14StableSet G T tau x E)
     exact hlength _ hZ.2
   · rw [himage, measure_inter_conull' hnull]
     exact hvolume
-
-
 
 theorem stableSource_of_comparison
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}

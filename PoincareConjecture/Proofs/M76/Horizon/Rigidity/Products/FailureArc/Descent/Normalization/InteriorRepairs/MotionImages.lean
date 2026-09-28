@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descen
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.General.Mathlib.BranchInnerSupport
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLChartHomeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology unitInterval
@@ -108,7 +99,6 @@ theorem moved_left_image (u : I) :
   · rintro ⟨⟨y, hy, rfl⟩, hyl⟩
     exact ⟨⟨y, hy, N.left_fixed u hyl⟩, hyl⟩
 
-
 theorem endpoint_properties (hK : K.faces.Finite)
     (hj : PolyhedralPLInCharts t.charts j K.space)
     (hji : IsEmbedding (fun x : K.space => j x))
@@ -134,8 +124,6 @@ theorem endpoint_properties (hK : K.faces.Finite)
   · intro x hx
     have hxK : x ∈ K.space := (K.isCompact_space_of_finite hK).isClosed.frontier_subset hx
     exact N.frontier_fixed 1 ((hproper x hxK).mpr hx)
-
-
 
 theorem compact_change_support :
     ∃ Small : Set t.Carrier, IsCompact Small ∧

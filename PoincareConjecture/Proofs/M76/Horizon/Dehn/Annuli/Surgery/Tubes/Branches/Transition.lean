@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.LocalBranchTransition
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Tubes.LocalBranchInverses
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology Geometry.SimplicialComplex
 
@@ -13,8 +11,6 @@ local notation "P2" => (ℝ × ℝ)
 
 variable {E X ι : Type*} [TopologicalSpace E] [TopologicalSpace X] {S : Set E}
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X} {x y : E}
-
-
 
 theorem RawSourceCrossing.connected_lift_in_one_branch
     (C : RawSourceCrossing e f S R x y) {A : Set E}
@@ -34,9 +30,6 @@ theorem RawSourceCrossing.connected_lift_in_one_branch
       (C.disjoint.preimage Subtype.val) hcover with hL | hR
   · exact Or.inl (fun z hz => hL (a := ⟨z, hAD hz⟩) hz)
   · exact Or.inr (fun z hz => hR (a := ⟨z, hAD hz⟩) hz)
-
-
-
 
 theorem RawSourceCrossing.exists_connected_lift_swap
     (C : RawSourceCrossing e f S R x y) {A B : Set E}

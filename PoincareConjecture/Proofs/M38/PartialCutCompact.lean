@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M38.PartialCutInclusions
 import PoincareConjecture.Proofs.M38.CappingCompact
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +15,6 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
 
-
 theorem partialOldRemainder_compact :
     IsCompact ((Subtype.val : eventCutOpen F T hT P S →
       (F.slice (F.event T hT).tMinus).carrier) ⁻¹' eventCutRemainder F T hT P S) := by
@@ -30,7 +22,6 @@ theorem partialOldRemainder_compact :
     (eventCutRemainder_compact F T hT P S)
   intro x hx
   exact ⟨⟨x, eventCutRemainder_subset F T hT P S hx⟩, rfl⟩
-
 
 theorem partialOldInclusion_compact_cover (y : eventCutOpen F T hT P S) :
     partialOldInclusion F T hT P S y ∈
@@ -64,7 +55,6 @@ theorem partialOldInclusion_compact_cover (y : eventCutOpen F T hT P S) :
     linarith [hs.2]
   · rw [← partialOldInclusion_cap F T hT P S (i, positive) x hx, hattach]
 
-
 theorem partialCappedSpace_compact_cover :
     partialOldInclusion F T hT P S '' (Subtype.val ⁻¹' eventCutRemainder F T hT P S) ∪
         (⋃ a : S × Bool, partialCappingInclude F T hT P S (.inr a) ''
@@ -89,7 +79,6 @@ theorem partialCappedSpace_compact_cover :
             rw [partialOldInclusion_cap F T hT P S a x hpos] at h
             exact h
 
-
 theorem partialCappedSpace_compact : CompactSpace (PartialCappedSpace F T hT P S) := by
   apply isCompact_univ_iff.mp
   rw [← partialCappedSpace_compact_cover F T hT P S]
@@ -97,7 +86,6 @@ theorem partialCappedSpace_compact : CompactSpace (PartialCappedSpace F T hT P S
     (partialOldInclusion_openEmbedding F T hT P S).continuous).union
       (isCompact_iUnion fun a => capInnerBall_compact.image
         (partialCappingInclude_openEmbedding F T hT P S (.inr a)).continuous)
-
 
 noncomputable def partialCappedCarrier : GeneralizedSliceCarrier.{u} := by
   letI := partialCappedChartedSpace F T hT P S
@@ -116,7 +104,6 @@ noncomputable def partialCappedCarrier : GeneralizedSliceCarrier.{u} := by
     t2Space := inferInstance
     t3Space := inferInstance
     secondCountable := ChartedSpace.secondCountable_of_sigmaCompact StandardCapSpace _ }
-
 
 theorem partialCappedCarrier_compact :
     IsCompact (Set.univ : Set (partialCappedCarrier F T hT P S).carrier) := by

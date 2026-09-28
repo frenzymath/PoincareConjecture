@@ -1,16 +1,12 @@
 import Mathlib.MeasureTheory.Function.ConvergenceInMeasure
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
 open scoped Topology ENNReal
 
 namespace Poincare.Analysis
-
-
 
 theorem exists_subseq_tendsto_ae_of_integral_abs_sub
     {X : Type*} [MeasurableSpace X] {μ : Measure X}
@@ -34,8 +30,6 @@ theorem exists_subseq_tendsto_ae_of_integral_abs_sub
     (tendstoInMeasure_of_tendsto_eLpNorm (by norm_num : (1 : ℝ≥0∞) ≠ 0)
       (fun k => (hi k).aestronglyMeasurable) hg.aestronglyMeasurable hnorm).exists_seq_tendsto_ae
   exact ⟨fun k => σ k + N, fun _ _ h => Nat.add_lt_add_right (hσ h) N, hpoint⟩
-
-
 
 theorem ae_le_of_tendsto_integral_abs_sub
     {X : Type*} [MeasurableSpace X] {μ : Measure X}

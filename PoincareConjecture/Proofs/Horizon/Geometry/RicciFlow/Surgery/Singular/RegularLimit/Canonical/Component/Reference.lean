@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.StaticComponents
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Assembly
 
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 noncomputable def sliceDiffeomorph (R : SingularTimeReference F T M)
     (t : ℝ) (ht : t ∈ Ico R.tMinus T) :
@@ -39,8 +36,6 @@ theorem slice_metric_homothety (R : SingularTimeReference F T M)
   simpa only [one_mul] using R.metric_pullback t ht x v w
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
-
-
 
 noncomputable def referenceCComponent (R : SingularTimeReference F T M)
     (t : ℝ) (ht : t ∈ Ico R.tMinus T) {C : ℝ}

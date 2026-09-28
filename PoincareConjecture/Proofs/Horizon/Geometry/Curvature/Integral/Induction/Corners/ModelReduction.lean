@@ -3,20 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.WeightedFiberGeometry
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.CornerModels
 
-
-
-
-
-
-
-
 noncomputable section
 open Set Filter Function TopologicalSpace MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
-
 
 theorem PoincareConjecture.normalizedCornerScalarBound_of_pointedCornerModel_bound
     (m k : ℕ) (hm : 2 ≤ m) (δ H η B : ℝ)
@@ -141,8 +133,6 @@ theorem PoincareConjecture.normalizedCornerScalarBound_of_pointedCornerModel_bou
   exact g.integral_openFiber_pos_scalar_le_of_local_bounds D hc (by omega) hsec
     hP U hreg c hcompact (inferInstance : Nonempty L) hdiam K hK hKnonneg
     r B hr hr1 hB hlocal
-
-
 
 theorem PoincareConjecture.exists_normalizedCornerScalarBound_of_pointedCornerModel_bound
     (m k : ℕ) (hm : 2 ≤ m) (δ H η : ℝ) (hH : 0 ≤ H) (hη : 0 < η)

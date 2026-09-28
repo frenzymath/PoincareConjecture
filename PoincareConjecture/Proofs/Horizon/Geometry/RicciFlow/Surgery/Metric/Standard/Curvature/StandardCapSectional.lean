@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Stand
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Standard.Radial.RadialArclength
 import Mathlib.Analysis.InnerProductSpace.Calculus
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -73,7 +65,6 @@ private theorem cap_metric_radial (g₀ : StandardInitialMetric)
   field_simp [norm_ne_zero_iff.mpr hx]
   ring
 
-
 theorem standard_metric_fderiv_inner (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w z : StandardCapSpace) :
     fderiv ℝ (fun y : StandardCapSpace => g₀.metric.inner y v w) x z =
@@ -117,7 +108,6 @@ private noncomputable def capConnectionC (g₀ : StandardInitialMetric) (r : ℝ
   (deriv (capRadialExcess g₀) r / r -
     4 * capConnectionA g₀ r * capRadialExcess g₀ r) / (2 * axisRadialCoefficient g₀ r)
 
-
 private noncomputable def capConnectionTerm (g₀ : StandardInitialMetric)
     (x v w : StandardCapSpace) : StandardCapSpace :=
   capConnectionA g₀ ‖x‖ • (inner ℝ x v • w + inner ℝ x w • v) +
@@ -137,7 +127,6 @@ private theorem cap_constant_bracket (v w : StandardCapSpace) :
     VectorField.lieBracketWithin_univ]
   simp [VectorField.lieBracket]
   rfl
-
 
 private theorem cap_connection_constant (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w : StandardCapSpace) :
@@ -370,9 +359,6 @@ private theorem cap_tangential_curvature_numerator (g₀ : StandardInitialMetric
   ring_nf at hDW hDV ⊢
   linarith only [hDW, hDV]
 
-
-
-
 theorem standardCap_sectional_tangential (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :
     g₀.connection.sectionalCurvature (axisPoint r) (axisBasis 1) (axisBasis 2) =
@@ -407,7 +393,6 @@ theorem standardCap_sectional_tangential (g₀ : StandardInitialMetric)
     (axisTangentialCoefficient_pos g₀ r).ne']
   ring
 
-
 theorem standardCap_angular_derivative_sq_le (g₀ : StandardInitialMetric)
     {r : ℝ} (hr : 0 < r) :
     (2 * axisTangentialCoefficient g₀ r +
@@ -434,7 +419,6 @@ private theorem cap_mvfderiv_eq_fderiv (f : StandardCapSpace → ℝ)
   simp only [mvfderiv, mfderiv_eq_fderiv, ContinuousLinearMap.comp_apply,
     NormedSpace.fromTangentSpace]
   rfl
-
 
 theorem standardCap_radialArclength_mvfderiv (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v : StandardCapSpace) :
@@ -494,9 +478,6 @@ private theorem cap_fderiv_radial_pairing {f : ℝ → ℝ} {x : StandardCapSpac
     cap_fderiv_inner]
   ring
 
-
-
-
 theorem standardCap_radialArclength_hessian (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w : StandardCapSpace) :
     g₀.connection.hessian (fun y : StandardCapSpace => radialArclength g₀ ‖y‖) x v w =
@@ -542,7 +523,6 @@ theorem standardCap_radialArclength_hessian (g₀ : StandardInitialMetric)
     (axisTangentialCoefficient_pos g₀ ‖x‖).ne']
   ring
 
-
 theorem standardCap_radialArclength_gradient (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) :
     g₀.connection.gradient (fun y : StandardCapSpace => radialArclength g₀ ‖y‖) x =
@@ -559,7 +539,6 @@ theorem standardCap_radialArclength_gradient (g₀ : StandardInitialMetric)
   rw [← hs]
   field_simp [(norm_ne_zero_iff.mpr hx), (radialSpeed_pos g₀ ‖x‖).ne']
 
-
 theorem standardCap_radialArclength_gradient_sq (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) :
     g₀.metric.inner x
@@ -570,7 +549,6 @@ theorem standardCap_radialArclength_gradient_sq (g₀ : StandardInitialMetric)
     standardCap_radialArclength_gradient g₀ hx, real_inner_smul_right,
     real_inner_self_eq_norm_sq]
   field_simp [norm_ne_zero_iff.mpr hx, (radialSpeed_pos g₀ ‖x‖).ne']
-
 
 theorem standardCap_radial_pair_sq_le (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w : StandardCapSpace)
@@ -611,9 +589,6 @@ private theorem cap_scalar_fderiv_comp {f : StandardCapSpace → ℝ} {h : ℝ �
   rw [fderiv_comp x hh hf]
   simp only [ContinuousLinearMap.comp_apply, fderiv_eq_deriv_mul]
 
-
-
-
 theorem standardCap_connection_inner (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) (v w z : StandardCapSpace) :
     g₀.metric.inner x (g₀.connection.connection (fun _ => w) x v) z =
@@ -626,13 +601,11 @@ theorem standardCap_connection_inner (g₀ : StandardInitialMetric)
         r ^ 2) ‖x‖ / (2 * ‖x‖) * inner ℝ x v * inner ℝ x w * inner ℝ x z :=
   cap_connection_pairing g₀ hx v w z
 
-
 theorem standardCap_fderiv_radial {f : ℝ → ℝ} {x : StandardCapSpace}
     (hf : DifferentiableAt ℝ f ‖x‖) (hx : x ≠ 0) (v : StandardCapSpace) :
     fderiv ℝ (fun y : StandardCapSpace => f ‖y‖) x v =
       deriv f ‖x‖ * (inner ℝ x v / ‖x‖) :=
   cap_fderiv_radial hf hx v
-
 
 theorem standardCap_radial_germ_mvfderiv (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) {F : StandardCapSpace → ℝ} {h : ℝ → ℝ}
@@ -646,7 +619,6 @@ theorem standardCap_radial_germ_mvfderiv (g₀ : StandardInitialMetric)
   · exact ((radialArclength_contDiff g₀).contDiffAt.comp x
       (contDiffAt_norm ℝ hx)).differentiableAt (by simp)
   · exact hh.differentiable (by simp) _
-
 
 theorem standardCap_radial_germ_hessian (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) {F : StandardCapSpace → ℝ} {h : ℝ → ℝ}
@@ -694,7 +666,6 @@ theorem standardCap_radial_germ_hessian (g₀ : StandardInitialMetric)
     deriv (deriv h) (rho x) * fderiv ℝ rho x v * fderiv ℝ rho x w
   ring
 
-
 theorem standardCap_radial_germ_gradient_sq (g₀ : StandardInitialMetric)
     {x : StandardCapSpace} (hx : x ≠ 0) {F : StandardCapSpace → ℝ} {h : ℝ → ℝ}
     (hh : ContDiff ℝ ∞ h)
@@ -714,10 +685,6 @@ theorem standardCap_radial_germ_gradient_sq (g₀ : StandardInitialMetric)
   rw [standardCap_radialArclength_gradient_sq g₀ hx]
   dsimp only [rho]
   ring
-
-
-
-
 
 theorem standardCap_sectional_positiveScaling_radial_germ (g₀ : StandardInitialMetric)
     (F : StandardCapSpace → ℝ) (hFs : ContMDiff (𝓡 3) 𝓘(ℝ, ℝ) ∞ F)
@@ -747,6 +714,5 @@ theorem standardCap_sectional_positiveScaling_radial_germ (g₀ : StandardInitia
     standardCap_radialArclength_hessian g₀ hx,
     standardCap_radialArclength_hessian g₀ hx, hvv, hww]
   ring
-
 
 end PoincareConjecture.MetricSurgery

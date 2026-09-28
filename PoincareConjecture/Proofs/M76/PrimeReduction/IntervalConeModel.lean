@@ -3,25 +3,13 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedInterval
 import PoincareConjecture.Proofs.M76.Mathlib.RadialConeBoundary
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PoincareConjecture.M76.PrimeReduction.IntervalCone
 
-
 def base : Set (ℝ × ℝ) := segment ℝ (1, 0) (0, 1)
-
-
 
 theorem cone_eq_triangle : convexJoin ℝ {(0 : ℝ × ℝ)} base =
     convexHull ℝ (range TriangleDiskModel.rightTriangle) := by
@@ -29,8 +17,6 @@ theorem cone_eq_triangle : convexJoin ℝ {(0 : ℝ × ℝ)} base =
   congr 1
   ext x
   simp [TriangleDiskModel.rightTriangle, Prod.zero_eq_mk, or_comm, or_left_comm]
-
-
 
 theorem frontier_cone : frontier (convexJoin ℝ {(0 : ℝ × ℝ)} base) =
     base ∪ convexJoin ℝ {0} {(1, 0), (0, 1)} := by
@@ -47,16 +33,12 @@ theorem frontier_cone : frontier (convexJoin ℝ {(0 : ℝ × ℝ)} base) =
     affineSegment_eq_segment, base, Prod.zero_eq_mk, segment_symm,
     or_comm, or_left_comm, or_assoc]
 
-
-
 theorem isFinitePLBallPair_cone :
     IsFinitePLBallPair (ℝ × ℝ) (convexJoin ℝ {(0 : ℝ × ℝ)} base)
       (base ∪ convexJoin ℝ {0} {(1, 0), (0, 1)}) := by
   rw [← frontier_cone, cone_eq_triangle]
   exact TriangleDiskModel.rightTriangle.isFinitePLBallPair_convexHull_triangle
     TriangleDiskModel.independent_rightTriangle
-
-
 
 theorem isFinitePLBallPair_base :
     IsFinitePLBallPair ℝ base ({(1, 0), (0, 1)} : Set (ℝ × ℝ)) := by
@@ -69,8 +51,6 @@ theorem isFinitePLBallPair_base :
       AffineMap.lineMap (1, 0) (0, 1) (1 : ℝ)} at h
   simpa only [segment_eq_image_lineMap, AffineMap.lineMap_apply_zero,
     AffineMap.lineMap_apply_one, base] using h
-
-
 
 theorem level_base {x : ℝ × ℝ} (hx : x ∈ base) :
     (LinearMap.fst ℝ ℝ ℝ + LinearMap.snd ℝ ℝ ℝ) x = 1 := by

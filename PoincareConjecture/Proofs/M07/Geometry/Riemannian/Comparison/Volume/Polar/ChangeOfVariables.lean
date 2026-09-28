@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.HausdorffDensity
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.ChangeOfVariables
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -72,8 +58,6 @@ private theorem volumeMeasure_image_eq_lintegral_in_chart
     exact e.right_inv hy
   simp only [pullbackVolumeDensity, hloc.mfderiv_eq]
   rw [hloc.eq_of_nhds]
-
-
 
 theorem volumeMeasure_image_eq_lintegral_of_mdifferentiableAt_injOn
     (g : RiemannianMetric n M)

@@ -1,13 +1,5 @@
-
 import PoincareConjecture.Definitions.Ch01.TensorRegularity
 import Mathlib.Geometry.Manifold.Algebra.Structures
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 

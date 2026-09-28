@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.FilledModel
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +25,6 @@ theorem horizontal_contDiff : ContDiff Real ∞ horizontal := by
 
 @[simp] theorem horizontal_vector (x y z : Real) :
     horizontal (vector x y z) = WithLp.toLp 2 ![x, y] := rfl
-
 
 def graphCoordinates (b : E2 → Real) (hb : ContDiff Real ∞ b) :
     Diffeomorph 𝓘(Real, E2 × Real) (𝓡 3) (E2 × Real) E3 ∞ where
@@ -69,7 +66,6 @@ theorem horizontal_graphCoordinates (b : E2 → Real) (hb : ContDiff Real ∞ b)
     horizontal (graphCoordinates b hb p) = p.1 := by
   ext i
   fin_cases i <;> rfl
-
 
 def lowerGraph (q : E2) : Real := -Real.sqrt (1 - ‖q‖^2) - (q 0)^2
 

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Stages.SpacetimeEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,14 +7,11 @@ open scoped Manifold ContDiff Topology
 
 namespace PoincareConjecture
 
-
 theorem FlowCarrier.metricComplete_of_dimension_zero (C : FlowCarrier 0) (g : C.metric) :
     C.metricComplete g := by
   let : Subsingleton C.carrier := C.subsingleton_zero
   unfold FlowCarrier.metricComplete
   infer_instance
-
-
 
 noncomputable def PointedFlowSequence.geometricConvergence_zero
     {T' T : ℝ} (S : PointedFlowSequence 0 T' T) : PointedGeometricConvergence S := by
@@ -72,8 +60,6 @@ noncomputable def PointedFlowSequence.geometricConvergence_zero
     refine ⟨j, le_rfl, ?_⟩
     intro k _ a
     exact a.elim0
-
-
 
 theorem pointedRicciFlowCompactness_zero
     {T' T : ℝ} (H : PointedRicciFlowCompactnessHypotheses 0 T' T) :

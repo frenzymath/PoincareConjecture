@@ -4,23 +4,12 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.FunProp
 import Mathlib.Tactic.LinearCombination
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
 open Filter Topology
 
 namespace Poincare.Alexandrov
-
-
 
 theorem cos_comparisonAngle_change_vertex {a b c : ℝ}
     (ha : 0 < a) (hb : 0 < b) (hc : 0 < c)
@@ -41,9 +30,6 @@ theorem cos_comparisonAngle_change_vertex {a b c : ℝ}
   have hsc := (Real.sinh_pos_iff.mpr hc).ne'
   field_simp
   linear_combination (Real.cosh b) * (Real.cosh_sq_sub_sinh_sq a)
-
-
-
 
 theorem exists_pos_comparisonAngle_near_vertex {b α : ℝ}
     (hb : 0 < b) (hα : 0 < α) (hαpi : α < Real.pi / 2) :

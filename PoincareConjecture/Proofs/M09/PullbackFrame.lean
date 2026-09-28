@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.ParametricFrame
 import PoincareConjecture.Proofs.M09.ParametricCurveDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology BigOperators

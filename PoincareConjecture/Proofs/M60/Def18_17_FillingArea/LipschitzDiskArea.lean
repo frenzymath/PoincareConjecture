@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzArea
 import PoincareConjecture.Proofs.M60.Mathlib.NullSphere
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Filter Metric
@@ -20,9 +12,6 @@ namespace PoincareConjecture
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M] [T2Space M]
-
-
-
 
 theorem m60AreaIntegral_bound_on_closedBall (g : RiemannianMetric n M)
     {f : LoopPlane → M} (p : LoopPlane) (R : ℝ) {L : ℝ} (hL : 0 ≤ L)
@@ -38,8 +27,6 @@ theorem m60AreaIntegral_bound_on_closedBall (g : RiemannianMetric n M)
   refine ⟨(integrableOn_congr_set_ae heq).mp hi, ?_⟩
   rwa [← setIntegral_congr_set heq, ← measureReal_congr heq]
 
-
-
 theorem m60AreaDensity_integrableOn_of_disk_lipschitz (g : RiemannianMetric n M)
     {f : LoopPlane → M} {L : ℝ} (hL : 0 ≤ L)
     (hf : ∀ x y : LoopDisk,
@@ -47,9 +34,6 @@ theorem m60AreaDensity_integrableOn_of_disk_lipschitz (g : RiemannianMetric n M)
     IntegrableOn (m60AreaDensity g f) loopDiskSet volume :=
   (m60AreaIntegral_bound_on_closedBall g 0 1 hL
     (fun x hx y hy => hf ⟨x, hx⟩ ⟨y, hy⟩)).1
-
-
-
 
 theorem m60AreaIntegral_bound_on_annulus (g : RiemannianMetric n M)
     {f : LoopPlane → M} (r : ℝ) {L : ℝ} (hL : 0 ≤ L)

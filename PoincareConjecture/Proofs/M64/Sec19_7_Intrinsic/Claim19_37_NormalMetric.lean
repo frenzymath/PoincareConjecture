@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Claim19_37_NormalGauss
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +11,6 @@ namespace PoincareConjecture
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem m64Intrinsic_geodesic_velocity_unit
     (N : IntrinsicAnnulus) {q : ℝ → AnnulusCoordinates} {I : Set ℝ} {b : ℝ}
@@ -53,9 +39,6 @@ theorem m64Intrinsic_geodesic_velocity_unit
   have hsq := Real.sq_sqrt hpos
   rw [heq] at hsq
   simpa only [one_pow] using hsq.symm
-
-
-
 
 theorem m64Intrinsic_normal_variation_metric
     (N : IntrinsicAnnulus) {u : ℝ × ℝ → AnnulusCoordinates} {a t : ℝ}
@@ -97,9 +80,6 @@ theorem m64Intrinsic_normal_variation_metric
   simp only [map_add, add_apply, map_smul, smul_apply, smul_eq_mul,
     horth', horth, hunit, mul_zero, mul_one, zero_add, add_zero]
   ring
-
-
-
 
 theorem m64Intrinsic_normal_variation_metric_lower
     (N : IntrinsicAnnulus) {u : ℝ × ℝ → AnnulusCoordinates} {a t c speed : ℝ}

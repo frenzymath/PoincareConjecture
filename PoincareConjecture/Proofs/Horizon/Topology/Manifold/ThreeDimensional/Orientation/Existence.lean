@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.ThreeDimensional.Orientation.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace Poincare.Topology
-
-
 
 theorem nonempty_orientationCompatibleAtlas
     {M : Type u} [TopologicalSpace M]

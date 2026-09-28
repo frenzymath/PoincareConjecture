@@ -2,14 +2,11 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.LinearTorus.Inte
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 import Mathlib.Data.Int.GCD
 
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
 
 namespace PoincareConjecture.M76.LinearTorus
-
 
 def primitiveMatrix (a b : ℤ) : Matrix (Fin 2) (Fin 2) ℤ :=
   !![a, -Int.gcdB a b; b, Int.gcdA a b]
@@ -20,7 +17,6 @@ theorem det_primitiveMatrix {a b : ℤ} (h : Int.gcd a b = 1) :
   rw [h] at hz
   simpa [primitiveMatrix, Matrix.det_fin_two, sub_neg_eq_add, mul_comm] using hz.symm
 
-
 def integerMatrixHomeomorph (p : ℝ) (A : Matrix (Fin 2) (Fin 2) ℤ)
     (hA : A.det = 1) : (AddCircle p × AddCircle p) ≃ₜ (AddCircle p × AddCircle p) where
   toFun := integerMatrixHom p A
@@ -30,12 +26,10 @@ def integerMatrixHomeomorph (p : ℝ) (A : Matrix (Fin 2) (Fin 2) ℤ)
   continuous_toFun := continuous_integerMatrixHom p A
   continuous_invFun := continuous_integerMatrixHom p A.adjugate
 
-
 def primitiveTorusBandMap (p : ℝ) (a b : ℤ) :
     C(AddCircle p × ℝ, AddCircle p × AddCircle p) :=
   (integerMatrixMap p (primitiveMatrix a b)).comp
     ⟨fun x => (x.1, (x.2 : AddCircle p)), by fun_prop⟩
-
 
 def primitiveTorusBand (p : ℝ) (a b : ℤ) (r : ℝ) :
     C(AddCircle p × Icc (-r) r, AddCircle p × AddCircle p) :=
@@ -102,7 +96,6 @@ theorem isCompact_range_primitiveTorusBand {p : ℝ} (hp : 0 < p)
     (a b : ℤ) (r : ℝ) : IsCompact (range (primitiveTorusBand p a b r)) := by
   let : Fact (0 < p) := ⟨hp⟩
   exact isCompact_range (primitiveTorusBand p a b r).continuous
-
 
 def primitiveTorusBandLift (a b : ℤ) : (ℝ × ℝ) →L[ℝ] (ℝ × ℝ) :=
   (((a : ℝ) • ContinuousLinearMap.fst ℝ ℝ ℝ) -

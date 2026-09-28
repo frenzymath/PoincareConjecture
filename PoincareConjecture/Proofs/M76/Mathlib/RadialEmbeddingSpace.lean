@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.RadialRescalingHomeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set NormedSpace Geometry
@@ -19,16 +8,11 @@ namespace AbstractSimplicialComplex
 
 variable {ι E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 def IsRadialEmbedding (A : AbstractSimplicialComplex ι) (v : ι → E) : Prop :=
   Function.Injective v ∧ ∃ L : SimplicialComplex ℝ E,
     L.faces = {t : Finset E | ∃ s ∈ A.faces, (t : Set E) = v '' (s : Set ι)} ∧
     (∀ t ∈ L.faces, LinearIndependent ℝ ((↑) : t → E)) ∧
     InjOn (NormedSpace.normalize : E → E) L.space
-
-
 
 abbrev RadialEmbedding (A : AbstractSimplicialComplex ι) (E : Type*)
     [NormedAddCommGroup E] [NormedSpace ℝ E] := {v : ι → E // A.IsRadialEmbedding v}
@@ -52,9 +36,6 @@ private theorem vertices_eq_range_of_faces {L : SimplicialComplex ℝ E}
     rw [hfaces]
     exact ⟨{i}, A.singleton_mem i, by simp⟩
 
-
-
-
 theorem IsRadialEmbedding.ne_zero (hv : A.IsRadialEmbedding v) (i : ι) : v i ≠ 0 := by
   obtain ⟨L, hfaces, hlin, _⟩ := hv.2
   have hvertex : v i ∈ L.vertices := by
@@ -63,9 +44,6 @@ theorem IsRadialEmbedding.ne_zero (hv : A.IsRadialEmbedding v) (i : ι) : v i �
   intro hi
   apply (hlin {v i} hvertex).zero_notMem_convexHull
   simp [hi]
-
-
-
 
 theorem IsRadialEmbedding.pos_smul (hv : A.IsRadialEmbedding v)
     (r : E → ℝ) (hr : ∀ i, 0 < r (v i)) :
@@ -98,8 +76,6 @@ theorem IsRadialEmbedding.pos_smul (hv : A.IsRadialEmbedding v)
         exact ⟨s, hs, Finset.coe_image⟩
       · apply Finset.coe_injective
         simpa only [Finset.coe_image, Set.image_image] using hts.symm
-
-
 
 theorem IsRadialEmbedding.normalize (hv : A.IsRadialEmbedding v) :
     A.IsRadialEmbedding (fun i => NormedSpace.normalize (v i)) :=

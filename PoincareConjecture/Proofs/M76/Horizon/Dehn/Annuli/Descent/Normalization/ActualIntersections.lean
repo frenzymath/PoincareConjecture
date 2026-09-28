@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Assignment.Construction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.HistoryIntersections
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -43,8 +34,6 @@ theorem source_card_le {N : ℕ} (hcard : ∀ a ∈ K.faces, a.card ≤ N)
     intro x hx
     exact convexHull_subset_affineSpan (b : Set V) (hab (subset_convexHull ℝ _ hx))
   exact ((D.source.indep ha).card_le_card_of_subset_affineSpan hspan).trans (hcard b hb)
-
-
 
 theorem exists_endpoint_intersection_faces
     {x y : V} (hx : x ∈ K.space) (hy : y ∈ K.space) (hne : x ≠ y)
@@ -86,9 +75,6 @@ theorem exists_endpoint_intersection_faces
     (fun a ↦ (D.box a).neighborhood_injective) D.states D.motions D.transition D.stable hzero
     (D.subdivision.space_eq.symm.subset hx) (D.subdivision.space_eq.symm.subset hy) hne hxy
   simpa only [Module.finrank_fin_fun] using h
-
-
-
 
 theorem endpoint_contact_card_cases
     (hcard : ∀ a ∈ K.faces, a.card ≤ 3)

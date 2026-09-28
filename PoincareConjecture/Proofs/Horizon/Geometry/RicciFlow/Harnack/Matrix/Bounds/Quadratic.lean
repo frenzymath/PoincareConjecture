@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Bound
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Operator.Bounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Matrix.Positivity.Perturbation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 800000
@@ -57,9 +49,6 @@ open PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem hamilton_quadratic_lower_bound
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -164,8 +153,6 @@ theorem hamilton_quadratic_lower_bound
   rw [hMsplit]
   dsimp only [CM, CP, u, w, R] at hBlower hPlower hMextra hPextra hR
   nlinarith only [hBlower, hPlower, hMextra, hPextra, hRicTime, hR]
-
-
 
 theorem hamilton_quadratic_lower_bound_of_bound
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

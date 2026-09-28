@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCenteredMetric
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRawPast
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem source_initial_cylinder_tensor_bilinear
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
@@ -67,8 +56,6 @@ private theorem initialCylinder_metric_agreement
     scale * (F.metric (origin + s / scale)).inner y
       (mfderiv (𝓡 3) (𝓡 3) (f.forward s ht) x v)
       (mfderiv (𝓡 3) (𝓡 3) (f.forward s ht) x w)) (hmap hx)
-
-
 
 theorem source_initial_slab_coefficients
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

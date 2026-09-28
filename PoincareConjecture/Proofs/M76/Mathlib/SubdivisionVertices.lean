@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexExtremeFaces
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsSubdivision.vertices_subset {K L : SimplicialComplex ℝ E}
     (hLK : L.IsSubdivision K) : K.vertices ⊆ L.vertices := by

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.IntrinsicRegularSection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -16,9 +7,6 @@ open Set Geometry
 namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem HasDisjointPolygonPresentation.union_polygon
     {S : Set E} (h : HasDisjointPolygonPresentation S)
@@ -53,10 +41,6 @@ theorem HasDisjointPolygonPresentation.union_polygon
 
 variable [FiniteDimensional ℝ E]
 
-
-
-
-
 theorem HasDisjointPolygonPresentation.union_regular_cap
     {S cap : Set E} (h : HasDisjointPolygonPresentation S)
     (hcap : cap = ∅ ∨ ∃ d : Set E, IsFinitePLBallPair (ℝ × ℝ) d cap)
@@ -66,9 +50,6 @@ theorem HasDisjointPolygonPresentation.union_regular_cap
   · obtain ⟨m, Q, hQi, hQe, hQb⟩ := hd.exists_polygon_boundary
     rw [← hQb] at hsep ⊢
     exact h.union_polygon Q hQi hQe hsep
-
-
-
 
 theorem HasDisjointPolygonPresentation.cut_level
     {S s s' : Set E} {A : E → ℝ} {c : ℝ}

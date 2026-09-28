@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.ProductChartPullback
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.C1ChartPullback
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +14,6 @@ open Proofs.M09
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {circumference : ℝ} {C : M62.CircleGeometry circumference}
-
-
 
 theorem auxiliaryCircle_productChartField_c1 (P : M62.CircleProductCharts C n M)
     (p : M) (v : ℝ → EuclideanSpace ℝ (Fin n)) (r : ℝ)
@@ -88,8 +75,6 @@ theorem auxiliaryCircle_productChartField_c1 (P : M62.CircleProductCharts C n M)
   apply (P.split w.2).injective
   erw [hsplit]
   exact P.productChartField_split p (v w.1) r w.2
-
-
 
 theorem auxiliaryCircle_pullback_chart_field_c1
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

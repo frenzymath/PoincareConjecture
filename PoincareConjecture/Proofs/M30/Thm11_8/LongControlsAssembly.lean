@@ -6,15 +6,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.SourceNoncollapsePackage
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Universe
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,8 +14,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
 
 theorem exists_long_generalized_convergence_of_controls
     (P : M30ControlledBlowupPredecessors.{u})
@@ -45,8 +34,6 @@ theorem exists_long_generalized_convergence_of_controls
     H.horizon_pos hrho hv H.balls_compact
     Hslab
     hvolume
-
-
 
 theorem exists_long_generalized_convergence_with_source_noncollapse_of_controls
     (P : M30ControlledBlowupPredecessors.{u})

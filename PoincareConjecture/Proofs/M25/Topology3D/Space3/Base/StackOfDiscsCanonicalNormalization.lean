@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsScaleEvolution
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonicalEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def stackCapCanonicalEndpoint
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -29,7 +18,6 @@ noncomputable def stackCapCanonicalEndpoint
   C.tube ((M (heightCoordinates (q : E3))).1,
     C.cutHeight + C.sign *
       (C.removal + lambda * (M (heightCoordinates (q : E3))).2))
-
 
 theorem exists_stackCapCanonicalNormalization
     {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FramePlaneCoordinates
 import Mathlib.Topology.Algebra.Module.Spaces.ContinuousLinearMap
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,18 +10,11 @@ namespace ContinuousLinearMap
 variable {E F T : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [NormedAddCommGroup T] [NormedSpace ℝ T]
 
-
-
 def tangentCylinderProjection (B : E →L[ℝ] F) (A : E →L[ℝ] T) : (E × T) →L[ℝ] (F × T) :=
   (B.comp (fst ℝ E T)).prod (snd ℝ E T + A.comp (fst ℝ E T))
 
-
-
 theorem tangentCylinderProjection_apply (B : E →L[ℝ] F) (A : E →L[ℝ] T) (x : E) (t : T) :
     tangentCylinderProjection B A (x, t) = (B x, t + A x) := rfl
-
-
-
 
 theorem injOn_tangentCylinderProjection_iff (B : E →L[ℝ] F) (A : E →L[ℝ] T) (S : Set E) :
     InjOn (tangentCylinderProjection B A) (S ×ˢ (univ : Set T)) ↔ InjOn B S := by
@@ -46,9 +30,6 @@ theorem injOn_tangentCylinderProjection_iff (B : E →L[ℝ] F) (A : E →L[ℝ]
     change x.2 + A x.1 = y.2 + A y.1 at ht
     rw [hn] at ht
     exact add_right_cancel ht
-
-
-
 
 theorem rightInverse_tangentCylinderProjection_iff (J : F →L[ℝ] E)
     (B : E →L[ℝ] F) (A : E →L[ℝ] T) :
@@ -68,9 +49,6 @@ theorem rightInverse_tangentCylinderProjection_iff (J : F →L[ℝ] E)
     have hz : A (J f) = 0 := congrArg (fun L : F →L[ℝ] T => L f) hA
     rw [hB f, hz, add_zero]
 
-
-
-
 theorem eq_tangentCylinderProjection_of_fixed_tangent (Q : (E × T) →L[ℝ] (F × T))
     (hT : ∀ t : T, Q (0, t) = (0, t)) :
     Q = tangentCylinderProjection ((fst ℝ F T).comp (Q.comp (inl ℝ E T)))
@@ -81,9 +59,6 @@ theorem eq_tangentCylinderProjection_of_fixed_tangent (Q : (E × T) →L[ℝ] (F
   have he : (x, t) = (x, (0 : T)) + (0, t) := by simp
   rw [he, map_add, hT]
   ext <;> simp [add_comm]
-
-
-
 
 theorem fixed_tangent_of_rightInverse_productFrame (J : F →L[ℝ] E)
     (Q : (E × T) →L[ℝ] (F × T))

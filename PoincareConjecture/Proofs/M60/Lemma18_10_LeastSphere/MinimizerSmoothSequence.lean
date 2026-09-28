@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerSmoothEuler
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.AlphaCriticalSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -291,8 +283,6 @@ private theorem sphereWeight_chart_energy (g : RiemannianMetric n M) (alpha : �
   rw [← mul_assoc, mul_div_cancel_right₀ _ (suRoundFactor_smooth_pos.2 z).ne']
   rfl
 
-
-
 theorem suWeakAlphaSphere_weightedEuler
     {g : RiemannianMetric n M} {eps0 alpha : ℝ} (S : SUWeakAlphaSphere g eps0 alpha)
     (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ S.map) : SUSphereWeightedEuler g alpha S.map := by
@@ -388,9 +378,6 @@ theorem suWeakAlphaSphere_weightedEuler
   simp only [Function.comp_apply] at hy ⊢
   rw [hy, hdy]
 
-
-
-
 theorem suSmoothAlphaMinimizingSequence_of_regular [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) (x : M) (hpi : Nontrivial (HomotopyGroup.Pi 2 M x))
     (eps0 : ℝ) (heps : 0 < eps0)
@@ -439,9 +426,6 @@ theorem suSmoothAlphaMinimizingSequence_of_regular [CompactSpace M] [T2Space M]
     exact csInf_le (m60NonNullAlphaEnergyValues_bddBelow g (alpha j)) ⟨h, hh, hn, rfl⟩
   · intro j
     exact suWeakAlphaSphere_weightedEuler (S j) (hs j)
-
-
-
 
 theorem suSmoothAlphaMinimizingSequence [CompactSpace M] [T2Space M]
     (g : RiemannianMetric n M) (x : M) (hpi : Nontrivial (HomotopyGroup.Pi 2 M x)) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.MarkedTensorDerivative
 import Mathlib.Data.Nat.Factorial.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -21,7 +12,6 @@ namespace PoincareConjecture
 
 open M62
 
-
 noncomputable def m63RicciArcExpression : Nat -> List (Int × MarkedTensorContraction 2)
   | 0 => [(1, { order := 0, test := 0, jet := ![0, 0] })]
   | j + 1 =>
@@ -31,7 +21,6 @@ noncomputable def m63RicciArcExpression : Nat -> List (Int × MarkedTensorContra
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
 
 noncomputable def m63UnmarkedTensorExpression
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)
@@ -44,9 +33,6 @@ noncomputable def m63UnmarkedTensorExpression
   (P.map (fun q => (q.1 : ℝ) *
     (F.connection t).iteratedCovariantTensorDerivative T q.2.order (c x t)
       (fun i => K (q.2.jet i)))).sum
-
-
-
 
 theorem m63RicciArcExpression_spec (j : Nat) :
     (∀ q ∈ m63RicciArcExpression j,
@@ -177,9 +163,6 @@ theorem m63RicciArcExpression_spec (j : Nat) :
   | succ j ih =>
     have h := (hbound j).trans (Nat.mul_le_mul_left (j + 3) ih)
     simpa only [Nat.add_assoc, Nat.factorial_succ] using h
-
-
-
 
 theorem m63TangentRicci_arc_iterate [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ -> ℝ -> M)

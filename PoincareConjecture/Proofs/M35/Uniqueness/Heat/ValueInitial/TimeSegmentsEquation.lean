@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.ValueInitial.TimeSegmentsIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

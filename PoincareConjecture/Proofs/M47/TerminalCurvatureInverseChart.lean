@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalCurvatureNeckChartError
 import PoincareConjecture.Proofs.M13.Metric
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -29,8 +21,6 @@ variable {M : Type u} {X : Type v} [TopologicalSpace M] [TopologicalSpace X]
   [ChartedSpace E M] [ChartedSpace E X]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ X]
 
-
-
 theorem terminalCurvature_pullback_coefficient_germ
     (h : RiemannianMetric 3 X) {f f0 : E → X} {x : E}
     (heq : f =ᶠ[𝓝 x] f0) :
@@ -50,7 +40,6 @@ theorem terminalCurvature_pullback_coefficient_germ
 
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem terminalCurvature_inverse_chart_coefficient_germ
     (h : RiemannianMetric 3 X)
     (psi : PartialDiffeomorph (𝓡 3) (𝓡 3) M X ∞)
@@ -62,8 +51,6 @@ theorem terminalCurvature_inverse_chart_coefficient_germ
   filter_upwards [(psi.trans c).open_target.mem_nhds hy] with z hz
   change z ∈ c.target ∧ c.symm z ∈ psi.target at hz
   exact psi.right_inv hz.2
-
-
 
 theorem terminalCurvature_inverse_chart_error_jet
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 X)
@@ -110,7 +97,6 @@ theorem terminalCurvature_inverse_chart_error_jet
         (f := h.pullbackCoefficients c.symm)
         (g := g.pullbackCoefficients (psi.trans c).symm)
         (ht.of_le (by exact_mod_cast le_top)) (hs.of_le (by exact_mod_cast le_top))
-
 
 theorem terminalCurvature_scaled_pullback_coefficients
     (g : RiemannianMetric 3 M) {lambda : ℝ} (hlambda : 0 < lambda) (f : E → M) :

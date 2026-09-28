@@ -2,22 +2,12 @@ import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 import Mathlib.Algebra.QuadraticDiscriminant
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open MeasureTheory
 open scoped intervalIntegral
 
 namespace MeasureTheory
-
-
 
 theorem integral_mul_weight_sq_le {X : Type*} [MeasurableSpace X]
     {mu : Measure X} {f w : X → ℝ} (hw : 0 ≤ᵐ[mu] w)
@@ -46,8 +36,6 @@ theorem integral_mul_weight_sq_le {X : Type*} [MeasurableSpace X]
 end MeasureTheory
 
 namespace intervalIntegral
-
-
 
 theorem integral_mul_weight_sq_le {f w : ℝ → ℝ} {a b : ℝ}
     (hab : a ≤ b) (hw : ∀ x, 0 ≤ w x)

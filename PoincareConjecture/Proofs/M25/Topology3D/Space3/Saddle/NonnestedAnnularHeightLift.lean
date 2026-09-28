@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsAnnularEvolution
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedHeightLiftImage
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,10 +12,6 @@ local notation "P" => (ℝ × E2)
 local notation "SP" => (ℝ × (ℝ × E2))
 local notation "D2" => Diffeomorph 𝓘(ℝ, E2) 𝓘(ℝ, E2) E2 E2 ∞
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
-
-
 
 theorem exists_nonnested_annular_height_lift_image
     (Phi : ℝ → Diffeomorph 𝓘(ℝ, P) 𝓘(ℝ, P) P P ∞)

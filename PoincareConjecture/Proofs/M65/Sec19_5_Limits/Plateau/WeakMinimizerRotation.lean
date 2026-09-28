@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerBoundar
 import Mathlib.Analysis.Complex.Isometry
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Periodic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +11,6 @@ open Set MeasureTheory Complex
 open scoped Topology
 
 namespace PoincareConjecture
-
-
 
 def m65PlaneRotation (θ : ℝ) : LoopPlane ≃ₗᵢ[ℝ] LoopPlane :=
   (orthonormalBasisOneI.repr.symm.trans (rotation (Circle.exp θ))).trans
@@ -34,16 +22,12 @@ private theorem m65Angular_exp (t : ℝ) :
   fin_cases i <;> simp [Proofs.M58.angularPoint, Circle.coe_exp, Complex.exp_mul_I,
     orthonormalBasisOneI_repr_apply, ← Complex.ofReal_cos, ← Complex.ofReal_sin]
 
-
-
 theorem m65PlaneRotation_angular (θ t : ℝ) :
     m65PlaneRotation θ (Proofs.M58.angularPoint t) = Proofs.M58.angularPoint (θ + t) := by
   rw [m65Angular_exp t, m65Angular_exp (θ + t)]
   simp only [m65PlaneRotation, LinearIsometryEquiv.trans_apply,
     LinearIsometryEquiv.symm_apply_apply, rotation_apply, Circle.exp_add,
     Circle.coe_mul]
-
-
 
 theorem m65PlaneRotation_disk_measurePreserving (θ : ℝ) :
     MeasurePreserving (m65PlaneRotation θ) (volume.restrict loopDiskSet)
@@ -60,9 +44,6 @@ private theorem m65Angular_periodic : Function.Periodic Proofs.M58.angularPoint 
   intro t
   ext i
   fin_cases i <;> simp [Proofs.M58.angularPoint, Real.cos_add_two_pi, Real.sin_add_two_pi]
-
-
-
 
 theorem m65PlaneRotation_boundary_measurePreserving (θ : ℝ) :
     MeasurePreserving (m65PlaneRotation θ) m65CircleBoundaryMeasure m65CircleBoundaryMeasure := by

@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Comp
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Compactness.Localization
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Density
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -25,7 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {D : LeviCivitaData g} {Ω : Set M}
-
 
 theorem exists_norm_chartToL2_le_testToL2
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -74,7 +66,6 @@ theorem exists_norm_chartToL2_le_testToL2
     ← real_inner_self_eq_norm_sq, testToL2_inner, inv_mul_eq_div]
   exact (le_div_iff₀ hc).mpr (by simpa only [Pi.mul_apply, mul_comm] using hint)
 
-
 theorem exists_norm_testToL2_mulSmooth_le (χ : M → ℝ)
     (hχ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ χ) (hc : HasCompactSupport χ) :
     ∃ C ≥ 0, ∀ f : EnergyTest D Ω,
@@ -97,7 +88,6 @@ theorem exists_norm_testToL2_mulSmooth_le (χ : M → ℝ)
   simpa only [EnergyTest.mulSmooth_apply, pow_two, mul_assoc, mul_left_comm,
     mul_comm] using hb
 
-
 def testToDomainL2 (D : LeviCivitaData g) (Ω : Set M) :
     EnergyTest D Ω →ₗ[ℝ] Lp ℝ 2 (g.volumeMeasure.restrict Ω) :=
   ((toDomainL2 D Ω).comp Completion.toComplL).toLinearMap
@@ -113,7 +103,6 @@ theorem denseRange_testToDomainL2 (hΩ : IsOpen Ω) (hc : IsCompact (closure Ω)
     DenseRange (testToDomainL2 D Ω) :=
   (denseRange_toDomainL2 hΩ hc).comp Completion.denseRange_coe
     (toDomainL2 D Ω).continuous
-
 
 def chartLocalizationTest (D : LeviCivitaData g) (Ω : Set M)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -144,7 +133,6 @@ def chartLocalizationTest (D : LeviCivitaData g) (Ω : Set M)
     · simp [chartPullback_apply e _ hx, mul_left_comm]
     · simp [chartPullback, indicator_of_notMem hx]
 
-
 theorem exists_norm_chartLocalizationTest_le
     (hΩ : MeasurableSet Ω)
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -162,7 +150,6 @@ theorem exists_norm_chartLocalizationTest_le
   exact (hchart (f.mulSmooth χ hχ) (f.mulSmooth_support_subset χ hχ)).trans
     (mul_le_mul_of_nonneg_left (hmul f) hA)
 
-
 def chartLocalization (D : LeviCivitaData g) (Ω : Set M)
     (_hΩ : IsOpen Ω) (_hcΩ : IsCompact (closure Ω))
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)
@@ -173,7 +160,6 @@ def chartLocalization (D : LeviCivitaData g) (Ω : Set M)
     Lp ℝ 2 (g.volumeMeasure.restrict Ω) →L[ℝ]
       Lp ℝ 2 (volume : Measure (EuclideanSpace ℝ (Fin n))) :=
   (chartLocalizationTest D Ω e he χ hχ hsχ).extendOfNorm (testToDomainL2 D Ω)
-
 
 @[simp] theorem chartLocalization_test (hΩ : IsOpen Ω) (hcΩ : IsCompact (closure Ω))
     (e : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin n)) M)

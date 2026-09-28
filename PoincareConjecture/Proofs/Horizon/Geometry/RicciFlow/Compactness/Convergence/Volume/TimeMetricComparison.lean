@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.MetricComparison
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -15,7 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
 
 theorem eventually_pullback_inner_upper_on_compactTime
     (G : PointedGeometricConvergence S) {K : Set G.limitCarrier.carrier}
@@ -31,8 +23,6 @@ theorem eventually_pullback_inner_upper_on_compactTime
   have h := (abs_le.mp (G.abs_pullback_inner_sub_le k t x
     (hN k hk t ht x hx) v)).2
   linarith
-
-
 
 theorem eventually_pullback_tangentNorm_upper_on_compactTime
     (G : PointedGeometricConvergence S) {K : Set G.limitCarrier.carrier}

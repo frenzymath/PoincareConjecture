@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarPeriodPositive
 import Mathlib.MeasureTheory.Integral.DominatedConvergence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,12 +12,6 @@ open scoped Topology
 namespace PoincareConjecture.M64Uniformization
 
 local notation "Cover" => ℝ × ℝ
-
-
-
-
-
-
 
 theorem scalar_integral_band_tendsto {F : Cover → ℝ}
     (hF : IntegrableOn F (Ioo (1 : ℝ) 2 ×ˢ Ioo (0 : ℝ) 1))

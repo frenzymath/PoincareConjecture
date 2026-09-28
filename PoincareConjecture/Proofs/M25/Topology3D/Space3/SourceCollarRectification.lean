@@ -1,25 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CircleRadialChart
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.OrientedCollarCorrection
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 noncomputable def radiusToCollarTime (k : ℝ) (hk : k ≠ 0) :
     Diffeomorph 𝓘(ℝ, ℝ) 𝓘(ℝ, ℝ) ℝ ℝ ∞ where
@@ -30,8 +17,6 @@ noncomputable def radiusToCollarTime (k : ℝ) (hk : k ≠ 0) :
     right_inv := fun t => by field_simp; ring }
   contMDiff_toFun := (contDiff_const.mul (contDiff_const.sub contDiff_id)).contMDiff
   contMDiff_invFun := (contDiff_const.sub (contDiff_id.div_const k)).contMDiff
-
-
 
 theorem source_disc_collar_rectification
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)
@@ -108,9 +93,6 @@ theorem source_disc_collar_rectification
   filter_upwards [hFnear, hCnear] with x hFx hx
   rw [hFx]
   exact hrec x hx
-
-
-
 
 theorem exists_rectified_source_disc_chart
     (Q : OpenPartialHomeomorph (UnitCircle × ℝ) UnitTwoSphere)

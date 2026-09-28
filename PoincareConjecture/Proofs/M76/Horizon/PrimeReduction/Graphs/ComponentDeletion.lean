@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponent
 import PoincareConjecture.Proofs.M76.PrimeReduction.ActualGraphCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -18,7 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
     (G : SimplicialComplex ℝ E)
-
 
 def deleteEdgeComponent (C : G.vertexAbstractComplex.edgeGraph.ConnectedComponent) :
     SimplicialComplex ℝ E := G.vertexSubcomplex (Subtype.val '' C.supp)ᶜ
@@ -38,7 +28,6 @@ theorem deleteEdgeComponent_vertex_iff
   rw [deleteEdgeComponent, G.vertexSubcomplex_vertices]
   simp only [mem_inter_iff, v.property, true_and, mem_compl_iff,
     Subtype.val_injective.mem_set_image]
-
 
 theorem deleteEdgeComponent_coface
     (C : G.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -78,7 +67,6 @@ theorem deleteEdgeComponent_vertex_link
     exact ⟨(G.deleteEdgeComponent C).down_closed hcoface Finset.subset_union_right
       (G.nonempty_of_mem_faces ht.1), ht.2.1, hcoface⟩
 
-
 theorem deleteEdgeComponent_neighbor_image
     (C : G.vertexAbstractComplex.edgeGraph.ConnectedComponent)
     (v : (G.deleteEdgeComponent C).vertices) :
@@ -112,7 +100,6 @@ theorem deleteEdgeComponent_face_card_le
     (hdim : ∀ s ∈ G.faces, s.card ≤ 2) :
     ∀ s ∈ (G.deleteEdgeComponent C).faces, s.card ≤ 2 :=
   fun s hs => hdim s hs.1
-
 
 theorem deleteEdgeComponent_space
     (C : G.vertexAbstractComplex.edgeGraph.ConnectedComponent)
@@ -155,7 +142,6 @@ theorem deleteEdgeComponent_space
         (Finset.singleton_subset_iff.mpr (Finset.mem_insert_self _ _))
     apply (G.deleteEdgeComponent C).convexHull_subset_space hkeep
     simpa only [Finset.coe_pair, convexHull_pair] using hxvw
-
 
 theorem deleteEdgeComponent_faces_ncard_lt
     (C : G.vertexAbstractComplex.edgeGraph.ConnectedComponent) (hG : G.faces.Finite) :

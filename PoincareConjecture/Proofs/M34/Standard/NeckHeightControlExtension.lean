@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.NeckHeightControlPath
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceRecutFrontier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,18 +13,13 @@ variable {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M} (N : CapCertificate g)
 
-
-
 noncomputable def collarHeight (c : ℝ) (x : M) : ℝ := by
   classical
   exact if x ∈ N.end_neck.carrier then max c (N.end_neck.coordinate_inverse x).2 else c
 
-
 theorem collarHeight_of_mem_end (c : ℝ) {x : M} (hx : x ∈ N.end_neck.carrier) :
     N.collarHeight c x = max c (N.end_neck.coordinate_inverse x).2 := by
   simp only [collarHeight, if_pos hx]
-
-
 
 theorem collarHeight_eq_of_mem_recut {c : ℝ} {x : M} (hx : x ∈ N.recutCarrier c) :
     N.collarHeight c x = c := by
@@ -41,8 +28,6 @@ theorem collarHeight_eq_of_mem_recut {c : ℝ} {x : M} (hx : x ∈ N.recutCarrie
   · rw [N.closed_core_eq_complement_end] at hxY
     simp only [collarHeight, if_neg hxY.2]
   · rw [N.collarHeight_of_mem_end c hxE.1, max_eq_left hxE.2.2.le]
-
-
 
 theorem collarHeight_continuousOn {c : ℝ}
     (hc : -N.epsilon⁻¹ < c) (hc' : c < N.epsilon⁻¹) :
@@ -66,8 +51,6 @@ theorem collarHeight_continuousOn {c : ℝ}
       exact N.collarHeight_eq_of_mem_recut hy
     exact continuousAt_const.congr_of_eventuallyEq heq
 
-
-
 theorem collarHeight_above_cutoff {c : ℝ} {x : M} (hx : c < N.collarHeight c x) :
     x ∈ N.end_neck.carrier ∧ N.collarHeight c x = (N.end_neck.coordinate_inverse x).2 := by
   classical
@@ -77,8 +60,6 @@ theorem collarHeight_above_cutoff {c : ℝ} {x : M} (hx : c < N.collarHeight c x
       (lt_max_iff.mp hx).resolve_left (lt_irrefl c)
     exact ⟨hxE, max_eq_right hh.le⟩
   · simp only [collarHeight, if_neg hxE, lt_self_iff_false] at hx
-
-
 
 theorem collarHeight_eq_of_mem_frontier {c b : ℝ}
     (hb : -N.epsilon⁻¹ < b) (hb' : b < N.epsilon⁻¹) (hcb : c ≤ b)

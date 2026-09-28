@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.CommonAffineSegmentPartition
 import PoincareConjecture.Proofs.M76.Mathlib.UniformPolygonSimplicity
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonEdgeImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +10,6 @@ namespace Polygon
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F] {n : ℕ}
-
-
-
 
 theorem exists_polygon_finitePL_image (P : Polygon E (n + 3))
     (hP : P.HasSimplicialEdges) (hinj : Function.Injective P)

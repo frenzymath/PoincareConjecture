@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.PlanePairSignTransport
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Coordinates.AffineTriangleComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -49,9 +41,6 @@ theorem mapsTo_returning_strand_face_interiors
     change F (f (c, t)) ∈ intrinsicInterior ℝ (F.toAffineMap '' _)
     rw [F.toAffineMap.intrinsicInterior_image_of_injOn_span _ hFi.injOn]
     exact mem_image_of_mem F (interior_subset_intrinsicInterior (hinterior t ht'))
-
-
-
 
 theorem mapsTo_returning_strand_original_face_interiors
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

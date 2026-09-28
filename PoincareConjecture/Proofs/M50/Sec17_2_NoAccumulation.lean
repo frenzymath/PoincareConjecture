@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M50.Lemma17_12_EventCount
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -15,8 +7,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M50
-
-
 
 theorem surgery_times_inter_compact_finite
     (F : SurgeryFlowData.{u}) (C : RepairedVolumeLossControls F)

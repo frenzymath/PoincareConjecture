@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappingPatchSmooth
 import PoincareConjecture.Proofs.M38.CappingCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,15 +14,11 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier]
 
-
 abbrev EventCappingIndex := eventDiscardedOpen F T hT ⊕ Fin (F.event T hT).cap_count
-
 
 abbrev eventCappingDomain : EventCappingIndex F T hT → TopologicalSpace.Opens StandardCapSpace
   | .inl x => ⟨(chartAt StandardCapSpace x).target, (chartAt StandardCapSpace x).open_target⟩
   | .inr _ => capDoubleBall
-
-
 
 instance eventCappingDomain_nonempty (j : EventCappingIndex F T hT) :
     Nonempty (eventCappingDomain F T hT j) := by
@@ -39,14 +27,11 @@ instance eventCappingDomain_nonempty (j : EventCappingIndex F T hT) :
       (chartAt StandardCapSpace x).map_source (mem_chart_source _ x)⟩⟩
   | inr i => exact capDoubleBall_nonempty
 
-
-
 instance eventCappingDomain_set_nonempty (j : EventCappingIndex F T hT) :
     Nonempty ↥(eventCappingDomain F T hT j : Set StandardCapSpace) :=
   eventCappingDomain_nonempty F T hT j
 
 variable (P : ∀ i, EventCapCoordinates F T hT i)
-
 
 noncomputable def eventCappingMap (j : EventCappingIndex F T hT) :
     OpenPartialHomeomorph (eventCappingDomain F T hT j) (eventDiscardedOpen F T hT) :=
@@ -54,7 +39,6 @@ noncomputable def eventCappingMap (j : EventCappingIndex F T hT) :
   | .inl x => (chartAt StandardCapSpace x).symm.subtypeRestr
       (eventCappingDomain_nonempty F T hT (.inl x))
   | .inr i => (P i).attachmentChart
-
 
 theorem eventCappingMap_old_source (x : eventDiscardedOpen F T hT) :
     (eventCappingMap F T hT P (.inl x)).source = Set.univ := by
@@ -64,13 +48,10 @@ theorem eventCappingMap_old_source (x : eventDiscardedOpen F T hT) :
   ext z
   exact iff_of_true z.property (Set.mem_univ _)
 
-
 theorem eventCappingMap_old_openEmbedding (x : eventDiscardedOpen F T hT) :
     IsOpenEmbedding (eventCappingMap F T hT P (.inl x)) :=
   (eventCappingMap F T hT P (.inl x)).isOpenEmbedding
     (eventCappingMap_old_source F T hT P x)
-
-
 
 theorem eventCappingMap_smooth (j : EventCappingIndex F T hT) :
     letI := (eventCappingDomain F T hT j).isOpen.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -84,7 +65,6 @@ theorem eventCappingMap_smooth (j : EventCappingIndex F T hT) :
         (eventCappingDomain F T hT (.inl x)) (eventCappingDomain_nonempty F T hT (.inl x))
         contMDiffOn_chart_symm contMDiffOn_chart
   | inr i => exact (P i).attachmentChart_smooth
-
 
 theorem eventCappingMap_graph_closed (j k : EventCappingIndex F T hT) (hjk : j ≠ k) :
     IsClosed {q : eventCappingDomain F T hT j × eventCappingDomain F T hT k |
@@ -141,19 +121,14 @@ theorem eventCappingMap_graph_closed (j k : EventCappingIndex F T hT) (hjk : j �
           rw [hempty]
           exact isClosed_empty
 
-
 noncomputable def eventCappingOverlap :=
   cappingOverlap (eventCappingMap F T hT P)
 
-
-
 abbrev CappedDiscardedSpace := Quotient (eventCappingOverlap F T hT P).setoid
-
 
 theorem cappedDiscardedSpace_t2 : T2Space (CappedDiscardedSpace F T hT P) :=
   cappingOverlap_t2 (fun j => (eventCappingDomain F T hT j : Set StandardCapSpace))
     (eventCappingMap F T hT P) (eventCappingMap_graph_closed F T hT P)
-
 
 @[implicit_reducible]
 noncomputable def cappedDiscardedChartedSpace :
@@ -161,7 +136,6 @@ noncomputable def cappedDiscardedChartedSpace :
   Poincare.Gluing.quotientChartedSpace
     (fun j => (eventCappingDomain F T hT j : Set StandardCapSpace))
     (fun j => (eventCappingDomain F T hT j).isOpen) (eventCappingOverlap F T hT P)
-
 
 theorem cappedDiscardedSpace_isManifold :
     letI := cappedDiscardedChartedSpace F T hT P

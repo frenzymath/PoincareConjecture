@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SelectedWallNoBypa
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SourceCircleCut
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HyperbolaDiscArcs
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold InnerProductSpace Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_lower_level_count
     (psi : UnitTwoSphere × ℝ → E3) (hpsi : IsCollarEmbedding psi)

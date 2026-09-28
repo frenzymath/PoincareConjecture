@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialLongCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourcePointwiseCanonical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_source_standard_unrestricted_canonical_neighborhood
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

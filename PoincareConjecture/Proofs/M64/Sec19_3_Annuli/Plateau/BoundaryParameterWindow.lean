@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryParameterLabels
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -20,9 +8,6 @@ open Set Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Boundary_parameter_window {E : Type*} [PseudoMetricSpace E]
     {sigma : ℝ → ℝ} {c : ℝ → E} (hsigma : Continuous sigma) (hc : Continuous c)

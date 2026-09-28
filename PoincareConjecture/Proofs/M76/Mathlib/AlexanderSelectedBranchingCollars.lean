@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBranchingPoint
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderCollarWidthRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,12 +9,6 @@ namespace Geometry
 
 variable {E ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι]
-
-
-
-
-
-
 
 theorem exists_selected_child_branching_collars
     {S s T : Set E} {A : E →ᵃ[ℝ] ℝ} {q : E} {β γ : ℝ}

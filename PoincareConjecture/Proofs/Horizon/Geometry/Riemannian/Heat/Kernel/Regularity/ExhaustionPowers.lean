@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Kernel.Pointwise.Semigroup
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.Interior
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -119,9 +111,6 @@ theorem exists_eLpNorm_iterate_laplacian_heatKernelContinuous_exhaustion_bound
   exact ⟨memLp_iterate_laplacian_heatKernelContinuous_restrict
     D S hVm q hV j (ha.trans_le ht.1) y,
     hpower.trans (mul_le_mul_of_nonneg_left hrow (by positivity))⟩
-
-
-
 
 theorem eventually_eLpNorm_iterate_laplacian_heatKernelContinuous_exhaustion_bound
     (D : LeviCivitaData g) (hn : 0 < n) (hc : MetricComplete g)

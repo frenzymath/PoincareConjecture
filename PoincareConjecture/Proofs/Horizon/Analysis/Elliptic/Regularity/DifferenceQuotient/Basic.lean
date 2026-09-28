@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Euclidean.Convolution
 import Mathlib.Analysis.Convex.Integral
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.FundThmCalculus
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 open MeasureTheory Metric Filter Topology Set Function

@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Relation.FiniteCarrier
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLHomeomorph
 
-
-
 set_option autoImplicit false
 open Set
 

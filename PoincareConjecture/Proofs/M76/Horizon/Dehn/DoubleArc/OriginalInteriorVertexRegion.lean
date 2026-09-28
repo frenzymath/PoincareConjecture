@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.OriginalVertexCoordinateSectors
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -83,7 +73,6 @@ theorem original_interior_vertex_region_eq
   exact inter_eq_left.mpr (fun z hz => (hreg z (hVK hz)).mpr (interior_subset (hinside z hz)))
 
 open Classical in
-
 
 theorem isFinitePLBallPair_original_interior_sector
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

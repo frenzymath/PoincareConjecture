@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_20_Fibration.IntrinsicChartImages
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,7 +11,6 @@ universe u
 namespace PoincareConjecture.BalancedNeckChain
 
 open Classical in
-
 
 theorem exists_intrinsic_smooth_chain_partial_chart :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

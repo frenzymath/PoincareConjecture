@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Core.EndSeparation
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Maximal
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -26,8 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   {g : RiemannianMetric 3 M}
 
-
-
 structure IsOutgoingChain (C : CapCertificate g) (H : ConnectedNeckCapCover g)
     (T : BalancedNeckChain g C.epsilon) : Prop where
   zero_active : 0 ∈ T.shape.active
@@ -37,7 +24,6 @@ structure IsOutgoingChain (C : CapCertificate g) (H : ConnectedNeckCapCover g)
   centers : ∀ j ∈ T.shape.active, 0 < j → (T.neck j).center ∈ H.X \ C.carrier
   separating : ∀ j ∈ T.shape.active, (T.neck j).IsSeparating
   quarter_capture : T.HasQuarterCapture
-
 
 theorem exists_singleton_outgoing_chain (C : CapCertificate g)
     (H : ConnectedNeckCapCover g) (hsep : C.end_neck.IsSeparating) :
@@ -67,7 +53,6 @@ theorem exists_singleton_outgoing_chain (C : CapCertificate g)
   · intro j hj hjnext
     simp only [hshape, ChainShape.active, mem_Icc] at hj hjnext
     omega
-
 
 theorem exists_directed_limit_outgoing {ι : Type*} [Nonempty ι]
     (C : CapCertificate g) (H : ConnectedNeckCapCover g)
@@ -113,7 +98,6 @@ theorem exists_directed_limit_outgoing {ι : Type*} [Nonempty ι]
     rw [← (hext p).2.2 j hpj, ← (hext p).2.2 (j + 1) hpnext]
     exact (houtgoing p).quarter_capture j hpj hpnext
 
-
 theorem exists_maximal_outgoing_chain (C : CapCertificate g)
     (H : ConnectedNeckCapCover g) (hsep : C.end_neck.IsSeparating) :
     ∃ T : BalancedNeckChain g C.epsilon,
@@ -143,8 +127,6 @@ theorem exists_maximal_outgoing_chain (C : CapCertificate g)
   obtain ⟨T, hT⟩ := exists_maximal_of_nonempty_chains_bounded hbound
     (fun hTS hSU => BalancedNeckChain.IsExtension.trans hTS hSU)
   exact ⟨T.1, T.2, fun S hS hTS => hT ⟨S, hS⟩ hTS⟩
-
-
 
 theorem exists_maximal_outgoing_chain_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

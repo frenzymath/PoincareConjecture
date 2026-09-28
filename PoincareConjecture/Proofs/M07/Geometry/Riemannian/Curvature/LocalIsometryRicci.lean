@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.SectionalBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ variable {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ M] [IsManifold (𝓡 n) ∞ N]
   {g : RiemannianMetric n M} {h : RiemannianMetric n N}
-
-
 
 theorem ricci_eq_of_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)
@@ -65,7 +55,6 @@ theorem ricci_eq_of_local_isometry
   simp_rw [hcurv] at htrace
   simpa only [ricci, e, LinearEquiv.ofBijective_apply,
     ContinuousLinearMap.coe_coe] using htrace
-
 
 theorem ricci_eq_of_eventually_local_isometry
     (D : LeviCivitaData g) (D' : LeviCivitaData h)

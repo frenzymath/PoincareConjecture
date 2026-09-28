@@ -1,7 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CompactSupport.IntegralCompactSupportCap
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Duality.CapProduct.IntegralOpenCapData
 
-
 set_option autoImplicit false
 
 noncomputable section
@@ -11,7 +10,6 @@ open CategoryTheory Limits TopologicalSpace Set
 universe u
 
 namespace Poincare.Topology
-
 
 variable {X : Type u} [TopologicalSpace X] [T2Space X] [RegularSpace X]
   [LocallyCompactSpace X]

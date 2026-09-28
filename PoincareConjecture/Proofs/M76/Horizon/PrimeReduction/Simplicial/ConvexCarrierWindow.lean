@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CompactConvexHalfspaceNeighborhood
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionConvexNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem IsCompact.exists_finite_convex_neighborhood_subset
     {C U : Set E} (hC : IsCompact C) (hcv : Convex ℝ C)

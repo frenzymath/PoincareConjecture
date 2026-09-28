@@ -2,24 +2,11 @@ import Mathlib.Topology.Homeomorph.Lemmas
 import Mathlib.Topology.ContinuousOn
 import Mathlib.Topology.Maps.Proper.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Homeomorph
-
-
-
-
 
 theorem exists_union_of_compact {X Y : Type*} [TopologicalSpace X] [T2Space X]
     [TopologicalSpace Y] [T2Space Y] {s u : Set X} {t v : Set Y}

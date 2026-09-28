@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Mathlib.WeakReplacementFluxDefect
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGeometry
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -31,10 +19,6 @@ local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "I" => Icc (0 : ℝ) curvePeriod
-
-
-
-
 
 theorem M64ObservedWeakAnnulus.replace_boundary
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

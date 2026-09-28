@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Construction
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.RegularLevel.OpenInclusion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -30,17 +22,14 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def regularRegion (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : TopologicalSpace.Opens M :=
   ⟨H.reference.regularLimitSet, H.regularLimitSet_isOpen P04⟩
-
 
 def regularRegionBilinear (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : H.regularRegion P04) :
     TangentSpace (𝓡 3) x →L[ℝ] TangentSpace (𝓡 3) x →L[ℝ] ℝ :=
   H.terminalMetricBilinear P04 x.property
-
 
 theorem regularRegion_chart_target_subset
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -50,7 +39,6 @@ theorem regularRegion_chart_target_subset
   exact ⟨hz.1, (chartAt (EuclideanSpace ℝ (Fin 3)) (q : M)).subtypeRestr_target_subset
     ⟨q⟩ hz.2⟩
 
-
 theorem regularRegion_chart_inverse
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (q : H.regularRegion P04) {z : EuclideanSpace ℝ (Fin 3)}
@@ -58,7 +46,6 @@ theorem regularRegion_chart_inverse
     (extChartAt (𝓡 3) (q : M)).symm z =
       ((extChartAt (𝓡 3) q).symm z : M) :=
   (chartAt (EuclideanSpace ℝ (Fin 3)) (q : M)).subtypeRestr_symm_eqOn ⟨q⟩ hz.2
-
 
 theorem regularRegion_chart_mfderiv
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -79,7 +66,6 @@ theorem regularRegion_chart_mfderiv
   rw [hnear.mfderiv_eq]
   ext v
   exact congrArg (fun A => A v) hdiff
-
 
 theorem regularRegion_chartCoefficients_eqOn
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -109,7 +95,6 @@ theorem regularRegion_chartCoefficients_eqOn
     rfl
   exact eq_of_heq (htransport _ _ hz.symm)
 
-
 theorem contDiffAt_regularRegionBilinear_chartCoefficients
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
     (q : H.regularRegion P04) :
@@ -120,14 +105,12 @@ theorem contDiffAt_regularRegionBilinear_chartCoefficients
     (Filter.eventuallyEq_of_mem (extChartAt_target_mem_nhds (I := 𝓡 3) q)
       (H.regularRegion_chartCoefficients_eqOn P04 q))
 
-
 def terminalMetric (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) : RiemannianMetric 3 (H.regularRegion P04) :=
   SingularRegularLimit.metricOfChartCoefficients (H.regularRegionBilinear P04)
     (fun x => H.terminalMetricBilinear_symm P04 x.property)
     (fun x => H.terminalMetricBilinear_pos P04 x.property)
     (H.contDiffAt_regularRegionBilinear_chartCoefficients P04)
-
 
 theorem terminalMetric_inner (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) (x : H.regularRegion P04)

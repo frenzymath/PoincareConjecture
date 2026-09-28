@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_SquareCurvePath
 import PoincareConjecture.Proofs.M14.Sec6_1_SquareRootAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,9 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
 
-
-
-
 theorem squareCurveDensity_restrict {α : ℝ → G.Point} {C D : Set ℝ}
     (hα : ContMDiffOn (𝓘(ℝ, ℝ)) (spacetimeModel n) ∞ α C)
     (hDC : D ⊆ C) {s : ℝ} (hs : s ∈ D) (hD : UniqueDiffWithinAt ℝ D s) :
@@ -32,9 +20,6 @@ theorem squareCurveDensity_restrict {α : ℝ → G.Point} {C D : Set ℝ}
   unfold squareCurveDensity projectedCurveVelocityWithin
   rw [mfderivWithin_subset hDC hD.uniqueMDiffWithinAt
     ((hα s (hDC hs)).mdifferentiableWithinAt (by simp))]
-
-
-
 
 theorem integral_squareCurveDensity_eq_action
     (hM12 : GeneralizedRicciGaugeTheory.{u} n) {T a b : ℝ} (ha : 0 ≤ a) (hab : a < b)

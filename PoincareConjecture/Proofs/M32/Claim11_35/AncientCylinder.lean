@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_35.AncientSurfaceHomothety
 import PoincareConjecture.Proofs.M32.Claim11_35.AncientSphereFactor
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -32,8 +18,6 @@ variable {C : Type u} [TopologicalSpace C]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem roundProduct_exists_normalized_evolvingCylinder
     (hM04 : RicciFlowCurvatureTheory.{u}) (A : RicciFlow 2 C (Iic 0))

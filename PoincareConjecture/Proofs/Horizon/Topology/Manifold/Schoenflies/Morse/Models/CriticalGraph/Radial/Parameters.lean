@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.CriticalGraph.ProfileInverse
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -11,8 +9,6 @@ open Set Function Filter
 open scoped ContDiff Topology
 
 namespace Poincare.Manifold.Schoenflies
-
-
 
 def minimumCapRayRatio (u : Real) : Real :=
   minimumCapSquaredRadius u / (2 - u) ^ 2
@@ -35,8 +31,6 @@ theorem deriv_minimumCapRayRatio {u : Real} (hu : u < 2) :
     pow_one, zero_sub, mul_neg, mul_one]
   field_simp [show 2 - u ≠ 0 by linarith]
   ring
-
-
 
 theorem deriv_minimumCapRayRatio_pos {u : Real} (hu : u ∈ Ioo (-1 : Real) 1) :
     0 < deriv minimumCapRayRatio u := by
@@ -110,7 +104,6 @@ theorem exists_unique_minimumCap_ray_height {z : Real} (hz : z ∈ Ioo (-1 / 9 :
   rintro w ⟨hw, hwz⟩
   exact strictMonoOn_minimumCapRayRatio.injOn ⟨hw.1.le, hw.2.le⟩ hu (hwz.trans huz.symm)
 
-
 def minimumCapRayHeight (z : Real) : Real :=
   if hz : z ∈ Ioo (-1 / 9 : Real) 1 then
     Classical.choose (exists_unique_minimumCap_ray_height hz) else z
@@ -146,8 +139,6 @@ theorem minimumCapRayHeight_half_le {z : Real} (hz : 4 / 9 ≤ z) (hz1 : z < 1) 
   rw [hs.2, minimumCapRayRatio_half] at hlt
   exact (not_lt_of_ge hz) hlt
 
-
-
 theorem contDiffAt_minimumCapRayHeight {z : Real} (hz : z ∈ Ioo (-1 / 9 : Real) 1) :
     ContDiffAt Real ∞ minimumCapRayHeight z := by
   let u := minimumCapRayHeight z
@@ -175,7 +166,6 @@ theorem contDiffAt_minimumCapRayHeight {z : Real} (hz : z ∈ Ioo (-1 / 9 : Real
   filter_upwards [hQirange, Q.open_target.mem_nhds hzQ, isOpen_Ioo.mem_nhds hz]
     with y hy hyQ hyz
   exact minimumCapRayHeight_eq_of_ratio hyz hy (Q.right_inv hyQ)
-
 
 def minimumCapRayFactor (t : Real) : Real :=
   (2 - minimumCapRayHeight ((1 - t ^ 2) / t ^ 2)) / (-t)
@@ -225,7 +215,6 @@ theorem minimumCapRayFactor_projection_sq {t : Real}
   rw [he]
   field_simp
 
-
 theorem minimumCapRayFactor_eq_cylinder {t : Real}
     (ht : t ∈ Ioo (-9 / 11 : Real) (-3 / 4)) :
     minimumCapRayFactor t = (Real.sqrt (1 - t ^ 2))⁻¹ := by
@@ -244,7 +233,6 @@ theorem minimumCapRayFactor_eq_cylinder {t : Real}
     nlinarith [sq_nonneg (minimumCapRayFactor t * Real.sqrt (1 - t ^ 2) - 1)]
   rw [← one_div]
   exact (eq_div_iff (Real.sqrt_pos.mpr hrad).ne').mpr hprod
-
 
 def minimumCapLowerRadius (t : Real) : Real :=
   if t < -4 / 5 then minimumCapRayFactor t else (Real.sqrt (1 - t ^ 2))⁻¹

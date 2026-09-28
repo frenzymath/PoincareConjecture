@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ExposedCapChord
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_CapAttachmentCuts
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_ObstacleBarriers
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,11 +11,6 @@ open scoped Topology ContDiff Manifold
 open PoincareConjecture.Topology.Surface ChartCircleArrangementVertexPatch
 
 namespace PoincareConjecture
-
-
-
-
-
 
 theorem m64Intrinsic_cap_positive_tip_on_chord
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r : ℝ} (hr : 0 < r)
@@ -68,12 +51,6 @@ theorem m64Intrinsic_cap_positive_tip_on_chord
     refine ⟨1, by simp, ?_⟩
     rw [hchord]
     simpa [hi, sectorParameterEquiv_apply] using hx'.symm
-
-
-
-
-
-
 
 theorem m64Intrinsic_retained_cap_band_inter_subset_chord
     (H : OpenPartialHomeomorph (ℝ × ℝ) AnnulusCoordinates) {r T : ℝ}

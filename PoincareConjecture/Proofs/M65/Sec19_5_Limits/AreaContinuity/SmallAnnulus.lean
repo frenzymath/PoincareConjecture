@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.ContractionJacobian
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.AreaContinuity.DiagonalAnnulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -23,9 +14,6 @@ open Proofs.M58
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem m65Eventually_smallC1Annulus (g : RiemannianMetric 3 M)
     (compact : IsCompact (univ : Set M)) (gamma : C1FreeLoopSpace (M := M))

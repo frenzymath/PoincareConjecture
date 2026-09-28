@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.Prop15_2_VanishingOperations
 import PoincareConjecture.Proofs.M45.Sec15_1_GluingSupport.NativeJetConvergence
 import PoincareConjecture.Proofs.M45.Ch9_Models.EvolvingCylinderQuadratic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -32,9 +24,6 @@ noncomputable local instance transitionControlCoefficientNormedSpace :
   ContinuousLinearMap.toNormedSpace
 
 variable {ι : Type*} {l : Filter ι}
-
-
-
 
 theorem bounded_first_transition_derivative
     {A C : ι → E → MetricCoefficient 3} {phi : ι → E → E} {r s : ι → ℝ}
@@ -71,9 +60,6 @@ theorem bounded_first_transition_derivative
     have hc0 : 0 ≤ C i 0 v v := le_trans (by positivity) hc
     nlinarith only [hc, hr i, mul_nonneg (sub_nonneg.mpr (hr i)) hc0]
   · simpa only [hphi i, smul_apply, smul_eq_mul] using (hmetric i v w).symm
-
-
-
 
 theorem bounded_transition_jets_of_metric_convergence
     {A C : ι → E → MetricCoefficient 3} {A0 C0 : E → MetricCoefficient 3}

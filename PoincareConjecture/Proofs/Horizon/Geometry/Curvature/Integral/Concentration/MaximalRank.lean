@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.LimitPacking
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.LocalRank
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +12,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem exists_maximal_rank_scalar_counterexample_limit
     (n : ℕ) (hn : 2 ≤ n) (θ : ℝ) (hθ : 0 < θ) :

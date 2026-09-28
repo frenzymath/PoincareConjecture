@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowUnion
 import Mathlib.Order.Zorn
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M34
-
-
-
 
 theorem maximalStandardCapFlow_exists_of_bounded_lifetimes
     {g0 : StandardInitialMetric} (F0 : PartialStandardCapFlow g0)

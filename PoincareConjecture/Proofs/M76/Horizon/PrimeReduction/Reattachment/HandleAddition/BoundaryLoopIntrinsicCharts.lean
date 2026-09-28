@@ -1,20 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 import Mathlib.LinearAlgebra.FiniteDimensional.Lemmas
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
 
 theorem exists_plane_linear_coordinates
     (A : (Fin 3 → ℝ) →ₗ[ℝ] ℝ) (hA : A ≠ 0) :
@@ -38,7 +28,6 @@ theorem exists_plane_linear_coordinates
     rw [←hz,hra]
   · intro z
     exact (p z).property
-
 
 theorem exists_convex_intrinsic_loop_chart_with_value
     {X : Type*} [TopologicalSpace X] {F L : Set X}
@@ -118,7 +107,6 @@ theorem exists_convex_intrinsic_loop_chart_with_value
     rw [hqf]
     change (y : X) ∈ L ↔ psi.contLinear (a (r (H y))) = 0
     rw [har hy0,←hpsi,hL y hyH,and_iff_right ((hF y hyH).mp y.property)]
-
 
 theorem exists_convex_intrinsic_loop_chart
     {X : Type*} [TopologicalSpace X] {F L : Set X}

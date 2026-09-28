@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M25.AppA_1_Necks.SeparatingTube
 import PoincareConjecture.Definitions.M25NeckCapTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
 
 theorem ConnectedNeckCapCover.exists_repairedData_of_separating_neck_centers :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

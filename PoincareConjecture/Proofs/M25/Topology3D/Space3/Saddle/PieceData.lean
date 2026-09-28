@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 structure SaddlePieceData (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere) where
   capCount : ℕ
@@ -64,9 +50,6 @@ structure SaddlePieceData (ψ : UnitTwoSphere × ℝ → E3) (u : UnitTwoSphere)
     ((cap i).sign = 1 ∧ (cap i).cutHeight < ⟪(u : E3), ψ (point, 0)⟫_ℝ) ∨
       ((cap i).sign = -1 ∧ ⟪(u : E3), ψ (point, 0)⟫_ℝ < (cap i).cutHeight)
 
-
-
-
 structure SaddleLowerLevelData {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (D : SaddlePieceData ψ u) where
   level : ℝ
@@ -102,13 +85,9 @@ structure SaddleLowerLevelData {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSp
     (fun x => (heightPlaneCoordinates u).symm (x, level)) '' (disc b).boundary =
       range (fun θ => ψ (leg b (θ, level), 0))
 
-
-
 def SaddlePieceData.nonnested {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (D : SaddlePieceData ψ u) : Prop :=
   ∃ W : SaddleLowerLevelData D, Disjoint (W.disc 0).closedRegion (W.disc 1).closedRegion
-
-
 
 def SaddlePieceData.nested {ψ : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
     (D : SaddlePieceData ψ u) : Prop :=

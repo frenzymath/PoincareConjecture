@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLDiskPrismPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,8 +12,6 @@ local notation "I-" => Icc (-1 : ℝ) 0
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
 
 theorem IsFinitePLBallPair.exists_two_sided_disk_prism_signed
     {B q N Nm Np : Set E} (hB : IsFinitePLBallPair (ℝ × ℝ) B q)

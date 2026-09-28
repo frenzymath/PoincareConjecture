@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 import PoincareConjecture.Proofs.M76.Mathlib.LinkGraphIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem ncard_neighborSet_eq_one_of_local_segment
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

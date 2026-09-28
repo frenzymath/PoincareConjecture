@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.SquareRimFilling
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.MarkedLoopImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -63,8 +54,6 @@ private theorem exists_squareRim_filling_essential_image
   apply Path.Homotopic.Quotient.eq.mpr
   simpa only [heq, href] using
     hgp.pathCast (congrArg u hbase.symm) (congrArg u hbase.symm)
-
-
 
 theorem kernel_le_or_exists_marked_disk
     {X α Y : Type*} [TopologicalSpace X] [T2Space X] [TopologicalSpace Y]

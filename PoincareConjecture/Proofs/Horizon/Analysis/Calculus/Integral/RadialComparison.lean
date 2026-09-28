@@ -5,27 +5,12 @@ import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Calculus.Deriv.Inv
 import Mathlib.Analysis.Calculus.Deriv.Pow
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 open Set Filter MeasureTheory
 open scoped Topology
 
 noncomputable section
 
 namespace Poincare.Analysis.RadialIntegration
-
-
 
 theorem deriv_le_of_antitone_density_ratio {f : ℝ → ℝ} {t b : ℝ} {k : ℕ}
     (ht : t ∈ Ioo (0 : ℝ) b) (hk : 0 < k) (hf : DifferentiableAt ℝ f t)
@@ -48,8 +33,6 @@ theorem deriv_le_of_antitone_density_ratio {f : ℝ → ℝ} {t b : ℝ} {k : �
   calc deriv f t ≤ ((k : ℝ) * f t) / t := (le_div_iff₀ ht.1).2 hmul
     _ = (k : ℝ) / t * f t := by ring
 
-
-
 theorem integrableOn_test_mul_bounded_density {f rho : ℝ → ℝ} {c B : ℝ}
     (hf : ContinuousOn f (Icc (0 : ℝ) c))
     (hrho : ContinuousOn rho (Ioo (0 : ℝ) c))
@@ -64,9 +47,6 @@ theorem integrableOn_test_mul_bounded_density {f rho : ℝ → ℝ} {c B : ℝ}
   rw [norm_mul]
   exact mul_le_mul ((hP t (Ioo_subset_Icc_self ht)).trans (le_max_left _ _))
     ((hbound t ht).trans (le_max_left _ _)) (norm_nonneg _) (le_max_right _ _)
-
-
-
 
 theorem finite_radial_integral_comparison
     {f rho : ℝ → ℝ} {c C d : ℝ} {k : ℕ}
@@ -152,9 +132,6 @@ theorem finite_radial_integral_comparison
       ∫ t in Ioo (0 : ℝ) c, rho t * deriv f t := by congr 1; ext t; ring
   rw [heq] at h
   linarith
-
-
-
 
 theorem radial_integral_comparison_of_antitone
     {f H : ℝ → ℝ} {c : ℝ} {k : ℕ} (hc : 0 < c) (hk : 0 < k)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimension
 import Mathlib.Topology.Order.IsLUB
 import Mathlib.Topology.Sequences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,7 +14,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
 
 noncomputable def spatialReducedLengthInfimum (K : AncientKappaSolution 2 M)
     (p : M) (τ : ℝ) : ℝ :=
@@ -52,7 +42,6 @@ theorem tendsto_spatialReducedLengthInfimum_zero (K : AncientKappaSolution 2 M)
     (K.tendsto_reducedLength_self_zero p)
   · exact fun τ => K.spatialReducedLengthInfimum_nonneg p τ
   · exact fun τ => K.spatialReducedLengthInfimum_le p p τ
-
 
 theorem exists_convergent_reducedLength_minimizing_sequence (K : AncientKappaSolution 2 M)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :

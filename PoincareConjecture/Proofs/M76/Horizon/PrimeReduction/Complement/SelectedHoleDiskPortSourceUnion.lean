@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.SelectedHoleDiskPortNormalization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.CubicalThreeSphere
@@ -20,7 +12,6 @@ local notation "P2" => (ℝ × ℝ)
 local notation "P3" => (P2 × ℝ)
 
 open PoincareConjecture.M76.HamiltonIndexTwoStandard
-
 
 theorem restrict_punctured_ball
     {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -78,9 +69,6 @@ theorem restrict_punctured_ball
     (fun x => hval ⟨x, x.property.1⟩),
     fun j x => hmarked (r j) ((ha j).1.trans ((haB j).trans sdiff_subset))
       ⟨x, x.property.1⟩⟩
-
-
-
 
 theorem exists_selected_hole_disk_port_source_union {ι : Type*} [Finite ι]
     (a r : Bool → ι → Set V4)

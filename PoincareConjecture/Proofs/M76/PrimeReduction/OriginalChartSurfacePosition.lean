@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalChartSurfaceMotion
 import PoincareConjecture.Proofs.M76.PrimeReduction.ProtectedSurfaceEdgeCharts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
 
 namespace PoincareConjecture.M76
-
-
-
 
 theorem exists_original_chart_surface_position
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

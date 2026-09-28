@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.CapPersistenceCylinderOrdinaryJets
 import PoincareConjecture.Proofs.M34.Mathlib.NeckCovariantArrayBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +9,6 @@ open scoped Manifold ContDiff Topology BigOperators
 namespace PoincareConjecture.M34
 
 local notation "E₂" => EuclideanSpace ℝ (Fin 2)
-
-
-
 
 theorem capPersistence_exists_intrinsic_error_bound (N : ℕ) :
     ∃ C : ℝ, 0 ≤ C ∧ ∀ (B : RoundCylinderTwoTensor) (q : UnitTwoSphere) (s : ℝ),

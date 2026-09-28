@@ -1,25 +1,11 @@
 import Mathlib.Topology.Connected.Basic
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Poincare.Topology
-
-
 
 theorem puncture_mem_interior_of_escaping_sides
     {X : Type*} [TopologicalSpace X] [T2Space X]

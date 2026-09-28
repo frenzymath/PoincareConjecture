@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.CylinderCoordinates
 import PoincareConjecture.Proofs.M35.Thm12_28.BlowupSequence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 noncomputable def fixedCylinderMetricCoefficient {J : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) (C : GeneralizedSliceCarrier)
@@ -29,8 +18,6 @@ noncomputable def fixedCylinderMetricCoefficient {J : Set ℝ}
   Q * (F.metric (a + p.1 / Q)).inner (f (c.symm p.2))
     (L (D (EuclideanSpace.basisFun (Fin 3) ℝ i)))
     (L (D (EuclideanSpace.basisFun (Fin 3) ℝ j)))
-
-
 
 theorem cylinder_coefficient_eq_fixed {J K : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) {L : BlowupLimitFlow K}
@@ -46,9 +33,6 @@ theorem cylinder_coefficient_eq_fixed {J K : Set ℝ}
   unfold blowupPullbackCoefficient fixedCylinderMetricCoefficient
   rw [dif_pos hp]
   exact cylinder_pullbackInner_eq_fixed F e hI hU hp hs hx _ _
-
-
-
 
 theorem cylinder_coefficient_jet_eq_fixed {J K : Set ℝ}
     (F : RicciFlow 3 StandardCapSpace J) {L : BlowupLimitFlow K}
@@ -77,9 +61,6 @@ theorem cylinder_coefficient_jet_eq_fixed {J K : Set ℝ}
     exact cylinder_coefficient_eq_fixed F e hI hU hs q i j z hz.1 hzU
   exact heq.iteratedFDerivWithin_eq
     (cylinder_coefficient_eq_fixed F e hI hU hs q i j p hp.1 hx) r
-
-
-
 
 theorem blowupSequence_fixed_metric_CInfinity (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

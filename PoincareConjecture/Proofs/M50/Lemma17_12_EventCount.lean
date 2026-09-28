@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M50.Lemma17_12_Telescoping
 import PoincareConjecture.Proofs.M50.Mathlib.FiniteCardBound
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +9,6 @@ open scoped ENNReal BigOperators
 universe u
 
 namespace PoincareConjecture.M50
-
-
 
 theorem cap_event_count_bound
     (F : SurgeryFlowData.{u}) (C : RepairedVolumeLossControls F)
@@ -64,8 +52,6 @@ theorem cap_event_count_bound
   simp only [ENNReal.toReal_mul, ENNReal.toReal_natCast,
     ENNReal.toReal_ofReal hw.le] at hreal
   exact_mod_cast (((le_div_iff₀ hw).mpr hreal).trans hn)
-
-
 
 theorem surgery_times_inter_Icc_finite
     (F : SurgeryFlowData.{u}) (C : RepairedVolumeLossControls F)

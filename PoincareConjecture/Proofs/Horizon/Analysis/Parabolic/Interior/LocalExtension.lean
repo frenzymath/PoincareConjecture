@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Localization
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 
@@ -93,8 +85,6 @@ theorem spatialDerivative_spatialDerivative_eq_of_eventuallyEq
     {f g : E × ℝ → F} {p : E × ℝ} (h : f =ᶠ[𝓝 p] g) :
     spatialDerivative (spatialDerivative f) p = spatialDerivative (spatialDerivative g) p :=
   spatialDerivative_eq_of_eventuallyEq (spatialDerivative_eventuallyEq_of_eventuallyEq h)
-
-
 
 theorem exists_compact_smooth_extension_with_jets [FiniteDimensional ℝ E]
     {K U : Set (E × ℝ)} (hK : IsCompact K) (hU : IsOpen U) (hKU : K ⊆ U)

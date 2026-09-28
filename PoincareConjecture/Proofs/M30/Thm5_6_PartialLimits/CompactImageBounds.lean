@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Convergence.Volume.PathComparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,8 +20,6 @@ variable {n : ℕ} {M : ℕ → Type u} [∀ k, TopologicalSpace (M k)]
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {g : ∀ k, RiemannianMetric n (M k)} {p : ∀ k, M k} {A : ℝ}
   (G : PartialPointedMetricConvergence g p A)
-
-
 
 theorem eventually_image_ball_subset_double {r : ℝ}
     (hcompact : IsCompact (closure (G.limitMetric.ball G.base r))) :
@@ -83,9 +72,6 @@ theorem eventually_image_ball_subset_double {r : ℝ}
   exact (hd.trans hlength').trans_lt
     (ENNReal.mul_lt_mul_right (by norm_num : ENNReal.ofReal (2 : ℝ) ≠ 0)
       ENNReal.ofReal_ne_top hlength)
-
-
-
 
 theorem exists_eventually_compact_image_ball
     (hcomplete : G.limitCarrier.metricComplete G.limitMetric)

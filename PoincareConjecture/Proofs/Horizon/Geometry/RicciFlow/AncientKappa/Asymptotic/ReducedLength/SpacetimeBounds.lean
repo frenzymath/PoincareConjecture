@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asympto
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TemporalBounds
 import Mathlib.Topology.MetricSpace.UniformConvergence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
 
 namespace AncientAsymptoticSolitonPredecessors
-
-
 
 theorem rescaled_sqrt_reducedLength_coordinates_abs_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -73,7 +63,6 @@ theorem rescaled_sqrt_reducedLength_coordinates_abs_le
     nlinarith [congrArg (fun z : ℝ => z * B / 2) hcancel]
   simpa only [hconst] using h
 
-
 theorem rescaled_reducedLength_le_later_bound
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
     (p q : M) {c α β τ A : ℝ} (hc : 0 < c) (hα : 0 < α)
@@ -108,8 +97,6 @@ private theorem abs_sub_le_of_sqrt_abs_bound {u v A C d : ℝ}
   have hm := mul_le_mul hbound hs
     (add_nonneg (Real.sqrt_nonneg u) (Real.sqrt_nonneg v)) hC
   nlinarith
-
-
 
 theorem rescaled_reducedLength_spacetime_abs_le
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
@@ -157,8 +144,6 @@ theorem rescaled_reducedLength_spacetime_abs_le
       abs_sub_le _ _ _
     _ ≤ _ := by nlinarith [hspace, htime']
 
-
-
 theorem rescaled_reducedLength_coordinates_lipschitzOn_cylinder
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)
     (p : M) {c α β : ℝ} (R : AncientRescaling K c) (hα : 0 < α)
@@ -189,9 +174,6 @@ theorem rescaled_reducedLength_coordinates_lipschitzOn_cylinder
     _ ≤ (2 * Real.sqrt (A * β ^ 2 / α ^ 2) * (Real.sqrt (3 / α) / 2 * B)) * dist z w +
         (2 * A * β ^ 2 / α ^ 3) * dist z w := by gcongr
     _ = _ := by ring
-
-
-
 
 theorem rescaled_reducedLength_coordinates_uniformEquicontinuousOn
     {K : AncientKappaSolution n M} (P : AncientAsymptoticSolitonPredecessors K)

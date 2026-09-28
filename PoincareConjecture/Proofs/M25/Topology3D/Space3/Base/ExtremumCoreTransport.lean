@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.ExtremumCoreMiddleGe
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.CompactCapComplement
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.morse_rest_flow_segment
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -206,7 +196,6 @@ theorem FamilyCutState.morse_rest_flow_segment
     hgc.continuousOn (fun t _ => hgs t) hstart
     (fun t ht => by simpa only [hg0] using hheight t ht)
   exact fun t ht => ⟨hrest t ht, hheight t ht⟩
-
 
 theorem FamilyCutState.morse_rest_middle_retraction
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CriticalBallFrontierReachabili
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeCriticalRadius
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFiniteWalk
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -29,10 +19,6 @@ namespace PoincareConjecture.M28.CounterexampleNeckFamily
 variable {epsilon C A : ℝ}
   {E : ∀ n : ℕ, SameTimeCounterexample.{u} epsilon C A
     ((n : ℝ) + 1) ((n : ℝ) + 1)}
-
-
-
-
 
 structure CriticalBallSourcePacket
     (H : CounterexampleNeckFamily E) where
@@ -72,10 +58,6 @@ structure CriticalBallSourcePacket
       3 * ((tube k).chain.neck i).epsilon⁻¹ / 4 →
     0 < delta → delta / 48 ≤ H.tubeNodeScale tube k i →
     CriticalBallModerateWitness H tube (A1 := A1) (delta := delta) k x
-
-
-
-
 
 theorem exists_criticalBall_source_packet_accuracy
     (P : RicciFlowCurvatureTheory.{u}) :

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.TimeDerivative
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.ContDiff.SpatialDerivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -20,7 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
 
 theorem hasDerivAt_hessian_of_time_derivative (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {dF : M → ℝ} {t : ℝ}
@@ -39,7 +31,6 @@ theorem hasDerivAt_hessian_of_time_derivative (D : LeviCivitaData g)
   have hC := Poincare.Manifold.hasDerivAt_mvfderiv_time (hF x) hdF
     (D.connection Y x (X x))
   exact hdG.sub hC
-
 
 theorem hasDerivAt_laplacian_of_time_derivative (D : LeviCivitaData g)
     {F : ℝ × M → ℝ} {dF : M → ℝ} {t : ℝ}

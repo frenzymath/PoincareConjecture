@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rou
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.SampledRounding
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff
 
 namespace Poincare.Manifold.Schoenflies.Plane
-
-
-
 
 theorem exists_uniform_rounded_tube_samples
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

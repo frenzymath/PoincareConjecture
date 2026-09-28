@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.SmoothMetric
 import PoincareConjecture.Definitions.Ch06.ReducedVolume
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle ContinuousLinearMap Filter Set
@@ -53,7 +45,6 @@ theorem metric_pairing_continuousOn_backward
     funext r
     exact backwardMetricCoordinates_apply q (q, r) (mem_chart_source _ _) v w
   rwa [heq] at heval
-
 
 theorem staticEuclideanFlowOn_of_interior_metric_eq
     (hb : 0 < b) (hwindow : Icc (T - b) T ⊆ J)

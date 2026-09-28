@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.CompactSupport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,8 +11,6 @@ universe u v
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_finite_nested_contMDiff_cutoffs {K : Set M} (hK : IsCompact K)
     {α : Type v} (U : α → Set M) (hU : ∀ i, IsOpen (U i))
@@ -70,7 +60,6 @@ theorem exists_finite_nested_contMDiff_cutoffs {K : Set M} (hK : IsCompact K)
 
 omit [T3Space M] [IsManifold (𝓡 n) ∞ M] in
 
-
 theorem contMDiff_cutoff_mul {U : Set M} (hU : IsOpen U)
     {θ f : M → ℝ} (hθ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ θ)
     (hf : ContMDiffOn (𝓡 n) 𝓘(ℝ, ℝ) ∞ f U) (hθU : tsupport θ ⊆ U) :
@@ -84,7 +73,6 @@ theorem contMDiff_cutoff_mul {U : Set M} (hU : IsOpen U)
     simp only [hy, zero_mul]
 
 omit [T3Space M] [IsManifold (𝓡 n) ∞ M] in
-
 
 theorem contMDiff_cutoff_extension {U : Set M} (hU : IsOpen U)
     {θ f : M → ℝ} (hθ : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ θ)

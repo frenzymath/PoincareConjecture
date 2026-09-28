@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.Graphs.CutGluing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MeshSubfamilyContribution
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxHeartbeats 2000000
@@ -26,8 +19,6 @@ namespace PoincareConjecture.Topology.Surface.RetainedCoordinateTriangulation
 variable {S : Type*} [TopologicalSpace S] [T2Space S]
   [ChartedSpace Plane S] [IsManifold (𝓡 2) ∞ S]
   (T : RetainedCoordinateTriangulation (M := S))
-
-
 
 theorem band_open_endpoint_contribution (g : RiemannianMetric 2 S)
     (p : T.decomposition.IncidentEdgeIndex) (i : Fin (T.graphs p).count)
@@ -68,8 +59,6 @@ theorem band_open_endpoint_contribution (g : RiemannianMetric 2 S)
     exact hw)
   simpa only [← heq, hpoint] using hresult
 
-
-
 theorem vertex_contribution_eq_two_band_sum_of_interior
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)
     (i j : Fin (T.graphs p).count) (hne : i ≠ j) {q : S}
@@ -96,8 +85,6 @@ theorem vertex_contribution_eq_two_band_sum_of_interior
     have hij : i = j := by simpa only [Sigma.mk.inj_iff, heq_eq_eq, true_and] using hs
     exact hne hij
   · rwa [T.band_parent_support_union p i, T.band_parent_support_union p j]
-
-
 
 theorem canonical_vertex_fan_on_open_band_cut
     (g : RiemannianMetric 2 S) (p : T.decomposition.IncidentEdgeIndex)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_4_SupportedAffineFamily
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {R : M14SquareRootPath G p} (V : M14LVariationData G p R) (b : G.gaugeCover.index)
   (lift : G.Point → (G.timeIntervals.interval (G.gaugeCover.interval b)).Point ×
     G.gaugeCover.spatial b) (η : ℝ → EuclideanSpace ℝ (Fin n)) (c : ℝ)
-
-
 
 theorem affineGaugeFamily_contMDiffWithinAt {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -56,8 +45,6 @@ theorem affineGaugeFamily_contMDiffWithinAt {U : Set G.Point} (hU : IsOpen U)
       z (hL.snd.prodMk hv)
   exact (G.gaugeCover.cylinder b).smooth.contMDiffAt.comp_contMDiffWithinAt z
     (hL.fst.prodMk hS)
-
-
 
 theorem supportedAffineGaugeFamily_contMDiffOn_closed {U : Set G.Point} (hU : IsOpen U)
     (hlift : ContMDiffOn (spacetimeModel n) (spacetimeModel n) ∞ lift U)
@@ -92,8 +79,6 @@ theorem supportedAffineGaugeFamily_contMDiffOn_closed {U : Set G.Point} (hU : Is
     exact (hbase z hz).congr_of_eventuallyEq
       (heq.filter_mono nhdsWithin_le_nhds) heq.eq_of_nhds
 
-
-
 theorem supportedAffineGaugeFamily_time_closed {P : Set ℝ} (hP : P ⊆ V.parameterDomain)
     (hrec : ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂ ∩ tsupport η, ∀ v ∈ P,
       (G.gaugeCover.cylinder b).toSpacetime (lift (V.squareFamily s v)) = V.squareFamily s v)
@@ -107,8 +92,6 @@ theorem supportedAffineGaugeFamily_time_closed {P : Set ℝ} (hP : P ⊆ V.param
       variation_squareFamily_time V hs (hP hv)]
   · rw [supportedAffineGaugeFamily_eq_of_not_tsupport V b lift η c ht,
       variation_squareFamily_time V hs (hP hv)]
-
-
 
 theorem supportedAffineGaugeFamily_zero_closed
     (hrec : ∀ s ∈ M14SqrtParameterInterval τ₁ τ₂ ∩ tsupport η,

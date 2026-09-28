@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M10.LaplacianContinuity
 import PoincareConjecture.Proofs.M10.SupportedIntegralTransport
 import PoincareConjecture.Proofs.M10.SupportedPullbackIntegrable
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric MeasureTheory
@@ -34,7 +26,6 @@ noncomputable local instance chartWeakBilinearNormedSpace : NormedSpace ℝ
   ContinuousLinearMap.toNormedSpace
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem calibrated_weak_comparison_in_chart (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (q₀ : M) {u H φ : M → ℝ} (hu : Continuous u) (hH : Measurable H)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 import PoincareConjecture.Definitions.Ch19.RampEstimates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -18,19 +9,10 @@ universe u
 
 namespace PoincareConjecture
 
-
-
 noncomputable def constantLoopFamily {M : Type u} [TopologicalSpace M]
     [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] (x : M) :
     ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M)) :=
   ⟨fun _ => constantC1Loop x, continuous_const⟩
-
-
-
-
-
-
-
 
 structure RepairedShortLoopTrivialityData where
   short_loop_family_trivial : ∀ {M : Type u} [TopologicalSpace M]
@@ -48,8 +30,6 @@ structure RepairedShortLoopTrivialityData where
           (∀ c : LoopTwoSphere,
             freeLoopLength g (source.family c) < ζ) →
               source.homotopy_class = 1
-
-
 
   raw_short_loop_family_trivial : ∀ {M : Type u} [TopologicalSpace M]
       [T2Space M] [SecondCountableTopology M]

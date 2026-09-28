@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Lemma16_15_CylinderFirstExit
 import Mathlib.Topology.Connected.Clopen
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -18,8 +10,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 open Proofs.M12 Proofs.M46
-
-
 
 theorem seedM15_compactCylinder_capture
     {F : GeneralizedRicciFlowData.{u}}

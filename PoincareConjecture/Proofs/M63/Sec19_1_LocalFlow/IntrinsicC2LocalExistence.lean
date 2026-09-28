@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.FixedLabelC2Transport
 import PoincareConjecture.Proofs.M63.Mathlib.CompactEmbeddedRetraction
 import Mathlib.Geometry.Manifold.WhitneyEmbedding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,9 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T2Space M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem exists_intrinsic_c2_local_curve_of_retraction
     (F : RicciFlow n M (Icc a b)) (hcompact : IsCompact (univ : Set M))
@@ -123,9 +111,6 @@ theorem exists_intrinsic_c2_local_curve_of_retraction
     · intro tau s hat _hts hslab i
       exact (hnew i).continuousOn.mono (prod_mono Subset.rfl
         (fun t ht => ⟨hat.trans_le ht.1, (hslab ht).2.trans_lt hTS⟩))
-
-
-
 
 theorem exists_intrinsic_c2_local_curve [CompactSpace M]
     (F : RicciFlow n M (Icc a b)) (gamma : ℝ → M)

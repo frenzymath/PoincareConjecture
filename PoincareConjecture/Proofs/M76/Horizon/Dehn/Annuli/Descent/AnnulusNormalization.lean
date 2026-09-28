@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.AnnulusProjecti
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.SourceDimension
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Endpoint
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -27,9 +18,6 @@ variable {M ι : Type*} [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M V3}
   {S : SimplicialComplex ℝ (V1 × V2)} {f : (V1 × V2) → M}
   {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
-
-
-
 
 theorem Step.exists_original_annulus_normalization (step : Step s t)
     {R : Set M} (he : PoincareConjecture.M76.PLDomain e R)

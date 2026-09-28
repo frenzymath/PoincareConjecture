@@ -6,14 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.ReducedG
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.Noncollapse.TerminalRegion
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.Compactness.Calibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -53,8 +45,6 @@ variable {d : ℕ} (H : M22UniversalNoncollapsingPredecessors.{u} d)
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem volume_lower_bound_of_terminal_region (K : AncientKappaSolution 3 M)
     (p : M) (r : ℝ) (hr : 0 < r) (hrtime : r ^ 2 ≤ 2)

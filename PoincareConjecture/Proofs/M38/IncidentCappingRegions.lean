@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.CappingRegions
 import PoincareConjecture.Proofs.M38.CappingComponents
 import PoincareConjecture.Proofs.M38.ComponentBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,10 +23,8 @@ local instance incidentCappedManifold :
     IsManifold (𝓡 3) ∞ (CappedDiscardedSpace F T hT P) :=
   cappedDiscardedSpace_isManifold F T hT P
 
-
 noncomputable def incidentOldCarrier : GeneralizedSliceCarrier.{u} :=
   openCarrier (F.slice (F.event T hT).tMinus) (eventDiscardedOpen F T hT)
-
 
 theorem cappedCapBall_image_disjoint (i j : Fin (F.event T hT).cap_count) (hij : i ≠ j) :
     Disjoint ((cappedCapBall F T hT P i).map '' Metric.ball 0 2)
@@ -48,7 +37,6 @@ theorem cappedCapBall_image_disjoint (i j : Fin (F.event T hT).cap_count) (hij :
 
 variable (x : eventDiscardedOpen F T hT)
 
-
 def incidentCapIndex :=
   {i : Fin (F.event T hT).cap_count //
     ConnectedComponents.mk (P i).attachmentPoint = ConnectedComponents.mk x}
@@ -56,8 +44,6 @@ def incidentCapIndex :=
 instance incidentCapIndex_finite : Finite (incidentCapIndex F T hT P x) :=
   inferInstanceAs (Finite {i : Fin (F.event T hT).cap_count //
     ConnectedComponents.mk (P i).attachmentPoint = ConnectedComponents.mk x})
-
-
 
 theorem cappedCapBall_mem_component_iff (i : Fin (F.event T hT).cap_count)
     {z : StandardCapSpace} (hz : z ∈ Metric.ball 0 2) :
@@ -78,13 +64,10 @@ theorem cappedCapBall_mem_component_iff (i : Fin (F.event T hT).cap_count)
       rw [← cappedComponentsHomeomorph_apply, ← cappedComponentsHomeomorph_apply]
       exact congrArg H h)
 
-
 theorem incidentCapBall_center_mem (i : incidentCapIndex F T hT P x) :
     (cappedCapBall F T hT P i.val).map 0 ∈
       connectedComponent (cappedOldInclusion F T hT P x) :=
   (cappedCapBall_mem_component_iff F T hT P x i.val (by simp)).mpr i.property
-
-
 
 noncomputable def incidentCapBall (i : incidentCapIndex F T hT P x) :
     SurgeryBallEmbedding (componentCarrier (cappedDiscardedCarrier F T hT P)
@@ -92,12 +75,10 @@ noncomputable def incidentCapBall (i : incidentCapIndex F T hT P x) :
   componentBall (cappedCapBall F T hT P i.val) (cappedOldInclusion F T hT P x)
     (incidentCapBall_center_mem F T hT P x i)
 
-
 theorem incidentCapBall_map_val (i : incidentCapIndex F T hT P x)
     {z : StandardCapSpace} (hz : z ∈ Metric.ball 0 2) :
     ((incidentCapBall F T hT P x i).map z).val = (cappedCapBall F T hT P i.val).map z :=
   componentBall_map_val _ _ _ hz
-
 
 theorem incidentCapBall_image_disjoint (i j : incidentCapIndex F T hT P x) (hij : i ≠ j) :
     Disjoint ((incidentCapBall F T hT P x i).map '' Metric.ball 0 2)
@@ -109,8 +90,6 @@ theorem incidentCapBall_image_disjoint (i j : incidentCapIndex F T hT P x) (hij 
     incidentCapBall_map_val F T hT P x i hz] at heq
   exact disjoint_left.mp (cappedCapBall_image_disjoint F T hT P i.val j.val
     (fun h => hij (Subtype.ext h))) ⟨z, hz, rfl⟩ ⟨w, hw, heq⟩
-
-
 
 theorem incidentCapBall_union_iff
     (q : (componentCarrier (cappedDiscardedCarrier F T hT P)
@@ -132,8 +111,6 @@ theorem incidentCapBall_union_iff
     apply Subtype.ext
     exact (incidentCapBall_map_val F T hT P x ⟨i, hi⟩ hz2).trans hzq
 
-
-
 theorem incidentOldInverse_mem
     (q : (componentCarrier (cappedDiscardedCarrier F T hT P)
       (cappedOldInclusion F T hT P x)).carrier)
@@ -150,7 +127,6 @@ theorem incidentOldInverse_mem
   rw [← cappedOldInclusion_preimage_component F T hT P x]
   exact hcomponent
 
-
 noncomputable def incidentOldInclusion
     (y : (componentCarrier (incidentOldCarrier F T hT) x).carrier) :
     (componentCarrier (cappedDiscardedCarrier F T hT P)
@@ -158,8 +134,6 @@ noncomputable def incidentOldInclusion
   ⟨cappedOldInclusion F T hT P y.val,
     (cappedOldInclusion_openEmbedding F T hT P).continuous.image_connectedComponent_subset x
       (mem_image_of_mem _ y.property)⟩
-
-
 
 theorem incidentOldInclusion_range :
     range (incidentOldInclusion F T hT P x) =
@@ -184,8 +158,6 @@ theorem incidentOldInclusion_range :
     apply cappedOldInverse_right
     rw [cappedOldInclusion_range]
     exact fun h => hq ((incidentCapBall_union_iff F T hT P x q).mpr h)
-
-
 
 noncomputable def incidentOldRegionEquivalence :
     SurgeryRegionEquivalence
@@ -244,8 +216,6 @@ noncomputable def incidentOldRegionEquivalence :
     intro q hq
     exact fun h => hq ((incidentCapBall_union_iff F T hT P x q).mpr h)
 
-
-
 noncomputable def incidentAttachmentPoint (i : incidentCapIndex F T hT P x)
     (z : capDoubleBall) (hz : 1 < ‖z.val‖) :
       (componentCarrier (incidentOldCarrier F T hT) x).carrier := by
@@ -255,8 +225,6 @@ noncomputable def incidentAttachmentPoint (i : incidentCapIndex F T hT P x)
   exact ⟨(P i.val).attachmentChart z, ConnectedComponents.coe_eq_coe'.mp
     (((P i.val).attachment_component_eq ((P i.val).attachmentChart.map_source hzsource)).trans
       i.property)⟩
-
-
 
 theorem incidentOldRegionEquivalence_attachment (i : incidentCapIndex F T hT P x)
     (z : capDoubleBall) (hz : 1 < ‖z.val‖) :

@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M74ConnectedSumReduction
 import Mathlib.Geometry.Euclidean.Inversion.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -30,8 +21,6 @@ private noncomputable def sphereAntipodal :
   contMDiff_toFun := contMDiff_neg_sphere
   contMDiff_invFun := contMDiff_neg_sphere
 
-
-
 noncomputable def standardSphereChart (v : ThreeSphere) :
     OpenPartialHomeomorph ThreeSphere StandardCapSpace := chartAt StandardCapSpace (-v)
 
@@ -40,25 +29,17 @@ private theorem standardSphereChart_eq_stereographic (v : ThreeSphere) :
   change stereographic' 3 (- -v) = stereographic' 3 v
   rw [neg_neg]
 
-
-
 @[simp] theorem standardSphereChart_source (v : ThreeSphere) :
     (standardSphereChart v).source = {v}ᶜ := by
   rw [standardSphereChart_eq_stereographic, stereographic'_source]
-
-
 
 @[simp] theorem standardSphereChart_target (v : ThreeSphere) :
     (standardSphereChart v).target = univ := by
   rw [standardSphereChart_eq_stereographic, stereographic'_target]
 
-
-
 theorem standardSphereChart_contMDiffOn (v : ThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (standardSphereChart v)
       (standardSphereChart v).source := contMDiffOn_chart
-
-
 
 theorem standardSphereChart_symm_contMDiff (v : ThreeSphere) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (standardSphereChart v).symm := by
@@ -78,15 +59,11 @@ private theorem standardSphereChart_symm_formula (v : ThreeSphere) (z : Standard
   simp only [← Submodule.coe_norm, LinearIsometryEquiv.norm_map]
   rfl
 
-
-
 @[simp] theorem standardSphereChart_symm_zero (v : ThreeSphere) :
     (standardSphereChart v).symm 0 = -v := by
   apply Subtype.ext
   rw [standardSphereChart_symm_formula]
   norm_num [smul_smul]
-
-
 
 noncomputable def oppositeSphereChart (v : ThreeSphere) :
     OpenPartialHomeomorph ThreeSphere StandardCapSpace :=
@@ -95,17 +72,11 @@ noncomputable def oppositeSphereChart (v : ThreeSphere) :
       ((LinearIsometryEquiv.neg ℝ :
         StandardCapSpace ≃ₗᵢ[ℝ] StandardCapSpace).toHomeomorph.toOpenPartialHomeomorph))
 
-
-
 @[simp] theorem oppositeSphereChart_apply (v x : ThreeSphere) :
     oppositeSphereChart v x = -(standardSphereChart v (-x)) := rfl
 
-
-
 @[simp] theorem oppositeSphereChart_symm_apply (v : ThreeSphere) (z : StandardCapSpace) :
     (oppositeSphereChart v).symm z = -((standardSphereChart v).symm (-z)) := rfl
-
-
 
 @[simp] theorem oppositeSphereChart_source (v : ThreeSphere) :
     (oppositeSphereChart v).source = {-v}ᶜ := by
@@ -113,13 +84,9 @@ noncomputable def oppositeSphereChart (v : ThreeSphere) :
   have hneg (y : ThreeSphere) : sphereAntipodal y = -y := rfl
   simp [oppositeSphereChart, standardSphereChart_source, hneg, neg_eq_iff_eq_neg]
 
-
-
 @[simp] theorem oppositeSphereChart_target (v : ThreeSphere) :
     (oppositeSphereChart v).target = univ := by
   simp [oppositeSphereChart, standardSphereChart_target]
-
-
 
 theorem oppositeSphereChart_contMDiffOn (v : ThreeSphere) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (oppositeSphereChart v)
@@ -132,20 +99,14 @@ theorem oppositeSphereChart_contMDiffOn (v : ThreeSphere) :
       mem_preimage, mem_compl_iff, mem_singleton_iff, neg_eq_iff_eq_neg] using hx
   exact contDiff_neg.contMDiff.comp_contMDiffOn hmid
 
-
-
 theorem oppositeSphereChart_symm_contMDiff (v : ThreeSphere) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (oppositeSphereChart v).symm :=
   contMDiff_neg_sphere.comp ((standardSphereChart_symm_contMDiff v).comp
     contDiff_neg.contMDiff)
 
-
-
 @[simp] theorem oppositeSphereChart_symm_zero (v : ThreeSphere) :
     (oppositeSphereChart v).symm 0 = v := by
   rw [oppositeSphereChart_symm_apply, neg_zero, standardSphereChart_symm_zero, neg_neg]
-
-
 
 theorem sphereCharts_cover (v : ThreeSphere) :
     (standardSphereChart v).source ∪ (oppositeSphereChart v).source = univ := by
@@ -156,8 +117,6 @@ theorem sphereCharts_cover (v : ThreeSphere) :
   · subst x
     exact Or.inr (ne_neg_of_mem_unit_sphere ℝ v)
   · exact Or.inl hx
-
-
 
 theorem standardSphereChart_mem_opposite_iff (v : ThreeSphere) {x : ThreeSphere}
     (hx : x ∈ (standardSphereChart v).source) :
@@ -175,8 +134,6 @@ theorem standardSphereChart_mem_opposite_iff (v : ThreeSphere) {x : ThreeSphere}
     have hright := (standardSphereChart v).right_inv (show (0 : StandardCapSpace) ∈
       (standardSphereChart v).target by simp)
     rwa [standardSphereChart_symm_zero] at hright
-
-
 
 theorem oppositeSphereChart_mem_standard_iff (v : ThreeSphere) {x : ThreeSphere}
     (hx : x ∈ (oppositeSphereChart v).source) :
@@ -198,8 +155,6 @@ theorem oppositeSphereChart_mem_standard_iff (v : ThreeSphere) {x : ThreeSphere}
 private theorem inversion_two_formula (z : StandardCapSpace) :
     EuclideanGeometry.inversion (0 : StandardCapSpace) 2 z = (4 / ‖z‖ ^ 2) • z := by
   norm_num [EuclideanGeometry.inversion, div_pow]
-
-
 
 theorem oppositeSphereChart_symm_inversion (v : ThreeSphere) {z : StandardCapSpace}
     (hz : z ≠ 0) :
@@ -226,8 +181,6 @@ theorem oppositeSphereChart_symm_inversion (v : ThreeSphere) {z : StandardCapSpa
   · congr 1
     field_simp
     ring
-
-
 
 theorem oppositeSphereChart_transition (v : ThreeSphere) {x : ThreeSphere}
     (hx0 : x ∈ (standardSphereChart v).source)

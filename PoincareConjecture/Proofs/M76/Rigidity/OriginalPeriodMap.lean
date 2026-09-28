@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.PeriodProductCoordinates
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,19 +14,15 @@ local notation "D" => closedBall (0 : V2) 1
 variable {X ι : Type*} [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
 
-
-
 noncomputable def periodCutMap (P : OriginalDiskProduct e R j)
     (a p : ℝ) (u : E → X) (z : E) : X :=
   if z.2 ≤ a / 2 then P.map (periodLowerCoordinates a z) else
     if p - a / 2 ≤ z.2 then P.map (periodUpperCoordinates a p z) else u z
 
-
 theorem periodCutMap_lower (P : OriginalDiskProduct e R j)
     (a p : ℝ) (u : E → X) {z : E} (hz : z.2 ≤ a / 2) :
     P.periodCutMap a p u z = P.map (periodLowerCoordinates a z) := by
   simp only [periodCutMap, if_pos hz]
-
 
 theorem periodCutMap_upper (P : OriginalDiskProduct e R j)
     {a p : ℝ} (hgap : a / 2 < p - a / 2) (u : E → X)
@@ -42,8 +30,6 @@ theorem periodCutMap_upper (P : OriginalDiskProduct e R j)
     P.periodCutMap a p u z = P.map (periodUpperCoordinates a p z) := by
   have hn : ¬ z.2 ≤ a / 2 := by linarith
   simp only [periodCutMap, if_neg hn, if_pos hz]
-
-
 
 theorem periodCutMap_middle (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2) (u : E → X)
@@ -68,8 +54,6 @@ theorem periodCutMap_middle (P : OriginalDiskProduct e R j)
       rw [htime]
       exact (hupper z.1 hz.1).symm
     · simp only [periodCutMap, if_neg hlo, if_neg hup]
-
-
 
 theorem periodCutMap_endpoints (P : OriginalDiskProduct e R j)
     {a p : ℝ} (ha : 0 < a) (hgap : a / 2 < p - a / 2)

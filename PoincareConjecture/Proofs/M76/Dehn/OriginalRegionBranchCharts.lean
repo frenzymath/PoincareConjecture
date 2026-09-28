@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.InjectiveRegionCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -23,17 +14,11 @@ variable {U M ι : Type*} [NormedAddCommGroup U] [NormedSpace ℝ U]
   {e : ι → OpenPartialHomeomorph M V3} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M}
 
-
-
-
 theorem Stage.plDomain_region (s : Stage e S f r C) {R : Set M}
     (he : PoincareConjecture.M76.PLDomain e R) :
     PoincareConjecture.M76.PLDomain s.charts (s.projection ⁻¹' R) :=
   ⟨s.cover, s.compatible, he.closed.preimage s.projection.continuous,
     s.halfspace_boundary he.halfspace⟩
-
-
-
 
 theorem Step.exists_original_region_branch_chart
     {s t : Stage e S f r C} (step : Step s t) {R : Set M}

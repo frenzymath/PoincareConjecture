@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.QuadraticIdentity
 import Mathlib.Topology.Path
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +13,6 @@ open scoped Topology NNReal Manifold ContDiff Bundle
 namespace Poincare.AncientVolume.ScalarRatio
 
 variable {X : Type*} [MetricSpace X] {p : X}
-
 
 theorem dist_sq_asymptoticConeDilation (hc : RayComparison p) (a : ℝ≥0)
     (x z : AsymptoticCone p hc) :
@@ -42,7 +29,6 @@ theorem dist_sq_asymptoticConeDilation (hc : RayComparison p) (a : ℝ≥0)
   rw [Real.sq_sqrt (by positivity), Real.sq_sqrt (by positivity)]
   push_cast
   ring
-
 
 theorem asymptoticConeRadius_sq_interpolation (hc : RayComparison p)
     (x y z : AsymptoticCone p hc) {t : ℝ} (ht : t ∈ Icc (0 : ℝ) 1)
@@ -63,7 +49,6 @@ theorem asymptoticConeRadius_sq_interpolation (hc : RayComparison p)
   simpa only [ho] using radial_sq_interpolation_of_minimizing_segment o x y z
     (fun a => asymptoticConeDilation hc a.toNNReal) hcone ht hxz hzy
 
-
 theorem asymptoticConeRadius_sq_on_metric_segment (hc : RayComparison p)
     (x y : AsymptoticCone p hc) (γ : ℝ → AsymptoticCone p hc)
     (hγ0 : γ 0 = x) (hγ1 : γ 1 = y)
@@ -77,8 +62,6 @@ theorem asymptoticConeRadius_sq_on_metric_segment (hc : RayComparison p)
   · simpa only [hγ0, zero_sub, abs_neg, abs_of_nonneg ht.1] using hγ 0 (by simp) t ht
   · simpa only [hγ1, abs_of_nonpos (sub_nonpos.mpr ht.2), neg_sub] using
       hγ t ht 1 (by simp)
-
-
 
 theorem asymptoticConeRadius_lower_bound_on_unit_segment (hc : RayComparison p)
     (x y : AsymptoticConeUnitSlice p hc) (hxy : dist x y < 2)
@@ -106,8 +89,6 @@ theorem asymptoticConeRadius_lower_bound_on_unit_segment (hc : RayComparison p)
   refine ⟨(asymptoticConeRadius hc (γ t)).coe_nonneg, ?_⟩
   rw [heq']
   nlinarith [mul_nonneg (sq_nonneg (t - 1 / 2)) (sq_nonneg (dist x y))]
-
-
 
 theorem exists_normalized_path_of_metric_segment (hc : RayComparison p)
     (x y : AsymptoticConeUnitSlice p hc) (hxy : dist x y < 2)
@@ -149,8 +130,6 @@ open Poincare.AncientVolume.ScalarRatio
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]
   [NoncompactSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_asymptoticCone_angular_path
     (g : RiemannianMetric n M) (D : LeviCivitaData g)

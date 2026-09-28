@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.VariableModulusLiminf
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -29,9 +17,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
-
 
 theorem varying_trace_column_energy_le_liminf
     {e : M → E} (hei : IsEmbedding e) {c0 c1 : ℕ → ℝ → M} {d0 d1 : ℝ → M}
@@ -59,9 +44,6 @@ theorem varying_trace_column_energy_le_liminf
   · intro j
     exact show ‖(A j).column i‖ ≤ Real.sqrt C by
       nlinarith [Real.sq_sqrt hC0, Real.sqrt_nonneg C, norm_nonneg ((A j).column i), hC j]
-
-
-
 
 theorem varying_trace_weightedEnergy_le_liminf
     {e : M → E} (hei : IsEmbedding e) {c0 c1 : ℕ → ℝ → M} {d0 d1 : ℝ → M}

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Polygon.ArcCandidate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -69,8 +59,6 @@ variable (hp : IsSimplePolygonalArc p) (k j : Fin (n + 2))
 
 include hp hk0 hkl hj0 hjl hfk hfp hfs hjk hjp hjs hjT hmin
 
-
-
 theorem IsSimplePolygonalArc.normalized_minimal_candidate_neighbor_height :
     (f (p j)).1 + (f (p j)).2 ≤
         (f (p ((finRotate (n + 2)).symm j))).1 +
@@ -120,8 +108,6 @@ theorem IsSimplePolygonalArc.normalized_minimal_candidate_neighbor_height :
   · exact hbound _ (fun _ hx => (harms (Or.inl hx)).2)
   · exact hbound _ (fun _ hx => (harms (Or.inr hx)).2)
 
-
-
 theorem IsSimplePolygonalArc.normalized_minimal_candidate_triangle_height :
     ∀ x ∈ polygonVertexTriangle p j,
       (f (p j)).1 + (f (p j)).2 ≤ (f x).1 + (f x).2 := by
@@ -141,8 +127,6 @@ theorem IsSimplePolygonalArc.normalized_minimal_candidate_triangle_height :
     · exact hconv
   exact fun _ hx => hsub hx
 
-
-
 theorem IsSimplePolygonalArc.base_not_mem_minimal_candidate_triangle :
     p k ∉ polygonVertexTriangle p j := by
   intro hkT
@@ -154,7 +138,6 @@ theorem IsSimplePolygonalArc.base_not_mem_minimal_candidate_triangle :
   linarith [hpos.1, hpos.2]
 
 omit hj0 hjl hjk hjp hjs in
-
 
 theorem IsSimplePolygonalArc.normalized_low_triangle_disjoint_visible_chord
     (_hj0 : j ≠ 0) (_hjl : j ≠ Fin.last (n + 1)) (_hjk : j ≠ k)
@@ -258,8 +241,6 @@ variable (l m : Fin (n + 2)) (g : E ≃ᴬ[ℝ] (ℝ × ℝ))
 
 include hl0 hll hm0 hml hgl hgp hgs hmln hmp hms hmT hgmin hklne
 
-
-
 theorem IsSimplePolygonalArc.openSegments_disjoint_of_minimal_arc_candidates :
     Disjoint (openSegment ℝ (p k) (p j)) (openSegment ℝ (p l) (p m)) := by
   have hfpos := hp.normalized_triangle_vertex_pos k hk0 hkl f hfk hfp hfs j hjk hjp hjs hjT
@@ -285,8 +266,6 @@ theorem IsSimplePolygonalArc.openSegments_disjoint_of_minimal_arc_candidates :
     exact Set.disjoint_left.mp hdis
       (openSegment_mem_normalized_low_triangle k j f hfk hfpos hxF)
       (mem_image_of_mem f (openSegment_subset_segment ℝ _ _ hxG))
-
-
 
 theorem IsSimplePolygonalArc.segments_inter_eq_of_minimal_arc_candidates :
     segment ℝ (p k) (p j) ∩ segment ℝ (p l) (p m) =

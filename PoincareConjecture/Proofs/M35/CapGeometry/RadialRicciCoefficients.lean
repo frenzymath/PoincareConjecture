@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.ScalarDerivativeJets
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialUnitRicci
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,13 +20,11 @@ local instance radialRicciNormedSpace : NormedSpace ℝ B := inferInstance
 private noncomputable def basisPair (i j : Fin 3) : B :=
   (EuclideanSpace.proj i).smulRight (EuclideanSpace.proj j)
 
-
 noncomputable def radialRicciCoefficients {g : RiemannianMetric 3 V}
     (D : LeviCivitaData g) (x : V) : B :=
   ∑ i : Fin 3, ∑ j : Fin 3,
     D.ricci x (EuclideanSpace.basisFun (Fin 3) ℝ i)
       (EuclideanSpace.basisFun (Fin 3) ℝ j) • basisPair i j
-
 
 theorem radialRicciCoefficients_apply {g : RiemannianMetric 3 V}
     (D : LeviCivitaData g) (x u v : V) :
@@ -64,14 +54,11 @@ theorem radialRicciCoefficients_apply {g : RiemannianMetric 3 V}
     u i * (v j * D.ricci x (e i) (e j))
   ring
 
-
 theorem radialRicciCoefficients_contDiffAt {g : RiemannianMetric 3 V}
     (D : LeviCivitaData g) (x : V) : ContDiffAt ℝ ∞ (radialRicciCoefficients D) x := by
   exact ContDiffAt.sum fun i _ => ContDiffAt.sum fun j _ =>
     (ricci_contDiffAt_euclidean D x (EuclideanSpace.basisFun (Fin 3) ℝ i)
       (EuclideanSpace.basisFun (Fin 3) ℝ j)).smul contDiffAt_const
-
-
 
 theorem radialRicciCoefficients_jets_tendsto
     {gseq : ℕ → RiemannianMetric 3 V} {g : RiemannianMetric 3 V}

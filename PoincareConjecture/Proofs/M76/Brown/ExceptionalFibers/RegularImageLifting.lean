@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.ExceptionalFibers.FixedCoreFilling
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace OpenPartialHomeomorph
 
 variable {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y] [RegularSpace Y]
-
-
-
 
 theorem exists_lift_into_regular_image {q : X → Y} (hq : Continuous q) (c : Y)
     {W : Set Y} (R : OpenPartialHomeomorph X Y)

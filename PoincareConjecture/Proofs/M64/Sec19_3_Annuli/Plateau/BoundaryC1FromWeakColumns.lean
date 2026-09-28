@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakClassical
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,11 +12,6 @@ open Poincare.Analysis.Sobolev.Weak
 namespace PoincareConjecture
 
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
-
-
-
-
-
 
 theorem m64Reflected_contDiffOn_of_continuous_weak_columns
     {m : ℕ} {u : Plane → EuclideanSpace ℝ (Fin m)}

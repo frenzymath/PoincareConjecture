@@ -5,23 +5,9 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
-
-
-
 
 theorem isConnected_between_continuous_graphs
     {K : Type*} [TopologicalSpace K] [ConnectedSpace K]
@@ -55,11 +41,6 @@ theorem isConnected_between_continuous_graphs
     (isConnected_Ioo (show (0 : ℝ) < 1 by norm_num))).image F hF.continuousOn
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem isConnected_compl_range_graph_of_fiberwise
     {K E B : Type*} [TopologicalSpace K] [ConnectedSpace K]

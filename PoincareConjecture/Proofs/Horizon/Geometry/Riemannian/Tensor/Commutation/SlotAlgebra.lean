@@ -10,11 +10,6 @@ namespace PoincareConjecture
 variable {ι E : Type*} [Fintype ι] [DecidableEq ι]
   [AddCommGroup E] [Module ℝ E]
 
-
-
-
-
-
 lemma slot_double_sum_sub
     (A : MultilinearMap ℝ (fun _ : ι => E) ℝ)
     (v B C D E' : ι → E) :

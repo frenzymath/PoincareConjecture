@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsTransition
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_stackClampedDiscTransition
     (T G : OpenPartialHomeomorph (E2 × ℝ) (E2 × ℝ))

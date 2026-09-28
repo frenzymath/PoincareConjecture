@@ -1,19 +1,4 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Bootstrap
-
-
-
-
-
-
-
-
-
-
 
 open MeasureTheory Set Filter
 open scoped ContDiff Topology
@@ -113,8 +98,6 @@ private theorem principal_error_sq_le
       (Finset.sum_nonneg (fun i _ => Finset.sum_nonneg (fun j _ => sq_nonneg _))))
   · simp only [hessian_zero_off_support hz, mul_zero, Finset.sum_const_zero, zero_pow,
       ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, le_refl]
-
-
 
 theorem variable_principal_parabolic_coercivity
     {A : Fin n → Fin n → ℝ} {a : Fin n → Fin n → Spacetime n → ℝ}

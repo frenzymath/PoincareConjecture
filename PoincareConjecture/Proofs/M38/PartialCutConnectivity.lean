@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M38.ComponentBalls
 import PoincareConjecture.Proofs.M38.FullCutSides
 import PoincareConjecture.Proofs.M38.SuccessiveCutDomains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,54 +18,44 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S : Set (Fin (F.event T hT).cap_count))
 
-
 theorem retained_subset_partialCut :
     eventRetainedInteriorOpen F T hT ≤ eventCutOpen F T hT P S :=
   (retained_subset_fullCut F T hT P).trans
     (eventCutOpen_antitone F T hT P S Set.univ (Set.subset_univ _))
-
 
 theorem discarded_subset_partialCut :
     eventDiscardedOpen F T hT ≤ eventCutOpen F T hT P S :=
   (discarded_subset_fullCut F T hT P).trans
     (eventCutOpen_antitone F T hT P S Set.univ (Set.subset_univ _))
 
-
 noncomputable def partialCutRetained :
     eventRetainedInteriorOpen F T hT → (partialCappedCarrier F T hT P S).carrier :=
   partialOldInclusion F T hT P S ∘ Set.inclusion (retained_subset_partialCut F T hT P S)
-
 
 noncomputable def partialCutDiscarded :
     eventDiscardedOpen F T hT → (partialCappedCarrier F T hT P S).carrier :=
   partialOldInclusion F T hT P S ∘ Set.inclusion (discarded_subset_partialCut F T hT P S)
 
-
 theorem partialCutRetained_continuous : Continuous (partialCutRetained F T hT P S) :=
   (partialOldInclusion_openEmbedding F T hT P S).continuous.comp
     (continuous_inclusion (retained_subset_partialCut F T hT P S))
 
-
 theorem partialCutDiscarded_continuous : Continuous (partialCutDiscarded F T hT P S) :=
   (partialOldInclusion_openEmbedding F T hT P S).continuous.comp
     (continuous_inclusion (discarded_subset_partialCut F T hT P S))
-
 
 noncomputable def partialCutVertexComponent :
     EventCutVertex F T hT → ConnectedComponents (partialCappedCarrier F T hT P S).carrier :=
   Sum.elim (partialCutRetained_continuous F T hT P S).connectedComponentsMap
     (partialCutDiscarded_continuous F T hT P S).connectedComponentsMap
 
-
 theorem partialCutVertexComponent_retained (x : eventRetainedInteriorOpen F T hT) :
     partialCutVertexComponent F T hT P S (.inl (ConnectedComponents.mk x)) =
       ConnectedComponents.mk (partialCutRetained F T hT P S x) := rfl
 
-
 theorem partialCutVertexComponent_discarded (x : eventDiscardedOpen F T hT) :
     partialCutVertexComponent F T hT P S (.inr (ConnectedComponents.mk x)) =
       ConnectedComponents.mk (partialCutDiscarded F T hT P S x) := rfl
-
 
 theorem partialCut_collar_component_eq (i : Fin (F.event T hT).cap_count) (hi : i ∉ S)
     (x y : eventCutOpen F T hT P S)
@@ -99,7 +81,6 @@ theorem partialCut_collar_component_eq (i : Fin (F.event T hT).cap_count) (hi : 
       (Subtype.ext ((uncutCollarOldChart_apply F T hT P S i hi w hw).trans hwz))
   exact ConnectedComponents.coe_eq_coe'.mpr (hc.subset_connectedComponent (hmem y hy) (hmem x hx))
 
-
 theorem partialCutVertexComponent_uncut (i : Fin (F.event T hT).cap_count) (hi : i ∉ S) :
     partialCutVertexComponent F T hT P S (cutSideVertex F T hT P i false) =
       partialCutVertexComponent F T hT P S (cutSideVertex F T hT P i true) := by
@@ -108,7 +89,6 @@ theorem partialCutVertexComponent_uncut (i : Fin (F.event T hT).cap_count) (hi :
     intro z hz
     exact ⟨hz.1, hz.2.1, hz.2.2.trans zero_lt_one⟩
   · exact Set.image_mono positive_collar_subset (P i).attachmentPoint_positive
-
 
 theorem partialCut_attachment_component (a : S × Bool) (x : capDoubleBall)
     (hx : 1 < ‖x.val‖) :
@@ -138,7 +118,6 @@ theorem partialCut_attachment_component (a : S × Bool) (x : capDoubleBall)
         fun h => Set.disjoint_left.mp (P i.val).positive_disjoint hpos h
       exact congrArg (fun c => partialCutVertexComponent F T hT P S (.inr c))
         ((P i.val).positive_discarded_component_eq ⟨y.val, hd⟩ hpos)
-
 
 theorem partialCut_ball_center_component (a : S × Bool) :
     ConnectedComponents.mk ((partialCapBall F T hT P S a).map 0) =

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Boundedness.Geometry.NeckLevels.Differential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture.EpsilonNeck
-
-
-
 
 theorem exists_axial_differential_lower_bound
     {δ R G W : ℝ} (hδ : 0 < δ) (hR : 0 < R) (hG : 0 < G) (hW : 0 ≤ W) :
@@ -91,9 +79,6 @@ theorem exists_axial_differential_lower_bound
     field_simp
     ring
   rwa [harith] at hbound
-
-
-
 
 theorem exists_axial_differential_lower_bound_of_gap_rate
     {l G W : ℝ} (hl : 0 < l) (hG : 0 < G) (hW : 0 ≤ W) :

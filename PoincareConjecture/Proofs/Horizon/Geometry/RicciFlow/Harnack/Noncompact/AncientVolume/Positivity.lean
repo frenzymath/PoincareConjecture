@@ -3,18 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Path.Comparison
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,8 +29,6 @@ private theorem exists_smooth_path_on_interval
   obtain ⟨γ, hγa, hγb, hγ, _⟩ :=
     Manifold.exists_lt_locally_constant_of_riemannianEDist_lt hfinite hab
   exact ⟨γ, hγa, hγb, hγ⟩
-
-
 
 theorem scalarCurvature_pos_of_bounded_ancient
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M (Iic 0))

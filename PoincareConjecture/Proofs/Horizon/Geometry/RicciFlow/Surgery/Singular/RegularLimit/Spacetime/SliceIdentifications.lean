@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.Carrier
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -77,7 +70,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
 
-
 def oldSliceHomeomorph (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) {t : ℝ} (ht : t ≠ T) :
     (F.slice t).carrier ≃ₜ (H.extendedSliceGeometry P04 t).slice.carrier :=
@@ -112,7 +104,6 @@ theorem oldSliceHomeomorph_scalar_pullback (H : SingularTimeAssumptions F T M)
   SliceGeometry.homeomorphOfEq_scalar_pullback
     (G := SliceGeometry.ofFlow F t) (K := H.extendedSliceGeometry P04 t)
     (H.extendedSliceGeometry_of_ne P04 ht).symm x
-
 
 def terminalSliceHomeomorph (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :

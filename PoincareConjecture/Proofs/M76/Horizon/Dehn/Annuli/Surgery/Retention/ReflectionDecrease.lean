@@ -5,8 +5,6 @@ open Set Geometry Topology
 
 namespace PoincareConjecture.M76.Dehn.Annuli
 
-
-
 theorem reflection_double_component_count_lt
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
     {f g : E → X} {S T : Set E} (M : SourceCircleDecomposition f S) (i : M.Index)

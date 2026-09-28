@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Pasting.SourceCopies
 
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -10,8 +8,6 @@ namespace PoincareConjecture.M76.Dehn
 local notation "P2" => (ℝ × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
 local notation "Sq" => (I ×ˢ I : Set P2)
-
-
 
 theorem square_pair_cross_fiber_of_tube_preimage
     {X : Type*} {d q : P2 → X} {U : Set X}
@@ -34,8 +30,6 @@ theorem square_pair_cross_fiber_of_tube_preimage
     exact hagree u hside
 
 namespace AnnulusSquareCopies
-
-
 
 theorem double_points_eq_retained
     {X : Type*} {f : Fin 2 → P2 → X} {g : P2 → X}

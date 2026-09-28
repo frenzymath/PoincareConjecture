@@ -1,20 +1,11 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ClosedConnectedAttachment
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
 namespace Topology
 
 variable {X : Type*} [TopologicalSpace X]
-
 
 theorem mem_componentIn_iff_component_class {P : Set X} {x y : X}
     (hx : x ∈ P) (hy : y ∈ P) :
@@ -28,8 +19,6 @@ theorem mem_componentIn_iff_component_class {P : Set X} {x y : X}
   · intro hyc
     exact ⟨⟨y, hy⟩, hyc, rfl⟩
 
-
-
 theorem mem_componentIn_closed_attachment_iff {P D : Set X}
     (hP : IsClosed P) (hD : IsClosed D) (hDc : IsConnected D)
     (hPD : IsConnected (P ∩ D)) {x y : X} (hx : x ∈ P) (hy : y ∈ P) :
@@ -40,7 +29,6 @@ theorem mem_componentIn_closed_attachment_iff {P D : Set X}
     mem_componentIn_iff_component_class (P := P) (x := x) (y := y) hx hy,
     ← hH ⟨y, hy⟩, ← hH ⟨x, hx⟩]
   exact H.injective.eq_iff
-
 
 theorem componentIn_closed_attachment_eq_union {P D : Set X}
     (hP : IsClosed P) (hD : IsClosed D) (hDc : IsConnected D)
@@ -59,8 +47,6 @@ theorem componentIn_closed_attachment_eq_union {P D : Set X}
   · apply union_subset
     · exact connectedComponentIn_mono x subset_union_left
     · rwa [connectedComponentIn_eq hbnew]
-
-
 
 theorem componentIn_closed_attachment_eq_of_not_mem {P D : Set X}
     (hP : IsClosed P) (hD : IsClosed D) (hDc : IsConnected D)

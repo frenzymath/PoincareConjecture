@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Minimizing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Diffeomorph
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.SpaceForm.LocalIsometry.Geodesic
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -32,7 +16,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [PreconnectedSpace M]
-
 
 theorem continuous_toReal_displacement (g : RiemannianMetric n M)
     {F : M → M} (hF : Continuous F) :
@@ -49,7 +32,6 @@ theorem continuous_toReal_displacement (g : RiemannianMetric n M)
     (continuous_id.edist hF).continuousAt
   exact ContinuousAt.comp (f := fun y => g.edist y (F y))
     (ENNReal.continuousAt_toReal (g.edist_ne_top x (F x))) hc
-
 
 theorem exists_positive_minimum_displacement [CompactSpace M] [Nonempty M]
     (g : RiemannianMetric n M) {F : M → M} (hF : Continuous F)
@@ -68,8 +50,6 @@ theorem exists_positive_minimum_displacement [CompactSpace M] [Nonempty M]
   let : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 n) M
   exact ENNReal.toReal_pos (ne_of_gt (edist_pos.mpr (hfree p).symm))
     (g.edist_ne_top p (F p))
-
-
 
 theorem exists_minimum_displacement_geodesic [CompactSpace M] [Nonempty M]
     (g : RiemannianMetric n M) {F : M → M} (hF : Continuous F)
@@ -106,8 +86,6 @@ private theorem initial_norm_of_distance_formula
   simpa only [ENNReal.toReal_ofReal (show 0 ≤ g.tangentNorm p v from Real.sqrt_nonneg _),
     ENNReal.toReal_ofReal hC] using congrArg ENNReal.toReal hspeed
 
-
-
 theorem midpoint_displacement_eq_of_minimizing
     (g : RiemannianMetric n M) {F : M → M}
     (hF : ∀ x y, g.edist (F x) (F y) = g.edist x y)
@@ -140,9 +118,6 @@ theorem midpoint_displacement_eq_of_minimizing
     · exact hmin _
   rw [← ENNReal.ofReal_toReal (g.edist_ne_top (γ (1 / 2)) (F (γ (1 / 2)))),
     ← ENNReal.ofReal_toReal (g.edist_ne_top p (F p)), hreal]
-
-
-
 
 theorem endpoint_chart_velocity_eq_of_minimum_displacement
     (g : RiemannianMetric n M) (F : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ M)
@@ -272,8 +247,6 @@ private theorem deriv_chart_eq_velocity {γ : ℝ → M} {t : ℝ} {p : M}
   rw [hid] at hv
   exact hv
 
-
-
 theorem endpoint_velocity_eq_of_minimum_displacement
     (g : RiemannianMetric n M) (F : M ≃ₘ⟮𝓡 n, 𝓡 n⟯ M)
     (hinner : ∀ (x : M) (v w : TangentSpace (𝓡 n) x),
@@ -305,8 +278,6 @@ theorem endpoint_velocity_eq_of_minimum_displacement
       g.endpoint_chart_velocity_eq_of_minimum_displacement F hinner hε hγ
         hγ0 hγ1 hpos hmin hseg
     _ = mfderiv 𝓘(ℝ, ℝ) (𝓡 n) γ 1 1 := deriv_chart_eq_velocity hd1 hγ1
-
-
 
 theorem exists_minimum_displacement_geodesic_with_matched_velocity
     [CompactSpace M] [Nonempty M]

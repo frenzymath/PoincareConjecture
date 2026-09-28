@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteActualBoundMaps
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointPhysicalJets
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -44,8 +35,6 @@ private local instance actualJetsManifold : IsManifold (𝓡 3) ∞ G.limit.carr
 
 local notation "U" => (fun j : ℕ => TopologicalSpace.Opens.mk
   (G.exhaustion.space j) (G.exhaustion.space_open j))
-
-
 
 theorem limitFinite_actual_endpoint_jets
     (F : ℕ → SurgeryFlowData.{u}) (base Q : ℕ → ℝ) (hQ : ∀ k, 0 < Q k)

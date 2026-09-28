@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitCanonicalPhysicalCoefficientJets
 import PoincareConjecture.Proofs.M34.Mathlib.CenteredDiffeomorph
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,8 +41,6 @@ private noncomputable def finiteOriginalRestrict
     open_target := e.open_target
     contMDiffOn_toFun := Φ.contMDiffOn.mono inter_subset_left
     contMDiffOn_invFun := Φ.symm.contMDiffOn.mono inter_subset_left }
-
-
 
 theorem limitFinite_exists_original_chart
     {C : GeneralizedSliceCarrier.{u}} (U : TopologicalSpace.Opens C.carrier) (q : U) :
@@ -102,8 +92,6 @@ theorem limitFinite_exists_original_chart
   change (extChartAt (𝓡 3) q.val).symm ((extChartAt (𝓡 3) q.val) q.val + 0) = q.val
   rw [add_zero]
   exact (extChartAt (𝓡 3) q.val).left_inv (mem_extChartAt_source q.val)
-
-
 
 theorem limitFinite_original_chart_differential
     {C : GeneralizedSliceCarrier.{u}} (U : TopologicalSpace.Opens C.carrier) (q : U)

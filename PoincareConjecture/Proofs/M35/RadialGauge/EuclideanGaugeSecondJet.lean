@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.EuclideanGaugeTime
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 
@@ -70,8 +60,6 @@ private theorem exp_hessian {u : V → ℝ} (hu : ContDiff ℝ ∞ u) (x v w : V
   rw [h]
   ring
 
-
-
 theorem euclideanGauge_hessian_apply {u : V → ℝ} (hu : ContDiff ℝ ∞ u) (x v w : V) :
     fderiv ℝ (fderiv ℝ (euclideanGauge u)) x v w =
       (Real.exp (u x) * fderiv ℝ u x v) • w +
@@ -82,8 +70,6 @@ theorem euclideanGauge_hessian_apply {u : V → ℝ} (hu : ContDiff ℝ ∞ u) (
   rw [scalar_scale_hessian hu.exp, exp_hessian hu,
     ((hu.differentiable (by simp) x).hasFDerivAt.exp).fderiv]
   rfl
-
-
 
 theorem euclideanGauge_hessian_joint_c1
     {u : ℝ → V → ℝ} {J : Set ℝ}

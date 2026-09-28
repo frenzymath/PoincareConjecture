@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TriangleInteriorHeightBox
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePositiveHeightGap
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -22,11 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_disjoint_affine_height_boxes_at_marks
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)
@@ -77,12 +61,6 @@ theorem exists_disjoint_affine_height_boxes_at_marks
     exact (hVdisj (mem_range_self i) (mem_range_self j)
       (fun h => hij (hinj h))).mono
         ((hfsmall i).trans inter_subset_left) ((hfsmall j).trans inter_subset_left)
-
-
-
-
-
-
 
 theorem exists_subordinate_height_section_cut_boxes
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

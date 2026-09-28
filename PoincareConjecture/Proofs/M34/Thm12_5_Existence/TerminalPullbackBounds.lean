@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.TerminalCurvatureBounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +15,6 @@ variable {g0 : StandardInitialMetric} {F : PartialStandardCapFlow g0} {S : ℝ}
   (E0 : StandardCapEstimate g0) {B : ℝ} (hS : 0 < S) (hSF : S ≤ F.lifetime) (hB : 0 < B)
   (hfull : ∀ t ∈ Ico 0 S, ∀ x : StandardCapSpace,
     (F.flow.connection t).curvatureTensorNorm x ≤ B)
-
-
-
 
 theorem closedFlow_compactPullback_spatialJet_bounds
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :
@@ -70,8 +57,6 @@ theorem closedFlow_compactPullback_spatialJet_bounds
     exact hold s hs
   · exact hold t ⟨ht.1, hlt⟩
 
-
-
 theorem metric_compactPullback_spatialJet_bounds
     {K : Set StandardCapSpace} (hK : IsCompact K) (m : ℕ) :
     ∃ G : ℝ, 1 ≤ G ∧ ∀ j ≤ m, ∀ {U : Set StandardCapSpace}, IsOpen U →
@@ -90,8 +75,6 @@ theorem metric_compactPullback_spatialJet_bounds
   change ‖iteratedFDeriv ℝ j
     ((L.closedMetric P E0 hS hSF hB hfull S).pullbackCoefficients e) x‖ ≤ G at h
   rwa [L.closedMetric_terminal] at h
-
-
 
 theorem metric_compactPullback_ellipticity
     {K : Set StandardCapSpace} (hK : IsCompact K) :

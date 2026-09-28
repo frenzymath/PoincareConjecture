@@ -1,22 +1,9 @@
 import Mathlib.LinearAlgebra.Prod
 import Mathlib.LinearAlgebra.FiniteDimensional.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace LinearMap
-
-
-
 
 theorem exists_axis_of_not_injective_fst
     {K V E : Type*} [Field K] [AddCommGroup V] [Module K V]
@@ -40,9 +27,6 @@ theorem exists_axis_of_not_injective_fst
   rw [map_smul]
   exact Prod.ext (by simp only [Prod.smul_fst, hfirst, smul_zero])
     (by simp only [Prod.smul_snd, smul_eq_mul, inv_mul_cancel₀ hsecond])
-
-
-
 
 theorem exists_horizontal_of_axis_mem_range
     {K V E : Type*} [Field K] [AddCommGroup V] [Module K V]

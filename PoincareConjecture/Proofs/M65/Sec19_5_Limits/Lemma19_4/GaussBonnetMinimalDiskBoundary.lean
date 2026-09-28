@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryGeometry
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundaryAlternative
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,12 +19,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {gamma : C1FreeLoopSpace (M := M)}
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
-
 
 theorem boundary_branch_residual_holder (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))
@@ -202,9 +186,6 @@ theorem boundary_branch_residual_holder (S : M65MinimalDisk g connection gamma)
         Complex.I • coordinateComplexification (fderivWithin ℝ H Kd z Complex.I) = _
     rw [hder z hz]
     exact hfactor z hz
-
-
-
 
 theorem boundary_branch_residual (S : M65MinimalDisk g connection gamma)
     (hinj : Function.Injective (gamma : LoopCircle → M))

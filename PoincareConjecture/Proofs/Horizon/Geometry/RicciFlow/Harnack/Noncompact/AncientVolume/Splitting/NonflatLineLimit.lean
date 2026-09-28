@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.SmallSurfaceLine
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Volume.SmallSelectedLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -50,8 +38,6 @@ private theorem small_scalarCurvature_pos_of_nonflat_operator
   exact (not_lt_of_ge (hbound.trans (mul_nonpos_of_nonneg_of_nonpos (sq_nonneg _) h))) hnonflat
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem exists_nonflat_small_ancient_limit_with_line_of_unbounded_scalar_ratio
     {m : ℕ} (hm : 0 < m) {M : Type u}
@@ -99,8 +85,6 @@ theorem exists_nonflat_small_ancient_limit_with_line_of_unbounded_scalar_ratio
     (hGoperator 0 hδ G.base) hnonflat
   exact ⟨G.limitCarrier, δ, hδ, hδone, G.limitFlow, G.base,
     hGcomplete, hGoperator, hGnorm, hscalar, hAVR, hline⟩
-
-
 
 theorem false_of_surface_unbounded_scalar_ratio_and_positive_volume
     {M : Type u} [TopologicalSpace M] [T3Space M] [SecondCountableTopology M]

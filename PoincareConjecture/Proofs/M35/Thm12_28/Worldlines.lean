@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceCylinders
 import PoincareConjecture.Proofs.M35.Mathlib.NormalizedInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35.OrdinaryRealization
-
-
 
 noncomputable def maximalWorldline {J : Set ℝ} (F : RicciFlow 3 StandardCapSpace J)
     (hJ : J.OrdConnected) {a : ℝ} (ha : a ∈ J) (x : (slice J a).carrier)
@@ -36,8 +25,6 @@ noncomputable def maximalWorldline {J : Set ℝ} (F : RicciFlow 3 StandardCapSpa
     apply Subset.antisymm _ hI
     intro s hs
     exact (e'.forward s hs x).property
-
-
 
 noncomputable def maximalWorldlineIco {L : ℝ}
     (F : RicciFlow 3 StandardCapSpace (Ico 0 L)) {a : ℝ} (ha : a ∈ Ico 0 L)

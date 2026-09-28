@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.TerminalBlowup.RadialWarping
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -19,9 +9,7 @@ open scoped ContDiff Topology
 
 namespace PoincareConjecture.M35.RadialGauge
 
-
 noncomputable def mapRadius (u : ℝ → ℝ) (r : ℝ) : ℝ := r * Real.exp (u r)
-
 
 theorem mapRadius_hasDerivAt {u : ℝ → ℝ} {r ur : ℝ}
     (hu : HasDerivAt u ur r) :
@@ -29,7 +17,6 @@ theorem mapRadius_hasDerivAt {u : ℝ → ℝ} {r ur : ℝ}
   convert! (hasDerivAt_id r).mul hu.exp using 1
   simp only [id_eq, one_mul]
   ring
-
 
 theorem mapRadius_second_deriv {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (r : ℝ) :
     deriv (deriv (mapRadius u)) r =
@@ -46,8 +33,6 @@ theorem mapRadius_second_deriv {u : ℝ → ℝ} (hu : ContDiff ℝ ∞ u) (r : 
   simp only [Pi.mul_apply, id_eq, one_mul]
   ring
 
-
-
 theorem mapRadius_hasDerivAt_time {u : ℝ → ℝ → ℝ} {t ut : ℝ}
     (r : ℝ) (hu : HasDerivAt (fun s => u s r) ut t) :
     HasDerivAt (fun s => mapRadius (u s) r) (mapRadius (u t) r * ut) t := by
@@ -55,14 +40,10 @@ theorem mapRadius_hasDerivAt_time {u : ℝ → ℝ → ℝ} {t ut : ℝ}
   simp only [mapRadius]
   ring
 
-
-
 noncomputable def harmonicRadialOperator
     (n : ℝ) (f f₀ velocity rho : ℝ → ℝ) (r : ℝ) : ℝ :=
   deriv (deriv rho) r + (n - 1) * (deriv f r / f r) * deriv rho r -
     (n - 1) * f₀ (rho r) * deriv f₀ (rho r) / f r ^ 2 - velocity r * deriv rho r
-
-
 
 noncomputable def logarithmicRadialOperator
     (n : ℝ) (f f₀ velocity u : ℝ → ℝ) (r : ℝ) : ℝ :=
@@ -71,8 +52,6 @@ noncomputable def logarithmicRadialOperator
     (n - 1) * deriv f r / (r * f r) -
     (n - 1) * f₀ (mapRadius u r) * deriv f₀ (mapRadius u r) /
       (mapRadius u r * f r ^ 2) - velocity r / r
-
-
 
 theorem harmonicRadialOperator_mapRadius
     (n : ℝ) (f f₀ velocity : ℝ → ℝ) {u : ℝ → ℝ}
@@ -86,8 +65,6 @@ theorem harmonicRadialOperator_mapRadius
   field_simp [hr.ne', hf, Real.exp_ne_zero]
   ring
 
-
-
 theorem logarithmicRadialOperator_zero (n : ℝ) (f velocity : ℝ → ℝ)
     {r : ℝ} (hr : 0 < r) (hf : f r ≠ 0) :
     logarithmicRadialOperator n f f velocity (fun _ => 0) r = -velocity r / r := by
@@ -95,9 +72,6 @@ theorem logarithmicRadialOperator_zero (n : ℝ) (f velocity : ℝ → ℝ)
     zero_pow, ne_eq, OfNat.ofNat_ne_zero, not_false_eq_true, zero_add, mul_zero, add_zero]
   field_simp [hr.ne', hf]
   ring
-
-
-
 
 theorem corrected_equation_iff
     (n : ℝ) (f f₀ velocity : ℝ → ℝ) {u : ℝ → ℝ → ℝ}

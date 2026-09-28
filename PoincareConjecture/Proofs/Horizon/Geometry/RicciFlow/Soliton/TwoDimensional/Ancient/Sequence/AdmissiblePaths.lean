@@ -5,14 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +17,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 
 namespace RicciFlow
-
-
 
 theorem continuousOn_backwardLIntegrand_surface_of_contMDiff
     (F : RicciFlow 2 M (Iic 0)) {tau : ℝ} (htau : 0 < tau)
@@ -65,8 +55,6 @@ theorem continuousOn_backwardLIntegrand_surface_of_contMDiff
       (fun s hs => ⟨by constructor <;> linarith [hs.1, hs.2], mem_univ _⟩)
   exact Real.continuous_sqrt.continuousOn.mul (hscalar.add henergy)
 
-
-
 theorem intervalIntegrable_backwardLIntegrand_surface_of_contMDiff
     (F : RicciFlow 2 M (Iic 0)) {tau : ℝ} (htau : 0 < tau)
     {γ : ℝ → M} (hγ : ContMDiff 𝓘(ℝ, ℝ) (𝓡 2) 1 γ) :
@@ -80,8 +68,6 @@ namespace AncientKappaSolution
 
 variable [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_backwardTimePath_surface (K : AncientKappaSolution 2 M)
     (p q : M) {tau : ℝ} (htau : 0 < tau) :

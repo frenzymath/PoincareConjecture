@@ -2,21 +2,10 @@ import Mathlib.Analysis.InnerProductSpace.Calculus
 import Mathlib.Analysis.Calculus.MeanValue
 import Mathlib.Analysis.Calculus.Deriv.Inv
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped RealInnerProductSpace
-
-
 
 theorem HasDerivAt.normalized_direction_of_radial
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
@@ -38,8 +27,6 @@ theorem HasDerivAt.normalized_direction_of_radial
       field_simp
       ring
     rw [hc, zero_smul]
-
-
 
 theorem normalized_direction_eq_of_radial
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

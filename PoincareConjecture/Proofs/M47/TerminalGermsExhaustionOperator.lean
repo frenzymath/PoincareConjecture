@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsExhaustionFlows
 import PoincareConjecture.Proofs.M12.Geometry.Riemannian.Curvature.LocalIsometryInvariants
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +8,6 @@ open Set TopologicalSpace
 open scoped Manifold ContDiff
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalGerms_descended_operator
     {n : ℕ} {ι : Type*} {P : ι → Type*} {M : Type*}
@@ -75,8 +63,6 @@ theorem terminalGerms_descended_operator
     hmetric (x := z) (mem_univ z)).mp hsource
   have hz : terminalGermsOpenChartMap (q i) (hq i) U z = y := Subtype.ext hxy
   exact hz ▸ htarget
-
-
 
 theorem terminalGerms_ambient_operator_of_exhaustion
     {n : ℕ} {ι : Type*} {M : Type*} [TopologicalSpace M]

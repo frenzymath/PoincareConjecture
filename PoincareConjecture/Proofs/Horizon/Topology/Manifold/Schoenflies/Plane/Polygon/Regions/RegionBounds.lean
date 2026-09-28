@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.HalfspaceExterior
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.Regions.Regions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +8,6 @@ open Set
 namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
-
-
 
 theorem polygonExterior_of_lt_vertex_bound (p : Polygon E n) (X : E →L[ℝ] ℝ)
     (hX : Function.Surjective X) (c : ℝ) (hvertices : ∀ i, c ≤ X (p i))
@@ -32,8 +20,6 @@ theorem polygonExterior_of_lt_vertex_bound (p : Polygon E n) (X : E →L[ℝ] �
   refine ⟨?_, not_isBounded_compl_component_of_lt_linear_bound X hX c hC hx⟩
   intro hxC
   exact (not_lt_of_ge (show c ≤ X x from hC hxC)) hx
-
-
 
 theorem closure_polygonInterior_subset_linear_lower_bound (p : Polygon E n)
     (X : E →L[ℝ] ℝ) (hX : Function.Surjective X) (c : ℝ)

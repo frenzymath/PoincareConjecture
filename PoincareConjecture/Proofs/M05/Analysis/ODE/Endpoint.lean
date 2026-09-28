@@ -1,13 +1,4 @@
-
 import Mathlib.Analysis.Calculus.FDeriv.Extend
-
-
-
-
-
-
-
-
 
 namespace Poincare
 
@@ -15,8 +6,6 @@ open Set Filter
 open scoped Topology
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem hasDerivWithinAt_Ici_of_continuousOn
     {a b : ℝ} {f g : ℝ → E}

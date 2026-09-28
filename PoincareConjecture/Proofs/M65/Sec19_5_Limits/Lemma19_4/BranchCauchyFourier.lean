@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchGaugeCalculu
 import PoincareConjecture.Proofs.M65.Mathlib.Plateau.FourierL2Integral
 import Mathlib.Analysis.Complex.Liouville
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open Set Metric Filter MeasureTheory Complex
 open scoped Topology SchwartzMap ContDiff
 
 namespace PoincareConjecture.M65Branch
-
-
-
 
 theorem cauchyOperator_eq_schwartzDbarPotential (h : 𝓢(ℂ, ℂ))
     (hs : HasCompactSupport (h : ℂ → ℂ)) :
@@ -56,9 +42,6 @@ theorem cauchyOperator_eq_schwartzDbarPotential (h : 𝓢(ℂ, ℂ))
     simpa only [sub_self] using hCzero.sub (tendsto_schwartzDbarPotential h)
   funext z
   exact sub_eq_zero.mp (hhol.apply_eq_of_tendsto_cocompact z hzero)
-
-
-
 
 theorem fderiv_cauchyOperator_beurling_ae (h : 𝓢(ℂ, ℂ))
     (hs : HasCompactSupport (h : ℂ → ℂ)) :

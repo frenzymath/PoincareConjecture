@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.ODE.LocalFlow.Smooth
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Pullback
 import Mathlib.Geometry.Manifold.IntegralCurve.Basic
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -99,8 +90,6 @@ private theorem exists_smooth_local_timeDependent_euclidean
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_smooth_local_timeDependentFlow
     {J : Set ℝ} (hJ : IsOpen J)

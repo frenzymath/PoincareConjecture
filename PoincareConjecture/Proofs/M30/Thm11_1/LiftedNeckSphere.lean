@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.StaticNullField
 import PoincareConjecture.Proofs.M30.Thm11_1.NullNeckTransversality
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.Sphere.SphereConnectivity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_neck_lifted_sphere_transverse_unitRicciKernelField :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 200 ∧

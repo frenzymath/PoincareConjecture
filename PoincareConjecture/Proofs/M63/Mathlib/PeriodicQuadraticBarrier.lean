@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicMaximumPrinciple
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 
 namespace Poincare.Parabolic
-
-
-
-
 
 theorem periodic_le_quadratic_barrier
     {U V : ℝ → ℝ → ℝ} {p a b D R : ℝ} (hp : 0 < p) (hab : a < b)

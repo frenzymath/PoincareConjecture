@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceShortenedSearch
 import PoincareConjecture.Proofs.M47.BlowupControlsSourcePositiveCapCanonical
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceZeroCapCanonical
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -58,8 +49,6 @@ private theorem canonicalCylinder_zero_contact_of_based
   intro hn
   obtain ⟨i, z, ⟨y, rfl⟩, hz⟩ := htarget
   exact ⟨i, y.1, y.2, hz⟩
-
-
 
 theorem exists_first_failure_source_cylinder_of_pointwise
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.Euclidean
 import PoincareConjecture.Proofs.M07.Analysis.NormedSpace.FiniteDimension
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 
@@ -17,8 +10,6 @@ open Filter
 namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ}
-
-
 
 theorem iteratedFDeriv_inner_eq
     (g : RiemannianMetric n (EuclideanSpace ℝ (Fin n)))
@@ -38,8 +29,6 @@ theorem iteratedFDeriv_inner_eq
   change iteratedFDeriv ℝ r (fun y => g.inner y a b) x v =
     (iteratedFDeriv ℝ r g.euclideanCoefficients x v) a b at hh
   exact hh
-
-
 
 theorem tendsto_euclideanCoefficients_of_scalar_jets
     {α : Type*} {l : Filter α}

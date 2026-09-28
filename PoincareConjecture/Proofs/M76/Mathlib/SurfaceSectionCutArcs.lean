@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteSurfaceSectionMarks
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIntervals
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCutArcIncidence
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,12 +10,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_subordinate_height_section_cut_arcs
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

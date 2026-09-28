@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.HeightFibers
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Terminal.NestedGeometry
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,12 +32,10 @@ private theorem fiber_mem_image_iff
     change d.frame (d.D q) = d.frame (d.D (d.frame.symm (Saddle.toE3 x z)))
     rw [← hq, d.frame.symm_apply_apply]
 
-
 theorem terminalHeightFiber_mem_actual_slice_iff
     (d : TerminalSaddleGeometry M P p e) (z : Real) (x : E2) :
     terminalHeightFiber d z x ∈ d.A z ↔ Saddle.toE3 x z ∈ d.frame '' range g :=
   fiber_mem_image_iff d z x _
-
 
 theorem terminalHeightFiber_mem_model_slice_iff
     (d : TerminalSaddleGeometry M P p e) (z : Real) (x : E2) :
@@ -101,9 +97,6 @@ private theorem moving_chart_properties
   · intro x hx t ht
     exact (terminalHeightFiber_mem_actual_slice_iff d (c + t) (R x)).trans (hslice x hx t ht)
 
-
-
-
 theorem exists_terminal_geometry_with_matched_moving_morse_coordinates
     (M : SphereMorseReduction f) (hg : g ∈ M.tree.leaves)
     (P : SphereSurgeryPath (M.v : E3) (fun q => M.D (f q)) g)
@@ -164,8 +157,6 @@ theorem exists_terminal_geometry_with_matched_moving_morse_coordinates
   refine ⟨hactual x hx t ht, ?_⟩
   rw [hformula, terminalHeightFiber_mem_model_slice_iff]
   exact (hraw x hx t ht).2
-
-
 
 theorem exists_terminal_geometry_with_moving_morse_coordinates
     (M : SphereMorseReduction f) (hg : g ∈ M.tree.leaves)

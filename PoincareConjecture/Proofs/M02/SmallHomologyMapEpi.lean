@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M02.SmallHomologyRepresentative
 import PoincareConjecture.Proofs.M02.IntegralHomologyCycle
 import Mathlib.Algebra.Category.ModuleCat.EpiMono
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open CategoryTheory Limits

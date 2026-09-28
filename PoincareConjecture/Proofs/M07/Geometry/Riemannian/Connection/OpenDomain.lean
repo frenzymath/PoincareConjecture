@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.EuclideanConstruction
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -364,8 +356,6 @@ private theorem openConnection_smooth (g : RiemannianMetric n U) :
   rw [Bundle.Trivialization.continuousLinearMapAt_apply_of_mem ℝ _ hy]
   rw [tangent_coordinates]
   rfl
-
-
 
 noncomputable def openEuclideanLeviCivitaData (g : RiemannianMetric n U) :
     LeviCivitaData g where

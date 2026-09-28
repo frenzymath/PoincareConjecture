@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveHistoryPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -18,8 +10,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem seedM15_path_component_box
     (G : GeneralizedRicciFlowData.{u}) {I : Set ℝ} {b : ℝ}
@@ -44,8 +34,6 @@ theorem seedM15_path_component_box
   refine ⟨q, x, hbox, hpoint.symm, ?_⟩
   exact (hcont b hb) ((componentBoxImage_isOpen G ⟨q, x⟩).mem_nhds hmem)
 
-
-
 theorem seedM15_historyPositive_box_line
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}
     (H : M33RegularHistoryRealization G F)
@@ -60,7 +48,6 @@ theorem seedM15_historyPositive_box_line
     exact mem_connectedComponent
   exact ⟨t.property, positive_component_history_box_connected H q hxy
     t.property t.property le_rfl (hpos (m33BoxIntervalSubset G q t.property))⟩
-
 
 theorem seedM15_historyPositive_box_line_at
     {F : SurgeryFlowData.{u}} {G : GeneralizedRicciFlowData.{u}}

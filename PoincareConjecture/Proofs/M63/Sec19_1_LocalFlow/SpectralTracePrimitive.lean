@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.InitialResponseTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -19,9 +11,6 @@ open SpectralHeatNative
 
 variable {iota : Type*} [Countable iota] (lambda : iota → NNReal)
   (w : State iota) {T : ℝ} (hT : 0 ≤ T) (F : ForcingSpace iota T)
-
-
-
 
 theorem initialResponseTrace_integral :
     IntervalIntegrable
@@ -52,10 +41,6 @@ theorem initialResponseTrace_integral :
       (∫ s in (0 : ℝ)..(t : ℝ), derivativeState lambda F s) = _
   abel
 
-
-
-
-
 theorem initialResponseTrace_generator :
     ∀ᵐ t ∂timeMeasure T, ∀ ht : t ∈ Icc (0 : ℝ) T,
       initialHeatHigh lambda w t + shiftedHighOperator hT lambda F t -
@@ -81,9 +66,6 @@ theorem initialResponseTrace_generator :
   · calc
       _ = derivativeState lambda F t + generatorState lambda F t := by abel
       _ = F t := heq
-
-
-
 
 theorem initialResponseTrace_integral_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

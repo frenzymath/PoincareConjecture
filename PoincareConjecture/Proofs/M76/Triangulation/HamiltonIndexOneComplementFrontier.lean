@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneShellDiskCover
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonRegionRecognition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -20,21 +10,14 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 local notation "V2" => (ℝ × ℝ)
 local notation "W" => (ℝ × V2)
 
-
 def squareBlock : Set W := Icc (-1) 1 ×ˢ closedBall 0 2
-
 
 def squareAttachingDisks : Set W := ({-1, 1} : Set ℝ) ×ˢ closedBall 0 (3 / 2)
 
-
 def squareRims : Set W := ({-1, 1} : Set ℝ) ×ˢ sphere 0 (3 / 2)
-
 
 def squareOuterAnnulus : Set W :=
   {x | x ∈ frontier squareBlock ∧ (3 / 2 : ℝ) ≤ ‖x.2‖}
-
-
-
 
 def complementaryRegion (B : Set W) : Set W := closure (interior squareBlock \ B)
 
@@ -142,11 +125,6 @@ private theorem rims_subset_complementary {B : Set W} (hB : IsClosed B)
   have hlim := hf.continuousWithinAt.mem_closure hbase hmaps
   rw [(show IsClosed (complementaryRegion B) from isClosed_closure).closure_eq] at hlim
   simpa only [f, div_self (by norm_num : (3 / 2 : ℝ) ≠ 0), one_smul, Prod.mk.eta] using hlim
-
-
-
-
-
 
 theorem complementaryRegion_geometry {B T : Set W}
     (hB : IsClosed B) (hBreg : closure (interior B) = B) (hBL : B ⊆ squareBlock)

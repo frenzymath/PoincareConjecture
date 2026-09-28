@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ChordEstimates
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.ChordContainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_uniform_short_chord_direction_mem_open
     {X E : Type*} [PseudoMetricSpace X] [NormedAddCommGroup E] [NormedSpace ℝ E]

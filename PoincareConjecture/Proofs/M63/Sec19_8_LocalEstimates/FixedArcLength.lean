@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M62.Lemma19_9_Length
 import PoincareConjecture.Proofs.M63.Mathlib.ClosedIntegralComparison
 import PoincareConjecture.Definitions.M63Ramp
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -27,15 +16,10 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
 
-
-
 theorem m63ArcLength_continuousOn (hc : M62ShrinkingCurve F c)
     (alpha beta : ℝ) :
     ContinuousOn (fun t => m63ArcLength F c t alpha beta) (Set.Icc a b) :=
   (speed_continuousOn F c hc).intervalIntegral_prod_left alpha beta
-
-
-
 
 theorem m63ArcLength_hasDerivAt (hc : M62ShrinkingCurve F c)
     {alpha beta : ℝ} (hab : alpha ≤ beta)
@@ -63,9 +47,6 @@ theorem m63ArcLength_hasDerivAt (hc : M62ShrinkingCurve F c)
   dsimp only
   rw [heq]
   ring
-
-
-
 
 theorem m63ArcLength_deriv_le_integral (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
@@ -97,9 +78,6 @@ theorem m63ArcLength_deriv_le_integral (hc : M62ShrinkingCurve F c)
     _ ≤ (K2 - m62CurvatureSquared F c t x) * curveSpeed F c t x :=
       mul_le_mul_of_nonneg_right (by linarith) (speed_nonneg F c t x)
 
-
-
-
 theorem m63ArcLength_deriv_le (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)
     {alpha beta : ℝ} (hab : alpha ≤ beta)
@@ -125,9 +103,6 @@ theorem m63ArcLength_deriv_le (hc : M62ShrinkingCurve F c)
       exact mul_le_mul_of_nonneg_right
         (sub_le_self _ (curvatureSquared_nonneg F c t x)) (speed_nonneg F c t x)
     _ = K2 * m63ArcLength F c t alpha beta := intervalIntegral.integral_const_mul _ _
-
-
-
 
 theorem m63ArcLength_le_mul_exp (hc : M62ShrinkingCurve F c)
     {K0 K1 K2 : ℝ} (hBounds : CurveEvolutionAmbientBounds F K0 K1 K2)

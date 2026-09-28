@@ -1,18 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_TwoArcRegion
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,10 +7,6 @@ open Set Function
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64Intrinsic_exists_first_crossing
     {alpha beta : ℝ → AnnulusCoordinates} {A B : ℝ}
@@ -60,9 +43,6 @@ theorem m64Intrinsic_exists_first_crossing
   have hsum := hmin hxyC
   change p.1 + p.2 ≤ x + y at hsum
   constructor <;> linarith [hx.2, hy.2]
-
-
-
 
 theorem m64Intrinsic_exists_embedded_join
     {alpha beta : ℝ → AnnulusCoordinates}
@@ -146,10 +126,6 @@ theorem m64Intrinsic_exists_embedded_join
         simp only [gamma, if_neg (by linarith : ¬ (t + 1) / 2 ≤ 1 / 2)]
         congr 1
         ring
-
-
-
-
 
 theorem m64Intrinsic_exists_crossing_ray_region
     {alpha beta base : ℝ → AnnulusCoordinates} {A B : ℝ}

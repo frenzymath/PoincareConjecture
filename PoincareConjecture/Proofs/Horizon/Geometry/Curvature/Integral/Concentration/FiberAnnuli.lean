@@ -2,7 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentrati
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularFiberCompact
 
-
 open Set Filter MeasureTheory
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Bundle Topology
@@ -132,8 +131,6 @@ theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_outsid
   rw [hballEq, hballEq] at hx
   exact ⟨Metric.ball_subset_closedBall hx.1, hx.2⟩
 
-
-
 theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_ambient_ball_le
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
     [MeasurableSpace M] [BorelSpace M]
@@ -213,7 +210,6 @@ theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_ambien
   rw [show 4*(a/4)=a by ring, hballEq a] at hb
   exact hb
 
-
 theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_outside_ambient_ball_le_of_nonneg
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
     [MeasurableSpace M] [BorelSpace M]
@@ -269,8 +265,6 @@ theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_outsid
   · exact g.integral_openFiber_pos_scalar_outside_ambient_ball_le hc hf U hreg c p
       ha hr₀ hR hR' hC hd hL hball D W K hW hKint hKn hbuffer
       (fun r hr hr' => hbound r (by linarith) hr hr')
-
-
 
 theorem PoincareConjecture.RiemannianMetric.integral_openFiber_pos_scalar_outside_iUnion_ambient_ball_le_of_weighted_mixed_annuli
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

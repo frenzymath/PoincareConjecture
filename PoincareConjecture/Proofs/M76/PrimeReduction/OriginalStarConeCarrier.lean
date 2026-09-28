@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedVertexIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderBaseConeAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem closedStar_space_eq_convexJoin_link (K : SimplicialComplex ℝ E)
     {p : E} (hp : p ∈ K.vertices) (hne : (K.link p).space.Nonempty) :

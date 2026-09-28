@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalAdjunction
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.InducedMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
@@ -16,8 +8,6 @@ open scoped Topology unitInterval
 namespace Path
 
 variable {X : Type*} [TopologicalSpace X] {x : X}
-
-
 
 theorem homotopic_trans_trace (p q : Path x x)
     (H : p.toContinuousMap.Homotopy q.toContinuousMap)
@@ -34,8 +24,6 @@ theorem homotopic_trans_trace (p q : Path x x)
   · ext t
     simp only [Path.cast_coe, Path.trans_apply]
     split_ifs <;> rfl
-
-
 
 theorem homotopic_of_free_homotopy
     (hcomm : ∀ a b : FundamentalGroup X x, a * b = b * a)

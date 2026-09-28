@@ -1,13 +1,6 @@
 import PoincareConjecture.Definitions.M55ChildComponents
 import PoincareConjecture.Statements.M54GroupEffects
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -15,23 +8,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 structure RepairedChildComponentsTheory : Prop where
   components : ∀ (G54 : RepairedGroupEffectsTheory.{u}),

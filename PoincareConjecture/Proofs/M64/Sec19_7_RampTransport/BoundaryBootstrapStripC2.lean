@@ -1,9 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.StripSourceNeighborhood
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -17,9 +13,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "S" => Set.ofPred (fun p : LoopPlane => p 1 ∈ Icc (0 : ℝ) 1)
-
-
-
 
 theorem annulus_boundary_c2_of_coordinates (f : LoopPlane → M)
     {r : ℝ} (hr : r ≠ 0) (x : ℝ) (upper : Bool)
@@ -82,9 +75,6 @@ theorem annulus_boundary_c2_of_coordinates (f : LoopPlane → M)
     simp only [Function.comp_apply, hPQ]
   exact (hpull a ⟨haS, haV⟩).mono_of_mem_nhdsWithin
     (inter_mem self_mem_nhdsWithin (mem_nhdsWithin_of_mem_nhds hV))
-
-
-
 
 theorem annulus_strip_c2_of_boundary_charts (f : LoopPlane → M)
     {r : ℝ} (hr : r ≠ 0)

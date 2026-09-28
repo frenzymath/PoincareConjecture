@@ -2,20 +2,10 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeEndTails
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeSharpScalar
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeTerminalScalar
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option linter.hashCommand false
 
 open PoincareConjecture.M28
 
-
 open CounterexampleNeckFamily
-

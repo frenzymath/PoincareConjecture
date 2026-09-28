@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M46.ConfigurationTransfer
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_EpochWindow
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_SeedScales
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ universe u
 namespace PoincareConjecture.M47
 
 open Proofs.M46
-
-
 
 theorem exists_seedM15_uniformData
     (P : M46Predecessors.{u}) {K : MetricSurgeryConstants}
@@ -41,8 +30,6 @@ theorem exists_seedM15_uniformData
   have hrho := seedImageRadius_pos hB (p.r_pos (Fin.last p.i))
   have hkappa := p.kappa_pos (Fin.last p.i)
   exact P.uniformConfigurationData _ _ _ hH hl0 (by positivity)
-
-
 
 theorem seedM15_volume_of_oldSeed
     (P : M46Predecessors.{u}) {K : MetricSurgeryConstants}

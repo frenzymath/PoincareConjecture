@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.CutGraphConnectivity
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.CutGraphHomologyBound
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u

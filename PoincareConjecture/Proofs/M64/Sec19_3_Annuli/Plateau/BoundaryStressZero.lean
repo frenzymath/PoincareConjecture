@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryStressTrigonometricModes
 import PoincareConjecture.Proofs.M64.Mathlib.L1TrigonometricUniqueness
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option warningAsError true
 
@@ -26,9 +14,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
 local notation "nu" => volume.restrict (Icc (0 : ℝ) 1)
-
-
-
 
 theorem m64Annulus_zero_of_trigonometric_moments
     {f : LoopPlane → ℝ} (hf : Integrable f mu)
@@ -48,10 +33,6 @@ theorem m64Annulus_zero_of_trigonometric_moments
   have hzero := (integral_eq_zero_iff_of_nonneg (fun p => norm_nonneg (f p)) hf.norm).mp hnorm
   filter_upwards [hzero] with p hp
   exact norm_eq_zero.mp hp
-
-
-
-
 
 theorem m64AnnulusStress_eq_zero
     {U V : LoopPlane → ℝ} (hU : Integrable U mu) (hV : Integrable V mu)

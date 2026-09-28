@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SphereBundles
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 noncomputable def componentDiffeomorph {A B : GeneralizedSliceCarrier.{u}}
     (e : Diffeomorph (𝓡 3) (𝓡 3) A.carrier B.carrier ∞) (x : A.carrier) :
@@ -44,8 +34,6 @@ noncomputable def componentDiffeomorph {A B : GeneralizedSliceCarrier.{u}}
     exact e.contMDiff.comp (contMDiff_subtype_val (U := componentOpen A x))
   · apply (ContMDiff.subtypeVal_comp_iff (componentOpen A x) inverse).mp
     exact e.symm.contMDiff.comp (contMDiff_subtype_val (U := componentOpen B (e x)))
-
-
 
 noncomputable def surgeryBundleAlongDiffeomorph {A B : GeneralizedSliceCarrier.{u}}
     (P : SurgerySphereBundle B)

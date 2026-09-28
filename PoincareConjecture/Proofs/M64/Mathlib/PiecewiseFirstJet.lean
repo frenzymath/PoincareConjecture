@@ -1,22 +1,11 @@
 import Mathlib.Analysis.Calculus.FDeriv.Congr
 import Mathlib.Analysis.Calculus.Deriv.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64HasFDerivAt_piecewise_of_same_jet
     {𝕜 E F : Type*} [NontriviallyNormedField 𝕜]
@@ -34,9 +23,6 @@ theorem m64HasFDerivAt_piecewise_of_same_jet
       (by by_cases hx : x ∈ S <;> simp [hx, hval])
   have h := hleft.union hright
   rwa [union_compl_self, hasFDerivWithinAt_univ] at h
-
-
-
 
 theorem m64HasDerivAt_piecewise_of_same_jet
     {𝕜 F : Type*} [NontriviallyNormedField 𝕜]

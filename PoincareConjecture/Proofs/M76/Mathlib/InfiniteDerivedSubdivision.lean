@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import PoincareConjecture.Proofs.M76.Mathlib.DirectedSimplicialUnion
 import Mathlib.Order.Interval.Finset.Nat
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,10 +11,6 @@ open scoped BigOperators
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
-
-
 
 theorem exists_derived_subdivision (K : SimplicialComplex ℝ E) (c : Finset E → E)
     (hc : ∀ s ∈ K.faces, ∃ w : E → ℝ, (∀ v ∈ s, 0 < w v) ∧
@@ -84,9 +71,6 @@ theorem exists_derived_subdivision (K : SimplicialComplex ℝ E) (c : Finset E �
       apply (K.finiteFaceSpan_faces A s).mpr
       refine ⟨K.nonempty_of_mem_faces (hfaces s hs), v ⟨s, hs⟩, ?_, Finset.Subset.refl s⟩
       exact Finset.mem_image.mpr ⟨⟨s, hs⟩, Finset.mem_attach a ⟨s, hs⟩, rfl⟩
-
-
-
 
 theorem center_chain_faces_card_le {K D : SimplicialComplex ℝ E} {c : Finset E → E}
     (hD : ∀ t ∈ D.faces, ∃ a : Finset (Finset E), a.Nonempty ∧

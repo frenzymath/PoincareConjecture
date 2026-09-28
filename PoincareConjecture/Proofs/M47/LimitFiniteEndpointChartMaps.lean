@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteEndpointFlow
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.Overlap.QuotientCoefficients
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.OpenEmbedding
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,7 +23,6 @@ variable (Φ : ∀ i, PartialDiffeomorph (𝓡 3) (𝓡 3) E (U i) ∞)
 
 include hsource in
 omit [IsManifold (𝓡 3) ∞ M] in
-
 
 theorem limitFinite_endpoint_chart_maps :
     letI : ∀ i, ChartedSpace E (Piece W i) :=
@@ -80,7 +71,6 @@ theorem limitFinite_endpoint_chart_maps :
 include hsource in
 omit [IsManifold (𝓡 3) ∞ M] in
 
-
 theorem limitFinite_endpoint_chart_pairing
     (B : ι → E → Bilin)
     (hpair : ∀ i j (x : Piece W i) (y : Piece W j), (Φ i x).val = (Φ j y).val →
@@ -119,7 +109,6 @@ theorem limitFinite_endpoint_chart_pairing
   · simpa only [hd] using hb
 
 include hsource in
-
 
 theorem limitFinite_endpoint_chart_old_metric
     (g0 : RiemannianMetric 3 M)

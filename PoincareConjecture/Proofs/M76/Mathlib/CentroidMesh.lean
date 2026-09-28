@@ -1,13 +1,6 @@
 import Mathlib.Analysis.Convex.Combination
 import Mathlib.Analysis.Normed.Module.Convex
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -17,16 +10,11 @@ namespace Finset
 
 variable {ι E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem centroid_eq_inv_card_smul_sum (s : Finset ι) (hs : s.Nonempty) (p : ι → E) :
     s.centroid ℝ p = (s.card : ℝ)⁻¹ • ∑ i ∈ s, p i := by
   rw [centroid_def, affineCombination_eq_linear_combination _ _ _
     (s.sum_centroidWeights_eq_one_of_nonempty ℝ hs)]
   simp only [centroidWeights_apply, smul_sum]
-
-
-
 
 theorem dist_centroid_le_sdiff_ratio [DecidableEq E] {s t : Finset E}
     (hs : s.Nonempty) (hst : s ⊆ t) {D : ℝ}
@@ -68,8 +56,6 @@ theorem dist_centroid_le_sdiff_ratio [DecidableEq E] {s t : Finset E}
     _ = ((t \ s).card : ℝ) / (t.card : ℝ) * D := by
       simp only [sum_const, nsmul_eq_mul, div_eq_mul_inv]
       ring
-
-
 
 theorem dist_centroid_le_mesh_factor {s t : Finset E}
     (hs : s.Nonempty) (hst : s ⊆ t) {N : ℕ} (htN : t.card ≤ N + 1)

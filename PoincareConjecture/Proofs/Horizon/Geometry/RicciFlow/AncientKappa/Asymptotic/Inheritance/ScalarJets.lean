@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Ancient.Entropy.Convergence.CurvatureJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Limit.RicciConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -36,8 +27,6 @@ private theorem scalarCurvature_eq_inverse_gram
     ∑ i, ∑ j, (Matrix.of (fun i j => g.inner x (b i) (b j)))⁻¹ i j * B (b i) (b j) at h
   simpa only [B, LinearMap.sum_apply, curvatureTensor_bilinear_first_third_apply,
     ricci, scalarCurvature] using h
-
-
 
 theorem tendsto_scalarCurvature_of_moving_scalar_metric_jets
     {n : ℕ} {α : Type*} {l : Filter α}

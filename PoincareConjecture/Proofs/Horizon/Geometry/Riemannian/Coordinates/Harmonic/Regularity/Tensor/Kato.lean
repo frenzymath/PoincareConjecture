@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Pairing
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.VectorNorm
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -20,8 +13,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem gradient_tensor_normSq_le (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T) (x : M) :
@@ -58,13 +49,11 @@ theorem gradient_tensor_normSq_le (D : LeviCivitaData g)
   simp only [← pow_two]
   nlinarith only [hcs]
 
-
 theorem regularized_tensor_norm_pos (T : CovariantTensorEvaluation n M 2)
     {ε : ℝ} (hε : 0 < ε) (x : M) :
     0 < Real.sqrt (g.tensorPairingTwo T T x + ε) :=
   Real.sqrt_pos.mpr
     (add_pos_of_nonneg_of_pos (g.tensorPairingTwo_self_nonneg T x) hε)
-
 
 theorem contMDiff_regularized_tensor_norm (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)
@@ -75,7 +64,6 @@ theorem contMDiff_regularized_tensor_norm (D : LeviCivitaData g)
   have hpos := Real.sqrt_pos.mp (regularized_tensor_norm_pos (g := g) T hε x)
   exact (Real.contDiffAt_sqrt hpos.ne').contMDiffAt.comp x
     ((D.contMDiff_tensorPairingTwo hT hT x).add contMDiffAt_const)
-
 
 theorem gradient_regularized_tensor_norm_le (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T)

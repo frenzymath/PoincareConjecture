@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Graphs.ActualFaceCom
 import PoincareConjecture.Proofs.M76.PrimeReduction.ActualReturningPolygons
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonConvexContainment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangleDiskModel
@@ -20,9 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
-
 
 theorem exists_actual_returning_component_bigons
     (K G : SimplicialComplex ℝ E) (hG : G.faces.Finite)

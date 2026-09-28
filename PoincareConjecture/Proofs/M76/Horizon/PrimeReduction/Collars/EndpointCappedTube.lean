@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.EndpointCappedScene
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.CoordinateSignedTube
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Geometry.SimplicialComplex
@@ -19,9 +10,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
-
 
 theorem exists_endpoint_capped_tube
     (P : Fin 3 → SimplicialComplex ℝ V3) (hP : ∀ i, (P i).faces.Finite)

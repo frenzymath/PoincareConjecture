@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.RadialGauge.GaussianEuclidean
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
-
 
 theorem integral_stdGaussian_covector_trace
     {q : V → V →L[ℝ] F} {q' : V → V →L[ℝ] V →L[ℝ] F}

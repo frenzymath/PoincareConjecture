@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachmen
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.GraphFamily
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.Arcs.Compression.FamilyExtension
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -28,8 +26,6 @@ private def familyVerticalShift :
   right_inv p := by ext <;> simp
   contMDiff_toFun := (contDiff_fst.prodMk (contDiff_snd.add contDiff_const)).contMDiff
   contMDiff_invFun := (contDiff_fst.prodMk (contDiff_snd.sub contDiff_const)).contMDiff
-
-
 
 theorem exists_slab_compression_family_with_relative_support
     (C : Opens E2) (e : Diffeomorph (𝓡 2) 𝓘(Real, E × Real) C (E × Real) ∞)

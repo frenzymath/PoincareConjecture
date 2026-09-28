@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleA
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Mathlib.CircleInjectivity
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneSquareCircle
 
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 namespace PoincareConjecture.M76

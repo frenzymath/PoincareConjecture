@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckCurvatureBound
 import PoincareConjecture.Proofs.M13.OrdinaryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
 
 namespace PoincareConjecture.M35
-
-
 
 theorem exists_scaled_cylinder_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, 0 < epsilon → epsilon ≤ delta →
@@ -39,8 +28,6 @@ theorem exists_scaled_cylinder_curvature_bound :
     D.curvatureTensorNorm (N.coordinate (q, 0)) / Q at hnorm
   rw [hnorm] at h
   exact (div_lt_iff₀ hQ).mp h
-
-
 
 theorem exists_static_neck_curvature_bound :
     ∃ delta : ℝ, 0 < delta ∧ ∀ epsilon : ℝ, epsilon ≤ delta →

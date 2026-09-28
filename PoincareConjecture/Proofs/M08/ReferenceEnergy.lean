@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M08.ActionBounds
 import PoincareConjecture.Proofs.M08.RegularizedAction
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -83,7 +75,6 @@ theorem referenceSpeedSq_le_evolving {J : Set ℝ} {F : RicciFlow n M J}
   apply mul_le_mul_of_nonneg_right _ (referenceSpeedSq_nonneg _ _ _)
   apply Real.exp_le_exp.mpr
   exact mul_le_mul_of_nonneg_left hτ.2 (mul_nonneg (by positivity) hK)
-
 
 theorem referenceWeightedEnergy_bound {J : Set ℝ} {F : RicciFlow n M J}
     {T τmax τ₁ τ₂ K : ℝ} (hM04 : RicciFlowCurvatureTheory.{u})

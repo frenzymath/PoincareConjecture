@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.MeshTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +13,6 @@ open Classical
 
 namespace PoincareConjecture.Topology.Surface
 
-
-
 theorem affineBasis_cutPoints_ne
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ)
@@ -33,8 +23,6 @@ theorem affineBasis_cutPoints_ne
   norm_num [affineCutPoint, AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring,
     b.coord_apply, Fin.ext_iff] at hc
   rcases hc with hc | hc <;> linarith
-
-
 
 theorem affineBasis_cutPoint_geometry
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -56,7 +44,6 @@ theorem affineBasis_cutPoint_geometry
     · have hc := congrArg (b.coord 2) hk
       norm_num [affineCutPoint, AffineMap.apply_lineMap, AffineMap.lineMap_apply_ring,
         b.coord_apply, Fin.ext_iff] at hc
-
 
 def localRefinementBoundaryCuts (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (t : M.Triangle) :
@@ -82,7 +69,6 @@ def localRefinementBoundaryCuts (M : TriangleMesh)
     [affineCutPoint f (M.position (M.orderedVertex t (o.perm 0)))
       (M.position (M.orderedVertex t (o.perm 1)))]
   else []
-
 
 theorem localRefinementBoundaryCuts_nodup (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (t : M.Triangle) :
@@ -143,8 +129,6 @@ private theorem ordered_cut_geometry (M : TriangleMesh)
     simp only [affineCutPoint.neg, AffineMap.coe_neg, Pi.neg_apply, neg_eq_zero] at h
     exact h
 
-
-
 theorem localRefinementBoundaryCuts_geometry (M : TriangleMesh)
     (f : EuclideanSpace ℝ (Fin 2) →ᵃ[ℝ] ℝ) (t : M.Triangle)
     {q : EuclideanSpace ℝ (Fin 2)} (hq : q ∈ localRefinementBoundaryCuts M f t) :
@@ -184,8 +168,6 @@ theorem localRefinementBoundaryCuts_geometry (M : TriangleMesh)
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem meshTriangle_vertex_contribution_ordered_perm (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (M : TriangleMesh) (t : M.Triangle) (e : Equiv.Perm (Fin 3)) (x : S) :
@@ -197,9 +179,6 @@ theorem meshTriangle_vertex_contribution_ordered_perm (g : RiemannianMetric 2 S)
   apply coordinateTriangle_vertex_contribution_eq_of_range_eq g F _ _ _ x
   rw [range_meshTriangleBasis]
   exact M.range_orderedVertex_perm t e
-
-
-
 
 theorem localRefinementMesh_vertex_contribution (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
@@ -255,8 +234,6 @@ theorem localRefinementMesh_vertex_contribution (g : RiemannianMetric 2 S)
   · rw [unchangedMeshFor_vertex_contribution]
     simp only [List.map_nil, List.sum_nil, add_zero]
     rfl
-
-
 
 theorem localRefinementMesh_vertex_contribution_finset (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

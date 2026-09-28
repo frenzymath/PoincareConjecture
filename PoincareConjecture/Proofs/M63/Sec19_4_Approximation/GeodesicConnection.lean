@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Geodesic
 import PoincareConjecture.Proofs.M09.SquareChartConnection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 3
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
-
-
 
 theorem chartCoefficients_derivative_pairing (g : RiemannianMetric n M)
     (p : M) (y u v w : E) (hy : y ∈ (chartAt E p).target) :
@@ -58,8 +47,6 @@ theorem chartCoefficients_derivative_pairing (g : RiemannianMetric n M)
       fderiv ℝ (g.pullbackCoefficients (chartAt E p).symm) y w u v := by
     simpa using congrArg (fun L : E →L[ℝ] ℝ => L w) heval.fderiv
   exact hcoord.symm.trans hchain.symm
-
-
 
 theorem chartVectorField_coordinateChristoffel {g : RiemannianMetric n M}
     (D : LeviCivitaData g) (p : M) (y : E) (hy : y ∈ (chartAt E p).target)

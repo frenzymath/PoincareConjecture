@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.FinitePlanePatchChart
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -15,9 +7,6 @@ open Set Metric Geometry
 namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V2" => (Fin 2 → ℝ)
-
-
-
 
 theorem exists_pair_chart_of_finitePL_plane_patch_at {E : Type*}
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

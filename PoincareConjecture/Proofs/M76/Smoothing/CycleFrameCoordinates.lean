@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FramePlaneCoordinates
 import PoincareConjecture.Proofs.M76.Smoothing.CycleProjectionSpace
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,23 +9,15 @@ namespace PoincareConjecture.M76.Smoothing
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def cycleFrameInclusion {n : ℕ} (b : Module.Basis (Fin (n + 3)) ℝ E) :
     ℂ →L[ℝ] E :=
   Complex.reCLM.smulRight (b 0) + Complex.imCLM.smulRight (b 1)
 
-
-
 theorem cycleFrameInclusion_one {n : ℕ} (b : Module.Basis (Fin (n + 3)) ℝ E) :
     cycleFrameInclusion b 1 = b 0 := by simp [cycleFrameInclusion]
 
-
-
 theorem cycleFrameInclusion_I {n : ℕ} (b : Module.Basis (Fin (n + 3)) ℝ E) :
     cycleFrameInclusion b Complex.I = b 1 := by simp [cycleFrameInclusion]
-
-
 
 theorem injective_cycleFrameInclusion {n : ℕ} (b : Module.Basis (Fin (n + 3)) ℝ E) :
     Function.Injective (cycleFrameInclusion b) := by
@@ -50,8 +33,6 @@ theorem injective_cycleFrameInclusion {n : ℕ} (b : Module.Basis (Fin (n + 3)) 
   · have he := congrArg (fun x => b.repr x 1) h
     simpa [cycleFrameInclusion, hne, Ne.symm hne] using he
 
-
-
 theorem rightInverse_cycleFrameInclusion_iff {n : ℕ}
     (b : Module.Basis (Fin (n + 3)) ℝ E) (Q : E →L[ℝ] ℂ) :
     Function.RightInverse (cycleFrameInclusion b) Q ↔ Q (b 0) = 1 ∧ Q (b 1) = Complex.I := by
@@ -64,9 +45,6 @@ theorem rightInverse_cycleFrameInclusion_iff {n : ℕ}
     rw [map_add, map_smul, map_smul, hzero, hone, Complex.real_smul, Complex.real_smul,
       mul_one, Complex.re_add_im]
 
-
-
-
 theorem rightInverse_cycleFrameInclusion_iff_fixed {n : ℕ}
     (b : Module.Basis (Fin (n + 3)) ℝ E)
     (Q : (cyclicEdgeComplex n).BasisRadialProjection b ℂ) :
@@ -78,9 +56,6 @@ theorem rightInverse_cycleFrameInclusion_iff_fixed {n : ℕ}
     simpa only [Complex.ofReal_div, Complex.ofReal_ofNat] using Complex.exp_pi_div_two_mul_I
   simpa only [he] using (fixedCycleVertexValues_iff (theta := Real.pi / 2)
     (⟨fun i => Q.val (b i), Q.property⟩ : (cyclicEdgeComplex n).RadialEmbedding ℂ)).symm
-
-
-
 
 noncomputable def cycleFrameProjectionHomeomorph (n : ℕ)
     (b : Module.Basis (Fin (n + 3)) ℝ E) :

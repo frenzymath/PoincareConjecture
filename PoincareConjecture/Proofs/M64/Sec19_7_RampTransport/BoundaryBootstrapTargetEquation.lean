@@ -3,11 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapForc
 import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.BoundaryBootstrapComplexHessian
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.BranchComplexConnection
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +18,6 @@ local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 variable {n : ℕ}
 local notation "Target" => EuclideanSpace ℝ (Fin n)
 
-
-
 def boundaryTargetQuadratic (Phi : OpenPartialHomeomorph Target Target)
     (Gamma : Target → Target →L[ℝ] Target →L[ℝ] Target) :
     Target → Target →L[ℝ] Target →L[ℝ] Target := fun y =>
@@ -32,8 +25,6 @@ def boundaryTargetQuadratic (Phi : OpenPartialHomeomorph Target Target)
       ((Gamma (Phi y)).bilinearComp (fderiv ℝ Phi y) (fderiv ℝ Phi y)) -
     (fderiv ℝ (fderiv ℝ Phi.symm) (Phi y)).bilinearComp
       (fderiv ℝ Phi y) (fderiv ℝ Phi y)
-
-
 
 theorem boundaryTargetQuadratic_apply (Phi : OpenPartialHomeomorph Target Target)
     (Gamma : Target → Target →L[ℝ] Target →L[ℝ] Target) (y v w : Target) :
@@ -43,15 +34,11 @@ theorem boundaryTargetQuadratic_apply (Phi : OpenPartialHomeomorph Target Target
         fderiv ℝ (fderiv ℝ Phi.symm) (Phi y)
           (fderiv ℝ Phi y v) (fderiv ℝ Phi y w) := rfl
 
-
-
 def boundaryTargetQuadraticCoordinate (Phi : OpenPartialHomeomorph Target Target)
     (Gamma : Target → Target →L[ℝ] Target →L[ℝ] Target) (j : Fin n) :
     Target → Target →L[ℝ] Target →L[ℝ] ℝ := fun y =>
   (ContinuousLinearMap.compL ℝ Target Target ℝ (EuclideanSpace.proj j)).comp
     (boundaryTargetQuadratic Phi Gamma y)
-
-
 
 theorem boundaryTargetQuadraticCoordinate_apply
     (Phi : OpenPartialHomeomorph Target Target)
@@ -59,9 +46,6 @@ theorem boundaryTargetQuadraticCoordinate_apply
     (j : Fin n) (y v w : Target) :
     boundaryTargetQuadraticCoordinate Phi Gamma j y v w =
       (boundaryTargetQuadratic Phi Gamma y v w) j := rfl
-
-
-
 
 theorem boundaryTargetQuadratic_contDiffOn
     (Phi : OpenPartialHomeomorph Target Target)
@@ -93,9 +77,6 @@ theorem boundaryTargetQuadratic_contDiffOn
       ((hDD.clm_apply (hDPhi.clm_apply contDiffOn_const)).clm_apply
         (hDPhi.clm_apply contDiffOn_const))
 
-
-
-
 theorem boundaryTargetQuadraticCoordinate_contDiffOn
     (Phi : OpenPartialHomeomorph Target Target)
     (hPhi : ContDiffOn ℝ ∞ Phi Phi.source)
@@ -110,9 +91,6 @@ theorem boundaryTargetQuadraticCoordinate_contDiffOn
   intro w
   exact (EuclideanSpace.proj j).contDiff.comp_contDiffOn
     ((hB.clm_apply contDiffOn_const).clm_apply contDiffOn_const)
-
-
-
 
 theorem boundaryTargetQuadratic_equation
     (Phi : OpenPartialHomeomorph Target Target)
@@ -160,9 +138,6 @@ theorem boundaryTargetQuadratic_equation
   rw [m64C2_laplacian_comp hH hPsiAt, hrhs, ← hsum, map_sum]
   abel
 
-
-
-
 theorem boundaryTargetQuadraticCoordinate_equation
     (Phi : OpenPartialHomeomorph Target Target)
     (hPhi : ContDiffOn ℝ ∞ Phi Phi.source)
@@ -184,9 +159,6 @@ theorem boundaryTargetQuadraticCoordinate_equation
     quadraticForcing, boundaryVectorPartial, boundaryTargetQuadraticCoordinate_apply,
     Function.comp_apply] using h
 
-
-
-
 theorem harmonic_laplacian_of_dbar_complexGradient
     {g : RiemannianMetric n Target} (D : LeviCivitaData g)
     {H : ℂ → Target} {z : ℂ} (hH : ContDiffAt ℝ ∞ H z)
@@ -205,9 +177,6 @@ theorem harmonic_laplacian_of_dbar_complexGradient
     ContinuousLinearMap.comp_apply, EuclideanSpace.proj, PiLp.proj_apply,
     Complex.ofRealCLM_apply, Pi.neg_apply, PiLp.neg_apply,
     Complex.neg_re, Complex.ofReal_re] using hj
-
-
-
 
 theorem boundaryComplexCoordinates_harmonic_equation
     {g : RiemannianMetric n Target} (D : LeviCivitaData g)
@@ -233,9 +202,6 @@ theorem boundaryComplexCoordinates_harmonic_equation
   have h := harmonic_laplacian_of_dbar_complexGradient D hH heq
   simpa only [Fin.sum_univ_two, boundaryComplexCoordinates_hessian hH, hcolumn,
     Fin.isValue, ite_true, Fin.reduceEq, ite_false, add_comm] using h
-
-
-
 
 theorem boundaryTargetQuadraticCoordinate_actual_harmonic
     {g : RiemannianMetric n Target} (D : LeviCivitaData g)

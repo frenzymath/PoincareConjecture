@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalPhaseTargetProducts
 import PoincareConjecture.Proofs.M76.Rigidity.StandardHierarchyParameterPL
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,13 +15,8 @@ local notation "X0" => LatticeHandleAmbient (Fin 0) (Fin 3) L0
 local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
-
-
-
 def hamiltonZeroPhaseParameter (theta : ℝ) (z : E) : X0 :=
   (0, QuotientAddGroup.mk ![z.1.1, z.1.2, theta + z.2])
-
-
 
 theorem hamiltonZeroPhaseParameter_eq_product (theta s t u : ℝ) :
     hamiltonZeroPhaseParameter theta ((s, t), u) =
@@ -39,10 +24,6 @@ theorem hamiltonZeroPhaseParameter_eq_product (theta s t u : ℝ) :
   apply (Q0).injective
   rw [hamiltonZeroPhaseProduct_coordinates]
   rfl
-
-
-
-
 
 theorem StandardLatticeHandleAtlas.exists_finite_phase_parameter
     {κ : Type*} {d : κ → OpenPartialHomeomorph X0 V3}

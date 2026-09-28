@@ -1,16 +1,6 @@
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Topology.OpenPartialHomeomorph.Composition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +19,6 @@ variable {𝕜 : Type uK} [NontriviallyNormedField 𝕜]
   {M : Type uM} [TopologicalSpace M] [ChartedSpace H M]
   {N : Type uN} [TopologicalSpace N] [ChartedSpace H' N]
   {n : ℕ∞ω}
-
-
-
 
 theorem exists_openPartialHomeomorph_of_opens
     {U : TopologicalSpace.Opens M} {V : TopologicalSpace.Opens N}

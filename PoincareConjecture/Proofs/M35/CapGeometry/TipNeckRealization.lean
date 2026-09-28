@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.TipRicciIsotropy
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckMetricJets
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Limit.RicciConvergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +21,6 @@ local instance tipNeckDualNormedGroup : NormedAddCommGroup (V →L[ℝ] ℝ) := 
 local instance tipNeckDualNormedSpace : NormedSpace ℝ (V →L[ℝ] ℝ) := inferInstance
 local instance tipNeckMetricNormedGroup : NormedAddCommGroup B := inferInstance
 local instance tipNeckMetricNormedSpace : NormedSpace ℝ B := inferInstance
-
-
 
 theorem exists_tip_neck_metric_realization
     (g : RiemannianMetric 3 StandardCapSpace) (D : LeviCivitaData g)

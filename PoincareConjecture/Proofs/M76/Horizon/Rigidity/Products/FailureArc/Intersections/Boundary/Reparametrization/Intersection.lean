@@ -1,8 +1,6 @@
 import Mathlib.Topology.Homeomorph.Lemmas
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Arcs.Models
 
-
-
 set_option autoImplicit false
 open Set Topology
 

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.CappingCompact
 import Mathlib.Topology.Connected.TotallyDisconnected
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,19 +11,16 @@ universe u
 
 namespace PoincareConjecture.M38
 
-
 noncomputable def capAnnularPoint : capDoubleBall :=
   ⟨(3 / 2 : ℝ) • (capUnitDirection (0 : StandardCapSpace)).val, by
     change dist ((3 / 2 : ℝ) • (capUnitDirection (0 : StandardCapSpace)).val) 0 < 2
     rw [dist_zero_right, norm_smul]
     norm_num⟩
 
-
 theorem capAnnularPoint_norm : ‖capAnnularPoint.val‖ = (3 / 2 : ℝ) := by
   dsimp only [capAnnularPoint]
   rw [norm_smul]
   norm_num
-
 
 theorem capDoubleBall_connected : ConnectedSpace capDoubleBall :=
   isConnected_iff_connectedSpace.mp (Metric.isConnected_ball (by norm_num : (0 : ℝ) < 2))
@@ -43,22 +32,17 @@ namespace EventCapCoordinates
 
 variable {i : Fin (F.event T hT).cap_count} (P : EventCapCoordinates F T hT i)
 
-
 theorem capAnnularPoint_mem : capAnnularPoint ∈ P.attachmentChart.source := by
   rw [P.attachmentChart_source]
   change 1 < ‖capAnnularPoint.val‖
   rw [capAnnularPoint_norm]
   norm_num
 
-
 noncomputable def attachmentPoint : eventDiscardedOpen F T hT :=
   P.attachmentChart capAnnularPoint
 
-
 theorem attachmentPoint_mem : P.attachmentPoint ∈ P.attachmentChart.target :=
   P.attachmentChart.map_source P.capAnnularPoint_mem
-
-
 
 theorem attachmentChart_target_connected : IsConnected P.attachmentChart.target := by
   let : ConnectedSpace UnitTwoSphere :=
@@ -87,8 +71,6 @@ theorem attachmentChart_target_connected : IsConnected P.attachmentChart.target 
   rw [← hrange]
   exact isConnected_range hf
 
-
-
 theorem attachment_component_eq {x : eventDiscardedOpen F T hT}
     (hx : x ∈ P.attachmentChart.target) :
     ConnectedComponents.mk x = ConnectedComponents.mk P.attachmentPoint :=
@@ -99,14 +81,11 @@ end EventCapCoordinates
 
 variable (F T hT) (P : ∀ i, EventCapCoordinates F T hT i)
 
-
-
 noncomputable def eventCappingComponentLabel :
     (j : EventCappingIndex F T hT) → eventCappingDomain F T hT j →
       ConnectedComponents (eventDiscardedOpen F T hT)
   | .inl x, z => ConnectedComponents.mk (eventCappingMap F T hT P (.inl x) z)
   | .inr i, _ => ConnectedComponents.mk (P i).attachmentPoint
-
 
 theorem eventCappingComponentLabel_source (j : EventCappingIndex F T hT)
     {x : eventCappingDomain F T hT j}
@@ -117,7 +96,6 @@ theorem eventCappingComponentLabel_source (j : EventCappingIndex F T hT)
   | inl y => rfl
   | inr i =>
       exact ((P i).attachment_component_eq ((P i).attachmentChart.map_source hx)).symm
-
 
 theorem eventCappingComponentLabel_rel
     (a b : Sigma (fun j => eventCappingDomain F T hT j))
@@ -137,19 +115,15 @@ theorem eventCappingComponentLabel_rel
     rw [eventCappingComponentLabel_source F T hT P j h.1,
       eventCappingComponentLabel_source F T hT P k h.2.1, h.2.2]
 
-
 noncomputable def cappedComponentLabel :
     CappedDiscardedSpace F T hT P → ConnectedComponents (eventDiscardedOpen F T hT) :=
   Quotient.lift (fun a => eventCappingComponentLabel F T hT P a.1 a.2)
     (eventCappingComponentLabel_rel F T hT P)
 
-
 theorem cappedComponentLabel_patch (j : EventCappingIndex F T hT)
     (x : eventCappingDomain F T hT j) :
     cappedComponentLabel F T hT P (eventCappingInclude F T hT P j x) =
       eventCappingComponentLabel F T hT P j x := rfl
-
-
 
 theorem eventCappingComponentLabel_continuous (j : EventCappingIndex F T hT) :
     Continuous (eventCappingComponentLabel F T hT P j) := by
@@ -159,11 +133,9 @@ theorem eventCappingComponentLabel_continuous (j : EventCappingIndex F T hT) :
         (eventCappingMap_old_openEmbedding F T hT P x).continuous
   | inr i => exact continuous_const
 
-
 theorem cappedComponentLabel_continuous : Continuous (cappedComponentLabel F T hT P) :=
   (continuous_sigma (eventCappingComponentLabel_continuous F T hT P)).quotient_lift
     (eventCappingComponentLabel_rel F T hT P)
-
 
 theorem cappedComponentLabel_old (x : eventDiscardedOpen F T hT) :
     cappedComponentLabel F T hT P (cappedOldInclusion F T hT P x) =

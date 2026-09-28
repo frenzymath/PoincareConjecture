@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityCo
 import PoincareConjecture.Proofs.M58.Cor18_28_PolarDerivatives
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -23,9 +13,6 @@ section Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 noncomputable def coneCartesianField (g : EuclideanSpace ℝ (Fin 3) → E)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))
     (v d : ℝ → EuclideanSpace ℝ (Fin 3)) (s θ : ℝ) (i : Fin 2) : E :=
@@ -33,8 +20,6 @@ noncomputable def coneCartesianField (g : EuclideanSpace ℝ (Fin 3) → E)
       fderiv ℝ g (coneCoordinates r v0 v s θ) (v θ - v0) +
     Proofs.M58.angularVector θ i •
       fderiv ℝ g (coneCoordinates r v0 v s θ) (d θ))
-
-
 
 theorem cone_reconstruction_radial {g : EuclideanSpace ℝ (Fin 3) → E}
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3)) (v : ℝ → EuclideanSpace ℝ (Fin 3))
@@ -47,9 +32,6 @@ theorem cone_reconstruction_radial {g : EuclideanSpace ℝ (Fin 3) → E}
 end Normed
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem coneCartesianField_norm_sq (g : EuclideanSpace ℝ (Fin 3) → E)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))
@@ -67,10 +49,6 @@ theorem coneCartesianField_norm_sq (g : EuclideanSpace ℝ (Fin 3) → E)
         (‖fderiv ℝ g (coneCoordinates r v0 v s θ) (v θ - v0)‖ ^ 2 +
           ‖fderiv ℝ g (coneCoordinates r v0 v s θ) (d θ)‖ ^ 2) := by ring
     _ = _ := by rw [Real.cos_sq_add_sin_sq, mul_one]
-
-
-
-
 
 theorem coneCartesianField_norm_sq_le (g : EuclideanSpace ℝ (Fin 3) → E)
     (r : ℝ) (v0 : EuclideanSpace ℝ (Fin 3))

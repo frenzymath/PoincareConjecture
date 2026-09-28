@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.TimeSmoothness
 import PoincareConjecture.Proofs.M35.RadialGauge.SlabSourceExtension
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatC1Bounds
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,7 +13,6 @@ namespace PoincareConjecture.M35.RadialGauge
 variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
-
 
 theorem fderiv_slabSourceExtension (T : ℝ) (f : ℝ → V → F) :
     (fun s => fderiv ℝ (slabSourceExtension T f s)) =
@@ -37,8 +26,6 @@ theorem fderiv_slabSourceExtension (T : ℝ) (f : ℝ → V → F) :
     rw [hzero]
     funext x
     simp only [fderiv_const_apply, slabSourceExtension, if_neg hs]
-
-
 
 theorem heatDuhamel_fderiv_commutes
     {f : ℝ → V → F} {t C D : ℝ} (ht : 0 ≤ t)
@@ -80,9 +67,6 @@ theorem heatDuhamel_fderiv_commutes
         (hC s hs) (hD s hs) (t - s) y
   funext x
   exact (hderiv x).fderiv
-
-
-
 
 theorem heatDuhamel_weighted_hessian_bound
     {f : ℝ → V → F} {t C : ℝ} (ht : 0 ≤ t) (hC : 0 ≤ C)

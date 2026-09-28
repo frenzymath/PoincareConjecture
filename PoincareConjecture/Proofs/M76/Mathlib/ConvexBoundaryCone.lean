@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryRadial
 import PoincareConjecture.Proofs.M76.Mathlib.ConicalStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,17 +10,12 @@ namespace Geometry.SimplicialComplex
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {K : SimplicialComplex ℝ E} {s : Set E}
 
-
-
 theorem linearIndependent_faces_of_space_subset_frontier
     (hcv : Convex ℝ s) (hzero : (0 : E) ∈ interior s) (hK : K.space ⊆ frontier s) :
     ∀ r ∈ K.faces, LinearIndependent ℝ ((↑) : r → E) := by
   intro r hr
   exact (K.indep hr).linearIndependent_of_hull_subset_frontier hcv hzero
     ((K.convexHull_subset_space hr).trans hK)
-
-
-
 
 theorem coneAtZero_space_of_frontier [DecidableEq E]
     (hlin : ∀ r ∈ K.faces, LinearIndependent ℝ ((↑) : r → E))

@@ -1,19 +1,6 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialBootstrap
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.SpatialJetMollification
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.Jets.GlobalSpatialJets
-
-
-
-
-
-
-
-
 
 open Set MeasureTheory Filter Metric
 open Poincare.Analysis.Convolution
@@ -77,6 +64,5 @@ theorem exists_local_mollified_spatial_energy_all_orders
     hjetu.exists_uniform_mollified_spatial_energy isOpen_ball (mem_ball_self ht) hρ hρc
   exact ⟨s, hs, hst.trans (htV.trans hVU),
     hjetu.restrict (ball_subset_closedBall.trans hst), ε, B, hε, hB, henergy⟩
-
 
 end Poincare.Analysis.Parabolic.WeakRegularity.Interior

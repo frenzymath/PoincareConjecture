@@ -3,15 +3,6 @@ import Mathlib.Topology.Homotopy.Lifting
 import Mathlib.Topology.Instances.AddCircle.Real
 import Mathlib.AlgebraicTopology.FundamentalGroupoid.FundamentalGroup
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open scoped unitInterval
 namespace AddCircle
 
 variable (p : ℝ)
-
-
 
 def periodLoop : Path (0 : AddCircle p) 0 where
   toFun t := (((t : ℝ) * p : ℝ) : AddCircle p)
@@ -34,9 +23,6 @@ def periodLoop : Path (0 : AddCircle p) 0 where
     rw [one_mul, coe_period]
 
 variable [Fact (0 < p)]
-
-
-
 
 theorem periodLoop_not_homotopic_refl :
     ¬ (periodLoop p).Homotopic (Path.refl (0 : AddCircle p)) := by
@@ -62,15 +48,11 @@ theorem periodLoop_not_homotopic_refl :
     simpa only [one_mul] using he
   exact (Fact.out : 0 < p).ne' hp
 
-
-
 theorem periodLoop_class_ne_one :
     Path.Homotopic.Quotient.mk (periodLoop p) ≠
       (1 : FundamentalGroup (AddCircle p) 0) := by
   intro h
   exact periodLoop_not_homotopic_refl p (Path.Homotopic.Quotient.exact h)
-
-
 
 theorem nontrivial_fundamentalGroup_zero :
     Nontrivial (FundamentalGroup (AddCircle p) 0) :=

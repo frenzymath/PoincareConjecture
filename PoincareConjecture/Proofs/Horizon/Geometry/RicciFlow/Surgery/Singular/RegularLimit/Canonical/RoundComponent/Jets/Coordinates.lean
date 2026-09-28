@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Comparison.Jets.ComparisonCovariantJets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.BilinearJets
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -40,8 +32,6 @@ private theorem exists_coordinate_frame_norm_bound (g : RiemannianMetric 3 E) (x
   change g.tangentNorm x (e i) ≤ ∑ j : Fin 3, g.tangentNorm x (e j) at h
   dsimp [c]
   linarith
-
-
 
 theorem exists_tensor_coordinate_jet_bound
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E) (k j m : ℕ) :
@@ -170,7 +160,6 @@ theorem exists_tensor_coordinate_jet_bound
             _ ≤ ∑ _i : Fin 3, (A + 3 * (k + m : ℕ) * S) * ρ :=
               Finset.sum_le_sum (fun i _ => hdirection i)
             _ = _ := by simp; ring
-
 
 theorem exists_bilinear_coordinate_jet_bound
     {g : RiemannianMetric 3 E} (D : LeviCivitaData g) (x : E) (m : ℕ) :

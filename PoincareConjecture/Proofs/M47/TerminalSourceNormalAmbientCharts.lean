@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalChartDistances
 import PoincareConjecture.Proofs.M47.TerminalSourceNormalDistance
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ local notation "E" => EuclideanSpace ℝ (Fin 3)
 variable {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
   [ChartedSpace E M] [ChartedSpace E N]
   [IsManifold (𝓡 3) ∞ M] [IsManifold (𝓡 3) ∞ N] [T3Space M]
-
-
 
 theorem terminalSourceNormal_ambient_chart_readouts
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)
@@ -64,8 +53,6 @@ theorem terminalSourceNormal_ambient_chart_readouts
     (hpoint z hz).trans_le (ENNReal.ofReal_le_ofReal (by linarith))
   exact (terminalSourceNormal_edist_eq_on_buffer g h e hsource hmetric p0
     (hA.trans_le hAR) hcover (hbuffer x hx) (hbuffer y hy)).symm
-
-
 
 theorem terminalSourceNormal_ambient_chart_distance_bounds
     (g : RiemannianMetric 3 M) (h : RiemannianMetric 3 N)

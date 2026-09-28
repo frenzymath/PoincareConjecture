@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalPeriodMap
 import PoincareConjecture.Proofs.M76.Rigidity.MeridianParameter
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +17,6 @@ local notation "L" => hamiltonLowerPeriodLattice (Fin 1)
 local notation "X" => LatticeHandleAmbient (Fin 2) (Fin 1) L
 local notation "R" => latticeHandleDomain (Fin 2) (Fin 1) L
 local notation "p" => (4 * (128 : ℝ))
-
-
 
 theorem periodCutMap_lateral {α : Type*}
     {e : α → OpenPartialHomeomorph X V3} {j : V2 → X}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialStaticNeck
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,17 +16,12 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
 
-
-
 theorem scalar_intrinsic_radial_center_unscaled (P : M35StandardCapPredecessors)
     (D : LeviCivitaData g) (q : UnitTwoSphere) (x : StandardCapSpace) :
     D.scalarCurvature (intrinsicSpatialInverse g hrotation hcomplete
       (radialArclength g ‖x‖ • q.val)) = D.scalarCurvature x := by
   rw [(rotational_scalar_edist_eq_axis P D hrotation _).1,
     intrinsic_radial_center_norm, ← (rotational_scalar_edist_eq_axis P D hrotation x).1]
-
-
-
 
 noncomputable def scalarRadialNeck
     (atlas : StandardCylinderAtlas) (D : LeviCivitaData g)

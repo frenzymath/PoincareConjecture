@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Isotopy.ArcPairs.CircleFamilies
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.DisjointSupport
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -43,8 +32,6 @@ private theorem contDiff_planar_family_symm
   rw [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hi
   exact hi.contDiff
 
-
-
 theorem exists_smooth_height_retraction (c : Real) {r R : Real}
     (hr : 0 < r) (hrR : r < R) :
     ∃ σ : Real → Real, ContDiff Real ∞ σ ∧
@@ -64,9 +51,6 @@ theorem exists_smooth_height_retraction (c : Real) {r R : Real}
   · intro t ht
     change χ t * (t - c) + c = t
     rw [χ.one_of_mem_closedBall ht, one_mul, sub_add_cancel]
-
-
-
 
 theorem exists_planar_family_gluing
     (L R : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -116,9 +100,6 @@ theorem exists_planar_family_gluing
   split_ifs
   · exact hLfix t x hx
   · exact hRfix t x hx
-
-
-
 
 theorem exists_parametric_planar_family_gluing
     (L R : Real → Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -195,10 +176,6 @@ theorem exists_parametric_planar_family_gluing
     · exact hLfix u t x hx
     · exact hRfix u t x hx
 
-
-
-
-
 theorem exists_matching_extension_along_regular_transports
     {ι : Type*} (A B : ι → Real → Set E2) (A₀ B₀ : ι → Set E2)
     (U V Q : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -254,10 +231,6 @@ theorem exists_matching_extension_along_regular_transports
   · intro t ht x
     change V t ((V (σ t)).symm (Q (σ t) (U (σ t) ((U t).symm x)))) = Q t x
     rw [ht, Diffeomorph.apply_symm_apply, Diffeomorph.apply_symm_apply]
-
-
-
-
 
 theorem exists_parametric_matching_extension_along_regular_transports
     {ι : Type*} (A B : ι → Real → Set E2) (A₀ B₀ : ι → Set E2)
@@ -334,9 +307,6 @@ theorem exists_parametric_matching_extension_along_regular_transports
     change V t ((V (τ u t)).symm (Q u (τ u t) (U (τ u t) ((U t).symm x)))) = Q u t x
     rw [hτeq, Diffeomorph.apply_symm_apply, Diffeomorph.apply_symm_apply]
 
-
-
-
 theorem exists_compact_regular_band_matching
     {ι : Type*} (A B : ι → Real → Set E2) (A₀ B₀ : ι → Set E2)
     (U V : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -384,9 +354,6 @@ theorem exists_compact_regular_band_matching
   · intro y hy hσy
     rw [hH y hy, hPQ (y 2) hσy]
 
-
-
-
 theorem exists_matching_extension_of_regular_circle_pairs
     {a b : Real} (hab : a ≤ b)
     (c d : Fin 2 → Real → sphere (0 : E2) 1 → E2)
@@ -432,10 +399,6 @@ theorem exists_matching_extension_of_regular_circle_pairs
   · intro i t ht
     rw [← range_comp]
     exact congrArg range (funext (hVm i t ht))
-
-
-
-
 
 theorem exists_relative_matching_of_two_physical_height_strips
     {g₀ g₁ : S2 → E3}
@@ -570,9 +533,6 @@ theorem exists_relative_matching_of_two_physical_height_strips
     · intro z hz
       exact hmatch i z.2 hz.2 z.1 hz.1
 
-
-
-
 theorem exists_compact_localization_of_relative_matching
     (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
     (hΦ : ContDiff Real ∞ (fun z : P2 => Φ z.1 z.2))
@@ -633,9 +593,6 @@ theorem exists_compact_localization_of_relative_matching
     rw [hLK]
     exact hDfix z (fun hzK => hz ⟨hzK.1, Or.inl hzK.2⟩)
 
-
-
-
 theorem physicalStripConjugate_eq_self_outside_slab
     {v : E3} (hv : ‖v‖ = 1) (J : (Real ∙ v)ᗮ ≃ₗᵢ[Real] E2) (c R : Real)
     (H : Diffeomorph 𝓘(Real, P2) 𝓘(Real, P2) P2 P2 ∞)
@@ -652,9 +609,6 @@ theorem physicalStripConjugate_eq_self_outside_slab
   change physicalStripHeightCoordinates hv J c
     (H ((physicalStripHeightCoordinates hv J c).symm x)) = x
   rw [hfix _ hnot, Diffeomorph.apply_symm_apply]
-
-
-
 
 theorem image_slice_family_of_planar_transport
      (H₀ : E3 → E3) (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -673,13 +627,9 @@ theorem image_slice_family_of_planar_transport
    intro hc
    rw [hSlice, hPlanar]
 
-
-
 theorem saddle_slice_eq_levels_slice (S : Set E2) (c : Real) :
      Saddle.slice S c = Saddle.Levels.slice S c := by
    rfl
-
-
 
 theorem image_slice_family_of_height_cutoff_lift
      (Φ : Real → Diffeomorph (𝓡 2) (𝓡 2) E2 E2 ∞)
@@ -696,10 +646,6 @@ theorem image_slice_family_of_height_cutoff_lift
        ← saddle_slice_eq_levels_slice (Φ (χ c) '' S) c]
      exact hH S c
    · exact hPlanar
-
-
-
-
 
 theorem exists_global_saddle_matching_of_slice_interfaces
      {g : S2 → E3}
@@ -723,7 +669,6 @@ theorem exists_global_saddle_matching_of_slice_interfaces
    refine ⟨Ψ.trans H₀, ?_⟩
    rw [Diffeomorph.coe_trans, image_comp, hActual, image_union, image_union,
      hBand, hCap₀, hCap₁, hModel]
-
 
 theorem exists_global_saddle_matching_of_height_cutoff_interfaces
      {g : S2 → E3}
@@ -796,9 +741,6 @@ private theorem exists_lift_matching_circle_families
     intro ht
     rw [hs, himage i t ht]
 
-
-
-
 theorem exists_regular_circle_band_matching
     {a b : Real} (hab : a < b)
     (c d : Real → sphere (0 : E2) 1 → E2)
@@ -825,9 +767,6 @@ theorem exists_regular_circle_band_matching
     exists_lift_matching_circle_families (fun _ : Unit => c) (fun _ : Unit => d)
       (fun _ => q) Φ hΦ hΦinv hfix (fun t ht _ => hm t ht)
   exact ⟨q, K, hK, H, hh, hHfix, fun t ht => hHpoint t ht (), hHband ()⟩
-
-
-
 
 theorem exists_regular_circle_pair_band_matching
     {a b : Real} (hab : a < b)
@@ -859,9 +798,6 @@ theorem exists_regular_circle_pair_band_matching
     Plane.Isotopy.ArcPairs.exists_planar_circle_pair_family_isotopy
       hab c d hc hd hemb hemb' hdisj hdisj' hnest
   exact ⟨q, K, hK, exists_lift_matching_circle_families c d q Φ hΦ hΦinv hfix hm⟩
-
-
-
 
 theorem exists_simultaneous_three_cap_replacement
     (band : Set E3) (E M : Fin 3 → Set E3)
@@ -895,10 +831,6 @@ theorem exists_simultaneous_three_cap_replacement
     · change G 2 '' (G 1 '' (G 0 '' E 2)) = M 2
       rw [hsource 0 2 (by decide), hsource 1 2 (by decide), hmatch 2]
 
-
-
-
-
 theorem exists_global_saddle_matching_of_interfaces
     {g : S2 → E3}
     (H₁ H₂ F : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞)
@@ -927,8 +859,6 @@ theorem exists_global_saddle_matching_of_interfaces
       F.toEquiv.symm_image_image _
     rw [hcancel]
   exact ⟨H, hH, Saddle.exists_ambient_ball_of_global_saddle_matching H hH⟩
-
-
 
 theorem exists_global_saddle_matching_of_flattened_frame
     {g : S2 → E3}
@@ -960,10 +890,6 @@ theorem exists_global_saddle_matching_of_flattened_frame
     rw [hinv]
     exact D.toEquiv.symm_image_image _
   exact ⟨H, hH, B, hB⟩
-
-
-
-
 
 theorem exists_global_saddle_matching_of_flattened_three_cap_replacements
     {g : S2 → E3}
@@ -999,7 +925,6 @@ theorem exists_global_saddle_matching_of_flattened_three_cap_replacements
   refine ⟨H, hH, F.trans H.symm, ?_⟩
   rw [Diffeomorph.coe_trans, image_comp, ← hH]
   exact H.toEquiv.symm_image_image _
-
 
 theorem exists_global_saddle_matching_of_band_and_three_cap_replacement
     {g : S2 → E3}
@@ -1056,9 +981,6 @@ theorem exists_global_saddle_matching_of_band_and_three_cap_replacement
     simpa only [union_assoc] using hmodel
   exact exists_global_saddle_matching_of_interfaces H₁ H₂ F band modelBand C M
     hdecomp' hband hfix hcaps hmodel'
-
-
-
 
 theorem exists_global_saddle_matching_of_parametric_interfaces
     {g : S2 → E3}

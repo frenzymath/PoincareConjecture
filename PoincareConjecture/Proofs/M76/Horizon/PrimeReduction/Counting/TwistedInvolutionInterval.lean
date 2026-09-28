@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.FreeInvolutionQuotient
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Counting.TwistedProjectiveInterval
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -183,8 +176,6 @@ theorem zeroSection_disjoint_boundary : Disjoint (zeroSection τ hτ) (boundary 
   · have hh := congrArg Subtype.val (hz.symm.trans he)
     norm_num [midpoint, TwistedProjectiveInterval.midpoint] at hh
 
-
-
 theorem exists_homology_retract [T2Space S] [PathConnectedSpace S]
     (hfree : ∀ x, τ x ≠ x) (R : ModuleCat.{u} (ZMod 2)) :
     ∃ (i : R ⟶ (TopCat.toSSet.obj (TopCat.of (Model τ hτ))).homology R 1)
@@ -211,8 +202,6 @@ theorem h1_not_isZero [T2Space S] [PathConnectedSpace S]
   have : Subsingleton R := ModuleCat.isZero_iff_subsingleton.mp
     ((IsZero.iff_id_eq_zero R).mpr hid)
   exact false_of_nontrivial_of_subsingleton R
-
-
 
 theorem sphere_h1_not_isZero [T2Space S] (H : S ≃ₜ UnitTwoSphere)
     (hfree : ∀ x, τ x ≠ x) (R : ModuleCat.{u} (ZMod 2)) [Nontrivial R] :

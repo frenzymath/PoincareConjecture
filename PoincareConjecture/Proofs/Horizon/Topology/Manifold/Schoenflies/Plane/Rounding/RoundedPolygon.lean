@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coo
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.LocalSides
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Polygon.OppositeCoordinate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function Filter
@@ -24,8 +14,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   {n : ℕ}
-
-
 
 theorem IsSimplePolygon.exists_positive_corner_functional [NeZero n] [FiniteDimensional ℝ E]
     {p : Polygon E n} (hp : IsSimplePolygon p) (k : Fin n) :
@@ -61,19 +49,13 @@ theorem IsSimplePolygon.exists_positive_corner_functional [NeZero n] [FiniteDime
 
 variable [NeZero n]
 
-
-
 noncomputable def roundedPolygonParameter (ρ : ℝ → ℝ) (p : Polygon E n) : ℝ → E :=
   roundedVertexPath ρ (fun j => p (polygonIntegerIndex n j))
-
-
 
 theorem periodic_roundedPolygonParameter (ρ : ℝ → ℝ) (p : Polygon E n) :
     Periodic (roundedPolygonParameter ρ p) (n : ℝ) := by
   exact periodic_roundedVertexPath ρ (fun j => p (polygonIntegerIndex n j)) (n : ℤ)
     (fun j => congrArg p (polygonIntegerIndex_add_period j))
-
-
 
 theorem contDiff_roundedPolygonParameter {V : Type*} [NormedAddCommGroup V]
     [NormedSpace ℝ V] {p : V → Polygon E n} {ρ : ℝ → ℝ} {δ : ℝ}
@@ -83,8 +65,6 @@ theorem contDiff_roundedPolygonParameter {V : Type*} [NormedAddCommGroup V]
     (hρ : ContDiff ℝ ∞ ρ) (hp : ∀ i, ContDiff ℝ ∞ (fun z => p z i)) :
     ContDiff ℝ ∞ (fun x : V × ℝ => roundedPolygonParameter ρ (p x.1) x.2) :=
   contDiff_roundedVertexPath hδ hδhalf htail hbound hρ (fun j => hp (polygonIntegerIndex n j))
-
-
 
 theorem dist_roundedPolygonParameter_le (p : Polygon E n) {ρ : ℝ → ℝ} {δ B : ℝ}
     (hδ : 0 < δ) (hδhalf : δ < 1 / 2)
@@ -117,8 +97,6 @@ theorem dist_roundedPolygonParameter_le (p : Polygon E n) {ρ : ℝ → ℝ} {δ
   change dist _ (roundedCorner abs (P i) (P i - P (i - 1)) (P (i + 1) - P i) (t - i)) ≤ _
   rw [hpiece]
   exact ((roundedCorner_tail_bounds _ _ _ hδ htail hbound).2.2 (t - i)).trans (by nlinarith)
-
-
 
 theorem IsSimplePolygon.roundedPolygonParameter_regular [FiniteDimensional ℝ E]
     {p : Polygon E n} (hp : IsSimplePolygon p) {ρ : ℝ → ℝ} {δ : ℝ}
@@ -185,8 +163,6 @@ theorem IsSimplePolygon.roundedPolygonParameter_regular [FiniteDimensional ℝ E
     change 0 < ℓ (deriv Γ (t - i)) at hpos
     rw [hz, map_zero] at hpos
     exact (lt_irrefl 0) hpos
-
-
 
 theorem exists_smooth_rounded_polygon_family [FiniteDimensional ℝ E]
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V] {K : Set V}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.SectionalTests
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ open M04
 variable {n : ℕ}
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem sectional_lower_of_model_pairs
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -44,8 +33,6 @@ theorem sectional_lower_of_model_pairs
     (modelOrthonormalPairs_linearIndependent hmem))).mp (hmin (p, q) hmem)
 
 set_option maxHeartbeats 800000 in
-
-
 
 theorem continuousOn_flow_sectionalRayleigh_model {J : Set ℝ}
     (F : RicciFlow n (EuclideanSpace ℝ (Fin n)) J) :

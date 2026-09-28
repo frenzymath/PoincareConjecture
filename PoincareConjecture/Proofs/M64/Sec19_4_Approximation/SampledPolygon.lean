@@ -5,18 +5,6 @@ import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 import PoincareConjecture.Proofs.M04.ShiEnergyPaths
 import PoincareConjecture.Proofs.M58.Cor18_28_PeriodicSpeed
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -29,9 +17,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {D : LeviCivitaData g}
-
-
-
 
 theorem m64_sampled_polygon_exists
     (hcompact : IsCompact (univ : Set M))
@@ -97,9 +82,6 @@ theorem m64_sampled_polygon_exists
   intro j
   simpa [vertices] using congrArg (fun p : Polygon M N => p.vertices j) hvertices
 
-
-
-
 theorem m64_sampled_polygon_exists_with_length
     (hcompact : IsCompact (univ : Set M))
     (gamma : C1FreeLoopSpace (M := M)) (N : ℕ) (hN : 0 < N) :
@@ -111,10 +93,6 @@ theorem m64_sampled_polygon_exists_with_length
   obtain ⟨polygon, hsampled, hboundary⟩ :=
     m64_sampled_polygon_exists hcompact gamma N hN
   exact ⟨polygon, hsampled, hboundary, m64PolygonLength_eq_sum polygon hN⟩
-
-
-
-
 
 theorem m64_static_polygon_fields
     (hcompact : IsCompact (univ : Set M)) :

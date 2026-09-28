@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.Prisms.EdgeIntervalMatching
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.EdgeFaceIncidence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.PrismBelt
@@ -45,8 +37,6 @@ theorem affine_unit_interval_image
   rw [convexHull_pair,←segment_eq_Icc (show (0 : ℝ) ≤ 1 by norm_num)]
   have h := image_segment ℝ e.toAffineMap (0 : ℝ) (1 : ℝ)
   exact h
-
-
 
 theorem original_simplicial_edge_gaps_match
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]

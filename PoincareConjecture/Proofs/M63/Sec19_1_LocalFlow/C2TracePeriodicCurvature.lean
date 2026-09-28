@@ -7,15 +7,6 @@ import Mathlib.Analysis.Calculus.IteratedDeriv.Defs
 import Mathlib.Analysis.Normed.Group.AddCircle
 import Mathlib.Topology.CompactOpen
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,9 +22,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   {ι : Type v} [Fintype ι] {a b : ℝ}
 
 local notation "W" => EuclideanSpace ℝ ι
-
-
-
 
 theorem embeddedCurvature_closed_periodic_data
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M) (hab : a < b)
@@ -77,10 +65,6 @@ theorem embeddedCurvature_closed_periodic_data
     (hclosed.comp (continuous_const.prodMk continuous_id).continuousOn
       (fun s hs => ⟨mem_univ _, hs⟩))
     Ioo_subset_Icc_self (by rw [closure_Ioo hab.ne]) ht
-
-
-
-
 
 theorem exists_periodic_embeddedCurvature_restart_data
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M) (hab : a < b)

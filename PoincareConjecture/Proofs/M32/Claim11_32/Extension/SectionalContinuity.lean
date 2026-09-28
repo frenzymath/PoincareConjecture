@@ -3,21 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Positivity.Sectional
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.SectionalBounds
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -136,8 +121,6 @@ private theorem sectional_values_eq_model_image (D : LeviCivitaData g) (x : X)
     rw [hu, hv, huv]
     norm_num
 
-
-
 theorem flow_leastSectionalCurvature_continuousOn {J : Set ℝ}
     (G : RicciFlow 3 X J) (x : X) :
     ContinuousOn (fun t => (G.connection t).leastSectionalCurvature x) J := by
@@ -172,8 +155,6 @@ theorem flow_leastSectionalCurvature_continuousOn {J : Set ℝ}
   intro t
   rw [himage]
   exact congrArg sInf (sectional_values_eq_model_image (G.connection t) x L).symm
-
-
 
 theorem flow_negativeCurvaturePart_continuousOn {J : Set ℝ}
     (G : RicciFlow 3 X J) (x : X) :

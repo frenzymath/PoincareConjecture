@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.MinimalFaceRadialTransport
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialSubdivision
 import PoincareConjecture.Proofs.M76.Mathlib.RadialSegmentGerms
 
-
-
 set_option autoImplicit false
 open Set
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteCapReadout
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSurgeryCases
 import PoincareConjecture.Proofs.M36.MetricComparison
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ universe u v
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem limitFinite_nearby_neck_of_surgery_source_canonical
     {ι : Type*} (F : ℕ → SurgeryFlowData.{u}) (t Q : ℕ → ℝ) (hQ : ∀ k, 0 < Q k)

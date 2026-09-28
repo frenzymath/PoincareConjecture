@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Brown.RelativeHalfspaceCharts
 import Mathlib.Topology.Algebra.Group.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open Set
 namespace BrownCollar
 
 variable {X P : Type*} [TopologicalSpace X] [TopologicalSpace P]
-
-
 
 theorem exists_positive_halfspace_local_collar
     (e : OpenPartialHomeomorph X (P × ℝ)) {S R : Set X} (hSR : S ⊆ R)
@@ -32,8 +22,6 @@ theorem exists_positive_halfspace_local_collar
   apply exists_relative_halfspace_local_collar q R _ (Set.inclusion hSR) hbase x hqx
   intro z hz
   rw [hside _ (hqt (q.map_source hz)), hnormal z hz]
-
-
 
 theorem exists_negative_halfspace_local_collar
     (e : OpenPartialHomeomorph X (P × ℝ)) {S R : Set X} (hSR : S ⊆ R)
@@ -53,9 +41,6 @@ theorem exists_negative_halfspace_local_collar
     rw [neg_nonneg]
     exact hside y hy
   exact exists_positive_halfspace_local_collar f hSR hpair' hside' x hx
-
-
-
 
 theorem exists_side_local_collars
     {S Rpos Rneg : Set X} (hp : S ⊆ Rpos) (hm : S ⊆ Rneg)

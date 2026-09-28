@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.SharedCutPatches
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,11 +14,9 @@ variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
   (S R : Set (Fin (F.event T hT).cap_count)) (hSR : S ⊆ R)
 
-
 noncomputable def sharedCutOpen : TopologicalSpace.Opens (partialCappedCarrier F T hT P R).carrier :=
   ⟨⋃ j, Set.range (sharedCutInclude F T hT P S R hSR j),
     isOpen_iUnion (fun j => (sharedCutInclude_openEmbedding F T hT P S R hSR j).isOpen_range)⟩
-
 
 theorem exists_sharedCutComparison :
     ∃ f : sharedCutOpen F T hT P S R hSR → (partialCappedCarrier F T hT P S).carrier,
@@ -37,16 +27,13 @@ theorem exists_sharedCutComparison :
     (sharedCutInclude_openEmbedding F T hT P S R hSR)
     (sharedCutPatch_openEmbedding F T hT P S R hSR) (sharedCutPatch_eq_iff F T hT P S R hSR)
 
-
 noncomputable def sharedCutComparison :
     sharedCutOpen F T hT P S R hSR → (partialCappedCarrier F T hT P S).carrier :=
   Classical.choose (exists_sharedCutComparison F T hT P S R hSR)
 
-
 theorem sharedCutComparison_openEmbedding :
     IsOpenEmbedding (sharedCutComparison F T hT P S R hSR) :=
   (Classical.choose_spec (exists_sharedCutComparison F T hT P S R hSR)).1
-
 
 theorem sharedCutComparison_patch (j : SharedCutIndex F T hT P S R)
     (x : sharedCutDomain F T hT P S R hSR j) :
@@ -54,7 +41,6 @@ theorem sharedCutComparison_patch (j : SharedCutIndex F T hT P S R)
       ⟨sharedCutInclude F T hT P S R hSR j x, Set.mem_iUnion.mpr ⟨j, Set.mem_range_self x⟩⟩ =
         sharedCutPatch F T hT P S R hSR j x :=
   (Classical.choose_spec (exists_sharedCutComparison F T hT P S R hSR)).2 j x
-
 
 theorem sharedCutComparison_range :
     Set.range (sharedCutComparison F T hT P S R hSR) =
@@ -72,7 +58,6 @@ theorem sharedCutComparison_range :
       Set.mem_iUnion.mpr ⟨j, Set.mem_range_self z⟩⟩,
         sharedCutComparison_patch F T hT P S R hSR j z⟩
 
-
 theorem partialOldInclusion_mem_shared (y : eventCutOpen F T hT P R) :
     partialOldInclusion F T hT P R y ∈ sharedCutOpen F T hT P S R hSR := by
   let x : partialCappingDomain F T hT P R (.inl y) :=
@@ -81,7 +66,6 @@ theorem partialOldInclusion_mem_shared (y : eventCutOpen F T hT P R) :
   refine Set.mem_iUnion.mpr ⟨Sum.inl y, x, ?_⟩
   change partialCappingInclude F T hT P R (.inl y) x = _
   rw [← partialOldInclusion_patch, partialCappingMap_old_center]
-
 
 theorem sharedCutComparison_old (y : eventCutOpen F T hT P R) :
     sharedCutComparison F T hT P S R hSR
@@ -103,7 +87,6 @@ theorem sharedCutComparison_old (y : eventCutOpen F T hT P R) :
   change _ = partialOldInclusion F T hT P S
     (successiveOldInclusion F T hT P S R hSR (partialCappingMap F T hT P R (.inl y) x)) at hx
   rwa [partialCappingMap_old_center] at hx
-
 
 theorem sharedCutComparison_cap (a : S × Bool) (x : capDoubleBall) :
     sharedCutComparison F T hT P S R hSR

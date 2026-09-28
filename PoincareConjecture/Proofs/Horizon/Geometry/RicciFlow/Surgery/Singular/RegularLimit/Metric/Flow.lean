@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.EndpointEquation
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -42,8 +35,6 @@ theorem terminalMetricFamily_ricci_of_ne
     (mem_univ x) v w
   simp only [Poincare.Geometry.Manifold.RegularLevel.mfderiv_opens_subtypeVal] at h
   exact h
-
-
 
 def terminalFlow (H : SingularTimeAssumptions F T M)
     (P04 : RicciFlowCurvatureTheory.{u}) :

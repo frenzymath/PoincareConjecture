@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.LipschitzRectangleFT
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.WeakDerivativeClosure
 import Mathlib.MeasureTheory.SpecificCodomains.WithLp
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ open Poincare.Analysis.Sobolev.Weak
 
 local notation "S" => interior m64AnnulusDomain
 local notation "mu" => volume.restrict S
-
-
 
 theorem m64_lipschitz_scalar_weak_partial {f : LoopPlane → ℝ} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain) (i : Fin 2) :
@@ -47,8 +35,6 @@ theorem m64_lipschitz_scalar_weak_partial {f : LoopPlane → ℝ} {K : ℝ≥0}
   exact m64WeakPartialDeriv_ae_congr hv hd
     (hasWeakPartialDeriv_lineDeriv_of_lipschitz hF i)
 
-
-
 theorem m64_lipschitz_memLp_two
     {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
     {f : LoopPlane → F} {K : ℝ≥0} (hf : LipschitzOnWith K f m64AnnulusDomain) :
@@ -62,16 +48,12 @@ theorem m64_lipschitz_memLp_two
 variable {m : ℕ}
 local notation "E" => EuclideanSpace ℝ (Fin m)
 
-
-
 theorem m64_lipschitz_coordinate {f : LoopPlane → E} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain) (b : Fin m) :
     LipschitzOnWith
       (‖PiLp.proj (𝕜 := ℝ) 2 (fun _ : Fin m => ℝ) b‖₊ * K)
       (fun p => f p b) m64AnnulusDomain :=
   (PiLp.proj (𝕜 := ℝ) 2 (fun _ : Fin m => ℝ) b).lipschitz.comp_lipschitzOnWith hf
-
-
 
 theorem m64_vector_partial_coordinate_ae {f : LoopPlane → E}
     (hdiff : ∀ᵐ p ∂mu, DifferentiableAt ℝ f p) (i : Fin 2) (b : Fin m) :
@@ -81,8 +63,6 @@ theorem m64_vector_partial_coordinate_ae {f : LoopPlane → E}
   let P := PiLp.proj (𝕜 := ℝ) 2 (fun _ : Fin m => ℝ) b
   have hd := (P.hasFDerivAt.comp p hp.hasFDerivAt).fderiv
   exact congrArg (fun L => L (EuclideanSpace.single i 1)) hd
-
-
 
 theorem m64_lipschitz_vector_column_memLp {f : LoopPlane → E} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain)
@@ -97,9 +77,6 @@ theorem m64_lipschitz_vector_column_memLp {f : LoopPlane → E} {K : ℝ≥0}
     ((m64_lipschitz_coordinate hf b).mono interior_subset)
     (EuclideanSpace.single i 1)).mono_exponent (p := 2) le_top
   exact (memLp_congr_ae (m64_vector_partial_coordinate_ae hdiff i b)).mp hh
-
-
-
 
 theorem m64_lipschitz_vector_weak_partial {f : LoopPlane → E} {K : ℝ≥0}
     (hf : LipschitzOnWith K f m64AnnulusDomain)

@@ -1,22 +1,12 @@
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalGlobalIsometry
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCommonInterval_uniform_on_compacts_of_balls
     {M N : Type*} [MetricSpace M] [UniformSpace N]
@@ -27,9 +17,6 @@ theorem terminalCommonInterval_uniform_on_compacts_of_balls
   obtain ⟨j, hj⟩ := exists_nat_gt R
   apply (hball j).mono
   exact hR.trans (Metric.closedBall_subset_closedBall (by linarith))
-
-
-
 
 theorem terminalCommonInterval_compact_image_capture
     {M N : Type*} [TopologicalSpace M] [MetricSpace N] [LocallyCompactSpace N]

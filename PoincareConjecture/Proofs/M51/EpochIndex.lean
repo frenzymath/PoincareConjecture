@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EpochCoverage
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture
@@ -25,7 +17,6 @@ theorem exists_lt_epochStart (t : ℝ) : ∃ j : ℕ, t < surgeryEpochStart j :=
   refine ⟨j + 1, ?_⟩
   dsimp [surgeryEpochStart]
   linarith
-
 
 noncomputable def epochIndex (t : ℝ) : ℕ := by
   classical
@@ -73,7 +64,6 @@ theorem mem_epochEntry_index {t : ℝ} (ht : 0 ≤ t) :
   · simpa [surgeryEpochEntry, hi] using And.intro ht (lt_epochStart_index t)
   · simp only [surgeryEpochEntry, hi, if_false, Set.mem_Ico]
     exact ⟨epochStart_le_of_lt_index (by omega), lt_epochStart_index t⟩
-
 
 theorem epochIndex_of_mem {t : ℝ} {j : ℕ} (ht : t ∈ surgeryEpochEntry j) :
     epochIndex t = j := by

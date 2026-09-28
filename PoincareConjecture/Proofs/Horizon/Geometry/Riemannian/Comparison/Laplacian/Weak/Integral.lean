@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.P
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Laplacian.Branch.Complete
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Green.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +20,6 @@ variable {m : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin (m + 1))) M]
   [IsManifold (𝓡 (m + 1)) ∞ M] {g : RiemannianMetric (m + 1) M}
-
-
 
 theorem integral_distance_mul_laplacian_le (D : LeviCivitaData g)
     (hm : 0 < m) (hcomplete : MetricComplete g) (hRic : D.NonnegativeRicciCurvature)

@@ -1,17 +1,5 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Incidence
 import Mathlib.Data.Fintype.EquivFin
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -24,8 +12,6 @@ universe u v w
 
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem nonempty_finiteSmoothTriangulation_of_coordinate_triangle_cover
     {F : Type v} {E : Type w} [Finite F] [Finite E]
@@ -108,10 +94,6 @@ theorem nonempty_finiteSmoothTriangulation_of_coordinate_triangle_cover
       exact ⟨eidx e, by simpa only [Equiv.symm_apply_apply] using he⟩
     · right
       exact ⟨vidx ⟨p, hp⟩, by simpa only [Equiv.symm_apply_apply] using h⟩
-
-
-
-
 
 theorem nonempty_finiteSmoothTriangulationWithCoordinates_of_coordinate_triangle_cover
     {F : Type v} {E : Type w} [Finite F] [Finite E]

@@ -13,7 +13,6 @@ local notation "Left" => Set.prod Q (Icc (-1 : ℝ) (-1 / 2))
 local notation "Middle" => Set.prod Q (Icc (-1 / 2 : ℝ) 0)
 local notation "Right" => Set.prod Q (Icc (0 : ℝ) 1)
 
-
 theorem resolving_middle_injective
     {X : Type*} {B : Set P2} {a : P2 → X} {g : (V2 × ℝ) → X}
     (copy : B ≃ₜ Middle) (ha : InjOn a B)
@@ -27,8 +26,6 @@ theorem resolving_middle_injective
   have heq : u = v := Subtype.ext (ha u.property v.property huv)
   have hh := congrArg (fun p : B ↦ (copy p : V2 × ℝ)) heq
   simpa only [u, v, Homeomorph.apply_symm_apply] using hh
-
-
 
 theorem resolving_middle_singleton_fibers
     {E X : Type*} [TopologicalSpace E] {O I : Set E} {B : Set P2}

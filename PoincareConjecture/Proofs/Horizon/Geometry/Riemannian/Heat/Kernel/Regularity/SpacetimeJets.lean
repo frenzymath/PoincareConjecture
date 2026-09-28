@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regular
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Regularity.CoordinateKernel
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.LinearPrecompose
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -73,8 +65,6 @@ variable {n d : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin n)
 local notation "F" => EuclideanSpace ℝ (Fin d)
-
-
 
 theorem exists_coordinateHeatKernel_jet_bound
     (D : LeviCivitaData g) (T : F →L[ℝ] ℝ) (X Y : F →L[ℝ] E)
@@ -168,9 +158,6 @@ theorem exists_coordinateHeatKernel_jet_bound
   exact mul_le_mul (mul_le_mul_of_nonneg_left
     (hxb l (Nat.le_of_lt_succ (Finset.mem_range.mp hl))) (by positivity))
     (hqb (m - l) (Nat.sub_le _ _)) (norm_nonneg _) (by positivity)
-
-
-
 
 theorem locallyEventuallyBoundedDerivatives_coordinateHeatKernel
     (D : LeviCivitaData g) (_hc : MetricComplete g) {k : ℝ} (_hk : 0 ≤ k)

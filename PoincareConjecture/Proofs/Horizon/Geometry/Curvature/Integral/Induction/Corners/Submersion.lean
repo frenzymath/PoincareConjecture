@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Submersion.FiniteDimensional
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,9 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {ι : Type*} [Fintype ι]
-
-
-
 
 theorem strainer_isSubmersionAt
     (g : RiemannianMetric n M) (f : ι → M → ℝ)

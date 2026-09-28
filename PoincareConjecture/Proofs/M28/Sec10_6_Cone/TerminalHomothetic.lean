@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_6_Cone.OperatorRicci
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.NullSectionEnergy
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.HomotheticField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture.M28
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
-
-
 
 theorem terminal_ricci_eq_zero_of_homothetic_field
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)
@@ -54,8 +42,6 @@ theorem terminal_ricci_eq_zero_of_homothetic_field
   have h := RicciFlow.Splitting.ricci_connection_eq_zero_of_terminal_null
     P hab F hsec Z (hZsmooth x) (Eventually.of_forall hnull) v w
   simpa only [hZ] using h
-
-
 
 theorem no_positive_terminal_scalar_of_homothetic_field
     (P : RicciFlowCurvatureTheory.{u}) {a b : ℝ} (hab : a < b)

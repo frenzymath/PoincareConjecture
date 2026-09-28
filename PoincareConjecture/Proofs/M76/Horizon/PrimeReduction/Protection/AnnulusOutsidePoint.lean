@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusHomeomorph
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PeriodCircleLoop
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.OriginalSphereAnnulusDisks
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry PLAnnularStrip
 
@@ -60,9 +53,6 @@ local notation "V3" => (Fin 3 → ℝ)
 local notation "P2" => (ℝ × ℝ)
 local notation "Sphere" => sphere (0 : V3) 1
 local notation "Ann" => squareAnnulus 8 1
-
-
-
 
 theorem ChartwisePLSphere.exists_marked_annulus_complement_disks
     {X α : Type*} [TopologicalSpace X]

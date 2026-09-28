@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Tree
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.RetainedDerivatives
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,7 +14,6 @@ private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 
-
 inductive SphereSurgeryPath (v : E3) : (S2 -> E3) -> (S2 -> E3) -> Type
   | refl (f : S2 -> E3) : SphereSurgeryPath v f f
   | minus {f g : S2 -> E3} {c R : Real}
@@ -29,7 +26,6 @@ inductive SphereSurgeryPath (v : E3) : (S2 -> E3) -> (S2 -> E3) -> Type
 namespace SphereSurgeryPath
 
 variable {v : E3}
-
 
 def core : {f g : S2 -> E3} -> SphereSurgeryPath v f g -> Set S2
   | _, _, .refl _ => univ
@@ -66,7 +62,6 @@ theorem finite_boundaryHeights : P.boundaryHeights.Finite := by
   | minus S next ih => exact ih.insert _
   | plus S next ih => exact ih.insert _
 
-
 theorem height_eq_on_core : EqOn (fun p => inner Real v (g p))
     (fun p => inner Real v (f p)) P.core := by
   induction P with
@@ -79,8 +74,6 @@ theorem height_eq_on_core : EqOn (fun p => inner Real v (g p))
     intro p hp
     exact (ih hp.1).trans ((congrArg (inner Real v) (S.retainedPlus_eq p hp.2)).trans
       (S.height_preserving _))
-
-
 
 theorem mfderiv_eq_on_core : ∀ p ∈ P.core,
     mfderiv (𝓡 2) 𝓘(Real, Real) (fun q => inner Real v (g q)) p =
@@ -105,8 +98,6 @@ theorem mfderiv_eq_on_core : ∀ p ∈ P.core,
       S.ePlus S.ePlus_source S.ePlus_smooth S.ePlus_symm_smooth
       (fun x hx => (congrArg (inner Real v) (S.retainedPlus_eq x hx)).trans
         (S.height_preserving _)) p hp.2
-
-
 
 theorem frontier_height_mem : ∀ p ∈ frontier P.core,
     inner Real v (g p) ∈ P.boundaryHeights := by
@@ -147,7 +138,6 @@ theorem frontier_height_mem : ∀ p ∈ frontier P.core,
         S.tube_height q S.a ht]
       exact mem_insert _ _
 
-
 theorem disjoint_boundaryHeights {B : Set Real} (hP : P.Protects B) :
     Disjoint P.boundaryHeights B := by
   induction P with
@@ -174,7 +164,6 @@ end SphereSurgeryPath
 namespace SphereSurgeryTree
 
 variable {v : E3} {A : Finset Real} {f g : S2 -> E3} {B : Set Real}
-
 
 theorem exists_path_to_leaf (tree : SphereSurgeryTree v A f) (hg : g ∈ tree.leaves)
     (hprotects : tree.Protects B) :

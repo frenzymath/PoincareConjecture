@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M09.FixedChartCurvature
 import PoincareConjecture.Proofs.M09.CoordinateCompatibility
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

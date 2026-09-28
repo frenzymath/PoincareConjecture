@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Boundary.Cuts.SpanningParts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
@@ -22,8 +14,6 @@ private theorem join_spanning_interval_pairs
   obtain ⟨p, hp, hp0, hp1⟩ := hU.exists_unitInterval_chart_with_endpoints hab
   obtain ⟨q, hq, hq0, hq1⟩ := hV.exists_unitInterval_chart_with_endpoints hbc
   exact isFinitePLBallPair_joined_intervals p q hp hq hp0 hp1 hq0 hq1 hUV
-
-
 
 theorem exists_shell_dissection_with_spanning_sides
     {S T L R : Set P2} {a b x y : P2}

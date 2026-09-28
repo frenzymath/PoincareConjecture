@@ -2,20 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Applications.Counte
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.RiemannianLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.Alexandrov.Packing.PuncturedAscent
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 

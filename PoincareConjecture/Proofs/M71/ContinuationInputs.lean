@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M56.Poincare
 import PoincareConjecture.Proofs.M59.Providers
 import PoincareConjecture.Statements.M57Transport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -40,17 +30,6 @@ noncomputable def m71ContinuationPackage
   H := H
   A := Classical.choice (hM57.transport B G40 D W ancestry C hC T hT x H)
 
-
-
-
-
-
-
-
-
-
-
-
 theorem m71InitialSliceConnected
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -71,15 +50,6 @@ theorem m71InitialSliceConnected
   rw [hrange] at himage
   exact himage
 
-
-
-
-
-
-
-
-
-
 theorem m71InitialSliceSimplyConnected
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -90,7 +60,6 @@ theorem m71InitialSliceSimplyConnected
     SimplyConnectedSpace (G.certificate.flow.slice 0).carrier := by
   exact
     (G.certificate.initial_identification.toHomeomorph.symm.toHomotopyEquiv).simplyConnectedSpace
-
 
 set_option linter.style.haveILetI false in
 theorem m71InitialGroupsFromOriginal
@@ -143,10 +112,6 @@ theorem m71ContinuationFromTransport
   exact ⟨n, fun i => m71ContinuationPackage ancestry B hM57 G40 C hC T hT
     (points i) (inputs T hT (points i)), hcover⟩
 
-
-
-
-
 theorem m71ContinuationFromM59
     {g₀ : StandardInitialMetric} {D : RepairedSurgeryFlowData.{u} g₀}
     {W : RepairedEventChildWitness D.flow}
@@ -174,10 +139,6 @@ theorem m71ContinuationFromM59
   exact m71ContinuationFromTransport ancestry (Classical.choose hM59)
     (Classical.choice (m59BasepointTransport_from_M59 hM59)) initial hM61 hM64
     hM65 hM58 hM66 hM57 G40 C hC hcomparison hscalar inputs
-
-
-
-
 
 def m71GlobalInputFromPoincareAncestry
     {M : Type u} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]

@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedSubcomplexCarriers
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +9,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   {K : SimplicialComplex ℝ E} {f : E → F}
-
-
 
 theorem AffineOnFaces.embeddedImage_pure (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {n : ℕ}
@@ -36,8 +26,6 @@ theorem AffineOnFaces.embeddedImage_pure (hf : K.AffineOnFaces f)
 
 variable [DecidableEq E] [DecidableEq F]
 
-
-
 theorem AffineOnFaces.isConnected_embeddedImage_faceLink (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) (hfinite : K.faces.Finite) {s : Finset E} (hs : s ∈ K.faces)
     (hconn : IsConnected (K.faceLink s).space) :
@@ -45,8 +33,6 @@ theorem AffineOnFaces.isConnected_embeddedImage_faceLink (hf : K.AffineOnFaces f
   rw [(hf.embeddedImage_faceLink_carrier_vertices hinj hs).1]
   have hflink : (K.faceLink s).AffineOnFaces f := fun t ht => hf t ht.1
   exact hconn.image f (hflink.continuousOn (finite_faceLink_faces hfinite s))
-
-
 
 theorem AffineOnFaces.ncard_embeddedImage_faceLink (hf : K.AffineOnFaces f)
     (hinj : InjOn f K.space) {s : Finset E} (hs : s ∈ K.faces) :

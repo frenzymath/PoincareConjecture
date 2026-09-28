@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.TaperedTriangleEdgeIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlice
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +9,6 @@ open Set Geometry
 namespace AffineMap
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
-
 
 theorem exists_exceptional_triangle_tapered_collar (A : E →ᵃ[ℝ] ℝ) {q u v : E}
     (hi : AffineIndependent ℝ ![q, u, v]) (hq : A q = 0)

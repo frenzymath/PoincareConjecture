@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.OriginalSelected
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleCurve.Components.OriginalOrdinaryResolution
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.MarkedRimFromTrace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -22,9 +14,6 @@ local notation "V2" => (Fin 2 → ℝ)
 local notation "V3" => (Fin 3 → ℝ)
 local notation "D2" => closedBall (0 : V2) 1
 local notation "Q2" => sphere (0 : V2) 1
-
-
-
 
 theorem exists_ordinary_arc_resolution
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

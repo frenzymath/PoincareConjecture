@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductRescaling
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalProductLateralOpenness
 import Mathlib.Algebra.Order.Group.Pointwise.Interval
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -26,9 +18,6 @@ local notation "I" => Icc (-1 : ℝ) 1
 
 variable {X ι : Type*} [TopologicalSpace X] [T2Space X]
   {e : ι → OpenPartialHomeomorph X V3} {R : Set X} {j : V2 → X}
-
-
-
 
 theorem OriginalProperDiskTriangulation.exists_small_disk_product
     (T : OriginalProperDiskTriangulation e R j) {U : Set X}
@@ -79,9 +68,6 @@ theorem OriginalProperDiskTriangulation.exists_small_disk_product
     rw [heq]
     exact hopen (δ * ε) (mul_pos hδ hε) (by nlinarith)
   exact ⟨hopen', P'.isOpen_lateral_image T.isClosed_region hεsmall hopen'⟩
-
-
-
 
 theorem exists_small_original_disk_product
     (hR : IsCompact R) (he : PLDomain e R)

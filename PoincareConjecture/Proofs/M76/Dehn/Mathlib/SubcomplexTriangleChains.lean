@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChainInclusion
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteChainCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SubcomplexIncidence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PreAbstractSimplicialComplex.ModTwoCochains
@@ -24,7 +15,6 @@ local notation "KA" => K.vertexAbstractComplex.toPreAbstractSimplicialComplex
 local notation "AA" => A.vertexAbstractComplex.toPreAbstractSimplicialComplex
 
 open Classical in
-
 
 theorem subcomplex_totalTriangleChain (hAK : A ≤ K) :
     (LinearMap.funLeft (ZMod 2) (ZMod 2)
@@ -54,7 +44,6 @@ theorem subcomplex_totalTriangleChain (hAK : A ≤ K) :
 omit [Fintype K.vertices] [Fintype A.vertices] in
 open Classical in
 
-
 theorem subcomplex_triangleChain_range_iff [Finite K.vertices] (hAK : A ≤ K)
     (c : Module.Dual (ZMod 2) (Triangle KA → ZMod 2)) :
     c ∈ LinearMap.range (LinearMap.funLeft (ZMod 2) (ZMod 2)
@@ -77,7 +66,6 @@ theorem subcomplex_triangleChain_range_iff [Finite K.vertices] (hAK : A ≤ K)
     by_cases hq : q = t <;> simp [hq]
 
 omit [Fintype A.vertices] in
-
 
 theorem subcomplex_markedTriangleChain_ne_zero (hAK : A ≤ K) (t : Triangle AA) :
     markedTriangleChain KA

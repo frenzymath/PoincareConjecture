@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetResidua
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskInteriorFactor
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.MinimalDiskConformal
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 5
 set_option backward.isDefEq.respectTransparency false
@@ -29,11 +19,6 @@ variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
 
 theorem interior_logarithmicDensity_integrable (S : M65MinimalDisk g connection gamma)
     {x : LoopPlane} (hx : x ∈ ball (0 : LoopPlane) 1) :

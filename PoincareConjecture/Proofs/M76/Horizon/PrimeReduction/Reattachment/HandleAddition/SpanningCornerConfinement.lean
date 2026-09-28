@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.HandleAddition.SpanningReflectedCorner
 import PoincareConjecture.Proofs.M76.Rigidity.CenteredHalfspaceCharts
 
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

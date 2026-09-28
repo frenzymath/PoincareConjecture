@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CentroidMesh
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedSubdivision
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,9 +10,6 @@ namespace Finset
 
 variable {E : Type*}
 
-
-
-
 noncomputable def binaryFaceWeights (s : Finset E) (A : Set E) (v : E) : ℝ := by
   classical
   exact if (s.filter (fun x => x ∈ A)).Nonempty ∧
@@ -29,8 +17,6 @@ noncomputable def binaryFaceWeights (s : Finset E) (A : Set E) (v : E) : ℝ := 
     if v ∈ A then (1 / 2 : ℝ) * ((s.filter (fun x => x ∈ A)).card : ℝ)⁻¹
     else (1 / 2 : ℝ) * ((s.filter (fun x => x ∉ A)).card : ℝ)⁻¹
   else (s.card : ℝ)⁻¹
-
-
 
 theorem binaryFaceWeights_pos (s : Finset E) (hs : s.Nonempty) (A : Set E) (v : E) :
     0 < s.binaryFaceWeights A v := by
@@ -48,8 +34,6 @@ theorem binaryFaceWeights_pos (s : Finset E) (hs : s.Nonempty) (A : Set E) (v : 
         mul_pos (show (0 : ℝ) < 1 / 2 by norm_num) (inv_pos.mpr hn)
   · simp only [binaryFaceWeights, if_neg hm, inv_pos]
     exact_mod_cast hs.card_pos
-
-
 
 theorem sum_binaryFaceWeights (s : Finset E) (hs : s.Nonempty) (A : Set E) :
     (∑ v ∈ s, s.binaryFaceWeights A v) = 1 := by
@@ -74,12 +58,8 @@ theorem sum_binaryFaceWeights (s : Finset E) (hs : s.Nonempty) (A : Set E) :
 
 variable [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def binaryFaceCenter (s : Finset E) (A : Set E) : E :=
   ∑ v ∈ s, s.binaryFaceWeights A v • v
-
-
 
 theorem binaryFaceCenter_eq_centroid (s : Finset E) (hs : s.Nonempty) (A : Set E)
     (huniform : (∀ v ∈ s, v ∈ A) ∨ (∀ v ∈ s, v ∉ A)) :
@@ -95,9 +75,6 @@ theorem binaryFaceCenter_eq_centroid (s : Finset E) (hs : s.Nonempty) (A : Set E
       exact h v (Finset.mem_filter.mp hv).1 (Finset.mem_filter.mp hv).2
   rw [s.centroid_eq_inv_card_smul_sum hs]
   simp only [binaryFaceCenter, binaryFaceWeights, if_neg hm, Finset.smul_sum, id_eq]
-
-
-
 
 theorem binaryFaceCenter_of_mixed (s : Finset E) (A : Set E) :
     letI : DecidablePred (fun x : E => x ∈ A) := fun _ => Classical.propDecidable _
@@ -127,9 +104,6 @@ end Finset
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem positive_binary_face_centers (K : SimplicialComplex ℝ E) (A : Set E)
     (s : K.faces) :

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Compact.RicciSpectrum
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,9 +13,6 @@ namespace PoincareConjecture.M47Positive
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] {g : RiemannianMetric 3 M}
-
-
-
 
 theorem exists_pinched_ricci_spectrum (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) {delta : ℝ}
@@ -108,9 +94,6 @@ theorem exists_pinched_ricci_spectrum (D : LeviCivitaData g)
     rw [hcubic] at h
     simpa only [C, b, Fin.sum_univ_three] using h
 
-
-
-
 theorem weighted_ricci_reaction_nonpos (D : LeviCivitaData g)
     (hD : D.CurvatureTensorCalculus) (x : M) {delta epsilon : ℝ}
     (hdelta : 0 ≤ delta) (hR : 0 < D.scalarCurvature x)
@@ -133,9 +116,6 @@ theorem weighted_ricci_reaction_nonpos (D : LeviCivitaData g)
   rw [Poincare.ThreeDimensionalRicciPinching.quartic_eq_contracted_polynomial] at h
   rw [D.curvature_ricci_contraction_eq_cubic hD, hscalar, hnorm, hcube]
   exact h
-
-
-
 
 theorem weighted_gradient_remainder_nonpos {R S A G p : ℝ}
     (hR : 0 < R) (hD : 0 ≤ S - R ^ 2 / 3) (hG : 0 ≤ G)

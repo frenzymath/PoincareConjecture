@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Collar.Extension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 
@@ -19,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace Real E]
   [FiniteDimensional Real E] [NormedAddCommGroup F] [NormedSpace Real F]
   {n : Nat} [Fact (Module.finrank Real E = n + 1)]
-
-
 
 theorem exists_contDiff_extension_sphere_family
     {T : Set Real} (hT : IsCompact T)
@@ -66,8 +56,6 @@ theorem exists_contDiff_extension_sphere_family
   have hp : p.val ≠ 0 := ne_zero_of_mem_unit_sphere p
   simp [g, hp, radial]
 
-
-
 theorem exists_contDiff_compactlySupported_sphere_family
     {V : Type*} [NormedAddCommGroup V] [NormedSpace Real V]
     {T : Set Real} (hT : IsCompact T)
@@ -91,9 +79,6 @@ private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private abbrev P3 := Real × E3
 private instance : Fact (Module.finrank Real E3 = 2 + 1) := ⟨by simp⟩
-
-
-
 
 theorem exists_contDiff_compactlySupported_velocity_extension
     {V : Type*} [NormedAddCommGroup V] [NormedSpace Real V]

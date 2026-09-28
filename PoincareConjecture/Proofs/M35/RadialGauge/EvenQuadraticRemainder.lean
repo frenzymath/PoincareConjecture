@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M35.Mathlib.SmoothEvenRadial
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped ContDiff
@@ -29,7 +21,6 @@ theorem axisDivision_odd_of_even {F : ℝ → ℝ} (hF : ContDiff ℝ ∞ F)
     have heq : (-r) * axisDivision F (-r) = (-r) * -axisDivision F r := by
       linarith only [hp, hn]
     exact mul_left_cancel₀ (neg_ne_zero.mpr hr) heq
-
 
 noncomputable def smoothEvenQuadratic (F : ℝ → ℝ) : ℝ → ℝ := axisDivision (axisDivision F)
 

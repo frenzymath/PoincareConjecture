@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Dirichlet.Boun
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.Localization.WeakEquation
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.Boundary.H3
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -28,7 +22,6 @@ variable {n : ℕ} [NeZero n] {M : Type*} [TopologicalSpace M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
 omit [MeasurableSpace M] [BorelSpace M] [T3Space M] in
-
 
 theorem exists_elliptic_form_on_compact
     (e : OpenPartialHomeomorph E M)
@@ -129,8 +122,6 @@ private theorem localized_eigenfunction_data
     BoundaryLocalization.memWkp_mul_smooth_of_tsupport_subset 2 hH hU hu2 hψ hψc hψs,
     _, hloc.1.memW1p, hloc.2⟩
 
-
-
 theorem exists_local_memWkp_three (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :
     ∃ (e : OpenPartialHomeomorph E M) (χ : M → ℝ) (V : Set E),
@@ -172,8 +163,6 @@ theorem exists_local_memWkp_three (D : LeviCivitaData g)
   apply (Euclidean.MemWkp_congr_ae (by norm_num) (hT.inter hH) _).mp hu3
   filter_upwards [ae_restrict_mem (hT.inter hH).measurableSet] with z hz
   simp only [hψone z (subset_closure hz.1), one_mul]
-
-
 
 theorem exists_local_eigenbasis_memWkp_three (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :
@@ -267,8 +256,6 @@ private theorem localized_energy_forcing_data
   exact ⟨BoundaryTangential.memW01p_mul_smooth hH hu0 hψ hψc,
     BoundaryLocalization.memWkp_mul_smooth_of_tsupport_subset 2 hH hU hu2 hψ hψc hψs,
     _, hloc.1.memW1p, hloc.2⟩
-
-
 
 theorem exists_local_memWkp_three_of_energy_forcing (D : LeviCivitaData g)
     (S : Poincare.Manifold.SmoothDomain n Ω) (x : closure Ω) :

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.AlexanderRegionAssembly
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionPullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,11 +9,6 @@ namespace Set
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_alexander_region_balls_of_deformed_caps {b c d q U V D : Set E}
     (hdim : Module.finrank ℝ E = 3)

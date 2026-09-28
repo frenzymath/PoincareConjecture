@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Metric
 import Mathlib.Analysis.SpecificLimits.Basic
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,7 +10,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem edist_le_pathELength_of_mem_Icc (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b t : ℝ}
@@ -34,7 +22,6 @@ theorem edist_le_pathELength_of_mem_Icc (g : RiemannianMetric n M)
     (hγ.mono (Icc_subset_Icc_right ht.2)) rfl rfl ht.1).trans
       (Manifold.pathELength_mono le_rfl ht.2)
 
-
 theorem mapsTo_ball_of_pathELength_lt (g : RiemannianMetric n M)
     {γ : ℝ → M} {a b r : ℝ}
     (hγ : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) 1 γ (Icc a b))
@@ -42,7 +29,6 @@ theorem mapsTo_ball_of_pathELength_lt (g : RiemannianMetric n M)
     MapsTo γ (Icc a b) (g.ball (γ a) r) := by
   intro t ht
   exact (g.edist_le_pathELength_of_mem_Icc hγ ht).trans_lt hlen
-
 
 theorem exists_short_path_in_ball (g : RiemannianMetric n M)
     (p q : M) {r : ℝ} (hq : q ∈ g.ball p r) :
@@ -56,7 +42,6 @@ theorem exists_short_path_in_ball (g : RiemannianMetric n M)
     Manifold.exists_lt_of_riemannianEDist_lt hq
   refine ⟨γ, h0, h1, hγ, hlen, ?_⟩
   simpa only [h0] using g.mapsTo_ball_of_pathELength_lt hγ hlen
-
 
 theorem isCompact_closedBall_of_precompact_ball [T2Space M]
     (g : RiemannianMetric n M) (p : M) {r R : ℝ} (hR : 0 < R)
@@ -74,8 +59,6 @@ theorem isCompact_closedBall_of_precompact_ball [T2Space M]
   · exact isClosed_le (continuous_const.edist continuous_id) continuous_const
   · intro q hq
     exact subset_closure (hq.trans_lt ((ENNReal.ofReal_lt_ofReal_iff hR).mpr hrR))
-
-
 
 theorem exists_compact_confined_short_paths [T2Space M]
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)
@@ -104,8 +87,6 @@ theorem exists_compact_confined_short_paths [T2Space M]
     have hdist := g.edist_le_pathELength_of_mem_Icc hγ ht
     rw [h0] at hdist
     exact (hdist.trans_lt (hlen.trans_le (min_le_right _ _))).le
-
-
 
 theorem exists_compact_confined_minimizing_sequence [T2Space M]
     (g : RiemannianMetric n M) (p q : M) {R : ℝ} (hR : 0 < R)

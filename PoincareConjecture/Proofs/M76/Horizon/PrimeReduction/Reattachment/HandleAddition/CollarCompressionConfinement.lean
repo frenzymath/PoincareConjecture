@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.OriginalFiniteInwa
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Protection.MarkedArcSphereObstruction
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76.OriginalFiniteCollarModel
@@ -107,4 +97,3 @@ theorem exists_inward_compression_with_ball_confinement
   · exact ho hxC hx
 
 end PoincareConjecture.M76.OriginalFiniteCollarModel
-

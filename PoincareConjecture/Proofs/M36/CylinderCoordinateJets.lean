@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderConnection
 import PoincareConjecture.Proofs.M36.CylinderJetComponents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

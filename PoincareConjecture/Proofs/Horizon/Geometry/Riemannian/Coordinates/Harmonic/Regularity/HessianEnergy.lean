@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Bochner
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Norm
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,7 +19,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
 
 variable [MeasurableSpace M] [BorelSpace M] [T3Space M]
 
-
 theorem integrable_cutoff_hessian_normSq (D : LeviCivitaData g)
     {η f : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) (hηc : HasCompactSupport η) :
@@ -41,9 +32,6 @@ theorem integrable_cutoff_hessian_normSq (D : LeviCivitaData g)
   exact hx (by simp [image_eq_zero_of_notMem_tsupport hx'])
 
 variable [PreconnectedSpace M]
-
-
-
 
 theorem harmonic_hessian_energy_le (D : LeviCivitaData g)
     {η f : M → ℝ} (hη : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ η)

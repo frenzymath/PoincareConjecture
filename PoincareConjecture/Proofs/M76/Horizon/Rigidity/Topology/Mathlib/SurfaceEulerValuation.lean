@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteFaceCounts
 import PoincareConjecture.Proofs.M76.Horizon.Polyhedral.Simplicial.CommonSubcomplexUnion
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,11 +9,8 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
 noncomputable def surfaceEulerCount (K : SimplicialComplex ℝ E) : ℤ :=
   (Nat.card (K.FaceOfCard 1) : ℤ) - Nat.card (K.FaceOfCard 2) + Nat.card (K.FaceOfCard 3)
-
-
 
 theorem surfaceEulerCount_eq_vertex_counts (K : SimplicialComplex ℝ E) :
     K.surfaceEulerCount = (Nat.card K.vertices : ℤ) -
@@ -33,7 +21,6 @@ theorem surfaceEulerCount_eq_vertex_counts (K : SimplicialComplex ℝ E) :
   rw [surfaceEulerCount, K.card_faceOfCard_one,
     Nat.card_congr (K.vertexFaceEquiv 2), Nat.card_congr (K.vertexFaceEquiv 3)]
 
-
 theorem surfaceEulerCount_eq_two_sub_residual (K : SimplicialComplex ℝ E) {r : ℕ}
     (h : Nat.card K.vertices +
       Nat.card (PreAbstractSimplicialComplex.ModTwoCochains.Triangle
@@ -43,9 +30,6 @@ theorem surfaceEulerCount_eq_two_sub_residual (K : SimplicialComplex ℝ E) {r :
     K.surfaceEulerCount = 2 - (r : ℤ) := by
   rw [K.surfaceEulerCount_eq_vertex_counts]
   omega
-
-
-
 
 theorem residual_lt_of_surfaceEulerCount_lt
     (K L : SimplicialComplex ℝ E) {rK rL : ℕ}
@@ -63,7 +47,6 @@ theorem residual_lt_of_surfaceEulerCount_lt
   have hK' := K.surfaceEulerCount_eq_two_sub_residual hK
   have hL' := L.surfaceEulerCount_eq_two_sub_residual hL
   omega
-
 
 theorem card_faceOfCard_union_add_inter (K L U : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hL : L.faces.Finite)
@@ -88,7 +71,6 @@ theorem card_faceOfCard_union_add_inter (K L U : SimplicialComplex ℝ E)
   rw [hUnion, hInter]
   exact Set.ncard_union_add_ncard_inter A B hA hB
 
-
 theorem surfaceEulerCount_union_add_inter (K L U : SimplicialComplex ℝ E)
     (hK : K.faces.Finite) (hL : L.faces.Finite)
     (hU : U.faces = K.faces ∪ L.faces) :
@@ -104,8 +86,6 @@ theorem surfaceEulerCount_union_add_inter (K L U : SimplicialComplex ℝ E)
   dsimp only [surfaceEulerCount]
   omega
 
-
-
 theorem surfaceEulerCount_replacement
     (A B C U V : SimplicialComplex ℝ E)
     (hA : A.faces.Finite) (hB : B.faces.Finite) (hC : C.faces.Finite)
@@ -116,8 +96,6 @@ theorem surfaceEulerCount_replacement
   have hNew := surfaceEulerCount_union_add_inter A C V hA hC hV
   rw [hglue] at hOld
   omega
-
-
 
 theorem residual_lt_of_replacement
     (A B C U V : SimplicialComplex ℝ E) {rB rC : ℕ}

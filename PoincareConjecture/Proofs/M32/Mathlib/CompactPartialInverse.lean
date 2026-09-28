@@ -1,14 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.Separation.Hausdorff
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +8,6 @@ open Set
 universe u v
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem compact_partial_inverse_geometry
     {M : Type u} {L : Type v} [TopologicalSpace M] [TopologicalSpace L]

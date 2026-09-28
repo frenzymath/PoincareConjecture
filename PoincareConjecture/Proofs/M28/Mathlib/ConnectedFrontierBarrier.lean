@@ -2,21 +2,10 @@ import Mathlib.Topology.Connected.Clopen
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
-
-
-
 
 theorem IsConnected.subset_of_frontier_barrier
     {X : Type*} [TopologicalSpace X] {S U : Set X}
@@ -37,9 +26,6 @@ theorem IsConnected.subset_of_frontier_barrier
   have hmem : (⟨x, hx⟩ : S) ∈ (univ : Set S) := mem_univ _
   rw [← hfull] at hmem
   exact hmem
-
-
-
 
 theorem eventually_image_subset_of_compact_frontier_barrier
     {X Y : Type*} [TopologicalSpace X] [TopologicalSpace Y]

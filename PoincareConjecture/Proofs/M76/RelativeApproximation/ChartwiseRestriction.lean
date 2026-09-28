@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLDomainComposition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M76
 
 variable {X Y ι κ : Type*} [TopologicalSpace X] [TopologicalSpace Y]
   {R : Set X} {T : Set Y} {U V : Set R}
-
-
-
 
 theorem ChartwisePLOn.congr_mono
     {e : ι → OpenPartialHomeomorph X (Fin 3 → ℝ)}

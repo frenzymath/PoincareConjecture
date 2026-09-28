@@ -4,12 +4,6 @@ import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenfli
 import PoincareConjecture.Proofs.M38.SchoenfliesPort.Topology.Manifold.Schoenflies.Morse.RegularLevel.ComponentBand
 import Mathlib.Topology.MetricSpace.Thickening
 
-
-
-
-
-
-
 open _root_.AddCircle
 open _root_.Poincare
 open _root_.Poincare.Manifold
@@ -17,8 +11,6 @@ open _root_.Poincare.Manifold.Schoenflies
 open _root_.PoincareConjecture
 
 namespace M38Schoenflies
-
-
 
 noncomputable section
 set_option autoImplicit false
@@ -42,8 +34,6 @@ private instance : ChartedSpace (E1 × Real) (S1 × Real) :=
 namespace SphereSurgeryCoreCap
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 theorem exists_annular_core_of_regular
     (L : List (SphereSurgeryCoreCap v g B))
@@ -126,8 +116,6 @@ theorem exists_annular_core_of_regular
 end SphereSurgeryCoreCap
 
 namespace SphereSurgeryPath
-
-
 
 theorem exists_annular_core_of_regular
     {v : E3} {f g : S2 → E3} (P : SphereSurgeryPath v f g)

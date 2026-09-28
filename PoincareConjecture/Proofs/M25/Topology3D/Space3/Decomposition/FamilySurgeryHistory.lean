@@ -1,19 +1,8 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEvent
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 inductive FamilySurgeryHistory (u : UnitTwoSphere) :
     {n : ℕ} → (Fin n → UnitTwoSphere × ℝ → E3) →
@@ -30,7 +19,6 @@ inductive FamilySurgeryHistory (u : UnitTwoSphere) :
         phi) :
       FamilySurgeryHistory u psi phi
 
-
 def FamilySurgeryHistory.length
     {u : UnitTwoSphere} {n m : ℕ}
     {psi : Fin n → UnitTwoSphere × ℝ → E3}
@@ -38,7 +26,6 @@ def FamilySurgeryHistory.length
     FamilySurgeryHistory u psi phi → ℕ
   | .nil _ => 0
   | .cons _ _ _ _ _ tail => tail.length + 1
-
 
 theorem FamilySurgeryHistory.card_eq_length
     {u : UnitTwoSphere} {n m : ℕ}
@@ -51,7 +38,6 @@ theorem FamilySurgeryHistory.card_eq_length
   | cons _ _ _ _ _ tail ih =>
     change _ = _ + (tail.length + 1)
     omega
-
 
 theorem FamilySurgeryHistory.fold
     {u : UnitTwoSphere}

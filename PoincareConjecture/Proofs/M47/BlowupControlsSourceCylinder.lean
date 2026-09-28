@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceBall
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSearch
 import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,8 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_cylinder_based_of_terminal_map
     {F : SurgeryFlowData.{u}} {base Q tau : ℝ}
@@ -37,9 +26,6 @@ theorem source_cylinder_based_of_terminal_map
     (fun z : (t : ℝ) × (U → (F.slice t).carrier) =>
       (⟨z.1, z.2 ⟨y, hy⟩⟩ : (t : ℝ) × (F.slice t).carrier)) hmap
   exact (Sigma.mk.inj hpoint).2.symm.trans (heq_of_eq (hid ⟨y, hy⟩))
-
-
-
 
 theorem exists_first_failure_controlled_source_or_cap
     (P : M46Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

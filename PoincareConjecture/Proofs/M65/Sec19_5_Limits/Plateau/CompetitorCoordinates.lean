@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.CompetitorEnergy
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -81,9 +71,6 @@ private theorem complex_isothermal_real_matrix
     norm_num [Matrix.mul_apply, Fin.sum_univ_two, Matrix.transpose_apply,
       hb00, hb10, hb01, hb11, hsym] <;>
     nlinarith only [h0, h1, h2]
-
-
-
 
 theorem m65Exists_disk_isothermal_coordinates
     (K : LoopPlane → Matrix (Fin 2) (Fin 2) ℝ)

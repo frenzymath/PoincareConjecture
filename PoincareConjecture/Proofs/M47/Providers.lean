@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M15.Providers
 import PoincareConjecture.Proofs.M30.Providers
 import PoincareConjecture.Proofs.M33.Providers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -32,11 +23,8 @@ theorem m47PredecessorsFromMilestones : M47Predecessors.{u} := {
   regular_history := m33BranchContinuationFromMilestones.regular_history
 }
 
-
 theorem m47CanonicalInductionFromMilestones : RepairedCanonicalInductionTheory.{u} :=
   repairedCanonicalInduction m47PredecessorsFromMilestones
-
-
 
 theorem m47PositiveComponentBlowupFromMilestones :
     M47PositiveComponentBlowupStatement.{u} :=

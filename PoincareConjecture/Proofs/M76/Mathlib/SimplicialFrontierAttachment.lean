@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.SimplexIntrinsicFrontier
 import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSaturation
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +8,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
 
 theorem exists_properFace_of_mem_intrinsicFrontier (K : SimplicialComplex ℝ E)
     {s : Finset E} (hs : s ∈ K.faces) {x : E}
@@ -34,9 +23,6 @@ theorem exists_properFace_of_mem_intrinsicFrontier (K : SimplicialComplex ℝ E)
     simp [he] at hxi
   exact ⟨s.erase i, K.down_closed hs (Finset.erase_subset i s) hne,
     Finset.erase_ssubset hi, hxi⟩
-
-
-
 
 theorem inter_subset_intrinsicFrontier_of_card_le (K : SimplicialComplex ℝ E)
     {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces)

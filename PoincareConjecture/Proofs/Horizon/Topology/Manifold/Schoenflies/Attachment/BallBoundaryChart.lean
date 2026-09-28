@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Hemispher
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Attachment.Local
 import Mathlib.Analysis.SpecialFunctions.Log.Deriv
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,7 +13,6 @@ namespace Poincare.Manifold.Schoenflies
 
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 
-
 def unitBallBoundaryHalfSpace (v : E3) : Opens E3 :=
   ⟨{y | 0 < inner Real v y}, isOpen_lt continuous_const (innerSL Real v).continuous⟩
 
@@ -31,8 +22,6 @@ private theorem unitBallBoundaryHalfSpace_ne_zero {v : E3}
   have hy := y.property
   change 0 < inner Real v (y : E3) at hy
   simp only [h, inner_zero_right, lt_self_iff_false] at hy
-
-
 
 def unitBallBoundaryParametrization {v : E3} (hv : ‖v‖ = 1) :
     Diffeomorph 𝓘(Real, Hemisphere.Plane v × Real) (𝓡 3)
@@ -113,7 +102,6 @@ def unitBallBoundaryParametrization {v : E3} (hv : ‖v‖ = 1) :
     exact h
   exact ⟨⟨f, g, hleft, hright⟩, hf, hg⟩
 
-
 def unitBallBoundaryChart {v : E3} (hv : ‖v‖ = 1) :
     Diffeomorph (𝓡 3) 𝓘(Real, Hemisphere.Plane v × Real)
       (unitBallBoundaryHalfSpace v) (Hemisphere.Plane v × Real) ∞ :=
@@ -134,7 +122,6 @@ def unitBallBoundaryChart {v : E3} (hv : ‖v‖ = 1) :
     ‖((unitBallBoundaryChart hv).symm z : E3)‖ = Real.exp z.2 := by
   simp [norm_smul, Real.norm_eq_abs, abs_of_pos (Real.exp_pos _)]
 
-
 theorem unitBallBoundaryChart_closedBall {v : E3} (hv : ‖v‖ = 1) :
     closedBall (0 : E3) 1 ∩ unitBallBoundaryHalfSpace v =
       (fun z : Hemisphere.Plane v × Real => ((unitBallBoundaryChart hv).symm z : E3)) ''
@@ -154,7 +141,6 @@ theorem unitBallBoundaryChart_closedBall {v : E3} (hv : ‖v‖ = 1) :
     simpa only [mem_closedBall, dist_zero_right, norm_unitBallBoundaryChart_symm] using
       Real.exp_le_one_iff.mpr hz
 
-
 theorem unitBallBoundaryChart_ball {v : E3} (hv : ‖v‖ = 1) :
     ball (0 : E3) 1 ∩ unitBallBoundaryHalfSpace v =
       (fun z : Hemisphere.Plane v × Real => ((unitBallBoundaryChart hv).symm z : E3)) ''
@@ -173,8 +159,6 @@ theorem unitBallBoundaryChart_ball {v : E3} (hv : ‖v‖ = 1) :
     refine ⟨?_, ((unitBallBoundaryChart hv).symm z).property⟩
     simpa only [mem_ball, dist_zero_right, norm_unitBallBoundaryChart_symm] using
       Real.exp_lt_one_iff.mpr hz
-
-
 
 theorem exists_unitBall_boundary_graph_push {v : E3} (hv : ‖v‖ = 1)
     (b : Hemisphere.Plane v → Real) (hb : ContDiff Real ∞ b) (hbc : HasCompactSupport b) :

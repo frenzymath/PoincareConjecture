@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityACComposition
 import Mathlib.Analysis.Convex.SpecificFunctions.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric MeasureTheory
@@ -20,13 +10,8 @@ namespace PoincareConjecture.M65Interior
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 noncomputable def coneCoordinates (r : ℝ) (v0 : E) (v : ℝ → E) (s t : ℝ) : E :=
   v0 + (s / r) • (v t - v0)
-
-
-
 
 theorem coneCoordinates_endpoints {r : ℝ} (hr : r ≠ 0) (v0 : E) (v : ℝ → E)
     {a b : ℝ} (hv : v a = v b) :
@@ -42,9 +27,6 @@ theorem coneCoordinates_endpoints {r : ℝ} (hr : r ≠ 0) (v0 : E) (v : ℝ →
   · intro s
     rw [coneCoordinates, coneCoordinates, hv]
 
-
-
-
 theorem coneCoordinates_mem_closedBall {r ρ s t : ℝ} (hr : 0 < r)
     {v0 : E} {v : ℝ → E} (h0 : v0 ∈ closedBall 0 ρ)
     (hv : v t ∈ closedBall 0 ρ) (hs : s ∈ Icc 0 r) :
@@ -57,16 +39,10 @@ theorem coneCoordinates_mem_closedBall {r ρ s t : ℝ} (hr : 0 < r)
   simp only [coneCoordinates, sub_smul, one_smul, smul_sub]
   abel
 
-
-
-
 theorem coneCoordinates_radial_hasDerivAt (r : ℝ) (v0 : E) (v : ℝ → E) (s t : ℝ) :
     HasDerivAt (fun q => coneCoordinates r v0 v q t) (r⁻¹ • (v t - v0)) s := by
   simpa only [coneCoordinates, one_div, id_eq] using
     (((hasDerivAt_id s).div_const r).smul_const (v t - v0)).const_add v0
-
-
-
 
 theorem coneCoordinates_angular_AC {v : ℝ → E} {a b : ℝ}
     (hv : AbsolutelyContinuousOnInterval v a b) (r : ℝ) (v0 : E) (s : ℝ) :
@@ -74,9 +50,6 @@ theorem coneCoordinates_angular_AC {v : ℝ → E} {a b : ℝ}
   have hc : AbsolutelyContinuousOnInterval (fun _ : ℝ => v0) a b :=
     contDiff_const.contDiffOn.absolutelyContinuousOnInterval
   exact hc.fun_add ((hv.fun_sub hc).const_smul (s / r))
-
-
-
 
 theorem coneCoordinates_angular_increment {v d : ℝ → E} {a b : ℝ}
     (hinc : ∀ t ∈ Icc a b, ∀ u ∈ Icc a b, v u - v t = ∫ θ in t..u, d θ)

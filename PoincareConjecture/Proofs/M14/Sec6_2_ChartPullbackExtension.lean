@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M14PathCalculus
 import PoincareConjecture.Proofs.M08.SmoothEndpointExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -21,8 +12,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {γ : ℝ → G.Point} {Y : ∀ s, G.Horizontal (γ s)}
-
-
 
 noncomputable def pullbackExtensionInChart
     (e : Bundle.Trivialization (EuclideanSpace ℝ (Fin n))
@@ -63,9 +52,6 @@ noncomputable def pullbackExtensionInChart
     refine ⟨e.symmL ℝ (γ s) (deriv y s), ?_⟩
     simpa only [Function.comp_def, e.symmL_apply (hγ s hs)] using
       ((e.symmL ℝ (γ s)).hasFDerivAt.comp_hasDerivAt s hd.hasDerivAt)
-
-
-
 
 theorem exists_pullbackExtensionInChart_Icc
     (e : Bundle.Trivialization (EuclideanSpace ℝ (Fin n))

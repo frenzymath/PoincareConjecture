@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M60.Mathlib.ConformalTrace
 import PoincareConjecture.Proofs.M60.Mathlib.ConformalPlaneLaplacian
 import Mathlib.Analysis.InnerProductSpace.Projection.FiniteDimensional
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,10 +15,7 @@ namespace PoincareConjecture.M60
 
 local notation "b" => EuclideanSpace.basisFun (Fin 2) ℝ
 
-
 def suBubbleInversion : LoopPlane → LoopPlane := EuclideanGeometry.inversion 0 2
-
-
 
 theorem suBubbleInversion_geometry {z : LoopPlane} (hz : z ≠ 0) :
     ContDiffAt ℝ ∞ suBubbleInversion z ∧
@@ -59,8 +54,6 @@ theorem suBubbleInversion_geometry {z : LoopPlane} (hz : z ≠ 0) :
     dsimp only [c]
     ring
 
-
-
 theorem suBubbleInversion_laplacian {z : LoopPlane} (hz : z ≠ 0) :
     fderiv ℝ (fderiv ℝ suBubbleInversion) z (b 0) (b 0) +
       fderiv ℝ (fderiv ℝ suBubbleInversion) z (b 1) (b 1) = 0 := by
@@ -76,8 +69,6 @@ theorem suBubbleInversion_laplacian {z : LoopPlane} (hz : z ≠ 0) :
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem suBubbleInversion_energy (g : RiemannianMetric n M) (f : LoopPlane → M)
     {z : LoopPlane} (hz : z ≠ 0)
@@ -102,8 +93,6 @@ theorem suBubbleInversion_energy (g : RiemannianMetric n M) (f : LoopPlane → M
   erw [hh]
   ring_nf
   rfl
-
-
 
 theorem suBubbleInversion_finite_energy (g : RiemannianMetric n M) (f : LoopPlane → M)
     (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) (hfinite : Integrable (m60EnergyDensity g f)) :

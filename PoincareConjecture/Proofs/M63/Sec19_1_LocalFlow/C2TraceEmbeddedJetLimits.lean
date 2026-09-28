@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.SmoothRetractionDifferentials
 import PoincareConjecture.Proofs.M04.ScalarHessian
 import Mathlib.Topology.ContinuousMap.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,9 +23,6 @@ local notation "X" => C(AddCircle curvePeriod, W)
 local notation "XR" => C(AddCircle curvePeriod, ℝ)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem exists_closed_embedded_threeJet_limits
     (F : RicciFlow n M (Icc a b)) {e : M → W}

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Spacetime.RegularBox
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Distance.IntrinsicIsometry
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -23,7 +15,6 @@ namespace PoincareConjecture.SingularRegularLimit
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
-
 
 theorem pathELength_subtypeVal (U : Opens M) (g : RiemannianMetric 3 M)
     (gU : RiemannianMetric 3 U)
@@ -42,8 +33,6 @@ private theorem pathELength_eq_of_eqOn (g : RiemannianMetric 3 M)
   let : Bundle.RiemannianBundle (TangentSpace (𝓡 3) : M → Type _) :=
     ⟨g.toRiemannianMetric⟩
   exact Manifold.pathELength_congr h
-
-
 
 theorem intrinsicEDist_restrictToOpen (U : Opens M) (g : RiemannianMetric 3 M)
     (gU : RiemannianMetric 3 U)
@@ -89,8 +78,6 @@ theorem intrinsicEDist_restrictToOpen (U : Opens M) (g : RiemannianMetric 3 M)
       exact hK ⟨t, ht, rfl⟩
     · exact (pathELength_eq_of_eqOn g hδval).symm.trans
         (pathELength_subtypeVal U g gU hmetric hδ)
-
-
 
 theorem intrinsicDiameter_restrictToOpen (U : Opens M) (g : RiemannianMetric 3 M)
     (gU : RiemannianMetric 3 U)

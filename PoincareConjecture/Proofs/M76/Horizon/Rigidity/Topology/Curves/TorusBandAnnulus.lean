@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.SourceToru
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.SourceAnnulusPeriod
 import PoincareConjecture.Proofs.M76.Mathlib.SquareAnnulusFinitePL
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry Topology PLAnnularStrip
 
@@ -132,8 +124,6 @@ theorem exists_finitePL_annulus_of_circle_band
       exact ⟨_, ⟨by nlinarith [hz.1], by nlinarith [hz.2]⟩, rfl⟩
 
 namespace PeriodicSquare
-
-
 
 theorem SourceSquareMap.exists_finitePL_coordinate_annulus
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]

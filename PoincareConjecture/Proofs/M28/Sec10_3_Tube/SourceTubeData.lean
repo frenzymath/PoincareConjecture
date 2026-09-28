@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceActualTube
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceFamilyScales
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
 
 structure SourceTubeData {epsilon C A D₀ D : ℝ}
     {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
@@ -35,8 +24,6 @@ structure SourceTubeData {epsilon C A D₀ D : ℝ}
   epsilon_eq : tube.epsilon = epsilon
   chain_eq : HEq tube.chain chain
   carrier_eq : tube.carrier = chain.unionOpen
-
-
 
 theorem exists_source_tube_data_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧
@@ -57,10 +44,8 @@ variable {epsilon C A D₀ D : ℝ}
   {E : SameTimeCounterexample.{u} epsilon C A D₀ D}
   {S : CounterexampleNeckSegment E}
 
-
 def carrierOpen (T : SourceTubeData S) : TopologicalSpace.Opens
     (E.flow.slice E.time).carrier := ⟨T.tube.carrier, T.tube.carrier_open⟩
-
 
 theorem path_mem (T : SourceTubeData S) :
     MapsTo S.path (Icc S.lower S.upper) T.carrierOpen := by
@@ -68,9 +53,6 @@ theorem path_mem (T : SourceTubeData S) :
   apply T.tube.contains_X
   rw [S.cover_set]
   exact mem_image_of_mem _ hs
-
-
-
 
 theorem exists_initial_neck (T : SourceTubeData S) :
     ∃ N ∈ S.cover.necks, N.epsilon = epsilon ∧
@@ -100,8 +82,6 @@ theorem exists_initial_neck (T : SourceTubeData S) :
   · rcases hchoice with h | h <;>
       simpa only [h, EpsilonNeck.reversed_carrier] using hcarrier
 
-
-
 theorem preconnected (T : SourceTubeData S) : PreconnectedSpace T.carrierOpen := by
   have hs : IsConnected (Metric.sphere (0 : EuclideanSpace ℝ (Fin 3)) 1) :=
     isConnected_sphere (by rw [← Module.finrank_eq_rank]; norm_num) _ (by norm_num)
@@ -112,8 +92,6 @@ theorem preconnected (T : SourceTubeData S) : PreconnectedSpace T.carrierOpen :=
     T.tube.cylinder.homeomorph.continuous
 
 end SourceTubeData
-
-
 
 theorem exists_source_tube_family_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 10000 : ℝ) ∧

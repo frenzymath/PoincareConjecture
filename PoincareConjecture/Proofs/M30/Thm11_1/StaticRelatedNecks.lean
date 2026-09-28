@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.SelectedStaticStageSlices
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteBufferedChartCover
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,9 +20,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.measurableSp
 set_option maxHeartbeats 800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
-
 
 theorem exists_static_limit_related_neck_threshold :
     ∃ epsilon0 : ℝ, 0 < epsilon0 ∧ epsilon0 ≤ 1 / 400 ∧

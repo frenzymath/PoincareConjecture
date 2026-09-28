@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M32.Claim11_35.ScalarLaplacianControl
 import PoincareConjecture.Proofs.M32.Claim11_35.NeckFourJetRealization
 import PoincareConjecture.Proofs.M32.Neck.ScalarControl
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,9 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
 
 theorem normalized_neck_realization_scalarLaplacian
     {M : Type u} [TopologicalSpace M]
@@ -62,9 +43,6 @@ theorem normalized_neck_realization_scalarLaplacian
   have hlap := scalarLaplacian_eq_of_local_homothety Dh D hc hVo hf hmetric hzeroV
   simpa only [f, EpsilonNeck.centeredEuclideanParametrization_zero,
     div_eq_mul_inv, inv_pow, inv_inv, ← pow_mul, mul_comm] using hlap
-
-
-
 
 theorem exists_neck_center_scalarLaplacian_bound :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧
@@ -108,9 +86,6 @@ theorem exists_neck_center_scalarLaplacian_bound :
   apply (mul_le_mul_iff_right₀ hscale).mp
   rw [← mul_div_assoc, hnorm]
   exact hbound.le
-
-
-
 
 theorem exists_strongNeck_center_scalarLaplacian_bound :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

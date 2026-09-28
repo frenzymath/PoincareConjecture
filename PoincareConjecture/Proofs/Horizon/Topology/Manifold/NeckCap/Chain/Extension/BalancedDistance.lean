@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extensi
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.DistanceUpper
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Extension.Frontier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,8 +20,6 @@ theorem EpsilonNeck.balanced_edist_of_mem_frontier (N : EpsilonNeck g)
       g.edist N.center x ≤ ENNReal.ofReal ((1.01 : ℝ) * N.scale * N.epsilon⁻¹) :=
   ⟨N.balanced_edist_lower_of_not_mem_carrier hε (N.carrier_open.frontier_eq ▸ hx).2,
     N.edist_center_le_balanced_upper_of_mem_closure hε (frontier_subset_closure hx)⟩
-
-
 
 theorem NeckOnlyCover.exists_neck_at_balanced_frontier (H : NeckOnlyCover g)
     (hε : H.epsilon ≤ 1 / 1000) (C : BalancedNeckChain g H.epsilon)

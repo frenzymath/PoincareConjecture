@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M36.CylinderTwoJet
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Operations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

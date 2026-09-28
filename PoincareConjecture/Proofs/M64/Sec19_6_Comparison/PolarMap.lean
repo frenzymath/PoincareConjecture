@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.M64Annulus
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.AnnularAngles
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -23,13 +13,9 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M} {c0 c1 : ℝ → M}
 
-
-
 noncomputable def m64AnnulusPolarMap (A : M64Annulus g c0 c1)
     (z : LoopPlane) : M :=
   A.map (annulusPoint (m60PlaneAngle z) (2 * ‖z‖ - 1))
-
-
 
 theorem m64AnnulusPolarMap_eq_polar (A : M64Annulus g c0 c1)
     {z : LoopPlane} (hz : z ≠ 0) {theta : ℝ}
@@ -46,8 +32,6 @@ theorem m64AnnulusPolarMap_eq_polar (A : M64Annulus g c0 c1)
       (fun x => A.map (annulusPoint x (2 * ‖z‖ - 1))) rampPeriod from
       fun x => A.periodic x (2 * ‖z‖ - 1)) hangle
 
-
-
 theorem m64AnnulusPolarMap_polar (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) (theta : ℝ) :
     m64AnnulusPolarMap A (r • Proofs.M58.angularPoint theta) =
@@ -60,24 +44,17 @@ theorem m64AnnulusPolarMap_polar (A : M64Annulus g c0 c1)
   simpa only [hn] using
     m64AnnulusPolarMap_eq_polar A hz (theta := theta) (by rw [hn])
 
-
-
 theorem m64AnnulusPolarMap_lower (A : M64Annulus g c0 c1) (theta : ℝ) :
     m64AnnulusPolarMap A ((1 / 2 : ℝ) • Proofs.M58.angularPoint theta) =
       c0 theta := by
   rw [m64AnnulusPolarMap_polar A (by norm_num),
     show (2 : ℝ) * (1 / 2) - 1 = 0 by norm_num, A.lower_boundary]
 
-
-
 theorem m64AnnulusPolarMap_upper (A : M64Annulus g c0 c1) (theta : ℝ) :
     m64AnnulusPolarMap A (Proofs.M58.angularPoint theta) = c1 theta := by
   have h := m64AnnulusPolarMap_polar A (r := 1) (by norm_num) theta
   simpa only [one_smul, mul_one, show (2 : ℝ) - 1 = 1 by norm_num,
     A.upper_boundary] using h
-
-
-
 
 theorem m64AnnulusPolarMap_radial_periodic (A : M64Annulus g c0 c1)
     {r : ℝ} (hr : 0 < r) :

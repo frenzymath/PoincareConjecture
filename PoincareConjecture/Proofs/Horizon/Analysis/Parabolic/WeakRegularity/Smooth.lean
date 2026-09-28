@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Inter
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.LocalEllipticity
 import PoincareConjecture.Proofs.Horizon.Analysis.Elliptic.Regularity.Sobolev.Embedding.SmoothRepresentative
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 open Set MeasureTheory
@@ -21,8 +11,6 @@ open scoped ContDiff Topology
 namespace Poincare.Analysis.Parabolic.WeakRegularity.Canonical
 
 open Interior Sobolev.BoundaryCoordinates
-
-
 
 theorem contDiffOn_of_continuous_weakSolution
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)
@@ -52,8 +40,6 @@ theorem contDiffOn_of_continuous_weakSolution
     (show MapsTo (split n).symm U ((split n) ⁻¹' U) from
       fun y hy => by simpa using hy)
   simpa only [Function.comp_def, ContinuousLinearEquiv.apply_symm_apply] using hback
-
-
 
 theorem contDiffOn_of_continuous_weakSolution_positive
     {n : ℕ} {U : Set (Spacetime n)} (hU : IsOpen U)

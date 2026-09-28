@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets.Centered
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
 
 namespace PoincareConjecture
-
-
 
 theorem m25_roundCylinderGram_add_axial
     (u : ℝ) (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (s : ℝ) :
@@ -37,8 +25,6 @@ private theorem fderiv_roundCylinderGram_add_axial
       (chartAt (EuclideanSpace ℝ (Fin 2)) q) x a b) (x := p) (0, s)
   simpa only [m25_roundCylinderGram_add_axial] using h.symm
 
-
-
 theorem m25_roundCylinderChristoffel_add_axial
     (u : ℝ) (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (s : ℝ)
     (a b d : Fin 3) :
@@ -47,8 +33,6 @@ theorem m25_roundCylinderChristoffel_add_axial
       roundCylinderChristoffel u (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b d := by
   simp only [roundCylinderChristoffel, m25_roundCylinderGram_add_axial,
     fderiv_roundCylinderGram_add_axial]
-
-
 
 theorem m25_fderiv_roundCylinderChristoffel_center_eq
     (q : UnitTwoSphere) (s : ℝ) (a b d : Fin 3) :
@@ -61,8 +45,6 @@ theorem m25_fderiv_roundCylinderChristoffel_center_eq
       (chartAt (EuclideanSpace ℝ (Fin 2)) q) p a b d)
     (x := (0 : RoundCylinderCoordinates)) (0, s)
   simpa only [m25_roundCylinderChristoffel_add_axial, zero_add] using h.symm
-
-
 
 theorem m25_exists_roundCylinderChristoffel_derivative_center_bound :
     ∃ D : ℝ, 0 < D ∧ ∀ (q : UnitTwoSphere) (s : ℝ) (a b d i : Fin 3),

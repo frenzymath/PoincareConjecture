@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.RoundComponent.Jets.PairwiseMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.LateControl
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -54,9 +52,6 @@ theorem regularNeckCenteredLift_normalized_jet
     (centeredNeckLift_contMDiffAt (N.spatialNeck hε) z.1 z.2
       (zero_mem_centeredNeckDomain (N.spatialNeck hε) hz))).of_le
     (by exact_mod_cast le_top)
-
-
-
 
 theorem exists_uniform_neck_coordinate_tail_bound
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

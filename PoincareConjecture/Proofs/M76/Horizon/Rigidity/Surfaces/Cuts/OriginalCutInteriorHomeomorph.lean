@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.OriginalCutI
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Surfaces.Cuts.PrimalCutBoundaryArcs
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Classical Topology

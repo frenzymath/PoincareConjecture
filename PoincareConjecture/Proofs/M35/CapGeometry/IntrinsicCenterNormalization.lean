@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicRadialDistance
 import PoincareConjecture.Proofs.M35.CapGeometry.FarTipAngularScale
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,8 +28,6 @@ end PoincareConjecture.M35.Uniqueness
 namespace PoincareConjecture.M35.OrdinaryRealization
 
 open Uniqueness
-
-
 
 theorem blowupSequence_intrinsic_center_limits
     (P : M35StandardCapPredecessors)

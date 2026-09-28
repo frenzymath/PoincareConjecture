@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +8,6 @@ namespace PoincareConjecture.M76
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem mem_closure_interior_of_affine_halfspace_patch
     {C V : Set E} (hV : IsOpen V) (ell : E →ᴬ[ℝ] ℝ)

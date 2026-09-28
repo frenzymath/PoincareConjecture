@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Cor6_68_ActionContact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,8 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T tau : ℝ} {x : G.Point}
 
-
-
 theorem survival_square_endpoint
     (E : M14ExponentialFamily G T x) (htau : 0 < tau)
     (q0 : (G.slices (T - tau)).Point)
@@ -37,8 +24,6 @@ theorem survival_square_endpoint
   exact ((E.square_path Z (Real.sqrt tau) hZ (Real.sqrt_pos.mpr htau)).agrees _ hs).trans
     ((E.path Z (Real.sqrt tau) hZ (Real.sqrt_pos.mpr htau)).curve_end.trans
       (survivalSliceMap_val E htau.le q0 hZ).symm)
-
-
 
 noncomputable def survivalTerminalVelocity
     (E : M14ExponentialFamily G T x) (htau : 0 < tau)
@@ -74,8 +59,6 @@ private theorem transport_terminalVelocity
   apply Subtype.ext
   simp only [survivalTerminalVelocity, horizontal_transport_val]
   rfl
-
-
 
 theorem survival_action_differential
     (LG : GeneralizedLGeometryConclusion G)
@@ -118,9 +101,6 @@ theorem survival_action_differential
     (survivalTerminalVelocity E htau q0 Z hZ) v
   rw [transport_terminalVelocity E htau q0 hZ h, hv] at hmetric
   exact hfirst.trans hmetric
-
-
-
 
 theorem minimizing_endpoint_momentum
     (LG : GeneralizedLGeometryConclusion G)
@@ -189,8 +169,6 @@ private theorem slice_momenta_heq {t : ℝ} {q1 q2 : (G.slices t).Point}
   intro z
   obtain ⟨v, rfl⟩ := (G.slices t).tangentEquiv q1 |>.surjective z
   exact (h1 v).symm.trans (h2 v)
-
-
 
 theorem minimizing_terminal_velocities_heq
     (LG : GeneralizedLGeometryConclusion G)

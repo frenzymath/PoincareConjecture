@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M58.Lemma18_27_FamilyContraction
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Real
@@ -20,29 +10,19 @@ universe u
 
 namespace PoincareConjecture.Proofs.M58
 
-
-
 noncomputable def diskTimeProfile (r : ℝ) : ℝ := smoothTransition (2 - 4 * r ^ 2)
-
-
 
 theorem contDiff_diskTimeProfile : ContDiff ℝ ∞ diskTimeProfile :=
   smoothTransition.contDiff.comp (contDiff_const.sub (contDiff_const.mul (contDiff_id.pow 2)))
 
-
-
 theorem diskTimeProfile_mem_Icc (r : ℝ) : diskTimeProfile r ∈ Icc (0 : ℝ) 1 :=
   ⟨smoothTransition.nonneg _, smoothTransition.le_one _⟩
-
-
 
 theorem diskTimeProfile_eq_one {r : ℝ} (hr0 : 0 ≤ r) (hr : r ≤ 1 / 2) :
     diskTimeProfile r = 1 := by
   apply smoothTransition.one_of_one_le
   have hsq := (sq_le_sq₀ hr0 (by norm_num : (0 : ℝ) ≤ 1 / 2)).2 hr
   nlinarith
-
-
 
 theorem diskTimeProfile_one : diskTimeProfile 1 = 0 := by
   apply smoothTransition.zero_of_nonpos
@@ -51,14 +31,10 @@ theorem diskTimeProfile_one : diskTimeProfile 1 = 0 := by
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
-
 noncomputable def contractionDiskMap (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M)) (z : LoopPlane) : M := by
   classical
   exact if z = 0 then p else C (diskTimeProfile ‖z‖, p, γ.extension (radialNormalization z))
-
-
 
 theorem contractionDiskMap_eventually_constant (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -75,8 +51,6 @@ theorem contractionDiskMap_eventually_constant (C : ℝ × (M × M) → M)
     change C (1, p, γ.extension z.val) = p
     rw [γ.boundary]
     exact h1 z
-
-
 
 theorem contMDiff_contractionDiskMap (C : ℝ × (M × M) → M)
     (p : M) (γ : C1FreeLoopSpace (M := M))
@@ -106,8 +80,6 @@ theorem contMDiff_contractionDiskMap (C : ℝ × (M × M) → M)
     filter_upwards [isClosed_singleton.isOpen_compl.mem_nhds hw0] with v hv
     exact if_neg hv
 
-
-
 theorem contractionDiskMap_boundary (C : ℝ × (M × M) → M)
     (h0 : ∀ p q, C (0, p, q) = q) (p : M) (γ : C1FreeLoopSpace (M := M))
     (z : LoopCircle) : contractionDiskMap C p γ z.val = γ z := by
@@ -116,9 +88,6 @@ theorem contractionDiskMap_boundary (C : ℝ × (M × M) → M)
     simpa [h] using z.property
   rw [contractionDiskMap, if_neg hz0, z.property, diskTimeProfile_one, h0,
     radialNormalization_of_norm_eq_one z.property, γ.boundary]
-
-
-
 
 theorem exists_c1_disk_extension_of_short [T2Space M]
     (g : RiemannianMetric 3 M) (hcompact : IsCompact (univ : Set M)) :

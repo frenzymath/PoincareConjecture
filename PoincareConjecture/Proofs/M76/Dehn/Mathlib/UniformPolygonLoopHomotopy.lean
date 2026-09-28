@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolygonBoundaryLoop
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -31,9 +22,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] {n : ℕ}
   (P : Polygon E (n + 3))
-
-
-
 
 theorem homotopic_boundaryLoop_of_uniform
     (gamma : Path (⟨P 0, P.vertex_mem_boundary 0⟩ : P.boundary ℝ)

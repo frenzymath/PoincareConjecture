@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Extremum.LocalLevel
 
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -12,12 +10,9 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 
-
 def closedSquare (r : Real) : Set E2 := {x | |x 0| ≤ r ∧ |x 1| ≤ r}
 
-
 def openSquare (r : Real) : Set E2 := {x | |x 0| < r ∧ |x 1| < r}
-
 
 def contact (r : Real) (i : Fin 2 × Fin 2) : E2 :=
   WithLp.toLp 2 ![if i.1 = 0 then r else -r, if i.2 = 0 then r else -r]
@@ -65,7 +60,6 @@ theorem contact_injective {r : Real} (hr : 0 < r) : Function.Injective (contact 
   fin_cases i <;> fin_cases j <;> fin_cases k <;> fin_cases l <;>
     norm_num [contact] at h0 h1 ⊢ <;> linarith
 
-
 theorem square_boundary_zeroLevel {r : Real} (hr : 0 < r) :
     (closedSquare r \ openSquare r) ∩ {x : E2 | x 0 ^ 2 = x 1 ^ 2} =
       range (contact r) := by
@@ -97,7 +91,6 @@ theorem square_boundary_zeroLevel {r : Real} (hr : 0 < r) :
   · rintro ⟨i, rfl⟩
     exact contact_mem hr i
 
-
 theorem exists_closedSquare_subset_source {M : Type*} [TopologicalSpace M]
     (e : OpenPartialHomeomorph E2 M) (he0 : 0 ∈ e.source) :
     ∃ r : Real, 0 < r ∧ closedSquare r ⊆ e.source := by
@@ -109,7 +102,6 @@ theorem exists_closedSquare_subset_source {M : Type*} [TopologicalSpace M]
   rw [mem_closedBall_zero_iff] at hn
   rw [mem_ball_zero_iff]
   linarith
-
 
 theorem square_zeroLevel_subset_component {M : Type*} [TopologicalSpace M]
     {h : M → Real} (e : OpenPartialHomeomorph E2 M) {r c : Real}

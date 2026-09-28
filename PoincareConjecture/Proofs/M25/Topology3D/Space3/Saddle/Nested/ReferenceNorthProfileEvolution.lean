@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsProfileF
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.StackOfDiscsCanonicalProfiles
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
-
 
 theorem exists_north_profile_evolution_in_height_strip
     (P : SurgeryCapProfile) :

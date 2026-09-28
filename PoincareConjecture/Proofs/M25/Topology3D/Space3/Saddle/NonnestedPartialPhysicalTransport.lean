@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedDiscTransition
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightPlaneProjection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,7 +9,6 @@ open scoped ContDiff Manifold InnerProductSpace
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "P" => (ℝ × E2)
-
 
 theorem exists_nonnested_partial_physical_transport
     (u : UnitTwoSphere)
@@ -104,8 +93,6 @@ theorem exists_nonnested_partial_physical_transport
         (fun y : E3 => SW.symm (Phi.symm (SW (L y)))) K.target :=
       SW.symm.contDiff.contDiffOn.comp hPhiSL (fun _ _ => mem_univ _)
     exact L.symm.contDiff.contDiffOn.comp hSW (fun _ _ => mem_univ _)
-
-
 
 theorem nonnested_partial_physical_transport_stack
     (u : UnitTwoSphere)

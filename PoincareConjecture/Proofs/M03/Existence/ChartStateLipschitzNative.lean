@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.ChartStateSourceSmoothNative
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section

@@ -1,29 +1,6 @@
 import PoincareConjecture.Proofs.M32.Claim11_34.CylinderOpen
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Rescaling.Volume
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -111,8 +88,6 @@ private theorem zero_mem_cylinder (G : GeneralizedBlowupConvergence S J) (k : �
     (0 : ℝ) ∈ Icc (-G.exhaustion.time k) 0 :=
   ⟨neg_nonpos.mpr (G.exhaustion.time_pos k).le, le_rfl⟩
 
-
-
 noncomputable def blowup_zeroSliceEmbedding (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) :
     OpenPartialHomeomorph G.limit.sliceCarrier.carrier
@@ -120,15 +95,11 @@ noncomputable def blowup_zeroSliceEmbedding (G : GeneralizedBlowupConvergence S 
   cylinderSliceAt (G.embedding k) (G.exhaustion.space_open k) 0
     (zero_mem_cylinder G k) (by simp)
 
-
-
 @[simp] theorem blowup_zeroSliceEmbedding_source
     (G : GeneralizedBlowupConvergence S J) (k : ℕ) :
     (blowup_zeroSliceEmbedding G k).source = G.exhaustion.space k :=
   cylinderSliceAt_source (G.embedding k) (G.exhaustion.space_open k) 0
     (zero_mem_cylinder G k) _
-
-
 
 theorem blowup_zeroSliceEmbedding_smooth (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) :
@@ -137,16 +108,12 @@ theorem blowup_zeroSliceEmbedding_smooth (G : GeneralizedBlowupConvergence S J)
   cylinderSliceAt_smooth (G.embedding k) (G.exhaustion.space_open k) 0
     (zero_mem_cylinder G k) _
 
-
-
 theorem blowup_zeroSliceEmbedding_symm_smooth (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) :
     ContMDiffOn (𝓡 3) (𝓡 3) ∞ (blowup_zeroSliceEmbedding G k).symm
       (blowup_zeroSliceEmbedding G k).target :=
   cylinderSliceAt_symm_smooth (G.embedding k) (G.exhaustion.space_open k) 0
     (zero_mem_cylinder G k) _
-
-
 
 theorem blowup_zeroSliceEmbedding_base (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) :
@@ -156,8 +123,6 @@ theorem blowup_zeroSliceEmbedding_base (G : GeneralizedBlowupConvergence S J)
     0 (zero_mem_cylinder G k) (t := (S.base (G.subsequence k)).1) (by simp)] at h
   exact eq_of_heq (Sigma.mk.inj h).2
 
-
-
 noncomputable def blowup_zeroSourceMetric (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) :
     RiemannianMetric 3
@@ -165,16 +130,12 @@ noncomputable def blowup_zeroSourceMetric (G : GeneralizedBlowupConvergence S J)
   rescaledMetric ((S.flow (G.subsequence k)).metric (S.base (G.subsequence k)).1)
     (S.scale (G.subsequence k)) (S.base_scalar_pos (G.subsequence k))
 
-
-
 theorem blowup_zeroSourceMetric_ball (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) (r : ℝ) :
     (blowup_zeroSourceMetric G k).ball (S.base (G.subsequence k)).2 r =
       S.baseBall (G.subsequence k) r := by
   rw [blowup_zeroSourceMetric, rescaledMetric_ball_allDimensions]
   rfl
-
-
 
 noncomputable def blowup_zeroPullbackForm (G : GeneralizedBlowupConvergence S J)
     (k : ℕ) (x : G.limit.carrier.carrier) :
@@ -195,8 +156,6 @@ noncomputable def blowup_zeroPullbackForm (G : GeneralizedBlowupConvergence S J)
     (E' := TangentSpace (𝓡 3) x) (F' := TangentSpace (𝓡 3) x)
     (((S.flow (G.subsequence k)).metric ((S.base (G.subsequence k)).1 +
       0 / S.scale (G.subsequence k))).inner (e.forward 0 h0 x)) A A
-
-
 
 theorem blowup_zeroPullbackForm_eq_sourceMetric
     (G : GeneralizedBlowupConvergence S J) (k : ℕ) (x : G.limit.carrier.carrier)

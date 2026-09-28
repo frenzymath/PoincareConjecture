@@ -2,14 +2,6 @@ import Mathlib.Geometry.Manifold.SmoothEmbedding
 import Mathlib.Geometry.Manifold.ContMDiff.Atlas
 import Mathlib.Topology.Homeomorph.Lemmas
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -27,8 +19,6 @@ variable {𝕜 : Type*} [NontriviallyNormedField 𝕜]
   {M N : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [TopologicalSpace N] [ChartedSpace G N] {n : ℕ∞ω}
   [IsManifold 𝓘(𝕜, E) n M] {f g : M → N}
-
-
 
 theorem IsImmersionOfComplement.comp_diffeomorph
     (hf : IsImmersionOfComplement F 𝓘(𝕜, E) 𝓘(𝕜, G) n f)
@@ -57,8 +47,6 @@ theorem IsImmersionOfComplement.comp_diffeomorph
   rw [e.apply_symm_apply]
   exact h.writtenInCharts (by simpa using hv')
 
-
-
 theorem IsSmoothEmbedding.comp_diffeomorph
     (hf : IsSmoothEmbedding 𝓘(𝕜, E) 𝓘(𝕜, G) n f)
     (e : Diffeomorph 𝓘(𝕜, E) 𝓘(𝕜, E) M M n) :
@@ -67,7 +55,6 @@ theorem IsSmoothEmbedding.comp_diffeomorph
     hf.isEmbedding.comp e.toHomeomorph.isEmbedding⟩
 
 omit [IsManifold 𝓘(𝕜, E) n M] in
-
 
 theorem IsSmoothEmbedding.exists_reparametrizing_diffeomorph
     (hf : IsSmoothEmbedding 𝓘(𝕜, E) 𝓘(𝕜, G) n f)

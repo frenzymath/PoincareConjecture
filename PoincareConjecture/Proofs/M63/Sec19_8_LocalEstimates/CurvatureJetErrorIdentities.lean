@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurvatureJetSpatialCalculus
 import PoincareConjecture.Proofs.M63.Sec19_8_LocalEstimates.CurveTimeRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Bundle Manifold Set Topology Filter
@@ -25,9 +15,6 @@ open M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
-
 
 theorem m63CurvatureJetSquared_hasDerivAt [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
@@ -64,9 +51,6 @@ theorem m63CurvatureJetSquared_hasDerivAt [T2Space M]
   rw [(F.metric t).symm (c x t) J T]
   ring
 
-
-
-
 theorem m63CurvatureJetSquared_diffusion_identity [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) (i : ℕ)
@@ -85,10 +69,6 @@ theorem m63CurvatureJetSquared_diffusion_identity [T2Space M]
   rw [htime, m63CurvatureJetSquared_arcSecond_eq F c hc i ht x]
   simp only [map_sub, sub_apply]
   ring
-
-
-
-
 
 theorem m63CurvatureJet_diffusionError_succ_pair [T2Space M]
     (F : RicciFlow n M (Icc a b)) (c : ℝ → ℝ → M)

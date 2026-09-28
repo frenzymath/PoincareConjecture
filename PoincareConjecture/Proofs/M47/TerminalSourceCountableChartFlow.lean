@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCountableClosedLimit
 import PoincareConjecture.Proofs.M47.TerminalGermsMetricRealization
 import PoincareConjecture.Proofs.M47.TerminalGermsChartFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +15,6 @@ namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "V" => E →L[ℝ] E →L[ℝ] ℝ
-
-
 
 theorem terminalSourceCountable_chart_flow
     (U : ℕ → Opens E) [∀ i, Nonempty (U i)] (i j : ℕ)

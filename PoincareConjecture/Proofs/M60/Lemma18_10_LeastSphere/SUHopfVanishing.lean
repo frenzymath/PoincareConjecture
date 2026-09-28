@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUHopfCoordinates
 import PoincareConjecture.Proofs.M60.Mathlib.SUComplexCauchyRiemann
 import PoincareConjecture.Proofs.M60.Mathlib.SULiouvilleDecay
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,14 +15,10 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 noncomputable def m60SphereHopfCoefficient (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (z : ℂ) : ℂ :=
   let G := m60AreaGram g (f ∘ m60SphereParameter) (Complex.orthonormalBasisOneI.repr z)
   ((G 0 0 - G 1 1 : ℝ) : ℂ) + Complex.I * ((-2 * G 0 1 : ℝ) : ℂ)
-
-
 
 theorem m60SphereHopfCoefficient_differentiable (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
@@ -46,9 +33,6 @@ theorem m60SphereHopfCoefficient_differentiable (g : RiemannianMetric n M)
     (((hG 0 0).sub (hG 1 1)).differentiable (by simp) _)
     ((contDiff_const.mul (hG 0 1)).differentiable (by simp) _)
     hcr.1 hcr.2
-
-
-
 
 theorem m60SphereHopfCoefficient_norm_le (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (z : ℂ) :
@@ -77,9 +61,6 @@ theorem m60SphereHopfCoefficient_norm_le (g : RiemannianMetric n M)
       dsimp only [G]
       ring
 
-
-
-
 theorem m60SphereHopfCoefficient_eq_zero (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)
     (hharm : M60SphereChartHarmonic g f) (z : ℂ) : m60SphereHopfCoefficient g f z = 0 := by
@@ -94,9 +75,6 @@ theorem m60SphereHopfCoefficient_eq_zero (g : RiemannianMetric n M)
     _ = (64 * C) / (‖w‖ ^ 2 + 4) ^ 2 := by
       rw [LinearIsometryEquiv.norm_map]
       ring
-
-
-
 
 theorem m60SphereGram_conformal_of_harmonic (g : RiemannianMetric n M)
     (f : UnitTwoSphere → M) (hf : ContMDiff (𝓡 2) (𝓡 n) ∞ f)

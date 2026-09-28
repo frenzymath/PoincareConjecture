@@ -1,24 +1,6 @@
-
 import Mathlib
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
-
 
 open MeasureTheory Filter
 open scoped ENNReal NNReal
@@ -29,10 +11,6 @@ variable {d : ℕ} [NeZero d]
 
 local notation "E" => EuclideanSpace ℝ (Fin d)
 
-
-
-
-
 noncomputable def CGns (d : ℕ) [hNeZero : NeZero d] (p : ℝ) : ℝ :=
   let _ := hNeZero
   ↑(MeasureTheory.SNormLESNormFDerivOfEqConst (F := ℝ)
@@ -41,14 +19,11 @@ noncomputable def CGns (d : ℕ) [hNeZero : NeZero d] (p : ℝ) : ℝ :=
 theorem C_gns_nonneg (d : ℕ) [NeZero d] (p : ℝ) : 0 ≤ CGns d p :=
   NNReal.coe_nonneg _
 
-
-
 private lemma sobolev_exp_pos {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ)) :
     0 < (d : ℝ) * p / ((d : ℝ) - p) := by
   apply div_pos
   · exact mul_pos (Nat.cast_pos.mpr (NeZero.pos d)) (by linarith)
   · linarith
-
 
 private lemma sobolev_exponent_relation
     {p : ℝ} (hp : 0 < p) (hpd : p < (d : ℝ)) :
@@ -57,8 +32,6 @@ private lemma sobolev_exponent_relation
   have hd : (0 : ℝ) < d := lt_trans hp hpd
   rw [inv_div, inv_sub_inv (ne_of_gt hp) (ne_of_gt hd)]
   field_simp
-
-
 
 private lemma sobolev_exponent_nnreal_relation
     {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ)) :
@@ -69,10 +42,6 @@ private lemma sobolev_exponent_nnreal_relation
   rw [Real.coe_toNNReal _ (by linarith : 0 ≤ p),
     Real.coe_toNNReal _ (sobolev_exp_pos hp hpd).le]
   exact sobolev_exponent_relation (by linarith) hpd
-
-
-
-
 
 theorem sobolev_smooth {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
     {u : E → ℝ} (hu : ContDiff ℝ 1 u) (hu_cpt : HasCompactSupport u) :
@@ -106,8 +75,6 @@ theorem sobolev_smooth {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
         simp only [CGns]
         exact (ENNReal.ofReal_coe_nnreal).symm
 
-
-
 omit [NeZero d] in
 private theorem norm_fderiv_eq_norm_partials
     {f : E → ℝ} {x : E} :
@@ -138,8 +105,6 @@ private theorem norm_fderiv_eq_norm_partials
     _ = ‖WithLp.toLp 2
         (fun i => (fderiv ℝ f x) (EuclideanSpace.single i 1))‖ := by
           rw [hv]
-
-
 
 omit [NeZero d] in
 private theorem aestronglyMeasurable_euclidean_of_components
@@ -287,8 +252,6 @@ private theorem gradVec_eLpNorm_le_sum
         ext i
         exact hδnorm_eq i
     _ = _ := rfl
-
-
 
 theorem sobolev_of_approx {p : ℝ} (hp : 1 ≤ p) (hpd : p < (d : ℝ))
     {u : E → ℝ} {G : E → E}

@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M04.ShiBarrierMaximum
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped Topology
 
 namespace PoincareConjecture.M35.Uniqueness
-
-
 
 theorem nonpositive_of_uniform_end_and_maximum_velocity
     {M : Type*} [TopologicalSpace M] {T L : ℝ} (hT : 0 < T) (hL : 0 ≤ L)

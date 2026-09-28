@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M03.Existence.DeTurckParameterForcingNative
 import PoincareConjecture.Proofs.M03.Existence.DeTurckStatePullbackNative
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 set_option backward.isDefEq.respectTransparency false
@@ -67,7 +60,6 @@ theorem highGenerator_shiftedHigh_ae (hT : 0 ≤ T) (F : ForcingSpace iota T) :
   apply lp.ext
   funext i
   rw [highGenerator_eq_mul_decode, hdecode, hgen i]
-
 
 theorem derivative_difference_ae (hT : 0 ≤ T)
     (PB PH : State iota →L[ℝ] State iota)
@@ -128,7 +120,6 @@ private theorem scalar_integral_unique_zero {f : ℝ → ℝ} (hT : 0 ≤ T)
   · intro t _
     exact le_of_eq (norm_mul c (f t))
 
-
 theorem response_difference_integral (hT : 0 ≤ T)
     (PB PH : State iota →L[ℝ] State iota)
     (hcompat : ∀ z, PB (scaleDecode lambda 2 z) = scaleDecode lambda 2 (PH z))
@@ -159,7 +150,6 @@ theorem response_difference_integral (hT : 0 ≤ T)
     (Ioc_subset_Ioc le_rfl ht.2) (derivative_difference_ae lambda hT PB PH hcompat F)]
       with s hs
   exact hs i
-
 
 theorem responseState_pullbackForcing (hT : 0 ≤ T)
     (PB PH : State iota →L[ℝ] State iota)

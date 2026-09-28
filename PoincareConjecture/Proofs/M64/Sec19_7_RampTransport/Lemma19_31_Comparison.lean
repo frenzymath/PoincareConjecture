@@ -2,10 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_7_RampTransport.StabilizedClosedC2
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_Comparison
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Stabilization.UnitRicciControl
 
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -16,9 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture
 
 open M64 M64.RampTransport
-
-
-
 
 theorem m64RampSmallAnnulusComparison_of_geometry
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M] [CompactSpace M]

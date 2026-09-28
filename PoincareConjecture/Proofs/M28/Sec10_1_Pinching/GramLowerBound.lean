@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M05.Geometry.RicciFlow.Pinching.CurvatureCarrier
 import PoincareConjecture.Proofs.M04.SectionalRayleigh
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.LeviCivitaData
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M}
-
-
 
 theorem curvatureTensor_plane_ge_leastSectional_mul_gram
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)
@@ -80,9 +68,6 @@ theorem curvatureTensor_plane_ge_leastSectional_mul_gram
       intro i _
       exact mul_le_mul_of_nonneg_right
         (hT.eigenvalues_antitone hn (by omega)) (sq_nonneg _)
-
-
-
 
 theorem curvatureTensor_plane_ge_negativePart_mul_gram
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus) (x : M)

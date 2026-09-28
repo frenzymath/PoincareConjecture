@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.PairedScalarSlabs
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Concentration.NumericalAnnularCover
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -27,8 +18,6 @@ private theorem pointedGHConvergesUnbounded_subseq
   obtain ⟨δ, hδ, hpos, ⟨⟨C, hC⟩, hdist⟩⟩ := h r hr
   exact ⟨fun j => δ (φ j), hδ.comp hφ, fun j => hpos (φ j),
     ⟨C, fun j => hC (φ j)⟩, hdist.comp hφ⟩
-
-
 
 theorem exists_quarter_spire_scalar_concentration_with_level_opposite_partners
     {m : ℕ} (hm : 1 ≤ m) {M : ℕ → Type}

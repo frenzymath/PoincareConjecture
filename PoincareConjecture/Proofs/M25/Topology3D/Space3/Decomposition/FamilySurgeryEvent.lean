@@ -4,23 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.RetainedCap
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.RegularSurgeryFromTube
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryEventRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem exists_family_surgery_event
     (hP : PlanarSchoenfliesService) (P : SurgeryCapProfile)
@@ -104,7 +93,6 @@ theorem exists_family_surgery_event
     rintro y ⟨q, _hq, rfl⟩
     exact mem_range_self q
   · exact (hothers i hij).mono_right (hcap k)
-
 
 theorem exists_family_surgery_event_avoiding
     (hP : PlanarSchoenfliesService) (P : SurgeryCapProfile)

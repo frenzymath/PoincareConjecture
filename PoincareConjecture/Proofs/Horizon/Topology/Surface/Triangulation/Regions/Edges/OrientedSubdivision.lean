@@ -1,14 +1,4 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Edges.OrientedGraphs
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 open Set
@@ -21,8 +11,6 @@ universe u
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
 variable (D : FiniteChartRegionDecomposition (M := M))
-
-
 
 theorem exists_oriented_edge_graph_subdivision (e : D.EdgeIndex) (q : D.regions)
     (hq : q = D.regionLeft e ∨ q = D.regionRight e)

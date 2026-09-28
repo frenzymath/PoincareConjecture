@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M13.ContractionTransport
 import PoincareConjecture.Proofs.M28.Mathlib.FiniteChartCover
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundTransfer
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -159,10 +148,6 @@ private theorem eventually_generalized_chart_scalar_error
   have herror := hmodulus (A0 p) (mem_image_of_mem _ hp) (A k p)
     (by simpa only [dist_comm] using hk p hp)
   rwa [hsource, htarget] at herror
-
-
-
-
 
 theorem eventually_generalized_scalar_error
     {S : GeneralizedBlowupSequence.{u}} {J : Set ℝ}

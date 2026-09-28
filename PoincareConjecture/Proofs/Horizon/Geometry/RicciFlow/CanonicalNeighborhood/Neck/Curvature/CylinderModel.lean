@@ -7,15 +7,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.Curv
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.IntrinsicCalculus
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.FlowExtension
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -33,7 +24,6 @@ local instance neckCurvatureCylinderChartedSpace :
 local instance neckCurvatureCylinderIsManifold : IsManifold (𝓡 3) ∞ RoundCylinderSpace :=
   RiemannianMetric.lineProductIsManifold (n := 2) (M := UnitTwoSphere)
 
-
 theorem roundCylinderMetric_product_inner (z : RoundCylinderSpace)
     (v w : RoundCylinderTangent z) :
     roundCylinderMetric.inner (roundCylinderModelDiffeomorph z)
@@ -44,8 +34,6 @@ theorem roundCylinderMetric_product_inner (z : RoundCylinderSpace)
   rw [roundCylinderMetric_inner, rescaledMetric_inner]
   simp only [EvolvingRoundCylinderMetric, sub_zero, mul_one, roundSphereMetric_inner,
     RiemannianMetric.euclideanMetric_inner]
-
-
 
 theorem roundCylinderMetric_scalarCurvature (D : LeviCivitaData roundCylinderMetric)
     (z : RoundCylinderSpace) : D.scalarCurvature z = 1 := by
@@ -66,7 +54,6 @@ theorem roundCylinderMetric_scalarCurvature (D : LeviCivitaData roundCylinderMet
   rw [hproduct, rescaledMetric_scalarCurvature, hS]
   norm_num
 
-
 theorem roundCylinderMetric_height (D : LeviCivitaData roundCylinderMetric) :
     RiemannianMetric.HasUnitGradient D (Prod.snd ∘ roundCylinderModelDiffeomorph.symm) ∧
       RiemannianMetric.HasZeroHessian D (Prod.snd ∘ roundCylinderModelDiffeomorph.symm) := by
@@ -75,7 +62,6 @@ theorem roundCylinderMetric_height (D : LeviCivitaData roundCylinderMetric) :
   exact RiemannianMetric.product_height_hasUnitGradient_and_hasZeroHessian
     (rescaledMetric (roundSphereMetric 2) 2 (by norm_num)) roundCylinderMetric D
     roundCylinderModelDiffeomorph roundCylinderMetric_product_inner
-
 
 theorem roundCylinderMetric_ricci_transverse (D : LeviCivitaData roundCylinderMetric)
     (z : RoundCylinderSpace) (v w : TangentSpace (𝓡 3) z) :
@@ -90,7 +76,6 @@ theorem roundCylinderMetric_ricci_transverse (D : LeviCivitaData roundCylinderMe
   simpa only [roundCylinderMetric_scalarCurvature] using
     D.ricci_eq_scalar_transverse_of_parallel_gradient D.intrinsicCurvatureTensorCalculus
       hr hu hz z v w
-
 
 theorem roundCylinderMetric_height_mvfderiv (z : RoundCylinderSpace)
     (v : RoundCylinderTangent z) :
@@ -108,8 +93,6 @@ theorem roundCylinderMetric_height_mvfderiv (z : RoundCylinderSpace)
   rw [heq, mfderiv_snd] at h
   exact h.symm
 
-
-
 theorem roundCylinderMetric_ricci_product (D : LeviCivitaData roundCylinderMetric)
     (z : RoundCylinderSpace) (v w : RoundCylinderTangent z) :
     D.ricci (roundCylinderModelDiffeomorph z)
@@ -120,8 +103,6 @@ theorem roundCylinderMetric_ricci_product (D : LeviCivitaData roundCylinderMetri
     roundCylinderMetric_height_mvfderiv, roundCylinderMetric_height_mvfderiv,
     rescaledMetric_inner]
   ring
-
-
 
 def roundCylinderModelParametrization (q : UnitTwoSphere)
     (p : RoundCylinderCoordinates) : RoundCylinderSpace :=
@@ -167,7 +148,6 @@ theorem roundCylinderModelParametrization_mfderiv (q : UnitTwoSphere)
   rw [mfderiv_prodMk h₁ h₂, mfderiv_comp p hc L₁.mdifferentiableAt, hL₁, hL₂] at hh
   exact congrArg (fun L => L v) hh
 
-
 theorem roundCylinderModelParametrization_inner (q : UnitTwoSphere)
     (p v w : RoundCylinderCoordinates) :
     roundCylinderMetric.inner (roundCylinderModelParametrization q p)
@@ -181,7 +161,6 @@ theorem roundCylinderModelParametrization_inner (q : UnitTwoSphere)
     roundSphereMetric_chart_symm_inner, roundCylinderModelCoefficients_apply]
   ring
 
-
 theorem roundCylinderModelParametrization_ricci (D : LeviCivitaData roundCylinderMetric)
     (q : UnitTwoSphere) (p v w : RoundCylinderCoordinates) :
     D.ricci (roundCylinderModelParametrization q p)
@@ -194,7 +173,6 @@ theorem roundCylinderModelParametrization_ricci (D : LeviCivitaData roundCylinde
   change D.ricci (roundCylinderModelDiffeomorph _) _ _ = _
   rw [roundCylinderMetric_ricci_product, roundSphereMetric_chart_symm_inner]
 
-
 theorem roundCylinderModelParametrization_inner_center (q : UnitTwoSphere)
     (s : ℝ) (v w : RoundCylinderCoordinates) :
     roundCylinderMetric.inner (roundCylinderModelParametrization q (0, s))
@@ -206,7 +184,6 @@ theorem roundCylinderModelParametrization_inner_center (q : UnitTwoSphere)
   rw [roundCylinderModelParametrization_inner, roundCylinderModelCoefficients_apply]
   norm_num
 
-
 theorem roundCylinderModelParametrization_ricci_center
     (D : LeviCivitaData roundCylinderMetric) (q : UnitTwoSphere)
     (s : ℝ) (v w : RoundCylinderCoordinates) :
@@ -217,8 +194,6 @@ theorem roundCylinderModelParametrization_ricci_center
         (roundCylinderModelParametrization q) (0, s) w) = ⟪v.1, w.1⟫_ℝ := by
   rw [roundCylinderModelParametrization_ricci]
   norm_num
-
-
 
 theorem roundCylinderModelParametrization_ricci_center_basis
     (D : LeviCivitaData roundCylinderMetric) (q : UnitTwoSphere) (s : ℝ) (i j : Fin 3) :

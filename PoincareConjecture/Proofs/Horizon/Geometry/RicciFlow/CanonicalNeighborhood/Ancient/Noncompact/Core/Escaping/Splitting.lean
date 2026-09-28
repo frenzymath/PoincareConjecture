@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Splitting.ParallelGr
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.AncientRescaledLimit
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Construction
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,8 +25,6 @@ attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.measurableSpace FlowCarrier.borelSpace
   FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
   BasedKappaSolution.connectedSpace
-
-
 
 theorem AncientKappaSolution.exists_round_factor_of_line_of_services
     (P : NoncompactKappaServices.{u})
@@ -112,8 +99,6 @@ theorem AncientKappaSolution.exists_round_factor_of_line_m26
 
 attribute [local instance] RicciFlow.uliftChartedSpace RicciFlow.uliftIsManifold
   AncientKappaSolution.uliftSecondCountable AncientKappaSolution.uliftConnectedSpace
-
-
 
 theorem M23TerminalExtension.exists_round_factor_of_line_of_services
     (P : NoncompactKappaServices.{u})

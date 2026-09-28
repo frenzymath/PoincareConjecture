@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineZeroCrossing
 import Mathlib.Analysis.Convex.Join
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,10 +8,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
-
-
 
 theorem convexHull_insert_inter_zero_of_zero (A : E →ᵃ[ℝ] ℝ)
     {q : E} (hq : A q = 0) (s : Set E) :

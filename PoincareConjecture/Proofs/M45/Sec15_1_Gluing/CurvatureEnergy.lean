@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M04.CurvatureEnergyBochner
 import PoincareConjecture.Proofs.M04.ScalarEvolutionCoefficients
 import PoincareConjecture.Proofs.M04.TensorEvolution
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,8 +18,6 @@ open PoincareConjecture.M04
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
-
-
 
 theorem hasDerivAt_curvatureEnergy
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M) :
@@ -123,8 +112,6 @@ theorem hasDerivAt_curvatureEnergy
   rw [hB]
   ring
 
-
-
 theorem curvatureEnergy_heat_inequality_interior
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ interior J) (x : M) :
     derivWithin (fun s => ((F.connection s).curvatureTensorNorm x) ^ 2) J t ≤
@@ -146,8 +133,6 @@ theorem curvatureEnergy_heat_inequality_interior
   nlinarith [sq_nonneg ((F.metric t).tensorNorm
     ((F.connection t).covariantTensorDerivative (F.connection t).riemannEvaluation) x)]
 
-
-
 theorem contDiffOn_curvatureEnergy_timeSlice (F : RicciFlow n M J) (x : M) :
     ContDiffOn ℝ ∞ (fun s => ((F.connection s).curvatureTensorNorm x) ^ 2) J := by
   have hslice : ContMDiff 𝓘(ℝ, ℝ) (𝓘(ℝ, ℝ).prod (𝓡 n)) ∞
@@ -156,8 +141,6 @@ theorem contDiffOn_curvatureEnergy_timeSlice (F : RicciFlow n M J) (x : M) :
     (show MapsTo (fun s : ℝ => (s, x)) J (J ×ˢ univ) from
       fun _ hs => ⟨hs, mem_univ x⟩)
   simpa only [Function.comp_def, LeviCivitaData.curvatureDerivativeNorm_zero] using h.contDiffOn
-
-
 
 theorem continuousOn_curvatureEnergy_heatRHS (F : RicciFlow n M J) (x : M) :
     ContinuousOn
@@ -180,8 +163,6 @@ theorem continuousOn_curvatureEnergy_heatRHS (F : RicciFlow n M J) (x : M) :
     intro t _
     exact (Real.sqrt_sq (Real.sqrt_nonneg _)).symm
   exact hLap.add ((hN.pow 3).const_mul 16)
-
-
 
 theorem curvatureEnergy_heat_inequality
     (F : RicciFlow n M J) {t : ℝ} (ht : t ∈ J) (x : M) :

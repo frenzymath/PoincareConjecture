@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.RoundModelCurvature
 import PoincareConjecture.Proofs.M04.SectionalMinimumDiffusion
 import PoincareConjecture.Proofs.M04.TensorNorm
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8

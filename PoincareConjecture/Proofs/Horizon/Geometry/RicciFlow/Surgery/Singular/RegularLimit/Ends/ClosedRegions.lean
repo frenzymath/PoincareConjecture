@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.Topology
 import Mathlib.Topology.Connected.LocallyConnected
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -28,7 +19,6 @@ theorem isClosed_connectedComponentIn_of_isClosed {S : Set X}
     exact hS.isClosedEmbedding_subtypeVal.isClosedMap _ isClosed_connectedComponent
   · rw [connectedComponentIn_eq_empty hx]
     exact isClosed_empty
-
 
 theorem frontier_superlevel_component_subset [LocallyConnectedSpace X]
     {f : X → ℝ} (hf : Continuous f) (B : ℝ) (x : X) :
@@ -60,8 +50,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_closed_scalar_region (e : TerminalEnd K)
     (hlower : ∃ L : ℝ, ∀ x, L ≤ (E.extended.connection T).scalarCurvature x)

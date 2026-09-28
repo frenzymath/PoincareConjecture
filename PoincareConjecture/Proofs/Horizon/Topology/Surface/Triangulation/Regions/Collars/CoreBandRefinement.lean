@@ -1,12 +1,6 @@
-
-
-
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Regions.Collars.CoreBandContacts
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Bands.Coordinates
 import PoincareConjecture.Proofs.Horizon.Topology.Surface.Triangulation.Faces.Meshes.ConnectedIntersections
-
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -173,7 +167,6 @@ omit [T2Space M] in
 theorem rightSupportingLine_spec : Function.Surjective B.rightSupportingLine ∧
     segment ℝ B.chartRightBase B.chartRightTip ⊆ {z | B.rightSupportingLine z = 0} :=
   Classical.choose_spec (Poincare.Topology.Plane.exists_affine_line_containing_segment _ _)
-
 
 noncomputable def coreContactLines : List (Plane →ᵃ[ℝ] ℝ) :=
   [cornerSeparator B.firstUpperChartBasis, B.firstUpperChartBasis.coord 1,
@@ -369,8 +362,6 @@ private theorem first_upper_contact_of_monochromatic (T : TriangleMesh) (t : T.T
       obtain ⟨s, -, rfl⟩ := hz
       simp [AffineMap.apply_lineMap]
 
-
-
 theorem core_boundaryIntersections_of_monochromatic (T : TriangleMesh)
     (hsource : T.toPlaneComplex.support ⊆ C.source)
     (hinterior : Disjoint (C '' T.toPlaneComplex.support) (interior B.faces.carrier))
@@ -398,8 +389,6 @@ theorem core_boundaryIntersections_of_monochromatic (T : TriangleMesh)
 end FiniteChartRegionDecomposition.OrientedGraphPiece.FixedStripBandFaces
 
 namespace FiniteChartRegionDecomposition
-
-
 
 theorem exists_simultaneous_core_band_refinement
     {D : FiniteChartRegionDecomposition (M := M)} {C : OpenPartialHomeomorph Plane M}

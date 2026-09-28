@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_CommonCapCutoff
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Claim16_27_StableSource
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem exists_common_cap_cutoff_with_seed_bounds
     (P : M46Predecessors.{u}) (P44 : M44CapPersistencePredecessors.{u})

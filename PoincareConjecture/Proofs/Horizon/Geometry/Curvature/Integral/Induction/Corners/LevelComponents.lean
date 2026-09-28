@@ -3,24 +3,12 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.RegularLevelDistance
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Induced.Complete
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter PoincareConjecture
 open Poincare.Geometry.Manifold.RegularLevel
 open scoped Manifold ContDiff Topology Bundle
-
-
 
 theorem PoincareConjecture.LeviCivitaData.regularLevel_components_and_diameter_of_opposite_gradients
     {n : ℕ} {M : Type*} [TopologicalSpace M]

@@ -3,22 +3,10 @@ import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.RelativeChartRestriction
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.AffineHalfspaceProduct
 import PoincareConjecture.Proofs.M76.Wall.OppositePLDomain
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76.HamiltonIntervalTorus
-
-
-
 
 theorem exists_relative_circle_endpoint_chart_with_tangent
     {X E ι : Type*} [TopologicalSpace X]
@@ -158,7 +146,6 @@ theorem exists_relative_circle_endpoint_chart_with_tangent
       have hyR := (hR y hy'.1).mpr hp
       exact ⟨hyR, (hqzero ⟨y, hyR⟩ hy').mpr hl⟩
 
-
 theorem exists_relative_shifted_circle_endpoint_chart_with_tangent
     {X E ι : Type*} [TopologicalSpace X]
     [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -225,9 +212,6 @@ theorem exists_relative_shifted_circle_endpoint_chart_with_tangent
     simpa only [harc] using hGB y hy
   · intro y hy
     simpa only [hphase] using hGS y hy
-
-
-
 
 theorem exists_intrinsic_signed_rim_chart
     {X : Type*} [TopologicalSpace X] {N S O : Set X}

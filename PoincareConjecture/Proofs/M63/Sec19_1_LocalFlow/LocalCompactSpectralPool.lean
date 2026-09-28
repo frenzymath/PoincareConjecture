@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CommonAmbientSpectralFami
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CompactSmoothInitialPool
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.CompactPoolInitialCurvatureCap
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -34,10 +24,6 @@ local notation "W" => EuclideanSpace ℝ ι
 local notation "X" => C(AddCircle L, W)
 local notation "J" => ((X × X) × X) × ℝ
 local notation "S" => State ((ℤ × Fin 2) × ι)
-
-
-
-
 
 theorem exists_local_compact_spectral_pool
     (F : RicciFlow n M (Icc a b))

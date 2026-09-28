@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.DomainBoundary
 import PoincareConjecture.Proofs.M64.Sec19_4_Approximation.MetricLipschitzBridge
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,9 +21,6 @@ private theorem annulusInterior_subset : m64AnnulusInterior ⊆ m64AnnulusDomain
   have h1 := hp 1 trivial
   exact ⟨h0.1.le, h0.2.le, h1.1.le, h1.2.le⟩
 
-
-
-
 theorem m64AnnulusDomain_uniqueDiffOn : UniqueDiffOn ℝ m64AnnulusDomain := by
   apply uniqueDiffOn_convex m64AnnulusDomain_convex
   refine ⟨annulusPoint (curvePeriod / 2) (1 / 2), ?_⟩
@@ -43,10 +28,6 @@ theorem m64AnnulusDomain_uniqueDiffOn : UniqueDiffOn ℝ m64AnnulusDomain := by
   simp only [m64AnnulusInterior, mem_preimage, Set.mem_pi, mem_univ, mem_Ioo]
   intro i _
   fin_cases i <;> norm_num [annulusPoint, curvePeriod, Real.pi_pos]
-
-
-
-
 
 theorem m64AnnulusIntegral_differentiableAt_of_contDiffOn
     {E : ℝ × LoopPlane → ℝ} {epsilon : ℝ} (hepsilon : 0 < epsilon)
@@ -112,10 +93,6 @@ private theorem within_energy_contDiffOn
   exact contDiffWithinAt_const.mul
     (ContDiffWithinAt.sum fun i _ => contDiffWithinAt_const.mul (hscalar i))
 
-
-
-
-
 theorem m64AnnulusGramEnergy_differentiableAt_of_closed_smooth_variation
     (g : RiemannianMetric n M) (w : Fin 2 → ℝ) {v : ℝ × LoopPlane → M}
     {epsilon : ℝ} (hepsilon : 0 < epsilon)
@@ -150,10 +127,6 @@ theorem m64AnnulusGramEnergy_differentiableAt_of_closed_smooth_variation
   have hmd := (hv.contMDiffAt hnhds).mdifferentiableAt (by simp)
   simp only [E, mfderivWithin_of_mem_nhds hnhds,
     m60AreaGram, m64MovingAnnulus_spatial_differential hmd]
-
-
-
-
 
 theorem m64AnnulusEnergy_differentiableAt_of_closed_smooth_variation
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}

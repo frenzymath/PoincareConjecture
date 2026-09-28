@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.ComplementaryTriangleGraph
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalGraphEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PreAbstractSimplicialComplex.ModTwoCochains
 
 variable {ι : Type*} (A : PreAbstractSimplicialComplex ι)
-
-
 
 theorem triangle_shared_edge_unique (q r : Triangle A) (hqr : q ≠ r)
     (e f : Edge A) (heq : e.val ⊆ q.val) (her : e.val ⊆ r.val)
@@ -43,8 +31,6 @@ theorem triangle_shared_edge_unique (q r : Triangle A) (hqr : q ≠ r)
     (by rw [f.property.2]; exact hcard)
   exact Subtype.ext (he.trans hf.symm)
 
-
-
 theorem exists_unique_complementary_shared_edge (T : SimpleGraph ι)
     (s : (complementaryTriangleGraph A T).edgeSet) :
     ∃! e : Edge A, ¬edgeInGraph A T e ∧ ∀ q ∈ s.val, e.val ⊆ q.val := by
@@ -65,7 +51,6 @@ variable [Fintype ι]
 
 open Classical in
 
-
 theorem complementary_edge_cofaces (T : SimpleGraph ι)
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2)
     (s : (complementaryTriangleGraph A T).edgeSet) (e : Edge A)
@@ -77,8 +62,6 @@ theorem complementary_edge_cofaces (T : SimpleGraph ι)
     rw [Sym2.toFinset_mk_eq]
     exact triangleCofaces_eq_pair_of_distinct A (fun e => (hcofaces e).le) e q r hqr
       (hshare q (Sym2.mem_mk_left q r)) (hshare r (Sym2.mem_mk_right q r))
-
-
 
 noncomputable def complementaryTriangleEdgeEquiv (T : SimpleGraph ι)
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2) :
@@ -108,8 +91,6 @@ noncomputable def complementaryTriangleEdgeEquiv (T : SimpleGraph ι)
     apply Subtype.ext
     exact triangle_shared_edge_unique A q r hqr (f s) e.val
       ((hf s).2 q (Sym2.mem_mk_left q r)) ((hf s).2 r (Sym2.mem_mk_right q r)) heq her
-
-
 
 theorem card_complementary_triangle_edges (T : SimpleGraph ι)
     (hcofaces : ∀ e : Edge A, (triangleCofaces A e).card = 2) :

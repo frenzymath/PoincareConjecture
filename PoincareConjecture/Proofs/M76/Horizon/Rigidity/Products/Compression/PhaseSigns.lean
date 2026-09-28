@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.Compression.Adjustment
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.CircleSlabPhaseSigns
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -199,4 +191,3 @@ theorem exists_hamiltonZero_small_phase_adjustment {ι κ : Type*}
     exact hGout t y (fun hyU => hy hyU.1)
 
 end PoincareConjecture.M76.PrescribedSlab
-

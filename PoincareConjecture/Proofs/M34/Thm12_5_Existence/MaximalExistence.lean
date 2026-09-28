@@ -2,22 +2,11 @@ import PoincareConjecture.Proofs.M34.Thm12_5_Existence.ShortTimeExistence
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.FiniteLifetime
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.BoundedMaximality
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M34
-
-
 
 theorem maximalStandardCapFlow_exists (P : M34StandardCapPredecessors)
     (g0 : StandardInitialMetric) :

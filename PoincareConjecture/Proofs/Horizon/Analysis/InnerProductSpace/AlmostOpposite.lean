@@ -1,12 +1,5 @@
 import Mathlib.Analysis.InnerProductSpace.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped InnerProductSpace
@@ -14,7 +7,6 @@ open scoped InnerProductSpace
 namespace Poincare.InnerProductSpace
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
 
 theorem norm_add_sq_le_of_almost_opposite (v z : E) {η δ τ : ℝ}
     (hv : ‖v‖ ≤ 1) (hz : ‖z‖ ≤ 1 + η)
@@ -25,14 +17,11 @@ theorem norm_add_sq_le_of_almost_opposite (v z : E) {η δ τ : ℝ}
   rw [norm_add_sq_real]
   nlinarith
 
-
 theorem norm_add_le_sqrt_of_almost_opposite (v z : E) {η δ τ : ℝ}
     (hv : ‖v‖ ≤ 1) (hz : ‖z‖ ≤ 1 + η)
     (hpair : ⟪z, v⟫_ℝ ≤ -1 + 2 * δ + τ) :
     ‖z + v‖ ≤ Real.sqrt (2 * η + η ^ 2 + 4 * δ + 2 * τ) :=
   Real.le_sqrt_of_sq_le (norm_add_sq_le_of_almost_opposite v z hv hz hpair)
-
-
 
 theorem abs_inner_le_of_almost_opposite (v z w : E) {δ q : ℝ}
     (hw : ‖w‖ ≤ 1) (hcross : |⟪v, w⟫_ℝ| ≤ δ) (hz : ‖z + v‖ ≤ q) :
@@ -49,7 +38,6 @@ theorem abs_inner_le_of_almost_opposite (v z w : E) {δ q : ℝ}
     _ ≤ |⟪z + v, w⟫_ℝ| + |⟪v, w⟫_ℝ| := abs_sub _ _
     _ ≤ q + δ := add_le_add herr hcross
     _ = δ + q := add_comm _ _
-
 
 theorem abs_inner_le_of_almost_opposite_pair (v w z z' : E) {δ q r : ℝ}
     (hv : ‖v‖ ≤ 1) (hw : ‖w‖ ≤ 1) (hcross : |⟪v, w⟫_ℝ| ≤ δ)
@@ -71,7 +59,6 @@ theorem abs_inner_le_of_almost_opposite_pair (v w z z' : E) {δ q r : ℝ}
     _ ≤ |⟪z, z' + w⟫_ℝ| + |⟪z, w⟫_ℝ| := abs_sub _ _
     _ ≤ (1 + q) * r + (δ + q) := add_le_add herr hzw
     _ = δ + q + r + q * r := by ring
-
 
 theorem family_cross_bounds_of_almost_opposite {ι : Type*}
     (v z : ι → E) {δ q : ℝ}

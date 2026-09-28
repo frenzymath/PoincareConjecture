@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FaceStarSecantBound
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFaceTransversality
 import PoincareConjecture.Proofs.M76.Mathlib.TransversePlaneDimension
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set ContinuousLinearMap
@@ -20,9 +10,6 @@ namespace ContinuousLinearMap
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 def frameEmbeddingHomeomorph (J : F →L[ℝ] E) (S : Set E) :
     {Q : J.FrameProjectionSpace // InjOn Q.val S} ≃ₜ FrameEmbeddingSpace J S where
@@ -40,10 +27,6 @@ namespace Geometry.SimplicialComplex
 variable {E F : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F]
-
-
-
-
 
 noncomputable def faceStarComplementPlaneHomeomorph (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))
@@ -66,9 +49,6 @@ noncomputable def faceStarComplementPlaneHomeomorph (K : SimplicialComplex ℝ E
       ((J'.frameComplementPlaneHomeomorph hJ') P).property,
     J'.ker_frameComplementPlaneHomeomorph hJ']
 
-
-
-
 theorem contractible_faceStarComplementPlaneSpace (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))
     {s : Finset E} (hs : s ∈ K.faces) {p : E}
@@ -83,11 +63,6 @@ theorem contractible_faceStarComplementPlaneSpace (K : SimplicialComplex ℝ E)
       (K.closedFaceStar s).space) := by
   let := K.contractible_faceStarFrameEmbeddingSpace hs p J
   exact (K.faceStarComplementPlaneHomeomorph hv hs hp J hJ).contractibleSpace
-
-
-
-
-
 
 theorem contractible_faceStarTransversePlaneSpace (K : SimplicialComplex ℝ E)
     (hv : AffineIndependent ℝ ((↑) : K.vertices → E))

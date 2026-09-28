@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M76.Wall.Mathlib.PairedFacetOrientation
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Geometry
-
-
-
-
 
 theorem exists_finite_paired_facet_orientation
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]

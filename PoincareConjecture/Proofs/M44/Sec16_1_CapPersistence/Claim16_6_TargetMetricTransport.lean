@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCo
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CoefficientTransport
 import PoincareConjecture.Proofs.M44.Mathlib.OpenChartDiffeomorph
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,9 +16,6 @@ local notation "E" n:max => EuclideanSpace ℝ (Fin n)
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
-
 
 theorem metric_inner_eq_of_chart_coefficients
     {n : ℕ} {M N : Type*} [TopologicalSpace M] [TopologicalSpace N]
@@ -73,17 +61,12 @@ theorem metric_inner_eq_of_chart_coefficients
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
 
-
-
-
 def cylinderTargetTransport
     (e : SurgeryFlowCylinder F C origin scale I U)
     (f : PartialDiffeomorph (𝓡 3) (𝓡 3) (E 3) C.carrier ∞)
     (s : ℝ) (hs : s ∈ I) :
     (⟨f.target, f.open_target⟩ : Opens C.carrier) → (F.slice (origin + s / scale)).carrier :=
   fun x => e.forward s hs x.1
-
-
 
 theorem cylinderTargetTransport_smooth
     (e : SurgeryFlowCylinder F C origin scale I U)
@@ -93,9 +76,6 @@ theorem cylinderTargetTransport_smooth
   apply contMDiffOn_univ.mp
   exact (e.forward_smooth s hs).comp contMDiff_subtype_val.contMDiffOn
     (fun y _ => hmap y.2)
-
-
-
 
 theorem cylinderTargetTransport_invertible
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)
@@ -116,9 +96,6 @@ theorem cylinderTargetTransport_invertible
     (((e.forward_smooth s hs).contMDiffAt (hU.mem_nhds (hmap x.2))).mdifferentiableAt (by simp))
     ((contMDiff_subtype_val (n := ∞)).mdifferentiable (by simp) x)]
   exact hde.comp hdi
-
-
-
 
 theorem cylinderTargetTransport_metric
     (e : SurgeryFlowCylinder F C origin scale I U) (hU : IsOpen U)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_SquareVariationRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -22,9 +13,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {P : Type v} [NormedAddCommGroup P] [NormedSpace ℝ P]
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
-
-
-
 
 theorem exists_parameterLineVariation (hM12 : GeneralizedRicciGaugeTheory.{u} n)
     (R : M14SquareRootPath G p) (γ : ℝ × P → G.Point) {C : Set ℝ} {U : Set P}

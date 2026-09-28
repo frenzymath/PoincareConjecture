@@ -4,7 +4,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Eucl
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralOpenOrientation
 import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.SingularHomology.Orientation.IntegralOpenOrientationCompatibility
 
-
 set_option autoImplicit false
 
 noncomputable section
@@ -12,7 +11,6 @@ noncomputable section
 open CategoryTheory HomologicalComplex Limits TopologicalSpace Set
 
 namespace Poincare.Topology
-
 
 private theorem supportRestriction_isIso_of_eq
     {X : Type} [TopologicalSpace X] {K L : Set X} {n : Nat}

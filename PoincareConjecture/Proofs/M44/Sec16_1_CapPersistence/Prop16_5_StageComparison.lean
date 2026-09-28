@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderSa
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Cor16_9_FamilyJetsSequence
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_TwoJetModulus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,9 +32,6 @@ noncomputable local instance stageComparisonTwoJetSpace :
 variable {constants : MetricSurgeryConstants} {setup : SurgeryControlSetup constants}
   {start rNext A eta theta Rinner : ℝ} {cutoffs : ℕ → ℝ}
   {X : ∀ n, PreparedCapCounterexample.{u} setup start rNext A eta theta (cutoffs n) Rinner}
-
-
-
 
 theorem eventually_stage_spatial_jets
     (P : M44CapPersistencePredecessors.{u})
@@ -101,8 +89,6 @@ theorem eventually_stage_spatial_jets
     ⟨ht.1, htother⟩ ht hxother (hsourceN hx) m]
   exact hcloseN t ht x hx
 
-
-
 theorem eventually_stage_finite_spatial_jets
     (P : M44CapPersistencePredecessors.{u})
     (standard : RepairedStandardCapExistenceData setup.standard_initial)
@@ -134,9 +120,6 @@ theorem eventually_stage_finite_spatial_jets
   filter_upwards [hall] with n hn
   intro D hmap t ht htlife x hx hxD j hj
   exact hn ⟨j, Nat.lt_succ_of_le hj⟩ D hmap t ht htlife x hx hxD
-
-
-
 
 theorem eventually_stage_twoJet_comparison
     (P : M44CapPersistencePredecessors.{u})

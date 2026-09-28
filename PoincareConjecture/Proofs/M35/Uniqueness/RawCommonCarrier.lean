@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceExhaustion
 import PoincareConjecture.Proofs.M35.Uniqueness.RawDistanceContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

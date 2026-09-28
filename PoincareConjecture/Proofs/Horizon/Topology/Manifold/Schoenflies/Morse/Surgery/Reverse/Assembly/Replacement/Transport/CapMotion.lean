@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.AffineMotion
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Reverse.Assembly.Replacement.Transport.AffineSetImage
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,8 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Reverse
 
 variable {E V : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [FiniteDimensional Real E] [NormedAddCommGroup V] [NormedSpace Real V]
-
-
 
 theorem exists_cap_affine_stretch_in_coordinates
     (H : Diffeomorph 𝓘(Real, E × Real) 𝓘(Real, V) (E × Real) V ∞)

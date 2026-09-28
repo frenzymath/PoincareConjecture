@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M51.EmptyTerminalNeck
 import PoincareConjecture.Proofs.M48.ExtensionCanonical
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Piece
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Partition
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +14,6 @@ open RiemannianMetric ConnectionAlongCurve Conjugate.Realization
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 structure GeodesicVariation (g : RiemannianMetric n M) (γ : ℝ → M)
     (V : ℝ → EuclideanSpace ℝ (Fin n)) (a b : ℝ) (η₀ η₁ : ℝ → M) where
@@ -66,8 +52,6 @@ structure GeodesicVariation (g : RiemannianMetric n M) (γ : ℝ → M)
   endpoint_right : η N = η₁
   base_source : ∀ i < N, ∀ t ∈ Icc (τ i - ρ) (τ (i + 1) + ρ),
     γ t ∈ (extChartAt (𝓡 n) (β i)).source
-
-
 
 theorem exists_geodesicVariation [T2Space M]
     (g : RiemannianMetric n M) {γ : ℝ → M}

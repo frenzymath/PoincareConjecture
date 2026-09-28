@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.SpatialContact
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Noncollapse.Universal.Roundness.RicciComplementEvolution
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,8 +19,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
-
 
 theorem tensorLaplacian_pullback_nonpos_at_round_pinching_contact
     {E : M → Type*} [∀ x, NormedAddCommGroup (E x)]
@@ -98,8 +86,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
 local instance (x : M) : FiniteDimensional ℝ (TangentSpace (𝓡 3) x) := by
   unfold TangentSpace
   infer_instance
-
-
 
 theorem transportedRicciComplementDiffusion_nonpos_at_contact
     (F : RicciFlow 3 M (Ico a b))

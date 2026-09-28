@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.CapTopology.NeckRegions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -23,13 +13,10 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] {g : RiemannianMetric 3 M}
 
-
-
 noncomputable def axialMap (N : EpsilonNeck g) (β : ℝ → ℝ) (x : M) : M := by
   classical
   exact if x ∈ N.carrier then
     N.coordinate_map ((N.coordinate_inverse x).1, β (N.coordinate_inverse x).2) else x
-
 
 theorem axialMap_of_mem (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
     (hx : x ∈ N.carrier) :
@@ -37,19 +24,15 @@ theorem axialMap_of_mem (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
       ((N.coordinate_inverse x).1, β (N.coordinate_inverse x).2) := by
   simp only [axialMap, if_pos hx]
 
-
 theorem axialMap_of_not_mem (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
     (hx : x ∉ N.carrier) : N.axialMap β x = x := by
   simp only [axialMap, if_neg hx]
-
 
 theorem axialMap_eq_self_of_fixed_height (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
     (hx : x ∈ N.carrier) (hfix : β (N.coordinate_inverse x).2 = (N.coordinate_inverse x).2) :
     N.axialMap β x = x := by
   rw [N.axialMap_of_mem β hx, hfix]
   exact N.coordinate_map_coordinate_inverse hx
-
-
 
 theorem axialMap_mem_region (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
     (hx : x ∈ N.carrier) {a b : ℝ} (ha : -N.epsilon⁻¹ ≤ a) (hb : b ≤ N.epsilon⁻¹)
@@ -63,8 +46,6 @@ theorem axialMap_mem_region (N : EpsilonNeck g) (β : ℝ → ℝ) {x : M}
     ((N.coordinate_inverse x).1, β (N.coordinate_inverse x).2) ht]
   exact hβx
 
-
-
 theorem axialMap_comp_eq (N : EpsilonNeck g) (β γ : ℝ → ℝ) {x : M}
     (hx : x ∈ N.carrier)
     (hβx : β (N.coordinate_inverse x).2 ∈ Ioo (-N.epsilon⁻¹) N.epsilon⁻¹)
@@ -77,8 +58,6 @@ theorem axialMap_comp_eq (N : EpsilonNeck g) (β γ : ℝ → ℝ) {x : M}
     γ (β (N.coordinate_inverse x).2)) = x
   rw [hinv]
   exact N.coordinate_map_coordinate_inverse hx
-
-
 
 theorem contMDiffAt_axialMap (N : EpsilonNeck g) {β : ℝ → ℝ}
     (hβ : ContDiff ℝ ∞ β) {x : M} (hx : x ∈ N.carrier)

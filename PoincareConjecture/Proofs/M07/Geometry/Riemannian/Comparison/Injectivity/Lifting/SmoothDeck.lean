@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.DeckMotion
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +14,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
 
 attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
-
-
 
 theorem contDiffAt_of_continuousAt_lift
     {f h : EuclideanSpace ℝ (Fin n) → M}
@@ -49,8 +38,6 @@ theorem contDiffAt_of_continuousAt_lift
   rw [← hpy]
   change d y = e.symm (f (d y))
   rw [← heq hy, e.left_inv hy]
-
-
 
 theorem exists_smooth_radial_deck_motion [T2Space M]
     (g : RiemannianMetric n M)
@@ -112,8 +99,6 @@ theorem exists_smooth_radial_deck_motion [T2Space M]
   · intro hxne v hv
     rw [hd v hv]
     exact hDne hxne ⟨v, hv⟩
-
-
 
 theorem pullbackCoefficients_deck_motion
     (g : RiemannianMetric n M)

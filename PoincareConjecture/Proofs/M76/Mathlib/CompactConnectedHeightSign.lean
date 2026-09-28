@@ -3,14 +3,6 @@ import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 import Mathlib.Tactic.Linarith
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
-
 
 theorem IsCompact.exists_uniform_height_sign
     {S : Set X} (hS : IsCompact S) (hconn : IsConnected S)

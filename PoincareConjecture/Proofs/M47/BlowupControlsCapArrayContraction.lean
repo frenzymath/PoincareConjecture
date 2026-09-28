@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsCapTensorAction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped BigOperators
@@ -16,8 +7,6 @@ open scoped BigOperators
 namespace PoincareConjecture.M47
 
 variable {ι κ μ : Type*} [Fintype ι] [Fintype κ] [Fintype μ]
-
-
 
 theorem cap_array_contraction_norm_le (T : ι → κ → ℝ) (S : κ → μ → ℝ) :
     ‖(WithLp.toLp 2 (fun p : ι × μ => ∑ k, T p.1 k * S k p.2) :
@@ -39,8 +28,6 @@ theorem cap_array_contraction_norm_le (T : ι → κ → ℝ) (S : κ → μ →
       congr 1
       exact Finset.sum_comm
 
-
-
 theorem cap_array_triangle_abs_le (A : ι → κ → ℝ)
     (U : ι → μ → ℝ) (S : μ → κ → ℝ) :
     |∑ i, ∑ j, ∑ k, A i j * U i k * S k j| ≤
@@ -57,8 +44,6 @@ theorem cap_array_triangle_abs_le (A : ι → κ → ℝ)
         ‖(WithLp.toLp 2 (fun p : μ × κ => S p.1 p.2) : EuclideanSpace ℝ (μ × κ))‖) :=
       mul_le_mul_of_nonneg_left (cap_array_contraction_norm_le U S) (norm_nonneg _)
     _ = _ := (mul_assoc _ _ _).symm
-
-
 
 theorem cap_array_linear_combination_norm_le (c : κ → ℝ) (T : κ → ι → ℝ) :
     ‖(WithLp.toLp 2 (fun i => ∑ k, c k * T k i) : EuclideanSpace ℝ ι)‖ ≤

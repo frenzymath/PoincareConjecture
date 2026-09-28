@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_ActionDifferential
 import PoincareConjecture.Proofs.M14.Sec6_3_JointMap
 import PoincareConjecture.Proofs.M14.Sec6_3_StrictPrefix
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -20,9 +11,6 @@ namespace PoincareConjecture.M14
 
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
-
-
-
 
 theorem exponentialConclusion
     (hCoordinates : M12MetricPredecessors.{0} n)

@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Push.ProductSide
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Boundary.Push.ArcCutoff
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 
@@ -226,6 +224,5 @@ theorem exists_original_relative_finite_proper_disk_push_with_homotopy
   · exact fun b ↦ himage.superset (hp0 b)
   · exact fun z ↦ by rw [himage]; exact hpzero z
   · simpa only [himage] using hcover
-
 
 end PoincareConjecture.M76.Dehn.Annuli

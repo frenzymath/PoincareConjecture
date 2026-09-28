@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.SphereCircle.CollarMatching
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +24,6 @@ private theorem hasDerivAt_capClock_one (s : Real) :
     ((hasDerivAt_const (1 : Real) (2 : Real)).mul (hasDerivAt_id 1)) (by norm_num)).const_mul s
   convert! h using 1
   norm_num [capClock]
-
-
 
 theorem exists_disk_preserving_cap_clock {s : Real} (hs : s < 0) :
     ∃ G : Diffeomorph (𝓡 2) (𝓡 2) Plane Plane ∞,
@@ -109,8 +105,6 @@ theorem exists_disk_preserving_cap_clock {s : Real} (hs : s < 0) :
   rw [hGg _ (by simpa [norm_smul, Real.norm_eq_abs, abs_of_pos hρpos] using
       hρ.trans_le (min_le_left ε δ)), hxg, hkformula p hρpos]
   rfl
-
-
 
 theorem exists_disk_chart_matching_cap_clock
     (e : OpenPartialHomeomorph Plane S2)

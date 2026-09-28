@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.ThirdCoordinateLifts
 import PoincareConjecture.Proofs.M76.Mathlib.HyperplaneSubdivision
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

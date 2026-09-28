@@ -4,14 +4,6 @@ import Mathlib.Analysis.Calculus.InverseFunctionTheorem.ContDiff
 import Mathlib.Analysis.InnerProductSpace.PiL2
 import Mathlib.LinearAlgebra.Projection
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ namespace Poincare.Geometry.Manifold
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
   [NormedAddCommGroup F] [NormedSpace Real F]
   [FiniteDimensional Real E] [FiniteDimensional Real F]
-
-
 
 theorem exists_continuousLinearEquiv_prod_of_injective
     (L : E →L[Real] F) (hL : Function.Injective L) :
@@ -91,8 +81,6 @@ private theorem exists_partialDiffeomorph_of_contDiffOn
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold 𝓘(Real, E) ∞ M]
-
-
 
 theorem isImmersionAtOfComplement_of_injective_mfderiv
     {f : M -> F} (hf : ContMDiff 𝓘(Real, E) 𝓘(Real, F) ∞ f) (x : M)
@@ -170,16 +158,12 @@ theorem isImmersionAtOfComplement_of_injective_mfderiv
   rw [heq]
   exact congrArg A (d.left_inv huD)
 
-
-
 theorem isImmersion_of_injective_mfderiv
     {f : M -> F} (hf : ContMDiff 𝓘(Real, E) 𝓘(Real, F) ∞ f)
     (hinj : ∀ x, Function.Injective (mfderiv 𝓘(Real, E) 𝓘(Real, F) f x)) :
     _root_.Manifold.IsImmersion 𝓘(Real, E) 𝓘(Real, F) ∞ f :=
   _root_.Manifold.IsImmersionOfComplement.isImmersion
     (fun x => isImmersionAtOfComplement_of_injective_mfderiv hf x (hinj x))
-
-
 
 theorem isSmoothEmbedding_of_injective_mfderiv [CompactSpace M]
     {f : M -> F} (hf : ContMDiff 𝓘(Real, E) 𝓘(Real, F) ∞ f)

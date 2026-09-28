@@ -4,14 +4,6 @@ import PoincareConjecture.Proofs.M13.HorizontalConnection
 import PoincareConjecture.Proofs.M13.Backward
 import PoincareConjecture.Statements.M12GeneralizedEquation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.CompactPartialDerivativeBounds
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.RealGeometricH1Composition
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.TimeParameterH1Composition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open PoincareConjecture.SpectralHeatNative
@@ -18,9 +9,6 @@ open PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
-
-
-
 
 theorem exists_compact_scalarH1_coefficient
     (f : ℝ × ((Fin 2 × ι) → ℝ) → ℝ)
@@ -60,9 +48,6 @@ theorem exists_compact_scalarH1_coefficient
     c * ((A : ℝ) + B * d * R) * ‖u - v‖
   dsimp only [c, d]
   gcongr
-
-
-
 
 theorem exists_compact_vectorH1_coefficient
     (f : ℝ × ((Fin 2 × ι) → ℝ) → (ι → ℝ))

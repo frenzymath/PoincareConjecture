@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Generalized.IndexedSourceGeometry
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.Geometry.EventualNormalCovers
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +10,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 theorem CounterexampleSourceGeometry.exists_normalized_source_partial_metric_limit
     {epsilon C A : ℝ}
@@ -97,9 +83,6 @@ theorem CounterexampleSourceGeometry.exists_normalized_source_partial_metric_lim
     D hr hρ (fun j => by have := hρR j; have := hρ j; linarith)
     (fun _ => by norm_num) (by constructor <;> norm_num) hdist hB
     hmargin hcofinal hcurv hcovers
-
-
-
 
 theorem exists_counterexample_source_metric_limit_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :

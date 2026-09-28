@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamPatch
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,8 +12,6 @@ namespace PoincareConjecture
 local notation "S" => interior m64AnnulusDomain
 local notation "O" => m64AnnulusSeamDomain
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem m64AnnulusSeamPatch_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -63,16 +50,12 @@ theorem m64AnnulusSeamPatch_integral
     _ = (∫ p in S, g p) + ∫ p in O, d p := by rw [hcorr]; abel
     _ = _ := by rw [hcorrK]
 
-
-
 theorem m64AnnulusSeamExtend_smul {E : Type*} [SMul ℝ E]
     (phi : LoopPlane → ℝ) (f : LoopPlane → E) (p : LoopPlane) :
     m64AnnulusSeamExtend (fun q => phi q • f q) p =
       m64AnnulusSeamExtend phi p • m64AnnulusSeamExtend f p := by
   simp only [m64AnnulusSeamExtend]
   split_ifs <;> rfl
-
-
 
 theorem m64AnnulusSeamPatch_smul_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
@@ -103,8 +86,6 @@ theorem m64AnnulusSeamPatch_smul_integral
   apply integral_congr_ae
   filter_upwards [] with p
   rw [m64AnnulusSeamExtend_smul, smul_sub]
-
-
 
 theorem m64AnnulusSeamPatch_flux
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

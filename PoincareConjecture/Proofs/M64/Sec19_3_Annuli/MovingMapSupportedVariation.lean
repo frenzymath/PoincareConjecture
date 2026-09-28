@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.MovingMapChartVariation
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,10 +13,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
-
-
 
 theorem m64AnnulusEnergy_hasDerivAt_of_boundary_supported_variation
     (g : RiemannianMetric n M) {v : ℝ × LoopPlane → M}
@@ -101,10 +85,6 @@ theorem m64AnnulusEnergy_hasDerivAt_of_boundary_supported_variation
   ring
 
 open CoordinateExponential ConnectionVariation ConjugateVariation
-
-
-
-
 
 theorem m64AnnulusEnergy_hasDerivAt_of_boundary_supported_chart
     (g : RiemannianMetric n M) (b : M) (f : LoopPlane → M)

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityWeakGluing
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory
@@ -46,11 +36,6 @@ private theorem compact_test_green_zero {M : Type*} {N : ℕ}
   exact neg_add_cancel _
 
 set_option maxHeartbeats 800000 in
-
-
-
-
-
 
 theorem exists_supported_replacement {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U V : Set LoopPlane}
@@ -118,10 +103,6 @@ theorem exists_supported_replacement {M : Type*} {N : ℕ}
   rw [integral_sub (hintG ψ) (hintF ψ), integral_sub (hintG p) (hintF p), hzG, hzF] at h
   change (∫ z in closedBall x R, gG ψ z) = ∫ z in closedBall x R, gF ψ z
   linarith
-
-
-
-
 
 theorem supported_energy_le {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]

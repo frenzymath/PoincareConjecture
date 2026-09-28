@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.GeneralizedCompactMetricComparisonCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -25,9 +16,6 @@ local instance : TopologicalSpace C.limit.carrier.carrier := C.limit.carrier.top
 local instance : ChartedSpace (EuclideanSpace ℝ (Fin 3)) C.limit.carrier.carrier :=
   C.limit.carrier.chartedSpace
 local instance : IsManifold (𝓡 3) ∞ C.limit.carrier.carrier := C.limit.carrier.isManifold
-
-
-
 
 theorem eventually_pullback_inner_comparison_zero
     {K : Set C.limit.sliceCarrier.carrier} (hK : IsCompact K) :

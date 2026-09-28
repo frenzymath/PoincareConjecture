@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalBoundaryDualBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,8 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] (K L : SimplicialComplex ℝ E) [Fintype K.faces] [Fintype L.faces]
-
-
 
 structure BoundaryVertexHalfBall (p : E) where
   body : Set V3
@@ -40,8 +30,6 @@ structure BoundaryVertexHalfBall (p : E) where
       (chart x : V3) ∈ frontier body
   boundary : ∀ x : (K.barycentricDualBlock {p}).space,
     height (chart x : V3) = 0 ↔ (x : E) ∈ (L.barycentricDualBlock {p}).space
-
-
 
 theorem exists_boundary_vertex_half_ball [FiniteDimensional ℝ E]
     {X : Type*} [TopologicalSpace X] (hLK : L ≤ K) {R : Set X}

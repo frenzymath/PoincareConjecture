@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.CapGeometry.TerminalCap.BoundaryScale
 import PoincareConjecture.Proofs.M35.CapGeometry.RadialAnnulusThreshold
 import PoincareConjecture.Proofs.M35.CapGeometry.ScalarRadialNeck
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Bundle Topology
 namespace PoincareConjecture.M35.Uniqueness
 
 open OrdinaryRealization
-
-
 
 structure RadialCapCollars {g₀ : StandardInitialMetric}
     (E : RepairedStandardCapExistenceData g₀) (t : ℝ)
@@ -60,8 +50,6 @@ structure RadialCapCollars {g₀ : StandardInitialMetric}
     (E.rotation_invariant t ht) (E.complete t ht) a < 2 * (b * epsilon⁻¹)
   radius : intrinsicWarpingRadius (E.flow.metric t)
     (E.rotation_invariant t ht) (E.complete t ht) a < 2 * b
-
-
 
 theorem exists_radial_cap_collars_threshold (P : M35StandardCapPredecessors)
     {g₀ : StandardInitialMetric} (E : RepairedStandardCapExistenceData g₀)

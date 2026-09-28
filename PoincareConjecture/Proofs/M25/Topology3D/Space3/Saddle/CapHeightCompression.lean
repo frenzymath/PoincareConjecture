@@ -2,25 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SurgeryCapTag
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.HeightTubeTransport
 import Mathlib.Geometry.Manifold.MFDeriv.Atlas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem IsCollarEmbedding.postcompose_diffeomorph
     {psi : UnitTwoSphere × ℝ → E3} (hpsi : IsCollarEmbedding psi)
@@ -40,9 +27,6 @@ theorem IsCollarEmbedding.postcompose_diffeomorph
     exact hdG.comp (hpsi.2.2 p hp)
 
 variable {psi : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
-
-
-
 
 noncomputable def SurgeryCapTag.heightCompress
     (C : SurgeryCapTag psi u)
@@ -146,19 +130,13 @@ variable (hcol : ∀ s : ℝ, |s| < w →
 variable (hag : EqOn G G0 (C.tube ''
   (closedBall (0 : E2) 1 ×ˢ closedBall C.cutHeight R)))
 
-
-
 theorem SurgeryCapTag.heightCompress_sourceCap :
     (C.heightCompress h G0 G k R o w hk ho hoo hw hww hG0 haff hcap hcol hag).sourceCap =
       C.sourceCap := rfl
 
-
-
 theorem SurgeryCapTag.heightCompress_sourceSeam :
     (C.heightCompress h G0 G k R o w hk ho hoo hw hww hG0 haff hcap hcol hag).sourceSeam =
       C.sourceSeam := rfl
-
-
 
 theorem SurgeryCapTag.heightCompress_cap :
     (C.heightCompress h G0 G k R o w hk ho hoo hw hww hG0 haff hcap hcol hag).cap =
@@ -166,8 +144,6 @@ theorem SurgeryCapTag.heightCompress_cap :
   change (fun q : UnitTwoSphere => G (psi (q, 0))) '' C.sourceCap =
     G '' ((fun q : UnitTwoSphere => psi (q, 0)) '' C.sourceCap)
   rw [image_image]
-
-
 
 theorem SurgeryCapTag.heightCompress_seam :
     (C.heightCompress h G0 G k R o w hk ho hoo hw hww hG0 haff hcap hcol hag).seam =

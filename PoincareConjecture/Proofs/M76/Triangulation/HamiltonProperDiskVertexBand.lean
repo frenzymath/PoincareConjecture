@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskLowerProducts
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProperDiskVertexProducts
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -23,9 +15,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] {R D : Set E} {b : closedBall (0 : V2) 1 ≃ₜ D}
   {T : HamiltonProperDiskTriangulation R D b} {c : E ≃ᴬ[ℝ] V}
   {C : HamiltonProperDiskCoherentSides T c}
-
-
-
 
 structure HamiltonProperDiskVertexBand
     (P : HamiltonProperDiskLowerProducts T C) (p : T.disk.vertices) where

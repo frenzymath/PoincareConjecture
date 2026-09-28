@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionBallInterior
 import PoincareConjecture.Proofs.M76.Mathlib.BoundedRegionSphericalBall
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace Set
-
-
-
-
 
 theorem interior_closure_sdiff_of_closure_interior_eq
     {X : Type*} [TopologicalSpace X] {B s : Set X}
@@ -41,10 +27,6 @@ theorem interior_closure_sdiff_of_closure_interior_eq
 variable {V E F : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem IsFinitePLBallPair.of_prod_singleton {s b : Set E} {z : F}
     (hs : IsFinitePLBallPair V (s ×ˢ {z}) (b ×ˢ {z})) :

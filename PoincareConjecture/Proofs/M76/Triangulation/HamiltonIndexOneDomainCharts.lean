@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Mathlib.LocalRegionSideIncidence
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonPLChartRestriction
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -19,9 +11,6 @@ namespace PoincareConjecture.M76.HamiltonIndexOne
 
 local notation "V" => ((ℝ × ℝ) × ℝ)
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem halfspace_of_regular_closed_frontier_chart {X : Type*} [TopologicalSpace X]
     {R : Set X} (hR : IsClosed R) (hreg : closure (interior R) = R)
@@ -101,11 +90,6 @@ theorem halfspace_of_regular_closed_frontier_chart {X : Type*} [TopologicalSpace
       rcases eq_or_lt_of_le ht with heq | hlt
       · exact hzero x hx heq
       · exact interior_subset (h.1 ((hNmem x hx).mpr hlt))
-
-
-
-
-
 
 theorem plDomain_of_regular_closed_local_ball_pairs
     {R : Set V3} (hR : IsClosed R) (hreg : closure (interior R) = R)

@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.SphereTwoBallReduction
 import Mathlib.Analysis.Normed.Module.Connected
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,8 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
-
-
 
 noncomputable def surgeryBallPartialHomeomorph :
     OpenPartialHomeomorph StandardCapSpace A.carrier where
@@ -39,14 +28,12 @@ noncomputable def surgeryBallPartialHomeomorph :
   continuousOn_toFun := B.map_smooth.continuousOn
   continuousOn_invFun := B.inverse_smooth.continuousOn
 
-
 theorem surgeryBall_isImage_closedBall :
     (surgeryBallPartialHomeomorph B).IsImage (Metric.closedBall 0 1) B.closedBall := by
   intro x hx
   change B.map x ∈ B.closedBall ↔ x ∈ Metric.closedBall 0 1
   rw [surgeryBall_mem_closedBall_iff B (Set.mem_image_of_mem _ hx), B.left_inverse hx]
   simp only [Metric.mem_closedBall, dist_zero_right]
-
 
 theorem surgeryBall_closedBall_interior :
     interior B.closedBall = B.map '' Metric.ball 0 1 := by
@@ -59,7 +46,6 @@ theorem surgeryBall_closedBall_interior :
     exact ⟨x, (h hx).mp hy, rfl⟩
   · rintro _ ⟨x, hx, rfl⟩
     exact (h (Metric.ball_subset_ball (by norm_num : (1 : ℝ) ≤ 2) hx)).mpr hx
-
 
 theorem surgeryBall_closedBall_frontier :
     frontier B.closedBall = B.map '' Metric.sphere 0 1 := by
@@ -76,11 +62,9 @@ theorem surgeryBall_closedBall_frontier :
     exact (h (Metric.closedBall_subset_ball (by norm_num : (1 : ℝ) < 2)
       (Metric.sphere_subset_closedBall hx))).mpr hx
 
-
 theorem surgeryBall_closedBall_connected : IsConnected B.closedBall :=
   (Metric.isConnected_closedBall (by norm_num : (0 : ℝ) ≤ 1)).image _
     (B.map_smooth.continuousOn.mono (Metric.closedBall_subset_ball (by norm_num)))
-
 
 theorem surgeryBall_frontier_connected : IsConnected (frontier B.closedBall) := by
   rw [surgeryBall_closedBall_frontier]
@@ -89,8 +73,6 @@ theorem surgeryBall_frontier_connected : IsConnected (frontier B.closedBall) := 
     (0 : StandardCapSpace) (zero_le_one : (0 : ℝ) ≤ 1)).image _
       (B.map_smooth.continuousOn.mono
         (Metric.sphere_subset_closedBall.trans (Metric.closedBall_subset_ball (by norm_num))))
-
-
 
 theorem sphereBall_complement_connected
     (B : SurgeryBallEmbedding sphereCarrier.{u}) : IsConnected B.closedBallᶜ := by

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Kernel.Exhaust
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Uniform
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Heat.Hessian
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -55,7 +45,6 @@ theorem contDiffOn_exhaustionKernel_pullback
     exact ⟨⟨hp.2, mem_univ _⟩, mem_univ _⟩
   simp +instances only [← modelWithCornersSelf_prod, chartedSpaceSelf_prod] at hs
   exact contMDiffOn_iff_contDiffOn.mp hs
-
 
 theorem hasDerivAt_exhaustionKernel_pullback
     {O : M} {r C A : ℝ} (F : UniformHarmonicLift g O r C A)
@@ -105,7 +94,6 @@ theorem hasDerivAt_exhaustionKernel_pullback
     contMDiffAt_iff_contDiffAt.mp ((hslice (F.e x)).comp x he)
   rw [F.D'.laplacian_eq_sum_fderiv_of_harmonic hcoord (F.hharmonic x hx)] at hheat
   exact hheat
-
 
 theorem exists_exhaustionKernel_pullback_bound
     {O : M} {r C A : ℝ} (F : UniformHarmonicLift g O r C A)

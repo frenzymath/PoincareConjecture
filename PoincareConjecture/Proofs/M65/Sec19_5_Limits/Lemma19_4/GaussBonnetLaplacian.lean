@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetMinimalDiskPotential
 import Mathlib.Analysis.InnerProductSpace.Harmonic.Constructions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,9 +8,6 @@ open Set Filter Complex InnerProductSpace
 open scoped Topology ContDiff Laplacian
 
 namespace PoincareConjecture.M65Gauss
-
-
-
 
 theorem laplacian_eq_plane_trace {f : LoopPlane → ℝ} {x : LoopPlane}
     (hf : ContDiffAt ℝ 2 f x) :
@@ -36,9 +23,6 @@ theorem laplacian_eq_plane_trace {f : LoopPlane → ℝ} {x : LoopPlane}
   simp only [iteratedFDeriv_two_apply, Matrix.cons_val_zero, Matrix.cons_val_one,
     Matrix.cons_val_fin_one, fderiv_fun_const, Pi.zero_apply, ContinuousLinearMap.comp_zero,
     zero_add, ContinuousLinearMap.flip_apply]
-
-
-
 
 theorem laplacian_complex_parameter (f : LoopPlane → ℝ) (z : ℂ) :
     Δ (f ∘ orthonormalBasisOneI.repr) z = Δ f (orthonormalBasisOneI.repr z) := by
@@ -59,9 +43,6 @@ theorem laplacian_complex_parameter (f : LoopPlane → ℝ) (z : ℂ) :
   rw [h]
   simp only [ContinuousMultilinearMap.compContinuousLinearMap_apply, Fin.sum_univ_two]
   congr 1 <;> congr 1 <;> funext i <;> fin_cases i <;> simp [he1, heI]
-
-
-
 
 theorem harmonicAt_log_distance {x a : LoopPlane} (hxa : x ≠ a) :
     HarmonicAt (fun y : LoopPlane => Real.log ‖y - a‖) x := by
@@ -105,9 +86,6 @@ private theorem harmonicAt_branch_sum {ι : Type*} (B : Finset ι)
     change HarmonicAt (fun y => m i * Real.log ‖y - a i‖ +
       ∑ j ∈ B, m j * Real.log ‖y - a j‖) x at hs
     simpa only [Finset.sum_insert hi] using hs
-
-
-
 
 theorem logarithmic_residual_laplacian {ι : Type*} (B : Finset ι)
     (a : ι → LoopPlane) (m : ι → ℝ)

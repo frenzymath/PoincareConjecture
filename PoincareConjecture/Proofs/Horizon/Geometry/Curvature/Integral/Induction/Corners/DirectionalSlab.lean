@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.Ascent
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.PrescribedSlab
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -64,8 +56,6 @@ private theorem directional_scale_losses {r δ : ℝ}
   exact ⟨hε, by change 2 * ε / T + H * T / 2 < _; linarith,
     by change (1 - δ) * (1 + δ / 8) ≤ 1 - δ / 8 - 2 * ε / T - H * T / 2
        nlinarith [sq_nonneg δ]⟩
-
-
 
 theorem exists_proper_regular_slab_with_near_unit_gradient_and_common_level_constraints
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]

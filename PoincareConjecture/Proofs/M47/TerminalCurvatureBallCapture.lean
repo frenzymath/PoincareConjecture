@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalGermsCompleteness
 import PoincareConjecture.Proofs.M47.TerminalCurvaturePartialInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +10,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem terminalCurvature_source_ball_captured
     {M : Type u} [TopologicalSpace M]
@@ -65,8 +54,6 @@ theorem terminalCurvature_source_ball_captured
   rw [ENNReal.ofReal_add (by positivity) hR.le]
   exact ENNReal.add_lt_add hkx hy
 
-
-
 theorem terminalCurvature_inverse_image_compact
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]
     [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
@@ -85,8 +72,6 @@ theorem terminalCurvature_inverse_image_compact
   rintro y hy
   obtain ⟨z, hz, rfl⟩ := hB hy
   exact phi.map_source (hV hz)
-
-
 
 theorem terminalCurvature_exists_captured_partial_inverse
     {M : Type u} {N : Type v} [TopologicalSpace M] [TopologicalSpace N]

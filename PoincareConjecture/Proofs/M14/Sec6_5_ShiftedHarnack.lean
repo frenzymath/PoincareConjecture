@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_HarnackIntegral
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped intervalIntegral
 
 namespace PoincareConjecture.M14
-
-
-
 
 theorem shiftedHarnack_intervalIntegrable {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
     (H : ℝ → ℝ)
@@ -47,8 +36,6 @@ theorem shiftedHarnack_intervalIntegrable {a b : ℝ} (ha : 0 ≤ a) (hab : a < 
     rw [hquot, div_pow, Real.sq_sqrt ht0.le]
     field_simp
 
-
-
 theorem shiftedHarnack_integral_square {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
     (H : ℝ → ℝ) :
     (∫ t in a..b, Real.sqrt t * (Real.sqrt t - Real.sqrt a) ^ 2 * H t) =
@@ -71,8 +58,6 @@ theorem shiftedHarnack_integral_square {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
   dsimp only [Function.comp_apply]
   rw [Real.sqrt_sq ((Real.sqrt_nonneg a).trans hs.1.le)]
   ring
-
-
 
 theorem shiftedHarnack_square_intervalIntegrable {a b : ℝ} (ha : 0 ≤ a) (hab : a < b)
     (H : ℝ → ℝ)

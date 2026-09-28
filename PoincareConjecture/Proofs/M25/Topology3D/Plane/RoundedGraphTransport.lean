@@ -3,25 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.SmoothHeight
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.NormalGraph
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_smooth_graph_ambient_approximation
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

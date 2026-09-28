@@ -4,13 +4,6 @@ import Mathlib.Analysis.InnerProductSpace.Dual
 import Mathlib.Analysis.InnerProductSpace.LinearMap
 import Mathlib.Geometry.Manifold.VectorBundle.LocalFrame
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -186,7 +179,6 @@ theorem tensorNorm_sq_eq_inverseGram
       exact frameInverseGram_eq_coordinate_sum g x e (v j) (w j)
 
 end PoincareConjecture.M04
-
 
 namespace PoincareConjecture.M04
 
@@ -404,4 +396,3 @@ theorem contMDiffOn_flow_curvatureDerivativeEnergy
       m hU hX)
 
 end PoincareConjecture.M04
-

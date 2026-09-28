@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.ComponentCyclicT
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.ReflectedCyclicTubeMap
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Tubes.PairedTube
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry Geometry.SimplicialComplex Topology
 
@@ -26,7 +17,6 @@ variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [TopologicalSpace X] {S : Set E}
   {e : ι → OpenPartialHomeomorph X V3} {f : E → X} {R : Set X}
   {old : SourceCircleDecomposition f S} {i : old.Index}
-
 
 theorem ComponentCircleBlockData.local_source_geometry
     (D : ComponentBranchModel (e := e) (R := R) old i) [Fintype D.complex.faces]
@@ -42,8 +32,6 @@ theorem ComponentCircleBlockData.local_source_geometry
   exact ⟨D.complex.barycentricDualBlock_finite _, hs.trans
     (space_subset_of_le (show D.complex.closedStar (p k) ≤ D.complex from fun _ ht ↦ ht.1)),
     fun z hz ↦ C.source k (hs hz)⟩
-
-
 
 theorem ComponentCircleBlockData.exists_cyclic_map
     (D : ComponentBranchModel (e := e) (R := R) old i) [Fintype D.complex.faces]
@@ -252,4 +240,3 @@ theorem ComponentCircleBlockData.exists_cyclic_map
     exact hfib
 
 end PoincareConjecture.M76.Dehn.Annuli
-

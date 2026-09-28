@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.CanonicalSourceMinimizer
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.Claim10_4SourceCover
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +9,6 @@ open scoped Manifold ContDiff Topology ENNReal Bundle
 universe u
 
 namespace PoincareConjecture.M28
-
-
-
 
 structure CounterexampleSourceRegion {epsilon C A D₀ D : ℝ}
     (E : SameTimeCounterexample.{u} epsilon C A D₀ D)
@@ -46,9 +32,6 @@ structure CounterexampleSourceRegion {epsilon C A D₀ D : ℝ}
     8 * (max C 2) * E.flow.scalar ⟨E.time, E.basepoint⟩
   upper_scalar : 32 * (max C 2) ^ 3 * E.flow.scalar ⟨E.time, E.basepoint⟩ <
     E.flow.scalar ⟨E.time, γ 1⟩
-
-
-
 
 theorem exists_counterexample_source_necks_accuracy
     (P : RicciFlowCurvatureTheory.{u}) (T : RepairedNeckCapTopologyTheory.{u}) :

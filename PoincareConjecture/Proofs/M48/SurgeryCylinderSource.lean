@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -81,7 +72,6 @@ namespace PoincareConjecture.SurgeryFlowCylinder
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {a q : ℝ} {J : Set ℝ} {U V : Set C.carrier}
-
 
 noncomputable def restrictSource (d : SurgeryFlowCylinder F C a q J U) (hVU : V ⊆ U) :
     SurgeryFlowCylinder F C a q J V where

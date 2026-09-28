@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M38.CompactCoverSheet
 import PoincareConjecture.Proofs.M38.SurgeryBallNeighborhood
 import Mathlib.Analysis.InnerProductSpace.Projection.Reflection
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -29,7 +20,6 @@ private instance sphereDimension :
 
 attribute [local instance] projectiveLiftChartedSpace projective_lift_isManifold
 
-
 noncomputable def sphereOrthogonalDiffeomorph
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) :
     Diffeomorph (𝓡 3) (𝓡 3) UnitThreeSphere UnitThreeSphere ∞ where
@@ -44,19 +34,16 @@ noncomputable def sphereOrthogonalDiffeomorph
   contMDiff_invFun :=
     (R.symm.toContinuousLinearEquiv.contDiff.contMDiff.comp contMDiff_coe_sphere).codRestrict_sphere _
 
-
 theorem sphereOrthogonalDiffeomorph_neg
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
     (x : UnitThreeSphere) :
     sphereOrthogonalDiffeomorph R (-x) = -sphereOrthogonalDiffeomorph R x :=
   Subtype.ext (map_neg R x.val)
 
-
 noncomputable def projectiveAffineMap
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4))
     (x : StandardCapSpace) : projectiveCarrier.{u}.carrier :=
   liftedProjectiveCover.cover (sphereOrthogonalDiffeomorph R (sphereAffineMap x))
-
 
 theorem projectiveAffineMap_injective
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) :
@@ -73,7 +60,6 @@ theorem projectiveAffineMap_injective
     change (sphereAffineMap x).val 0 = -(sphereAffineMap y).val 0 at hzero
     linarith
 
-
 theorem projectiveAffineMap_localDiffeomorph
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) :
     IsLocalDiffeomorph (𝓡 3) (𝓡 3) ∞ (projectiveAffineMap.{u} R) := by
@@ -82,7 +68,6 @@ theorem projectiveAffineMap_localDiffeomorph
     (mem_univ x)).comp (𝓡 3) UnitThreeSphere
     ((sphereOrthogonalDiffeomorph R).isLocalDiffeomorph _)).comp
       (𝓡 3) projectiveCarrier.carrier (liftedProjectiveCover.local_diffeomorph _)
-
 
 theorem exists_projectiveAffineChart
     (R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4)) :
@@ -94,7 +79,6 @@ theorem exists_projectiveAffineChart
     (projectiveAffineMap.{u} R) (projectiveAffineMap_localDiffeomorph R)
     isOpen_univ (projectiveAffineMap_injective R).injOn
 
-
 theorem sphereAffineMap_zero : sphereAffineMap 0 = spherePolarPole 2 := by
   have hv : sphereAffineVector 0 = (spherePolarPole 2).val := by
     ext i
@@ -102,8 +86,6 @@ theorem sphereAffineMap_zero : sphereAffineMap 0 = spherePolarPole 2 := by
   apply Subtype.ext
   change ‖sphereAffineVector 0‖⁻¹ • sphereAffineVector 0 = _
   rw [hv, norm_eq_of_mem_sphere, inv_one, one_smul]
-
-
 
 theorem exists_projectiveAffineReferenceBall (p : projectiveCarrier.{u}.carrier) :
     ∃ R : EuclideanSpace ℝ (Fin 4) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 4),

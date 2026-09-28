@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.Flow.TimeDependent.JointInverse
 import Mathlib.Geometry.Manifold.Diffeomorph
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Filter
 open scoped Manifold ContDiff Topology
 
 namespace Poincare.Manifold
-
-
 
 theorem contMDiff_diffeomorph_family_symm
     {n : ℕ} {M : Type*} [TopologicalSpace M]

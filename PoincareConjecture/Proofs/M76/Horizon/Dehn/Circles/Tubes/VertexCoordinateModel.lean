@@ -10,7 +10,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
 
-
 theorem exists_original_vertex_coordinate_model
     {E X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     [FiniteDimensional ℝ E] [TopologicalSpace X] {C : Set X}
@@ -112,4 +111,3 @@ theorem exists_original_vertex_coordinate_model
   exact ⟨C0, L, theta, hC, hcv, hC0, hL, hrep, htheta, htheta.symm, hlink, hmarks⟩
 
 end PoincareConjecture.M76.Dehn
-

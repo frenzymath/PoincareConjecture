@@ -3,12 +3,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ConnectionContinuit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.ScaledBoundarySubdivision
 import PoincareConjecture.Proofs.M64.Mathlib.ScaledIntervalIntegrability
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -22,11 +16,6 @@ namespace PoincareConjecture.M64
 open M65Gauss M65StrictTrace
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
-
 
 theorem finite_scaled_boundary_collar_limit {n : ℕ} {p r : ℝ} (hp : 0 < p) (hr : 0 < r)
     (g : Bool → ℝ → RiemannianMetric n (EuclideanSpace ℝ (Fin n)))

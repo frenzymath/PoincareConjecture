@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.CanonicalNeckSpatialReadout
 import PoincareConjecture.Proofs.M34.Thm12_28_12_29_Lifetime.StrongNeckCoordinateJets
 import PoincareConjecture.Proofs.M34.Mathlib.BilinearPullbackJetBound
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 12
@@ -46,8 +38,6 @@ private theorem spatialNeckCoefficientEvaluation_norm_le (i l : Fin 3) :
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E₃ M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_local_neck_metric_jet_bound
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))
@@ -147,8 +137,6 @@ theorem exists_local_neck_metric_jet_bound
     _ ≤ B0 * A := mul_le_mul_of_nonneg_right
       (Finset.single_le_sum (fun r _ => hB r) (Finset.mem_univ j')) hA0
     _ ≤ max 1 (B0 * A) := le_max_right _ _
-
-
 
 theorem neck_metric_jets_bounded_on_closed_cylinder
     {a b : ℝ} (hab : a < b) (F : RicciFlow 3 M (Icc a b))

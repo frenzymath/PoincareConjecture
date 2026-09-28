@@ -1,11 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.ImmersedCurveComposition
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -17,9 +12,6 @@ namespace PoincareConjecture
 
 variable {A E : Type*} [NormedAddCommGroup A] [NormedSpace ℝ A]
   [NormedAddCommGroup E] [InnerProductSpace ℝ E]
-
-
-
 
 theorem m64ContDiffWithinAt_of_comp_immersed_curve
     {k : WithTop ℕ∞} (hk : k ≠ 0) {phi : A → ℝ} {f : ℝ → E}
@@ -42,9 +34,6 @@ theorem m64ContDiffWithinAt_of_comp_immersed_curve
     hphi.eventually hleft
   have hregular := (hg.to_localInverse hge hk).comp_contDiffWithinAt x hscalar
   exact hregular.congr_of_eventuallyEq_of_mem heq.symm hx
-
-
-
 
 theorem m64Label_lipschitzOn_of_regular_trace
     {phi : ℝ → ℝ} {f : ℝ → E} {a b : ℝ}

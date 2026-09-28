@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Quantitative
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Compact
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -58,8 +52,6 @@ private theorem exists_local_distance_smoothing_of_annulus
   by_cases hv : v = 0
   · simp [hv]
   · exact (g.pos y v hv).le
-
-
 
 theorem exists_distance_smoothing_on_compact
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [ConnectedSpace M]

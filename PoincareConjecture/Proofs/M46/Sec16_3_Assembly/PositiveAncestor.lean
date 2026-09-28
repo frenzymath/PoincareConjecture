@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.Configuration
 import PoincareConjecture.Proofs.M46.Sec16_3_Assembly.PositiveHistoryPaths
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -17,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.Proofs.M46
-
-
 
 theorem positiveAncestorExclusion
     {F : SurgeryFlowData.{u}} {O : SurgeryObservation F}

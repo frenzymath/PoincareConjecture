@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarCoverPeriod
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,20 +15,9 @@ local notation "Cover" => ℝ × ℝ
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
 
-
-
-
-
-
-
 def scalarCoverJacobian (H : Plane → ℝ) (z : Cover) : ℝ :=
   fderiv ℝ (H ∘ scalarCoverMap) z (1, 0) * scalarCoverForm D H z (0, 1) -
     fderiv ℝ (H ∘ scalarCoverMap) z (0, 1) * scalarCoverForm D H z (1, 0)
-
-
-
-
-
 
 def scalarCoverWeightedFlux (H : Plane → ℝ) (r : ℝ) : ℝ :=
   ∫ t in (0 : ℝ)..1, H (scalarCoverMap (r, t)) * scalarCoverForm D H (r, t) (0, 1)
@@ -61,22 +36,11 @@ private theorem product_form_derivative {U : Cover → ℝ} {beta : Cover → Co
     add_apply, smul_apply, smul_eq_mul, ContinuousLinearMap.flip_apply]
   ring
 
-
-
-
-
-
 theorem scalarCoverPotential_smooth {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus) :
     ContDiffOn ℝ ∞ (H ∘ scalarCoverMap) scalarCoverStrip :=
   (contMDiffOn_iff_contDiffOn.mp hHs).comp scalarCoverMap_smooth.contDiffOn
     (fun _ hz => scalarCoverMap_mem hz)
-
-
-
-
-
-
 
 theorem scalarCover_green_identity {H : Plane → ℝ}
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)

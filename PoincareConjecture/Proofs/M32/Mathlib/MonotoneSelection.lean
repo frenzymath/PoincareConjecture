@@ -4,25 +4,9 @@ import Mathlib.Data.Nat.Find
 import Mathlib.Order.PartialSups
 import Mathlib.Tactic.NormNum
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem exists_monotone_height_selection (Good : ℝ → ℝ → ℝ → Prop)
     (hmono : ∀ {r d r' d' a : ℝ}, 0 < r → 0 < d →

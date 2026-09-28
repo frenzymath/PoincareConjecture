@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Mathlib.C1SchwartzApproximation
 import PoincareConjecture.Proofs.M64.Mathlib.CompactUniformPairing
 import PoincareConjecture.Proofs.M64.Mathlib.HalfDiskStrongGraph
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option warningAsError true
@@ -27,11 +15,6 @@ namespace PoincareConjecture
 open Proofs.M58
 
 local notation "basis" => EuclideanSpace.basisFun (Fin 2) ℝ
-
-
-
-
-
 
 theorem m64HalfDisk_green_contDiff {r : ℝ} (hr : 0 < r)
     (u : LoopPlane → ℝ) (V : Fin 2 → LoopPlane → ℝ) (b v : ℝ → ℝ)

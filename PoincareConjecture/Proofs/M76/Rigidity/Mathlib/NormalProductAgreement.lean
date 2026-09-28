@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Brown.OrientedFlatteningCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set SignType
@@ -16,9 +7,6 @@ open Set SignType
 namespace BrownCollar
 
 variable {P X : Type*} [TopologicalSpace P] [TopologicalSpace X]
-
-
-
 
 theorem NormalSignAt.exists_open_product_agreement
     {q r : OpenPartialHomeomorph (P × ℝ) X} {x : P} {ci ck : SignTypeˣ}

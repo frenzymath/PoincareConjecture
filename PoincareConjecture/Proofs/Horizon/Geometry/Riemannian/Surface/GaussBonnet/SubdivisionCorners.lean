@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.MetricCorners
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,8 +28,6 @@ private theorem splitBasis_independent
   funext k
   cases i <;> fin_cases k <;>
     simp [E]
-
-
 
 noncomputable def coordinateSplitBasis
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -82,8 +73,6 @@ variable {S : Type*} [TopologicalSpace S]
 
 include hF hFi hb hl hr ht hl0 hl1 hl2 hr0 hr1 hr2
 
-
-
 theorem coordinateTriangleAngle_split_vertex :
     coordinateTriangleAngle g F l 0 + coordinateTriangleAngle g F r 0 =
       coordinateTriangleAngle g F b 0 := by
@@ -113,7 +102,6 @@ theorem coordinateTriangleAngle_split_vertex :
   exact hangle.symm
 
 omit hFi hb in
-
 
 theorem coordinateTriangleAngle_split_edge :
     coordinateTriangleAngle g F l 2 + coordinateTriangleAngle g F r 1 = Real.pi := by
@@ -148,8 +136,6 @@ end GivenBases
 variable {S : Type*} [TopologicalSpace S]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) S] [IsManifold (𝓡 2) ∞ S]
 
-
-
 theorem coordinateSplitBasis_angles (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)
     (b : AffineBasis (Fin 3) ℝ (EuclideanSpace ℝ (Fin 2)))
@@ -167,8 +153,6 @@ theorem coordinateSplitBasis_angles (g : RiemannianMetric 2 S)
   exact ⟨coordinateTriangleAngle_split_vertex g F b _ _ hF hFi hb hl hr ht
       rfl rfl rfl rfl rfl rfl,
     coordinateTriangleAngle_split_edge g F b _ _ hF hl hr ht rfl rfl rfl rfl rfl rfl⟩
-
-
 
 theorem coordinateSplitBasis_endpoint_angles (g : RiemannianMetric 2 S)
     (F : OpenPartialHomeomorph (EuclideanSpace ℝ (Fin 2)) S)

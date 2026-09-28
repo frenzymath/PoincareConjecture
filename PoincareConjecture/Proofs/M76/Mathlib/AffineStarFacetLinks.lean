@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.InteriorFacetLinks
 import PoincareConjecture.Proofs.M76.Mathlib.EmbeddedManifoldConditions
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -21,9 +11,6 @@ section Incidence
 
 variable {𝕜 V : Type*} [Ring 𝕜] [PartialOrder 𝕜]
   [AddCommGroup V] [Module 𝕜 V] [DecidableEq V]
-
-
-
 
 theorem closedFaceStar_faceLink_of_subset (K : SimplicialComplex 𝕜 V)
     {r s : Finset V} (hrs : r ⊆ s) :
@@ -44,10 +31,6 @@ end Incidence
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [FiniteDimensional ℝ V] [DecidableEq V]
   [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem faceLink_ncard_eq_two_of_faceAffine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)
@@ -79,8 +62,6 @@ theorem faceLink_ncard_eq_two_of_faceAffine_vertex_stars
   rw [hf.ncard_embeddedImage_faceLink hinj hsS] at hlink
   exact (K.closedFaceStar_faceLink_of_subset
     (Finset.singleton_subset_iff.mpr hps)) ▸ hlink
-
-
 
 theorem faceLink_ncard_eq_two_of_affine_vertex_stars
     (K : SimplicialComplex ℝ V) (hK : K.faces.Finite)

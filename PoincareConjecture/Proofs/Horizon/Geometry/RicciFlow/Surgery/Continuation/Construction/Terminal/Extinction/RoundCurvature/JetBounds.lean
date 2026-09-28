@@ -1,12 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Generalized.CanonicalNeighborhood
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Tensor.NormBounds
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -53,7 +47,6 @@ theorem covariantTwoJet_norm_lt (hepsilon : epsilon ≤ 1 / 200)
     N.model_metric.tensorNorm
       (N.model_connection.iteratedCovariantTensorDerivative N.metricError j) x < epsilon :=
   N.covariantJet_norm_lt j (hj.trans (N.two_le_comparison_order hepsilon)) x
-
 
 theorem covariantJet_component_lt (j : ℕ) (hj : j ≤ ⌊epsilon⁻¹⌋₊)
     (x : N.model.carrier)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityCut
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderComplexityTransport
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,10 +10,6 @@ namespace Polygon
 
 variable {E F ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
-
 
 theorem exists_disjoint_polygon_family_of_closed_cut
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
@@ -53,9 +41,6 @@ theorem exists_disjoint_polygon_family_of_closed_cut
   · intro i j hij
     exact hpair (fun h => hij (Subtype.ext h))
 
-
-
-
 theorem exists_disjoint_finitePL_image_family
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))
     (hPe : ∀ i, (P i).HasSimplicialEdges) (hPi : ∀ i, Function.Injective (P i))
@@ -79,10 +64,6 @@ theorem exists_disjoint_finitePL_image_family
   · intro i j hij
     apply disjoint_iff_inter_eq_empty.mpr
     exact subset_empty_iff.mp (by simpa only [image_empty] using htargetPair hij)
-
-
-
-
 
 theorem exists_disjoint_finitePL_remainder_family
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

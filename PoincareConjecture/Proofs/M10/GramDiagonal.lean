@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.EndpointGram
 import PoincareConjecture.Proofs.M10.ExponentialDifferential
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

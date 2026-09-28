@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.GaussBonnetBoundaryTangent
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.FillingAreaCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff Manifold
 namespace PoincareConjecture.M65Gauss
 
 open M65Branch M65StrictTrace
-
-
-
-
 
 theorem halfDisk_boundary_connection_curvature {n : ℕ}
     {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))} (D : LeviCivitaData g)
@@ -174,11 +160,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   {g : RiemannianMetric n M}
   {gE : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
 
-
-
-
-
-
 theorem regular_curve_curvature_chart
     (D : LeviCivitaData g) (DE : LeviCivitaData gE) (p : M)
     {eta : ℝ → M} (heta : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 n) ∞ eta)
@@ -286,12 +267,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {connection : LeviCivitaData g}
   {gamma : C1FreeLoopSpace (M := M)}
-
-
-
-
-
-
 
 theorem boundary_connection_curvature_of_frame (S : M65MinimalDisk g connection gamma)
     (hsmooth : ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) ∞ (periodicFreeLoop gamma))

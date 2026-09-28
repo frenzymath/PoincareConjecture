@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M48.RegularSpacetime
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +18,6 @@ variable {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}
 include hregular in
 theorem regular_range_univ : range (H.history.forward t ht) = univ :=
   (H.regular_range t ht).trans (m33RegularRegion_of_regular F t hregular)
-
 
 def regularDiffeomorph : Diffeomorph (𝓡 3) (𝓡 3)
     (H.generalized.slice t).carrier (F.slice t).carrier ∞ where
@@ -77,7 +67,6 @@ theorem zero_not_mem_singularCatalog : 0 ∉ L.singularCatalog := by
   have hT : 0 < T := (F.time_domain_nonnegative L.start_mem).trans_lt L.start_lt
   exact fun h => F.zero_not_surgery ((L.mem_singularCatalog_iff ⟨le_rfl, hT⟩).mp h)
 
-
 theorem singularCatalog_discrete (s : ℝ) (_hs : s ∈ L.singularCatalog) :
     ∃ δ : ℝ, 0 < δ ∧ ∀ t ∈ L.singularCatalog, t ≠ s → δ ≤ |t - s| := by
   have hopen := (L.singularCatalog_finite.sdiff (t := {s})).isClosed.isOpen_compl
@@ -90,7 +79,6 @@ theorem singularCatalog_discrete (s : ℝ) (_hs : s ∈ L.singularCatalog) :
   exact hball hmem ⟨ht, by simpa using hne⟩
 
 end RepairedPreterminalSlab
-
 
 theorem M48RegularSpacetimeData.regular_slices_compact
     {F : SurgeryFlowData.{u}} {T : ℝ} {L : RepairedPreterminalSlab F T}
@@ -109,10 +97,6 @@ theorem SurgeryPrefixControls.two_epsilon_le_threshold
     2 * F.parameters.epsilon ≤ 1 / 200 := by
   rw [old.epsilon_eq, hp.setup_eq]
   exact S.calibration.two_epsilon_le_bounded_distance.trans S.calibration.epsilon₁₀_le
-
-
-
-
 
 theorem SurgeryPrefixControls.terminal_epsilon_le_threshold
     {S : RepairedControlledSchedulesData.{u}} {p : SurgeryParameterPrefix S.constants}

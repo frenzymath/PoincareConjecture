@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.FiniteDistance
 import PoincareConjecture.Proofs.M30.Thm11_8.CompactScalarAnchor
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.SourceMetric
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -24,9 +14,6 @@ namespace PoincareConjecture.M30
 
 attribute [local instance] FlowCarrier.topologicalSpace FlowCarrier.chartedSpace
   FlowCarrier.isManifold FlowCarrier.t2Space FlowCarrier.t3Space FlowCarrier.secondCountable
-
-
-
 
 theorem exists_compact_scalar_bound_of_anchors_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :
@@ -61,8 +48,6 @@ theorem exists_compact_scalar_bound_of_anchors_threshold
     exact (dist_triangle_right x y G.limit.base).trans
       (by linarith)
   exact (hdist t ht x y).2.trans (add_le_add hterminal le_rfl)
-
-
 
 theorem exists_compact_limit_uniform_scalar_bound_threshold
     (P : M30ControlledBlowupPredecessors.{u}) :

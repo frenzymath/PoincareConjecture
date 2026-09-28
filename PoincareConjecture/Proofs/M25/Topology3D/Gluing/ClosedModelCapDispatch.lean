@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Gluing.TwoCapsClosedModel
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.MixedCapsClosedModel
 import PoincareConjecture.Proofs.M25.Topology3D.Gluing.ProjectiveDoubleClosedModel
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,9 +10,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture
-
-
-
 
 theorem exists_closed_component_of_two_caps
     (hS : PoincareConjecture.M25.Topology3D.SchoenfliesService)
@@ -60,10 +49,7 @@ theorem exists_closed_component_of_two_caps
     | puncturedProjective =>
       exact hprojective C1 C2 h1 h2 hcompact
 
-
 namespace M25.Topology3D
-
-
 
 theorem closedModelCapData_exists_closed_component_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)
@@ -77,8 +63,6 @@ theorem closedModelCapData_exists_closed_component_of_services
   exists_closed_component_of_two_caps hS hD
     (capCertificates_exists_closed_component_of_projective_services hS hD)
     C1 C2 hcompact
-
-
 
 theorem capCertificates_exists_closed_component_of_services
     (hS : SchoenfliesService) (hD : DiffSphereIsotopyService)

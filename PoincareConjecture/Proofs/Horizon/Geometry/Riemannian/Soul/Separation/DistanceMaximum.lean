@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Basic
 import Mathlib.Topology.Order.LocalExtr
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ namespace PoincareConjecture.RiemannianMetric.RadialHomeomorph
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {g : RiemannianMetric 3 M} {p : M}
-
-
 
 theorem not_isLocalMax_distance (H : RadialHomeomorph g p)
     {x : M} (hxp : x ≠ p) :
@@ -58,8 +45,6 @@ theorem not_isLocalMax_distance (H : RadialHomeomorph g p)
   change (z.2 : ℝ) + δ / 2 ≤ (z.2 : ℝ) at hle
   linarith
 
-
-
 theorem exists_isMaxOn_distance_frontier
     [T3Space M] [PreconnectedSpace M]
     (H : RadialHomeomorph g p) {A : Set M}
@@ -74,8 +59,6 @@ theorem exists_isMaxOn_distance_frontier
   apply H.not_isLocalMax_distance hxp
   exact hmax.isLocalMax (Filter.mem_of_superset
     (isOpen_interior.mem_nhds hxint) (interior_subset.trans subset_closure))
-
-
 
 theorem exists_distance_le_frontier
     [T3Space M] [PreconnectedSpace M]

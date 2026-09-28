@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.BoundaryRegularityTomi
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCutoff
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter MeasureTheory
@@ -152,10 +143,6 @@ private theorem weighted_gradient_global {N : ℕ} {b ρ : ℝ}
       Finset.sum_le_sum fun i _ => (htail x (d j i)).2
 
 set_option maxHeartbeats 1600000 in
-
-
-
-
 
 theorem centered_weighted_energy_step {N : ℕ} (u : Fin N → ScalarL2 2)
     (d : Fin N → Fin 2 → ScalarL2 2) (f : Fin N → LoopPlane → ℝ)

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M47.ComponentEstimateCapExclusion
 import PoincareConjecture.Proofs.M47.ComponentEstimateBackward
 import PoincareConjecture.Proofs.M47.ComponentHistory
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -60,9 +50,6 @@ private theorem terminal_diameter_eq
   have hdiam := congrArg (fun p : (t : ℝ) × (U → (F.slice t).carrier) =>
     intrinsicDiameter (F.metric p.1) (range p.2)) hfunctions
   simpa only [← image_eq_range, Subtype.range_val_subtype, ofPred_mem_eq] using hdiam
-
-
-
 
 theorem exists_component_backward_duration
     (P : M47Predecessors.{u}) (PA : M47ComponentAnalyticPredecessors.{u})

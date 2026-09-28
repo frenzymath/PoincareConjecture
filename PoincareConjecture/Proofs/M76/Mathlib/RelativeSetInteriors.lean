@@ -1,14 +1,5 @@
 import Mathlib.Topology.Constructions
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +7,6 @@ open Set
 namespace Set
 
 variable {X : Type*} [TopologicalSpace X]
-
-
 
 theorem isOpen_preimage_val_of_open_neighborhood {s d u a : Set X}
     (hu : IsOpen ((Subtype.val : s → X) ⁻¹' u)) (hau : a ⊆ u) (hud : u ⊆ d)
@@ -36,9 +25,6 @@ theorem isOpen_preimage_val_of_open_neighborhood {s d u a : Set X}
       exact (hmem ⟨x, hud hx.1⟩).mp hx.2
   rw [heq]
   exact hu.inter (hv.preimage continuous_subtype_val)
-
-
-
 
 theorem interior_preimage_val_of_subset_interior {d a : Set X}
     (ha : a ⊆ interior d) :
@@ -59,9 +45,6 @@ theorem interior_preimage_val_of_subset_interior {d a : Set X}
       (Subtype.val : d → X) ⁻¹' a)
   · exact preimage_interior_subset_interior_preimage continuous_subtype_val
 
-
-
-
 theorem interior_preimage_val_of_open_neighborhood {s d u a b : Set X}
     (hds : d ⊆ s) (had : a ⊆ d) (hba : b ⊆ a)
     (hu : IsOpen ((Subtype.val : s → X) ⁻¹' u)) (hbu : b ⊆ u) (hud : u ⊆ d)
@@ -80,9 +63,6 @@ theorem interior_preimage_val_of_open_neighborhood {s d u a b : Set X}
         (t := (Subtype.val : s → X) ⁻¹' a) (a := y) hx
     rwa [hint] at hy
   · exact interior_maximal (preimage_mono hba) hbs
-
-
-
 
 theorem interior_preimage_val_inclusion_of_open_neighborhood {s d u a : Set X}
     (hds : d ⊆ s) (hu : IsOpen ((Subtype.val : s → X) ⁻¹' u))
@@ -106,9 +86,6 @@ theorem interior_preimage_val_inclusion_of_open_neighborhood {s d u a : Set X}
     exact preimage_interior_subset_interior_preimage hc
 
 end Set
-
-
-
 
 theorem IsClosed.closure_eq_of_preimage_val {X : Type*} [TopologicalSpace X]
     {s a b : Set X} (hs : IsClosed s) (ha : a ⊆ s) (hb : b ⊆ s)

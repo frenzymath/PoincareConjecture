@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.CornerArcStrip
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Faces.FourArcRectangle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry TriangularRoofModel
@@ -60,9 +52,6 @@ private theorem proper_arc_boundary_inter
     by_contra hn
     exact (hproper ⟨hx.1, hn⟩).2 (hL hx.2)
   · exact inter_subset_inter_left _ hW.1
-
-
-
 
 theorem exists_corner_arc_rectangle
     {a b c d : ℝ} (ha : a ∈ Ioo (0 : ℝ) 1) (hb : b ∈ Ioo (0 : ℝ) 1)

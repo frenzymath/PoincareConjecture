@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M47.TerminalSourceCountableFiniteGerms
 import PoincareConjecture.Proofs.M47.TerminalCurvatureFiniteGermsFloor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +12,6 @@ universe u
 namespace PoincareConjecture.M47
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
-
-
-
 
 theorem terminalCurvature_bound_of_countable_finite_germs
     {epsilon1 epsilon A H : ℝ} (hM45 : M45SmallNeckScaleBound.{u} epsilon1)

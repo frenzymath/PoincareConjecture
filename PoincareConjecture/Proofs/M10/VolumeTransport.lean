@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.GaussianDomination
 import PoincareConjecture.Proofs.M10.Continuity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -38,7 +30,6 @@ theorem reducedVolumeDensity_continuous
     exact if_pos hτ
   rw [heq]
   exact continuous_const.mul (Real.continuous_exp.comp hc.neg)
-
 
 theorem lintegral_reducedVolumeDensity_eq_regularWeight
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
@@ -75,7 +66,6 @@ theorem lintegral_reducedVolumeDensity_eq_regularWeight
       · simp only [regularWeightedJacobian, S, indicator_of_mem hx]
       · simp only [regularWeightedJacobian, S, indicator_of_notMem hx, ENNReal.ofReal_zero]
 
-
 theorem reducedVolumeDensity_integrable
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)
     (G : LExponentialGeometry F T τmax p) (hmax : 0 < τmax)
@@ -91,7 +81,6 @@ theorem reducedVolumeDensity_integrable
   rw [lintegral_reducedVolumeDensity_eq_regularWeight hL hDifferential hwindow G hτ hτmax]
   exact (hasFiniteIntegral_iff_ofReal
     (ae_of_all _ (regularWeightedJacobian_nonneg G hτ))).mp hsource.hasFiniteIntegral
-
 
 theorem reducedVolume_eq_integral_regularWeight
     (hL : LGeodesicTheory F T τmax) (hDifferential : ReducedLengthDifferentialTheory F T τmax)

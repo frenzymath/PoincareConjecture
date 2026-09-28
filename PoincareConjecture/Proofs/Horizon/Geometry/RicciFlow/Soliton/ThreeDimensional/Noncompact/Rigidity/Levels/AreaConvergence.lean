@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.CompactImage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.LocalFinite
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [MeasurableSpace M] [BorelSpace M] [CompactSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem area_le_of_quadraticForm_le (g h : RiemannianMetric 2 M)
     {c : ℝ} (hc : 0 < c)
@@ -43,8 +34,6 @@ theorem area_le_of_quadraticForm_le (g h : RiemannianMetric 2 M)
   have hreal := ENNReal.toReal_mono hfinite hvol
   simpa only [Measure.real, ENNReal.toReal_mul, ENNReal.toReal_ofReal hc.le] using hreal
 
-
-
 theorem area_bounds_of_relative_quadraticForm_error (g h : RiemannianMetric 2 M)
     {ε : ℝ} (hε : 0 < ε) (hε1 : ε < 1)
     (herror : ∀ x : M, ∀ v : TangentSpace (𝓡 2) x,
@@ -66,8 +55,6 @@ theorem area_bounds_of_relative_quadraticForm_error (g h : RiemannianMetric 2 M)
   refine ⟨?_, hupper⟩
   have hh := mul_le_mul_of_nonneg_left hlower (sub_pos.mpr hε1).le
   simpa only [← mul_assoc, mul_inv_cancel₀ (sub_pos.mpr hε1).ne', one_mul] using hh
-
-
 
 theorem tendsto_area_of_uniform_relative_quadraticForm_error
     {ι : Type*} {l : Filter ι} (gseq : ι → RiemannianMetric 2 M) (g : RiemannianMetric 2 M)
@@ -93,8 +80,6 @@ theorem tendsto_area_of_uniform_relative_quadraticForm_error
     constructor <;> dsimp only [A] at * <;> nlinarith
   rw [Real.dist_eq]
   exact harea.trans_lt hδA
-
-
 
 theorem tendsto_volumeMeasure_univ_of_uniform_relative_quadraticForm_error
     {ι : Type*} {l : Filter ι} (gseq : ι → RiemannianMetric 2 M) (g : RiemannianMetric 2 M)

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M63.Sec19_2_CurveEstimates.RelabelingDifferential
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   (P : M62.CircleProductData F circumference) {c d : ℝ → ℝ → P.charts.Point}
   {phi : ℝ → ℝ} {t x : ℝ}
 
-
-
 theorem slope_eq_of_relabeling (hd : M62ShrinkingCurve P.flow d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
     (ht : t ∈ Icc a b) (hcd : ∀ y, c y t = d (phi y) t) :
@@ -35,9 +24,6 @@ theorem slope_eq_of_relabeling (hd : M62ShrinkingCurve P.flow d)
   exact (slope_congr_slice P hcd).trans (slope_comp P d
     ((hd.spatial_regular t ht (phi x)).mdifferentiableAt (by norm_num))
     (hphi x) (hpos x))
-
-
-
 
 theorem slope_evolution_of_relabeling (hd : M62ShrinkingCurve P.flow d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)
@@ -70,8 +56,6 @@ theorem slope_evolution_of_relabeling (hd : M62ShrinkingCurve P.flow d)
     exact slope_eq_of_relabeling P hd hphi hpos hs (hcd s hs)
   rw [hsecond, hk, hRic, slope_eq_of_relabeling P hd hphi hpos ht' (hcd t ht')]
   exact (M62.hasDerivAt_slope P d hd ht (phi x)).congr_of_eventuallyEq heq
-
-
 
 theorem slope_lower_bound_of_relabeling (hd : M62ShrinkingCurve P.flow d)
     (hphi : Differentiable ℝ phi) (hpos : ∀ y, 0 < deriv phi y)

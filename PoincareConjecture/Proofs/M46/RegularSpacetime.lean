@@ -2,15 +2,6 @@ import PoincareConjecture.Statements.M46NoncollapseInduction
 import PoincareConjecture.Proofs.M33.RegularHistory
 import PoincareConjecture.Proofs.M12.GeneralizedRicci
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -36,7 +27,6 @@ theorem M46Predecessors.closedRegularSpacetime (P : M46Predecessors.{u})
     (x : (F.slice T).carrier) :
     Nonempty (M46RegularSpacetimeData (F.closedRegularHistoryWindow T hT hTF ⟨x⟩)) :=
   P.regularSpacetime _
-
 
 theorem SurgeryFlowCylinder.test_time_pos
     {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.VariableBandHeightSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,11 +7,6 @@ open Set
 namespace Homeomorph
 
 variable {E : Type*} [TopologicalSpace E]
-
-
-
-
-
 
 theorem pointed_cap_mem_both_height_closures
     {s d b B T : Set E} (H : E ≃ₜ E) (A r : E → ℝ)

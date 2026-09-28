@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M02.Topology.IntegralSmallHomology
 import Mathlib.Algebra.Homology.HomologySequenceLemmas
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -43,7 +36,6 @@ private theorem integralSubspaceChains_small (U : I → Set X) (A : Set X)
     rintro _ ⟨z, rfl⟩
     exact hi ⟨z, rfl⟩
   exact hle hc
-
 
 def integralSmallSubspaceChains (U : I → Set X) (A : Set X) :
     integralSmallChainComplex (fun i => (Subtype.val : A → X) ⁻¹' U i) ⟶
@@ -84,7 +76,6 @@ theorem integralSmallSubspaceChains_mono (U : I → Set X) (A : Set X) :
   apply (ModuleCat.mono_iff_injective ((integralSubspaceChains A).f n)).mp inferInstance
   exact congrArg Subtype.val h
 
-
 abbrev integralSmallRelativeChains (U : I → Set X) (A : Set X) :
     ChainComplex (ModuleCat.{u} Int) Nat :=
   cokernel (integralSmallSubspaceChains U A)
@@ -92,7 +83,6 @@ abbrev integralSmallRelativeChains (U : I → Set X) (A : Set X) :
 abbrev integralSmallRelativeProjection (U : I → Set X) (A : Set X) :
     integralSmallChainComplex U ⟶ integralSmallRelativeChains U A :=
   cokernel.π (integralSmallSubspaceChains U A)
-
 
 def integralSmallRelativeComparison (U : I → Set X) (A : Set X) :
     integralSmallRelativeChains U A ⟶ integralRelativeChains A :=
@@ -104,7 +94,6 @@ theorem integralSmallRelativeComparison_projection (U : I → Set X) (A : Set X)
     integralSmallRelativeProjection U A ≫ integralSmallRelativeComparison U A =
       integralSmallChainInclusion U ≫ integralRelativeProjection A :=
   cokernel.π_desc _ _ _
-
 
 theorem integralSmallRelativeComparison_quasiIso
     (U : I → Set X) (hU : ∀ i, IsOpen (U i))

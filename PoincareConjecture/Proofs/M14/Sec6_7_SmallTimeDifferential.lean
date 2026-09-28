@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_7_SmallTimeDifferentialLocal
 import PoincareConjecture.Proofs.M14.Sec6_7_CompactSurvival
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,10 +13,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T : ℝ} {x : G.Point}
-
-
-
-
 
 theorem compact_initial_smallTime_differential_bijective
     (E : M14ExponentialFamily G T x) {B : Set (G.Horizontal x)} (hB : IsCompact B)

@@ -2,22 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.SourceCirclePairCo
 import Mathlib.Data.Finset.Card
 import Mathlib.Tactic.Choose
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_saddle_source_circle_cut
     (n : ℕ) (q : Fin n → UnitCircle → UnitTwoSphere)

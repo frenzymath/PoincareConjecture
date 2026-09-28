@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.FiniteCycleLabels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,9 +7,6 @@ open Set
 namespace SimpleGraph
 
 variable {V : Type*}
-
-
-
 
 theorem ConnectedComponent.ncard_neighborSet (G : SimpleGraph V)
     (C : G.ConnectedComponent) (v : C) :
@@ -31,10 +19,6 @@ theorem ConnectedComponent.ncard_neighborSet (G : SimpleGraph V)
     · intro hw
       exact ⟨⟨w, C.mem_supp_of_adj_mem_supp v.property hw⟩, hw, rfl⟩
   rw [← he, ncard_image_of_injective _ Subtype.val_injective]
-
-
-
-
 
 theorem exists_cyclic_component_labels_of_two_neighbors [Finite V]
     (G : SimpleGraph V) (hdegree : ∀ v, (G.neighborSet v).ncard = 2)

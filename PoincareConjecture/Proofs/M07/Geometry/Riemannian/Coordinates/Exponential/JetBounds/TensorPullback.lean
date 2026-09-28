@@ -5,13 +5,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.EuclideanNorm
 import PoincareConjecture.Proofs.M04.TensorNorm
 import Mathlib.Analysis.Calculus.FDeriv.Analytic
 
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -26,7 +19,6 @@ namespace PoincareConjecture.TensorFiber
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   [FiniteDimensional ℝ E] {k : ℕ}
-
 
 def continuousMultilinear : TensorFiber E k →L[ℝ]
     ContinuousMultilinearMap ℝ (fun _ : Fin k => E) ℝ :=
@@ -45,7 +37,6 @@ def continuousMultilinear : TensorFiber E k →L[ℝ]
 
 @[simp] theorem continuousMultilinear_apply (T : TensorFiber E k) (a : Fin k → E) :
     continuousMultilinear T a = T a := rfl
-
 
 theorem fderiv_apply
     {P : Type*} [NormedAddCommGroup P] [NormedSpace ℝ P]
@@ -73,7 +64,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem iteratedCovariantTensorDerivative_isSmooth
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
     (hT : IsSmoothCovariantTensor T) (m : ℕ) :
@@ -81,9 +71,6 @@ theorem iteratedCovariantTensorDerivative_isSmooth
   induction m with
   | zero => exact hT
   | succ m ih => exact D.covariantTensorDerivative_isSmooth ih
-
-
-
 
 theorem fderiv_tensorCoordinatePullback
     (D : LeviCivitaData g) {k : ℕ} {T : CovariantTensorEvaluation n M k}
@@ -171,8 +158,6 @@ variable {n : ℕ} {g : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
     tensorCoordinateEvaluation a T x v = T x v := by
   simp only [tensorCoordinateEvaluation, constantCoordinateField_model]
 
-
-
 theorem coordinateConnectionCoefficient_model (D : LeviCivitaData g)
     (a x : EuclideanSpace ℝ (Fin n)) :
     D.coordinateConnectionCoefficient a x = christoffelBilinear g.euclideanCoefficients x := by
@@ -210,8 +195,6 @@ theorem manifoldCovDerivAlong_model
   rw [hmetric]
   rfl
 
-
-
 theorem fderiv_covariantTensor_pullback_model
     (D : LeviCivitaData g) {k : ℕ}
     {T : CovariantTensorEvaluation n (EuclideanSpace ℝ (Fin n)) k}
@@ -230,8 +213,6 @@ theorem fderiv_covariantTensor_pullback_model
   simpa only [extChartAt_model_space_eq_id, PartialEquiv.refl_symm, PartialEquiv.refl_coe,
     id_eq, tensorCoordinateEvaluation_model, D.coordinateConnectionCoefficient_model,
     manifoldCovDerivAlong_model] using h
-
-
 
 theorem riemannEvaluation_isSmooth_model (D : LeviCivitaData g) :
     IsSmoothCovariantTensor D.riemannEvaluation := by
@@ -268,8 +249,6 @@ theorem riemannEvaluation_isSmooth_model (D : LeviCivitaData g) :
     rw [heq]
     exact (contMDiffAt_iff_contDiffAt.mpr
       ((hB.clm_apply hcurv).clm_apply (hXi 2))).contMDiffWithinAt
-
-
 
 theorem fderiv_iteratedCurvature_pullback_model
     (D : LeviCivitaData g) (m : ℕ)

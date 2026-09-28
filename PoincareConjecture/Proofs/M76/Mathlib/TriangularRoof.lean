@@ -3,37 +3,20 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineHalfspaceGeometry
 import PoincareConjecture.Proofs.M76.Mathlib.TriangleDiskRegions
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonFinitePLDiskModel
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace TriangularRoofModel
 
-
-
 def coordinates : Fin 3 → (ℝ × ℝ) →ᵃ[ℝ] ℝ :=
   ![(LinearMap.fst ℝ ℝ ℝ).toAffineMap, (LinearMap.snd ℝ ℝ ℝ).toAffineMap,
     AffineMap.const ℝ (ℝ × ℝ) 1 - (LinearMap.fst ℝ ℝ ℝ).toAffineMap -
       (LinearMap.snd ℝ ℝ ℝ).toAffineMap]
 
-
-
 def base : Set (ℝ × ℝ) := {p | ∀ i, 0 ≤ coordinates i p}
 
-
-
 def roof (p : ℝ × ℝ) : ℝ := min p.1 (min p.2 (1 - p.1 - p.2))
-
-
 
 theorem base_eq_triangle :
     base = convexHull ℝ (range TriangleDiskModel.rightTriangle) := by
@@ -45,25 +28,17 @@ theorem base_eq_triangle :
     (0 ≤ p.1 ∧ 0 ≤ p.2 ∧ p.1 + p.2 ≤ 1)
   constructor <;> rintro ⟨hx, hy, hz⟩ <;> exact ⟨hx, hy, by linarith⟩
 
-
-
 theorem isCompact_base : IsCompact base := by
   rw [base_eq_triangle]
   exact (finite_range _).isCompact_convexHull ℝ
-
-
 
 theorem isFinitePLBallPair_base : IsFinitePLBallPair (ℝ × ℝ) base (frontier base) := by
   rw [base_eq_triangle]
   exact TriangleDiskModel.rightTriangle.isFinitePLBallPair_convexHull_triangle
     TriangleDiskModel.independent_rightTriangle
 
-
-
 theorem roof_nonneg_iff (p : ℝ × ℝ) : 0 ≤ roof p ↔ p ∈ base := by
   simp [roof, base, coordinates, Fin.forall_fin_succ]
-
-
 
 theorem interior_base : interior base = {p | 0 < roof p} := by
   have hnonzero (i : Fin 3) : (-(coordinates i)).linear ≠ 0 := by
@@ -77,8 +52,6 @@ theorem interior_base : interior base = {p | 0 < roof p} := by
   ext p
   simp [roof, coordinates, Fin.forall_fin_succ]
 
-
-
 theorem frontier_base : frontier base = {p | roof p = 0} := by
   rw [frontier, isCompact_base.isClosed.closure_eq, interior_base]
   ext p
@@ -89,15 +62,11 @@ theorem frontier_base : frontier base = {p | roof p = 0} := by
   · intro hp
     exact ⟨(roof_nonneg_iff p).mp hp.ge, by simp [hp]⟩
 
-
-
 theorem roof_le_coordinate (p : ℝ × ℝ) (i : Fin 3) : roof p ≤ coordinates i p := by
   fin_cases i
   · exact min_le_left _ _
   · exact (min_le_right _ _).trans (min_le_left _ _)
   · exact (min_le_right _ _).trans (min_le_right _ _)
-
-
 
 theorem finitePiecewiseAffineOn_roof : FinitePiecewiseAffineOn roof base := by
   have hbase := isFinitePLBallPair_base

@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M36.CenteredNeckMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -19,9 +10,6 @@ open M36
 
 local notation "E" => EuclideanSpace ℝ (Fin 3)
 local notation "IC" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
-
-
-
 
 theorem centeredCylinder_pullbackCoefficients
     {M : Type*} [TopologicalSpace M]
@@ -62,9 +50,6 @@ theorem centeredCylinder_pullbackCoefficients
   simp only [roundCylinderTensorCoefficient, roundCylinderPullback,
     cylinderHeightCovector_basis, hP]
   rfl
-
-
-
 
 theorem centeredCylinderMetric_coefficient (B : RoundCylinderTwoTensor)
     (q : UnitTwoSphere) (p : RoundCylinderCoordinates) (i j : Fin 3) :

@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Neighb
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Intersections.Position.Boundary.Models.RetainedPair
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Reattachment.AtlasRange
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open Poincare.Topology.Orientation.ProjectivePlane

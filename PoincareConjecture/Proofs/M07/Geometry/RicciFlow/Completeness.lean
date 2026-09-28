@@ -3,22 +3,10 @@ import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 import PoincareConjecture.Proofs.M07.Topology.MetricSpace.Completeness
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open scoped Manifold ContDiff Bundle ENNReal NNReal Topology
 
 namespace PoincareConjecture.BasedFlow
-
-
 
 theorem complete_interior_of_two_time_curvature_bound
     {n : ℕ} {T' T : ℝ} {C : FlowCarrier n}

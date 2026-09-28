@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicOpenMetric
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.MinimizingGeodesic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ namespace PoincareConjecture.M28
 variable {M : Type u} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M]
-
-
 
 theorem exists_precompact_ball_subset_open (g : RiemannianMetric 3 M)
     {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U) :
@@ -127,18 +115,12 @@ private theorem exists_intrinsic_ball_buffer (g : RiemannianMetric 3 M)
     rintro l ⟨α, hα, hα0, hα1, _, rfl⟩
     exact Manifold.riemannianEDist_le_pathELength hα hα0 hα1 zero_le_one
 
-
-
-
 theorem exists_open_intrinsic_distance_eq (g : RiemannianMetric 3 M)
     {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U) :
     ∃ W : Set M, IsOpen W ∧ x ∈ W ∧ W ⊆ U ∧
       ∀ y ∈ W, ∀ z ∈ W, intrinsicEDist g U y z = g.edist y z := by
   obtain ⟨r, _, hWopen, hxW, hWU, _, hpair⟩ := exists_intrinsic_ball_buffer g hU hx
   exact ⟨g.ball x r, hWopen, hxW, hWU, fun y hy z hz => (hpair y hy z hz).1⟩
-
-
-
 
 theorem exists_open_intrinsic_minimizing_paths (g : RiemannianMetric 3 M)
     {U : Set M} (hU : IsOpen U) {x : M} (hx : x ∈ U) :

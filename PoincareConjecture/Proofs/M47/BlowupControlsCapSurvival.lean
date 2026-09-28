@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_RemovalSurvival
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Def_TrackedBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open Set
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem cap_not_disappears_of_surviving_cylinder
     {F : SurgeryFlowData.{u}} {origin scale c d : ℝ}
@@ -34,8 +23,6 @@ theorem cap_not_disappears_of_surviving_cylinder
     ordConnected_Ico (inter_subset_left : V ∩ U ⊆ V)
   exact M44.not_disappears_of_surviving_subcylinder e inner hc hcd
     inter_subset_right ⟨y, hyV, hyU⟩ (fun h x hx => hinitial _ x hx.1)
-
-
 
 theorem inserted_cap_subset_persistence_ball
     {F : SurgeryFlowData.{u}} {t A : ℝ} (hT : t ∈ F.surgery_times)
@@ -53,8 +40,6 @@ theorem inserted_cap_subset_persistence_ball
   apply houter.trans_lt
   apply (ENNReal.ofReal_lt_ofReal_iff (mul_pos hApos hh)).mpr
   nlinarith
-
-
 
 theorem cap_persistence_of_surviving_birth_cylinder
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)

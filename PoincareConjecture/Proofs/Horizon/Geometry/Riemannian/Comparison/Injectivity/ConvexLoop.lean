@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Injectivity.ReturnedLoop
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

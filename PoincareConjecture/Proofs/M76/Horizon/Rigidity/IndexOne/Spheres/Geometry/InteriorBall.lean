@@ -2,20 +2,10 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGr
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalBallTopology
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonPLIrreducibility
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 
 namespace PoincareConjecture.M76
-
-
 
 theorem IsPLIrreducible.exists_compact_ball_subset_interior
     {X ι : Type*} [TopologicalSpace X]
@@ -35,8 +25,6 @@ local notation "R" => latticeHandleDomain (Fin 1) (Fin 2) L
 local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem exists_closed_source_component_interior_ball
     {α β : Type*} (e : α → OpenPartialHomeomorph X V3)

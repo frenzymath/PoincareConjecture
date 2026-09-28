@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.General.MinimalProtectedCoreGenus
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Surgery.ProtectedCompressionGenus
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

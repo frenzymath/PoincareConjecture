@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Isotopy
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Diffeomorph.BallExtension.Radial
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 open scoped Manifold ContDiff
 
 namespace Poincare.Manifold
-
-
 
 theorem exists_sphere_diffeomorph_extension
     (d : Diffeomorph (𝓡 2) (𝓡 2)

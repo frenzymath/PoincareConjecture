@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.DerivedStarFaces
 import PoincareConjecture.Proofs.M76.Mathlib.FaceLinkCofaceCount
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   (hc : ∀ s : K.faces, ∃ w : E → ℝ, (∀ v ∈ s.val, 0 < w v) ∧
     (∑ v ∈ s.val, w v) = 1 ∧ (∑ v ∈ s.val, w v • v) = c s)
 
-
-
-
 theorem image_mem_derivedSubdivision_faces_iff [DecidableEq E]
     (a : Finset K.faces) :
     a.image c ∈ (K.derivedSubdivision c hc).faces ↔
@@ -38,9 +26,6 @@ theorem image_mem_derivedSubdivision_faces_iff [DecidableEq E]
     exact h.symm ▸ ⟨hb, hchain⟩
   · rintro ⟨ha, hchain⟩
     exact ⟨a, ha, hchain, rfl⟩
-
-
-
 
 theorem derivedSubdivision_vertices_eq_range :
     (K.derivedSubdivision c hc).vertices = range c := by
@@ -63,10 +48,6 @@ theorem derivedSubdivision_vertices_eq_range :
         exact Or.inl le_rfl⟩
     change {c s} ∈ (K.derivedSubdivision c hc).faces
     simpa only [Finset.image_singleton] using hs
-
-
-
-
 
 theorem ncard_derived_edge_cofaces [DecidableEq E]
     {s t : K.faces} (hst : s < t) :

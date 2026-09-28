@@ -4,10 +4,6 @@ import Mathlib.Analysis.LocallyConvex.Bounded
 import Mathlib.Analysis.Normed.Operator.Bilinear
 import Mathlib.Analysis.Normed.Operator.BoundedLinearMaps
 
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Bornology

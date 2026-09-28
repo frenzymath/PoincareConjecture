@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.ReducedLength.Minimum.Variational.TimeSupport.RegularPath
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.ReducedGeometry.LGeometry.Theory
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +33,6 @@ namespace ReducedLengthMinimum.Variational
 variable {n : ℕ} {M : Type u} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [ConnectedSpace M] {J : Set ℝ} {F : RicciFlow n M J} {T τmax : ℝ}
-
-
 
 theorem reducedLength_le_finite_piece_action
     (L : LGeodesicTheory F T τmax) {τ : ℝ} (hτ : 0 < τ) (hτmax : τ ≤ τmax)
@@ -98,8 +89,6 @@ theorem reducedLength_le_finite_piece_action
   have h := (le_div_iff₀ (show 0 < 2 * Real.sqrt τ by positivity)).mp
     (L.reducedLength_le_path hτ hτmax _ _ (paths k) (hstart k) (hend k))
   simpa only [haction, mul_comm] using h
-
-
 
 theorem reducedLength_le_two_smooth_pieces
     (L : LGeodesicTheory F T τmax) {τ c : ℝ}

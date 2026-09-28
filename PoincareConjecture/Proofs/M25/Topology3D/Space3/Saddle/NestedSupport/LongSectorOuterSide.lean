@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.Long
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhoodNesting
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
@@ -22,9 +12,6 @@ namespace PoincareConjecture.M25.Topology3D
 set_option linter.unusedVariables false in
 
 set_option maxHeartbeats 1000000 in
-
-
-
 
 theorem saddle_nested_raised_long_return_outer_closed
     (kappa : OpenPartialHomeomorph E2 E2)

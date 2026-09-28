@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckRestriction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -16,7 +7,6 @@ open Set
 open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.M35
-
 
 noncomputable def cylinderAxialDilation (c : ℝ) (hc : 0 < c) :
     Diffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) ((𝓡 2).prod 𝓘(ℝ, ℝ))
@@ -36,8 +26,6 @@ noncomputable def cylinderAxialDilation (c : ℝ) (hc : 0 < c) :
 end PoincareConjecture.M35
 
 namespace PoincareConjecture.StandardCylinderPatch
-
-
 
 noncomputable def axialRescale {length : ℝ} {x : StandardCapSpace}
     (N : StandardCylinderPatch length x) (c l : ℝ) (hc : 0 < c) (hl : 0 < l)

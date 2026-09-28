@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.MonodromyCylinder
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,10 +14,8 @@ attribute [local instance] monodromyChartedSpace monodromy_isManifold
 local notation "mq" => (Quotient.mk (monodromyOrbitRel phi) :
   monodromyPunctureOpen → MonodromyQuotient phi)
 
-
 def monodromyZeroFiber : Set (MonodromyQuotient phi) :=
   monodromyProjection phi ⁻¹' {circlePeriodMap 0}
-
 
 theorem monodromyZeroFiber_range :
     Set.range (fun z : UnitTwoSphere => monodromyCylinder phi (z, 0)) =
@@ -43,15 +33,12 @@ theorem monodromyZeroFiber_range :
     rw [← hlog, monodromyPolarPoint_reconstruct]
     exact monodromyNormalize_quotient phi 0 q
 
-
 theorem monodromy_unit_strip_complement :
     monodromyCylinder phi '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) =
       (monodromyZeroFiber phi)ᶜ := by
   rw [monodromy_unit_strip_image]
   ext q
   simp [monodromyZeroFiber]
-
-
 
 noncomputable def monodromyCutHomeomorph :
     (UnitTwoSphere × Set.Ioo (0 : ℝ) 1) ≃ₜ ↥((monodromyZeroFiber phi)ᶜ) := by
@@ -60,8 +47,6 @@ noncomputable def monodromyCutHomeomorph :
     (Homeomorph.refl (Set.Ioo (0 : ℝ) 1))).trans
       (Homeomorph.Set.prod (Set.univ : Set UnitTwoSphere) (Set.Ioo (0 : ℝ) 1)).symm).trans
     (e.toHomeomorphSourceTarget.trans (Homeomorph.setCongr (monodromy_unit_strip_complement phi)))
-
-
 
 noncomputable def monodromyCutCylinder : OpenCylinderModel (monodromyZeroFiber phi)ᶜ where
   homeomorph := monodromyCutHomeomorph phi
@@ -79,7 +64,6 @@ noncomputable def monodromyCutCylinder : OpenCylinderModel (monodromyZeroFiber p
     rw [← monodromy_unit_strip_complement phi]
     exact monodromyStripInverse_smooth phi 0 1 (by norm_num)
 
-
 theorem monodromyZeroFiber_complement_connected : IsConnected (monodromyZeroFiber phi)ᶜ := by
   let : ConnectedSpace UnitTwoSphere := isConnected_iff_connectedSpace.mp
     (isConnected_sphere (Module.one_lt_rank_of_one_lt_finrank (by simp))
@@ -87,7 +71,6 @@ theorem monodromyZeroFiber_complement_connected : IsConnected (monodromyZeroFibe
   rw [← monodromy_unit_strip_complement phi]
   exact (isConnected_univ.prod (isConnected_Ioo zero_lt_one)).image _
     (monodromyCylinder_localDiffeomorph phi).contMDiff.continuous.continuousOn
-
 
 theorem monodromyZeroFiber_nonseparating : NonseparatingSphere (monodromyZeroFiber phi) := by
   change IsConnected (Set.univ \ monodromyZeroFiber phi)

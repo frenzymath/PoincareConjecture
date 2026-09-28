@@ -4,13 +4,6 @@ import Mathlib.Analysis.Calculus.Deriv.Slope
 import Mathlib.Analysis.Normed.Group.Bounded
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Topology
@@ -251,4 +244,3 @@ theorem shiCutoffProfile_composition_bounds
     nlinarith only [h1, h2a, h2b, hn, hk]
 
 end PoincareConjecture.M04
-

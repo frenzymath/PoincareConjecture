@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_6_RescalingSliceVolume
 import PoincareConjecture.Proofs.M14.Sec6_6_RescalingActionValue
 import PoincareConjecture.Proofs.M14.Sec6_7_MeasureTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -30,15 +21,12 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X]
   (hM13 : GeneralizedParabolicRescalingTheory.{u} n)
   (G : GeneralizedLGeometryTransport n X time I) (Q : ℝ) (hQ : 0 < Q) (a : ℝ)
 
-
-
 theorem rescalingBackwardTime (T τ : ℝ) :
     parabolicTime Q a T - Q * τ = parabolicTime Q a (T - τ) := by
   unfold parabolicTime
   ring
 
 include hCoordinates in
-
 
 theorem rescalingStableEndpoint {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -58,7 +46,6 @@ theorem rescalingStableEndpoint {T τ : ℝ} {x : G.Point}
       Z (Real.sqrt τ) (H.survivor Z hZ)).symm
 
 include hCoordinates in
-
 
 theorem rescalingStableImage {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
@@ -86,7 +73,6 @@ theorem rescalingStableImage {T τ : ℝ} {x : G.Point}
 
 include hCoordinates in
 
-
 theorem rescalingStableImage_values {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)
     (E' : M14ExponentialFamily (rescalingTransport hM12 hM13 G Q hQ a)
@@ -102,8 +88,6 @@ theorem rescalingStableImage_values {T τ : ℝ} {x : G.Point}
       (H.endpoint_slice_map Z)).symm)
 
 include hCoordinates in
-
-
 
 theorem rescalingStableDensityIntegral {T τ : ℝ} {x : G.Point}
     (E : M14ExponentialFamily G T x)

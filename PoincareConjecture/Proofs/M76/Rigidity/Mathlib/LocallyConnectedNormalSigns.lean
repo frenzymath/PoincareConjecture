@@ -4,14 +4,6 @@ import Mathlib.Topology.Connected.LocallyConnected
 import Mathlib.Topology.Connected.TotallyDisconnected
 import Mathlib.Topology.LocallyConstant.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric SignType
@@ -28,9 +20,6 @@ private theorem normal_sign_eq_of_preconnected {X : Type*} [TopologicalSpace X]
 
 variable {P Q : Type*} [TopologicalSpace P] [LocallyConnectedSpace P]
   [TopologicalSpace Q]
-
-
-
 
 theorem exists_normalSignAt_of_locallyConnected
     (e : OpenPartialHomeomorph (P × ℝ) (Q × ℝ))
@@ -129,8 +118,6 @@ theorem exists_normalSignAt_of_locallyConnected
   · rw [(hpair z (hUs hz)).mpr he, sign_zero, he, sign_zero, mul_zero]
   · rw [hplus z ⟨hz.1, hpz, hz.2.2⟩, sign_pos hpz, mul_one]
 
-
-
 noncomputable def locallyConnectedNormalTransitionSign
     (e : OpenPartialHomeomorph (P × ℝ) (Q × ℝ))
     (hpair : ∀ z ∈ e.source, (e z).2 = 0 ↔ z.2 = 0)
@@ -143,8 +130,6 @@ theorem locallyConnectedNormalTransitionSign_spec
     (p : {p : P // (p, (0 : ℝ)) ∈ e.source}) :
     NormalSignAt e p.val (locallyConnectedNormalTransitionSign e hpair p) :=
   (exists_normalSignAt_of_locallyConnected e hpair p.val p.property).choose_spec
-
-
 
 theorem locallyConnectedNormalTransitionSign_isLocallyConstant
     (e : OpenPartialHomeomorph (P × ℝ) (Q × ℝ))

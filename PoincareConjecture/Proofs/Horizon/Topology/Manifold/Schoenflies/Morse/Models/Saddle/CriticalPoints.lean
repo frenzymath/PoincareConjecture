@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LowerCaps
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -14,7 +12,6 @@ namespace Poincare.Manifold.Schoenflies.Saddle
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
 private instance : Fact (Module.finrank Real E3 = 2+1) := ⟨by simp⟩
-
 
 def height (p : S2) : Real := shear p 2
 
@@ -63,7 +60,6 @@ private theorem inner_three (p w : E3) :
     inner Real p w = p 0*w 0 + p 1*w 1 + p 2*w 2 := by
   simp [PiLp.inner_apply, Fin.sum_univ_three, mul_comm]
 
-
 theorem height_critical_iff (p : S2) :
     mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0 ↔
       (p : E3) 1 = 0 ∧ ((p : E3) 0 = 0 ∨ (p : E3) 2 = -1/2) := by
@@ -96,8 +92,6 @@ theorem height_critical_iff (p : S2) :
     · rw [inner_three, hy, hz] at hw
       nlinarith
 
-
-
 theorem critical_height_values {p : S2}
     (hp : mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0) :
     height p = -5/4 ∨ height p = -1 ∨ height p = 1 := by
@@ -115,14 +109,12 @@ theorem critical_height_values {p : S2}
     rw [height_apply, hz]
     nlinarith
 
-
 theorem cutting_heights_regular (p : S2)
     (hp : height p = -9/8 ∨ height p = 1/2) :
     mfderiv (𝓡 2) 𝓘(Real, Real) height p ≠ 0 := by
   intro hc
   rcases critical_height_values hc with h | h | h <;>
     rcases hp with hp | hp <;> linarith
-
 
 def saddlePoint : S2 := ⟨-EuclideanSpace.single 2 1, by simp⟩
 
@@ -134,7 +126,6 @@ theorem saddlePoint_critical :
     mfderiv (𝓡 2) 𝓘(Real, Real) height saddlePoint = 0 := by
   rw [height_critical_iff]
   simp [saddlePoint]
-
 
 theorem critical_in_band_iff (p : S2) (hp : height p ∈ Icc (-9/8 : Real) (1/2)) :
     mfderiv (𝓡 2) 𝓘(Real, Real) height p = 0 ↔ p = saddlePoint := by

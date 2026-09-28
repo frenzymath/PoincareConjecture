@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.Core.EnlargedOldBalls
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Canonical.Cap.CoreRadiusPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -25,8 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_eventually_cap_core_terminal_ball_containment
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})
@@ -107,8 +96,6 @@ theorem exists_eventually_cap_core_terminal_ball_containment
       rwa [RiemannianMetric.closure_ball_eq_edist_le _ x hR])) v).2)
   intro y hy
   exact hclosed (hclosureB (closure_mono hsmallball hy))
-
-
 
 theorem exists_eventually_cap_core_contained_calibrated_radius
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

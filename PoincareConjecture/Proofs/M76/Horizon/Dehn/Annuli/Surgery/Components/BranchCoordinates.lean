@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLCompatibleChart
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLInverse
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLBallImages
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Topology
@@ -19,9 +10,6 @@ open Set Metric Geometry Topology
 namespace PoincareConjecture.M76.Dehn.Annuli
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem RawSourceCrossing.exists_finite_branch_coordinates
     {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -80,4 +68,3 @@ theorem RawSourceCrossing.exists_finite_branch_coordinates
   exact h.symm
 
 end PoincareConjecture.M76.Dehn.Annuli
-

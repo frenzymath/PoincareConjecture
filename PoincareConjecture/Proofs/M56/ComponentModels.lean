@@ -1,16 +1,6 @@
 import PoincareConjecture.Statements.M56Ancestry
 import PoincareConjecture.Proofs.M11.OpenSubsetDiffeomorph
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,7 +9,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def m56OpenCarrier (A : GeneralizedSliceCarrier.{u})
     (U : TopologicalSpace.Opens A.carrier) : GeneralizedSliceCarrier.{u} where
@@ -88,7 +77,6 @@ private theorem m56Component_inverse_smooth
   exact (contMDiffWithinAt_congr hval (hval _ ⟨z, rfl⟩)).mpr
     contMDiffWithinAt_id
 
-
 noncomputable def m56SelectedComponent
     {A : GeneralizedSliceCarrier.{u}} (hcompact : IsCompact (Set.univ : Set A.carrier))
     (x : A.carrier) : SurgerySelectedComponent A := by
@@ -129,8 +117,6 @@ noncomputable def m56SelectedComponent
     let : ConnectedSpace U := Subtype.connectedSpace
       (isConnected_connectedComponent (x := x))
     exact isConnected_univ
-
-
 
 theorem m56SelectedComponent_range {A : GeneralizedSliceCarrier.{u}}
     (hcompact : IsCompact (Set.univ : Set A.carrier)) (x : A.carrier) :

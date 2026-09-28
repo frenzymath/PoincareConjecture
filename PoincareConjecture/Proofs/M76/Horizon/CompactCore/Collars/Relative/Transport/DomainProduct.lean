@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Model.FromDomains
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Relative.Products.ModelProduct
 
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -13,7 +11,6 @@ attribute [local instance] Classical.propDecidable
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "I" => Icc (-1 : ℝ) 1
-
 
 theorem model_inverse_properties
     {X E : Type*} [TopologicalSpace X] [TopologicalSpace E]
@@ -32,8 +29,6 @@ theorem model_inverse_properties
   · intro x hx
     have heq : F x = (H ⟨x, hx⟩ : E) := (hF ⟨x, hx⟩).symm
     rw [heq, hg, H.symm_apply_apply]
-
-
 
 theorem exists_signed_domain_surface_product
     {X ι : Type*} [TopologicalSpace X] [T2Space X]

@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereOpenMargin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_LocalCurvatureTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,9 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
-
 
 theorem sectional_lower_of_pullback_sphereJetRegion
     {sigma : UnitTwoSphere → E} (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma)
@@ -75,8 +62,6 @@ theorem sectional_lower_of_pullback_sphereJetRegion
     (sphereCoordinateDifferential sigma z x (b 1)) hJ
   exact sectional_lower_on_physical_plane D (f (sigma x)) h.1 h.2
     (hspan u) (hspan v) hgram
-
-
 
 theorem sectional_lower_of_normalized_pullback_sphereJetRegion
     {sigma : UnitTwoSphere → E} (hsigma : ContMDiff (𝓡 2) (𝓡 3) ∞ sigma)

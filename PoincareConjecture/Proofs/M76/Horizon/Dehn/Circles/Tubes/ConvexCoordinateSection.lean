@@ -9,7 +9,6 @@ local notation "V3" => (Fin 3 → ℝ)
 
 open Classical in
 
-
 theorem isFinitePLBallPair_convex_coordinate_section
     {Y : Type} [NormedAddCommGroup Y] [NormedSpace ℝ Y] [FiniteDimensional ℝ Y]
     {α β : Type} [Fintype α] [Fintype β]
@@ -111,4 +110,3 @@ theorem isFinitePLBallPair_convex_coordinate_section
     simp only [T0, Q, mem_inter_iff, mem_preimage, mem_ofPred_eq]
 
 end PoincareConjecture.M76.Dehn
-

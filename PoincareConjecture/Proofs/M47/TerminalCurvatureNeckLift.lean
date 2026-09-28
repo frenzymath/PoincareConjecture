@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalCurvatureNeckPlane
 import PoincareConjecture.Proofs.M47.TerminalCurvatureSmoothLift
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ open scoped Manifold ContDiff Topology
 universe u v
 
 namespace PoincareConjecture.M47
-
-
 
 theorem exists_terminalCurvature_lifted_neck_sphere :
     ∃ delta : ℝ, 0 < delta ∧

@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Simplicial.ConvexCar
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.ChartCarrier
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Spheres.Systems.Topology
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Module
@@ -53,9 +43,6 @@ private theorem member_subedge_contact_line_cover
     h.exists_triangle_contact_line_cover_of_affine_chart sS hgi hSV hpq hwp hwq
       hs hy' Q hQ A hmap hA
   exact ⟨U, L, hU, hyU, hL, hcover⟩
-
-
-
 
 theorem exists_sphere_system_chart_isolation
     {X ι κ : Type*} [TopologicalSpace X] [T2Space X] [Finite κ]
@@ -113,9 +100,6 @@ private theorem sphere_system_subedge_contact_line_cover
   refine ⟨U ∩ O, L, hU.inter hO, ⟨hyU, hyO⟩, hL, ?_⟩
   rintro x ⟨⟨hxS, hxt⟩, hxU, hxO⟩
   exact hcover x ⟨⟨(hOi x hxO).mp hxS, hxt⟩, hxU⟩
-
-
-
 
 theorem exists_original_sphere_system_triangle_protected_cover
     {E X ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
@@ -253,4 +237,3 @@ theorem exists_original_sphere_system_triangle_protected_cover
   simpa only [t, Finset.coe_image] using hzt
 
 end PoincareConjecture.M76
-

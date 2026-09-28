@@ -5,8 +5,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Gradient
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Extrema
 import Mathlib.Analysis.Calculus.LocalExtr.Basic
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -22,8 +20,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]
   [PreconnectedSpace M] [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_contMDiff_squared_edist_near
     (g : RiemannianMetric n M) (p : M) :
@@ -67,9 +63,6 @@ theorem exists_contMDiff_squared_edist_near
       · exact (g.pos p v hv0).le)).symm
   obtain ⟨s, hs, hball⟩ := Metric.mem_nhds_iff.mp heqdist
   exact ⟨f, hf, s, hs, fun y hy => hball hy⟩
-
-
-
 
 theorem exists_center_squared_distance_potential
     (g : RiemannianMetric n M) (p : M) :

@@ -1,13 +1,5 @@
 import PoincareConjecture.Definitions.Ch03.RicciFlow
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Comparison.Volume.Polar.SignedIntegral
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,7 +11,6 @@ namespace Poincare.VolumeComparison
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [MeasurableSpace E] [BorelSpace E] [FiniteDimensional ℝ E]
-
 
 theorem integrable_polar_comp (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} (hf : Integrable f μ) :
@@ -49,7 +41,6 @@ private theorem integral_volumeIoiPow_eq (k : ℕ) (f : ℝ → ℝ) :
       rfl
     _ = _ := integral_subtype_comap measurableSet_Ioi (fun t : ℝ => t ^ k * f t)
 
-
 theorem integrable_radial_integral (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} (hf : Integrable f μ) :
     Integrable (fun θ : Metric.sphere (0 : E) 1 =>
@@ -58,7 +49,6 @@ theorem integrable_radial_integral (μ : Measure E) [μ.IsAddHaarMeasure]
   convert (integrable_polar_comp μ hf).integral_prod_left using 1
   ext θ
   exact (integral_volumeIoiPow_eq _ (fun t => f (t • (θ : E)))).symm
-
 
 theorem ae_integrable_radial (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} (hf : Integrable f μ) :
@@ -84,7 +74,6 @@ theorem ae_integrable_radial (μ : Measure E) [μ.IsAddHaarMeasure]
     simpa [Measure.volumeIoiPow, ENNReal.coe_toNNReal, NNReal.smul_def, hcoe] using h
   exact (integrableOn_iff_comap_subtypeVal measurableSet_Ioi).mpr hi'
 
-
 theorem ae_integrable_radial_ball (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} {r : ℝ} (hf : IntegrableOn f (Metric.ball 0 r) μ) :
     ∀ᵐ θ : Metric.sphere (0 : E) 1 ∂μ.toSphere,
@@ -101,7 +90,6 @@ theorem ae_integrable_radial_ball (μ : Measure E) [μ.IsAddHaarMeasure]
   dsimp only
   rw [indicator_of_mem (show t • (θ : E) ∈ Metric.ball (0 : E) r by
     simpa only [Metric.mem_ball, dist_zero_right, hnorm] using ht.2)]
-
 
 theorem integrable_radial_integral_ball (μ : Measure E) [μ.IsAddHaarMeasure]
     {f : E → ℝ} {r : ℝ} (hf : IntegrableOn f (Metric.ball 0 r) μ) :
@@ -131,8 +119,6 @@ theorem integrable_radial_integral_ball (μ : Measure E) [μ.IsAddHaarMeasure]
   · have hnot : t ∉ Ioo (0 : ℝ) r := fun h => ht h.1
     simp [ht, hnot]
 
-
-
 theorem ae_polar_comp (μ : Measure E) [μ.IsAddHaarMeasure]
     {P : E → Prop} (hP : ∀ᵐ x ∂μ, P x) :
     ∀ᵐ p : Metric.sphere (0 : E) 1 × Ioi (0 : ℝ)
@@ -145,8 +131,6 @@ theorem ae_polar_comp (μ : Measure E) [μ.IsAddHaarMeasure]
   filter_upwards [hi] with x hx
   have hn : ‖(x : E)‖ ≠ 0 := norm_ne_zero_iff.2 x.2
   simpa [smul_smul, mul_inv_cancel₀ hn] using hx
-
-
 
 theorem ae_ae_polar (μ : Measure E) [μ.IsAddHaarMeasure]
     {P : E → Prop} (hP : ∀ᵐ x ∂μ, P x) :
@@ -171,8 +155,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem integrable_polar_integral_image_inter_ball
     (g : RiemannianMetric n M)
@@ -199,8 +181,6 @@ theorem integrable_polar_integral_image_inter_ball
   simpa only [finrank_euclideanSpace_fin] using
     Poincare.VolumeComparison.integrable_radial_integral_ball volume hind
 
-
-
 theorem ae_pullback_of_ae_image
     (g : RiemannianMetric n M)
     {f : EuclideanSpace ℝ (Fin n) → M}
@@ -224,8 +204,6 @@ theorem ae_pullback_of_ae_image
   filter_upwards [hp] with x hx hxs hne
   apply hx hxs
   exact (ENNReal.ofReal_pos.mpr (lt_of_le_of_ne (Real.sqrt_nonneg _) hne.symm)).ne'
-
-
 
 theorem ae_ae_polar_of_ae_image_inter_ball
     (g : RiemannianMetric n M)
@@ -286,8 +264,6 @@ private theorem measurableSet_nonterminal
       (fun _ _ => Set.mem_univ _)
   exact hS.diff (measurableSet_terminalRadialPoints hS)
 
-
-
 theorem integrable_polar_integral_ball_of_injOn
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)
     {R r : ℝ} (hr : 0 < r) (hrR : r ≤ R)
@@ -313,8 +289,6 @@ theorem integrable_polar_integral_ball_of_injOn
     simpa only [IntegrableOn, Measure.restrict_congr_set heq] using hF
   exact g.integrable_polar_integral_image_inter_ball Metric.isOpen_ball he
     (measurableSet_nonterminal g p he) (fun _ hx => hx.1.1) hinj r hFi
-
-
 
 theorem ae_integrable_polar_ball_of_injOn
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)
@@ -352,8 +326,6 @@ theorem ae_integrable_polar_ball_of_injOn
       Measure.restrict_restrict hSD]
     exact hwi
   simpa only [finrank_euclideanSpace_fin] using ae_integrable_radial_ball volume hind
-
-
 
 theorem ae_ae_polar_of_ae_ball_of_injOn
     (g : PoincareConjecture.RiemannianMetric n M) (p : M)

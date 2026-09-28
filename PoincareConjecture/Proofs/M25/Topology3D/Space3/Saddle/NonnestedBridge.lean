@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.BallTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedRawMiddle
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NonnestedEndAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,8 +11,6 @@ open scoped ContDiff Manifold InnerProductSpace Matrix NNReal
 namespace PoincareConjecture.M25.Topology3D
 
 local notation "D3" => Diffeomorph 𝓘(ℝ, E3) 𝓘(ℝ, E3) E3 E3 ∞
-
-
 
 theorem exists_saddle_nonnested_bridge_witness
     (hP : PlanarSchoenfliesService)

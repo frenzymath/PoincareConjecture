@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicH1FiniteComposition
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorPeriodicH1Coefficients
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
@@ -18,9 +8,6 @@ open AddCircle PoincareConjecture.SpectralHeatNative
 namespace PoincareConjecture.M63
 
 variable {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]
-
-
-
 
 theorem exists_timeParameter_scalarH1_composition (k : ℕ)
     (f : ℝ × ((Fin 2 × ι) → ℝ) → ℝ) (hf : ContDiff ℝ (k + 1) f) :
@@ -58,9 +45,6 @@ theorem exists_timeParameter_scalarH1_composition (k : ℕ)
     simp
   · funext j
     exact (vectorPeriodicH1JetCoordinates_spec (L := L) u).2.2 j x
-
-
-
 
 theorem exists_timeParameter_vectorH1_composition (k : ℕ)
     (f : ℝ × ((Fin 2 × ι) → ℝ) → (ι → ℝ)) (hf : ContDiff ℝ (k + 1) f) :

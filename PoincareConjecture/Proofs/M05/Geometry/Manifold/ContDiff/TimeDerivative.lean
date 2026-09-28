@@ -1,9 +1,6 @@
-
 import PoincareConjecture.Proofs.M05.Analysis.Calculus.MixedDerivatives
 import PoincareConjecture.Proofs.M05.Geometry.Manifold.VectorField.Derivation
 import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
-
-
 
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -36,7 +33,6 @@ lemma contMDiffAt_deriv_time
   funext p
   rw [inTangentCoordinates_model_space]
   simp only [mfderiv_eq_fderiv, deriv]
-
 
 lemma hasDerivAt_mvfderiv_time
     {f : ℝ × M → ℝ} {df : M → ℝ} {t : ℝ} {x : M}

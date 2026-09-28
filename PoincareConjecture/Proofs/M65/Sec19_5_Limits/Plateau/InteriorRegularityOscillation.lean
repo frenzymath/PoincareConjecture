@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.InteriorRegularityLocalCircle
 import PoincareConjecture.Proofs.M65.Mathlib.WeightedCauchySchwarz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -32,8 +22,6 @@ private theorem integral_norm_sq_le {E : Type*} [NormedAddCommGroup E]
   simpa only [mul_one, integral_const, Measure.restrict_apply_univ, Real.volume_Icc,
     Measure.real, ENNReal.toReal_ofReal (sub_nonneg.mpr hab), smul_eq_mul] using hc
 
-
-
 theorem interval_increment_norm_sq_le {E : Type*} [NormedAddCommGroup E]
     [NormedSpace ℝ E] {v d : ℝ → E} {a b : ℝ} (hab : a ≤ b)
     (hd : MemLp d 2 (volume.restrict (Icc a b)))
@@ -52,9 +40,6 @@ theorem interval_increment_norm_sq_le {E : Type*} [NormedAddCommGroup E]
   have hc := integral_norm_sq_le hab hd
   have hnonneg : 0 ≤ ∫ θ in Icc a b, ‖d θ‖ := integral_nonneg (fun _ => norm_nonneg _)
   nlinarith [norm_nonneg (v t - v s)]
-
-
-
 
 theorem angular_field_norm_sq_le {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
     (u v : E) (r θ : ℝ) :
@@ -82,10 +67,6 @@ end PoincareConjecture.M65Interior
 namespace PoincareConjecture.M65LocalWeakMap
 
 open M65Interior
-
-
-
-
 
 theorem polar_circle_oscillation {M : Type*} {N : ℕ}
     {e : M → EuclideanSpace ℝ (Fin N)} {U : Set LoopPlane}

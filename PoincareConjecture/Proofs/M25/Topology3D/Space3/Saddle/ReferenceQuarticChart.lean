@@ -4,22 +4,12 @@ import Mathlib.Analysis.Calculus.ContDiff.Operations
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Tactic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_nonnested_reference_quartic_chart :
     ∃ e : OpenPartialHomeomorph (ℝ × ℝ) (ℝ × ℝ),

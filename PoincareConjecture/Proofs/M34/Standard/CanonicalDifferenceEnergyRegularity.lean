@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateEnergyRegularity
 import PoincareConjecture.Proofs.M34.Standard.CanonicalDifferenceRegularity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -31,8 +21,6 @@ variable {n dH dA dS : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
   (hφU : tsupport φ ⊆ U)
 
 include hφ hφc hφU
-
-
 
 theorem canonicalDomain_hasDerivAt_difference_energy :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
@@ -76,8 +64,6 @@ theorem canonicalDomain_hasDerivAt_difference_energy :
     exact hasDerivAt_finite_coordinate_energy isOpen_interior hU
       ((hC.mono (Set.prod_mono interior_subset subset_rfl)).of_le (by decide)) hφ hφc hφU ht
   exact ((hd _ hsH).add (hd _ hsA)).add (hd _ hsS)
-
-
 
 theorem canonicalDomain_continuousOn_difference_energy :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

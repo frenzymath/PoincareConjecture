@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M54.ConnectedSum.RemoveBall
 import PoincareConjecture.Proofs.M54.ConnectedSum.Collars
 import PoincareConjecture.Proofs.M54.BasepointTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,8 +11,6 @@ universe u
 namespace PoincareConjecture
 
 namespace SurgeryBallEmbedding
-
-
 
 theorem factor_of_open_cover {A C : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
     (U V : Set C.carrier) (e : SurgeryRegionEquivalence A C B.closedBallᶜ U)
@@ -46,8 +36,6 @@ variable {A B C : GeneralizedSliceCarrier.{u}} (S : SmoothConnectedSumData A B C
 
 include S
 
-
-
 theorem first_factor (x : A.carrier) :
     ∃ y : C.carrier,
       Nonempty (RepairedGroupFactorData (FundamentalGroup C.carrier y)
@@ -57,8 +45,6 @@ theorem first_factor (x : A.carrier) :
     S.first_open (S.second_open.union S.collar_open) S.first_cover
   rw [S.first_overlap]
   exact S.collarBand_simplyConnected (-1) 0 (by norm_num) le_rfl (by norm_num)
-
-
 
 theorem second_factor (x : B.carrier) :
     ∃ y : C.carrier,

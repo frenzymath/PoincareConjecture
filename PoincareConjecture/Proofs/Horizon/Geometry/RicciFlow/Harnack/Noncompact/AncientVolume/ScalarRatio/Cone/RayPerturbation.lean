@@ -1,19 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.RayLimits
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -87,10 +73,6 @@ private theorem tendsto_scaled_distance_of_homogeneous_ray_limit
     _ = scale i * dist (x i) (α (r / scale i)) +
         scale i * dist (y i) (β (s / scale i)) := by
       rw [mul_add, dist_comm (α (r / scale i)) (x i), dist_comm (β (s / scale i)) (y i)]
-
-
-
-
 
 theorem tendsto_radial_perturbation_sq_of_ray_approximation
     {X : Type*} [MetricSpace X] (α β : ℝ → X) (hzero : α 0 = β 0)

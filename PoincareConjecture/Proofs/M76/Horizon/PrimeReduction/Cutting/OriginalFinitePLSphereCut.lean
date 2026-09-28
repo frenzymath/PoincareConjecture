@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.SphereCutPLD
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Collars.FiniteSphereBicollars
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Cutting.FiniteCutPLDomain
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 
@@ -21,8 +11,6 @@ namespace PoincareConjecture.M76
 
 local notation "V3" => (Fin 3 → ℝ)
 local notation "J" => Icc (-1 : ℝ) 1
-
-
 
 theorem exists_original_finite_pl_sphere_cut
     {X ι κ : Type*} [MetricSpace X] [Finite κ]
@@ -223,4 +211,3 @@ theorem exists_original_finite_pl_sphere_cut
   · simpa only [hfrontUnion] using holdDisjoint
 
 end PoincareConjecture.M76
-

@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.Surface.DeckAction
 import Mathlib.LinearAlgebra.Matrix.ToLinearEquiv
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
-
 
 theorem exists_orthogonal_surface_isometry_lift
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)
@@ -97,7 +84,6 @@ theorem exists_orthogonal_surface_isometry_lift
     (by simpa only [Function.comp_apply, hpos] using hy) hderiv
   exact fun z => heq (mem_univ z)
 
-
 theorem orthogonalThree_exists_fixed_or_negated_unit_vector
     (L : EuclideanSpace ℝ (Fin 3) ≃ₗᵢ[ℝ] EuclideanSpace ℝ (Fin 3)) :
     ∃ v : EuclideanSpace ℝ (Fin 3), ‖v‖ = 1 ∧ (L v = v ∨ L v = -v) := by
@@ -152,7 +138,6 @@ theorem orthogonalThree_exists_fixed_or_negated_unit_vector
     · exact Or.inl (by rw [L.map_smul, hfix])
     · exact Or.inr (by rw [L.map_smul, hneg, smul_neg])
 
-
 theorem surface_isometry_has_fixed_point_of_antipodal_cover
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)
     (hq : IsLocalDiffeomorph (𝓡 2) (𝓡 2) ∞ q) (hsurj : Function.Surjective q)
@@ -175,8 +160,6 @@ theorem surface_isometry_has_fixed_point_of_antipodal_cover
     refine ⟨q x, ?_⟩
     rw [← hL x]
     exact (congrArg q (show sphereMotion L x = -x from Subtype.ext hneg)).trans (hanti x)
-
-
 
 theorem surface_cover_injective_of_free_isometry
     (g : RiemannianMetric 2 M) (q : UnitSphere 2 → M)

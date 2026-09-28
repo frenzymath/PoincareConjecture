@@ -1,20 +1,5 @@
-
-
-
-
-
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.WeakRegularity.Interior.VariableEnergy
 import Mathlib.Analysis.Calculus.BumpFunction.FiniteDimension
-
-
-
-
-
-
-
-
-
-
 
 open Set Metric Filter MeasureTheory
 open scoped ContDiff Topology
@@ -36,8 +21,6 @@ private theorem localized_coefficient_smooth
   · have hyU := hχU (tsupport_mul_subset_left hy)
     exact χ.contDiff.contDiffAt.mul ((hq y hyU).contDiffAt (hU.mem_nhds hyU))
   · exact contDiffAt_const.congr_of_eventuallyEq (notMem_tsupport_iff_eventuallyEq.mp hy)
-
-
 
 theorem exists_local_principal_parabolic_coercivity
     {U : Set (Spacetime n)} (hU : IsOpen U)

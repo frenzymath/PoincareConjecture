@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.Charts.CarrierBallCertificates
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Capping.OriginalFiniteCapAvoidance
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace PoincareConjecture.M76

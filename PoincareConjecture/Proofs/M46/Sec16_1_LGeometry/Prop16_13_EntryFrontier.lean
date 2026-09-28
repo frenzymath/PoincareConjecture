@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M46.Sec16_1_LGeometry.Prop16_13_CylinderLocalInverse
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +17,6 @@ variable {F : GeneralizedRicciFlowData.{u}}
   {C : GeneralizedSliceCarrier.{u}} {origin scale : ℝ} {J : SpacetimeInterval}
   {U : TopologicalSpace.Opens C.carrier}
   (e : GeneralizedFlowCylinder F C origin scale J.domain U)
-
-
-
 
 theorem rawCylinder_completed_coordinate_eq
     {a b r : ℝ} (hab : a < b) (hr : r ∈ Icc a b)
@@ -61,9 +48,6 @@ theorem rawCylinder_completed_coordinate_eq
     filter_upwards [self_mem_nhdsWithin] with t ht
     exact hcoordinate ht
   exact tendsto_nhds_unique hx hfinal
-
-
-
 
 theorem rawCylinder_completed_endpoint_eq
     {a b r : ℝ} (hab : a < b) (hr : r ∈ Icc a b)
@@ -108,9 +92,6 @@ theorem rawCylinder_completed_endpoint_eq
     filter_upwards [self_mem_nhdsWithin] with t ht
     exact heq ht
   exact tendsto_nhds_unique hg hfinal
-
-
-
 
 theorem rawCylinder_entry_coordinate_mem_frontier
     {a b : ℝ} (hab : a < b)

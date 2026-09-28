@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M28.Sec10_3_Tube.FixedWallInteriorConfinement
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.ConfinementMinimizers
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.IntrinsicCompactSegment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,9 +16,6 @@ variable {M : Type*} [TopologicalSpace M] [T2Space M]
   {g : RiemannianMetric 3 M} {X : Set M}
 
 set_option maxHeartbeats 1600000 in
-
-
-
 
 theorem exists_fixed_wall_intrinsic_segments
     (T : EpsilonTubeCertificate g X) (A : OpenCylinderModel T.carrier)

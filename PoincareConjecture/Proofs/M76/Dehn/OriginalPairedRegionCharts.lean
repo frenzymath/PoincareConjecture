@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalRegionBranchCharts
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ variable {U E M ι : Type*}
   [TopologicalSpace M]
   {e : ι → OpenPartialHomeomorph M E} {S : SimplicialComplex ℝ U}
   {f : U → M} {r : M → ℝ} {C : Set M} {s t : Stage e S f r C}
-
-
-
 
 theorem Step.compatible_branch_chart (step : Step s t)
     (B : OpenPartialHomeomorph t.Carrier s.Carrier)
@@ -51,11 +39,6 @@ theorem Step.compatible_branch_chart (step : Step s t)
     (hQ (step.chartIndex k))).mono T.open_source hsub).congr heq.symm
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
-
-
 
 theorem Step.exists_paired_original_region_charts
     {e : ι → OpenPartialHomeomorph M V3}

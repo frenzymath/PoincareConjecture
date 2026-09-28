@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SharedBoundaryTangency
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereSmoothRestriction
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_ball_boundary_parametrization (ψ : UnitTwoSphere × ℝ → E3)
     (hψ : IsCollarEmbedding ψ) (B : BallNeighborhoodChart E3 E3)

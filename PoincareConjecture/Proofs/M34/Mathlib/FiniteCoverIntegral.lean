@@ -1,23 +1,11 @@
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
 open scoped BigOperators
 
 namespace MeasureTheory
-
-
 
 theorem setIntegral_le_finsetSum_of_cover
     {X I : Type*} [MeasurableSpace X] {μ : Measure X} (s : Finset I)
@@ -48,8 +36,6 @@ theorem setIntegral_le_finsetSum_of_cover
     _ = ∑ i ∈ s, ∫ x, (Q i).indicator f x ∂μ := integral_finsetSum s hi
     _ = ∑ i ∈ s, ∫ x in Q i, f x ∂μ :=
       Finset.sum_congr rfl (fun i hi => integral_indicator (hQ i hi))
-
-
 
 theorem setIntegral_le_cutoff_sq_integral
     {X : Type*} [MeasurableSpace X] {μ : Measure X}

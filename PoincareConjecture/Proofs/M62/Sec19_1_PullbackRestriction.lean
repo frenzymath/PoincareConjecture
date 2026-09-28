@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackConnection
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +13,6 @@ namespace PoincareConjecture.M62
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem pullback_frozen_extension {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M} {x : ℝ}
@@ -47,8 +35,6 @@ theorem pullback_frozen_extension {g : RiemannianMetric n M}
         D.connection (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) v)
           (γ x) (curveVelocity γ x) = _
   rw [heq.deriv_eq, deriv_const, map_zero, zero_add]
-
-
 
 theorem pullback_ambient_field {g : RiemannianMetric n M}
     (D : LeviCivitaData g) {γ : ℝ → M} {x : ℝ}

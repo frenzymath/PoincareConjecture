@@ -5,19 +5,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.DiskExistence
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.FlattenedPolygonLength
 import PoincareConjecture.Proofs.M63.Sec19_4_Approximation.SampledPolygonLength
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -33,9 +20,6 @@ variable {M : Type u} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow 3 M (Set.Icc a b)}
   {Gamma : ContinuousMap LoopTwoSphere (C1FreeLoopSpace (M := M))}
   {zeta : ℝ}
-
-
-
 
 structure M64RawBoundaryAnnulusPackage
     (A : M63RawApproximation F Gamma zeta) where
@@ -53,9 +37,6 @@ structure M64RawBoundaryAnnulusPackage
   annulus_piecewise : ∀ z, M64PiecewiseC1Annulus (annulus z)
   annulus_geodesic : ∀ z, M64GeodesicAnnulus (F.connection a) (annulus z)
   annulus_area : ∀ z, 0 ≤ (annulus z).area ∧ (annulus z).area < zeta
-
-
-
 
 noncomputable def m64RawFamilyApproximation_of_M63
     (hnull : M61NullFamily Gamma)

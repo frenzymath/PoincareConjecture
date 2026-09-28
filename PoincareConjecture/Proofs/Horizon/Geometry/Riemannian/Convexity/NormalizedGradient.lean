@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gradient
 import Mathlib.Analysis.ODE.Gronwall
 
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,12 +14,9 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 def normalizedNegGradient (D : LeviCivitaData g) (f : M → ℝ)
     (x : M) : TangentSpace (𝓡 n) x :=
   -(g.inner x (D.gradient f x) (D.gradient f x))⁻¹ • D.gradient f x
-
 
 theorem contMDiffAt_normalizedNegGradient (D : LeviCivitaData g)
     {f : M → ℝ} {x : M} (hf : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ f x)
@@ -44,15 +31,12 @@ theorem contMDiffAt_normalizedNegGradient (D : LeviCivitaData g)
     hgrad.inner_bundle hgrad
   exact (((contDiffAt_inv ℝ hregular).contMDiffAt.comp x hpair).neg).smul_section hgrad
 
-
 theorem mvfderiv_normalizedNegGradient (D : LeviCivitaData g)
     (f : M → ℝ) (x : M)
     (hregular : g.inner x (D.gradient f x) (D.gradient f x) ≠ 0) :
     mvfderiv (𝓡 n) f x (normalizedNegGradient D f x) = -1 := by
   simp only [normalizedNegGradient, map_smul, smul_eq_mul, ← D.inner_gradient]
   field_simp
-
-
 
 theorem inner_connection_smul_gradient_of_tangent
     (D : LeviCivitaData g) {f a : M → ℝ} {x : M}
@@ -68,8 +52,6 @@ theorem inner_connection_smul_gradient_of_tangent
     ContinuousLinearMap.smulRight_apply, map_add, map_smul, smul_apply,
     smul_eq_mul, D.inner_gradient, hv, mul_zero, add_zero, zero_add,
     D.hessian_eq_inner_connection_gradient hf] using he
-
-
 
 theorem inner_connection_normalized_neg_gradient
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}
@@ -91,8 +73,6 @@ theorem inner_connection_normalized_neg_gradient
     ((differentiableAt_inv hregular).mdifferentiableAt.comp x hpair).neg
   rw [inner_connection_smul_gradient_of_tangent D hf hinv v hv]
   ring
-
-
 
 theorem inner_connection_normalized_neg_gradient_le
     (D : LeviCivitaData g) {f : M → ℝ} {x : M}
@@ -116,9 +96,6 @@ theorem inner_connection_normalized_neg_gradient_le
     -(D.hessian f x v v / g.inner x (D.gradient f x) (D.gradient f x))
         ≤ -((η * g.inner x v v) / B) := neg_le_neg (h₁.trans h₂)
     _ = -(η / B) * g.inner x v v := by ring
-
-
-
 
 theorem squared_length_le_exp_of_derivative_bound
     {q q' : ℝ → ℝ} {a b c : ℝ}

@@ -3,13 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiffMFDeriv
 import Mathlib.Topology.Order.Compact
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -25,8 +18,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem eventually_derivative_bound (g : RiemannianMetric n M) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) ∞ f) (p : M) :
@@ -78,8 +69,6 @@ theorem eventually_derivative_bound (g : RiemannianMetric n M) {f : M → ℝ}
           (norm_nonneg _) (by positivity)
     _ = ((‖fderiv ℝ F (e p)‖ + 1) * C) * g.tangentNorm y v := (mul_assoc _ _ _).symm
 
-
-
 theorem exists_metric_derivative_bound_on_compact (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) ∞ f)
     {S : Set M} (hS : IsCompact S) :
@@ -94,7 +83,6 @@ theorem exists_metric_derivative_bound_on_compact (g : RiemannianMetric n M)
   obtain ⟨p, hp, hxp⟩ := Set.mem_iUnion₂.mp (hs hx)
   exact (hxp v).trans (mul_le_mul_of_nonneg_right
     (Finset.single_le_sum (fun q _ ↦ hB q) hp) (Real.sqrt_nonneg _))
-
 
 theorem exists_metric_derivative_bound_of_hasCompactSupport (g : RiemannianMetric n M)
     {f : M → ℝ} (hf : ContMDiff (𝓡 n) (𝓘(ℝ, ℝ)) ∞ f)

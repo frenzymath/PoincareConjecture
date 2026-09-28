@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.WeakLaplacian
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,7 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution n M}
-
 
 theorem regular_reducedLength_hamiltonJacobi (P : AncientAsymptoticSolitonPredecessors K)
     {R τ : ℝ} {p q : M} (r : ReducedLengthRegularPoint K.flow 0 R p q τ) :
@@ -50,8 +40,6 @@ theorem regular_reducedLength_hamiltonJacobi (P : AncientAsymptoticSolitonPredec
   rw [htime.deriv_eq, hgrad, ht, hg]
   ring
 
-
-
 theorem ae_reducedLength_hamiltonJacobi (P : AncientAsymptoticSolitonPredecessors K)
     (p : M) {τ : ℝ} (hτ : 0 < τ) :
     ∀ᵐ q ∂calibratedMetricVolume (K.flow.metric (0 - τ)),
@@ -65,7 +53,6 @@ theorem ae_reducedLength_hamiltonJacobi (P : AncientAsymptoticSolitonPredecessor
   filter_upwards [hreg] with q hq
   obtain ⟨r⟩ := D.regular_points (q, τ) hq
   exact P.regular_reducedLength_hamiltonJacobi r
-
 
 theorem ae_reducedLength_weak_integrands_relation
     (P : AncientAsymptoticSolitonPredecessors K) (p : M) {τ : ℝ} (hτ : 0 < τ)

@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AffineEdgeLevel
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,8 +7,6 @@ open Set
 namespace AffineMap
 
 variable {E : Type*} [AddCommGroup E] [Module ℝ E]
-
-
 
 theorem eq_edgeLevel_of_mem_affineSpan (A : E →ᵃ[ℝ] ℝ) {v u x : E} {c : ℝ}
     (hu : A u ≠ A v) (hx : x ∈ affineSpan ℝ ({v, u} : Set E)) (hAx : A x = c) :
@@ -30,16 +18,12 @@ theorem eq_edgeLevel_of_mem_affineSpan (A : E →ᵃ[ℝ] ℝ) {v u x : E} {c : 
     linarith
   rw [edgeLevel_eq_lineMap, ht]
 
-
-
 theorem edgeLevel_reverse (A : E →ᵃ[ℝ] ℝ) {v u : E} (hu : A u ≠ A v) (c : ℝ) :
     A.edgeLevel u v c = A.edgeLevel v u c := by
   apply A.eq_edgeLevel_of_mem_affineSpan hu
   · rw [edgeLevel_eq_lineMap, Set.pair_comm]
     exact lineMap_mem_affineSpan_pair _ u v
   · exact A.apply_edgeLevel hu.symm c
-
-
 
 theorem edgeLevel_neg (A : E →ᵃ[ℝ] ℝ) {v u : E} (hu : A u ≠ A v) (c : ℝ) :
     (-A).edgeLevel v u (-c) = A.edgeLevel v u c := by

@@ -1,27 +1,10 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace OpenPartialHomeomorph
-
-
-
-
-
 
 theorem locallyPiecewiseAffineOn_compatible_chart
     {M E F ι : Type*} [TopologicalSpace M]

@@ -1,23 +1,10 @@
 import PoincareConjecture.Proofs.M44.Mathlib.GuardedScalarComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.Proofs.M46
-
-
-
 
 theorem le_two_inv_sq_of_deriv_le_threeHalves_above
     {f f' : ℝ → ℝ} {a b B r : ℝ} (hB : 0 < B) (hr : 0 < r)
@@ -71,9 +58,6 @@ theorem le_two_inv_sq_of_deriv_le_threeHalves_above
       nlinarith
   intro s hs
   exact (hle s hs).trans (hbounds s hs).2
-
-
-
 
 theorem le_four_inv_sq_of_deriv_le_sq_above
     {f f' : ℝ → ℝ} {a b B r : ℝ} (hB : 0 < B) (hr : 0 < r)

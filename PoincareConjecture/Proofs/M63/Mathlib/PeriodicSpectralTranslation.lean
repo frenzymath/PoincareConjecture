@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M63.Mathlib.PeriodicSobolevJets
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicTranslation
 import Mathlib.Analysis.Normed.Group.Tannery
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle Filter
@@ -20,8 +11,6 @@ namespace PoincareConjecture.M63
 
 variable {L : ℝ}
 
-
-
 noncomputable def periodicSpectralTranslation (a : ℝ) :
     lp (fun _ : ℤ => ℂ) 2 →L[ℂ] lp (fun _ : ℤ => ℂ) 2 :=
   lp.mapCLM 2 (fun n : ℤ => ContinuousLinearMap.mul ℂ ℂ
@@ -30,9 +19,6 @@ noncomputable def periodicSpectralTranslation (a : ℝ) :
       intro z
       change ‖fourier n (-(a : AddCircle L)) * z‖ ≤ 1 * ‖z‖
       rw [norm_mul, fourier_apply, Circle.norm_coe])
-
-
-
 
 theorem periodicSpectralTranslation_spec (a : ℝ) (u : lp (fun _ : ℤ => ℂ) 2) :
     (∀ n : ℤ, periodicSpectralTranslation (L := L) a u n =
@@ -44,9 +30,6 @@ theorem periodicSpectralTranslation_spec (a : ℝ) (u : lp (fun _ : ℤ => ℂ) 
   refine ⟨fun _ => rfl, le_antisymm ?_ ?_⟩
   · exact lp.norm_mono (by norm_num : (2 : ENNReal) ≠ 0) (fun n => (hn n).le)
   · exact lp.norm_mono (by norm_num : (2 : ENNReal) ≠ 0) (fun n => (hn n).symm.le)
-
-
-
 
 theorem periodicSpectralTranslation_group :
     periodicSpectralTranslation (L := L) 0 = ContinuousLinearMap.id ℂ _ ∧
@@ -64,10 +47,6 @@ theorem periodicSpectralTranslation_group :
     simp_rw [AddCircle.coe_add, neg_add, fourier_apply, zsmul_add,
       toCircle_add, Circle.coe_mul]
     ring
-
-
-
-
 
 theorem continuous_periodicSpectralTranslation :
     Continuous (fun p : ℝ × lp (fun _ : ℤ => ℂ) 2 =>
@@ -130,9 +109,6 @@ theorem continuous_periodicSpectralTranslation :
 
 variable [Fact (0 < L)]
 
-
-
-
 theorem weightedFourier_periodicSpectralTranslation
     (w u : lp (fun _ : ℤ => ℂ) 2) (a : ℝ) :
     weightedFourier (L := L) w (periodicSpectralTranslation (L := L) a u) =
@@ -148,9 +124,6 @@ theorem weightedFourier_periodicSpectralTranslation
     ring
   simp_rw [hterm] at hs
   exact (weightedFourier_hasSum w (periodicSpectralTranslation (L := L) a u)).unique hs
-
-
-
 
 theorem periodicSobolevJet_periodicSpectralTranslation (k j : ℕ) (hj : j ≤ k)
     (u : lp (fun _ : ℤ => ℂ) 2) (a : ℝ) :

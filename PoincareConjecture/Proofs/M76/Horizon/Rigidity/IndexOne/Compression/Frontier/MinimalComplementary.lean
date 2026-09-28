@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Compression.Compl
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.Frontier.Complexity
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Cutting.ComplementarySourceSlab
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

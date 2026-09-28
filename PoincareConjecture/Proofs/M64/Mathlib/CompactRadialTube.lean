@@ -2,19 +2,12 @@ import Mathlib.Topology.Algebra.Module.Basic
 import Mathlib.Topology.Compactness.Compact
 import Mathlib.Topology.Instances.Real.Lemmas
 
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
 open scoped Topology
 
 namespace PoincareConjecture
-
-
-
-
 
 theorem m64_exists_extended_radial_tube
     {E : Type*} [TopologicalSpace E] [SMul ℝ E] [ContinuousSMul ℝ E]

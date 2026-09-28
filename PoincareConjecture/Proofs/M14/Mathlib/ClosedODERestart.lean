@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M14.Mathlib.ClosedFamilyRestart
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODEJointFamily
 import PoincareConjecture.Proofs.M14.Mathlib.ClosedODEUniqueness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Metric
@@ -19,10 +10,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M14
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem closedODE_exists_restart_family {a b : ℝ} (hab : a < b) (t₀ : Icc a b)
     {U : Set E} (hU : IsOpen U) (f : ℝ × E → E)
@@ -60,10 +47,6 @@ theorem closedODE_exists_restart_family {a b : ℝ} (hab : a < b) (t₀ : Icc a 
   have heqfun : (fun t => β (y, t)) = fun t => α (x, t) := funext heq
   rw [heqfun, heq s]
   exact (hdata x hx').2 s hs
-
-
-
-
 
 theorem closedODE_exists_restart_along {a b : ℝ} (hab : a < b) (t₀ : Icc a b)
     {U : Set E} (hU : IsOpen U) (f : ℝ × E → E)

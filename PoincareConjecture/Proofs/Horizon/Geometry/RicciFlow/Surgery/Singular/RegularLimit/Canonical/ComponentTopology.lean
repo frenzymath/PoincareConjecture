@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.Reg
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Metric.Flow
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Induction.EpochExtension.Canonical.StaticTopology
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -25,7 +16,6 @@ namespace SingularTimeReference
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
 
 theorem inverse_image_connectedComponent
     (R : SingularTimeReference F T M) (t : ℝ) (ht : t ∈ Ico R.tMinus T)
@@ -45,7 +35,6 @@ theorem inverse_image_connectedComponent
 end SingularTimeReference
 
 namespace SingularRegularLimit
-
 
 theorem connectedComponent_subtype_eq_preimage
     {X : Type u} [TopologicalSpace X] {U : Set X} (x : U)
@@ -69,8 +58,6 @@ variable {M : Type u} [TopologicalSpace M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M]
   {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
-
-
 
 theorem exists_late_cComponent_terminal_carrier
     (H : SingularTimeAssumptions F T M) (P04 : RicciFlowCurvatureTheory.{u})

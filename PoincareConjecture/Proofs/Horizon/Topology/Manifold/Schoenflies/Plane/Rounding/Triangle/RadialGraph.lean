@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Rounding.Triangle.AngularLift
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Coordinates.PeriodicCircle
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +11,6 @@ namespace Poincare.Manifold.Schoenflies.Plane
 
 private instance : Fact (Module.finrank ℝ ℂ = 2) := ⟨by simp⟩
 private instance : Fact (Module.finrank ℝ ℂ = 1 + 1) := ⟨by simp⟩
-
-
 
 theorem exists_smooth_radial_graph_roundedEquilateral {ρ : ℝ → ℝ} {δ : ℝ}
     (hδ : 0 < δ) (hδsmall : δ < 2 / 9)

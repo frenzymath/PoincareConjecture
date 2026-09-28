@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonGeometricInputs
 import PoincareConjecture.Proofs.M76.Triangulation.ZeroChargeAffineHeightStep
 import PoincareConjecture.Proofs.M76.Mathlib.AffineHypersurfaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -36,10 +26,6 @@ theorem exists_affine_first_coordinate (ell : V3 →ᴬ[ℝ] ℝ)
   simpa only [sub_zero] using hx
 
 variable {X : Type*} [TopologicalSpace X] {ι : Type*}
-
-
-
-
 
 theorem PLDomain.locallyFlat_frontier_image
     {e : ι → OpenPartialHomeomorph X V3} {K : Set X}
@@ -75,10 +61,6 @@ theorem PLDomain.locallyFlat_frontier_image
     rw [ha]
     have hfront := B.isImage_frontier_of_affine_nonneg ell hell hhalf
     exact hmem.trans (hfront.apply_mem_iff hyB).symm
-
-
-
-
 
 theorem PLDomain.exists_brown_ball_in_frontier_chart
     (brown : HasBrownLocallyFlatSphereBalls)

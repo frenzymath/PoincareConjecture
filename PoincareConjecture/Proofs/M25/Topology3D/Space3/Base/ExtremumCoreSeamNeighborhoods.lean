@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Base.RegularCoreFlowData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Decomposition.FamilyCoreGeometry
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.CollarCoordinates
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace NNReal Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem FamilyCutState.exists_morse_rest_old_seam_neighborhood
     {P : SurgeryCapProfile} {u : UnitTwoSphere}
@@ -168,7 +158,6 @@ theorem FamilyCutState.exists_morse_rest_old_seam_neighborhood
       · intro hh
         have hz : C.scale * z = 0 := by rw [← hsigned, hh, sub_self, mul_zero]
         exact (mul_eq_zero.mp hz).resolve_left C.scale_pos.ne'
-
 
 theorem FamilyCutState.exists_morse_rest_new_seam_neighborhood
     {P : SurgeryCapProfile} {u : UnitTwoSphere}

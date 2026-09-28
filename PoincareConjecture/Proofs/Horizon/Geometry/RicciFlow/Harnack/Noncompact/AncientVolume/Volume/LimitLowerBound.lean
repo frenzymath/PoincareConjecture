@@ -1,19 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.Splitting.CompleteCoverage
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Measure.Balls
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -75,7 +62,6 @@ private theorem euclideanHausdorffMeasure_ball_le_of_distortion
 
 namespace PoincareConjecture.FlowCarrier
 
-
 noncomputable def metricRiemannianVolume {n : ℕ} (C : FlowCarrier n) (g : C.metric) :
     @Measure C.carrier C.measurableSpace :=
   letI : TopologicalSpace C.carrier := C.topologicalSpace
@@ -91,8 +77,6 @@ end PoincareConjecture.FlowCarrier
 namespace PoincareConjecture.PointedGeometricConvergence
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
 
 theorem eventually_source_ball_volume_le_of_metricComplete_zero
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -146,8 +130,6 @@ theorem eventually_source_ball_volume_le_of_metricComplete_zero
   apply euclideanHausdorffMeasure_ball_le_of_distortion n inv _ _ hA
     (zero_lt_one.trans hC) hbase
   simpa only [hsourceBall] using hk
-
-
 
 theorem ball_volume_lower_bound_of_metricComplete_zero
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

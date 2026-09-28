@@ -2,24 +2,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Plane.TubeGraphSlide
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.HeightExtension
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.TimePreservingFibers
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem exists_curveAnnularTube_graph_transport
     {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]

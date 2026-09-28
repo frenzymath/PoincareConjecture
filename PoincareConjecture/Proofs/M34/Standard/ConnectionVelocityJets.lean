@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M34.Standard.CanonicalRicciGradient
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,22 +12,15 @@ namespace PoincareConjecture.M34
 
 open DifferenceEnergy SpacetimeBounds SpacetimeBounds.Bootstrap
 
-
-
 noncomputable def ricciGradientThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) (i j k : Fin n) : ℝ :=
   ∑ l : Fin n, covariantCurvatureThreeJet n J i l l j k
-
-
-
 
 noncomputable def connectionVelocityThreeJet (n : ℕ)
     (J : Jet (V n) (MetricCoefficient n) 3) (i j : Fin n) : V n :=
   inverseMetricThreeJet n J (∑ k : Fin n,
     (-ricciGradientThreeJet n J i j k - ricciGradientThreeJet n J j k i +
       ricciGradientThreeJet n J k i j) • EuclideanSpace.proj k)
-
-
 
 theorem continuousOn_ricciGradientThreeJet (n : ℕ) :
     ContinuousOn (ricciGradientThreeJet n) (curvatureJetDomain n 1) := by
@@ -52,8 +35,6 @@ theorem continuousOn_ricciGradientThreeJet (n : ℕ) :
   exact continuousOn_pi.mp (continuousOn_pi.mp (continuousOn_pi.mp
     (continuousOn_pi.mp (continuousOn_pi.mp
       (continuousOn_covariantCurvatureThreeJet n) i) l) l) j) k
-
-
 
 theorem continuousOn_connectionVelocityThreeJet (n : ℕ) :
     ContinuousOn (connectionVelocityThreeJet n) (curvatureJetDomain n 1) := by
@@ -70,8 +51,6 @@ theorem continuousOn_connectionVelocityThreeJet (n : ℕ) :
 
 variable {n : ℕ} (U : Set (V n)) (hU : IsOpen U) [Nonempty U]
 
-
-
 noncomputable def canonicalDomain_connectionVelocity :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace
     letI := hU.isOpenEmbedding_subtypeVal.isManifold_singleton (I := 𝓡 n) (n := ∞)
@@ -84,8 +63,6 @@ noncomputable def canonicalDomain_connectionVelocity :
     canonicalDomain_covariantCurvatureArray U hU g D p x i l l j k
   exact (g.pullbackCoefficients (extChartAt (𝓡 n) p).symm x).inverse
     (∑ k : Fin n, (-C i j k - C j k i + C k i j) • EuclideanSpace.proj k)
-
-
 
 theorem canonicalDomain_connectionVelocity_from_jets :
     letI := hU.isOpenEmbedding_subtypeVal.singletonChartedSpace

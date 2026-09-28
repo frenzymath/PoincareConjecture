@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.CompactIntegralCurveNative
 import PoincareConjecture.Proofs.M03.Existence.AutonomousFlowInverseNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff

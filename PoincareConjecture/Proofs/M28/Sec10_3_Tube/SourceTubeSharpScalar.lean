@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M28.Sec10_3_Tube.SourceTubeVolume
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,8 +9,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.M28.CounterexampleNeckFamily
-
-
 
 theorem exists_source_tube_sharp_scalar_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧
@@ -62,9 +50,6 @@ theorem exists_source_tube_sharp_scalar_accuracy :
   rw [H.normalizedSlice_scalar_eq]
   apply (lt_div_iff₀ (H.base_scalar_pos k)).mpr
   simpa only [D, GeneralizedRicciFlowData.scalar, mul_assoc] using hraw
-
-
-
 
 theorem exists_source_tube_fresh_scale_accuracy :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ (1 / 200 : ℝ) ∧

@@ -3,27 +3,12 @@ import Mathlib.Topology.Order.IsLUB
 import Mathlib.Topology.Order.Compact
 import Mathlib.Topology.Instances.ENNReal.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
 open scoped ENNReal Topology
 
 namespace PoincareConjecture.M30
-
-
-
 
 theorem exists_strictMono_backward_time_exhaustion
     {T0 : ℝ≥0∞} (hT0 : 0 < T0) :

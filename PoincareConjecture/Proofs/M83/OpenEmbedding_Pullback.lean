@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M02.Topology.PositiveThreeAtlas
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -22,9 +12,6 @@ universe u v
 namespace PoincareConjecture.Proofs.M83
 
 open PoincareConjecture.Proofs.M02.Topology
-
-
-
 
 def positiveThreeAtlasOpenEmbedding
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]

@@ -1,20 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeModulusMinimizingSequence
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeBoundaryCompactness.RampContinuousWeakLimit
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -30,10 +16,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)} {circumference : ℝ}
 
 local notation "Strip" => Set.preimage (fun p : LoopPlane => p 1) (Ioo (0 : ℝ) 1)
-
-
-
-
 
 theorem free_ramp_exists_continuous_weak_minimizing_limit
     (P : M62.CircleProductData F circumference) (t : ℝ)

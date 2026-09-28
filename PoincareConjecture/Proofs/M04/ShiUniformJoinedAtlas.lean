@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M04.ShiJoinedDensity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -100,4 +93,3 @@ theorem exists_shiJoinedAtlas_uniform_bound [T2Space M]
       (mul_le_mul_of_nonneg_right (hBle j) (pow_nonneg (norm_nonneg z) 3))
 
 end PoincareConjecture.M04
-

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.SimplexRelativeInteriorCoordinates
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Analysis.Normed.Affine.AddTorsorBases
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ open Set
 namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
-
-
 
 theorem triangle_erase_is_edge (K : SimplicialComplex ℝ E)
     {t : Finset E} (ht : t ∈ K.faces) (hcard : t.card = 3) {p : E} (hp : p ∈ t) :
@@ -32,7 +21,6 @@ theorem triangle_erase_is_edge (K : SimplicialComplex ℝ E)
 
 omit [DecidableEq E] in
 
-
 theorem triangle_centroid_mem_interior [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (hdim : Module.finrank ℝ E = 2)
     {t : Finset E} (ht : t ∈ K.faces) (hcard : t.card = 3) :
@@ -41,8 +29,6 @@ theorem triangle_centroid_mem_interior [FiniteDimensional ℝ E]
   have hc := b.centroid_mem_interior_convexHull
   change Finset.univ.centroid ℝ ((↑) : t → E) ∈ interior (convexHull ℝ (range b)) at hc
   simpa only [Finset.centroid_univ, b, AffineIndependent.range_affineBasisOfCard] using hc
-
-
 
 theorem triangle_frontier_eq_iUnion_erase [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (hdim : Module.finrank ℝ E = 2)
@@ -65,8 +51,6 @@ theorem triangle_frontier_eq_iUnion_erase [FiniteDimensional ℝ E]
     (K.nonempty_of_mem_faces ht) (K.indep ht) x]
   simp only [mem_iUnion, Subtype.exists, exists_prop]
 
-
-
 theorem planar_triangle_geometry [FiniteDimensional ℝ E]
     (K : SimplicialComplex ℝ E) (hdim : Module.finrank ℝ E = 2)
     {t : Finset E} (ht : t ∈ K.faces) (hcard : t.card = 3) :
@@ -79,8 +63,6 @@ theorem planar_triangle_geometry [FiniteDimensional ℝ E]
     K.triangle_centroid_mem_interior hdim ht hcard,
     K.triangle_frontier_eq_iUnion_erase hdim ht hcard,
     fun _ hp => K.triangle_erase_is_edge ht hcard hp⟩
-
-
 
 theorem distinct_triangle_inter_subset_frontiers (K : SimplicialComplex ℝ E)
     {t u : Finset E} (ht : t ∈ K.faces) (hu : u ∈ K.faces)

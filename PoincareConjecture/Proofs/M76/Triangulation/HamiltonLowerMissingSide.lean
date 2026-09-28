@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonWallComplementBall
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -20,10 +11,6 @@ variable {X α : Type*} [TopologicalSpace X] [T2Space X]
   {e : α → OpenPartialHomeomorph U (Fin 3 → ℝ)} {K S : Set U}
 
 local notation "R" => ((Subtype.val : U → X) ⁻¹' H)
-
-
-
-
 
 theorem PLDomain.relative_wall_missing_side [Nonempty U]
     (hH : IsCompact H) (hHU : frontier H ⊆ (U : Set X))

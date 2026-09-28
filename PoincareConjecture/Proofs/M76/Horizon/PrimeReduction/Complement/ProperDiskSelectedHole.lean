@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.ChosenHolePuncturedBall
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Complement.FinitePLBallAttachment
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry Geometry.CubicalThreeSphere
@@ -30,8 +20,6 @@ theorem IsFinitePLBallPair.isConnected_boundary_two
   exact cb.isConnected_of_convex_frontier
     (isCompact_closedBall _ _) (convex_closedBall _ _)
     ⟨0, ball_subset_interior_closedBall (mem_ball_self zero_lt_one)⟩ (by simp)
-
-
 
 theorem IsConnected.exists_unique_subset_finite_disjoint_closed
     {X ι : Type*} [TopologicalSpace X] [Finite ι] {s : Set X}
@@ -64,8 +52,6 @@ theorem IsConnected.exists_unique_subset_finite_disjoint_closed
   intro j hj
   by_contra hji
   exact disjoint_left.mp (hdis hji) (hj hx) hxi
-
-
 
 theorem IsFinitePLBallPair.exists_selected_hole_for_proper_disk
     {ι : Type*} [Finite ι] (a r : ι → Set V4)
@@ -124,8 +110,6 @@ theorem IsFinitePLBallPair.exists_selected_hole_for_proper_disk
       exact (hdQ hxd).2 (mem_iUnion.mpr ⟨j, hxj, hxnr⟩)
     have hxb : x ∈ b := hproper ▸ ⟨hxd, mem_iUnion.mpr ⟨j, hxr⟩⟩
     exact disjoint_left.mp (hdis hji) hxj (hbi hxb)
-
-
 
 theorem open_support_avoiding_other_closed_holes
     {X ι : Type*} [TopologicalSpace X] [Finite ι]

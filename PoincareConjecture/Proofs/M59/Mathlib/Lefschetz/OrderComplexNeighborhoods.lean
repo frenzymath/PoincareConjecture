@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.OrderComplexRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -23,15 +12,11 @@ open M02.Topology
 
 variable {J : Type u} [PartialOrder J] [Fintype J]
 
-
-
 theorem mem_orderComplexNeighborhood_iff (s : Finset J)
     (z : (finiteOrderComplex J).space) :
     z ∈ orderComplexNeighborhood s ↔ ∃ i ∈ s, 0 < z.val i := by
   exact Finset.sum_pos_iff_of_nonneg
     (fun i _ => ((finiteOrderComplex_space J z.val).mp z.property).1 i)
-
-
 
 theorem orderComplexNeighborhood_mono {s t : Finset J} (h : s ⊆ t) :
     orderComplexNeighborhood s ⊆ orderComplexNeighborhood t := by
@@ -41,15 +26,12 @@ theorem orderComplexNeighborhood_mono {s t : Finset J} (h : s ⊆ t) :
 
 open scoped Classical in
 
-
 theorem orderComplexNeighborhood_union (s t : Finset J) :
     orderComplexNeighborhood (s ∪ t) =
       orderComplexNeighborhood s ∪ orderComplexNeighborhood t := by
   ext z
   simp only [mem_orderComplexNeighborhood_iff, Finset.mem_union, Set.mem_union,
     or_and_right, exists_or]
-
-
 
 theorem orderComplexNeighborhood_univ :
     orderComplexNeighborhood (Finset.univ : Finset J) = Set.univ := by
@@ -60,7 +42,6 @@ theorem orderComplexNeighborhood_univ :
   exact zero_lt_one
 
 open scoped Classical in
-
 
 theorem orderComplexNeighborhood_minimal_union (s : Finset J) (v : J) :
     orderComplexNeighborhood (s.erase v) ∪
@@ -77,8 +58,6 @@ theorem orderComplexNeighborhood_minimal_union (s : Finset J) (v : J) :
     · exact Or.inl ⟨h, hj⟩
 
 open scoped Classical in
-
-
 
 theorem orderComplexNeighborhood_minimal_inter (s : Finset J) (v : J)
     (hminimal : ∀ j ∈ s, j ≤ v → j = v) :

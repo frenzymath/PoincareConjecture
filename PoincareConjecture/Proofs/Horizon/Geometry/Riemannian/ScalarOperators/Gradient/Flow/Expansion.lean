@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Convexity.SmoothFlow
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -18,14 +11,12 @@ open scoped Manifold ContDiff Bundle Topology
 
 namespace PoincareConjecture.LeviCivitaData
 
-
 noncomputable def normalizedGradient
     {n : ℕ} {M : Type*} [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
     {g : PoincareConjecture.RiemannianMetric n M} (D : PoincareConjecture.LeviCivitaData g)
     (f : M → ℝ) (x : M) : TangentSpace (𝓡 n) x :=
   (g.inner x (D.gradient f x) (D.gradient f x))⁻¹ • D.gradient f x
-
 
 private theorem normalizedGradient_eq_neg_normalizedNegGradient
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -96,8 +87,6 @@ private theorem comp_normalizedGradient_eq_add
     (fun t _ => (hl t).hasDerivWithinAt)
     (fun t ht => (hd t ht).continuousAt.continuousWithinAt)
     (fun t _ => (hl t).continuousAt.continuousWithinAt) (by simp)
-
-
 
 theorem exists_local_normalizedGradient_flow_with_expansion
     {n : ℕ} {g : PoincareConjecture.RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

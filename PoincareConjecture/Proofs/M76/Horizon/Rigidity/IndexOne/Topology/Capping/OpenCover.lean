@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M54.Mathlib.VanKampenSurjectivity
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.HomotopyFundamentalGroup
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 open scoped unitInterval
@@ -18,7 +10,6 @@ namespace PoincareConjecture.M76.HamiltonIntervalTorus
 open VanKampen
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem pathClass_surjective_of_pathConnected_overlap
     {X : Type*} [TopologicalSpace X] (U V : Set X)
@@ -92,8 +83,6 @@ theorem pathClass_surjective_of_pathConnected_overlap
     (connector_apply_of_mem U V hcover hVs b hb y.1 y.2) (fun _ => rfl)
   exact (hr.trans (Path.Homotopic.Quotient.eq.mpr h)).symm
 
-
-
 theorem inclusion_surjective_of_pathConnected_overlap
     {X : Type*} [TopologicalSpace X] (U V : Set X)
     (hU : IsOpen U) (hV : IsOpen V) (hcover : U ∪ V = univ)
@@ -101,8 +90,6 @@ theorem inclusion_surjective_of_pathConnected_overlap
     (b : U) (hb : b.1 ∈ V) :
     Function.Surjective (FundamentalGroup.map (inclusion U) b) :=
   fun q => pathClass_surjective_of_pathConnected_overlap U V hU hV hcover hVs hW b hb b b q
-
-
 
 theorem simplyConnectedSpace_of_open_cover_capping
     {X : Type*} [TopologicalSpace X] (U V : Set X)

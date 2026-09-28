@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M38.FullCutOverlap
 import PoincareConjecture.Proofs.M38.RetainedComponents
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,14 +14,12 @@ namespace PoincareConjecture.M38
 variable (F : SurgeryFlowData.{u}) (T : ℝ) (hT : T ∈ F.surgery_times)
   [Nonempty (F.slice T).carrier] (P : ∀ i, EventCapCoordinates F T hT i)
 
-
 theorem retained_subset_fullCut :
     eventRetainedInteriorOpen F T hT ≤ eventCutOpen F T hT P Set.univ := by
   intro x hx
   change x ∈ (eventCutOpen F T hT P Set.univ : Set _)
   rw [eventCutOpen_univ]
   exact Or.inl hx
-
 
 theorem discarded_subset_fullCut :
     eventDiscardedOpen F T hT ≤ eventCutOpen F T hT P Set.univ := by
@@ -38,44 +28,35 @@ theorem discarded_subset_fullCut :
   rw [eventCutOpen_univ]
   exact Or.inr hx
 
-
 noncomputable def fullCutRetained :
     eventRetainedInteriorOpen F T hT → eventCutOpen F T hT P Set.univ :=
   Set.inclusion (retained_subset_fullCut F T hT P)
-
 
 noncomputable def fullCutDiscarded :
     eventDiscardedOpen F T hT → eventCutOpen F T hT P Set.univ :=
   Set.inclusion (discarded_subset_fullCut F T hT P)
 
-
 theorem fullCutRetained_openEmbedding : IsOpenEmbedding (fullCutRetained F T hT P) :=
   .inclusion (retained_subset_fullCut F T hT P)
     ((eventRetainedInteriorOpen F T hT).isOpen.preimage continuous_subtype_val)
-
 
 theorem fullCutDiscarded_openEmbedding : IsOpenEmbedding (fullCutDiscarded F T hT P) :=
   .inclusion (discarded_subset_fullCut F T hT P)
     ((eventDiscardedOpen F T hT).isOpen.preimage continuous_subtype_val)
 
-
 theorem fullCutRetained_smooth : ContMDiff (𝓡 3) (𝓡 3) ∞ (fullCutRetained F T hT P) :=
   contMDiff_inclusion (retained_subset_fullCut F T hT P)
 
-
 theorem fullCutDiscarded_smooth : ContMDiff (𝓡 3) (𝓡 3) ∞ (fullCutDiscarded F T hT P) :=
   contMDiff_inclusion (discarded_subset_fullCut F T hT P)
-
 
 noncomputable def fullCutPostOld :
     eventCapComplementOpen F T hT → eventCutOpen F T hT P Set.univ :=
   fullCutRetained F T hT P ∘ (retentionInteriorHomeomorph F T hT).symm
 
-
 theorem fullCutPostOld_openEmbedding : IsOpenEmbedding (fullCutPostOld F T hT P) :=
   (fullCutRetained_openEmbedding F T hT P).comp
     (retentionInteriorHomeomorph F T hT).symm.isOpenEmbedding
-
 
 theorem fullCut_old_sides_disjoint :
     Disjoint (Set.range (fullCutPostOld F T hT P))
@@ -85,7 +66,6 @@ theorem fullCut_old_sides_disjoint :
   have heq := congrArg Subtype.val hz
   exact z.property (heq.symm ▸ interior_subset
     ((retentionInteriorHomeomorph F T hT).symm y).property)
-
 
 theorem fullCut_old_cover :
     Set.range (fullCutPostOld F T hT P) ∪ Set.range (fullCutDiscarded F T hT P) = Set.univ := by
@@ -102,7 +82,6 @@ theorem fullCut_old_cover :
     exact Subtype.ext rfl
   · exact Or.inr ⟨⟨x.val, hd⟩, Subtype.ext rfl⟩
 
-
 theorem fullCut_positive_attachment (i : Fin (F.event T hT).cap_count)
     (x : capDoubleBall) (hx : 1 < ‖x.val‖) :
     cutAttachmentChart F T hT P Set.univ (⟨i, Set.mem_univ i⟩, true) x =
@@ -113,7 +92,6 @@ theorem fullCut_positive_attachment (i : Fin (F.event T hT).cap_count)
     ((P i).attachmentChart x).val
   rw [(P i).attachmentChart_apply hx]
   rfl
-
 
 theorem fullCut_negative_attachment (i : Fin (F.event T hT).cap_count)
     (x : capDoubleBall) (hx : 1 < ‖x.val‖) :

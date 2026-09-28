@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Variation.Piece
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Connection.AlongCurve.Manifold
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,13 +18,11 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 def intrinsicIndexIntegrand (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (q : ℝ → M) (V : (t : ℝ) → TangentSpace (𝓡 n) (q t)) (t : ℝ) : ℝ :=
   g.inner (q t) (manifoldCovDerivAlong g q V 1 t) (manifoldCovDerivAlong g q V 1 t) -
     g.inner (q t) (D.curvature (q t) (V t)
       (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) q t 1) (mfderiv 𝓘(ℝ, ℝ) (𝓡 n) q t 1)) (V t)
-
 
 theorem chartCoefficients_apply (g : RiemannianMetric n M) (a : M) {z : M}
     (hz : z ∈ (extChartAt (𝓡 n) a).source) (v w : TangentSpace (𝓡 n) z) :
@@ -49,8 +40,6 @@ theorem chartCoefficients_apply (g : RiemannianMetric n M) (a : M) {z : M}
     (mfderiv (𝓡 n) (𝓡 n) c.symm (c z) (mfderiv (𝓡 n) (𝓡 n) c z w)) = _
   rw [hv, hv, c.left_inv hz]
 
-
-
 theorem isMetricCompatibleAt_chartCoefficients (g : RiemannianMetric n M) (a : M)
     {x : EuclideanSpace ℝ (Fin n)} (hx : x ∈ (extChartAt (𝓡 n) a).target) :
     IsMetricCompatibleAt (g.pullbackCoefficients (extChartAt (𝓡 n) a).symm)
@@ -61,7 +50,6 @@ theorem isMetricCompatibleAt_chartCoefficients (g : RiemannianMetric n M) (a : M
       ((isOpen_extChartAt_target a).mem_nhds hx)).differentiableAt (by simp))
     (g.isInvertible_chartCoefficients a hx)
     (Eventually.of_forall fun _ _ _ => g.symm _ _ _) V W X
-
 
 theorem christoffelBilinear_chart_symm (g : RiemannianMetric n M) (a : M)
     (x v w : EuclideanSpace ℝ (Fin n)) :
@@ -74,8 +62,6 @@ theorem christoffelBilinear_chart_symm (g : RiemannianMetric n M) (a : M)
   · simp only [christoffelBilinear_apply, coordinateChristoffel,
       fderiv_zero_of_not_differentiableAt hB, metricKoszulCovector]
     simp
-
-
 
 theorem energyDensity_eq_half_tangentNorm_sq
     (g : RiemannianMetric n M) (a : M)
@@ -103,8 +89,6 @@ theorem energyDensity_eq_half_tangentNorm_sq
   by_cases hzero : mfderiv 𝓘(ℝ, ℝ) (𝓡 n) q t 1 = 0
   · simp [hzero]
   · exact (g.pos _ _ hzero).le
-
-
 
 theorem chartIndexIntegrand_eq_intrinsic
     (g : RiemannianMetric n M) (D : LeviCivitaData g) (a : M)

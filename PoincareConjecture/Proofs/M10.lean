@@ -7,16 +7,6 @@ import PoincareConjecture.Proofs.M10.VolumePositive
 import PoincareConjecture.Proofs.M10.RestrictedVolume
 import PoincareConjecture.Proofs.M10.EuclideanRigidity
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -28,28 +18,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem reducedVolumeMonotonicity
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]
@@ -81,7 +49,6 @@ theorem reducedVolumeMonotonicity
     euclidean_rigidity := fun p _ hτ hmax heq ↦
       M10.staticEuclideanFlowOn_of_reducedVolume_eq hL hDifferential (G p) hτmax hT
         hwindow hcurvature hτ hmax heq }⟩
-
 
 theorem reducedVolumeMonotonicity_from_M08_M09
     {J : Set ℝ} [ConnectedSpace M] [T3Space M] [SecondCountableTopology M]

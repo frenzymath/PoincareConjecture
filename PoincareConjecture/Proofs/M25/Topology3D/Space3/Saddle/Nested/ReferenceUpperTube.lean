@@ -3,23 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.LowerEndTubePrimit
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HeightCoordinates
 import Mathlib.Analysis.Normed.Module.Ball.Pointwise
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Pointwise
 
 namespace PoincareConjecture.M25.Topology3D.NestedReferenceLower
-
-
 
 theorem exists_upper_reference_tube :
     let U : E2 → ℝ := fun v =>

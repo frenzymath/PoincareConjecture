@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.BoundaryMixedRestriction
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -37,10 +26,6 @@ local instance m64SmallPotential_trilinearSpace :
   ContinuousLinearMap.toNormedSpace
 
 set_option maxHeartbeats 1000000 in
-
-
-
-
 
 theorem m64WeightedMixedMetric_small_potential
     (dirichlet : Fin n → Prop) {a : LoopPlane} {R : ℝ} (hR : 0 < R)

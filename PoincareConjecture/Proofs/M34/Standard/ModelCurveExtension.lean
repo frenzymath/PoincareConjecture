@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M09.PullbackExtension
 import PoincareConjecture.Proofs.M09.VelocityRestriction
 import Mathlib.Analysis.Calculus.ContDiff.Deriv
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Bundle
@@ -23,14 +12,10 @@ namespace PoincareConjecture.M34
 
 variable {n : ℕ}
 
-
-
 theorem model_curveVelocity_eq_deriv (alpha : ℝ → EuclideanSpace ℝ (Fin n)) (s : ℝ) :
     curveVelocity (n := n) alpha s = deriv alpha s := by
   simp only [curveVelocity, mfderiv_eq_fderiv, deriv]
   rfl
-
-
 
 theorem model_curveVelocity_contDiffOn {alpha : ℝ → EuclideanSpace ℝ (Fin n)}
     {O : Set ℝ} (hO : IsOpen O) (ha : ContMDiffOn (𝓘(ℝ, ℝ)) (𝓡 n) ∞ alpha O) :
@@ -41,7 +26,6 @@ theorem model_curveVelocity_contDiffOn {alpha : ℝ → EuclideanSpace ℝ (Fin 
   exact ha.contDiffOn.deriv_of_isOpen hO (m := ∞) (by simp)
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 noncomputable def modelCurveVelocityExtension
     (alpha : ℝ → EuclideanSpace ℝ (Fin n)) (K O : Set ℝ)
@@ -61,9 +45,6 @@ noncomputable def modelCurveVelocityExtension
     intro s hs
     exact (PoincareConjecture.Proofs.M09.curveVelocityWithin_eq_curveVelocity alpha K s
       (hK s hs) ((ha.contMDiffAt (hO.mem_nhds (hKO hs))).mdifferentiableAt (by simp))).symm
-
-
-
 
 theorem modelCurveVelocityExtension_covariantDerivative
     {J : Set ℝ} (F : RicciFlow n (EuclideanSpace ℝ (Fin n)) J)

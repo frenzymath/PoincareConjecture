@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicShapeDerivative
 import PoincareConjecture.Proofs.M35.CapGeometry.IntrinsicCollarRadius
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ variable (g : RiemannianMetric 3 StandardCapSpace)
         (mfderiv (𝓡 3) (𝓡 3) (standardRotation A) x v) = g.inner x u v)
   (hcomplete : MetricComplete g)
 
-
-
 theorem intrinsic_orbit_sq_deriv {s : ℝ} (hs : 0 < s) :
     deriv (fun u => intrinsicWarpingRadius g hrotation hcomplete u ^ 2) s =
       2 * intrinsicRadialShape g hrotation hcomplete s *
@@ -37,8 +26,6 @@ theorem intrinsic_orbit_sq_deriv {s : ℝ} (hs : 0 < s) :
   rw [(hf.hasDerivAt.fun_pow 2).deriv]
   simp only [Nat.cast_ofNat, Nat.reduceSub, pow_one, intrinsicRadialShape]
   field_simp [(intrinsicWarpingRadius_pos g hrotation hcomplete hs).ne']
-
-
 
 theorem intrinsic_orbit_sq_jets_tendsto
     (g : ℕ → RiemannianMetric 3 StandardCapSpace)

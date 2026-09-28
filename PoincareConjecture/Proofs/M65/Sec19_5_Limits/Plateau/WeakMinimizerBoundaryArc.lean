@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerThreePi
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerRotation
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Plateau.WeakMinimizerCrosscutBoundary
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -38,8 +28,6 @@ private def m65ComplexLoopCircle : Circle ≃ₜ LoopCircle where
       change ‖orthonormalBasisOneI.repr.symm (z : LoopPlane)‖ = 1
       rw [LinearIsometryEquiv.norm_map, z.property]))
 
-
-
 def m65LoopAngular (t : ℝ) : LoopCircle :=
   ⟨Proofs.M58.angularPoint t, Proofs.M58.norm_angularPoint t⟩
 
@@ -52,14 +40,10 @@ private theorem m65LoopAngular_eq (t : ℝ) :
     Circle.coe_exp, Complex.exp_mul_I, orthonormalBasisOneI_repr_apply,
     ← Complex.ofReal_cos, ← Complex.ofReal_sin]
 
-
-
 theorem m65LoopAngular_open : IsOpenMap m65LoopAngular := by
   have he : m65LoopAngular = m65ComplexLoopCircle ∘ Circle.exp := funext m65LoopAngular_eq
   rw [he]
   exact m65ComplexLoopCircle.isOpenMap.comp isLocalHomeomorph_circleExp.isOpenMap
-
-
 
 theorem m65LoopAngular_continuous_surjective :
     Continuous m65LoopAngular ∧ Function.Surjective m65LoopAngular := by
@@ -70,11 +54,7 @@ theorem m65LoopAngular_continuous_surjective :
   refine ⟨Complex.arg (m65ComplexLoopCircle.symm z), ?_⟩
   simp only [Function.comp_apply, Circle.exp_arg, Homeomorph.apply_symm_apply]
 
-
-
 def m65CrosscutBoundaryWidth (r : ℝ) : ℝ := Real.pi - 2 * m65CrosscutAngle r
-
-
 
 theorem m65CrosscutBoundaryWidth_bounds {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
     0 < m65CrosscutBoundaryWidth r ∧ m65CrosscutBoundaryWidth r < Real.pi := by
@@ -83,16 +63,11 @@ theorem m65CrosscutBoundaryWidth_bounds {r : ℝ} (hr : 0 < r) (hr1 : r ≤ 1) :
   dsimp only [m65CrosscutBoundaryWidth, m65CrosscutAngle]
   constructor <;> linarith
 
-
-
 theorem m65CrosscutBoundaryWidth_mono : Monotone m65CrosscutBoundaryWidth := by
   intro r s hrs
   have h := Real.arccos_le_arccos (show r / 2 ≤ s / 2 by linarith)
   dsimp only [m65CrosscutBoundaryWidth, m65CrosscutAngle]
   linarith
-
-
-
 
 theorem m65CrosscutBoundaryArc_endpoints (θ : ℝ) {r : ℝ}
     (hr : 0 < r) (hr1 : r ≤ 1) :
@@ -126,10 +101,6 @@ theorem m65CrosscutBoundaryArc_endpoints (θ : ℝ) {r : ℝ}
       dsimp only [m65CrosscutBoundaryWidth]
       ring
     rw [he, m65LoopAngular_eq, m65LoopAngular_eq, Circle.exp_add_two_pi]
-
-
-
-
 
 theorem m65CrosscutBoundaryArc_dist_center (θ : ℝ) {r t : ℝ}
     (hr : 0 < r) (hr1 : r ≤ 1)

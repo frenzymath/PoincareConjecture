@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_CylinderCurvature
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,9 +14,6 @@ local notation "E" => StandardCapSpace
 
 variable {F : SurgeryFlowData.{u}} {C : GeneralizedSliceCarrier.{u}}
   {origin scale : ℝ} {I : Set ℝ} {U : Set C.carrier}
-
-
-
 
 theorem physical_scalar_le
     {e : SurgeryFlowCylinder F C origin scale I U}
@@ -43,9 +30,6 @@ theorem physical_scalar_le
   change (F.connection (origin + s / scale)).scalarCurvature (e.forward s hs x) / scale ≤ K
     at hb
   exact (div_le_iff₀ e.scale_pos).mp hb
-
-
-
 
 theorem physical_scalar_le_height {h : ℝ}
     {e : SurgeryFlowCylinder F C origin (h⁻¹ ^ 2) I U}

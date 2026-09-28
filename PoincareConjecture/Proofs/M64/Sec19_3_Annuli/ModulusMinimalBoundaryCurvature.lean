@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.ModulusMinimalLogCurvature
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.AnnulusLogBoundaryLimit
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.FreeUniformizationEnergy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -88,10 +77,6 @@ private theorem modulus_energy_transform_fderiv_periodic
   rw [fderiv_comp_add_left (f := fun q => Phi (m64ModulusEnergyDensity g r A.map q)) T] at hd
   exact hd
 
-
-
-
-
 theorem m64Annulus_modulusEnergy_fderiv_periodic
     (A : M64Annulus g c0 c1) (r : ℝ) (Phi : ℝ → ℝ) (p : LoopPlane)
     (hp : ContMDiffAt (𝓡 2) (𝓡 n) ∞ A.map (annulusPoint curvePeriod 0 + p)) :
@@ -101,10 +86,6 @@ theorem m64Annulus_modulusEnergy_fderiv_periodic
   modulus_energy_transform_fderiv_periodic A r Phi p hp
 
 variable [T2Space M] [CompactSpace M]
-
-
-
-
 
 theorem m64Annulus_modulus_log_energy_boundary_lower_bound
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)
@@ -189,10 +170,6 @@ theorem m64Annulus_modulus_log_energy_boundary_lower_bound
     m64_weightedEnergy_eq_area_of_ae_modulus_conformal A hr hconformal
   rw [heq] at hbound
   exact hbound
-
-
-
-
 
 theorem m64Annulus_modulus_log_boundary_curvature_le
     (D : LeviCivitaData g) (A : M64Annulus g c0 c1) {r : ℝ} (hr : 0 < r)

@@ -4,23 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.SegmentSubdivision
 import Mathlib.Analysis.Normed.Module.Basic
 import Mathlib.LinearAlgebra.AffineSpace.FiniteDimensional
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem refined_edge_neighbor_parameters
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
@@ -71,8 +59,6 @@ theorem refined_edge_neighbor_parameters
   · exact Or.inr ⟨lt_of_le_of_ne htr hparam.ne_right.symm,
       lt_of_le_of_ne hrs hparam.ne_left⟩
 
-
-
 theorem refined_crossing_neighbor_signs
     {E X V : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [DecidableEq E]
     [TopologicalSpace X] [NormedAddCommGroup V] [NormedSpace ℝ V]
@@ -122,8 +108,6 @@ theorem refined_crossing_neighbor_signs
 end Geometry.SimplicialComplex
 
 namespace OpenPartialHomeomorph
-
-
 
 theorem same_domain_height_signs
     {X V : Type*} [TopologicalSpace X] [NormedAddCommGroup V] [NormedSpace ℝ V]

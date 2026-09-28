@@ -1,14 +1,6 @@
 import Mathlib.Analysis.Convex.SimplicialComplex.Basic
 import Mathlib.Data.Real.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,14 +11,11 @@ variable {E : Type*} [AddCommGroup E] [Module ℝ E] [DecidableEq E]
 
 omit [DecidableEq E] in
 
-
 theorem apex_notMem_base_face (K : SimplicialComplex ℝ E) {c : E}
     (hc : c ∉ K.vertices) {s : Finset E} (hs : s ∈ K.faces) : c ∉ s := by
   intro hcs
   exact hc (K.down_closed hs (Finset.singleton_subset_iff.mpr hcs)
     (Finset.singleton_nonempty c))
-
-
 
 theorem cone_triangle_iff (K L : SimplicialComplex ℝ E) {c : E}
     (hc : c ∉ K.vertices)
@@ -53,8 +42,6 @@ theorem cone_triangle_iff (K L : SimplicialComplex ℝ E) {c : E}
     refine ⟨(hfaces _).mpr ⟨Finset.insert_nonempty _ _, Or.inr ?_⟩, ?_⟩
     · simpa only [Finset.erase_insert hce] using he
     · rw [Finset.card_insert_of_notMem hce, hec]
-
-
 
 theorem existsUnique_base_edge_of_cone_triangle (K L : SimplicialComplex ℝ E) {c : E}
     (hc : c ∉ K.vertices)

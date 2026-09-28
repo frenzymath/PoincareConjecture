@@ -1,21 +1,9 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Homotopy.PathDecomposition
 
-
-
-
-
-
-
-
 noncomputable section
 namespace Poincare.Topology
 
 universe u v
-
-
-
-
-
 
 theorem loop_nullhomotopic_of_isSimplyConnected
     {X : Type u} [TopologicalSpace X] {A : Set X} {x : X}
@@ -41,8 +29,6 @@ theorem loop_nullhomotopic_of_isSimplyConnected
   rw [← hγA, ← hrefl]
   exact hamb
 
-
-
 theorem coveredLoopProduct_nullhomotopic
     {X : Type u} [TopologicalSpace X] {x : X} {ι : Type v}
     (carrier : ι → Set X) (hx : ∀ i, x ∈ carrier i)
@@ -61,8 +47,6 @@ theorem coveredLoopProduct_nullhomotopic
         exact hloops q (by simp [hq])
       exact (Path.Homotopic.hcomp hp (ih hps)).trans
         (Path.Homotopic.refl_trans (Path.refl x))
-
-
 
 theorem simplyConnectedSpace_of_pathConnectedOpenCover
     {X : Type u} [TopologicalSpace X] [PathConnectedSpace X]
@@ -99,6 +83,5 @@ theorem simplyConnectedSpace_of_pathConnectedOpenCover
       (FundamentalGroup.fromPath (Path.Homotopic.Quotient.mk γ)) =
     FundamentalGroup.toPath 1
   exact congrArg FundamentalGroup.toPath hγeq
-
 
 end Poincare.Topology

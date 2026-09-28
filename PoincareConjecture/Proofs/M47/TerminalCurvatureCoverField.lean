@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.ThreeDimensional.Splitting.Global.CoverCoordinate
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,16 +14,12 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
-
 noncomputable def terminalCurvatureOrientedField
     (D : LeviCivitaData g) (hc : IsCoveringMap (unitRicciKernelProjection D)) :
     letI := unitRicciKernelChartedSpace D hc
     (p : UnitRicciKernel D) → TangentSpace (𝓡 n) p := by
   letI := unitRicciKernelChartedSpace D hc
   exact fun p => (mfderiv (𝓡 n) (𝓡 n) (unitRicciKernelProjection D) p).inverse p.val.snd
-
-
 
 theorem terminalCurvature_oriented_field_geometry
     (D : LeviCivitaData g) (hc : IsCoveringMap (unitRicciKernelProjection D))

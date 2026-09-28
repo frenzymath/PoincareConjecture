@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_1.CapturedNeckTransferBounds
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckGeometry.CapturedCylinderErrors
 import PoincareConjecture.Proofs.M28.Prop9_79_Persistence.NeckAnalysis.Comparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,10 +20,6 @@ variable {M : Type v} [TopologicalSpace M]
   {X : ℕ → Type u} [∀ k, TopologicalSpace (X k)]
   [∀ k, ChartedSpace (EuclideanSpace ℝ (Fin 3)) (X k)]
   [∀ k, IsManifold (𝓡 3) ∞ (X k)] {ι : Type w} [Finite ι]
-
-
-
-
 
 theorem exists_metric_error_tail
     (g : RiemannianMetric 3 M) (h : ∀ k, RiemannianMetric 3 (X k))

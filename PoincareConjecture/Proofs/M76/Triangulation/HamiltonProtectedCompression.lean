@@ -1,23 +1,11 @@
 import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedCoreStretch
 import PoincareConjecture.Proofs.M76.Triangulation.PLHandleCompactification
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
 
 namespace PoincareConjecture.M76
-
-
-
-
 
 theorem exists_plHandleCompactification_with_protected_core
     (ι : Type*) [Fintype ι] (J : Finset ι) {r : ℝ} (hr : 1 < r) (hr2 : r < 2) :

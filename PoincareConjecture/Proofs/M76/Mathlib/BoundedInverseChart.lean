@@ -1,14 +1,6 @@
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.MetricSpace.Antilipschitz
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -16,9 +8,6 @@ open scoped NNReal
 
 variable {X Y : Type*} [MetricSpace X] [MetricSpace Y] [Nonempty X]
   {f : X → Y} {S : Set X} {K : ℝ≥0}
-
-
-
 
 theorem ContinuousOn.exists_openPartialHomeomorph_of_antilipschitz
     (hf : ContinuousOn f S) (hS : IsOpen S) (himage : IsOpen (f '' S))
@@ -34,10 +23,6 @@ theorem ContinuousOn.exists_openPartialHomeomorph_of_antilipschitz
   have hinj : InjOn f S := injOn_iff_injective.mpr hbound.injective
   exact ⟨OpenPartialHomeomorph.ofContinuousOpenRestrict
     (hinj.toPartialEquiv f S) hf hemb.isOpenMap hS, rfl, rfl, rfl⟩
-
-
-
-
 
 theorem Continuous.exists_openPartialHomeomorph_of_inverse_bound
     (hf : Continuous f) {a : X} (hS : S ∈ 𝓝 a)

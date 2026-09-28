@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.C
 import PoincareConjecture.Proofs.Horizon.Geometry.Curvature.Integral.Induction.Corners.Tightening
 import PoincareConjecture.Proofs.Horizon.Analysis.InnerProductSpace.ObliqueProjection
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -34,8 +27,6 @@ private theorem prefix_pair_parameter_bounds (k : ℕ) {δ : ℝ} (hδ : 0 ≤ �
   apply (le_div_iff₀ (by positivity)).mpr
   nlinarith
 end Poincare.CurvatureIntegral
-
-
 
 theorem PoincareConjecture.RiemannianMetric.strainer_prefix_openFiber_opposite_bounds
     {m k : ℕ} {M : Type*} [TopologicalSpace M]

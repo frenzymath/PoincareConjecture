@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M74.Mathlib.PositiveRadiusSplice
 import Mathlib.Order.Hom.Set
 import Mathlib.Topology.Order.MonotoneContinuity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped ContDiff Topology
 
 namespace PoincareConjecture.M74
-
-
 
 noncomputable def increasingRadiusChart (f : ℝ → ℝ) (R : ℝ)
     (hm : StrictMonoOn f (Ioo 0 R)) (himage : f '' Ioo 0 R = Ioi 0) :
@@ -44,25 +33,17 @@ noncomputable def increasingRadiusChart (f : ℝ → ℝ) (R : ℝ)
     isOpen_Ioi.isOpenMap_subtype_val.comp e.toHomeomorph.isOpenMap
   exact OpenPartialHomeomorph.ofContinuousOpenRestrict p hc ho isOpen_Ioo
 
-
-
 @[simp] theorem increasingRadiusChart_source (f : ℝ → ℝ) (R : ℝ)
     (hm : StrictMonoOn f (Ioo 0 R)) (himage : f '' Ioo 0 R = Ioi 0) :
     (increasingRadiusChart f R hm himage).source = Ioo 0 R := rfl
-
-
 
 @[simp] theorem increasingRadiusChart_target (f : ℝ → ℝ) (R : ℝ)
     (hm : StrictMonoOn f (Ioo 0 R)) (himage : f '' Ioo 0 R = Ioi 0) :
     (increasingRadiusChart f R hm himage).target = Ioi 0 := rfl
 
-
-
 @[simp] theorem increasingRadiusChart_apply (f : ℝ → ℝ) (R : ℝ)
     (hm : StrictMonoOn f (Ioo 0 R)) (himage : f '' Ioo 0 R = Ioi 0) (x : ℝ) :
     increasingRadiusChart f R hm himage x = f x := rfl
-
-
 
 theorem increasingRadiusChart_symm_contDiffOn (f : ℝ → ℝ) (R : ℝ)
     (hm : StrictMonoOn f (Ioo 0 R)) (himage : f '' Ioo 0 R = Ioi 0)

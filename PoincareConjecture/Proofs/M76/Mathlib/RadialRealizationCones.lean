@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConicalLinearProjection
 import PoincareConjecture.Proofs.M76.Mathlib.BasisRadialProjection
 import Mathlib.Data.Fintype.Powerset
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,31 +12,20 @@ namespace AbstractSimplicialComplex
 variable {ι E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] {A : AbstractSimplicialComplex ι}
 
-
-
-
 noncomputable def RadialEmbedding.complex (v : A.RadialEmbedding E) :
     SimplicialComplex ℝ E := v.property.2.choose
-
-
 
 theorem RadialEmbedding.complex_faces (v : A.RadialEmbedding E) :
     v.complex.faces = {t : Finset E | ∃ s ∈ A.faces, (t : Set E) = v.val '' (s : Set ι)} :=
   v.property.2.choose_spec.1
 
-
-
 theorem RadialEmbedding.complex_linearIndependent (v : A.RadialEmbedding E) :
     ∀ s ∈ v.complex.faces, LinearIndependent ℝ ((↑) : s → E) :=
   v.property.2.choose_spec.2.1
 
-
-
 theorem RadialEmbedding.complex_injOn_normalize (v : A.RadialEmbedding E) :
     InjOn (NormedSpace.normalize : E → E) v.complex.space :=
   v.property.2.choose_spec.2.2
-
-
 
 theorem RadialEmbedding.complex_faces_image [DecidableEq E] (v : A.RadialEmbedding E) :
     v.complex.faces = (fun s : Finset ι => s.image v.val) '' A.faces := by
@@ -56,8 +36,6 @@ theorem RadialEmbedding.complex_faces_image [DecidableEq E] (v : A.RadialEmbeddi
     exact ⟨s, hs, Finset.coe_injective (Finset.coe_image.trans he.symm)⟩
   · rintro ⟨s, hs, rfl⟩
     exact ⟨s, hs, Finset.coe_image⟩
-
-
 
 theorem RadialEmbedding.complex_vertices (v : A.RadialEmbedding E) :
     v.complex.vertices = range v.val := by
@@ -74,8 +52,6 @@ theorem RadialEmbedding.complex_vertices (v : A.RadialEmbedding E) :
   · rintro ⟨i, rfl⟩
     exact ⟨{i}, A.singleton_mem i, by simp⟩
 
-
-
 theorem RadialEmbedding.finite_complex_faces [Finite ι] (v : A.RadialEmbedding E) :
     v.complex.faces.Finite := by
   classical
@@ -83,13 +59,9 @@ theorem RadialEmbedding.finite_complex_faces [Finite ι] (v : A.RadialEmbedding 
   rw [v.complex_faces_image]
   exact (Set.toFinite A.faces).image _
 
-
-
 noncomputable def RadialEmbedding.cone (v : A.RadialEmbedding E) : SimplicialComplex ℝ E := by
   classical
   exact v.complex.coneAtZero v.complex_linearIndependent v.complex_injOn_normalize
-
-
 
 theorem RadialEmbedding.exists_cone_homeomorph_of_linearMap [Finite ι]
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
@@ -115,8 +87,6 @@ theorem RadialEmbedding.exists_cone_homeomorph_of_linearMap [Finite ι]
     congr 1
     exact funext hQ |>.symm
 
-
-
 theorem RadialEmbedding.injOn_cone_of_linearMap [Finite ι]
     [FiniteDimensional ℝ E] [FiniteDimensional ℝ F]
     (v : A.RadialEmbedding E) (w : A.RadialEmbedding F)
@@ -127,14 +97,9 @@ theorem RadialEmbedding.injOn_cone_of_linearMap [Finite ι]
     Subtype.ext ((he ⟨x, hx⟩).trans (hxy.trans (he ⟨y, hy⟩).symm))
   exact congrArg Subtype.val (e.injective hexy)
 
-
-
 noncomputable def basisRadialEmbedding (A : AbstractSimplicialComplex ι)
     (b : Module.Basis ι ℝ E) : A.RadialEmbedding E :=
   ⟨b, A.isRadialEmbedding_of_linearIndependent b.linearIndependent⟩
-
-
-
 
 theorem BasisRadialProjection.injOn_basisCone [Finite ι]
     [FiniteDimensional ℝ F] {b : Module.Basis ι ℝ E}

@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.SingularLift
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -24,8 +13,6 @@ namespace PoincareConjecture.Proofs.M59
 
 variable {E X : Type u} [TopologicalSpace E] [TopologicalSpace X]
   (p : C(E, X))
-
-
 
 theorem singular_simplex_eq_of_projection_and_face
     (hp : IsCoveringMap p) {n : ℕ}
@@ -43,8 +30,6 @@ theorem singular_simplex_eq_of_projection_and_face
   exact congrArg (fun z => ((TopCat.of X).toSSetObjEquiv _ z).toFun) hproj
 
 variable (A : SSet.{u}) (χ : A ⟶ TopCat.toSSet.obj (TopCat.of X))
-
-
 
 theorem singularLift_degenerate_of_base_degenerate (hp : IsCoveringMap p)
     {n : ℕ} (z : (singularLiftSSet p A χ) _⦋n⦌)
@@ -72,8 +57,6 @@ theorem singularLift_degenerate_of_base_degenerate (hp : IsCoveringMap p)
         rw [SSet.δ_comp_σ_self_apply]
         rfl
 
-
-
 theorem singularLift_nonDegenerate_base (hp : IsCoveringMap p)
     {n : ℕ} (z : (singularLiftSSet p A χ).nonDegenerate n) :
     z.val.val.1 ∈ A.nonDegenerate n := by
@@ -81,8 +64,6 @@ theorem singularLift_nonDegenerate_base (hp : IsCoveringMap p)
   have hd := singularLift_degenerate_of_base_degenerate p A χ hp z.val
     ((A.mem_degenerate_iff_notMem_nonDegenerate _).mpr h)
   exact ((singularLiftSSet p A χ).mem_degenerate_iff_notMem_nonDegenerate _).mp hd z.property
-
-
 
 theorem singularLift_hasDimensionLT (hp : IsCoveringMap p) (d : ℕ)
     [A.HasDimensionLT d] : (singularLiftSSet p A χ).HasDimensionLT d where

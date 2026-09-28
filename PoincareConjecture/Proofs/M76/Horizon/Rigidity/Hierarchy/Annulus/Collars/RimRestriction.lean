@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarInteriorLoops
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -104,8 +97,6 @@ theorem exists_phase_rim_collar
         exact x.property.2
       have hzt : z ∈ Ktheta ×ˢ Icc (0 : ℝ) r := ⟨⟨hz.1, hzphase⟩, by rw [hz0]; exact ⟨le_rfl, hr.le⟩⟩
       exact ⟨z, ⟨hzt.1, hz0⟩, Subtype.ext ((hval z hzt).trans hzx)⟩
-
-
 
 theorem fundamentalGroup_phase_rim_complement_surjective
     {E X Y : Type*} [TopologicalSpace E] [Zero E]

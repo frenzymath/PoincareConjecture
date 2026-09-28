@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Analysis.Calculus.SmoothCompactness.Pullback
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,9 +11,6 @@ namespace PoincareConjecture.M47
 local notation "E₃" => EuclideanSpace ℝ (Fin 3)
 
 set_option maxHeartbeats 800000 in
-
-
-
 
 theorem terminalCurvature_eventually_moving_pullback_jet_error
     {U V : Set E₃} (hU : IsOpen U) (hV : IsOpen V)

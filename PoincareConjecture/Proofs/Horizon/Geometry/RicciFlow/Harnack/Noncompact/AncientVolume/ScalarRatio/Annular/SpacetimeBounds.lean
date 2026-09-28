@@ -6,20 +6,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.A
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Ricci.BootstrapAdapter
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Coordinates.SpacetimeBounds.Bootstrap.Evolution
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 8
@@ -32,8 +18,6 @@ open scoped Manifold ContDiff Topology ENNReal
 universe u
 
 namespace PoincareConjecture.RiemannianMetric
-
-
 
 theorem IsSmoothFamilyOn.contDiffWithinAt_spacetime_pullbackCoefficients
     {n : ℕ} {M : Type*} [TopologicalSpace M]
@@ -63,8 +47,6 @@ namespace PoincareConjecture.SpacetimeBounds
 variable {V E : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
 theorem horizon_contDiffOn_spatialFDeriv_within {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
     (hf : ContDiffOn ℝ ∞ f (J ×ˢ U)) (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U) :
     ContDiffOn ℝ ∞ (fun z : ℝ × V => fderiv ℝ (fun x => f (z.1, x)) z.2)
@@ -77,8 +59,6 @@ theorem horizon_contDiffOn_spatialFDeriv_within {f : ℝ × V → E} {J : Set �
     (((hasFDerivAt_const z.1 z.2).prodMk (hasFDerivAt_id z.2)).hasFDerivWithinAt)
     (show MapsTo (fun x : V => (z.1, x)) U (J ×ˢ U) from fun _ hx => ⟨hz.1, hx⟩)
   exact (hcomp.hasFDerivAt (hU.mem_nhds hz.2)).fderiv
-
-
 
 theorem contDiffOn_spatialJet_within {f : ℝ × V → E} {J : Set ℝ} {U : Set V}
     (hf : ContDiffOn ℝ ∞ f (J ×ˢ U)) (hJ : UniqueDiffOn ℝ J) (hU : IsOpen U) (m : ℕ) :
@@ -101,8 +81,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {J : Set ℝ}
 
-
-
 theorem contDiffOn_pullbackCoefficients_within (F : RicciFlow n M J)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -114,8 +92,6 @@ theorem contDiffOn_pullbackCoefficients_within (F : RicciFlow n M J)
   exact (F.smooth.contDiffWithinAt_spacetime_pullbackCoefficients
     (he.contMDiffAt (hU.mem_nhds hz.2)) hz.1).mono (prod_mono subset_rfl (subset_univ _))
 
-
-
 theorem differentiableWithinAt_pullbackCoefficients_time (F : RicciFlow n M J)
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -126,8 +102,6 @@ theorem differentiableWithinAt_pullbackCoefficients_time (F : RicciFlow n M J)
   exact (hs.comp t (contDiffWithinAt_id.prodMk contDiffWithinAt_const)
     (show MapsTo (fun s : ℝ => (s, x)) J (J ×ˢ U) from
       fun _ hs => ⟨hs, hx⟩)).differentiableWithinAt (by simp)
-
-
 
 theorem derivWithin_pullbackCoefficients_apply (F : RicciFlow n M J)
     (hJ : UniqueDiffOn ℝ J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -146,8 +120,6 @@ theorem derivWithin_pullbackCoefficients_apply (F : RicciFlow n M J)
     simpa using hv
   exact (hv'.derivWithin (hJ t ht)).symm.trans
     ((F.equation t ht (e x) _ _).derivWithin (hJ t ht))
-
-
 
 theorem norm_derivWithin_pullbackCoefficients_le [T2Space M] (F : RicciFlow n M J)
     (hJ : UniqueDiffOn ℝ J) {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)
@@ -195,8 +167,6 @@ theorem norm_derivWithin_pullbackCoefficients_le [T2Space M] (F : RicciFlow n M 
         norm_num only [abs_neg, abs_of_nonneg (by norm_num : (0 : ℝ) ≤ 2)]
         exact mul_le_mul_of_nonneg_left hbound (by norm_num)
       _ = _ := by ring
-
-
 
 theorem norm_pullbackCoefficients_le_of_ancient_curvature_bound
     [T2Space M] (F : RicciFlow n M (Iic 0))
@@ -249,9 +219,6 @@ theorem norm_pullbackCoefficients_le_of_ancient_curvature_bound
         _ ≤ b * ‖v‖ ^ 2 := by nlinarith [mul_le_mul_of_nonneg_right hzero (sq_nonneg ‖v‖)]
     exact hcomp.trans ((mul_le_mul hexp hinit (hnonneg 0 v) (Real.exp_nonneg _)).trans_eq
       (by ring))
-
-
-
 
 theorem exists_ancient_exponential_coefficient_time_bounds
     (hC : RicciFlowCurvatureTheory.{u}) (n : ℕ) {K S ρ a : ℝ}
@@ -315,9 +282,6 @@ theorem exists_ancient_exponential_coefficient_time_bounds
     Metric.isOpen_ball he ht.2 hxS hb hK.le hupper (hcurv t ht.2 (Φ x) hxball)).trans
       (le_max_right _ _)
 
-
-
-
 theorem exists_ancient_terminal_ball_curvatureDerivative_bound
     (hC : RicciFlowCurvatureTheory.{u}) (n k : ℕ) {K R : ℝ}
     (hK : 0 < K) (hR : 0 < R) :
@@ -371,9 +335,6 @@ theorem exists_ancient_terminal_ball_curvatureDerivative_bound
   have h := hbound M Ft hcomplete' hoperator' x hcurv' x hxcenter
   change (F.connection (0 + t)).curvatureDerivativeNorm k x ≤ D at h
   rwa [zero_add] at h
-
-
-
 
 theorem exists_ancient_exponential_ellipticity_radius
     (hC : RicciFlowCurvatureTheory.{u}) (n : ℕ) {K S : ℝ} (hK : 0 < K) (hS : 0 < S) :
@@ -451,9 +412,6 @@ theorem exists_ancient_exponential_ellipticity_radius
 end PoincareConjecture.RicciFlow
 
 namespace PoincareConjecture.SpacetimeBounds
-
-
-
 
 theorem exists_ancient_chart_spatial_jet_bound
     (n m : ℕ) (K Z : ℕ → ℝ) (hK : ∀ j, 0 ≤ K j)
@@ -551,8 +509,6 @@ end PoincareConjecture.SpacetimeBounds
 
 namespace PoincareConjecture.RicciFlow
 
-
-
 theorem exists_ancient_exponential_spatial_jet_bounds
     (hC : RicciFlowCurvatureTheory.{u}) (n : ℕ) {K S : ℝ} (hK : 0 < K) (hS : 0 < S) :
     ∃ ρ : ℝ, 0 < ρ ∧ ρ < S / 2 ∧ ∀ a : ℝ, 0 ≤ a → ∀ m : ℕ,
@@ -619,10 +575,6 @@ theorem exists_ancient_exponential_spatial_jet_bounds
     linarith
   · intro j x hx
     exact hterminal j M F hcomplete hoperator p hcurv L Φ hsource hzero hL hderiv hgeo hdist x hx
-
-
-
-
 
 theorem exists_ancient_exponential_spacetime_jet_bounds
     {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]

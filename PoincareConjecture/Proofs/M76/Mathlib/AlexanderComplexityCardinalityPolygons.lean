@@ -4,24 +4,11 @@ import PoincareConjecture.Proofs.M76.Mathlib.CircularSubsetTopology
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonCircle
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonLocalEdges
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace Set
-
-
-
 
 theorem alexanderCurveCount_eq_of_equiv {X ι κ : Type*} [Finite ι] [Finite κ]
     (D : ι → Set X) (F : κ → Set X) (e : ι ≃ κ) (he : ∀ i, D i = F (e i)) :
@@ -46,11 +33,6 @@ namespace Polygon
 
 variable {E ι κ : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [Finite ι] [Finite κ]
-
-
-
-
-
 
 theorem exists_equiv_of_common_point_section
     (n : ι → ℕ) (P : ∀ i, Polygon E (n i + 3))

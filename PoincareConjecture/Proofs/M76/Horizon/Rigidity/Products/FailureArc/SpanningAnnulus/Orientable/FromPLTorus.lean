@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Inters
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.SpanningAnnulus.Orientable.CoordinatePair
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Collars.Mathlib.CollarKernelInjectivity
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open Poincare.Topology.Orientation.ProjectivePlane

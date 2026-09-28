@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.DiskGreenRescaling
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.MinimizerWeakRescaling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,18 +11,12 @@ open scoped Topology ContDiff ENNReal
 
 namespace PoincareConjecture
 
-
-
 def m64ConeNormalize (a : LoopPlane) (r : ℝ) (p : LoopPlane) : LoopPlane :=
   r⁻¹ • (p - a)
-
-
 
 theorem m64ConeNormalize_continuous (a : LoopPlane) (r : ℝ) :
     Continuous (m64ConeNormalize a r) :=
   (continuous_id.sub continuous_const).const_smul r⁻¹
-
-
 
 theorem m64ConeNormalize_affine (a : LoopPlane) (r : ℝ) :
     (fun p : LoopPlane => -(r⁻¹ • a) + r⁻¹ • p) = m64ConeNormalize a r := by
@@ -40,13 +24,9 @@ theorem m64ConeNormalize_affine (a : LoopPlane) (r : ℝ) :
   dsimp only [m64ConeNormalize]
   module
 
-
-
 theorem m64ConeNormalize_apply (a : LoopPlane) {r : ℝ} (hr : 0 < r) (p : LoopPlane) :
     m64ConeNormalize a r (a + r • p) = p := by
   rw [m64ConeNormalize, add_sub_cancel_left, inv_smul_smul₀ hr.ne']
-
-
 
 theorem m64ConeNormalize_preimage_ball (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     m64ConeNormalize a r ⁻¹' ball 0 1 = ball a r := by
@@ -54,8 +34,6 @@ theorem m64ConeNormalize_preimage_ball (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
   simp only [mem_preimage, m64ConeNormalize, mem_ball, dist_eq_norm, sub_zero, norm_smul,
     Real.norm_of_nonneg (inv_nonneg.mpr hr.le)]
   rw [← div_eq_inv_mul, div_lt_iff₀ hr, one_mul]
-
-
 
 theorem m64ConeNormalize_memLp
     {E : Type*} [NormedAddCommGroup E] {f : LoopPlane → E} {p : ℝ≥0∞}
@@ -68,8 +46,6 @@ theorem m64ConeNormalize_memLp
     (volume.restrict (ball a r)) at hh
   rwa [m64ConeNormalize_affine] at hh
 
-
-
 theorem m64ConeNormalize_quasiMeasurePreserving (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
     Measure.QuasiMeasurePreserving (m64ConeNormalize a r)
       (volume.restrict (ball a r)) (volume.restrict (ball (0 : LoopPlane) 1)) := by
@@ -80,8 +56,6 @@ theorem m64ConeNormalize_quasiMeasurePreserving (a : LoopPlane) {r : ℝ} (hr : 
   rw [hmap]
   exact Measure.smul_absolutelyContinuous
 
-
-
 theorem m64ConeAffine_integral
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]
     (f : LoopPlane → E) (a : LoopPlane) {r : ℝ} (hr : 0 < r) :
@@ -90,8 +64,6 @@ theorem m64ConeAffine_integral
   have hh := m64Affine_integral_vector f a hr (ball (0 : LoopPlane) 1)
   rw [M60.suAffine_image_ball a hr, mul_one] at hh
   exact hh.symm
-
-
 
 theorem m64ConeNormalize_integral_comp
     {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [CompleteSpace E]

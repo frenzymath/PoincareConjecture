@@ -1,14 +1,5 @@
 import PoincareConjecture.Definitions.Ch09.RoundCylinderGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -44,8 +35,6 @@ private theorem cylinder_iterated_congr {epsilon : ℝ} {B B' : RoundCylinderTwo
       exact congrArg (fun r : ℝ => roundCylinderChristoffel u c p j (a 0) (a i.succ) * r)
         (ih p hp _)
 
-
-
 theorem cylinder_jet_congr {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}
     (h : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
       ∀ v w, B z v w = B' z v w) (u : ℝ) (k : ℕ)
@@ -58,8 +47,6 @@ theorem cylinder_jet_congr {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}
   have heq := funext (cylinder_iterated_congr h u c j (c z.1, z.2) hz)
   rw [heq]
 
-
-
 theorem cylinder_smooth_congr {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}
     (h : ∀ z : RoundCylinderSpace, z.2 ∈ Ioo (-epsilon⁻¹) epsilon⁻¹ →
       ∀ v w, B z v w = B' z v w)
@@ -69,8 +56,6 @@ theorem cylinder_smooth_congr {epsilon : ℝ} {B B' : RoundCylinderTwoTensor}
   apply (hsmooth q a b).congr
   intro p hp
   exact (h _ hp.2 _ _).symm
-
-
 
 theorem cylinder_family_congr {epsilon : ℝ} {I : Set ℝ}
     {B B' : ℝ → RoundCylinderTwoTensor}

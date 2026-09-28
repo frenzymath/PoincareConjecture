@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_SphereJetMargin
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_AxialJetMargin
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -35,13 +25,9 @@ noncomputable local instance componentJetTwoJetNormedGroup :
 noncomputable local instance componentJetTwoJetNormedSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
 
-
-
 def limitCanonicalSectionalJetRegion (a : ℝ) :
     Set (MetricTwoJet 3 × (E × E)) :=
   {p | p.1 ∈ sectionalJetLowerRegion a p.2.1 p.2.2}
-
-
 
 theorem limitCanonical_isOpen_sectional_jet_region (a : ℝ) :
     IsOpen (limitCanonicalSectionalJetRegion a) := by
@@ -63,10 +49,6 @@ theorem limitCanonical_isOpen_sectional_jet_region (a : ℝ) :
     (hcurv.sub (continuousAt_const.mul hgram.continuousAt)).eventually
       (lt_mem_nhds hmargin)] with p hinv hpos hbound
   exact ⟨hinv, hpos, sub_pos.mp hbound⟩
-
-
-
-
 
 theorem limitCanonical_exists_uniform_sectional_jet_margin
     {X : Type*} [TopologicalSpace X] {K : Set X} (hK : IsCompact K)

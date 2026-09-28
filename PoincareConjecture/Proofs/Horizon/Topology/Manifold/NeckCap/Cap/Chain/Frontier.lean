@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.EndFronti
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Cap.Chain.Maximal
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.NeckCap.Chain.Exhaustion.Frontier
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -27,7 +16,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [MeasurableSpace M] [BorelSpace M] [T2Space M] [T3Space M]
   {g : RiemannianMetric 3 M}
-
 
 theorem frontier_union_chain_subset_frontier_chain (C : CapCertificate g)
     (T : BalancedNeckChain g C.epsilon)
@@ -59,9 +47,6 @@ private theorem index_eq_zero_of_no_predecessor {ε : ℝ} (T : BalancedNeckChai
     omega
   | biInfinite =>
     simp only [hshape, ChainShape.active, mem_univ, not_true_eq_false] at hprev
-
-
-
 
 theorem exists_chain_frontier_positive_end_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧
@@ -96,8 +81,6 @@ theorem exists_chain_frontier_positive_end_threshold :
     have hout := ((C.carrier_open.union T.unionOpen.isOpen).frontier_eq ▸ hx).2
     exact (hout (Or.inl (hcapture (Or.inr hnegative)))).elim
   · exact ⟨i.val, i.property, hnext, hpositive⟩
-
-
 
 theorem exists_outgoing_chain_frontier_positive_end_threshold :
     ∃ ε₀ : ℝ, 0 < ε₀ ∧ ε₀ ≤ 1 / 1000 ∧

@@ -2,16 +2,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.NormedSpace
 import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Analysis.Calculus.Gradient.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -21,20 +11,16 @@ namespace PoincareConjecture.M25.Topology3D
 
 variable {M F : Type*} [TopologicalSpace M] [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 noncomputable def collarParameter (e : OpenPartialHomeomorph (M × ℝ) F) (y : F) : ℝ :=
   (e.symm y).2
 
 omit [NormedSpace ℝ F] in
-
 
 theorem collarParameter_apply (e : OpenPartialHomeomorph (M × ℝ) F)
     (p : M × ℝ) (hp : p ∈ e.source) : collarParameter e (e p) = p.2 := by
   exact congrArg Prod.snd (e.left_inv hp)
 
 omit [NormedSpace ℝ F] in
-
 
 theorem collarParameter_level (e : OpenPartialHomeomorph (M × ℝ) F) (a : ℝ) :
     {y ∈ e.target | collarParameter e y = a} =
@@ -53,13 +39,10 @@ variable (hi : ContMDiffOn 𝓘(ℝ, F) (𝓘(ℝ, E).prod 𝓘(ℝ, ℝ)) ∞ e
 
 include hi
 
-
 theorem collarParameter_contDiffOn : ContDiffOn ℝ ∞ (collarParameter e) e.target := by
   have h : ContMDiffOn 𝓘(ℝ, F) 𝓘(ℝ, ℝ) ∞ (collarParameter e) e.target :=
     fun y hy => (hi y hy).snd
   exact h.contDiffOn
-
-
 
 theorem collarParameter_fderiv_ne_zero
     (he : ContMDiffOn (𝓘(ℝ, E).prod 𝓘(ℝ, ℝ)) 𝓘(ℝ, F) ∞ e e.source)

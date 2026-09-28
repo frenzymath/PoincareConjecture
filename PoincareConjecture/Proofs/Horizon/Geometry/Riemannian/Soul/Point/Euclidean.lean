@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Terminal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Soul.Point.Flow.CenteredGlobal
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Flow.Euclidean
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 
@@ -21,7 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 variable {n : ℕ} {N : Type*} [TopologicalSpace N] [T3Space N]
   [ConnectedSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
 
 theorem exists_euclidean_diffeomorph_of_singleton_horoball
     (g : RiemannianMetric n N) (D : LeviCivitaData g)
@@ -39,7 +30,6 @@ variable {M : Type*} [TopologicalSpace M] [T3Space M]
   [ConnectedSpace M] [Nonempty M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [NoncompactSpace M]
-
 
 theorem exists_euclidean_diffeomorph_of_point_soul
     (g : RiemannianMetric 3 M) (D : LeviCivitaData g)

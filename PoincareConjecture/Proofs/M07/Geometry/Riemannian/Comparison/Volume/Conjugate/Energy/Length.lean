@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Distance.GeodesicLength
 import Mathlib.MeasureTheory.Integral.IntervalIntegral.Basic
 
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,7 +12,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem pathELength_eq_ofReal_integral_speed
     (g : RiemannianMetric n M) {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
@@ -38,7 +25,6 @@ theorem pathELength_eq_ofReal_integral_speed
   apply ofReal_integral_eq_lintegral_ofReal hcont.integrableOn_Icc
   exact Filter.Eventually.of_forall fun _ => Real.sqrt_nonneg _
 
-
 theorem edist_le_ofReal_integral_speed
     (g : RiemannianMetric n M) {γ : ℝ → M} {a b : ℝ} (hab : a ≤ b)
     (hγ : ContMDiffOn 𝓘(ℝ, ℝ) (𝓡 n) 1 γ (Icc a b))
@@ -50,7 +36,6 @@ theorem edist_le_ofReal_integral_speed
     ⟨g.toRiemannianMetric⟩
   rw [← g.pathELength_eq_ofReal_integral_speed hab hcont]
   exact Manifold.riemannianEDist_le_pathELength hγ rfl rfl hab
-
 
 theorem edist_le_ofReal_energy_bound
     (g : RiemannianMetric n M) {γ : ℝ → M} {a b C : ℝ}
@@ -89,7 +74,6 @@ namespace Poincare.VolumeComparison.Conjugate
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
 theorem edist_le_ofReal_sum
     (g : PoincareConjecture.RiemannianMetric n M) (p : ℕ → M) (l : ℕ → ℝ)
     (N : ℕ) (hl : ∀ i < N, 0 ≤ l i)
@@ -109,8 +93,6 @@ theorem edist_le_ofReal_sum
     rw [Finset.sum_range_succ, ENNReal.ofReal_add
       (Finset.sum_nonneg fun i hi => hl i (Nat.lt_succ_of_lt (Finset.mem_range.mp hi)))
       (hl N (Nat.lt_succ_self N))]
-
-
 
 theorem sum_energy_ge_of_minimizing_endpoints
     (g : PoincareConjecture.RiemannianMetric n M) {N : ℕ} (τ : ℕ → ℝ)

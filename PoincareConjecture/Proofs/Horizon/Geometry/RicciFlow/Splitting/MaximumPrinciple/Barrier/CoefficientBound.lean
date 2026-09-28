@@ -3,24 +3,10 @@ import Mathlib.Tactic.FieldSimp
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Positivity
 
-
-
-
-
-
-
-
-
-
-
-
-
 namespace PoincareConjecture.RicciFlow.Splitting.MaximumPrinciple.Barrier
-
 
 noncomputable def boundaryScale (rho lam H0 : ℝ) : ℝ :=
   min (rho ^ 2 / 2) (min (1 / 4) (lam * rho ^ 2 / (2 * (H0 + 1))))
-
 
 theorem boundaryScale_bounds {rho lam H0 : ℝ}
     (hrho : 0 < rho) (hlam : 0 < lam) (hH0 : 0 ≤ H0) :
@@ -40,11 +26,9 @@ theorem boundaryScale_bounds {rho lam H0 : ℝ}
   have hHmul := mul_le_mul_of_nonneg_left hd2 hH0
   exact ⟨hd, hdr, hdq, by dsimp [d] at *; nlinarith⟩
 
-
 noncomputable def dampingConstant (rho lam Lam H0 : ℝ) : ℝ :=
   8 * Lam * rho ^ 2 / boundaryScale rho lam H0 ^ 3 +
     2 * H0 / boundaryScale rho lam H0 ^ 2
-
 
 theorem dampingConstant_nonneg {rho lam Lam H0 : ℝ}
     (hrho : 0 < rho) (hlam : 0 < lam) (hLam : lam ≤ Lam) (hH0 : 0 ≤ H0) :
@@ -73,8 +57,6 @@ private theorem near_boundary_nonneg {rho lam H0 d s Q H : ℝ}
     field_simp
   rw [hid]
   exact div_nonneg hnum (pow_nonneg hs.le _)
-
-
 
 theorem radial_coefficient_nonneg {rho lam Lam H0 s Q H : ℝ}
     (hrho : 0 < rho) (hlam : 0 < lam) (hLam : lam ≤ Lam) (hH0 : 0 ≤ H0)
@@ -110,7 +92,6 @@ theorem radial_coefficient_nonneg {rho lam Lam H0 s Q H : ℝ}
     have hpos : 0 ≤ 4 * Q / s ^ 4 := by positivity
     unfold dampingConstant
     linarith
-
 
 theorem radial_coefficient_nonneg_of_radius_sq {rho lam Lam H0 s r2 Q H : ℝ}
     (hrho : 0 < rho) (hlam : 0 < lam) (hLam : lam ≤ Lam) (hH0 : 0 ≤ H0)

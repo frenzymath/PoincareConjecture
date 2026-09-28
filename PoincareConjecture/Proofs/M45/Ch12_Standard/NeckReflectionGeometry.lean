@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M45.Ch9_Models.ReflectionJets
 import PoincareConjecture.Proofs.M45.Ch12_Standard.StandardNecks
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,16 +12,13 @@ namespace PoincareConjecture.M45
 
 local notation "I" => ModelWithCorners.prod (𝓡 2) 𝓘(ℝ, ℝ)
 
-
 theorem cylinderAxialReflection_smooth :
     ContMDiff I I ∞ cylinderAxialReflection :=
   contMDiff_fst.prodMk contMDiff_snd.neg
 
-
 @[simp] theorem cylinderAxialReflection_involutive (z : RoundCylinderSpace) :
     cylinderAxialReflection (cylinderAxialReflection z) = z := by
   simp [cylinderAxialReflection]
-
 
 theorem mfderiv_cylinderAxialReflection (z : RoundCylinderSpace)
     (v : RoundCylinderTangent z) :
@@ -41,8 +30,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
 
 omit [IsManifold (𝓡 3) ∞ M] in
-
-
 
 theorem mfderiv_comp_cylinderAxialReflection (f : RoundCylinderSpace → M)
     (z : RoundCylinderSpace) (v : RoundCylinderTangent z) :
@@ -61,8 +48,6 @@ theorem mfderiv_comp_cylinderAxialReflection (f : RoundCylinderSpace → M)
       mfderiv_zero_of_not_mdifferentiableAt hcomp]
     rfl
 
-
-
 theorem roundCylinderPullback_reflection (g : RiemannianMetric 3 M)
     (f : RoundCylinderSpace → M) :
     roundCylinderPullback g (f ∘ cylinderAxialReflection) =
@@ -71,8 +56,6 @@ theorem roundCylinderPullback_reflection (g : RiemannianMetric 3 M)
   exact congrArg₂ (fun v w => g.inner (f (cylinderAxialReflection z)) v w)
     (mfderiv_comp_cylinderAxialReflection f z v)
     (mfderiv_comp_cylinderAxialReflection f z w)
-
-
 
 theorem roundCylinderPullback_bilinear (g : RiemannianMetric 3 M)
     (f : RoundCylinderSpace → M) (c : ℝ) (z : RoundCylinderSpace) :
@@ -88,8 +71,6 @@ theorem roundCylinderPullback_bilinear (g : RiemannianMetric 3 M)
   · intro a v w
     simp only [roundCylinderPullback, map_smul, smul_eq_mul]
     ring
-
-
 
 theorem neckMetricComparison_reflection (g : RiemannianMetric 3 M)
     {epsilon scale : ℝ} {f : RoundCylinderSpace → M}

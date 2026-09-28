@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Connectio
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Connection.Cutoff
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -22,7 +11,6 @@ namespace PoincareConjecture.Homothety
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [T2Space M]
-
 
 theorem exists_smooth_field_eventuallyEq (U : Set M) (hU : IsOpen U)
     (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -37,7 +25,6 @@ theorem exists_smooth_field_eventuallyEq (U : Set M) (hU : IsOpen U)
   change b p • V p = V p
   change b p = 1 at hp
   rw [hp, one_smul]
-
 
 theorem connection_contMDiffOn (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (U : Set M) (hU : IsOpen U) (V : (x : M) → TangentSpace (𝓡 n) x)
@@ -69,7 +56,6 @@ theorem connection_contMDiffOn (g : RiemannianMetric n M) (D : LeviCivitaData g)
       (EuclideanSpace ℝ (Fin n) →L[ℝ] EuclideanSpace ℝ (Fin n)) p) H
   exact ((contMDiffOn_univ.mp hDW).contMDiffAt.congr_of_eventuallyEq
     hnear.symm).contMDiffWithinAt
-
 
 theorem connection_apply_contMDiffOn (g : RiemannianMetric n M) (D : LeviCivitaData g)
     (U : Set M) (hU : IsOpen U) (V W : (x : M) → TangentSpace (𝓡 n) x)

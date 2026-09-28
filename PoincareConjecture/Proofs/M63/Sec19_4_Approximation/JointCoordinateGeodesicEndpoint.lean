@@ -1,15 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Exponential.Endpoint
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -20,9 +10,6 @@ open scoped ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_joint_coordinate_geodesic_endpoint
     {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]

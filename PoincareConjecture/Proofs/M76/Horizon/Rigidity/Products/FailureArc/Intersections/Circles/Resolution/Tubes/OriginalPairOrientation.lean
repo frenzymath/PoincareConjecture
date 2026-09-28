@@ -1,10 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.Resolution.PairedOrientedCollars
 
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip _root_.Dehn
 

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Continuatio
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometry
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Injectivity.Lifting.SmoothDeck
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -23,8 +15,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ}
-
-
 
 theorem IsGeodesicOn.comp_local_isometry
     {g h : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}
@@ -77,8 +67,6 @@ theorem IsGeodesicOn.comp_local_isometry
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
-
-
 theorem inner_deck_motion_of_pullback
     (G : RiemannianMetric n (EuclideanSpace ℝ (Fin n))) (g : RiemannianMetric n M)
     {e : EuclideanSpace ℝ (Fin n) → M}
@@ -105,8 +93,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem curvatureTensorNorm_eq_of_pullback_germ
     {G : RiemannianMetric n (EuclideanSpace ℝ (Fin n))}

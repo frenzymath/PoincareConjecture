@@ -2,9 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Tra
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.EventBasedWidth
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Extinction.Width.Transport.Chronology.Preterminal
 
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -49,8 +46,6 @@ variable
 
 include hwidth hcomparison hwidth_eq
 
-
-
 theorem m67_event_factor_bounds
     (s : Set.Icc (0 : ℝ) T) (hs : s.1 ∈ (↑P.surgery_times : Set ℝ))
     (eta : ℝ) (heta : 0 < eta) :
@@ -91,8 +86,6 @@ theorem m67_event_factor_bounds
   change m61BasedClassWidth Syst.quotient E.post.metric
     (H.event_input s hsFlow hpost).child.basepoint E.post.alpha = X.width s at hpost'
   rwa [hpre, hpost'] at hbound
-
-
 
 theorem m67_conclusion_of_event_width_calibration : M67Conclusion X :=
   m67_conclusion_of_event_factor_bounds X hwidth

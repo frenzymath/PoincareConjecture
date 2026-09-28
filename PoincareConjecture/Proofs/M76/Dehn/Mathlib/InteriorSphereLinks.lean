@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ConvexBoundaryExtension
 import PoincareConjecture.Proofs.M02.SphereConnectivity
 import PoincareConjecture.Proofs.M02.Topology.SphereDiskExtension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
@@ -19,9 +10,6 @@ open Set Metric
 namespace Geometry
 
 local notation "V3" => (Fin 3 → ℝ)
-
-
-
 
 theorem unitThreeSphere_lifting_properties :
     SimplyConnectedSpace (sphere (0 : V3) 1) ∧
@@ -39,9 +27,6 @@ theorem unitThreeSphere_lifting_properties :
 
 namespace SimplicialComplex
 
-
-
-
 theorem exists_faceLink_singleton_sphere_homeomorph_of_interior
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)
     {p : V3} (hp : p ∈ K.vertices) (hint : p ∈ interior K.space) :
@@ -53,8 +38,6 @@ theorem exists_faceLink_singleton_sphere_homeomorph_of_interior
   let H := (e.restrictSubsets hrim hC.isClosed.frontier_subset heb).trans hb
   rw [faceLink_singleton_eq_link]
   exact ⟨H⟩
-
-
 
 theorem faceLink_singleton_lifting_properties_of_interior
     (K : SimplicialComplex ℝ V3) (hK : K.faces.Finite)

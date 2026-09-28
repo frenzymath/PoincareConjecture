@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.GlobalRepresentatives
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,8 +15,6 @@ variable {S : RepairedControlledSchedulesData.{u}}
   {F0 : SurgeryFlowData.{u}} {k : Nat}
   (Q : CompletedStageChain S N C F0 k)
 
-
-
 theorem stage_surgeryFreeTo (n m : Nat) (hnm : n <= m) {a b : Real}
     (hJ : Icc a b ⊆ (Q.flow n).time_domain)
     (hfree : Disjoint (Q.flow n).surgery_times (Ioc a b)) :
@@ -35,9 +25,6 @@ theorem stage_surgeryFreeTo (n m : Nat) (hnm : n <= m) {a b : Real}
   have hiff := ComposedExtension.oldSurgeryTimeTo
     (Q.extensionBetween n m hnm) (Q.extensionBetween_eq n m hnm) t htF
   exact disjoint_left.mp hfree (hiff.mp ht) hs
-
-
-
 
 theorem globalIdentify_slab_coherent (n m : Nat) (a b c d : Real)
     (hab : a < b) (hJ : Icc a b ⊆ (Q.flow n).time_domain)

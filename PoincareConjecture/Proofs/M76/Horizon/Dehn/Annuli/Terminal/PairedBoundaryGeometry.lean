@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Terminal.PairedRimRetraction
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Boundary.CoherentBoundarySigns
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry AbstractSimplicialComplex
 

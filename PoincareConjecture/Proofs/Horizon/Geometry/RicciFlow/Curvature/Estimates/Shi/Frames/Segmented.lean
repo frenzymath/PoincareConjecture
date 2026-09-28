@@ -1,16 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Estimates.Shi.Frames.Parallel
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

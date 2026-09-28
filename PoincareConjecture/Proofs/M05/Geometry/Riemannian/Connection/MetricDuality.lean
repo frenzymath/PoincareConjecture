@@ -1,15 +1,7 @@
-
 import PoincareConjecture.Definitions.Ch01.RiemannianMetric
 import Mathlib.Geometry.Manifold.VectorBundle.Hom
 import Mathlib.Analysis.Calculus.ContDiff.FiniteDimension
 import Mathlib.Analysis.InnerProductSpace.Dual
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -41,7 +33,6 @@ lemma contMDiffAt_clm_of_apply
 namespace RiemannianMetric
 
 variable {g : RiemannianMetric n M}
-
 
 lemma inner_isInvertible (g : RiemannianMetric n M) (x : M) :
     (g.inner x).IsInvertible := by

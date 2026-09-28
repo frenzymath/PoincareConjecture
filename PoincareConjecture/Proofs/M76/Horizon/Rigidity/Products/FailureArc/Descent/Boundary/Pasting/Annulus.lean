@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Boundary.Annuli.NestedPolygonAnnulus
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.TargetMapPasting
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry PLAnnularStrip
 
@@ -88,8 +80,6 @@ theorem NestedShellSquareCharts.exists_target_map_union
         D.disk_cover.subset (Or.inl (C.chart 0 ⟨z, hz⟩).property), hval 0 ⟨z, hz⟩⟩
     · exact ⟨C.chart 1 ⟨z, hz⟩,
         D.disk_cover.subset (Or.inr (C.chart 1 ⟨z, hz⟩).property), hval 1 ⟨z, hz⟩⟩
-
-
 
 theorem exists_standard_annulus_map_of_square_pair
     {F X ι : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]

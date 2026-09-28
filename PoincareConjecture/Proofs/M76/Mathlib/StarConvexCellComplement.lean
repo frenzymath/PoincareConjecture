@@ -2,26 +2,12 @@ import PoincareConjecture.Proofs.M76.Mathlib.PuncturedBallSimplyConnected
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 import Mathlib.Topology.MetricSpace.ProperSpace.Lemmas
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric
 open scoped unitInterval
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
-
-
-
 
 theorem StarConvex.smul_notMem_of_one_le {C : Set E} (hC : StarConvex ℝ 0 C)
     {x : E} (hx : x ∉ C) {a : ℝ} (ha : 1 ≤ a) : a • x ∉ C := by
@@ -30,11 +16,6 @@ theorem StarConvex.smul_notMem_of_one_le {C : Set E} (hC : StarConvex ℝ 0 C)
   have hback := hC.smul_mem hax (inv_nonneg.mpr ha0.le) (inv_le_one_of_one_le₀ ha)
   apply hx
   simpa only [smul_smul, inv_mul_cancel₀ ha0.ne', one_smul] using hback
-
-
-
-
-
 
 theorem exists_ball_sdiff_starConvex_homotopyEquiv
     {C : Set E} (hC : StarConvex ℝ 0 C) (h0 : (0 : E) ∈ C)
@@ -113,10 +94,6 @@ theorem exists_ball_sdiff_starConvex_homotopyEquiv
       map_one_left := fun x => Subtype.ext (hT1 x) }
   exact ⟨⟨f, g, ⟨HU⟩, ⟨HV⟩⟩, fun _ => rfl, fun _ => rfl⟩
 
-
-
-
-
 theorem isSimplyConnected_ball_sdiff_starConvex_of_two_lt_finrank
     [FiniteDimensional ℝ E] (hdim : 2 < Module.finrank ℝ E)
     {C : Set E} (hC : StarConvex ℝ 0 C) (h0 : (0 : E) ∈ C)
@@ -126,10 +103,6 @@ theorem isSimplyConnected_ball_sdiff_starConvex_of_two_lt_finrank
   let : SimplyConnectedSpace (ball (0 : E) R \ {0} : Set E) :=
     isSimplyConnected_ball_sdiff_center_of_two_lt_finrank hdim 0 (hρ.trans hρR)
   exact e.simplyConnectedSpace
-
-
-
-
 
 theorem isSimplyConnected_ball_sdiff_compact_convex_of_two_lt_finrank
     [FiniteDimensional ℝ E] (hdim : 2 < Module.finrank ℝ E)

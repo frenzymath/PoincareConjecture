@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.ParametrizedCoefficients
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.DomainChange
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 8
 set_option backward.isDefEq.respectTransparency false
@@ -25,7 +16,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 variable {E E' : Type*}
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup E'] [NormedSpace ℝ E']
-
 
 noncomputable def parameterBilinearEquiv (L : E' ≃L[ℝ] E) :
     (E →L[ℝ] E →L[ℝ] ℝ) ≃L[ℝ] (E' →L[ℝ] E' →L[ℝ] ℝ) :=

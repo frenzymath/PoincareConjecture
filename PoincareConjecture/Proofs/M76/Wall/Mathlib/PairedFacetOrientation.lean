@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FullSimplexBasis
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexAffineInjectivity
 import Mathlib.Analysis.Normed.Module.FiniteDimension
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -21,9 +12,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {K : SimplicialComplex ℝ E} {f : E → E}
-
-
-
 
 theorem AffineOnFaces.det_mul_pos_of_paired_facet
     (hf : K.AffineOnFaces f) (hi : InjOn f K.space)

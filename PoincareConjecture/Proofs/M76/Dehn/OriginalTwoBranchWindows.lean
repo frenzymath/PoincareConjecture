@@ -1,25 +1,11 @@
 import PoincareConjecture.Proofs.M76.Dehn.OriginalBranchCoordinates
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.FiniteTwoBranchWindows
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology Geometry
 
 namespace Geometry.OriginalPLTower
-
-
-
-
-
 
 theorem Step.exists_finite_PL_twoBranchWindows
     {U E M ι D : Type*}

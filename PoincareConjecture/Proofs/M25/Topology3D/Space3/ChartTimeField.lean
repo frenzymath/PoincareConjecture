@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.FieldChartTransport
 import Mathlib.Analysis.Calculus.Deriv.Prod
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,20 +11,14 @@ namespace PoincareConjecture.M25.Topology3D
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 variable [NormedAddCommGroup F] [NormedSpace ℝ F]
 
-
-
 noncomputable def chartTimeField (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (p : ℝ × E) : E := (fderiv ℝ e (e.symm p) (1, 0)).2
-
-
 
 theorem chartTimeField_contDiffOn (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (he : ContDiffOn ℝ ∞ e e.source) (hi : ContDiffOn ℝ ∞ e.symm e.target) :
     ContDiffOn ℝ ∞ (chartTimeField e) e.target := by
   exact (((he.fderiv_of_isOpen e.open_source (by simp)).comp hi
     (fun _ hp => e.map_target hp)).clm_apply contDiffOn_const).snd
-
-
 
 theorem chartTimeField_track (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (he : ContDiffOn ℝ ∞ e e.source)
@@ -49,8 +32,6 @@ theorem chartTimeField_track (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
   have hpair : (t, (e (t, x)).2) = e (t, x) := Prod.ext (htime _ hp).symm rfl
   rw [hpair, chartTimeField, e.left_inv hp]
   exact hc.snd
-
-
 
 theorem chartTimeField_preserves_linear (e : OpenPartialHomeomorph (ℝ × E) (ℝ × E))
     (he : ContDiffOn ℝ ∞ e e.source) (A : E →L[ℝ] F)

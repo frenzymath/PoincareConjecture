@@ -1,28 +1,14 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PositiveSlopeBend
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePiecewiseAffine
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
 
 namespace PLStrip
 
-
-
 def stripMap (a b : ℝ) (q : ℝ × ℝ) : ℝ × ℝ :=
   (a * q.2 + bend a b (q.1 - q.2), q.2)
-
-
-
 
 noncomputable def stripHomeomorph {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     (ℝ × ℝ) ≃ₜ (ℝ × ℝ) where
@@ -48,15 +34,11 @@ noncomputable def stripHomeomorph {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     (continuous_snd.add ((continuous_bend a⁻¹ b⁻¹).comp
       (continuous_fst.sub (continuous_const.mul continuous_snd)))).prodMk continuous_snd
 
-
-
 theorem strictMono_stripMap_fst {a b : ℝ} (ha : 0 < a) (hb : 0 < b) (t : ℝ) :
     StrictMono (fun s => (stripMap a b (s, t)).1) := by
   intro x y hxy
   change a * t + bend a b (x - t) < a * t + bend a b (y - t)
   linarith [strictMono_bend ha hb (sub_lt_sub_right hxy t)]
-
-
 
 theorem stripMap_left (a b : ℝ) {t : ℝ} (ht : 0 ≤ t) :
     stripMap a b (0, t) = (0, t) := by
@@ -65,15 +47,11 @@ theorem stripMap_left (a b : ℝ) {t : ℝ} (ht : 0 ≤ t) :
   rw [bend_of_nonpos a b (sub_nonpos.mpr ht)]
   ring
 
-
-
 theorem stripMap_right (a b : ℝ) {t : ℝ} (ht : t ≤ 1) :
     stripMap a b (1, t) = (a * t + b * (1 - t), t) := by
   refine Prod.ext ?_ (by rfl)
   change a * t + bend a b (1 - t) = a * t + b * (1 - t)
   rw [bend_of_nonneg a b (sub_nonneg.mpr ht)]
-
-
 
 theorem stripMap_bottom (a b : ℝ) {s : ℝ} (hs : 0 ≤ s) :
     stripMap a b (s, 0) = (b * s, 0) := by
@@ -81,17 +59,12 @@ theorem stripMap_bottom (a b : ℝ) {s : ℝ} (hs : 0 ≤ s) :
   change a * 0 + bend a b (s - 0) = b * s
   rw [mul_zero, zero_add, sub_zero, bend_of_nonneg a b hs]
 
-
-
 theorem stripMap_top (a b : ℝ) {s : ℝ} (hs : s ≤ 1) :
     stripMap a b (s, 1) = (a * s, 1) := by
   refine Prod.ext ?_ (by rfl)
   change a * 1 + bend a b (s - 1) = a * s
   rw [bend_of_nonpos a b (sub_nonpos.mpr hs)]
   ring
-
-
-
 
 theorem finitePiecewiseAffineOn_stripMap (a b : ℝ)
     (K : SimplicialComplex ℝ (ℝ × ℝ)) (hK : K.faces.Finite) :
@@ -118,9 +91,6 @@ theorem finitePiecewiseAffineOn_stripMap (a b : ℝ)
     change a * q.2 + bend a b (q.1 - q.2) = a * q.2 + b * (q.1 - q.2)
     have hqA : 0 ≤ q.1 - q.2 := hhi q hq
     rw [bend_of_nonneg a b hqA]
-
-
-
 
 theorem stripMap_image_square {a b : ℝ} (ha : 0 < a) (hb : 0 < b) :
     stripMap a b '' (Icc (0 : ℝ) 1 ×ˢ Icc (0 : ℝ) 1) =

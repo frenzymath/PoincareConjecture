@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch15.SurgeryFlow
 import PoincareConjecture.Proofs.M33.RegularHistory
 import PoincareConjecture.Proofs.M46.Sec16_2_StableSet.Lemma11_2_BackwardFiniteEvents
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +11,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M47
-
-
-
 
 theorem seedM15_cylinder_eq_of_terminal
     {F : SurgeryFlowData.{u}} {C D : GeneralizedSliceCarrier.{u}}

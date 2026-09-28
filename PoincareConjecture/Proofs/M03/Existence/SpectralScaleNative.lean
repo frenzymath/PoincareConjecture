@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.SpectralShiftedNative
 import Mathlib.Topology.Order.ProjIcc
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1000000
 
@@ -51,7 +43,6 @@ private theorem inverse_scaleWeight_bound (lambda : iota → NNReal) (k : ℕ) (
     inv_le_one₀ (scaleWeight_pos lambda k i)]
   exact one_le_scaleWeight lambda k i
 
-
 def scaleDecode (lambda : iota → NNReal) (k : ℕ) : State iota →L[ℝ] State iota :=
   multiplier (fun i => (scaleWeight lambda k i)⁻¹) 1 zero_le_one
     (inverse_scaleWeight_bound lambda k)
@@ -83,7 +74,6 @@ theorem scaleDecode_add (lambda : iota → NNReal) (k l : ℕ) :
   ext z i
   simp only [scaleDecode_apply, scaleWeight_add, mul_inv_rev, ContinuousLinearMap.comp_apply]
   ring
-
 
 def InScale (lambda : iota → NNReal) (k : ℕ) (u : State iota) : Prop :=
   Memℓp (fun i => scaleWeight lambda k i * u i) 2
@@ -164,7 +154,6 @@ theorem scaleDecode_heat (lambda : iota → NNReal) (k : ℕ) (t : NNReal) (z : 
   simp only [scaleDecode_apply, heat_apply]
   ring
 
-
 theorem scaleDecode_responseState [Countable iota] {T t : ℝ}
     (lambda : iota → NNReal) (k : ℕ) {F : ℝ → State iota}
     (hF : MemLp F 2 (timeMeasure T)) (ht : t ∈ Icc (0 : ℝ) T) :
@@ -226,7 +215,6 @@ theorem scaleWeight_sq (lambda : iota → NNReal) (k : ℕ) (i : iota) :
   unfold scaleWeight
   rw [pow_right_comm, Real.sq_sqrt (by positivity)]
 
-
 theorem inScale_iff_summable_weighted_sq (lambda : iota → NNReal)
     (k : ℕ) (u : State iota) :
     InScale lambda k u ↔ Summable (fun i => (1 + (lambda i : ℝ)) ^ k * u i ^ 2) := by
@@ -267,7 +255,6 @@ theorem scaleEncode_sub (lambda : iota → NNReal) (k : ℕ) (u v : State iota)
   funext i
   simp only [scaleEncode_apply, lp.coeFn_sub, Pi.sub_apply, mul_sub]
 
-
 theorem norm_scaleEncode_sq_eq_inner (lambda : iota → NNReal) (k : ℕ)
     (u : State iota) (hu : InScale lambda (2 * k) u) :
     ‖scaleEncode lambda k u (inScale_mono lambda (by omega) hu)‖ ^ 2 =
@@ -285,8 +272,6 @@ theorem norm_scaleEncode_sq_le (lambda : iota → NNReal) (k : ℕ)
       ‖u‖ * ‖scaleEncode lambda (2 * k) u hu‖ := by
   rw [norm_scaleEncode_sq_eq_inner]
   exact real_inner_le_norm _ _
-
-
 
 theorem continuous_scaleEncode_of_double_bound {X : Type*} [TopologicalSpace X]
     (lambda : iota → NNReal) (k : ℕ) (U : X → State iota) (hU : Continuous U)
@@ -322,8 +307,6 @@ theorem continuous_scaleEncode_of_double_bound {X : Type*} [TopologicalSpace X]
   have hroot := Real.continuous_sqrt.continuousAt.tendsto.comp hsq
   simpa only [Function.comp_def, Real.sqrt_sq (norm_nonneg _), Real.sqrt_zero] using hroot
 
-
-
 theorem exists_continuous_scale_lift_of_mass {X : Type*} [TopologicalSpace X]
     (lambda : iota → NNReal) (k : ℕ) (U : X → State iota) (hU : Continuous U)
     {B : ℝ} (hB : 0 ≤ B)
@@ -343,8 +326,6 @@ theorem exists_continuous_scale_lift_of_mass {X : Type*} [TopologicalSpace X]
     exact scaleDecode_scaleEncode lambda k (U t) _
   · intro t i
     rfl
-
-
 
 theorem hasDerivWithinAt_responseState_of_scale_path [Countable iota] {T : ℝ}
     (hT : 0 ≤ T) (lambda : iota → NNReal) (F : ForcingSpace iota T)
@@ -392,7 +373,6 @@ theorem hasDerivWithinAt_responseState_of_scale_path [Countable iota] {T : ℝ}
   have hd := (hasDerivWithinAt_volterraPath_Icc (x₀ := (0 : State iota)) hH ht).congr_of_mem
     hresponse ht
   simpa only [H, Zext, IccExtend_of_mem hT _ ht] using hd
-
 
 theorem hasDerivWithinAt_responseState_right_of_scale_path [Countable iota] {T : ℝ}
     (hT : 0 ≤ T) (lambda : iota → NNReal) (F : ForcingSpace iota T)

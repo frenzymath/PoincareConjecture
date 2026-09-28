@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M51.EmptyEventCopy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,7 +12,6 @@ namespace PoincareConjecture.SurgeryVanishingEventData
 
 variable {P : SurgeryParameters} {slice : ℝ → GeneralizedSliceCarrier.{u}}
     {metric : ∀ t, RiemannianMetric 3 (slice t).carrier} {T : ℝ}
-
 
 noncomputable def reindexPast (E : SurgeryVanishingEventData P slice metric T)
     (tau : ℝ → ℝ) (hTau : ∀ t ≤ T, tau t = t) :

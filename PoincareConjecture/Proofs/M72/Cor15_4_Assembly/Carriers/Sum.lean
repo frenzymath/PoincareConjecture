@@ -3,14 +3,6 @@ import Mathlib.Geometry.Manifold.ContMDiff.Constructions
 import Mathlib.Topology.Separation.Regular
 import Mathlib.MeasureTheory.Constructions.BorelSpace.Basic
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal
@@ -21,8 +13,6 @@ universe u
 namespace PoincareConjecture
 
 variable {P Q : GeneralizedSliceCarrier.{u}}
-
-
 
 noncomputable abbrev GeneralizedSliceCarrier.sum (P Q : GeneralizedSliceCarrier.{u}) :
     GeneralizedSliceCarrier.{u} where
@@ -56,21 +46,17 @@ noncomputable abbrev GeneralizedSliceCarrier.sum (P Q : GeneralizedSliceCarrier.
       ) }
   secondCountable := inferInstance
 
-
 theorem GeneralizedSliceCarrier.sum_inl_smooth :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (Sum.inl : P.carrier → (P.sum Q).carrier) :=
   ContMDiff.inl
-
 
 theorem GeneralizedSliceCarrier.sum_inr_smooth :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (Sum.inr : Q.carrier → (P.sum Q).carrier) :=
   ContMDiff.inr
 
-
 theorem GeneralizedSliceCarrier.sum_inl_clopen :
     IsClopen (Set.range (Sum.inl : P.carrier → (P.sum Q).carrier)) :=
   ⟨isClosed_range_inl, isOpen_range_inl⟩
-
 
 theorem GeneralizedSliceCarrier.sum_inr_clopen :
     IsClopen (Set.range (Sum.inr : Q.carrier → (P.sum Q).carrier)) :=
@@ -81,8 +67,6 @@ section SmoothOn
 variable {E H X : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [TopologicalSpace H] {J : ModelWithCorners ℝ E H}
   [TopologicalSpace X] [ChartedSpace H X]
-
-
 
 theorem m72ContMDiffOn_sumElim_inl {f : P.carrier → X} (g : Q.carrier → X)
     {U : Set P.carrier} (hf : ContMDiffOn (𝓡 3) J ∞ f U) :
@@ -98,8 +82,6 @@ theorem m72ContMDiffOn_sumElim_inl {f : P.carrier → X} (g : Q.carrier → X)
     rfl
   · rfl
 
-
-
 theorem m72ContMDiffOn_sumElim_inr (f : P.carrier → X) {g : Q.carrier → X}
     {U : Set Q.carrier} (hg : ContMDiffOn (𝓡 3) J ∞ g U) :
     ContMDiffOn (𝓡 3) J ∞ (Sum.elim f g : (P.sum Q).carrier → X) (Sum.inr '' U) := by
@@ -113,8 +95,6 @@ theorem m72ContMDiffOn_sumElim_inr (f : P.carrier → X) {g : Q.carrier → X}
   · rintro _ ⟨y, _, rfl⟩
     rfl
   · rfl
-
-
 
 theorem m72ContMDiffOn_sumElim {f : P.carrier → X} {g : Q.carrier → X}
     {U : Set P.carrier} {V : Set Q.carrier}
@@ -130,8 +110,6 @@ end SmoothOn
 namespace SurgeryRegionEquivalence
 
 variable {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}
-
-
 
 noncomputable def sumInl (E : SurgeryRegionEquivalence A B U V)
     (Z : GeneralizedSliceCarrier.{u}) (a : A.carrier) :
@@ -150,8 +128,6 @@ noncomputable def sumInl (E : SurgeryRegionEquivalence A B U V)
     exact congrArg Sum.inl (E.right_inverse hx)
   map_smooth := ContMDiff.inl.comp_contMDiffOn E.map_smooth
   inverse_smooth := m72ContMDiffOn_sumElim_inl _ E.inverse_smooth
-
-
 
 noncomputable def sumInr (E : SurgeryRegionEquivalence A B U V)
     (Z : GeneralizedSliceCarrier.{u}) (a : A.carrier) :
@@ -172,8 +148,6 @@ noncomputable def sumInr (E : SurgeryRegionEquivalence A B U V)
   inverse_smooth := m72ContMDiffOn_sumElim_inr _ E.inverse_smooth
 
 end SurgeryRegionEquivalence
-
-
 
 noncomputable def SurgeryRegionEquivalence.sumRight
     {A B : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} {V : Set B.carrier}

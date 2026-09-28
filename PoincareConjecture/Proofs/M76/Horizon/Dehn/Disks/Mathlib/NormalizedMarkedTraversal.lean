@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.MarkedIntervalDi
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Disks.Mathlib.NormalizedAttachmentSources
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Loops.Mathlib.MarkedIntervalHomotopy
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry TriangleDiskModel
@@ -33,8 +22,6 @@ local notation "TL" => convexHull ℝ (range leftTriangle)
 local notation "T" => (TR ∪ TL : Set P2)
 local notation "TE" => segment ℝ ((0, 1) : P2) (0, 0)
 
-
-
 theorem attachment_complement_eq_marked_preimage
     {E X : Type*} {S C W B P : Set E} {Z : Set X} {f : E → X}
     (hWS : W ⊆ S) (hWB : W ∪ B = C) (hi : W ∩ B = P)
@@ -48,9 +35,6 @@ theorem attachment_complement_eq_marked_preimage
   have hs : x ∈ W → x ∈ S := fun hx ↦ hWS hx
   simp only [mem_union, mem_inter_iff, mem_preimage] at h1 h2 h3 h4 ⊢
   tauto
-
-
-
 
 theorem exists_normalized_marked_traversal_with_sources
     {E0 E1 F X ι : Type*}
@@ -172,9 +156,6 @@ theorem exists_normalized_marked_traversal_with_sources
   exact ⟨g, C0.trans C1.symm, hg, himage, hfrontier,
     fun t ↦ (hval t).trans (hloopval t).symm, hhom0.hcomp hhom1.symm₂,
     n0, n1, H, p, hn0, hn1, hH, hp, hn0p, hn1p, hsource⟩
-
-
-
 
 theorem exists_normalized_marked_traversal
     {E0 E1 F X ι : Type*}

@@ -1,22 +1,11 @@
 import PoincareConjecture.Proofs.M76.PrimeReduction.OriginalComplexEdgeGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 namespace Geometry.SimplicialComplex
 variable {E X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [DecidableEq E] [TopologicalSpace X]
 local notation "V3" => (Fin 3 → ℝ)
-
-
 
 theorem exists_original_edge_coordinates_with_cofaces
     (K : SimplicialComplex ℝ E) (g : E → X) (hg : InjOn g K.space)

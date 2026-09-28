@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_10_TerminalS
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma11_2_ScalarScaling
 import PoincareConjecture.Proofs.M36.StandardBalls
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -39,9 +30,6 @@ noncomputable local instance physicalScalarCoefficientSpace :
 variable {F : SurgeryFlowData.{u}} {t : ℝ} {hT : t ∈ F.surgery_times}
   [Nonempty (F.slice t).carrier] {i : Fin (F.event t hT).cap_count} {A : ℝ}
 
-
-
-
 noncomputable def capInitialPartialDiffeomorph
     (initial : SurgeryCapInitialComparison F t hT i A) :
     PartialDiffeomorph (𝓡 3) (𝓡 3) E (F.slice t).carrier ∞ where
@@ -66,9 +54,6 @@ noncomputable def capInitialPartialDiffeomorph
   contMDiffOn_toFun := initial.chart_smooth
   contMDiffOn_invFun := initial.inverse_smooth.mono (image_subset_range _ _)
 
-
-
-
 theorem jetScalar_normalizedPullback
     {M : Type*} [TopologicalSpace M] [ChartedSpace E M]
     [IsManifold (𝓡 3) ∞ M] [T2Space M]
@@ -91,10 +76,6 @@ theorem jetScalar_normalizedPullback
   rw [hcoeff, M44.jetScalarCurvature_pullbackCoefficients gQ DQ hU hf hinv hx]
   exact M13.homothety_scalarCurvature_eq g gQ (Diffeomorph.refl (𝓡 3) M ∞)
     Q hQ (M44.rescaledMetric_identity_homothety hQ) D DQ (f x)
-
-
-
-
 
 theorem capComparison_scalar_readout
     {S : MaximalStandardCapFlow F.standard_initial} {eta : ℝ}

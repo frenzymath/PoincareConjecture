@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_GlobalStan
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Lemma16_8_SampleRestart
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Prop16_5_MaximalSamples
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -41,10 +31,6 @@ noncomputable local instance restartSurvivalTwoJetNorm :
 
 noncomputable local instance restartSurvivalTwoJetSpace :
     NormedSpace ℝ (MetricTwoJet 3) := Prod.normedSpace
-
-
-
-
 
 theorem exists_restarted_outer_survival_cutoff
     (P : M44CapPersistencePredecessors.{u})

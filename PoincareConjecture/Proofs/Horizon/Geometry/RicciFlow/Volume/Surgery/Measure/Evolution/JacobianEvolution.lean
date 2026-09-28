@@ -2,27 +2,6 @@ import PoincareConjecture.Proofs.M10.JacobianEvolution
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Volume.Surgery.Analysis.DeterminantCalculus
 import Mathlib.Analysis.Calculus.Deriv.Mul
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Filter
@@ -32,20 +11,12 @@ namespace PoincareConjecture.SurgeryVolume.Measure
 
 variable {ι : Type*} [Fintype ι] [DecidableEq ι]
 
-
-
-
-
-
-
-
 theorem hasDerivAt_jacobian_of_normalized_gram
     {J : ℝ → ℝ} {A : ℝ → Matrix ι ι ℝ} {B : Matrix ι ι ℝ} {t : ℝ}
     (hJ : J =ᶠ[𝓝 t] (fun s ↦ Real.sqrt ((A s).det)))
     (hA : HasDerivAt A B t) (hAt : A t = 1) :
     HasDerivAt J (B.trace / 2) t := by
   exact (hasDerivAt_sqrt_matrix_det_of_eq_one hA hAt).congr_of_eventuallyEq hJ
-
 
 theorem hasDerivAt_jacobian_of_scaled_normalized_gram
     {J : ℝ → ℝ} {A : ℝ → Matrix ι ι ℝ} {B : Matrix ι ι ℝ} {t c : ℝ}

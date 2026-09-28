@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Compactness.Statement
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +10,6 @@ namespace PoincareConjecture.RicciFlow
 variable {M : Type} [TopologicalSpace M] [MeasurableSpace M] [BorelSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M] [IsManifold (𝓡 3) ∞ M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem exists_terminal_scalar_bound_of_compactSpace [CompactSpace M]
     (F : RicciFlow 3 M (Iic 0)) (P : M23NormalizedKappaCompactnessPredecessors) :

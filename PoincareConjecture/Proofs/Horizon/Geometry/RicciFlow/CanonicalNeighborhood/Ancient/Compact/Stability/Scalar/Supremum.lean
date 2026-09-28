@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Scalar.Ratio
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -22,7 +13,6 @@ variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 3)) M]
   [IsManifold (𝓡 3) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T3Space M] {g : RiemannianMetric 3 M}
-
 
 theorem scalar_sup_tendsto (A : CapCertificate g) {f : ℕ → M → ℝ}
     (hconv : TendstoUniformlyOn f A.connection.scalarCurvature atTop A.carrier) :
@@ -62,7 +52,6 @@ theorem scalar_sup_tendsto (A : CapCertificate g) {f : ℕ → M → ℝ}
     linarith
   rw [Real.dist_eq, abs_lt]
   constructor <;> linarith
-
 
 theorem scalar_sup_rpow_tendsto (A : CapCertificate g) {f : ℕ → M → ℝ}
     (hconv : TendstoUniformlyOn f A.connection.scalarCurvature atTop A.carrier)

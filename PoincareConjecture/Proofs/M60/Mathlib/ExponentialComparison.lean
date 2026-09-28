@@ -1,21 +1,11 @@
 import Mathlib.Analysis.Calculus.Deriv.MeanValue
 import Mathlib.Analysis.SpecialFunctions.ExpDeriv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.M60
 
 variable {A v : ℝ → ℝ} {a b c : ℝ}
-
-
 
 theorem antitoneOn_exp_mul_of_deriv_le
     (hderiv : ∀ t ∈ Set.Icc a b, HasDerivWithinAt A (v t) (Set.Icc a b) t)
@@ -34,8 +24,6 @@ theorem antitoneOn_exp_mul_of_deriv_le
   intro t ht
   exact mul_nonpos_of_nonneg_of_nonpos (Real.exp_pos _).le
     (sub_nonpos.mpr (hbound t (interior_subset ht)))
-
-
 
 theorem monotoneOn_exp_mul_of_le_deriv
     (hderiv : ∀ t ∈ Set.Icc a b, HasDerivWithinAt A (v t) (Set.Icc a b) t)
@@ -56,8 +44,6 @@ theorem monotoneOn_exp_mul_of_le_deriv
   have h := hbound t (interior_subset ht)
   linarith
 
-
-
 theorem le_exp_mul_of_deriv_le
     (hderiv : ∀ t ∈ Set.Icc a b, HasDerivWithinAt A (v t) (Set.Icc a b) t)
     (hbound : ∀ t ∈ Set.Icc a b, v t ≤ c * A t)
@@ -70,8 +56,6 @@ theorem le_exp_mul_of_deriv_le
     rw [← Real.exp_add, show c * (t - s) + -c * (t - s) = 0 by ring, Real.exp_zero]
   rwa [← mul_assoc, he, one_mul] at h'
 
-
-
 theorem le_exp_mul_of_le_deriv
     (hderiv : ∀ t ∈ Set.Icc a b, HasDerivWithinAt A (v t) (Set.Icc a b) t)
     (hbound : ∀ t ∈ Set.Icc a b, -c * A t ≤ v t)
@@ -79,8 +63,6 @@ theorem le_exp_mul_of_le_deriv
     A s ≤ Real.exp (c * (t - s)) * A t := by
   simpa only [sub_self, mul_zero, Real.exp_zero, one_mul] using
     monotoneOn_exp_mul_of_le_deriv hderiv hbound s hs ht hst
-
-
 
 theorem le_exp_abs_mul_of_abs_deriv_le
     (hderiv : ∀ t ∈ Set.Icc a b, HasDerivWithinAt A (v t) (Set.Icc a b) t)

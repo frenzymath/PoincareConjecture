@@ -1,16 +1,6 @@
 import PoincareConjecture.Definitions.Ch06.LGeometry
 import PoincareConjecture.Definitions.Ch18.LoopSpaceWidth
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle intervalIntegral
@@ -25,12 +15,9 @@ variable {t₀ t₁ : ℝ}
 
 noncomputable def rampPeriod : ℝ := 2 * Real.pi
 
-
 abbrev RampTangent (n : ℕ) (M : Type u) [TopologicalSpace M]
     [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] (p : M) :=
   TangentSpace (𝓡 n) p × ℝ
-
-
 
 structure RampAmbientData where
   flow : RicciFlow n M (Set.Icc t₀ t₁)
@@ -43,12 +30,10 @@ structure RampAmbientData where
   curvature_bounded : ∀ t ∈ Set.Icc t₀ t₁, ∀ p : M,
     (flow.connection t).curvatureTensorNorm p ≤ curvature_bound
 
-
 noncomputable def rampMetricInner
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (t : ℝ) (p : M) (v w : RampTangent n M p) : ℝ :=
   (A.flow.metric t).inner p v.1 w.1 + v.2 * w.2
-
 
 noncomputable def rampProductCurvature
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -76,14 +61,10 @@ noncomputable def rampUnitTangent
     (curve : ℝ → ℝ → M × ℝ) (x t : ℝ) : RampTangent n M (curve x t).1 :=
   (rampSpeed A curve x t)⁻¹ • rampVelocity curve x t
 
-
 noncomputable def rampCircleComponent
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (curve : ℝ → ℝ → M × ℝ) (x t : ℝ) : ℝ :=
   (rampUnitTangent A curve x t).2
-
-
-
 
 noncomputable def rampHorizontalCovariantDerivative
     {g : RiemannianMetric n M} (D : LeviCivitaData g)
@@ -96,8 +77,6 @@ noncomputable def rampHorizontalCovariantDerivative
     D.connection (FiberBundle.extend (EuclideanSpace ℝ (Fin n)) (Y x))
       (curve x) (curveVelocity (n := n) curve x)
 
-
-
 noncomputable def rampCovariantDerivativeAt
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (curve : ℝ → ℝ → M × ℝ) (t : ℝ)
@@ -107,7 +86,6 @@ noncomputable def rampCovariantDerivativeAt
       rampHorizontalCovariantDerivative (A.flow.connection t)
         (fun y ↦ (curve y t).1) (fun y ↦ (Y y).1) x,
     (rampSpeed A curve x t)⁻¹ * deriv (fun y ↦ (Y y).2) x)
-
 
 noncomputable def rampCovariantAccelerationAt
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -125,7 +103,6 @@ noncomputable def rampCurvatureAt
     (curve : ℝ → ℝ → M × ℝ) (t x : ℝ) : ℝ :=
   Real.sqrt (rampCurvatureSquaredAt A curve t x)
 
-
 noncomputable def rampSpatialDerivative
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (curve : ℝ → ℝ → M × ℝ) : (i : ℕ) → (t x : ℝ) → RampTangent n M (curve x t).1
@@ -139,7 +116,6 @@ noncomputable def rampDerivativeNormSquared
   rampMetricInner A t (curve x t).1
     (rampSpatialDerivative A curve i t x) (rampSpatialDerivative A curve i t x)
 
-
 structure RampInitialCurve
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
     (circumference : ℝ) where
@@ -151,10 +127,6 @@ structure RampInitialCurve
   circle_regular : ContDiff ℝ 2 (fun x ↦ (curve x).2)
   positive_circle_component : ∀ x,
     0 < rampCircleComponent A (fun y _ ↦ curve y) x t₀
-
-
-
-
 
 structure RampFlowSolution
     (A : RampAmbientData (n := n) (M := M) (t₀ := t₀) (t₁ := t₁))
@@ -226,7 +198,6 @@ namespace PoincareConjecture
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M]
 
-
 noncomputable def periodicFreeLoop (loop : C1FreeLoopSpace (M := M)) (x : ℝ) : M :=
   loop.extension !₂[Real.cos x, Real.sin x]
 
@@ -236,10 +207,8 @@ noncomputable def freeLoopLength (g : RiemannianMetric 3 M)
     g.tangentNorm (periodicFreeLoop loop x)
       (curveVelocity (n := 3) (periodicFreeLoop loop) x)
 
-
 def IsC2FreeLoop (loop : C1FreeLoopSpace (M := M)) : Prop :=
   ContMDiff (𝓘(ℝ, ℝ)) (𝓡 3) 2 (periodicFreeLoop loop)
-
 
 noncomputable def canonicalRampLift (loop : C1FreeLoopSpace (M := M))
     (circumference x : ℝ) : M × ℝ :=

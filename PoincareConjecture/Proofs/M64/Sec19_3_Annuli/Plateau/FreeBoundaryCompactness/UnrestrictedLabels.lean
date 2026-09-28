@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Boundary.FreeBoundaryTransport
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -21,15 +9,11 @@ open scoped Manifold ContDiff Topology NNReal
 
 namespace PoincareConjecture.M64
 
-
-
 structure LipschitzDegreeOneLabel where
   map : ℝ → ℝ
   period_shift : ∀ x, map (x + curvePeriod) = map x + curvePeriod
   constant : ℝ≥0
   lipschitz : LipschitzWith constant map
-
-
 
 def LipschitzDegreeOneLabel.ofMonotone (sigma : M64PeriodicDegreeOneLift) :
     LipschitzDegreeOneLabel where
@@ -42,17 +26,11 @@ def LipschitzDegreeOneLabel.ofMonotone (sigma : M64PeriodicDegreeOneLift) :
     change |sigma.map x - sigma.map y| ≤ sigma.lipschitz_constant * |x - y|
     exact sigma.lipschitz_on x y
 
-
-
-
 theorem LipschitzDegreeOneLabel.scalar_bound (sigma : LipschitzDegreeOneLabel) :
     ∃ L : ℝ, 0 ≤ L ∧ ∀ x y, |sigma.map x - sigma.map y| ≤ L * |x - y| := by
   refine ⟨sigma.constant, sigma.constant.coe_nonneg, ?_⟩
   intro x y
   simpa only [Real.dist_eq] using sigma.lipschitz.dist_le_mul x y
-
-
-
 
 def LipschitzDegreeOneLabel.addPeriodic (sigma : LipschitzDegreeOneLabel)
     (theta : ℝ → ℝ) (htheta : Function.Periodic theta curvePeriod)
@@ -78,9 +56,6 @@ def LipschitzDegreeOneLabel.addPeriodic (sigma : LipschitzDegreeOneLabel)
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T2Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem unrestricted_label_area_transport
     (g : RiemannianMetric n M) {c0 c1 : ℝ → M}

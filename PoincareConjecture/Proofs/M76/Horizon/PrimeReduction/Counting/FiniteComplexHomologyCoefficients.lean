@@ -7,14 +7,6 @@ import Mathlib.Algebra.Category.ModuleCat.Projective
 import Mathlib.Data.ZMod.Basic
 import PoincareConjecture.Proofs.M59.Mathlib.Lefschetz.FiniteNerveChains
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -55,20 +47,16 @@ def chainCoefficientIso (X : SSet.{w}) (A : C) :
       rw [SSet.ιChainComplex_d, F.map_sum]
       simp only [F.map_zsmul])
 
-
-
 def changeChainHomotopyEquiv {X Y : SSet.{w}} (A : C)
     (e : HomotopyEquiv (X.chainComplex A) (Y.chainComplex A)) :
     HomotopyEquiv (X.chainComplex (F.obj A)) (Y.chainComplex (F.obj A)) :=
   ((HomotopyEquiv.ofIso (chainCoefficientIso F X A)).trans (F.mapHomotopyEquiv e)).trans
     (HomotopyEquiv.ofIso (chainCoefficientIso F Y A).symm)
 
-
 def chainCoordinates {R : Type*} [CommRing R] (X : SSet.{w}) (A : ModuleCat.{w} R) (n : ℕ) :
     (X.chainComplex A).X n ≃ₗ[R] (X _⦋n⦌ →₀ A) :=
   ((X.isColimitChainComplexXCofan A n).coconePointUniqueUpToIso
     (ModuleCat.finsuppCoconeIsColimit R A (X _⦋n⦌))).toLinearEquiv
-
 
 theorem integralChains_projective (X : SSet.{w}) (n : ℕ) :
     Projective ((X.chainComplex PoincareConjecture.Proofs.M02.Topology.integralCoefficient.{w}).X n) := by
@@ -78,7 +66,6 @@ theorem integralChains_projective (X : SSet.{w}) (n : ℕ) :
       Module.Free.of_equiv e.symm
   exact ModuleCat.projective_of_free (Module.Free.chooseBasis ℤ
     ((X.chainComplex PoincareConjecture.Proofs.M02.Topology.integralCoefficient.{w}).X n))
-
 
 theorem chainModuleFinite {R : Type*} [CommRing R] (X : SSet.{w}) (A : ModuleCat.{w} R)
     [Module.Finite R A] (n : ℕ) [Finite (X _⦋n⦌)] :
@@ -111,7 +98,6 @@ def modTwoCoefficientIso :
     | exact proof_irrel_heq _ _
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem modTwo_homotopyEquiv_of_integral_quasiIso {X Y : SSet.{w}} (f : X ⟶ Y)
     (hf : QuasiIso (SSet.chainComplexMap f

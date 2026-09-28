@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_5_AdaptedIndexTrace
 import PoincareConjecture.Proofs.M14.Sec6_4_IndexPair
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +15,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T a b : ℝ} {x y : G.Point} {p : M14BackwardPath G T a b x y}
   (R : M14SquareRootPath G p)
-
-
 
 theorem horizontalIndexPairDensity_eq_slice (s : ℝ)
     (Y W : G.Horizontal (R.curve s)) :
@@ -57,9 +46,6 @@ theorem horizontalIndexPairDensity_eq_slice (s : ℝ)
   dsimp only [D, j, S, q, spacetimeSlicePoint]
   rw [hm]
   ring
-
-
-
 
 theorem horizontalIndexPairDensity_adapted_trace
     (hM04 : RicciFlowCurvatureTheory.{u}) (s : ℝ)

@@ -2,35 +2,20 @@ import Mathlib.Analysis.InnerProductSpace.Basic
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 namespace PoincareConjecture.Proofs.M58
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
 
-
-
 noncomputable def twoVectorArea (u v : E) : ℝ :=
   Real.sqrt (max 0 (inner ℝ u u * inner ℝ v v - (inner ℝ u v) ^ 2))
-
-
 
 theorem twoVectorArea_le (u v : E) : twoVectorArea u v ≤ ‖u‖ * ‖v‖ := by
   apply Real.sqrt_le_iff.mpr
   refine ⟨mul_nonneg (norm_nonneg _) (norm_nonneg _), ?_⟩
   rw [max_le_iff, real_inner_self_eq_norm_sq, real_inner_self_eq_norm_sq, mul_pow]
   exact ⟨mul_nonneg (sq_nonneg _) (sq_nonneg _), sub_le_self _ (sq_nonneg _)⟩
-
-
 
 theorem twoVectorArea_change (u v : E) (a b c d : ℝ) :
     twoVectorArea (a • u + b • v) (c • u + d • v) =

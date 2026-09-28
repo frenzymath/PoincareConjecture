@@ -1,11 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Sobolev.WeakCompactness.DerivativeLimit
 
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -17,8 +11,6 @@ namespace PoincareConjecture
 
 open Poincare.Analysis.Sobolev.WeakCompactness
 
-
-
 theorem m64StrongSquare_restrict
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E] {mu : Measure X}
     {S K : Set X} (hSK : S ⊆ K) (f : ℕ → X → E) (u : X → E)
@@ -29,8 +21,6 @@ theorem m64StrongSquare_restrict
   intro j
   exact setIntegral_mono_set (hi j) (Eventually.of_forall (fun x => sq_nonneg _))
     (Eventually.of_forall hSK)
-
-
 
 theorem m64StrongSquare_pairing_tendsto
     {X E : Type*} [MeasurableSpace X] [NormedAddCommGroup E]

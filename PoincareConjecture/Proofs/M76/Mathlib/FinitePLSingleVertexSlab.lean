@@ -10,15 +10,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteAffineSlabComplex
 import PoincareConjecture.Proofs.M76.Mathlib.TrivialSectionPositiveSlab
 import PoincareConjecture.Proofs.M76.Mathlib.PureTriangleClosedStar
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -27,19 +18,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem exists_finitePL_singleVertexSlab_with_contacts [DecidableEq E]
     (K : SimplicialComplex ℝ E)
@@ -331,10 +309,6 @@ theorem exists_finitePL_singleVertexSlab_with_contacts [DecidableEq E]
     rw [← hval]
     exact (G p).property
 
-
-
-
-
 theorem exists_finitePL_singleVertexSlab_with_radial_residual [DecidableEq E]
     (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)
@@ -369,16 +343,6 @@ theorem exists_finitePL_singleVertexSlab_with_radial_residual [DecidableEq E]
     K.exists_finitePL_singleVertexSlab_with_contacts hK hpure A hqK hAq hq hβ hreg
   exact ⟨upper, T, R, J, G, hG, hJ, hJR, hfull, hzero, hinter, hradial, hrest⟩
 
-
-
-
-
-
-
-
-
-
-
 theorem exists_finitePL_singleVertexSlab_with_residual (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -411,14 +375,6 @@ theorem exists_finitePL_singleVertexSlab_with_residual (K : SimplicialComplex �
     K.exists_finitePL_singleVertexSlab_with_radial_residual hK hpure A hqK hAq hq hβ hreg
   exact ⟨upper, T, R, J, G, hG, hJ, hJR, hfull, hzero, hinter, hrest⟩
 
-
-
-
-
-
-
-
-
 theorem exists_finitePL_singleVertexSlab_with_roof (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)
     (hpure : ∀ s ∈ K.faces, ∃ t ∈ K.faces, t.card = 3 ∧ s ⊆ t)
@@ -443,13 +399,6 @@ theorem exists_finitePL_singleVertexSlab_with_roof (K : SimplicialComplex ℝ E)
   obtain ⟨upper, T, _, _, G, hG, _, _, _, _, _, hrest⟩ :=
     K.exists_finitePL_singleVertexSlab_with_residual hK hpure A hqK hAq hq hβ hreg
   exact ⟨upper, T, G, hG, hrest⟩
-
-
-
-
-
-
-
 
 theorem exists_finitePL_singleVertexSlab (K : SimplicialComplex ℝ E)
     (hK : K.faces.Finite)

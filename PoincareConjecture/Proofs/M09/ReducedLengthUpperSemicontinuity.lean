@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M09.EndpointComparisonAction
 import PoincareConjecture.Proofs.M09.PathComparison
 import Mathlib.Topology.Semicontinuity.Basic
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 

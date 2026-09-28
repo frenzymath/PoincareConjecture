@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.M51.InitialRawFlow
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set

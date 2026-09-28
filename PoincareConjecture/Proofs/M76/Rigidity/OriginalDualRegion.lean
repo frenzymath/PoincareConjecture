@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDiskParameter
 import PoincareConjecture.Proofs.M76.Mathlib.BarycentricDualSubcomplex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -25,14 +16,12 @@ variable {X ι : Type*} [TopologicalSpace X]
 
 open Classical in
 
-
 noncomputable def dualRegion (s : Finset (T.index → ℝ × V3)) :
     Set (T.index → ℝ × V3) :=
   let : Fintype T.ambient.faces := T.finite.fintype
   (T.ambient.barycentricDualBlock s).space ∩ (T.marked 0).space
 
 open Classical in
-
 
 noncomputable def dualRegionRim (s : Finset (T.index → ℝ × V3)) :
     Set (T.index → ℝ × V3) :=
@@ -41,7 +30,6 @@ noncomputable def dualRegionRim (s : Finset (T.index → ℝ × V3)) :
     (T.marked 0).space) ∪ ((T.ambient.barycentricDualBlock s).space ∩ (T.marked 1).space)
 
 open Classical in
-
 
 theorem dualRegion_inter_disk (s : Finset (T.index → ℝ × V3)) :
     let : Fintype (T.marked 2).faces := (T.marked_finite 2).fintype
@@ -62,7 +50,6 @@ theorem dualRegion_inter_disk (s : Finset (T.index → ℝ × V3)) :
 
 open Classical in
 
-
 theorem disk_dual_inter_boundary (s : Finset (T.index → ℝ × V3)) :
     let : Fintype (T.marked 2).faces := (T.marked_finite 2).fintype
     let : Fintype (T.marked 3).faces := (T.marked_finite 3).fintype
@@ -79,8 +66,6 @@ theorem disk_dual_inter_boundary (s : Finset (T.index → ℝ × V3)) :
     (T.marked 3) (T.marked_le 3) s
 
 open Classical in
-
-
 
 theorem dualRegionRim_inter_disk {s : Finset (T.index → ℝ × V3)}
     (hs : s ∈ (T.marked 2).faces) :

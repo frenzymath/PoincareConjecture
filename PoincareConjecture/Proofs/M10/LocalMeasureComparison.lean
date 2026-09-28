@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.PullbackJacobian
 import PoincareConjecture.Proofs.M10.CalibratedComparison
 import PoincareConjecture.Proofs.M10.DensityComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory

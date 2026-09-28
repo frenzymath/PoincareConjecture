@@ -2,19 +2,6 @@ import PoincareConjecture.Proofs.M32.Cor11_36.Propagation
 import PoincareConjecture.Proofs.M32.Cor11_36.Selector
 import PoincareConjecture.Proofs.M32.Thm11_31.EndCutClosure
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -34,10 +21,6 @@ private theorem inverse_sq_lt_half_of_le_half {r s : ℝ}
   have hsq := pow_le_pow_left₀ (by positivity : 0 ≤ 2 * s⁻¹) hi 2
   have hpos := sq_pos_of_pos (inv_pos.mpr hr)
   nlinarith
-
-
-
-
 
 theorem exists_deepHornScaleSelection_of_pointwiseHeight :
     ∃ tau : ℝ, 0 < tau ∧ tau ≤ 1 / 200 ∧

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M36.MetricComparison
 import Mathlib.Topology.Order.Compact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff ENNReal Topology

@@ -1,21 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_7_Intrinsic.Prop19_35_NormalCornerFans
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -25,9 +9,6 @@ open scoped Topology ContDiff Manifold Bundle Matrix
 open PoincareConjecture.Topology.Surface
 
 namespace PoincareConjecture
-
-
-
 
 theorem m64Intrinsic_two_arc_initial_normal_fan
     {I : Type*} [Fintype I] (face : I → SmoothFace AnnulusCoordinates)

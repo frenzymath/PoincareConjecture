@@ -6,36 +6,20 @@ import Mathlib.Tactic.FinCases
 import Mathlib.Tactic.Linarith
 import Mathlib.Tactic.Ring
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
 
-
-
 def unitTriangle : Set (ℝ × ℝ) :=
   {z | 0 ≤ z.1 ∧ 0 ≤ z.2 ∧ z.1 + z.2 ≤ 1}
-
-
 
 theorem convex_unitTriangle : Convex ℝ unitTriangle :=
   ((convex_Ici (𝕜 := ℝ) 0).linear_preimage (LinearMap.fst ℝ ℝ ℝ)).inter
     (((convex_Ici (𝕜 := ℝ) 0).linear_preimage (LinearMap.snd ℝ ℝ ℝ)).inter
       ((convex_Iic (𝕜 := ℝ) 1).linear_preimage
         (LinearMap.fst ℝ ℝ ℝ + LinearMap.snd ℝ ℝ ℝ)))
-
-
 
 theorem unitTriangle_eq_convexHull :
     unitTriangle = convexHull ℝ {(0, 0), (1, 0), (0, 1)} := by
@@ -60,8 +44,6 @@ theorem unitTriangle_eq_convexHull :
   · apply convexHull_min _ convex_unitTriangle
     rintro z (rfl | rfl | rfl) <;> norm_num [unitTriangle]
 
-
-
 theorem interior_unitTriangle :
     interior unitTriangle = {z | 0 < z.1 ∧ 0 < z.2 ∧ z.1 + z.2 < 1} := by
   let L : (ℝ × ℝ) →ₗ[ℝ] ℝ := LinearMap.fst ℝ ℝ ℝ + LinearMap.snd ℝ ℝ ℝ
@@ -75,8 +57,6 @@ theorem interior_unitTriangle :
   change interior ((Prod.fst ⁻¹' Ici 0) ∩ ((Prod.snd ⁻¹' Ici 0) ∩ (L ⁻¹' Iic 1))) = _
   rw [interior_inter, interior_inter, ← hF, ← hS, ← hT, interior_Ici, interior_Iic]
   rfl
-
-
 
 theorem closure_interior_unitTriangle : closure (interior unitTriangle) = unitTriangle := by
   have hclosed : IsClosed unitTriangle :=

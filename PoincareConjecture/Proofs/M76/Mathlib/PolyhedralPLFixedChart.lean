@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLInCharts
 import PoincareConjecture.Proofs.M76.Mathlib.PiecewiseAffineGroupoid
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,9 +11,6 @@ variable {E F X ι : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [NormedAddCommGroup F] [NormedSpace ℝ F]
   [FiniteDimensional ℝ F] [TopologicalSpace X]
   {e : ι → OpenPartialHomeomorph X F}
-
-
-
 
 theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_fixed_chart
     (hcompat : ∀ i j, (e i).symm.trans (e j) ∈ piecewiseAffineGroupoid F)
@@ -49,8 +37,6 @@ theorem PolyhedralPLInCharts.finitePiecewiseAffineOn_fixed_chart
   exact ⟨J, V, hJ, hV, hxV, fun y hy => hJN.symm.subset (hVN hy), hJF⟩
 
 omit [FiniteDimensional ℝ E] [FiniteDimensional ℝ F] in
-
-
 
 theorem polyhedralPLInCharts_of_one_chart_inverse
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

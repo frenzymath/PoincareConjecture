@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Geometri
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.Embedding.LocalDiffeomorphism
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Compactness.SourceMetric
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -30,8 +19,6 @@ variable {n : ℕ} {M N : Type*}
   [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [ChartedSpace (EuclideanSpace ℝ (Fin n)) N]
   [IsManifold (𝓡 n) ∞ N]
-
-
 
 theorem pathELength_comp_le_of_tangentNorm_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -51,8 +38,6 @@ theorem pathELength_comp_le_of_tangentNorm_le
     exact mfderiv_comp_apply t (hf t ht) (hγ.mdifferentiable (by simp) t) 1
   exact (ENNReal.ofReal_le_ofReal (by rw [hchain']; exact hbound t ht _)).trans_eq
     (ENNReal.ofReal_mul hC)
-
-
 
 theorem edist_image_le_mul_edist_of_tangentNorm_le_on_ball
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)
@@ -115,8 +100,6 @@ theorem edist_image_le_mul_edist_of_tangentNorm_le_on_ball
   simpa only [mul_comm] using (ENNReal.div_le_iff
     (ne_of_gt (ENNReal.ofReal_pos.mpr hC)) ENNReal.ofReal_ne_top).mp hdiv
 
-
-
 theorem abs_pullback_inner_sub_le_mul_of_unit_bound
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) (f : M → N)
     {x : M} {δ : ℝ}
@@ -152,8 +135,6 @@ theorem abs_pullback_inner_sub_le_mul_of_unit_bound
       abs_mul, abs_of_nonneg (sq_nonneg a)]
   rw [hid]
   simpa only [ha2, mul_comm] using hc
-
-
 
 theorem tangentNorm_pullback_bounds_of_unit_error
     (g : RiemannianMetric n M) (h : RiemannianMetric n N) (f : M → N)
@@ -216,8 +197,6 @@ theorem spatialInverse_comp_spatialMap
   rw [hp] at hh
   exact congrArg Prod.snd hh
 
-
-
 theorem spatialInverse_mfderiv_comp
     (e : SmoothSpacetimeEmbedding F G (Ioo T' T ×ˢ U))
     (hU : @IsOpen L.carrier L.topologicalSpace U)
@@ -258,9 +237,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
   normedSpaceTangentSpaceVectorSpace
 
 variable {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
-
-
-
 
 theorem eventually_inverse_edist_bounds_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
@@ -381,8 +357,6 @@ theorem eventually_inverse_edist_bounds_of_source_ball_coverage
   have hh := hforward (hinvball hx) (hinvball hy)
   rwa [hright hx, hright hy] at hh
 
-
-
 theorem eventually_inverse_distortion_lt_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)
     (hcover : ∀ A : ℝ, 0 < A → ∃ j : ℕ, ∀ᶠ k in atTop,
@@ -460,8 +434,6 @@ theorem eventually_inverse_distortion_lt_of_source_ball_coverage
       nlinarith
     · linarith
   · nlinarith
-
-
 
 theorem tendsto_inverse_dist_of_source_ball_coverage
     (G : PointedGeometricConvergence S) (hT : T' < 0 ∧ 0 < T)

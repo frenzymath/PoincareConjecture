@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.IntegerWinding
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Maps.SourceAnnulusMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric
 
@@ -23,8 +12,6 @@ local notation "H" => LatticeHandle (Fin 1) (Fin 2) L
 local notation "B" => latticeHandleBoundary (Fin 1) (Fin 2) L
 local notation "D" => closedBall (0 : Fin 1 → ℝ) 1
 local notation "C" => AddCircle (4 * (128 : ℝ))
-
-
 
 theorem sourceSurface_pi1_isCyclic_of_ambient_injective
     (phi : C(H, H)) (theta : C) (F : (ContinuousMap.id H).HomotopyRel phi B)

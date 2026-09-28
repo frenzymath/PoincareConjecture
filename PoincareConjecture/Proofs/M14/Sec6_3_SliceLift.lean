@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M14.Sec6_2_GaugeLift
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SliceMap
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -27,10 +16,6 @@ variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   [TopologicalSpace H] {J : ModelWithCorners ℝ E H}
   [TopologicalSpace M] [ChartedSpace H M]
   {t : ℝ} {f : M → (G.slices t).Point} {S : Set M} {z : M}
-
-
-
-
 
 theorem contMDiffWithinAt_slice_of_inclusion
     (hf : ContMDiffWithinAt J (spacetimeModel n) ∞ (fun a => (f a).val) S z) :
@@ -56,9 +41,6 @@ theorem contMDiffWithinAt_slice_of_inclusion
   apply hcomp.congr_of_eventuallyEq _ (heq z hzU).symm
   filter_upwards [hf.continuousWithinAt (hU.mem_nhds hzU)] with a ha
   exact (heq a ha).symm
-
-
-
 
 theorem contMDiffAt_slice_of_inclusion
     (hf : ContMDiffAt J (spacetimeModel n) ∞ (fun a => (f a).val) z) :

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M14.Sec6_3_InitialValuePasting
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialValueRestriction
 import PoincareConjecture.Proofs.M14.Sec6_3_InitialValueUnique
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -24,10 +15,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {T τ : ℝ} {x y : G.Point} {Z : G.Horizontal x}
-
-
-
-
 
 theorem exists_initialValuePath_extension_neighborhood
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.ZeroComposition
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.ZeroBilinear
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 open Set Filter

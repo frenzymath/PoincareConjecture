@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M35.RadialGauge.HeatDerivative
 import PoincareConjecture.Proofs.M35.RadialGauge.HeatTimeGain
 import Mathlib.Analysis.Calculus.ContDiff.Defs
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,7 +14,6 @@ variable {n : ℕ} {F : Type*} [NormedAddCommGroup F] [NormedSpace ℝ F]
 
 local notation "V" => EuclideanSpace ℝ (Fin (n + 1))
 
-
 theorem heatAverage_time_stronglyMeasurable {f : ℝ → V → F}
     (hf : StronglyMeasurable (Function.uncurry f)) (t : ℝ) (x : V) :
     StronglyMeasurable (fun s => heatAverage (t - s) (f s) x) := by
@@ -31,8 +22,6 @@ theorem heatAverage_time_stronglyMeasurable {f : ℝ → V → F}
     hf.comp_measurable (g := fun p : ℝ × V =>
       (p.1, x + Real.sqrt (2 * (t - p.1)) • p.2)) (by fun_prop)
   exact hi.integral_prod_right'
-
-
 
 theorem heatGradientKernel_time_stronglyMeasurable {f : ℝ → V → F}
     (hf : StronglyMeasurable (Function.uncurry f)) (t : ℝ) (x : V) :
@@ -50,9 +39,6 @@ theorem heatGradientKernel_time_stronglyMeasurable {f : ℝ → V → F}
         continuous_snd).comp_stronglyMeasurable (hz.prodMk hi)
   exact (show Measurable (fun s : ℝ => (Real.sqrt (2 * (t - s)))⁻¹) by
     fun_prop).stronglyMeasurable.smul hk.integral_prod_right'
-
-
-
 
 theorem heatDuhamel_hasFDerivAt {f : ℝ → V → F} {f' : ℝ → V → V →L[ℝ] F}
     {C t : ℝ} (hC : 0 ≤ C) (ht : 0 ≤ t)
@@ -105,8 +91,6 @@ theorem heatDuhamel_hasFDerivAt {f : ℝ → V → F} {f' : ℝ → V → V →L
     obtain ⟨D, hD⟩ := hdbound s hs
     exact heatAverage_hasFDerivAt (hf s ⟨hs.1, hs.2.le⟩) (hf' s hs)
       (hderiv s hs) (hbound s ⟨hs.1, hs.2.le⟩) hD (sub_pos.mpr hs.2) y
-
-
 
 theorem heatDuhamel_fderiv_eq {f : ℝ → V → F} {C t : ℝ}
     (hC : 0 ≤ C) (ht : 0 ≤ t)

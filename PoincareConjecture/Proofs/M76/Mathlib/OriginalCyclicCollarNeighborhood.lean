@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.OriginalLateralBoxInterior
 import PoincareConjecture.Proofs.M76.Mathlib.PolygonInteriorCutArcs
 import PoincareConjecture.Proofs.M76.Mathlib.CompactZeroFiberBand
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes
@@ -20,10 +10,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {n : ℕ}
-
-
-
-
 
 theorem boundary_subset_interior_original_cyclic_boxes
     (P : Polygon E (n + 3)) (t : Fin (n + 3) → ℝ)
@@ -76,9 +62,6 @@ theorem boundary_subset_interior_original_cyclic_boxes
     ((hF i).mem_interior_image (f i).linear.finrank_eq (hinj i) hsource)
 
 omit [FiniteDimensional ℝ E] in
-
-
-
 
 theorem exists_surface_band_subset_original_neighborhood
     (P : Polygon E (n + 3)) {S U : Set E} (hS : IsCompact S) (hU : IsOpen U)

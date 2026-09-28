@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.CollarGluing
 import PoincareConjecture.Proofs.M60.Def18_17_FillingArea.LipschitzDiskArea
 import PoincareConjecture.Proofs.M60.Filling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Metric
@@ -23,9 +13,6 @@ namespace PoincareConjecture
 
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
-
 
 theorem m60FillingArea_le_of_lipschitz_collar (g : RiemannianMetric 3 M)
     {γ γ' : C1FreeLoopSpace (M := M)} (D : LipschitzSpanningDisk g γ)

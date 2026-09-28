@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.ProjectedPureCoverage
 import PoincareConjecture.Proofs.M76.Mathlib.SimplicialFrontierAttachment
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,8 +11,6 @@ section Incidence
 
 variable {𝕜 E : Type*} [Ring 𝕜] [PartialOrder 𝕜] [AddCommGroup E] [Module 𝕜 E]
   [DecidableEq E]
-
-
 
 theorem hasTwoFullCofaces_of_faceLink_ncard_eq_two (K : SimplicialComplex 𝕜 E)
     {s : Finset E} {n : ℕ} (hcard : s.card = n)
@@ -48,9 +37,6 @@ end Incidence
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
 
-
-
-
 theorem subset_of_mem_intrinsicInterior_face (K : SimplicialComplex ℝ E)
     {s t : Finset E} (hs : s ∈ K.faces) (ht : t ∈ K.faces)
     {x : E} (hxs : x ∈ intrinsicInterior ℝ (convexHull ℝ (s : Set E)))
@@ -68,10 +54,6 @@ theorem subset_of_mem_intrinsicInterior_face (K : SimplicialComplex ℝ E)
 
 variable {F : Type*} [FiniteDimensional ℝ E] [DecidableEq E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
-
-
-
-
 
 theorem mem_interior_linearImage_closedFaceStar (K : SimplicialComplex ℝ E)
     (hfinite : K.faces.Finite)

@@ -4,18 +4,6 @@ import PoincareConjecture.Proofs.M76.Rigidity.OriginalTargetPhaseRetractionPL
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalHandleHomotopy
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,8 +13,6 @@ namespace PoincareConjecture.M76
 local notation "V3" => (Fin 3 → ℝ)
 local notation "C3" => closedBall (0 : V3) 1
 local notation "Q3" => sphere (0 : V3) 1
-
-
 
 theorem ChartwisePLBall.isConnected_boundary_in_carrier
     {X ι : Type*} [TopologicalSpace X]
@@ -62,9 +48,6 @@ local notation "C0" => AddCircle (4 * (16 : ℝ))
 local notation "Q0" => hamiltonZeroAmbientEquiv.trans hamiltonZeroHierarchyCoordinates
 
 private instance period_positive : Fact (0 < 4 * (16 : ℝ)) := ⟨by norm_num⟩
-
-
-
 
 theorem ChartwisePLMap.exists_hamiltonZero_ball_phase_homotopy {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

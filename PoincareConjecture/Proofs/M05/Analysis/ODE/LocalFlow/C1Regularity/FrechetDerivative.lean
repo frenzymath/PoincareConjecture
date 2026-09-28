@@ -1,16 +1,5 @@
-
-
-
-
-
-
-
-
-
-
 import PoincareConjecture.Proofs.M05.Analysis.ODE.LocalFlow.C1Regularity.VariationalSolutionOperator
 import Mathlib.Analysis.Calculus.MeanValue
-
 
 noncomputable section
 
@@ -138,7 +127,6 @@ end UniformPartial
 section MainTheorem
 
 variable {f : ℝ → E → E} {t₀ : ℝ} {x₀ : E} {r : ℝ≥0} {tmin tmax : ℝ} {Φ : E × ℝ → E}
-
 
 theorem hasFDerivAt_flow_at_initial_of_isLocalFlow
     (hΦ : IsLocalFlow f t₀ x₀ r tmin tmax Φ)

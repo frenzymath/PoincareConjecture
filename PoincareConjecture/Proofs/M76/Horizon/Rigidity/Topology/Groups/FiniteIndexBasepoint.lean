@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.Horizon.AlgebraicTopology.FundamentalGroup.Path
 import Mathlib.GroupTheory.Index
 import Mathlib.GroupTheory.Commensurable
 
-
-
 set_option autoImplicit false
 
 namespace FundamentalGroup
@@ -52,7 +50,6 @@ theorem fundamentalGroupMulEquivOfPath_symm
   change as.conj = a.symm.conj
   rw [ha]
 
-
 theorem map_path_change_naturality (f : C(X, Y)) {x₀ x₁ : X} (p : Path x₀ x₁) :
     (map f x₁).comp (fundamentalGroupMulEquivOfPath p).toMonoidHom =
       (fundamentalGroupMulEquivOfPath (p.map f.continuous)).toMonoidHom.comp (map f x₀) := by
@@ -65,7 +62,6 @@ theorem map_path_change_naturality (f : C(X, Y)) {x₀ x₁ : X} (p : Path x₀ 
         (Path.Homotopic.Quotient.mk (p.map f.continuous)))
   rw [Path.Homotopic.Quotient.map_trans, Path.Homotopic.Quotient.map_trans,
     Path.Homotopic.Quotient.map_symm, Path.Homotopic.Quotient.mk_map]
-
 
 theorem range_map_path_change (f : C(X, Y)) {x₀ x₁ : X} (p : Path x₀ x₁) :
     (map f x₁).range = (map f x₀).range.map
@@ -145,7 +141,6 @@ theorem finiteIndex_range_map_of_path (f : C(X, Y)) {x₀ x₁ : X} (p : Path x�
 theorem finiteIndex_range_map_iff_of_path (f : C(X, Y)) {x₀ x₁ : X} (p : Path x₀ x₁) :
     (map f x₁).range.FiniteIndex ↔ (map f x₀).range.FiniteIndex :=
   ⟨finiteIndex_range_map_of_path f p.symm, finiteIndex_range_map_of_path f p⟩
-
 
 theorem finiteIndex_range_map_all_basepoints [PathConnectedSpace X]
     (f : C(X, Y)) (x₀ : X) (h : (map f x₀).range.FiniteIndex) :

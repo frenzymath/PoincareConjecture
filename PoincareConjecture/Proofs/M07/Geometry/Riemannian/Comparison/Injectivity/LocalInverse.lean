@@ -1,14 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Manifold.InverseFunction.SmoothInverse
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -20,7 +11,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_smooth_inverse_branch {f : EuclideanSpace ℝ (Fin n) → M}
     {U : Set (EuclideanSpace ℝ (Fin n))} (hU : IsOpen U)

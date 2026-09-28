@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Soliton.TwoDimensional.Compact.Identities
 import Mathlib.Analysis.Calculus.MeanValue
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,7 +10,6 @@ namespace PoincareConjecture.RicciFlow
 
 variable {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin 2)) M] [IsManifold (𝓡 2) ∞ M]
-
 
 theorem inner_eq_neg_time_mul_of_scalarCurvature
     (F : RicciFlow 2 M (Set.Iio 0))
@@ -51,7 +42,6 @@ theorem inner_eq_neg_time_mul_of_scalarCurvature
   norm_num only [neg_neg, div_one] at heq
   have h := (div_eq_iff (neg_ne_zero.mpr (ne_of_lt ht))).mp heq
   simpa only [mul_comm] using h
-
 
 theorem homotheticMetricSlice_of_scalarCurvature
     (F : RicciFlow 2 M (Set.Iio 0))

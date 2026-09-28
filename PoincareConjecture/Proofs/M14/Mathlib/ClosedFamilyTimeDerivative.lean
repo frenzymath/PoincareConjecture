@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M08.ChartConnectionVariation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -17,9 +9,6 @@ namespace PoincareConjecture.M14
 
 variable {E F : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F]
-
-
-
 
 theorem closedFamily_timeDerivative_contDiffOn {U : Set E} {C : Set ℝ}
     (hU : IsOpen U) (hC : UniqueDiffOn ℝ C) (q : E × ℝ → F)

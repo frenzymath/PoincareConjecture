@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarConjugateCriticalExclusion
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,9 +15,6 @@ open LeviCivitaData.Dirichlet
 local notation "Plane" => EuclideanSpace ℝ (Fin 2)
 local notation "Cover" => ℝ × ℝ
 
-
-
-
 theorem scalarCoverMap_surjOn : SurjOn scalarCoverMap scalarCoverStrip scalarAnnulus := by
   intro p hp
   have hp0 : 0 < ‖p‖ := zero_lt_one.trans hp.1
@@ -40,10 +25,6 @@ theorem scalarCoverMap_surjOn : SurjOn scalarCoverMap scalarCoverStrip scalarAnn
   rw [scalarCoverMap_polar_relation, ht, smul_inv_smul₀ hp0.ne']
 
 variable {g : RiemannianMetric 2 Plane} (D : LeviCivitaData g)
-
-
-
-
 
 theorem scalarPotential_gradient_ne_zero_on_cover (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)
@@ -68,9 +49,6 @@ theorem scalarPotential_gradient_ne_zero_on_cover (w : H1Zero D scalarAnnulus)
   exact scalarPotential_gradient_ne_zero_of_local_conjugate_injective D hHc hHs hlap
     hinner houter hWs hUo hUA hform hpair hp
 
-
-
-
 theorem scalarPotential_gradient_ne_zero (w : H1Zero D scalarAnnulus)
     {H : Plane → ℝ} {V : Cover → ℝ} (hHc : Continuous H)
     (hHs : ContMDiffOn (𝓡 2) 𝓘(ℝ, ℝ) ∞ H scalarAnnulus)
@@ -88,10 +66,6 @@ theorem scalarPotential_gradient_ne_zero (w : H1Zero D scalarAnnulus)
   obtain ⟨z, hz, rfl⟩ := scalarCoverMap_surjOn hp
   exact scalarPotential_gradient_ne_zero_on_cover D w hHc hHs hHae hlap hinner houter
     hdV hdeck hrange hz
-
-
-
-
 
 theorem exists_noncritical_homeomorphic_annular_cover_conjugate :
     ∃ (H : Plane → ℝ) (V : Cover → ℝ) (P : ℝ),

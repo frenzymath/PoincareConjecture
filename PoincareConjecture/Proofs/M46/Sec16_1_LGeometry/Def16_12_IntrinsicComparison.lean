@@ -2,15 +2,6 @@ import PoincareConjecture.Definitions.Ch16.CapPersistence
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_IntrinsicJets
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_CylinderCoefficients
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -26,9 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {F : SurgeryFlowData.{u}} {t : ℝ} {I : Set ℝ}
   {U : Set (F.slice t).carrier}
-
-
-
 
 noncomputable def capComparisonCoefficients
     (e : SurgeryFlowCylinder F (F.slice t) t ((F.parameters.h t)⁻¹ ^ 2) I U)
@@ -52,9 +40,6 @@ noncomputable def capComparisonCoefficients
     ((F.metric (t + s / ((F.parameters.h t)⁻¹ ^ 2))).inner
       (e.forward s hs (chart x))) d d
 
-
-
-
 theorem capComparisonCoefficients_apply
     (e : SurgeryFlowCylinder F (F.slice t) t ((F.parameters.h t)⁻¹ ^ 2) I U)
     (chart : StandardCapSpace → (F.slice t).carrier)
@@ -63,8 +48,6 @@ theorem capComparisonCoefficients_apply
       e.pullbackInner s hs (chart x)
         (mfderiv (𝓡 3) (𝓡 3) chart x v)
         (mfderiv (𝓡 3) (𝓡 3) chart x w) := rfl
-
-
 
 theorem capComparison_covariant_error_lt
     {S : MaximalStandardCapFlow F.standard_initial} {A eta : ℝ}
@@ -81,9 +64,6 @@ theorem capComparison_covariant_error_lt
     (fun y v => capComparisonCoefficients e chart s hs y (v 0) (v 1)) hj heta
     ((hjets s hs x hx).trans_lt hbound)
 
-
-
-
 theorem capComparison_metric_bounds
     {S : MaximalStandardCapFlow F.standard_initial} {A eta : ℝ}
     (e : SurgeryFlowCylinder F (F.slice t) t ((F.parameters.h t)⁻¹ ^ 2) I U)
@@ -99,10 +79,6 @@ theorem capComparison_metric_bounds
   exact metric_quadratic_bounds_of_jet_error (S.metric s) (S.connection s)
     (capComparisonCoefficients e chart s hs) heta
     ((hjets s hs x hx).trans_lt hbound) v
-
-
-
-
 
 theorem capComparisonCoefficients_smooth
     (e : SurgeryFlowCylinder F (F.slice t) t ((F.parameters.h t)⁻¹ ^ 2) I U)

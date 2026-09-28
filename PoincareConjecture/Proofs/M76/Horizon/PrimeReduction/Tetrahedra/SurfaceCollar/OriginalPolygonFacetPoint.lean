@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Tetrahedra.SurfaceCollar.OriginalFacetGerm
 import Mathlib.Order.Interval.Set.Infinite
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

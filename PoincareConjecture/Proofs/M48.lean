@@ -23,104 +23,11 @@ import PoincareConjecture.Proofs.M48.ExtensionControls
 import PoincareConjecture.Proofs.M33.TerminalPolicyAtFrontier
 import PoincareConjecture.Proofs.M48.TerminalPolicy
 
-
-
-
-
 set_option autoImplicit false
 
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedEpochExtension : RepairedEpochExtensionTheory.{u} := by
   classical

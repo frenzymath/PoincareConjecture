@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.NestedSupport.CommonBetaInnerData
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ShortSectorTemplates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Function
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_saddle_common_beta_shared_short_data
     (kappa : OpenPartialHomeomorph E2 E2)

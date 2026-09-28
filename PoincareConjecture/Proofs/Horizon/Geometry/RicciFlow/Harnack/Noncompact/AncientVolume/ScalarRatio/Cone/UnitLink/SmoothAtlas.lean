@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Harnack.Noncompact.AncientVolume.ScalarRatio.Cone.UnitLink.Transitions
 import Mathlib.Geometry.Manifold.LocalDiffeomorph
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ variable {X : Type*} [MetricSpace X] {p : X} (hcomparison : RayComparison p) (n 
     ∃ (d : UnitSliceRadialChartData hcomparison n) (z : d.Level),
       (d.levelHomeomorph z).1 = x)
 
-
-
 theorem unitSlice_isManifold :
     letI := unitSliceChartedSpace hcomparison n hcover
     IsManifold (𝓡 n) ∞ (AsymptoticConeUnitSlice p hcomparison) := by
@@ -35,8 +25,6 @@ theorem unitSlice_isManifold :
   obtain ⟨d, z, rfl⟩ := he
   obtain ⟨d', z', rfl⟩ := he'
   simpa using d.contDiffOn_chart_transition d' z z'
-
-
 
 theorem UnitSliceRadialChartData.isLocalDiffeomorph_levelMap
     (d : UnitSliceRadialChartData hcomparison n) :

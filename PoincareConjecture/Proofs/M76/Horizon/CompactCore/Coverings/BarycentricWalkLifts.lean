@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.BarycentricEd
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Coverings.CocycleWalkValue
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.GraphWalkPaths
 
-
-
 set_option autoImplicit false
 
 namespace AbstractSimplicialComplex

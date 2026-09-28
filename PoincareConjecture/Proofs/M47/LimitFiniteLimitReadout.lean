@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitFiniteSliceJets
 import PoincareConjecture.Proofs.M47.LimitFiniteSliceCanonical
 import PoincareConjecture.Proofs.M47.LimitFiniteSourceReadout
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -45,10 +36,6 @@ private local instance finiteReadoutCharts : ChartedSpace E G.limit.carrier.carr
   G.limit.carrier.chartedSpace
 private local instance finiteReadoutManifold : IsManifold (𝓡 3) ∞ G.limit.carrier.carrier :=
   G.limit.carrier.isManifold
-
-
-
-
 
 theorem limitFinite_nearby_neck_of_retained_convergence
     (P : M47Predecessors.{u}) (hfinite : H ≠ ⊤) {epsilon C : ℝ}

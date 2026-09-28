@@ -11,23 +11,6 @@ import PoincareConjecture.Proofs.M32.Claim11_34.LimitLine
 import PoincareConjecture.Proofs.M32.Claim11_35.CompactProductFactor
 import PoincareConjecture.Proofs.M32.Claim11_35.SurfacePositivity
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -49,10 +32,6 @@ local macro "stage[" S:term "," T:term "," M:term "," B:term "]" : term =>
         (($S).flow k).scalar (e.embedding.pointMap s hs y) ≤ $M * ($S).scale k) ∧
       (∀ s hs y, y ∈ ($S).baseBall k A → GeneralizedKappaNoncollapsedAt
         (($S).flow k) (e.embedding.pointMap s hs y) neckNoncollapseConstant 1))
-
-
-
-
 
 theorem exists_terminalBlowupSequence_noncollapsed_stage_step
     (P : RepairedHornSelectionPredecessors.{u}) :

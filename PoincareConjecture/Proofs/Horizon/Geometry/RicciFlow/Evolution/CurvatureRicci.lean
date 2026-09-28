@@ -42,13 +42,6 @@ private lemma sum_heat_product {ι : Type*} [Fintype ι]
     Finset.sum_add_distrib, Finset.sum_sub_distrib, ← Finset.mul_sum, hG]
   ring
 
-
-
-
-
-
-
-
 lemma tensorHeatOperator_curvatureRicci
     (hC : RicciFlowCurvatureTheory.{u}) (F : RicciFlow n M J)
     {t : ℝ} (ht : t ∈ interior J) (x : M)

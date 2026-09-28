@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M38.ProjectiveBallRegions
 import PoincareConjecture.Proofs.M38.FullCutLocalModels
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff
 universe u
 
 namespace PoincareConjecture.M38
-
-
 
 theorem exists_cap_model_projective_cover
     {A : GeneralizedSliceCarrier.{u}} {p : RealProjectiveThree} {U : Set A.carrier}
@@ -55,8 +44,6 @@ theorem exists_cap_model_projective_cover
     exact C.inverse_mem y
   · intro x hx
     exact ⟨C.forward x, mem_univ _, C.left_inverse x hx⟩
-
-
 
 noncomputable def projectiveCapRegionEquivalence
     (A : GeneralizedSliceCarrier.{u}) {g : RiemannianMetric 3 A.carrier}

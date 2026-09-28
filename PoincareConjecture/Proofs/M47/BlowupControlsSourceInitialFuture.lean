@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialSlice
 import PoincareConjecture.Proofs.M47.SeedCylinderClock
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -27,8 +18,6 @@ private theorem old_future_scalar_eq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   rfl
-
-
 
 theorem exists_source_initial_old_future
     {F : SurgeryFlowData.{u}} {T : ℝ} (hT : T ∈ F.surgery_times)

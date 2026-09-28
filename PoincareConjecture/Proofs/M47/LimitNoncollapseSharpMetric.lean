@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M34.Standard.GeneralizedCompactMetricComparison
 import PoincareConjecture.Proofs.M34.Mathlib.FiniteCoordinateOperatorBounds
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.CompactEnergy
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -145,8 +137,6 @@ private theorem eventually_chart_pullback_inner_comparison
   constructor
   · nlinarith [(abs_le.mp herr).1, (abs_le.mp herr).2]
   · nlinarith [(abs_le.mp herr).1, (abs_le.mp herr).2]
-
-
 
 theorem limitNoncollapse_generalized_compact_inner_comparison
     {K : Set C.limit.sliceCarrier.carrier} (hK : IsCompact K)

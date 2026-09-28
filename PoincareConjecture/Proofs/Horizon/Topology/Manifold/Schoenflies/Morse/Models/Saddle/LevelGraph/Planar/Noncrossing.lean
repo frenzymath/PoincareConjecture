@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.LevelGraph.Planar.Clearance
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Plane.Arcs.Noncrossing
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -15,8 +13,6 @@ namespace Poincare.Manifold.Schoenflies.SaddleLevel
 private abbrev E2 := EuclideanSpace Real (Fin 2)
 private abbrev E3 := EuclideanSpace Real (Fin 3)
 private abbrev S2 := sphere (0 : E3) 1
-
-
 
 theorem planarProjection_injOn_level
     {f : S2 -> E3} (hf : Function.Injective f)
@@ -32,9 +28,6 @@ theorem planarProjection_injOn_level
   · change inner Real v (D (f q)) = inner Real v (D (f z))
     rw [hDheight, hDheight, hq, hz]
   · exact J.symm.injective heq
-
-
-
 
 theorem exists_exterior_noncrossing_square
     {f : S2 -> E3} (hf : _root_.Manifold.IsSmoothEmbedding (𝓡 2) (𝓡 3) ∞ f)

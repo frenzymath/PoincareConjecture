@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M14.Sec6_3_MaximalSmooth
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,9 +18,6 @@ private theorem horizontal_t2Space : T2Space (G.Horizontal x) :=
 
 attribute [local instance] horizontal_t2Space
 
-
-
-
 noncomputable def initialValueDifferential
     (G : GeneralizedLGeometryTransport n X time I) (T : ℝ) (x : G.Point)
     (Z : G.Horizontal x) (s : ℝ) :
@@ -37,9 +26,6 @@ noncomputable def initialValueDifferential
     ⟨G.spacetime.horizontalMetric.toRiemannianMetric⟩
   (G.spacetime.horizontalProjection (initialValueCurve G T x Z s)).comp
     (M14InitialVectorDerivative G (initialValueCurve G T x) s Z)
-
-
-
 
 theorem initialValueCurve_initialVectorDerivative_zero (Z : G.Horizontal x) :
     M14InitialVectorDerivative G (initialValueCurve G T x) 0 Z = 0 := by
@@ -55,9 +41,6 @@ theorem initialValueCurve_initialVectorDerivative_zero (Z : G.Horizontal x) :
     funext initialValueCurve_zero
   rw [hcurve]
   exact mfderiv_const
-
-
-
 
 theorem initialValueCurve_initialVectorDerivative_clock
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)
@@ -98,10 +81,7 @@ theorem initialValueCurve_initialVectorDerivative_clock
   set_option backward.isDefEq.respectTransparency false in
     exact DFunLike.congr_fun (ht.hasFDerivAt.unique hc) W
 
-
 set_option backward.isDefEq.respectTransparency false in
-
-
 
 theorem initialValueDifferential_val
     (hM04 : RicciFlowCurvatureTheory.{0}) (hM12 : GeneralizedRicciGaugeTheory.{u} n)

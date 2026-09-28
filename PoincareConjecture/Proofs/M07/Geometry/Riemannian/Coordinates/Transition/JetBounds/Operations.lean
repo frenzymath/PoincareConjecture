@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Coordinates.Transition.JetBounds
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter

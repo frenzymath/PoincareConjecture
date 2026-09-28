@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.M10.MetricTrace
 import PoincareConjecture.Proofs.M10.InitialJacobianCalculus
 import PoincareConjecture.Proofs.M10.ExponentialTransport
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -90,7 +82,6 @@ theorem exponential_scaled_gram_tendsto (G : LExponentialGeometry F T τmax p)
   rw [squareCoordinates_pullbackMetric_eq G hmax x
     (EuclideanSpace.basisFun (Fin n) ℝ i) (EuclideanSpace.basisFun (Fin n) ℝ j) hs hq]
   ring
-
 
 theorem exponential_scaled_jacobian_tendsto (G : LExponentialGeometry F T τmax p)
     (hmax : 0 < τmax) (hT : T ∈ J) (hwindow : Icc (T - τmax) T ⊆ J)

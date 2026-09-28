@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M13.ConnectionScale
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.ScalarOperators.Divergence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,8 +10,6 @@ namespace PoincareConjecture.M13
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
 
 theorem scaleLeviCivitaData_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     (u : M → ℝ) (x : M) :
@@ -33,8 +22,6 @@ theorem scaleLeviCivitaData_gradient (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < 
   simp only [map_smul, smul_apply, smul_eq_mul, D.inner_gradient]
   field_simp [hQ.ne'] at h ⊢
   nlinarith
-
-
 
 theorem scaleLeviCivitaData_laplacian (D : LeviCivitaData g) {Q : ℝ} (hQ : 0 < Q)
     {u : M → ℝ} {x : M} (hu : ContMDiffAt (𝓡 n) 𝓘(ℝ, ℝ) ∞ u x) :

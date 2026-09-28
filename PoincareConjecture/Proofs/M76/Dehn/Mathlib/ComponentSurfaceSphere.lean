@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PrimalDualSurfaceSphere
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.OriginalEdgeComponent
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set PreAbstractSimplicialComplex.ModTwoCochains
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E] (K : SimplicialComplex ℝ E)
-
-
-
 
 theorem exists_edgeComponent_sphere_model
     (hK : K.faces.Finite) (C : K.vertexAbstractComplex.edgeGraph.ConnectedComponent)

@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M35.Thm12_28.NeckHomeomorph
 import PoincareConjecture.Proofs.M35.Thm12_28.SliceNeckGeometry
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -23,9 +14,6 @@ private theorem scalar_scale_inv_sq {Q : ℝ} (hQ : 0 < Q) :
     (Q ^ (-1 / 2 : ℝ))⁻¹ ^ 2 = Q := by
   rw [← Real.rpow_neg hQ.le, ← Real.rpow_natCast, ← Real.rpow_mul hQ.le]
   norm_num
-
-
-
 
 noncomputable def toGeneralizedStrongNeck (P : M35StandardCapPredecessors)
     {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}
@@ -114,8 +102,6 @@ noncomputable def toGeneralizedStrongNeck (P : M35StandardCapPredecessors)
     · intro s hs z hz
       exact (congrArg (fun B => roundCylinderJetErrorSquared s B ⌊epsilon⁻¹⌋₊ z ≤ b)
         (hpull s hs)).mpr (hjet s (hretained hs) z hz)
-
-
 
 theorem generalized_canonical_control (P : M35StandardCapPredecessors)
     {atlas : StandardCylinderAtlas} {g₀ : StandardInitialMetric}

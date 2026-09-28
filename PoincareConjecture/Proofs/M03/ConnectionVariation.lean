@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.ConnectionPairingEvolution
 import PoincareConjecture.Proofs.M03.CurvatureVectorTime
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1800000
 

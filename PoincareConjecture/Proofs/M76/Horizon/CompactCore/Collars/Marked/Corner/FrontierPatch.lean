@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.CompactCore.Collars.Marked.TransversePatch
 
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

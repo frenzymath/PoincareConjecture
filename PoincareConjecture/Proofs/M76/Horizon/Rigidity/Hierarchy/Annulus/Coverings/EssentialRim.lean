@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Covering
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Coverings.Mathlib.FiniteFiberGroups
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.IndexOne.Topology.CircleGroups.IntegerWinding
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 

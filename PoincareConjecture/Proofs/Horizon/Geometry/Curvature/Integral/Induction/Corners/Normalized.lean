@@ -7,7 +7,6 @@ open scoped Manifold ContDiff Topology Bundle
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
-
 def PoincareConjecture.NormalizedCornerScalarBound
     (n m k : ℕ) (hdim : n = m + k) (M : Type*)
     [TopologicalSpace M] [T3Space M] [MeasurableSpace M] [BorelSpace M]

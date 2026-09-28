@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Surgery.Iteration.Core.OneCritical.SaddleEnds.Coverage
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -19,8 +17,6 @@ private abbrev S2 := sphere (0 : E3) 1
 local notation "Iprod" => ModelWithCorners.prod (𝓡 1) 𝓘(Real, Real)
 
 variable {v : E3} {g : S2 → E3} {B : Set Real}
-
-
 
 structure UpperAnnularEnd (D : SphereSurgeryCoreCap v g B)
     (C : Set S2) (h : S2 → Real) (a b : Real) where
@@ -114,8 +110,6 @@ theorem scale_pos (A : UpperAnnularEnd D C h a b) : 0 < D.scale := by
   linarith
 
 end UpperAnnularEnd
-
-
 
 theorem exists_upper_annular_end_family
     (hv : ‖v‖ = 1) (L : List (SphereSurgeryCoreCap v g B))

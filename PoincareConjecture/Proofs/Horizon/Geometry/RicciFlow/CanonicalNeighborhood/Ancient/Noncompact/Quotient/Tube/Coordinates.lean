@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.SmoothEmbedding.Slice
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Metric.Product.EuclideanModel
 import Mathlib.Geometry.Manifold.Algebra.Structures
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

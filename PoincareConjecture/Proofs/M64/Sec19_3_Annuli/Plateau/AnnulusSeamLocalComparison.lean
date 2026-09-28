@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamReplacementEnergy
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.AnnulusSeamGreenTransport
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -27,8 +16,6 @@ variable {n m : ℕ} {M : Type*} [TopologicalSpace M]
 
 local notation "E" => EuclideanSpace ℝ (Fin m)
 local notation "v" => m64AnnulusSeamTranslation
-
-
 
 theorem M64ObservedWeakAnnulus.seam_local_energy_le_of_matching_flux
     (A : M64ObservedWeakAnnulus (n := n) e c0 c1)

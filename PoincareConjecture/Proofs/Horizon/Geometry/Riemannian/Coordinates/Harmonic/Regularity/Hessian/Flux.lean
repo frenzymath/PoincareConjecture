@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmoni
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Harmonic.Regularity.Tensor.Green
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Regularity
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -59,7 +51,6 @@ private lemma metric_covector_product_smooth
   fin_cases i
   rfl
 
-
 theorem twoTensorDivergenceFlux_isSmooth (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T) :
     IsSmoothCovariantTensor (D.twoTensorDivergenceFlux T) := by
@@ -69,7 +60,6 @@ theorem twoTensorDivergenceFlux_isSmooth (D : LeviCivitaData g)
     unfold twoTensorCodazziDefect
     exact hDT.sub (hDT.perm _)
   exact (metric_covector_product_smooth hβ).add hC
-
 
 theorem twoTensorCurvatureTrace_isSmooth (D : LeviCivitaData g)
     {T : CovariantTensorEvaluation n M 2} (hT : IsSmoothCovariantTensor T) :
@@ -92,8 +82,6 @@ theorem twoTensorCurvatureTrace_isSmooth (D : LeviCivitaData g)
   rw [heq]
   exact hL.sub hF
 
-
-
 theorem hessianCurvatureFlux_eq_divergenceFlux_sub_laplacian
     (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
@@ -115,7 +103,6 @@ theorem hessianCurvatureFlux_eq_divergenceFlux_sub_laplacian
   unfold hessianCurvatureFlux twoTensorDivergenceFlux
   rw [hdiv, hc]
   ring
-
 
 theorem hessianCurvatureFlux_isSmooth (D : LeviCivitaData g) {f : M → ℝ}
     (hf : ContMDiff (𝓡 n) 𝓘(ℝ, ℝ) ∞ f) :
@@ -142,8 +129,6 @@ private lemma integrable_tensorPairingTwo_compact (D : LeviCivitaData g)
   by_contra hx'
   exact hx (by simp [RiemannianMetric.tensorPairingTwo,
     image_eq_zero_of_notMem_tsupport hx'])
-
-
 
 theorem integral_covariantHessian_pairing (D : LeviCivitaData g)
     {f : EuclideanSpace ℝ (Fin n) → ℝ}

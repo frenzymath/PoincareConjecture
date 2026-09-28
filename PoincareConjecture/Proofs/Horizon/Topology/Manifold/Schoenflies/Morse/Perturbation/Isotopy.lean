@@ -3,14 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.Morse.SignedSquares
 import Mathlib.Geometry.Manifold.Diffeomorph
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -21,8 +13,6 @@ open scoped Manifold ContDiff Topology
 namespace Poincare.Manifold.Schoenflies
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace Real E]
-
-
 
 theorem exists_pos_forall_cutoff_translation_isotopy [CompleteSpace E]
     {χ : E -> Real} (hχ : ContDiff Real ∞ χ) (hχc : HasCompactSupport χ) :
@@ -55,9 +45,6 @@ theorem exists_pos_forall_cutoff_translation_isotopy [CompleteSpace E]
     rw [heq]
     exact contDiff_snd.add ((hχ.comp contDiff_snd).smul
       ((Real.smoothTransition.contDiff.comp contDiff_fst).smul contDiff_const))
-
-
-
 
 theorem exists_supported_zero_section_height_shift [FiniteDimensional Real E]
     {h : E -> Real} (hh : ContDiff Real ∞ h) (p : E)
@@ -122,8 +109,6 @@ theorem exists_supported_zero_section_height_shift [FiniteDimensional Real E]
       _ < δ := by simpa using haδ
   · intro ha'
     exact haA ⟨h p + a, ha', by ring⟩
-
-
 
 theorem exists_supported_morse_zero_section_shift {n : Nat} (c : Real)
     (σ : Fin n -> Real) (hσ : ∀ i, σ i = -1 ∨ σ i = 1)

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursivePointedFamily
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursivePointedSuccessor
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursivePointedSigns
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -20,11 +11,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_successor_and_signs {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)
@@ -129,9 +115,6 @@ theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_successor_and
     hzero, hsuccessor, hchild, hlevels⟩
   · exact fun x hx => hfixV x (fun h => hx h.1)
   · exact fun x hx => hfixV x (fun h => (not_lt_of_ge hx) h.2)
-
-
-
 
 theorem AlexanderCollarSlab.exists_pointed_capped_deformation_with_successor {S : Set E}
     {A : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ} (M : AlexanderCollarSlab S A q β)

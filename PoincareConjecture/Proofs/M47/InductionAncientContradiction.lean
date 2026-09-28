@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.LimitCanonicalControl
 import PoincareConjecture.Proofs.M47.SeedLimitNoncollapsed
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalReindex
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,9 +13,6 @@ universe u
 namespace PoincareConjecture.Proofs.M47
 
 open PoincareConjecture.M47
-
-
-
 
 theorem firstFailure_infinite_controls_false
     (P : M47Predecessors.{u}) (S : RepairedControlledSchedulesData.{u})

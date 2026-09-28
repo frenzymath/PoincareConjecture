@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.DoubleArc.SignedDiamondSquareC
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Circles.IdentityAnnulus
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.ClosedPeriodCut
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 

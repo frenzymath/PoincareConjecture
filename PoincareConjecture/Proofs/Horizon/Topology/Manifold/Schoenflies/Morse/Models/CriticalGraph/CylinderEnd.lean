@@ -4,8 +4,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Mod
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 import Mathlib.Analysis.SpecialFunctions.Sqrt
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -93,9 +91,6 @@ private theorem heightDilation_apply {v : E3} (hv : ‖v‖ = 1)
   rw [H.symm_apply_apply]
   rfl
 
-
-
-
 theorem exists_quadratic_minimum_cylindrical_end_with_profile {v : E3} (hv : ‖v‖ = 1)
     (c : Real) {r : Real} (hr : 0 < r) :
     ∃ D : Diffeomorph (𝓡 3) (𝓡 3) E3 E3 ∞,
@@ -176,8 +171,6 @@ theorem exists_quadratic_minimum_cylindrical_end_with_profile {v : E3} (hv : ‖
       rw [hsqrt]
       field_simp
     rw [add_comm, hcoord, smul_smul, hkr, add_comm]
-
-
 
 theorem exists_quadratic_minimum_cylindrical_end {v : E3} (hv : ‖v‖ = 1)
     (c : Real) {r : Real} (hr : 0 < r) :

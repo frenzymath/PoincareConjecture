@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FiniteFaceSpan
 import PoincareConjecture.Proofs.M76.Rigidity.Mathlib.PolyhedralPLComposition
 import Mathlib.Topology.UnitInterval
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set unitInterval
@@ -20,8 +11,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] [DecidableEq E]
-
-
 
 theorem exists_edge_subcomplex_coordinate (K : SimplicialComplex ℝ E)
     {a b : E} (hab : a ≠ b) (hedge : {a, b} ∈ K.faces) :
@@ -72,8 +61,6 @@ theorem exists_edge_subcomplex_coordinate (K : SimplicialComplex ℝ E)
   · intro x hx
     obtain ⟨t, _, rfl⟩ := hparam x hx
     rw [hline]
-
-
 
 theorem exists_edge_homotopy_transport
     {X V ι : Type*} [TopologicalSpace X]

@@ -2,23 +2,12 @@ import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.SmoothVectorInitialCoordi
 import PoincareConjecture.Proofs.M63.Sec19_1_LocalFlow.VectorSpectralTranslation
 import PoincareConjecture.Proofs.M63.Mathlib.PeriodicFourierTranslation
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open AddCircle PoincareConjecture.SpectralHeatNative
 open scoped ContDiff
 
 namespace PoincareConjecture.M63
-
-
-
 
 theorem exists_smooth_vectorPeriodic_spectral_initial_state
     {L : ℝ} [Fact (0 < L)] {ι : Type*} [Fintype ι]

@@ -1,21 +1,6 @@
-
-
-
 import Mathlib.Analysis.Calculus.Deriv.Inverse
 import Mathlib.MeasureTheory.Function.Jacobian
 import Mathlib.Topology.DiscreteSubset
-
-
-
-
-
-
-
-
-
-
-
-
 
 set_option autoImplicit false
 
@@ -23,8 +8,6 @@ open Set MeasureTheory Filter
 open scoped Topology
 
 namespace Poincare.Analysis
-
-
 
 theorem critical_values_null_of_differentiableOn {f : ℝ → ℝ} {U : Set ℝ}
     (hU : IsOpen U) (hf : DifferentiableOn ℝ f U) :
@@ -37,9 +20,6 @@ theorem critical_values_null_of_differentiableOn {f : ℝ → ℝ} {U : Set ℝ}
     simpa using hd.hasFDerivAt.hasFDerivWithinAt
   · intro x hx
     simp
-
-
-
 
 theorem exists_simultaneous_regular_value_avoiding_finite
     {ι : Type*} [Finite ι] (f : ι → ℝ → ℝ) (U : ι → Set ℝ)
@@ -62,8 +42,6 @@ theorem exists_simultaneous_regular_value_avoiding_finite
   intro i x hx hfx hzero
   exact hbad (Or.inl (mem_iUnion.mpr ⟨i, x, ⟨hx, hzero⟩, hfx⟩))
 
-
-
 theorem finite_regular_fiber_Icc {f : ℝ → ℝ} {a b y : ℝ}
     (hf : ContinuousOn f (Icc a b))
     (hd : DifferentiableOn ℝ f (Ioo a b))
@@ -84,9 +62,6 @@ theorem finite_regular_fiber_Icc {f : ℝ → ℝ} {a b y : ℝ}
   apply inf_principal_eq_bot.mpr
   filter_upwards [hdt.hasDerivAt.eventually_ne (c := y) (hregular t ht' ht.2)] with s hs
   exact fun hsS => hs hsS.2
-
-
-
 
 theorem exists_simultaneous_finite_regular_fibers
     {ι : Type*} [Finite ι] (f : ι → ℝ → ℝ) (l r : ι → ℝ)

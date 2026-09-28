@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Homothety.Connection.Regularity
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Curvature.Basic
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology
@@ -20,14 +11,12 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
 
-
 theorem curvatureOnFields_swap (D : LeviCivitaData g)
     (X Y Z : (p : M) → TangentSpace (𝓡 n) p) (x : M) :
     D.curvatureOnFields X Y Z x = -D.curvatureOnFields Y X Z x := by
   unfold LeviCivitaData.curvatureOnFields
   rw [VectorField.mlieBracket_swap_apply (V := X) (W := Y), map_neg]
   abel
-
 
 theorem curvatureOnFields_tensorial_first (D : LeviCivitaData g)
     (Y Z : (p : M) → TangentSpace (𝓡 n) p) (x : M)
@@ -64,7 +53,6 @@ theorem curvatureOnFields_tensorial_first (D : LeviCivitaData g)
       VectorField.mlieBracket_add_left hX hX']
     simp only [Pi.add_apply, add_apply, map_add]
     abel
-
 
 theorem curvatureOnFields_tensorial_second (D : LeviCivitaData g)
     (X Z : (p : M) → TangentSpace (𝓡 n) p) (x : M)

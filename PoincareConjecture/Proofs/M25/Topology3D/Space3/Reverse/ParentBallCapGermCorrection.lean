@@ -3,22 +3,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.SphereNormalSign
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.ChartDerivative
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.BallNeighborhood
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology InnerProductSpace
 
 namespace PoincareConjecture.M25.Topology3D
-
 
 theorem fderiv_normal_pos_of_local_interior
     (f : E3 → E3) {x : E3} (hx : ‖x‖ = 1)
@@ -58,7 +48,6 @@ theorem fderiv_normal_pos_of_local_interior
     simpa only [zero_add, hγ0, hfx, hx, one_pow, smul_eq_mul] using
       mul_nonneg_of_nonpos_of_nonpos (inv_nonpos.mpr ht0.le) hs
   exact lt_of_le_of_ne (by linarith) (Ne.symm hne)
-
 
 theorem exists_ball_chart_common_germ_of_sphere_patch
     (A B : BallNeighborhoodChart E3 E3)

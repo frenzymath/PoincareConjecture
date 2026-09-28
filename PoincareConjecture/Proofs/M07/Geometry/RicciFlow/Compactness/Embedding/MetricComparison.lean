@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.Embedding.TimeIndependent
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -23,12 +15,6 @@ private theorem exhaustion_mono_of_le
   induction k, hjk using Nat.le_induction with
   | base => exact Subset.rfl
   | succ k hk ih => exact ih.trans (G.exhaustion_increasing k)
-
-
-
-
-
-
 
 theorem pullback_tangentNorm_le_sqrt_two
     {n : ℕ} {T' T : ℝ} {S : PointedFlowSequence n T' T}
@@ -96,9 +82,6 @@ end PoincareConjecture.PointedGeometricConvergence
 namespace PoincareConjecture
 
 variable {n : ℕ} {T' T : ℝ} {L C : FlowCarrier n}
-
-
-
 
 theorem SmoothSpacetimeEmbedding.pathELength_le_sqrt_two
     {F : BasedFlow n T' T L} {G : BasedFlow n T' T C}

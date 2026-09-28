@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.MetricTestBounds
 import PoincareConjecture.Proofs.M35.Uniqueness.Heat.Maximum.NonlinearCompletion
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 5
@@ -53,8 +45,6 @@ private theorem metric_entropy_component_limit {K : Set V} (hK : IsCompact K)
   refine ⟨v, hv.1, ?_⟩
   rw [hv.2]
   exact nonlinearFieldLp_coe _ _ _ hC.2.1 (dirichletFieldValue K u)
-
-
 
 theorem exists_metric_entropy_form_test {K : Set V} (hK : IsCompact K)
     (g : RiemannianMetric n V) (η : V → ℝ) (hη : ContDiff ℝ ∞ η)

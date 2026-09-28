@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.General.FiniteContac
 import PoincareConjecture.Proofs.M76.Horizon.PrimeReduction.Arcs.OuterTubeStrand
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLMarkedGraph
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Geometry
 open scoped Topology
@@ -18,8 +11,6 @@ namespace PoincareConjecture.M76
 local notation "V" => (ℝ × ℝ)
 local notation "Z" => (Prod.snd : V → ℝ) ⁻¹' ({0} : Set ℝ)
 local notation "I" => Icc (0 : ℝ) 1
-
-
 
 theorem exists_planar_endpoint_contact_buffer {S : Set V}
     (hfinite : (S ∩ Z).Finite) {a b : ℝ → V}
@@ -75,10 +66,6 @@ theorem exists_planar_endpoint_contact_buffer {S : Set V}
       exact ⟨⟨h.1, ha0⟩, (hcontact.symm.subset (by simp)).2⟩
     · have h := heq.symm.subset (show (b 0).1 ∈ ({(a 0).1, (b 0).1} : Set ℝ) by simp)
       exact ⟨⟨h.1, hb0⟩, (hcontact.symm.subset (by simp)).2⟩
-
-
-
-
 
 theorem exists_outer_ribbon_replacement_axis
     {r : ℝ} (hr : 0 < r) (f : V → V)

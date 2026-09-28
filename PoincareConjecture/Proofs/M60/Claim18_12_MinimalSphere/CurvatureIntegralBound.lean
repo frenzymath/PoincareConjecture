@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RicciTraceTransport
 import PoincareConjecture.Proofs.M60.Claim18_12_MinimalSphere.RegularizedCurvatureIntegral
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,9 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {g : RiemannianMetric n M}
-
-
-
 
 theorem m60SphereRicciTrace_integral_lower_bound_of_curvature
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)
@@ -58,9 +46,6 @@ theorem m60SphereRicciTrace_integral_lower_bound_of_curvature
     integral_add hs hk, m60SphereArea_eq_integral_conformalFactor g f hf hc]
   change 4 * Real.pi + (ρ / 2) * (∫ p, q p ∂m60RoundSphereMetric.volumeMeasure) ≤ _
   linarith
-
-
-
 
 theorem m60SphereRicciTrace_integral_lower_bound_of_differential_inequality
     (D : LeviCivitaData g) (hD : D.CurvatureTensorCalculus)

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.Existence.CoordinateFrameNative
 import PoincareConjecture.Proofs.M03.Existence.ChartJetCompatibilityNative
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 1600000
 set_option backward.isDefEq.respectTransparency false

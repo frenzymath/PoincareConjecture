@@ -73,4 +73,3 @@ theorem bounded_jordan_side_subset_filling
     exact False.elim (hyU (hyx ▸ hx))
 
 end PoincareConjecture.M76
-

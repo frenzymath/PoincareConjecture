@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.MonodromyFiber
 import PoincareConjecture.Proofs.M38.TwoChartComparison
 import PoincareConjecture.Proofs.M38.CylinderRegionTransport
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,21 +17,16 @@ variable (phi : Diffeomorph (𝓡 2) (𝓡 2) UnitTwoSphere UnitTwoSphere ∞)
 attribute [local instance] monodromyChartedSpace monodromy_isManifold
   monodromyLiftChartedSpace monodromy_lift_isManifold
 
-
 noncomputable def monodromyLiftedCylinder (z : RoundCylinderSpace) :
     (monodromyCarrier.{u} phi).carrier :=
   ULift.up (monodromyCylinder phi z)
 
-
 def monodromyLiftedZeroFiber : Set (monodromyCarrier.{u} phi).carrier :=
   ULift.down ⁻¹' monodromyZeroFiber phi
-
 
 theorem monodromyLiftedCylinder_smooth :
     ContMDiff ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) ∞ (monodromyLiftedCylinder.{u} phi) :=
   (monodromy_up_contMDiff phi).comp (monodromyCylinder_localDiffeomorph phi).contMDiff
-
-
 
 noncomputable def monodromyLiftedCollar (a : ℝ) (hwidth : 2 * a ≤ 1) :
     PartialDiffeomorph ((𝓡 2).prod 𝓘(ℝ, ℝ)) (𝓡 3) RoundCylinderSpace
@@ -60,22 +46,18 @@ noncomputable def monodromyLiftedCollar (a : ℝ) (hwidth : 2 * a ≤ 1) :
   contMDiffOn_invFun := (monodromyStripInverse_smooth phi (-a) a (by linarith)).comp
     (monodromy_down_contMDiff phi).contMDiffOn (fun _ hq => hq)
 
-
 theorem monodromyLiftedCollar_source (a : ℝ) (hwidth : 2 * a ≤ 1) :
     (monodromyLiftedCollar.{u} phi a hwidth).source =
       Set.univ ×ˢ Set.Ioo (-a) a := rfl
-
 
 theorem monodromyLiftedCollar_apply (a : ℝ) (hwidth : 2 * a ≤ 1)
     (z : RoundCylinderSpace) :
     monodromyLiftedCollar.{u} phi a hwidth z = ULift.up (monodromyCylinder phi z) := rfl
 
-
 theorem monodromyLiftedCollar_inverse (a : ℝ) (hwidth : 2 * a ≤ 1)
     (q : (monodromyCarrier.{u} phi).carrier) :
     (monodromyLiftedCollar phi a hwidth).symm q =
       monodromyStripInverse phi (-a) a q.down := rfl
-
 
 theorem monodromyLiftedCollar_central (a : ℝ) (hwidth : 2 * a ≤ 1) :
     comparisonCentralSphere (monodromyLiftedCollar.{u} phi a hwidth) =
@@ -97,7 +79,6 @@ theorem monodromyLiftedCollar_central (a : ℝ) (hwidth : 2 * a ≤ 1) :
     obtain ⟨z, hz⟩ := hq
     exact ⟨(z, 0), ⟨Set.mem_univ _, rfl⟩, ULift.ext _ _ hz⟩
 
-
 theorem monodromyLiftedCylinder_unit_image :
     monodromyLiftedCylinder.{u} phi '' (Set.univ ×ˢ Set.Ioo (0 : ℝ) 1) =
       (monodromyLiftedZeroFiber phi)ᶜ := by
@@ -113,15 +94,12 @@ theorem monodromyLiftedCylinder_unit_image :
     obtain ⟨z, hz, heq⟩ := hq
     exact ⟨z, hz, ULift.ext _ _ heq⟩
 
-
 theorem monodromyLiftedStripInverse_mem (q : (monodromyCarrier.{u} phi).carrier)
     (hq : q ∈ (monodromyLiftedZeroFiber phi)ᶜ) :
     monodromyStripInverse phi 0 1 q.down ∈ Set.univ ×ˢ Set.Ioo (0 : ℝ) 1 := by
   apply monodromyStripInverse_mem phi 0 1
   rw [monodromy_unit_strip_complement]
   exact hq
-
-
 
 noncomputable def monodromyCylinderRegionEquivalence
     {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} (C : OpenCylinderModel U) :
@@ -169,20 +147,17 @@ noncomputable def monodromyCylinderRegionEquivalence
           exact hy))
       (fun y hy => monodromyLiftedStripInverse_mem phi y hy) }
 
-
 theorem monodromyCylinderRegionEquivalence_map
     {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} (C : OpenCylinderModel U)
     (x : A.carrier) :
     (monodromyCylinderRegionEquivalence phi C).map x =
       monodromyLiftedCylinder phi (C.inverse x) := rfl
 
-
 theorem monodromyCylinderRegionEquivalence_inverse
     {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} (C : OpenCylinderModel U)
     (y : (monodromyCarrier.{u} phi).carrier) :
     (monodromyCylinderRegionEquivalence phi C).inverse y =
       C.coordinate (monodromyStripInverse phi 0 1 y.down) := rfl
-
 
 theorem monodromyCylinderRegionEquivalence_coordinate
     {A : GeneralizedSliceCarrier.{u}} {U : Set A.carrier} (C : OpenCylinderModel U)

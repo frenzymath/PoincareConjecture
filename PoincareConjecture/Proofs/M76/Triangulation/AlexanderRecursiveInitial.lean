@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveSlab
 import PoincareConjecture.Proofs.M76.Mathlib.FinitePLSingleVertexSlab
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -18,9 +9,6 @@ namespace Geometry.SimplicialComplex
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
 
 theorem nonempty_alexanderHalfSlab_of_singleVertex
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Products.FailureArc.Descent.Normalization.BoundaryRepairs.Construction
 
-
-
 set_option autoImplicit false
 open Set Metric Geometry Topology unitInterval PLAnnularStrip
 
@@ -57,8 +55,6 @@ theorem ambient_right_coordinate (u : I) (x : t.Carrier)
       ((A.motion.carrier u).subset (mem_image_of_mem (A.motion.map u) hz))
   · rw [A.motion.outside u (T x) (fun h => hz (interior_subset h))]
     exact T.map_source hx
-
-
 
 theorem clipped_image (u : I) (D : Set P2) :
     (A.window.right.trans A.chart) ''

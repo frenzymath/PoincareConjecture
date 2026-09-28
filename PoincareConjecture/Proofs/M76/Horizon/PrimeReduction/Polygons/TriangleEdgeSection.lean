@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ExceptionalTriangleSlice
 import Mathlib.Analysis.Normed.Module.Convex
 import Mathlib.Analysis.Normed.Affine.AddTorsor
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set
 
@@ -30,8 +20,6 @@ private theorem openSegment_notMem_affineSubspace
   apply hw
   simpa only [lineMap_apply_module', vsub_eq_sub, vadd_eq_add, add_sub_cancel_right,
     smul_smul, inv_mul_cancel₀ ht.1.ne', one_smul, sub_add_cancel] using h
-
-
 
 theorem exists_triangle_edge_zero_segment (A : E →ᵃ[ℝ] ℝ) {u v w : E}
     (hu : A u < 0) (hv : 0 < A v) (hw : w ∉ affineSpan ℝ ({u, v} : Set E)) :
@@ -76,8 +64,6 @@ theorem exists_triangle_edge_zero_segment (A : E →ᵃ[ℝ] ℝ) {u v w : E}
       (neg_neg_of_pos hv) (neg_neg_of_pos hwp) (neg_pos.mpr hu)
     rw [hy'] at hslice
     simpa only [hset, AffineMap.coe_neg, Pi.neg_apply, neg_eq_zero] using hslice
-
-
 
 theorem exists_triangle_edge_halfInterval (A : E →ᵃ[ℝ] ℝ) {u v w : E}
     (hu : A u < 0) (hv : 0 < A v) (hw : w ∉ affineSpan ℝ ({u, v} : Set E))

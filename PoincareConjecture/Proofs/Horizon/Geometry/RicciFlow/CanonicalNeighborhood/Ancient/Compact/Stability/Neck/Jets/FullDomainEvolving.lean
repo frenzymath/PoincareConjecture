@@ -1,18 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Evolving
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Stability.Neck.Jets.Parametrization
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxHeartbeats 800000
 set_option backward.isDefEq.respectTransparency false
@@ -37,8 +25,6 @@ variable {kappa : ℝ} {S : NormalizedKappaSolutionSequence kappa}
   {G : M23InteriorConvergence S}
   {e : ∀ j, NormalizedKappaSpacetimeEmbedding
     (source := S.term (G.subsequence j)) (target := G.limit) (Iic 0 ×ˢ G.exhaustion j)}
-
-
 
 theorem eventually_movingTime_centeredNeck_jets_full_domain_on_compact
     (hconv : M23TerminalMetricConvergence G e)
@@ -104,7 +90,6 @@ theorem eventually_movingTime_centeredNeck_jets_full_domain_on_compact
   obtain ⟨q, hqt, hzq⟩ := mem_iUnion₂.mp (ht hzcarrier)
   exact hk q hqt z hz hzq j hj
 
-
 theorem eventually_movingTime_centeredNeck_jets_full_domain
     (hconv : M23TerminalMetricConvergence G e)
     (hfixed : ∀ k (s t : ℝ) (x : G.limit.carrier.carrier),
@@ -124,7 +109,6 @@ theorem eventually_movingTime_centeredNeck_jets_full_domain
             (centeredNeckLift N z.1 z.2) y) 0‖ ≤ η := by
   exact hconv.eventually_movingTime_centeredNeck_jets_full_domain_on_compact
     hfixed N hcompact hsmall isCompact_Icc (fun _ ht => ht.2) tau htau hη
-
 
 theorem eventually_centeredNeck_jets_full_domain_uniform_time_on_compact
     (hconv : M23TerminalMetricConvergence G e)
@@ -173,8 +157,6 @@ theorem eventually_centeredNeck_jets_full_domain_uniform_time_on_compact
     exact hchosen hk
   · filter_upwards [] with k t ht
     exact (hne ⟨t, ht⟩).elim
-
-
 
 theorem eventually_centeredNeck_jets_full_domain_uniform_time
     (hconv : M23TerminalMetricConvergence G e)

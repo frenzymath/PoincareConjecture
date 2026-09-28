@@ -3,17 +3,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.MetricComparison
 import Mathlib.MeasureTheory.Constructions.UnitInterval
 import Mathlib.MeasureTheory.Integral.Bochner.Set
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,10 +12,6 @@ open scoped Manifold ContDiff Bundle Topology ENNReal
 universe u v
 
 namespace PoincareConjecture.M28
-
-
-
-
 
 theorem continuous_boxTransport_pathELength
     (F : GeneralizedRicciFlowData.{u}) {ι : Type v} (b : ι → F.box_index)

@@ -5,16 +5,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.HorizonContinuation
 import PoincareConjecture.Proofs.M30.Thm11_8.SeedFiniteLongConvergence
 import PoincareConjecture.Statements.M30Providers
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -39,9 +29,6 @@ private theorem harnack_bound_on_prefix
   have hsecond : 0 ≤ Q * t * (T - U) :=
     mul_nonneg (mul_nonneg hQ ht) (sub_nonneg.mpr hUT)
   nlinarith only [hfirst, hsecond]
-
-
-
 
 theorem exists_backward_convergence_of_cofinal_finite_limits
     (P : M30ControlledBlowupPredecessors.{u})
@@ -105,9 +92,6 @@ theorem exists_backward_convergence_of_cofinal_finite_limits
   intro t _ht htstar
   obtain ⟨j, hj⟩ := (hcofinal t htstar).exists
   exact ⟨j, hj.le⟩
-
-
-
 
 theorem exists_backward_convergence_of_finite_extension
     (P : M30ControlledBlowupPredecessors.{u})

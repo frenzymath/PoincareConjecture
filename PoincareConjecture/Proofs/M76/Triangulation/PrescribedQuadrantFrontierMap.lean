@@ -6,17 +6,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLLinearRegionExtension
 import PoincareConjecture.Proofs.M76.Mathlib.MarkedRegionMapSigns
 import PoincareConjecture.Proofs.M76.Mathlib.SignedQuadrantPatchRetention
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes RectangleCornerArcs
@@ -25,12 +14,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_prescribed_quadrant_frontier_map
     {F S : Set E} {T : Set ((ℝ × ℝ) × ℝ)}

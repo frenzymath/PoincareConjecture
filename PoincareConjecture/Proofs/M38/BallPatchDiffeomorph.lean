@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.BallCoordinatePatch
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -22,13 +14,11 @@ variable (e : Diffeomorph (𝓡 3) (𝓡 3) StandardCapSpace StandardCapSpace �
 
 include houter
 
-
 theorem euclideanOuterDiffeomorph_symm (x : StandardCapSpace) (hx : 3 / 2 ≤ ‖x‖) :
     e.symm x = x := by
   apply e.injective
   change e (e.symm x) = e x
   rw [e.apply_symm_apply, houter x hx]
-
 
 theorem euclideanOuterDiffeomorph_mapsTo :
     Set.MapsTo e (Metric.ball 0 2) (Metric.ball 0 2) := by
@@ -45,7 +35,6 @@ theorem euclideanOuterDiffeomorph_mapsTo :
 
 variable {A : GeneralizedSliceCarrier.{u}} (B : SurgeryBallEmbedding A)
 
-
 theorem surgeryBallPatch_left_inverse :
     Function.LeftInverse (surgeryBallPatch B e.symm) (surgeryBallPatch B e) := by
   intro x
@@ -57,11 +46,9 @@ theorem surgeryBallPatch_left_inverse :
   · rw [surgeryBallPatch_of_not_mem B e hx,
       surgeryBallPatch_of_not_mem B e.symm hx]
 
-
 theorem surgeryBallPatch_right_inverse :
     Function.LeftInverse (surgeryBallPatch B e) (surgeryBallPatch B e.symm) := by
   exact surgeryBallPatch_left_inverse e.symm (euclideanOuterDiffeomorph_symm e houter) B
-
 
 theorem surgeryBallPatch_contMDiff :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (surgeryBallPatch B e) := by
@@ -69,7 +56,6 @@ theorem surgeryBallPatch_contMDiff :
   exact surgeryBallPatch_smooth B e (S := Metric.ball 0 2) Metric.isOpen_ball
     e.contDiff.contDiffOn (euclideanOuterDiffeomorph_mapsTo e houter) houter Set.univ
     (fun _ _ hx => surgeryBall_inverse_mem B hx)
-
 
 noncomputable def surgeryBallPatchDiffeomorph :
     Diffeomorph (𝓡 3) (𝓡 3) A.carrier A.carrier ∞ where
@@ -81,14 +67,11 @@ noncomputable def surgeryBallPatchDiffeomorph :
   contMDiff_invFun := surgeryBallPatch_contMDiff e.symm
     (euclideanOuterDiffeomorph_symm e houter) B
 
-
 theorem surgeryBallPatchDiffeomorph_apply (x : A.carrier) :
     surgeryBallPatchDiffeomorph e houter B x = surgeryBallPatch B e x := rfl
 
-
 theorem surgeryBallPatchDiffeomorph_symm_apply (x : A.carrier) :
     (surgeryBallPatchDiffeomorph e houter B).symm x = surgeryBallPatch B e.symm x := rfl
-
 
 theorem surgeryBallPatchDiffeomorph_map {x : StandardCapSpace}
     (hx : x ∈ Metric.ball 0 2) :
@@ -96,19 +79,16 @@ theorem surgeryBallPatchDiffeomorph_map {x : StandardCapSpace}
   rw [surgeryBallPatchDiffeomorph_apply,
     surgeryBallPatch_of_mem B e (Set.mem_image_of_mem B.map hx), B.left_inverse hx]
 
-
 theorem surgeryBallPatchDiffeomorph_symm_map {x : StandardCapSpace}
     (hx : x ∈ Metric.ball 0 2) :
     (surgeryBallPatchDiffeomorph e houter B).symm (B.map x) = B.map (e.symm x) := by
   rw [surgeryBallPatchDiffeomorph_symm_apply,
     surgeryBallPatch_of_mem B e.symm (Set.mem_image_of_mem B.map hx), B.left_inverse hx]
 
-
 theorem surgeryBallPatchDiffeomorph_eq_self_off_compact {x : A.carrier}
     (hx : x ∉ B.map '' Metric.closedBall 0 (3 / 2)) :
     surgeryBallPatchDiffeomorph e houter B x = x :=
   surgeryBallPatch_eq_self_off_compact B e houter hx
-
 
 theorem surgeryBallPatchDiffeomorph_symm_eq_self_off_compact {x : A.carrier}
     (hx : x ∉ B.map '' Metric.closedBall 0 (3 / 2)) :

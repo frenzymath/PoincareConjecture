@@ -15,11 +15,6 @@ import PoincareConjecture.Proofs.M45.Sec15_1_Gluing.InitialCapture_Uniqueness
 import PoincareConjecture.Proofs.M45.Ch9_Models.ModelAnalyticBounds
 import PoincareConjecture.Proofs.M45.Ch12_Standard.CapRefinement
 
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -27,79 +22,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 theorem repairedControlledSchedules
     (h03 : ∀ (M : Type u) [TopologicalSpace M] [T2Space M]

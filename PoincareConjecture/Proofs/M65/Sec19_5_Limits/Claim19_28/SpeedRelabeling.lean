@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M65.Mathlib.Claim19_28.PeriodicArclength
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Claim19_28.SpeedBounds
 import PoincareConjecture.Proofs.M62.Lemma0_4_Periodicity
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter Bundle
@@ -22,8 +14,6 @@ namespace PoincareConjecture
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} {F : RicciFlow n M (Icc a b)}
-
-
 
 theorem m65CurveSpeed_fixed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {phi : ℝ → ℝ} {x d t : ℝ}
@@ -50,9 +40,6 @@ theorem m65CurveSpeed_fixed_relabeling (c : ℝ → ℝ → M)
     d * ‖curveVelocity (n := n) (fun y => c y t) (phi x)‖
   rw [hvelocity, norm_smul, Real.norm_eq_abs, abs_of_pos hd]
 
-
-
-
 theorem m65ShrinkingCurve_exists_constantSpeed_relabeling (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {s : ℝ} (hs : s ∈ Ioo a b) :
     ∃ phi : ℝ ≃o ℝ, phi 0 = 0 ∧
@@ -73,9 +60,6 @@ theorem m65ShrinkingCurve_exists_constantSpeed_relabeling (c : ℝ → ℝ → M
   rw [m65CurveSpeed_fixed_relabeling c hc
     ((hsmooth.differentiable (by simp) x).hasDerivAt) (hpos x) (Ioo_subset_Icc_self hs)]
   exact hconstant x
-
-
-
 
 theorem m65RelabeledSpeed_exp_bounds_on (c : ℝ → ℝ → M)
     (hc : M62ShrinkingCurve F c) {K0 K1 K2 H : ℝ}

@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M33.SurgeryCylinderRestriction
 import PoincareConjecture.Proofs.M12.GeneralizedCylinderClock
 import PoincareConjecture.Definitions.Ch16.CapPersistence
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -23,8 +14,6 @@ universe u
 namespace PoincareConjecture.Proofs.M46
 
 open PoincareConjecture.Proofs.M12
-
-
 
 theorem exists_capPersistence_source_window
     {F : SurgeryFlowData.{u}} (O : SurgeryObservation F)
@@ -53,8 +42,6 @@ theorem exists_capPersistence_source_window
   · exact ⟨top, httop, htop.le.trans (min_le_right _ _), e, initial,
       comparison, based, Or.inr (Or.inr disappears)⟩
 
-
-
 noncomputable def capOpenInterval (origin top h : ℝ) (htop : origin < top)
     (hh : 0 < h) : SpacetimeInterval where
   domain := Ioo 0 ((top - origin) / h ^ 2)
@@ -65,8 +52,6 @@ noncomputable def capOpenInterval (origin top h : ℝ) (htop : origin < top)
     refine ⟨((top - origin) / h ^ 2) / 3, ⟨by linarith, by linarith⟩,
       2 * ((top - origin) / h ^ 2) / 3, ⟨by linarith, by linarith⟩, ?_⟩
     linarith
-
-
 
 theorem capOpenInterval_physical (origin top h : ℝ) (htop : origin < top)
     (hh : 0 < h) (hq : 0 < h⁻¹ ^ 2) :
@@ -87,10 +72,6 @@ theorem capOpenInterval_physical (origin top h : ℝ) (htop : origin < top)
     change origin + ((t - origin) / h ^ 2) / (h⁻¹ ^ 2) = t
     rw [inv_pow, div_inv_eq_mul, div_mul_cancel₀ _ hsq.ne']
     ring
-
-
-
-
 
 theorem exists_capCylinder_test_window_lift
     {F : SurgeryFlowData.{u}} {W : M33RegularHistoryWindow F}

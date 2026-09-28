@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Measure.LocalFinite
 import PoincareConjecture.Proofs.M07.Topology.Exhaustion
 import Mathlib.Topology.EMetricSpace.Paracompact
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter MeasureTheory
@@ -78,8 +67,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M] [T3Space M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [PreconnectedSpace M]
 
-
-
 theorem nonempty_compactExhaustion (g : RiemannianMetric n M) :
     Nonempty (CompactExhaustion M) := by
   classical
@@ -96,8 +83,6 @@ theorem nonempty_compactExhaustion (g : RiemannianMetric n M) :
     ChartedSpace.locallyCompactSpace (EuclideanSpace ℝ (Fin n)) M
   exact compactExhaustion_of_connected_paracompact (Classical.arbitrary M)
 
-
-
 theorem secondCountableTopology (g : RiemannianMetric n M) :
     SecondCountableTopology M := by
   obtain ⟨K⟩ := g.nonempty_compactExhaustion
@@ -107,14 +92,10 @@ theorem secondCountableTopology (g : RiemannianMetric n M) :
 
 variable [MeasurableSpace M] [BorelSpace M]
 
-
-
 instance volumeMeasure_sigmaFinite_of_preconnected (g : RiemannianMetric n M) :
     SigmaFinite (volumeMeasure g) := by
   let : SecondCountableTopology M := g.secondCountableTopology
   exact volumeMeasure_sigmaFinite g
-
-
 
 theorem exists_finiteVolume_open_exhaustion (g : RiemannianMetric n M) (base : M) :
     ∃ U : ℕ → Set M,

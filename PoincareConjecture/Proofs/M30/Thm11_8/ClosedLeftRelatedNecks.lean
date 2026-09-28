@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M30.Thm11_8.CanonicalShapeRelatedNeck
 import PoincareConjecture.Proofs.M30.Thm11_8.GeneralizedCanonicalShape
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.CompleteBalls
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -40,8 +30,6 @@ private theorem uniform_time_slice_of_continuousOn
 set_option maxHeartbeats 1800000 in
 
 set_option synthInstance.maxHeartbeats 100000 in
-
-
 
 theorem related_neck_at_left_endpoint_of_interior_necks
     {M : Type u} [TopologicalSpace M] [T2Space M] [T3Space M]

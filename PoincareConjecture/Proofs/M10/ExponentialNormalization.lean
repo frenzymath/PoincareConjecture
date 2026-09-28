@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M10.MetricCoordinates
 import PoincareConjecture.Definitions.Ch06.ReducedLength
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle

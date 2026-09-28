@@ -1,24 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Saddle.ReferenceAmbientTransport
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.HorizontalBandField
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold InnerProductSpace Topology Matrix
 
 namespace PoincareConjecture.M25.Topology3D
-
-
-
 
 theorem saddle_reference_middle_native_tracks
     (u : UnitTwoSphere) (c rho delta a : ℝ)

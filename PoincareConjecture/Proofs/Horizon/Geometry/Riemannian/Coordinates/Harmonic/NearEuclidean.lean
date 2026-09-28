@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Coordinates.Exponential.JetBounds.PrecompactDifferential
 
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option autoImplicit false
@@ -25,7 +17,6 @@ attribute [local instance] normedAddCommGroupTangentSpaceVectorSpace
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
 
 theorem radial_geodesic_differential_norm_error
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
@@ -123,7 +114,6 @@ theorem radial_geodesic_differential_norm_error
   rw [hnormpoint] at herr
   exact herr
 
-
 theorem radial_geodesic_metric_error
     (g : RiemannianMetric n M) (D : LeviCivitaData g)
     {e : EuclideanSpace ℝ (Fin n) → M} {R K : ℝ}
@@ -166,7 +156,6 @@ theorem radial_geodesic_metric_error
       mul_le_mul herr hsum (add_nonneg hN (norm_nonneg w)) (by positivity)
     _ = _ := by ring
 
-
 theorem exists_uniform_nearEuclidean_radial_radius {R ε : ℝ}
     (hR : 0 < R) (hε : 0 < ε) (K : ℝ) :
     ∃ ρ : ℝ, 0 < ρ ∧ 2 * ρ < R ∧ ∀ s : ℝ, |s| ≤ 2 * ρ →
@@ -186,7 +175,6 @@ theorem exists_uniform_nearEuclidean_radial_radius {R ε : ℝ}
     rw [Real.dist_eq, sub_zero]
     have hh := min_le_right (R / 4) (η / 4)
     linarith
-
 
 theorem radial_exponential_nearEuclidean
     (g : RiemannianMetric n M) (D : LeviCivitaData g) {p : M}

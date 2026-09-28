@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Geodesic.Jets
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Neck.Convergence.Charts
 
-
-
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -100,8 +91,6 @@ theorem norm_roundCylinderChartBasis_center_le_two
     fin_cases i <;> norm_num [roundCylinderCoordinateBasis]
   nlinarith [sq_nonneg (‖roundCylinderChartBasis q
     (chartAt (EuclideanSpace ℝ (Fin 2)) q q, s) i‖ - 2)]
-
-
 
 theorem abs_normalized_pullback_coefficient_derivative_center_le
     (N : EpsilonNeck g) (q : UnitTwoSphere) {s : ℝ}

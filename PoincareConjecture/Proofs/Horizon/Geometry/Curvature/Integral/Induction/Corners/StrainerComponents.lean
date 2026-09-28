@@ -9,7 +9,6 @@ open Set Function TopologicalSpace
 open Poincare.Geometry.Manifold.RegularFiber
 open scoped Manifold ContDiff Topology Bundle
 
-
 theorem PoincareConjecture.RiemannianMetric.strainer_openFiber_components_and_diameter
     {m k : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
     [MeasurableSpace M] [BorelSpace M]

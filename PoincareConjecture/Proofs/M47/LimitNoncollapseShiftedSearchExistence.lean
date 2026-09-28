@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitNoncollapseShiftedSearch
 import PoincareConjecture.Proofs.M47.TerminalCommonIntervalSearch
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +17,6 @@ private theorem shifted_initial_scalar_eq {F : SurgeryFlowData.{u}} {s t : ℝ}
   cases hst
   cases hxy
   rfl
-
-
 
 theorem limitFinite_exists_shifted_bounded_search
     (S : RepairedControlledSchedulesData.{u})

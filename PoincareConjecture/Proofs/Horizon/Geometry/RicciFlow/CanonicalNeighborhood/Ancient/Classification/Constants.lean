@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M27KappaAlternatives
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.CanonicalNeighborhood.Ancient.Compact.Constants
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -23,7 +15,6 @@ variable {M : Type u} [TopologicalSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
   {K : AncientKappaSolution 3 M} {t epsilon C C' : ℝ}
 
-
 def M26StrongCappedTube.mono_constant
     (N : M26StrongCappedTube K t epsilon C) (hC : C ≤ C') :
     M26StrongCappedTube K t epsilon C' := {
@@ -31,8 +22,6 @@ def M26StrongCappedTube.mono_constant
   constant_pos := N.constant_pos.trans_le hC
   cap := N.cap.mono_constant hC
 }
-
-
 
 theorem M27CompactPositiveGeometry.mono_constant
     (N : M27CompactPositiveGeometry K C) (hpos : 0 < C) (hC : C ≤ C')
@@ -58,14 +47,11 @@ theorem M27CompactPositiveGeometry.mono_constant
        (mul_le_mul_of_nonneg_right hC (hscalar x).le)⟩
 }
 
-
 theorem M27ScalarDerivativeBounds.horizon_mono_constant
     (N : M27ScalarDerivativeBounds K C) (hC : C ≤ C') :
     M27ScalarDerivativeBounds K C' := by
   obtain ⟨B, hB, hBC, hbound⟩ := N
   exact ⟨B, hB, hBC.trans_le hC, hbound⟩
-
-
 
 theorem M27KappaNine93Conclusion.mono_constant
     (N : M27KappaNine93Conclusion K epsilon C) (hpos : 0 < C) (hC : C ≤ C')
@@ -81,7 +67,6 @@ theorem M27KappaNine93Conclusion.mono_constant
   | cappedQuotient hm ht hcov => exact .cappedQuotient hm (ht.mono_constant hC) hcov
   | sphereLine hm ht => exact .sphereLine hm ht
   | projectivePlaneLine hm => exact .projectivePlaneLine hm
-
 
 theorem RepairedKappaAlternativeCertificate.mono_constant
     (N : RepairedKappaAlternativeCertificate K epsilon C) (hC : C ≤ C') :

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M03.CurvatureFirstBianchi
 import PoincareConjecture.Proofs.M03.CurvatureExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology

@@ -1,14 +1,6 @@
 import PoincareConjecture.Definitions.M28BoundedDistance
 import PoincareConjecture.Proofs.M28.Mathlib.LogPinching
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 universe u
@@ -17,8 +9,6 @@ namespace PoincareConjecture
 
 open Filter
 open scoped Topology
-
-
 
 theorem generalizedHamiltonIveyPinched.weak
     {F : GeneralizedRicciFlowData.{u}} (h : generalizedHamiltonIveyPinched F) :
@@ -36,9 +26,6 @@ theorem generalizedHamiltonIveyPinched.weak
     have hfull := hpinch x hv
     nlinarith
 
-
-
-
 theorem generalizedWeakHamiltonIveyPinched.negative_part_lt
     {F : GeneralizedRicciFlowData.{u}}
     (h : generalizedWeakHamiltonIveyPinched F)
@@ -48,10 +35,6 @@ theorem generalizedWeakHamiltonIveyPinched.negative_part_lt
     (hscalar : F.scalar ⟨t, x⟩ ≤ B * Q) :
     (F.connection t).negativeCurvaturePart x < eta * Q := by
   exact Real.lt_mul_of_log_pinching heta hB hQ hscalar (h t ht x).2
-
-
-
-
 
 theorem GeneralizedBlowupSequence.negative_part_tendsto_zero
     (S : GeneralizedBlowupSequence.{u})

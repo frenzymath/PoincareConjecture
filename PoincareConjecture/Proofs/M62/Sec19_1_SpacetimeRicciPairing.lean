@@ -3,16 +3,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_SpacetimeScalar
 import PoincareConjecture.Proofs.M62.Sec19_1_TimeConnection
 import PoincareConjecture.Proofs.M04.CurvatureSymmetries
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -26,8 +16,6 @@ namespace PoincareConjecture.M62.SpacetimeData
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ}
-
-
 
 theorem spatial_time_pairing {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F) (q : G.charts.Point)
@@ -128,8 +116,6 @@ theorem spatial_time_pairing {F : RicciFlow n M (Set.Icc a b)}
     map_zero, sub_zero, add_zero, zero_add, hderiv] at hk
   rw [hAq, hBq] at hk
   linarith
-
-
 
 theorem spatial_spatial_vertical {F : RicciFlow n M (Set.Icc a b)}
     (G : SpacetimeData F)

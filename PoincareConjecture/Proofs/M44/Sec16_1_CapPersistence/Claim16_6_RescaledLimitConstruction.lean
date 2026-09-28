@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimit
 import PoincareConjecture.Proofs.M44.Sec16_1_CapPersistence.Claim16_6_RescaledLimitBirth
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -29,12 +18,6 @@ noncomputable local instance rescaledLimitConstructionCoefficientNorm : NormedAd
 
 noncomputable local instance rescaledLimitConstructionCoefficientSpace : NormedSpace ℝ V :=
   ContinuousLinearMap.toNormedSpace
-
-
-
-
-
-
 
 theorem exists_rescaled_partial_flow_from_sequence
     (g0 : StandardInitialMetric) {T : ℝ} (hT : 0 < T)

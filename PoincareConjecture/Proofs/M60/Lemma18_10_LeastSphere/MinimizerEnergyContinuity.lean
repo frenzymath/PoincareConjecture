@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M60.Lemma18_10_LeastSphere.SUAlphaCoordinateCompactness
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,9 +12,6 @@ namespace PoincareConjecture.M60
 
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 theorem suC1_intrinsicEnergy_continuous (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
@@ -45,8 +34,6 @@ theorem suC1_intrinsicEnergy_continuous (g : RiemannianMetric n M)
   exact (mul_div_cancel_right₀ _
     (show (16 : ℝ) / (‖e x‖ ^ 2 + 4) ^ 2 ≠ 0 by positivity)).symm
 
-
-
 theorem suC1_energy_eq_intrinsic_integral (g : RiemannianMetric n M)
     {f : UnitTwoSphere → M} (hf : ContMDiff (𝓡 2) (𝓡 n) 1 f) :
     m60SphereEnergy g f =
@@ -54,9 +41,6 @@ theorem suC1_energy_eq_intrinsic_integral (g : RiemannianMetric n M)
   rw [m60RoundSphereMetric_integral _ (suC1_intrinsicEnergy_continuous g hf)]
   apply integral_congr_ae
   exact Eventually.of_forall fun z => m60SphereEnergyDensity_eq_intrinsic_mul g f hf z
-
-
-
 
 theorem suC1_energy_le_of_density_le (g : RiemannianMetric n M)
     {f h : UnitTwoSphere → M}

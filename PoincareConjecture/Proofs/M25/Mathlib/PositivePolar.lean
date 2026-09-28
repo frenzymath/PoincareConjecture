@@ -2,17 +2,6 @@ import Mathlib.Analysis.Normed.Module.Ball.RadialEquiv
 import Mathlib.Geometry.Manifold.Instances.Sphere
 import Mathlib.Topology.OpenPartialHomeomorph.Constructions
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -21,10 +10,6 @@ open scoped Manifold ContDiff
 
 variable {E : Type*} [NormedAddCommGroup E] [InnerProductSpace ℝ E]
   {n : ℕ} [Fact (Module.finrank ℝ E = n + 1)]
-
-
-
-
 
 theorem exists_smooth_unitSpherePolar [FiniteDimensional ℝ E] (q0 : sphere (0 : E) 1) :
     ∃ Q : OpenPartialHomeomorph (sphere (0 : E) 1 × ℝ) E,
@@ -93,9 +78,6 @@ theorem exists_smooth_unitSpherePolar [FiniteDimensional ℝ E] (q0 : sphere (0 
       continuousOn_toFun := hFsmooth.continuous.continuousOn
       continuousOn_invFun := hGsmooth.continuousOn }
   exact ⟨Q, rfl, rfl, fun _ => rfl, fun _ => rfl, hN, hFsmooth, hGsmooth⟩
-
-
-
 
 theorem exists_smooth_positive_polar_chart [FiniteDimensional ℝ E] (q0 : sphere (0 : E) 1)
     (rho : OpenPartialHomeomorph ℝ ℝ) (l b r0 : ℝ)

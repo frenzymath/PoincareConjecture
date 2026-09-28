@@ -1,23 +1,12 @@
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcRoundingProducer
 import PoincareConjecture.Proofs.M25.Topology3D.Plane.OpenArcTubeHomotopy
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem exists_openArc_rounded_tube_transport
     {ρ : ℝ → ℝ} {P : (ℝ × ℝ) → ℤ → (ℝ × ℝ)}

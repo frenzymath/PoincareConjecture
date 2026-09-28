@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.StrictTraceBoundaryReality
 import PoincareConjecture.Proofs.M65.Sec19_5_Limits.Lemma19_4.HartmanWintner
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,10 +12,6 @@ open scoped Topology ContDiff
 namespace PoincareConjecture.M65StrictTrace
 
 open M65Branch
-
-
-
-
 
 theorem halfDisk_differential_zero_alternative
     {g : RiemannianMetric 3 LoopAmbient} (D : LeviCivitaData g)

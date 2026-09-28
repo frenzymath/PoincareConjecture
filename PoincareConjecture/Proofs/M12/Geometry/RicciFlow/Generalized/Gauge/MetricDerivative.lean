@@ -3,22 +3,6 @@ import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.Metric
 import PoincareConjecture.Proofs.M12.Geometry.RicciFlow.Generalized.Gauge.SectionTransport
 import PoincareConjecture.Proofs.M12.Geometry.Spacetime.Horizontal.Connection
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option synthInstance.maxHeartbeats 100000
@@ -124,8 +108,6 @@ private theorem movingGauge_metric_derivative_on_sections
   apply hd.congr_deriv
   unfold ordinaryMetricLieDerivative
   linarith
-
-
 
 theorem movingGauge_metric_derivative
     (D : LeafwiseLeviCivitaFamily F S) (G : MovingSpacetimeGaugeGeometry e)

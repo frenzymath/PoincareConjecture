@@ -3,8 +3,6 @@ import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Surgery.Retention.Cross
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.PolyhedralPLClosedUnion
 import PoincareConjecture.Proofs.M76.Mathlib.PolyhedralPLDiskExtension
 
-
-
 set_option autoImplicit false
 open Set Geometry
 

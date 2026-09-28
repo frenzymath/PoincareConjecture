@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Topology.Curves.Isotopy.Collars.OriginalRegionPL
 import PoincareConjecture.Proofs.M76.Rigidity.OriginalDomainBoundaryCollar
 
-
-
 set_option autoImplicit false
 open Set Geometry Topology unitInterval
 

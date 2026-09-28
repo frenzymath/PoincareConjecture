@@ -1,8 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Metric.Neck.CenteredNeckMetric
 import PoincareConjecture.Proofs.Horizon.Analysis.Calculus.SmoothCompactness.DomainChange
 
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 set_option maxSynthPendingDepth 10
@@ -39,8 +37,6 @@ theorem centeredCylinderMetric_congr {ε : ℝ} {B₁ B₀ : RoundCylinderTwoTen
   simp only [centeredCylinderMetric, centeredCylinderBilinear_basis,
     roundCylinderTensorCoefficient]
   exact hB _ hp _ _
-
-
 
 theorem centeredCylinderMetric_pullback
     {M : Type u} [TopologicalSpace M] [ChartedSpace E M] [IsManifold (𝓡 3) ∞ M]
@@ -89,8 +85,6 @@ private theorem centeredCoefficientEvaluation_norm_le (a b : Fin 3) :
   simpa only [centeredCoefficientEvaluation, ContinuousLinearMap.comp_apply,
     ContinuousLinearMap.apply_apply, OrthonormalBasis.norm_eq_one, mul_one, one_mul] using
     B.le_opNorm₂ (EuclideanSpace.basisFun (Fin 3) ℝ a) (EuclideanSpace.basisFun (Fin 3) ℝ b)
-
-
 
 theorem cylinder_coefficient_jet_le_centered_metric_jet
     (B₁ B₀ : RoundCylinderTwoTensor) (q : UnitTwoSphere) (s : ℝ)

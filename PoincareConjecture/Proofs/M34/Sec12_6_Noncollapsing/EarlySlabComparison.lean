@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M34.Standard.CalibratedMetricComparison
 import PoincareConjecture.Proofs.M34.Thm12_5_Existence.PartialFlowCompleteness
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -18,8 +9,6 @@ open scoped Manifold ContDiff ENNReal
 namespace PoincareConjecture.M34
 
 variable {g0 : StandardInitialMetric} (F : PartialStandardCapFlow g0)
-
-
 
 theorem partialFlow_uniform_tangentNorm_comparison (P : RicciFlowCurvatureTheory.{0})
     {T : ℝ} (hT : T ∈ Ico 0 F.lifetime) :
@@ -49,8 +38,6 @@ theorem partialFlow_uniform_tangentNorm_comparison (P : RicciFlowCurvatureTheory
       ring
     rw [heq, Real.sqrt_mul (sq_nonneg _), Real.sqrt_sq (Real.exp_nonneg _)] at h
     exact h.trans (mul_le_mul_of_nonneg_right hexp (Real.sqrt_nonneg _))
-
-
 
 theorem partialFlow_uniform_metric_volume_comparison (P : RicciFlowCurvatureTheory.{0})
     {T : ℝ} (hT : T ∈ Ico 0 F.lifetime) :

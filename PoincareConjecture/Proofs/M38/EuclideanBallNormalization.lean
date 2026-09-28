@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M38.SpherePunctureCoordinates
 import PoincareConjecture.Proofs.M38.TwoBallAffineNormalization
 import PoincareConjecture.Proofs.M38.RegionEquivalences
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Topology
@@ -21,7 +12,6 @@ universe u
 namespace PoincareConjecture.M38
 
 attribute [local instance] threeManifoldLiftChartedSpace threeManifold_lift_isManifold
-
 
 noncomputable def euclideanReferenceBall (a : StandardCapSpace) :
     SurgeryBallEmbedding euclideanCarrier.{u} := by
@@ -46,17 +36,12 @@ noncomputable def euclideanReferenceBall (a : StandardCapSpace) :
     open_embedding := smooth_left_inverse_openEmbedding Metric.isOpen_ball
       hf.contMDiffOn hg.contMDiffOn hleft }
 
-
 theorem euclideanReferenceBall_map (a x : StandardCapSpace) :
     (euclideanReferenceBall.{u} a).map x = ULift.up (a + x) := rfl
-
 
 theorem euclideanReferenceBall_inverse (a : StandardCapSpace)
     (y : euclideanCarrier.{u}.carrier) :
     (euclideanReferenceBall a).inverse y = y.down - a := rfl
-
-
-
 
 theorem exists_euclideanBallAffineNormalizationCompact
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :
@@ -95,8 +80,6 @@ theorem exists_euclideanBallAffineNormalizationCompact
   · intro x hx
     simpa only [hzero, zero_add] using hcoord x hx
 
-
-
 theorem exists_euclideanBallAffineNormalization
     (B : SurgeryBallEmbedding euclideanCarrier.{u}) :
     ∃ e : Diffeomorph (𝓡 3) (𝓡 3)
@@ -130,8 +113,6 @@ variable (a : StandardCapSpace)
 
 include hb hinner
 
-
-
 theorem euclideanBallAffine_closedImageAt :
     e '' B.closedBall =
       {y : euclideanCarrier.{u}.carrier | ‖L.symm (y.down - a)‖ ≤ b} := by
@@ -161,7 +142,6 @@ theorem euclideanBallAffine_closedImageAt :
       rw [hinner x (hxnorm.trans (by norm_num)), hlinear]
       abel
 
-
 theorem euclideanBallAffine_complementImageAt :
     e '' B.closedBallᶜ =
       {y : euclideanCarrier.{u}.carrier | b < ‖L.symm (y.down - a)‖} := by
@@ -179,19 +159,15 @@ variable (hinner : ∀ x : StandardCapSpace, ‖x‖ ≤ 5 / 4 →
 
 include hb hinner
 
-
 theorem euclideanBallAffine_closedImage :
     e '' B.closedBall =
       {y : euclideanCarrier.{u}.carrier | ‖L.symm (y.down - (B.map 0).down)‖ ≤ b} :=
   euclideanBallAffine_closedImageAt B e L b hb (B.map 0).down hinner
 
-
 theorem euclideanBallAffine_complementImage :
     e '' B.closedBallᶜ =
       {y : euclideanCarrier.{u}.carrier | b < ‖L.symm (y.down - (B.map 0).down)‖} :=
   euclideanBallAffine_complementImageAt B e L b hb (B.map 0).down hinner
-
-
 
 theorem exists_euclideanBallEllipsoidEquivalence :
     ∃ E : SurgeryRegionEquivalence euclideanCarrier.{u} euclideanCarrier.{u}

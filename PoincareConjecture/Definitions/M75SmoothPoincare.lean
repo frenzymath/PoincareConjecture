@@ -1,15 +1,6 @@
 import PoincareConjecture.Definitions.M52GlobalFlow
 import PoincareConjecture.Definitions.M74ConnectedSumReduction
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle Topology ENNReal

@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.ScalarBoundaryInverseLift
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 noncomputable section
@@ -40,10 +28,6 @@ private theorem lipschitz_of_C1_shift {f : ℝ → ℝ} (hf : ContDiff ℝ 1 f)
   intro x
   change ‖deriv f x‖ ≤ max 0 C
   exact (hC _ ⟨x, rfl⟩).trans (le_max_right _ _)
-
-
-
-
 
 theorem exists_positive_degree_one_homeomorph
     {f d : ℝ → ℝ} (hd : ∀ x, HasDerivAt f (d x) x) (hdc : Continuous d)

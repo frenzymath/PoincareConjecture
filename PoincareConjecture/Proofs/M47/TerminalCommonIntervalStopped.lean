@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.BlowupControlsSourceBounds
 import PoincareConjecture.Proofs.M47.BlowupControlsSequence
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -19,12 +11,10 @@ universe u
 
 namespace PoincareConjecture.M47
 
-
 noncomputable def terminalCommonIntervalDuration
     (S : RepairedControlledSchedulesData.{u})
     (B : M47ComponentAnalyticBounds.{u} S.setup.C) (K : ℝ) : ℝ :=
   (256 * blowupAnalyticConstant S B * (2 * K))⁻¹
-
 
 theorem terminalCommonInterval_duration_bounds
     (S : RepairedControlledSchedulesData.{u})
@@ -49,7 +39,6 @@ theorem terminalCommonInterval_duration_bounds
   rw [heq]
   norm_num
 
-
 theorem terminalCommonInterval_eventually_large
     (S : RepairedControlledSchedulesData.{u})
     (B : M47ComponentAnalyticBounds.{u} S.setup.C)
@@ -64,8 +53,6 @@ theorem terminalCommonInterval_eventually_large
     V.scalar_diverges.eventually (eventually_ge_atTop (blowupPinchingThreshold (8 * K) eta))]
     with k htime hlarge hpinch
   exact ⟨htime, hlarge, hpinch⟩
-
-
 
 theorem terminalCommonInterval_stopped_curvature
     (S : RepairedControlledSchedulesData.{u})

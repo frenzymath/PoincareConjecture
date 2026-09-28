@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonProtectedGeometricInp
 import Mathlib.Topology.OpenPartialHomeomorph.IsImage
 import Mathlib.Topology.LocalAtTarget
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Topology
@@ -39,7 +28,6 @@ theorem isOpenMap_hamiltonMarkedProjection : IsOpenMap pi :=
 
 omit [Fintype κ] in
 
-
 theorem hamiltonMarkedProjection_mem_domain (x : V) : pi x ∈ R ↔ x ∈ R0 := Iff.rfl
 
 namespace HamiltonRetainedBlockChart
@@ -49,8 +37,6 @@ variable {e : α → OpenPartialHomeomorph (LatticeHandleAmbient ι κ L) (Fin 3
   (retained : HamiltonRetainedBlockChart ι κ L e h)
 
 include retained
-
-
 
 theorem projection_injOn_open_window : InjOn pi W := by
   intro x hx y hy hxy
@@ -70,8 +56,6 @@ theorem projection_injOn_open_window : InjOn pi W := by
   have hsnd := congrArg (fun z : V ↦ z.2) htrans
   exact Prod.ext (congrArg (fun z : X ↦ z.1) hxy) hsnd
 
-
-
 noncomputable def projectionChart : OpenPartialHomeomorph V X :=
   OpenPartialHomeomorph.ofContinuousOpen
     (retained.projection_injOn_open_window.toPartialEquiv pi W)
@@ -83,7 +67,6 @@ noncomputable def projectionChart : OpenPartialHomeomorph V X :=
 @[simp] theorem projectionChart_source : retained.projectionChart.source = W := rfl
 
 @[simp] theorem projectionChart_target : retained.projectionChart.target = pi '' W := rfl
-
 
 theorem projection_isOpenEmbedding :
     IsOpenEmbedding (fun x : W ↦ pi (x : V)) :=
@@ -97,8 +80,6 @@ theorem projectionChart_isImage {P : Set V} (hPW : P ⊆ W) :
     exact retained.projection_injOn_open_window (hPW hy) hx hyx ▸ hy
   · intro hp
     exact mem_image_of_mem pi hp
-
-
 
 theorem projection_frontier [DiscreteTopology L] {P : Set V}
     (hP : IsCompact P) (hPW : P ⊆ W) :
@@ -114,13 +95,11 @@ theorem projection_frontier [DiscreteTopology L] {P : Set V}
   rw [inter_eq_right.mpr hFP, inter_eq_right.mpr hFT] at hf
   exact hf.symm
 
-
 theorem projection_mem_interior_iff {P : Set V} (hPW : P ⊆ W)
     {x : V} (hx : x ∈ W) : pi x ∈ interior (pi '' P) ↔ x ∈ interior P :=
   (retained.projectionChart_isImage hPW).interior hx
 
 end HamiltonRetainedBlockChart
-
 
 def relativeMarkedProjection (x : R0) : R := ⟨pi x, x.property⟩
 
@@ -149,8 +128,6 @@ theorem relativeProjection_injOn_open_window : InjOn pir Wr := by
   intro x hx y hy hxy
   exact Subtype.ext (retained.projection_injOn_open_window hx hy (congrArg Subtype.val hxy))
 
-
-
 noncomputable def relativeProjectionChart : OpenPartialHomeomorph R0 R := by
   have : Nonempty R0 := ⟨⟨0, mem_closedBall_self zero_le_one, mem_univ _⟩⟩
   exact OpenPartialHomeomorph.ofContinuousOpen
@@ -175,8 +152,6 @@ theorem relativeProjectionChart_isImage {P : Set V} (hPW : P ⊆ W) :
   · intro hp
     exact mem_image_of_mem pi hp
 
-
-
 theorem projection_mem_relative_interior_iff {P : Set V} (hPW : P ⊆ W)
     (x : R0) (hx : (x : V) ∈ W) :
     pir x ∈ interior ((Subtype.val : R → X) ⁻¹' (pi '' P)) ↔
@@ -187,7 +162,6 @@ end HamiltonRetainedBlockChart
 
 omit [Fintype κ] in
 
-
 theorem hamiltonMarkedProjection_mem_frontier [Nonempty ι] (x : V) :
     pi x ∈ frontier R ↔ x ∈ frontier R0 := by
   change pi x ∈ frontier (closedBall (0 : ι → ℝ) 1 ×ˢ
@@ -197,7 +171,6 @@ theorem hamiltonMarkedProjection_mem_frontier [Nonempty ι] (x : V) :
   rfl
 
 omit [Fintype κ] in
-
 
 theorem hamiltonMarkedProjection_image_inter_frontier [Nonempty ι] (P : Set V) :
     (pi '' P) ∩ frontier R = pi '' (P ∩ frontier R0) := by

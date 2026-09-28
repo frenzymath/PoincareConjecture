@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Gra
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Hessian.Chart
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.ScalarOperators.Divergence.Pullback
 
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -56,8 +50,6 @@ private theorem normalizedGradient_metric_pullback
   · simp only [normalizedGradient, map_smul, hmetric, hpush]
 
 end PoincareConjecture.LeviCivitaData
-
-
 
 theorem PoincareConjecture.LeviCivitaData.exists_local_normalizedGradient_manifoldFlow_with_expansion
     {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M]

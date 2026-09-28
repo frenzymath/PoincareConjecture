@@ -1,13 +1,6 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.SpacetimeBounds
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.AncientKappa.Asymptotic.ReducedLength.TimeGrowth
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -22,8 +15,6 @@ variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M] [MeasurableSpace M] [BorelSpace M]
   [T2Space M] [T3Space M] [SecondCountableTopology M] [ConnectedSpace M]
-
-
 
 theorem reducedLength_in_centered_chart_le
     {K : AncientKappaSolution n M} (S : AncientRescalingSequence K)
@@ -54,8 +45,6 @@ theorem reducedLength_in_centered_chart_le
   have hsq := Real.sq_sqrt (P.reducedLength_pos S.reference (e x) (S.scale k * τ)
     (mul_pos (S.scale_pos k) hτ)).le
   nlinarith [Real.sqrt_nonneg (reducedLength K.flow 0 S.reference (e x) (S.scale k * τ))]
-
-
 
 theorem reducedLength_centered_coordinates_uniformEquicontinuousOn
     {K : AncientKappaSolution n M} (S : AncientRescalingSequence K)

@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M14.Sec6_2_SurfaceTorsion
 import PoincareConjecture.Proofs.M14.Mathlib.RectanglePartialTangent
 import PoincareConjecture.Proofs.M14.Sec6_2_OpenFieldExtension
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 set_option backward.isDefEq.respectTransparency false
@@ -24,8 +16,6 @@ namespace PoincareConjecture.M14
 variable {n : ℕ} {X : Type u} [TopologicalSpace X] {time : X → ℝ}
   {I : SpacetimeInterval} {G : GeneralizedLGeometryTransport n X time I}
   {α : ℝ × ℝ → G.Point} {J P : Set ℝ}
-
-
 
 theorem surfaceHorizontalFst_contMDiffOn (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P)) :
@@ -46,8 +36,6 @@ theorem surfaceHorizontalFst_contMDiffOn (hJ : IsOpen J) (hP : IsOpen P)
   simp only [Function.comp_apply, surfaceHorizontalFst,
     mfderivWithin_of_mem_nhds (hJ.mem_nhds hz.1)]
 
-
-
 theorem surfaceHorizontalSnd_contMDiffOn (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P)) :
     ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ)))
@@ -64,8 +52,6 @@ theorem surfaceHorizontalSnd_contMDiffOn (hJ : IsOpen J) (hP : IsOpen P)
     G.spacetime.horizontalProjection_smooth
   exact hproj.comp_contMDiffOn htan
 
-
-
 theorem exists_surfaceHorizontalSnd_extension (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))
     {v : ℝ} (hv : v ∈ P) :
@@ -74,8 +60,6 @@ theorem exists_surfaceHorizontalSnd_extension (hJ : IsOpen J) (hP : IsOpen P)
   apply exists_pullbackExtension_of_isOpen hJ
   exact (surfaceHorizontalSnd_contMDiffOn hJ hP hα).comp
     (contMDiff_id.prodMk (contMDiff_const (c := v))).contMDiffOn (fun _ hs => ⟨hs, hv⟩)
-
-
 
 theorem exists_surfaceHorizontalFst_parameter_extension (hJ : IsOpen J) (hP : IsOpen P)
     (hα : ContMDiffOn ((𝓘(ℝ, ℝ)).prod (𝓘(ℝ, ℝ))) (spacetimeModel n) ∞ α (J ×ˢ P))

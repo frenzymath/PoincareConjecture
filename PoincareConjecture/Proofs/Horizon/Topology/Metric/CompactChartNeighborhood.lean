@@ -2,14 +2,6 @@ import Mathlib.Topology.MetricSpace.Thickening
 import Mathlib.Topology.MetricSpace.Lipschitz
 import Mathlib.Topology.MetricSpace.ProperSpace
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Topology
 open scoped NNReal

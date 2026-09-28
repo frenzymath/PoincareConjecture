@@ -2,13 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Topology.MetricSpace.AscendingSlope
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Compactness.IntrinsicMetric
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.Smoothing.Directional.RegularSlab
 
-
-
-
-
-
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -20,8 +13,6 @@ namespace PoincareConjecture.RiemannianMetric
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M] [T3Space M] [PreconnectedSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
 
 theorem exists_small_excess_of_local_distance_ascent
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p x : M)
@@ -44,8 +35,6 @@ theorem exists_small_excess_of_local_distance_ascent
     exact hy
   exact hascent y hxy s hs
 
-
-
 theorem exists_small_excess_of_annular_distance_ascent
     (g : RiemannianMetric n M) (hc : MetricComplete g) (p : M)
     {r R T c : ℝ} (hT : 0 < T) (hc0 : 0 ≤ c)
@@ -63,8 +52,6 @@ theorem exists_small_excess_of_annular_distance_ascent
   exact hascent y (by linarith [hdist.2]) (by linarith [hdist.1])
 
 omit [PreconnectedSpace M] in
-
-
 
 theorem exists_proper_regular_slab_of_local_distance_ascent
     [ConnectedSpace M]
@@ -119,6 +106,5 @@ theorem exists_proper_regular_slab_of_local_distance_ascent
     rw [heq]
     ring
   simpa only [hL] using h
-
 
 end PoincareConjecture.RiemannianMetric

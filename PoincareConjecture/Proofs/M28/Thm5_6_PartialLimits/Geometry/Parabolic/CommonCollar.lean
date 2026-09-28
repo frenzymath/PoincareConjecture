@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M28.Thm5_6_PartialLimits.SharedExport
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.Compactness.GeometricLimit.BoundaryCoverage
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option linter.style.haveILetI false
 
@@ -28,12 +18,6 @@ variable {n : ℕ} {M : ℕ → Type u}
   [∀ k, IsManifold (𝓡 n) ∞ (M k)]
   {tau : ℝ} {F : ∀ k, RicciFlow n (M k) (Icc (-tau) 0)}
   {p : ∀ k, M k} {A : ℝ}
-
-
-
-
-
-
 
 theorem PartialPointedFlowConvergence.exists_eventual_source_ball_image
     (G : PartialPointedFlowConvergence F p A 0)
@@ -109,8 +93,6 @@ theorem PartialPointedFlowConvergence.exists_eventual_source_ball_image
       exact (not_lt_of_ge (hj x hfront)) hyball
     exact mem_image_of_mem _ hxV
 
-
-
 theorem PartialLimitWindowExport.exists_eventual_source_ball_image
     (E : PartialLimitWindowExport F p A)
     {B : ℝ} (hB : 0 < B) (hBA : B < A) :
@@ -119,8 +101,6 @@ theorem PartialLimitWindowExport.exists_eventual_source_ball_image
           (p (E.limit.subsequence j)) B ⊆
         E.limit.embedding j '' E.limit.exhaustion l :=
   E.limit.exists_eventual_source_ball_image hB hBA
-
-
 
 theorem PartialLimitWindowExport.exists_eventual_compact_collar
     (E : PartialLimitWindowExport F p A)

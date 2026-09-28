@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.AtlasOfCover
 import PoincareConjecture.Proofs.M76.Dehn.Mathlib.SquareRimPolygon
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry

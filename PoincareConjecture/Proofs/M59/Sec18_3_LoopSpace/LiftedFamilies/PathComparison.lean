@@ -1,24 +1,11 @@
 import PoincareConjecture.Proofs.M59.Mathlib.CoveringLoopFamilies
 import PoincareConjecture.Proofs.M59.Mathlib.LoopComparison
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Topology unitInterval
 
 namespace Path
-
-
-
 
 theorem homotopic_of_subsingleton_fundamentalGroup
     {X : Type*} [TopologicalSpace X] {x y : X}
@@ -41,9 +28,6 @@ variable {S E : Type*} [TopologicalSpace S] [T2Space S] [LocallyCompactSpace S]
 
 include q
 
-
-
-
 theorem fundamentalGroup_continuousLoop_subsingleton (c : E)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 E c)) :
     Subsingleton (FundamentalGroup C(S, E) (ContinuousMap.const S c)) := by
@@ -54,18 +38,12 @@ theorem fundamentalGroup_continuousLoop_subsingleton (c : E)
     (q.loopHomotopyEquiv 1 c hpiOne).injective.subsingleton
   exact HomotopyGroup.pi1MulEquivFundamentalGroup.surjective.subsingleton
 
-
-
-
 theorem continuousLoop_path_homotopic_constant {c c' : E}
     (hpi : Subsingleton (HomotopyGroup.Pi 2 E c))
     (L : Path (ContinuousMap.const S c) (ContinuousMap.const S c')) (r : Path c c') :
     L.Homotopic (r.map ContinuousMap.continuous_const') :=
   Path.homotopic_of_subsingleton_fundamentalGroup
     (q.fundamentalGroup_continuousLoop_subsingleton c hpi) L _
-
-
-
 
 theorem continuousLoop_homotopyAlong_constant {N : Type*} [Finite N]
     {c c' : E} (hpi : Subsingleton (HomotopyGroup.Pi 2 E c))

@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M35.Uniqueness.RawQuadraticBound
 import PoincareConjecture.Proofs.M35.Uniqueness.RawCommonCarrier
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 

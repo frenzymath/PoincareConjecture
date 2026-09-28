@@ -2,12 +2,6 @@ import PoincareConjecture.Proofs.M47.TerminalSourceCharts
 import PoincareConjecture.Proofs.M07.Geometry.RicciFlow.MetricComparison
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.NormBounds
 
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -33,8 +27,6 @@ theorem terminalSourceUpper_pos (H τ : ℝ) : 0 < terminalSourceUpper H τ := b
 
 variable {M : Type u} [TopologicalSpace M] [ChartedSpace E M]
   [IsManifold (𝓡 3) ∞ M] [T2Space M]
-
-
 
 theorem TerminalSourceChart.closed_bounds {τ R H ρ : ℝ} (hτ : 0 < τ) (hH : 0 ≤ H)
     (F : RicciFlow 3 M (Icc (-τ) 0)) (C : TerminalSourceChart (F.metric 0) R)

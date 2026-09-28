@@ -2,15 +2,6 @@ import PoincareConjecture.Proofs.M47.BlowupControlsSourceInitialRawPast
 import PoincareConjecture.Proofs.M47.TerminalSourceRealization
 import PoincareConjecture.Proofs.M47.CanonicalNeckCylinderMetric
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -20,8 +11,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture.M47
-
-
 
 theorem source_initial_past_slab_window
     {H M d b : ℝ} (hH : 0 < H) (hHM : H ≤ M) (hd : 0 < d) (hdM : d ≤ M)
@@ -57,8 +46,6 @@ theorem source_initial_past_slab_window
     exact ((div_le_iff₀ hH).mp hdiv').trans_eq (mul_comm _ _)
   · apply mul_le_mul_of_nonneg_left _ hH.le
     linarith only [hanchor, hs.2]
-
-
 
 theorem exists_source_initial_past_slab
     (P : M47Predecessors.{u}) {F : SurgeryFlowData.{u}}

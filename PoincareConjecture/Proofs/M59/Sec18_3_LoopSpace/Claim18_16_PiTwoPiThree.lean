@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M59.Mathlib.ContinuousLoopComparison
 import PoincareConjecture.Proofs.M59.Mathlib.CubicalMapNaturality
 import PoincareConjecture.Proofs.M59.Sec18_3_LoopSpace.SystemAssembly
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -30,8 +21,6 @@ section ValueMap
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] [T2Space M]
 
-
-
 def m59C1ValueEquivTop (hcompact : IsCompact (univ : Set M))
     (n : Nat) [Nonempty (Fin n)] (x : M) :
     HomotopyGroup.Pi n (C1FreeLoopSpace (M := M)) (constantC1Loop x) ≃*
@@ -41,8 +30,6 @@ def m59C1ValueEquivTop (hcompact : IsCompact (univ : Set M))
   let : MetricSpace M := TopologicalSpace.metrizableSpaceMetric M
   exact m59C1ValueEquiv hcompact n x
 
-
-
 theorem m59C1ValueEquivTop_apply (hcompact : IsCompact (univ : Set M))
     (n : Nat) [Nonempty (Fin n)] (x : M)
     (a : HomotopyGroup.Pi n (C1FreeLoopSpace (M := M)) (constantC1Loop x)) :
@@ -50,14 +37,10 @@ theorem m59C1ValueEquivTop_apply (hcompact : IsCompact (univ : Set M))
 
 end ValueMap
 
-
-
 def m59BasedLoopAdjunction {X : Type u} [TopologicalSpace X] (x : X) :
     HomotopyGroup.Pi 2 (GenLoop (Fin 1) X x) GenLoop.const ≃* HomotopyGroup.Pi 3 X x :=
   (HomotopyGroup.cubicalAdjunction x).trans
     (HomotopyGroup.reindex x (finSumFinEquiv : Fin 2 ⊕ Fin 1 ≃ Fin 3))
-
-
 
 theorem m59BasedLoopAdjunction_naturality
     {X : Type u} {Y : Type v} [TopologicalSpace X] [TopologicalSpace Y]
@@ -79,8 +62,6 @@ section Comparison
 variable {M : Type u} [TopologicalSpace M]
   [ChartedSpace LoopAmbient M] [IsManifold (𝓡 3) ∞ M] [T2Space M]
 
-
-
 def m59PiTwoPiThree (hcompact : IsCompact (univ : Set M)) (x : M)
     (hpi : Subsingleton (HomotopyGroup.Pi 2 M x)) :
     HomotopyGroup.Pi 2 (C1FreeLoopSpace (M := M)) (constantC1Loop x) ≃*
@@ -90,8 +71,6 @@ def m59PiTwoPiThree (hcompact : IsCompact (univ : Set M)) (x : M)
 
 variable {N : Type u} [TopologicalSpace N]
   [ChartedSpace LoopAmbient N] [IsManifold (𝓡 3) ∞ N] [T2Space N]
-
-
 
 theorem m59C1ValueEquivTop_naturality
     (hcompactM : IsCompact (univ : Set M)) (hcompactN : IsCompact (univ : Set N))
@@ -111,8 +90,6 @@ theorem m59C1ValueEquivTop_naturality
     (fun b => (⟦b⟧ : HomotopyGroup.Pi n C(LoopCircle, N) (ContinuousMap.const LoopCircle y)))
   ext w z
   exact m59LoopPostcomposition_apply L (a w) z
-
-
 
 theorem m59PiTwoPiThree_naturality
     (hcompactM : IsCompact (univ : Set M)) (hcompactN : IsCompact (univ : Set N))
@@ -148,14 +125,10 @@ theorem m59PiTwoPiThree_naturality
 
 end Comparison
 
-
-
 def m59ComparisonService : M59ComparisonService.{u} where
   comparison compact _connected x piTwo := m59PiTwoPiThree compact x piTwo
   naturality compactM _connectedM compactN _connectedN x y piTwoM piTwoN f _smooth based L a :=
     m59PiTwoPiThree_naturality compactM compactN x y piTwoM piTwoN f based L a
-
-
 
 def m59IdentificationSystem_of_free_class
     (hfree : M59FreeClassFaithfulness.{u} m59SphereQuotient) : M59IdentificationSystem.{u} :=

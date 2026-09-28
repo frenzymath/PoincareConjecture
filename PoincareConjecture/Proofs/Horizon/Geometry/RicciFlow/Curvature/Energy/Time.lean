@@ -5,17 +5,6 @@ import Mathlib.Algebra.BigOperators.GroupWithZero.Finset
 import Mathlib.Logic.Equiv.Prod
 import Mathlib.Analysis.Calculus.ContDiff.Operations
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle BigOperators
@@ -437,6 +426,5 @@ theorem hasDerivAt_flow_tensorNorm_sq
       _ = _ := sum_tuple_finCongr hd (fun a : Fin r → Fin d =>
         ∑ l : Fin d, (F.connection t).ricci x (b (a j)) (b l) *
           T t x (fun i => b (a i)) * T t x (fun i => b (Function.update a j l i)))
-
 
 end PoincareConjecture.RicciFlowAnalysis

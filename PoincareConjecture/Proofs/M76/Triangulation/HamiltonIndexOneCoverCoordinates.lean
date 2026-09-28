@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonIndexOneMiddleBall
 import PoincareConjecture.Proofs.M76.Mathlib.HamiltonHandleCubeBall
 import PoincareConjecture.Proofs.M76.Mathlib.ConvexFrontierSubcomplex
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Geometry
@@ -25,21 +17,15 @@ private noncomputable def productLinear : (V1 × V2) ≃L[ℝ] W :=
   (ContinuousLinearEquiv.piUnique ℝ (fun _ : Fin 1 => ℝ)).prodCongr
     (ContinuousLinearEquiv.finTwoArrow ℝ ℝ)
 
-
-
 noncomputable def productCoordinates : (V1 × V2) ≃ᴬ[ℝ] W :=
   productLinear.toContinuousAffineEquiv
-
-
 
 noncomputable def coverCoordinates : V ≃ᴬ[ℝ] W :=
   ((ContinuousLinearEquiv.sumPiEquivProdPi ℝ (Fin 1) (Fin 2)
     (fun _ => ℝ)).trans productLinear).toContinuousAffineEquiv
 
-
 theorem coverCoordinates_apply (x : V) :
     coverCoordinates x = (x (Sum.inl 0), (x (Sum.inr 0), x (Sum.inr 1))) := rfl
-
 
 theorem boundedCoordinate_norm (x : V1) : ‖x 0‖ = ‖x‖ := by
   apply le_antisymm (norm_le_pi_norm x 0)
@@ -47,7 +33,6 @@ theorem boundedCoordinate_norm (x : V1) : ‖x 0‖ = ‖x‖ := by
   intro i
   fin_cases i
   exact le_rfl
-
 
 theorem freeCoordinates_norm (x : V2) : ‖(x 0, x 1)‖ = ‖x‖ := by
   apply le_antisymm
@@ -57,7 +42,6 @@ theorem freeCoordinates_norm (x : V2) : ‖(x 0, x 1)‖ = ‖x‖ := by
     fin_cases i
     · exact le_max_left _ _
     · exact le_max_right _ _
-
 
 theorem coverCoordinates_norm (x : V) : ‖coverCoordinates x‖ = ‖x‖ := by
   apply le_antisymm
@@ -72,11 +56,8 @@ theorem coverCoordinates_norm (x : V) : ‖coverCoordinates x‖ = ‖x‖ := by
       · exact (le_max_left _ _).trans (le_max_right _ _)
       · exact (le_max_right _ _).trans (le_max_right _ _)
 
-
 def annulusParameterSpace : Set (V1 × V2) :=
   closedBall (0 : V1) 1 ×ˢ sphere (0 : V2) 1
-
-
 
 theorem exists_annulus_parameter_complex :
     ∃ K : SimplicialComplex ℝ (V1 × V2),
@@ -101,25 +82,18 @@ private noncomputable def annulusLinear : (V1 × V2) ≃L[ℝ] W :=
     (LinearEquiv.smulOfNeZero ℝ (ℝ × ℝ) (3 / 2 : ℝ)
       (by norm_num)).toContinuousLinearEquiv)
 
-
 noncomputable def annulusCoordinates : (V1 × V2) ≃ᴬ[ℝ] W :=
   annulusLinear.toContinuousAffineEquiv
 
-
 theorem annulusCoordinates_apply (x : V1 × V2) :
     annulusCoordinates x = (x.1 0, (3 / 2 : ℝ) • (x.2 0, x.2 1)) := rfl
-
-
 
 noncomputable def unitAnnulusCoordinates : (ℝ × V2) ≃ᴬ[ℝ] W :=
   (((ContinuousLinearEquiv.piUnique ℝ (fun _ : Fin 1 => ℝ)).symm.prodCongr
     (ContinuousLinearEquiv.refl ℝ V2)).toContinuousAffineEquiv).trans annulusCoordinates
 
-
-
 theorem unitAnnulusCoordinates_apply (x : ℝ × V2) :
     unitAnnulusCoordinates x = (x.1, (3 / 2 : ℝ) • (x.2 0, x.2 1)) := rfl
-
 
 theorem annulusCoordinates_mem_rims (x : annulusParameterSpace) :
     annulusCoordinates x ∈ squareRims ↔
@@ -136,9 +110,6 @@ theorem annulusCoordinates_mem_rims (x : annulusParameterSpace) :
     Real.norm_eq_abs]
   simp only [mem_insert_iff, mem_singleton_iff, abs_eq (by norm_num : (0 : ℝ) ≤ 1)]
   exact or_comm
-
-
-
 
 theorem exists_standard_annulus_parameter :
     ∃ u : annulusParameterSpace ≃ₜ squareInnerAnnulus,

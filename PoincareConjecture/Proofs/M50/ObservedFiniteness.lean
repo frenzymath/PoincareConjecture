@@ -1,13 +1,6 @@
 import PoincareConjecture.Statements.M49VolumeLoss
 import PoincareConjecture.Proofs.M50.Mathlib.FiniteCardBound
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -20,12 +13,6 @@ private theorem finite_of_finset_card_bound (s : Set ℝ) (n : ℕ)
     (bound : ∀ A : Finset ℝ, (↑A : Set ℝ) ⊆ s → A.card ≤ n) :
     s.Finite :=
   Set.finite_of_forall_finset_card_le s n bound
-
-
-
-
-
-
 
 theorem m50ObservedFiniteness_from_M49
     (V49 : RepairedVolumeLossTheory.{u})

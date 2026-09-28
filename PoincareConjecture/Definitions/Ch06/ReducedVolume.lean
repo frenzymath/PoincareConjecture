@@ -5,16 +5,6 @@ import Mathlib.MeasureTheory.Measure.Lebesgue.VolumeOfBalls
 import Mathlib.MeasureTheory.Integral.Bochner.Basic
 import Mathlib.Topology.EMetricSpace.Lipschitz
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle ENNReal Topology
@@ -22,7 +12,6 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 universe u
 
 namespace PoincareConjecture
-
 
 noncomputable def euclideanVolumeCalibration (n : ℕ) : ℝ≥0∞ :=
   MeasureTheory.volume (Metric.ball (0 : EuclideanSpace ℝ (Fin n)) 1) /
@@ -32,7 +21,6 @@ noncomputable def euclideanVolumeCalibration (n : ℕ) : ℝ≥0∞ :=
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M]
   [IsManifold (𝓡 n) ∞ M]
-
 
 noncomputable def calibratedMetricVolume [MeasurableSpace M] [BorelSpace M]
     [T3Space M] (g : RiemannianMetric n M) : MeasureTheory.Measure M :=
@@ -44,13 +32,11 @@ noncomputable def calibratedMetricVolume [MeasurableSpace M] [BorelSpace M]
   letI : EMetricSpace M := EMetricSpace.ofRiemannianMetric (𝓡 n) M
   euclideanVolumeCalibration n • MeasureTheory.Measure.hausdorffMeasure (n : ℝ)
 
-
 noncomputable def reducedVolumeDensity {J : Set ℝ} (F : RicciFlow n M J)
     (T : ℝ) (p : M) (τ : ℝ) (q : M) : ℝ :=
   if 0 < τ then
     Real.rpow τ (-(n : ℝ) / 2) * Real.exp (-reducedLength F T p q τ)
   else 0
-
 
 noncomputable def reducedVolumeOn [MeasurableSpace M] [BorelSpace M] [T3Space M]
     {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (p : M) (τ : ℝ)
@@ -58,16 +44,13 @@ noncomputable def reducedVolumeOn [MeasurableSpace M] [BorelSpace M] [T3Space M]
   ∫ q in A, reducedVolumeDensity F T p τ q
     ∂calibratedMetricVolume (F.metric (T - τ))
 
-
 noncomputable def reducedVolume [MeasurableSpace M] [BorelSpace M] [T3Space M]
     {J : Set ℝ} (F : RicciFlow n M J) (T : ℝ) (p : M) (τ : ℝ) : ℝ :=
   ∫ q, reducedVolumeDensity F T p τ q
     ∂calibratedMetricVolume (F.metric (T - τ))
 
-
 noncomputable def euclideanReducedVolume (n : ℕ) : ℝ :=
   Real.rpow (4 * Real.pi) ((n : ℝ) / 2)
-
 
 def reducedLengthLocallyLipschitz [T3Space M] {J : Set ℝ}
     (F : RicciFlow n M J) (T τmax : ℝ) (p : M) : Prop :=
@@ -81,7 +64,6 @@ def reducedLengthLocallyLipschitz [T3Space M] {J : Set ℝ}
   LocallyLipschitzOn (Set.univ ×ˢ Set.Ioo 0 τmax)
     (fun z : M × ℝ ↦ reducedLength F T p z.1 z.2)
 
-
 noncomputable def reducedLengthFirstWeakIntegrand {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (p : M) (τ : ℝ)
     (φ : M → ℝ) (q : M) : ℝ :=
@@ -89,7 +71,6 @@ noncomputable def reducedLengthFirstWeakIntegrand {J : Set ℝ}
       reducedLengthGradientNormSq F T (fun z ↦ reducedLength F T p z.1 z.2) τ q -
       (F.connection (T - τ)).scalarCurvature q + (n : ℝ) / (2 * τ)) -
     reducedLength F T p q τ * (F.connection (T - τ)).laplacian φ q
-
 
 noncomputable def reducedLengthSecondWeakIntegrand {J : Set ℝ}
     (F : RicciFlow n M J) (T : ℝ) (p : M) (τ : ℝ)
@@ -99,7 +80,6 @@ noncomputable def reducedLengthSecondWeakIntegrand {J : Set ℝ}
       (F.connection (T - τ)).scalarCurvature q +
       (reducedLength F T p q τ - (n : ℝ)) / τ) +
     2 * reducedLength F T p q τ * (F.connection (T - τ)).laplacian φ q
-
 
 structure ReducedLengthMeasureData [MeasurableSpace M] [BorelSpace M] [T3Space M]
     {J : Set ℝ} (F : RicciFlow n M J) (T τmax : ℝ) (p : M) where
@@ -121,13 +101,11 @@ structure ReducedLengthMeasureData [MeasurableSpace M] [BorelSpace M] [T3Space M
         reducedLengthGradientNormSq F T
           (fun z ↦ reducedLength F T p z.1 z.2) w.2 w.1 ≤ C
 
-
 def IsBackwardLStarShaped {J : Set ℝ} (F : RicciFlow n M J)
     (T τmax : ℝ) (p : M) (A : Set (M × ℝ)) : Prop :=
   IsOpen A ∧ A ⊆ Set.univ ×ˢ Set.Ioo 0 τmax ∧
     ∀ z ∈ A, ∃ r : ReducedLengthRegularPoint F T τmax p z.1 z.2,
       ∀ σ ∈ Set.Ioc 0 z.2, (r.path.curve σ, σ) ∈ A
-
 
 def IsStaticEuclideanFlowOn {J : Set ℝ} (F : RicciFlow n M J) (I : Set ℝ) : Prop :=
   ∃ e : Diffeomorph (𝓡 n) (𝓡 n) M (EuclideanSpace ℝ (Fin n)) ∞,

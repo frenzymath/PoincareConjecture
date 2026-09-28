@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Piece
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Comparison.Volume.Conjugate.Realization.Partition
 
-
-
-
-
-
-
-
-
-
-
 open Set Filter
 open scoped Manifold Topology ContDiff
 
@@ -24,9 +14,6 @@ open RiemannianMetric ConnectionAlongCurve Conjugate.Realization
 
 variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
-
-
-
 
 structure MovingEndpointRealization (g : RiemannianMetric n M)
     (γ β : ℝ → M) (V : ℝ → EuclideanSpace ℝ (Fin n)) (a b : ℝ) where
@@ -66,8 +53,6 @@ structure MovingEndpointRealization (g : RiemannianMetric n M)
   moving_right : ∀ s, η N s = β s
   base_source : ∀ i < N, ∀ t ∈ Icc (τ i - ρ) (τ (i + 1) + ρ),
     γ t ∈ (extChartAt (𝓡 n) (α i)).source
-
-
 
 theorem exists_movingEndpointRealization [T2Space M]
     (g : RiemannianMetric n M) {γ β : ℝ → M}

@@ -4,15 +4,6 @@ import PoincareConjecture.Proofs.M62.Sec19_1_MetricVariation
 import PoincareConjecture.Proofs.M62.Sec19_1_PullbackTorsion
 import PoincareConjecture.Proofs.M04.RicciRegularity
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option maxSynthPendingDepth 3
 set_option backward.isDefEq.respectTransparency false
@@ -26,8 +17,6 @@ namespace PoincareConjecture.M62
 variable {n : ℕ} {M : Type u} [TopologicalSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   {a b : ℝ} (F : RicciFlow n M (Set.Icc a b)) (c : ℝ → ℝ → M)
-
-
 
 theorem hasDerivAt_speed_sq (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Ioo a b) (x : ℝ) :
@@ -118,8 +107,6 @@ theorem hasDerivAt_speed_sq (hc : M62ShrinkingCurve F c) {t : ℝ}
       (rampHorizontalCovariantDerivative D (fun y ↦ c y t) H x) = _
   rw [hcross, hcross', hRic]
   ring
-
-
 
 theorem hasDerivAt_speed (hc : M62ShrinkingCurve F c) {t : ℝ}
     (ht : t ∈ Set.Ioo a b) (x : ℝ) :

@@ -5,15 +5,6 @@ import PoincareConjecture.Proofs.M25.Topology3D.Polygon.SimpleTriangle
 import Mathlib.Data.Fin.Tuple.Basic
 import Mathlib.Analysis.SpecialFunctions.SmoothTransition
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Function
@@ -25,21 +16,15 @@ section Determinant
 
 variable {W : Type*} [AddCommGroup W] [Module ℝ W]
 
-
-
 noncomputable def triangleEdgeDet (b : AffineBasis (Fin 3) ℝ W) (x y : W) : ℝ :=
   (b.coord 1 x - 1 / 3) * (b.coord 2 y - 1 / 3) -
     (b.coord 2 x - 1 / 3) * (b.coord 1 y - 1 / 3)
-
-
 
 theorem triangleEdgeDet_midpoint_right (b : AffineBasis (Fin 3) ℝ W) (x y : W) :
     triangleEdgeDet b x (midpoint ℝ x y) = triangleEdgeDet b x y / 2 := by
   simp only [triangleEdgeDet, AffineMap.map_midpoint]
   simp only [midpoint_eq_smul_add, smul_eq_mul, invOf_eq_inv]
   ring
-
-
 
 theorem triangleEdgeDet_midpoint_left (b : AffineBasis (Fin 3) ℝ W) (x y : W) :
     triangleEdgeDet b (midpoint ℝ x y) y = triangleEdgeDet b x y / 2 := by
@@ -57,8 +42,6 @@ private theorem polygon_ext_of_apply (p q : Polygon E n) (h : ∀ i, p i = q i) 
   cases q
   congr
   exact funext h
-
-
 
 noncomputable def polygonClosingMidpoint (q : Polygon E (n + 3)) : Polygon E (n + 4) :=
   ⟨Fin.snoc q (midpoint ℝ (q (Fin.last (n + 2))) (q 0))⟩
@@ -88,8 +71,6 @@ private theorem closingMidpoint_edges (q : Polygon E (n + 3)) :
     rw [hval, hlast]
   · rw [polygon_edgeSet_eq_segment, finRotate_last, hlast]
     exact congrArg (segment ℝ _) (hval 0)
-
-
 
 theorem polygonClosingMidpoint_boundary (q : Polygon E (n + 3)) :
     (polygonClosingMidpoint q).boundary ℝ = q.boundary ℝ := by
@@ -133,8 +114,6 @@ theorem polygonClosingMidpoint_boundary (q : Polygon E (n + 3)) :
       · exact polygon_edgeSet_subset_boundary _ _ (hr.symm ▸ hi)
     · intro hi
       exact polygon_edgeSet_subset_boundary _ _ ((he j).symm ▸ hi)
-
-
 
 theorem IsSimplePolygon.isSimple_polygonClosingMidpoint {q : Polygon E (n + 3)}
     (hq : IsSimplePolygon q) : IsSimplePolygon (polygonClosingMidpoint q) := by
@@ -270,8 +249,6 @@ theorem IsSimplePolygon.isSimple_polygonClosingMidpoint {q : Polygon E (n + 3)}
     have hh := hcheck j i h ⟨hx.2, hx.1⟩
     exact ⟨hh.2, hh.1⟩
 
-
-
 theorem contDiff_polygonClosingMidpoint_apply
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
     {k : ℕ∞ω} {q : V → Polygon E (n + 3)}
@@ -281,8 +258,6 @@ theorem contDiff_polygonClosingMidpoint_apply
   · simp only [polygonClosingMidpoint, Fin.snoc_last, midpoint_eq_smul_add]
     exact contDiff_const.smul ((hq _).add (hq _))
   · simpa only [polygonClosingMidpoint, Fin.snoc_castSucc] using hq j
-
-
 
 theorem polygonClosingMidpoint_det_pos (b : AffineBasis (Fin 3) ℝ E)
     (q : Polygon E (n + 3))
@@ -306,12 +281,8 @@ theorem polygonClosingMidpoint_det_pos (b : AffineBasis (Fin 3) ℝ E)
       simpa only [show finRotate (n + 3) k.castSucc = k.succ from finRotate_of_lt k.isLt]
         using hq k.castSucc
 
-
-
 def polygonCyclicRelabel (p : Polygon E n) (σ : Equiv.Perm (Fin n)) : Polygon E n :=
   ⟨fun i => p (σ i)⟩
-
-
 
 theorem IsSimplePolygon.isSimple_polygonCyclicRelabel {p : Polygon E n}
     (hp : IsSimplePolygon p) (σ : Equiv.Perm (Fin n))
@@ -324,8 +295,6 @@ theorem IsSimplePolygon.isSimple_polygonCyclicRelabel {p : Polygon E n}
   rw [he, he]
   simpa only [polygonCyclicRelabel, hσ] using hp.edges_inter (σ i) (σ j)
     (fun h => hij (σ.injective h))
-
-
 
 theorem polygonCyclicRelabel_boundary (p : Polygon E n) (σ : Equiv.Perm (Fin n))
     (hσ : ∀ i, σ (finRotate n i) = finRotate n (σ i)) :
@@ -340,8 +309,6 @@ theorem polygonCyclicRelabel_boundary (p : Polygon E n) (σ : Equiv.Perm (Fin n)
   · rintro ⟨i, hi⟩
     exact ⟨σ.symm i, by simpa only [σ.apply_symm_apply] using hi⟩
 
-
-
 noncomputable def polygonRetainDeletedMidpoint (k : Fin (n + 4))
     (q : Polygon E (n + 3)) : Polygon E (n + 4) :=
   polygonCyclicRelabel (polygonClosingMidpoint q) (finCycle (finRotate (n + 4) k)).symm
@@ -355,8 +322,6 @@ private theorem midpointRelabel_commutes (k : Fin (n + 4)) :
   simp only [finCycle_symm_apply]
   abel
 
-
-
 theorem polygonRetainDeletedMidpoint_properties (k : Fin (n + 4))
     (q : Polygon E (n + 3)) :
     (IsSimplePolygon q → IsSimplePolygon (polygonRetainDeletedMidpoint k q)) ∧
@@ -368,8 +333,6 @@ theorem polygonRetainDeletedMidpoint_properties (k : Fin (n + 4))
   · exact (polygonCyclicRelabel_boundary _ _ (midpointRelabel_commutes k)).trans
       (polygonClosingMidpoint_boundary q)
 
-
-
 theorem polygonRetainDeletedMidpoint_det_pos (b : AffineBasis (Fin 3) ℝ E)
     (k : Fin (n + 4)) (q : Polygon E (n + 3))
     (hq : ∀ i, 0 < triangleEdgeDet b (q i) (q (finRotate (n + 3) i))) :
@@ -378,8 +341,6 @@ theorem polygonRetainDeletedMidpoint_det_pos (b : AffineBasis (Fin 3) ℝ E)
   intro i
   simp only [polygonRetainDeletedMidpoint, polygonCyclicRelabel, midpointRelabel_commutes]
   exact polygonClosingMidpoint_det_pos b q hq _
-
-
 
 theorem polygonRetainDeletedMidpoint_delete (p : Polygon E (n + 4)) (k : Fin (n + 4))
     (hk : p k = midpoint ℝ (p ((finRotate (n + 4)).symm k)) (p (finRotate (n + 4) k))) :
@@ -410,17 +371,12 @@ theorem polygonRetainDeletedMidpoint_delete (p : Polygon E (n + 4)) (k : Fin (n 
   change polygonClosingMidpoint (polygonDeleteVertex p k) (σ.symm i) = p i
   rw [hEq, σ.apply_symm_apply]
 
-
-
 theorem contDiff_polygonRetainDeletedMidpoint_apply
     {V : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]
     {s : ℕ∞ω} {q : V → Polygon E (n + 3)}
     (hq : ∀ i, ContDiff ℝ s (fun z => q z i)) (k i : Fin (n + 4)) :
     ContDiff ℝ s (fun z => polygonRetainDeletedMidpoint k (q z) i) :=
   contDiff_polygonClosingMidpoint_apply hq _
-
-
-
 
 theorem IsSimplePolygon.exists_smooth_triangle_motion [FiniteDimensional ℝ E]
     {p : Polygon E n} (hp : IsSimplePolygon p) (hdim : Module.finrank ℝ E = 2) :

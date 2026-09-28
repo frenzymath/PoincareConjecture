@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M28.Generalized.MetricVolumeCalibration
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory
@@ -22,9 +14,6 @@ variable {n : ℕ} {M : Type u} {N : Type v}
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
   [TopologicalSpace N] [MeasurableSpace N] [BorelSpace N] [T3Space N]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) N] [IsManifold (𝓡 n) ∞ N]
-
-
-
 
 theorem volumeMeasure_image_le_of_edist_le
     (g : RiemannianMetric n M) (h : RiemannianMetric n N)

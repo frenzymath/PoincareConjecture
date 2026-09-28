@@ -1,22 +1,10 @@
 import PoincareConjecture.Proofs.M76.Horizon.Dehn.Annuli.Descent.Normalization.Contacts.FaceCharts
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry Topology
 
 namespace Geometry.SimplicialComplex
-
-
 
 theorem exists_projected_branch_face_neighborhood
     {V X Y : Type*} [NormedAddCommGroup V] [NormedSpace ℝ V]

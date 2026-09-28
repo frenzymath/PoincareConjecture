@@ -4,24 +4,12 @@ import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallEventCo
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallCapNormalization
 import PoincareConjecture.Proofs.M25.Topology3D.Space3.Reverse.ParentBallNativeCapCoordinates
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Metric Filter
 open scoped ContDiff Manifold Topology
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem RegularSurgeryEvent.exists_canonical_cap_parameter_alignment
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}
@@ -120,8 +108,6 @@ theorem RegularSurgeryEvent.exists_canonical_cap_parameter_alignment
   obtain ⟨X, hX, rfl⟩ : y ∈ referenceCapPoint a '' closedBall (0 : E2) 1 := by
     rwa [referenceCapPoint_image_closedBall a ha]
   exact hBpatch X ((mem_closedBall_zero_iff.mp hX).trans hR.le)
-
-
 
 theorem RegularSurgeryEvent.exists_common_cap_ball_charts
     {parent : UnitTwoSphere × ℝ → E3} {u : UnitTwoSphere}

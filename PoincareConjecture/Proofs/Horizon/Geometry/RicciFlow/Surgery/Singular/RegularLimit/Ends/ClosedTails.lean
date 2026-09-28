@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Surgery.Singular.RegularLimit.Ends.TubeSides
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -16,8 +8,6 @@ open scoped Manifold ContDiff Bundle Topology
 universe u
 
 namespace PoincareConjecture.SingularRegularLimit
-
-
 
 theorem subset_of_preconnected_avoids_frontier {X : Type*} [TopologicalSpace X]
     {S Y : Set X} (hS : IsPreconnected S)
@@ -39,8 +29,6 @@ namespace PoincareConjecture.TerminalEnd
 
 variable {F : GeneralizedRicciFlowData.{u}} {T : ℝ}
   {E : GeneralizedFlowExtension F T} {K : TerminalComponentPath E}
-
-
 
 theorem exists_cylinder_tail_closure_subset (e : TerminalEnd K) (n : ℕ)
     {Y : Set (E.extended.slice T).carrier} (hY : IsClosed Y)

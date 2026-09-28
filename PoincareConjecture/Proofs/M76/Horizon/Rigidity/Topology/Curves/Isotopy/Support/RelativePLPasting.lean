@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.FinitePLNeighborhoodExtension
 import PoincareConjecture.Proofs.M76.Mathlib.RelativePolyhedralNeighborhood
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Affine.Mathlib.ContinuousAffineSelection
 
-
-
 set_option autoImplicit false
 open Set
 
@@ -11,8 +9,6 @@ namespace Geometry
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E] {ι : Type*} [Fintype ι]
-
-
 
 theorem FinitePiecewiseAffineOn.closed_paste_on_carrier
     (K : SimplicialComplex ℝ E) (hK : K.faces.Finite)

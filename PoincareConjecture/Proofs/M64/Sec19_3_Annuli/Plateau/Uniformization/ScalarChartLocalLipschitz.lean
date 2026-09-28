@@ -2,18 +2,6 @@ import PoincareConjecture.Proofs.M64.Sec19_3_Annuli.Plateau.Uniformization.Scala
 import Mathlib.Topology.Algebra.MetricSpace.Lipschitz
 import Mathlib.Analysis.Calculus.ContDiff.RCLike
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -29,16 +17,10 @@ variable {n : ℕ} {M : Type*} [MetricSpace M]
   [ChartedSpace (EuclideanSpace ℝ (Fin n)) M] [IsManifold (𝓡 n) ∞ M]
 local notation "E" => EuclideanSpace ℝ (Fin n)
 
-
-
-
 def ScalarLocallyChartLipschitz (f : Plane → M) (O : Set Plane) : Prop :=
   ∀ x ∈ O, ∃ L : ℝ≥0, ∃ V ∈ 𝓝 x, LipschitzOnWith L ((chartAt E (f x)) ∘ f) V
 
 omit [IsManifold (𝓡 n) ∞ M] in
-
-
-
 
 theorem scalar_coordinate_lipschitz_change_chart
     (e k : OpenPartialHomeomorph M E)
@@ -66,10 +48,6 @@ theorem scalar_coordinate_lipschitz_change_chart
     simp only [Function.comp_apply, e.left_inv (hfV hz.1)]
   simpa only [heqy, heqz] using hcomp hy hz
 
-
-
-
-
 theorem ScalarLocallyChartLipschitz.in_chart
     {f : Plane → M} {O : Set Plane} (hlocal : ScalarLocallyChartLipschitz (n := n) f O)
     (hf : ContinuousOn f O) (hO : IsOpen O) {x : Plane} (hx : x ∈ O)
@@ -83,10 +61,6 @@ theorem ScalarLocallyChartLipschitz.in_chart
   exact scalar_coordinate_lipschitz_change_chart c e
     contMDiffOn_chart_symm he (inter_mem hV hsource)
     (fun _ hp => hp.2) (hL.mono inter_subset_left) hxe
-
-
-
-
 
 theorem ScalarLocallyChartLipschitz.compact_patch
     {f : Plane → M} {O C : Set Plane} (hlocal : ScalarLocallyChartLipschitz (n := n) f O)
@@ -111,10 +85,6 @@ theorem ScalarLocallyChartLipschitz.compact_patch
     (fun _ hx => (hmargin (interior_subset hx)).2), hL.mono interior_subset⟩
   exact (Metric.self_subset_thickening hdelta C).trans
     (Metric.thickening_subset_interior_cthickening delta C)
-
-
-
-
 
 theorem ScalarLocallyChartLipschitz.of_chart_replacement
     {f F : Plane → M} {O V C : Set Plane}

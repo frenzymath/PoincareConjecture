@@ -4,16 +4,6 @@ import PoincareConjecture.Proofs.M32.Neck.ScalarControl
 import PoincareConjecture.Proofs.M32.Claim11_34.HornSeparation
 import PoincareConjecture.Proofs.M32.Claim11_34.HornNonFilling
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -22,10 +12,6 @@ open scoped Manifold ContDiff Topology
 universe u
 
 namespace PoincareConjecture.M32
-
-
-
-
 
 theorem exists_horn_seed_endCut_threshold :
     ∃ epsilon₀ : ℝ, 0 < epsilon₀ ∧ epsilon₀ ≤ 1 / 200 ∧

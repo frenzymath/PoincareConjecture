@@ -1,13 +1,5 @@
 import PoincareConjecture.Proofs.M38.Rotations
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set MeasureTheory Manifold
@@ -15,20 +7,15 @@ open scoped Manifold ContDiff Bundle ENNReal Topology
 
 namespace PoincareConjecture.M38
 
-
 theorem standardRotation_smooth (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) :
     ContMDiff (𝓡 3) (𝓡 3) ∞ (standardRotation A) := by
   rw [standardRotation_eq_toEuclideanLin]
   exact contMDiff_iff_contDiff.mpr A.1.toEuclideanLin.toContinuousLinearMap.contDiff
 
-
 theorem standardRotation_zero (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) :
     standardRotation A 0 = 0 := by
   rw [standardRotation_eq_toEuclideanLin]
   exact map_zero _
-
-
-
 
 theorem standardRotation_pathELength (g₀ : StandardInitialMetric)
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ)
@@ -64,8 +51,6 @@ theorem standardRotation_pathELength (g₀ : StandardInitialMetric)
       (mfderiv 𝓘(ℝ, ℝ) (𝓡 3) γ t 1) (mfderiv 𝓘(ℝ, ℝ) (𝓡 3) γ t 1)))
   rw [g₀.rotation_invariant]
 
-
-
 theorem standardRotation_edist_le (g₀ : StandardInitialMetric)
     (A : Matrix.specialOrthogonalGroup (Fin 3) ℝ) (x y : StandardCapSpace) :
     g₀.metric.edist (standardRotation A x) (standardRotation A y) ≤
@@ -83,7 +68,6 @@ theorem standardRotation_edist_le (g₀ : StandardInitialMetric)
     (congrArg (standardRotation A) hγ0) (congrArg (standardRotation A) hγ1) zero_le_one
   have hlength_eq := standardRotation_pathELength g₀ A γ 0 1 hγ
   exact hdist.trans_lt (hlength_eq.trans_lt hlength)
-
 
 theorem standard_ball_radial (g₀ : StandardInitialMetric) (r : ℝ)
     (x : StandardCapSpace) (hx : x ∈ g₀.metric.ball 0 r)

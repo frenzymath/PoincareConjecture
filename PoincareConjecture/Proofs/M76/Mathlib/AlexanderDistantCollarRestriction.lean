@@ -1,16 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderCollarWidthRestriction
 import PoincareConjecture.Proofs.M76.Mathlib.AlexanderRecursiveCollarTransport
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,11 +9,6 @@ namespace Geometry.AlexanderCollarSlab
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
 
 theorem exists_small_supported_capped_cut
     {S s₀ s₁ d : Set E} {B : E →ᵃ[ℝ] ℝ} {q : E} {β : ℝ}

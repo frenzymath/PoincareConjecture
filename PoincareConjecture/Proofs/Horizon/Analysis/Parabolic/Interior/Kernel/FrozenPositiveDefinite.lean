@@ -2,17 +2,6 @@ import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.Froz
 import PoincareConjecture.Proofs.Horizon.Analysis.Parabolic.Interior.Kernel.PositiveDefinite
 import Mathlib.Analysis.InnerProductSpace.CanonicalTensor
 
-
-
-
-
-
-
-
-
-
-
-
 noncomputable section
 
 set_option maxSynthPendingDepth 3

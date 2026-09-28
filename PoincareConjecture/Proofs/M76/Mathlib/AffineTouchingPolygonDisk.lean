@@ -1,15 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.InnermostTouchingPolygonDisk
 import PoincareConjecture.Proofs.M76.Mathlib.AffinePolygonDiskChart
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set TriangularRoofModel
@@ -18,10 +9,6 @@ namespace Polygon
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
 
 theorem exists_innermost_affine_disk_of_singleton_inter {ι : Type*}
     [Finite ι] [Nonempty ι] (n : ι → ℕ) (P : ∀ i, Polygon (ℝ × ℝ) (n i + 3))

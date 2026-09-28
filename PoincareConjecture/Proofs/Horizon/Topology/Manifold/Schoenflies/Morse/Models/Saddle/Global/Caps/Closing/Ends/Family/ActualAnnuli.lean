@@ -1,7 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Topology.Manifold.Schoenflies.Morse.Models.Saddle.Global.Caps.EndBall.TerminalSlices
 
-
-
 noncomputable section
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
@@ -37,9 +35,6 @@ private theorem exists_common_strict_upper_bound
     (Finset.mem_image.mpr ⟨i, Finset.mem_univ _, rfl⟩))).trans_lt hma
 
 variable {v : E3} {g : S2 → E3} {B : Set Real} {C : Set S2}
-
-
-
 
 theorem exists_lower_common_physical_annuli
     (ends : AnnularEndFamily v g B C)
@@ -119,8 +114,6 @@ theorem exists_lower_common_physical_annuli
     exact hemb i (t - ends.lowerCut)
   · intro t
     exact hinj (t - ends.lowerCut)
-
-
 
 theorem exists_upper_common_physical_annuli
     (ends : AnnularEndFamily v g B C)

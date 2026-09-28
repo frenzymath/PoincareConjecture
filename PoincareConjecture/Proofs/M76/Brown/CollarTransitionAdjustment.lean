@@ -3,15 +3,6 @@ import PoincareConjecture.Proofs.M76.Mathlib.ClosedExtension
 import Mathlib.Topology.OpenPartialHomeomorph.Basic
 import Mathlib.Topology.Compactness.LocallyCompact
 
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
@@ -19,10 +10,6 @@ open Set
 namespace BrownCollar
 
 variable {B : Type*} [MetricSpace B] [LocallyCompactSpace B]
-
-
-
-
 
 theorem exists_transition_adjustment
     (e : OpenPartialHomeomorph (B × Ico (0 : ℝ) 1) (B × Ico (0 : ℝ) 1))

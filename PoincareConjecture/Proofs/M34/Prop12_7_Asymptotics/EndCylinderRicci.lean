@@ -2,16 +2,6 @@ import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.EndCylinderCharts
 import PoincareConjecture.Proofs.M34.Prop12_7_Asymptotics.StereographicCurvature
 import PoincareConjecture.Proofs.M07.Geometry.Riemannian.Curvature.LocalIsometryRicci
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -24,8 +14,6 @@ local notation "E3" => EuclideanSpace ℝ (Fin 3)
 local notation "E2" => EuclideanSpace ℝ (Fin 2)
 
 variable {g : RiemannianMetric 3 StandardCapSpace}
-
-
 
 theorem endCylinderAuxRicci_stereographic (e : StandardCylindricalEnd g) (t : ℝ)
     (D : LeviCivitaData (endCylinderAuxMetric e t)) (q : UnitTwoSphere)
@@ -53,9 +41,6 @@ theorem endCylinderAuxRicci_stereographic (e : StandardCylindricalEnd g) (t : �
   exact (DG.ricci_eq_of_local_isometry D hU hf hm hx u v).symm.trans
     (stereographicCylinderRicci hb DG x u v)
 
-
-
-
 theorem endCylinderAuxRicci_at_stereographic (e : StandardCylindricalEnd g) (t : ℝ)
     (D : LeviCivitaData (endCylinderAuxMetric e t)) (q : UnitTwoSphere)
     {x : E3} (hx : 2 < x 2) (u v : E3) :
@@ -77,9 +62,6 @@ theorem endCylinderAuxRicci_at_stereographic (e : StandardCylindricalEnd g) (t :
     simp [endCylinderParameter], stereographicCylinderCoefficients_apply] at hm
   rw [hm]
   ring
-
-
-
 
 theorem endCylinderAuxRicci_coordinate (e : StandardCylindricalEnd g) (t : ℝ)
     (D : LeviCivitaData (endCylinderAuxMetric e t))

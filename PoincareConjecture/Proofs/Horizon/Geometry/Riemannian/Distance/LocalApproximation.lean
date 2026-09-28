@@ -3,13 +3,6 @@ import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Distance.ChartSegme
 import PoincareConjecture.Proofs.Horizon.Analysis.Approximation.Convolution
 import PoincareConjecture.Proofs.Horizon.Geometry.Manifold.PartitionOfUnity.Derivative
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Filter
@@ -26,24 +19,17 @@ variable {E : Type u} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [Bundle.RiemannianBundle (TangentSpace I : M → Type _)]
   [IsContinuousRiemannianBundle E (TangentSpace I : M → Type _)]
 
-
-
-
 theorem eventually_metric_chart_distortion (p : M) {r : ℝ} (hr : 1 < r) :
     ∀ᶠ y in 𝓝 p, ‖((trivializationAt E (TangentSpace I) p).symmL ℝ p) ∘L
       ((trivializationAt E (TangentSpace I) p).continuousLinearMapAt ℝ y)‖ < r := by
   exact eventually_norm_symmL_trivializationAt_self_comp_lt E
     (TangentSpace I) p hr
 
-
-
 theorem eventually_metric_chart_distortion_reverse (p : M) {r : ℝ} (hr : 1 < r) :
     ∀ᶠ y in 𝓝 p, ‖((trivializationAt E (TangentSpace I) p).symmL ℝ y) ∘L
       ((trivializationAt E (TangentSpace I) p).continuousLinearMapAt ℝ p)‖ < r := by
   exact eventually_norm_symmL_trivializationAt_comp_self_lt E
     (TangentSpace I) p hr
-
-
 
 theorem eventually_metric_extChart_deriv_bound (p : M) {r : ℝ} (hr : 1 < r) :
     ∀ᶠ y in 𝓝 p, ‖((trivializationAt E (TangentSpace I) p).symmL ℝ p) ∘L
@@ -73,7 +59,6 @@ variable {n : ℕ} {M : Type*} [TopologicalSpace M]
   [IsManifold (𝓡 n) ∞ M] [T3Space M] [PreconnectedSpace M]
 
 set_option backward.isDefEq.respectTransparency false in
-
 
 theorem exists_local_distance_approx (g : RiemannianMetric n M) (O p : M) :
     ∃ U : Set M, U ∈ 𝓝 p ∧ ∀ ε : ℝ, 0 < ε → ∃ f : M → ℝ,

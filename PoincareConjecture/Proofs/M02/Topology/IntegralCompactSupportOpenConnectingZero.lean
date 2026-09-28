@@ -2,8 +2,6 @@ import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportOpenConnecti
 import PoincareConjecture.Proofs.M02.Topology.IntegralCompactSupportRangeMapTransport
 import PoincareConjecture.Proofs.M02.Topology.IntegralSupportCohomologyExactElements
 
-
-
 set_option autoImplicit false
 
 noncomputable section

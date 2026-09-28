@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Annulus.Spheres.ArcSelection
 import PoincareConjecture.Proofs.M76.Horizon.Rigidity.Hierarchy.Disks.Spheres.SupportedBall
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 open Set Metric Geometry
 open scoped Topology
@@ -36,8 +28,6 @@ theorem hamiltonZeroTargetThirdPhaseRetraction_eq_of_coe_eq
 theorem hamiltonZeroTargetThirdPhaseRetraction_phase (theta : ℝ) (x : X0) :
     (Q0 (hamiltonZeroTargetThirdPhaseRetraction theta x)).1.1 = (theta : C0) := by
   rw [hamiltonZeroTargetThirdPhaseRetraction_coordinates]
-
-
 
 theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroThirdPhaseSelection
     {E β : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E] [FiniteDimensional ℝ E]
@@ -72,7 +62,6 @@ theorem StandardLatticeHandleAtlas.polyhedralPL_hamiltonZeroThirdPhaseSelection
           · exact Or.inr (Or.inr h)
           · exact Or.inr (Or.inl h)) x hx'
     · exact selection_coordinates_of_missing_branch hd K hK hY ha hb.continuousOn hg hselect x hx
-
 
 theorem ChartwisePLMap.hamiltonZero_third_phase_selection {ι κ : Type*}
     {e : ι → OpenPartialHomeomorph X0 V3}

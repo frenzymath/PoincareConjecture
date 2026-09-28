@@ -1,17 +1,6 @@
 import PoincareConjecture.Proofs.M76.Mathlib.CoordinateTransverseReflection
 import PoincareConjecture.Proofs.M76.Mathlib.HeightSliceFillingIncidence
 
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry CoordinateHalfBoxes HeightBox
@@ -20,12 +9,6 @@ namespace ContinuousAffineEquiv
 
 variable {E : Type*} [NormedAddCommGroup E] [NormedSpace ℝ E]
   [FiniteDimensional ℝ E]
-
-
-
-
-
-
 
 theorem exists_positive_transverse_planar_cut
     (f : ((ℝ × ℝ) × ℝ) ≃ᴬ[ℝ] E) {r c : ℝ} (hr : 0 < r)

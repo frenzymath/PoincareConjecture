@@ -1,14 +1,6 @@
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointCompatibility
 import PoincareConjecture.Proofs.M47.LimitFiniteEndpointChartMaps
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -30,8 +22,6 @@ private noncomputable local instance finiteStageAgreementBilinAdd :
     NormedAddCommGroup Bilin := ContinuousLinearMap.toNormedAddCommGroup
 private noncomputable local instance finiteStageAgreementBilinSpace :
     NormedSpace ℝ Bilin := ContinuousLinearMap.toNormedSpace
-
-
 
 theorem limitFinite_endpoint_clocked_compatibility
     (F : ℕ → SurgeryFlowData.{u}) (C : GeneralizedSliceCarrier.{u})
@@ -80,8 +70,6 @@ theorem limitFinite_endpoint_clocked_compatibility
     simpa only [sub_add_cancel] using hconv1 v u
   · intro v u
     simpa only [sub_add_cancel] using hconv2 v u
-
-
 
 theorem limitFinite_endpoint_stage_agreement
     {n : ℕ} {ι κ : Type*} {P : ι → Type*} {Q : κ → Type*} {M : Type*}

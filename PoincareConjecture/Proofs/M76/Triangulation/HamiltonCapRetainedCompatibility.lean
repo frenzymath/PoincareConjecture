@@ -2,14 +2,6 @@ import PoincareConjecture.Proofs.M76.Triangulation.HamiltonMarkedCapCoordinates
 import PoincareConjecture.Proofs.M76.Mathlib.LocallyPiecewiseAffineInverse
 import Mathlib.Topology.Algebra.ContinuousAffineEquiv
 
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set Geometry
@@ -20,9 +12,6 @@ variable {X E F : Type*} [TopologicalSpace X]
   [NormedAddCommGroup E] [NormedSpace ℝ E]
   [NormedAddCommGroup F] [NormedSpace ℝ F] [FiniteDimensional ℝ F]
   {D S : Set X} {eps : ℝ} {g : S × Ico (0 : ℝ) eps → X}
-
-
-
 
 theorem retained_compatible (c : HamiltonMarkedCapCoordinates (E := E) (D := D) g)
     (a q : (ℝ × E) ≃ᴬ[ℝ] F) (f : OpenPartialHomeomorph X F)

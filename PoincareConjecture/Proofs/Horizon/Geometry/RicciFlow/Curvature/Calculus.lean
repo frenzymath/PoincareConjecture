@@ -1,17 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.RicciFlow.Curvature.Theory
 
-
-
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open scoped Manifold ContDiff Bundle
@@ -19,8 +7,6 @@ open scoped Manifold ContDiff Bundle
 universe u
 
 namespace PoincareConjecture
-
-
 
 structure RicciFlowCurvatureCalculus : Prop where
   tensor_calculus :
@@ -74,7 +60,6 @@ structure RicciFlowCurvatureCalculus : Prop where
             (F.connection t).curvatureTensorNorm x ≤ K) →
           ∀ t ∈ Set.Ioc 0 T, ∀ x ∈ (F.metric 0).ball p (r / 2),
             (F.connection t).curvatureDerivativeNorm k x ≤ C / t ^ ((k : ℝ) / 2)
-
 
 theorem RicciFlowCurvatureTheory.toCalculus (hC : RicciFlowCurvatureTheory.{u}) :
     RicciFlowCurvatureCalculus.{u} where

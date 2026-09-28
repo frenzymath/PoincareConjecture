@@ -2,23 +2,11 @@ import Mathlib.Analysis.Convex.Segment
 import Mathlib.Data.Real.Basic
 import Mathlib.Topology.Basic
 
-
-
-
-
-
-
-
-
-
-
 set_option autoImplicit false
 
 open Set
 
 namespace PoincareConjecture.M25.Topology3D
-
-
 
 theorem segment_split_at_point {E : Type*} [AddCommGroup E] [Module ℝ E]
     {a b q : E} (hq : q ∈ segment ℝ a b) :
@@ -46,8 +34,6 @@ theorem segment_split_at_point {E : Type*} [AddCommGroup E] [Module ℝ E]
     exact (segment_eq_image_lineMap ℝ a b).symm
   · rw [← image_inter (AffineMap.lineMap_injective ℝ hab),
       Icc_inter_Icc_eq_singleton ht.1 ht.2, image_singleton]
-
-
 
 theorem exists_open_iUnion_eq_of_mem_imp {X I : Type*} [TopologicalSpace X] [Finite I]
     (S : I → Set X) (hS : ∀ i, IsClosed (S i)) (J : Set I) (q : X)

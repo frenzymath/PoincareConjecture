@@ -1,12 +1,5 @@
 import PoincareConjecture.Proofs.Horizon.Geometry.Riemannian.Surface.GaussBonnet.Refinement.CutMembership
 
-
-
-
-
-
-
-
 set_option autoImplicit false
 set_option backward.isDefEq.respectTransparency false
 
@@ -18,8 +11,6 @@ noncomputable section
 open Classical
 
 namespace PoincareConjecture.Topology.Surface
-
-
 
 theorem localMeshTriangles_vertex_old_or_cut (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (t : M.Triangle)
@@ -85,8 +76,6 @@ theorem localMeshTriangles_vertex_old_or_cut (M : TriangleMesh)
     subst r
     obtain ⟨i, _, rfl⟩ := Finset.mem_map.mp hx
     exact Or.inl ⟨_, M.orderedVertex_mem t i, rfl⟩
-
-
 
 theorem lineRefinementMesh_vertex_old_or_cut (M : TriangleMesh)
     (f : Plane →ᵃ[ℝ] ℝ) (u : (M.lineRefinementMesh f).Triangle)

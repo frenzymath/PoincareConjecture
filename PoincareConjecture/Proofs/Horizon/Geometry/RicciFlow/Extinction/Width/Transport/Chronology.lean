@@ -9,9 +9,6 @@ universe u
 
 namespace PoincareConjecture
 
-
-
-
 noncomputable def repairedComponentPathChronology
     {g₀ : StandardInitialMetric}
     {F : SurgeryFlowData.{u}}
